@@ -10,6 +10,9 @@ import { environment } from 'src/environments/environment';
 import { ScanLogService } from './scan-log.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
+import { RecoverBadSectorsService } from './recover-bad-sectors.service';
+import { HardwareScanService } from './hardware-scan.service';
+import { DeviceService } from '../../../services/device/device.service';
 
 declare var window;
 
@@ -34,7 +37,10 @@ export class ExportResultsService {
 		private shellService: VantageShellService,
 		private formatDateTime: FormatLocaleDateTimePipe,
 		private scanLogService: ScanLogService,
-		private logger: LoggerService) {
+		private logger: LoggerService,
+		private recoverBadSectorsService: RecoverBadSectorsService,
+		private hardwareScanService: HardwareScanService,
+		private deviceService: DeviceService) {
 		this.experienceVersion = environment.appVersion;
 
 		if (window.Windows) {
@@ -56,14 +62,11 @@ export class ExportResultsService {
 	 * @param statusCode A number representing the test result status
 	 */
 	private getIconClassFromStatus(statusCode: HardwareScanTestResult): string {
-		switch (statusCode) {
-			case HardwareScanTestResult.Pass: return 'pass_icon';
-			case HardwareScanTestResult.Fail: return 'fail_icon';
-			case HardwareScanTestResult.Attention: return 'attention_icon';
-			case HardwareScanTestResult.Na: return 'na_icon';
-			case HardwareScanTestResult.Cancelled: return 'cancel_icon';
-			default: return 'fail_icon';
-		}
+		return this.getStatusFromStatusCode(statusCode) + '_icon';
+	}
+
+	private getStatusFromStatusCode(statusCode: HardwareScanTestResult): string {
+		return HardwareScanTestResult[statusCode].toLowerCase() ?? 'fail';
 	}
 
 	/**
@@ -88,20 +91,7 @@ export class ExportResultsService {
 	 * @param statusCode A number representing the test result status
 	 */
 	private getStatusName(statusCode: HardwareScanTestResult): string {
-
-		switch (statusCode) {
-			case HardwareScanTestResult.Cancelled:
-				return this.translate.transform('hardwareScan.cancelled');
-			case HardwareScanTestResult.Fail:
-				return this.translate.transform('hardwareScan.fail');
-			case HardwareScanTestResult.Pass:
-				return this.translate.transform('hardwareScan.pass');
-			case HardwareScanTestResult.Attention:
-				return this.translate.transform('hardwareScan.attention');
-			case HardwareScanTestResult.Na:
-				return this.translate.transform('hardwareScan.na');
-			default: return this.translate.transform('hardwareScan.fail');
-		}
+		return this.translate.transform('hardwareScan.' + this.getStatusFromStatusCode(statusCode));
 	}
 
 	/**
@@ -191,14 +181,14 @@ export class ExportResultsService {
 	 * Helper function generate the test summary data.
 	 * @param data A object containing all the diagnostic information
 	 */
-	private generateTestSummaryInfo(data: any): object {
+	private calculateTestSummaryInfo(data: any): object {
 		return data.items.reduce((result, current) => {
-			const currentKeyValue = result[HardwareScanTestResult[current.resultModule]];
+			const currentKeyValue = result[this.getStatusFromStatusCode(current.resultModule)];
 
 			if (currentKeyValue) {
-				result[HardwareScanTestResult[current.resultModule]]++;
+				result[this.getStatusFromStatusCode(current.resultModule)]++;
 			} else {
-				result[HardwareScanTestResult[current.resultModule]] = 1;
+				result[this.getStatusFromStatusCode(current.resultModule)] = 1;
 			}
 			return result;
 		}, {});
@@ -211,20 +201,24 @@ export class ExportResultsService {
 	 * @param moduleCount A number to indicate the module href id.
 	 */
 	private createTestSummaryItemDiv(item: any, gray: boolean, moduleCount: number): Element {
+		const isRecoverBadSectors = item.rbsDetails !== undefined;
 		const itemDiv = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['item', 'bg_gray']});
 		const divItemTitle = this.createElement(({elementType: 'div', innerHtml: undefined, classes: ['font_weight_600', 'item_description']}));
+
+		// Creating test summary row title and link
 		const linkItemTitle = this.createElement(({elementType: 'a', innerHtml: this.translate.transform('hardwareScan.pluginTokens.' + item.module, item.module), classes: ['test_summary_item_title', 'capitalize_text']}));
+		linkItemTitle.innerHTML = isRecoverBadSectors ? item.name : this.translate.transform('hardwareScan.pluginTokens.' + item.module, item.module);
 		linkItemTitle.setAttribute('href', `#${item.module.toLowerCase()}-${moduleCount}`);
 		divItemTitle.appendChild(linkItemTitle);
 		itemDiv.appendChild(divItemTitle);
-		const columnWrapperDiv = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['column_wrapper']});
 
+		const columnWrapperDiv = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['column_wrapper']});
 		const scanStatusFiltered = this.getScanStatusFiltered();
 		for (const key of scanStatusFiltered) {
 			const colDiv = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['col', 'test_result_wrapper']});
 			if (key === item.resultModule) {
-				const spanResultTitle = this.createElement({elementType: 'span', innerHtml: HardwareScanTestResult[key], classes: ['test_result_text', 'result_' + HardwareScanTestResult[key].toLowerCase()]});
-				const divResultIcon = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['status_icon', HardwareScanTestResult[key].toLowerCase() + '_icon']});
+				const spanResultTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.' + this.getStatusFromStatusCode(key), this.getStatusFromStatusCode(key)), classes: ['test_result_text', 'result_' + this.getStatusFromStatusCode(key)]});
+				const divResultIcon = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['status_icon', this.getStatusFromStatusCode(key) + '_icon']});
 				colDiv.appendChild(spanResultTitle);
 				colDiv.appendChild(divResultIcon);
 			}
@@ -244,6 +238,8 @@ export class ExportResultsService {
 	 * @param moduleCount A number to be used as identify to the module
 	 */
 	private createModuleDiv(item: any, moduleCount: number): Element {
+		const isRecoverBadSectors = item.rbsDetails !== undefined;
+
 		// Module Section Title and icon
 		const spanModuleTitle = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.pluginTokens.' + item.module, item.module), classes: ['font_weight_600', 'capitalize_text', 'section_title'] });
 		const divModuleIcon = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['module_icon', this.getIconClassFromModuleId(item.icon)] });
@@ -254,12 +250,16 @@ export class ExportResultsService {
 
 		// Module Subtitle
 		const spanModuleSubTitle = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.pluginTokens.' + item.name, item.name), classes: ['font_weight_600', 'capitalize_text'] });
-		const spanModuleResultCode = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.resultCode') + ': ', classes: ['font_weight_600', 'capitalize_text'] });
-		const spanModuleResultCodeValue = this.createElement({ elementType: 'span', innerHtml: item.resultCode });
 		const divSubTitle = this.createElement({ elementType: 'div' });
-		divSubTitle.appendChild(spanModuleResultCode);
-		divSubTitle.appendChild(spanModuleResultCodeValue);
 		const divContentSubtitle = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['content_subtitle'] });
+
+		if (!isRecoverBadSectors) {
+			const spanModuleResultCode = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.resultCode') + ': ', classes: ['font_weight_600', 'capitalize_text'] });
+			const spanModuleResultCodeValue = this.createElement({ elementType: 'span', innerHtml: item.resultCode });
+			divSubTitle.appendChild(spanModuleResultCode);
+			divSubTitle.appendChild(spanModuleResultCodeValue);
+		}
+
 		divContentSubtitle.appendChild(spanModuleSubTitle);
 		divContentSubtitle.appendChild(divSubTitle);
 
@@ -269,7 +269,6 @@ export class ExportResultsService {
 			acc[curr.index].push(curr);
 			return acc;
 		}, Object.create(null));
-
 
 		// Module info
 		const divInfo = this.document.createElement('div');
@@ -323,10 +322,26 @@ export class ExportResultsService {
 		divTests.appendChild(spanTests);
 		divTests.appendChild(divTestItems);
 		let gray = true;
-		for (const test of item.listTest) {
-			const testItem = this.createTestItemDiv(test, gray);
-			divTestItems.appendChild(testItem);
-			gray = !gray;
+		if (item.listTest !== undefined) {
+			for (const test of item.listTest) {
+				const testItem = this.createTestItemDiv(test, gray);
+				divTestItems.appendChild(testItem);
+				gray = !gray;
+			}
+		}
+
+		const divRbsTest = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['tests'] });
+		gray = true;
+		if (isRecoverBadSectors) {
+			const spanRbsTest = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.recoverBadSectors.title'), classes: ['resource_or_test_title'] });
+			const divRbsDetailsItems = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['test_items'] });
+			divRbsTest.appendChild(spanRbsTest);
+			divRbsTest.appendChild(divRbsDetailsItems);
+			for (const detail of item.rbsDetails) {
+				const rbsDetailItem = this.createItemDiv(this.translate.transform('hardwareScan.recoverBadSectors.' + detail.key, detail.key), detail.value, gray, true);
+				divRbsDetailsItems.appendChild(rbsDetailItem);
+				gray = !gray;
+			}
 		}
 
 		// Whole module div
@@ -335,127 +350,18 @@ export class ExportResultsService {
 		divModule.appendChild(divModuleTitle);
 		divModule.appendChild(divContentSubtitle);
 		divModule.appendChild(divInfo);
+		if (isRecoverBadSectors) {
+			divModule.appendChild(hr);
+			divModule.appendChild(divRbsTest);
+		}
 		if (divResources !== undefined) {
 			divModule.appendChild(divResources);
 		}
-		divModule.appendChild(hr);
-		divModule.appendChild(divTests);
+		if (!isRecoverBadSectors) {
+			divModule.appendChild(hr);
+			divModule.appendChild(divTests);
+		}
 		return divModule;
-	}
-
-	/**
-	 * Main function that will be create each needed element
-	 * @param data A json object containing all data needed to export the results
-	 */
-	private populateTemplate(data: any) {
-
-		// Overall status
-		const headerTitle = this.document.getElementById('title');
-		headerTitle.innerText = this.document.title =  this.translate.transform('hardwareScan.report.title');
-
-		const scanDateElement = this.document.getElementById('scan_date');
-		const overallTestStatusDescElement = this.document.getElementById('overall_test_status_desc');
-		const overallTestStatusIconElement = this.document.getElementById('overall_test_status_icon');
-		scanDateElement.innerHTML = this.formatDateTime.transform(data.startDate);
-		overallTestStatusDescElement.innerHTML = this.getStatusName(data.resultTestsTitle);
-		overallTestStatusIconElement.classList.add(this.getIconClassFromStatus(data.resultTestsTitle));
-
-		// Machine information
-		const spanModel = this.document.getElementById('model');
-		const machineModel = this.document.getElementById('machine_model');
-		const finalResultCodeSpan = this.document.getElementById('final_result_code_span');
-		const finalResultCode = this.document.getElementById('final_result_code');
-		const machineInfoItems = this.document.getElementById('machine_info_items');
-
-		spanModel.innerHTML = this.translate.transform('hardwareScan.report.modelTitle');
-		machineModel.innerHTML = data.model.machineModel;
-		finalResultCodeSpan.innerHTML = this.translate.transform('hardwareScan.finalResultCode') + ': ';
-		finalResultCode.innerHTML = data.finalResultCode;
-
-		const summaryHeaderOrder = ['productName', 'serialNumber', 'networkInterfaces', 'biosVersion'];
-		for (const key of summaryHeaderOrder) {
-
-			if (key !== 'networkInterfaces') {
-				const value = data.model[key];
-				const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + key), value );
-				machineInfoItems.appendChild(div);
-			} else {
-				for (const ni of data.model.networkInterfaces) {
-					const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + ni.name) + ' ' + ni.index, ni.mac);
-					machineInfoItems.appendChild(div);
-				}
-			}
-		}
-
-		// Environment Section
-		const environmentInfoItemsOrder = ['applicationVersion', 'pluginVersion', 'experienceVersion', 'shellVersion', 'bridgeVersion'];
-		const environmentSectionTitle = this.document.getElementById('environment_title');
-		const environmentInfoSectionItems = this.document.getElementById('environment_info_items');
-		environmentSectionTitle.innerHTML = this.translate.transform('hardwareScan.report.environmentTitle');
-
-		for (const key of environmentInfoItemsOrder) {
-			const value = data.environment[key];
-			const div = this.createItemDiv(this.translate.transform('hardwareScan.report.environment.' + key), value);
-			environmentInfoSectionItems.appendChild(div);
-		}
-
-		// Test Summary Section
-		const testSummaryHeader = this.document.getElementById('test_summary_header');
-		const testSummaryTitle = this.document.getElementById('test_summary_title');
-		testSummaryTitle.innerHTML = this.translate.transform('hardwareScan.report.testResult');
-
-		const testSummarySectionItems = this.document.getElementById('test_summary_info_items');
-		const totalModulesTestedElement = this.document.getElementById('total_modules_tested');
-		const divTotalModulesTestedTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.report.totalModulesTested'), classes: ['font_weight_600']});
-		divTotalModulesTestedTitle.append(': ');
-		const divTotalModulesTestedValue = this.createElement({elementType: 'span', innerHtml: '5', classes: ['font_weight_400']});
-		totalModulesTestedElement.appendChild(divTotalModulesTestedTitle);
-		totalModulesTestedElement.appendChild(divTotalModulesTestedValue);
-
-		data.testSummary = this.generateTestSummaryInfo(data);
-
-		for (const key of this.getScanStatusFiltered()) {
-			const value = data.testSummary[HardwareScanTestResult[key]] ?? 0;
-			const spanTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.' + HardwareScanTestResult[key].toLowerCase()), classes: ['font_weight_600']});
-			const spanValue = this.createElement({elementType: 'span', innerHtml: value, classes: ['font_weight_400']});
-			const col = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['col', 'test_result_wrapper']});
-
-			spanTitle.append(': ');
-			col.appendChild(spanTitle);
-			col.appendChild(spanValue);
-
-			testSummaryHeader.appendChild(col);
-		}
-
-		let gray = true;
-		let count = 0;
-		for (const item of data.items) {
-			const module = this.createTestSummaryItemDiv(item, gray, count);
-			testSummarySectionItems.appendChild(module);
-
-			gray = !gray;
-			count++;
-		}
-
-		// StartTime and EndTime
-		const divStartTimeTitle = this.document.getElementById('test_summary_start_time_title');
-		const divStartTimeValue = this.document.getElementById('test_summary_start_time_value');
-		divStartTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.startDate');
-		divStartTimeValue.innerHTML = this.formatDateTime.transform(data.startDate);
-
-		const divEndTimeTitle = this.document.getElementById('test_summary_end_time_title');
-		const divEndTimeValue = this.document.getElementById('test_summary_end_time_value');
-		divEndTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.endDate');
-		divEndTimeValue.innerHTML = this.formatDateTime.transform(data.endDate);
-
-		// Modules information
-		count = 0;
-		const modules = this.document.getElementById('modules');
-		for (const item of data.items) {
-			const module = this.createModuleDiv(item, count);
-			modules.appendChild(module);
-			count++;
-		}
 	}
 
 	private async prepareDataFromScanLog(response: any): Promise<any> {
@@ -579,7 +485,7 @@ export class ExportResultsService {
 		});
 	}
 
-	private getDateAndHour() {
+	private getDateAndHour(): string {
 		const date = new Date();
 		const day = date.getDate().toString();
 		const maskDay = (day.length === 1) ? '0' + day : day;
@@ -591,15 +497,255 @@ export class ExportResultsService {
 		return year + maskMonth + maskDay + '_' + time[0].replace(/:/g, '');
 	}
 
+	private getModelData(): Promise<any> {
+		const modelData: any = {};
+
+		return new Promise<any> ((resolve, reject) => {
+			this.deviceService.getDeviceInfo().then((info) => {
+				modelData.biosVersion = info.bios;
+				modelData.serialNumber = info.sn;
+				modelData.productName = info.productNo;
+				modelData.machineModel = info.family;
+				resolve(modelData);
+			}).catch((error) => {
+				reject(error);
+			});
+		});
+	}
+
+	private async prepareDataFromRecoverBadSectors(rbsResult: any) {
+		const isRecoverBadSectors = true;
+		const modulesData = this.hardwareScanService.getModulesRetrieved();
+		const storageModules = modulesData.categoryList.find(module => module.id === 'storage').groupList;
+		const preparedData: any = {};
+		const preparedRbsDevices = [];
+
+		rbsResult.items.map(device => {
+			const rbsDevice = {
+				id: device.deviceId,
+				name: device.name,
+				module: device.module,
+				icon: device.module.toLowerCase(),
+				details: this.buildDetails(storageModules.find(module => module.id === device.deviceId)),
+				rbsDetails: device.details,
+				resultModule: device.listTest[0].statusTest
+			};
+			preparedRbsDevices.push(rbsDevice);
+		});
+
+		preparedData.resultModule = rbsResult.resultModule;
+		preparedData.startDate = this.formatDateTime.transform(rbsResult.startDate);
+		preparedData.endDate = this.formatDateTime.transform(rbsResult.date);
+		preparedData.items = preparedRbsDevices;
+		preparedData.model = await this.getModelData();
+		preparedData.isRecoverBadSectors = isRecoverBadSectors;
+
+		preparedData.environment = {
+			experienceVersion: this.experienceVersion,
+			shellVersion: this.shellVersion,
+			bridgeVersion: this.bridgeVersion
+		};
+
+		preparedData.resultTestsTitle = rbsResult.resultModule;
+		preparedData.testSummary = this.calculateTestSummaryInfo(preparedData);
+
+		return preparedData;
+	}
+
+	private populateTemplateOverallStatus(data: any): void {
+		const headerTitle = this.document.getElementById('title');
+		headerTitle.innerText = this.document.title =  this.translate.transform('hardwareScan.report.title');
+		const scanDateElement = this.document.getElementById('scan_date');
+		const overallTestStatusDescElement = this.document.getElementById('overall_test_status_desc');
+		const overallTestStatusIconElement = this.document.getElementById('overall_test_status_icon');
+		scanDateElement.innerHTML = this.formatDateTime.transform(data.startDate);
+		overallTestStatusDescElement.innerHTML = this.getStatusName(data.resultTestsTitle);
+		overallTestStatusIconElement.classList.add(this.getIconClassFromStatus(data.resultTestsTitle));
+	}
+
+	private populateTemplateEnvironmentSection(data: any, environmentItemsOrder: Array<string>): void {
+		const environmentSectionTitle = this.document.getElementById('environment_title');
+		const environmentInfoSectionItems = this.document.getElementById('environment_info_items');
+		environmentSectionTitle.innerHTML = this.translate.transform('hardwareScan.report.environmentTitle');
+
+		for (const key of environmentItemsOrder) {
+			const value = data.environment[key];
+			const div = this.createItemDiv(this.translate.transform('hardwareScan.report.environment.' + key), value);
+			environmentInfoSectionItems.appendChild(div);
+		}
+	}
+
+	private populateTemplateTestSummarySection(data: any): void {
+		const testSummaryHeader = this.document.getElementById('test_summary_header');
+		const testSummaryTitle = this.document.getElementById('test_summary_title');
+		testSummaryTitle.innerHTML = this.translate.transform('hardwareScan.report.testResult');
+
+		const testSummarySectionItems = this.document.getElementById('test_summary_info_items');
+		const totalModulesTestedElement = this.document.getElementById('total_modules_tested');
+		const divTotalModulesTestedTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.report.totalModulesTested'), classes: ['font_weight_600']});
+		divTotalModulesTestedTitle.append(': ');
+		const divTotalModulesTestedValue = this.createElement({elementType: 'span', innerHtml: data.items.length, classes: ['font_weight_400']});
+		totalModulesTestedElement.appendChild(divTotalModulesTestedTitle);
+		totalModulesTestedElement.appendChild(divTotalModulesTestedValue);
+
+		data.testSummary = this.calculateTestSummaryInfo(data);
+
+		for (const key of this.getScanStatusFiltered()) {
+			const value = data.testSummary[this.getStatusFromStatusCode(key)] ?? 0;
+			const spanTitle = this.createElement({elementType: 'span', innerHtml: this.translate.transform('hardwareScan.' + this.getStatusFromStatusCode(key)), classes: ['font_weight_600']});
+			const spanValue = this.createElement({elementType: 'span', innerHtml: value, classes: ['font_weight_400']});
+			const col = this.createElement({elementType: 'div', innerHtml: undefined, classes: ['col', 'test_result_wrapper']});
+
+			spanTitle.append(': ');
+			col.appendChild(spanTitle);
+			col.appendChild(spanValue);
+
+			testSummaryHeader.appendChild(col);
+		}
+
+		let gray = true;
+		let count = 0;
+		for (const item of data.items) {
+			const module = this.createTestSummaryItemDiv(item, gray, count);
+			testSummarySectionItems.appendChild(module);
+
+			gray = !gray;
+			count++;
+		}
+	}
+
+	private populateTemplateStartAndEndTime(data: any): void {
+		const divStartTimeTitle = this.document.getElementById('test_summary_start_time_title');
+		const divStartTimeValue = this.document.getElementById('test_summary_start_time_value');
+		divStartTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.startDate');
+		divStartTimeValue.innerHTML = this.formatDateTime.transform(data.startDate);
+
+		const divEndTimeTitle = this.document.getElementById('test_summary_end_time_title');
+		const divEndTimeValue = this.document.getElementById('test_summary_end_time_value');
+		divEndTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.endDate');
+		divEndTimeValue.innerHTML = this.formatDateTime.transform(data.endDate);
+	}
+
+	private populateTemplateModuleSection(data: any): void {
+		let count = 0;
+		const modules = this.document.getElementById('modules');
+		for (const item of data.items) {
+			const module = this.createModuleDiv(item, count);
+			modules.appendChild(module);
+			count++;
+		}
+	}
+
+	private populateTemplateModelSection(data: any, modelItemsOrder: Array<string>) {
+		const isRecoverBadSectors = data.isRecoverBadSectors ?? false;
+		const spanModel = this.document.getElementById('model');
+		const machineModel = this.document.getElementById('machine_model');
+		const machineInfoItems = this.document.getElementById('machine_info_items');
+
+		spanModel.innerHTML = this.translate.transform('hardwareScan.report.modelTitle');
+		machineModel.innerHTML = data.model.machineModel;
+
+		// Set final result code data if non rbs data is received
+		if (!isRecoverBadSectors) {
+			const finalResultCodeSpan = this.document.getElementById('final_result_code_span');
+			const finalResultCode = this.document.getElementById('final_result_code');
+			finalResultCodeSpan.innerHTML = this.translate.transform('hardwareScan.finalResultCode') + ': ';
+			finalResultCode.innerHTML = data.finalResultCode;
+		}
+
+		for (const key of modelItemsOrder) {
+
+			if (key !== 'networkInterfaces') {
+				const value = data.model[key];
+				const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + key), value );
+				machineInfoItems.appendChild(div);
+			} else {
+				for (const ni of data.model.networkInterfaces) {
+					const div = this.createItemDiv(this.translate.transform('hardwareScan.report.model.' + ni.name) + ' ' + ni.index, ni.mac);
+					machineInfoItems.appendChild(div);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Main function that will be create each needed element
+	 * @param data A json object containing all data needed to export the results
+	 */
+	private populateTemplate(data: any) {
+		const isRecoverBadSectors = data.isRecoverBadSectors ?? false;
+		let environmentInfoItemsOrder = [];
+		let modelItemsOrder = [];
+
+		if (isRecoverBadSectors) {
+			environmentInfoItemsOrder = ['experienceVersion', 'shellVersion', 'bridgeVersion'];
+			modelItemsOrder = ['productName', 'serialNumber', 'biosVersion'];
+		} else {
+			modelItemsOrder = ['productName', 'serialNumber', 'networkInterfaces', 'biosVersion'];
+			environmentInfoItemsOrder = ['applicationVersion', 'pluginVersion', 'experienceVersion', 'shellVersion', 'bridgeVersion'];
+		}
+
+		// OverallStatus and Header
+		this.populateTemplateOverallStatus(data);
+
+		// Model Section
+		this.populateTemplateModelSection(data, modelItemsOrder);
+
+		// Environment Section
+		this.populateTemplateEnvironmentSection(data, environmentInfoItemsOrder);
+
+		// Test Summary Section
+		this.populateTemplateTestSummarySection(data);
+
+		// StartTime and EndTime
+		this.populateTemplateStartAndEndTime(data);
+
+		// Modules information
+		this.populateTemplateModuleSection(data);
+	}
+
+	private generateReport(jsonData: any): Promise<string> {
+		return new Promise((resolve, reject) => {
+			this.http.get(ExportResultsService.TEMPLATE_PATH, { responseType: 'text' }).toPromise().then(htmlData => {
+				this.document = new DOMParser().parseFromString(htmlData, 'text/html');
+				this.populateTemplate(jsonData);
+				resolve(this.document.documentElement.outerHTML);
+			}).catch(error => {
+				reject(error);
+			});
+		});
+	}
+
+	private async exportReportToFile(reportFileName: string, htmlData: string): Promise<void> {
+		const fileName = reportFileName + '_' + this.getDateAndHour() + '.html';
+		const logFile = await window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName);
+		await window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
+	}
+
+	public exportRbsResults() {
+		return new Promise(async (resolve, reject) => {
+			try {
+				const reportFileName = 'RecoverBadSectorsLog';
+				const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
+				const dataPrepared = await this.prepareDataFromRecoverBadSectors(rbsResultItems);
+				const htmlData = await this.generateReport(dataPrepared);
+				this.exportReportToFile(reportFileName, htmlData);
+				resolve();
+			} catch (error) {
+				this.logger.error('Could not get rbs log', error);
+				reject();
+			}
+		});
+	}
+
 	public async exportScanResults() {
 		return new Promise(async (resolve, reject) => {
 			try {
+				const reportFileName = 'HardwareScanLog';
 				const scanLogData = await this.scanLogService.getScanLog();
 				const dataPrepared = await this.prepareDataFromScanLog(scanLogData);
-				const htmlData = await this.generateScanReport(dataPrepared);
-				const fileName = 'HardwareScanLog_' + this.getDateAndHour() + '.html';
-				const logFile = await window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName);
-				await window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
+				const htmlData = await this.generateReport(dataPrepared);
+				this.exportReportToFile(reportFileName, htmlData);
 				resolve();
 			} catch (error) {
 				this.logger.error('Could not get scan log', error);

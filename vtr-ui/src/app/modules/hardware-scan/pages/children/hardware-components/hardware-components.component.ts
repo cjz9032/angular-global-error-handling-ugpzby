@@ -62,8 +62,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public get isFeatureExportAvailable(): boolean {
 		if (this.hardwareScanService.isScanOrRBSFinished() && this.hardwareScanService.getEnableViewResults()) {
+			if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.RecoverBadSectors) {
+				return this.hwscanFeaturesService.isExportLogAvailable;
+			}
 			return this.hwscanFeaturesService.isExportLogAvailable &&
-					this.hardwareScanService.getFinalResultCode(); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
+				this.hardwareScanService.getFinalResultCode(); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
 		}
 
 		return false;
@@ -226,25 +229,28 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public exportResults() {
 		if (this.exportService) {
+			let exportLogType;
 			if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.Scan) {
-				this.timerService.start();
-				let result = HardwareScanMetricsService.FAIL_RESULT;
-				this.exportService.exportScanResults().then(() => {
-					result = HardwareScanMetricsService.SUCCESS_RESULT;
-					// TODO, probably open modal
-				}).catch(() => {
-					this.logger.error('Export Scan Results rejected');
-				}).finally(() => {
-					this.hardwareScanMetricsService.sendTaskActionMetrics(
-						HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
-						result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
-						'',
-						result,
-						this.timerService.stop());
-				});
+				exportLogType = this.exportService.exportScanResults();
 			} else if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.RecoverBadSectors) {
-				// TODO
+				exportLogType = this.exportService.exportRbsResults();
 			}
+
+			this.timerService.start();
+			let result = HardwareScanMetricsService.FAIL_RESULT;
+			exportLogType.then(() => {
+				result = HardwareScanMetricsService.SUCCESS_RESULT;
+				// TODO, probably open modal
+			}).catch(() => {
+				this.logger.error('Export Scan Results rejected');
+			}).finally(() => {
+				this.hardwareScanMetricsService.sendTaskActionMetrics(
+					HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
+					result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
+					'',
+					result,
+					this.timerService.stop());
+			});
 		}
 	}
 

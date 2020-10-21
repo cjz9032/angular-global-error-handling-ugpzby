@@ -12,6 +12,7 @@ import { ModalScanFailureComponent } from '../components/modal/modal-scan-failur
 import { PreviousResultService } from './previous-result.service';
 import { ModalCancelComponent } from '../components/modal/modal-cancel/modal-cancel.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
 
 const RootParent = 'HardwareScan';
 const CancelButton = 'Cancel';
@@ -27,6 +28,7 @@ export class ScanExecutionService {
 	private itemParentCancelScan: string;
 	private itemNameCancelScan: string;
 	private devicesRecoverBadSectors: any[];
+	private rbsStartDate: Date;
 	private progress = 0;
 	private metrics: any;
 	private culture: any;
@@ -47,7 +49,8 @@ export class ScanExecutionService {
 		private translate: TranslateService,
 		private lenovoSupportService: LenovoSupportService,
 		private previousResultService: PreviousResultService,
-		private shellService: VantageShellService) {
+		private shellService: VantageShellService,
+		private formatDateTime: FormatLocaleDateTimePipe) {
 			this.culture = this.hardwareScanService.getCulture();
 			this.metrics = this.shellService.getMetrics();
 	}
@@ -147,6 +150,7 @@ export class ScanExecutionService {
 
 		if (this.hardwareScanService) {
 			this.timerService.start();
+			this.rbsStartDate = new Date();
 			this.hardwareScanService.getRecoverBadSectors(payload)
 				.then((response) => {
 				this.hardwareScanService.setEnableViewResults(true);
@@ -196,17 +200,10 @@ export class ScanExecutionService {
 		if ( moduleInformation ) {
 			const storageModule = moduleInformation.categoryList.find( category => category.id === 'storage' );
 
-			const date = new Date();
-			const day = date.getDate().toString();
-			const month = date.getMonth() + 1;
-			const monthString = month.toString();
-			const year = date.getFullYear().toString();
-			const time = date.toTimeString().split(' ');
-			const dateString = year + '/' + monthString + '/' + day + ' ' + time[0];
-
 			const results = {
 				resultModule: HardwareScanTestResult.Pass,
-				date: dateString,
+				startDate: this.rbsStartDate,
+				date: this.formatDateTime.transform(new Date()),
 				items: []
 			};
 
@@ -215,6 +212,7 @@ export class ScanExecutionService {
 					module: storageModule.name,
 					icon: storageModule.id,
 					name: device.name,
+					deviceId: device.id,
 					expanded: false,
 					detailsExpanded: false,
 					details: [
@@ -225,7 +223,7 @@ export class ScanExecutionService {
 						{ key: 'elapsedTime', value: device.elapsedTime }
 					],
 					listTest: [{
-						id: '',
+						id: device.id,
 						name: device.name,
 						statusTest: device.status,
 						percent: device.percent,
@@ -816,5 +814,4 @@ export class ScanExecutionService {
 			this.metrics.sendAsync(data);
 		}
 	}
-	
 }
