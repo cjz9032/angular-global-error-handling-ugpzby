@@ -25,6 +25,7 @@ import { UserService } from './../../../services/user/user.service';
 import { MatDialogRef } from '@lenovo/material/dialog';
 import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
 import { MetricService } from 'src/app/services/metric/metrics.service';
+import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -75,11 +76,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 	wsTrialTimeOnEventHandler = (hasTrialDays: number) => {
 		if (this.needOpenExpireDialog(hasTrialDays)) {
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, hasTrialDays);
 			this.openExpireDialog(hasTrialDays);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityExpireDialogPopUpDays, hasTrialDays);
 		}
 	}
-
+	wsStateEventHandler = () => {
+		this.getTrialDay();
+	}
 	constructor(
 		public activeRouter: ActivatedRoute,
 		private commonService: CommonService,
@@ -114,10 +117,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
 			.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler)
-			.on(EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler);
-		if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth) {
-			this.wifiSecurity.getWifiSecurityTrialDays();
-		}
+			.on(EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler)
+			.on(EventTypes.wsStateEvent, this.wsStateEventHandler);
+		this.getTrialDay();
 		this.sendMetrics();
 
 		this.isOnline = this.commonService.isOnline;
@@ -149,9 +151,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	onFocus(): void {
 		if (this.wifiSecurity) {
 			this.wifiSecurity.refresh();
-			if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth) {
-				this.wifiSecurity.getWifiSecurityTrialDays();
-			}
+			this.getTrialDay();
 		}
 		if (!this.intervalId) {
 			this.pullCHS();
@@ -170,6 +170,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
 			this.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
 			this.wifiSecurity.off(EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler);
+			this.wifiSecurity.off(EventTypes.wsStateEvent, this.wsStateEventHandler);
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
@@ -235,11 +236,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			if (this.wifiSecurityService.isLWSEnabled) {
 				this.wifiSecurity.disableWifiSecurity();
 			} else {
-				this.wifiSecurity.enableWifiSecurity().then(() => {
-					if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth) {
-						this.wifiSecurity.getWifiSecurityTrialDays();
-					}
-				}).catch(() => {
+				this.wifiSecurity.enableWifiSecurity().catch(() => {
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				});
 			}
@@ -252,6 +249,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					break;
+				case LenovoIdStatus.SignedOut:
+					if (notification.payload === false) {
+						this.getTrialDay();
+					}
 					break;
 				default:
 					break;
@@ -295,7 +297,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	needOpenExpireDialog(hasTrialDays: number): boolean {
-		const lastTrialTime = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityExpireDialogPopUpDays, 1);
+		const lastTrialTime = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, 1);
 		if (hasTrialDays >= this.maxCanTrialTime) {
 			return true;
 		}
@@ -313,5 +315,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			ItemType: 'PageView'
 		};
 		this.metrics.sendMetrics(metricsData);
+	}
+
+	getTrialDay() {
+		if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth) {
+			this.wifiSecurity.getWifiSecurityTrialDays();
+		}
 	}
 }
