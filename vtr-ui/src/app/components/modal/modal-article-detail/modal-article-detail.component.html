@@ -37,7 +37,86 @@
 				alt="">
 			<div class="article-body"
 				[innerHTML]="articleBody ? articleBody : 'common.ui.loading' | translate"></div>
+			<div>
+				<ul>
+					<li *ngFor="let segment of articleSegments; let i = index" class="segment-content">
+						<div class="container-fluid">
+						<div *ngIf="segment.segmentType.toLowerCase().includes('-wrap-left')" class="row" >
+							<div *ngIf="segment.segmentType.toLowerCase().startsWith('image')"
+								class="col-lg-5 col-xl-5 col-md-5 d-none d-sm-none d-md-block {{segment.segmentType}}">
+								<img  [hidden]="!segment.image" src="{{segment.image}}" alt="">
+								<p class="caption" [hidden]="!segment.caption">{{segment.caption}}</p>
+							</div>
+							<div *ngIf="segment.segmentType.toLowerCase().startsWith('quote')" [hidden]="!segment.quote"
+								class="col-lg-5 col-xl-5 col-md-5  d-none d-sm-none d-md-block {{segment.segmentType}}">
+								<div class="row no-gutters">
+									<div class="col-2 quote">
+										<fa-icon class="icon" [icon]="['fas', 'quote-left']"></fa-icon>
+									</div>
+									<div class="col-10">
+										<label>{{segment.quote}}</label>
+										<div class="row no-gutters">
+											<div class="col-1 line"></div>
+											<div class="col-11"><p class="attribution">{{segment.attribution}}</p></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 segment-wrap-body" [innerHTML]="segment.body ? segment.body : 'common.ui.loading' | translate"></div>
+						</div>
+
+						<div *ngIf="segment.segmentType.toLowerCase().includes('-wrap-right')" class="row" >
+							<div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 segment-wrap-body" [innerHTML]="segment.body ? segment.body : 'common.ui.loading' | translate"></div>
+							<div  *ngIf="segment.segmentType.toLowerCase().startsWith('image')"
+								class="col-lg-5 col-xl-5 col-md-5 d-none d-sm-none d-md-block {{segment.segmentType}}">
+								<img [hidden]="!segment.image" src="{{segment.image}}" alt="">
+								<p class="caption" [hidden]="!segment.caption">{{segment.caption}}</p>
+							</div>
+							<div *ngIf="segment.segmentType.toLowerCase().startsWith('quote')" [hidden]="!segment.quote"
+								class="col-lg-5 col-xl-5 col-md-5 d-none d-sm-none d-md-block {{segment.segmentType}}">
+								<div class="row  no-gutters">
+									<div class="col-2 quote">
+										<fa-icon class="icon" [icon]="['fas', 'quote-left']"></fa-icon>
+									</div>
+									<div class="col-10">
+										<label>{{segment.quote}}</label>
+										<div class="row no-gutters">
+											<div class="col-1 line"></div>
+											<div class="col-11"><p class="attribution">{{segment.attribution}}</p></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div *ngIf="!segment.segmentType.toLowerCase().includes('-wrap-') && segment.segmentType.toLowerCase().startsWith('image')"  [hidden]="!segment.image"
+							class="{{segment.segmentType}}">
+							<img *ngIf="segment.segmentType.toLowerCase().startsWith('image')" src="{{segment.image}}" alt="">
+							<p class="caption" [hidden]="!segment.caption">{{segment.caption}}</p>
+						</div>
+
+						<div *ngIf="!segment.segmentType.toLowerCase().includes('-wrap-') && segment.segmentType.toLowerCase().startsWith('quote')" [hidden]="!segment.quote"
+						 class="d-none d-sm-none d-md-block container-fluid">
+							<div class="row {{segment.segmentType}}">
+								<div class="col-2 quote">
+									<fa-icon class="icon" [icon]="['fas', 'quote-left']"></fa-icon>
+								</div>
+								<div class="col-10">
+									<label>{{segment.quote}}</label>
+									<div class="row no-gutters">
+										<div class="col-1 line"></div>
+										<div class="col-11"><p class="attribution">{{segment.attribution}}</p></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div *ngIf="!segment.segmentType.toLowerCase().includes('-wrap-')" class="segment-body" [innerHTML]="segment.body ? segment.body : 'common.ui.loading' | translate"></div>
+					</div>
+					</li>
+				</ul>
+			</div>
 		</article>
+
 	</div>
 </div>
 <div class="btn-modal-close">
