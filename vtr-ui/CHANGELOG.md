@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.28](https://bitbucket.tc.lenovo.com///compare/v1.8.27...v1.8.28) (2020-10-21)
+
+
+### Bug Fixes
+
+* **PositionC:** VAN-22675 fixed:arm machine shouldn't show sa card ([8a03e88](https://bitbucket.tc.lenovo.com///commit/8a03e882d5650f4cc8303d588756d6e783844c25))
+* **positonC:** VAN-22675 update segment function ([57850d7](https://bitbucket.tc.lenovo.com///commit/57850d71ebd836006fcdbec83d6e16787b45cf23))
+
 ### [1.8.27](https://bitbucket.tc.lenovo.com///compare/v1.8.26...v1.8.27) (2020-10-20)
 
 
