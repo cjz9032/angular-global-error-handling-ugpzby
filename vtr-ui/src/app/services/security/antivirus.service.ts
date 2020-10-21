@@ -31,7 +31,7 @@ export class AntivirusService {
 		public shellService: VantageShellService,
 		private localCacheService: LocalCacheService,
 		) {
-		this.antivirus = this.shellService.getSecurityAdvisor().antivirus;
+		this.antivirus = this.shellService.getSecurityAdvisor()?.antivirus;
 
 		this.cacheAvStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusStatus);
 		this.cacheFwStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);

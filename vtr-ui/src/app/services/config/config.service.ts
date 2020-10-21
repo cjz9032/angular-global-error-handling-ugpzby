@@ -83,7 +83,7 @@ export class ConfigService {
 		private logger: LoggerService,
 		private localInfoService: LocalInfoService,
 		private vantageShellService: VantageShellService,
-		private adPolicyService: AdPolicyService,	
+		private adPolicyService: AdPolicyService,
 		private smartAssist: SmartAssistService,
 		private newFeatureTipService: NewFeatureTipService,
 		private localCacheService: LocalCacheService,
@@ -146,7 +146,7 @@ export class ConfigService {
 			this.country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
 			let resultMenu;
 
-			if (machineInfo.isGaming) {
+			if (machineInfo?.isGaming) {
 				resultMenu = cloneDeep(this.menuItemsGaming);
 				this.initializeWiFiItem(resultMenu);
 				this.menu = await this.updateHide(resultMenu, SegmentConst.Gaming, this.isBetaUser);
@@ -213,7 +213,7 @@ export class ConfigService {
 	}
 
 	initializeWiFiItem(items) {
-		if (typeof this.wifiSecurity.isSupported === 'boolean') {
+		if (typeof this.wifiSecurity?.isSupported === 'boolean') {
 			items = this.supportFilter(items, 'wifi-security', this.wifiSecurity.isSupported);
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
 			this.updateSecurityMenuHide(items, {

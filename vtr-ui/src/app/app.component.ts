@@ -522,7 +522,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.logger.info('app.component.unregisterScheduleScan', payload);
 		try {
 			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
-			if (res.state) {
+			if (res?.state) {
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted, true);
 			}
 			this.logger.info('app.component.unregisterScheduleScan.then', res);

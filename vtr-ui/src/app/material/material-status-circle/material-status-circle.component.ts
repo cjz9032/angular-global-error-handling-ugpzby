@@ -36,9 +36,9 @@ export class MaterialStatusCircleComponent implements AfterViewInit {
 
 	@Input() set gradientColor(gradient: LandingView) {
 		const color: GradientColor = {
-			start: this.colors[gradient.status].start,
-			end: this.colors[gradient.status].end
-		}
+			start: this.colors[gradient.status ? gradient.status : 0].start,
+			end: this.colors[gradient.status ? gradient.status : 0].end
+		};
 		this.gradient = new Gradient(color, gradient.percent);
 	}
 

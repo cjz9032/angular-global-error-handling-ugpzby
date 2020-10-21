@@ -814,7 +814,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			landingStatus: { status: undefined, fullyProtected: false, percent: 0 },
 			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.saFeatureSupport.pluginSupport ? securityStatus.waStatus : undefined],
 			intermediateView: [this.saFeatureSupport.pwdSupport ? securityStatus.pmStatus : undefined, this.saFeatureSupport.fingerprintSupport ? securityStatus.whStatus : undefined, this.saFeatureSupport.pluginSupport ? securityStatus.uacStatus : undefined],
-			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.saFeatureSupport.vpnSupport ? securityStatus.vpnStatus : undefined]};
+			advancedView: [this.securityAdvisor?.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.saFeatureSupport.vpnSupport ? securityStatus.vpnStatus : undefined]};
 		this.deviceService.getMachineInfo().then(result => {
 			this.saFeatureSupport.vpnSupport = true;
 			this.saFeatureSupport.pwdSupport = true;
@@ -839,7 +839,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private refreshSA(): void {
-		this.securityAdvisor.refresh().then(() => {
+		this.securityAdvisor?.refresh().then(() => {
 			this.saFeatureSupport.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 			this.securityLevel = getSecurityLevel(this.securityAdvisor,
 				undefined,
