@@ -62,8 +62,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 	public get isFeatureExportAvailable(): boolean {
 		if (this.hardwareScanService.isScanOrRBSFinished() && this.hardwareScanService.getEnableViewResults()) {
+			if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.RecoverBadSectors) {
+				return this.hwscanFeaturesService.isExportLogAvailable;
+			}
 			return this.hwscanFeaturesService.isExportLogAvailable &&
-					this.hardwareScanService.getFinalResultCode(); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
+				this.hardwareScanService.getFinalResultCode(); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
 		}
 
 		return false;
