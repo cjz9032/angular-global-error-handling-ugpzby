@@ -34,7 +34,7 @@ export enum LocalStorageKey {
 	SecurityWifiSecurityState = '[LocalStorageKey] SecurityWifiSecurityState',
 	SecurityWifiSecurityHistorys = '[LocalStorageKey] SecurityWifiSecurityHistorys',
 	SecurityWifiSecurityIsLocationServiceOn = '[LocalStorageKey] SecurityWifiSecurityIsLocationServiceOn',
-	SecurityWifiSecurityExpireDialogPopUpDays = '[LocalStorageKey] SecurityWifiSecurityExpireDialogPopUpDays',
+	SecurityWifiSecurityPromptDialogPopUpDays = '[LocalStorageKey] SecurityWifiSecurityPromptDialogPopUpDays',
 	SecurityHomeProtectionChsConsoleUrl = '[LocalStorageKey] SecurityHomeProtectionChsConsoleUrl',
 	SecurityHomeProtectionStatus = '[LocalStorageKey] SecurityHomeProtectionStatus',
 	SecurityHomeProtectionFamilyId = '[LocalStorageKey] SecurityHomeProtectionFamilyId',

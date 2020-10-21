@@ -236,11 +236,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			if (this.wifiSecurityService.isLWSEnabled) {
 				this.wifiSecurity.disableWifiSecurity();
 			} else {
-				this.wifiSecurity.enableWifiSecurity().then(() => {
-					if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth) {
-						this.wifiSecurity.getWifiSecurityTrialDays();
-					}
-				}).catch(() => {
+				this.wifiSecurity.enableWifiSecurity().catch(() => {
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				});
 			}
