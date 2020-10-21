@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "A futó folyamatot nem lehet megszakítani, mivel befejeződött.",
         "cancelMayTakeSomeTime": "Kérjük, várjon, a megszakítás a rendszertől függően hosszabb időt vehet igénybe.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Hardverdiagnosztikai napló",
+            "modelTitle": "Modell",
+            "startDate": "Kezdés dátuma és időpontja",
+            "endDate": "Befejezés dátuma és időpontja",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Sorozatszám",
+                "wiredInterface": "Vezetékes Ethernet Mac-címe",
+                "wirelessInterface": "Vezeték nélküli Mac-cím",
+                "biosVersion": "BIOS-verzió",
+                "productName": "A termék neve"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Erőforrások",
+            "tests": "Tesztek",
+            "totalModulesTested": "Tesztelt modulok száma összesen",
+            "environmentTitle": "Környezet",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Alkalmazás verziója",
+                "pluginVersion": "Beépülő modul verziója",
+                "experienceVersion": "Experience verziója",
+                "shellVersion": "Shell verziója",
+                "bridgeVersion": "Bridge verziója"
             },
-            "testResult": "Test Result"
+            "testResult": "Teszteredmény"
         },
         "scanFailureModal": {
             "title": "Hardverhiba észlelve",

@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Proces pokretanja više ne mora da se otkazuje jer je završen.",
         "cancelMayTakeSomeTime": "Sačekajte, otkazivanje će možda duže potrajati, u zavisnosti od sistema.",
         "report": {
-            "title": "Hardware Diagnostics Log",
+            "title": "Evidencija dijagnostike hardvera",
             "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "startDate": "Datum i vreme početka",
+            "endDate": "Datum i vreme završetka",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Serijski broj",
+                "wiredInterface": "Mac adresa Ethernet mreže",
+                "wirelessInterface": "Bežična Mac adresa",
+                "biosVersion": "Verzija BIOS-a",
+                "productName": "Ime proizvoda"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Izvori",
+            "tests": "Testovi",
+            "totalModulesTested": "Ukupno testiranih modula",
+            "environmentTitle": "Okruženje",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Verzija aplikacije",
+                "pluginVersion": "Verzija dodatne komponente",
+                "experienceVersion": "Verzija experience",
+                "shellVersion": "Verzija shell",
+                "bridgeVersion": "Verzija bridge"
             },
-            "testResult": "Test Result"
+            "testResult": "Rezultat testa"
         },
         "scanFailureModal": {
             "title": "Otkriven je problem sa hardverom",

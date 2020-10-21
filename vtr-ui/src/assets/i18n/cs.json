@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Probíhající proces již nemusí být zrušen, protože je dokončen.",
         "cancelMayTakeSomeTime": "Počkejte prosím, v závislosti na vašem systému může zrušení chvilku trvat.",
         "report": {
-            "title": "Hardware Diagnostics Log",
+            "title": "Protokol diagnostiky hardwaru",
             "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "startDate": "Datum a čas spuštění",
+            "endDate": "Datum a čas ukončení",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Sériové číslo",
+                "wiredInterface": "Mac adresa kabelového Ethernetu",
+                "wirelessInterface": "Mac adresa bezdrátového rozhraní",
+                "biosVersion": "Verze BIOS",
+                "productName": "Název produktu"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Prostředky",
+            "tests": "Testy",
+            "totalModulesTested": "Celkový počet testovaných modulů",
+            "environmentTitle": "Prostředí",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Verze aplikace",
+                "pluginVersion": "Verze zásuvného modulu",
+                "experienceVersion": "Verze Experience",
+                "shellVersion": "Verze Shell",
+                "bridgeVersion": "Verze Bridge"
             },
-            "testResult": "Test Result"
+            "testResult": "Výsledky testu"
         },
         "scanFailureModal": {
             "title": "Byl zjištěn problém s hardwarem",

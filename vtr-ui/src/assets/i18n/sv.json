@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Den process som körs behöver inte avbrytas längre, eftersom den är klar.",
         "cancelMayTakeSomeTime": "Vänta – det kan ta en stund att avbryta beroende på ditt system.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Felsökningslogg för maskinvara",
+            "modelTitle": "Modell",
+            "startDate": "Startdatum och starttid",
+            "endDate": "Slutdatum och sluttid",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Serienummer",
+                "wiredInterface": "Mac-adress för trådanslutet Ethernet",
+                "wirelessInterface": "Mac-adress för trådlöst",
+                "biosVersion": "BIOS-version",
+                "productName": "Produktnamn"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Resurser",
+            "tests": "Tester",
+            "totalModulesTested": "Totalt antal testade moduler",
+            "environmentTitle": "Miljö",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Programversion",
+                "pluginVersion": "Plugin-version",
+                "experienceVersion": "Experience-version",
+                "shellVersion": "Shell-version",
+                "bridgeVersion": "Bridge-version"
             },
-            "testResult": "Test Result"
+            "testResult": "Testresultat"
         },
         "scanFailureModal": {
             "title": "Maskinvaruproblem påträffades",

@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "실행 중인 프로세스가 완료되었으므로 더 이상 취소할 필요가 없습니다.",
         "cancelMayTakeSomeTime": "잠시 기다려 주십시오. 시스템에 따라 취소하는 데 시간이 걸릴 수 있습니다.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "하드웨어 진단 로그",
+            "modelTitle": "모델",
+            "startDate": "시작 날짜 및 시간",
+            "endDate": "종료 날짜 및 시간",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "일련 번호",
+                "wiredInterface": "유선 이더넷 Mac 주소",
+                "wirelessInterface": "무선 Mac 주소",
+                "biosVersion": "BIOS 버전",
+                "productName": "제품명"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "리소스",
+            "tests": "테스트",
+            "totalModulesTested": "테스트된 총 모듈 수",
+            "environmentTitle": "환경",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "응용 프로그램 버전",
+                "pluginVersion": "플러그인 버전",
+                "experienceVersion": "Experience 버전",
+                "shellVersion": "Shell 버전",
+                "bridgeVersion": "Bridge 버전"
             },
-            "testResult": "Test Result"
+            "testResult": "검사 결과"
         },
         "scanFailureModal": {
             "title": "하드웨어 문제가 감지됨",

@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Η διαδικασία που εκτελείται δεν χρειάζεται να ακυρωθεί πια, δεδομένου ότι έχει ολοκληρωθεί.",
         "cancelMayTakeSomeTime": "Περιμένετε, μπορεί να χρειαστεί λίγος χρόνος για την ακύρωση ανάλογα με το σύστημά σας.",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "Αρχείο καταγραφής διαγνωστικών υλικού",
+            "modelTitle": "Μοντέλο",
+            "startDate": "Ημερομηνία και ώρα έναρξης",
+            "endDate": "Ημερομηνία και ώρα λήξης",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Σειριακός αριθμός",
+                "wiredInterface": "Διεύθυνση Mac ενσύρματου Ethernet",
+                "wirelessInterface": "Διεύθυνση Mac ασύρματου δικτύου",
+                "biosVersion": "Έκδοση BIOS",
+                "productName": "Ονομασία Προϊόντος"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Πόροι",
+            "tests": "Δοκιμές",
+            "totalModulesTested": "Σύνολο μονάδων που υποβλήθηκαν σε δοκιμές",
+            "environmentTitle": "Περιβάλλον",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Έκδοση Εφαρμογής",
+                "pluginVersion": "Έκδοση Προσθήκης",
+                "experienceVersion": "Έκδοση Experience",
+                "shellVersion": "Έκδοση Shell",
+                "bridgeVersion": "Έκδοση Bridge"
             },
-            "testResult": "Test Result"
+            "testResult": "Αποτέλεσμα δοκιμής"
         },
         "scanFailureModal": {
             "title": "Εντοπίστηκε πρόβλημα υλικού",

@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Den kørende proces behøver ikke længere at blive annulleret, da den er afsluttet.",
         "cancelMayTakeSomeTime": "Vent venligst. Det kan tage noget tid at annullere afhængigt af dit system.",
         "report": {
-            "title": "Hardware Diagnostics Log",
+            "title": "Log for fejlfinding af hardware",
             "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "startDate": "Startdato og -klokkeslæt",
+            "endDate": "Slutdato og -klokkeslæt",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Serienummer",
+                "wiredInterface": "Mac-adresse til kabeltilsluttet Ethernet",
+                "wirelessInterface": "Trådløs Mac-adresse",
+                "biosVersion": "BIOS-version",
+                "productName": "Produktnavn"
             },
-            "resources": "Resources",
+            "resources": "Kilder",
             "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "totalModulesTested": "Testede moduler i alt",
+            "environmentTitle": "Miljø",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Program-version",
+                "pluginVersion": "Plugin-version",
+                "experienceVersion": "Experience-version",
+                "shellVersion": "Shell-version",
+                "bridgeVersion": "Bridge-version"
             },
-            "testResult": "Test Result"
+            "testResult": "Testresultat"
         },
         "scanFailureModal": {
             "title": "Der blev registreret et hardwareproblem",

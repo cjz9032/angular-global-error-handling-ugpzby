@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "由於執行中的程序已完成，因此不再需要取消。",
         "cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "硬體診斷日誌",
+            "modelTitle": "型號",
+            "startDate": "開始日期和時間",
+            "endDate": "結束日期和時間",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "序號",
+                "wiredInterface": "有線乙太網路 Mac 位址",
+                "wirelessInterface": "無線 Mac 位址",
+                "biosVersion": "BIOS 版本",
+                "productName": "產品名稱"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "資源",
+            "tests": "測試",
+            "totalModulesTested": "測試的模組總數",
+            "environmentTitle": "環境",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "應用程式版本",
+                "pluginVersion": "外掛程式版本",
+                "experienceVersion": "Experience 版本",
+                "shellVersion": "Shell 版本",
+                "bridgeVersion": "Bridge 版本"
             },
-            "testResult": "Test Result"
+            "testResult": "測試結果"
         },
         "scanFailureModal": {
             "title": "偵測到硬體問題",

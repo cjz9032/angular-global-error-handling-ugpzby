@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "正在运行的进程已完成，因此不再需要取消。",
         "cancelMayTakeSomeTime": "请稍候，可能需要一些时间才能取消，具体情况视您的系统而定。",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "硬件诊断日志",
+            "modelTitle": "型号",
+            "startDate": "开始日期和时间",
+            "endDate": "结束日期和时间",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "序列号",
+                "wiredInterface": "有线以太网 Mac 地址",
+                "wirelessInterface": "无线 Mac 地址",
+                "biosVersion": "BIOS 版本",
+                "productName": "产品名称"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "资源",
+            "tests": "测试",
+            "totalModulesTested": "测试过的模块总数",
+            "environmentTitle": "环境",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "应用程序版本",
+                "pluginVersion": "插件版本",
+                "experienceVersion": "Experience 版本",
+                "shellVersion": "Shell 版本",
+                "bridgeVersion": "Bridge 版本"
             },
-            "testResult": "Test Result"
+            "testResult": "测试结果"
         },
         "scanFailureModal": {
             "title": "检测到硬件问题",

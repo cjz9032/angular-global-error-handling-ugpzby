@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "Çalışan işlem tamamlandığından artık iptal edilmesi gerekmiyor.",
         "cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
         "report": {
-            "title": "Hardware Diagnostics Log",
+            "title": "Donanım Tanılama Günlüğü",
             "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "startDate": "Başlangıç Tarihi ve Saati",
+            "endDate": "Bitiş Tarihi ve Saati",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "Seri Numarası",
+                "wiredInterface": "Kablolu Ethernet Mac Adresi",
+                "wirelessInterface": "Kablosuz Mac Adresi",
+                "biosVersion": "BIOS Sürümü",
+                "productName": "Ürün Adı"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "Kaynaklar",
+            "tests": "Testler",
+            "totalModulesTested": "Test Edilen Toplam Modül Sayısı",
+            "environmentTitle": "Ortam",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "Uygulama Sürümü",
+                "pluginVersion": "Eklenti Sürümü",
+                "experienceVersion": "Experience Sürümü",
+                "shellVersion": "Shell Sürümü",
+                "bridgeVersion": "Bridge Sürümü"
             },
-            "testResult": "Test Result"
+            "testResult": "Test Sonucu"
         },
         "scanFailureModal": {
             "title": "Donanım Sorunu Algılandı",

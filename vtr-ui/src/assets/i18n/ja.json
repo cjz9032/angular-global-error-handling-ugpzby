@@ -4231,29 +4231,29 @@
         "processFinishedCannotBeCanceled": "実行中のプロセスは完了しているため、キャンセルする必要はありません。",
         "cancelMayTakeSomeTime": "お使いのシステムによってはキャンセルに時間がかかる場合がございます。",
         "report": {
-            "title": "Hardware Diagnostics Log",
-            "modelTitle": "Model",
-            "startDate": "Start Date and Time",
-            "endDate": "End Date and Time",
+            "title": "ハードウェア診断ログ",
+            "modelTitle": "モデル番号",
+            "startDate": "開始日時",
+            "endDate": "終了日時",
             "model": {
-                "serialNumber": "Serial Number",
-                "wiredInterface": "Wired Ethernet Mac Address",
-                "wirelessInterface": "Wireless Mac Address",
-                "biosVersion": "BIOS Version",
-                "productName": "Product Name"
+                "serialNumber": "シリアル番号",
+                "wiredInterface": "無線 Ethernet Mac アドレス",
+                "wirelessInterface": "ワイヤレス Mac アドレス",
+                "biosVersion": "BIOS バージョン",
+                "productName": "製品名"
             },
-            "resources": "Resources",
-            "tests": "Tests",
-            "totalModulesTested": "Total Modules Tested",
-            "environmentTitle": "Environment",
+            "resources": "リソース",
+            "tests": "テスト",
+            "totalModulesTested": "テスト済みモジュール合計",
+            "environmentTitle": "環境",
             "environment": {
-                "applicationVersion": "Application Version",
-                "pluginVersion": "Plugin Version",
-                "experienceVersion": "Experience Version",
-                "shellVersion": "Shell Version",
-                "bridgeVersion": "Bridge Version"
+                "applicationVersion": "アプリケーションのバージョン",
+                "pluginVersion": "プラグインのバージョン",
+                "experienceVersion": "Experience バージョン",
+                "shellVersion": "Shell バージョン",
+                "bridgeVersion": "Bridge バージョン"
             },
-            "testResult": "Test Result"
+            "testResult": "テスト結果"
         },
         "scanFailureModal": {
             "title": "ハードウェアの問題が検出されました",
