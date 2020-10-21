@@ -203,7 +203,7 @@ export class ScanExecutionService {
 			const results = {
 				resultModule: HardwareScanTestResult.Pass,
 				startDate: this.rbsStartDate,
-				date: this.formatDateTime.transform(new Date()),
+				date: new Date(),
 				items: []
 			};
 

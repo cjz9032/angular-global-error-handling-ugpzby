@@ -150,7 +150,7 @@ export class ExportResultsService {
 		const divTestDescription = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['item_description'] });
 		const divTestValue = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['item_value'] });
 		const spanTestName = this.createElement({ elementType: 'span', innerHtml: this.translate.transform('hardwareScan.pluginTokens.' + test.name, test.name), classes: ['font_weight_600', 'capitalize_text', 'item_description'] });
-		const spanStartDate = this.createElement({ elementType: 'span', innerHtml: this.formatDateTime.transform(test.startDate), classes: ['item_description'] });
+		const spanStartDate = this.createElement({ elementType: 'span', innerHtml: test.startDate, classes: ['item_description'] });
 		const spanTestStatusText = this.createElement({ elementType: 'span', innerHtml: this.getStatusName(test.statusTest), classes: ['test_item_value', 'font_weight_600'] });
 		const divTestStatusIcon = this.createElement({ elementType: 'div', innerHtml: undefined, classes: ['status_icon', this.getIconClassFromStatus(test.statusTest)] });
 		const spanTestDuration = this.createElement({ elementType: 'span', innerHtml: '(' + test.duration + 's)', classes: ['capitalize_text', 'result_description'] });
@@ -393,8 +393,8 @@ export class ExportResultsService {
 			bridgeVersion: this.bridgeVersion
 		};
 
-		preparedData.startDate = response.scanSummary.summaryHeader.startDate;
-		preparedData.endDate = response.scanSummary.summaryHeader.endDate;
+		preparedData.startDate = this.formatDateTime.transform(response.scanSummary.summaryHeader.startDate);
+		preparedData.endDate = this.formatDateTime.transform(response.scanSummary.summaryHeader.endDate);
 
 		for (const module of response.modulesResults) {
 			const groupResult = module.response.groupResults;
@@ -437,7 +437,7 @@ export class ExportResultsService {
 					testInfo.name = testMeta.find(x => x.id === test[j].id).name;
 					testInfo.information = testMeta.find(x => x.id === test[j].id).description;
 					testInfo.statusTest = test[j].result;
-					testInfo.startDate = test[j].startDate;
+					testInfo.startDate = this.formatDateTime.transform(test[j].startDate);
 					testInfo.duration = test[j].duration.split('.')[0]; // ignoring decimal content
 
 					if (testInfo.statusTest === HardwareScanTestResult.NotStarted ||
@@ -560,7 +560,7 @@ export class ExportResultsService {
 		const scanDateElement = this.document.getElementById('scan_date');
 		const overallTestStatusDescElement = this.document.getElementById('overall_test_status_desc');
 		const overallTestStatusIconElement = this.document.getElementById('overall_test_status_icon');
-		scanDateElement.innerHTML = this.formatDateTime.transform(data.startDate);
+		scanDateElement.innerHTML = data.startDate;
 		overallTestStatusDescElement.innerHTML = this.getStatusName(data.resultTestsTitle);
 		overallTestStatusIconElement.classList.add(this.getIconClassFromStatus(data.resultTestsTitle));
 	}
@@ -620,12 +620,12 @@ export class ExportResultsService {
 		const divStartTimeTitle = this.document.getElementById('test_summary_start_time_title');
 		const divStartTimeValue = this.document.getElementById('test_summary_start_time_value');
 		divStartTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.startDate');
-		divStartTimeValue.innerHTML = this.formatDateTime.transform(data.startDate);
+		divStartTimeValue.innerHTML = data.startDate;
 
 		const divEndTimeTitle = this.document.getElementById('test_summary_end_time_title');
 		const divEndTimeValue = this.document.getElementById('test_summary_end_time_value');
 		divEndTimeTitle.innerHTML = this.translate.transform( 'hardwareScan.report.endDate');
-		divEndTimeValue.innerHTML = this.formatDateTime.transform(data.endDate);
+		divEndTimeValue.innerHTML = data.endDate;
 	}
 
 	private populateTemplateModuleSection(data: any): void {
