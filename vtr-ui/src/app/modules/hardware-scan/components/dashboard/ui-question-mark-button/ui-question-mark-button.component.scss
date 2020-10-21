@@ -1,0 +1,16 @@
+@import "../../../../../app.theme";
+
+.vtr-ui-question-mark-button {
+    font-size: $fontsize_sm;
+    font-weight: $weight_light;
+    padding: 0.2rem;
+    
+    .question-icon {
+        color: $menu_hover;
+        cursor: pointer;
+
+        &:hover {
+            color: $highlight;
+        }
+    }  
+}

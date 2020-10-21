@@ -8,22 +8,19 @@
 
 						<!-- Ignoring the href property from narrator by using the role="img" atribute
 							and passing the tooltip information with the [attr.aria-label] -->
-						<a href="javascript:void();"
-							id="{{ widgetId }}-tooltip"
-							[attr.aria-label]="'recover-bad-sectors-tooltip, which reads: ' + description"
-							role="img"
-							tabindex="0"
-							triggers="manual"
-						   	#tooltip="ngbTooltip"
+						<vtr-ui-question-mark-button
+							[componentId]="widgetId"
+							[tooltipText]="description"
+							[triggers]="'manual'"
+							#tooltip="ngbTooltip"
+							[tooltip]="tooltip"
+							[ngbTooltip]="tooltipRef"
 							(click)="tooltip.toggle()"
 							(blur)="tooltip.close()"
-							[ngbTooltip]="tooltipRef"
-							tooltipClass="vtr-tooltip"
-							[ngClass]="'recover-question-icon'"
-							placement="left"
+							[tooltipClass]="'vtr-tooltip'"
+							[placement]="'left'"
 							container="vtr-root">
-							<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-						</a>
+						</vtr-ui-question-mark-button>
 					</div>
 				</div>
 				<p id="{{ widgetId }}-description" role="text" class="description">{{'hardwareScan.recoverBadSectors.waitAvailability' | translate}}</p>
