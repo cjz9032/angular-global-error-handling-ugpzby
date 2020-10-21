@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Različica aplikacije",
                 "pluginVersion": "Različica vtičnika",
-                "experienceVersion": "Različica izkušnje",
-                "shellVersion": "Različica lupine",
-                "bridgeVersion": "Različica mostu"
+                "experienceVersion": "Različica experience",
+                "shellVersion": "Različica shell",
+                "bridgeVersion": "Različica bridge"
             },
             "testResult": "Rezultat preskusa"
         },

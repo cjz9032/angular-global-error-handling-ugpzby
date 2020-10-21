@@ -4249,7 +4249,7 @@
             "environment": {
                 "applicationVersion": "Έκδοση Εφαρμογής",
                 "pluginVersion": "Έκδοση Προσθήκης",
-                "experienceVersion": "Έκδοση Εμπειρίας",
+                "experienceVersion": "Έκδοση Experience",
                 "shellVersion": "Έκδοση Shell",
                 "bridgeVersion": "Έκδοση Bridge"
             },

@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Version de l'application",
                 "pluginVersion": "Version du module d'extension",
-                "experienceVersion": "Version de l'expérience",
-                "shellVersion": "Version shell",
-                "bridgeVersion": "Version de passerelle"
+                "experienceVersion": "Version Experience",
+                "shellVersion": "Version Shell",
+                "bridgeVersion": "Version Bridge"
             },
             "testResult": "Résultat du test"
         },

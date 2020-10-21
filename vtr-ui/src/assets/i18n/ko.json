@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "응용 프로그램 버전",
                 "pluginVersion": "플러그인 버전",
-                "experienceVersion": "환경 버전",
-                "shellVersion": "쉘 버전",
-                "bridgeVersion": "브리지 버전"
+                "experienceVersion": "Experience 버전",
+                "shellVersion": "Shell 버전",
+                "bridgeVersion": "Bridge 버전"
             },
             "testResult": "검사 결과"
         },

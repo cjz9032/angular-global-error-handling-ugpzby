@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Uygulama Sürümü",
                 "pluginVersion": "Eklenti Sürümü",
-                "experienceVersion": "Deneyim Sürümü",
-                "shellVersion": "Kabuk Sürümü",
-                "bridgeVersion": "Köprü Sürümü"
+                "experienceVersion": "Experience Sürümü",
+                "shellVersion": "Shell Sürümü",
+                "bridgeVersion": "Bridge Sürümü"
             },
             "testResult": "Test Sonucu"
         },

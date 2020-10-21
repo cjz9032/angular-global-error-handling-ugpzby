@@ -4249,7 +4249,7 @@
             "environment": {
                 "applicationVersion": "Versie toepassing",
                 "pluginVersion": "Versie invoegtoepassing",
-                "experienceVersion": "Versie ervaring",
+                "experienceVersion": "Versie experience",
                 "shellVersion": "Versie shell",
                 "bridgeVersion": "Versie bridge"
             },

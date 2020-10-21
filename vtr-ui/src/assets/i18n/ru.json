@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Версия приложения",
                 "pluginVersion": "Версия подключаемого модуля",
-                "experienceVersion": "Версия системы",
-                "shellVersion": "Версия оболочки",
-                "bridgeVersion": "Версия моста"
+                "experienceVersion": "Версия experience",
+                "shellVersion": "Версия shell",
+                "bridgeVersion": "Версия bridge"
             },
             "testResult": "Результат теста"
         },

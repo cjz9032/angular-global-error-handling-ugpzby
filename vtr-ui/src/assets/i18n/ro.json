@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Versiune aplicație",
                 "pluginVersion": "Versiune plugin",
-                "experienceVersion": "Versiune experiență",
-                "shellVersion": "Versiune shell",
-                "bridgeVersion": "Versiune bridge"
+                "experienceVersion": "Versiune Experience",
+                "shellVersion": "Versiune Shell",
+                "bridgeVersion": "Versiune Bridge"
             },
             "testResult": "Rezultat test"
         },

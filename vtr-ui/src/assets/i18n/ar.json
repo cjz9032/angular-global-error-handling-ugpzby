@@ -4235,8 +4235,8 @@
         "report": {
             "title": "سجل عمليات تشخيص الأجهزة",
             "modelTitle": "الطراز",
-            "startDate": "‏‫تاريخ ووقت البدء",
-            "endDate": "‏‫تاريخ ووقت الانتهاء",
+            "startDate": "تاريخ ووقت البدء",
+            "endDate": "تاريخ ووقت الانتهاء",
             "model": {
                 "serialNumber": "الرقم التسلسلي",
                 "wiredInterface": "عنوان Mac لشبكة Ethernet السلكية",

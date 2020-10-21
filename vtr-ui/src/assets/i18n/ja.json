@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "アプリケーションのバージョン",
                 "pluginVersion": "プラグインのバージョン",
-                "experienceVersion": "体験版",
-                "shellVersion": "シェルのバージョン",
-                "bridgeVersion": "ブリッジのバージョン"
+                "experienceVersion": "Experience バージョン",
+                "shellVersion": "Shell バージョン",
+                "bridgeVersion": "Bridge バージョン"
             },
             "testResult": "テスト結果"
         },

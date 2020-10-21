@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Verzia aplikácie",
                 "pluginVersion": "Verzia doplnku",
-                "experienceVersion": "Verzia prostredia",
-                "shellVersion": "Verzia prostredia shell",
-                "bridgeVersion": "Verzia mosta"
+                "experienceVersion": "Verzia Experience",
+                "shellVersion": "Verzia Shell",
+                "bridgeVersion": "Verzia Bridge"
             },
             "testResult": "Výsledok testu"
         },

@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Alkalmazás verziója",
                 "pluginVersion": "Beépülő modul verziója",
-                "experienceVersion": "Főverzió",
-                "shellVersion": "Parancshéj verziója",
-                "bridgeVersion": "Híd verziója"
+                "experienceVersion": "Experience verziója",
+                "shellVersion": "Shell verziója",
+                "bridgeVersion": "Bridge verziója"
             },
             "testResult": "Teszteredmény"
         },

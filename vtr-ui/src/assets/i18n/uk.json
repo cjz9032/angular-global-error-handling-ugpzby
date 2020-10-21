@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Версія програми",
                 "pluginVersion": "Версія плагіна",
-                "experienceVersion": "Версія інтерфейсу",
-                "shellVersion": "Версія оболонки",
-                "bridgeVersion": "Версія мосту"
+                "experienceVersion": "Версія Experience",
+                "shellVersion": "Версія Shell",
+                "bridgeVersion": "Версія Bridge"
             },
             "testResult": "Результати тесту"
         },

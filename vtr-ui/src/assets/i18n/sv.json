@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Programversion",
                 "pluginVersion": "Plugin-version",
-                "experienceVersion": "Gränssnittsversion",
-                "shellVersion": "Skalversion",
-                "bridgeVersion": "Bryggversion"
+                "experienceVersion": "Experience-version",
+                "shellVersion": "Shell-version",
+                "bridgeVersion": "Bridge-version"
             },
             "testResult": "Testresultat"
         },

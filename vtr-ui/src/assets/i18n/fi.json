@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "Sovelluksen versio",
                 "pluginVersion": "Laajennusosan versio",
-                "experienceVersion": "Käyttökokemuksen versio",
+                "experienceVersion": "Experience-versio",
                 "shellVersion": "Shell-versio",
-                "bridgeVersion": "Sillan versio"
+                "bridgeVersion": "Bridge-versio"
             },
             "testResult": "Testitulos"
         },

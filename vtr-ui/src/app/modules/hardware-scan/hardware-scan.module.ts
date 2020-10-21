@@ -11,7 +11,7 @@ import { ModalScheduleNewScanComponent } from './components/modal/modal-schedule
 import { ModalPreScanInfoComponent } from './components/modal/modal-pre-scan-info/modal-pre-scan-info.component';
 import { ModalHardwareScanCustomizeComponent } from './components/modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { ModalRecoverConfirmComponent } from './components/modal/modal-recover-confirm/modal-recover-confirm.component';
-import { ModalHardwareScanRbsComponent } from './components/modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component'
+import { ModalHardwareScanRbsComponent } from './components/modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component';
 import { PageHardwareScanComponent } from './pages/page-hardware-scan.component';
 import { HardwareScanHeaderPagesComponent } from './components/header/hardware-scan-header-pages.component';
 import { UiHardwareListComponent } from './components/dashboard/ui-hardware-list/ui-hardware-list.component';

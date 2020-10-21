@@ -4249,7 +4249,7 @@
             "environment": {
                 "applicationVersion": "應用程式版本",
                 "pluginVersion": "外掛程式版本",
-                "experienceVersion": "體驗版",
+                "experienceVersion": "Experience 版本",
                 "shellVersion": "Shell 版本",
                 "bridgeVersion": "Bridge 版本"
             },

@@ -4249,9 +4249,9 @@
             "environment": {
                 "applicationVersion": "גירסת היישום",
                 "pluginVersion": "גירסת התוסף",
-                "experienceVersion": "גרסת ניסיון",
-                "shellVersion": "גרסת מעטפת",
-                "bridgeVersion": "גרסת גשר"
+                "experienceVersion": "גרסת Experience",
+                "shellVersion": "גרסת Shell",
+                "bridgeVersion": "גרסת Bridge"
             },
             "testResult": "תוצאת המבחן"
         },
