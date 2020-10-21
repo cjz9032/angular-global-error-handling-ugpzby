@@ -773,7 +773,9 @@
                 "sub1": "Moje urządzenie",
                 "sub2": "Ustawienia moich urządzeń",
                 "sub3": "Aktualizacja systemu",
-                "sub4": "Inteligentny asystent"
+                "sub4": "Inteligentny asystent",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Ochrona",

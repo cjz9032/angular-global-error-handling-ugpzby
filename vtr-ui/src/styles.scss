@@ -2473,3 +2473,71 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		}
 	}
 }
+
+.letter-spacing-0 {
+	letter-spacing: 0;
+}
+
+.overflow-wrap-normal {
+	overflow-wrap: normal;
+}
+
+.border-radius-0 {
+	border-radius: 0 !important;
+}
+
+.outline-none {
+	outline: none !important;
+}
+
+.line-height-normal {
+	line-height: normal;
+}
+
+.top-0 {
+	top: 0 !important;
+}
+
+.flex-1 {
+	flex: 1 !important;
+}
+
+.max-width-none {
+	max-width: none !important;
+}
+
+.font-weight-600 {
+	font-weight: $weight_600 !important;
+}
+
+.min-width-0 {
+	min-width: 0 !important;
+}
+
+.min-height-0 {
+	min-height: 0 !important;
+}
+
+.menu-item-color {
+	color: $menu_font_color;
+}
+
+.font-size-sm {
+	font-size: $fontsize_sm !important;
+}
+
+.font-size-xs {
+	font-size: $fontsize_xs !important;
+}
+
+.outline-none {
+	outline: none !important;
+}
+
+.p-20 {
+	padding: 2rem;
+}
+
+.high-contrast-color-reversal {
+	@include high-contrast-color-reversal;
+}

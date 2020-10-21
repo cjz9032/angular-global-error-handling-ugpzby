@@ -773,7 +773,9 @@
                 "sub1": "Mon périphérique",
                 "sub2": "Paramètres de mon périphérique",
                 "sub3": "Mise à jour du système",
-                "sub4": "Assistance intelligente"
+                "sub4": "Assistance intelligente",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Sécurité",

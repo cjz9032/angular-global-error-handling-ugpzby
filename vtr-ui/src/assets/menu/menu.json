@@ -196,13 +196,57 @@
 					"path": null,
 					"icon": null,
 					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
+					"metricsParent": "device.navbar",
 					"metricsItem": "link.mydevice",
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
 					"sMode": true,
-					"subitems": []
+					"subitems": [
+						{
+							"id": "device",
+							"label": "common.menu.device.sub5",
+							"path": null,
+							"icon": null,
+							"metricsEvent": "itemClick",
+							"metricsParent": "device.device.navbar",
+							"metricsItem": "link.mydevice",
+							"routerLinkActiveOptions": {
+								"exact": true
+							},
+							"sMode": true,
+							"subitems": []
+						},
+						{
+							"id": "system-updates",
+							"label": "common.menu.device.sub3",
+							"path": "system-updates",
+							"icon": null,
+							"metricsEvent": "itemClick",
+							"metricsParent": "device.device.navbar",
+							"metricsItem": "link.systemupdates",
+							"routerLinkActiveOptions": {
+								"exact": false
+							},
+							"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
+							"subitems": []
+						},
+						{
+							"id": "smart-assist",
+							"label": "common.menu.device.sub4",
+							"path": "smart-assist",
+							"metricsEvent": "itemClick",
+							"metricsParent": "device.device.navbar",
+							"metricsItem": "link.smartassist",
+							"externallink": false,
+							"routerLinkActiveOptions": {
+								"exact": true
+							},
+							"icon": null,
+							"sMode": true,
+							"subitems": []
+						}
+					]
 				},
 				{
 					"id": "device-settings",
@@ -216,36 +260,77 @@
 						"exact": false
 					},
 					"sMode": true,
-					"subitems": []
-				},
-				{
-					"id": "system-updates",
-					"label": "common.menu.device.sub3",
-					"path": "system-updates",
-					"icon": null,
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.systemupdates",
-					"routerLinkActiveOptions": {
-						"exact": false
-					},
-					"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
-					"subitems": []
-				},
-				{
-					"id": "smart-assist",
-					"label": "common.menu.device.sub4",
-					"path": "smart-assist",
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.smartassist",
-					"externallink": false,
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"icon": null,
-					"sMode": true,
-					"subitems": []
+					"subitems": [
+						{
+							"id": "device-settings",
+							"label": "common.menu.device.sub6",
+							"path": null,
+							"icon": null,
+							"metricsEvent": "itemClick",
+							"metricsParent": "device-settings.device.navbar",
+							"metricsItem": "link.mydevicesettings",
+							"routerLinkActiveOptions": {
+								"exact": false
+							},
+							"sMode": true,
+							"subitems": []
+						},{
+							"id": "power",
+							"label": "device.deviceSettings.power.title",
+							"path": "power",
+							"icon": null,
+							"metricsEvent": "itemClick",
+							"metricsParent": "device-settings.device.navbar",
+							"metricsItem": "link.power",
+							"routerLinkActiveOptions": {
+								"exact": false
+							},
+							"sMode": true,
+							"subitems": []
+						},
+						{
+							"id": "audio",
+							"label": "device.deviceSettings.audio.title",
+							"path": "audio",
+							"icon": null,
+							"metricsEvent": "itemClick",
+							"metricsParent": "device-settings.device.navbar",
+							"metricsItem": "link.audio",
+							"routerLinkActiveOptions": {
+								"exact": false
+							},
+							"sMode": true,
+							"subitems": []
+						},
+						{
+							"id": "display-camera",
+							"label": "device.deviceSettings.displayCamera.title",
+							"path": "display-camera",
+							"icon": null,
+							"metricsEvent": "itemClick",
+							"metricsParent": "device-settings.device.navbar",
+							"metricsItem": "link.displaycamera",
+							"routerLinkActiveOptions": {
+								"exact": false
+							},
+							"sMode": true,
+							"subitems": []
+						},
+						{
+							"id": "input-accessories",
+							"label": "device.deviceSettings.inputAccessories.title",
+							"path": "input-accessories",
+							"icon": null,
+							"metricsEvent": "itemClick",
+							"metricsParent": "device-settings.device.navbar",
+							"metricsItem": "link.inputaccessories",
+							"routerLinkActiveOptions": {
+								"exact": false
+							},
+							"sMode": true,
+							"subitems": []
+						}
+					]
 				}
 			]
 		},

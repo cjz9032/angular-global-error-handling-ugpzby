@@ -773,7 +773,9 @@
                 "sub1": "Mijn apparaat",
                 "sub2": "Mijn apparaatinstellingen",
                 "sub3": "Systeemupdate",
-                "sub4": "Slimme hulp"
+                "sub4": "Slimme hulp",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Beveiliging",

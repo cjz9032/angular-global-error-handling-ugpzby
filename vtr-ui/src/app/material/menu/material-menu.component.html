@@ -1,0 +1,343 @@
+<div class="vtr-material-menu">
+	<nav class="navbar navbar-expand-xl pr-0 menu-navbar">
+		<div class="navbar-brand h-100 p-0 border-0 border-radius-0 text-center" id="vantage_image_L" role="img">
+			<img class="d-block w-100 h-100 menu-main-logo"
+				*ngIf="dashboardService.isDashboardDisplayed"
+				[src]="VantageLogo | sanitize : 'resourceUrl'"
+				alt="L"
+				id="menu-main-lnk-db-l-logo"/>
+			<button
+				mat-icon-button
+				vtrMetrics
+				*ngIf="!dashboardService.isDashboardDisplayed && items && items.length>0"
+				class="d-block w-100 h-100 border-0 m-0 menu-main-logo"
+				id="menu-main-lnk-l-logo"
+				aria-label="menu-main-lnk-l-logo"
+				routerLinkActive="link-active"
+				[routerLinkActiveOptions]="items[0].routerLinkActiveOptions"
+				[metricsEvent]="items[0].metricsEvent"
+				[metricsParent]="'NavBar'"
+				[metricsItem]="items[0].metricsItem"
+				routerLink="/dashboard">
+				<img [src]="VantageLogo | sanitize : 'resourceUrl'"
+					alt="L"
+					class="d-block w-100 h-100"/>
+			</button>
+		</div>
+		<div class="navbar-text ml-2 mr-auto clearfix">
+			<span *ngIf="configService.appBrand && configService.appName">
+				<div class="text-uppercase app-title" id="menu-main-text-appBrand" role="text">{{configService.appBrand}}
+					<span role="text"
+						class="app-name" id="menu-main-text-appName" [innerHTML]="configService.appName"></span>
+				</div>
+			</span>
+			<span>
+				<div class="text-left device-type">
+					<span *ngIf="!machineFamilyName">&nbsp;</span>
+					<span role="text"
+						*ngIf="machineFamilyName" id="menu-main-text-machineFamilyName"
+						[innerHTML]="machineFamilyName">
+					</span>
+					<span class="warranty-icon">
+						<vtr-ui-header-warranty *ngIf="machineFamilyName"
+							[pageParent]="'NavBar'">
+						</vtr-ui-header-warranty>
+					</span>
+				</div>
+			</span>
+		</div>
+		<button mat-icon-button
+			[matMenuTriggerFor]="hamburgerDropdownMenu?.matMenu"
+			#menuMainNavbarToggler
+			id="menu-main-btn-navbar-toggler"
+			class="position-relative w-auto h-auto mr-1 py-1 px-3 rounded-0 text-center navbar-toggler line-height-normal"
+			aria-label="menu-main-btn-navbar-toggler"
+			aria-haspopup="true"
+			aria-expanded="false"
+			(click)="toggleMenu($event)"
+			(keydown.enter)="toggleMenu($event)">
+			<span class="h-100 navbar-toggler-icon">
+				<fa-icon class="align-middle" [icon]="['fas', 'bars']"></fa-icon>
+			</span>
+			<span *ngIf="appsForYouService.UnreadMessageCount.totalMessage"
+				class="d-flex position-absolute rounded-circle justify-content-center align-items-center letter-spacing-0 top-0 unread-count-tag"
+				role="text"
+				[innerHTML]="appsForYouService.UnreadMessageCount.totalMessage"></span>
+		</button>
+		<vtr-material-hamburger-menu *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable)"
+			[items]="items"
+			(activeItem)="updateActiveItem($event)"
+			[activeItemId]="activeItemId">
+		</vtr-material-hamburger-menu>
+		<div *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable)"
+			class="h-100 flex-1 menu-container"
+			#menuTarget>
+			<ul class="h-100 ml-auto list-unstyled row justify-content-end">
+				<ng-container *ngFor="let item of items" class="h-100">
+					<li *ngIf="item && !item.hide && (!item.subitems || item.subitems.length === 0) && item.id !== 'user' && item.id !== 'app-search'">
+						<button mat-button
+							*ngIf="item.label | translate"
+							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
+							[ngClass]="{'beta-item':item.beta}"
+							vtrMetrics
+							id="menu-main-nav-lnk-{{item.id}}"
+							attr.new-tip-id="new-tip-{{item.id}}"
+							[metricsEvent]="item.metricsEvent"
+							[metricsParent]="item.metricsParent"
+							[metricsItem]="item.metricsItem"
+							routerLink="/{{item.path}}"
+							routerLinkActive="active"
+							href="javascript:void(0)"
+							(click)="[onMenuItemClick(item), updateActiveItem(item.id)]"
+							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path), updateActiveItem(item.id)]"
+							(mouseover)="closeAllMatMenu()"
+							(focus)="closeAllMatMenu()">
+							{{item.label | translate}}
+							<span *ngIf="item.beta"
+								class="beta">Beta</span>
+						</button>
+					</li>
+					<li *ngIf="item && !item.hide && item.subitems && item.subitems.length > 0 && item.id !== 'user' && item.id !== 'app-search'">
+						<button mat-button
+							#menuTrigger="matMenuTrigger"
+							[matMenuTriggerFor]="materialMenuDropdown?.matMenu"
+							*ngIf="item.label | translate"
+							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
+							[ngClass]="{'beta-item':item.beta}"
+							role="menu"
+							vtrMetrics
+							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
+							attr.aria-label="{{item.id}}"
+							attr.new-tip-id="new-tip-{{item.id}}"
+							aria-haspopup="true"
+							aria-expanded="false"
+							[metricsEvent]="item.metricsEvent"
+							[metricsParent]="item.metricsParent"
+							[metricsItem]="item.metricsItem"
+							routerLink="/{{item.path}}"
+							routerLinkActive="active"
+							href="javascript:void(0)"
+							(click)="[onMenuItemClick(item), updateActiveItem(item.id)]"
+							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path), updateActiveItem(item.id)]"
+							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
+							(focus)="[closeAllOtherMatMenu(menuTrigger), openMatMenu(menuTrigger)]"
+							[innerHTML]="item.label | translate">
+						</button>
+						<vtr-material-menu-dropdown
+							#materialMenuDropdown
+							[dropdownMenu]="item"
+							[parentPath]="item.path"
+							[parentId]="item.id"
+							[activeItemId]="activeItemId"
+							(activeItem)="updateActiveItem($event)"
+							class="d-inline-block align-top">
+						</vtr-material-menu-dropdown>
+					</li>
+					<li class="user-item" *ngIf="item && !item.hide && item.id === 'user' && languageService.isLanguageLoaded">
+						<button mat-button
+							#menuTrigger="matMenuTrigger"
+							[matMenuTriggerFor]="userMenuMain"
+							class="h-100 d-flex align-items-center m-0 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
+							id="navbarDropdown"
+							attr.aria-label="navbarDropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+							role="menu"
+							href="javascript:void(0)"
+							(click)="onMenuItemClick(item)"
+							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
+							(focus)="[closeAllOtherMatMenu(menuTrigger), openMatMenu(menuTrigger)]">
+							<div class="d-inline-block text-center user-initials"
+								[innerHTML]="deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials">
+							</div>
+							<span class="d-flex position-absolute rounded-circle justify-content-center align-items-center letter-spacing-0 unread-count-tag"
+								role="text"
+								id="menu-main-unread-message-count"
+								*ngIf="!deviceService.isArm && appsForYouService.UnreadMessageCount.totalMessage"
+								[innerHTML]="appsForYouService.UnreadMessageCount.totalMessage"></span>
+						</button>
+						<mat-menu #userMenuMain="matMenu"
+							[hasBackdrop]="false"
+							id="navbarDropdownMenu"
+							class="mt-0 overflow-wrap-normal max-width-none min-height-0 menu-dropdown-container user-menu-dropdown-container {{item.id}}"
+							aria-labelledby="navbarDropdown"
+							xPosition="before">
+							<div class="mt-0 border-radius-0 px-4 user-text"
+								role="text"
+								id="menu-main-text-hello-user"
+								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
+								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
+							</div>
+							<button mat-menu-item
+								*ngIf="appsForYouService.showLmaMenu()"
+								id="menu-main-lnk-open-lma"
+								class="position-relative mt-0 border-radius-0 user-menu-item link-lma"
+								[ngClass]="{'active': activeItemId === 'lma'}"
+								attr.aria-label="menu-main-lnk-open-lma"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoMigrationAssistantButton"
+								[routerLink]="['/apps-for-you/'+ appsForYouEnum.AppGuidLenovoMigrationAssistant]"
+								href="javascript:void(0)"
+								(click)="[onMenuItemClick(item, $event), updateActiveItem('lma')]"
+								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant), updateActiveItem('lma')]"
+								href="javascript:void(0)">
+								<span class="user-menu-item-text"
+									[innerHTML]="'appsForYou.menuText.lenovoMigrationAssistant' | translate">
+								</span>
+								<span class="position-absolute rounded-circle unread-tag"
+									role="text"
+									id="menu-main-lma-unread-tag"
+									attr.aria-label="LMA Unread Tag"
+									*ngIf="!appsForYouService.UnreadMessageCount.lmaMenuClicked"></span>
+							</button>
+							<button mat-menu-item
+								*ngIf="appsForYouService.showAdobeMenu()"
+								id="menu-main-lnk-open-adobe"
+								class="position-relative mt-0 border-radius-0 user-menu-item link-adobe"
+								[ngClass]="{'active': activeItemId === 'adobe'}"
+								attr.aria-label="menu-main-lnk-open-adobe"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="AdobecRedemptionButton"
+								[routerLink]="['/apps-for-you/'+ appsForYouEnum.AppGuidAdobeCreativeCloud]"
+								href="javascript:void(0)"
+								(click)="[onMenuItemClick(item, $event), updateActiveItem('adobe')]"
+								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud), updateActiveItem('adobe')]"
+								href="javascript:void(0)">
+								<span class="user-menu-item-text"
+									[innerHTML]="'appsForYou.menuText.adobeRedemption' | translate">
+								</span>
+								<span class="position-absolute rounded-circle unread-tag"
+									role="text"
+									id="menu-main-adobe-unread-tag"
+									attr.aria-label="Adobe Unread Tag"
+									*ngIf="!appsForYouService.UnreadMessageCount.adobeMenuClicked"></span>
+							</button>
+							<button mat-menu-item
+								*ngIf="commonService.isOnline && appsForYouService.showDccMenu()"
+								id="menu-main-lnk-open-dcc"
+								class="position-relative mt-0 border-radius-0 user-menu-item link-dcc"
+								attr.aria-label="menu-main-lnk-open-dcc"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="DccRedemptionButton"
+								(click)="onMenuItemClick(item, $event)"
+								href="javascript:void(0)">
+								<span class="user-menu-item-text"
+									[innerHTML]="'dcc.menuText.lenovoDigitalOffer' | translate">
+								</span>
+								<span class="position-absolute rounded-circle unread-tag"
+									role="text"
+									id="menu-main-dcc-unread-tag"
+									attr.aria-label="DCC Unread Tag"
+									*ngIf="!appsForYouService.UnreadMessageCount.dccMenuClicked"></span>
+							</button>
+							<button mat-menu-item
+								*ngIf="commonService.isOnline && !deviceService.isSMode && modernPreloadService.IsEntitled"
+								id="menu-main-lnk-open-modern-preload"
+								class="mt-0 border-radius-0 user-menu-item"
+								vtrMetrics
+								attr.aria-label="menu-main-lnk-open-modern-preload"
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="ModernPreloadButton"
+								href="javascript:void(0)"
+								(click)="openModernPreloadModal()">
+								<span class="user-menu-item-text"
+									[innerHTML]="'modernPreload.title' | translate">
+								</span>
+							</button>
+							<button mat-menu-item
+								id="menu-main-lnk-open-preference"
+								class="mt-0 border-radius-0 user-menu-item"
+								[ngClass]="{'active': activeItemId === 'preference'}"
+								attr.aria-label="menu-main-lnk-open-preference"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="SettingsButton"
+								href="javascript:void(0)"
+								routerLink="settings"
+								(click)="[onMenuItemClick(item), updateActiveItem('preference')]"
+								(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown('settings'), updateActiveItem('preference')]">
+								<span class="user-menu-item-text"
+									[innerHTML]="'settings.preferenceSettings' | translate">
+								</span>
+							</button>
+							<button mat-menu-item
+								*ngIf="commonService.isOnline"
+								id="menu-main-lnk-open-feedback"
+								class="mt-0 border-radius-0 user-menu-item"
+								attr.aria-label="menu-main-lnk-open-feedback"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="GiveFeedbackButton"
+								href="javascript:void(0)"
+								(click)="openFeedbackModal()">
+								<span class="user-menu-item-text"
+									[innerHTML]="'dashboard.feedback.title' | translate">
+								</span>
+							</button>
+							<button mat-menu-item
+								*ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
+								id="menu-main-lnk-open-lenovoid-login"
+								class="mt-0 border-radius-0 user-menu-item"
+								attr.aria-label="menu-main-lnk-open-lenovoid-login"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoIdSignInButton"
+								href="javascript:void(0)"
+								(click)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">
+								<span class="user-menu-item-text"
+									[innerHTML]="'lenovoId.login' | translate">
+								</span>
+							</button>
+							<button mat-menu-item
+								*ngIf="!deviceService.isArm && !userService.auth && userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
+								id="menu-main-lnk-open-lenovoid-unlock"
+								class="mt-0 border-radius-0 user-menu-item"
+								attr.aria-label="menu-main-lnk-open-lenovoid-unlock"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoIdStarterIdButton"
+								href="javascript:void(0)"
+								(click)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">
+								<span class="user-menu-item-text"
+									[innerHTML]="'lenovoId.unlockExclusives' | translate">
+								</span>
+							</button>
+							<button mat-menu-item
+								*ngIf="!deviceService.isArm && userService.auth && commonService.isOnline && userService.isLenovoIdSupported()"
+								id="menu-main-lnk-user-logout"
+								class="mt-0 border-radius-0 user-menu-item"
+								attr.aria-label="menu-main-lnk-user-logout"
+								vtrMetrics
+								[metricsEvent]="item.metricsEvent"
+								[metricsParent]="item.metricsParent"
+								metricsItem="LenovoIdSignOutButton"
+								href="javascript:void(0)"
+								(click)="[onLogout(), onMenuItemClick(item)]"
+								[class.disabled]="isLoggingOut">
+								<span class="user-menu-item-text"
+									[innerHTML]="isLoggingOut ? ('lenovoId.loggingOut' | translate) : ('lenovoId.logout' | translate)">
+								</span>
+							</button>
+						</mat-menu>
+					</li>
+				</ng-container>
+				<div class="d-none">
+					<img *ngFor="let i of preloadImages"
+						[src]="i"
+						alt="">
+				</div>
+			</ul>
+		</div>
+	</nav>
+</div>
