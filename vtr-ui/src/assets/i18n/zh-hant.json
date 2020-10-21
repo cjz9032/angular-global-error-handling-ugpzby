@@ -4277,6 +4277,12 @@
             "scanAgainButtonText": "再掃描一次",
             "supportButtonText": "Lenovo 支援中心"
         },
+        "exportLogModal": {
+            "exportSuccessDescription": "The log was exported successfully and can be found at:",
+            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
+            "exportFailDescription": "A problem was found during log export. Please try it again later.",
+            "openSettingsButton": "Open Windows Settings"
+        },
         "executingScanTitle": "正在掃描 {{title}}",
         "showDetails": "檢視詳細資料",
         "hideDetails": "隱藏詳細資料",
