@@ -2559,3 +2559,11 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		text-transform: uppercase;
 	}
 }
+.expirePromptDialogBackdrop {
+	top: 9rem;
+	background: rgba(0, 0, 0, 0.32);
+}
+
+.cdk-overlay-container {
+	z-index: 99;
+}

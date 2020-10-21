@@ -3465,7 +3465,7 @@
 			},
 			"expirePromptModal": {
 				"title": "Sign in to Lenovo ID",
-				"describe": "To continue using Lenovo Wifi security, please sign in with your Lenovo ID or register for a free account.",
+				"description": "To continue using Lenovo Wifi security, please sign in with your Lenovo ID or register for a free account.",
 				"trialWillExpire": "Your Wifi security trial will expire in:",
 				"days": "days",
 				"hasExpired": "Your Lenovo Wifi security trial has expired. Please sign in with your Lenovo ID or register for a free account.",

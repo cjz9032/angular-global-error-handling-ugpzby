@@ -3,15 +3,7 @@ import {
 	Inject,
 } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@lenovo/material/dialog';
-
-interface DialogData {
-	title: string;
-	subtitle: string;
-	description: string;
-	buttonName: string;
-	linkButtonName: string;
-	showCloseButton: boolean;
-}
+import { DialogData } from './material-dialog.interface';
 
 @Component({
 	selector: 'material-dialog',
