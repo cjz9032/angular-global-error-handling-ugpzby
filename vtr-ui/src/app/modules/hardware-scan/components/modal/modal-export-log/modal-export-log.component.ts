@@ -8,7 +8,7 @@ import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../..
 	styleUrls: ['./modal-export-log.component.scss']
 })
 export class ModalExportLogComponent implements OnInit, OnDestroy {
-	@Input() logFile = '';
+	@Input() logPath = '';
 
 	constructor(public activeModal: NgbActiveModal) { }
 

@@ -763,14 +763,16 @@ export class ExportResultsService {
 		});
 	}
 
-	private openExportLogComponentsModal(logPath: string = '') {
+	private openExportLogComponentsModal(logFile) {
 		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
 			size: 'lg',
 			centered: true,
 			windowClass: 'hardware-scan-modal-size'
 		});
 
-		( modal.componentInstance as ModalExportLogComponent).logFile = logPath;
+		if (logFile) {
+			( modal.componentInstance as ModalExportLogComponent).logPath = logFile.path;
+		}
 
 		return modal;
 	}

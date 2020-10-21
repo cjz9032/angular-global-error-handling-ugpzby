@@ -1,15 +1,15 @@
 <div class="modal-body">
 	<h1 id="hwscan-export-log-modal-title" class="title" role="heading">{{ 'hardwareScan.exportLog' | translate }}</h1>
 
-	<div *ngIf="logFile; else withoutLogFile">
+	<div *ngIf="logPath; else withoutLogFile">
 		<p id="hwscan-export-log-modal-description" class="description" role="text">
-			The Log was exported successfully and can be found at: {{logFile}}
+			{{ 'hardwareScan.exportLogModal.exportSuccessDescription' | translate }} {{logPath}}
 		</p>
 	</div>
 
 	<ng-template #withoutLogFile>
 		<p id="hwscan-export-log-modal-description" class="description" role="text">
-			A problem was found during Log export. Please try it again later.
+			{{ 'hardwareScan.exportLogModal.exportFailDescription' | translate }}
 		</p>
 	</ng-template>
 
