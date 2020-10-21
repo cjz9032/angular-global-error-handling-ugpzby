@@ -20,6 +20,7 @@ import { HardwareScanService } from '../../modules/hardware-scan/services/hardwa
 import { ConfigService } from '../config/config.service';
 import { SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum';
 import { DeviceCondition, DeviceStatus } from 'src/app/data-models/widgets/status.model';
+import { DashboardStateCardData } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
 
 interface IContentGroup {
 	positionA: any[];
@@ -64,49 +65,54 @@ export class DashboardService {
 
 	welcomeText = '';
 
-	positionBLoadingData = {
+	positionBLoadingData: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.detecting',
 		linkText: 'device.myDevice.title',
 		linkPath: 'device',
 		state: SystemState.Loading,
-		stateText: ''
+		metricsItem: 'loading',
+		statusText: ''
 	};
 
-	goodConditionData = {
+	goodConditionData: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.goodCondition',
 		linkText: 'device.myDevice.title',
 		linkPath: 'device',
 		state: SystemState.GoodCondition,
-		stateText: 'device.myDevice.goodCondition'
+		metricsItem: 'good condition',
+		statusText: 'device.myDevice.goodCondition'
 	};
 
-	needMaintainSU = {
+	needMaintainSU: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
 		linkText: 'common.ui.improveNow',
 		linkPath: 'device/system-updates',
 		state: SystemState.NeedMaintenance,
-		stateText: 'device.myDevice.needAction'
+		metricsItem: 'need action',
+		statusText: 'device.myDevice.needAction'
 	};
 
-	needMaintainHWS = {
+	needMaintainHWS: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
 		linkText: 'common.ui.improveNow',
 		linkPath: 'hardware-scan',
 		state: SystemState.NeedMaintenance,
-		stateText: 'device.myDevice.needAction'
+		metricsItem: 'need action',
+		statusText: 'device.myDevice.needAction'
 	};
 
-	needMaintainSP = {
+	needMaintainSP: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
 		linkText: 'common.ui.improveNow',
 		linkPath: 'support/smart-performance',
 		state: SystemState.NeedMaintenance,
-		stateText: 'device.myDevice.needAction'
+		metricsItem: 'need action',
+		statusText: 'device.myDevice.needAction'
 	};
 
 	positionBResponseReceived: boolean;
