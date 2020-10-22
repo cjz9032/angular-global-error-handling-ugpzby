@@ -17,6 +17,8 @@ import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { MetricService } from 'src/app/services/metric/metrics.service';
+import { FeatureClick } from 'src/app/services/metric/metrics.model';
 
 @Component({
 	selector: 'vtr-widget-device',
@@ -54,7 +56,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private configService: ConfigService,
 		private hwScanService: HardwareScanService,
 		private router: Router,
-		private shellService: VantageShellService
+		private shellService: VantageShellService,
+		private metric: MetricService
 	) {
 		this.myDevice = new MyDevice();
 		this.sysinfo =  this.shellService.getSysinfo();
@@ -98,6 +101,11 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	}
 
 	public onMaintanceClicked(){
+		if (this.deviceStatus !== DeviceCondition.Loading && this.deviceStatus !== DeviceCondition.Good){
+			const metricData = new FeatureClick(`Device-Overall-Status-${this.deviceStatus}`, 'Device.MyDevice');
+			this.metric.sendMetrics(metricData);
+		}
+
 		switch (this.deviceStatus){
 			case DeviceCondition.NeedRunHWScan:
 				this.router.navigate(['hardware-scan']);
