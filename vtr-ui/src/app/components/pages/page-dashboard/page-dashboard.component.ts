@@ -173,12 +173,14 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.loadingDesc',
 			linkText: 'common.menu.security.sub1',
+			metricsItem: 'loading',
 			linkPath: 'security'
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.noProtectionDesc',
 			linkText: 'common.ui.improveNow',
 			linkPath: 'security/anti-virus',
+			metricsItem: 'no protection',
 			statusText: 'security.landing.noProtection'
 		}, {
 			title: 'common.securityAdvisor.title',
@@ -186,6 +188,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			linkText: 'common.ui.improveNow',
 			linkPath: 'security',
 			params: 'basic',
+			metricsItem: 'basic',
 			statusText: 'security.landing.basic'
 		}, {
 			title: 'common.securityAdvisor.title',
@@ -193,6 +196,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			linkText: 'common.menu.security.sub1',
 			linkPath: 'security',
 			params: 'intermediate',
+			metricsItem: 'intermediate',
 			statusText: 'security.landing.intermediate'
 		}, {
 			title: 'common.securityAdvisor.title',
@@ -200,6 +204,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			linkText: 'common.menu.security.sub1',
 			linkPath: 'security',
 			params: 'advanced',
+			metricsItem: 'advanced',
 			statusText: 'security.landing.advanced'
 		}
 	];
@@ -224,13 +229,14 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private securityAdvisor: SecurityAdvisor;
 	private getSecurityInfoTimeout: ReturnType<typeof setTimeout>;
 
-	positionBData = {
+	positionBData: DashboardStateCardData = {
 		title: 'System Information',
 		summary: 'Your device is in good condition',
 		linkText: 'My Device',
 		linkPath: 'device',
 		state: 1,
-		stateText: 'GOOD CONDITION'
+		metricsItem: 'good condition',
+		statusText: 'GOOD CONDITION'
 	};
 
 	securityAdvisorHandler = () => {

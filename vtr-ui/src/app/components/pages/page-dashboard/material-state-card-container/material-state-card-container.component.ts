@@ -7,6 +7,8 @@ export type DashboardStateCardData = {
 	linkText?: string;
 	statusText?: string;
 	params?: string;
+	state?: number;
+	metricsItem?: string;
 };
 
 @Component({
