@@ -186,9 +186,9 @@
 													{{ "welcometutorial.subtitle1" | translate }}
 												</h4>
 											</div>
-											<div class="row mb-2 d-flex"
+											<div class="row mb-2 d-flex max-width-50"
 												[ngClass]="{'radio-is-selected' : usageType !== null && usageType !== segmentConst.Gaming }">
-												<div class="mb-3 mr-5"
+												<div class="device-image-container"
 													*ngFor="let usage of allUsageTypes">
 													<div class="device-image mx-auto">
 														<input type="radio"
@@ -200,7 +200,7 @@
 															[value]="usage.value"
 															(click)="saveUsageType(usage.value)"
 															name="settings-segment-choose" />
-														<img src="assets/images/welcome/{{usage.image}}"
+														<img src="{{usage.image}}"
 															alt="" />
 														<label for="settings-segment-choose-{{usage.id}}"
 															class="centered"

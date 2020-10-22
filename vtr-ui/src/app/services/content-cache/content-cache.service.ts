@@ -240,7 +240,10 @@ export class ContentCacheService {
 			const welcomeTextContent = this.cmsService.getOneCMSContent(cmsContents, 'top-title-welcome-text', 'welcome-text')[0];
 			if (welcomeTextContent && welcomeTextContent.Title) {
 				const localInfo = await this.getLocalInfo();
-				if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
+				if ([SegmentConst.Consumer,
+					SegmentConst.ConsumerGaming,
+					SegmentConst.ConsumerEducation,
+					SegmentConst.SMB].includes(localInfo.Segment)) {
 					cacheValueOfContents['welcome-text'] = new Array(welcomeTextContent);
 				}
 			}

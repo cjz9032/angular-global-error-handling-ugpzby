@@ -15,6 +15,8 @@ export class SelfSelectConfig {
 
 export enum SegmentConst {
 	Consumer = 'Consumer',
+	ConsumerGaming = 'Consumer_Gaming',
+	ConsumerEducation = 'Consumer_Education',
 	SMB = 'SMB',
 	Commercial = 'Commercial',
 	Gaming = 'Gaming'
@@ -36,11 +38,19 @@ export class SelfSelectService {
 		{ label: 'music', checked: false },
 		{ label: 'science', checked: false },
 	];
-	public usageType = null;
+	public usageType = null; // for User Profile UI to show selected segment
 	public checkedArray: string[] = [];
 	public userProfileEnabled = true;
+	public userSelectedInFre = false;
 
-	private _savedSegment = null;
+	private frePersona = null;
+	private frePersonaToSegmentMap = {
+		personal: SegmentConst.Consumer,
+		gaming: SegmentConst.ConsumerGaming,
+		education: SegmentConst.ConsumerEducation,
+		work: SegmentConst.SMB
+	};
+	private _savedSegment = null; // for feature filter use
 	private get savedSegment() {
 		return this._savedSegment;
 	}
@@ -55,14 +65,7 @@ export class SelfSelectService {
 	private selfSelect: any;
 	private vantageStub: any;
 	private machineInfo: any;
-	private DefaultSelectSegmentMap = [
-		{ brand: 'think', familyPattern: { pattern: /thinkpad e/i, result: false }, defaultSegment: SegmentConst.Commercial },
-		{ brand: 'think', familyPattern: { pattern: /thinkpad e/i, result: true }, defaultSegment: SegmentConst.SMB },
-		{ brand: 'lenovo', familyPattern: { pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: false }, defaultSegment: SegmentConst.Consumer },
-		{ brand: 'lenovo', familyPattern: { pattern: /thinkbook|lenovo V|lenovoV|lenovo_V|lenovo-V/i, result: true }, defaultSegment: SegmentConst.SMB },
-		{ brand: 'idea', familyPattern: { pattern: /^V|thinkbook|ideapad v/i, result: false }, defaultSegment: SegmentConst.Consumer },
-		{ brand: 'idea', familyPattern: { pattern: /^V|thinkbook|ideapad v/i, result: true }, defaultSegment: SegmentConst.SMB },
-	];
+	private segmentSelected: boolean; // Only for UI to show default segment
 
 	constructor(
 		private vantageShellService: VantageShellService,
@@ -76,6 +79,11 @@ export class SelfSelectService {
 		this.initialize();
 	}
 
+	/**
+	 * This function is exposed to get current segment for feature filter
+	 * The possible values of response are:
+	 * Consumer, SMB, Commercial, Gaming
+	 */
 	public async getSegment() {
 		if (!this.savedSegment) {
 			await this.initialize();
@@ -83,18 +91,30 @@ export class SelfSelectService {
 		return this.savedSegment;
 	}
 
+	/**
+	 * This function is exposed for User Profile UI in Preference Settings page and welcome tutorial page
+	 * It will response the profile config for UI to show
+	 */
 	public async getConfig() {
-		if (!this.usageType) {
+		if (!this.savedSegment) {
 			await this.initialize();
 		}
 		const config = { usageType: this.usageType, interests: this.interests };
 		return config;
 	}
 
+	/**
+	 * This function is exposed for UI to save User Profile Config
+	 * @param changedConfig Updated config from UI
+	 * @param reloadRequired A flag to reload vantage when segment change
+	 */
 	public saveConfig(changedConfig, reloadRequired?) {
 		try {
+			const reloadNecessary = reloadRequired === true && this.savedSegment !== changedConfig.usageType;
 			this.interests = this.commonService.cloneObj(changedConfig.interests);
 			this.usageType = changedConfig.usageType;
+			this.savedSegment = this.usageType;
+
 			this.interests.forEach((item) => {
 				if (item && item.checked && !this.checkedArray.includes(item.label)) {
 					this.checkedArray.push(item.label);
@@ -107,19 +127,21 @@ export class SelfSelectService {
 				customtags: this.checkedArray.join(','),
 				segment: this.usageType
 			};
-			const reloadNecessary = reloadRequired === true && this.savedSegment !== this.usageType;
-			this.savedSegment = this.usageType;
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig, config);
 			this.syncConfigToService(config);
 			if (reloadNecessary) {
-				if (this.vantageStub && typeof this.vantageStub.refresh === 'function') {
-					this.vantageStub.refresh();
-				} else {
-					window.open(window.location.origin, '_self');
-				}
+				this.reloadVantage();
 			}
 		} catch (error) {
 			this.logger.error('saveConfig failed for error: ', JSON.stringify(error));
+		}
+	}
+
+	private reloadVantage() {
+		if (this.vantageStub && typeof this.vantageStub.refresh === 'function') {
+			this.vantageStub.refresh();
+		} else {
+			window.open(window.location.origin, '_self');
 		}
 	}
 
@@ -130,14 +152,32 @@ export class SelfSelectService {
 		if (!config
 			|| !config.segment
 			|| !this.isSegmentMatchCurrentMachine(config.segment, this.machineInfo)) {
-			const defaultSegment = this.calcDefaultSegment(this.machineInfo);
+			let defaultSegment = this.calcDefaultSegment(this.machineInfo);
 			config = {
 				customtags: '',
 				segment: defaultSegment
 			};
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig, config);
+			const freSegment = await this.getPersonaFromLenovoWelcome();
+			if (defaultSegment !== SegmentConst.Gaming
+				&& freSegment) {
+				this.userSelectedInFre = true;
+				config.segment = freSegment;
+				config.segmentSelectedInFre = this.userSelectedInFre;
+			}
+			if (defaultSegment === SegmentConst.Gaming
+				|| this.userSelectedInFre) {
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig, config);
+				this.segmentSelected = true;
+			} else {
+				this.localCacheService.removeLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig);
+			}
+		} else {
+			this.segmentSelected = true;
+			if (config.segmentSelectedInFre === true) {
+				this.userSelectedInFre = true;
+			}
 		}
-		this.setSegmentAndInterest(config);
+		this.initSegmentAndInterest(config);
 		this.syncConfigToService(config);
 	}
 
@@ -154,9 +194,9 @@ export class SelfSelectService {
 		return result;
 	}
 
-	private setSegmentAndInterest(config) {
-		this.usageType = config.segment;
-		this.savedSegment = this.usageType;
+	private initSegmentAndInterest(config) {
+		this.savedSegment = config.segment;
+		this.usageType = this.segmentSelected ? this.savedSegment : '';
 		if (config && config.customtags) {
 			const checkedTags = config.customtags;
 			this.checkedArray = checkedTags.split(',');
@@ -189,17 +229,6 @@ export class SelfSelectService {
 			} else if (this.isArm(machineInfo)) {
 				this.userProfileEnabled = false;
 				segment = SegmentConst.Consumer;
-			} else {
-				const brand = machineInfo.brand;
-				const family = machineInfo.family;
-				for (let i = 0; i < this.DefaultSelectSegmentMap.length; i++) {
-					const rule = this.DefaultSelectSegmentMap[i];
-					if (brand && brand.toLowerCase() === rule.brand
-						&& family && this.IsMatch(rule.familyPattern.pattern, family) === rule.familyPattern.result) {
-						segment = rule.defaultSegment;
-						break;
-					}
-				}
 			}
 			return segment;
 		} catch (e) {
@@ -208,11 +237,27 @@ export class SelfSelectService {
 		}
 	}
 
-	public IsMatch(pattern, source) {
-		let result = false;
-		const matchedResult = source.match(pattern);
-		result = matchedResult !== null;
-		return result;
+	public getPersonaFromLenovoWelcome() {
+		if (this.frePersona !== null) {
+			return Promise.resolve(this.frePersona);
+		}
+		if (this.selfSelect.getLenovoWelcomePersona) {
+			return this.selfSelect.getLenovoWelcomePersona().then((persona) => {
+				this.logger.info('getLenovoWelcomePersona result: ', persona);
+				if (persona) {
+					this.frePersona = this.frePersonaToSegmentMap[persona];
+				} else {
+					this.frePersona = '';
+				}
+				return this.frePersona;
+			}).catch((error) => {
+				this.logger.error('getLenovoWelcomePersona error: ', error.message);
+				this.frePersona = '';
+				return this.frePersona;
+			});
+		}
+		this.frePersona = '';
+		return Promise.resolve(this.frePersona);
 	}
 }
 

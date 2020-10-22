@@ -316,8 +316,7 @@ export class AppsForYouService {
 	// Wether or not to show 'adobe redemption' in user drop down menu
 	public showAdobeMenu() {
 		if (!this.deviceService.isArm && this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
-			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 && this.localInfo.GEO.indexOf('cn') === -1 &&
-			(this.localInfo.Segment !== SegmentConst.SMB || this.localInfo.Segment !== SegmentConst.Consumer)) {
+			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 && this.localInfo.GEO.indexOf('cn') === -1) {
 			return true;
 		} else {
 			return false;

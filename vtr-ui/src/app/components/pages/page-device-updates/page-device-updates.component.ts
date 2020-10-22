@@ -306,7 +306,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			const segmentValue = await this.selfSelectService.getSegment();
 			const currentPage = this.antiVirusService.GetAntivirusStatus().currentPage;
 			if (settingValue
-				&& segmentValue === SegmentConst.Consumer
+				&& ([SegmentConst.Consumer, SegmentConst.ConsumerGaming, SegmentConst.ConsumerEducation].includes(segmentValue))
 				&& currentPage !== 'mcafee') {
 				this.translate.stream('systemUpdates.security.title').subscribe((title) => {
 					this.securityWidgetCard = {

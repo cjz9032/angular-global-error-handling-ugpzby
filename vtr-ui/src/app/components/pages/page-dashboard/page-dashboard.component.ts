@@ -344,9 +344,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private getUsageType() {
-		this.selfselectService.getConfig().then((re) => {
-			const usageType = re.usageType;
-			this.hideTitle = (usageType === SegmentConst.Commercial || usageType === SegmentConst.SMB);
+		this.selfselectService.getSegment().then((segment) => {
+			this.hideTitle = (segment === SegmentConst.Commercial || segment === SegmentConst.SMB);
 		});
 	}
 
@@ -477,7 +476,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private setWelcomeTextTitle(welcomeTextContent: any) {
 		if (welcomeTextContent && welcomeTextContent.Title) {
 			this.localInfoService.getLocalInfo().then(async (localInfo: any) => {
-				if ([SegmentConst.Consumer, SegmentConst.SMB].includes(localInfo.Segment)) {
+				if ([SegmentConst.Consumer,
+					SegmentConst.ConsumerEducation,
+					SegmentConst.ConsumerGaming,
+					SegmentConst.SMB].includes(localInfo.Segment)) {
 					const titles = map(welcomeTextContent.Title.split('|||'), trim);
 					if (!this.dashboardService.welcomeText) {
 						this.dashboardService.welcomeText = sample(titles);

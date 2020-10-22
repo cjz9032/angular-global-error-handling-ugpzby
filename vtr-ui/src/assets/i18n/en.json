@@ -973,7 +973,7 @@
 			"basicDesc": "Your device is not fully protected yet",
 			"intermediateDesc": "Your computer has intermediate security protection enabled",
 			"advancedDesc": "Your computer has advanced security protection enabled"
-		},	
+		},
 		"heroBanner": "Hero banner",
 		"positionB":{
 			"cardTitle":"System Information",
@@ -981,7 +981,7 @@
 				"detecting": "Detecting system information now...",
 				"goodCondition": "Your device is in good condition",
 				"maintenanceNeeded": "Your device needs some maintenance"
-			}			
+			}
 		}
 	},
 	"device": {
@@ -3829,6 +3829,13 @@
 			"politics": "Politics",
 			"music": "Music",
 			"science": "Science"
+		},
+		"segments": {
+			"consumer": "Personal",
+			"smb": "Work",
+			"consumerGaming": "Gaming",
+			"consumerEducation": "Education",
+			"commercial":"Enterprise"
 		},
 		"gaming": {
 			"gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",
