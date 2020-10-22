@@ -45,7 +45,7 @@
 			</button>
 		</ng-container>
 	</section>
-	<section *ngIf="hasSecondaryMenu && dropdownMenu.id!=='user'" class="d-flex secondary-menu-container">
+	<section *ngIf="hasSecondaryMenu && dropdownMenu.id!=='user'" class="d-flex p-3 secondary-menu-container">
 		<section *ngFor="let subitem of dropdownMenu.subitems; let i=index"
 			class="d-inline-block column-container">
 			<button mat-menu-item
