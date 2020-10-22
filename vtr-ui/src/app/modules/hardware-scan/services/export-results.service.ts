@@ -728,32 +728,33 @@ export class ExportResultsService {
 		this.openExportLogComponentsModal(ExportLogErrorStatus.SuccessExport, logFile.path);
 	}
 
-	public exportRbsResults() {
-		return new Promise(async (resolve, reject) => {
-			try {
-				const reportFileName = 'RecoverBadSectorsLog';
-				const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
-				const dataPrepared = await this.prepareDataFromRecoverBadSectors(rbsResultItems);
-				const htmlData = await this.generateReport(dataPrepared);
-				this.exportReportToFile(reportFileName, htmlData);
-				resolve();
-			} catch (error) {
-				this.logger.error('Could not get rbs log', error);
-				reject();
-			}
-		});
+	public async exportRbsResults() {
+		if (await this.validateDocumentsLibrary()){
+			return new Promise(async (resolve, reject) => {
+				try {
+					const reportFileName = 'RecoverBadSectorsLog';
+					const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
+					const dataPrepared = await this.prepareDataFromRecoverBadSectors(rbsResultItems);
+					const htmlData = await this.generateReport(dataPrepared);
+					await this.exportReportToFile(reportFileName, htmlData);
+					resolve();
+				} catch (error) {
+					this.logger.error('Could not get rbs log', error);
+					reject();
+				}
+			});
+		}
 	}
 
 	public async exportScanResults() {
 		if (await this.validateDocumentsLibrary()){
-
 			return new Promise(async (resolve, reject) => {
 				try {
 					const reportFileName = 'HardwareScanLog';
 					const scanLogData = await this.scanLogService.getScanLog();
 					const dataPrepared = await this.prepareDataFromScanLog(scanLogData);
 					const htmlData = await this.generateReport(dataPrepared);
-					this.exportReportToFile(reportFileName, htmlData);
+					await this.exportReportToFile(reportFileName, htmlData);
 					resolve();
 				} catch (error) {
 					this.logger.error('Could not get scan log', error);
