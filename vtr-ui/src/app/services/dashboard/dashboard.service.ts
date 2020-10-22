@@ -81,7 +81,7 @@ export class DashboardService {
 		linkText: 'device.myDevice.title',
 		linkPath: 'device',
 		state: SystemState.GoodCondition,
-		metricsItem: 'good condition',
+		metricsItem: 'good-condition',
 		statusText: 'device.myDevice.goodCondition'
 	};
 
@@ -91,7 +91,7 @@ export class DashboardService {
 		linkText: 'common.ui.improveNow',
 		linkPath: 'device/system-updates',
 		state: SystemState.NeedMaintenance,
-		metricsItem: 'need action',
+		metricsItem: 'need-maintenance',
 		statusText: 'device.myDevice.needAction'
 	};
 
@@ -101,7 +101,7 @@ export class DashboardService {
 		linkText: 'common.ui.improveNow',
 		linkPath: 'hardware-scan',
 		state: SystemState.NeedMaintenance,
-		metricsItem: 'need action',
+		metricsItem: 'need-maintenance',
 		statusText: 'device.myDevice.needAction'
 	};
 
@@ -111,7 +111,7 @@ export class DashboardService {
 		linkText: 'common.ui.improveNow',
 		linkPath: 'support/smart-performance',
 		state: SystemState.NeedMaintenance,
-		metricsItem: 'need action',
+		metricsItem: 'need-maintenance',
 		statusText: 'device.myDevice.needAction'
 	};
 
@@ -533,8 +533,10 @@ export class DashboardService {
 		const isSystemUpdateEnabled = !this.deviceService.isArm && this.adPolicyService.IsSystemUpdateEnabled;
 		const isHardwareScanEnabled = !this.deviceService.isArm && await this.hardwareScanService.isAvailable();
 		const isSmartPerformanceEnabled = this.configService.isSmartPerformanceAvailable;
+		const segment = await this.selfselectService.getSegment();
+		const isConsumerOrSMB = segment === SegmentConst.Consumer || segment === SegmentConst.SMB;
 
-		return !this.deviceService.isSMode && (isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled);
+		return !this.deviceService.isSMode && isConsumerOrSMB && (isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled);
 	}
 
 	public async getDeviceStatus(){
