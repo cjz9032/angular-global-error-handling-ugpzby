@@ -3,6 +3,9 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { WinRT } from '@lenovo/tan-client-bridge';
+
+
 @Component({
 	selector: 'vtr-widget-landing-security',
 	templateUrl: './widget-landing-security.component.html',
@@ -50,5 +53,12 @@ export class WidgetLandingSecurityComponent implements OnInit {
 
 	retry(item) {
 		this.retryClick.emit(item.id);
+	}
+
+	goToSettings(path: string) {
+		window.getSelection().empty();
+		if (path) {
+			WinRT.launchUri(path);
+		}
 	}
 }

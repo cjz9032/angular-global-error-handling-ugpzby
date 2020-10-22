@@ -5,10 +5,7 @@
 
 @import "./hw-settings-icomoon/icomoon-base64.scss";
 
-@import "~@lenovo/material/theming";
 @import "./app/material.scss";
-
-@include mat-core();
 
 html {
 	margin: 0;
@@ -2540,4 +2537,16 @@ ngb-tooltip-window.schedule-scan.tooltip {
 
 .high-contrast-color-reversal {
 	@include high-contrast-color-reversal;
+}
+
+.btn-size-small {
+	min-height: 2.7rem !important;
+	font-size: 1.2rem !important;
+	line-height: 1.5 !important;
+}
+
+.uppercase {
+	&, span, p, div, a, h1, h2, h3, h4, h5, h6 {
+		text-transform: uppercase;
+	}
 }

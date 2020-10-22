@@ -21,6 +21,9 @@ import { faDatabase as falDatabase } from '@fortawesome/pro-light-svg-icons/faDa
 import { faKey as falKey } from '@fortawesome/pro-light-svg-icons/faKey';
 import { faTools as falTools } from '@fortawesome/pro-light-svg-icons/faTools';
 
+import { MatButtonModule } from '@lenovo/material/button';
+import { MatCheckboxModule } from '@lenovo/material/checkbox';
+
 import { LocationNoticeModule } from './../location-notice/location-notice.module';
 import { SecurityAdvisorRoutingModule } from './security-advisor-routing.module';
 import { SharedModule } from '../shared.module';
@@ -34,6 +37,7 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
 import { CommonModalModule } from '../common/common-modal.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 
@@ -127,7 +131,10 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		CommonModalModule,
 		LocationNoticeModule,
 		PageLayoutModule,
-		NgbTooltipModule
+		NgbTooltipModule,
+		MetricsModule,
+		MatButtonModule,
+		MatCheckboxModule
 	],
 	providers: [
 		DialogService
