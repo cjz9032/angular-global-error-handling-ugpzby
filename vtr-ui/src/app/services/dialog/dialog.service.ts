@@ -28,6 +28,8 @@ import { DialogData } from './../../material/material-dialog/material-dialog.int
 	providedIn: 'root'
 })
 export class DialogService {
+	private dialogRef: MatDialogRef<MaterialDialogComponent>;
+
 	constructor(
 		private commonService: CommonService,
 		public modalService: NgbModal,
@@ -35,9 +37,8 @@ export class DialogService {
 		private userService: UserService,
 		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService,
-		private dialog: MatDialog
+		private dialog: MatDialog,
 	)  { }
-	private dialogRef: MatDialogRef<MaterialDialogComponent>;
 
 	openInvitationCodeDialog() {
 		if (this.modalService.hasOpenModals()) {
