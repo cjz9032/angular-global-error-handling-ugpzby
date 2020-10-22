@@ -725,7 +725,7 @@ export class ExportResultsService {
 		return logFile.path;
 	}
 
-	 public async exportRbsResults(): Promise<[ExportLogErrorStatus, string]> {
+	public async exportRbsResults(): Promise<[ExportLogErrorStatus, string]> {
 
 		if (!(await this.validateDocumentsLibrary())){
 			throw(ExportLogErrorStatus.AccessDenied);
@@ -742,7 +742,7 @@ export class ExportResultsService {
 			this.logger.error('Could not get rbs log', error);
 			throw(ExportLogErrorStatus.GenericError);
 		}
-	 }
+	}
 
 	public async exportScanResults(): Promise<[ExportLogErrorStatus, string]> {
 
