@@ -83,6 +83,13 @@ export class ModalArticleDetailComponent implements OnInit {
 							this.articleSegments[index].quote = segment.Quote;
 							this.articleSegments[index].attribution = segment.Attribution;
 							this.articleSegments[index].body = segment.Body;
+							if (segment.segmentType) {
+								this.articleSegments[index].wrapLeft = segment.segmentType.toLowerCase().includes('-wrap-left') ? true : false;
+								this.articleSegments[index].wrapRight = segment.segmentType.toLowerCase().includes('-wrap-right') ? true : false;
+								this.articleSegments[index].noWrap = !segment.segmentType.toLowerCase().includes('-wrap-') ? true : false;
+								this.articleSegments[index].quoteType = segment.segmentType.toLowerCase().startsWith('quote') ? true : false;
+								this.articleSegments[index].imageType = segment.segmentType.toLowerCase().startsWith('image') ? true : false;
+							}
 							index++;
 						}
 					}
