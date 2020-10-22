@@ -10,6 +10,8 @@ import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { resolve } from 'url';
+import { LocalCacheService } from '../local-cache/local-cache.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root'
@@ -38,7 +40,8 @@ export class DeviceService {
 		public androidService: AndroidService,
 		private router: Router,
 		private logger: LoggerService,
-		private hypSettings: HypothesisService) {
+		private hypSettings: HypothesisService,
+		private localCacheService: LocalCacheService) {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
@@ -162,16 +165,24 @@ export class DeviceService {
 		}
 	}
 
-	getMachineType(): Promise<number> {
+	async getMachineType(): Promise<number> {
 		if (this.sysInfo) {
 			if (this.machineType) {
 				return Promise.resolve(this.machineType);
 			}
-			return this.sysInfo.getMachineType((value) => {
+			const cache = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, -1);
+			if (cache !== -1) {
+				this.machineType = cache;
+				return Promise.resolve(this.machineType);
+			}
+			return await this.sysInfo.getMachineType((value) => {
 				this.machineType = value;
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.DesktopMachine, value === 4);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.MachineType, value);
 				return value;
 			});
+		} else {
+			return undefined;
 		}
-		return undefined;
 	}
 }

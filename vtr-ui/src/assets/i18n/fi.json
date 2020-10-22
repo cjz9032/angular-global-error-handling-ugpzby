@@ -773,7 +773,9 @@
                 "sub1": "Oma laite",
                 "sub2": "Omat laiteasetukset",
                 "sub3": "Järjestelmäpäivitys",
-                "sub4": "Älykäs apu"
+                "sub4": "Älykäs apu",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Suojaus",

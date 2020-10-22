@@ -773,7 +773,9 @@
                 "sub1": "我的裝置",
                 "sub2": "我的裝置設定",
                 "sub3": "系統更新",
-                "sub4": "智慧助理"
+                "sub4": "智慧助理",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "安全性",

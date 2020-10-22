@@ -26,8 +26,9 @@ import { SmartAssistService } from '../smart-assist/smart-assist.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { NewFeatureTipService } from '../new-feature-tip/new-feature-tip.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 
-interface MenuItem {
+export interface MenuItem {
 	id: string;
 	label: string;
 	path: string;
@@ -87,7 +88,8 @@ export class ConfigService {
 		private smartAssist: SmartAssistService,
 		private newFeatureTipService: NewFeatureTipService,
 		private localCacheService: LocalCacheService,
-		private commonService: CommonService) {
+		private commonService: CommonService,
+		private hardwareScanService: HardwareScanService) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (this.securityAdvisor) {
 			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
@@ -141,6 +143,7 @@ export class ConfigService {
 		return new Promise(async (resolve) => {
 			this.isBetaUser = this.betaService.getBetaStatus() === BetaStatus.On;
 			const machineInfo = this.deviceService.machineInfo;
+			const machineType = await this.deviceService.getMachineType();
 			const localInfo = await this.localInfoService.getLocalInfo();
 			this.activeSegment = localInfo.Segment ? localInfo.Segment : SegmentConst.Commercial;
 			this.country = machineInfo && machineInfo.country ? machineInfo.country : 'US';
@@ -159,17 +162,34 @@ export class ConfigService {
 				this.notifyMenuChange(this.menu);
 			} else {
 				resultMenu = cloneDeep(this.menuItems);
+				if (machineType === 4) {
+					this.updateMenuForDesktop(resultMenu);
+				}
 				this.initializeSecurityItem(this.country, resultMenu);
+				await this.initializeHardwareScan(resultMenu);
 				if (this.hypSettings) {
 					resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
 				}
 
 				this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
 
-				await this.initializeSmartAssist();
+				await this.initializeSmartAssist(machineType);
 				this.notifyMenuChange(this.menu);
 			}
 			return resolve(this.menu);
+		});
+	}
+
+	private updateMenuForDesktop(menu: MenuItem[]) {
+		const hideMenu = ['power', 'audio', 'display-camera', 'input-accessories'];
+		const deviceMenu = menu.find((item) => item.id === 'device');
+		if (!deviceMenu || !deviceMenu.subitems || deviceMenu.subitems.length < 1) { return; }
+		const deviceSettingsMenu = deviceMenu.subitems.find((item) => item.id === 'device-settings');
+		if (!deviceSettingsMenu || !deviceSettingsMenu.subitems || deviceSettingsMenu.subitems.length < 1) { return; }
+		deviceSettingsMenu.subitems.forEach((item) => {
+			if (hideMenu.includes(item.id)) {
+				item.hide = true;
+			}
 		});
 	}
 
@@ -202,6 +222,17 @@ export class ConfigService {
 		}
 
 		return menu;
+	}
+
+	private async initializeHardwareScan(menu: MenuItem[]) {
+		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+			let showHWScanMenu = false;
+			showHWScanMenu = await this.hardwareScanService.isAvailable();
+			const hwScanItem = menu.find(item => item.id === 'hardware-scan');
+			if (hwScanItem) {
+				hwScanItem.hide = !showHWScanMenu;
+			}
+		}
 	}
 
 	initializeSecurityItem(region, items) {
@@ -424,22 +455,28 @@ export class ConfigService {
 	}
 
 	private addSmartAssistMenu(items) {
-		const myDeviceItem = items.find((item) => item.id === 'device');
-		if (myDeviceItem) {
-			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
-			if (smartAssistItem) {
-				smartAssistItem.hide = false;
-			}
+		if (Array.isArray(items)) {
+			items.forEach((item) => {
+				if (item.id === 'smart-assist') {
+					item.hide = false;
+				}
+				if (Array.isArray(item.subitems) && item.subitems.length > 0) {
+					this.addSmartAssistMenu(item.subitems);
+				}
+			});
 		}
 	}
 
 	private removeSmartAssistMenu(items) {
-		const myDeviceItem = items.find((item) => item.id === 'device');
-		if (myDeviceItem) {
-			const smartAssistItem = myDeviceItem.subitems.find(item => item.id === 'smart-assist');
-			if (smartAssistItem) {
-				smartAssistItem.hide = true;
-			}
+		if (Array.isArray(items)) {
+			items.forEach((item) => {
+				if (item.id === 'smart-assist') {
+					item.hide = true;
+				}
+				if (Array.isArray(item.subitems) && item.subitems.length > 0) {
+					this.removeSmartAssistMenu(item.subitems);
+				}
+			});
 		}
 	}
 
@@ -614,8 +651,7 @@ export class ConfigService {
 		return menu;
 	}
 
-	private initializeSmartAssist() {
-		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
+	private async initializeSmartAssist(machineType) {
 		if (machineType) {
 			this.smartAssistFilter(machineType);
 		} else if (this.deviceService.isShellAvailable) {

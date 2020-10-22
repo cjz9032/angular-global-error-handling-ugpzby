@@ -773,7 +773,9 @@
                 "sub1": "Moj uređaj",
                 "sub2": "Moje postavke uređaja",
                 "sub3": "Ažuriranje sistema",
-                "sub4": "Pametna pomoć"
+                "sub4": "Pametna pomoć",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Bezbednost",

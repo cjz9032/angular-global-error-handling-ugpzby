@@ -310,17 +310,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	private checkIsDesktopOrAllInOneMachine() {
-		try {
-			if (this.deviceService.isShellAvailable) {
-				this.deviceService
-					.getMachineType()
-					.then((value: any) => {
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.DesktopMachine, value === 4);
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.MachineType, value);
-					})
-					.catch((error) => { });
-			}
-		} catch (error) { }
+		if (this.deviceService && this.deviceService.isShellAvailable) {
+			this.deviceService.getMachineType();
+		}
 	}
 
 	private notifyNetworkState(isOnline) {

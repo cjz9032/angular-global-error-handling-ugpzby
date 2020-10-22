@@ -773,7 +773,9 @@
                 "sub1": "Meu Dispositivo",
                 "sub2": "Configurações do meu dispositivo",
                 "sub3": "Atualização do sistema",
-                "sub4": "Assistência inteligente"
+                "sub4": "Assistência inteligente",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Segurança",

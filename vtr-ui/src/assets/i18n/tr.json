@@ -773,7 +773,9 @@
                 "sub1": "Cihazım",
                 "sub2": "Cihaz Ayarlarım",
                 "sub3": "Sistem Güncellemesi",
-                "sub4": "Akıllı Yardım"
+                "sub4": "Akıllı Yardım",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Güvenlik",

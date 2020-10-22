@@ -7,7 +7,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
-import { AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -146,12 +145,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (cacheMachineFamilyName) {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
-
-		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-			this.hardwareScanService.isAvailable().then((available) => {
-				this.showHWScanMenu = available;
-			});
-		}
 		this.initComponent();
 	}
 
@@ -207,7 +200,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		});
 
 		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
-		if (machineType) {
+		if (machineType !== undefined) {
 			this.loadMenuOptions(machineType);
 		} else if (this.deviceService.isShellAvailable) {
 			this.deviceService
@@ -465,10 +458,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	showItem(item) {
 		let showItem = true;
 
-		if (item.id === 'hardware-scan') {
-			showItem = this.showHWScanMenu;
-		}
-
 		if (item.id === 'app-search') {
 			showItem = this.showSearchMenu;
 		}
@@ -476,15 +465,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		if (item.hasOwnProperty('hide') && item.hide) {
 			showItem = false;
 		}
-
-		if (!this.adPolicyService.IsSystemUpdateEnabled && item.id === 'device') {
-			item.subitems.forEach((subitem, index, object) => {
-				if (subitem.adPolicyId && subitem.adPolicyId === AdPolicyId.SystemUpdate) {
-					object.splice(index, 1);
-				}
-			});
-		}
-
 		return showItem;
 	}
 

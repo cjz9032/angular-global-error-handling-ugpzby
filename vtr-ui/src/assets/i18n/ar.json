@@ -775,7 +775,9 @@
                 "sub1": "جهازي",
                 "sub2": "إعدادات جهازي",
                 "sub3": "تحديث النظام",
-                "sub4": "مساعدة ذكية"
+                "sub4": "مساعدة ذكية",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "الأمان",

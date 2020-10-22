@@ -1,0 +1,228 @@
+@import "../../app.theme.scss";
+
+.vtr-material-menu {
+	@include high-contrast-adjust;
+	button > * {
+		cursor: pointer;
+	}
+	.menu-navbar {
+		height: $menu_height;
+		background-color: $main_darker;
+		color: $light;
+		@include high-contrast-background-color;
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+		}
+		.navbar-brand {
+			width: $menu_height;
+			font-size: $fontsize_xl5;
+			font-weight: $weight_bold;
+			color: $light;
+			.menu-main-logo {
+				background-color: $blue_extralight;
+				&:focus {
+					@include outline-white;
+				}
+			}
+		}
+		.navbar-text {
+			@media #{$breakpoint_xl} {
+				text-align: left;
+			}
+			.app-title {
+				font-size: $fontsize_lg;
+				font-weight: $weight_light;
+				.app-name {
+					font-weight: $weight_bold;
+				}
+			}
+			.device-type {
+				font-size: $body;
+			}
+		}
+		.navbar-toggler {
+			font-size: $fontsize_xl5;
+			color: $shade_light;
+			@media #{$breakpoint_xl} {
+				display: block;
+			}
+			&:hover {
+				color: $shade_extralight;
+				@include menu-color-hover-high-contrast;
+			}
+			&:focus {
+				@include outline-white-high-contrast;
+				@include menu-color-hover-high-contrast;
+			}
+			.unread-count-tag {
+				left: 5.4rem;
+			}
+		}
+		.menu-container {
+			@media #{$breakpoint_xl} {
+				display: none;
+			}
+			.user-item {
+				padding: 0.1rem;
+			}
+			.menu-item {
+				font-family: "Segoe UI",sans-serif;
+				font-size: $fontsize_sm;
+				font-weight: $weight_light;
+				outline: none;
+				&::after {
+					border: 0 !important;
+				}
+				@include menu-color-high-contrast;
+				&:hover {
+					background-color: $hover_dark;
+					@include menu-color-hover-high-contrast;
+				}
+				&:focus {
+					outline-offset: -0.2rem;
+					@include outline-white-high-contrast;
+					@include menu-color-hover-high-contrast;
+				}
+				&.active {
+					outline: none;
+					background-color: $menu_hover;
+					@include high-contrast-color;
+
+					@media #{$black-on-white} {
+						background-color: $high-contrast-white-dark-magenta;
+					}
+
+					@media #{$white-on-black} {
+						background-color: $high-contrast-black-cyan;
+					}
+				}
+				&.search-active {
+					.fa-icon {
+						color: $main;
+					}
+				}
+				&.user {
+					line-height: 4.6rem;
+					background-color: $main_darkest;
+					.user-initials {
+						font-size: $fontsize_xl !important;
+						width: 4.6rem;
+						height: 4.6rem;
+						border-radius: 2.3rem;
+						background-color: $main_darker;
+						@media #{$black-on-white} {
+							@include black-border;
+						}
+						@media #{$white-on-black} {
+							@include white-border;
+						}
+					}
+				}
+			}
+		}
+		.search-dropdown {
+			position: absolute;
+			top: calc(#{$menu_height} + 0.5rem);
+			width: 40rem;
+			right: 0rem;
+		}
+
+		.search-nav-item {
+			position: relative;
+		}
+
+		.search-nav-item-mask {
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 100;
+			cursor: pointer;
+		}
+	}
+	.unread-count-tag {
+		left: 5rem;
+		top: 1.5rem;
+		background: $button_red_start;
+		color: $light;
+		width: 2.1rem;
+		height: 2.1rem;
+		font-size: $fontsize_xs3;
+
+		@media #{$black-on-white} {
+			@include black-border;
+		}
+
+		@media #{$white-on-black} {
+			@include white-border;
+		}
+	}
+	.search-dropdown-sm {
+		position: absolute;
+		top: 9.5rem;
+		right: 2.2rem;
+	}
+}
+
+::ng-deep {
+	.menu-dropdown-container {
+		background-color: $light;
+		@include high-contrast-background;
+		box-shadow: $menu_dropdown_shadow;
+	}
+	.user-menu-dropdown-container {
+		.user-text {
+			color: $main_shade;
+			font-size: $fontsize_xs;
+			font-weight: $weight_regular;
+			font-family: "Segoe UI",sans-serif;
+			height: 3.2rem;
+			line-height: 1;
+			@include high-contrast-text-color-disabled;
+		}
+		.user-menu-item {
+			color: $main_shade;
+			font-weight: $weight_regular;
+			font-family: "Segoe UI",sans-serif;
+			height: 3.2rem;
+			line-height: 1;
+			outline: none !important;
+			@include menu-color-high-contrast;
+			&:hover {
+				text-decoration: underline;
+				color: $blue-light;
+				@include menu-color-hover-high-contrast;
+			}
+			&:focus {
+				text-decoration: underline;
+				color: $blue-light;
+				@include menu-color-hover-high-contrast;
+				.user-menu-item-text {
+					@include border-blue-high-contrast;
+				}
+			}
+			&.active {
+				text-decoration: underline;
+				color: $blue-light;
+				@include menu-color-hover-high-contrast;
+			}
+		}
+		.unread-tag {
+			left: 0.5rem;
+			top: 50%;
+			margin-top: -0.3rem;
+			width: 0.8rem;
+			height: 0.8rem;
+			background: $button_red_start;
+			@media #{$black-on-white} {
+				@include high-contrast-white-background;
+			}
+			@media #{$white-on-black} {
+				@include high-contrast-black-background;
+			}
+		}
+	}
+}

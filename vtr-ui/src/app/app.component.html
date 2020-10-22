@@ -6,7 +6,12 @@
 	role="document"
 	(dragstart)="onDragStart($event)"
 	(drop)="onDrop($event)">
-	<vtr-menu-main [hidden]="!isMachineInfoLoaded || deviceService.isAndroid"
+	<vtr-material-menu *ngIf="!isGaming"
+		[hidden]="!isMachineInfoLoaded || deviceService.isAndroid"
+		[loadMenuItem]="machineInfo">
+	</vtr-material-menu>
+	<vtr-menu-main *ngIf="isGaming"
+		[hidden]="!isMachineInfoLoaded || deviceService.isAndroid"
 		[loadMenuItem]="machineInfo">
 	</vtr-menu-main>
 	<div tabindex="-1"

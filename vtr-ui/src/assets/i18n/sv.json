@@ -773,7 +773,9 @@
                 "sub1": "Min enhet",
                 "sub2": "Mina enhetsinställningar",
                 "sub3": "Systemuppdatering",
-                "sub4": "Smart hjälp"
+                "sub4": "Smart hjälp",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Säkerhet",

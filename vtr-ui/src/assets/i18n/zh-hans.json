@@ -773,7 +773,9 @@
                 "sub1": "设备信息",
                 "sub2": "设备设置",
                 "sub3": "系统更新",
-                "sub4": "智能助手"
+                "sub4": "智能助手",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "安全顾问",

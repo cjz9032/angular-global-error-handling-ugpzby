@@ -93,6 +93,7 @@ $blue-dark: #24536d;
 $blue-light: #2955bc;
 $blue-lighter: #346cef;
 $blue_lightest: #0078d7;
+$blue_extralight:#27add7;
 $light-grey: #788590;
 $grey_darker: #34495e;
 $border_light: #f8d5d5;
@@ -131,6 +132,8 @@ $azure_light: #e2faf7;
 $azure_lighter: #ecf7ff;
 $gray_dark: #afafaf;
 $gray_white: #fefefe;
+
+$menu_font_color: #dfdce1;
 
 // updated button color, hover & active effect
 $btn_primary_color: #0160d6;
@@ -241,6 +244,7 @@ $black_gradient: linear-gradient(122deg, $black_dark 0%, $black_light 100%);
 $gradient_blue: linear-gradient(270deg, $button_gradient_end 0%, $button_gradient_start 100%);
 
 //RESPONSIVE EFFORT - WIP - Using the font sizes below will standardize all font sizes throughout the app
+$fontsize_xl5: 5rem;
 $fontsize_xl4: 4.6rem;
 $fontsize_xl3: 4rem;
 $fontsize_xl2: 3.4rem;
@@ -250,6 +254,7 @@ $fontsize_md: 1.8rem;
 $fontsize_sm: 1.6rem;
 $fontsize_xs: 1.4rem;
 $fontsize_xs2: 1.2rem;
+$fontsize_xs3: 1.1rem;
 
 // RESPONSIVE EFFORT - The only media queries that should be used are the breakpoints below
 $breakpoint_sm: "only screen and (max-width: 575.99px)";
@@ -351,6 +356,7 @@ $dpiquery_5: "max-resolution: 100dpi";
 
 $drop_shadow: 0 0 1.5rem 0 $screen_dark_15;
 $text_shadow: 0 0 0.3rem $screen_dark_70;
+$menu_dropdown_shadow: 0 0 0.2rem 0.1rem $shadow;
 
 $weight_light: 300;
 $weight_regular: 400;
@@ -451,9 +457,27 @@ $high-contrast-sky-blue: #81BBF5;
 		outline: 0.1rem solid $light;
 	}
 }
+@mixin border-blue-high-contrast {
+	border: 0.1rem solid $menu_hover;
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+	}
+}
 @mixin outline-white {
 	outline: 0.1rem solid $light;
 	outline-offset: 0.2rem;
+}
+@mixin outline-white-high-contrast {
+	outline: 0.1rem solid $light;
+	@media #{$black-on-white} {
+		outline: 0.1rem solid $dark;
+	}
+	@media #{$white-on-black} {
+		outline: 0.1rem solid $light;
+	}
 }
 @mixin outline-blue-gaming {
 	outline: 1px solid $blueFill !important;
@@ -553,6 +577,25 @@ $high-contrast-sky-blue: #81BBF5;
 			color: $high-contrast-black-cyan;
 			border: 0.1rem solid $high-contrast-black-cyan;
 		}
+	}
+}
+
+@mixin menu-color-hover-high-contrast {
+	@media #{$white-on-black} {
+		color: $high-contrast-black-cyan;
+	}
+	@media #{$black-on-white} {
+		color: $high-contrast-white-textselected;
+	}
+}
+
+@mixin menu-color-high-contrast {
+	@media #{$black-on-white} {
+		@include hyperlink-blue-white;
+	}
+
+	@media #{$white-on-black} {
+		@include hyperlink-yellow-black;
 	}
 }
 
@@ -666,6 +709,16 @@ $high-contrast-sky-blue: #81BBF5;
 
 @mixin high-contrast-white-text-color-disabled {
 	color: $high-contrast-white-disabled-maroon;
+}
+
+@mixin high-contrast-text-color-disabled {
+	@media #{$black-on-white} {
+		@include high-contrast-white-text-color-disabled;
+	}
+
+	@media #{$white-on-black} {
+		@include high-contrast-black-text-color-disabled;
+	}
 }
 
 @mixin high-contrast-white-background {
@@ -783,6 +836,16 @@ $high-contrast-sky-blue: #81BBF5;
 		color: $dark !important;
 	}
 }
+
+@mixin high-contrast-color-default {
+	@media #{$black-on-white} {
+		color: $light;
+	}
+	@media #{$white-on-black} {
+		color: $dark;
+	}
+}
+
 @mixin high-contrast-color-reversal {
 	@media #{$black-on-white} {
 		color: $dark !important;

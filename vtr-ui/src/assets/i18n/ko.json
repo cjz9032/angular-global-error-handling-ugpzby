@@ -773,7 +773,9 @@
                 "sub1": "내 장치",
                 "sub2": "내 장치 설정",
                 "sub3": "시스템 업데이트",
-                "sub4": "고급 지원"
+                "sub4": "고급 지원",
+				"sub5": "Device Details",
+				"sub6": "Device Settings Details"
             },
             "security": {
                 "title": "보안",
