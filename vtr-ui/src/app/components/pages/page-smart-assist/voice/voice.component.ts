@@ -52,7 +52,7 @@ export class VoiceComponent implements OnInit, OnDestroy {
 			if (win.VantageShellExtension
 				&& win.VantageShellExtension.Utils
 				&& win.VantageShellExtension.Utils.MSStore) {
-				const status = await win.VantageShellExtension.Utils.MSStore.isAppInstalledAsync('E046963F.LenovoVoice_k1h2ywk1493x8');
+				const status = await win.VantageShellExtension.Utils.MSStore.isAppInstalledAsync('E046963F.LenovoVoiceWorldWide_k1h2ywk1493x8');
 				if (status) {
 					this.installedStatus = InstalledStatus.DONE;
 					this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
@@ -91,7 +91,7 @@ export class VoiceComponent implements OnInit, OnDestroy {
 	downloadLenovoVoice() {
 		this.showLoader = true;
 		try {
-			WinRT.launchUri('ms-windows-store://pdp/?productid=9NF8GNW9H43H');
+			WinRT.launchUri('ms-windows-store://pdp/?productid=9PBKQPS3BSW1');
 			this.isInstalledInterval = setInterval(async () => {
 				this.logger.debug('Trying after 30 seconds for getting isLenovoVoiceInstalled status');
 				this.isLenovoVoiceInstalled();
