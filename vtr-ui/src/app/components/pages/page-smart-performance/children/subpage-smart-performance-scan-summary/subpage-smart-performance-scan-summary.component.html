@@ -489,17 +489,18 @@
 											*ngIf="showResult.itemType == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 									</p>
 								</div>
-								<div class="ml-auto pt-2">
-									<a href="javascript:void(0)"
-										id="smart-performance-check-previous-results"
-										role="link"
-										vtrMetrics
-										metricsItem="btn.smartPerformanceCheckPreviousResults"
-										metricsEvent="FeatureClick"
-										metricsParent="Page.Support.SmartPerformance"
-										class="check-previous-results"
-										(click)="checkPreviousResults()">Check previous results</a>
-								</div>
+								<a class="ml-auto pt-2 d-flex align-items-center check-previous-results-content"
+									id="smart-performance-check-previous-results"
+									role="link"
+									vtrMetrics
+									metricsItem="btn.smartPerformanceCheckPreviousResults"
+									metricsEvent="FeatureClick"
+									metricsParent="Page.Support.SmartPerformance"
+									(click)="checkPreviousResults()">
+									<span href="javascript:void(0)"
+										class="check-previous-results mr-3">Check previous results</span>
+									<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+								</a>
 							</div>
 							<div class="summary-block w-100">
 								<vtr-subpage-scan-results-accordion [tune]="showResult.tune"

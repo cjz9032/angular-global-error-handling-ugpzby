@@ -319,7 +319,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 					this.annualYear = yearObj.displayName;
 					this.getHistory(
 						yearObj.startDate,
-						yearObj.endDate
+						yearObj.endDate,
+						true
 					);
 				}
 			}
@@ -528,7 +529,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 
 	// Last scan result method.
-	async getLastScanResult() {
+	async getLastScanResult(isInit?: boolean) {
 		try {
 			const lastScanResultRequest = {
 				scanType: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan'
@@ -554,7 +555,11 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 					this.secure = response.Secure;
 					this.leftAnimator = (response.rating * 10 - 0).toString() + '%';
 					this.smartPerformanceService.isScanning = false;
-					this.inputIsScanningCompleted = true;
+					if (isInit && this.smartPerformanceService.isEnterSmartPerformance) {
+						this.smartPerformanceService.isEnterSmartPerformance = false;
+					} else {
+						this.inputIsScanningCompleted = true;
+					}
 				}
 			}
 
@@ -563,7 +568,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 
-	async getHistory(startDate, endDate) {
+	async getHistory(startDate, endDate, isInit = false) {
 		this.isLoading = true;
 		const payload = {
 			filterType: 'C',
@@ -588,7 +593,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				this.historyScanResults = res.lastscanresults || [];
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
 				this.getScanHistoryWithTime();
-				this.getLastScanResult();
+				this.getLastScanResult(isInit);
 
 			} else {
 				this.historyScanResults = [];

@@ -84,6 +84,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChang
 		}
 	}
 	ngOnInit() {
+		this.smartPerformanceService.isEnterSmartPerformance = true;
 		this.registerScanEvent();
 		this.isOnline = this.commonService.isOnline;
 
@@ -112,6 +113,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChang
 		});
 
 		this.smartPerformanceService.enableNextText = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
+		if (this.smartPerformanceService.isScanningCompleted) {
+			this.smartPerformanceService.isScanningCompleted = false;
+		}
 	}
 
 	async registerScanEvent() {

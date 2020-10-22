@@ -1212,18 +1212,31 @@ vtr-subpage-smart-performance-scan-summary {
 	}
 }
 
-.check-previous-results {
-	font-size: $body;
-	font-weight: bold;
-	padding-bottom: 0.1rem;
-	color: $blue-lighter;
+.check-previous-results-content {
+	height: 2rem;
 	text-decoration: none;
-	text-transform: uppercase;
-	border-bottom: 0.2rem solid $blue-lighter;
+	color: $blue-lighter;
+
+	.check-previous-results {
+		font-size: $body;
+		font-weight: bold;
+		padding-bottom: 0.1rem;
+		text-transform: uppercase;
+		border-bottom: 0.2rem solid $blue-lighter;
+	}
+
 	&:hover {
-		border-bottom: 0.2rem solid transparent;
+		color: $blue-light;
+		.check-previous-results {
+			border-bottom: 0.2rem solid $blue-light;
+		}
+	}
+
+	fa-icon {
+		font-size: 1.6rem;
 	}
 }
+
 
 @keyframes expanding {
 	0% {
