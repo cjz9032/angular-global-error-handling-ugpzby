@@ -15,8 +15,8 @@
 		<div class="row h-100 inner-content">
 			<div class="left-side col-7 col-md-12 col-lg-7 col-xl-12 p-0 d-flex flex-column justify-content-between mb-20">
 				<div class="desc d-flex flex-column">
-					<h2 class="title mb-3" [innerHTML]="cardData.title | translate"></h2>
-					<p class="summary m-0" [innerHTML]="cardData.summary | translate"></p>
+					<h2 id="{{cardId+'-title'}}" class="title mb-3" [innerHTML]="cardData.title | translate"></h2>
+					<p id="{{cardId+'-summary'}}" role="text" class="summary m-0" [innerHTML]="cardData.summary | translate"></p>
 				</div>
 			</div>
 			<div class="right-side col-5 col-md-12 col-lg-5 col-xl-12 p-0 d-flex align-items-center
@@ -26,12 +26,14 @@
 			<div class="col px-0 absolute-lnk d-flex align-items-end
 				justify-content-start justify-content-md-center justify-content-lg-start justify-content-xl-center">
 				<button
+					id="{{cardId+'-lnk-btn'}}"
 					mat-flat-button
 					tabindex="-1"
 					class="link-button a absolute text-uppercase p-0 m-0"
 					[innerHTML]="cardData.linkText | translate"
 				></button>
 				<button mat-icon-button
+					id="{{cardId+'-arrow-btn'}}"
 					tabindex="-1"
 					class="m-0 a"
 					[disableRipple]="true">
