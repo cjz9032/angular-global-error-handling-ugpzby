@@ -46,23 +46,29 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	gamingScenario = null;
 	allUsageTypes = [
 		{
-			id: 'personal-use',
-			value: this.segmentConst.Consumer,
-			textKey: 'welcometutorial.personal',
-			image: 'personal-use.jpg',
-		},
-		{
 			id: 'business-use',
 			value: this.segmentConst.SMB,
-			textKey: 'welcometutorial.business',
-			image: 'business-use.jpg',
+			textKey: 'welcometutorial.segments.smb',
+			image: 'assets/images/welcome/business-use.jpg',
 		},
 		{
-			id: 'custom-use',
-			value: this.segmentConst.Commercial,
-			textKey: 'welcometutorial.professional',
-			image: 'custom-use.jpg',
+			id: 'personal-use',
+			value: this.segmentConst.Consumer,
+			textKey: 'welcometutorial.segments.consumer',
+			image: 'assets/images/welcome/personal-use.jpg',
 		},
+		{
+			id: 'personal-gaming-use',
+			value: this.segmentConst.ConsumerGaming,
+			textKey: 'welcometutorial.segments.consumerGaming',
+			image: 'assets/images/welcome/personal-gaming-use.jpg',
+		},
+		{
+			id: 'personal-education-use',
+			value: this.segmentConst.ConsumerEducation,
+			textKey: 'welcometutorial.segments.consumerEducation',
+			image: 'assets/images/welcome/personal-education-use.jpg',
+		}
 	];
 	allGamingScenarios = [
 		{

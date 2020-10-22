@@ -627,7 +627,9 @@ export class ConfigService {
 			return;
 		}
 		this.localInfoService.getLocalInfo().then(async localInfo => {
-			if (localInfo.Segment !== SegmentConst.Consumer) {
+			if (localInfo.Segment !== SegmentConst.Consumer
+				&& localInfo.Segment !== SegmentConst.ConsumerGaming
+				&& localInfo.Segment !== SegmentConst.ConsumerEducation) {
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 				return;
 			}

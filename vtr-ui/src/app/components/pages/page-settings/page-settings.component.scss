@@ -69,15 +69,20 @@
 			opacity: 0.5 !important;
 		}
 
+		.max-width-50 {
+			max-width: 50rem;
+		}
+
+		.device-image-container {
+			margin-right: 0.8rem;
+			margin-bottom: 0.8rem;
+		}
+
 		.device-image {
 			cursor: pointer;
-			width: 14.4rem;
-			height: 6.5rem;
+			width: 14.8rem;
+			height: 4.3rem;
 			position: relative;
-
-			@media #{$breakpoint_md} {
-				width: 12rem;
-			}
 
 			&::after {
 				content: '';
@@ -88,7 +93,7 @@
 				z-index: 1;
 				left: 0;
 				top: 0;
-				border-radius: $border_radius_sm;
+				border-radius: $border_radius_s;
 				overflow: hidden;
 				background-color: rgba(0, 0, 0, 0.3);
 			}
@@ -119,7 +124,7 @@
 				top: 0;
 				width: 100%;
 				height: 100%;
-				border-radius: $border_radius_sm;
+				border-radius: $border_radius_s;
 				overflow: hidden;
 			}
 
@@ -152,7 +157,7 @@
 						left: -0.3rem;
 						top: -0.3rem;
 						background: none;
-						border-radius: calc(#{$border_radius_sm} + 0.2rem);
+						border-radius: calc(#{$border_radius_s} + 0.2rem);
 						border: 0.1rem solid $menu_hover;
 					}
 				}

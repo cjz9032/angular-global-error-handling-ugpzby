@@ -144,6 +144,97 @@
 			height: 42rem;
 		}
 
+		.device-image-content-none-gaming {
+			padding: 0 0.4rem;
+			margin-bottom: 0.8rem;
+		}
+
+		.device-image-none-gaming {
+			cursor: pointer;
+			width: 14.8rem;
+			height: 4.3rem;
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+				left: 0;
+				top: 0;
+				border-radius: $border_radius_s;
+				overflow: hidden;
+				background-color: rgba(0, 0, 0, 0.3);
+			}
+
+			@media #{$high-contrast} {
+				&::after {
+					background-color: rgba(0, 0, 0, 0.3);
+				}
+			}
+
+			@media #{$black-on-white} {
+				&::after {
+					background-color: rgba(0, 0, 0, 0.3);
+				}
+			}
+
+			@media #{$white-on-black} {
+				&::after {
+					background-color: rgba(0, 0, 0, 0.3);
+				}
+			}
+
+			img {
+				position: absolute;
+				z-index: 0;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: $border_radius_s;
+				overflow: hidden;
+			}
+
+			label {
+				position: absolute;
+				font-size: $fontsize_xs;
+				width: 100%;
+				height: 100%;
+				padding: 0 2%;
+				line-height: 2rem;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				font-weight: $weight_light;
+				z-index: 2;
+				@include high-contrast-adjust;
+			}
+
+			input {
+				width: calc(100% + 0.2rem);
+				height: calc(100% + 0.2rem);
+
+				&:focus~label {
+					outline: none !important;
+
+					&:before {
+						content: '';
+						position: absolute;
+						width: calc(100% + 0.6rem);
+						height: calc(100% + 0.6rem);
+						left: -0.3rem;
+						top: -0.3rem;
+						background: none;
+						border-radius: calc(#{$border_radius_s} + 0.2rem);
+						border: 0.1rem solid $menu_hover;
+					}
+				}
+			}
+		}
+
 		.device-image-content {
 			padding: 0 0.6rem;
 		}

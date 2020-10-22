@@ -2,6 +2,8 @@
 	'header-1.jpg',
 	'header-2.jpg',
 	'personal-use.jpg',
+	'personal-gaming-use.jpg',
+	'personal-education-use.jpg',
 	'business-use.jpg',
 	'custom-use.jpg',
 	'gaming-header-1.jpg',

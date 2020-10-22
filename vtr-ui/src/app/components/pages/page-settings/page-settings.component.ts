@@ -77,22 +77,34 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	allUsageTypes = [
 		{
-			id: 'personal-use',
-			value: this.segmentConst.Consumer,
-			textKey: 'welcometutorial.personal',
-			image: 'personal-use.jpg',
-		},
-		{
 			id: 'business-use',
 			value: this.segmentConst.SMB,
-			textKey: 'welcometutorial.business',
-			image: 'business-use.jpg',
+			textKey: 'welcometutorial.segments.smb',
+			image: 'assets/images/welcome/business-use.jpg',
+		},
+		{
+			id: 'personal-use',
+			value: this.segmentConst.Consumer,
+			textKey: 'welcometutorial.segments.consumer',
+			image: 'assets/images/welcome/personal-use.jpg',
+		},
+		{
+			id: 'personal-gaming-use',
+			value: this.segmentConst.ConsumerGaming,
+			textKey: 'welcometutorial.segments.consumerGaming',
+			image: 'assets/images/welcome/personal-gaming-use.jpg',
+		},
+		{
+			id: 'personal-education-use',
+			value: this.segmentConst.ConsumerEducation,
+			textKey: 'welcometutorial.segments.consumerEducation',
+			image: 'assets/images/welcome/personal-education-use.jpg',
 		},
 		{
 			id: 'custom-use',
 			value: this.segmentConst.Commercial,
-			textKey: 'welcometutorial.professional',
-			image: 'custom-use.jpg',
+			textKey: 'welcometutorial.segments.commercial',
+			image: 'assets/images/welcome/custom-use.jpg',
 		},
 	];
 
@@ -141,21 +153,6 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 				try {
 					this.usageType = this.selfSelectService.usageType;
 					this.interests = this.commonService.cloneObj(this.selfSelectService.interests);
-					let radioId = '';
-					switch (this.usageType) {
-						case this.segmentConst.Consumer:
-							radioId = 'radioPersonal';
-							break;
-						case this.segmentConst.SMB:
-							radioId = 'radioBusiness';
-							break;
-						case this.segmentConst.Commercial:
-							radioId = 'radioProfessional';
-							break;
-					}
-					if (radioId) {
-						document.getElementById(radioId).click();
-					}
 				} catch (error) { }
 				break;
 			case SelfSelectEvent.SegmentChange:
@@ -425,7 +422,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			(document.querySelector('#menu-main-lnk-l-logo') as HTMLElement).focus();
 		}
-		if (this.selfSelectService.usageType !== SegmentConst.Consumer) {
+		if (this.selfSelectService.usageType !== SegmentConst.Consumer
+			&& this.selfSelectService.usageType !== SegmentConst.ConsumerGaming
+			&& this.selfSelectService.usageType !== SegmentConst.ConsumerEducation) {
 			this.startUnRegisteringScheduleScan();
 		}
 	}

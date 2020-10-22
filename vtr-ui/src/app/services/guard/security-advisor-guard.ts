@@ -27,7 +27,10 @@ export class SecurityAdvisorGuard extends BasicGuard {
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree | any> | boolean | UrlTree {
 		const segment = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
-		if (segment === SegmentConst.Consumer || segment === SegmentConst.SMB) {
+		if (segment === SegmentConst.Consumer
+			|| SegmentConst.ConsumerEducation
+			|| SegmentConst.ConsumerEducation
+			|| segment === SegmentConst.SMB) {
 			return true;
 		} else {
 			return this.router.parseUrl('/security/wifi-security');

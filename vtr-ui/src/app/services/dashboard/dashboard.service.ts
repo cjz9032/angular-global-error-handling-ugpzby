@@ -428,9 +428,11 @@ export class DashboardService {
 		let response = false;
 		return this.localInfoService.getLocalInfo().then(result => {
 			const segmentVal = result.Segment.toLowerCase();
-			if (segmentVal === SegmentConst.Commercial.toLowerCase() ||
-				segmentVal === SegmentConst.SMB.toLowerCase() ||
-				segmentVal === SegmentConst.Consumer.toLowerCase()) {
+			if ([SegmentConst.Commercial.toLowerCase(),
+				SegmentConst.SMB.toLowerCase(),
+				SegmentConst.Consumer.toLowerCase(),
+				SegmentConst.ConsumerGaming.toLowerCase(),
+				SegmentConst.ConsumerEducation.toLowerCase()].includes(segmentVal)) {
 				response = true;
 			} else {
 				response = false;

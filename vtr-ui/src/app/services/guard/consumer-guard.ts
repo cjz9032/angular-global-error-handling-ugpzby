@@ -26,7 +26,9 @@ export class ConsumerGuard extends BasicGuard {
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment)
-		if (segment === SegmentConst.Consumer) {
+		if (segment === SegmentConst.Consumer
+			|| segment === SegmentConst.ConsumerGaming
+			|| segment === SegmentConst.ConsumerEducation) {
 			return true;
 		} else {
 			return super.canActivate(route, state);
