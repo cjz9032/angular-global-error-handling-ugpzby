@@ -549,6 +549,9 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 					// }
 					this.rating = response.rating;
 					this.issueCount = response.Tune + response.Boost + response.Secure;
+					this.tune = response.Tune;
+					this.boost = response.Boost;
+					this.secure = response.Secure;
 					this.leftAnimator = (response.rating * 10 - 0).toString() + '%';
 					this.smartPerformanceService.isScanning = false;
 					this.inputIsScanningCompleted = true;
