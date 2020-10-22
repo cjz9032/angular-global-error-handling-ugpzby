@@ -740,6 +740,7 @@ export class ExportResultsService {
 					resolve();
 				} catch (error) {
 					this.logger.error('Could not get rbs log', error);
+					this.openExportLogComponentsModal(ExportLogErrorStatus.GenericError);
 					reject();
 				}
 			});

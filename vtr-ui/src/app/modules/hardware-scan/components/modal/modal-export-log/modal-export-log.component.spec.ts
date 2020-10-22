@@ -41,7 +41,7 @@ describe('ModalExportLogComponent', () => {
 	});
 
 	it('should use the success description when receive success status', () => {
-		const successDescriptionToken = 'hardwareScan.exportLogModal.exportSuccessDescription';
+		const successDescriptionToken = 'hardwareScan.exportLogModal.exportSuccessDescription ';
 		const logPathMocked = ' C://User//Documents';
 		const pathMocked = successDescriptionToken + logPathMocked;
 

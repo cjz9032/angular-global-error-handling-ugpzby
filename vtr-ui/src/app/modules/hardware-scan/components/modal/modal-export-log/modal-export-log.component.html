@@ -4,7 +4,7 @@
 	<div [ngSwitch]="errorStatus">
 		<p *ngSwitchCase="enumExportLogErrorStatus.SuccessExport" id="hwscan-export-log-modal-description"
 			class="description"
-			role="text">{{ 'hardwareScan.exportLogModal.exportSuccessDescription' | translate }}{{logPath}}</p>
+			role="text">{{ 'hardwareScan.exportLogModal.exportSuccessDescription' | translate }} {{ logPath }}</p>
 
 		<p *ngSwitchCase="enumExportLogErrorStatus.AccessDenied" id="hwscan-export-log-modal-description"
 			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportAccessErrorDescription' | translate }}</p>
