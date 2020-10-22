@@ -82,6 +82,10 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		this.ngUnsubscribe.complete();
 	}
 
+	trackByFn(index, item) {
+		return index;
+	}
+
 	public refreshClicked(){
 		this.hwInfo = this.deviceService.getHardwareInfo();
 		this.updateMemoryInfo(this.hwStatus[1]);

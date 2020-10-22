@@ -21,7 +21,7 @@
 	<vtr-ui-group-card class="device-detail col-12" [hostPage]="'DevicePage'" [title]="'device.myDevice.hwStatus'|translate" [refreshButtonText]="'device.myDevice.refreshModules'|translate" (refreshClicked)="refreshClicked()">
 		<div class="container">
 			<div class="row">
-				<div class="device-detail-item device-detail-hw-item" *ngFor="let item of hwStatus">
+				<div class="device-detail-item device-detail-hw-item" *ngFor="let item of hwStatus;trackBy: trackByFn">
 					<vtr-ui-deviceinfo-item [dataModel]="item"></vtr-ui-deviceinfo-item>
 				</div> 
 			</div>
