@@ -48,7 +48,7 @@
     <div class="ui-deviceinfo-overlay" *ngIf="!!dataModel.link">
         <a href="javascript:void(0)" (click)="learnMoreClicked()" tabindex="-1">
            <span role="text" id="device-info-learn-more-{{dataModel.id}}"
-           metricsEvent="FeatureClick" metricsItem="LearnMore-{{dataModel.title}}" vtrMetrics
+           metricsEvent="FeatureClick" metricsItem="LearnMore-{{dataModel.id}}" vtrMetrics
            >{{'device.myDevice.learnMore'|translate}}</span> <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
         </a>
     </div>
