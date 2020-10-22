@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.29](https://bitbucket.tc.lenovo.com///compare/v1.8.28...v1.8.29) (2020-10-22)
+
+
+### Features
+
+* **SelfSelect:** VAN-22150 add new segment Consumer_Gaming and Consumer_Education ([9d6093c](https://bitbucket.tc.lenovo.com///commit/9d6093c32401f91d6836db0a0cf274ef137f3f9a))
+* **Smart Performance:** VAN-21733 show local price in smart performance page ([59fdce7](https://bitbucket.tc.lenovo.com///commit/59fdce7465df544d8fb17d3dfb913d12ccff8d46))
+* **Smart Performance:** VAN-21733 unify pcsupport api root ([380568d](https://bitbucket.tc.lenovo.com///commit/380568ddc523bb49befbcfc501fb73f403672dac))
+* **ui-menu:** build a new menu for consumer vantage ([6139986](https://bitbucket.tc.lenovo.com///commit/613998665e3335226ddeaed22684c526f327ef67))
+
+
+### Bug Fixes
+
+* **Dashboard Banner:** VAN-22726 add metrics item name ([565dd42](https://bitbucket.tc.lenovo.com///commit/565dd421d174c8c3936364d8acf66d1086b2ffbb))
+* **metrics:** VAN-22725 update metrics data for positionBC ([7faeb28](https://bitbucket.tc.lenovo.com///commit/7faeb28c61e83d9a486814146c7a1e9deba6f14b))
+* **metrics:** VAN-22725 update metrics data for positionBC ([c1fd7ea](https://bitbucket.tc.lenovo.com///commit/c1fd7ea591469c0711de6c3ac23b3170b2b2d9ff))
+* **Metrics:** VAN-22725 add metrics for positionBC ([c965b6e](https://bitbucket.tc.lenovo.com///commit/c965b6e14cdb739a07f4bc1f39b91a1e22697379))
+* **overall:** add ngcc, add ? to multiple check ([7c0183b](https://bitbucket.tc.lenovo.com///commit/7c0183b1fe089b2b042c4a0eeac3e9d4a778eecf))
+* **positionC:** VAN-22678 add default value for positionC card ([0970838](https://bitbucket.tc.lenovo.com///commit/09708389929b3e33d66d96603227792ae600f58b))
+* **Style:** VAN-22727 fixed positionC text overlap ([5683783](https://bitbucket.tc.lenovo.com///commit/5683783eb67f82b789eb60f6b39b73f463c07293))
+* **Support Page:** VAN-22671 correct de lena url ([6a71c4c](https://bitbucket.tc.lenovo.com///commit/6a71c4c95eaf2716f145475a269003e530129f07))
+* **ui-menu:** update menu according to VCL change ([98b65a1](https://bitbucket.tc.lenovo.com///commit/98b65a175f4358bb7c15411232e3c0c828e34deb))
+
 ### [1.8.28](https://bitbucket.tc.lenovo.com///compare/v1.8.27...v1.8.28) (2020-10-21)
 
 
