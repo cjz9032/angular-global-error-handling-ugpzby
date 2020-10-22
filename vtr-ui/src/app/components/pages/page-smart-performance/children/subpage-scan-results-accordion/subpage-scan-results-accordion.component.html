@@ -1,12 +1,16 @@
-<div class="row scan-results-accordion">
+<div class="row scan-results-accordion"
+	#scanResultsAccordion>
 	<div class="pc-info-card pc-accordion w-100">
 		<div class="col-12 px-0">
-			<ngb-accordion [closeOthers]="true">
+			<ngb-accordion [closeOthers]="true"
+				#a="ngbAccordion">
 				<ngb-panel [id]="result.id"
 					*ngFor="let result of spResults, let i = index">
-					<ng-template ngbPanelTitle>
-						<div class="d-flex justify-content-between align-items-center"
-							accordion-heading>
+					<ng-template ngbPanelHeader>
+						<button ngbPanelToggle
+							id="scan-results-accordion-item-{{i + 1}}"
+							(click)="scrollToCurrentCard(scanResultsAccordion, a.isExpanded(result.id))"
+							class="d-flex justify-content-between align-items-center w-100 card-heading">
 							<div class="heading"
 								[id]="result.header.id"
 								role="text">
@@ -32,7 +36,7 @@
 									</span>
 								</p>
 							</div>
-						</div>
+						</button>
 					</ng-template>
 					<ng-template ngbPanelContent>
 						<div class="mt-2 d-flex justify-content-between align-items-center">

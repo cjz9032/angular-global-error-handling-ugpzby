@@ -245,5 +245,12 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
+	scrollToCurrentCard(element: any, isExpanded: boolean) {
+		if (isExpanded) {
+			setTimeout(() => {
+				element.scrollIntoView(({behavior: 'smooth', block: 'center', inline: 'nearest'}));
+			}, 0);
+		}
+	}
 
 }
