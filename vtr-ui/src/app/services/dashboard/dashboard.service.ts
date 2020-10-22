@@ -91,7 +91,7 @@ export class DashboardService {
 		linkText: 'common.ui.improveNow',
 		linkPath: 'device/system-updates',
 		state: SystemState.NeedMaintenance,
-		metricsItem: 'need-maintenance',
+		metricsItem: 'need-maintenance-su',
 		statusText: 'device.myDevice.needAction'
 	};
 
@@ -101,7 +101,7 @@ export class DashboardService {
 		linkText: 'common.ui.improveNow',
 		linkPath: 'hardware-scan',
 		state: SystemState.NeedMaintenance,
-		metricsItem: 'need-maintenance',
+		metricsItem: 'need-maintenance-hws',
 		statusText: 'device.myDevice.needAction'
 	};
 
@@ -111,7 +111,7 @@ export class DashboardService {
 		linkText: 'common.ui.improveNow',
 		linkPath: 'support/smart-performance',
 		state: SystemState.NeedMaintenance,
-		metricsItem: 'need-maintenance',
+		metricsItem: 'need-maintenance-sp',
 		statusText: 'device.myDevice.needAction'
 	};
 

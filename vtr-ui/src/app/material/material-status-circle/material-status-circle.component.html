@@ -3,7 +3,7 @@
 		<vtr-material-svg-circle [gradientColor]="gradient"></vtr-material-svg-circle>
 	</div>
 	<div class="circle-desc">
-		<p class="text-two-ellipsis" [innerHTML]="'security.landing.level' | translate"></p>
-		<b class="text-ellipsis text-uppercase" [innerHTML]="statusText"></b>
+		<p class="text-two-ellipsis" role="text" id="security-level-text" [innerHTML]="'security.landing.level' | translate"></p>
+		<b class="text-ellipsis text-uppercase" role="text" id="security-level-status-text" [innerHTML]="statusText"></b>
 	</div>
 </div>

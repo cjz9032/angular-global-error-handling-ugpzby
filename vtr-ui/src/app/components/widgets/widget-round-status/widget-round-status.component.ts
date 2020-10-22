@@ -18,6 +18,7 @@ export class WidgetRoundStatusComponent implements OnInit {
 
 	@Input() statusText = 'GOOD CONDITION';
 	@Input() status: any;
+	@Input() statusId =  '';
 	@Output() clickAction = new EventEmitter<any>();
 
 	constructor() { }

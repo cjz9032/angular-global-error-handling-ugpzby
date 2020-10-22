@@ -14,7 +14,9 @@
 		</div>
 
 		<div class="device-overall-status"  tabindex="1" (keydown.enter)="onMaintanceClicked()" (click)="onMaintanceClicked()">
-			<vtr-widget-round-status [status]="(deviceStatus===0||deviceStatus===1)?deviceStatus:2" [statusText]="(deviceStatus===1?'device.myDevice.goodCondition':'device.myDevice.needAction')"></vtr-widget-round-status>
+			<vtr-widget-round-status [status]="(deviceStatus===0||deviceStatus===1)?deviceStatus:2"
+				[statusId]="'device-overall-system'"
+				[statusText]="(deviceStatus===1?'device.myDevice.goodCondition':'device.myDevice.needAction')"></vtr-widget-round-status>
 		</div>
 	</div>
 	
