@@ -9,16 +9,15 @@
 						<!-- Ignoring the href property from narrator by using the role="img" atribute
 							and passing the tooltip information with the [attr.aria-label] -->
 						<vtr-ui-question-mark-button
-							[componentId]="widgetId"
-							[tooltipText]="description"
-							[triggers]="'manual'"
 							#tooltip="ngbTooltip"
-							[tooltip]="tooltip"
+							[componentId]="widgetId"
+							ariaLabel="recover-bad-sectors-tooltip, which reads: {{description}}"
+							(clickEvent)="tooltip.toggle()"
+							(blurEvent)="tooltip.close()"
+							triggers="manual"
 							[ngbTooltip]="tooltipRef"
-							(click)="tooltip.toggle()"
-							(blur)="tooltip.close()"
-							[tooltipClass]="'vtr-tooltip'"
-							[placement]="'left'"
+							tooltipClass="vtr-tooltip"
+							placement="left"
 							container="vtr-root">
 						</vtr-ui-question-mark-button>
 					</div>

@@ -49,11 +49,8 @@ import { HardwareScanFinishedHeaderComponent } from './components/header/hardwar
 import { UiHardwareScanTestResultComponent } from './components/dashboard/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
 import { UiTestResultIconComponent } from './components/dashboard/ui-test-result-icon/ui-test-result-icon.component';
 import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
-<<<<<<< HEAD
 import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
-=======
 import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-question-mark-button/ui-question-mark-button.component';
->>>>>>> 98b1d1d063... VAN-22360: Added question mark button
 
 @NgModule({
 	declarations: [
@@ -84,11 +81,8 @@ import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-questio
 		UiHardwareScanTestResultComponent,
 		UiTestResultIconComponent,
 		UiHyperlinkButtonComponent,
-<<<<<<< HEAD
-		ModalExportLogComponent
-=======
+		ModalExportLogComponent,
 		UiQuestionMarkButtonComponent
->>>>>>> 98b1d1d063... VAN-22360: Added question mark button
 	],
 	imports: [
 		CommonModule,

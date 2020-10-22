@@ -151,18 +151,8 @@
 		justify-content: right;
 		align-items: center;
 
-		.result-code-icon {
+		.question-mark-container {
 			margin-right: 0.5rem;
-			cursor: pointer;
-
-			&:hover {
-				color: $highlight;
-			}
-
-			.question-mark-list-icon {
-				width: 20px;
-				height: 20px;
-			}
 		}
 	}
 
