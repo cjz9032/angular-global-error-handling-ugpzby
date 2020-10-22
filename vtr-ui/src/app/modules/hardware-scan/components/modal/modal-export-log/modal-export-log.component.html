@@ -1,0 +1,34 @@
+<div class="modal-body">
+	<h1 id="hwscan-export-log-modal-title" class="title" role="heading">{{ 'hardwareScan.exportLog' | translate }}</h1>
+
+	<div [ngSwitch]="errorStatus">
+		<p *ngSwitchCase="enumExportLogErrorStatus.SuccessExport" id="hwscan-export-log-modal-description"
+			class="description"
+			role="text">{{ 'hardwareScan.exportLogModal.exportSuccessDescription' | translate }} {{ logPath }}</p>
+
+		<p *ngSwitchCase="enumExportLogErrorStatus.AccessDenied" id="hwscan-export-log-modal-description"
+			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportAccessErrorDescription' | translate }}</p>
+
+		<p *ngSwitchDefault id="hwscan-export-log-modal-description"
+			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportFailDescription' | translate }}</p>
+	</div>
+
+	<div *ngIf="errorStatus === enumExportLogErrorStatus.AccessDenied; else okButton" class="row button-row">
+		<vtr-ui-button linkId="hwscan-export-log-open-settings-btn" [metricsParent]="'HardwareScan.ExportLog'"
+			[metricsItem]="'ExportLog.OpenSettings'" [label]="'hardwareScan.exportLogModal.openSettingsButton' | translate"
+			(onClick)="openWindowsSettings()">
+		</vtr-ui-button>
+	</div>
+
+	<ng-template #okButton>
+		<vtr-ui-button linkId="hwscan-export-log-confirm-btn" [metricsParent]="'HardwareScan.ExportLog'"
+			[metricsItem]="'ExportLog.Confirm'" [label]="'hardwareScan.ok' | translate" (onClick)="onClosing()">
+		</vtr-ui-button>
+	</ng-template>
+
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="hwscan-export-log-modal-close-btn" [metricsParent]="'HardwareScan.ExportLog'"
+			[metricsItem]="'ExportLog.Close'" (clickClose)="onClosing()">
+		</vtr-ui-close-button>
+	</div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
-import { HardwareScanTestResult, HardwareScanFinishedHeaderType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
+import { HardwareScanTestResult, HardwareScanFinishedHeaderType, ExportLogErrorStatus } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { PreviousResultService } from '../../../services/previous-result.service';
 import { ExportResultsService } from '../../../services/export-results.service';
@@ -11,6 +11,8 @@ import { HardwareScanMetricsService } from '../../../services/hardware-scan-metr
 import { HardwareScanFeaturesService } from '../../../services/hardware-scan-features.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { ModalExportLogComponent } from '../../../components/modal/modal-export-log/modal-export-log.component';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -39,7 +41,8 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 		private timerService: TimerService,
 		private hardwareScanMetricsService: HardwareScanMetricsService,
 		private hardwareScanFeaturesService: HardwareScanFeaturesService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private modalService: NgbModal
 	) { }
 
 	ngOnInit() {
@@ -68,16 +71,32 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 				this.previousResultService.getLastFinalResultCode(); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
 	}
 
+	private openExportLogComponentsModal(error: ExportLogErrorStatus, logPath: string = '') {
+		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'hardware-scan-modal-size'
+		});
+
+		(modal.componentInstance as ModalExportLogComponent).logPath = logPath;
+		(modal.componentInstance as ModalExportLogComponent).errorStatus = error;
+	}
+
 	public exportResults() {
 		if (this.exportService) {
+
+			let statusExport = ExportLogErrorStatus.GenericError;
+			let filePath = '';
 			this.timerService.start();
 			let result = HardwareScanMetricsService.FAIL_RESULT;
-			this.exportService.exportScanResults().then(() => {
+			this.exportService.exportScanResults().then((status) => {
 				result = HardwareScanMetricsService.SUCCESS_RESULT;
-				// TODO, probably open modal
-			}).catch(() => {
+				[statusExport, filePath] = status;
+			}).catch((error) => {
 				this.logger.error('Export Scan Results rejected');
+				statusExport = error;
 			}).finally(() => {
+				this.openExportLogComponentsModal(statusExport, filePath);
 				this.hardwareScanMetricsService.sendTaskActionMetrics(
 					HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
 					result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,

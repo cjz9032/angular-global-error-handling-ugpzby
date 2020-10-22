@@ -49,6 +49,7 @@ import { HardwareScanFinishedHeaderComponent } from './components/header/hardwar
 import { UiHardwareScanTestResultComponent } from './components/dashboard/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
 import { UiTestResultIconComponent } from './components/dashboard/ui-test-result-icon/ui-test-result-icon.component';
 import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
+import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
 
 @NgModule({
 	declarations: [
@@ -78,7 +79,8 @@ import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-but
 		HardwareScanFinishedHeaderComponent,
 		UiHardwareScanTestResultComponent,
 		UiTestResultIconComponent,
-		UiHyperlinkButtonComponent
+		UiHyperlinkButtonComponent,
+		ModalExportLogComponent
 	],
 	imports: [
 		CommonModule,

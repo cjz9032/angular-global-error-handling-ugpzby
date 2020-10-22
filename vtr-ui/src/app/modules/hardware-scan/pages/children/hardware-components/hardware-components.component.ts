@@ -10,7 +10,7 @@ import { ModalHardwareScanCustomizeComponent } from '../../../components/modal/m
 import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { ModalWaitComponent } from '../../../components/modal/modal-wait/modal-wait.component';
-import { TaskType, TaskStep, HardwareScanProgress, HardwareScanFinishedHeaderType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
+import { TaskType, TaskStep, HardwareScanProgress, HardwareScanFinishedHeaderType, ExportLogErrorStatus } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { ScanExecutionService } from '../../../services/scan-execution.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProtocolExecutionService } from '../../../services/protocol-execution.service';
@@ -19,6 +19,7 @@ import { HardwareScanFeaturesService } from '../../../services/hardware-scan-fea
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ExportResultsService } from '../../../services/export-results.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { ModalExportLogComponent } from '../../../components/modal/modal-export-log/modal-export-log.component';
 
 const RootParent = 'HardwareScan';
 const ViewResultsButton = 'ViewResults';
@@ -227,6 +228,17 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	private openExportLogComponentsModal(error: ExportLogErrorStatus, logPath: string = '') {
+		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
+			size: 'lg',
+			centered: true,
+			windowClass: 'hardware-scan-modal-size'
+		});
+
+		(modal.componentInstance as ModalExportLogComponent).logPath = logPath;
+		(modal.componentInstance as ModalExportLogComponent).errorStatus = error;
+	}
+
 	public exportResults() {
 		if (this.exportService) {
 			let exportLogType;
@@ -236,14 +248,18 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				exportLogType = this.exportService.exportRbsResults();
 			}
 
+			let statusExport = ExportLogErrorStatus.GenericError;
+			let filePath = '';
 			this.timerService.start();
 			let result = HardwareScanMetricsService.FAIL_RESULT;
-			exportLogType.then(() => {
+			exportLogType.then((status) => {
 				result = HardwareScanMetricsService.SUCCESS_RESULT;
-				// TODO, probably open modal
-			}).catch(() => {
+				[statusExport, filePath] = status;
+			}).catch((error) => {
 				this.logger.error('Export Scan Results rejected');
+				statusExport = error;
 			}).finally(() => {
+				this.openExportLogComponentsModal(statusExport, filePath);
 				this.hardwareScanMetricsService.sendTaskActionMetrics(
 					HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
 					result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,

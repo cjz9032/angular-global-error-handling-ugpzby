@@ -4277,6 +4277,12 @@
             "scanAgainButtonText": "Σάρωση ξανά",
             "supportButtonText": "Υποστήριξη Lenovo"
         },
+        "exportLogModal": {
+            "exportSuccessDescription": "The log was exported successfully and can be found at:",
+            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
+            "exportFailDescription": "A problem was found during log export. Please try it again later.",
+            "openSettingsButton": "Open Windows Settings"
+        },
         "executingScanTitle": "Εκτελείται σάρωση {{title}}",
         "showDetails": "Προβολή λεπτομερειών",
         "hideDetails": "Απόκρυψη λεπτομερειών",

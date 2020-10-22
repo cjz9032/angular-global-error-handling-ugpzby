@@ -9,11 +9,11 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { environment } from 'src/environments/environment';
 import { ScanLogService } from './scan-log.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
 import { RecoverBadSectorsService } from './recover-bad-sectors.service';
 import { HardwareScanService } from './hardware-scan.service';
 import { DeviceService } from '../../../services/device/device.service';
 import { TranslateTokenByTokenPipe } from 'src/app/pipe/translate-token-by-token/translate-token-by-token.pipe';
+import { ExportLogErrorStatus, HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
 
 declare var window;
 
@@ -38,11 +38,11 @@ export class ExportResultsService {
 		private shellService: VantageShellService,
 		private formatDateTime: FormatLocaleDateTimePipe,
 		private scanLogService: ScanLogService,
-		private logger: LoggerService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private hardwareScanService: HardwareScanService,
 		private deviceService: DeviceService,
-		private translateTokenByToken: TranslateTokenByTokenPipe) {
+		private translateTokenByToken: TranslateTokenByTokenPipe,
+		private logger: LoggerService) {
 		this.experienceVersion = environment.appVersion;
 
 		if (window.Windows) {
@@ -718,41 +718,63 @@ export class ExportResultsService {
 		});
 	}
 
-	private async exportReportToFile(reportFileName: string, htmlData: string): Promise<void> {
+	private async exportReportToFile(reportFileName: string, htmlData: string): Promise<string> {
 		const fileName = reportFileName + '_' + this.getDateAndHour() + '.html';
 		const logFile = await window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName);
 		await window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
+		return logFile.path;
 	}
 
-	public exportRbsResults() {
-		return new Promise(async (resolve, reject) => {
-			try {
-				const reportFileName = 'RecoverBadSectorsLog';
-				const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
-				const dataPrepared = await this.prepareDataFromRecoverBadSectors(rbsResultItems);
-				const htmlData = await this.generateReport(dataPrepared);
-				this.exportReportToFile(reportFileName, htmlData);
-				resolve();
-			} catch (error) {
-				this.logger.error('Could not get rbs log', error);
-				reject();
-			}
-		});
+	public async exportRbsResults(): Promise<[ExportLogErrorStatus, string]> {
+
+		if (!(await this.validateDocumentsLibrary())){
+			throw(ExportLogErrorStatus.AccessDenied);
+		}
+
+		try {
+			const reportFileName = 'RecoverBadSectorsLog';
+			const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
+			const dataPrepared = await this.prepareDataFromRecoverBadSectors(rbsResultItems);
+			const htmlData = await this.generateReport(dataPrepared);
+			const createdFilePath = await this.exportReportToFile(reportFileName, htmlData);
+			return [ExportLogErrorStatus.SuccessExport, createdFilePath];
+		} catch (error) {
+			this.logger.error('Could not get rbs log', error);
+			throw(ExportLogErrorStatus.GenericError);
+		}
 	}
 
-	public async exportScanResults() {
-		return new Promise(async (resolve, reject) => {
-			try {
-				const reportFileName = 'HardwareScanLog';
-				const scanLogData = await this.scanLogService.getScanLog();
-				const dataPrepared = await this.prepareDataFromScanLog(scanLogData);
-				const htmlData = await this.generateReport(dataPrepared);
-				this.exportReportToFile(reportFileName, htmlData);
-				resolve();
-			} catch (error) {
-				this.logger.error('Could not get scan log', error);
-				reject();
+	public async exportScanResults(): Promise<[ExportLogErrorStatus, string]> {
+
+		if (!(await this.validateDocumentsLibrary())){
+			throw(ExportLogErrorStatus.AccessDenied);
+		}
+
+		try {
+			const reportFileName = 'HardwareScanLog';
+			const scanLogData = await this.scanLogService.getScanLog();
+			const dataPrepared = await this.prepareDataFromScanLog(scanLogData);
+			const htmlData = await this.generateReport(dataPrepared);
+			const createdFilePath = await this.exportReportToFile(reportFileName, htmlData);
+			return [ExportLogErrorStatus.SuccessExport, createdFilePath];
+		} catch (error) {
+			this.logger.error('Could not get scan log', error);
+			throw(ExportLogErrorStatus.GenericError);
+		}
+	}
+
+	private async validateDocumentsLibrary(): Promise<boolean> {
+		const permissionDeniedErrorNumber = -2147024891; // Error code got from error object
+
+		try {
+			await window.Windows.Storage.KnownFolders.documentsLibrary;
+		} catch (error) {
+			// I'll only return false if this specific error happens
+			// Any other error will be treated as "generic error"
+			if (error.number === permissionDeniedErrorNumber) {
+				return false;
 			}
-		});
+		}
+		return true;
 	}
 }

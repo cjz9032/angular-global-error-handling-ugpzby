@@ -5095,7 +5095,7 @@
 		},
 		"scanFinishedHeader": {
 			"titleSuccess": "Scan completed. Your device passed all the tests.",
-            "titleError": "Your device failed {{numberTestsFailed}} test(s).",
+			"titleError": "Your device failed {{numberTestsFailed}} test(s).",
 			"titleErrorPlural": "Scan completed. Your device failed {{numberTestsFailed}} tests.",
 			"titleErrorSingular": "Scan completed. Your device failed 1 test.",
 			"frcSuccessDescription": "This final result code indicates that no problems were found with this scan. If any test displays an attention or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
@@ -5105,6 +5105,12 @@
 			"scanAgainButtonText": "Scan Again",
 			"supportButtonText": "Lenovo Support"
 		},
+		"exportLogModal": {
+			"exportSuccessDescription": "The log was exported successfully and can be found at:",
+			"exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
+			"exportFailDescription": "A problem was found during log export. Please try it again later.",
+			"openSettingsButton": "Open Windows Settings"
+		},
 		"warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates",
 		"refreshMessage": "Refresh may take some time as it needs to load all the components again",
 		"processFinishedCannotBeCanceled": "The running process doesn't need to be canceled anymore, since it is completed.",
@@ -5112,7 +5118,7 @@
 		"showDetails": "View Details",
 		"hideDetails": "Hide Details",
 		"na": "N/A",
-        "exportLog": "Export Log"
+		"exportLog": "Export Log"
 	},
 	"notification": {
 		"menu": {
