@@ -809,6 +809,108 @@
 							}
 						}
 					}
+
+					vtr-subpage-schedule-scan {
+						.scan-settings{
+							background-color: $gaming_darkest;
+							.title{
+								color: $gaming_lightest;
+							}
+							.card-info{
+								p{
+									color: $white60;
+								}
+							}
+							.chevron-list{
+								background-color: $dark50;
+								border: none;
+								li{
+									&.disable-list{
+										background: $dark50;
+										opacity: 0.3;
+									}
+									.item{
+										strong,b {
+											color: $gaming_lightest;
+										}
+									}
+									div.status{
+										vtr-ui-custom-switch{
+											.vtr-ui-custom-switch{
+												.custom-switch{
+													.custom-control-input:not(:checked) ~ .custom-control-label{
+														&::before{
+															background-color: $white20;
+														}
+														&::after{
+															background-color: $gaming_lightest;
+														}
+													}
+													.custom-control-input:checked ~ .custom-control-label{
+														&::before{
+															background: $green;
+														}
+														&::after{
+															background-color:$gaming_lightest;
+														}
+													}
+												}
+											}
+										}
+										p{
+											color: $gaming_lightest;
+										}
+										fa-icon{
+											color: $white60;
+										}
+									}
+									a.status{
+										color: $gaming_lightest;
+										fa-icon{
+											color: $white60;
+										}
+									}
+								}
+							}
+						}
+					}
+
+					vtr-widget-subscriptiondetails {
+						.subscription-details {
+							background-color: $gaming_darkest;
+							.title{
+								color: $gaming_lightest;
+							}
+							.card-info{
+								p{
+									color: $white60;
+								}
+							}
+							.status-list{
+								background-color: $dark50;
+								border: none;
+								li{
+									.item{
+										color: $gaming_lightest;
+									}
+									.status{
+										color: $gaming_lightest;
+									}
+									.loader{
+										&>span{
+											background-color: $white60;
+										}
+									}
+								}
+							}
+							.link-text{
+								&:disabled{
+									color: $white60;
+									opacity: 1;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
