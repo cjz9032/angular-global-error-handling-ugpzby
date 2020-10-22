@@ -51,6 +51,7 @@
 			#menuMainNavbarToggler
 			id="menu-main-btn-navbar-toggler"
 			class="position-relative w-auto h-auto mr-1 py-1 px-3 rounded-0 text-center navbar-toggler line-height-normal"
+			disableRipple
 			aria-label="menu-main-btn-navbar-toggler"
 			aria-haspopup="true"
 			aria-expanded="false"
@@ -81,6 +82,7 @@
 							[ngClass]="{'beta-item':item.beta}"
 							vtrMetrics
 							id="menu-main-nav-lnk-{{item.id}}"
+							disableRipple
 							attr.new-tip-id="new-tip-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
@@ -100,6 +102,7 @@
 					<li *ngIf="item && !item.hide && item.subitems && item.subitems.length > 0 && item.id !== 'user' && item.id !== 'app-search'">
 						<button mat-button
 							#menuTrigger="matMenuTrigger"
+							matMenuHoverTrigger
 							[matMenuTriggerFor]="materialMenuDropdown?.matMenu"
 							*ngIf="item.label | translate"
 							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
@@ -107,6 +110,7 @@
 							role="menu"
 							vtrMetrics
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
+							disableRipple
 							attr.aria-label="{{item.id}}"
 							attr.new-tip-id="new-tip-{{item.id}}"
 							aria-haspopup="true"
@@ -136,9 +140,11 @@
 					<li class="user-item" *ngIf="item && !item.hide && item.id === 'user' && languageService.isLanguageLoaded">
 						<button mat-button
 							#menuTrigger="matMenuTrigger"
+							matMenuHoverTrigger
 							[matMenuTriggerFor]="userMenuMain"
 							class="h-100 d-flex align-items-center m-0 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
 							id="navbarDropdown"
+							disableRipple
 							attr.aria-label="navbarDropdown"
 							aria-haspopup="true"
 							aria-expanded="false"
