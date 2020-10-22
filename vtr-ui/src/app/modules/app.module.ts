@@ -22,6 +22,7 @@ import { faCircleNotch } from '@fortawesome/pro-light-svg-icons/faCircleNotch';
 import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
 import { faCommentAltDots } from '@fortawesome/pro-light-svg-icons/faCommentAltDots';
 import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
+import { faQuoteLeft} from '@fortawesome/free-solid-svg-icons/faQuoteLeft';
 import { RouterModule } from '@angular/router';
 import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
@@ -206,5 +207,6 @@ export class AppModule {
 		library.addIcons(faEllipsisH);
 		library.addIcons(faTimes);
 		library.addIcons(fasHeart);
+		library.addIcons(faQuoteLeft);
 	}
 }
