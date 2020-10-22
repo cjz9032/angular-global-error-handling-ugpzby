@@ -21,8 +21,8 @@ import { DeviceLocationPermission } from 'src/app/data-models/home-security/devi
 import { UserService } from '../user/user.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
-import { MatDialog, MatDialogRef, MatDialogState } from '@lenovo/material/dialog';
-import { DialogData } from './../../material/material-dialog/material-dialog.interface';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
 
 @Injectable({
 	providedIn: 'root'
