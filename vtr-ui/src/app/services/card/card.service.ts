@@ -28,7 +28,12 @@ export class CardService {
 		const isDccDemo = actionLink.startsWith('dcc-demo');
 
 		if ((isProtocol && !isDccDetails) || actionType === ContentActionType.External) {
-			WinRT.launchUri(actionLink);
+			this.deviceService.getMachineInfo().then(machineInfo => {
+				if (machineInfo && machineInfo.serialnumber) {
+					actionLink = actionLink.replace(/\[SerialNumber\]/gi, machineInfo.serialnumber);
+				}
+				WinRT.launchUri(actionLink);
+			});
 		} else if (isDccDetails || isDccDemo) {
 			this.appsForYouService.updateUnreadMessageCount('menu-main-lnk-open-dcc');
 			this.openDccDetailModal();
