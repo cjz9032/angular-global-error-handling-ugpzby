@@ -14,8 +14,6 @@ import { HardwareScanService } from './hardware-scan.service';
 import { DeviceService } from '../../../services/device/device.service';
 import { TranslateTokenByTokenPipe } from 'src/app/pipe/translate-token-by-token/translate-token-by-token.pipe';
 import { ExportLogErrorStatus, HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
-import { ModalExportLogComponent } from '../components/modal/modal-export-log/modal-export-log.component';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 declare var window;
 
@@ -44,7 +42,6 @@ export class ExportResultsService {
 		private hardwareScanService: HardwareScanService,
 		private deviceService: DeviceService,
 		private translateTokenByToken: TranslateTokenByTokenPipe,
-		private modalService: NgbModal,
 		private logger: LoggerService) {
 		this.experienceVersion = environment.appVersion;
 
@@ -721,75 +718,63 @@ export class ExportResultsService {
 		});
 	}
 
-	private async exportReportToFile(reportFileName: string, htmlData: string): Promise<void> {
+	private async exportReportToFile(reportFileName: string, htmlData: string): Promise<string> {
 		const fileName = reportFileName + '_' + this.getDateAndHour() + '.html';
 		const logFile = await window.Windows.Storage.KnownFolders.documentsLibrary.createFileAsync(fileName);
 		await window.Windows.Storage.FileIO.appendTextAsync(logFile, htmlData);
-		this.openExportLogComponentsModal(ExportLogErrorStatus.SuccessExport, logFile.path);
+		return logFile.path;
 	}
 
-	public async exportRbsResults() {
-		if (await this.validateDocumentsLibrary()){
-			return new Promise(async (resolve, reject) => {
-				try {
-					const reportFileName = 'RecoverBadSectorsLog';
-					const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
-					const dataPrepared = await this.prepareDataFromRecoverBadSectors(rbsResultItems);
-					const htmlData = await this.generateReport(dataPrepared);
-					await this.exportReportToFile(reportFileName, htmlData);
-					resolve();
-				} catch (error) {
-					this.logger.error('Could not get rbs log', error);
-					this.openExportLogComponentsModal(ExportLogErrorStatus.GenericError);
-					reject();
-				}
-			});
+	 public async exportRbsResults(): Promise<[ExportLogErrorStatus, string]> {
+
+		if (!(await this.validateDocumentsLibrary())){
+			throw(ExportLogErrorStatus.AccessDenied);
+		}
+
+		try {
+			const reportFileName = 'RecoverBadSectorsLog';
+			const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
+			const dataPrepared = await this.prepareDataFromRecoverBadSectors(rbsResultItems);
+			const htmlData = await this.generateReport(dataPrepared);
+			const createdFilePath = await this.exportReportToFile(reportFileName, htmlData);
+			return [ExportLogErrorStatus.SuccessExport, createdFilePath];
+		} catch (error) {
+			this.logger.error('Could not get rbs log', error);
+			throw(ExportLogErrorStatus.GenericError);
+		}
+	 }
+
+	public async exportScanResults(): Promise<[ExportLogErrorStatus, string]> {
+
+		if (!(await this.validateDocumentsLibrary())){
+			throw(ExportLogErrorStatus.AccessDenied);
+		}
+
+		try {
+			const reportFileName = 'HardwareScanLog';
+			const scanLogData = await this.scanLogService.getScanLog();
+			const dataPrepared = await this.prepareDataFromScanLog(scanLogData);
+			const htmlData = await this.generateReport(dataPrepared);
+			const createdFilePath = await this.exportReportToFile(reportFileName, htmlData);
+			return [ExportLogErrorStatus.SuccessExport, createdFilePath];
+		} catch (error) {
+			this.logger.error('Could not get scan log', error);
+			throw(ExportLogErrorStatus.GenericError);
 		}
 	}
 
-	public async exportScanResults() {
-		if (await this.validateDocumentsLibrary()){
-			return new Promise(async (resolve, reject) => {
-				try {
-					const reportFileName = 'HardwareScanLog';
-					const scanLogData = await this.scanLogService.getScanLog();
-					const dataPrepared = await this.prepareDataFromScanLog(scanLogData);
-					const htmlData = await this.generateReport(dataPrepared);
-					await this.exportReportToFile(reportFileName, htmlData);
-					resolve();
-				} catch (error) {
-					this.logger.error('Could not get scan log', error);
-					this.openExportLogComponentsModal(ExportLogErrorStatus.GenericError);
-					reject();
-				}
-			});
-		}
-	}
-
-	private async validateDocumentsLibrary() {
+	private async validateDocumentsLibrary(): Promise<boolean> {
 		const permissionDeniedErrorNumber = -2147024891; // Error code got from error object
 
 		try {
 			await window.Windows.Storage.KnownFolders.documentsLibrary;
-			return true;
 		} catch (error) {
+			// I'll only return false if this specific error happens
+			// Any other error will be treated as "generic error"
 			if (error.number === permissionDeniedErrorNumber) {
-				this.openExportLogComponentsModal(ExportLogErrorStatus.AccessDenied);
+				return false;
 			}
-			return false;
 		}
-	}
-
-	private openExportLogComponentsModal(error: ExportLogErrorStatus, logPath: string = '') {
-		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
-			size: 'lg',
-			centered: true,
-			windowClass: 'hardware-scan-modal-size'
-		});
-
-		( modal.componentInstance as ModalExportLogComponent).logPath = logPath;
-		( modal.componentInstance as ModalExportLogComponent).errorStatus = error;
-
-		return modal;
+		return true;
 	}
 }
