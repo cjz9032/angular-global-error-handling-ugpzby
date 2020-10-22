@@ -235,7 +235,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		linkText: 'My Device',
 		linkPath: 'device',
 		state: 1,
-		metricsItem: 'good condition',
+		metricsItem: 'good-condition',
 		statusText: 'GOOD CONDITION'
 	};
 
