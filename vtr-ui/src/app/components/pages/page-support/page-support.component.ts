@@ -94,7 +94,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		{url: 'https://lena.lenovo.com/lena',     lang: 'en', geo: ['au', 'nz', 'sg', 'my', 'ph']},
 		{url: 'https://las.lena.lenovo.com/lena', lang: 'es', geo: ['mx', 'co', 'ar', 'pe', 'cl', 'cr', 'do', 'sv', 'gt', 'hn', 'ni', 'pa', 'bo', 'ec', 'py', 'uy', 've']},
 		{url: 'https://jp.lena.lenovo.com/lena',  lang: 'ja', geo: ['jp']},
-		{url: 'https://jp.lena.lenovo.com/lena',  lang: 'de', geo: ['de', 'at']},
+		{url: 'https://eu.lena.lenovo.com/lena',  lang: 'de', geo: ['de', 'at']},
 	];
 
 	listFindUs = {
