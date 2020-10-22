@@ -236,7 +236,7 @@ export class VantageShellService {
 			if (!this.phoenix.securityAdvisor) {
 				this.phoenix.loadFeatures([Phoenix.Features.SecurityAdvisor]);
 				const wifiSecurity = this.phoenix.securityAdvisor.wifiSecurity;
-				this.phoenix.securityAdvisor.wifiSecurity = new WifisecurityProxy(wifiSecurity, this.commonService);
+				this.phoenix.securityAdvisor.wifiSecurity = new WifisecurityProxy(wifiSecurity, this.commonService).getObj();
 			}
 			return this.phoenix.securityAdvisor;
 		}
