@@ -23,7 +23,7 @@ export class SmartPerformanceService {
 	scheduleScanObj = null;
 	nextScheduleScan: any;
 	enableNextText: boolean;
-
+	isEnterSmartPerformance = false;
 	subItems: any = {};
 
 	localPrice: any;
