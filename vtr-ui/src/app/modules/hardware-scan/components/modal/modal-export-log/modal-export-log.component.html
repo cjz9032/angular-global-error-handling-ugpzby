@@ -4,16 +4,13 @@
 	<div [ngSwitch]="errorStatus">
 		<p *ngSwitchCase="enumExportLogErrorStatus.SuccessExport" id="hwscan-export-log-modal-description"
 			class="description"
-			role="text">{{ 'hardwareScan.exportLogModal.exportSuccessDescription' | translate }} {{logPath}}
-		</p>
-
-		<p *ngSwitchCase="enumExportLogErrorStatus.GenericError" id="hwscan-export-log-modal-description"
-			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportFailDescription' | translate }}
-		</p>
+			role="text">{{ 'hardwareScan.exportLogModal.exportSuccessDescription' | translate }}{{logPath}}</p>
 
 		<p *ngSwitchCase="enumExportLogErrorStatus.AccessDenied" id="hwscan-export-log-modal-description"
-			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportAccessErrorDescription' | translate }}
-		</p>
+			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportAccessErrorDescription' | translate }}</p>
+
+		<p *ngSwitchDefault id="hwscan-export-log-modal-description"
+			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportFailDescription' | translate }}</p>
 	</div>
 
 	<div *ngIf="errorStatus === enumExportLogErrorStatus.AccessDenied; else okButton" class="row button-row">
