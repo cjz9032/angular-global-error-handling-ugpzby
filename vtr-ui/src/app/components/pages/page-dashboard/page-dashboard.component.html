@@ -101,7 +101,7 @@
 								cardId="dashboard-lnk-security-position-c">
 								<vtr-material-status-circle
 									[gradientColor]="securityInfo"
-									[statusText]="securityInfo?.statusText">
+									[statusText]="securityInfo?.statusText ? securityInfo?.statusText : '--'">
 								</vtr-material-status-circle>
 							</vtr-material-state-card-container>
 						</ng-template>
