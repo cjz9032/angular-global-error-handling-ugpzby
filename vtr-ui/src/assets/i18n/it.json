@@ -774,8 +774,8 @@
                 "sub2": "Impostazioni dispositivo",
                 "sub3": "Aggiornamento del sistema",
                 "sub4": "Assistenza intelligente",
-				"sub5": "Dettagli dispositivo",
-				"sub6": "Device Settings Details"
+                "sub5": "Dettagli dispositivo",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Protezione",
@@ -2649,15 +2649,15 @@
                 "accountText": "Creazione account non riuscita. Si prega di riprovare più tardi."
             },
             "expirePromptModal": {
-				"title": "Accedi a Lenovo ID",
-				"description": "Per continuare a utilizzare Sicurezza Lenovo WiFi, accedere con il Lenovo ID o registrarsi per un account gratuito.",
-				"trialWillExpire": "La versione di prova di Sicurezza WiFi scadrà tra:",
-				"days": "giorni",
-				"hasExpired": "La versione di prova di Sicurezza Lenovo WiFi è scaduta. Accedere con il Lenovo ID o registrarsi per un account gratuito.",
-				"signIn": "ACCEDI",
-				"register": "REGISTRATI",
-				"ignore": "IGNORA"
-			}
+                "title": "Accedi a Lenovo ID",
+                "description": "Per continuare a utilizzare Sicurezza Lenovo WiFi, accedere con il Lenovo ID o registrarsi per un account gratuito.",
+                "trialWillExpire": "La versione di prova di Sicurezza WiFi scadrà tra:",
+                "days": "giorni",
+                "hasExpired": "La versione di prova di Sicurezza Lenovo WiFi è scaduta. Accedere con il Lenovo ID o registrarsi per un account gratuito.",
+                "signIn": "ACCEDI",
+                "register": "REGISTRATI",
+                "ignore": "IGNORA"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Supporto Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Il log è stato esportato correttamente ed è disponibile all'indirizzo:",
+            "exportAccessErrorDescription": "Per esportare il log è necessario consentire a Vantage di accedere al file system. Fare clic sul pulsante seguente per aprire le impostazioni delle autorizzazioni di Windows. Tenere presente che la modifica delle autorizzazioni potrebbe causare la chiusura di Vantage.",
+            "exportFailDescription": "È stato rilevato un problema durante l'esportazione del log. Riprovare più tardi.",
+            "openSettingsButton": "Apri impostazioni di Windows"
         },
         "executingScanTitle": "Scansione di {{title}} in corso",
         "showDetails": "Visualizza dettagli ",

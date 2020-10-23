@@ -774,8 +774,8 @@
                 "sub2": "Cihaz Ayarlarım",
                 "sub3": "Sistem Güncellemesi",
                 "sub4": "Akıllı Yardım",
-				"sub5": "Cihaz Ayrıntıları",
-				"sub6": "Device Settings Details"
+                "sub5": "Cihaz Ayrıntıları",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Güvenlik",
@@ -2649,15 +2649,15 @@
                 "accountText": "Hesap oluşturma işlemi başarısız oldu. Lütfen daha sonra yeniden deneyin."
             },
             "expirePromptModal": {
-				"title": "Lenovo ID ile oturum açma",
-				"description": "Lenovo WiFi Güvenliği'ni kullanmaya devam etmek için lütfen Lenovo ID'nizle oturum açın veya ücretsiz bir hesaba kaydolun.",
-				"trialWillExpire": "WiFi Güvenliği denemenizin sona ermesine kalan süre:",
-				"days": "gün",
-				"hasExpired": "Lenovo WiFi Güvenliği denemeniz sona erdi. Lütfen Lenovo ID'nizle oturum açın veya ücretsiz bir hesaba kaydolun.",
-				"signIn": "OTURUM AÇ",
-				"register": "KAYDOL",
-				"ignore": "YOKSAY"
-			}
+                "title": "Lenovo ID ile oturum açma",
+                "description": "Lenovo WiFi Güvenliği'ni kullanmaya devam etmek için lütfen Lenovo ID'nizle oturum açın veya ücretsiz bir hesaba kaydolun.",
+                "trialWillExpire": "WiFi Güvenliği denemenizin sona ermesine kalan süre:",
+                "days": "gün",
+                "hasExpired": "Lenovo WiFi Güvenliği denemeniz sona erdi. Lütfen Lenovo ID'nizle oturum açın veya ücretsiz bir hesaba kaydolun.",
+                "signIn": "OTURUM AÇ",
+                "register": "KAYDOL",
+                "ignore": "YOKSAY"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Lenovo Destek"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Günlük başarıyla dışa aktarıldı ve şu adreste bulunabilir:",
+            "exportAccessErrorDescription": "Günlüğü dışa aktarmak için Vantage'ın dosya sisteminize erişmesine izin vermeniz gerekir. Windows izin ayarlarını açmak için aşağıdaki düğmeyi tıklatın. İznin değiştirilmesi sonucu Vantage'ın kapanabileceğini unutmayın.",
+            "exportFailDescription": "Günlük dışa aktarımı sırasında bir sorun bulundu. Lütfen daha sonra yeniden deneyin.",
+            "openSettingsButton": "Windows Ayarlarını Aç"
         },
         "executingScanTitle": "{{title}} taranıyor",
         "showDetails": "Ayrıntıları Görüntüle",

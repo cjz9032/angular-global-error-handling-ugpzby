@@ -774,8 +774,8 @@
                 "sub2": "我的裝置設定",
                 "sub3": "系統更新",
                 "sub4": "智慧助理",
-				"sub5": "裝置詳細資訊",
-				"sub6": "Device Settings Details"
+                "sub5": "裝置詳細資訊",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "安全性",
@@ -2649,15 +2649,15 @@
                 "accountText": "帳戶建立失敗。請稍後重試。"
             },
             "expirePromptModal": {
-				"title": "登入 Lenovo ID",
-				"description": "若要繼續使用 Lenovo WiFi 安全性，請使用您的 Lenovo ID 登入或註冊免費帳戶。",
-				"trialWillExpire": "您的 WiFi 安全性試用版期限尚有：",
-				"days": "天",
-				"hasExpired": "您的 Lenovo WiFi 安全性試用版已過期。請使用您的 Lenovo ID 登入或註冊免費帳戶。",
-				"signIn": "登入",
-				"register": "註冊",
-				"ignore": "忽略"
-			}
+                "title": "登入 Lenovo ID",
+                "description": "若要繼續使用 Lenovo WiFi 安全性，請使用您的 Lenovo ID 登入或註冊免費帳戶。",
+                "trialWillExpire": "您的 WiFi 安全性試用版期限尚有：",
+                "days": "天",
+                "hasExpired": "您的 Lenovo WiFi 安全性試用版已過期。請使用您的 Lenovo ID 登入或註冊免費帳戶。",
+                "signIn": "登入",
+                "register": "註冊",
+                "ignore": "忽略"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Lenovo 支援中心"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "已順利匯出日誌，可以在以下位置找到：",
+            "exportAccessErrorDescription": "您必須允許 Vantage 存取您的檔案系統，才能匯出日誌。按一下下方的按鈕，即可開啟 Windows 權限設定。請注意，變更權限可能會造成 Vantage 關閉。",
+            "exportFailDescription": "日誌匯出期間發現有問題。請稍後重試。",
+            "openSettingsButton": "開啟 Windows 設定"
         },
         "executingScanTitle": "正在掃描 {{title}}",
         "showDetails": "檢視詳細資料",

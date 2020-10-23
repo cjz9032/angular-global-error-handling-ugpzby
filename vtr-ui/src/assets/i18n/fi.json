@@ -774,8 +774,8 @@
                 "sub2": "Omat laiteasetukset",
                 "sub3": "Järjestelmäpäivitys",
                 "sub4": "Älykäs apu",
-				"sub5": "Laitteen tiedot",
-				"sub6": "Device Settings Details"
+                "sub5": "Laitteen tiedot",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Suojaus",
@@ -2649,15 +2649,15 @@
                 "accountText": "Tilin luonti on epäonnistunut. Yritä myöhemmin uudelleen."
             },
             "expirePromptModal": {
-				"title": "Kirjaudu Lenovo ID:hen",
-				"description": "Jos haluat jatkaa Lenovo WiFi -suojauksen käyttöä, kirjaudu sisään Lenovo ID:llä tai rekisteröi maksuton tili.",
-				"trialWillExpire": "WiFi-suojauksen kokeiluversiota on jäljellä:",
-				"days": "päivää",
-				"hasExpired": "Lenovo WiFi -suojauksen kokeiluversio on vanhentunut. Kirjaudu sisään Lenovo ID:llä tai rekisteröi maksuton tili.",
-				"signIn": "KIRJAUDU SISÄÄN",
-				"register": "REKISTERÖIDY",
-				"ignore": "OHITA"
-			}
+                "title": "Kirjaudu Lenovo ID:hen",
+                "description": "Jos haluat jatkaa Lenovo WiFi -suojauksen käyttöä, kirjaudu sisään Lenovo ID:llä tai rekisteröi maksuton tili.",
+                "trialWillExpire": "WiFi-suojauksen kokeiluversiota on jäljellä:",
+                "days": "päivää",
+                "hasExpired": "Lenovo WiFi -suojauksen kokeiluversio on vanhentunut. Kirjaudu sisään Lenovo ID:llä tai rekisteröi maksuton tili.",
+                "signIn": "KIRJAUDU SISÄÄN",
+                "register": "REKISTERÖIDY",
+                "ignore": "OHITA"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Lenovo-tuki"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Loki vietiin onnistuneesti ja se löytyy osoitteesta:",
+            "exportAccessErrorDescription": "Sinun täytyy sallia Vantage käyttää tiedostojärjestelmääsi viedäksesi lokin. Napsauta alla olevaa painiketta avataksesi Windows käyttöoikeusasetukset. Huomaa, että käyttöoikeuden muuttaminen saattaa sulkea Vantage.",
+            "exportFailDescription": "Lokin viennin aikana ilmeni ongelma. Yritä myöhemmin uudelleen.",
+            "openSettingsButton": "Avaa Windows-asetukset"
         },
         "executingScanTitle": "Tarkistetaan {{title}}",
         "showDetails": "Näytä tiedot",

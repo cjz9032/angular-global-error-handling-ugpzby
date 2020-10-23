@@ -774,8 +774,8 @@
                 "sub2": "Paramètres de mon périphérique",
                 "sub3": "Mise à jour du système",
                 "sub4": "Assistance intelligente",
-				"sub5": "Détails du périphérique",
-				"sub6": "Device Settings Details"
+                "sub5": "Détails du périphérique",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Sécurité",
@@ -2649,15 +2649,15 @@
                 "accountText": "La création du compte a échoué. Réessayez plus tard."
             },
             "expirePromptModal": {
-				"title": "Connectez-vous à Lenovo ID",
-				"description": "Pour continuer à utiliser Sécurité Wi-Fi Lenovo, connectez-vous à l'aide de votre Lenovo ID ou enregistrez-vous pour obtenir un compte gratuit.",
-				"trialWillExpire": "Votre version d'essai de Sécurité WiFi va expirer dans :",
-				"days": "jours.",
-				"hasExpired": "Votre version d'essai de Sécurité Wi-Fi Lenovo a expiré. Veuillez vous connecter à l'aide de votre Lenovo ID ou inscrivez-vous pour obtenir un compte gratuit.",
-				"signIn": "SE CONNECTER",
-				"register": "ENREGISTRER",
-				"ignore": "IGNORER"
-			}
+                "title": "Connectez-vous à Lenovo ID",
+                "description": "Pour continuer à utiliser Sécurité Wi-Fi Lenovo, connectez-vous à l'aide de votre Lenovo ID ou enregistrez-vous pour obtenir un compte gratuit.",
+                "trialWillExpire": "Votre version d'essai de Sécurité WiFi va expirer dans :",
+                "days": "jours.",
+                "hasExpired": "Votre version d'essai de Sécurité Wi-Fi Lenovo a expiré. Veuillez vous connecter à l'aide de votre Lenovo ID ou inscrivez-vous pour obtenir un compte gratuit.",
+                "signIn": "SE CONNECTER",
+                "register": "ENREGISTRER",
+                "ignore": "IGNORER"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Support de Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Le journal a été exporté et il est accessible à l'emplacement suivant :",
+            "exportAccessErrorDescription": "Vous devez autoriser Vantage à accéder à votre système de fichiers pour exporter le journal. Cliquez sur le bouton ci-dessous pour ouvrir les paramètres des autorisations Windows. Gardez à l'esprit que la modification d'une autorisation peut entraîner la fermeture de Vantage.",
+            "exportFailDescription": "Un incident a été détecté pendant l'exportation du journal. Réessayez plus tard.",
+            "openSettingsButton": "Ouvrir les paramètres Windows"
         },
         "executingScanTitle": "Analyse de {{title}}",
         "showDetails": "Afficher les détails",

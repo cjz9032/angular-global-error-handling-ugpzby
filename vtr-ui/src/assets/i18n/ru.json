@@ -774,8 +774,8 @@
                 "sub2": "Параметры моего устройства",
                 "sub3": "Обновление системы",
                 "sub4": "Интеллектуальный помощник",
-				"sub5": "Сведения об устройстве",
-				"sub6": "Device Settings Details"
+                "sub5": "Сведения об устройстве",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Защита",
@@ -2649,15 +2649,15 @@
                 "accountText": "Ошибка создания учетной записи. Повторите попытку позже."
             },
             "expirePromptModal": {
-				"title": "Вход с помощью Lenovo ID",
-				"description": "Чтобы продолжить использование функции \"Безопасность Lenovo WiFi\", войдите с помощью Lenovo ID или зарегистрируйте бесплатную учетную запись.",
-				"trialWillExpire": "Срок действия пробной версии функции \"Безопасность WiFi\" истечет через:",
-				"days": "дн.",
-				"hasExpired": "Срок действия пробной версии функции \"Безопасность Lenovo WiFi\" истек. Войдите с помощью Lenovo ID или зарегистрируйте бесплатную учетную запись.",
-				"signIn": "ВХОД",
-				"register": "ЗАРЕГИСТРИРОВАТЬСЯ",
-				"ignore": "ИГНОРИРОВАТЬ"
-			}
+                "title": "Вход с помощью Lenovo ID",
+                "description": "Чтобы продолжить использование функции \"Безопасность Lenovo WiFi\", войдите с помощью Lenovo ID или зарегистрируйте бесплатную учетную запись.",
+                "trialWillExpire": "Срок действия пробной версии функции \"Безопасность WiFi\" истечет через:",
+                "days": "дн.",
+                "hasExpired": "Срок действия пробной версии функции \"Безопасность Lenovo WiFi\" истек. Войдите с помощью Lenovo ID или зарегистрируйте бесплатную учетную запись.",
+                "signIn": "ВХОД",
+                "register": "ЗАРЕГИСТРИРОВАТЬСЯ",
+                "ignore": "ИГНОРИРОВАТЬ"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Поддержка Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Журнал успешно экспортирован и находится по следующему адресу:",
+            "exportAccessErrorDescription": "Разрешите Vantage доступ к файловой системы для экспорта журнала. Нажмите кнопку ниже, чтобы открыть настройки разрешений Windows. Помните, что изменение разрешений может привести к закрытию Vantage.",
+            "exportFailDescription": "Во время экспорта журнала обнаружена проблема. Повторите попытку позже.",
+            "openSettingsButton": "Открыть настройки Windows"
         },
         "executingScanTitle": "Сканирование {{title}}",
         "showDetails": "Просмотреть сведения",

@@ -774,8 +774,8 @@
                 "sub2": "Moje postavke uređaja",
                 "sub3": "Ažuriranje sustava",
                 "sub4": "Pametna pomoć",
-				"sub5": "Pojedinosti o uređaju",
-				"sub6": "Device Settings Details"
+                "sub5": "Pojedinosti o uređaju",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Sigurnost",
@@ -2649,15 +2649,15 @@
                 "accountText": "Izrada računa nije uspjela. Pokušajte ponovno kasnije."
             },
             "expirePromptModal": {
-				"title": "Prijavite se u Lenovo ID.",
-				"description": "Kako biste nastavili koristiti Sigurnost WiFi mreže tvrtke Lenovo, prijavite se pomoću svog Lenovo ID-a ili se registrirajte za besplatni račun.",
-				"trialWillExpire": "Probno razdoblje sigurnosti WiFi mreže istječe za:",
-				"days": "sljedeći broj dana:",
-				"hasExpired": "Vaše probno razdoblje Sigurnosti WiFi mreže tvrtke Lenovo je isteklo. Prijavite se pomoću svog Lenovo ID-a ili se registrirajte za besplatni račun.",
-				"signIn": "PRIJAVA",
-				"register": "REGISTRACIJA",
-				"ignore": "ZANEMARI"
-			}
+                "title": "Prijavite se u Lenovo ID.",
+                "description": "Kako biste nastavili koristiti Sigurnost WiFi mreže tvrtke Lenovo, prijavite se pomoću svog Lenovo ID-a ili se registrirajte za besplatni račun.",
+                "trialWillExpire": "Probno razdoblje sigurnosti WiFi mreže istječe za:",
+                "days": "sljedeći broj dana:",
+                "hasExpired": "Vaše probno razdoblje Sigurnosti WiFi mreže tvrtke Lenovo je isteklo. Prijavite se pomoću svog Lenovo ID-a ili se registrirajte za besplatni račun.",
+                "signIn": "PRIJAVA",
+                "register": "REGISTRACIJA",
+                "ignore": "ZANEMARI"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Služba za podršku tvrtke Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Dnevnički zapis je uspješno izvezen i može se naći na:",
+            "exportAccessErrorDescription": "Morate dopustiti Vantage pristup vašem sustavu datoteka za izvoz dnevničkog zapisa. Kliknite na tipku u nastavku da biste otvorili postavke dozvola za Windows. Imajte na umu da promjena dozvola može uzrokovati zatvaranje Vantage.",
+            "exportFailDescription": "Pronađen je problem tijekom izvoza dnevničkog zapisa. Molimo, pokušajte kasnije.",
+            "openSettingsButton": "Otvorite postavke sustava Windows"
         },
         "executingScanTitle": "Skeniranje {{title}}",
         "showDetails": "Prikaži detalje",

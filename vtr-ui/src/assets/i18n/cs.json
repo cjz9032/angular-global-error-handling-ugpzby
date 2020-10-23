@@ -773,9 +773,9 @@
                 "sub1": "Mé zařízení",
                 "sub2": "Nastavení mých zařízení",
                 "sub3": "Aktualizace systému",
-				"sub4": "Inteligentní pomoc",
-				"sub5": "Podrobnosti o zařízení",
-				"sub6": "Device Settings Details"
+                "sub4": "Inteligentní pomoc",
+                "sub5": "Podrobnosti o zařízení",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Zabezpečení",
@@ -2649,15 +2649,15 @@
                 "accountText": "Vytvoření účtu se nezdařilo. Zkuste to prosím později."
             },
             "expirePromptModal": {
-				"title": "Přihlaste se k Lenovo ID",
-				"description": "Chcete-li nadále používat Zabezpečení WiFi Lenovo, přihlaste se pomocí svého Lenovo ID nebo si zaregistrujte účet zdarma.",
-				"trialWillExpire": "Platnost zkušební verze Zabezpečení WiFi vyprší za:",
-				"days": "dní",
-				"hasExpired": "Platnost vaší zkušební verze Zabezpečení WiFi Lenovo vypršela. Přihlaste se pomocí svého Lenovo ID nebo si zaregistrujte účet zdarma.",
-				"signIn": "PŘIHLÁSIT SE",
-				"register": "REGISTROVAT",
-				"ignore": "IGNOROVAT"
-			}
+                "title": "Přihlaste se k Lenovo ID",
+                "description": "Chcete-li nadále používat Zabezpečení WiFi Lenovo, přihlaste se pomocí svého Lenovo ID nebo si zaregistrujte účet zdarma.",
+                "trialWillExpire": "Platnost zkušební verze Zabezpečení WiFi vyprší za:",
+                "days": "dní",
+                "hasExpired": "Platnost vaší zkušební verze Zabezpečení WiFi Lenovo vypršela. Přihlaste se pomocí svého Lenovo ID nebo si zaregistrujte účet zdarma.",
+                "signIn": "PŘIHLÁSIT SE",
+                "register": "REGISTROVAT",
+                "ignore": "IGNOROVAT"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Technická podpora Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Export protokolu proběhl úspěšně a naleznete ho na adrese:",
+            "exportAccessErrorDescription": "Chcete-li protokol exportovat, musíte aplikaci Vantage povolit přístup k souborovému systému. Klepnutím na tlačítko níže otevřete nastavení oprávnění systému Windows. Upozorňujeme vás, že pokud změníte oprávnění, může dojít k ukončení aplikace Vantage.",
+            "exportFailDescription": "Během exportu protokolu byl nalezen problém. Zkuste to prosím později.",
+            "openSettingsButton": "Otevřít nastavení systému Windows"
         },
         "executingScanTitle": "Snímání {{title}}",
         "showDetails": "Zobrazit podrobnosti",

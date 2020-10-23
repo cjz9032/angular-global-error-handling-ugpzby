@@ -774,8 +774,8 @@
                 "sub2": "设备设置",
                 "sub3": "系统更新",
                 "sub4": "智能助手",
-				"sub5": "设备详细信息",
-				"sub6": "Device Settings Details"
+                "sub5": "设备详细信息",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "安全顾问",
@@ -2649,15 +2649,15 @@
                 "accountText": "帐户创建失败。请稍后重试。"
             },
             "expirePromptModal": {
-				"title": "登录到 Lenovo ID",
-				"description": "要继续使用 Lenovo WiFi 安全，请使用 Lenovo ID 登录或注册一个免费帐户。",
-				"trialWillExpire": "您的 WiFi 安全试用版将于以下时间内到期：",
-				"days": "天",
-				"hasExpired": "您的 Lenovo WiFi 安全试用版已到期。请使用 Lenovo ID 登录或注册一个免费帐户。",
-				"signIn": "登录",
-				"register": "注册",
-				"ignore": "忽略"
-			}
+                "title": "登录到 Lenovo ID",
+                "description": "要继续使用 Lenovo WiFi 安全，请使用 Lenovo ID 登录或注册一个免费帐户。",
+                "trialWillExpire": "您的 WiFi 安全试用版将于以下时间内到期：",
+                "days": "天",
+                "hasExpired": "您的 Lenovo WiFi 安全试用版已到期。请使用 Lenovo ID 登录或注册一个免费帐户。",
+                "signIn": "登录",
+                "register": "注册",
+                "ignore": "忽略"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Lenovo 支持"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "已成功导出日志，可以在以下位置找到：",
+            "exportAccessErrorDescription": "您需要允许 Vantage 访问您的文件系统以导出日志。单击下面的按钮以打开 Windows 权限设置。请注意，更改权限可能会导致 Vantage 关闭。",
+            "exportFailDescription": "日志导出过程中发现问题。请稍后重试。",
+            "openSettingsButton": "打开 Windows 设置"
         },
         "executingScanTitle": "正在扫描 {{title}}",
         "showDetails": "查看详细信息",

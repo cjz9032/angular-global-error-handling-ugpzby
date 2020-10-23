@@ -774,8 +774,8 @@
                 "sub2": "Οι ρυθμίσεις της συσκευής μου",
                 "sub3": "Ενημέρωση συστήματος",
                 "sub4": "Έξυπνη βοήθεια",
-				"sub5": "Στοιχεία συσκευής",
-				"sub6": "Device Settings Details"
+                "sub5": "Στοιχεία συσκευής",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Ασφάλεια",
@@ -2649,15 +2649,15 @@
                 "accountText": "Η δημιουργία λογαριασμού απέτυχε. Δοκιμάστε ξανά αργότερα."
             },
             "expirePromptModal": {
-				"title": "Συνδεθείτε στο Lenovo ID",
-				"description": "Για να συνεχίσετε να χρησιμοποιείτε την Ασφάλεια Lenovo WiFi, συνδεθείτε με το Lenovo ID σας ή εγγραφείτε για δωρεάν λογαριασμό.",
-				"trialWillExpire": "Η δοκιμή Ασφαλείας WiFi θα λήξει σε:",
-				"days": "ημέρες",
-				"hasExpired": "Η δοκιμή Αφαλείας Lenovo WiFi έχει λήξει. Συνδεθείτε με το Lenovo ID σας ή εγγραφείτε για δωρεάν λογαριασμό.",
-				"signIn": "ΣΥΝΔΕΣΗ",
-				"register": "ΕΓΓΡΑΦΗ",
-				"ignore": "ΠΑΡΑΒΛΕΨΗ"
-			}
+                "title": "Συνδεθείτε στο Lenovo ID",
+                "description": "Για να συνεχίσετε να χρησιμοποιείτε την Ασφάλεια Lenovo WiFi, συνδεθείτε με το Lenovo ID σας ή εγγραφείτε για δωρεάν λογαριασμό.",
+                "trialWillExpire": "Η δοκιμή Ασφαλείας WiFi θα λήξει σε:",
+                "days": "ημέρες",
+                "hasExpired": "Η δοκιμή Αφαλείας Lenovo WiFi έχει λήξει. Συνδεθείτε με το Lenovo ID σας ή εγγραφείτε για δωρεάν λογαριασμό.",
+                "signIn": "ΣΥΝΔΕΣΗ",
+                "register": "ΕΓΓΡΑΦΗ",
+                "ignore": "ΠΑΡΑΒΛΕΨΗ"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Υποστήριξη Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Το αρχείο καταγραφής εξήχθη με επιτυχία και μπορείτε να το βρείτε στη διεύθυνση:",
+            "exportAccessErrorDescription": "Απαιτείται να επιτρέπεται στο Vantage να έχει πρόσβαση στο σύστημα αρχείων σας για να εξάγει το αρχείο καταγραφής. Κάντε κλικ στο παρακάτω κουμπί για να ανοίξετε τις ρυθμίσεις δικαιωμάτων των Windows. Να έχετε υπόψη σας ότι η αλλαγή δικαιώματος ενδέχεται να προκαλέσει κλείσιμο του Vantage.",
+            "exportFailDescription": "Εντοπίστηκε πρόβλημα κατά την εξαγωγή του αρχείου καταγραφής. Δοκιμάστε ξανά αργότερα.",
+            "openSettingsButton": "Άνοιγμα ρυθμίσεων των Windows"
         },
         "executingScanTitle": "Εκτελείται σάρωση {{title}}",
         "showDetails": "Προβολή λεπτομερειών",

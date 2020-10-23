@@ -776,8 +776,8 @@
                 "sub2": "إعدادات جهازي",
                 "sub3": "تحديث النظام",
                 "sub4": "مساعدة ذكية",
-				"sub5": "تفاصيل الجهاز",
-				"sub6": "Device Settings Details"
+                "sub5": "تفاصيل الجهاز",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "الأمان",
@@ -2651,15 +2651,15 @@
                 "accountText": "فشل إنشاء الحساب. يُرجى إعادة المحاولة لاحقًا."
             },
             "expirePromptModal": {
-				"title": "تسجيل الدخول إلى Lenovo ID",
-				"description": "لمتابعة استخدام أمان Lenovo WiFi، يرجى تسجيل الدخول باستخدام Lenovo ID أو التسجيل للحصول على حساب مجاني.",
-				"trialWillExpire": "ستنتهي صلاحية إصدارك التجريبي من أمان WiFi في غضون:",
-				"days": "يوم (أيام)",
-				"hasExpired": "انتهت صلاحية إصدارك التجريبي من أمان Lenovo WiFi. يرجى تسجيل الدخول باستخدام معرف Lenovo ID أو التسجيل للحصول على حساب مجاني.",
-				"signIn": "تسجيل الدخول",
-				"register": "تسجيل",
-				"ignore": "تجاهل"
-			}
+                "title": "تسجيل الدخول إلى Lenovo ID",
+                "description": "لمتابعة استخدام أمان Lenovo WiFi، يرجى تسجيل الدخول باستخدام Lenovo ID أو التسجيل للحصول على حساب مجاني.",
+                "trialWillExpire": "ستنتهي صلاحية إصدارك التجريبي من أمان WiFi في غضون:",
+                "days": "يوم (أيام)",
+                "hasExpired": "انتهت صلاحية إصدارك التجريبي من أمان Lenovo WiFi. يرجى تسجيل الدخول باستخدام معرف Lenovo ID أو التسجيل للحصول على حساب مجاني.",
+                "signIn": "تسجيل الدخول",
+                "register": "تسجيل",
+                "ignore": "تجاهل"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4278,10 +4278,10 @@
             "supportButtonText": "دعم Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "تم تصدير السجل بنجاح ويمكن العثور عليه في:",
+            "exportAccessErrorDescription": "تحتاج إلى تمكين Vantage من الوصول إلى نظام ملفاتك لتصدير السجل. انقر فوق الزر أدناه لفتح إعدادات أذونات Windows. يُرجى العلم أن تغيير الإذن قد يتسبب في إغلاق Vantage.",
+            "exportFailDescription": "تم العثور على مشكلة أثناء تصدير السجل. يُرجى إعادة المحاولة لاحقًا.",
+            "openSettingsButton": "فتح إعدادات Windows"
         },
         "executingScanTitle": "جارٍ فحص {{title}}",
         "showDetails": "عرض التفاصيل",

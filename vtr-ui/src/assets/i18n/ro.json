@@ -774,8 +774,8 @@
                 "sub2": "Setările dispozitivului",
                 "sub3": "Actualizare sistem",
                 "sub4": "Asistent inteligent",
-				"sub5": "Detalii dispozitiv",
-				"sub6": "Device Settings Details"
+                "sub5": "Detalii dispozitiv",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Securitate",
@@ -2649,15 +2649,15 @@
                 "accountText": "Crearea de cont a eșuat. Încercaţi din nou mai târziu."
             },
             "expirePromptModal": {
-				"title": "Conectați-vă la Lenovo ID",
-				"description": "Pentru a continua să utilizați Securitatea WiFi Lenovo, vă rugăm să vă conectați cu Lenovo ID sau să vă înregistrați pentru un cont gratuit.",
-				"trialWillExpire": "Versiunea dvs. de încercare pentru Securitatea WiFi va expira în:",
-				"days": "zile",
-				"hasExpired": "Versiunea dvs. de încercare pentru Securitatea WiFi Lenovo a expirat. Vă rugăm să vă conectați cu Lenovo ID sau să vă înregistrați pentru un cont gratuit.",
-				"signIn": "CONECTARE",
-				"register": "ÎNREGISTRARE",
-				"ignore": "IGNORARE"
-			}
+                "title": "Conectați-vă la Lenovo ID",
+                "description": "Pentru a continua să utilizați Securitatea WiFi Lenovo, vă rugăm să vă conectați cu Lenovo ID sau să vă înregistrați pentru un cont gratuit.",
+                "trialWillExpire": "Versiunea dvs. de încercare pentru Securitatea WiFi va expira în:",
+                "days": "zile",
+                "hasExpired": "Versiunea dvs. de încercare pentru Securitatea WiFi Lenovo a expirat. Vă rugăm să vă conectați cu Lenovo ID sau să vă înregistrați pentru un cont gratuit.",
+                "signIn": "CONECTARE",
+                "register": "ÎNREGISTRARE",
+                "ignore": "IGNORARE"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Asistență Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Jurnalul a fost exportat cu succes și poate fi găsit la:",
+            "exportAccessErrorDescription": "Trebuie să permiteți Vantage să vă acceseze sistemul de fișiere pentru a exporta jurnalul. Faceți clic pe butonul de mai jos pentru a deschide setările de permisiuni Windows. Aveți grijă că modificarea permisiunii ar putea determina închiderea Vantage.",
+            "exportFailDescription": "A fost găsită o problemă în timpul exportului de jurnal. Încercați din nou mai târziu.",
+            "openSettingsButton": "Deschideți Setări Windows"
         },
         "executingScanTitle": "Se scanează {{title}}",
         "showDetails": "Vizualizare detalii",
