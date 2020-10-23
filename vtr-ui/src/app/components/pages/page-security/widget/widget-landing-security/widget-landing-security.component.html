@@ -32,35 +32,50 @@
 				<div class="col-1 basis-width"></div>
 				<section class="landing-content col-11 pl-3">
 					<p id="sa-ov-widget-security-content-{{i+1}}" role="text">{{item.content}}</p>
-					<vtr-ui-button *ngIf="!item.showOwn && item.buttonLink" [label]="item.buttonLabel"
-						linkId="{{item.id}}"
+					<button mat-flat-button *ngIf="!item.showOwn && item.buttonLink"
+						id="{{item.id}}"
+						[color]="(item.status === 'enabled' || item.status === 'installed') ? 'accent':'primary'"
+						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
+						[routerLink]="item.buttonLink"
+						routerLinkActive="active"
+						[ngbTooltip]="item.buttonLabel" tooltipClass="vtr-system-tooltip" container="body"
+						vtrMetrics
+						metricsEvent="FeatureClick"
 						[metricsItem]="item.id"
-						[routerPath]="item.buttonLink"
-						[buttonColor]="(item.status === 'enabled' || item.status === 'installed') ? 'gray':''">
-					</vtr-ui-button>
-					<vtr-ui-button *ngIf="item.buttonHref" [label]="item.buttonLabel" [href]="item.buttonHref"
-						linkId="{{item.id}}"
+					>{{item.buttonLabel}}</button>
+					<button mat-flat-button *ngIf="item.buttonHref"
+						id="{{item.id}}"
+						[color]="item.status === 'enabled'?'accent':'primary'"
+						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
+						(click)="goToSettings(item.buttonHref)"
+						[ngbTooltip]="item.buttonLabel" tooltipClass="vtr-system-tooltip" container="body"
+						vtrMetrics
+						metricsEvent="FeatureClick"
 						[metricsItem]="item.id"
-						[buttonColor]="item.status === 'enabled'?'gray':''">
-					</vtr-ui-button>
-					<vtr-ui-button *ngIf="item.launch" [label]="item.buttonLabel"
-						linkId="{{item.id}}"
+					>{{item.buttonLabel}}</button>
+					<button mat-flat-button *ngIf="item.launch"
+						id="{{item.id}}"
+						[color]="item.status === 'enabled'?'accent':'primary'"
+						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
+						(click)="item.launch()"
+						[ngbTooltip]="item.buttonLabel" tooltipClass="vtr-system-tooltip" container="body"
+						vtrMetrics
+						metricsEvent="FeatureClick"
 						[metricsItem]="item.id"
-						[buttonColor]="item.status === 'enabled'?'gray':''"
-						(onClick)="item.launch()">
-					</vtr-ui-button>
+					>{{item.buttonLabel}}</button>
 					<div *ngIf="!item.noneCheck" class="custom-control custom-checkbox">
-						<vtr-ui-checkbox [componentId]="'customCheck-'+item.id"
-							vtrMetrics
-							[metricsEvent]="'featureClick'"
-							[metricsParent]="'security'"
-							[metricsItem]="(item.showOwn ? 'haveOwn' :'notHaveOwn') + ':' +item.id"
+						<mat-checkbox
+							[id]="'customCheck-'+item.id"
+							class="font-size-xs"
+							[ariaLabel]="'defaultUnchecked'"
 							[value]="item.showOwn"
 							[checked]="item.showOwn"
-							[label]="item.ownTitle"
-							[ariaLabel]="'defaultUnchecked'"
-							(toggle)='haveOwn(item.showOwn, item.id)'>
-						</vtr-ui-checkbox>
+							(change)="haveOwn(item.showOwn, item.id)"
+							vtrMetrics
+							metricsEvent="featureClick"
+							metricsParent="security"
+							[metricsItem]="(item.showOwn ? 'haveOwn' :'notHaveOwn') + ':' +item.id"
+						>{{item.ownTitle}}</mat-checkbox>
 					</div>
 				</section>
 			</div>
