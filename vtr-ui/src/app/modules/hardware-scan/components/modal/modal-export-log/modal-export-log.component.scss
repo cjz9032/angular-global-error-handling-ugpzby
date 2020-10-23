@@ -15,6 +15,11 @@
 	word-wrap: break-word;
 }
 
+.loading {
+	font-size: 3rem;
+	color: $main;
+}
+
 .modal-body {
 	padding: 2.4rem;
 	@include high-contrast-border;
