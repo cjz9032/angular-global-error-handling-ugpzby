@@ -31,7 +31,7 @@ import { ContentActionType } from 'src/app/enums/content.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
-import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { SelfSelectService, SegmentConstHelper } from 'src/app/services/self-select/self-select.service';
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
@@ -306,7 +306,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			const segmentValue = await this.selfSelectService.getSegment();
 			const currentPage = this.antiVirusService.GetAntivirusStatus().currentPage;
 			if (settingValue
-				&& ([SegmentConst.Consumer, SegmentConst.ConsumerGaming, SegmentConst.ConsumerEducation].includes(segmentValue))
+				&& (SegmentConstHelper.includedInCommonConsumer(segmentValue))
 				&& currentPage !== 'mcafee') {
 				this.translate.stream('systemUpdates.security.title').subscribe((title) => {
 					this.securityWidgetCard = {

@@ -61,7 +61,7 @@ describe('InitializerService', () => {
   });
 
   it('initializeAntivirus consumer', () => {
-	service['commonService']['segment'] = SegmentConst.Consumer;
+	service['commonService']['segment'] = SegmentConst.ConsumerBase;
 	service['deviceService']['isArm'] = false;
 	service['deviceService']['isSMode'] = false;
 
@@ -101,7 +101,7 @@ describe('InitializerService', () => {
   });
 
   it('initializeAntivirus consumer SMode', () => {
-	service['commonService']['segment'] = SegmentConst.Consumer;
+	service['commonService']['segment'] = SegmentConst.ConsumerBase;
 	service['deviceService']['isArm'] = false;
 	service['deviceService']['isSMode'] = true;
 
@@ -121,7 +121,7 @@ describe('InitializerService', () => {
   });
 
   it('initializeAntivirus consumer Arm', () => {
-	service['commonService']['segment'] = SegmentConst.Consumer;
+	service['commonService']['segment'] = SegmentConst.ConsumerBase;
 	service['deviceService']['isArm'] = true;
 	service['deviceService']['isSMode'] = false;
 
@@ -141,7 +141,7 @@ describe('InitializerService', () => {
   });
 
   it('initializeAntivirus consumer Arm SMode', () => {
-	service['commonService']['segment'] = SegmentConst.Consumer;
+	service['commonService']['segment'] = SegmentConst.ConsumerBase;
 	service['deviceService']['isArm'] = true;
 	service['deviceService']['isSMode'] = true;
 

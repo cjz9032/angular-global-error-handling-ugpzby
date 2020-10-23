@@ -7,7 +7,7 @@ import { UPEService } from '../upe/upe.service';
 import { CMSService } from '../cms/cms.service';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { BuildInContentService } from '../build-in-content/build-in-content.service';
-import { SegmentConst } from '../self-select/self-select.service';
+import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.service';
 import { MetricService } from '../metric/metrics.service';
 
 interface IConfigItem {
@@ -240,10 +240,8 @@ export class ContentCacheService {
 			const welcomeTextContent = this.cmsService.getOneCMSContent(cmsContents, 'top-title-welcome-text', 'welcome-text')[0];
 			if (welcomeTextContent && welcomeTextContent.Title) {
 				const localInfo = await this.getLocalInfo();
-				if ([SegmentConst.Consumer,
-					SegmentConst.ConsumerGaming,
-					SegmentConst.ConsumerEducation,
-					SegmentConst.SMB].includes(localInfo.Segment)) {
+				if (SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)
+				||	SegmentConst.SMB === localInfo.Segment) {
 					cacheValueOfContents['welcome-text'] = new Array(welcomeTextContent);
 				}
 			}

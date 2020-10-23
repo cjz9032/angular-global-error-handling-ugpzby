@@ -53,7 +53,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		},
 		{
 			id: 'personal-use',
-			value: this.segmentConst.Consumer,
+			value: this.segmentConst.ConsumerBase,
 			textKey: 'welcometutorial.segments.consumer',
 			image: 'assets/images/welcome/personal-use.jpg',
 		},

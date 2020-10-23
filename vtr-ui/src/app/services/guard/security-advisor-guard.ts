@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { SegmentConst } from '../self-select/self-select.service';
+import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.service';
 import { GuardConstants } from './guard-constants';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from '../common/common.service';
@@ -27,9 +27,7 @@ export class SecurityAdvisorGuard extends BasicGuard {
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree | any> | boolean | UrlTree {
 		const segment = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
-		if (segment === SegmentConst.Consumer
-			|| SegmentConst.ConsumerEducation
-			|| SegmentConst.ConsumerEducation
+		if (SegmentConstHelper.includedInCommonConsumer(segment)
 			|| segment === SegmentConst.SMB) {
 			return true;
 		} else {
