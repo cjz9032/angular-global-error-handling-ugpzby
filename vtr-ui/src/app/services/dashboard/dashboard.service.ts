@@ -461,17 +461,19 @@ export class DashboardService {
 				this.positionBResponseReceived = true;
 				clearTimeout(this.positionBLoadingTimer);
 
-				if (ds === DeviceCondition.Good) {
-					subscriber.next(this.goodConditionData);
-				}
-				else if (ds === DeviceCondition.NeedRunSU) {
-					subscriber.next(this.needMaintainSU);
-				}
-				else if (ds === DeviceCondition.NeedRunSMPScan) {
-					subscriber.next(this.needMaintainSP);
-				}
-				else if (ds === DeviceCondition.NeedRunHWScan) {
-					subscriber.next(this.needMaintainHWS);
+				switch (ds) {
+					case DeviceCondition.Good:
+						subscriber.next(this.goodConditionData);
+						break;
+					case DeviceCondition.NeedRunSU:
+						subscriber.next(this.needMaintainSU);
+						break;
+					case DeviceCondition.NeedRunSMPScan:
+						subscriber.next(this.needMaintainSP);
+						break;
+					case DeviceCondition.NeedRunHWScan:
+						subscriber.next(this.needMaintainHWS);
+						break;
 				}
 				subscriber.complete();
 			});
