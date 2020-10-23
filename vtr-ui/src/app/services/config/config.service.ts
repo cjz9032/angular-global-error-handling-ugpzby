@@ -12,7 +12,7 @@ import { BetaService, BetaStatus } from '../beta/beta.service';
 import { LoggerService } from '../logger/logger.service';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
-import { SegmentConst } from '../self-select/self-select.service';
+import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.service';
 import { SecurityAdvisor, EventTypes, WindowsHello, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
@@ -627,9 +627,7 @@ export class ConfigService {
 			return;
 		}
 		this.localInfoService.getLocalInfo().then(async localInfo => {
-			if (localInfo.Segment !== SegmentConst.Consumer
-				&& localInfo.Segment !== SegmentConst.ConsumerGaming
-				&& localInfo.Segment !== SegmentConst.ConsumerEducation) {
+			if (SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)) {
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion, this.commonService.newFeatureVersion);
 				return;
 			}

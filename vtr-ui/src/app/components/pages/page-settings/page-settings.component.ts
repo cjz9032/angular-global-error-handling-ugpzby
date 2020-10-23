@@ -6,7 +6,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ConfigService } from 'src/app/services/config/config.service';
-import { SelfSelectService, SegmentConst } from 'src/app/services/self-select/self-select.service';
+import { SelfSelectService, SegmentConst, SegmentConstHelper } from 'src/app/services/self-select/self-select.service';
 import { BetaService, BetaStatus } from 'src/app/services/beta/beta.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -46,7 +46,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	usageType = null;
 	interests = [];
 	preferenceSettings: any;
-	segmentTag = SegmentConst.Consumer;
+	segmentTag = SegmentConst.ConsumerBase;
 
 	messageSettings = [
 		{
@@ -84,7 +84,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		},
 		{
 			id: 'personal-use',
-			value: this.segmentConst.Consumer,
+			value: this.segmentConst.ConsumerBase,
 			textKey: 'welcometutorial.segments.consumer',
 			image: 'assets/images/welcome/personal-use.jpg',
 		},
@@ -180,7 +180,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			this.localInfoService.getLocalInfo().then((result) => {
 				this.segmentTag = result.Segment;
 			}).catch(() => {
-				this.segmentTag = SegmentConst.Consumer;
+				this.segmentTag = SegmentConst.ConsumerBase;
 			});
 		}
 	}
@@ -422,9 +422,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			(document.querySelector('#menu-main-lnk-l-logo') as HTMLElement).focus();
 		}
-		if (this.selfSelectService.usageType !== SegmentConst.Consumer
-			&& this.selfSelectService.usageType !== SegmentConst.ConsumerGaming
-			&& this.selfSelectService.usageType !== SegmentConst.ConsumerEducation) {
+		if (!SegmentConstHelper.includedInCommonConsumer(this.usageType)) {
 			this.startUnRegisteringScheduleScan();
 		}
 	}

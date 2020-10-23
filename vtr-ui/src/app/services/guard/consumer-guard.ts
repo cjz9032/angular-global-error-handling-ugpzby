@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UrlTree, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { SegmentConst } from '../self-select/self-select.service';
+import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.service';
 import { GuardConstants } from './guard-constants';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from '../common/common.service';
@@ -26,9 +26,7 @@ export class ConsumerGuard extends BasicGuard {
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment)
-		if (segment === SegmentConst.Consumer
-			|| segment === SegmentConst.ConsumerGaming
-			|| segment === SegmentConst.ConsumerEducation) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
 			return true;
 		} else {
 			return super.canActivate(route, state);

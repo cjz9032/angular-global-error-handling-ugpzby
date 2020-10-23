@@ -30,7 +30,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { PageName } from 'src/app/services/metric/page-name.const';
-import { SegmentConst, SelfSelectService } from 'src/app/services/self-select/self-select.service';
+import { SegmentConst, SegmentConstHelper, SelfSelectService } from 'src/app/services/self-select/self-select.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -476,10 +476,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	private setWelcomeTextTitle(welcomeTextContent: any) {
 		if (welcomeTextContent && welcomeTextContent.Title) {
 			this.localInfoService.getLocalInfo().then(async (localInfo: any) => {
-				if ([SegmentConst.Consumer,
-					SegmentConst.ConsumerEducation,
-					SegmentConst.ConsumerGaming,
-					SegmentConst.SMB].includes(localInfo.Segment)) {
+				if (SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)
+				|| SegmentConst.SMB === localInfo.Segment) {
 					const titles = map(welcomeTextContent.Title.split('|||'), trim);
 					if (!this.dashboardService.welcomeText) {
 						this.dashboardService.welcomeText = sample(titles);

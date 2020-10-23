@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { SegmentConst, SelfSelectService } from '../self-select/self-select.service';
+import { SegmentConst, SelfSelectService, SegmentConstHelper } from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
@@ -428,11 +428,7 @@ export class DashboardService {
 		let response = false;
 		return this.localInfoService.getLocalInfo().then(result => {
 			const segmentVal = result.Segment.toLowerCase();
-			if ([SegmentConst.Commercial.toLowerCase(),
-			SegmentConst.SMB.toLowerCase(),
-			SegmentConst.Consumer.toLowerCase(),
-			SegmentConst.ConsumerGaming.toLowerCase(),
-			SegmentConst.ConsumerEducation.toLowerCase()].includes(segmentVal)) {
+			if (segmentVal && segmentVal !== SegmentConst.Gaming) {
 				response = true;
 			} else {
 				response = false;
@@ -485,7 +481,7 @@ export class DashboardService {
 		const isHardwareScanEnabled = !this.deviceService.isArm && await this.hardwareScanService.isAvailable();
 		const isSmartPerformanceEnabled = this.configService.isSmartPerformanceAvailable;
 		const segment = await this.selfselectService.getSegment();
-		const isConsumerOrSMB = segment === SegmentConst.Consumer || segment === SegmentConst.SMB;
+		const isConsumerOrSMB = SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB;
 
 		return !this.deviceService.isSMode && isConsumerOrSMB && (isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled);
 	}
@@ -574,8 +570,8 @@ export class DashboardService {
 	}
 
 	public async isPositionCShowSecurityCard(): Promise<boolean> {
-		const result = await this.selfselectService.getConfig();
-		const activeSegment: SegmentConst = result.usageType;
-		return !this.deviceService.isSMode && !this.deviceService.isArm && (activeSegment === SegmentConst.Consumer || activeSegment === SegmentConst.SMB);
+		const result = await this.selfselectService.getSegment();
+		const activeSegment: SegmentConst = result;
+		return !this.deviceService.isSMode && !this.deviceService.isArm && (SegmentConstHelper.includedInCommonConsumer(activeSegment) || activeSegment === SegmentConst.SMB);
 	}
 }

@@ -14,12 +14,25 @@ export class SelfSelectConfig {
 }
 
 export enum SegmentConst {
-	Consumer = 'Consumer',
+	ConsumerBase = 'Consumer',
 	ConsumerGaming = 'Consumer_Gaming',
 	ConsumerEducation = 'Consumer_Education',
 	SMB = 'SMB',
 	Commercial = 'Commercial',
 	Gaming = 'Gaming'
+}
+
+export class SegmentConstHelper {
+	/**
+	 * This method used for common Consumer features
+	 * Currently the big Consumer changed to ConsumerBase, ConsumerGaming, ConsumerEducation
+	 * @param segment Current segment value
+	 */
+	public static includedInCommonConsumer(segment): boolean {
+		return [SegmentConst.ConsumerBase,
+			SegmentConst.ConsumerGaming,
+			SegmentConst.ConsumerEducation].includes(segment);
+	}
 }
 
 @Injectable({
@@ -45,7 +58,7 @@ export class SelfSelectService {
 
 	private frePersona = null;
 	private frePersonaToSegmentMap = {
-		personal: SegmentConst.Consumer,
+		personal: SegmentConst.ConsumerBase,
 		gaming: SegmentConst.ConsumerGaming,
 		education: SegmentConst.ConsumerEducation,
 		work: SegmentConst.SMB
@@ -221,19 +234,19 @@ export class SelfSelectService {
 
 	private calcDefaultSegment(machineInfo) {
 		try {
-			let segment = SegmentConst.Consumer;
+			let segment = SegmentConst.ConsumerBase;
 			if (!machineInfo) {
 				this.logger.info('SelfSelectService.calcDefaultSegment failed for machine info undefined. ');
 			} else if (machineInfo.isGaming) {
 				segment = SegmentConst.Gaming;
 			} else if (this.isArm(machineInfo)) {
 				this.userProfileEnabled = false;
-				segment = SegmentConst.Consumer;
+				segment = SegmentConst.ConsumerBase;
 			}
 			return segment;
 		} catch (e) {
 			this.logger.error('SelfSelectService.calcDefaultSegment exception: ', e);
-			return SegmentConst.Consumer;
+			return SegmentConst.ConsumerBase;
 		}
 	}
 

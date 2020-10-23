@@ -411,7 +411,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 						.then((info) => {
 							if (info) {
 								if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
-									const armTutorialData = new WelcomeTutorial(2, this.newTutorialVersion, true, SegmentConst.Consumer);
+									const armTutorialData = new WelcomeTutorial(2, this.newTutorialVersion, true, SegmentConst.ConsumerBase);
 									this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
 								} else {
 									setTimeout(() => {

@@ -88,7 +88,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
-		this.segment = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.Consumer);
+		this.segment = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.ConsumerBase);
 		if (this.securityAdvisor) {
 			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		}

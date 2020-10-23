@@ -62,7 +62,7 @@ export class LocalInfoService {
 							GEO: 'us',
 							OEM: 'Lenovo',
 							OS: 'Windows',
-							Segment: SegmentConst.Consumer,
+							Segment: SegmentConst.ConsumerBase,
 							Brand: 'Lenovo',
 						};
 					}
