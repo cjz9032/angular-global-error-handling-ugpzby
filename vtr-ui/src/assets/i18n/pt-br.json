@@ -774,7 +774,7 @@
                 "sub2": "Configurações do meu dispositivo",
                 "sub3": "Atualização do sistema",
                 "sub4": "Assistência inteligente",
-				"sub5": "Device Details",
+				"sub5": "Detalhes do dispositivo",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "fechar",
                 "offlineText": "Detectamos que você não está conectado à Internet. Algumas partes desta página não funcionarão corretamente. Reconecte-se",
                 "accountText": "Falha na criação da conta. Tente novamente mais tarde."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Entrar no Lenovo ID",
+				"description": "Para continuar usando o Lenovo Segurança WiFi, faça login com seu Lenovo ID ou registre-se para obter uma conta gratuita.",
+				"trialWillExpire": "Sua avaliação de segurança WiFi vai expirar em:",
+				"days": "dias",
+				"hasExpired": "Sua avaliação do Lenovo Segurança WiFi expirou. Entre com seu Lenovo ID ou registre-se para obter uma conta gratuita.",
+				"signIn": "FAZER LOGIN",
+				"register": "REGISTRAR",
+				"ignore": "IGNORAR"
+			}
         },
         "homeprotection": {
             "homesecurity": {

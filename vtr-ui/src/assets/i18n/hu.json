@@ -774,7 +774,7 @@
                 "sub2": "Saját eszközbeállítások",
                 "sub3": "Rendszerfrissítés",
                 "sub4": "Intelligens segítség",
-				"sub5": "Device Details",
+				"sub5": "Eszköz adatai",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "bezárás",
                 "offlineText": "Azt észleltük, hogy nem csatlakozik az internethez. Az oldal egyes részei nem működnek majd megfelelően. Csatlakozzon újra",
                 "accountText": "Nem sikerült létrehozni a fiókot. Kérjük, később próbálja meg újra."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Bejelentkezés Lenovo ID azonosítóval",
+				"description": "A Lenovo - Biztonságos WiFi funkció használatához jelentkezzen be a Lenovo ID azonosítójával, vagy regisztráljon egy ingyenes fiókot.",
+				"trialWillExpire": "A Biztonságos WiFi próbaverziója ennyi idő múlva lejár:",
+				"days": "nap",
+				"hasExpired": "A Lenovo - Biztonságos WiFi szolgáltatás próbaverziója lejárt. Jelentkezzen be a Lenovo ID azonosítójával, vagy regisztráljon egy ingyenes fiókot.",
+				"signIn": "BEJELENTKEZÉS",
+				"register": "REGISZTRÁLÁS",
+				"ignore": "KIHAGYÁS"
+			}
         },
         "homeprotection": {
             "homesecurity": {

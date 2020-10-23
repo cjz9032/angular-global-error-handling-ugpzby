@@ -774,7 +774,7 @@
                 "sub2": "내 장치 설정",
                 "sub3": "시스템 업데이트",
                 "sub4": "고급 지원",
-				"sub5": "Device Details",
+				"sub5": "장치 세부 정보",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "닫기",
                 "offlineText": "인터넷에 연결되어 있지 않습니다. 이 페이지의 일부가 정상적으로 작동하지 않을 것입니다. 다시 연결하십시오",
                 "accountText": "계정 생성에 실패했습니다. 나중에 다시 시도하십시오."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Lenovo ID로 로그인",
+				"description": "Lenovo WiFi 보안을 계속 사용하려면 사용자 Lenovo ID로 로그인하거나 무료 계정을 등록하십시오.",
+				"trialWillExpire": "WiFi 보안 평가판이 다음 기간 내에 만료됩니다.",
+				"days": "일",
+				"hasExpired": "Lenovo WiFi 보안 평가판이 만료되었습니다. Lenovo ID로 로그인하거나 무료 계정을 등록하십시오.",
+				"signIn": "가입",
+				"register": "등록",
+				"ignore": "무시"
+			}
         },
         "homeprotection": {
             "homesecurity": {

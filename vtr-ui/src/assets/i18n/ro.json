@@ -774,7 +774,7 @@
                 "sub2": "Setările dispozitivului",
                 "sub3": "Actualizare sistem",
                 "sub4": "Asistent inteligent",
-				"sub5": "Device Details",
+				"sub5": "Detalii dispozitiv",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "închidere",
                 "offlineText": "Nu sunteți conectat(ă) la internet. Unele părți ale acestei pagini nu funcționează corect. Conectați-vă din nou",
                 "accountText": "Crearea de cont a eșuat. Încercaţi din nou mai târziu."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Conectați-vă la Lenovo ID",
+				"description": "Pentru a continua să utilizați Securitatea WiFi Lenovo, vă rugăm să vă conectați cu Lenovo ID sau să vă înregistrați pentru un cont gratuit.",
+				"trialWillExpire": "Versiunea dvs. de încercare pentru Securitatea WiFi va expira în:",
+				"days": "zile",
+				"hasExpired": "Versiunea dvs. de încercare pentru Securitatea WiFi Lenovo a expirat. Vă rugăm să vă conectați cu Lenovo ID sau să vă înregistrați pentru un cont gratuit.",
+				"signIn": "CONECTARE",
+				"register": "ÎNREGISTRARE",
+				"ignore": "IGNORARE"
+			}
         },
         "homeprotection": {
             "homesecurity": {

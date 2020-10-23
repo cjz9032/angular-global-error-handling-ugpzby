@@ -774,7 +774,7 @@
                 "sub2": "Mijn apparaatinstellingen",
                 "sub3": "Systeemupdate",
                 "sub4": "Slimme hulp",
-				"sub5": "Device Details",
+				"sub5": "Apparaatgegevens",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "sluiten",
                 "offlineText": "We hebben geconstateerd dat u geen verbinding met internet heeft. Bepaalde onderdelen van deze pagina werken niet correct. Maak opnieuw verbinding",
                 "accountText": "Het maken van het account is mislukt. Probeer het later alstublieft opnieuw."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Meld u aan met uw Lenovo ID",
+				"description": "Als u Lenovo WiFi-beveiliging wilt blijven gebruiken, moet u zich aanmelden met uw Lenovo ID of u registreren voor een gratis account.",
+				"trialWillExpire": "Uw proefabonnement voor WiFi-beveiliging verloopt over:",
+				"days": "dagen",
+				"hasExpired": "Uw proefabonnement voor Lenovo WiFi-beveiliging is verlopen. Meld u aan met uw Lenovo ID of registreer u voor een gratis account.",
+				"signIn": "AANMELDEN",
+				"register": "REGISTREREN",
+				"ignore": "NEGEREN"
+			}
         },
         "homeprotection": {
             "homesecurity": {
