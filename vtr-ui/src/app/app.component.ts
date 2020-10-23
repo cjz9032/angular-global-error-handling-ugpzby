@@ -248,8 +248,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		if (cache) {
 			return false;
 		} else {
-			const lenovoWelcomeSegment = await this.selfSelectService.getPersonaFromLenovoWelcome();
-			const externalMetricsState = await this.metricService.getExternalMetricsSettings();
+			const [lenovoWelcomeSegment, externalMetricsState] = await Promise.all([this.selfSelectService.getPersonaFromLenovoWelcome(), this.metricService.getExternalMetricsSettings()]);
 
 			if (lenovoWelcomeSegment && externalMetricsState) {
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.ExternalMetricsSettings, true);

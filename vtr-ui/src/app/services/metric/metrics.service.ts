@@ -414,19 +414,23 @@ export class MetricService {
 	}
 
 	public getExternalMetricsSettings(): Promise <boolean> {
-		return this.metricsClient.getExternalMetricsSettings().then((result) => {
-			if (result &&
-				((result.deviceMetricsSettings && this.toLower(result.deviceMetricsSettings) === 'enabled') ||
-				(result.freMetricsSettings && this.toLower(result.freMetricsSettings) === 'enabled'))) {
-				this.metricsClient.metricsEnabled = true;
-				this.externalAppMetricsState = true;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
-				return true;
-			}
-			return false;
-		})
-		.catch((error) => {
-			return false;
-		});
+		if (this.metricsClient.getExternalMetricsSettings) {
+			return this.metricsClient.getExternalMetricsSettings().then((result) => {
+				if (result &&
+					((result.deviceMetricsSettings && this.toLower(result.deviceMetricsSettings) === 'enabled') ||
+					(result.freMetricsSettings && this.toLower(result.freMetricsSettings) === 'enabled'))) {
+					this.metricsClient.metricsEnabled = true;
+					this.externalAppMetricsState = true;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
+					return true;
+				}
+				return false;
+			})
+			.catch((error) => {
+				return false;
+			});
+		}
+
+		return Promise.resolve(false);
 	}
 }
