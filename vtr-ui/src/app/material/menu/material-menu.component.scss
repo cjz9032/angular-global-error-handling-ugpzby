@@ -11,10 +11,10 @@
 		color: $light;
 		@include high-contrast-background-color;
 		@media #{$black-on-white} {
-			border: 0.1rem solid $dark;
+			border: 0.2rem solid $dark;
 		}
 		@media #{$white-on-black} {
-			border: 0.1rem solid $light;
+			border: 0.2rem solid $light;
 		}
 		.navbar-brand {
 			width: $menu_height;
@@ -80,6 +80,7 @@
 				&:hover {
 					background-color: $hover_dark;
 					@include menu-color-hover-high-contrast;
+					@include high-contrast-background;
 				}
 				&:focus {
 					outline-offset: -0.2rem;
