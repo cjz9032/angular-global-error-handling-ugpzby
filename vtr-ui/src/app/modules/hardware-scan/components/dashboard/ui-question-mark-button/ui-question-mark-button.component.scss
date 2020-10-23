@@ -1,0 +1,29 @@
+@import "../../../../../app.theme";
+
+.vtr-ui-question-mark-button {
+    font-size: $fontsize_sm;
+    
+    .question-icon {
+        color: $menu_hover;
+        cursor: pointer;
+
+        @media #{$white-on-black} {
+            color:($high-contrast-black-yellow)
+        }
+
+        @media #{$black-on-white} {
+            color:($high-contrast-white-blue);
+        }
+
+        &:hover {
+            color: $highlight;
+        }
+        &:focus {
+            @include outline_blue;
+        }
+
+        .gray-icon {
+            color: rgb(102, 116, 129);
+        }
+    }
+}

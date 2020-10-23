@@ -102,20 +102,18 @@
 			<div class="result-code" *ngIf="item.resultCode && (item.expanded || item.details)">
 				<p class="title">{{resultCodeText}}:</p>
 				<p id="hwscan-item-{{ i }}-result-code-value" role="text" class="subtitle">{{item.resultCode}}</p>
-				<a *ngIf="item.information"
-					id="hwscan-item-{{ i }}-result-code-tooltip"
-					role="img"
-					href="javascript:void(0)"
-					(click)="setTooltipInfo(item.information, i)"
-					[attr.aria-label]="item.module + 'result-code-tooltip, which reads:' + item.information"
-					class="result-code-icon"
+				<vtr-ui-question-mark-button
+					*ngIf="item.information"
+					componentId="hwscan-item-{{ i }}-result-code"
+					class="question-mark-container"
+					(clickEvent)="setTooltipInfo(item.information, i)"
+					[ariaLabel]="item.module + 'result-code-tooltip, which reads:' + item.information"
 					triggers="click"
 					[ngbTooltip]="tooltipRefModule"
 					container="vtr-root"
 					tooltipClass="vtr-tooltip"
 					placement="{{ isXsBreakpoint ? 'left' : 'auto' }}">
-					<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-				</a>
+				</vtr-ui-question-mark-button>
 			</div>
 		</div>
 		<hr>

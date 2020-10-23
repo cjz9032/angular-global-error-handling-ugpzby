@@ -126,16 +126,9 @@
 			margin-bottom: 0;
 		}
 
-		.result-code-icon {
+		.question-mark-container {
 			margin-left: 0.5rem;
 			margin-right: 0.4rem;
-			font-size: $fontsize_lg;
-			color: $menu_hover;
-			cursor: pointer;
-
-			&:hover {
-				color: $highlight;
-			}
 		}
 	}
 

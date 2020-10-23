@@ -66,17 +66,8 @@
 		margin-top: 1rem;
 		text-transform: uppercase;
 	}
-	.result-code-icon {
+	.question-mark-container {
 		margin-left: 0.5rem;
-		font-size: $fontsize_lg;
-		color: $menu_hover;
-		cursor: pointer;
-		&:hover {
-			color: $highlight;
-		}
-		&:focus {
-			@include outline_blue;
-		}
 	}
 
 	::ng-deep ngb-tooltip-window.vtr-tooltip.tooltip {

@@ -50,6 +50,7 @@ import { UiHardwareScanTestResultComponent } from './components/dashboard/ui-har
 import { UiTestResultIconComponent } from './components/dashboard/ui-test-result-icon/ui-test-result-icon.component';
 import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
 import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
+import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-question-mark-button/ui-question-mark-button.component';
 
 @NgModule({
 	declarations: [
@@ -80,7 +81,8 @@ import { ModalExportLogComponent } from './components/modal/modal-export-log/mod
 		UiHardwareScanTestResultComponent,
 		UiTestResultIconComponent,
 		UiHyperlinkButtonComponent,
-		ModalExportLogComponent
+		ModalExportLogComponent,
+		UiQuestionMarkButtonComponent
 	],
 	imports: [
 		CommonModule,

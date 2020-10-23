@@ -1,0 +1,12 @@
+<div class="vtr-ui-question-mark-button">
+    <button
+        id="{{ componentId }}-tooltip"
+        [attr.aria-label]="ariaLabel"
+        [attr.role]="componentRole"
+        [tabindex]="tabIndex"
+        class="question-icon"
+        (blur)="onBlurEvent($event)"
+        (click)="onClickEvent($event)">
+        <fa-icon aria-hidden="true" [ngClass]="{'gray-icon': isGray}" [icon]="['far', 'question-circle']"></fa-icon>
+    </button>
+</div>

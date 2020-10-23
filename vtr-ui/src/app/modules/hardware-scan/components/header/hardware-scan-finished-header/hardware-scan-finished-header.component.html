@@ -131,20 +131,19 @@
 		<div class="row final-result-code">
 			<p class="result-code-value-text">{{ finalResultCodeTitle }} </p>
 			<p id="hwscan-final-result-code-value" role="text" class="result-code-complete-text">{{ finalResultCodeValue }}</p>
-			<a *ngIf="numberTestsFailed === 0"
-				id="hwscan-final-result-code-tooltip"
-				href="javascript:void(0)"
-				role="link"
-				aria-label="final-result-code-tooltip"
-				class="result-code-icon"
+			<vtr-ui-question-mark-button
+				*ngIf="numberTestsFailed === 0"
+				[componentId]="'hwscan-final-result-code'"
+				[componentRole]="'link'"
+				[ariaLabel]="'final-result-code-tooltip'"
 				triggers="click"
 				[placement]="['left-top', 'right-top']"
 				[ngbTooltip]="tooltipFinalResultCode"
 				container="vtr-root"
-				tabindex="1"
-				tooltipClass="vtr-tooltip">
-				<fa-icon [icon]="['far', 'question-circle']"></fa-icon>
-			</a>
+				tooltipClass="vtr-tooltip"
+				[tabIndex]="1"
+				class="question-mark-container"
+			></vtr-ui-question-mark-button>
 		</div>
 	</ng-template>
 </div>

@@ -27,21 +27,20 @@
 						<div id="{{ componentId }}-list-item-{{ i }}-not-applicable" role="text" class="span-not-applicable" *ngIf="item.statusTest === testResultEnum.Na">{{ 'hardwareScan.testNotApplicable' | translate }}</div>
 					</div>
 					<div class="item-right" *ngIf="item.information">
-						<a href="javascript:void(0)"
-							id="{{ componentId }}-list-item-{{ i }}-tooltip"
-							role="img"
-							[attr.aria-label]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + 'tooltip, which reads: ' + ('hardwareScan.pluginTokens.' + item.information | translateDefault:item.information)"
-							(click)="setTooltipInfo(item.information, i); tooltip.toggle()"
-							class="result-code-icon"
-							triggers="manual"
+						<vtr-ui-question-mark-button
+							[isGray]="true"
+							class="question-mark-container"
+							componentId="{{ componentId }}-list-item-{{ i }}"
+							[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + 'tooltip, which reads: ' + ('hardwareScan.pluginTokens.' + item.information | translateDefault:item.information)"
 							#tooltip="ngbTooltip"
-							(blur)="tooltip.close()"
+							(blurEvent)="tooltip.close()"
+							(clickEvent)="setTooltipInfo(item.information, i); tooltip.toggle()"
+							triggers="manual"
 							[ngbTooltip]="tooltipRefItem"
 							container="vtr-root"
 							tooltipClass="vtr-tooltip"
 							placement="left">
-							<img aria-hidden="true" class="question-mark-list-icon" [src]="'assets/icons/questionCircle.svg' | svgInline | async" />
-						</a>
+						</vtr-ui-question-mark-button>
 					</div>
 					<vtr-ui-hardware-scan-test-result
 						[componentId]="componentId + '-list-item-' + i + '-test-result'"

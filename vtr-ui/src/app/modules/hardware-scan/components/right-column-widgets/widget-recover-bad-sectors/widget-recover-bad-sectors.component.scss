@@ -22,18 +22,7 @@
 		}
 
 		.title-question-mark {
-			font-size: $fontsize_sm;
-			font-weight: $weight_light;
 			padding: 0.2rem;
-
-			.recover-question-icon {
-				color: $menu_hover;
-				cursor: pointer;
-
-				&:hover {
-					color: $highlight;
-				}
-			}
 		}
 	}
 
