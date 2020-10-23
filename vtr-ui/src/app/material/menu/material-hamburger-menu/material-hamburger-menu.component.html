@@ -49,7 +49,7 @@
 						href="javascript:void(0)"
 						(click)="[onMenuItemClick(item), updateActiveItem(item.id)]"
 						(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path), updateActiveItem(item.id)]">
-						<span  class="menu-item-text" [innerHTML]="item.label | translate"></span>
+						<span class="menu-item-text" [innerHTML]="item.label | translate"></span>
 					</button>
 					<ng-container *ngFor="let subitem of item.subitems; let i=index" class="ml-5">
 						<button mat-menu-item
@@ -110,7 +110,7 @@
 								</button>
 								<button mat-menu-item
 									*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink"
-									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{subitem.id}}-{{i}}"
+									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{subitem.id}}-{{ii}}"
 									class="d-inline-block pl-5 border-radius-0 font-size-xs outline-none menu-item menu-item-color menu-subitem"
 									[ngClass]="{'active': secondarySubitem.id === activeItemId}"
 									attr.aria-label="{{secondarySubitem.label| translate}}"
