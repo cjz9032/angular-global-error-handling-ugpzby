@@ -28,6 +28,7 @@ import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@lenovo/material/dialog';
+import { MatRippleModule, MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@lenovo/material/core';
 
 import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
 import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
@@ -81,6 +82,14 @@ import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
 
+
+const globalRippleConfig: RippleGlobalOptions = {
+	disabled: true,
+	animation: {
+		enterDuration: 300,
+		exitDuration: 0
+	}
+};
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -136,7 +145,8 @@ import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
 		HardwareScanRoutingModule,
 		UiCustomSliderModule,
 		UICustomRadioModule,
-		MatDialogModule
+		MatDialogModule,
+		MatRippleModule
 	],
 	exports: [
 		NavbarModule,
@@ -163,7 +173,8 @@ import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
 			useFactory: (initializerService: InitializerService) => initializerService.initialize.bind(initializerService),
 			deps: [InitializerService],
 			multi: true
-		}
+		},
+		{provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
 	],
 	entryComponents: [
 		ModalWelcomeComponent,

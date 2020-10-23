@@ -7,7 +7,6 @@ import { TranslationModule } from '../translation.module';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatMenuModule } from '@lenovo/material/menu';
-import { MatRippleModule, MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@lenovo/material/core';
 
 //#region FONT AWESOME
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -36,13 +35,6 @@ import { MaterialMenuDropdownComponent } from 'src/app/material/menu/material-me
 import { MaterialHamburgerMenuComponent } from 'src/app/material/menu/material-hamburger-menu/material-hamburger-menu.component';
 
 
-const globalRippleConfig: RippleGlobalOptions = {
-	disabled: true,
-	animation: {
-		enterDuration: 300,
-		exitDuration: 0
-	}
-};
 @NgModule({
 	declarations: [
 		MenuMainComponent,
@@ -73,11 +65,7 @@ const globalRippleConfig: RippleGlobalOptions = {
 		UiButtonModule,
 		AppSearchModule,
 		MatButtonModule,
-		MatMenuModule,
-		MatRippleModule
-	],
-	providers: [
-		{provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
+		MatMenuModule
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA,

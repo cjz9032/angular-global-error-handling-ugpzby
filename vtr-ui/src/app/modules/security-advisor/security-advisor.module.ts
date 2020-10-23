@@ -23,7 +23,6 @@ import { faTools as falTools } from '@fortawesome/pro-light-svg-icons/faTools';
 
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatCheckboxModule } from '@lenovo/material/checkbox';
-import { MatRippleModule, MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@lenovo/material/core';
 
 import { LocationNoticeModule } from './../location-notice/location-notice.module';
 import { SecurityAdvisorRoutingModule } from './security-advisor-routing.module';
@@ -78,13 +77,6 @@ import { WidgetMcafeePeaceOfMindComponent } from '../../components/pages/page-se
 import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-content-card/widget-mcafee-content-card.component';
 
 
-const globalRippleConfig: RippleGlobalOptions = {
-	disabled: true,
-	animation: {
-		enterDuration: 300,
-		exitDuration: 0
-	}
-};
 @NgModule({
 	declarations: [
 		PageSecurityComponent,
@@ -142,12 +134,10 @@ const globalRippleConfig: RippleGlobalOptions = {
 		NgbTooltipModule,
 		MetricsModule,
 		MatButtonModule,
-		MatCheckboxModule,
-		MatRippleModule
+		MatCheckboxModule
 	],
 	providers: [
-		DialogService,
-		{provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
+		DialogService
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
