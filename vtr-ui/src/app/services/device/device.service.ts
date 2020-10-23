@@ -170,17 +170,17 @@ export class DeviceService {
 			if (this.machineType) {
 				return Promise.resolve(this.machineType);
 			}
+
 			const cache = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, -1);
 			if (cache !== -1) {
 				this.machineType = cache;
 				return Promise.resolve(this.machineType);
 			}
-			return await this.sysInfo.getMachineType((value) => {
-				this.machineType = value;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.DesktopMachine, value === 4);
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.MachineType, value);
-				return value;
-			});
+			const value =  await this.sysInfo.getMachineType()
+			this.machineType = value;
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.DesktopMachine, value === 4);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.MachineType, value);
+			return value;
 		} else {
 			return undefined;
 		}
