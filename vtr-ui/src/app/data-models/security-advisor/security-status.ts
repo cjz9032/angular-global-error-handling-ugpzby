@@ -12,6 +12,13 @@ export type SecurityFeature = {
 	fingerprintSupport: boolean;
 };
 
+export type SecurityLevel = {
+	landingStatus: LandingView;
+	basicView?: any;
+	intermediateView?: any;
+	advancedView?: any;
+};
+
 export const securityStatus = {
 	whStatus: {
 		status: 'loading',
@@ -134,6 +141,7 @@ export const getSecurityLevel = (
 		securityStatus.wfStatus.showOwn = haveOwnList.wifiSecurity === true;
 		securityStatus.vpnStatus.showOwn = haveOwnList.vpn === true;
 	}
+
 	if (translationString) {
 		if (!securityStatus.avStatus.detail) {
 			securityStatus.avStatus.detail = translationString['common.securityAdvisor.loading'];
@@ -203,6 +211,7 @@ export const getSecurityLevel = (
 			securityStatus.vpnStatus.ownTitle = translationString['security.landing.haveOwnVpn'];
 		}
 	}
+
 	// antivirus and firewall
 	const antivirusCommonData = antivirusService.GetAntivirusStatus();
 	currentPage = antivirusCommonData.currentPage;
@@ -230,7 +239,7 @@ export const getSecurityLevel = (
 		}
 	}
 	if (typeof antivirusStatus.antivirus !== 'boolean' && typeof antivirusStatus.firewall !== 'boolean') {
-		securityStatus.avStatus = undefined;
+		securityStatus.avStatus.status = 'loading';
 	}
 	if (typeof antivirusStatus.antivirus === 'boolean' && typeof antivirusStatus.firewall === 'boolean') {
 		securityStatus.avStatus.status = antivirusStatus.antivirus ? 'enabled' : 'disabled';
@@ -495,12 +504,15 @@ export const getSecurityLevel = (
 	const basicView = [securityStatus.avStatus, securityStatus.fwStatus, securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined);
 	const intermediateView = [securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined);
 	const advancedView = [securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined);
-
 	localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, landingStatus);
-	return {landingStatus, basicView, intermediateView, advancedView};
+	if (transString) {
+		return {landingStatus, basicView, intermediateView, advancedView};
+	} else {
+		return {landingStatus};
+	}
 };
 
-const waitTimeout = (type: string) => {
+export const waitTimeout = (type: string) => {
 	setTimeout(() => {
 		if ((securityStatus.avStatus.status === undefined || securityStatus.avStatus.status === 'loading') && type === 'antivirus') {
 			securityStatus.avStatus.status = 'failedLoad';

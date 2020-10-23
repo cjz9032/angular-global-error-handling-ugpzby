@@ -22,7 +22,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { getSecurityLevel, SecurityFeature, securityStatus, retryAntivirus } from 'src/app/data-models/security-advisor/security-status';
+import { getSecurityLevel, SecurityFeature, securityStatus, retryAntivirus, SecurityLevel, waitTimeout } from 'src/app/data-models/security-advisor/security-status';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { toLower } from 'lodash';
@@ -61,7 +61,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	};
 	haveOwnList: any;
 	translations: any;
-	securityLevel: any;
+	securityLevel: SecurityLevel;
 
 	constructor(
 		public vantageShellService: VantageShellService,
@@ -89,11 +89,6 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			}
 		});
 		this.isOnline = this.commonService.isOnline;
-		this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel,  {
-			status: 0,
-			percent: 100,
-			fullyProtected: false
-		});
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
@@ -110,84 +105,80 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			wifiSecurity: wsCacheShowOwn,
 			vpn: vpnCacheShowOwn
 		};
-		this.securityLevel = {
-			landingStatus: this.landingStatus,
-			basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
-			intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
-			advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)
-		};
-		this.deviceService.getMachineInfo().then(result => {
-			this.securityFeature.vpnSupport = true;
-			this.securityFeature.pwdSupport = true;
-			if (toLower(result && result.country ? result.country : 'US') === 'cn') {
-				this.securityFeature.vpnSupport = false;
-				this.securityFeature.pwdSupport = false;
-			}
-		}).catch(e => {
-			this.securityFeature.vpnSupport = true;
-			this.securityFeature.pwdSupport = true;
-		}).finally(() => {
-			this.hypSettings.getFeatureSetting('SecurityAdvisor').then((result) => {
-				this.securityFeature.pluginSupport = result === 'true';
-			})
-			.catch((e) => {
-				this.securityFeature.pluginSupport = false;
-			}).finally(() => {
-				this.securityLevel = {
-					landingStatus: this.landingStatus,
-					basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
-					intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
-					advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)
-				};
-				this.translate.stream([
-					'common.securityAdvisor.loading',
-					'common.securityAdvisor.enrolled',
-					'common.securityAdvisor.notEnrolled',
-					'common.securityAdvisor.installed',
-					'common.securityAdvisor.installing',
-					'common.securityAdvisor.notInstalled',
-					'common.securityAdvisor.enabled',
-					'common.securityAdvisor.disabled',
-					'common.securityAdvisor.wifi',
-					'common.securityAdvisor.antiVirus',
-					'common.ui.failedLoad',
-					'security.landing.fingerprint',
-					'security.landing.fingerprintContent',
-					'security.landing.visitFingerprint',
-					'security.landing.pwdHealth',
-					'security.landing.passwordContent',
-					'security.landing.haveOwnPassword',
-					'security.landing.goPassword',
-					'security.landing.uac',
-					'security.landing.uacContent',
-					'security.landing.visitUac',
-					'security.landing.vpnVirtual',
-					'security.landing.haveOwnVpn',
-					'security.landing.vpnContent',
-					'security.landing.goVpn',
-					'security.landing.goWifi',
-					'security.landing.wifiContent',
-					'security.landing.haveOwnWifi',
-					'security.landing.windows',
-					'security.landing.windowsActiveContent',
-					'security.landing.visitWindows',
-					'security.landing.firewall',
-					'security.landing.antivirusContent',
-					'security.landing.goAntivirus',
-					'security.landing.firewallContent',
-					'security.landing.goFirewall',
-				]).subscribe((trans: any) => {
-					this.translations = trans;
-					this.securityAdvisor.on('*', () => {
-						this.securityFeature.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
-						this.securityLevel = getSecurityLevel(
-							this.securityAdvisor,
-							this.translations,
-							this.haveOwnList,
-							this.securityFeature,
-							this.antivirusService,
-							this.localCacheService);
-					});
+
+		this.translate.stream([
+			'common.securityAdvisor.loading',
+			'common.securityAdvisor.enrolled',
+			'common.securityAdvisor.notEnrolled',
+			'common.securityAdvisor.installed',
+			'common.securityAdvisor.installing',
+			'common.securityAdvisor.notInstalled',
+			'common.securityAdvisor.enabled',
+			'common.securityAdvisor.disabled',
+			'common.securityAdvisor.wifi',
+			'common.securityAdvisor.antiVirus',
+			'common.ui.failedLoad',
+			'security.landing.fingerprint',
+			'security.landing.fingerprintContent',
+			'security.landing.visitFingerprint',
+			'security.landing.pwdHealth',
+			'security.landing.passwordContent',
+			'security.landing.haveOwnPassword',
+			'security.landing.goPassword',
+			'security.landing.uac',
+			'security.landing.uacContent',
+			'security.landing.visitUac',
+			'security.landing.vpnVirtual',
+			'security.landing.haveOwnVpn',
+			'security.landing.vpnContent',
+			'security.landing.goVpn',
+			'security.landing.goWifi',
+			'security.landing.wifiContent',
+			'security.landing.haveOwnWifi',
+			'security.landing.windows',
+			'security.landing.windowsActiveContent',
+			'security.landing.visitWindows',
+			'security.landing.firewall',
+			'security.landing.antivirusContent',
+			'security.landing.goAntivirus',
+			'security.landing.firewallContent',
+			'security.landing.goFirewall',
+		]).subscribe((trans: any) => {
+			this.translations = trans;
+			this.setInitSecurityLevel(trans);
+			this.deviceService.getMachineInfo().then(result => {
+				this.securityFeature.vpnSupport = true;
+				this.securityFeature.pwdSupport = true;
+				if (toLower(result && result.country ? result.country : 'US') === 'cn') {
+					this.securityFeature.vpnSupport = false;
+					this.securityFeature.pwdSupport = false;
+				}
+				this.refreshAll();
+			}).catch(e => {
+				this.securityFeature.vpnSupport = true;
+				this.securityFeature.pwdSupport = true;
+			}).finally(async () => {
+				const hypSettingsResult = await this.hypSettings.getFeatureSetting('SecurityAdvisor').catch(() => {
+					this.securityFeature.pluginSupport = false;
+				});
+				this.securityFeature.pluginSupport = hypSettingsResult  === 'true';
+				this.landingStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingLevel,  {
+					status: 0,
+					percent: 100,
+					fullyProtected: false
+				});
+				this.setInitSecurityLevel(trans);
+				waitTimeout('firewall');
+				waitTimeout('antivirus');
+				this.securityAdvisor.on('*', () => {
+					this.securityFeature.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
+					this.securityLevel = getSecurityLevel(
+						this.securityAdvisor,
+						this.translations,
+						this.haveOwnList,
+						this.securityFeature,
+						this.antivirusService,
+						this.localCacheService);
 				});
 			});
 		});
@@ -226,6 +217,21 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 				this.antivirusService,
 				this.localCacheService);
 		});
+	}
+
+	setInitSecurityLevel(translationString: any) {
+		if (translationString) {
+			this.securityLevel = {
+				landingStatus: this.landingStatus,
+				basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
+				intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
+				advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)
+			};
+		} else {
+			this.securityLevel = {
+				landingStatus: this.landingStatus,
+			};
+		}
 	}
 
 	fetchCMSArticles() {
