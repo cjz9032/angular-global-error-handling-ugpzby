@@ -774,7 +774,7 @@
                 "sub2": "Ustawienia moich urządzeń",
                 "sub3": "Aktualizacja systemu",
                 "sub4": "Inteligentny asystent",
-				"sub5": "Device Details",
+				"sub5": "Szczegóły urządzenia",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "zamknij",
                 "offlineText": "Wykryliśmy, że nie masz połączenia z Internetem. Niektóre części tej strony nie będą działać poprawnie. Połącz się ponownie",
                 "accountText": "Utworzenie konta nie powiodło się. Spróbuj ponownie później."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Zaloguj się przy użyciu Lenovo ID",
+				"description": "Aby nadal korzystać z usługi Bezpieczeństwo Wi-Fi Lenovo, zaloguj się przy użyciu swojego identyfikatora Lenovo ID lub zarejestruj się, zakładając bezpłatne konto.",
+				"trialWillExpire": "Wersja próbna usługi Bezpieczeństwo Wi-Fi wygaśnie za:",
+				"days": "dni",
+				"hasExpired": "Wersja próbna usługi Bezpieczeństwo Wi-Fi Lenovo wygasła. Zaloguj się przy użyciu swojego identyfikatora Lenovo ID lub zarejestruj się, zakładając darmowe konto.",
+				"signIn": "ZALOGUJ",
+				"register": "ZAREJESTRUJ SIĘ",
+				"ignore": "IGNORUJ"
+			}
         },
         "homeprotection": {
             "homesecurity": {

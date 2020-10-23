@@ -774,7 +774,7 @@
                 "sub2": "我的裝置設定",
                 "sub3": "系統更新",
                 "sub4": "智慧助理",
-				"sub5": "Device Details",
+				"sub5": "裝置詳細資訊",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "關閉",
                 "offlineText": "我們發現您沒有連線到網際網路。此頁面的某些部分將無法正確運作。請重新連線",
                 "accountText": "帳戶建立失敗。請稍後重試。"
-            }
+            },
+            "expirePromptModal": {
+				"title": "登入 Lenovo ID",
+				"description": "若要繼續使用 Lenovo WiFi 安全性，請使用您的 Lenovo ID 登入或註冊免費帳戶。",
+				"trialWillExpire": "您的 WiFi 安全性試用版期限尚有：",
+				"days": "天",
+				"hasExpired": "您的 Lenovo WiFi 安全性試用版已過期。請使用您的 Lenovo ID 登入或註冊免費帳戶。",
+				"signIn": "登入",
+				"register": "註冊",
+				"ignore": "忽略"
+			}
         },
         "homeprotection": {
             "homesecurity": {

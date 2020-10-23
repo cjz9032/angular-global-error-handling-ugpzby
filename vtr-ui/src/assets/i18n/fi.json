@@ -774,7 +774,7 @@
                 "sub2": "Omat laiteasetukset",
                 "sub3": "Järjestelmäpäivitys",
                 "sub4": "Älykäs apu",
-				"sub5": "Device Details",
+				"sub5": "Laitteen tiedot",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "sulje",
                 "offlineText": "Internet-yhteyttä ei ole muodostettu. Jotkin tämän sivun osat eivät toimi oikein. Muodosta yhteys uudelleen",
                 "accountText": "Tilin luonti on epäonnistunut. Yritä myöhemmin uudelleen."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Kirjaudu Lenovo ID:hen",
+				"description": "Jos haluat jatkaa Lenovo WiFi -suojauksen käyttöä, kirjaudu sisään Lenovo ID:llä tai rekisteröi maksuton tili.",
+				"trialWillExpire": "WiFi-suojauksen kokeiluversiota on jäljellä:",
+				"days": "päivää",
+				"hasExpired": "Lenovo WiFi -suojauksen kokeiluversio on vanhentunut. Kirjaudu sisään Lenovo ID:llä tai rekisteröi maksuton tili.",
+				"signIn": "KIRJAUDU SISÄÄN",
+				"register": "REKISTERÖIDY",
+				"ignore": "OHITA"
+			}
         },
         "homeprotection": {
             "homesecurity": {

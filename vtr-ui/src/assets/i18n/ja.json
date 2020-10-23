@@ -774,7 +774,7 @@
                 "sub2": "デバイス設定",
                 "sub3": "システム アップデート",
                 "sub4": "スマート・アシスト",
-				"sub5": "Device Details",
+				"sub5": "デバイスの詳細",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "閉じる",
                 "offlineText": "インターネットに接続されていないことがわかりました。このページの一部がが正しく動作しません。再接続してください",
                 "accountText": "アカウント作成に失敗しました。後から再試行してください。"
-            }
+            },
+            "expirePromptModal": {
+				"title": "Lenovo ID へのサインイン",
+				"description": "Lenovo WiFi セキュリティーを引き続き使用するには、Lenovo ID でログインするか、無料アカウントに登録してください。",
+				"trialWillExpire": "WiFi セキュリティー体験版の有効期限は次のとおりです。",
+				"days": "日後",
+				"hasExpired": "Lenovo WiFi セキュリティーの試用期間が終了しました。Lenovo ID でログインするか、無料アカウントに登録してください。",
+				"signIn": "サインイン",
+				"register": "登録",
+				"ignore": "無視"
+			}
         },
         "homeprotection": {
             "homesecurity": {

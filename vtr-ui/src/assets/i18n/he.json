@@ -774,7 +774,7 @@
                 "sub2": "הגדרות המכשיר שלי",
                 "sub3": "‏‫עדכון המערכת‬",
                 "sub4": "עזרה חכמה",
-				"sub5": "Device Details",
+				"sub5": "פרטי המכשיר",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "סגירה",
                 "offlineText": "זיהינו שאינכם מחוברים לאינטרנט. חלקים מסוימים בדף זה לא יפעלו כראוי. התחברו מחדש",
                 "accountText": "יצירת החשבון נכשלה. נסו שוב מאוחר יותר."
-            }
+            },
+            "expirePromptModal": {
+				"title": "כניסה ל-Lenovo ID",
+				"description": "כדי להמשיך להשתמש באבטחת WiFi של Lenovo, היכנסו באמצעות Lenovo ID שלכם או הירשמו לחשבון בחינם.",
+				"trialWillExpire": "תקופת הניסיון שלכם לאבטחת WiFi תפוג בעוד:",
+				"days": "ימים",
+				"hasExpired": "פגה תקופת הניסיון שלכם לאבטחת WiFi של Lenovo. היכנסו באמצעות Lenovo ID שלכם או הירשמו לחשבון בחינם.",
+				"signIn": "כניסה",
+				"register": "הרשמה",
+				"ignore": "התעלמו"
+			}
         },
         "homeprotection": {
             "homesecurity": {

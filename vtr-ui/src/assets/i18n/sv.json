@@ -774,7 +774,7 @@
                 "sub2": "Mina enhetsinställningar",
                 "sub3": "Systemuppdatering",
                 "sub4": "Smart hjälp",
-				"sub5": "Device Details",
+				"sub5": "Enhetsinformation",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "stäng",
                 "offlineText": "Datorn ser inte ut att vara ansluten till internet. Vissa avsnitt på denna sida kommer inte att fungera korrekt. Anslut på nytt",
                 "accountText": "Det gick inte att skapa kontot. Försök igen litet senare."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Logga in med Lenovo ID",
+				"description": "För att fortsätta använda Lenovo WiFi-säkerhet måste du logga in med ditt Lenovo ID eller registrera dig för ett kostnadsfritt konto.",
+				"trialWillExpire": "Din provprenumeration på WiFi-säkerhet upphör om:",
+				"days": "dagar",
+				"hasExpired": "Din provprenumeration på Lenovo WiFi-säkerhet har upphört. Logga in med ditt Lenovo ID eller registrera dig för ett kostnadsfritt konto.",
+				"signIn": "LOGGA IN",
+				"register": "REGISTRERA DIG",
+				"ignore": "IGNORERA"
+			}
         },
         "homeprotection": {
             "homesecurity": {

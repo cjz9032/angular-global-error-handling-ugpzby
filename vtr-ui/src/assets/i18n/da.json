@@ -774,7 +774,7 @@
                 "sub2": "Mine enhedsindstillinger",
                 "sub3": "Systemopdatering",
                 "sub4": "Smart hjælp",
-				"sub5": "Device Details",
+				"sub5": "Enhedsoplysninger",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "luk",
                 "offlineText": "Vi har registreret, at du ikke har forbindelse til internettet. Visse dele af denne side fungerer ikke korrekt. Opret forbindelse igen",
                 "accountText": "Kontoen blev ikke oprettet. Prøv igen senere."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Log på Lenovo ID",
+				"description": "Hvis du vil fortsætte med at bruge Lenovo WiFi-sikkerhed, skal du logge på med dit Lenovo ID eller tilmelde dig en gratis konto.",
+				"trialWillExpire": "Din prøveperiode for WiFi-sikkerhed udløber om:",
+				"days": "dage",
+				"hasExpired": "Din prøveperiode for Lenovo WiFi-sikkerhed er udløbet. Log på med dit Lenovo ID, eller tilmeld dig en gratis konto.",
+				"signIn": "LOG PÅ",
+				"register": "REGISTRER",
+				"ignore": "IGNORER"
+			}
         },
         "homeprotection": {
             "homesecurity": {

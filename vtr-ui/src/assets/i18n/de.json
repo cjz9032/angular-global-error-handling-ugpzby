@@ -774,7 +774,7 @@
                 "sub2": "Meine Geräteeinstellungen",
                 "sub3": "Systemaktualisierung",
                 "sub4": "Intelligente Unterstützung",
-				"sub5": "Device Details",
+				"sub5": "Details zur Einheit",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "schließen",
                 "offlineText": "Wir haben festgestellt, dass Sie nicht mit dem Internet verbunden sind. Einige Teile dieser Seite funktionieren nicht richtig. Bitte erneut verbinden",
                 "accountText": "Die Kontoerstellung ist fehlgeschlagen. Versuchen Sie es später erneut."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Mit Lenovo ID anmelden",
+				"description": "Wenn Sie Lenovo WiFi-Sicherheit weiterhin verwenden möchten, melden Sie sich mit Ihrer Lenovo ID an oder registrieren Sie sich für ein kostenloses Konto.",
+				"trialWillExpire": "Ihre Testversion von WiFi-Sicherheit läuft ab in:",
+				"days": "Tage",
+				"hasExpired": "Ihre Testversion von Lenovo WiFi-Sicherheit ist abgelaufen. Melden Sie sich mit Ihrer Lenovo ID an oder registrieren Sie sich für ein kostenloses Konto.",
+				"signIn": "ANMELDEN",
+				"register": "REGISTRIEREN",
+				"ignore": "IGNORIEREN"
+			}
         },
         "homeprotection": {
             "homesecurity": {

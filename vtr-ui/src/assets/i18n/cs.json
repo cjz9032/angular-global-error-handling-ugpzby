@@ -774,7 +774,7 @@
                 "sub2": "Nastavení mých zařízení",
                 "sub3": "Aktualizace systému",
 				"sub4": "Inteligentní pomoc",
-				"sub5": "Device Details",
+				"sub5": "Podrobnosti o zařízení",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "Zavřít",
                 "offlineText": "Zjistili jsme, že nejste připojeni k internetu. Některé části této stránky nebudou správně fungovat. Znovu se prosím připojte",
                 "accountText": "Vytvoření účtu se nezdařilo. Zkuste to prosím později."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Přihlaste se k Lenovo ID",
+				"description": "Chcete-li nadále používat Zabezpečení WiFi Lenovo, přihlaste se pomocí svého Lenovo ID nebo si zaregistrujte účet zdarma.",
+				"trialWillExpire": "Platnost zkušební verze Zabezpečení WiFi vyprší za:",
+				"days": "dní",
+				"hasExpired": "Platnost vaší zkušební verze Zabezpečení WiFi Lenovo vypršela. Přihlaste se pomocí svého Lenovo ID nebo si zaregistrujte účet zdarma.",
+				"signIn": "PŘIHLÁSIT SE",
+				"register": "REGISTROVAT",
+				"ignore": "IGNOROVAT"
+			}
         },
         "homeprotection": {
             "homesecurity": {

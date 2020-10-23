@@ -774,7 +774,7 @@
                 "sub2": "Cihaz Ayarlarım",
                 "sub3": "Sistem Güncellemesi",
                 "sub4": "Akıllı Yardım",
-				"sub5": "Device Details",
+				"sub5": "Cihaz Ayrıntıları",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "kapat",
                 "offlineText": "İnternet'e bağlı olmadığınızı tespit ettik. Bu sayfanın bazı kısımları düzgün çalışmayacak. Lütfen yeniden bağlanın",
                 "accountText": "Hesap oluşturma işlemi başarısız oldu. Lütfen daha sonra yeniden deneyin."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Lenovo ID ile oturum açma",
+				"description": "Lenovo WiFi Güvenliği'ni kullanmaya devam etmek için lütfen Lenovo ID'nizle oturum açın veya ücretsiz bir hesaba kaydolun.",
+				"trialWillExpire": "WiFi Güvenliği denemenizin sona ermesine kalan süre:",
+				"days": "gün",
+				"hasExpired": "Lenovo WiFi Güvenliği denemeniz sona erdi. Lütfen Lenovo ID'nizle oturum açın veya ücretsiz bir hesaba kaydolun.",
+				"signIn": "OTURUM AÇ",
+				"register": "KAYDOL",
+				"ignore": "YOKSAY"
+			}
         },
         "homeprotection": {
             "homesecurity": {

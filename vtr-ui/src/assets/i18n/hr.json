@@ -774,7 +774,7 @@
                 "sub2": "Moje postavke uređaja",
                 "sub3": "Ažuriranje sustava",
                 "sub4": "Pametna pomoć",
-				"sub5": "Device Details",
+				"sub5": "Pojedinosti o uređaju",
 				"sub6": "Device Settings Details"
             },
             "security": {
@@ -2659,7 +2659,17 @@
                 "closeText": "zatvori",
                 "offlineText": "Utvrdili smo da niste povezani s internetom. Neki dijelovi ove stranice neće ispravno funkcionirati. Povežite se iznova",
                 "accountText": "Izrada računa nije uspjela. Pokušajte ponovno kasnije."
-            }
+            },
+            "expirePromptModal": {
+				"title": "Prijavite se u Lenovo ID.",
+				"description": "Kako biste nastavili koristiti Sigurnost WiFi mreže tvrtke Lenovo, prijavite se pomoću svog Lenovo ID-a ili se registrirajte za besplatni račun.",
+				"trialWillExpire": "Probno razdoblje sigurnosti WiFi mreže istječe za:",
+				"days": "sljedeći broj dana:",
+				"hasExpired": "Vaše probno razdoblje Sigurnosti WiFi mreže tvrtke Lenovo je isteklo. Prijavite se pomoću svog Lenovo ID-a ili se registrirajte za besplatni račun.",
+				"signIn": "PRIJAVA",
+				"register": "REGISTRACIJA",
+				"ignore": "ZANEMARI"
+			}
         },
         "homeprotection": {
             "homesecurity": {
