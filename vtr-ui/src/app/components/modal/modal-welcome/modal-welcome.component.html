@@ -215,7 +215,8 @@
 						</div>
 					</div>
 
-					<div class="row privacy-check mt-3">
+					<div class="row privacy-check mt-3"
+						*ngIf="!metricService.externalAppMetricsState">
 						<div class="custom-control custom-checkbox pl-0">
 							<input type="checkbox"
 								(click)="savePrivacy($event, 'PRIVACYPOLICY')"

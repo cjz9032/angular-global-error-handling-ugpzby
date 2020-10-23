@@ -34,6 +34,7 @@ export class MetricService {
 	public readonly maxScrollRecorder = {};
 	public pageContainer: ElementRef;
 	public readonly contentDisplayDetection: ContentDisplayDetection;
+	public externalAppMetricsState = false;
 	private pageScollEvent = (arg: any) => { };
 
 	constructor(
@@ -410,5 +411,26 @@ export class MetricService {
 	public notifyPageScollEvent(htmlElm: any = null) {
 		this.contentDisplayDetection.onScrollEvent();
 		this.pageScollEvent(htmlElm || this.pageContainer.nativeElement);
+	}
+
+	public getExternalMetricsSettings(): Promise <boolean> {
+		if (this.metricsClient.getExternalMetricsSettings) {
+			return this.metricsClient.getExternalMetricsSettings().then((result) => {
+				if (result &&
+					((result.deviceMetricsSettings && this.toLower(result.deviceMetricsSettings) === 'enabled') ||
+					(result.freMetricsSettings && this.toLower(result.freMetricsSettings) === 'enabled'))) {
+					this.metricsClient.metricsEnabled = true;
+					this.externalAppMetricsState = true;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
+					return true;
+				}
+				return false;
+			})
+			.catch((error) => {
+				return false;
+			});
+		}
+
+		return Promise.resolve(false);
 	}
 }
