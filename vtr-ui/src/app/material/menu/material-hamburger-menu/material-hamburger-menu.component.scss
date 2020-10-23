@@ -42,7 +42,7 @@
 				}
 				&:focus {
 					@include menu-color-hover-high-contrast;
-					span {
+					.menu-item-text {
 						@include outline-white-high-contrast;
 					}
 				}
@@ -70,7 +70,7 @@
 				@include high-contrast-text-color-disabled;
 			}
 			.unread-tag {
-				left: -0.5rem;
+				left: 1rem;
 				top: 50%;
 				margin-top: -0.3rem;
 				width: 0.8rem;
