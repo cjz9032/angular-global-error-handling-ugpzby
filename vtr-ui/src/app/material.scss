@@ -87,3 +87,10 @@ $van-ui-theme: mat-vcl-theme((
 	border-radius: 0.6rem !important;	
 	padding: 2.4rem;
 }
+
+.mat-flat-button .mat-button-wrapper {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

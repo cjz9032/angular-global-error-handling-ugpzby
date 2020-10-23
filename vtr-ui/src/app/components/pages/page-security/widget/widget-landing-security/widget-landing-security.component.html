@@ -35,7 +35,7 @@
 					<button mat-flat-button *ngIf="!item.showOwn && item.buttonLink"
 						id="{{item.id}}"
 						[color]="(item.status === 'enabled' || item.status === 'installed') ? 'accent':'primary'"
-						class="mw-100 m-0 text-truncate font-weight-semibold uppercase btn-size-small"
+						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
 						[routerLink]="item.buttonLink"
 						routerLinkActive="active"
 						[ngbTooltip]="item.buttonLabel" tooltipClass="vtr-system-tooltip" container="body"
@@ -46,7 +46,7 @@
 					<button mat-flat-button *ngIf="item.buttonHref"
 						id="{{item.id}}"
 						[color]="item.status === 'enabled'?'accent':'primary'"
-						class="mw-100 m-0 text-truncate font-weight-semibold uppercase btn-size-small"
+						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
 						(click)="goToSettings(item.buttonHref)"
 						[ngbTooltip]="item.buttonLabel" tooltipClass="vtr-system-tooltip" container="body"
 						vtrMetrics
@@ -56,7 +56,7 @@
 					<button mat-flat-button *ngIf="item.launch"
 						id="{{item.id}}"
 						[color]="item.status === 'enabled'?'accent':'primary'"
-						class="mw-100 m-0 text-truncate font-weight-semibold uppercase btn-size-small"
+						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
 						(click)="item.launch()"
 						[ngbTooltip]="item.buttonLabel" tooltipClass="vtr-system-tooltip" container="body"
 						vtrMetrics

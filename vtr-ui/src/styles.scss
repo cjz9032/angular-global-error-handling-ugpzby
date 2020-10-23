@@ -2539,10 +2539,14 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	@include high-contrast-color-reversal;
 }
 
-.btn-size-small {
+.btn-size-sm {
 	min-height: 2.7rem !important;
 	font-size: 1.2rem !important;
-	line-height: 1.5 !important;
+}
+
+.btn-size-md {
+	min-height: 3.6rem !important;
+	font-size: 1.4rem !important;
 }
 
 .uppercase {

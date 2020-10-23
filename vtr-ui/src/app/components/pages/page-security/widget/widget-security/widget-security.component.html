@@ -28,19 +28,21 @@
 			<div class="button-container w-100">
 				<div class="row no-gutters align-items-center flex-nowrap">
 					<p class="desc mb-0 follow-btn" [innerHTML]="btnDesc[statusItem?.fullyProtected ? 1 : 0] | translate"></p>
-					<vtr-ui-button class="button"
+					<button mat-flat-button
+						id="sa-ov-btn-securityArticle"
+						color="primary"
+						class="mw-50 uppercase btn-size-md button"
+						[disabled]="!isOnline"
+						(click)="buttonClick()"
+						[ngbTooltip]="'security.landing.security101' | translate" tooltipClass="vtr-system-tooltip" container="body"
+						vtrMetrics
 						metricsItem="securityAdvisor101"
 						metricsEvent="ArticleClick"
 						metricsItemPosition="1"
 						metricsPageNumber="1"
 						[metricsItemID]="articleId"
 						[metricsItemCategory]="articleCategory"
-						[label]="'security.landing.security101' | translate"
-						(onClick)="buttonClick()"
-						[isDisabled]="!isOnline"
-						[btnHeight]=true
-						linkId="sa-ov-btn-securityArticle">
-					</vtr-ui-button>
+					>{{'security.landing.security101' | translate}}</button>
 				</div>
 			</div>
 		</div>
