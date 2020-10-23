@@ -124,7 +124,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		public selfSelectService: SelfSelectService,
 		private timerService: TimerService,
 		private userService: UserService,
-		private metricService: MetricService,
+		public metricService: MetricService,
 		private localCacheService: LocalCacheService,
 		private initializerService: InitializerService,
 		private dccService: DccService
@@ -138,6 +138,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	async initMetricOption(shellService) {
+		if (this.metricService.externalAppMetricsState) {
+			this.privacyPolicy = true;
+			return;
+		}
+
 		const userDeterminePrivacy = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.UserDeterminePrivacy
 		);

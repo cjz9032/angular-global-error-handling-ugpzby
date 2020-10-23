@@ -1,3 +1,4 @@
+import { SelfSelectService } from 'src/app/services/self-select/self-select.service';
 import { DOCUMENT } from '@angular/common';
 import { Component, OnInit, HostListener, OnDestroy, Inject, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -82,6 +83,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		// don't delete historyManager
 		private historyManager: HistoryManager,
 		private smartPerformanceService: SmartPerformanceService,
+		private selfSelectService: SelfSelectService,
 		private localCacheService: LocalCacheService,
 		@Inject(DOCUMENT) public document: Document
 	) {
@@ -204,7 +206,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 	}
 
-	private launchWelcomeModal() {
+	private async launchWelcomeModal() {
 		if (!this.deviceService.isArm && !this.deviceService.isAndroid) {
 			const gamingTutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.GamingTutorial);
 			let tutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
@@ -220,14 +222,41 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			}
 			const newTutorialVersion = this.newTutorialVersion;
 			let welcomeNeeded = false;
+			let pageNumber = 1;
 			if ((tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) && navigator.onLine) {
 				welcomeNeeded = true;
-				this.openWelcomeModal(1, newTutorialVersion);
 			} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
 				welcomeNeeded = true;
-				this.openWelcomeModal(2, newTutorialVersion);
+				pageNumber = 2;
 			}
+
+			if (welcomeNeeded) {
+				const externalSettings = await this.getWelcomeNeededExternalSettings();
+				if (externalSettings) {
+					this.openWelcomeModal(pageNumber, newTutorialVersion);
+				} else {
+					welcomeNeeded = false;
+				}
+			}
+
 			this.metricService.onCheckedWelcomePageNeeded(welcomeNeeded);
+		}
+	}
+
+	async getWelcomeNeededExternalSettings() {
+		const cache = this.localCacheService.getLocalCacheValue(LocalStorageKey.ExternalMetricsSettings);
+		if (cache) {
+			return false;
+		} else {
+			const lenovoWelcomeSegment = await this.selfSelectService.getPersonaFromLenovoWelcome();
+			const externalMetricsState = await this.metricService.getExternalMetricsSettings();
+
+			if (lenovoWelcomeSegment && externalMetricsState) {
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.ExternalMetricsSettings, true);
+				return false;
+			}
+
+			return true;
 		}
 	}
 
