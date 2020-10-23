@@ -229,7 +229,6 @@ export class SurveyFormComponent implements OnInit {
 		this.progress += 1;
 		if (this.progress === this.pages.length) {
 			this.completed = true;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SurveyVAN22149, true);
 			this.localCacheService.setLocalCacheValue(this.surveyId as LocalStorageKey, LenovoSurveyEnum.Completed);
 			this.reportResult();
 			setTimeout(() => {
