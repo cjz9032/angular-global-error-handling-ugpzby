@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.30](https://bitbucket.tc.lenovo.com///compare/v1.8.29...v1.8.30) (2020-10-23)
+
+
+### Bug Fixes
+
+* **accessibility:** fix the automation id duplicated in Device Menu ([ee5e18b](https://bitbucket.tc.lenovo.com///commit/ee5e18b908916a5c9ceda05b98e542a6f9cd9685))
+* fix security sgv circle not show immediately ([4620f09](https://bitbucket.tc.lenovo.com///commit/4620f09c60a9a051914704a41d3e9a8103ad3d30))
+* init security nav details translation ([cdc665e](https://bitbucket.tc.lenovo.com///commit/cdc665ebd478e09103f7d6910cd2f186e9df71be))
+* security level shows slowly in mysecurity page ([f021c11](https://bitbucket.tc.lenovo.com///commit/f021c115100e84d7ecc754f2734e721c4d9bed7c))
+* **Smart Performance:** VAN-22752 truncation in subscriber landing page in 500x500 ([eb8ff8f](https://bitbucket.tc.lenovo.com///commit/eb8ff8ff6a683c715fe9c7b40a6004639fd4d552))
+
 ### [1.8.29](https://bitbucket.tc.lenovo.com///compare/v1.8.28...v1.8.29) (2020-10-22)
 
 
