@@ -4286,6 +4286,7 @@
             "exportSuccessDescription": "O registo foi exportado com êxito e pode ser encontrado em:",
             "exportAccessErrorDescription": "Tem de permitir ao Vantage o acesso ao seu sistema de ficheiros para exportar o registo. Clique no botão abaixo para abrir as definições das permissões do Windows. Tenha em atenção que alterar a permissão poder causar o fecho do Vantage.",
             "exportFailDescription": "Foi encontrado um problema durante a exportação do registo. Tente novamente mais tarde.",
+            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
             "openSettingsButton": "Abrir Definições do Windows"
         },
         "executingScanTitle": "A analisar {{title}}",

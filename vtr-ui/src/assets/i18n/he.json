@@ -4286,6 +4286,7 @@
             "exportSuccessDescription": "ייצוא היומן בוצע בהצלחה וניתן למצוא אותו בכתובת:",
             "exportAccessErrorDescription": "יש לאפשר ל- Vantage לגשת למערכת הקבצים כדי לייצא את היומן. לחצו על הלחצן למטה כדי לפתוח את הגדרות ההרשאות של Windows. שימו לב ששינוי הרשאה עלול לגרום לסגירת Vantage.",
             "exportFailDescription": "נמצאה בעיה במהלך ייצוא היומן. נסו זאת שוב מאוחר יותר.",
+            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
             "openSettingsButton": "פתחו את הגדרות Windows"
         },
         "executingScanTitle": "סורק את {{title}}",

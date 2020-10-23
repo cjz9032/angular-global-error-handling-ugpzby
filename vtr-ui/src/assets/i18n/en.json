@@ -5190,6 +5190,7 @@
 			"exportSuccessDescription": "The log was exported successfully and can be found at:",
 			"exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
 			"exportFailDescription": "A problem was found during log export. Please try it again later.",
+			"exportMayTakeSomeTime": "Please wait while the log is being exported.",
 			"openSettingsButton": "Open Windows Settings"
 		},
 		"warningMessage": "Keep in mind that the tests will be cancelled if the system sleeps or hibernates",
