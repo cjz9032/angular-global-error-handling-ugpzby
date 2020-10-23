@@ -71,13 +71,19 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 				this.previousResultService.getLastFinalResultCode(); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
 	}
 
-	private openExportLogComponentsModal(error: ExportLogErrorStatus, logPath: string = '') {
+	private openExportLogComponentsModal(): NgbModalRef {
 		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
 			size: 'lg',
 			centered: true,
 			windowClass: 'hardware-scan-modal-size'
 		});
 
+		this.updateExportLogComponentsModal(modal);
+
+		return modal;
+	}
+
+	private updateExportLogComponentsModal(modal: NgbModalRef, error: ExportLogErrorStatus = ExportLogErrorStatus.LoadingExport, logPath: string = '') {
 		(modal.componentInstance as ModalExportLogComponent).logPath = logPath;
 		(modal.componentInstance as ModalExportLogComponent).errorStatus = error;
 	}
@@ -85,8 +91,10 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 	public exportResults() {
 		if (this.exportService) {
 
-			let statusExport = ExportLogErrorStatus.GenericError;
+			let statusExport = ExportLogErrorStatus.LoadingExport;
 			let filePath = '';
+			const exportModal = this.openExportLogComponentsModal();
+
 			this.timerService.start();
 			let result = HardwareScanMetricsService.FAIL_RESULT;
 			this.exportService.exportScanResults().then((status) => {
@@ -96,7 +104,7 @@ export class HardwareViewResultsComponent implements OnInit, OnDestroy {
 				this.logger.error('Export Scan Results rejected');
 				statusExport = error;
 			}).finally(() => {
-				this.openExportLogComponentsModal(statusExport, filePath);
+				this.updateExportLogComponentsModal(exportModal, statusExport, filePath);
 				this.hardwareScanMetricsService.sendTaskActionMetrics(
 					HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
 					result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
