@@ -16,6 +16,10 @@ describe('BatteryConditionNotesComponent', () => {
   const goodCondition = new BatteryCondition(Conditions.Good, Status.Good);
   const acConnectedCondition = new BatteryCondition(Conditions.FullACAdapterSupport, Status.AcAdapterStatus);
   const goodAndAcConnectedConditions = [goodCondition, acConnectedCondition];
+
+  const acBatteryNotDetectedCondition = new BatteryCondition(Conditions.NotDetected, Status.AcAdapterStatus);
+  const goodAndBatteryNotDetectedCondition = [goodCondition, acBatteryNotDetectedCondition];
+
   const batteryGauge = new BatteryGaugeDetail();
 
   beforeEach(async () => {
@@ -126,11 +130,21 @@ describe('BatteryConditionNotesComponent', () => {
         expect(component.canShowFullSupportAdapterNote(0)).toBe(true);
         expect(component.acAdapter.wattage).toEqual(65);
         expect(component.acAdapter.type).toEqual('USB-C');
-      });
-      it("should render generic 'power is connected note' when battery is not detected", () => {
+      });      
+    });
+    describe('and battery is not detected', () => {
+      it("should render 'battery is not detected' message", () => {
         component.batteryDetected = false;
         fixture.detectChanges();
-        let h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
+        let h6 = fixture.debugElement.query(By.css('#battery-condition-battery-not-detected')).nativeElement;
+        expect(h6.innerHTML).toBe('device.deviceSettings.batteryGauge.condition.NotDetected');
+      });
+
+      it("should render generic 'power is connected note'", () => {
+        component.batteryDetected = false;
+        component.batteryConditions = goodAndBatteryNotDetectedCondition;
+        fixture.detectChanges();
+        let h6 = fixture.debugElement.query(By.css('[data-battery-condition=notDetected]')).nativeElement;
         expect(h6.innerHTML).toBe('device.deviceSettings.batteryGauge.condition.AcAdapterConnected');
       });
     });
