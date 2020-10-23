@@ -13,6 +13,8 @@ import { Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
+import { HypothesisService } from '../hypothesis/hypothesis.service';
+import { LenovoSurveyEnum} from 'src/app/enums/lenovo-survey.enum';
 
 export class Category {
 	id: string; 	// app category id
@@ -78,7 +80,8 @@ export class AppsForYouService {
 		private logService: LoggerService,
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
-		private dccService: DccService
+		private dccService: DccService,
+		private hypService: HypothesisService,
 	) {
 		this.initialize();
 		this.systemUpdateBridge = vantageShellService.getSystemUpdate();
@@ -364,6 +367,7 @@ export class AppsForYouService {
 			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
 			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
 			this.UnreadMessageCount.dccMenuClicked = cacheUnreadMessageCount.dccMenuClicked ? cacheUnreadMessageCount.dccMenuClicked : false;
+
 			let totalMessage = 0;
 			if (this.showLmaMenu() && !this.UnreadMessageCount.lmaMenuClicked) {
 				totalMessage++;
@@ -384,6 +388,22 @@ export class AppsForYouService {
 			}
 			if (this.showDccMenu()) {
 				this.UnreadMessageCount.totalMessage++;
+			}
+		}
+	}
+
+	increaseUnreadMessage(messageId: string) {
+		if (!this.UnreadMessageCount[`set-${messageId}-unread`]) {
+			this.UnreadMessageCount[`set-${messageId}-unread`] = true;
+			this.UnreadMessageCount.totalMessage++;
+		}
+	}
+
+	decreaseUnreadMessage(messageId: string) {
+		if (this.UnreadMessageCount[`set-${messageId}-unread`] && !this.UnreadMessageCount[`set-${messageId}-read`]) {
+			this.UnreadMessageCount[`set-${messageId}-read`] = true;
+			if (this.UnreadMessageCount.totalMessage > 0) {
+				this.UnreadMessageCount.totalMessage--;
 			}
 		}
 	}
