@@ -34,7 +34,7 @@ export class MetricService {
 	public readonly maxScrollRecorder = {};
 	public pageContainer: ElementRef;
 	public readonly contentDisplayDetection: ContentDisplayDetection;
-	public externalAppMetricsState: boolean;
+	public externalAppMetricsState = false;
 	private pageScollEvent = (arg: any) => { };
 
 	constructor(
