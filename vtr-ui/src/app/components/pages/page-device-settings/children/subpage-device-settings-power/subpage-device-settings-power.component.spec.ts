@@ -922,3 +922,34 @@ describe('Airplane Power Mode', () => {
 		expect(localCacheServiceSpy).toHaveBeenCalledWith(LocalStorageKey.AirplanePowerModeCapability, expectedFeature);
 	});
 });
+
+describe('Battery Charge Threshold', () => {
+	let fixture: ComponentFixture<SubpageDeviceSettingsPowerComponent>;
+	let component: SubpageDeviceSettingsPowerComponent;
+
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			declarations: [SubpageDeviceSettingsPowerComponent],
+			schemas: [NO_ERRORS_SCHEMA],
+			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
+			providers: [ LocalCacheService, DevService, MetricService,
+				CommonMetricsService, HypothesisService, TranslateStore,
+			]
+		}).compileComponents();
+
+		fixture = TestBed.createComponent(SubpageDeviceSettingsPowerComponent);
+		component = fixture.componentInstance;
+	});
+
+	it('is set as status true when service returns threshold is enabled', () => {
+		const batteryService = TestBed.inject(BatteryDetailService);
+		const enabledChargeThreshold = new ChargeThreshold();
+		enabledChargeThreshold.checkboxValue = true;
+		const chargeThresholds = [enabledChargeThreshold];
+		spyOn(batteryService, 'getChargeThresholdInfo').and.returnValue(observableOf(chargeThresholds));
+
+		component.ngOnInit();
+
+		expect(component.thresholdInfo[0].checkboxValue).toEqual(true);
+	});
+});

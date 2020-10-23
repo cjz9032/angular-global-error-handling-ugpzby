@@ -90,7 +90,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	alwaysOnUSBCache: AlwaysOnUSBCapability = undefined;
 	airplanePowerCache: AlwaysOnUSBCapability = undefined;
 	easyResumeCache: FeatureStatus;
-	chargeThresholdCache: ChargeThreshold[] = undefined;
 	expressChargingCache: FeatureStatus = undefined;
 	conservationModeCache: FeatureStatus = undefined;
 
@@ -274,9 +273,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	initBatteryChargeThresholdFromCache() {
 		try {
-			this.chargeThresholdCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.BatteryChargeThresholdCapability, undefined);
-			if (this.chargeThresholdCache) {
-				this.setChargeThresholdUI(this.chargeThresholdCache);
+			const chargeThresholdCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.BatteryChargeThresholdCapability, undefined);
+			if (chargeThresholdCache) {
+				this.setChargeThresholdUI(chargeThresholdCache);
 			}
 		} catch (error) {
 			this.logger.info('initBatteryChargeThresholdFromCache', error);
