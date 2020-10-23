@@ -22,7 +22,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { getSecurityLevel, SecurityFeature, securityStatus, retryAntivirus } from 'src/app/data-models/security-advisor/security-status';
+import { getSecurityLevel, SecurityFeature, securityStatus, retryAntivirus, SecurityLevel, waitTimeout } from 'src/app/data-models/security-advisor/security-status';
 import { WindowsHelloService } from 'src/app/services/security/windowsHello.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { toLower } from 'lodash';
@@ -61,7 +61,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 	};
 	haveOwnList: any;
 	translations: any;
-	securityLevel: any;
+	securityLevel: SecurityLevel;
 
 	constructor(
 		public vantageShellService: VantageShellService,
@@ -145,13 +145,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			'security.landing.goFirewall',
 		]).subscribe((trans: any) => {
 			this.translations = trans;
-			this.initSecurityStatusDetails(trans);
-			this.securityLevel = {
-				landingStatus: this.landingStatus,
-				basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
-				intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
-				advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)
-			};
+			this.setInitSecurityLevel(trans);
 			this.deviceService.getMachineInfo().then(result => {
 				this.securityFeature.vpnSupport = true;
 				this.securityFeature.pwdSupport = true;
@@ -173,12 +167,9 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 					percent: 100,
 					fullyProtected: false
 				});
-				this.securityLevel = {
-					landingStatus: this.landingStatus,
-					basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
-					intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
-					advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)
-				};
+				this.setInitSecurityLevel(trans);
+				waitTimeout('firewall');
+				waitTimeout('antivirus');
 				this.securityAdvisor.on('*', () => {
 					this.securityFeature.fingerprintSupport = this.windowsHelloService.showWindowsHello(this.securityAdvisor.windowsHello);
 					this.securityLevel = getSecurityLevel(
@@ -228,65 +219,18 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	initSecurityStatusDetails(translationString: any) {
+	setInitSecurityLevel(translationString: any) {
 		if (translationString) {
-			if (!securityStatus.avStatus.detail) {
-				securityStatus.avStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			if (!securityStatus.fwStatus.detail) {
-				securityStatus.fwStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.avStatus.title = translationString['common.securityAdvisor.antiVirus'];
-			securityStatus.avStatus.content = translationString['security.landing.antivirusContent'];
-			securityStatus.avStatus.buttonLabel = translationString['security.landing.goAntivirus'];
-			securityStatus.fwStatus.title = translationString['security.landing.firewall'];
-			securityStatus.fwStatus.content = translationString['security.landing.firewallContent'];
-			securityStatus.fwStatus.buttonLabel = translationString['security.landing.goFirewall'];
-
-			if (!securityStatus.waStatus.detail) {
-				securityStatus.waStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.waStatus.title = translationString['security.landing.windows'];
-			securityStatus.waStatus.content = translationString['security.landing.windowsActiveContent'];
-			securityStatus.waStatus.buttonLabel = translationString['security.landing.visitWindows'];
-
-			if (!securityStatus.uacStatus.detail) {
-				securityStatus.uacStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.uacStatus.title = translationString['security.landing.uac'];
-			securityStatus.uacStatus.content = translationString['security.landing.uacContent'];
-			securityStatus.uacStatus.buttonLabel = translationString['security.landing.visitUac'];
-
-			if (!securityStatus.pmStatus.detail) {
-				securityStatus.pmStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.pmStatus.title = translationString['security.landing.pwdHealth'];
-			securityStatus.pmStatus.content = translationString['security.landing.passwordContent'];
-			securityStatus.pmStatus.buttonLabel = translationString['security.landing.goPassword'];
-			securityStatus.pmStatus.ownTitle = translationString['security.landing.haveOwnPassword'];
-
-			if (!securityStatus.whStatus.detail) {
-				securityStatus.whStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.whStatus.title = translationString['security.landing.fingerprint'];
-			securityStatus.whStatus.content = translationString['security.landing.fingerprintContent'];
-			securityStatus.whStatus.buttonLabel = translationString['security.landing.visitFingerprint'];
-
-			if (!securityStatus.wfStatus.detail) {
-				securityStatus.wfStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.wfStatus.title = translationString['common.securityAdvisor.wifi'];
-			securityStatus.wfStatus.content = translationString['security.landing.wifiContent'];
-			securityStatus.wfStatus.ownTitle = translationString['security.landing.haveOwnWifi'];
-			securityStatus.wfStatus.buttonLabel = translationString['security.landing.goWifi'];
-
-			if (!securityStatus.vpnStatus.detail) {
-				securityStatus.vpnStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.vpnStatus.title = translationString['security.landing.vpnVirtual'];
-			securityStatus.vpnStatus.buttonLabel = translationString['security.landing.goVpn'];
-			securityStatus.vpnStatus.content = translationString['security.landing.vpnContent'];
-			securityStatus.vpnStatus.ownTitle = translationString['security.landing.haveOwnVpn'];
+			this.securityLevel = {
+				landingStatus: this.landingStatus,
+				basicView: [securityStatus.avStatus, securityStatus.fwStatus, this.securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined),
+				intermediateView: [this.securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, this.securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, this.securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined),
+				advancedView: [this.securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, this.securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined)
+			};
+		} else {
+			this.securityLevel = {
+				landingStatus: this.landingStatus,
+			};
 		}
 	}
 
