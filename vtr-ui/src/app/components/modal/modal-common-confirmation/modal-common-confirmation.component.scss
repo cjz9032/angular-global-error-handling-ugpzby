@@ -71,8 +71,11 @@
 		height: 4rem;
 		line-height: 4rem;
 		border-radius: 0;
-		//border-bottom: 0.2rem solid $main;
 		text-transform: uppercase;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+		width:auto;
 		&:focus {
 			outline: 0;
 			border: 0.1rem solid $menu_hover;
