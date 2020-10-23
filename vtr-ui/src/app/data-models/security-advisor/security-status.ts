@@ -156,50 +156,60 @@ export const getSecurityLevel = (
 		securityStatus.fwStatus.content = translationString['security.landing.firewallContent'];
 		securityStatus.fwStatus.buttonLabel = translationString['security.landing.goFirewall'];
 
-		if (securityStatus.waStatus && !securityStatus.waStatus.detail) {
-			securityStatus.waStatus.detail = translationString['common.securityAdvisor.loading'];
-		}
-		securityStatus.waStatus.title = translationString['security.landing.windows'];
-		securityStatus.waStatus.content = translationString['security.landing.windowsActiveContent'];
-		securityStatus.waStatus.buttonLabel = translationString['security.landing.visitWindows'];
+		if (securityFeature.pluginSupport) {
+			if (!securityStatus.waStatus.detail) {
+				securityStatus.waStatus.detail = translationString['common.securityAdvisor.loading'];
+			}
+			securityStatus.waStatus.title = translationString['security.landing.windows'];
+			securityStatus.waStatus.content = translationString['security.landing.windowsActiveContent'];
+			securityStatus.waStatus.buttonLabel = translationString['security.landing.visitWindows'];
 
-		if (securityStatus.uacStatus && !securityStatus.uacStatus.detail) {
-			securityStatus.uacStatus.detail = translationString['common.securityAdvisor.loading'];
+			if (!securityStatus.uacStatus.detail) {
+				securityStatus.uacStatus.detail = translationString['common.securityAdvisor.loading'];
+			}
+			securityStatus.uacStatus.title = translationString['security.landing.uac'];
+			securityStatus.uacStatus.content = translationString['security.landing.uacContent'];
+			securityStatus.uacStatus.buttonLabel = translationString['security.landing.visitUac'];
 		}
-		securityStatus.uacStatus.title = translationString['security.landing.uac'];
-		securityStatus.uacStatus.content = translationString['security.landing.uacContent'];
-		securityStatus.uacStatus.buttonLabel = translationString['security.landing.visitUac'];
 
-		if (securityStatus.pmStatus && !securityStatus.pmStatus.detail) {
-			securityStatus.pmStatus.detail = translationString['common.securityAdvisor.loading'];
+		if (securityFeature.pwdSupport) {
+			if (!securityStatus.pmStatus.detail) {
+				securityStatus.pmStatus.detail = translationString['common.securityAdvisor.loading'];
+			}
+			securityStatus.pmStatus.title = translationString['security.landing.pwdHealth'];
+			securityStatus.pmStatus.content = translationString['security.landing.passwordContent'];
+			securityStatus.pmStatus.buttonLabel = translationString['security.landing.goPassword'];
+			securityStatus.pmStatus.ownTitle = translationString['security.landing.haveOwnPassword'];
 		}
-		securityStatus.pmStatus.title = translationString['security.landing.pwdHealth'];
-		securityStatus.pmStatus.content = translationString['security.landing.passwordContent'];
-		securityStatus.pmStatus.buttonLabel = translationString['security.landing.goPassword'];
-		securityStatus.pmStatus.ownTitle = translationString['security.landing.haveOwnPassword'];
 
-		if (securityStatus.whStatus && !securityStatus.whStatus.detail) {
-			securityStatus.whStatus.detail = translationString['common.securityAdvisor.loading'];
+		if (securityFeature.fingerprintSupport) {
+			if (!securityStatus.whStatus.detail) {
+				securityStatus.whStatus.detail = translationString['common.securityAdvisor.loading'];
+			}
+			securityStatus.whStatus.title = translationString['security.landing.fingerprint'];
+			securityStatus.whStatus.content = translationString['security.landing.fingerprintContent'];
+			securityStatus.whStatus.buttonLabel = translationString['security.landing.visitFingerprint'];
 		}
-		securityStatus.whStatus.title = translationString['security.landing.fingerprint'];
-		securityStatus.whStatus.content = translationString['security.landing.fingerprintContent'];
-		securityStatus.whStatus.buttonLabel = translationString['security.landing.visitFingerprint'];
 
-		if (securityStatus.wfStatus && !securityStatus.wfStatus.detail) {
-			securityStatus.wfStatus.detail = translationString['common.securityAdvisor.loading'];
+		if (wifiSecurity.isSupported) {
+			if (!securityStatus.wfStatus.detail) {
+				securityStatus.wfStatus.detail = translationString['common.securityAdvisor.loading'];
+			}
+			securityStatus.wfStatus.title = translationString['common.securityAdvisor.wifi'];
+			securityStatus.wfStatus.content = translationString['security.landing.wifiContent'];
+			securityStatus.wfStatus.ownTitle = translationString['security.landing.haveOwnWifi'];
+			securityStatus.wfStatus.buttonLabel = translationString['security.landing.goWifi'];
 		}
-		securityStatus.wfStatus.title = translationString['common.securityAdvisor.wifi'];
-		securityStatus.wfStatus.content = translationString['security.landing.wifiContent'];
-		securityStatus.wfStatus.ownTitle = translationString['security.landing.haveOwnWifi'];
-		securityStatus.wfStatus.buttonLabel = translationString['security.landing.goWifi'];
 
-		if (securityStatus.vpnStatus && !securityStatus.vpnStatus.detail) {
-			securityStatus.vpnStatus.detail = translationString['common.securityAdvisor.loading'];
+		if (securityFeature.vpnSupport) {
+			if (!securityStatus.vpnStatus.detail) {
+				securityStatus.vpnStatus.detail = translationString['common.securityAdvisor.loading'];
+			}
+			securityStatus.vpnStatus.title = translationString['security.landing.vpnVirtual'];
+			securityStatus.vpnStatus.buttonLabel = translationString['security.landing.goVpn'];
+			securityStatus.vpnStatus.content = translationString['security.landing.vpnContent'];
+			securityStatus.vpnStatus.ownTitle = translationString['security.landing.haveOwnVpn'];
 		}
-		securityStatus.vpnStatus.title = translationString['security.landing.vpnVirtual'];
-		securityStatus.vpnStatus.buttonLabel = translationString['security.landing.goVpn'];
-		securityStatus.vpnStatus.content = translationString['security.landing.vpnContent'];
-		securityStatus.vpnStatus.ownTitle = translationString['security.landing.haveOwnVpn'];
 	}
 
 	// antivirus and firewall
