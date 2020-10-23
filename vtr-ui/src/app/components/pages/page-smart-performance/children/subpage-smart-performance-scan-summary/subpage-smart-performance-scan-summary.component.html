@@ -38,7 +38,7 @@
 							<vtr-ui-smart-performance-rating [leftAnimator]="inputIsScanningCompleted ? leftAnimator : '100%'"
 								[hidePointer]="!inputIsScanningCompleted"
 								[hideStatus]="true"></vtr-ui-smart-performance-rating>
-							<div class="d-flex justify-content-start">
+							<div class="d-flex justify-content-start flex-wrap">
 								<vtr-ui-button (onClick)="ScanNowSummary()"
 									*ngIf="!inputIsScanningCompleted"
 									linkId="btn.smart-performance-scan-and-fix"
