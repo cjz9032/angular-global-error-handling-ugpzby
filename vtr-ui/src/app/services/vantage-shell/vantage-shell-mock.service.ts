@@ -640,6 +640,7 @@ export class VantageShellService {
 				}
 			},
 			wifiSecurity: {
+				getWifiSecurityTrialDays: () => { },
 				mitt: null,
 				state: 'enabled',
 				wifiHistory: [
