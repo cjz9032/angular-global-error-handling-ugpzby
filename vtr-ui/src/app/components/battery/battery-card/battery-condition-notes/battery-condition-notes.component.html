@@ -1,3 +1,15 @@
+<div class="row pl-4 mt-4" *ngIf="!this.batteryDetected">
+    <div class="p-0 pr-2 col-auto">
+        <span role="img"
+            id="batteryConditionIcon-BadBattery"
+            class="icomoon icomoon-ConditionBadBattery"></span>
+    </div>
+    <div class='col battery-conditions-tips'>
+        <h6 [innerHTML]="'device.deviceSettings.batteryGauge.condition.NotDetected' | translate"
+            id="battery-condition-battery-not-detected"> </h6>
+    </div>  
+</div>
+
 <div class="row px-3"
     *ngFor="let note of notes; let i = index">
     <!-- Battery Condition note icon -->
@@ -49,6 +61,7 @@
             [id]="'battery-condition-tip-'+getCondition(i)"> </h6>
         <!-- for  all tips which does not contain any value to be added in translate string -->
         <h6 [innerHTML]="note | translate"
+            data-battery-condition="notDetected"
             *ngIf="!isStoreLimitated(i) && !isConditionError(i) && !isAcAdapterInUse(i)"
             [id]="'battery-condition-tip-'+ getCondition(i)"> </h6>
         <!-- see details link in case of short adapter note -->
