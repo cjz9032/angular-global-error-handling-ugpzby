@@ -80,10 +80,10 @@
 
 				// Used to fix arrow top when is in high contrast
 				@media #{$white-on-black} {
-					top: calc(-11.5rem + 50%);
+					top: calc(0% + 6.5rem);
 				}
 				@media #{$black-on-white} {
-					top: calc(-11.5rem + 50%);
+					top: calc(0% + 6.5rem);
 				}
 			}
 		}
@@ -97,14 +97,13 @@
 
 				// Used to fix arrow top when is in high contrast
 				@media #{$white-on-black} {
-					top: calc(-7.5rem + 50%);
+					top: calc(0% + 6.3rem);
 				}
 				@media #{$black-on-white} {
-					top: calc(-7.5rem + 50%);
+					top: calc(0% + 6.3rem);
 				}
 			}
 		}
-
 	}
 }
 
