@@ -44,7 +44,6 @@ import { BacklightLevelEnum } from 'src/app/components/pages/page-device-setting
 export class MaterialMenuComponent implements OnInit, OnDestroy {
 	@ViewChild('menuMainNavbarToggler') navbarToggler: ElementRef;
 	@ViewChildren(MatMenuTrigger) triggers: QueryList<MatMenuTrigger>;
-	@ViewChild(MaterialHamburgerMenuComponent) hamburgerDropdownMenu: MaterialHamburgerMenuComponent;
 	@Input() loadMenuItem: any = {};
 	VantageLogo = `
 		data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c
