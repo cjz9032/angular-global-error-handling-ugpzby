@@ -11,11 +11,5 @@ import { DialogData } from './material-dialog.interface';
 	styleUrls: ['./material-dialog.component.scss'],
 })
 export class MaterialDialogComponent {
-	dialogData: DialogData;
-
-	constructor(
-		@Inject(MAT_DIALOG_DATA) public data: DialogData
-	) {
-		this.dialogData = data;
-	}
+	constructor(@Inject(MAT_DIALOG_DATA) public dialogData: DialogData) {}
 }
