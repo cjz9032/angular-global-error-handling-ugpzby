@@ -2154,24 +2154,12 @@
             "superResolution": {
                 "title": "Povečanje ločljivosti videoposnetkov",
                 "desc1": "Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.",
-                "desc2": "Ta funkcija lahko vpliva na čas delovanja baterije, temperaturo kože in glasnost ventilatorja. Ne uporabljajte je pri napajanju iz baterije (način DC). sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.",
-                "tooltip": {
-                    "description1": "Ta funkcija deluje samo za spodnje videopredvajalnike:<br>",
-                    "player1": "Windows Media Player<br>",
-                    "player2": "Predvajalnik v brskalniku Chrome<br>",
-                    "player3": "PotPlayer<br>",
-                    "player4": "Opera (vgrajen mehanizem Google Chromium)<br>",
-                    "player5": "Microsoft Edge (vgrajen mehanizem Google Chromium)<br>",
-                    "player6": "Microsoft Teams<br>",
-                    "player7": "Zoom<br>",
-                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Navodila za omogočanje te funkcije v predvajalniku PotPlayer najdete v Vodiču za uporabnika, ki je priložen računalniku.</p>"
-                },
+                "desc2": "Ta funkcija lahko vpliva na čas delovanja in temperaturo baterije ter poveča glasnost računalnika. Ne uporabljajte je pri napajanju iz baterije (način DC), sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.",
+                "tooltip": "<p id='sr-tip-one' role='text'>Ta funkcija deluje samo s temi predvajalniki videoposnetkov:<br>Windows Media Player<br>predvajalnik v brskalniku Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Navodila za omogočanje te funkcije v predvajalniku PotPlayer najdete v Vodiču za uporabnika, ki je priložen računalniku.</p>",
                 "note": {
                     "description": "Ta funkcija ne deluje v naslednjih primerih:",
                     "description1": "Temperatura CPE je previsoka.",
-                    "description2": "Naprava je nastavljena na način varčevanja z energijo baterije pri vklopljenem pametnem hlajenju.",
-                    "description3": "Hkrati se izvajata vsaj dva predvajalnika.",
-                    "description4": "V teku je videoklic z aplikacijami VoIP (npr. Microsoft Teams ali Zoom) in hkrati se predvaja videoposnetek."
+                    "description2": "Naprava je nastavljena na način varčevanja z energijo baterije pri vklopljenem pametnem hlajenju."
                 },
                 "imageBefore": "Prej",
                 "imageAfter": "Potem"

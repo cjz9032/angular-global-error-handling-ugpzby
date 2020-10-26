@@ -2154,24 +2154,12 @@
             "superResolution": {
                 "title": "Povećanje razlučivosti videozapisa",
                 "desc1": "Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.",
-                "desc2": "Ova funkcija može utjecati na trajanje baterije, temperaturu kože i buku ventilatora. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.",
-                "tooltip": {
-                    "description1": "Ova značajka radi samo za reproduktore videozapisa u nastavku:<br>",
-                    "player1": "Windows Media Player<br>",
-                    "player2": "Reproduktor koji se temelji na pregledniku Chrome<br>",
-                    "player3": "PotPlayer<br>",
-                    "player4": "Opera (ugrađena tražilica Google Chromium)<br>",
-                    "player5": "Microsoft Edge (ugrađena tražilica Google Chromium)<br>",
-                    "player6": "Microsoft Teams<br>",
-                    "player7": "Zoom<br>",
-                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru, pogledajte vodič za korisnike koji je isporučen uz vaše računalo.</p>"
-                },
+                "desc2": "Ova funkcija može utjecati na trajanje baterije, temperaturu baterije i uzrokovati buku. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.",
+                "tooltip": "<p id='sr-tip-one' role='text'>Ova značajka radi samo za video reproduktore navedene ispod:<br>Windows Media Player<br>Reproduktor temeljen na Chrome-u<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Za upute o tome kako omogućiti ovu funkciju na PotPlayeru, pogledajte vodič za korisnike koji je isporučen uz vaše računalo.</p>",
                 "note": {
                     "description": "Ova značajka ne funkcionira kad:",
                     "description1": "je temperatura CPU-a previsoka.",
-                    "description2": "Uređaj je postavljen na način uštede baterije u \"Inteligentnom hlađenju\".",
-                    "description3": "Dva ili više igrača istodobno trče.",
-                    "description4": "Na videopozivu s VoIP aplikacijama (kao što je Microsoft Teams ili Zoom) i videozapis se reproducira istovremeno."
+                    "description2": "Uređaj je postavljen na način uštede baterije u \"Inteligentnom hlađenju\"."
                 },
                 "imageBefore": "Prije",
                 "imageAfter": "Poslije"

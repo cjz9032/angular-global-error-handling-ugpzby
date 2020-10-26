@@ -2154,24 +2154,12 @@
             "superResolution": {
                 "title": "Skalowanie rozdzielczości wideo",
                 "desc1": "Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.",
-                "desc2": "Ta funkcja może wpływać na czas pracy akumulatora, temperaturę powierzchni i poziom hałasu wentylatora. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.",
-                "tooltip": {
-                    "description1": "Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>",
-                    "player1": "Windows Media Player<br>",
-                    "player2": "Odtwarzacz działający w przeglądarce Chrome<br>",
-                    "player3": "PotPlayer<br>",
-                    "player4": "Opera (wbudowany silnik Google Chromium)<br>",
-                    "player5": "Microsoft Edge (wbudowany silnik Google Chromium)<br>",
-                    "player6": "Microsoft Teams<br>",
-                    "player7": "Zoom<br>",
-                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Aby dowiedzieć się, jak włączyć tę funkcję w odtwarzaczu PotPlayer, zapoznaj się z podręcznikiem użytkownika dostarczonym z komputerem.</p>"
-                },
+                "desc2": "Ta funkcja może wpływać na żywotność baterii, temperaturę baterii i powodować hałas. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.",
+                "tooltip": "<p id='sr-tip-one' role='text'>Ta funkcja działa tylko w przypadku następujących odtwarzaczy wideo:<br>Windows Media Player<br>Odtwarzacz działający w przeglądarce Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Aby dowiedzieć się, jak włączyć tę funkcję w odtwarzaczu PotPlayer, zapoznaj się z podręcznikiem użytkownika dostarczonym z komputerem.</p>",
                 "note": {
                     "description": "Funkcja nie działa, gdy:",
                     "description1": "Temperatura procesora jest za wysoka.",
-                    "description2": "Urządzenie działa w trybie oszczędzania baterii po ustawieniu trybu „Inteligentne chłodzenie”.",
-                    "description3": "Co najmniej dwóch graczy działa w tym samym czasie.",
-                    "description4": "W czasie trwania połączenia wideo w aplikacji VoIP (takiej jak Microsoft Teams lub Zoom) ma także miejsce odtwarzanie treści wideo."
+                    "description2": "Urządzenie działa w trybie oszczędzania baterii po ustawieniu trybu „Inteligentne chłodzenie”."
                 },
                 "imageBefore": "Przed",
                 "imageAfter": "Po"

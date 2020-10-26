@@ -2154,24 +2154,12 @@
             "superResolution": {
                 "title": "Schaalverhoging beeldschermresolutie",
                 "desc1": "Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.",
-                "desc2": "Deze functie kan invloed hebben op de werkingsduur van de batterij, de temperatuur en ventilatorgeluiden. Niet gebruiken in gelijkstroommodus (batterijstroom), anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.",
-                "tooltip": {
-                    "description1": "Deze functie werkt alleen voor de onderstaande videospelers:<br>",
-                    "player1": "Windows Media Player<br>",
-                    "player2": "Chrome-speler<br>",
-                    "player3": "PotPlayer<br>",
-                    "player4": "Opera (ingebouwde Google Chromium-engine)<br>",
-                    "player5": "Microsoft Edge (ingebouwde Google Chromium-engine)<br>",
-                    "player6": "Microsoft Teams<br>",
-                    "player7": "Zoom<br>",
-                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Instructies voor het inschakelen van deze functie in PotPlayer vindt u in de gebruikershandleiding van de computer.</p>"
-                },
+                "desc2": "Deze functie kan invloed hebben op de levensduur en temperatuur van de batterij en kan ruis veroorzaken. Niet gebruiken in gelijkstroommodus (batterijstroom). anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.",
+                "tooltip": "<p id='sr-tip-one' role='text'>Deze functie werkt alleen voor volgende videospelers:<br>Windows Media Player<br>Chrome-speler<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Instructies voor het inschakelen van deze functie in PotPlayer vindt u in de gebruikershandleiding van de computer.</p>",
                 "note": {
                     "description": "Deze functie werkt niet als:",
                     "description1": "De CPU-temperatuur te hoog is.",
-                    "description2": "Het apparaat is ingesteld op de energiebesparingsmodus in \"Intelligent koelen\".",
-                    "description3": "Er worden twee of meer spelers tegelijk uitgevoerd.",
-                    "description4": "In een videogesprek met een VoIP-app (zoals Microsoft Teams of Zoom) terwijl tegelijkertijd een video wordt afgespeeld."
+                    "description2": "Het apparaat is ingesteld op de energiebesparingsmodus in \"Intelligent koelen\"."
                 },
                 "imageBefore": "Voor",
                 "imageAfter": "Na"
