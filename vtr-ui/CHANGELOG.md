@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.32](https://bitbucket.tc.lenovo.com///compare/v1.8.31...v1.8.32) (2020-10-26)
+
+
+### Bug Fixes
+
+* **LoadCache:** Should getMachineType after load cache because it used cache in its internal logic ([61235ca](https://bitbucket.tc.lenovo.com///commit/61235caef8280317a1113c7a473812f1635f0a6d))
+
 ### [1.8.31](https://bitbucket.tc.lenovo.com///compare/v1.8.30...v1.8.31) (2020-10-26)
 
 
