@@ -1,8 +1,6 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MatMenu } from '@lenovo/material/menu';
-
 import { MenuItem } from 'src/app/services/config/config.service';
 
 @Component({
@@ -11,7 +9,6 @@ import { MenuItem } from 'src/app/services/config/config.service';
 	styleUrls: ['./material-menu-dropdown.component.scss'],
 })
 export class MaterialMenuDropdownComponent implements OnInit {
-	@ViewChild(MatMenu, {static: true}) matMenu: MatMenu;
 	@Input() dropdownMenu: MenuItem;
 	@Input() parentPath: string;
 	@Input() parentId: string;
