@@ -563,9 +563,19 @@ export class DashboardService {
 		}
 		await this.previousResultService.getLastResults();
 		const lastSacnInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
-		if (!lastSacnInfo.date || this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > SystemHealthDates.HardwareScan) {
+		if (lastSacnInfo.date && this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > SystemHealthDates.HardwareScan) {
 			return true;
 		}
+
+		if (!lastSacnInfo.date)
+		{
+			const oobeDate =  this.deviceService.getMachineInfoSync()?.firstRunDate || Date.now();
+			if (this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan)
+			{
+				return true;
+			}
+		}
+
 		return false;
 	}
 
