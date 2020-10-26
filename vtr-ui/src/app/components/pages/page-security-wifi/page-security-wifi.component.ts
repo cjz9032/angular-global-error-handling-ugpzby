@@ -318,7 +318,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	getTrialDay() {
-		if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth) {
+		if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth && this.userService.isLenovoIdSupported()) {
 			this.wifiSecurity.getWifiSecurityTrialDays();
 		}
 	}
