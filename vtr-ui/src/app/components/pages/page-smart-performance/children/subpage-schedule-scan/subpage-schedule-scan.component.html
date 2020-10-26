@@ -55,7 +55,7 @@
 					class="status d-flex justify-content-end w-50 align-items-center"
 					id="smart-performance-change-schedule-time"
 					role="button"
-					tabindex="0"
+					[tabindex]="isClickDisabled ?  -1 : 0"
 					(keydown.enter)="changeScanSchedule()"
 					#scheduledScanFrequency>
 					<p class="mr-3 text-uppercase"
