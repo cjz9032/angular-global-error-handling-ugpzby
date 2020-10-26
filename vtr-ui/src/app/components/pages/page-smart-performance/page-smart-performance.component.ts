@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, OnChanges, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SystemEventService } from '../../../services/system-event/system-event.service';
 import { CommonService } from '../../../services/common/common.service';
 import { Subscription, EMPTY } from 'rxjs';
@@ -24,10 +24,9 @@ import { SmartPerformanceDialogService } from 'src/app/services/smart-performanc
 	templateUrl: './page-smart-performance.component.html',
 	styleUrls: ['./page-smart-performance.component.scss']
 })
-export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChanges {
+export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	private notificationSub: Subscription;
 	eventName = 'SmartPerformance.ScheduleEventStarted';
-	isScanningStarted = 0;
 	retryCount = 0;
 
 	showSubscribersummary = false;
@@ -78,11 +77,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChang
 
 	}
 
-	ngOnChanges(changes: SimpleChanges): void {
-		if (changes && changes.isScanningStarted && !changes.isScanningStarted.firstChange) {
-			this.checkReadiness();
-		}
-	}
 	ngOnInit() {
 		this.smartPerformanceService.isEnterSmartPerformance = true;
 		this.registerScanEvent();
@@ -123,7 +117,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChang
 		if (isRegistered) {
 			this.notificationSub = this.commonService.notification.subscribe(notification => {
 				if (notification && notification.type && notification.type.toString() === this.eventName) {
-					this.isScanningStarted += 1;
+					if (!this.smartPerformanceService.isScanning) {
+						this.switchToScanning();
+					}
 				}
 			});
 		} else {
@@ -156,10 +152,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChang
 			.then((getReadinessFromService: any) => {
 				this.logger.info('ui-smart-performance.ngOnInit.getReadiness.then', getReadinessFromService);
 				if (!getReadinessFromService) {
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
-					this.smartPerformanceService.isScanning = true;
-					this.registerScheduleScanEvent();
-					this.getSmartPerformanceScheduleScanStatus();
+					this.switchToScanning();
 				}
 				else {
 					this.smartPerformanceService.isScanning = false;
@@ -168,6 +161,13 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy, OnChang
 			.catch(error => {
 				this.logger.error('ui-smart-performance.ngOnInit.getReadiness.then', error);
 			});
+	}
+
+	switchToScanning() {
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+		this.smartPerformanceService.isScanning = true;
+		this.registerScheduleScanEvent();
+		this.getSmartPerformanceScheduleScanStatus();
 	}
 
 	registerScheduleScanEvent() {
