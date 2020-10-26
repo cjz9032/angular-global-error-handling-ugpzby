@@ -2154,24 +2154,12 @@
             "superResolution": {
                 "title": "視訊解析度升級",
                 "desc1": "此功能可改進視訊解析度，藉此強化視訊播放體驗。特別適合視訊解析度不佳時。",
-                "desc2": "此功能可能會影響電池續航力、表面溫度和風扇噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。",
-                "tooltip": {
-                    "description1": "此功能僅適用於以下視訊播放程式：<br>",
-                    "player1": "Windows Media Player<br>",
-                    "player2": "Chrome 播放器<br>",
-                    "player3": "PotPlayer<br>",
-                    "player4": "Opera（內建 Google Chromium 引擎）<br>",
-                    "player5": "Microsoft Edge（內建 Google Chromium 引擎）<br>",
-                    "player6": "Microsoft Teams<br>",
-                    "player7": "Zoom<br>",
-                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>如需在 PotPlayer 上啟用此功能的指示，請參閱電腦隨附的使用手冊。</p>"
-                },
+                "desc2": "此功能可能會影響電池續航力、電池溫度，並造成噪音。請勿在 DC 模式（電池模式）下使用。否則，電力會消耗得更快，且電池壽命會變得更短。",
+                "tooltip": "<p id='sr-tip-one' role='text'>此功能只適用於以下視訊播放程式：<br>Windows Media Player<br>Chrome 播放器<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>如需在 PotPlayer 上啟用此功能的指示，請參閱電腦隨附的使用手冊。</p>",
                 "note": {
                     "description": "此功能在下列情況中無法運作：",
                     "description1": "CPU 溫度過高。",
-                    "description2": "此裝置已在「智慧型冷卻」中設為省電模式。",
-                    "description3": "兩個或多個播放程式同時在執行中。",
-                    "description4": "在使用 VoIP 應用程式（例如 Microsoft Teams 或 Zoom）進行視訊通話時，同時播放視訊。"
+                    "description2": "此裝置已在「智慧型冷卻」中設為省電模式。"
                 },
                 "imageBefore": "啟用前",
                 "imageAfter": "啟用後"

@@ -2154,24 +2154,12 @@
             "superResolution": {
                 "title": "ビデオ解像度のアップスケーリング",
                 "desc1": "この機能は、ビデオ解像度を改善することで、ビデオ再生のエクスペリエンスを向上させます。特にビデオの解像度が低い場合に効果があります。",
-                "desc2": "この機能はバッテリー寿命、温度、ファン・ノイズに影響を与える可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。",
-                "tooltip": {
-                    "description1": "この機能は以下のビデオ・プレイヤーでのみに機能します。<br>",
-                    "player1": "Windows Media Player<br>",
-                    "player2": "Chrome ベースのプレーヤー<br>",
-                    "player3": "PotPlayer<br>",
-                    "player4": "Opera (Google Chromium エンジン内蔵)<br>",
-                    "player5": "Microsoft Edge (Google Chromium エンジン内蔵)<br>",
-                    "player6": "Microsoft Teams<br>",
-                    "player7": "Zoom<br>",
-                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>PotPlayer でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。</p>"
-                },
+                "desc2": "この機能は、バッテリー寿命、バッテリー温度に影響を与え、ノイズを引き起こす可能性があります。DC モード (バッテリー・モード) では使用しないでください。そうしないと、電力消費が速くなり、バッテリー寿命が短くなります。",
+                "tooltip": "<p id='sr-tip-one' role='text'>この機能は、以下のビデオプレーヤーでのみ機能します。<br>Windows Media Player<br>Chrome ベースのプレーヤー<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>PotPlayer でこの機能を有効にする方法については、コンピューターに付属のユーザー・ガイドを参照してください。</p>",
                 "note": {
                     "description": "この機能は次の場合は動作しません。",
                     "description1": "CPU の温度が高すぎる場合。",
-                    "description2": "デバイスは 「インテリジェント・クーリング」 でバッテリー節約モードに設定されています。",
-                    "description3": "2 人以上のプレイヤーが同時に起動しています。",
-                    "description4": "VoIP アプリ (Microsoft Teams や Zoom など) でのビデオ通話とビデオを同時に再生しています。"
+                    "description2": "デバイスは 「インテリジェント・クーリング」 でバッテリー節約モードに設定されています。"
                 },
                 "imageBefore": "前",
                 "imageAfter": "後"

@@ -2154,24 +2154,12 @@
             "superResolution": {
                 "title": "Zvýšení rozlišení videa",
                 "desc1": "Tato funkce vylepšuje zlepšením rozlišení videa zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.",
-                "desc2": "Tato funkce může ovlivnit životnost baterie, teplotu povrchu a způsobit šum ventilátoru. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.",
-                "tooltip": {
-                    "description1": "Tato funkce funguje pouze pro níže uvedené přehrávače videa:<br>",
-                    "player1": "Windows Media Player<br>",
-                    "player2": "Přehrávač založený na Chrome<br>",
-                    "player3": "PotPlayer<br>",
-                    "player4": "Opera (vestavěné jádro Google Chromium)<br>",
-                    "player5": "Microsoft Edge (vestavěné jádro Google Chromium)<br>",
-                    "player6": "Microsoft Teams<br>",
-                    "player7": "Zoom<br>",
-                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Návod, jak aktivovat tuto funkci v přehrávači PotPlayer, je uveden v uživatelské příručce k vašemu počítači.</p>"
-                },
+                "desc2": "Tato funkce může ovlivnit životnost baterie, teplotu baterie a způsobit šum. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.",
+                "tooltip": "<p id='sr-tip-one' role='text'>Tato schopnost funguje jen pro dále uvedené přehrávače videa:<br>Windows Media Player<br>přehrávač založený na Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Návod, jak aktivovat tuto funkci v přehrávači PotPlayer, je uveden v uživatelské příručce k vašemu počítači.</p>",
                 "note": {
                     "description": "Tato funkce nepracuje v následujících případech:",
                     "description1": "Teplota procesoru je příliš vysoká.",
-                    "description2": "Zařízení je nastaveno na režim úspory baterie v možnosti „Intelligent cooling“.",
-                    "description3": "Je spuštěno současně dva nebo více přehrávačů.",
-                    "description4": "Při videohovoru s aplikacemi VoIP (například Microsoft Teams nebo Zoom) a současném přehrávání videa."
+                    "description2": "Zařízení je nastaveno na režim úspory baterie v možnosti „Intelligent cooling“."
                 },
                 "imageBefore": "Před",
                 "imageAfter": "Po"
