@@ -121,6 +121,7 @@
 						href="javascript:;"
 						class="btn-skip"
 						(click)="closeModal()"
+						[title]="'modernPreload.skip' | translate"
 						[innerHTML]="'modernPreload.skip' | translate"></a>
 					<a *ngIf="modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING"
 						vtrMetrics
@@ -132,6 +133,7 @@
 						href="javascript:;"
 						class="btn-skip"
 						(click)="cancel()"
+						[title]="'modernPreload.cancel' | translate"
 						[innerHTML]="'modernPreload.cancel' | translate"></a>
 				</div>
 				<p class="bottom-tips"
@@ -168,7 +170,7 @@
 							alt=""
 							srcset="">
 					</div>
-					<div class="error-box w-100 pt-2">
+					<div class="error-box pt-2">
 						<p class="bottom-tips mb-5"
 							id="modern-preload-error-description"
 							role="text"

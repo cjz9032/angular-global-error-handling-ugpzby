@@ -2,16 +2,16 @@
 	<div class="custom-control custom-checkbox pl-0">
 		<input type="checkbox"
 			class="custom-control-input"
-			tabindex="-1"
-			[(ngModel)]="appItem.isChecked"
+			[tabindex]="!!(modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || appItem.isCheckDisabled) ? -1 : 0"
+			[checked]="appItem.isChecked"
 			id="modern-preload-app-{{appItem.udcId}}"
 			[disabled]="!!(modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || appItem.isCheckDisabled)"
-			attr.aria-label="modern-preload-app-{{appItem.udcId}}"
-			(change)="checkedApp()" />
-		<label class="custom-control-label"
-			[tabindex]="!!(modernPreloadService.DownloadButtonStatus === DownloadButtonStatusEnum.DOWNLOADING || appItem.isCheckDisabled) ? -1 : 0"
 			[attr.aria-label]="appItem.title"
 			(keydown.enter)="setAppCheckStatus()"
+			(click)="setAppCheckStatus()" />
+		<label class="custom-control-label-out"></label>
+		<label class="custom-control-label"
+			aria-hidden="true"
 			for="modern-preload-app-{{appItem.udcId}}">
 			<div class="app-logo">
 				<img [src]="appItem.thumbnail" />
