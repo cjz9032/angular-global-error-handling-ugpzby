@@ -911,6 +911,19 @@
 							}
 						}
 					}
+
+					vtr-widget-recommend-action{
+						.recommended-action{
+							vtr-ui-button{
+								.button-box{
+									.btn,.button{
+										background: $gradient_gray !important;
+										color: $shade_blue !important;
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
