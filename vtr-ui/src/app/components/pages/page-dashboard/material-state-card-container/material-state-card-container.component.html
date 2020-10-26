@@ -30,6 +30,9 @@
 					mat-flat-button
 					tabindex="-1"
 					class="link-button a absolute text-uppercase p-0 m-0"
+					[ngbTooltip]="cardData.linkText | translate"
+					tooltipClass="vtr-system-tooltip text-capitalize"
+					container="body"
 					[innerHTML]="cardData.linkText | translate"
 				></button>
 				<button mat-icon-button

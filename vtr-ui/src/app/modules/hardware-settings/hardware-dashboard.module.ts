@@ -72,7 +72,8 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		AppSearchModule,
 		FeedbackModule,
 		MatButtonModule,
-		MatIconModule
+		MatIconModule,
+		NgbTooltipModule
 	],
 	exports: [
 		MetricsModule,
