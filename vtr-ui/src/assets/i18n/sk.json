@@ -774,8 +774,8 @@
                 "sub2": "Nastavenia môjho zariadenia",
                 "sub3": "Aktualizácia systému",
                 "sub4": "Inteligentný asistent",
-				"sub5": "Podrobnosti o zariadení",
-				"sub6": "Device Settings Details"
+                "sub5": "Podrobnosti o zariadení",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Zabezpečenie",
@@ -2649,15 +2649,15 @@
                 "accountText": "Účet sa nepodarilo vytvoriť. Skúste to znova neskôr."
             },
             "expirePromptModal": {
-				"title": "Prihlásiť sa pomocou Lenovo ID",
-				"description": "Ak chcete naďalej používať aplikáciu Zabezpečenie Wi-Fi od spoločnosti Lenovo, prihláste sa pomocou svojho identifikátora Lenovo ID alebo si zdarma zaregistrujte konto.",
-				"trialWillExpire": "Platnosť skúšobnej verzie aplikácie Zabezpečenie Wi-Fi uplynie o:",
-				"days": "dni/dní",
-				"hasExpired": "Platnosť vašej skúšobnej verzie aplikácie Zabezpečenie Wi-Fi od spoločnosti Lenovo uplynula. Prihláste sa pomocou svojho identifikátora Lenovo ID alebo si zdarma zaregistrujte konto.",
-				"signIn": "PRIHLÁSIŤ SA",
-				"register": "ZAREGISTROVAŤ",
-				"ignore": "IGNOROVAŤ"
-			}
+                "title": "Prihlásiť sa pomocou Lenovo ID",
+                "description": "Ak chcete naďalej používať aplikáciu Zabezpečenie Wi-Fi od spoločnosti Lenovo, prihláste sa pomocou svojho identifikátora Lenovo ID alebo si zdarma zaregistrujte konto.",
+                "trialWillExpire": "Platnosť skúšobnej verzie aplikácie Zabezpečenie Wi-Fi uplynie o:",
+                "days": "dni/dní",
+                "hasExpired": "Platnosť vašej skúšobnej verzie aplikácie Zabezpečenie Wi-Fi od spoločnosti Lenovo uplynula. Prihláste sa pomocou svojho identifikátora Lenovo ID alebo si zdarma zaregistrujte konto.",
+                "signIn": "PRIHLÁSIŤ SA",
+                "register": "ZAREGISTROVAŤ",
+                "ignore": "IGNOROVAŤ"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Technická podpora spoločnosti Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Denník bol úspešne exportovaný a nájdete ho na adrese:",
+            "exportAccessErrorDescription": "Na export protokolu je potrebné, aby ste umožnili aplikácii Vantage prístup k vášmu súborovému systému. Kliknutím na tlačidlo nižšie otvoríte nastavenia povolení systému Windows. Pozor, zmena povolenia môže spôsobiť ukončenie programu Vantage.",
+            "exportFailDescription": "Počas exportu denníka sa vyskytol problém. Skúste to znova neskôr.",
+            "openSettingsButton": "Otvorte Nastavenia VPN systému Windows"
         },
         "executingScanTitle": "Skenovanie {{title}}",
         "showDetails": "Zobraziť podrobnosti",

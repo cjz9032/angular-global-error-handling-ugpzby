@@ -774,8 +774,8 @@
                 "sub2": "Mijn apparaatinstellingen",
                 "sub3": "Systeemupdate",
                 "sub4": "Slimme hulp",
-				"sub5": "Apparaatgegevens",
-				"sub6": "Device Settings Details"
+                "sub5": "Apparaatgegevens",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Beveiliging",
@@ -2649,15 +2649,15 @@
                 "accountText": "Het maken van het account is mislukt. Probeer het later alstublieft opnieuw."
             },
             "expirePromptModal": {
-				"title": "Meld u aan met uw Lenovo ID",
-				"description": "Als u Lenovo WiFi-beveiliging wilt blijven gebruiken, moet u zich aanmelden met uw Lenovo ID of u registreren voor een gratis account.",
-				"trialWillExpire": "Uw proefabonnement voor WiFi-beveiliging verloopt over:",
-				"days": "dagen",
-				"hasExpired": "Uw proefabonnement voor Lenovo WiFi-beveiliging is verlopen. Meld u aan met uw Lenovo ID of registreer u voor een gratis account.",
-				"signIn": "AANMELDEN",
-				"register": "REGISTREREN",
-				"ignore": "NEGEREN"
-			}
+                "title": "Meld u aan met uw Lenovo ID",
+                "description": "Als u Lenovo WiFi-beveiliging wilt blijven gebruiken, moet u zich aanmelden met uw Lenovo ID of u registreren voor een gratis account.",
+                "trialWillExpire": "Uw proefabonnement voor WiFi-beveiliging verloopt over:",
+                "days": "dagen",
+                "hasExpired": "Uw proefabonnement voor Lenovo WiFi-beveiliging is verlopen. Meld u aan met uw Lenovo ID of registreer u voor een gratis account.",
+                "signIn": "AANMELDEN",
+                "register": "REGISTREREN",
+                "ignore": "NEGEREN"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Ondersteuning van Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Het logboek is geëxporteerd en is te vinden op:",
+            "exportAccessErrorDescription": "U moet Vantage toegang geven tot uw bestandssysteem om het logboek te kunnen exporteren. Klik op de onderstaande knop om de Windows-instellingen voor machtigingen te openen. Als u de machtigingen wijzigt, wordt Vantage mogelijk gesloten.",
+            "exportFailDescription": "Er is een fout aangetroffen tijdens het exporteren van het logboek. Probeer het later opnieuw.",
+            "openSettingsButton": "Windows-instellingen openen"
         },
         "executingScanTitle": "{{title}} scannen",
         "showDetails": "Gegevens weergeven",

@@ -774,8 +774,8 @@
                 "sub2": "Mina enhetsinställningar",
                 "sub3": "Systemuppdatering",
                 "sub4": "Smart hjälp",
-				"sub5": "Enhetsinformation",
-				"sub6": "Device Settings Details"
+                "sub5": "Enhetsinformation",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Säkerhet",
@@ -2649,15 +2649,15 @@
                 "accountText": "Det gick inte att skapa kontot. Försök igen litet senare."
             },
             "expirePromptModal": {
-				"title": "Logga in med Lenovo ID",
-				"description": "För att fortsätta använda Lenovo WiFi-säkerhet måste du logga in med ditt Lenovo ID eller registrera dig för ett kostnadsfritt konto.",
-				"trialWillExpire": "Din provprenumeration på WiFi-säkerhet upphör om:",
-				"days": "dagar",
-				"hasExpired": "Din provprenumeration på Lenovo WiFi-säkerhet har upphört. Logga in med ditt Lenovo ID eller registrera dig för ett kostnadsfritt konto.",
-				"signIn": "LOGGA IN",
-				"register": "REGISTRERA DIG",
-				"ignore": "IGNORERA"
-			}
+                "title": "Logga in med Lenovo ID",
+                "description": "För att fortsätta använda Lenovo WiFi-säkerhet måste du logga in med ditt Lenovo ID eller registrera dig för ett kostnadsfritt konto.",
+                "trialWillExpire": "Din provprenumeration på WiFi-säkerhet upphör om:",
+                "days": "dagar",
+                "hasExpired": "Din provprenumeration på Lenovo WiFi-säkerhet har upphört. Logga in med ditt Lenovo ID eller registrera dig för ett kostnadsfritt konto.",
+                "signIn": "LOGGA IN",
+                "register": "REGISTRERA DIG",
+                "ignore": "IGNORERA"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Lenovo-supporten"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "Loggen har exporterats och du hittar den på:",
+            "exportAccessErrorDescription": "Du måste ge Vantage åtkomst till filsystemet för att kunna exportera loggen. Klicka på knappen nedan för att öppna behörighetsinställningarna i Windows. Tänk på att när du ändrar behörigheten kan det medföra att Vantage stängs.",
+            "exportFailDescription": "Ett fel påträffades under loggexporten. Försök igen senare.",
+            "openSettingsButton": "Öppna Windows-inställningar"
         },
         "executingScanTitle": "Genomsöker {{title}}",
         "showDetails": "Visa information",

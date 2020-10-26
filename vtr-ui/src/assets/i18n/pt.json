@@ -774,8 +774,8 @@
                 "sub2": "Definições do meu dispositivo",
                 "sub3": "Atualização do Sistema",
                 "sub4": "Assistente Inteligente",
-				"sub5": "Detalhes do dispositivo",
-				"sub6": "Device Settings Details"
+                "sub5": "Detalhes do dispositivo",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "Segurança",
@@ -2649,15 +2649,15 @@
                 "accountText": "A criação da conta falhou. Tente novamente mais tarde."
             },
             "expirePromptModal": {
-				"title": "Iniciar sessão no Lenovo ID",
-				"description": "Para continuar a utilizar a Segurança Wi-Fi da Lenovo, inicie sessão com o seu Lenovo ID ou registe-se para obter uma conta gratuita.",
-				"trialWillExpire": "A sua versão de avaliação da Segurança Wi-Fi expirará em:",
-				"days": "dias",
-				"hasExpired": "A sua versão de avaliação da Segurança Wi-Fi da Lenovo expirou. Inicie sessão com o seu Lenovo ID ou registe-se para obter uma conta gratuita.",
-				"signIn": "INICIAR SESSÃO",
-				"register": "REGISTE-SE",
-				"ignore": "IGNORAR"
-			}
+                "title": "Iniciar sessão no Lenovo ID",
+                "description": "Para continuar a utilizar a Segurança Wi-Fi da Lenovo, inicie sessão com o seu Lenovo ID ou registe-se para obter uma conta gratuita.",
+                "trialWillExpire": "A sua versão de avaliação da Segurança Wi-Fi expirará em:",
+                "days": "dias",
+                "hasExpired": "A sua versão de avaliação da Segurança Wi-Fi da Lenovo expirou. Inicie sessão com o seu Lenovo ID ou registe-se para obter uma conta gratuita.",
+                "signIn": "INICIAR SESSÃO",
+                "register": "REGISTE-SE",
+                "ignore": "IGNORAR"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Suporte Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "O registo foi exportado com êxito e pode ser encontrado em:",
+            "exportAccessErrorDescription": "Tem de permitir ao Vantage o acesso ao seu sistema de ficheiros para exportar o registo. Clique no botão abaixo para abrir as definições das permissões do Windows. Tenha em atenção que alterar a permissão poder causar o fecho do Vantage.",
+            "exportFailDescription": "Foi encontrado um problema durante a exportação do registo. Tente novamente mais tarde.",
+            "openSettingsButton": "Abrir Definições do Windows"
         },
         "executingScanTitle": "A analisar {{title}}",
         "showDetails": "Ver Detalhes",

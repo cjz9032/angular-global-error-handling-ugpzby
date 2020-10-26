@@ -774,8 +774,8 @@
                 "sub2": "הגדרות המכשיר שלי",
                 "sub3": "‏‫עדכון המערכת‬",
                 "sub4": "עזרה חכמה",
-				"sub5": "פרטי המכשיר",
-				"sub6": "Device Settings Details"
+                "sub5": "פרטי המכשיר",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "אבטחה",
@@ -2649,15 +2649,15 @@
                 "accountText": "יצירת החשבון נכשלה. נסו שוב מאוחר יותר."
             },
             "expirePromptModal": {
-				"title": "כניסה ל-Lenovo ID",
-				"description": "כדי להמשיך להשתמש באבטחת WiFi של Lenovo, היכנסו באמצעות Lenovo ID שלכם או הירשמו לחשבון בחינם.",
-				"trialWillExpire": "תקופת הניסיון שלכם לאבטחת WiFi תפוג בעוד:",
-				"days": "ימים",
-				"hasExpired": "פגה תקופת הניסיון שלכם לאבטחת WiFi של Lenovo. היכנסו באמצעות Lenovo ID שלכם או הירשמו לחשבון בחינם.",
-				"signIn": "כניסה",
-				"register": "הרשמה",
-				"ignore": "התעלמו"
-			}
+                "title": "כניסה ל-Lenovo ID",
+                "description": "כדי להמשיך להשתמש באבטחת WiFi של Lenovo, היכנסו באמצעות Lenovo ID שלכם או הירשמו לחשבון בחינם.",
+                "trialWillExpire": "תקופת הניסיון שלכם לאבטחת WiFi תפוג בעוד:",
+                "days": "ימים",
+                "hasExpired": "פגה תקופת הניסיון שלכם לאבטחת WiFi של Lenovo. היכנסו באמצעות Lenovo ID שלכם או הירשמו לחשבון בחינם.",
+                "signIn": "כניסה",
+                "register": "הרשמה",
+                "ignore": "התעלמו"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "התמיכה של Lenovo"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "ייצוא היומן בוצע בהצלחה וניתן למצוא אותו בכתובת:",
+            "exportAccessErrorDescription": "יש לאפשר ל- Vantage לגשת למערכת הקבצים כדי לייצא את היומן. לחצו על הלחצן למטה כדי לפתוח את הגדרות ההרשאות של Windows. שימו לב ששינוי הרשאה עלול לגרום לסגירת Vantage.",
+            "exportFailDescription": "נמצאה בעיה במהלך ייצוא היומן. נסו זאת שוב מאוחר יותר.",
+            "openSettingsButton": "פתחו את הגדרות Windows"
         },
         "executingScanTitle": "סורק את {{title}}",
         "showDetails": "הצגת פרטים",

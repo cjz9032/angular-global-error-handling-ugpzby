@@ -774,8 +774,8 @@
                 "sub2": "デバイス設定",
                 "sub3": "システム アップデート",
                 "sub4": "スマート・アシスト",
-				"sub5": "デバイスの詳細",
-				"sub6": "Device Settings Details"
+                "sub5": "デバイスの詳細",
+                "sub6": "Device Settings Details"
             },
             "security": {
                 "title": "セキュリティー",
@@ -2649,15 +2649,15 @@
                 "accountText": "アカウント作成に失敗しました。後から再試行してください。"
             },
             "expirePromptModal": {
-				"title": "Lenovo ID へのサインイン",
-				"description": "Lenovo WiFi セキュリティーを引き続き使用するには、Lenovo ID でログインするか、無料アカウントに登録してください。",
-				"trialWillExpire": "WiFi セキュリティー体験版の有効期限は次のとおりです。",
-				"days": "日後",
-				"hasExpired": "Lenovo WiFi セキュリティーの試用期間が終了しました。Lenovo ID でログインするか、無料アカウントに登録してください。",
-				"signIn": "サインイン",
-				"register": "登録",
-				"ignore": "無視"
-			}
+                "title": "Lenovo ID へのサインイン",
+                "description": "Lenovo WiFi セキュリティーを引き続き使用するには、Lenovo ID でログインするか、無料アカウントに登録してください。",
+                "trialWillExpire": "WiFi セキュリティー体験版の有効期限は次のとおりです。",
+                "days": "日後",
+                "hasExpired": "Lenovo WiFi セキュリティーの試用期間が終了しました。Lenovo ID でログインするか、無料アカウントに登録してください。",
+                "signIn": "サインイン",
+                "register": "登録",
+                "ignore": "無視"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -4276,10 +4276,10 @@
             "supportButtonText": "Lenovo サポート"
         },
         "exportLogModal": {
-            "exportSuccessDescription": "The log was exported successfully and can be found at:",
-            "exportAccessErrorDescription": "You need to allow Vantage to access your file system to export the log. Click on the button below to open Windows permissions settings. Beware that changing permission might cause Vantage to close.",
-            "exportFailDescription": "A problem was found during log export. Please try it again later.",
-            "openSettingsButton": "Open Windows Settings"
+            "exportSuccessDescription": "ログは正常にエクスポートされ、次の場所にあります。",
+            "exportAccessErrorDescription": "ログをエクスポートするには、Vantage がファイル・システムにアクセスできるようにする必要があります。下のボタンをクリックして、Windows のアクセス許可設定を開きます。アクセス許可を変更すると、Vantage が終了する場合があることに注意してください。",
+            "exportFailDescription": "ログのエクスポート中に問題が見つかりました。後で再試行してください。",
+            "openSettingsButton": "Windows 設定を開く"
         },
         "executingScanTitle": "{{title}} をスキャン中",
         "showDetails": "詳細の表示",
