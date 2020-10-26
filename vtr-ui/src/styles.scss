@@ -2561,11 +2561,15 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	}
 }
 
-.expirePromptDialogBackdrop {
+.dialogBackdropExcludeMenu {
 	top: 9rem;
 	background: rgba(0, 0, 0, 0.32);
 }
 
 .cdk-overlay-container {
 	z-index: 99;
+
+	.cdk-overlay-pane {
+		height: auto;
+	}
 }

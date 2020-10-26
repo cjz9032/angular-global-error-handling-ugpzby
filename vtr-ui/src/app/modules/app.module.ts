@@ -81,8 +81,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
-import { OverlayContainer } from '@lenovo/cdk/overlay';
-import { VantageOverlayContainer } from 'src/app/material/overlay/vantage-overlay-container';
 
 
 const globalRippleConfig: RippleGlobalOptions = {
@@ -176,11 +174,7 @@ const globalRippleConfig: RippleGlobalOptions = {
 			deps: [InitializerService],
 			multi: true
 		},
-		{provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig},
-		{
-			provide: OverlayContainer,
-			useFactory: () => new VantageOverlayContainer(document)
-		}
+		{provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
 	],
 	entryComponents: [
 		ModalWelcomeComponent,

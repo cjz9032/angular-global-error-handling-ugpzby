@@ -2122,13 +2122,11 @@
 		}
 	}
 
-	.cdk-overlay-container {
-		.mat-dialog-container {
-			.close-icon {
-				color: $blueFill;
-				&:hover {
-					color: $blueHover; 
-				}
+	.mat-dialog-container {
+		.close-icon {
+			color: $blueFill;
+			&:hover {
+				color: $blueHover; 
 			}
 		}
 	}

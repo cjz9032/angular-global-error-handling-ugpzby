@@ -312,7 +312,8 @@ export class DialogService {
 			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: true,
-			backdropClass: 'expirePromptDialogBackdrop',
+			backdropClass: 'dialogBackdropExcludeMenu',
+			panelClass: this.deviceService.isGaming ? 'is-gaming' : '',
 		});
 		this.dialogRef.afterClosed().subscribe(result => {
 			if (result === 'action') {
