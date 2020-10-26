@@ -20,8 +20,8 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { DialogData } from './../../../material/material-dialog/material-dialog.interface';
-import { UserService } from './../../../services/user/user.service';
+import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
+import { UserService } from 'src/app/services/user/user.service';
 import { MatDialogRef } from '@lenovo/material/dialog';
 import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
 import { MetricService } from 'src/app/services/metric/metrics.service';
@@ -293,7 +293,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			linkButtonName: (hasTrialDays < this.maxCanTrialTime) ? ignore : '',
 			showCloseButton: (hasTrialDays < this.maxCanTrialTime) ? true : false,
 		};
-		this.expirePromptDialogRef = this.dialogService.wifiSecurityExpirePromptDialog(dialogData);
+		this.expirePromptDialogRef = this.dialogService.openWifiSecurityExpirePromptDialog(dialogData);
 	}
 
 	needOpenExpireDialog(hasTrialDays: number): boolean {

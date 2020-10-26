@@ -82,7 +82,7 @@ import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
 import { OverlayContainer } from '@lenovo/cdk/overlay';
-import { VantageOverlayContainer } from '../material/overlay/vantage-overlay-container';
+import { VantageOverlayContainer } from 'src/app/material/overlay/vantage-overlay-container';
 
 
 const globalRippleConfig: RippleGlobalOptions = {

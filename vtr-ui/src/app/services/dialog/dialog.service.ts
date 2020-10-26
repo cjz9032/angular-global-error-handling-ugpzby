@@ -55,7 +55,7 @@ export class DialogService {
 	}
 
 	wifiSecurityLocationDialog(wifiSecurity: WifiSecurity) {
-		if (this.modalService.hasOpenModals()) {
+		if (this.dialogRef || this.modalService.hasOpenModals()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) || this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard)) {
@@ -296,7 +296,7 @@ export class DialogService {
 		});
 	}
 
-	wifiSecurityExpirePromptDialog(dialogData: DialogData) {
+	openWifiSecurityExpirePromptDialog(dialogData: DialogData) {
 		if (this.dialogRef || this.modalService.hasOpenModals()) {
 			return;
 		}
