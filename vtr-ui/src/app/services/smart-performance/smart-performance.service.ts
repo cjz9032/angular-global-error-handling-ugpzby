@@ -40,7 +40,7 @@ export class SmartPerformanceService {
 		if (this.getSmartPerformance) {
 			this.isShellAvailable = true;
 		}
-		this.getLocalePrice();
+		this.getLocalYearPrice();
 
 	}
 
@@ -227,7 +227,7 @@ export class SmartPerformanceService {
 	}
 
 
-	async getLocalePrice() {
+	async getLocalYearPrice() {
 		if (!this.localPrice) {
 			const localInfo = await this.localInfoService.getLocalInfo();
 			const url = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getPrice?country=${localInfo.GEO}`;
