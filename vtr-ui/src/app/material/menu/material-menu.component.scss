@@ -29,6 +29,7 @@
 			}
 		}
 		.navbar-text {
+			@include high-contrast-color-reversal;
 			@media #{$breakpoint_xl} {
 				text-align: left;
 			}
@@ -67,6 +68,13 @@
 			}
 			.user-item {
 				padding: 0.1rem;
+				@media #{$black-on-white} {
+					border-left: 0.1rem solid $dark;
+				}
+
+				@media #{$white-on-black} {
+					border-left: 0.1rem solid $light;
+				}
 			}
 			.menu-item {
 				font-family: "Segoe UI",sans-serif;
@@ -108,12 +116,14 @@
 				&.user {
 					line-height: 4.6rem;
 					background-color: $main_darkest;
+					@include high-contrast-background;
 					.user-initials {
 						font-size: $fontsize_xl !important;
 						width: 4.6rem;
 						height: 4.6rem;
 						border-radius: 2.3rem;
 						background-color: $main_darker;
+						@include high-contrast-background;
 						@media #{$black-on-white} {
 							@include black-border;
 						}
