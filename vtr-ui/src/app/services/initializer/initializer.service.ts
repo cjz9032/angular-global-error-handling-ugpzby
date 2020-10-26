@@ -26,8 +26,8 @@ export class InitializerService {
 			this.deviceService.getMachineInfo(),
 			this.localCacheService.loadCacheValues().then(() => {
 				this.initializeAntivirus();
-			}),
-			this.deviceService.getMachineType()
+				this.deviceService.getMachineType();
+			})
 		]);
 	}
 
