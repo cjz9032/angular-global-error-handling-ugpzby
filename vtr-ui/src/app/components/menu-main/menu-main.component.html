@@ -414,7 +414,7 @@
 								(click)="openFeedbackModal()">{{ 'dashboard.feedback.title' | translate }}
 							</a>
 							<a ngbDropdownItem
-								*ngIf="lenovoSurvey.display"
+								*ngIf="appsForYouService.lenovoSurvey.display"
 								vtrMetrics
 								tabindex="1"
 								id="menu-main-lnk-lenovo-survey"
@@ -425,12 +425,12 @@
 								class="dropdown-item link red-dot"
 								href="javascript:void(0)"
 								(keydown)="showHideMenuOfItem($event,menuDropDown)"
-								(click)="openSurveyModal(lenovoSurvey.id)">{{ 'dashboard.survey.title' | translate }}
+								(click)="openSurveyModal(appsForYouService.lenovoSurvey.id)">{{ 'dashboard.survey.title' | translate }}
 								<span class="unread-tag"
 								role="text"
 								id="menu-main-lenovo-survey-unread-tag"
 								attr.aria-label="Lenovo Survey Unread Tag"
-								*ngIf='lenovoSurvey.unread'></span>
+								*ngIf='appsForYouService.lenovoSurvey.unread'></span>
 							</a>
 
 							<a ngbDropdownItem

@@ -914,6 +914,109 @@
                 "invalidEmailMsg": "Dirección de correo electrónico no válida"
             }
         },
+		"survey": {
+			"title": "Encuesta de Lenovo",
+			"next": "SIGUIENTE",
+			"submit": "Enviar",
+			"form": {
+				"page1": {
+					"summary": "Piense en los atributos más importantes a la hora de seleccionar un equipo portátil para su uso personal.",
+					"question": "Seleccione el atributo más importante.",
+					"question1": {
+						"options": [
+							"Precio",
+							"Nombre/marca del fabricante"
+						]
+					},
+					"question2": {
+						"options": [
+							"Velocidad del procesador",
+							"Factor de forma (portátil tradicional, convertible, desmontable)"
+						]
+					},
+					"question3": {
+						"options": [
+							"Capacidades gráficas",
+							"Tamaño de la pantalla"
+						]
+					},
+					"question4": {
+						"options": [
+							"Tamaño de la pantalla",
+							"Peso"
+						]
+					}
+				},
+				"page2": {
+					"summary": "¿Qué importancia tiene cada una de las siguientes características de pantalla al considerar un equipo portátil?",
+					"question1": "HDR/Alto rango dinámico (alta definición/resolución)",
+					"question2": "Pantalla táctil",
+					"options": [
+						"1: para nada importante",
+						"2",
+						"3",
+						"4",
+						"5: extremadamente importante",
+						"6: no estoy familiarizado con esta opción"
+					]
+				},
+				"page3": {
+					"summary": "¿Qué tan de acuerdo o en desacuerdo está con las siguientes afirmaciones en relación con los equipos portátiles?",
+					"question1": "Es muy importante tener un equipo portátil que llame la atención de las personas",
+					"question2": "No importa qué tipo de material se utilice para el cuerpo de un equipo portátil.",
+					"options": [
+						"1: para nada de acuerdo",
+						"2: parcialmente en desacuerdo",
+						"3: ni de acuerdo ni en desacuerdo",
+						"4: parcialmente de acuerdo",
+						"5: completamente de acuerdo"
+					]
+				},
+				"page4": {
+					"summary": "¿Qué tan importante es cada una de las siguientes actividades que realiza en un equipo para el hogar?",
+					"question1": "Realizar el trabajo para su empleo",
+					"question2": "Jugar juegos",
+					"question3": "Mantenerse al día con las últimas noticias",
+					"question4": "Ver películas/presentaciones de TV/ver otra cosa",
+					"options": [
+						"1: no es tan importante para mí",
+						"2",
+						"3",
+						"4",
+						"5: es extremadamente importante para mí",
+						"6: no realizo esta actividad en un equipo para el hogar"
+					]
+				},
+				"page5": {
+					"question1": {
+						"title": "¿Utiliza un asistente de voz (por ej., Alexa, Siri, Google Assistant, Cortana) en alguno de los siguientes dispositivos domésticos?  Seleccione todos los que correspondan.",
+						"options": [
+							"En mi equipo de escritorio",
+							"En mi equipo portátil",
+							"En mi tableta",
+							"En mi smartphone",
+							"En un altavoz/pantalla inteligente",
+							"No uso un asistente de voz en ninguno de estos dispositivos"
+						]
+					},
+					"question2": {
+						"title": "¿Cuál de las siguientes opciones lo describe mejor?",
+						"options": [
+							"Normalmente soy una de las primeras personas en adquirir la tecnología más reciente",
+							"Compro la tecnología más reciente antes que la mayoría",
+							"Compro nuevas tecnologías una vez que muchos usuarios la están utilizando",
+							"Espero para comprar nuevas tecnologías después de que muchos usuarios la estén utilizando"
+						]
+					},
+					"question3": {
+						"title": "¿Cuánto gasta normalmente en un equipo?"
+					}
+				},
+				"messages": {
+					"feedbackSuccess": "Gracias por sus comentarios."
+				}
+			}
+		},
         "quickSettings": {
             "title": "Configuración rápida",
             "microphone": "Micrófono",

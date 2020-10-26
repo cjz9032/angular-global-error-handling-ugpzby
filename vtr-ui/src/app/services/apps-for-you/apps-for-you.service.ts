@@ -105,6 +105,12 @@ export class AppsForYouService {
 		dccMenuClicked: false
 	};
 
+	public lenovoSurvey = {
+		display: false,
+		unread: false,
+		id: '' // surveyId
+	};
+
 	private initialize() {
 		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
@@ -351,10 +357,12 @@ export class AppsForYouService {
 	}
 
 	resetUnreadMessageCounter() {
-		this.UnreadMessageCount.totalMessage = 0;
-		this.UnreadMessageCount.lmaMenuClicked = false;
-		this.UnreadMessageCount.adobeMenuClicked = false;
-		this.UnreadMessageCount.dccMenuClicked = false;
+		this.UnreadMessageCount = {
+			totalMessage: 0,
+			lmaMenuClicked: false,
+			adobeMenuClicked: false,
+			dccMenuClicked: false
+		};
 	}
 
 	initUnreadMessage() {
@@ -390,6 +398,8 @@ export class AppsForYouService {
 				this.UnreadMessageCount.totalMessage++;
 			}
 		}
+
+		this.checkLenovoSurveyStatus();
 	}
 
 	increaseUnreadMessage(messageId: string) {
@@ -400,8 +410,9 @@ export class AppsForYouService {
 	}
 
 	decreaseUnreadMessage(messageId: string) {
-		if (this.UnreadMessageCount[`set-${messageId}-unread`] && !this.UnreadMessageCount[`set-${messageId}-read`]) {
-			this.UnreadMessageCount[`set-${messageId}-read`] = true;
+		if (this.UnreadMessageCount[`set-${messageId}-unread`]) {
+			this.UnreadMessageCount[`set-${messageId}-unread`] = false;
+
 			if (this.UnreadMessageCount.totalMessage > 0) {
 				this.UnreadMessageCount.totalMessage--;
 			}
@@ -455,6 +466,36 @@ export class AppsForYouService {
 					break;
 			}
 		}
+	}
+
+	public checkLenovoSurveyStatus() {
+		this.getLenovoSurveyStatus().then(result => {
+			if (result.status === LenovoSurveyEnum.Unread) {
+				this.increaseUnreadMessage(result.surveyId);
+				this.lenovoSurvey.unread = true;
+			}
+
+			if (result.status !== LenovoSurveyEnum.Disabled && result.status !== LenovoSurveyEnum.Completed) {
+				this.lenovoSurvey.display = true;
+				this.lenovoSurvey.id = result.surveyId;
+			}
+		});
+	}
+
+	async getLenovoSurveyStatus() {
+		// is hypothesis allow?
+		const hyp = await this.hypService.getAllSettings() as any;
+		if (!hyp.LenovoSurvey) {
+			return {surveyId: hyp.LenovoSurvey, status: LenovoSurveyEnum.Disabled};
+		}
+
+		// is survey completed?
+		const tokeSurvey = this.localCacheService.getLocalCacheValue(hyp.LenovoSurvey);
+		if (!tokeSurvey) {
+			return {surveyId: hyp.LenovoSurvey, status: LenovoSurveyEnum.Unread};
+		}
+
+		return {surveyId: hyp.LenovoSurvey, status: tokeSurvey} ;
 	}
 }
 

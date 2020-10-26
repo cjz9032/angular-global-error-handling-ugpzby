@@ -382,6 +382,12 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		this.feedbackService.openFeedbackModal();
 	}
 
+	openSurveyModal(surveyId: string) {
+		this.appsForYouService.lenovoSurvey.unread = false;
+		this.appsForYouService.decreaseUnreadMessage(surveyId);
+		this.feedbackService.openSurveyModal(surveyId);
+	}
+
 	OpenLenovoId(appFeature = null) {
 		this.dialogService.openLenovoIdDialog(appFeature);
 	}

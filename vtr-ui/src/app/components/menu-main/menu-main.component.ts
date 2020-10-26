@@ -64,11 +64,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	private relaySubscription: Subscription;
 	public isLoggingOut = false;
 	public selfSelectStatusVal: boolean;
-	public lenovoSurvey = {
-		display: false,
-		unread: false,
-		id: '' // surveyId
-	};
+
 	showMenu = false;
 	showHWScanMenu = false;
 	preloadImages: string[];
@@ -154,21 +150,6 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
 		this.initComponent();
-		this.checkLenovoSurveyStatus();
-	}
-
-	checkLenovoSurveyStatus() {
-		this.getLenovoSurveyStatus().then(result => {
-			if (result.status === LenovoSurveyEnum.Unread) {
-				this.appsForYouService.increaseUnreadMessage(result.surveyId);
-				this.lenovoSurvey.unread = true;
-			}
-
-			if (result.status !== LenovoSurveyEnum.Disabled && result.status !== LenovoSurveyEnum.Completed) {
-				this.lenovoSurvey.display = true;
-				this.lenovoSurvey.id = result.surveyId;
-			}
-		});
 	}
 
 	updateMenu(menu) {
@@ -668,24 +649,10 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 
 	openSurveyModal(surveyId) {
 		this.showMenu = false;
-		this.lenovoSurvey.unread = false;
+		this.appsForYouService.lenovoSurvey.unread = false;
 		this.appsForYouService.decreaseUnreadMessage(surveyId);
 		this.feedbackService.openSurveyModal(surveyId);
 	}
 
-	async getLenovoSurveyStatus() {
-		// is hypothesis allow?
-		const hyp = await this.hypService.getAllSettings() as any;
-		if (!hyp.LenovoSurvey) {
-			return {surveyId: hyp.LenovoSurvey, status: LenovoSurveyEnum.Disabled};
-		}
 
-		// is survey completed?
-		const tokeSurvey = this.localCacheService.getLocalCacheValue(hyp.LenovoSurvey);
-		if (!tokeSurvey) {
-			return {surveyId: hyp.LenovoSurvey, status: LenovoSurveyEnum.Unread};
-		}
-
-		return {surveyId: hyp.LenovoSurvey, status: tokeSurvey} ;
-	}
 }
