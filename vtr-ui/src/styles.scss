@@ -775,6 +775,11 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	&.show {
 		opacity: 1 !important;
 	}
+	&.text-capitalize {
+		.tooltip-inner {
+			text-transform: capitalize;
+		}
+	}
 
 	.arrow::before {
 		border-style: none;
