@@ -3,7 +3,6 @@ import { DeviceService } from '../../device/device.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { IUpeEssential, IEssentialHelper } from '../model/definitions';
 import { ServiceEssentialHelper } from './service-essential.helper';
-import { ShellEssentialHelper } from './shell-essential.helper';
 import { DevService } from '../../dev/dev.service';
 
 export class EssentialHelper implements IEssentialHelper {
@@ -13,19 +12,11 @@ export class EssentialHelper implements IEssentialHelper {
 	public readonly isSupportUpeTag: boolean;		// old version of vantage service do not support upe tag, reserve for future
 
 	constructor(
-		commsService: CommsService,
-		deviceService: DeviceService,
 		vantageShellService: VantageShellService,
 		devService: DevService
 	) {
-		const win = window as any;
-		if (win.VantageStub && win.VantageStub.findUPEAPIKey) {	// old version shell and service
-			this.iessentialHelper = new ShellEssentialHelper(commsService, deviceService, devService);
-			this.isSupportUpeTag = false;
-		} else {
-			this.isSupportUpeTag = true;
-			this.iessentialHelper = new ServiceEssentialHelper(vantageShellService, devService);
-		}
+		this.isSupportUpeTag = true;
+		this.iessentialHelper = new ServiceEssentialHelper(vantageShellService, devService);
 	}
 
 	public async getUpeEssential(): Promise<IUpeEssential> {
