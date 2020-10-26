@@ -19,8 +19,8 @@ export class WidgetRecommendActionComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
-		this.spService.getLocalePrice().then((priceData) => {
-			if (priceData) {
+		this.spService.getLocalYearPrice().then((priceData) => {
+			if (priceData && priceData.price !== 0) {
 				this.yearlyPrice = priceData.formatPrice;
 				const mp = Math.ceil(priceData.price * 100 / 12) / 100;
 				if (isNaN(this.yearlyPrice.substr(0, 1))) {
