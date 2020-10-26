@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.31](https://bitbucket.tc.lenovo.com///compare/v1.8.30...v1.8.31) (2020-10-26)
+
+
+### Features
+
+* **SelfSelect:** VAN-22150 refactor to avoid misunderstand of Consumer ([4c81a63](https://bitbucket.tc.lenovo.com///commit/4c81a638bdd474fb24899e1500f2b0d0686b2a17))
+* **Welcome:** Absorb OOBE/Lenovo Welcome metrics and persona ([8c0ddee](https://bitbucket.tc.lenovo.com///commit/8c0ddeedb4aad88c4c227a9d8c382d6ec8eab271))
+* **Welcome:** Absorb OOBE/Lenovo Welcome metrics and persona ([6b9dca1](https://bitbucket.tc.lenovo.com///commit/6b9dca1a3fe335b737c6edd60733ec72c34f34b0))
+* **Welcome:** code review action ([36c12dc](https://bitbucket.tc.lenovo.com///commit/36c12dc8daaa5e21cacd63f2d7aeff62e566b3c2))
+* **Welcome:** optimize code ([73c2df7](https://bitbucket.tc.lenovo.com///commit/73c2df73fdcd8ef3b4e914e5eb3352ff0176b1e1))
+
+
+### Bug Fixes
+
+* **PositionC tooltip:** VAN-22784 VAN-22786 add tooltip for positionC ([923a345](https://bitbucket.tc.lenovo.com///commit/923a3451a615659f5fd44cd82f79e94f439e10f9))
+* **ui-menu:** fix Error: matMenuTriggerFor ([1508a9b](https://bitbucket.tc.lenovo.com///commit/1508a9b1ac2d24710d1e85a974c08c4a4f428ed5))
+* **UI-menu:** Update hamburger menu's style ([e62fb20](https://bitbucket.tc.lenovo.com///commit/e62fb205e47c6e56d2786c0309ae22893b901fcf))
+* add global ripple setting in app module ([e47586f](https://bitbucket.tc.lenovo.com///commit/e47586f2cb37ec09f29e37be680d19f28f87831a))
+* disable ripple animation in menu and mysecurity ([4bef740](https://bitbucket.tc.lenovo.com///commit/4bef7406417d21cdbe201f7c0f8674c69d765646))
+* use angular material UI control in mysecurity page ([5393a43](https://bitbucket.tc.lenovo.com///commit/5393a43e458913db75db416c801460fece48261e))
+* **high-contrast:** fix menu didn't look clear in high contrast ([0e623da](https://bitbucket.tc.lenovo.com///commit/0e623da839d539a3f56dcee335fd3d9e1e739eef))
+
 ### [1.8.30](https://bitbucket.tc.lenovo.com///compare/v1.8.29...v1.8.30) (2020-10-23)
 
 
