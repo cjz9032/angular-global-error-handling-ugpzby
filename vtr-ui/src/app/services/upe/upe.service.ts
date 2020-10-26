@@ -10,7 +10,6 @@ import { SelfSelectService, SegmentConst } from '../self-select/self-select.serv
 import { TranslateService } from '@ngx-translate/core';
 import { UPEHelper } from './helper/upe.helper';
 import { LocalInfoService } from '../local-info/local-info.service';
-import { MetricService } from '../metric/metrics.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
@@ -31,10 +30,9 @@ export class UPEService {
 		private localInfoService: LocalInfoService,
 		vantageShellService: VantageShellService,
 		devService: DevService,
-		translate: TranslateService,
-		private metricsService: MetricService
+		translate: TranslateService
 	) {
-		this.essentialHelper = new EssentialHelper(commsService, deviceService, vantageShellService, devService);
+		this.essentialHelper = new EssentialHelper(vantageShellService, devService);
 		this.upeHelper = new UPEHelper(vantageShellService, devService, translate);
 		this.channelTags = this.localCacheService.getLocalCacheValue(LocalStorageKey.UPEChannelTags);
 	}
@@ -75,15 +73,18 @@ export class UPEService {
 	}
 
 	private async requestUpeContent(params: IGetContentParam): Promise<IActionResult> {
-		const essential = this.upeEssential ? this.upeEssential : await this.essentialHelper.getUpeEssential();
-		if (!essential) {
+		if (!this.upeEssential) {
+			this.upeEssential = await this.essentialHelper.getUpeEssential();
+		}
+
+		if (!this.upeEssential) {
 			return {
 				success: false,
 				content: 'upe not support in current version'
 			};
 		}
 
-		if (!essential.anonUserId || !essential.apiKey) {
+		if (!this.upeEssential.anonUserId || !this.upeEssential.apiKey) {
 			return {
 				success: false,
 				errorCode: 401, // need registor device
@@ -91,7 +92,7 @@ export class UPEService {
 			};
 		}
 
-		return await this.httpRequestForUpeContent(essential, params);
+		return await this.httpRequestForUpeContent(this.upeEssential, params);
 	}
 
 	private async httpRequestForUpeContent(upeEssential: IUpeEssential, params: IGetContentParam): Promise<IActionResult> {
