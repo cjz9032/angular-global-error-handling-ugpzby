@@ -248,6 +248,26 @@
 					</span>
 				</button>
 				<button mat-menu-item
+					*ngIf="appsForYouService.lenovoSurvey.display"
+					id="menu-main-lnk-open-lenovo-survey"
+					class="pl-5 border-radius-0 font-size-xs outline-none menu-item menu-item-color menu-subitem"
+					attr.aria-label="menu-main-lnk-open-lenovo-survey"
+					vtrMetrics
+					[metricsEvent]="item.metricsEvent"
+					[metricsParent]="item.metricsParent"
+					metricsItem="LenovoSurvey"
+					href="javascript:void(0)"
+					(click)="openSurveyModal(appsForYouService.lenovoSurvey.id)">
+					<span class="user-menu-item-text"
+						[innerHTML]="'dashboard.survey.title' | translate">
+					</span>
+					<span class="position-absolute rounded-circle unread-tag"
+						role="text"
+						id="menu-main-lenovo-survey-unread-tag"
+						attr.aria-label="LenovoSurvey Unread Tag"
+						*ngIf="appsForYouService.lenovoSurvey.unread"></span>
+				</button>
+				<button mat-menu-item
 					*ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 					id="menu-main-lnk-open-lenovoid-login"
 					class="pl-5 border-radius-0 font-size-xs outline-none menu-item menu-item-color menu-subitem"

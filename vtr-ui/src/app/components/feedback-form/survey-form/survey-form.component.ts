@@ -16,8 +16,9 @@ export class SurveyFormComponent implements OnInit {
 	pages: any = [];
 	result: any = {};
 	completed = false;
-
+	closingleftTime = 3;
 	progress = 0;
+
 	constructor(
 		public activeModal: NgbActiveModal,
 		private translate: TranslateService,
@@ -26,124 +27,70 @@ export class SurveyFormComponent implements OnInit {
 	) { }
 
 	private initSurveyQuestions() {
-		this.pages = [
-			{	// page 1
-				summary: 'dashboard.survey.form.page1.summary',
-				lineNumber: true,
-				questions: [
-					{
-						name: 'q2_preferred_attribute',
-						title: 'dashboard.survey.form.page1.question',
-						optionKey: 'dashboard.survey.form.page1.question1.options',
-						options: this.translate.instant('dashboard.survey.form.page1.question1.options')
-					},
-					{
-						name: 'q3_preferred_attribute',
-						title: 'dashboard.survey.form.page1.question',
-						options: this.translate.instant('dashboard.survey.form.page1.question2.options')
-					},
-					{
-						name: 'q4_preferred_attribute',
-						title: 'dashboard.survey.form.page1.question',
-						optionKey: 'dashboard.survey.form.page1.question3.options',
-						options: this.translate.instant('dashboard.survey.form.page1.question3.options')
-					},
-					{
-						name: 'q5_preferred_attribute',
-						title: 'dashboard.survey.form.page1.question',
-						optionKey: 'dashboard.survey.form.page1.question4.options',
-						options: this.translate.instant('dashboard.survey.form.page1.question4.options')
-					}
-				]
-			},
-			{	// page 2
-				summary: 'dashboard.survey.form.page2.summary',
-				questions: [
-					{
-						name: 'q6_hdr_importrancy',
-						title: 'dashboard.survey.form.page2.question1',
-						optionKey: 'dashboard.survey.form.page2.options',
-						options: this.translate.instant('dashboard.survey.form.page2.options')
-					},
-					{
-						name: 'q6_touchscreen_importrancy',
-						title: 'dashboard.survey.form.page2.question2',
-						optionKey: 'dashboard.survey.form.page2.options',
-						options: this.translate.instant('dashboard.survey.form.page2.options')
-					}
-				]
-			}, {	// page 3
-				summary: 'dashboard.survey.form.page3.summary',
-				questions: [
-					{
-						name: 'q7_people_notice_importancy',
-						title: 'dashboard.survey.form.page3.question1',
-						optionKey: 'dashboard.survey.form.page3.options',
-						options: this.translate.instant('dashboard.survey.form.page3.options')
-					},
-					{
-						name: 'q7_material _importancy',
-						title: 'dashboard.survey.form.page3.question2',
-						optionKey: 'dashboard.survey.form.page3.options',
-						options: this.translate.instant('dashboard.survey.form.page3.options')
-					}
-				]
-			},
-			{	// page 4
-				summary: 'dashboard.survey.form.page4.summary',
-				questions: [
-					{
-						name: 'q8_working_for_job_importancy',
-						title: 'dashboard.survey.form.page4.question1',
-						optionKey: 'dashboard.survey.form.page4.options',
-						options: this.translate.instant('dashboard.survey.form.page4.options')
-					},
-					{
-						name: 'q8_playing_game_importancy',
-						title: 'dashboard.survey.form.page4.question2',
-						optionKey: 'dashboard.survey.form.page4.options',
-						options: this.translate.instant('dashboard.survey.form.page4.options')
-					},
-					{
-						name: 'q8_keeping_up_news_importancy',
-						title: 'dashboard.survey.form.page4.question3',
-						optionKey: 'dashboard.survey.form.page4.options',
-						options: this.translate.instant('dashboard.survey.form.page4.options')
-					},
-					{
-						name: 'q8_watching_movies_importancy',
-						title: 'dashboard.survey.form.page4.question4',
-						optionKey: 'dashboard.survey.form.page4.options',
-						options: this.translate.instant('dashboard.survey.form.page4.options')
-					}
-				]
-			},
-			{	// page 5
-				questions: [
-					{
-						name: 'q9_use_of_voice_assistant',
-						title: 'dashboard.survey.form.page5.question1.title',
-						multipleChoice: true,
-						optionKey: 'dashboard.survey.form.page5.question1.options',
-						options: this.translate.instant('dashboard.survey.form.page5.question1.options')
-					},
-					{
-						name: 'q10_best_describe_you',
-						title: 'dashboard.survey.form.page5.question2.title',
-						optionKey: 'dashboard.survey.form.page5.question2.options',
-						options: this.translate.instant('dashboard.survey.form.page5.question2.options')
-					},
-					{
-						name: 'q11_spend_on_computer',
-						title: 'dashboard.survey.form.page5.question3.title',
-						optionKey: 'dashboard.survey.form.page5.question3.options',
-						options: this.translate.instant('dashboard.survey.form.page5.question3.options')
-					}
-				]
-			}
-		];
+		this.pages = [];
+		for (let i = 0; i < 5; i++) {	// page5 has no summary
+			this.pages.push({
+				summary: i !== 4 ? `dashboard.survey.form.page${i + 1}.summary` : '',
+				questions: [],
+				results: {}
+			});
+		}
 
+		const page1Questions = this.pages[0].questions;
+		for (let i = 0; i < 4; i++) {
+			page1Questions.push({
+				name: `dashboard.survey.form.page1.question${i + 1}`,
+				title: 'dashboard.survey.form.page1.question',
+				optionKey: `dashboard.survey.form.page1.question${i + 1}.options`,
+				options: this.translate.instant(`dashboard.survey.form.page1.question${i + 1}.options`)
+			});
+		}
+
+		const page2Questions = this.pages[1].questions;
+		const p2Options = this.translate.instant('dashboard.survey.form.page2.options');
+		for (let i = 0; i < 2; i++) {
+			page2Questions.push({
+				name: `dashboard.survey.form.page2.question${i + 1}`,
+				title: `dashboard.survey.form.page2.question${i + 1}`,
+				optionKey: 'dashboard.survey.form.page2.options',
+				options: p2Options
+			});
+		}
+
+		const page3Questions = this.pages[2].questions;
+		const p3Options = this.translate.instant('dashboard.survey.form.page3.options');
+		for (let i = 0; i < 2; i++) {
+			page3Questions.push({
+				name: `dashboard.survey.form.page3.question${i + 1}`,
+				title: `dashboard.survey.form.page3.question${i + 1}`,
+				optionKey: 'dashboard.survey.form.page3.options',
+				options: p3Options
+			});
+		}
+
+		const page4Questions = this.pages[3].questions;
+		const p4Options = this.translate.instant('dashboard.survey.form.page4.options');
+		for (let i = 0; i < 4; i++) {
+			page4Questions.push({
+				name: `dashboard.survey.form.page4.question${i + 1}`,
+				title: `dashboard.survey.form.page4.question${i + 1}`,
+				optionKey: 'dashboard.survey.form.page4.options',
+				options: p4Options
+			});
+		}
+
+		const page5Questions = this.pages[4].questions;
+		for (let i = 0; i < 3; i++) {
+			page5Questions.push( {
+				name: `dashboard.survey.form.page5.question${i + 1}`,
+				title: `dashboard.survey.form.page5.question${i + 1}.title`,
+				optionKey: `dashboard.survey.form.page5.question${i + 1}.options`,
+				options: this.translate.instant(`dashboard.survey.form.page5.question${i + 1}.options`)
+			});
+		}
+		page5Questions[0].multipleChoice = true;
 	}
+
 	ngOnInit(): void {
 		this.initSurveyQuestions();
 		this.localCacheService.setLocalCacheValue(this.surveyId as LocalStorageKey, LenovoSurveyEnum.Read);
@@ -151,14 +98,6 @@ export class SurveyFormComponent implements OnInit {
 
 	closeModal() {
 		this.activeModal.close('close');
-	}
-
-	setRadioStatus(page: number, question: string, event: any) {
-		if (!this.pages[page].results) {
-			this.pages[page].results = {};
-		}
-
-		this.pages[page].results[question] = event.target.value;
 	}
 
 	exclusiveAgainstLastOption(page: number, question: string, event: any) {
@@ -192,7 +131,7 @@ export class SurveyFormComponent implements OnInit {
 			this.pages[page].results[question] = new Set();
 		}
 
-		if (question === 'q9_use_of_voice_assistant') {
+		if (question === 'dashboard.survey.form.page5.question1') {
 			this.exclusiveAgainstLastOption(page, question, event);
 		} else {
 			if (event.target.checked) {
@@ -231,9 +170,13 @@ export class SurveyFormComponent implements OnInit {
 			this.completed = true;
 			this.localCacheService.setLocalCacheValue(this.surveyId as LocalStorageKey, LenovoSurveyEnum.Completed);
 			this.reportResult();
-			setTimeout(() => {
-				this.activeModal.close('close');
-			}, 3000);
+			const leftTimeInterval = setInterval(() => {
+				this.closingleftTime--;
+				if (this.closingleftTime <= 0) {
+					this.activeModal.close();
+					clearInterval(leftTimeInterval);
+				}
+			}, 1000);
 		}
 	}
 
