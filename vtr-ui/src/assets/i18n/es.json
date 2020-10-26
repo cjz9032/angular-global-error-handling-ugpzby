@@ -774,8 +774,8 @@
                 "sub2": "Configuración de Mi dispositivo",
                 "sub3": "Actualización de sistema",
                 "sub4": "Asistencia inteligente",
-                "sub5": "Detalles del dispositivo",
-                "sub6": "Device Settings Details"
+				"sub5": "Detalles del dispositivo",
+				"sub6": "Detalles de valores de dispositivo"
             },
             "security": {
                 "title": "Seguridad",

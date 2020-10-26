@@ -774,8 +774,8 @@
                 "sub2": "Saját eszközbeállítások",
                 "sub3": "Rendszerfrissítés",
                 "sub4": "Intelligens segítség",
-                "sub5": "Eszköz adatai",
-                "sub6": "Device Settings Details"
+				"sub5": "Eszköz adatai",
+				"sub6": "Részletes eszközbeállítások"
             },
             "security": {
                 "title": "Biztonság",

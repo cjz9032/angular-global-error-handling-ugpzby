@@ -773,9 +773,9 @@
                 "sub1": "Mé zařízení",
                 "sub2": "Nastavení mých zařízení",
                 "sub3": "Aktualizace systému",
-                "sub4": "Inteligentní pomoc",
-                "sub5": "Podrobnosti o zařízení",
-                "sub6": "Device Settings Details"
+				"sub4": "Inteligentní pomoc",
+				"sub5": "Podrobnosti o zařízení",
+				"sub6": "Podrobnosti nastavení zařízení"
             },
             "security": {
                 "title": "Zabezpečení",

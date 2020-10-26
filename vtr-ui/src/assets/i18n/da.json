@@ -774,8 +774,8 @@
                 "sub2": "Mine enhedsindstillinger",
                 "sub3": "Systemopdatering",
                 "sub4": "Smart hjælp",
-                "sub5": "Enhedsoplysninger",
-                "sub6": "Device Settings Details"
+				"sub5": "Enhedsoplysninger",
+				"sub6": "Detaljer om enhedsindstillinger"
             },
             "security": {
                 "title": "Sikkerhed",
