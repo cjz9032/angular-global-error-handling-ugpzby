@@ -82,16 +82,19 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	onMenuItemClick(item, event?) {
 		window.getSelection().empty();
 		if (item.id === 'user' && event) {
-			const target = event.target || event.srcElement || event.currentTarget;
-			const idAttr = target.attributes.id;
-			const id = idAttr.nodeValue;
-			if (id === 'menu-main-lnk-open-lma' ||
-				id === 'menu-main-lnk-open-adobe' ||
-				id === 'menu-main-lnk-open-dcc') {
-				this.appsForYouService.updateUnreadMessageCount(id);
-				if (id === 'menu-main-lnk-open-dcc') {
-					this.cardService.openDccDetailModal();
+			const target = event.currentTarget || event.srcElement;
+			if (target && target.attributes && target.attributes.id && target.attributes.id.nodeValue) {
+				const id = target.attributes.id.nodeValue;
+				if (id === 'menu-main-lnk-open-lma' ||
+					id === 'menu-main-lnk-open-adobe' ||
+					id === 'menu-main-lnk-open-dcc') {
+					this.appsForYouService.updateUnreadMessageCount(id);
+					if (id === 'menu-main-lnk-open-dcc') {
+						this.cardService.openDccDetailModal();
+					}
 				}
+			} else {
+				return;
 			}
 		}
 	}
