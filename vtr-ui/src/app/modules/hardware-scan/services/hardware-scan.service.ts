@@ -35,7 +35,7 @@ export class HardwareScanService {
 	private static readonly HARDWARE_SCAN_HYPOTHESIS_CONFIG_NAME: string = 'HardwareScan';
 
 	private hardwareScanBridge: any;
-	private modulesRetrieved: any; // modules retrieve from get items [object from ItemToScanResponse]
+	private modulesRetrieved: any = undefined; // modules retrieve from get items [object from ItemToScanResponse]
 	private isLoadingModulesDone = false;
 	private isScanDone = false;
 	private scanExecution = false;

@@ -8,14 +8,24 @@ import { ScanExecutionService } from './scan-execution.service';
 })
 export class ProtocolExecutionService {
 
-	private modulesRetrieved;
+	private modulesRetrieved: any = undefined;
 
 	constructor(private hardwareScanService: HardwareScanService, private scanExecutionService: ScanExecutionService) { }
+
+	private isModuleAvailable(moduleName: string): boolean {
+		if (Array.isArray(this.modulesRetrieved?.categoryList)) {
+			// return true if there's a module for the given id and if there's at least one device for that module
+			const module = this.modulesRetrieved.categoryList.find(m => m.id === moduleName);
+			return Array.isArray(module?.groupList) && module.groupList.length > 0;
+		}
+
+		return false;
+	}
 
 	public protocolExecution(scan: string, module: string) {
 		this.modulesRetrieved = this.hardwareScanService.getModulesRetrieved();
 
-		if (module === undefined) {
+		if (module === undefined || !this.isModuleAvailable(module)) {
 			module = HardwareScanProtocolModule.all;
 		}
 

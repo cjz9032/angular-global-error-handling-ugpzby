@@ -8,7 +8,16 @@ describe('ProtocolExecutionService', () => {
 	let service: ProtocolExecutionService;
 	const scanExecutionService = jasmine.createSpyObj('scanExecutionService', ['checkPreScanInfo']);
 	const hardwareScanService = jasmine.createSpyObj('hardwareScanService', {
-		getModulesRetrieved: {module: 'cpu'},
+		getModulesRetrieved: {
+			categoryList: [
+				{ id: 'cpu', groupList: ['device of this module'] },
+				{ id: 'memory', groupList: ['device of this module'] },
+				{ id: 'wireless', groupList: ['device of this module'] },
+				{ id: 'storage', groupList: ['device of this module'] }
+				// There are no motherboard or pci_express modules here once those modules are currently
+				// unavailable due to a CLI bug, therefore they aren't returned by plugin.
+			]
+		},
 		setLastTaskType: undefined
 	});
 
@@ -92,6 +101,18 @@ describe('ProtocolExecutionService', () => {
 
 		service.protocolExecution('quickscan', undefined);
 		expect(quickScanProtocolSpy).toHaveBeenCalledWith(HardwareScanProtocolModule.all);
+	});
+
+	it('should call quickScanProtocol(HardwareScanProtocolModule.all) when scan is equals to quickscan and an unsupported module is given', () => {
+		const quickScanProtocolSpy = spyOn(service, 'quickScanProtocol');
+		[
+			'motherboard', // this module is currently unavailable due to a CLI bug, so it won't be returned by plugin.
+			'pci_express', // this module is currently unavailable due to a CLI bug, so it won't be returned by plugin.
+			'another_unsupported_module'
+		].forEach((moduleName => {
+			service.protocolExecution('quickscan', moduleName);
+			expect(quickScanProtocolSpy).toHaveBeenCalledWith(HardwareScanProtocolModule.all);
+		}));
 	});
 
 	it('should not call quickScanProtocol() when scan is different than quickscan', () => {

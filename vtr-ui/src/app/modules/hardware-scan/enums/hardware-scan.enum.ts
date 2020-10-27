@@ -17,8 +17,8 @@ export enum HardwareScanProtocolModule {
 	memory = 'memory',
 	wireless = 'wireless',
 	storage = 'storage',
-	// pci = 'pci',
-	// motherboard = motherboard
+	pci = 'pci_express',
+	motherboard = 'motherboard',
 	all = 'all'
 }
 
