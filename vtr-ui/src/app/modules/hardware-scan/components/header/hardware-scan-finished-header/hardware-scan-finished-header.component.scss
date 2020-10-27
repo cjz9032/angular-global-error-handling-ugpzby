@@ -56,16 +56,21 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	.result-code-value-text {
-		opacity: 0.5;
-		margin-top: 1rem;
-		font-weight: $weight_bold;
+	.result-code-container {
+		margin-bottom: 0;
+
+		.result-code-value-text {
+			opacity: 0.5;
+			margin-top: 1rem;
+			font-weight: $weight_bold;
+		}
+		.result-code-complete-text {
+			margin-left: 0.5rem;
+			margin-top: 1rem;
+			text-transform: uppercase;
+		}
 	}
-	.result-code-complete-text {
-		margin-left: 0.5rem;
-		margin-top: 1rem;
-		text-transform: uppercase;
-	}
+
 	.question-mark-container {
 		margin-left: 0.5rem;
 	}
