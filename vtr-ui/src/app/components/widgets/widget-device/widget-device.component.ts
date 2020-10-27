@@ -19,6 +19,7 @@ import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hard
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { FeatureClick } from 'src/app/services/metric/metrics.model';
+import { SystemHealthDates } from 'src/app/enums/system-state.enum';
 
 @Component({
 	selector: 'vtr-widget-device',
@@ -318,15 +319,30 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	private async updateHwScanStatus(hwscan: DeviceStatus){
 		await this.previousResultService.getLastResults();
 		const lastSacnInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
+		const oobeDate = this.deviceService.getMachineInfoSync()?.firstRunDate || Date.now();
+		const scanLangKey = 'device.myDevice.scanNow';
+		const scanedLangKey = 'device.myDevice.scanned';
+		const notScannedKey = 'hardwareScan.notScanned';
 		if (lastSacnInfo.date){
-			this.translate.stream('device.myDevice.scanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			hwscan.checkedDate = moment(lastSacnInfo.date).format('l');
+			if (this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > SystemHealthDates.HardwareScan){
+				this.translate.stream(scanLangKey).pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+					hwscan.subtitle = value;
+				});
+			}
+			else{
+				this.translate.stream(scanedLangKey).pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+					hwscan.subtitle = value;
+				});
+			}
+		}
+		else if (this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan){
+			this.translate.stream(scanLangKey).pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
 				hwscan.subtitle = value;
-				hwscan.checkedDate = moment(lastSacnInfo.date).format('l');
-				hwscan.showSepline = true;
 			});
 		}
 		else{
-			this.translate.stream('hardwareScan.notScanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.translate.stream(notScannedKey).pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
 				hwscan.subtitle = value;
 			});
 		}
