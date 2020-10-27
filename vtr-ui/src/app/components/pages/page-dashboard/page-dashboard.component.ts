@@ -246,7 +246,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				undefined,
 				this.haveOwnList,
 				this.saFeatureSupport,
-				this.antivirusService,
 				this.localCacheService);
 			this.setSecurityInfo(this.securityLevel.landingStatus);
 		}, 1000);
@@ -851,7 +850,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				undefined,
 				this.haveOwnList,
 				this.saFeatureSupport,
-				this.antivirusService,
 				this.localCacheService);
 			this.setSecurityInfo(this.securityLevel.landingStatus);
 		});

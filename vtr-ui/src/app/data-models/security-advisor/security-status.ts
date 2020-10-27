@@ -1,7 +1,8 @@
-import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { Antivirus, SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
+import { AntivirusCommonData } from './antivirus-common.data.model';
 import { SecurityTypeConst } from './status-info.model';
 import { LandingView } from './widegt-security-landing/landing-view.model';
 
@@ -122,7 +123,6 @@ export const getSecurityLevel = (
 	translationString: any,
 	haveOwnList: any,
 	securityFeature: SecurityFeature,
-	antivirusService: AntivirusService,
 	localCacheService: LocalCacheService
 	) => {
 	transString = translationString;
@@ -133,7 +133,7 @@ export const getSecurityLevel = (
 	const windowsHello = securityAdvisor.windowsHello;
 	const windowsActive = securityAdvisor.windowsActivation;
 	const uac = securityAdvisor.uac;
-	const antivirusStatus = antivirusService.GetAntivirusStatus();
+
 	let currentPage = '';
 
 	if (haveOwnList) {
@@ -142,85 +142,15 @@ export const getSecurityLevel = (
 		securityStatus.vpnStatus.showOwn = haveOwnList.vpn === true;
 	}
 
-	if (translationString) {
-		if (!securityStatus.avStatus.detail) {
-			securityStatus.avStatus.detail = translationString['common.securityAdvisor.loading'];
-		}
-		if (!securityStatus.fwStatus.detail) {
-			securityStatus.fwStatus.detail = translationString['common.securityAdvisor.loading'];
-		}
-		securityStatus.avStatus.title = translationString['common.securityAdvisor.antiVirus'];
-		securityStatus.avStatus.content = translationString['security.landing.antivirusContent'];
-		securityStatus.avStatus.buttonLabel = translationString['security.landing.goAntivirus'];
-		securityStatus.fwStatus.title = translationString['security.landing.firewall'];
-		securityStatus.fwStatus.content = translationString['security.landing.firewallContent'];
-		securityStatus.fwStatus.buttonLabel = translationString['security.landing.goFirewall'];
-
-		if (securityFeature.pluginSupport) {
-			if (!securityStatus.waStatus.detail) {
-				securityStatus.waStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.waStatus.title = translationString['security.landing.windows'];
-			securityStatus.waStatus.content = translationString['security.landing.windowsActiveContent'];
-			securityStatus.waStatus.buttonLabel = translationString['security.landing.visitWindows'];
-
-			if (!securityStatus.uacStatus.detail) {
-				securityStatus.uacStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.uacStatus.title = translationString['security.landing.uac'];
-			securityStatus.uacStatus.content = translationString['security.landing.uacContent'];
-			securityStatus.uacStatus.buttonLabel = translationString['security.landing.visitUac'];
-		}
-
-		if (securityFeature.pwdSupport) {
-			if (!securityStatus.pmStatus.detail) {
-				securityStatus.pmStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.pmStatus.title = translationString['security.landing.pwdHealth'];
-			securityStatus.pmStatus.content = translationString['security.landing.passwordContent'];
-			securityStatus.pmStatus.buttonLabel = translationString['security.landing.goPassword'];
-			securityStatus.pmStatus.ownTitle = translationString['security.landing.haveOwnPassword'];
-		}
-
-		if (securityFeature.fingerprintSupport) {
-			if (!securityStatus.whStatus.detail) {
-				securityStatus.whStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.whStatus.title = translationString['security.landing.fingerprint'];
-			securityStatus.whStatus.content = translationString['security.landing.fingerprintContent'];
-			securityStatus.whStatus.buttonLabel = translationString['security.landing.visitFingerprint'];
-		}
-
-		if (wifiSecurity.isSupported) {
-			if (!securityStatus.wfStatus.detail) {
-				securityStatus.wfStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.wfStatus.title = translationString['common.securityAdvisor.wifi'];
-			securityStatus.wfStatus.content = translationString['security.landing.wifiContent'];
-			securityStatus.wfStatus.ownTitle = translationString['security.landing.haveOwnWifi'];
-			securityStatus.wfStatus.buttonLabel = translationString['security.landing.goWifi'];
-		}
-
-		if (securityFeature.vpnSupport) {
-			if (!securityStatus.vpnStatus.detail) {
-				securityStatus.vpnStatus.detail = translationString['common.securityAdvisor.loading'];
-			}
-			securityStatus.vpnStatus.title = translationString['security.landing.vpnVirtual'];
-			securityStatus.vpnStatus.buttonLabel = translationString['security.landing.goVpn'];
-			securityStatus.vpnStatus.content = translationString['security.landing.vpnContent'];
-			securityStatus.vpnStatus.ownTitle = translationString['security.landing.haveOwnVpn'];
-		}
-	}
-
 	// antivirus and firewall
-	const antivirusCommonData = antivirusService.GetAntivirusStatus();
-	currentPage = antivirusCommonData.currentPage;
-	if (antivirusCommonData.firewallLink.includes('ms-settings')) {
+	const antivirusStatus = getAntivirusStatus(localCacheService, antiVirus);
+	currentPage = antivirusStatus.currentPage;
+	if (antivirusStatus.firewallLink.includes('ms-settings')) {
 		securityStatus.fwStatus.buttonLink = '';
-		securityStatus.fwStatus.buttonHref = antivirusCommonData.firewallLink;
+		securityStatus.fwStatus.buttonHref = antivirusStatus.firewallLink;
 	} else {
 		securityStatus.fwStatus.buttonHref = '';
-		securityStatus.fwStatus.buttonLink = antivirusCommonData.firewallLink;
+		securityStatus.fwStatus.buttonLink = antivirusStatus.firewallLink;
 	}
 	if (currentPage === 'windows') {
 		if (securityStatus.avStatus.status === 'failedLoad') {
@@ -240,6 +170,11 @@ export const getSecurityLevel = (
 	}
 	if (typeof antivirusStatus.antivirus !== 'boolean' && typeof antivirusStatus.firewall !== 'boolean') {
 		securityStatus.avStatus.status = 'loading';
+		securityStatus.fwStatus.status = 'loading';
+		if (translationString) {
+			securityStatus.avStatus.detail = translationString['common.securityAdvisor.loading'];
+			securityStatus.fwStatus.detail = translationString['common.securityAdvisor.loading'];
+		}
 	}
 	if (typeof antivirusStatus.antivirus === 'boolean' && typeof antivirusStatus.firewall === 'boolean') {
 		securityStatus.avStatus.status = antivirusStatus.antivirus ? 'enabled' : 'disabled';
@@ -270,7 +205,7 @@ export const getSecurityLevel = (
 			}
 			localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWindowsActiveStatus, windowsActive.status);
 		} else if (cacheWaStatus) {
-			securityStatus.waStatus.status = cacheWaStatus;
+			securityStatus.waStatus.status = cacheWaStatus === 'enable' ? 'enabled' : 'disabled';
 			if (translationString) {
 				securityStatus.waStatus.detail = translationString[`common.securityAdvisor.${cacheWaStatus === 'enable' ? 'enabled' : 'disabled'}`];
 			}
@@ -284,7 +219,7 @@ export const getSecurityLevel = (
 			}
 			localCacheService.setLocalCacheValue(LocalStorageKey.SecurityUacStatus, uac.status);
 		} else if (cacheUacStatus) {
-			securityStatus.uacStatus.status = cacheUacStatus;
+			securityStatus.uacStatus.status = cacheUacStatus === 'enable' ? 'enabled' : 'disabled';
 			if (translationString) {
 				securityStatus.uacStatus.detail = translationString[`common.securityAdvisor.${cacheUacStatus === 'enable' ? 'enabled' : 'disabled'}`];
 			}
@@ -547,4 +482,65 @@ export const retryAntivirus = (id: any, securityAdvisor: SecurityAdvisor) => {
 	}
 
 	securityAdvisor.antivirus.refresh();
+};
+
+const getAntivirusStatus = (localCacheService: LocalCacheService, antivirus: Antivirus) => {
+	const cacheAvStatus = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusStatus);
+	const cacheFwStatus = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus);
+	const cacheCurrentPage = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityCurrentPage);
+	const cacheFirewallLink = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityFirewallLink, '/security/anti-virus');
+	let antivirusCommonData = new AntivirusCommonData();
+	if (antivirus.mcafee || antivirus.windowsDefender || antivirus.others) {
+		antivirusCommonData = setAntivirusPage(antivirus, antivirusCommonData, localCacheService);
+	} else if (cacheAvStatus !== undefined || cacheFwStatus !== undefined || cacheCurrentPage || cacheFirewallLink) {
+		setAntivirusStatus(cacheAvStatus, cacheFwStatus, antivirusCommonData, localCacheService);
+		antivirusCommonData.currentPage = cacheCurrentPage;
+		antivirusCommonData.firewallLink = cacheFirewallLink;
+	}
+
+	return antivirusCommonData;
+};
+
+const setAntivirusPage = (antiVirus: Antivirus, antivirusCommonData: AntivirusCommonData, localCacheService: LocalCacheService) => {
+	let av: boolean | undefined;
+	let fw: boolean | undefined;
+	if (antiVirus.mcafee && (antiVirus.mcafee.enabled || !antiVirus.others || !antiVirus.others.enabled) && antiVirus.mcafee.expireAt > 0) {
+		antivirusCommonData.currentPage = 'mcafee';
+		antivirusCommonData.isMcAfeeInstalled = true;
+		av = antiVirus.mcafee.status;
+		fw = antiVirus.mcafee.firewallStatus;
+		antivirusCommonData.firewallLink = '/security/anti-virus';
+	} else if (antiVirus.others && antiVirus.others.enabled) {
+		antivirusCommonData.currentPage = 'others';
+		antivirusCommonData.isMcAfeeInstalled = Boolean(antiVirus.mcafee);
+		av = antiVirus.others.antiVirus.length > 0 ? antiVirus.others.antiVirus[0].status : undefined;
+		if (antiVirus.windowsDefender) {
+			fw = antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : antiVirus.windowsDefender.firewallStatus;
+			antivirusCommonData.firewallLink = antiVirus.others.firewall.length > 0 ? '/security/anti-virus' : 'ms-settings:windowsdefender';
+		} else {
+			fw = antiVirus.others.firewall.length > 0 ? antiVirus.others.firewall[0].status : undefined;
+			antivirusCommonData.firewallLink = '/security/anti-virus';
+		}
+	} else {
+		antivirusCommonData.currentPage = 'windows';
+		antivirusCommonData.isMcAfeeInstalled = false;
+		if (antiVirus.windowsDefender) {
+			av = antiVirus.windowsDefender.status;
+			fw = antiVirus.windowsDefender.firewallStatus;
+		}
+		antivirusCommonData.firewallLink = '/security/anti-virus';
+	}
+
+	antivirusCommonData = setAntivirusStatus(av, fw, antivirusCommonData, localCacheService);
+	localCacheService.setLocalCacheValue(LocalStorageKey.SecurityCurrentPage, antivirusCommonData.currentPage);
+	localCacheService.setLocalCacheValue(LocalStorageKey.SecurityFirewallLink, antivirusCommonData.firewallLink);
+	return antivirusCommonData;
+};
+
+const setAntivirusStatus = (av: boolean | undefined, fw: boolean | undefined, antivirusCommonData: AntivirusCommonData, localCacheService: LocalCacheService) => {
+	localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusFirewallStatus, fw !== undefined ? fw : null);
+	localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingAntivirusStatus, av !== undefined ? av : null);
+	antivirusCommonData.antivirus = av;
+	antivirusCommonData.firewall = fw;
+	return antivirusCommonData;
 };
