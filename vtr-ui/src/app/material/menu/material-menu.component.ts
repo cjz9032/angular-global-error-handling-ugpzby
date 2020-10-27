@@ -321,18 +321,14 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 			}
 		} else if (item && item.id === 'user' && event) {
 			const target = event.currentTarget || event.srcElement;
-			if (target && target.attributes && target.attributes.id && target.attributes.id.nodeValue) {
-				const id = target.attributes.id.nodeValue;
-				if (id === 'menu-main-lnk-open-lma' ||
-					id === 'menu-main-lnk-open-adobe' ||
-					id === 'menu-main-lnk-open-dcc') {
-					this.appsForYouService.updateUnreadMessageCount(id);
-					if (id === 'menu-main-lnk-open-dcc') {
-						this.cardService.openDccDetailModal();
-					}
+			const id = target?.attributes?.id?.nodeValue;
+			if (id === 'menu-main-lnk-open-lma' ||
+				id === 'menu-main-lnk-open-adobe' ||
+				id === 'menu-main-lnk-open-dcc') {
+				this.appsForYouService.updateUnreadMessageCount(id);
+				if (id === 'menu-main-lnk-open-dcc') {
+					this.cardService.openDccDetailModal();
 				}
-			} else {
-				return;
 			}
 		}
 	}
