@@ -3004,6 +3004,13 @@
             "music": "音楽",
             "science": "科学"
         },
+        "segments": {
+            "consumer": "個人用",
+            "smb": "仕事",
+            "consumerGaming": "ゲーム",
+            "consumerEducation": "学歴",
+            "commercial": "企業用"
+        },
         "gaming": {
             "gamingDescription": "Vantage のゲーム・バージョンを使用すると、ゲーム体験を簡単に改善できます。一般的な設定に加えて、主に次のような機能が提供されます (一部のシステムで利用可能):",
             "gamingFeature1": "- コンピューター・ステータス・モニター",
@@ -4311,6 +4318,18 @@
         "tuneUP": "お客様の PC はチューンアップが必要です",
         "section2Heading": "常に最高のパフォーマンスのPCへ",
         "section2Description": "Smart Performanceは、24 時間 365 日システムを積極的にスキャンして、問題を検出して修正し、PCを常に最高のパフォーマンスに保ちます。",
+        "runningWell": "PC は正常に動作しています",
+        "auto": "自動",
+        "manual": "手動",
+        "am": "午前",
+        "pm": "午後",
+        "scanNow": "今すぐスキャン",
+        "signUpAndFix": "登録と修正",
+        "cancel": "キャンセル",
+        "scanning": "スキャン中です",
+        "fixIt": "修正する",
+        "optimizeIt": "最適化する",
+        "maintainIt": "保守する",
         "tunePCPerformance": {
             "title": "PC パフォーマンスの調整",
             "heading": "コンピューターをもっと大切に",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "スケアウェアではなく、ベスト・プラクティスに基づいて構成されています。"
             }
         },
+        "noScanResults": "「スキャンして修正」ボタンをクリックしてスキャン・プロセスを起動してください。",
         "startScan": "<b>スキャンを開始する準備はできましたか?</b>コンピューターのパフォーマンスとセキュリティーの問題を診断しましょう。",
         "subscriptionDetails": {
             "title": "サブスクリプションの詳細",
@@ -4610,11 +4630,23 @@
             "description": "こちらが {{machineFamilyName}} のスキャン結果です。",
             "scanRates": "スキャンの評価(10 段階): ",
             "summary": "要約",
-            "summaryDetails": "スキャンによって <b>{{issueCount}} 件の問題</b>が見つかりました。今すぐサインアップしてこれらの問題を修正し、PCパフォーマンスを向上させましょう。Smart Performanceは、24 時間 365 日システムを積極的にスキャンして、問題を検出して修正し、PCを常に最高のパフォーマンスに保ちます。",
+            "foundIssues": "スキャンで {{issueCount}} 個の問題が見つかりました",
+            "summaryDetails": "今すぐ登録してこれらの問題を修正し、システムの円滑な稼働を維持しましょう。当社のソフトウェアは、24 時間 365 日システムのこれらの領域を積極的にスキャンして、問題が発生したときに検出して修正できるため、PC は常に最高のパフォーマンスを発揮します。",
+            "expiredSummaryDetails": "サブスクリプションの有効期限が切れており、現在は Smart Performance のスキャン機能のみを使用できます。「スキャンして修正」機能を再開するには、下の「更新して修正」ボタンをクリックしてサブスクリプションを更新してください。",
             "signupRepairButton": "今すぐサインアップして修復",
+            "renewAndFix": "更新して修正",
+            "backToHome": "ホームに戻る",
             "monthlyPricing": "<b>1 か月約 {{monthlyPrice}} です。</b>これらの問題を自動的に修正します。今日以降毎週 1 回 <a  href=\"#\">詳細を表示</a>",
             "issueCount": "{{individualIssueCount}} 件の問題",
+            "issues": "問題",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "スキャン対象領域",
+            "summaryPurchaseTip": "今すぐ年間プランを購入すると、このような問題が毎週自動的に修正されます。",
+            "tunePCTooltip": "システム全体のパフォーマンスを向上させ、PCの起動時間を短縮し、アプリケーションの読み込み時間を改善します。",
+            "boostTooltip": "ネットワーク・パフォーマンス、ブラウザーの使いやすさ、および接続性を向上させます。",
+            "malwareTooltip": "セキュリティを向上させ、マルウェアやウィルス感染を除去し、システムの安定性を回復します。",
             "recommendedAction": {
                 "title": "推奨する対策",
                 "description": "これらの問題を自動的に修正します。今日以降毎週 1 回",
@@ -4666,10 +4698,6 @@
                     "area6": "システム・エラー・レポートの構成を確認した"
                 }
             },
-            "Diskspace": "解放されるディスク容量:",
-            "Performanceimprovements": "パフォーマンスの改善:",
-            "Securityimprovements": "セキュリティーの改善:",
-            "Onceaweek": "1 週間に 1 回",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "ブラウザーから不要なデータを特定しました",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "問題",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "ホームに戻る",
-            "expiredSummaryDetails": "サブスクリプションの有効期限が切れており、現在は Smart Performance のスキャン機能のみを使用できます。「スキャンして修正」機能を再開するには、下の「更新して修正」ボタンをクリックしてサブスクリプションを更新してください。",
-            "renewAndFix": "更新して修正"
+            "Diskspace": "解放されるディスク容量:",
+            "Performanceimprovements": "パフォーマンスの改善:",
+            "Securityimprovements": "セキュリティーの改善:",
+            "Onceaweek": "1 週間に 1 回"
         },
         "subscriberScanHomePage": {
             "title": "問題なし",
@@ -4928,7 +4953,6 @@
             "successTitle": "PC がチューンアップされました!",
             "successDescription": "PC の円滑な稼働を維持するために、Smart Performance で <b>{{issueCount}} 件の問題</b>を解決しました。スキャンの概要とレポートは以下で確認できます。"
         },
-        "runningWell": "PC は正常に動作しています",
         "feedbackContainer": {
             "title": "フィードバックをお寄せください",
             "subtitle": "Smart Performance の感想をお聞かせください",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "コメントや追加のフィードバックを以下に残してください。",
             "comments": "ここにコメントを残してください..."
-        },
-        "auto": "自動",
-        "manual": "手動",
-        "noScanResults": "「スキャンして修正」ボタンをクリックしてスキャン・プロセスを起動してください。",
-        "am": "午前",
-        "pm": "午後"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

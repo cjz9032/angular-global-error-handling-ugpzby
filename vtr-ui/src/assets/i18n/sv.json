@@ -3004,6 +3004,13 @@
             "music": "Musik",
             "science": "Vetenskap"
         },
+        "segments": {
+            "consumer": "Privat",
+            "smb": "Arbete",
+            "consumerGaming": "Spel",
+            "consumerEducation": "Utbildning",
+            "commercial": "Företag"
+        },
         "gaming": {
             "gamingDescription": "Spelversionen av Vantage gör det lätt att förbättra spelupplevelsen. Utöver de vanliga inställningarna inkluderar huvudfunktionerna (på vissa modeller):",
             "gamingFeature1": "-Datorstatusövervakare",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Datorn behöver en finjustering",
         "section2Heading": "Bästa möjliga datorprestanda. Alltid",
         "section2Description": "Vår programvara kan proaktivt genomsöka din dator dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid körs med bästa möjliga prestanda.",
+        "runningWell": "Datorn fungerar bra",
+        "auto": "Automatiskt",
+        "manual": "Manuellt",
+        "am": "FM",
+        "pm": "EM",
+        "scanNow": "Genomsök nu",
+        "signUpAndFix": "Registrera dig och korrigera",
+        "cancel": "Avbryt",
+        "scanning": "Genomsöker",
+        "fixIt": "Korrigera",
+        "optimizeIt": "Optimera",
+        "maintainIt": "Underhåll",
         "tunePCPerformance": {
             "title": "Finjustera Datorns Prestanda",
             "heading": "Visa datorn lite extra omsorg",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Inga skrämselprogram, utvecklad enligt bästa praxis"
             }
         },
+        "noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen.",
         "startScan": "<b>Vill du starta genomsökningen?</b> Vi felsöker prestanda- och säkerhetsproblem på din dator.",
         "subscriptionDetails": {
             "title": "Prenumerationsuppgifter",
@@ -4610,11 +4630,23 @@
             "description": "Detta är vad som påträffades på din {{machineFamilyName}}",
             "scanRates": "Enligt vår genomsökning är din dator: ",
             "summary": "Översikt",
-            "summaryDetails": "Genomsökningen hittade <b>{{issueCount}} problem</b> i områdena nedan. Registrera dig nu för att åtgärda problemen och se till att datorn fungerar smidigt. Vår programvara kan proaktivt genomsöka dessa områden på din dator dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid körs med bästa möjliga prestanda.",
+            "foundIssues": "{{issueCount}} problem påträffades",
+            "summaryDetails": "Registrera dig nu för att åtgärda problemen och se till att datorn fungerar smidigt. Vår programvara kan proaktivt genomsöka dessa områden på din dator dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid körs med bästa möjliga prestanda.",
+            "expiredSummaryDetails": "Din prenumerationen har gått ut och du kan för närvarande endast använda genomsökningsfunktionen i Smart Performance. Om du vill återuppta funktionen Genomsök och åtgärda klickar du på Förnya och åtgärda nedan för att förnya prenumerationen.",
             "signupRepairButton": "REGISTRERA DIG OCH REPARERA NU",
+            "renewAndFix": "Förnya och åtgärda",
+            "backToHome": "Tillbaka till startsidan",
             "monthlyPricing": "<b>Mindre än {{monthlyPrice}} per månad.</b> Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka. <a  href=\"#\">Läs mer</a>",
             "issueCount": "{{individualIssueCount}} PROBLEM",
+            "issues": "Problem",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "GENOMSÖKTA OMRÅDEN",
+            "summaryPurchaseTip": "Köp en ettårsprenumeration nu så åtgärdas problemen automatiskt en gång i veckan.",
+            "tunePCTooltip": "Förbättra den övergripande systemprestandan, förkorta datorns starttid och påskynda inläsningen av program.",
+            "boostTooltip": "Förbättra nätverksprestandan, onlineupplevelsen och uppkopplingen.",
+            "malwareTooltip": "Förbättra säkerheten, ta bort skadlig programvara och virus och återställ systemets stabilitet.",
             "recommendedAction": {
                 "title": "Rekommenderad Åtgärd",
                 "description": "Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka.",
@@ -4666,10 +4698,6 @@
                     "area6": "Kontrollerade konfiguration av systemfelrapporter"
                 }
             },
-            "Diskspace": "Återställt diskutrymme:",
-            "Performanceimprovements": "Prestandaförbättringar:",
-            "Securityimprovements": "Säkerhetsförbättringar:",
-            "Onceaweek": "Varje vecka",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Identifierade skräp från webbläsare",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problem",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Tillbaka till startsidan",
-            "expiredSummaryDetails": "Din prenumerationen har gått ut och du kan för närvarande endast använda genomsökningsfunktionen i Smart Performance. Om du vill återuppta funktionen Genomsök och åtgärda klickar du på Förnya och åtgärda nedan för att förnya prenumerationen.",
-            "renewAndFix": "Förnya och åtgärda"
+            "Diskspace": "Återställt diskutrymme:",
+            "Performanceimprovements": "Prestandaförbättringar:",
+            "Securityimprovements": "Säkerhetsförbättringar:",
+            "Onceaweek": "Varje vecka"
         },
         "subscriberScanHomePage": {
             "title": "Allt fungerar som det ska på din ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Datorn är finjusterad!",
             "successDescription": "Smart Performance löste <b>{{issueCount}} problem</b> så att din dator fungerar smidigt. Du hittar en översikt och rapport över genomsökningen nedan."
         },
-        "runningWell": "Datorn fungerar bra",
         "feedbackContainer": {
             "title": "Ge feedback",
             "subtitle": "Berätta vad du tycker om Smart Performance",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Skriv eventuella kommentarer eller ytterligare feedback nedan:",
             "comments": "Lämna dina kommentarer här …"
-        },
-        "auto": "Automatiskt",
-        "manual": "Manuellt",
-        "noScanResults": "Klicka på Genomsök och åtgärda för att starta genomsökningen.",
-        "am": "FM",
-        "pm": "EM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

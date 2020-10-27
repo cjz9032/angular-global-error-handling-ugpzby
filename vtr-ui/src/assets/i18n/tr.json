@@ -3004,6 +3004,13 @@
             "music": "Müzik",
             "science": "Bilim"
         },
+        "segments": {
+            "consumer": "Kişisel",
+            "smb": "Çalışma",
+            "consumerGaming": "Oyunlar",
+            "consumerEducation": "Eğitim",
+            "commercial": "Kurumsal"
+        },
         "gaming": {
             "gamingDescription": "Vantage'ın oyun sürümü, oyun deneyiminizi daha iyi hale getirmenizi kolaylaştırır. Yaygın ayarlarla birlikte, ana özellikler şunları içerir (seçili sistemlerde mevcuttur):",
             "gamingFeature1": "-Bilgisayar durumu monitörü",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Bilgisayarınıza ayarlama yapılması gerekiyor",
         "section2Heading": "Birinci Sınıf Bilgisayar Performansı. Her zaman",
         "section2Description": "Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak bilgisayarınızı 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
+        "runningWell": "Bilgisayar iyi çalışıyor",
+        "auto": "Otomatik",
+        "manual": "El ile",
+        "am": "AM",
+        "pm": "PM",
+        "scanNow": "ŞİMDİ TARA",
+        "signUpAndFix": "Kaydol ve düzelt",
+        "cancel": "İptal",
+        "scanning": "Taranıyor",
+        "fixIt": "Düzeltin",
+        "optimizeIt": "İyileştirin",
+        "maintainIt": "Bakımını yapın",
         "tunePCPerformance": {
             "title": "Bi̇lgi̇sayar Performansini Ayarlayin",
             "heading": "Bilgisayarınıza biraz daha ilgi gösterin",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Scareware yazılımı olmadan, en iyi uygulamalar oluşturulmuştur"
             }
         },
+        "noScanResults": "Tarama işlemini başlatmak için lütfen TARA VE DÜZELT düğmesine tıklayın.",
         "startScan": "<b>Taramayı başlatmaya hazır mısınız?</b> Bilgisayarınızdaki performans ve güvenlik sorunlarını teşhis edelim.",
         "subscriptionDetails": {
             "title": "Abonelik Ayrıntıları",
@@ -4610,11 +4630,23 @@
             "description": "İşte bulduklarımız: {{machineFamilyName}}",
             "scanRates": "Taramamıza göre bilgisayarınızın değerlendirmesi: ",
             "summary": "Özet",
-            "summaryDetails": "Taramamız aşağıdaki alanlarda <b>{{issueCount}} sorun</b> buldu. Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
+            "foundIssues": "Tarama sonucunda {{issueCount}} sorun buldu",
+            "summaryDetails": "Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
+            "expiredSummaryDetails": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. “Tara ve Düzelt” özelliğini sürdürmek istiyorsanız lütfen aboneliğinizi yenilemek için aşağıdaki “yenile ve düzelt” düğmesine basın.",
             "signupRepairButton": "KAYDOLUN ve HEMEN ONARIN",
+            "renewAndFix": "Yenile ve Düzelt",
+            "backToHome": "Ana Sayfaya Dön",
             "monthlyPricing": "<b>Ayda {{monthlyPrice}}'dan az.</b> Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez <a  href=\"#\">Daha fazla bilgi edinin</a>",
             "issueCount": "{{individualIssueCount}} SORUNLAR",
+            "issues": "Sorunlar",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "TARANAN ALANLAR",
+            "summaryPurchaseTip": "Yıllık planı hemen satın alın ve bu sorunların her hafta otomatik olarak düzeltilmesini sağlayın.",
+            "tunePCTooltip": "Genel sistem performansını artırın, bilgisayar başlatma süresini kısaltın ve uygulama yükleme sürelerini iyileştirin.",
+            "boostTooltip": "Ağ performansını, tarama deneyimini ve bağlantıyı iyileştirin.",
+            "malwareTooltip": "Güvenliği artırın, kötü amaçlı yazılımları ve bulaşmaları kaldırın ve sistem kararlılığını sağlayın.",
             "recommendedAction": {
                 "title": "Öneri̇len Eylem",
                 "description": "Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez",
@@ -4666,10 +4698,6 @@
                     "area6": "Sistem hata raporları yapılandırması denetlendi"
                 }
             },
-            "Diskspace": "Kurtarılan Disk Alanı:",
-            "Performanceimprovements": "Performans İyileştirmeleri:",
-            "Securityimprovements": "Güvenlik İyileştirmeleri:",
-            "Onceaweek": "Haftada bir",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Tarayıcılardan gelen dağınıklık belirlendi",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Sorunlar",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Ana Sayfaya Dön",
-            "expiredSummaryDetails": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. “Tara ve Düzelt” özelliğini sürdürmek istiyorsanız lütfen aboneliğinizi yenilemek için aşağıdaki “yenile ve düzelt” düğmesine basın.",
-            "renewAndFix": "Yenile ve Düzelt"
+            "Diskspace": "Kurtarılan Disk Alanı:",
+            "Performanceimprovements": "Performans İyileştirmeleri:",
+            "Securityimprovements": "Güvenlik İyileştirmeleri:",
+            "Onceaweek": "Haftada bir"
         },
         "subscriberScanHomePage": {
             "title": "Her şey yolunda: ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Bilgisayarınız ayarlandı!",
             "successDescription": "Smart Performance, bilgisayarınızın sorunsuz çalışması için <b>{{issueCount}} sorun</b> çözdü. Tarama özetine ve raporuna aşağıdan ulaşabilirsiniz."
         },
-        "runningWell": "Bilgisayar iyi çalışıyor",
         "feedbackContainer": {
             "title": "Bize geri bildirimde bulunun",
             "subtitle": "Smart Performance hakkındaki düşüncelerinizi bizimle paylaşın",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Lütfen yorumlarınızı veya ek geri bildiriminizi aşağıya bırakın:",
             "comments": "Lütfen yorumlarınızı buraya bırakın..."
-        },
-        "auto": "Otomatik",
-        "manual": "El ile",
-        "noScanResults": "Tarama işlemini başlatmak için lütfen TARA VE DÜZELT düğmesine tıklayın.",
-        "am": "AM",
-        "pm": "PM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

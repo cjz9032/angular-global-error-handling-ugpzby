@@ -3004,6 +3004,13 @@
             "music": "Musiikki",
             "science": "Tiede"
         },
+        "segments": {
+            "consumer": "Kotikäyttö",
+            "smb": "Työ",
+            "consumerGaming": "Pelit",
+            "consumerEducation": "Koulutus",
+            "commercial": "Yritys"
+        },
         "gaming": {
             "gamingDescription": "Vantagen pelaajille suunniteltu versio tekee pelikokemuksesi parantamisesta yksinkertaista. Yleisten asetusten ohella sen tärkeimpiin ominaisuuksiin sisältyy (saatavilla tietyissä järjestelmissä):",
             "gamingFeature1": "-Tietokoneen tilan valvonta",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Tietokoneesi on virittämisen tarpeessa",
         "section2Heading": "Huippuluokan tietokoneen suorituskyky. Aina",
         "section2Description": "Ohjelmistomme tarkistaa tietokoneesi ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
+        "runningWell": "Tietokone toimii hyvin",
+        "auto": "Automaattinen",
+        "manual": "Manuaalinen",
+        "am": "aamupäivä",
+        "pm": "iltapäivä",
+        "scanNow": "Tarkista nyt",
+        "signUpAndFix": "Rekisteröidy ja korjaa",
+        "cancel": "Peruuta",
+        "scanning": "Etsitään",
+        "fixIt": "Korjaa",
+        "optimizeIt": "Optimoi",
+        "maintainIt": "Ylläpidä",
         "tunePCPerformance": {
             "title": "Viritä Tietokoneen Suorituskykyä",
             "heading": "Helli tietokonettasi enemmän",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Ei pelotteluohjelmia, luotu parhaita käytäntöjä noudattaen"
             }
         },
+        "noScanResults": "Aloita tarkistus napsauttamalla TARKISTA JA KORJAA -painiketta.",
         "startScan": "<b>Oletko valmis aloittamaan tarkistuksen?</b> Määritetään tietokoneesi suorituskykyyn ja suojaukseen liittyvät ongelmat.",
         "subscriptionDetails": {
             "title": "Tilauksen tiedot",
@@ -4610,11 +4630,23 @@
             "description": "Löysimme seuraavat asiat {{machineFamilyName}}",
             "scanRates": "Tarkistuksemme pohjalta tehty arvio tietokoneestasi: ",
             "summary": "Yhteenveto",
-            "summaryDetails": "Tarkistuksessa löydettiin <b>{{issueCount}} ongelmaa</b> seuraavilla alueilla. Rekisteröidy nyt, niin voit korjata nämä ongelmat ja pitää järjestelmän toimintakunnossa. Ohjelmistomme tarkistaa nämä järjestelmäsi alueet ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
+            "foundIssues": "Tarkistus löysi {{issueCount}} ongelmaa",
+            "summaryDetails": "Rekisteröidy nyt, niin voit korjata nämä ongelmat ja pitää järjestelmän toimintakunnossa. Ohjelmistomme tarkistaa nämä järjestelmäsi alueet ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
+            "expiredSummaryDetails": "Tilauksesi on vanhentunut ja voit käyttää tällä hetkellä vain Smart Performancen tarkastustoimintoa. Jos haluat jatkaa \"Tarkasta ja korjaa\" -toiminnon käyttöä, paina alla olevaa \"Uusi tilaus ja korjaa\" -painiketta uusiaksesi tilauksesi.",
             "signupRepairButton": "REKISTERÖIDY JA KORJAA NYT",
+            "renewAndFix": "Uusi tilaus ja korjaa",
+            "backToHome": "Takaisin aloitussivulle",
             "monthlyPricing": "<b>Alle {{monthlyPrice}} kuukaudessa.</b> Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen <a  href=\"#\">Lue lisää</a>",
             "issueCount": "{{individualIssueCount}} ONGELMAA",
+            "issues": "Ongelmaa",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "TARKISTETUT ALUEET",
+            "summaryPurchaseTip": "Osta vuositilaus nyt, niin korjaamme nämä ongelmat joka viikko automaattisesti.",
+            "tunePCTooltip": "Paranna järjestelmän yleistä suorituskykyä, nopeuta tietokoneen käynnistämistä ja paranna sovellusten latausaikoja.",
+            "boostTooltip": "Paranna verkon suorituskykyä, selauskokemusta ja yhteyden muodostamista.",
+            "malwareTooltip": "Paranna tietoturvaa, poista haittaohjelmia ja tartuntoja ja vakauta järjestelmä uudelleen.",
             "recommendedAction": {
                 "title": "Suositeltava Toiminto",
                 "description": "Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen",
@@ -4666,10 +4698,6 @@
                     "area6": "Tarkistettiin järjestelmävirheraporttien kokoonpano"
                 }
             },
-            "Diskspace": "Vapautettava levytila:",
-            "Performanceimprovements": "Suorituskyvyn parannukset:",
-            "Securityimprovements": "Suojauksen parannukset:",
-            "Onceaweek": "Kerran viikossa",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Tunnistettiin selainten epäjärjestystä",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Ongelmaa",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Takaisin aloitussivulle",
-            "expiredSummaryDetails": "Tilauksesi on vanhentunut ja voit käyttää tällä hetkellä vain Smart Performancen tarkastustoimintoa. Jos haluat jatkaa \"Tarkasta ja korjaa\" -toiminnon käyttöä, paina alla olevaa \"Uusi tilaus ja korjaa\" -painiketta uusiaksesi tilauksesi.",
-            "renewAndFix": "Uusi tilaus ja korjaa"
+            "Diskspace": "Vapautettava levytila:",
+            "Performanceimprovements": "Suorituskyvyn parannukset:",
+            "Securityimprovements": "Suojauksen parannukset:",
+            "Onceaweek": "Kerran viikossa"
         },
         "subscriberScanHomePage": {
             "title": "Kaikki hyvin laitteessasi ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Tietokoneesi on viritetty!",
             "successDescription": "Smart Performance ratkaisi <b>{{issueCount}} ongelmaa</b>, jotta tietokoneesi pysyy hyvässä kunnossa. Tarkistuksen yhteenveto ja raportti ovat alla."
         },
-        "runningWell": "Tietokone toimii hyvin",
         "feedbackContainer": {
             "title": "Lähetä meille palautetta",
             "subtitle": "Kerro meille, mitä mieltä olet Smart Performancesta",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Kirjoita halutessasi kommentteja tai palautetta alle:",
             "comments": "Kirjoita kommenttisi tähän..."
-        },
-        "auto": "Automaattinen",
-        "manual": "Manuaalinen",
-        "noScanResults": "Aloita tarkistus napsauttamalla TARKISTA JA KORJAA -painiketta.",
-        "am": "aamupäivä",
-        "pm": "iltapäivä"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

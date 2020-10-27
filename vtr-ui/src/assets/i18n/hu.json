@@ -3004,6 +3004,13 @@
             "music": "Zene",
             "science": "Tudomány"
         },
+        "segments": {
+            "consumer": "Személyes",
+            "smb": "Munka",
+            "consumerGaming": "Játékok",
+            "consumerEducation": "Oktatás",
+            "commercial": "Vállalat"
+        },
         "gaming": {
             "gamingDescription": "A Vantage játékosoknak szánt verziójával egyszerűen hozzáférhet a lehető legjobb játékélményhez. Az általános lehetőségek mellett a következő funkciók is elérhetőek (az azokat támogató rendszereken):",
             "gamingFeature1": "-Számítógépállapot-figyelő",
@@ -4311,6 +4318,18 @@
         "tuneUP": "A számítógépre ráférne egy kis finomhangolás",
         "section2Heading": "Tökéletes teljesítmény. Mindig",
         "section2Description": "Szoftverünk képes bármikor proaktívan ellenőrizni a számítógépét, és megkeresni, majd kijavítani a felmerülő problémákat, így gépe mindig kiemelkedő teljesítményt tud nyújtani.",
+        "runningWell": "A számítógép jól működik",
+        "auto": "Automata",
+        "manual": "Kézi",
+        "am": "de.",
+        "pm": "du.",
+        "scanNow": "Vizsgálat futtatása",
+        "signUpAndFix": "Regisztráció és javítás",
+        "cancel": "Mégse",
+        "scanning": "Vizsgálat",
+        "fixIt": "Javítás",
+        "optimizeIt": "Optimalizálás",
+        "maintainIt": "Karbantartás",
         "tunePCPerformance": {
             "title": "Teljesítmény-növelés",
             "heading": "Szenteljen egy kis figyelmet a számítógépének",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Bevált gyakorlatok alapján dolgoztuk ki, nem riogatjuk feleslegesen"
             }
         },
+        "noScanResults": "Az ellenőrzési folyamat elindításához kattintson az ELLENŐRZÉS ÉS JAVÍTÁS gombra.",
         "startScan": "<b>Készen áll az ellenőrzés elindítására?</b> Diagnosztizáljuk a számítógépe teljesítménnyel és biztonsággal kapcsolatos problémáit!",
         "subscriptionDetails": {
             "title": "Előfizetési adatok",
@@ -4610,11 +4630,23 @@
             "description": "A következőket találtuk {{machineFamilyName}}",
             "scanRates": "Ellenőrzésünk során számítógépe a következő értékelést kapta: ",
             "summary": "Összegzés",
-            "summaryDetails": "Ellenőrzésünk az alábbi területeken fedett fel <b>{{issueCount}} problémá(ka)t</b>. Fizessen elő, hogy orvosolhassuk a problémákat, és rendszere zökkenőmentesen működhessen. Szoftverünkkel bármikor proaktívan ellenőrizhetjük a rendszer érintett területeit a felmerülő problémák azonosításához és javításához, így gépe mindig kiemelkedő teljesítményt nyújt majd.",
+            "foundIssues": "A vizsgálat {{issueCount}} problémát azonosított",
+            "summaryDetails": "Fizessen elő, hogy orvosolhassuk a problémákat, és rendszere zökkenőmentesen működhessen. Szoftverünkkel bármikor proaktívan ellenőrizhetjük a rendszer érintett területeit a felmerülő problémák azonosításához és javításához, így gépe mindig kiemelkedő teljesítményt nyújt majd.",
+            "expiredSummaryDetails": "Az előfizetése lejárt, és jelenleg csak a Smart Performance ellenőrzési funkcióját használhatja. Ha szeretné továbbra is használni az „Ellenőrzés és javítás” funkciót, az előfizetés megújításához kattintson az alábbi „Megújítás és javítás” gombra.",
             "signupRepairButton": "ELŐFIZETÉS ÉS JAVÍTÁS",
+            "renewAndFix": "Megújítás és javítás",
+            "backToHome": "Vissza a kezdőlapra",
             "monthlyPricing": "<b>Kevesebb mint havi {{monthlyPrice}}.</b> Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten <a  href=\"#\">További tudnivalók</a>",
             "issueCount": "{{individualIssueCount}} PROBLÉMÁK",
+            "issues": "Problémák",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "ELLENŐRZÖTT TERÜLETEK",
+            "summaryPurchaseTip": "Vásárolja meg most az éves csomagot, és minden héten automatikusan kijavítjuk a problémákat.",
+            "tunePCTooltip": "Javítsa az általános rendszerteljesítményt, csökkentse a számítógép indítási idejét, valamint javítsa az alkalmazások betöltési idejét.",
+            "boostTooltip": "Javítsa a hálózati teljesítményt, a böngészési élményt és a hálózati kapcsolatokat.",
+            "malwareTooltip": "Javítsa a biztonságot, távolítsa el a rosszindulatú programokat és állítsa helyre a rendszer stabilitását.",
             "recommendedAction": {
                 "title": "Ajánlott Lépések",
                 "description": "Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten",
@@ -4666,10 +4698,6 @@
                     "area6": "Rendszerhiba-jelentések konfigurációja ellenőrizve"
                 }
             },
-            "Diskspace": "Visszanyert lemezterület:",
-            "Performanceimprovements": "Teljesítményjavítások:",
-            "Securityimprovements": "Biztonsági fejlesztések:",
-            "Onceaweek": "Hetente egyszer",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Böngészők rendezetlen elemei azonosítva",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problémák",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Vissza a kezdőlapra",
-            "expiredSummaryDetails": "Az előfizetése lejárt, és jelenleg csak a Smart Performance ellenőrzési funkcióját használhatja. Ha szeretné továbbra is használni az „Ellenőrzés és javítás” funkciót, az előfizetés megújításához kattintson az alábbi „Megújítás és javítás” gombra.",
-            "renewAndFix": "Megújítás és javítás"
+            "Diskspace": "Visszanyert lemezterület:",
+            "Performanceimprovements": "Teljesítményjavítások:",
+            "Securityimprovements": "Biztonsági fejlesztések:",
+            "Onceaweek": "Hetente egyszer"
         },
         "subscriberScanHomePage": {
             "title": "Minden rendben van az Ön ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Számítógépe fel van frissítve!",
             "successDescription": "A Smart Performance <b>{{issueCount}} problémát</b> oldott meg számítógépe zökkenőmentes működése érdekében. Az ellenőrzés összefoglalását és az arról készült jelentést lent tekintheti meg."
         },
-        "runningWell": "A számítógép jól működik",
         "feedbackContainer": {
             "title": "Adjon visszajelzést",
             "subtitle": "Mondja el, mit gondol a Smart Performance-ről",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Ha van további megjegyzése vagy visszajelzése, írja meg nekünk alább:",
             "comments": "Írja be ide észrevételeit…"
-        },
-        "auto": "Automata",
-        "manual": "Kézi",
-        "noScanResults": "Az ellenőrzési folyamat elindításához kattintson az ELLENŐRZÉS ÉS JAVÍTÁS gombra.",
-        "am": "de.",
-        "pm": "du."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

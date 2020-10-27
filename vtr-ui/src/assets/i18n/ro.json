@@ -3004,6 +3004,13 @@
             "music": "Muzică",
             "science": "Știință"
         },
+        "segments": {
+            "consumer": "Personal",
+            "smb": "Lucru",
+            "consumerGaming": "Jocuri",
+            "consumerEducation": "Educație",
+            "commercial": "Afaceri"
+        },
         "gaming": {
             "gamingDescription": "Versiunea Vantage pentru jocuri vă ajută să vă îmbunătăţiţi experienţa în jocuri. Pe lângă setările obişnuite, caracteristicile principale includ (disponibile pe sistemele selectate):",
             "gamingFeature1": "– Monitorizarea stării computerului",
@@ -4311,6 +4318,18 @@
         "tuneUP": "PC-ul trebuie reglat",
         "section2Heading": "Performanțele PC-ului sunt excelente. Întotdeauna",
         "section2Description": "Software-ul nostru vă poate scana în mod proactiv PC-ul, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
+        "runningWell": "PC-ul funcționează corect",
+        "auto": "Auto",
+        "manual": "Manual",
+        "am": "AM",
+        "pm": "PM",
+        "scanNow": "Scanare acum",
+        "signUpAndFix": "Înregistrare și remediere",
+        "cancel": "Anulare",
+        "scanning": "Se scanează",
+        "fixIt": "Remediați",
+        "optimizeIt": "Optimizați",
+        "maintainIt": "Întrețineți",
         "tunePCPerformance": {
             "title": "Reglare Performanţe",
             "heading": "Oferiți computerului dumneavoastră mai multă atenție",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Nu este un scareware și este concepută cu cele mai bune practici"
             }
         },
+        "noScanResults": "Pentru a începe procesul de scanare, faceți clic pe butonul SCANARE ȘI REMEDIERE.",
         "startScan": "<b>Sunteți pregătit să începeți scanarea?</b> Vom diagnostica problemele privind performanța și securitatea computerului dumneavoastră.",
         "subscriptionDetails": {
             "title": "Detaliile abonamentului",
@@ -4610,11 +4630,23 @@
             "description": "Iată rezultatele găsite pe {{machineFamilyName}}",
             "scanRates": "Scanarea noastră evaluează PC-ul dumneavoastră ca: ",
             "summary": "Rezumat",
-            "summaryDetails": "Scanarea noastră a găsit <b>{{issueCount}} probleme</b> în următoarele zone de mai jos. Înregistrați-vă acum pentru a remedia aceste probleme și pentru ca sistemul dumneavoastră să funcționeze corespunzător. Software-ul nostru poate scana în mod proactiv aceste zone ale sistemului dumneavoastră, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
+            "foundIssues": "Scanarea noastră a găsită {{issueCount}} probleme",
+            "summaryDetails": "Înregistrați-vă acum pentru a remedia aceste probleme și pentru ca sistemul dumneavoastră să funcționeze corespunzător. Software-ul nostru poate scana în mod proactiv aceste zone ale sistemului dumneavoastră, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
+            "expiredSummaryDetails": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Dacă doriți să reluați caracteristica „Scanare și remediere”, apăsați butonul „Reînnoire și remediere” din partea de jos pentru a reînnoi abonamentul.",
             "signupRepairButton": "ÎNREGISTRAȚI-VĂ ȘI REMEDIAȚI ACUM",
+            "renewAndFix": "Reînnoire și remediere",
+            "backToHome": "Înapoi la pagina de pornire",
             "monthlyPricing": "<b>Mai puțin de {{monthlyPrice}} pe lună.</b> Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână <a  href=\"#\">Aflați mai multe</a>",
             "issueCount": "{{individualIssueCount}} PROBLEME",
+            "issues": "Probleme",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "ZONE SCANATE",
+            "summaryPurchaseTip": "Cumpărați acum planul anual și vom remedia automat astfel de probleme în fiecare săptămână.",
+            "tunePCTooltip": "Îmbunătățiți performanța generală a sistemului, reduceți timpul de pornire a PC-ului și îmbunătățiți timpul de încărcare a aplicațiilor.",
+            "boostTooltip": "Îmbunătățiți performanța comunicării în rețea, experiența de navigare și conectivitatea.",
+            "malwareTooltip": "Îmbunătățiți securitatea, eliminați programele malware și infecțiile și restaurați stabilitatea sistemului.",
             "recommendedAction": {
                 "title": "Acțiuni Recomandate",
                 "description": "Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână",
@@ -4666,10 +4698,6 @@
                     "area6": "S-a verificat configurația rapoartele erorilor de sistem"
                 }
             },
-            "Diskspace": "Spațiu pe disc câștigat:",
-            "Performanceimprovements": "Îmbunătățiri ale performanței:",
-            "Securityimprovements": "Îmbunătățiri ale securității:",
-            "Onceaweek": "O dată pe săptămână",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "S-a identificat aglomerația din browser",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Probleme",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Înapoi la pagina de pornire",
-            "expiredSummaryDetails": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Dacă doriți să reluați caracteristica „Scanare și remediere”, apăsați butonul „Reînnoire și remediere” din partea de jos pentru a reînnoi abonamentul.",
-            "renewAndFix": "Reînnoire și remediere"
+            "Diskspace": "Spațiu pe disc câștigat:",
+            "Performanceimprovements": "Îmbunătățiri ale performanței:",
+            "Securityimprovements": "Îmbunătățiri ale securității:",
+            "Onceaweek": "O dată pe săptămână"
         },
         "subscriberScanHomePage": {
             "title": "Totul funcționează corect privind ",
@@ -4928,7 +4953,6 @@
             "successTitle": "PC-ul dumneavoastră este reglat!",
             "successDescription": "Smart Performance a rezolvat <b>{{issueCount}} probleme</b>, pentru ca PC-ul dumneavoastră să funcționeze fără probleme. Mai jos, puteți găsi rezumatul și raportul scanării."
         },
-        "runningWell": "PC-ul funcționează corect",
         "feedbackContainer": {
             "title": "Oferiți-ne feedback",
             "subtitle": "Împărtășiți-ne opinia dumneavoastră despre Smart Performance",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Lăsați orice comentariu sau feedback suplimentar mai jos:",
             "comments": "Lăsați comentariile dumneavoastră aici..."
-        },
-        "auto": "Auto",
-        "manual": "Manual",
-        "noScanResults": "Pentru a începe procesul de scanare, faceți clic pe butonul SCANARE ȘI REMEDIERE.",
-        "am": "AM",
-        "pm": "PM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

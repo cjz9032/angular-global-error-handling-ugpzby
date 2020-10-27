@@ -6,8 +6,8 @@
 					<div class="system-scan-complete">
 						<vtr-ui-smart-performance-header *ngIf="!smartPerformanceService.isSubscribed"
 							[image]="rating < 8 ? SPHeaderImageType.Issue : SPHeaderImageType.Well"
-							headerTitle="Our scan found {{issueCount}} issue(s)"
-							[subTitle]="'Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.'"
+							[headerTitle]="'smartPerformance.scanCompletePage.foundIssues' | translate"
+							[subTitle]="'smartPerformance.scanCompletePage.summaryDetails' | translate"
 							headerTitleId="smart-performance-scan-summary-title"
 							subTitleId="smart-performance-scan-summary-desc"
 							[contentWrap]="true">
@@ -21,9 +21,9 @@
 									metricsEvent="ItemClick"
 									metricsParent="Page.Support.SmartPerformance"
 									[isFullWidth]="true"
-									[label]="'Sign up & fix'"></vtr-ui-button>
+									[label]="'smartPerformance.signUpAndFix' | translate"></vtr-ui-button>
 								<p id="smart-performance-scan-complete-purchase-tip"
-									role="text">Purchase the yearly plan now and we will automatically fix these issues every week.</p>
+									role="text" [innerHTML]="'smartPerformance.scanCompletePage.summaryPurchaseTip' | translate"></p>
 							</div>
 						</vtr-ui-smart-performance-header>
 
@@ -281,7 +281,7 @@
 													id="smart-performance-scan-summary-tunePC-tooltip"
 													attr.aria-label=""
 													role="tooltip"
-													[ngbTooltip]="'Improve overall system performance, reduce PC start time, and improve application load times.'"
+													[ngbTooltip]="'smartPerformance.scanCompletePage.tunePCTooltip' | translate"
 													#tooltip="ngbTooltip"
 													[icon]="['far', 'question-circle']"
 													container="vtr-root"
@@ -331,7 +331,7 @@
 													id="smart-performance-scan-summary-boost-tooltip"
 													attr.aria-label=""
 													role="tooltip"
-													[ngbTooltip]="'Improve network performance, browsing experience, and connectivity.'"
+													[ngbTooltip]="'smartPerformance.scanCompletePage.boostTooltip' | translate"
 													#tooltip="ngbTooltip"
 													[icon]="['far', 'question-circle']"
 													container="vtr-root"
@@ -381,7 +381,7 @@
 													id="smart-performance-scan-summary-malware-tooltip"
 													attr.aria-label=""
 													role="tooltip"
-													[ngbTooltip]="'Improve security, remove malware and infections, and restore system stability.'"
+													[ngbTooltip]="'smartPerformance.scanCompletePage.malwareTooltip' | translate"
 													#tooltip="ngbTooltip"
 													[icon]="['far', 'question-circle']"
 													container="vtr-root"

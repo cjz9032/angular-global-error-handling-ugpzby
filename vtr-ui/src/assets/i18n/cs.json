@@ -3004,6 +3004,13 @@
             "music": "Hudba",
             "science": "Věda"
         },
+        "segments": {
+            "consumer": "Osobní",
+            "smb": "Práce",
+            "consumerGaming": "Hry",
+            "consumerEducation": "Vzdělávání",
+            "commercial": "Velká společnost"
+        },
         "gaming": {
             "gamingDescription": "Herní verze Vantage vám usnadňuje vylepšení vašeho herního zážitku. Kromě běžných nastavení patří mezi hlavní funkce (k dispozici u vybraných systémů):",
             "gamingFeature1": "- Monitor stavu počítače",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Váš počítač potřebuje vyladit",
         "section2Heading": "Počítač ve špičkovém stavu. Vždy",
         "section2Description": "Náš software dokáže aktivně a nepřetržitě kontrolovat váš počítač, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
+        "runningWell": "Váš počítač funguje dobře",
+        "auto": "Automatické",
+        "manual": "Ruční",
+        "am": "dop.",
+        "pm": "odp.",
+        "scanNow": "Spustit kontrolu",
+        "signUpAndFix": "Zaregistrovat a opravit",
+        "cancel": "Storno",
+        "scanning": "Hledání",
+        "fixIt": "Opravit",
+        "optimizeIt": "Optimalizovat",
+        "maintainIt": "Udržovat",
         "tunePCPerformance": {
             "title": "Vyladit Výkon Počítače",
             "heading": "Zajistěte péči pro svůj počítač",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Žádné strašení, jen osvědčené postupy"
             }
         },
+        "noScanResults": "Klepnutím na tlačítko VYHLEDAT A OPRAVIT spusťte kontrolu.",
         "startScan": "<b>Připraveni spustit kontrolu?</b> Pojďme diagnostikovat problémy s výkonem a zabezpečením ve vašem počítači.",
         "subscriptionDetails": {
             "title": "Podrobnosti o předplatném",
@@ -4610,11 +4630,23 @@
             "description": "Následuje seznam všeho, co jsme našli ve vašem {{machineFamilyName}}",
             "scanRates": "Naše kontrola váš počítač vyhodnotila takto: ",
             "summary": "Souhrn",
-            "summaryDetails": "Během naší kontroly jsme v následujících oblastech našli následující počet problémů: <b>{{issueCount}}</b>. Pokud budete chtít tyto problémy odstranit a zajistit tak hladký chod systému, můžete se zaregistrovat. Náš software dokáže aktivně a nepřetržitě kontrolovat tyto oblasti ve vašem systému, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
+            "foundIssues": "Během naší kontroly jsme našli následující počet problémů: {{issueCount}}",
+            "summaryDetails": "Pokud budete chtít tyto problémy odstranit a zajistit tak hladký chod systému, můžete se zaregistrovat. Náš software dokáže aktivně a nepřetržitě kontrolovat tyto oblasti ve vašem systému, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
+            "expiredSummaryDetails": "Platnost vašeho předplatného vypršela a v současné době můžete použít jen funkci kontroly v nástroji Smart Performance. Pokud chcete obnovit funkci „Zkontrolovat a opravit“, obnovte si předplatné stisknutím tlačítka „Obnovit a opravit“ níže.",
             "signupRepairButton": "ZAREGISTROVAT A OPRAVIT",
+            "renewAndFix": "Obnovit a opravit",
+            "backToHome": "Zpět domů",
             "monthlyPricing": "<b>Méně než {{monthlyPrice}} měsíčně.</b> Tyto problémy automaticky vyřešíme. Jednou dnes a poté každý týden <a  href=\"#\">Další informace</a>",
             "issueCount": "POČET PROBLÉMŮ: {{individualIssueCount}}",
+            "issues": "Problém(y/ů)",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "KONTROLOVANÉ OBLASTI",
+            "summaryPurchaseTip": "Zakupte si nyní roční plán a tyto problémy vám automaticky každý týden odstraníme.",
+            "tunePCTooltip": "Vylepšete celkový výkon systému, zkraťte čas spouštění počítače a zrychlete spouštění aplikací.",
+            "boostTooltip": "Vylepšete výkon sítě, užijte si příjemnější procházení internetu a využijte lepšího připojení.",
+            "malwareTooltip": "Zajistěte si vyšší zabezpečení, odstraňte malware a infekce a obnovte stabilitu systému.",
             "recommendedAction": {
                 "title": "Doporučená Akce",
                 "description": "Tyto problémy automaticky vyřešíme. Jednou dnes a poté každý týden",
@@ -4666,10 +4698,6 @@
                     "area6": "Kontrola konfigurace zpráv o systémových chybách"
                 }
             },
-            "Diskspace": "Obnovené místo na disku:",
-            "Performanceimprovements": "Vylepšení výkonu:",
-            "Securityimprovements": "Vylepšení zabezpečení:",
-            "Onceaweek": "Jednou týdně",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Zjištění zbytečných prvků v prohlížeči",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problém(y/ů)",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Zpět domů",
-            "expiredSummaryDetails": "Platnost vašeho předplatného vypršela a v současné době můžete použít jen funkci kontroly v nástroji Smart Performance. Pokud chcete obnovit funkci „Zkontrolovat a opravit“, obnovte si předplatné stisknutím tlačítka „Obnovit a opravit“ níže.",
-            "renewAndFix": "Obnovit a opravit"
+            "Diskspace": "Obnovené místo na disku:",
+            "Performanceimprovements": "Vylepšení výkonu:",
+            "Securityimprovements": "Vylepšení zabezpečení:",
+            "Onceaweek": "Jednou týdně"
         },
         "subscriberScanHomePage": {
             "title": "Vše je v pořádku ve vašem ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Váš počítač je vyladěn!",
             "successDescription": "Nástroj Smart Performance zajistil plynulejší používání vašeho počítače odstraněním následujícího počtu chyb: <b>{{issueCount}}</b>. V následující části najdete souhrn kontroly a odpovídající zprávu."
         },
-        "runningWell": "Váš počítač funguje dobře",
         "feedbackContainer": {
             "title": "Dejte nám vědět, co si myslíte",
             "subtitle": "Řekněte nám, co si myslíte o nástroji Smart Performance",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Do následujícího pole můžete uvést případné komentáře nebo názory:",
             "comments": "Komentář můžete napsat sem..."
-        },
-        "auto": "Automatické",
-        "manual": "Ruční",
-        "noScanResults": "Klepnutím na tlačítko VYHLEDAT A OPRAVIT spusťte kontrolu.",
-        "am": "dop.",
-        "pm": "odp."
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

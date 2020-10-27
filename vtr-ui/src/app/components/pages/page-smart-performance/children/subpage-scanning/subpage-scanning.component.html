@@ -51,8 +51,8 @@
 											class="btn btn-link cancel-check"
 											[disabled]="percent === 0 || isCheckingStatus || percent >= 95"
 											(click)="openCancelScanModel()"
-											[ngbTooltip]="'Cancel'"
-											placement="top">{{ 'Cancel' }}</button>
+											[ngbTooltip]="'smartPerformance.cancel' | translate"
+											placement="top">{{ 'smartPerformance.cancel' | translate }}</button>
 									</div>
 								</div>
 							</div>
@@ -79,7 +79,7 @@
 													role="text"
 													class="issues-number"
 													*ngIf="activegroup === spCategoryenum.TUNEUPPERFORMANCE">
-													Scanning
+													{{'smartPerformance.scanning' | translate}}
 													<!-- <b>30</b> {{'smartPerformance.scanCompletePage.issues' |translate }} -->
 												</p>
 												<p id="smart-performance-scanning-page-tunePC-completed"
@@ -174,7 +174,7 @@
 													role="text"
 													class="issues-number"
 													*ngIf="activegroup === spCategoryenum.INTERNETPERFORMANCE">
-													Scanning
+													{{'smartPerformance.scanning' | translate}}
 													<!-- <b>30</b> {{'smartPerformance.scanCompletePage.issues' |translate }} -->
 												</p>
 												<p id="smart-performance-scanning-page-boost-waiting"
@@ -270,7 +270,7 @@
 													role="text"
 													class="issues-number"
 													*ngIf="activegroup === spCategoryenum.MALWARESECURITY">
-													Scanning
+													{{'smartPerformance.scanning' | translate}}
 													<!-- <b>30</b> {{'smartPerformance.scanCompletePage.issues' |translate }} -->
 												</p>
 												<p id="smart-performance-scanning-page-malware-waiting"

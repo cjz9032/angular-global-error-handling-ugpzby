@@ -3004,6 +3004,13 @@
             "music": "Muzyka",
             "science": "Nauka"
         },
+        "segments": {
+            "consumer": "Osobiste",
+            "smb": "Praca",
+            "consumerGaming": "Gry",
+            "consumerEducation": "Edukacja",
+            "commercial": "Przedsiębiorstwo"
+        },
         "gaming": {
             "gamingDescription": "Wersja Vantage do gier pozwala cieszyć się lepszymi wrażeniami z gry. Oprócz często używanych ustawień dostępne są także następujące funkcje główne dostępne w wybranych systemach:",
             "gamingFeature1": "- Monitor stanu komputera",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Komputer wymaga optymalizacji",
         "section2Heading": "Komputer działa z najwyższą wydajnością. Zawsze",
         "section2Description": "Nasze oprogramowanie może aktywnie skanować komputer 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu Twój komputer będzie zawsze działać z najwyższą wydajnością.",
+        "runningWell": "Komputer działa prawidłowo",
+        "auto": "Automatyczny",
+        "manual": "Ręczne",
+        "am": "AM",
+        "pm": "PM",
+        "scanNow": "Skanuj teraz",
+        "signUpAndFix": "Zarejestruj się i rozwiąż problemy",
+        "cancel": "Anuluj",
+        "scanning": "Skanowanie",
+        "fixIt": "Napraw",
+        "optimizeIt": "Zoptymalizuj",
+        "maintainIt": "Przeprowadź konserwację",
         "tunePCPerformance": {
             "title": "Zoptymalizuj Wydajność Komputera",
             "heading": "Okaż komputerowi nieco uczucia",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Nie zamierzamy Cię straszyć. W swoich działaniach opieramy się wyłącznie na sprawdzonych procedurach"
             }
         },
+        "noScanResults": "Kliknij przycisk SKANUJ I NAPRAW, aby uruchomić proces skanowania.",
         "startScan": "<b>Czy chcesz rozpocząć skanowanie?</b> Zdiagnozujmy problemy z wydajnością i bezpieczeństwem występujące na Twoim komputerze.",
         "subscriptionDetails": {
             "title": "Szczegóły subskrypcji",
@@ -4610,11 +4630,23 @@
             "description": "Oto, co znaleźliśmy na Twoim urządzeniu {{machineFamilyName}}",
             "scanRates": "Ocena komputera na podstawie skanowania: ",
             "summary": "Podsumowanie",
-            "summaryDetails": "Skanowanie pozwoliło dotrzeć do <b>{{issueCount}} zagrożeń</b> dotyczących obszarów wymienionych poniżej. Zarejestruj się teraz, aby rozwiązać te problemy i dalej cieszyć się płynnym działaniem systemu. Nasze oprogramowanie może aktywnie skanować te obszary komputera 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu Twój komputer będzie zawsze działać z najwyższą wydajnością.",
+            "foundIssues": "Podczas skanowania wykryto następującą liczbę problemów: {{issueCount}}",
+            "summaryDetails": "Zarejestruj się teraz, aby rozwiązać te problemy i dalej cieszyć się płynnym działaniem systemu. Nasze oprogramowanie może aktywnie skanować te obszary komputera 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu Twój komputer będzie zawsze działać z najwyższą wydajnością.",
+            "expiredSummaryDetails": "Twoja subskrypcja wygasła i obecnie możesz używać tylko funkcji skanowania w programie Smart Performance. Jeśli chcesz wznowić funkcję „Skanuj i napraw”, naciśnij poniższy przycisk „odnów i napraw”, aby odnowić subskrypcję.",
             "signupRepairButton": "ZAREJESTRUJ SIĘ I ROZWIĄŻ PROBLEMY TERAZ",
+            "renewAndFix": "Odnów i napraw",
+            "backToHome": "Powrót do strony głównej",
             "monthlyPricing": "<b>Mniej niż {{monthlyPrice}} na miesiąc.</b> Automatycznie rozwiążemy te problemy. Dziś, a potem co tydzień <a  href=\"#\">Dowiedz się więcej</a>",
             "issueCount": "PROBLEMY: {{individualIssueCount}}",
+            "issues": "Problemy",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "PRZESKANOWANE OBSZARY",
+            "summaryPurchaseTip": "Wykup plan roczny już teraz, a my co tydzień będziemy automatycznie rozwiązywać te problemy.",
+            "tunePCTooltip": "Popraw ogólną wydajność systemu oraz skróć czas uruchamiania komputera i ładowania aplikacji.",
+            "boostTooltip": "Popraw wydajność sieci, wygodę przeglądania i łączność.",
+            "malwareTooltip": "Popraw bezpieczeństwo, usuń złośliwe oprogramowanie i infekcje oraz przywróć stabilność systemu.",
             "recommendedAction": {
                 "title": "Zalecane Działania",
                 "description": "Automatycznie rozwiążemy te problemy. Dziś, a potem co tydzień",
@@ -4666,10 +4698,6 @@
                     "area6": "Sprawdzono konfigurację raportów o błędach systemu"
                 }
             },
-            "Diskspace": "Odzyskane miejsce na dysku:",
-            "Performanceimprovements": "Ulepszenia w zakresie wydajności:",
-            "Securityimprovements": "Ulepszenia w zakresie bezpieczeństwa:",
-            "Onceaweek": "Raz w tygodniu",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Zidentyfikowano niepotrzebne pliki z przeglądarek",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problemy",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Powrót do strony głównej",
-            "expiredSummaryDetails": "Twoja subskrypcja wygasła i obecnie możesz używać tylko funkcji skanowania w programie Smart Performance. Jeśli chcesz wznowić funkcję „Skanuj i napraw”, naciśnij poniższy przycisk „odnów i napraw”, aby odnowić subskrypcję.",
-            "renewAndFix": "Odnów i napraw"
+            "Diskspace": "Odzyskane miejsce na dysku:",
+            "Performanceimprovements": "Ulepszenia w zakresie wydajności:",
+            "Securityimprovements": "Ulepszenia w zakresie bezpieczeństwa:",
+            "Onceaweek": "Raz w tygodniu"
         },
         "subscriberScanHomePage": {
             "title": "Wszystko jest w porządku z ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Komputer został zoptymalizowany!",
             "successDescription": "Funkcja Smart Performance pozwoliła Ci pozbyć się <b>{{issueCount}} problemów</b>, dzięki czemu komputer będzie działał płynnie. Poniżej znajdziesz podsumowanie skanowania oraz raport."
         },
-        "runningWell": "Komputer działa prawidłowo",
         "feedbackContainer": {
             "title": "Podziel się z nami swoją opinią",
             "subtitle": "Powiedz nam, co myślisz o funkcji Smart Performance",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Wprowadź dodatkowe komentarze poniżej:",
             "comments": "Wprowadź swój komentarz tutaj..."
-        },
-        "auto": "Automatyczny",
-        "manual": "Ręczne",
-        "noScanResults": "Kliknij przycisk SKANUJ I NAPRAW, aby uruchomić proces skanowania.",
-        "am": "AM",
-        "pm": "PM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
