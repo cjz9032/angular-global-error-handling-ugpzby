@@ -261,3 +261,19 @@
 	// 	}
 	// }
 }
+
+
+:host-context(.is-gaming) {
+	.vtr-ui-list-system-update-checkbox {
+		.list-group{
+			.list-group-item {
+				.custom-control{
+					.download-size{
+						color: $light;
+						opacity: 0.75;
+					}
+				}
+			}
+		}		
+	}
+}
