@@ -548,7 +548,7 @@
 						}
 					}
 					.installation-history-container {
-						background: $dark_cell;
+						// background: $dark_cell;
 					}
 					.vtr-available-updates {
 						background: $dark_cell;
@@ -627,6 +627,7 @@
 										.list-heading {
 											color: $gaming_lightest;
 											border-color: $screen_dark_20;
+											padding: 0.5rem 1.5rem;
 
 											.sort-order {
 												a {
@@ -1079,6 +1080,7 @@
 					}
 
 					.card-body {
+						padding: 0.5rem 1.5rem;
 						vtr-ui-row-switch {
 							.vtr-ui-switch-row.white-theme {
 								.right-icon {
