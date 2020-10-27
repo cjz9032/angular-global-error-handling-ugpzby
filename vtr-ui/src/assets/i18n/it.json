@@ -3004,6 +3004,13 @@
             "music": "Musica",
             "science": "Scienza"
         },
+        "segments": {
+            "consumer": "Personale",
+            "smb": "Lavoro",
+            "consumerGaming": "Giochi",
+            "consumerEducation": "Istruzione",
+            "commercial": "Aziende"
+        },
         "gaming": {
             "gamingDescription": "La versione di Vantage per i giochi semplifica e migliora l'esperienza di gioco. Oltre alle impostazioni comuni, le funzioni principali includono (disponibili su alcuni sistemi):",
             "gamingFeature1": "- Monitoraggio di stato del computer",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Il tuo PC deve essere ottimizzato",
         "section2Heading": "Il PC assicura prestazioni massime. Sempre",
         "section2Description": "Il nostro software può eseguire la scansione proattiva del PC 24x7 per individuare e risolvere i problemi, in modo che il PC assicuri sempre prestazioni di massimo livello.",
+        "runningWell": "Il PC funziona bene",
+        "auto": "Automatico",
+        "manual": "Manuale",
+        "am": "AM",
+        "pm": "PM",
+        "scanNow": "Esegui scansione",
+        "signUpAndFix": "Registrati e correggi",
+        "cancel": "Annulla",
+        "scanning": "Scansione",
+        "fixIt": "Correggi",
+        "optimizeIt": "Ottimizza",
+        "maintainIt": "Gestisci",
         "tunePCPerformance": {
             "title": "Ottimizza Le Prestazioni Del Pc",
             "heading": "Assicura la manutenzione del tuo PC",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Nessun scareware, basato sulle procedure migliori"
             }
         },
+        "noScanResults": "Fai clic sul pulsante AVVIA SCANSIONE E CORREGGI per avviare il processo di scansione.",
         "startScan": "<b>Sei pronto per avviare la scansione?</b> Eseguiamo la diagnostica dei problemi di prestazioni e sicurezza del computer.",
         "subscriptionDetails": {
             "title": "Dettagli sottoscrizione",
@@ -4610,11 +4630,23 @@
             "description": "Ecco i risultati {{machineFamilyName}}",
             "scanRates": "Risultati della scansione del tuo PC: ",
             "summary": "Riepilogo",
-            "summaryDetails": "La scansione ha rilevato <b>{{issueCount}} problemi</b> nelle seguenti aree. Registrati ora per risolvere questi problemi e assicurare le massime prestazioni del sistema. Il nostro software può eseguire la scansione di queste aree del sistema 24x7 per individuare e risolvere i problemi, in modo che il PC assicuri sempre prestazioni di massimo livello.",
+            "foundIssues": "La scansione ha rilevato {{issueCount}} problemi",
+            "summaryDetails": "Registrati ora per risolvere questi problemi e assicurare le massime prestazioni del sistema. Il nostro software può eseguire la scansione di queste aree del sistema 24x7 per individuare e risolvere i problemi, in modo che il PC assicuri sempre prestazioni di massimo livello.",
+            "expiredSummaryDetails": "La registrazione è scaduta e attualmente può utilizzare solo la funzione di scansione in Smart Performance; se si desidera riprendere la funzione \"Scansiona e correggi\", premere il pulsante \"Rinnova e correggi\" in basso per rinnovare la registrazione.",
             "signupRepairButton": "REGISTRATI E RIPARA ORA",
+            "renewAndFix": "Rinnova e correggi",
+            "backToHome": "Torna alla schermata principale",
             "monthlyPricing": "<b>Meno di {{monthlyPrice}} al mese.</b> Risolveremo automaticamente questi problemi. Una volta oggi e ogni settimana <a  href=\"#\">Ulteriori informazioni</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMI",
+            "issues": "Problemi",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "AREE ANALIZZATE",
+            "summaryPurchaseTip": "Acquista ora il piano annuale e risolveremo automaticamente questi problemi ogni settimana.",
+            "tunePCTooltip": "Migliora le prestazioni complessive del sistema, riduci i tempi di avvio del PC e migliora i tempi di caricamento delle applicazioni.",
+            "boostTooltip": "Migliora le prestazioni della rete, l'esperienza di navigazione e la connettività.",
+            "malwareTooltip": "Migliora la protezione, rimuovi malware e infezioni e ripristina la stabilità del sistema.",
             "recommendedAction": {
                 "title": "Azione Consigliata",
                 "description": "Risolveremo automaticamente questi problemi. Una volta oggi e ogni settimana",
@@ -4666,10 +4698,6 @@
                     "area6": "Configurazione dei report degli errori di sistema completata"
                 }
             },
-            "Diskspace": "Recupero spazio su disco completato:",
-            "Performanceimprovements": "Miglioramenti delle prestazioni:",
-            "Securityimprovements": "Miglioramenti della protezione:",
-            "Onceaweek": "Una volta alla settimana",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "File inutilizzati del browser identificati",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problemi",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Torna alla schermata principale",
-            "expiredSummaryDetails": "La registrazione è scaduta e attualmente può utilizzare solo la funzione di scansione in Smart Performance; se si desidera riprendere la funzione \"Scansiona e correggi\", premere il pulsante \"Rinnova e correggi\" in basso per rinnovare la registrazione.",
-            "renewAndFix": "Rinnova e correggi"
+            "Diskspace": "Recupero spazio su disco completato:",
+            "Performanceimprovements": "Miglioramenti delle prestazioni:",
+            "Securityimprovements": "Miglioramenti della protezione:",
+            "Onceaweek": "Una volta alla settimana"
         },
         "subscriberScanHomePage": {
             "title": "Il sistema funziona correttamente ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Il tuo PC è ottimizzato.",
             "successDescription": "Smart Performance ha risolto <b>{{issueCount}} problemi</b> per assicurare la corretta esecuzione del PC. Di seguito puoi trovare il riepilogo e il report della scansione."
         },
-        "runningWell": "Il PC funziona bene",
         "feedbackContainer": {
             "title": "Inviaci un feedback",
             "subtitle": "Esprimi la tua opinione su Smart Performance",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Fornisci di seguito eventuali commenti o feedback aggiuntivi:",
             "comments": "Scrivi i tuoi commenti qui..."
-        },
-        "auto": "Automatico",
-        "manual": "Manuale",
-        "noScanResults": "Fai clic sul pulsante AVVIA SCANSIONE E CORREGGI per avviare il processo di scansione.",
-        "am": "AM",
-        "pm": "PM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

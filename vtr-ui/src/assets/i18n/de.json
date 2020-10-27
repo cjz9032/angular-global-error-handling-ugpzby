@@ -3004,6 +3004,13 @@
             "music": "Musik",
             "science": "Wissenschaft"
         },
+        "segments": {
+            "consumer": "Privat",
+            "smb": "Arbeit",
+            "consumerGaming": "Spiele",
+            "consumerEducation": "Ausbildung",
+            "commercial": "Unternehmen"
+        },
         "gaming": {
             "gamingDescription": "Mit der Spieleversion von Vantage können Sie Ihr Gaming-Erlebnis ganz einfach verbessern. Neben den allgemeinen Einstellungen sind dies die Hauptfunktionen (verfügbar auf ausgewählten Systemen):",
             "gamingFeature1": "– Überwachung des Computerstatus",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Ihr PC muss optimiert werden",
         "section2Heading": "Erstklassige PC-Leistung. Immer",
         "section2Description": "Mit unserer Software können Sie Ihren PC rund um die Uhr proaktiv scannen und Probleme rasch finden und beheben, sodass Ihr PC immer eine erstklassige Leistung bietet.",
+        "runningWell": "PC läuft gut",
+        "auto": "Automatisch",
+        "manual": "Manuell",
+        "am": "vormittags",
+        "pm": "nachmittags",
+        "scanNow": "Jetzt scannen",
+        "signUpAndFix": "Registrieren & reparieren",
+        "cancel": "Abbrechen",
+        "scanning": "Scanvorgang wird durchgeführt",
+        "fixIt": "Reparieren",
+        "optimizeIt": "Optimieren",
+        "maintainIt": "Warten",
         "tunePCPerformance": {
             "title": "PC-leistung Optimieren",
             "heading": "Kümmern Sie sich um Ihren Computer",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Keine Scareware, sondern bewährte Verfahren"
             }
         },
+        "noScanResults": "Klicken Sie auf \"SCANNEN UND REPARIEREN\", um den Scan zu starten.",
         "startScan": "<b>Sind Sie bereit für den Scan?</b> Wir ermitteln Leistungs‑ und Sicherheitsprobleme auf Ihrem Computer.",
         "subscriptionDetails": {
             "title": "Abonnementdetails",
@@ -4610,11 +4630,23 @@
             "description": "Gefunden auf Ihrem {{machineFamilyName}}",
             "scanRates": "Unser Scan stuft Ihren PC ein als: ",
             "summary": "Zusammenfassung",
-            "summaryDetails": "Unser Scan hat <b>{{issueCount}} Problem(e)</b> in den folgenden Bereichen gefunden. Registrieren Sie sich jetzt, damit diese Probleme behoben werden und Ihr System reibungslos läuft. Mit unserer Software können diese Bereiche auf Ihrem System rund um die Uhr proaktiv gescannt und Probleme rasch gefunden und behoben werden, sodass Ihr PC immer eine erstklassige Leistung bietet.",
+            "foundIssues": "Der Scan hat {{issueCount}} Probleme gefunden",
+            "summaryDetails": "Registrieren Sie sich jetzt, damit diese Probleme behoben werden und Ihr System reibungslos läuft. Mit unserer Software können diese Bereiche auf Ihrem System rund um die Uhr proaktiv gescannt und Probleme rasch gefunden und behoben werden, sodass Ihr PC immer eine erstklassige Leistung bietet.",
+            "expiredSummaryDetails": "Ihr Abonnement ist abgelaufen und Sie können die Scan-Funktion derzeit nur in Smart Performance verwenden. Wenn Sie die Funktion \"Scannen und reparieren\" verwenden möchten, klicken Sie auf die unten angezeigte Schaltfläche \"Erneuern und reparieren\", um Ihr Abonnement zu erneuern.",
             "signupRepairButton": "JETZT REGISTRIEREN UND REPARIEREN",
+            "renewAndFix": "Erneuern und reparieren",
+            "backToHome": "Zurück zur Startseite",
             "monthlyPricing": "<b>Weniger als {{monthlyPrice}} im Monat.</b> Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche <a  href=\"#\">Mehr erfahren</a>",
             "issueCount": "{{individualIssueCount}} PROBLEME",
+            "issues": "Problem(e)",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "GESCANNTE BEREICHE",
+            "summaryPurchaseTip": "Kaufen Sie jetzt das Jahresabonnement und diese Probleme werden jede Woche automatisch behoben.",
+            "tunePCTooltip": "Optimierte Gesamtsystemleistung, verkürzte PC-Startzeit und verbesserte Anwendungsladezeiten.",
+            "boostTooltip": "Bessere Netzwerkleistung, Browsererfahrung und Konnektivität.",
+            "malwareTooltip": "Höhere Sicherheit, Entfernen von Malware und Viren und Wiederherstellen der Systemstabilität.",
             "recommendedAction": {
                 "title": "Empfohlene Aktion",
                 "description": "Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche",
@@ -4666,10 +4698,6 @@
                     "area6": "Konfiguration der Systemfehlerberichte wurde geprüft"
                 }
             },
-            "Diskspace": "Gewonnener Speicherplatz:",
-            "Performanceimprovements": "Leistungsverbesserungen:",
-            "Securityimprovements": "Sicherheitsverbesserungen:",
-            "Onceaweek": "Einmal pro Woche",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Unnötige Browserdateien wurden identifiziert",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problem(e)",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Zurück zur Startseite",
-            "expiredSummaryDetails": "Ihr Abonnement ist abgelaufen und Sie können die Scan-Funktion derzeit nur in Smart Performance verwenden. Wenn Sie die Funktion \"Scannen und reparieren\" verwenden möchten, klicken Sie auf die unten angezeigte Schaltfläche \"Erneuern und reparieren\", um Ihr Abonnement zu erneuern.",
-            "renewAndFix": "Erneuern und reparieren"
+            "Diskspace": "Gewonnener Speicherplatz:",
+            "Performanceimprovements": "Leistungsverbesserungen:",
+            "Securityimprovements": "Sicherheitsverbesserungen:",
+            "Onceaweek": "Einmal pro Woche"
         },
         "subscriberScanHomePage": {
             "title": "Ordnungsgemäße Funktion sichergestellt für Ihr ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Ihr PC ist optimiert!",
             "successDescription": "Smart Performance hat <b>{{issueCount}} Problem(e)</b> behoben, damit Ihr PC reibungslos läuft. Eine Zusammenfassung des Scans und Berichte finden Sie unten."
         },
-        "runningWell": "PC läuft gut",
         "feedbackContainer": {
             "title": "Geben Sie uns Feedback",
             "subtitle": "Sagen Sie uns, was Sie von Smart Performance halten",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Kommentare oder zusätzliches Feedback können Sie unten hinterlassen:",
             "comments": "Geben Sie hier Kommentare ein …"
-        },
-        "auto": "Automatisch",
-        "manual": "Manuell",
-        "noScanResults": "Klicken Sie auf \"SCANNEN UND REPARIEREN\", um den Scan zu starten.",
-        "am": "vormittags",
-        "pm": "nachmittags"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

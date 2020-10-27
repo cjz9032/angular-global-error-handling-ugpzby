@@ -3004,6 +3004,13 @@
             "music": "Muziek",
             "science": "Wetenschap"
         },
+        "segments": {
+            "consumer": "Privé",
+            "smb": "Werk",
+            "consumerGaming": "Gamen",
+            "consumerEducation": "Opleiding",
+            "commercial": "Onderneming"
+        },
         "gaming": {
             "gamingDescription": "Met de gamingversie van Vantage kunt u de manier waarop u games beleeft eenvoudig verbeteren. Naast de algemene instellingen zijn de belangrijkste functies (beschikbaar op bepaalde systemen) onder andere:",
             "gamingFeature1": "-Bewaking van de status van de computer",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Uw pc moet worden geoptimaliseerd",
         "section2Heading": "Uitstekende pc-prestaties. Altijd",
         "section2Description": "Onze software kan uw pc 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties biedt.",
+        "runningWell": "De pc functioneert prima",
+        "auto": "Automatisch",
+        "manual": "Handmatig",
+        "am": "AM",
+        "pm": "PM",
+        "scanNow": "Nu scannen",
+        "signUpAndFix": "Aanmelden en oplossen",
+        "cancel": "Annuleren",
+        "scanning": "Bezig met scannen...",
+        "fixIt": "Oplossen",
+        "optimizeIt": "Optimaliseren",
+        "maintainIt": "Onderhouden",
         "tunePCPerformance": {
             "title": "PC-prestaties Optimaliseren",
             "heading": "Geef uw computer wat extra aandacht",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Geen scareware en gemaakt met best practices"
             }
         },
+        "noScanResults": "Klik op de knop SCANNEN EN HERSTELLEN om het scanproces te starten.",
         "startScan": "<b>Wilt u de scan starten?</b> Laten we een diagnose van de prestatie- en beveiligingsproblemen in uw computer maken.",
         "subscriptionDetails": {
             "title": "Abonnementsgegevens",
@@ -4610,11 +4630,23 @@
             "description": "Dit is wat we hebben gevonden op uw {{machineFamilyName}}",
             "scanRates": "Onze scan beoordeelt uw pc met: ",
             "summary": "Overzicht",
-            "summaryDetails": "Bij onze scan zijn er <b>{{issueCount}} problemen</b> op de volgende onderstaande gebieden gevonden. Meld u nu aan om deze problemen te verhelpen en uw systeem goed te laten werken. Onze software kan deze gebieden van uw systeem 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties biedt.",
+            "foundIssues": "Onze scan heeft {{issueCount}} problemen aangetroffen",
+            "summaryDetails": "Meld u nu aan om deze problemen te verhelpen en uw systeem goed te laten werken. Onze software kan deze gebieden van uw systeem 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties levert.",
+            "expiredSummaryDetails": "Uw abonnement is verlopen en u kunt momenteel alleen de scanfunctie van Smart Performance gebruiken. Als u de functie \"Scannen en herstellen\" weer wilt gebruiken, klikt u op de knop \"Verlengen en herstellen\" hieronder om uw abonnement te verlengen.",
             "signupRepairButton": "NU AANMELDEN EN HERSTELLEN",
+            "renewAndFix": "Verlengen en herstellen",
+            "backToHome": "Terug naar startpagina",
             "monthlyPricing": "<b>Minder dan {{monthlyPrice}} per maand.</b> Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week <a  href=\"#\">Meer informatie</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMEN",
+            "issues": "Problemen",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "GESCANDE GEBIEDEN",
+            "summaryPurchaseTip": "Koop nu een jaarabonnement, dan zullen we deze problemen elke week automatisch verhelpen.",
+            "tunePCTooltip": "Verbeter de algehele systeemprestaties, verkort de opstarttijd van de pc en verbeter de laadtijd van toepassingen.",
+            "boostTooltip": "Verbeter netwerkprestaties, surfen en connectiviteit.",
+            "malwareTooltip": "Verbeter de beveiliging, verwijder malware en infecties en herstel de stabiliteit van het systeem.",
             "recommendedAction": {
                 "title": "Aanbevolen Handeling",
                 "description": "Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week",
@@ -4666,10 +4698,6 @@
                     "area6": "Configuratie rapporten van systeemfouten gecontroleerd"
                 }
             },
-            "Diskspace": "Teruggehaalde schijfruimte:",
-            "Performanceimprovements": "Prestatieverbeteringen:",
-            "Securityimprovements": "Beveiligingsverbeteringen:",
-            "Onceaweek": "Eén keer per week",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Rommel van browsers geïdentificeerd",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problemen",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Terug naar startpagina",
-            "expiredSummaryDetails": "Uw abonnement is verlopen en u kunt momenteel alleen de scanfunctie van Smart Performance gebruiken. Als u de functie \"Scannen en herstellen\" weer wilt gebruiken, klikt u op de knop \"Verlengen en herstellen\" hieronder om uw abonnement te verlengen.",
-            "renewAndFix": "Verlengen en herstellen"
+            "Diskspace": "Teruggehaalde schijfruimte:",
+            "Performanceimprovements": "Prestatieverbeteringen:",
+            "Securityimprovements": "Beveiligingsverbeteringen:",
+            "Onceaweek": "Eén keer per week"
         },
         "subscriberScanHomePage": {
             "title": "Alles werkt goed met uw ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Uw pc is geoptimaliseerd!",
             "successDescription": "Smart Performance heeft <b>{{issueCount}} problemen</b> opgelost om uw pc goed te laten werken. Hieronder vindt u een scanoverzicht en een rapport."
         },
-        "runningWell": "De pc functioneert prima",
         "feedbackContainer": {
             "title": "Geef ons uw feedback",
             "subtitle": "Vertel ons wat u van Smart Performance vindt",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Laat hieronder eventuele opmerkingen of aanvullende feedback achter:",
             "comments": "Laat hier uw opmerkingen achter..."
-        },
-        "auto": "Automatisch",
-        "manual": "Handmatig",
-        "noScanResults": "Klik op de knop SCANNEN EN HERSTELLEN om het scanproces te starten.",
-        "am": "AM",
-        "pm": "PM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -3004,6 +3004,13 @@
             "music": "音樂",
             "science": "科學"
         },
+        "segments": {
+            "consumer": "個人",
+            "smb": "工作",
+            "consumerGaming": "遊戲",
+            "consumerEducation": "教育",
+            "commercial": "企業"
+        },
         "gaming": {
             "gamingDescription": "有了遊戲版的 Vantage，您可以很輕鬆地改善遊戲體驗。除了常見的設定外，主要功能包括（適用於特定系統）：",
             "gamingFeature1": "- 電腦狀態監視器",
@@ -4311,6 +4318,18 @@
         "tuneUP": "您的 PC 需要調整一下",
         "section2Heading": "PC 效能出眾。永遠",
         "section2Description": "我們的軟體可以全天候主動掃描 PC，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
+        "runningWell": "PC 執行狀況良好",
+        "auto": "自動",
+        "manual": "手動",
+        "am": "上午",
+        "pm": "下午",
+        "scanNow": "立即掃描",
+        "signUpAndFix": "註冊及修正",
+        "cancel": "取消",
+        "scanning": "掃描中",
+        "fixIt": "修正",
+        "optimizeIt": "最佳化",
+        "maintainIt": "維護",
         "tunePCPerformance": {
             "title": "調校 PC 效能",
             "heading": "給您的電腦多一些關愛",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "依循最佳實務所建構，恐嚇軟體絕跡"
             }
         },
+        "noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。",
         "startScan": "<b>準備好開始掃描了嗎？</b>讓我們來診斷電腦中的效能與安全性問題。",
         "subscriptionDetails": {
             "title": "訂閱詳細資訊",
@@ -4610,11 +4630,23 @@
             "description": "以下是在您的 {{machineFamilyName}} 電腦中發現的問題",
             "scanRates": "我們對您的 PC 掃描評分為：",
             "summary": "摘要",
-            "summaryDetails": "我們的掃描在以下區域發現 <b>{{issueCount}} 個問題</b>。立即註冊，以修正這些問題並保持系統執行順暢。我們的軟體可以全天候主動掃描系統的這些區域，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
+            "foundIssues": "我們的掃描找到 {{issueCount}} 個問題",
+            "summaryDetails": "立即註冊，以修正這些問題並保持系統執行順暢。我們的軟體可以全天候主動掃描系統的這些區域，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
+            "expiredSummaryDetails": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，如果您想回復「掃描並修復」功能，請按下下方的「續訂並修復」按鈕來續訂您的訂閱。",
             "signupRepairButton": "立即註冊並修復",
+            "renewAndFix": "續訂並修復",
+            "backToHome": "返回首頁",
             "monthlyPricing": "<b>每月不到 {{monthlyPrice}}。</b>我們會自動修正這些問題。今天一次，此後每週一次<a  href=\"#\">瞭解更多</a>",
             "issueCount": "{{individualIssueCount}} 個問題",
+            "issues": "問題",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "掃描區域",
+            "summaryPurchaseTip": "立即購買年度計劃，我們每週都會自動修正這些問題。",
+            "tunePCTooltip": "提升整體系統效能、縮短 PC 啟動時間並改善應用程式載入時間。",
+            "boostTooltip": "提升網路效能、瀏覽體驗和連線能力。",
+            "malwareTooltip": "提升安全性、移除惡意軟體和感染以及恢復系統穩定性。",
             "recommendedAction": {
                 "title": "建議動作",
                 "description": "我們會自動修正這些問題。今天一次，此後每週一次",
@@ -4666,10 +4698,6 @@
                     "area6": "已檢查系統錯誤報告配置"
                 }
             },
-            "Diskspace": "磁碟空間已收回：",
-            "Performanceimprovements": "效能改善：",
-            "Securityimprovements": "安全性改善：",
-            "Onceaweek": "每週一次",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "已發現瀏覽器中的雜亂情況",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "問題",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "返回首頁",
-            "expiredSummaryDetails": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，如果您想回復「掃描並修復」功能，請按下下方的「續訂並修復」按鈕來續訂您的訂閱。",
-            "renewAndFix": "續訂並修復"
+            "Diskspace": "磁碟空間已收回：",
+            "Performanceimprovements": "效能改善：",
+            "Securityimprovements": "安全性改善：",
+            "Onceaweek": "每週一次"
         },
         "subscriberScanHomePage": {
             "title": "您的系統一切正常",
@@ -4928,7 +4953,6 @@
             "successTitle": "您的電腦效能已調升！",
             "successDescription": "Smart Performance 已解決 <b>{{issueCount}} 個問題，</b>以保持電腦順暢執行，您可在下方找到掃描摘要和報告。"
         },
-        "runningWell": "PC 執行狀況良好",
         "feedbackContainer": {
             "title": "給我們一些意見回饋",
             "subtitle": "告訴我們您對 Smart Performance 的想法",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "請在下方留言，或告訴我們任何其他意見：",
             "comments": "請在這裡留下您的寶貴意見..."
-        },
-        "auto": "自動",
-        "manual": "手動",
-        "noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。",
-        "am": "上午",
-        "pm": "下午"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -3004,6 +3004,13 @@
             "music": "Música",
             "science": "Ciência"
         },
+        "segments": {
+            "consumer": "Pessoal",
+            "smb": "Trabalho",
+            "consumerGaming": "Jogos",
+            "consumerEducation": "Educação",
+            "commercial": "Empresas"
+        },
         "gaming": {
             "gamingDescription": "A versão do Vantage para jogos faz com melhore a sua experiência de jogo de forma simples. Além das definições comuns, as principais funcionalidades incluem (disponíveis em sistemas selecionados):",
             "gamingFeature1": "-Monitor de estado do computador",
@@ -4311,6 +4318,18 @@
         "tuneUP": "O seu PC precisa de uma afinação",
         "section2Heading": "Desempenho de topo do PC. Sempre",
         "section2Description": "O nosso software pode analisar proativamente o seu PC 24 horas por dia para localizar e corrigir os problemas à medida que estes surgem, para o seu PC ter sempre um desempenho de topo.",
+        "runningWell": "O PC está a funcionar bem",
+        "auto": "Auto",
+        "manual": "Manual",
+        "am": "AM",
+        "pm": "PM",
+        "scanNow": "Analisar agora",
+        "signUpAndFix": "Registar e corrigir",
+        "cancel": "Cancelar",
+        "scanning": "A examinar",
+        "fixIt": "Corrija",
+        "optimizeIt": "Otimize",
+        "maintainIt": "Faça a manutenção",
         "tunePCPerformance": {
             "title": "Otimizar O Desempenho Do PC",
             "heading": "Trate o seu computador com cuidados especiais",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Sem scareware, desenvolvido com as melhores práticas"
             }
         },
+        "noScanResults": "Clique no botão ANALISAR E CORRIGIR para acionar o processo de análise.",
         "startScan": "<b>Está pronto para iniciar a análise?</b> Vamos diagnosticar os problemas de desempenho e segurança no seu computador.",
         "subscriptionDetails": {
             "title": "Detalhes da Subscrição",
@@ -4610,11 +4630,23 @@
             "description": "Encontramos o seguinte no seu {{machineFamilyName}}",
             "scanRates": "A nossa análise classifica o seu PC em: ",
             "summary": "Descrição",
-            "summaryDetails": "A nossa análise encontrou <b>{{issueCount}} problema(s)</b> nas seguintes áreas abaixo. Inscreva-se agora para resolver estes problemas e manter o sistema a funcionar sem problemas. O nosso software pode analisar proativamente estas áreas do seu sistema PC 24 horas por dia para localizar e corrigir os problemas à medida que estes surgem, para o seu PC ter sempre um desempenho de topo.",
+            "foundIssues": "A nossa análise encontrou {{issueCount}} problema(s)",
+            "summaryDetails": "Inscreva-se agora para resolver estes problemas e manter o sistema a funcionar sem problemas. O nosso software pode analisar proativamente estas áreas do seu sistema PC 24 horas por dia para localizar e corrigir os problemas à medida que estes surgem, para o seu PC ter sempre um desempenho de topo.",
+            "expiredSummaryDetails": "A sua subscrição expirou e atualmente só pode utilizar a funcionalidade de análise no Smart Performance. Se pretende retomar a funcionalidade “Analisar e Corrigir”, prima o botão “renovar e corrigir” abaixo para renova a sua subscrição.",
             "signupRepairButton": "INSCREVER-SE E REPARAR AGORA",
+            "renewAndFix": "Renovar e Corrigir",
+            "backToHome": "Voltar ao início",
             "monthlyPricing": "<b>Menos de {{monthlyPrice}} por mês.</b> Vamos resolver automaticamente estes problemas. Uma vez hoje e depois todas as semanas <a  href=\"#\">Saiba mais</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMAS",
+            "issues": "Problema(s)",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "ÁREAS ANALISADAS",
+            "summaryPurchaseTip": "Adquira já o plano anual para resolveremos automaticamente estes problemas todas as semanas.",
+            "tunePCTooltip": "Melhorar o desempenho geral do sistema, reduza o tempo de arranque do PC e melhore os tempos de carregamento das aplicações.",
+            "boostTooltip": "Melhore o desempenho da rede, a experiência de navegação e a conectividade.",
+            "malwareTooltip": "Melhore a segurança, remova o malware e as infeções, e restaure a estabilidade do sistema.",
             "recommendedAction": {
                 "title": "Ação Recomendada",
                 "description": "Vamos resolver automaticamente estes problemas. Uma vez hoje e depois todas as semanas",
@@ -4666,10 +4698,6 @@
                     "area6": "Foi verificada a configuração dos relatórios de erros do sistema"
                 }
             },
-            "Diskspace": "Espaço em disco reclamado:",
-            "Performanceimprovements": "Melhorias de desempenho:",
-            "Securityimprovements": "Melhorias de segurança:",
-            "Onceaweek": "Uma vez por semana",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Foi identificada desordem dos navegadores",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problema(s)",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Voltar ao início",
-            "expiredSummaryDetails": "A sua subscrição expirou e atualmente só pode utilizar a funcionalidade de análise no Smart Performance. Se pretende retomar a funcionalidade “Analisar e Corrigir”, prima o botão “renovar e corrigir” abaixo para renova a sua subscrição.",
-            "renewAndFix": "Renovar e Corrigir"
+            "Diskspace": "Espaço em disco reclamado:",
+            "Performanceimprovements": "Melhorias de desempenho:",
+            "Securityimprovements": "Melhorias de segurança:",
+            "Onceaweek": "Uma vez por semana"
         },
         "subscriberScanHomePage": {
             "title": "Está tudo a funcionar corretamente com o seu ",
@@ -4928,7 +4953,6 @@
             "successTitle": "O seu PC está otimizado!",
             "successDescription": "O Smart Performance resolveu <b>{{issueCount}} problema(s)</b> para manter o seu PC a funcionar sem problemas, poderá encontrar o resumo da análise e o relatório abaixo."
         },
-        "runningWell": "O PC está a funcionar bem",
         "feedbackContainer": {
             "title": "Partilhe os seus comentários",
             "subtitle": "Diga-nos o que pensa do Smart Performance",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Partilhe connosco os seus comentários ou opiniões abaixo:",
             "comments": "Deixe os seus comentários aqui..."
-        },
-        "auto": "Auto",
-        "manual": "Manual",
-        "noScanResults": "Clique no botão ANALISAR E CORRIGIR para acionar o processo de análise.",
-        "am": "AM",
-        "pm": "PM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

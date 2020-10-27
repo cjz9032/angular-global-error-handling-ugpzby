@@ -3004,6 +3004,13 @@
             "music": "Glasba",
             "science": "Znanost"
         },
+        "segments": {
+            "consumer": "Osebni",
+            "smb": "Delo",
+            "consumerGaming": "Igranje",
+            "consumerEducation": "Izobraževanje",
+            "commercial": "Podjetje"
+        },
         "gaming": {
             "gamingDescription": "Z igričarsko različico (Gaming) sistema Vantage boste zlahka izboljšali svojo izkušnjo z igranjem iger. Glavne funkcije poleg pogostih nastavitev vključujejo (na voljo v izbranih sistemih):",
             "gamingFeature1": "- Spremljanje stanja računalnika",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Delovanje računalnike je treba optimizirati",
         "section2Heading": "Vrhunska učinkovitost delovanja računalnika Vedno",
         "section2Description": "Naša programska oprema lahko pregleduje vaš računalnik 24 ur dnevno vse dni v tednu in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
+        "runningWell": "Računalnik deluje dobro",
+        "auto": "Samodejno",
+        "manual": "Ročno",
+        "am": "AM",
+        "pm": "PM",
+        "scanNow": "Preglej zdaj",
+        "signUpAndFix": "Prijava in odpravljanje težav",
+        "cancel": "Prekliči",
+        "scanning": "Pregledovanje",
+        "fixIt": "Odpravljanje težav",
+        "optimizeIt": "Optimiziranje",
+        "maintainIt": "Vzdrževanje",
         "tunePCPerformance": {
             "title": "Optimalno Delovanje",
             "heading": "Pokažite računalniku, kako ga cenite",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Nobene strašilne programske opreme, zgolj najboljše prakse"
             }
         },
+        "noScanResults": "Postopek pregleda sprožite s klikom gumba PREGLEJ IN POPRAVI.",
         "startScan": "<b>Ali ste pripravljeni za začetek pregleda?</b> Diagnosticirajmo in odpravimo težave z učinkovitostjo delovanja in varnostjo računalnika.",
         "subscriptionDetails": {
             "title": "Podrobnosti o naročnini",
@@ -4610,11 +4630,23 @@
             "description": "Najdeno v vašem {{machineFamilyName}}",
             "scanRates": "Naš pregled je vaš računalnik ocenil z: ",
             "summary": "Povzetek",
-            "summaryDetails": "Naš pregled je našel <b>{{issueCount}} težav</b> na področjih, navedenih spodaj. Če želite odpraviti te težave in si zagotoviti optimalno delovanje sistema, se registrirajte. Naša programska oprema lahko 24 ur dnevno vse dni v tednu pregleduje ta področja sistema in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
+            "foundIssues": "Pregled je odkril toliko težav: {{issueCount}}",
+            "summaryDetails": "Če želite odpraviti te težave in si zagotoviti optimalno delovanje sistema, se registrirajte. Naša programska oprema lahko 24 ur dnevno vse dni v tednu pregleduje ta področja sistema in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
+            "expiredSummaryDetails": "Vaša naročnina je potekla, zato trenutno lahko uporabljate samo funkcijo za pregledovanje v storitvi Smart Performance. Če želite obnoviti funkcijo »Preglej in popravi«, pritisnite spodnji gumb »Obnovi in popravi«, da obnovite naročnino.",
             "signupRepairButton": "REGISTRIRAJTE SE IN POPRAVITE ZDAJ",
+            "renewAndFix": "Obnovi in popravi",
+            "backToHome": "Nazaj na začetno stran",
             "monthlyPricing": "<b>Manj kot {{monthlyPrice}} na mesec.</b> Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden <a  href=\"#\">Več informacij</a>",
             "issueCount": "ŠT. TEŽAV: {{individualIssueCount}}",
+            "issues": "Težave",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "PREGLEDANA PODROČJA",
+            "summaryPurchaseTip": "Kupite letni paket zdaj, težave pa bomo samodejno odpravljali vsak teden.",
+            "tunePCTooltip": "Izboljšajte splošno zmogljivost sistema, skrajšajte čas zagona računalnika in izboljšajte čas nalaganja aplikacij.",
+            "boostTooltip": "Izboljšajte zmogljivost omrežja, izkušnjo brskanja in povezljivost.",
+            "malwareTooltip": "Izboljšajte varnost, odstranite zlonamerno programsko opremo in okužbe ter obnovite stabilnost sistema.",
             "recommendedAction": {
                 "title": "Priporočen Ukrep",
                 "description": "Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden",
@@ -4666,10 +4698,6 @@
                     "area6": "Preverjena je konfiguracija poročil o napakah sistema"
                 }
             },
-            "Diskspace": "Znova pridobljen prostor na disku:",
-            "Performanceimprovements": "Izboljšave učinkovitosti delovanja:",
-            "Securityimprovements": "Varnostne izboljšave:",
-            "Onceaweek": "Enkrat tedensko",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Poiskana je navlaka iz brskalnikov",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Težave",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Nazaj na začetno stran",
-            "expiredSummaryDetails": "Vaša naročnina je potekla, zato trenutno lahko uporabljate samo funkcijo za pregledovanje v storitvi Smart Performance. Če želite obnoviti funkcijo »Preglej in popravi«, pritisnite spodnji gumb »Obnovi in popravi«, da obnovite naročnino.",
-            "renewAndFix": "Obnovi in popravi"
+            "Diskspace": "Znova pridobljen prostor na disku:",
+            "Performanceimprovements": "Izboljšave učinkovitosti delovanja:",
+            "Securityimprovements": "Varnostne izboljšave:",
+            "Onceaweek": "Enkrat tedensko"
         },
         "subscriberScanHomePage": {
             "title": "Vse je v redu z ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Vaš računalnik je optimiziran!",
             "successDescription": "Smart Performance je odpravil <b>{{issueCount}} težav</b>, tako da bo računalnik deloval brezhibno. Povzetek pregleda in poročilo o njem si lahko ogledate spodaj."
         },
-        "runningWell": "Računalnik deluje dobro",
         "feedbackContainer": {
             "title": "Pošljite nam povratne informacije",
             "subtitle": "Povejte nam svoje mnenje o storitvi Smart Performance",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Spodaj vnesite morebitne komentarje ali dodatne povratne informacije:",
             "comments": "Komentarje vnesite tukaj ..."
-        },
-        "auto": "Samodejno",
-        "manual": "Ročno",
-        "noScanResults": "Postopek pregleda sprožite s klikom gumba PREGLEJ IN POPRAVI.",
-        "am": "AM",
-        "pm": "PM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

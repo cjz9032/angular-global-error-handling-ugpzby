@@ -3004,6 +3004,13 @@
             "music": "Musik",
             "science": "Videnskab"
         },
+        "segments": {
+            "consumer": "Privat",
+            "smb": "Arbejde",
+            "consumerGaming": "Spil",
+            "consumerEducation": "Uddannelse",
+            "commercial": "Virksomhed"
+        },
         "gaming": {
             "gamingDescription": "Spilversionen af Vantage gør det nemt for dig at forbedre din spiloplevelse. Ud over de almindelige indstillinger får du adgang til følgende hovedfunktioner (findes på udvalgte systemer):",
             "gamingFeature1": "-Overvågning af computerstatus",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Din computer skal opdateres",
         "section2Heading": "Computerens ydeevne er helt i top. Altid",
         "section2Description": "Vores software kan proaktivt scanne din computer døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
+        "runningWell": "Computeren kører godt",
+        "auto": "Auto",
+        "manual": "Manuelt",
+        "am": "AM",
+        "pm": "PM",
+        "scanNow": "Scan nu",
+        "signUpAndFix": "Tilmeld dig, og løs det",
+        "cancel": "Annuller",
+        "scanning": "Søger",
+        "fixIt": "Løs det",
+        "optimizeIt": "Optimer det",
+        "maintainIt": "Vedligehold det",
         "tunePCPerformance": {
             "title": "Optimer Computerens Ydeevne",
             "heading": "Forkæl din computer lidt mere",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Ingen scareware, alt er oprettet med best practice-løsninger"
             }
         },
+        "noScanResults": "Klik på knappen SCAN & FIX for at aktivere scanningsprocessen.",
         "startScan": "<b>Er du klar til at starte scanningen?</b> Lad os identificere ydeevne og sikkerhed i din computer.",
         "subscriptionDetails": {
             "title": "Oplysninger om abonnement",
@@ -4610,11 +4630,23 @@
             "description": "Dette er fundet på din {{machineFamilyName}}",
             "scanRates": "Vores scanning vurderer din computer til: ",
             "summary": "Opsummering",
-            "summaryDetails": "Vores scanning fandt <b>{{issueCount}} problem(er)</b> i følgende områder nedenfor. Tilmeld dig nu for at løse problemerne og sørge for, at systemet fungerer problemfrit. Vores software kan proaktivt scanne disse områder i dit system døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
+            "foundIssues": "Vores scanning fandt {{issueCount}} problem(er)",
+            "summaryDetails": "Tilmeld dig nu for at løse problemerne og sørge for, at systemet fungerer problemfrit. Vores software kan proaktivt scanne disse områder i dit system døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
+            "expiredSummaryDetails": "Dit abonnement er udløbet, og du kan i øjeblikket kun bruge scanningsfunktionen i Smart Performance. Hvis du vil aktivere funktionen \"Scan og ret\" igen, skal du trykke på knappen \"Forny og ret\" nedenfor for at forny dit abonnement.",
             "signupRepairButton": "TILMELD OG REPARER NU",
+            "renewAndFix": "Forny og ret",
+            "backToHome": "Tilbage til start",
             "monthlyPricing": "<b>Mindre end {{monthlyPrice}} pr. måned.</b> Problemerne løses automatisk. Én gang i dag og hver uge herefter <a  href=\"#\">Få mere at vide</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMER",
+            "issues": "Problem(er)",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "SCANNEDE OMRÅDER",
+            "summaryPurchaseTip": "Køb det årlige abonnement nu, så løses problemerne automatisk hver uge.",
+            "tunePCTooltip": "Optimer den generelle systemydeevne, reducer pc'ens starttid, og optimer indlæsningstider for programmer.",
+            "boostTooltip": "Optimer netværkets ydeevne, browseroplevelse og tilslutningsmuligheder.",
+            "malwareTooltip": "Optimer sikkerheden, fjern malware og infektioner, og gendan systemets stabilitet.",
             "recommendedAction": {
                 "title": "Anbefalet Handling",
                 "description": "Problemerne løses automatisk. Én gang i dag og hver uge herefter",
@@ -4666,10 +4698,6 @@
                     "area6": "Kontrollerede konfiguration af systemfejlrapporter"
                 }
             },
-            "Diskspace": "Tilbageført diskplads:",
-            "Performanceimprovements": "Forbedringer af ydeevne:",
-            "Securityimprovements": "Sikkerhedsforbedringer:",
-            "Onceaweek": "Én gang om ugen",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Identificerede rod fra browsere",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problem(er)",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Tilbage til start",
-            "expiredSummaryDetails": "Dit abonnement er udløbet, og du kan i øjeblikket kun bruge scanningsfunktionen i Smart Performance. Hvis du vil aktivere funktionen \"Scan og ret\" igen, skal du trykke på knappen \"Forny og ret\" nedenfor for at forny dit abonnement.",
-            "renewAndFix": "Forny og ret"
+            "Diskspace": "Tilbageført diskplads:",
+            "Performanceimprovements": "Forbedringer af ydeevne:",
+            "Securityimprovements": "Sikkerhedsforbedringer:",
+            "Onceaweek": "Én gang om ugen"
         },
         "subscriberScanHomePage": {
             "title": "Alt fungerer med ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Din computer er opdateret!",
             "successDescription": "Smart Performance løste <b>{{issueCount}} problem(er)</b> for at få computeren til at fungere problemfrit kan du finde en scanningsoversigt og rapporten herunder."
         },
-        "runningWell": "Computeren kører godt",
         "feedbackContainer": {
             "title": "Giv os feedback",
             "subtitle": "Fortæl os, hvad du synes om Smart Performance",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "Angiv eventuelle andre kommentarer eller yderligere feedback nedenfor:",
             "comments": "Skriv dine kommentarer her..."
-        },
-        "auto": "Auto",
-        "manual": "Manuelt",
-        "noScanResults": "Klik på knappen SCAN & FIX for at aktivere scanningsprocessen.",
-        "am": "AM",
-        "pm": "PM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",

@@ -2419,9 +2419,9 @@
 		"signUpAndFix": "Sign up & fix",
 		"cancel": "Cancel",
 		"scanning": "Scanning",
-		"fixTt": "Fix it",
-		"optimizeTt": "Optimize it",
-		"maintainTt": "Maintain it",
+		"fixIt": "Fix it",
+		"optimizeIt": "Optimize it",
+		"maintainIt": "Maintain it",
 		"tunePCPerformance": {
 			"title": "Tune PC Performance",
 			"summaryTitle": "Tune PC Performance",

@@ -38,14 +38,14 @@
 	</div>
 	<div class="pc-status-info d-flex"
 		*ngIf="!hideStatus">
-		<p class="info-text needs-fix"><span title="Fix it"
+		<p class="info-text needs-fix"><span [title]="'smartPerformance.fixIt' | translate"
 				id="smart-performance-rating-status-fix"
-				role="text">Fix it</span></p>
-		<p class="info-text needs-optimize"><span title="Optimize it"
+				role="text">{{'smartPerformance.fixIt' | translate}}</span></p>
+		<p class="info-text needs-optimize"><span [title]="'smartPerformance.optimizeIt' | translate"
 				id="smart-performance-rating-status-optimize"
-				role="text">Optimize it</span></p>
-		<p class="info-text running-maintain"><span title="Maintain it"
+				role="text">{{'smartPerformance.optimizeIt' | translate}}</span></p>
+		<p class="info-text running-maintain"><span [title]="'smartPerformance.maintainIt' | translate"
 				id="smart-performance-rating-status-maintain"
-				role="text">Maintain it</span></p>
+				role="text">{{'smartPerformance.maintainIt' | translate}}</span></p>
 	</div>
 </div>

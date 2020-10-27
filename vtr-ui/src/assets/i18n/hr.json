@@ -3004,6 +3004,13 @@
             "music": "Glazba",
             "science": "Znanost"
         },
+        "segments": {
+            "consumer": "Osobno",
+            "smb": "Posao",
+            "consumerGaming": "Igre",
+            "consumerEducation": "Obrazovanje",
+            "commercial": "Velika tvrtka"
+        },
         "gaming": {
             "gamingDescription": "Verzija igre Vantage omogućuje vam da poboljšate svoje iskustvo igranja. Uz uobičajene postavke, glavne značajke uključuju (dostupno na odabranim sustavima):",
             "gamingFeature1": "-Mmonitor stanja računala",
@@ -4311,6 +4318,18 @@
         "tuneUP": "Računalo treba podešavanje",
         "section2Heading": "Računalo funkcionira vrhunski. Uvijek",
         "section2Description": "Naš softver može proaktivno skenirati vaše računalo 24 sata svakog dana u tjednu kako bi pronašao i popravio probleme tijekom nastajanja, tako da vaše računalo uvijek ima vrhunske performanse.",
+        "runningWell": "Računalo dobro radi",
+        "auto": "Automatski",
+        "manual": "Ručno",
+        "am": "AM",
+        "pm": "PM",
+        "scanNow": "Skeniraj sada",
+        "signUpAndFix": "Prijavi se i riješi",
+        "cancel": "Odustani",
+        "scanning": "Skeniranje",
+        "fixIt": "Popravi",
+        "optimizeIt": "Optimiziraj",
+        "maintainIt": "Održavaj",
         "tunePCPerformance": {
             "title": "Podešavanje Performansi Računala",
             "heading": "Pokažite svom računalu malo više ljubavi",
@@ -4395,6 +4414,7 @@
                 "tab3Description": "Stvoreno na najboljim iskustvima bez zastrašujućeg softvera"
             }
         },
+        "noScanResults": "Kako biste pokrenuli postupak skeniranja, kliknite gumb SCAN & FIX (SKENIRAJ I POPRAVI).",
         "startScan": "<b>Jeste li spremni za pokretanje skeniranja?</b> Dijagnosticirajmo probleme funkcioniranja i sigurnosti vašeg računala.",
         "subscriptionDetails": {
             "title": "Pojedinosti o pretplati",
@@ -4610,11 +4630,23 @@
             "description": "Evo što smo pronašli na vašem {{machineFamilyName}}",
             "scanRates": "Naše skeniranje ocjenjuje vaše računalo prema: ",
             "summary": "Sažetak",
-            "summaryDetails": "Naše je skeniranje pronašlo <b>{{issueCount}} probleme</b> u sljedećim područjima u nastavku. Registrirajte se odmah kako biste riješili ove probleme i održali nesmetani rad sustava. Naš softver može proaktivno skenirati ta područja vašeg sustava 24 sata svakog dana u tjednu kako bi pronašao i popravio probleme tijekom nastajanja, tako da vaše računalo uvijek vrhunski funkcionira.",
+            "foundIssues": "Našim skeniranjem pronađeno je {{issueCount}} problem(a)",
+            "summaryDetails": "Registrirajte se odmah kako biste riješili ove probleme i održali nesmetani rad sustava. Naš softver može proaktivno skenirati ta područja vašeg sustava 24 sata svakog dana u tjednu kako bi pronašao i popravio probleme tijekom nastajanja, tako da vaše računalo uvijek vrhunski funkcionira.",
+            "expiredSummaryDetails": "Vaša pretplata je istekla i trenutno može koristiti samo značajku skeniranja u Smart Performance; želite li nastaviti koristiti značajku \"Skeniraj i popravi\", pritisnite gumb \"obnovi i popravi\" u nastavku da biste obnovili pretplatu.",
             "signupRepairButton": "ODMAH SE REGISTRIRAJTE I POPRAVITE",
+            "renewAndFix": "Obnovi i popravi",
+            "backToHome": "Natrag početnu stranicu",
             "monthlyPricing": "<b>Manje od {{monthlyPrice}} mjesečno.</b> Te ćemo probleme automatski riješiti. Danas i svaki tjedan nakon toga <a  href=\"#\">Saznajte više</a>",
             "issueCount": "{{individualIssueCount}} PROBLEMI",
+            "issues": "Problemi",
+            "tuneIssueCount": "{{tune}}",
+            "boostIssueCount": "{{boost}}",
+            "secureIssueCount": "{{secure}}",
             "scannedAreas": "SKENIRANA PODRUČJA",
+            "summaryPurchaseTip": "Kupite odmah godišnji plan i svakoga ćemo tjedna automatski rješavati ove probleme.",
+            "tunePCTooltip": "Poboljšajte opću učinkovitost sustava, skratite vrijeme pokretanja računala i ubrzajte vrijeme učitavanja aplikacija.",
+            "boostTooltip": "Poboljšajte mrežne performanse, iskustvo pregledavanja i povezanost.",
+            "malwareTooltip": "Poboljšajte sigurnost, uklonite zlonamjerni softver i zaraze te uspostavite stabilnost sustava.",
             "recommendedAction": {
                 "title": "Preporučena Radnja",
                 "description": "Te ćemo probleme automatski riješiti. Danas i svaki tjedan nakon toga",
@@ -4666,10 +4698,6 @@
                     "area6": "Provjerena je konfiguracija izvješća o pogrešci sustava"
                 }
             },
-            "Diskspace": "Slobodan prostor na disku:",
-            "Performanceimprovements": "Poboljšanja funkcioniranja:",
-            "Securityimprovements": "Poboljšanja sigurnosti:",
-            "Onceaweek": "Jednom tjedno",
             "internetperformance": {
                 "ejunkscannedareas": {
                     "area1": "Otkriven nered u preglednicima",
@@ -4882,13 +4910,10 @@
                     }
                 }
             },
-            "issues": "Problemi",
-            "tuneIssueCount": "{{tune}}",
-            "boostIssueCount": "{{boost}}",
-            "secureIssueCount": "{{secure}}",
-            "backToHome": "Natrag početnu stranicu",
-            "expiredSummaryDetails": "Vaša pretplata je istekla i trenutno može koristiti samo značajku skeniranja u Smart Performance; želite li nastaviti koristiti značajku \"Skeniraj i popravi\", pritisnite gumb \"obnovi i popravi\" u nastavku da biste obnovili pretplatu.",
-            "renewAndFix": "Obnovi i popravi"
+            "Diskspace": "Slobodan prostor na disku:",
+            "Performanceimprovements": "Poboljšanja funkcioniranja:",
+            "Securityimprovements": "Poboljšanja sigurnosti:",
+            "Onceaweek": "Jednom tjedno"
         },
         "subscriberScanHomePage": {
             "title": "Sve je u redu s vašim ",
@@ -4928,7 +4953,6 @@
             "successTitle": "Vaše je računalo podešeno!",
             "successDescription": "Smart Performance riješio je <b>{{issueCount}} probleme</b> kako bi vaše računalo nesmetano radilo, a sažetak skeniranja i izvješće možete pronaći u nastavku."
         },
-        "runningWell": "Računalo dobro radi",
         "feedbackContainer": {
             "title": "Ostavite nam neke povratne informacije",
             "subtitle": "Recite nam što mislite o značajki Smart Performance",
@@ -4963,12 +4987,7 @@
             },
             "commentTip": "U nastavku ostavite komentare ili dodatne povratne informacije:",
             "comments": "Svoje komentare ostavite ovdje..."
-        },
-        "auto": "Automatski",
-        "manual": "Ručno",
-        "noScanResults": "Kako biste pokrenuli postupak skeniranja, kliknite gumb SCAN & FIX (SKENIRAJ I POPRAVI).",
-        "am": "AM",
-        "pm": "PM"
+        }
     },
     "homeSecurity": {
         "title": "Connected Home Security",
