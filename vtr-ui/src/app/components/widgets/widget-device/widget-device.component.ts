@@ -127,36 +127,28 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	private async loadDeviceInfo() {
 		this.loadOverAllStatus();
 		const processor = new DeviceStatus();
-		this.getNLSString('device.myDevice.processor.title').subscribe((value) => {
-			processor.id = 'processor';
-			processor.title = value;
-			processor.icon = this.processorIcon;
-			this.hwStatus[0] = processor;
-			this.updateProssorInfo(processor);
-		});
+		processor.id = 'processor';
+		processor.title = this.translate.instant('device.myDevice.processor.title');
+		processor.icon = this.processorIcon;
+		this.hwStatus[0] = processor;
+		this.updateProssorInfo(processor);
 		const memory = new DeviceStatus();
-		this.getNLSString('device.myDevice.memory.title').subscribe((value) => {
-			memory.id = 'memory';
-			memory.title = value;
-			memory.icon = this.memoryIcon;
-			this.hwStatus[1] = memory;
-			this.updateMemoryInfo(memory);
-		});
+		memory.id = 'memory';
+		memory.title = this.translate.instant('device.myDevice.memory.title');
+		memory.icon = this.memoryIcon;
+		this.hwStatus[1] = memory;
+		this.updateMemoryInfo(memory);
 		const disk = new DeviceStatus();
-		this.getNLSString('device.myDevice.storage').subscribe((value) => {
-			disk.id = 'disk';
-			disk.title = value;
-			disk.icon = this.storageIcon;
-			this.hwStatus[2] = disk;
-			this.updateDiskInfo();
-		});
+		disk.id = 'disk';
+		disk.title = this.translate.instant('device.myDevice.storage');
+		disk.icon = this.storageIcon;
+		this.hwStatus[2] = disk;
+		this.updateDiskInfo();
 		let index = 0;
 		if (this.configService.isSystemUpdateEnabled()){
 			const systemUpdate = new DeviceStatus();
 			systemUpdate.id = 'systemUpdate';
-			this.getNLSString('device.myDevice.systemUpdate.title').subscribe((value) => {
-				systemUpdate.title = value;
-			});
+			systemUpdate.title = this.translate.instant('device.myDevice.systemUpdate.title');
 			systemUpdate.icon = this.systemUpdateIcon;
 			this.swStatus[index++] = systemUpdate;
 			this.updateSUStatus(systemUpdate);
@@ -164,9 +156,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		if (await this.configService.showSmartPerformance()){
 			const smartPerformance = new DeviceStatus();
 			smartPerformance.id = 'smartperformance';
-			this.getNLSString('smartPerformance.title').subscribe((value) => {
-				smartPerformance.title = value;
-			});
+			smartPerformance.title = this.translate.instant('smartPerformance.title');
 			smartPerformance.icon = this.smartPerformanceIcon;
 			this.swStatus[index++] = smartPerformance;
 			this.updateSmartPerformanceStatus(smartPerformance);
@@ -175,9 +165,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		if (await this.hwScanService.isAvailable()){
 			const hwscan = new DeviceStatus();
 			hwscan.id = 'hwscan';
-			this.getNLSString('hardwareScan.name').subscribe((value) => {
-				hwscan.title = value;
-			});
+			hwscan.title = this.translate.instant('hardwareScan.name');
 			hwscan.icon = this.hwscanIcon;
 			this.swStatus[index++] = hwscan;
 			this.updateHwScanStatus(hwscan);
@@ -225,9 +213,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				type = '';
 			}
 			memory.link = 'ms-settings:about';
-			this.getNLSString('device.myDevice.physicalMemory').subscribe((value) => {
-				memory.subtitle = `${value} ${type}`;
-			});
+			memory.subtitle = `${this.translate.instant('device.myDevice.physicalMemory')} ${type}`;
 			memory.icon = this.memoryIcon;
 			memory.used = this.commonService.formatBytes(used);
 			memory.total = this.commonService.formatBytes(total);
@@ -240,25 +226,23 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		const data = await this.hwInfo;
 		if (data){
 			const disks = data.disk.disks;
-			this.getNLSString('device.myDevice.storage').subscribe((value) => {
-				let statusIndex = 2;
-				for (let i = 0, len  = disks.length; i < len; i++) {
-					if (!disks[i].partitions || disks[i].partitions.length === 0){
-						continue;
-					}
-					const disk = new DeviceStatus();
-					disk.id = 'disk' + i;
-					disk.title = value;
-					disk.icon = this.storageIcon;
-					disk.link = 'ms-settings:storagesense';
-					disk.subtitle = `${disks[i].manufacturer || ''} ${disks[i].model}`;
-					const usedBytes = disks[i].sizeInBytes - disks[i].avaliableSize;
-					disk.used = this.commonService.formatBytes(usedBytes);
-					disk.total = this.commonService.formatBytes( disks[i].sizeInBytes);
-					disk.percent = usedBytes / disks[i].sizeInBytes * 100;
-					this.hwStatus[statusIndex++] = disk;
+			let statusIndex = 2;
+			for (let i = 0, len  = disks.length; i < len; i++) {
+				if (!disks[i].partitions || disks[i].partitions.length === 0){
+					continue;
 				}
-			});
+				const disk = new DeviceStatus();
+				disk.id = 'disk' + i;
+				disk.title = this.translate.instant('device.myDevice.storage');
+				disk.icon = this.storageIcon;
+				disk.link = 'ms-settings:storagesense';
+				disk.subtitle = `${disks[i].manufacturer || ''} ${disks[i].model}`;
+				const usedBytes = disks[i].sizeInBytes - disks[i].avaliableSize;
+				disk.used = this.commonService.formatBytes(usedBytes);
+				disk.total = this.commonService.formatBytes( disks[i].sizeInBytes);
+				disk.percent = usedBytes / disks[i].sizeInBytes * 100;
+				this.hwStatus[statusIndex++] = disk;
+			}
 		}
 	}
 
@@ -271,20 +255,14 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 						const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 						systemUpdate.link = 'device/system-updates';
 						if (updateStatus === 1) {
-							this.getNLSString('device.myDevice.systemUpdate.detail.uptoDate').subscribe((value) => {
-								systemUpdate.subtitle = value;
-							});
+							systemUpdate.subtitle = this.translate.instant('device.myDevice.systemUpdate.detail.uptoDate');
 							systemUpdate.checkedDate = this.commonService.formatLocalDate(lastUpdate);
 							systemUpdate.showSepline = true;
 							if (diffInDays > 30) {
-								this.getNLSString('device.myDevice.systemUpdate.detail.outdated').subscribe((value) => {
-									systemUpdate.subtitle = value;
-								});
+								systemUpdate.subtitle = this.translate.instant('device.myDevice.systemUpdate.detail.outdated');
 							}
 						} else {
-							this.getNLSString('device.myDevice.systemUpdate.detail.neverRanUpdate').subscribe((value) => {
-								systemUpdate.subtitle = value;
-							});
+							systemUpdate.subtitle = this.translate.instant('device.myDevice.systemUpdate.detail.neverRanUpdate');
 						}
 					}
 				});
@@ -294,14 +272,10 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	private async updateSmartPerformanceStatus(smartPerform: DeviceStatus){
 		try{
 			if (await this.dashboardService.isSmartPerformanceSuscripted()){
-				this.getNLSString('device.myDevice.entitled').subscribe((value) => {
-					smartPerform.subtitle = value;
-				});
+				smartPerform.subtitle = this.translate.instant('device.myDevice.entitled');
 			}
 			else{
-				this.getNLSString('device.myDevice.subscribeNow').subscribe((value) => {
-					smartPerform.subtitle = value;
-				});
+				smartPerform.subtitle = this.translate.instant('device.myDevice.subscribeNow');
 			}
 
 			const lastScanResultRequest = {
@@ -313,9 +287,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				smartPerform.showSepline = true;
 			}
 		}catch {
-			this.getNLSString('hardwareScan.notScanned').subscribe((value) => {
-				smartPerform.subtitle = value;
-			});
+			smartPerform.subtitle = this.translate.instant('hardwareScan.notScanned');
 		}
 		smartPerform.link = 'support/smart-performance';
 	}
@@ -331,31 +303,18 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			hwscan.checkedDate = moment(lastSacnInfo.date).format('l');
 			hwscan.showSepline = true;
 			if (this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > SystemHealthDates.HardwareScan){
-				this.getNLSString(scanLangKey).subscribe((value) => {
-					hwscan.subtitle = value;
-				});
+				hwscan.subtitle = this.translate.instant(scanLangKey);
 			}
 			else{
-				this.getNLSString(scanedLangKey).subscribe((value) => {
-					hwscan.subtitle = value;
-				});
+				hwscan.subtitle = 	this.translate.instant(scanedLangKey);
 			}
 		}
 		else if (this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan){
-			this.getNLSString(scanLangKey).subscribe((value) => {
-				hwscan.subtitle = value;
-			});
+			hwscan.subtitle = this.translate.instant(scanLangKey);
 		}
 		else{
-			this.getNLSString(notScannedKey).subscribe((value) => {
-				hwscan.subtitle = value;
-			});
+			hwscan.subtitle = this.translate.instant(notScannedKey);
 		}
 		hwscan.link = '/hardware-scan';
 	}
-
-	private getNLSString(key: string): Observable<string> {
-		return this.translate.stream(key).pipe(takeUntil(this.ngUnsubscribe));
-	}
-
 }
