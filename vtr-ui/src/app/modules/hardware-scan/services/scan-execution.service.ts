@@ -334,7 +334,8 @@ export class ScanExecutionService {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
-					windowClass: 'hardware-scan-modal-size'
+					windowClass: 'hardware-scan-modal-size',
+					ariaLabelledBy: 'hwscan-pre-scan-info-modal-title'
 				});
 
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);

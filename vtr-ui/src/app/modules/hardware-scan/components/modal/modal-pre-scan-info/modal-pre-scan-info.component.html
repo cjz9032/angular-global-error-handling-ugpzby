@@ -1,27 +1,25 @@
-<div class="modal-body" aria-labelledby="title" aria-describedby="description">
-		<h1 id="hwscan-pre-scan-info-modal-title" class="error" role="heading">{{ error }}</h1>
-		<br />
-		<p id="hwscan-pre-scan-info-modal-description" class="description" role="text">
-			{{ ('hardwareScan.pluginTokens.' + description) | translateDefault:description }}
-		</p>
+<div class="modal-body">
+	<h1 id="hwscan-pre-scan-info-modal-title" class="error" role="heading">{{ error }}</h1>
 
-		<br />
+	<p id="hwscan-pre-scan-info-modal-description" class="description" role="text">
+		{{ ('hardwareScan.pluginTokens.' + description) | translateDefault:description }}
+	</p>
 
-		<div class="row button-row">
-			<vtr-ui-button
-				linkId="hwscan-pre-scan-info-modal-confirm-btn"
-				metricsParent="{{ ItemParent }}"
-				metricsItem="{{ ConfirmItemName }}"
-				[label]="buttonText"
-				(onClick)="onClosing()">
-			</vtr-ui-button>
-		</div>
-		<div class="btn-modal-close">
-			<vtr-ui-close-button
-				linkId="hwscan-pre-scan-info-modal-close-btn"
-				metricsParent="{{ ItemParent }}"
-				metricsItem="{{ CancelItemName }}"
-				(clickClose)="onClosing()">
-			</vtr-ui-close-button>
-		</div>
+	<div class="row button-row">
+		<vtr-ui-button
+			linkId="hwscan-pre-scan-info-modal-confirm-btn"
+			metricsParent="{{ ItemParent }}"
+			metricsItem="{{ ConfirmItemName }}"
+			[label]="buttonText"
+			(onClick)="onClosing()">
+		</vtr-ui-button>
+	</div>
+	<div class="btn-modal-close">
+		<vtr-ui-close-button
+			linkId="hwscan-pre-scan-info-modal-close-btn"
+			metricsParent="{{ ItemParent }}"
+			metricsItem="{{ CancelItemName }}"
+			(clickClose)="onClosing()">
+		</vtr-ui-close-button>
+	</div>
 </div>
