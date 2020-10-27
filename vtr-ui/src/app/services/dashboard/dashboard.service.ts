@@ -43,7 +43,6 @@ export class DashboardService {
 	public isShellAvailable = false;
 	public isDashboardDisplayed = false;
 	private commonService: CommonService;
-	private isSMPSubscriptedPromiseObj: Promise<boolean>;
 
 	offlineCardContent: IContentGroup = {
 		positionA: null,
@@ -146,7 +145,6 @@ export class DashboardService {
 		if (this.eyeCareMode) {
 			this.isShellAvailable = true;
 		}
-		this.isSMPSubscriptedPromiseObj = this.isSmartPerformanceSuscripted();
 	}
 
 	public getMicrophoneStatus(): Promise<FeatureStatus> {
@@ -530,7 +528,7 @@ export class DashboardService {
 		if (!await this.configService.showSmartPerformance()) {
 			return false;
 		}
-		return !await this.isSMPSubscriptedPromiseObj;
+		return !(await this.isSmartPerformanceSuscripted());
 	}
 
 	public async isSmartPerformanceSuscripted(): Promise<boolean> {
@@ -542,12 +540,12 @@ export class DashboardService {
 
 		const subscriptionData = subscriptionDetails.data;
 		const lastItem = subscriptionData[subscriptionData.length - 1];
-		const releaseDate = new Date(lastItem.releaseDate);
-		releaseDate.setMonth(releaseDate.getMonth() + lastItem.products[0].unitTerm);
-		releaseDate.setDate(releaseDate.getDate() - 1);
 		if (lastItem?.status?.toUpperCase() !== 'COMPLETED') {
 			return false;
 		}
+		const releaseDate = new Date(lastItem.releaseDate);
+		releaseDate.setMonth(releaseDate.getMonth() + lastItem.products[0].unitTerm);
+		releaseDate.setDate(releaseDate.getDate() - 1);
 
 		const currentDate: any = new Date(lastItem.currentTime);
 		const expiredDate = new Date(releaseDate);
