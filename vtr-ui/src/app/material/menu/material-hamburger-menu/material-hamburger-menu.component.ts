@@ -82,9 +82,8 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	onMenuItemClick(item, event?) {
 		window.getSelection().empty();
 		if (item.id === 'user' && event) {
-			const target = event.target || event.srcElement || event.currentTarget;
-			const idAttr = target.attributes.id;
-			const id = idAttr.nodeValue;
+			const target = event.currentTarget || event.srcElement;
+			const id = target?.attributes?.id?.nodeValue;
 			if (id === 'menu-main-lnk-open-lma' ||
 				id === 'menu-main-lnk-open-adobe' ||
 				id === 'menu-main-lnk-open-dcc') {
