@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { AdPolicyService } from 'src/app/services/ad-policy/ad-policy.service';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { PreviousResultService } from 'src/app/modules/hardware-scan/services/previous-result.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { ConfigService } from 'src/app/services/config/config.service';
@@ -113,7 +113,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 
 		switch (this.deviceStatus){
 			case DeviceCondition.NeedRunHWScan:
-				this.router.navigate(['hardware-scan']);
+				this.deviceService.launchUri('lenovo-vantage3:hardware-scan?scan=quickscan&module=cpu');
 				break;
 			case DeviceCondition.NeedRunSMPScan:
 				this.router.navigate(['support/smart-performance']);
@@ -127,7 +127,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	private async loadDeviceInfo() {
 		this.loadOverAllStatus();
 		const processor = new DeviceStatus();
-		this.translate.stream('device.myDevice.processor.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+		this.getNLSString('device.myDevice.processor.title').subscribe((value) => {
 			processor.id = 'processor';
 			processor.title = value;
 			processor.icon = this.processorIcon;
@@ -135,7 +135,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.updateProssorInfo(processor);
 		});
 		const memory = new DeviceStatus();
-		this.translate.stream('device.myDevice.memory.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+		this.getNLSString('device.myDevice.memory.title').subscribe((value) => {
 			memory.id = 'memory';
 			memory.title = value;
 			memory.icon = this.memoryIcon;
@@ -143,7 +143,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.updateMemoryInfo(memory);
 		});
 		const disk = new DeviceStatus();
-		this.translate.stream('device.myDevice.storage').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+		this.getNLSString('device.myDevice.storage').subscribe((value) => {
 			disk.id = 'disk';
 			disk.title = value;
 			disk.icon = this.storageIcon;
@@ -154,7 +154,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		if (this.configService.isSystemUpdateEnabled()){
 			const systemUpdate = new DeviceStatus();
 			systemUpdate.id = 'systemUpdate';
-			this.translate.stream('device.myDevice.systemUpdate.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.getNLSString('device.myDevice.systemUpdate.title').subscribe((value) => {
 				systemUpdate.title = value;
 			});
 			systemUpdate.icon = this.systemUpdateIcon;
@@ -164,7 +164,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		if (await this.configService.showSmartPerformance()){
 			const smartPerformance = new DeviceStatus();
 			smartPerformance.id = 'smartperformance';
-			this.translate.stream('smartPerformance.title').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.getNLSString('smartPerformance.title').subscribe((value) => {
 				smartPerformance.title = value;
 			});
 			smartPerformance.icon = this.smartPerformanceIcon;
@@ -175,7 +175,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		if (await this.hwScanService.isAvailable()){
 			const hwscan = new DeviceStatus();
 			hwscan.id = 'hwscan';
-			this.translate.stream('hardwareScan.name').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.getNLSString('hardwareScan.name').subscribe((value) => {
 				hwscan.title = value;
 			});
 			hwscan.icon = this.hwscanIcon;
@@ -225,7 +225,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				type = '';
 			}
 			memory.link = 'ms-settings:about';
-			this.translate.stream('device.myDevice.physicalMemory').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.getNLSString('device.myDevice.physicalMemory').subscribe((value) => {
 				memory.subtitle = `${value} ${type}`;
 			});
 			memory.icon = this.memoryIcon;
@@ -240,7 +240,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		const data = await this.hwInfo;
 		if (data){
 			const disks = data.disk.disks;
-			this.translate.stream('device.myDevice.storage').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.getNLSString('device.myDevice.storage').subscribe((value) => {
 				let statusIndex = 2;
 				for (let i = 0, len  = disks.length; i < len; i++) {
 					if (!disks[i].partitions || disks[i].partitions.length === 0){
@@ -271,18 +271,18 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 						const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 						systemUpdate.link = 'device/system-updates';
 						if (updateStatus === 1) {
-							this.translate.stream('device.myDevice.systemUpdate.detail.uptoDate').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+							this.getNLSString('device.myDevice.systemUpdate.detail.uptoDate').subscribe((value) => {
 								systemUpdate.subtitle = value;
 							});
 							systemUpdate.checkedDate = this.commonService.formatLocalDate(lastUpdate);
 							systemUpdate.showSepline = true;
 							if (diffInDays > 30) {
-								this.translate.stream('device.myDevice.systemUpdate.detail.outdated').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+								this.getNLSString('device.myDevice.systemUpdate.detail.outdated').subscribe((value) => {
 									systemUpdate.subtitle = value;
 								});
 							}
 						} else {
-							this.translate.stream('device.myDevice.systemUpdate.detail.neverRanUpdate').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+							this.getNLSString('device.myDevice.systemUpdate.detail.neverRanUpdate').subscribe((value) => {
 								systemUpdate.subtitle = value;
 							});
 						}
@@ -293,23 +293,27 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 
 	private async updateSmartPerformanceStatus(smartPerform: DeviceStatus){
 		try{
+			if (await this.dashboardService.isSmartPerformanceSuscripted()){
+				this.getNLSString('device.myDevice.entitled').subscribe((value) => {
+					smartPerform.subtitle = value;
+				});
+			}
+			else{
+				this.getNLSString('device.myDevice.subscribeNow').subscribe((value) => {
+					smartPerform.subtitle = value;
+				});
+			}
+
 			const lastScanResultRequest = {
 				scanType: await this.isSMPSubscripted ? 'ScanAndFix' : 'Scan'
 			};
 			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
-			if (!response?.scanruntime){
-				throw new Error('scaned-time not correct');
-			}
-			const scanRunTime = moment(response.scanruntime).format('l');
-			if (response){
-				this.translate.stream('device.myDevice.scanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
-					smartPerform.subtitle = value;
-				});
-				smartPerform.checkedDate = scanRunTime;
+			if (response?.scanruntime){
+				smartPerform.checkedDate = moment(response.scanruntime).format('l');
 				smartPerform.showSepline = true;
 			}
 		}catch {
-			this.translate.stream('hardwareScan.notScanned').pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.getNLSString('hardwareScan.notScanned').subscribe((value) => {
 				smartPerform.subtitle = value;
 			});
 		}
@@ -325,27 +329,33 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		const notScannedKey = 'hardwareScan.notScanned';
 		if (lastSacnInfo.date){
 			hwscan.checkedDate = moment(lastSacnInfo.date).format('l');
+			hwscan.showSepline = true;
 			if (this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > SystemHealthDates.HardwareScan){
-				this.translate.stream(scanLangKey).pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				this.getNLSString(scanLangKey).subscribe((value) => {
 					hwscan.subtitle = value;
 				});
 			}
 			else{
-				this.translate.stream(scanedLangKey).pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+				this.getNLSString(scanedLangKey).subscribe((value) => {
 					hwscan.subtitle = value;
 				});
 			}
 		}
 		else if (this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan){
-			this.translate.stream(scanLangKey).pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.getNLSString(scanLangKey).subscribe((value) => {
 				hwscan.subtitle = value;
 			});
 		}
 		else{
-			this.translate.stream(notScannedKey).pipe(takeUntil(this.ngUnsubscribe)).subscribe((value) => {
+			this.getNLSString(notScannedKey).subscribe((value) => {
 				hwscan.subtitle = value;
 			});
 		}
 		hwscan.link = '/hardware-scan';
 	}
+
+	private getNLSString(key: string): Observable<string> {
+		return this.translate.stream(key).pipe(takeUntil(this.ngUnsubscribe));
+	}
+
 }
