@@ -75,6 +75,7 @@ export enum HardwareScanProgress {
 }
 
 export enum ExportLogErrorStatus {
+	LoadingExport,
 	SuccessExport,
 	AccessDenied,
 	GenericError

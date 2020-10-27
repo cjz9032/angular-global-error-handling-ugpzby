@@ -4286,6 +4286,7 @@
             "exportSuccessDescription": "Il log è stato esportato correttamente ed è disponibile all'indirizzo:",
             "exportAccessErrorDescription": "Per esportare il log è necessario consentire a Vantage di accedere al file system. Fare clic sul pulsante seguente per aprire le impostazioni delle autorizzazioni di Windows. Tenere presente che la modifica delle autorizzazioni potrebbe causare la chiusura di Vantage.",
             "exportFailDescription": "È stato rilevato un problema durante l'esportazione del log. Riprovare più tardi.",
+            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
             "openSettingsButton": "Apri impostazioni di Windows"
         },
         "executingScanTitle": "Scansione di {{title}} in corso",

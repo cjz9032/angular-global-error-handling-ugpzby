@@ -4286,6 +4286,7 @@
             "exportSuccessDescription": "Günlük başarıyla dışa aktarıldı ve şu adreste bulunabilir:",
             "exportAccessErrorDescription": "Günlüğü dışa aktarmak için Vantage'ın dosya sisteminize erişmesine izin vermeniz gerekir. Windows izin ayarlarını açmak için aşağıdaki düğmeyi tıklatın. İznin değiştirilmesi sonucu Vantage'ın kapanabileceğini unutmayın.",
             "exportFailDescription": "Günlük dışa aktarımı sırasında bir sorun bulundu. Lütfen daha sonra yeniden deneyin.",
+            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
             "openSettingsButton": "Windows Ayarlarını Aç"
         },
         "executingScanTitle": "{{title}} taranıyor",

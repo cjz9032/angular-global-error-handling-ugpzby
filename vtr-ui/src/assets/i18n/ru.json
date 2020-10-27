@@ -4389,6 +4389,7 @@
             "exportSuccessDescription": "Журнал успешно экспортирован и находится по следующему адресу:",
             "exportAccessErrorDescription": "Разрешите Vantage доступ к файловой системы для экспорта журнала. Нажмите кнопку ниже, чтобы открыть настройки разрешений Windows. Помните, что изменение разрешений может привести к закрытию Vantage.",
             "exportFailDescription": "Во время экспорта журнала обнаружена проблема. Повторите попытку позже.",
+            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
             "openSettingsButton": "Открыть настройки Windows"
         },
         "executingScanTitle": "Сканирование {{title}}",

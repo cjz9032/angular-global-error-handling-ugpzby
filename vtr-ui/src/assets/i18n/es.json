@@ -4389,6 +4389,7 @@
             "exportSuccessDescription": "El registro se exportó correctamente y se puede encontrar en:",
             "exportAccessErrorDescription": "Debe permitir el acceso de Vantage a su sistema de archivos para poder exportar el registro. Haga clic en el siguiente botón para abrir la configuración de permisos de Windows. Tenga en cuenta que la modificación de los permisos puede hacer que Vantage se cierre.",
             "exportFailDescription": "Se encontró un problema durante la exportación del registro. Vuelva a intentarlo más tarde.",
+            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
             "openSettingsButton": "Abrir la configuración de Windows"
         },
         "executingScanTitle": "Explorando {{title}}",

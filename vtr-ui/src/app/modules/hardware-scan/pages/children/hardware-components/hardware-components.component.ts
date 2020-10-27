@@ -228,13 +228,19 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private openExportLogComponentsModal(error: ExportLogErrorStatus, logPath: string = '') {
+	private openExportLogComponentsModal(): NgbModalRef {
 		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
 			size: 'lg',
 			centered: true,
 			windowClass: 'hardware-scan-modal-size'
 		});
 
+		this.updateExportLogComponentsModal(modal);
+
+		return modal;
+	}
+
+	private updateExportLogComponentsModal(modal: NgbModalRef, error: ExportLogErrorStatus = ExportLogErrorStatus.LoadingExport, logPath: string = '') {
 		(modal.componentInstance as ModalExportLogComponent).logPath = logPath;
 		(modal.componentInstance as ModalExportLogComponent).errorStatus = error;
 	}
@@ -248,8 +254,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				exportLogType = this.exportService.exportRbsResults();
 			}
 
-			let statusExport = ExportLogErrorStatus.GenericError;
+			let statusExport = ExportLogErrorStatus.LoadingExport;
 			let filePath = '';
+			const exportModal = this.openExportLogComponentsModal();
+
 			this.timerService.start();
 			let result = HardwareScanMetricsService.FAIL_RESULT;
 			exportLogType.then((status) => {
@@ -259,7 +267,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.logger.error('Export Scan Results rejected');
 				statusExport = error;
 			}).finally(() => {
-				this.openExportLogComponentsModal(statusExport, filePath);
+				this.updateExportLogComponentsModal(exportModal, statusExport, filePath);
 				this.hardwareScanMetricsService.sendTaskActionMetrics(
 					HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
 					result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,

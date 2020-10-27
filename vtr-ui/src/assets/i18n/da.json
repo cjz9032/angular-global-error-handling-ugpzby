@@ -4286,6 +4286,7 @@
             "exportSuccessDescription": "Logfilen blev eksporteret, og den kan findes på:",
             "exportAccessErrorDescription": "Du skal give Vantage adgang til filsystemet for at eksportere logfilen. Klik på knappen nedenfor for at åbne tilladelsesindstillingerne i Windows. Vær opmærksom på, at ændring af tilladelser kan få Vantage til at lukke.",
             "exportFailDescription": "Der opstod et problem under eksport af en log. Prøv det igen senere.",
+            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
             "openSettingsButton": "Åbn Windows-indstillinger"
         },
         "executingScanTitle": "Søger i {{title}}",

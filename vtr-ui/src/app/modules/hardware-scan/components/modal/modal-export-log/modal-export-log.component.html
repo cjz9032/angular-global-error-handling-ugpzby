@@ -9,24 +9,35 @@
 		<p *ngSwitchCase="enumExportLogErrorStatus.AccessDenied" id="hwscan-export-log-modal-description"
 			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportAccessErrorDescription' | translate }}</p>
 
+
+		<p *ngSwitchCase="enumExportLogErrorStatus.LoadingExport" id="hwscan-export-log-modal-description"
+			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportMayTakeSomeTime' | translate }}</p>
+
 		<p *ngSwitchDefault id="hwscan-export-log-modal-description"
 			class="description" role="text">{{ 'hardwareScan.exportLogModal.exportFailDescription' | translate }}</p>
 	</div>
 
-	<div *ngIf="errorStatus === enumExportLogErrorStatus.AccessDenied; else okButton" class="row button-row">
-		<vtr-ui-button linkId="hwscan-export-log-open-settings-btn" [metricsParent]="'HardwareScan.ExportLog'"
+	<div [ngSwitch]="errorStatus" class="row button-row">
+
+		<div class="col loading" *ngSwitchCase="enumExportLogErrorStatus.LoadingExport">
+			<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
+			<!--Workaround to keep focus inside modal when there is no elements to be focused-->
+			<div tabindex="1" [autofocus]=true></div>
+		</div>
+
+		<vtr-ui-button *ngSwitchCase="enumExportLogErrorStatus.AccessDenied"
+			linkId="hwscan-export-log-open-settings-btn" [metricsParent]="'HardwareScan.ExportLog'"
 			[metricsItem]="'ExportLog.OpenSettings'" [label]="'hardwareScan.exportLogModal.openSettingsButton' | translate"
 			(onClick)="openWindowsSettings()">
 		</vtr-ui-button>
-	</div>
 
-	<ng-template #okButton>
-		<vtr-ui-button linkId="hwscan-export-log-confirm-btn" [metricsParent]="'HardwareScan.ExportLog'"
+		<vtr-ui-button *ngSwitchDefault
+			linkId="hwscan-export-log-confirm-btn" [metricsParent]="'HardwareScan.ExportLog'"
 			[metricsItem]="'ExportLog.Confirm'" [label]="'hardwareScan.ok' | translate" (onClick)="onClosing()">
 		</vtr-ui-button>
-	</ng-template>
+	</div>
 
-	<div class="btn-modal-close">
+	<div class="btn-modal-close" *ngIf="errorStatus !== enumExportLogErrorStatus.LoadingExport">
 		<vtr-ui-close-button linkId="hwscan-export-log-modal-close-btn" [metricsParent]="'HardwareScan.ExportLog'"
 			[metricsItem]="'ExportLog.Close'" (clickClose)="onClosing()">
 		</vtr-ui-close-button>

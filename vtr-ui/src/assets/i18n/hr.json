@@ -4286,6 +4286,7 @@
             "exportSuccessDescription": "Dnevnički zapis je uspješno izvezen i može se naći na:",
             "exportAccessErrorDescription": "Morate dopustiti Vantage pristup vašem sustavu datoteka za izvoz dnevničkog zapisa. Kliknite na tipku u nastavku da biste otvorili postavke dozvola za Windows. Imajte na umu da promjena dozvola može uzrokovati zatvaranje Vantage.",
             "exportFailDescription": "Pronađen je problem tijekom izvoza dnevničkog zapisa. Molimo, pokušajte kasnije.",
+            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
             "openSettingsButton": "Otvorite postavke sustava Windows"
         },
         "executingScanTitle": "Skeniranje {{title}}",
