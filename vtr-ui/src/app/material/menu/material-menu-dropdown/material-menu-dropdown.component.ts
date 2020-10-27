@@ -1,14 +1,18 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { MatMenu } from '@lenovo/material/menu';
+
 import { MenuItem } from 'src/app/services/config/config.service';
 
 @Component({
 	selector: 'vtr-material-menu-dropdown',
 	templateUrl: './material-menu-dropdown.component.html',
 	styleUrls: ['./material-menu-dropdown.component.scss'],
+	exportAs: 'materialMenuDropdownComponent'
 })
 export class MaterialMenuDropdownComponent implements OnInit {
+	@ViewChild(MatMenu, {static: true}) matMenu: MatMenu;
 	@Input() dropdownMenu: MenuItem;
 	@Input() parentPath: string;
 	@Input() parentId: string;

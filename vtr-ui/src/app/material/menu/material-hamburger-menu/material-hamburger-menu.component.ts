@@ -16,13 +16,16 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
+import { MatMenu } from '@lenovo/material/menu';
 
 @Component({
 	selector: 'vtr-material-hamburger-menu',
 	templateUrl: './material-hamburger-menu.component.html',
 	styleUrls: ['./material-hamburger-menu.component.scss'],
+	exportAs: 'materialHamburgerMenuComponent'
 })
 export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
+	@ViewChild(MatMenu, {static: true}) matMenu: MatMenu;
 	@Input() items: MenuItem[];
 	@Input() activeItemId: string;
 	@Output() activeItem = new EventEmitter();

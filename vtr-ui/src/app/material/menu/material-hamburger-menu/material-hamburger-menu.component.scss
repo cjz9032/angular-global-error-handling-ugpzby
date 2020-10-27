@@ -16,86 +16,92 @@
 			}
 		}
 	}
-}
-.hambuger-menu {
-	@media #{$black-on-white} {
-		border: 0.1rem solid $dark;
-	}
-	@media #{$white-on-black} {
-		border: 0.1rem solid $light;
-	}
-	li:last-child {
-		padding-bottom: 1rem;
-	}
-	.menu-item {
-		font-family: "Segoe UI",sans-serif;
-		font-weight: $weight_regular;
-		@include menu-color-high-contrast;
-		&:hover {
-			background-color: $hover_dark;
-			@include high-contrast-background-color;
-			@include menu-color-hover-high-contrast;
-		}
-		&:focus {
-			@include menu-color-hover-high-contrast;
-			.menu-item-text {
-				@include outline-white-high-contrast;
-			}
-		}
-		&.active {
-			background-color: $menu_hover;
-			@include high-contrast-color-default;
-
+	.vtr-material-hamburger-menu {
+		max-width: 25rem;
+		background-color: $main_darker;
+		@include high-contrast-adjust;
+		@include high-contrast-background-color;
+		.hambuger-menu {
 			@media #{$black-on-white} {
-				background-color: $high-contrast-white-dark-magenta !important;
+				border: 0.1rem solid $dark;
 			}
-
 			@media #{$white-on-black} {
-				background-color: $high-contrast-black-cyan !important;
+				border: 0.1rem solid $light;
 			}
+			li:last-child {
+				padding-bottom: 1rem;
+			}
+			.menu-item {
+				font-family: "Segoe UI",sans-serif;
+				font-weight: $weight_regular;
+				@include menu-color-high-contrast;
+				&:hover {
+					background-color: $hover_dark;
+					@include high-contrast-background-color;
+					@include menu-color-hover-high-contrast;
+				}
+				&:focus {
+					@include menu-color-hover-high-contrast;
+					.menu-item-text {
+						@include outline-white-high-contrast;
+					}
+				}
+				&.active {
+					background-color: $menu_hover;
+					@include high-contrast-color-default;
 
-			span {
-				outline: none;
+					@media #{$black-on-white} {
+						background-color: $high-contrast-white-dark-magenta !important;
+					}
+
+					@media #{$white-on-black} {
+						background-color: $high-contrast-black-cyan !important;
+					}
+
+					span {
+						outline: none;
+					}
+				}
+			}
+			.user-text {
+				font-weight: $weight_regular;
+				font-family: "Segoe UI",sans-serif;
+				line-height: 2.8rem;
+				@include high-contrast-text-color-disabled;
+			}
+			.unread-tag {
+				left: 1rem;
+				top: 50%;
+				margin-top: -0.3rem;
+				width: 0.8rem;
+				height: 0.8rem;
+				background: $button_red_start;
+				@media #{$black-on-white} {
+					@include high-contrast-white-background;
+				}
+				@media #{$white-on-black} {
+					@include high-contrast-black-background;
+				}
+			}
+			.menu-subitem {
+				height: 2.8rem;
+				line-height: 2.8rem;
+				&:hover {
+					text-decoration: underline;
+				}
+				&:focus {
+					text-decoration: underline;
+				}
+				&.active {
+					background-color: transparent;
+					@include high-contrast-background-color;
+					@include menu-color-hover-high-contrast;
+					text-decoration: underline;
+				}
+			}
+			hr {
+				background-color: $shade_dark;
 			}
 		}
-	}
-	.user-text {
-		font-weight: $weight_regular;
-		font-family: "Segoe UI",sans-serif;
-		line-height: 2.8rem;
-		@include high-contrast-text-color-disabled;
-	}
-	.unread-tag {
-		left: 1rem;
-		top: 50%;
-		margin-top: -0.3rem;
-		width: 0.8rem;
-		height: 0.8rem;
-		background: $button_red_start;
-		@media #{$black-on-white} {
-			@include high-contrast-white-background;
-		}
-		@media #{$white-on-black} {
-			@include high-contrast-black-background;
-		}
-	}
-	.menu-subitem {
-		height: 2.8rem;
-		line-height: 2.8rem;
-		&:hover {
-			text-decoration: underline;
-		}
-		&:focus {
-			text-decoration: underline;
-		}
-		&.active {
-			background-color: transparent;
-			@include high-contrast-background-color;
-			@include menu-color-hover-high-contrast;
-			text-decoration: underline;
-		}
-	}
-	hr {
-		background-color: $shade_dark;
 	}
 }

@@ -25,7 +25,6 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
-import { MaterialHamburgerMenuComponent } from './material-hamburger-menu/material-hamburger-menu.component';
 import { StringBooleanEnum } from 'src/app/data-models/common/common.interface';
 import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
@@ -42,7 +41,6 @@ import { BacklightLevelEnum } from 'src/app/components/pages/page-device-setting
   styleUrls: ['./material-menu.component.scss']
 })
 export class MaterialMenuComponent implements OnInit, OnDestroy {
-	@ViewChild('menuMainNavbarToggler') navbarToggler: ElementRef;
 	@ViewChildren(MatMenuTrigger) triggers: QueryList<MatMenuTrigger>;
 	@Input() loadMenuItem: any = {};
 	VantageLogo = `

@@ -1,35 +1,44 @@
 @import "../../../app.theme.scss";
 
-.secondary-menu-container {
-	max-width: 60rem;
-	.column-container {
-		max-width: 20rem;
-	}
-}
-.dropdown-menu-item {
-	color: $main_shade;
-	font-weight: $weight_regular;
-	font-family: "Segoe UI",sans-serif;
-	height: 3.2rem;
-	line-height: 1;
-	outline: none !important;
-	@include menu-color-high-contrast;
-	&:hover {
-		text-decoration: underline;
-		color: $blue-light;
-		@include menu-color-hover-high-contrast;
-	}
-	&:focus {
-		text-decoration: underline;
-		color: $blue-light;
-		@include menu-color-hover-high-contrast;
-		span {
-			@include border-blue-high-contrast;
+::ng-deep {
+	.vtr-material-menu-dropdown {
+		&.menu-dropdown-container {
+			background-color: $light;
+			@include high-contrast-background;
+			box-shadow: $menu_dropdown_shadow;
 		}
-	}
-	&.active {
-		text-decoration: underline;
-		color: $blue-light;
-		@include menu-color-hover-high-contrast;
+		.secondary-menu-container {
+			max-width: 60rem;
+			.column-container {
+				max-width: 20rem;
+			}
+		}
+		.dropdown-menu-item {
+			color: $main_shade;
+			font-weight: $weight_regular;
+			font-family: "Segoe UI",sans-serif;
+			height: 3.2rem;
+			line-height: 1;
+			outline: none !important;
+			@include menu-color-high-contrast;
+			&:hover {
+				text-decoration: underline;
+				color: $blue-light;
+				@include menu-color-hover-high-contrast;
+			}
+			&:focus {
+				text-decoration: underline;
+				color: $blue-light;
+				@include menu-color-hover-high-contrast;
+				span {
+					@include border-blue-high-contrast;
+				}
+			}
+			&.active {
+				text-decoration: underline;
+				color: $blue-light;
+				@include menu-color-hover-high-contrast;
+			}
+		}
 	}
 }
