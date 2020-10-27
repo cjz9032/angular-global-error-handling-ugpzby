@@ -40,7 +40,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	showMore = false;
 	hasMore: boolean;
 	locatorButtonDisable = false;
-	@Output() toggleChange = new EventEmitter<void>()
+	@Output() toggleChange = new EventEmitter<void>();
 
 	showMoreText = this.translate.instant('security.wifisecurity.container.showmore');
 	showLessText = this.translate.instant('security.wifisecurity.container.showless');
@@ -55,7 +55,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		'neutral network',
 		'abnormal network',
 		'highly suspicious network'
-	]
+	];
 
 	constructor(
 		public modalService: NgbModal,

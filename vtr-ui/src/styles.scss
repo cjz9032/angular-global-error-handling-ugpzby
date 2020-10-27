@@ -6,6 +6,7 @@
 @import "./hw-settings-icomoon/icomoon-base64.scss";
 
 @import "./app/material.scss";
+@import "./app/material-gaming.scss";
 
 html {
 	margin: 0;
@@ -2557,5 +2558,18 @@ ngb-tooltip-window.schedule-scan.tooltip {
 .uppercase {
 	&, span, p, div, a, h1, h2, h3, h4, h5, h6 {
 		text-transform: uppercase;
+	}
+}
+
+.dialogBackdropExcludeMenu {
+	top: 9rem;
+	background: rgba(0, 0, 0, 0.32);
+}
+
+.cdk-overlay-container {
+	z-index: 99;
+
+	.cdk-overlay-pane {
+		height: auto;
 	}
 }

@@ -1,0 +1,60 @@
+@import "app.theme";
+
+.is-gaming {
+    $mat-van-gaming-theme-background: (
+    	selected-button: $light,
+        // primary button
+        primary-button:  $blueFill,  // primary button background color
+        primary-hover-button: $blueHover,  // primary button background color
+        primary-active-button: $blueHover,  // primary button active background color
+        // primary/secondary/caution button
+        disabled-button: rgba($blueFill, 0.4),	// disabled button background
+    );
+    
+    $mat-van-gaming-theme-foreground: (base: black,
+        disabled-button: rgba($blueFill, 0.4),	// disabled button background color
+        disabled-text:  rgba($gaming_lightest, 0.4),	// disabled button text color
+        // button border
+        primary-border: none,	// primary button border
+        disabled-border: none,	// disabled button border
+        // button other config
+        primary-text: $light,	// primary button text color
+        outline-color: $menu_hover,	// button and link focus outline color
+        outline-style: '',	// button focus outline content: none--no outline, ''--has outline
+        // link button
+        link-button-color: $blueFill,	// link button text color
+        link-button-decoration: underline,	// link button text decoration style
+        link-button-hover: $blueHover,	// link button hover text color
+        link-button-outline: none,	// link button outline text color
+        link-button-active: $blueHover,	// link button active text color
+        link-button-disable: rgba($blueFill, 0.4),	// link disabled text color
+    );
+    $van-theme: (
+        100: $blueHover ,
+        200: $button_red_start,
+        contrast: (
+            100: $dark,
+            200: $light
+        )
+    );
+    $van-typography: mat-typography-config(
+      $font-family: '"Segoe UI", sans-serif'
+    );
+    $van-ui-gaming-theme: mat-vcl-theme((
+            color: (
+                primary: mat-palette($van-theme, 100),
+                accent: mat-palette($van-theme, 200),
+                foreground: $mat-van-gaming-theme-foreground,
+                background: $mat-van-gaming-theme-background
+            ),
+    ));
+    @include angular-material-typography($van-typography);
+    @include angular-material-theme($van-ui-gaming-theme);
+    
+    .mat-dialog-container {
+        background-color: $light;
+        box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+        border-radius: 0.6rem !important;	
+        padding: 2.4rem;
+    }
+}

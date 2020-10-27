@@ -20,18 +20,24 @@ import { DeviceService } from '../device/device.service';
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { UserService } from '../user/user.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
+import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class DialogService {
+	private dialogRef: MatDialogRef<MaterialDialogComponent>;
+
 	constructor(
 		private commonService: CommonService,
 		public modalService: NgbModal,
 		private router: Router,
 		private userService: UserService,
 		private localCacheService: LocalCacheService,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		private dialog: MatDialog,
 	)  { }
 
 	openInvitationCodeDialog() {
@@ -49,7 +55,7 @@ export class DialogService {
 	}
 
 	wifiSecurityLocationDialog(wifiSecurity: WifiSecurity) {
-		if (this.modalService.hasOpenModals()) {
+		if (this.dialogRef || this.modalService.hasOpenModals()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) || this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard)) {
@@ -272,7 +278,9 @@ export class DialogService {
 	}
 
 	openModernPreloadModal() {
-		if (this.modalService.hasOpenModals()) return;
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
 			backdrop: 'static',
 			size: 'lg',
@@ -286,5 +294,33 @@ export class DialogService {
 				return true;
 			}
 		});
+	}
+
+	openWifiSecurityExpirePromptDialog(dialogData: DialogData) {
+		if (this.dialogRef || this.modalService.hasOpenModals()) {
+			return;
+		}
+		this.dialogRef = this.dialog.open(MaterialDialogComponent, {
+			maxWidth: '50rem',
+			data: {
+				title: dialogData.title,
+				description: dialogData.description,
+				buttonName: dialogData.buttonName,
+				linkButtonName: dialogData.linkButtonName,
+				showCloseButton: dialogData.showCloseButton
+			},
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			backdropClass: 'dialogBackdropExcludeMenu',
+			panelClass: this.deviceService.isGaming ? 'is-gaming' : '',
+		});
+		this.dialogRef.afterClosed().subscribe(result => {
+			if (result === 'action') {
+				this.openLenovoIdDialog();
+			}
+			this.dialogRef = undefined;
+		});
+		return this.dialogRef;
 	}
 }

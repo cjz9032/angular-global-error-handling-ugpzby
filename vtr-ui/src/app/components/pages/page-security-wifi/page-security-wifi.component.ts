@@ -7,7 +7,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
@@ -19,8 +19,13 @@ import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
-import { SecurityAdvisorNotifications } from 'src/app/enums/security-advisor-notifications.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
+import { UserService } from 'src/app/services/user/user.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
+import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
+import { MetricService } from 'src/app/services/metric/metrics.service';
+import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -50,9 +55,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	intervalId: number;
 	interval = 15000;
 	segmentConst = SegmentConst;
+	maxCanTrialTime = 31;
+	expirePromptDialogRef: MatDialogRef<MaterialDialogComponent>;
 	wsPluginMissingEventHandler = () => {
 		this.handleError(new PluginMissingError());
-	};
+	}
 	wsIsLocationServiceOnEventHandler = (value) => {
 		this.ngZone.run(() => {
 			if (value !== undefined) {
@@ -66,8 +73,16 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				}
 			}
 		});
-	};
-
+	}
+	wsTrialTimeOnEventHandler = (hasTrialDays: number) => {
+		if (this.needOpenExpireDialog(hasTrialDays)) {
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, hasTrialDays);
+			this.openExpireDialog(hasTrialDays);
+		}
+	}
+	wsStateEventHandler = () => {
+		this.getTrialDay();
+	}
 	constructor(
 		public activeRouter: ActivatedRoute,
 		private commonService: CommonService,
@@ -77,12 +92,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private cmsService: CMSService,
 		public translate: TranslateService,
 		private ngZone: NgZone,
-		private router: Router,
 		public configService: ConfigService,
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
-		public wifiSecurityService: WifiSecurityService
+		public wifiSecurityService: WifiSecurityService,
+		public userService: UserService,
+		private metrics: MetricService,
 	) { }
 
 	ngOnInit() {
@@ -100,7 +116,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.fetchCMSArticles();
 
 		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
-			.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
+			.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler)
+			.on(EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler)
+			.on(EventTypes.wsStateEvent, this.wsStateEventHandler);
+		this.getTrialDay();
+		this.sendMetrics();
 
 		this.isOnline = this.commonService.isOnline;
 		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
@@ -131,6 +151,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	onFocus(): void {
 		if (this.wifiSecurity) {
 			this.wifiSecurity.refresh();
+			this.getTrialDay();
 		}
 		if (!this.intervalId) {
 			this.pullCHS();
@@ -138,6 +159,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	ngOnDestroy() {
+		if (this.expirePromptDialogRef) {
+			this.expirePromptDialogRef.close();
+		}
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
 		if (this.wifiSecurity) {
@@ -145,6 +169,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.wifiSecurity.cancelGetWifiSecurityState();
 			this.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
 			this.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
+			this.wifiSecurity.off(EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler);
+			this.wifiSecurity.off(EventTypes.wsStateEvent, this.wsStateEventHandler);
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
@@ -224,6 +250,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
 					break;
+				case LenovoIdStatus.SignedOut:
+					if (notification.payload === false) {
+						this.getTrialDay();
+					}
+					break;
 				default:
 					break;
 			}
@@ -242,5 +273,53 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
 			});
 		}, this.interval);
+	}
+
+	private openExpireDialog(hasTrialDays: number) {
+		const timeToExpire = this.maxCanTrialTime - hasTrialDays;
+		const Dialogtitle = this.translate.instant('security.wifisecurity.expirePromptModal.title');
+		const des1 = this.translate.instant('security.wifisecurity.expirePromptModal.description');
+		const des2 =  this.translate.instant('security.wifisecurity.expirePromptModal.trialWillExpire');
+		const signInButton = this.translate.instant('security.wifisecurity.expirePromptModal.signIn');
+		const hasExpired = this.translate.instant('security.wifisecurity.expirePromptModal.hasExpired');
+		const ignore = this.translate.instant('security.wifisecurity.expirePromptModal.ignore');
+		const days = this.translate.instant('security.wifisecurity.expirePromptModal.days');
+
+		const dialogData: DialogData = {
+			title: Dialogtitle,
+			subtitle: '',
+			description: (hasTrialDays < this.maxCanTrialTime) ? `${des1}<br/>${des2}&nbsp;<b>${timeToExpire}&nbsp;${days}</b>` : hasExpired,
+			buttonName: signInButton,
+			linkButtonName: (hasTrialDays < this.maxCanTrialTime) ? ignore : '',
+			showCloseButton: (hasTrialDays < this.maxCanTrialTime) ? true : false,
+		};
+		this.expirePromptDialogRef = this.dialogService.openWifiSecurityExpirePromptDialog(dialogData);
+	}
+
+	needOpenExpireDialog(hasTrialDays: number): boolean {
+		const lastTrialTime = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, 1);
+		if (hasTrialDays >= this.maxCanTrialTime) {
+			return true;
+		}
+		return [7, 14, 21, 28].reduce((prev, cur) => {
+			return prev || (hasTrialDays >= cur && lastTrialTime < cur);
+		}, false);
+	}
+
+	sendMetrics() {
+		const state = this.wifiSecurityService.isLWSEnabled ? 'enabled' : 'disabled';
+		const loginState = this.userService.auth ? 'logged-in' : 'not-logged-in';
+		const metricsData = {
+			ItemParent: 'Security.wifisecurity',
+			ItemName: `wifiSecurity-${state}-lenovoId-${loginState}`,
+			ItemType: 'PageView'
+		};
+		this.metrics.sendMetrics(metricsData);
+	}
+
+	getTrialDay() {
+		if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth && this.userService.isLenovoIdSupported()) {
+			this.wifiSecurity.getWifiSecurityTrialDays();
+		}
 	}
 }

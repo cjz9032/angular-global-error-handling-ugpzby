@@ -2122,6 +2122,14 @@
 		}
 	}
 
+	.mat-dialog-container {
+		.close-icon {
+			color: $blueFill;
+			&:hover {
+				color: $blueHover; 
+			}
+		}
+	}
 }
 
 body.focus-enable{

@@ -3,15 +3,7 @@ import {
 	Inject,
 } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@lenovo/material/dialog';
-
-interface DialogData {
-	title: string;
-	subtitle: string;
-	description: string;
-	buttonName: string;
-	linkButtonName: string;
-	showCloseButton: boolean;
-}
+import { DialogData } from './material-dialog.interface';
 
 @Component({
 	selector: 'material-dialog',
@@ -19,11 +11,5 @@ interface DialogData {
 	styleUrls: ['./material-dialog.component.scss'],
 })
 export class MaterialDialogComponent {
-	dialogData: DialogData;
-
-	constructor(
-		@Inject(MAT_DIALOG_DATA) public data: DialogData
-	) {
-		this.dialogData = data;
-	}
+	constructor(@Inject(MAT_DIALOG_DATA) public dialogData: DialogData) {}
 }
