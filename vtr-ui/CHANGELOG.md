@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.33](https://bitbucket.tc.lenovo.com///compare/v1.8.32...v1.8.33) (2020-10-27)
+
+
+### Features
+
+* **Smart Performance:** VAN-22834 multi-languages for sp new UI ([717ac97](https://bitbucket.tc.lenovo.com///commit/717ac97a3ee1c5d3090e1882c448c47c4f579373))
+* **translate:** Add translation field ([0c89a85](https://bitbucket.tc.lenovo.com///commit/0c89a850ab49de6794e758cc0768b5d672e48b62))
+
+
+### Bug Fixes
+
+* **Smart Performance:** VAN-22838 fix high contrast bugs ([ee7b1c7](https://bitbucket.tc.lenovo.com///commit/ee7b1c7b139f6af10902b3442fa187fb8dd59680))
+* **Smart Performance:** VAN-22853 show the miss star mark at proactive and automated ([92e8183](https://bitbucket.tc.lenovo.com///commit/92e818327e763d22ea4f1183bf2b82f672074d39))
+* **ui-menu:** fix Error: matMenuTriggerFor ([31b53d1](https://bitbucket.tc.lenovo.com///commit/31b53d11b224fb09986c902d2993944fd9521a89))
+* fix UI translation init and SA cache status ([1f4c4e0](https://bitbucket.tc.lenovo.com///commit/1f4c4e0d43e786a387c3c12cf2b7fd40b730755f))
+* **Modern Preload:** VAN-22509 Fix accessibility bugs. ([ffdad2f](https://bitbucket.tc.lenovo.com///commit/ffdad2f80516ef289677b42dee1aa9d91c935dd1))
+* **Smart Performance:** VAN-22534 enter scanning page if schedule scan run ([df4fa4a](https://bitbucket.tc.lenovo.com///commit/df4fa4a049ceb860f54c04d70a918826c4fb2462))
+* **Smart Performance:** VAN-22743 fix some accessibility issue. ([53ca7b9](https://bitbucket.tc.lenovo.com///commit/53ca7b9041cc3f1f9c68e3d75d82ce0fdefdf365))
+* **ui-menu:** fix some items is invisible in high contrast white ([0e29288](https://bitbucket.tc.lenovo.com///commit/0e2928837f3e2b7a13bc4c238019b4ad798df0ae))
+* **ui-menu:** fix the unread indicator is still showing. ([5a39e0a](https://bitbucket.tc.lenovo.com///commit/5a39e0afbb2252755da40b4a3026a5e467a70b0a))
+* **ui-menu:** Optimized code ([b114c80](https://bitbucket.tc.lenovo.com///commit/b114c804699b02f7ce5357f8d303f9ceef8069e2))
+
 ### [1.8.32](https://bitbucket.tc.lenovo.com///compare/v1.8.31...v1.8.32) (2020-10-26)
 
 
