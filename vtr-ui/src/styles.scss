@@ -2573,3 +2573,16 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		height: auto;
 	}
 }
+
+.hcm-fill {
+	@include high-contrast-fill;
+}
+.hcm-fill-reverse {
+	@include high-contrast-fill-reverse;
+}
+.hcm-stroke {
+	@include high-contrast-stroke;
+}
+.hcm-stroke-reverse {
+	@include high-contrast-stroke-reverse;
+}

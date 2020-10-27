@@ -947,3 +947,36 @@ $high-contrast-sky-blue: #81BBF5;
 	top: 1.2rem;
 }
 
+@mixin high-contrast-fill {
+	@media #{$black-on-white} {
+		fill: $light !important;
+	}
+	@media #{$white-on-black} {
+		fill: $dark !important;
+	}
+}
+@mixin high-contrast-fill-reverse {
+	@media #{$black-on-white} {
+		fill: $dark !important;
+	}
+	@media #{$white-on-black} {
+		fill: $light !important;
+	}
+}
+@mixin high-contrast-stroke {
+	@media #{$black-on-white} {
+		stroke: $light !important;
+	}
+	@media #{$white-on-black} {
+		stroke: $dark !important;
+	}
+}
+@mixin high-contrast-stroke-reverse {
+	@media #{$black-on-white} {
+		stroke: $dark !important;
+	}
+	@media #{$white-on-black} {
+		stroke: $light !important;
+	}
+}
+
