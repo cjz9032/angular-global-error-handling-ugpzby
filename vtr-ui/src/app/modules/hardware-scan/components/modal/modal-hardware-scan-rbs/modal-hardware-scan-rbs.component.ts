@@ -63,6 +63,8 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		const modalRef = this.modalService.open(ModalRecoverConfirmComponent, {
 			size: '500px',
 			centered: true,
+			windowClass: 'hardware-scan-modal-size',
+			ariaLabelledBy: 'hwscan-recover-title'
 		});
 		modalRef.componentInstance.confirmClicked.subscribe(() => {
 			this.onConfirmClick(selectedDevices);
