@@ -127,6 +127,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 					break;
 				case ModernPreloadEnum.CommonException:
 					this.page = this.PageNames.ERROR;
+					this.focusOnModal();
 					break;
 			}
 		}
@@ -230,6 +231,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	setAppCheckStatus(appItem: AppItem) {
 		if (!this.isAppCheckDisabled(appItem)) {
 			appItem.isChecked = !appItem.isChecked;
+			this.checkedApp();
 		}
 	}
 
@@ -254,6 +256,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		this.isAppInstallError = false;
 		this.modernPreloadService.installEntitledApp(sendAppList, (response) => this.responseHandler(response));
 		this.modernPreloadService.DownloadButtonStatus = DownloadButtonStatusEnum.DOWNLOADING;
+		setTimeout(() => { document.getElementById('modern-preload-cancel-button').focus(); }, 0);
 	}
 
 	retry() {
@@ -263,11 +266,13 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	cancel() {
 		this.modernPreloadService.cancelInstall();
 		this.installationCancel();
+		setTimeout(() => { document.getElementById('modern-preload-skip-button').focus(); }, 0);
 	}
 
 	checkNetWork() {
 		if (!this.isOnline && this.page === this.PageNames.LOADING) {
 			this.page = this.PageNames.ERROR;
+			this.focusOnModal();
 		} else if (!this.isOnline && this.page === this.PageNames.APP && this.modernPreloadService.CurrentInstallingId !== '') {
 			const setApp = this.appList.find(a => a.appID === this.modernPreloadService.CurrentInstallingId);
 			if (setApp.showStatus === ModernPreloadStatusEnum.DOWNLOADING ||
@@ -286,9 +291,22 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		this.activeModal.close('close');
 	}
 
-	@HostListener('window: focus')
-	onFocus(): void {
+	@HostListener('document:keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (event.key.toUpperCase() === 'TAB') {
+			if (this.page === this.PageNames.LOADING) {
+				return false;
+			}
+		}
+	}
+
+	focusOnModal() {
 		const modal = document.querySelector('.modern-preload-modal') as HTMLElement;
 		modal.focus();
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		this.focusOnModal();
 	}
 }
