@@ -1,7 +1,7 @@
 <!-- Here there is a role, aria-labelledby and aria-describedby because its a workaround to this popup to read the new description message when updated -->
 <div class="modal-body vtr-modal-cancel" role="alertdialog" aria-labelledby="hwscan-cancel-modal-title" aria-describedby="hwscan-cancel-modal-description">
 
-	<h1 id="hwscan-cancel-modal-title" role="heading">{{ 'hardwareScan.attention' | translate }}</h1>
+	<h1 id="hwscan-cancel-modal-title" class="title" role="heading">{{ 'hardwareScan.attention' | translate }}</h1>
 
 	<p id="hwscan-cancel-modal-description" role="text">{{ description }}</p>
 	<p id="hwscan-cancel-modal-confirm-message" *ngIf="isInCountdown" role="text">{{ 'hardwareScan.cancelTextPrompt' | translate }}</p>
