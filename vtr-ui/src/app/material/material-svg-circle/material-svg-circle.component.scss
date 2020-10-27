@@ -2,13 +2,13 @@
 svg {
 	width: 100%;
 	height: 100%;
-	.a {
+	.circle-hcm {
 		@media #{$black-on-white} {
-			fill: $light;
+			fill: $light !important;
 			stroke: $dark;
 		}
 		@media #{$white-on-black} {
-			fill: $dark;
+			fill: $dark !important;
 			stroke: $light;
 		}
 	}
