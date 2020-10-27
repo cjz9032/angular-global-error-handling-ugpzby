@@ -1,6 +1,7 @@
-<div class="modal-body vtr-modal-cancel" aria-labelledby="hwscan-cancel-modal-title" aria-describedby="hwscan-cancel-modal-description hwscan-cancel-modal-confirm-message">
+<!-- Here there is a role, aria-labelledby and aria-describedby because its a workaround to this popup to read the new description message when updated -->
+<div class="modal-body vtr-modal-cancel" role="alertdialog" aria-labelledby="hwscan-cancel-modal-title" aria-describedby="hwscan-cancel-modal-description">
 
-	<h1 id="hwscan-cancel-modal-title" class="title" role="heading">{{ 'hardwareScan.attention' | translate }}</h1>
+	<h1 id="hwscan-cancel-modal-title" role="text">{{ 'hardwareScan.attention' | translate }}</h1>
 
 	<p id="hwscan-cancel-modal-description" role="text">{{ description }}</p>
 	<p id="hwscan-cancel-modal-confirm-message" *ngIf="isInCountdown" role="text">{{ 'hardwareScan.cancelTextPrompt' | translate }}</p>
@@ -29,7 +30,7 @@
 			</div>
 		</div>
 
-		<div class="col loading" *ngIf="loading"  aria-live="polite" aria-labelledby="hwscan-cancel-modal-title hwscan-cancel-modal-description">
+		<div class="col loading" *ngIf="loading">
 			<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
 			<!--Workaround to keep focus inside modal when there is no elements to be focused-->
 			<div tabindex="1" [autofocus]=true></div>

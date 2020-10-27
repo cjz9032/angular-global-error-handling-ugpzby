@@ -596,7 +596,8 @@ export class ScanExecutionService {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'cancel-modal-hwscan'
+			windowClass: 'cancel-modal-hwscan',
+			ariaLabelledBy: 'hwscan-cancel-modal-title'
 		});
 
 		modalCancel.componentInstance.ItemParent = this.getMetricsParentValue();
