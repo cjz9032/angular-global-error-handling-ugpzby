@@ -18,7 +18,7 @@ export class MaterialMenuDropdownComponent implements OnInit {
 	@Input() parentId: string;
 	@Input() activeItemId: string;
 	@Output() activeItem = new EventEmitter();
-	hasSecondaryMenu: boolean;
+	hasSecondaryMenu = false;
 
 	constructor(
 		private router: Router,
@@ -26,7 +26,11 @@ export class MaterialMenuDropdownComponent implements OnInit {
 
 	ngOnInit(): void {
 		if (this.dropdownMenu && this.dropdownMenu.subitems && this.dropdownMenu.subitems.length > 0) {
-			this.hasSecondaryMenu = this.dropdownMenu.subitems.some((item) => Boolean(item.subitems) && item.subitems.length > 0);
+			this.dropdownMenu.subitems.forEach((element) => {
+				if (!element.hide && element.subitems && element.subitems.length > 0 && element.subitems.some((item) => !item.hide)) {
+					this.hasSecondaryMenu = true;
+				}
+			});
 		}
 	}
 

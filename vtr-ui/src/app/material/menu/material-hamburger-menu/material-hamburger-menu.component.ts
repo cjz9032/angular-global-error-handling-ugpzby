@@ -73,7 +73,14 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	}
 
 	public hasSecondaryMenu(item: MenuItem) {
-		return item && item.subitems && item.subitems.length > 0;
+		if (item && item.subitems && item.subitems.length > 0) {
+			for (const element of item.subitems) {
+				if (!element.hide && element.subitems && element.subitems.length > 0 && element.subitems.some((it) => !it.hide)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	public openExternalLink(link) {

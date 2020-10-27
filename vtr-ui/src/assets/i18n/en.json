@@ -786,7 +786,8 @@
 				"sub3": "WiFi security",
 				"sub4": "Password health",
 				"sub5": "VPN security",
-				"sub6": "Fingerprint"
+				"sub6": "Fingerprint",
+				"sub7": "My Security Details"
 			},
 			"support": "Support",
 			"homeSecurity": "Connected Home",

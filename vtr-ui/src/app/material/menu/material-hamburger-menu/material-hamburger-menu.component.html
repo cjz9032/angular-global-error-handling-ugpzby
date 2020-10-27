@@ -53,7 +53,7 @@
 					</button>
 					<ng-container *ngFor="let subitem of item.subitems; let i=index" class="ml-5">
 						<button mat-menu-item
-							*ngIf="subitem && !subitem.hide && subitem.externallink"
+							*ngIf="subitem && !subitem.hide && subitem.externallink && subitem.id !== 'hardware-scan'"
 							id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{i}}"
 							class="pl-5 border-radius-0 font-size-xs outline-none menu-item menu-item-color menu-subitem"
 							attr.aria-label="{{subitem.label | translate }}"
@@ -63,15 +63,16 @@
 							[metricsEvent]="subitem.metricsEvent"
 							[metricsParent]="subitem.metricsParent"
 							[metricsItem]="subitem.metricsItem"
-							[ngClass]="{'font-weight-bold text-uppercase high-contrast-color-reversal': hasSecondaryMenu(subitem), 'active': !hasSecondaryMenu(subitem) && subitem.id === activeItemId}"
+							[ngClass]="{'font-weight-bold text-uppercase high-contrast-color-reversal': hasSecondaryMenu(item), 'active': !hasSecondaryMenu(item) && subitem.id === activeItemId}"
 							target="_blank"
 							rel="noopener"
 							href="javascript:void(0)"
-							(click)="[openExternalLink(subitem.path), updateActiveItem(subitem.id)]">
+							(click)="[openExternalLink(subitem.path), updateActiveItem(subitem.id)]"
+							[disabled]="hasSecondaryMenu(item)">
 							<span class="menu-item-text" [innerHTML]="subitem.label | translate"></span>
 						</button>
 						<button mat-menu-item
-							*ngIf="subitem && !subitem.hide && !subitem.externallink"
+							*ngIf="subitem && !subitem.hide && !subitem.externallink && subitem.id !== 'hardware-scan'"
 							id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{i}}"
 							class="pl-5 border-radius-0 font-size-xs outline-none menu-item menu-item-color menu-subitem"
 							attr.aria-label="{{subitem.label| translate}}"
@@ -81,14 +82,34 @@
 							[metricsEvent]="subitem.metricsEvent"
 							[metricsParent]="subitem.metricsParent"
 							[metricsItem]="subitem.metricsItem"
-							[ngClass]="{'font-weight-bold text-uppercase high-contrast-color-reversal': hasSecondaryMenu(subitem), 'active': !hasSecondaryMenu(subitem) && subitem.id === activeItemId}"
+							[ngClass]="{'font-weight-bold text-uppercase high-contrast-color-reversal': hasSecondaryMenu(item), 'active': !hasSecondaryMenu(item) && subitem.id === activeItemId}"
 							routerLink="/{{item.path}}/{{subitem.path}}"
 							href="javascript:void(0)"
 							(click)="[onMenuItemClick(item), updateActiveItem(subitem.id)]"
-							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path, subitem.path), updateActiveItem(subitem.id)]">
+							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path, subitem.path), updateActiveItem(subitem.id)]"
+							[disabled]="hasSecondaryMenu(item)">
 							<span class="menu-item-text" [innerHTML]="subitem.label | translate"></span>
 						</button>
-						<section *ngIf="hasSecondaryMenu(subitem)">
+						<button mat-menu-item
+							*ngIf="subitem && !subitem.hide && subitem.id === 'hardware-scan'"
+							id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{i}}"
+							class="pl-5 border-radius-0 font-size-xs outline-none menu-item menu-item-color menu-subitem"
+							attr.aria-label="{{subitem.label| translate}}"
+							routerLinkActive="link-active"
+							[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+							vtrMetrics
+							[metricsEvent]="subitem.metricsEvent"
+							[metricsParent]="subitem.metricsParent"
+							[metricsItem]="subitem.metricsItem"
+							[ngClass]="{'font-weight-bold text-uppercase high-contrast-color-reversal': hasSecondaryMenu(item), 'active': !hasSecondaryMenu(item) && subitem.id === activeItemId}"
+							routerLink="/{{subitem.path}}"
+							href="javascript:void(0)"
+							(click)="[onMenuItemClick(item), updateActiveItem(subitem.id)]"
+							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(subitem.path), updateActiveItem(subitem.id)]"
+							[disabled]="hasSecondaryMenu(item)">
+							<span class="menu-item-text" [innerHTML]="subitem.label | translate"></span>
+						</button>
+						<section *ngIf="subitem && !subitem.hide && hasSecondaryMenu(item)">
 							<ng-container *ngFor="let secondarySubitem of subitem.subitems; let ii=index">
 								<button mat-menu-item
 									*ngIf="secondarySubitem && !secondarySubitem.hide && secondarySubitem.externallink"

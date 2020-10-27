@@ -349,7 +349,7 @@
 				{
 					"id": "security",
 					"label": "common.menu.security.sub1",
-					"path": "mysecurity",
+					"path": null,
 					"icon": null,
 					"segment": "-[Commercial]",
 					"metricsEvent": "itemClick",
@@ -358,72 +358,101 @@
 					"routerLinkActiveOptions": {
 						"exact": false
 					},
-					"subitems": []
-				},
-				{
-					"id": "anti-virus",
-					"label": "common.menu.security.sub2",
-					"path": "anti-virus",
-					"icon": null,
-					"segment": "-[Commercial]",
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.antivirus",
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"subitems": [],
-					"pre": [
-						"assets/images/antivirus/side_bar_bottom.svg",
-						"assets/images/antivirus/hero_side.png",
-						"assets/images/antivirus/hero_blob.png",
-						"assets/images/antivirus/hero_side_blob_white.svg",
-						"assets/images/antivirus/hero_bottom_blob.svg"
+					"subitems": [
+						{
+							"id": "security",
+							"label": "common.menu.security.sub1",
+							"path": "mysecurity",
+							"icon": null,
+							"segment": "-[Commercial]",
+							"metricsEvent": "itemClick",
+							"metricsParent": "navbar",
+							"metricsItem": "link.mysecurity",
+							"routerLinkActiveOptions": {
+								"exact": false
+							},
+							"subitems": []
+						}
 					]
 				},
 				{
-					"id": "password-protection",
-					"label": "common.menu.security.sub4",
-					"path": "password-protection",
-					"segment": "-[Commercial]",
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.passwordprotection",
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"icon": null,
-					"subitems": []
-				},
-				{
-					"id": "wifi-security",
-					"label": "common.menu.security.sub3",
-					"path": "wifi-security",
+					"id": "security",
+					"label": "common.menu.security.sub7",
+					"path": null,
 					"icon": null,
 					"metricsEvent": "itemClick",
 					"metricsParent": "navbar",
-					"metricsItem": "link.wifisecurity",
+					"metricsItem": "link.mysecurity",
 					"routerLinkActiveOptions": {
-						"exact": true
+						"exact": false
 					},
-					"subitems": [],
-					"pre": [
-						"assets/images/coronet-logo.svg"
+					"subitems": [
+						{
+							"id": "anti-virus",
+							"label": "common.menu.security.sub2",
+							"path": "anti-virus",
+							"icon": null,
+							"segment": "-[Commercial]",
+							"metricsEvent": "itemClick",
+							"metricsParent": "navbar",
+							"metricsItem": "link.antivirus",
+							"routerLinkActiveOptions": {
+								"exact": true
+							},
+							"subitems": [],
+							"pre": [
+								"assets/images/antivirus/side_bar_bottom.svg",
+								"assets/images/antivirus/hero_side.png",
+								"assets/images/antivirus/hero_blob.png",
+								"assets/images/antivirus/hero_side_blob_white.svg",
+								"assets/images/antivirus/hero_bottom_blob.svg"
+							]
+						},
+						{
+							"id": "password-protection",
+							"label": "common.menu.security.sub4",
+							"path": "password-protection",
+							"segment": "-[Commercial]",
+							"metricsEvent": "itemClick",
+							"metricsParent": "navbar",
+							"metricsItem": "link.passwordprotection",
+							"routerLinkActiveOptions": {
+								"exact": true
+							},
+							"icon": null,
+							"subitems": []
+						},
+						{
+							"id": "wifi-security",
+							"label": "common.menu.security.sub3",
+							"path": "wifi-security",
+							"icon": null,
+							"metricsEvent": "itemClick",
+							"metricsParent": "navbar",
+							"metricsItem": "link.wifisecurity",
+							"routerLinkActiveOptions": {
+								"exact": true
+							},
+							"subitems": [],
+							"pre": [
+								"assets/images/coronet-logo.svg"
+							]
+						},
+						{
+							"id": "internet-protection",
+							"label": "common.menu.security.sub5",
+							"path": "internet-protection",
+							"metricsEvent": "itemClick",
+							"metricsParent": "navbar",
+							"metricsItem": "link.internetprotection",
+							"routerLinkActiveOptions": {
+								"exact": true
+							},
+							"icon": null,
+							"segment": "-[Commercial]",
+							"subitems": []
+						}
 					]
-				},
-				{
-					"id": "internet-protection",
-					"label": "common.menu.security.sub5",
-					"path": "internet-protection",
-					"metricsEvent": "itemClick",
-					"metricsParent": "navbar",
-					"metricsItem": "link.internetprotection",
-					"routerLinkActiveOptions": {
-						"exact": true
-					},
-					"icon": null,
-					"segment": "-[Commercial]",
-					"subitems": []
 				}
 			]
 		},
@@ -475,6 +504,23 @@
 						"exact": true
 					},
 					"subitems": []
+				},
+				{
+					"id": "hardware-scan",
+					"label": "hardwareScan.name",
+					"path": "hardware-scan",
+					"metricsEvent": "itemClick",
+					"metricsParent": "navbar",
+					"metricsItem": "link.hardwarescan",
+					"segment": "-[Gaming]",
+					"routerLinkActiveOptions": {
+						"exact": true
+					},
+					"icon": [
+						"fal",
+						"flask"
+					],
+					"subitems": []
 				}
 			]
 		},
@@ -497,23 +543,6 @@
 			"pre": [
 				"assets/images/connected-home-security/welcome-slide1@2x.png"
 			]
-		},
-		{
-			"id": "hardware-scan",
-			"label": "hardwareScan.name",
-			"path": "hardware-scan",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.hardwarescan",
-			"segment": "-[Gaming]",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"icon": [
-				"fal",
-				"flask"
-			],
-			"subitems": []
 		},
 		{
 			"id": "app-search",

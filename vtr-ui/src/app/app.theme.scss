@@ -147,6 +147,7 @@ $screen_dark_05: rgba(0, 0, 0, 0.05);
 $screen_dark_10: rgba(0, 0, 0, 0.1);
 $screen_dark_15: rgba(0, 0, 0, 0.15);
 $screen_dark_20: rgba(0, 0, 0, 0.2);
+$screen_dark_25: rgba(0, 0, 0, 0.25);
 $screen_dark_30: rgba(0, 0, 0, 0.3);
 $screen_dark_50: rgba(0, 0, 0, 0.5);
 $screen_dark_70: rgba(0, 0, 0, 0.7);
@@ -358,7 +359,7 @@ $dpiquery_5: "max-resolution: 100dpi";
 
 $drop_shadow: 0 0 1.5rem 0 $screen_dark_15;
 $text_shadow: 0 0 0.3rem $screen_dark_70;
-$menu_dropdown_shadow: 0 0 0.2rem 0.1rem $shadow;
+$menu_dropdown_shadow: 0 0 1.5rem 0 $screen_dark_25;
 
 $weight_light: 300;
 $weight_regular: 400;
