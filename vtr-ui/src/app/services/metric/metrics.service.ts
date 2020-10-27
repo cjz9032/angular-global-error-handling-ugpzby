@@ -10,7 +10,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { ActivatedRoute } from '@angular/router';
 import { SelfSelectService } from '../self-select/self-select.service';
 import { environment } from '../../../environments/environment';
-import { ContentDisplayDetection} from './service-components/content-display-detection';
+import { ContentDisplayDetection } from './service-components/content-display-detection';
 import { DevService } from '../dev/dev.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
@@ -149,6 +149,17 @@ export class MetricService {
 	public sendMetrics(data: any) {
 		if (this.metricsClient && this.metricsClient.sendAsync) {
 			this.metricsClient.sendAsync(data);
+		}
+	}
+
+	// This interface should only be used to send metrics that regardless of privacy option
+	public sendMetricsForcibly(data: any) {
+		if (this.metricsClient && this.metricsClient.sendAsync) {
+			this.metricsClient.sendAsyncEx(data,
+				{
+					forced: true
+				}
+			);
 		}
 	}
 

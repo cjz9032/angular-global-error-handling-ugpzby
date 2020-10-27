@@ -1,0 +1,71 @@
+<div class="vtr-survey-form" id="survey-form-dialog">
+	<div class="content">
+		<h2 class="title" id="survey-dialog-basic-title">{{ 'dashboard.survey.title' | translate }}</h2>
+
+		<div class="survey-form" *ngFor="let page of pages; index as pIdx"
+			[hidden]='pIdx !== progress'>
+
+			<div class="page-summary" [id]="'survey-page-basic-title-' + pIdx" role="text">{{ page.summary | translate}}</div>
+
+			<div class="qa-item" *ngFor="let qa of page.questions; index as qIdx">
+				<div class="question" [dir]="'dir' | translate" [innerHTML]=" qIdx + 1 +  '. ' + (qa.title | translate)"
+					[id]="qa.name" role="text"></div>
+				<div *ngIf="!qa.multipleChoice">
+					<div class="form-check form-check-inline" *ngFor="let option of qa.options; index as oIdx">
+						<input class="form-check-input" type="radio" [name]="qa.name"
+							[id]="qa.name + '-input-' + oIdx"
+       						[(ngModel)]="page.results[qa.name]"
+							[value]="oIdx + 1">
+						<label class="form-check-label-out"></label>
+						<label class="form-check-label" [id]="qa.name + '-label-' + oIdx" role="text"
+							[for]="qa.name + '-input-' + oIdx">{{option}}</label>
+					</div>
+				</div>
+				<div *ngIf="qa.multipleChoice">
+					<div class="form-check form-check-inline multiple-choice"
+						*ngFor="let option of qa.options; index as oIdx">
+						<input class="form-check-input" type="checkbox" [name]="qa.name"
+							(click)="setCheckboxStatus(pIdx, qa.name, $event)"
+							(keydown.enter)="setCheckboxStatus(pIdx, qa.name, $event)" [id]="qa.name + '-input-' + oIdx"
+							[value]="oIdx + 1">
+						<label class="form-check-label-out"></label>
+						<label class="form-check-label" [id]="qa.name + '-label-' + oIdx" role="text"
+							[for]="qa.name + '-input-' + oIdx">{{option}}</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="survey-form page-space-holder"  [hidden]='progress < pages.length'>
+		</div>
+
+		<div class="line"></div>
+
+		<div class="d-flex align-items-center btn-box">
+			<div class="btn-submit">
+				<vtr-ui-button linkId="modal-btn-sendsurvey" metricsEvent="FeatureClick"
+					metricsItem="SendSurveyButton" metricsParent="Dialog.Survey" [btnHeight]="true"
+					[isFullWidth]="true" [label]="(pages.length - 1 === progress ? 'dashboard.survey.submit' : 'dashboard.survey.next') | translate" (onClick)="onClickNextOrSumbit()"
+					[isDisabled]="disableNextButton()">
+				</vtr-ui-button>
+			</div>
+		</div>
+	</div>
+
+	<div class="survey-success d-flex align-items-center justify-content-center" *ngIf="completed">
+		<div>
+			<div class="success-icon">
+				<fa-icon [icon]="['fal', 'check-circle']"></fa-icon>
+			</div>
+			<div class="thank-you"
+				id="survey-modal-thank-you"
+				role="text">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
+			<div class="left-time">{{ closingleftTime }}</div>
+		</div>
+	</div>
+
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="survey-modal-btn-close" metricsItem="btn.close" metricsParent="Dialog.Survey"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
+	</div>
+</div>

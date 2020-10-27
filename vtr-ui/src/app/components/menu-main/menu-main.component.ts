@@ -34,6 +34,8 @@ import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpa
 import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { LenovoSurveyEnum } from 'src/app/enums/lenovo-survey.enum';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 @Component({
 	selector: 'vtr-menu-main',
@@ -62,6 +64,7 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 	private relaySubscription: Subscription;
 	public isLoggingOut = false;
 	public selfSelectStatusVal: boolean;
+
 	showMenu = false;
 	showHWScanMenu = false;
 	preloadImages: string[];
@@ -123,7 +126,8 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		public cardService: CardService,
 		private feedbackService: FeedbackService,
 		private localCacheService: LocalCacheService,
-		private backlightService: BacklightService
+		private backlightService: BacklightService,
+		private hypService: HypothesisService
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
 	}
@@ -642,4 +646,13 @@ export class MenuMainComponent implements OnInit, OnDestroy {
 		this.showMenu = false;
 		this.feedbackService.openFeedbackModal();
 	}
+
+	openSurveyModal(surveyId) {
+		this.showMenu = false;
+		this.appsForYouService.lenovoSurvey.unread = false;
+		this.appsForYouService.decreaseUnreadMessage(surveyId);
+		this.feedbackService.openSurveyModal(surveyId);
+	}
+
+
 }

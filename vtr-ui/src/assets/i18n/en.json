@@ -920,6 +920,96 @@
 				}
 			}
 		},
+		"survey": {
+			"title": "Lenovo Survey",
+			"next": "Next",
+			"submit": "Submit",
+			"form": {
+				"page1": {
+					"summary": "Please think about the attributes that are most important to you when selecting a laptop/notebook for personal use.",
+					"question": "Please select the attribute that is more important.",
+					"question1": {
+						"options": ["Price", "Manufacturer / Brand Name"]
+					},
+					"question2": {
+						"options": ["Processor Speed",
+							"Form Factor (Traditional laptop, convertible, detachable) Style"]
+					},
+					"question3": {
+						"options": ["Graphics Capabilities", "Screen Size"]
+					},
+					"question4": {
+						"options": ["Screen Size", "Weight"]
+					}
+				},
+				"page2": {
+					"summary": "How important are each of the following display characteristics when considering a laptop/notebook computer?",
+					"question1": "HDR / High-Dynamic Range (high definition / resolution)",
+					"question2": "Touchscreen",
+					"options": ["1 - Not at all important",
+						"2",
+						"3",
+						"4",
+						"5 - Extremely important",
+						"6 - Not familiar with this option"]
+				},
+				"page3": {
+					"summary": "How much do you agree or disagree with the following statements regarding laptop / notebook computers?",
+					"question1": "It's very important to have a laptop / notebook that people will notice",
+					"question2": "It doesn't matter to me what kind of material is used for the body of a laptop / notebook.",
+					"options": ["1 - Do not agree at all",
+						"2 - Somewhat disagree",
+						"3 - Neither agree nor disagree",
+						"4 - Agree somewhat",
+						"5 - Completely agree"]
+				},
+				"page4": {
+					"summary": "How important to you is each of the following activities that you do on a home computer?",
+					"question1": "Do work for your job",
+					"question2": "Play games",
+					"question3": "Keep up with the latest news",
+					"question4": "Watch movies / TV shows / other view",
+					"options": ["1 - It is not that important to me",
+						"2",
+						"3",
+						"4",
+						"5 - It is extremely important to me",
+						"6 - I don't do this activity on a home computer"]
+				},
+				"page5": {
+					"question1": {
+						"title": "Do you use a voice assistant (e.g. Alexa, Siri, Google assistant, Cortana) on any of the following home devices?  Please select all that apply.",
+						"options": ["On my desktop computer",
+							"On my laptop / notebook computer",
+							"On my tablet",
+							"On my smartphone",
+							"On a smart speaker / display",
+							"I do not use a voice assistant on any of those devices"]
+					},
+					"question2": {
+						"title": "Which of the following best describes you?",
+						"options": ["I am usually among the first people to purchase the latest technology",
+							"I buy the latest technology sooner than most",
+							"I buy new technology once a lot of people are already using it",
+							"I wait to buy new technology after most people are already using it"]
+					},
+					"question3": {
+						"title": "How much do you typically spend on a computer?",
+						"options": [
+							"Less than $300",
+							"$300 to $499",
+							"$500 to $699",
+							"$700 to $999",
+							"$1000 to $1499",
+							"$2000 to $2499",
+							"$2500 or more"]
+					}
+				},
+				"messages": {
+					"feedbackSuccess": "Thank you for your feedback !"
+				}
+			}
+		},
 		"quickSettings": {
 			"title": "Quick settings",
 			"microphone": "Microphone",

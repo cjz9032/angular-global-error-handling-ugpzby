@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FeedbackRoutingModule } from './feedback-routing.module';
 import { FeedbackFormComponent } from 'src/app/components/feedback-form/feedback-form/feedback-form.component';
+import { SurveyFormComponent} from 'src/app/components/feedback-form/survey-form/survey-form.component';
 import { WidgetFeedbackComponent } from 'src/app/components/widgets/widget-feedback/widget-feedback.component';
 import { TranslationModule } from '../translation.module';
 import { CommonPipeModule } from '../common/common-pipe.module';
@@ -19,6 +20,7 @@ import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-cl
 	declarations: [
 		FeedbackFormComponent,
 		WidgetFeedbackComponent,
+		SurveyFormComponent
 	],
 	imports: [
 		CommonModule,
@@ -39,6 +41,7 @@ import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-cl
 	exports: [
 		FeedbackFormComponent,
 		WidgetFeedbackComponent,
+		SurveyFormComponent
 	],
 	providers: [],
 	entryComponents: [
