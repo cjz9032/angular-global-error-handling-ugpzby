@@ -47,4 +47,18 @@ export class GamingOCService {
 			throw new Error(error.message);
 		}
 	}
+
+	// Version 3.5 
+	regOCRealStatusChangeEvent(): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingOverClock.regOCRealStatusEvent();
+			}
+			this.logger.error(`Service-GamingOC-regOCRealStatusChangeEvent: return undefined, shell Available: ${this.isShellAvailable}`);
+			return undefined;
+		} catch (error) {
+			this.logger.error('Service-GamingOC-regOCRealStatusChangeEvent: register fail; Error message: ', error.message);
+			throw new Error(error.message);
+		}
+	}
 }
