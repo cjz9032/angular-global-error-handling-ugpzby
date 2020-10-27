@@ -388,13 +388,14 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.logger.info('APS Capability ---------------------------------', response);
 				(response[0] && response[1] && response[2] > 0) ? this.isAPSAvailable = true : this.isAPSAvailable = false;
 
-				this.featureInitialize.aps = true;
-				this.checkHeaderMenuItems(this.isAPSAvailable, 'aps');
-
 				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
 				this.setSmartAssistCacheStorageValue();
 			})
-			.catch((error) => { this.logger.info('APS ERROR------------------', error.message); });
+			.catch((error) => { this.logger.info('APS ERROR------------------', error.message); })
+			.finally(() => {
+				this.featureInitialize.aps = true;
+				this.checkHeaderMenuItems(this.isAPSAvailable, 'aps');
+			});
 	}
 
 	private initIntelligentScreen() {
@@ -423,15 +424,17 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.intelligentScreen.isReadingOrBrowsingEnabled = readingOrBrowsingStatusResponse;
 			this.intelligentScreen.readingOrBrowsingTime = readingOrBrowsingTimeResponse;
 
-			this.featureInitialize.screen = true;
-			this.checkHeaderMenuItems(this.intelligentScreen.isIntelligentScreenVisible, 'screen');
-
 			this.smartAssistCache.intelligentScreen = this.intelligentScreen;
 			this.setSmartAssistCacheStorageValue();
 			this.getAutoScreenOffNoteStatusFunc();
 		}).catch(error => {
+			this.featureInitialize.screen = true;
+			this.checkHeaderMenuItems(this.intelligentScreen.isIntelligentScreenVisible, 'screen');
 			this.logger.error('error in PageSmartAssistComponent.Promise.IntelligentScreen()', error.message);
 			return EMPTY;
+		}).finally(() => {
+			this.featureInitialize.screen = true;
+			this.checkHeaderMenuItems(this.intelligentScreen.isIntelligentScreenVisible, 'screen');
 		});
 	}
 
@@ -494,8 +497,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.intelligentSecurity.autoScreenLockTimer = selectedLockTimerResponse.toString();
 			this.intelligentSecurity.isHPDEnabled = HPDStatusResponse;
 			this.intelligentSecurity.isIntelligentSecuritySupported = HPDVisibilityResponse;
-			this.featureInitialize.security = true;
-			this.checkHeaderMenuItems(this.intelligentSecurity.isIntelligentSecuritySupported, 'security');
 			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 			this.setSmartAssistCacheStorageValue();
 			this.updateZeroTouchLockTimersUIModel();
@@ -504,6 +505,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		}).catch(error => {
 			this.logger.error('error in PageSmartAssistComponent.Promise.initZeroTouchLock()', error.message);
 			return EMPTY;
+		}).finally(() => {
+			this.featureInitialize.security = true;
+			this.checkHeaderMenuItems(this.intelligentSecurity.isIntelligentSecuritySupported, 'security');
 		});
 	}
 
@@ -811,13 +815,15 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.intelligentMedia = response;
 						this.logger.debug('PageSmartAssistComponent.getVideoPauseResumeStatus: response from API', response);
 
-						this.featureInitialize.media = true;
-						this.checkHeaderMenuItems(response.available, 'media');
-
 						this.smartAssistCache.intelligentMedia = this.intelligentMedia;
 						this.setSmartAssistCacheStorageValue();
 					}).catch(error => {
+						this.featureInitialize.media = true;
+						this.checkHeaderMenuItems(false, 'media');
 						this.logger.error('PageSmartAssistComponent.getVideoPauseResumeStatus: error', error);
+					}).finally(() => {
+						this.featureInitialize.media = true;
+						this.checkHeaderMenuItems(this.intelligentMedia.available, 'media');
 					});
 			}
 		} catch (error) {
@@ -849,10 +855,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.then((response: FeatureStatus) => {
 						this.isSuperResolutionLoading = false;
 						this.superResolution = response;
-						this.featureInitialize.superResolution = true;
-						this.checkHeaderMenuItems(response.available, 'media');
 					}).catch(error => {
 						this.logger.error('getSuperResolutionStatus.error', error);
+					}).finally(() => {
+						this.featureInitialize.superResolution = true;
+						this.checkHeaderMenuItems(this.superResolution.available, 'media');
 					});
 			}
 		} catch (error) {
