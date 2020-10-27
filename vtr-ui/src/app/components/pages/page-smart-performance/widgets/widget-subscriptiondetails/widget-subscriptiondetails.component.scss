@@ -44,7 +44,7 @@
 		}
 
 		&:disabled {
-			cursor: not-allowed;
+			cursor: default;
 			color: $grey_dark;
 			border-bottom: 0.2rem solid $grey_dark;
 			opacity: .4;

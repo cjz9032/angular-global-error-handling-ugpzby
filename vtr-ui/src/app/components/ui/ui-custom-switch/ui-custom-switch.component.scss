@@ -215,6 +215,10 @@
 			}
 		}
 
+		.custom-control-input:disabled ~ .custom-control-label {
+			cursor: default;
+		}
+
 		.custom-control-input:disabled:hover ~ .custom-control-label,
 		.custom-control-input:disabled ~ .custom-control-label {
 			&::before {
