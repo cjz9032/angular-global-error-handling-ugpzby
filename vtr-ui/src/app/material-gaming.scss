@@ -49,7 +49,7 @@
             ),
     ));
     @include angular-material-typography($van-typography);
-    @include angular-material-theme($van-ui-gaming-theme);
+    @include angular-material-color($van-ui-gaming-theme);
     
     .mat-dialog-container {
         background-color: $light;
