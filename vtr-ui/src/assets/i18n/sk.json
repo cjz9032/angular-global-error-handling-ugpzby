@@ -774,8 +774,8 @@
                 "sub2": "Nastavenia môjho zariadenia",
                 "sub3": "Aktualizácia systému",
                 "sub4": "Inteligentný asistent",
-                "sub5": "Podrobnosti o zariadení",
-                "sub6": "Device Settings Details"
+				"sub5": "Podrobnosti o zariadení",
+				"sub6": "Podrobnosti o nastaveniach zariadenia"
             },
             "security": {
                 "title": "Zabezpečenie",

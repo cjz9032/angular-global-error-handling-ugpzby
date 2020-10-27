@@ -774,8 +774,8 @@
                 "sub2": "Meine Geräteeinstellungen",
                 "sub3": "Systemaktualisierung",
                 "sub4": "Intelligente Unterstützung",
-                "sub5": "Details zur Einheit",
-                "sub6": "Device Settings Details"
+				"sub5": "Details zur Einheit",
+				"sub6": "Details der Einheiteneinstellungen"
             },
             "security": {
                 "title": "Sicherheit",
