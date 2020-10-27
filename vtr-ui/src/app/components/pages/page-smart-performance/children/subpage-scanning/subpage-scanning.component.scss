@@ -29,6 +29,13 @@ vtr-subpage-smart-performance-scan-summary {
 					padding-top: 1rem;
 				}
 			}
+			.spinner-border {
+				@media #{$high-contrast} {
+					display: inline-block;
+					border: 0.25em solid currentColor;
+					border-right-color: transparent;
+				}
+			}
 		}
 
 		.progress-value-text {
@@ -86,6 +93,18 @@ vtr-subpage-smart-performance-scan-summary {
 
 	.pc-info-card {
 		padding: $padding_content;
+
+		@media #{$high-contrast} {
+			@include black-border;
+		}
+
+		@media #{$white-on-black} {
+			@include white-border;
+		}
+
+		@media #{$black-on-white} {
+			@include black-border;
+		}
 
 		&::ng-deep {
 			ngb-accordion {

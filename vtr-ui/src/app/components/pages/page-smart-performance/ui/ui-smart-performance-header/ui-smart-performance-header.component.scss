@@ -24,6 +24,10 @@ $marginLeft: calc(#{$imageWH} + #{$padding_content});
 		@include white-border;
 		border-bottom: none;
 		background: none;
+
+		&.bottom-radius {
+			@include white-border;
+		}
 	}
 
 	@media #{$black-on-white} {
@@ -31,6 +35,10 @@ $marginLeft: calc(#{$imageWH} + #{$padding_content});
 		@include black-border;
 		border-bottom: none;
 		background: none;
+
+		&.bottom-radius {
+			@include black-border;
+		}
 	}
 
 	.image-container {
