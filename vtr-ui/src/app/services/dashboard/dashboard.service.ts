@@ -477,13 +477,14 @@ export class DashboardService {
 	}
 
 	public async isPositionBShowDeviceState() {
-		const isSystemUpdateEnabled = !this.deviceService.isArm && this.adPolicyService.IsSystemUpdateEnabled;
-		const isHardwareScanEnabled = !this.deviceService.isArm && await this.hardwareScanService.isAvailable();
-		const isSmartPerformanceEnabled = this.configService.isSmartPerformanceAvailable;
+		const isSystemUpdateEnabled = this.adPolicyService.IsSystemUpdateEnabled;
+		const isHardwareScanEnabled = await this.hardwareScanService.isAvailable();
+		const isSmartPerformanceEnabled = await this.configService.showSmartPerformance();
 		const segment = await this.selfselectService.getSegment();
 		const isConsumerOrSMB = SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB;
 
-		return !this.deviceService.isSMode && isConsumerOrSMB && (isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled);
+		return !this.deviceService.isSMode && isConsumerOrSMB && !this.deviceService.isArm
+			&& (isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled);
 	}
 
 	public async getDeviceStatus() {
