@@ -46,37 +46,32 @@
 				</div>
 			</span>
 		</div>
-		<button mat-icon-button
-			[matMenuTriggerFor]="hamburgerMenuMain"
-			#menuMainNavbarToggler
-			id="menu-main-btn-navbar-toggler"
-			class="position-relative w-auto h-auto mr-1 py-1 px-3 rounded-0 text-center navbar-toggler line-height-normal"
-			disableRipple
-			aria-label="menu-main-btn-navbar-toggler"
-			aria-haspopup="true"
-			aria-expanded="false"
-			(click)="toggleMenu($event)"
-			(keydown.enter)="toggleMenu($event)">
-			<span class="h-100 navbar-toggler-icon">
-				<fa-icon class="align-middle" [icon]="['fas', 'bars']"></fa-icon>
-			</span>
-			<span *ngIf="appsForYouService.UnreadMessageCount.totalMessage"
-				class="d-flex position-absolute rounded-circle justify-content-center align-items-center letter-spacing-0 top-0 unread-count-tag"
-				role="text"
-				[innerHTML]="appsForYouService.UnreadMessageCount.totalMessage"></span>
-		</button>
-		<mat-menu id="menu-main-nav-lnk-dropdown"
-			class="min-height-0 hamburger-menu-container"
-			#hamburgerMenuMain="matMenu"
-			xPosition="before"
-			yPosition="below"
-			backdropClass="hamburger-backdrop">
-			<vtr-material-hamburger-menu *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable)"
+		<ng-container *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable)">
+			<button mat-icon-button
+				[matMenuTriggerFor]="hamburgerDropdownMenu?.matMenu"
+				id="menu-main-btn-navbar-toggler"
+				class="position-relative w-auto h-auto mr-1 py-1 px-3 rounded-0 text-center navbar-toggler line-height-normal"
+				disableRipple
+				aria-label="menu-main-btn-navbar-toggler"
+				aria-haspopup="true"
+				aria-expanded="false"
+				(click)="toggleMenu($event)"
+				(keydown.enter)="toggleMenu($event)">
+				<span class="h-100 navbar-toggler-icon">
+					<fa-icon class="align-middle" [icon]="['fas', 'bars']"></fa-icon>
+				</span>
+				<span *ngIf="appsForYouService.UnreadMessageCount.totalMessage"
+					class="d-flex position-absolute rounded-circle justify-content-center align-items-center letter-spacing-0 top-0 unread-count-tag"
+					role="text"
+					[innerHTML]="appsForYouService.UnreadMessageCount.totalMessage"></span>
+			</button>
+			<vtr-material-hamburger-menu
+				#hamburgerDropdownMenu="materialHamburgerMenuComponent"
 				[items]="items"
 				(activeItem)="updateActiveItem($event)"
 				[activeItemId]="activeItemId">
 			</vtr-material-hamburger-menu>
-		</mat-menu>
+		</ng-container>
 		<div *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable)"
 			class="h-100 flex-1 menu-container"
 			#menuTarget>
@@ -110,7 +105,7 @@
 						<button mat-button
 							#menuTrigger="matMenuTrigger"
 							matMenuHoverTrigger
-							[matMenuTriggerFor]="menuMain"
+							[matMenuTriggerFor]="materialMenuDropdown?.matMenu"
 							*ngIf="item.label | translate"
 							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
 							[ngClass]="{'beta-item':item.beta}"
@@ -134,21 +129,15 @@
 							(focus)="[closeAllOtherMatMenu(menuTrigger), openMatMenu(menuTrigger)]"
 							[innerHTML]="item.label | translate">
 						</button>
-						<mat-menu #menuMain="matMenu"
-							[hasBackdrop]="false"
-							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
-							class="mt-0 overflow-wrap-normal max-width-none min-height-0 menu-dropdown-container"
-							attr.aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
-							xPosition="before">
-							<vtr-material-menu-dropdown
-								[dropdownMenu]="item"
-								[parentPath]="item.path"
-								[parentId]="item.id"
-								[activeItemId]="activeItemId"
-								(activeItem)="updateActiveItem($event)"
-								class="d-inline-block align-top">
-							</vtr-material-menu-dropdown>
-						</mat-menu>
+						<vtr-material-menu-dropdown
+							#materialMenuDropdown="materialMenuDropdownComponent"
+							[dropdownMenu]="item"
+							[parentPath]="item.path"
+							[parentId]="item.id"
+							[activeItemId]="activeItemId"
+							(activeItem)="updateActiveItem($event)"
+							class="d-inline-block align-top">
+						</vtr-material-menu-dropdown>
 					</li>
 					<li class="user-item" *ngIf="item && !item.hide && item.id === 'user' && languageService.isLanguageLoaded">
 						<button mat-button
