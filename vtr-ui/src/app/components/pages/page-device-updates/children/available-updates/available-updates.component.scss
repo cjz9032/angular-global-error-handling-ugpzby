@@ -118,3 +118,15 @@
 		}
 	}
 }
+
+:host-context(.is-gaming) {
+	.vtr-available-updates{
+		.updates-lists-container {
+			.description{
+				color:$light;
+				opacity: 0.75;
+			}
+		}
+	} 
+}
+
