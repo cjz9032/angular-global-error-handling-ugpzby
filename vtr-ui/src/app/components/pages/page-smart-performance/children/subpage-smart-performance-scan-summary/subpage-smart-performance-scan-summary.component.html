@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col vtr-col">
 		<div class="mb-5">
-			<div class="vtr-device-information mb-24">
+			<div class="vtr-device-information mb-24 border-none">
 				<div class="container-fluid">
 					<div class="system-scan-complete">
 						<vtr-ui-smart-performance-header *ngIf="!smartPerformanceService.isSubscribed"
@@ -9,6 +9,7 @@
 							[headerTitle]="'smartPerformance.scanCompletePage.foundIssues' | translate"
 							[subTitle]="'smartPerformance.scanCompletePage.summaryDetails' | translate"
 							headerTitleId="smart-performance-scan-summary-title"
+							[bottomRadius]="true"
 							subTitleId="smart-performance-scan-summary-desc"
 							[contentWrap]="true">
 							<vtr-ui-smart-performance-rating [leftAnimator]="leftAnimator"
@@ -33,7 +34,7 @@
 							[subTitle]="inputIsScanningCompleted ? ('smartPerformance.subscriberScanHomePage.serialNumber' |translate) + ' ' +  systemSerialNumber : ('smartPerformance.subscriberScanHomePage.description' |translate)"
 							headerTitleId="smart-performance-scan-summary-title"
 							subTitleId="smart-performance-scan-summary-desc"
-							[bottomRadius]="!inputIsScanningCompleted"
+							[bottomRadius]="true"
 							[contentWrap]="true">
 							<vtr-ui-smart-performance-rating [leftAnimator]="inputIsScanningCompleted ? leftAnimator : '100%'"
 								[hidePointer]="!inputIsScanningCompleted"
@@ -104,9 +105,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="vtr-device-information mb-24">
-				<div class="vtr-ui-smart-performance-scan-summary"
-					*ngIf="smartPerformanceService.isSubscribed || smartPerformanceService.isExpired">
+			<div class="vtr-device-information mb-24"
+				*ngIf="smartPerformanceService.isSubscribed || smartPerformanceService.isExpired">
+				<div class="vtr-ui-smart-performance-scan-summary">
 					<div class="vtr-scan-information">
 						<div class="scan-summary-block">
 							<div class="row px-0">
