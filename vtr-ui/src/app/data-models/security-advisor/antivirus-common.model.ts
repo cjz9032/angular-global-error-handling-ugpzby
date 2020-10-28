@@ -112,11 +112,12 @@ export class AntivirusCommon {
 			&& this.pluginSupport) {
 			this.antivirus.openMcAfeePurchaseUrl().then((response) => {
 				this.purchaseBtnIsLoading = false;
-				if (response && response.result === false) {
+				if (response && response.result === true) {
+					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.success');
+				} else {
 					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.failed');
 					WinRT.launchUri(this.urlGetMcAfee);
 				}
-				metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.success');
 			}).catch(() => {
 				this.purchaseBtnIsLoading = false;
 				metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.failed');
