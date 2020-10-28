@@ -253,7 +253,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 						const updateStatus = data.status;
 						const lastUpdate = data.lastupdate;
 						const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
-						systemUpdate.link = 'device/system-updates';
+						systemUpdate.link = 'lenovo-vantage3:system-updates?action=start ';
 						if (updateStatus === 1) {
 							systemUpdate.subtitle = this.translate.instant('device.myDevice.systemUpdate.detail.uptoDate');
 							systemUpdate.checkedDate = this.commonService.formatLocalDate(lastUpdate);
@@ -271,13 +271,14 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 
 	private async updateSmartPerformanceStatus(smartPerform: DeviceStatus){
 		try{
-			if (await this.dashboardService.isSmartPerformanceSuscripted()){
-				smartPerform.subtitle = this.translate.instant('device.myDevice.entitled');
+			if (this.commonService.isOnline){
+				if (await this.dashboardService.isSmartPerformanceSuscripted()){
+					smartPerform.subtitle = this.translate.instant('device.myDevice.entitled');
+				}
+				else{
+					smartPerform.subtitle = this.translate.instant('device.myDevice.subscribeNow');
+				}
 			}
-			else{
-				smartPerform.subtitle = this.translate.instant('device.myDevice.subscribeNow');
-			}
-
 			const lastScanResultRequest = {
 				scanType: await this.isSMPSubscripted ? 'ScanAndFix' : 'Scan'
 			};
@@ -315,6 +316,6 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		else{
 			hwscan.subtitle = this.translate.instant(notScannedKey);
 		}
-		hwscan.link = '/hardware-scan';
+		hwscan.link = 'lenovo-vantage3:hardware-scan?scan=quickscan&module=cpu';
 	}
 }

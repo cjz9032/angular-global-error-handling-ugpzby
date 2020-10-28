@@ -525,7 +525,7 @@ export class DashboardService {
 	}
 
 	public async isSMPNeedPromote(): Promise<boolean> {
-		if (!await this.configService.showSmartPerformance()) {
+		if (!await this.configService.showSmartPerformance() || !this.commonService.isOnline) {
 			return false;
 		}
 		return !(await this.isSmartPerformanceSuscripted());
