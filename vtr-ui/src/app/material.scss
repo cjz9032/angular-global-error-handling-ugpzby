@@ -84,7 +84,7 @@ $van-ui-theme: mat-vcl-theme((
 .mat-dialog-container {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
-	border-radius: 0.6rem !important;	
+	border-radius: 0.6rem !important;
 	padding: 2.4rem;
 }
 
@@ -93,4 +93,12 @@ $van-ui-theme: mat-vcl-theme((
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.cdk-overlay-container {
+	z-index: 99;
+
+	.cdk-overlay-pane {
+		height: auto;
+	}
 }
