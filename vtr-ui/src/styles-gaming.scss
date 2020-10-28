@@ -1719,7 +1719,7 @@
 				.vtr-widget-device-recover-bad-sectors {
 					background: $gaming_darkest;
 					.title {
-						color: $gaming_lightest;
+						color: $gaming_lightest !important;
 					}
 					.description {
 						color: $gaming_grey_lightest;
