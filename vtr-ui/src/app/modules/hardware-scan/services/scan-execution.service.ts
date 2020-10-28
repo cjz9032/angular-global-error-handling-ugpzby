@@ -487,7 +487,8 @@ export class ScanExecutionService {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
-					windowClass: 'support-modal-hwscan'
+					windowClass: 'support-modal-hwscan',
+					ariaLabelledBy: 'hwscan-scan-failure-title'
 				});
 				modalRef.componentInstance.supportUrl = supportUrl;
 				modalRef.componentInstance.configureDevicesLists(failedModules, rbsDevices);
