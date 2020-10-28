@@ -598,6 +598,182 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 	});
 
+	describe('thermal mode 3.0', () => {
+		let thermalModeRealStatus = 2;
+		let performanceOCStatus = false;
+		let gamingThermalModeServiceMock = {
+			getThermalModeRealStatus() {
+				return new Promise(resolve => {
+					resolve(thermalModeRealStatus)
+				})
+			},
+			regThermalModeRealStatusChangeEvent() {
+				return new Promise(resolve => {
+					resolve(setReturnValue);
+				})
+			}
+		}
+		let gamingOCServiceMoke = {
+			getPerformanceOCSetting() {
+				return new Promise(resolve => {
+					resolve(performanceOCStatus);
+				})
+			}
+		}
+
+		beforeEach(async(() => {
+			TestBed.configureTestingModule({
+				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
+					mockPipe({ name: 'translate' })],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient },
+					{ provide: HttpHandler },
+					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: VantageShellService },
+					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
+					{ provide: GamingOCService, useValue: gamingOCServiceMoke },
+					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
+					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{ provide: NgbModal, useValue: { open: () => 0 } },
+					{ provide: LoggerService, useValue: loggerServiceSpy }
+				]
+			}).compileComponents();
+			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+			component = fixture.debugElement.componentInstance;
+			fixture.detectChanges();
+		}));
+
+		afterEach(() => {
+			liteGamingCache = false;
+			desktopTypeCahce = false;
+			smartFanFeatureCache = false;
+			thermalModeVersionCache = 4;
+			cpuOCFeatureCache = false;
+			gpuOCFeatureCache = false;
+			xtuServiceCache = false;
+			nvDriverCache = false;
+			memOCFeatureCache = false;
+			networkBoostFeatureCache = false;
+			networkBoosNeedToAskPopup = 1;
+			fbnetFilterCache = false;
+			optimizationFeatureCache = false;
+			hybridModeFeatureCache = false;
+			overDriveFeatureCache = false;
+			touchpadLockFeatureCache = false;
+			winKeyLockFeatureCache = false;
+		});
+
+		it('ngOnInit support thermalMode 3', fakeAsync(() => {
+			spyOn(component, 'renderThermalMode2RealStatus').and.callThrough();
+			spyOn(component, 'registerThermalModeRealStatusChangeEvent').and.callThrough();
+			spyOn(component, 'onRegOCRealStatusChangeEvent').and.callThrough();
+			spyOn(component, 'registerOCRealStatusChangeEvent').and.callThrough();
+			smartFanFeatureCache = true;
+			thermalModeVersionCache = 4;
+			thermalModeRealStatusCache = undefined;
+			cpuOCFeatureCache = false;
+			gpuOCFeatureCache = false;
+			component.performanceOCSettings = false;
+			component.thermalModeRealStatus = 2;
+			component.ngOnInit();
+			expect(component.thermalModeRealStatus).toBe(2, `thermalModeRealStatusCache is undefined, component.thermalModeRealStatus should keep 2`);
+			tick();
+			thermalModeRealStatusCache = 1;
+			component.ngOnInit();
+			expect(component.thermalModeRealStatus).toBe(1, `thermalModeRealStatusCache is 1, component.thermalModeRealStatus should be 1`);
+			thermalModeRealStatusCache = 2;
+			component.ngOnInit();
+			expect(component.thermalModeRealStatus).toBe(2, `thermalModeRealStatusCache is 2, component.thermalModeRealStatus should be 2`);
+			thermalModeRealStatusCache = 3;
+			component.ngOnInit();
+			expect(component.thermalModeRealStatus).toBe(3, `thermalModeRealStatusCache is 3, component.thermalModeRealStatus should be 3`);
+			expect(component.legionUpdate[0].isVisible).toBe(false, 'cpuOverclock.isVisible should be false');
+		}));
+
+		it('renderOCSupported', () => {
+			spyOn(component, 'renderThermalMode2RealStatus').and.callThrough();
+			spyOn(component, 'registerThermalModeRealStatusChangeEvent').and.callThrough();
+			spyOn(component, 'onRegOCRealStatusChangeEvent').and.callThrough();
+			spyOn(component, 'registerOCRealStatusChangeEvent').and.callThrough();
+			smartFanFeatureCache = true;
+			thermalModeVersionCache = 4;
+			cpuOCFeatureCache = false;
+			gpuOCFeatureCache = false;
+			component.performanceOCSettings = false;
+			component.ngOnInit();
+			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&gpuOCFeatureCache are false, component.OCSupported should be thermalMode2Enum.none`);
+			expect(component.performanceOCSettings).toBe(false, `cpuOCFeatureCache&gpuOCFeatureCache are false, component.performanceOCSettings should be false`);
+			cpuOCFeatureCache = true;
+			gpuOCFeatureCache = false;
+			xtuServiceCache = true;
+			component.ngOnInit();
+			expect(component.OCSupported).toBe(component.thermalMode2Enum.cpu, `cpuOCFeatureCache&xtuServiceCache are true, gpuOCFeatureCache is false, component.OCSupported should be thermalMode2Enum.cpu`);
+			xtuServiceCache = false;
+			component.ngOnInit();
+			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache is true, xtuServiceCache&gpuOCFeatureCache are false, component.OCSupported should be thermalMode2Enum.none`);
+			cpuOCFeatureCache = false;
+			gpuOCFeatureCache = true;
+			nvDriverCache = true;
+			component.ngOnInit();
+			expect(component.OCSupported).toBe(component.thermalMode2Enum.gpu, `cpuOCFeatureCache is false, gpuOCFeatureCache&nvDriverCache are true, component.OCSupported should be thermalMode2Enum.gpu`);
+			nvDriverCache = false;
+			component.ngOnInit();
+			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&nvDriverCache are false, gpuOCFeatureCache is true, component.OCSupported should be thermalMode2Enum.none`);
+			cpuOCFeatureCache = true;
+			gpuOCFeatureCache = true;
+			xtuServiceCache = true;
+			nvDriverCache = true;
+			component.ngOnInit();
+			expect(component.OCSupported).toBe(component.thermalMode2Enum.cpu_gpu, `cpuOCFeatureCache&xtuServiceCache are true, gpuOCFeatureCache&nvDriverCache are true, component.OCSupported should be thermalMode2Enum.cpu_gpu`);
+			xtuServiceCache = false;
+			nvDriverCache = true;
+			component.ngOnInit();
+			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&nvDriverCache are true, xtuServiceCache is false, component.OCSupported should be thermalMode2Enum.none`);
+			xtuServiceCache = true;
+			nvDriverCache = false;
+			component.ngOnInit();
+			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&xtuServiceCache are true, nvDriverCache is false, component.OCSupported should be thermalMode2Enum.none`);
+			xtuServiceCache = false;
+			nvDriverCache = false;
+			component.ngOnInit();
+			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache are true, xtuServiceCache&nvDriverCache are false, component.OCSupported should be thermalMode2Enum.none`);
+		})
+
+		it('getOCTips', () => {
+			component.gamingCapabilities.thermalModeVersion = 2;
+			expect(component.getOCTips()).toBe('', 'thermalModeVersion is 2, getOCTips should be a null string');
+			component.gamingCapabilities.thermalModeVersion = 4;
+			component.thermalModeRealStatus = component.thermalMode2Enum.quiet;
+			expect(component.getOCTips()).toBe('', 'thermalModeVersion is 4, component.thermalModeRealStatus is quite, getOCTips should be a null string');
+			component.gamingCapabilities.thermalModeVersion = 4;
+			component.thermalModeRealStatus = component.thermalMode2Enum.performance;
+			component.performanceOCSettings = false;
+			expect(component.getOCTips()).toBe('', 'thermalModeVersion is 4, component.thermalModeRealStatus is performance, component.performanceOCSettings is false, getOCTips should be a null string');
+			component.gamingCapabilities.thermalModeVersion = 4;
+			component.thermalModeRealStatus = component.thermalMode2Enum.balance;
+			component.performanceOCSettings = false;
+			expect(component.getOCTips()).toBe('', 'thermalModeVersion is 4, component.thermalModeRealStatus is balance, component.performanceOCSettings is false, getOCTips should be a null string');
+			component.gamingCapabilities.thermalModeVersion = 4;
+			component.thermalModeRealStatus = component.thermalMode2Enum.performance;
+			component.performanceOCSettings = true;
+			component.OCSupported = component.thermalMode2Enum.cpu_gpu;
+			expect(component.getOCTips()).toBe('CPU & GPU overclocking activated', 'getOCTips should be CPU & GPU overclocking activated');
+			component.OCSupported = component.thermalMode2Enum.cpu;
+			expect(component.getOCTips()).toBe('CPU overclocking activated', 'getOCTips should be CPU overclocking activated');
+			component.OCSupported = component.thermalMode2Enum.gpu;
+			expect(component.getOCTips()).toBe('GPU overclocking activated', 'getOCTips should be GPU overclocking activated');
+		})
+	})
+
 	describe('cpu over clock', () => {
 		let cpuOCStatus = 3;
 		let gamingSystemUpdateServiceMock = {
@@ -1925,36 +2101,6 @@ describe('WidgetLegionEdgeComponent', () => {
 			fixture.detectChanges();
 			const compiled = fixture.debugElement.nativeElement;
 			expect(compiled.querySelector('div.help-box>button>fa-icon')).toBeTruthy();
-		}));
-
-		// it('should make false isPopup and isDriverPopup when close popup', fakeAsync((done: any) => {
-		// 	fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-		// 	component = fixture.debugElement.componentInstance;
-		// 	component.closeLegionEdgePopups();
-		// 	tick(10);
-		// 	fixture.detectChanges();
-		// 	expect(component.legionUpdate[1].isDriverPopup).toEqual(false);
-		// 	expect(component.legionUpdate[1].isPopup).toEqual(false);
-		// }));
-
-		it('onPopupClosed ramoverclock', fakeAsync(() => {
-			const result = component.onPopupClosed({ target: { value: true }, name: 'gaming.dashboard.device.legionEdge.ramOverlock' });
-			expect(component.legionUpdate[1].isPopup).toBe(false);
-		}));
-
-		it('onPopupClosed hybridMode', fakeAsync(() => {
-			const result = component.onPopupClosed({ target: { value: true }, name: 'gaming.dashboard.device.legionEdge.hybridMode' });
-			expect(component.legionUpdate[4].isPopup).toBe(false);
-		}));
-
-		it('onPopupClosed cpuoverclock', fakeAsync(() => {
-			const result = component.onPopupClosed({ target: { value: true }, name: 'gaming.dashboard.device.legionEdge.title' });
-			expect(component.legionUpdate[0].isDriverPopup).toBe(false);
-		}));
-
-		it('onPopupClosed networkBoost', fakeAsync(() => {
-			const result = component.onPopupClosed({ target: { value: true }, name: 'gaming.dashboard.device.legionEdge.networkBoost' });
-			expect(component.legionUpdate[2].isDriverPopup).toBe(false);
 		}));
 	})
 
