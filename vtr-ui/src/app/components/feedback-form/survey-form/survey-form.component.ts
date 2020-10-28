@@ -1,10 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LenovoSurveyEnum } from 'src/app/enums/lenovo-survey.enum';
+import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 
 @Component({
 	selector: 'vtr-survey-form',
@@ -23,7 +24,8 @@ export class SurveyFormComponent implements OnInit {
 		public activeModal: NgbActiveModal,
 		private translate: TranslateService,
 		private localCacheService: LocalCacheService,
-		private metricsService: MetricService
+		private metricsService: MetricService,
+		private appForYouService: AppsForYouService
 	) { }
 
 	private initSurveyQuestions() {
@@ -169,6 +171,7 @@ export class SurveyFormComponent implements OnInit {
 		if (this.progress === this.pages.length) {
 			this.completed = true;
 			this.localCacheService.setLocalCacheValue(this.surveyId as LocalStorageKey, LenovoSurveyEnum.Completed);
+			this.appForYouService.lenovoSurvey.display = false;
 			this.reportResult();
 			const leftTimeInterval = setInterval(() => {
 				this.closingleftTime--;
@@ -184,6 +187,7 @@ export class SurveyFormComponent implements OnInit {
 		const data = {
 			ItemType: 'LenovoSurvey',
 			id: this.surveyId,
+			version: '1.0.0.0',
 			qa: {}
 		};
 

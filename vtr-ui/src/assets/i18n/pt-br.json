@@ -1009,7 +1009,16 @@
 						]
 					},
 					"question3": {
-						"title": "Quanto você normalmente gasta em um computador?"
+						"title": "Quanto você normalmente gasta em um computador?",
+						"options": [
+							"Menos de R$1.000",
+							"R$1.000 a R$1.999",
+							"R$2.000 a R$2.799",
+							"R$2.800 a R$3.499",
+							"R$3.500 a R$3.999",
+							"R$4.000 a R$4.499",
+							"Acima de R$4.499"
+						]
 					}
 				},
 				"messages": {
