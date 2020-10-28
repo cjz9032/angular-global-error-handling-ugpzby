@@ -1009,7 +1009,16 @@
 						]
 					},
 					"question3": {
-						"title": "Wie viel geben Sie normalerweise für einen Computer aus?"
+						"title": "Wie viel geben Sie normalerweise für einen Computer aus?",
+						"options": [
+							"Weniger als 300 €",
+							"300 € - 499 €",
+							"500 € - 699 €",
+							"700 € - 999 €",
+						   	"1000 € - 1299 €",
+							"1300 € - 1499 €",
+							"1500 € oder mehr"
+						]
 					}
 				},
 				"messages": {

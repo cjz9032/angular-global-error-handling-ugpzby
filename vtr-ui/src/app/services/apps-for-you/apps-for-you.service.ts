@@ -15,6 +15,7 @@ import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LenovoSurveyEnum} from 'src/app/enums/lenovo-survey.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 export class Category {
 	id: string; 	// app category id
@@ -82,6 +83,7 @@ export class AppsForYouService {
 		private localCacheService: LocalCacheService,
 		private dccService: DccService,
 		private hypService: HypothesisService,
+		private translate: TranslateService
 	) {
 		this.initialize();
 		this.systemUpdateBridge = vantageShellService.getSystemUpdate();
@@ -483,10 +485,15 @@ export class AppsForYouService {
 	}
 
 	async getLenovoSurveyStatus() {
+		const languageSupport = this.translate.instant('dashboard.survey.title');
+		if (!languageSupport) {
+			return {status: LenovoSurveyEnum.Disabled};
+		}
+
 		// is hypothesis allow?
 		const hyp = await this.hypService.getAllSettings() as any;
 		if (!hyp.LenovoSurvey) {
-			return {surveyId: hyp.LenovoSurvey, status: LenovoSurveyEnum.Disabled};
+			return {status: LenovoSurveyEnum.Disabled};
 		}
 
 		// is survey completed?

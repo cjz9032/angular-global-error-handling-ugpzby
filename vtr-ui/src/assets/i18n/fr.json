@@ -1009,7 +1009,16 @@
 						]
 					},
 					"question3": {
-						"title": "Combien dépensez-vous généralement sur un ordinateur ?"
+						"title": "Combien dépensez-vous généralement sur un ordinateur ?",
+						"options": [
+							"Moins de 300 €",
+							"300 € - 499 €",
+							"500 € - 699 €",
+							"700 € - 999 €",
+							"1 000 € - 1 299 €",
+							"1 300 € - 1 499 €",
+							"1 500 € ou plus"
+						]
 					}
 				},
 				"messages": {
