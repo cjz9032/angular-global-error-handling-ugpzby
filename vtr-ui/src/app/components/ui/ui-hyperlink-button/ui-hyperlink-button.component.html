@@ -18,14 +18,16 @@
 			[attr.aria-label]="ariaLabel"
 			[ngbTooltip]="tooltipText" tooltipClass="vtr-system-tooltip" container="body"
 			[disableTooltip]="disableTooltip">
-			<span
-			class="hyperlink {{hyperlinkStyle}}"
-			[innerHTML]="label"
-			[ngClass]="{
-				'text-upper-case': upperCaseLabel === true,
-				'text-capitalize': capitalizeLabel === true
-			}">
-			</span>
+			<div class="hyperlink-text-container">
+				<span
+				class="hyperlink {{hyperlinkStyle}}"
+				[innerHTML]="label"
+				[ngClass]="{
+					'text-upper-case': upperCaseLabel === true,
+					'text-capitalize': capitalizeLabel === true
+				}">
+				</span>
+			</div>
 			<fa-icon [icon]="faIcon" *ngIf="faIcon" class="icon {{faIconStyle}}"></fa-icon>
 			<img [src]='imgIconSrc | svgInline | async' role="img" class="icon image-icon" *ngIf="imgIconSrc"/>
 		</button>
