@@ -91,7 +91,6 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.display.title',
 			path: 'display',
 			metricsItem: 'Display'
-
 		},
 		{
 			title: 'device.deviceSettings.displayCamera.jumpTo.shortcuts.camera.title',

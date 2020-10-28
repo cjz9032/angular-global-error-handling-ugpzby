@@ -1,9 +1,9 @@
 <div class="subpage-device-settings-audio vtr-subpage">
 	<div class="row">
 		<div class="col">
-			<vtr-ui-header-subpage [items]="headerMenuItems"
+			<vtr-ui-header-subpage
+				[menu]="{items: headerMenuItems, title: 'device.deviceSettings.power.jumpto.title' | translate}"
 				[title]="title | translate"
-				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"
 				[caption]="'device.deviceSettings.audio.description' | translate"
 				[textId]="'ds-audio'">
 			</vtr-ui-header-subpage>

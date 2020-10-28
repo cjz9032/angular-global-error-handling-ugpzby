@@ -1,10 +1,10 @@
 <div class="subpage-device-settings-power vtr-subpage">
 	<div class="row">
 		<div class="col">
-			<vtr-ui-header-subpage [items]="headerMenuItems"
+			<vtr-ui-header-subpage
+				[menu]="{items: headerMenuItems, title: 'device.deviceSettings.power.jumpto.title' | translate}"
 				[title]="'device.deviceSettings.power.title' | translate"
 				[caption]="'device.deviceSettings.power.description' | translate"
-				[menuTitle]="'device.deviceSettings.power.jumpto.title' | translate"
 				[textId]="'myDevice-settings-power'"></vtr-ui-header-subpage>
 		</div>
 	</div>
