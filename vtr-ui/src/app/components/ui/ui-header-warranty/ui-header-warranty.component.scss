@@ -71,7 +71,7 @@
 	.header-warranty-dropdown {
 		position: absolute;
 		top: 3rem !important;
-		left: -7.15rem !important;
+		left: -7rem !important;
 		padding: 0;
 		transform: translate(0px, 0px) !important;
 		z-index: 1000;
@@ -81,11 +81,7 @@
 		background-clip: padding-box;
 		border-radius: 0.9rem;
 		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-		width: 28rem;
-
-		@media #{$breakpoint_xl} {
-			width: 29rem;
-		}
+		width: 30rem;
 
 		&.in-warranty {
 			background: linear-gradient(to left bottom, #4980fc, #2e62d9);
@@ -104,6 +100,7 @@
 
 			.menu-pointer {
 				background: #3c72eb;
+				@include high-contrast-background;
 			}
 		}
 
@@ -124,6 +121,7 @@
 
 			.menu-pointer {
 				background: #ed5105;
+				@include high-contrast-background;
 			}
 
 			.button {
@@ -148,7 +146,7 @@
 			height: 1.4rem;
 			border: 1px solid rgba(0, 0, 0, 0);
 			position: absolute;
-			left: 8rem;
+			left: 7.3rem;
 			top: -0.7rem;
 			transform: rotate(45deg);
 			border-right: 0px;
@@ -156,24 +154,13 @@
 			cursor: pointer;
 
 			@media #{$white-on-black} {
-				@include high-contrast-triangle;
-				top: -1rem;
-				left: 7rem;
-				border-top: 0.1rem solid transparent;
-				transform: rotate(135deg);
-				border-radius: 0.2rem;
-
+				left: 7.1rem;
+				border-color: $light;
 			}
 
 			@media #{$black-on-white} {
-				@include high-contrast-triangle;
-				top: -1rem;
-				left: 7rem;
-				border-top: 0.1rem solid transparent;
-				transform: rotate(135deg);
-				border-radius: 0.2rem;
-				border-left-color: $dark;
-				border-bottom-color: $dark;
+				left: 7.1rem;
+				border-color: $dark;
 			}
 		}
 
@@ -183,6 +170,7 @@
 			color: #fff;
 			white-space: normal;
 			position: relative;
+			@include high-contrast-color-reversal;
 
 			::after {
 				content: "";
