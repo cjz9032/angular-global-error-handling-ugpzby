@@ -105,14 +105,13 @@ export class AntivirusCommon {
 		if (type === 'button') {
 			this.purchaseBtnIsLoading = true;
 		}
-		const isTrial = this.mcafee.subscription.toLowerCase() === 'trialactive' || this.mcafee.subscription.toLowerCase() === 'trialinactive';
-		if (this.mcafee && this.mcafee.additionalCapabilities
-			&& this.mcafee.additionalCapabilities.includes('LaunchMcAfeeBuy')
-			&& (isTrial)
+		const isTrial = this.mcafee?.subscription.toLowerCase() === 'trialactive' || this.mcafee?.subscription.toLowerCase() === 'trialinactive';
+		if (this.mcafee?.additionalCapabilities?.includes('LaunchMcAfeeBuy')
+			&& isTrial
 			&& this.pluginSupport) {
 			this.antivirus.openMcAfeePurchaseUrl().then((response) => {
 				this.purchaseBtnIsLoading = false;
-				if (response && response.result === true) {
+				if (response?.result) {
 					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.success');
 				} else {
 					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.failed');
@@ -120,7 +119,7 @@ export class AntivirusCommon {
 				}
 			}).catch(() => {
 				this.purchaseBtnIsLoading = false;
-				metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.failed');
+				metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.exception');
 				WinRT.launchUri(this.urlGetMcAfee);
 			}).finally(() => {
 				this.metrics.sendMetrics(metricsData);
