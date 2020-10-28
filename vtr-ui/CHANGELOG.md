@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.34](https://bitbucket.tc.lenovo.com///compare/v1.8.33...v1.8.34) (2020-10-28)
+
+
+### Bug Fixes
+
+* **HCM:** VAN-22867 fixed security circle hcm style ([0f06948](https://bitbucket.tc.lenovo.com///commit/0f06948216bb9ae0c629c1a39c812b52e1546c78))
+* **HCM:** VAN-22867 update hcm style ([44c9bbe](https://bitbucket.tc.lenovo.com///commit/44c9bbecfe90e6aeb5c9f8e17e5195a838a2ec0a))
+* **High contrast:** VAN-22867 fixed high contrast css style ([39dd294](https://bitbucket.tc.lenovo.com///commit/39dd294d31c32b9ad031120843a88f46b733d50b))
+* **Warranty:** VAN-22889 menu warranty dropdown high contrast fix ([99dca80](https://bitbucket.tc.lenovo.com///commit/99dca80ee997dc4cfc7b3af32d56e9d568934019))
+
 ### [1.8.33](https://bitbucket.tc.lenovo.com///compare/v1.8.32...v1.8.33) (2020-10-27)
 
 
