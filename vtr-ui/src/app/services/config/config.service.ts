@@ -76,6 +76,7 @@ export class ConfigService {
 	private isBetaUser: boolean;
 	private country: string;
 	private betaFeature = ['smart-performance', 'app-search'];
+	private chsAvailability = false;
 
 	constructor(
 		private betaService: BetaService,
@@ -209,17 +210,14 @@ export class ConfigService {
 			this.logger.error('ConfigService.initShowCHSMenu: promise rejected ', error);
 		});
 
-		const showCHSWithoutSegment = country.toLowerCase() === 'us'
+		this.chsAvailability = country.toLowerCase() === 'us'
 										&& locale.startsWith('en')
 										&& chsHypsis
 										&& !machineInfo.isGaming;
-		this.showCHS = showCHSWithoutSegment && (this.activeSegment !== SegmentConst.Commercial);
+		this.showCHS = this.chsAvailability && (this.activeSegment !== SegmentConst.Commercial);
 
-		const chsMenuItem = menu.find(item => item.id === 'home-security');
-		if (chsMenuItem) {
-			chsMenuItem.availability = showCHSWithoutSegment;
-			chsMenuItem.hide = !this.showCHS;
-		}
+		this.supportFilter(menu, 'home-security', this.showCHS);
+		this.updateAvailability(menu, 'home-security', this.chsAvailability);
 
 		return menu;
 	}
@@ -228,10 +226,7 @@ export class ConfigService {
 		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
 			let showHWScanMenu = false;
 			showHWScanMenu = await this.hardwareScanService.isAvailable();
-			const hwScanItem = menu.find(item => item.id === 'hardware-scan');
-			if (hwScanItem) {
-				hwScanItem.hide = !showHWScanMenu;
-			}
+			this.supportFilter(menu, 'hardware-scan', Boolean(showHWScanMenu));
 		}
 	}
 
@@ -510,11 +505,8 @@ export class ConfigService {
 			return this.menu;
 		} else {
 			this.activeSegment = segment;
-			const chsMenuItem = this.menu.find(item => item.id === 'home-security');
-			if (chsMenuItem) {
-				this.showCHS = chsMenuItem.availability && this.activeSegment !== SegmentConst.Commercial;
-				chsMenuItem.hide = !this.showCHS;
-			}
+			this.showCHS = this.chsAvailability && this.activeSegment !== SegmentConst.Commercial;
+			this.supportFilter(this.menu, 'home-security', this.showCHS);
 			this.initializeSecurityItem(this.country, this.menu);
 			this.betaFeature.forEach(featureId => {
 				this.supportFilter(this.menu, featureId, true);
@@ -601,17 +593,8 @@ export class ConfigService {
 	}
 
 	updateSystemUpdatesMenu() {
-		const device = this.menu.find((item) => item.id === 'device');
-		if (device) {
-			const su = device.subitems.find((item) => item.id === 'system-updates');
-			if (su) {
-				su.hide = !(
-					this.adPolicyService.IsSystemUpdateEnabled
-					&& !this.deviceService.isSMode
-					&& !this.deviceService.isGaming
-				);
-			}
-		}
+		const showSystemUpdate = Boolean(this.adPolicyService.IsSystemUpdateEnabled && !this.deviceService.isSMode && !this.deviceService.isGaming);
+		this.supportFilter(this.menu, 'system-updates', showSystemUpdate);
 	}
 
 	public isSystemUpdateEnabled(): boolean{

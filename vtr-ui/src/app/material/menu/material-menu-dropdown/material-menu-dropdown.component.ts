@@ -25,9 +25,9 @@ export class MaterialMenuDropdownComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		if (this.dropdownMenu && this.dropdownMenu.subitems && this.dropdownMenu.subitems.length > 0) {
+		if (this.dropdownMenu && Array.isArray(this.dropdownMenu.subitems)) {
 			this.dropdownMenu.subitems.forEach((element) => {
-				if (!element.hide && element.subitems && element.subitems.length > 0 && element.subitems.some((item) => !item.hide)) {
+				if (!element.hide && Array.isArray(element.subitems) && element.subitems.some((item) => !item.hide)) {
 					this.hasSecondaryMenu = true;
 				}
 			});

@@ -361,7 +361,7 @@
 					"subitems": [
 						{
 							"id": "security",
-							"label": "common.menu.security.sub1",
+							"label": "common.menu.security.title",
 							"path": "mysecurity",
 							"icon": null,
 							"segment": "-[Commercial]",
@@ -372,11 +372,32 @@
 								"exact": false
 							},
 							"subitems": []
+						},
+						{
+							"id": "home-security",
+							"label": "common.menu.security.sub8",
+							"path": "home-security",
+							"singleLayerRouting": true,
+							"segment": "-[Commercial]",
+							"metricsEvent": "itemClick",
+							"metricsParent": "navbar",
+							"metricsItem": "link.homesecurity",
+							"routerLinkActiveOptions": {
+								"exact": true
+							},
+							"icon": [
+								"fal",
+								"house-signal"
+							],
+							"subitems": [],
+							"pre": [
+								"assets/images/connected-home-security/welcome-slide1@2x.png"
+							]
 						}
 					]
 				},
 				{
-					"id": "security",
+					"id": "security-details",
 					"label": "common.menu.security.sub7",
 					"path": null,
 					"icon": null,
@@ -509,6 +530,7 @@
 					"id": "hardware-scan",
 					"label": "hardwareScan.name",
 					"path": "hardware-scan",
+					"singleLayerRouting": true,
 					"metricsEvent": "itemClick",
 					"metricsParent": "navbar",
 					"metricsItem": "link.hardwarescan",
@@ -522,26 +544,6 @@
 					],
 					"subitems": []
 				}
-			]
-		},
-		{
-			"id": "home-security",
-			"label": "common.menu.homeSecurity",
-			"path": "home-security",
-			"segment": "-[Commercial]",
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.homesecurity",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"icon": [
-				"fal",
-				"house-signal"
-			],
-			"subitems": [],
-			"pre": [
-				"assets/images/connected-home-security/welcome-slide1@2x.png"
 			]
 		},
 		{

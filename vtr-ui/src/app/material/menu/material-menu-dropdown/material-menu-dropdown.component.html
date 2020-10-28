@@ -7,7 +7,7 @@
 	<section *ngIf="!hasSecondaryMenu && dropdownMenu.id!=='user'">
 		<ng-container *ngFor="let subitem of dropdownMenu.subitems; let i=index">
 			<button mat-menu-item
-				*ngIf="subitem && !subitem.hide && subitem.externallink && subitem.id !== 'hardware-scan'"
+				*ngIf="subitem && !subitem.hide && subitem.externallink"
 				id="menu-main-nav-lnk-dropdown-menu-external-{{parentId}}-{{i}}"
 				class="mt-0 border-radius-0 outline-none dropdown-menu-item"
 				[ngClass]="{'active': subitem.id === activeItemId}"
@@ -25,7 +25,7 @@
 				<span [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
-				*ngIf="subitem && !subitem.hide && !subitem.externallink && subitem.id !== 'hardware-scan'"
+				*ngIf="subitem && !subitem.hide && !subitem.externallink && !subitem.singleLayerRouting"
 				id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{i}}"
 				class="mt-0 border-radius-0 outline-none dropdown-menu-item"
 				[ngClass]="{'active': subitem.id === activeItemId}"
@@ -44,7 +44,7 @@
 				<span [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
-				*ngIf="subitem && !subitem.hide && subitem.id === 'hardware-scan'"
+				*ngIf="subitem && !subitem.hide && !subitem.externallink && subitem.singleLayerRouting"
 				id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{i}}"
 				class="mt-0 border-radius-0 outline-none dropdown-menu-item"
 				[ngClass]="{'active': subitem.id === activeItemId}"
@@ -110,7 +110,7 @@
 						<span [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 					<button mat-menu-item
-						*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink"
+						*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink && !secondarySubitem.singleLayerRouting"
 						vtrMetrics
 						id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{subitem.id}}-{{ii}}"
 						class="d-inline-block mt-0 border-radius-0 outline-none dropdown-menu-item"
@@ -126,6 +126,25 @@
 						role="menuitem"
 						(click)="setActiveItem(secondarySubitem.id)"
 						(keydown.enter)="[menuItemKeyDown(parentPath, subitem.path, secondarySubitem.path), setActiveItem(secondarySubitem.id)]">
+						<span [innerHTML]="secondarySubitem.label | translate"></span>
+					</button>
+					<button mat-menu-item
+						*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink && secondarySubitem.singleLayerRouting"
+						vtrMetrics
+						id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{subitem.id}}-{{ii}}"
+						class="d-inline-block mt-0 border-radius-0 outline-none dropdown-menu-item"
+						[ngClass]="{'active': secondarySubitem.id === activeItemId}"
+						attr.aria-label="{{secondarySubitem.label| translate}}"
+						routerLinkActive="link-active"
+						[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+						[metricsEvent]="secondarySubitem.metricsEvent"
+						[metricsParent]="secondarySubitem.metricsParent"
+						[metricsItem]="secondarySubitem.metricsItem"
+						routerLink="/{{secondarySubitem.path}}"
+						href="javascript:void(0)"
+						role="menuitem"
+						(click)="setActiveItem(secondarySubitem.id)"
+						(keydown.enter)="[menuItemKeyDown(secondarySubitem.path), setActiveItem(secondarySubitem.id)]">
 						<span [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 				</ng-container>
