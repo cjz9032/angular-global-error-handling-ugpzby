@@ -58,10 +58,10 @@ export class UserService implements IUserService {
 	<div style=\'display: block;position: fixed;z-index: 1;padding-top:5%;width: 100%;height: 100%;overflow: auto;\'>
 		<div class=\'queryHeight\'>
 			<style>
-				.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto; max-width: 460px; overflow: hidden; box-sizing: border-box; height: 80%; padding-top: 45px; border: 1px solid #888;}
-				@media only screen and (min-height: 768px) {.queryHeight{height: 60%;}}
-				@media only screen and (min-height: 1080px) {.queryHeight{height: 50%;}}
-				@media only screen and (min-height: 2160px) {.queryHeight{height: 40%;}}
+				.queryHeight { position: relative;background-color: #fefefe;margin: auto;padding: auto; max-width: 460px; overflow: hidden; box-sizing: border-box; height: 85%; padding-top: 45px; border: 1px solid #888;}
+				@media only screen and (min-height: 768px) {.queryHeight{height: 80%;}}
+				@media only screen and (min-height: 1080px) {.queryHeight{height: 70%;}}
+				@media only screen and (min-height: 2160px) {.queryHeight{height: 60%;}}
 				.close { color: rgb(102, 116, 129); float: right; margin-top: -8px; font-size: 38px; font-weight: normal; }
 				.close:hover, .close:focus { color: rgb(74, 128, 253); text-decoration: none; cursor: pointer; }
 				@keyframes spinner { to {transform: rotate(360deg);} }
