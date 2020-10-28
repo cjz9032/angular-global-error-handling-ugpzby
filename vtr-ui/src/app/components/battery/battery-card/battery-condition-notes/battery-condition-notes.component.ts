@@ -108,7 +108,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
   }
 
   public canShowStoreLimitatedNote(index: number): boolean {
-    return this.isStoreLimitated(index) && !this.isStatusGood(index);
+    return this.isStoreLimitated(index) && !this.isStatusGood(index) && (!!this.batteryFullChargeCapacity && !!this.batteryDesignCapacity);
   }
 
   public isAcAdapterNotSupported(index: number): boolean {
