@@ -1,14 +1,13 @@
-<div class="modal-body vtr-modal-scan-failure" aria-labelledby="hwscan-scan-failure-title" aria-describedby="hwscan-scan-failure-description">
+<div class="modal-body vtr-modal-scan-failure">
 
 	<div class="modal-information">
 		<h1 id="hwscan-scan-failure-title" class="title" role="heading">{{ 'hardwareScan.scanFailureModal.title' | translate }}</h1>
 		<p id="hwscan-scan-failure-description" class="description" role="text">{{ 'hardwareScan.scanFailureModal.problemDetected' | translate }}</p>
-		<div class="modules-container">
-			<ul role="list" class="list-modules" aria-live="polite" *ngFor="let module of failedModules; let idModule = index;" [attr.id]="'module-' + idModule">
+		<ul role="list" id="hw-scan-modal-failure-modules" class="modules-container">
+			<div class="list-modules" *ngFor="let module of failedModules; let idModule = index;" [attr.id]="'module-' + idModule">
 				<li role="listitem"
 					class="item-module-device"
-					*ngFor="let device of module.devices; let idDevice = index"
-					[attr.aria-describedby]="'module-' + idModule + '-device-' + idDevice">
+					*ngFor="let device of module.devices; let idDevice = index">
 					<div class="module-device-row" [attr.id]="'module-' + idModule + '-device-' + idDevice" role="region">
 						<div class="module-device-name-container">
 							<p class="module-name" id="hwscan-failure-modal-module-name" role="text">{{ module.moduleName }}</p>
@@ -17,8 +16,8 @@
 						<vtr-ui-hardware-scan-test-result [module]="module"></vtr-ui-hardware-scan-test-result>
 					</div>
 				</li>
-			</ul>
-		</div>
+			</div>
+		</ul>
 
 		<div *ngIf="hasFailedRbsDevice; else withoutRBS">
 			<div class="description description-failure">
@@ -39,7 +38,7 @@
 					metricsItem="ScanFailureActions.LenovoSupport"
 					linkId="hwscan-open-support-page-link"
 					(hyperlinkClick)="openSupportPage()"
-				   	[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
+					[label]="'hardwareScan.scanFailureModal.supportButtonText' | translate"
 					[upperCaseLabel]="true">
 				</vtr-ui-hyperlink-button>
 			</div>
