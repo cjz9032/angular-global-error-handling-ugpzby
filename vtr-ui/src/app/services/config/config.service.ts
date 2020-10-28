@@ -77,6 +77,22 @@ export class ConfigService {
 	private country: string;
 	private betaFeature = ['smart-performance', 'app-search'];
 	private chsAvailability = false;
+	private wifiSecurityMenu = {
+		id: 'wifi-security',
+		label: 'common.menu.security.sub3',
+		path: 'security/wifi-security',
+		icon: null,
+		metricsEvent: 'itemClick',
+		metricsParent: 'navbar',
+		metricsItem: 'link.wifisecurity',
+		routerLinkActiveOptions: {
+			exact: true
+		},
+		subitems: [],
+		pre: [
+			'assets/images/coronet-logo.svg'
+		]
+	};
 
 	constructor(
 		private betaService: BetaService,
@@ -166,7 +182,7 @@ export class ConfigService {
 				if (machineType === 4) {
 					this.updateMenuForDesktop(resultMenu);
 				}
-				this.initializeSecurityItem(this.country, resultMenu);
+				this.initializeSecurityItem(this.country, resultMenu, this.activeSegment);
 				await this.initializeHardwareScan(resultMenu);
 				if (this.hypSettings) {
 					resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
@@ -216,8 +232,8 @@ export class ConfigService {
 										&& !machineInfo.isGaming;
 		this.showCHS = this.chsAvailability && (this.activeSegment !== SegmentConst.Commercial);
 
-		this.supportFilter(menu, 'home-security', this.showCHS);
-		this.updateAvailability(menu, 'home-security', this.chsAvailability);
+		this.supportFilter(menu, 'connected-home-security', this.showCHS);
+		this.updateAvailability(menu, 'connected-home-security', this.chsAvailability);
 
 		return menu;
 	}
@@ -230,7 +246,18 @@ export class ConfigService {
 		}
 	}
 
-	initializeSecurityItem(region, items) {
+	initializeSecurityItem(region: string, items: MenuItem[], segment: string) {
+		if (segment === SegmentConst.Commercial) {
+			const securityIndex = items.findIndex((item) => item.id === 'security');
+			if (securityIndex >= 0) {
+				items.splice(securityIndex, 1, this.wifiSecurityMenu);
+			}
+		} else {
+			const wifiIndex = items.findIndex((item) => item.id === 'wifi-security');
+			if (wifiIndex >= 0) {
+				items.splice(wifiIndex, 1, this.menuItems.find((item) => item.id === 'security'));
+			}
+		}
 		this.supportFilter(items, 'security', true);
 		this.supportFilter(items, 'anti-virus', true);
 		this.supportFilter(items, 'password-protection', region.toLowerCase() !== 'cn');
@@ -506,8 +533,8 @@ export class ConfigService {
 		} else {
 			this.activeSegment = segment;
 			this.showCHS = this.chsAvailability && this.activeSegment !== SegmentConst.Commercial;
-			this.supportFilter(this.menu, 'home-security', this.showCHS);
-			this.initializeSecurityItem(this.country, this.menu);
+			this.supportFilter(this.menu, 'connected-home-security', this.showCHS);
+			this.initializeSecurityItem(this.country, this.menu, this.activeSegment);
 			this.betaFeature.forEach(featureId => {
 				this.supportFilter(this.menu, featureId, true);
 			});
@@ -616,7 +643,7 @@ export class ConfigService {
 			}
 			const lastVersion = this.localCacheService.getLocalCacheValue(LocalStorageKey.NewFeatureTipsVersion);
 			if ((!lastVersion || lastVersion < this.commonService.newFeatureVersion) && Array.isArray(this.menu)) {
-				const idArr = ['security', 'home-security', 'hardware-scan'];
+				const idArr = ['security', 'connected-home-security', 'hardware-scan'];
 				const isIncludesItem = this.menu.find(item => idArr.includes(item.id));
 				if (isIncludesItem) {
 					if (lastVersion > 0) { this.commonService.lastFeatureVersion = lastVersion; }

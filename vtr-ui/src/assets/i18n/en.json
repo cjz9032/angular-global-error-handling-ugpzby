@@ -788,7 +788,8 @@
 				"sub5": "VPN security",
 				"sub6": "Fingerprint",
 				"sub7": "My Security Details",
-				"sub8": "Home security"
+				"sub8": "Home security",
+				"sub9": "Device security"
 			},
 			"support": "Support",
 			"homeSecurity": "Connected Home",

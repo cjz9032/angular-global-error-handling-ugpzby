@@ -347,8 +347,8 @@
 			"metricsItem": "link.security",
 			"subitems": [
 				{
-					"id": "security",
-					"label": "common.menu.security.sub1",
+					"id": "home-security",
+					"label": "common.menu.security.sub8",
 					"path": null,
 					"icon": null,
 					"segment": "-[Commercial]",
@@ -374,8 +374,8 @@
 							"subitems": []
 						},
 						{
-							"id": "home-security",
-							"label": "common.menu.security.sub8",
+							"id": "connected-home-security",
+							"label": "homeSecurity.title",
 							"path": "home-security",
 							"singleLayerRouting": true,
 							"segment": "-[Commercial]",
@@ -397,8 +397,8 @@
 					]
 				},
 				{
-					"id": "security-details",
-					"label": "common.menu.security.sub7",
+					"id": "device-security",
+					"label": "common.menu.security.sub9",
 					"path": null,
 					"icon": null,
 					"metricsEvent": "itemClick",
