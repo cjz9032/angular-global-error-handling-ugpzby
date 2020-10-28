@@ -7,6 +7,7 @@ import { EMPTY } from 'rxjs';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { OledPowerSettings } from 'src/app/data-models/device/oled-power-settings.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 
 @Component({
 	selector: 'vtr-oled-power-settings',
@@ -17,6 +18,8 @@ export class OledPowerSettingsComponent implements OnInit {
 	@Input() description: any;
 	title: string;
 	oledPowerSettingsCache: OledPowerSettings;
+	metricsParent = CommonMetricsModel.ParentDeviceSettings;
+
 	public intervals: DropDownInterval[];
 	public oledPowerSettings = new OledPowerSettings(false, 0, 0, 0);
 
