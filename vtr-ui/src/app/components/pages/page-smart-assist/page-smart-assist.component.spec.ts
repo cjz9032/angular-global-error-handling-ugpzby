@@ -21,7 +21,6 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PageSmartAssistComponent } from './page-smart-assist.component';
-import { SuperResolutionResponse } from 'src/app/data-models/smart-assist/superResolution/superResolution.model';
 const intelligentScreen: IntelligentScreen = {
 	isIntelligentScreenVisible: false,
 	isAutoScreenOffVisible: false,
@@ -101,12 +100,8 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 
-			component.superResolution = new SuperResolutionResponse(false, true, '');
-			const isSuperResolutionSupported: SuperResolutionResponse = {
-				available: false,
-				status: true,
-				players: '',
-			};
+			component.superResolution = new FeatureStatus(false, true);
+			const isSuperResolutionSupported = new FeatureStatus(false, true);
 			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, isSuperResolutionSupported);
 			component.superResolution = { ...isSuperResolutionSupported };
 			fixture.detectChanges();
@@ -206,7 +201,7 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 
-			component.superResolution = new SuperResolutionResponse(false, true, '');
+			component.superResolution = new FeatureStatus(false, true);
 
 			fixture.detectChanges();
 
@@ -241,11 +236,7 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			smartAssistService.isShellAvailable = true;
 			component.smartAssistCache = new SmartAssistCache();
-			const res: SuperResolutionResponse = {
-				available: true,
-				status: true,
-				players: '',
-			};
+			const res = new FeatureStatus (true, true);
 			const spy = spyOn(
 				smartAssistService,
 				'getSuperResolutionStatus'
