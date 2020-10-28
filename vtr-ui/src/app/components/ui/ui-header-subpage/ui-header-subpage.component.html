@@ -11,7 +11,7 @@
 	</div>
 	<div class="row"
 		[ngClass]="{'no-title': title==undefined}"
-		*ngIf="caption || menuTitle || items">
+		*ngIf="caption || menu">
 		<div class="col left-border header-subpage-content">
 			<div class="col px-20">
 				<div class="row">
@@ -24,33 +24,34 @@
 						</p>
 					</div>
 				</div>
-				<div class="row"
-					*ngIf="menuTitle">
-					<div class="col">
-						<h5 class="menu-title"
-							id="{{textId}}-jumptToSettings-title">
-							{{menuTitle}}:
-						</h5>
-					</div>
-				</div>
-				<div class="row"
-					*ngIf="items">
-					<div *ngFor="let item of items; let i=index;"
-						class="col-auto p-0">
-						<div class="menu-item"
-							role="link"
-							tabindex="0"
-							vtrMetrics
-							metricsItem="{{item.metricsItem}}"
-							metricsEvent="FeatureClick"
-							[metricsParent]="metricsParent"
-							id="jumptoSetting-{{item.path}}"
-							(click)="menuItemClick($event, item)"
-							(keydown.enter)="menuItemClick($event, item)">
-							{{item.title | translate}}
+				<ng-container *ngIf="menu && menu.items && menu.items.length > 1">
+					<div class="row"
+						*ngIf="menu.title">
+						<div class="col">
+							<h5 class="menu-title"
+								id="{{textId}}-jumptToSettings-title">
+								{{menu.title}}:
+							</h5>
 						</div>
 					</div>
-				</div>
+					<div class="row">
+						<div *ngFor="let item of menu.items; let i=index;"
+							class="col-auto p-0">
+							<div class="menu-item"
+								role="link"
+								tabindex="0"
+								vtrMetrics
+								metricsItem="{{item.metricsItem}}"
+								metricsEvent="FeatureClick"
+								[metricsParent]="metricsParent"
+								id="jumptoSetting-{{item.path}}"
+								(click)="menuItemClick($event, item)"
+								(keydown.enter)="menuItemClick($event, item)">
+								{{item.title | translate}}
+							</div>
+						</div>
+					</div>
+				</ng-container>
 			</div>
 		</div>
 	</div>

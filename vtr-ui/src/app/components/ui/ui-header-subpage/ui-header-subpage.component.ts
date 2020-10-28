@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
@@ -12,10 +13,9 @@ export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
 
 	@Input() title: string;
 	@Input() caption: string;
-	@Input() menuTitle: string;
-	@Input() items: any[];
 	@Input() textId: string;
 	@Input() metricsParent: string;
+	@Input() menu: { title: string, items: PageAnchorLink[] };
 	fromTab = 'fromTab';
 	pageHeader = 'pageHeader';
 	@ViewChild('pageHeadingRef', { static: false }) pageHeadingRef: ElementRef;

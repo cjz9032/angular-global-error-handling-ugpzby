@@ -817,9 +817,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 						this.smartAssistCache.intelligentMedia = this.intelligentMedia;
 						this.setSmartAssistCacheStorageValue();
-					}).catch(error => {
-						this.featureInitialize.media = true;
-						this.checkHeaderMenuItems(false, 'media');
+					}).catch(error => {;
 						this.logger.error('PageSmartAssistComponent.getVideoPauseResumeStatus: error', error);
 					}).finally(() => {
 						this.featureInitialize.media = true;
@@ -996,18 +994,18 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			}
 		}
 
-		if (this.featureInitialize.aps
-			&& this.featureInitialize.media
-			&& this.featureInitialize.screen
-			&& this.featureInitialize.security
-			&& this.featureInitialize.sensing
-			&& this.featureInitialize.superResolution
-			&& this.featureInitialize.voice) {
-			if (this.headerMenuItems.length === 1) {
-				this.headerMenuItems = [];
-				this.jumpToSettingsTitle = '';
-			}
-		}
+		// if (this.featureInitialize.aps
+		// 	&& this.featureInitialize.media
+		// 	&& this.featureInitialize.screen
+		// 	&& this.featureInitialize.security
+		// 	&& this.featureInitialize.sensing
+		// 	&& this.featureInitialize.superResolution
+		// 	&& this.featureInitialize.voice) {
+		// 	if (this.headerMenuItems.length === 1) {
+		// 		this.headerMenuItems = [];
+		// 		this.jumpToSettingsTitle = '';
+		// 	}
+		// }
 
 		if (this.headerMenuItems.length >= 2) {
 			this.headerMenuItems = this.headerMenuItems.sort((a, b) => a.sortOrder - b.sortOrder);
