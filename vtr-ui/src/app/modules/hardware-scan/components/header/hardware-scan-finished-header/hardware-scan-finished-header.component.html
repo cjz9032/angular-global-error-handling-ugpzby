@@ -121,7 +121,7 @@
 	<!-- Common templates used in both Scan and Previous Results headers -->
 	<ng-template #scanFinishedHeaderTitle>
 		<div class="col">
-			<h2 *ngIf="numberTestsFailed === 0; else hasFailedTestHeaderTitle" id="hwscan-title-success" role="heading" class="title">{{ 'hardwareScan.result' | translate }}: {{ 'hardwareScan.' + scanResult.toLowerCase() | translate }}</h2> <!-- No failures -->
+			<h2 *ngIf="numberTestsFailed === 0; else hasFailedTestHeaderTitle" id="hwscan-title-success" aria-live="polite" role="heading" class="title">{{ 'hardwareScan.result' | translate }}: {{ 'hardwareScan.' + scanResult.toLowerCase() | translate }}</h2> <!-- No failures -->
 			<ng-template #hasFailedTestHeaderTitle>
 				<h2 id="hwscan-title-error" role="heading" class="title">{{ 'hardwareScan.scanFinishedHeader.titleError' | translate:{'numberTestsFailed':numberTestsFailed} }}</h2>  <!-- One or more failures -->
 			</ng-template>
