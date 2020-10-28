@@ -2,7 +2,7 @@ export class PageAnchorLink {
 	constructor(
 		public path: string,
 		public title: string,
-		public sortOrder: number,
-		public metricsItem: string
+		public metricsItem: string,
+		public sortOrder?: number
 	) { }
 }

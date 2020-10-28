@@ -1,10 +1,10 @@
 <div class="subpage-device-settings-display vtr-subpage">
 	<div class="row">
 		<div class="col">
-			<vtr-ui-header-subpage [menuItems]="headerMenuItems"
+			<vtr-ui-header-subpage
+				[menu]="{items: headerMenuItems, title: 'device.deviceSettings.displayCamera.jumpTo.title' | translate}"
 				[title]="title | translate"
 				[caption]="'device.deviceSettings.displayCamera.description' | translate"
-				[menuTitle]="'device.deviceSettings.displayCamera.jumpTo.title' | translate"
 				[textId]="'ds-display-camera'">
 			</vtr-ui-header-subpage>
 		</div>
