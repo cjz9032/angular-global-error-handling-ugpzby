@@ -24,7 +24,7 @@ export class MaterialSvgCircleComponent implements OnDestroy {
 		const lineTags = d3.selectAll('rect').size();
 		if (lineTags > 0) {
 			d3.selectAll('rect').attr('fill', this.fill)
-				.attr('class', 'line-tag');
+				.attr('class', 'high-contrast-fill-important');
 		} else {
 			for (let i = 0; i < els; i++) {
 				circleSvg.append('rect')
@@ -52,7 +52,7 @@ export class MaterialSvgCircleComponent implements OnDestroy {
 		d3.selectAll('rect').attr('fill', ((d, i) => {
 			return i < percent ? colorArr[i] : this.fill;
 		})).attr('class', ((d, i) => {
-			return i < percent ? 'line-tag-fill line-tag' : 'line-tag';
+			return i < percent ? 'high-contrast-fill-reverse-important' : 'high-contrast-fill-important';
 		}));
 	}
 
