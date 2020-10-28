@@ -60,9 +60,9 @@
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
 					<span role="text"
 						*ngIf="machineFamilyName" id="menu-main-text-machineFamilyName">{{machineFamilyName}}</span>
-					<span class="warranty-icon">
-						<vtr-ui-header-warranty *ngIf="machineFamilyName"
-							[pageParent]="'NavBar'"></vtr-ui-header-warranty>
+					<span *ngIf="machineFamilyName"
+						class="pl-2">
+						<vtr-ui-header-warranty [pageParent]="'NavBar'"></vtr-ui-header-warranty>
 					</span>
 				</div>
 			</span>
