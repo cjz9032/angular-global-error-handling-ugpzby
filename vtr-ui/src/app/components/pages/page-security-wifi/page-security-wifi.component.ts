@@ -22,8 +22,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
 import { UserService } from 'src/app/services/user/user.service';
-import { MatDialogRef } from '@lenovo/material/dialog';
-import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
+import { MatDialog } from '@lenovo/material/dialog';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 
@@ -56,7 +55,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	interval = 15000;
 	segmentConst = SegmentConst;
 	maxCanTrialTime = 31;
-	expirePromptDialogRef: MatDialogRef<MaterialDialogComponent>;
 	wsPluginMissingEventHandler = () => {
 		this.handleError(new PluginMissingError());
 	}
@@ -99,6 +97,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public wifiSecurityService: WifiSecurityService,
 		public userService: UserService,
 		private metrics: MetricService,
+		private dialog: MatDialog
 	) { }
 
 	ngOnInit() {
@@ -159,8 +158,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	ngOnDestroy() {
-		if (this.expirePromptDialogRef) {
-			this.expirePromptDialogRef.close();
+		if (this.dialog.getDialogById('wifi-security-Expire-Prompt-Dialog')) {
+			this.dialog.getDialogById('wifi-security-Expire-Prompt-Dialog').close();
 		}
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
@@ -255,6 +254,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 						this.getTrialDay();
 					}
 					break;
+				case LenovoIdStatus.SignedIn:
+					if (notification.payload === true) {
+						if (this.dialog.getDialogById('wifi-security-Expire-Prompt-Dialog')) {
+							this.dialog.getDialogById('wifi-security-Expire-Prompt-Dialog').close();
+						}
+					}
+					break;
 				default:
 					break;
 			}
@@ -293,7 +299,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			linkButtonName: (hasTrialDays < this.maxCanTrialTime) ? ignore : '',
 			showCloseButton: (hasTrialDays < this.maxCanTrialTime) ? true : false,
 		};
-		this.expirePromptDialogRef = this.dialogService.openWifiSecurityExpirePromptDialog(dialogData);
+		this.dialogService.openWifiSecurityExpirePromptDialog(dialogData, (hasTrialDays >= this.maxCanTrialTime));
 	}
 
 	needOpenExpireDialog(hasTrialDays: number): boolean {
