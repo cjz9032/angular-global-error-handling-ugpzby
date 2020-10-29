@@ -105,7 +105,7 @@ export class LocalCacheService {
 	 */
 	public removeLocalCacheValue(key: LocalStorageKey): Promise<void> {
 		if (this.transferEnabled) {
-			this.cacheMap[key] = undefined;
+			delete this.cacheMap[key];
 			return this.setItem(this.indexedCacheKey, this.cacheMap);
 		}
 		this.commonService.removeLocalStorageValue(key);
