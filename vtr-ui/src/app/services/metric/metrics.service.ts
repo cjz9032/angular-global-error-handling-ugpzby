@@ -1,4 +1,5 @@
 import { Injectable, ElementRef } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MetricConst, MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { AppAction, GetEnvInfo, AppLoaded, FirstRun, TaskAction, ArticleView, ContentDisplay } from 'src/app/services/metric/metrics.model';
@@ -13,6 +14,7 @@ import { environment } from '../../../environments/environment';
 import { ContentDisplayDetection } from './service-components/content-display-detection';
 import { DevService } from '../dev/dev.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
 declare var Windows;
 
@@ -38,13 +40,15 @@ export class MetricService {
 	private pageScollEvent = (arg: any) => { };
 
 	constructor(
+		private http: HttpClient,
 		private shellService: VantageShellService,
 		private timerService: DurationCounterService,
 		private hypothesisService: HypothesisService,
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
 		private activeRouter: ActivatedRoute,
-		private selfSelectService: SelfSelectService
+		private selfSelectService: SelfSelectService,
+		private localInfoService: LocalInfoService
 	) {
 		this.metricsClient = this.shellService.getMetrics();
 		this.contentDisplayDetection = new ContentDisplayDetection(this);
@@ -443,5 +447,49 @@ export class MetricService {
 		}
 
 		return Promise.resolve(false);
+	}
+
+	async mcaffeStatisticDownloadInfo() {
+		const hostname = window.location.hostname;
+		let environmentValue = '';
+		if (hostname.endsWith('lenovo.com')) {
+			if (hostname !== 'https://vantage.csw.lenovo.com' ) {
+				environmentValue = '_qa';
+			}
+		} else {
+			environmentValue = '_debug';
+		}
+		const localInfo = await this.localInfoService.getLocalInfo();
+		const currentDate = new Date();
+		const settingData = {
+			sdk_ver: '1.0.0.0',
+			device_info: {
+				d_os: 'NA',
+				d_osver: 'NA',
+				d_lang: 'NA',
+				d_geo: localInfo.GEO,
+				d_brand: localInfo.Brand,
+				d_subbrand: 'NA',
+				d_fam: 'NA',
+				d_mtm: 'NA',
+				d_id: 'NA',
+				d_time: currentDate
+			},
+			app_info: {
+				a_key: this.metricsClient.appId,
+				a_ver: this.metricsClient.appVersion,
+				a_name: this.metricsClient.appName
+			},
+			events: [
+				{
+					e_name: `statistic_mcafee_download${environmentValue}`,
+					e_time: currentDate
+				}
+			]
+		};
+		this.metricsClient.sendAsyncEx(settingData, {
+			noUserInfo: true,
+			forced: true
+		});
 	}
 }
