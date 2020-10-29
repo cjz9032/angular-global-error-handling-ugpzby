@@ -74,3 +74,20 @@
     </div>
 </div>
 
+<!-- Note in case of charge threshold on or Gauge reset is in progress -->
+<div class="feature-note p-3 mt-2"
+    *ngIf="!isInvalidBattery && (isChargeThresholdOn || isGaugeResetRunning) ">
+    <div class="row"
+        id="myDevice-settings-batteryGauge-note">
+        <p role="text">
+            <!-- Override gauge reset over charge threshold -->
+            <span role="text"
+                *ngIf="!isGaugeResetRunning"
+                [innerHTML]="'device.deviceSettings.batteryGauge.thresholdNote' | translate"
+                id="batteryGauge-thresholdNote"></span>
+            <span *ngIf="isGaugeResetRunning"
+                [innerHTML]="'device.deviceSettings.batteryGauge.gaugeResetWarning' | translate"
+                id="batteryGauge-gaugeResetWarning"></span>
+        </p>
+    </div>
+</div>

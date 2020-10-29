@@ -46,3 +46,18 @@
         color: #30d487;
     }
 }
+.feature-note {
+    background-color: $grey_lighter;
+    border: 0.1rem solid $note_border;
+    p {
+        font-size: $fontsize_xs;
+        color: $shade_blue;
+        margin: 0;
+    }
+    a {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

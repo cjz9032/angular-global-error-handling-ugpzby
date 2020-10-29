@@ -148,5 +148,23 @@ describe('BatteryConditionNotesComponent', () => {
         expect(h6.innerHTML).toBe('device.deviceSettings.batteryGauge.condition.AcAdapterConnected');
       });
     });
+    describe('and battery threashold is on', () => {
+      it('should show a threshold note', () => {
+        component.isChargeThresholdOn = true;
+        component.isInvalidBattery = false;
+        fixture.detectChanges();
+        let element = fixture.debugElement.query(By.css('#batteryGauge-thresholdNote'))?.nativeElement;
+        expect(element?.innerHTML).toBe('device.deviceSettings.batteryGauge.thresholdNote');
+      });
+    });
+    describe('and gauge reset is running', () => {
+      it('then should show a gauge reset note', () => {
+        component.isGaugeResetRunning = true;
+        component.isInvalidBattery = false;
+        fixture.detectChanges();
+        let element = fixture.debugElement.query(By.css('#batteryGauge-gaugeResetWarning'))?.nativeElement;
+        expect(element?.innerHTML).toBe('device.deviceSettings.batteryGauge.gaugeResetWarning');
+      });
+    });
   });
 });
