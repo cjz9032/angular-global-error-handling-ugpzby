@@ -796,7 +796,12 @@
 									background-color: $gaming_bg;
 									border: none;
 									overflow: hidden;
-
+									@media #{$black-on-white} {
+										background-color: white;
+									}
+									 @media #{$white-on-black} {
+										background-color: black;
+									}
 									.good {
 										color: $gaming_lightest;
 										border-bottom: 1px solid $gaming_darkest !important;
