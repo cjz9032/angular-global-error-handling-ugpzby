@@ -44,6 +44,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	hwInfo: Promise<any>;
 	ngUnsubscribe: Subject<any> = new Subject();
 	sysinfo: any;
+	quickScanProtocol = 'lenovo-vantage3:hardware-scan?scan=quickscan';
 
 	constructor(
 		public deviceService: DeviceService,
@@ -113,7 +114,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 
 		switch (this.deviceStatus){
 			case DeviceCondition.NeedRunHWScan:
-				this.deviceService.launchUri('lenovo-vantage3:hardware-scan?scan=quickscan&module=cpu');
+				this.deviceService.launchUri(this.quickScanProtocol);
 				break;
 			case DeviceCondition.NeedRunSMPScan:
 				this.router.navigate(['support/smart-performance']);
@@ -316,6 +317,6 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		else{
 			hwscan.subtitle = this.translate.instant(notScannedKey);
 		}
-		hwscan.link = 'lenovo-vantage3:hardware-scan?scan=quickscan&module=cpu';
+		hwscan.link = this.quickScanProtocol;
 	}
 }
