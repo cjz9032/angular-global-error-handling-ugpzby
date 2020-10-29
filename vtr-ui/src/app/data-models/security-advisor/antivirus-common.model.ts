@@ -129,6 +129,7 @@ export class AntivirusCommon {
 			WinRT.launchUri(this.urlGetMcAfee);
 			this.metrics.sendMetrics(metricsData);
 		}
+		this.sendMcaffeStatisticDownloadInfo();
 	}
 
 	launch() {
@@ -191,6 +192,15 @@ export class AntivirusCommon {
 			return this.nls.get(language);
 		}
 		return this.nls.get('*');
+	}
+
+	sendMcaffeStatisticDownloadInfo() {
+		const cacheMcafeeStatisticDownload = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityMcAfeeStatisticDownload);
+		const currentDate = Date.now();
+		if (!cacheMcafeeStatisticDownload || currentDate - cacheMcafeeStatisticDownload > 24 * 60 * 60 * 1000) {
+			this.metrics.mcaffeStatisticDownloadInfo();
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfeeStatisticDownload, currentDate);
+		}
 	}
 
 }
