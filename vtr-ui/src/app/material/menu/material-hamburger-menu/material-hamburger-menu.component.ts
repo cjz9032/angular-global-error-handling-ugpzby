@@ -27,8 +27,7 @@ import { MatMenu } from '@lenovo/material/menu';
 export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	@ViewChild(MatMenu, {static: true}) matMenu: MatMenu;
 	@Input() items: MenuItem[];
-	@Input() activeItemId: string;
-	@Output() activeItem = new EventEmitter();
+	@Input() currentRoutePath: string;
 	isLoggingOut = false;
 	appsForYouEnum = AppsForYouEnum;
 	private subscription: Subscription;
@@ -134,6 +133,11 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	}
 
 	updateActiveItem(id: string) {
-		this.activeItem.emit(id);
+		if (id === 'security') {
+			return this.currentRoutePath === '/home-security' || this.currentRoutePath?.indexOf('/security') >= 0;
+		}
+		if (id === 'support') {
+			return this.currentRoutePath === '/hardware-scan' || this.currentRoutePath?.indexOf('/support') >= 0;
+		}
 	}
 }

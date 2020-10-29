@@ -10,9 +10,8 @@
 				*ngIf="subitem && !subitem.hide && subitem.externallink"
 				id="menu-main-nav-lnk-dropdown-menu-external-{{parentId}}-{{i}}"
 				class="mt-0 border-radius-0 outline-none dropdown-menu-item"
-				[ngClass]="{'active': subitem.id === activeItemId}"
 				attr.aria-label="{{subitem.label | translate }}"
-				routerLinkActive="link-active"
+				routerLinkActive="active"
 				[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
 				vtrMetrics
 				[metricsEvent]="subitem.metricsEvent"
@@ -21,16 +20,15 @@
 				target="_blank"
 				rel="noopener"
 				href="javascript:void(0)"
-				(click)="[openExternalLink(subitem.path), setActiveItem(subitem.id)]">
+				(click)="openExternalLink(subitem.path)">
 				<span [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
 				*ngIf="subitem && !subitem.hide && !subitem.externallink && !subitem.singleLayerRouting"
 				id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{i}}"
 				class="mt-0 border-radius-0 outline-none dropdown-menu-item"
-				[ngClass]="{'active': subitem.id === activeItemId}"
 				attr.aria-label="{{subitem.label| translate}}"
-				routerLinkActive="link-active"
+				routerLinkActive="active"
 				[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
 				vtrMetrics
 				[metricsEvent]="subitem.metricsEvent"
@@ -39,17 +37,15 @@
 				routerLink="/{{parentPath}}/{{subitem.path}}"
 				href="javascript:void(0)"
 				role="menuitem"
-				(click)="setActiveItem(subitem.id)"
-				(keydown.enter)="[setActiveItem(subitem.id), menuItemKeyDown(parentPath, subitem.path)]">
+				(keydown.enter)="menuItemKeyDown(parentPath, subitem.path)">
 				<span [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
 				*ngIf="subitem && !subitem.hide && !subitem.externallink && subitem.singleLayerRouting"
 				id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{i}}"
 				class="mt-0 border-radius-0 outline-none dropdown-menu-item"
-				[ngClass]="{'active': subitem.id === activeItemId}"
 				attr.aria-label="{{subitem.label| translate}}"
-				routerLinkActive="link-active"
+				routerLinkActive="active"
 				[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
 				vtrMetrics
 				[metricsEvent]="subitem.metricsEvent"
@@ -58,8 +54,7 @@
 				routerLink="/{{subitem.path}}"
 				href="javascript:void(0)"
 				role="menuitem"
-				(click)="setActiveItem(subitem.id)"
-				(keydown.enter)="[setActiveItem(subitem.id), menuItemKeyDown(subitem.path)]">
+				(keydown.enter)="menuItemKeyDown(subitem.path)">
 				<span [innerHTML]="subitem.label | translate"></span>
 			</button>
 		</ng-container>
@@ -96,9 +91,8 @@
 						vtrMetrics
 						id="menu-main-nav-lnk-dropdown-menu-external-{{parentId}}-{{subitem.id}}-{{ii}}"
 						class="d-inline-block mt-0 border-radius-0 outline-none dropdown-menu-item"
-						[ngClass]="{'active': secondarySubitem.id === activeItemId}"
 						attr.aria-label="{{secondarySubitem.label | translate }}"
-						routerLinkActive="link-active"
+						routerLinkActive="active"
 						[routerLinkActiveOptions]="secondarySubitem.routerLinkActiveOptions"
 						[metricsEvent]="secondarySubitem.metricsEvent"
 						[metricsParent]="secondarySubitem.metricsParent"
@@ -106,7 +100,7 @@
 						target="_blank"
 						rel="noopener"
 						href="javascript:void(0)"
-						(click)="[openExternalLink(secondarySubitem.path), setActiveItem(secondarySubitem.id)]">
+						(click)="openExternalLink(secondarySubitem.path)">
 						<span [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 					<button mat-menu-item
@@ -114,18 +108,16 @@
 						vtrMetrics
 						id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{subitem.id}}-{{ii}}"
 						class="d-inline-block mt-0 border-radius-0 outline-none dropdown-menu-item"
-						[ngClass]="{'active': secondarySubitem.id === activeItemId}"
 						attr.aria-label="{{secondarySubitem.label| translate}}"
-						routerLinkActive="link-active"
-						[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+						routerLinkActive="active"
+						[routerLinkActiveOptions]="secondarySubitem.routerLinkActiveOptions"
 						[metricsEvent]="secondarySubitem.metricsEvent"
 						[metricsParent]="secondarySubitem.metricsParent"
 						[metricsItem]="secondarySubitem.metricsItem"
 						routerLink="/{{parentPath}}/{{subitem.path}}/{{secondarySubitem.path}}"
 						href="javascript:void(0)"
 						role="menuitem"
-						(click)="setActiveItem(secondarySubitem.id)"
-						(keydown.enter)="[menuItemKeyDown(parentPath, subitem.path, secondarySubitem.path), setActiveItem(secondarySubitem.id)]">
+						(keydown.enter)="menuItemKeyDown(parentPath, subitem.path, secondarySubitem.path)">
 						<span [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 					<button mat-menu-item
@@ -133,18 +125,16 @@
 						vtrMetrics
 						id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{subitem.id}}-{{ii}}"
 						class="d-inline-block mt-0 border-radius-0 outline-none dropdown-menu-item"
-						[ngClass]="{'active': secondarySubitem.id === activeItemId}"
 						attr.aria-label="{{secondarySubitem.label| translate}}"
-						routerLinkActive="link-active"
-						[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+						routerLinkActive="active"
+						[routerLinkActiveOptions]="secondarySubitem.routerLinkActiveOptions"
 						[metricsEvent]="secondarySubitem.metricsEvent"
 						[metricsParent]="secondarySubitem.metricsParent"
 						[metricsItem]="secondarySubitem.metricsItem"
 						routerLink="/{{secondarySubitem.path}}"
 						href="javascript:void(0)"
 						role="menuitem"
-						(click)="setActiveItem(secondarySubitem.id)"
-						(keydown.enter)="[menuItemKeyDown(secondarySubitem.path), setActiveItem(secondarySubitem.id)]">
+						(keydown.enter)="menuItemKeyDown(secondarySubitem.path)">
 						<span [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 				</ng-container>

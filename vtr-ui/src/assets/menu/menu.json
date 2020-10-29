@@ -257,7 +257,7 @@
 					"metricsParent": "device.navbar",
 					"metricsItem": "link.mydevicesettings",
 					"routerLinkActiveOptions": {
-						"exact": false
+						"exact": true
 					},
 					"sMode": true,
 					"subitems": [
@@ -270,7 +270,7 @@
 							"metricsParent": "device-settings.device.navbar",
 							"metricsItem": "link.mydevicesettings",
 							"routerLinkActiveOptions": {
-								"exact": false
+								"exact": true
 							},
 							"sMode": true,
 							"subitems": []
@@ -283,7 +283,7 @@
 							"metricsParent": "device-settings.device.navbar",
 							"metricsItem": "link.power",
 							"routerLinkActiveOptions": {
-								"exact": false
+								"exact": true
 							},
 							"sMode": true,
 							"subitems": []
@@ -297,7 +297,7 @@
 							"metricsParent": "device-settings.device.navbar",
 							"metricsItem": "link.audio",
 							"routerLinkActiveOptions": {
-								"exact": false
+								"exact": true
 							},
 							"sMode": true,
 							"subitems": []
@@ -311,7 +311,7 @@
 							"metricsParent": "device-settings.device.navbar",
 							"metricsItem": "link.displaycamera",
 							"routerLinkActiveOptions": {
-								"exact": false
+								"exact": true
 							},
 							"sMode": true,
 							"subitems": []
@@ -325,7 +325,7 @@
 							"metricsParent": "device-settings.device.navbar",
 							"metricsItem": "link.inputaccessories",
 							"routerLinkActiveOptions": {
-								"exact": false
+								"exact": true
 							},
 							"sMode": true,
 							"subitems": []
@@ -356,7 +356,7 @@
 					"metricsParent": "navbar",
 					"metricsItem": "link.mysecurity",
 					"routerLinkActiveOptions": {
-						"exact": false
+						"exact": true
 					},
 					"subitems": [
 						{
@@ -369,7 +369,7 @@
 							"metricsParent": "navbar",
 							"metricsItem": "link.mysecurity",
 							"routerLinkActiveOptions": {
-								"exact": false
+								"exact": true
 							},
 							"subitems": []
 						},
@@ -405,7 +405,7 @@
 					"metricsParent": "navbar",
 					"metricsItem": "link.mysecurity",
 					"routerLinkActiveOptions": {
-						"exact": false
+						"exact": true
 					},
 					"subitems": [
 						{

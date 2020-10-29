@@ -68,8 +68,7 @@
 			<vtr-material-hamburger-menu
 				#hamburgerDropdownMenu="materialHamburgerMenuComponent"
 				[items]="items"
-				(activeItem)="updateActiveItem($event)"
-				[activeItemId]="activeItemId">
+				[currentRoutePath]="currentRoutePath">
 			</vtr-material-hamburger-menu>
 		</ng-container>
 		<div *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable)"
@@ -92,8 +91,8 @@
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
 							href="javascript:void(0)"
-							(click)="[onMenuItemClick(item), updateActiveItem(item.id)]"
-							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path), updateActiveItem(item.id)]"
+							(click)="onMenuItemClick(item)"
+							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
 							(mouseover)="closeAllMatMenu()"
 							(focus)="closeAllMatMenu()">
 							{{item.label | translate}}
@@ -108,7 +107,7 @@
 							[matMenuTriggerFor]="materialMenuDropdown?.matMenu"
 							*ngIf="item.label | translate"
 							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
-							[ngClass]="{'beta-item':item.beta}"
+							[ngClass]="{'beta-item': item.beta, 'actived': updateActiveItem(item.id)}"
 							role="menu"
 							vtrMetrics
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
@@ -123,8 +122,8 @@
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
 							href="javascript:void(0)"
-							(click)="[onMenuItemClick(item), updateActiveItem(item.id)]"
-							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path), updateActiveItem(item.id)]"
+							(click)="onMenuItemClick(item)"
+							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
 							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
 							(focus)="[closeAllOtherMatMenu(menuTrigger), openMatMenu(menuTrigger)]"
 							[innerHTML]="item.label | translate">
@@ -134,8 +133,6 @@
 							[dropdownMenu]="item"
 							[parentPath]="item.path"
 							[parentId]="item.id"
-							[activeItemId]="activeItemId"
-							(activeItem)="updateActiveItem($event)"
 							class="d-inline-block align-top">
 						</vtr-material-menu-dropdown>
 					</li>
@@ -180,16 +177,16 @@
 								*ngIf="appsForYouService.showLmaMenu()"
 								id="menu-main-lnk-open-lma"
 								class="position-relative mt-0 border-radius-0 user-menu-item link-lma"
-								[ngClass]="{'active': activeItemId === 'lma'}"
 								attr.aria-label="menu-main-lnk-open-lma"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoMigrationAssistantButton"
 								[routerLink]="['/apps-for-you/'+ appsForYouEnum.AppGuidLenovoMigrationAssistant]"
+								routerLinkActive="active"
 								href="javascript:void(0)"
-								(click)="[onMenuItemClick(item, $event), updateActiveItem('lma')]"
-								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant), updateActiveItem('lma')]"
+								(click)="onMenuItemClick(item, $event)"
+								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)]"
 								href="javascript:void(0)">
 								<span class="user-menu-item-text"
 									[innerHTML]="'appsForYou.menuText.lenovoMigrationAssistant' | translate">
@@ -204,16 +201,16 @@
 								*ngIf="appsForYouService.showAdobeMenu()"
 								id="menu-main-lnk-open-adobe"
 								class="position-relative mt-0 border-radius-0 user-menu-item link-adobe"
-								[ngClass]="{'active': activeItemId === 'adobe'}"
 								attr.aria-label="menu-main-lnk-open-adobe"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="AdobecRedemptionButton"
 								[routerLink]="['/apps-for-you/'+ appsForYouEnum.AppGuidAdobeCreativeCloud]"
+								routerLinkActive="active"
 								href="javascript:void(0)"
-								(click)="[onMenuItemClick(item, $event), updateActiveItem('adobe')]"
-								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud), updateActiveItem('adobe')]"
+								(click)="onMenuItemClick(item, $event)"
+								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)]"
 								href="javascript:void(0)">
 								<span class="user-menu-item-text"
 									[innerHTML]="'appsForYou.menuText.adobeRedemption' | translate">
@@ -262,7 +259,6 @@
 							<button mat-menu-item
 								id="menu-main-lnk-open-preference"
 								class="mt-0 border-radius-0 user-menu-item"
-								[ngClass]="{'active': activeItemId === 'preference'}"
 								attr.aria-label="menu-main-lnk-open-preference"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -270,8 +266,9 @@
 								metricsItem="SettingsButton"
 								href="javascript:void(0)"
 								routerLink="settings"
-								(click)="[onMenuItemClick(item), updateActiveItem('preference')]"
-								(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown('settings'), updateActiveItem('preference')]">
+								routerLinkActive="active"
+								(click)="onMenuItemClick(item)"
+								(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown('settings')]">
 								<span class="user-menu-item-text"
 									[innerHTML]="'settings.preferenceSettings' | translate">
 								</span>

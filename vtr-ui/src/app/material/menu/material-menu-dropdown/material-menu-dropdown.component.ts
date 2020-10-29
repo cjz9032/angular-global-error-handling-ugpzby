@@ -16,8 +16,6 @@ export class MaterialMenuDropdownComponent implements OnInit {
 	@Input() dropdownMenu: MenuItem;
 	@Input() parentPath: string;
 	@Input() parentId: string;
-	@Input() activeItemId: string;
-	@Output() activeItem = new EventEmitter();
 	hasSecondaryMenu = false;
 
 	constructor(
@@ -44,9 +42,5 @@ export class MaterialMenuDropdownComponent implements OnInit {
 		secondaryPath ? this.router.navigateByUrl(`/${path}/${subpath}/${secondaryPath}`)
 			: subpath ? this.router.navigateByUrl(`/${path}/${subpath}`)
 			: path ? this.router.navigateByUrl(`/${path}`) : this.router.navigateByUrl(`/`);
-	}
-
-	setActiveItem(id: string) {
-		this.activeItem.emit(id);
 	}
 }
