@@ -1070,6 +1070,13 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
+.modal-backdrop.show {
+	@media #{$high-contrast} {
+		background: $dark;
+		opacity: .5;
+	}
+}
+
 .modern-preload-modal {
 	.modal-dialog {
 		max-width: 85%;
