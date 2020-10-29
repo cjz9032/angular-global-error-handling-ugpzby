@@ -1,7 +1,4 @@
 <div id="{{ componentId }}" [ngSwitch]="testResultResponse">
-	<!--Defined an aria-label property with description to the icon-->
-	<!-- Necessary to have a blank space while test doesn't start -->
-	<div [attr.aria-label]="'Not-Started-icon'" *ngSwitchCase="0"></div>
 
 	<!--Aria-hidden defined as true to ignore faicon selection-->
 	<div class="test-status-icon success" *ngSwitchCase="testResultEnum.Pass">
