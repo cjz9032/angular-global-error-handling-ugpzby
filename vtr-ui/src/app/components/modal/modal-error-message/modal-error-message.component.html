@@ -1,4 +1,5 @@
-<div class="error-message-modal position-relative" aria-label="Error" role="dialog">
+<div *ngIf="header && description"
+	class="error-message-modal position-relative" aria-label="Error" role="dialog">
 	<div class="error-message-content">
 		<h1 [innerHTML]="header | translate"></h1>
 		<p class="description" [innerHTML]="description | translate"></p>
