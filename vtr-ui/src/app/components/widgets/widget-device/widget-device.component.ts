@@ -44,7 +44,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	hwInfo: Promise<any>;
 	ngUnsubscribe: Subject<any> = new Subject();
 	sysinfo: any;
-	quickScanProtocol: 'lenovo-vantage3:hardware-scan?scan=quickscan';
+	quickScanProtocol = 'lenovo-vantage3:hardware-scan?scan=quickscan';
 
 	constructor(
 		public deviceService: DeviceService,
