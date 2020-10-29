@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.35](https://bitbucket.tc.lenovo.com///compare/v1.8.34...v1.8.35) (2020-10-29)
+
+
+### Bug Fixes
+
+* **Antivirus:** VAN-22878 add new metrics item for lanchMcAfeenBuy ([e9d1486](https://bitbucket.tc.lenovo.com///commit/e9d14864da043dc842c811ef8d3fe5d12c5c1ab2))
+* **Antivirus:** VAN-22878 fixed launchMcAfeeBuyCall metrics ([bbba275](https://bitbucket.tc.lenovo.com///commit/bbba2751d52f57cb419d77ccbde2b865ee416a89))
+* **ui-menu:** change menu name ([c173aac](https://bitbucket.tc.lenovo.com///commit/c173aac09e7db178d83e603e4b8d8621001ef363))
+* **ui-menu:** Fix shell and experience compatibility issue. ([036d9f5](https://bitbucket.tc.lenovo.com///commit/036d9f50ee8f99efd22503c5dbf1845322f1480e))
+
 ### [1.8.34](https://bitbucket.tc.lenovo.com///compare/v1.8.33...v1.8.34) (2020-10-28)
 
 
