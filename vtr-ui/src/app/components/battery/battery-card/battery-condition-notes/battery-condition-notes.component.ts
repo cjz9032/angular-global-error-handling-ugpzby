@@ -19,6 +19,9 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
   @Input() batteryFullChargeCapacity: number;
   @Input() batteryDesignCapacity: number;
   @Input() batteryDetected = false;
+  @Input() isGaugeResetRunning = false;
+  @Input() isInvalidBattery = false;
+  @Input() isChargeThresholdOn = false;
 
   public _notes: string[];
   public canShowAcDetailedNote = false;

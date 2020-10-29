@@ -66,6 +66,9 @@
 			[batteryConditions]="batteryConditions"
 			[batteryGauge]="batteryGauge"
 			[batteryDetected]="!batteryIndicator.batteryNotDetected"
+			[isGaugeResetRunning]="batteryService.isGaugeResetRunning"
+			[isInvalidBattery]="batteryService.isInvalidBattery"
+			[isChargeThresholdOn]="batteryIndicator.isChargeThresholdOn"
 			[batteryFullChargeCapacity]="batteryInfo[0]?.fullChargeCapacity"
 			[batteryDesignCapacity]="batteryInfo[0]?.designCapacity"> 
 		</vtr-battery-condition-notes>
