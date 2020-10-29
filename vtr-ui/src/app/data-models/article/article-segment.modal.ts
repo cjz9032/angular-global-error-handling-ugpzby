@@ -5,9 +5,10 @@ export class ArticleSegment {
 	public attribution: string;
 	public body: string;
 	public segmentType: string;
-	public wrapLeft = false;
-	public wrapRight = false;
-	public noWrap = false;
+	public noWrapLeft = false;
+	public noWrapRight = false;
+	public wrap = false;
 	public imageType = false;
 	public quoteType = false;
+	public center = false;
 }
