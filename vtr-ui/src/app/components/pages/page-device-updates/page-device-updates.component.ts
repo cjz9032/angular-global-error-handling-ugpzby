@@ -659,7 +659,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	public isUpdateSelected() {
-		if (this.systemUpdateService.isUpdatesAvailable) {
+		if (this.systemUpdateService.isUpdatesAvailable && this.systemUpdateService.updateInfo && this.systemUpdateService.updateInfo.updateList) {
 			const selectedUpdates = this.systemUpdateService.getSelectedUpdates(this.systemUpdateService.updateInfo.updateList);
 			return selectedUpdates.length > 0;
 		} else {
@@ -972,7 +972,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.installationPercent = this.systemUpdateService.installationPercent;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 					});
-					if (this.systemUpdateService && this.systemUpdateService.updateInfo) {
+					if (this.systemUpdateService && this.systemUpdateService.updateInfo && this.systemUpdateService.updateInfo.updateList) {
 						this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					}
 					break;
