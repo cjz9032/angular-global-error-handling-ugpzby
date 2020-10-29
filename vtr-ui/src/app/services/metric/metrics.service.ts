@@ -453,7 +453,7 @@ export class MetricService {
 		const hostname = window.location.hostname;
 		let environmentValue = '';
 		if (hostname.endsWith('lenovo.com')) {
-			if (hostname.endsWith('csw.lenovo.com')) {
+			if (!hostname.endsWith('csw.lenovo.com')) {
 				environmentValue = '_qa';
 			}
 		} else {
