@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuMainGamingComponent } from './menu-main-gaming.component';
+import { MenuMainLegacyComponent } from './menu-main-legacy.component';
 
-describe('MenuMainGamingComponent', () => {
-	let component: MenuMainGamingComponent;
-	let fixture: ComponentFixture<MenuMainGamingComponent>;
+describe('MenuMainLegacyComponent', () => {
+	let component: MenuMainLegacyComponent;
+	let fixture: ComponentFixture<MenuMainLegacyComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [MenuMainGamingComponent],
+			declarations: [MenuMainLegacyComponent],
 		}).compileComponents();
 	});
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(MenuMainGamingComponent);
+		fixture = TestBed.createComponent(MenuMainLegacyComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

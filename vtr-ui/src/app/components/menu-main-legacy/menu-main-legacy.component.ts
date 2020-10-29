@@ -38,11 +38,11 @@ import { LenovoSurveyEnum } from 'src/app/enums/lenovo-survey.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 @Component({
-	selector: 'vtr-menu-main-gaming',
-	templateUrl: './menu-main-gaming.component.html',
-	styleUrls: ['./menu-main-gaming.component.scss']
+	selector: 'vtr-menu-main-legacy',
+	templateUrl: './menu-main-legacy.component.html',
+	styleUrls: ['./menu-main-legacy.component.scss']
 })
-export class MenuMainGamingComponent implements OnInit, OnDestroy {
+export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	@ViewChild('menuTarget', { static: false })
 	menuTarget: ElementRef;
 	@Input() loadMenuItem: any = {};
