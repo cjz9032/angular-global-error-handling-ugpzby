@@ -14,6 +14,7 @@ export class LocalCacheService {
 	private transferredShellVersion = '10.2011.8';
 	private cacheMap = {};
 	private indexedCacheKey = 'VantageExperienceCache';
+	private cacheInitialized = false;
 	private setPromise: Promise<any>;
 
 	constructor(
@@ -105,7 +106,7 @@ export class LocalCacheService {
 	 */
 	public removeLocalCacheValue(key: LocalStorageKey): Promise<void> {
 		if (this.transferEnabled) {
-			this.cacheMap[key] = undefined;
+			delete this.cacheMap[key];
 			return this.setItem(this.indexedCacheKey, this.cacheMap);
 		}
 		this.commonService.removeLocalStorageValue(key);
