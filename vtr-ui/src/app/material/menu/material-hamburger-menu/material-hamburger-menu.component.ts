@@ -72,9 +72,9 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	}
 
 	public hasSecondaryMenu(item: MenuItem) {
-		if (item && Array.isArray(item.subitems)) {
+		if (Array.isArray(item?.subitems)) {
 			for (const element of item.subitems) {
-				if (!element.hide && Array.isArray(element.subitems) && element.subitems.some((it) => !it.hide)) {
+				if (Array.isArray(element?.subitems) && !element.hide && element.subitems.some((it) => !it.hide)) {
 					return true;
 				}
 			}
@@ -132,12 +132,13 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 		this.dialogService.openLenovoIdDialog(appFeature);
 	}
 
-	updateActiveItem(id: string) {
+	updateActiveItem(id: string): boolean {
 		if (id === 'security') {
 			return this.currentRoutePath === '/home-security' || this.currentRoutePath?.indexOf('/security') >= 0;
 		}
 		if (id === 'support') {
 			return this.currentRoutePath === '/hardware-scan' || this.currentRoutePath?.indexOf('/support') >= 0;
 		}
+		return false;
 	}
 }

@@ -77,22 +77,6 @@ export class ConfigService {
 	private country: string;
 	private betaFeature = ['smart-performance', 'app-search'];
 	private chsAvailability = false;
-	private wifiSecurityMenu = {
-		id: 'wifi-security',
-		label: 'common.menu.security.sub3',
-		path: 'security/wifi-security',
-		icon: null,
-		metricsEvent: 'itemClick',
-		metricsParent: 'navbar',
-		metricsItem: 'link.wifisecurity',
-		routerLinkActiveOptions: {
-			exact: true
-		},
-		subitems: [],
-		pre: [
-			'assets/images/coronet-logo.svg'
-		]
-	};
 
 	constructor(
 		private betaService: BetaService,
@@ -182,7 +166,7 @@ export class ConfigService {
 				if (machineType === 4) {
 					this.updateMenuForDesktop(resultMenu);
 				}
-				this.initializeSecurityItem(this.country, resultMenu, this.activeSegment);
+				this.initializeSecurityItem(this.country, resultMenu);
 				await this.initializeHardwareScan(resultMenu);
 				if (this.hypSettings) {
 					resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
@@ -246,18 +230,7 @@ export class ConfigService {
 		}
 	}
 
-	initializeSecurityItem(region: string, items: MenuItem[], segment: string) {
-		if (segment === SegmentConst.Commercial) {
-			const securityIndex = items.findIndex((item) => item.id === 'security');
-			if (securityIndex >= 0) {
-				items.splice(securityIndex, 1, this.wifiSecurityMenu);
-			}
-		} else {
-			const wifiIndex = items.findIndex((item) => item.id === 'wifi-security');
-			if (wifiIndex >= 0) {
-				items.splice(wifiIndex, 1, this.menuItems.find((item) => item.id === 'security'));
-			}
-		}
+	initializeSecurityItem(region: string, items: MenuItem[]) {
 		this.supportFilter(items, 'security', true);
 		this.supportFilter(items, 'anti-virus', true);
 		this.supportFilter(items, 'password-protection', region.toLowerCase() !== 'cn');
@@ -284,9 +257,13 @@ export class ConfigService {
 	}
 
 	updateWifiMenu(menu: MenuItem[], wifiIsSupport) {
-		this.supportFilter(menu, 'wifi-security', wifiIsSupport
-			&& !this.deviceService.isSMode
-			&& !this.deviceService.isArm);
+		const wifiMenu = menu.find((item) => item.id === 'wifi-security');
+		if (wifiMenu) {
+			wifiMenu.hide = !wifiIsSupport
+			|| this.deviceService.isSMode
+			|| this.deviceService.isArm
+			|| this.activeSegment !== SegmentConst.Commercial;
+		}
 		this.updateWifiStateCache(wifiIsSupport);
 		this.updateSecurityMenuHide(menu, {
 			wifiIsSupport,
@@ -300,11 +277,15 @@ export class ConfigService {
 		const securityMenu = menu.find((item) => item.id === 'security');
 		if (!securityMenu) { return; }
 		if (!securityMenuCondition) { return; }
-		securityMenu.hide = securityMenuCondition.isSmode
+		if (securityMenuCondition.currentSegment === SegmentConst.Gaming) {
+			securityMenu.hide = securityMenuCondition.isSmode
 			|| securityMenuCondition.isArm
-			|| (!securityMenuCondition.wifiIsSupport
-			&& (securityMenuCondition.currentSegment === SegmentConst.Commercial
-			|| securityMenuCondition.currentSegment === SegmentConst.Gaming));
+			|| !securityMenuCondition.wifiIsSupport;
+		}else if (securityMenuCondition.currentSegment === SegmentConst.Commercial) {
+			securityMenu.hide = true;
+		} else {
+			securityMenu.hide = false;
+		}
 	}
 
 	updateWifiStateCache(wifiIsSupport: boolean) {
@@ -534,7 +515,7 @@ export class ConfigService {
 			this.activeSegment = segment;
 			this.showCHS = this.chsAvailability && this.activeSegment !== SegmentConst.Commercial;
 			this.supportFilter(this.menu, 'connected-home-security', this.showCHS);
-			this.initializeSecurityItem(this.country, this.menu, this.activeSegment);
+			this.initializeSecurityItem(this.country, this.menu);
 			this.betaFeature.forEach(featureId => {
 				this.supportFilter(this.menu, featureId, true);
 			});

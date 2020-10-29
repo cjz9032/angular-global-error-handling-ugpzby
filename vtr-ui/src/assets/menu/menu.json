@@ -342,6 +342,7 @@
 				"fal",
 				"lock"
 			],
+			"segment": "-[Commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.security",
@@ -351,7 +352,6 @@
 					"label": "common.menu.security.sub8",
 					"path": null,
 					"icon": null,
-					"segment": "-[Commercial]",
 					"metricsEvent": "itemClick",
 					"metricsParent": "navbar",
 					"metricsItem": "link.mysecurity",
@@ -364,12 +364,11 @@
 							"label": "common.menu.security.title",
 							"path": "mysecurity",
 							"icon": null,
-							"segment": "-[Commercial]",
 							"metricsEvent": "itemClick",
 							"metricsParent": "navbar",
 							"metricsItem": "link.mysecurity",
 							"routerLinkActiveOptions": {
-								"exact": true
+								"exact": false
 							},
 							"subitems": []
 						},
@@ -378,7 +377,6 @@
 							"label": "homeSecurity.title",
 							"path": "home-security",
 							"singleLayerRouting": true,
-							"segment": "-[Commercial]",
 							"metricsEvent": "itemClick",
 							"metricsParent": "navbar",
 							"metricsItem": "link.homesecurity",
@@ -413,7 +411,6 @@
 							"label": "common.menu.security.sub2",
 							"path": "anti-virus",
 							"icon": null,
-							"segment": "-[Commercial]",
 							"metricsEvent": "itemClick",
 							"metricsParent": "navbar",
 							"metricsItem": "link.antivirus",
@@ -433,7 +430,6 @@
 							"id": "password-protection",
 							"label": "common.menu.security.sub4",
 							"path": "password-protection",
-							"segment": "-[Commercial]",
 							"metricsEvent": "itemClick",
 							"metricsParent": "navbar",
 							"metricsItem": "link.passwordprotection",
@@ -470,11 +466,27 @@
 								"exact": true
 							},
 							"icon": null,
-							"segment": "-[Commercial]",
 							"subitems": []
 						}
 					]
 				}
+			]
+		},
+		{
+			"id": "wifi-security",
+			"label": "common.menu.security.sub3",
+			"path": "security/wifi-security",
+			"icon": null,
+			"segment": "+[Commercial]",
+			"metricsEvent": "itemClick",
+			"metricsParent": "navbar",
+			"metricsItem": "link.wifisecurity",
+			"routerLinkActiveOptions": {
+				"exact": true
+			},
+			"subitems": [],
+			"pre": [
+				"assets/images/coronet-logo.svg"
 			]
 		},
 		{

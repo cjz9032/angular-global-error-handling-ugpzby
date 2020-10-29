@@ -407,5 +407,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		if (id === 'support') {
 			return this.currentRoutePath === '/hardware-scan' || this.currentRoutePath?.indexOf('/support') >= 0;
 		}
+		return false;
 	}
 }

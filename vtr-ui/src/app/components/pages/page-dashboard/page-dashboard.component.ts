@@ -174,7 +174,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			summary: 'dashboard.securityStatus.loadingDesc',
 			linkText: 'common.menu.security.sub1',
 			metricsItem: 'loading',
-			linkPath: 'security'
+			linkPath: 'security/mysecurity'
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.noProtectionDesc',
@@ -186,7 +186,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.basicDesc',
 			linkText: 'common.ui.improveNow',
-			linkPath: 'security',
+			linkPath: 'security/mysecurity',
 			params: 'basic',
 			metricsItem: 'basic',
 			statusText: 'security.landing.basic'
@@ -194,7 +194,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.intermediateDesc',
 			linkText: 'common.menu.security.sub1',
-			linkPath: 'security',
+			linkPath: 'security/mysecurity',
 			params: 'intermediate',
 			metricsItem: 'intermediate',
 			statusText: 'security.landing.intermediate'
@@ -202,7 +202,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.advancedDesc',
 			linkText: 'common.menu.security.sub1',
-			linkPath: 'security',
+			linkPath: 'security/mysecurity',
 			params: 'advanced',
 			metricsItem: 'advanced',
 			statusText: 'security.landing.advanced'
