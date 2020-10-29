@@ -14,7 +14,6 @@ export class LocalCacheService {
 	private transferredShellVersion = '10.2011.8';
 	private cacheMap = {};
 	private indexedCacheKey = 'VantageExperienceCache';
-	private cacheInitialized = false;
 	private setPromise: Promise<any>;
 
 	constructor(
