@@ -284,7 +284,7 @@ export class ConfigService {
 		}else if (securityMenuCondition.currentSegment === SegmentConst.Commercial) {
 			securityMenu.hide = true;
 		} else {
-			securityMenu.hide = false;
+			this.supportFilter(securityMenu.subitems, 'wifi-security', !securityMenuCondition.isSmode && !securityMenuCondition.isArm && securityMenuCondition.wifiIsSupport);
 		}
 	}
 
@@ -313,6 +313,7 @@ export class ConfigService {
 	}
 
 	supportFilter(menu: Array<any>, id: string, isSupported: boolean) {
+		if (!Array.isArray(menu)) { return menu; }
 		menu.forEach(item => {
 			if (item.id === id) {
 				item.isSupported = isSupported;
