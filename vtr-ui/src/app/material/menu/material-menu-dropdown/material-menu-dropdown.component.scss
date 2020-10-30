@@ -3,6 +3,7 @@
 ::ng-deep {
 	.vtr-material-menu-dropdown {
 		&.menu-dropdown-container {
+			border-radius: 0 0 0.5rem 0.5rem;
 			background-color: $light;
 			@include high-contrast-background;
 			box-shadow: $menu_dropdown_shadow;
@@ -10,7 +11,7 @@
 		.secondary-menu-container {
 			max-width: 60rem;
 			.column-container {
-				max-width: 20rem;
+				width: 20rem;
 			}
 		}
 		.dropdown-menu-item {

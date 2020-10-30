@@ -95,7 +95,7 @@
 					@include outline-white-high-contrast;
 					@include menu-color-hover-high-contrast;
 				}
-				&.active {
+				&.active, &.actived {
 					outline: none;
 					background-color: $menu_hover;
 					@include high-contrast-color;
@@ -185,6 +185,7 @@
 		box-shadow: $menu_dropdown_shadow;
 	}
 	.user-menu-dropdown-container {
+		border-radius: 0 0 0.5rem 0.5rem !important;
 		.user-text {
 			color: $main_shade;
 			font-size: $fontsize_xs;

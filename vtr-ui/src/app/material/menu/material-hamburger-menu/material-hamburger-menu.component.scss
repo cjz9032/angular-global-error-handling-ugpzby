@@ -46,7 +46,7 @@
 						@include outline-white-high-contrast;
 					}
 				}
-				&.active {
+				&.active, &.actived {
 					background-color: $menu_hover;
 					@include high-contrast-color-default;
 
@@ -97,6 +97,9 @@
 					@include high-contrast-background-color;
 					@include menu-color-hover-high-contrast;
 					text-decoration: underline;
+					&.disable {
+						text-decoration: none;
+					}
 				}
 			}
 			hr {

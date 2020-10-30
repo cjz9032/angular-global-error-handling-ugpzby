@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input, ViewChild, ElementRef, ViewChildren, QueryList, ViewContainerRef, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
@@ -66,9 +66,11 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	searchTips = '';
 	showSearchBox = false;
 	activeItemId: string;
+	currentRoutePath: string;
 	private subscription: Subscription;
 	private backlightCapabilitySubscription: Subscription;
 	private topRowFnSubscription: Subscription;
+	private routerEventSubscription: Subscription;
 	private unsupportFeatureEvt: Observable<string>;
 	private searchTipsTimeout: any;
 	constructor(
@@ -112,6 +114,11 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		window.addEventListener('resize', throttle(() => {
 			this.closeAllMatMenu();
 		}, 100, { leading: true }));
+		this.routerEventSubscription = this.router.events.subscribe((ev) => {
+			if (ev instanceof NavigationEnd) {
+				this.currentRoutePath = ev.url;
+			}
+		});
 	}
 
 	ngOnDestroy(): void {
@@ -132,6 +139,9 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		}
 		if (this.topRowFnSubscription) {
 			this.topRowFnSubscription.unsubscribe();
+		}
+		if (this.routerEventSubscription) {
+			this.routerEventSubscription.unsubscribe();
 		}
 	}
 
@@ -390,7 +400,13 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		this.dialogService.openLenovoIdDialog(appFeature);
 	}
 
-	updateActiveItem(id: string) {
-		this.activeItemId = id;
+	updateActiveItem(id: string): boolean {
+		if (id === 'security') {
+			return this.currentRoutePath === '/home-security' || this.currentRoutePath?.indexOf('/security') >= 0;
+		}
+		if (id === 'support') {
+			return this.currentRoutePath === '/hardware-scan' || this.currentRoutePath?.indexOf('/support') >= 0;
+		}
+		return false;
 	}
 }

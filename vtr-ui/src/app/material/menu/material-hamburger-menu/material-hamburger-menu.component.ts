@@ -27,8 +27,7 @@ import { MatMenu } from '@lenovo/material/menu';
 export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	@ViewChild(MatMenu, {static: true}) matMenu: MatMenu;
 	@Input() items: MenuItem[];
-	@Input() activeItemId: string;
-	@Output() activeItem = new EventEmitter();
+	@Input() currentRoutePath: string;
 	isLoggingOut = false;
 	appsForYouEnum = AppsForYouEnum;
 	private subscription: Subscription;
@@ -73,7 +72,14 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	}
 
 	public hasSecondaryMenu(item: MenuItem) {
-		return item && item.subitems && item.subitems.length > 0;
+		if (Array.isArray(item?.subitems)) {
+			for (const element of item.subitems) {
+				if (Array.isArray(element?.subitems) && !element.hide && element.subitems.some((it) => !it.hide)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	public openExternalLink(link) {
@@ -126,7 +132,13 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 		this.dialogService.openLenovoIdDialog(appFeature);
 	}
 
-	updateActiveItem(id: string) {
-		this.activeItem.emit(id);
+	updateActiveItem(id: string): boolean {
+		if (id === 'security') {
+			return this.currentRoutePath === '/home-security' || this.currentRoutePath?.indexOf('/security') >= 0;
+		}
+		if (id === 'support') {
+			return this.currentRoutePath === '/hardware-scan' || this.currentRoutePath?.indexOf('/support') >= 0;
+		}
+		return false;
 	}
 }
