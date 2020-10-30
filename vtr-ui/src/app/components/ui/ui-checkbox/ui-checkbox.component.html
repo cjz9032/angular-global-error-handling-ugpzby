@@ -14,18 +14,17 @@
 			[attr.aria-label]="ariaLabel"
 			tabIndex="0"
 			(change)="onChange($event)" />
-		<label *ngIf="hasChild; else elseBlock"
+		<div *ngIf="hasChild; else elseBlock"
 			[id]="componentId+'_checkbox-label'"
-			class="custom-control-label"
-			[for]="componentId+'_checkbox'">
+			class="custom-control-label">
 			<ng-content></ng-content>
-		</label>
+		</div>
 		<ng-template #elseBlock>
-			<label [for]="componentId+'_checkbox'"
+			<div
 				[id]="componentId+'_checkbox-label'"
 				class="custom-control-label">
 				{{ label }}
-			</label>
+			</div>
 		</ng-template>
 	</div>
 </div>
