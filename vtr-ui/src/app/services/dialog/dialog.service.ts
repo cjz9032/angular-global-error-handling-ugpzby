@@ -313,7 +313,7 @@ export class DialogService {
 			hasBackdrop: true,
 			disableClose: true,
 			backdropClass: 'dialogBackdropExcludeMenu',
-			panelClass: this.deviceService.isGaming ? 'is-gaming' : '',
+			panelClass: [(this.deviceService.isGaming ? 'is-gaming' : ''), 'm-5', 'h-auto'],
 			id: 'wifi-security-Expire-Prompt-Dialog'
 		});
 		this.dialogRef.afterClosed().subscribe(result => {
