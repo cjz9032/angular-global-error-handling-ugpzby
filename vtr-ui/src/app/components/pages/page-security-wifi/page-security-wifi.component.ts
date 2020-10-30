@@ -68,6 +68,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 						this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
 						this.wifiSecurity.enableWifiSecurity();
 					}
+					this.getTrialDay();
 				}
 			}
 		});

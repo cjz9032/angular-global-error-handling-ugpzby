@@ -297,7 +297,7 @@ export class DialogService {
 	}
 
 	openWifiSecurityExpirePromptDialog(dialogData: DialogData, hadExpired: boolean) {
-		if (this.dialogRef || this.modalService.hasOpenModals()) {
+		if (this.dialogRef) {
 			return;
 		}
 		this.dialogRef = this.dialog.open(MaterialDialogComponent, {
