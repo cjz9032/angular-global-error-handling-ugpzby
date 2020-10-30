@@ -135,7 +135,8 @@ export const getSecurityLevel = (
 	const uac = securityAdvisor.uac;
 
 	let currentPage = '';
-
+	const cacheShowWindowsHello = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowWindowsHello);
+	const cacheShowWifiSecurity = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity);
 	if (haveOwnList) {
 		securityStatus.pmStatus.showOwn = haveOwnList.passwordManager === true;
 		securityStatus.wfStatus.showOwn = haveOwnList.wifiSecurity === true;
@@ -261,7 +262,8 @@ export const getSecurityLevel = (
 		securityStatus.pmStatus.status = undefined;
 	}
 	// fingerprint
-	if (securityFeature.fingerprintSupport) {
+	if (securityFeature.fingerprintSupport || cacheShowWindowsHello) {
+		localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWindowsHello, true);
 		const cacheWhStatus = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
 		if (windowsHello && windowsHello.fingerPrintStatus) {
 			securityStatus.whStatus.status = windowsHello.fingerPrintStatus === 'active' ? 'enabled' : 'disabled';
@@ -279,7 +281,8 @@ export const getSecurityLevel = (
 		securityStatus.whStatus.status = undefined;
 	}
 	// wifi security
-	if (wifiSecurity.isSupported) {
+	if (wifiSecurity.isSupported || cacheShowWifiSecurity) {
+		localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity, true);
 		const cacheWfStatus = localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState);
 		let wifiStatus: string;
 		if (wifiSecurity && wifiSecurity.state) {
@@ -437,8 +440,8 @@ export const getSecurityLevel = (
 	}
 
 	const basicView = [securityStatus.avStatus, securityStatus.fwStatus, securityFeature.pluginSupport ? securityStatus.waStatus : undefined].filter(i => i !== undefined);
-	const intermediateView = [securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, securityFeature.fingerprintSupport ? securityStatus.whStatus : undefined, securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined);
-	const advancedView = [securityAdvisor.wifiSecurity.isSupported ? securityStatus.wfStatus : undefined, securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined);
+	const intermediateView = [securityFeature.pwdSupport ? securityStatus.pmStatus : undefined, (securityFeature.fingerprintSupport || cacheShowWindowsHello) ? securityStatus.whStatus : undefined, securityFeature.pluginSupport ? securityStatus.uacStatus : undefined].filter(i => i !== undefined);
+	const advancedView = [(securityAdvisor.wifiSecurity.isSupported || cacheShowWifiSecurity) ? securityStatus.wfStatus : undefined, securityFeature.vpnSupport ? securityStatus.vpnStatus : undefined].filter(i => i !== undefined);
 	localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingLevel, landingStatus);
 	if (transString) {
 		return {landingStatus, basicView, intermediateView, advancedView};
