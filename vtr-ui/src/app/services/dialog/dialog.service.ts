@@ -296,7 +296,7 @@ export class DialogService {
 		});
 	}
 
-	openWifiSecurityExpirePromptDialog(dialogData: DialogData) {
+	openWifiSecurityExpirePromptDialog(dialogData: DialogData, hadExpired: boolean) {
 		if (this.dialogRef || this.modalService.hasOpenModals()) {
 			return;
 		}
@@ -314,13 +314,18 @@ export class DialogService {
 			disableClose: true,
 			backdropClass: 'dialogBackdropExcludeMenu',
 			panelClass: this.deviceService.isGaming ? 'is-gaming' : '',
+			id: 'wifi-security-Expire-Prompt-Dialog'
 		});
 		this.dialogRef.afterClosed().subscribe(result => {
 			if (result === 'action') {
-				this.openLenovoIdDialog();
+				const lenovoIdRef = this.openLenovoIdDialog();
+				lenovoIdRef.then((res) => {
+					if (res === 'User close' && hadExpired) {
+						this.openWifiSecurityExpirePromptDialog(dialogData, hadExpired);
+					}
+				});
 			}
 			this.dialogRef = undefined;
 		});
-		return this.dialogRef;
 	}
 }
