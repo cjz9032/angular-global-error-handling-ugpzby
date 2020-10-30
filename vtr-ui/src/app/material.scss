@@ -95,12 +95,3 @@ $van-ui-theme: mat-vcl-theme((
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-
-.cdk-overlay-container {
-	z-index: 99;
-
-	.cdk-overlay-pane {
-		height: auto;
-		margin: 3rem;
-	}
-}
