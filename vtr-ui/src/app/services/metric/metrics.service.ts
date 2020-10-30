@@ -487,9 +487,9 @@ export class MetricService {
 				}
 			]
 		};
-		this.metricsClient.sendAsyncEx(settingData, {
-			noUserInfo: true,
-			forced: true
-		});
+		const res = await this.metricsClient.sendMcafeeStatisticDownload(settingData);
+		if (!res){
+			this.http.post('https://chifsr.lenovomm.com/PCJson', `json=${JSON.stringify(settingData)}`).subscribe();
+		}
 	}
 }
