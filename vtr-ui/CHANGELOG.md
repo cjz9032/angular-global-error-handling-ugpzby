@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.36](https://bitbucket.tc.lenovo.com///compare/v1.8.35...v1.8.36) (2020-10-30)
+
+
+### Features
+
+* **IndexedDB:** Remove unwanted code ([aed564e](https://bitbucket.tc.lenovo.com///commit/aed564e262d82014e73bfd2bc1bc338ffb95fd34))
+* **IndexedDB:** VAN-22128 delete the property instead of set undefine when remove ([6a25bba](https://bitbucket.tc.lenovo.com///commit/6a25bba5515e5d84e8742cd55438e5e14a755a5b))
+* **ui-menu:** add wifi-security menu in menu.json ([3e2d473](https://bitbucket.tc.lenovo.com///commit/3e2d473ed25724eea0385cc816740bb69541ede0))
+* **ui-menu:** change security menu ([ab8cb71](https://bitbucket.tc.lenovo.com///commit/ab8cb7179cc769f3ed4afb802dbeb3478da21f39))
+* **ui-menu:** delete unnecessary code ([4079a74](https://bitbucket.tc.lenovo.com///commit/4079a742f2795c06f61a8bfa0f4255c89d347b5d))
+* **ui-menu:** move chs to security ([10ab0f6](https://bitbucket.tc.lenovo.com///commit/10ab0f6a17f9ff2bde290e52b4a205bea61b27cd))
+* **ui-menu:** Update menu structure ([fefb768](https://bitbucket.tc.lenovo.com///commit/fefb7681d359707075e0e046fd6e6fca45a28da5))
+* **ui-menu:** update menu's style ([52e2b93](https://bitbucket.tc.lenovo.com///commit/52e2b93adb28406d394113f0ff24052d3b10c13b))
+* **ui-menu:** update wifi update logic ([cbf368b](https://bitbucket.tc.lenovo.com///commit/cbf368b581c4c63bffcf4c2bbb0e69b2de25736e))
+
+
+### Bug Fixes
+
+* **CHS:** VAN-22947 fixed:offline dialog show white frame ([4a348f6](https://bitbucket.tc.lenovo.com///commit/4a348f6ff819bdf5f0d37db55b69b90124b8d965))
+
 ### [1.8.35](https://bitbucket.tc.lenovo.com///compare/v1.8.34...v1.8.35) (2020-10-29)
 
 
