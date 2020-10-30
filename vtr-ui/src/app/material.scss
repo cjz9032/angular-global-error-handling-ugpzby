@@ -42,9 +42,10 @@ $mat-van-theme-foreground: (base: black,
 	link-button-color: $blueHyperLink,	// link button text color
 	link-button-decoration: underline,	// link button text decoration style
 	link-button-hover: $blue-light,	// link button hover text color
-	link-button-outline: none,	// link button outline text color
+	link-button-outline: 0.1rem solid $menu_hover,	// link button outline text color
 	link-button-active: $menu_hover,	// link button active text color
 	link-button-disable: rgba($grey_darker, 0.4),	// link disabled text color
+	link-button-font-size: bold,
 	// link
 	link-color: $blueHyperLink,	// link color
 	link-hover: $blue-light,	// link hover color
