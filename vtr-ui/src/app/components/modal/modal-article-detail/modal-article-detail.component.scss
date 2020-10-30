@@ -63,7 +63,7 @@
 		}
 	}
 
-	.segment-body {
+	.segment-wrap-body {
 		margin-top: 3rem;
 		padding-left: 20%;
 		padding-right: 20%;
@@ -85,7 +85,7 @@
 		}
 	}
 
-	.segment-wrap-body {
+	.segment-body {
 		margin-top: 3rem;
 		text-align: left;
 		font-size:1.4rem;
@@ -126,7 +126,7 @@
 		}
 	}
 
-	.image-left{
+	.image-wrap-left{
 		float: left;
 		width: 40%;
 		margin-right: 1.2rem;
@@ -155,7 +155,7 @@
 		}
 	}
 
-	.image-right{
+	.image-wrap-right{
 		float: right;
 		margin-left:1.2rem;
 		width: 40%;
@@ -185,7 +185,7 @@
 		}
 	}
 
-	.image-wrap-left{
+	.image-left{
 		width: 40%;
 		padding-right:1.2rem;
 		img{
@@ -206,7 +206,7 @@
 		}
 	}
 
-	.image-wrap-right{
+	.image-right{
 		width: 40%;
 		padding-left:1.2rem;
 		img{
@@ -311,7 +311,7 @@
 		}
 	}
 
-	.quote-left{
+	.quote-wrap-left{
 		width: 40%;
 		@media #{$breakpoint_md} {
 			display: none;
@@ -360,7 +360,7 @@
 		}
 	}
 
-	.quote-right{
+	.quote-wrap-right{
 		width: 40%;
 		@media #{$breakpoint_md} {
 			display: none;
@@ -409,7 +409,7 @@
 		}
 	}
 
-	.quote-wrap-left{
+	.quote-left{
 		width: 40%;
 		height: 100%;
 		background-color: #E74C3C;
@@ -451,7 +451,7 @@
 		}
 	}
 
-	.quote-wrap-right{
+	.quote-right{
 		width: 40%;
 		height: 100%;
 		background-color: #E74C3C;
