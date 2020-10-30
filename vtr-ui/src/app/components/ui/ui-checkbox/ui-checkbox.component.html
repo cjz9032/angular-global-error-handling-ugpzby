@@ -16,8 +16,8 @@
 			(change)="onChange($event)" />
 		<label *ngIf="hasChild; else elseBlock"
 			[id]="componentId+'_checkbox-label'"
-			class="custom-control-label"
-			[for]="componentId+'_checkbox'">
+			[for]="componentId+'_checkbox'"
+			class="custom-control-label">
 			<ng-content></ng-content>
 		</label>
 		<ng-template #elseBlock>
