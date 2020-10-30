@@ -21,10 +21,9 @@
 			<ng-content></ng-content>
 		</label>
 		<ng-template #elseBlock>
-			<label
+			<label [for]="componentId+'_checkbox'"
 				[id]="componentId+'_checkbox-label'"
-				class="custom-control-label"
-				[for]="componentId+'_checkbox'">
+				class="custom-control-label">
 				{{ label }}
 			</label>
 		</ng-template>
