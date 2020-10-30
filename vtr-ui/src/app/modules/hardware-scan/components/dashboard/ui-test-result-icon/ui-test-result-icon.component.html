@@ -1,22 +1,19 @@
 <div id="{{ componentId }}" [ngSwitch]="testResultResponse">
-	<!--Defined an aria-label property with description to the icon-->
-	<!-- Necessary to have a blank space while test doesn't start -->
-	<div *ngSwitchCase="0"></div>
 
 	<!--Aria-hidden defined as true to ignore faicon selection-->
 	<div class="test-status-icon success" *ngSwitchCase="testResultEnum.Pass">
-		<fa-icon id="{{ componentId }}-pass" aria-hidden="true" role="img" class="success" [icon]="['fas', 'check']"></fa-icon>
+		<fa-icon id="{{ componentId }}-pass" [attr.aria-label]="'Pass-icon'" role="img" class="success" [icon]="['fas', 'check']"></fa-icon>
 	</div>
 	<div class="test-status-icon failure" *ngSwitchCase="testResultEnum.Fail">
-		<fa-icon id="{{ componentId }}-fail" aria-hidden="true" role="img" class="warning" [icon]="['fas', 'times']"></fa-icon>
+		<fa-icon id="{{ componentId }}-fail" [attr.aria-label]="'Fail-icon'" role="img" class="warning" [icon]="['fas', 'times']"></fa-icon>
 	</div>
 	<div class="test-status-icon warning rotate-icon" *ngSwitchCase="testResultEnum.Attention">
-		<fa-icon id="{{ componentId }}-warning" aria-hidden="true" role="img" class="warning" [icon]="['fas', 'exclamation']"></fa-icon>
+		<fa-icon id="{{ componentId }}-warning" [attr.aria-label]="'Warning-icon'" role="img" class="warning" [icon]="['fas', 'exclamation']"></fa-icon>
 	</div>
 	<div class="test-status-icon not-applicable" *ngSwitchCase="testResultEnum.Cancelled">
-		<fa-icon id="{{ componentId }}-not-applicable" aria-hidden="true" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
+		<fa-icon id="{{ componentId }}-not-applicable" [attr.aria-label]="'Not-Applicable-icon'" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
 	</div>
 	<div class="test-status-icon not-applicable" *ngSwitchDefault>
-		<fa-icon id="{{ componentId }}-not-applicable" aria-hidden="true" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchDefault></fa-icon>
+		<fa-icon id="{{ componentId }}-not-applicable" [attr.aria-label]="'Not-Applicable-icon'" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchDefault></fa-icon>
 	</div>
 </div>

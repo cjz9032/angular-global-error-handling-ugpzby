@@ -1,19 +1,14 @@
 <div id="{{ componentId }}" class="vtr-ui-list-hardware">
-	<ul id="{{ componentId }}-list" class="list-group" [ngClass]="{'list1': template === 1, 'list2': template === 2, 'list3' : template === 3}">
+	<ul id="{{ componentId }}-list" class="list-group"
+		[ngClass]="{'list1': template === 1, 'list2': template === 2, 'list3' : template === 3}">
 		<li id="{{ componentId }}-list-item-{{ i }}" class=" list-group-item" *ngFor="let item of items; let i = index">
 			<div class="col text button-box">
 				<div class="row item-line">
 					<div class="item-left">
-						<!--This validation is needed because after calling getDoScan function,
-							it returns undefined in statusTest till the promise be resolved.-->
-						<div class="test-status" *ngIf="item.statusTest === undefined">
-							<vtr-ui-test-result-icon
-								[componentId]="componentId + '-list-item-' + i + '-status-icon'"
-								[testResultResponse]="0">
-							</vtr-ui-test-result-icon>
-						</div>
-						<div class="test-status" *ngIf="item.statusTest >= testResultEnum.NotStarted">
-							<span id="{{ componentId }}-list-item-{{ i }}-percentage" class="progress-value-text" role="text" *ngIf="item.statusTest === testResultEnum.InProgress; else testFinished">{{ item.percent }}%</span>
+						<div class="test-status" *ngIf="item.statusTest > testResultEnum.NotStarted">
+							<span id="{{ componentId }}-list-item-{{ i }}-percentage" class="progress-value-text"
+								role="text"
+								*ngIf="item.statusTest === testResultEnum.InProgress; else testFinished">{{ item.percent }}%</span>
 							<ng-template #testFinished>
 								<vtr-ui-test-result-icon
 									[componentId]="componentId + '-list-item-' + i + '-status-icon'"
@@ -22,30 +17,28 @@
 							</ng-template>
 						</div>
 
-						<div id="{{ componentId }}-list-item-{{ i }}-name" role="text" class="title" [ngClass]="{'not-applicable': item.statusTest === testResultEnum.Na, 'item-failed': item.statusTest === testResultEnum.Fail}">{{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</div>
-						<div id="{{ componentId }}-list-item-{{ i }}-description" role="text" class="subtitle" *ngIf="item.subname">{{ ('hardwareScan.pluginTokens.' + item.subname) | translateDefault:item.subname }}</div>
-						<div id="{{ componentId }}-list-item-{{ i }}-not-applicable" role="text" class="span-not-applicable" *ngIf="item.statusTest === testResultEnum.Na">{{ 'hardwareScan.testNotApplicable' | translate }}</div>
+						<div id="{{ componentId }}-list-item-{{ i }}-name" role="text" class="title"
+							[ngClass]="{'not-applicable': item.statusTest === testResultEnum.Na, 'item-failed': item.statusTest === testResultEnum.Fail, 'not-started': item.statusTest <= testResultEnum.NotStarted}">
+							{{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</div>
+						<div id="{{ componentId }}-list-item-{{ i }}-description" role="text" class="subtitle"
+							*ngIf="item.subname">
+							{{ ('hardwareScan.pluginTokens.' + item.subname) | translateDefault:item.subname }}</div>
+						<div id="{{ componentId }}-list-item-{{ i }}-not-applicable" role="text"
+							class="span-not-applicable" *ngIf="item.statusTest === testResultEnum.Na">
+							{{ 'hardwareScan.testNotApplicable' | translate }}</div>
 					</div>
 					<div class="item-right" *ngIf="item.information">
-						<vtr-ui-question-mark-button
-							[isGray]="true"
-							class="question-mark-container"
+						<vtr-ui-question-mark-button [isGray]="true" class="question-mark-container"
 							componentId="{{ componentId }}-list-item-{{ i }}"
 							[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + 'tooltip, which reads: ' + ('hardwareScan.pluginTokens.' + item.information | translateDefault:item.information)"
-							#tooltip="ngbTooltip"
-							(blurEvent)="tooltip.close()"
-							(clickEvent)="setTooltipInfo(item.information, i); tooltip.toggle()"
-							triggers="manual"
-							[ngbTooltip]="tooltipRefItem"
-							container="vtr-root"
-							tooltipClass="vtr-tooltip"
+							#tooltip="ngbTooltip" (blurEvent)="tooltip.close()"
+							(clickEvent)="setTooltipInfo(item.information, i); tooltip.toggle()" triggers="manual"
+							[ngbTooltip]="tooltipRefItem" container="vtr-root" tooltipClass="vtr-tooltip"
 							placement="left">
 						</vtr-ui-question-mark-button>
 					</div>
-					<vtr-ui-hardware-scan-test-result
-						[componentId]="componentId + '-list-item-' + i + '-test-result'"
-						*ngIf="item.resultModule"
-						[module]="item">
+					<vtr-ui-hardware-scan-test-result [componentId]="componentId + '-list-item-' + i + '-test-result'"
+						*ngIf="item.resultModule" [module]="item">
 					</vtr-ui-hardware-scan-test-result>
 				</div>
 			</div>
@@ -54,5 +47,6 @@
 </div>
 
 <ng-template #tooltipRefItem>
-	<div id= "{{ componentId }}-list-item-{{ tooltipIndex }}-tooltip-text">{{ ('hardwareScan.pluginTokens.' + information) | translateDefault:information }}</div>
+	<div id="{{ componentId }}-list-item-{{ tooltipIndex }}-tooltip-text">
+		{{ ('hardwareScan.pluginTokens.' + information) | translateDefault:information }}</div>
 </ng-template>
