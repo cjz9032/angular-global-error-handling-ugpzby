@@ -234,7 +234,7 @@
 		}
 	}
 	//styles added for my device page
-	.container-fluid {
+	.vtr-page  {
 		.vtr-widget-device {
 			.device-brief{
 				background: $gaming_darkest !important;
@@ -255,6 +255,12 @@
 			.ui-deviceinfo-right{
 				.percentage {
 					fill: white !important;
+					@media #{$black-on-white} {
+						fill: black !important;
+					}
+					@media #{$white-on-black} {
+					   fill: white !important;
+					}
 				}
 			}
 		}
@@ -790,7 +796,12 @@
 									background-color: $gaming_bg;
 									border: none;
 									overflow: hidden;
-
+									@media #{$black-on-white} {
+										background-color: white;
+									}
+									 @media #{$white-on-black} {
+										background-color: black;
+									}
 									.good {
 										color: $gaming_lightest;
 										border-bottom: 1px solid $gaming_darkest !important;
