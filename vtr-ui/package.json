@@ -1,6 +1,6 @@
 {
   "name": "vtr-ui",
-  "version": "1.8.36",
+  "version": "1.8.37",
   "scripts": {
     "postinstall": "ngcc",
     "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
