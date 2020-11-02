@@ -6,6 +6,22 @@ import { environment } from 'src/environments/environment';
 import { DeviceService } from '../device/device.service';
 import { SPPriceCode } from 'src/app/enums/smart-performance.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+
+interface IYearlyPrice {
+	code: string;
+	price: number;
+	formatPrice: string;
+	symbol: string;
+	isoCode: string;
+}
+
+interface ILocalPriceData {
+	geo: string;
+	yearlyPrice: string;
+	monthlyPrice: string;
+}
 
 @Injectable({
 	providedIn: 'root'
@@ -26,14 +42,16 @@ export class SmartPerformanceService {
 	isEnterSmartPerformance = false;
 	subItems: any = {};
 
-	localPrice: any;
-
+	isShowPrice = false;
+	localPriceData: ILocalPriceData;
+	isLocalPriceOnlineChecked = false;
 
 	constructor(
 		shellService: VantageShellService,
 		private deviceService: DeviceService,
 		private httpClient: HttpClient,
 		private localInfoService: LocalInfoService,
+		private localCacheService: LocalCacheService,
 	) {
 
 		this.getSmartPerformance = shellService.getSmartPerformance();
@@ -228,16 +246,51 @@ export class SmartPerformanceService {
 
 
 	async getLocalYearPrice() {
-		if (!this.localPrice) {
-			const localInfo = await this.localInfoService.getLocalInfo();
+		const localInfo = await this.localInfoService.getLocalInfo();
+		const localPricesCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceLocalPrices, undefined);
+		if (localPricesCache && localPricesCache.length > 0) {
+			const geoInCache = localPricesCache.find(lp => lp.geo === localInfo.GEO);
+			if (geoInCache) {
+				this.localPriceData = {
+					geo: localInfo.GEO,
+					yearlyPrice: geoInCache.yearlyPrice,
+					monthlyPrice: geoInCache.monthlyPrice,
+				};
+				this.isShowPrice = true;
+			}
+		}
+		if (!this.isLocalPriceOnlineChecked) {
 			const url = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getPrice?country=${localInfo.GEO}`;
 			const priceData = await this.httpClient.get(url).toPromise() as any;
 			if (priceData && priceData.data) {
-				const yearPrice = priceData.data.filter(item => item.code === SPPriceCode.YEAR);
-				this.localPrice = yearPrice[0];
+				const yearlyPrices = priceData.data.filter(item => item.code === SPPriceCode.YEAR);
+				const yearlyPriceData: IYearlyPrice = yearlyPrices[0];
+				this.setLocalPriceData(yearlyPriceData, localInfo.GEO);
+				this.isLocalPriceOnlineChecked = true;
 			}
 		}
-		return this.localPrice;
+	}
+
+	setLocalPriceData(yearlyPriceData: IYearlyPrice, GEO: string) {
+		if (yearlyPriceData && yearlyPriceData.price !== 0) {
+			const mp = Math.ceil(yearlyPriceData.price * 100 / 12) / 100;
+			const yearlyPrice = yearlyPriceData.formatPrice;
+			const symbol = yearlyPriceData.symbol;
+			const monthlyPrice = isNaN(parseFloat(yearlyPrice.substr(0, 1))) ? symbol + mp : mp + symbol;
+			this.localPriceData = { geo: GEO, yearlyPrice, monthlyPrice };
+			this.isShowPrice = true;
+			let localPrices: ILocalPriceData[] = [];
+			const localPricesCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceLocalPrices, undefined);
+			if (localPricesCache && localPricesCache.length > 0) {
+				localPrices = localPricesCache;
+				const geoInCacheIndex = localPrices.findIndex(lp => lp.geo === GEO);
+				if (geoInCacheIndex > -1) {
+					localPrices.splice(geoInCacheIndex, 1);
+				}
+			}
+			localPrices.push(this.localPriceData);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceLocalPrices, localPrices);
+		}
 	}
 
 }

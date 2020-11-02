@@ -38,9 +38,7 @@
 									<ng-container *ngIf="!smartPerformanceService.isScanning && !smartPerformanceService.isScanningCompleted && !smartPerformanceService.isSubscribed">
 										<div class="row mb-24">
 											<div class="col col-12">
-												<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)"
-													(expiredStatusEvent)="subscriptionInfo($event)"
-													[isOnline]="isOnline"></vtr-widget-subscriptiondetails>
+												<vtr-widget-recommend-action [isDisabled]="!isOnline"></vtr-widget-recommend-action>
 											</div>
 										</div>
 
@@ -70,7 +68,7 @@
 										<div class="row mb-24"
 											*ngIf="!smartPerformanceService.isSubscribed && !smartPerformanceService.isExpired">
 											<div class="col col-12">
-												<vtr-widget-recommend-action></vtr-widget-recommend-action>
+												<vtr-widget-recommend-action [isDisabled]="!isOnline"></vtr-widget-recommend-action>
 											</div>
 										</div>
 										<div class="row mb-24"
@@ -81,7 +79,14 @@
 										</div>
 									</ng-container>
 									<ng-container *ngIf="smartPerformanceService.isScanning">
-										<div class="row mb-24">
+										<div class="row mb-24"
+											*ngIf="!smartPerformanceService.isSubscribed">
+											<div class="col col-12">
+												<vtr-widget-recommend-action [isDisabled]="true"></vtr-widget-recommend-action>
+											</div>
+										</div>
+										<div class="row mb-24"
+											*ngIf="smartPerformanceService.isSubscribed">
 											<div class="col col-12">
 												<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)"
 													(expiredStatusEvent)="subscriptionInfo($event)"

@@ -141,6 +141,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
 					this.isOnline = notification.payload.isOnline;
+					if (this.isOnline) {
+						this.smartPerformanceService.getLocalYearPrice();
+					}
 					break;
 				default:
 					break;
