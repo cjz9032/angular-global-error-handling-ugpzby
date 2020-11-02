@@ -23,6 +23,7 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
+import { WifiSecurityService } from '../security/wifi-security.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -37,6 +38,7 @@ export class DialogService {
 		private userService: UserService,
 		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService,
+		private wifiSecurityService: WifiSecurityService,
 		private dialog: MatDialog,
 	)  { }
 
@@ -318,10 +320,15 @@ export class DialogService {
 		});
 		this.dialogRef.afterClosed().subscribe(result => {
 			if (result === 'action') {
-				const lenovoIdRef = this.openLenovoIdDialog();
-				lenovoIdRef.then((res) => {
+				this.openLenovoIdDialog().then((res) => {
 					if (res === 'User close' && hadExpired) {
-						this.openWifiSecurityExpirePromptDialog(dialogData, hadExpired);
+						if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth && this.userService.isLenovoIdSupported()) {
+							this.openWifiSecurityExpirePromptDialog(dialogData, hadExpired);
+						} else {
+							if (this.dialogRef) {
+								this.dialogRef.close();
+							}
+						}
 					}
 				});
 			}
