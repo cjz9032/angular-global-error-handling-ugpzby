@@ -180,6 +180,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 						this.securityFeature,
 						this.localCacheService);
 				});
+				this.refreshAll();
 			});
 		});
 		this.fetchCMSArticles();
