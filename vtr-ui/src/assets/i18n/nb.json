@@ -784,7 +784,8 @@
                 "sub3": "WiFi-sikkerhet",
                 "sub4": "Passordtilstand",
                 "sub5": "VPN-sikkerhet",
-                "sub6": "Fingeravtrykk"
+                "sub6": "Fingeravtrykk",
+                "sub8": "Sikkerhet for hjemmet"
             },
             "support": "Støtte",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Reparer",
         "optimizeIt": "Optimaliser",
         "maintainIt": "Vedlikehold",
+        "lastFix": "Siste reparasjon",
+        "fixResult": "Reparasjonsresultat",
+        "checkPreviousResults": "Sjekk tidligere resultater",
         "tunePCPerformance": {
             "title": "Juster PC-ytelsen",
             "heading": "Vis datamaskinen litt ekstra kjærlighet",

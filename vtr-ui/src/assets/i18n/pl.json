@@ -784,7 +784,8 @@
                 "sub3": "Bezpieczeństwo Wi-Fi",
                 "sub4": "Bezpieczeństwo hasła",
                 "sub5": "Zabezpieczenia VPN",
-                "sub6": "Odcisk palca"
+                "sub6": "Odcisk palca",
+                "sub8": "Bezpieczny Dom"
             },
             "support": "Pomoc techniczna",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Napraw",
         "optimizeIt": "Zoptymalizuj",
         "maintainIt": "Przeprowadź konserwację",
+        "lastFix": "Ostatnia poprawka",
+        "fixResult": "Wynik poprawki",
+        "checkPreviousResults": "Sprawdź poprzednie wyniki",
         "tunePCPerformance": {
             "title": "Zoptymalizuj Wydajność Komputera",
             "heading": "Okaż komputerowi nieco uczucia",

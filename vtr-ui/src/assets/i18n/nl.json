@@ -784,7 +784,8 @@
                 "sub3": "WiFi-beveiliging",
                 "sub4": "Wachtwoordstatus",
                 "sub5": "VPN-beveiliging",
-                "sub6": "Vingerafdruk"
+                "sub6": "Vingerafdruk",
+                "sub8": "Home-beveiliging"
             },
             "support": "Ondersteuning",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Oplossen",
         "optimizeIt": "Optimaliseren",
         "maintainIt": "Onderhouden",
+        "lastFix": "Laatste oplossing",
+        "fixResult": "Oplossingsresultaat",
+        "checkPreviousResults": "Controleer voorgaande resultaten",
         "tunePCPerformance": {
             "title": "PC-prestaties Optimaliseren",
             "heading": "Geef uw computer wat extra aandacht",

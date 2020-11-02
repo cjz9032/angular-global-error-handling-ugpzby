@@ -784,7 +784,8 @@
                 "sub3": "WiFi 보안",
                 "sub4": "암호 상태",
                 "sub5": "VPN 보안",
-                "sub6": "지문"
+                "sub6": "지문",
+                "sub8": "홈 보안"
             },
             "support": "지원",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "문제 해결",
         "optimizeIt": "최적화",
         "maintainIt": "유지 관리",
+        "lastFix": "마지막 수정",
+        "fixResult": "수정 결과",
+        "checkPreviousResults": "이전 결과 확인",
         "tunePCPerformance": {
             "title": "PC 성능 조정",
             "heading": "컴퓨터에 추가 작업 수행",

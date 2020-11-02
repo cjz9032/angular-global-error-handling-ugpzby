@@ -784,7 +784,8 @@
                 "sub3": "WiFi güvenliği",
                 "sub4": "Parola durumu",
                 "sub5": "VPN güvenliği",
-                "sub6": "Parmak izi"
+                "sub6": "Parmak izi",
+                "sub8": "Ev güvenliği"
             },
             "support": "Destek",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Düzeltin",
         "optimizeIt": "İyileştirin",
         "maintainIt": "Bakımını yapın",
+        "lastFix": "Son düzeltme",
+        "fixResult": "Düzeltme sonucu",
+        "checkPreviousResults": "Önceki sonuçları denetle",
         "tunePCPerformance": {
             "title": "Bi̇lgi̇sayar Performansini Ayarlayin",
             "heading": "Bilgisayarınıza biraz daha ilgi gösterin",

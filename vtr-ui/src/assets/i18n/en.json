@@ -2517,6 +2517,9 @@
 		"fixIt": "Fix it",
 		"optimizeIt": "Optimize it",
 		"maintainIt": "Maintain it",
+		"lastFix": "Last fix",
+		"fixResult": "Fix result",
+		"checkPreviousResults": "Check previous results",
 		"tunePCPerformance": {
 			"title": "Tune PC Performance",
 			"summaryTitle": "Tune PC Performance",

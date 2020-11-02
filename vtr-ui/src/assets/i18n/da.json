@@ -784,7 +784,8 @@
                 "sub3": "WiFi-sikkerhed",
                 "sub4": "Adgangskodesundhed",
                 "sub5": "VPN-sikkerhed",
-                "sub6": "Fingeraftryk"
+                "sub6": "Fingeraftryk",
+                "sub8": "Sikkerhed i hjemmet"
             },
             "support": "Support",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Løs det",
         "optimizeIt": "Optimer det",
         "maintainIt": "Vedligehold det",
+        "lastFix": "Seneste rettelse",
+        "fixResult": "Resultat af rettelse",
+        "checkPreviousResults": "Tjek tidligere resultater",
         "tunePCPerformance": {
             "title": "Optimer Computerens Ydeevne",
             "heading": "Forkæl din computer lidt mere",

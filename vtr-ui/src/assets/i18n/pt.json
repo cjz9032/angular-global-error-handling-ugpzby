@@ -784,7 +784,8 @@
                 "sub3": "Segurança de WiFi",
                 "sub4": "Estado de palavra-passe",
                 "sub5": "Segurança de VPN",
-                "sub6": "Impressão digital"
+                "sub6": "Impressão digital",
+                "sub8": "Segurança doméstica"
             },
             "support": "Suporte",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Corrija",
         "optimizeIt": "Otimize",
         "maintainIt": "Faça a manutenção",
+        "lastFix": "Última correção",
+        "fixResult": "Resultados da correção",
+        "checkPreviousResults": "Confirmar resultados anteriores",
         "tunePCPerformance": {
             "title": "Otimizar O Desempenho Do PC",
             "heading": "Trate o seu computador com cuidados especiais",

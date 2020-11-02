@@ -784,7 +784,8 @@
                 "sub3": "Sécurité WiFi",
                 "sub4": "État de santé du mot de passe",
                 "sub5": "Sécurité VPN",
-                "sub6": "Empreinte digitale"
+                "sub6": "Empreinte digitale",
+                "sub8": "Sécurité domestique"
             },
             "support": "Soutien",
             "beta": {
@@ -4446,6 +4447,9 @@
         "fixIt": "Corriger",
         "optimizeIt": "Optimiser",
         "maintainIt": "Tenir à jour",
+        "lastFix": "Dernier correctif",
+        "fixResult": "Résultat du correctif",
+        "checkPreviousResults": "Consulter les résultats précédents",
         "tunePCPerformance": {
             "title": "Optimisation Des Performances Du PC",
             "heading": "Prenez soin de votre ordinateur",

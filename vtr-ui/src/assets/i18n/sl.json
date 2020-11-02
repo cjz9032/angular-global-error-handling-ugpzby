@@ -784,7 +784,8 @@
                 "sub3": "Varnost WiFi-ja",
                 "sub4": "Geslo zdravje",
                 "sub5": "VPN Varnost",
-                "sub6": "Prstni odtis"
+                "sub6": "Prstni odtis",
+                "sub8": "Domača varnost"
             },
             "support": "Podpora",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Odpravljanje težav",
         "optimizeIt": "Optimiziranje",
         "maintainIt": "Vzdrževanje",
+        "lastFix": "Zadnji popravek",
+        "fixResult": "Rezultat popravka",
+        "checkPreviousResults": "Preveri prejšnje rezultate",
         "tunePCPerformance": {
             "title": "Optimalno Delovanje",
             "heading": "Pokažite računalniku, kako ga cenite",

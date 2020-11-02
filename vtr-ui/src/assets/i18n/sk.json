@@ -784,7 +784,8 @@
                 "sub3": "Zabezpečenie WiFi",
                 "sub4": "Sila hesla",
                 "sub5": "Zabezpečenie VPN",
-                "sub6": "Odtlačok prsta"
+                "sub6": "Odtlačok prsta",
+                "sub8": "Zabezpečenie domácnosti"
             },
             "support": "Technická podpora",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Opraviť",
         "optimizeIt": "Optimalizovať",
         "maintainIt": "Udržiavať",
+        "lastFix": "Posledná oprava",
+        "fixResult": "Výsledok opravy",
+        "checkPreviousResults": "Zobraziť predchádzajúce výsledky",
         "tunePCPerformance": {
             "title": "Vyladiť Výkon Počítača",
             "heading": "Venujte svojmu počítaču trochu viac starostlivosti",
