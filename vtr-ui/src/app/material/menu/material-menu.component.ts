@@ -5,7 +5,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { throttle } from 'lodash';
 
-import { MatMenuTrigger } from '@lenovo/material/menu';
+import { MatMenuHoverTrigger, MatMenuTrigger } from '@lenovo/material/menu';
 
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { ConfigService } from 'src/app/services/config/config.service';
@@ -41,7 +41,8 @@ import { BacklightLevelEnum } from 'src/app/components/pages/page-device-setting
   styleUrls: ['./material-menu.component.scss']
 })
 export class MaterialMenuComponent implements OnInit, OnDestroy {
-	@ViewChildren(MatMenuTrigger) triggers: QueryList<MatMenuTrigger>;
+	@ViewChildren(MatMenuHoverTrigger) hoverTriggers: QueryList<MatMenuHoverTrigger>;
+	@ViewChildren(MatMenuTrigger) triggers: QueryList<MatMenuHoverTrigger>;
 	@Input() loadMenuItem: any = {};
 	VantageLogo = `
 		data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c
@@ -350,22 +351,26 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 			: path ? this.router.navigateByUrl(`/${path}`) : this.router.navigateByUrl(`/`);
 	}
 
-	openMatMenu(menuTrigger: MatMenuTrigger) {
+	openMatMenu(menuTrigger: MatMenuHoverTrigger) {
 		menuTrigger.openMenu();
 	}
 
-	closeMatMenu(menuTrigger: MatMenuTrigger) {
+	closeMatMenu(menuTrigger: MatMenuHoverTrigger) {
 		menuTrigger.closeMenu();
 	}
 
 	closeAllMatMenu() {
-		this.triggers.toArray().forEach(elem => {
+		this.triggers?.toArray().forEach(elem => {
 			elem.closeMenu();
 		});
+		this.hoverTriggers?.toArray().forEach(elem => {
+			elem.closeMenu();
+		});
+
 	}
 
-	closeAllOtherMatMenu(activeDropdown: MatMenuTrigger) {
-		this.triggers.toArray().forEach(elem => {
+	closeAllOtherMatMenu(activeDropdown: MatMenuHoverTrigger) {
+		this.hoverTriggers?.toArray().forEach(elem => {
 			if (activeDropdown !== elem) {
 				elem.closeMenu();
 			}
