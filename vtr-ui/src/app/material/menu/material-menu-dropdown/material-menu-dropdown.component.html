@@ -9,7 +9,7 @@
 			<button mat-menu-item
 				*ngIf="subitem && !subitem.hide && subitem.externallink"
 				id="menu-main-nav-lnk-dropdown-menu-external-{{parentId}}-{{i}}"
-				class="mt-0 border-radius-0 outline-none dropdown-menu-item"
+				class="mt-0 py-2 border-radius-0 outline-none h-auto dropdown-menu-item"
 				attr.aria-label="{{subitem.label | translate }}"
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
@@ -21,12 +21,12 @@
 				rel="noopener"
 				href="javascript:void(0)"
 				(click)="openExternalLink(subitem.path)">
-				<span [innerHTML]="subitem.label | translate"></span>
+				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
 				*ngIf="subitem && !subitem.hide && !subitem.externallink && !subitem.singleLayerRouting"
 				id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{i}}"
-				class="mt-0 border-radius-0 outline-none dropdown-menu-item"
+				class="mt-0 py-2 border-radius-0 outline-none h-auto dropdown-menu-item"
 				attr.aria-label="{{subitem.label| translate}}"
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
@@ -38,12 +38,12 @@
 				href="javascript:void(0)"
 				role="menuitem"
 				(keydown.enter)="menuItemKeyDown(parentPath, subitem.path)">
-				<span [innerHTML]="subitem.label | translate"></span>
+				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
 				*ngIf="subitem && !subitem.hide && !subitem.externallink && subitem.singleLayerRouting"
 				id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{i}}"
-				class="mt-0 border-radius-0 outline-none dropdown-menu-item"
+				class="mt-0 py-2 border-radius-0 outline-none h-auto dropdown-menu-item"
 				attr.aria-label="{{subitem.label| translate}}"
 				routerLinkActive="active"
 				[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
@@ -55,7 +55,7 @@
 				href="javascript:void(0)"
 				role="menuitem"
 				(keydown.enter)="menuItemKeyDown(subitem.path)">
-				<span [innerHTML]="subitem.label | translate"></span>
+				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
 		</ng-container>
 	</section>
@@ -65,24 +65,24 @@
 			<button mat-menu-item
 				*ngIf="subitem && !subitem.hide && subitem.externallink"
 				id="menu-main-nav-lnk-dropdown-menu-external-{{parentId}}-{{i}}"
-				class="d-inline-block mt-0 text-uppercase border-radius-0 outline-none dropdown-menu-item high-contrast-color-reversal font-weight-bold"
+				class="d-inline-block mt-0 py-2 text-uppercase border-radius-0 outline-none h-auto dropdown-menu-item high-contrast-color-reversal font-weight-bold"
 				disabled
 				attr.aria-label="{{subitem.label | translate }}"
 				target="_blank"
 				rel="noopener"
 				href="javascript:void(0)">
-				<span [innerHTML]="subitem.label | translate"></span>
+				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
 				*ngIf="subitem && !subitem.hide && !subitem.externallink"
 				id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{i}}"
-				class="d-inline-block mt-0 text-uppercase border-radius-0 outline-none dropdown-menu-item high-contrast-color-reversal font-weight-bold"
+				class="d-inline-block mt-0 py-2 text-uppercase border-radius-0 outline-none h-auto dropdown-menu-item high-contrast-color-reversal font-weight-bold"
 				disabled
 				attr.aria-label="{{subitem.label| translate}}"
 				target="_blank"
 				href="javascript:void(0)"
 				role="menuitem">
-				<span [innerHTML]="subitem.label | translate"></span>
+				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<section *ngIf="subitem && !subitem.hide">
 				<ng-container *ngFor="let secondarySubitem of subitem.subitems; let ii=index">
@@ -90,7 +90,7 @@
 						*ngIf="secondarySubitem && !secondarySubitem.hide && secondarySubitem.externallink"
 						vtrMetrics
 						id="menu-main-nav-lnk-dropdown-menu-external-{{parentId}}-{{subitem.id}}-{{ii}}"
-						class="d-inline-block mt-0 border-radius-0 outline-none dropdown-menu-item"
+						class="d-inline-block mt-0 py-2 border-radius-0 outline-none h-auto dropdown-menu-item"
 						attr.aria-label="{{secondarySubitem.label | translate }}"
 						routerLinkActive="active"
 						[routerLinkActiveOptions]="secondarySubitem.routerLinkActiveOptions"
@@ -101,13 +101,13 @@
 						rel="noopener"
 						href="javascript:void(0)"
 						(click)="openExternalLink(secondarySubitem.path)">
-						<span [innerHTML]="secondarySubitem.label | translate"></span>
+						<span class="d-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 					<button mat-menu-item
 						*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink && !secondarySubitem.singleLayerRouting"
 						vtrMetrics
 						id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{subitem.id}}-{{ii}}"
-						class="d-inline-block mt-0 border-radius-0 outline-none dropdown-menu-item"
+						class="d-inline-block mt-0 py-2 border-radius-0 outline-none h-auto dropdown-menu-item"
 						attr.aria-label="{{secondarySubitem.label| translate}}"
 						routerLinkActive="active"
 						[routerLinkActiveOptions]="secondarySubitem.routerLinkActiveOptions"
@@ -118,13 +118,13 @@
 						href="javascript:void(0)"
 						role="menuitem"
 						(keydown.enter)="menuItemKeyDown(parentPath, subitem.path, secondarySubitem.path)">
-						<span [innerHTML]="secondarySubitem.label | translate"></span>
+						<span class="d-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 					<button mat-menu-item
 						*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink && secondarySubitem.singleLayerRouting"
 						vtrMetrics
 						id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{subitem.id}}-{{ii}}"
-						class="d-inline-block mt-0 border-radius-0 outline-none dropdown-menu-item"
+						class="d-inline-block mt-0 py-2 border-radius-0 outline-none h-auto dropdown-menu-item"
 						attr.aria-label="{{secondarySubitem.label| translate}}"
 						routerLinkActive="active"
 						[routerLinkActiveOptions]="secondarySubitem.routerLinkActiveOptions"
@@ -135,7 +135,7 @@
 						href="javascript:void(0)"
 						role="menuitem"
 						(keydown.enter)="menuItemKeyDown(secondarySubitem.path)">
-						<span [innerHTML]="secondarySubitem.label | translate"></span>
+						<span class="d-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 				</ng-container>
 			</section>

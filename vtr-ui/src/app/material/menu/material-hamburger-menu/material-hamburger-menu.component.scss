@@ -84,8 +84,13 @@
 				}
 			}
 			.menu-subitem {
-				height: 2.8rem;
-				line-height: 2.8rem;
+				min-height: 1.8rem;
+				.menu-item-text {
+					word-break: normal;
+					white-space: pre-wrap;
+					word-wrap : break-word;
+					line-height: 1.3;
+				}
 				&:hover {
 					text-decoration: underline;
 				}

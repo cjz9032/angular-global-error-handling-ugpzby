@@ -51,7 +51,6 @@
 				[matMenuTriggerFor]="hamburgerDropdownMenu?.matMenu"
 				id="menu-main-btn-navbar-toggler"
 				class="position-relative w-auto h-auto mr-1 py-1 px-3 rounded-0 text-center navbar-toggler line-height-normal"
-				disableRipple
 				aria-label="menu-main-btn-navbar-toggler"
 				aria-haspopup="true"
 				aria-expanded="false"
@@ -83,7 +82,6 @@
 							[ngClass]="{'beta-item':item.beta}"
 							vtrMetrics
 							id="menu-main-nav-lnk-{{item.id}}"
-							disableRipple
 							attr.new-tip-id="new-tip-{{item.id}}"
 							[metricsEvent]="item.metricsEvent"
 							[metricsParent]="item.metricsParent"
@@ -111,7 +109,6 @@
 							role="menu"
 							vtrMetrics
 							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
-							disableRipple
 							attr.aria-label="{{item.id}}"
 							attr.new-tip-id="new-tip-{{item.id}}"
 							aria-haspopup="true"
@@ -143,7 +140,6 @@
 							[matMenuTriggerFor]="userMenuMain"
 							class="h-100 d-flex align-items-center m-0 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
 							id="navbarDropdown"
-							disableRipple
 							attr.aria-label="navbarDropdown"
 							aria-haspopup="true"
 							aria-expanded="false"
@@ -164,19 +160,21 @@
 						<mat-menu #userMenuMain="matMenu"
 							[hasBackdrop]="false"
 							id="navbarDropdownMenu"
-							class="mt-0 overflow-wrap-normal max-width-none min-height-0 menu-dropdown-container user-menu-dropdown-container {{item.id}}"
+							class="mt-0 overflow-wrap-normal min-height-0 menu-dropdown-container user-menu-dropdown-container {{item.id}}"
 							aria-labelledby="navbarDropdown"
 							xPosition="before">
-							<div class="mt-0 border-radius-0 px-4 user-text"
+							<div class="mt-0 border-radius-0 px-4 py-2 h-auto user-text"
 								role="text"
 								id="menu-main-text-hello-user"
 								*ngIf="!deviceService.isArm && commonService.isOnline && userService.isLenovoIdSupported()">
-								{{'lenovoId.helloUser' | translate:{firstName:userService.firstName} }}
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+									[innerHTML]="'lenovoId.helloUser' | translate:{firstName:userService.firstName}">
+								</span>
 							</div>
 							<button mat-menu-item
 								*ngIf="appsForYouService.showLmaMenu()"
 								id="menu-main-lnk-open-lma"
-								class="position-relative mt-0 border-radius-0 user-menu-item link-lma"
+								class="position-relative mt-0 py-2 border-radius-0 h-auto user-menu-item link-lma"
 								attr.aria-label="menu-main-lnk-open-lma"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -188,7 +186,7 @@
 								(click)="onMenuItemClick(item, $event)"
 								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)]"
 								href="javascript:void(0)">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'appsForYou.menuText.lenovoMigrationAssistant' | translate">
 								</span>
 								<span class="position-absolute rounded-circle unread-tag"
@@ -200,7 +198,7 @@
 							<button mat-menu-item
 								*ngIf="appsForYouService.showAdobeMenu()"
 								id="menu-main-lnk-open-adobe"
-								class="position-relative mt-0 border-radius-0 user-menu-item link-adobe"
+								class="position-relative mt-0 py-2 border-radius-0 h-auto user-menu-item link-adobe"
 								attr.aria-label="menu-main-lnk-open-adobe"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -212,7 +210,7 @@
 								(click)="onMenuItemClick(item, $event)"
 								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)]"
 								href="javascript:void(0)">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'appsForYou.menuText.adobeRedemption' | translate">
 								</span>
 								<span class="position-absolute rounded-circle unread-tag"
@@ -224,7 +222,7 @@
 							<button mat-menu-item
 								*ngIf="commonService.isOnline && appsForYouService.showDccMenu()"
 								id="menu-main-lnk-open-dcc"
-								class="position-relative mt-0 border-radius-0 user-menu-item link-dcc"
+								class="position-relative mt-0 py-2 border-radius-0 h-auto user-menu-item link-dcc"
 								attr.aria-label="menu-main-lnk-open-dcc"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -232,7 +230,7 @@
 								metricsItem="DccRedemptionButton"
 								(click)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'dcc.menuText.lenovoDigitalOffer' | translate">
 								</span>
 								<span class="position-absolute rounded-circle unread-tag"
@@ -244,7 +242,7 @@
 							<button mat-menu-item
 								*ngIf="commonService.isOnline && !deviceService.isSMode && modernPreloadService.IsEntitled"
 								id="menu-main-lnk-open-modern-preload"
-								class="mt-0 border-radius-0 user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
 								vtrMetrics
 								attr.aria-label="menu-main-lnk-open-modern-preload"
 								[metricsEvent]="item.metricsEvent"
@@ -252,13 +250,13 @@
 								metricsItem="ModernPreloadButton"
 								href="javascript:void(0)"
 								(click)="openModernPreloadModal()">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'modernPreload.title' | translate">
 								</span>
 							</button>
 							<button mat-menu-item
 								id="menu-main-lnk-open-preference"
-								class="mt-0 border-radius-0 user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
 								attr.aria-label="menu-main-lnk-open-preference"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -269,14 +267,14 @@
 								routerLinkActive="active"
 								(click)="onMenuItemClick(item)"
 								(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown('settings')]">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'settings.preferenceSettings' | translate">
 								</span>
 							</button>
 							<button mat-menu-item
 								*ngIf="commonService.isOnline"
 								id="menu-main-lnk-open-feedback"
-								class="mt-0 border-radius-0 user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
 								attr.aria-label="menu-main-lnk-open-feedback"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -284,14 +282,14 @@
 								metricsItem="GiveFeedbackButton"
 								href="javascript:void(0)"
 								(click)="openFeedbackModal()">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'dashboard.feedback.title' | translate">
 								</span>
 							</button>
 							<button mat-menu-item
 								*ngIf="appsForYouService.lenovoSurvey.display"
 								id="menu-main-lnk-open-lenovo-survey"
-								class="mt-0 border-radius-0 user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
 								attr.aria-label="menu-main-lnk-open-lenovo-survey"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -299,7 +297,7 @@
 								metricsItem="LenovoSurvey"
 								href="javascript:void(0)"
 								(click)="openSurveyModal(appsForYouService.lenovoSurvey.id)">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'dashboard.survey.title' | translate">
 								</span>
 								<span class="position-absolute rounded-circle unread-tag"
@@ -311,7 +309,7 @@
 							<button mat-menu-item
 								*ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								id="menu-main-lnk-open-lenovoid-login"
-								class="mt-0 border-radius-0 user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
 								attr.aria-label="menu-main-lnk-open-lenovoid-login"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -319,14 +317,14 @@
 								metricsItem="LenovoIdSignInButton"
 								href="javascript:void(0)"
 								(click)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'lenovoId.login' | translate">
 								</span>
 							</button>
 							<button mat-menu-item
 								*ngIf="!deviceService.isArm && !userService.auth && userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								id="menu-main-lnk-open-lenovoid-unlock"
-								class="mt-0 border-radius-0 user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
 								attr.aria-label="menu-main-lnk-open-lenovoid-unlock"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -334,14 +332,14 @@
 								metricsItem="LenovoIdStarterIdButton"
 								href="javascript:void(0)"
 								(click)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'lenovoId.unlockExclusives' | translate">
 								</span>
 							</button>
 							<button mat-menu-item
 								*ngIf="!deviceService.isArm && userService.auth && commonService.isOnline && userService.isLenovoIdSupported()"
 								id="menu-main-lnk-user-logout"
-								class="mt-0 border-radius-0 user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
 								attr.aria-label="menu-main-lnk-user-logout"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -350,7 +348,7 @@
 								href="javascript:void(0)"
 								(click)="[onLogout(), onMenuItemClick(item)]"
 								[class.disabled]="isLoggingOut">
-								<span class="user-menu-item-text"
+								<span class="d-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="isLoggingOut ? ('lenovoId.loggingOut' | translate) : ('lenovoId.logout' | translate)">
 								</span>
 							</button>

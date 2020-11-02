@@ -433,6 +433,7 @@ body {
 	font-family: "Segoe UI", sans-serif;
 	cursor: default;
 	-ms-content-zooming: none;
+	overflow-x: hidden;
 	// font-weight: 300;
 }
 
@@ -2506,6 +2507,10 @@ ngb-tooltip-window.schedule-scan.tooltip {
 
 .top-0 {
 	top: 0 !important;
+}
+
+.right-0 {
+	right: 0 !important;
 }
 
 .flex-1 {

@@ -186,22 +186,35 @@
 	}
 	.user-menu-dropdown-container {
 		border-radius: 0 0 0.5rem 0.5rem !important;
+		max-width: 30rem;
 		.user-text {
 			color: $main_shade;
 			font-size: $fontsize_xs;
 			font-weight: $weight_regular;
 			font-family: "Segoe UI",sans-serif;
-			height: 3.2rem;
+			min-height: 2.2rem;
 			line-height: 1;
 			@include high-contrast-text-color-disabled;
+			.user-menu-item-text {
+				word-break: normal;
+				white-space: pre-wrap;
+				word-wrap : break-word;
+				line-height: 1.3;
+			}
 		}
 		.user-menu-item {
 			color: $main_shade;
 			font-weight: $weight_regular;
 			font-family: "Segoe UI",sans-serif;
-			height: 3.2rem;
+			min-height: 2.2rem;
 			line-height: 1;
 			outline: none !important;
+			.user-menu-item-text {
+				word-break: normal;
+				white-space: pre-wrap;
+				word-wrap : break-word;
+				line-height: 1.3;
+			}
 			@include menu-color-high-contrast;
 			&:hover {
 				text-decoration: underline;
