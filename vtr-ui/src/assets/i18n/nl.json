@@ -785,7 +785,9 @@
                 "sub4": "Wachtwoordstatus",
                 "sub5": "VPN-beveiliging",
                 "sub6": "Vingerafdruk",
-                "sub8": "Home-beveiliging"
+                "sub7": "Mijn beveiligingsdetails",
+                "sub8": "Home-beveiliging",
+                "sub9": "Apparaatbeveiliging"
             },
             "support": "Ondersteuning",
             "beta": {

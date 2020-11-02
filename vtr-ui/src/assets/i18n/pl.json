@@ -785,7 +785,9 @@
                 "sub4": "Bezpieczeństwo hasła",
                 "sub5": "Zabezpieczenia VPN",
                 "sub6": "Odcisk palca",
-                "sub8": "Bezpieczny Dom"
+                "sub7": "Szczegóły moich zabezpieczeń",
+                "sub8": "Bezpieczny Dom",
+                "sub9": "Bezpieczeństwo urządzenia"
             },
             "support": "Pomoc techniczna",
             "beta": {

@@ -785,7 +785,9 @@
                 "sub4": "Sila hesla",
                 "sub5": "Zabezpečenie VPN",
                 "sub6": "Odtlačok prsta",
-                "sub8": "Zabezpečenie domácnosti"
+                "sub7": "Podrobnosti môjho zabezpečenia",
+                "sub8": "Zabezpečenie domácnosti",
+                "sub9": "Zabezpečenie zariadenia"
             },
             "support": "Technická podpora",
             "beta": {

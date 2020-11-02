@@ -785,7 +785,9 @@
                 "sub4": "Stav hesla",
                 "sub5": "Zabezpečení VPN",
                 "sub6": "Otisk prstu",
-                "sub8": "Zabezpečení domácnosti"
+                "sub7": "Údaje o mém zabezpečení",
+                "sub8": "Zabezpečení domácnosti",
+                "sub9": "Zabezpečení zařízení"
             },
             "support": "Podpora",
             "beta": {

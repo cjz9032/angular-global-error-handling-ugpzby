@@ -785,7 +785,9 @@
                 "sub4": "Estado de palavra-passe",
                 "sub5": "Segurança de VPN",
                 "sub6": "Impressão digital",
-                "sub8": "Segurança doméstica"
+                "sub7": "Os meus detalhes de segurança",
+                "sub8": "Segurança doméstica",
+                "sub9": "Segurança do dispositivo"
             },
             "support": "Suporte",
             "beta": {

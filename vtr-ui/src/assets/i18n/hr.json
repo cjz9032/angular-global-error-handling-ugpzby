@@ -785,7 +785,9 @@
                 "sub4": "Jačina lozinke",
                 "sub5": "Sigurnost VPN mreže",
                 "sub6": "Otisak prsta",
-                "sub8": "Sigurnost doma"
+                "sub7": "Moji sigurnosni podaci",
+                "sub8": "Sigurnost doma",
+                "sub9": "Sigurnost uređaja"
             },
             "support": "Podrška",
             "beta": {
