@@ -72,8 +72,15 @@
 						<vtr-material-state-card-container *ngIf="isShowStateCard" order=2
 							[cardData]="positionBData"
 							[cardId]="'dashboard-lnk-systemInfo-position-b'">
-							<div class="circle-state">
-								<vtr-widget-round-status
+							<div *ngIf="positionBData.isActionLink" class="circle-state action-content">
+								<vtr-widget-round-status								   
+									[status]="positionBData.state"
+									[statusId]="'dashboard-system-info-position-b'"
+									[statusText]="positionBData.statusText">
+								</vtr-widget-round-status>
+							</div>
+							<div *ngIf="!positionBData.isActionLink" class="circle-state link-content">
+								<vtr-widget-round-status								   
 									[status]="positionBData.state"
 									[statusId]="'dashboard-system-info-position-b'"
 									[statusText]="positionBData.statusText">
@@ -101,6 +108,7 @@
 								order=3
 								cardId="dashboard-lnk-security-position-c">
 								<vtr-material-status-circle
+								    class="link-content"
 									[gradientColor]="securityInfo"
 									[statusText]="securityInfo?.statusText ? securityInfo?.statusText : '--'">
 								</vtr-material-status-circle>
