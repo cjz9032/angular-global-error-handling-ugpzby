@@ -315,7 +315,7 @@ export class DialogService {
 			disableClose: true,
 			backdropClass: 'dialogBackdropExcludeMenu',
 			panelClass: [(this.deviceService.isGaming ? 'is-gaming' : ''), 'm-5', 'h-auto'],
-			id: 'wifi-security-Expire-Prompt-Dialog'
+			id: 'wifi-security-expire-prompt-dialog'
 		});
 		dialogRef.afterClosed().subscribe(result => {
 			if (result === 'action') {

@@ -62,7 +62,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.ngZone.run(() => {
 			if (value !== undefined) {
 				if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
-					this.dialogService.closeDialog('wifi-security-Expire-Prompt-Dialog');
+					this.dialogService.closeDialog('wifi-security-expire-prompt-dialog');
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				} else if (value) {
 					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
@@ -162,7 +162,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	ngOnDestroy() {
-		this.dialogService.closeDialog('wifi-security-Expire-Prompt-Dialog');
+		this.dialogService.closeDialog('wifi-security-expire-prompt-dialog');
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
 		if (this.wifiSecurity) {
@@ -258,7 +258,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 					break;
 				case LenovoIdStatus.SignedIn:
 					if (notification.payload === true) {
-						this.dialogService.closeDialog('wifi-security-Expire-Prompt-Dialog');
+						this.dialogService.closeDialog('wifi-security-expire-prompt-dialog');
 					}
 					break;
 				default:
