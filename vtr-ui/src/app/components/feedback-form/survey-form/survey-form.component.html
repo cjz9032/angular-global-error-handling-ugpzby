@@ -14,8 +14,12 @@
 					<div class="form-check form-check-inline" *ngFor="let option of qa.options; index as oIdx">
 						<input class="form-check-input" type="radio" [name]="qa.name"
 							[id]="qa.name + '-input-' + oIdx"
-       						[(ngModel)]="page.results[qa.name]"
-							[value]="oIdx + 1">
+							[value]="oIdx + 1"
+							[tabindex]="pIdx === progress ? 0 : -1"
+							(click)="setRadioStatus(page, qa.name, oIdx + 1)"
+							(keydown.enter)="setRadioStatus(page, qa.name, oIdx + 1)"
+							[checked]="page.results[qa.name] === oIdx + 1"
+							>
 						<label class="form-check-label-out"></label>
 						<label class="form-check-label" [id]="qa.name + '-label-' + oIdx" role="text"
 							[for]="qa.name + '-input-' + oIdx">{{option}}</label>
@@ -25,9 +29,12 @@
 					<div class="form-check form-check-inline multiple-choice"
 						*ngFor="let option of qa.options; index as oIdx">
 						<input class="form-check-input" type="checkbox" [name]="qa.name"
-							(click)="setCheckboxStatus(pIdx, qa.name, $event)"
-							(keydown.enter)="setCheckboxStatus(pIdx, qa.name, $event)" [id]="qa.name + '-input-' + oIdx"
-							[value]="oIdx + 1">
+							(click)="setCheckboxStatus(page, qa, oIdx + 1)"
+							(keydown.enter)="setCheckboxStatus(page, qa, oIdx + 1)" [id]="qa.name + '-input-' + oIdx"
+							[value]="oIdx + 1"
+							[tabindex]="pIdx === progress ? 0 : -1"
+							[checked]="page.results[qa.name]?.has(oIdx + 1)"
+							>
 						<label class="form-check-label-out"></label>
 						<label class="form-check-label" [id]="qa.name + '-label-' + oIdx" role="text"
 							[for]="qa.name + '-input-' + oIdx">{{option}}</label>
