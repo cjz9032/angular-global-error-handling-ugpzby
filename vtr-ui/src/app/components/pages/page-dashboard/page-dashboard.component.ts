@@ -174,14 +174,16 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			summary: 'dashboard.securityStatus.loadingDesc',
 			linkText: 'common.menu.security.sub1',
 			metricsItem: 'loading',
-			linkPath: 'security/mysecurity'
+			linkPath: 'security/mysecurity',
+			isActionLink: false
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.noProtectionDesc',
 			linkText: 'common.ui.improveNow',
 			linkPath: 'security/anti-virus',
 			metricsItem: 'no protection',
-			statusText: 'security.landing.noProtection'
+			statusText: 'security.landing.noProtection',
+			isActionLink: false
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.basicDesc',
@@ -189,7 +191,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			linkPath: 'security/mysecurity',
 			params: 'basic',
 			metricsItem: 'basic',
-			statusText: 'security.landing.basic'
+			statusText: 'security.landing.basic',
+			isActionLink: false
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.intermediateDesc',
@@ -197,7 +200,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			linkPath: 'security/mysecurity',
 			params: 'intermediate',
 			metricsItem: 'intermediate',
-			statusText: 'security.landing.intermediate'
+			statusText: 'security.landing.intermediate',
+			isActionLink: false
 		}, {
 			title: 'common.securityAdvisor.title',
 			summary: 'dashboard.securityStatus.advancedDesc',
@@ -205,7 +209,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			linkPath: 'security/mysecurity',
 			params: 'advanced',
 			metricsItem: 'advanced',
-			statusText: 'security.landing.advanced'
+			statusText: 'security.landing.advanced',
+			isActionLink: false
 		}
 	];
 	securityInfo: LandingView = {
@@ -236,7 +241,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		linkPath: 'device',
 		state: 1,
 		metricsItem: 'good-condition',
-		statusText: 'GOOD CONDITION'
+		statusText: 'GOOD CONDITION',
+		isActionLink: false
 	};
 
 	securityAdvisorHandler = () => {
@@ -278,7 +284,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private localCacheService: LocalCacheService,
 		private metricsService: MetricService,
 		private contentLocalCache: ContentCacheService,
-		private antivirusService: AntivirusService,
 		private windowsHelloService: WindowsHelloService
 	) {
 	}

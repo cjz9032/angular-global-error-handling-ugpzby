@@ -71,7 +71,8 @@ export class DashboardService {
 		linkPath: 'device',
 		state: SystemState.Loading,
 		metricsItem: 'loading',
-		statusText: ''
+		statusText: '',
+		isActionLink: false
 	};
 
 	goodConditionData: DashboardStateCardData = {
@@ -81,27 +82,30 @@ export class DashboardService {
 		linkPath: 'device',
 		state: SystemState.GoodCondition,
 		metricsItem: 'good-condition',
-		statusText: 'device.myDevice.goodCondition'
+		statusText: 'device.myDevice.goodCondition',
+		isActionLink: false
 	};
 
 	needMaintainSU: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
 		linkText: 'common.ui.improveNow',
-		linkPath: 'device/system-updates',
+		linkPath: 'lenovo-vantage3:system-updates?action=start',
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-su',
-		statusText: 'device.myDevice.needAction'
+		statusText: 'device.myDevice.needAction',
+		isActionLink: true
 	};
 
 	needMaintainHWS: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
 		linkText: 'common.ui.improveNow',
-		linkPath: 'hardware-scan',
+		linkPath: 'lenovo-vantage3:hardware-scan?scan=quickscan',
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-hws',
-		statusText: 'device.myDevice.needAction'
+		statusText: 'device.myDevice.needAction',
+		isActionLink: true
 	};
 
 	needMaintainSP: DashboardStateCardData = {
@@ -111,7 +115,8 @@ export class DashboardService {
 		linkPath: 'support/smart-performance',
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-sp',
-		statusText: 'device.myDevice.needAction'
+		statusText: 'device.myDevice.needAction',
+		isActionLink: false
 	};
 
 	positionBResponseReceived: boolean;
