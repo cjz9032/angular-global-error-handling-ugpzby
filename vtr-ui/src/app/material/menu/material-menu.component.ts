@@ -402,10 +402,10 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 
 	updateActiveItem(id: string): boolean {
 		if (id === 'security') {
-			return this.currentRoutePath === '/home-security' || this.currentRoutePath?.indexOf('/security') >= 0;
+			return this.currentRoutePath === '/home-security' || this.currentRoutePath?.startsWith('/security');
 		}
 		if (id === 'support') {
-			return this.currentRoutePath === '/hardware-scan' || this.currentRoutePath?.indexOf('/support') >= 0;
+			return this.currentRoutePath === '/hardware-scan' || this.currentRoutePath?.startsWith('/support');
 		}
 		return false;
 	}
