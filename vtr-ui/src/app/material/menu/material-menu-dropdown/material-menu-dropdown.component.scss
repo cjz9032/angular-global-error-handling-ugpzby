@@ -18,10 +18,16 @@
 			color: $main_shade;
 			font-weight: $weight_regular;
 			font-family: "Segoe UI",sans-serif;
-			height: 3.2rem;
+			min-height: 2.2rem;
 			line-height: 1;
 			outline: none !important;
 			@include menu-color-high-contrast;
+			span {
+				word-break: normal;
+				white-space: pre-wrap;
+				word-wrap : break-word;
+				line-height: 1.3;
+			}
 			&:hover {
 				text-decoration: underline;
 				color: $blue-light;
