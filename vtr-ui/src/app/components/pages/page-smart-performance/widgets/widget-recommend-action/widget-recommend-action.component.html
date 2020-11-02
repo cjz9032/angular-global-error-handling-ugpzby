@@ -7,24 +7,24 @@
 	<div class="card-info"
 		id="smart-performance-scan-summary-recommendAction-desc"
 		role="text">
-		<p *ngIf="isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
+		<p *ngIf="smartPerformanceService.isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
 		</p>
 		<p class="mb-3"
-			*ngIf="!isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.newDescription' |translate }}</p>
+			*ngIf="!smartPerformanceService.isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.newDescription' |translate }}</p>
 		<!-- <p>{{'smartPerformance.scanCompletePage.recommendedAction.description1' |translate }}</p> -->
 	</div>
 	<div class="pricing"
-		*ngIf="isShowPrice">
+		*ngIf="smartPerformanceService.isShowPrice">
 		<h2 class="big-text"
 			id="smart-performance-scan-summary-recommendAction-yearlyPricing">
-			{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate:{'yearlyPrice': yearlyPrice} }}
+			{{'smartPerformance.scanCompletePage.recommendedAction.yearlyPricing' |translate:{'yearlyPrice': smartPerformanceService.localPriceData.yearlyPrice} }}
 		</h2>
 		<small id="smart-performance-scan-summary-recommendAction-monthlyPricing"
-			role="text">{{ 'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate:{'monthlyPrice': monthlyPrice} }}
+			role="text">{{ 'smartPerformance.scanCompletePage.recommendedAction.monthlyPricing' |translate:{'monthlyPrice': smartPerformanceService.localPriceData.monthlyPrice} }}
 		</small>
 	</div>
 	<p id="smart-performance-scan-summary-recommendAction-longerTerm"
-		*ngIf="isShowPrice"
+		*ngIf="smartPerformanceService.isShowPrice"
 		role="text">{{'smartPerformance.scanCompletePage.recommendedAction.longerTerm' |translate }}
 	</p>
 	<!-- These are commented as per new requirment please dont delete -->
@@ -36,5 +36,6 @@
 		metricsParent="Page.Support.SmartPerformance"
 		[isFullWidth]="true"
 		buttonColor="gray"
+		[isDisabled]="isDisabled"
 		[label]="'smartPerformance.scanCompletePage.recommendedAction.signupButton' | translate"></vtr-ui-button>
 </div>
