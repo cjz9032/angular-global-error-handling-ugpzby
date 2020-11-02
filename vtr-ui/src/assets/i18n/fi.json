@@ -774,8 +774,8 @@
                 "sub2": "Omat laiteasetukset",
                 "sub3": "Järjestelmäpäivitys",
                 "sub4": "Älykäs apu",
-				"sub5": "Laitteen tiedot",
-				"sub6": "Laiteasetusten yksityiskohdat"
+                "sub5": "Laitteen tiedot",
+                "sub6": "Laiteasetusten yksityiskohdat"
             },
             "security": {
                 "title": "Suojaus",
@@ -1035,14 +1035,17 @@
             "helpful": "Hyödyllistä sisältöä",
             "copy": "kopioi",
             "goodCondition": "Hyvässä kunnossa",
-            "needAction": "Vaatii huoltoa",
+            "needAction": "Optimoi nyt",
             "hwStatus": "Laitteiston tila",
             "swStatus": "Ohjelmistojen tila",
             "refreshModules": "Päivitä moduulit",
             "used": "Käytetty",
             "scanned": "Tarkistettu ",
             "physicalMemory": "Fyysinen muisti",
-            "storage": "Tallennus"
+            "storage": "Tallennus",
+            "scanNow": "Tarkista nyt",
+            "entitled": "Valtuutettu",
+            "subscribeNow": "Tilaa napsauttamalla tätä"
         },
         "deviceSettings": {
             "helpful": "Hyödyllistä sisältöä",

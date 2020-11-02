@@ -774,8 +774,8 @@
                 "sub2": "Paramètres de mon périphérique",
                 "sub3": "Mise à jour du système",
                 "sub4": "Assistance intelligente",
-				"sub5": "Détails du périphérique",
-				"sub6": "Détails des paramètres du périphérique"
+                "sub5": "Détails du périphérique",
+                "sub6": "Détails des paramètres du périphérique"
             },
             "security": {
                 "title": "Sécurité",
@@ -914,118 +914,118 @@
                 "invalidEmailMsg": "Adresse e-mail non valide"
             }
         },
-		"survey": {
-			"title": "Enquête Lenovo",
-			"next": "SUIVANT",
-			"submit": "Soumettre",
-			"form": {
-				"page1": {
-					"summary": "Pensez aux attributs qui sont les plus importants pour vous lors de la sélection d'un ordinateur portable/notebook pour un usage personnel.",
-					"question": "Sélectionnez l’attribut le plus important.",
-					"question1": {
-						"options": [
-							"Tarif",
-							"Fabricant/nom de marque"
-						]
-					},
-					"question2": {
-						"options": [
-							"Vitesse du processeur",
-							"Facteur de forme (ordinateur portable traditionnel, convertible, détachable)"
-						]
-					},
-					"question3": {
-						"options": [
-							"Capacités graphiques",
-							"Taille de l’écran"
-						]
-					},
-					"question4": {
-						"options": [
-							"Taille de l’écran",
-							"Poids"
-						]
-					}
-				},
-				"page2": {
-					"summary": "Quelle est l'importance de chacune des caractéristiques d'affichage suivantes lorsque l'on considère un ordinateur portable/notebook ?",
-					"question1": "Gamme dynamique élevée (haute définition/résolution)",
-					"question2": "Écran tactile",
-					"options": [
-						"1 - Pas du tout important",
-						"2",
-						"3",
-						"4",
-						"5 - Extrêmement important",
-						"6 - Pas familier avec cette option"
-					]
-				},
-				"page3": {
-					"summary": "Dans quelle mesure êtes-vous d'accord ou en désaccord avec les affirmations suivantes concernant les ordinateurs portables/notebook ?",
-					"question1": "Il est très important d'avoir un ordinateur portable que les gens remarqueront",
-					"question2": "Peu m'importe le type de matériau utilisé pour la coque d'un ordinateur portable/notebook.",
-					"options": [
-						"1 - Pas du tout d’accord",
-						"2 - Plutôt pas d'accord",
-						"3 - Ni d'accord ni en désaccord",
-						"4 - Plutôt d'accord",
-						"5 - Totalement d’accord"
-					]
-				},
-				"page4": {
-					"summary": "Quelle est l'importance pour vous de chacune des activités suivantes que vous faites sur un ordinateur personnel ?",
-					"question1": "Effectuer une activité en rapport avec votre travail",
-					"question2": "Faire des parties de jeu",
-					"question3": "Vous tenir au courant des dernières nouvelles",
-					"question4": "Regarder des films/émissions de télévision/regarder autre chose",
-					"options": [
-						"1 - Ce n'est pas si important pour moi",
-						"2",
-						"3",
-						"4",
-						"5 - C’est extrêmement important pour moi",
-						"6 - Je ne fais pas cette activité sur un ordinateur personnel"
-					]
-				},
-				"page5": {
-					"question1": {
-						"title": "Utilisez-vous un assistant vocal (par exemple, Alexa, Siri, Assistant Google, Cortana) sur l'un des appareils domestiques suivants ?  Veuillez sélectionner toutes les réponses justes.",
-						"options": [
-							"Sur mon ordinateur de bureau",
-							"Sur mon ordinateur portable / notebook",
-							"Sur ma tablette",
-							"Sur mon smartphone",
-							"Sur un haut-parleur / écran intelligent",
-							"Je n'utilise d'assistant vocal sur aucun de ces appareils"
-						]
-					},
-					"question2": {
-						"title": "Lequel des énoncés suivants vous décrit ?",
-						"options": [
-							"Je suis généralement parmi les premiers à acheter les appareils de technologie de pointe",
-							"J'achète les appareils de technologie de pointe plus tôt que la plupart",
-							"J'achète un appareil de nouvelle technologie une fois que beaucoup de gens l'utilisent déjà",
-							"J'attends d'acheter un appareil de nouvelle technologie après que la plupart des gens l'utilisent déjà"
-						]
-					},
-					"question3": {
-						"title": "Combien dépensez-vous généralement sur un ordinateur ?",
-						"options": [
-							"Moins de 300 €",
-							"300 € - 499 €",
-							"500 € - 699 €",
-							"700 € - 999 €",
-							"1 000 € - 1 299 €",
-							"1 300 € - 1 499 €",
-							"1 500 € ou plus"
-						]
-					}
-				},
-				"messages": {
-					"feedbackSuccess": "Merci pour votre commentaire !"
-				}
-			}
-		},
+        "survey": {
+            "title": "Enquête Lenovo",
+            "next": "SUIVANT",
+            "submit": "Soumettre",
+            "form": {
+                "page1": {
+                    "summary": "Pensez aux attributs qui sont les plus importants pour vous lors de la sélection d'un ordinateur portable/notebook pour un usage personnel.",
+                    "question": "Sélectionnez l’attribut le plus important.",
+                    "question1": {
+                        "options": [
+                            "Tarif",
+                            "Fabricant/nom de marque"
+                        ]
+                    },
+                    "question2": {
+                        "options": [
+                            "Vitesse du processeur",
+                            "Facteur de forme (ordinateur portable traditionnel, convertible, détachable)"
+                        ]
+                    },
+                    "question3": {
+                        "options": [
+                            "Capacités graphiques",
+                            "Taille de l’écran"
+                        ]
+                    },
+                    "question4": {
+                        "options": [
+                            "Taille de l’écran",
+                            "Poids"
+                        ]
+                    }
+                },
+                "page2": {
+                    "summary": "Quelle est l'importance de chacune des caractéristiques d'affichage suivantes lorsque l'on considère un ordinateur portable/notebook ?",
+                    "question1": "Gamme dynamique élevée (haute définition/résolution)",
+                    "question2": "Écran tactile",
+                    "options": [
+                        "1 - Pas du tout important",
+                        "2",
+                        "3",
+                        "4",
+                        "5 - Extrêmement important",
+                        "6 - Pas familier avec cette option"
+                    ]
+                },
+                "page3": {
+                    "summary": "Dans quelle mesure êtes-vous d'accord ou en désaccord avec les affirmations suivantes concernant les ordinateurs portables/notebook ?",
+                    "question1": "Il est très important d'avoir un ordinateur portable que les gens remarqueront",
+                    "question2": "Peu m'importe le type de matériau utilisé pour la coque d'un ordinateur portable/notebook.",
+                    "options": [
+                        "1 - Pas du tout d’accord",
+                        "2 - Plutôt pas d'accord",
+                        "3 - Ni d'accord ni en désaccord",
+                        "4 - Plutôt d'accord",
+                        "5 - Totalement d’accord"
+                    ]
+                },
+                "page4": {
+                    "summary": "Quelle est l'importance pour vous de chacune des activités suivantes que vous faites sur un ordinateur personnel ?",
+                    "question1": "Effectuer une activité en rapport avec votre travail",
+                    "question2": "Faire des parties de jeu",
+                    "question3": "Vous tenir au courant des dernières nouvelles",
+                    "question4": "Regarder des films/émissions de télévision/regarder autre chose",
+                    "options": [
+                        "1 - Ce n'est pas si important pour moi",
+                        "2",
+                        "3",
+                        "4",
+                        "5 - C’est extrêmement important pour moi",
+                        "6 - Je ne fais pas cette activité sur un ordinateur personnel"
+                    ]
+                },
+                "page5": {
+                    "question1": {
+                        "title": "Utilisez-vous un assistant vocal (par exemple, Alexa, Siri, Assistant Google, Cortana) sur l'un des appareils domestiques suivants ?  Veuillez sélectionner toutes les réponses justes.",
+                        "options": [
+                            "Sur mon ordinateur de bureau",
+                            "Sur mon ordinateur portable / notebook",
+                            "Sur ma tablette",
+                            "Sur mon smartphone",
+                            "Sur un haut-parleur / écran intelligent",
+                            "Je n'utilise d'assistant vocal sur aucun de ces appareils"
+                        ]
+                    },
+                    "question2": {
+                        "title": "Lequel des énoncés suivants vous décrit ?",
+                        "options": [
+                            "Je suis généralement parmi les premiers à acheter les appareils de technologie de pointe",
+                            "J'achète les appareils de technologie de pointe plus tôt que la plupart",
+                            "J'achète un appareil de nouvelle technologie une fois que beaucoup de gens l'utilisent déjà",
+                            "J'attends d'acheter un appareil de nouvelle technologie après que la plupart des gens l'utilisent déjà"
+                        ]
+                    },
+                    "question3": {
+                        "title": "Combien dépensez-vous généralement sur un ordinateur ?",
+                        "options": [
+                            "Moins de 300 €",
+                            "300 € - 499 €",
+                            "500 € - 699 €",
+                            "700 € - 999 €",
+                            "1 000 € - 1 299 €",
+                            "1 300 € - 1 499 €",
+                            "1 500 € ou plus"
+                        ]
+                    }
+                },
+                "messages": {
+                    "feedbackSuccess": "Merci pour votre commentaire !"
+                }
+            }
+        },
         "quickSettings": {
             "title": "Paramètres rapides",
             "microphone": "Microphone",
@@ -1147,14 +1147,17 @@
             "helpful": "Contenu utile",
             "copy": "copier",
             "goodCondition": "Bon état",
-            "needAction": "Maintenance nécessaire",
+            "needAction": "Optimiser maintenant",
             "hwStatus": "État du matériel",
             "swStatus": "État du logiciel",
             "refreshModules": "Actualiser les modules",
             "used": "Utilisé",
             "scanned": "Analysé ",
             "physicalMemory": "Mémoire physique",
-            "storage": "Stockage"
+            "storage": "Stockage",
+            "scanNow": "Analyser maintenant",
+            "entitled": "Autorisé",
+            "subscribeNow": "Cliquez ici pour vous abonner"
         },
         "deviceSettings": {
             "helpful": "Contenu utile",

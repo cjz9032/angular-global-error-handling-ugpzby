@@ -774,8 +774,8 @@
                 "sub2": "Mine enhetsinnstillinger",
                 "sub3": "Systemoppdateringer",
                 "sub4": "Smart hjelp",
-				"sub5": "Enhetsdetaljer",
-				"sub6": "Enhetsinnstillinger"
+                "sub5": "Enhetsdetaljer",
+                "sub6": "Enhetsinnstillinger"
             },
             "security": {
                 "title": "Sikkerhet",
@@ -1035,14 +1035,17 @@
             "helpful": "Nyttig innhold",
             "copy": "kopi",
             "goodCondition": "I god stand",
-            "needAction": "Vedlikehold nødvendig",
+            "needAction": "Optimaliser nå",
             "hwStatus": "Maskinvarestatus",
             "swStatus": "Programvarestatus",
             "refreshModules": "Oppdater moduler",
             "used": "Brukt",
             "scanned": "Skannet ",
             "physicalMemory": "Fysisk minne",
-            "storage": "Lagring"
+            "storage": "Lagring",
+            "scanNow": "Skann nå",
+            "entitled": "Berettiget",
+            "subscribeNow": "Klikk for å abonnere"
         },
         "deviceSettings": {
             "helpful": "Nyttig innhold",

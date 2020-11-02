@@ -774,8 +774,8 @@
                 "sub2": "Mina enhetsinställningar",
                 "sub3": "Systemuppdatering",
                 "sub4": "Smart hjälp",
-				"sub5": "Enhetsinformation",
-				"sub6": "Information om enhetsinställningar"
+                "sub5": "Enhetsinformation",
+                "sub6": "Information om enhetsinställningar"
             },
             "security": {
                 "title": "Säkerhet",
@@ -1035,14 +1035,17 @@
             "helpful": "Praktisk information",
             "copy": "kopiera",
             "goodCondition": "I bra skick",
-            "needAction": "Underhåll behövs",
+            "needAction": "Optimera nu",
             "hwStatus": "Maskinvarustatus",
             "swStatus": "Programvarustatus",
             "refreshModules": "Uppdatera moduler",
             "used": "Använt",
             "scanned": "Genomsökt ",
             "physicalMemory": "Fysiskt minne",
-            "storage": "Lagring"
+            "storage": "Lagring",
+            "scanNow": "Genomsök nu",
+            "entitled": "Kvalificerad",
+            "subscribeNow": "Klicka för att prenumerera"
         },
         "deviceSettings": {
             "helpful": "Praktisk information",

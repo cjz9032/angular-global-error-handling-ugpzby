@@ -774,8 +774,8 @@
                 "sub2": "Setările dispozitivului",
                 "sub3": "Actualizare sistem",
                 "sub4": "Asistent inteligent",
-				"sub5": "Detalii dispozitiv",
-				"sub6": "Detalii de setare a dispozitivului"
+                "sub5": "Detalii dispozitiv",
+                "sub6": "Detalii de setare a dispozitivului"
             },
             "security": {
                 "title": "Securitate",
@@ -1035,14 +1035,17 @@
             "helpful": "Conținut util",
             "copy": "copiere",
             "goodCondition": "Stare bună",
-            "needAction": "Întreținere necesară",
+            "needAction": "Optimizează acum",
             "hwStatus": "Stare hardware",
             "swStatus": "Stare software",
             "refreshModules": "Reîmprospătare module",
             "used": "Utilizat",
             "scanned": "Scanat ",
             "physicalMemory": "Memorie fizică",
-            "storage": "Stocare"
+            "storage": "Stocare",
+            "scanNow": "Scanați acum",
+            "entitled": "Are dreptul",
+            "subscribeNow": "Faceți clic pentru a vă abona"
         },
         "deviceSettings": {
             "helpful": "Conținut util",

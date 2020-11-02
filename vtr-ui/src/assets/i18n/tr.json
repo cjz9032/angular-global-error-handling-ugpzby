@@ -774,8 +774,8 @@
                 "sub2": "Cihaz Ayarlarım",
                 "sub3": "Sistem Güncellemesi",
                 "sub4": "Akıllı Yardım",
-				"sub5": "Cihaz Ayrıntıları",
-				"sub6": "Cihaz Ayarları Ayrıntıları"
+                "sub5": "Cihaz Ayrıntıları",
+                "sub6": "Cihaz Ayarları Ayrıntıları"
             },
             "security": {
                 "title": "Güvenlik",
@@ -1035,14 +1035,17 @@
             "helpful": "Faydalı İçerik",
             "copy": "kopya",
             "goodCondition": "İyi durumda",
-            "needAction": "Bakım gerekiyor",
+            "needAction": "Şimdi iyileştir",
             "hwStatus": "Donanım Durumu",
             "swStatus": "Yazılım Durumu",
             "refreshModules": "Modülleri Yenile",
             "used": "Kullanılıyor",
             "scanned": "Tarandı ",
             "physicalMemory": "Fiziksel Bellek",
-            "storage": "Depolama Alanı"
+            "storage": "Depolama Alanı",
+            "scanNow": "Şimdi tara",
+            "entitled": "Yetkili",
+            "subscribeNow": "Abone olmak için tıklatın"
         },
         "deviceSettings": {
             "helpful": "Faydalı İçerik",

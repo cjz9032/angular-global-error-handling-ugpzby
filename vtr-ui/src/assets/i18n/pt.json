@@ -774,8 +774,8 @@
                 "sub2": "Definições do meu dispositivo",
                 "sub3": "Atualização do Sistema",
                 "sub4": "Assistente Inteligente",
-				"sub5": "Detalhes do dispositivo",
-				"sub6": "Detalhes das Definições do Dispositivo"
+                "sub5": "Detalhes do dispositivo",
+                "sub6": "Detalhes das Definições do Dispositivo"
             },
             "security": {
                 "title": "Segurança",
@@ -1035,14 +1035,17 @@
             "helpful": "Conteúdo Útil",
             "copy": "copiar",
             "goodCondition": "Bom estado",
-            "needAction": "Manutenção necessária",
+            "needAction": "Otimizar agora",
             "hwStatus": "Estado do Hardware",
             "swStatus": "Estado do Software",
             "refreshModules": "Atualizar Módulos",
             "used": "Utilizado(s)",
             "scanned": "Analisado ",
             "physicalMemory": "Memória Física",
-            "storage": "Armazenamento"
+            "storage": "Armazenamento",
+            "scanNow": "Analisar agora",
+            "entitled": "Autorizar",
+            "subscribeNow": "Clique para subscrever"
         },
         "deviceSettings": {
             "helpful": "Conteúdo Útil",

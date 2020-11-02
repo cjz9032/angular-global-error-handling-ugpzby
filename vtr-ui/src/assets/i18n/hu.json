@@ -774,8 +774,8 @@
                 "sub2": "Saját eszközbeállítások",
                 "sub3": "Rendszerfrissítés",
                 "sub4": "Intelligens segítség",
-				"sub5": "Eszköz adatai",
-				"sub6": "Részletes eszközbeállítások"
+                "sub5": "Eszköz adatai",
+                "sub6": "Részletes eszközbeállítások"
             },
             "security": {
                 "title": "Biztonság",
@@ -1035,14 +1035,17 @@
             "helpful": "Hasznos tartalom",
             "copy": "másolás",
             "goodCondition": "Jó állapotú",
-            "needAction": "Karbantartásra szorul",
+            "needAction": "Optimalizálás most",
             "hwStatus": "Hardver állapota",
             "swStatus": "Szoftver állapota",
             "refreshModules": "Modulok frissítése",
             "used": "Használt",
             "scanned": "Ellenőrzött ",
             "physicalMemory": "Fizikai memória",
-            "storage": "Tárterület"
+            "storage": "Tárterület",
+            "scanNow": "Vizsgálat most",
+            "entitled": "Jogosult",
+            "subscribeNow": "Kattintson ide a feliratkozáshoz"
         },
         "deviceSettings": {
             "helpful": "Hasznos tartalom",

@@ -774,8 +774,8 @@
                 "sub2": "Mijn apparaatinstellingen",
                 "sub3": "Systeemupdate",
                 "sub4": "Slimme hulp",
-				"sub5": "Apparaatgegevens",
-				"sub6": "Details apparaatinstellingen"
+                "sub5": "Apparaatgegevens",
+                "sub6": "Details apparaatinstellingen"
             },
             "security": {
                 "title": "Beveiliging",
@@ -1035,14 +1035,17 @@
             "helpful": "Nuttige inhoud",
             "copy": "kopiëren",
             "goodCondition": "Goede conditie",
-            "needAction": "Onderhoud vereist",
+            "needAction": "Nu optimaliseren",
             "hwStatus": "Hardwarestatus",
             "swStatus": "Softwarestatus",
             "refreshModules": "Modules vernieuwen",
             "used": "Gebruikt",
             "scanned": "Gescand ",
             "physicalMemory": "Fysiek geheugen",
-            "storage": "Opslag"
+            "storage": "Opslag",
+            "scanNow": "Nu scannen",
+            "entitled": "Recht op",
+            "subscribeNow": "Klik hier om te abonneren"
         },
         "deviceSettings": {
             "helpful": "Nuttige inhoud",
