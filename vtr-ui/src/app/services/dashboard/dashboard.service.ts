@@ -495,10 +495,8 @@ export class DashboardService {
 		const isSystemUpdateEnabled = this.adPolicyService.IsSystemUpdateEnabled;
 		const isHardwareScanEnabled = await this.hardwareScanService.isAvailable();
 		const isSmartPerformanceEnabled = await this.configService.showSmartPerformance();
-		const segment = await this.selfselectService.getSegment();
-		const isConsumerOrSMB = SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB;
 
-		return !this.deviceService.isSMode && isConsumerOrSMB && !this.deviceService.isArm
+		return !this.deviceService.isSMode && !this.deviceService.isArm
 			&& (isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled);
 	}
 
