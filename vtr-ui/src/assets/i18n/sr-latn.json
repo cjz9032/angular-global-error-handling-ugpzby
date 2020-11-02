@@ -784,7 +784,8 @@
                 "sub3": "WiFi bezbednost",
                 "sub4": "Ispravnost lozinke",
                 "sub5": "Bezbednost VPN mreže",
-                "sub6": "Otisak"
+                "sub6": "Otisak",
+                "sub8": "Kućna bezbednost"
             },
             "support": "Podrška",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Popravi ga",
         "optimizeIt": "Optimizuj ga",
         "maintainIt": "Održavaj ga",
+        "lastFix": "Poslednja ispravka",
+        "fixResult": "Rezultati ispravke",
+        "checkPreviousResults": "Provera prethodnih rezultata",
         "tunePCPerformance": {
             "title": "Podešavanje Performansi Računara",
             "heading": "Pokažite svom računaru malo više ljubavi",

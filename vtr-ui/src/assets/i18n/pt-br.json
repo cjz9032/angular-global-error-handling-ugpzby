@@ -784,7 +784,8 @@
                 "sub3": "Segurança WiFi",
                 "sub4": "Integridade de senha",
                 "sub5": "Segurança VPN",
-                "sub6": "Impressões digitais"
+                "sub6": "Impressões digitais",
+                "sub8": "Segurança doméstica"
             },
             "support": "Suporte",
             "beta": {
@@ -4446,6 +4447,9 @@
         "fixIt": "Corrigir",
         "optimizeIt": "Otimizar",
         "maintainIt": "Manter",
+        "lastFix": "Última correção",
+        "fixResult": "Corrigir resultado",
+        "checkPreviousResults": "Verificar resultados anteriores",
         "tunePCPerformance": {
             "title": "Ajustar Desempenho Do PC",
             "heading": "Mostre ao seu computador um pouco de amor extra",

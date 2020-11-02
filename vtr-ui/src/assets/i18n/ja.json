@@ -784,7 +784,8 @@
                 "sub3": "WiFi セキュリティー",
                 "sub4": "パスワードの健全性",
                 "sub5": "VPN セキュリティー",
-                "sub6": "指紋"
+                "sub6": "指紋",
+                "sub8": "ホーム・セキュリティー"
             },
             "support": "サポート",
             "beta": {
@@ -4445,6 +4446,9 @@
         "fixIt": "修正する",
         "optimizeIt": "最適化する",
         "maintainIt": "保守する",
+        "lastFix": "直近の修正",
+        "fixResult": "修正結果",
+        "checkPreviousResults": "前の結果を確認",
         "tunePCPerformance": {
             "title": "PC パフォーマンスの調整",
             "heading": "コンピューターをもっと大切に",

@@ -784,7 +784,8 @@
                 "sub3": "WiFi-sicherheit",
                 "sub4": "Kennwortzustand",
                 "sub5": "VPN-sicherheit",
-                "sub6": "Fingerabdruck"
+                "sub6": "Fingerabdruck",
+                "sub8": "Sicherheit für Zuhause"
             },
             "support": "Unterstützung",
             "beta": {
@@ -4446,6 +4447,9 @@
         "fixIt": "Reparieren",
         "optimizeIt": "Optimieren",
         "maintainIt": "Warten",
+        "lastFix": "Letzte Korrektur",
+        "fixResult": "Korrekturergebnis",
+        "checkPreviousResults": "Vorherige Ergebnisse prüfen",
         "tunePCPerformance": {
             "title": "PC-leistung Optimieren",
             "heading": "Kümmern Sie sich um Ihren Computer",

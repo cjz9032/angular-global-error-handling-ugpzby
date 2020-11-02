@@ -784,7 +784,8 @@
                 "sub3": "Biztonságos WiFi",
                 "sub4": "Jelszó állapota",
                 "sub5": "VPN-biztonság",
-                "sub6": "Ujjlenyomat"
+                "sub6": "Ujjlenyomat",
+                "sub8": "Az otthon biztonsága"
             },
             "support": "Támogatás",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Javítás",
         "optimizeIt": "Optimalizálás",
         "maintainIt": "Karbantartás",
+        "lastFix": "Utolsó javítás",
+        "fixResult": "Javítás eredménye",
+        "checkPreviousResults": "Korábbi eredmények ellenőrzése",
         "tunePCPerformance": {
             "title": "Teljesítmény-növelés",
             "heading": "Szenteljen egy kis figyelmet a számítógépének",

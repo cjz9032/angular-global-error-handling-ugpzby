@@ -784,7 +784,8 @@
                 "sub3": "WiFi 安全性",
                 "sub4": "密碼安全狀態",
                 "sub5": "VPN 安全性",
-                "sub6": "指紋"
+                "sub6": "指紋",
+                "sub8": "家庭安全性"
             },
             "support": "支援",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "修正",
         "optimizeIt": "最佳化",
         "maintainIt": "維護",
+        "lastFix": "上次修正",
+        "fixResult": "修正結果",
+        "checkPreviousResults": "檢查先前的結果",
         "tunePCPerformance": {
             "title": "調校 PC 效能",
             "heading": "給您的電腦多一些關愛",

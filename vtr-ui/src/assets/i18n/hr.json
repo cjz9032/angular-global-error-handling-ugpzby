@@ -784,7 +784,8 @@
                 "sub3": "Sigurnost WiFija",
                 "sub4": "Jačina lozinke",
                 "sub5": "Sigurnost VPN mreže",
-                "sub6": "Otisak prsta"
+                "sub6": "Otisak prsta",
+                "sub8": "Sigurnost doma"
             },
             "support": "Podrška",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Popravi",
         "optimizeIt": "Optimiziraj",
         "maintainIt": "Održavaj",
+        "lastFix": "Posljednji popravak",
+        "fixResult": "Rezultat popravka",
+        "checkPreviousResults": "Provjeri prethodne rezultate",
         "tunePCPerformance": {
             "title": "Podešavanje Performansi Računala",
             "heading": "Pokažite svom računalu malo više ljubavi",

@@ -784,7 +784,8 @@
                 "sub3": "WiFi-säkerhet",
                 "sub4": "Lösenordstillstånd",
                 "sub5": "VPN-säkerhet",
-                "sub6": "Fingeravtryck"
+                "sub6": "Fingeravtryck",
+                "sub8": "Hemsäkerhet"
             },
             "support": "Support",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Korrigera",
         "optimizeIt": "Optimera",
         "maintainIt": "Underhåll",
+        "lastFix": "Senaste korrigering",
+        "fixResult": "Resultat av korrigering",
+        "checkPreviousResults": "Se tidigare resultat",
         "tunePCPerformance": {
             "title": "Finjustera Datorns Prestanda",
             "heading": "Visa datorn lite extra omsorg",

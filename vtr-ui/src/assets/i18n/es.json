@@ -784,7 +784,8 @@
                 "sub3": "Seguridad de WiFi",
                 "sub4": "Estado de la contraseña",
                 "sub5": "Seguridad VPN",
-                "sub6": "Huella dactilar"
+                "sub6": "Huella dactilar",
+                "sub8": "Seguridad del hogar"
             },
             "support": "Soporte",
             "beta": {
@@ -4446,6 +4447,9 @@
         "fixIt": "Corríjalo",
         "optimizeIt": "Optimícelo",
         "maintainIt": "Realice mantenimiento",
+        "lastFix": "Última corrección",
+        "fixResult": "Resultado de la corrección",
+        "checkPreviousResults": "Comprobar los resultados anteriores",
         "tunePCPerformance": {
             "title": "Ajustar El Rendimiento Del PC",
             "heading": "Trate a su equipo con un poco más de amor",

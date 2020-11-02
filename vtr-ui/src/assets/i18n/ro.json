@@ -784,7 +784,8 @@
                 "sub3": "Securitate WiFi",
                 "sub4": "Sănătatea parolei",
                 "sub5": "Securitate VPN",
-                "sub6": "Amprentă"
+                "sub6": "Amprentă",
+                "sub8": "Securitate domestică"
             },
             "support": "Asistenţă",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Remediați",
         "optimizeIt": "Optimizați",
         "maintainIt": "Întrețineți",
+        "lastFix": "Ultima remediere",
+        "fixResult": "Rezultatul remedierii",
+        "checkPreviousResults": "Verificați rezultatele anterioare",
         "tunePCPerformance": {
             "title": "Reglare Performanţe",
             "heading": "Oferiți computerului dumneavoastră mai multă atenție",

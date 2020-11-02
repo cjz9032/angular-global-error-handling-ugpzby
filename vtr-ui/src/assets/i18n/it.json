@@ -784,7 +784,8 @@
                 "sub3": "Sicurezza WiFi",
                 "sub4": "Integrità password",
                 "sub5": "Protezione VPN",
-                "sub6": "Impronta digitale"
+                "sub6": "Impronta digitale",
+                "sub8": "Protezione abitazione"
             },
             "support": "Supporto",
             "beta": {
@@ -4334,6 +4335,9 @@
         "fixIt": "Correggi",
         "optimizeIt": "Ottimizza",
         "maintainIt": "Gestisci",
+        "lastFix": "Ultima correzione",
+        "fixResult": "Risultato correzione",
+        "checkPreviousResults": "Controlla risultati precedenti",
         "tunePCPerformance": {
             "title": "Ottimizza Le Prestazioni Del Pc",
             "heading": "Assicura la manutenzione del tuo PC",

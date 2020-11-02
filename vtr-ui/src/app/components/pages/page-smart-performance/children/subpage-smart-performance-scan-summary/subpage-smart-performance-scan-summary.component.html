@@ -475,9 +475,11 @@
 							<div class="d-flex px-0">
 								<div class="title-block">
 									<h3 id="smart-performance-scan-summary-scanResults-title"
-										*ngIf="showResult.isLastFix">Last Fix</h3>
+										class="text-capitalize"
+										*ngIf="showResult.isLastFix">{{'smartPerformance.lastFix' |translate }}</h3>
 									<h3 id="smart-performance-scan-summary-scanResults-title"
-										*ngIf="!showResult.isLastFix">Fix Result</h3>
+										class="text-capitalize"
+										*ngIf="!showResult.isLastFix">{{'smartPerformance.fixResult' |translate }}</h3>
 									<p class="mb-20">
 										<span>{{showResult.time}}</span>
 										<span class="ml-1"
@@ -499,7 +501,7 @@
 									metricsParent="Page.Support.SmartPerformance"
 									(click)="checkPreviousResults()">
 									<span href="javascript:void(0)"
-										class="check-previous-results mr-3">Check previous results</span>
+										class="check-previous-results mr-3">{{'smartPerformance.checkPreviousResults' |translate }}</span>
 									<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 								</a>
 							</div>
