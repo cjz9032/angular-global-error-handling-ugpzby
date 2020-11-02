@@ -200,4 +200,18 @@ export class SurveyFormComponent implements OnInit {
 		const modal = document.querySelector('.survey-modal') as HTMLElement;
 		modal.focus();
 	}
+
+	@HostListener('keydown', ['$event'])
+	onKeyDown(event: KeyboardEvent) {
+		if (event.shiftKey &&
+			event.key === 'Tab' &&
+			document.activeElement
+		) {
+			const activeElm: any = document.activeElement;
+			if (activeElm.type === 'radio' && activeElm.name?.indexOf('.question1') !== -1) {
+				document.getElementById('survey-modal-btn-close').focus();
+				event.preventDefault();
+			}
+		}
+	}
 }
