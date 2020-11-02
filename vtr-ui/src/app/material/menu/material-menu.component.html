@@ -100,10 +100,8 @@
 					</li>
 					<li *ngIf="item && !item.hide && item.subitems && item.subitems.length > 0 && item.id !== 'user' && item.id !== 'app-search'">
 						<button mat-button
-							#menuTrigger="matMenuTrigger"
-							matMenuHoverTrigger
-							[matMenuTriggerFor]="materialMenuDropdown?.matMenu"
-							*ngIf="item.label | translate"
+							#menuTrigger="matMenuHoverTrigger"
+							[matMenuHoverTriggerFor]="materialMenuDropdown?.matMenu"
 							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
 							[ngClass]="{'beta-item': item.beta, 'actived': updateActiveItem(item.id)}"
 							role="menu"
@@ -122,8 +120,9 @@
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
 							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
-							(focus)="[closeAllOtherMatMenu(menuTrigger), openMatMenu(menuTrigger)]"
-							[innerHTML]="item.label | translate">
+							(focus)="closeAllOtherMatMenu(menuTrigger)">
+							<span [innerHTML]="item.label | translate"></span>
+							<fa-icon class="px-2 menu-angle-down-icon" [icon]="['fal', 'angle-down']"></fa-icon>
 						</button>
 						<vtr-material-menu-dropdown
 							#materialMenuDropdown="materialMenuDropdownComponent"
@@ -135,9 +134,8 @@
 					</li>
 					<li class="user-item" *ngIf="item && !item.hide && item.id === 'user' && languageService.isLanguageLoaded">
 						<button mat-button
-							#menuTrigger="matMenuTrigger"
-							matMenuHoverTrigger
-							[matMenuTriggerFor]="userMenuMain"
+							#menuTrigger="matMenuHoverTrigger"
+							[matMenuHoverTriggerFor]="userMenuMain"
 							class="h-100 d-flex align-items-center m-0 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
 							id="navbarDropdown"
 							attr.aria-label="navbarDropdown"
@@ -147,7 +145,7 @@
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
-							(focus)="[closeAllOtherMatMenu(menuTrigger), openMatMenu(menuTrigger)]">
+							(focus)="closeAllOtherMatMenu(menuTrigger)">
 							<div class="d-inline-block text-center user-initials"
 								[innerHTML]="deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials">
 							</div>
@@ -156,6 +154,7 @@
 								id="menu-main-unread-message-count"
 								*ngIf="!deviceService.isArm && appsForYouService.UnreadMessageCount.totalMessage"
 								[innerHTML]="appsForYouService.UnreadMessageCount.totalMessage"></span>
+							<fa-icon class="px-2 menu-angle-down-icon" [icon]="['fal', 'angle-down']"></fa-icon>
 						</button>
 						<mat-menu #userMenuMain="matMenu"
 							[hasBackdrop]="false"

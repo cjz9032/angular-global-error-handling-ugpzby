@@ -81,6 +81,9 @@
 				font-size: $fontsize_sm;
 				font-weight: $weight_light;
 				outline: none;
+				.menu-angle-down-icon {
+					font-size: $fontsize_xl;
+				}
 				&::after {
 					border: 0 !important;
 				}
