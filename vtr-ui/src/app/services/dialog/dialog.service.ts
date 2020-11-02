@@ -23,7 +23,7 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
-import { WifiSecurityService } from '../security/wifi-security.service';
+import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 
 @Injectable({
 	providedIn: 'root'
