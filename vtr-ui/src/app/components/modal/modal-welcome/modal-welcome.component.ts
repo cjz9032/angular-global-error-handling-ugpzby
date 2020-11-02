@@ -109,9 +109,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	@Input() tutorialVersion: string;
 
-	@ViewChildren('welcomePage2') welcomePage2: any;
-	shouldManuallyFocusPage2 = true;
-
 	constructor(
 		private configService: ConfigService,
 		private languageService: LanguageService,
@@ -173,13 +170,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		const welcomeEnd: any = new Date();
 		const welcomeUseTime = welcomeEnd - this.welcomeStart;
 		this.logger.info(`Performance: TutorialPage after view init. ${welcomeUseTime}ms`);
-
-		this.welcomePage2.changes.subscribe(() => {
-			if (this.welcomePage2.length > 0 && this.shouldManuallyFocusPage2) {
-				this.welcomePage2.first.nativeElement.focus();
-				this.shouldManuallyFocusPage2 = false;
-			}
-		});
 	}
 
 	next(page) {
