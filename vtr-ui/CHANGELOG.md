@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.39](https://bitbucket.tc.lenovo.com///compare/v1.8.38...v1.8.39) (2020-11-02)
+
+
+### Features
+
+* **Smart Performance:** VAN-22978 use price widget in all non-subscriber page ([d92095a](https://bitbucket.tc.lenovo.com///commit/d92095acabb1daae0dbe0645ba545b4626dba70a))
+
+
+### Bug Fixes
+
+* **ui-menu:** change tabindex of header warranty ([ecf76af](https://bitbucket.tc.lenovo.com///commit/ecf76af8e6aa76394b4dc2b9706adbb73775d6e7))
+* **ui-menu:** fix both of Device and Support are highlighted ([7fb10be](https://bitbucket.tc.lenovo.com///commit/7fb10be40764f5bdaee4c4fb364f04db19e5d4bb))
+* **ui-menu:** fix long menu text display wrong ([aecc1dc](https://bitbucket.tc.lenovo.com///commit/aecc1dcba3c084e287bb9c4d7861f3f409fceab1))
+* **ui-menu:** fix touch issue and add angel down ([c34ea87](https://bitbucket.tc.lenovo.com///commit/c34ea8754c75635cb147e65019f7f5f7a5c108a7))
+* **ui-menu:** Modify MatMenuTrigger type ([92c1543](https://bitbucket.tc.lenovo.com///commit/92c15436a86e4421e4982c1739509c595229dc56))
+* disable IMC and refresh page should show as caches ([e375edc](https://bitbucket.tc.lenovo.com///commit/e375edc22c0089fbf82e23b2642d89e9275ff854))
+
 ### [1.8.38](https://bitbucket.tc.lenovo.com///compare/v1.8.37...v1.8.38) (2020-10-30)
 
 
