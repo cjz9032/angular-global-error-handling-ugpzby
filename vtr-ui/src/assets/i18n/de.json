@@ -774,8 +774,8 @@
                 "sub2": "Meine Geräteeinstellungen",
                 "sub3": "Systemaktualisierung",
                 "sub4": "Intelligente Unterstützung",
-				"sub5": "Details zur Einheit",
-				"sub6": "Details der Einheiteneinstellungen"
+                "sub5": "Details zur Einheit",
+                "sub6": "Details der Einheiteneinstellungen"
             },
             "security": {
                 "title": "Sicherheit",
@@ -913,119 +913,119 @@
                 "emailAddress": "E-Mail-Adresse",
                 "invalidEmailMsg": "Ungültige E-Mail-Adresse"
             }
-		},
-		"survey": {
-			"title": "Lenovo Umfrage",
-			"next": "WEITER",
-			"submit": "Einreichen",
-			"form": {
-				"page1": {
-					"summary": "Überlegen Sie, welche Attribute Ihnen bei der Auswahl eines Laptop/Notebook-Computers für die private Nutzung besonders wichtig sind.",
-					"question": "Bitte wählen Sie das wichtigere Attribut aus.",
-					"question1": {
-						"options": [
-							"Preis",
-							"Hersteller/Markenname"
-						]
-					},
-					"question2": {
-						"options": [
-							"Prozessorgeschwindigkeit",
-							"Formfaktor/Stil (herkömmliches Laptop, Convertible-Notebook, abnehmbar)"
-						]
-					},
-					"question3": {
-						"options": [
-							"Grafikeigenschaften",
-							"Bildschirmgröße"
-						]
-					},
-					"question4": {
-						"options": [
-							"Bildschirmgröße",
-							"Gewicht"
-						]
-					}
-				},
-				"page2": {
-					"summary": "Wie wichtig sind Ihnen die folgenden Grafikeigenschaften beim Kauf eines Laptop/Notebook-Computers?",
-					"question1": "HDR/großer Dynamikbereich (HD/hohe Auflösung)",
-					"question2": "Touchscreen",
-					"options": [
-						"1 - Überhaupt nicht wichtig",
-						"2",
-						"3",
-						"4",
-						"5 - Äußerst wichtig",
-						"6 - Option ist mir nicht bekannt"
-					]
-				},
-				"page3": {
-					"summary": "Wie sehr stimmen Sie den folgenden Aussagen zu Laptop/Notebook-Computern zu?",
-					"question1": "Es ist sehr wichtig, ein Laptop/Notebook zu haben, auf das Menschen aufmerksam werden",
-					"question2": "Mir ist nicht wichtig, aus welchem Material das Laptop/Notebook-Gehäuse besteht.",
-					"options": [
-						"1 - Überhaupt nicht einverstanden",
-						"2 - Eher nicht einverstanden",
-						"3 - Neutral",
-						"4 - Eher einverstanden",
-						"5 - Vollständig einverstanden"
-					]
-				},
-				"page4": {
-					"summary": "Wie wichtig sind Ihnen die folgenden Aktivitäten, die Sie an Ihrem privaten Computer ausführen?",
-					"question1": "Berufliche Arbeit",
-					"question2": "Spiele spielen",
-					"question3": "Aktuelle Nachrichten lesen",
-					"question4": "Filme/TV-Shows/anderes anschauen",
-					"options": [
-						"1 - Überhaupt nicht wichtig für mich",
-						"2",
-						"3",
-						"4",
-						"5 - Äußerst wichtig für mich",
-						"6 - Ich führe diese Aktivität nicht an einem privaten Computer aus"
-					]
-				},
-				"page5": {
-					"question1": {
-						"title": "Verwenden Sie einen Sprachassistenten (z. B. Alexa, Siri, Google Assistant, Cortana) auf einer der folgenden privaten Einheiten?  Wählen Sie bitte alle zutreffenden Antworten aus.",
-						"options": [
-							"Auf meinem Desktop-Computer",
-							"Auf meinem Laptop/Notebook-Computer",
-							"Auf meinem Tablet",
-							"Auf meinem Smartphone",
-							"Mit einem intelligenten Lautsprecher/Display",
-							"Ich verwende keinen Sprachassistenten mit diesen Einheiten"
-						]
-					},
-					"question2": {
-						"title": "Welche der folgenden Aussagen trifft am besten auf Sie zu?",
-						"options": [
-							"Ich gehöre normalerweise zu den Menschen, die neue Technologie kaufen",
-							"Ich kaufe neue Technologie früher als die meisten Menschen",
-							"Ich kaufe neue Technologie, wenn sie bereits von vielen Menschen verwendet wird",
-							"Ich warte mit dem Kauf neuer Technologie, bis sie bereits von vielen Menschen verwendet wird"
-						]
-					},
-					"question3": {
-						"title": "Wie viel geben Sie normalerweise für einen Computer aus?",
-						"options": [
-							"Weniger als 300 €",
-							"300 € - 499 €",
-							"500 € - 699 €",
-							"700 € - 999 €",
-						   	"1000 € - 1299 €",
-							"1300 € - 1499 €",
-							"1500 € oder mehr"
-						]
-					}
-				},
-				"messages": {
-					"feedbackSuccess": "Vielen Dank für Ihr Feedback!"
-				}
-			}
-		},
+        },
+        "survey": {
+            "title": "Lenovo Umfrage",
+            "next": "WEITER",
+            "submit": "Einreichen",
+            "form": {
+                "page1": {
+                    "summary": "Überlegen Sie, welche Attribute Ihnen bei der Auswahl eines Laptop/Notebook-Computers für die private Nutzung besonders wichtig sind.",
+                    "question": "Bitte wählen Sie das wichtigere Attribut aus.",
+                    "question1": {
+                        "options": [
+                            "Preis",
+                            "Hersteller/Markenname"
+                        ]
+                    },
+                    "question2": {
+                        "options": [
+                            "Prozessorgeschwindigkeit",
+                            "Formfaktor/Stil (herkömmliches Laptop, Convertible-Notebook, abnehmbar)"
+                        ]
+                    },
+                    "question3": {
+                        "options": [
+                            "Grafikeigenschaften",
+                            "Bildschirmgröße"
+                        ]
+                    },
+                    "question4": {
+                        "options": [
+                            "Bildschirmgröße",
+                            "Gewicht"
+                        ]
+                    }
+                },
+                "page2": {
+                    "summary": "Wie wichtig sind Ihnen die folgenden Grafikeigenschaften beim Kauf eines Laptop/Notebook-Computers?",
+                    "question1": "HDR/großer Dynamikbereich (HD/hohe Auflösung)",
+                    "question2": "Touchscreen",
+                    "options": [
+                        "1 - Überhaupt nicht wichtig",
+                        "2",
+                        "3",
+                        "4",
+                        "5 - Äußerst wichtig",
+                        "6 - Option ist mir nicht bekannt"
+                    ]
+                },
+                "page3": {
+                    "summary": "Wie sehr stimmen Sie den folgenden Aussagen zu Laptop/Notebook-Computern zu?",
+                    "question1": "Es ist sehr wichtig, ein Laptop/Notebook zu haben, auf das Menschen aufmerksam werden",
+                    "question2": "Mir ist nicht wichtig, aus welchem Material das Laptop/Notebook-Gehäuse besteht.",
+                    "options": [
+                        "1 - Überhaupt nicht einverstanden",
+                        "2 - Eher nicht einverstanden",
+                        "3 - Neutral",
+                        "4 - Eher einverstanden",
+                        "5 - Vollständig einverstanden"
+                    ]
+                },
+                "page4": {
+                    "summary": "Wie wichtig sind Ihnen die folgenden Aktivitäten, die Sie an Ihrem privaten Computer ausführen?",
+                    "question1": "Berufliche Arbeit",
+                    "question2": "Spiele spielen",
+                    "question3": "Aktuelle Nachrichten lesen",
+                    "question4": "Filme/TV-Shows/anderes anschauen",
+                    "options": [
+                        "1 - Überhaupt nicht wichtig für mich",
+                        "2",
+                        "3",
+                        "4",
+                        "5 - Äußerst wichtig für mich",
+                        "6 - Ich führe diese Aktivität nicht an einem privaten Computer aus"
+                    ]
+                },
+                "page5": {
+                    "question1": {
+                        "title": "Verwenden Sie einen Sprachassistenten (z. B. Alexa, Siri, Google Assistant, Cortana) auf einer der folgenden privaten Einheiten?  Wählen Sie bitte alle zutreffenden Antworten aus.",
+                        "options": [
+                            "Auf meinem Desktop-Computer",
+                            "Auf meinem Laptop/Notebook-Computer",
+                            "Auf meinem Tablet",
+                            "Auf meinem Smartphone",
+                            "Mit einem intelligenten Lautsprecher/Display",
+                            "Ich verwende keinen Sprachassistenten mit diesen Einheiten"
+                        ]
+                    },
+                    "question2": {
+                        "title": "Welche der folgenden Aussagen trifft am besten auf Sie zu?",
+                        "options": [
+                            "Ich gehöre normalerweise zu den Menschen, die neue Technologie kaufen",
+                            "Ich kaufe neue Technologie früher als die meisten Menschen",
+                            "Ich kaufe neue Technologie, wenn sie bereits von vielen Menschen verwendet wird",
+                            "Ich warte mit dem Kauf neuer Technologie, bis sie bereits von vielen Menschen verwendet wird"
+                        ]
+                    },
+                    "question3": {
+                        "title": "Wie viel geben Sie normalerweise für einen Computer aus?",
+                        "options": [
+                            "Weniger als 300 €",
+                            "300 € - 499 €",
+                            "500 € - 699 €",
+                            "700 € - 999 €",
+                            "1000 € - 1299 €",
+                            "1300 € - 1499 €",
+                            "1500 € oder mehr"
+                        ]
+                    }
+                },
+                "messages": {
+                    "feedbackSuccess": "Vielen Dank für Ihr Feedback!"
+                }
+            }
+        },
         "quickSettings": {
             "title": "Schnelleinstellungen",
             "microphone": "Mikrofon",
@@ -1147,14 +1147,17 @@
             "helpful": "Hilfreiche Inhalte",
             "copy": "kopieren",
             "goodCondition": "Guter Zustand",
-            "needAction": "Wartung erforderlich",
+            "needAction": "Jetzt optimieren",
             "hwStatus": "Hardwarestatus",
             "swStatus": "Softwarestatus",
             "refreshModules": "Module aktualisieren",
             "used": "Belegt",
             "scanned": "Gescannt ",
             "physicalMemory": "Physischer Arbeitsspeicher",
-            "storage": "Speicher"
+            "storage": "Speicher",
+            "scanNow": "Jetzt scannen",
+            "entitled": "Berechtigt",
+            "subscribeNow": "Zum Abonnieren klicken"
         },
         "deviceSettings": {
             "helpful": "Hilfreiche Inhalte",

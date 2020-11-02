@@ -774,8 +774,8 @@
                 "sub2": "Nastavitve mojih naprav",
                 "sub3": "Posodobitev sistema",
                 "sub4": "Pametna pomoč",
-				"sub5": "Podrobnosti o napravi",
-				"sub6": "Podatki o nastavitvah naprave"
+                "sub5": "Podrobnosti o napravi",
+                "sub6": "Podatki o nastavitvah naprave"
             },
             "security": {
                 "title": "Zaščita",
@@ -1035,14 +1035,17 @@
             "helpful": "Koristna vsebina",
             "copy": "kopija",
             "goodCondition": "Dobro stanje",
-            "needAction": "Potrebno vzdrževanje",
+            "needAction": "Optimiziraj zdaj",
             "hwStatus": "Stanje strojne opreme",
             "swStatus": "Stanje programske opreme",
             "refreshModules": "Osvežitev modulov",
             "used": "Uporabljeno",
             "scanned": "Pregledano ",
             "physicalMemory": "Fizični pomnilnik",
-            "storage": "Shramba"
+            "storage": "Shramba",
+            "scanNow": "Preglej zdaj",
+            "entitled": "Upravičeno",
+            "subscribeNow": "Kliknite, da se naročite"
         },
         "deviceSettings": {
             "helpful": "Koristna vsebina",

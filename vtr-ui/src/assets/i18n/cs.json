@@ -773,9 +773,9 @@
                 "sub1": "Mé zařízení",
                 "sub2": "Nastavení mých zařízení",
                 "sub3": "Aktualizace systému",
-				"sub4": "Inteligentní pomoc",
-				"sub5": "Podrobnosti o zařízení",
-				"sub6": "Podrobnosti nastavení zařízení"
+                "sub4": "Inteligentní pomoc",
+                "sub5": "Podrobnosti o zařízení",
+                "sub6": "Podrobnosti nastavení zařízení"
             },
             "security": {
                 "title": "Zabezpečení",
@@ -1035,14 +1035,17 @@
             "helpful": "Užitečný obsah",
             "copy": "kopírovat",
             "goodCondition": "Dobrý stav",
-            "needAction": "Je nutná údržba",
+            "needAction": "Optimalizovat",
             "hwStatus": "Stav hardwaru",
             "swStatus": "Stav softwaru",
             "refreshModules": "Aktualizovat moduly",
             "used": "Využito",
             "scanned": "Zkontrolováno ",
             "physicalMemory": "Fyzická paměť",
-            "storage": "Úložiště"
+            "storage": "Úložiště",
+            "scanNow": "Spustit kontrolu",
+            "entitled": "Oprávněný",
+            "subscribeNow": "Kliknutím se přihlásíte k odběru"
         },
         "deviceSettings": {
             "helpful": "Užitečný obsah",

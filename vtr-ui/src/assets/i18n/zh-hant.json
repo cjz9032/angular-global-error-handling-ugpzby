@@ -774,8 +774,8 @@
                 "sub2": "我的裝置設定",
                 "sub3": "系統更新",
                 "sub4": "智慧助理",
-				"sub5": "裝置詳細資訊",
-				"sub6": "裝置設定詳細資料"
+                "sub5": "裝置詳細資訊",
+                "sub6": "裝置設定詳細資料"
             },
             "security": {
                 "title": "安全性",
@@ -1035,14 +1035,17 @@
             "helpful": "實用內容",
             "copy": "複製",
             "goodCondition": "狀況良好",
-            "needAction": "需要維護",
+            "needAction": "立即最佳化",
             "hwStatus": "硬體狀態",
             "swStatus": "軟體狀態",
             "refreshModules": "重新整理模組",
             "used": "已用",
             "scanned": "已掃描",
             "physicalMemory": "實體記憶體",
-            "storage": "儲存裝置"
+            "storage": "儲存裝置",
+            "scanNow": "立即掃描",
+            "entitled": "已命名",
+            "subscribeNow": "按一下以訂閱"
         },
         "deviceSettings": {
             "helpful": "實用內容",

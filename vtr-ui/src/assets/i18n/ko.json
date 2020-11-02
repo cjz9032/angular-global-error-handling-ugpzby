@@ -774,8 +774,8 @@
                 "sub2": "내 장치 설정",
                 "sub3": "시스템 업데이트",
                 "sub4": "고급 지원",
-				"sub5": "장치 세부 정보",
-				"sub6": "장치 설정 세부 정보"
+                "sub5": "장치 세부 정보",
+                "sub6": "장치 설정 세부 정보"
             },
             "security": {
                 "title": "보안",
@@ -1035,14 +1035,17 @@
             "helpful": "유용한 콘텐츠",
             "copy": "복사",
             "goodCondition": "상태 양호",
-            "needAction": "유지 보수 필요",
+            "needAction": "지금 최적화",
             "hwStatus": "하드웨어 상태",
             "swStatus": "소프트웨어 상태",
             "refreshModules": "모듈 새로 고침",
             "used": "사용 공간",
             "scanned": "검사함 ",
             "physicalMemory": "물리적 메모리",
-            "storage": "저장 장치"
+            "storage": "저장 장치",
+            "scanNow": "지금 검사",
+            "entitled": "자격 있음",
+            "subscribeNow": "구독하려면 클릭"
         },
         "deviceSettings": {
             "helpful": "유용한 콘텐츠",

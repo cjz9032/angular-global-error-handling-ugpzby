@@ -774,8 +774,8 @@
                 "sub2": "Ustawienia moich urządzeń",
                 "sub3": "Aktualizacja systemu",
                 "sub4": "Inteligentny asystent",
-				"sub5": "Szczegóły urządzenia",
-				"sub6": "Szczegóły ustawień urządzenia"
+                "sub5": "Szczegóły urządzenia",
+                "sub6": "Szczegóły ustawień urządzenia"
             },
             "security": {
                 "title": "Ochrona",
@@ -1035,14 +1035,17 @@
             "helpful": "Pomocna treść",
             "copy": "kopiuj",
             "goodCondition": "Dobry stan",
-            "needAction": "Wymagana konserwacja",
+            "needAction": "Zoptymalizuj teraz",
             "hwStatus": "Stan sprzętu",
             "swStatus": "Stan oprogramowania",
             "refreshModules": "Odśwież moduły",
             "used": "Zajęte",
             "scanned": "Przeskanowano ",
             "physicalMemory": "Pamięć fizyczna",
-            "storage": "Pamięć masowa"
+            "storage": "Pamięć masowa",
+            "scanNow": "Skanuj teraz",
+            "entitled": "Posiada uprawnienia",
+            "subscribeNow": "Kliknij, aby zasubskrybować"
         },
         "deviceSettings": {
             "helpful": "Pomocna treść",

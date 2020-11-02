@@ -774,8 +774,8 @@
                 "sub2": "Impostazioni dispositivo",
                 "sub3": "Aggiornamento del sistema",
                 "sub4": "Assistenza intelligente",
-				"sub5": "Dettagli dispositivo",
-				"sub6": "Dettagli impostazioni dispositivo"
+                "sub5": "Dettagli dispositivo",
+                "sub6": "Dettagli impostazioni dispositivo"
             },
             "security": {
                 "title": "Protezione",
@@ -1035,14 +1035,17 @@
             "helpful": "Contenuti utili",
             "copy": "copia",
             "goodCondition": "Buone condizioni",
-            "needAction": "Manutenzione richiesta",
+            "needAction": "Ottimizza ora",
             "hwStatus": "Stato hardware",
             "swStatus": "Stato software",
             "refreshModules": "Aggiorna moduli",
             "used": "Utilizzato",
             "scanned": "Scansione eseguita ",
             "physicalMemory": "Memoria fisica",
-            "storage": "Memorizzazione"
+            "storage": "Memorizzazione",
+            "scanNow": "Esegui scansione",
+            "entitled": "Senza titolo",
+            "subscribeNow": "Fare clic per iscriversi"
         },
         "deviceSettings": {
             "helpful": "Contenuti utili",

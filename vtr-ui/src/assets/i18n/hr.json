@@ -774,8 +774,8 @@
                 "sub2": "Moje postavke uređaja",
                 "sub3": "Ažuriranje sustava",
                 "sub4": "Pametna pomoć",
-				"sub5": "Pojedinosti o uređaju",
-				"sub6": "Pojedinosti postavki uređaja"
+                "sub5": "Pojedinosti o uređaju",
+                "sub6": "Pojedinosti postavki uređaja"
             },
             "security": {
                 "title": "Sigurnost",
@@ -1035,14 +1035,17 @@
             "helpful": "Korisni sadržaj",
             "copy": "kopija",
             "goodCondition": "Dobro stanje",
-            "needAction": "Potrebno je održavanje",
+            "needAction": "Optimiziraj odmah",
             "hwStatus": "Status hardvera",
             "swStatus": "Status softvera",
             "refreshModules": "Osvježi module",
             "used": "Iskorišteni prostor",
             "scanned": "Skenirano ",
             "physicalMemory": "Fizička memorija",
-            "storage": "Pohrana"
+            "storage": "Pohrana",
+            "scanNow": "Skeniraj sada",
+            "entitled": "Ostvarujete pravo",
+            "subscribeNow": "Kliknite za pretplatu"
         },
         "deviceSettings": {
             "helpful": "Korisni sadržaj",

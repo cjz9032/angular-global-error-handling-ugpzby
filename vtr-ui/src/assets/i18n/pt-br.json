@@ -774,8 +774,8 @@
                 "sub2": "Configurações do meu dispositivo",
                 "sub3": "Atualização do sistema",
                 "sub4": "Assistência inteligente",
-				"sub5": "Detalhes do dispositivo",
-				"sub6": "Detalhes das configurações do dispositivo"
+                "sub5": "Detalhes do dispositivo",
+                "sub6": "Detalhes das configurações do dispositivo"
             },
             "security": {
                 "title": "Segurança",
@@ -914,118 +914,118 @@
                 "invalidEmailMsg": "Endereço de e-mail inválido"
             }
         },
-		"survey": {
-			"title": "Pesquisa Lenovo",
-			"next": "AVANÇAR",
-			"submit": "Enviar",
-			"form": {
-				"page1": {
-					"summary": "Pense nos atributos que são mais importantes para você ao selecionar um laptop/notebook para uso pessoal.",
-					"question": "Selecione o atributo mais importante.",
-					"question1": {
-						"options": [
-							"Preço",
-							"Nome do fabricante/marca"
-						]
-					},
-					"question2": {
-						"options": [
-							"Velocidade do processador",
-							"Estilo de fator de forma (laptop tradicional, conversível, destacável)"
-						]
-					},
-					"question3": {
-						"options": [
-							"Capacidades gráficas",
-							"Tamanho da tela"
-						]
-					},
-					"question4": {
-						"options": [
-							"Tamanho da tela",
-							"Peso"
-						]
-					}
-				},
-				"page2": {
-					"summary": "Qual a importância de cada uma das seguintes características de exibição ao considerar um laptop/computador notebook?",
-					"question1": "HDR/High-Dynamic Range (alta definição/resolução)",
-					"question2": "Tela sensível ao toque",
-					"options": [
-						"1 – Nenhuma importância",
-						"2",
-						"3",
-						"4",
-						"5 – Extremamente importante",
-						"6 – Não conheço esta opção"
-					]
-				},
-				"page3": {
-					"summary": "O quanto você concorda ou discorda das afirmações a seguir sobre laptops/computadores notebook?",
-					"question1": "É muito importante ter um laptop/notebook que as pessoas notem",
-					"question2": "Não importa para mim que tipo de material é usado no corpo de um laptop/notebook.",
-					"options": [
-						"1 – Não concordo",
-						"2 – Discordo parcialmente",
-						"3 – Não concordo nem discordo",
-						"4 – Concordo parcialmente",
-						"5 – Concordo totalmente"
-					]
-				},
-				"page4": {
-					"summary": "Qual a importância de cada uma das seguintes atividades que você realiza em um computador doméstico?",
-					"question1": "Realizar tarefas para o trabalho",
-					"question2": "Jogar games",
-					"question3": "Ficar por dentro das últimas notícias",
-					"question4": "Assistir a filmes/programas de TV/outra visualização",
-					"options": [
-						"1 – Não é tão importante para mim",
-						"2",
-						"3",
-						"4",
-						"5 – É extremamente importante para mim",
-						"6 – Não realizo esta atividade em um computador doméstico"
-					]
-				},
-				"page5": {
-					"question1": {
-						"title": "Você usa assistente de voz (por exemplo, Alexa, Siri, Google Assistant, Cortana) em algum dos seguintes dispositivos domésticos?  Selecione todas as opções aplicáveis.",
-						"options": [
-							"No meu computador desktop",
-							"No meu laptop/computador notebook",
-							"No meu tablet",
-							"No meu smartphone",
-							"Em um alto-falante/tela inteligente",
-							"Não uso assistente de voz em nenhum desses dispositivos"
-						]
-					},
-					"question2": {
-						"title": "Qual das seguintes alternativas melhor descreve você?",
-						"options": [
-							"Geralmente sou uma das primeiras pessoas a comprar a tecnologia mais recente",
-							"Compro a tecnologia mais recente mais cedo do que a maioria",
-							"Compro uma nova tecnologia quando muitas pessoas já a estão usando",
-							"Espero para comprar uma nova tecnologia depois que a maioria das pessoas já a estão usando"
-						]
-					},
-					"question3": {
-						"title": "Quanto você normalmente gasta em um computador?",
-						"options": [
-							"Menos de R$1.000",
-							"R$1.000 a R$1.999",
-							"R$2.000 a R$2.799",
-							"R$2.800 a R$3.499",
-							"R$3.500 a R$3.999",
-							"R$4.000 a R$4.499",
-							"Acima de R$4.499"
-						]
-					}
-				},
-				"messages": {
-					"feedbackSuccess": "Agradecemos seus comentários."
-				}
-			}
-		},
+        "survey": {
+            "title": "Pesquisa Lenovo",
+            "next": "AVANÇAR",
+            "submit": "Enviar",
+            "form": {
+                "page1": {
+                    "summary": "Pense nos atributos que são mais importantes para você ao selecionar um laptop/notebook para uso pessoal.",
+                    "question": "Selecione o atributo mais importante.",
+                    "question1": {
+                        "options": [
+                            "Preço",
+                            "Nome do fabricante/marca"
+                        ]
+                    },
+                    "question2": {
+                        "options": [
+                            "Velocidade do processador",
+                            "Estilo de fator de forma (laptop tradicional, conversível, destacável)"
+                        ]
+                    },
+                    "question3": {
+                        "options": [
+                            "Capacidades gráficas",
+                            "Tamanho da tela"
+                        ]
+                    },
+                    "question4": {
+                        "options": [
+                            "Tamanho da tela",
+                            "Peso"
+                        ]
+                    }
+                },
+                "page2": {
+                    "summary": "Qual a importância de cada uma das seguintes características de exibição ao considerar um laptop/computador notebook?",
+                    "question1": "HDR/High-Dynamic Range (alta definição/resolução)",
+                    "question2": "Tela sensível ao toque",
+                    "options": [
+                        "1 – Nenhuma importância",
+                        "2",
+                        "3",
+                        "4",
+                        "5 – Extremamente importante",
+                        "6 – Não conheço esta opção"
+                    ]
+                },
+                "page3": {
+                    "summary": "O quanto você concorda ou discorda das afirmações a seguir sobre laptops/computadores notebook?",
+                    "question1": "É muito importante ter um laptop/notebook que as pessoas notem",
+                    "question2": "Não importa para mim que tipo de material é usado no corpo de um laptop/notebook.",
+                    "options": [
+                        "1 – Não concordo",
+                        "2 – Discordo parcialmente",
+                        "3 – Não concordo nem discordo",
+                        "4 – Concordo parcialmente",
+                        "5 – Concordo totalmente"
+                    ]
+                },
+                "page4": {
+                    "summary": "Qual a importância de cada uma das seguintes atividades que você realiza em um computador doméstico?",
+                    "question1": "Realizar tarefas para o trabalho",
+                    "question2": "Jogar games",
+                    "question3": "Ficar por dentro das últimas notícias",
+                    "question4": "Assistir a filmes/programas de TV/outra visualização",
+                    "options": [
+                        "1 – Não é tão importante para mim",
+                        "2",
+                        "3",
+                        "4",
+                        "5 – É extremamente importante para mim",
+                        "6 – Não realizo esta atividade em um computador doméstico"
+                    ]
+                },
+                "page5": {
+                    "question1": {
+                        "title": "Você usa assistente de voz (por exemplo, Alexa, Siri, Google Assistant, Cortana) em algum dos seguintes dispositivos domésticos?  Selecione todas as opções aplicáveis.",
+                        "options": [
+                            "No meu computador desktop",
+                            "No meu laptop/computador notebook",
+                            "No meu tablet",
+                            "No meu smartphone",
+                            "Em um alto-falante/tela inteligente",
+                            "Não uso assistente de voz em nenhum desses dispositivos"
+                        ]
+                    },
+                    "question2": {
+                        "title": "Qual das seguintes alternativas melhor descreve você?",
+                        "options": [
+                            "Geralmente sou uma das primeiras pessoas a comprar a tecnologia mais recente",
+                            "Compro a tecnologia mais recente mais cedo do que a maioria",
+                            "Compro uma nova tecnologia quando muitas pessoas já a estão usando",
+                            "Espero para comprar uma nova tecnologia depois que a maioria das pessoas já a estão usando"
+                        ]
+                    },
+                    "question3": {
+                        "title": "Quanto você normalmente gasta em um computador?",
+                        "options": [
+                            "Menos de R$1.000",
+                            "R$1.000 a R$1.999",
+                            "R$2.000 a R$2.799",
+                            "R$2.800 a R$3.499",
+                            "R$3.500 a R$3.999",
+                            "R$4.000 a R$4.499",
+                            "Acima de R$4.499"
+                        ]
+                    }
+                },
+                "messages": {
+                    "feedbackSuccess": "Agradecemos seus comentários."
+                }
+            }
+        },
         "quickSettings": {
             "title": "Configurações rápidas",
             "microphone": "Microfone",
@@ -1147,14 +1147,17 @@
             "helpful": "Conteúdo útil",
             "copy": "copiar",
             "goodCondition": "Em boas condições",
-            "needAction": "Manutenção necessária",
+            "needAction": "Otimizar agora",
             "hwStatus": "Status do hardware",
             "swStatus": "Status do software",
             "refreshModules": "Atualizar módulos",
             "used": "Usado",
             "scanned": "Digitalizado ",
             "physicalMemory": "Memória Física",
-            "storage": "Armazenamento"
+            "storage": "Armazenamento",
+            "scanNow": "Verificar agora",
+            "entitled": "Tem permissão",
+            "subscribeNow": "Clique para se inscrever"
         },
         "deviceSettings": {
             "helpful": "Conteúdo útil",

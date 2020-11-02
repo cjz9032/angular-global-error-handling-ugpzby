@@ -774,8 +774,8 @@
                 "sub2": "הגדרות המכשיר שלי",
                 "sub3": "‏‫עדכון המערכת‬",
                 "sub4": "עזרה חכמה",
-				"sub5": "פרטי המכשיר",
-				"sub6": "פרטי הגדרות התקן"
+                "sub5": "פרטי המכשיר",
+                "sub6": "פרטי הגדרות התקן"
             },
             "security": {
                 "title": "אבטחה",
@@ -1035,14 +1035,17 @@
             "helpful": "תוכן מועיל",
             "copy": "העתקה",
             "goodCondition": "במצב טוב",
-            "needAction": "יש צורך בתחזוקה",
+            "needAction": "מיטוב עכשיו",
             "hwStatus": "מצב חומרה",
             "swStatus": "מצב תוכנה",
             "refreshModules": "רענון מודולים",
             "used": "בשימוש",
             "scanned": "נסרק ",
             "physicalMemory": "זיכרון פיזי",
-            "storage": "אחסון"
+            "storage": "אחסון",
+            "scanNow": "סריקה עכשיו",
+            "entitled": "יש זכאות",
+            "subscribeNow": "לחצו כדי להירשם"
         },
         "deviceSettings": {
             "helpful": "תוכן מועיל",

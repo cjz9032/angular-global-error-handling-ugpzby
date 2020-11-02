@@ -774,8 +774,8 @@
                 "sub2": "Mine enhedsindstillinger",
                 "sub3": "Systemopdatering",
                 "sub4": "Smart hjælp",
-				"sub5": "Enhedsoplysninger",
-				"sub6": "Detaljer om enhedsindstillinger"
+                "sub5": "Enhedsoplysninger",
+                "sub6": "Detaljer om enhedsindstillinger"
             },
             "security": {
                 "title": "Sikkerhed",
@@ -1035,14 +1035,17 @@
             "helpful": "Nyttigt indhold",
             "copy": "kopiér",
             "goodCondition": "God tilstand",
-            "needAction": "Vedligeholdelse påkrævet",
+            "needAction": "Optimer nu",
             "hwStatus": "Hardwarestatus",
             "swStatus": "Softwarestatus",
             "refreshModules": "Opdater moduler",
             "used": "Brugt",
             "scanned": "Scannet ",
             "physicalMemory": "Fysisk hukommelse",
-            "storage": "Lager"
+            "storage": "Lager",
+            "scanNow": "Scan nu",
+            "entitled": "Berettiget",
+            "subscribeNow": "Klik for at abonnere"
         },
         "deviceSettings": {
             "helpful": "Nyttigt indhold",
