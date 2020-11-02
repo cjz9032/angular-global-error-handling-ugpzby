@@ -29,7 +29,6 @@ import { WifiSecurityService } from 'src/app/services/security/wifi-security.ser
 	providedIn: 'root'
 })
 export class DialogService {
-	private dialogRef: MatDialogRef<MaterialDialogComponent>;
 
 	constructor(
 		private commonService: CommonService,
@@ -43,7 +42,7 @@ export class DialogService {
 	)  { }
 
 	openInvitationCodeDialog() {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
@@ -57,7 +56,7 @@ export class DialogService {
 	}
 
 	wifiSecurityLocationDialog(wifiSecurity: WifiSecurity) {
-		if (this.dialogRef || this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) || this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInGamingDashboard)) {
@@ -88,7 +87,7 @@ export class DialogService {
 	}
 
 	wifiSecurityErrorMessageDialog() {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage)) {
@@ -109,7 +108,7 @@ export class DialogService {
 	}
 
 	homeProtectionOpenLocationDialog(wifiSecurity: WifiSecurity) {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage)) {
@@ -134,7 +133,7 @@ export class DialogService {
 	}
 
 	homeSecurityPluginMissingDialog() {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
@@ -154,7 +153,7 @@ export class DialogService {
 	}
 
 	homeSecurityOfflineDialog() {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
@@ -171,7 +170,7 @@ export class DialogService {
 	}
 
 	homeSecurityAccountDialog() {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
@@ -188,7 +187,7 @@ export class DialogService {
 	}
 
 	openCHSPermissionModal(locationPermission: DeviceLocationPermission): NgbModalRef {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage, false)) {
@@ -205,7 +204,7 @@ export class DialogService {
 	}
 
 	openWelcomeModal(showWelcome: number, locationPermission: DeviceLocationPermission): NgbModalRef {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
@@ -226,7 +225,7 @@ export class DialogService {
 	}
 
 	homeSecurityTrialModal(showWhichPage: CHSTrialModalPage): NgbModalRef {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
@@ -280,7 +279,7 @@ export class DialogService {
 	}
 
 	openModernPreloadModal() {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		const modernPreloadModal: NgbModalRef = this.modalService.open(ModalModernPreloadComponent, {
@@ -299,10 +298,10 @@ export class DialogService {
 	}
 
 	openWifiSecurityExpirePromptDialog(dialogData: DialogData, hadExpired: boolean) {
-		if (this.dialogRef) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
-		this.dialogRef = this.dialog.open(MaterialDialogComponent, {
+		const dialogRef = this.dialog.open(MaterialDialogComponent, {
 			maxWidth: '50rem',
 			data: {
 				title: dialogData.title,
@@ -318,21 +317,26 @@ export class DialogService {
 			panelClass: [(this.deviceService.isGaming ? 'is-gaming' : ''), 'm-5', 'h-auto'],
 			id: 'wifi-security-Expire-Prompt-Dialog'
 		});
-		this.dialogRef.afterClosed().subscribe(result => {
+		dialogRef.afterClosed().subscribe(result => {
 			if (result === 'action') {
 				this.openLenovoIdDialog().then((res) => {
 					if (res === 'User close' && hadExpired) {
 						if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth && this.userService.isLenovoIdSupported()) {
 							this.openWifiSecurityExpirePromptDialog(dialogData, hadExpired);
-						} else {
-							if (this.dialogRef) {
-								this.dialogRef.close();
-							}
 						}
 					}
 				});
 			}
-			this.dialogRef = undefined;
 		});
+	}
+
+	hasOpenDialog() {
+		return this.dialog.openDialogs.length || this.modalService.hasOpenModals();
+	}
+
+	closeDialog(id: string) {
+		if (this.dialog.getDialogById(id)) {
+			this.dialog.getDialogById(id).close();
+		}
 	}
 }
