@@ -5,7 +5,7 @@
 <div class="vtr-body vtr-modal-welcome"
 	id="modal-welcome"
 	[ngSwitch]="page">
-	<div *ngSwitchCase="1">
+	<ng-container *ngSwitchCase="1">
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
 				*ngIf="'welcometutorial.title1' | translate">
@@ -86,11 +86,10 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</ng-container>
 	<!-- start of page 2-->
 	<!-- end of page1-->
-	<div *ngSwitchCase="2"
-		#welcomePage2
+	<ng-container *ngSwitchCase="2"
 		tabindex="-1">
 		<div class="card shadow-sm">
 			<div class="card-body p-0"
@@ -261,5 +260,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</ng-container>
 </div>
