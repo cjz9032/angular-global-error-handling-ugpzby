@@ -62,6 +62,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.ngZone.run(() => {
 			if (value !== undefined) {
 				if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
+					this.dialogService.closeDialog('wifi-security-expire-prompt-dialog');
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				} else if (value) {
 					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
@@ -75,8 +76,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 	wsTrialTimeOnEventHandler = (hasTrialDays: number) => {
 		if (this.needOpenExpireDialog(hasTrialDays)) {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, hasTrialDays);
-			this.openExpireDialog(hasTrialDays);
+			if (!this.dialogService.hasOpenDialog()) {
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, hasTrialDays);
+				this.openExpireDialog(hasTrialDays);
+			}
 		}
 	}
 	wsStateEventHandler = () => {
@@ -159,9 +162,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	ngOnDestroy() {
-		if (this.dialog.getDialogById('wifi-security-Expire-Prompt-Dialog')) {
-			this.dialog.getDialogById('wifi-security-Expire-Prompt-Dialog').close();
-		}
+		this.dialogService.closeDialog('wifi-security-expire-prompt-dialog');
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
 		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
 		if (this.wifiSecurity) {
@@ -257,9 +258,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 					break;
 				case LenovoIdStatus.SignedIn:
 					if (notification.payload === true) {
-						if (this.dialog.getDialogById('wifi-security-Expire-Prompt-Dialog')) {
-							this.dialog.getDialogById('wifi-security-Expire-Prompt-Dialog').close();
-						}
+						this.dialogService.closeDialog('wifi-security-expire-prompt-dialog');
 					}
 					break;
 				default:

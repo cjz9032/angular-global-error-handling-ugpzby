@@ -2,7 +2,8 @@
 
 .is-gaming {
     $mat-van-gaming-theme-background: (
-    	selected-button: $light,
+        selected-button: $light,
+        button-scale: scale(0.96),
         // primary button
         primary-button:  $blueFill,  // primary button background color
         primary-hover-button: $blueHover,  // primary button background color

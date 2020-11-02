@@ -4,6 +4,7 @@
 
 $mat-van-theme-background: (
 	selected-button: $light,
+	button-scale: scale(1),
 	// primary button
 	primary-fab-button: map_get($mat-grey, 400),	// fab button background color
 	primary-button: transparent linear-gradient(90deg, $blue-light 0%, $blue-lighter 100%) 0% 0% no-repeat padding-box,	// primary button background color
