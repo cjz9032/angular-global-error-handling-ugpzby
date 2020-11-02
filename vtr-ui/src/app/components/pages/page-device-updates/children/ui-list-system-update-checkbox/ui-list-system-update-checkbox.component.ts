@@ -61,7 +61,6 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.getDownloadSize();
 	 }
 
 	onCheckChange($event: any) {
@@ -172,11 +171,5 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 		if (this.translate2Subscription) {
 			this.translate2Subscription.unsubscribe();
 		}
-	}
-
-	private getDownloadSize() {
-		this.items.forEach(item => {
-			item.downloadSize = this.commonService.formatBytes(parseInt(item.packageSize, 10));
-		});
 	}
 }

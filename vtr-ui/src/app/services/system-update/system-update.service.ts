@@ -697,6 +697,7 @@ export class SystemUpdateService {
 				updateDetail.packageReleaseDate = update.packageReleaseDate;
 				updateDetail.packageSeverity = update.packageSeverity;
 				updateDetail.packageSize = update.packageSize;
+				updateDetail.downloadSize = this.commonService.formatBytes(parseInt(update.packageSize, 10));
 				updateDetail.packageTips = update.packageTips;
 				updateDetail.packageType = update.packageType;
 				updateDetail.packageVendor = update.packageVendor;
