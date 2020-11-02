@@ -32,8 +32,8 @@ export class FeedbackService {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			ariaLabelledBy: 'feedback-dialog-basic-title',
-			windowClass: 'feedback-modal'
+			ariaLabelledBy: 'survey-dialog-basic-title',
+			windowClass: 'survey-modal'
 		});
 		modalRef.componentInstance.surveyId = surveyId;
 	}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
@@ -102,45 +102,36 @@ export class SurveyFormComponent implements OnInit {
 		this.activeModal.close('close');
 	}
 
-	exclusiveAgainstLastOption(page: number, question: string, event: any) {
-		const inputCtrls = document.querySelectorAll(`input[name="${question}"]`);
-		if (!event.target.checked) {
-			this.pages[page].results[question].delete(event.target.value);
-			return;
+	exclusiveAgainstLastOption(page: any, qa: any, value: number) {
+		if (value === qa.options?.length) {	// last option
+			page.results[qa.name] = new Set();	// remove all values when add the value of last option
+		} else {	// not last option
+			page.results[qa.name].delete(qa.options?.length); // delete the value of last option
 		}
-
-		if (event.target === inputCtrls[inputCtrls.length - 1]) {
-			for (let i = 0; i < inputCtrls.length - 1; i++) {
-				const inputCtrl: any = inputCtrls[i];
-				inputCtrl.checked = false;
-			}
-			this.pages[page].results[question] = new Set(); // remove all option
-		}
-		else {
-			const inputCtrl: any = inputCtrls[inputCtrls.length - 1];
-			inputCtrl.checked = false;
-			this.pages[page].results[question].delete(inputCtrls.length);
-		}
-		this.pages[page].results[question].add(event.target.value);
 	}
 
-	setCheckboxStatus(page: number, question: string, event: any) {
-		if (!this.pages[page].results) {
-			this.pages[page].results = {};
+	setRadioStatus(page: any, qaName: string, value: number) {
+		page.results[qaName] = value;
+	}
+
+
+	setCheckboxStatus(page: any, qa: any, value: number) {
+		if (!page.results) {
+			page.results = {};
 		}
 
-		if (!this.pages[page].results[question]) {
-			this.pages[page].results[question] = new Set();
+		if (!page.results[qa.name]) {
+			page.results[qa.name] = new Set();
 		}
 
-		if (question === 'dashboard.survey.form.page5.question1') {
-			this.exclusiveAgainstLastOption(page, question, event);
+		if (qa.name === 'dashboard.survey.form.page5.question1') {
+			this.exclusiveAgainstLastOption(page, qa, value);
+		}
+
+		if (page.results[qa.name].has(value)) {
+			page.results[qa.name].delete(value);
 		} else {
-			if (event.target.checked) {
-				this.pages[page].results[question].add(event.target.value);
-			} else {
-				this.pages[page].results[question].delete(event.target.value);
-			}
+			page.results[qa.name].add(value);
 		}
 	}
 
@@ -202,5 +193,11 @@ export class SurveyFormComponent implements OnInit {
 		});
 
 		this.metricsService.sendMetricsForcibly(data);
+	}
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.survey-modal') as HTMLElement;
+		modal.focus();
 	}
 }
