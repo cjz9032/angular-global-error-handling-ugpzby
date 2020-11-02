@@ -311,5 +311,6 @@ export enum LocalStorageKey {
 	// OLED power control
 	OledPowerSettings = '[LocalStorageKey] OledPowerSettings',
 
-	ExternalMetricsSettings = '[LocalStorageKey] ExternalMetricsSettings'
+	ExternalMetricsSettings = '[LocalStorageKey] ExternalMetricsSettings',
+	DeviceCondition = '[LocalStorageKey] DeviceCondition'
 }

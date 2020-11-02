@@ -439,39 +439,51 @@ export class DashboardService {
 	public getPositionBData(): Observable<any> {
 		return new Observable((subscriber) => {
 			subscriber.next(this.positionBLoadingData);
-			this.positionBResponseReceived = false;
-			if (this.positionBLoadingTimer) {
-				clearTimeout(this.positionBLoadingTimer);
-				this.positionBLoadingTimer = undefined;
-			}
-			// if over 10s, show good condition at first
-			this.positionBLoadingTimer = setTimeout(() => {
-				if (!this.positionBResponseReceived) {
-					subscriber.next(this.goodConditionData);
+			const locDevCondition = this.localCacheService.getLocalCacheValue(LocalStorageKey.DeviceCondition);
+			const locDevStatus = this.getStateCardData(locDevCondition);
+			if (locDevStatus) {
+				subscriber.next(locDevStatus);
+			} else {
+				this.positionBResponseReceived = false;
+				if (this.positionBLoadingTimer) {
+					clearTimeout(this.positionBLoadingTimer);
+					this.positionBLoadingTimer = undefined;
 				}
-			}, 10000);
+				// if over 10s, show good condition at first
+				this.positionBLoadingTimer = setTimeout(() => {
+					if (!this.positionBResponseReceived) {
+						subscriber.next(this.goodConditionData);
+					}
+				}, 10000);
+			}
 
 			this.getDeviceStatus().then((ds) => {
 				this.positionBResponseReceived = true;
 				clearTimeout(this.positionBLoadingTimer);
-
-				switch (ds) {
-					case DeviceCondition.Good:
-						subscriber.next(this.goodConditionData);
-						break;
-					case DeviceCondition.NeedRunSU:
-						subscriber.next(this.needMaintainSU);
-						break;
-					case DeviceCondition.NeedRunSMPScan:
-						subscriber.next(this.needMaintainSP);
-						break;
-					case DeviceCondition.NeedRunHWScan:
-						subscriber.next(this.needMaintainHWS);
-						break;
+				const devCondition = this.getStateCardData(ds);
+				if (devCondition) {
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.DeviceCondition, ds);
+					subscriber.next(devCondition);
 				}
 				subscriber.complete();
 			});
 		});
+	}
+
+	private getStateCardData(devCondition) {
+		if (devCondition) {
+			switch (devCondition) {
+				case DeviceCondition.Good:
+					return this.goodConditionData;
+				case DeviceCondition.NeedRunSU:
+					return this.needMaintainSU;
+				case DeviceCondition.NeedRunSMPScan:
+					return this.needMaintainSP;
+				case DeviceCondition.NeedRunHWScan:
+					return this.needMaintainHWS;
+			}
+		}
+		return undefined;
 	}
 
 	public async isPositionBShowDeviceState() {
@@ -566,11 +578,9 @@ export class DashboardService {
 			return true;
 		}
 
-		if (!lastSacnInfo.date)
-		{
-			const oobeDate =  this.deviceService.getMachineInfoSync()?.firstRunDate || Date.now();
-			if (this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan)
-			{
+		if (!lastSacnInfo.date) {
+			const oobeDate = this.deviceService.getMachineInfoSync()?.firstRunDate || Date.now();
+			if (this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan) {
 				return true;
 			}
 		}
