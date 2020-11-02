@@ -42,7 +42,7 @@ import { BacklightLevelEnum } from 'src/app/components/pages/page-device-setting
 })
 export class MaterialMenuComponent implements OnInit, OnDestroy {
 	@ViewChildren(MatMenuHoverTrigger) hoverTriggers: QueryList<MatMenuHoverTrigger>;
-	@ViewChildren(MatMenuTrigger) triggers: QueryList<MatMenuHoverTrigger>;
+	@ViewChildren(MatMenuTrigger) triggers: QueryList<MatMenuTrigger>;
 	@Input() loadMenuItem: any = {};
 	VantageLogo = `
 		data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c
