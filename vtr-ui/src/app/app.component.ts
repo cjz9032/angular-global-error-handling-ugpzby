@@ -58,7 +58,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
 	public notificationType = NotificationType.Banner;
-	isOldScheduleScanDeleted: any;
 	@ViewChild('pageContainer', { static: true }) pageContainer: ElementRef;
 
 
@@ -153,10 +152,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				}
 			});
 		}
-		this.isOldScheduleScanDeleted = this.localCacheService.getLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted);
-		if (this.isOldScheduleScanDeleted === undefined || this.isOldScheduleScanDeleted === false) {
-			this.removeOldSmartPerformanceScheduleScans();
-		}
+
+		this.removeOldSmartPerformanceScheduleScans();
 	}
 
 	onDragStart(event: DragEvent): boolean {
@@ -176,7 +173,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private patchNgbModalOpen() {
 		const original = NgbModal.prototype.open;
 		// tslint:disable-next-line: only-arrow-functions
-		NgbModal.prototype.open = function(): NgbModalRef {
+		NgbModal.prototype.open = function (): NgbModalRef {
 			if (arguments.length > 1 && 'container' in arguments[1] === false) {
 				Object.assign(arguments[1], { container: 'vtr-root div' });
 			}
@@ -525,15 +522,14 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
 	private removeOldSmartPerformanceScheduleScans() {
-		try {
-			const isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-			if (isSubscribed !== undefined && isSubscribed === true) {
-				this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
-			} else {
-				this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCAN);
-			}
-		} catch (err) {
-			this.logger.error('app.component.removeOldSmartPerformanceScheduleScans.then', err);
+		const isOldScheduleScanDeleted = this.localCacheService.getLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted);
+		if (isOldScheduleScanDeleted === undefined || isOldScheduleScanDeleted === false) {
+			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
+			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCAN);
+			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.SCHEDULESCAN);
+			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted, true);
 		}
 	}
 
@@ -542,9 +538,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.logger.info('app.component.unregisterScheduleScan', payload);
 		try {
 			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
-			if (res?.state) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted, true);
-			}
 			this.logger.info('app.component.unregisterScheduleScan.then', res);
 		} catch (err) {
 			this.logger.error('app.component.unregisterScheduleScan.then', err);
