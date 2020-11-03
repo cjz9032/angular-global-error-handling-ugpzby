@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.40](https://bitbucket.tc.lenovo.com///compare/v1.8.39...v1.8.40) (2020-11-03)
+
+
+### Features
+
+* **NLS:** Add translation ([84d5201](https://bitbucket.tc.lenovo.com///commit/84d520108cbecb09d7ce81b74c9bbfd9ce24151a))
+* **ui-menu:** update Device Settings Details menu on laptop ([1132acb](https://bitbucket.tc.lenovo.com///commit/1132acb955b20e5b7a888d723b661cbcd52175b5))
+
 ### [1.8.39](https://bitbucket.tc.lenovo.com///compare/v1.8.38...v1.8.39) (2020-11-02)
 
 
