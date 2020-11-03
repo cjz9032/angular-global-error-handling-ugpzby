@@ -785,7 +785,9 @@
                 "sub4": "Adgangskodesundhed",
                 "sub5": "VPN-sikkerhed",
                 "sub6": "Fingeraftryk",
-                "sub8": "Sikkerhed i hjemmet"
+                "sub7": "Mine sikkerhedsoplysninger",
+                "sub8": "Sikkerhed i hjemmet",
+                "sub9": "Enhedssikkerhed"
             },
             "support": "Support",
             "beta": {

@@ -785,7 +785,9 @@
                 "sub4": "Sănătatea parolei",
                 "sub5": "Securitate VPN",
                 "sub6": "Amprentă",
-                "sub8": "Securitate domestică"
+                "sub7": "Detaliile mele de securitate",
+                "sub8": "Securitate domestică",
+                "sub9": "Securitate dispozitiv"
             },
             "support": "Asistenţă",
             "beta": {

@@ -785,7 +785,9 @@
                 "sub4": "Jelszó állapota",
                 "sub5": "VPN-biztonság",
                 "sub6": "Ujjlenyomat",
-                "sub8": "Az otthon biztonsága"
+                "sub7": "Saját biztonság részletei",
+                "sub8": "Az otthon biztonsága",
+                "sub9": "Eszközbiztonság"
             },
             "support": "Támogatás",
             "beta": {

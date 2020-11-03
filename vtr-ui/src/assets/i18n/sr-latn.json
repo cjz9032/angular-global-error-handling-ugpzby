@@ -785,7 +785,9 @@
                 "sub4": "Ispravnost lozinke",
                 "sub5": "Bezbednost VPN mreže",
                 "sub6": "Otisak",
-                "sub8": "Kućna bezbednost"
+                "sub7": "Moji detalji o bezbednosti",
+                "sub8": "Kućna bezbednost",
+                "sub9": "Bezbednost uređaja"
             },
             "support": "Podrška",
             "beta": {

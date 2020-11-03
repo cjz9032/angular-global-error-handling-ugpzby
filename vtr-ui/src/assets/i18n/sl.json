@@ -785,7 +785,9 @@
                 "sub4": "Geslo zdravje",
                 "sub5": "VPN Varnost",
                 "sub6": "Prstni odtis",
-                "sub8": "Domača varnost"
+                "sub7": "Moje varnostne podrobnosti",
+                "sub8": "Domača varnost",
+                "sub9": "Varnost naprave"
             },
             "support": "Podpora",
             "beta": {

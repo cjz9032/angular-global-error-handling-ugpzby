@@ -785,7 +785,9 @@
                 "sub4": "Estado de la contraseña",
                 "sub5": "Seguridad VPN",
                 "sub6": "Huella dactilar",
-                "sub8": "Seguridad del hogar"
+                "sub7": "Mis detalles de seguridad",
+                "sub8": "Seguridad del hogar",
+                "sub9": "Dispositivo de seguridad"
             },
             "support": "Soporte",
             "beta": {

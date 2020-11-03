@@ -785,7 +785,9 @@
                 "sub4": "Lösenordstillstånd",
                 "sub5": "VPN-säkerhet",
                 "sub6": "Fingeravtryck",
-                "sub8": "Hemsäkerhet"
+                "sub7": "Min säkerhetsinformation",
+                "sub8": "Hemsäkerhet",
+                "sub9": "Enhetssäkerhet"
             },
             "support": "Support",
             "beta": {

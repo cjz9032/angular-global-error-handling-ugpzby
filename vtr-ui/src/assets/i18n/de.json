@@ -785,7 +785,9 @@
                 "sub4": "Kennwortzustand",
                 "sub5": "VPN-sicherheit",
                 "sub6": "Fingerabdruck",
-                "sub8": "Sicherheit für Zuhause"
+                "sub7": "Meine Sicherheitsdetails",
+                "sub8": "Sicherheit für Zuhause",
+                "sub9": "Einheitensicherheit"
             },
             "support": "Unterstützung",
             "beta": {

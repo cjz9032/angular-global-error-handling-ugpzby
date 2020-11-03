@@ -785,7 +785,9 @@
                 "sub4": "Integridade de senha",
                 "sub5": "Segurança VPN",
                 "sub6": "Impressões digitais",
-                "sub8": "Segurança doméstica"
+                "sub7": "Meus detalhes de segurança",
+                "sub8": "Segurança doméstica",
+                "sub9": "Segurança do dispositivo"
             },
             "support": "Suporte",
             "beta": {

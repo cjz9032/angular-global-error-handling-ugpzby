@@ -785,7 +785,9 @@
                 "sub4": "Parola durumu",
                 "sub5": "VPN güvenliği",
                 "sub6": "Parmak izi",
-                "sub8": "Ev güvenliği"
+                "sub7": "Güvenlik Bilgilerim",
+                "sub8": "Ev güvenliği",
+                "sub9": "Cihaz güvenliği"
             },
             "support": "Destek",
             "beta": {
