@@ -58,7 +58,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
 	public notificationType = NotificationType.Banner;
-	isOldScheduleScanDeleted: any;
 	@ViewChild('pageContainer', { static: true }) pageContainer: ElementRef;
 
 
@@ -523,8 +522,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
 	private removeOldSmartPerformanceScheduleScans() {
-		this.isOldScheduleScanDeleted = this.localCacheService.getLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted);
-		if (this.isOldScheduleScanDeleted === undefined || this.isOldScheduleScanDeleted === false) {
+		const isOldScheduleScanDeleted = this.localCacheService.getLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted);
+		if (isOldScheduleScanDeleted === undefined || isOldScheduleScanDeleted === false) {
 			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
 			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCAN);
 			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.SCHEDULESCAN);
