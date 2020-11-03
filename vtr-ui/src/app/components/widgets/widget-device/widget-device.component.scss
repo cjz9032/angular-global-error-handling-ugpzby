@@ -40,7 +40,8 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 							color: #33495e;
 							padding: 0.2rem 1.2rem;
 							a{
-								display: inline;
+								visibility: visible;
+								outline-width: 1px;;
 							}
 						}
 						span:nth-child(2){
@@ -52,7 +53,8 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 							font-weight: lighter;
 							text-decoration: underline;
 							color:$blue-lighter;
-							display: none;
+							visibility: collapse;
+							outline-width: 0px;
 						}
 					}
 				}

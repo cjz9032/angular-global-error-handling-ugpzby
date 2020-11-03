@@ -191,10 +191,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			ram.total = this.commonService.formatBytes(data?.memoryUsage?.totalSizeInBytes);
 			this.hwStatus[1] = {...ram};
 		}, 1500).catch( e => {
-			if (e.errorcode === 404){
-				this.supportMonitorPerformance = false;
-				this.hwStatus[0].total = undefined;
-			}
+			this.supportMonitorPerformance = false;
+			this.hwStatus[0].total = undefined;
 		});
 	}
 
