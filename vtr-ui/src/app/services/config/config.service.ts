@@ -163,8 +163,8 @@ export class ConfigService {
 				this.notifyMenuChange(this.menu);
 			} else {
 				resultMenu = cloneDeep(this.menuItems);
-				if (machineType === 4) {
-					this.updateMenuForDesktop(resultMenu);
+				if (machineType === 4) { // Update the device settings menu When the device is a desktop
+					this.updateMenuForDeviceSetting(resultMenu);
 				}
 				this.initializeSecurityItem(this.country, resultMenu);
 				await this.initializeHardwareScan(resultMenu);
@@ -181,15 +181,19 @@ export class ConfigService {
 		});
 	}
 
-	private updateMenuForDesktop(menu: MenuItem[]) {
+	private updateMenuForDeviceSetting(menu: MenuItem[]) {
 		const hideMenu = ['power', 'audio', 'display-camera', 'input-accessories'];
+		const visibleMenu = ['device-settings'];
 		const deviceMenu = menu.find((item) => item.id === 'device');
-		if (!deviceMenu || !deviceMenu.subitems || deviceMenu.subitems.length < 1) { return; }
+		if (!(deviceMenu?.subitems?.length >= 1)) { return; }
 		const deviceSettingsMenu = deviceMenu.subitems.find((item) => item.id === 'device-settings');
-		if (!deviceSettingsMenu || !deviceSettingsMenu.subitems || deviceSettingsMenu.subitems.length < 1) { return; }
+		if (!(deviceSettingsMenu?.subitems?.length >= 1)) { return; }
 		deviceSettingsMenu.subitems.forEach((item) => {
 			if (hideMenu.includes(item.id)) {
 				item.hide = true;
+			}
+			if (visibleMenu.includes(item.id)) {
+				item.hide = false;
 			}
 		});
 	}

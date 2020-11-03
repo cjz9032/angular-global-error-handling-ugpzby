@@ -266,11 +266,12 @@
 							"label": "common.menu.device.sub6",
 							"path": null,
 							"icon": null,
+							"hide": true,
 							"metricsEvent": "itemClick",
 							"metricsParent": "device-settings.device.navbar",
 							"metricsItem": "link.mydevicesettings",
 							"routerLinkActiveOptions": {
-								"exact": true
+								"exact": false
 							},
 							"sMode": true,
 							"subitems": []
