@@ -45,6 +45,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	ngUnsubscribe: Subject<any> = new Subject();
 	sysinfo: any;
 	quickScanProtocol = 'lenovo-vantage3:hardware-scan?scan=quickscan';
+	supportMonitorPerformance = true;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -189,7 +190,12 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			ram.used = this.commonService.formatBytes(used);
 			ram.total = this.commonService.formatBytes(data?.memoryUsage?.totalSizeInBytes);
 			this.hwStatus[1] = {...ram};
-		}, 1500);
+		}, 1500).catch( e => {
+			if (e.errorcode === 404){
+				this.supportMonitorPerformance = false;
+				this.hwStatus[0].total = undefined;
+			}
+		});
 	}
 
 	private async updateProssorInfo(processor: DeviceStatus){
@@ -200,7 +206,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			processor.subtitle = `${data.processor.name}`;
 			processor.percent = 0;
 			processor.used =  '--';
-			processor.total = '-- ';
+			processor.total = this.supportMonitorPerformance ? '-- ' : undefined;
 			this.hwStatus[0] = processor;
 		}
 	}
