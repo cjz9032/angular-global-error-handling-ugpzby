@@ -244,7 +244,7 @@
 		.ui-group-card{
 			background: $gaming_darkest;
 		}
-		
+
 		.group-card-sperate-line{
 			background-color: $gaming_bg !important;
 		}
@@ -553,7 +553,7 @@
 							}
 						}
 					}
-					
+
 					.vtr-available-updates {
 						background: $dark_cell;
 
@@ -1187,9 +1187,14 @@
 			.vtr-camera-control {
 				.camera-preview {
 					.feed,
-					.base-preview,
-					.error {
+					.base-preview,{
 						background-color: transparent !important;
+						border: none !important;
+					}
+
+					.feed.disable,
+					.error {
+						background-color: $gaming_bg !important;
 						border: none !important;
 					}
 				}
@@ -2150,7 +2155,7 @@
 		.close-icon {
 			color: $blueFill;
 			&:hover {
-				color: $blueHover; 
+				color: $blueHover;
 			}
 		}
 	}
