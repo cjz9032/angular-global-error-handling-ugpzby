@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.41](https://bitbucket.tc.lenovo.com///compare/v1.8.40...v1.8.41) (2020-11-04)
+
+
+### Bug Fixes
+
+* **accessibility:** fix should not switch focus from BACK to LOGO ([267cda9](https://bitbucket.tc.lenovo.com///commit/267cda9f1cb6e3a3b6e2e552e2b1ae400aefbe81))
+* **wifiSecurity:** fix the navigation title for LWS won't show up ([47c6e94](https://bitbucket.tc.lenovo.com///commit/47c6e948a10ff37802a67f7b68f72d17e874c883))
+
 ### [1.8.40](https://bitbucket.tc.lenovo.com///compare/v1.8.39...v1.8.40) (2020-11-03)
 
 
