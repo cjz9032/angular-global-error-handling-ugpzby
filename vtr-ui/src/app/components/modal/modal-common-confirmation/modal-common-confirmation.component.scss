@@ -68,14 +68,10 @@
 		font-size: $fontsize_xs;
 		font-weight: $weight_bold;
 		padding: 0;
-		margin-right: 2rem;
-		height: 4rem;
-		line-height: 4rem;
+		line-height: 1.4;
 		border-radius: 0;
 		text-transform: uppercase;
-		overflow:hidden;
-		text-overflow:ellipsis;
-		white-space:nowrap;
+		text-align: left;
 		width:auto;
 		&:focus {
 			outline: 0;
