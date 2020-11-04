@@ -166,8 +166,8 @@ export class SmartPerformanceService {
 	}
 
 	async unregisterScanSchedule(scantype) {
+		let res;
 		try {
-			let res;
 			const payload = { scantype };
 			this.logger.info('app.component.unregisterScheduleScan', payload);
 			if (this.isShellAvailable) {
@@ -177,6 +177,7 @@ export class SmartPerformanceService {
 		} catch (error) {
 			this.logger.error('app.component.unregisterScheduleScan.then', error);
 		}
+		return res;
 	}
 
 	getNextScanRunTime(payload: any): Promise<any> {
@@ -189,6 +190,7 @@ export class SmartPerformanceService {
 			throw new Error(error.message);
 		}
 	}
+
 	getScheduleScanStatus(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
