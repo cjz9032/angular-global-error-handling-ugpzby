@@ -239,6 +239,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			// this.writeSmartPerformanceActivity('True', 'True', 'Active');
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.smartPerformanceService.isSubscribed = true;
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
 		}
 	}
 	getScanHistoryWithTime() {

@@ -155,7 +155,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		}
 
 		if (this.IsSmartPerformanceFirstRun === true && this.smartPerformanceService.isSubscribed === true) {
-			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
 		}
 
 		if (this.IsSmartPerformanceFirstRun === true && this.smartPerformanceService.isSubscribed === false) {
@@ -331,23 +331,6 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	// deletes records from task scheduler
-	async unregisterScheduleScan(scantype) {
-		const payload = { scantype };
-		this.logger.info('ui-smart-performance.unregisterScheduleScan', JSON.stringify(payload));
-
-		try {
-			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
-			// when unregisterScheduleScan is successful and scheduledScan is enabled, sending request to set schedule scan
-			if (res.state && this.scanToggleValue) {
-				this.scheduleScan(this.requestScanData);
-			}
-
-		} catch (err) {
-			this.logger.error('ui-smart-performance.unregisterScheduleScan.then', err);
-		}
-	}
-
 	// toggle button event schedule scan
 	setEnableScanStatus(event: any) {
 		this.logger.info('setEnableScanStatus', event.switchValue);
@@ -355,12 +338,12 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 
 		if (!event.switchValue) {
 			if (this.smartPerformanceService.isSubscribed) {
-				this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+				this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
 				this.setDefaultValWhenDisabled();
 				// hiding Next Schedule Scan in SP scan-summary
 				this.scanDatekValueChange.emit({ nextEnable: event.switchValue });
 			} else {
-				this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
+				this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
 				this.setDefaultValWhenDisabled();
 			}
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, false);

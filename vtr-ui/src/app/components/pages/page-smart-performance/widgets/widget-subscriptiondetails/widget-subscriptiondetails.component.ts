@@ -169,7 +169,6 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 			subscriptionData = [];
 		}
 		this.subscriptionDataProcess(subscriptionData);
-
 	}
 
 	subscriptionDataProcess(subscriptionData) {
@@ -267,6 +266,7 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 			this.strStatus = 'ACTIVE';
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.smartPerformanceService.isSubscribed = true;
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
 			this.subScribeEvent.emit(this.smartPerformanceService.isSubscribed);
 		}
 		if (!this.smartPerformanceService.isExpired) {

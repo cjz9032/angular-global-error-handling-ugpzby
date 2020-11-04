@@ -89,7 +89,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
 			this.IsSmartPerformanceFirstRun = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun);
 			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
-			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
 		}
 		const isFreePCScanRun = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreePCScanRun);
 		if (isFreePCScanRun === undefined || isFreePCScanRun === false) {
@@ -435,21 +435,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.showSubscribersummary = false;
 	}
 
-
-	async unregisterScheduleScan(scantype) {
-
-		const payload = {
-			scantype
-		};
-		this.logger.info('ui-smart-performance.unregisterScheduleScan', JSON.stringify(payload));
-		try {
-			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
-			this.logger.info('ui-smart-performance.unregisterScheduleScan.then', JSON.stringify(res));
-		} catch (err) {
-			this.logger.error('ui-smart-performance.unregisterScheduleScan.then', err);
-		}
-	}
-
 	cancelScanfromScanning() {
 		this.smartPerformanceService.isScanning = false;
 		this.smartPerformanceService.isScanningCompleted = false;
@@ -458,10 +443,10 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	changeManageSubscription(event) {
 		this.smartPerformanceService.isSubscribed = event;
 		if (event === true) {
-			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
 		}
-		if (event === false) {
-			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+		else {
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
 		}
 	}
 	changeSummaryToHome() {
@@ -503,6 +488,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			this.writeSmartPerformanceActivity('True', 'True', 'Active');
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
 			this.smartPerformanceService.isSubscribed = true;
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
 		}
 	}
 	hideBasedOnOldAddInVersion($event) {
