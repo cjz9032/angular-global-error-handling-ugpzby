@@ -359,9 +359,6 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
 		this.betaService.setBetaStatus(this.toggleBetaProgram ? BetaStatus.On : BetaStatus.Off);
 		this.commonService.sendReplayNotification(MenuItemEvent.MenuBetaItemChange, this.toggleBetaProgram);
-		if (!event.switchValue) {
-			this.startUnRegisteringScheduleScan();
-		}
 	}
 	sendMetrics(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
@@ -422,9 +419,6 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		} else {
 			(document.querySelector('#menu-main-lnk-l-logo') as HTMLElement).focus();
 		}
-		if (!SegmentConstHelper.includedInCommonConsumer(this.usageType)) {
-			this.startUnRegisteringScheduleScan();
-		}
 	}
 
 	userProfileSelectionChanged() {
@@ -434,15 +428,6 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			result = true;
 		}
 		return result;
-	}
-
-	startUnRegisteringScheduleScan() {
-		this.isSPFullFeatureEnabled = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
-		if (this.isSPFullFeatureEnabled) {
-			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
-		} else {
-			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
-		}
 	}
 
 	@HostListener('window: focus')
