@@ -439,22 +439,9 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	startUnRegisteringScheduleScan() {
 		this.isSPFullFeatureEnabled = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.isSPFullFeatureEnabled) {
-			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
 		} else {
-			this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
-		}
-	}
-	// deletes records from task scheduler
-	async unregisterScheduleScan(scantype) {
-		const payload = { scantype };
-		try {
-			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
-			this.loggerService.info('page-settings.unregisterScheduleScan.then', res);
-			if (res && res.state) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-			}
-		} catch (err) {
-			this.loggerService.error('page-settings.unregisterScheduleScan.then', err);
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
 		}
 	}
 

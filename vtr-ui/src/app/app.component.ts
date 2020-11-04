@@ -524,23 +524,12 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private removeOldSmartPerformanceScheduleScans() {
 		const isOldScheduleScanDeleted = this.localCacheService.getLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted);
 		if (isOldScheduleScanDeleted === undefined || isOldScheduleScanDeleted === false) {
-			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
-			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.OLDSCHEDULESCAN);
-			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.SCHEDULESCAN);
-			this.unregisterSmartPerformanceScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.OLDSCHEDULESCAN);
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
+			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
 
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted, true);
-		}
-	}
-
-	async unregisterSmartPerformanceScheduleScan(scantype) {
-		const payload = { scantype };
-		this.logger.info('app.component.unregisterScheduleScan', payload);
-		try {
-			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
-			this.logger.info('app.component.unregisterScheduleScan.then', res);
-		} catch (err) {
-			this.logger.error('app.component.unregisterScheduleScan.then', err);
 		}
 	}
 }

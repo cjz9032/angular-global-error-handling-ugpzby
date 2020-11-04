@@ -8,6 +8,7 @@ import { SPPriceCode } from 'src/app/enums/smart-performance.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LoggerService } from '../logger/logger.service';
 
 interface IYearlyPrice {
 	code: string;
@@ -52,6 +53,7 @@ export class SmartPerformanceService {
 		private httpClient: HttpClient,
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
+		private logger: LoggerService
 	) {
 
 		this.getSmartPerformance = shellService.getSmartPerformance();
@@ -162,16 +164,21 @@ export class SmartPerformanceService {
 			throw new Error(error.message);
 		}
 	}
-	unregisterScanSchedule(payload: any): Promise<any> {
+
+	async unregisterScanSchedule(scantype) {
 		try {
+			let res;
+			const payload = { scantype };
+			this.logger.info('app.component.unregisterScheduleScan', payload);
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.unregisterScheduleScan(payload);
+				res = await this.getSmartPerformance.unregisterScheduleScan(payload);
 			}
-			return undefined;
+			this.logger.info('app.component.unregisterScheduleScan.then', res);
 		} catch (error) {
-			throw new Error(error.message);
+			this.logger.error('app.component.unregisterScheduleScan.then', error);
 		}
 	}
+
 	getNextScanRunTime(payload: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
