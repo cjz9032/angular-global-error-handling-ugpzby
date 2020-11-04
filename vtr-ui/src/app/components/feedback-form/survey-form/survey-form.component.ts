@@ -195,10 +195,6 @@ export class SurveyFormComponent implements OnInit {
 		this.metricsService.sendMetricsForcibly(data);
 	}
 
-	submitBtnText() {
-		return this.progress < this.pages.length - 1 ? 'next' : 'submit';
-	}
-
 	@HostListener('window: focus')
 	onFocus(): void {
 		const modal = document.querySelector('.survey-modal') as HTMLElement;
