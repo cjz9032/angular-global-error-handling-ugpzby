@@ -16,7 +16,6 @@ export class SurveyFormComponent implements OnInit {
 	surveyId = '';
 	pages: any = [];
 	result: any = {};
-	completed = false;
 	closingleftTime = 3;
 	progress = 0;
 
@@ -83,7 +82,7 @@ export class SurveyFormComponent implements OnInit {
 
 		const page5Questions = this.pages[4].questions;
 		for (let i = 0; i < 3; i++) {
-			page5Questions.push( {
+			page5Questions.push({
 				name: `dashboard.survey.form.page5.question${i + 1}`,
 				title: `dashboard.survey.form.page5.question${i + 1}.title`,
 				optionKey: `dashboard.survey.form.page5.question${i + 1}.options`,
@@ -135,7 +134,7 @@ export class SurveyFormComponent implements OnInit {
 		}
 	}
 
-	disableNextButton() {
+	isAllSelected() {
 		if (!this.pages[this.progress] || !this.pages[this.progress].results) {
 			return true;
 		}
@@ -157,21 +156,22 @@ export class SurveyFormComponent implements OnInit {
 		return results.length !== this.pages[this.progress].questions.length;
 	}
 
-	onClickNextOrSumbit(): void {
+	onClickNext(): void {
 		this.progress += 1;
-		if (this.progress === this.pages.length) {
-			this.completed = true;
-			this.localCacheService.setLocalCacheValue(this.surveyId as LocalStorageKey, LenovoSurveyEnum.Completed);
-			this.appForYouService.lenovoSurvey.display = false;
-			this.reportResult();
-			const leftTimeInterval = setInterval(() => {
-				this.closingleftTime--;
-				if (this.closingleftTime <= 0) {
-					this.activeModal.close();
-					clearInterval(leftTimeInterval);
-				}
-			}, 1000);
-		}
+	}
+
+	onClickSubmit(): void {
+		this.progress += 1;
+		this.localCacheService.setLocalCacheValue(this.surveyId as LocalStorageKey, LenovoSurveyEnum.Completed);
+		this.appForYouService.lenovoSurvey.display = false;
+		this.reportResult();
+		const leftTimeInterval = setInterval(() => {
+			this.closingleftTime--;
+			if (this.closingleftTime <= 0) {
+				this.activeModal.close();
+				clearInterval(leftTimeInterval);
+			}
+		}, 1000);
 	}
 
 	reportResult(): void {

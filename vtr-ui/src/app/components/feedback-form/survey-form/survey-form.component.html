@@ -50,16 +50,21 @@
 
 		<div class="d-flex align-items-center btn-box">
 			<div class="btn-submit">
-				<vtr-ui-button linkId="modal-btn-sendsurvey" metricsEvent="FeatureClick"
-					metricsItem="SendSurveyButton" metricsParent="Dialog.Survey" [btnHeight]="true"
-					[isFullWidth]="true" [label]="(pages.length - 1 === progress ? 'dashboard.survey.submit' : 'dashboard.survey.next') | translate" (onClick)="onClickNextOrSumbit()"
-					[isDisabled]="disableNextButton()">
+				<vtr-ui-button *ngIf="progress < pages.length - 1" linkId="modal-survey-btn-next" metricsEvent="FeatureClick"
+					metricsItem="next" metricsParent="Dialog.Survey" [btnHeight]="true"
+					[isFullWidth]="true" [label]="'dashboard.survey.next' | translate" (onClick)="onClickNext()"
+					[isDisabled]="isAllSelected()">
+				</vtr-ui-button>
+				<vtr-ui-button *ngIf="progress == pages.length - 1" linkId="modal-survey-btn-submit" metricsEvent="FeatureClick"
+					metricsItem="submit" metricsParent="Dialog.Survey" [btnHeight]="true"
+					[isFullWidth]="true" [label]="'dashboard.survey.submit' | translate" (onClick)="onClickSubmit()"
+					[isDisabled]="isAllSelected()">
 				</vtr-ui-button>
 			</div>
 		</div>
 	</div>
 
-	<div class="survey-success d-flex align-items-center justify-content-center" *ngIf="completed">
+	<div class="survey-success d-flex align-items-center justify-content-center" *ngIf="progress > pages.length - 1">
 		<div>
 			<div class="success-icon">
 				<fa-icon [icon]="['fal', 'check-circle']"></fa-icon>
@@ -72,7 +77,7 @@
 	</div>
 
 	<div class="btn-modal-close">
-		<vtr-ui-close-button linkId="survey-modal-btn-close" metricsItem="btn.close" metricsParent="Dialog.Survey"
+		<vtr-ui-close-button linkId="survey-modal-btn-close" metricsItem="close" metricsParent="Dialog.Survey"
 			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>
