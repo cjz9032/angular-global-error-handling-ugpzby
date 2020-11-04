@@ -50,12 +50,12 @@
 
 		<div class="d-flex align-items-center btn-box">
 			<div class="btn-submit">
-				<vtr-ui-button *ngIf="progress < pages.length - 1" linkId="modal-btn-next" metricsEvent="FeatureClick"
+				<vtr-ui-button *ngIf="progress < pages.length - 1" linkId="modal-survey-btn-next" metricsEvent="FeatureClick"
 					metricsItem="next" metricsParent="Dialog.Survey" [btnHeight]="true"
 					[isFullWidth]="true" [label]="'dashboard.survey.next' | translate" (onClick)="onClickNext()"
 					[isDisabled]="isAllSelected()">
 				</vtr-ui-button>
-				<vtr-ui-button *ngIf="progress == pages.length - 1" linkId="modal-btn-submit" metricsEvent="FeatureClick"
+				<vtr-ui-button *ngIf="progress == pages.length - 1" linkId="modal-survey-btn-submit" metricsEvent="FeatureClick"
 					metricsItem="submit" metricsParent="Dialog.Survey" [btnHeight]="true"
 					[isFullWidth]="true" [label]="'dashboard.survey.submit' | translate" (onClick)="onClickSubmit()"
 					[isDisabled]="isAllSelected()">
