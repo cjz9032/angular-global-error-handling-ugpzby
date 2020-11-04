@@ -135,7 +135,7 @@ export class SurveyFormComponent implements OnInit {
 		}
 	}
 
-	disableNextButton() {
+	disableNextOrSubmit() {
 		if (!this.pages[this.progress] || !this.pages[this.progress].results) {
 			return true;
 		}
@@ -193,6 +193,10 @@ export class SurveyFormComponent implements OnInit {
 		});
 
 		this.metricsService.sendMetricsForcibly(data);
+	}
+
+	submitBtnText() {
+		return this.progress < this.pages.length - 1 ? 'next' : 'submit';
 	}
 
 	@HostListener('window: focus')
