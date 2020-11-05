@@ -1,6 +1,6 @@
 {
   "name": "vtr-ui",
-  "version": "1.8.41",
+  "version": "1.9.0",
   "scripts": {
     "postinstall": "ngcc",
     "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
@@ -48,7 +48,7 @@
     "@fortawesome/pro-light-svg-icons": "^5.15.1",
     "@lenovo/cdk": "^10.2.6",
     "@lenovo/material": "^10.2.6",
-    "@lenovo/tan-client-bridge": "10.2011.0.unstablelatest",
+    "@lenovo/tan-client-bridge": "10.2101.0.unstablelatest",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
