@@ -39,15 +39,20 @@ describe('ModalGamingThermalMode2Component', () => {
     let component: ModalGamingThermalMode2Component;
     let fixture: ComponentFixture<ModalGamingThermalMode2Component>;
     let shellService: any;
-
+    // mock settings
     let thermalModeSettingStatus = 2;
     let performanceOCSetting = false;
     let autoSwitchStatus = false;
+    // mock cache
+    let thermalModeVersionCache = 2;
     let thermalModeSettingStatusCache = 2;
     let autoSwitchStatusCache = false;
     let cpuOCStatusCache = 1;
     let gpuOCStatusCache = 1;
     let setReturnValue = false;
+    // Version 3.5 auto adjust
+    let autoAdjustSettingStatus = true;
+    let autoAdjustSettingStatusCache = false;
 
     let localCacheServiceMock = {
         getLocalCacheValue(key: any) {
@@ -64,6 +69,9 @@ describe('ModalGamingThermalMode2Component', () => {
                     return cpuOCStatusCache;
                 case '[LocalStorageKey] GpuOCStatus':
                     return gpuOCStatusCache;
+                // Version 3.5 auto adjust
+                case '[LocalStorageKey] AutoAdjustSettings':
+                    return autoAdjustSettingStatusCache;
             }
         },
         setLocalCacheValue(key: any, value: any) {
@@ -86,6 +94,10 @@ describe('ModalGamingThermalMode2Component', () => {
                 case '[LocalStorageKey] GpuOCStatus':
                     gpuOCStatusCache = value;
                     break;
+                // Version 3.5 auto adjust
+                case '[LocalStorageKey] AutoAdjustSettings':
+                    autoAdjustSettingStatusCache = value;
+                    break;
             }
         }
     };
@@ -93,6 +105,8 @@ describe('ModalGamingThermalMode2Component', () => {
         isShellAvailable: true,
         getCapabilityFromCache(key: any) {
             switch (key) {
+                case '[LocalStorageKey] ThermalModeVersion':
+                    return thermalModeVersionCache;
                 case '[LocalStorageKey] DesktopType':
                     return true;
                 case '[LocalStorageKey] SmartFanFeature':
@@ -146,6 +160,18 @@ describe('ModalGamingThermalMode2Component', () => {
             return new Promise(resolve => {
                 resolve(setReturnValue);
             })
+        },
+        // Version 3.5 auto adjuste
+        getAutoAdjustSetting() {
+            return new Promise(resolve => {
+                resolve(autoAdjustSettingStatus)
+            })
+        },
+        setAutoAdjustSetting(value) {
+            if(setReturnValue) {
+                autoAdjustSettingStatus = value;
+            }
+            return Promise.resolve(setReturnValue);
         }
     }
     let gamingOCServiceMock = {
@@ -324,6 +350,84 @@ describe('ModalGamingThermalMode2Component', () => {
             component.ngOnDestroy();
             expect(component.unRegisterThermalModeChangeEvent).toHaveBeenCalledTimes(1);
         })
+        // Version 3.5 auto adjust
+        it('getAutoAdjustSettingStatus', fakeAsync(() => {
+            component.gamingCapabilities.thermalModeVersion = 4;
+            component.autoAdjustSettings = false;
+            component.isAutoAdjustSetted = false;
+            autoAdjustSettingStatusCache = false;
+            autoAdjustSettingStatus = true;
+            component.ngOnInit();
+            tick();
+            expect(component.autoAdjustSettings).toBe(true, `component.isAutoAdjustSetted is false, component.autoAdjustSettings shoulde be ture`);
+            expect(autoAdjustSettingStatusCache).toBe(true, `component.isAutoAdjustSetted is false, autoAdjustSettingStatusCache shoulde be ture`);
+            autoAdjustSettingStatus = false;
+            component.getAutoAdjustSetting();
+            tick();
+            expect(component.autoAdjustSettings).toBe(false, `component.isAutoAdjustSetted is false, component.autoAdjustSettings shoulde be false`);
+            expect(autoAdjustSettingStatusCache).toBe(false, `component.isAutoAdjustSetted is false, autoAdjustSettingStatusCache shoulde be false`);
+
+            component.autoAdjustSettings = false;
+            component.isAutoAdjustSetted = true;
+            autoAdjustSettingStatusCache = false;
+            autoAdjustSettingStatus = true;
+            component.ngOnInit();
+            tick();
+            expect(component.autoAdjustSettings).toBe(false, `component.isAutoAdjustSetted is true, component.autoAdjustSettings shoulde keep false`);
+            expect(autoAdjustSettingStatusCache).toBe(false, `component.isAutoAdjustSetted is true, autoAdjustSettingStatusCache shoulde keep false`);
+            component.autoAdjustSettings = true;
+            autoAdjustSettingStatusCache = true;
+            autoAdjustSettingStatus = false;
+            component.getAutoAdjustSetting();
+            tick();
+            expect(component.autoAdjustSettings).toBe(true, `component.isAutoAdjustSetted is true, component.autoAdjustSettings shoulde keep true`);
+            expect(autoAdjustSettingStatusCache).toBe(true, `component.isAutoAdjustSetted is true, autoAdjustSettingStatusCache shoulde keep true`);
+        }))
+        it('setAutoAdujustSettingStatus', fakeAsync(() => {
+            setReturnValue = true;
+            component.gamingCapabilities.thermalModeVersion = 4;
+            component.isAutoAdjustSetted = false;
+            component.autoAdjustSettings = false;
+            autoAdjustSettingStatusCache = false;
+            autoAdjustSettingStatus = false;
+            component.setAutoAdjustSetting(false);
+            tick();
+            expect(component.isAutoAdjustSetted).toBe(true, `setReturnValue is ${setReturnValue}, component.isAutoAdjustSetted should be true`);
+            expect(component.autoAdjustSettings).toBe(true, `setReturnValue is ${setReturnValue}, component.autoAdjustSettings should be true`);
+            expect(autoAdjustSettingStatusCache).toBe(true, `setReturnValue is ${setReturnValue}, autoAdjustSettingStatusCache should be true`);
+            expect(autoAdjustSettingStatus).toBe(true, `setReturnValue is ${setReturnValue}, autoAdjustSettingStatus should be true`);
+            component.isAutoAdjustSetted = false;
+            autoAdjustSettingStatus = true;
+            component.setAutoAdjustSetting(true);
+            tick();
+            expect(component.isAutoAdjustSetted).toBe(true, `setReturnValue is ${setReturnValue}, component.isAutoAdjustSetted should be true`);
+            expect(component.autoAdjustSettings).toBe(false, `setReturnValue is ${setReturnValue}, component.autoAdjustSettings should be false`);
+            expect(autoAdjustSettingStatusCache).toBe(false, `setReturnValue is ${setReturnValue}, autoAdjustSettingStatusCache should be false`);
+            expect(autoAdjustSettingStatus).toBe(false, `setReturnValue is ${setReturnValue}, autoAdjustSettingStatus should be false`);
+
+            setReturnValue = false;
+            component.isAutoAdjustSetted = false;
+            component.autoAdjustSettings = false;
+            autoAdjustSettingStatusCache = false;
+            autoAdjustSettingStatus = false;
+            component.setAutoAdjustSetting(false);
+            tick();
+            expect(component.isAutoAdjustSetted).toBe(true, `setReturnValue is ${setReturnValue}, component.isAutoAdjustSetted should be true`);
+            expect(component.autoAdjustSettings).toBe(false, `setReturnValue is ${setReturnValue}, component.autoAdjustSettings should keep false`);
+            expect(autoAdjustSettingStatusCache).toBe(false, `setReturnValue is ${setReturnValue}, autoAdjustSettingStatusCache should keep false`);
+            expect(autoAdjustSettingStatus).toBe(false, `setReturnValue is ${setReturnValue}, autoAdjustSettingStatus should keep false`);
+            component.isAutoAdjustSetted = false;
+            component.autoAdjustSettings = true;
+            autoAdjustSettingStatusCache = true;
+            autoAdjustSettingStatus = true;
+            component.setAutoAdjustSetting(true);
+            tick();
+            expect(component.isAutoAdjustSetted).toBe(true, `setReturnValue is ${setReturnValue}, component.isAutoAdjustSetted should be true`);
+            expect(component.autoAdjustSettings).toBe(true, `setReturnValue is ${setReturnValue}, component.autoAdjustSettings should keep true`);
+            expect(autoAdjustSettingStatusCache).toBe(true, `setReturnValue is ${setReturnValue}, autoAdjustSettingStatusCache should keep true`);
+            expect(autoAdjustSettingStatus).toBe(true, `setReturnValue is ${setReturnValue}, autoAdjustSettingStatus should keep true`);
+
+        }))
     })
     describe('performanceOC', () => {
         beforeEach(async(() => {
@@ -633,7 +737,7 @@ describe('ModalGamingThermalMode2Component', () => {
         let gamingOCService: any;
         let metricService: any;
         beforeEach(async(() => {
-            let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeSettingStatus', 'setThermalModeSettingStatus', 'getAutoSwitchStatus', 'setAutoSwitchStatus', 'regThermalModeChangeEvent']);
+            let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeSettingStatus', 'setThermalModeSettingStatus', 'getAutoSwitchStatus', 'setAutoSwitchStatus', 'regThermalModeChangeEvent', 'getAutoAdjustSetting', 'setAutoAdjustSetting']);
             let gamingOCServiceSpy = jasmine.createSpyObj('GamingOCService', ['getPerformanceOCSetting', 'setPerformanceOCSetting']);
             let metricSpyForError = jasmine.createSpyObj('MetricService', ['sendMetrics']);
             TestBed.configureTestingModule({
@@ -897,6 +1001,41 @@ describe('ModalGamingThermalMode2Component', () => {
                 expect(err).toMatch('sendMetrics error');
             }
         });
+        // Version 3.5 auto adjust
+        it('getAutoAdjustSetting', () => {
+            try {
+                thermalModeService.getAutoAdjustSetting.and.throwError('getAutoAdjustSetting error');
+                component.getAutoAdjustSetting();
+            } catch(err) {
+                expect(err).toMatch('getAutoAdjustSetting error');
+            }
+        });
+        it('setAutoAdjustSetting', () => {
+            try {
+                thermalModeService.setAutoAdjustSetting.and.throwError('getAutoAdjustSetting error');
+                component.autoAdjustSettings = false;
+                autoAdjustSettingStatus = false;
+                autoAdjustSettingStatusCache = false;
+                component.setAutoAdjustSetting(true);
+            } catch(err) {
+                expect(err).toMatch('getAutoAdjustSetting error');
+                expect(component.autoAdjustSettings).toBe(false, 'component.autoAdjustSettings shoulde keep false');
+                expect(autoAdjustSettingStatus).toBe(false, 'autoAdjustSettingStatus shoulde keep false');
+                expect(autoAdjustSettingStatusCache).toBe(false, 'autoAdjustSettingStatusCache shoulde keep false');
+            }
+            try {
+                thermalModeService.setAutoAdjustSetting.and.throwError('getAutoAdjustSetting error');
+                component.autoAdjustSettings = true;
+                autoAdjustSettingStatus = true;
+                autoAdjustSettingStatusCache = true;
+                component.setAutoAdjustSetting(false);
+            } catch(err) {
+                expect(err).toMatch('getAutoAdjustSetting error');
+                expect(component.autoAdjustSettings).toBe(true, 'component.autoAdjustSettings shoulde keep true');
+                expect(autoAdjustSettingStatus).toBe(true, 'autoAdjustSettingStatus shoulde keep true');
+                expect(autoAdjustSettingStatusCache).toBe(true, 'autoAdjustSettingStatusCache shoulde keep true');
+            }
+        })
     })
     describe('about modal', () => {
         let activeModalService: any;
