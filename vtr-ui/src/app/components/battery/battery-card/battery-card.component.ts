@@ -170,6 +170,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		}
 
 		this.isWinRTLoading = false;
+		this.isLoading = false;
 		// temp
 		this.registerBatteryEvents();
 
