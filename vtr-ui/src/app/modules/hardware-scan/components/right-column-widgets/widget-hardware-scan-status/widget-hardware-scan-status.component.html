@@ -3,11 +3,11 @@
 		<div class="row">
 			<div class="col">
 				<h2 id="{{ widgetId }}-title" role="heading" class="title">{{ 'hardwareScan.previousResult' | translate }}</h2>
-				<p class="description" attr.aria-labelledby="{{ widgetId }}-last-scan-text {{ widgetId }}-last-scan-value {{ widgetId }}-result-text {{ widgetId }}-result-value">
-					<span aria-hidden="true" id="{{ widgetId }}-last-scan-text" role="text">{{ 'hardwareScan.lastScanOn' | translate }} </span>
-					<span aria-hidden="true" id="{{ widgetId }}-last-scan-value" role="text">{{ lastScanResultCompletionInfo.date | formatLocaleDateTime }}</span>
-					<span aria-hidden="true" id="{{ widgetId }}-result-text" role="text"> - {{ 'hardwareScan.result' | translate }}: </span>
-					<span aria-hidden="true" id="{{ widgetId }}-result-value" role="text">{{ 'hardwareScan.' + lastScanResultCompletionInfo.result.toLowerCase() | translate }}</span>
+				<p class="description">
+					<span id="{{ widgetId }}-last-scan-text" role="text">{{ 'hardwareScan.lastScanOn' | translate }} </span>
+					<span id="{{ widgetId }}-last-scan-value" role="text">{{ lastScanResultCompletionInfo.date | formatLocaleDateTime }}</span>
+					<span id="{{ widgetId }}-result-text" role="text"> - {{ 'hardwareScan.result' | translate }}: </span>
+					<span id="{{ widgetId }}-result-value" role="text">{{ 'hardwareScan.' + lastScanResultCompletionInfo.result.toLowerCase() | translate }}</span>
 				</p>
 			</div>
 		</div>
