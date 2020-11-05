@@ -61,9 +61,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
     // get capabilities from cache
     this.gamingCapabilities.desktopType = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.desktopType);
     // Version 3.5 thermal mode 3
-    // TODO
-    // this.gamingCapabilities.thermalModeVersion = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.thermalModeVersion);
-    this.gamingCapabilities.thermalModeVersion = 4;
+    this.gamingCapabilities.thermalModeVersion = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.thermalModeVersion);
     this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.smartFanFeature);
     this.gamingCapabilities.supporttedThermalMode = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.supporttedThermalMode);
     this.gamingCapabilities.cpuOCFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.cpuOCFeature);

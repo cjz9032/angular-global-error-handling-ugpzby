@@ -408,8 +408,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	}
 
 	legionEdgeInit() {
-		// TODO thermal mode 3
-		this.gamingCapabilities.thermalModeVersion = 4;
 		//////////////////////////////////////////////////////////////////////
 		// Render isvisible according to gamingCapabilities                 //
 		// Feature 2: CPU over clock                                        //
@@ -475,7 +473,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.renderThermalMode2RealStatus();
 			this.registerThermalModeRealStatusChangeEvent();
 			if(this.OCSupported !== this.thermalMode2Enum.none) {
-				// TODO 3.5
+				// TODO Version 3.5 
 				this.performanceOCSettings = true;
 				// this.OCRealStatusEvent = this.onRegOCRealStatusChangeEvent.bind(this);
 				// this.registerOCRealStatusChangeEvent();
