@@ -54,8 +54,8 @@
                                         <span *ngIf="OCsupportted === thermalMode2Enum.cpu">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuOC' | translate }}</span>
                                         <span *ngIf="OCsupportted === thermalMode2Enum.gpu">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuOC' | translate }}</span>
                                         &nbsp;
-                                    </a> 
-                                    <a class="oc-advance-button" *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature" 
+                                    </a>
+                                    <a class="oc-advance-button" *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature"
                                     tabindex="1" role="button" id="advanced_button" (click)="openWaringModal()" (keyup.enter)="openWaringModal()">
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.advance' | translate }}
                                     </a>

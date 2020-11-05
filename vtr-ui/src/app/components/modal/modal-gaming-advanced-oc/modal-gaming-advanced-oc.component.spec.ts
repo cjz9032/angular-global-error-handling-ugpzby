@@ -163,13 +163,13 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
         });
     })
 
-    describe('check  setAdvancedOCInfo : ', () => {
+    describe('check setAdvancedOCInfo : ', () => {
         it('setAdvancedOCInfo & catch error', () => {
             try{
                 advancedOCService.setAdvancedOCInfo.and.throwError('setAdvancedOCInfo error');
                 component.setAdvancedOCInfo(advancedOCInfo);
             }catch(err){
-                expect(err).toMatch("setAdvancedOCInfo error");
+                expect(err).toMatch('setAdvancedOCInfo ' + 'setAdvancedOCInfo error');
             }
         })
 
@@ -471,7 +471,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 
     })
 
-    describe('check  setToDefaultValue : ', () => {
+    describe('check setToDefaultValue : ', () => {
         it('setToDefaultValue & length>0', () => {
             let cpuParameterList = [
                 { tuneId: 2, OCValue: '41', defaultValue:'40', minValue: '28', maxValue: '80', stepValue: '1' },

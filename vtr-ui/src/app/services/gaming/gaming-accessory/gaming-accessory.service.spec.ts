@@ -177,12 +177,16 @@ describe('GamingAccessoryService', () => {
       });
     }));
 
-    // TODO: a problem about calling an async function with await 
-    xit('launchAccessory should return err', async(() => {
+    it('launchAccessory should return err', (async() => {
+      gamingAccessoryService.isShellAvailable = true;
       spyOn(WinRT, 'launchUri').and.throwError('WinRT.launchUri error');
-      gamingAccessoryService.launchAccessory(true).then().catch(err => {
-        expect(err).toMatch('WinRT.launchUri error');
-      });
+      try {
+        gamingAccessoryService.launchAccessory(true).then().catch(err => {
+          expect(err).toMatch('WinRT.launchUri error');
+        });
+      } catch (err) {
+        expect(err.errorMessage).toEqual('WinRT.launchUri error');
+      }
     }));
   });
 });

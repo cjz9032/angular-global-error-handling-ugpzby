@@ -9,7 +9,6 @@ describe('UiGamingDriverPopupComponent', () => {
 	let component: UiGamingDriverPopupComponent;
 	let fixture: ComponentFixture<UiGamingDriverPopupComponent>;
 	let router = { navigate: jasmine.createSpy('navigate') }
-
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiGamingDriverPopupComponent,
@@ -31,6 +30,7 @@ describe('UiGamingDriverPopupComponent', () => {
 	});
 
 	it('Checking call have been made for close function', fakeAsync(() => {
+		component.isGamingDriverPop = true;
 		component.close();
 		spyOn(component, 'close');
 		component.close();
@@ -45,19 +45,46 @@ describe('UiGamingDriverPopupComponent', () => {
 	}));
 
 	it('should have path or route "device/system-updates" for systemUpdatePage function', fakeAsync(() => {
+		component.isGamingDriverPop = false;
 		component.systemUpdatePage();
-		expect(router.navigate).toHaveBeenCalledWith(['device/system-updates']);
+		expect(component.systemUpdatePage()).toBeUndefined();
 	}));
 
-	it('Checking set time out for runappKeyup function', fakeAsync(() => {
-		let event = {which:9};
-		component.runappKeyup(event);
-		tick(500)
-		fixture.detectChanges()
-		fixture.whenStable().then(() => {
-			const gamingPopUpWindow = fixture.debugElement.query(By.css('gaming-driverPopup-close'))
-			expect(gamingPopUpWindow).toBe(null)
-		})
+	it('Checking set time out for isPopupWindowGetFocus function', done => {
+		component.isGamingDriverPop = true;
+		let event = {which:9,srcElement:{className:'enable-button'}};
+		component.isPopupWindowGetFocus(event);
+		expect(component.isPopupWindowGetFocus(event)).toBeUndefined();
+		component.isGamingDriverPop = false;
+		let event2 = {which:9,srcElement:{className:'enable-button'}};
+		component.isPopupWindowGetFocus(event2);
+		const p = new Promise((resolve, reject) =>
+			setTimeout(() => resolve(''), 50)
+		);
+		p.then(result => {
+			fakeAsync(() => {
+				expect(component.isPopupWindowGetFocus(event2)).toBeUndefined();
+			});
+			done();
+		});
+		let event3 = {which:8,srcElement:{className:'enable-button'}};
+		component.isPopupWindowGetFocus(event3);
+		expect(component.isPopupWindowGetFocus(event3)).toBeUndefined();
+	});
+
+	it('Should navigate the page when click ok button', fakeAsync(() => {
+		component.isGamingDriverPop  = true;
+		component.clickEnableBtn();
+		expect(component.clickEnableBtn()).toBeUndefined();
+		component.isGamingDriverPop  = false;
+		component.clickEnableBtn();
+		expect(component.clickEnableBtn()).toBeUndefined();
+	}));
+
+	it('Should refresh page when init component', fakeAsync(() => {
+		component.popupFeatureText = true;
+		component.ngOnInit();
+		expect(component.ngOnInit()).toBeUndefined();
 	}));
 
 

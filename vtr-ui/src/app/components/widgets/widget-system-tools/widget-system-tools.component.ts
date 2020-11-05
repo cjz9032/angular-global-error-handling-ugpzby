@@ -130,6 +130,8 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 			description: "gaming.dashboard.device.warningPromptPopup.accessoryDesc",
 			comfirmButton: "gaming.dashboard.device.legionEdge.driverPopup.button",
 			cancelButton: "gaming.dashboard.device.legionEdge.driverPopup.link",
+			confirmMetricEnabled : false,
+			cancelMetricEnabled : false,
 			id : this.modalAutomationId
 		}
 		this.eventEmitSubscription = waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {

@@ -25,11 +25,8 @@
 										</vtr-ui-toggle>
 										<p class="intro-text" id="gaming_autoclose_description" role="text">
 											{{'gaming.autoClose.introLine' | translate}}</p>
-										<vtr-widget-autoclose [appListData]="autoCloseAppList"
-											(actionModal)="openTargetModal()"
-											(removeFromList)="deleteAppFromList($event)"
-											[modalStatus]="showAppsModal || showTurnOnModal">
-										</vtr-widget-autoclose>
+										<vtr-widget-added-app-list [refreshTrigger]="refreshTrigger" (actionModal)="openTargetModal()" [isNetworkBoost]="false">
+										</vtr-widget-added-app-list>
 									</div>
 								</div>
 							</div>
@@ -56,33 +53,23 @@
 						ItemCategory="corner-article"
 						containerCardId="gaming_autoclose_containerCard_positionC">
 					</vtr-container-card>
-					</div>
-
-					<div class="col col-12 px-0 pt-0 pb-40">
-						<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"
-							order="2"
-							[item]="cardContentPositionF"
-							[type]="'subpage-corner'"
-							[ratio]="2"
-							[cornerShift]="'large'"
-							vtrMetrics
-							metricsEvent="ArticleClick"
-							metricsItem="gaming_autoclose_containerCard_positionF"
-							ItemCategory="corner-article"
-							containerCardId="gaming_autoclose_containerCard_positionF">
-						</vtr-container-card>
+				</div>
+				<div class="col col-12 px-0 pt-0 pb-40">
+					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}"
+						order="2"
+						[item]="cardContentPositionF"
+						[type]="'subpage-corner'"
+						[ratio]="2"
+						[cornerShift]="'large'"
+						vtrMetrics
+						metricsEvent="ArticleClick"
+						metricsItem="gaming_autoclose_containerCard_positionF"
+						ItemCategory="corner-article"
+						containerCardId="gaming_autoclose_containerCard_positionF">
+					</vtr-container-card>
 				</div>
 			</div>
 		</div>
 	</right-content>
-
 </vtr-page-layout>
 
-<vtr-modal-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
-	(closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="showTurnOnModal=false;initNotNowAction($event)"
-	(actionTurnOn)="showTurnOnModal=false;initTurnOnAction()">
-</vtr-modal-turn-on>
-
-<vtr-modal-add-apps *ngIf="showAppsModal" (addAppToList)="addAppDataToList($event)"
-	(closeAddAppsModal)="modalCloseAddApps($event)">
-</vtr-modal-add-apps>

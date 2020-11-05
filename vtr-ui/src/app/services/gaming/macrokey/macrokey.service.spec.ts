@@ -2,23 +2,26 @@ import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macroke
 import { MacroKeyRecordedChange } from 'src/app/data-models/gaming/macrokey/macrokey-recorded-change.model';
 import { MacroKeyTypeStatus } from 'src/app/data-models/gaming/macrokey/macrokey-type-status.model';
 import { TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MacrokeyService } from './macrokey.service';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
-import { HttpClientModule } from '@angular/common/http';
+import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 describe('MacrokeyService', () => {
 
 	let shellService: VantageShellService;
 	let service: MacrokeyService;
+	let localCache: LocalCacheService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientModule],
-			providers: [MacrokeyService, VantageShellService],
+			providers: [MacrokeyService, VantageShellService, LocalCacheService],
 		});
 		service = TestBed.get(MacrokeyService);
 		shellService = TestBed.get(VantageShellService);
+		localCache = TestBed.get(LocalCacheService);
 	});
 
 	describe(':', () => {
@@ -255,12 +258,15 @@ describe('MacrokeyService', () => {
 			expect(macrokeyService.updateMacrokeyInitialKeyIntervalDataCache).toHaveBeenCalled();
 		});
 
-		// it('should call updateMacrokeyInitialKeyDataCache', async () => {
-		// 	const macrokeyService = getService();
-		// 	spyOn(macrokeyService, 'updateMacrokeyInitialKeyDataCache').and.callThrough();
-		// 	macrokeyService.updateMacrokeyInitialKeyDataCache([]);
-		// 	expect(macrokeyService.updateMacrokeyInitialKeyDataCache).toHaveBeenCalled();
-		// });
+		it('should call updateMacrokeyInitialKeyDataCache', async () => {
+			const macrokeyService = getService();
+			const macro = {key: '0', macro: { repeat: 1, interval: 1, inputs: []}}
+			spyOn(macrokeyService.localCacheService, 'getLocalCacheValue').and.returnValue(macro);
+			spyOn(macrokeyService.localCacheService, 'setLocalCacheValue').and.callThrough();
+			macrokeyService.updateMacrokeyInitialKeyDataCache('');
+			expect(macrokeyService.localCacheService.getLocalCacheValue).toHaveBeenCalled();
+			expect(macrokeyService.localCacheService.setLocalCacheValue).toHaveBeenCalled();
+		});
 
 		it('should call setMacrokeyChangeStatusCache', async () => {
 			const macrokeyService = getService();

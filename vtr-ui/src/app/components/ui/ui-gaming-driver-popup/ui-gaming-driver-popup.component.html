@@ -1,39 +1,44 @@
 <ui-gaming-driver-popup  tabindex="1" class="gaming-popup-window" vtrOutsideClick (clickOutside)="onOutsideClick()"
-attr.aria-label="{{ 'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate }} window">
-	<div class="modal-body vtr-ui-gaming-driver-popup" id="'{{automationId}}_driver_popup'" role="text">
-			<div class="btn-close">
-			<a type="button" class="close driver_popup_close_btn" (click)="close()"
+attr.aria-label="{{ popupTitle | translate }} window">
+	<div class="modal-body vtr-ui-gaming-driver-popup"
+	 id="{{automationId+(isGamingDriverPop ? '_driver_popup' : '_restart_popup')}}" role="text">
+		<div class="btn-close">
+			<button type="button" class="close" (click)="close()"
+			[ngClass]="[isGamingDriverPop ? 'driver_popup_close_btn' : 'restart_popup_close_btn']"
 			tabindex="1" (keyup.enter)="close()"
-			role="button" vtrMetrics [metricsItem]="'driverpopup_close'"
-			metricsEvent="featureClick" metricsParent="Gaming.Dashboard" id="{{automationId+'_driver_popup_close_btn'}}"
-			attr.aria-label="{{'gaming.dashboard.device.popup.closeBtn' | translate}}"  aria-labelledby="driver_popup_close">
-					<fa-icon [icon]="['fal', 'times']"></fa-icon>
-			</a>
-			</div>
-		<div class="content-body" role="dialog" aria-labelledby="driver_popup" tabindex="-1">
-			<h1>{{'gaming.dashboard.device.legionEdge.driverPopup.headerText' | translate}}</h1>
-			<p *ngIf="!isLightingText">{{popupText | translate}}</p>
-			<p *ngIf="isLightingText">{{'gaming.dashboard.device.legionEdge.lightingDriverPopup.text' | translate}}</p>
+			role="button" vtrMetrics [metricsItem]="isGamingDriverPop ? 'driverpopup_close' : 'popover_close'"
+			metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
+			id="{{automationId+(isGamingDriverPop ? '_driver_popup_close_btn' : '_restart_popup_close_btn')}}"
+			attr.aria-label="{{'gaming.dashboard.device.popup.closeBtn' | translate}}"
+			attr.aria-labelledby="{{isGamingDriverPop ? 'driver_popup_close' : 'popup_close'}}">
+				<fa-icon [icon]="['fal', 'times']"></fa-icon>
+			</button>
 		</div>
-		<hr>
-		<div class="row">
-			<div class="btn-container">
+		<div class="content-body" role="dialog" attr.aria-labelledby="{{isGamingDriverPop ? 'driver_popup' : 'restart_popup'}}" tabindex="-1">
+			<h1>{{popupTitle | translate}}</h1>	
+			<p *ngIf="isGamingDriverPop">{{popupFeatureText | translate}}</p>
+		</div>
+		<hr [ngClass]="{'restart-style': !isGamingDriverPop}">
+		<div class="btn-container">
 			<div>
 				<button class="btn enable-button" vtrMetrics tabindex="1"
-				  [metricsItem]="'driverPopup_install'"
-				  metricsEvent="featureClick"
-				  (click)="systemUpdatePage()"
-				  id="{{automationId+'_driver_popup_install_btn'}}" aria-label="gaming driverPopup install">
-				  {{'gaming.dashboard.device.legionEdge.driverPopup.button' | translate}}
+				[metricsItem]="isGamingDriverPop ? 'driverPopup_install' : 'popover_ok'"
+				metricsEvent="featureClick"
+				(click)="clickEnableBtn()"
+				(keydown)="isPopupWindowGetFocus($event)"
+				id="{{automationId+(isGamingDriverPop ? '_driver_popup_install_btn' : '_restart_popup_close_btn')}}"
+				attr.aria-label="{{isGamingDriverPop ? 'gaming driverPopup install' : 'gaming popup ok'}}">
+				{{strOKbtn | translate}}
 				</button>
 			</div>
 			<div>
-			<a (click)="close()" vtrMetrics tabindex="1" role="button"
-				[metricsItem]="'driverpopup_cancel'"
-				metricsEvent="featureClick"  (keyup.enter)="close()"
-				(keydown)="runappKeyup($event)"
-				class="cancel-link" id="{{automationId+'driver_popup_cancel_btn'}}" aria-label="gaming driverPopup cancel" role="link">{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</a>
-			</div>
+				<button (click)="close()" vtrMetrics tabindex="1" role="button" *ngIf="isGamingDriverPop"
+					[metricsItem]="'driverpopup_cancel'"
+					metricsEvent="featureClick"
+					(keydown)="isPopupWindowGetFocus($event)"
+					class="cancel-link" id="{{automationId+'driver_popup_cancel_btn'}}"
+					aria-label="gaming driverPopup cancel">
+					{{'gaming.dashboard.device.legionEdge.driverPopup.link' | translate}}</button>
 			</div>
 		</div>
 	</div>

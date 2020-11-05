@@ -29,10 +29,8 @@
 										</vtr-ui-toggle>
 										<p class="intro-text" id="gaming_networkboost_description" role="text">
 											{{'gaming.networkBoost.introLine' | translate}}</p>
-										<vtr-widget-networkboost [modalStatus]="(showTurnOnModal || showAppsModal)"
-											[changeNum]="changeListNum" (actionModal)="openTargetModal()"
-											(addedApps)="appsCount = $event">
-										</vtr-widget-networkboost>
+										<vtr-widget-added-app-list [refreshTrigger]="refreshTrigger" (actionModal)="openTargetModal()" (addedApps)="appsCount=$event" [isNetworkBoost]="true">
+										</vtr-widget-added-app-list>
 									</div>
 								</div>
 							</div>
@@ -54,8 +52,6 @@
 						metricsItem="gaming_network-boost_containerCard_positionC" ItemCategory="corner-article">
 					</vtr-container-card>
 				</div>
-
-
 				<div class="col col-12 px-0 pt-0 pb-40">
 					<vtr-container-card [ngClass]="{'cursor-default': isOnline == false}" order="2"
 						[item]="cardContentPositionF"
@@ -64,19 +60,7 @@
 						metricsItem="gaming_network-boost_containerCard_positionF"  ItemCategory="corner-article">
 					</vtr-container-card>
 				</div>
-
 			</div>
 		</div>
 	</right-content>
-
 </vtr-page-layout>
-
-
-<vtr-networkboost-turn-on *ngIf="showTurnOnModal" (actionNeedAsk)="doNotShowAction($event)"
-	(closeTurnOnModal)="modalCloseTurnOn($event)" (actionNotNow)="initNotNowAction($event)"
-	(actionTurnOn)="initTurnOnAction($event)">
-</vtr-networkboost-turn-on>
-
-<vtr-networkboost-add-apps *ngIf="showAppsModal" [addedApps]="appsCount"
-	(closeAddAppsModal)="modalCloseAddApps($event)">
-</vtr-networkboost-add-apps>

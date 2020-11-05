@@ -1,13 +1,24 @@
-import { TranslateService, TranslateStore, TranslateLoader, TranslateCompiler, TranslateParser, MissingTranslationHandler } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
-
 import { UiMacrokeyRecordedListComponent } from './ui-macrokey-recorded-list.component';
-import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { Router } from '@angular/router';
+import { NO_ERRORS_SCHEMA, Pipe, Component } from '@angular/core';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { of } from 'rxjs';
 
+@Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
+export class ModalGamingPromptStubComponent {
+	componentInstance = {
+		title: undefined,
+		description: undefined,
+		description2: undefined,
+		description3: undefined,
+		comfirmButton: undefined,
+		cancelButton: undefined,
+		emitService: of(1)
+	}
+};
 const macrokeyServiceMock = jasmine.createSpyObj('MacrokeyService', [
 	'isMacroKeyAvailable',
 	'clearKey',
@@ -36,28 +47,30 @@ const sampleInputData = {
 		]
 	}
 };
-const translateServiceMock = { instant: (name) =>  name};
+const translateServiceMock = { instant: (name) => name };
 describe('UiMacrokeyRecordedListComponent', () => {
 	let component: UiMacrokeyRecordedListComponent;
 	let fixture: ComponentFixture<UiMacrokeyRecordedListComponent>;
-
+	let modalService: any;
 	beforeEach(
 		async(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					UiMacrokeyRecordedListComponent,
+					ModalGamingPromptStubComponent,
 					mockPipe({ name: 'translate' }),
 					mockPipe({ name: 'sanitize' })
 				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
-					{provide: HttpClient, useValue: HttpClient},
+					{ provide: HttpClient, useValue: HttpClient },
 					HttpClientModule,
-					{ provide: TranslateService, useValue: translateServiceMock},
+					{ provide: TranslateService, useValue: translateServiceMock },
 					{ provide: MacrokeyService, useValue: macrokeyServiceMock }
 				]
 			}).compileComponents();
 			fixture = TestBed.createComponent(UiMacrokeyRecordedListComponent);
+			modalService = TestBed.inject(NgbModal);
 			component = fixture.componentInstance;
 			component.number = { key: '0' };
 			component.recordingStatus = false;
@@ -70,101 +83,113 @@ describe('UiMacrokeyRecordedListComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
-
-	it('Repeat should be reset to 1', () => {
+	it('when Parameter is false fuction will return', () => {
+		component.number.key = "M1";
 		component.deleteAllMacros(true);
-		expect(component.repeatSelectedValue).toEqual(1);
-	});
-
-	it('Interval should be reset to 1', () => {
+		expect(component.ignoreInterval).toBeFalse();
+		component.number.key = "K";
 		component.deleteAllMacros(true);
-		expect(component.delaySelectedValue).toEqual(1);
-		expect(component.ignoreInterval).toEqual(false);
+		expect(component.deleteAllMacros(false)).toBeUndefined();
+		component.deleteAllMacros(false);
+		expect(component.deleteAllMacros(false)).toBeUndefined();
 	});
-
 	it('Record should be deleted', fakeAsync(() => {
 		macrokeyServiceMock.setMacroKey.and.returnValue(Promise.resolve(true));
 		component.recordDelete(sampleInputData.macro.inputs[0], 0);
 		tick(20);
 		expect(component.recordsData.inputs.length).toEqual(4);
-	})
-	);
-
-	it('Repeat should set to 1',fakeAsync(() => {
-			macrokeyServiceMock.setRepeat.and.returnValue(Promise.resolve(true));
-			component.onRepeatChanged({ value: 1 });
-			tick(20);
-			expect(component.recordsData.repeat).toEqual(1);
-		})
-	);
-
-	it('Repeat should set to 5',fakeAsync(() => {
-			macrokeyServiceMock.setRepeat.and.returnValue(Promise.resolve(true));
-			component.onRepeatChanged({ value: 5 });
-			tick(20);
-			expect(component.recordsData.repeat).toEqual(5);
-		})
-	);
-
-	it('Interval should set to 1',fakeAsync(() => {
-			macrokeyServiceMock.setInterval.and.returnValue(Promise.resolve(true));
-			component.onIntervalChanged({ value: 1 });
-			tick(20);
-			expect(component.recordsData.interval).toEqual(1);
-			expect(component.ignoreInterval).toEqual(false);
-		})
-	);
-
-	it('Interval should set to 2',fakeAsync(() => {
-			macrokeyServiceMock.setInterval.and.returnValue(Promise.resolve(true));
-			component.onIntervalChanged({ value: 2 });
-			tick(20);
-			expect(component.recordsData.interval).toEqual(2);
-			expect(component.ignoreInterval).toEqual(true);
-		})
-	);
-
-	it('Interval should set to false',() => {
-		    component.onIntervalChanged({ value: false });
-			expect(component.tooltips_delay).toEqual("");
-	});
-
-	it('Do check should detect changes',fakeAsync(() => {
-			component.recordsData = {
-				repeat: 3,
-				interval: 2,
-				inputs: [
-					{ status: 1, key: 'S', interval: 0, pairName: 'pair-S-1' },
-					{ status: 0, key: 'S', interval: 208, pairName: 'pair-S-1' }
-				]
-			};
-			component.ngDoCheck();
-			tick(20);
-			expect(component.recordsList.length).toEqual(2);
-			expect(component.repeatSelectedValue).toEqual(3);
-			expect(component.delaySelectedValue).toEqual(2);
-		})
-	);
-
-	it('Should clear records', fakeAsync(() => {
-		component.clearRecordPopup = false;
-		component.clearRecords();
-		tick(10);
-		fixture.detectChanges();
-		expect(component.clearRecordPopup).toEqual(true);
 	}));
-
-	it('Should Update status when page property change', fakeAsync(() => { 
-		component.ngOnChanges({'recordsData':{'currentValue':{'interval':2}}});
-		expect(component.ignoreInterval).toEqual(true);
-		component.ngOnChanges({'recordsData':{'currentValue':{'interval':4}}});
+	it('Repeat should set to 1', fakeAsync(() => {
+		macrokeyServiceMock.setRepeat.and.returnValue(Promise.resolve(true));
+		component.onRepeatChanged({ value: 1 });
+		tick(20);
+		expect(component.recordsData.repeat).toEqual(1);
+	}));
+	it('Repeat should set to 5', fakeAsync(() => {
+		macrokeyServiceMock.setRepeat.and.returnValue(Promise.resolve(true));
+		component.onRepeatChanged({ value: 5 });
+		tick(20);
+		expect(component.recordsData.repeat).toEqual(5);
+	}));
+	it('Repeat should set to undefined', fakeAsync(() => {
+		macrokeyServiceMock.setRepeat.and.returnValue(Promise.resolve(false));
+		component.onRepeatChanged({ value: 5 });
+		expect(component.onRepeatChanged({ value: 5 })).toBeUndefined();
+	}));
+	it('Interval should set to 1', fakeAsync(() => {
+		macrokeyServiceMock.setInterval.and.returnValue(Promise.resolve(true));
+		component.onIntervalChanged({ value: 1 });
+		tick(20);
+		expect(component.recordsData.interval).toEqual(1);
 		expect(component.ignoreInterval).toEqual(false);
 	}));
-
-	it('Should Update the pair name', fakeAsync(() => { 
-		component.getPairName(2,1);
-		expect(component.pairCounter[2]).toEqual(0);
+	it('Interval should set to 2', fakeAsync(() => {
+		macrokeyServiceMock.setInterval.and.returnValue(Promise.resolve(true));
+		component.onIntervalChanged({ value: 2 });
+		tick(20);
+		expect(component.recordsData.interval).toEqual(2);
+		expect(component.ignoreInterval).toEqual(true);
+		component.onIntervalChanged({});
+		expect(component.tooltips_delay).toEqual("");
 	}));
+	it('Interval should set to undefined', fakeAsync(() => {
+		macrokeyServiceMock.setInterval.and.returnValue(Promise.resolve(false));
+		component.onIntervalChanged({ value: 1 });
+		expect(component.onIntervalChanged({ value: 1 })).toBeUndefined();
+	}));
+	it('Do check should detect changes', fakeAsync(() => {
+		component.recordsData = {
+			repeat: 3,
+			interval: 2,
+			inputs: [
+				{ status: 1, key: 'S', interval: 0, pairName: 'pair-S-1' },
+				{ status: 0, key: 'S', interval: 208, pairName: 'pair-S-1' }
+			]
+		};
+		component.ngDoCheck();
+		tick(20);
+		expect(component.recordsList.length).toEqual(2);
+		expect(component.repeatSelectedValue).toEqual(3);
+		expect(component.delaySelectedValue).toEqual(2);
+		component.recordsList = [
+			{ status: 1, key: 'S', interval: 0, pairName: 'pair-S-1' },
+			{ status: 0, key: 'S', interval: 208, pairName: 'pair-S-1' }
+		];
+		component.ngDoCheck();
+		expect(component.ngDoCheck()).toBeUndefined();
+		component.recordsData = undefined;
+		component.ngDoCheck();
+		expect(component.ngDoCheck()).toBeUndefined();
+	}));
+	it('Should clear records', fakeAsync(() => {
+		let modalRef = new ModalGamingPromptStubComponent();
+		spyOn(modalService, 'open').and.returnValue(modalRef);
+		component.clearRecords();
+		expect(component.clearRecords()).toBeUndefined();
+	}));
+	it('Should get pair name', fakeAsync(() => {
+		component.pairCounter = [1,2,3,4];
+		component.getPairName(2,1);
+		expect(component.pairCounter[1]).toEqual(2);
+	}));
+	it('Should update page info when change some val', fakeAsync(() => {
+		let changes = {'recordsData':{'currentValue':{
+			'inputs':[{'interval': 0,'key': "W",'pairName': "pair-W-1",'status': 1},
+			{'interval': 10,'key': "W",'pairName': "pair-W-1",'status': 0},
+			{'interval': 9,'key': "D",'pairName': "pair-D-6",'status': 1}],
+			'interval':1,
+			'repeat':1}}};
+		component.ngOnChanges(changes);
+		expect(component.ignoreInterval).toBeFalse();
+		changes.recordsData.currentValue.interval = 2;
+		component.ngOnChanges(changes);
+		expect(component.ignoreInterval).toBeTrue();
+		component.ngOnChanges(undefined);
+		expect(component.ngOnChanges(undefined)).toBeUndefined();
+		component.ngOnChanges({'recordsData':undefined});
+		expect(component.ngOnChanges(undefined)).toBeUndefined();
+	}))
+	
 
 });
 

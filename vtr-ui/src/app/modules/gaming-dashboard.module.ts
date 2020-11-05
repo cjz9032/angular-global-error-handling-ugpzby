@@ -46,7 +46,7 @@ import { ModalGamingPromptComponent } from '../components/modal/modal-gaming-pro
 import { ModalGamingAdvancedOCComponent } from '../components/modal/modal-gaming-advanced-oc/modal-gaming-advanced-oc.component';
 import { ModalGamingThermalMode2Component } from '../components/modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
 import { GamingOCService } from '../services/gaming/gaming-OC/gaming-oc.service';
-
+import { ModalGamingRunningAppListComponent } from '../components/modal/modal-gaming-running-app-list/modal-gaming-running-app-list.component';
 
 @NgModule({
 	declarations: [
@@ -60,7 +60,8 @@ import { GamingOCService } from '../services/gaming/gaming-OC/gaming-oc.service'
 		WidgetLightingComponent,
 		ModalGamingPromptComponent,
 		ModalGamingAdvancedOCComponent,
-		ModalGamingThermalMode2Component
+		ModalGamingThermalMode2Component,
+		ModalGamingRunningAppListComponent
 	],
 	imports: [
 		CommonModule,
@@ -100,7 +101,8 @@ import { GamingOCService } from '../services/gaming/gaming-OC/gaming-oc.service'
 		WidgetLightingComponent,
 		ModalGamingPromptComponent,
 		ModalGamingAdvancedOCComponent,
-		ModalGamingThermalMode2Component
+		ModalGamingThermalMode2Component,
+		ModalGamingRunningAppListComponent
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })

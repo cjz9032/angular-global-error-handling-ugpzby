@@ -12,7 +12,6 @@ import { UiDropDownComponent } from 'src/app/components/ui/ui-dropdown/ui-dropdo
 import { UiGamingCollapsibleContainerComponent } from 'src/app/components/ui/ui-gaming-collapsible-container/ui-gaming-collapsible-container.component';
 import { UiGamingDriverPopupComponent } from './../../components/ui/ui-gaming-driver-popup/ui-gaming-driver-popup.component';
 import { UiNumberButtonComponent } from 'src/app/components/ui/ui-number-button/ui-number-button.component';
-import { UiPopoverComponent } from 'src/app/components/ui/ui-popover/ui-popover.component';
 import { UiProgressBarComponent } from 'src/app/components/ui/ui-progress-bar/ui-progress-bar.component';
 import { UiRectangleRadioComponent } from 'src/app/components/ui/ui-rectangle-radio/ui-rectangle-radio.component';
 import { UiRoundedRectangleRadioComponent } from 'src/app/components/ui/ui-rounded-rectangle-radio/ui-rounded-rectangle-radio.component';
@@ -63,7 +62,6 @@ import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 		UiTimePickerComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
-		UiPopoverComponent,
 		UiProgressBarComponent,
 		UiTooltipsComponent,
 		UiToggleComponent,
@@ -91,7 +89,6 @@ import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 		UiTimePickerComponent,
 		UiGamingCollapsibleContainerComponent,
 		UiGamingDriverPopupComponent,
-		UiPopoverComponent,
 		NgbProgressbarModule,
 		UiProgressBarComponent,
 		MetricsModule,

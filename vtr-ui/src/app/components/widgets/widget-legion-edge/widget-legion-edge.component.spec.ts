@@ -4,6 +4,7 @@ import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 import { WidgetLegionEdgeComponent } from './widget-legion-edge.component';
 
@@ -189,6 +190,8 @@ describe('WidgetLegionEdgeComponent', () => {
 		}
 	};
 
+	const translateServiceMock = { instant: (name) => name };
+
 	const gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeRealStatus', 'regThermalModeRealStatusChangeEvent']);
 	const gamingOCServiceSpy = jasmine.createSpyObj('GamingOCService', ['getPerformanceOCSetting']);
 	const gamingSystemUpdateServiceSpy = jasmine.createSpyObj('GamingSystemUpdateService', ['getCpuOCStatus', 'getRamOCStatus', 'setCpuOCStatus', 'setRamOCStatus']);
@@ -244,6 +247,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: CommonService, useValue: commonServiceMock },
 					{ provide: LocalCacheService, useValue: localCacheServiceMock},
 					{ provide: VantageShellService },
+					{ provide: TranslateService, useValue: translateServiceMock },
 					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: GamingOCService, useValue: gamingOCServiceMoke },

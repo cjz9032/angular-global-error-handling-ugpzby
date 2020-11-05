@@ -37,6 +37,18 @@ describe('GamingHybridModeService', () => {
 			expect(service.getHybridModeStatus).toHaveBeenCalled();
 		});
 
+		it('should call getHybridModeStatus return error', async () => {
+			const { service } = setup();
+			service.isShellAvailable = true;
+			spyOn(service, 'getHybridModeStatus').and.callThrough();
+			spyOn(service.gamingHybridMode, 'getHybridModeStatus').and.throwError('shellService.gamingHybridMode().getHybridModeStatus error.');
+			try {
+				service.getHybridModeStatus();
+			} catch (err) {
+				expect(err.message).toEqual('shellService.gamingHybridMode().getHybridModeStatus error.');
+			}
+		});
+
 		it('should call setHybridModeStatus on false', () => {
 			const { service } = setup();
 			spyOn(service, 'setHybridModeStatus').and.callThrough();
@@ -48,6 +60,17 @@ describe('GamingHybridModeService', () => {
 			expect(service.setHybridModeStatus).toHaveBeenCalled();
 		});
 
+		it('should call setHybridModeStatus return error', async () => {
+			const { service } = setup();
+			service.isShellAvailable = true;
+			spyOn(service, 'setHybridModeStatus').and.callThrough();
+			spyOn(service.gamingHybridMode, 'setHybridModeStatus').and.throwError('shellService.gamingHybridMode().setHybridModeStatus error.');
+			try {
+				service.setHybridModeStatus(true);
+			} catch (err) {
+				expect(err.message).toEqual('shellService.gamingHybridMode().setHybridModeStatus error.');
+			}
+		});
 	});
 
 });

@@ -1,17 +1,12 @@
 import { GamingDashboardModule } from './gaming-dashboard.module';
-import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
-import { WidgetNetworkboostComponent } from './../components/widgets/widget-networkboost/widget-networkboost.component';
 import { GamingCommonModule } from './gaming/gaming.common.module';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
 import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
-import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
-import { UiMacrokeyPopupComponent } from '../components/ui/ui-macrokey-popup/ui-macrokey-popup.component';
 import { UiLightingProfileToggleComponent } from '../components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiLightingEffectComponent } from '../components/ui/ui-lighting-effect/ui-lighting-effect.component';
 import { UiLightingSingleColorComponent } from '../components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
-import { UiMacrokeyCollapsibleContainerComponent } from '../components/ui/ui-macrokey-collapsible-container/ui-macrokey-collapsible-container.component';
 import { UiColorWheelComponent } from '../components/ui/ui-color-wheel/ui-color-wheel.component';
 import { UiMacrokeyDetailsComponent } from '../components/ui/ui-macrokey-details/ui-macrokey-details.component';
 import { UiLightingProfileComponent } from '../components/ui/ui-lighting-profile/ui-lighting-profile.component';
@@ -27,17 +22,15 @@ import { CommonUiModule } from './common/common-ui.module';
 import { CommonWidgetModule } from './common/common-widget.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { GamingRoutingModule } from '../modules/gaming-routing.module';
-import { WidgetAutocloseComponent } from '../components/widgets/widget-autoclose/widget-autoclose.component';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
 import { MetricsModule } from '../services/metric/metrics.module';
 import { WidgetOfflineModule } from '../components/widgets/widget-offline-info/widget-offline.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalTurnOnComponent } from '../components/modal/modal-autoclose/modal-turn-on/modal-turn-on.component';
-import { ModalAddAppsComponent } from '../components/modal/modal-autoclose/modal-add-apps/modal-add-apps.component';
-import { NetworkboostAddAppsComponent } from '../components/modal/modal-network-boost/networkboost-add-apps/networkboost-add-apps.component';
-import { NetworkboostTurnOnComponent } from '../components/modal/modal-network-boost/networkboost-turn-on/networkboost-turn-on.component';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
+import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
+import { WidgetAddedAppListComponent } from '../components/widgets/widget-added-app-list/widget-added-app-list.component';
 
 // Load Icons for Gaming
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons/faQuestionCircle';
@@ -55,11 +48,9 @@ import { FeedbackModule } from './feedback/feedback.module';
 		PageMacrokeyComponent,
 		PageLightingcustomizeComponent,
 		PageAutocloseComponent,
-		UiMacrokeyPopupComponent,
 		UiLightingProfileToggleComponent,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
-		UiMacrokeyCollapsibleContainerComponent,
 		UiColorWheelComponent,
 		UiMacrokeyDetailsComponent,
 		UiLightingProfileComponent,
@@ -68,13 +59,8 @@ import { FeedbackModule } from './feedback/feedback.module';
 		WidgetLightingDeskComponent,
 		WidgetLightingNotebookComponent,
 		WidgetMacrokeySettingsComponent,
-		WidgetAutocloseComponent,
-		ModalTurnOnComponent,
+		WidgetAddedAppListComponent,
 		PageNetworkboostComponent,
-		WidgetNetworkboostComponent,
-		ModalAddAppsComponent,
-		NetworkboostAddAppsComponent,
-		NetworkboostTurnOnComponent,
 		UiLightingKeyboardLNBx50Component
 	],
 	imports: [

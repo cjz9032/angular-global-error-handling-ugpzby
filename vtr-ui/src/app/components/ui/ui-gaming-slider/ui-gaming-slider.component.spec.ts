@@ -22,4 +22,10 @@ describe('UiGamingSliderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('change the value when user click', () => {
+    component.userChange({target: {value: 1}});
+    expect(component.userChange({target: {value: 1}})).toBeUndefined();
+  });
+
 });

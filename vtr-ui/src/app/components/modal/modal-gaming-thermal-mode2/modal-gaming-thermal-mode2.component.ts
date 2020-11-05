@@ -20,6 +20,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
   templateUrl: './modal-gaming-thermal-mode2.component.html',
   styleUrls: ['./modal-gaming-thermal-mode2.component.scss']
 })
+
 export class ModalGamingThermalMode2Component implements OnInit {
 
   public loading = false;
@@ -38,14 +39,14 @@ export class ModalGamingThermalMode2Component implements OnInit {
   public autoAdjustSettings = true;
   public isAutoAdjustSetted = false;
   modalAutomationId: any = {
-		section: 'thermal_mode_warning_dialog',
-    	headerText: 'warning_dialog_warning_text',
-    	description: 'warning_dialog_warning_description',
-      description2: 'warning_dialog_warning_description2',
-      closeButton : 'thermal_mode_warning_dialog_close_button',
-      cancelButton: 'thermal_mode_warning_dialog_cancel_button',
-    	okButton: 'thermal_mode_warning_dialog_proceed_button'
-	}
+    section: 'thermal_mode_warning_dialog',
+    headerText: 'warning_dialog_warning_text',
+    description: 'warning_dialog_warning_description',
+    description2: 'warning_dialog_warning_description2',
+    closeButton : 'thermal_mode_warning_dialog_close_button',
+    cancelButton: 'thermal_mode_warning_dialog_cancel_button',
+    okButton: 'thermal_mode_warning_dialog_proceed_button'
+  }
   constructor(
     private modalService: NgbModal,
     private activeModalService: NgbActiveModal,
@@ -136,10 +137,10 @@ export class ModalGamingThermalMode2Component implements OnInit {
     this.activeModalService.close();
 
     const pageViewMetrics = {
-			ItemType: 'PageView',
-			PageName: 'Gaming.ThermalMode',
-			PageContext: 'ThermalMode settings page',
-			PageDuration: this.timer.stop()
+      ItemType: 'PageView',
+      PageName: 'Gaming.ThermalMode',
+      PageContext: 'ThermalMode settings page',
+      PageDuration: this.timer.stop()
     };
     if (this.metrics && this.metrics.sendMetrics) {
       this.metrics.sendMetrics(pageViewMetrics);
@@ -292,7 +293,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
   }
 
   public registerThermalModeChangeEvent() {
-		if (this.gamingCapabilities.smartFanFeature) {
+    if (this.gamingCapabilities.smartFanFeature) {
       try {
         this.thermalModeService.regThermalModeChangeEvent();
         this.shellServices.registerEvent(
@@ -304,7 +305,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
         this.logger.error('Modal-ThermalMode2-RegisterThermalModeChangeEvent: register fail; Error message: ', error.message);
         throw new Error(error.message);
       }
-		}
+    }
   }
 
   public onRegThermalModeChangeEvent(currentSettingStatus: any) {
@@ -317,10 +318,10 @@ export class ModalGamingThermalMode2Component implements OnInit {
 	}
 
   public unRegisterThermalModeChangeEvent() {
-		this.shellServices.unRegisterEvent(
-			EventTypes.gamingThermalModeChangeEvent,
-			this.onRegThermalModeChangeEvent.bind(this)
-		);
+    this.shellServices.unRegisterEvent(
+      EventTypes.gamingThermalModeChangeEvent,
+      this.onRegThermalModeChangeEvent.bind(this)
+    );
   }
   
   // Version 3.5 auto adjust in thermal mode 3 
@@ -365,7 +366,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
   // fengxu start
   openWaringModal(){
     this.closeThermalMode2Modal();
-    let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static',windowClass: 'modal-prompt' });
+    let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop: 'static', windowClass: 'modal-prompt' });
     waringModalRef.componentInstance.info = {
         title : "gaming.dashboard.device.warningPromptPopup.title",
         description : "gaming.dashboard.device.warningPromptPopup.description",
@@ -374,6 +375,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
         cancelButton : "gaming.dashboard.device.legionEdge.driverPopup.link",
         comfirmButtonAriaLabel : "PROCEED",
         cancelButtonAriaLabel : "CANCEL",
+        confirmMetricEnabled : false,
+        cancelMetricEnabled : false,
         fontFamily : true,
         id : this.modalAutomationId
     };
@@ -387,10 +390,10 @@ export class ModalGamingThermalMode2Component implements OnInit {
      });
 
     this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"thermalmode_advacedoc_warningmodal"}`));
-	}
+  }
   openAdvancedOCModal(){
-		this.modalService.open(ModalGamingAdvancedOCComponent, { backdrop:'static', windowClass: 'modal-fun' });
-	}
+    this.modalService.open(ModalGamingAdvancedOCComponent, { backdrop:'static', windowClass: 'modal-fun' });
+  }
   // fengxu end
 
   /**

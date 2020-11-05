@@ -168,17 +168,14 @@
 		vtr-ui-gaming-driver-popup {
 			::ng-deep {
 				ui-gaming-driver-popup {
-					right: calc(100% - 1rem);
-					top: -2.5rem;
-					&::after {
-						top: 11.5rem;
-					}
+					right: calc(100% - 0.9rem);
+					top: 0.5rem;
 					@media #{$medium-screen} {
 						min-width: 45rem;
 						right: auto;
 						left: 50%;
 						transform: translateX(-50%);
-						top: -25.1rem;
+						top: -14rem;
 						&::after {
 							top: calc(100% - 1.6rem);
 							right: calc(50% - 1.5rem);
@@ -197,18 +194,7 @@
 					}
 					@media #{$breakpoint_md} {
 						min-width: 45rem;
-						top: -25.1rem;
-					}
-					.content-body {
-						@media #{$medium-screen} {
-							min-height: 14.7rem;
-						}
-						@media #{$breakpoint_md} {
-							min-height: 14.7rem;
-						}
-						p {
-							min-height: 5.8rem;
-						}
+						top: -14rem;
 					}
 				}
 			}

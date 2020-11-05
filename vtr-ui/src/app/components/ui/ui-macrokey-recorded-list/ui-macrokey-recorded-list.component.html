@@ -8,7 +8,6 @@
 					<span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
 					{{ number.key }}
 				</span>
-
 			</div>
 		</div>
 		<div class="col-12" *ngIf="!recordingStatus" class="w-100">
@@ -109,10 +108,9 @@
 	</div>
 	<div class="bottom-fix" *ngIf="!recordingStatus">
 		<div class="text-right">
-			<div class="delete-wrapper" (click)="clearRecords()" vtrMetrics [metricsItem]="'macrokey_clear_records'"
+			<button class="delete-wrapper" (click)="clearRecords()" vtrMetrics [metricsItem]="'macrokey_clear_records'"
 				metricsEvent="featureClick" id="macrokey_clear_records"
-				attr.aria-label="{{ 'gaming.macroKey.narrator.clearText' | translate }}" tabindex="1"
-				(keyup.enter)="clearRecords()" role="button">
+				attr.aria-label="{{ 'gaming.macroKey.narrator.clearText' | translate }}" tabindex="1">
 				<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink">
 					<title>6.20pxIcon/bin</title>
@@ -132,11 +130,7 @@
 					</g>
 				</svg>
 				<span class="delete-btn">{{ 'gaming.macroKey.details.recorded.clear' | translate }}</span>
-			</div>
+			</button>
 		</div>
 	</div>
 </div>
-
-<vtr-ui-macrokey-popup *ngIf="showModal" [modalContent]="modalContent"
-	(action)="showModal=false; deleteAllMacros($event)">
-</vtr-ui-macrokey-popup>

@@ -1,18 +1,27 @@
-<div class="gaming-advanced-prompt gaming-modal-prompt"  role="text" [id]="info.id.section">
+<div class="gaming-advanced-prompt gaming-modal-prompt" role="text" [id]="info.id.section" (keydown.esc)="closeModal()">
     <div class="modal-header">
-        <h2 role="text" [id]="info.id.headerText ? info.id.headerText : ''">{{info.title | translate }}</h2>
+        <div role="text" [id]="info.id.headerText ? info.id.headerText : ''">{{info.title | translate}}</div>
         <button type="button" role="button" [id]="info.id.closeButton" tabindex="1" class="close gaming-advanced-prompt-close" aria-label="close" (click)="closeModal()">
-            ×
+            <fa-icon [icon]="['fal', 'times']"></fa-icon>
         </button>
     </div>
-    <div class="modal-body" tabindex="-1">
-        <p role="text" [id]="info.id.description ? info.id.description : ''">{{info.description | translate }}</p>
-        <p role="text" class="detailed-description" [ngClass]="{'description-family':info.fontFamily}" [id]="info.id.description2 ? info.id.description2 : ''" *ngIf="info.description2">{{info.description2 | translate }}</p>
-        <p role="text" class="detailed-description" id="save_change_dialog_oc_recovery_restoring_default_overclocking" *ngIf="info.description3">{{info.description3 | translate }}</p>
+    <div class="modal-body" tabindex="-1" *ngIf="!(!info.description && !info.description2 && !info.description3 && !info.checkboxTitle)">
+        <p role="text" [id]="info.id.description ? info.id.description : ''">{{info.description | translate}}</p>
+        <p role="text" class="detailed-description" [ngClass]="{'description-family':info.fontFamily}" [id]="info.id.description2 ? info.id.description2 : ''" *ngIf="info.description2">{{info.description2 | translate}}</p>
+        <p role="text" class="detailed-description" id="save_change_dialog_oc_recovery_restoring_default_overclocking" *ngIf="info.description3">{{info.description3 | translate}}</p>
+
+        <div class="check-asked" *ngIf="info.checkboxTitle">
+            <label for="askedBox">
+                <button class="ask-again" role="checkbox" [ngClass]="{'checked':isChecked}" (click)="setNotAskAgain()" tabindex="1"
+                    [id]="info.id.dontAskCheckbox" [attr.aria-checked]="isChecked" [attr.aria-label]="info.dontAskNarrator | translate"></button>
+                <div class="status-text">{{info.checkboxTitle | translate}}</div>
+            </label>
+        </div>
     </div>
     <div class="modal-footer">
-          <button type="button" role="button" [id]="info.id.okButton" tabindex="1" [attr.aria-label]="info.comfirmButtonAriaLabel" class="border-radius-button" *ngIf="info.comfirmButton" (click)="confirmFn()">{{info.comfirmButton | translate }}</button>
-        <button type="button" role="button" [id]="info.id.cancelButton" tabindex="1" [attr.aria-label]="info.cancelButtonAriaLabel" class="under-line-button cancel" *ngIf="info.cancelButton" (click)="cancelFn()">{{info.cancelButton | translate }}</button>
+        <button type="button" role="button" [id]="info.id.okButton" tabindex="1" [attr.aria-label]="info.comfirmButtonAriaLabel | translate" class="border-radius-button" *ngIf="info.comfirmButton" (click)="confirmFn()"
+            [vtrMetrics]="info.confirmMetricEnabled" [metricsItem]="info.confirmMetricsItemId" metricsEvent="featureClick">{{info.comfirmButton | translate}}</button>
+        <button type="button" role="button" [id]="info.id.cancelButton" tabindex="1" [attr.aria-label]="info.cancelButtonAriaLabel | translate" class="under-line-button cancel" *ngIf="info.cancelButton" (click)="cancelFn()"
+            [vtrMetrics]="info.cancelMetricEnabled" [metricsItem]="info.cancelMetricsItemId" metricsEvent="featureClick">{{info.cancelButton | translate}}</button>
     </div>
 </div>
-

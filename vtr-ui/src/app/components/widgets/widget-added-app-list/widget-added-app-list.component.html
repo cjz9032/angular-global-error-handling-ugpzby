@@ -1,0 +1,31 @@
+<div class="added-app-list-wrapper">
+	<ul class="d-flex flex-wrap">
+		<li class="add-icon" [ngClass]="{'add-disabled': isNetworkBoost && appList && appList.length >=5}">
+			<button (click)="openModal()" role="button" tabindex="1"
+				id="{{isNetworkBoost ? (appList && appList.length >=5 ? 'networkboost_addButton_unclickable' : 'networkboost_addButton_clickable') : 'addAutoCloseAppBtn'}}"
+				[ngClass]="{'isdisabled': isNetworkBoost && appList && appList.length >=5}"
+				[disabled]="isNetworkBoost && appList && appList.length >=5"
+				[tabindex]="isNetworkBoost && appList && appList.length >=5 ? -1 : 1"
+				[attr.aria-label]="(isNetworkBoost ? 'gaming.narrator.networkBoost.subPage.addApps' : 'gaming.autoClose.autocClosenarrator') | translate">
+				+
+			</button>
+			<div>{{'gaming.autoClose.addAppsButton' | translate}}</div>
+		</li>
+		<li *ngFor="let app of appList; let i = index"
+			[ngClass]="{'hovered': app.isHovered}"
+			(mouseover)="app.isHovered=true"
+			(mouseout)="app.isHovered=false"
+			[title]="app.processDescription">
+			<div>
+				<img src="{{app.iconName}}" alt="{{app.processDescription}}" />
+			</div>
+			<div placement="bottom" [title]="app.processDescription">
+				{{app.processDescription}}
+			</div>
+			<button class="remove-app" role="button" id="{{(isNetworkBoost ? 'autoclose_appremove' : 'nb_remove') + i}}" tabindex="1"
+				(click)="removeApp(app, i)" (focus)="app.isHovered=true" (focusout)="app.isHovered=false"
+				attr.aria-label="{{((isNetworkBoost ? 'gaming.narrator.networkBoost.subPage.remove' : 'gaming.autoClose.autocClosenarratorremove') | translate) + ' ' + app.processDescription}}">
+			</button>
+		</li>
+	</ul>
+</div>

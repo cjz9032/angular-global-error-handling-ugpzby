@@ -54,7 +54,11 @@
 						</div>
 						<hr class="dark-dashline" />
 						<vtr-ui-gaming-driver-popup *ngIf="isdriverpopup==true" [showMePartially]="isdriverpopup"
-							[isLightingText]="true" (driverpopval)="isdriverpopup=false" [automationId]="'gaming_lighting'">
+							(driverpopval)="isdriverpopup=false" [automationId]="'gaming_lighting'"
+							[isGamingDriverPop]="true"
+							[popupTitle]="'gaming.dashboard.device.legionEdge.lightingDriverPopup.headerText'"
+							[popupFeatureText]="'gaming.dashboard.device.legionEdge.lightingDriverPopup.text'"
+							[strOKbtn]="'gaming.dashboard.device.legionEdge.lightingDriverPopup.button'">
 						</vtr-ui-gaming-driver-popup>
 						<ul class="list-group">
 							<li class="list-group-item">
