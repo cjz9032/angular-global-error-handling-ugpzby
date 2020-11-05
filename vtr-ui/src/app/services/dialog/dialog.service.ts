@@ -337,6 +337,7 @@ export class DialogService {
 	closeDialog(id: string) {
 		if (this.dialog.getDialogById(id)) {
 			this.dialog.getDialogById(id).close();
+			this.dialog.openDialogs.length = 0;
 		}
 	}
 }

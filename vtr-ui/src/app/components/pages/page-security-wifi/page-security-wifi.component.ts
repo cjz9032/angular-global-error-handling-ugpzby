@@ -76,9 +76,9 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 	wsTrialTimeOnEventHandler = (hasTrialDays: number) => {
 		if (this.needOpenExpireDialog(hasTrialDays)) {
-			if (!this.dialogService.hasOpenDialog()) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, hasTrialDays);
+			if (!this.dialogService.hasOpenDialog() && this.wifiSecurityService.isLWSEnabled) {
 				this.openExpireDialog(hasTrialDays);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, hasTrialDays);
 			}
 		}
 	}
