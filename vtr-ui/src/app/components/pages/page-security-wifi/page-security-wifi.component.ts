@@ -76,14 +76,13 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 	wsTrialTimeOnEventHandler = (hasTrialDays: number) => {
 		if (this.needOpenExpireDialog(hasTrialDays)) {
-			if (!this.dialogService.hasOpenDialog()) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, hasTrialDays);
-				this.openExpireDialog(hasTrialDays);
-			}
+			this.openExpireDialog(hasTrialDays);
 		}
 	}
-	wsStateEventHandler = () => {
-		this.getTrialDay();
+	wsStateEventHandler = (value) => {
+		if (value === 'enabled') {
+			this.getTrialDay();
+		}
 	}
 	constructor(
 		public activeRouter: ActivatedRoute,
@@ -101,7 +100,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public wifiSecurityService: WifiSecurityService,
 		public userService: UserService,
 		private metrics: MetricService,
-		private dialog: MatDialog
 	) { }
 
 	ngOnInit() {
@@ -299,7 +297,11 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			linkButtonName: (hasTrialDays < this.maxCanTrialTime) ? ignore : '',
 			showCloseButton: (hasTrialDays < this.maxCanTrialTime) ? true : false,
 		};
-		this.dialogService.openWifiSecurityExpirePromptDialog(dialogData, (hasTrialDays >= this.maxCanTrialTime));
+
+		if (!this.dialogService.hasOpenDialog() && this.wifiSecurityService.isLWSEnabled) {
+			this.dialogService.openWifiSecurityExpirePromptDialog(dialogData, (hasTrialDays >= this.maxCanTrialTime));
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, hasTrialDays);
+		}
 	}
 
 	needOpenExpireDialog(hasTrialDays: number): boolean {
