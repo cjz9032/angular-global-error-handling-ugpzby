@@ -499,7 +499,7 @@ export class MetricService {
 			d_subbrand: 'NA',
 			d_fam: 'NA',
 			// d_mtm: localInfo.MTM, -- auto supply
-			d_id: 'NA',
+			// d_id: '', -- auto supply
 			// d_time: currentDate -- auto supply
 		};
 		const userInfo = {
@@ -509,8 +509,6 @@ export class MetricService {
 		const appInfo = {};
 		const metricEvent = {
 			e_name: 'LenovoSurvey',
-			e_cnt: '1',
-			e_prty: '1',
 			// e_time: colectionTime, -- auto supply
 			e_data: customData
 		};
@@ -521,6 +519,6 @@ export class MetricService {
 			events: [metricEvent]
 		};
 
-		this.metricsClient.supplyAndSend(fullPayload, { forced: true });
+		this.metricsClient.autoFillAndSend(fullPayload, { forced: true, autoFill: true });
 	}
 }
