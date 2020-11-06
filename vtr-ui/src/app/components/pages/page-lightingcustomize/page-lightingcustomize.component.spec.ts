@@ -96,7 +96,7 @@ describe('PageLightingcustomizeComponent', () => {
 		expect(res).toBe(undefined);
 	});
 
-	it ('should go to ofline mode', () => {
+	it ('should go to offline mode', () => {
 		const notification: any = {type: NetworkStatus.Offline, payload: {isOnline: false}};
 		commonService.isOnline = undefined;
 		const res = component.onNotification(notification);

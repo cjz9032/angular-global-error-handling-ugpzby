@@ -22,7 +22,7 @@ describe('Shared service:', () => {
     fbnetFilter: true,
     winKeyLockFeature: true,
     supporttedThermalMode:{
-      length: 1
+      length: 2
     } 
   }
 
@@ -61,6 +61,12 @@ describe('Shared service:', () => {
       expect(service.gamingAllCapabilities.getCapabilities).toHaveBeenCalled();
 
     });
+
+    it('should call getCapabilities return err', (() => {
+      const { service } = setup();
+      spyOn(service.gamingAllCapabilities, 'getCapabilities').and.throwError('GamingAllCapabilitiesService .getCapabilities error');
+      expect( function(){ service.getCapabilities(); } ).toThrow(new Error('GamingAllCapabilitiesService .getCapabilities error'));
+    }));
 
     it('should call setCapabilityValuesGlobally', () => {
       // tslint:disable-next-line: no-shadowed-variable

@@ -1,49 +1,63 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'vtr-modal-gaming-prompt',
-  templateUrl: './modal-gaming-prompt.component.html',
-  styleUrls: ['./modal-gaming-prompt.component.scss']
+    selector: 'vtr-modal-gaming-prompt',
+    templateUrl: './modal-gaming-prompt.component.html',
+    styleUrls: ['./modal-gaming-prompt.component.scss']
 })
+
 export class ModalGamingPromptComponent implements OnInit {
-  @Output() emitService = new EventEmitter();
-  public info: any = {
-	id: {
-		section: '',
-		headerText: '',
-		closeButton: '',
-		description: '',
-		okButton: '',
-		cancelButton: ''
-	}
-  };
-  constructor(
-	public activeModal: NgbActiveModal,
-	private modalService: NgbModal,
-  ) { }
+    @Output() emitService = new EventEmitter();
 
-	ngOnInit() {
-		setTimeout(() => {
-			const elem: HTMLElement = document.querySelector('.gaming-advanced-prompt-close');
-			if (elem) { elem.focus(); }
-		}, 230);
-  }
-  emitFn(info) {
-	this.emitService.next(info)
-  }
-  closeModal() {
-	this.emitFn(0);
-		this.activeModal.close('close');
-  }
+    public info: any = {
+        id: {
+            section: '',
+            headerText: '',
+            closeButton: '',
+            description: '',
+            okButton: '',
+            cancelButton: ''
+        }
+    };
+    public isChecked: any;
 
-  confirmFn(){
-	this.emitFn(1);
-	this.activeModal.close('close');
-  }
+    constructor(
+        public activeModal: NgbActiveModal
+    ) { }
 
-  cancelFn() {
-	this.emitFn(2);
-	this.activeModal.close('close');
-  }
+    ngOnInit() {
+        setTimeout(() => {
+            this.focusCloseButton();
+        }, 230);
+    }
+
+    emitFn(info) {
+        this.emitService.next(info);
+    }
+
+    closeModal() {
+        this.emitFn(0);
+        this.activeModal.close('close');
+    }
+
+    confirmFn(){
+        this.emitFn(1);
+        this.activeModal.close('close');
+    }
+
+    cancelFn() {
+        this.emitFn(2);
+        this.activeModal.close('close');
+    }
+
+    setNotAskAgain() {
+        this.isChecked = !this.isChecked;
+        this.emitFn(this.isChecked);
+    }
+
+    focusCloseButton() {
+        const elem: HTMLElement = document.querySelector('.gaming-advanced-prompt-close');
+        if (elem) { elem.focus(); }
+    }
 }

@@ -181,7 +181,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 		this.cardContentPositionD = this.dashboardService.offlineCardContent.positionD;
 	}
 
-	private onNotification(notification: AppNotification) {
+	onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
 				case NetworkStatus.Online:

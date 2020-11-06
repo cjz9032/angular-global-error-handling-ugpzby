@@ -8,11 +8,15 @@ import { Router } from '@angular/router'
 })
 export class UiGamingDriverPopupComponent implements OnInit {
 	@Input() showMePartially: boolean;
-	@Input() isLightingText: boolean;
-	@Input() popupText: any;
-	@Output() driverpopval = new EventEmitter<boolean>();
+	@Output() driverpopval = new EventEmitter<any>();
 	@Input() descriptionLabel = 'Gaming driver popup';
 	@Input() automationId: string;
+	@Input() item: any;
+	@Input() popupTitle: any;
+	@Input() popupFeatureText: any;
+	@Input() strOKbtn: any;
+	@Input() isGamingDriverPop: boolean;
+	
 	isNowOpened = false;
 
 	constructor(private router: Router) {
@@ -22,23 +26,29 @@ export class UiGamingDriverPopupComponent implements OnInit {
 	 }
 
 	ngOnInit() {
-		if (!this.popupText || this.popupText.length < 2) {
-			this.popupText = 'gaming.dashboard.device.legionEdge.driverPopup.text';
+		if (!this.popupFeatureText || this.popupFeatureText.length < 2) {
+			this.popupFeatureText = 'gaming.dashboard.device.legionEdge.driverPopup.text';
 		}
 		this.focusElement('ui-gaming-driver-popup');
 
 	}
 	close() {
 		this.showMePartially = !this.showMePartially;
-		this.driverpopval.emit(false);
+		if (this.isGamingDriverPop) this.driverpopval.emit(false);
+		else this.driverpopval.emit(this.item);
 		this.focusElement('#main-wrapper');
 
 	}
 
-	systemUpdatePage() {
-		this.router.navigate(['device/system-updates']);
+	clickEnableBtn() {
+		this.isGamingDriverPop ? this.systemUpdatePage() : this.close()
 	}
-	runappKeyup(event) {
+
+	systemUpdatePage() {
+		if (this.isGamingDriverPop) this.router.navigate(['device/system-updates']);
+	}
+	isPopupWindowGetFocus(event) {
+		if (event.srcElement.className.indexOf('enable-button') > -1 && this.isGamingDriverPop) return;
 		if (event.which === 9) {
 			setTimeout(() => {
 				this.focusElement('ui-gaming-driver-popup');

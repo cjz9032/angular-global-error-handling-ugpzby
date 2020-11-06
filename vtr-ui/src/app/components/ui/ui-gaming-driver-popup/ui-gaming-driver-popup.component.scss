@@ -29,9 +29,6 @@ ui-gaming-driver-popup {
 		border-left: 3rem solid transparent;
 		bottom: -1rem;
 		top: calc(50% - 1.5rem);
-		@media #{$breakpoint_md} {
-			top: 11.8rem;
-		}
 		right: -1.4rem;
 		transform: rotate(-45deg);
 		@media #{$high-contrast} {
@@ -42,7 +39,7 @@ ui-gaming-driver-popup {
 	}
 	.vtr-ui-gaming-driver-popup {
 		&.modal-body {
-			padding: 4rem 4rem;
+			padding: 2.4rem 3.5rem 2rem 2.4rem;
 			.btn-close {
 				position: absolute;
 				top: 0px;
@@ -61,7 +58,7 @@ ui-gaming-driver-popup {
 			}
 		}
 		.content-body {
-			min-height: 10rem;
+			// min-height: 10rem;
 		}
 
 		fa-icon {
@@ -86,19 +83,27 @@ ui-gaming-driver-popup {
 		p {
 			font-size: $fontsize_xs;
 			color: $lightText;
-			padding: 0.5rem 0;
+			padding: 1.5rem 0 1rem 0;
 			@media #{$high-contrast} {
 				color: windowText;
 			}
 		}
 
 		hr {
+			margin: 0 !important;
 			@media #{$high-contrast} {
 				color: windowText;
+			}
+			&.restart-style{
+				margin-top: 2rem !important;
 			}
 		}
 
 		.btn-container {
+			margin-top: 2rem;
+			.cancel-link {
+				margin-top: 0;
+			}
 			div {
 				display: inline-block;
 				position: relative;
@@ -129,7 +134,7 @@ ui-gaming-driver-popup {
 			vertical-align: middle;
 			font-weight: $weight_600;
 			margin-top: 1.8rem;
-			margin-left: 6rem;
+			margin-left: 2rem;
 			border-bottom: 2px solid $blueFill;
 			text-decoration: none !important;
 			cursor: pointer;
@@ -160,7 +165,8 @@ ui-gaming-driver-popup {
 ::ng-deep {
 	.overclock-driver-popup,
 	.networkboost-driver-popup,
-	.ram-overclock-driver-popup {
+	.ram-overclock-driver-popup,
+	.hybridmode-resart-popup {
 		ui-gaming-driver-popup {
 			@media #{$mediaquery_X48} {
 				min-width: 44rem;
@@ -181,41 +187,54 @@ ui-gaming-driver-popup {
 							margin-left: 1.5rem;
 						}
 					}
-					.enable-button {
-						@media #{$mediaquery_sm} {
-							margin-bottom: 1rem;
-						}
-					}
 				}
 			}
 		}
 	}
 	.overclock-driver-popup {
 		ui-gaming-driver-popup {
-			top: -8.5rem;
+			top: -5.5rem;
 			@media #{$breakpoint_sm} {
 				right: 7.5rem;
 			}
-			&::after {
-				top: 11.7rem;
+			@media #{$mediaquery_12} {
+				top: -7rem;
 			}
 		}
 	}
 	.ram-overclock-driver-popup {
 		ui-gaming-driver-popup {
 			right: 7.5rem;
-			top: -11.5rem;
-			&::after {
-				top: 11.7rem;
+			top: -8.5rem;
+			@media #{$mediaquery_12} {
+				top: -10rem;
 			}
 		}
 	}
 	.networkboost-driver-popup {
 		ui-gaming-driver-popup {
 			right: 7.5rem;
-			top: -11.5rem;
-			&::after {
-				top: 11.7rem;
+			top: -8.5rem;
+			@media #{$mediaquery_12} {
+				top: -10rem;
+			}
+		}
+	}
+	.hybridmode-resart-popup {
+		ui-gaming-driver-popup {
+			right: 7.5rem;
+			top: -8rem;
+		}
+	}
+}
+
+::ng-deep body.focus-enable .is-gaming {
+	.vtr-ui-gaming-driver-popup {
+		.cancel-link:focus {
+			@include outline-blue-gaming;
+			outline-offset: 0.2rem;
+			@media #{$high-contrast} {
+				outline-color: highlight;
 			}
 		}
 	}

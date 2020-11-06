@@ -1691,6 +1691,7 @@ export class VantageShellService {
 			getNetUsingProcesses: this.getPromise(runningList),
 			getStatus: this.getPromise(true),
 			setStatus: this.getPromise(true),
+			deleteProcessInNetBoost: this.getPromise(true),
 			addProcessToNetBoost: this.getPromise(true)
 		};
 		return gamingNetworkBoost;

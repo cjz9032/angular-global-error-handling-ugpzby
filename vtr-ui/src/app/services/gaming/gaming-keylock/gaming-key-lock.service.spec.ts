@@ -25,8 +25,6 @@ describe('GamingKeyLockService', () => {
 			return { service };
 		}
 
-
-
 		it('should call getKeyLockStatus', () => {
 			// tslint:disable-next-line: no-shadowed-variable
 			const { service } = setup();
@@ -40,7 +38,16 @@ describe('GamingKeyLockService', () => {
 			expect(service.gamingKeyLock.getKeyLockStatus).toHaveBeenCalled();
 		});
 
-
+		it('should call getKeyLockStatus return error', async () => {
+			const { service } = setup();
+			service.isShellAvailable = true;
+			spyOn(service.gamingKeyLock, 'getKeyLockStatus').and.throwError('shellService.gamingKeyLock().getKeyLockStatus error.');
+			try {
+				service.getKeyLockStatus();
+			} catch (err) {
+				expect(err.message).toEqual('shellService.gamingKeyLock().getKeyLockStatus error.');
+			}
+		});
 
 		it('should call setKeyLockStatus', () => {
 			// tslint:disable-next-line: no-shadowed-variable
@@ -55,7 +62,15 @@ describe('GamingKeyLockService', () => {
 			expect(service.gamingKeyLock.setKeyLockStatus).toHaveBeenCalled();
 		});
 
-
+		it('should call setKeyLockStatus return error', async () => {
+			const { service } = setup();
+			service.isShellAvailable = true;
+			spyOn(service.gamingKeyLock, 'setKeyLockStatus').and.throwError('shellService.gamingKeyLock().setKeyLockStatus error.');
+			try {
+				service.setKeyLockStatus(true);
+			} catch (err) {
+				expect(err.message).toEqual('shellService.gamingKeyLock().setKeyLockStatus error.');
+			}
+		});
 	});
-
 });

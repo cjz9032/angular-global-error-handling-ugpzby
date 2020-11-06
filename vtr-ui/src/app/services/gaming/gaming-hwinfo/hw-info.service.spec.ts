@@ -34,6 +34,16 @@ describe('HwInfoService', () => {
 			expect(service.gamingHwInfo.getDynamicInformation).toHaveBeenCalled();
 		});
 
+		it('should call getDynamicInformation return error', () => {
+			const { service } = setup();
+			service.isShellAvailable = true;
+			spyOn(service.gamingHwInfo, 'getDynamicInformation').and.throwError('shellService.getGamingHwInfo().getDynamicInformation error.');
+			try {
+				service.getDynamicInformation();
+			} catch (err) {
+				expect(err.message).toEqual('shellService.getGamingHwInfo().getDynamicInformation error.');
+			}
+		});
 
 		it('should call getMachineInfomation', () => {
 			const { service } = setup();
@@ -46,6 +56,15 @@ describe('HwInfoService', () => {
 			expect(service.gamingHwInfo.getMachineInfomation).toHaveBeenCalled();
 		});
 
-
+		it('should call getMachineInfomation return error', () => {
+			const { service } = setup();
+			service.isShellAvailable = true;
+			spyOn(service.gamingHwInfo, 'getMachineInfomation').and.throwError('shellService.getGamingHwInfo().getMachineInfomation error.');
+			try {
+				service.getMachineInfomation();
+			} catch (err) {
+				expect(err.message).toEqual('shellService.getGamingHwInfo().getMachineInfomation error.');
+			}
+		});
 	});
 });

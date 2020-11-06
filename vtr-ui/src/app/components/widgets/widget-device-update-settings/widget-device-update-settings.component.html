@@ -26,9 +26,15 @@
 												(showDropDown)="showDropDown.emit(item)">
 											</vtr-ui-gaming-collapsible-container>
 											<vtr-ui-gaming-driver-popup [ngClass]="{'overclock-driver-popup' : item.id === 'legionedge cpuoverlock'}" *ngIf="item.isCollapsible && item.isDriverPopup"
-												 [showMePartially]="item.isDriverPopup"
-												[descriptionLabel]="item.ariaLabel" [popupText]="item.driverPopupText"
-												(driverpopval)="onClosed(item, in)" [automationId]="item.ariaLabel">
+												[showMePartially]="item.isDriverPopup"
+												[isGamingDriverPop]="true"
+												[item]="item"
+												[strOKbtn]="'gaming.dashboard.device.legionEdge.driverPopup.button'"
+												[descriptionLabel]="item.ariaLabel"
+												[popupFeatureText]="item.driverPopupText"
+												(driverpopval)="onClosed(item, in)"
+												[automationId]="item.ariaLabel"
+												[popupTitle]="'gaming.dashboard.device.legionEdge.driverPopup.headerText'">
 											</vtr-ui-gaming-driver-popup>
 											<a id="{{item.settings}}" [attr.aria-label]="item.ariaLabel + 'gear icon'"
 												vtrMetrics href="javascript:void();" [metricsItem]="item.settings"
@@ -46,16 +52,17 @@
 													[value]="item.isChecked" [notChange]="item.readonly" [parentId]="'Gaming.Dashboard'">
 												</vtr-ui-toggle>
 
-												<vtr-ui-popover *ngIf="item.isPopup" [item]="item"
-													[showMePartially]="item.isPopup" [descriptionLabel]="item.ariaLabel"
-													(closeClicked)="onClosed($event, in)" [automationId]="item.ariaLabel">
-												</vtr-ui-popover>
-												<vtr-ui-gaming-driver-popup [ngClass]="{'networkboost-driver-popup': item.id === 'legionedge networkboost','ram-overclock-driver-popup': item.id === 'legionedge ramoverlock'}" *ngIf="item.isDriverPopup"
-													 [showMePartially]="item.isDriverPopup"
+												<vtr-ui-gaming-driver-popup [ngClass]="{'networkboost-driver-popup': item.id === 'legionedge networkboost','ram-overclock-driver-popup': item.id === 'legionedge ramoverlock','hybridmode-resart-popup': item.id === 'legionedge hybridmode'}"
+													*ngIf="item.isDriverPopup || item.isPopup"
+													[item]="item"
+													[isGamingDriverPop]="!item.isPopup && item.isDriverPopup"
+													[showMePartially]="item.isDriverPopup"
 													[descriptionLabel]="item.ariaLabel"
-													[popupText]="item.driverPopupText"
+													[popupFeatureText]="(!item.isPopup && item.isDriverPopup) ? item.driverPopupText : ''"
 													(driverpopval)="onClosed(item, in)"
-													[automationId]="item.ariaLabel">
+													[automationId]="item.ariaLabel"
+													[strOKbtn]="(!item.isPopup && item.isDriverPopup) ? 'gaming.dashboard.device.legionEdge.driverPopup.button' : 'gaming.dashboard.device.legionEdge.popup.button'"
+													[popupTitle]="(item.isPopup && !item.isDriverPopup) ? 'gaming.dashboard.device.legionEdge.popup.text' : 'gaming.dashboard.device.legionEdge.driverPopup.headerText'">
 												</vtr-ui-gaming-driver-popup>
 												<fa-icon class=" question" triggers="click:blur" placement="auto"
 													[ngbTooltip]="item.tooltipText" [icon]="['far', 'question-circle']"

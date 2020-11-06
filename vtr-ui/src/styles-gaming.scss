@@ -179,14 +179,14 @@
 	}
 
 	.border-radius-button {
-		font-size: 14px;
+		font-size: 1.4rem;
 		line-height: 1.5;
 		font-family: "Segoe UI";
 		font-weight: bold;
 		color: $white100;
-		padding: 8px 20px;
+		padding: 0.8rem 2rem;
 		background-color: $blueFill;
-		border-radius: 20px;
+		border-radius: 2rem;
 		transition: all 0.2s ease;
 		position: relative;
 		@media #{$high-contrast} {
@@ -201,16 +201,16 @@
 	}
 
 	.under-line-button {
-		font-size: 14px;
+		font-size: 1.4rem;
 		line-height: 1.5;
 		font-family: "Segoe UI";
 		font-weight: bold;
 		color: $blueFill;
 		border-bottom: 2px solid $blueFill;
-		padding: 8px 2px 0px 2px;
-		height: 32px;
-		border-radius: 0px;
-		margin-top: -8px;
+		padding: 0.8rem 0.2rem 0 0.2rem;
+		height: 3.2rem;
+		border-radius: 0;
+		margin-top: -0.8rem;
 		transition: all 0.2s ease;
 		position: relative;
 		&:hover {
@@ -2173,7 +2173,7 @@ body.focus-enable{
 		}
 		vtr-page-lightingcustomize,vtr-page-macrokey,
 		vtr-page-networkboost,vtr-page-autoclose,vtr-page-device-gaming{
-		.remove-app,li.add-icon div,.delete-btn,.delete-wrapper,
+		.remove-app,li.add-icon button,.delete-btn,.delete-wrapper,
 		.help-box button,vtr-ui-toggle button,.gaming-popup-window{
 			&:focus{
 				@include solid-button-outline;

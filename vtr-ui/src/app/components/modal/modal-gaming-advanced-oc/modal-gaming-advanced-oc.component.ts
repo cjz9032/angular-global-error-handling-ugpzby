@@ -215,6 +215,10 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			cancelButton: 'gaming.dashboard.device.savePromptPopup.notSave',
 			comfirmButtonAriaLabel: 'SAVE',
 			cancelButtonAriaLabel: 'DON\'T SAVE',
+			confirmMetricEnabled : false,
+			confirmMetricsItemId : '',
+			cancelMetricEnabled : false,
+			cancelMetricsItemId : '',
 			id: this.modalAutomationId
 		};
 		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
@@ -263,6 +267,10 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		cancelButton : 'gaming.dashboard.device.legionEdge.driverPopup.link',
 		comfirmButtonAriaLabel : 'OK',
 		cancelButtonAriaLabel : 'CANCEL',
+		confirmMetricEnabled : false,
+		confirmMetricsItemId : '',
+		cancelMetricEnabled : false,
+		cancelMetricsItemId : '',
 		id : this.defaultModalAutomationId
 	};
 	waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {

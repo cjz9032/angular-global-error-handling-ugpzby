@@ -1,9 +1,7 @@
 <div class="macrokey-wrapper" [ngClass]="{'recording': recording && number, 'numberpad':isNumberpad}">
 	<div class="header-component" *ngIf="number && !number.status">
 		<div class="title-main">
-			{{ 'gaming.macroKey.recording.title' | translate }} <span
-				*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
-			{{ number.key }}
+			{{ 'gaming.macroKey.recording.title' | translate }} <span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>{{ number.key }}
 		</div>
 	</div>
 	<div class="section-details">
@@ -11,22 +9,14 @@
 			[ngClass]="{'no-key': !number, 'data-exists': number && number.status, 'recording-data': recording && keyData.inputs.length > 0}">
 			<div class="select-key" *ngIf="!number">
 				<div class="title-main">
-					<p>
-						{{ 'gaming.macroKey.details.intro.noNumber' | translate }}
-					</p>
+					<p>{{ 'gaming.macroKey.details.intro.noNumber' | translate }}</p>
 				</div>
 			</div>
 			<div *ngIf="number && !number.status">
 				<div class="can-record" *ngIf="!recording">
 					<div class="title-main">
-						<p>
-							{{ 'gaming.macroKey.details.intro.title' | translate }}
-						</p>
-						<p>
-							<span
-								*ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
-							{{ number.key }}
-						</p>
+						<p>{{ 'gaming.macroKey.details.intro.title' | translate }}</p>
+						<p><span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>{{ number.key }}</p>
 					</div>
 					<div class="description">
 						<p>{{ 'gaming.macroKey.details.intro.line1' | translate }}</p>
@@ -37,12 +27,8 @@
 				<div class="is-recording" *ngIf="recording">
 					<div class="initalize" *ngIf="keyData.inputs.length == 0">
 						<div class="title-main">
-							<p>
-								{{ 'gaming.macroKey.details.recording.title' | translate }}
-							</p>
-							<p>
-								{{ 'gaming.macroKey.details.recording.description' | translate }}
-							</p>
+							<p>{{ 'gaming.macroKey.details.recording.title' | translate }}</p>
+							<p>{{ 'gaming.macroKey.details.recording.description' | translate }}</p>
 						</div>
 						<div class="description"></div>
 					</div>
@@ -62,22 +48,19 @@
 		</div>
 	</div>
 	<div class="footer-component text-center" *ngIf="number && !number.status">
-		<div class="start-button">
-			<vtr-ui-button [linkId]="'gaming_macrokey_startrecording'" [tabIndex]="1"
-				metricsEvent="featureClick" [tooltip]="false" [metricsItem]="'macrokey_start_recording'"
-				[label]="'gaming.macroKey.details.buttons.start' | translate" [btnHeight]=true [isGradient]=true
-				(onClick)="onStartClicked($event)" (keyup.enter)="onStartClicked($event)">
-			</vtr-ui-button>
-		</div>
-		<div class="stop-button">
-			<vtr-ui-button [linkId]="'gaming_macrokey_stoprecording'" [tabIndex]="1"
-				metricsEvent="featureClick" [tooltip]="false" [metricsItem]="'macrokey_stop_recording'"
-				[label]="'gaming.macroKey.details.buttons.stop' | translate" [btnHeight]=true [isGradient]=true
-				(onClick)="onStopClicked($event)">
-			</vtr-ui-button>
+		<div class="button-container">
+			<button id="gaming_macrokey_startrecording" [tabIndex]="1" class="start-button border-radius-button"
+				vtrMetrics metricsEvent="featureClick" [metricsItem]="'macrokey_start_recording'"
+				attr.aria-label="{{ 'gaming.macroKey.details.buttons.start' | translate }}"
+				(click)="onStartClicked($event)" (keyup.enter)="onStartClicked($event)" (keyup.space)="onStartClicked($event)">
+				{{ 'gaming.macroKey.details.buttons.start' | translate }}
+			</button>
+			<button id="gaming_macrokey_stoprecording" [tabIndex]="1" class="stop-button border-radius-button"
+				vtrMetrics metricsEvent="featureClick" [metricsItem]="'macrokey_stop_recording'"
+				attr.aria-label="{{ 'gaming.macroKey.details.buttons.stop' | translate }}"
+				(click)="onStopClicked($event)">
+				{{ 'gaming.macroKey.details.buttons.stop' | translate }}
+			</button>
 		</div>
 	</div>
 </div>
-
-<vtr-ui-macrokey-popup *ngIf="showModal" [modalContent]="modalContent" (action)="showModal=false">
-</vtr-ui-macrokey-popup>
