@@ -62,7 +62,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.ngZone.run(() => {
 			if (value !== undefined) {
 				if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
-					this.dialogService.closeDialog('wifi-security-expire-prompt-dialog');
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				} else if (value) {
 					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
