@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
@@ -395,6 +395,17 @@ export class ModalGamingThermalMode2Component implements OnInit {
     this.modalService.open(ModalGamingAdvancedOCComponent, { backdrop:'static', windowClass: 'modal-fun' });
   }
   // fengxu end
+
+  // Version 3.5 keyboard nevigation
+  @HostListener('window: focus')
+	onFocus(): void {
+    const modal: HTMLElement = document.querySelector('.close');
+		let modalTimer = setTimeout(() => {
+      modal.focus();
+      clearTimeout(modalTimer);
+      modalTimer = null;
+    }, 5);
+	}
 
   /**
    * metrics collection for thermalmode feature

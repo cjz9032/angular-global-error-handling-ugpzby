@@ -21,7 +21,7 @@
             <div class="item" *ngIf="gamingCapabilities.supporttedThermalMode.includes(thermalMode2Enum.performance)">
                 <div class="item-left">
                     <input id="radio-performance" class="item-radio-button" type="radio" name="thermalMode"
-                        tabindex="1" aria-label="performance mode"
+                        tabindex="{{thermalModeSettingStatus===thermalMode2Enum.performance ? 1 : -1}}" aria-label="performance mode"
                         [checked]="thermalModeSettingStatus===thermalMode2Enum.performance" value="thermalMode2Enum.performance" (click)="setThermalModeSettingStatus(thermalMode2Enum.performance)">
                     <label for="radio-performance">
                         <img class="gaming-radio-image-rest" role="radio" id="thermal_mode_setting_performance_mode_radio_button_unchecked" *ngIf="thermalModeSettingStatus!==thermalMode2Enum.performance"/>
@@ -96,7 +96,7 @@
             <div class="item" *ngIf="gamingCapabilities.supporttedThermalMode.includes(thermalMode2Enum.balance)">
                 <div class="item-left">
                     <input id="radio-banance" class="item-radio-button" type="radio" name="thermalMode"
-                        tabindex="1" aria-label="balance mode"
+                        tabindex="{{thermalModeSettingStatus===thermalMode2Enum.balance ? 1 : -1}}" aria-label="balance mode"
                         [checked]="thermalModeSettingStatus===thermalMode2Enum.balance" value="thermalMode2Enum.balance" (click)="setThermalModeSettingStatus(thermalMode2Enum.balance)">
                     <label for="radio-banance">
                         <img class="gaming-radio-image-rest"  role="radio" id="thermal_mode_setting_balance_mode_radio_button_unchecked" *ngIf="thermalModeSettingStatus!==thermalMode2Enum.balance"/>
@@ -128,7 +128,7 @@
             <div class="item" *ngIf="gamingCapabilities.supporttedThermalMode.includes(thermalMode2Enum.quiet)">
                 <div class="item-left">
                     <input id="radio-quiet" class="item-radio-button" type="radio" name="thermalMode"
-                        tabindex="1" aria-label="quiet mode"
+                        tabindex="{{thermalModeSettingStatus===thermalMode2Enum.quiet ? 1 : -1}}" aria-label="quiet mode"
                         [checked]="thermalModeSettingStatus===thermalMode2Enum.quiet" value="thermalMode2Enum.quiet" (click)="setThermalModeSettingStatus(thermalMode2Enum.quiet)">
                     <label for="radio-quiet">
                         <img class="gaming-radio-image-rest"  role="radio" id="thermal_mode_setting_quiet_mode_radio_button_unchecked" *ngIf="thermalModeSettingStatus!==thermalMode2Enum.quiet"/>
