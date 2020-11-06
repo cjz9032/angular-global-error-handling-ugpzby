@@ -81,6 +81,9 @@
 		user-select: none; // preventing user text selection
 
 		.hyperlink-outline {
+			display: flex;
+			align-items: center;
+			
 			&:focus {
 				outline: 0.1rem solid $menu_hover;
 				outline-offset: 0.4rem;
@@ -106,20 +109,25 @@
 			}
 		}
 
-		.hyperlink {
+		.hyperlink-text-container {
+			display: inline-block;
 
-			@media #{$white-on-black}, #{$black-on-white} {
-				&:hover, &:focus {
-					border-bottom-color: $blue-light;
+			.hyperlink {
+				display: inline;
+
+				@media #{$white-on-black}, #{$black-on-white} {
+					&:hover, &:focus {
+						border-bottom-color: $blue-light;
+					}
 				}
-			}
-
-			@media #{$white-on-black} {
-				@include font-and-underline-color($high-contrast-black-yellow)
-			}
-
-			@media #{$black-on-white} {
-				@include font-and-underline-color($high-contrast-white-blue);
+	
+				@media #{$white-on-black} {
+					@include font-and-underline-color($high-contrast-black-yellow)
+				}
+	
+				@media #{$black-on-white} {
+					@include font-and-underline-color($high-contrast-white-blue);
+				}
 			}
 		}
 	}
