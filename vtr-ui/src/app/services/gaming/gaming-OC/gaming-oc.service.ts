@@ -7,6 +7,7 @@ import { LoggerService } from '../../logger/logger.service';
 })
 export class GamingOCService {
 	private gamingOverClock: any;
+	private gamingPerformanceOC: any;
 	public isShellAvailable = false;
 
 	constructor(
@@ -14,18 +15,20 @@ export class GamingOCService {
 		private logger: LoggerService
 	) {
 		// performance OC is a sub-feature of thermal mode 2
-		this.gamingOverClock = shellService.getGamingThermalMode();
-		if (this.gamingOverClock) {
+		this.gamingPerformanceOC = shellService.getGamingThermalMode();
+		// original OC & thermal mode 3.0 OC are over-clock-feature
+		this.gamingOverClock = shellService.getGamingOverClock();
+		if (this.gamingPerformanceOC && this.gamingOverClock) {
 			this.isShellAvailable = true;
 		} else {
-			this.logger.error(`Service-gamingOverClock-Constructor: gamingOverClock is undefined, shell Available: ${this.isShellAvailable}`);
+			this.logger.error(`Service-gamingOC-Constructor: gamingOC is undefined, shell Available: ${this.isShellAvailable}`);
 		}
 	}
 
 	getPerformanceOCSetting(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.gamingOverClock.getPerformanceOCSetting();
+				return this.gamingPerformanceOC.getPerformanceOCSetting();
 			}
 			this.logger.error(`Service-GamingOC-GetPerformanceOCSetting: return undefined, shell Available: ${this.isShellAvailable}`);
 			return undefined;
@@ -38,7 +41,7 @@ export class GamingOCService {
 	setPerformanceOCSetting(value: Boolean): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.gamingOverClock.setPerformanceOCSetting(value);
+				return this.gamingPerformanceOC.setPerformanceOCSetting(value);
 			}
 			this.logger.error(`Service-GamingOC-SetPerformanceOCSetting: return undefined, shell Available: ${this.isShellAvailable}`);
 			return undefined;
@@ -52,7 +55,7 @@ export class GamingOCService {
 	regOCRealStatusChangeEvent(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.gamingOverClock.regOCRealStatusEvent();
+				return this.gamingOverClock.regOCStatusEvent();
 			}
 			this.logger.error(`Service-GamingOC-regOCRealStatusChangeEvent: return undefined, shell Available: ${this.isShellAvailable}`);
 			return undefined;

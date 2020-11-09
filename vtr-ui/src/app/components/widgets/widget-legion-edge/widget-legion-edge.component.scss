@@ -95,10 +95,9 @@
 					.pngStatus {
 						width: 100%;
 						height: 100%;
-						opacity: 0.5;
+						opacity: 1;
 						@media #{$high-contrast}{
 							background-color: $darkCell;
-							opacity: 1;
 						}
 					}
 					.performance {

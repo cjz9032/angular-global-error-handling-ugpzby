@@ -387,6 +387,10 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				this.unGamingQuickSettingsStatusChangedEvent('NetworkBoost', EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent, this.networkBoostEvent);
 				this.unGamingQuickSettingsStatusChangedEvent('AutoClose', EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent, this.autoCloseEvent);
 				this.legionEdgeInit();
+				// Version 3.5 OCRealStatusChangeEvent in thermak mode 3.0
+				if(this.gamingCapabilities.thermalModeVersion === 4) {
+					this.unRegisterOCRealStatusChangeEvent();
+				}
 			}
 		});
 	}
@@ -472,13 +476,10 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.thermalModeEvent = this.onRegThermalModeRealStatusChangeEvent.bind(this);
 			this.renderThermalMode2RealStatus();
 			this.registerThermalModeRealStatusChangeEvent();
+			
 			if(this.OCSupported !== this.thermalMode2Enum.none) {
-				// TODO Version 3.5 
-				this.performanceOCSettings = true;
-				// this.OCRealStatusEvent = this.onRegOCRealStatusChangeEvent.bind(this);
-				// this.registerOCRealStatusChangeEvent();
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.CpuOCStatus, this.performanceOCSettings ? 1 : 3);
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.GpuOCStatus, this.performanceOCSettings ? 1 : 3);
+				this.OCRealStatusEvent = this.onRegOCRealStatusChangeEvent.bind(this);
+				this.registerOCRealStatusChangeEvent();
 			} else {
 				this.performanceOCSettings = false;
 			}
@@ -662,20 +663,29 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	registerOCRealStatusChangeEvent() {
 		try {
 			this.gamingOCService.regOCRealStatusChangeEvent();
-			// this.shellServices.registerEvent(EventTypes.gamingOCRealStatusChangeEvent, this.OCRealStatusEvent);
+			this.shellServices.registerEvent(EventTypes.gamingOCStatusChangeEvent, this.OCRealStatusEvent);
 			this.logger.info('Widget-LegionEdge-registerOCRealStatusChangeEvent: register success');
 		} catch (error) {
 			this.logger.error('Widget-LegionEdge-registerOCRealStatusChangeEvent: register fail; Error message: ', error.message);
 		}
 	}
 	unRegisterOCRealStatusChangeEvent() {
-		// this.shellServices.unRegisterEvent(EventTypes.gamingOCRealStatusChangeEvent, this.OCRealStatusEvent);
+		this.shellServices.unRegisterEvent(EventTypes.gamingOCStatusChangeEvent, this.OCRealStatusEvent);
 	}
-	onRegOCRealStatusChangeEvent(currentRealStatus: any) {
+	onRegOCRealStatusChangeEvent(realOCStatusInfo: any) {
 		this.ngZone.run(() => {
-			this.logger.info(`Widget-LegionEdge-onRegOCRealStatusChangeEvent: call back from ${this.performanceOCSettings} to ${currentRealStatus}`);
-			if (currentRealStatus !== undefined && this.performanceOCSettings !== currentRealStatus) {
-				this.performanceOCSettings = currentRealStatus;
+			this.logger.info(`Widget-LegionEdge-onRegOCRealStatusChangeEvent: call back from ${this.performanceOCSettings} to ${realOCStatusInfo}`);
+			let tmpOCStatus: boolean = undefined;
+			if(this.OCSupported === this.thermalMode2Enum.cpu_gpu) {
+				tmpOCStatus = realOCStatusInfo.cpuOCState && realOCStatusInfo.gpuOCstate;
+			} else if(this.OCSupported === this.thermalMode2Enum.cpu) {
+				tmpOCStatus = realOCStatusInfo.cpuOCState;
+			}
+			if(this.OCSupported === this.thermalMode2Enum.gpu) {
+				tmpOCStatus = realOCStatusInfo.gpuOCState;
+			}
+			if (tmpOCStatus !== undefined && this.performanceOCSettings !== tmpOCStatus) {
+				this.performanceOCSettings = tmpOCStatus;
 				if(this.gamingCapabilities.cpuOCFeature) {
 					this.localCacheService.setLocalCacheValue(LocalStorageKey.CpuOCStatus, this.performanceOCSettings ? 1 : 3);
 				}
