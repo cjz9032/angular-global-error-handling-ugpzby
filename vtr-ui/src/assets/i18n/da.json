@@ -775,7 +775,8 @@
                 "sub3": "Systemopdatering",
                 "sub4": "Smart hjælp",
                 "sub5": "Enhedsoplysninger",
-                "sub6": "Detaljer om enhedsindstillinger"
+                "sub6": "Detaljer om enhedsindstillinger",
+                "sub7": "Enhedsindstillinger"
             },
             "security": {
                 "title": "Sikkerhed",

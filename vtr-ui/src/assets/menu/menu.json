@@ -250,7 +250,7 @@
 				},
 				{
 					"id": "device-settings",
-					"label": "common.menu.device.sub2",
+					"label": "common.menu.device.sub7",
 					"path": "device-settings",
 					"icon": null,
 					"metricsEvent": "itemClick",
