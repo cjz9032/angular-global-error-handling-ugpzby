@@ -775,7 +775,8 @@
                 "sub3": "Posodobitev sistema",
                 "sub4": "Pametna pomoč",
                 "sub5": "Podrobnosti o napravi",
-                "sub6": "Podatki o nastavitvah naprave"
+                "sub6": "Podatki o nastavitvah naprave",
+                "sub7": "Nastavitve naprave"
             },
             "security": {
                 "title": "Zaščita",

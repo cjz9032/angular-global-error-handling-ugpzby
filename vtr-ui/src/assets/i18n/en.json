@@ -777,7 +777,8 @@
 				"sub3": "System Update",
 				"sub4": "Smart Assist",
 				"sub5": "Device Details",
-				"sub6": "Device Settings Details"
+				"sub6": "Device Settings Details",
+				"sub7": "Device Settings"
 			},
 			"security": {
 				"title": "Security",

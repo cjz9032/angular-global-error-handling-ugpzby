@@ -775,7 +775,8 @@
                 "sub3": "Järjestelmäpäivitys",
                 "sub4": "Älykäs apu",
                 "sub5": "Laitteen tiedot",
-                "sub6": "Laiteasetusten yksityiskohdat"
+                "sub6": "Laiteasetusten yksityiskohdat",
+                "sub7": "Laiteasetukset"
             },
             "security": {
                 "title": "Suojaus",

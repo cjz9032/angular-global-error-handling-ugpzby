@@ -775,7 +775,8 @@
                 "sub3": "Atualização do Sistema",
                 "sub4": "Assistente Inteligente",
                 "sub5": "Detalhes do dispositivo",
-                "sub6": "Detalhes das Definições do Dispositivo"
+                "sub6": "Detalhes das Definições do Dispositivo",
+                "sub7": "Definições do dispositivo"
             },
             "security": {
                 "title": "Segurança",

@@ -775,7 +775,8 @@
                 "sub3": "Actualizare sistem",
                 "sub4": "Asistent inteligent",
                 "sub5": "Detalii dispozitiv",
-                "sub6": "Detalii de setare a dispozitivului"
+                "sub6": "Detalii de setare a dispozitivului",
+                "sub7": "Setări pentru dispozitiv"
             },
             "security": {
                 "title": "Securitate",
