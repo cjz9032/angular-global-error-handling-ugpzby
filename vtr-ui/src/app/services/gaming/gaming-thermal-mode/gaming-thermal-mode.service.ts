@@ -116,11 +116,27 @@ export class GamingThermalModeService {
 
 	// Version 3.5 auto adjust in Thermal mode 3
 	getAutoAdjustSetting(): Promise<any> {
-		let value = localStorage.getItem("autoAdjust");
-		return Promise.resolve(JSON.parse(value));
+		try {
+			if(this.isShellAvailable) {
+				return this.gamingThermalMode.getIntelligentStatus();
+			}
+			this.logger.error(`Service-GamingThermalMode-getAutoAdjustSetting: return undefined, shell Available: ${this.isShellAvailable}`);
+			return undefined;
+		} catch (error) {
+			this.logger.error('Service-GamingThermalMode-getAutoAdjustSetting: get fail; Error message: ', error.message);
+			throw new Error(error.message);
+		}
 	}
 	setAutoAdjustSetting(value: boolean): Promise<any> {
-		localStorage.setItem("autoAdjust", value.toString());
-		return Promise.resolve(true);
+		try {
+			if(this.isShellAvailable) {
+				return this.gamingThermalMode.setIntelligentStatus(value);
+			}
+			this.logger.error(`Service-GamingThermalMode-setAutoAdjustSetting: return undefined, shell Available: ${this.isShellAvailable}`);
+			return undefined;
+		} catch (error) {
+			this.logger.error('Service-GamingThermalMode-setAutoAdjustSetting: set fail; Error message: ', error.message);
+			throw new Error(error.message);
+		}
 	}
 }
