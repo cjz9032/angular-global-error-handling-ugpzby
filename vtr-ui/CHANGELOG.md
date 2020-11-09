@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.2](https://bitbucket.tc.lenovo.com///compare/v1.9.1...v1.9.2) (2020-11-09)
+
+
+### Features
+
+* **translate:** update translate for menu ([be1cfae](https://bitbucket.tc.lenovo.com///commit/be1cfae43d8850603723c18cea5ca4997d91f958))
+
 ### [1.9.1](https://bitbucket.tc.lenovo.com///compare/v1.9.0...v1.9.1) (2020-11-06)
 
 ## [1.9.0](https://bitbucket.tc.lenovo.com///compare/v1.8.41...v1.9.0) (2020-11-05)
