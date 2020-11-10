@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Dziennik został pomyślnie wyeksportowany i można go znaleźć w następującej lokalizacji:",
             "exportAccessErrorDescription": "Aby można było wyeksportować dziennik, musisz zezwolić aplikacji Vantage na dostęp do systemu plików. Kliknij przycisk poniżej, aby otworzyć ustawienia uprawnień systemu Windows. Uwaga: zmiana uprawnień może spowodować zamknięcie aplikacji Vantage.",
             "exportFailDescription": "Podczas eksportu dziennika wykryto błąd. Spróbuj ponownie później.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Poczekaj na zakończenie eksportowania dziennika.",
             "openSettingsButton": "Otwórz ustawienia systemu Windows"
         },
         "executingScanTitle": "Skanowanie {{title}}",

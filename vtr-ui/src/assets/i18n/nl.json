@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Het logboek is geëxporteerd en is te vinden op:",
             "exportAccessErrorDescription": "U moet Vantage toegang geven tot uw bestandssysteem om het logboek te kunnen exporteren. Klik op de onderstaande knop om de Windows-instellingen voor machtigingen te openen. Als u de machtigingen wijzigt, wordt Vantage mogelijk gesloten.",
             "exportFailDescription": "Er is een fout aangetroffen tijdens het exporteren van het logboek. Probeer het later opnieuw.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Het logboek wordt geëxporteerd. Een ogenblik geduld.",
             "openSettingsButton": "Windows-instellingen openen"
         },
         "executingScanTitle": "{{title}} scannen",

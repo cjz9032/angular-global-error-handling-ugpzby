@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "A napló exportálása sikeres volt, a következő helyen található meg:",
             "exportAccessErrorDescription": "A napló exportálásához engedélyeznie kell, hogy a Vantage hozzáférjen a fájlrendszerhez. Kattintson az alábbi gombra a Windows engedélybeállításainak megnyitásához. Ne feledje, hogy az engedélyek módosításával a Vantage bezáródhat.",
             "exportFailDescription": "Hiba történt a napló exportálása során. Kérjük, később próbálkozzon újra.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Várjon, amíg a napló exportálása befejeződik.",
             "openSettingsButton": "Windows Gépház megnyitása"
         },
         "executingScanTitle": "{{title}} vizsgálata",
