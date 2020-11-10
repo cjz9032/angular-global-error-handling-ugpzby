@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Loggen har exporterats och du hittar den på:",
             "exportAccessErrorDescription": "Du måste ge Vantage åtkomst till filsystemet för att kunna exportera loggen. Klicka på knappen nedan för att öppna behörighetsinställningarna i Windows. Tänk på att när du ändrar behörigheten kan det medföra att Vantage stängs.",
             "exportFailDescription": "Ett fel påträffades under loggexporten. Försök igen senare.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Vänta medan loggen exporteras.",
             "openSettingsButton": "Öppna Windows-inställningar"
         },
         "executingScanTitle": "Genomsöker {{title}}",

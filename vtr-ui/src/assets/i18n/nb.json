@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Loggen ble eksportert, og du kan finne den på:",
             "exportAccessErrorDescription": "Du må gi Vantage tilgang til filsystemet for å kunne eksportere loggen. Klikk på knappen nedenfor for å åpne Windows-innstillinger for tillatelser. Vær oppmerksom på at endring av tillatelser kan føre til at Vantage lukkes.",
             "exportFailDescription": "Det ble funnet et problem under eksporteringen av loggen. Prøv på nytt senere.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Vent mens loggen blir eksportert.",
             "openSettingsButton": "Åpne Windows-innstillingene"
         },
         "executingScanTitle": "Skanner {{title}}",

@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Denník bol úspešne exportovaný a nájdete ho na adrese:",
             "exportAccessErrorDescription": "Na export protokolu je potrebné, aby ste umožnili aplikácii Vantage prístup k vášmu súborovému systému. Kliknutím na tlačidlo nižšie otvoríte nastavenia povolení systému Windows. Pozor, zmena povolenia môže spôsobiť ukončenie programu Vantage.",
             "exportFailDescription": "Počas exportu denníka sa vyskytol problém. Skúste to znova neskôr.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Čakajte, vykonáva sa export protokolu.",
             "openSettingsButton": "Otvorte Nastavenia VPN systému Windows"
         },
         "executingScanTitle": "Skenovanie {{title}}",

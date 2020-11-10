@@ -4295,7 +4295,7 @@
             "exportSuccessDescription": "تم تصدير السجل بنجاح ويمكن العثور عليه في:",
             "exportAccessErrorDescription": "تحتاج إلى تمكين Vantage من الوصول إلى نظام ملفاتك لتصدير السجل. انقر فوق الزر أدناه لفتح إعدادات أذونات Windows. يُرجى العلم أن تغيير الإذن قد يتسبب في إغلاق Vantage.",
             "exportFailDescription": "تم العثور على مشكلة أثناء تصدير السجل. يُرجى إعادة المحاولة لاحقًا.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "يرجى الانتظار أثناء تصدير السجل.",
             "openSettingsButton": "فتح إعدادات Windows"
         },
         "executingScanTitle": "جارٍ فحص {{title}}",

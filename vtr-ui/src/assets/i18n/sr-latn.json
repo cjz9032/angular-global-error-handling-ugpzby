@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Evidencija je uspešno izvezena i može se pronaći na:",
             "exportAccessErrorDescription": "Potrebno je da dozvolite da Vantage da pristupi vašem sistemu datoteka da bi izvezao evidenciju. Kliknite na dugme ispod da biste otvorili postavke dozvola operativnog sistema Windows. Imajte u vidu da promena dozvole može dovesti do zatvaranja programa Vantage.",
             "exportFailDescription": "Tokom izvoza evidencije pronađen je problem. Pokušajte ponovo kasnije.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Sačekajte da se evidencija izveze.",
             "openSettingsButton": "Otvorite Windows postavke"
         },
         "executingScanTitle": "Skenira se {{title}}",

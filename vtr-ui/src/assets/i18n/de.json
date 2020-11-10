@@ -4405,7 +4405,7 @@
             "exportSuccessDescription": "Das Protokoll wurde erfolgreich exportiert und befindet sich unter:",
             "exportAccessErrorDescription": "Sie müssen Vantage den Zugriff auf Ihr Dateisystem erlauben, um das Protokoll exportieren zu können. Klicken Sie auf die Schaltfläche unten, um die Windows-Einstellungen für Berechtigungen zu öffnen. Beachten Sie, dass die Berechtigungsänderung zum Schließen von Vantage führen kann.",
             "exportFailDescription": "Beim Protokollexport ist ein Fehler aufgetreten. Versuchen Sie es später erneut.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Bitte warten Sie, während das Protokoll exportiert wird.",
             "openSettingsButton": "Windows-Einstellungen öffnen"
         },
         "executingScanTitle": "{{title}} wird gescannt",

@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Export protokolu proběhl úspěšně a naleznete ho na adrese:",
             "exportAccessErrorDescription": "Chcete-li protokol exportovat, musíte aplikaci Vantage povolit přístup k souborovému systému. Klepnutím na tlačítko níže otevřete nastavení oprávnění systému Windows. Upozorňujeme vás, že pokud změníte oprávnění, může dojít k ukončení aplikace Vantage.",
             "exportFailDescription": "Během exportu protokolu byl nalezen problém. Zkuste to prosím později.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Počkejte prosím, než se protokol exportuje.",
             "openSettingsButton": "Otevřít nastavení systému Windows"
         },
         "executingScanTitle": "Snímání {{title}}",

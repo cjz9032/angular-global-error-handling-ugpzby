@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Loki vietiin onnistuneesti ja se löytyy osoitteesta:",
             "exportAccessErrorDescription": "Sinun täytyy sallia Vantage käyttää tiedostojärjestelmääsi viedäksesi lokin. Napsauta alla olevaa painiketta avataksesi Windows käyttöoikeusasetukset. Huomaa, että käyttöoikeuden muuttaminen saattaa sulkea Vantage.",
             "exportFailDescription": "Lokin viennin aikana ilmeni ongelma. Yritä myöhemmin uudelleen.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Odota, kunnes loki on viety.",
             "openSettingsButton": "Avaa Windows-asetukset"
         },
         "executingScanTitle": "Tarkistetaan {{title}}",

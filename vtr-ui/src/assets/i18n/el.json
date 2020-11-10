@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Το αρχείο καταγραφής εξήχθη με επιτυχία και μπορείτε να το βρείτε στη διεύθυνση:",
             "exportAccessErrorDescription": "Απαιτείται να επιτρέπεται στο Vantage να έχει πρόσβαση στο σύστημα αρχείων σας για να εξάγει το αρχείο καταγραφής. Κάντε κλικ στο παρακάτω κουμπί για να ανοίξετε τις ρυθμίσεις δικαιωμάτων των Windows. Να έχετε υπόψη σας ότι η αλλαγή δικαιώματος ενδέχεται να προκαλέσει κλείσιμο του Vantage.",
             "exportFailDescription": "Εντοπίστηκε πρόβλημα κατά την εξαγωγή του αρχείου καταγραφής. Δοκιμάστε ξανά αργότερα.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Περιμένετε όσο εξάγεται το αρχείο καταγραφής.",
             "openSettingsButton": "Άνοιγμα ρυθμίσεων των Windows"
         },
         "executingScanTitle": "Εκτελείται σάρωση {{title}}",

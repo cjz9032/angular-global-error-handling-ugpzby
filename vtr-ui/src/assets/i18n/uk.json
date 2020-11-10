@@ -4293,7 +4293,7 @@
             "exportSuccessDescription": "Журнал успішно експортовано. Його можна переглянути за адресою:",
             "exportAccessErrorDescription": "Надайте Vantage доступ до своєї файлової системи, щоб експортувати журнал. Клацніть кнопку нижче, щоб відкрити настройки дозволів Windows. Зауважте, що зміна дозволу може призвести до закриття Vantage.",
             "exportFailDescription": "Сталася помилка під час експорту журналу. Спробуйте ще раз пізніше.",
-            "exportMayTakeSomeTime": "Please wait while the log is being exported.",
+            "exportMayTakeSomeTime": "Зачекайте, поки експортується журнал.",
             "openSettingsButton": "Відкрити настройки Windows"
         },
         "executingScanTitle": "Сканування {{title}}",
