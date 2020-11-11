@@ -5,9 +5,17 @@ import { PageDashboardComponent } from '../components/pages/page-dashboard/page-
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { ProtocolGuardService } from '../services/guard/protocol-guard.service';
-import { DashboardGuard } from '../services/guard/dashboard-guard';
 
 const routes: Routes = [
+	{
+		path: 'dashboard',
+		canActivate: [GuardService],
+		component: PageDashboardComponent,
+		canDeactivate: [GuardService],
+		data: {
+			pageName: 'Dashboard'
+		}
+	},
 	{
 		path: 'device-gaming',
 		component: PageDeviceGamingComponent,
@@ -66,18 +74,8 @@ const routes: Routes = [
 		loadChildren: () => import('./smart-performance/smart-performance.module').then(m => m.SmartPerformanceModule)
 	},
 	{
-		path: '',
-		redirectTo: 'dashboard',
-		pathMatch: 'full'
-	},
-	{
 		path: '**',
-		canActivate: [ProtocolGuardService, DashboardGuard, GuardService],
-		component: PageDashboardComponent,
-		canDeactivate: [GuardService],
-		data: {
-			pageName: 'Dashboard'
-		}
+		canActivate: [ProtocolGuardService]
 	}
 ];
 

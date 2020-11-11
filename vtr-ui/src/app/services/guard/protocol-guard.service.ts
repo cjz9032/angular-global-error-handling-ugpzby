@@ -181,14 +181,15 @@ export class ProtocolGuardService implements CanActivate {
 	}
 
 	public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
+		const dashboardRoute = this.router.parseUrl(this.deviceService.isGaming ? '/device-gaming' : '/dashboard');
 		const path = state.url.slice(state.url.indexOf('#') + 1);
 		if (path.startsWith(this.characteristicCode)) {
 			const checkResult = this.isRedirectUrlNeeded(path.split('&')[0]);
 			if (checkResult[0]) {
 				return this.router.parseUrl(checkResult[1]);
 			}
-			return !this.commonService.isFirstPageLoaded();
+			return this.commonService.isFirstPageLoaded() ? false : dashboardRoute;
 		}
-		return true;
+		return dashboardRoute;
 	}
 }
