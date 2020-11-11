@@ -43,7 +43,6 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCi
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { ChunkLoadErrorHandler } from '../services/error-handler/global.service';
-import { HomeComponent } from './../components/home/home.component';
 import { HttpClient } from '@angular/common/http';
 import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
@@ -93,7 +92,6 @@ const globalRippleConfig: RippleGlobalOptions = {
 @NgModule({
 	declarations: [
 		AppComponent,
-		HomeComponent,
 		ModalWelcomeComponent,
 		ModalArticleDetailComponent,
 		ModalDccDetailComponent,

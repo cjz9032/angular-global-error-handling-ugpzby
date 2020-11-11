@@ -8,7 +8,6 @@ import { BatteryDetailService } from 'src/app/services/battery-detail/battery-de
 import { CommonService } from 'src/app/services/common/common.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { StringBooleanEnum } from '../../../../../data-models/common/common.interface';
 import { VoipApp } from '../../../../../data-models/input-accessories/voip.model';
 import { VoipErrorCodeEnum } from '../../../../../enums/voip.enum';
@@ -69,7 +68,6 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public isKbdBacklightAvailable = true;
 
 	constructor(
-		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private keyboardService: InputAccessoriesService,
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
 		private commonService: CommonService,

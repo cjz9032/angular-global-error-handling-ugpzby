@@ -18,7 +18,6 @@ import { CommonMetricsService } from 'src/app/services/common-metrics/common-met
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
-import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatusEnum, FlipToBootSupportedEnum } from '../../../../../services/power/flipToBoot.enum';
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
@@ -121,7 +120,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
-		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public powerService: PowerService,
 		public batteryService: BatteryDetailService,
 		private commonService: CommonService,

@@ -23,7 +23,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AdPolicyEvent } from 'src/app/enums/ad-policy-id.enum';
-import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
@@ -202,7 +201,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private cmsSubscription: Subscription;
 
 	constructor(
-		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		public systemUpdateService: SystemUpdateService,
 		private commonService: CommonService,
 		private ngZone: NgZone,
