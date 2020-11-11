@@ -98,7 +98,12 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		else if (isFreePCScanRun === true) {
 			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
 		}
-		this.getSubscriptionDetails();
+		
+		this.smartPerformanceService.getSubscriptionDataDetail((isSubscribed) => {
+			isSubscribed ? this.writeSmartPerformanceActivity('True', 'True', 'Active')
+				: this.writeSmartPerformanceActivity('True', 'True', 'Expired');
+		});
+
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.checkReadiness();
 		}
@@ -469,42 +474,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.smartPerformanceService.isScanningCompleted = false;
 		this.showSubscribersummary = false;
 	}
-	async getSubscriptionDetails() {
-		let machineInfo;
-		let subscriptionData = [];
-		machineInfo = await this.supportService.getMachineInfo();
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
-		this.logger.info('ui-smart-performance.component.getSubscriptionDetails', subscriptionDetails);
-		if (subscriptionDetails && subscriptionDetails.data) {
-			subscriptionData = subscriptionDetails.data;
-			const lastItem = subscriptionData[subscriptionData.length - 1];
-			const releaseDate = new Date(lastItem.releaseDate);
-			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
-			releaseDate.setDate(releaseDate.getDate() - 1);
-			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
-				this.getExpiredStatus(releaseDate, lastItem);
-			}
-		} else {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
-			this.smartPerformanceService.isSubscribed = false;
-		}
-	}
-	getExpiredStatus(releaseDate, lastItem) {
-		let expiredDate;
-		const currentDate: any = new Date(lastItem.currentTime);
-		expiredDate = new Date(releaseDate);
-		if (expiredDate < currentDate) {
-			this.writeSmartPerformanceActivity('True', 'True', 'Expired');
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
-			this.smartPerformanceService.isSubscribed = false;
-			// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-		}
-		else {
-			this.writeSmartPerformanceActivity('True', 'True', 'Active');
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
-			this.smartPerformanceService.isSubscribed = true;
-		}
-	}
+
 	hideBasedOnOldAddInVersion($event) {
 		this.isOldVersion = $event;
 	}

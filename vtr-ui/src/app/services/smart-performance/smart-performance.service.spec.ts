@@ -114,6 +114,21 @@ describe('SmartPerformanceService', () => {
 			expect(service.getScanSummary).toHaveBeenCalled();
 		});
 
+		it('should call getSubscriptionDataDetail', () => {
+			const { service } = setup();
+
+			spyOn(service, 'getSubscriptionDataDetail').and.callThrough();
+			service.getSubscriptionDataDetail();
+			expect(service.getSubscriptionDataDetail).toHaveBeenCalled();
+		});
+
+		it('should call getExpiredStatus', () => {
+			const { service } = setup();
+
+			spyOn(service, 'getExpiredStatus').and.callThrough();
+			service.getExpiredStatus(new Date(),{currentTime:'2020-11-04T07:46:26.899+0000'}, null);
+			expect(service.getExpiredStatus).toHaveBeenCalled();
+		});
 	});
 
 	// });

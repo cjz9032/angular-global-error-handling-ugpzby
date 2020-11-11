@@ -22,6 +22,7 @@ import { SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum'
 import { DeviceCondition, DeviceStatus } from 'src/app/data-models/widgets/status.model';
 import { DashboardStateCardData } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
 
+
 interface IContentGroup {
 	positionA: any[];
 	positionB: FeatureContent;
@@ -546,29 +547,9 @@ export class DashboardService {
 		return !(await this.isSmartPerformanceSuscripted());
 	}
 
-	public async isSmartPerformanceSuscripted(): Promise<boolean> {
-		const machineInfo = this.deviceService.getMachineInfoSync();
-		const subscriptionDetails = await this.spService.getPaymentDetails(machineInfo?.serialnumber);
-		if (!subscriptionDetails?.data) {
-			return false;
-		}
-
-		const subscriptionData = subscriptionDetails.data;
-		const lastItem = subscriptionData[subscriptionData.length - 1];
-		if (lastItem?.status?.toUpperCase() !== 'COMPLETED') {
-			return false;
-		}
-		const releaseDate = new Date(lastItem.releaseDate);
-		releaseDate.setMonth(releaseDate.getMonth() + lastItem.products[0].unitTerm);
-		releaseDate.setDate(releaseDate.getDate() - 1);
-
-		const currentDate: any = new Date(lastItem.currentTime);
-		const expiredDate = new Date(releaseDate);
-		if (expiredDate < currentDate) {
-			return false;
-		}
-
-		return true;
+	public async isSmartPerformanceSuscripted(): Promise<boolean> {		
+		await this.spService.getSubscriptionDataDetail(null);
+		return this.spService.isSubscribed;		
 	}
 
 	public async isHWScanNeedPromote(): Promise<boolean> {

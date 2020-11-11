@@ -8,6 +8,7 @@ import { SPPriceCode } from 'src/app/enums/smart-performance.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LoggerService } from '../logger/logger.service';
 
 interface IYearlyPrice {
 	code: string;
@@ -27,9 +28,9 @@ interface ILocalPriceData {
 	providedIn: 'root'
 })
 export class SmartPerformanceService {
-	getSmartPerformance: any;
+	shellSmartPerformance: any;
 	modalStatus = { initiatedTime: '', isGettingStatus: false };
-	public isShellAvailable = false;
+	isShellAvailable = false;
 	scanningStopped = new Subject<boolean>();
 
 	isScanning = false;
@@ -52,10 +53,11 @@ export class SmartPerformanceService {
 		private httpClient: HttpClient,
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
+		private logger: LoggerService
 	) {
 
-		this.getSmartPerformance = shellService.getSmartPerformance();
-		if (this.getSmartPerformance) {
+		this.shellSmartPerformance = shellService.getSmartPerformance();
+		if (this.shellSmartPerformance) {
 			this.isShellAvailable = true;
 		}
 		this.getLocalYearPrice();
@@ -65,7 +67,7 @@ export class SmartPerformanceService {
 	getReadiness(): Promise<boolean> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.getScanReadyStatus();
+				return this.shellSmartPerformance.getScanReadyStatus();
 			}
 			return undefined;
 		} catch (error) {
@@ -78,7 +80,7 @@ export class SmartPerformanceService {
 			const payload = { type: 'MS' };
 
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.startScan(payload);
+				return this.shellSmartPerformance.startScan(payload);
 			}
 			return undefined;
 		} catch (error) {
@@ -90,7 +92,7 @@ export class SmartPerformanceService {
 		try {
 			const payload = { type: 'MS' };
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.launchScanAndFix(payload);
+				return this.shellSmartPerformance.launchScanAndFix(payload);
 			}
 			return undefined;
 		} catch (error) {
@@ -101,18 +103,7 @@ export class SmartPerformanceService {
 	cancelScan(): Promise<boolean> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.cancelScan();
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
-	getSubscriptionDetails(profile: string): Promise<any> {
-		try {
-			if (this.isShellAvailable) {
-				return this.getSmartPerformance.GetSubscriptionDetails(profile);
+				return this.shellSmartPerformance.cancelScan();
 			}
 			return undefined;
 		} catch (error) {
@@ -123,7 +114,7 @@ export class SmartPerformanceService {
 	getScanSettings(profile: string): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.GetScanSettings(profile);
+				return this.shellSmartPerformance.GetScanSettings(profile);
 			}
 			return undefined;
 		} catch (error) {
@@ -134,7 +125,7 @@ export class SmartPerformanceService {
 	getScanSummary(profile: string): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.GetScanSummary(profile);
+				return this.shellSmartPerformance.GetScanSummary(profile);
 			}
 			return undefined;
 		} catch (error) {
@@ -145,27 +136,29 @@ export class SmartPerformanceService {
 	getHistory(payload: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.getHistory(payload);
+				return this.shellSmartPerformance.getHistory(payload);
 			}
 			return undefined;
 		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
+
 	setScanSchedule(payload: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.scheduleScan(payload);
+				return this.shellSmartPerformance.scheduleScan(payload);
 			}
 			return undefined;
 		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
+	
 	unregisterScanSchedule(payload: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.unregisterScheduleScan(payload);
+				return this.shellSmartPerformance.unregisterScheduleScan(payload);
 			}
 			return undefined;
 		} catch (error) {
@@ -175,7 +168,7 @@ export class SmartPerformanceService {
 	getNextScanRunTime(payload: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.getNextScanRunTime(payload);
+				return this.shellSmartPerformance.getNextScanRunTime(payload);
 			}
 			return undefined;
 		} catch (error) {
@@ -185,7 +178,7 @@ export class SmartPerformanceService {
 	getScheduleScanStatus(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.getScheduledScanStatus();
+				return this.shellSmartPerformance.getScheduledScanStatus();
 			}
 			return undefined;
 		} catch (error) {
@@ -196,7 +189,7 @@ export class SmartPerformanceService {
 	getLastScanResult(payload: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.getLastScanResult(payload);
+				return this.shellSmartPerformance.getLastScanResult(payload);
 			}
 			return undefined;
 		} catch (error) {
@@ -221,29 +214,16 @@ export class SmartPerformanceService {
 		});
 	}
 
-
 	writeSmartPerformanceActivity(payload: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.getSmartPerformance.writeSmartPerformanceActivity(payload);
+				return this.shellSmartPerformance.writeSmartPerformanceActivity(payload);
 			}
 			return undefined;
 		} catch (error) {
 			throw new Error(error.message);
 		}
 	}
-
-	async getSPSubscriptionData(): Promise<any> {
-		const machineInfo = await this.deviceService.getMachineInfo();
-		let subscriptionData;
-		const subscriptionDetails = await this.getPaymentDetails(machineInfo.serialnumber);
-
-		if (subscriptionDetails && subscriptionDetails.data) {
-			subscriptionData = subscriptionDetails.data;
-		}
-		return subscriptionData;
-	}
-
 
 	async getLocalYearPrice() {
 		const localInfo = await this.localInfoService.getLocalInfo();
@@ -290,6 +270,45 @@ export class SmartPerformanceService {
 			}
 			localPrices.push(this.localPriceData);
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceLocalPrices, localPrices);
+		}
+	}
+
+	async getSubscriptionDataDetail(onSubscribed) {
+		let machineInfo;
+		let subscriptionData = [];
+		machineInfo = await this.deviceService.getMachineInfo();
+		const subscriptionDetails = await this.getPaymentDetails(machineInfo.serialnumber);
+		this.logger.info('smart-performance.service.getSubscriptionDataDetail', subscriptionDetails);
+		if (subscriptionDetails && subscriptionDetails.data) {
+			subscriptionData = subscriptionDetails.data;
+			const lastItem = subscriptionData[subscriptionData.length - 1];
+			const releaseDate = new Date(lastItem.releaseDate);
+			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
+			releaseDate.setDate(releaseDate.getDate() - 1);
+			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
+				this.getExpiredStatus(releaseDate, lastItem, onSubscribed);
+			}
+		} else {
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.isSubscribed = false;
+		}
+	}
+
+	getExpiredStatus(releaseDate, lastItem, onSubscribed) {
+		let expiredDate;
+		const currentDate: any = new Date(lastItem.currentTime);
+		expiredDate = new Date(releaseDate);
+		if (expiredDate < currentDate) {
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.isSubscribed = false;
+		}
+		else {
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			this.isSubscribed = true;
+		}
+
+		if(onSubscribed){
+			onSubscribed(this.isSubscribed);
 		}
 	}
 
