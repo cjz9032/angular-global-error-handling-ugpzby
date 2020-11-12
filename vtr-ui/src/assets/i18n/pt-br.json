@@ -2267,6 +2267,10 @@
             "intelligentMedia": {
                 "heading": "Mídia inteligente",
                 "title": "Reprodução de vídeo sem toques",
+                "note": {
+                    "supportedList": "Os players compatíveis estão listados da seguinte maneira: <br>&bull; Netflix <br>&bull; Filmes e TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Observação: os reprodutores de vídeo da Web não são compatíveis."
+                },
                 "desc": "Esse recurso pausará o vídeo quando você deixar o computador e continuará o vídeo quando você voltar.",
                 "tooltip": "Esse recurso não é aplicável a players de vídeo da Web. Os players de vídeo populares, como o Windows Media Player, 5KPlayer, dentre outros, oferecem suporte a esse recurso."
             },

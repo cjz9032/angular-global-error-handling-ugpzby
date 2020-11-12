@@ -2155,6 +2155,10 @@
             "intelligentMedia": {
                 "heading": "מדיה חכמה",
                 "title": "הפעלת וידאו ללא מגע",
+                "note": {
+                    "supportedList": "הנגנים הנתמכים: <br>&bull; Netflix <br>&bull; סרטים וטלוויזיה <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "הערה: נגני וידאו באינטרנט אינם נתמכים."
+                },
                 "desc": "תכונה זו תשהה את הווידאו כאשר אתם עוזבים את המחשב ותחדש את הווידאו כשאתם חוזרים.",
                 "tooltip": "תכונה זו לא ישימה עבור נגני וידאו באינטרנט. נגני וידאו פופולריים, כמו Windows Media Player‏, 5KPlayer וכן הלאה תומכים בתכונה זו."
             },

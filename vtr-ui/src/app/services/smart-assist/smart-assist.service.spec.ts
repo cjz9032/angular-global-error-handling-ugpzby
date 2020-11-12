@@ -258,7 +258,7 @@ describe('SmartAssistService', () => {
 			).and.callThrough();
 
 			smartAssistService.isHPDShellAvailable = true;
-			const jsonData = '{"capacity": true, "capability": true, "sensorType": 1, "presenceLeaveDistanceAutoAdjust": true, "presenceLeaveDistance": 1, "errorCode": 0 }';
+			const jsonData = '{"capacity": true, "capability": true, "sensorType": 1, "presenceLeaveDistanceAutoAdjust": true, "presenceLeaveDistance": 1, "errorCode": 0, "videoAutoPauseResumeVersion": 0 }';
 			smartAssistService.hsaIntelligentSecurity = { getAllSetting() { return jsonData; } };
 
 			smartAssistService.getHsaIntelligentSecurityStatus();

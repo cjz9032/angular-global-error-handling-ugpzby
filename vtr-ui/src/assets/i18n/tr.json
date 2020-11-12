@@ -1965,7 +1965,7 @@
                 "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Akıllı Güvenlik",
+                "title": "Akıllı güvenlik",
                 "readMore": "Okumaya devam edin",
                 "image": {
                     "title": "Akıllı güvenlik",
@@ -1989,12 +1989,12 @@
                     "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 metre mesafe içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer."
                 },
                 "zeroTouchLoginForIdea": {
-                    "title": "Sıfır Dokunma ile Oturum Açma",
+                    "title": "Sıfır dokunma ile oturum açma",
                     "caption": "Bu özellik, bilgisayarınızı otomatik olarak uyandırarak veya bilgisayarınızda oturum açarak çalışma verimliliğini artırmanıza olanak tanır. Özelliği kullanmak için yüzünüzü Windows Hello'ya kaydetmeniz gerekir.",
                     "tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 veya 1,5 metre içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer. <br>Algılayıcı kapasitesine bağlı olarak, maksimum algılama mesafesi değişiklik gösterir. Ayrıntılı bilgi için dizüstü bilgisayarınızla birlikte gönderilen Kullanma Kılavuzu'na bakın."
                 },
                 "zeroTouchLock": {
-                    "title": "Sıfır Dokunma ile Kilitleme",
+                    "title": "Sıfır dokunma ile kilitleme",
                     "caption": "Bu özellik, kullanıcı varlığı algılanmadığında ekranı karartır ve bilgisayarı kilitler. Bu özellik sayesinde bilgisayarı gözetimsiz ve açık bıraktığınızda bilgisayara yetkisiz erişim olasılığı azalır. Ayrıca varlığınız algılanmadığında sistemi Modern Bekleme Durumu kipine geçirerek güç tüketimini de azaltır.",
                     "autoScreenLockTimer": {
                         "title": "OTOMATİK EKRAN KİLİDİ ZAMANLAYICISI",
@@ -2153,8 +2153,12 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Akıllı Medya",
-                "title": "Sıfır Dokunma ile Video Oynatma",
+                "heading": "Akıllı medya",
+                "title": "Sıfır dokunma ile video oynatma",
+                "note": {
+                    "supportedList": "Şu oynatıcılar desteklenmektedir: <br>&bull; Netflix <br>&bull; Filmler ve TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Not: Web üzerindeki video oynatıcılar desteklenmez."
+                },
                 "desc": "Bu özellik, bilgisayarın başından ayrıldığınızda videoyu duraklatır ve geri döndüğünüzde videoyu oynatmaya devam eder.",
                 "tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
             },

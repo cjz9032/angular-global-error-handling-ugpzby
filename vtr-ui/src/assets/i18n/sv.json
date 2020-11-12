@@ -2155,6 +2155,10 @@
             "intelligentMedia": {
                 "heading": "Intelligenta medier",
                 "title": "Beröringsfri videouppspelning",
+                "note": {
+                    "supportedList": "Följande spelare stöds: <br>&bull; Netflix <br>&bull; Film & TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Obs! Webbvideospelare stöds inte."
+                },
                 "desc": "Videon pausas när du lämnar datorn och återupptas när du är tillbaka.",
                 "tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
             },

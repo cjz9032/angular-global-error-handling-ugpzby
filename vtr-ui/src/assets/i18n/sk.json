@@ -2155,6 +2155,10 @@
             "intelligentMedia": {
                 "heading": "Inteligentné médiá",
                 "title": "Bezdotykové prehrávanie videa",
+                "note": {
+                    "supportedList": "Podporované prehrávače sú tieto: <br>&bull; Netflix <br>&bull; Filmy a TV programy <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Poznámka: Webové prehrávače videa nie sú podporované."
+                },
                 "desc": "Táto funkcia pozastaví prehrávanie videa, keď odídete od počítača a obnoví prehrávanie videa, keď sa vrátite.",
                 "tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
             },

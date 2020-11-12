@@ -2154,7 +2154,11 @@
             },
             "intelligentMedia": {
                 "heading": "Intelligente media",
-                "title": "Zero Touch Video afspelen",
+                "title": "Video afspelen bij nul aanraken",
+                "note": {
+                    "supportedList": "De ondersteunde spelers worden als volgt weergegeven: <br>&bull; Netflix <br>&bull; Films en tv <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Opmerking: webvideo-spelers worden niet ondersteund."
+                },
                 "desc": "Met deze functie wordt de video gepauzeerd wanneer u weggaat bij de computer en hervat wanneer u terugkeert.",
                 "tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
             },

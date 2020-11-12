@@ -277,6 +277,7 @@ describe('Component: PageSmartAssistComponent', () => {
 				zeroTouchLockDistance: 1,
 				capability: 2047,
 				sensorType: 1,
+				videoAutoPauseResumeVersion: 0,
 			};
 
 			const spy = spyOn(

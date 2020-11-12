@@ -1994,7 +1994,7 @@
                     "tooltip": "Ta funkcja umożliwia automatyczne zalogowanie się do systemu przy użyciu funkcji rozpoznania twarzy, gdy znajdziesz się przed komputerem lub zbliżysz się do niego na odległość 1,2 lub 1,5 metra. Jeśli jesteś na zewnątrz, a nie w biurze, musisz być bliżej komputera, a wybudzanie potrwa dłużej. <br>Maksymalna odległość wykrywania może się różnić w zależności od możliwości czujnika. Szczegółowe informacje znajdują się w podręczniku użytkownika dołączonym do komputera."
                 },
                 "zeroTouchLock": {
-                    "title": "Blokada bez dotyku",
+                    "title": "Blokowanie bez dotyku",
                     "caption": "Ta funkcja przyciemni ekran i zablokuje komputer, gdy nieobecność użytkownika zostanie wykryta. Zmniejsza ona możliwość nieuprawnionego dostępu do komputera, gdy zostawisz niezablokowany komputer bez nadzoru. Zmniejsza również zużycie energii, przełączając system w tryb wstrzymania, gdy zostanie wykryta Twoja nieobecność.",
                     "autoScreenLockTimer": {
                         "title": "LICZNIK AUTOMATYCZNEJ BLOKADY EKRANU",
@@ -2154,7 +2154,11 @@
             },
             "intelligentMedia": {
                 "heading": "Inteligentne multimedia",
-                "title": "Odtwarzanie wideo bez dotyku",
+                "title": "Odtwarzanie filmów bez dotyku",
+                "note": {
+                    "supportedList": "Obsługiwane są następujące odtwarzacze: <br>&bull; Netflix <br>&bull; Filmy i TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Uwaga: Odtwarzacze wideo w sieci Web nie są obsługiwane."
+                },
                 "desc": "Ta funkcja wstrzymuje odtwarzanie wideo, gdy odchodzisz od komputera, i wznawia je, gdy wracasz.",
                 "tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
             },
