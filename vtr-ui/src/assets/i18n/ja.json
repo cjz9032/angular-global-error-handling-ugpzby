@@ -2266,6 +2266,10 @@
             "intelligentMedia": {
                 "heading": "インテリジェント・メディア",
                 "title": "ビデオの自動再生",
+                "note": {
+                    "supportedList": "サポートされているプレーヤーは次のとおりです。<br>&bull; Netflix <br>&bull; 映画 & テレビ <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "注: Web ビデオ・プレーヤーはサポートされていません。"
+                },
                 "desc": "この機能では、コンピューターを離れるときにビデオを一時停止し、戻ったときにビデオを再開します。",
                 "tooltip": "この機能は Web ビデオ・プレイヤーに適用できません。Windows Media Player、5KPlayer など、人気のあるローカル・ビデオ・プレイヤーは、この機能をサポートしています。"
             },

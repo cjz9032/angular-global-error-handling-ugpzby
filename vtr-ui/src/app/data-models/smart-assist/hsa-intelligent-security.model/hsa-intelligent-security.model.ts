@@ -5,5 +5,6 @@ export class HsaIntelligentSecurityResponse {
 		public zeroTouchLockDistance: number = 1,
 		public capability: number = 0,
 		public sensorType: number = 0,
+		public videoAutoPauseResumeVersion: number = 0,
 	) { }
 }

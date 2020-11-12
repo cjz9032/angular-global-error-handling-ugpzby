@@ -2155,6 +2155,10 @@
             "intelligentMedia": {
                 "heading": "Intelligent medieavspilling",
                 "title": "Berøringsfri videoavspilling",
+                "note": {
+                    "supportedList": "De støttede spillerne er listet opp som følger: <br>&bull; Netflix <br>&bull; Film og TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Merk: Nettvideospillerne støttes ikke."
+                },
                 "desc": "Denne funksjonen setter videoen på pause når du forlater datamaskinen, og fortsetter avspillingen når du kommer tilbake.",
                 "tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
             },

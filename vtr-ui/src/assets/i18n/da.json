@@ -2155,6 +2155,10 @@
             "intelligentMedia": {
                 "heading": "Intelligente medier",
                 "title": "Videoafspilning uden berøring",
+                "note": {
+                    "supportedList": "Følgende afspillere understøttes: <br>&bull; Netflix <br>&bull; Film og tv <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Bemærk: Internetvideoafspillere understøttes ikke."
+                },
                 "desc": "Denne funktion afbryder videoen, når du forlader computeren, og genoptager videoen, når du er tilbage.",
                 "tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
             },

@@ -70,6 +70,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public zeroTouchPresenceLeaveDistanceCapability = false;
 	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
 	public isRegisterHPDRpcCallback = false;
+	public isVideoPlaybackHsaAvailable = false;
 	private cameraAccessChangedHandler: any;
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
@@ -632,6 +633,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.then((response: HsaIntelligentSecurityResponse) => {
 						this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability = (response.capability && 0x100) !== 0;
 						this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
+						this.isVideoPlaybackHsaAvailable = response.videoAutoPauseResumeVersion > 0;
 						this.hsaIntelligentSecurity = response;
 
 						if (!this.isRegisterHPDRpcCallback) {

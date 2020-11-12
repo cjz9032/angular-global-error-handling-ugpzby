@@ -1989,12 +1989,12 @@
                     "tooltip": "Kun olet tietokoneen äärellä tai lähestyt sitä (1,2 metrin etäisyydellä), tämän toiminnon avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin."
                 },
                 "zeroTouchLoginForIdea": {
-                    "title": "Zero Touch -kirjautuminen",
+                    "title": "Zero touch -kirjautuminen",
                     "caption": "Tämä ominaisuus sallii sinun työskennellä tehokkaammin automatisoimalla tietokoneesi herättämisen tai sisäänkirjautumisen. Sinun on rekisteröitävä kasvosi Windows Hello -palveluun tämän ominaisuuden käyttämiseksi.",
                     "tooltip": "Kun olet tietokoneesi äärellä tai lähestyt sitä (1,2 tai 1,5 metriä etäisyydellä), tämän ominaisuuden avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin. <br>Tunnistamisen enimmäisetäisyys riippuu tunnistimen toimintakyvystä. Katso lisätietoja tietokoneesi mukana toimitetusta käyttöoppaasta."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch -lukitus",
+                    "title": "Zero touch -lukitus",
                     "caption": "Tämä toiminto himmentää näytön ja lukitsee tietokoneen, kun käyttäjää ei havaita. Se voi myös pienentää tietokoneen luvattoman käytön mahdollisuuksia, kun käyttäjä jättää tietokoneen valvomatta tai lukitsematta. Se pienentää myös virrankulutusta asettamalla järjestelmän nykyaikaiseen valmiustilaan, kun käyttäjää ei havaita.",
                     "autoScreenLockTimer": {
                         "title": "AUTOMAATTISEN NÄYTÖN LUKITUKSEN AJASTIN",
@@ -2153,8 +2153,12 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Älykäs tietoväline",
-                "title": "Zero Touch -videon toisto",
+                "heading": "Älykäs media",
+                "title": "Zero touch -videon toisto",
+                "note": {
+                    "supportedList": "Seuraavia soittimia tuetaan: <br>&bull; Netflix <br>&bull; Elokuvat ja TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Huomautus: Verkkopohjaisia videosoittimia ei tueta."
+                },
                 "desc": "Tämä ominaisuus keskeyttää videon toiston, kun poistut tietokoneelta, ja jatkaa toistoa, kun palaat takaisin.",
                 "tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
             },

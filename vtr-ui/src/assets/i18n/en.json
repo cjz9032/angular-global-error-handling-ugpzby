@@ -2057,7 +2057,7 @@
 				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
-				"title": "Intelligent Security",
+				"title": "Intelligent security",
 				"readMore": "Read more",
 				"image": {
 					"title": "Intelligent security",
@@ -2081,12 +2081,12 @@
 					"tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
 				},
 				"zeroTouchLoginForIdea": {
-					"title": "Zero Touch Login",
+					"title": "Zero touch login",
 					"caption": "This feature enables you to improve the work efficiency by automatically waking up or logging in your computer. To use the feature, you need to register your face in Windows Hello.",
 					"tooltip": "When you are in front of your computer or approaching it (within 1.2 or 1.5 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer. <br>Depending on the sensor capability, the maximum detecting distance varies. Refer to the User Guide that comes with your computer for details."
 				},
 				"zeroTouchLock": {
-					"title": "Zero Touch Lock",
+					"title": "Zero touch lock",
 					"caption": "This feature will dim the display and lock the computer when the user presence is not detected. It can reduce the chances of unauthorized access to the computer when you leave with the computer unattended and unlocked. It also reduces the power consumption by putting the system into Modern Standby when your presence is not detected.",
 					"autoScreenLockTimer": {
 						"title": "AUTO SCREEN LOCK TIMER",
@@ -2245,8 +2245,12 @@
 				}
 			},
 			"intelligentMedia": {
-				"heading": "Intelligent Media",
-				"title": "Zero Touch Video Playback",
+				"heading": "Intelligent media",
+				"title": "Zero touch video playback",
+				"note": {
+					"supportedList": "The supported players are listed as follows: <br>&bull; Netflix <br>&bull; Movies & TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"note": "Note: The Web video players are not supported."
+				},
 				"desc": "This feature will pause the video when you are leaving the computer and resume the video when you are back.",
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 			},

@@ -1965,7 +1965,7 @@
                 "APS": "APS"
             },
             "intelligentSecurity": {
-                "title": "Pametna sigurnost",
+                "title": "Inteligentna sigurnost",
                 "readMore": "Pročitajte više",
                 "image": {
                     "title": "Inteligentna sigurnost",
@@ -1994,7 +1994,7 @@
                     "tooltip": "Kad se nalazite ispred računala ili mu prilazite (unutar 1,2 ili 1,5 metra), ova vam značajka omogućuje automatsku prijavu u sustav nakon prepoznavanja vašeg lica. Ako ste na otvorenom, a ne u uredu, morate biti bliže računalu i buđenje će trajati duže. <br>Ovisno o sposobnosti senzora, maksimalna udaljenost otkrivanja može se razlikovati. Za pojedinosti pogledajte vodič za korisnike isporučen s vašim računalom."
                 },
                 "zeroTouchLock": {
-                    "title": "Zaključavanje Zero Touch",
+                    "title": "Automatsko zaključavanje",
                     "caption": "Ta značajka zatamnjuje zaslon i zaključava računalo kada se ne otkrije prisutnost korisnika. Smanjuje vjerojatnost neovlaštenog pristupa računalu kada ga ostavite bez nadzora i otključano. Smanjuje i potrošnju energije tako što sustav prebacuje u moderno stanje mirovanja kada se ne otkrije vaša prisutnost.",
                     "autoScreenLockTimer": {
                         "title": "AUTOMATSKI MJERAČ ZA ZAKLJUČAVANJE ZASLONA",
@@ -2153,8 +2153,12 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Inteligentni mediji",
-                "title": "Zero Touch reprodukcija videozapisa",
+                "heading": "Pametni medijski sadržaj",
+                "title": "Automatska reprodukcija videozapisa",
+                "note": {
+                    "supportedList": "Podržani reproduktori navedeni su kako slijedi: <br>&bull; Netflix <br>&bull; Filmovi i TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Napomena: reproduktori internetskog videozapisa nisu podržani."
+                },
                 "desc": "Ta će značajka pauzirati reprodukciju videozapisa kada se udaljite od računala i nastaviti je kada se vratite.",
                 "tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
             },

@@ -226,6 +226,7 @@ export class SmartAssistService {
 					intelligentSecurityDate.sensorType = obj.sensorType;
 					intelligentSecurityDate.zeroTouchLockDistanceAutoAdjust = obj.presenceLeaveDistanceAutoAdjust;
 					intelligentSecurityDate.zeroTouchLockDistance = obj.presenceLeaveDistance;
+					intelligentSecurityDate.videoAutoPauseResumeVersion = obj.videoAutoPauseResumeVersion;
 				}
 				return Promise.resolve(intelligentSecurityDate);
 			}

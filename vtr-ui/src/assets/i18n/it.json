@@ -1994,7 +1994,7 @@
                     "tooltip": "Quando si è davanti o ci si sta avvicinando al computer (entro una distanza di 1,2 o 1,5 metri), questa funzione consente di accedere automaticamente al sistema dopo il riconoscimento del volto. Se si è in un ambiente esterno anziché in ufficio, è necessario essere più vicini al computer e la riattivazione richiederà più tempo. <br>La distanza di rilevamento massima varia a seconda della capacità del sensore. Per maggiori dettagli, consultare la guida per l'utente fornita con il computer."
                 },
                 "zeroTouchLock": {
-                    "title": "Blocco zero touch",
+                    "title": "Blocco automatico",
                     "caption": "Questa funzione ridurrà la luminosità dello schermo e bloccherà il computer quando non viene rilevata la presenza dell'utente. Consente inoltre di ridurre gli accessi non autorizzati al computer quando l'utente si allontana dal computer senza bloccarlo. Riduce anche il consumo di energia, attivando la modalità Standby moderno del sistema, quando non viene rilevata la presenza dell'utente.",
                     "autoScreenLockTimer": {
                         "title": "TIMER BLOCCO SCHERMO AUTOMATICO",
@@ -2154,7 +2154,11 @@
             },
             "intelligentMedia": {
                 "heading": "Supporti intelligenti",
-                "title": "Riproduzione video zero touch",
+                "title": "Riproduzione video automatica",
+                "note": {
+                    "supportedList": "I lettori supportati sono i seguenti: <br>&bull; Netflix <br>&bull; Film e TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Nota: i lettori video Web non sono supportati."
+                },
                 "desc": "Questa funzione metterà in pausa il video quando ci si allontana dal computer e riprenderà la riproduzione del video al rientro dell'utente.",
                 "tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
             },

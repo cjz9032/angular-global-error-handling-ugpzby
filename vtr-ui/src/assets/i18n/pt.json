@@ -1989,7 +1989,7 @@
                     "tooltip": "Quando está em frente ao computador ou a aproximar-se do mesmo (a uma distância máxima de 1,2 metros), esta funcionalidade permite iniciar sessão automaticamente no sistema após o seu rosto ser reconhecido. Se estiver no exterior e não no escritório, é necessário estar mais próximo do computador e a reativação demorará mais."
                 },
                 "zeroTouchLoginForIdea": {
-                    "title": "Login sem toques",
+                    "title": "Login Zero touch",
                     "caption": "Esta funcionalidade permite-lhe melhorar a eficiência do trabalho ao reativar ou iniciar sessão automaticamente no seu computador. Para utilizar esta funcionalidade, precisa de registar o seu rosto no Windows Hello.",
                     "tooltip": "Quando está em frente ao computador ou a aproximar-se do mesmo (a 1,2 ou 1,5 metros), esta funcionalidade permite iniciar sessão automaticamente no sistema após o seu rosto ser reconhecido. Se estiver no exterior e não no escritório, é necessário estar mais próximo do computador e a reativação demorará mais. <br>Dependendo da capacidade do sensor, a distância máxima de deteção varia. Consulte o Manual do Utilizador fornecido com o computador para obter mais informação."
                 },
@@ -2155,6 +2155,10 @@
             "intelligentMedia": {
                 "heading": "Multimédia Inteligente",
                 "title": "Reprodução de vídeo Zero Touch",
+                "note": {
+                    "supportedList": "Os leitores suportados são os seguintes: <br>&bull; Netflix <br>&bull; Filmes e Programas de TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Nota: Os leitores de vídeo da Web não são suportados."
+                },
                 "desc": "Esta funcionalidade irá colocar o vídeo em pausa quando o utilizador deixar o computador e retomar o vídeo quando este voltar.",
                 "tooltip": "Esta funcionalidade não se aplica a leitores de vídeo Web. Os leitores de vídeo locais populares, tais como o Windows Media Player e o 5KPlayer, entre outros, suportam esta funcionalidade."
             },

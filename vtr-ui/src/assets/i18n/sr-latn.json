@@ -1989,12 +1989,12 @@
                     "tooltip": "Kada se nalazite ispred računara ili mu se približavate (unutar razdaljine od 1,2 metara), ova funkcija vam omogućava da se automatski prijavite u sistem nakon prepoznavanja lica. Ako ste na otvorenom, a ne u kancelariji, morate da budete bliži računaru i buđenje će trajati duže."
                 },
                 "zeroTouchLoginForIdea": {
-                    "title": "Bezdodirno prijavljivanje",
+                    "title": "Prijavljivanje bez dodira",
                     "caption": "Ova funkcija vam omogućava da poboljšate efikasnost rada tako što se automatski budi ili prijavljuje na računar. Da biste koristili ovu funkciju, morate da registrujete lice u programu Windows Hello.",
                     "tooltip": "Kada se nalazite ispred računara ili mu se približavate (unutar razdaljine od 1,2 ili 1,5 metara), ova funkcija vam omogućava da se automatski prijavite u sistem nakon prepoznavanja lica. Ako ste na otvorenom, a ne u kancelariji, morate da budete bliži računaru i buđenje će trajati duže. <br>U zavisnosti od mogućnosti senzora, maksimalna udaljenost se razlikuje. Detalje potražite u Uputstvu za korisnike koju ste dobili uz računar."
                 },
                 "zeroTouchLock": {
-                    "title": "Zero Touch zaključavanje",
+                    "title": "Zaključavanje bez dodira",
                     "caption": "Ova funkcija zatamnjuje ekran i zaključava računar kada se ne otkrije prisustvo korisnika. To može smanjiti šanse neovlašćenog pristupa računaru kada ostavite računar otključan i bez nadzora. Takođe, umanjuje potrošnju struje tako što stavlja sistem u moderno stanje pripravnosti kada vaše prisustvo nije otkriveno.",
                     "autoScreenLockTimer": {
                         "title": "TAJMER AUTOMATSKOG ZAKLJUČAVANJA EKRANA",
@@ -2153,8 +2153,12 @@
                 }
             },
             "intelligentMedia": {
-                "heading": "Inteligentni mediji",
-                "title": "Zero Touch reprodukcija video snimaka",
+                "heading": "Pametan medij",
+                "title": "Reprodukcija video zapisa bez dodira",
+                "note": {
+                    "supportedList": "Podržani plejeri su sledeći: <br>&bull; Netflix <br>&bull; Film i TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+                    "note": "Napomena: Video plejeri na vebu nisu podržani."
+                },
                 "desc": "Ova funkcija će pauzirati video kada odlazite od računara i nastaviti video kada se vratite.",
                 "tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
             },
