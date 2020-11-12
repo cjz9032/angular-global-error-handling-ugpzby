@@ -138,14 +138,14 @@ export class ProtocolGuardService implements CanActivate {
 
 		if (schema.toLowerCase() !== this.vantage3xSchema) return [false, ''];
 
-		if (!semantic) return [true, `/${query}`];
+		if (!semantic) return [true, query];
 
 		const path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
 		if (path === undefined) {
 			return [false, ''];
 		}
 
-		return [true, `/${path}${query}`];
+		return [true, `${path}${query}`];
 	}
 
 	private convertToUrlAssumeProtocolIs2x(rawData: string): [boolean, string] {
@@ -157,14 +157,14 @@ export class ProtocolGuardService implements CanActivate {
 
 		if (!schema || !this.backwardCompatibilitySchemas.includes(schema.toLowerCase())) return [false, ''];
 
-		if (!query) return [true, `/`];
+		if (!query) return [true, ''];
 
 		const featureId: string | null = queryParams.get('featureid');
 		if (featureId) {
 			const featureSemantic: string | undefined = this.featureIdToSemantic[featureId.toLowerCase()];
 			if (featureSemantic) {
 				const path: string | undefined = this.semanticToPath[featureSemantic];
-				if (path) return [true, `/${path}${query}`];
+				if (path) return [true, `${path}${query}`];
 			}
 		}
 
@@ -173,7 +173,7 @@ export class ProtocolGuardService implements CanActivate {
 			const sectionSemantic: string | undefined = this.sectionToSemantic[section.toLowerCase()];
 			if (sectionSemantic) {
 				const path = this.semanticToPath[sectionSemantic];
-				if (path) return [true, `/${path}${query}`];
+				if (path) return [true, `${path}${query}`];
 			}
 		}
 
@@ -181,15 +181,23 @@ export class ProtocolGuardService implements CanActivate {
 	}
 
 	public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
-		const dashboardRoute = this.router.parseUrl(this.deviceService.isGaming ? '/device-gaming' : '/dashboard');
-		const path = state.url.slice(state.url.indexOf('#') + 1);
+		let path = state.url.slice(state.url.indexOf('#') + 1);
+		const dashboardPath = this.deviceService.isGaming ? '/device-gaming' : '/dashboard';
 		if (path.startsWith(this.characteristicCode)) {
 			const checkResult = this.isRedirectUrlNeeded(path.split('&')[0]);
-			if (checkResult[0]) {
-				return this.router.parseUrl(checkResult[1]);
+			if (!checkResult[0]) {
+				return this.commonService.isFirstPageLoaded() ? false : this.router.parseUrl(dashboardPath);
 			}
-			return this.commonService.isFirstPageLoaded() ? false : dashboardRoute;
+			path = checkResult[1];
 		}
-		return dashboardRoute;
+
+		let newPath = path;
+		if (path.startsWith('?')) {
+			newPath = dashboardPath + path;
+		} else if (!path || path === '/') {
+			newPath = dashboardPath;
+		}
+
+		return this.router.parseUrl(newPath);
 	}
 }

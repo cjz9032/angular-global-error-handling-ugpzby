@@ -1,10 +1,16 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageSettingsComponent } from '../components/pages/page-settings/page-settings.component';
 import { PageDashboardComponent } from '../components/pages/page-dashboard/page-dashboard.component';
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { ProtocolGuardService } from '../services/guard/protocol-guard.service';
+
+@Component({
+	template: 'empty'
+})
+export class DoNotUseComponent {
+}
 
 const routes: Routes = [
 	{
@@ -75,7 +81,8 @@ const routes: Routes = [
 	},
 	{
 		path: '**',
-		canActivate: [ProtocolGuardService]
+		canActivate: [ProtocolGuardService],
+		component: DoNotUseComponent
 	}
 ];
 
