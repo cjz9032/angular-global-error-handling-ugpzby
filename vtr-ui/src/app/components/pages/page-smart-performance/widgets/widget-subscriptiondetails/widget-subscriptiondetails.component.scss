@@ -90,7 +90,7 @@
 
 		li {
 			border-bottom: 0.1rem solid $screen_dark_05;
-			line-height: 5rem;
+			min-height: 5rem;
 			padding: 0 2rem;
 
 			&:last-child {
