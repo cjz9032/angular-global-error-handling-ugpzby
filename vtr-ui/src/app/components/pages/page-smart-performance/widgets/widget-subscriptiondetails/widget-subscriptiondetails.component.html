@@ -1,4 +1,4 @@
-<div class="subscription-details sidebar-widget">
+<div class="subscription-details sidebar-widget h-100">
 	<div class="title pb-1">{{'smartPerformance.subscriptionDetails.title' |translate }}</div>
 
 	<div class="card-info">
@@ -8,7 +8,7 @@
 	</div>
 	<ul class="status-list mb-0"
 		*ngIf="isOnline">
-		<li class="d-flex justify-content-between start-date-spinner">
+		<li class="d-flex justify-content-between align-items-center start-date-spinner">
 			<div class="item">{{'smartPerformance.subscriptionDetails.startDate' |translate }}</div>
 			<div class="status"
 				*ngIf="!isLoading"
@@ -21,7 +21,7 @@
 				<span></span>
 			</div>
 		</li>
-		<li class="d-flex justify-content-between end-date-spinner">
+		<li class="d-flex justify-content-between align-items-center end-date-spinner">
 			<div class="item">{{'smartPerformance.subscriptionDetails.endDate' |translate }}</div>
 			<div class="status"
 				*ngIf="!isLoading"
@@ -34,7 +34,7 @@
 				<span></span>
 			</div>
 		</li>
-		<li class="d-flex justify-content-between status-spinner">
+		<li class="d-flex justify-content-between align-items-center status-spinner">
 			<div class="item">{{'smartPerformance.subscriptionDetails.status' |translate }}</div>
 			<div class="status"
 				*ngIf="strStatus">

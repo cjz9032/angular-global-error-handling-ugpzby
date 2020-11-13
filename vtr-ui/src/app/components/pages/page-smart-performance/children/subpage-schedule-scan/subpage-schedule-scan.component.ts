@@ -25,7 +25,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	) { }
 
 	// scan settings
-	@Output() scanDatekValueChange = new EventEmitter();
+	@Output() scanDateValueChange = new EventEmitter();
 	@Output() hideBasedOnOldAddIn = new EventEmitter();
 	@Output() hideBasedOnOldAddInSummary = new EventEmitter();
 	@Input() isOnline = true;
@@ -358,7 +358,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 				this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCANANDFIX);
 				this.setDefaultValWhenDisabled();
 				// hiding Next Schedule Scan in SP scan-summary
-				this.scanDatekValueChange.emit({ nextEnable: event.switchValue });
+				this.scanDateValueChange.emit({ nextEnable: event.switchValue });
 			} else {
 				this.unregisterScheduleScan(enumSmartPerformance.SCHEDULESCAN);
 				this.setDefaultValWhenDisabled();
@@ -454,7 +454,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 					nextScanAMPM: this.selectedMeridiem,
 					nextScanDateWithYear: dt.split(',')[1] + '/' + dt.split(',')[2].trim() + '/' + dt.split(',')[3]
 				};
-				this.scanDatekValueChange.emit(nextScanEvent);
+				this.scanDateValueChange.emit(nextScanEvent);
 				return;
 			}
 

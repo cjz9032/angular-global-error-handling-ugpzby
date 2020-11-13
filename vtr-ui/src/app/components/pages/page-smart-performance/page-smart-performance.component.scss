@@ -1,0 +1,26 @@
+@import '../../../app.theme.scss';
+
+.smart-performance-right-content {
+	.widget-card {
+		@media #{$mediaquery_X50} {
+			&:nth-child(even) {
+				padding-left: 1.2rem;
+			}
+
+			&:nth-child(odd) {
+				padding-right: 1.2rem;
+			}
+
+			&:last-child,
+			&:nth-last-child(2) {
+				margin-bottom: 0;
+			}
+		}
+
+		@media #{$breakpoint_sm} {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
