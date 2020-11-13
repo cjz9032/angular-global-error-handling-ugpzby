@@ -566,7 +566,7 @@ export class ContentCacheService {
 		let overlayTheme;
 		if (record) {
 			if (record.Parameters && record.Parameters.length > 0) {
-				const theme = record.Parameters.filter(item => item.Key === 'OverlayTheme')[0];
+				const theme = record.Parameters.find(item => item.Key === 'OverlayTheme');
 				if (theme) {
 					overlayTheme = theme.Value;
 				}

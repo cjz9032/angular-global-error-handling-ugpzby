@@ -5,7 +5,7 @@ import { ContentCacheService } from './content-cache.service';
 import { MockContentLocalCacheTest } from '../../services/content-cache/mock/content-cache.mock.data';
 
 import { asyncData, asyncError } from 'src/testing/async-observable-helpers';
-import { CMS_CONTENTS, UPE_CONTENTS, NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB, WELCOME_TEXT_CONTENTS, ARTICLE } from 'src/testing/content-data';
+import { CMS_CONTENTS, UPE_CONTENTS, NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB, WELCOME_TEXT_CONTENTS, ARTICLE, DYNAMIC_OVERLAY_THEME } from 'src/testing/content-data';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 describe('ContentCacheService', () => {
@@ -638,5 +638,15 @@ describe('ContentCacheService', () => {
 		await service.getCachedContents('normalContents', null);
 		expect(metrics.sendMetrics).toHaveBeenCalledTimes(1);
 		expect(metrics.sendMetrics.calls.allArgs().length).toBe(1, 'one call');
+	});
+
+	it('should replace static OverlayTheme', async()=>{
+		let ccService: { loadCachedContents: jasmine.Spy, getCachedOnlineContents: jasmine.Spy };
+		ccService = jasmine.createSpyObj('ContentCacheService', ['loadCachedContents', 'getCachedOnlineContents']);
+		ccService.getCachedOnlineContents.and.returnValue(DYNAMIC_OVERLAY_THEME);
+
+		const content = ccService.loadCachedContents(DYNAMIC_OVERLAY_THEME);
+		expect(content.positionA[0].OverlayTheme).toEqual('dark');
+		expect(content.positionB.OverlayTheme).toEqual('dark');		
 	});
 });
