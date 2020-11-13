@@ -241,7 +241,7 @@ export class ContentCacheService {
 			if (welcomeTextContent && welcomeTextContent.Title) {
 				const localInfo = await this.getLocalInfo();
 				if (SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)
-				||	SegmentConst.SMB === localInfo.Segment) {
+					|| SegmentConst.SMB === localInfo.Segment) {
 					cacheValueOfContents['welcome-text'] = new Array(welcomeTextContent);
 				}
 			}
@@ -540,6 +540,7 @@ export class ContentCacheService {
 
 		if (cardId === 'positionA') {
 			return contents.map((record) => {
+				const overlayTheme = this.selectOverlayTheme(record);
 				return {
 					albumId: 1,
 					id: record.Id,
@@ -548,14 +549,36 @@ export class ContentCacheService {
 					url: record.FeatureImage,
 					ActionLink: record.ActionLink,
 					ActionType: record.ActionType,
-					OverlayTheme: record.OverlayTheme ? record.OverlayTheme : '',
+					OverlayTheme: overlayTheme ? overlayTheme : '',
 					DataSource: record.DataSource
 				};
 			});
 
 		} else {
+			if (contents[0]) {
+				contents[0].OverlayTheme = this.selectOverlayTheme(contents[0]);
+			}
 			return contents[0];
 		}
+	}
+
+	private selectOverlayTheme(record) {
+		let overlayTheme;
+		if (record) {
+			if (record.Parameters && record.Parameters.length > 0) {
+				const theme = record.Parameters.find(item => item.Key === 'OverlayTheme');
+				if (theme) {
+					overlayTheme = theme.Value;
+				}
+				else {
+					overlayTheme = record.OverlayTheme;
+				}
+			}
+			else {
+				overlayTheme = record.OverlayTheme;
+			}
+		}
+		return overlayTheme;
 	}
 
 }

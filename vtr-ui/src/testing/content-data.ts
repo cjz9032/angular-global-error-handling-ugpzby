@@ -810,3 +810,379 @@ export const DASHBOARD = {
 		}
 	]
 };
+
+
+export const DYNAMIC_OVERLAY_THEME = {
+	"positionA": [{
+		"Id": "23c8600f886a4dd5a8747fa35dfa9f9c",
+		"Title": "Honoring Veterans In Tech",
+		"LastModified": "11-09-2020 04:00:53 AM",
+		"Revision": "7d0a33ce-fe76-477b-933e-28e3b70c9906",
+		"ShortTitle": "",
+		"Description": "",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/c6c34d30efcb408da4f633272b101e14",
+		"Action": "",
+		"ActionType": "Internal",
+		"ActionLink": "d2c1b09409f64c13ac5ab9d209065e39",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P4",
+		"Page": "dashboard",
+		"Template": "home-page-hero-banner",
+		"Position": "position-A",
+		"OverlayTheme": "dark",
+		"Parameters": [{
+			"Key": "OverlayTheme",
+			"Value": "light"
+		}],
+		"Filters": {
+			"and": [{
+				"GEOs.Any": ["US"]
+			}, {
+				"Segments.Any": ["Consumer", "Consumer_Education", "Consumer_Gaming", "SMB"]
+			}]
+		},
+		"DisplayStartDate": null,
+		"ExpirationDate": "11/15/2020",
+		"DataSource": "cms"
+	}, {
+		"Id": "a08fa995d7f64b109333652d1cee6a4c",
+		"Title": "The Coolest Applications of 5G and IOT Today",
+		"LastModified": "10-26-2020 06:10:27 AM",
+		"Revision": "39df6422-ecf5-4d02-af22-4ec12c884505",
+		"ShortTitle": "",
+		"Description": "",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/9ae2ec9eb3a54ee09eafecbb15109315",
+		"Action": "",
+		"ActionType": "Internal",
+		"ActionLink": "7495e690c007441f99d3298fb9d409fc",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P6",
+		"Page": "dashboard",
+		"Template": "home-page-hero-banner",
+		"Position": "position-A",
+		"OverlayTheme": "",
+		"Parameters": [{
+			"Key": "OverlayTheme",
+			"Value": "dark"
+		}],
+		"Filters": {
+			"and": [{
+				"GEOs.Any": ["US", "UM", "CA"]
+			}, {
+				"and": [{
+					"Brands.Any": ["Think"]
+				}, {
+					"Segments.Any": ["Consumer", "Consumer_Education", "Consumer_Gaming"]
+				}]
+			}]
+		},
+		"DisplayStartDate": null,
+		"ExpirationDate": null,
+		"DataSource": "cms"
+	}, {
+		"Id": "3485e47fb0c64b31acf1e8b3c978faa8",
+		"Title": "Win rewards in the Gaming Community",
+		"LastModified": "11-06-2020 04:23:28 PM",
+		"Revision": "7f787b59-3146-4856-8dd0-ada51feb4ca1",
+		"ShortTitle": "",
+		"Description": "Earn Legion Rewards &amp; Meet Our Community",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/4d9d0acf462f496d8e0b3cfdf7a44d68",
+		"Action": "",
+		"ActionType": "External",
+		"ActionLink": "http://gaming.lenovo.com/us?cid=us:other:uyyl1f",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P7",
+		"Page": "dashboard",
+		"Template": "home-page-hero-banner",
+		"Position": "position-A",
+		"OverlayTheme": "",
+		"Parameters": [],
+		"Filters": {
+			"and": [{
+				"GEOs.Any": ["US"]
+			}, {
+				"Segments.Any": ["Consumer", "Consumer_Gaming", "Consumer_Education"]
+			}]
+		},
+		"DisplayStartDate": "10/26/2020",
+		"ExpirationDate": null,
+		"DataSource": "cms"
+	}, {
+		"Id": "42f01e8e7ac04ab780cebc2ad3f33b37",
+		"Title": "",
+		"LastModified": "11-06-2020 07:22:33 PM",
+		"Revision": "f1c33274-3ade-4bc6-a760-8369bbf23d75",
+		"ShortTitle": "",
+		"Description": "",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/68fd3942ce574611b9db99f636efe324",
+		"Action": "",
+		"ActionType": "External",
+		"ActionLink": "https://www.lenovo.com/us/en/accessories-and-monitors/software/office-suites-downloads/MICROSOFT-365-PERSONAL-SUBSCRIPTION-LI/p/78010535",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P8",
+		"Page": "dashboard",
+		"Template": "home-page-hero-banner",
+		"Position": "position-A",
+		"OverlayTheme": "light",
+		"Parameters": [{
+			"Key": "OverlayTheme",
+			"Value": "light"
+		}],
+		"Filters": {
+			"and": [{
+				"GEOs.Any": ["AU", "CA", "US", "GB"]
+			}, {
+				"Segments.Any": ["Consumer", "Consumer_Education", "Consumer_Gaming", "SMB"]
+			}]
+		},
+		"DisplayStartDate": null,
+		"ExpirationDate": null,
+		"DataSource": "cms"
+	}],
+	"positionB": [{
+		"Id": "dcb2e0a2fb864b0392cd03f9c90c1ea4",
+		"Title": "Turn on Privacy Mode for Your Camera",
+		"ShortTitle": "",
+		"Description": "",
+		"FeatureImage": "https://vantage.csw.lenovo.com/-/media/cd7740745f9046148eccda9986a39586",
+		"Action": "",
+		"ActionLink": "lenovo-vantage3:display-camera",
+		"ActionType": "Protocol",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P4",
+		"Page": "dashboard",
+		"Template": "half-width-title-description-link-image",
+		"Position": "position-B",
+		"Filters": null,
+		"DisplayStartDate": null,
+		"LastModified": "11-06-2020 04:37:57 PM",
+		"Parameters": [{
+			"Key": "OverlayTheme",
+			"Value": "gray"
+		}],
+		"Revision": "424e6db6-1a58-4160-8556-0083f21a1fa4",
+		"OverlayTheme": "",
+		"DataSource": "upe"
+	}],
+	"positionC": [{
+		"Id": "59a22263fd33472db08d76d656198d8a",
+		"Title": "Microsoft Tip:",
+		"LastModified": "11-09-2020 04:30:06 PM",
+		"Revision": "27b2b6f2-5ca5-4097-9884-0f22d477557a",
+		"ShortTitle": "",
+		"Description": "Quickly Change Settings in Action Center",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/a338e977f9974e81b6b70c2a2e27a077",
+		"Action": "",
+		"ActionType": "Internal",
+		"ActionLink": "c785dd89401041b08b027c7693fa82f8",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P4",
+		"Page": "dashboard",
+		"Template": "half-width-title-description-link-image",
+		"Position": "position-C",
+		"OverlayTheme": "white",
+		"Parameters": [{
+			"Key": "OverlayTheme",
+			"Value": "dark"
+		}],
+		"Filters": {
+			"and": [{
+				"GEOs.Any": ["AU", "CA", "US", "GB"]
+			}, {
+				"Segments.Any": ["Consumer", "Consumer_Education", "Consumer_Gaming", "SMB"]
+			}]
+		},
+		"DisplayStartDate": null,
+		"ExpirationDate": "11/15/2020",
+		"DataSource": "cms"
+	}, {
+		"Id": "1b8ccbda1080485fa56d1d5329c23d42",
+		"Title": "Microsoft Tip:",
+		"LastModified": "10-23-2020 01:41:56 PM",
+		"Revision": "ee72a84e-5182-4b76-a55f-327384786271",
+		"ShortTitle": "",
+		"Description": "Work Together While Remote",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/1bd87f6670984d648a75c50d00049460",
+		"Action": "",
+		"ActionType": "Internal",
+		"ActionLink": "590824b7e2294889b8cf107a260e7aab",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P7",
+		"Page": "dashboard",
+		"Template": "half-width-title-description-link-image",
+		"Position": "position-C",
+		"OverlayTheme": "",
+		"Parameters": [{
+			"Key": "OverlayTheme",
+			"Value": "dark"
+		}],
+		"Filters": {
+			"and": [{
+				"GEOs.Any": ["AU", "CA", "US", "GB", "UM"]
+			}, {
+				"Segments.Any": ["Consumer", "Consumer_Education", "Consumer_Gaming", "SMB", "Commercial"]
+			}]
+		},
+		"DisplayStartDate": null,
+		"ExpirationDate": null,
+		"DataSource": "cms"
+	}],
+	"positionD": [{
+		"Id": "f9807c805ad74eedb7f37680008be92a",
+		"Title": "Tech Enthusiast Turns Home Into a Smart Home&#9;",
+		"LastModified": "11-09-2020 03:24:29 AM",
+		"Revision": "8da85f22-28c4-482f-abcc-adba2356c5ae",
+		"ShortTitle": "",
+		"Description": "",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/aad5cfda6cd640c9be4371b0e62af0ac",
+		"Action": "Tech Enthusiast Turns Home into a Smart Home",
+		"ActionType": "External",
+		"ActionLink": "https://news.lenovo.com/tech-enthusiast-turns-home-into-a-smart-home/",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P6",
+		"Page": "dashboard",
+		"Template": "full-width-title-image-background",
+		"Position": "position-D",
+		"OverlayTheme": "dark",
+		"Parameters": [{
+			"Key": "OverlayTheme",
+			"Value": "dark"
+		}],
+		"Filters": {
+			"and": [{
+				"GEOs.Any": ["AU", "CA", "GB", "US"]
+			}, {
+				"Segments.Any": ["Consumer", "SMB", "Consumer_Gaming", "Consumer_Education"]
+			}]
+		},
+		"DisplayStartDate": null,
+		"ExpirationDate": "11/15/2020",
+		"DataSource": "cms"
+	}, {
+		"Id": "cd36b423966441d7995020f888ba9eae",
+		"Title": "5G and Cyber Security &#8211; What Businesses Need to Know",
+		"LastModified": "11-11-2020 01:28:53 PM",
+		"Revision": "3abacc71-b703-4254-900f-936f554aa613",
+		"ShortTitle": "",
+		"Description": "Lenovo's Chief Information Security Officer talks new standard at the National Cyber Security Conference.",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/1bcfb1a7554648dab59d56a862f60192",
+		"Action": "Read More",
+		"ActionType": "Internal",
+		"ActionLink": "4bebdfb248254f18be6973072c64f911",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P9",
+		"Page": "dashboard",
+		"Template": "full-width-title-image-background",
+		"Position": "position-D",
+		"OverlayTheme": "",
+		"Parameters": [{
+			"Key": "OverlayTheme",
+			"Value": "dark"
+		}],
+		"Filters": {
+			"Segments.Any": ["Consumer", "Consumer_Gaming", "Consumer_Education"]
+		},
+		"DisplayStartDate": "11/22/2019",
+		"ExpirationDate": null,
+		"DataSource": "cms"
+	}],
+	"positionE": [{
+		"Id": "5958939256e54675968a7b31f398a01d",
+		"Title": "Premier Support",
+		"LastModified": "11-06-2020 07:22:28 PM",
+		"Revision": "a0f61e5f-23e0-4598-bd2c-caf642af2c6e",
+		"ShortTitle": "Premier Support",
+		"Description": "Tech support with the Premier difference",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/7fba9019ce7442b1b41636f21be29bec",
+		"Action": "Read More",
+		"ActionType": "External",
+		"ActionLink": "https://pcsupport.lenovo.com/warrantylookup?sn=[SerialNumber]&cid=all:apps:bbvxcy&utm_source=Lenovo_Welcome&utm_medium=Text_Link&utm_campaign=Warranty#/upgrade",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P6",
+		"Page": "dashboard",
+		"Template": "half-width-top-image-title-link",
+		"Position": "position-E",
+		"OverlayTheme": "",
+		"Parameters": [],
+		"Filters": {
+			"and": [{
+				"Brands.Any": ["Think"]
+			}, {
+				"Segments.Any": ["Commercial", "Consumer", "Consumer_Education", "Consumer_Gaming", "SMB"]
+			}, {
+				"!": {
+					"GEOs.Any": ["CN"]
+				}
+			}]
+		},
+		"DisplayStartDate": null,
+		"ExpirationDate": null,
+		"DataSource": "cms"
+	}],
+	"positionF": [{
+		"Id": "80165a02226745b2b40ad4b8b1dfb080",
+		"Title": "Accessories",
+		"LastModified": "11-06-2020 07:22:16 PM",
+		"Revision": "c0f04af1-df7a-4c19-b9d5-0a6de61f23af",
+		"ShortTitle": "",
+		"Description": "Looking for accessories to complete your PC experience?",
+		"FeatureImage": "https://stg.dxp.lenovo.com/-/media/9097cbf978d14bb7bf0f79a38c0c3739",
+		"Action": "Customize your PC experience",
+		"ActionType": "External",
+		"ActionLink": "https://vantage.pub/3cNhDMX",
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P3",
+		"Page": "dashboard",
+		"Template": "half-width-top-image-title-link",
+		"Position": "position-F",
+		"OverlayTheme": "",
+		"Parameters": [],
+		"Filters": {
+			"and": [{
+				"Segments.Any": ["Consumer", "Consumer_Education", "Consumer_Gaming"]
+			}, {
+				"!": {
+					"GEOs.Any": ["MX"]
+				}
+			}]
+		},
+		"DisplayStartDate": "09/24/2020",
+		"ExpirationDate": null,
+		"DataSource": "cms"
+	}],
+	"welcome-text": [{
+		"Id": "6cb73ba2f3914d3295467c41e7330922",
+		"Title": "Looking energized today! ||| What a pleasant surprise ||| Knock, knock ||| You're off to great places! ||| Today is your day! ||| Who likes happy little trees? ||| Party on! ||| Keep calm and Vantage on ||| A bigger Vantage for your buck ||| Bring home the Vantage ||| Eat, sleep, Vantage, repeat ||| Every moment is a fresh Vantage ||| Vantage to the fullest",
+		"LastModified": "10-26-2020 06:10:27 AM",
+		"Revision": "238849fe-b868-4cd2-9242-c1c22d3e53c7",
+		"ShortTitle": "",
+		"Description": "",
+		"FeatureImage": "",
+		"Action": "",
+		"ActionType": null,
+		"ActionLink": null,
+		"BrandName": "",
+		"BrandImage": "",
+		"Priority": "P6",
+		"Page": "dashboard",
+		"Template": "top-title-welcome-text",
+		"Position": "welcome-text",
+		"OverlayTheme": "",
+		"Parameters": [],
+		"Filters": null,
+		"DisplayStartDate": null,
+		"ExpirationDate": null,
+		"DataSource": "cms"
+	}]
+};
