@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.8](https://bitbucket.tc.lenovo.com///compare/v1.9.7...v1.9.8) (2020-11-16)
+
+
+### Features
+
+* **Overall:** remove home component ([499f088](https://bitbucket.tc.lenovo.com///commit/499f088efe47a1a10f5d8eb23f098933d8e4457c))
+* **Overall:** remove home component ([55eb361](https://bitbucket.tc.lenovo.com///commit/55eb3613a56a6fe84e4d39d01e9ca04ed0d4024b))
+* **Overall:** remove home component to save boot time ([f1b25e4](https://bitbucket.tc.lenovo.com///commit/f1b25e40850bedc5f496f99ab8d2a75bee34d9b2))
+* **Overall:** remove homecomponent ([ccd3cc9](https://bitbucket.tc.lenovo.com///commit/ccd3cc9d75f2ddbb3080d0ae35c71f2b8e2c66f8))
+
 ### [1.9.7](https://bitbucket.tc.lenovo.com///compare/v1.9.6...v1.9.7) (2020-11-13)
 
 ### [1.9.6](https://bitbucket.tc.lenovo.com///compare/v1.9.5...v1.9.6) (2020-11-13)
