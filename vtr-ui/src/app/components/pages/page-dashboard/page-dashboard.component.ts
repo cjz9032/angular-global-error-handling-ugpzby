@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, HostListener } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import map from 'lodash/map';
@@ -60,14 +60,13 @@ interface IConfigItem {
 	styleUrls: ['./page-dashboard.component.scss']
 })
 export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
+	actionSubscription: Subscription;
 
 	offlineConnection = 'offline-connection';
 	public systemStatus: Status[] = [];
 	public isOnline = true;
 	public isShowStateCard: boolean;
 	public brand;
-	private protocolAction: any;
-	private lastAction: any;
 	public warrantyData: { info: { endDate: null; status: 2; startDate: null; url: string }; cache: boolean };
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
@@ -257,7 +256,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}, 1000);
 	}
 
-
 	constructor(
 		private router: Router,
 		public dashboardService: DashboardService,
@@ -291,7 +289,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.refreshSA();
-		this.getProtocalAction();
 		this.config.backdrop = 'static';
 		this.config.keyboard = false;
 		this.isOnline = this.commonService.isOnline;
@@ -353,20 +350,13 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		});
 	}
 
-	private getProtocalAction() {
-		this.protocolAction = this.activatedRoute.snapshot.queryParams.action;
-		const currentNavigate = this.router.getCurrentNavigation();
-		if (currentNavigate && this.router.getCurrentNavigation().extras !== undefined) {
-			const extras = this.router.getCurrentNavigation().extras;
-			if (!this.protocolAction && extras.queryParams !== undefined && extras.queryParams.action !== undefined) {
-				this.protocolAction = extras.queryParams.action;
-			}
-		}
-	}
-
 	private launchProtocol() {
-		if (this.protocolAction && (this.lastAction !== this.protocolAction)) {
-			if (this.protocolAction.toLowerCase() === 'lenovoid' && !this.userService.auth) {
+		this.actionSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
+			if (!params.has('action')) {
+				return;
+			}
+
+			if (this.activatedRoute.snapshot.queryParams.action.toLowerCase() === 'lenovoid' && !this.userService.auth) {
 				const shellVersion = this.commonService.getShellVersion();
 				if (this.commonService.compareVersion(shellVersion, '10.2001.9') >= 0) {
 					// New shell use await to sync with UI, launch LID immediately
@@ -376,11 +366,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					//  UI will possibly become blank in case of protocol launch
 					setTimeout(() => this.dialogService.openLenovoIdDialog(), 2000);
 				}
-			} else if (this.protocolAction.toLowerCase() === 'modernpreload') {
+			} else if (this.activatedRoute.snapshot.queryParams.action.toLowerCase() === 'modernpreload') {
 				setTimeout(() => this.dialogService.openModernPreloadModal(), 0);
 			}
-			this.lastAction = this.protocolAction;
-		}
+		});
 	}
 
 
@@ -443,6 +432,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		}
 		if (this.securityAdvisor) {
 			this.securityAdvisor.off('*', this.securityAdvisorHandler);
+		}
+
+		if (this.actionSubscription) {
+			this.actionSubscription.unsubscribe();
 		}
 	}
 

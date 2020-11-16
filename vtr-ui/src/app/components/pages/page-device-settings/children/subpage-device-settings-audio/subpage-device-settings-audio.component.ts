@@ -17,7 +17,6 @@ import { BatteryDetailService } from 'src/app/services/battery-detail/battery-de
 import { CommonService } from 'src/app/services/common/common.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import sha256 from 'crypto-js/sha256';
 import { DeviceService } from '../../../../../services/device/device.service';
@@ -90,7 +89,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 
 	constructor(
-		private routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private audioService: AudioService,
 		private dashboardService: DashboardService,
 		private logger: LoggerService,

@@ -505,9 +505,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	// 	}
 	// }
 	onActivate(component) {
-		if (component.constructor.name !== 'HomeComponent' && !this.commonService.getSessionStorageValue(SessionStorageKey.FirstPageLoaded, false)) {
-			this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, true);
-		}
+		this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, true);
 		this.commonService.scrollTop();
 	}
 

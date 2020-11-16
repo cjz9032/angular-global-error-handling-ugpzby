@@ -100,7 +100,9 @@ export class ProtocolGuardService implements CanActivate {
 
 	public isRedirectUrlNeeded(args: string): [boolean, string] {
 		const result = this.processPath(args);
-		if (result[0] && result[1] !== args) return result;
+		if (result[0] && result[1] !== args) {
+			return result;
+		}
 
 		return [false, ''];
 	}
@@ -108,13 +110,20 @@ export class ProtocolGuardService implements CanActivate {
 	private processPath(path: string): [boolean, string] {
 		const encodedProtocol = path.slice(path.indexOf(this.characteristicCode) + this.characteristicCode.length);
 		const originalProtocol = this.decodeBase64String(encodedProtocol);
-		if (!originalProtocol) return [false, ''];
+		if (!originalProtocol) {
+			return [false, ''];
+		}
 
 		try {
 			let result = this.convertToUrlAssumeProtocolIs3x(originalProtocol);
 			if (!result[0]) {
 				result = this.convertToUrlAssumeProtocolIs2x(originalProtocol);
 			}
+
+			if (result[0]) {
+				result[1] = this.addTimestampQueryParam(result[1]);
+			}
+
 			return result;
 		} catch (e) {
 			return [false, ''];
@@ -122,49 +131,65 @@ export class ProtocolGuardService implements CanActivate {
 	}
 
 	private addTimestampQueryParam(originQuery: string): string {
-		if (!originQuery || !originQuery.startsWith('?')) return originQuery;
+		if (!originQuery || !originQuery.includes('?') || originQuery.includes('timestamp=')) {
+			return originQuery;
+		}
 		return `${originQuery}&timestamp=${Date.now()}`;
 	}
 
 	private convertToUrlAssumeProtocolIs3x(rawData: string): [boolean, string] {
 		const url = this.constructURL(rawData);
-		if (!url) return [false, ''];
+		if (!url) {
+			return [false, ''];
+		}
 		const schema = url.protocol;
 		let semantic = '';
 		try {
 			semantic = url.pathname;
 		} catch (e) { }
-		const query = this.addTimestampQueryParam(url.search);
+		const query = url.search;
 
-		if (schema.toLowerCase() !== this.vantage3xSchema) return [false, ''];
+		if (schema.toLowerCase() !== this.vantage3xSchema) {
+			return [false, ''];
+		}
 
-		if (!semantic) return [true, `/${query}`];
+		if (!semantic) {
+			return [true, query];
+		}
 
 		const path: string | undefined = this.semanticToPath[semantic.toLowerCase()];
 		if (path === undefined) {
 			return [false, ''];
 		}
 
-		return [true, `/${path}${query}`];
+		return [true, `${path}${query}`];
 	}
 
 	private convertToUrlAssumeProtocolIs2x(rawData: string): [boolean, string] {
 		const url = this.constructURL(rawData.toLocaleLowerCase());
-		if (!url) return [false, ''];
+		if (!url) {
+			return [false, ''];
+		}
 		const schema = url.protocol;
-		const query = this.addTimestampQueryParam(url.search);
+		const query = url.search;
 		const queryParams = url.searchParams;
 
-		if (!schema || !this.backwardCompatibilitySchemas.includes(schema.toLowerCase())) return [false, ''];
+		if (!schema || !this.backwardCompatibilitySchemas.includes(schema.toLowerCase())) {
+			return [false, ''];
+		}
 
-		if (!query) return [true, `/`];
+		if (!query) {
+			return [true, ''];
+		}
 
 		const featureId: string | null = queryParams.get('featureid');
 		if (featureId) {
 			const featureSemantic: string | undefined = this.featureIdToSemantic[featureId.toLowerCase()];
 			if (featureSemantic) {
 				const path: string | undefined = this.semanticToPath[featureSemantic];
-				if (path) return [true, `/${path}${query}`];
+				if (path !== undefined) {
+					return [true, `${path}${query}`];
+				}
 			}
 		}
 
@@ -173,7 +198,9 @@ export class ProtocolGuardService implements CanActivate {
 			const sectionSemantic: string | undefined = this.sectionToSemantic[section.toLowerCase()];
 			if (sectionSemantic) {
 				const path = this.semanticToPath[sectionSemantic];
-				if (path) return [true, `/${path}${query}`];
+				if (path !== undefined) {
+					return [true, `${path}${query}`];
+				}
 			}
 		}
 
@@ -181,14 +208,23 @@ export class ProtocolGuardService implements CanActivate {
 	}
 
 	public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
-		const path = state.url.slice(state.url.indexOf('#') + 1);
+		let path = state.url.slice(state.url.indexOf('#') + 1);
+		const dashboardPath = this.deviceService.isGaming ? '/device-gaming' : '/dashboard';
 		if (path.startsWith(this.characteristicCode)) {
 			const checkResult = this.isRedirectUrlNeeded(path.split('&')[0]);
-			if (checkResult[0]) {
-				return this.router.parseUrl(checkResult[1]);
+			if (!checkResult[0]) {
+				return this.commonService.isFirstPageLoaded() ? false : this.router.parseUrl(dashboardPath);
 			}
-			return !this.commonService.isFirstPageLoaded();
+			path = checkResult[1];
 		}
-		return true;
+
+		let newPath = path;
+		if (path.startsWith('?')) {
+			newPath = dashboardPath + path;
+		} else if (!path || path === '/') {
+			newPath = dashboardPath;
+		}
+
+		return this.router.parseUrl(newPath);
 	}
 }

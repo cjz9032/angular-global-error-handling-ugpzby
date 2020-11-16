@@ -18,7 +18,6 @@ import { throttleTime } from 'rxjs/operators';
 import { EMPTY, fromEvent, Subscription } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartAssistCache } from 'src/app/data-models/smart-assist/smart-assist-cache.model';
-import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
@@ -122,7 +121,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 
 	constructor(
-		routeHandler: RouteHandlerService, // logic is added in constructor, no need to call any method
 		private smartAssist: SmartAssistService,
 		private deviceService: DeviceService,
 		public qaService: QaService,
