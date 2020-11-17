@@ -56,10 +56,10 @@ export class LanguageService {
 		translate.addLangs(this.supportedLanguages);
 	}
 
-	public useLanguageByLocale(deviceLocale: string) {
+	public useLanguageByLocale(deviceLocale: string): Promise<void> {
 		try {
 			if (!deviceLocale) {
-				throw new Error('parameter must be device locale');
+				return this.useLanguage();
 			}
 
 			let langCode = this.defaultLanguage;
@@ -79,9 +79,9 @@ export class LanguageService {
 					langCode = locale;
 				}
 			}
-			this.useLanguage(langCode);
+			return this.useLanguage(langCode);
 		} catch (error) {
-			this.logger.error('LanguageService.useLanguageByLocale', error.message);
+			return this.useLanguage();
 		}
 	}
 
@@ -89,24 +89,28 @@ export class LanguageService {
 	 * Sets current translation lang to passed value. Default is English.
 	 * @param lang pass supported language as string.
 	 */
-	public useLanguage(lang: string = this.defaultLanguage) {
-		if (lang) {
-			// don't load same language multiple times
-			// if (this.isLanguageLoaded && this.isLocaleSame(lang)) {
-			// 	return;
-			// }
-			let locale = lang.toLowerCase();
-			const isLanguageSupported = this.isLanguageSupported(locale);
-			locale = isLanguageSupported ? locale : this.defaultLanguage;
-			this.logger.debug('LanguageService.useLanguage load translation for ', locale);
-			this.currentLanguage = locale;
-			this.translate.use(locale).subscribe(() => {
+	public useLanguage(lang: string = this.defaultLanguage): Promise<void> {
+		if (!lang) {
+			lang = this.defaultLanguage;
+		}
+
+		// don't load same language multiple times
+		// if (this.isLanguageLoaded && this.isLocaleSame(lang)) {
+		// 	return;
+		// }
+		let locale = lang.toLowerCase();
+		const isLanguageSupported = this.isLanguageSupported(locale);
+		locale = isLanguageSupported ? locale : this.defaultLanguage;
+		this.logger.debug('LanguageService.useLanguage load translation for ', locale);
+		this.currentLanguage = locale;
+		return this.translate.use(locale)
+			.toPromise()
+			.then(() => {
 				// translation file loaded
 				this.logger.debug('LanguageService.useLanguage translation loaded', locale);
 				this.commonService.sendNotification(TranslationNotification.TranslationLoaded, locale);
 				this.isLanguageLoaded = true;
 			});
-		}
 	}
 
 	private isLanguageSupported(lang: string): boolean {
@@ -116,7 +120,7 @@ export class LanguageService {
 		return false;
 	}
 
-	public isLocaleSame(lang: string) {
+	private isLocaleSame(lang: string) {
 		const cachedDeviceInfo: DeviceInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.DeviceInfo, undefined);
 		if (cachedDeviceInfo && cachedDeviceInfo.locale && cachedDeviceInfo.locale.length > 0) {
 			const isLocaleSame = cachedDeviceInfo.locale === lang.toLowerCase();

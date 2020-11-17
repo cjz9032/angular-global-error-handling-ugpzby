@@ -1,3 +1,4 @@
+import { LanguageService } from './../language/language.service';
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
@@ -17,13 +18,19 @@ export class InitializerService {
 		private vantageShellService: VantageShellService,
 		private deviceService: DeviceService,
 		private localCacheService: LocalCacheService,
+		private languageService: LanguageService,
 		private commonService: CommonService) { }
 
 	initialize(): Promise<any> {
 		this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
 		return Promise.all([
 			this.deviceService.initIsArm(),
-			this.deviceService.getMachineInfo(),
+			this.deviceService.getMachineInfo().then((info: any) => {
+				if (info && info.locale) {
+					return this.languageService.useLanguageByLocale(info.locale);
+				}
+				return this.languageService.useLanguage();
+			}),
 			this.localCacheService.loadCacheValues().then(() => {
 				this.initializeAntivirus();
 				this.deviceService.getMachineType();

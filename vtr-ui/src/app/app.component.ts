@@ -154,6 +154,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 
 		this.removeOldSmartPerformanceScheduleScans();
+
+		this.storeRating.showRatingAsync();
 	}
 
 	onDragStart(event: DragEvent): boolean {
@@ -300,9 +302,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
-			if (!this.languageService.isLanguageLoaded) {
-				this.languageService.useLanguage();
-			}
 		}
 	}
 
@@ -314,9 +313,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.isMachineInfoLoaded = true;
 		this.isGaming = value.isGaming;
 		this.commonService.sendNotification('MachineInfo', this.machineInfo);
-		if (!this.languageService.isLanguageLoaded || this.languageService.currentLanguage !== value.locale ? value.locale.toLowerCase() : 'en') {
-			this.languageService.useLanguageByLocale(value.locale);
-		}
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.MachineFamilyName, value.family);
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
 
@@ -331,6 +327,15 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 		if (this.appsForYouService.showLmaMenu()) {
 			this.appsForYouService.getAppStatus(AppsForYouEnum.AppGuidLenovoMigrationAssistant);
+		}
+
+		if (value.cpuArchitecture && value.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
+			const armTutorialData = new WelcomeTutorial(2, this.newTutorialVersion, true, SegmentConst.ConsumerBase);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
+		} else {
+			setTimeout(() => {
+				this.launchWelcomeModal();
+			}, 0);
 		}
 	}
 
@@ -401,25 +406,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
-				case TranslationNotification.TranslationLoaded:
-					this.logger.info(`AppComponent.onNotification`, notification);
-					// launch welcome modal once translation is loaded, meanwhile show spinner from home component
-					this.deviceService.getMachineInfo()
-						.then((info) => {
-							if (info) {
-								if (info.cpuArchitecture && info.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
-									const armTutorialData = new WelcomeTutorial(2, this.newTutorialVersion, true, SegmentConst.ConsumerBase);
-									this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
-								} else {
-									setTimeout(() => {
-										this.launchWelcomeModal();
-									}, 0);
-								}
-							}
-						}).catch((error) => { });
-
-					this.storeRating.showRatingAsync();
-					break;
 				case UpdateProgress.UpdateCheckCompleted:
 				case UpdateProgress.InstallationComplete:
 				case SecurityAdvisorNotifications.WifiSecurityTurnedOn:
