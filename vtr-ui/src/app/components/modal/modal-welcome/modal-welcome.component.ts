@@ -13,7 +13,6 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { PowerService } from 'src/app/services/power/power.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { EMPTY } from 'rxjs';
-import { LanguageService } from 'src/app/services/language/language.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { GamingScenario } from 'src/app/enums/gaming-scenario.enum';
 import { InitializerService } from 'src/app/services/initializer/initializer.service';
@@ -111,7 +110,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	constructor(
 		private configService: ConfigService,
-		private languageService: LanguageService,
 		public deviceService: DeviceService,
 		public powerService: PowerService,
 		private logger: LoggerService,

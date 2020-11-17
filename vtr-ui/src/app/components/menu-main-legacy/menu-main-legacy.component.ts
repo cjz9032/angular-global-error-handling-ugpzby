@@ -21,7 +21,6 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
-import { LanguageService } from 'src/app/services/language/language.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
@@ -106,7 +105,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		public configService: ConfigService,
 		public commonService: CommonService,
 		public userService: UserService,
-		public languageService: LanguageService,
 		public deviceService: DeviceService,
 		private vantageShellService: VantageShellService,
 		private logger: LoggerService,

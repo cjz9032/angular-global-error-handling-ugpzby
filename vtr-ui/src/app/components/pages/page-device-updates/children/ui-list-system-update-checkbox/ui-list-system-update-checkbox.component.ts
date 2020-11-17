@@ -7,7 +7,6 @@ import { AvailableUpdateDetail } from 'src/app/data-models/system-update/availab
 import { CommonService } from 'src/app/services/common/common.service';
 import { ModalUpdateChangeLogComponent } from 'src/app/components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
-import { LanguageService} from 'src/app/services/language/language.service';
 import { Subscription } from 'rxjs';
 
 
@@ -54,8 +53,7 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 	constructor(
 		private commonService: CommonService,
 		private modalService: NgbModal,
-		private translate: TranslateService,
-		private languageService: LanguageService
+		private translate: TranslateService
 	) {
 		this.translateString();
 	}

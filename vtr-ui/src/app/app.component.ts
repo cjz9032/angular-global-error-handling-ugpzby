@@ -16,11 +16,9 @@ import { VantageShellService } from './services/vantage-shell/vantage-shell.serv
 import { SettingsService } from './services/settings/settings.service';
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from './services/language/language.service';
 import { version } from '@lenovo/tan-client-bridge/package.json';
 import { DeviceInfo } from './data-models/common/device-info.model';
 import { AppNotification } from './data-models/common/app-notification.model';
-import { TranslationNotification } from './data-models/translation/translation';
 import { LoggerService } from './services/logger/logger.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
@@ -73,7 +71,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private settingsService: SettingsService,
 		private vantageShellService: VantageShellService,
 		private activatedRoute: ActivatedRoute,
-		private languageService: LanguageService,
 		private logger: LoggerService,
 		private appsForYouService: AppsForYouService,
 		private metricService: MetricService,
@@ -295,7 +292,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			return this.deviceService
 				.getMachineInfo()
 				.then((value: any) => {
-					this.logger.debug('AppComponent.getMachineInfo received getMachineInfo. is lang loaded: ', this.languageService.isLanguageLoaded);
 					this.onMachineInfoReceived(value);
 				})
 				.catch((error) => { });
