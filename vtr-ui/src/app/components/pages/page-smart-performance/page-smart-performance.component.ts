@@ -18,6 +18,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { SmartPerformanceDialogService } from 'src/app/services/smart-performance/smart-performance-dialog.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
 	selector: 'vtr-page-smart-performance',
@@ -26,6 +27,7 @@ import { SmartPerformanceDialogService } from 'src/app/services/smart-performanc
 })
 export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	private notificationSub: Subscription;
+	private protocalListener: Subscription;
 	eventName = 'SmartPerformance.ScheduleEventStarted';
 	retryCount = 0;
 
@@ -70,6 +72,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		private localCacheService: LocalCacheService,
 		private supportService: SupportService,
 		private formatLocaleDate: FormatLocaleDatePipe,
+		private activatedRoute: ActivatedRoute
 
 	) {
 		this.shellServices.getMetrics();
@@ -81,6 +84,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.smartPerformanceService.isEnterSmartPerformance = true;
 		this.registerScanEvent();
 		this.isOnline = this.commonService.isOnline;
+		this.listenProtocal();
 
 		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 		if (this.smartPerformanceService.isSubscribed === undefined) {
@@ -98,7 +102,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		else if (isFreePCScanRun === true) {
 			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
 		}
-		
+
 		this.smartPerformanceService.getSubscriptionDataDetail((isSubscribed) => {
 			isSubscribed ? this.writeSmartPerformanceActivity('True', 'True', 'Active')
 				: this.writeSmartPerformanceActivity('True', 'True', 'Expired');
@@ -205,6 +209,10 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.unregisterScanEvent();
 		if (this.notificationSub) {
 			this.notificationSub.unsubscribe();
+		}
+
+		if (this.protocalListener) {
+			this.protocalListener.unsubscribe();
 		}
 	}
 
@@ -528,5 +536,22 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.smartPerformanceService.enableNextText = !$event;
 	}
 
+	listenProtocal() {
+		this.protocalListener = this.activatedRoute.queryParamMap.subscribe(async (params: ParamMap) => {
+			if (params.has('action') && this.activatedRoute.snapshot.queryParams.action === 'start') {
+				this.scanNow();
+				await this.commonService.delay(3000);
+				let precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
+				let retry = 0;
+				// retry 3 times if scan does not launched
+				while ((!precent || precent < 1) && retry < 3) {
+					this.logger.info(`retry to launch scan: ${retry}`);
+					this.scanNow();
+					await this.commonService.delay(3000);
+					precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
+					retry++;
+				}
+			}
+		});
+	}
 }
-
