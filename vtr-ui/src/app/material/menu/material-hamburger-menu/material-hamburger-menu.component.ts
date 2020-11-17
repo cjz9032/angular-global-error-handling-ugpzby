@@ -9,7 +9,6 @@ import { MenuItem } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { FeedbackService } from 'src/app/services/feedback/feedback.service';
-import { LanguageService } from 'src/app/services/language/language.service';
 import { ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -34,7 +33,6 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	constructor(
 		public appsForYouService: AppsForYouService,
 		public deviceService: DeviceService,
-		public languageService: LanguageService,
 		public userService: UserService,
 		public commonService: CommonService,
 		public modernPreloadService: ModernPreloadService,

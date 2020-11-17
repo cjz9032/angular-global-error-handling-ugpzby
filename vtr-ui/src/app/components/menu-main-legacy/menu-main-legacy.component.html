@@ -256,7 +256,7 @@
 						#menuDropDown="ngbDropdown"
 						(mouseover)="[closeAllOtherDD(menuDropDown),menuDropDown.open()]"
 						(mouseleave)="menuDropDown.close()"
-						*ngIf="item.id==='user' && languageService.isLanguageLoaded"
+						*ngIf="item.id==='user'"
 						class="nav-item dropdown">
 						<!-- <a class="nav-link dropdown-toggle {{item.id}}"
 									routerLink="/{{item.path}}"

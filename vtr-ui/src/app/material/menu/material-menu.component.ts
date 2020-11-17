@@ -16,7 +16,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { LanguageService } from 'src/app/services/language/language.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { CardService } from 'src/app/services/card/card.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
@@ -79,7 +78,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		public configService: ConfigService,
 		public appsForYouService: AppsForYouService,
 		public deviceService: DeviceService,
-		public languageService: LanguageService,
 		public userService: UserService,
 		public commonService: CommonService,
 		public modernPreloadService: ModernPreloadService,

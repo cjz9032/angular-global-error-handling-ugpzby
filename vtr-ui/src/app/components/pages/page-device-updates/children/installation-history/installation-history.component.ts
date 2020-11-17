@@ -7,7 +7,6 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { LanguageService } from 'src/app/services/language/language.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
@@ -28,8 +27,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		public systemUpdateService: SystemUpdateService,
 		public commonService: CommonService,
 		private translate: TranslateService,
-		private localCacheService: LocalCacheService,
-		public languageService: LanguageService
+		private localCacheService: LocalCacheService
 	) {
 		this.getCachedHistory();
 	}

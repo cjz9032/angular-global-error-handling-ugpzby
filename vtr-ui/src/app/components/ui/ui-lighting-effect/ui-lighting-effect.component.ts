@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
 import { isUndefined } from 'util';
-import { LanguageService } from 'src/app/services/language/language.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
