@@ -344,4 +344,8 @@ export class CommonService {
 
 		return '';
 	}
+
+	public delay(milliseconds: number) {
+        return new Promise(resolve => setTimeout(resolve,milliseconds));
+    }
 }
