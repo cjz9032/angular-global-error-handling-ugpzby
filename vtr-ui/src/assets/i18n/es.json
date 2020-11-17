@@ -2277,12 +2277,24 @@
             "superResolution": {
                 "title": "Escalado de resolución del video",
                 "desc1": "Esta característica mejora la experiencia de la reproducción de video al mejorar la resolución del video. Funciona especialmente cuando el video tiene una mala resolución.",
-                "desc2": "Esta función puede afectar a la duración de la batería, a la temperatura de la batería y causar ruidos. No lo utilice en la modalidad de CC (modalidad de batería). De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Esta característica solo funciona para los siguientes reproductores de video:<br>Windows Media Player<br>Reproductor basado en Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Para obtener instrucciones sobre cómo habilitar esta función en PotPlayer, consulte la guía del usuario que se proporciona con el sistema.</p>",
+                "desc2": "Esta función puede afectar a la duración de la batería, a la temperatura de la piel y el ruido del ventilador. No lo utilice en la modalidad de CC (modalidad de batería). De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.",
+                "tooltip": {
+                    "description1": "Esta característica solo funciona para los siguientes reproductores de video:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Reproductor basado en Chrome<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (motor de Google Chromium incorporado)<br>",
+                    "player5": "Microsoft Edge (motor de Google Chromium incorporado)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Para obtener instrucciones sobre cómo habilitar esta función en PotPlayer, consulte la guía del usuario que se proporciona con el sistema.</p>"
+                },
                 "note": {
                     "description": "Esta característica no funciona cuando;",
                     "description1": "La temperatura de la CPU es demasiado alta.",
-                    "description2": "El dispositivo está establecido en Modalidad de ahorro de batería en “Enfriamiento inteligente”."
+                    "description2": "El dispositivo está establecido en Modalidad de ahorro de batería en “Enfriamiento inteligente”.",
+                    "description3": "Dos o más reproductores se están ejecutando al mismo tiempo.",
+                    "description4": "En una videollamada con aplicaciones VoIP (como Microsoft Teams o Zoom) y se está reproduciendo un video al mismo tiempo."
                 },
                 "imageBefore": "Antes",
                 "imageAfter": "Después"

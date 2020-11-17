@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { SuperResolutionResponse } from 'src/app/data-models/smart-assist/superResolution/superResolution.model';
 import { IntelligentSecurity } from 'src/app/data-models/smart-assist/intelligent-security.model';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -61,7 +62,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	public sensitivityAdjustVal: number;
 	smartAssistCache: SmartAssistCache;
 	public isSuperResolutionLoading = true;
-	public superResolution = new FeatureStatus(false, true);
+	public superResolution = new SuperResolutionResponse(false, true,'');
 	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
 	public image = '/assets/images/smart-assist/intelligent-security/HPD_Img.png';
 	public zeroTouchLoginShowAdvancedSection: boolean;
@@ -116,6 +117,20 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		isDisabled: !this.intelligentSecurity.isZeroTouchLockEnabled || (this.isThinkPad && !this.intelligentSecurity.isHPDEnabled),
 		metricsItem: 'radio.screen-lock-timer.slow'
 	}];
+
+	private superResolutionTips = {
+		description1: this.translate.instant('device.smartAssist.superResolution.tooltip.description1'),
+		player1: this.translate.instant('device.smartAssist.superResolution.tooltip.player1'),
+		player2: this.translate.instant('device.smartAssist.superResolution.tooltip.player2'),
+		player3: this.translate.instant('device.smartAssist.superResolution.tooltip.player3'),
+		player4: this.translate.instant('device.smartAssist.superResolution.tooltip.player4'),
+		player5: this.translate.instant('device.smartAssist.superResolution.tooltip.player5'),
+		player6: this.translate.instant('device.smartAssist.superResolution.tooltip.player6'),
+		player7: this.translate.instant('device.smartAssist.superResolution.tooltip.player7'),
+		description2: this.translate.instant('device.smartAssist.superResolution.tooltip.description2')
+	}
+
+	public superResolutionTip = this.superResolutionTips.description1 + this.superResolutionTips.player1 + this.superResolutionTips.player2 + this.superResolutionTips.player3 + this.superResolutionTips.description2;
 
 	private cmsSubscription: Subscription;
 
@@ -850,9 +865,34 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		try {
 			if (this.smartAssist.isShellAvailable) {
 				this.smartAssist.getSuperResolutionStatus()
-					.then((response: FeatureStatus) => {
+					.then((response: SuperResolutionResponse) => {
 						this.isSuperResolutionLoading = false;
 						this.superResolution = response;
+						if(response.players)
+						{
+							this.superResolutionTip = this.superResolutionTips.description1;
+                            if(response.players.indexOf("wmplayer") != -1)
+                            {
+								this.superResolutionTip += this.superResolutionTips.player1;
+							}
+							if(response.players.indexOf("chrome") != -1)
+                            {
+								this.superResolutionTip += this.superResolutionTips.player2;
+							}
+							if(response.players.indexOf("potplayer") != -1)
+                            {
+								this.superResolutionTip += this.superResolutionTips.player3;
+							}
+							if(response.players.indexOf("opera") != -1)
+                            {
+								this.superResolutionTip += this.superResolutionTips.player4;
+							}
+							if(response.players.indexOf("msedge") != -1)
+                            {
+								this.superResolutionTip += this.superResolutionTips.player5;
+							}
+							this.superResolutionTip += this.superResolutionTips.description2;
+						}
 					}).catch(error => {
 						this.logger.error('getSuperResolutionStatus.error', error);
 					}).finally(() => {

@@ -2165,12 +2165,24 @@
             "superResolution": {
                 "title": "Videófelbontás megnövelése",
                 "desc1": "Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.",
-                "desc2": "Ez a funkció befolyásolhatja az akkumulátor élettartamát és hőmérsékletét, továbbá zajt kelthet. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Ez a funkció kizárólag az alábbi videolejátszókkal működik:<br>Windows Media Player<br>Chrome-alapú lejátszó<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>A funkció PotPlayer lejátszóban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>",
+                "desc2": "Ez a funkció befolyásolhatja az akkumulátor élettartamát, a hőmérsékletet, valamint a ventilátor által keltett zajt. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.",
+                "tooltip": {
+                    "description1": "Ez a funkció csak az alábbi videolejátszókkal működik:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome-alapú lejátszó<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (beépített Google Chromium motor)<br>",
+                    "player5": "Microsoft Edge (beépített Google Chromium motor)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>A funkció PotPlayer lejátszóban való engedélyezésével kapcsolatban olvassa el a számítógéphez kapott felhasználói kézikönyvet.</p>"
+                },
                 "note": {
                     "description": "A funkció az alábbi esetekben nem működik:",
                     "description1": "A processzor hőmérséklete túl magas.",
-                    "description2": "\"Intelligens hűtés\" üzemmódban be van kapcsolva az Akkumulátorkímélő kód."
+                    "description2": "\"Intelligens hűtés\" üzemmódban be van kapcsolva az Akkumulátorkímélő kód.",
+                    "description3": "Két vagy több lejátszó fut egyszerre.",
+                    "description4": "Ha VoIP-alkalmazásokban (például Microsoft Teamsben vagy Zoomban) folytat videohívást, és közben egy videó lejátszása is folyik a háttérben."
                 },
                 "imageBefore": "Előtte",
                 "imageAfter": "Utána"

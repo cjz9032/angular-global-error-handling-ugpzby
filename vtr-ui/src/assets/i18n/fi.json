@@ -2165,12 +2165,24 @@
             "superResolution": {
                 "title": "Näytön tarkkuuden skaalaus",
                 "desc1": "Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.",
-                "desc2": "Tämä toiminto saattaa heikentää akun käyttöaikaa, akun lämpötilaa ja aiheuttaa ääniä. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Tämä ominaisuus toimii vain seuraavilla videosoittimilla:<br>Windows Media Player<br>Chrome-pohjainen soitin<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer-soittimille on tietokoneesi mukana toimitetussa käyttöoppaassa.</p>",
+                "desc2": "Tämä toiminto saattaa vaikuttaa akun käyttöaikaan, ihon lämpötilaan ja tuulettimen ääniin. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.",
+                "tooltip": {
+                    "description1": "Tämä ominaisuus toimii vain alla mainittujen videosoittimien kanssa:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome-pohjainen soitin<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (sisäänrakennettu Google Chromium -järjestelmä)<br>",
+                    "player5": "Microsoft Edge (sisäänrakennettu Google Chromium -järjestelmä)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Lisätietoja tämän ominaisuuden ottamisesta käyttöön PotPlayer-soittimille on tietokoneesi mukana toimitetussa käyttöoppaassa.</p>"
+                },
                 "note": {
                     "description": "Wi-Fi-toiminto ei toimi seuraavissa tilanteissa:",
                     "description1": "Keskusyksikön lämpötila on liian korkea.",
-                    "description2": "Laite asetetaan akun virransäästötilaan kohdasta ”Älykäs jäähdytys”."
+                    "description2": "Laite asetetaan akun virransäästötilaan kohdasta ”Älykäs jäähdytys”.",
+                    "description3": "Kaksi tai useampi soitin on käynnissä samanaikaisesti.",
+                    "description4": "VoIP-sovelluksen (kuten Microsoft Teams tai Zoom) puhelu ja video ovat käynnissä samanaikaisesti."
                 },
                 "imageBefore": "Ennen",
                 "imageAfter": "Jälkeen"
