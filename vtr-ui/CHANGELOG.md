@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.9](https://bitbucket.tc.lenovo.com///compare/v1.9.8...v1.9.9) (2020-11-17)
+
+
+### Features
+
+* **Language:** Change the nls string load style ([267d41c](https://bitbucket.tc.lenovo.com///commit/267d41c9d430a10fe27ec56a6fa698642cb4d31a))
+* **NLS:** remove language service ([2721acc](https://bitbucket.tc.lenovo.com///commit/2721acca0b3197eba0a97f6262fd72beb2cb8c3e))
+
 ### [1.9.8](https://bitbucket.tc.lenovo.com///compare/v1.9.7...v1.9.8) (2020-11-16)
 
 
