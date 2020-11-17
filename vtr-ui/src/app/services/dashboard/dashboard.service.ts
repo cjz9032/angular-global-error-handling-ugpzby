@@ -113,11 +113,11 @@ export class DashboardService {
 		title: 'dashboard.positionB.cardTitle',
 		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
 		linkText: 'common.ui.improveNow',
-		linkPath: 'support/smart-performance',
+		linkPath: 'lenovo-vantage3:smart-performance?action=start',
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-sp',
 		statusText: 'device.myDevice.needAction',
-		isActionLink: false
+		isActionLink: true
 	};
 
 	positionBResponseReceived: boolean;
