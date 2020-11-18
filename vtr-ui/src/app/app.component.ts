@@ -94,7 +94,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					if (['/dashboard', '/device-gaming'].includes(event.url)) {
 						this.perfSubscription$.unsubscribe();
 
-						const content = `Navigation end in ${window.performance.now()} ms`;
+						const navPerf = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+						const content = `Resource: ${navPerf.domInteractive - navPerf.startTime} ms
+										 Load: ${navPerf.duration} ms
+										 Navigation: ${window.performance.now()} ms`;
 						console.log(content);
 						this.snackBar.open(content, '', { duration: 2000 });
 					}
