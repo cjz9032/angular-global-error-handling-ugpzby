@@ -87,9 +87,9 @@
 									"with": "src/app/services/mock/mock.service.prod.ts"
 								}
 							],
-							"optimization": true,
+							"optimization": false,
 							"outputHashing": "all",
-							"sourceMap": false,
+							"sourceMap": true,
 							"extractCss": true,
 							"namedChunks": true,
 							"aot": true,

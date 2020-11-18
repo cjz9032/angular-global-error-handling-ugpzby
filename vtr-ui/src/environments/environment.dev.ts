@@ -3,6 +3,7 @@ import packageFile from '../../package.json';
 
 export const environment: IEnvironment = {
 	production: true,
+	debuggingSnackbar: true,
 	cmsApiRoot: 'https://vantage.csw-qa.lenovo.com',
 	upeApiRoot: 'https://api.naea1.uds-dev.lenovo.com',
 	appVersion: packageFile.version,
