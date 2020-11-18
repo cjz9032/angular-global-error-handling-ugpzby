@@ -2277,12 +2277,24 @@
             "superResolution": {
                 "title": "Upscaling da resolução de vídeo",
                 "desc1": "Esse recurso melhora a resolução do vídeo para aprimorar a experiência de reprodução. Funciona especialmente quando o vídeo tem baixa resolução.",
-                "desc2": "Essa função pode afetar a vida útil da bateria, a temperatura da bateria e causar ruídos. Não a use no modo DC (modo de bateria). Caso contrário, ela acelerará o consumo de energia e reduzirá a duração da bateria.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Esse recurso funciona somente nos players de vídeo abaixo:<br>Windows Media Player<br>Player baseado em Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Para obter instruções sobre como ativar essa função no PotPlayer, consulte o Guia do Usuário que acompanha o seu computador.</p>",
+                "desc2": "Essa função pode afetar a vida útil da bateria, a temperatura da pele e ruídos no ventilador. Não a use no modo DC (modo de bateria). Caso contrário, ela acelerará o consumo de energia e reduzirá a duração da bateria.",
+                "tooltip": {
+                    "description1": "Este recurso só funciona para os players de vídeo abaixo:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Player baseado no Chrome<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (mecanismo integrado do Google Chromium)<br>",
+                    "player5": "Microsoft Edge (mecanismo integrado do Google Chromium)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Para obter instruções sobre como ativar essa função no PotPlayer, consulte o Guia do Usuário que acompanha o seu computador.</p>"
+                },
                 "note": {
                     "description": "Esse recurso não funciona quando:",
                     "description1": "A temperatura da CPU está muito alta.",
-                    "description2": "O dispositivo está definido no Modo de economia de bateria em \"Resfriamento inteligente\"."
+                    "description2": "O dispositivo está definido no Modo de economia de bateria em \"Resfriamento inteligente\".",
+                    "description3": "Dois ou mais players estão em execução ao mesmo tempo.",
+                    "description4": "Em uma chamada de vídeo com aplicativos VoIP (como Microsoft Teams ou Zoom) e um vídeo está sendo reproduzido ao mesmo tempo."
                 },
                 "imageBefore": "Antes",
                 "imageAfter": "Depois"

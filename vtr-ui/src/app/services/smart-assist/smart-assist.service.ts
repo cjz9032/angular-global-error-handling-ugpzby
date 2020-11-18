@@ -6,6 +6,7 @@ import {
 } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
+import { SuperResolutionResponse } from 'src/app/data-models/smart-assist/superResolution/superResolution.model';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 
 @Injectable({
@@ -330,7 +331,7 @@ export class SmartAssistService {
 		}
 	}
 
-	public getSuperResolutionStatus(): Promise<FeatureStatus> {
+	public getSuperResolutionStatus(): Promise<SuperResolutionResponse> {
 		try {
 			if (this.isShellAvailable) {
 				return this.superResolution.getSuperResolutionStatus();

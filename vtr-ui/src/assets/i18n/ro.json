@@ -2165,12 +2165,24 @@
             "superResolution": {
                 "title": "Mărirea rezoluției video",
                 "desc1": "Această caracteristică îmbunătățește experiența de redare video, oferind o rezoluție video mai bună. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.",
-                "desc2": "Această caracteristică ar putea afecta durata de viață a bateriei, temperatura bateriei și poate provoca zgomote. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Această caracteristică funcționează numai cu următoarele playere video:<br>Windows Media Player<br>Playerul bazat pe Chrome<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Pentru instrucțiuni privind modul în care să activați această funcție în PotPlayer, consultați Ghidul utilizatorului care este livrat împreună cu computerul.</p>",
+                "desc2": "Această funcție ar putea afecta durata de viață a bateriei, temperatura superficială și zgomotele ventilatorului. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.",
+                "tooltip": {
+                    "description1": "Această funcție funcționează numai pentru playerele video de mai jos:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Player bazat pe Chrome<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (motor Google Chromium încorporat)<br>",
+                    "player5": "Microsoft Edge (motor Google Chromium încorporat)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Pentru instrucțiuni privind modul în care să activați această funcție în PotPlayer, consultați Ghidul utilizatorului care este livrat împreună cu computerul.</p>"
+                },
                 "note": {
                     "description": "Această caracteristică nu funcționează când:",
                     "description1": "Temperatura procesorului este prea mare.",
-                    "description2": "Dispozitivul este setat pe modul de economisire a bateriei în „Răcire inteligentă”."
+                    "description2": "Dispozitivul este setat pe modul de economisire a bateriei în „Răcire inteligentă”.",
+                    "description3": "Două sau mai multe playere funcționează în același timp.",
+                    "description4": "La un apel video cu aplicații VoIP (cum ar fi Microsoft Teams sau Zoom) și un videoclip este redat în același timp."
                 },
                 "imageBefore": "Înainte",
                 "imageAfter": "După"

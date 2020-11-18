@@ -2165,12 +2165,24 @@
             "superResolution": {
                 "title": "Öka videoupplösningen",
                 "desc1": "Denna funktion förbättrar videoupplösningen, vilket gör videouppspelningen bättre. Den är särskilt användbar om videon har dålig upplösning.",
-                "desc2": "Funktionen kan påverka batteriets livslängd och temperatur och orsaka brus. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.",
-                "tooltip": "<p id='sr-tip-one' role='text'>Denna funktion fungerar bara med nedanstående videospelare:<br>Windows Media Player<br>Chrome-baserad spelare<br>PotPlayer</p><p class='srTooltip' id='sr-tip-two' role='text'>Anvisningar om hur du aktiverar denna funktion i PotPlayer finns i användarhandboken som medföljer datorn.</p>",
+                "desc2": "Funktionen kan påverka batteriets livslängd, yttertemperatur och fläktljud. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.",
+                "tooltip": {
+                    "description1": "Funktionen fungerar bara med följande videospelare:<br>",
+                    "player1": "Windows Media Player<br>",
+                    "player2": "Chrome-baserad spelare<br>",
+                    "player3": "PotPlayer<br>",
+                    "player4": "Opera (Google Chromium-motorn inbyggd)<br>",
+                    "player5": "Microsoft Edge (Google Chromium-motorn inbyggd)<br>",
+                    "player6": "Microsoft Teams<br>",
+                    "player7": "Zoom<br>",
+                    "description2": "<p class='srTooltip' id='sr-tip' role='text'>Anvisningar om hur du aktiverar denna funktion i PotPlayer finns i användarhandboken som medföljer datorn.</p>"
+                },
                 "note": {
                     "description": "Funktionen fungerar inte när",
                     "description1": "processortemperaturen är för hög.",
-                    "description2": "Enheten är inställd på batterisparläge i Intelligent nedkylning."
+                    "description2": "Enheten är inställd på batterisparläge i Intelligent nedkylning.",
+                    "description3": "Två eller flera spelare körs samtidigt.",
+                    "description4": "Ett videosamtal med VoIP-appar (till exempel Microsoft Teams eller Zoom) pågår samtidigt som en video spelas upp."
                 },
                 "imageBefore": "Före",
                 "imageAfter": "Efter"
