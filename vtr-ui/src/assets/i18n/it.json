@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Riavvia",
             "shutdown": "Arresta",
+            "diskSpaceNeeded": "Spazio su disco",
+            "diskSpaceNotEnoughMsg": "Spazio insufficiente sull'unità disco fisso.",
             "rebootForceMsg": "L'aggiornamento o gli aggiornamenti selezionati possono causare l'avvio automatico del sistemadopo l'installazione.",
             "shutdownForceMsg": "L'aggiornamento o gli aggiornamenti selezionati possono causare l'arrestoautomatico del sistema dopo l'installazione.",
             "rebootDelayedMsg": "L'aggiornamento o gli aggiornamenti selezionati causeranno il riavvio del sistema dopo l'installazione.Durante l'installazione degli aggiornamenti non spegnere il sistema, né rimuovere la fonte di alimentazione o gli accessori. Si consiglia di salvare il lavoro prima di riavviare il sistema.",

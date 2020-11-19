@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Repornire",
             "shutdown": "Oprire",
+            "diskSpaceNeeded": "Spațiu disc necesar",
+            "diskSpaceNotEnoughMsg": "Nu există suficient spațiu pe unitatea HDD.",
             "rebootForceMsg": "Actualizările pe are le-ați selectat vor duce la repornirea automată a sistemuluidupă finalizarea instalării.",
             "shutdownForceMsg": "Actualizările pe care le-ați selectat vor duce la oprirea automată a sistemului,după finalizarea instalării.",
             "rebootDelayedMsg": "După instalare, actualizările selectate vor duce la repornirea automată a sistemului.În timpul instalării actualizărilor, nu opriți sistemul și nu îndepărtați sursa de alimentare sau accesoriile. Vă recomandăm să vă salvați lucrările în curs înainte de repornirea sistemului.",

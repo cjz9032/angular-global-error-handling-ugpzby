@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Käynnistä uudelleen",
             "shutdown": "Sammutus",
+            "diskSpaceNeeded": "Levytilaa tarvitaan",
+            "diskSpaceNotEnoughMsg": "Kiintolevyasemassasi ei ole riittävästi vapaata tilaa.",
             "rebootForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmä käynnistetäänuudelleen automaattisesti.",
             "shutdownForceMsg": "Valitsemasi päivitykset aiheuttavat sen, että asennuksen jälkeen järjestelmäsammutetaan automaattisesti.",
             "rebootDelayedMsg": "Valitsemasi päivitykset aiheuttavat sen, että järjestelmä käynnistetään uudelleen asennuksen jälkeen.Älä katkaise järjestelmän virtaa tai poista virtalähdettä tai lisävarusteita päivitysten asennuksen aikana. Suosittelemme tallentamaan työt, jotta järjestelmä voidaan valmistella uudelleenkäynnistymistä varten.",

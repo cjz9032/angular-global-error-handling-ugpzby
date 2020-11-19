@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Restartovat",
             "shutdown": "Vypnout",
+            "diskSpaceNeeded": "Potřebné místo na disku",
+            "diskSpaceNotEnoughMsg": "Na pevném disku není dostatek místa.",
             "rebootForceMsg": "Po instalaci vybraných aktualizací bude systém automatickyrestartován.",
             "shutdownForceMsg": "Po instalaci vybraných aktualizací se systém automatickyvypne.",
             "rebootDelayedMsg": "Po instalaci vybraných aktualizací se restartuje systém. Během instalaceaktualizací systém nevypínejte ani neodpojujte zdroj napájení ani příslušenství.Během přípravy na restartování systému doporučujeme uložit si rozpracovanou práci.",

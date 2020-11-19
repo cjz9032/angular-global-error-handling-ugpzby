@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Ponovno pokreni",
             "shutdown": "Isključi",
+            "diskSpaceNeeded": "Potreban slobodan prostor na disku",
+            "diskSpaceNotEnoughMsg": "Na vašem tvrdom disku nema dovoljno prostora.",
             "rebootForceMsg": "Ažuriranja koja ste odabrali prouzročit će da se sustav automatski ponovno pokrenenakon instalacije.",
             "shutdownForceMsg": "Ažuriranja koja ste odabrali prouzročit će da se sustav automatski isključinakon instalacije.",
             "rebootDelayedMsg": "Ažuriranja koja ste odabrali prouzročit će ponovno pokretanje sustava nakon instalacije,tijekom instalacije ažuriranja nemojte isključiti sustav, ukloniti izvor napajanja ili pomagala. Preporučujemo da prije ponovnog pokretanja sustava spremite sve na čemu radite.",

@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Yeniden Başlat",
             "shutdown": "Kapat",
+            "diskSpaceNeeded": "Gereken disk alanı",
+            "diskSpaceNotEnoughMsg": "Sabit disk sürücünüzde yeterli alan yok.",
             "rebootForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatik olarak yenidenyüklenecektir.",
             "shutdownForceMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem otomatikolarak kapanacaktır.",
             "rebootDelayedMsg": "Seçtiğiniz güncellemelerin kurulumundan sonra sistem yeniden yüklenecektir.Güncellemelerin kurulumu sırasında lütfen sisteminizi kapatmayın, güç kaynağını veya aksesuarları çıkarmayın. Sisteminizi yeniden yüklemeye hazırlanmak için çalışmanızı kaydetmenizi öneririz.",

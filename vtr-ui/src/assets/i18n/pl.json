@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Uruchom ponownie",
             "shutdown": "Zamknij",
+            "diskSpaceNeeded": "Wymagane miejsce",
+            "diskSpaceNotEnoughMsg": "Na dysku twardym jest za mało miejsca.",
             "rebootForceMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi automatyczne ponowne uruchomienie systemu.",
             "shutdownForceMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi automatyczne zamknięcie systemu.",
             "rebootDelayedMsg": "Po zainstalowaniu wybranych aktualizacji nastąpi ponowne uruchomienie systemu,podczas instalowania aktualizacji nie wyłączaj systemu, nie odłączaj źródła zasilania ani akcesoriów. Zalecamy zapisanie pracy przed ponownym uruchomieniem systemu.",

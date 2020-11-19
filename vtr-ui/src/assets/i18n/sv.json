@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Starta om",
             "shutdown": "Stäng av",
+            "diskSpaceNeeded": "Krävt diskutrymme",
+            "diskSpaceNotEnoughMsg": "Det finns inte tillräckligt mycket utrymme på hårddisken.",
             "rebootForceMsg": "Uppdateringarna du har valt medför att systemet automatiskt startar omefter installationen.",
             "shutdownForceMsg": "Uppdateringarna du har valt medför att systemet automatiskt stängs avefter installationen.",
             "rebootDelayedMsg": "Uppdateringarna du har valt medför att datorn startas om efter installationen. Stäng inte av systemet och koppla inte bort strömkällan eller tillbehören under installationen av uppdateringarna. Vi rekommenderar att du sparar ditt arbete innan systemet startas om.",

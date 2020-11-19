@@ -2289,7 +2289,9 @@
         "readMore": "較多內容",
         "popup": {
             "reboot": "重新啟動",
-            "shutdown": "關機",
+			"shutdown": "關機",
+			"diskSpaceNeeded": "需要磁碟空間",
+			"diskSpaceNotEnoughMsg": "硬碟上的空間不足。",
             "rebootForceMsg": "您選取的更新將在安裝後使系統自動重新開機。",
             "shutdownForceMsg": "您選取的更新將在安裝後使系統自動關機。",
             "rebootDelayedMsg": "更新安裝時，您選取的更新將會在安裝後使系統重新開機。請勿關閉您的系統、卸下電源或配件。我們建議您儲存工作，為您的系統重新開機預作準備。",

@@ -2401,7 +2401,9 @@
         "readMore": "Ler mais",
         "popup": {
             "reboot": "Reiniciar",
-            "shutdown": "Desligar",
+			"shutdown": "Desligar",
+			"diskSpaceNeeded": "Espaço em disco necessário",
+			"diskSpaceNotEnoughMsg": "Não há espaço suficiente na unidade de disco rígido.",
             "rebootForceMsg": "O sistema será reiniciado automaticamente após a instalação das atualizaçõesselecionadas.",
             "shutdownForceMsg": "O sistema será desligado automaticamente após a instalação das atualizaçõesselecionadas.",
             "rebootDelayedMsg": "O sistema será reiniciado após a instalação das atualizações selecionadas,durante a instalação das atualizações, não desligue o sistema, não remova a fonte de alimentação nem os acessórios. Recomendamos que você salve o seu trabalho em preparação para a reinicialização do sistema.",

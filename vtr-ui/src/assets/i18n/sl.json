@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Vnovični zagon",
             "shutdown": "Zaustavitev",
+            "diskSpaceNeeded": "Prostor na disku potreben",
+            "diskSpaceNotEnoughMsg": "Na trdem disku ni dovolj prostora.",
             "rebootForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročile samodejni ponovni zagon sistemapo namestitvi.",
             "shutdownForceMsg": "Posodobitve, ki ste jih izbrali, bodo povzročilesamodejno zaustavitev sistema po namestitvi.",
             "rebootDelayedMsg": "Izbrane posodobitve bodo povzročile ponovni zagon sistema po namestitvi,zato med nastavitvijo posodobitev ne izklapljajte sistema in ne odstranjujte vira napajanja ali dodatne opreme. Priporočamo, da shranite delo v pripravi na ponovni zagon sistema:",

@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Opnieuw opstarten",
             "shutdown": "Afsluiten",
+            "diskSpaceNeeded": "Vereiste schijfruimte",
+            "diskSpaceNotEnoughMsg": "Er is onvoldoende ruimte vrij op dit vaste-schijfstation.",
             "rebootForceMsg": "Het systeem wordt automatisch opnieuw opgestart nadat degeselecteerde update(s) zijn geïnstalleerd.",
             "shutdownForceMsg": "Het systeem wordt automatisch afgesloten nadat degeselecteerde update(s) zijn geïnstalleerd.",
             "rebootDelayedMsg": "De update(s) die u hebt geselecteerd, zorgen dat het systeem opnieuw opgestart wordt na de installatie.Schakel tijdens de installatie van updates uw systeem niet uit en verwijder de voedingsbron of accessoires niet. We raden u aan uw werk op te slaan voordat u het systeem opnieuw opstart.",
