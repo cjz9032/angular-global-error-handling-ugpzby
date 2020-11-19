@@ -35,6 +35,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	public hasSubscribedScanCompleted = false;
 	currentSubItemCategory: any = {};
 	isScheduleScanRunning = false;
+	isScanStarted = false;
 
 	public tune = 0;
 	public boost = 0;
@@ -167,7 +168,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 					this.switchToScanning();
 				}
 				else {
-					this.smartPerformanceService.isScanning = false;
+					if (!this.isScanStarted) {
+						this.smartPerformanceService.isScanning = false;
+					}
 				}
 			})
 			.catch(error => {
@@ -313,6 +316,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 						}
 						this.smartPerformanceService.isScanning = false;
 						this.smartPerformanceService.isScanningCompleted = true;
+						this.isScanStarted = false;
 						this.showSubscribersummary = true;
 						this.logger.info('ui-smart-performance.getSmartPerformanceScheduleScanStatus', JSON.stringify(res));
 					}
@@ -394,6 +398,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
 			if (this.smartPerformanceService.isShellAvailable) {
+				this.isScanStarted = true;
 				this.smartPerformanceService
 					.getReadiness()
 					.then((getReadinessFromService: any) => {
@@ -405,6 +410,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 								event => {
 									this.smartPerformanceService.scheduleScanObj = null;
 									this.updateScheduleScanStatus(event);
+									this.smartPerformanceService.isScanning = true;
 								}
 							);
 							this.smartPerformanceService.isScanning = true;
