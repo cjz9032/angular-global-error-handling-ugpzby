@@ -38,7 +38,8 @@ export class VantageShellService {
 				metricsBroker: metricClient,
 				hsaPowerBroker: powerClient,
 				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
-				hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null
+				hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null,
+				hsaHPDIdeaBroker: this.getHsaIntelligentSecurity()
 			});
 
 			this.phoenix.loadFeatures([
@@ -649,6 +650,7 @@ export class VantageShellService {
 			if (win.VantageShellExtension && win.VantageShellExtension.HumanPresenceDetectionRpcClient) {
 				return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
 			}
+			return undefined;
 		} catch (error) {
 			return undefined;
 		}
