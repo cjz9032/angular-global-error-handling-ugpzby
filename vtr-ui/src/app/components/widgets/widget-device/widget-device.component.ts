@@ -45,7 +45,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	ngUnsubscribe: Subject<any> = new Subject();
 	sysinfo: any;
 	quickScanProtocol = 'lenovo-vantage3:hardware-scan?scan=quickscan';
-	VSPProtocol = 'lenovo-vantage3:smart-performance?action=start';
+	smartPerformanceProtocol = 'lenovo-vantage3:smart-performance?action=start';
 	supportMonitorPerformance = true;
 
 	constructor(
@@ -119,7 +119,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				this.deviceService.launchUri(this.quickScanProtocol);
 				break;
 			case DeviceCondition.NeedRunSMPScan:				
-				this.deviceService.launchUri(this.VSPProtocol);
+				this.deviceService.launchUri(this.smartPerformanceProtocol);
 				break;
 			case DeviceCondition.NeedRunSU:
 				this.router.navigate(['/device/system-updates'], { queryParams: { action: 'start' } });
