@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Reiniciar",
             "shutdown": "Encerrar",
+            "diskSpaceNeeded": "Espaço necessário",
+            "diskSpaceNotEnoughMsg": "Não existe espaço suficiente disponível na unidade de disco rígido.",
             "rebootForceMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema reinicie automaticamenteapós a instalação.",
             "shutdownForceMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema encerreautomaticamente após a instalação.",
             "rebootDelayedMsg": "A(s) atualização(ões) selecionada(s) farão com que o sistema seja reiniciado após a instalação.Durante a instalação das atualizações, não desligue o sistema, não retire a fonte de alimentação nem os acessórios. Recomendamos que guarde o seu trabalho para preparar a reinicialização do sistema.",

@@ -2382,6 +2382,8 @@
 		"popup": {
 			"reboot": "Reboot",
 			"shutdown": "Shut Down",
+			"diskSpaceNeeded": "Disk space needed",
+			"diskSpaceNotEnoughMsg": "There is no enough space on your hard disk drive.",
 			"rebootForceMsg": "The update(s) you selected will cause the system to reboot automatically after installation.",
 			"shutdownForceMsg": "The update(s) you selected will cause the system to shut down automatically after installation.",
 			"rebootDelayedMsg": "The update(s) you selected will cause the system to reboot after installation, during the installation of updates, please do not turn off your system, remove power source or accessories. We recommend saving your work in preparation for your system rebooting.",

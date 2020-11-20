@@ -2402,6 +2402,8 @@
         "popup": {
             "reboot": "Redémarrer",
             "shutdown": "Arrêter",
+            "diskSpaceNeeded": "Espace disque requis",
+            "diskSpaceNotEnoughMsg": "Espace insuffisant sur votre disque dur.",
             "rebootForceMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) le redémarrage automatique du systèmeaprès l'installation.",
             "shutdownForceMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) l'arrêtautomatique du système après l'installation.",
             "rebootDelayedMsg": "La(les) mise(s) à jour sélectionnée(s) entraînera(ont) le redémarrage du système,pendant l'installation des mises à jour, veuillez ne pas arrêter votre système, retirer la source d'alimentation ou les accessoires. Nous vous recommandons d'enregistrer votre travail en cours en vue du redémarrage du système.",

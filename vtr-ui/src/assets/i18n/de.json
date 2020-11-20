@@ -2402,6 +2402,8 @@
         "popup": {
             "reboot": "Neu starten",
             "shutdown": "Herunterfahren",
+            "diskSpaceNeeded": "Zu wenig Speicherplatz",
+            "diskSpaceNotEnoughMsg": "Auf Ihrem Festplattenlaufwerk ist nicht genügend freier Speicherplatz vorhanden.",
             "rebootForceMsg": "Nach der Installation der von Ihnen ausgewählten Aktualisierungenwird das System automatisch neu gestartet.",
             "shutdownForceMsg": "Nach der Installation der von Ihnen ausgewählten Aktualisierungenwird das System automatisch heruntergefahren.",
             "rebootDelayedMsg": "Nach der Installation der von Ihnen ausgewählten Updates startet das System neu.Während der Installation von Updates dürfen Sie das System nicht ausschalten, es nicht von der Stromquelle trennen und kein Zubehör entfernen. Wir empfehlen, alle geöffneten Dokumente vorsichtshalber zu speichern.",

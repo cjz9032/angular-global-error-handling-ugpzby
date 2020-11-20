@@ -2399,7 +2399,9 @@
         "readMore": "阅读更多信息",
         "popup": {
             "reboot": "重启",
-            "shutdown": "关机",
+			"shutdown": "关机",
+			"diskSpaceNeeded": "需要的磁盘空间",
+			"diskSpaceNotEnoughMsg": "硬盘驱动器上没有足够的空间。",
             "rebootForceMsg": "所选更新将导致系统在安装后自动重启。",
             "shutdownForceMsg": "所选更新将导致系统在安装后自动关机。",
             "rebootDelayedMsg": "安装所选更新后，系统将重启，在安装更新的过程中，请勿关闭系统、断开电源或移除附件。我们建议保存您的工作以便为系统重启做好准备。",

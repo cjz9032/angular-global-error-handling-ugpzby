@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Újraindítás",
             "shutdown": "Leállítás",
+            "diskSpaceNeeded": "Nincs elég szabad hely",
+            "diskSpaceNotEnoughMsg": "Nincs elég szabad hely a merevlemez-meghajtón.",
             "rebootForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés utánautomatikusan újraindul.",
             "shutdownForceMsg": "A kijelölt frissítés(ek) aktiválásához a rendszer a telepítés utánautomatikusan leáll.",
             "rebootDelayedMsg": "A kiválasztott frissítések telepítése után a rendszer újraindul.A frissítések telepítése során ne kapcsolja ki a gépet, és ne távolítsa el az áramforrást vagy a tartozékokat. Javasoljuk, hogy készüljön fel a rendszer leállására, és mentse a munkáját.",

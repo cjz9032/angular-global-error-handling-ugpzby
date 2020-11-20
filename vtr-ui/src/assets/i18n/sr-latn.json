@@ -2289,7 +2289,9 @@
         "readMore": "Pročitajte više",
         "popup": {
             "reboot": "Ponovo pokreni",
-            "shutdown": "Isključi",
+			"shutdown": "Isključi",
+			"diskSpaceNeeded": "Potreban prostor na disku",
+			"diskSpaceNotEnoughMsg": "Nema dovoljno prostora na hard disku.",
             "rebootForceMsg": "Ažuriranja koja ste izabrali će dovesti do automatskog ponovnog pokretanja sistemanakon instalacije.",
             "shutdownForceMsg": "Ažuriranja koja ste izabrali će dovesti do automatskog isključivanjanakon instalacije.",
             "rebootDelayedMsg": "Zbog ažuriranja koja ste izabrali, sistem će se ponovo pokrenuti nakon instalacije.Tokom instalacije ažuriranja, nemojte da isključujete sistem, uklanjate izvor napajanja ili pribor. Preporučujemo vam da kao pripremu za ponovno pokretanje sistema sačuvate posao.",

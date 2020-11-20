@@ -2402,6 +2402,8 @@
         "popup": {
             "reboot": "Reiniciar",
             "shutdown": "Apagar",
+            "diskSpaceNeeded": "Nesec. espacio disco",
+            "diskSpaceNotEnoughMsg": "No hay suficiente espacio en su unidad de disco duro.",
             "rebootForceMsg": "Las actualizaciones seleccionadas causarán que el sistema rearranque automáticamentedespués de la instalación.",
             "shutdownForceMsg": "Las actualizaciones seleccionadas causarán que el sistema se apagueautomáticamente después de la instalación.",
             "rebootDelayedMsg": "Las actualizaciones seleccionadas causarán que el sistema se reinicie después de la instalación. No apague el sistema ni extraiga la fuente de alimentación o los accesoriosdurante la instalación de las actualizaciones. Le recomendamos guardar su trabajo para prepararse para el reinicio del sistema.",

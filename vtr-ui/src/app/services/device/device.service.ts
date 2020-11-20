@@ -136,6 +136,13 @@ export class DeviceService {
 		return undefined;
 	}
 
+	getAllDisksUsage(): Promise<any> {
+		if (this.sysInfo) {
+			return this.sysInfo.getAllDisksUsage();
+		}
+		return undefined;
+	}
+
 	getMemAndDiskUsage(): Promise<any> {
 		if (this.sysInfo) {
 			return this.sysInfo.getMemAndDiskUsage();

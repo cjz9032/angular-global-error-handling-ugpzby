@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Genstart",
             "shutdown": "Luk",
+            "diskSpaceNeeded": "Krævet diskplads",
+            "diskSpaceNotEnoughMsg": "Der er ikke tilstrækkelig plads på dit harddiskdrev.",
             "rebootForceMsg": "Den eller de valgte opdateringer vil få systemet til at genstarte automatiskefter installationen.",
             "shutdownForceMsg": "Den eller de valgte opdateringer vil få systemet til at lukkeautomatisk efter installationen.",
             "rebootDelayedMsg": "Den eller de valgte opdateringer vil medføre, at systemet genstartes efter installationen.Du må ikke lukke systemet ned eller fjerne strømkilden eller tilbehør, mens opdateringerne installeres.Vi anbefaler, at du gemmer dit arbejde, inden systemet genstartes.",

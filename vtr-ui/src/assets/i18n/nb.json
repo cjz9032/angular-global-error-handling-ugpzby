@@ -2290,6 +2290,8 @@
         "popup": {
             "reboot": "Start på nytt",
             "shutdown": "Avslutt",
+            "diskSpaceNeeded": "Diskplass er nødvendig",
+            "diskSpaceNotEnoughMsg": "Det er for lite ledig plass på harddiskstasjonen.",
             "rebootForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet starterpå nytt automatisk etter installasjonen.",
             "shutdownForceMsg": "Oppdateringen(e) du har valgt, fører til at systemet avsluttesautomatisk etter installasjonen.",
             "rebootDelayedMsg": "Oppdateringen(e) du har valgt, vil få systemet til å starte på nytt etter installasjonen.Under installasjonen av oppdateringene må du ikke slå av systemet, fjerne strømkilden eller tilbehør. Vi anbefaler at du lagrer arbeidet ditt før omstart av systemet.",

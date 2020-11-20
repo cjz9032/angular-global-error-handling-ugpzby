@@ -34,6 +34,8 @@ import { SelfSelectService, SegmentConstHelper } from 'src/app/services/self-sel
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
+declare var Windows;
+
 @Component({
 	selector: 'vtr-page-device-updates',
 	templateUrl: './page-device-updates.component.html',
@@ -114,6 +116,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
 	public isInstallFailedMessageToasted = false;
+	private systemVolumeSpace = 0;
 
 	public isOnline = true;
 	public offlineSubtitle: string;
@@ -283,6 +286,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.popRebootDialogIfNecessary();
 		this.initSupportCard();
 		this.initSecurityCard();
+		this.getSystemVolumeSpace();
 	}
 
 	private initSupportCard() {
@@ -712,37 +716,54 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.updatesToInstall);
 
-		if (rebootType === UpdateRebootType.RebootDelayed) {
-			this.showRebootDelayedModal(modalRef);
-		} else if (rebootType === UpdateRebootType.RebootForced) {
-			this.showRebootForceModal(modalRef);
-		} else if (rebootType === UpdateRebootType.PowerOffForced) {
-			this.showPowerOffForceModal(modalRef);
-		} else {
-			modalRef.dismiss();
-			// its normal update type installation which doesn't require rebooting/power-off
-			document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
-			this.focusOnElement(this.backButton);
-			this.installUpdateBySource(isInstallAll, removeDelayedUpdates, this.updatesToInstall);
-			return;
-		}
-		modalRef.componentInstance.packages = packages;
-		modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
-		modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';
-		modalRef.result.then(
-			result => {
-				// on open
-				if (result) {
-					document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
-					if (this.systemUpdateService.getACAttachedStatus()) {
-						removeDelayedUpdates = false;
-					} else {
-						removeDelayedUpdates = true;
-					}
-					this.focusOnElement(this.backButton);
-					this.installUpdateBySource(isInstallAll, removeDelayedUpdates, this.updatesToInstall);
+		const diskSpaceEnough = this.checkDiskSpaceEnough(this.updatesToInstall);
+		if (!diskSpaceEnough) {
+			const header = 'systemUpdates.popup.diskSpaceNeeded';
+			const description = 'systemUpdates.popup.diskSpaceNotEnoughMsg';
+			modalRef.componentInstance.header = header;
+			modalRef.componentInstance.description = description;
+			modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
+			modalRef.componentInstance.CancelText = '';
+			modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.DiskSpaceNeeded';
+			modalRef.result.then(
+				(result) => {
+					modalRef.close();
 				}
-			});
+			);
+		} else {
+			if (rebootType === UpdateRebootType.RebootDelayed) {
+				this.showRebootDelayedModal(modalRef);
+			} else if (rebootType === UpdateRebootType.RebootForced) {
+				this.showRebootForceModal(modalRef);
+			} else if (rebootType === UpdateRebootType.PowerOffForced) {
+				this.showPowerOffForceModal(modalRef);
+			} else {
+				modalRef.dismiss();
+				// its normal update type installation which doesn't require rebooting/power-off
+				document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
+				this.focusOnElement(this.backButton);
+				this.installUpdateBySource(isInstallAll, removeDelayedUpdates, this.updatesToInstall);
+				return;
+			}
+			modalRef.componentInstance.packages = packages;
+			modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
+			modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';
+			modalRef.result.then(
+				result => {
+					// on open
+					if (result) {
+						document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
+						if (this.systemUpdateService.getACAttachedStatus()) {
+							removeDelayedUpdates = false;
+						} else {
+							removeDelayedUpdates = true;
+						}
+						this.focusOnElement(this.backButton);
+						this.installUpdateBySource(isInstallAll, removeDelayedUpdates, this.updatesToInstall);
+					}
+				});
+
+		}
 	}
 
 	public onGetSupportClick($event: any) {
@@ -935,6 +956,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.showToastMessage(payload.updateList);
 					this.setUpdateByCategory(payload.updateList);
 					this.sendInstallUpdateMetrics(payload.updateList, this.systemUpdateService.ignoredRebootDelayUpdates);
+					this.getSystemVolumeSpace();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -1069,6 +1091,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					if (!this.isRebootRequested) {
 						this.checkRebootRequested();
 					}
+					this.getSystemVolumeSpace();
 					break;
 				default:
 					break;
@@ -1119,6 +1142,57 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.systemUpdateService.isRebootRequiredDialogNeeded = false;
 				}
 			);
+		}
+	}
+
+	private checkDiskSpaceEnough(updatesToInstall) {
+		const diskSpaceNeeded = this.getRequiredDiskSpace(updatesToInstall);
+		const diskSpaceEnough = diskSpaceNeeded < this.systemVolumeSpace;
+		return diskSpaceEnough;
+	}
+
+	private getRequiredDiskSpace(updatesToInstall) {
+		let diskSpaceNeeded = 0;
+		if (updatesToInstall && updatesToInstall.length > 0) {
+			updatesToInstall.forEach( update => {
+				const spaceRequired = parseInt(update.diskSpaceRequired, 10);
+				if (spaceRequired && spaceRequired > 0) {
+					diskSpaceNeeded += spaceRequired;
+				} else {
+					this.logger.info('Invalid diskSpaceRequired: ' + update.packageID + update.diskSpaceNeeded);
+				}
+			});
+		}
+		this.logger.info('DiskSpaceNeeded for install updates: ' + diskSpaceNeeded);
+		return diskSpaceNeeded;
+	}
+
+	private async getSystemVolumeSpace() {
+		const systemVolumeLabel = this.getSystemVolumeLabel();
+		const diskUsage = await this.deviceService.getAllDisksUsage();
+		if (diskUsage && diskUsage.disks) {
+			for (const disk of diskUsage.disks) {
+				if (disk && disk.partitions && disk.partitions.length > 0) {
+					for (const partition of disk.partitions) {
+						if (partition && partition.driveLetter
+							&& partition.driveLetter.toLowerCase() === systemVolumeLabel.toLowerCase()) {
+							this.systemVolumeSpace = parseInt(partition.avaliableSize, 10);
+							this.logger.info(`System Volume: ${this.systemVolumeSpace}`);
+							return;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private getSystemVolumeLabel() {
+		const path = Windows.ApplicationModel.Package.current.installedLocation.path;
+		if (path && path.length > 0) {
+			return path[0];
+		}
+		else {
+			return 'C';
 		}
 	}
 
