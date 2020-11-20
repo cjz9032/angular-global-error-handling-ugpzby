@@ -3,6 +3,7 @@ import packageFile from '../../package.json';
 
 export const environment: IEnvironment = {
 	production: true,
+	debuggingSnackbar: true,
 	cmsApiRoot: 'https://stg.dxp.lenovo.com',
 	upeApiRoot: 'https://api.uds-qa.lenovo.com',
 	appVersion: packageFile.version,

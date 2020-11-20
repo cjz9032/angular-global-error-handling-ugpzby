@@ -1,5 +1,6 @@
 export interface IEnvironment {
 	production: boolean;
+	debuggingSnackbar: boolean;
 	cmsApiRoot: string;
 	upeApiRoot: string;
 	appVersion: string;

@@ -29,6 +29,7 @@ import { ModalArticleDetailComponent } from '../components/modal/modal-article-d
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@lenovo/material/dialog';
 import { MatRippleModule, MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@lenovo/material/core';
+import { MatSnackBarModule } from '@lenovo/material/snack-bar';
 
 import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
 import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
@@ -144,7 +145,8 @@ const globalRippleConfig: RippleGlobalOptions = {
 		UiCustomSliderModule,
 		UICustomRadioModule,
 		MatDialogModule,
-		MatRippleModule
+		MatRippleModule,
+		MatSnackBarModule
 	],
 	exports: [
 		NavbarModule,
