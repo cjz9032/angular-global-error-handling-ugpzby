@@ -1187,7 +1187,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private getSystemVolumeLabel() {
 		const path = Windows.ApplicationModel.Package.current.installedLocation.path;
-		if (path && path.length > 1) {
+		if (path && path.length > 0) {
 			return path[0];
 		}
 		else {
