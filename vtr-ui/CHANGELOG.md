@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.12](https://bitbucket.tc.lenovo.com///compare/v1.9.11...v1.9.12) (2020-11-20)
+
+
+### Features
+
+* **perf:** add resource timing and loading time ([1dd9a7a](https://bitbucket.tc.lenovo.com///commit/1dd9a7a1b7e63f6bb2051f3d59e00a7f58f2ba0f))
+* **perf:** tracks the launch performance, show it in snackbar ([df18904](https://bitbucket.tc.lenovo.com///commit/df189049b755445bf5a4de3ee51ffdde490463d9))
+
 ### [1.9.11](https://bitbucket.tc.lenovo.com///compare/v1.9.10...v1.9.11) (2020-11-19)
 
 ### [1.9.10](https://bitbucket.tc.lenovo.com///compare/v1.9.9...v1.9.10) (2020-11-18)
