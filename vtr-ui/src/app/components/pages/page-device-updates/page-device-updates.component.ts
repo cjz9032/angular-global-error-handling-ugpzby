@@ -1174,7 +1174,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			for (const disk of diskUsage.disks) {
 				if (disk && disk.partitions && disk.partitions.length > 0) {
 					for (const partition of disk.partitions) {
-						if (partition && partition.driveLetter === systemVolumeLabel) {
+						if (partition && partition.driveLetter
+							&& partition.driveLetter.toLowerCase() === systemVolumeLabel.toLowerCase()) {
 							this.systemVolumeSpace = parseInt(partition.avaliableSize, 10);
 							this.logger.info(`System Volume: ${this.systemVolumeSpace}`);
 							return;
