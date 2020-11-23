@@ -96,13 +96,6 @@
 							"extractLicenses": false,
 							"vendorChunk": false,
 							"buildOptimizer": true,
-							"budgets": [
-								{
-									"type": "initial",
-									"maximumWarning": "10mb",
-									"maximumError": "15mb"
-								}
-							],
 							"serviceWorker": false
 						},
 						"qa": {
