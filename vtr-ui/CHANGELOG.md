@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.13](https://bitbucket.tc.lenovo.com///compare/v1.9.12...v1.9.13) (2020-11-23)
+
+
+### Features
+
+* **SystemUpdate:** VAN-21706 add notification when diskspace not enough ([cc5f9c9](https://bitbucket.tc.lenovo.com///commit/cc5f9c9456962252e3f96e39c7bdffdd6f17c19a))
+
+
+### Bug Fixes
+
+* **Dashboard:** remove unused style.height.px ([3950315](https://bitbucket.tc.lenovo.com///commit/39503157a4aad1ea929c4dbffcb01448db59d65c))
+
 ### [1.9.12](https://bitbucket.tc.lenovo.com///compare/v1.9.11...v1.9.12) (2020-11-20)
 
 
