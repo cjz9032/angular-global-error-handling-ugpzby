@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LenovoSupportService } from 'src/app/modules/hardware-scan/services/lenovo-support.service';
-import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver, BreakpointState, Breakpoints } from '@lenovo/cdk/layout';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-item',
