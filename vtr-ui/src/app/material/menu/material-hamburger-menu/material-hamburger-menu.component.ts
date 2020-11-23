@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnDestroy, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { cloneDeep } from 'lodash';
 
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { CardService } from 'src/app/services/card/card.service';
@@ -17,6 +18,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MatMenu } from '@lenovo/material/menu';
 
+
 @Component({
 	selector: 'vtr-material-hamburger-menu',
 	templateUrl: './material-hamburger-menu.component.html',
@@ -25,10 +27,18 @@ import { MatMenu } from '@lenovo/material/menu';
 })
 export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	@ViewChild(MatMenu, {static: true}) matMenu: MatMenu;
-	@Input() items: MenuItem[];
+	@Input() set menuItems(value: MenuItem[]) {
+		if (Array.isArray(value)) {
+			this.items = cloneDeep(value);
+			this.items.forEach((item) => {
+				this.hasSecondaryMenu(item);
+			});
+		}
+	}
 	@Input() currentRoutePath: string;
 	isLoggingOut = false;
 	appsForYouEnum = AppsForYouEnum;
+	items: any;
 	private subscription: Subscription;
 	constructor(
 		public appsForYouService: AppsForYouService,
@@ -69,15 +79,16 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public hasSecondaryMenu(item: MenuItem) {
+	private hasSecondaryMenu(item: any) {
 		if (Array.isArray(item?.subitems)) {
 			for (const element of item.subitems) {
 				if (Array.isArray(element?.subitems) && !element.hide && element.subitems.some((it) => !it.hide)) {
-					return true;
+					item.hasSecondaryMenu = true;
+					return;
 				}
 			}
 		}
-		return false;
+		item.hasSecondaryMenu = false;
 	}
 
 	public openExternalLink(link) {

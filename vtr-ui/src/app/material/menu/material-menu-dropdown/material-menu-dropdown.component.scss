@@ -22,6 +22,9 @@
 			line-height: 1;
 			outline: none !important;
 			@include menu-color-high-contrast;
+			&.text-lowercase::first-letter {
+				text-transform: uppercase !important;
+			}
 			span {
 				word-break: normal;
 				white-space: pre-wrap;
