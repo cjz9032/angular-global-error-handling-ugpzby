@@ -2676,15 +2676,15 @@
                 "accountText": "فشل إنشاء الحساب. يُرجى إعادة المحاولة لاحقًا."
             },
             "expirePromptModal": {
-				"title": "تسجيل الدخول إلى Lenovo ID",
-				"description": "لمتابعة استخدام أمان Lenovo WiFi، يرجى تسجيل الدخول باستخدام Lenovo ID أو التسجيل للحصول على حساب مجاني.",
-				"trialWillExpire": "ستنتهي صلاحية إصدارك التجريبي من أمان WiFi في غضون:",
-				"days": "يوم (أيام)",
-				"hasExpired": "انتهت صلاحية إصدارك التجريبي من أمان Lenovo WiFi. يرجى تسجيل الدخول باستخدام معرف Lenovo ID أو التسجيل للحصول على حساب مجاني.",
-				"signIn": "تسجيل الدخول",
-				"register": "تسجيل",
-				"ignore": "تجاهل"
-			}
+                "title": "تسجيل الدخول إلى Lenovo ID",
+                "description": "لمتابعة استخدام أمان Lenovo WiFi، يرجى تسجيل الدخول باستخدام Lenovo ID أو التسجيل للحصول على حساب مجاني.",
+                "trialWillExpire": "ستنتهي صلاحية إصدارك التجريبي من أمان WiFi في غضون:",
+                "days": "يوم (أيام)",
+                "hasExpired": "انتهت صلاحية إصدارك التجريبي من أمان Lenovo WiFi. يرجى تسجيل الدخول باستخدام معرف Lenovo ID أو التسجيل للحصول على حساب مجاني.",
+                "signIn": "تسجيل الدخول",
+                "register": "تسجيل",
+                "ignore": "تجاهل"
+            }
         },
         "homeprotection": {
             "homesecurity": {
@@ -3265,14 +3265,14 @@
             "CPU_CORE": "المركز",
             "CPU_CORES": "عدد المراكز",
             "CPU_CURRENT_SPEED": "السرعة الحالية",
-            "CPU_DATA_CACHE": "البيانات",
+            "CPU_DATA_CACHE": "Data",
             "CPU_DIAGNOSTIC": "تشخيص المعالج",
             "CPU_DIAGNOSTIC_DESCRIPTION": "تتحقق عملية تشخيص وحدة المعالجة المركزية من وظائف معالجات Intel وAMD. يمكن تنفيذ عملية التشخيص هذه في وضعين: الوضع السريع (يتم اختبار كل ميزات المعالج مرة واحدة) والوضع الموسّع (يتم اختبار كل ميزات المعالج لمدة 10 دقائق تقريبًا)",
             "CPU_EXPECTED_SPEED": "السرعة المتوقعة",
             "CPU_EXTENDED_DIAGNOSTIC": "التشخيص الموسّع",
             "CPU_FEATURES": "خصائص",
             "CPU_INSTRUCTION": "إرشاد",
-            "CPU_INSTRUCTION_CACHE": "إرشادات",
+            "CPU_INSTRUCTION_CACHE": "Instructions",
             "CPU_MAX_SPEED": "السرعة القصوى",
             "CPU_MMX_FAILS": "فشل اختبار MMX",
             "CPU_MMX_TEST": "اختبار MMX",
@@ -3301,7 +3301,7 @@
             "CPU_STRESS_TEST_POPUP": "يستغرق اختبار الإجهاد مدة 10 دقائق تقريبًا. ومع ذلك، يمكنك إلغاء هذا الاختبار في أي وقت",
             "CPU_THREAD": "عملية جزئية",
             "CPU_THREADS": "عدد العمليات الجزئية",
-            "CPU_UNIFIED_CACHE": "موحدة",
+            "CPU_UNIFIED_CACHE": "Unified",
             "CPU_UNKNOWN_CACHE": "نوع غير معروف",
             "CPU_UNKNOWN_MAX_SPEED": "تعذر إجراء اختبار وحدة المعالجة المركزية. تأكد من حصولك على تحديث BIOS الأخير من Lenovo",
             "CPU_UNSUPPORTED_TEST": "لا يدعم المعالج هذه الميزة",
