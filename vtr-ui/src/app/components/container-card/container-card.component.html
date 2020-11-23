@@ -14,8 +14,7 @@
 <div *ngIf="!isLoading || !isOnline" class="w-100 h-100">
 	<div class="container-card card-corner"
 		*ngIf="type === 'corner'"
-		#containerCardCorner
-		[style.height.px]="containerCardCorner.clientWidth / ratio">
+		#containerCardCorner>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
@@ -37,8 +36,7 @@
 						rel="noopener"
 						class="card-image"
 						[class.overlay-dark]="overlayThemeDefaultIsDark"
-						[style.background-image]="'url(' + item.FeatureImage + ')'"
-						[style.height.px]="containerCardCorner.clientWidth / ratio">
+						[style.background-image]="'url(' + item.FeatureImage + ')'">
 						<div class="inner-content"
 							title=""
 							*ngIf="!isOfflineArm">
@@ -83,8 +81,7 @@
 
 	<div class="container-card card-android"
 		*ngIf="type === 'android'"
-		#containerCardAndroid
-		[style.height.px]="containerCardAndroid.clientWidth / ratio * 2">
+		#containerCardAndroid>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
@@ -103,8 +100,7 @@
 							target="_blank"
 							rel="noopener"
 							class="card-image"
-							[style.background-image]="'url(' + item.FeatureImage + ')'"
-							[style.height.px]="containerCardAndroid.clientWidth / ratio * 2">
+							[style.background-image]="'url(' + item.FeatureImage + ')'">
 						</a>
 						<div class="inner-content">
 							<div *ngIf="item.Title"
@@ -205,8 +201,7 @@
 
 	<div class="container-card card-article"
 		*ngIf="type === 'article'"
-		#containerCardArticle
-		[style.height.px]="containerCardArticle.clientWidth / ratio">
+		#containerCardArticle>
 		<div class="container-fluid">
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
@@ -272,8 +267,7 @@
 
 	<div class="container-card card-article card-subpage-article"
 		*ngIf="type === 'subpage-article'"
-		#containerCardArticle
-		[style.height.px]="containerCardArticle.clientWidth / ratio">
+		#containerCardArticle>
 		<div class="container-fluid">
 			<a class="article-content"
 				[class.default-cursor]="isOfflineArm"
