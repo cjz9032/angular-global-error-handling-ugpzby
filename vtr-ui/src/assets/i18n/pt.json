@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Nota: apenas pode ser reposta uma bateria de cada vez.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Condição da bateria",
+                        "description": "Esta secção fornece previsões sobre a vida útil da bateria, a capacidade da bateria, sugestões sobre como manter a capacidade da bateria, etc.<br/>A perda de capacidade depende do uso diário, da temperatura da bateria, da tensão de carga, etc. Siga as sugestões abaixo para prolongar a vida útil da sua bateria.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Vida útil prevista: ",
+                            "months": "meses"
+                        },
+                        "batteryCapacity": {
+                            "title": "Capacidade da bateria",
+                            "fullChargeCapacity": "Capacidade de carga total: ",
+                            "originalDesignCapacity": "Capacidade prevista original: ",
+                            "toolTip": "A capacidade da carga completa da bateria diminui com o uso diário."
+                        },
+                        "batteryTemperature": {
+                            "title": "Temperatura da bateria",
+                            "error": "Não é possível detetar agora a temperatura da bateria.",
+                            "low": "Temperatura baixa. O desempenho da bateria é limitado.",
+                            "fine": "Temperatura recomendada da bateria.",
+                            "high": "Temperaturas altas. Arrefeça-a para prolongar a vida útil da bateria.",
+                            "extreme": "A temperatura da bateria está demasiado alta. Pare o carregamento."
+                        }
                     }
                 },
                 "energyStar": {

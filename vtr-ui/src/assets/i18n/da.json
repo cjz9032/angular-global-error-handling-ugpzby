@@ -1381,7 +1381,30 @@
                         },
                         "dual_note": "Bemærk: Kun ét batteri kan nulstilles ad gangen.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Batterilevetid",
+                        "description": "Denne sektion indeholder en forudsigelse af batterilevetiden og -kapaciteten samt tip om, hvordan du vedligeholder batterikapaciteten osv.<br/>Kapacitetstabet afhænger af den daglige brug, batteritemperaturen, opladningsspændingen osv. Følg vejledningen nedenfor for at forlænge batterilevetiden.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Estimeret levetid: ",
+                            "months": "måneder"
+                        },
+                        "batteryCapacity": {
+                            "title": "Batterikapacitet",
+                            "fullChargeCapacity": "Kapacitet ved fuld opladning: ",
+                            "originalDesignCapacity": "Oprindelig kapacitet: ",
+                            "toolTip": "Batteriets fulde opladningskapacitet falder ved daglig brug."
+                        },
+                        "batteryTemperature": {
+                            "title": "Batteritemperatur",
+                            "error": "Batteritemperaturen kan ikke registreres lige nu.",
+                            "low": "Lav temperatur. Batteriets ydeevne er begrænset.",
+                            "fine": "Anbefalet batteritemperatur.",
+                            "high": "Høj temperatur. Lad batteriet køle af for at forlænge batterilevetiden.",
+                            "extreme": "Batteritemperaturen er for høj. Stop opladningen."
+                        }
                     }
+
                 },
                 "energyStar": {
                     "title": "Energy Star",

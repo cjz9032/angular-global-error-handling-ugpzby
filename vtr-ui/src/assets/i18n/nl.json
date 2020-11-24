@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Opmerking: er kan slechts één batterij tegelijk worden gereset.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Batterijconditie",
+                        "description": "In dit gedeelte vindt u een prognose voor de levensduur van de batterij, informatie over de batterijcapaciteit en tips hoe u deze kunt onderhouden en nog meer.<br/>Het capaciteitsverlies is afhankelijk van verschillende factoren zoals het dagelijks gebruik, de batterijtemperatuur en de oplaadspanning. Volg de tips hieronder om de levensduur van de batterij te verlengen.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Voorspelde levensduur: ",
+                            "months": "maanden"
+                        },
+                        "batteryCapacity": {
+                            "title": "Batterijcapaciteit",
+                            "fullChargeCapacity": "Capaciteit bij volledig geladen: ",
+                            "originalDesignCapacity": "Ontwerpcapaciteit: ",
+                            "toolTip": "De capaciteit van de batterij wanneer deze volledig is opgeladen neemt af door dagelijks gebruik."
+                        },
+                        "batteryTemperature": {
+                            "title": "Batterijtemperatuur",
+                            "error": "Kan de batterijtemperatuur nu niet detecteren.",
+                            "low": "Lage temperatuur. De prestaties van de batterij zijn beperkt.",
+                            "fine": "Aanbevolen batterijtemperatuur.",
+                            "high": "Hoge temperatuur. Laat de batterij afkoelen om de levensduur ervan te verlengen.",
+                            "extreme": "De batterijtemperatuur is te hoog. Onderbreek het opladen."
+                        }
                     }
                 },
                 "energyStar": {

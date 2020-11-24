@@ -104,6 +104,7 @@ import { AntiTheftComponent } from 'src/app/components/pages/page-smart-assist/a
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
 import { UiListSystemUpdateCheckboxComponent } from 'src/app/components/pages/page-device-updates/children/ui-list-system-update-checkbox/ui-list-system-update-checkbox.component';
+import { BatteryHealthModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-power/battery-health/battery-health.module';
 
 @NgModule({
 	declarations: [
@@ -175,7 +176,8 @@ import { UiListSystemUpdateCheckboxComponent } from 'src/app/components/pages/pa
 		BacklightModule,
 		UiCustomSliderModule,
 		PageSupportDetailModule,
-		SpinnerModule
+		SpinnerModule,
+		BatteryHealthModule
 	],
 	exports: [
 		CommonModule,

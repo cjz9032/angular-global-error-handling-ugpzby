@@ -1,0 +1,54 @@
+@import "src/app/app.theme.scss";
+@import "../battery-health.theme";
+@import "../battery-health.gaming.theme";
+@import "battery-layout-theme.component";
+
+$_grid-column-gap: 2rem;
+$_grid-row-gap: 2rem;
+
+@mixin grid-fill($start, $end) {
+	grid-column-start: $start;
+	grid-column-end: $end;
+}
+
+.battery-layout {
+	display: grid;
+	/**
+	*  This padding is to correct the top level's padding.
+	*/
+	margin-left: 0.4rem;
+	margin-right: 2.6rem;
+	padding: 0 2.4rem 0 2.6rem;
+	grid-template-columns: 50% 50%;
+	grid-auto-flow: row;
+	grid-column-gap: $_grid-column-gap;
+	grid-row-gap: $_grid-row-gap;
+
+	@media #{$breakpoint_md} {
+		grid-template-columns: 100%;
+	}
+	@media screen and (min-width: 992px) and (max-width: 1199.9px) {
+		grid-template-columns: 100%;
+	}
+}
+
+.item-1,
+.item-4
+{
+	@include grid-fill(1, 3);
+
+	@media #{$breakpoint_md} {
+		@include grid-fill(1, 2);
+	}
+	@media screen and (min-width: 992px) and (max-width: 1199.9px) {
+		@include grid-fill(1, 2);
+	}
+}
+
+
+// Temp put theme mixin at here.
+@include battery-layout-color($smart-battery-theme);
+
+:host-context(.is-gaming) {
+	@include battery-layout-color($smart-battery-gaming-theme)
+}

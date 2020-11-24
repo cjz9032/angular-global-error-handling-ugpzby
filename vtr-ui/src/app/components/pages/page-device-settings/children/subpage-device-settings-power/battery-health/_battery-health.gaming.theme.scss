@@ -1,0 +1,56 @@
+$border-width: 1px;
+$border-style: solid;
+
+$battery-semi-bold: 600;
+
+$battery-text-color-palette: (
+	default: #fbfdff,
+	white-on-black: white,
+	black-on-white: black
+);
+
+$battery-background-palette: (
+	default: #11192c,
+	white-on-black: black,
+	black-on-white: white
+);
+
+$battery-border-palette: (
+	default: transparent,
+	white-on-black: white,
+	black-on-white: black
+);
+
+
+$smart-battery-gaming-theme: (
+	color: $battery-text-color-palette,
+	background: $battery-background-palette,
+	border: $battery-border-palette
+);
+
+$battery-capacity-circle: (
+	error: (
+		ground: #E6EAEB,
+		over:#E6EAEB
+	),
+	color-green: (
+		ground: #34495E,
+		over: #30D487
+	),
+	color-yellow: (
+		ground: #34495E,
+		over: #F7C809,
+	),
+	color-pink: (
+		ground: #34495E,
+		over: #FD796C,
+	),
+	color-red: (
+		ground: #34495E,
+		over: #DB221F,
+	),
+);
+$battery-capacity-circle-high-contrast: (
+	white: #FFFFFF,
+	black: #000000
+)

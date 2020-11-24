@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Merk: Bare ett batteri kan tilbakestilles om gangen.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Batterihelse",
+                        "description": "Denne delen anslår batteriets levetid og batterikapasitet samt gir tips om hvordan du opprettholder batterikapasiteten med mer.<br/>Kapasitetstapet avhenger av daglig bruk, batteritemperatur, ladespenning med mer. Følg tipsene nedenfor for å forlenge batterilevetiden.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Anslått levetid: ",
+                            "months": "måneder"
+                        },
+                        "batteryCapacity": {
+                            "title": "Batterikapasitet",
+                            "fullChargeCapacity": "Kapasitet fulladet: ",
+                            "originalDesignCapacity": "Opprinnelig nominell kapasitet: ",
+                            "toolTip": "Batteriets fulle ladekapasitet reduseres ved daglig bruk."
+                        },
+                        "batteryTemperature": {
+                            "title": "Batteritemperatur",
+                            "error": "Finner ikke batteritemperaturen nå.",
+                            "low": "Lav temperatur. Batteriytelsen er begrenset.",
+                            "fine": "Anbefalt batteritemperatur.",
+                            "high": "Høy temperatur. La det avkjøle for å forlenge batterilevetiden.",
+                            "extreme": "Batteritemperaturen er for høy. Stopp ladingen."
+                        }
                     }
                 },
                 "energyStar": {

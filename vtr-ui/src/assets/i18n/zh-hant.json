@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "附註：一次只能重設一個電池。",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "電池性能",
+                        "description": "此區段提供有關電池壽命的預測、電池容量以及如何維持電池容量的提示等等。<br/>容量損失取決於日常使用、電池溫度、充電電壓等。請遵循以下要訣以延長電池壽命。",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "預計壽命：",
+                            "months": "月"
+                        },
+                        "batteryCapacity": {
+                            "title": "電池容量",
+                            "fullChargeCapacity": "充飽容量：",
+                            "originalDesignCapacity": "原始設計的容量：",
+                            "toolTip": "電池的充飽容量會隨著日常使用而減少。"
+                        },
+                        "batteryTemperature": {
+                            "title": "電池溫度",
+                            "error": "現在無法偵測電池溫度。",
+                            "low": "低溫。電池效能有限。",
+                            "fine": "建議的電池溫度。",
+                            "high": "高溫。請冷卻以延長電池壽命。",
+                            "extreme": "電池溫度過高。請停止充電。"
+                        }
                     }
                 },
                 "energyStar": {

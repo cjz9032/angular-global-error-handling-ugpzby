@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Huomautus: Voit nollata vain yhden akun kerrallaan.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Akun toimintakunto",
+                        "description": "Tässä osiossa kerrotaan muun muassa akun arvioitu käyttöikä ja kapasiteetti sekä vihjeitä akun kapasiteetin ylläpitämiseen.<br/>Kapasiteetin kulutus riippuu päivittäisestä käytöstä, akun lämpötilasta, latausjännitteestä jne. Noudata alla olevia vihjeitä pidentääksesi akkusi käyttöikää.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Arvioitu käyttöikä: ",
+                            "months": "kuukautta"
+                        },
+                        "batteryCapacity": {
+                            "title": "Akun kapasiteetti",
+                            "fullChargeCapacity": "Täysi varauskapasiteetti: ",
+                            "originalDesignCapacity": "Alun perin suunniteltu kapasiteetti: ",
+                            "toolTip": "Akkusi täysi varauskapasiteetti heikkenee päivittäisen käytön myötä."
+                        },
+                        "batteryTemperature": {
+                            "title": "Akun lämpötila",
+                            "error": "Akun lämpötilaa ei voida tunnistaa juuri nyt.",
+                            "low": "Matala lämpötila. Akun suorituskyky on rajallinen.",
+                            "fine": "Akun suositeltu lämpötila.",
+                            "high": "Korkea lämpötila. Viilennä akkua pidentääksesi sen käyttöikää.",
+                            "extreme": "Akun lämpötila on liian korkea. Lopeta lataaminen."
+                        }
                     }
                 },
                 "energyStar": {

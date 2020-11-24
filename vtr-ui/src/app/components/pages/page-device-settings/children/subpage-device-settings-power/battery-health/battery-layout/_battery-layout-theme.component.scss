@@ -1,0 +1,22 @@
+@import "src/app/app.theme";
+@import "../battery-health.theme";
+@import "../a11y";
+
+@mixin battery-layout-color($theme) {
+	$background: map-get($theme, background);
+	$border: map-get($theme, border);
+
+	.item {
+		background-color: map-get($background, default);
+		border: $border-width $border-style map-get($border, default);
+		border-radius: 3px;
+
+		@include high-contrast('black-on-white') {
+			background-color: map-get($background, black-on-white);
+		}
+
+		@include high-contrast('white-on-black') {
+			background-color: map-get($background, white-on-black);
+		}
+	}
+}

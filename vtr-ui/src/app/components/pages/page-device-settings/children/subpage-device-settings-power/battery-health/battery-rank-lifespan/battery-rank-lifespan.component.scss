@@ -1,0 +1,104 @@
+
+@import "../../../../../../../app.theme.scss";
+@import "../battery-health.variables";
+@import "../battery-health.theme";
+@import "../battery-health.gaming.theme";
+@import "../a11y";
+
+.rank-star-container {
+    margin-left: 24px;
+    line-height: 70px;
+}
+
+.rank-star {
+    vertical-align: middle;
+    margin-right: 10px;
+	width: 22px;
+    height: 21px;
+}
+.rank-star-filled {
+    @extend .rank-star;
+    fill: #30D487;
+    @include high-contrast('black-on-white') {
+        fill: #000000;
+    }
+    @include high-contrast('white-on-black') {
+        fill: #ffffff;
+    }
+}
+.rank-star-unfilled {
+    @extend .rank-star;
+    fill: #34495E;
+    @media #{$black-on-white} {
+        fill: #ffffff;
+        stroke: #000000;
+    }
+    @media #{$white-on-black} {
+        fill: #000000;
+        stroke: #ffffff;
+	}
+}
+
+.rank-star-error {
+    @extend .rank-star;
+    fill: #E6EAEB;
+    // @media #{$black-on-white} {
+    //     fill: #000000;
+    // }
+    // @media #{$white-on-black} {
+    //     fill: #ffffff;
+	// }
+}
+
+
+section .desc {
+    display: inline;
+    font-size: $base;
+    color: $grey_darker;
+    vertical-align: middle;
+    font-weight: $battery-semi-bold;
+}
+section .desc-light {
+    display: inline;
+    font-size: $base;
+    color: $grey_darker;
+	vertical-align: middle;
+	margin-left: 6px;
+}
+.col-left {
+    min-width: 173px;
+}
+.col-right {
+    padding-right: 3px;
+}
+.alert-icon {
+    margin-left: 10px;
+    fill: #F7C809;
+    @media #{$black-on-white} {
+        fill: #000000;
+    }
+    @media #{$white-on-black} {
+        fill: #ffffff;
+	}
+}
+::ng-deep .col-right svg {
+    margin-left: 24px;
+    width: 26px;
+    height: 26px;
+    stroke: #F7C809;
+    @media #{$black-on-white} {
+        stroke: #000000;
+    }
+    @media #{$white-on-black} {
+        stroke: #ffffff;
+	}
+}
+
+
+:host-context(.is-gaming) {
+	$color: map-get($smart-battery-gaming-theme, color);
+	section .desc,
+	section .desc-light {
+		color: map-get($color, default);
+	}
+}

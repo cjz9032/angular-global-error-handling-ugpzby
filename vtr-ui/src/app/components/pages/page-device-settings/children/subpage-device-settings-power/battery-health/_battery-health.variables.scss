@@ -1,0 +1,30 @@
+
+$battery-title-offset-y: 20px;
+$battery-middle-content-offset-top: 16px;
+
+$battery-capacity-area-offset-bottom: 22px;
+$battery-capacity-area-offset-height: 100px;
+$battery-capacity-canvas-offset-width: 100px;
+$battery-capacity-canvas-offset-height: 100px;
+
+$battery-temperature-condition: (
+	error:"../../../../../../../../assets/images/smb-temperature-condition-error.png",
+	low: "../../../../../../../../assets/images/smb-temperature-condition-low.png",
+	fine: "../../../../../../../../assets/images/smb-temperature-condition-fine.png",
+	high: "../../../../../../../../assets/images/smb-temperature-condition-high.png",
+	extreme: "../../../../../../../../assets/images/smb-temperature-condition-extreme.png",
+);
+$battery-temperature-condition-high-contrast: (
+	black-on-white: "../../../../../../../../assets/images/smb-temperature-condition-black-on-white.png",
+	white-on-black: "../../../../../../../../assets/images/smb-temperature-condition-white-on-black.png"
+);
+$battery-temperature-indicator-icon-offset-width: 80px;
+$battery-temperature-indicator-icon-offset-height: 80px;
+$battery-temperature-indicator-text-offset-top: 10px;
+$battery-temperature-indicator-description-offset-top: 10px;
+
+@mixin flex-column-center() {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

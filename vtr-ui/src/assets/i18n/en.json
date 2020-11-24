@@ -1566,6 +1566,28 @@
 						"description": "This feature enables you to use the ac power outlet on an airplane where a certain power limit applies. In this mode, the power consumption of your computer is reduced to a safe level by limiting the battery charge rate and computer performance.",
 						"checkBoxDesc": "Auto detection",
 						"note": "If Auto detection is checked, your computer will turn on Airplane Power Mode automatically when it detects an airplane onboard environment and turn off it when you leave."
+					},
+					"batteryHealth": {
+						"title": "Battery health",
+						"description": "This section provides prediction on the battery lifespan, battery capacity, tips on how to maintain the battery capacity, and so on.<br/>The capacity loss depends on the daily use, battery temperature, charging voltage, etc. Follow tips below to extend your battery lifespan.",
+						"batteryLifeSpan": {
+							"lifeSpan": "Predicted lifespan: ",
+							"months": "months"
+						},
+						"batteryCapacity": {
+							"title": "Battery capacity",
+							"fullChargeCapacity": "Full charge capacity: ",
+							"originalDesignCapacity": "Original designed capacity: ",
+							"toolTip": "The full charge capacity of your battery decreases with daily use."
+						},
+						"batteryTemperature": {
+							"title": "Battery temperature",
+							"error": "Cannot detect the battery temperature now.",
+							"low": "Low temperature. The battery performance is limited.",
+							"fine": "Recommended battery temperature.",
+							"high": "High temperature. Please cool it to extend the battery lifespan.",
+							"extreme": "The battery temperature is too high. Please stop charging."
+						}
 					}
 				},
 				"energyStar": {
