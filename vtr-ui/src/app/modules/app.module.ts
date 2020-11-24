@@ -70,8 +70,6 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 import { CommsService } from '../services/comms/comms.service';
 import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custom-slider.module';
 import { UICustomRadioModule } from '../components/ui/ui-custom-radio/ui-custom-radio.module';
-import { NotificationComponent } from 'src/app/components/notification/notification.component';
-import { UiBannerComponent } from 'src/app/components/ui/ui-banner/ui-banner.component';
 import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
 import { InitializerService } from '../services/initializer/initializer.service';
 
@@ -97,13 +95,9 @@ const globalRippleConfig: RippleGlobalOptions = {
 		ModalArticleDetailComponent,
 		ModalDccDetailComponent,
 		ModalAppUpdateAvailableComponent,
-		// PageSettingsComponent,
 		ModalNewFeatureTipComponent,
 		PageSettingsComponent,
 		ModalStoreRatingComponent,
-		// ModalErrorMessageComponent
-		NotificationComponent,
-		UiBannerComponent
 	],
 	imports: [
 		BrowserModule,

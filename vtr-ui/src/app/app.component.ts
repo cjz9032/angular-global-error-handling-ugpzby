@@ -26,7 +26,6 @@ import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MetricService } from './services/metric/metrics.service';
 import { VantageFocusHelper } from 'src/app/services/timer/vantage-focus.helper';
 import { SegmentConst } from './services/self-select/self-select.service';
-import { NotificationType } from './components/notification/notification.component';
 import { StoreRatingService } from './services/store-rating/store-rating.service';
 import { UpdateProgress } from './enums/update-progress.enum';
 import { HardwareScanProgress } from './modules/hardware-scan/enums/hardware-scan.enum';
@@ -37,10 +36,8 @@ import { SmartPerformanceService } from './services/smart-performance/smart-perf
 import { enumSmartPerformance } from './enums/smart-performance.enum';
 import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
-import { Observable } from 'rxjs';
 
 
-declare var Windows;
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
@@ -57,7 +54,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private isServerSwitchEnabled = true;
 	private shellVersion;
 	private newTutorialVersion = '3.1.2';
-	public notificationType = NotificationType.Banner;
 	@ViewChild('pageContainer', { static: true }) pageContainer: ElementRef;
 	environment = environment;
 	perfSubscription$: Subscription;
@@ -95,11 +91,14 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 						this.perfSubscription$.unsubscribe();
 
 						const navPerf = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-						const content = `Resource: ${navPerf.domInteractive - navPerf.startTime} ms
-										 Load: ${navPerf.duration} ms
-										 Navigation: ${window.performance.now()} ms`;
+						let content = `You are now accessing ${location.origin} \n \n`;
+						content += `Necessary dowload: ${navPerf.domInteractive - navPerf.startTime} ms \n`;
+						content += `App parsing: ${navPerf.duration} ms \n`;
+						content += `Navigation complete: ${window.performance.now()} ms`;
 						console.log(content);
-						this.snackBar.open(content, '', { duration: 2000 });
+						this.snackBar.open(content, 'Close', {
+							panelClass: ['snackbar']
+						});
 					}
 				}
 			});
