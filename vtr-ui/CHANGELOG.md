@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.14](https://bitbucket.tc.lenovo.com///compare/v1.9.13...v1.9.14) (2020-11-24)
+
+
+### Features
+
+* **doc:** update OSC for v3.4 ([525da6f](https://bitbucket.tc.lenovo.com///commit/525da6fdbd1ec94d1f4058d4548e0b4ae2c767fa))
+* **menu:** update menu style ([b6a86da](https://bitbucket.tc.lenovo.com///commit/b6a86da6b1a4e26240df70d37177ecaa83153d39))
+* **NLS:** add some language to main module ([afcadad](https://bitbucket.tc.lenovo.com///commit/afcadadca1ccb6aff1d34f2d4208ec1ebaaa05d5))
+
 ### [1.9.13](https://bitbucket.tc.lenovo.com///compare/v1.9.12...v1.9.13) (2020-11-23)
 
 
