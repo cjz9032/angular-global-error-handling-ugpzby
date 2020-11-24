@@ -1491,6 +1491,28 @@
                         },
                         "dual_note": "注意：一次只能重置一块电池。",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "电池运行状况",
+                        "description": "本部分提供有关电池使用寿命、电池容量的预测，以及有关如何维持电池容量的提示，等等。<br/>电池容量损失取决于日常使用、电池温度、充电电压等因素。请遵循以下提示以延长电池使用寿命。",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "预计的使用寿命：",
+                            "months": "月"
+                        },
+                        "batteryCapacity": {
+                            "title": "电池容量",
+                            "fullChargeCapacity": "完全充电容量：",
+                            "originalDesignCapacity": "初始设计的容量：",
+                            "toolTip": "电池的完全充电容量会随日常使用而减少。"
+                        },
+                        "batteryTemperature": {
+                            "title": "电池温度",
+                            "error": "现在无法检测电池温度。",
+                            "low": "低温。电池性能受到限制。",
+                            "fine": "推荐的电池温度。",
+                            "high": "高温。请冷却以延长电池使用寿命。",
+                            "extreme": "电池温度过高。请停止充电。"
+                        }
                     }
                 },
                 "energyStar": {

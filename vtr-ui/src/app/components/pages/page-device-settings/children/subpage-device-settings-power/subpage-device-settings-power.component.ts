@@ -23,6 +23,7 @@ import { FlipToBootCurrentModeEnum, FlipToBootErrorCodeEnum, FlipToBootSetStatus
 import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { BatteryHealthService } from './battery-health/battery-health.service';
 
 
 enum PowerMode {
@@ -118,6 +119,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	headerMenuItems = [];
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	batterySettingsGroup = [];
+	batteryHealthAvailable = false;
 
 	constructor(
 		public powerService: PowerService,
@@ -128,7 +131,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		public shellServices: VantageShellService,
 		private metrics: CommonMetricsService,
 		private localCacheService: LocalCacheService,
-		private activatedRoute: ActivatedRoute) {
+		private activatedRoute: ActivatedRoute,
+		private batteryHealthService: BatteryHealthService) {
 	}
 
 	ngOnInit() {
@@ -217,6 +221,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.toolBarSubscription.unsubscribe();
 		}
 		this.shellServices.unRegisterEvent(EventTypes.pwrBatteryStatusEvent, this.powerBatteryStatusEventRef);
+		this.batteryHealthService.clearMemoryCache();
 	}
 
 	// ************************** Start Getting Cached Data ****************************
@@ -425,6 +430,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.getConservationModeStatusIdeaPad();
 				this.getAlwaysOnUSBStatusIdeaPad();
 				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+				this.getBatteryHealthIdeaPad();
 				break;
 		}
 	}
@@ -508,8 +514,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	 * Called from capability check method of each feature in battery section
 	 * @param addLink boolean (true: adds link, false: removes link if exists)
 	 */
-	updateBatteryLinkStatus(addLink: boolean) {
-		this.isBatterySectionAvailable = this.isBatterySectionAvailable || addLink;
+	updateBatteryLinkStatus(addLink: boolean, feature: string) {
+		if (addLink) {
+			this.batterySettingsGroup = this.addFeatureNameToList(this.batterySettingsGroup, feature);
+		} else {
+			this.batterySettingsGroup = this.removeFeatureNameFromList(this.batterySettingsGroup, feature);
+		}
+		this.isBatterySectionAvailable = this.batterySettingsGroup.length > 0;
+		// this.isBatterySectionAvailable = this.isBatterySectionAvailable || addLink;
 		this.checkIsPowerPageAvailable(this.isBatterySectionAvailable, 'battery');
 		if (this.isBatterySectionAvailable) {
 			const batteryObj = {
@@ -522,6 +534,20 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		} else {
 			this.headerMenuItems = this.commonService.removeObjFrom(this.headerMenuItems, 'battery');
 		}
+	}
+
+	addFeatureNameToList(array: any[], item: any) {
+		if (!array.includes(item)) {
+			array.push(item);
+		}
+		return array;
+	}
+
+	removeFeatureNameFromList(array: any[], item: string) {
+		if (array.includes(item)) {
+			return array.filter(e => e!== item);
+		}
+		return array;
 	}
 
 	/**
@@ -941,7 +967,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.powerService.getConservationModeStatusIdeaNoteBook().then((featureStatus) => {
 				this.logger.info('getConservationModeStatusIdeaNoteBook.then', featureStatus);
 				this.conservationModeStatus = featureStatus;
-				this.updateBatteryLinkStatus(this.conservationModeStatus.available);
+				this.updateBatteryLinkStatus(this.conservationModeStatus.available, 'ConservationMode');
 
 				this.conservationModeCache = featureStatus;
 				this.conservationModeCache.isLoading = this.conservationModeLock;
@@ -956,7 +982,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	setExpressChargingUI(expressCharging: FeatureStatus) {
 		this.expressChargingStatus.available = expressCharging.available;
 		this.expressChargingStatus.status = expressCharging.status;
-		this.updateBatteryLinkStatus(this.expressChargingStatus.available);
+		this.updateBatteryLinkStatus(this.expressChargingStatus.available, "RapidChargeMode");
 
 		this.expressChargingCache = this.expressChargingStatus;
 		this.expressChargingCache.isLoading = this.expressChargingLock;
@@ -1231,7 +1257,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.chargeThresholdCapability = false;
 			this.chargeThresholdStatus = false;
 		}
-		this.updateBatteryLinkStatus(this.chargeThresholdCapability);
+		this.updateBatteryLinkStatus(this.chargeThresholdCapability, 'BatteryChargeThreshold');
 	}
 
 	onToggleBCTSwitch(event: any) {
@@ -1399,7 +1425,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.powerService.getGaugeResetCapability().then((response) => {
 			this.logger.info('getGaugeResetCapability.then', this.gaugeResetCapability);
 			this.gaugeResetCapability = response;
-			this.updateBatteryLinkStatus(this.gaugeResetCapability && this.batteryService.gaugeResetInfo.length > 0);
+			this.updateBatteryLinkStatus(this.gaugeResetCapability && this.batteryService.gaugeResetInfo.length > 0, 'BatteryGaugeReset');
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.GaugeResetCapability, this.gaugeResetCapability);
 		}).catch((err) => {
 			this.logger.info('getGaugeResetCapability.error', err);
@@ -1407,4 +1433,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 	// Gauge Reset Capability
 
+	getBatteryHealthIdeaPad() {
+		if (this.batteryHealthService) {
+			this.batteryHealthService.batteryInfo.subscribe((batteryInfo) => {
+				if(batteryInfo && batteryInfo.isSupportSmartBatteryV2 !== undefined) {
+					this.batteryHealthAvailable = batteryInfo.isSupportSmartBatteryV2;
+					this.updateBatteryLinkStatus(batteryInfo.isSupportSmartBatteryV2, 'BatteryHealth');
+				}
+			})
+		}
+	}
 }

@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Notă: numai o singură baterie poate fi resetată la un moment dat.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Funcționare baterie",
+                        "description": "Această secțiune oferă previziuni privind durata de viață a bateriei, capacitatea bateriei, sfaturi despre cum să mențineți capacitatea bateriei și așa mai departe.<br/>Pierderea capacității depinde de utilizarea zilnică, de temperatura bateriei, de tensiunea de încărcare etc. Urmați sfaturile de mai jos pentru a extinde durata de viață a bateriei.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Durata de viață estimată: ",
+                            "months": "luni"
+                        },
+                        "batteryCapacity": {
+                            "title": "Capacitatea bateriei",
+                            "fullChargeCapacity": "Capacitate de încărcare completă: ",
+                            "originalDesignCapacity": "Capacitate originală proiectată: ",
+                            "toolTip": "Capacitatea completă de încărcare a bateriei scade odată cu utilizarea zilnică."
+                        },
+                        "batteryTemperature": {
+                            "title": "Temperatura bateriei",
+                            "error": "Nu se poate detecta acum temperatura bateriei.",
+                            "low": "Temperatură scăzută. Performanța bateriei este limitată.",
+                            "fine": "Temperatura recomandată a bateriei.",
+                            "high": "Temperatură ridicată. Răciți-o pentru a extinde durata de viață a bateriei.",
+                            "extreme": "Temperatura bateriei este prea mare. Opriți încărcarea acesteia."
+                        }
                     }
                 },
                 "energyStar": {

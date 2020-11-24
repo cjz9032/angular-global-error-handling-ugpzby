@@ -45,6 +45,7 @@ import { SafePipeModule } from 'safe-pipe';
 import {UiGroupCardComponent} from 'src/app/components/ui/ui-group-card/ui-group-card.component';
 import {UiDeviceinfoItemComponent} from 'src/app/components/ui/ui-deviceinfo-item/ui-deviceinfo-item.component';
 import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
+import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-point/ui-exclamation-point.component';
 
 @NgModule({
 	declarations: [
@@ -72,7 +73,8 @@ import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 		UiAddReduceButtonComponent,
 		UiGroupCardComponent,
 		UiDeviceinfoItemComponent,
-		UiGamingSliderComponent
+		UiGamingSliderComponent,
+		UiExclamationPointComponent
 	],
 	exports: [
 		UiCheckboxComponent,
@@ -104,7 +106,8 @@ import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 		UiCircleRadioWithCheckBoxListModule,
 		UiGroupCardComponent,
 		UiDeviceinfoItemComponent,
-		UiGamingSliderComponent
+		UiGamingSliderComponent,
+		UiExclamationPointComponent
 	],
 	imports: [
 		CommonModule,

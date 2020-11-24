@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Napomena: Moguće je resetovati samo jednu po jednu bateriju.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Ispravnost baterije",
+                        "description": "U ovom odeljku je dato predviđanje o veku trajanja baterije, kapacitetu baterije, savetima kako da održite kapacitet baterije i tako dalje.<br/>Gubitak kapaciteta zavisi od svakodnevne upotrebe, temperature baterije, napona punjenja itd. Pratite savete ispod da biste produžili radni vek baterije.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Predviđeni vek trajanja: ",
+                            "months": "meseci"
+                        },
+                        "batteryCapacity": {
+                            "title": "Kapacitet baterije",
+                            "fullChargeCapacity": "Pun kapacitet punjenja: ",
+                            "originalDesignCapacity": "Originalno projektovan kapacitet: ",
+                            "toolTip": "Pun kapacitet baterije se smanjuje svakodnevnim korišćenjem."
+                        },
+                        "batteryTemperature": {
+                            "title": "Temperatura baterije",
+                            "error": "Sada nije moguće utvrditi temperaturu baterije.",
+                            "low": "Niska temperatura. Performanse baterije su ograničene.",
+                            "fine": "Preporučena temperatura baterije.",
+                            "high": "Visoka temperatura. Ohladite je da biste produžili radni vek baterije.",
+                            "extreme": "Temperatura baterije je previsoka. Prekinite punjenje."
+                        }
                     }
                 },
                 "energyStar": {

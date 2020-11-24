@@ -353,6 +353,13 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	public getSmartBatteryInfo(): any {
+		if (this.getPowerIdeaNoteBook() && this.getPowerIdeaNoteBook().batteryInfo) {
+			return this.getPowerIdeaNoteBook().batteryInfo;
+		}
+		return undefined;
+	}
 	/**
 	 * returns EyecareMode object from VantageShellService of JS Bridge
 	 */

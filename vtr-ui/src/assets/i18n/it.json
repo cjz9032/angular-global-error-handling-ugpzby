@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Nota: è possibile reimpostare solo una batteria alla volta.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Durata batteria",
+                        "description": "In questa sezione vengono fornite stime sulla durata e la capacità della batteria, suggerimenti per prolungare la durata della batteria e così via.<br/>La perdita di capacità dipende dall'utilizzo giornaliero, dalla temperatura della batteria, dalla tensione di carica e così via. I seguenti suggerimenti consentono di estendere la durata della batteria.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Durata prevista: ",
+                            "months": "mesi"
+                        },
+                        "batteryCapacity": {
+                            "title": "Capacità batteria",
+                            "fullChargeCapacity": "Capacità carica completa: ",
+                            "originalDesignCapacity": "Capacità progettata originale: ",
+                            "toolTip": "La capacità di carica completa della batteria diminuisce con l'utilizzo giornaliero."
+                        },
+                        "batteryTemperature": {
+                            "title": "Temperatura batteria",
+                            "error": "Impossibile rilevare ora la temperatura della batteria.",
+                            "low": "Temperatura bassa. Le prestazioni della batteria sono limitate.",
+                            "fine": "Temperatura batteria consigliata.",
+                            "high": "Temperatura alta. Raffreddare la batteria per estenderne la durata.",
+                            "extreme": "La temperatura della batteria è troppo alta. Interrompere la carica."
+                        }
                     }
                 },
                 "energyStar": {

@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Not: Aynı anda yalnızca bir pil sıfırlanabilir.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Pil durumu",
+                        "description": "Bu bölümde pil ömrü, pil kapasitesi, pil kapasitesinin nasıl korunacağına ilişkin ipuçları vb. hakkında tahmini bilgiler sağlanır.<br/>Kapasite kaybı günlük kullanıma, pil sıcaklığına, şarj voltajına vb. bağlıdır. Pilinizin ömrünü uzatmak için aşağıdaki ipuçlarını izleyin.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Öngörülen ömür: ",
+                            "months": "ay"
+                        },
+                        "batteryCapacity": {
+                            "title": "Pil kapasitesi",
+                            "fullChargeCapacity": "Tam şarj kapasitesi: ",
+                            "originalDesignCapacity": "Orijinal tasarım kapasitesi: ",
+                            "toolTip": "Pilinizin tam şarj kapasitesi günlük kullanımla azalır."
+                        },
+                        "batteryTemperature": {
+                            "title": "Pil sıcaklığı",
+                            "error": "Pil sıcaklığı şu anda algılanamıyor.",
+                            "low": "Düşük sıcaklık. Pil performansı sınırlandırıldı.",
+                            "fine": "Önerilen pil sıcaklığı.",
+                            "high": "Yüksek sıcaklık. Pil ömrünü uzatmak için lütfen pili soğutun.",
+                            "extreme": "Pil sıcaklığı çok yüksek. Lütfen şarjı durdurun."
+                        }
                     }
                 },
                 "energyStar": {

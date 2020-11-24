@@ -1493,6 +1493,28 @@
                         },
                         "dual_note": "Hinweis: Es kann jeweils nur eine Batterie zurückgesetzt werden.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Akkuzustand",
+                        "description": "Dieser Abschnitt enthält Prognosen zur Akkulebensdauer, Akkukapazität, Tipps zum Erhalt der Akkukapazität usw.<br/>Der Kapazitätsverlust ist abhängig von täglichem Gebrauch, Akkutemperatur, Ladespannung etc. Mithilfe der folgenden Tipps können Sie die Akkulebensdauer verlängern.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Voraussichtliche Lebensdauer: ",
+                            "months": "Monate"
+                        },
+                        "batteryCapacity": {
+                            "title": "Akkukapazität",
+                            "fullChargeCapacity": "Kapazität bei voller Ladung: ",
+                            "originalDesignCapacity": "Ursprünglich vorgesehene Kapazität: ",
+                            "toolTip": "Die vollständige Ladekapazität Ihres Akkus sinkt bei täglichem Gebrauch."
+                        },
+                        "batteryTemperature": {
+                            "title": "Akkutemperatur",
+                            "error": "Akkutemperatur kann aktuell nicht ermittelt werden.",
+                            "low": "Niedrige Temperatur. Die Akkuleistung ist begrenzt.",
+                            "fine": "Empfohlene Akkutemperatur.",
+                            "high": "Hohe Temperatur. Kühlen Sie den Akku ab, um seine Lebensdauer zu verlängern.",
+                            "extreme": "Die Akkutemperatur ist zu hoch. Beenden Sie den Ladevorgang."
+                        }
                     }
                 },
                 "energyStar": {

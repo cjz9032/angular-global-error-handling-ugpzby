@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Megjegyzés: Egyszerre csak egy elem állítható vissza.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Akkumulátorállapot",
+                        "description": "Ez a szakasz előrejelzést ad az akkumulátor élettartamáról, az akkumulátor kapacitásáról, tippeket ad az akkumulátor kapacitásának megőrzésével kapcsolatban és hasonlók.<br/>A kapacitásveszteség a napi használattól, az akkumulátor hőmérsékletétől, a töltési feszültségtől és hasonló tényezőktől függ. Az alábbi tippeket alkalmazva meghosszabbíthatja az akkumulátor élettartamát.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Várható élettartam: ",
+                            "months": "hónap"
+                        },
+                        "batteryCapacity": {
+                            "title": "Akkumulátor kapacitása",
+                            "fullChargeCapacity": "Teljes töltési kapacitás: ",
+                            "originalDesignCapacity": "Eredeti névleges kapacitás: ",
+                            "toolTip": "Az akkumulátor teljes töltési kapacitása mindennapos használat mellett csökken."
+                        },
+                        "batteryTemperature": {
+                            "title": "Az akkumulátor hőmérséklete",
+                            "error": "Az akkumulátor hőmérséklete jelenleg nem észlelhető.",
+                            "low": "Alacsony hőmérséklet. Az akkumulátor teljesítménye korlátozott.",
+                            "fine": "Az akkumulátor ajánlott hőmérséklete.",
+                            "high": "Magas hőmérséklet. Hűtse le az akkumulátort az élettartamának meghosszabbításához.",
+                            "extreme": "Az akkumulátor hőmérséklete túl magas. Kérjük, állítsa le."
+                        }
                     }
                 },
                 "energyStar": {

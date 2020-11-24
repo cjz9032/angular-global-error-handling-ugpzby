@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#1AEBFF;}
+	.st2{fill:#FFFFFF;stroke:#000000;stroke-width:1.0014;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st6{fill:#F02922;}
+	.st7{stroke:#FFFFFF;stroke-width:1.0014;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#FFFFFF;stroke-width:1.5;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st10{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st11{fill:none;}
+	.st12{fill:#34495E;}
+	.st13{fill:none;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;}
+	.st14{fill-rule:evenodd;clip-rule:evenodd;fill:#4A81FD;}
+	.st15{fill:#4A81FD;}
+	.st16{fill:none;stroke:#4A81FD;stroke-miterlimit:10;}
+	.st17{clip-path:url(#SVGID_2_);}
+	.st18{clip-path:url(#SVGID_4_);}
+	.st19{fill:#37006E;}
+	.st20{fill:#E9EFF2;}
+	.st21{stroke:#1AEBFF;stroke-miterlimit:10;}
+	.st22{fill:none;stroke:#1AEBFF;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st23{fill:#FFFFFF;stroke:#37006E;stroke-miterlimit:10;}
+	.st24{fill:none;stroke:#37006E;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st25{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st26{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st27{stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;}
+	.st28{stroke:#000000;stroke-miterlimit:10;}
+	.st29{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}
+	.st30{clip-path:url(#SVGID_6_);}
+	.st31{clip-path:url(#SVGID_8_);}
+	.st32{fill:none;stroke:#4A81FD;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st33{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st34{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st35{clip-path:url(#SVGID_10_);}
+	.st36{clip-path:url(#SVGID_10_);fill:none;}
+	.st37{clip-path:url(#SVGID_12_);}
+	.st38{clip-path:url(#SVGID_14_);}
+	.st39{clip-path:url(#SVGID_16_);}
+	.st40{fill-rule:evenodd;clip-rule:evenodd;}
+	.st41{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-miterlimit:10;}
+	.st42{clip-path:url(#SVGID_18_);}
+	.st43{clip-path:url(#SVGID_18_);fill:none;}
+	.st44{clip-path:url(#SVGID_20_);}
+	.st45{clip-path:url(#SVGID_20_);fill:none;}
+	.st46{clip-path:url(#SVGID_22_);}
+	.st47{clip-path:url(#SVGID_24_);}
+	.st48{clip-path:url(#SVGID_26_);}
+	.st49{clip-path:url(#SVGID_28_);}
+	.st50{clip-path:url(#SVGID_30_);}
+	.st51{clip-path:url(#SVGID_30_);fill:none;}
+	.st52{clip-path:url(#SVGID_32_);}
+	.st53{fill:none;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;}
+	.st54{fill:#323231;}
+	.st55{fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;}
+	.st56{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+	.st57{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;}
+	.st58{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;}
+	.st59{fill:none;stroke:#FF0000;stroke-miterlimit:10;}
+	.st60{fill:#35595E;}
+	.st61{fill:none;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st62{fill:#F8E71C;}
+</style>
+<rect class="st11" width="50" height="50"/>
+<g>
+	<path id="路径_124_2_" d="M43.75,15h-40c-0.69,0-1.25,0.56-1.25,1.25l0,0v17.5C2.5,34.44,3.06,35,3.75,35h0h40
+		c0.69,0,1.25-0.56,1.25-1.25l0,0V30h2.5V20H45v-3.75C45,15.56,44.44,15,43.75,15L43.75,15z M43.75,12.5c2.07,0,3.75,1.68,3.75,3.75
+		v1.25h0.62c1.04,0,1.88,0.84,1.88,1.88l0,0v11.25c0,1.04-0.84,1.87-1.88,1.87H47.5v1.25c0,2.07-1.68,3.75-3.75,3.75h-40
+		C1.68,37.5,0,35.82,0,33.75v-17.5c0-2.07,1.68-3.75,3.75-3.75h0H43.75z"/>
+	<rect id="矩形_1303_2_" class="st11" width="50" height="50"/>
+	<path d="M23.12,31.88c-0.45,0-0.87-0.24-1.09-0.64l-4.97-8.95l-1.52,3.81c-0.19,0.47-0.65,0.79-1.16,0.79H8.13
+		c-0.69,0-1.25-0.56-1.25-1.25s0.56-1.25,1.25-1.25h5.4l2.19-5.46c0.18-0.45,0.6-0.75,1.08-0.78c0.49-0.02,0.94,0.22,1.17,0.64
+		l4.65,8.37l1.79-8.04c0.11-0.5,0.52-0.88,1.02-0.96c0.51-0.08,1.01,0.15,1.27,0.59l3.39,5.64h9.29c0.69,0,1.25,0.56,1.25,1.25
+		s-0.56,1.25-1.25,1.25h-10c-0.44,0-0.85-0.23-1.07-0.61l-2.14-3.56l-1.82,8.19c-0.11,0.51-0.53,0.89-1.04,0.97
+		C23.24,31.87,23.18,31.88,23.12,31.88z"/>
+</g>
+</svg>

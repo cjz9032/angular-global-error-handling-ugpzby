@@ -1,0 +1,48 @@
+<div class="battery-capacity" *ngIf="true">
+	<h5 id="battery-health-capacity-title" class="capacity-title" role="text">{{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.title' | translate }}</h5>
+	<fa-icon
+		id="battery-capacity-tooltip_right_icon"
+		class="right-icon"
+		role="img"
+		triggers="manual"
+		placement="auto"
+		[ngbTooltip]="tooltipRef"
+		#rightToolTip1="ngbTooltip"
+		autoClose="true"
+		[icon]="['far', 'question-circle']"
+		container="vtr-root"
+		tooltipClass="vtr-tooltip"
+		(click)="onRightIconClick(rightToolTip1, $event)"
+		(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
+		tabindex="0"
+		attr.aria-label="'battery health capacity tooltip, which reads:'+ {{'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate}}">
+	</fa-icon>
+	<ng-template #tooltipRef>
+		<div id="battery-health-capacity-tooltip-content" role="tooltip"
+		[innerHTML]="'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate"></div>
+	</ng-template>
+	<div class="capacity-area">
+		<svg class="capacity-indicator" id="battery-health-capacity-circle">　　　　　　　　　
+			<circle class="ground-circle" [ngClass]="circleStyle" cx="50" cy="50" r="42"/>
+			<circle cx="50" cy="50" r="49" class="thin-circle"/>
+			<circle cx="50" cy="50" r="42" [attr.stroke-dasharray]="overCircleLength + ', 264'" class="over-circle" [ngClass]="circleStyle" />
+			<circle cx="50" cy="50" r="35" class="thin-circle"/>
+		</svg>
+		<p *ngIf="!capacityError" id="battery-health-capacity-percent" role="text" class="percent-text">
+			{{ capacity + '%' }}
+		</p>
+	</div>
+	<div class="capacity-text">
+		<p class="capacity-text-bottom" id="battery-health-capacity-fullChargeCapacity" role="text">
+			{{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.fullChargeCapacity' | translate }}
+			<span *ngIf="fullChargeCapacity !== undefined; else yellowExclamation">{{ fullChargeCapacity + " Wh" }}</span>
+		</p>
+		<p class="capacity-text-bottom" id="battery-health-capacity-originalDesignCapacity" role="text">
+			{{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.originalDesignCapacity' | translate }}
+			<span *ngIf="originalDesignCapacity !== undefined;else yellowExclamation">{{ originalDesignCapacity + " Wh" }}</span>
+		</p>
+		<ng-template #yellowExclamation>
+			<vtr-ui-exclamation-point></vtr-ui-exclamation-point>
+		</ng-template>
+	</div>
+</div>

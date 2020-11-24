@@ -312,6 +312,8 @@ export enum LocalStorageKey {
 	DeviceInfo = '[DashboardLocalStorageKey] DeviceInfo',
 	// OLED power control
 	OledPowerSettings = '[LocalStorageKey] OledPowerSettings',
+	// Battery Health
+	BatteryHealth = '[LocalStorageKey] BatteryHealth',
 
 	ExternalMetricsSettings = '[LocalStorageKey] ExternalMetricsSettings',
 	DeviceCondition = '[LocalStorageKey] DeviceCondition'

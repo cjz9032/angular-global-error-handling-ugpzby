@@ -1492,6 +1492,28 @@
                         },
                         "dual_note": "注: 同時にリセットできるのは 1 つのバッテリーのみです。",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "バッテリー状態",
+                        "description": "このセクションでは、バッテリー寿命、バッテリー容量、バッテリー容量を維持するためのヒントなどに関する予測を提供します。<br/>容量の損失は、毎日の使用、バッテリーの温度、充電電圧などによって異なります。バッテリー寿命を延ばすための以下のヒントに従ってください。",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "予測駆動時間:",
+                            "months": "か月"
+                        },
+                        "batteryCapacity": {
+                            "title": "バッテリー容量",
+                            "fullChargeCapacity": "完全充電時の容量:",
+                            "originalDesignCapacity": "当初設計容量:",
+                            "toolTip": "バッテリーのフル充電容量は、毎日の使用で減少していきます。"
+                        },
+                        "batteryTemperature": {
+                            "title": "バッテリー温度",
+                            "error": "現在、バッテリーの温度は検出できません。",
+                            "low": "低温。バッテリーの性能には限界があります。",
+                            "fine": "推奨バッテリー温度。",
+                            "high": "高温。バッテリーの寿命を延ばすために冷却してください。",
+                            "extreme": "バッテリー温度が異常に高くなっています。充電を停止してください。"
+                        }
                     }
                 },
                 "energyStar": {

@@ -991,7 +991,11 @@ export class VantageShellService {
 					remainingTime: 99,
 					temperature: 32,
 					voltage: 11.222,
-					wattage: 10.57
+					wattage: 10.57,
+					batteryHealthLevel: 2,
+					batteryHealthTip: 3,
+					predictedLifeSpan: '>6',
+					lifePercent: 80
 				},
 				{
 					barCode: 'X2XP888JB2S',
@@ -1012,7 +1016,11 @@ export class VantageShellService {
 					remainingTime: 99,
 					temperature: 32,
 					voltage: 11.222,
-					wattage: 10.57
+					wattage: 10.57,
+					batteryHealthLevel: 5,
+					batteryHealthTip: 3,
+					predictedLifeSpan: '>3',
+					lifePercent: 80
 				}
 			],
 			batteryIndicatorInfo: {
@@ -1033,6 +1041,41 @@ export class VantageShellService {
 		battery.getBatteryInformation = this.getPromise(battery);
 		battery.startBatteryMonitor = this.getPromise(true);
 		battery.stopBatteryMonitor = this.getPromise(true);
+		return battery;
+	}
+
+	public getSmartBatteryInfo(): any {
+		const battery: any = {
+			barCode: 'X2XP888JB1S',
+					batteryCondition: ['Normal'],
+					batteryHealth: 0,
+					chargeStatus: 2,
+					cycleCount: 98,
+					designCapacity: 45.28,
+					designVoltage: 11.1,
+					deviceChemistry: 'Li-Polymer',
+					firmwareVersion: '0005-0232-0100-0005',
+					firstUseDate: new Date(),
+					isDlsPiCapable: false,
+					isTemporaryChargeMode: false,
+					fruPart: '01AV446',
+					fullChargeCapacity: 46.69,
+					manufactureDate: new Date(),
+					manufacturer: 'SMP',
+					remainingCapacity: 23.84,
+					remainingChargeCapacity: 0,
+					remainingPercent: 52,
+					remainingTime: 99,
+					temperature: 0,
+					voltage: 11.222,
+					wattage: 10.57,
+					isSupportSmartBatteryV2: true,
+					batteryHealthLevel: 2,
+					batteryHealthTip: 3,
+					predictedLifeSpan: 0,
+					lifePercent: 80
+		};
+		battery.getSmartBatteryInfo = this.getPromise(battery);
 		return battery;
 	}
 	/**

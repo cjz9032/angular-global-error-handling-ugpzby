@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Poznámka: Resetovat lze vždy jen jednu baterii.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Stav baterie",
+                        "description": "Tato část obsahuje předpoklady o životnosti baterie, kapacitě baterie, tipy, jak udržovat kapacitu baterie atd.<br/>Ztráta kapacity závisí na každodenním používání, teplotě baterie, nabíjecím napětí atd. Následováním tipů níže lze prodloužit životnost baterie.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Předpokládaná životnost: ",
+                            "months": "měsíců"
+                        },
+                        "batteryCapacity": {
+                            "title": "Kapacita baterie",
+                            "fullChargeCapacity": "Kapacita při plném nabití: ",
+                            "originalDesignCapacity": "Původní nominální kapacita: ",
+                            "toolTip": "Kapacita plného nabití baterie se s každodenním používáním snižuje."
+                        },
+                        "batteryTemperature": {
+                            "title": "Teplota baterie",
+                            "error": "Nyní nelze zjistit teplotu baterie.",
+                            "low": "Nízká teplota. Výkon baterie je omezený.",
+                            "fine": "Doporučená teplota baterie.",
+                            "high": "Vysoká teplota. Ochlaďte ji, abyste prodloužili životnost baterie.",
+                            "extreme": "Teplota baterie je příliš vysoká. Ukončete prosím nabíjení."
+                        }
                     }
                 },
                 "energyStar": {

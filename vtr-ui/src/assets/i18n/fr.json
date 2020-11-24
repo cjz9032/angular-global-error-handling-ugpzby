@@ -1493,6 +1493,28 @@
                         },
                         "dual_note": "Remarque : seulement une batterie à la fois peut être réinitialisée.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Etat de la batterie",
+                        "description": "Cette section fournit une prévision de la durée de vie de la batterie, la capacité de la batterie, des conseils sur la manière de maintenir la capacité de la batterie, etc.<br/>La perte de capacité dépend de l'utilisation quotidienne, de la température de la batterie, de la tension de chargement, etc. Suivez les conseils ci-dessous pour prolonger la durée de vie de la batterie.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Durée de vie prévue : ",
+                            "months": "mois"
+                        },
+                        "batteryCapacity": {
+                            "title": "Capacité de la batterie",
+                            "fullChargeCapacity": "Capacité de charge totale : ",
+                            "originalDesignCapacity": "Capacité conçue d'origine : ",
+                            "toolTip": "La capacité de pleine charge de votre batterie diminue avec l'utilisation quotidienne."
+                        },
+                        "batteryTemperature": {
+                            "title": "Température de la batterie",
+                            "error": "Impossible de détecter la température de la batterie maintenant.",
+                            "low": "Température faible. Les performances de la batterie sont limitées.",
+                            "fine": "Température de batterie recommandée.",
+                            "high": "Température élevée. Veuillez la refroidir pour prolonger la durée de vie de la batterie.",
+                            "extreme": "La température de la batterie est trop élevée. Arrêtez le chargement."
+                        }
                     }
                 },
                 "energyStar": {

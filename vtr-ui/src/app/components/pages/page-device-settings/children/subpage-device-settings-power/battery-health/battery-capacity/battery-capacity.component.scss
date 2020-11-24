@@ -1,0 +1,139 @@
+@import "src/app/app.theme.scss";
+@import "../battery-health.variables";
+@import "../battery-health.theme";
+@import "../battery-health.gaming.theme";
+@import "battery-capacity-theme.component";
+
+.battery-capacity {
+	@include flex-column-center();
+	text-align: center;
+	font-size: $body;
+	position: relative;
+}
+
+.capacity-title {
+	margin-top: $battery-title-offset-y;
+	font-weight: $battery-semi-bold;
+	font-size: $body;
+}
+
+.capacity-text-bottom {
+	margin-bottom: 0;
+}
+
+.capacity-area {
+	margin: $battery-middle-content-offset-top 0
+		$battery-capacity-area-offset-bottom;
+	height: $battery-capacity-area-offset-height;
+}
+
+.canvas-content {
+	width: $battery-capacity-canvas-offset-width;
+	height: $battery-capacity-canvas-offset-height;
+}
+
+.right-icon {
+	position: absolute;
+	top: 18px;
+	right: 20px;
+	width: 20px;
+	height: 20px;
+	font-size: $fontsize_sm;
+	color: $menu_hover;
+	cursor: pointer;
+	&:hover {
+		color: $highlight;
+	}
+}
+
+.capacity-indicator {
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+}
+.ground-circle {
+	stroke-width: 13.6;
+	stroke-dashoffset: 264;
+	fill: none;
+}
+.over-circle{
+	fill: none;
+	stroke-width: 14.2;
+	transform: rotateZ(-90deg);
+	transform-origin: 50% 50%;
+}
+@each $key, $item in $battery-capacity-circle {
+	.ground-circle.#{$key} {
+		stroke: map_get($item, ground);
+		@include high-contrast('white-on-black') {
+			stroke: #000000;
+		}
+		@include high-contrast('black-on-white') {
+			stroke: #ffffff;
+		}
+	}
+	.over-circle.#{$key} {
+		stroke: map_get($item, over);
+		@include high-contrast('white-on-black') {
+			stroke: #ffffff;
+		}
+		@include high-contrast('black-on-white') {
+			stroke: #000000;
+		}
+	}
+}
+.percent-text {
+	position: relative;
+	bottom: 60px;
+	font-size: 14px;
+	fill: #34495E;
+	font-family: "Segoe UI Bold";
+	text-anchor: middle;
+	@include high-contrast('white-on-black') {
+		fill: #ffffff;
+	}
+	@include high-contrast('black-on-white') {
+		fill: #000000;
+	}
+}
+.thin-circle {
+	stroke-dashoffset: 308;
+	fill: none;
+	stroke-width: 1;
+	@include high-contrast('white-on-black') {
+		stroke: #ffffff;
+	}
+	@include high-contrast('black-on-white') {
+		stroke: #000000;
+	}
+}
+.capacity-text {
+	margin-bottom: 20px;
+}
+::ng-deep .capacity-text svg {
+	width: 14px;
+	height: 14px;
+	stroke: #F7C809;
+	@include high-contrast('white-on-black') {
+		stroke: #ffffff;
+	}
+	@include high-contrast('black-on-white') {
+		stroke: #000000;
+	}
+}
+
+@include battery-capacity-color($smart-battery-theme);
+:host-context(.is-gaming) {
+	$color: map-get($smart-battery-gaming-theme, color);
+	@include battery-capacity-color($smart-battery-gaming-theme);
+
+	.percent-text {
+		fill: map-get($color, default);
+		@include high-contrast('white-on-black') {
+			fill: #ffffff;
+		}
+		@include high-contrast('black-on-white') {
+			fill: #000000;
+		}
+	}
+}

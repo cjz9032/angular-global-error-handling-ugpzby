@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Obs: Endast ett batteri kan återställas i taget.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Batteriets tillstånd",
+                        "description": "Detta avsnitt visar bland annat batteriets beräknade livslängd och kapacitet och tips på hur du bibehåller batterikapaciteten.<br/>Försämrad kapacitet beror på faktorer som daglig användning, batteritemperatur, laddningsspänning och annat. Följ tipsen nedan för att förlänga batteriets livslängd.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Beräknad livslängd: ",
+                            "months": "månader"
+                        },
+                        "batteryCapacity": {
+                            "title": "Batterikapacitet",
+                            "fullChargeCapacity": "Fullständig laddningskapacitet: ",
+                            "originalDesignCapacity": "Ursprunglig definierad kapacitet: ",
+                            "toolTip": "Batteriets fullständiga laddningskapacitet minskar med daglig användning."
+                        },
+                        "batteryTemperature": {
+                            "title": "Batteritemperatur",
+                            "error": "Det går inte att avläsa batteritemperaturen just nu.",
+                            "low": "Låg temperatur. Batteriets prestanda är begränsad.",
+                            "fine": "Rekommenderad batteritemperatur.",
+                            "high": "Hög temperatur. Låt batteriet svalna för att förlänga batteriets livslängd.",
+                            "extreme": "Batteritemperaturen är för hög. Avbryt laddningen."
+                        }
                     }
                 },
                 "energyStar": {

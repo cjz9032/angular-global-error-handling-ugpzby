@@ -1381,6 +1381,28 @@
                         },
                         "dual_note": "Opomba: hkrati lahko ponastavite samo eno baterijo.",
                         "percentNote": "Note: During the process, the battery percentage might fluctuate."
+                    },
+                    "batteryHealth": {
+                        "title": "Zdravje baterije",
+                        "description": "Ta razdelek vsebuje napovedi glede življenjske dobe baterije, zmogljivosti baterije, nasvete o ohranjanju zmogljivosti baterije itd.<br/>Izguba zmogljivosti je odvisna od dnevne uporabe, temperature baterije, polnilne napetosti itd. Upoštevajte spodnje nasvete za podaljšanje življenjske dobe baterije.",
+                        "batteryLifeSpan": {
+                            "lifeSpan": "Predvidena življenjska doba: ",
+                            "months": "mesecev"
+                        },
+                        "batteryCapacity": {
+                            "title": "Zmogljivost baterije",
+                            "fullChargeCapacity": "Polna zmogljivost polnjenja: ",
+                            "originalDesignCapacity": "Izvirno zasnovana zmogljivost: ",
+                            "toolTip": "Zmogljivost baterije se zmanjšuje z vsakodnevno uporabo."
+                        },
+                        "batteryTemperature": {
+                            "title": "Temperatura baterije",
+                            "error": "Temperature baterije trenutno ni mogoče zaznati.",
+                            "low": "Nizka temperatura. Delovanje baterije je omejeno.",
+                            "fine": "Priporočena temperatura baterije.",
+                            "high": "Visoka temperatura. Ohladite baterijo, da podaljšate njeno življenjsko dobo.",
+                            "extreme": "Temperatura baterije je previsoka. Prekinite polnjenje."
+                        }
                     }
                 },
                 "energyStar": {
