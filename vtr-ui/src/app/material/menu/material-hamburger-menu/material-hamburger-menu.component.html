@@ -63,12 +63,12 @@
 							[metricsEvent]="subitem.metricsEvent"
 							[metricsParent]="subitem.metricsParent"
 							[metricsItem]="subitem.metricsItem"
-							[ngClass]="{'font-weight-bold text-uppercase high-contrast-color-reversal': hasSecondaryMenu(item), 'disable': hasSecondaryMenu(item)}"
+							[ngClass]="item.hasSecondaryMenu ? 'font-weight-bold text-uppercase high-contrast-color-reversal disable' : 'text-lowercase'"
 							target="_blank"
 							rel="noopener"
 							href="javascript:void(0)"
 							(click)="openExternalLink(subitem.path)"
-							[disabled]="hasSecondaryMenu(item)">
+							[disabled]="item.hasSecondaryMenu">
 							<span class="d-block overflow-hidden w-auto menu-item-text" [innerHTML]="subitem.label | translate"></span>
 						</button>
 						<button mat-menu-item
@@ -82,12 +82,12 @@
 							[metricsEvent]="subitem.metricsEvent"
 							[metricsParent]="subitem.metricsParent"
 							[metricsItem]="subitem.metricsItem"
-							[ngClass]="{'font-weight-bold text-uppercase high-contrast-color-reversal': hasSecondaryMenu(item), 'disable': hasSecondaryMenu(item)}"
+							[ngClass]="item.hasSecondaryMenu ? 'font-weight-bold text-uppercase high-contrast-color-reversal disable' : 'text-lowercase'"
 							routerLink="/{{item.path}}/{{subitem.path}}"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path, subitem.path)]"
-							[disabled]="hasSecondaryMenu(item)">
+							[disabled]="item.hasSecondaryMenu">
 							<span class="d-block overflow-hidden w-auto menu-item-text" [innerHTML]="subitem.label | translate"></span>
 						</button>
 						<button mat-menu-item
@@ -101,20 +101,21 @@
 							[metricsEvent]="subitem.metricsEvent"
 							[metricsParent]="subitem.metricsParent"
 							[metricsItem]="subitem.metricsItem"
-							[ngClass]="{'font-weight-bold text-uppercase high-contrast-color-reversal': hasSecondaryMenu(item), 'disable': hasSecondaryMenu(item)}"
+							[ngClass]="item.hasSecondaryMenu ? 'font-weight-bold text-uppercase high-contrast-color-reversal disable' : 'text-lowercase'"
 							routerLink="/{{subitem.path}}"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(subitem.path)]"
-							[disabled]="hasSecondaryMenu(item)">
+							[disabled]="item.hasSecondaryMenu">
 							<span class="d-block overflow-hidden w-auto menu-item-text" [innerHTML]="subitem.label | translate"></span>
 						</button>
-						<section *ngIf="subitem && !subitem.hide && hasSecondaryMenu(item)">
+						<section *ngIf="subitem && !subitem.hide && item.hasSecondaryMenu">
 							<ng-container *ngFor="let secondarySubitem of subitem.subitems; let ii=index">
 								<button mat-menu-item
 									*ngIf="secondarySubitem && !secondarySubitem.hide && secondarySubitem.externallink"
 									id="menu-main-nav-lnk-dropdown-menu-external-{{item.id}}-{{subitem.id}}-{{ii}}"
 									class="d-inline-block pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+									[ngClass]="{'text-lowercase': item.id !== 'security'}"
 									attr.aria-label="{{secondarySubitem.label | translate }}"
 									routerLinkActive="active"
 									[routerLinkActiveOptions]="secondarySubitem.routerLinkActiveOptions"
@@ -132,6 +133,7 @@
 									*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink && !secondarySubitem.singleLayerRouting"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{subitem.id}}-{{ii}}"
 									class="d-inline-block pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+									[ngClass]="{'text-lowercase': item.id !== 'security'}"
 									attr.aria-label="{{secondarySubitem.label| translate}}"
 									routerLinkActive="active"
 									[routerLinkActiveOptions]="secondarySubitem.routerLinkActiveOptions"
@@ -150,6 +152,7 @@
 									*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink && secondarySubitem.singleLayerRouting"
 									id="menu-main-nav-lnk-dropdown-menu-{{item.id}}-{{subitem.id}}-{{ii}}"
 									class="d-inline-block pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+									[ngClass]="{'text-lowercase': item.id !== 'security'}"
 									attr.aria-label="{{secondarySubitem.label| translate}}"
 									routerLinkActive="active"
 									[routerLinkActiveOptions]="secondarySubitem.routerLinkActiveOptions"
@@ -180,7 +183,7 @@
 					<button mat-menu-item
 						*ngIf="appsForYouService.showLmaMenu()"
 						id="menu-main-lnk-open-lma"
-						class="position-relative pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem link-lma"
+						class="position-relative pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem link-lma"
 						attr.aria-label="menu-main-lnk-open-lma"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"
@@ -203,7 +206,7 @@
 					<button mat-menu-item
 						*ngIf="appsForYouService.showAdobeMenu()"
 						id="menu-main-lnk-open-adobe"
-						class="position-relative pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem link-adobe"
+						class="position-relative pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem link-adobe"
 						attr.aria-label="menu-main-lnk-open-adobe"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"
@@ -226,7 +229,7 @@
 					<button mat-menu-item
 						*ngIf="commonService.isOnline && appsForYouService.showDccMenu()"
 						id="menu-main-lnk-open-dcc"
-						class="position-relative pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem link-dcc"
+						class="position-relative pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem link-dcc"
 						attr.aria-label="menu-main-lnk-open-dcc"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"
@@ -246,7 +249,7 @@
 					<button mat-menu-item
 						*ngIf="commonService.isOnline && !deviceService.isSMode && modernPreloadService.IsEntitled"
 						id="menu-main-lnk-open-modern-preload"
-						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem"
 						attr.aria-label="menu-main-lnk-open-modern-preload"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"
@@ -260,7 +263,7 @@
 					</button>
 					<button mat-menu-item
 						id="menu-main-lnk-open-preference"
-						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem"
 						attr.aria-label="menu-main-lnk-open-preference"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"
@@ -278,7 +281,7 @@
 					<button mat-menu-item
 						*ngIf="commonService.isOnline"
 						id="menu-main-lnk-open-feedback"
-						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem"
 						attr.aria-label="menu-main-lnk-open-feedback"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"
@@ -293,7 +296,7 @@
 					<button mat-menu-item
 						*ngIf="appsForYouService.lenovoSurvey.display"
 						id="menu-main-lnk-open-lenovo-survey"
-						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem"
 						attr.aria-label="menu-main-lnk-open-lenovo-survey"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"
@@ -313,7 +316,7 @@
 					<button mat-menu-item
 						*ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 						id="menu-main-lnk-open-lenovoid-login"
-						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem"
 						attr.aria-label="menu-main-lnk-open-lenovoid-login"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"
@@ -328,7 +331,7 @@
 					<button mat-menu-item
 						*ngIf="!deviceService.isArm && !userService.auth && userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 						id="menu-main-lnk-open-lenovoid-unlock"
-						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem"
 						attr.aria-label="menu-main-lnk-open-lenovoid-unlock"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"
@@ -343,7 +346,7 @@
 					<button mat-menu-item
 						*ngIf="!deviceService.isArm && userService.auth && commonService.isOnline && userService.isLenovoIdSupported()"
 						id="menu-main-lnk-user-logout"
-						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto menu-subitem"
+						class="pl-5 py-2 border-radius-0 font-size-xs outline-none menu-item menu-item-color h-auto text-lowercase menu-subitem"
 						attr.aria-label="menu-main-lnk-user-logout"
 						vtrMetrics
 						[metricsEvent]="item.metricsEvent"

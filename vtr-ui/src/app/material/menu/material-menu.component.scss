@@ -212,6 +212,9 @@
 			min-height: 2.2rem;
 			line-height: 1;
 			outline: none !important;
+			::first-letter {
+				text-transform: uppercase !important;
+			}
 			.user-menu-item-text {
 				word-break: normal;
 				white-space: pre-wrap;

@@ -85,6 +85,9 @@
 			}
 			.menu-subitem {
 				min-height: 1.8rem;
+				&.text-lowercase::first-letter {
+					text-transform: uppercase !important;
+				}
 				.menu-item-text {
 					word-break: normal;
 					white-space: pre-wrap;

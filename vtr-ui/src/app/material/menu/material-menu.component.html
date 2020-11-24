@@ -68,7 +68,7 @@
 			</button>
 			<vtr-material-hamburger-menu
 				#hamburgerDropdownMenu="materialHamburgerMenuComponent"
-				[items]="items"
+				[menuItems]="items"
 				[currentRoutePath]="currentRoutePath">
 			</vtr-material-hamburger-menu>
 		</ng-container>
@@ -178,7 +178,7 @@
 							<button mat-menu-item
 								*ngIf="appsForYouService.showLmaMenu()"
 								id="menu-main-lnk-open-lma"
-								class="position-relative mt-0 py-2 border-radius-0 h-auto user-menu-item link-lma"
+								class="position-relative mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item link-lma"
 								attr.aria-label="menu-main-lnk-open-lma"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -202,7 +202,7 @@
 							<button mat-menu-item
 								*ngIf="appsForYouService.showAdobeMenu()"
 								id="menu-main-lnk-open-adobe"
-								class="position-relative mt-0 py-2 border-radius-0 h-auto user-menu-item link-adobe"
+								class="position-relative mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item link-adobe"
 								attr.aria-label="menu-main-lnk-open-adobe"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -226,7 +226,7 @@
 							<button mat-menu-item
 								*ngIf="commonService.isOnline && appsForYouService.showDccMenu()"
 								id="menu-main-lnk-open-dcc"
-								class="position-relative mt-0 py-2 border-radius-0 h-auto user-menu-item link-dcc"
+								class="position-relative mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item link-dcc"
 								attr.aria-label="menu-main-lnk-open-dcc"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -246,7 +246,7 @@
 							<button mat-menu-item
 								*ngIf="commonService.isOnline && !deviceService.isSMode && modernPreloadService.IsEntitled"
 								id="menu-main-lnk-open-modern-preload"
-								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item"
 								vtrMetrics
 								attr.aria-label="menu-main-lnk-open-modern-preload"
 								[metricsEvent]="item.metricsEvent"
@@ -260,7 +260,7 @@
 							</button>
 							<button mat-menu-item
 								id="menu-main-lnk-open-preference"
-								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item"
 								attr.aria-label="menu-main-lnk-open-preference"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -278,7 +278,7 @@
 							<button mat-menu-item
 								*ngIf="commonService.isOnline"
 								id="menu-main-lnk-open-feedback"
-								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item"
 								attr.aria-label="menu-main-lnk-open-feedback"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -293,7 +293,7 @@
 							<button mat-menu-item
 								*ngIf="appsForYouService.lenovoSurvey.display"
 								id="menu-main-lnk-open-lenovo-survey"
-								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item"
 								attr.aria-label="menu-main-lnk-open-lenovo-survey"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -313,7 +313,7 @@
 							<button mat-menu-item
 								*ngIf="!deviceService.isArm && !userService.auth && !userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								id="menu-main-lnk-open-lenovoid-login"
-								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item"
 								attr.aria-label="menu-main-lnk-open-lenovoid-login"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -328,7 +328,7 @@
 							<button mat-menu-item
 								*ngIf="!deviceService.isArm && !userService.auth && userService.starter && commonService.isOnline && userService.isLenovoIdSupported()"
 								id="menu-main-lnk-open-lenovoid-unlock"
-								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item"
 								attr.aria-label="menu-main-lnk-open-lenovoid-unlock"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
@@ -343,7 +343,7 @@
 							<button mat-menu-item
 								*ngIf="!deviceService.isArm && userService.auth && commonService.isOnline && userService.isLenovoIdSupported()"
 								id="menu-main-lnk-user-logout"
-								class="mt-0 py-2 border-radius-0 h-auto user-menu-item"
+								class="mt-0 py-2 border-radius-0 h-auto text-lowercase user-menu-item"
 								attr.aria-label="menu-main-lnk-user-logout"
 								vtrMetrics
 								[metricsEvent]="item.metricsEvent"
