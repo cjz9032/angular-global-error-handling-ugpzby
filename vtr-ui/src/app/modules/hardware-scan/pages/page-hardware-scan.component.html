@@ -40,6 +40,14 @@
 				</div>
 			</div>
 
+			<!-- Snapshot Widget -->
+			<div class="row">
+				<div class="col col-12 mb-40">
+					<vtr-widget-snapshot [itemParent]="'HardwareScan'">
+					</vtr-widget-snapshot>
+				</div>
+			</div>
+
 			<div class="row">
 				<div class="col col-12 cont mb-40"
 					*ngIf="!isRecoverExecuting()">
@@ -59,17 +67,6 @@
 						[widgetId]="'hwscan-previous-results-widget'"
 						*ngIf="!isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult">
 					</vtr-widget-hardware-scan-status>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col col-12 mb-40">
-					<vtr-widget-snapshot
-						[widgetId]="'snapshot-widget'"
-						[title]="'snapshot.title' | translate"
-						[description]="'snapshot.title' | translate"
-						[tooltipText]="'snapshot.title' | translate">
-					</vtr-widget-snapshot>
 				</div>
 			</div>
 		</div>
