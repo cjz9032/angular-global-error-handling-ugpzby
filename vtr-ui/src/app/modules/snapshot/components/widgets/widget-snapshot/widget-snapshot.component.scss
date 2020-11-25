@@ -2,19 +2,39 @@
 
 .vtr-widget-snapshot {
 	border-radius: $border_radius;
-	background-color: $light;
+	background-color: $shade_blue;
 	box-shadow: $drop_shadow;
 	padding: 2.4rem;
 	@include high-contrast-border;
 
-	.title {
-		color: $main_dark;
-		font-size: $fontsize_xl;
-		font-weight: $weight_light;
+	.information {
+		display: inline-block;
+
+		.title {
+			color: $light;
+			font-size: $fontsize_xl;
+			font-weight: $weight_light;
+			word-wrap: break-word;
+			text-transform: capitalize;
+		}
+
+		.description {
+			color: $light;
+			font-size: $fontsize_xs;
+			font-weight: $weight_light;
+			word-wrap: break-word;
+		}
 	}
 }
+
 
 .button-row {
 	text-align: center;
 	padding: 1.5rem 0 0 0;
+
+	::ng-deep .vtr-ui-button {
+		.button-box {
+			padding-left: 0;
+		}
+	}
 }

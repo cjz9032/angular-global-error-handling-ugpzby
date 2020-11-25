@@ -1,9 +1,10 @@
-<div id="{{ widgetId }}" class="vtr-widget-snapshot">
+<div id="snapshot-widget" class="vtr-widget-snapshot">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="row">
-					<h2 id="{{ widgetId }}-title" role="heading" class="title">{{title}}</h2>
+				<div class="row information">
+					<h2 id="snapshot-title" role="heading" class="title">{{'snapshot.title' | translate}}</h2>
+					<p id="snapshot-description" role="text" class="description">{{'snapshot.description' | translate}}</p>
 				</div>
 			</div>
 		</div>
@@ -11,13 +12,13 @@
 			<div class="col">
 				<div class="button-row">
 					<vtr-ui-button
-						linkId="{{ widgetId }}-btn"
-						metricsParent="HardwareScan"
-						metricsItem="HardwareScan.Snapshot"
+						linkId="snapshot-btn"
+						[metricsParent]="itemParent"
+						[metricsItem]="itemParent + '.Snapshot'"
 						[isFullWidth]="true"
-						(onClick)="onSnapshotInfo()"
-						[label]="'snapshot.title' | translate"
-						[tooltipText]="'snapshot.title' | translate">
+						[label]="'snapshot.snapshotWidgetButton' | translate"
+						(onClick)="navigateToSnapshotPage()"
+						[tooltipText]="'snapshot.description' | translate">
 					</vtr-ui-button>
 				</div>
 			</div>
