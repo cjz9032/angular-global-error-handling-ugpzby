@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.15](https://bitbucket.tc.lenovo.com///compare/v1.9.14...v1.9.15) (2020-11-25)
+
+
+### Features
+
+* **snackbar:** more clearer debug text for performance ([bea0187](https://bitbucket.tc.lenovo.com///commit/bea01879fb93fcdad4ab5c99fd0dc0448bb2a5d1))
+
 ### [1.9.14](https://bitbucket.tc.lenovo.com///compare/v1.9.13...v1.9.14) (2020-11-24)
 
 
