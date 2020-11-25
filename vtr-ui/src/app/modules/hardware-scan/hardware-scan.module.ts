@@ -52,8 +52,6 @@ import { UiTestResultIconComponent } from './components/dashboard/ui-test-result
 import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
 import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
 import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-question-mark-button/ui-question-mark-button.component';
-import { SnapshotHeaderComponent } from '../snapshot/components/header/snapshot-header.component';
-import { WidgetSnapshotComponent } from '../snapshot/components/widgets/widget-snapshot/widget-snapshot.component';
 
 @NgModule({
 	declarations: [
@@ -86,7 +84,6 @@ import { WidgetSnapshotComponent } from '../snapshot/components/widgets/widget-s
 		UiHyperlinkButtonComponent,
 		ModalExportLogComponent,
 		UiQuestionMarkButtonComponent,
-		SnapshotHeaderComponent,
 		UiHyperlinkButtonComponent
 	],
 	imports: [
