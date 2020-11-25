@@ -76,6 +76,10 @@ const routes: Routes = [
 		loadChildren: () => import('./hardware-scan/hardware-scan.module').then(m => m.HardwareScanModule)
 	},
 	{
+		path: 'snapshot',
+		loadChildren: () => import('./snapshot/snapshot.module').then(m => m.SnapshotModule)
+	},
+	{
 		path: 'support/smart-performance',
 		loadChildren: () => import('./smart-performance/smart-performance.module').then(m => m.SmartPerformanceModule)
 	},

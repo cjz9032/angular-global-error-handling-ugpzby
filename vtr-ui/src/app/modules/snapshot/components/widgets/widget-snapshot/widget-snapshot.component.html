@@ -1,0 +1,26 @@
+<div id="{{ widgetId }}" class="vtr-widget-snapshot">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div class="row">
+					<h2 id="{{ widgetId }}-title" role="heading" class="title">{{title}}</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="button-row">
+					<vtr-ui-button
+						linkId="{{ widgetId }}-btn"
+						metricsParent="HardwareScan"
+						metricsItem="HardwareScan.Snapshot"
+						[isFullWidth]="true"
+						(onClick)="onSnapshotInfo()"
+						[label]="'snapshot.title' | translate"
+						[tooltipText]="'snapshot.title' | translate">
+					</vtr-ui-button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

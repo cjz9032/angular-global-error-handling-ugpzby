@@ -64,7 +64,8 @@ export class VantageShellService {
 				Phoenix.Features.UpeAgent,
 				Phoenix.Features.SmartPerformance,
 				Phoenix.Features.SystemEvent,
-				Phoenix.Features.ContentLocalCache
+				Phoenix.Features.ContentLocalCache,
+				Phoenix.Features.Snapshot
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -950,6 +951,15 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	// ==================== Start Snapshot
+	public getSnapshot(): any {
+		if (this.phoenix) {
+			return this.phoenix.snapshot;
+		}
+		return undefined;
+	}
+	// ==================== End Snapshot
 
 	getTopRowFunctionsIdeapad(): any {
 		if (this.phoenix) {

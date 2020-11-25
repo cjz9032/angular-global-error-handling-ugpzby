@@ -1,0 +1,20 @@
+@import "../../../../../app.theme.scss";
+
+.vtr-widget-snapshot {
+	border-radius: $border_radius;
+	background-color: $light;
+	box-shadow: $drop_shadow;
+	padding: 2.4rem;
+	@include high-contrast-border;
+
+	.title {
+		color: $main_dark;
+		font-size: $fontsize_xl;
+		font-weight: $weight_light;
+	}
+}
+
+.button-row {
+	text-align: center;
+	padding: 1.5rem 0 0 0;
+}

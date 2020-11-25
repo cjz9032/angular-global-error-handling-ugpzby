@@ -13,6 +13,8 @@ import { PreviousResultService } from './previous-result.service';
 import { ModalCancelComponent } from '../components/modal/modal-cancel/modal-cancel.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
+import { ModalWaitComponent } from '../components/modal/modal-wait/modal-wait.component';
+import { SnapshotService } from 'src/app/modules/snapshot/services/snapshot.service';
 
 const RootParent = 'HardwareScan';
 const CancelButton = 'Cancel';
@@ -816,5 +818,9 @@ export class ScanExecutionService {
 		if (this.metrics) {
 			this.metrics.sendAsync(data);
 		}
+	}
+
+	public isRefreshingModules() {
+		return this.hardwareScanService.isRefreshingModules();
 	}
 }
