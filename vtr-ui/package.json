@@ -108,6 +108,7 @@
     "karma-jasmine-html-reporter": "^1.5.4",
     "karma-junit-reporter": "^2.0.1",
     "ng-packagr": "^10.1.2",
+    "prettier": "^2.2.0",
     "protractor": "~7.0.0",
     "recursive-readdir": "^2.2.2",
     "simple-git": "^2.21.0",
