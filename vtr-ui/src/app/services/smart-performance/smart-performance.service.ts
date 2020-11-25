@@ -154,17 +154,22 @@ export class SmartPerformanceService {
 			throw new Error(error.message);
 		}
 	}
-	
-	unregisterScanSchedule(payload: any): Promise<any> {
+
+	async unregisterScanSchedule(scantype) {
+		let res;
 		try {
+			const payload = { scantype };
+			this.logger.info('app.component.unregisterScheduleScan', payload);
 			if (this.isShellAvailable) {
-				return this.shellSmartPerformance.unregisterScheduleScan(payload);
+				res = await this.shellSmartPerformance.unregisterScheduleScan(payload);
 			}
-			return undefined;
+			this.logger.info('app.component.unregisterScheduleScan.then', res);
 		} catch (error) {
-			throw new Error(error.message);
+			this.logger.error('app.component.unregisterScheduleScan.then', error);
 		}
+		return res;
 	}
+
 	getNextScanRunTime(payload: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
@@ -175,6 +180,7 @@ export class SmartPerformanceService {
 			throw new Error(error.message);
 		}
 	}
+
 	getScheduleScanStatus(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {

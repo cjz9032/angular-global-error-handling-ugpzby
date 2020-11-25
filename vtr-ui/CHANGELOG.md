@@ -81,6 +81,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.9.0](https://bitbucket.tc.lenovo.com///compare/v1.8.41...v1.9.0) (2020-11-05)
 
+### [1.8.45](https://bitbucket.tc.lenovo.com///compare/v1.8.44...v1.8.45) (2020-11-06)
+
+### [1.8.44](https://bitbucket.tc.lenovo.com///compare/v1.8.43...v1.8.44) (2020-11-06)
+
+### [1.8.43](https://bitbucket.tc.lenovo.com///compare/v1.8.42...v1.8.43) (2020-11-06)
+
+### [1.8.42](https://bitbucket.tc.lenovo.com///compare/v1.8.41...v1.8.42) (2020-11-05)
+
 ### [1.8.41](https://bitbucket.tc.lenovo.com///compare/v1.8.40...v1.8.41) (2020-11-04)
 
 

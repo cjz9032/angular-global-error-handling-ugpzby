@@ -205,7 +205,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			day: this.currentDate.getDate()
 		};
 	}
-	
+
 	getScanHistoryWithTime() {
 		// Object historyScanResults Copy to object historyScanResultsDateTime
 		this.historyScanResultsDateTime = JSON.parse(JSON.stringify(this.historyScanResults));

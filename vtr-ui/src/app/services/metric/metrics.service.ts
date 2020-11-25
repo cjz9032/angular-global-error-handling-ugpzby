@@ -159,11 +159,7 @@ export class MetricService {
 	// This interface should only be used to send metrics that regardless of privacy option
 	public sendMetricsForcibly(data: any) {
 		if (this.metricsClient && this.metricsClient.sendAsync) {
-			this.metricsClient.sendAsyncEx(data,
-				{
-					forced: true
-				}
-			);
+			this.metricsClient.sendAsyncEx(data, { forced: true });
 		}
 	}
 
@@ -428,12 +424,12 @@ export class MetricService {
 		this.pageScollEvent(htmlElm || this.pageContainer.nativeElement);
 	}
 
-	public getExternalMetricsSettings(): Promise <boolean> {
+	public getExternalMetricsSettings(): Promise<boolean> {
 		if (this.metricsClient.getExternalMetricsSettings) {
 			return this.metricsClient.getExternalMetricsSettings().then((result) => {
 				if (result &&
 					((result.deviceMetricsSettings && this.toLower(result.deviceMetricsSettings) === 'enabled') ||
-					(result.freMetricsSettings && this.toLower(result.freMetricsSettings) === 'enabled'))) {
+						(result.freMetricsSettings && this.toLower(result.freMetricsSettings) === 'enabled'))) {
 					this.metricsClient.metricsEnabled = true;
 					this.externalAppMetricsState = true;
 					this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
@@ -441,9 +437,9 @@ export class MetricService {
 				}
 				return false;
 			})
-			.catch((error) => {
-				return false;
-			});
+				.catch((error) => {
+					return false;
+				});
 		}
 
 		return Promise.resolve(false);
@@ -488,8 +484,41 @@ export class MetricService {
 			]
 		};
 		const res = await this.metricsClient.sendMcafeeStatisticDownload(settingData);
-		if (!res){
+		if (!res) {
 			this.http.post('https://chifsr.lenovomm.com/PCJson', `json=${JSON.stringify(settingData)}`).subscribe();
 		}
+	}
+
+	async sendLenovoSurveyReport(customData: any) {
+		const deviceInfo = {
+			d_os: 'NA',
+			d_osver: 'NA',
+			// d_lang: 'NA', -- auto supply
+			// d_geo: localInfo.GEO, -- auto supply
+			d_brand: 'NA',
+			d_subbrand: 'NA',
+			d_fam: 'NA',
+			// d_mtm: localInfo.MTM, -- auto supply
+			// d_id: '', -- auto supply
+			// d_time: currentDate -- auto supply
+		};
+		const userInfo = {
+			u_uid: 'NA',
+			u_lid: 'NA',
+		};
+		const appInfo = {};
+		const metricEvent = {
+			e_name: 'LenovoSurvey',
+			// e_time: colectionTime, -- auto supply
+			e_data: customData
+		};
+		const fullPayload = {
+			app_info: appInfo,
+			device_info: deviceInfo,
+			user_info: userInfo,
+			events: [metricEvent]
+		};
+
+		this.metricsClient.autoFillAndSend(fullPayload, { forced: true, autoFill: true });
 	}
 }

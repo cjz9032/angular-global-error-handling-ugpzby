@@ -210,16 +210,6 @@ describe('SubpageScheduleScanComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should delete record from task scheduler', () => {
-		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
-		const res: any = { state: true };
-		component.scanToggleValue = true;
-		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		const spy = spyOn(smartPerformanceService, 'unregisterScanSchedule').and.returnValue(res);
-		component.unregisterScheduleScan(scantype);
-		expect(spy).toHaveBeenCalled();
-	});
-
 	it('should call setEnableScanStatus - switch is enabled', async () => {
 		localCacheService = TestBed.inject(LocalCacheService);
 		const event = { switchValue: true };

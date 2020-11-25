@@ -95,6 +95,7 @@
 							id="{{containerCardId+'_link'}}"
 							metricsItemCategory="corner"
 							metricsEvent="docClick"
+							[metricsParam]="item.DataSource"
 							[metricsItemPosition]="sideFlag + order"
 							[metricsItemID]="item.Id"
 							target="_blank"
@@ -170,6 +171,7 @@
 						vtrMetrics
 						id="{{containerCardId+'_article'}}"
 						metricsEvent="docClick"
+						[metricsParam]="item.DataSource"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="item.Id"
 						target="_blank"
@@ -214,6 +216,7 @@
 				vtrMetrics
 				id="{{containerCardId+'_card_article'}}"
 				metricsEvent="docClick"
+				[metricsParam]="item.DataSource"
 				[metricsItemPosition]="sideFlag + order"
 				[metricsItemID]="item.Id"
 				target="_blank"
@@ -280,6 +283,7 @@
 				vtrMetrics
 				id="{{containerCardId+'_card_article'}}"
 				metricsEvent="docClick"
+				[metricsParam]="item.DataSource"
 				[metricsItemPosition]="sideFlag + order"
 				[metricsItemID]="item.Id"
 				target="_blank"
@@ -352,6 +356,7 @@
 						vtrMetrics
 						metricsEvent="ArticleClick"
 						metricsItemCategory="corner-article"
+						[metricsParam]="item.DataSource"
 						[metricsItemPosition]="sideFlag + order"
 						[metricsItemID]="item.Id"
 						[style.background-image]="'url(' + item.FeatureImage + ')'"
@@ -417,6 +422,7 @@
 					id="{{containerCardId+'_side_article'}}"
 					metricsEvent="docClick"
 					[metricsItemID]="item.Id"
+					[metricsParam]="item.DataSource"
 					[metricsItemPosition]="sideFlag + order"
 					metricsItemCategory="partnerarticle"
 					[style.background-image]="'url(' + item.FeatureImage + ')'">

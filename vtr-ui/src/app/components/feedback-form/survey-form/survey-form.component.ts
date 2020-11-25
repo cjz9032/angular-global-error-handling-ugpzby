@@ -176,7 +176,6 @@ export class SurveyFormComponent implements OnInit {
 
 	reportResult(): void {
 		const data = {
-			ItemType: 'LenovoSurvey',
 			id: this.surveyId,
 			version: '1.0.0.0',
 			qa: {}
@@ -192,7 +191,7 @@ export class SurveyFormComponent implements OnInit {
 			});
 		});
 
-		this.metricsService.sendMetricsForcibly(data);
+		this.metricsService.sendLenovoSurveyReport(data);
 	}
 
 	@HostListener('window: focus')

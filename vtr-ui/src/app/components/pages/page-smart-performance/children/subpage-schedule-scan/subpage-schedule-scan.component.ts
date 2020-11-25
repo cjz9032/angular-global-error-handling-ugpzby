@@ -60,10 +60,10 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 	dates: any = ['1', '2', '3', '4', '5', '6', '7',
 		'8', '9', '10', '11', '12', '13', '14', '15',
 		'16', '17', '18', '19', '20', '21', '22', '23',
-		'24', '25', '26', '27', '28', ];
+		'24', '25', '26', '27', '28',];
 	hours: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 	mins: any = ['00', '05', '10', '15', '20', '25', '30',
-		'35', '40', '45', '50', '55', ];
+		'35', '40', '45', '50', '55',];
 	amPm: Array<string> = ['smartPerformance.scanSettings.am', 'smartPerformance.scanSettings.pm'];
 	isDaySelectionEnable: boolean;
 	scanToggleValue = true;
@@ -333,18 +333,10 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 
 	// deletes records from task scheduler
 	async unregisterScheduleScan(scantype) {
-		const payload = { scantype };
-		this.logger.info('ui-smart-performance.unregisterScheduleScan', JSON.stringify(payload));
-
-		try {
-			const res: any = await this.smartPerformanceService.unregisterScanSchedule(payload);
-			// when unregisterScheduleScan is successful and scheduledScan is enabled, sending request to set schedule scan
-			if (res.state && this.scanToggleValue) {
-				this.scheduleScan(this.requestScanData);
-			}
-
-		} catch (err) {
-			this.logger.error('ui-smart-performance.unregisterScheduleScan.then', err);
+		const res: any = await this.smartPerformanceService.unregisterScanSchedule(scantype);
+		// when unregisterScheduleScan is successful and scheduledScan is enabled, sending request to set schedule scan
+		if (res.state && this.scanToggleValue) {
+			this.scheduleScan(this.requestScanData);
 		}
 	}
 
