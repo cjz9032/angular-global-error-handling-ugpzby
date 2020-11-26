@@ -1,0 +1,34 @@
+<vtr-page-layout [title]="'snapshot.title' | translate"
+	[textId]="'snapshot'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'snapshot-back-btn'">
+
+	<left-content>
+		<div class="container-fluid">
+			<router-outlet></router-outlet>
+		</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+
+			<!-- Download Professional tool Card -->
+			<div class="row">
+				<div class="col col-12 mb-40">
+					<vtr-container-card
+						order="1"
+						sideFlag='r'
+						[containerCardId]="'snapshot-support-card'"
+						[item]="hardwareScanSupportCard"
+						[type]="'subpage-partner-corner'"
+						[ratio]="2">
+					</vtr-container-card>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>
+
