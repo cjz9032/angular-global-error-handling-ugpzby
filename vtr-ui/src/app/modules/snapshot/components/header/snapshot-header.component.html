@@ -1,1 +1,30 @@
-
+<div class="vtr-snapshot-header">
+	<div class="row">
+		<h2 id="snapshot-title" class="col title"
+			[ngClass]="{'animated-dots': disableSnapshotButton }"
+		>{{ ('snapshot.') + snapshotStatus | translate }}</h2>
+	</div>
+	<div class="row">
+		<div class="col button-row">
+			<vtr-ui-button
+				linkId="snapshot-take-snapshot-btn"
+				[vtrMetricEnabled]="false"
+				[label]= "'snapshot.snapshotWidgetButton' | translate"
+				[isDisabled]="disableSnapshotButton"
+				(onClick)="onTakeSnapshot()">
+			</vtr-ui-button>
+			<vtr-ui-hyperlink-button
+				linkId="snapshot-replace-baseline-btn"
+				linkRole="button"
+				class="hyperlink-container"
+				hyperlinkStyle="xs-white"
+				metricsParent="Snapshot"
+				metricsItem="Snapshot.ReplaceBaseline"
+				[isDisabled]="disableSnapshotButton"
+				[label]="'snapshot.replaceBaseline' | translate"
+				[upperCaseLabel]="true"
+				(hyperlinkClick)="onReplaceBaseline()">
+			</vtr-ui-hyperlink-button>
+		</div>
+	</div>
+</div>

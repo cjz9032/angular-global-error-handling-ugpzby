@@ -264,7 +264,7 @@ describe('BatteryCardComponent', () => {
 		tempBatteryInfo[0].batteryHealth = 1;
 		tempBatteryInfo[0].batteryCondition.splice(0, 1);
 		component.batteryGauge = { ...tempBatteryGauge };
-		component.batteryInfo = { ...tempBatteryInfo };
+		// component.batteryInfo = { ...tempBatteryInfo };
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue(0);
 		component.getBatteryCondition();
 		expect(component.batteryConditions).toContain(

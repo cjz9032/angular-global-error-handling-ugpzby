@@ -87,10 +87,8 @@ import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-questio
 		HardwareScanFinishedHeaderComponent,
 		UiHardwareScanTestResultComponent,
 		UiTestResultIconComponent,
-		UiHyperlinkButtonComponent,
 		ModalExportLogComponent,
 		UiQuestionMarkButtonComponent,
-		UiHyperlinkButtonComponent,
 	],
 	imports: [
 		CommonModule,

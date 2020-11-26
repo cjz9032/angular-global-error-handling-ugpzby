@@ -26,6 +26,7 @@ import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
 import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
+import { UiHyperlinkButtonComponent } from '../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
 
 @NgModule({
 	declarations: [
@@ -37,6 +38,7 @@ import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-b
 		ModalCommonConfirmationComponent,
 		ModalLenovoIdComponent,
 		PageUserComponent,
+		UiHyperlinkButtonComponent
 	],
 	imports: [
 		AngularSvgIconModule,
@@ -79,6 +81,7 @@ import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-b
 		MetricsModule,
 		HeaderMainModule,
 		AppSearchModule,
+		UiHyperlinkButtonComponent
 	],
 	providers: [
 		CommsService,

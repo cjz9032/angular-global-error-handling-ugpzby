@@ -24,8 +24,15 @@ import { CommonUiModule } from '../common/common-ui.module';
 		WidgetSnapshotComponent,
 		ModalSnapshotComponent,
 	],
-	exports: [WidgetSnapshotComponent],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	schemas: [
+		CUSTOM_ELEMENTS_SCHEMA
+	],
+	exports: [
+		PageSnapshotComponent,
+		SnapshotHeaderComponent,
+		SnapshotMainComponent,
+		WidgetSnapshotComponent,
+	],
 	imports: [
 		CommonModule,
 		CommonUiModule,
