@@ -1,9 +1,29 @@
 {
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "eslint.validate": [
-        "javascript"
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"[jsonc]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"[css]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"[scss]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"eslint.validate": [
+		"javascript"
 	]
 }
