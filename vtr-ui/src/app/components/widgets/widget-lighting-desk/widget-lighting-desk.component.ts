@@ -529,8 +529,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 						// this.lightingProfileCurrentDetail.panelImage = currentNameImg[0].panelImage;
 						this.lightingProfileCurrentDetail.panelImageType =
 							currentNameImg[0].panelImageType;
-						this.lightingProfileCurrentDetail.length =
-							lightingProfileByIdRes.lightInfo.length;
+						this.lightingProfileCurrentDetail.length = lightingCapabilitiesRes.MemoryPanelType ?
+						 lightingCapabilitiesRes.LightPanelType.length + lightingCapabilitiesRes.MemoryPanelType.length : 
+						 lightingCapabilitiesRes.LightPanelType.length;
 						if (
 							lightingCapabilitiesRes.LightPanelType &&
 							lightingCapabilitiesRes.LightPanelType.length !== 0 &&
