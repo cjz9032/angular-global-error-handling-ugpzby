@@ -1,4 +1,4 @@
-@import "src/app/app.theme";
+@import 'src/app/app.theme';
 
 @mixin high-contrast($target) {
 	@if ($target != 'active' and $target != 'black-on-white' and $target != 'white-on-black') {

@@ -12,7 +12,6 @@ vtr-subpage-smart-performance-scan-summary {
 
 .vtr-ui-smart-performance-scan-summary {
 	.vtr-scan-information {
-
 		.scan-summary-block {
 			padding: $padding_content;
 
@@ -43,7 +42,7 @@ vtr-subpage-smart-performance-scan-summary {
 				h3 {
 					font-size: 2.4rem;
 					font-weight: $weight_600;
-					color: #303D49;
+					color: #303d49;
 				}
 
 				p {
@@ -233,7 +232,7 @@ vtr-subpage-smart-performance-scan-summary {
 					}
 
 					.selected-custom-date {
-						background-color: #F5F7F8;
+						background-color: #f5f7f8;
 					}
 
 					.custom-to-date,
@@ -244,7 +243,7 @@ vtr-subpage-smart-performance-scan-summary {
 					}
 
 					.date-picker {
-						background-color: #F5F7F8;
+						background-color: #f5f7f8;
 					}
 
 					.custom-go-btn {
@@ -275,11 +274,11 @@ vtr-subpage-smart-performance-scan-summary {
 			.tune,
 			.boost,
 			.secure {
-				background: #F5F7F8;
+				background: #f5f7f8;
 				height: auto;
 				border-radius: 0.5rem;
 				padding: 1.7rem 2.5rem;
-				color: #303D49;
+				color: #303d49;
 				width: calc(33.33% - 1.8rem);
 
 				@media #{$breakpoint_xl} {
@@ -305,11 +304,11 @@ vtr-subpage-smart-performance-scan-summary {
 				@media #{$high-contrast} {
 					border: 1px solid currentColor !important;
 				}
-			
+
 				@media #{$black-on-white} {
 					border: 1px solid $dark !important;
 				}
-			
+
 				@media #{$white-on-black} {
 					border: 1px solid $light !important;
 				}
@@ -440,17 +439,17 @@ vtr-subpage-smart-performance-scan-summary {
 					list-style-type: none;
 					padding: 0;
 					border-radius: $border_radius;
-					background: #F5F7F8;
+					background: #f5f7f8;
 					overflow: hidden;
-					
+
 					@media #{$high-contrast} {
 						border: 1px solid currentColor !important;
 					}
-				
+
 					@media #{$black-on-white} {
 						border: 1px solid $dark !important;
 					}
-				
+
 					@media #{$white-on-black} {
 						border: 1px solid $light !important;
 					}
@@ -461,7 +460,6 @@ vtr-subpage-smart-performance-scan-summary {
 						color: $main_darker;
 						font-size: 1.4rem;
 						cursor: pointer;
-
 
 						&:focus {
 							outline: none;
@@ -636,7 +634,6 @@ vtr-subpage-smart-performance-scan-summary {
 }
 
 .system-scan-complete {
-
 	.performance-slider-block {
 		margin: 2rem 0;
 		width: 100%;
@@ -671,7 +668,21 @@ vtr-subpage-smart-performance-scan-summary {
 				content: '';
 				width: calc(100% + 2rem);
 				height: 3rem;
-				background: linear-gradient(to right, #d02928, #d73f26, #dd5124, #e26222, #e77222, #de7d15, #d48708, #c99000, #ad9500, #909700, #729816, #51982c);
+				background: linear-gradient(
+					to right,
+					#d02928,
+					#d73f26,
+					#dd5124,
+					#e26222,
+					#e77222,
+					#de7d15,
+					#d48708,
+					#c99000,
+					#ad9500,
+					#909700,
+					#729816,
+					#51982c
+				);
 				border-radius: 2rem;
 				top: -1rem;
 				left: -1rem;
@@ -726,13 +737,13 @@ vtr-subpage-smart-performance-scan-summary {
 				.critical {
 					bottom: -6rem;
 					left: -1rem;
-					color: #D02928;
+					color: #d02928;
 					position: absolute;
 				}
 
 				.well {
 					right: 10px;
-					color: #51982C;
+					color: #51982c;
 					position: absolute;
 					bottom: -6rem;
 					right: -1rem;
@@ -833,14 +844,14 @@ vtr-subpage-smart-performance-scan-summary {
 					.critical {
 						top: -3rem;
 						left: 1.5rem;
-						color: #D00707;
+						color: #d00707;
 						position: absolute;
 					}
 
 					.well {
 						top: -3rem;
 						right: 1.5rem;
-						color: #51982C;
+						color: #51982c;
 						position: absolute;
 					}
 				}
@@ -898,7 +909,7 @@ vtr-subpage-smart-performance-scan-summary {
 					}
 
 					&::before {
-						content: "";
+						content: '';
 						position: absolute;
 						width: 30%;
 						height: 1rem;
@@ -927,7 +938,7 @@ vtr-subpage-smart-performance-scan-summary {
 					}
 
 					&::after {
-						content: "";
+						content: '';
 						position: absolute;
 						width: 30%;
 						height: 1rem;
@@ -1007,7 +1018,6 @@ vtr-subpage-smart-performance-scan-summary {
 				width: 100%;
 				max-width: 100% !important;
 			}
-
 		}
 
 		.title-big {
@@ -1038,11 +1048,11 @@ vtr-subpage-smart-performance-scan-summary {
 		}
 
 		::ng-deep .tooltip-inner {
-			@include tt-inner()
+			@include tt-inner();
 		}
 
 		::ng-deep .arrow::before {
-			@include arrow-before()
+			@include arrow-before();
 		}
 
 		.action-button {
@@ -1060,7 +1070,7 @@ vtr-subpage-smart-performance-scan-summary {
 			min-width: 11.5rem;
 
 			&:focus {
-				@include outline-blue
+				@include outline-blue;
 			}
 
 			@media #{$breakpoint_xl} {
@@ -1095,7 +1105,6 @@ vtr-subpage-smart-performance-scan-summary {
 			opacity: 0.7;
 			min-width: 11.5rem;
 		}
-
 	}
 	.subscribe-scan-summaries {
 		padding: $padding_content $padding_content 0.9rem;
@@ -1121,10 +1130,9 @@ vtr-subpage-smart-performance-scan-summary {
 		&.desc1 {
 			border-right: 0.1rem solid $shade_lighter;
 			// width: 30%;
-			// max-width: 13rem;					
+			// max-width: 13rem;
 			margin: 0.5rem 0.5rem 0.5rem 1rem;
 		}
-
 
 		&.desc2 {
 			margin: 0.5rem;
@@ -1239,7 +1247,6 @@ vtr-subpage-smart-performance-scan-summary {
 		font-size: 1.6rem;
 	}
 }
-
 
 @keyframes expanding {
 	0% {

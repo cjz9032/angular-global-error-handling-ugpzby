@@ -6,11 +6,11 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 
 export enum BetaStatus {
 	On,
-	Off
+	Off,
 }
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class BetaService {
 	private betaUser;
@@ -18,7 +18,7 @@ export class BetaService {
 
 	constructor(
 		private vantageShellService: VantageShellService,
-		private localCacheService: LocalCacheService,
+		private localCacheService: LocalCacheService
 	) {
 		if (this.vantageShellService) {
 			this.betaUser = this.vantageShellService.getBetaUser();
@@ -35,7 +35,10 @@ export class BetaService {
 	}
 
 	public getBetaStatus(): BetaStatus {
-		const storedBetaStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.BetaTag, 'init');
+		const storedBetaStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.BetaTag,
+			'init'
+		);
 		if (storedBetaStatus === 'init') {
 			this.setBetaStatus(BetaStatus.Off);
 			return BetaStatus.Off;

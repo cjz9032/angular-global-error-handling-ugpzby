@@ -1,4 +1,4 @@
-@import "./../../../app.theme.scss";
+@import './../../../app.theme.scss';
 
 .close-button {
 	color: #496afd;
@@ -11,21 +11,21 @@
 	}
 }
 .vtr-battery-card {
-		@media #{$mediaquery_11} {
-			padding-top: 8.5rem;
-		}
-		@media #{$mediaquery_sm} {
-			padding-top: 0rem;
-			//margin-top: -1rem;
-		}
-		@media #{$mediaquery_md} {
-			padding-top: 0rem;
-			//margin-top: -1rem;
-		}
-		@media #{$mediaquery_lg} {
-			padding-top: 0rem;
-			//margin-top: -1rem;
-		}
+	@media #{$mediaquery_11} {
+		padding-top: 8.5rem;
+	}
+	@media #{$mediaquery_sm} {
+		padding-top: 0rem;
+		//margin-top: -1rem;
+	}
+	@media #{$mediaquery_md} {
+		padding-top: 0rem;
+		//margin-top: -1rem;
+	}
+	@media #{$mediaquery_lg} {
+		padding-top: 0rem;
+		//margin-top: -1rem;
+	}
 	// @media #{$mediaquery_X5} {
 	// 	padding-left: 8.5rem;
 	// 	padding-top: 12.5rem;
@@ -84,8 +84,6 @@
 					.button {
 						background: #e6eaeb;
 						color: #34495e;
-
-
 					}
 				}
 			}
@@ -100,7 +98,6 @@
 				padding-top: 25px;
 			}
 		}
-
 
 		.feature-note {
 			background-color: $grey_lighter;
@@ -139,7 +136,6 @@
 			align-self: center;
 			font-size: $base;
 		}
-
 	}
 	@media #{$black-on-white} {
 		border: 0.1rem solid $dark;
@@ -149,30 +145,29 @@
 		border: 0.1rem solid $light;
 		border-radius: 1rem;
 	}
-
 }
-.modal-header{
-    @media #{$black-on-white} {
-        border: 0.1rem solid $dark;
-        border-top-right-radius: 1rem;
-        border-top-left-radius: 1rem;
-    }
-    @media #{$white-on-black} {
-        border: 0.1rem solid $light;
-        border-top-right-radius: 1rem;
-        border-top-left-radius: 1rem;
-        }
-    }
-
-	.modal-body{
-		@media #{$black-on-white} {
-			border: 0.1rem solid $dark;
-			border-bottom-right-radius: 1rem;
-        border-bottom-left-radius: 1rem;
-		}
-		@media #{$white-on-black} {
-			border: 0.1rem solid $light;
-			border-bottom-right-radius: 1rem;
-        border-bottom-left-radius: 1rem;
-		}
+.modal-header {
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+		border-top-right-radius: 1rem;
+		border-top-left-radius: 1rem;
 	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+		border-top-right-radius: 1rem;
+		border-top-left-radius: 1rem;
+	}
+}
+
+.modal-body {
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+		border-bottom-right-radius: 1rem;
+		border-bottom-left-radius: 1rem;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+		border-bottom-right-radius: 1rem;
+		border-bottom-left-radius: 1rem;
+	}
+}

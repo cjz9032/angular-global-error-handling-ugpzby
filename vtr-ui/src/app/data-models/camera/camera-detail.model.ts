@@ -73,7 +73,7 @@ export class CameraSettingsResponse {
 		max: 100, // slider bar max value
 		step: 0,
 		default: 0, //
-		value: 0 // current value
+		value: 0, // current value
 	};
 	contrast = {
 		autoModeSupported: false,
@@ -106,7 +106,6 @@ export class CameraSettingsResponse {
 		value: 0, // current value
 	};
 	permission = false;
-
 }
 export class CameraFeatureAccess {
 	public showAutoExposureSlider: boolean;

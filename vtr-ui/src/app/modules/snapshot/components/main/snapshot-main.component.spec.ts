@@ -7,19 +7,18 @@ xdescribe('SnapshotMainComponent', () => {
 	let fixture: ComponentFixture<SnapshotMainComponent>;
 
 	beforeEach(async(() => {
-	TestBed.configureTestingModule({
-		declarations: [ SnapshotMainComponent ]
-	})
-	.compileComponents();
+		TestBed.configureTestingModule({
+			declarations: [SnapshotMainComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
-	fixture = TestBed.createComponent(SnapshotMainComponent);
-	component = fixture.componentInstance;
-	fixture.detectChanges();
+		fixture = TestBed.createComponent(SnapshotMainComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
 	});
 
 	it('should create', () => {
-	expect(component).toBeTruthy();
+		expect(component).toBeTruthy();
 	});
 });

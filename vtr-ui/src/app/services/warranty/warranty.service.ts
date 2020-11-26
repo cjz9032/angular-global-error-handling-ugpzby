@@ -7,10 +7,9 @@ import { WarrantyStatus } from 'src/app/enums/warranty.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class WarrantyService {
-
 	private warranty: any;
 	private sysinfo: any;
 	private warrantyURl = 'https://pcsupport.lenovo.com/warrantylookup';
@@ -18,7 +17,7 @@ export class WarrantyService {
 	constructor(
 		private shellService: VantageShellService,
 		private localCacheService: LocalCacheService,
-		private deviceService: DeviceService,
+		private deviceService: DeviceService
 	) {
 		this.sysinfo = shellService.getSysinfo();
 		this.warranty = shellService.getWarranty();
@@ -46,10 +45,15 @@ export class WarrantyService {
 						if (machineInfo && machineInfo.serialnumber) {
 							this.setWarrantyUrl(machineInfo.serialnumber);
 						}
-						const cacheWarranty = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyStatus);
+						const cacheWarranty = this.localCacheService.getLocalCacheValue(
+							LocalStorageKey.LastWarrantyStatus
+						);
 						// from local storage
 						if (cacheWarranty && cacheWarranty.version > 0) {
-							cacheWarranty.dayDiff = this.getDayDiff(cacheWarranty.startDate, cacheWarranty.endDate);
+							cacheWarranty.dayDiff = this.getDayDiff(
+								cacheWarranty.startDate,
+								cacheWarranty.endDate
+							);
 							observer.next(cacheWarranty);
 						}
 
@@ -63,9 +67,21 @@ export class WarrantyService {
 									warrantyResult.startDate = new Date(result.startDate);
 									warrantyResult.version = 1;
 								}
-								if (!(cacheWarranty && cacheWarranty.status !== WarrantyStatus.WarrantyNotFound && warrantyResult.status === WarrantyStatus.WarrantyNotFound)) {
-									warrantyResult.dayDiff = this.getDayDiff(warrantyResult.startDate, warrantyResult.endDate);
-									this.localCacheService.setLocalCacheValue(LocalStorageKey.LastWarrantyStatus, warrantyResult);
+								if (
+									!(
+										cacheWarranty &&
+										cacheWarranty.status !== WarrantyStatus.WarrantyNotFound &&
+										warrantyResult.status === WarrantyStatus.WarrantyNotFound
+									)
+								) {
+									warrantyResult.dayDiff = this.getDayDiff(
+										warrantyResult.startDate,
+										warrantyResult.endDate
+									);
+									this.localCacheService.setLocalCacheValue(
+										LocalStorageKey.LastWarrantyStatus,
+										warrantyResult
+									);
 									observer.next(warrantyResult);
 								}
 								observer.complete();
@@ -109,5 +125,4 @@ export class WarrantyService {
 		}
 		return dayDiff;
 	}
-
 }

@@ -4,14 +4,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
 	selector: 'vtr-modal-app-update-available',
 	templateUrl: './modal-app-update-available.component.html',
-	styleUrls: ['./modal-app-update-available.component.scss']
+	styleUrls: ['./modal-app-update-available.component.scss'],
 })
 export class ModalAppUpdateAvailableComponent implements OnInit {
+	constructor(public activeModal: NgbActiveModal) {}
 
-	constructor(public activeModal: NgbActiveModal) { }
-
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	public onUpdateClick() {
 		this.activeModal.close(true);
@@ -21,11 +19,9 @@ export class ModalAppUpdateAvailableComponent implements OnInit {
 		this.activeModal.close(false);
 	}
 
-
 	@HostListener('window: focus')
 	onFocus(): void {
 		const modal = document.querySelector('.confirmation-modal') as HTMLElement;
 		modal.focus();
 	}
-
 }

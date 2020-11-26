@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 import { TranslateDefaultValueIfNotFoundPipe } from '../translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
 
 @Pipe({
-	name: 'translateMock'
+	name: 'translateMock',
 })
 class TranslatePipeMock implements PipeTransform {
 	public transform(value: any, defaultValue: any, ...args: any[]): any {
@@ -22,9 +22,9 @@ describe('TranslateTokenByTokenPipe', () => {
 				TranslateTokenByTokenPipe,
 				{
 					provide: TranslateDefaultValueIfNotFoundPipe,
-					useValue: translatePipeMock
-				}
-			]
+					useValue: translatePipeMock,
+				},
+			],
 		});
 
 		pipe = TestBed.inject(TranslateTokenByTokenPipe);
@@ -34,7 +34,7 @@ describe('TranslateTokenByTokenPipe', () => {
 		expect(pipe).toBeTruthy();
 	});
 
-	it ('translates a found token should return the translated value', () => {
+	it('translates a found token should return the translated value', () => {
 		spyOn(translatePipeMock, 'transform').and.returnValue('A translation for a valid token!');
 		const result = pipe.transform('hardwareScan.foundToken');
 		expect(result).toBe('A translation for a valid token!');
@@ -45,8 +45,14 @@ describe('TranslateTokenByTokenPipe', () => {
 		expect(result).toBeFalsy();
 	});
 
-	it ('should translate a valid token inside a line', () => {
-		spyOn(translatePipeMock, 'transform').and.returnValues('2', 'x', '32', 'KB', 'of some data');
+	it('should translate a valid token inside a line', () => {
+		spyOn(translatePipeMock, 'transform').and.returnValues(
+			'2',
+			'x',
+			'32',
+			'KB',
+			'of some data'
+		);
 		const result = pipe.transform('2 x 32 KB ANY_TOKEN');
 		expect(result).toBe('2 x 32 KB of some data');
 	});

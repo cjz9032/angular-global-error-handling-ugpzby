@@ -23,17 +23,9 @@ describe('ModalSmartPerformanceSubscribeComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [ModalSmartPerformanceSubscribeComponent, SanitizePipe],
 			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
-			providers: [
-				NgbActiveModal,
-				CommonService,
-				SupportService,
-				LoggerService,
-				DevService
-			],
+			providers: [NgbActiveModal, CommonService, SupportService, LoggerService, DevService],
 		});
-		fixture = TestBed.createComponent(
-			ModalSmartPerformanceSubscribeComponent
-		);
+		fixture = TestBed.createComponent(ModalSmartPerformanceSubscribeComponent);
 		component = fixture.componentInstance;
 	}));
 
@@ -41,7 +33,7 @@ describe('ModalSmartPerformanceSubscribeComponent', () => {
 		const machineInfo = {
 			countryCode: 'en',
 			serialnumber: 'PC0ZEPQ6',
-			mt: ''
+			mt: '',
 		};
 		supportService = TestBed.inject(SupportService);
 		spyOn(supportService, 'getMachineInfo').and.returnValue(Promise.resolve(machineInfo));
@@ -137,11 +129,11 @@ describe('ModalSmartPerformanceSubscribeComponent', () => {
 		expect(res).toEqual('ru_RU');
 	});
 
-	it('should call onFocus when calling modal focus', (() => {
+	it('should call onFocus when calling modal focus', () => {
 		const modal = document.createElement('div');
 		modal.setAttribute('class', 'subscribe-modal');
 		fixture.debugElement.nativeElement.append(modal);
 		component.onFocus();
 		expect(modal).toBeTruthy();
-	}));
+	});
 });

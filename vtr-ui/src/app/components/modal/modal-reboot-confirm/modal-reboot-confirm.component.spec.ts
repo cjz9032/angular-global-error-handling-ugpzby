@@ -17,14 +17,9 @@ describe('ModalRebootConfirmComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [ModalRebootConfirmComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [NgbActiveModal]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [NgbActiveModal],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

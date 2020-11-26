@@ -4,11 +4,10 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
 	selector: 'vtr-modal-voice',
 	templateUrl: './modal-voice.component.html',
-	styleUrls: ['./modal-voice.component.scss']
+	styleUrls: ['./modal-voice.component.scss'],
 })
 export class ModalVoiceComponent implements OnInit {
-
-	constructor(public activeModal: NgbActiveModal) { }
+	constructor(public activeModal: NgbActiveModal) {}
 	value: any;
 	lowerCaseValue;
 	metricsParent: any;
@@ -29,5 +28,4 @@ export class ModalVoiceComponent implements OnInit {
 		const modal = document.querySelector('.Voice-Modal') as HTMLElement;
 		modal.focus();
 	}
-
 }

@@ -8,9 +8,8 @@ xdescribe('WidgetWarrantyComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetWarrantyComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetWarrantyComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

@@ -2,21 +2,25 @@ import { Injectable } from '@angular/core';
 import { from, Observable, Subject } from 'rxjs';
 import { map, shareReplay, takeUntil } from 'rxjs/operators';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
-import { Backlight, BacklightLevel, BacklightMode, BacklightStatus, GetBacklightResponse } from './backlight.interface';
+import {
+	Backlight,
+	BacklightLevel,
+	BacklightMode,
+	BacklightStatus,
+	GetBacklightResponse,
+} from './backlight.interface';
 
 const CACHE_SIZE = 1;
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class BacklightService {
 	backlightFeature: Backlight;
 	cache$: Observable<Array<BacklightStatus | BacklightLevel>>;
 	reload$ = new Subject();
 
-	constructor(
-		private shellService: VantageShellService
-	) {
+	constructor(private shellService: VantageShellService) {
 		this.backlightFeature = this.shellService.getBacklight();
 	}
 
@@ -31,10 +35,9 @@ export class BacklightService {
 	}
 
 	requestBacklight(): Observable<Array<BacklightStatus | BacklightLevel>> {
-		return from(this.backlightFeature.getBacklight())
-			.pipe(
-				map(res => res.settingList.setting)
-			);
+		return from(this.backlightFeature.getBacklight()).pipe(
+			map((res) => res.settingList.setting)
+		);
 	}
 
 	forceReload() {
@@ -47,54 +50,58 @@ export class BacklightService {
 	}
 
 	setBacklight(mode: BacklightMode) {
-		return from(this.backlightFeature.setBacklight({
-			settingList: [{
-				setting: [
+		return from(
+			this.backlightFeature.setBacklight({
+				settingList: [
 					{
-						key: 'KeyboardBacklightStatus',
-						value: mode.value
-					}
-				]
-			}]
-		}));
+						setting: [
+							{
+								key: 'KeyboardBacklightStatus',
+								value: mode.value,
+							},
+						],
+					},
+				],
+			})
+		);
 	}
 
 	getBacklightOnSystemChange(): Observable<GetBacklightResponse> {
 		return new Observable((observer) => {
-			this.backlightFeature.getBacklightOnSystemChange(
-				{
-					settingList: [
-						{
-							setting: [
-								{
-									key: 'IntermediateResponseDuration',
-									value: '00:00:30',
-									enabled: 0
-								}
-							]
-						}
-					]
-				},
-				response => {
-					observer.next(response.payload);
-				}
-			).then(
-				response => {
-					observer.next(response);
-					observer.complete();
-				},
-				result => {
-					if (result.errorcode && result.errorcode === 606) {
+			this.backlightFeature
+				.getBacklightOnSystemChange(
+					{
+						settingList: [
+							{
+								setting: [
+									{
+										key: 'IntermediateResponseDuration',
+										value: '00:00:30',
+										enabled: 0,
+									},
+								],
+							},
+						],
+					},
+					(response) => {
+						observer.next(response.payload);
+					}
+				)
+				.then(
+					(response) => {
+						observer.next(response);
 						observer.complete();
+					},
+					(result) => {
+						if (result.errorcode && result.errorcode === 606) {
+							observer.complete();
+						} else {
+							observer.error(result);
+						}
 					}
-					else {
-						observer.error(result);
-					}
-				}
-			);
+				);
 
-			return () => {
-			};
+			return () => {};
 		});
 	}
 }

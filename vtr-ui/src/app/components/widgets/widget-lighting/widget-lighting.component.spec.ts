@@ -12,53 +12,62 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 describe('WidgetLightingComponent', () => {
 	let component: WidgetLightingComponent;
 	let fixture: ComponentFixture<WidgetLightingComponent>;
-	let ledSwitchButtonFeature:boolean = true;
-	let ledSetFeature:boolean = true;
-	let ledDriver:boolean = true;
-    let profileId:number = 2;
+	let ledSwitchButtonFeature: boolean = true;
+	let ledSetFeature: boolean = true;
+	let ledDriver: boolean = true;
+	let profileId: number = 2;
 	let commonServiceMock = {
-		getCapabalitiesNotification: () => of({ type: Gaming.GamingCapabilities })
+		getCapabalitiesNotification: () => of({ type: Gaming.GamingCapabilities }),
 	};
 	let LocalCacheServiceMock = {
-        getLocalCacheValue(key: any) {
-            switch (key) {
-                case '[LocalStorageKey] LedSwitchButtonFeature':
-                    return ledSwitchButtonFeature;
-                case '[LocalStorageKey] LedSetFeature':
-                    return ledSetFeature;
-                case '[LocalStorageKey] LedDriver':
+		getLocalCacheValue(key: any) {
+			switch (key) {
+				case '[LocalStorageKey] LedSwitchButtonFeature':
+					return ledSwitchButtonFeature;
+				case '[LocalStorageKey] LedSetFeature':
+					return ledSetFeature;
+				case '[LocalStorageKey] LedDriver':
 					return ledDriver;
 				case 'LocalStorageKey.ProfileId':
 					return profileId;
-            }
-        },
-        setLocalCacheValue(key: any, value: any) {
-            switch (key) {
-                case '[LocalStorageKey] LedSwitchButtonFeature':
-                    ledSwitchButtonFeature = value;
-                    break;
-                case '[LocalStorageKey] LedSetFeature':
-                    ledSetFeature = value;
-                    break;
-                case '[LocalStorageKey] LedDriver':
-                    ledDriver = value;
+			}
+		},
+		setLocalCacheValue(key: any, value: any) {
+			switch (key) {
+				case '[LocalStorageKey] LedSwitchButtonFeature':
+					ledSwitchButtonFeature = value;
 					break;
-			    case 'LocalStorageKey.ProfileId':
+				case '[LocalStorageKey] LedSetFeature':
+					ledSetFeature = value;
+					break;
+				case '[LocalStorageKey] LedDriver':
+					ledDriver = value;
+					break;
+				case 'LocalStorageKey.ProfileId':
 					profileId = value;
-					break;		
-            }
-		}
-	}
-	const spy = jasmine.createSpyObj('GamingLightingService',['isShellAvailable','setLightingProfileId','getLightingProfileId','regLightingProfileIdChangeEvent']);
+					break;
+			}
+		},
+	};
+	const spy = jasmine.createSpyObj('GamingLightingService', [
+		'isShellAvailable',
+		'setLightingProfileId',
+		'getLightingProfileId',
+		'regLightingProfileIdChangeEvent',
+	]);
 	const deviceServiceMock = { getMachineInfo: () => Promise.resolve({}) };
 	beforeEach(async(() => {
 		spy.isShellAvailable = true;
 		spy.setLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: true }));
-		spy.getLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: true, profileId: 1 }));
+		spy.getLightingProfileId.and.returnValue(
+			Promise.resolve({ didSuccess: true, profileId: 1 })
+		);
 		TestBed.configureTestingModule({
-			declarations: [WidgetLightingComponent,
+			declarations: [
+				WidgetLightingComponent,
 				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' })],
+				mockPipe({ name: 'sanitize' }),
+			],
 			providers: [
 				{ provide: DeviceService, useValue: deviceServiceMock },
 				{ provide: GamingLightingService, useValue: spy },
@@ -66,7 +75,7 @@ describe('WidgetLightingComponent', () => {
 				{ provide: LocalCacheService, useValue: LocalCacheServiceMock },
 			],
 			imports: [HttpClientModule],
-			schemas: [NO_ERRORS_SCHEMA]
+			schemas: [NO_ERRORS_SCHEMA],
 		}).compileComponents();
 		fixture = TestBed.createComponent(WidgetLightingComponent);
 		component = fixture.componentInstance;
@@ -84,7 +93,7 @@ describe('WidgetLightingComponent', () => {
 		expect(component.checkStatus(null)).toBeUndefined();
 	});
 
-	it('should get the capabilities and should set islighting as false', () => { 
+	it('should get the capabilities and should set islighting as false', () => {
 		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', true);
 		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', false);
 		component.ledSetFeature = true;
@@ -109,7 +118,7 @@ describe('WidgetLightingComponent', () => {
 
 	it('should show popup', () => {
 		component.isPopupVisible = true;
-		component.SetProfile({ target: {value : 1}});
+		component.SetProfile({ target: { value: 1 } });
 		expect(component.isPopupVisible).toBe(true);
 	});
 
@@ -118,19 +127,19 @@ describe('WidgetLightingComponent', () => {
 		component.setprofId = 0;
 		spy.setLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: true }));
 		component.didSuccess = true;
-		component.SetProfile({ target: {value : 1}});
+		component.SetProfile({ target: { value: 1 } });
 		expect(component.setprofId).toEqual(1);
 		component.setprofId = 1;
-		component.SetProfile({ target: {value : 1}});
+		component.SetProfile({ target: { value: 1 } });
 		expect(component.setprofId).toEqual(1);
 		component.isPopupVisible = false;
 		spy.setLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: null }));
-		component.SetProfile({ target: {value : 2}});
-		expect(component.SetProfile({ target: {value : 1}})).toBeUndefined();
+		component.SetProfile({ target: { value: 2 } });
+		expect(component.SetProfile({ target: { value: 1 } })).toBeUndefined();
 	});
 
 	it('should setProfileEvent', () => {
-		component.setprofId =2;
+		component.setprofId = 2;
 		component.setProfileEvent(1);
 		expect(component.setprofId).not.toEqual(2);
 		component.setProfileEvent(undefined);
@@ -144,19 +153,20 @@ describe('WidgetLightingComponent', () => {
 		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSwitchButtonFeature', false);
 		component.getCapabilities();
 		expect(component.getCapabilities()).toBeUndefined();
-   });
+	});
 
-   it('should get lighting profileId', fakeAsync(() => {
-	   spy.getLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: false, profileId: 1 }));
-	   component.getLightingProfileId();
-	   expect(component.getLightingProfileId()).toBeUndefined();
-   }))
-
+	it('should get lighting profileId', fakeAsync(() => {
+		spy.getLightingProfileId.and.returnValue(
+			Promise.resolve({ didSuccess: false, profileId: 1 })
+		);
+		component.getLightingProfileId();
+		expect(component.getLightingProfileId()).toBeUndefined();
+	}));
 });
 
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
 	return Pipe(metadata)(
 		class MockPipe {

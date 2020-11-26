@@ -4,13 +4,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { TaskAction, ItemView } from 'src/app/services/metric/metrics.model';
 
-import {
-	trigger,
-	state,
-	style,
-	animate,
-	transition,
-} from '@angular/animations';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
@@ -19,37 +13,40 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	styleUrls: ['./modal-store-rating.component.scss'],
 	animations: [
 		trigger('hideToShow', [
-			state('show', style({
-				opacity: 1,
-			})),
-			state('hidden', style({
-				opacity: 0,
-			})),
-			transition('hidden => show', [
-				animate('0.2s')
-			]),
-			transition('show => hidden', [
-				animate('0.1s')
-			]),
+			state(
+				'show',
+				style({
+					opacity: 1,
+				})
+			),
+			state(
+				'hidden',
+				style({
+					opacity: 0,
+				})
+			),
+			transition('hidden => show', [animate('0.2s')]),
+			transition('show => hidden', [animate('0.1s')]),
 		]),
 		trigger('scaleTo1', [
-			state('origin', style({
-				transform: 'scale(1.25)'
-			})),
-			state('normal', style({
-				transform: 'scale(1)'
-			})),
-			transition('origin => normal', [
-				animate('0.2s')
-			]),
-			transition('normal => origin', [
-				animate('0.1s')
-			]),
-		])
-	]
+			state(
+				'origin',
+				style({
+					transform: 'scale(1.25)',
+				})
+			),
+			state(
+				'normal',
+				style({
+					transform: 'scale(1)',
+				})
+			),
+			transition('origin => normal', [animate('0.2s')]),
+			transition('normal => origin', [animate('0.1s')]),
+		]),
+	],
 })
 export class ModalStoreRatingComponent implements OnInit {
-
 	private msStoreUtil: any = null;
 	public likeIconVisible = false;
 	public feedbackIconVisible = false;
@@ -83,8 +80,7 @@ export class ModalStoreRatingComponent implements OnInit {
 					await this.msStoreUtil.launchMSStoreToVantageAsync();
 				}
 				this.sendMSRatingResultMetrics(ret);
-			}
-			else {
+			} else {
 				this.logger.info(`MS store rating not support, launch ms store to rate Vantage.`);
 				await this.msStoreUtil.launchMSStoreToVantageAsync();
 			}

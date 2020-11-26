@@ -1,6 +1,3 @@
 export class MicrophoneOptimizeModes {
-	constructor(
-        public modes: string[],
-        public current: string
-    ) {}
+	constructor(public modes: string[], public current: string) {}
 }

@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .vtr-widget-device-update {
 	.systemupdate-background {
@@ -18,7 +18,6 @@
 			@include black-border;
 			border-bottom: none;
 		}
-
 
 		.title {
 			color: $light;
@@ -52,7 +51,7 @@
 			padding-top: 4rem;
 			padding-right: 2.4rem;
 			max-width: 100%;
-			&::ng-deep{
+			&::ng-deep {
 				vtr-ui-button {
 					.button-box {
 						padding: 0;
@@ -123,12 +122,13 @@
 			letter-spacing: 0.49px;
 			margin-top: 1.6rem;
 
-			&:hover, &:focus {
+			&:hover,
+			&:focus {
 				color: $light;
 				text-decoration: none;
 			}
 
-			&:focus{
+			&:focus {
 				box-shadow: none;
 				@include outline-blue;
 			}

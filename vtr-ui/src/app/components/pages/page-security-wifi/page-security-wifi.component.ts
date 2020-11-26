@@ -35,7 +35,7 @@ interface WifiSecurityState {
 @Component({
 	selector: 'vtr-page-security-wifi',
 	templateUrl: './page-security-wifi.component.html',
-	styleUrls: ['./page-security-wifi.component.scss']
+	styleUrls: ['./page-security-wifi.component.scss'],
 })
 export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewInit {
 	viewSecChkRoute = 'viewSecChkRoute';
@@ -57,32 +57,43 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	maxCanTrialTime = 31;
 	wsPluginMissingEventHandler = () => {
 		this.handleError(new PluginMissingError());
-	}
+	};
 	wsIsLocationServiceOnEventHandler = (value) => {
 		this.ngZone.run(() => {
 			if (value !== undefined) {
-				if (!value && this.wifiSecurity.state === 'enabled' && this.wifiSecurity.hasSystemPermissionShowed) {
+				if (
+					!value &&
+					this.wifiSecurity.state === 'enabled' &&
+					this.wifiSecurity.hasSystemPermissionShowed
+				) {
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				} else if (value) {
-					if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag) === 'yes') {
-						this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
+					if (
+						this.commonService.getSessionStorageValue(
+							SessionStorageKey.SecurityWifiSecurityLocationFlag
+						) === 'yes'
+					) {
+						this.commonService.setSessionStorageValue(
+							SessionStorageKey.SecurityWifiSecurityLocationFlag,
+							'no'
+						);
 						this.wifiSecurity.enableWifiSecurity();
 					}
 					this.getTrialDay();
 				}
 			}
 		});
-	}
+	};
 	wsTrialTimeOnEventHandler = (hasTrialDays: number) => {
 		if (this.needOpenExpireDialog(hasTrialDays)) {
 			this.openExpireDialog(hasTrialDays);
 		}
-	}
+	};
 	wsStateEventHandler = (value) => {
 		if (value === 'enabled') {
 			this.getTrialDay();
 		}
-	}
+	};
 	constructor(
 		public activeRouter: ActivatedRoute,
 		private commonService: CommonService,
@@ -98,24 +109,31 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		private localCacheService: LocalCacheService,
 		public wifiSecurityService: WifiSecurityService,
 		public userService: UserService,
-		private metrics: MetricService,
-	) { }
+		private metrics: MetricService
+	) {}
 
 	ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
 		this.homeSecurity = this.shellService.getConnectedHomeSecurity();
-		this.segment = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment, this.segmentConst.ConsumerBase);
+		this.segment = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LocalInfoSegment,
+			this.segmentConst.ConsumerBase
+		);
 		if (this.securityAdvisor) {
 			this.wifiSecurity = this.securityAdvisor.wifiSecurity;
 		}
-		this.localInfoService.getLocalInfo().then(result => {
-			this.region = result.GEO;
-		}).catch(e => {
-			this.region = 'us';
-		});
+		this.localInfoService
+			.getLocalInfo()
+			.then((result) => {
+				this.region = result.GEO;
+			})
+			.catch((e) => {
+				this.region = 'us';
+			});
 		this.fetchCMSArticles();
 
-		this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
+		this.wifiSecurity
+			.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
 			.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler)
 			.on(EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler)
 			.on(EventTypes.wsStateEvent, this.wsStateEventHandler);
@@ -123,18 +141,29 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.sendMetrics();
 
 		this.isOnline = this.commonService.isOnline;
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, true);
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, true);
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
+		this.commonService.setSessionStorageValue(
+			SessionStorageKey.SecurityWifiSecurityInWifiPage,
+			true
+		);
+		this.commonService.setSessionStorageValue(
+			SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
+			true
+		);
 		if (this.wifiSecurity) {
 			this.wifiSecurity.refresh();
 			this.wifiSecurity.getWifiSecurityState();
 			this.wifiSecurity.getWifiHistory();
-			this.wifiSecurity.getWifiState().then((res) => { }, (error) => {
-				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-			});
+			this.wifiSecurity.getWifiState().then(
+				(res) => {},
+				(error) => {
+					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
+				}
+			);
 		}
 		this.pullCHS();
 	}
@@ -160,13 +189,25 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	ngOnDestroy() {
 		this.dialogService.closeDialog('wifi-security-expire-prompt-dialog');
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage, false);
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog, false);
+		this.commonService.setSessionStorageValue(
+			SessionStorageKey.SecurityWifiSecurityInWifiPage,
+			false
+		);
+		this.commonService.setSessionStorageValue(
+			SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
+			false
+		);
 		if (this.wifiSecurity) {
 			this.wifiSecurity.cancelGetWifiHistory();
 			this.wifiSecurity.cancelGetWifiSecurityState();
-			this.wifiSecurity.off(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
-			this.wifiSecurity.off(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
+			this.wifiSecurity.off(
+				EventTypes.wsPluginMissingEvent,
+				this.wsPluginMissingEventHandler
+			);
+			this.wifiSecurity.off(
+				EventTypes.wsIsLocationServiceOnEvent,
+				this.wsIsLocationServiceOnEventHandler
+			);
 			this.wifiSecurity.off(EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler);
 			this.wifiSecurity.off(EventTypes.wsStateEvent, this.wsStateEventHandler);
 		}
@@ -178,7 +219,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	getActivateDeviceStateHandler(value: WifiSecurityState) {
 		if (value.state) {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, value.state);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityWifiSecurityState,
+				value.state
+			);
 			this.wifiSecurity.state = value.state;
 		}
 		if (value.isLocationServiceOn !== undefined) {
@@ -188,49 +232,66 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			Page: 'wifi-security'
+			Page: 'wifi-security',
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(
+					response,
+					'inner-page-right-side-article-image-background',
+					'position-A'
+				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
-						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split(
+							'|'
+						)[0];
 					}
 				}
 			},
-			error => { }
+			(error) => {}
 		);
 
-		this.cmsService.fetchCMSArticle(this.securityHealthArticleId, { Lang: 'EN' }).then((response: any) => {
-			if (response && response.Results && response.Results.Category) {
-				this.securityHealthArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
-			}
-		});
+		this.cmsService
+			.fetchCMSArticle(this.securityHealthArticleId, { Lang: 'EN' })
+			.then((response: any) => {
+				if (response && response.Results && response.Results.Category) {
+					this.securityHealthArticleCategory = response.Results.Category.map(
+						(category: any) => category.Title
+					).join(' ');
+				}
+			});
 	}
 
 	openSecurityHealthArticle(): void {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			size: 'lg',
-			centered: true,
-			windowClass: 'Article-Detail-Modal',
-			keyboard: false,
-			backdrop: true,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
+		const articleDetailModal: NgbModalRef = this.modalService.open(
+			ModalArticleDetailComponent,
+			{
+				size: 'lg',
+				centered: true,
+				windowClass: 'Article-Detail-Modal',
+				keyboard: false,
+				backdrop: true,
+				beforeDismiss: () => {
+					if (articleDetailModal.componentInstance.onBeforeDismiss) {
+						articleDetailModal.componentInstance.onBeforeDismiss();
+					}
+					return true;
+				},
 			}
-		});
+		);
 
 		articleDetailModal.componentInstance.articleId = this.securityHealthArticleId;
 	}
 
 	onToggleChange() {
-		if (this.commonService.getSessionStorageValue(SessionStorageKey.SecurityWifiSecurityInWifiPage) === true) {
+		if (
+			this.commonService.getSessionStorageValue(
+				SessionStorageKey.SecurityWifiSecurityInWifiPage
+			) === true
+		) {
 			if (this.wifiSecurityService.isLWSEnabled) {
 				this.wifiSecurity.disableWifiSecurity();
 			} else {
@@ -273,7 +334,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	private pullCHS(): void {
 		this.intervalId = window.setInterval(() => {
 			this.homeSecurity.refresh().then(() => {
-				this.commonService.setSessionStorageValue(SessionStorageKey.HomeSecurityShowPluginMissingDialog, 'notShow');
+				this.commonService.setSessionStorageValue(
+					SessionStorageKey.HomeSecurityShowPluginMissingDialog,
+					'notShow'
+				);
 			});
 		}, this.interval);
 	}
@@ -282,29 +346,47 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		const timeToExpire = this.maxCanTrialTime - hasTrialDays;
 		const Dialogtitle = this.translate.instant('security.wifisecurity.expirePromptModal.title');
 		const des1 = this.translate.instant('security.wifisecurity.expirePromptModal.description');
-		const des2 =  this.translate.instant('security.wifisecurity.expirePromptModal.trialWillExpire');
-		const signInButton = this.translate.instant('security.wifisecurity.expirePromptModal.signIn');
-		const hasExpired = this.translate.instant('security.wifisecurity.expirePromptModal.hasExpired');
+		const des2 = this.translate.instant(
+			'security.wifisecurity.expirePromptModal.trialWillExpire'
+		);
+		const signInButton = this.translate.instant(
+			'security.wifisecurity.expirePromptModal.signIn'
+		);
+		const hasExpired = this.translate.instant(
+			'security.wifisecurity.expirePromptModal.hasExpired'
+		);
 		const ignore = this.translate.instant('security.wifisecurity.expirePromptModal.ignore');
 		const days = this.translate.instant('security.wifisecurity.expirePromptModal.days');
 
 		const dialogData: DialogData = {
 			title: Dialogtitle,
 			subtitle: '',
-			description: (hasTrialDays < this.maxCanTrialTime) ? `${des1}<br/>${des2}&nbsp;<b>${timeToExpire}&nbsp;${days}</b>` : hasExpired,
+			description:
+				hasTrialDays < this.maxCanTrialTime
+					? `${des1}<br/>${des2}&nbsp;<b>${timeToExpire}&nbsp;${days}</b>`
+					: hasExpired,
 			buttonName: signInButton,
-			linkButtonName: (hasTrialDays < this.maxCanTrialTime) ? ignore : '',
-			showCloseButton: (hasTrialDays < this.maxCanTrialTime) ? true : false,
+			linkButtonName: hasTrialDays < this.maxCanTrialTime ? ignore : '',
+			showCloseButton: hasTrialDays < this.maxCanTrialTime ? true : false,
 		};
 
 		if (!this.dialogService.hasOpenDialog() && this.wifiSecurityService.isLWSEnabled) {
-			this.dialogService.openWifiSecurityExpirePromptDialog(dialogData, (hasTrialDays >= this.maxCanTrialTime));
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, hasTrialDays);
+			this.dialogService.openWifiSecurityExpirePromptDialog(
+				dialogData,
+				hasTrialDays >= this.maxCanTrialTime
+			);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays,
+				hasTrialDays
+			);
 		}
 	}
 
 	needOpenExpireDialog(hasTrialDays: number): boolean {
-		const lastTrialTime = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays, 1);
+		const lastTrialTime = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays,
+			1
+		);
 		if (hasTrialDays >= this.maxCanTrialTime) {
 			return true;
 		}
@@ -319,13 +401,17 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		const metricsData = {
 			ItemParent: 'Security.wifisecurity',
 			ItemName: `wifiSecurity-${state}-lenovoId-${loginState}`,
-			ItemType: 'PageView'
+			ItemType: 'PageView',
 		};
 		this.metrics.sendMetrics(metricsData);
 	}
 
 	getTrialDay() {
-		if (this.wifiSecurityService.isLWSEnabled && !this.userService.auth && this.userService.isLenovoIdSupported()) {
+		if (
+			this.wifiSecurityService.isLWSEnabled &&
+			!this.userService.auth &&
+			this.userService.isLenovoIdSupported()
+		) {
 			this.wifiSecurity.getWifiSecurityTrialDays();
 		}
 	}

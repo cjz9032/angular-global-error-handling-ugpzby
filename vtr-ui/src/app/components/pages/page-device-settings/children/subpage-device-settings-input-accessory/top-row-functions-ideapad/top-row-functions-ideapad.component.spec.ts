@@ -13,7 +13,7 @@ import { DevService } from 'src/app/services/dev/dev.service';
 import { CommsService } from 'src/app/services/comms/comms.service';
 
 const mockNgZone = jasmine.createSpyObj('mockNgZone', ['run', 'runOutsideAngular']);
-mockNgZone.run.and.callFake(fn => fn());
+mockNgZone.run.and.callFake((fn) => fn());
 
 xdescribe('TopRowFunctionsIdeapadComponent', () => {
 	let component: TopRowFunctionsIdeapadComponent;
@@ -23,11 +23,7 @@ xdescribe('TopRowFunctionsIdeapadComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [TopRowFunctionsIdeapadComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
 			providers: [
 				TopRowFunctionsIdeapadService,
 				CommonMetricsService,
@@ -35,9 +31,8 @@ xdescribe('TopRowFunctionsIdeapadComponent', () => {
 				{ provide: NgZone, useValue: mockNgZone },
 				CommsService,
 				DevService,
-			]
-		})
-			.compileComponents();
+			],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

@@ -6,7 +6,9 @@ export class HomeSecurityAllDevice {
 	allDevicesItem: HomeSecurityAllDevicesItem[];
 
 	constructor(translateService: TranslateService, allDevices?: CHSDeviceOverview) {
-		if (!allDevices) { return; }
+		if (!allDevices) {
+			return;
+		}
 		this.allDevicesItem = [];
 		delete allDevices.allDevicesCount;
 		delete allDevices.allDevicesProtected;
@@ -46,7 +48,9 @@ export class HomeSecurityAllDevice {
 				}
 
 				if (icon && type && count) {
-					this.allDevicesItem.push(new HomeSecurityAllDevicesItem({icon, type, count}, translateService));
+					this.allDevicesItem.push(
+						new HomeSecurityAllDevicesItem({ icon, type, count }, translateService)
+					);
 				}
 			}
 		}

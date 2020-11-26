@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
 	selector: 'vtr-modal-hardware-scan-customize',
 	templateUrl: './modal-hardware-scan-customize.component.html',
-	styleUrls: ['./modal-hardware-scan-customize.component.scss']
+	styleUrls: ['./modal-hardware-scan-customize.component.scss'],
 })
 export class ModalHardwareScanCustomizeComponent implements OnDestroy {
 	@Input() items: any[];
@@ -19,10 +19,7 @@ export class ModalHardwareScanCustomizeComponent implements OnDestroy {
 	// e.g. user clicked in the OK button or false otherwise.
 	@Output() modalClosing: EventEmitter<boolean> = new EventEmitter();
 
-	constructor(
-		public activeModal: NgbActiveModal,
-		private translate: TranslateService
-	) { }
+	constructor(public activeModal: NgbActiveModal, private translate: TranslateService) {}
 
 	public ngOnDestroy() {
 		this.modalClosing.emit(this.isSuccessful);
@@ -33,7 +30,7 @@ export class ModalHardwareScanCustomizeComponent implements OnDestroy {
 	}
 
 	public onClickRun() {
-		const leastOneSelected = this.items.find(x => x.selected || x.indeterminate);
+		const leastOneSelected = this.items.find((x) => x.selected || x.indeterminate);
 		if (leastOneSelected !== undefined) {
 			this.isSuccessful = true;
 			this.closeModal();

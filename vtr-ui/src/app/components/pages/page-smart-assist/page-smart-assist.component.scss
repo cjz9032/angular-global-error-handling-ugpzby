@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 $fontsize_xs: 1.4rem;
 .vtr-page {
 	.vtr-page-content {
@@ -100,8 +100,12 @@ $fontsize_xs: 1.4rem;
 				}
 			}
 			&.auto-screen-off-note-red {
-				p { color: #E13836 }
-				b { font-weight: bold }
+				p {
+					color: #e13836;
+				}
+				b {
+					font-weight: bold;
+				}
 			}
 		}
 		.card-body {
@@ -200,7 +204,7 @@ $fontsize_xs: 1.4rem;
 				text-decoration: underline;
 				margin-bottom: 0.5rem;
 				color: $menu_hover;
-				font-family: "Segoe UI", sans-serif;
+				font-family: 'Segoe UI', sans-serif;
 				font-weight: $weight_light;
 				@media #{$white-on-black} {
 					@include black-border;
@@ -224,7 +228,6 @@ $fontsize_xs: 1.4rem;
 						@include black-border;
 					}
 				}
-
 			}
 		}
 		.facial-recognition {
@@ -265,7 +268,6 @@ $fontsize_xs: 1.4rem;
 			&:focus {
 				@include outline-blue;
 			}
-
 		}
 
 		.keep-my-display-block {
@@ -305,8 +307,6 @@ $fontsize_xs: 1.4rem;
 		}
 	}
 }
-
-
 
 .int-screen-desc {
 	p {
@@ -388,7 +388,6 @@ $fontsize_xs: 1.4rem;
 			@include black-border;
 			@include hyperlink-blue-white;
 		}
-
 	}
 }
 
@@ -406,7 +405,7 @@ $fontsize_xs: 1.4rem;
 		}
 	}
 	.intelligent-security-image-word {
-		position:absolute;
+		position: absolute;
 		max-width: 24.2rem;
 		left: 3rem;
 		top: 50%;

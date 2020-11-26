@@ -6,10 +6,9 @@ import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 @Component({
 	selector: 'vtr-available-updates',
 	templateUrl: './available-updates.component.html',
-	styleUrls: ['./available-updates.component.scss']
+	styleUrls: ['./available-updates.component.scss'],
 })
 export class AvailableUpdatesComponent implements OnInit {
-
 	@Input() criticalUpdates: AvailableUpdateDetail[];
 	@Input() recommendedUpdates: AvailableUpdateDetail[];
 	@Input() optionalUpdates: AvailableUpdateDetail[];
@@ -19,7 +18,7 @@ export class AvailableUpdatesComponent implements OnInit {
 	@Input() ignoredUpdatesToInstall: AvailableUpdateDetail[];
 	@Input() isInstallationSuccess = false;
 	@Input() isInstallingAllUpdates = true;
-	@Input() isUpdateDownloading = false;;
+	@Input() isUpdateDownloading = false;
 
 	@Input() set ignoredUpdates(value: AvailableUpdateDetail[]) {
 		this.mIgnoredUpdates = value;
@@ -37,7 +36,6 @@ export class AvailableUpdatesComponent implements OnInit {
 		return this.mIsInstallationCompleted;
 	}
 
-
 	@Output() checkChange = new EventEmitter<any>();
 	@Output() ignoreUpdate = new EventEmitter<any>();
 	@Output() installAllUpdate = new EventEmitter<any>();
@@ -52,7 +50,7 @@ export class AvailableUpdatesComponent implements OnInit {
 
 	public UpdateInstallTitleId = UpdateInstallTitleId;
 
-	constructor(private systemUpdateService: SystemUpdateService) { }
+	constructor(private systemUpdateService: SystemUpdateService) {}
 
 	public criticalUpdatesIcon = 'assets/icons/Icon_Critical_Update.svg';
 	public recommendedUpdatesIcon = 'assets/icons/Icon_Recommended_Update.svg';
@@ -65,9 +63,11 @@ export class AvailableUpdatesComponent implements OnInit {
 				return item.isSelected;
 			});
 
-			this.recommendedUpdates = this.recommendedUpdates.filter((item: AvailableUpdateDetail) => {
-				return item.isSelected;
-			});
+			this.recommendedUpdates = this.recommendedUpdates.filter(
+				(item: AvailableUpdateDetail) => {
+					return item.isSelected;
+				}
+			);
 
 			this.optionalUpdates = this.optionalUpdates.filter((item: AvailableUpdateDetail) => {
 				return item.isSelected;
@@ -98,14 +98,16 @@ export class AvailableUpdatesComponent implements OnInit {
 	}
 
 	private checkSelectedUpdateStatus() {
-		const selectedUpdates = this.systemUpdateService.getSelectedUpdates(this.systemUpdateService.updateInfo.updateList);
+		const selectedUpdates = this.systemUpdateService.getSelectedUpdates(
+			this.systemUpdateService.updateInfo.updateList
+		);
 		this.isUpdateSelected = selectedUpdates.length > 0;
 		this.expandIgnoredForDependencyUpdates();
 	}
 
 	private expandIgnoredForDependencyUpdates() {
 		if (this.isCollapsed) {
-			const dependencyInIgnored = this.ignoredUpdates.find(x => x.isDependency);
+			const dependencyInIgnored = this.ignoredUpdates.find((x) => x.isDependency);
 			if (dependencyInIgnored) {
 				this.isCollapsed = false;
 			}

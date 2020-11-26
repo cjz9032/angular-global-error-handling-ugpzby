@@ -1,4 +1,4 @@
-@import "./../../../app.theme";
+@import './../../../app.theme';
 
 @mixin theme($name, $background, $foreground, $label-color) {
 	$focus-indicator: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(0, 123, 255, 1);
@@ -30,7 +30,7 @@
 				}
 
 				// circle UI part
-				[role="radio"] {
+				[role='radio'] {
 					background: $foreground;
 					border: 0.2rem solid $background;
 					display: inline-block;
@@ -140,12 +140,12 @@
 						}
 					}
 
-					&[aria-disabled="true"] {
+					&[aria-disabled='true'] {
 						border-color: $grey_light;
 						background: $grey_lighter;
 						pointer-events: none;
 
-						&:focus{
+						&:focus {
 							box-shadow: none;
 						}
 
@@ -172,7 +172,8 @@
 					}
 				}
 
-				[role="radio"]:hover ~ .text, [role="radio"]:active ~ .text {
+				[role='radio']:hover ~ .text,
+				[role='radio']:active ~ .text {
 					@media #{$black-on-white} {
 						color: $high-contrast-white-dark-magenta;
 					}
@@ -181,7 +182,7 @@
 					}
 				}
 
-				[role="radio"][aria-checked="true"] {
+				[role='radio'][aria-checked='true'] {
 					background: $background;
 					@media #{$black-on-white} {
 						background: transparent;
@@ -224,7 +225,7 @@
 						}
 					}
 
-					&:focus{
+					&:focus {
 						box-shadow: none;
 					}
 
@@ -267,7 +268,7 @@
 							}
 						}
 					}
-					&[aria-disabled="true"] {
+					&[aria-disabled='true'] {
 						border-color: $grey_light;
 						background: $grey_light;
 						pointer-events: none;
@@ -318,7 +319,8 @@
 					}
 				}
 
-				[role="radio"][aria-checked="true"] ~ .text, [role="radio"][aria-checked="true"] ~ .text {
+				[role='radio'][aria-checked='true'] ~ .text,
+				[role='radio'][aria-checked='true'] ~ .text {
 					@media #{$black-on-white} {
 						color: $high-contrast-white-dark-magenta;
 					}
@@ -327,7 +329,8 @@
 					}
 				}
 
-				[role="radio"][aria-checked="true"] ~ .text-disabled, [role="radio"][aria-checked="true"] ~ .text-disabled {
+				[role='radio'][aria-checked='true'] ~ .text-disabled,
+				[role='radio'][aria-checked='true'] ~ .text-disabled {
 					@media #{$white-on-black} {
 						@include high-contrast-black-text-color-disabled;
 					}
@@ -335,7 +338,6 @@
 						@include high-contrast-white-text-color-disabled;
 					}
 				}
-
 
 				.text {
 					font-weight: $weight_light;

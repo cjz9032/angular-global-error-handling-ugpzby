@@ -1,5 +1,5 @@
 export enum LightEffectComplexType {
-	Static = 1,// Same as On
+	Static = 1, // Same as On
 	Flicker = 2,
 	Breath = 4,
 	Wave = 8,
@@ -9,5 +9,5 @@ export enum LightEffectComplexType {
 	CPU_frequency = 128,
 	Response = 256,
 	Ripple = 512,
-	Off = 268435456 ///same Off
+	Off = 268435456, ///same Off
 }

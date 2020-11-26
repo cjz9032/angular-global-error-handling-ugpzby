@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .vtr-ui-button {
 	display: block;
@@ -127,7 +127,11 @@
 
 		.btn-gradient {
 			background-color: $button_gradient_start;
-			background-image: linear-gradient(to right, $button_gradient_start, $button_gradient_end);
+			background-image: linear-gradient(
+				to right,
+				$button_gradient_start,
+				$button_gradient_end
+			);
 			// @include high-contrast-background-image;
 			@include high-contrast-adjust;
 			@include ui-button-high-contrast-white;

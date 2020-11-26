@@ -8,7 +8,7 @@ import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
  * camera.service.ts, for time being going to use camera.service.mock.ts
  */
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export abstract class BaseCameraDetail {
 	abstract cameraDetailObservable: Observable<CameraDetail>;

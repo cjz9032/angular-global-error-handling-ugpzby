@@ -15,7 +15,6 @@ describe('GamingHybridModeService', () => {
 		shellService = TestBed.get(VantageShellService);
 	});
 	describe(':', () => {
-
 		function setup() {
 			const service = TestBed.get(GamingHybridModeService);
 			return { service };
@@ -41,11 +40,15 @@ describe('GamingHybridModeService', () => {
 			const { service } = setup();
 			service.isShellAvailable = true;
 			spyOn(service, 'getHybridModeStatus').and.callThrough();
-			spyOn(service.gamingHybridMode, 'getHybridModeStatus').and.throwError('shellService.gamingHybridMode().getHybridModeStatus error.');
+			spyOn(service.gamingHybridMode, 'getHybridModeStatus').and.throwError(
+				'shellService.gamingHybridMode().getHybridModeStatus error.'
+			);
 			try {
 				service.getHybridModeStatus();
 			} catch (err) {
-				expect(err.message).toEqual('shellService.gamingHybridMode().getHybridModeStatus error.');
+				expect(err.message).toEqual(
+					'shellService.gamingHybridMode().getHybridModeStatus error.'
+				);
 			}
 		});
 
@@ -64,13 +67,16 @@ describe('GamingHybridModeService', () => {
 			const { service } = setup();
 			service.isShellAvailable = true;
 			spyOn(service, 'setHybridModeStatus').and.callThrough();
-			spyOn(service.gamingHybridMode, 'setHybridModeStatus').and.throwError('shellService.gamingHybridMode().setHybridModeStatus error.');
+			spyOn(service.gamingHybridMode, 'setHybridModeStatus').and.throwError(
+				'shellService.gamingHybridMode().setHybridModeStatus error.'
+			);
 			try {
 				service.setHybridModeStatus(true);
 			} catch (err) {
-				expect(err.message).toEqual('shellService.gamingHybridMode().setHybridModeStatus error.');
+				expect(err.message).toEqual(
+					'shellService.gamingHybridMode().setHybridModeStatus error.'
+				);
 			}
 		});
 	});
-
 });

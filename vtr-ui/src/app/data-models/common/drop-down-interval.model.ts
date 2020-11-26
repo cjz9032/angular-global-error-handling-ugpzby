@@ -19,5 +19,4 @@ export interface DropDownInterval {
 	 * value to sent in Metrics
 	 */
 	metricsValue: any;
-
 }

@@ -19,12 +19,10 @@ export interface FeatureIntroduction {
 @Component({
 	selector: 'vtr-ui-feature-introduction',
 	templateUrl: './ui-feature-introduction.component.html',
-	styleUrls: ['./ui-feature-introduction.component.scss']
+	styleUrls: ['./ui-feature-introduction.component.scss'],
 })
-
 export class UiFeatureIntroductionComponent {
 	@Input() items: FeatureIntroduction;
 	@Input() textId = '';
 	@Input() reverse = false;
-
 }

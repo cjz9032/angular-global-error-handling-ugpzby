@@ -17,7 +17,7 @@ import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standb
 @Component({
 	selector: 'vtr-smart-standby',
 	templateUrl: './smart-standby.component.html',
-	styleUrls: ['./smart-standby.component.scss']
+	styleUrls: ['./smart-standby.component.scss'],
 })
 export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public smartStandby = new SmartStandby();
@@ -41,22 +41,24 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	@Output() smartStandbyCapability = new EventEmitter<boolean>();
 	public readonly AUTOMATIC_MODE = 'Automatic mode';
 	public readonly MANUAL_MODE = 'Manual mode';
-	public scheduleComputerModesUIModel: Array<UiRoundedRectangleRadioModel> = [{
-		componentId: 'Automatic mode',
-		label: 'device.deviceSettings.power.smartStandby.automaticMode',
-		value: this.AUTOMATIC_MODE,
-		isChecked: this.checkbox === true ? true : false,
-		isDisabled: !this.smartStandby.isEnabled,
-		metricsItem: 'radio.smart-standby.automatic-mode'
-	},
-	{
-		componentId: 'Manual mode',
-		label: 'device.deviceSettings.power.smartStandby.manualMode',
-		value: this.MANUAL_MODE,
-		isChecked: this.checkbox !== true ? true : false,
-		isDisabled: !this.smartStandby.isEnabled,
-		metricsItem: 'radio.smart-standby.manual-mode'
-	}];
+	public scheduleComputerModesUIModel: Array<UiRoundedRectangleRadioModel> = [
+		{
+			componentId: 'Automatic mode',
+			label: 'device.deviceSettings.power.smartStandby.automaticMode',
+			value: this.AUTOMATIC_MODE,
+			isChecked: this.checkbox === true ? true : false,
+			isDisabled: !this.smartStandby.isEnabled,
+			metricsItem: 'radio.smart-standby.automatic-mode',
+		},
+		{
+			componentId: 'Manual mode',
+			label: 'device.deviceSettings.power.smartStandby.manualMode',
+			value: this.MANUAL_MODE,
+			isChecked: this.checkbox !== true ? true : false,
+			isDisabled: !this.smartStandby.isEnabled,
+			metricsItem: 'radio.smart-standby.manual-mode',
+		},
+	];
 
 	constructor(
 		private modalService: NgbModal,
@@ -65,7 +67,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		public commonService: CommonService,
 		public smartStandbyService: SmartStandbyService,
 		private translate: TranslateService,
-		private localCacheService: LocalCacheService) {
+		private localCacheService: LocalCacheService
+	) {
 		this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
 	}
 
@@ -73,15 +76,17 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.firstTimeLoad = true;
 		this.getSmartStandbyCapability();
 		this.showDropDown = [false, false, false];
-		this.toggleSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onSmartStandbyNotification(notification);
-		});
-
+		this.toggleSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onSmartStandbyNotification(notification);
+			}
+		);
 	}
 
 	public showSmartStandby() {
 		if (this.powerService.isShellAvailable) {
-			this.powerService.getSmartStandbyCapability()
+			this.powerService
+				.getSmartStandbyCapability()
 				.then((response: boolean) => {
 					this.logger.info(' getSmartStandbyCapability response', response);
 					if (this.firstTimeLoad || response !== this.smartStandby.isCapable) {
@@ -94,8 +99,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 						}
 					}
 					this.smartStandbyCapability.emit(this.smartStandby.isCapable);
-
-				}).catch((error) => {
+				})
+				.catch((error) => {
 					this.logger.info('getSmartStandbyCapability Error', error.message);
 				});
 		}
@@ -108,7 +113,6 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.firstTimeLoad = false;
 			this.showSmartStandby();
 		}, 30000);
-
 	}
 
 	async setSmartStandbyEnabled() {
@@ -147,7 +151,10 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.getSmartStandbyIsAutonomic();
 	}
 	initDataFromCache() {
-		this.cache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartStandbyCapability, undefined);
+		this.cache = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SmartStandbyCapability,
+			undefined
+		);
 		if (this.cache) {
 			this.smartStandby.isCapable = this.cache.isCapable;
 			if (!this.smartStandby.isCapable) {
@@ -175,7 +182,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		try {
 			this.logger.info('setSmartStandbyEnabled entered', event);
 			if (this.powerService.isShellAvailable) {
-				this.powerService.setSmartStandbyEnabled(isEnabled)
+				this.powerService
+					.setSmartStandbyEnabled(isEnabled)
 					.then((value: number) => {
 						this.logger.info('setSmartStandbyEnabled.then', value);
 						if (value === 0) {
@@ -186,7 +194,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							this.updateScheduleComputerModesUIModel();
 						}
 					})
-					.catch(error => {
+					.catch((error) => {
 						this.logger.error('setSmartStandbyEnabled', error.message);
 						return EMPTY;
 					});
@@ -224,7 +232,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			try {
 				this.logger.info('setSmartStandbyStartEndTime entered', event);
 				if (this.powerService.isShellAvailable) {
-					this.powerService.setSmartStandbyActiveStartEnd(activeStartEnd)
+					this.powerService
+						.setSmartStandbyActiveStartEnd(activeStartEnd)
 						.then((value: number) => {
 							this.logger.info('setSmartStandbyStartEndTime.then', value);
 							if (value === 0) {
@@ -233,7 +242,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 								this.saveCache();
 							}
 						})
-						.catch(error => {
+						.catch((error) => {
 							this.logger.error('setSmartStandbyStartTime', error.message);
 							return EMPTY;
 						});
@@ -254,7 +263,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		try {
 			this.logger.info('setSmartStandbyDaysOfWeekOff entered', event);
 			if (this.powerService.isShellAvailable) {
-				this.powerService.setSmartStandbyDaysOfWeekOff(daysOfWeekOff)
+				this.powerService
+					.setSmartStandbyDaysOfWeekOff(daysOfWeekOff)
 					.then((value: number) => {
 						this.logger.info('setSmartStandbyDaysOfWeekOff.then', value);
 						if (value === 0) {
@@ -263,7 +273,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 							this.saveCache();
 						}
 					})
-					.catch(error => {
+					.catch((error) => {
 						this.logger.error('setSmartStandbyDaysOfWeekOff.error', error.message);
 						return EMPTY;
 					});
@@ -282,7 +292,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		hourMinutes = this.smartStandbyEndTime.split(':');
 		const endMinutes = parseInt(hourMinutes[0], 10) * 60 + parseInt(hourMinutes[1], 10);
 		if (endMinutes <= startMinutes) {
-			timeDiff = (((24 * 60) - startMinutes) + endMinutes) / 60;
+			timeDiff = (24 * 60 - startMinutes + endMinutes) / 60;
 		} else {
 			timeDiff = (endMinutes - startMinutes) / 60;
 		}
@@ -312,18 +322,24 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public getIsAutonomicCapability() {
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService.getIsAutonomicCapability()
-					.then(response => {
+				this.powerService
+					.getIsAutonomicCapability()
+					.then((response) => {
 						this.logger.info('===== getIsAutonomicCapability =====:', response);
 						this.isAutonomicCapability = response || false;
 						if (!this.isAutonomicCapability) {
 							this.checkbox = false;
 							this.isCollapsed = false;
-							this.caption = this.translate.instant('device.deviceSettings.power.smartStandby.description2');
-							this.tooltipText = this.translate.instant('device.deviceSettings.power.smartStandby.oldTooltipText');
+							this.caption = this.translate.instant(
+								'device.deviceSettings.power.smartStandby.description2'
+							);
+							this.tooltipText = this.translate.instant(
+								'device.deviceSettings.power.smartStandby.oldTooltipText'
+							);
 							this.updateScheduleComputerModesUIModel();
 						}
-					}).catch(error => {
+					})
+					.catch((error) => {
 						this.logger.error('getIsAutonomicCapability', error.message);
 						return EMPTY;
 					});
@@ -336,10 +352,12 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public setSmartStandbyIsAutonomic(onOff) {
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService.setSmartStandbyIsAutonomic(onOff)
+				this.powerService
+					.setSmartStandbyIsAutonomic(onOff)
 					.then((value: number) => {
 						this.logger.info('setSmartStandbyIsAutonomic', value);
-					}).catch(error => {
+					})
+					.catch((error) => {
 						this.logger.error('setSmartStandbyIsAutonomic', error.message);
 						return EMPTY;
 					});
@@ -352,12 +370,14 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	public getSmartStandbyIsAutonomic() {
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService.getSmartStandbyIsAutonomic()
+				this.powerService
+					.getSmartStandbyIsAutonomic()
 					.then((response: boolean) => {
 						this.checkbox = response;
 						this.updateScheduleComputerModesUIModel();
 						this.logger.info('getSmartStandbyIsAutonomic:', response);
-					}).catch(error => {
+					})
+					.catch((error) => {
 						this.logger.error('getSmartStandbyIsAutonomic', error.message);
 						return EMPTY;
 					});
@@ -375,8 +395,6 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.isCollapsed = true;
 	}
 
-
-
 	focusElement(elementId) {
 		setTimeout(() => {
 			const focusElement = document.getElementById(`${elementId}`) as HTMLElement;
@@ -392,11 +410,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 		this.showDropDown = [false, false, false];
 		if (this.isCollapsed) {
 			this.focusElement(this.clicktoChangeId);
-
 		}
 		if (!this.isCollapsed) {
 			this.focusElement(this.collapseId);
-
 		}
 	}
 	public showUsageGraph() {
@@ -405,7 +421,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				backdrop: 'static',
 				centered: true,
 				windowClass: 'smart-standBy-modal',
-				size: 'lg'
+				size: 'lg',
 			});
 			modalRef.componentInstance.isAutomatic = this.checkbox;
 		}
@@ -420,7 +436,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 
 	updateScheduleComputerModesUIModel() {
 		if (this.scheduleComputerModesUIModel && this.scheduleComputerModesUIModel.length > 0) {
-			this.scheduleComputerModesUIModel.forEach(model => {
+			this.scheduleComputerModesUIModel.forEach((model) => {
 				switch (model.value) {
 					case this.AUTOMATIC_MODE:
 						model.isChecked = this.checkbox;
@@ -438,6 +454,9 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 
 	private saveCache(): void {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, this.cache);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.SmartStandbyCapability,
+			this.cache
+		);
 	}
 }

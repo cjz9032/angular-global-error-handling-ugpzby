@@ -16,15 +16,18 @@ describe('WidgetDeviceUpdateSettingsComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetDeviceUpdateSettingsComponent],
-			imports: [HttpClientModule, RouterTestingModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				},
-				isolate: false
-			}),
-				TranslationModule.forChild()
+			imports: [
+				HttpClientModule,
+				RouterTestingModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+					isolate: false,
+				}),
+				TranslationModule.forChild(),
 			],
 
 			schemas: [NO_ERRORS_SCHEMA],
@@ -42,22 +45,19 @@ describe('WidgetDeviceUpdateSettingsComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-
 	it('should check currentFocus', () => {
 		const id = 'cold' + 1;
 		component.currentFocus(id);
 		expect(component.currentFocus).toBeTruthy();
 	});
 
-
 	it('should check onToggleOnOff status is true', () => {
 		const event = true;
 		component.toggleOnOff.subscribe((res: any) => {
 			expect(res).toBe(true);
-			});
+		});
 		component.onToggleOnOff(event);
 	});
-
 
 	it('should check optionChanged', () => {
 		const option = 1;
@@ -68,17 +68,16 @@ describe('WidgetDeviceUpdateSettingsComponent', () => {
 		component.optionSelected.subscribe((res: any) => {
 			expect(res.option).toBe(1);
 			expect(res.target).toBe(1);
-			});
+		});
 		component.optionChanged(option, item, id);
 	});
-
 
 	it('should check onClosed', () => {
 		const event: any = true;
 		spyOn(component, 'updateFocus').and.callThrough();
 		component.popupClosed.subscribe((res: any) => {
 			expect(res).toBe(true);
-			});
+		});
 		component.onClosed(event, 'false');
 	});
 });

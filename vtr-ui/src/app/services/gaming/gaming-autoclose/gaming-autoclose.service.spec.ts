@@ -11,13 +11,12 @@ describe('GamingAutoCloseService', () => {
 		beforeEach(() => {
 			TestBed.configureTestingModule({
 				imports: [HttpClientModule],
-				providers: [VantageShellService]
+				providers: [VantageShellService],
 			});
 			service = TestBed.get(GamingAutoCloseService);
 			shellService = TestBed.get(VantageShellService);
 		});
 		describe(':', () => {
-
 			function setup() {
 				const service = TestBed.get(GamingAutoCloseService);
 
@@ -44,7 +43,6 @@ describe('GamingAutoCloseService', () => {
 				service.isShellAvailable = false;
 				service.setAutoCloseStatus(true);
 				expect(service.gamingAutoClose.setStatus).toHaveBeenCalled();
-
 			});
 
 			it('should call getAppsAutoCloseList', () => {
@@ -57,7 +55,6 @@ describe('GamingAutoCloseService', () => {
 				service.isShellAvailable = false;
 				service.getAppsAutoCloseList();
 				expect(service.gamingAutoClose.getAutoCloseList).toHaveBeenCalled();
-
 			});
 
 			it('should call getAppsAutoCloseRunningList', () => {
@@ -70,7 +67,6 @@ describe('GamingAutoCloseService', () => {
 				service.isShellAvailable = false;
 				service.getAppsAutoCloseRunningList();
 				expect(service.gamingAutoClose.getRunningList).toHaveBeenCalled();
-
 			});
 
 			it('should call addAppsAutoCloseList', () => {
@@ -82,7 +78,6 @@ describe('GamingAutoCloseService', () => {
 				service.isShellAvailable = false;
 				service.addAppsAutoCloseList(true);
 				expect(service.gamingAutoClose.addAutoCloseList).toHaveBeenCalled();
-
 			});
 
 			it('should call delAppsAutoCloseList', () => {
@@ -94,7 +89,6 @@ describe('GamingAutoCloseService', () => {
 				service.isShellAvailable = false;
 				service.delAppsAutoCloseList(true);
 				expect(service.gamingAutoClose.delAutoCloseList).toHaveBeenCalled();
-
 			});
 
 			it('should call setNeedToAsk', () => {
@@ -106,7 +100,6 @@ describe('GamingAutoCloseService', () => {
 				service.isShellAvailable = false;
 				service.setNeedToAsk(true);
 				expect(service.gamingAutoClose.setNeedToAsk).toHaveBeenCalled();
-
 			});
 
 			it('should call getNeedToAsk', () => {
@@ -118,65 +111,92 @@ describe('GamingAutoCloseService', () => {
 				service.isShellAvailable = false;
 				service.getNeedToAsk(true);
 				expect(service.gamingAutoClose.getNeedToAsk).toHaveBeenCalled();
-
 			});
 
 			it('should call functions throw error', () => {
 				const { service } = setup();
-				try{
-					spyOn(service.gamingAutoClose, 'getStatus').and.throwError(new Error('new getStatus error'));
-					service.getAutoCloseStatus();			
-				} catch(error) {
-					expect(service.gamingAutoClose.getStatus).toThrowError('new getStatus error');	
+				try {
+					spyOn(service.gamingAutoClose, 'getStatus').and.throwError(
+						new Error('new getStatus error')
+					);
+					service.getAutoCloseStatus();
+				} catch (error) {
+					expect(service.gamingAutoClose.getStatus).toThrowError('new getStatus error');
 				}
 
-				try{					
-					spyOn(service.gamingAutoClose, 'setStatus').and.throwError(new Error('new setStatus error'));
+				try {
+					spyOn(service.gamingAutoClose, 'setStatus').and.throwError(
+						new Error('new setStatus error')
+					);
 					service.setAutoCloseStatus(true);
-				} catch(error) {
+				} catch (error) {
 					expect(service.gamingAutoClose.setStatus).toThrowError('new setStatus error');
 				}
 
-				try{
-					spyOn(service.gamingAutoClose, 'getAutoCloseList').and.throwError(new Error('new getAutoCloseList error'));
+				try {
+					spyOn(service.gamingAutoClose, 'getAutoCloseList').and.throwError(
+						new Error('new getAutoCloseList error')
+					);
 					service.getAppsAutoCloseList();
-				} catch(error) {
-					expect(service.gamingAutoClose.getAutoCloseList).toThrowError('new getAutoCloseList error');
+				} catch (error) {
+					expect(service.gamingAutoClose.getAutoCloseList).toThrowError(
+						'new getAutoCloseList error'
+					);
 				}
 
-				try{
-					spyOn(service.gamingAutoClose, 'getRunningList').and.throwError(new Error('new getRunningList error'));
+				try {
+					spyOn(service.gamingAutoClose, 'getRunningList').and.throwError(
+						new Error('new getRunningList error')
+					);
 					service.getAppsAutoCloseRunningList();
-				} catch(error) {
-					expect(service.gamingAutoClose.getRunningList).toThrowError('new getRunningList error');
+				} catch (error) {
+					expect(service.gamingAutoClose.getRunningList).toThrowError(
+						'new getRunningList error'
+					);
 				}
 
-				try{
-					spyOn(service.gamingAutoClose, 'addAutoCloseList').and.throwError(new Error('new addAutoCloseList error'));
+				try {
+					spyOn(service.gamingAutoClose, 'addAutoCloseList').and.throwError(
+						new Error('new addAutoCloseList error')
+					);
 					service.addAppsAutoCloseList(true);
-				} catch(error) {
-					expect(service.gamingAutoClose.addAutoCloseList).toThrowError('new addAutoCloseList error');
+				} catch (error) {
+					expect(service.gamingAutoClose.addAutoCloseList).toThrowError(
+						'new addAutoCloseList error'
+					);
 				}
 
-				try{
-					spyOn(service.gamingAutoClose, 'delAutoCloseList').and.throwError(new Error('new delAutoCloseList error'));
+				try {
+					spyOn(service.gamingAutoClose, 'delAutoCloseList').and.throwError(
+						new Error('new delAutoCloseList error')
+					);
 					service.delAppsAutoCloseList(true);
-				} catch(error) {
-					expect(service.gamingAutoClose.delAutoCloseList).toThrowError('new delAutoCloseList error');
+				} catch (error) {
+					expect(service.gamingAutoClose.delAutoCloseList).toThrowError(
+						'new delAutoCloseList error'
+					);
 				}
 
-				try{
-					spyOn(service.gamingAutoClose, 'setNeedToAsk').and.throwError(new Error('new setNeedToAsk error'));
+				try {
+					spyOn(service.gamingAutoClose, 'setNeedToAsk').and.throwError(
+						new Error('new setNeedToAsk error')
+					);
 					service.setNeedToAsk(true);
-				} catch(error) {
-					expect(service.gamingAutoClose.setNeedToAsk).toThrowError('new setNeedToAsk error');
+				} catch (error) {
+					expect(service.gamingAutoClose.setNeedToAsk).toThrowError(
+						'new setNeedToAsk error'
+					);
 				}
 
-				try{
-					spyOn(service.gamingAutoClose, 'getNeedToAsk').and.throwError(new Error('new getNeedToAsk error'));
+				try {
+					spyOn(service.gamingAutoClose, 'getNeedToAsk').and.throwError(
+						new Error('new getNeedToAsk error')
+					);
 					service.getNeedToAsk();
-				} catch(error) {
-					expect(service.gamingAutoClose.getNeedToAsk).toThrowError('new getNeedToAsk error');
+				} catch (error) {
+					expect(service.gamingAutoClose.getNeedToAsk).toThrowError(
+						'new getNeedToAsk error'
+					);
 				}
 			});
 
@@ -189,7 +209,6 @@ describe('GamingAutoCloseService', () => {
 				service.setAutoCloseStatusCache();
 				expect(service.setAutoCloseStatusCache).toHaveBeenCalled();
 			});
-
 
 			it('should call getAutoCloseStatusCache', () => {
 				const { service } = setup();
@@ -240,11 +259,6 @@ describe('GamingAutoCloseService', () => {
 				service.getAutoCloseListCache();
 				expect(service.getAutoCloseListCache).toHaveBeenCalled();
 			});
-
 		});
-
 	});
 });
-
-
-

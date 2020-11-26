@@ -10,24 +10,33 @@ export class VPNWidgetItem extends WidgetItem {
 		vpn: Vpn,
 		commonService: CommonService,
 		private localCacheService: LocalCacheService,
-		private translateService: TranslateService) {
-		super({
-			id: 'sa-widget-lnk-vpn',
-			path: 'security/internet-protection',
-			type: 'security',
-			isSystemLink: false,
-			metricsItemName: 'VPN'
-		}, translateService);
+		private translateService: TranslateService
+	) {
+		super(
+			{
+				id: 'sa-widget-lnk-vpn',
+				path: 'security/internet-protection',
+				type: 'security',
+				isSystemLink: false,
+				metricsItemName: 'VPN',
+			},
+			translateService
+		);
 		this.translateService.stream('common.securityAdvisor.vpn').subscribe((value) => {
 			this.title = value;
 		});
-		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityVPNStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityVPNStatus
+		);
 		if (cacheStatus) {
 			this.updateStatus(cacheStatus);
 		}
 		if (vpn.status) {
 			this.updateStatus(vpn.status);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityVPNStatus, vpn.status);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityVPNStatus,
+				vpn.status
+			);
 		}
 
 		vpn.on(EventTypes.vpnStatusEvent, (status) => {

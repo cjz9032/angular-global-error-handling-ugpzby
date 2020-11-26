@@ -3,10 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
 	selector: 'vtr-clock',
 	templateUrl: './clock.component.html',
-	styleUrls: ['./clock.component.scss']
+	styleUrls: ['./clock.component.scss'],
 })
 export class ClockComponent implements OnInit {
-
 	hour = 0;
 	minute: any;
 	ampm = 'am';
@@ -27,20 +26,12 @@ export class ClockComponent implements OnInit {
 		'September',
 		'October',
 		'November',
-		'December'
+		'December',
 	];
 
-	days = [
-		'Sunday',
-		'Monday',
-		'Tuesday',
-		'Wednesday',
-		'Thursday',
-		'Friday',
-		'Saturday'
-	];
+	days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-	constructor() { }
+	constructor() {}
 
 	ngOnInit() {
 		const now = new Date();
@@ -62,5 +53,4 @@ export class ClockComponent implements OnInit {
 		this.date = now.getDate();
 		this.year = now.getFullYear();
 	}
-
 }

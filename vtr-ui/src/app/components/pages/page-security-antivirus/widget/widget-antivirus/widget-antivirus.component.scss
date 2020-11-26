@@ -1,4 +1,4 @@
-@import "../../../../../app.theme.scss";
+@import '../../../../../app.theme.scss';
 
 .vtr-widget-antivirus {
 	@media #{$breakpoint_lg} {
@@ -26,7 +26,7 @@
 		font-size: $fontsize_xl;
 		font-weight: 500;
 		line-height: 4.2rem;
-		text-align: center
+		text-align: center;
 	}
 
 	.height-line {

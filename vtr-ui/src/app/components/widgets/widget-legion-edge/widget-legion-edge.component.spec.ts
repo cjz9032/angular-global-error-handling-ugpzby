@@ -53,7 +53,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	let cpuOCStatusCache = 3;
 	let gpuOCStatusCache = 3;
 	let memOCStatusCache = false;
-	let networkBoostStatusCache = false
+	let networkBoostStatusCache = false;
 	let autoCloseStatusCache = false;
 	let hybridModeStatusCache = false;
 	let overDriveStatusCache = true;
@@ -65,9 +65,8 @@ describe('WidgetLegionEdgeComponent', () => {
 		getCapabalitiesNotification() {
 			let res = {
 				type: '',
-				payload: {
-				}
-			}
+				payload: {},
+			};
 			return of(res);
 		},
 	};
@@ -146,7 +145,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					break;
 			}
 		},
-	}
+	};
 
 	let gamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
@@ -187,21 +186,65 @@ describe('WidgetLegionEdgeComponent', () => {
 				case '[LocalStorageKey] WinKeyLockFeature':
 					return winKeyLockFeatureCache;
 			}
-		}
+		},
 	};
 
 	const translateServiceMock = { instant: (name) => name };
 
-	const gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', ['getThermalModeRealStatus', 'regThermalModeRealStatusChangeEvent']);
+	const gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', [
+		'getThermalModeRealStatus',
+		'regThermalModeRealStatusChangeEvent',
+	]);
 	const gamingOCServiceSpy = jasmine.createSpyObj('GamingOCService', ['getPerformanceOCSetting']);
-	const gamingSystemUpdateServiceSpy = jasmine.createSpyObj('GamingSystemUpdateService', ['getCpuOCStatus', 'getRamOCStatus', 'setCpuOCStatus', 'setRamOCStatus']);
-	const networkBoostServiceSpy = jasmine.createSpyObj('NetworkBoostService', ['getNetworkBoostStatus', 'setNetworkBoostStatus']);
-	const gamingAutoCloseServiceSpy = jasmine.createSpyObj('GamingAutoCloseService', ['getAutoCloseStatus', 'setAutoCloseStatus', 'getAppsAutoCloseList', 'getAppsAutoCloseRunningList', 'addAppsAutoCloseList', 'delAppsAutoCloseList', 'getNeedToAsk', 'setNeedToAsk', 'setAutoCloseStatusCache', 'getAutoCloseStatusCache', 'setNeedToAskStatusCache', 'getNeedToAskStatusCache', 'setAutoCloseListCache', 'getAutoCloseListCache']);
-	const gamingHybridModeServiceSpy = jasmine.createSpyObj('GamingHybridModeService', ['getHybridModeStatus', 'setHybridModeStatus']);
-	const gamingOverDriveServiceSpy = jasmine.createSpyObj('GamingOverDriveService', ['getOverDriveStatus', 'setOverDriveStatus']);
-	const gamingKeyLockServiceSpy = jasmine.createSpyObj('GamingKeyLockService', ['getKeyLockStatus', 'setKeyLockStatus']);
-	const loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['getMessage', 'debug', 'error', 'info', 'exception']);
-	const gamingQuickSettingToolbarServiceSpy = jasmine.createSpyObj('GamingQuickSettingToolbarService', ['registerEvent', 'unregisterEvent']);
+	const gamingSystemUpdateServiceSpy = jasmine.createSpyObj('GamingSystemUpdateService', [
+		'getCpuOCStatus',
+		'getRamOCStatus',
+		'setCpuOCStatus',
+		'setRamOCStatus',
+	]);
+	const networkBoostServiceSpy = jasmine.createSpyObj('NetworkBoostService', [
+		'getNetworkBoostStatus',
+		'setNetworkBoostStatus',
+	]);
+	const gamingAutoCloseServiceSpy = jasmine.createSpyObj('GamingAutoCloseService', [
+		'getAutoCloseStatus',
+		'setAutoCloseStatus',
+		'getAppsAutoCloseList',
+		'getAppsAutoCloseRunningList',
+		'addAppsAutoCloseList',
+		'delAppsAutoCloseList',
+		'getNeedToAsk',
+		'setNeedToAsk',
+		'setAutoCloseStatusCache',
+		'getAutoCloseStatusCache',
+		'setNeedToAskStatusCache',
+		'getNeedToAskStatusCache',
+		'setAutoCloseListCache',
+		'getAutoCloseListCache',
+	]);
+	const gamingHybridModeServiceSpy = jasmine.createSpyObj('GamingHybridModeService', [
+		'getHybridModeStatus',
+		'setHybridModeStatus',
+	]);
+	const gamingOverDriveServiceSpy = jasmine.createSpyObj('GamingOverDriveService', [
+		'getOverDriveStatus',
+		'setOverDriveStatus',
+	]);
+	const gamingKeyLockServiceSpy = jasmine.createSpyObj('GamingKeyLockService', [
+		'getKeyLockStatus',
+		'setKeyLockStatus',
+	]);
+	const loggerServiceSpy = jasmine.createSpyObj('LoggerService', [
+		'getMessage',
+		'debug',
+		'error',
+		'info',
+		'exception',
+	]);
+	const gamingQuickSettingToolbarServiceSpy = jasmine.createSpyObj(
+		'GamingQuickSettingToolbarService',
+		['registerEvent', 'unregisterEvent']
+	);
 
 	gamingThermalModeServiceSpy.getThermalModeRealStatus.and.returnValue(Promise.resolve(2));
 	gamingOCServiceSpy.getPerformanceOCSetting.and.returnValue(Promise.resolve(false));
@@ -217,38 +260,49 @@ describe('WidgetLegionEdgeComponent', () => {
 		let performanceOCStatus = false;
 		let gamingThermalModeServiceMock = {
 			getThermalModeRealStatus() {
-				return new Promise(resolve => {
-					resolve(thermalModeRealStatus)
-				})
+				return new Promise((resolve) => {
+					resolve(thermalModeRealStatus);
+				});
 			},
 			regThermalModeRealStatusChangeEvent() {
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(setReturnValue);
-				})
-			}
-		}
+				});
+			},
+		};
 		let gamingOCServiceMoke = {
 			getPerformanceOCSetting() {
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(performanceOCStatus);
-				})
-			}
-		}
+				});
+			},
+		};
 
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
 					{ provide: TranslateService, useValue: translateServiceMock },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: GamingOCService, useValue: gamingOCServiceMoke },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
@@ -257,10 +311,13 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -292,8 +349,11 @@ describe('WidgetLegionEdgeComponent', () => {
 			thermalModeVersionCache = 1;
 			thermalModeRealStatusCache = 1;
 			component.thermalModeRealStatus = 2;
-			component.ngOnInit()
-			expect(component.thermalModeRealStatus).toBe(2, 'component.thermalModeRealStatus should keep 2');
+			component.ngOnInit();
+			expect(component.thermalModeRealStatus).toBe(
+				2,
+				'component.thermalModeRealStatus should keep 2'
+			);
 		});
 
 		it('ngOnInit only support thermalMode 1', () => {
@@ -301,8 +361,11 @@ describe('WidgetLegionEdgeComponent', () => {
 			thermalModeVersionCache = 1;
 			thermalModeRealStatusCache = 1;
 			component.thermalModeRealStatus = 2;
-			component.ngOnInit()
-			expect(component.thermalModeRealStatus).toBe(2, 'component.thermalModeRealStatus should keep 2');
+			component.ngOnInit();
+			expect(component.thermalModeRealStatus).toBe(
+				2,
+				'component.thermalModeRealStatus should keep 2'
+			);
 		});
 
 		it('ngOnInit support thermalMode 2', fakeAsync(() => {
@@ -313,18 +376,33 @@ describe('WidgetLegionEdgeComponent', () => {
 			thermalModeRealStatusCache = undefined;
 			component.thermalModeRealStatus = 2;
 			component.ngOnInit();
-			expect(component.thermalModeRealStatus).toBe(2, `thermalModeRealStatusCache is undefined, component.thermalModeRealStatus should keep 2`);
+			expect(component.thermalModeRealStatus).toBe(
+				2,
+				`thermalModeRealStatusCache is undefined, component.thermalModeRealStatus should keep 2`
+			);
 			tick();
 			thermalModeRealStatusCache = 1;
 			component.ngOnInit();
-			expect(component.thermalModeRealStatus).toBe(1, `thermalModeRealStatusCache is 1, component.thermalModeRealStatus should be 1`);
+			expect(component.thermalModeRealStatus).toBe(
+				1,
+				`thermalModeRealStatusCache is 1, component.thermalModeRealStatus should be 1`
+			);
 			thermalModeRealStatusCache = 2;
 			component.ngOnInit();
-			expect(component.thermalModeRealStatus).toBe(2, `thermalModeRealStatusCache is 2, component.thermalModeRealStatus should be 2`);
+			expect(component.thermalModeRealStatus).toBe(
+				2,
+				`thermalModeRealStatusCache is 2, component.thermalModeRealStatus should be 2`
+			);
 			thermalModeRealStatusCache = 3;
 			component.ngOnInit();
-			expect(component.thermalModeRealStatus).toBe(3, `thermalModeRealStatusCache is 3, component.thermalModeRealStatus should be 3`);
-			expect(component.legionUpdate[0].isVisible).toBe(false, 'cpuOverclock.isVisible should be false');
+			expect(component.thermalModeRealStatus).toBe(
+				3,
+				`thermalModeRealStatusCache is 3, component.thermalModeRealStatus should be 3`
+			);
+			expect(component.legionUpdate[0].isVisible).toBe(
+				false,
+				'cpuOverclock.isVisible should be false'
+			);
 		}));
 
 		it('renderThermalMode2RealStatus', fakeAsync(() => {
@@ -333,38 +411,66 @@ describe('WidgetLegionEdgeComponent', () => {
 			component.thermalModeRealStatus = 2;
 			component.renderThermalMode2RealStatus();
 			tick();
-			expect(component.thermalModeRealStatus).toBe(2, `thermalModeRealStatus is undefined, component.thermalModeRealStatus should keep 2`);
-			expect(thermalModeRealStatusCache).toBe(2, `thermalModeRealStatus is undefined, thermalModeRealStatusCache should keep 2`);
+			expect(component.thermalModeRealStatus).toBe(
+				2,
+				`thermalModeRealStatus is undefined, component.thermalModeRealStatus should keep 2`
+			);
+			expect(thermalModeRealStatusCache).toBe(
+				2,
+				`thermalModeRealStatus is undefined, thermalModeRealStatusCache should keep 2`
+			);
 			for (let i = 1; i < 4; i++) {
 				tick();
 				thermalModeRealStatus = i;
 				component.renderThermalMode2RealStatus();
 				tick();
-				expect(component.thermalModeRealStatus).toBe(i, `thermalModeRealStatus is ${i}, component.thermalModeRealStatus should be ${i}`);
-				expect(thermalModeRealStatusCache).toBe(i, `thermalModeRealStatus is ${i}, thermalModeRealStatusCache should be ${i}`);
+				expect(component.thermalModeRealStatus).toBe(
+					i,
+					`thermalModeRealStatus is ${i}, component.thermalModeRealStatus should be ${i}`
+				);
+				expect(thermalModeRealStatusCache).toBe(
+					i,
+					`thermalModeRealStatus is ${i}, thermalModeRealStatusCache should be ${i}`
+				);
 			}
 		}));
 
 		it('registerThermalModeRealStatusChangeEvent', () => {
 			spyOn(gamingThermalModeServiceMock, 'regThermalModeRealStatusChangeEvent');
-			component.gamingCapabilities.smartFanFeature = false
+			component.gamingCapabilities.smartFanFeature = false;
 			component.registerThermalModeRealStatusChangeEvent();
-			expect(gamingThermalModeServiceMock.regThermalModeRealStatusChangeEvent).toHaveBeenCalledTimes(0);
+			expect(
+				gamingThermalModeServiceMock.regThermalModeRealStatusChangeEvent
+			).toHaveBeenCalledTimes(0);
 			component.gamingCapabilities.smartFanFeature = true;
 			component.registerThermalModeRealStatusChangeEvent();
-			expect(gamingThermalModeServiceMock.regThermalModeRealStatusChangeEvent).toHaveBeenCalledTimes(1);
+			expect(
+				gamingThermalModeServiceMock.regThermalModeRealStatusChangeEvent
+			).toHaveBeenCalledTimes(1);
 		});
 
 		it('onRegThermalModeRealStatusChangeEvent', () => {
 			component.thermalModeRealStatus = 2;
 			thermalModeRealStatusCache = 2;
-			component.onRegThermalModeRealStatusChangeEvent(undefined)
-			expect(component.thermalModeRealStatus).toBe(2, `currentRealStatus is undefined, component.thermalModeRealStatus should keep 2`);
-			expect(thermalModeRealStatusCache).toBe(2, `currentRealStatus is undefined, thermalModeRealStatusCache should keep 2`);
+			component.onRegThermalModeRealStatusChangeEvent(undefined);
+			expect(component.thermalModeRealStatus).toBe(
+				2,
+				`currentRealStatus is undefined, component.thermalModeRealStatus should keep 2`
+			);
+			expect(thermalModeRealStatusCache).toBe(
+				2,
+				`currentRealStatus is undefined, thermalModeRealStatusCache should keep 2`
+			);
 			for (let i = 1; i < 4; i++) {
-				component.onRegThermalModeRealStatusChangeEvent(i)
-				expect(component.thermalModeRealStatus).toBe(i, `thermalModeRealStatus is ${i}, component.thermalModeRealStatus should be ${i}`);
-				expect(thermalModeRealStatusCache).toBe(i, `thermalModeRealStatus is ${i}, thermalModeRealStatusCache should be ${i}`);
+				component.onRegThermalModeRealStatusChangeEvent(i);
+				expect(component.thermalModeRealStatus).toBe(
+					i,
+					`thermalModeRealStatus is ${i}, component.thermalModeRealStatus should be ${i}`
+				);
+				expect(thermalModeRealStatusCache).toBe(
+					i,
+					`thermalModeRealStatus is ${i}, thermalModeRealStatusCache should be ${i}`
+				);
 			}
 		});
 
@@ -374,11 +480,14 @@ describe('WidgetLegionEdgeComponent', () => {
 			thermalModeVersionCache = 2;
 			cpuOCFeatureCache = false;
 			cpuOCStatusCache = 1;
-			gpuOCFeatureCache = false
+			gpuOCFeatureCache = false;
 			gpuOCStatusCache = 1;
 			component.performanceOCSettings = false;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(false, 'component.performanceOCSettings should keep false');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				false,
+				'component.performanceOCSettings should keep false'
+			);
 		});
 
 		it('ngOnInit cpu&gpu OC', () => {
@@ -391,25 +500,37 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCStatusCache = 3;
 			xtuServiceCache = true;
 			nvDriverCache = true;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(false, 'component.performanceOCSettings should be false');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				false,
+				'component.performanceOCSettings should be false'
+			);
 
 			cpuOCStatusCache = 1;
 			gpuOCStatusCache = 1;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(true, 'component.performanceOCSettings should be true');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				true,
+				'component.performanceOCSettings should be true'
+			);
 
 			xtuServiceCache = true;
 			nvDriverCache = false;
 			component.performanceOCSettings = false;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(false, 'nvDriverCache lack, component.performanceOCSettings should keep false');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				false,
+				'nvDriverCache lack, component.performanceOCSettings should keep false'
+			);
 
 			xtuServiceCache = false;
 			nvDriverCache = true;
 			component.performanceOCSettings = false;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(false, 'xtuServiceCache lack, component.performanceOCSettings should keep false');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				false,
+				'xtuServiceCache lack, component.performanceOCSettings should keep false'
+			);
 		});
 
 		it('ngOnInit cpu OC', () => {
@@ -420,17 +541,26 @@ describe('WidgetLegionEdgeComponent', () => {
 			cpuOCStatusCache = 3;
 			gpuOCFeatureCache = false;
 			xtuServiceCache = true;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(false, 'component.performanceOCSettings should be false');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				false,
+				'component.performanceOCSettings should be false'
+			);
 
 			cpuOCStatusCache = 1;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(true, 'component.performanceOCSettings should be true');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				true,
+				'component.performanceOCSettings should be true'
+			);
 
 			xtuServiceCache = false;
 			component.performanceOCSettings = false;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(false, 'xtuServiceCache lack, component.performanceOCSettings should keep false');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				false,
+				'xtuServiceCache lack, component.performanceOCSettings should keep false'
+			);
 		});
 
 		it('ngOnInit gpu OC', () => {
@@ -441,17 +571,26 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCFeatureCache = true;
 			gpuOCStatusCache = 3;
 			nvDriverCache = true;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(false, 'component.performanceOCSettings should be false');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				false,
+				'component.performanceOCSettings should be false'
+			);
 
 			gpuOCStatusCache = 1;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(true, 'component.performanceOCSettings should be true');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				true,
+				'component.performanceOCSettings should be true'
+			);
 
 			nvDriverCache = false;
 			component.performanceOCSettings = false;
-			component.ngOnInit()
-			expect(component.performanceOCSettings).toBe(false, 'nvDriverCache lack, component.performanceOCSettings should keep false');
+			component.ngOnInit();
+			expect(component.performanceOCSettings).toBe(
+				false,
+				'nvDriverCache lack, component.performanceOCSettings should keep false'
+			);
 		});
 
 		it('renderThermalMode2OCSettings cpu&gpu', fakeAsync(() => {
@@ -462,14 +601,20 @@ describe('WidgetLegionEdgeComponent', () => {
 			performanceOCStatus = false;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(false, `component.performanceOCSettings should be false`);
+			expect(component.performanceOCSettings).toBe(
+				false,
+				`component.performanceOCSettings should be false`
+			);
 			expect(cpuOCStatusCache).toBe(3, `cpuOCStatusCache should be 3 (false)`);
 			expect(gpuOCStatusCache).toBe(3, `gpuOCStatusCache should be 3 (false)`);
 
 			performanceOCStatus = true;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(true, `component.performanceOCSettings should be true`);
+			expect(component.performanceOCSettings).toBe(
+				true,
+				`component.performanceOCSettings should be true`
+			);
 			expect(cpuOCStatusCache).toBe(1, `cpuOCStatusCache should be 1 (true)`);
 			expect(gpuOCStatusCache).toBe(1, `gpuOCStatusCache should be 1 (true)`);
 
@@ -480,18 +625,36 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCStatusCache = 3;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(false, `xtuService lack, component.performanceOCSettings should keep false`);
-			expect(cpuOCStatusCache).toBe(3, `xtuService lack, cpuOCStatusCache should keep 3 (false)`);
-			expect(gpuOCStatusCache).toBe(3, `xtuService lack, gpuOCStatusCache should keep 3 (false)`);
+			expect(component.performanceOCSettings).toBe(
+				false,
+				`xtuService lack, component.performanceOCSettings should keep false`
+			);
+			expect(cpuOCStatusCache).toBe(
+				3,
+				`xtuService lack, cpuOCStatusCache should keep 3 (false)`
+			);
+			expect(gpuOCStatusCache).toBe(
+				3,
+				`xtuService lack, gpuOCStatusCache should keep 3 (false)`
+			);
 
 			component.gamingCapabilities.xtuService = true;
 			component.gamingCapabilities.nvDriver = false;
 			performanceOCStatus = true;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(false, `nvDriver lack, component.performanceOCSettings should keep false`);
-			expect(cpuOCStatusCache).toBe(3, `nvDriver lack, cpuOCStatusCache should keep 3 (false)`);
-			expect(gpuOCStatusCache).toBe(3, `nvDriver lack, gpuOCStatusCache should keep 3 (false)`);
+			expect(component.performanceOCSettings).toBe(
+				false,
+				`nvDriver lack, component.performanceOCSettings should keep false`
+			);
+			expect(cpuOCStatusCache).toBe(
+				3,
+				`nvDriver lack, cpuOCStatusCache should keep 3 (false)`
+			);
+			expect(gpuOCStatusCache).toBe(
+				3,
+				`nvDriver lack, gpuOCStatusCache should keep 3 (false)`
+			);
 		}));
 
 		it('renderThermalMode2OCSettings cpu', fakeAsync(() => {
@@ -503,14 +666,20 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCStatusCache = 3;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(false, `component.performanceOCSettings should be false`);
+			expect(component.performanceOCSettings).toBe(
+				false,
+				`component.performanceOCSettings should be false`
+			);
 			expect(cpuOCStatusCache).toBe(3, `cpuOCStatusCache should be 3 (false)`);
 			expect(gpuOCStatusCache).toBe(3, `gpuOCStatusCache should be keep (false)`);
 
 			performanceOCStatus = true;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(true, `component.performanceOCSettings should be true`);
+			expect(component.performanceOCSettings).toBe(
+				true,
+				`component.performanceOCSettings should be true`
+			);
 			expect(cpuOCStatusCache).toBe(1, `cpuOCStatusCache should be 1 (true)`);
 			expect(gpuOCStatusCache).toBe(3, `gpuOCStatusCache should keep 3 (false)`);
 
@@ -520,9 +689,18 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCStatusCache = 3;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(false, `xtuService lack, component.performanceOCSettings should keep false`);
-			expect(cpuOCStatusCache).toBe(3, `xtuService lack, cpuOCStatusCache should keep 3 (false)`);
-			expect(gpuOCStatusCache).toBe(3, `xtuService lack, gpuOCStatusCache should keep 3 (false)`);
+			expect(component.performanceOCSettings).toBe(
+				false,
+				`xtuService lack, component.performanceOCSettings should keep false`
+			);
+			expect(cpuOCStatusCache).toBe(
+				3,
+				`xtuService lack, cpuOCStatusCache should keep 3 (false)`
+			);
+			expect(gpuOCStatusCache).toBe(
+				3,
+				`xtuService lack, gpuOCStatusCache should keep 3 (false)`
+			);
 		}));
 
 		it('renderThermalMode2OCSettings gpu', fakeAsync(() => {
@@ -531,17 +709,23 @@ describe('WidgetLegionEdgeComponent', () => {
 			component.gamingCapabilities.xtuService = false;
 			component.gamingCapabilities.nvDriver = true;
 			performanceOCStatus = false;
-			cpuOCStatusCache = 3
+			cpuOCStatusCache = 3;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(false, `component.performanceOCSettings should be false`);
+			expect(component.performanceOCSettings).toBe(
+				false,
+				`component.performanceOCSettings should be false`
+			);
 			expect(cpuOCStatusCache).toBe(3, `cpuOCStatusCache should keep 3 (false)`);
 			expect(gpuOCStatusCache).toBe(3, `gpuOCStatusCache should be 3 (false)`);
 
 			performanceOCStatus = true;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(true, `component.performanceOCSettings should be true`);
+			expect(component.performanceOCSettings).toBe(
+				true,
+				`component.performanceOCSettings should be true`
+			);
 			expect(cpuOCStatusCache).toBe(3, `cpuOCStatusCache should keep 1 (false)`);
 			expect(gpuOCStatusCache).toBe(1, `gpuOCStatusCache should be 1 (true)`);
 
@@ -551,9 +735,18 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCStatusCache = 3;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(false, `nvDriver lack, component.performanceOCSettings should keep false`);
-			expect(cpuOCStatusCache).toBe(3, `nvDriver lack, cpuOCStatusCache should keep 3 (false)`);
-			expect(gpuOCStatusCache).toBe(3, `nvDriver lack, gpuOCStatusCache should keep 3 (false)`);
+			expect(component.performanceOCSettings).toBe(
+				false,
+				`nvDriver lack, component.performanceOCSettings should keep false`
+			);
+			expect(cpuOCStatusCache).toBe(
+				3,
+				`nvDriver lack, cpuOCStatusCache should keep 3 (false)`
+			);
+			expect(gpuOCStatusCache).toBe(
+				3,
+				`nvDriver lack, gpuOCStatusCache should keep 3 (false)`
+			);
 		}));
 
 		it('renderThermalMode2OCSettings not oc supported', fakeAsync(() => {
@@ -562,9 +755,11 @@ describe('WidgetLegionEdgeComponent', () => {
 			performanceOCStatus = true;
 			component.renderThermalMode2OCSettings();
 			tick();
-			expect(component.performanceOCSettings).toBe(false, `component.performanceOCSettings should be false`);
+			expect(component.performanceOCSettings).toBe(
+				false,
+				`component.performanceOCSettings should be false`
+			);
 		}));
-
 
 		it('openModal', fakeAsync(() => {
 			spyOn(component, 'openModal').and.callThrough();
@@ -574,7 +769,7 @@ describe('WidgetLegionEdgeComponent', () => {
 
 		it('get thermal_mode_performance as automationId', fakeAsync(() => {
 			component.thermalModeRealStatus = GamingThermal2.performance;
-			const res =	component.getThermalModeAutomationId();
+			const res = component.getThermalModeAutomationId();
 			fixture.detectChanges();
 			expect(res).toBe(AutomationId.Performance);
 		}));
@@ -582,21 +777,21 @@ describe('WidgetLegionEdgeComponent', () => {
 		it('get thermal_mode_performance_overclock_on as automationId', fakeAsync(() => {
 			component.performanceOCSettings = true;
 			component.thermalModeRealStatus = GamingThermal2.performance;
-			const res =	component.getThermalModeAutomationId();
+			const res = component.getThermalModeAutomationId();
 			fixture.detectChanges();
 			expect(res).toBe(AutomationId.PerformanceOverclockOn);
 		}));
 
 		it('get thermal_mode_balance as automationId', fakeAsync(() => {
 			component.thermalModeRealStatus = GamingThermal2.balance;
-			const res =	component.getThermalModeAutomationId();
+			const res = component.getThermalModeAutomationId();
 			fixture.detectChanges();
 			expect(res).toBe(AutomationId.Balance);
 		}));
 
 		it('get thermal_mode_quiet as automationId', fakeAsync(() => {
 			component.thermalModeRealStatus = GamingThermal2.quiet;
-			const res =	component.getThermalModeAutomationId();
+			const res = component.getThermalModeAutomationId();
 			fixture.detectChanges();
 			expect(res).toBe(AutomationId.Quiet);
 		}));
@@ -607,37 +802,48 @@ describe('WidgetLegionEdgeComponent', () => {
 		let performanceOCStatus = false;
 		let gamingThermalModeServiceMock = {
 			getThermalModeRealStatus() {
-				return new Promise(resolve => {
-					resolve(thermalModeRealStatus)
-				})
+				return new Promise((resolve) => {
+					resolve(thermalModeRealStatus);
+				});
 			},
 			regThermalModeRealStatusChangeEvent() {
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(setReturnValue);
-				})
-			}
-		}
+				});
+			},
+		};
 		let gamingOCServiceMoke = {
 			getPerformanceOCSetting() {
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(performanceOCStatus);
-				})
-			}
-		}
+				});
+			},
+		};
 
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: GamingOCService, useValue: gamingOCServiceMoke },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
@@ -646,10 +852,13 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -689,18 +898,33 @@ describe('WidgetLegionEdgeComponent', () => {
 			component.performanceOCSettings = false;
 			component.thermalModeRealStatus = 2;
 			component.ngOnInit();
-			expect(component.thermalModeRealStatus).toBe(2, `thermalModeRealStatusCache is undefined, component.thermalModeRealStatus should keep 2`);
+			expect(component.thermalModeRealStatus).toBe(
+				2,
+				`thermalModeRealStatusCache is undefined, component.thermalModeRealStatus should keep 2`
+			);
 			tick();
 			thermalModeRealStatusCache = 1;
 			component.ngOnInit();
-			expect(component.thermalModeRealStatus).toBe(1, `thermalModeRealStatusCache is 1, component.thermalModeRealStatus should be 1`);
+			expect(component.thermalModeRealStatus).toBe(
+				1,
+				`thermalModeRealStatusCache is 1, component.thermalModeRealStatus should be 1`
+			);
 			thermalModeRealStatusCache = 2;
 			component.ngOnInit();
-			expect(component.thermalModeRealStatus).toBe(2, `thermalModeRealStatusCache is 2, component.thermalModeRealStatus should be 2`);
+			expect(component.thermalModeRealStatus).toBe(
+				2,
+				`thermalModeRealStatusCache is 2, component.thermalModeRealStatus should be 2`
+			);
 			thermalModeRealStatusCache = 3;
 			component.ngOnInit();
-			expect(component.thermalModeRealStatus).toBe(3, `thermalModeRealStatusCache is 3, component.thermalModeRealStatus should be 3`);
-			expect(component.legionUpdate[0].isVisible).toBe(false, 'cpuOverclock.isVisible should be false');
+			expect(component.thermalModeRealStatus).toBe(
+				3,
+				`thermalModeRealStatusCache is 3, component.thermalModeRealStatus should be 3`
+			);
+			expect(component.legionUpdate[0].isVisible).toBe(
+				false,
+				'cpuOverclock.isVisible should be false'
+			);
 		}));
 
 		it('renderOCSupported', () => {
@@ -714,105 +938,167 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCFeatureCache = false;
 			component.performanceOCSettings = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&gpuOCFeatureCache are false, component.OCSupported should be thermalMode2Enum.none`);
-			expect(component.performanceOCSettings).toBe(false, `cpuOCFeatureCache&gpuOCFeatureCache are false, component.performanceOCSettings should be false`);
+			expect(component.OCSupported).toBe(
+				component.thermalMode2Enum.none,
+				`cpuOCFeatureCache&gpuOCFeatureCache are false, component.OCSupported should be thermalMode2Enum.none`
+			);
+			expect(component.performanceOCSettings).toBe(
+				false,
+				`cpuOCFeatureCache&gpuOCFeatureCache are false, component.performanceOCSettings should be false`
+			);
 			cpuOCFeatureCache = true;
 			gpuOCFeatureCache = false;
 			xtuServiceCache = true;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(component.thermalMode2Enum.cpu, `cpuOCFeatureCache&xtuServiceCache are true, gpuOCFeatureCache is false, component.OCSupported should be thermalMode2Enum.cpu`);
+			expect(component.OCSupported).toBe(
+				component.thermalMode2Enum.cpu,
+				`cpuOCFeatureCache&xtuServiceCache are true, gpuOCFeatureCache is false, component.OCSupported should be thermalMode2Enum.cpu`
+			);
 			xtuServiceCache = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache is true, xtuServiceCache&gpuOCFeatureCache are false, component.OCSupported should be thermalMode2Enum.none`);
+			expect(component.OCSupported).toBe(
+				component.thermalMode2Enum.none,
+				`cpuOCFeatureCache is true, xtuServiceCache&gpuOCFeatureCache are false, component.OCSupported should be thermalMode2Enum.none`
+			);
 			cpuOCFeatureCache = false;
 			gpuOCFeatureCache = true;
 			nvDriverCache = true;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(component.thermalMode2Enum.gpu, `cpuOCFeatureCache is false, gpuOCFeatureCache&nvDriverCache are true, component.OCSupported should be thermalMode2Enum.gpu`);
+			expect(component.OCSupported).toBe(
+				component.thermalMode2Enum.gpu,
+				`cpuOCFeatureCache is false, gpuOCFeatureCache&nvDriverCache are true, component.OCSupported should be thermalMode2Enum.gpu`
+			);
 			nvDriverCache = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&nvDriverCache are false, gpuOCFeatureCache is true, component.OCSupported should be thermalMode2Enum.none`);
+			expect(component.OCSupported).toBe(
+				component.thermalMode2Enum.none,
+				`cpuOCFeatureCache&nvDriverCache are false, gpuOCFeatureCache is true, component.OCSupported should be thermalMode2Enum.none`
+			);
 			cpuOCFeatureCache = true;
 			gpuOCFeatureCache = true;
 			xtuServiceCache = true;
 			nvDriverCache = true;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(component.thermalMode2Enum.cpu_gpu, `cpuOCFeatureCache&xtuServiceCache are true, gpuOCFeatureCache&nvDriverCache are true, component.OCSupported should be thermalMode2Enum.cpu_gpu`);
+			expect(component.OCSupported).toBe(
+				component.thermalMode2Enum.cpu_gpu,
+				`cpuOCFeatureCache&xtuServiceCache are true, gpuOCFeatureCache&nvDriverCache are true, component.OCSupported should be thermalMode2Enum.cpu_gpu`
+			);
 			xtuServiceCache = false;
 			nvDriverCache = true;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&nvDriverCache are true, xtuServiceCache is false, component.OCSupported should be thermalMode2Enum.none`);
+			expect(component.OCSupported).toBe(
+				component.thermalMode2Enum.none,
+				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&nvDriverCache are true, xtuServiceCache is false, component.OCSupported should be thermalMode2Enum.none`
+			);
 			xtuServiceCache = true;
 			nvDriverCache = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&xtuServiceCache are true, nvDriverCache is false, component.OCSupported should be thermalMode2Enum.none`);
+			expect(component.OCSupported).toBe(
+				component.thermalMode2Enum.none,
+				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&xtuServiceCache are true, nvDriverCache is false, component.OCSupported should be thermalMode2Enum.none`
+			);
 			xtuServiceCache = false;
 			nvDriverCache = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(component.thermalMode2Enum.none, `cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache are true, xtuServiceCache&nvDriverCache are false, component.OCSupported should be thermalMode2Enum.none`);
-		})
+			expect(component.OCSupported).toBe(
+				component.thermalMode2Enum.none,
+				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache are true, xtuServiceCache&nvDriverCache are false, component.OCSupported should be thermalMode2Enum.none`
+			);
+		});
 
 		it('getOCTips', () => {
 			component.gamingCapabilities.thermalModeVersion = 2;
-			expect(component.getOCTips()).toBe('', 'thermalModeVersion is 2, getOCTips should be a null string');
+			expect(component.getOCTips()).toBe(
+				'',
+				'thermalModeVersion is 2, getOCTips should be a null string'
+			);
 			component.gamingCapabilities.thermalModeVersion = 4;
 			component.thermalModeRealStatus = component.thermalMode2Enum.quiet;
-			expect(component.getOCTips()).toBe('', 'thermalModeVersion is 4, component.thermalModeRealStatus is quite, getOCTips should be a null string');
+			expect(component.getOCTips()).toBe(
+				'',
+				'thermalModeVersion is 4, component.thermalModeRealStatus is quite, getOCTips should be a null string'
+			);
 			component.gamingCapabilities.thermalModeVersion = 4;
 			component.thermalModeRealStatus = component.thermalMode2Enum.performance;
 			component.performanceOCSettings = false;
-			expect(component.getOCTips()).toBe('', 'thermalModeVersion is 4, component.thermalModeRealStatus is performance, component.performanceOCSettings is false, getOCTips should be a null string');
+			expect(component.getOCTips()).toBe(
+				'',
+				'thermalModeVersion is 4, component.thermalModeRealStatus is performance, component.performanceOCSettings is false, getOCTips should be a null string'
+			);
 			component.gamingCapabilities.thermalModeVersion = 4;
 			component.thermalModeRealStatus = component.thermalMode2Enum.balance;
 			component.performanceOCSettings = false;
-			expect(component.getOCTips()).toBe('', 'thermalModeVersion is 4, component.thermalModeRealStatus is balance, component.performanceOCSettings is false, getOCTips should be a null string');
+			expect(component.getOCTips()).toBe(
+				'',
+				'thermalModeVersion is 4, component.thermalModeRealStatus is balance, component.performanceOCSettings is false, getOCTips should be a null string'
+			);
 			component.gamingCapabilities.thermalModeVersion = 4;
 			component.thermalModeRealStatus = component.thermalMode2Enum.performance;
 			component.performanceOCSettings = true;
 			component.OCSupported = component.thermalMode2Enum.cpu_gpu;
-			expect(component.getOCTips()).toBe('CPU & GPU overclocking activated', 'getOCTips should be CPU & GPU overclocking activated');
+			expect(component.getOCTips()).toBe(
+				'CPU & GPU overclocking activated',
+				'getOCTips should be CPU & GPU overclocking activated'
+			);
 			component.OCSupported = component.thermalMode2Enum.cpu;
-			expect(component.getOCTips()).toBe('CPU overclocking activated', 'getOCTips should be CPU overclocking activated');
+			expect(component.getOCTips()).toBe(
+				'CPU overclocking activated',
+				'getOCTips should be CPU overclocking activated'
+			);
 			component.OCSupported = component.thermalMode2Enum.gpu;
-			expect(component.getOCTips()).toBe('GPU overclocking activated', 'getOCTips should be GPU overclocking activated');
-		})
-	})
+			expect(component.getOCTips()).toBe(
+				'GPU overclocking activated',
+				'getOCTips should be GPU overclocking activated'
+			);
+		});
+	});
 
 	describe('cpu over clock', () => {
 		let cpuOCStatus = 3;
 		let gamingSystemUpdateServiceMock = {
 			getCpuOCStatus() {
-				return new Promise(resolve => {
-					resolve(cpuOCStatus)
-				})
+				return new Promise((resolve) => {
+					resolve(cpuOCStatus);
+				});
 			},
 			setCpuOCStatus(value: number) {
 				if (setReturnValue) {
 					cpuOCStatus = value;
 				}
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(setReturnValue);
-				})
+				});
 			},
 			getRamOCStatus() {
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(false);
-				})
+				});
 			},
-		}
+		};
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceMock },
@@ -821,10 +1107,13 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -854,7 +1143,10 @@ describe('WidgetLegionEdgeComponent', () => {
 		it('not support cpu over clock', () => {
 			cpuOCFeatureCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[0].isVisible).toBe(false, 'component.legionUpdate[0].isVisible should be false');
+			expect(component.legionUpdate[0].isVisible).toBe(
+				false,
+				'component.legionUpdate[0].isVisible should be false'
+			);
 		});
 
 		it('ngOnInit cpu over click', () => {
@@ -863,14 +1155,23 @@ describe('WidgetLegionEdgeComponent', () => {
 			thermalModeVersionCache = 1;
 			cpuOCFeatureCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[0].isVisible).toBe(false, 'component.legionUpdate[0].isVisible should be false');
+			expect(component.legionUpdate[0].isVisible).toBe(
+				false,
+				'component.legionUpdate[0].isVisible should be false'
+			);
 
 			cpuOCFeatureCache = true;
 			for (let i = 1; i < 4; i++) {
 				cpuOCStatusCache = i;
 				component.ngOnInit();
-				expect(component.legionUpdate[0].isVisible).toBe(true, 'component.legionUpdate[0].isVisible should be true');
-				expect(component.drop.curSelected).toBe(i, `i is ${i}, component.drop.curSelected should be ${i}`);
+				expect(component.legionUpdate[0].isVisible).toBe(
+					true,
+					'component.legionUpdate[0].isVisible should be true'
+				);
+				expect(component.drop.curSelected).toBe(
+					i,
+					`i is ${i}, component.drop.curSelected should be ${i}`
+				);
 			}
 		});
 
@@ -880,54 +1181,75 @@ describe('WidgetLegionEdgeComponent', () => {
 			component.drop.curSelected = 3;
 			component.renderCPUOverClockStatus();
 			tick();
-			expect(component.drop.curSelected).toBe(3, `cpuOCStatus is undefined, component.drop.curSelected should keep 3 (false)`);
+			expect(component.drop.curSelected).toBe(
+				3,
+				`cpuOCStatus is undefined, component.drop.curSelected should keep 3 (false)`
+			);
 
 			for (let i = 1; i < 4; i++) {
 				cpuOCStatus = i;
 				component.renderCPUOverClockStatus();
 				tick();
-				expect(component.drop.curSelected).toBe(i, `cpuOCStatus is ${i}, component.drop.curSelected should be ${i}`);
-				expect(cpuOCStatusCache).toBe(i, `cpuOCStatus is ${i}, cpuOCStatusCache should be ${i}`);
+				expect(component.drop.curSelected).toBe(
+					i,
+					`cpuOCStatus is ${i}, component.drop.curSelected should be ${i}`
+				);
+				expect(cpuOCStatusCache).toBe(
+					i,
+					`cpuOCStatus is ${i}, cpuOCStatusCache should be ${i}`
+				);
 			}
 		}));
 
 		it('onShowDropdown', () => {
 			let event = {
-				type: 'gaming.dashboard.device.legionEdge.title'
+				type: 'gaming.dashboard.device.legionEdge.title',
 			};
 			component.drop.hideDropDown = false;
 			component.legionUpdate[0].isDriverPopup = false;
 			component.onShowDropdown(event);
-			expect(component.legionUpdate[0].isDriverPopup).toBe(false, `component.drop.hideDropDown is false, component.legionUpdate[0].isDriverPopup should keep false`);
+			expect(component.legionUpdate[0].isDriverPopup).toBe(
+				false,
+				`component.drop.hideDropDown is false, component.legionUpdate[0].isDriverPopup should keep false`
+			);
 
 			component.drop.hideDropDown = true;
 			component.legionUpdate[0].isDriverPopup = false;
 			component.onShowDropdown(event);
-			expect(component.legionUpdate[0].isDriverPopup).toBe(true, `component.drop.hideDropDown is true, component.legionUpdate[0].isDriverPopup should be false`);
+			expect(component.legionUpdate[0].isDriverPopup).toBe(
+				true,
+				`component.drop.hideDropDown is true, component.legionUpdate[0].isDriverPopup should be false`
+			);
 		});
 
 		it('onOptionSelected', fakeAsync(() => {
 			let event = {
 				target: {
-					name: 'gaming.dashboard.device.legionEdge.wrongTitle'
+					name: 'gaming.dashboard.device.legionEdge.wrongTitle',
 				},
 				option: {
-					value: 1
-				}
+					value: 1,
+				},
 			};
 
 			setReturnValue = true;
 			component.drop.curSelected = 3;
 			component.onOptionSelected(event);
 			tick();
-			expect(component.drop.curSelected).toBe(3, `wrong title, this.drop.curSelected shoulde keep 3`);
+			expect(component.drop.curSelected).toBe(
+				3,
+				`wrong title, this.drop.curSelected shoulde keep 3`
+			);
 
-			event.target.name = 'gaming.dashboard.device.legionEdge.title'
+			event.target.name = 'gaming.dashboard.device.legionEdge.title';
 			for (let i = 1; i < 4; i++) {
 				event.option.value = i;
 				component.onOptionSelected(event);
 				tick();
-				expect(component.drop.curSelected).toBe(i, `setReturnValue is ${setReturnValue}, i is ${i}, this.drop.curSelected shoulde be ${i}`);
+				expect(component.drop.curSelected).toBe(
+					i,
+					`setReturnValue is ${setReturnValue}, i is ${i}, this.drop.curSelected shoulde be ${i}`
+				);
 			}
 
 			setReturnValue = false;
@@ -936,41 +1258,55 @@ describe('WidgetLegionEdgeComponent', () => {
 				event.option.value = i;
 				component.onOptionSelected(event);
 				tick();
-				expect(component.drop.curSelected).toBe(3, `setReturnValue is ${setReturnValue}, i is ${i}, this.drop.curSelected shoulde keep 3`);
+				expect(component.drop.curSelected).toBe(
+					3,
+					`setReturnValue is ${setReturnValue}, i is ${i}, this.drop.curSelected shoulde keep 3`
+				);
 			}
 		}));
-	})
+	});
 
 	describe('RAM over clock', () => {
 		let ramOCStatus = false;
 		let gamingSystemUpdateServiceMock = {
 			getRamOCStatus() {
-				return new Promise(resolve => {
-					resolve(ramOCStatus)
-				})
+				return new Promise((resolve) => {
+					resolve(ramOCStatus);
+				});
 			},
 			setRamOCStatus(value: boolean) {
 				if (setReturnValue) {
 					ramOCStatus = value;
 				}
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(setReturnValue);
-				})
-			}
+				});
+			},
 		};
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceMock },
@@ -979,10 +1315,13 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -1012,7 +1351,10 @@ describe('WidgetLegionEdgeComponent', () => {
 		it('not support ram', () => {
 			memOCFeatureCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[1].isVisible).toBe(false, `component.legionUpdate[1].isVisible should be false`);
+			expect(component.legionUpdate[1].isVisible).toBe(
+				false,
+				`component.legionUpdate[1].isVisible should be false`
+			);
 		});
 
 		it('ngOnInit ram over clock', () => {
@@ -1020,14 +1362,26 @@ describe('WidgetLegionEdgeComponent', () => {
 			memOCFeatureCache = true;
 			memOCStatusCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[1].isVisible).toBe(true, `component.legionUpdate[1].isVisible should be true`);
-			expect(component.legionUpdate[1].isChecked).toBe(false, `component.legionUpdate[1].isChecked should be false`);
+			expect(component.legionUpdate[1].isVisible).toBe(
+				true,
+				`component.legionUpdate[1].isVisible should be true`
+			);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				false,
+				`component.legionUpdate[1].isChecked should be false`
+			);
 
 			memOCFeatureCache = true;
 			memOCStatusCache = true;
 			component.ngOnInit();
-			expect(component.legionUpdate[1].isVisible).toBe(true, `component.legionUpdate[1].isVisible should be true`);
-			expect(component.legionUpdate[1].isChecked).toBe(true, `component.legionUpdate[1].isChecked should be true`);
+			expect(component.legionUpdate[1].isVisible).toBe(
+				true,
+				`component.legionUpdate[1].isVisible should be true`
+			);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				true,
+				`component.legionUpdate[1].isChecked should be true`
+			);
 		});
 
 		it('renderRamOverClockStatus', fakeAsync(() => {
@@ -1039,28 +1393,52 @@ describe('WidgetLegionEdgeComponent', () => {
 			ramOCStatus = true;
 			component.renderRamOverClockStatus();
 			tick();
-			expect(component.legionUpdate[1].isChecked).toBe(false, `xtuServiceCache is false, component.legionUpdate[1].isChecked should keep false`);
-			expect(memOCStatusCache).toBe(false, `xtuServiceCache is false, memOCStatusCache should keep false`);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				false,
+				`xtuServiceCache is false, component.legionUpdate[1].isChecked should keep false`
+			);
+			expect(memOCStatusCache).toBe(
+				false,
+				`xtuServiceCache is false, memOCStatusCache should keep false`
+			);
 
 			xtuServiceCache = true;
 			ramOCStatus = undefined;
 			component.ngOnInit();
 			component.renderRamOverClockStatus();
 			tick();
-			expect(component.legionUpdate[1].isChecked).toBe(false, `xtuServiceCache is true,ramOCStatus is undefined, component.legionUpdate[1].isChecked should keep false`);
-			expect(memOCStatusCache).toBe(false, `xtuServiceCache is true, ramOCStatus is undefined, memOCStatusCache should keep false`);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				false,
+				`xtuServiceCache is true,ramOCStatus is undefined, component.legionUpdate[1].isChecked should keep false`
+			);
+			expect(memOCStatusCache).toBe(
+				false,
+				`xtuServiceCache is true, ramOCStatus is undefined, memOCStatusCache should keep false`
+			);
 
 			ramOCStatus = true;
 			component.renderRamOverClockStatus();
 			tick();
-			expect(component.legionUpdate[1].isChecked).toBe(true, `xtuServiceCache is true, component.legionUpdate[1].isChecked should be true`);
-			expect(memOCStatusCache).toBe(true, `xtuServiceCache is true, memOCStatusCache should be true`);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				true,
+				`xtuServiceCache is true, component.legionUpdate[1].isChecked should be true`
+			);
+			expect(memOCStatusCache).toBe(
+				true,
+				`xtuServiceCache is true, memOCStatusCache should be true`
+			);
 
 			ramOCStatus = false;
 			component.renderRamOverClockStatus();
 			tick();
-			expect(component.legionUpdate[1].isChecked).toBe(false, `xtuServiceCache is true, component.legionUpdate[1].isChecked should be false`);
-			expect(memOCStatusCache).toBe(false, `xtuServiceCache is true, memOCStatusCache should be false`);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				false,
+				`xtuServiceCache is true, component.legionUpdate[1].isChecked should be false`
+			);
+			expect(memOCStatusCache).toBe(
+				false,
+				`xtuServiceCache is true, memOCStatusCache should be false`
+			);
 		}));
 
 		it('toggleOnOffStatus of ram over clock', fakeAsync(() => {
@@ -1069,73 +1447,120 @@ describe('WidgetLegionEdgeComponent', () => {
 			memOCFeatureCache = true;
 			xtuServiceCache = false;
 			memOCStatusCache = false;
-			ramOCStatus = false
+			ramOCStatus = false;
 			component.legionUpdate[1].isChecked = false;
 			component.legionUpdate[1].isPopup = false;
 			component.legionUpdate[1].isDriverPopup = false;
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.ramOverlock' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.ramOverlock' },
+			});
 			tick();
 			expect(ramOCStatus).toBe(false, `xtuService is false, ramOCStatus should keep false`);
-			expect(memOCStatusCache).toBe(false, `xtuService is false, memOCStatusCache should keep false`);
-			expect(component.legionUpdate[1].isChecked).toBe(false, `xtuService is false, component.legionUpdate[1].isChecked should keep false`)
-			expect(component.legionUpdate[1].isPopup).toBe(false, `xtuService is false, component.legionUpdate[1].isPopup should keep false`);
-			expect(component.legionUpdate[1].isDriverPopup).toBe(true, `xtuService is false, component.legionUpdate[1].isDriverPopup should be true`);
+			expect(memOCStatusCache).toBe(
+				false,
+				`xtuService is false, memOCStatusCache should keep false`
+			);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				false,
+				`xtuService is false, component.legionUpdate[1].isChecked should keep false`
+			);
+			expect(component.legionUpdate[1].isPopup).toBe(
+				false,
+				`xtuService is false, component.legionUpdate[1].isPopup should keep false`
+			);
+			expect(component.legionUpdate[1].isDriverPopup).toBe(
+				true,
+				`xtuService is false, component.legionUpdate[1].isDriverPopup should be true`
+			);
 
 			component.gamingCapabilities.xtuService = true;
 			memOCStatusCache = true;
 			ramOCStatus = true;
 			component.legionUpdate[1].isChecked = true;
 			component.legionUpdate[1].isPopup = false;
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.ramOverlock' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.ramOverlock' },
+			});
 			tick();
 			expect(ramOCStatus).toBe(false, `xtuService is true, ramOCStatus should be false`);
-			expect(memOCStatusCache).toBe(true, `xtuService is true, memOCStatusCache should keep true before restart`);
-			expect(component.legionUpdate[1].isChecked).toBe(true, `xtuService is true, component.legionUpdate[1].isChecked should keep true before restart`);
-			expect(component.legionUpdate[1].isPopup).toBe(true, `xtuService is true, component.legionUpdate[1].isPopup is true`);
+			expect(memOCStatusCache).toBe(
+				true,
+				`xtuService is true, memOCStatusCache should keep true before restart`
+			);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				true,
+				`xtuService is true, component.legionUpdate[1].isChecked should keep true before restart`
+			);
+			expect(component.legionUpdate[1].isPopup).toBe(
+				true,
+				`xtuService is true, component.legionUpdate[1].isPopup is true`
+			);
 
 			memOCStatusCache = false;
 			ramOCStatus = false;
 			component.legionUpdate[1].isChecked = false;
 			component.legionUpdate[1].isPopup = false;
-			component.toggleOnOffStatus({ target: { value: false, name: 'gaming.dashboard.device.legionEdge.ramOverlock' } });
+			component.toggleOnOffStatus({
+				target: { value: false, name: 'gaming.dashboard.device.legionEdge.ramOverlock' },
+			});
 			tick();
 			expect(ramOCStatus).toBe(true, `xtuService is true, ramOCStatus should be true`);
-			expect(memOCStatusCache).toBe(false, `xtuService is true, memOCStatusCache should keep false before restart`);
-			expect(component.legionUpdate[1].isChecked).toBe(false, `xtuService is true, component.legionUpdate[1].isChecked should keep false before restart`);
-			expect(component.legionUpdate[1].isPopup).toBe(true, `xtuService is true, component.legionUpdate[1].isPopup is true`);
+			expect(memOCStatusCache).toBe(
+				false,
+				`xtuService is true, memOCStatusCache should keep false before restart`
+			);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				false,
+				`xtuService is true, component.legionUpdate[1].isChecked should keep false before restart`
+			);
+			expect(component.legionUpdate[1].isPopup).toBe(
+				true,
+				`xtuService is true, component.legionUpdate[1].isPopup is true`
+			);
 		}));
-	})
+	});
 
 	describe('network boost', () => {
 		let networkBoostModeStatus = false;
 		let networkBoostServiceMoke = {
 			getNetworkBoostStatus() {
-				return new Promise(resolve => {
-					resolve(networkBoostModeStatus)
-				})
+				return new Promise((resolve) => {
+					resolve(networkBoostModeStatus);
+				});
 			},
 			setNetworkBoostStatus(value: boolean) {
 				if (setReturnValue) {
 					networkBoostModeStatus = value;
 				}
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(setReturnValue);
-				})
-			}
-		}
+				});
+			},
+		};
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
@@ -1144,10 +1569,13 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -1177,7 +1605,10 @@ describe('WidgetLegionEdgeComponent', () => {
 		it('not support network boost', () => {
 			networkBoostFeatureCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[2].isVisible).toBe(false, `component.legionUpdate[2].isVisible should be false`);
+			expect(component.legionUpdate[2].isVisible).toBe(
+				false,
+				`component.legionUpdate[2].isVisible should be false`
+			);
 		});
 
 		it('ngOnInit network boost', () => {
@@ -1185,14 +1616,26 @@ describe('WidgetLegionEdgeComponent', () => {
 			networkBoostFeatureCache = true;
 			networkBoostStatusCache = true;
 			component.ngOnInit();
-			expect(component.legionUpdate[2].isVisible).toEqual(true, `component.legionUpdate[2].isVisible should be true`);
-			expect(component.legionUpdate[2].isChecked).toEqual(true, `component.legionUpdate[2].isChecked should be true`);
+			expect(component.legionUpdate[2].isVisible).toEqual(
+				true,
+				`component.legionUpdate[2].isVisible should be true`
+			);
+			expect(component.legionUpdate[2].isChecked).toEqual(
+				true,
+				`component.legionUpdate[2].isChecked should be true`
+			);
 
 			networkBoostFeatureCache = true;
 			networkBoostStatusCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[2].isVisible).toEqual(true, `component.legionUpdate[2].isVisible should be true`);
-			expect(component.legionUpdate[2].isChecked).toEqual(false, `component.legionUpdate[2].isChecked should be false`);
+			expect(component.legionUpdate[2].isVisible).toEqual(
+				true,
+				`component.legionUpdate[2].isVisible should be true`
+			);
+			expect(component.legionUpdate[2].isChecked).toEqual(
+				false,
+				`component.legionUpdate[2].isChecked should be false`
+			);
 		});
 
 		it('renderNetworkBoostStatus', fakeAsync((done: any) => {
@@ -1204,24 +1647,51 @@ describe('WidgetLegionEdgeComponent', () => {
 
 			component.renderNetworkBoostStatus();
 			tick();
-			expect(networkBoostStatusCache).toBe(false, `networkBoostModeStatus is undefined, networkBoostStatusCache should keep false`);
-			expect(networkBoosNeedToAskPopup).toBe(1, `networkBoostModeStatus is undefined, networkBoosNeedToAskPopup should keep 1`);
-			expect(component.legionUpdate[2].isChecked).toBe(false, `networkBoostModeStatus is undefined, component.legionUpdate[2].isChecked should keep false`);
+			expect(networkBoostStatusCache).toBe(
+				false,
+				`networkBoostModeStatus is undefined, networkBoostStatusCache should keep false`
+			);
+			expect(networkBoosNeedToAskPopup).toBe(
+				1,
+				`networkBoostModeStatus is undefined, networkBoosNeedToAskPopup should keep 1`
+			);
+			expect(component.legionUpdate[2].isChecked).toBe(
+				false,
+				`networkBoostModeStatus is undefined, component.legionUpdate[2].isChecked should keep false`
+			);
 
 			networkBoostModeStatus = true;
 			networkBoosNeedToAskPopup = 2;
 			component.renderNetworkBoostStatus();
 			tick();
-			expect(networkBoostStatusCache).toBe(true, `networkBoostModeStatus is undefined, networkBoostStatusCache should be true`);
-			expect(networkBoosNeedToAskPopup).toBe(2, `networkBoostModeStatus is undefined, networkBoosNeedToAskPopup should keep 2`);
-			expect(component.legionUpdate[2].isChecked).toBe(true, `networkBoostModeStatus is undefined, component.legionUpdate[2].isChecked should be true`);
+			expect(networkBoostStatusCache).toBe(
+				true,
+				`networkBoostModeStatus is undefined, networkBoostStatusCache should be true`
+			);
+			expect(networkBoosNeedToAskPopup).toBe(
+				2,
+				`networkBoostModeStatus is undefined, networkBoosNeedToAskPopup should keep 2`
+			);
+			expect(component.legionUpdate[2].isChecked).toBe(
+				true,
+				`networkBoostModeStatus is undefined, component.legionUpdate[2].isChecked should be true`
+			);
 
 			networkBoostModeStatus = false;
 			component.renderNetworkBoostStatus();
 			tick();
-			expect(networkBoostStatusCache).toBe(false, `networkBoostModeStatus is undefined, networkBoostStatusCache should be false`);
-			expect(networkBoosNeedToAskPopup).toBe(1, `networkBoostModeStatus is undefined, networkBoosNeedToAskPopup should be 1`);
-			expect(component.legionUpdate[2].isChecked).toBe(false, `networkBoostModeStatus is undefined, component.legionUpdate[2].isChecked should be false`);
+			expect(networkBoostStatusCache).toBe(
+				false,
+				`networkBoostModeStatus is undefined, networkBoostStatusCache should be false`
+			);
+			expect(networkBoosNeedToAskPopup).toBe(
+				1,
+				`networkBoostModeStatus is undefined, networkBoosNeedToAskPopup should be 1`
+			);
+			expect(component.legionUpdate[2].isChecked).toBe(
+				false,
+				`networkBoostModeStatus is undefined, component.legionUpdate[2].isChecked should be false`
+			);
 		}));
 
 		it('toggleOnOffRamOCStatus of netWork boost', fakeAsync(() => {
@@ -1233,70 +1703,137 @@ describe('WidgetLegionEdgeComponent', () => {
 			networkBoostStatusCache = false;
 			component.legionUpdate[2].isChecked = false;
 			component.legionUpdate[2].isDriverPopup = false;
-			component.toggleOnOffStatus({ target: { value: false, name: 'gaming.dashboard.device.legionEdge.networkBoost' } });
+			component.toggleOnOffStatus({
+				target: { value: false, name: 'gaming.dashboard.device.legionEdge.networkBoost' },
+			});
 			tick();
-			expect(networkBoostModeStatus).toBe(false, `setReturn is true, fbnetFilterCache is false, networkBoostModeStatus should keep false`);
-			expect(networkBoostStatusCache).toBe(false, `setReturn is true, fbnetFilterCache is false, networkBoostStatusCache should keep false`);
-			expect(component.legionUpdate[2].isChecked).toBe(false, `setReturn is true, fbnetFilterCache is false, component.legionUpdate[2].isChecked should keep false`);
-			expect(component.legionUpdate[2].isDriverPopup).toBe(true, `setReturn is true, fbnetFilterCache is false, component.legionUpdate[2].isDriverPopup should be true`);
+			expect(networkBoostModeStatus).toBe(
+				false,
+				`setReturn is true, fbnetFilterCache is false, networkBoostModeStatus should keep false`
+			);
+			expect(networkBoostStatusCache).toBe(
+				false,
+				`setReturn is true, fbnetFilterCache is false, networkBoostStatusCache should keep false`
+			);
+			expect(component.legionUpdate[2].isChecked).toBe(
+				false,
+				`setReturn is true, fbnetFilterCache is false, component.legionUpdate[2].isChecked should keep false`
+			);
+			expect(component.legionUpdate[2].isDriverPopup).toBe(
+				true,
+				`setReturn is true, fbnetFilterCache is false, component.legionUpdate[2].isDriverPopup should be true`
+			);
 
 			fbnetFilterCache = true;
 			component.legionUpdate[2].isDriverPopup = false;
 			component.ngOnInit();
-			component.toggleOnOffStatus({ target: { value: false, name: 'gaming.dashboard.device.legionEdge.networkBoost' } });
+			component.toggleOnOffStatus({
+				target: { value: false, name: 'gaming.dashboard.device.legionEdge.networkBoost' },
+			});
 			tick();
-			expect(networkBoostModeStatus).toBe(false, `setReturn is true, fbnetFilterCache is true, networkBoostModeStatus should be false`);
-			expect(networkBoostStatusCache).toBe(false, `setReturn is true, fbnetFilterCache is true, networkBoostStatusCache should be false`);
-			expect(component.legionUpdate[2].isChecked).toBe(false, `setReturn is true, fbnetFilterCache is true, component.legionUpdate[2].isChecked should be false`);
-			expect(component.legionUpdate[2].isDriverPopup).toBe(false, `setReturn is true, fbnetFilterCache is true, component.legionUpdate[2].isDriverPopup should keep false`);
+			expect(networkBoostModeStatus).toBe(
+				false,
+				`setReturn is true, fbnetFilterCache is true, networkBoostModeStatus should be false`
+			);
+			expect(networkBoostStatusCache).toBe(
+				false,
+				`setReturn is true, fbnetFilterCache is true, networkBoostStatusCache should be false`
+			);
+			expect(component.legionUpdate[2].isChecked).toBe(
+				false,
+				`setReturn is true, fbnetFilterCache is true, component.legionUpdate[2].isChecked should be false`
+			);
+			expect(component.legionUpdate[2].isDriverPopup).toBe(
+				false,
+				`setReturn is true, fbnetFilterCache is true, component.legionUpdate[2].isDriverPopup should keep false`
+			);
 
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.networkBoost' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.networkBoost' },
+			});
 			tick();
-			expect(networkBoostModeStatus).toBe(true, `setReturn is true, fbnetFilterCache is true, networkBoostModeStatus should be true`);
-			expect(networkBoostStatusCache).toBe(true, `setReturn is true, fbnetFilterCache is true, networkBoostStatusCache should be true`);
-			expect(component.legionUpdate[2].isChecked).toBe(true, `setReturn is true, fbnetFilterCache is true, component.legionUpdate[2].isChecked should be true`);
-			expect(component.legionUpdate[2].isDriverPopup).toBe(false, `setReturn is true, fbnetFilterCache is true, component.legionUpdate[2].isDriverPopup should keep false`);
+			expect(networkBoostModeStatus).toBe(
+				true,
+				`setReturn is true, fbnetFilterCache is true, networkBoostModeStatus should be true`
+			);
+			expect(networkBoostStatusCache).toBe(
+				true,
+				`setReturn is true, fbnetFilterCache is true, networkBoostStatusCache should be true`
+			);
+			expect(component.legionUpdate[2].isChecked).toBe(
+				true,
+				`setReturn is true, fbnetFilterCache is true, component.legionUpdate[2].isChecked should be true`
+			);
+			expect(component.legionUpdate[2].isDriverPopup).toBe(
+				false,
+				`setReturn is true, fbnetFilterCache is true, component.legionUpdate[2].isDriverPopup should keep false`
+			);
 
 			setReturnValue = false;
-			component.toggleOnOffStatus({ target: { value: false, name: 'gaming.dashboard.device.legionEdge.networkBoost' } });
+			component.toggleOnOffStatus({
+				target: { value: false, name: 'gaming.dashboard.device.legionEdge.networkBoost' },
+			});
 			tick();
-			expect(networkBoostModeStatus).toBe(true, `setReturn is false, fbnetFilterCache is false, networkBoostModeStatus should keep true`);
-			expect(networkBoostStatusCache).toBe(true, `setReturn is false, fbnetFilterCache is false, networkBoostStatusCache should keep true`);
-			expect(component.legionUpdate[2].isChecked).toBe(true, `setReturn is false, fbnetFilterCache is false, component.legionUpdate[2].isChecked should keep true`);
-			expect(component.legionUpdate[2].isDriverPopup).toBe(false, `setReturn is false, fbnetFilterCache is false, component.legionUpdate[2].isDriverPopup should keep false`);
+			expect(networkBoostModeStatus).toBe(
+				true,
+				`setReturn is false, fbnetFilterCache is false, networkBoostModeStatus should keep true`
+			);
+			expect(networkBoostStatusCache).toBe(
+				true,
+				`setReturn is false, fbnetFilterCache is false, networkBoostStatusCache should keep true`
+			);
+			expect(component.legionUpdate[2].isChecked).toBe(
+				true,
+				`setReturn is false, fbnetFilterCache is false, component.legionUpdate[2].isChecked should keep true`
+			);
+			expect(component.legionUpdate[2].isDriverPopup).toBe(
+				false,
+				`setReturn is false, fbnetFilterCache is false, component.legionUpdate[2].isDriverPopup should keep false`
+			);
 		}));
-	})
+	});
 
 	describe('auto close', () => {
 		let autoCloseModeStatus = false;
 		let gamingAutoCloseServiceMock = {
 			getAutoCloseStatus() {
-				return new Promise(resolve => {
-					resolve(autoCloseModeStatus)
-				})
+				return new Promise((resolve) => {
+					resolve(autoCloseModeStatus);
+				});
 			},
 			setAutoCloseStatus(value: boolean) {
 				if (setReturnValue) {
 					autoCloseModeStatus = value;
 				}
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(setReturnValue);
-				})
-			}
-		}
+				});
+			},
+		};
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
@@ -1305,10 +1842,13 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -1338,7 +1878,10 @@ describe('WidgetLegionEdgeComponent', () => {
 		it('not support auto close', () => {
 			optimizationFeatureCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[3].isVisible).toBe(false, `component.legionUpdate[2].isVisible should be false`);
+			expect(component.legionUpdate[3].isVisible).toBe(
+				false,
+				`component.legionUpdate[2].isVisible should be false`
+			);
 		});
 
 		it('ngOnInit auto close', () => {
@@ -1346,14 +1889,26 @@ describe('WidgetLegionEdgeComponent', () => {
 			optimizationFeatureCache = true;
 			autoCloseStatusCache = true;
 			component.ngOnInit();
-			expect(component.legionUpdate[3].isVisible).toEqual(true, `component.legionUpdate[3].isVisible should be true`);
-			expect(component.legionUpdate[3].isChecked).toEqual(true, `component.legionUpdate[3].isChecked should be true`);
+			expect(component.legionUpdate[3].isVisible).toEqual(
+				true,
+				`component.legionUpdate[3].isVisible should be true`
+			);
+			expect(component.legionUpdate[3].isChecked).toEqual(
+				true,
+				`component.legionUpdate[3].isChecked should be true`
+			);
 
 			optimizationFeatureCache = true;
 			autoCloseStatusCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[3].isVisible).toEqual(true, `component.legionUpdate[3].isVisible should be true`);
-			expect(component.legionUpdate[3].isChecked).toEqual(false, `component.legionUpdate[3].isChecked should be false`);
+			expect(component.legionUpdate[3].isVisible).toEqual(
+				true,
+				`component.legionUpdate[3].isVisible should be true`
+			);
+			expect(component.legionUpdate[3].isChecked).toEqual(
+				false,
+				`component.legionUpdate[3].isChecked should be false`
+			);
 		});
 
 		it('renderAutoCloseStatus', fakeAsync((done: any) => {
@@ -1364,20 +1919,38 @@ describe('WidgetLegionEdgeComponent', () => {
 
 			component.renderAutoCloseStatus();
 			tick();
-			expect(autoCloseStatusCache).toBe(false, `autoCloseModeStatus is undefined, autoCloseStatusCache should keep false`);
-			expect(component.legionUpdate[3].isChecked).toBe(false, `autoCloseModeStatus is undefined, component.legionUpdate[3].isChecked should keep false`);
+			expect(autoCloseStatusCache).toBe(
+				false,
+				`autoCloseModeStatus is undefined, autoCloseStatusCache should keep false`
+			);
+			expect(component.legionUpdate[3].isChecked).toBe(
+				false,
+				`autoCloseModeStatus is undefined, component.legionUpdate[3].isChecked should keep false`
+			);
 
 			autoCloseModeStatus = true;
 			component.renderAutoCloseStatus();
 			tick();
-			expect(autoCloseStatusCache).toBe(true, `autoCloseModeStatus is true, autoCloseStatusCache should be true`);
-			expect(component.legionUpdate[3].isChecked).toBe(true, `autoCloseModeStatus is true, component.legionUpdate[3].isChecked should be true`);
+			expect(autoCloseStatusCache).toBe(
+				true,
+				`autoCloseModeStatus is true, autoCloseStatusCache should be true`
+			);
+			expect(component.legionUpdate[3].isChecked).toBe(
+				true,
+				`autoCloseModeStatus is true, component.legionUpdate[3].isChecked should be true`
+			);
 
 			autoCloseModeStatus = false;
 			component.renderAutoCloseStatus();
 			tick();
-			expect(autoCloseStatusCache).toBe(false, `autoCloseModeStatus is false, autoCloseStatusCache should be false`);
-			expect(component.legionUpdate[3].isChecked).toBe(false, `autoCloseModeStatus is false, component.legionUpdate[3].isChecked should be false`);
+			expect(autoCloseStatusCache).toBe(
+				false,
+				`autoCloseModeStatus is false, autoCloseStatusCache should be false`
+			);
+			expect(component.legionUpdate[3].isChecked).toBe(
+				false,
+				`autoCloseModeStatus is false, component.legionUpdate[3].isChecked should be false`
+			);
 		}));
 
 		it('toggleOnOffRamOCStatus of auto close', fakeAsync(() => {
@@ -1387,57 +1960,92 @@ describe('WidgetLegionEdgeComponent', () => {
 			autoCloseModeStatus = false;
 			autoCloseStatusCache = false;
 			component.legionUpdate[3].isChecked = false;
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.autoClose' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.autoClose' },
+			});
 			tick();
-			expect(autoCloseModeStatus).toBe(true, `setReturn is true, autoCloseModeStatus should be true`);
-			expect(autoCloseStatusCache).toBe(true, `setReturn is true, autoCloseStatusCache should be true`);
+			expect(autoCloseModeStatus).toBe(
+				true,
+				`setReturn is true, autoCloseModeStatus should be true`
+			);
+			expect(autoCloseStatusCache).toBe(
+				true,
+				`setReturn is true, autoCloseStatusCache should be true`
+			);
 			// expect(component.legionUpdate[3].isChecked).toBe(true, `setReturn is true, component.legionUpdate[3].isChecked should be true`);
 
-			component.toggleOnOffStatus({ target: { value: false, name: 'gaming.dashboard.device.legionEdge.autoClose' } });
+			component.toggleOnOffStatus({
+				target: { value: false, name: 'gaming.dashboard.device.legionEdge.autoClose' },
+			});
 			tick();
-			expect(autoCloseModeStatus).toBe(false, `setReturn is true, autoCloseModeStatus should be false`);
-			expect(autoCloseStatusCache).toBe(false, `setReturn is true, autoCloseStatusCache should be false`);
+			expect(autoCloseModeStatus).toBe(
+				false,
+				`setReturn is true, autoCloseModeStatus should be false`
+			);
+			expect(autoCloseStatusCache).toBe(
+				false,
+				`setReturn is true, autoCloseStatusCache should be false`
+			);
 			// expect(component.legionUpdate[3].isChecked).toBe(false, `setReturn is true, component.legionUpdate[3].isChecked should be false`);
 
 			setReturnValue = false;
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.autoClose' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.autoClose' },
+			});
 			tick();
-			expect(autoCloseModeStatus).toBe(false, `setReturn is false, autoCloseModeStatus should keep false`);
-			expect(autoCloseStatusCache).toBe(false, `setReturn is false, autoCloseStatusCache should keep false`);
+			expect(autoCloseModeStatus).toBe(
+				false,
+				`setReturn is false, autoCloseModeStatus should keep false`
+			);
+			expect(autoCloseStatusCache).toBe(
+				false,
+				`setReturn is false, autoCloseStatusCache should keep false`
+			);
 			// expect(component.legionUpdate[3].isChecked).toBe(false, `setReturn is false, component.legionUpdate[3].isChecked should keep false`);
 		}));
-	})
+	});
 
 	describe('hybrid mode', () => {
 		let hybridModeStatus = false;
 		let gamingHybridModeServiceMock = {
 			getHybridModeStatus() {
-				return new Promise(resolve => {
-					resolve(hybridModeStatus)
-				})
+				return new Promise((resolve) => {
+					resolve(hybridModeStatus);
+				});
 			},
 			setHybridModeStatus(value: boolean) {
 				if (setReturnValue) {
 					hybridModeStatus = value;
 				}
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(setReturnValue);
-				})
-			}
+				});
+			},
 		};
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
@@ -1446,10 +2054,13 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceMock },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -1479,7 +2090,10 @@ describe('WidgetLegionEdgeComponent', () => {
 		it('not support hybrid mode', () => {
 			hybridModeFeatureCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[4].isVisible).toBe(false, `component.legionUpdate[4].isVisible should be false`);
+			expect(component.legionUpdate[4].isVisible).toBe(
+				false,
+				`component.legionUpdate[4].isVisible should be false`
+			);
 		});
 
 		it('ngOnInit hybird mode', () => {
@@ -1487,14 +2101,26 @@ describe('WidgetLegionEdgeComponent', () => {
 			hybridModeFeatureCache = true;
 			hybridModeStatusCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[4].isVisible).toBe(true, `component.legionUpdate[4].isVisible should be true`);
-			expect(component.legionUpdate[4].isChecked).toBe(false, `component.legionUpdate[4].isChecked should be false`);
+			expect(component.legionUpdate[4].isVisible).toBe(
+				true,
+				`component.legionUpdate[4].isVisible should be true`
+			);
+			expect(component.legionUpdate[4].isChecked).toBe(
+				false,
+				`component.legionUpdate[4].isChecked should be false`
+			);
 
 			hybridModeFeatureCache = true;
 			hybridModeStatusCache = true;
 			component.ngOnInit();
-			expect(component.legionUpdate[4].isVisible).toBe(true, `component.legionUpdate[4].isVisible should be true`);
-			expect(component.legionUpdate[4].isChecked).toBe(true, `component.legionUpdate[4].isChecked should be true`);
+			expect(component.legionUpdate[4].isVisible).toBe(
+				true,
+				`component.legionUpdate[4].isVisible should be true`
+			);
+			expect(component.legionUpdate[4].isChecked).toBe(
+				true,
+				`component.legionUpdate[4].isChecked should be true`
+			);
 		});
 
 		it('renderHybridModeStatus', fakeAsync(() => {
@@ -1505,20 +2131,38 @@ describe('WidgetLegionEdgeComponent', () => {
 			hybridModeStatus = undefined;
 			component.renderHybridModeStatus();
 			tick();
-			expect(component.legionUpdate[4].isChecked).toBe(false, `hybridModeStatus is undefined, component.legionUpdate[4].isChecked should keep false`);
-			expect(hybridModeStatusCache).toBe(false, `hybridModeStatus is undefined, hybridModeStatusCache should keep false`);
+			expect(component.legionUpdate[4].isChecked).toBe(
+				false,
+				`hybridModeStatus is undefined, component.legionUpdate[4].isChecked should keep false`
+			);
+			expect(hybridModeStatusCache).toBe(
+				false,
+				`hybridModeStatus is undefined, hybridModeStatusCache should keep false`
+			);
 
 			hybridModeStatus = true;
 			component.renderHybridModeStatus();
 			tick();
-			expect(component.legionUpdate[4].isChecked).toBe(true, `hybridModeStatus is true, component.legionUpdate[4].isChecked should be true`);
-			expect(hybridModeStatusCache).toBe(true, `hybridModeStatus is true, hybridModeStatusCache should be true`);
+			expect(component.legionUpdate[4].isChecked).toBe(
+				true,
+				`hybridModeStatus is true, component.legionUpdate[4].isChecked should be true`
+			);
+			expect(hybridModeStatusCache).toBe(
+				true,
+				`hybridModeStatus is true, hybridModeStatusCache should be true`
+			);
 
 			hybridModeStatus = false;
 			component.renderHybridModeStatus();
 			tick();
-			expect(component.legionUpdate[4].isChecked).toBe(false, `hybridModeStatus is false, component.legionUpdate[4].isChecked should be false`);
-			expect(hybridModeStatusCache).toBe(false, `hybridModeStatus is false, hybridModeStatusCache should be false`);
+			expect(component.legionUpdate[4].isChecked).toBe(
+				false,
+				`hybridModeStatus is false, component.legionUpdate[4].isChecked should be false`
+			);
+			expect(hybridModeStatusCache).toBe(
+				false,
+				`hybridModeStatus is false, hybridModeStatusCache should be false`
+			);
 		}));
 
 		it('toggleOnOffRamOCStatus of hybrid mode', fakeAsync(() => {
@@ -1528,56 +2172,88 @@ describe('WidgetLegionEdgeComponent', () => {
 			setReturnValue = true;
 			component.legionUpdate[4].isChecked = false;
 			component.legionUpdate[4].isPopup = false;
-			component.toggleOnOffStatus({ target: { value: false, name: 'gaming.dashboard.device.legionEdge.hybridMode' } });
+			component.toggleOnOffStatus({
+				target: { value: false, name: 'gaming.dashboard.device.legionEdge.hybridMode' },
+			});
 			tick();
 			expect(hybridModeStatus).toBe(true, `hybridModeStatus should be true`);
-			expect(hybridModeStatusCache).toBe(false, `hybridModeStatusCache should keep false before restart`);
-			expect(component.legionUpdate[4].isChecked).toBe(false, `component.legionUpdate[4].isChecked should keep false before restart`);
-			expect(component.legionUpdate[4].isPopup).toBe(true, `component.legionUpdate[4].isPopup should be true`);
-
+			expect(hybridModeStatusCache).toBe(
+				false,
+				`hybridModeStatusCache should keep false before restart`
+			);
+			expect(component.legionUpdate[4].isChecked).toBe(
+				false,
+				`component.legionUpdate[4].isChecked should keep false before restart`
+			);
+			expect(component.legionUpdate[4].isPopup).toBe(
+				true,
+				`component.legionUpdate[4].isPopup should be true`
+			);
 
 			hybridModeStatusCache = true;
 			component.legionUpdate[4].isChecked = true;
 			component.legionUpdate[4].isPopup = false;
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.hybridMode' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.hybridMode' },
+			});
 			tick();
 			expect(hybridModeStatus).toBe(false, `hybridModeStatus should be false`);
-			expect(hybridModeStatusCache).toBe(true, `hybridModeStatusCache should keep true before restart`);
-			expect(component.legionUpdate[4].isChecked).toBe(true, `component.legionUpdate[4].isChecked should keep true before restart`);
-			expect(component.legionUpdate[4].isPopup).toBe(true, `component.legionUpdate[4].isPopup should be true`);
+			expect(hybridModeStatusCache).toBe(
+				true,
+				`hybridModeStatusCache should keep true before restart`
+			);
+			expect(component.legionUpdate[4].isChecked).toBe(
+				true,
+				`component.legionUpdate[4].isChecked should keep true before restart`
+			);
+			expect(component.legionUpdate[4].isPopup).toBe(
+				true,
+				`component.legionUpdate[4].isPopup should be true`
+			);
 		}));
-	})
+	});
 
 	describe('over drive', () => {
 		let overDriveStatus = true;
 		let gamingOverDriveServiceMock = {
 			getOverDriveStatus() {
-				return new Promise(resolve => {
-					resolve(overDriveStatus)
-				})
+				return new Promise((resolve) => {
+					resolve(overDriveStatus);
+				});
 			},
 			setOverDriveStatus(value: boolean) {
 				if (setReturnValue) {
 					overDriveStatus = value;
 				}
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(setReturnValue);
-				})
-			}
-		}
+				});
+			},
+		};
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
@@ -1586,10 +2262,13 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceMock },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -1619,7 +2298,10 @@ describe('WidgetLegionEdgeComponent', () => {
 		it('not support over drive', () => {
 			overDriveFeatureCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[5].isVisible).toBe(false, `component.legionUpdate[5].isVisible should be false`);
+			expect(component.legionUpdate[5].isVisible).toBe(
+				false,
+				`component.legionUpdate[5].isVisible should be false`
+			);
 		});
 
 		it('ngOnInit over drive', () => {
@@ -1627,14 +2309,26 @@ describe('WidgetLegionEdgeComponent', () => {
 			overDriveFeatureCache = true;
 			overDriveStatusCache = true;
 			component.ngOnInit();
-			expect(component.legionUpdate[5].isVisible).toEqual(true, `component.legionUpdate[5].isVisible should be true`);
-			expect(component.legionUpdate[5].isChecked).toEqual(true, `component.legionUpdate[5].isChecked should be true`);
+			expect(component.legionUpdate[5].isVisible).toEqual(
+				true,
+				`component.legionUpdate[5].isVisible should be true`
+			);
+			expect(component.legionUpdate[5].isChecked).toEqual(
+				true,
+				`component.legionUpdate[5].isChecked should be true`
+			);
 
 			overDriveFeatureCache = true;
 			overDriveStatusCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[5].isVisible).toEqual(true, `component.legionUpdate[5].isVisible should be true`);
-			expect(component.legionUpdate[5].isChecked).toEqual(false, `component.legionUpdate[5].isChecked should be false`);
+			expect(component.legionUpdate[5].isVisible).toEqual(
+				true,
+				`component.legionUpdate[5].isVisible should be true`
+			);
+			expect(component.legionUpdate[5].isChecked).toEqual(
+				false,
+				`component.legionUpdate[5].isChecked should be false`
+			);
 		});
 
 		it('legionEdgeInit of over drive', fakeAsync(() => {
@@ -1646,20 +2340,38 @@ describe('WidgetLegionEdgeComponent', () => {
 			overDriveStatus = undefined;
 			component.legionEdgeInit();
 			tick();
-			expect(overDriveStatusCache).toBe(false, `overDriveStatus is undefined, overDriveStatusCache should keep false`);
-			expect(component.legionUpdate[5].isChecked).toBe(false, `overDriveStatus is undefined, component.legionUpdate[5].isChecked should keep false`);
+			expect(overDriveStatusCache).toBe(
+				false,
+				`overDriveStatus is undefined, overDriveStatusCache should keep false`
+			);
+			expect(component.legionUpdate[5].isChecked).toBe(
+				false,
+				`overDriveStatus is undefined, component.legionUpdate[5].isChecked should keep false`
+			);
 
 			overDriveStatus = true;
 			component.legionEdgeInit();
 			tick();
-			expect(overDriveStatusCache).toBe(true, `overDriveStatus is true, overDriveStatusCache should be true`);
-			expect(component.legionUpdate[5].isChecked).toBe(true, `overDriveStatus is true, component.legionUpdate[5].isChecked should be true`);
+			expect(overDriveStatusCache).toBe(
+				true,
+				`overDriveStatus is true, overDriveStatusCache should be true`
+			);
+			expect(component.legionUpdate[5].isChecked).toBe(
+				true,
+				`overDriveStatus is true, component.legionUpdate[5].isChecked should be true`
+			);
 
 			overDriveStatus = false;
 			component.legionEdgeInit();
 			tick();
-			expect(overDriveStatusCache).toBe(false, `overDriveStatus is false, overDriveStatusCache should be false`);
-			expect(component.legionUpdate[5].isChecked).toBe(false, `overDriveStatus is false, component.legionUpdate[5].isChecked should be false`);
+			expect(overDriveStatusCache).toBe(
+				false,
+				`overDriveStatus is false, overDriveStatusCache should be false`
+			);
+			expect(component.legionUpdate[5].isChecked).toBe(
+				false,
+				`overDriveStatus is false, component.legionUpdate[5].isChecked should be false`
+			);
 		}));
 
 		it('toggleOnOffRamOCStatus of over drive', fakeAsync(() => {
@@ -1669,57 +2381,98 @@ describe('WidgetLegionEdgeComponent', () => {
 			overDriveStatus = false;
 			overDriveStatusCache = false;
 			component.legionUpdate[5].isChecked = false;
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.overDrive' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.overDrive' },
+			});
 			tick();
 			expect(overDriveStatus).toBe(true, `setReturn is true, overDriveStatus should be true`);
-			expect(overDriveStatusCache).toBe(true, `setReturn is true, overDriveStatusCache should be true`);
-			expect(component.legionUpdate[5].isChecked).toBe(true, `setReturn is true, component.legionUpdate[5].isChecked should be true`);
+			expect(overDriveStatusCache).toBe(
+				true,
+				`setReturn is true, overDriveStatusCache should be true`
+			);
+			expect(component.legionUpdate[5].isChecked).toBe(
+				true,
+				`setReturn is true, component.legionUpdate[5].isChecked should be true`
+			);
 
-			component.toggleOnOffStatus({ target: { value: false, name: 'gaming.dashboard.device.legionEdge.overDrive' } });
+			component.toggleOnOffStatus({
+				target: { value: false, name: 'gaming.dashboard.device.legionEdge.overDrive' },
+			});
 			tick();
-			expect(overDriveStatus).toBe(false, `setReturn is true, overDriveStatus should be false`);
-			expect(overDriveStatusCache).toBe(false, `setReturn is true, overDriveStatusCache should be false`);
-			expect(component.legionUpdate[5].isChecked).toBe(false, `setReturn is true, component.legionUpdate[5].isChecked should be false`);
+			expect(overDriveStatus).toBe(
+				false,
+				`setReturn is true, overDriveStatus should be false`
+			);
+			expect(overDriveStatusCache).toBe(
+				false,
+				`setReturn is true, overDriveStatusCache should be false`
+			);
+			expect(component.legionUpdate[5].isChecked).toBe(
+				false,
+				`setReturn is true, component.legionUpdate[5].isChecked should be false`
+			);
 
 			setReturnValue = false;
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.overDrive' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.overDrive' },
+			});
 			tick();
-			expect(overDriveStatus).toBe(false, `setReturn is false, overDriveStatus should keep false`);
-			expect(overDriveStatusCache).toBe(false, `setReturn is false, overDriveStatusCache should keep false`);
-			expect(component.legionUpdate[5].isChecked).toBe(false, `setReturn is false, component.legionUpdate[5].isChecked should keep false`);
+			expect(overDriveStatus).toBe(
+				false,
+				`setReturn is false, overDriveStatus should keep false`
+			);
+			expect(overDriveStatusCache).toBe(
+				false,
+				`setReturn is false, overDriveStatusCache should keep false`
+			);
+			expect(component.legionUpdate[5].isChecked).toBe(
+				false,
+				`setReturn is false, component.legionUpdate[5].isChecked should keep false`
+			);
 		}));
-	})
+	});
 
 	describe('touchpad lock', () => {
 		let touchpadLockStatus = false;
 		let gamingKeyLockServiceMock = {
 			getKeyLockStatus() {
-				return new Promise(resolve => {
-					resolve(touchpadLockStatus)
-				})
+				return new Promise((resolve) => {
+					resolve(touchpadLockStatus);
+				});
 			},
 			setKeyLockStatus(value: boolean) {
 				if (setReturnValue) {
 					touchpadLockStatus = value;
 				}
-				return new Promise(resolve => {
+				return new Promise((resolve) => {
 					resolve(setReturnValue);
-				})
-			}
-		}
+				});
+			},
+		};
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
@@ -1729,8 +2482,8 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceMock },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -1760,7 +2513,10 @@ describe('WidgetLegionEdgeComponent', () => {
 		it('not support touchpad lock', () => {
 			touchpadLockFeatureCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[6].isVisible).toBe(false, `component.legionUpdate[6].isVisible should be false`);
+			expect(component.legionUpdate[6].isVisible).toBe(
+				false,
+				`component.legionUpdate[6].isVisible should be false`
+			);
 		});
 
 		it('ngOnInit touckpad lock', () => {
@@ -1769,14 +2525,26 @@ describe('WidgetLegionEdgeComponent', () => {
 			winKeyLockFeatureCache = true;
 			touchpadLockStatusCache = true;
 			component.ngOnInit();
-			expect(component.legionUpdate[6].isVisible).toEqual(true, `component.legionUpdate[6].isVisible should be true`);
-			expect(component.legionUpdate[6].isChecked).toEqual(true, `component.legionUpdate[6].isChecked should be true`);
+			expect(component.legionUpdate[6].isVisible).toEqual(
+				true,
+				`component.legionUpdate[6].isVisible should be true`
+			);
+			expect(component.legionUpdate[6].isChecked).toEqual(
+				true,
+				`component.legionUpdate[6].isChecked should be true`
+			);
 
 			touchpadLockFeatureCache = true;
 			touchpadLockStatusCache = false;
 			component.ngOnInit();
-			expect(component.legionUpdate[6].isVisible).toEqual(true, `component.legionUpdate[6].isVisible should be true`);
-			expect(component.legionUpdate[6].isChecked).toEqual(false, `component.legionUpdate[6].isChecked should be false`);
+			expect(component.legionUpdate[6].isVisible).toEqual(
+				true,
+				`component.legionUpdate[6].isVisible should be true`
+			);
+			expect(component.legionUpdate[6].isChecked).toEqual(
+				false,
+				`component.legionUpdate[6].isChecked should be false`
+			);
 		});
 
 		it('renderTouchpadLockStatus', fakeAsync((done: any) => {
@@ -1788,24 +2556,42 @@ describe('WidgetLegionEdgeComponent', () => {
 			touchpadLockStatus = undefined;
 			component.renderTouchpadLockStatus();
 			tick();
-			expect(touchpadLockStatusCache).toBe(false, `touchpadLockStatus is undefined, touchpadLockStatusCache should keep false`);
-			expect(component.legionUpdate[6].isChecked).toBe(false, `touchpadLockStatus is undefined, component.legionUpdate[6].isChecked should keep false`);
+			expect(touchpadLockStatusCache).toBe(
+				false,
+				`touchpadLockStatus is undefined, touchpadLockStatusCache should keep false`
+			);
+			expect(component.legionUpdate[6].isChecked).toBe(
+				false,
+				`touchpadLockStatus is undefined, component.legionUpdate[6].isChecked should keep false`
+			);
 
 			touchpadLockStatusCache = true;
 			component.legionUpdate[6].isChecked = true;
 			touchpadLockStatus = false;
 			component.renderTouchpadLockStatus();
 			tick();
-			expect(touchpadLockStatusCache).toBe(false, `touchpadLockStatus is false, touchpadLockStatusCache should be false`);
-			expect(component.legionUpdate[6].isChecked).toBe(false, `touchpadLockStatus is false, component.legionUpdate[6].isChecked should be false`);
+			expect(touchpadLockStatusCache).toBe(
+				false,
+				`touchpadLockStatus is false, touchpadLockStatusCache should be false`
+			);
+			expect(component.legionUpdate[6].isChecked).toBe(
+				false,
+				`touchpadLockStatus is false, component.legionUpdate[6].isChecked should be false`
+			);
 
 			touchpadLockStatusCache = false;
 			component.legionUpdate[6].isChecked = false;
 			touchpadLockStatus = true;
 			component.renderTouchpadLockStatus();
 			tick();
-			expect(touchpadLockStatusCache).toBe(true, `touchpadLockStatus is true, touchpadLockStatusCache should be true`);
-			expect(component.legionUpdate[6].isChecked).toBe(true, `touchpadLockStatus is true, component.legionUpdate[6].isChecked should be true`);
+			expect(touchpadLockStatusCache).toBe(
+				true,
+				`touchpadLockStatus is true, touchpadLockStatusCache should be true`
+			);
+			expect(component.legionUpdate[6].isChecked).toBe(
+				true,
+				`touchpadLockStatus is true, component.legionUpdate[6].isChecked should be true`
+			);
 		}));
 
 		it('toggleOnOffStatus of touchpad lock', fakeAsync(() => {
@@ -1815,40 +2601,84 @@ describe('WidgetLegionEdgeComponent', () => {
 			touchpadLockStatus = false;
 			touchpadLockStatusCache = false;
 			component.legionUpdate[6].isChecked = false;
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.touchpadLock' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.touchpadLock' },
+			});
 			tick();
-			expect(touchpadLockStatus).toBe(true, `setReturn is true, touchpadLockStatus should be true`);
-			expect(touchpadLockStatusCache).toBe(true, `setReturn is true, touchpadLockStatusCache should be true`);
-			expect(component.legionUpdate[6].isChecked).toBe(true, `setReturn is true, component.legionUpdate[6].isChecked should be true`);
+			expect(touchpadLockStatus).toBe(
+				true,
+				`setReturn is true, touchpadLockStatus should be true`
+			);
+			expect(touchpadLockStatusCache).toBe(
+				true,
+				`setReturn is true, touchpadLockStatusCache should be true`
+			);
+			expect(component.legionUpdate[6].isChecked).toBe(
+				true,
+				`setReturn is true, component.legionUpdate[6].isChecked should be true`
+			);
 
-			component.toggleOnOffStatus({ target: { value: false, name: 'gaming.dashboard.device.legionEdge.touchpadLock' } });
+			component.toggleOnOffStatus({
+				target: { value: false, name: 'gaming.dashboard.device.legionEdge.touchpadLock' },
+			});
 			tick();
-			expect(touchpadLockStatus).toBe(false, `setReturn is true, touchpadLockStatus should be false`);
-			expect(touchpadLockStatusCache).toBe(false, `setReturn is true, touchpadLockStatusCache should be false`);
-			expect(component.legionUpdate[6].isChecked).toBe(false, `setReturn is true, component.legionUpdate[6].isChecked should be false`);
+			expect(touchpadLockStatus).toBe(
+				false,
+				`setReturn is true, touchpadLockStatus should be false`
+			);
+			expect(touchpadLockStatusCache).toBe(
+				false,
+				`setReturn is true, touchpadLockStatusCache should be false`
+			);
+			expect(component.legionUpdate[6].isChecked).toBe(
+				false,
+				`setReturn is true, component.legionUpdate[6].isChecked should be false`
+			);
 
 			setReturnValue = false;
-			component.toggleOnOffStatus({ target: { value: true, name: 'gaming.dashboard.device.legionEdge.touchpadLock' } });
+			component.toggleOnOffStatus({
+				target: { value: true, name: 'gaming.dashboard.device.legionEdge.touchpadLock' },
+			});
 			tick();
-			expect(touchpadLockStatus).toBe(false, `setReturn is false, touchpadLockStatus should keep false`);
-			expect(touchpadLockStatusCache).toBe(false, `setReturn is false, touchpadLockStatusCache should keep false`);
-			expect(component.legionUpdate[6].isChecked).toBe(false, `setReturn is false, component.legionUpdate[6].isChecked should keep false`);
+			expect(touchpadLockStatus).toBe(
+				false,
+				`setReturn is false, touchpadLockStatus should keep false`
+			);
+			expect(touchpadLockStatusCache).toBe(
+				false,
+				`setReturn is false, touchpadLockStatusCache should keep false`
+			);
+			expect(component.legionUpdate[6].isChecked).toBe(
+				false,
+				`setReturn is false, component.legionUpdate[6].isChecked should keep false`
+			);
 		}));
-	})
+	});
 
 	describe('catch error', () => {
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: VantageShellService },
 					{ provide: HttpHandler },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
@@ -1857,9 +2687,12 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: LoggerService, useValue: loggerServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-				]
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -1887,16 +2720,23 @@ describe('WidgetLegionEdgeComponent', () => {
 		});
 
 		it('renderThermalMode2RealStatus catch error', () => {
-			gamingThermalModeServiceSpy.getThermalModeRealStatus.and.throwError('getThermalModeRealStatus error');
+			gamingThermalModeServiceSpy.getThermalModeRealStatus.and.throwError(
+				'getThermalModeRealStatus error'
+			);
 			component.thermalModeRealStatus = 2;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.renderThermalMode2RealStatus();
-			expect(component.thermalModeRealStatus).toBe(2, `component.thermalModeRealStatus should keep 2`);
+			expect(component.thermalModeRealStatus).toBe(
+				2,
+				`component.thermalModeRealStatus should keep 2`
+			);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
 
 		it('registerThermalModeRealStatusChangeEvent catch error', () => {
-			gamingThermalModeServiceSpy.regThermalModeRealStatusChangeEvent.and.throwError('regThermalModeRealStatusChangeEvent error');
+			gamingThermalModeServiceSpy.regThermalModeRealStatusChangeEvent.and.throwError(
+				'regThermalModeRealStatusChangeEvent error'
+			);
 			component.gamingCapabilities.smartFanFeature = true;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.registerThermalModeRealStatusChangeEvent();
@@ -1904,7 +2744,9 @@ describe('WidgetLegionEdgeComponent', () => {
 		});
 
 		it('renderThermalMode2OCSettings catch error', () => {
-			gamingOCServiceSpy.getPerformanceOCSetting.and.throwError('getPerformanceOCSetting error');
+			gamingOCServiceSpy.getPerformanceOCSetting.and.throwError(
+				'getPerformanceOCSetting error'
+			);
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.renderThermalMode2OCSettings();
 			expect(component.performanceOCSettings).toBe(false);
@@ -1924,13 +2766,13 @@ describe('WidgetLegionEdgeComponent', () => {
 			gamingSystemUpdateServiceSpy.setCpuOCStatus.and.throwError('setCpuOCStatus error');
 			let event = {
 				target: {
-					name: 'gaming.dashboard.device.legionEdge.title'
+					name: 'gaming.dashboard.device.legionEdge.title',
 				},
 				option: {
-					value: 2
-				}
+					value: 2,
+				},
 			};
-			cpuOCFeatureCache = undefined
+			cpuOCFeatureCache = undefined;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.onOptionSelected(event);
 			expect(component.drop.curSelected).toBe(1, `component.drop.curSelected should keep 1`);
@@ -1944,7 +2786,10 @@ describe('WidgetLegionEdgeComponent', () => {
 			memOCStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.renderRamOverClockStatus();
-			expect(component.legionUpdate[1].isChecked).toBe(false, `component.legionUpdate[1].isChecked should keeo false`);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				false,
+				`component.legionUpdate[1].isChecked should keeo false`
+			);
 			expect(memOCStatusCache).toBe(false, `memOCStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
@@ -1955,30 +2800,49 @@ describe('WidgetLegionEdgeComponent', () => {
 			memOCStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.setRamOverClockStatus(true);
-			expect(component.legionUpdate[1].isChecked).toBe(false, `component.legionUpdate[1].isChecked should keeo false`);
+			expect(component.legionUpdate[1].isChecked).toBe(
+				false,
+				`component.legionUpdate[1].isChecked should keeo false`
+			);
 			expect(memOCStatusCache).toBe(false, `memOCStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
 
 		it('renderNetworkBoostStatus catch error', () => {
-			networkBoostServiceSpy.getNetworkBoostStatus.and.throwError('getNetworkBoostStatus error');
+			networkBoostServiceSpy.getNetworkBoostStatus.and.throwError(
+				'getNetworkBoostStatus error'
+			);
 			component.legionUpdate[2].isChecked = false;
 			networkBoostStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.renderNetworkBoostStatus();
-			expect(component.legionUpdate[2].isChecked).toBe(false, `component.legionUpdate[2].isChecked should keeo false`);
-			expect(networkBoostStatusCache).toBe(false, `networkBoostStatusCache should keep false`);
+			expect(component.legionUpdate[2].isChecked).toBe(
+				false,
+				`component.legionUpdate[2].isChecked should keeo false`
+			);
+			expect(networkBoostStatusCache).toBe(
+				false,
+				`networkBoostStatusCache should keep false`
+			);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
 
 		it('setNetworkBoostStatus catch error', () => {
-			networkBoostServiceSpy.setNetworkBoostStatus.and.throwError('setNetworkBoostStatus error');
+			networkBoostServiceSpy.setNetworkBoostStatus.and.throwError(
+				'setNetworkBoostStatus error'
+			);
 			component.legionUpdate[2].isChecked = false;
 			networkBoostStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.setNetworkBoostStatus(true);
-			expect(component.legionUpdate[2].isChecked).toBe(false, `component.legionUpdate[2].isChecked should keeo false`);
-			expect(networkBoostStatusCache).toBe(false, `networkBoostStatusCache should keep false`);
+			expect(component.legionUpdate[2].isChecked).toBe(
+				false,
+				`component.legionUpdate[2].isChecked should keeo false`
+			);
+			expect(networkBoostStatusCache).toBe(
+				false,
+				`networkBoostStatusCache should keep false`
+			);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
 
@@ -1988,7 +2852,10 @@ describe('WidgetLegionEdgeComponent', () => {
 			autoCloseStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.renderAutoCloseStatus();
-			expect(component.legionUpdate[3].isChecked).toBe(false, `component.legionUpdate[3].isChecked should keeo false`);
+			expect(component.legionUpdate[3].isChecked).toBe(
+				false,
+				`component.legionUpdate[3].isChecked should keeo false`
+			);
 			expect(autoCloseStatusCache).toBe(false, `autoCloseStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
@@ -1999,29 +2866,42 @@ describe('WidgetLegionEdgeComponent', () => {
 			autoCloseStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.setAutoCloseStatus(true);
-			expect(component.legionUpdate[3].isChecked).toBe(false, `component.legionUpdate[3].isChecked should keeo false`);
+			expect(component.legionUpdate[3].isChecked).toBe(
+				false,
+				`component.legionUpdate[3].isChecked should keeo false`
+			);
 			expect(autoCloseStatusCache).toBe(false, `autoCloseStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
 
 		it('renderHybridModeStatus catch error', () => {
-			gamingHybridModeServiceSpy.getHybridModeStatus.and.throwError('getHybridModeStatus error');
+			gamingHybridModeServiceSpy.getHybridModeStatus.and.throwError(
+				'getHybridModeStatus error'
+			);
 			component.legionUpdate[4].isChecked = false;
 			hybridModeStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.renderHybridModeStatus();
-			expect(component.legionUpdate[4].isChecked).toBe(false, `component.legionUpdate[4].isChecked should keeo false`);
+			expect(component.legionUpdate[4].isChecked).toBe(
+				false,
+				`component.legionUpdate[4].isChecked should keeo false`
+			);
 			expect(hybridModeStatusCache).toBe(false, `hybridModeStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
 
 		it('setHybridModeStatus catch error', () => {
-			gamingHybridModeServiceSpy.setHybridModeStatus.and.throwError('setHybridModeStatus error');
+			gamingHybridModeServiceSpy.setHybridModeStatus.and.throwError(
+				'setHybridModeStatus error'
+			);
 			component.legionUpdate[4].isChecked = false;
 			hybridModeStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.setHybridModeStatus(true);
-			expect(component.legionUpdate[4].isChecked).toBe(false, `component.legionUpdate[4].isChecked should keeo false`);
+			expect(component.legionUpdate[4].isChecked).toBe(
+				false,
+				`component.legionUpdate[4].isChecked should keeo false`
+			);
 			expect(hybridModeStatusCache).toBe(false, `hybridModeStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
@@ -2032,7 +2912,10 @@ describe('WidgetLegionEdgeComponent', () => {
 			overDriveStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.renderOverDriveStatus();
-			expect(component.legionUpdate[5].isChecked).toBe(false, `component.legionUpdate[5].isChecked should keeo false`);
+			expect(component.legionUpdate[5].isChecked).toBe(
+				false,
+				`component.legionUpdate[5].isChecked should keeo false`
+			);
 			expect(overDriveStatusCache).toBe(false, `overDriveStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
@@ -2043,7 +2926,10 @@ describe('WidgetLegionEdgeComponent', () => {
 			overDriveStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.setOverDriveStatus(true);
-			expect(component.legionUpdate[5].isChecked).toBe(false, `component.legionUpdate[5].isChecked should keeo false`);
+			expect(component.legionUpdate[5].isChecked).toBe(
+				false,
+				`component.legionUpdate[5].isChecked should keeo false`
+			);
 			expect(overDriveStatusCache).toBe(false, `overDriveStatusCache should keep false`);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
@@ -2054,8 +2940,14 @@ describe('WidgetLegionEdgeComponent', () => {
 			touchpadLockStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.renderTouchpadLockStatus();
-			expect(component.legionUpdate[6].isChecked).toBe(false, `component.legionUpdate[6].isChecked should keeo false`);
-			expect(touchpadLockStatusCache).toBe(false, `touchpadLockStatusCache should keep false`);
+			expect(component.legionUpdate[6].isChecked).toBe(
+				false,
+				`component.legionUpdate[6].isChecked should keeo false`
+			);
+			expect(touchpadLockStatusCache).toBe(
+				false,
+				`touchpadLockStatusCache should keep false`
+			);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
 
@@ -2065,25 +2957,42 @@ describe('WidgetLegionEdgeComponent', () => {
 			touchpadLockStatusCache = false;
 			let calledTimes = loggerServiceSpy.error.calls.count();
 			component.setTouchpadLockStatus(true);
-			expect(component.legionUpdate[6].isChecked).toBe(false, `component.legionUpdate[6].isChecked should keeo false`);
-			expect(touchpadLockStatusCache).toBe(false, `touchpadLockStatusCache should keep false`);
+			expect(component.legionUpdate[6].isChecked).toBe(
+				false,
+				`component.legionUpdate[6].isChecked should keeo false`
+			);
+			expect(touchpadLockStatusCache).toBe(
+				false,
+				`touchpadLockStatusCache should keep false`
+			);
 			expect(loggerServiceSpy.error).toHaveBeenCalledTimes(++calledTimes);
 		});
-	})
+	});
 
 	describe('ITP', () => {
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: VantageShellService },
 					{ provide: HttpHandler },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
@@ -2093,7 +3002,7 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: LoggerService, useValue: loggerServiceSpy },
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-				]
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -2106,34 +3015,45 @@ describe('WidgetLegionEdgeComponent', () => {
 			const compiled = fixture.debugElement.nativeElement;
 			expect(compiled.querySelector('div.help-box>button>fa-icon')).toBeTruthy();
 		}));
-	})
+	});
 
 	describe('quick setting toolbar & toast event', () => {
 		let gamingQuickSettingToolbarServiceMock = {
 			registerEvent() {
-				return new Promise(resolve => {
-					resolve(true)
-				})
+				return new Promise((resolve) => {
+					resolve(true);
+				});
 			},
 			unregisterEvent() {
-				return new Promise(resolve => {
-					resolve(true)
-				})
-			}
-		}
+				return new Promise((resolve) => {
+					resolve(true);
+				});
+			},
+		};
 		beforeEach(async(() => {
 			TestBed.configureTestingModule({
-				declarations: [WidgetLegionEdgeComponent, SvgInlinePipe,
-					mockPipe({ name: 'translate' })],
+				declarations: [
+					WidgetLegionEdgeComponent,
+					SvgInlinePipe,
+					mockPipe({ name: 'translate' }),
+				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
-					{ provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); } },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
+					},
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{ provide: VantageShellService },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
 					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
@@ -2142,10 +3062,13 @@ describe('WidgetLegionEdgeComponent', () => {
 					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
 					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
 					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceMock },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceMock,
+					},
 					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy }
-				]
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			component = fixture.debugElement.componentInstance;
@@ -2173,43 +3096,79 @@ describe('WidgetLegionEdgeComponent', () => {
 		});
 
 		it('quickSettingToolbarevent networkBoost', () => {
-			component.quickSettingToolbarevent(1, 'networkBoost', '[LocalStorageKey] NetworkBoostStatus');
-			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(true);
+			component.quickSettingToolbarevent(
+				1,
+				'networkBoost',
+				'[LocalStorageKey] NetworkBoostStatus'
+			);
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(
+				true
+			);
 
-			component.quickSettingToolbarevent(0, 'networkBoost', '[LocalStorageKey] NetworkBoostStatus');
-			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(false);
+			component.quickSettingToolbarevent(
+				0,
+				'networkBoost',
+				'[LocalStorageKey] NetworkBoostStatus'
+			);
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(
+				false
+			);
 
-			component.quickSettingToolbarevent(undefined, 'networkBoost', '[LocalStorageKey] NetworkBoostStatus');
-			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(false);
+			component.quickSettingToolbarevent(
+				undefined,
+				'networkBoost',
+				'[LocalStorageKey] NetworkBoostStatus'
+			);
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(
+				false
+			);
 		});
 
 		it('quickSettingToolbarevent autoClose', () => {
 			component.quickSettingToolbarevent(1, 'autoClose', '[LocalStorageKey] AutoCloseStatus');
-			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(true);
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(
+				true
+			);
 
 			component.quickSettingToolbarevent(0, 'autoClose', '[LocalStorageKey] AutoCloseStatus');
-			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(false);
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(
+				false
+			);
 
-			component.quickSettingToolbarevent(undefined, 'autoClose', '[LocalStorageKey] AutoCloseStatus');
-			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(false);
+			component.quickSettingToolbarevent(
+				undefined,
+				'autoClose',
+				'[LocalStorageKey] AutoCloseStatus'
+			);
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(
+				false
+			);
 		});
 
 		it('onGamingQuickSettingsNetworkBoostStatusChangedEvent', () => {
 			component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(1);
-			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(true);
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(
+				true
+			);
 
 			component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(0);
-			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(false);
+			expect(component.legionUpdate[component.legionItemIndex.networkBoost].isChecked).toBe(
+				false
+			);
 		});
 
 		it('onGamingQuickSettingsAutoCloseStatusChangedEvent', () => {
 			component.onGamingQuickSettingsAutoCloseStatusChangedEvent(1);
-			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(true);
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(
+				true
+			);
 
 			component.onGamingQuickSettingsAutoCloseStatusChangedEvent(0);
-			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(false);
+			expect(component.legionUpdate[component.legionItemIndex.autoClose].isChecked).toBe(
+				false
+			);
 		});
-	})
+	});
 });
 
 /**
@@ -2219,11 +3178,13 @@ describe('WidgetLegionEdgeComponent', () => {
  */
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
-	return Pipe(metadata)(class MockPipe {
-		public transform(query: string, ...args: any[]): any {
-			return query;
+	return Pipe(metadata)(
+		class MockPipe {
+			public transform(query: string, ...args: any[]): any {
+				return query;
+			}
 		}
-	}) as any;
+	) as any;
 }

@@ -14,7 +14,7 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, HardwareScanGuard],
 		data: {
-			pageName: 'HardwareScan'
+			pageName: 'HardwareScan',
 		},
 		children: [
 			{
@@ -23,8 +23,8 @@ const routes: Routes = [
 				// canDeactivate: [GuardService],
 				// canActivate: [GuardService],
 				data: {
-					pageName: 'HardwareScan'
-				}
+					pageName: 'HardwareScan',
+				},
 			},
 			{
 				path: 'view-results',
@@ -32,15 +32,15 @@ const routes: Routes = [
 				// canDeactivate: [GuardService],
 				// canActivate: [GuardService],
 				data: {
-					pageName: 'HardwareScan.ViewResults'
-				}
+					pageName: 'HardwareScan.ViewResults',
+				},
 			},
-		]
-	}
+		],
+	},
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class HardwareScanRoutingModule { }
+export class HardwareScanRoutingModule {}

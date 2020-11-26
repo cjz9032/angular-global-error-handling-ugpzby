@@ -1,4 +1,4 @@
-@import "../../../../app.theme.scss";
+@import '../../../../app.theme.scss';
 
 .vtr-snapshot-main {
 	.item-line {
@@ -13,7 +13,7 @@
 		padding-left: 0;
 
 		// modifying global checkbox component
-		.custom-control-component ::ng-deep .auto-set-checkbox{
+		.custom-control-component ::ng-deep .auto-set-checkbox {
 			margin: 0;
 
 			// removing default p margin

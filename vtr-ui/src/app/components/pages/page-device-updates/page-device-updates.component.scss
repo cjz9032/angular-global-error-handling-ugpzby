@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .vtr-page-device-updates {
 	.vtr-device-information {
@@ -105,7 +105,11 @@
 					&.success {
 						.status-icon {
 							.icon-bkg {
-								background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+								background: linear-gradient(
+									$gradient_angle,
+									$go 0%,
+									$go_light 100%
+								);
 								background-color: $go_dark;
 								border-color: $go_dark;
 							}
@@ -128,7 +132,11 @@
 					&.fail {
 						.status-icon {
 							.icon-bkg {
-								background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+								background: linear-gradient(
+									$gradient_angle,
+									$stop 0%,
+									$stop_light 100%
+								);
 								background-color: $stop_dark;
 								border-color: $stop_dark;
 							}
@@ -151,7 +159,11 @@
 					&.pause {
 						.status-icon {
 							.icon-bkg {
-								background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+								background: linear-gradient(
+									$gradient_angle,
+									$stop 0%,
+									$stop_light 100%
+								);
 								background-color: $stop_dark;
 								border-color: $stop_dark;
 							}

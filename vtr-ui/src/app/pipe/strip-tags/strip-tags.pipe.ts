@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'stripTags'
+	name: 'stripTags',
 })
 export class StripTagsPipe implements PipeTransform {
 	public transform(value: string): string {
@@ -11,6 +11,6 @@ export class StripTagsPipe implements PipeTransform {
 		if (typeof value !== 'string') {
 			return '';
 		}
-		return value.replace(/(<([^>]+)>)/ig, '');
+		return value.replace(/(<([^>]+)>)/gi, '');
 	}
 }

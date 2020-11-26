@@ -1,10 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'subTransform'
+	name: 'subTransform',
 })
 export class SubTransformPipe implements PipeTransform {
-
 	transform(value: any): any {
 		switch (value) {
 			case 'licenseActive':
@@ -19,5 +18,4 @@ export class SubTransformPipe implements PipeTransform {
 				return 'security.antivirus.mcafee.trial';
 		}
 	}
-
 }

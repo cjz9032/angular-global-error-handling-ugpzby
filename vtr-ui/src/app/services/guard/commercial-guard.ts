@@ -24,7 +24,9 @@ export class CommercialGuard extends BasicGuard {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment)
+		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LocalInfoSegment
+		);
 		if (segment === SegmentConst.Commercial) {
 			return true;
 		} else {

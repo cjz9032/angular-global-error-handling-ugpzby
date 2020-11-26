@@ -14,8 +14,6 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { SupportService } from 'src/app/services/support/support.service';
 import { WidgetSubscriptionDetailsComponent } from './widget-subscriptiondetails.component';
 
-
-
 const response = {
 	code: 0,
 	costMillis: 49,
@@ -107,7 +105,9 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 		const res = {};
 		commonService = TestBed.inject(CommonService);
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(res));
+		const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(
+			Promise.resolve(res)
+		);
 		fixture.detectChanges();
 		tick(30000);
 		expect(spy).toHaveBeenCalled();
@@ -129,10 +129,7 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 	it('should enable full feature', () => {
 		commonService = TestBed.inject(CommonService);
 		smartPerformanceService.isSubscribed = false;
-		const spy = spyOn(
-			commonService,
-			'getLocalStorageValue'
-		).and.returnValue(false);
+		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(false);
 		const event = {};
 		component.enableFullFeature(event);
 		fixture.detectChanges();
@@ -152,13 +149,13 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should get subscription details - settimeout else case', ((done) => {
+	it('should get subscription details - settimeout else case', (done) => {
 		component.spFrstRunStatus = true;
 		component.setTimeOutCallForSubDetails();
 		fixture.detectChanges();
 		expect(component.isLoading).toBe(false);
 		done();
-	}));
+	});
 
 	it('should call subscriptionDataProcess', async () => {
 		commonService = TestBed.inject(CommonService);

@@ -6,7 +6,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { WidgetMcafeeContentCardComponent } from './widget-mcafee-content-card.component';
 
-
 describe('WidgetMcafeeContentCardComponent', () => {
 	let component: WidgetMcafeeContentCardComponent;
 	let fixture: ComponentFixture<WidgetMcafeeContentCardComponent>;
@@ -15,17 +14,9 @@ describe('WidgetMcafeeContentCardComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetMcafeeContentCardComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [
-				TranslateService,
-				NgbModal
-			]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [TranslateService, NgbModal],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

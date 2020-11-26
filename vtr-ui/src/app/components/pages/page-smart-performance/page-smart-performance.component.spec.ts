@@ -19,7 +19,7 @@ describe('PageSmartPerformanceComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [PageSmartPerformanceComponent],
 			imports: [HttpClientTestingModule],
-			providers: [CommonService, VantageShellService, SystemEventService]
+			providers: [CommonService, VantageShellService, SystemEventService],
 		});
 		fixture = TestBed.createComponent(PageSmartPerformanceComponent);
 		component = fixture.componentInstance;
@@ -34,7 +34,9 @@ describe('PageSmartPerformanceComponent', () => {
 		component.eventName = 'SmartPerformance.ScheduleEventStarted';
 		systemEventService = TestBed.inject(SystemEventService);
 		commonService = TestBed.inject(CommonService);
-		const spy = spyOn(systemEventService, 'registerCustomEvent').and.returnValue(Promise.resolve(true));
+		const spy = spyOn(systemEventService, 'registerCustomEvent').and.returnValue(
+			Promise.resolve(true)
+		);
 		component.registerScanEvent();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();

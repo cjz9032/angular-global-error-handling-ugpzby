@@ -2,17 +2,16 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'vtr-modal-snapshot',
-  templateUrl: './modal-snapshot.component.html',
-  styleUrls: ['./modal-snapshot.component.scss']
+	selector: 'vtr-modal-snapshot',
+	templateUrl: './modal-snapshot.component.html',
+	styleUrls: ['./modal-snapshot.component.scss'],
 })
 export class ModalSnapshotComponent implements OnInit {
 	@Input() snapshotInfo: any;
 
-	constructor(public activeModal: NgbActiveModal) { }
+	constructor(public activeModal: NgbActiveModal) {}
 
-	ngOnInit(): void {
-	}
+	ngOnInit(): void {}
 
 	public closeModal() {
 		this.activeModal.close();
@@ -21,5 +20,4 @@ export class ModalSnapshotComponent implements OnInit {
 	public closeButtonClick() {
 		this.activeModal.dismiss();
 	}
-
 }

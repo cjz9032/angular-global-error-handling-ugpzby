@@ -16,280 +16,336 @@ import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/mo
 import { ModalGamingRunningAppListComponent } from './../../modal/modal-gaming-running-app-list/modal-gaming-running-app-list.component';
 
 @Component({
-    selector: 'vtr-page-networkboost',
-    templateUrl: './page-networkboost.component.html',
-    styleUrls: ['./page-networkboost.component.scss']
+	selector: 'vtr-page-networkboost',
+	templateUrl: './page-networkboost.component.html',
+	styleUrls: ['./page-networkboost.component.scss'],
 })
-
 export class PageNetworkboostComponent implements OnInit, OnDestroy {
-    public networkBoostEvent: any;
-    refreshTrigger = 0;
-    appsCount = 0;
-    toggleStatus: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.NetworkBoostStatus) || false;
-    needToAsk: any;
-    autoCloseStatusObj: any = {};
-    needToAskStatusObj: any = {};
-    isOnline = true;
-    // CMS Content block
-    cardContentPositionC: any = {};
-    cardContentPositionF: any = {};
-    dynamic_metricsItem: any = 'networkboost_cms_inner_content';
-    backId = 'vtr-gaming-networkboost-btn-back';
-    notificationSubscrition: Subscription;
-    fetchSubscrition: Subscription;
-    fetchCacheSubscrition: Subscription;
+	public networkBoostEvent: any;
+	refreshTrigger = 0;
+	appsCount = 0;
+	toggleStatus: boolean =
+		this.localCacheService.getLocalCacheValue(LocalStorageKey.NetworkBoostStatus) || false;
+	needToAsk: any;
+	autoCloseStatusObj: any = {};
+	needToAskStatusObj: any = {};
+	isOnline = true;
+	// CMS Content block
+	cardContentPositionC: any = {};
+	cardContentPositionF: any = {};
+	dynamic_metricsItem: any = 'networkboost_cms_inner_content';
+	backId = 'vtr-gaming-networkboost-btn-back';
+	notificationSubscrition: Subscription;
+	fetchSubscrition: Subscription;
+	fetchCacheSubscrition: Subscription;
 
-    isModalShowing: boolean;
+	isModalShowing: boolean;
 
-    modalAutomationId: any = {
-        section: 'nbTurnOnModal',
-        headerText: 'network_boost_turn_on_popup_header_text',
-        description: 'network_boost_turn_on_popup_description',
-        dontAskCheckbox: 'networkboost_turnon_dialog_checkbox_Dont_ask_again',
-        closeButton : 'nbTurnOnModal_closeButton',
-        cancelButton: 'nbTurnOnModal_notnow',
-        okButton: 'nbTurnOnModal_turnon_button'
-    }
+	modalAutomationId: any = {
+		section: 'nbTurnOnModal',
+		headerText: 'network_boost_turn_on_popup_header_text',
+		description: 'network_boost_turn_on_popup_description',
+		dontAskCheckbox: 'networkboost_turnon_dialog_checkbox_Dont_ask_again',
+		closeButton: 'nbTurnOnModal_closeButton',
+		cancelButton: 'nbTurnOnModal_notnow',
+		okButton: 'nbTurnOnModal_turnon_button',
+	};
 
-    constructor(
-        private cmsService: CMSService,
-        private networkBoostService: NetworkBoostService,
-        private commonService: CommonService,
-        private localCacheService: LocalCacheService,
-        private loggerService: LoggerService,
-        private shellServices: VantageShellService,
-        private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
-        private ngZone: NgZone,
-        private modalService: NgbModal
-    ) {
-        this.fetchCMSArticles();
-        this.isOnline = this.commonService.isOnline;
-    }
+	constructor(
+		private cmsService: CMSService,
+		private networkBoostService: NetworkBoostService,
+		private commonService: CommonService,
+		private localCacheService: LocalCacheService,
+		private loggerService: LoggerService,
+		private shellServices: VantageShellService,
+		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
+		private ngZone: NgZone,
+		private modalService: NgbModal
+	) {
+		this.fetchCMSArticles();
+		this.isOnline = this.commonService.isOnline;
+	}
 
-    ngOnInit() {
-        this.notificationSubscrition = this.commonService.notification.subscribe((notification: AppNotification) => {
-            this.onNotification(notification);
-        });
-        this.isModalShowing = false;
-        // AutoClose Init
-        this.getNetworkBoostStatus();
-        this.networkBoostRegisterEvent();
-        const queryOptions = {
-            Page: 'network-boost'
-        };
+	ngOnInit() {
+		this.notificationSubscrition = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
+		this.isModalShowing = false;
+		// AutoClose Init
+		this.getNetworkBoostStatus();
+		this.networkBoostRegisterEvent();
+		const queryOptions = {
+			Page: 'network-boost',
+		};
 
-        this.fetchCacheSubscrition = this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-            const cardContentPositionF = this.cmsService.getOneCMSContent(
-                response,
-                'half-width-top-image-title-link',
-                'position-F'
-            )[0];
-            if (cardContentPositionF) {
-                this.cardContentPositionF = cardContentPositionF;
-            }
+		this.fetchCacheSubscrition = this.cmsService
+			.fetchCMSContent(queryOptions)
+			.subscribe((response: any) => {
+				const cardContentPositionF = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-F'
+				)[0];
+				if (cardContentPositionF) {
+					this.cardContentPositionF = cardContentPositionF;
+				}
 
-            const cardContentPositionC = this.cmsService.getOneCMSContent(
-                response,
-                'half-width-title-description-link-image',
-                'position-C'
-            )[0];
-            if (cardContentPositionC) {
-                this.cardContentPositionC = cardContentPositionC;
-                if (this.cardContentPositionC.BrandName) {
-                    this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
-                }
-            }
-        });
-    }
+				const cardContentPositionC = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-C'
+				)[0];
+				if (cardContentPositionC) {
+					this.cardContentPositionC = cardContentPositionC;
+					if (this.cardContentPositionC.BrandName) {
+						this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split(
+							'|'
+						)[0];
+					}
+				}
+			});
+	}
 
-    ngOnDestroy() {
-        if(this.notificationSubscrition) {
-            this.notificationSubscrition.unsubscribe();
-        }
+	ngOnDestroy() {
+		if (this.notificationSubscrition) {
+			this.notificationSubscrition.unsubscribe();
+		}
 
-        if(this.fetchCacheSubscrition) {
-            this.fetchCacheSubscrition.unsubscribe();
-        }
+		if (this.fetchCacheSubscrition) {
+			this.fetchCacheSubscrition.unsubscribe();
+		}
 
-        if(this.fetchSubscrition) {
-            this.fetchSubscrition.unsubscribe();
-        }
+		if (this.fetchSubscrition) {
+			this.fetchSubscrition.unsubscribe();
+		}
 
-        this.networkBoostUnRegisterEvent();
-    }
+		this.networkBoostUnRegisterEvent();
+	}
 
-    async openTargetModal() {
-        if (this.isModalShowing === true) {
-            return;
-        }
-        this.isModalShowing = true;
-        try {
-            this.needToAsk = this.getNotAskAgain();
-            if (this.toggleStatus || this.needToAsk === 1 || this.needToAsk === 2 || this.needToAsk === true) {
-                this.showAddApps();
-            } else {
-                this.showTurnOn();
-            }
-        } catch (error) {
-            this.loggerService.error('page-networkboost.component.openTargetModal', 'ERROR in openTargetModal()-->' + error);
-        }
-    }
+	async openTargetModal() {
+		if (this.isModalShowing === true) {
+			return;
+		}
+		this.isModalShowing = true;
+		try {
+			this.needToAsk = this.getNotAskAgain();
+			if (
+				this.toggleStatus ||
+				this.needToAsk === 1 ||
+				this.needToAsk === 2 ||
+				this.needToAsk === true
+			) {
+				this.showAddApps();
+			} else {
+				this.showTurnOn();
+			}
+		} catch (error) {
+			this.loggerService.error(
+				'page-networkboost.component.openTargetModal',
+				'ERROR in openTargetModal()-->' + error
+			);
+		}
+	}
 
-    showTurnOn() {
-        let promptRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static', windowClass: 'modal-prompt' });
-        promptRef.componentInstance.info = {
-            title : 'gaming.networkBoost.modalTurn.title',
-            description : 'gaming.networkBoost.modalTurn.body',
-            comfirmButton : 'gaming.autoClose.modalTurnAutoClose.btnConfirm',
-            comfirmButtonAriaLabel : 'gaming.narrator.networkBoost.turnOnModal.turnOnButton',
-            cancelButton : 'gaming.autoClose.modalTurnAutoClose.btnCancel',
-            cancelButtonAriaLabel : 'gaming.narrator.networkBoost.turnOnModal.notOnButton',
-            checkboxTitle : 'gaming.networkBoost.modalTurn.checkedTitle',
-            dontAskNarrator: 'gaming.narrator.networkBoost.turnOnModal.dontAskAgain',
-            confirmMetricEnabled : true,
-            confirmMetricsItemId : 'networkboost_turn_on_button',
-            cancelMetricEnabled : false,
-            cancelMetricsItemId : '',
-            id : this.modalAutomationId
-        };
-        promptRef.componentInstance.emitService.subscribe((emmitedValue) => {
-            if(emmitedValue === true || emmitedValue === false) {
-                this.needToAsk = emmitedValue;
-                this.setNotAskAgain(this.needToAsk);
-            } else if(emmitedValue === 1) {
-                // Turn on Network Boost
-                this.setNetworkBoostStatus({ switchValue: true });
-            }
-        });
-        promptRef.result.then(() => {
-            // Finally, open Add App Model
-            this.showAddApps();
-        });
-    }
+	showTurnOn() {
+		let promptRef = this.modalService.open(ModalGamingPromptComponent, {
+			backdrop: 'static',
+			windowClass: 'modal-prompt',
+		});
+		promptRef.componentInstance.info = {
+			title: 'gaming.networkBoost.modalTurn.title',
+			description: 'gaming.networkBoost.modalTurn.body',
+			comfirmButton: 'gaming.autoClose.modalTurnAutoClose.btnConfirm',
+			comfirmButtonAriaLabel: 'gaming.narrator.networkBoost.turnOnModal.turnOnButton',
+			cancelButton: 'gaming.autoClose.modalTurnAutoClose.btnCancel',
+			cancelButtonAriaLabel: 'gaming.narrator.networkBoost.turnOnModal.notOnButton',
+			checkboxTitle: 'gaming.networkBoost.modalTurn.checkedTitle',
+			dontAskNarrator: 'gaming.narrator.networkBoost.turnOnModal.dontAskAgain',
+			confirmMetricEnabled: true,
+			confirmMetricsItemId: 'networkboost_turn_on_button',
+			cancelMetricEnabled: false,
+			cancelMetricsItemId: '',
+			id: this.modalAutomationId,
+		};
+		promptRef.componentInstance.emitService.subscribe((emmitedValue) => {
+			if (emmitedValue === true || emmitedValue === false) {
+				this.needToAsk = emmitedValue;
+				this.setNotAskAgain(this.needToAsk);
+			} else if (emmitedValue === 1) {
+				// Turn on Network Boost
+				this.setNetworkBoostStatus({ switchValue: true });
+			}
+		});
+		promptRef.result.then(() => {
+			// Finally, open Add App Model
+			this.showAddApps();
+		});
+	}
 
-    showAddApps() {
-        let appListRef = this.modalService.open(ModalGamingRunningAppListComponent, { backdrop:'static' });
-        appListRef.componentInstance.setAppList(true, this.appsCount);
-        appListRef.result.then(() => {
-            this.refreshTrigger += 1;
-            this.isModalShowing = false;
-        });
-    }
+	showAddApps() {
+		let appListRef = this.modalService.open(ModalGamingRunningAppListComponent, {
+			backdrop: 'static',
+		});
+		appListRef.componentInstance.setAppList(true, this.appsCount);
+		appListRef.result.then(() => {
+			this.refreshTrigger += 1;
+			this.isModalShowing = false;
+		});
+	}
 
-    private onNotification(notification: AppNotification) {
-        if (
-            notification &&
-            (notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
-        ) {
-            this.isOnline = notification.payload.isOnline;
-            this.fetchCMSArticles();
-        }
-        if (this.isOnline === undefined) {
-            this.isOnline = true;
-        }
-    }
+	private onNotification(notification: AppNotification) {
+		if (
+			notification &&
+			(notification.type === NetworkStatus.Offline ||
+				notification.type === NetworkStatus.Online)
+		) {
+			this.isOnline = notification.payload.isOnline;
+			this.fetchCMSArticles();
+		}
+		if (this.isOnline === undefined) {
+			this.isOnline = true;
+		}
+	}
 
-    async setNetworkBoostStatus(event: any) {
-        try {
-            this.toggleStatus = event.switchValue;
-            await this.networkBoostService.setNetworkBoostStatus(event.switchValue);
-            if (!this.toggleStatus) {
-                if (this.localCacheService.getLocalCacheValue(LocalStorageKey.NetworkBoosNeedToAskPopup) === 2) {
-                    this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoosNeedToAskPopup, 1);
-                }
-            }
-            this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
-        } catch (err) {
-            this.loggerService.error('page-networkboost.component.setNetworkBoostStatus', 'ERROR in setNetworkBoostStatus()-->' + err);
-        }
-    }
+	async setNetworkBoostStatus(event: any) {
+		try {
+			this.toggleStatus = event.switchValue;
+			await this.networkBoostService.setNetworkBoostStatus(event.switchValue);
+			if (!this.toggleStatus) {
+				if (
+					this.localCacheService.getLocalCacheValue(
+						LocalStorageKey.NetworkBoosNeedToAskPopup
+					) === 2
+				) {
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.NetworkBoosNeedToAskPopup,
+						1
+					);
+				}
+			}
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.NetworkBoostStatus,
+				this.toggleStatus
+			);
+		} catch (err) {
+			this.loggerService.error(
+				'page-networkboost.component.setNetworkBoostStatus',
+				'ERROR in setNetworkBoostStatus()-->' + err
+			);
+		}
+	}
 
-    getNotAskAgain() {
-        let notAskAgain = this.networkBoostService.getNeedToAsk();
-        notAskAgain = notAskAgain === undefined || isNaN(notAskAgain) ? false : notAskAgain;
-        return notAskAgain;
-    }
+	getNotAskAgain() {
+		let notAskAgain = this.networkBoostService.getNeedToAsk();
+		notAskAgain = notAskAgain === undefined || isNaN(notAskAgain) ? false : notAskAgain;
+		return notAskAgain;
+	}
 
-    setNotAskAgain(status: boolean) {
-        try {
-            this.networkBoostService.setNeedToAsk(status);
-        } catch (error) {
-            this.loggerService.error('page-networkboost.component.setAksAgain', 'ERROR in setAksAgain()-->' + error);
-        }
-    }
+	setNotAskAgain(status: boolean) {
+		try {
+			this.networkBoostService.setNeedToAsk(status);
+		} catch (error) {
+			this.loggerService.error(
+				'page-networkboost.component.setAksAgain',
+				'ERROR in setAksAgain()-->' + error
+			);
+		}
+	}
 
-    async getNetworkBoostStatus() {
-        try {
-            this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
-            this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoostStatus, this.toggleStatus);
-        } catch (err) {
-            this.loggerService.error('page-networkboost.component.getNetworkBoostStatus', 'ERROR in setNetworkBoostStatus()-->' + err);
-        }
-    }
+	async getNetworkBoostStatus() {
+		try {
+			this.toggleStatus = await this.networkBoostService.getNetworkBoostStatus();
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.NetworkBoostStatus,
+				this.toggleStatus
+			);
+		} catch (err) {
+			this.loggerService.error(
+				'page-networkboost.component.getNetworkBoostStatus',
+				'ERROR in setNetworkBoostStatus()-->' + err
+			);
+		}
+	}
 
-    // Get the CMS content for the container card
-    fetchCMSArticles() {
-        this.isOnline = this.commonService.isOnline;
-        const queryOptions = {
-            Page: 'network-boost'
-        };
-        this.fetchSubscrition = this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-            const cardContentPositionC = this.cmsService.getOneCMSContent(
-                response,
-                'half-width-title-description-link-image',
-                'position-C'
-            )[0];
-            if (cardContentPositionC) {
-                this.cardContentPositionC = cardContentPositionC;
-            }
+	// Get the CMS content for the container card
+	fetchCMSArticles() {
+		this.isOnline = this.commonService.isOnline;
+		const queryOptions = {
+			Page: 'network-boost',
+		};
+		this.fetchSubscrition = this.cmsService
+			.fetchCMSContent(queryOptions)
+			.subscribe((response: any) => {
+				const cardContentPositionC = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-C'
+				)[0];
+				if (cardContentPositionC) {
+					this.cardContentPositionC = cardContentPositionC;
+				}
 
-            const cardContentPositionF = this.cmsService.getOneCMSContent(
-                response,
-                'inner-page-right-side-article-image-background',
-                'position-F'
-            )[0];
-            if (cardContentPositionF) {
-                this.cardContentPositionF = cardContentPositionF;
-                if (this.cardContentPositionF.BrandName) {
-                    this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split('|')[0];
-                }
-            }
-        });
+				const cardContentPositionF = this.cmsService.getOneCMSContent(
+					response,
+					'inner-page-right-side-article-image-background',
+					'position-F'
+				)[0];
+				if (cardContentPositionF) {
+					this.cardContentPositionF = cardContentPositionF;
+					if (this.cardContentPositionF.BrandName) {
+						this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split(
+							'|'
+						)[0];
+					}
+				}
+			});
 
-        if (!this.isOnline) {
-            this.cardContentPositionC = {
-                FeatureImage: 'assets/cms-cache/GamingPosC.jpg'
-            };
+		if (!this.isOnline) {
+			this.cardContentPositionC = {
+				FeatureImage: 'assets/cms-cache/GamingPosC.jpg',
+			};
 
-            this.cardContentPositionF = {
-                FeatureImage: 'assets/cms-cache/network_boost_offline.jpg'
-            };
-        }
-    }
+			this.cardContentPositionF = {
+				FeatureImage: 'assets/cms-cache/network_boost_offline.jpg',
+			};
+		}
+	}
 
-    // version:3.3.3 quick setting toolbar& toast
-    networkBoostRegisterEvent () {
-        this.networkBoostEvent = this.onGamingQuickSettingsNetworkBoostStatusChangedEvent.bind(this);
-        this.gamingQuickSettingToolbarService.registerEvent('NetworkBoost');
-        this.shellServices.registerEvent(
-            EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,
-            this.networkBoostEvent
-        );
-    }
+	// version:3.3.3 quick setting toolbar& toast
+	networkBoostRegisterEvent() {
+		this.networkBoostEvent = this.onGamingQuickSettingsNetworkBoostStatusChangedEvent.bind(
+			this
+		);
+		this.gamingQuickSettingToolbarService.registerEvent('NetworkBoost');
+		this.shellServices.registerEvent(
+			EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,
+			this.networkBoostEvent
+		);
+	}
 
-    onGamingQuickSettingsNetworkBoostStatusChangedEvent(status:any) {
-        this.ngZone.run(() => {
-            status = status ===1 ? true : false;
-            this.loggerService.info(`Widget-LegionEdge-onGamingQuickSettingsNetworkBoostStatusChangedEvent: call back from ${this.toggleStatus} to ${status}`);
-            if (status !== undefined && this.toggleStatus !== status) {
-                this.toggleStatus = status;
-                this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoostStatus, status);
-            }
-        });
-    }
+	onGamingQuickSettingsNetworkBoostStatusChangedEvent(status: any) {
+		this.ngZone.run(() => {
+			status = status === 1 ? true : false;
+			this.loggerService.info(
+				`Widget-LegionEdge-onGamingQuickSettingsNetworkBoostStatusChangedEvent: call back from ${this.toggleStatus} to ${status}`
+			);
+			if (status !== undefined && this.toggleStatus !== status) {
+				this.toggleStatus = status;
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.NetworkBoostStatus,
+					status
+				);
+			}
+		});
+	}
 
-    networkBoostUnRegisterEvent () {
-        this.gamingQuickSettingToolbarService.unregisterEvent('NetworkBoost');
-        this.shellServices.unRegisterEvent(EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent, this.networkBoostEvent);
-    }
+	networkBoostUnRegisterEvent() {
+		this.gamingQuickSettingToolbarService.unregisterEvent('NetworkBoost');
+		this.shellServices.unRegisterEvent(
+			EventTypes.gamingQuickSettingsNetworkBoostStatusChangedEvent,
+			this.networkBoostEvent
+		);
+	}
 }

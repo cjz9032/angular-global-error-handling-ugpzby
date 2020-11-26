@@ -25,7 +25,7 @@ export class FirstRun extends IMetricEvent {
 	constructor(IsGaming: boolean) {
 		super();
 		this.ItemType = EventName.firstrun;
-		this.IsGaming  = IsGaming;
+		this.IsGaming = IsGaming;
 	}
 	public IsGaming: boolean;
 }
@@ -57,7 +57,13 @@ export class ArticleDisplay extends IMetricEvent {
 }
 
 export class AppAction extends IMetricEvent {
-	constructor(actionType: string, launchParms: string, launchType: string, duration: number, durationBlur: number) {
+	constructor(
+		actionType: string,
+		launchParms: string,
+		launchType: string,
+		duration: number,
+		durationBlur: number
+	) {
 		super();
 		this.ItemType = EventName.appaction;
 		this.ActionType = actionType;
@@ -75,13 +81,13 @@ export class AppAction extends IMetricEvent {
 
 export class GetEnvInfo extends IMetricEvent {
 	constructor(source: {
-		imcVersion,
-		srvVersion,
-		shellVersion,
-		windowSize,
-		displaySize,
-		scalingSize,
-		isFirstLaunch
+		imcVersion;
+		srvVersion;
+		shellVersion;
+		windowSize;
+		displaySize;
+		scalingSize;
+		isFirstLaunch;
 	}) {
 		super();
 		this.ItemType = EventName.getenvInfo;
@@ -104,7 +110,12 @@ export class GetEnvInfo extends IMetricEvent {
 }
 
 export class PageView extends IMetricEvent {
-	constructor(pageName: string, duration: number, durationBlur: number, pageContext: string = null) {
+	constructor(
+		pageName: string,
+		duration: number,
+		durationBlur: number,
+		pageContext: string = null
+	) {
 		super();
 		this.ItemType = EventName.pageview;
 		this.PageName = pageName;
@@ -132,7 +143,6 @@ export class FeatureClick extends IMetricEvent {
 	public ItemParent: string;
 	public ItemValue?: any;
 	public ItemParm?: string;
-
 }
 
 export class ItemView extends IMetricEvent {
@@ -145,11 +155,18 @@ export class ItemView extends IMetricEvent {
 
 	public ItemName: string;
 	public ItemParent: string;
-
 }
 
 export class ArticleClick extends IMetricEvent {
-	constructor(itemID, itemParm, itemParent, itemCategory, itemPosition, viewOrder: number, pageNumber: any) {
+	constructor(
+		itemID,
+		itemParm,
+		itemParent,
+		itemCategory,
+		itemPosition,
+		viewOrder: number,
+		pageNumber: any
+	) {
 		super();
 		this.ItemType = EventName.articleclick;
 		this.ItemID = itemID;
@@ -172,7 +189,14 @@ export class ArticleClick extends IMetricEvent {
 }
 
 export class ArticleView extends IMetricEvent {
-	constructor(itemID, itemParent, itemCategory, duration: number, docReadPosition: number, mediaReadPosition: number) {
+	constructor(
+		itemID,
+		itemParent,
+		itemCategory,
+		duration: number,
+		docReadPosition: number,
+		mediaReadPosition: number
+	) {
 		super();
 		this.ItemType = EventName.articleview;
 		this.ItemID = itemID;
@@ -193,7 +217,13 @@ export class ArticleView extends IMetricEvent {
 }
 
 export class TaskAction extends IMetricEvent {
-	constructor(taskName: string, taskCount: number, taskParm: string, taskResult: string, taskDuration: number) {
+	constructor(
+		taskName: string,
+		taskCount: number,
+		taskParm: string,
+		taskResult: string,
+		taskDuration: number
+	) {
 		super();
 		this.ItemType = EventName.taskaction;
 		this.TaskName = taskName;
@@ -225,9 +255,16 @@ export class SettingUpdate extends IMetricEvent {
 	public SettingParent: string;
 }
 
-
 export class UserFeedback extends IMetricEvent {
-	constructor(itemName, userEmail, itemParent, content, qaNewStyle: number, qaPerformance: string, qaUseFrequency: string) {
+	constructor(
+		itemName,
+		userEmail,
+		itemParent,
+		content,
+		qaNewStyle: number,
+		qaPerformance: string,
+		qaUseFrequency: string
+	) {
 		super();
 		this.ItemType = EventName.userfeedback;
 		this.ItemName = itemName;
@@ -237,7 +274,7 @@ export class UserFeedback extends IMetricEvent {
 		this.QA = {
 			QaNewStyle: qaNewStyle,
 			QaPerformance: qaPerformance,
-			QaUseFrequency: qaUseFrequency
+			QaUseFrequency: qaUseFrequency,
 		};
 	}
 	public ItemName: string;
@@ -245,7 +282,6 @@ export class UserFeedback extends IMetricEvent {
 	public ItemParent: string;
 	public Content: string;
 	public QA: any;
-
 }
 
 export class ContentDisplay extends IMetricEvent {

@@ -25,7 +25,7 @@ import { SystemHealthDates } from 'src/app/enums/system-state.enum';
 	selector: 'vtr-widget-device',
 	templateUrl: './widget-device.component.html',
 	styleUrls: ['./widget-device.component.scss'],
-	providers: [TimerService]
+	providers: [TimerService],
 })
 export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	public myDevice: MyDevice;
@@ -64,7 +64,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		private metric: MetricService
 	) {
 		this.myDevice = new MyDevice();
-		this.sysinfo =  this.shellService.getSysinfo();
+		this.sysinfo = this.shellService.getSysinfo();
 	}
 
 	ngOnInit() {
@@ -90,13 +90,13 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		return index;
 	}
 
-	public refreshClicked(){
+	public refreshClicked() {
 		this.hwInfo = this.deviceService.getHardwareInfo();
 		this.updateMemoryInfo(this.hwStatus[1]);
 		this.updateDiskInfo();
 	}
 
-	public async copyClicked(info){
+	public async copyClicked(info) {
 		const listener = (e: ClipboardEvent) => {
 			const clipboard = e.clipboardData;
 			clipboard.setData('text', info);
@@ -108,21 +108,29 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		document.removeEventListener(copyCmd, listener, false);
 	}
 
-	public onMaintanceClicked(){
-		if (this.deviceStatus !== DeviceCondition.Loading && this.deviceStatus !== DeviceCondition.Good){
-			const metricData = new FeatureClick(`Device-Overall-Status-${this.deviceStatus}`, 'Device.MyDevice');
+	public onMaintanceClicked() {
+		if (
+			this.deviceStatus !== DeviceCondition.Loading &&
+			this.deviceStatus !== DeviceCondition.Good
+		) {
+			const metricData = new FeatureClick(
+				`Device-Overall-Status-${this.deviceStatus}`,
+				'Device.MyDevice'
+			);
 			this.metric.sendMetrics(metricData);
 		}
 
-		switch (this.deviceStatus){
+		switch (this.deviceStatus) {
 			case DeviceCondition.NeedRunHWScan:
 				this.deviceService.launchUri(this.quickScanProtocol);
 				break;
-			case DeviceCondition.NeedRunSMPScan:				
+			case DeviceCondition.NeedRunSMPScan:
 				this.deviceService.launchUri(this.smartPerformanceProtocol);
 				break;
 			case DeviceCondition.NeedRunSU:
-				this.router.navigate(['/device/system-updates'], { queryParams: { action: 'start' } });
+				this.router.navigate(['/device/system-updates'], {
+					queryParams: { action: 'start' },
+				});
 				break;
 		}
 	}
@@ -148,7 +156,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		this.hwStatus[2] = disk;
 		this.updateDiskInfo();
 		let index = 0;
-		if (this.configService.isSystemUpdateEnabled()){
+		if (this.configService.isSystemUpdateEnabled()) {
 			const systemUpdate = new DeviceStatus();
 			systemUpdate.id = 'systemUpdate';
 			systemUpdate.title = this.translate.instant('device.myDevice.systemUpdate.title');
@@ -156,7 +164,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.swStatus[index++] = systemUpdate;
 			this.updateSUStatus(systemUpdate);
 		}
-		if (await this.configService.showSmartPerformance()){
+		if (await this.configService.showSmartPerformance()) {
 			const smartPerformance = new DeviceStatus();
 			smartPerformance.id = 'smartperformance';
 			smartPerformance.title = this.translate.instant('smartPerformance.title');
@@ -165,7 +173,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.updateSmartPerformanceStatus(smartPerformance);
 		}
 
-		if (await this.hwScanService.isAvailable()){
+		if (await this.hwScanService.isAvailable()) {
 			const hwscan = new DeviceStatus();
 			hwscan.id = 'hwscan';
 			hwscan.title = this.translate.instant('hardwareScan.name');
@@ -178,41 +186,43 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		this.deviceStatus = await this.dashboardService.getDeviceStatus();
 	}
 
-	startMonitorPerformance(){
-		this.sysinfo?.startMonitorPerformance((data) => {
-			const processor = this.hwStatus[0];
-			processor.percent = data?.cpuLoad;
-			processor.used =  data?.cpuLoad?.toFixed(2) + '%';
-			processor.total = data?.cpuGhz?.toFixed(2) + ' GHz';
-			this.hwStatus[0] =  {...processor};
-			const ram = this.hwStatus[1];
-			const used = data?.memoryUsage?.totalSizeInBytes - data?.memoryUsage?.avaliableSize;
-			ram.percent = used / data?.memoryUsage?.totalSizeInBytes * 100;
-			ram.used = this.commonService.formatBytes(used);
-			ram.total = this.commonService.formatBytes(data?.memoryUsage?.totalSizeInBytes);
-			this.hwStatus[1] = {...ram};
-		}, 1500).catch( e => {
-			this.supportMonitorPerformance = false;
-			this.hwStatus[0].total = undefined;
-		});
+	startMonitorPerformance() {
+		this.sysinfo
+			?.startMonitorPerformance((data) => {
+				const processor = this.hwStatus[0];
+				processor.percent = data?.cpuLoad;
+				processor.used = data?.cpuLoad?.toFixed(2) + '%';
+				processor.total = data?.cpuGhz?.toFixed(2) + ' GHz';
+				this.hwStatus[0] = { ...processor };
+				const ram = this.hwStatus[1];
+				const used = data?.memoryUsage?.totalSizeInBytes - data?.memoryUsage?.avaliableSize;
+				ram.percent = (used / data?.memoryUsage?.totalSizeInBytes) * 100;
+				ram.used = this.commonService.formatBytes(used);
+				ram.total = this.commonService.formatBytes(data?.memoryUsage?.totalSizeInBytes);
+				this.hwStatus[1] = { ...ram };
+			}, 1500)
+			.catch((e) => {
+				this.supportMonitorPerformance = false;
+				this.hwStatus[0].total = undefined;
+			});
 	}
 
-	private async updateProssorInfo(processor: DeviceStatus){
+	private async updateProssorInfo(processor: DeviceStatus) {
 		const data = await this.hwInfo;
-		if (data){
+		if (data) {
 			processor.link = 'ms-settings:about';
 			processor.icon = this.processorIcon;
 			processor.subtitle = `${data.processor.name}`;
 			processor.percent = 0;
-			processor.used =  '--';
+			processor.used = '--';
 			processor.total = this.supportMonitorPerformance ? '-- ' : undefined;
 			this.hwStatus[0] = processor;
 		}
 	}
 
-	private async updateMemoryInfo(memory: DeviceStatus){
+	private async updateMemoryInfo(memory: DeviceStatus) {
 		const data = await this.hwInfo;
-		if (data){
+		if (data) {
 			const { total, used } = data.memory;
 			let type = data.memory.type;
 			if (type.toLowerCase() === 'unknown') {
@@ -223,18 +233,18 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			memory.icon = this.memoryIcon;
 			memory.used = this.commonService.formatBytes(used);
 			memory.total = this.commonService.formatBytes(total);
-			memory.percent = used / total * 100;
-			this.hwStatus[1] = {...memory};
+			memory.percent = (used / total) * 100;
+			this.hwStatus[1] = { ...memory };
 		}
 	}
 
-	private async updateDiskInfo(){
+	private async updateDiskInfo() {
 		const data = await this.hwInfo;
-		if (data){
+		if (data) {
 			const disks = data.disk.disks;
 			let statusIndex = 2;
-			for (let i = 0, len  = disks.length; i < len; i++) {
-				if (!disks[i].partitions || disks[i].partitions.length === 0){
+			for (let i = 0, len = disks.length; i < len; i++) {
+				if (!disks[i].partitions || disks[i].partitions.length === 0) {
 					continue;
 				}
 				const disk = new DeviceStatus();
@@ -245,81 +255,100 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 				disk.subtitle = `${disks[i].manufacturer || ''} ${disks[i].model}`;
 				const usedBytes = disks[i].sizeInBytes - disks[i].avaliableSize;
 				disk.used = this.commonService.formatBytes(usedBytes);
-				disk.total = this.commonService.formatBytes( disks[i].sizeInBytes);
-				disk.percent = usedBytes / disks[i].sizeInBytes * 100;
+				disk.total = this.commonService.formatBytes(disks[i].sizeInBytes);
+				disk.percent = (usedBytes / disks[i].sizeInBytes) * 100;
 				this.hwStatus[statusIndex++] = disk;
 			}
 		}
 	}
 
-	private async updateSUStatus(systemUpdate: DeviceStatus){
-		if (this.deviceService && !this.deviceService.isSMode && this.adPolicyService && this.adPolicyService.IsSystemUpdateEnabled) {
-			this.dashboardService.getRecentUpdateInfo().pipe(takeUntil(this.ngUnsubscribe)).subscribe(data => {
+	private async updateSUStatus(systemUpdate: DeviceStatus) {
+		if (
+			this.deviceService &&
+			!this.deviceService.isSMode &&
+			this.adPolicyService &&
+			this.adPolicyService.IsSystemUpdateEnabled
+		) {
+			this.dashboardService
+				.getRecentUpdateInfo()
+				.pipe(takeUntil(this.ngUnsubscribe))
+				.subscribe((data) => {
 					if (data) {
 						const updateStatus = data.status;
 						const lastUpdate = data.lastupdate;
 						const diffInDays = this.systemUpdateService.dateDiffInDays(lastUpdate);
 						systemUpdate.link = 'lenovo-vantage3:system-updates?action=start ';
 						if (updateStatus === 1) {
-							systemUpdate.subtitle = this.translate.instant('device.myDevice.systemUpdate.detail.uptoDate');
-							systemUpdate.checkedDate = this.commonService.formatLocalDate(lastUpdate);
+							systemUpdate.subtitle = this.translate.instant(
+								'device.myDevice.systemUpdate.detail.uptoDate'
+							);
+							systemUpdate.checkedDate = this.commonService.formatLocalDate(
+								lastUpdate
+							);
 							systemUpdate.showSepline = true;
 							if (diffInDays > 30) {
-								systemUpdate.subtitle = this.translate.instant('device.myDevice.systemUpdate.detail.outdated');
+								systemUpdate.subtitle = this.translate.instant(
+									'device.myDevice.systemUpdate.detail.outdated'
+								);
 							}
 						} else {
-							systemUpdate.subtitle = this.translate.instant('device.myDevice.systemUpdate.detail.neverRanUpdate');
+							systemUpdate.subtitle = this.translate.instant(
+								'device.myDevice.systemUpdate.detail.neverRanUpdate'
+							);
 						}
 					}
 				});
 		}
 	}
 
-	private async updateSmartPerformanceStatus(smartPerform: DeviceStatus){
-		try{
-			if (this.commonService.isOnline){
-				if (await this.dashboardService.isSmartPerformanceSuscripted()){
+	private async updateSmartPerformanceStatus(smartPerform: DeviceStatus) {
+		try {
+			if (this.commonService.isOnline) {
+				if (await this.dashboardService.isSmartPerformanceSuscripted()) {
 					smartPerform.subtitle = this.translate.instant('device.myDevice.entitled');
-				}
-				else{
+				} else {
 					smartPerform.subtitle = this.translate.instant('device.myDevice.subscribeNow');
 				}
 			}
 			const lastScanResultRequest = {
-				scanType: await this.isSMPSubscripted ? 'ScanAndFix' : 'Scan'
+				scanType: (await this.isSMPSubscripted) ? 'ScanAndFix' : 'Scan',
 			};
-			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
-			if (response?.scanruntime){
+			const response = await this.smartPerformanceService.getLastScanResult(
+				lastScanResultRequest
+			);
+			if (response?.scanruntime) {
 				smartPerform.checkedDate = moment(response.scanruntime).format('l');
 				smartPerform.showSepline = true;
 			}
-		}catch {
+		} catch {
 			smartPerform.subtitle = this.translate.instant('hardwareScan.notScanned');
 		}
 		smartPerform.link = 'support/smart-performance';
 	}
 
-	private async updateHwScanStatus(hwscan: DeviceStatus){
+	private async updateHwScanStatus(hwscan: DeviceStatus) {
 		await this.previousResultService.getLastResults();
 		const lastSacnInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
 		const oobeDate = this.deviceService.getMachineInfoSync()?.firstRunDate || Date.now();
 		const scanLangKey = 'device.myDevice.scanNow';
 		const scanedLangKey = 'device.myDevice.scanned';
 		const notScannedKey = 'hardwareScan.notScanned';
-		if (lastSacnInfo.date){
+		if (lastSacnInfo.date) {
 			hwscan.checkedDate = moment(lastSacnInfo.date).format('l');
 			hwscan.showSepline = true;
-			if (this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > SystemHealthDates.HardwareScan){
+			if (
+				this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) >
+				SystemHealthDates.HardwareScan
+			) {
 				hwscan.subtitle = this.translate.instant(scanLangKey);
+			} else {
+				hwscan.subtitle = this.translate.instant(scanedLangKey);
 			}
-			else{
-				hwscan.subtitle = 	this.translate.instant(scanedLangKey);
-			}
-		}
-		else if (this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan){
+		} else if (
+			this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan
+		) {
 			hwscan.subtitle = this.translate.instant(scanLangKey);
-		}
-		else{
+		} else {
 			hwscan.subtitle = this.translate.instant(notScannedKey);
 		}
 		hwscan.link = this.quickScanProtocol;

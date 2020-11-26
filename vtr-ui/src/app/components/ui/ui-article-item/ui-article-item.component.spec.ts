@@ -8,9 +8,8 @@ xdescribe('UIArticleItemComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UIArticleItemComponent]
-		})
-			.compileComponents();
+			declarations: [UIArticleItemComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

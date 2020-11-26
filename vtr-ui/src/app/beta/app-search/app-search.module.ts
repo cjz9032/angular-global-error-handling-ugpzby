@@ -7,7 +7,7 @@ import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { AppSearchRoutingModule } from 'src/app/beta/app-search/app-search-routing.module';
 import { FormsModule } from '@angular/forms';
-import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faColumns } from '@fortawesome/pro-light-svg-icons/faColumns';
@@ -32,28 +32,18 @@ import { faGem } from '@fortawesome/pro-light-svg-icons/faGem';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
 import { SearchTipsComponent } from './search-tips/search-tips.component';
 
-
 @NgModule({
-	declarations: [
-		SearchDropdownComponent,
-		AppSearchScrollerDirective,
-		SearchTipsComponent
-	],
+	declarations: [SearchDropdownComponent, AppSearchScrollerDirective, SearchTipsComponent],
 	imports: [
 		FontAwesomeModule,
 		CommonPipeModule,
 		CommonModule,
 		MetricsModule,
 		AppSearchRoutingModule,
-		FormsModule
+		FormsModule,
 	],
-	exports: [
-		SearchDropdownComponent,
-		AppSearchScrollerDirective,
-		SearchTipsComponent
-	],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA]
+	exports: [SearchDropdownComponent, AppSearchScrollerDirective, SearchTipsComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class AppSearchModule {
 	constructor(library: FaIconLibrary) {

@@ -12,7 +12,6 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 	providedIn: 'root',
 })
 export class ConsumerGuard extends BasicGuard {
-
 	constructor(
 		private localCacheService: LocalCacheService,
 		public guardConstants: GuardConstants,
@@ -25,7 +24,9 @@ export class ConsumerGuard extends BasicGuard {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment)
+		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LocalInfoSegment
+		);
 		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
 			return true;
 		} else {

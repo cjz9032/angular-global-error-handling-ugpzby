@@ -8,9 +8,8 @@ xdescribe('WidgetEnergyStarComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetEnergyStarComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetEnergyStarComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

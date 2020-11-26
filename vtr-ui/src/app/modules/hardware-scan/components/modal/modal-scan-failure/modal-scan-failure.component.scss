@@ -1,11 +1,10 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
-.vtr-modal-scan-failure{
+.vtr-modal-scan-failure {
 	padding: 1.8rem 2.4rem 2.4rem;
 	@include high-contrast-border;
 
 	.modal-information {
-
 		.title {
 			width: 100%;
 			font-size: $fontsize_xl;

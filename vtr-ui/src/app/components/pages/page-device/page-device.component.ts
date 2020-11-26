@@ -9,10 +9,9 @@ import { Subscription } from 'rxjs/internal/Subscription';
 @Component({
 	selector: 'vtr-page-device',
 	templateUrl: './page-device.component.html',
-	styleUrls: ['./page-device.component.scss']
+	styleUrls: ['./page-device.component.scss'],
 })
 export class PageDeviceComponent implements OnInit, OnDestroy {
-
 	// title = 'My Device';
 	// back = 'BACK';
 	backarrow = '< ';
@@ -35,41 +34,62 @@ export class PageDeviceComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			Page: 'device'
+			Page: 'device',
 		};
 
 		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(
+					response,
+					'inner-page-right-side-article-image-background',
+					'position-A'
+				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
-						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split(
+							'|'
+						)[0];
 					}
 					if (cardContentPositionA.ActionLink) {
-						const isHaveSerialNumber = cardContentPositionA.ActionLink.indexOf('[SerialNumber]') > -1;
-						const isWarrantyAposLink = cardContentPositionA.ActionLink.startsWith('https://www.lenovo.com/us/en/warrantyApos');
-						const isWarrantyLookupLink = cardContentPositionA.ActionLink.startsWith('https://pcsupport.lenovo.com/warrantylookup');
+						const isHaveSerialNumber =
+							cardContentPositionA.ActionLink.indexOf('[SerialNumber]') > -1;
+						const isWarrantyAposLink = cardContentPositionA.ActionLink.startsWith(
+							'https://www.lenovo.com/us/en/warrantyApos'
+						);
+						const isWarrantyLookupLink = cardContentPositionA.ActionLink.startsWith(
+							'https://pcsupport.lenovo.com/warrantylookup'
+						);
 						if (isHaveSerialNumber || isWarrantyAposLink || isWarrantyLookupLink) {
 							this.deviceService.getMachineInfo().then((info) => {
-								if ((isWarrantyAposLink || isWarrantyLookupLink) && info && info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd')) {
-									this.cardContentPositionA.ActionLink = 'https://item.lenovo.com.cn/product/100785.html?pmf_group=qjz&pmf_medium=qjz&pmf_source=Z00009560T000&_ga=2.136201912.800236951.1571628156-244493281.1561709922';
+								if (
+									(isWarrantyAposLink || isWarrantyLookupLink) &&
+									info &&
+									info.mtm &&
+									info.mtm.toLocaleLowerCase().endsWith('cd')
+								) {
+									this.cardContentPositionA.ActionLink =
+										'https://item.lenovo.com.cn/product/100785.html?pmf_group=qjz&pmf_medium=qjz&pmf_source=Z00009560T000&_ga=2.136201912.800236951.1571628156-244493281.1561709922';
 								} else if (isHaveSerialNumber && info && info.serialnumber) {
-									this.cardContentPositionA.ActionLink = cardContentPositionA.ActionLink.replace(/\[SerialNumber\]/g, info.serialnumber);
+									this.cardContentPositionA.ActionLink = cardContentPositionA.ActionLink.replace(
+										/\[SerialNumber\]/g,
+										info.serialnumber
+									);
 								}
 							});
 						}
 					}
 				}
 			},
-			error => {
+			(error) => {
 				this.logger.error('fetchCMSContent error', error);
 			}
 		);
 	}
 
 	ngOnDestroy() {
-		if (this.cmsSubscription) { this.cmsSubscription.unsubscribe(); }
+		if (this.cmsSubscription) {
+			this.cmsSubscription.unsubscribe();
+		}
 	}
-
 }

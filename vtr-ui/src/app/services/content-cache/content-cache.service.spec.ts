@@ -5,16 +5,32 @@ import { ContentCacheService } from './content-cache.service';
 import { MockContentLocalCacheTest } from '../../services/content-cache/mock/content-cache.mock.data';
 
 import { asyncData, asyncError } from 'src/testing/async-observable-helpers';
-import { CMS_CONTENTS, UPE_CONTENTS, NORMAL_CONTENTS, EXPIRED_DATE_INPOISTIONB, DISPALY_DATE_INPOISTIONB, MULITI_ITEM_INPOISTIONB, WELCOME_TEXT_CONTENTS, ARTICLE, DYNAMIC_OVERLAY_THEME } from 'src/testing/content-data';
+import {
+	CMS_CONTENTS,
+	UPE_CONTENTS,
+	NORMAL_CONTENTS,
+	EXPIRED_DATE_INPOISTIONB,
+	DISPALY_DATE_INPOISTIONB,
+	MULITI_ITEM_INPOISTIONB,
+	WELCOME_TEXT_CONTENTS,
+	ARTICLE,
+	DYNAMIC_OVERLAY_THEME,
+} from 'src/testing/content-data';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 describe('ContentCacheService', () => {
 	let service: ContentCacheService;
 	let vantageShellService: { getContentLocalCache: jasmine.Spy };
 	let localInfoService: { getLocalInfo: jasmine.Spy };
-	let cmsService: { generateContentQueryParams: jasmine.Spy, getLocalinfo: jasmine.Spy, fetchCMSArticle: jasmine.Spy, fetchContents: jasmine.Spy, getOneCMSContent: jasmine.Spy };
+	let cmsService: {
+		generateContentQueryParams: jasmine.Spy;
+		getLocalinfo: jasmine.Spy;
+		fetchCMSArticle: jasmine.Spy;
+		fetchContents: jasmine.Spy;
+		getOneCMSContent: jasmine.Spy;
+	};
 	let upeService: { fetchUPEContent: jasmine.Spy };
-	let buildInContentService: { getArticle: jasmine.Spy, getContents: jasmine.Spy };
+	let buildInContentService: { getArticle: jasmine.Spy; getContents: jasmine.Spy };
 	let logger: { error: jasmine.Spy };
 	let metrics: { sendMetrics: jasmine.Spy };
 
@@ -25,47 +41,48 @@ describe('ContentCacheService', () => {
 		Lang: 'en',
 		OEM: 'LENOVO',
 		OS: 'Windows',
-		Segment: 'Consumer'
+		Segment: 'Consumer',
 	};
 
 	beforeEach(() => {
-		logger = jasmine.createSpyObj('LoggerService',
-			['error']);
+		logger = jasmine.createSpyObj('LoggerService', ['error']);
 
-		localInfoService = jasmine.createSpyObj('LocalInfoService',
-			['getLocalInfo']);
+		localInfoService = jasmine.createSpyObj('LocalInfoService', ['getLocalInfo']);
 
-		cmsService = jasmine.createSpyObj('CMSService',
-			['generateContentQueryParams', 'getLocalinfo', 'fetchCMSArticle', 'fetchContents', 'getOneCMSContent']);
+		cmsService = jasmine.createSpyObj('CMSService', [
+			'generateContentQueryParams',
+			'getLocalinfo',
+			'fetchCMSArticle',
+			'fetchContents',
+			'getOneCMSContent',
+		]);
 
-		upeService = jasmine.createSpyObj('UPEService',
-			['fetchUPEContent']);
+		upeService = jasmine.createSpyObj('UPEService', ['fetchUPEContent']);
 
-		buildInContentService = jasmine.createSpyObj('BuildInContentService',
-			['getArticle', 'getContents']);
+		buildInContentService = jasmine.createSpyObj('BuildInContentService', [
+			'getArticle',
+			'getContents',
+		]);
 
-		vantageShellService = jasmine.createSpyObj('VantageShellService',
-			['getContentLocalCache']);
+		vantageShellService = jasmine.createSpyObj('VantageShellService', ['getContentLocalCache']);
 
-		metrics = jasmine.createSpyObj('MetricService',
-			['sendMetrics']);
+		metrics = jasmine.createSpyObj('MetricService', ['sendMetrics']);
 
-		TestBed.configureTestingModule({
-		});
+		TestBed.configureTestingModule({});
 
 		mockTestObject = new MockContentLocalCacheTest();
 		vantageShellService.getContentLocalCache.and.returnValue(mockTestObject);
 
-		service = new ContentCacheService(vantageShellService as any,
+		service = new ContentCacheService(
+			vantageShellService as any,
 			localInfoService as any,
 			cmsService as any,
 			upeService as any,
 			buildInContentService as any,
 			logger as any,
-			metrics as any);
-
+			metrics as any
+		);
 	});
-
 
 	it('when none contents in cache enviroment should return build-in, then download and cache the contents by fetch', async () => {
 		const contentCards = {
@@ -76,7 +93,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-A',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionB: {
 				displayContent: new FeatureContent(),
@@ -85,7 +102,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-B',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionC: {
 				displayContent: new FeatureContent(),
@@ -94,7 +111,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-C',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionD: {
 				displayContent: new FeatureContent(),
@@ -103,7 +120,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-D',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionE: {
 				displayContent: new FeatureContent(),
@@ -112,7 +129,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-E',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionF: {
 				displayContent: new FeatureContent(),
@@ -121,8 +138,8 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-F',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
-			}
+				upeContent: undefined,
+			},
 		};
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'noResponse' });
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
@@ -145,7 +162,10 @@ describe('ContentCacheService', () => {
 	});
 
 	it('should return build-in content when get cached contents', async () => {
-		cmsService.generateContentQueryParams.and.returnValue({ Page: 'noOnlineContent', Lang: 'en' });
+		cmsService.generateContentQueryParams.and.returnValue({
+			Page: 'noOnlineContent',
+			Lang: 'en',
+		});
 		const contents = JSON.parse(JSON.stringify(NORMAL_CONTENTS));
 		buildInContentService.getContents.and.returnValue(contents);
 		const ret = await service.getCachedContents('noOnlineContent', null);
@@ -157,7 +177,6 @@ describe('ContentCacheService', () => {
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('welcome-text')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
-
 
 		const ret2 = await service.getCachedContents('noOnlineContent', null);
 		expect(ret2).toBeTruthy();
@@ -196,7 +215,9 @@ describe('ContentCacheService', () => {
 	});
 
 	it('should not return item that cannot be displayed.', async () => {
-		cmsService.generateContentQueryParams.and.returnValue({ Page: 'NotReachDisplayDateWithPoistionB' });
+		cmsService.generateContentQueryParams.and.returnValue({
+			Page: 'NotReachDisplayDateWithPoistionB',
+		});
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getCachedContents('NotReachDisplayDateWithPoistionB', null);
 
@@ -240,7 +261,7 @@ describe('ContentCacheService', () => {
 		expect(keys.includes('positionA')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
 		const positionA = 'positionA';
-		ret[positionA].forEach(content => {
+		ret[positionA].forEach((content) => {
 			if (content.Title === 'Build-in article A1') {
 				expect(content.DataSource).toEqual('cms');
 			}
@@ -261,7 +282,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-A',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionB: {
 				displayContent: new FeatureContent(),
@@ -270,7 +291,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-B',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionC: {
 				displayContent: new FeatureContent(),
@@ -279,7 +300,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-C',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionD: {
 				displayContent: new FeatureContent(),
@@ -288,7 +309,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-D',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionE: {
 				displayContent: new FeatureContent(),
@@ -297,7 +318,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-E',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionF: {
 				displayContent: new FeatureContent(),
@@ -306,8 +327,8 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-F',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
-			}
+				upeContent: undefined,
+			},
 		};
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms' });
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
@@ -328,8 +349,9 @@ describe('ContentCacheService', () => {
 		const positionB = 'positionB';
 		expect(ret[positionB].Title).toEqual('CMS Content');
 		const positionC = 'positionC';
-		expect(ret[positionC].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
-
+		expect(ret[positionC].Title).toEqual(
+			'Smarter Data Helps Farmers Rapidly Adapt to Climate Change'
+		);
 	});
 
 	it('save contentList only from upe', async () => {
@@ -341,7 +363,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-A',
 				tileSource: 'UPE',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionB: {
 				displayContent: new FeatureContent(),
@@ -350,7 +372,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-B',
 				tileSource: 'UPE',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionC: {
 				displayContent: new FeatureContent(),
@@ -359,7 +381,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-C',
 				tileSource: 'UPE',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionD: {
 				displayContent: new FeatureContent(),
@@ -368,7 +390,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-D',
 				tileSource: 'UPE',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionE: {
 				displayContent: new FeatureContent(),
@@ -377,7 +399,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-E',
 				tileSource: 'UPE',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionF: {
 				displayContent: new FeatureContent(),
@@ -386,8 +408,8 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-F',
 				tileSource: 'UPE',
 				cmsContent: undefined,
-				upeContent: undefined
-			}
+				upeContent: undefined,
+			},
 		};
 		cmsService.getOneCMSContent.and.returnValue(null);
 		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
@@ -409,7 +431,9 @@ describe('ContentCacheService', () => {
 		const positionB = 'positionB';
 		expect(ret[positionB].Title).toEqual('UPE Content');
 		const positionC = 'positionC';
-		expect(ret[positionC].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+		expect(ret[positionC].Title).toEqual(
+			'Smarter Data Helps Farmers Rapidly Adapt to Climate Change'
+		);
 	});
 
 	it('save contentList from upe and cms', async () => {
@@ -421,7 +445,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-A',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionB: {
 				displayContent: new FeatureContent(),
@@ -430,7 +454,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-B',
 				tileSource: 'UPE',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionC: {
 				displayContent: new FeatureContent(),
@@ -439,7 +463,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-C',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionD: {
 				displayContent: new FeatureContent(),
@@ -448,7 +472,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-D',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionE: {
 				displayContent: new FeatureContent(),
@@ -457,7 +481,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-E',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionF: {
 				displayContent: new FeatureContent(),
@@ -466,8 +490,8 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-F',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
-			}
+				upeContent: undefined,
+			},
 		};
 		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
 		upeService.fetchUPEContent.and.returnValue(UPE_CONTENTS);
@@ -487,9 +511,13 @@ describe('ContentCacheService', () => {
 		const positionA = 'positionA';
 		expect(ret[positionA].length).toEqual(2);
 		const positionB = 'positionB';
-		expect(ret[positionB].Title).toEqual('Lenovo Tech World &#8211; The New Era of Data Intelligence Decoded');
+		expect(ret[positionB].Title).toEqual(
+			'Lenovo Tech World &#8211; The New Era of Data Intelligence Decoded'
+		);
 		const positionC = 'positionC';
-		expect(ret[positionC].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+		expect(ret[positionC].Title).toEqual(
+			'Smarter Data Helps Farmers Rapidly Adapt to Climate Change'
+		);
 	});
 
 	it('save contentList that segment is commercial', async () => {
@@ -501,7 +529,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-A',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionB: {
 				displayContent: new FeatureContent(),
@@ -510,7 +538,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-B',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionC: {
 				displayContent: new FeatureContent(),
@@ -519,7 +547,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-C',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionD: {
 				displayContent: new FeatureContent(),
@@ -528,7 +556,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-D',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionE: {
 				displayContent: new FeatureContent(),
@@ -537,7 +565,7 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-E',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
+				upeContent: undefined,
 			},
 			positionF: {
 				displayContent: new FeatureContent(),
@@ -546,8 +574,8 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-F',
 				tileSource: 'CMS',
 				cmsContent: undefined,
-				upeContent: undefined
-			}
+				upeContent: undefined,
+			},
 		};
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_cms' });
 		cmsService.fetchContents.and.returnValue(CMS_CONTENTS);
@@ -559,7 +587,7 @@ describe('ContentCacheService', () => {
 			Lang: 'en',
 			OEM: 'LENOVO',
 			OS: 'Windows',
-			Segment: 'Commercial'
+			Segment: 'Commercial',
 		};
 		localInfoService.getLocalInfo.and.returnValue(currentLocalInfo);
 		const ret = await service.getCachedContents('dashboard_only_upe', contentCards);
@@ -576,7 +604,9 @@ describe('ContentCacheService', () => {
 		const positionB = 'positionB';
 		expect(ret[positionB].Title).toEqual('CMS Content');
 		const positionC = 'positionC';
-		expect(ret[positionC].Title).toEqual('Smarter Data Helps Farmers Rapidly Adapt to Climate Change');
+		expect(ret[positionC].Title).toEqual(
+			'Smarter Data Helps Farmers Rapidly Adapt to Climate Change'
+		);
 	});
 
 	it('should throw exception when fetch contents from upe and cms', async () => {
@@ -588,8 +618,8 @@ describe('ContentCacheService', () => {
 				positionParam: 'position-B',
 				tileSource: 'UPE',
 				cmsContent: undefined,
-				upeContent: undefined
-			}
+				upeContent: undefined,
+			},
 		};
 
 		upeService.fetchUPEContent.and.throwError('upe error');
@@ -629,7 +659,10 @@ describe('ContentCacheService', () => {
 		await service.getCachedContents('normalContents', null);
 		cmsService.getLocalinfo.and.returnValue(localInfo);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
-		const ret = await service.getArticleById(ContentActionType.Internal, '13cada49d4274587a80e26b00dff59a4');
+		const ret = await service.getArticleById(
+			ContentActionType.Internal,
+			'13cada49d4274587a80e26b00dff59a4'
+		);
 		expect(ret).toEqual(ARTICLE);
 	});
 
@@ -640,13 +673,16 @@ describe('ContentCacheService', () => {
 		expect(metrics.sendMetrics.calls.allArgs().length).toBe(1, 'one call');
 	});
 
-	it('should replace static OverlayTheme', async()=>{
-		let ccService: { loadCachedContents: jasmine.Spy, getCachedOnlineContents: jasmine.Spy };
-		ccService = jasmine.createSpyObj('ContentCacheService', ['loadCachedContents', 'getCachedOnlineContents']);
+	it('should replace static OverlayTheme', async () => {
+		let ccService: { loadCachedContents: jasmine.Spy; getCachedOnlineContents: jasmine.Spy };
+		ccService = jasmine.createSpyObj('ContentCacheService', [
+			'loadCachedContents',
+			'getCachedOnlineContents',
+		]);
 		ccService.getCachedOnlineContents.and.returnValue(DYNAMIC_OVERLAY_THEME);
 
 		const content = ccService.loadCachedContents(DYNAMIC_OVERLAY_THEME);
 		expect(content.positionA[0].OverlayTheme).toEqual('dark');
-		expect(content.positionB.OverlayTheme).toEqual('dark');		
+		expect(content.positionB.OverlayTheme).toEqual('dark');
 	});
 });

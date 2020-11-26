@@ -11,7 +11,6 @@ declare var Windows;
 
 @Injectable()
 export class CommsService {
-
 	env = environment;
 	appId = '';
 	token = '';
@@ -21,8 +20,7 @@ export class CommsService {
 		private http: HttpClient,
 		private devService: DevService,
 		private metricService: MetricService
-	) {
-	}
+	) {}
 
 	handleAPIError(method, err) {
 		this.devService.writeLog('API ERROR', method, err);
@@ -38,25 +36,28 @@ export class CommsService {
 
 	public endpointGetCall(endpoint, queryParams: any = {}, httpOptions: any = {}) {
 		const cmsHost = this.getCmsHost();
-		const url =  cmsHost + endpoint;
+		const url = cmsHost + endpoint;
 		httpOptions.params = new HttpParams({
-			fromObject: queryParams
+			fromObject: queryParams,
 		});
 
 		this.devService.writeLog('API GET ENDPOINT complete: ', url + '?' + httpOptions.params);
 
-		if (endpoint.indexOf('/api/v1/') > -1) {	// CMS API
+		if (endpoint.indexOf('/api/v1/') > -1) {
+			// CMS API
 			const performanceData: NetworkPerformance = {
 				ItemType: EventName.performance,
 				Host: cmsHost,
 				Api: endpoint,
-				Duration: Date.now()
+				Duration: Date.now(),
 			};
 
-			return this.http.get(url, httpOptions).pipe(tap(() => {
-				performanceData.Duration = Date.now() - performanceData.Duration;
-				this.metricService.sendMetrics(performanceData);
-			}));
+			return this.http.get(url, httpOptions).pipe(
+				tap(() => {
+					performanceData.Duration = Date.now() - performanceData.Duration;
+					this.metricService.sendMetrics(performanceData);
+				})
+			);
 		} else {
 			return this.http.get(url, httpOptions);
 		}
@@ -65,7 +66,7 @@ export class CommsService {
 	public async callUpeApi(urlStr, queryParams: any = {}) {
 		const reqHeader = new HttpHeaders({
 			'Content-Type': 'application/json;charset=UTF-8',
-			'User-Agent': this.userAgent
+			'User-Agent': this.userAgent,
 		});
 
 		this.devService.writeLog('CALL UPE API: ', urlStr);
@@ -75,14 +76,15 @@ export class CommsService {
 			ItemType: EventName.performance,
 			Host: url.host,
 			Api: url.pathname,
-			Duration: Date.now()
+			Duration: Date.now(),
 		};
 
-		const result = await this.http.post(urlStr, JSON.stringify(queryParams),
-			{
+		const result = await this.http
+			.post(urlStr, JSON.stringify(queryParams), {
 				observe: 'response',
-				headers: reqHeader
-			}).toPromise();
+				headers: reqHeader,
+			})
+			.toPromise();
 
 		performanceData.Duration = Date.now() - performanceData.Duration;
 		this.metricService.sendMetrics(performanceData);
@@ -98,9 +100,12 @@ export class CommsService {
 
 		const client = new Windows.Web.Http.HttpClient();
 		const url = new Windows.Foundation.Uri(strUrl);
-		const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.get, url);
+		const request = new Windows.Web.Http.HttpRequestMessage(
+			Windows.Web.Http.HttpMethod.get,
+			url
+		);
 		if (headers) {
-			Object.keys(headers).forEach(key => {
+			Object.keys(headers).forEach((key) => {
 				request.headers.append(key, headers[key]);
 			});
 		}
@@ -111,7 +116,7 @@ export class CommsService {
 			ItemType: EventName.performance,
 			Host: url.host,
 			Api: url.path,
-			Duration: Date.now()
+			Duration: Date.now(),
 		};
 
 		const response = await client.sendRequestAsync(request);

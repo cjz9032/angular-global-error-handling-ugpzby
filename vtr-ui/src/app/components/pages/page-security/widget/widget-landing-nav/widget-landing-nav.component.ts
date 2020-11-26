@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'vtr-widget-landing-nav',
 	templateUrl: './widget-landing-nav.component.html',
-	styleUrls: ['./widget-landing-nav.component.scss']
+	styleUrls: ['./widget-landing-nav.component.scss'],
 })
 export class WidgetLandingNavComponent implements OnInit {
 	@Output() haveOwnChecked = new EventEmitter<any>();
@@ -14,27 +14,26 @@ export class WidgetLandingNavComponent implements OnInit {
 		{
 			title: 'security.landing.basicSecurity',
 			page: 'basic',
-			item: this.baseItems
+			item: this.baseItems,
 		},
 		{
 			title: 'security.landing.intermediateSecurity',
 			page: 'intermediate',
-			item: this.intermediateItems
+			item: this.intermediateItems,
 		},
 		{
 			title: 'security.landing.advancedSecurity',
 			page: 'advanced',
-			item: this.advancedItems
+			item: this.advancedItems,
 		},
 	];
 	private _baseItems;
 	private _intermediateItems;
 	private _advancedItems;
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	@Input() set baseItems(itemValue: any) {
 		if (itemValue) {
@@ -80,5 +79,4 @@ export class WidgetLandingNavComponent implements OnInit {
 	retry(id) {
 		this.retryClick.emit(id);
 	}
-
 }

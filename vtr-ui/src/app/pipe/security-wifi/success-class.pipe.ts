@@ -1,13 +1,9 @@
-import {
-	Pipe,
-	PipeTransform
-} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'successClass'
+	name: 'successClass',
 })
 export class SuccessClassPipe implements PipeTransform {
-
 	transform(value: boolean): any {
 		if (value) {
 			return 'd-none';
@@ -15,5 +11,4 @@ export class SuccessClassPipe implements PipeTransform {
 			return '';
 		}
 	}
-
 }

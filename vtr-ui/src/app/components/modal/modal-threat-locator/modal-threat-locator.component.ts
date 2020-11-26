@@ -1,21 +1,11 @@
-import {
-	Component,
-	OnInit,
-	HostListener,
-	ViewChild,
-	ElementRef
-} from '@angular/core';
-import {
-	NgbActiveModal
-} from '@ng-bootstrap/ng-bootstrap';
-import {
-	VantageShellService
-} from '../../../services/vantage-shell/vantage-shell.service';
+import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-modal-threat-locator',
 	templateUrl: './modal-threat-locator.component.html',
-	styleUrls: ['./modal-threat-locator.component.scss']
+	styleUrls: ['./modal-threat-locator.component.scss'],
 })
 export class ModalThreatLocatorComponent implements OnInit {
 	threatLocatorUrl: string;
@@ -24,10 +14,7 @@ export class ModalThreatLocatorComponent implements OnInit {
 
 	@ViewChild('domModalDiv') domModalDiv: ElementRef;
 
-	constructor(
-		public activeModal: NgbActiveModal,
-		private shellService: VantageShellService
-	) {
+	constructor(public activeModal: NgbActiveModal, private shellService: VantageShellService) {
 		this.metrics = shellService.getMetrics();
 	}
 	@HostListener('window: focus')
@@ -49,7 +36,7 @@ export class ModalThreatLocatorComponent implements OnInit {
 			const data = {
 				ItemType: 'FeatureClick',
 				ItemName: `ThreatLocator.${metricsData}`,
-				ItemParent: 'Features.SecurityAdvisor'
+				ItemParent: 'Features.SecurityAdvisor',
 			};
 
 			this.metrics.sendAsync(data);
@@ -74,9 +61,11 @@ export class ModalThreatLocatorComponent implements OnInit {
 			case 'tr':
 				return iso639code;
 			case 'zh':
-				if (language.toLowerCase().includes('hans') ||
+				if (
+					language.toLowerCase().includes('hans') ||
 					language.toLowerCase().includes('cn') ||
-					language.toLowerCase().includes('sg')) {
+					language.toLowerCase().includes('sg')
+				) {
 					return iso639code;
 				}
 				return 'en';
@@ -91,13 +80,10 @@ export class ModalThreatLocatorComponent implements OnInit {
 
 	ngOnInit() {
 		this.online = navigator.onLine;
-		this.buildThreatLocatorUrl(
-			this.getThreatLocatorLanguageId(navigator.language)
-		);
+		this.buildThreatLocatorUrl(this.getThreatLocatorLanguageId(navigator.language));
 	}
 
 	closeModal() {
 		this.activeModal.close('close');
 	}
-
 }

@@ -1,125 +1,125 @@
-@import "../../../../../app.theme.scss";
+@import '../../../../../app.theme.scss';
 
 $largeCircleWidth: 22rem;
 $largeSideWidth: 3.5rem;
 .vtr-widget-security {
-  .security-background {
-    border-radius: 0.5rem;
-	height: 100%;
-	width: 100%;
-	color: $light;
-    background: linear-gradient(109deg, $hover_dark 0%, $main_darker 100%);
-    box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
-	padding: 4.5rem 2.5rem 2.5rem;
-	position: relative;
-	@include high-contrast-adjust;
-	@media #{$black-on-white} {
-		background: $light;
-		border: 0.1rem solid $dark;
-		color: $dark;
-	}
-	@media #{$white-on-black} {
-		background: $dark;
-		border: 0.1rem solid $light;
+	.security-background {
+		border-radius: 0.5rem;
+		height: 100%;
+		width: 100%;
 		color: $light;
-	}
-	// @media #{$mediaquery_X46} {  // $mediaquery_X46 support 1:1 of screen 768px-992px
-	// 	padding-top: 3.5rem;
-	// }
-	@media #{$mediaquery_X48} {
-		padding-top: 3.5rem;
-	}
-
-	.left-container {
-		margin-top: -3rem;
-
-		@media #{$mediaquery_X48} {
-			margin-top: -2rem;
-		}
-	}
-
-	.side {
-		margin-left: -1rem;
-		margin-right: -0.1rem;
-		svg {
-			width: $largeSideWidth;
-			.side-a {
-				@media #{$black-on-white} {
-					fill: $dark;
-				}
-				@media #{$white-on-black} {
-					fill: $light;
-				}
-			}
-		}
-	}
-	// @media #{$mediaquery_X46} {
-	// 	.side {
-	// 		margin-left: 0;
-	// 		svg {
-	// 			width: 1.5rem;
-	// 		}
-	// 	}
-	// }
-	@media #{$mediaquery_X48} {
-		.side {
-			margin-left: 0;
-			svg {
-				width: 1.5rem;
-			}
-		}
-	}
-
-	.right-container {
-		background-color: $main_darker;
-		padding: 2rem;
-		border-radius: 0 0.5rem 0.5rem 0.5rem;
+		background: linear-gradient(109deg, $hover_dark 0%, $main_darker 100%);
+		box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
+		padding: 4.5rem 2.5rem 2.5rem;
+		position: relative;
+		@include high-contrast-adjust;
 		@media #{$black-on-white} {
-			background: $dark;
-			color: $light;
-		}
-		@media #{$white-on-black} {
 			background: $light;
+			border: 0.1rem solid $dark;
 			color: $dark;
 		}
-		.title {
-			font-size: 2rem;
+		@media #{$white-on-black} {
+			background: $dark;
+			border: 0.1rem solid $light;
+			color: $light;
+		}
+		// @media #{$mediaquery_X46} {  // $mediaquery_X46 support 1:1 of screen 768px-992px
+		// 	padding-top: 3.5rem;
+		// }
+		@media #{$mediaquery_X48} {
+			padding-top: 3.5rem;
+		}
+
+		.left-container {
+			margin-top: -3rem;
+
+			@media #{$mediaquery_X48} {
+				margin-top: -2rem;
+			}
+		}
+
+		.side {
+			margin-left: -1rem;
+			margin-right: -0.1rem;
+			svg {
+				width: $largeSideWidth;
+				.side-a {
+					@media #{$black-on-white} {
+						fill: $dark;
+					}
+					@media #{$white-on-black} {
+						fill: $light;
+					}
+				}
+			}
+		}
+		// @media #{$mediaquery_X46} {
+		// 	.side {
+		// 		margin-left: 0;
+		// 		svg {
+		// 			width: 1.5rem;
+		// 		}
+		// 	}
+		// }
+		@media #{$mediaquery_X48} {
+			.side {
+				margin-left: 0;
+				svg {
+					width: 1.5rem;
+				}
+			}
+		}
+
+		.right-container {
+			background-color: $main_darker;
+			padding: 2rem;
+			border-radius: 0 0.5rem 0.5rem 0.5rem;
+			@media #{$black-on-white} {
+				background: $dark;
+				color: $light;
+			}
+			@media #{$white-on-black} {
+				background: $light;
+				color: $dark;
+			}
+			.title {
+				font-size: 2rem;
+			}
+		}
+
+		@media #{$mediaquery_X43} {
+			.follow-btn {
+				padding-left: calc(#{$largeCircleWidth + $largeSideWidth} + 1rem);
+			}
+		}
+
+		.security101-row {
+			width: 100%;
+		}
+
+		.desc {
+			font-size: 1.4rem;
+		}
+
+		.button {
+			max-width: 50%;
+		}
+
+		vtr-ui-button {
+			::ng-deep .vtr-ui-button {
+				.button-box .button {
+					width: 100%;
+				}
+			}
+		}
+
+		.offline-icon {
+			fa-icon {
+				font-size: 10rem;
+				::ng-deep svg {
+					color: $light;
+				}
+			}
 		}
 	}
-
-	@media #{$mediaquery_X43} {
-		.follow-btn {
-			padding-left: calc(#{$largeCircleWidth + $largeSideWidth} + 1rem);
-		}
-	}
-
-	.security101-row {
-		width: 100%;
-	}
-
-	.desc {
-		font-size: 1.4rem;
-	}
-
-	.button {
-		max-width: 50%;
-	}
-
-    vtr-ui-button {
-        ::ng-deep .vtr-ui-button {
-          .button-box .button {
-            width: 100%;
-          }
-        }
-	}
-
-    .offline-icon {
-      fa-icon {
-        font-size: 10rem;
-        ::ng-deep svg {
-          color: $light;
-        }
-      }
-    }
-  }
 }

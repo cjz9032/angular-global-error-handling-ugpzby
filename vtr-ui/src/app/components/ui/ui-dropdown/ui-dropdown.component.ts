@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	SimpleChanges,
+} from '@angular/core';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
 import { TranslateService } from '@ngx-translate/core';
@@ -37,16 +45,19 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 		private translate: TranslateService,
 		private logger: LoggerService,
 		private metrics: CommonMetricsService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.setDropDownValue();
 	}
 	ngOnChanges(changes: SimpleChanges) {
-		if (changes && changes.value && changes.value.previousValue !== changes.value.currentValue) {
+		if (
+			changes &&
+			changes.value &&
+			changes.value.previousValue !== changes.value.currentValue
+		) {
 			this.setDropDownValue();
 		}
-
 	}
 
 	// refactoring duplicate lines of code for interval
@@ -55,9 +66,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 		this.name = interval.name;
 		this.placeholder = interval.placeholder;
 		this.narratorLabel =
-			this.dropDownId.slice(5, this.dropDownId.length - 9) +
-			'-' +
-			interval.text;
+			this.dropDownId.slice(5, this.dropDownId.length - 9) + '-' + interval.text;
 	}
 
 	// refactoring duplicate lines of code for userdefined key
@@ -73,9 +82,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 	// checks for any previous selected value if any; if no value then calls 'setDropDropValue method
 	setDropDownValue() {
 		if (this.value !== undefined && this.list) {
-			const itemValue = this.list.find(
-				(item) => item.value === this.value
-			);
+			const itemValue = this.list.find((item) => item.value === this.value);
 			if (itemValue) {
 				if (this.dropdownType === 'oled-dimmer') {
 					this.settingDimmerIntervals(itemValue);
@@ -146,10 +153,7 @@ export class UiDropDownComponent implements OnInit, OnChanges {
 				this.selectionChange.emit(value);
 				return;
 			}
-			if (
-				this.dropdownType === 'userdefined-key' &&
-				value !== undefined
-			) {
+			if (this.dropdownType === 'userdefined-key' && value !== undefined) {
 				this.setUserDefinedKey(value);
 				this.selectionChange.emit(value);
 				return;

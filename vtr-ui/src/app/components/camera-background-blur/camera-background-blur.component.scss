@@ -1,24 +1,24 @@
-@import "../../app.theme.scss";
+@import '../../app.theme.scss';
 
 .vtr-camera-background-blur {
 	.img-preview {
-			// border: 0.1rem solid #ecf0f1;
-			height: 25.8rem;
-			object-fit: contain;
-			width: calc(100% - 1.3rem);
-			border-radius: 0.4rem;
-			margin-top: 1rem;
-			margin-left: 1.3rem;
-			img{
-				max-width: 100%;
-				height: 100%;
-				@media #{$white-on-black} {
-					@include white-border;
-				}
-				@media #{$black-on-white} {
-					@include black-border;
-				}
+		// border: 0.1rem solid #ecf0f1;
+		height: 25.8rem;
+		object-fit: contain;
+		width: calc(100% - 1.3rem);
+		border-radius: 0.4rem;
+		margin-top: 1rem;
+		margin-left: 1.3rem;
+		img {
+			max-width: 100%;
+			height: 100%;
+			@media #{$white-on-black} {
+				@include white-border;
 			}
+			@media #{$black-on-white} {
+				@include black-border;
+			}
+		}
 	}
 	.border-top {
 		margin-top: 1rem;

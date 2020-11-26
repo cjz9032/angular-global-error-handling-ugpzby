@@ -1,4 +1,4 @@
-@import "../../app.theme.scss";
+@import '../../app.theme.scss';
 
 .vtr-camera-control {
 	.camera-preview {
@@ -20,8 +20,8 @@
 			}
 		}
 		.feed {
-            @extend .base-preview;
-            transform: rotateY(180deg);
+			@extend .base-preview;
+			transform: rotateY(180deg);
 			background-color: $dark;
 			&.disable {
 				cursor: not-allowed;
@@ -51,7 +51,7 @@
 	.hidden {
 		display: none;
 	}
-	.slider-item-text{
+	.slider-item-text {
 		font-size: $fontsize_xs;
 		color: $shade_blue;
 		font-weight: $weight_bold;

@@ -1,15 +1,11 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .vtr-widget-location-status {
 	@include high-contrast-adjust;
 
 	.location-disable-background {
 		border-radius: 0.7rem 0.7rem 0 0;
-		background: linear-gradient(
-			$gradient_angle,
-			$main_darkest 0%,
-			$main_darker 100%
-		);
+		background: linear-gradient($gradient_angle, $main_darkest 0%, $main_darker 100%);
 		box-shadow: $drop_shadow;
 		padding: 2.4rem;
 		border-radius: 0.7rem;

@@ -8,9 +8,8 @@ describe('WidgetRecommendActionComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [WidgetRecommendActionComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetRecommendActionComponent],
+		}).compileComponents();
 	});
 
 	beforeEach(() => {

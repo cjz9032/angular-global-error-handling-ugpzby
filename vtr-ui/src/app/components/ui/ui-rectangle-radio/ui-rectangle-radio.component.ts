@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, AfterViewInit } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	AfterViewInit,
+} from '@angular/core';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
@@ -8,9 +16,11 @@ import { AppEvent } from './../../../enums/app-event.enum';
 @Component({
 	selector: 'vtr-ui-rectangle-radio',
 	templateUrl: './ui-rectangle-radio.component.html',
-	styleUrls: ['./ui-rectangle-radio.component.scss']
+	styleUrls: ['./ui-rectangle-radio.component.scss'],
 })
-export class UiRectangleRadioComponent extends UICustomRadio implements OnInit, AfterViewInit, OnChanges {
+export class UiRectangleRadioComponent
+	extends UICustomRadio
+	implements OnInit, AfterViewInit, OnChanges {
 	@Input() radioId: string;
 	@Input() tooltip: string;
 	@Input() disabled: boolean;
@@ -21,17 +31,18 @@ export class UiRectangleRadioComponent extends UICustomRadio implements OnInit, 
 	@Output() change: EventEmitter<any> = new EventEmitter();
 	hideIcon: boolean = false;
 
-	constructor(logger: LoggerService, metrics: MetricService) { super(logger, metrics); }
+	constructor(logger: LoggerService, metrics: MetricService) {
+		super(logger, metrics);
+	}
 
 	ngOnInit() {
-		super.ngOnInit();// Set up radio buttons first , last etc and if none selected,set tabindex to first element
+		super.ngOnInit(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	ngAfterViewInit(): void {
 		super.ngAfterViewInit(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 	ngOnChanges(changes: any) {
-
 		super.ngOnChanges(changes);
 	}
 	onChange(event) {

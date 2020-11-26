@@ -11,7 +11,7 @@ import { BacklightLevelEnum, BacklightStatusEnum } from '../backlight/backlight.
 @Component({
 	selector: 'vtr-backlight-thinkpad',
 	templateUrl: './backlight-thinkpad.component.html',
-	styleUrls: ['./backlight-thinkpad.component.scss']
+	styleUrls: ['./backlight-thinkpad.component.scss'],
 })
 export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	@Output() showHide = new EventEmitter<boolean>();
@@ -22,22 +22,22 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	autoObject = {
 		title: 'device.deviceSettings.inputAccessories.backlight.level.auto',
 		value: BacklightStatusEnum.AUTO,
-		order: 1
+		order: 1,
 	};
 	lowObject = {
 		title: 'device.deviceSettings.inputAccessories.backlight.level.low',
 		value: BacklightStatusEnum.LEVEL_1,
-		order: 2
+		order: 2,
 	};
 	highObject = {
 		title: 'device.deviceSettings.inputAccessories.backlight.level.high',
 		value: BacklightStatusEnum.LEVEL_2,
-		order: 3
+		order: 3,
 	};
 	offObject = {
 		title: 'device.deviceSettings.inputAccessories.backlight.level.off',
 		value: BacklightStatusEnum.OFF,
-		order: 4
+		order: 4,
 	};
 	modes = [];
 	isAutoKBDEnable = false;
@@ -49,7 +49,8 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		private keyboardService: InputAccessoriesService,
 		private logger: LoggerService,
 		private commonService: CommonService,
-		private localCacheService: LocalCacheService) {
+		private localCacheService: LocalCacheService
+	) {
 		this.getKBDBacklightCapability();
 	}
 
@@ -62,7 +63,10 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	}
 
 	private initDataFromCache() {
-		this.cacheData =  this.localCacheService.getLocalCacheValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+		this.cacheData = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.KBDBacklightThinkPadCapability,
+			this.cacheData
+		);
 		this.modes = this.cacheData.modes;
 		this.currentMode = this.cacheData.currentMode;
 		this.isAutoKBDEnable = this.cacheData.isAutoKBDEnable;
@@ -70,7 +74,10 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	}
 
 	private saveCache(): void {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.KBDBacklightThinkPadCapability,
+			this.cacheData
+		);
 	}
 
 	// public async updateMode(mode) {
@@ -89,9 +96,13 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	public getKBDBacklightCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.getKBDBacklightCapability()
-					.then(async res => {
-						this.logger.info('BacklightThinkpadComponent:GetKBDBacklightCapability', res);
+				this.keyboardService
+					.getKBDBacklightCapability()
+					.then(async (res) => {
+						this.logger.info(
+							'BacklightThinkpadComponent:GetKBDBacklightCapability',
+							res
+						);
 						const autoCapability = await this.getAutoKBDBacklightCapability();
 						if (autoCapability) {
 							this.modes = [];
@@ -108,29 +119,35 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 							this.removeObjByValue(BacklightStatusEnum.LEVEL_2);
 							this.removeObjByValue(BacklightStatusEnum.OFF);
 							this.showHide.emit(false);
-
 						}
-					}).catch(error => {
-						this.logger.error('BacklightThinkpadComponent:GetKBDBacklightCapability', error.message);
+					})
+					.catch((error) => {
+						this.logger.error(
+							'BacklightThinkpadComponent:GetKBDBacklightCapability',
+							error.message
+						);
 						this.showHide.emit(false);
 
 						return EMPTY;
 					});
 			}
 		} catch (error) {
-			this.logger.error('BacklightThinkpadComponent:GetKBDBacklightCapability', error.message);
+			this.logger.error(
+				'BacklightThinkpadComponent:GetKBDBacklightCapability',
+				error.message
+			);
 			return EMPTY;
 		}
 	}
 
 	public removeObjByValue(value: string) {
-		this.modes = this.modes.filter(e => e.value !== value);
+		this.modes = this.modes.filter((e) => e.value !== value);
 		this.cacheData.modes = this.modes;
 		this.saveCache();
 	}
 
 	public isBaseAuto(array: any[], value: string) {
-		const element = array.find(e => e.value === value);
+		const element = array.find((e) => e.value === value);
 		if (element) {
 			this.baseAuto = 'auto';
 		} else {
@@ -139,7 +156,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	}
 
 	addToObjectsList(obj: any) {
-		const isPresent = this.modes.find(e => e.value === obj.value);
+		const isPresent = this.modes.find((e) => e.value === obj.value);
 		if (!isPresent) {
 			this.modes.push(obj);
 			this.modes = this.commonService.sortMenuItems(this.modes);
@@ -167,7 +184,10 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 				// });
 			}
 		} catch (error) {
-			this.logger.error('BacklightThinkpadComponent:getAutoKBDBacklightCapability', error.message);
+			this.logger.error(
+				'BacklightThinkpadComponent:getAutoKBDBacklightCapability',
+				error.message
+			);
 			return EMPTY;
 		}
 	}
@@ -175,16 +195,21 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	public getAutoKBDStatus() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.getAutoKBDStatus()
-					.then(res => {
+				this.keyboardService
+					.getAutoKBDStatus()
+					.then((res) => {
 						this.logger.info('BacklightThinkpadComponent:getAutoKBDStatus', res);
 						if (res) {
 							this.currentMode = BacklightStatusEnum.AUTO;
 							this.cacheData.currentMode = this.currentMode;
 							this.saveCache();
 						}
-					}).catch(error => {
-						this.logger.error('BacklightThinkpadComponent:GetAutoKBDStatus', error.message);
+					})
+					.catch((error) => {
+						this.logger.error(
+							'BacklightThinkpadComponent:GetAutoKBDStatus',
+							error.message
+						);
 						return EMPTY;
 					});
 			}
@@ -197,17 +222,25 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	public getKBDBacklightStatus() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.getKBDBacklightStatus()
-					.then(res => {
+				this.keyboardService
+					.getKBDBacklightStatus()
+					.then((res) => {
 						this.logger.info('BacklightThinkpadComponent:getKBDBacklightStatus', res);
-						if (res !== BacklightStatusEnum.AUTO && this.currentMode !== BacklightStatusEnum.AUTO) {
+						if (
+							res !== BacklightStatusEnum.AUTO &&
+							this.currentMode !== BacklightStatusEnum.AUTO
+						) {
 							this.currentMode = this.compare(res);
 							this.cacheData.currentMode = this.currentMode;
 							this.saveCache();
 							this.updateBacklightSelection();
 						}
-					}).catch(error => {
-						this.logger.error('BacklightThinkpadComponent:GetKBDBacklightStatus', error.message);
+					})
+					.catch((error) => {
+						this.logger.error(
+							'BacklightThinkpadComponent:GetKBDBacklightStatus',
+							error.message
+						);
 						return EMPTY;
 					});
 			}
@@ -220,8 +253,9 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	public getKBDBacklightLevel() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
-				this.keyboardService.getKBDBacklightLevel()
-					.then(res => {
+				this.keyboardService
+					.getKBDBacklightLevel()
+					.then((res) => {
 						this.logger.info('BacklightThinkpadComponent:getKBDBacklightLevel', res);
 						switch (res) {
 							case BacklightLevelEnum.TWO_LEVELS:
@@ -244,8 +278,12 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 								break;
 						}
 						this.updateBacklightModel(this.modes);
-					}).catch(error => {
-						this.logger.error('BacklightThinkpadComponent:GetKBDBacklightLevel', error.message);
+					})
+					.catch((error) => {
+						this.logger.error(
+							'BacklightThinkpadComponent:GetKBDBacklightLevel',
+							error.message
+						);
 						return EMPTY;
 					});
 			}
@@ -268,11 +306,19 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 				this.isAutoKBDEnable = true;
 				this.cacheData.isAutoKBDEnable = this.isAutoKBDEnable;
 			}
-			this.keyboardService.setAutomaticKBDBacklight(level)
+			this.keyboardService
+				.setAutomaticKBDBacklight(level)
 				.then((value: boolean) => {
-					this.logger.info('BacklightThinkpadComponent:setAutomaticKBDBacklight.then', value);
-				}).catch(error => {
-					this.logger.error('BacklightThinkpadComponent:setAutomaticKBDBacklight', error.message);
+					this.logger.info(
+						'BacklightThinkpadComponent:setAutomaticKBDBacklight.then',
+						value
+					);
+				})
+				.catch((error) => {
+					this.logger.error(
+						'BacklightThinkpadComponent:setAutomaticKBDBacklight',
+						error.message
+					);
 					return EMPTY;
 				});
 		}
@@ -300,7 +346,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 	updateBacklightModel(response: any[]) {
 		if (response && response.length > 0) {
 			this.kbBacklightUIModel = [];
-			response.forEach(mode => {
+			response.forEach((mode) => {
 				const value = mode.value.toLocaleLowerCase();
 				this.kbBacklightUIModel.push({
 					componentId: `backlightMode${value}`.replace(/\s/g, ''),
@@ -312,7 +358,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 					customIcon: mode.value,
 					hideIcon: true,
 					processLabel: true,
-					metricsItem: `radio.kb-backlight.${value}`
+					metricsItem: `radio.kb-backlight.${value}`,
 				});
 			});
 		}
@@ -320,7 +366,7 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 
 	updateBacklightSelection() {
 		if (this.kbBacklightUIModel && this.kbBacklightUIModel.length > 0) {
-			this.kbBacklightUIModel.forEach(element => {
+			this.kbBacklightUIModel.forEach((element) => {
 				if (element.value === this.currentMode) {
 					element.isChecked = true;
 				} else {
@@ -329,7 +375,6 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 			});
 		}
 	}
-
 
 	onBacklightRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		this.currentMode = $event.value as BacklightStatusEnum;

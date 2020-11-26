@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren, OnDestroy } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	Input,
+	OnInit,
+	Output,
+	QueryList,
+	ViewChildren,
+	OnDestroy,
+} from '@angular/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
@@ -14,10 +23,9 @@ import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 @Component({
 	selector: 'vtr-battery-charge-threshold-settings',
 	templateUrl: './battery-charge-threshold-settings.component.html',
-	styleUrls: ['./battery-charge-threshold-settings.component.scss']
+	styleUrls: ['./battery-charge-threshold-settings.component.scss'],
 })
 export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestroy {
-
 	@Input() title = '';
 	@Input() displayNoteOnly = false;
 	@Input() showBCTWarningNote: boolean;
@@ -35,8 +43,12 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 	option = 'option';
 	selected = 'selected';
 	off = 'off';
-	ddStartAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.start');
-	ddStopAtChargeDescription = this.translate.instant('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop');
+	ddStartAtChargeDescription = this.translate.instant(
+		'device.deviceSettings.power.batterySettings.batteryThreshold.options.start'
+	);
+	ddStopAtChargeDescription = this.translate.instant(
+		'device.deviceSettings.power.batterySettings.batteryThreshold.options.stop'
+	);
 
 	// Random number is used to have unique id of each input field
 	randomNumber: number = Math.floor(new Date().valueOf() * SecureMath.random());
@@ -59,17 +71,20 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 		private commonService: CommonService,
 		private translate: TranslateService,
 		private metrics: CommonMetricsService
-	) { }
-
+	) {}
 
 	ngOnInit() {
-		this.translateSubscriptionStart = this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start').subscribe((value) => {
-			this.ddStartAtChargeDescription = value;
-		});
+		this.translateSubscriptionStart = this.translate
+			.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.start')
+			.subscribe((value) => {
+				this.ddStartAtChargeDescription = value;
+			});
 
-		this.translateSubscriptionStop = this.translate.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop').subscribe((value) => {
-			this.ddStopAtChargeDescription = value;
-		});
+		this.translateSubscriptionStop = this.translate
+			.stream('device.deviceSettings.power.batterySettings.batteryThreshold.options.stop')
+			.subscribe((value) => {
+				this.ddStopAtChargeDescription = value;
+			});
 	}
 
 	onStartValueChange(startVal: number, activeDropdown: NgbDropdown, button: HTMLElement) {
@@ -79,7 +94,11 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 			this.changeBCTInfo.emit(bctInfo);
 		}
 		this.delayButtonFocus(activeDropdown, button);
-		this.metrics.sendMetrics(`${startVal}%`, `${this.textId}-start-option`, CommonMetricsModel.ParentDeviceSettings);
+		this.metrics.sendMetrics(
+			`${startVal}%`,
+			`${this.textId}-start-option`,
+			CommonMetricsModel.ParentDeviceSettings
+		);
 	}
 	// this added to introduce the delay between option selection , and focus back on button to fix issue with narrator reading collapsed twice.
 	delayButtonFocus(activeDropdown: NgbDropdown, button: HTMLElement) {
@@ -102,7 +121,11 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 			this.changeBCTInfo.emit(bctInfo);
 		}
 		this.delayButtonFocus(activeDropdown, button);
-		this.metrics.sendMetrics(`${stopVal}%`, `${this.textId}-stop-option`, CommonMetricsModel.ParentDeviceSettings);
+		this.metrics.sendMetrics(
+			`${stopVal}%`,
+			`${this.textId}-stop-option`,
+			CommonMetricsModel.ParentDeviceSettings
+		);
 	}
 
 	public toggleAutoChargeSettings($event: boolean) {
@@ -114,10 +137,9 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 		this.autoChecked.emit(bctInfo);
 	}
 
-
 	closeAllDD() {
 		// Close all dropdowns
-		this.dropDowns.toArray().forEach(elem => {
+		this.dropDowns.toArray().forEach((elem) => {
 			elem.close();
 		});
 		// Open the dropdown that was clicked on
@@ -127,7 +149,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 	closeAllOtherDD(activeDropdown: NgbDropdown) {
 		// Close all dropdowns
 		// this.activeDropdown = activeDropdown;
-		this.dropDowns.toArray().forEach(elem => {
+		this.dropDowns.toArray().forEach((elem) => {
 			if (activeDropdown !== elem) {
 				elem.close();
 			}
@@ -138,7 +160,11 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 		if (($event.shiftKey && $event.keyCode === 9) || $event.keyCode === 9) {
 			const sourceElement = $event.srcElement as HTMLAnchorElement;
 			const menuElement = sourceElement.parentElement.parentElement;
-			const anchors = Array.from(menuElement.querySelectorAll('[class*=dropdown-item][aria-disabled=false][tabindex]:not([tabindex="-1"])'));
+			const anchors = Array.from(
+				menuElement.querySelectorAll(
+					'[class*=dropdown-item][aria-disabled=false][tabindex]:not([tabindex="-1"])'
+				)
+			);
 			const currentIndex = anchors.indexOf(sourceElement);
 			let nextIndex;
 
@@ -158,9 +184,7 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 				}
 			}
 		}
-
 	}
-
 
 	ddItemKeyEscHandler($event, activeDropdown: NgbDropdown, toggle: HTMLElement) {
 		$event.preventDefault();
@@ -187,12 +211,13 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 	focusOnSelected($event: Event, activeDropdown: NgbDropdown, type, value) {
 		// dropdown-toggle will be toggled when pressed on enter
 		if (activeDropdown.isOpen()) {
-			const focusElement = document.querySelector(`#${this.textId}-${type}-${value}`) as HTMLElement;
+			const focusElement = document.querySelector(
+				`#${this.textId}-${type}-${value}`
+			) as HTMLElement;
 			if (focusElement) {
 				focusElement.focus();
 			}
 		}
-
 	}
 
 	ngOnDestroy() {
@@ -203,5 +228,4 @@ export class BatteryChargeThresholdSettingsComponent implements OnInit, OnDestro
 			this.translateSubscriptionStop.unsubscribe();
 		}
 	}
-
 }

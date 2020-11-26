@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .multi-state-toggle {
 	display: flex;
@@ -16,7 +16,7 @@
 	border: solid 0.2rem transparent;
 	padding: 0.2rem;
 	&::after {
-		content: " ";
+		content: ' ';
 		position: absolute;
 		border-radius: 5rem;
 		top: 0rem;
@@ -28,7 +28,7 @@
 		z-index: -1;
 	}
 	&::before {
-		content: " ";
+		content: ' ';
 		position: absolute;
 		border-radius: 5rem;
 		top: 0rem;
@@ -182,17 +182,17 @@
 		}
 	}
 }
-::ng-deep body.focus-enable{
+::ng-deep body.focus-enable {
 	.is-gaming {
-		.multi-state-toggle{
-			.inner-toggle{
-					input:checked:focus+label{
-						@include outline-blue-gaming;
-						@media #{$high-contrast} {
-							@include solid-button-outline(highlight);
-						}
+		.multi-state-toggle {
+			.inner-toggle {
+				input:checked:focus + label {
+					@include outline-blue-gaming;
+					@media #{$high-contrast} {
+						@include solid-button-outline(highlight);
 					}
 				}
+			}
 		}
 	}
 }

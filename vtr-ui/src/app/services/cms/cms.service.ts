@@ -18,7 +18,7 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 const httpOptions = {
 	headers: new HttpHeaders({
 		'Content-Type': 'application/json',
-	})
+	}),
 };
 
 interface RequestParam {
@@ -31,14 +31,21 @@ interface RequestParam {
 }
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class CMSService implements OnDestroy {
 	language: string;
 	region: string;
 	segment: string; // VAN-5872, server switch feature
 	localInfo: any;
-	defaultInfo = { Lang: 'en', GEO: 'us', OEM: 'Lenovo', OS: 'Windows', Segment: 'Consumer', Brand: 'Lenovo' };
+	defaultInfo = {
+		Lang: 'en',
+		GEO: 'us',
+		OEM: 'Lenovo',
+		OS: 'Windows',
+		Segment: 'Consumer',
+		Brand: 'Lenovo',
+	};
 	fetchRequestMap = {};
 	commonNotificationSubscription: Subscription;
 
@@ -51,9 +58,12 @@ export class CMSService implements OnDestroy {
 		private logger: LoggerService,
 		private sanitizer: DomSanitizer
 	) {
-		localInfoService.getLocalInfo().then(result => {
-			this.localInfo = result;
-		}).catch(e => { });
+		localInfoService
+			.getLocalInfo()
+			.then((result) => {
+				this.localInfo = result;
+			})
+			.catch((e) => {});
 	}
 
 	async deviceFilter(filters) {
@@ -63,7 +73,7 @@ export class CMSService implements OnDestroy {
 
 		try {
 			return await this.vantageShellService.deviceFilter(filters);
-		} catch  {
+		} catch {
 			return false;
 		}
 	}
@@ -71,9 +81,9 @@ export class CMSService implements OnDestroy {
 	private getDateTime(date: any): number {
 		try {
 			if (date && typeof date === 'string') {
-				return new Date(date.replace(/\./g, '\/')).getTime();
+				return new Date(date.replace(/\./g, '/')).getTime();
 			}
-		} catch (e) { }
+		} catch (e) {}
 		return -1;
 	}
 
@@ -82,24 +92,26 @@ export class CMSService implements OnDestroy {
 	private updateServerSwitchCMSOptions(defaults, queryParams) {
 		const cmsOption = Object.assign(defaults, queryParams);
 		try {
-			const serverSwitchLocalData = this.localCacheService.getLocalCacheValue(LocalStorageKey.ServerSwitchKey);
+			const serverSwitchLocalData = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.ServerSwitchKey
+			);
 			if (serverSwitchLocalData) {
-
 				const langMap = {
-					'sr-latn': 'sr'
+					'sr-latn': 'sr',
 				};
 				if (langMap[serverSwitchLocalData.language.Value]) {
-					serverSwitchLocalData.language.Value = langMap[serverSwitchLocalData.language.Value];
+					serverSwitchLocalData.language.Value =
+						langMap[serverSwitchLocalData.language.Value];
 				}
 
 				this.commsService.setServerSwitchLocalData(serverSwitchLocalData);
 				if (serverSwitchLocalData.forceit) {
 					Object.assign(cmsOption, {
-						Lang: (serverSwitchLocalData.language.Value).toLowerCase(),
-						GEO: (serverSwitchLocalData.country.Value).toLowerCase(),
+						Lang: serverSwitchLocalData.language.Value.toLowerCase(),
+						GEO: serverSwitchLocalData.country.Value.toLowerCase(),
 						Segment: serverSwitchLocalData.segment,
 						OEM: serverSwitchLocalData.oem,
-						Brand: serverSwitchLocalData.brand
+						Brand: serverSwitchLocalData.brand,
 					});
 				}
 			}
@@ -108,7 +120,6 @@ export class CMSService implements OnDestroy {
 			return undefined;
 		}
 		return cmsOption;
-
 	}
 
 	private async filterCMSContent(contents) {
@@ -143,48 +154,63 @@ export class CMSService implements OnDestroy {
 		return a.Priority.localeCompare(b.Priority);
 	}
 
-	public getOneCMSContent(results, template, position, dataSource = ContentSource.CMS): FeatureContent[] {
-		return results.filter((record) => {
-			return (
-				record.Template === template &&
-				record.Position === position &&
-				(
-					!record.DisplayStartDate ||
-					this.getDateTime(record.DisplayStartDate) <= new Date().getTime()
-				)
-			);
-		}).filter(record => {
-			try {
-				record.Title = this.sanitizer.sanitize(SecurityContext.HTML, record.Title);
-				record.Description = this.sanitizer.sanitize(SecurityContext.HTML, record.Description);
-				record.DataSource = dataSource;
-			} catch (ex) {
-				this.logger.error('CMSService.sanitize error:', ex.message);
-				return false;
-			}
-			return true;
-		}).sort(this.sortCmsContent.bind(this));
+	public getOneCMSContent(
+		results,
+		template,
+		position,
+		dataSource = ContentSource.CMS
+	): FeatureContent[] {
+		return results
+			.filter((record) => {
+				return (
+					record.Template === template &&
+					record.Position === position &&
+					(!record.DisplayStartDate ||
+						this.getDateTime(record.DisplayStartDate) <= new Date().getTime())
+				);
+			})
+			.filter((record) => {
+				try {
+					record.Title = this.sanitizer.sanitize(SecurityContext.HTML, record.Title);
+					record.Description = this.sanitizer.sanitize(
+						SecurityContext.HTML,
+						record.Description
+					);
+					record.DataSource = dataSource;
+				} catch (ex) {
+					this.logger.error('CMSService.sanitize error:', ex.message);
+					return false;
+				}
+				return true;
+			})
+			.sort(this.sortCmsContent.bind(this));
 	}
 
 	public fetchCMSContent(queryParams) {
-		return new Observable(subscriber => {
+		return new Observable((subscriber) => {
 			if (this.commonService.isOnline) {
-				this.getCMSContent(queryParams).then(response => {
-					subscriber.next(response);
-				}).catch(ex => {
-					subscriber.error(ex);
-				});
+				this.getCMSContent(queryParams)
+					.then((response) => {
+						subscriber.next(response);
+					})
+					.catch((ex) => {
+						subscriber.error(ex);
+					});
 			} else {
 				if (!this.commonNotificationSubscription) {
-					this.commonNotificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-						if (notification && notification.type === NetworkStatus.Online) {
-							this.getCMSContent(queryParams).then(response => {
-								subscriber.next(response);
-							}).catch(ex => {
-								subscriber.error(ex);
-							});
+					this.commonNotificationSubscription = this.commonService.notification.subscribe(
+						(notification: AppNotification) => {
+							if (notification && notification.type === NetworkStatus.Online) {
+								this.getCMSContent(queryParams)
+									.then((response) => {
+										subscriber.next(response);
+									})
+									.catch((ex) => {
+										subscriber.error(ex);
+									});
+							}
 						}
-					});
+					);
 				}
 			}
 		});
@@ -198,7 +224,7 @@ export class CMSService implements OnDestroy {
 			OEM: locInfo.OEM,
 			OS: locInfo.OS,
 			Segment: locInfo.Segment,
-			Brand: locInfo.Brand
+			Brand: locInfo.Brand,
 		};
 		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 
@@ -209,12 +235,12 @@ export class CMSService implements OnDestroy {
 				api: '/api/v1/features',
 				apiParam: null,
 				observableMsg: null,
-				applyDeviceFilter: true
+				applyDeviceFilter: true,
 			});
 		}
 
 		try {
-			return await this.fetchRequestMap[requestKey];	// intercept duplicate request
+			return await this.fetchRequestMap[requestKey]; // intercept duplicate request
 		} finally {
 			this.fetchRequestMap[requestKey] = null;
 		}
@@ -228,7 +254,7 @@ export class CMSService implements OnDestroy {
 			OEM: locInfo.OEM,
 			OS: locInfo.OS,
 			Segment: locInfo.Segment,
-			Brand: locInfo.Brand
+			Brand: locInfo.Brand,
 		};
 		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 		return this.postRequest({
@@ -236,7 +262,7 @@ export class CMSService implements OnDestroy {
 			api: '/api/v1/articlecategories',
 			apiParam: null,
 			observableMsg: 'fetchCMSArticleCategories error',
-			applyDeviceFilter: true
+			applyDeviceFilter: true,
 		});
 	}
 
@@ -248,7 +274,7 @@ export class CMSService implements OnDestroy {
 			OEM: locInfo.OEM,
 			OS: locInfo.OS,
 			Segment: locInfo.Segment,
-			Brand: locInfo.Brand
+			Brand: locInfo.Brand,
 		};
 		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 		return this.postRequest({
@@ -256,14 +282,14 @@ export class CMSService implements OnDestroy {
 			api: '/api/v1/articles',
 			apiParam: null,
 			observableMsg: 'fetchCMSArticles error',
-			applyDeviceFilter: true
+			applyDeviceFilter: true,
 		});
 	}
 
 	public async fetchCMSArticle(articleId, queryParams?) {
 		const locInfo = await this.getLocalinfo();
 		const defaults = {
-			Lang: locInfo.Lang
+			Lang: locInfo.Lang,
 		};
 		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 		return this.postRequest({
@@ -272,16 +298,15 @@ export class CMSService implements OnDestroy {
 			apiParam: articleId,
 			observableMsg: null,
 			applyDeviceFilter: false,
-			responseOrigin: true
+			responseOrigin: true,
 		});
-
 	}
 
 	public async fetchCMSEntitledAppList(queryParams) {
 		const locInfo = await this.getLocalinfo();
 		const defaults = {
 			Lang: locInfo.Lang,
-			GEO: locInfo.GEO
+			GEO: locInfo.GEO,
 		};
 		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 		return this.postRequest({
@@ -289,14 +314,14 @@ export class CMSService implements OnDestroy {
 			api: '/api/v1/entitledapps',
 			apiParam: null,
 			observableMsg: 'fetchCMSEntitledAppList error',
-			applyDeviceFilter: false
+			applyDeviceFilter: false,
 		});
 	}
 
 	public async fetchCMSAppDetails(appId, queryParams) {
 		const locInfo = await this.getLocalinfo();
 		const defaults = {
-			Lang: locInfo.Lang
+			Lang: locInfo.Lang,
 		};
 		const cmsOption = this.updateServerSwitchCMSOptions(defaults, queryParams);
 		return this.postRequest({
@@ -304,7 +329,7 @@ export class CMSService implements OnDestroy {
 			api: '/api/v1/apps/',
 			apiParam: appId,
 			observableMsg: 'fetchCMSAppDetails error',
-			applyDeviceFilter: false
+			applyDeviceFilter: false,
 		});
 	}
 
@@ -314,17 +339,19 @@ export class CMSService implements OnDestroy {
 			api,
 			apiParam,
 			observableMsg,
-			applyDeviceFilter, responseOrigin } = param;
+			applyDeviceFilter,
+			responseOrigin,
+		} = param;
 
 		let results;
 		try {
-
 			const composeApi = apiParam ? api + apiParam : api;
-			const response: any = await this.commsService.endpointGetCall(composeApi, cmsOption, {}).toPromise();
+			const response: any = await this.commsService
+				.endpointGetCall(composeApi, cmsOption, {})
+				.toPromise();
 
 			if (applyDeviceFilter) {
 				results = await this.filterCMSContent(response.Results);
-
 			} else {
 				results = responseOrigin ? response : response.Results;
 			}
@@ -333,12 +360,12 @@ export class CMSService implements OnDestroy {
 			if (observableMsg) {
 				throwError(new Error(observableMsg));
 			} else {
-				throw (ex);
+				throw ex;
 			}
 		}
 	}
 
-	public async generateContentQueryParams(queryParams) {		
+	public async generateContentQueryParams(queryParams) {
 		const locInfo = await this.getLocalinfo();
 		const defaults = {
 			Lang: locInfo.Lang,
@@ -346,7 +373,7 @@ export class CMSService implements OnDestroy {
 			OEM: locInfo.OEM,
 			OS: locInfo.OS,
 			Segment: locInfo.Segment,
-			Brand: locInfo.Brand
+			Brand: locInfo.Brand,
 		};
 		return this.updateServerSwitchCMSOptions(defaults, queryParams);
 	}
@@ -359,7 +386,7 @@ export class CMSService implements OnDestroy {
 				api: '/api/v1/features',
 				apiParam: null,
 				observableMsg: null,
-				applyDeviceFilter: true
+				applyDeviceFilter: true,
 			});
 		}
 

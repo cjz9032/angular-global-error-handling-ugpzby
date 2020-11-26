@@ -4,29 +4,20 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
 	selector: 'vtr-modal-apps-for-you-screenshot',
 	templateUrl: './modal-apps-for-you-screenshot.component.html',
-	styleUrls: ['./modal-apps-for-you-screenshot.component.scss']
+	styleUrls: ['./modal-apps-for-you-screenshot.component.scss'],
 })
 export class ModalAppsForYouScreenshotComponent implements OnInit, OnDestroy, AfterViewInit {
-
 	@Input() image: string;
 
 	public metricsParent = 'AppsForYou';
 
-	constructor(
-		public activeModal: NgbActiveModal,
-	) { }
+	constructor(public activeModal: NgbActiveModal) {}
 
-	ngOnInit() {
+	ngOnInit() {}
 
-	}
+	ngAfterViewInit() {}
 
-	ngAfterViewInit() {
-
-	}
-
-	ngOnDestroy() {
-
-	}
+	ngOnDestroy() {}
 
 	closeModal() {
 		this.activeModal.close('close');

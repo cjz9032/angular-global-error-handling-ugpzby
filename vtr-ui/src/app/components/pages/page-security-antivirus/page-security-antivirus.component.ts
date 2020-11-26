@@ -23,7 +23,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-page-security-antivirus',
 	templateUrl: './page-security-antivirus.component.html',
-	styleUrls: ['./page-security-antivirus.component.scss']
+	styleUrls: ['./page-security-antivirus.component.scss'],
 })
 export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	backarrow = '< ';
@@ -65,18 +65,34 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		public metricsTranslateService: MetricsTranslateService,
 		public hypSettings: HypothesisService,
 		private antivirusService: AntivirusService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
 		this.antiVirus = this.securityAdvisor.antivirus;
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-		this.common = new AntivirusCommon(this.antiVirus, this.isOnline, this.localInfoService, this.localCacheService, this.translate, this.metrics, this.metricsTranslateService, this.hypSettings);
-		this.viewModel = new AntiVirusViewModel(this.antiVirus, this.localCacheService, this.translate, this.antivirusService);
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
+		this.common = new AntivirusCommon(
+			this.antiVirus,
+			this.isOnline,
+			this.localInfoService,
+			this.localCacheService,
+			this.translate,
+			this.metrics,
+			this.metricsTranslateService,
+			this.hypSettings
+		);
+		this.viewModel = new AntiVirusViewModel(
+			this.antiVirus,
+			this.localCacheService,
+			this.translate,
+			this.antivirusService
+		);
 
 		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.antiVirus.refresh();
@@ -95,43 +111,54 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	fetchCMSArticles() {
 		const queryOptions = {
 			Page: 'anti-virus',
-			Template: 'inner-page-right-side-article-image-background'
+			Template: 'inner-page-right-side-article-image-background',
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(
+					response,
+					'inner-page-right-side-article-image-background',
+					'position-A'
+				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
-						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split(
+							'|'
+						)[0];
 					}
 					this.mcafeeArticleId = this.cardContentPositionA.ActionLink;
 					this.cmsService.fetchCMSArticle(this.mcafeeArticleId).then((r: any) => {
 						if (r && r.Results && r.Results.Category) {
-							this.mcafeeArticleCategory = r.Results.Category.map((category: any) => category.Title).join(' ');
+							this.mcafeeArticleCategory = r.Results.Category.map(
+								(category: any) => category.Title
+							).join(' ');
 						}
 					});
 				}
 			},
-			error => {}
+			(error) => {}
 		);
 	}
 
 	openArticle() {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'Article-Detail-Modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
+		const articleDetailModal: NgbModalRef = this.modalService.open(
+			ModalArticleDetailComponent,
+			{
+				backdrop: true,
+				size: 'lg',
+				centered: true,
+				windowClass: 'Article-Detail-Modal',
+				keyboard: false,
+				beforeDismiss: () => {
+					if (articleDetailModal.componentInstance.onBeforeDismiss) {
+						articleDetailModal.componentInstance.onBeforeDismiss();
+					}
+					return true;
+				},
 			}
-		});
+		);
 
 		articleDetailModal.componentInstance.articleId = this.mcafeeArticleId;
 	}
@@ -156,11 +183,13 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 	refreshPage(id: string) {
 		clearTimeout(this.refreshTimeout);
 		this.refreshTimeout = setTimeout(() => {
-			if (id === 'sa-av-button-launch-mcafee' || (id.startsWith('sa-av') && id.endsWith('subscribe')) ) {
+			if (
+				id === 'sa-av-button-launch-mcafee' ||
+				(id.startsWith('sa-av') && id.endsWith('subscribe'))
+			) {
 				return;
 			}
 			this.antiVirus.refresh();
-		}, 100)
+		}, 100);
 	}
-
 }

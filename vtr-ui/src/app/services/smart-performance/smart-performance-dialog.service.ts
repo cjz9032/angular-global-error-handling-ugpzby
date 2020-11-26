@@ -5,7 +5,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SmartPerformanceService } from './smart-performance.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class SmartPerformanceDialogService {
 	getSmartPerformance: any;
@@ -18,19 +18,17 @@ export class SmartPerformanceDialogService {
 	scheduleScanObj = null;
 	nextScheduleScan: any;
 
-
 	constructor(
 		private smartPerformanceService: SmartPerformanceService,
-		private modalService: NgbModal,
-		) {
-	}
+		private modalService: NgbModal
+	) {}
 
 	async openSubscribeModal() {
 		const modalRef = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'subscribe-modal'
+			windowClass: 'subscribe-modal',
 		});
 
 		const res = await modalRef.result;
@@ -38,5 +36,4 @@ export class SmartPerformanceDialogService {
 			this.smartPerformanceService.scanningStopped.next();
 		}
 	}
-
 }

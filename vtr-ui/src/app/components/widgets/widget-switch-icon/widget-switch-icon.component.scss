@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .vtr-widget-switch-icon {
 	display: inline-block;
@@ -26,7 +26,7 @@
 			outline: 0;
 			box-shadow: none;
 			&:after {
-				content: "";
+				content: '';
 				display: block;
 				position: absolute;
 				left: -0.4rem;
@@ -163,7 +163,11 @@
 			}
 
 			.icon-container {
-				background: linear-gradient($gradient_angle_reverse, $shade_lighter 0%, $light 100%);
+				background: linear-gradient(
+					$gradient_angle_reverse,
+					$shade_lighter 0%,
+					$light 100%
+				);
 				color: $shade_darker;
 				@media #{$white-on-black} {
 					@include high-contrast-background-transparent;

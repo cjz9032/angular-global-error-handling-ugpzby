@@ -8,9 +8,8 @@ xdescribe('WidgetHardwareScanStatusComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetHardwareScanStatusComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetHardwareScanStatusComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

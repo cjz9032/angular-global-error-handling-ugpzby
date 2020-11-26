@@ -8,9 +8,8 @@ xdescribe('WidgetSupportComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetSupportComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetSupportComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

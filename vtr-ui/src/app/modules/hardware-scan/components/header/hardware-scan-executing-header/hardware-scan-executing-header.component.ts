@@ -3,9 +3,9 @@ import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'vtr-hardware-scan-executing-header',
-  templateUrl: './hardware-scan-executing-header.component.html',
-  styleUrls: ['./hardware-scan-executing-header.component.scss']
+	selector: 'vtr-hardware-scan-executing-header',
+	templateUrl: './hardware-scan-executing-header.component.html',
+	styleUrls: ['./hardware-scan-executing-header.component.scss'],
 })
 export class HardwareScanExecutingHeaderComponent implements OnInit {
 	// Inputs
@@ -30,9 +30,9 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 	constructor(
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService
-	) { }
+	) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	onCancel() {
 		this.checkCancel.emit();
@@ -47,8 +47,12 @@ export class HardwareScanExecutingHeaderComponent implements OnInit {
 				// Besides, if the translation is not found (e.g. an old plugin is being used), returns the module,
 				// mimicking the 'TranslateDefaultValueIfNotFoundPipe' behavior, as it could not be used here, once it neither
 				// supports translation on .ts files nor translation with parameters.
-				this.translate.get('hardwareScan.pluginTokens.' + module)
-					.subscribe(translatedValue => this.lastExecutedModule = translatedValue ? translatedValue : module);
+				this.translate
+					.get('hardwareScan.pluginTokens.' + module)
+					.subscribe(
+						(translatedValue) =>
+							(this.lastExecutedModule = translatedValue ? translatedValue : module)
+					);
 			}
 			return this.lastExecutedModule;
 		}

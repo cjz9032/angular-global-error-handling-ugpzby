@@ -1,13 +1,12 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {IconProp} from '@fortawesome/fontawesome-svg-core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
 	selector: 'vtr-ui-hyperlink-button',
 	templateUrl: './ui-hyperlink-button.component.html',
-	styleUrls: ['./ui-hyperlink-button.component.scss']
+	styleUrls: ['./ui-hyperlink-button.component.scss'],
 })
 export class UiHyperlinkButtonComponent implements OnInit {
-
 	@Input() vtrMetricEnabled: any;
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
@@ -39,7 +38,7 @@ export class UiHyperlinkButtonComponent implements OnInit {
 
 	@Output() hyperlinkClick = new EventEmitter();
 
-	constructor() { }
+	constructor() {}
 
 	ngOnInit(): void {
 		this.linkRole = this.linkRole ?? 'link';
@@ -53,5 +52,4 @@ export class UiHyperlinkButtonComponent implements OnInit {
 			this.hyperlinkClick.emit();
 		}
 	}
-
 }

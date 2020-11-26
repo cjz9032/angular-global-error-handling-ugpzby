@@ -1,4 +1,12 @@
-import { Component, ElementRef, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import {
+	Component,
+	ElementRef,
+	OnChanges,
+	OnDestroy,
+	OnInit,
+	SimpleChanges,
+	ViewChild,
+} from '@angular/core';
 import { EMPTY } from 'rxjs';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
@@ -13,10 +21,9 @@ import { AppEvent } from './../../../../../../enums/app-event.enum';
 @Component({
 	selector: 'vtr-top-row-functions',
 	templateUrl: './top-row-functions.component.html',
-	styleUrls: ['./top-row-functions.component.scss']
+	styleUrls: ['./top-row-functions.component.scss'],
 })
 export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
-
 	@ViewChild('adv') adv: ElementRef;
 
 	public topRowKeyObj: TopRowFunctionsCapability;
@@ -38,7 +45,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService
-	) { }
+	) {}
 	ngOnChanges(changes: SimpleChanges): void {
 		if (changes.topRowKeyObj) {
 			this.setUpTopRowFunctionsKeysUIModel();
@@ -46,7 +53,10 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	}
 
 	ngOnInit() {
-		const topRowKeyObj = this.localCacheService.getLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, undefined);
+		const topRowKeyObj = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.TopRowFunctionsCapability,
+			undefined
+		);
 		if (topRowKeyObj) {
 			this.topRowKeyObj = topRowKeyObj;
 			this.isCacheFound = true;
@@ -76,8 +86,14 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 					this.topRowKeyObj.primaryFunCap = res[2];
 					this.getAllStatuses();
 					this.setTopRowStatusCallback();
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
-					this.logger.info('TopRowFunctionsComponent.getFunctionCapabilities', this.topRowKeyObj);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.TopRowFunctionsCapability,
+						this.topRowKeyObj
+					);
+					this.logger.info(
+						'TopRowFunctionsComponent.getFunctionCapabilities',
+						this.topRowKeyObj
+					);
 				});
 			}
 		} catch (error) {
@@ -115,32 +131,41 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		}
 	}
 	public getStatusOfFnLock() {
-		this.keyboardService.getFnLockStatus().then(res => {
+		this.keyboardService.getFnLockStatus().then((res) => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfFnLock', res);
 			this.topRowKeyObj.fnLockStatus = res;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.TopRowFunctionsCapability,
+				this.topRowKeyObj
+			);
 			this.updateFunctionLockUIModel();
 		});
 	}
 	public getStatusOfStickyFun() {
-		this.keyboardService.getFnStickKeyStatus().then(res => {
+		this.keyboardService.getFnStickKeyStatus().then((res) => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfStickyFun', res);
 			this.topRowKeyObj.stickyFunStatus = res;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.TopRowFunctionsCapability,
+				this.topRowKeyObj
+			);
 			this.updateTopRowFunctionsKeysUIModel();
 		});
 	}
 	public getStatusOfPrimaryFun() {
-		this.keyboardService.getPrimaryFunctionStatus().then(res => {
+		this.keyboardService.getPrimaryFunctionStatus().then((res) => {
 			this.logger.info('TopRowFunctionsComponent.getStatusOfPrimaryFun', res);
 			this.topRowKeyObj.primaryFunStatus = res;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, this.topRowKeyObj);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.TopRowFunctionsCapability,
+				this.topRowKeyObj
+			);
 			this.updateFunctionLockUIModel();
 		});
 	}
 
 	public onChangeFunType(value: boolean) {
-		this.keyboardService.setFnLock(value).then(res => {
+		this.keyboardService.setFnLock(value).then((res) => {
 			this.getAllStatuses();
 		});
 	}
@@ -154,7 +179,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 	public onFunctionKeyTypeChange($event: UiRoundedRectangleRadioModel) {
 		const value = $event.value as boolean;
 		this.topRowKeyObj.stickyFunStatus = value;
-		this.keyboardService.setFnStickKeyStatus(value).then(res => {
+		this.keyboardService.setFnStickKeyStatus(value).then((res) => {
 			// if normal key selected get latest status of top row
 			if ($event.componentId.toLowerCase() === this.NORMAL_KEY.toLowerCase()) {
 				this.getAllStatuses();
@@ -180,7 +205,8 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 		this.topRowFunctionUIModel = [];
 
 		const { primaryFunStatus, fnLockStatus } = this.topRowKeyObj;
-		const topRowStatus = (primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus);
+		const topRowStatus =
+			(primaryFunStatus && fnLockStatus) || (!primaryFunStatus && !fnLockStatus);
 		const stickyKeyEnabled = this.topRowKeyObj.stickyFunStatus;
 
 		this.topRowFunctionUIModel.push({
@@ -193,7 +219,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			customIcon: 'Special-function',
 			hideIcon: true,
 			processLabel: false,
-			metricsItem: 'radio.top-row-fn.special-function'
+			metricsItem: 'radio.top-row-fn.special-function',
 		});
 		this.topRowFunctionUIModel.push({
 			componentId: this.functionKeyId,
@@ -205,7 +231,7 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			customIcon: 'F1-F12-funciton',
 			hideIcon: true,
 			processLabel: false,
-			metricsItem: 'radio.top-row-fn.function-key'
+			metricsItem: 'radio.top-row-fn.function-key',
 		});
 	}
 
@@ -222,22 +248,26 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 
 	private setUpTopRowFunctionsKeysUIModel() {
 		const stickyKeyEnabled = this.topRowKeyObj.stickyFunStatus;
-		this.functionKeyTypeUIModel = [{
-			componentId: this.NORMAL_KEY,
-			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
-			value: false,
-			isChecked: !stickyKeyEnabled,
-			isDisabled: false,
-			metricsItem: 'radio.top-row-fn.normal-key'
-		},
-		{
-			componentId: this.STICKY_KEY,
-			label: 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
-			value: true,
-			isChecked: stickyKeyEnabled,
-			isDisabled: false,
-			metricsItem: 'radio.top-row-fn.fn-sticky-Key'
-		}];
+		this.functionKeyTypeUIModel = [
+			{
+				componentId: this.NORMAL_KEY,
+				label:
+					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.nMehod',
+				value: false,
+				isChecked: !stickyKeyEnabled,
+				isDisabled: false,
+				metricsItem: 'radio.top-row-fn.normal-key',
+			},
+			{
+				componentId: this.STICKY_KEY,
+				label:
+					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionThree.radioButton.fnKeyMehod',
+				value: true,
+				isChecked: stickyKeyEnabled,
+				isDisabled: false,
+				metricsItem: 'radio.top-row-fn.fn-sticky-Key',
+			},
+		];
 	}
 
 	private updateTopRowFunctionsKeysUIModel() {
@@ -261,5 +291,4 @@ export class TopRowFunctionsComponent implements OnInit, OnChanges, OnDestroy {
 			this.adv.nativeElement.focus();
 		}, 0);
 	}
-
 }

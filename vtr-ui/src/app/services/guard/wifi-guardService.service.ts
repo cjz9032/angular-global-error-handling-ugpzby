@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {
+	CanActivate,
+	ActivatedRoute,
+	ActivatedRouteSnapshot,
+	RouterStateSnapshot,
+	UrlTree,
+} from '@angular/router';
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -27,25 +33,27 @@ export class WifiGuardService extends BasicGuard {
 		super(commonService, guardConstants);
 	}
 
-	private waitAsyncCallTimeout(func: Function, millisecond: number) : Promise<any> {
+	private waitAsyncCallTimeout(func: Function, millisecond: number): Promise<any> {
 		const timeout = new Promise((resolve, reject) => {
 			setTimeout(() => reject(new Error('Timeout')), millisecond);
 		});
 		return Promise.race([func(), timeout]);
 	}
 
-	async canActivate(
-		route: ActivatedRouteSnapshot,
-		state: RouterStateSnapshot
-	) : Promise<any> {
+	async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<any> {
 		if (state.root.queryParams['plugin'] === 'lenovowifisecurityplugin') {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity, true);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityShowWifiSecurity,
+				true
+			);
 			return true;
 		}
 
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		const cacheState : boolean | undefined = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity);
+		const cacheState: boolean | undefined = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityShowWifiSecurity
+		);
 		if (cacheState === undefined) {
 			try {
 				await this.waitAsyncCallTimeout(this.wifiSecurity.getWifiSecurityStateOnce, 5000);
@@ -53,7 +61,10 @@ export class WifiGuardService extends BasicGuard {
 				this.logger.error('getWifiSecurityStateOnce call timeout');
 			}
 			if (typeof this.wifiSecurity.isSupported === 'boolean') {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity, this.wifiSecurity.isSupported);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SecurityShowWifiSecurity,
+					this.wifiSecurity.isSupported
+				);
 				if (this.wifiSecurity.isSupported) return true;
 			}
 

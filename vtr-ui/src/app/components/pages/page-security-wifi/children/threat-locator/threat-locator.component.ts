@@ -5,34 +5,39 @@ import { ModalThreatLocatorComponent } from 'src/app/components/modal/modal-thre
 @Component({
 	selector: 'vtr-threat-locator',
 	templateUrl: './threat-locator.component.html',
-	styleUrls: ['./threat-locator.component.scss']
+	styleUrls: ['./threat-locator.component.scss'],
 })
 export class ThreatLocatorComponent implements OnInit {
 	locatorButtonDisable = false;
-	constructor(
-		public modalService: NgbModal
-	) {}
+	constructor(public modalService: NgbModal) {}
 
-	ngOnInit() {	}
+	ngOnInit() {}
 
 	openThreatLocator() {
 		if (this.modalService.hasOpenModals()) {
 			return;
 		}
 		this.locatorButtonDisable = true;
-		const threatLocatorModal: NgbModalRef = this.modalService.open(ModalThreatLocatorComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'Threat-Locator-Modal'
-		});
+		const threatLocatorModal: NgbModalRef = this.modalService.open(
+			ModalThreatLocatorComponent,
+			{
+				backdrop: true,
+				size: 'lg',
+				centered: true,
+				windowClass: 'Threat-Locator-Modal',
+			}
+		);
 		setTimeout(() => {
-			document.getElementById('modal-threat-locator').parentElement.parentElement.parentElement.parentElement.focus();
+			document
+				.getElementById('modal-threat-locator')
+				.parentElement.parentElement.parentElement.parentElement.focus();
 		}, 0);
-		threatLocatorModal.result.then(() => {
-			this.locatorButtonDisable = false;
-		}).catch(() => {
-			this.locatorButtonDisable = false;
-		});
+		threatLocatorModal.result
+			.then(() => {
+				this.locatorButtonDisable = false;
+			})
+			.catch(() => {
+				this.locatorButtonDisable = false;
+			});
 	}
 }

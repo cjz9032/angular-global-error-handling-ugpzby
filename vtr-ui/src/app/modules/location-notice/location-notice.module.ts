@@ -24,9 +24,9 @@ import { TranslationModule } from '../translation.module';
 		WidgetOfflineModule,
 		FontAwesomeModule,
 		RouterModule,
-		NgbModalModule
+		NgbModalModule,
 	],
 	exports: [NgbModalModule],
-	entryComponents: [ModalWifiSecurityLocationNoticeComponent]
+	entryComponents: [ModalWifiSecurityLocationNoticeComponent],
 })
 export class LocationNoticeModule {}

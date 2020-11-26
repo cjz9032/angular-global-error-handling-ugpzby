@@ -11,7 +11,8 @@
 	.progress-bar-div {
 		padding: 1rem;
 		border-radius: 1.5rem;
-		background: transparent linear-gradient(268deg, $hover_dark 0%, $main_darker 100%) 0% 0% no-repeat padding-box;
+		background: transparent linear-gradient(268deg, $hover_dark 0%, $main_darker 100%) 0% 0%
+			no-repeat padding-box;
 
 		@media #{$high-contrast} {
 			border: 0.1rem solid $light;
@@ -43,7 +44,8 @@
 				border-radius: 0.8rem;
 				margin-top: -0.3rem;
 				height: 0.8rem !important;
-				background: transparent linear-gradient(90deg, #5BE8AA 0%, #2ECC71 100%) 0% 0% no-repeat padding-box;
+				background: transparent linear-gradient(90deg, #5be8aa 0%, #2ecc71 100%) 0% 0%
+					no-repeat padding-box;
 
 				&.bg-info {
 					background: linear-gradient(90deg, $go_light 0%, $go_dark 100%) !important;
@@ -63,7 +65,6 @@
 					background: $dark;
 				}
 			}
-
 		}
 	}
 }

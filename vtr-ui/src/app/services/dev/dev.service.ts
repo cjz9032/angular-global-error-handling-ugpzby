@@ -3,11 +3,11 @@ import { LoggerService } from '../logger/logger.service';
 
 @Injectable()
 export class DevService {
-	constructor(private logger: LoggerService) { }
+	constructor(private logger: LoggerService) {}
 
 	writeLog(...args) {
 		let log = '';
-		args.forEach(arg => {
+		args.forEach((arg) => {
 			if (typeof arg === 'object') {
 				log += JSON.stringify(arg, null, 2);
 			} else {

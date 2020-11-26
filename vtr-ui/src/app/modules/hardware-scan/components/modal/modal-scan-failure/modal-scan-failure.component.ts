@@ -1,17 +1,19 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
-import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/utils/ModalBackgroundNavigationUtils';
+import {
+	disableBackgroundNavigation,
+	reEnableBackgroundNavigation,
+} from '../../../services/utils/ModalBackgroundNavigationUtils';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { RecoverBadSectorsService } from 'src/app/modules/hardware-scan/services/recover-bad-sectors.service';
 
 @Component({
 	selector: 'vtr-modal-scan-failure',
 	templateUrl: './modal-scan-failure.component.html',
-	styleUrls: ['./modal-scan-failure.component.scss']
+	styleUrls: ['./modal-scan-failure.component.scss'],
 })
 export class ModalScanFailureComponent implements OnInit, OnDestroy {
-
 	@Input() supportUrl: string;
 	@Input() hasFailedRbsDevice: boolean;
 
@@ -23,15 +25,16 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private hardwareScanService: HardwareScanService,
-		private rbsService: RecoverBadSectorsService) {
+		private rbsService: RecoverBadSectorsService
+	) {
 		this.failedRbsDevices = [];
 	}
 
-	ngOnInit(){
+	ngOnInit() {
 		disableBackgroundNavigation(document);
 	}
 
-	ngOnDestroy(){
+	ngOnDestroy() {
 		reEnableBackgroundNavigation(document);
 	}
 
@@ -57,7 +60,7 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 	// Checks the any storage device from failedModules has support for RBS (according to rbsDevices list)
 	private createListFailedRbsDevices() {
 		// First, getting a list of Ids of storage devices
-		const hasFailedStorage = this.failedModules.find(m => m.moduleId === 'storage');
+		const hasFailedStorage = this.failedModules.find((m) => m.moduleId === 'storage');
 
 		// Second, Return empty if no storage has failed
 		if (hasFailedStorage === undefined) {
@@ -65,23 +68,21 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 		}
 
 		// Third, if it has failed storage, get a list of Ids of storage devices with failure
-		const failedStorageIds = hasFailedStorage.devices.reduce(
-				(result, device) => {
-					result.push(device.deviceId);
-					return result;
-				}, []);
+		const failedStorageIds = hasFailedStorage.devices.reduce((result, device) => {
+			result.push(device.deviceId);
+			return result;
+		}, []);
 
 		// Fourth, getting a list of Ids of storage devices that support RBS
-		const rbsDeviceIds = this.rbsDevices.groupList.reduce(
-			(result, device) => {
-				result.push(device.id);
-				return result;
-			}, []);
+		const rbsDeviceIds = this.rbsDevices.groupList.reduce((result, device) => {
+			result.push(device.id);
+			return result;
+		}, []);
 
 		// Finally, getting the list of Ids contained in both lists
 		// If any value is returned, it means that a storage device that supports RBS failed, meaning that
 		// a RBS test will be suggested to the user
-		return failedStorageIds.filter(storageId => rbsDeviceIds.includes(storageId));
+		return failedStorageIds.filter((storageId) => rbsDeviceIds.includes(storageId));
 	}
 
 	// Opens RBS modal, passing defective device list to be selected when RBS modal loads

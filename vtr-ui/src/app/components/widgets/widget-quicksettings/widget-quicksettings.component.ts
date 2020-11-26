@@ -1,11 +1,4 @@
-import {
-	Component,
-	OnInit,
-	Output,
-	EventEmitter,
-	OnDestroy,
-	NgZone
-} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy, NgZone } from '@angular/core';
 
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
@@ -27,7 +20,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-widget-quicksettings',
 	templateUrl: './widget-quicksettings.component.html',
-	styleUrls: ['./widget-quicksettings.component.scss']
+	styleUrls: ['./widget-quicksettings.component.scss'],
 })
 export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public cameraStatus = new FeatureStatus(true, false);
@@ -48,16 +41,16 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	public quickSettingsWidget = [
 		{
 			// tooltipText: 'MICROPHONE',
-			state: true
+			state: true,
 		},
 		{
 			// tooltipText: 'CAMERA PRIVACY',
-			state: true
+			state: true,
 		},
 		{
 			// tooltipText: 'EYE CARE MODE',
-			state: true
-		}
+			state: true,
+		},
 	];
 	private Windows: any;
 	private windowsObj: any;
@@ -81,33 +74,44 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		private ngZone: NgZone,
 		private vantageShellService: VantageShellService,
 		private localCacheService: LocalCacheService,
-		private router: Router) {
+		private router: Router
+	) {
 		this.cameraStatus.permission = false;
 		this.cameraStatus.isLoading = false;
 		this.microphoneStatus.isLoading = false;
 		this.Windows = vantageShellService.getWindows();
 
 		if (this.Windows) {
-			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation
-				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.videoCapture);
+			this.windowsObj = this.Windows.Devices.Enumeration.DeviceAccessInformation.createFromDeviceClass(
+				this.Windows.Devices.Enumeration.DeviceClass.videoCapture
+			);
 
-			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation
-				.createFromDeviceClass(this.Windows.Devices.Enumeration.DeviceClass.audioCapture);
+			this.microphoneDevice = this.Windows.Devices.Enumeration.DeviceAccessInformation.createFromDeviceClass(
+				this.Windows.Devices.Enumeration.DeviceClass.audioCapture
+			);
 			// this.deviceWatcher = this.Windows.Devices.Enumeration.DeviceInformation.createWatcher();
 		}
 	}
 
 	ngOnInit() {
 		this.initDataFromCache();
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
-			this.onNotification(response);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 
-		this.machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
+		this.machineType = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.MachineType,
+			undefined
+		);
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
-			const welcomeTutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
+			const welcomeTutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.WelcomeTutorial,
+				undefined
+			);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.initFeatures();
@@ -118,7 +122,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 		if (this.microphoneDevice) {
 			this.microphnePermissionHandler = (args: any) => {
-				if (args && (args.status != null)) {
+				if (args && args.status != null) {
 					switch (args.status) {
 						case 0:
 						case 1:
@@ -133,7 +137,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 					}
 				}
 			};
-			this.microphoneDevice.addEventListener('accesschanged', this.microphnePermissionHandler, false);
+			this.microphoneDevice.addEventListener(
+				'accesschanged',
+				this.microphnePermissionHandler,
+				false
+			);
 		}
 		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
 
@@ -142,7 +150,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				if (args) {
 					this.getCameraPrivacyStatus();
 				}
-			}
+			};
 			this.windowsObj.addEventListener('accesschanged', this.cameraAccessChangedHandler);
 
 			// if (this.deviceWatcher) {
@@ -157,7 +165,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	initDataFromCache() {
-		const cameraState: FeatureStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy);
+		const cameraState: FeatureStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.DashboardCameraPrivacy
+		);
 		if (cameraState) {
 			if (cameraState.permission) {
 				this.cameraPrivacyGreyOut = false;
@@ -190,7 +200,11 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		// this.stopEyeCareMonitor();
 
 		if (this.microphoneDevice) {
-			this.microphoneDevice.removeEventListener('accesschanged', this.microphnePermissionHandler, false);
+			this.microphoneDevice.removeEventListener(
+				'accesschanged',
+				this.microphnePermissionHandler,
+				false
+			);
 		}
 		// this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 
@@ -214,7 +228,9 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 			const { type, payload } = notification;
 			switch (type) {
 				case DeviceMonitorStatus.MicrophoneStatus:
-					this.logger.info('DeviceMonitorStatus.MicrophoneStatus ' + JSON.stringify(payload));
+					this.logger.info(
+						'DeviceMonitorStatus.MicrophoneStatus ' + JSON.stringify(payload)
+					);
 					this.ngZone.run(() => {
 						// microphone payload data is dynamic, need check one by one
 						if (payload.hasOwnProperty('muteDisabled')) {
@@ -224,7 +240,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							this.microphoneStatus.permission = payload.permission;
 						}
 						if (payload.hasOwnProperty('available')) {
-							this.microphoneStatus.available = (payload.available === true);
+							this.microphoneStatus.available = payload.available === true;
 						}
 					});
 					break;
@@ -264,7 +280,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		try {
 			if (this.displayService.isShellAvailable) {
 				// this.cameraStatus.isLoading = true;
-				this.displayService.getCameraSettingsInfo()
+				this.displayService
+					.getCameraSettingsInfo()
 					.then((result) => {
 						this.cameraStatus.isLoading = false;
 						this.cameraPrivacyGreyOut = false;
@@ -273,10 +290,14 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 								this.cameraNoAccessNoteShow = true;
 							}
 							this.cameraStatus.permission = result.permission;
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.DashboardCameraPrivacy,
+								this.cameraStatus
+							);
 							this.cameraStatus.isLoading = false;
 						}
-					}).catch(error => {
+					})
+					.catch((error) => {
 						this.logger.error('getCameraPermission', error.message);
 						this.cameraStatus.isLoading = false;
 						return EMPTY;
@@ -320,12 +341,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 				if (this.cameraStatus.permission) {
 					// this.cameraStatus.isLoading = true;
 				}
-				this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: invoke Camera Privacy');
+				this.logger.debug(
+					'WidgetQuicksettingsComponent.getCameraPrivacyStatus: invoke Camera Privacy'
+				);
 
 				this.dashboardService
 					.getCameraStatus()
 					.then((featureStatus: FeatureStatus) => {
-						this.logger.debug('WidgetQuicksettingsComponent.getCameraPrivacyStatus: response Camera Privacy', featureStatus);
+						this.logger.debug(
+							'WidgetQuicksettingsComponent.getCameraPrivacyStatus: response Camera Privacy',
+							featureStatus
+						);
 						this.cameraPrivacyGreyOut = false;
 						this.cameraStatus.available = featureStatus.available;
 						this.cameraStatus.permission = featureStatus.permission;
@@ -334,30 +360,44 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 							this.cameraStatus.status = featureStatus.status;
 						}
 						this.cameraStatusChangeBySet = false;
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.DashboardCameraPrivacy,
+							this.cameraStatus
+						);
 						this.startMonitorForCameraPrivacy();
 					})
-					.catch(error => {
-						this.logger.error('WidgetQuicksettingsComponent.getCameraPrivacyStatus: promise error', error.message);
+					.catch((error) => {
+						this.logger.error(
+							'WidgetQuicksettingsComponent.getCameraPrivacyStatus: promise error',
+							error.message
+						);
 					});
 			}
 		} catch (error) {
 			this.cameraStatus.isLoading = false;
-			this.logger.error('WidgetQuicksettingsComponent.getCameraPrivacyStatus: exception', error.message);
+			this.logger.error(
+				'WidgetQuicksettingsComponent.getCameraPrivacyStatus: exception',
+				error.message
+			);
 			return EMPTY;
 		}
 	}
 
 	startMonitorHandlerForCamera(value: FeatureStatus) {
 		this.cameraStatus = { ...this.cameraStatus, ...value };
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.DashboardCameraPrivacy,
+			this.cameraStatus
+		);
 	}
 
 	startMonitorForCameraPrivacy() {
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.displayService.startCameraPrivacyMonitor(this.startMonitorHandlerForCamera.bind(this))
-					.then((val) => { }).catch(error => {
+				this.displayService
+					.startCameraPrivacyMonitor(this.startMonitorHandlerForCamera.bind(this))
+					.then((val) => {})
+					.catch((error) => {
 						this.logger.error('startMonitorForCameraPrivacy', error.message);
 						return EMPTY;
 					});
@@ -370,8 +410,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	stopMonitorForCamera() {
 		try {
 			if (this.displayService.isShellAvailable) {
-				this.displayService.stopCameraPrivacyMonitor()
-					.then((value: any) => { }).catch(error => {
+				this.displayService
+					.stopCameraPrivacyMonitor()
+					.then((value: any) => {})
+					.catch((error) => {
 						this.logger.error('stopMonitorForCamera', error.message);
 						return EMPTY;
 					});
@@ -383,7 +425,8 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	private getMicrophoneStatus() {
 		if (this.dashboardService.isShellAvailable) {
-			this.dashboardService.getMicrophoneStatus()
+			this.dashboardService
+				.getMicrophoneStatus()
 				.then((featureStatus) => {
 					this.microphoneStatus = { ...this.microphoneStatus, ...featureStatus };
 					this.microPhoneGreyOut = false;
@@ -398,7 +441,10 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 								if (this.audioClient) {
 									this.audioClient.onchangecallback = (data: string) => {
 										if (data) {
-											if (this.audioData && this.audioData.toString() === data) {
+											if (
+												this.audioData &&
+												this.audioData.toString() === data
+											) {
 												return;
 											}
 											this.logger.info('data data, got it ' + data);
@@ -406,12 +452,15 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 											const dic = data.split(',');
 
 											if (['1', '0'].includes(dic[0])) {
-												const muteDisabled = (dic[0] === '0');
+												const muteDisabled = dic[0] === '0';
 
 												// if (/^\d+$/.test(dic[1])){
 												//   const volume = parseInt(dic[1]);
 												// }
-												this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, { muteDisabled });
+												this.commonService.sendNotification(
+													DeviceMonitorStatus.MicrophoneStatus,
+													{ muteDisabled }
+												);
 											} else {
 												this.logger.info('core audio wrong data format');
 											}
@@ -420,14 +469,17 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 								}
 								this.audioClient.startMonitor();
 							} catch (error) {
-								this.logger.error('cannot init core audio for widget quick settings' + error.message);
+								this.logger.error(
+									'cannot init core audio for widget quick settings' +
+										error.message
+								);
 							}
 						} else {
 							this.logger.info('current shell version maybe not support core audio');
 						}
 					}
 				})
-				.catch(error => {
+				.catch((error) => {
 					this.logger.error('getMicrophoneStatus', error.message);
 					return EMPTY;
 				});
@@ -459,13 +511,18 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.cameraStatusChangeBySet = true;
 		try {
 			if (this.dashboardService.isShellAvailable) {
-				this.dashboardService.setCameraStatus($event)
+				this.dashboardService
+					.setCameraStatus($event)
 					.then((value: boolean) => {
 						this.cameraStatus.isLoading = false;
 						this.cameraStatus.status = $event;
 						this.quickSettingsWidget[1].state = true;
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardCameraPrivacy, this.cameraStatus);
-					}).catch(error => {
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.DashboardCameraPrivacy,
+							this.cameraStatus
+						);
+					})
+					.catch((error) => {
 						this.cameraStatus.isLoading = false;
 						this.quickSettingsWidget[1].state = true;
 						this.logger.error('getCameraStatus', error.message);
@@ -485,12 +542,14 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 		this.quickSettingsWidget[0].state = false;
 		try {
 			if (this.dashboardService.isShellAvailable) {
-				this.dashboardService.setMicrophoneStatus($event)
+				this.dashboardService
+					.setMicrophoneStatus($event)
 					.then((value: boolean) => {
 						this.microphoneStatus.isLoading = false;
 						this.microphoneStatus.status = $event;
 						this.quickSettingsWidget[0].state = true;
-					}).catch(error => {
+					})
+					.catch((error) => {
 						this.microphoneStatus.isLoading = false;
 						this.quickSettingsWidget[0].state = true;
 						this.logger.error('setMicrophoneStatus', error.message);
@@ -688,11 +747,12 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 
 	private updateMicrophoneStatus() {
 		if (this.dashboardService.isShellAvailable) {
-			this.dashboardService.getMicrophoneStatus()
+			this.dashboardService
+				.getMicrophoneStatus()
 				.then((featureStatus: any) => {
 					this.microphoneStatus = { ...this.microphoneStatus, ...featureStatus };
 				})
-				.catch(error => {
+				.catch((error) => {
 					this.logger.error('getMicrophoneStatus', error.message);
 				});
 		}

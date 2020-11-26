@@ -6,7 +6,9 @@ describe('SmartPerformanceDialogService', () => {
 	beforeEach(() => TestBed.configureTestingModule({}));
 
 	it('should be created', () => {
-		const service: SmartPerformanceDialogService = TestBed.inject(SmartPerformanceDialogService);
+		const service: SmartPerformanceDialogService = TestBed.inject(
+			SmartPerformanceDialogService
+		);
 		expect(service).toBeTruthy();
 	});
 });

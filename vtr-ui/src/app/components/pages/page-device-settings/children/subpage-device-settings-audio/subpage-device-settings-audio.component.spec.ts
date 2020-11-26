@@ -19,16 +19,11 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { SubpageDeviceSettingsAudioComponent } from './subpage-device-settings-audio.component';
 import { DeviceService } from '../../../../../services/device/device.service';
 
-
-
-
-
-
 const autoDolbyFeatureStatus = {
 	available: true,
 	isLoading: true,
 	permission: true,
-	status: true
+	status: true,
 };
 const dolbyModeResponse = {
 	available: true,
@@ -38,7 +33,7 @@ const dolbyModeResponse = {
 	eCourseStatus: 'True',
 	voIPStatus: 'True',
 	entertainmentStatus: 'True',
-	driverAvailability: true
+	driverAvailability: true,
 };
 const microphoneProperties = {
 	available: true,
@@ -49,11 +44,11 @@ const microphoneProperties = {
 	autoOptimization: true,
 	AEC: true,
 	disableEffect: true,
-	permission: true
+	permission: true,
 };
 const microOptimizeModeResponse = {
 	modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices'],
-	current: 'VoiceRecognition'
+	current: 'VoiceRecognition',
 };
 
 describe('SubpageDeviceSettingsAudioComponent', () => {
@@ -71,22 +66,18 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 				SubpageDeviceSettingsAudioComponent,
 				DolbyModesTranslationPipe,
 				RemoveSpacePipe,
-				SeparatePascalCasePipe
+				SeparatePascalCasePipe,
 			],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
 			providers: [
 				DevService,
 				DashboardService,
 				LoggerService,
 				AudioService,
 				CommonService,
-				VantageShellService
-			]
+				VantageShellService,
+			],
 		});
 	}));
 
@@ -97,11 +88,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		const welcomeTut: WelcomeTutorial = {
 			page: 2,
 			tutorialVersion: 'someVersion',
-			isDone: true
+			isDone: true,
 		};
-		spyOn(commonService, 'getLocalStorageValue').and.returnValue(
-			welcomeTut
-		);
+		spyOn(commonService, 'getLocalStorageValue').and.returnValue(welcomeTut);
 		spyOn<any>(component, 'initFeatures');
 		component.dolbyModeResponse = { ...dolbyModeResponse };
 		component.microphoneProperties = { ...microphoneProperties };
@@ -138,7 +127,12 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		dolbyModeResponse.isAudioProfileEnabled = true;
 		component.microphoneProperties = { ...microphoneProperties };
 		fixture.detectChanges();
-		const tooltip = { isOpen() { return true; }, close() { } };
+		const tooltip = {
+			isOpen() {
+				return true;
+			},
+			close() {},
+		};
 		component.toggleToolTip(tooltip, false);
 	});
 
@@ -150,7 +144,12 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		dolbyModeResponse.isAudioProfileEnabled = true;
 		component.microphoneProperties = { ...microphoneProperties };
 		fixture.detectChanges();
-		const tooltip = { isOpen() { return false; }, open() { } };
+		const tooltip = {
+			isOpen() {
+				return false;
+			},
+			open() {},
+		};
 		component.toggleToolTip(tooltip, true);
 	});
 
@@ -174,7 +173,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		commonService = TestBed.inject(CommonService);
 		audioService.isShellAvailable = true;
 		component.dolbyModeResponse = dolbyModeResponse;
-		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(Promise.reject(true));
+		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(
+			Promise.reject(true)
+		);
 		component.onVoipCheckboxChange(true);
 		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
 	});
@@ -204,7 +205,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		commonService = TestBed.inject(CommonService);
 		audioService.isShellAvailable = true;
 		component.dolbyModeResponse = dolbyModeResponse;
-		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(Promise.reject(true));
+		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(
+			Promise.reject(true)
+		);
 		component.onVoipCheckboxChange(true);
 		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
 	});
@@ -216,7 +219,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		commonService = TestBed.inject(CommonService);
 		audioService.isShellAvailable = true;
 		component.dolbyModeResponse = dolbyModeResponse;
-		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(Promise.reject(true));
+		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(
+			Promise.reject(true)
+		);
 		component.onEntertainmentCheckboxChange(true);
 		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
 	});
@@ -241,7 +246,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		commonService = TestBed.inject(CommonService);
 		audioService.isShellAvailable = true;
 		component.dolbyModeResponse = dolbyModeResponse;
-		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(Promise.reject(true));
+		const spy = spyOn(audioService, 'setDolbyAudioProfileState').and.returnValue(
+			Promise.reject(true)
+		);
 		component.onToggleOfeCourseAutoOptimization(true);
 		expect(audioService.setDolbyAudioProfileState).toHaveBeenCalled();
 	});
@@ -250,10 +257,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
-		const spy = spyOn(
-			commonService,
-			'getLocalStorageValue'
-		).and.returnValue(undefined);
+		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(undefined);
 		component.dolbyModeResponse = { ...dolbyModeResponse };
 		component.autoDolbyFeatureStatus = { ...autoDolbyFeatureStatus };
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
@@ -267,7 +271,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		const spy = spyOn<any>(component, 'initFeatures');
 		const notification: AppNotification = {
 			type: LocalStorageKey.WelcomeTutorial,
-			payload: { page: 2 }
+			payload: { page: 2 },
 		};
 		component['onNotification'](notification);
 		expect(spy).toHaveBeenCalled();
@@ -280,7 +284,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		audioService.isShellAvailable = true;
 		component.microOptimizeModeResponse = {
 			modes: ['checked', 'unchecked'],
-			current: 'checked'
+			current: 'checked',
 		};
 		const event = { target: { value: 'checked' } };
 		const spy = spyOn(audioService, 'setMicrophoneOpitimaztion');
@@ -295,12 +299,10 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		audioService.isShellAvailable = true;
 		component.microOptimizeModeResponse = {
 			modes: ['checked', 'unchecked'],
-			current: 'checked'
+			current: 'checked',
 		};
 		const event = { target: { value: 'unchecked' } };
-		spyOn(audioService, 'setMicrophoneOpitimaztion').and.returnValue(
-			Promise.resolve(true)
-		);
+		spyOn(audioService, 'setMicrophoneOpitimaztion').and.returnValue(Promise.resolve(true));
 		component.onOptimizeModesRadioChange(event);
 		expect(component.cacheFlag.currentMode).toEqual(false);
 	});
@@ -312,14 +314,13 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		audioService.isShellAvailable = true;
 		component.microOptimizeModeResponse = {
 			modes: ['checked', 'unchecked'],
-			current: 'checked'
+			current: 'checked',
 		};
 		const event = { target: { value: 'unchecked' } };
 		const error = { message: 'Error' };
-		const spy = spyOn(
-			audioService,
-			'setMicrophoneOpitimaztion'
-		).and.returnValue(Promise.reject(error));
+		const spy = spyOn(audioService, 'setMicrophoneOpitimaztion').and.returnValue(
+			Promise.reject(error)
+		);
 		component.onOptimizeModesRadioChange(event);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -341,10 +342,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.autoDolbyFeatureStatus = { ...autoDolbyFeatureStatus };
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
 		audioService.isShellAvailable = true;
-		const spy = spyOn(
-			audioService,
-			'getDolbyFeatureStatus'
-		).and.returnValue(Promise.resolve(autoDolbyFeatureStatus));
+		const spy = spyOn(audioService, 'getDolbyFeatureStatus').and.returnValue(
+			Promise.resolve(autoDolbyFeatureStatus)
+		);
 		component.getDolbyFeatureStatus();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -357,10 +357,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.autoDolbyFeatureStatus = { ...autoDolbyFeatureStatus };
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
 		audioService.isShellAvailable = true;
-		const spy = spyOn(
-			audioService,
-			'getDolbyFeatureStatus'
-		).and.returnValue(Promise.reject(autoDolbyFeatureStatus));
+		const spy = spyOn(audioService, 'getDolbyFeatureStatus').and.returnValue(
+			Promise.reject(autoDolbyFeatureStatus)
+		);
 		component.getDolbyFeatureStatus();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -391,9 +390,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		audioService.isShellAvailable = true;
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
 		const error = { message: 'Error' };
-		const spy = spyOn(audioService, 'getDolbyMode').and.returnValue(
-			Promise.reject(error)
-		);
+		const spy = spyOn(audioService, 'getDolbyMode').and.returnValue(Promise.reject(error));
 		component.getDolbyModesStatus();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -463,7 +460,6 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		// expect(spyUpdateDolbyModeSelection).toHaveBeenCalled();
 	});
 
-
 	it('should call initVisibility ', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
@@ -489,9 +485,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.dolbyModeResponse = { ...dolbyModeResponse };
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
 		const event = { target: { value: 'checked' } };
-		const spy = spyOn(audioService, 'setDolbyMode').and.returnValue(
-			Promise.resolve(true)
-		);
+		const spy = spyOn(audioService, 'setDolbyMode').and.returnValue(Promise.resolve(true));
 		component.onDolbySettingRadioChange(event);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -505,9 +499,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.dolbyAudioToggleCache = new DolbyAudioToggleCapability();
 		const event = { target: { value: 'checked' } };
 		const error = { message: 'Error' };
-		const spy = spyOn(audioService, 'setDolbyMode').and.returnValue(
-			Promise.reject(error)
-		);
+		const spy = spyOn(audioService, 'setDolbyMode').and.returnValue(Promise.reject(error));
 		component.onDolbySettingRadioChange(event);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -571,10 +563,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.microphoneProperties = { ...microphoneProperties };
 		const event = { switchValue: true };
 		spyOn(component, 'updateMicrophoneCache');
-		const spy = spyOn(
-			dashboardService,
-			'setMicrophoneStatus'
-		).and.returnValue(Promise.resolve(true));
+		const spy = spyOn(dashboardService, 'setMicrophoneStatus').and.returnValue(
+			Promise.resolve(true)
+		);
 		component.onToggleOfMicrophone(event);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -587,10 +578,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		const event = { switchValue: true };
 		const error = { message: 'error' };
 		spyOn(component, 'updateMicrophoneCache');
-		const spy = spyOn(
-			dashboardService,
-			'setMicrophoneStatus'
-		).and.returnValue(Promise.reject(error));
+		const spy = spyOn(dashboardService, 'setMicrophoneStatus').and.returnValue(
+			Promise.reject(error)
+		);
 		component.onToggleOfMicrophone(event);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -613,10 +603,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.microphoneProperties = { ...microphoneProperties };
 		audioService.isShellAvailable = true;
 		spyOn(component, 'updateMicrophoneCache');
-		const spy = spyOn(
-			audioService,
-			'setSuppressKeyboardNoise'
-		).and.returnValue(Promise.resolve(true));
+		const spy = spyOn(audioService, 'setSuppressKeyboardNoise').and.returnValue(
+			Promise.resolve(true)
+		);
 		component.onToggleOfSuppressKbdNoise(event);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -630,10 +619,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		audioService.isShellAvailable = true;
 		const error = { message: 'Error' };
 		spyOn(component, 'updateMicrophoneCache');
-		const spy = spyOn(
-			audioService,
-			'setSuppressKeyboardNoise'
-		).and.returnValue(Promise.reject(error));
+		const spy = spyOn(audioService, 'setSuppressKeyboardNoise').and.returnValue(
+			Promise.reject(error)
+		);
 		component.onToggleOfSuppressKbdNoise(event);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -656,9 +644,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.microphoneProperties = { ...microphoneProperties };
 		audioService.isShellAvailable = true;
 		spyOn(component, 'updateMicrophoneCache');
-		const spy = spyOn(audioService, 'setMicrophoneAEC').and.returnValue(
-			Promise.resolve(true)
-		);
+		const spy = spyOn(audioService, 'setMicrophoneAEC').and.returnValue(Promise.resolve(true));
 		component.setMicrophoneAEC(event);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -672,9 +658,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.microphoneProperties = { ...microphoneProperties };
 		audioService.isShellAvailable = true;
 		spyOn(component, 'updateMicrophoneCache');
-		const spy = spyOn(audioService, 'setMicrophoneAEC').and.returnValue(
-			Promise.reject(error)
-		);
+		const spy = spyOn(audioService, 'setMicrophoneAEC').and.returnValue(Promise.reject(error));
 		component.setMicrophoneAEC(event);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -695,10 +679,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		audioService = TestBed.inject(AudioService);
 		audioService.isShellAvailable = true;
 		const error = { message: 'Error' };
-		const spy = spyOn(
-			audioService,
-			'startMicrophoneMonitor'
-		).and.returnValue(Promise.reject(error));
+		const spy = spyOn(audioService, 'startMicrophoneMonitor').and.returnValue(
+			Promise.reject(error)
+		);
 		component.startMicrophoneMonitor();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -716,10 +699,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		audioService = TestBed.inject(AudioService);
 		audioService.isShellAvailable = true;
 		const error = { message: 'Error' };
-		const spy = spyOn(
-			audioService,
-			'stopMicrophoneMonitor'
-		).and.returnValue(Promise.reject(error));
+		const spy = spyOn(audioService, 'stopMicrophoneMonitor').and.returnValue(
+			Promise.reject(error)
+		);
 		component.stopMicrophoneMonitor();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -758,25 +740,16 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 				autoOptimization: true,
 				keyboardNoiseSuppression: true,
 				AEC: true,
-				currentMode: 'data'
+				currentMode: 'data',
 			},
-			modes: [
-				'VoiceRecognition',
-				'OnlyMyVoice',
-				'Normal',
-				'MultipleVoices'
-			]
+			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices'],
 		};
 		component.microphoneProperties = { ...microphoneProperties };
 		component.microOptimizeModeResponse = { ...microOptimizeModeResponse };
-		const spy = spyOn(
-			commonService,
-			'getLocalStorageValue'
-		).and.returnValue(microphoneCache);
+		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(microphoneCache);
 		component.initMicrophoneFromCache();
 		expect(spy).toHaveBeenCalled();
 	});
-
 
 	it('should call initMicrophoneFromCache isNewPlugin false', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
@@ -788,21 +761,13 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 				autoOptimization: true,
 				keyboardNoiseSuppression: true,
 				AEC: true,
-				currentMode: 'data'
+				currentMode: 'data',
 			},
-			modes: [
-				'VoiceRecognition',
-				'OnlyMyVoice',
-				'Normal',
-				'MultipleVoices'
-			]
+			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices'],
 		};
 		component.microphoneProperties = { ...microphoneProperties };
 		component.microOptimizeModeResponse = { ...microOptimizeModeResponse };
-		const spy = spyOn(
-			commonService,
-			'getLocalStorageValue'
-		).and.returnValue(microphoneCache);
+		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(microphoneCache);
 		component.initMicrophoneFromCache();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -812,14 +777,11 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
 		const microphoneCache = {
-			data: {}
+			data: {},
 		};
 		component.microphoneProperties = { ...microphoneProperties };
 		component.microOptimizeModeResponse = { ...microOptimizeModeResponse };
-		const spy = spyOn(
-			commonService,
-			'getLocalStorageValue'
-		).and.returnValue(microphoneCache);
+		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(microphoneCache);
 		component.initMicrophoneFromCache();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -830,19 +792,11 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		commonService = TestBed.inject(CommonService);
 		const microphoneCache = {
 			data: {},
-			modes: [
-				'VoiceRecognition',
-				'OnlyMyVoice',
-				'Normal',
-				'MultipleVoices'
-			]
+			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices'],
 		};
 		component.microphoneProperties = { ...microphoneProperties };
 		component.microOptimizeModeResponse = { ...microOptimizeModeResponse };
-		const spy = spyOn(
-			commonService,
-			'getLocalStorageValue'
-		).and.returnValue(microphoneCache);
+		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(microphoneCache);
 		component.initMicrophoneFromCache();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -854,10 +808,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		const microphoneCache = {};
 		component.microphoneProperties = { ...microphoneProperties };
 		component.microOptimizeModeResponse = { ...microOptimizeModeResponse };
-		const spy = spyOn(
-			commonService,
-			'getLocalStorageValue'
-		).and.returnValue(microphoneCache);
+		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(microphoneCache);
 		component.initMicrophoneFromCache();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -872,39 +823,28 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 			muteDisabled: true,
 			volume: 2,
 			permission: true,
-			modes: [
-				'VoiceRecognition',
-				'OnlyMyVoice',
-				'Normal',
-				'MultipleVoices'
-			],
+			modes: ['VoiceRecognition', 'OnlyMyVoice', 'Normal', 'MultipleVoices'],
 			currentMode: 'data',
 			keyboardNoiseSuppression: true,
 			AEC: true,
 			disableEffect: true,
 			autoOptimization: true,
-			finished: true
+			finished: true,
 		};
 		component.updateMicrophoneHandler(msg);
 		expect(component.cacheFlag.AEC).toEqual(true);
 	});
 });
-describe('Microphone Optimization Section\'s block status', () => {
+describe("Microphone Optimization Section's block status", () => {
 	let fixture: ComponentFixture<SubpageDeviceSettingsAudioComponent>;
 	let component: SubpageDeviceSettingsAudioComponent;
 	let deviceService: DeviceService;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [
-				SubpageDeviceSettingsAudioComponent
-			],
+			declarations: [SubpageDeviceSettingsAudioComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
 			providers: [
 				DevService,
 				DashboardService,
@@ -912,8 +852,8 @@ describe('Microphone Optimization Section\'s block status', () => {
 				AudioService,
 				CommonService,
 				VantageShellService,
-				DeviceService
-			]
+				DeviceService,
+			],
 		});
 		deviceService = TestBed.inject(DeviceService);
 	}));
@@ -924,28 +864,31 @@ describe('Microphone Optimization Section\'s block status', () => {
 		expect(component.canShowMicrophoneOptimization).toBeFalsy();
 	});
 
-	it('should be blocked when machine\'s mt code is in block list', async () => {
+	it("should be blocked when machine's mt code is in block list", async () => {
 		const machineMtCodeInBlockList = '20YC';
 		const deviceServiceSpy = spyOn(deviceService, 'getMachineInfo');
-		deviceServiceSpy.and.returnValue(Promise.resolve({
-			mt: machineMtCodeInBlockList
-		}));
+		deviceServiceSpy.and.returnValue(
+			Promise.resolve({
+				mt: machineMtCodeInBlockList,
+			})
+		);
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 		expect(component.canShowMicrophoneOptimization).toBeTruthy('Filter logic has gone wrong');
 	});
 
-	it('should NOT be blocked when machine\'s mt code is in block list', async () => {
+	it("should NOT be blocked when machine's mt code is in block list", async () => {
 		const machineMtCodeNotInBlockList = '81RS';
 		const deviceServiceSpy = spyOn(deviceService, 'getMachineInfo');
-		deviceServiceSpy.and.returnValue(Promise.resolve({
-			mt: machineMtCodeNotInBlockList
-		}));
+		deviceServiceSpy.and.returnValue(
+			Promise.resolve({
+				mt: machineMtCodeNotInBlockList,
+			})
+		);
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 		expect(component.canShowMicrophoneOptimization).toBeFalsy('Filter logic has gone wrong');
 	});
-
 });

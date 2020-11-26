@@ -10,7 +10,7 @@ import { ReplaySubject } from 'rxjs';
 declare var window;
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 /**
  * Common service class. add functions which is common across application.
@@ -86,11 +86,12 @@ export class CommonService {
 		const mm = date.getUTCMonth() + 1; // getMonth() is zero-based
 		const dd = date.getUTCDate();
 
-		return [date.getUTCFullYear(),
+		return [
+			date.getUTCFullYear(),
 			'/',
-		(mm > 9 ? '' : '0') + mm,
+			(mm > 9 ? '' : '0') + mm,
 			'/',
-		(dd > 9 ? '' : '0') + dd
+			(dd > 9 ? '' : '0') + dd,
 		].join('');
 	}
 
@@ -100,15 +101,15 @@ export class CommonService {
 	 */
 	public formatTime(dateString: string): string {
 		const dt = new Date(dateString);
-		const hour = (dt.getHours() > 12) ? dt.getHours() - 12 : dt.getHours();
-		const h = (hour < 10) ? '0' + hour : hour;
-		const m = (dt.getMinutes() < 10) ? '0' + dt.getMinutes() : dt.getMinutes();
+		const hour = dt.getHours() > 12 ? dt.getHours() - 12 : dt.getHours();
+		const h = hour < 10 ? '0' + hour : hour;
+		const m = dt.getMinutes() < 10 ? '0' + dt.getMinutes() : dt.getMinutes();
 
-		return (dt.getHours() > 12) ? (h + ':' + m + ' PM') : (h + ':' + m + ' AM');
+		return dt.getHours() > 12 ? h + ':' + m + ' PM' : h + ':' + m + ' AM';
 	}
 	public getDaysBetweenDates(firstDate: Date, secondDate: Date): number {
 		const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-		const diffDays = Math.ceil(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
+		const diffDays = Math.ceil(Math.abs((firstDate.getTime() - secondDate.getTime()) / oneDay));
 		return diffDays;
 	}
 
@@ -142,7 +143,6 @@ export class CommonService {
 	 * @param key key use to store value in local storage
 	 */
 	public getLocalStorageValue(key: LocalStorageKey, defaultValue?: any): any {
-
 		const value = window.localStorage.getItem(key);
 		if (value) {
 			try {
@@ -227,14 +227,14 @@ export class CommonService {
 
 	public removeObjFrom(array: any[], path: string) {
 		if (this.isPresent(array, path)) {
-			return array.filter(e => e.path !== path);
+			return array.filter((e) => e.path !== path);
 		} else {
 			return array;
 		}
 	}
 	public removeObjFromUserDefined(array: any[], value: number) {
 		if (this.isPresentUserDefined(array, value)) {
-			return array.filter(e => e.value !== value);
+			return array.filter((e) => e.value !== value);
 		} else {
 			return array;
 		}
@@ -246,16 +246,16 @@ export class CommonService {
 	// }
 
 	public removeObjById(array: any[], id: string) {
-		return array.filter(e => e.id !== id);
+		return array.filter((e) => e.id !== id);
 	}
 
 	public isPresent(array: any[], path: string) {
-		const element = array.find(e => e.path === path);
+		const element = array.find((e) => e.path === path);
 		return element ? true : false;
 	}
 
 	public isPresentUserDefined(array: any[], value: number) {
-		const element = array.find(e => e.value === value);
+		const element = array.find((e) => e.value === value);
 		return element ? true : false;
 	}
 
@@ -290,11 +290,17 @@ export class CommonService {
 		document.querySelector('.vtr-app.container-fluid').scrollTop = 0;
 	}
 
-	public scrollElementByDistance(element: HTMLElement, scrollDistance: number, isScrollUp?: boolean) {
+	public scrollElementByDistance(
+		element: HTMLElement,
+		scrollDistance: number,
+		isScrollUp?: boolean
+	) {
 		const intervalScrollTime = 25;
 		let scrollIndex = 10;
 		let scrollHeight = Math.floor(scrollDistance / scrollIndex);
-		if (isScrollUp) { scrollHeight *= -1; }
+		if (isScrollUp) {
+			scrollHeight *= -1;
+		}
 		const scrollTimer = setInterval(() => {
 			if (scrollIndex > 0) {
 				scrollIndex--;
@@ -311,7 +317,7 @@ export class CommonService {
 	// - positive number if v1 > v2
 	// - zero if v1 = v2
 	public compareVersion(v1: string, v2: string) {
-		const regExStrip0 = '/(\.0+)+$/';
+		const regExStrip0 = '/(.0+)+$/';
 		const segmentsA = v1.replace(regExStrip0, '').split('.');
 		const segmentsB = v2.replace(regExStrip0, '').split('.');
 		const min = Math.min(segmentsA.length, segmentsB.length);
@@ -345,7 +351,7 @@ export class CommonService {
 		return '';
 	}
 
-	public delay(milliseconds: number) {
-        return new Promise(resolve => setTimeout(resolve,milliseconds));
-    }
+	public delay(milliseconds: number) {
+		return new Promise((resolve) => setTimeout(resolve, milliseconds));
+	}
 }

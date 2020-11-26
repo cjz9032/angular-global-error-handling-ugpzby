@@ -2,7 +2,7 @@ import {
 	BatteryHealthLevel,
 	BatteryHealthTip,
 	BatteryLifeSpan,
-	BatteryTemperatureStatus
+	BatteryTemperatureStatus,
 } from './battery-health.enum';
 
 export interface BatteryHealthResponse {

@@ -10,10 +10,9 @@ declare var window;
 @Component({
 	selector: 'vtr-modal-about',
 	templateUrl: './modal-about.component.html',
-	styleUrls: ['./modal-about.component.scss']
+	styleUrls: ['./modal-about.component.scss'],
 })
 export class ModalAboutComponent implements OnInit {
-
 	buildVersion = environment.appVersion;
 	shellVersion: string;
 	bridgeVersion: string;
@@ -38,8 +37,10 @@ export class ModalAboutComponent implements OnInit {
 			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}.${packageVersion.revision}`;
 		}
 		const jsBridgeVersion = this.shellService.getVersion();
-		if (document.location.href.indexOf('stage') >= 0
-			|| document.location.href.indexOf('vantage.csw.') >= 0) {
+		if (
+			document.location.href.indexOf('stage') >= 0 ||
+			document.location.href.indexOf('vantage.csw.') >= 0
+		) {
 			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion.split('-')[0] : '';
 		} else {
 			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion : '';

@@ -20,10 +20,6 @@ import { LoggerService } from '../../../services/logger/logger.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { PageDeviceSettingsComponent } from './page-device-settings.component';
 
-
-
-
-
 const microphone = {
 	available: true,
 	muteDisabled: true,
@@ -33,24 +29,24 @@ const microphone = {
 	autoOptimization: true,
 	AEC: true,
 	disableEffect: true,
-	permission: true
+	permission: true,
 };
 const queryOptions = {
-	Page: 'device-settings'
+	Page: 'device-settings',
 };
 
 class TranslateServiceStub {
 	public onTranslationChange: EventEmitter<any> = new EventEmitter();
 	public onDefaultLangChange: EventEmitter<any> = new EventEmitter();
-	instant(data: string) { }
+	instant(data: string) {}
 	stream(data: string) {
 		return of(data);
 	}
 	get(key: string) {
 		return of(key);
 	}
-	setDefaultLang(lang: string) { }
-	use(lang: string) { }
+	setDefaultLang(lang: string) {}
+	use(lang: string) {}
 	get onLangChange() {
 		return of({ lang: 'en' });
 	}
@@ -73,11 +69,7 @@ describe('PageDeviceSettingsComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [PageDeviceSettingsComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
 			providers: [
 				CommsService,
 				DevService,
@@ -87,8 +79,8 @@ describe('PageDeviceSettingsComponent', () => {
 				InputAccessoriesService,
 				QaService,
 				CommonService,
-				{ provide: TranslateService, useClass: TranslateServiceStub }
-			]
+				{ provide: TranslateService, useClass: TranslateServiceStub },
+			],
 		});
 	}));
 
@@ -98,11 +90,13 @@ describe('PageDeviceSettingsComponent', () => {
 		translate = TestBed.inject(TranslateService);
 		commonService = TestBed.inject(CommonService);
 		spyOn(component, 'initInputAccessories');
-		const welcomeTut: WelcomeTutorial = { page: 2, tutorialVersion: 'someVersion', isDone: true };
+		const welcomeTut: WelcomeTutorial = {
+			page: 2,
+			tutorialVersion: 'someVersion',
+			isDone: true,
+		};
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue(welcomeTut);
-		spyOnProperty(translate, 'onLangChange', 'get').and.returnValue(
-			of({ lang: 'fr' })
-		);
+		spyOnProperty(translate, 'onLangChange', 'get').and.returnValue(of({ lang: 'fr' }));
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	}));
@@ -113,7 +107,10 @@ describe('PageDeviceSettingsComponent', () => {
 		spyOn(component['router'], 'navigate').and.returnValue(Promise.resolve(true));
 		const routeTo: boolean = true;
 		component.hidePowerPage(routeTo);
-		expect(component['router'].navigate).toHaveBeenCalledWith(['device/device-settings/audio'], { replaceUrl: true });
+		expect(component['router'].navigate).toHaveBeenCalledWith(
+			['device/device-settings/audio'],
+			{ replaceUrl: true }
+		);
 	}));
 
 	it('should call onNotification - WelcomeTutorial', async(() => {
@@ -122,7 +119,7 @@ describe('PageDeviceSettingsComponent', () => {
 		const spy = spyOn(component, 'getAudioPageSettings');
 		const notification: AppNotification = {
 			type: LocalStorageKey.WelcomeTutorial,
-			payload: { page: 2 }
+			payload: { page: 2 },
 		};
 		component['onNotification'](notification);
 		expect(spy).toHaveBeenCalled();
@@ -133,7 +130,7 @@ describe('PageDeviceSettingsComponent', () => {
 		component = fixture.componentInstance;
 		const spy = spyOn(component, 'hidePowerPage');
 		const notification: AppNotification = {
-			type: LocalStorageKey.IsPowerPageAvailable
+			type: LocalStorageKey.IsPowerPageAvailable,
 		};
 		component['onNotification'](notification);
 		expect(spy).toHaveBeenCalled();
@@ -145,7 +142,7 @@ describe('PageDeviceSettingsComponent', () => {
 		const spy = spyOn(component, 'hidePowerPage');
 		const notification: AppNotification = {
 			type: LocalStorageKey.IsPowerPageAvailable,
-			payload: { page: 2 }
+			payload: { page: 2 },
 		};
 		component['onNotification'](notification);
 		expect(spy).toHaveBeenCalled();
@@ -171,7 +168,9 @@ describe('PageDeviceSettingsComponent', () => {
 		component.machineType = 1;
 		const spyGetLocalCacheValue = spyOn(localCacheService, 'getLocalCacheValue');
 		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineType).and.resolveTo(1);
-		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.resolveTo('LenovoTablet10');
+		spyGetLocalCacheValue
+			.withArgs(LocalStorageKey.MachineFamilyName, undefined)
+			.and.resolveTo('LenovoTablet10');
 		const spy = spyOn(commonService, 'removeObjFrom');
 		await component.initInputAccessories();
 		expect(spy).toHaveBeenCalled();
@@ -188,21 +187,28 @@ describe('PageDeviceSettingsComponent', () => {
 
 		const spyGetLocalCacheValue = spyOn(localCacheService, 'getLocalCacheValue');
 		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineType).and.resolveTo(1);
-		spyGetLocalCacheValue.withArgs(LocalStorageKey.MachineFamilyName, undefined).and.resolveTo('LenovoTablet1011');
+		spyGetLocalCacheValue
+			.withArgs(LocalStorageKey.MachineFamilyName, undefined)
+			.and.resolveTo('LenovoTablet1011');
 		const spyGetLocalStorageValue = spyOn(commonService, 'getLocalStorageValue');
-		spyGetLocalStorageValue.withArgs(LocalStorageKey.InputAccessoriesCapability).and.returnValue(inputAccessoriesCapability);
+		spyGetLocalStorageValue
+			.withArgs(LocalStorageKey.InputAccessoriesCapability)
+			.and.returnValue(inputAccessoriesCapability);
 
 		spyOn(keyboardService, 'GetAllCapability').and.returnValue(Promise.resolve(''));
 
 		spyGetLocalStorageValue.withArgs(LocalStorageKey.VOIPCapability).and.returnValue(false);
-		spyGetLocalStorageValue.withArgs(LocalStorageKey.TopRowFunctionsCapability).and.returnValue(false);
-		spyGetLocalStorageValue.withArgs(LocalStorageKey.BacklightCapability).and.returnValue(false);
+		spyGetLocalStorageValue
+			.withArgs(LocalStorageKey.TopRowFunctionsCapability)
+			.and.returnValue(false);
+		spyGetLocalStorageValue
+			.withArgs(LocalStorageKey.BacklightCapability)
+			.and.returnValue(false);
 
 		const spy = spyOn(commonService, 'removeObjFrom');
 		await component.initInputAccessories();
 		expect(spy).toBeTruthy();
 	}));
-
 
 	it('should call getAudioPageSettings - method call on ngOnInit', async(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);

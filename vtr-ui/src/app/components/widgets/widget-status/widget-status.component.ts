@@ -4,10 +4,9 @@ import { BaseComponent } from '../../base/base.component';
 @Component({
 	selector: 'vtr-widget-status',
 	templateUrl: './widget-status.component.html',
-	styleUrls: ['./widget-status.component.scss']
+	styleUrls: ['./widget-status.component.scss'],
 })
 export class WidgetStatusComponent extends BaseComponent implements OnInit {
-
 	@Input() type = 'system';
 	@Input() title = '';
 	@Input() description = '';
@@ -17,5 +16,5 @@ export class WidgetStatusComponent extends BaseComponent implements OnInit {
 		super();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {}
 }

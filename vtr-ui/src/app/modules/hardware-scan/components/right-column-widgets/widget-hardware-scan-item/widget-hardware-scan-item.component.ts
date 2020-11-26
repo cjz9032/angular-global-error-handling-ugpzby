@@ -5,7 +5,7 @@ import { BreakpointObserver, BreakpointState, Breakpoints } from '@lenovo/cdk/la
 @Component({
 	selector: 'vtr-widget-hardware-scan-item',
 	templateUrl: './widget-hardware-scan-item.component.html',
-	styleUrls: ['./widget-hardware-scan-item.component.scss']
+	styleUrls: ['./widget-hardware-scan-item.component.scss'],
 })
 export class WidgetHardwareScanItemComponent implements OnInit {
 	@Input() items: any[];
@@ -19,8 +19,10 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	public isXsBreakpoint: boolean;
 	public contactusUrl: string;
 
-	constructor(private lenovoSupportService: LenovoSupportService, private breakPointObserver: BreakpointObserver) {
-	}
+	constructor(
+		private lenovoSupportService: LenovoSupportService,
+		private breakPointObserver: BreakpointObserver
+	) {}
 
 	ngOnInit() {
 		this.configureContactusUrl();
@@ -54,9 +56,9 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	 */
 	private getXsBreakpointStatus(): void {
 		this.breakPointObserver
-		.observe([Breakpoints.XSmall])
-		.subscribe((state: BreakpointState) => {
-			this.isXsBreakpoint = state.matches;
-		});
+			.observe([Breakpoints.XSmall])
+			.subscribe((state: BreakpointState) => {
+				this.isXsBreakpoint = state.matches;
+			});
 	}
 }

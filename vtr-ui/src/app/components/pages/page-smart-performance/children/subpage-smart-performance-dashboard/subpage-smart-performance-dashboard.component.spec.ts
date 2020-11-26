@@ -37,8 +37,8 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 				NgbModal,
 				MetricService,
 				DevService,
-				VantageShellService
-			]
+				VantageShellService,
+			],
 		});
 		fixture = TestBed.createComponent(SubpageSmartPerformanceDashboardComponent);
 		component = fixture.componentInstance;
@@ -58,7 +58,9 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 	it('should start scanning - getReadiness returns false', async(() => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		smartPerformanceService.isShellAvailable = true;
-		const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.resolve(false));
+		const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(
+			Promise.resolve(false)
+		);
 		component.scanNow();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
@@ -67,7 +69,9 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 	it('should start scanning - getReadiness returns false when shell not available', async(() => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		smartPerformanceService.isShellAvailable = false;
-		const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.resolve(false));
+		const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(
+			Promise.resolve(false)
+		);
 		component.scanNow();
 		fixture.detectChanges();
 		expect(spy).not.toHaveBeenCalled();
@@ -76,7 +80,9 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 	it('should start scanning - getReadiness throw error', async(() => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		smartPerformanceService.isShellAvailable = true;
-		const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(Promise.reject('error'));
+		const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(
+			Promise.reject('error')
+		);
 		component.scanNow();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();

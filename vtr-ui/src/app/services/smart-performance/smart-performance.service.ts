@@ -25,7 +25,7 @@ interface ILocalPriceData {
 }
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class SmartPerformanceService {
 	shellSmartPerformance: any;
@@ -55,13 +55,11 @@ export class SmartPerformanceService {
 		private localCacheService: LocalCacheService,
 		private logger: LoggerService
 	) {
-
 		this.shellSmartPerformance = shellService.getSmartPerformance();
 		if (this.shellSmartPerformance) {
 			this.isShellAvailable = true;
 		}
 		this.getLocalYearPrice();
-
 	}
 
 	getReadiness(): Promise<boolean> {
@@ -205,7 +203,7 @@ export class SmartPerformanceService {
 
 	getPaymentDetails(serialNumber): Promise<any> {
 		const reqUrl = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getorders?serialNumber=${serialNumber}`;
-		return new Promise(resolve => {
+		return new Promise((resolve) => {
 			const xhr = new XMLHttpRequest();
 			xhr.open('GET', reqUrl, true);
 			xhr.onreadystatechange = () => {
@@ -233,9 +231,12 @@ export class SmartPerformanceService {
 
 	async getLocalYearPrice() {
 		const localInfo = await this.localInfoService.getLocalInfo();
-		const localPricesCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceLocalPrices, undefined);
+		const localPricesCache = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SmartPerformanceLocalPrices,
+			undefined
+		);
 		if (localPricesCache && localPricesCache.length > 0) {
-			const geoInCache = localPricesCache.find(lp => lp.geo === localInfo.GEO);
+			const geoInCache = localPricesCache.find((lp) => lp.geo === localInfo.GEO);
 			if (geoInCache) {
 				this.localPriceData = {
 					geo: localInfo.GEO,
@@ -247,9 +248,11 @@ export class SmartPerformanceService {
 		}
 		if (!this.isLocalPriceOnlineChecked) {
 			const url = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getPrice?country=${localInfo.GEO}`;
-			const priceData = await this.httpClient.get(url).toPromise() as any;
+			const priceData = (await this.httpClient.get(url).toPromise()) as any;
 			if (priceData && priceData.data) {
-				const yearlyPrices = priceData.data.filter(item => item.code === SPPriceCode.YEAR);
+				const yearlyPrices = priceData.data.filter(
+					(item) => item.code === SPPriceCode.YEAR
+				);
 				const yearlyPriceData: IYearlyPrice = yearlyPrices[0];
 				this.setLocalPriceData(yearlyPriceData, localInfo.GEO);
 				this.isLocalPriceOnlineChecked = true;
@@ -259,23 +262,31 @@ export class SmartPerformanceService {
 
 	setLocalPriceData(yearlyPriceData: IYearlyPrice, GEO: string) {
 		if (yearlyPriceData && yearlyPriceData.price !== 0) {
-			const mp = Math.ceil(yearlyPriceData.price * 100 / 12) / 100;
+			const mp = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
 			const yearlyPrice = yearlyPriceData.formatPrice;
 			const symbol = yearlyPriceData.symbol;
-			const monthlyPrice = isNaN(parseFloat(yearlyPrice.substr(0, 1))) ? symbol + mp : mp + symbol;
+			const monthlyPrice = isNaN(parseFloat(yearlyPrice.substr(0, 1)))
+				? symbol + mp
+				: mp + symbol;
 			this.localPriceData = { geo: GEO, yearlyPrice, monthlyPrice };
 			this.isShowPrice = true;
 			let localPrices: ILocalPriceData[] = [];
-			const localPricesCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceLocalPrices, undefined);
+			const localPricesCache = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.SmartPerformanceLocalPrices,
+				undefined
+			);
 			if (localPricesCache && localPricesCache.length > 0) {
 				localPrices = localPricesCache;
-				const geoInCacheIndex = localPrices.findIndex(lp => lp.geo === GEO);
+				const geoInCacheIndex = localPrices.findIndex((lp) => lp.geo === GEO);
 				if (geoInCacheIndex > -1) {
 					localPrices.splice(geoInCacheIndex, 1);
 				}
 			}
 			localPrices.push(this.localPriceData);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceLocalPrices, localPrices);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartPerformanceLocalPrices,
+				localPrices
+			);
 		}
 	}
 
@@ -284,7 +295,10 @@ export class SmartPerformanceService {
 		let subscriptionData = [];
 		machineInfo = await this.deviceService.getMachineInfo();
 		const subscriptionDetails = await this.getPaymentDetails(machineInfo.serialnumber);
-		this.logger.info('smart-performance.service.getSubscriptionDataDetail', subscriptionDetails);
+		this.logger.info(
+			'smart-performance.service.getSubscriptionDataDetail',
+			subscriptionDetails
+		);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;
 			const lastItem = subscriptionData[subscriptionData.length - 1];
@@ -295,7 +309,10 @@ export class SmartPerformanceService {
 				this.getExpiredStatus(releaseDate, lastItem, onSubscribed);
 			}
 		} else {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsFreeFullFeatureEnabled,
+				false
+			);
 			this.isSubscribed = false;
 		}
 	}
@@ -305,17 +322,21 @@ export class SmartPerformanceService {
 		const currentDate: any = new Date(lastItem.currentTime);
 		expiredDate = new Date(releaseDate);
 		if (expiredDate < currentDate) {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsFreeFullFeatureEnabled,
+				false
+			);
 			this.isSubscribed = false;
-		}
-		else {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+		} else {
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsFreeFullFeatureEnabled,
+				true
+			);
 			this.isSubscribed = true;
 		}
 
-		if(onSubscribed){
+		if (onSubscribed) {
 			onSubscribed(this.isSubscribed);
 		}
 	}
-
 }

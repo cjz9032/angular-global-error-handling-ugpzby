@@ -9,7 +9,6 @@ import { MetricsTranslateService } from '../mertics-traslate/metrics-translate.s
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { VieworderService } from '../view-order/vieworder.service';
 
-
 /**
  * Hi all, this is a core file of metric implementation, before you change
  * this file, please estimate if your change affects the other component. And
@@ -18,7 +17,7 @@ import { VieworderService } from '../view-order/vieworder.service';
  * Mark Tao (taoxf1@lenovo.com)
  */
 @Directive({
-	selector: '[vtrMetrics]'
+	selector: '[vtrMetrics]',
 })
 export class MetricsDirective {
 	private metrics: any;
@@ -53,7 +52,11 @@ export class MetricsDirective {
 
 	getItemParent() {
 		try {
-			return this.metricsParent || this.activatedRoute.snapshot.data.pageName || MetricConst.Unknown;
+			return (
+				this.metricsParent ||
+				this.activatedRoute.snapshot.data.pageName ||
+				MetricConst.Unknown
+			);
 		} catch (e) {
 			return MetricConst.Unknown;
 		}
@@ -64,7 +67,7 @@ export class MetricsDirective {
 			ItemName: this.metricsTranslateService.translate(this.metricsItem),
 			ItemParent: this.getItemParent(),
 			ItemValue: this.metricsValue,
-			ItemParm: this.metricsParam
+			ItemParm: this.metricsParam,
 		};
 	}
 	composeArticleClickEvent(): MetricEvents.ArticleClick {
@@ -77,11 +80,11 @@ export class MetricsDirective {
 			ItemName: this.metricsTranslateService.translate(this.metricsItem),
 			ItemParent: this.getItemParent(),
 			ItemParm: this.metricsParam,
-			viewOrder: (++this.viewOrderService[this.getItemParent()]),
+			viewOrder: ++this.viewOrderService[this.getItemParent()],
 			ItemID: this.metricsItemID,
 			ItemCategory: this.metricsItemCategory,
 			ItemPosition: this.metricsItemPosition,
-			PageNumber: this.metricsPageNumber || 1
+			PageNumber: this.metricsPageNumber || 1,
 		};
 	}
 	composeSettingUpdateEvent(): MetricEvents.SettingUpdate {
@@ -105,7 +108,7 @@ export class MetricsDirective {
 			ItemPosition: this.metricsItemPosition,
 			SettingName: this.metricsSettingName,
 			SettingValue: this.metricsSettingValue,
-			SettingParm: this.metricsSettingParm
+			SettingParm: this.metricsSettingParm,
 		};
 	}
 	composeMetricsEvent() {
@@ -127,7 +130,6 @@ export class MetricsDirective {
 			default:
 				data = this.composeUnknownEvent();
 				break;
-
 		}
 		return data;
 	}
@@ -145,7 +147,7 @@ export class MetricsDirective {
 		if (typeof data === 'string') {
 			const srcData = metricsMap[data];
 			if (srcData) {
-				data = { ...srcData };	// copy the object value in case of the data source in the map was tampered
+				data = { ...srcData }; // copy the object value in case of the data source in the map was tampered
 			}
 		}
 
@@ -162,7 +164,9 @@ export class MetricsDirective {
 		if (!data.SettingParent) {
 			if (tmpData.ItemType === EventName.settingupdate) {
 				tmpData.SettingParent = this.getItemParent();
-			} else if ([EventName.featureclick, EventName.articleclick].indexOf(tmpData.ItemType) !== -1) {
+			} else if (
+				[EventName.featureclick, EventName.articleclick].indexOf(tmpData.ItemType) !== -1
+			) {
 				tmpData.ItemParent = this.getItemParent();
 			}
 		}

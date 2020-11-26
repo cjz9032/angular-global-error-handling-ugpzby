@@ -16,50 +16,58 @@ export class VpnLandingViewModel {
 		showOwn: false,
 		ownTitle: 'security.landing.haveOwnVpn',
 		id: 'sa-ov-link-vpn',
-		detail: ''
+		detail: '',
 	};
 	translateString: any;
 	constructor(
 		translate: TranslateService,
 		vpnModel: phoenix.Vpn,
 		public commonService: CommonService,
-		private localCacheService: LocalCacheService) {
+		private localCacheService: LocalCacheService
+	) {
 		vpnModel.on(EventTypes.vpnStatusEvent, (data) => {
 			this.setVpnStatus(data);
 		});
 
-		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityVPNStatus);
-		translate.stream([
-			'common.securityAdvisor.loading',
-			'security.landing.vpnVirtual',
-			'common.securityAdvisor.installed',
-			'common.securityAdvisor.installing',
-			'common.securityAdvisor.notInstalled',
-			'security.landing.haveOwnVpn',
-			'security.landing.vpnContent',
-			'security.landing.goVpn'
-		]).subscribe((res: any) => {
-			this.translateString = res;
-			if (!this.vpnStatus.detail) {
-				this.vpnStatus.detail = res['common.securityAdvisor.loading'];
-			}
-			this.vpnStatus.title = res['security.landing.vpnVirtual'];
-			this.vpnStatus.buttonLabel = res['security.landing.goVpn'];
-			this.vpnStatus.content = res['security.landing.vpnContent'];
-			this.vpnStatus.ownTitle = res['security.landing.haveOwnVpn'];
-			if (vpnModel.status) {
-				this.setVpnStatus(vpnModel.status);
-			} else if (cacheStatus) {
-				this.setVpnStatus(cacheStatus);
-			}
-		});
+		const cacheStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityVPNStatus
+		);
+		translate
+			.stream([
+				'common.securityAdvisor.loading',
+				'security.landing.vpnVirtual',
+				'common.securityAdvisor.installed',
+				'common.securityAdvisor.installing',
+				'common.securityAdvisor.notInstalled',
+				'security.landing.haveOwnVpn',
+				'security.landing.vpnContent',
+				'security.landing.goVpn',
+			])
+			.subscribe((res: any) => {
+				this.translateString = res;
+				if (!this.vpnStatus.detail) {
+					this.vpnStatus.detail = res['common.securityAdvisor.loading'];
+				}
+				this.vpnStatus.title = res['security.landing.vpnVirtual'];
+				this.vpnStatus.buttonLabel = res['security.landing.goVpn'];
+				this.vpnStatus.content = res['security.landing.vpnContent'];
+				this.vpnStatus.ownTitle = res['security.landing.haveOwnVpn'];
+				if (vpnModel.status) {
+					this.setVpnStatus(vpnModel.status);
+				} else if (cacheStatus) {
+					this.setVpnStatus(cacheStatus);
+				}
+			});
 	}
 
 	setVpnStatus(status: string) {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingVPNShowOwn, null);
+		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityLandingVPNShowOwn,
+			null
+		);
 		this.vpnStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		switch (status) {
 			case 'installed':

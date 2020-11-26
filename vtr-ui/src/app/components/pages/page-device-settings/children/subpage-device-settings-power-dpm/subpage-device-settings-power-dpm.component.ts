@@ -8,10 +8,9 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-subpage-device-settings-power-dpm',
 	templateUrl: './subpage-device-settings-power-dpm.component.html',
-	styleUrls: ['./subpage-device-settings-power-dpm.component.scss']
+	styleUrls: ['./subpage-device-settings-power-dpm.component.scss'],
 })
 export class SubpageDeviceSettingsPowerDpmComponent implements OnInit, OnDestroy {
-
 	allPowerPlansSubscription: Subscription;
 	public isLoading: boolean;
 
@@ -19,19 +18,17 @@ export class SubpageDeviceSettingsPowerDpmComponent implements OnInit, OnDestroy
 		public dpmService: PowerDpmService,
 		public commonService: CommonService,
 		private localCacheService: LocalCacheService
-		) { }
+	) {}
 
 	ngOnInit() {
 		this.isLoading = true;
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.IsPowerPageAvailable, true);
-		this.allPowerPlansSubscription = this.dpmService.getAllPowerPlansObs().subscribe(
-			v => {
-				if (v) {
-					this.isLoading = false;
-					this.allPowerPlansSubscription.unsubscribe();
-				}
+		this.allPowerPlansSubscription = this.dpmService.getAllPowerPlansObs().subscribe((v) => {
+			if (v) {
+				this.isLoading = false;
+				this.allPowerPlansSubscription.unsubscribe();
 			}
-		);
+		});
 	}
 
 	ngOnDestroy(): void {

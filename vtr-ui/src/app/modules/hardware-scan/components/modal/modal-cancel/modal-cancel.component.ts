@@ -1,15 +1,28 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, ViewChildren, ElementRef, AfterViewInit, QueryList } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	OnDestroy,
+	Output,
+	EventEmitter,
+	Input,
+	ViewChildren,
+	ElementRef,
+	AfterViewInit,
+	QueryList,
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/utils/ModalBackgroundNavigationUtils';
+import {
+	disableBackgroundNavigation,
+	reEnableBackgroundNavigation,
+} from '../../../services/utils/ModalBackgroundNavigationUtils';
 
 @Component({
 	selector: 'vtr-modal-cancel',
 	templateUrl: './modal-cancel.component.html',
-	styleUrls: ['./modal-cancel.component.scss']
+	styleUrls: ['./modal-cancel.component.scss'],
 })
-export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy  {
-
+export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy {
 	description: string = this.translate.instant('hardwareScan.cancelMayTakeSomeTime');
 	isInCountdown = true;
 
@@ -27,7 +40,7 @@ export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy  {
 
 	@ViewChildren('cancel_modal_ok') cancelModalOkListener: QueryList<ElementRef>;
 
-	constructor(private translate: TranslateService, public activeModal: NgbActiveModal) { }
+	constructor(private translate: TranslateService, public activeModal: NgbActiveModal) {}
 
 	ngOnInit() {
 		this.loading = false;
@@ -40,7 +53,7 @@ export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy  {
 		disableBackgroundNavigation(document);
 	}
 
-	ngOnDestroy(){
+	ngOnDestroy() {
 		reEnableBackgroundNavigation(document);
 	}
 

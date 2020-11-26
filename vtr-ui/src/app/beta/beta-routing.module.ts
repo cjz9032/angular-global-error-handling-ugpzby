@@ -5,12 +5,12 @@ import { BetaComponentComponent } from './beta-component/beta-component.componen
 const routes: Routes = [
 	{
 		path: '',
-		component: BetaComponentComponent
-	}
+		component: BetaComponentComponent,
+	},
 ];
 
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule]
+	exports: [RouterModule],
 })
 export class BetaModuleRoutingModule {}

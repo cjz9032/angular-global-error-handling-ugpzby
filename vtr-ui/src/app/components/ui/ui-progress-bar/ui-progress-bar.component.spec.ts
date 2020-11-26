@@ -10,9 +10,8 @@ describe('UiProgressBarComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiProgressBarComponent],
-			imports: [TranslateModule.forRoot()]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot()],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

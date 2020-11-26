@@ -6,11 +6,9 @@ import { Router, NavigationEnd } from '@angular/router';
 @Component({
 	selector: 'vtr-ui-list-chevron',
 	templateUrl: './ui-list-chevron.component.html',
-	styleUrls: ['./ui-list-chevron.component.scss']
+	styleUrls: ['./ui-list-chevron.component.scss'],
 })
-
 export class UiListChevronComponent extends BaseComponent implements OnInit {
-
 	@Input() items: any;
 	@Input() iconPlacement = 'right';
 	@Input() chevronVisibility = true;
@@ -30,7 +28,7 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		4: 'text-dark',
 		5: 'black',
 		6: 'text-blue',
-		7: 'text-gray'
+		7: 'text-gray',
 	};
 
 	/**
@@ -42,11 +40,12 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		2: 'circle',
 		3: 'minus',
 		5: 'circle',
-		6: 'circle'
+		6: 'circle',
 	};
 
-	constructor(private deviceService: DeviceService, public router: Router) { super(); }
-
+	constructor(private deviceService: DeviceService, public router: Router) {
+		super();
+	}
 
 	getItemStatusClass(item) {
 		let itemStatClass = 'good';
@@ -57,7 +56,6 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 		}
 		return itemStatClass;
 	}
-
 
 	getItemStatusIconClass(item) {
 		let itemStatIconClass = 'good';
@@ -82,15 +80,15 @@ export class UiListChevronComponent extends BaseComponent implements OnInit {
 			if (item.type === 'system') {
 				itemDetailClass['text - lowercase'] = true;
 			} else if (item.type === 'security') {
-				itemDetailClass['security text - uppercase ' + this.getItemStatusClass(item)] = true;
+				itemDetailClass[
+					'security text - uppercase ' + this.getItemStatusClass(item)
+				] = true;
 			}
-
 		}
 		return itemDetailClass;
 	}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	/**
 	 * launchSystemUri

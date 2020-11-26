@@ -10,7 +10,6 @@ import { Observable } from 'rxjs/internal/Observable';
 	providedIn: 'root',
 })
 export class NonArmGuard extends BasicGuard {
-
 	constructor(
 		private deviceService: DeviceService,
 		public guardConstants: GuardConstants,

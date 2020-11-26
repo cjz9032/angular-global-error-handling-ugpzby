@@ -1,4 +1,4 @@
-@import "../../../../../../app.theme.scss";
+@import '../../../../../../app.theme.scss';
 ul.list-group {
 	list-style-type: none;
 	padding-bottom: 1rem;
@@ -125,7 +125,6 @@ ul.list-group {
 	}
 }
 .container-border {
-
 	.collapse-header-icon {
 		flex-wrap: nowrap;
 		margin-left: 1rem;
@@ -163,7 +162,6 @@ ul.list-group {
 	&:focus {
 		@include outline-blue;
 	}
-
 }
 .disabled {
 	margin-left: 1rem;

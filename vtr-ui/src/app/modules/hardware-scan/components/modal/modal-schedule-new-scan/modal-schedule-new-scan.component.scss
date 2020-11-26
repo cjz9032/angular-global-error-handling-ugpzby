@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .modal-body {
 	padding: 0 5rem 3rem 5rem;
@@ -65,7 +65,7 @@ input {
 }
 
 .checkmark:after {
-	content: "";
+	content: '';
 	position: absolute;
 	display: none;
 }
@@ -167,42 +167,41 @@ input {
 }
 
 :host ::ng-deep .dropdown-menu.show {
-    width: auto;
-    height: auto;
-    font-size: x-small;
+	width: auto;
+	height: auto;
+	font-size: x-small;
 }
 
 //:host ::ng-deep .ngb-dp-header {}
 //:host ::ng-deep .ngb-dp-months {}
 :host ::ng-deep .ngb-dp-day {
-    width: 4.4rem;
-    height: 3rem;
-    font-size: x-small;
-    cursor: default;
+	width: 4.4rem;
+	height: 3rem;
+	font-size: x-small;
+	cursor: default;
 }
 
 :host ::ng-deep .ngb-dp-week-number {
-    width: 4.4rem;
-    height: 3rem;
-    font-size: x-small;
+	width: 4.4rem;
+	height: 3rem;
+	font-size: x-small;
 }
 
 :host ::ng-deep .ngb-dp-weekday {
-    width: 4.4rem;
-    height: 3rem;
-    font-size: x-small;
+	width: 4.4rem;
+	height: 3rem;
+	font-size: x-small;
 }
 
 :host ::ng-deep .custom-select {
-    flex: 1 1 auto;
-    /* padding: 0 .5rem; */
-    font-size: $fontsize_xs;
-    height: auto;
+	flex: 1 1 auto;
+	/* padding: 0 .5rem; */
+	font-size: $fontsize_xs;
+	height: auto;
 }
 
 :host ::ng-deep .btn-light {
-    width: 4rem;
-    font-size: 1rem;
-    cursor: pointer;
+	width: 4rem;
+	font-size: 1rem;
+	cursor: pointer;
 }
-

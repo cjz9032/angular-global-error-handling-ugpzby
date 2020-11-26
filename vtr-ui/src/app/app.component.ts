@@ -1,7 +1,22 @@
 import { SelfSelectService } from 'src/app/services/self-select/self-select.service';
 import { DOCUMENT } from '@angular/common';
-import { Component, OnInit, HostListener, OnDestroy, Inject, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { Router, ActivatedRoute, NavigationCancel, NavigationEnd, NavigationError } from '@angular/router';
+import {
+	Component,
+	OnInit,
+	HostListener,
+	OnDestroy,
+	Inject,
+	AfterViewInit,
+	ElementRef,
+	ViewChild,
+} from '@angular/core';
+import {
+	Router,
+	ActivatedRoute,
+	NavigationCancel,
+	NavigationEnd,
+	NavigationError,
+} from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -37,11 +52,10 @@ import { enumSmartPerformance } from './enums/smart-performance.enum';
 import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
 
-
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	machineInfo: any;
@@ -83,21 +97,27 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private snackBar: MatSnackBar
 	) {
 		if (this.environment.debuggingSnackbar) {
-			this.perfSubscription$ = this.router.events.subscribe(event => {
-				if (event instanceof NavigationEnd
-					|| event instanceof NavigationCancel
-					|| event instanceof NavigationError) {
+			this.perfSubscription$ = this.router.events.subscribe((event) => {
+				if (
+					event instanceof NavigationEnd ||
+					event instanceof NavigationCancel ||
+					event instanceof NavigationError
+				) {
 					if (['/dashboard', '/device-gaming'].includes(event.url)) {
 						this.perfSubscription$.unsubscribe();
 
-						const navPerf = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+						const navPerf = performance.getEntriesByType(
+							'navigation'
+						)[0] as PerformanceNavigationTiming;
 						let content = `You are now accessing ${location.origin} \n \n`;
-						content += `Necessary dowload: ${navPerf.domInteractive - navPerf.startTime} ms \n`;
+						content += `Necessary dowload: ${
+							navPerf.domInteractive - navPerf.startTime
+						} ms \n`;
 						content += `App parsing: ${navPerf.duration} ms \n`;
 						content += `Navigation complete: ${window.performance.now()} ms`;
 						console.log(content);
 						this.snackBar.open(content, 'Close', {
-							panelClass: ['snackbar']
+							panelClass: ['snackbar'],
 						});
 					}
 				}
@@ -113,15 +133,17 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		win.webAppVersion = {
 			web: environment.appVersion,
 			bridge: version,
-			shell: this.shellVersion
+			shell: this.shellVersion,
 		};
 
 		// using error because by default its enabled in all
 		this.logger.error('APP VERSION', win.webAppVersion);
 
-		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 
 		this.addInternetListener();
 		this.vantageFocusHelper.start();
@@ -136,8 +158,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		sessionStorage.clear();
 		this.getMachineInfo();
 
-
-		window.onresize = () => { }; // this line is necessary, please do not remove.
+		window.onresize = () => {}; // this line is necessary, please do not remove.
 
 		/********* add this for navigation within a page **************/
 		// this.router.events.subscribe((s) => {
@@ -199,7 +220,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			}
 			setTimeout(() => {
 				const modal: HTMLElement = document.querySelector('.modal');
-				if (modal) { modal.focus(); }
+				if (modal) {
+					modal.focus();
+				}
 			}, 0);
 			return original.apply(this, arguments);
 		};
@@ -213,34 +236,55 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			};
 			this.notifyNetworkState(win.NetworkListener.isInternetAccess());
 		} else {
-			window.addEventListener('online', (e) => {
-				this.notifyNetworkState(true);
-			}, false);
-			window.addEventListener('offline', (e) => {
-				this.notifyNetworkState(false);
-			}, false);
+			window.addEventListener(
+				'online',
+				(e) => {
+					this.notifyNetworkState(true);
+				},
+				false
+			);
+			window.addEventListener(
+				'offline',
+				(e) => {
+					this.notifyNetworkState(false);
+				},
+				false
+			);
 			this.notifyNetworkState(navigator.onLine);
 		}
 	}
 
 	private async launchWelcomeModal() {
 		if (!this.deviceService.isArm && !this.deviceService.isAndroid) {
-			const gamingTutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.GamingTutorial);
-			let tutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial);
+			const gamingTutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.GamingTutorial
+			);
+			let tutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.WelcomeTutorial
+			);
 			if (this.deviceService.isGaming) {
 				this.newTutorialVersion = '3.3.0';
 				if (gamingTutorial) {
 					tutorial = gamingTutorial;
 				} else if (tutorial && tutorial.isDone && tutorial.tutorialVersion === '') {
 					tutorial.tutorialVersion = this.newTutorialVersion; // 3.1.6 will save tutorial empty version in gaming
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.GamingTutorial, tutorial);
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, tutorial);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.GamingTutorial,
+						tutorial
+					);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.WelcomeTutorial,
+						tutorial
+					);
 				}
 			}
 			const newTutorialVersion = this.newTutorialVersion;
 			let welcomeNeeded = false;
 			let pageNumber = 1;
-			if ((tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) && navigator.onLine) {
+			if (
+				(tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) &&
+				navigator.onLine
+			) {
 				welcomeNeeded = true;
 			} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
 				welcomeNeeded = true;
@@ -261,14 +305,22 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	async getWelcomeNeededExternalSettings() {
-		const cache = this.localCacheService.getLocalCacheValue(LocalStorageKey.ExternalMetricsSettings);
+		const cache = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.ExternalMetricsSettings
+		);
 		if (cache) {
 			return false;
 		} else {
-			const [lenovoWelcomeSegment, externalMetricsState] = await Promise.all([this.selfSelectService.getPersonaFromLenovoWelcome(), this.metricService.getExternalMetricsSettings()]);
+			const [lenovoWelcomeSegment, externalMetricsState] = await Promise.all([
+				this.selfSelectService.getPersonaFromLenovoWelcome(),
+				this.metricService.getExternalMetricsSettings(),
+			]);
 
 			if (lenovoWelcomeSegment && externalMetricsState && !this.deviceService.isGaming) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.ExternalMetricsSettings, true);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.ExternalMetricsSettings,
+					true
+				);
 				return false;
 			}
 
@@ -281,7 +333,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			backdrop: 'static',
 			centered: true,
 			ariaLabelledBy: 'welcome-tutorial-page-basic-title',
-			windowClass: 'welcome-modal-size'
+			windowClass: 'welcome-modal-size',
 		});
 		modalRef.componentInstance.page = page;
 		modalRef.componentInstance.tutorialVersion = tutorialVersion;
@@ -289,7 +341,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			(result: WelcomeTutorial) => {
 				// on open
 				if (this.deviceService.isGaming) {
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.GamingTutorial, result);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.GamingTutorial,
+						result
+					);
 				}
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, result);
 			},
@@ -297,9 +352,15 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				// on close
 				if (reason instanceof WelcomeTutorial) {
 					if (this.deviceService.isGaming) {
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.GamingTutorial, reason);
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.GamingTutorial,
+							reason
+						);
 					}
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, reason);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.WelcomeTutorial,
+						reason
+					);
 				}
 			}
 		);
@@ -315,7 +376,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				.then((value: any) => {
 					this.onMachineInfoReceived(value);
 				})
-				.catch((error) => { });
+				.catch((error) => {});
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -324,14 +385,20 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	private onMachineInfoReceived(value: any) {
 		this.setFontFamilyByLocale(value.locale);
-		const cachedDeviceInfo: DeviceInfo = { isGamingDevice: value.isGaming, locale: value.locale };
+		const cachedDeviceInfo: DeviceInfo = {
+			isGamingDevice: value.isGaming,
+			locale: value.locale,
+		};
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.DeviceInfo, cachedDeviceInfo);
 		this.machineInfo = value;
 		this.isMachineInfoLoaded = true;
 		this.isGaming = value.isGaming;
 		this.commonService.sendNotification('MachineInfo', this.machineInfo);
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.MachineFamilyName, value.family);
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SubBrand, value.subBrand.toLowerCase());
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.SubBrand,
+			value.subBrand.toLowerCase()
+		);
 
 		if (this.metricService.isFirstLaunch) {
 			this.metricService.sendFirstRunEvent(value);
@@ -347,8 +414,16 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 
 		if (value.cpuArchitecture && value.cpuArchitecture.toUpperCase().trim() === 'ARM64') {
-			const armTutorialData = new WelcomeTutorial(2, this.newTutorialVersion, true, SegmentConst.ConsumerBase);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, armTutorialData);
+			const armTutorialData = new WelcomeTutorial(
+				2,
+				this.newTutorialVersion,
+				true,
+				SegmentConst.ConsumerBase
+			);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.WelcomeTutorial,
+				armTutorialData
+			);
 		} else {
 			setTimeout(() => {
 				this.launchWelcomeModal();
@@ -364,7 +439,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	private notifyNetworkState(isOnline) {
 		this.commonService.isOnline = isOnline;
-		this.commonService.sendNotification(isOnline ? NetworkStatus.Online : NetworkStatus.Offline, { isOnline });
+		this.commonService.sendNotification(
+			isOnline ? NetworkStatus.Online : NetworkStatus.Offline,
+			{ isOnline }
+		);
 	}
 
 	@HostListener('window:keyup', ['$event'])
@@ -379,9 +457,12 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					event.altKey,
 					event.shiftKey
 				);
-				window.parent.postMessage(response, 'ms-appx-web://e046963f.lenovocompanionbeta/index.html');
+				window.parent.postMessage(
+					response,
+					'ms-appx-web://e046963f.lenovocompanionbeta/index.html'
+				);
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	@HostListener('window:load', ['$event'])
@@ -396,10 +477,13 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		const dialog: HTMLElement = document.querySelector('ngb-modal-window');
 		if (dialog && ($event.ctrlKey || $event.metaKey) && $event.keyCode === 65) {
 			const activeDom: any = document.activeElement;
-			if (activeDom && (
-				(activeDom.type === 'textarea' && activeDom.tagName === 'TEXTAREA') ||
-				(activeDom.type === 'text' && activeDom.tagName === 'INPUT')
-			)) { return; }
+			if (
+				activeDom &&
+				((activeDom.type === 'textarea' && activeDom.tagName === 'TEXTAREA') ||
+					(activeDom.type === 'text' && activeDom.tagName === 'INPUT'))
+			) {
+				return;
+			}
 			this.selectText(dialog);
 			$event.stopPropagation();
 			$event.preventDefault();
@@ -426,12 +510,18 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				case UpdateProgress.UpdateCheckCompleted:
 				case UpdateProgress.InstallationComplete:
 				case SecurityAdvisorNotifications.WifiSecurityTurnedOn:
-					this.logger.info(`store rating should show in next start marked. ${notification.type}`);
+					this.logger.info(
+						`store rating should show in next start marked. ${notification.type}`
+					);
 					this.storeRating.markPromptRatingNextLaunch(true);
 					break;
 				case HardwareScanProgress.ScanResponse:
 				case HardwareScanProgress.RecoverResponse:
-					this.logger.info(`store rating should show in next start marked. ${notification.type}. ${notification.payload ? notification.payload.status : 'null'}`);
+					this.logger.info(
+						`store rating should show in next start marked. ${notification.type}. ${
+							notification.payload ? notification.payload.status : 'null'
+						}`
+					);
 					if (notification.payload && notification.payload.status === true) {
 						this.storeRating.markPromptRatingNextLaunch(true);
 					}
@@ -448,15 +538,22 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			const regUtil = this.vantageShellService.getRegistryUtil();
 			if (runVersion && regUtil) {
 				const regPath = 'HKEY_CURRENT_USER\\Software\\Lenovo\\ImController';
-				regUtil.queryValue(regPath).then(val => {
+				regUtil.queryValue(regPath).then((val) => {
 					if (!val || (val.keyList || []).length === 0) {
 						return;
 					}
-					regUtil.writeValue(regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch', 'LastRunVersion', runVersion, 'String').then(val2 => {
-						if (val2 !== true) {
-							this.logger.error('failed to write shell run version to registry');
-						}
-					});
+					regUtil
+						.writeValue(
+							regPath + '\\PluginData\\LenovoCompanionAppPlugin\\AutoLaunch',
+							'LastRunVersion',
+							runVersion,
+							'String'
+						)
+						.then((val2) => {
+							if (val2 !== true) {
+								this.logger.error('failed to write shell run version to registry');
+							}
+						});
 				});
 			}
 		}, 2000);
@@ -493,7 +590,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		document.getElementsByTagName('head')[0].appendChild(style);
 	}
 
-
 	// private registerWebWorker() {
 	// 	if (typeof Worker !== 'undefined') {
 	// 		// Create a new
@@ -521,16 +617,26 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.metricService.notifyPageScollEvent($event.target);
 	}
 
-
 	private removeOldSmartPerformanceScheduleScans() {
-		const isOldScheduleScanDeleted = this.localCacheService.getLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted);
+		const isOldScheduleScanDeleted = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.isOldScheduleScanDeleted
+		);
 		if (isOldScheduleScanDeleted === undefined || isOldScheduleScanDeleted === false) {
-			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.OLDSCHEDULESCANANDFIX);
-			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.OLDSCHEDULESCAN);
+			this.smartPerformanceService.unregisterScanSchedule(
+				enumSmartPerformance.OLDSCHEDULESCANANDFIX
+			);
+			this.smartPerformanceService.unregisterScanSchedule(
+				enumSmartPerformance.OLDSCHEDULESCAN
+			);
 			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
-			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
+			this.smartPerformanceService.unregisterScanSchedule(
+				enumSmartPerformance.SCHEDULESCANANDFIX
+			);
 
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.isOldScheduleScanDeleted, true);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.isOldScheduleScanDeleted,
+				true
+			);
 		}
 	}
 }

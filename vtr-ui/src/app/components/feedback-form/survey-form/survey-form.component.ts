@@ -10,7 +10,7 @@ import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.se
 @Component({
 	selector: 'vtr-survey-form',
 	templateUrl: './survey-form.component.html',
-	styleUrls: ['./survey-form.component.scss']
+	styleUrls: ['./survey-form.component.scss'],
 })
 export class SurveyFormComponent implements OnInit {
 	surveyId = '';
@@ -25,15 +25,16 @@ export class SurveyFormComponent implements OnInit {
 		private localCacheService: LocalCacheService,
 		private metricsService: MetricService,
 		private appForYouService: AppsForYouService
-	) { }
+	) {}
 
 	private initSurveyQuestions() {
 		this.pages = [];
-		for (let i = 0; i < 5; i++) {	// page5 has no summary
+		for (let i = 0; i < 5; i++) {
+			// page5 has no summary
 			this.pages.push({
 				summary: i !== 4 ? `dashboard.survey.form.page${i + 1}.summary` : '',
 				questions: [],
-				results: {}
+				results: {},
 			});
 		}
 
@@ -43,7 +44,9 @@ export class SurveyFormComponent implements OnInit {
 				name: `dashboard.survey.form.page1.question${i + 1}`,
 				title: 'dashboard.survey.form.page1.question',
 				optionKey: `dashboard.survey.form.page1.question${i + 1}.options`,
-				options: this.translate.instant(`dashboard.survey.form.page1.question${i + 1}.options`)
+				options: this.translate.instant(
+					`dashboard.survey.form.page1.question${i + 1}.options`
+				),
 			});
 		}
 
@@ -54,7 +57,7 @@ export class SurveyFormComponent implements OnInit {
 				name: `dashboard.survey.form.page2.question${i + 1}`,
 				title: `dashboard.survey.form.page2.question${i + 1}`,
 				optionKey: 'dashboard.survey.form.page2.options',
-				options: p2Options
+				options: p2Options,
 			});
 		}
 
@@ -65,7 +68,7 @@ export class SurveyFormComponent implements OnInit {
 				name: `dashboard.survey.form.page3.question${i + 1}`,
 				title: `dashboard.survey.form.page3.question${i + 1}`,
 				optionKey: 'dashboard.survey.form.page3.options',
-				options: p3Options
+				options: p3Options,
 			});
 		}
 
@@ -76,7 +79,7 @@ export class SurveyFormComponent implements OnInit {
 				name: `dashboard.survey.form.page4.question${i + 1}`,
 				title: `dashboard.survey.form.page4.question${i + 1}`,
 				optionKey: 'dashboard.survey.form.page4.options',
-				options: p4Options
+				options: p4Options,
 			});
 		}
 
@@ -86,7 +89,9 @@ export class SurveyFormComponent implements OnInit {
 				name: `dashboard.survey.form.page5.question${i + 1}`,
 				title: `dashboard.survey.form.page5.question${i + 1}.title`,
 				optionKey: `dashboard.survey.form.page5.question${i + 1}.options`,
-				options: this.translate.instant(`dashboard.survey.form.page5.question${i + 1}.options`)
+				options: this.translate.instant(
+					`dashboard.survey.form.page5.question${i + 1}.options`
+				),
 			});
 		}
 		page5Questions[0].multipleChoice = true;
@@ -94,7 +99,10 @@ export class SurveyFormComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.initSurveyQuestions();
-		this.localCacheService.setLocalCacheValue(this.surveyId as LocalStorageKey, LenovoSurveyEnum.Read);
+		this.localCacheService.setLocalCacheValue(
+			this.surveyId as LocalStorageKey,
+			LenovoSurveyEnum.Read
+		);
 	}
 
 	closeModal() {
@@ -102,9 +110,11 @@ export class SurveyFormComponent implements OnInit {
 	}
 
 	exclusiveAgainstLastOption(page: any, qa: any, value: number) {
-		if (value === qa.options?.length) {	// last option
-			page.results[qa.name] = new Set();	// remove all values when add the value of last option
-		} else {	// not last option
+		if (value === qa.options?.length) {
+			// last option
+			page.results[qa.name] = new Set(); // remove all values when add the value of last option
+		} else {
+			// not last option
 			page.results[qa.name].delete(qa.options?.length); // delete the value of last option
 		}
 	}
@@ -112,7 +122,6 @@ export class SurveyFormComponent implements OnInit {
 	setRadioStatus(page: any, qaName: string, value: number) {
 		page.results[qaName] = value;
 	}
-
 
 	setCheckboxStatus(page: any, qa: any, value: number) {
 		if (!page.results) {
@@ -139,7 +148,7 @@ export class SurveyFormComponent implements OnInit {
 			return true;
 		}
 
-		const results = Object.values(this.pages[this.progress].results).filter(qaResult => {
+		const results = Object.values(this.pages[this.progress].results).filter((qaResult) => {
 			if (!qaResult) {
 				return false;
 			}
@@ -162,7 +171,10 @@ export class SurveyFormComponent implements OnInit {
 
 	onClickSubmit(): void {
 		this.progress += 1;
-		this.localCacheService.setLocalCacheValue(this.surveyId as LocalStorageKey, LenovoSurveyEnum.Completed);
+		this.localCacheService.setLocalCacheValue(
+			this.surveyId as LocalStorageKey,
+			LenovoSurveyEnum.Completed
+		);
 		this.appForYouService.lenovoSurvey.display = false;
 		this.reportResult();
 		const leftTimeInterval = setInterval(() => {
@@ -178,11 +190,11 @@ export class SurveyFormComponent implements OnInit {
 		const data = {
 			id: this.surveyId,
 			version: '1.0.0.0',
-			qa: {}
+			qa: {},
 		};
 
-		this.pages.forEach(page => {
-			page.questions.forEach(question => {
+		this.pages.forEach((page) => {
+			page.questions.forEach((question) => {
 				let result = page.results[question.name];
 				if (typeof result === 'object') {
 					result = Array.from(result);
@@ -202,10 +214,7 @@ export class SurveyFormComponent implements OnInit {
 
 	@HostListener('keydown', ['$event'])
 	onKeyDown(event: KeyboardEvent) {
-		if (event.shiftKey &&
-			event.key === 'Tab' &&
-			document.activeElement
-		) {
+		if (event.shiftKey && event.key === 'Tab' && document.activeElement) {
 			const activeElm: any = document.activeElement;
 			if (activeElm.type === 'radio' && activeElm.name?.indexOf('.question1') !== -1) {
 				document.getElementById('survey-modal-btn-close').focus();

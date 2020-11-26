@@ -9,9 +9,8 @@ describe('UiBrightnessSliderComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiBrightnessSliderComponent]
-		})
-			.compileComponents();
+			declarations: [UiBrightnessSliderComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -29,7 +28,7 @@ describe('UiBrightnessSliderComponent', () => {
 		component.onSliderChanged.subscribe((res: any) => {
 			expect(res).toBe(false);
 		});
-		component.dragEnd({value: false});
+		component.dragEnd({ value: false });
 	});
 
 	it('should check dragEnd when event true', () => {
@@ -37,7 +36,7 @@ describe('UiBrightnessSliderComponent', () => {
 		component.onSliderChanged.subscribe((res: any) => {
 			expect(res).toBe(true);
 		});
-		component.dragEnd({value: true});
+		component.dragEnd({ value: true });
 	});
 
 	it('call onFocusSlider when tab focus', fakeAsync(() => {
@@ -46,11 +45,10 @@ describe('UiBrightnessSliderComponent', () => {
 		expect(component.onFocusSlider).toHaveBeenCalled();
 	}));
 
-	it('set attribute to slider when mouse hover', (() => {
-			component.onMouseSlider();
-		  fixture.detectChanges();
-			const elem = fixture.debugElement.query(By.css('.brightness_slider'));
-			expect(elem.attributes.role).toContain('slider');
-		}));
-
+	it('set attribute to slider when mouse hover', () => {
+		component.onMouseSlider();
+		fixture.detectChanges();
+		const elem = fixture.debugElement.query(By.css('.brightness_slider'));
+		expect(elem.attributes.role).toContain('slider');
+	});
 });

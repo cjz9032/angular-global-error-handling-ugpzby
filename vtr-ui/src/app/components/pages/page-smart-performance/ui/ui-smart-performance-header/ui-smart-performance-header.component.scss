@@ -105,7 +105,6 @@ $marginLeft: calc(#{$imageWH} + #{$padding_content});
 	}
 }
 
-
 @media #{$breakpoint_sm} {
 	$imageWH: 11rem;
 	$marginLeft: calc(#{$imageWH} + #{$padding_content});

@@ -15,16 +15,17 @@ export class UDKActionInfo {
 	constructor(response) {
 		this.processGetResponse(response);
 		this.processGetResponseFilesOrApplications(response);
-
 	}
 	processGetResponse(response: any) {
 		try {
-			if (response
-				&& response.UDKType
-				&& response.UDKType.length
-				&& response.UDKType[0].SettingList
-				&& response.UDKType[0].SettingList.length
-				&& response.UDKType[0].SettingList[0].Setting) {
+			if (
+				response &&
+				response.UDKType &&
+				response.UDKType.length &&
+				response.UDKType[0].SettingList &&
+				response.UDKType[0].SettingList.length &&
+				response.UDKType[0].SettingList[0].Setting
+			) {
 				const info = response.UDKType[0].SettingList[0].Setting;
 				for (const data of info) {
 					switch (data.key) {
@@ -50,30 +51,29 @@ export class UDKActionInfo {
 				}
 			} else {
 			}
-		} catch (error) {
-		}
+		} catch (error) {}
 	}
 	processGetResponseFilesOrApplications(response: any) {
 		try {
-			if (response
-				&& response.UDKType
-				&& response.UDKType.length
-				&& response.UDKType[0].FileList
-				&& response.UDKType[0].FileList.length
-				&& response.UDKType[0].FileList[0].Setting) {
+			if (
+				response &&
+				response.UDKType &&
+				response.UDKType.length &&
+				response.UDKType[0].FileList &&
+				response.UDKType[0].FileList.length &&
+				response.UDKType[0].FileList[0].Setting
+			) {
 				const info = response.UDKType[0].FileList[0].Setting;
 				for (const data of info) {
 					if (data.type === '1') {
 						this.applicationList.push({ value: data.value, key: data.key });
-					}
-					else {
+					} else {
 						this.fileList.push({ value: data.value, key: data.key });
 					}
 					this.index = 1;
 				}
 			} else {
 			}
-		} catch (error) {
-		}
+		} catch (error) {}
 	}
 }

@@ -936,8 +936,10 @@
 						"options": ["Price", "Manufacturer / Brand Name"]
 					},
 					"question2": {
-						"options": ["Processor Speed",
-							"Form Factor (Traditional laptop, convertible, detachable) Style"]
+						"options": [
+							"Processor Speed",
+							"Form Factor (Traditional laptop, convertible, detachable) Style"
+						]
 					},
 					"question3": {
 						"options": ["Graphics Capabilities", "Screen Size"]
@@ -950,22 +952,26 @@
 					"summary": "How important are each of the following display characteristics when considering a laptop/notebook computer?",
 					"question1": "HDR / High-Dynamic Range (high definition / resolution)",
 					"question2": "Touchscreen",
-					"options": ["1 - Not at all important",
+					"options": [
+						"1 - Not at all important",
 						"2",
 						"3",
 						"4",
 						"5 - Extremely important",
-						"6 - Not familiar with this option"]
+						"6 - Not familiar with this option"
+					]
 				},
 				"page3": {
 					"summary": "How much do you agree or disagree with the following statements regarding laptop / notebook computers?",
 					"question1": "It's very important to have a laptop / notebook that people will notice",
 					"question2": "It doesn't matter to me what kind of material is used for the body of a laptop / notebook.",
-					"options": ["1 - Do not agree at all",
+					"options": [
+						"1 - Do not agree at all",
 						"2 - Somewhat disagree",
 						"3 - Neither agree nor disagree",
 						"4 - Agree somewhat",
-						"5 - Completely agree"]
+						"5 - Completely agree"
+					]
 				},
 				"page4": {
 					"summary": "How important to you is each of the following activities that you do on a home computer?",
@@ -973,29 +979,35 @@
 					"question2": "Play games",
 					"question3": "Keep up with the latest news",
 					"question4": "Watch movies / TV shows / other view",
-					"options": ["1 - It is not that important to me",
+					"options": [
+						"1 - It is not that important to me",
 						"2",
 						"3",
 						"4",
 						"5 - It is extremely important to me",
-						"6 - I don't do this activity on a home computer"]
+						"6 - I don't do this activity on a home computer"
+					]
 				},
 				"page5": {
 					"question1": {
 						"title": "Do you use a voice assistant (e.g. Alexa, Siri, Google assistant, Cortana) on any of the following home devices?  Please select all that apply.",
-						"options": ["On my desktop computer",
+						"options": [
+							"On my desktop computer",
 							"On my laptop / notebook computer",
 							"On my tablet",
 							"On my smartphone",
 							"On a smart speaker / display",
-							"I do not use a voice assistant on any of those devices"]
+							"I do not use a voice assistant on any of those devices"
+						]
 					},
 					"question2": {
 						"title": "Which of the following best describes you?",
-						"options": ["I am usually among the first people to purchase the latest technology",
+						"options": [
+							"I am usually among the first people to purchase the latest technology",
 							"I buy the latest technology sooner than most",
 							"I buy new technology once a lot of people are already using it",
-							"I wait to buy new technology after most people are already using it"]
+							"I wait to buy new technology after most people are already using it"
+						]
 					},
 					"question3": {
 						"title": "How much do you typically spend on a computer?",
@@ -1006,7 +1018,8 @@
 							"$700 to $999",
 							"$1000 to $1499",
 							"$2000 to $2499",
-							"$2500 or more"]
+							"$2500 or more"
+						]
 					}
 				},
 				"messages": {
@@ -1069,9 +1082,9 @@
 			"advancedDesc": "Your computer has advanced security protection enabled"
 		},
 		"heroBanner": "Hero banner",
-		"positionB":{
-			"cardTitle":"System Information",
-			"cardSummary":{
+		"positionB": {
+			"cardTitle": "System Information",
+			"cardSummary": {
 				"detecting": "Detecting system information now...",
 				"goodCondition": "Your device is in good condition",
 				"maintenanceNeeded": "Your device needs some maintenance"
@@ -1087,7 +1100,7 @@
 			"biosVersion": "Bios version",
 			"learnMore": "Learn more",
 			"freeMemory": "Free memory",
-			"copy":"copy",
+			"copy": "copy",
 			"goodCondition": "Good condition",
 			"needAction": "Optimize now",
 			"hwStatus": "Hardware Status",
@@ -1096,7 +1109,7 @@
 			"used": "Used",
 			"scanned": "Scanned ",
 			"physicalMemory": "Physical Memory",
-			"storage":"Storage",
+			"storage": "Storage",
 			"scanNow": "Scan now",
 			"entitled": "Entitled",
 			"subscribeNow": "Click to subscribe",
@@ -1942,8 +1955,8 @@
 						"noInstalledAppsDescription": "This feature only support below applications: ",
 						"hasInstalledAppsNote": "Note: For Microsoft Teams 1.0, the F11 key cannot be used to hang up the call.",
 						"noInstalledAppsNote": "Note: To use the feature, you need to download and install the apps first.",
-						"app-0":"Skype for<br/>Business 2016",
-						"app-1" :"Microsoft Teams"
+						"app-0": "Skype for<br/>Business 2016",
+						"app-1": "Microsoft Teams"
 					}
 				},
 				"backlight": {
@@ -2282,13 +2295,13 @@
 				"desc2": "This function might impact the battery life, skin temperature, and fan noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.",
 				"tooltip": {
 					"description1": "This feature only works for below video players:<br>",
-					"player1":"Windows Media Player<br>",
-					"player2":"Chrome-based player<br>",
-					"player3":"PotPlayer<br>",
-					"player4":"Opera (built-in Google Chromium engine)<br>",
-					"player5":"Microsoft Edge (built-in Google Chromium engine)<br>",
-					"player6":"Microsoft Teams<br>",
-					"player7":"Zoom<br>",
+					"player1": "Windows Media Player<br>",
+					"player2": "Chrome-based player<br>",
+					"player3": "PotPlayer<br>",
+					"player4": "Opera (built-in Google Chromium engine)<br>",
+					"player5": "Microsoft Edge (built-in Google Chromium engine)<br>",
+					"player6": "Microsoft Teams<br>",
+					"player7": "Zoom<br>",
 					"description2": "<p class='srTooltip' id='sr-tip' role='text'>For instructions on how to enable this function on PotPlayer, refer to the User Guide that comes with your computer.</p>"
 				},
 				"note": {
@@ -2666,10 +2679,10 @@
 			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July 2020.",
 			"descriptionbeta1": "You are welcomed to join and try the full feature.",
 			"expiredNote": "Your subscription will expire in",
-			"day":"day",
-			"days":"days",
-			"weeks":"weeks",
-			"week":"a week",
+			"day": "day",
+			"days": "days",
+			"weeks": "weeks",
+			"week": "a week",
 			"month": "month",
 			"today": "today",
 			"next": "next"
@@ -3963,7 +3976,7 @@
 			"smb": "Work",
 			"consumerGaming": "Gaming",
 			"consumerEducation": "Education",
-			"commercial":"Enterprise"
+			"commercial": "Enterprise"
 		},
 		"gaming": {
 			"gamingDescription": "Gaming version of Vantage makes it simple for you to improve your gaming experience. Along with common settings, the main features include (available on selected systems):",

@@ -9,7 +9,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-home-security-card',
 	templateUrl: './home-security-card.component.html',
-	styleUrls: ['./home-security-card.component.scss']
+	styleUrls: ['./home-security-card.component.scss'],
 })
 export class HomeSecurityCardComponent implements OnInit {
 	@Input() location: DeviceLocationPermission;
@@ -19,10 +19,9 @@ export class HomeSecurityCardComponent implements OnInit {
 		public dialogService: DialogService,
 		private localCacheService: LocalCacheService,
 		private commonService: CommonService
-	) {	}
+	) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	joinGroup() {
 		if (!this.commonService.isOnline) {
@@ -45,13 +44,18 @@ export class HomeSecurityCardComponent implements OnInit {
 	}
 
 	showPermissionDialog(dialog: string) {
-		if (this.location
-			&& !this.location.hasSystemPermissionShowed
-			&& this.location.isAllAppsServiceOn
-			&& this.location.isDeviceServiceOn) {
+		if (
+			this.location &&
+			!this.location.hasSystemPermissionShowed &&
+			this.location.isAllAppsServiceOn &&
+			this.location.isDeviceServiceOn
+		) {
 			this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
 				if (status) {
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.ConnectedHomeSecurityWelcomeComplete,
+						true
+					);
 					if (dialog === 'join') {
 						this.dialogService.openInvitationCodeDialog();
 					} else if (dialog === 'trial') {

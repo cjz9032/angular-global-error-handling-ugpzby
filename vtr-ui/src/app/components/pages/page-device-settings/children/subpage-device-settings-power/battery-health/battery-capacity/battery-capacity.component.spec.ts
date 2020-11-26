@@ -21,15 +21,19 @@ describe('BatteryCapacityComponent', () => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [BatteryCapacityComponent],
-			imports: [RouterTestingModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				}
-			}), HttpClientTestingModule, NgbTooltipModule],
-			providers: [PowerService, BatteryHealthService, VantageShellService]
-
+			imports: [
+				RouterTestingModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+				}),
+				HttpClientTestingModule,
+				NgbTooltipModule,
+			],
+			providers: [PowerService, BatteryHealthService, VantageShellService],
 		}).compileComponents();
 	}));
 
@@ -72,12 +76,10 @@ describe('BatteryCapacityComponent', () => {
 	it('should call setCircleInformation', () => {
 		component.capacityError = true;
 		component.setCircleInformation();
-
 	});
 	it('should call onRightIconClick', () => {
 		const tooltip = '';
 		component.onRightIconClick(tooltip, true);
-
 	});
 	it('should call toggleToolTip', () => {
 		const tooltip = {
@@ -92,7 +94,7 @@ describe('BatteryCapacityComponent', () => {
 			open() {
 				// tslint:disable-next-line:no-unused-expression
 				true;
-			}
+			},
 		};
 		component.toggleToolTip(tooltip, true);
 	});
@@ -100,7 +102,7 @@ describe('BatteryCapacityComponent', () => {
 		const batteryInfo = {
 			lifePercent: 100,
 			fullChargeCapacity: -1,
-			designCapacity: -1
+			designCapacity: -1,
 		};
 		component.isCapacityError(batteryInfo);
 	});

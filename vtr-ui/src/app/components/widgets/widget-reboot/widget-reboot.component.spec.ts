@@ -8,9 +8,8 @@ xdescribe('WidgetRebootComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetRebootComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetRebootComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

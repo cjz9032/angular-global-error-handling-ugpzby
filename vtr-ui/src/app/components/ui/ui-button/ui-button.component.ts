@@ -4,7 +4,7 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 @Component({
 	selector: 'vtr-ui-button',
 	templateUrl: './ui-button.component.html',
-	styleUrls: ['./ui-button.component.scss']
+	styleUrls: ['./ui-button.component.scss'],
 })
 export class UiButtonComponent implements OnInit, AfterViewInit {
 	@Input() ariaLabel: string = '';
@@ -44,8 +44,8 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 	@Input() isLoading = false;
 	@Input() autoFocus = false;
 
-	groupNone = 'groupNone'
-	constructor() { }
+	groupNone = 'groupNone';
+	constructor() {}
 
 	ngAfterViewInit(): void {
 		if (this.autoFocus) {
@@ -53,9 +53,9 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	initTooltipText(){
+	initTooltipText() {
 		//If the tooltipText is not defined, use the label text in it
-		if( !this.tooltipText ) {
+		if (!this.tooltipText) {
 			this.tooltipText = this.label;
 		}
 	}
@@ -70,7 +70,9 @@ export class UiButtonComponent implements OnInit, AfterViewInit {
 	}
 
 	getButtonColor(buttonColor) {
-		if (!buttonColor) { return; }
+		if (!buttonColor) {
+			return;
+		}
 		return `btn-${buttonColor}`;
 	}
 

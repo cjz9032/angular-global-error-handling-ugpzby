@@ -12,7 +12,7 @@ describe('PreviousResultService', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientModule, TranslateModule.forRoot(), RouterTestingModule],
-			providers: [VantageShellService]
+			providers: [VantageShellService],
 		});
 		service = TestBed.inject(PreviousResultService);
 	});

@@ -32,7 +32,7 @@
 				padding-bottom: 1rem;
 			}
 			.menu-item {
-				font-family: "Segoe UI",sans-serif;
+				font-family: 'Segoe UI', sans-serif;
 				font-weight: $weight_regular;
 				@include menu-color-high-contrast;
 				&:hover {
@@ -46,7 +46,8 @@
 						@include outline-white-high-contrast;
 					}
 				}
-				&.active, &.actived {
+				&.active,
+				&.actived {
 					background-color: $menu_hover;
 					@include high-contrast-color-default;
 
@@ -65,7 +66,7 @@
 			}
 			.user-text {
 				font-weight: $weight_regular;
-				font-family: "Segoe UI",sans-serif;
+				font-family: 'Segoe UI', sans-serif;
 				line-height: 2.8rem;
 				@include high-contrast-text-color-disabled;
 			}
@@ -91,7 +92,7 @@
 				.menu-item-text {
 					word-break: normal;
 					white-space: pre-wrap;
-					word-wrap : break-word;
+					word-wrap: break-word;
 					line-height: 1.3;
 				}
 				&:hover {

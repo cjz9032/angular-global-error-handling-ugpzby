@@ -3,12 +3,12 @@ export class LightingProfile {
 		public didSuccess: Boolean,
 		public profileId: number,
 		public brightness: number,
-		public lightInfo: [{
-			lightPanelType: number,
-			lightEffectType: number,
-			lightColor: string
-		}]
-
-	) { }
-
+		public lightInfo: [
+			{
+				lightPanelType: number;
+				lightEffectType: number;
+				lightColor: string;
+			}
+		]
+	) {}
 }

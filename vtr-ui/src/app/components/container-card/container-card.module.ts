@@ -13,13 +13,8 @@ import { ContainerCardOfflineComponent } from './container-card-offline/containe
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
-	declarations: [
-		ContainerCardComponent,
-		ContainerCardOfflineComponent,
-	],
+	declarations: [ContainerCardComponent, ContainerCardOfflineComponent],
 	imports: [
 		CommonModule,
 		CommonPipeModule,
@@ -29,15 +24,10 @@ import { RouterModule } from '@angular/router';
 		SanitizeModule,
 		AppSearchModule,
 		NgbTooltipModule,
-		RouterModule
+		RouterModule,
 	],
-	exports: [
-		ContainerCardComponent,
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	exports: [ContainerCardComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class ContainerCardModule {
 	constructor(library: FaIconLibrary) {

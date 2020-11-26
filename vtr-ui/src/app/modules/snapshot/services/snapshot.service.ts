@@ -3,22 +3,18 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class SnapshotService {
-
 	private snapshotBridge: any;
 
-	constructor(
-		shellService: VantageShellService,
-		private logger: LoggerService) {
+	constructor(shellService: VantageShellService, private logger: LoggerService) {
 		this.snapshotBridge = shellService.getSnapshot();
 	}
 
 	public getLoadInstalledProgramsInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadInstalledProgramsInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadInstalledProgramsInfo().catch((error) => {
 				this.logger.error('[GetLoadInstalledProgramsInfo] ' + error);
 			});
 		}
@@ -27,8 +23,7 @@ export class SnapshotService {
 
 	public getLoadVideoCardsInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadVideoCardsInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadVideoCardsInfo().catch((error) => {
 				this.logger.error('[getLoadVideoCardsInfo] ' + error);
 			});
 		}
@@ -37,8 +32,7 @@ export class SnapshotService {
 
 	public getLoadProcessorsInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadProcessorsInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadProcessorsInfo().catch((error) => {
 				this.logger.error('[getLoadProcessorsInfo] ' + error);
 			});
 		}
@@ -47,8 +41,7 @@ export class SnapshotService {
 
 	public getLoadMemoryInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadMemoryInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadMemoryInfo().catch((error) => {
 				this.logger.error('[getLoadMemoryInfo] ' + error);
 			});
 		}
@@ -57,8 +50,7 @@ export class SnapshotService {
 
 	public getLoadMotherboardInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadMotherboardInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadMotherboardInfo().catch((error) => {
 				this.logger.error('[getLoadMotherboardInfo] ' + error);
 			});
 		}
@@ -67,8 +59,7 @@ export class SnapshotService {
 
 	public getLoadSoundCardsInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadSoundCardsInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadSoundCardsInfo().catch((error) => {
 				this.logger.error('[getLoadSoundCardsInfo] ' + error);
 			});
 		}
@@ -77,8 +68,7 @@ export class SnapshotService {
 
 	public getLoadStartupProgramsInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadStartupProgramsInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadStartupProgramsInfo().catch((error) => {
 				this.logger.error('[getLoadStartupProgramsInfo] ' + error);
 			});
 		}
@@ -87,8 +77,7 @@ export class SnapshotService {
 
 	public getLoadDisplayDevicesInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadDisplayDevicesInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadDisplayDevicesInfo().catch((error) => {
 				this.logger.error('[getLoadDisplayDevicesInfo] ' + error);
 			});
 		}
@@ -97,8 +86,7 @@ export class SnapshotService {
 
 	public getLoadKeyboardsInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadKeyboardsInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadKeyboardsInfo().catch((error) => {
 				this.logger.error('[getLoadKeyboardsInfo] ' + error);
 			});
 		}
@@ -107,8 +95,7 @@ export class SnapshotService {
 
 	public getLoadPrintersInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadPrintersInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadPrintersInfo().catch((error) => {
 				this.logger.error('[getLoadPrintersInfo] ' + error);
 			});
 		}
@@ -117,8 +104,7 @@ export class SnapshotService {
 
 	public getLoadMouseDevicesInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadMouseDevicesInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadMouseDevicesInfo().catch((error) => {
 				this.logger.error('[getLoadMouseDevicesInfo] ' + error);
 			});
 		}
@@ -127,8 +113,7 @@ export class SnapshotService {
 
 	public getLoadWebBrowsersInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadWebBrowsersInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadWebBrowsersInfo().catch((error) => {
 				this.logger.error('[getLoadWebBrowsersInfo] ' + error);
 			});
 		}
@@ -137,8 +122,7 @@ export class SnapshotService {
 
 	public getLoadCdRomDrivesInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadCdRomDrivesInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadCdRomDrivesInfo().catch((error) => {
 				this.logger.error('[getLoadCdRomDrivesInfo] ' + error);
 			});
 		}
@@ -147,8 +131,7 @@ export class SnapshotService {
 
 	public getLoadOperatingSystemsInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadOperatingSystemsInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadOperatingSystemsInfo().catch((error) => {
 				this.logger.error('[getLoadOperatingSystemsInfo] ' + error);
 			});
 		}
@@ -157,8 +140,7 @@ export class SnapshotService {
 
 	public getLoadStorageDevicesInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadStorageDevicesInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadStorageDevicesInfo().catch((error) => {
 				this.logger.error('[getLoadStorageDevicesInfo] ' + error);
 			});
 		}
@@ -167,8 +149,7 @@ export class SnapshotService {
 
 	public getLoadNetworkDevicesInfo() {
 		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadNetworkDevicesInfo()
-			.catch((error) => {
+			return this.snapshotBridge.getLoadNetworkDevicesInfo().catch((error) => {
 				this.logger.error('[getLoadNetworkDevicesInfo] ' + error);
 			});
 		}

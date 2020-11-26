@@ -8,9 +8,8 @@ xdescribe('ModalWait', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ ModalWaitComponent ]
-		})
-		.compileComponents();
+			declarations: [ModalWaitComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

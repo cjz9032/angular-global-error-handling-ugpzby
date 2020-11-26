@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .card-pt {
 	padding-top: 2.4rem;
@@ -57,15 +57,15 @@
 			}
 		}
 
-		input[type="radio"] {
+		input[type='radio'] {
 			opacity: 0;
 		}
 
-		input[type="radio"]:checked+img {
+		input[type='radio']:checked + img {
 			border: 2pt solid $go_dark;
 		}
 
-		.radio-is-selected input[type="radio"]:not(:checked)+img {
+		.radio-is-selected input[type='radio']:not(:checked) + img {
 			opacity: 0.5 !important;
 		}
 
@@ -97,7 +97,6 @@
 				overflow: hidden;
 				background-color: rgba(0, 0, 0, 0.3);
 			}
-
 
 			@media #{$high-contrast} {
 				&::after {
@@ -146,7 +145,7 @@
 				width: calc(100% + 0.2rem);
 				height: calc(100% + 0.2rem);
 
-				&:focus~label {
+				&:focus ~ label {
 					outline: none !important;
 
 					&:before {
@@ -187,13 +186,13 @@
 				padding-right: 0;
 				position: relative;
 
-				input[type="checkbox"] {
+				input[type='checkbox'] {
 					opacity: 0;
 					width: 100%;
 					height: calc(100% - 1.2rem);
 					position: absolute;
 
-					&:focus~label {
+					&:focus ~ label {
 						outline: none !important;
 
 						&:before {
@@ -216,7 +215,7 @@
 				}
 			}
 
-			input[type="checkbox"]+label {
+			input[type='checkbox'] + label {
 				padding: 0.3rem 2rem;
 				border: 0.1rem solid $shade_btn_light;
 				border-radius: 2.5rem;
@@ -231,18 +230,18 @@
 				}
 			}
 
-			input[type="checkbox"]:checked+label {
+			input[type='checkbox']:checked + label {
 				border: 0.1rem solid #21c48a;
 				background: #f5f7f8;
 				color: $shade_darkest;
 			}
 
 			@media #{$high-contrast} {
-				input[type="checkbox"]+label {
+				input[type='checkbox'] + label {
 					border: 0.1rem solid rgba($color: $light, $alpha: 0.4);
 				}
 
-				input[type="checkbox"]:checked+label {
+				input[type='checkbox']:checked + label {
 					border: 0.1rem solid currentColor;
 					color: currentColor;
 					background: currentColor;
@@ -250,11 +249,11 @@
 			}
 
 			@media #{$black-on-white} {
-				input[type="checkbox"]+label {
+				input[type='checkbox'] + label {
 					border: 0.1rem solid rgba($color: $dark, $alpha: 0.5);
 				}
 
-				input[type="checkbox"]:checked+label {
+				input[type='checkbox']:checked + label {
 					border: 0.1rem solid $dark;
 					color: $dark;
 					background: $dark;
@@ -262,11 +261,11 @@
 			}
 
 			@media #{$white-on-black} {
-				input[type="checkbox"]+label {
+				input[type='checkbox'] + label {
 					border: 0.1rem solid rgba($color: $light, $alpha: 0.5);
 				}
 
-				input[type="checkbox"]:checked+label {
+				input[type='checkbox']:checked + label {
 					border: 0.1rem solid $light;
 					color: $light;
 					background: $light;
@@ -282,7 +281,7 @@
 					.button-box {
 						.disable {
 							.text {
-								color: $grey_darker
+								color: $grey_darker;
 							}
 						}
 					}

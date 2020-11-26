@@ -98,5 +98,5 @@ export const keyboardMap = {
 	219: 'OpenBracket',
 	220: 'Backslash',
 	221: 'CloseBracket',
-	222: 'SingleQuote'
-}
+	222: 'SingleQuote',
+};

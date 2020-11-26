@@ -8,9 +8,8 @@ xdescribe('WidgetPermissionNoteComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetPermissionNoteComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetPermissionNoteComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

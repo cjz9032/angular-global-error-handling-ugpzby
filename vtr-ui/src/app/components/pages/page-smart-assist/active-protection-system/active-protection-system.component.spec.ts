@@ -1,16 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import {
-	ComponentFixture,
-	TestBed
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import {
-	TranslateLoader, TranslateModule,
-
-	TranslateService
-} from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
@@ -52,7 +45,6 @@ class MockAPS {
 			reject(false);
 		});
 		return promise;
-
 	}
 	setSnoozeTime(value) {
 		return Promise.resolve(true);
@@ -70,7 +62,6 @@ class MockAPS {
 	}
 }
 
-
 describe('ActiveProtectionSystemComponent', () => {
 	let component: ActiveProtectionSystemComponent;
 	let fixture: ComponentFixture<ActiveProtectionSystemComponent>;
@@ -80,7 +71,7 @@ describe('ActiveProtectionSystemComponent', () => {
 	/* let metricService: MetricService;
 	let devService: DevService; */
 
-	beforeEach((() => {
+	beforeEach(() => {
 		TestBed.configureTestingModule({
 			declarations: [ActiveProtectionSystemComponent],
 			schemas: [NO_ERRORS_SCHEMA],
@@ -89,29 +80,35 @@ describe('ActiveProtectionSystemComponent', () => {
 					loader: {
 						provide: TranslateLoader,
 						useFactory: HttpLoaderFactory,
-						deps: [HttpClient]
+						deps: [HttpClient],
 					},
-					isolate: false
+					isolate: false,
 				}),
 				TranslateModule.forChild(),
 				HttpClientTestingModule,
-				RouterTestingModule
+				RouterTestingModule,
 			],
-			providers: [TranslateService, {
-				provide: SmartAssistService,
-				useClass: MockAPS
-			}, CommonMetricsService, MetricService, DevService]
+			providers: [
+				TranslateService,
+				{
+					provide: SmartAssistService,
+					useClass: MockAPS,
+				},
+				CommonMetricsService,
+				MetricService,
+				DevService,
+			],
 		}).compileComponents();
-	}));
+	});
 
-	beforeEach((() => {
+	beforeEach(() => {
 		fixture = TestBed.createComponent(ActiveProtectionSystemComponent);
 		debugElement = fixture.debugElement;
 		component = fixture.componentInstance;
 		smartAssist = debugElement.injector.get(SmartAssistService);
 		commonMetricsService = debugElement.injector.get(CommonMetricsService);
 		fixture.detectChanges();
-	}));
+	});
 
 	it('ActiveProtectionSystemComponent :: shouldcreate APS-Component', () => {
 		fixture.detectChanges();
@@ -119,8 +116,13 @@ describe('ActiveProtectionSystemComponent', () => {
 	});
 
 	it('ActiveProtectionSystemComponent :: shouldcall init APS ,with sensitivity 1', () => {
-		const spyGetAPSMode = spyOn(smartAssist, 'getAPSMode').and.returnValue(Promise.resolve(false));
-		const spyGetAPSSensitivityLevel = spyOn(smartAssist, 'getAPSSensitivityLevel').and.returnValue(Promise.resolve(1));
+		const spyGetAPSMode = spyOn(smartAssist, 'getAPSMode').and.returnValue(
+			Promise.resolve(false)
+		);
+		const spyGetAPSSensitivityLevel = spyOn(
+			smartAssist,
+			'getAPSSensitivityLevel'
+		).and.returnValue(Promise.resolve(1));
 		component.apsSensitivity = 100;
 		fixture.detectChanges();
 		component.initAPS();
@@ -160,7 +162,10 @@ describe('ActiveProtectionSystemComponent', () => {
 	it('ActiveProtectionSystemComponent :: shouldset APS Sensitivity level API call check with sensitivity 0', () => {
 		const sensitivity = 0;
 		// spyOn(smartAssist.setAPSSensitivityLevel, 'then').and.returnValue(true);
-		const spySetAPSSensitivityLevel = spyOn(smartAssist, 'setAPSSensitivityLevel').and.returnValue(Promise.resolve(true));
+		const spySetAPSSensitivityLevel = spyOn(
+			smartAssist,
+			'setAPSSensitivityLevel'
+		).and.returnValue(Promise.resolve(true));
 		component.setAPSSensitivityLevel(sensitivity);
 		expect(spySetAPSSensitivityLevel).toHaveBeenCalled();
 	});
@@ -168,7 +173,10 @@ describe('ActiveProtectionSystemComponent', () => {
 	it('ActiveProtectionSystemComponent :: shouldset APS Sensitivity level API call check with sensitivity 50', () => {
 		const sensitivity = 50;
 		// spyOn(smartAssist.setAPSSensitivityLevel, 'then').and.returnValue(true);
-		const spySetAPSSensitivityLevel = spyOn(smartAssist, 'setAPSSensitivityLevel').and.returnValue(Promise.resolve(true));
+		const spySetAPSSensitivityLevel = spyOn(
+			smartAssist,
+			'setAPSSensitivityLevel'
+		).and.returnValue(Promise.resolve(true));
 		component.setAPSSensitivityLevel(sensitivity);
 		expect(spySetAPSSensitivityLevel).toHaveBeenCalled();
 	});
@@ -176,7 +184,10 @@ describe('ActiveProtectionSystemComponent', () => {
 	it('ActiveProtectionSystemComponent :: shouldset APS Sensitivity level API call check with sensitivity 100', () => {
 		const sensitivity = 100;
 		// spyOn(smartAssist.setAPSSensitivityLevel, 'then').and.returnValue(true);
-		const spySetAPSSensitivityLevel = spyOn(smartAssist, 'setAPSSensitivityLevel').and.returnValue(Promise.resolve(true));
+		const spySetAPSSensitivityLevel = spyOn(
+			smartAssist,
+			'setAPSSensitivityLevel'
+		).and.returnValue(Promise.resolve(true));
 		component.setAPSSensitivityLevel(sensitivity);
 		expect(spySetAPSSensitivityLevel).toHaveBeenCalled();
 	});
@@ -213,7 +224,6 @@ describe('ActiveProtectionSystemComponent', () => {
 		const spyOnMetrics = spyOn(commonMetricsService, 'sendMetrics');
 		component.setSnoozeSetting(flag);
 		expect(spyOnMetrics).toHaveBeenCalled();
-
 	});
 
 	it('ActiveProtectionSystemComponent :: shouldset snooze time', () => {
@@ -222,7 +232,7 @@ describe('ActiveProtectionSystemComponent', () => {
 			value: 0.5,
 			placeholder: 'seconds',
 			text: `30 seconds`,
-			metricsValue: {}
+			metricsValue: {},
 		};
 		spyOn(component, 'setSnoozeTime');
 		component.setSnoozeTime(interval);
@@ -236,10 +246,14 @@ describe('ActiveProtectionSystemComponent', () => {
 			value: 0.5,
 			placeholder: 'seconds',
 			text: `30 seconds`,
-			metricsValue: {}
+			metricsValue: {},
 		};
-		const spySetSnoozeTime = spyOn(smartAssist, 'setSnoozeTime').and.returnValue(Promise.resolve(true));
-		const spyGetSnoozeTime = spyOn(smartAssist, 'getSnoozeTime').and.returnValue(Promise.resolve(50));
+		const spySetSnoozeTime = spyOn(smartAssist, 'setSnoozeTime').and.returnValue(
+			Promise.resolve(true)
+		);
+		const spyGetSnoozeTime = spyOn(smartAssist, 'getSnoozeTime').and.returnValue(
+			Promise.resolve(50)
+		);
 
 		component.setSnoozeTime(interval);
 		expect(spySetSnoozeTime).toHaveBeenCalled();
@@ -259,7 +273,9 @@ describe('ActiveProtectionSystemComponent', () => {
 		component.selectedSnoozeTime = selectedSnoozeTime;
 		component.advanceSettings = 'activeProtectionSystem_advanced_advanced_settings';
 		fixture.detectChanges();
-		const spySendSnoozeCommand = spyOn(smartAssist, 'sendSnoozeCommand').and.returnValue(Promise.resolve(true));
+		const spySendSnoozeCommand = spyOn(smartAssist, 'sendSnoozeCommand').and.returnValue(
+			Promise.resolve(true)
+		);
 		component.suspendNow();
 		expect(spySendSnoozeCommand).toHaveBeenCalled();
 	});
@@ -269,7 +285,9 @@ describe('ActiveProtectionSystemComponent', () => {
 		component.selectedSnoozeTime = selectedSnoozeTime;
 		component.advanceSettings = 'activeProtectionSystem_advanced_advanced_settings';
 		fixture.detectChanges();
-		const spySendSnoozeCommand = spyOn(smartAssist, 'sendSnoozeCommand').and.returnValue(Promise.resolve(true));
+		const spySendSnoozeCommand = spyOn(smartAssist, 'sendSnoozeCommand').and.returnValue(
+			Promise.resolve(true)
+		);
 		component.suspendNow();
 		expect(spySendSnoozeCommand).toHaveBeenCalled();
 	});
@@ -279,7 +297,9 @@ describe('ActiveProtectionSystemComponent', () => {
 		component.selectedSnoozeTime = selectedSnoozeTime;
 		component.advanceSettings = 'activeProtectionSystem_advanced_advanced_settings';
 		fixture.detectChanges();
-		const spySendSnoozeCommand = spyOn(smartAssist, 'sendSnoozeCommand').and.returnValue(Promise.resolve(true));
+		const spySendSnoozeCommand = spyOn(smartAssist, 'sendSnoozeCommand').and.returnValue(
+			Promise.resolve(true)
+		);
 		component.suspendNow();
 		expect(spySendSnoozeCommand).toHaveBeenCalled();
 	});
@@ -289,7 +309,9 @@ describe('ActiveProtectionSystemComponent', () => {
 		component.selectedSnoozeTime = selectedSnoozeTime;
 		component.advanceSettings = 'activeProtectionSystem_advanced_advanced_settings';
 		fixture.detectChanges();
-		const spySendSnoozeCommand = spyOn(smartAssist, 'sendSnoozeCommand').and.returnValue(Promise.resolve(true));
+		const spySendSnoozeCommand = spyOn(smartAssist, 'sendSnoozeCommand').and.returnValue(
+			Promise.resolve(true)
+		);
 		component.suspendNow();
 		expect(spySendSnoozeCommand).toHaveBeenCalled();
 	});
@@ -330,5 +352,4 @@ describe('ActiveProtectionSystemComponent', () => {
 		component.toggleAdvanced(new Event('click'));
 		expect(spyFocusElement).toHaveBeenCalled();
 	});
-
 });

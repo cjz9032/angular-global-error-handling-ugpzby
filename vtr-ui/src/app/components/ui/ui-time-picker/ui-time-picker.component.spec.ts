@@ -19,9 +19,8 @@ describe('UiTimePickerComponent', () => {
 			declarations: [UiTimePickerComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule],
-			providers: [TranslateStore, CommonService]
-		})
-			.compileComponents();
+			providers: [TranslateStore, CommonService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -39,7 +38,7 @@ describe('UiTimePickerComponent', () => {
 	it('#UiTimePickerComponent ngOnChanges ', () => {
 		spyOn(component, 'splitTime');
 		component.ngOnChanges({
-			name: new SimpleChange('1:00', '12:30', false)
+			name: new SimpleChange('1:00', '12:30', false),
 		});
 		expect(component.splitTime).toHaveBeenCalled();
 		// expect(component.initiateBlock).toHaveBeenCalled();
@@ -54,8 +53,6 @@ describe('UiTimePickerComponent', () => {
 		expect(component.sendToggleNotification).toHaveBeenCalledWith(true);
 	});
 
-
-
 	it('#UiTimePickerComponent onToggleDropDown handleKBNavigations', () => {
 		spyOn(component, 'onToggleDropDown');
 		const event = { keyCode: 32 };
@@ -63,20 +60,24 @@ describe('UiTimePickerComponent', () => {
 		expect(component.onToggleDropDown).toHaveBeenCalled();
 	});
 
-
-
 	it('#UiTimePickerComponent sendToggleNotification true with id=dropcheck1 ', () => {
 		spyOn(commonService, 'sendNotification');
 		component.id = 'dropcheck1';
 		component.sendToggleNotification(true);
-		expect(commonService.sendNotification).toHaveBeenCalledWith('smartStandbyToggles', { id: 0, value: true });
+		expect(commonService.sendNotification).toHaveBeenCalledWith('smartStandbyToggles', {
+			id: 0,
+			value: true,
+		});
 	});
 
 	it('#UiTimePickerComponent sendToggleNotification true with id=dropcheck2 ', () => {
 		spyOn(commonService, 'sendNotification');
 		component.id = 'dropcheck2';
 		component.sendToggleNotification(true);
-		expect(commonService.sendNotification).toHaveBeenCalledWith('smartStandbyToggles', { id: 1, value: true });
+		expect(commonService.sendNotification).toHaveBeenCalledWith('smartStandbyToggles', {
+			id: 1,
+			value: true,
+		});
 	});
 
 	it('#UiTimePickerComponent setAmPm true', () => {
@@ -105,13 +106,11 @@ describe('UiTimePickerComponent', () => {
 		expect(component.setTimerBlock).toHaveBeenCalled();
 	});
 
-
 	it('#UiTimePickerComponent updateHours ', () => {
 		spyOn(component, 'setTimerBlock');
 		component.updateHours(true);
 		expect(component.setTimerBlock).toHaveBeenCalled();
 	});
-
 
 	it('#UiDaysPickerComponent clearSettings', () => {
 		component.id = 'test';
@@ -121,7 +120,6 @@ describe('UiTimePickerComponent', () => {
 		component.clearSettings();
 		expect(component.sendToggleNotification).toHaveBeenCalledWith(false);
 		expect(component.initiateBlock).toHaveBeenCalled();
-
 	});
 
 	it('#UiTimePickerComponent handleKBNavigations keycode 32 SPACE ', () => {

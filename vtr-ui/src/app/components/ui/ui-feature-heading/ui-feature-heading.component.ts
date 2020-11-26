@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
 	selector: 'vtr-ui-feature-heading',
 	templateUrl: './ui-feature-heading.component.html',
-	styleUrls: ['./ui-feature-heading.component.scss']
+	styleUrls: ['./ui-feature-heading.component.scss'],
 })
 export class UiFeatureHeadingComponent implements OnInit {
 	@Input() featureTitle: string;
@@ -13,9 +13,7 @@ export class UiFeatureHeadingComponent implements OnInit {
 	@Input() appSearchName: string;
 	@Input() textId = '';
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit(): void {
-	}
-
+	ngOnInit(): void {}
 }

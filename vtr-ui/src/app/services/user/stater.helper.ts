@@ -9,13 +9,12 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 
 declare var Windows;
 
-
-
 const SOURCE_NAME = 'windows:Lenovo:id.uap.';
 const DEVICE_ID_TYPE = 'imei';
 const LIDUserSettingsXml = 'LenovoID_User_Settings.xml';
 const LIDOobeResponseXml = 'UAPOOBEDataResponse.xml';
-const STARTER_ACCOUNT_TOKEN = 'ZAgAAAAAAA_STARTER_1.0_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+const STARTER_ACCOUNT_TOKEN =
+	'ZAgAAAAAAA_STARTER_1.0_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
 
 /**	LenovoIDUserSettingsXml this file is create by vantage
 	{
@@ -111,9 +110,7 @@ export class LIDStarterHelper {
 
 	generateSourceName(api) {
 		const version = environment.appVersion.replace(/\./g, '');
-		return (!api) ?
-			SOURCE_NAME + version :
-			SOURCE_NAME + api + '.' + version;
+		return !api ? SOURCE_NAME + version : SOURCE_NAME + api + '.' + version;
 	}
 
 	getDeviceId() {
@@ -137,7 +134,7 @@ export class LIDStarterHelper {
 		const response: any = await this.readXmlFile(LIDOobeResponseXml);
 		const oobeData = {
 			email: null,
-			starterAccount: null
+			starterAccount: null,
 		};
 
 		if (response == null) {
@@ -145,13 +142,11 @@ export class LIDStarterHelper {
 		}
 
 		const tempResult = response.UAPOOBEDataResponse as UAPOOBEDataResponse;
-		if (!tempResult
-			|| !tempResult.SettingList
-			|| !tempResult.SettingList.Setting) {
+		if (!tempResult || !tempResult.SettingList || !tempResult.SettingList.Setting) {
 			return oobeData;
 		}
 
-		tempResult.SettingList.Setting.forEach(item => {
+		tempResult.SettingList.Setting.forEach((item) => {
 			if (item._key && item._key.toLowerCase() === 'email') {
 				oobeData.email = item.__text;
 			}
@@ -168,10 +163,15 @@ export class LIDStarterHelper {
 		try {
 			const client = new Windows.Web.Http.HttpClient();
 			const url = new Windows.Foundation.Uri(strUrl);
-			const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.post, url);
-			request.content = new Windows.Web.Http.HttpStringContent(postData,
+			const request = new Windows.Web.Http.HttpRequestMessage(
+				Windows.Web.Http.HttpMethod.post,
+				url
+			);
+			request.content = new Windows.Web.Http.HttpStringContent(
+				postData,
 				Windows.Storage.Streams.UnicodeEncoding.utf8,
-				'application/x-www-form-urlencoded');
+				'application/x-www-form-urlencoded'
+			);
 
 			const response = await client.sendRequestAsync(request);
 			return await response.content.readAsStringAsync();
@@ -181,7 +181,6 @@ export class LIDStarterHelper {
 
 		return '';
 	}
-
 
 	async getStaterAccountFromOOBEServer() {
 		const url = 'https://www.lenovoid.com/lps/win10/oobe/2.0/';
@@ -202,7 +201,7 @@ export class LIDStarterHelper {
 			zh_cn: 'zh_cn', // '中文（简体)',
 			ru: 'ru', // 'Pусский',
 			nb: 'no_NO', // 'Norsk',
-			zh_tw: 'zh_Hant' // '中文（繁體)'
+			zh_tw: 'zh_Hant', // '中文（繁體)'
 		};
 
 		const mathineInfo = await this.deviceService.getMachineInfo();
@@ -254,19 +253,26 @@ export class LIDStarterHelper {
 	async hadEverSignIn() {
 		try {
 			// get signin date from local
-			let signinDate = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate);
+			let signinDate = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.LidFirstSignInDate
+			);
 			if (signinDate) {
 				return true;
 			}
 
 			// get sigin date from sso GetLastLoginTime
 			if (!LIDStarterHelper.signinDateFromSSO) {
-				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTimeRegistry(this.deviceService.is64bit);
+				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTimeRegistry(
+					this.deviceService.is64bit
+				);
 			}
 			signinDate = await LIDStarterHelper.signinDateFromSSO;
 			if (signinDate) {
 				signinDate = new Date(signinDate).toISOString().substring(0, 19);
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.LidFirstSignInDate, signinDate);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.LidFirstSignInDate,
+					signinDate
+				);
 				this.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
 				return true;
 			}
@@ -281,19 +287,26 @@ export class LIDStarterHelper {
 	async isStarterAccountScenario() {
 		try {
 			// get signin date from local
-			let signinDate = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate);
+			let signinDate = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.LidFirstSignInDate
+			);
 			if (signinDate) {
 				return false;
 			}
 
 			// get sigin date from sso GetLastLoginTime
 			if (!LIDStarterHelper.signinDateFromSSO) {
-				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTimeRegistry(this.deviceService.is64bit);
+				LIDStarterHelper.signinDateFromSSO = this.lid.getLastLoginTimeRegistry(
+					this.deviceService.is64bit
+				);
 			}
 			signinDate = await LIDStarterHelper.signinDateFromSSO;
 			if (signinDate) {
 				signinDate = new Date(signinDate).toISOString().substring(0, 19);
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.LidFirstSignInDate, signinDate);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.LidFirstSignInDate,
+					signinDate
+				);
 				this.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
 				return false;
 			}
@@ -321,7 +334,9 @@ export class LIDStarterHelper {
 			}
 
 			// option2: get from web-localstorage
-			starterAccount = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidStarterAccount);
+			starterAccount = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.LidStarterAccount
+			);
 			if (this.isStarterAccount(starterAccount)) {
 				return this.generateStarterAccountToken(starterAccount);
 			}
@@ -332,7 +347,10 @@ export class LIDStarterHelper {
 				return null;
 			}
 
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.LidStarterAccount, starterAccount);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.LidStarterAccount,
+				starterAccount
+			);
 			this.updateUserSettingXml({ lastSignIndate: null, staterAccount: starterAccount });
 			return this.generateStarterAccountToken(starterAccount);
 		} catch (ex) {
@@ -366,15 +384,18 @@ export class LIDStarterHelper {
 		return true;
 	}
 
-
 	async hasCreateStarterAccount() {
 		// option1: get from web-localstorage
-		let starterAccount = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidStarterAccount);
+		let starterAccount = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LidStarterAccount
+		);
 		if (this.isStarterAccount(starterAccount)) {
 			return true;
 		}
 
-		const LidHasCreateStarterAccount = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidHasCreateStarterAccount);
+		const LidHasCreateStarterAccount = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LidHasCreateStarterAccount
+		);
 		if (LidHasCreateStarterAccount) {
 			return true;
 		}
@@ -383,7 +404,10 @@ export class LIDStarterHelper {
 		const oobeData = await this.getDataFromOOBE();
 		starterAccount = oobeData ? oobeData.starterAccount : null;
 		if (this.isStarterAccount(starterAccount)) {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.LidHasCreateStarterAccount, true);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.LidHasCreateStarterAccount,
+				true
+			);
 			return true;
 		}
 
@@ -396,7 +420,7 @@ export class LIDStarterHelper {
 			userSettingsXml = this.readXmlFile(LIDUserSettingsXml);
 		}
 
-		let userSettings = await userSettingsXml as LenovoIDUserSettingsXml;
+		let userSettings = (await userSettingsXml) as LenovoIDUserSettingsXml;
 		if (!userSettings || Object.keys(userSettings).length === 0) {
 			userSettings = new LenovoIDUserSettingsXml();
 		}
@@ -406,7 +430,8 @@ export class LIDStarterHelper {
 		}
 
 		const isLenovoIdSupported = this.userService.isLenovoIdSupported();
-		const isLenovoIDFeatureEnabled = userSettings.Settings.IsLenovoIDFeatureEnabled.toLowerCase() === 'true';
+		const isLenovoIDFeatureEnabled =
+			userSettings.Settings.IsLenovoIDFeatureEnabled.toLowerCase() === 'true';
 		if (isLenovoIDFeatureEnabled !== isLenovoIdSupported) {
 			userSettings.Settings.IsLenovoIDFeatureEnabled = isLenovoIdSupported ? 'True' : 'False';
 			needUpdate = true;
@@ -418,19 +443,27 @@ export class LIDStarterHelper {
 
 		if (!payload) {
 			payload = new UserSettingsPayload();
-			payload.staterAccount = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidStarterAccount);
-			payload.lastSignIndate = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate);
+			payload.staterAccount = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.LidStarterAccount
+			);
+			payload.lastSignIndate = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.LidFirstSignInDate
+			);
 			needUpdate = true;
 		}
 
-		if (payload.staterAccount
-			&& userSettings.Settings.Behaviors.StarterAccount !== payload.staterAccount) {
+		if (
+			payload.staterAccount &&
+			userSettings.Settings.Behaviors.StarterAccount !== payload.staterAccount
+		) {
 			needUpdate = true;
 			userSettings.Settings.Behaviors.StarterAccount = payload.staterAccount;
 		}
 
-		if (payload.lastSignIndate
-			&& userSettings.Settings.Behaviors.DateFirstSignin !== payload.lastSignIndate) {
+		if (
+			payload.lastSignIndate &&
+			userSettings.Settings.Behaviors.DateFirstSignin !== payload.lastSignIndate
+		) {
 			needUpdate = true;
 			userSettings.Settings.Behaviors.DateFirstSignin = payload.lastSignIndate;
 		}
@@ -461,7 +494,9 @@ export class LIDStarterHelper {
 	async isSettingsXmlFileExist() {
 		let fileObj;
 		try {
-			fileObj = await Windows.Storage.ApplicationData.current.localFolder.getFileAsync(LIDUserSettingsXml);
+			fileObj = await Windows.Storage.ApplicationData.current.localFolder.getFileAsync(
+				LIDUserSettingsXml
+			);
 			if (fileObj === null) {
 				return false;
 			}
@@ -474,13 +509,15 @@ export class LIDStarterHelper {
 	async readXmlFile(fileName: String) {
 		let fileObj;
 		try {
-			fileObj = await Windows.Storage.ApplicationData.current.localFolder.getFileAsync(fileName);
+			fileObj = await Windows.Storage.ApplicationData.current.localFolder.getFileAsync(
+				fileName
+			);
 			if (fileObj === null) {
 				return {};
 			}
 		} catch (ex) {
 			this.devService.writeLog('get xml file', ex.message);
-			return {}; 	// file not exist
+			return {}; // file not exist
 		}
 
 		const contents = await Windows.Storage.FileIO.readTextAsync(fileObj);
@@ -501,8 +538,10 @@ export class LIDStarterHelper {
 			xmlString = xmlHeader + xmlString;
 		}
 
-		const targetFile = await Windows.Storage.ApplicationData.current.localFolder
-			.createFileAsync(fileName, Windows.Storage.CreationCollisionOption.replaceExisting);
+		const targetFile = await Windows.Storage.ApplicationData.current.localFolder.createFileAsync(
+			fileName,
+			Windows.Storage.CreationCollisionOption.replaceExisting
+		);
 
 		await Windows.Storage.FileIO.writeTextAsync(targetFile, xmlString);
 	}

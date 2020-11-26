@@ -10,7 +10,13 @@ import { ModalHardwareScanCustomizeComponent } from '../../../components/modal/m
 import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { ModalWaitComponent } from '../../../components/modal/modal-wait/modal-wait.component';
-import { TaskType, TaskStep, HardwareScanProgress, HardwareScanFinishedHeaderType, ExportLogErrorStatus } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
+import {
+	TaskType,
+	TaskStep,
+	HardwareScanProgress,
+	HardwareScanFinishedHeaderType,
+	ExportLogErrorStatus,
+} from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { ScanExecutionService } from '../../../services/scan-execution.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProtocolExecutionService } from '../../../services/protocol-execution.service';
@@ -27,11 +33,9 @@ const ViewResultsButton = 'ViewResults';
 @Component({
 	selector: 'vtr-hardware-components',
 	templateUrl: './hardware-components.component.html',
-	styleUrls: ['./hardware-components.component.scss']
+	styleUrls: ['./hardware-components.component.scss'],
 })
-
 export class HardwareComponentsComponent implements OnInit, OnDestroy {
-
 	public viewResultsPath = '';
 	public resultItems: any;
 	public hardwareTitle = '';
@@ -53,7 +57,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private customizeModal = ModalHardwareScanCustomizeComponent;
 	public itemsNextScan: any = [];
 	private cancelHandler = {
-		cancel: undefined
+		cancel: undefined,
 	};
 	private batteryMessage: string;
 	private culture: any;
@@ -62,12 +66,20 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public isOnline = true;
 
 	public get isFeatureExportAvailable(): boolean {
-		if (this.hardwareScanService.isScanOrRBSFinished() && this.hardwareScanService.getEnableViewResults()) {
-			if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.RecoverBadSectors) {
+		if (
+			this.hardwareScanService.isScanOrRBSFinished() &&
+			this.hardwareScanService.getEnableViewResults()
+		) {
+			if (
+				this.hardwareScanService.getScanFinishedHeaderType() ===
+				HardwareScanFinishedHeaderType.RecoverBadSectors
+			) {
 				return this.hwscanFeaturesService.isExportLogAvailable;
 			}
-			return this.hwscanFeaturesService.isExportLogAvailable &&
-				this.hardwareScanService.getFinalResultCode(); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
+			return (
+				this.hwscanFeaturesService.isExportLogAvailable &&
+				this.hardwareScanService.getFinalResultCode()
+			); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
 		}
 
 		return false;
@@ -125,9 +137,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.culture = this.hardwareScanService.getCulture();
 
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
-			this.onNotification(response);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 
 		this.hardwareScanService.startRecover.subscribe(() => {
 			this.initComponent();
@@ -137,11 +151,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		this.initComponent();
 
 		// Entry point to validate if runs a scan by protocol
-		this.activatedRoute.queryParams.subscribe(params => {
-			if (this.protocolExecutionService.validateParams(params) &&
-				!this.hardwareScanService.isScanOrRBSExecuting()){
+		this.activatedRoute.queryParams.subscribe((params) => {
+			if (
+				this.protocolExecutionService.validateParams(params) &&
+				!this.hardwareScanService.isScanOrRBSExecuting()
+			) {
 				// Validate loading module
-				if (!this.hardwareScanService.isLoadingDone()){
+				if (!this.hardwareScanService.isLoadingDone()) {
 					this.openWaitHardwareComponentsModal().result.then(() => {
 						// Close all modals to avoid a scan to be started from HardwareScanPage
 						this.modalService.dismissAll();
@@ -184,9 +200,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 				// Here we "initialize" the homepage, but only if a scan or RBS isn't running or just finished.
 				// In that case, we'll keep the screen with the last state, which is already stored in "this.modules"
-				if (!this.hardwareScanService.isScanExecuting() &&
+				if (
+					!this.hardwareScanService.isScanExecuting() &&
 					!this.hardwareScanService.isRecoverExecuting() &&
-					!this.hardwareScanService.isScanOrRBSFinished()) {
+					!this.hardwareScanService.isScanOrRBSFinished()
+				) {
 					this.modules = this.scanExecutionService.getItemToDisplay();
 				}
 
@@ -232,7 +250,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
 			size: 'lg',
 			centered: true,
-			windowClass: 'hardware-scan-modal-size'
+			windowClass: 'hardware-scan-modal-size',
 		});
 
 		this.updateExportLogComponentsModal(modal);
@@ -240,7 +258,11 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		return modal;
 	}
 
-	private updateExportLogComponentsModal(modal: NgbModalRef, error: ExportLogErrorStatus = ExportLogErrorStatus.LoadingExport, logPath: string = '') {
+	private updateExportLogComponentsModal(
+		modal: NgbModalRef,
+		error: ExportLogErrorStatus = ExportLogErrorStatus.LoadingExport,
+		logPath: string = ''
+	) {
 		(modal.componentInstance as ModalExportLogComponent).logPath = logPath;
 		(modal.componentInstance as ModalExportLogComponent).errorStatus = error;
 	}
@@ -248,9 +270,15 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public exportResults() {
 		if (this.exportService) {
 			let exportLogType;
-			if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.Scan) {
+			if (
+				this.hardwareScanService.getScanFinishedHeaderType() ===
+				HardwareScanFinishedHeaderType.Scan
+			) {
 				exportLogType = this.exportService.exportScanResults();
-			} else if (this.hardwareScanService.getScanFinishedHeaderType() === HardwareScanFinishedHeaderType.RecoverBadSectors) {
+			} else if (
+				this.hardwareScanService.getScanFinishedHeaderType() ===
+				HardwareScanFinishedHeaderType.RecoverBadSectors
+			) {
 				exportLogType = this.exportService.exportRbsResults();
 			}
 
@@ -260,21 +288,25 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 			this.timerService.start();
 			let result = HardwareScanMetricsService.FAIL_RESULT;
-			exportLogType.then((status) => {
-				result = HardwareScanMetricsService.SUCCESS_RESULT;
-				[statusExport, filePath] = status;
-			}).catch((error) => {
-				this.logger.error('Export Scan Results rejected');
-				statusExport = error;
-			}).finally(() => {
-				this.updateExportLogComponentsModal(exportModal, statusExport, filePath);
-				this.hardwareScanMetricsService.sendTaskActionMetrics(
-					HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
-					result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
-					'',
-					result,
-					this.timerService.stop());
-			});
+			exportLogType
+				.then((status) => {
+					result = HardwareScanMetricsService.SUCCESS_RESULT;
+					[statusExport, filePath] = status;
+				})
+				.catch((error) => {
+					this.logger.error('Export Scan Results rejected');
+					statusExport = error;
+				})
+				.finally(() => {
+					this.updateExportLogComponentsModal(exportModal, statusExport, filePath);
+					this.hardwareScanMetricsService.sendTaskActionMetrics(
+						HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
+						result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
+						'',
+						result,
+						this.timerService.stop()
+					);
+				});
 		}
 	}
 
@@ -367,7 +399,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		const modalRef = this.modalService.open(this.customizeModal, {
 			size: 'lg',
 			centered: true,
-			windowClass: 'custom-modal-size'
+			windowClass: 'custom-modal-size',
 		});
 		modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
 		modalRef.componentInstance.passEntry.subscribe(() => {
@@ -375,7 +407,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			this.scanExecutionService.checkPreScanInfo(TaskType.CustomScan); // custom scan
 		});
 
-		modalRef.componentInstance.modalClosing.subscribe(success => {
+		modalRef.componentInstance.modalClosing.subscribe((success) => {
 			// Re-enabling the button, once the modal has been closed in a way
 			// the user didn't started the Scan proccess.
 			if (!success) {
@@ -388,14 +420,19 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		const modal: NgbModalRef = this.modalService.open(ModalWaitComponent, {
 			size: 'lg',
 			centered: true,
-			windowClass: 'hardware-scan-modal-size'
+			windowClass: 'hardware-scan-modal-size',
 		});
 
-		( modal.componentInstance as ModalWaitComponent).modalTitle = this.translate.instant('hardwareScan.loadingComponents');
-		( modal.componentInstance as ModalWaitComponent).modalDescription = this.translate.instant('hardwareScan.retrievingHardwareInformation');
-		( modal.componentInstance as ModalWaitComponent).shouldCloseModal = this.hardwareScanService.isHardwareModulesLoaded();
-		( modal.componentInstance as ModalWaitComponent).ItemParent = 'HardwareScan.LoadingComponents';
-		( modal.componentInstance as ModalWaitComponent).CancelItemName = 'LoadingComponents.Close';
+		(modal.componentInstance as ModalWaitComponent).modalTitle = this.translate.instant(
+			'hardwareScan.loadingComponents'
+		);
+		(modal.componentInstance as ModalWaitComponent).modalDescription = this.translate.instant(
+			'hardwareScan.retrievingHardwareInformation'
+		);
+		(modal.componentInstance as ModalWaitComponent).shouldCloseModal = this.hardwareScanService.isHardwareModulesLoaded();
+		(modal.componentInstance as ModalWaitComponent).ItemParent =
+			'HardwareScan.LoadingComponents';
+		(modal.componentInstance as ModalWaitComponent).CancelItemName = 'LoadingComponents.Close';
 
 		return modal;
 	}
@@ -407,17 +444,20 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		if (!this.hardwareScanService.isLoadingDone()) {
 			const modalWait = this.openWaitHardwareComponentsModal();
-			modalWait.result.then((result) => {
-				// Hardware modules have been retrieved, so let's continue with the Scan process
-				if (taskType === TaskType.QuickScan) {
-					this.scanExecutionService.checkPreScanInfo(taskType);
-				} else if (taskType === TaskType.CustomScan) {
-					this.onCustomizeScan();
+			modalWait.result.then(
+				(result) => {
+					// Hardware modules have been retrieved, so let's continue with the Scan process
+					if (taskType === TaskType.QuickScan) {
+						this.scanExecutionService.checkPreScanInfo(taskType);
+					} else if (taskType === TaskType.CustomScan) {
+						this.onCustomizeScan();
+					}
+				},
+				(reason) => {
+					// User has clicked in the 'X' button, so we need to re-enable the Quick/Custom scan button here.
+					this.scanExecutionService.scanClicked = false;
 				}
-			}, (reason) => {
-				// User has clicked in the 'X' button, so we need to re-enable the Quick/Custom scan button here.
-				this.scanExecutionService.scanClicked = false;
-			});
+			);
 		} else {
 			// Hardware modules is already retrieved, so let's continue with the Scan process
 			if (taskType === TaskType.QuickScan) {
@@ -428,11 +468,15 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public scanAgain(){
+	public scanAgain() {
 		this.hardwareScanService.setEnableViewResults(false);
 		this.hardwareScanService.setIsScanDone(false);
 		this.hardwareScanService.setScanExecutionStatus(true);
-		this.scanExecutionService.checkPreScanInfo(this.hardwareScanService.getLastTaskType(), true, this.scanExecutionService.getLastModules());
+		this.scanExecutionService.checkPreScanInfo(
+			this.hardwareScanService.getLastTaskType(),
+			true,
+			this.scanExecutionService.getLastModules()
+		);
 	}
 
 	public isDisableCancel() {
@@ -499,7 +543,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		const currentTaskStep = this.hardwareScanService.getCurrentTaskStep();
 		const currentTaskType = this.hardwareScanService.getCurrentTaskType();
 		// For summary metrics, it was defined that only the word "Scan" will be sent, so we should remove "Custom" or "Quick" from it
-		const taskTypeMetrics = TaskType[currentTaskType].replace('Custom', '').replace('Quick', '');
+		const taskTypeMetrics = TaskType[currentTaskType]
+			.replace('Custom', '')
+			.replace('Quick', '');
 		return TaskStep[currentTaskStep] + taskTypeMetrics + '.' + ViewResultsButton;
 	}
 

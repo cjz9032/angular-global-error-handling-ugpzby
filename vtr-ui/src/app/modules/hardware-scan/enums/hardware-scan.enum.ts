@@ -2,14 +2,14 @@ export enum TaskType {
 	QuickScan,
 	CustomScan,
 	RefreshModules,
-	RecoverBadSectors
+	RecoverBadSectors,
 }
 
 export enum TaskStep {
 	Confirm,
 	Run,
 	Cancel,
-	Summary
+	Summary,
 }
 
 export enum HardwareScanProtocolModule {
@@ -19,13 +19,13 @@ export enum HardwareScanProtocolModule {
 	storage = 'storage',
 	pci = 'pci_express',
 	motherboard = 'motherboard',
-	all = 'all'
+	all = 'all',
 }
 
 export enum HardwareScanProtocolType {
 	QuickScan = 'quickscan',
 	CustomScan = 'customscan',
-	RecoverBadSectors = 'recoverbadsectors'
+	RecoverBadSectors = 'recoverbadsectors',
 }
 
 export enum HardwareScanOverallResult {
@@ -34,13 +34,13 @@ export enum HardwareScanOverallResult {
 	Failed,
 	Warning,
 	Error,
-	Cancelled
+	Cancelled,
 }
 
 export enum HardwareScanState {
 	StateHome,
 	StateExecuting,
-	StateFinished
+	StateFinished,
 }
 
 export enum HardwareScanTestResult {
@@ -50,19 +50,19 @@ export enum HardwareScanTestResult {
 	Fail,
 	Attention,
 	Cancelled,
-	Na
+	Na,
 }
 
 export enum HardwareScanFinishedHeaderType {
 	Scan,
 	RecoverBadSectors,
 	ViewResults,
-	None
+	None,
 }
 
 export enum HardwareScheduleScanType {
 	Quick,
-	Full
+	Full,
 }
 
 export enum HardwareScanProgress {
@@ -71,12 +71,12 @@ export enum HardwareScanProgress {
 	RecoverProgress = '[HardwareScan] RecoverProgress',
 	RecoverResponse = '[HardwareScan] RecoverResponse',
 	HasDevicesToRecoverBadSectors = '[HardwareScan] HasDevicesToRecoverBadSectors',
-	BackEvent = '[HardwareScan] BackEvent'
+	BackEvent = '[HardwareScan] BackEvent',
 }
 
 export enum ExportLogErrorStatus {
 	LoadingExport,
 	SuccessExport,
 	AccessDenied,
-	GenericError
+	GenericError,
 }

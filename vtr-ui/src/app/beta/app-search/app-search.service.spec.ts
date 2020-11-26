@@ -5,10 +5,12 @@ import { TranslationModule } from 'src/app/modules/translation.module';
 import { TranslateService, TranslateStore } from '@ngx-translate/core';
 
 xdescribe('AppSearchService', () => {
-	beforeEach(() => TestBed.configureTestingModule({
-		providers:[TranslateStore],
-		imports:[TranslationModule.forChild()]
-	}));
+	beforeEach(() =>
+		TestBed.configureTestingModule({
+			providers: [TranslateStore],
+			imports: [TranslationModule.forChild()],
+		})
+	);
 
 	it('should be created', () => {
 		const service: AppSearchService = TestBed.get(AppSearchService);

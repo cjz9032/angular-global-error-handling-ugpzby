@@ -21,7 +21,7 @@ const radioDetailsModel = [
 		customIcon: 'Special-function',
 		hideIcon: true,
 		processLabel: false,
-		metricsItem: 'radio.top-row-fn.special-function'
+		metricsItem: 'radio.top-row-fn.special-function',
 	},
 	{
 		componentId: 'thinkpad-F1-F12-funciton-radio-button',
@@ -33,8 +33,9 @@ const radioDetailsModel = [
 		customIcon: 'F1-F12-funciton',
 		hideIcon: true,
 		processLabel: false,
-		metricsItem: 'radio.top-row-fn.function-key'
-	}];
+		metricsItem: 'radio.top-row-fn.function-key',
+	},
+];
 const testValue = 'test';
 const groupName = 'groupName';
 describe('UiCircleRadioWithCheckBoxListComponent', () => {
@@ -46,19 +47,9 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [UiCircleRadioWithCheckBoxListComponent, CapitalizeFirstPipe],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [
-				LoggerService,
-				MetricService,
-				DevService,
-				TranslateService
-			]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [LoggerService, MetricService, DevService, TranslateService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -83,7 +74,9 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent');
 		const spySetFocusComponentId = spyOn<any>(component, 'setFocusComponentId');
 
-		const options: DebugElement[] = fixture.debugElement.queryAll(By.css('[role=radio][aria-disabled=false]'));
+		const options: DebugElement[] = fixture.debugElement.queryAll(
+			By.css('[role=radio][aria-disabled=false]')
+		);
 		const secondOption: HTMLInputElement = options[1].nativeElement;
 		secondOption.click();
 
@@ -123,7 +116,6 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		expect(spySetFocusComponentId).toHaveBeenCalled();
 	});
 
-
 	it('UiCircleRadioWithCheckBoxListComponent  :: should  call invokeSelectionChangeEvent', () => {
 		fixture = TestBed.createComponent(UiCircleRadioWithCheckBoxListComponent);
 		component = fixture.componentInstance;
@@ -134,11 +126,13 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		fixture.detectChanges();
 
 		const spy = spyOn(metricService, 'sendMetrics');
-		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent').and.callThrough();
+		const spyInvokeSelectionChangeEvent = spyOn<any>(
+			component,
+			'invokeSelectionChangeEvent'
+		).and.callThrough();
 		const id = spyInvokeSelectionChangeEvent.call(component, radioDetailsModel[1]);
 		expect(spy).toHaveBeenCalled();
 	});
-
 
 	it('UiCircleRadioWithCheckBoxListComponent  :: should  call getIconName method process Icon true', () => {
 		component.radioDetails = Object.assign([], radioDetailsModel);
@@ -191,6 +185,4 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 		expect(icon).toBe(radioDetailsModel[1].value);
 		radioDetailsModel[1].processIcon = true;
 	});
-
-
 });

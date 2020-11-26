@@ -18,7 +18,7 @@ interface IQuestion {
 @Component({
 	selector: 'vtr-feedback-form',
 	templateUrl: './feedback-form.component.html',
-	styleUrls: ['./feedback-form.component.scss']
+	styleUrls: ['./feedback-form.component.scss'],
 })
 export class FeedbackFormComponent implements OnInit {
 	feedbackForm: FormGroup;
@@ -33,7 +33,7 @@ export class FeedbackFormComponent implements OnInit {
 		{
 			likelyValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 			name: 'recommendVantageToFriend',
-			question: 'dashboard.feedback.form.question6'
+			question: 'dashboard.feedback.form.question6',
 		},
 		{
 			idYes: 'feedback-su-awareness-yes',
@@ -41,22 +41,22 @@ export class FeedbackFormComponent implements OnInit {
 			name: 'systemUpdateAwareness',
 			hideInArm: true,
 			hideInSMode: true,
-			question: 'dashboard.feedback.form.question7'
+			question: 'dashboard.feedback.form.question7',
 		},
 		{
 			idYes: 'feedback-cus-support-usage-yes',
 			idNo: 'feedback-cus-support-usage-no',
 			name: 'cusSupportUsage',
 			hideInArm: true,
-			question: 'dashboard.feedback.form.question8'
-		}
+			question: 'dashboard.feedback.form.question8',
+		},
 	];
 	showEmailField = true;
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private shellService: VantageShellService,
-		private deviceService: DeviceService,
+		private deviceService: DeviceService
 	) {
 		this.metrics = this.shellService.getMetrics();
 	}
@@ -65,32 +65,36 @@ export class FeedbackFormComponent implements OnInit {
 		this.createFeedbackForm();
 		this.getCurrentRegion();
 		if (this.deviceService.isArm) {
-			this.questions = this.questions.filter(q => !q.hideInArm);
-		}
-		else if (this.deviceService.isSMode) {
-			this.questions = this.questions.filter(q => !q.hideInSMode);
+			this.questions = this.questions.filter((q) => !q.hideInArm);
+		} else if (this.deviceService.isSMode) {
+			this.questions = this.questions.filter((q) => !q.hideInSMode);
 		}
 	}
 
-	 getCurrentRegion() {
-		 this.deviceService.getMachineInfo().then(machineInfo => {
-			 this.countryCode = machineInfo.country.toUpperCase();
-			 if (this.countryCode === 'CN' ||
-				 this.countryCode === 'VN' ||
-				 this.countryCode === 'RU') {
-				 this.showEmailField = false;
-			 }
-		 });
-	 }
+	getCurrentRegion() {
+		this.deviceService.getMachineInfo().then((machineInfo) => {
+			this.countryCode = machineInfo.country.toUpperCase();
+			if (
+				this.countryCode === 'CN' ||
+				this.countryCode === 'VN' ||
+				this.countryCode === 'RU'
+			) {
+				this.showEmailField = false;
+			}
+		});
+	}
 	public onFeedBackSubmit(): void {
 		this.isSubmitted = true;
-		if (!this.feedbackForm.value.userEmail){
+		if (!this.feedbackForm.value.userEmail) {
 			this.prepareDataToSubmit();
-		} else if (this.feedbackForm.value.userEmail && !this.feedbackForm.get('userEmail').invalid){
+		} else if (
+			this.feedbackForm.value.userEmail &&
+			!this.feedbackForm.get('userEmail').invalid
+		) {
 			this.prepareDataToSubmit();
 		}
 	}
-	prepareDataToSubmit(){
+	prepareDataToSubmit() {
 		const formData = this.feedbackForm.value;
 		const data = {
 			ItemType: 'UserFeedback',
@@ -101,8 +105,8 @@ export class FeedbackFormComponent implements OnInit {
 			QA: {
 				Cus_Support_usage: formData.cusSupportUsage,
 				SystemUpdateAwareness: formData.systemUpdateAwareness,
-				OverAllSatisfiedWithVantage: formData.recommendVantageToFriend
-			}
+				OverAllSatisfiedWithVantage: formData.recommendVantageToFriend,
+			},
 		};
 		if (this.metrics) {
 			this.metrics.sendAsync(data);
@@ -122,13 +126,10 @@ export class FeedbackFormComponent implements OnInit {
 		const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		this.feedbackForm = new FormGroup({
 			userEmail: new FormControl('', [Validators.required, Validators.pattern(emailPattern)]),
-			userComment: new FormControl('', [
-				Validators.required,
-				Validators.minLength(1)
-			]),
+			userComment: new FormControl('', [Validators.required, Validators.minLength(1)]),
 			cusSupportUsage: new FormControl(null),
 			systemUpdateAwareness: new FormControl(null),
-			recommendVantageToFriend: new FormControl(null)
+			recommendVantageToFriend: new FormControl(null),
 		});
 	}
 
@@ -151,7 +152,8 @@ export class FeedbackFormComponent implements OnInit {
 
 	@HostListener('keydown', ['$event'])
 	onKeyDown(event: KeyboardEvent) {
-		if (event.shiftKey &&
+		if (
+			event.shiftKey &&
 			event.key === 'Tab' &&
 			document.activeElement &&
 			document.activeElement.id.includes('feedback-likely')

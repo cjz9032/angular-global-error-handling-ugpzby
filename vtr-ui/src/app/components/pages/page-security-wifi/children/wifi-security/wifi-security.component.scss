@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .vtr-wifi-security {
 	.security-card {
@@ -7,12 +7,12 @@
 		background-color: $light;
 		padding: 2rem;
 
-        @media #{$black-on-white} {
-            @include black-border;
-        }
-        @media #{$white-on-black} {
-            @include white-border;
-        }
+		@media #{$black-on-white} {
+			@include black-border;
+		}
+		@media #{$white-on-black} {
+			@include white-border;
+		}
 
 		@media #{$breakpoint_sm} {
 			padding: $fontsize_xl;
@@ -37,9 +37,7 @@
 			font-size: 1.4rem;
 		}
 
-
 		.wifi-security {
-
 			.card {
 				border-radius: $border_radius;
 
@@ -67,25 +65,24 @@
 							white-space: nowrap;
 							text-overflow: ellipsis;
 							font-size: 1.2rem;
-                            max-width: 100%;
-                            @include high-contrast-adjust;
-                            @include high-contrast-color;
-                            
+							max-width: 100%;
+							@include high-contrast-adjust;
+							@include high-contrast-color;
+
 							&.badge-success {
-                                background-color: $green_dark;
-                                @include high-contrast-status-icon-and-badge;
+								background-color: $green_dark;
+								@include high-contrast-status-icon-and-badge;
 							}
 
 							&.badge-danger {
-                                background-color: $button_red_start;
-                                @include high-contrast-status-icon-and-badge;
-                            }
+								background-color: $button_red_start;
+								@include high-contrast-status-icon-and-badge;
+							}
 						}
 					}
 				}
 
 				.subHeading {
-
 					.loading {
 						margin-right: 1rem;
 						text-align: center;
@@ -93,7 +90,11 @@
 
 					.circle {
 						background-color: $green_darker;
-						background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
+						background-image: linear-gradient(
+							135deg,
+							$green_darker 25%,
+							$green-light 100%
+						);
 						height: 2rem;
 						width: 2rem;
 						border-radius: 100%;
@@ -108,13 +109,17 @@
 							color: $light;
 						}
 
-                        @include high-contrast-status-icon-and-badge;
-                        @include high-contrast-color;
-                        @include high-contrast-background-image;
+						@include high-contrast-status-icon-and-badge;
+						@include high-contrast-color;
+						@include high-contrast-background-image;
 
 						&.red {
 							background-color: $button_red_start;
-							background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
+							background-image: linear-gradient(
+								135deg,
+								$button_red_start 25%,
+								$button_red_end 100%
+							);
 							border: 0.1rem solid $button_red_start;
 						}
 					}
@@ -132,7 +137,6 @@
 				}
 
 				.sm-device-responsive {
-
 					.switch-disable {
 						opacity: 0.3;
 						cursor: auto;
@@ -158,21 +162,21 @@
 				border: 0.1rem solid $shade_lighter;
 				border-bottom-left-radius: $border_radius;
 				border-bottom-right-radius: $border_radius;
-                border-top: none;
+				border-top: none;
 
 				::ng-deep .vtr-container-collapsible.white-theme {
 					box-shadow: none !important;
 					background: none !important;
-                    border: 0 !important;
+					border: 0 !important;
 
 					.card-header {
 						border: none !important;
 						.header {
-                            color: inherit !important;
-                            .collapse-header{
-                                font-size: 2rem;
-                                font-weight: $weight_light;
-                            }
+							color: inherit !important;
+							.collapse-header {
+								font-size: 2rem;
+								font-weight: $weight_light;
+							}
 						}
 
 						.collapse-control {
@@ -219,23 +223,23 @@
 							border-bottom: 0.1rem solid $shade_lighter;
 						}
 
-                        .wifi:nth-child(4n-1),
+						.wifi:nth-child(4n-1),
 						.wifi:nth-child(4n) {
 							border-bottom: 0;
 						}
 
-                        .wifi:nth-child(odd):nth-last-child(2) {
+						.wifi:nth-child(odd):nth-last-child(2) {
 							border-bottom: 0;
 							@media #{$mediaquery_md, $mediaquery_X45} {
 								border-bottom: 0.1rem solid $shade_lighter !important;
 							}
 						}
 
-                        .wifi:nth-last-child(1){
-                            border-bottom: 0;
-                        }
+						.wifi:nth-last-child(1) {
+							border-bottom: 0;
+						}
 
-                        .hasShowMore:nth-child(3),
+						.hasShowMore:nth-child(3),
 						.hasShowMore:nth-child(4) {
 							border-bottom: 0.1rem solid $shade_lighter;
 						}
@@ -246,17 +250,17 @@
 							}
 						}
 
-                        .wifi:nth-child(4n-1) {
+						.wifi:nth-child(4n-1) {
 							@media #{$mediaquery_md, $mediaquery_X45} {
 								border-bottom: 0.1rem solid $shade_lighter;
 							}
 						}
 
-                        .wifi:nth-last-child(1) {
+						.wifi:nth-last-child(1) {
 							@media #{$mediaquery_md, $mediaquery_X45} {
 								border-bottom: 0 !important;
 							}
-                        }
+						}
 
 						.connection-name {
 							overflow: hidden;
@@ -303,7 +307,11 @@
 
 							.circle {
 								background-color: $green_darker;
-								background-image: linear-gradient(135deg, $green_darker 25%, $green-light 100%);
+								background-image: linear-gradient(
+									135deg,
+									$green_darker 25%,
+									$green-light 100%
+								);
 								// height: 1.5em;
 								width: 1.5rem;
 								border-radius: 2rem;
@@ -323,13 +331,17 @@
 									top: 0.2rem;
 								}
 
-                                @include high-contrast-status-icon-and-badge;
-                                @include high-contrast-color;
-                                @include high-contrast-background-image;
+								@include high-contrast-status-icon-and-badge;
+								@include high-contrast-color;
+								@include high-contrast-background-image;
 
 								&.red {
 									background-color: $button_red_start;
-									background-image: linear-gradient(135deg, $button_red_start 25%, $button_red_end 100%);
+									background-image: linear-gradient(
+										135deg,
+										$button_red_start 25%,
+										$button_red_end 100%
+									);
 									border: 0.1rem solid $button_red_start;
 
 									fa-icon {
@@ -340,7 +352,6 @@
 							}
 						}
 					}
-
 				}
 
 				.showmore-button {
@@ -350,13 +361,13 @@
 					&:focus {
 						outline: 0.1rem solid $menu_hover;
 						outline-offset: 0.1rem;
-                    }
-                    @media #{$black-on-white} {
-                        @include hyperlink-blue-white;
-                    }
-                    @media #{$white-on-black} {
-                        @include hyperlink-yellow-black;
-                    }
+					}
+					@media #{$black-on-white} {
+						@include hyperlink-blue-white;
+					}
+					@media #{$white-on-black} {
+						@include hyperlink-yellow-black;
+					}
 				}
 			}
 
@@ -373,7 +384,7 @@
 
 			::ng-deep vtr-ui-switch-onoff {
 				.checkbox {
-					>label {
+					> label {
 						.switch-label {
 							cursor: pointer;
 						}
@@ -384,7 +395,6 @@
 					}
 				}
 			}
-
 		}
 	}
 }

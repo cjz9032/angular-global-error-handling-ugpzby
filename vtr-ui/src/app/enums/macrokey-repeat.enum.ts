@@ -8,5 +8,5 @@ export enum MacroKeyRepeat {
 	Repeat7 = 7,
 	Repeat8 = 8,
 	Repeat9 = 9,
-	Repeat10 = 10
+	Repeat10 = 10,
 }

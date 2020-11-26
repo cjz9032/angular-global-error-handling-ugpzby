@@ -1,15 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'vtr-snapshot-header',
-  templateUrl: './snapshot-header.component.html',
-  styleUrls: ['./snapshot-header.component.scss']
+	selector: 'vtr-snapshot-header',
+	templateUrl: './snapshot-header.component.html',
+	styleUrls: ['./snapshot-header.component.scss'],
 })
 export class SnapshotHeaderComponent implements OnInit {
+	constructor() {}
 
-	constructor() { }
-
-	ngOnInit(): void {
-	}
-
+	ngOnInit(): void {}
 }

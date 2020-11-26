@@ -11,30 +11,32 @@ import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CMSService } from './cms.service';
 
-
-
 const data: any = {
-	Results: [{
-		Id: '5708566453fa4150825147391e079e14',
-		Title: '5 privacy myths most people believe',
-		ShortTitle: '',
-		Description: 'Privacy is a universal concern. Just because you have nothing to hide doesn’t mean you’re invulnerable to privacy breaches.',
-		FeatureImage: 'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/25112019-Day-Zero-Content/Five-Privacy-Myths-Position-C.png?v=2bedf0f470f14c4fb2ec4de975fec934',
-		Action: '',
-		ActionType: 'Internal',
-		ActionLink: '771784467e3a4130addab0e1b4ca493a',
-		BrandName: '',
-		BrandImage: '',
-		Priority: 'P1',
-		Page: 'dashboard',
-		Template: 'half-width-title-description-link-image',
-		Position: 'position-C',
-		ExpirationDate: null,
-		Filters: null
-	}],
+	Results: [
+		{
+			Id: '5708566453fa4150825147391e079e14',
+			Title: '5 privacy myths most people believe',
+			ShortTitle: '',
+			Description:
+				'Privacy is a universal concern. Just because you have nothing to hide doesn’t mean you’re invulnerable to privacy breaches.',
+			FeatureImage:
+				'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/25112019-Day-Zero-Content/Five-Privacy-Myths-Position-C.png?v=2bedf0f470f14c4fb2ec4de975fec934',
+			Action: '',
+			ActionType: 'Internal',
+			ActionLink: '771784467e3a4130addab0e1b4ca493a',
+			BrandName: '',
+			BrandImage: '',
+			Priority: 'P1',
+			Page: 'dashboard',
+			Template: 'half-width-title-description-link-image',
+			Position: 'position-C',
+			ExpirationDate: null,
+			Filters: null,
+		},
+	],
 	Metadata: {
-		Count: 11
-	}
+		Count: 11,
+	},
 };
 
 describe('CMSService', () => {
@@ -55,10 +57,9 @@ describe('CMSService', () => {
 				DevService,
 				LocalInfoService,
 				LoggerService,
-				CommonService
-			]
-		}))
-	);
+				CommonService,
+			],
+		})));
 
 	it('should be created', async(() => {
 		service = TestBed.inject(CMSService);
@@ -107,7 +108,7 @@ describe('CMSService', () => {
 		service.localInfo = undefined;
 		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(Promise.resolve(true));
 		service.fetchCMSContent(queryParams).subscribe({
-			complete() { }
+			complete() {},
 		});
 		expect(spy).toHaveBeenCalled();
 	}));
@@ -119,7 +120,7 @@ describe('CMSService', () => {
 		service.localInfo = undefined;
 		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(Promise.reject(true));
 		service.fetchCMSContent(queryParams).subscribe({
-			complete() { }
+			complete() {},
 		});
 		expect(spy).toHaveBeenCalled();
 	}));
@@ -169,7 +170,7 @@ describe('CMSService', () => {
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type': 'application/json',
-			})
+			}),
 		};
 		const CMSOption = {
 			Lang: 'en',
@@ -258,7 +259,9 @@ describe('CMSService', () => {
 		service = TestBed.inject(CMSService);
 		localInfoService = TestBed.inject(LocalInfoService);
 		service.localInfo = undefined;
-		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(Promise.resolve(results));
+		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(
+			Promise.resolve(results)
+		);
 		service.fetchCMSArticleCategories(queryParams);
 		expect(spy).toHaveBeenCalled();
 	}));
@@ -276,7 +279,9 @@ describe('CMSService', () => {
 		service = TestBed.inject(CMSService);
 		localInfoService = TestBed.inject(LocalInfoService);
 		service.localInfo = undefined;
-		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(Promise.reject(results));
+		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(
+			Promise.reject(results)
+		);
 		service.fetchCMSArticleCategories(queryParams);
 		expect(spy).toHaveBeenCalled();
 	}));
@@ -364,7 +369,9 @@ describe('CMSService', () => {
 		service = TestBed.inject(CMSService);
 		localInfoService = TestBed.inject(LocalInfoService);
 		service.localInfo = undefined;
-		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(Promise.resolve(results));
+		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(
+			Promise.resolve(results)
+		);
 		service.fetchCMSArticles(queryParams, returnAll);
 		expect(spy).toHaveBeenCalled();
 	}));
@@ -472,7 +479,9 @@ describe('CMSService', () => {
 		service = TestBed.inject(CMSService);
 		localInfoService = TestBed.inject(LocalInfoService);
 		service.localInfo = undefined;
-		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(Promise.resolve(results));
+		const spy = spyOn(localInfoService, 'getLocalInfo').and.returnValue(
+			Promise.resolve(results)
+		);
 		service.fetchCMSArticle(articleId, queryParams);
 		expect(spy).toHaveBeenCalled();
 	}));
@@ -536,7 +545,9 @@ describe('CMSService', () => {
 			GEO: 'us',
 		};
 		const queryParams = {};
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(throwError({ status: 404 }));
+		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(
+			throwError({ status: 404 })
+		);
 		service.fetchCMSEntitledAppList(queryParams);
 		expect(spy).toHaveBeenCalled();
 	}));
@@ -545,7 +556,7 @@ describe('CMSService', () => {
 		service = TestBed.inject(CMSService);
 		commService = TestBed.inject(CommsService);
 		service.localInfo = {
-			Lang: 'en'
+			Lang: 'en',
 		};
 		const appId = '5708566453fa4150825147391e079e14';
 		const queryParams = {};
@@ -558,11 +569,13 @@ describe('CMSService', () => {
 		service = TestBed.inject(CMSService);
 		commService = TestBed.inject(CommsService);
 		service.localInfo = {
-			Lang: 'en'
+			Lang: 'en',
 		};
 		const queryParams = {};
 		const appId = '5708566453fa4150825147391e079e14';
-		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(throwError({ status: 404 }));
+		const spy = spyOn<any>(commService, 'endpointGetCall').and.returnValue(
+			throwError({ status: 404 })
+		);
 		service.fetchCMSAppDetails(appId, queryParams);
 		expect(spy).toHaveBeenCalled();
 	}));

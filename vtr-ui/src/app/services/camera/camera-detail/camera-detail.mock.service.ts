@@ -7,7 +7,7 @@ import { BaseCameraDetail } from './base-camera-detail.service';
 import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class CameraDetailMockService implements BaseCameraDetail {
 	private cameraDetail: CameraDetail;
@@ -15,9 +15,7 @@ export class CameraDetailMockService implements BaseCameraDetail {
 	private cameraDetailSubject: BehaviorSubject<CameraDetail>;
 
 	constructor(private http: HttpClient) {
-		this.cameraDetailSubject = new BehaviorSubject<CameraDetail>(
-			new CameraDetail()
-		);
+		this.cameraDetailSubject = new BehaviorSubject<CameraDetail>(new CameraDetail());
 		this.cameraDetailObservable = this.cameraDetailSubject;
 	}
 
@@ -32,7 +30,7 @@ export class CameraDetailMockService implements BaseCameraDetail {
 						this.notifyChanges();
 						resolve(response);
 					},
-					error => {
+					(error) => {
 						reject(error);
 					}
 				);

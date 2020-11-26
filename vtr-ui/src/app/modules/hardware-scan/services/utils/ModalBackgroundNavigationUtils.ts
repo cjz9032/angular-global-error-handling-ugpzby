@@ -1,4 +1,3 @@
-
 export function disableBackgroundNavigation(document) {
 	const modalNodes = Array.from(document.querySelectorAll('dialog *'));
 
@@ -7,9 +6,7 @@ export function disableBackgroundNavigation(document) {
 	const nonModalNodes = document.querySelectorAll('body *:not(dialog):not([tabindex="-1"])');
 
 	for (const node of nonModalNodes) {
-
 		if (!modalNodes.includes(node)) {
-
 			// save the previous tabindex state so we can restore it on close
 			node._prevTabindex = node.getAttribute('tabindex');
 			node.setAttribute('tabindex', -1);
@@ -24,7 +21,6 @@ export function disableBackgroundNavigation(document) {
 }
 
 export function reEnableBackgroundNavigation(document) {
-
 	const nonModalNodes = document.querySelectorAll('body *:not(dialog)');
 
 	// restore or remove tabindex from nodes
@@ -32,11 +28,9 @@ export function reEnableBackgroundNavigation(document) {
 		if (node._prevTabindex) {
 			node.setAttribute('tabindex', node._prevTabindex);
 			node._prevTabindex = null;
-		}
-		else {
+		} else {
 			node.removeAttribute('tabindex');
 		}
 		node.style.outline = null;
 	}
 }
-

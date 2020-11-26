@@ -16,12 +16,8 @@ import { faEyeSlash } from '@fortawesome/free-regular-svg-icons/faEyeSlash';
 import { faExternalLink } from '@fortawesome/pro-light-svg-icons/faExternalLink';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
-
 @NgModule({
-	declarations: [
-		ModalModernPreloadComponent,
-		WidgetModernPreloadAppComponent,
-	],
+	declarations: [ModalModernPreloadComponent, WidgetModernPreloadAppComponent],
 	imports: [
 		CommonModule,
 		CommonUiModule,
@@ -29,23 +25,13 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 		CommonWidgetModule,
 		SharedModule,
 		ClipboardModule,
-		FontAwesomeModule
+		FontAwesomeModule,
 	],
-	providers: [
-		ModernPreloadService,
-	],
-	entryComponents: [
-		ModalModernPreloadComponent,
-		WidgetModernPreloadAppComponent,
-	]
+	providers: [ModernPreloadService],
+	entryComponents: [ModalModernPreloadComponent, WidgetModernPreloadAppComponent],
 })
 export class ModernPreloadModule {
 	constructor(library: FaIconLibrary) {
-		library.addIcons(
-			faCopy,
-			faEye,
-			faEyeSlash,
-			faExternalLink
-		);
+		library.addIcons(faCopy, faEye, faEyeSlash, faExternalLink);
 	}
 }

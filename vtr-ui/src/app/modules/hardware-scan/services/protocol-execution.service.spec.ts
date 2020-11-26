@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { HardwareScanProtocolModule, TaskType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
+import {
+	HardwareScanProtocolModule,
+	TaskType,
+} from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { HardwareScanService } from './hardware-scan.service';
 import { ProtocolExecutionService } from './protocol-execution.service';
 import { ScanExecutionService } from './scan-execution.service';
@@ -13,12 +16,12 @@ describe('ProtocolExecutionService', () => {
 				{ id: 'cpu', groupList: ['device of this module'] },
 				{ id: 'memory', groupList: ['device of this module'] },
 				{ id: 'wireless', groupList: ['device of this module'] },
-				{ id: 'storage', groupList: ['device of this module'] }
+				{ id: 'storage', groupList: ['device of this module'] },
 				// There are no motherboard or pci_express modules here once those modules are currently
 				// unavailable due to a CLI bug, therefore they aren't returned by plugin.
-			]
+			],
 		},
-		setLastTaskType: undefined
+		setLastTaskType: undefined,
 	});
 
 	beforeEach(() => {
@@ -26,13 +29,13 @@ describe('ProtocolExecutionService', () => {
 			providers: [
 				{
 					provide: HardwareScanService,
-					useValue: hardwareScanService
+					useValue: hardwareScanService,
 				},
 				{
 					provide: ScanExecutionService,
-					useValue: scanExecutionService
-				}
-			]
+					useValue: scanExecutionService,
+				},
+			],
 		});
 		service = TestBed.inject(ProtocolExecutionService);
 	});
@@ -47,14 +50,14 @@ describe('ProtocolExecutionService', () => {
 	});
 
 	it('should return false when null params is given', () => {
-		const param = { };
+		const param = {};
 		const value = service.validateParams(param);
 		expect(value).toBeFalse();
 	});
 
 	it('should return true when param.scan is equals to quickscan', () => {
 		const param = {
-			scan: 'quickscan'
+			scan: 'quickscan',
 		};
 		const value = service.validateParams(param);
 		expect(value).toBeTrue();
@@ -62,7 +65,7 @@ describe('ProtocolExecutionService', () => {
 
 	it('should return false when param.scan is different than quickscan', () => {
 		const param = {
-			scan: 'customscan'
+			scan: 'customscan',
 		};
 		const value = service.validateParams(param);
 		expect(value).toBeFalse();
@@ -108,11 +111,11 @@ describe('ProtocolExecutionService', () => {
 		[
 			'motherboard', // this module is currently unavailable due to a CLI bug, so it won't be returned by plugin.
 			'pci_express', // this module is currently unavailable due to a CLI bug, so it won't be returned by plugin.
-			'another_unsupported_module'
-		].forEach((moduleName => {
+			'another_unsupported_module',
+		].forEach((moduleName) => {
 			service.protocolExecution('quickscan', moduleName);
 			expect(quickScanProtocolSpy).toHaveBeenCalledWith(HardwareScanProtocolModule.all);
-		}));
+		});
 	});
 
 	it('should not call quickScanProtocol() when scan is different than quickscan', () => {
@@ -125,31 +128,46 @@ describe('ProtocolExecutionService', () => {
 
 	it('should call checkPreScanInfo() when module is equal to cpu', () => {
 		service.quickScanProtocol(HardwareScanProtocolModule.cpu);
-		expect(scanExecutionService.checkPreScanInfo)
-			.toHaveBeenCalledWith(TaskType.QuickScan, false, HardwareScanProtocolModule.cpu);
+		expect(scanExecutionService.checkPreScanInfo).toHaveBeenCalledWith(
+			TaskType.QuickScan,
+			false,
+			HardwareScanProtocolModule.cpu
+		);
 	});
 
 	it('should call checkPreScanInfo() when module is equal to memory', () => {
 		service.quickScanProtocol(HardwareScanProtocolModule.memory);
-		expect(scanExecutionService.checkPreScanInfo)
-			.toHaveBeenCalledWith(TaskType.QuickScan, false, HardwareScanProtocolModule.memory);
+		expect(scanExecutionService.checkPreScanInfo).toHaveBeenCalledWith(
+			TaskType.QuickScan,
+			false,
+			HardwareScanProtocolModule.memory
+		);
 	});
 
 	it('should call checkPreScanInfo() when module is equal to wireless', () => {
 		service.quickScanProtocol(HardwareScanProtocolModule.wireless);
-		expect(scanExecutionService.checkPreScanInfo)
-			.toHaveBeenCalledWith(TaskType.QuickScan, false, HardwareScanProtocolModule.wireless);
+		expect(scanExecutionService.checkPreScanInfo).toHaveBeenCalledWith(
+			TaskType.QuickScan,
+			false,
+			HardwareScanProtocolModule.wireless
+		);
 	});
 
 	it('should call checkPreScanInfo() when module is equal to storage', () => {
 		service.quickScanProtocol(HardwareScanProtocolModule.storage);
-		expect(scanExecutionService.checkPreScanInfo)
-			.toHaveBeenCalledWith(TaskType.QuickScan, false, HardwareScanProtocolModule.storage);
+		expect(scanExecutionService.checkPreScanInfo).toHaveBeenCalledWith(
+			TaskType.QuickScan,
+			false,
+			HardwareScanProtocolModule.storage
+		);
 	});
 
 	it('should call checkPreScanInfo() when module is equal to all', () => {
 		service.quickScanProtocol(HardwareScanProtocolModule.all);
-		expect(scanExecutionService.checkPreScanInfo)
-			.toHaveBeenCalledWith(TaskType.QuickScan, false, HardwareScanProtocolModule.all);
+		expect(scanExecutionService.checkPreScanInfo).toHaveBeenCalledWith(
+			TaskType.QuickScan,
+			false,
+			HardwareScanProtocolModule.all
+		);
 	});
 });

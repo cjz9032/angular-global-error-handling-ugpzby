@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	SimpleChanges,
+} from '@angular/core';
 import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -6,7 +14,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-eye-care-mode',
 	templateUrl: './eye-care-mode.component.html',
-	styleUrls: ['./eye-care-mode.component.scss']
+	styleUrls: ['./eye-care-mode.component.scss'],
 })
 export class EyeCareModeComponent implements OnInit, OnChanges {
 	@Input() eyeCareModeSettings: EyeCareMode = new EyeCareMode();
@@ -29,17 +37,21 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 		{ value: 1 },
 		{ value: 2, legend: 'Eye care mode' },
 		{ value: 3, legend: 'Default' },
-		{ value: 4 }
+		{ value: 4 },
 	];
 
-	constructor(private logger: LoggerService) { }
+	constructor(private logger: LoggerService) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	ngOnChanges(changes: SimpleChanges): void {
 		try {
 			if (changes.sunsetToSunriseStatus && !changes.sunsetToSunriseStatus.firstChange) {
-				if (this.sunsetToSunriseStatus && this.sunsetToSunriseStatus.sunsettime && this.sunsetToSunriseStatus.sunrisetime) {
+				if (
+					this.sunsetToSunriseStatus &&
+					this.sunsetToSunriseStatus.sunsettime &&
+					this.sunsetToSunriseStatus.sunrisetime
+				) {
 					this.sunriseToSunsetText = `(${this.sunsetToSunriseStatus.sunsettime} - ${this.sunsetToSunriseStatus.sunrisetime})`;
 				}
 			}
@@ -71,7 +83,10 @@ export class EyeCareModeComponent implements OnInit, OnChanges {
 	}
 	public onSunsetToSunrise() {
 		this.sunsetToSunriseStatus.status = !this.sunsetToSunriseStatus.status;
-		this.logger.info('sunset to sunrise in eye-care-mode component', this.sunsetToSunriseStatus);
+		this.logger.info(
+			'sunset to sunrise in eye-care-mode component',
+			this.sunsetToSunriseStatus
+		);
 		this.sunsetToSunrise.emit(this.sunsetToSunriseStatus);
 	}
 }

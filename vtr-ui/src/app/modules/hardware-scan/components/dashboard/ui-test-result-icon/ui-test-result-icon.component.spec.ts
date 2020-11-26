@@ -9,9 +9,8 @@ describe('UiTestResultIconComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-		declarations: [ UiTestResultIconComponent ]
-		})
-		.compileComponents();
+			declarations: [UiTestResultIconComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

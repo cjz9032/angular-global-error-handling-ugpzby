@@ -1,11 +1,11 @@
-@import "./../../../app.theme.scss";
+@import './../../../app.theme.scss';
 
 .auto-set-checkbox {
 	$check-box-size: 2rem;
 	$check-box-shadow: inset 0 0 0 0.2rem $light;
 	$disabled-opacity: 0.4;
 
-	@mixin check-icon($icon-color: "white") {
+	@mixin check-icon($icon-color: 'white') {
 		background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='" + $icon-color + "' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>");
 		background-size: 80%;
 		background-repeat: no-repeat;
@@ -13,7 +13,7 @@
 	}
 
 	@mixin indeterminate-icon($icon-color: $menu_hover) {
-		background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='3' height='3' viewBox='0 0 4 4'><path stroke='" + $icon-color +"' d='M0 2h4'/%3e%3c/svg>");
+		background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='3' height='3' viewBox='0 0 4 4'><path stroke='" + $icon-color + "' d='M0 2h4'/%3e%3c/svg>");
 		background-size: 60%;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -45,7 +45,6 @@
 				background-color: $light;
 				border-color: $grey_dark;
 				border-radius: 0.25rem;
-
 			}
 			&::after {
 				width: $check-box-size;
@@ -80,7 +79,7 @@
 			&::after {
 				@include check-icon();
 				@media #{$white-on-black} {
-					@include check-icon("black");
+					@include check-icon('black');
 				}
 			}
 			&:hover {
@@ -89,7 +88,7 @@
 						@include check-icon();
 					}
 					@media #{$black-on-white} {
-						@include check-icon("black");
+						@include check-icon('black');
 					}
 				}
 				&::before {
@@ -155,7 +154,6 @@
 					@include high-contrast-black-border;
 					background-color: $dark;
 				}
-
 			}
 		}
 		.custom-control-input:active:checked ~ .custom-control-label {
@@ -176,7 +174,7 @@
 					@include check-icon();
 				}
 				@media #{$black-on-white} {
-					@include check-icon("black");
+					@include check-icon('black');
 				}
 			}
 		}
@@ -200,14 +198,12 @@
 				border-color: $shade_blue;
 				opacity: $disabled-opacity;
 
-
 				@media #{$black-on-white} {
 					@include high-contrast-white-disabled-border;
 				}
 				@media #{$white-on-black} {
 					@include high-contrast-black-disabled-border;
 				}
-
 			}
 		}
 		.custom-control-input:disabled:checked ~ .custom-control-label {
@@ -237,12 +233,11 @@
 			}
 			&::after {
 				@media #{$white-on-black} {
-					@include check-icon("green");
+					@include check-icon('green');
 				}
 				@media #{$black-on-white} {
-					@include check-icon("maroon");
+					@include check-icon('maroon');
 				}
-
 			}
 		}
 
@@ -263,7 +258,6 @@
 					border: none;
 					border-radius: 0.25rem !important;
 				}
-
 			}
 			&::after {
 				@include indeterminate-icon();
@@ -273,7 +267,6 @@
 				@media #{$black-on-white} {
 					@include indeterminate-icon($light);
 				}
-
 			}
 
 			&:hover {
@@ -320,6 +313,5 @@
 			}
 		}
 		/* end of indeterminate state */
-
 	}
 }

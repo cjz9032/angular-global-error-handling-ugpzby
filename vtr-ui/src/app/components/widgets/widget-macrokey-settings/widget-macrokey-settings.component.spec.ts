@@ -30,17 +30,19 @@ const macrokeyServiceMock = jasmine.createSpyObj('MacrokeyService', [
 	'setStopRecording',
 	'setMacroKeyApplyStatus',
 	'setMacrokeyChangeStatusCache',
-	'setKey'
+	'setKey',
 ]);
 
 const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabilitiesService', [
 	'gamingAllCapabilities',
 	'isShellAvailable',
-	'getCapabilityFromCache'
+	'getCapabilityFromCache',
 ]);
 
 const notificationMock = {
-	subscribe() { return { type: '[Gaming] GamingCapabilities', payload: '{ macroKeyFeature: true }'}; }
+	subscribe() {
+		return { type: '[Gaming] GamingCapabilities', payload: '{ macroKeyFeature: true }' };
+	},
 };
 
 const keyTypeSampleData = { MacroKeyStatus: 1, MacroKeyType: 0 };
@@ -54,7 +56,7 @@ let recordedStatusSampleData = [
 	{ key: '1', status: false },
 	{ key: '2', status: true },
 	{ key: '3', status: false },
-	{ key: '0', status: true }
+	{ key: '0', status: true },
 ];
 const inputChangeSampleData = { macro: { inputs: [], repeat: 1, interval: 1 }, key: '0' };
 const sampleInputData = {
@@ -68,16 +70,16 @@ const sampleInputData = {
 			{ status: 1, key: 'D', interval: 174, pairName: 'pair-D-1' },
 			{ status: 0, key: 'D', interval: 186, pairName: 'pair-D-1' },
 			{ status: 1, key: 'F', interval: 144, pairName: 'pair-F-1' },
-			{ status: 0, key: 'F', interval: 126, pairName: 'pair-F-1' }
-		]
-	}
+			{ status: 0, key: 'F', interval: 126, pairName: 'pair-F-1' },
+		],
+	},
 };
 
 describe('WidgetMacrokeySettingsComponent', () => {
 	let component: WidgetMacrokeySettingsComponent;
 	let fixture: ComponentFixture<WidgetMacrokeySettingsComponent>;
 	let commonService: any;
-    let shellService: any;
+	let shellService: any;
 	macrokeyServiceMock.isMacroKeyAvailable.and.returnValue(true);
 	gamingAllCapabilitiesServiceMock.getCapabilityFromCache.and.returnValue(true);
 	macrokeyServiceMock.gamingMacroKeyInitializeEvent.and.returnValue(Promise.resolve(true));
@@ -88,28 +90,32 @@ describe('WidgetMacrokeySettingsComponent', () => {
 	macrokeyServiceMock.setMacroKeyApplyStatus.and.returnValue(Promise.resolve(true));
 	macrokeyServiceMock.setKey.and.returnValue(true);
 
-	beforeEach(
-		async(() => {
-			let shellServiveSpy = jasmine.createSpyObj('VantageService', ['registerEvent','unRegisterEvent']);
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetMacrokeySettingsComponent,
-					mockPipe({ name: 'translate' }),
-					mockPipe({ name: 'sanitize' })
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: Router, useValue: { navigate: (route) => route } },
-					{ provide: MacrokeyService, useValue: macrokeyServiceMock },
-					{ provide: GamingAllCapabilitiesService, useValue: gamingAllCapabilitiesServiceMock },
-                    { provide: VantageShellService, useValue: shellServiveSpy },
-					TranslateStore
-				],
-				imports: [FontAwesomeModule, TranslationModule]
-			}).compileComponents();
-		})
-	);
+	beforeEach(async(() => {
+		let shellServiveSpy = jasmine.createSpyObj('VantageService', [
+			'registerEvent',
+			'unRegisterEvent',
+		]);
+		TestBed.configureTestingModule({
+			declarations: [
+				WidgetMacrokeySettingsComponent,
+				mockPipe({ name: 'translate' }),
+				mockPipe({ name: 'sanitize' }),
+			],
+			schemas: [NO_ERRORS_SCHEMA],
+			providers: [
+				{ provide: HttpClient },
+				{ provide: Router, useValue: { navigate: (route) => route } },
+				{ provide: MacrokeyService, useValue: macrokeyServiceMock },
+				{
+					provide: GamingAllCapabilitiesService,
+					useValue: gamingAllCapabilitiesServiceMock,
+				},
+				{ provide: VantageShellService, useValue: shellServiveSpy },
+				TranslateStore,
+			],
+			imports: [FontAwesomeModule, TranslationModule],
+		}).compileComponents();
+	}));
 
 	beforeEach(() => {
 		shellService = TestBed.inject(VantageShellService);
@@ -117,7 +123,9 @@ describe('WidgetMacrokeySettingsComponent', () => {
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 		commonService = TestBed.inject(CommonService);
-		commonService.sendNotification('[Gaming] GamingCapabilities', { 'GamingAllCapabilities': { 'macroKeyFeature': true } });
+		commonService.sendNotification('[Gaming] GamingCapabilities', {
+			GamingAllCapabilities: { macroKeyFeature: true },
+		});
 	});
 
 	it('should create', () => {
@@ -203,10 +211,10 @@ describe('WidgetMacrokeySettingsComponent', () => {
 	}));
 
 	it('Should update the macrokey message event', fakeAsync(() => {
-		component.updateMacroKeyInputMessageEvent({message: 'Dummy message here'});
+		component.updateMacroKeyInputMessageEvent({ message: 'Dummy message here' });
 		tick(10);
 		fixture.detectChanges();
-		expect(component.macroKeyMessageData).toEqual({message: 'Dummy message here'});
+		expect(component.macroKeyMessageData).toEqual({ message: 'Dummy message here' });
 	}));
 
 	it('Should update the macrokey InputChange event', fakeAsync(() => {
@@ -226,10 +234,10 @@ describe('WidgetMacrokeySettingsComponent', () => {
 	}));
 
 	it('Should update the efffect option', fakeAsync(() => {
-		component.tooltips_value = "macroKey";
-		component.optionChanged({'value': 2,'name': 'macroKey'});
+		component.tooltips_value = 'macroKey';
+		component.optionChanged({ value: 2, name: 'macroKey' });
 		expect(component.macroKeyTypeStatus.MacroKeyStatus).toBeLessThanOrEqual(4);
-		component.optionChanged({'value': 3,'name': 'macroKey'});
+		component.optionChanged({ value: 3, name: 'macroKey' });
 		expect(component.tooltips_value).toMatch('');
 	}));
 
@@ -242,7 +250,7 @@ describe('WidgetMacrokeySettingsComponent', () => {
 
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
 	return Pipe(metadata)(
 		class MockPipe {

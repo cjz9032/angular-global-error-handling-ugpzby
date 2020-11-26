@@ -4,9 +4,8 @@ export enum SystemState {
 	NeedMaintenance = 2,
 }
 
-
 export enum SystemHealthDates {
 	SystemUpdate = 30,
 	OOBE = 31,
-	HardwareScan = 180
+	HardwareScan = 180,
 }

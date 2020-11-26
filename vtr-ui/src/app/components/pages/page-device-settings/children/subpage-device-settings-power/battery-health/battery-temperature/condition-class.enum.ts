@@ -3,5 +3,5 @@ export enum Conditions {
 	'low' = 0,
 	'fine' = 1,
 	'high' = 2,
-	'extreme' = 3
+	'extreme' = 3,
 }

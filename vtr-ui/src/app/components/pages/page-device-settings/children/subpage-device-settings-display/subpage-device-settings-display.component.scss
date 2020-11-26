@@ -1,4 +1,4 @@
-@import "../../../../../app.theme.scss";
+@import '../../../../../app.theme.scss';
 
 .subpage-device-settings-display {
 	.displayColorTemperatureLink {
@@ -6,7 +6,7 @@
 		padding-left: 3.1rem;
 		font-size: 1.4rem;
 		font-weight: 300;
-		color:$grey_dark;
+		color: $grey_dark;
 		// TODO: check this if it is necessary.
 	}
 	#goto_nightlight_link {
@@ -127,9 +127,9 @@
 		color: $light-grey;
 		cursor: not-allowed;
 	}
-	 .custom-control-label-disabled:hover {
+	.custom-control-label-disabled:hover {
 		cursor: not-allowed;
-	  }
+	}
 	.privacy-guard-caption {
 		font-size: $fontsize_xs;
 		color: $grey_dark;
@@ -195,14 +195,14 @@
 		font-size: $fontsize_xs;
 		border: 0.1rem solid $shade_lighter;
 		justify-content: space-between;
-		.note-icon{
+		.note-icon {
 			font-size: 2rem;
 		}
 		.privacy-button {
 			font-size: $fontsize_xs;
 			letter-spacing: 0px;
 			text-align: left;
-			font-family: "Segoe UI", sans-serif;
+			font-family: 'Segoe UI', sans-serif;
 			font-weight: $weight_light;
 			text-decoration: underline;
 			color: #4a81fd;
@@ -233,14 +233,14 @@
 
 	.camera-block {
 		::ng-deep .vtr-ui-switch-row.white-theme {
-			.tool-tip-icon{
+			.tool-tip-icon {
 				margin-left: 1.5rem;
 			}
 		}
 	}
 	.color-temp-block {
-		::ng-deep .vtr-ui-switch-row.white-theme{
-			.vtr-row-switch{
+		::ng-deep .vtr-ui-switch-row.white-theme {
+			.vtr-row-switch {
 				display: block !important;
 				text-align: right !important;
 				min-width: auto !important;
@@ -263,4 +263,3 @@
 		margin-top: 10px;
 	}
 }
-

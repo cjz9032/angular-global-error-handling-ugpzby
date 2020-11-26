@@ -8,10 +8,9 @@ import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metri
 @Component({
 	selector: 'vtr-modal-wifi-security-invitation',
 	templateUrl: './modal-wifi-security-invitation.component.html',
-	styleUrls: ['./modal-wifi-security-invitation.component.scss']
+	styleUrls: ['./modal-wifi-security-invitation.component.scss'],
 })
 export class ModalWifiSecurityInvitationComponent implements OnInit {
-
 	chs: ConnectedHomeSecurity;
 
 	header = 'security.homeprotection.invitationcode.joinFamilyAccount';
@@ -35,8 +34,8 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
 		public metrics: MetricService,
-		public metricsTranslateService: MetricsTranslateService) {
-	}
+		public metricsTranslateService: MetricsTranslateService
+	) {}
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
@@ -47,7 +46,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	}
 
 	KeyPress(e) {
-		const value = e.target.value.replace(/[^0-9a-zA-Z]+/ig, '');
+		const value = e.target.value.replace(/[^0-9a-zA-Z]+/gi, '');
 		e.target.value = value;
 	}
 
@@ -59,21 +58,24 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		this.startJoin = true;
 		setTimeout(() => {
 			this.connectingMsg.nativeElement.focus();
-		}, 0)
+		}, 0);
 		this.joinSuccess = false;
 		this.joinFailed = false;
 		const metricsData = {
 			ItemParent: this.metricsParent,
 			ItemName: this.metricsTranslateService.translate('CHSInvitationConnectFailed'),
-			ItemType: 'FeatureClick'
+			ItemType: 'FeatureClick',
 		};
 		if (this.chs) {
-			this.chs.joinAccount(code)
+			this.chs
+				.joinAccount(code)
 				.then((response) => {
 					this.startJoin = false;
 					if (response.result === 'Success') {
 						this.joinSuccess = true;
-						metricsData.ItemName = this.metricsTranslateService.translate('CHSInvitationConnectSuccess');
+						metricsData.ItemName = this.metricsTranslateService.translate(
+							'CHSInvitationConnectSuccess'
+						);
 						setTimeout(() => {
 							this.successMsg.nativeElement.focus();
 						}, 0);
@@ -83,22 +85,24 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 					} else {
 						this.joinFailed = true;
 					}
-				}).catch((err) => {
+				})
+				.catch((err) => {
 					this.startJoin = false;
 					this.joinFailed = true;
-					setTimeout(()=>{
+					setTimeout(() => {
 						this.domInput.nativeElement.focus();
-					}, 0)
-				}).finally(() => {
+					}, 0);
+				})
+				.finally(() => {
 					this.metrics.sendMetrics(metricsData);
 				});
 		} else {
 			this.startJoin = false;
 			this.joinFailed = true;
 			this.metrics.sendMetrics(metricsData);
-			setTimeout(()=>{
+			setTimeout(() => {
 				this.domInput.nativeElement.focus();
-			}, 0)
+			}, 0);
 		}
 	}
 
@@ -120,7 +124,6 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	focusOut() {
 		this.isFocusIn = false;
 	}
-
 
 	@HostListener('window: focus')
 	onFocus(): void {

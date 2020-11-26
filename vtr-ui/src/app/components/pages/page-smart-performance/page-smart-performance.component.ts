@@ -23,7 +23,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
 	selector: 'vtr-page-smart-performance',
 	templateUrl: './page-smart-performance.component.html',
-	styleUrls: ['./page-smart-performance.component.scss']
+	styleUrls: ['./page-smart-performance.component.scss'],
 })
 export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	private notificationSub: Subscription;
@@ -46,15 +46,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	IsScheduleScanEnabled: any;
 	isOldVersion = false;
 	private subscription: Subscription;
-	days: any = [
-		'Sunday',
-		'Monday',
-		'Tuesday',
-		'Wednesday',
-		'Thursday',
-		'Friday',
-		'Saturday'
-	];
+	days: any = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 	private metrics: any;
 	public isOnline = true;
 	public subscriptionInfoStatus = false;
@@ -74,11 +66,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		private supportService: SupportService,
 		private formatLocaleDate: FormatLocaleDatePipe,
 		private activatedRoute: ActivatedRoute
-
 	) {
 		this.shellServices.getMetrics();
 		this.metrics = this.shellServices.getMetrics();
-
 	}
 
 	ngOnInit() {
@@ -87,36 +77,57 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.isOnline = this.commonService.isOnline;
 		this.listenProtocal();
 
-		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.IsFreeFullFeatureEnabled
+		);
 		if (this.smartPerformanceService.isSubscribed === undefined) {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
-			this.IsSmartPerformanceFirstRun = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsFreeFullFeatureEnabled,
+				false
+			);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsSmartPerformanceFirstRun,
+				true
+			);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsSPScheduleScanEnabled,
+				true
+			);
+			this.IsSmartPerformanceFirstRun = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.IsSmartPerformanceFirstRun
+			);
 			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
-			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
+			this.smartPerformanceService.unregisterScanSchedule(
+				enumSmartPerformance.SCHEDULESCANANDFIX
+			);
 		}
-		const isFreePCScanRun = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreePCScanRun);
+		const isFreePCScanRun = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.IsFreePCScanRun
+		);
 		if (isFreePCScanRun === undefined || isFreePCScanRun === false) {
 			this.writeSmartPerformanceActivity('True', 'False', 'InActive');
-		}
-		else if (isFreePCScanRun === true) {
+		} else if (isFreePCScanRun === true) {
 			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
 		}
 
 		this.smartPerformanceService.getSubscriptionDataDetail((isSubscribed) => {
-			isSubscribed ? this.writeSmartPerformanceActivity('True', 'True', 'Active')
+			isSubscribed
+				? this.writeSmartPerformanceActivity('True', 'True', 'Active')
 				: this.writeSmartPerformanceActivity('True', 'True', 'Expired');
 		});
 
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.checkReadiness();
 		}
-		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 
-		this.smartPerformanceService.enableNextText = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
+		this.smartPerformanceService.enableNextText = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.IsSPScheduleScanEnabled
+		);
 		if (this.smartPerformanceService.isScanningCompleted) {
 			this.smartPerformanceService.isScanningCompleted = false;
 		}
@@ -125,8 +136,12 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	async registerScanEvent() {
 		const isRegistered = await this.systemEventService.registerCustomEvent(this.eventName);
 		if (isRegistered) {
-			this.notificationSub = this.commonService.notification.subscribe(notification => {
-				if (notification && notification.type && notification.type.toString() === this.eventName) {
+			this.notificationSub = this.commonService.notification.subscribe((notification) => {
+				if (
+					notification &&
+					notification.type &&
+					notification.type.toString() === this.eventName
+				) {
 					if (!this.smartPerformanceService.isScanning) {
 						this.switchToScanning();
 					}
@@ -161,39 +176,42 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		}
 	}
 	checkReadiness() {
-		this.smartPerformanceService.getReadiness()
+		this.smartPerformanceService
+			.getReadiness()
 			.then((getReadinessFromService: any) => {
-				this.logger.info('ui-smart-performance.ngOnInit.getReadiness.then', getReadinessFromService);
+				this.logger.info(
+					'ui-smart-performance.ngOnInit.getReadiness.then',
+					getReadinessFromService
+				);
 				if (!getReadinessFromService) {
 					this.switchToScanning();
-				}
-				else {
+				} else {
 					if (!this.isScanStarted) {
 						this.smartPerformanceService.isScanning = false;
 					}
 				}
 			})
-			.catch(error => {
+			.catch((error) => {
 				this.logger.error('ui-smart-performance.ngOnInit.getReadiness.then', error);
 			});
 	}
 
 	switchToScanning() {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.HasSubscribedScanCompleted,
+			false
+		);
 		this.smartPerformanceService.isScanning = true;
 		this.registerScheduleScanEvent();
 		this.getSmartPerformanceScheduleScanStatus();
 	}
 
 	registerScheduleScanEvent() {
-		this.shellServices.registerEvent(EventTypes.smartPerformanceScheduleScanStatus,
-			event => {
-				this.smartPerformanceService.scheduleScanObj = null;
-				this.updateScheduleScanStatus(event);
-			}
-		);
+		this.shellServices.registerEvent(EventTypes.smartPerformanceScheduleScanStatus, (event) => {
+			this.smartPerformanceService.scheduleScanObj = null;
+			this.updateScheduleScanStatus(event);
+		});
 	}
-
 
 	updateSubItemsList(subItem) {
 		this.currentSubItemCategory = subItem;
@@ -222,7 +240,10 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	// Scan Now event from Summary Page
 	changeScanEvent() {
 		this.smartPerformanceService.isScanning = true;
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.HasSubscribedScanCompleted,
+			false
+		);
 		if (this.smartPerformanceService.isShellAvailable) {
 			this.smartPerformanceService
 				.getReadiness()
@@ -231,8 +252,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 					if (getReadinessFromService) {
 						this.isScheduleScanRunning = false;
 
-						this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
-							event => {
+						this.shellServices.registerEvent(
+							EventTypes.smartPerformanceScanStatus,
+							(event) => {
 								this.smartPerformanceService.scheduleScanObj = null;
 								this.updateScheduleScanStatus(event);
 							}
@@ -241,20 +263,21 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 						// Subscriber Scan Completed
 						if (this.smartPerformanceService.isSubscribed) {
 							this.hasSubscribedScanCompleted = true;
-						}
-						else {
+						} else {
 							this.hasSubscribedScanCompleted = false;
 						}
-					}
-					else {
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+					} else {
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.HasSubscribedScanCompleted,
+							false
+						);
 						this.smartPerformanceService.isScanning = true;
 						this.registerScheduleScanEvent();
 						this.getSmartPerformanceScheduleScanStatus();
 						this.isScheduleScanRunning = true;
 					}
 				})
-				.catch(error => {
+				.catch((error) => {
 					this.logger.error('Chane scan Event', error);
 				});
 		}
@@ -268,7 +291,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 
 				// 	this.smartPerformanceService.isScanningCompleted = true;
 				// 	this.smartPerformanceService.isScanning = false;
-
 			}
 		} catch (err) {
 			this.logger.error('ui-smart-performance.updateScheduleScanStatus.then', err);
@@ -287,7 +309,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				// );
 				res = await this.smartPerformanceService.getScheduleScanStatus();
 				if (res && res.scanstatus !== 'Idle') {
-					const spSubscribeCancelModel = this.localCacheService.getLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted);
+					const spSubscribeCancelModel = this.localCacheService.getLocalCacheValue(
+						LocalStorageKey.HasSubscribedScanCompleted
+					);
 					if (spSubscribeCancelModel) {
 						this.smartPerformanceService.scheduleScanObj = null;
 						this.showSubscribersummary = false;
@@ -296,9 +320,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 							timeDeff = scanEndedTime - scanStartedTime;
 						}
 						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
-
-					}
-					else {
+					} else {
 						this.rating = res.rating;
 						this.tune = res.result.tune;
 						this.boost = res.result.boost;
@@ -309,16 +331,21 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 								timeDeff = scanEndedTime - scanStartedTime;
 							}
 							this.sendsmartPerformanceMetrics('Success', timeDeff);
-							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {
-								this.updateScheduleScanStatus(event);
-							}
+							this.shellServices.unRegisterEvent(
+								EventTypes.smartPerformanceScanStatus,
+								(event) => {
+									this.updateScheduleScanStatus(event);
+								}
 							);
 						}
 						this.smartPerformanceService.isScanning = false;
 						this.smartPerformanceService.isScanningCompleted = true;
 						this.isScanStarted = false;
 						this.showSubscribersummary = true;
-						this.logger.info('ui-smart-performance.getSmartPerformanceScheduleScanStatus', JSON.stringify(res));
+						this.logger.info(
+							'ui-smart-performance.getSmartPerformanceScheduleScanStatus',
+							JSON.stringify(res)
+						);
 					}
 				}
 			} catch (error) {
@@ -347,7 +374,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				}
 				if (res && res.state === true) {
 					// Subscriber Scan cancel model
-					const spSubscribeCancelModel = this.localCacheService.getLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted);
+					const spSubscribeCancelModel = this.localCacheService.getLocalCacheValue(
+						LocalStorageKey.HasSubscribedScanCompleted
+					);
 					if (spSubscribeCancelModel) {
 						// this.hasSubscribedScanCompleted = false;
 						this.smartPerformanceService.scheduleScanObj = null;
@@ -358,8 +387,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 						}
 						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
 						// this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
-					}
-					else {
+					} else {
 						// this.hasSubscribedScanCompleted = true;
 						this.showSubscribersummary = true;
 						this.smartPerformanceService.isScanning = false;
@@ -373,15 +401,20 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 								timeDeff = scanEndedTime - scanStartedTime;
 							}
 							this.sendsmartPerformanceMetrics('Success', timeDeff);
-							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {
-								this.updateScheduleScanStatus(event);
-							}
+							this.shellServices.unRegisterEvent(
+								EventTypes.smartPerformanceScanStatus,
+								(event) => {
+									this.updateScheduleScanStatus(event);
+								}
 							);
 						}
 						this.smartPerformanceService.isScanning = false;
 						this.smartPerformanceService.isScanningCompleted = true;
 						this.showSubscribersummary = true;
-						this.logger.info('ui-smart-performance.scanAndFixInformation ', JSON.stringify(res));
+						this.logger.info(
+							'ui-smart-performance.scanAndFixInformation ',
+							JSON.stringify(res)
+						);
 					}
 				}
 			} catch (error) {
@@ -396,7 +429,10 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	scanNow() {
 		if (this.isOnline) {
 			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.HasSubscribedScanCompleted,
+				false
+			);
 			if (this.smartPerformanceService.isShellAvailable) {
 				this.isScanStarted = true;
 				this.smartPerformanceService
@@ -404,10 +440,14 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 					.then((getReadinessFromService: any) => {
 						this.logger.info('ScanNow.getReadiness.then', getReadinessFromService);
 						if (getReadinessFromService) {
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreePCScanRun, true);
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.IsFreePCScanRun,
+								true
+							);
 							this.isScheduleScanRunning = false;
-							this.shellServices.registerEvent(EventTypes.smartPerformanceScanStatus,
-								event => {
+							this.shellServices.registerEvent(
+								EventTypes.smartPerformanceScanStatus,
+								(event) => {
 									this.smartPerformanceService.scheduleScanObj = null;
 									this.updateScheduleScanStatus(event);
 									this.smartPerformanceService.isScanning = true;
@@ -415,17 +455,18 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 							);
 							this.smartPerformanceService.isScanning = true;
 							this.scanAndFixInformation();
-						}
-						else {
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+						} else {
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.HasSubscribedScanCompleted,
+								false
+							);
 							this.smartPerformanceService.isScanning = true;
 							this.registerScheduleScanEvent();
 							this.getSmartPerformanceScheduleScanStatus();
 							this.isScheduleScanRunning = true;
-
 						}
 					})
-					.catch(error => {
+					.catch((error) => {
 						this.logger.error('ScanNow.getReadiness.then', error);
 					});
 			}
@@ -440,9 +481,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				TaskCount: this.tune + this.boost + this.secure || 0,
 				TaskName: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan',
 				TaskParm: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan',
-				TaskDuration: taskDuration || 0
+				TaskDuration: taskDuration || 0,
 			},
-			ItemType: 'TaskAction'
+			ItemType: 'TaskAction',
 		};
 		if (this.metrics) {
 			this.metrics.sendAsync(data);
@@ -463,9 +504,10 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.smartPerformanceService.isSubscribed = event;
 		if (event === true) {
 			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
-		}
-		else {
-			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
+		} else {
+			this.smartPerformanceService.unregisterScanSchedule(
+				enumSmartPerformance.SCHEDULESCANANDFIX
+			);
 		}
 	}
 	changeSummaryToHome() {
@@ -480,19 +522,29 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.subscriptionInfoStatus = event || false;
 	}
 
-	async writeSmartPerformanceActivity(issmartperformanceopened, hasuserrunfreepcscan, issubscribed) {
+	async writeSmartPerformanceActivity(
+		issmartperformanceopened,
+		hasuserrunfreepcscan,
+		issubscribed
+	) {
 		const payload = {
 			issmartperformanceopened,
 			hasuserrunfreepcscan,
-			issubscribed
+			issubscribed,
 		};
-		this.logger.info('subpage-smart-performance-dashboard.writeSmartPerformanceActivity.payload', payload);
+		this.logger.info(
+			'subpage-smart-performance-dashboard.writeSmartPerformanceActivity.payload',
+			payload
+		);
 		try {
 			const res: any = await this.smartPerformanceService.writeSmartPerformanceActivity(
 				payload
 			);
 		} catch (err) {
-			this.logger.error('subpage-smart-performance-dashboard.writeSmartPerformanceActivity.then', err);
+			this.logger.error(
+				'subpage-smart-performance-dashboard.writeSmartPerformanceActivity.then',
+				err
+			);
 		}
 	}
 
@@ -507,18 +559,29 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			return;
 		}
 		this.smartPerformanceService.enableNextText = nextScheduleScanEvent.nextEnable;
-		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(nextScheduleScanEvent.nextScanDateWithYear);
-		const nextDateObj = new Date(nextScheduleScanEvent.nextScanDateWithYear + ', '
-			+ nextScheduleScanEvent.nextScanHour + ':' + nextScheduleScanEvent.nextScanMin
-			+ ' ' + (nextScheduleScanEvent.nextScanAMPM === 'smartPerformance.scanSettings.am' ? 'AM' : 'PM'));
-		const timeSection =
-			new Intl.DateTimeFormat(this.translate.currentLang,
-				{
-					hour12: true,
-					hour: 'numeric',
-					minute: 'numeric'
-				}).format(nextDateObj);
-		this.smartPerformanceService.nextScheduleScan = nextScheduleScanDayMonth + (this.translate.currentLang === 'en' ? ' at ' : ' ') + timeSection;
+		const nextScheduleScanDayMonth = this.formatLocaleDate.transformWithoutYear(
+			nextScheduleScanEvent.nextScanDateWithYear
+		);
+		const nextDateObj = new Date(
+			nextScheduleScanEvent.nextScanDateWithYear +
+				', ' +
+				nextScheduleScanEvent.nextScanHour +
+				':' +
+				nextScheduleScanEvent.nextScanMin +
+				' ' +
+				(nextScheduleScanEvent.nextScanAMPM === 'smartPerformance.scanSettings.am'
+					? 'AM'
+					: 'PM')
+		);
+		const timeSection = new Intl.DateTimeFormat(this.translate.currentLang, {
+			hour12: true,
+			hour: 'numeric',
+			minute: 'numeric',
+		}).format(nextDateObj);
+		this.smartPerformanceService.nextScheduleScan =
+			nextScheduleScanDayMonth +
+			(this.translate.currentLang === 'en' ? ' at ' : ' ') +
+			timeSection;
 	}
 
 	hideBasedOnOldAddInVersionInSummaryPage($event) {
@@ -527,21 +590,26 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	}
 
 	listenProtocal() {
-		this.protocalListener = this.activatedRoute.queryParamMap.subscribe(async (params: ParamMap) => {
-			if (params.has('action') && this.activatedRoute.snapshot.queryParams.action === 'start') {
-				this.scanNow();
-				await this.commonService.delay(3000);
-				let precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
-				let retry = 0;
-				// retry 3 times if scan does not launched
-				while ((!precent || precent < 1) && retry < 3) {
-					this.logger.info(`retry to launch scan: ${retry}`);
+		this.protocalListener = this.activatedRoute.queryParamMap.subscribe(
+			async (params: ParamMap) => {
+				if (
+					params.has('action') &&
+					this.activatedRoute.snapshot.queryParams.action === 'start'
+				) {
 					this.scanNow();
 					await this.commonService.delay(3000);
-					precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
-					retry++;
+					let precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
+					let retry = 0;
+					// retry 3 times if scan does not launched
+					while ((!precent || precent < 1) && retry < 3) {
+						this.logger.info(`retry to launch scan: ${retry}`);
+						this.scanNow();
+						await this.commonService.delay(3000);
+						precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
+						retry++;
+					}
 				}
 			}
-		});
+		);
 	}
 }

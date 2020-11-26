@@ -27,7 +27,7 @@
 		margin-bottom: 2rem;
 		p {
 			font-size: $fontsize_xs;
-			color: #303D49;
+			color: #303d49;
 		}
 	}
 
@@ -223,7 +223,6 @@
 		&:focus {
 			@include outline-blue;
 		}
-
 	}
 
 	.cancel-link {
@@ -274,19 +273,18 @@
 			.selected-frequency {
 				color: #11b85b;
 				font-weight: $weight_bold;
-
 			}
 
 			.frequency-text {
 				cursor: pointer;
 
 				&:focus {
-					@include outline-blue
+					@include outline-blue;
 				}
 			}
 
 			&:before {
-				content: "";
+				content: '';
 				position: absolute;
 				width: 15px;
 				height: 15px;
@@ -328,7 +326,7 @@
 					@include outline-blue;
 				}
 
-				&:nth-child(4n+4) {
+				&:nth-child(4n + 4) {
 					border-right: none;
 				}
 
@@ -350,7 +348,7 @@
 			}
 
 			&:before {
-				content: "";
+				content: '';
 				position: absolute;
 				width: 15px;
 				height: 15px;
@@ -389,7 +387,7 @@
 			}
 
 			&:before {
-				content: "";
+				content: '';
 				position: absolute;
 				width: 15px;
 				height: 15px;
@@ -484,7 +482,7 @@
 			}
 
 			&:before {
-				content: "";
+				content: '';
 				position: absolute;
 				width: 15px;
 				height: 15px;
@@ -512,13 +510,11 @@
 				}
 			}
 		}
-
 	}
 
 	::ng-deep .switch.switch-xs {
 		margin-right: 1rem;
 	}
-
 }
 
 @keyframes spinner {

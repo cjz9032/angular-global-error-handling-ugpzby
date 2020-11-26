@@ -6,5 +6,5 @@ export class KeyPress {
 		public ctrlKey: boolean,
 		public altKey: boolean,
 		public shiftKey: boolean
-	) { }
+	) {}
 }

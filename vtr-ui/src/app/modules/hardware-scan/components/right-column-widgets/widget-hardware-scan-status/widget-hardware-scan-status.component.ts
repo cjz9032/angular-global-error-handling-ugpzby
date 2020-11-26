@@ -5,7 +5,7 @@ import { PreviousResultService } from '../../../services/previous-result.service
 @Component({
 	selector: 'vtr-widget-hardware-scan-status',
 	templateUrl: './widget-hardware-scan-status.component.html',
-	styleUrls: ['./widget-hardware-scan-status.component.scss']
+	styleUrls: ['./widget-hardware-scan-status.component.scss'],
 })
 export class WidgetHardwareScanStatusComponent implements OnInit {
 	@Input() widgetId: string;
@@ -17,10 +17,13 @@ export class WidgetHardwareScanStatusComponent implements OnInit {
 	constructor(
 		private hardwareScanService: HardwareScanService,
 		private previousResultService: PreviousResultService
-	) { }
+	) {}
 
 	ngOnInit() {
-		if (!this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isRecoverExecuting()) {
+		if (
+			!this.hardwareScanService.isScanExecuting() &&
+			!this.hardwareScanService.isRecoverExecuting()
+		) {
 			this.previousResultService.getLastResults().then(() => {
 				const previousResultsWidget: any = this.previousResultService.getPreviousResultsWidget();
 				if (previousResultsWidget) {

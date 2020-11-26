@@ -6,7 +6,7 @@ import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response
 import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class AudioService {
 	private microphone: any;
@@ -22,10 +22,10 @@ export class AudioService {
 		}
 	}
 
-	setDolbyAudioProfileState(key,value) {
+	setDolbyAudioProfileState(key, value) {
 		try {
 			if (this.isShellAvailable) {
-				return this.dolby.setDolbyAudioProfileState(key,value);
+				return this.dolby.setDolbyAudioProfileState(key, value);
 			}
 			return undefined;
 		} catch (error) {
@@ -230,6 +230,4 @@ export class AudioService {
 			throw new Error(error.message);
 		}
 	}
-
-	
 }

@@ -1,4 +1,4 @@
-import { DevicePosture, DeviceCondition} from '@lenovo/tan-client-bridge';
+import { DevicePosture, DeviceCondition } from '@lenovo/tan-client-bridge';
 import { TranslateService } from '@ngx-translate/core';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
@@ -21,7 +21,8 @@ export class HomeSecurityDevicePosture {
 		private windowsVersionService: WindowsVersionService,
 		devicePosture?: DevicePosture,
 		cacheDevicePosture?: HomeSecurityDevicePosture,
-		public translate?: TranslateService) {
+		public translate?: TranslateService
+	) {
 		if (devicePosture && Array.isArray(devicePosture.value) && devicePosture.value.length > 0) {
 			if (cacheDevicePosture) {
 				this.createHomeDevicePosture(devicePosture.value, cacheDevicePosture);
@@ -31,7 +32,10 @@ export class HomeSecurityDevicePosture {
 		}
 	}
 
-	createHomeDevicePosture(devicePosture: DeviceCondition[], cacheDevicePosture?: HomeSecurityDevicePosture) {
+	createHomeDevicePosture(
+		devicePosture: DeviceCondition[],
+		cacheDevicePosture?: HomeSecurityDevicePosture
+	) {
 		const devicePostures = this.initDevicePosture();
 		devicePosture.forEach((item) => {
 			this.mappingDevicePosture(devicePostures, item);
@@ -48,7 +52,7 @@ export class HomeSecurityDevicePosture {
 
 	mappingDevicePosture(devicePostures: DevicePostureDetail[], item: DeviceCondition) {
 		const config = item.name.toLowerCase();
-		if (config.indexOf('pin') !== -1 || (config.indexOf('password') !== -1)) {
+		if (config.indexOf('pin') !== -1 || config.indexOf('password') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 0);
 		} else if (config.indexOf('drive') !== -1) {
 			this.assignValue(devicePostures, item.vulnerable, 1);
@@ -68,7 +72,10 @@ export class HomeSecurityDevicePosture {
 
 	assignValue(devicePostures: DevicePostureDetail[], vulnerable: boolean, index: number) {
 		devicePostures[index].status = vulnerable === true ? 1 : 5;
-		devicePostures[index].detail = vulnerable === true ? 'security.homeprotection.securityhealth.fail' : 'security.homeprotection.securityhealth.pass';
+		devicePostures[index].detail =
+			vulnerable === true
+				? 'security.homeprotection.securityhealth.fail'
+				: 'security.homeprotection.securityhealth.pass';
 		this.translate.stream(devicePostures[index].detail).subscribe((res) => {
 			devicePostures[index].detail = res;
 		});
@@ -94,7 +101,7 @@ export class HomeSecurityDevicePosture {
 				path: 'home-security',
 				type: 'security',
 				title: value,
-				isHidden: false
+				isHidden: false,
 			};
 		});
 		return devicePostures;

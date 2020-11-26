@@ -6,16 +6,8 @@ import { BetaComponentComponent } from './beta-component/beta-component.componen
 import { SharedModule } from '../modules/shared.module';
 
 @NgModule({
-	declarations: [
-		BetaComponentComponent
-	],
-	imports: [
-		CommonModule,
-		BetaModuleRoutingModule,
-		SharedModule
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	]
+	declarations: [BetaComponentComponent],
+	imports: [CommonModule, BetaModuleRoutingModule, SharedModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class BetaModule {}

@@ -18,12 +18,8 @@ import { ModalAppsForYouScreenshotComponent } from 'src/app/components/modal/mod
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
-
 @NgModule({
-	declarations: [
-		PageAppsForYouComponent,
-		ModalAppsForYouScreenshotComponent,
-	],
+	declarations: [PageAppsForYouComponent, ModalAppsForYouScreenshotComponent],
 	imports: [
 		CommonModule,
 		AppsForYouRoutingModule,
@@ -35,21 +31,14 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 		PageLayoutModule,
 		NgbModalModule,
 		FontAwesomeModule,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
-	providers: [
-		SystemUpdateService,
-	],
-	entryComponents: [
-		ModalAppsForYouScreenshotComponent,
-	],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA]
+	providers: [SystemUpdateService],
+	entryComponents: [ModalAppsForYouScreenshotComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppsForYouModule {
 	constructor(library: FaIconLibrary) {
-		library.addIcons(
-			faChevronLeft,
-			faChevronRight
-		);
+		library.addIcons(faChevronLeft, faChevronRight);
 	}
 }

@@ -1,4 +1,13 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, ViewChild } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	ElementRef,
+	Output,
+	EventEmitter,
+	OnChanges,
+	ViewChild,
+} from '@angular/core';
 import { isUndefined } from 'util';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -8,8 +17,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	templateUrl: './ui-lighting-effect.component.html',
 	styleUrls: ['./ui-lighting-effect.component.scss'],
 	host: {
-		'(document:click)': 'generalClick($event)'
-	}
+		'(document:click)': 'generalClick($event)',
+	},
 })
 export class UiLightingEffectComponent implements OnInit, OnChanges {
 	@ViewChild('focusDropdown', { static: false }) focusDropdown: ElementRef;
@@ -31,12 +40,12 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	@Input() ariaLabel: string = '';
 	@Input() automationId: string;
 	public selectedOption: any = {
-		header: "",
-		id: "",
-		label: "",
-		metricitem: "",
-		name: "",
-		value: 1
+		header: '',
+		id: '',
+		label: '',
+		metricitem: '',
+		name: '',
+		value: 1,
 	};
 	@Input() defaultLang: any;
 	@ViewChild('dropdownLightingEle', { static: false })
@@ -57,9 +66,11 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		private loggerService: LoggerService
 	) {
 		if (document.getElementById('menu-main-btn-navbar-toggler')) {
-			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
-				this.generalClick(event);
-			});
+			document
+				.getElementById('menu-main-btn-navbar-toggler')
+				.addEventListener('click', (event) => {
+					this.generalClick(event);
+				});
 		}
 	}
 
@@ -69,7 +80,9 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		});
 		this.loggerService.info('ui-lighting-effect.component.ngOnInit', '--->' + this.options);
 		if (this.selectedOption === undefined) {
-			this.selectedOption = this.options.dropOptions.filter((option) => option.value === this.options.curSelected);
+			this.selectedOption = this.options.dropOptions.filter(
+				(option) => option.value === this.options.curSelected
+			);
 		}
 	}
 

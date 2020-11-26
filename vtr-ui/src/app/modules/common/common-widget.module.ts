@@ -32,7 +32,7 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		WidgetHomeSecurityComponent,
 		MaterialSvgCircleComponent,
 		MaterialStatusCircleComponent,
-		WidgetRoundStatusComponent
+		WidgetRoundStatusComponent,
 	],
 	exports: [
 		WidgetDeviceComponent,
@@ -46,7 +46,7 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		WidgetHomeSecurityComponent,
 		MaterialSvgCircleComponent,
 		MaterialStatusCircleComponent,
-		WidgetRoundStatusComponent
+		WidgetRoundStatusComponent,
 	],
 	imports: [
 		CommonModule,
@@ -55,10 +55,8 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		RouterModule,
 		WidgetSecurityStatusModule,
 		WidgetSupportModule,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class CommonWidgetModule { }
+export class CommonWidgetModule {}

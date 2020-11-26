@@ -1,70 +1,70 @@
 @import '../../../app.theme.scss';
 .vtr-ui-add-reduce-button {
-    width: 100%;
-    height: 100%;
-    background-color: $white5;
-    border-radius: .6rem;
-    display: flex;
-    @media #{$high-contrast} {
-        border: 1px solid windowText;
-    }
-    button {
-        font-size: 0;
-        outline: none;
-        color: $white60;
-        transition: all 0.2s ease;
-        &:hover {
-            color: $gaming_lightest;
-        }
-        &:active {
-            transform: scale(0.96);
-        }
-        &.disabled{
-            color: $white20;
-            cursor: not-allowed;
-            &:active {
-                transform: scale(1);
-            }
-            @media #{$high-contrast} {
-                opacity: 0.4;
-            }
-        }
-        span {
-            font-size: 3rem;
-            margin-top: -3px;
-        }
-    }
-    p {
-        flex: 1;
-        font-size: 1.4rem;
-        color: $gaming_lightest;
-        @media #{$high-contrast} {
+	width: 100%;
+	height: 100%;
+	background-color: $white5;
+	border-radius: 0.6rem;
+	display: flex;
+	@media #{$high-contrast} {
+		border: 1px solid windowText;
+	}
+	button {
+		font-size: 0;
+		outline: none;
+		color: $white60;
+		transition: all 0.2s ease;
+		&:hover {
+			color: $gaming_lightest;
+		}
+		&:active {
+			transform: scale(0.96);
+		}
+		&.disabled {
+			color: $white20;
+			cursor: not-allowed;
+			&:active {
+				transform: scale(1);
+			}
+			@media #{$high-contrast} {
+				opacity: 0.4;
+			}
+		}
+		span {
+			font-size: 3rem;
+			margin-top: -3px;
+		}
+	}
+	p {
+		flex: 1;
+		font-size: 1.4rem;
+		color: $gaming_lightest;
+		@media #{$high-contrast} {
 			color: buttonText;
 		}
-    }
-    button,
-    p {
-        height: 100%;
-        line-height: 100%;
-        text-align: center;
-        span {
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            display: -webkit-flex;
-            @media #{$high-contrast} {
-                -ms-high-contrast-adjust: none;
-            }
-        }
-    }
+	}
+	button,
+	p {
+		height: 100%;
+		line-height: 100%;
+		text-align: center;
+		span {
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			display: -webkit-flex;
+			@media #{$high-contrast} {
+				-ms-high-contrast-adjust: none;
+			}
+		}
+	}
 }
 
-::ng-deep body.focus-enable{
+::ng-deep body.focus-enable {
 	.is-gaming {
-		.vtr-ui-add-reduce-button{
-            button:focus{
-                @include default-button-border;
-            }
+		.vtr-ui-add-reduce-button {
+			button:focus {
+				@include default-button-border;
+			}
 		}
 	}
 }

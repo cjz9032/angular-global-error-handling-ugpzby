@@ -11,11 +11,20 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { DedicatedInstanceFactory } from 'ngforage';
 
 describe('DisplayService', () => {
-	beforeEach(() => TestBed.configureTestingModule({
-		schemas: [NO_ERRORS_SCHEMA],
-		imports: [HttpClientModule],
-		providers: [DisplayService, DevService, VantageShellService, CommonService, LoggerService, HttpClient]
-	}));
+	beforeEach(() =>
+		TestBed.configureTestingModule({
+			schemas: [NO_ERRORS_SCHEMA],
+			imports: [HttpClientModule],
+			providers: [
+				DisplayService,
+				DevService,
+				VantageShellService,
+				CommonService,
+				LoggerService,
+				HttpClient,
+			],
+		})
+	);
 	let displayService: DisplayService;
 	let devServices: DevService;
 	let loggerService: LoggerService;
@@ -23,10 +32,10 @@ describe('DisplayService', () => {
 	let commonService: CommonService;
 	let http: HttpClient;
 	let localCacheService: LocalCacheService;
-	let dedicatedInstanceFactory = <DedicatedInstanceFactory>{}
+	let dedicatedInstanceFactory = <DedicatedInstanceFactory>{};
 	beforeEach(() => {
 		commonService = new CommonService();
-		localCacheService = new LocalCacheService(dedicatedInstanceFactory, commonService)
+		localCacheService = new LocalCacheService(dedicatedInstanceFactory, commonService);
 		shellService = new VantageShellService(commonService, localCacheService, http);
 		loggerService = new LoggerService(shellService);
 		devServices = new DevService(loggerService);
@@ -83,7 +92,7 @@ describe('DisplayService', () => {
 		displayService.displayEyeCareMode = {
 			getEyeCareModeState() {
 				return;
-			}
+			},
 		};
 		const spy = spyOn(displayService.displayEyeCareMode, 'getEyeCareModeState');
 		displayService.getEyeCareModeState();
@@ -116,7 +125,6 @@ describe('DisplayService', () => {
 		});
 		expect(status).toBeTruthy();
 		expect(available).toBeTruthy();
-
 	});
 
 	it('should get Camera Privacy mode status else case', () => {
@@ -129,7 +137,7 @@ describe('DisplayService', () => {
 	it('should start Camera privacy monitor', async () => {
 		let monitor = false;
 		await displayService
-			.startCameraPrivacyMonitor(() => { })
+			.startCameraPrivacyMonitor(() => {})
 			.then((flag: any) => {
 				monitor = flag; // expecting a FeatureStatus, mocked with a boolean
 			});
@@ -144,16 +152,13 @@ describe('DisplayService', () => {
 		const res = displayService.startCameraPrivacyMonitor(callback);
 		expect(res).toBeUndefined();
 		expect(displayService.startCameraPrivacyMonitor).toThrow();
-
 	});
 
 	it('should stop Camera privacy monitor', async () => {
 		let monitor = false;
-		await displayService
-			.stopCameraPrivacyMonitor()
-			.then((flag: any) => {
-				monitor = flag; // expecting a FeatureStatus, mocked with a boolean
-			});
+		await displayService.stopCameraPrivacyMonitor().then((flag: any) => {
+			monitor = flag; // expecting a FeatureStatus, mocked with a boolean
+		});
 		expect(monitor).toBeTruthy();
 		expect(displayService.stopCameraPrivacyMonitor).toThrow();
 	});
@@ -167,10 +172,9 @@ describe('DisplayService', () => {
 
 	it('should set eyeCareMode State', async () => {
 		let status = false;
-		await displayService.setEyeCareModeState(true)
-			.then((flag: boolean) => {
-				status = flag;
-			});
+		await displayService.setEyeCareModeState(true).then((flag: boolean) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 		expect(displayService.setEyeCareModeState).toThrow();
 	});
@@ -181,16 +185,13 @@ describe('DisplayService', () => {
 		const res = displayService.setEyeCareModeState(value);
 		expect(res).toBeUndefined();
 		expect(displayService.setEyeCareModeState).toThrow();
-
 	});
 
 	it('should set Camera Privacy mode', async () => {
 		let monitor = false;
-		await displayService
-			.setCameraPrivacyModeState(true)
-			.then((flag: any) => {
-				monitor = flag; // expecting a FeatureStatus, mocked with a boolean
-			});
+		await displayService.setCameraPrivacyModeState(true).then((flag: any) => {
+			monitor = flag; // expecting a FeatureStatus, mocked with a boolean
+		});
 		expect(monitor).toBeTruthy();
 	});
 
@@ -200,15 +201,13 @@ describe('DisplayService', () => {
 		const res = displayService.setCameraPrivacyModeState(value);
 		expect(res).toBeUndefined();
 		expect(displayService.setCameraPrivacyModeState).toThrow();
-
 	});
 
 	it('should get camera settings', async () => {
 		let status = false;
-		await displayService.getCameraSettingsInfo()
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.getCameraSettingsInfo().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -217,16 +216,14 @@ describe('DisplayService', () => {
 		const res = displayService.getCameraSettingsInfo();
 		expect(res).toBeUndefined();
 		expect(displayService.getCameraSettingsInfo).toThrow();
-
 	});
 
 	it('should set Camera Brightness', async () => {
 		let status = false;
 		const brightness = 10;
-		await displayService.setCameraBrightness(brightness)
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.setCameraBrightness(brightness).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).cameraSettings = false;
@@ -237,10 +234,9 @@ describe('DisplayService', () => {
 	it('should set Camera Contrast', async () => {
 		let status = false;
 		const contrast = 7;
-		await displayService.setCameraContrast(contrast)
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.setCameraContrast(contrast).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).cameraSettings = false;
@@ -251,10 +247,9 @@ describe('DisplayService', () => {
 	it('should set Camera Auto Exposure', async () => {
 		let status = false;
 		const exposure = true;
-		await displayService.setCameraAutoExposure(exposure)
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.setCameraAutoExposure(exposure).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).cameraSettings = false;
@@ -265,10 +260,9 @@ describe('DisplayService', () => {
 	it('should set Camera Exposure', async () => {
 		let status = false;
 		const exposure = 6;
-		await displayService.setCameraExposureValue(exposure)
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.setCameraExposureValue(exposure).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).cameraSettings = false;
@@ -279,10 +273,9 @@ describe('DisplayService', () => {
 	it('should set Camera autofocus', async () => {
 		let status = false;
 		const focus = 6;
-		await displayService.setCameraAutoFocus(focus)
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.setCameraAutoFocus(focus).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).cameraSettings = false;
@@ -292,10 +285,9 @@ describe('DisplayService', () => {
 
 	it('should set Camera reset', async () => {
 		let status = false;
-		await displayService.resetCameraSettings()
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.resetCameraSettings().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).cameraSettings = false;
@@ -305,10 +297,9 @@ describe('DisplayService', () => {
 
 	it('should get Display Color Temp', async () => {
 		let status = false;
-		await displayService.getDisplayColorTemperature()
-			.then((res) => {
-				status = res.available;
-			});
+		await displayService.getDisplayColorTemperature().then((res) => {
+			status = res.available;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).displayEyeCareMode = false;
@@ -319,10 +310,9 @@ describe('DisplayService', () => {
 	it('should set Display Color Temp', async () => {
 		let status = false;
 		const value = 10;
-		await displayService.setDisplayColorTemperature(value)
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.setDisplayColorTemperature(value).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).displayEyeCareMode = false;
@@ -332,10 +322,9 @@ describe('DisplayService', () => {
 
 	it('should reset EyeCare mode', async () => {
 		let status = false;
-		await displayService.resetEyeCareMode()
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.resetEyeCareMode().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).displayEyeCareMode = false;
@@ -346,10 +335,9 @@ describe('DisplayService', () => {
 	it('should set Auto EyeCare mode', async () => {
 		let status = false;
 		const value = true;
-		await displayService.setEyeCareAutoMode(value)
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.setEyeCareAutoMode(value).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).displayEyeCareMode = false;
@@ -359,10 +347,9 @@ describe('DisplayService', () => {
 
 	it('should get Auto EyeCare mode', async () => {
 		let status = false;
-		await displayService.getEyeCareAutoMode()
-			.then((res) => {
-				status = res.available;
-			});
+		await displayService.getEyeCareAutoMode().then((res) => {
+			status = res.available;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).displayEyeCareMode = false;
@@ -372,10 +359,9 @@ describe('DisplayService', () => {
 
 	it('should get Daytime Color Temp', async () => {
 		let status = false;
-		await displayService.getDaytimeColorTemperature()
-			.then((res) => {
-				status = res.available;
-			});
+		await displayService.getDaytimeColorTemperature().then((res) => {
+			status = res.available;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).displayEyeCareMode = false;
@@ -386,10 +372,9 @@ describe('DisplayService', () => {
 	it('should set Daytime Color Temp', async () => {
 		let status = false;
 		const value = 19;
-		await displayService.setDaytimeColorTemperature(value)
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.setDaytimeColorTemperature(value).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).displayEyeCareMode = false;
@@ -399,10 +384,9 @@ describe('DisplayService', () => {
 
 	it('should reset Daytime Color Temp', async () => {
 		let status = false;
-		await displayService.resetDaytimeColorTemperature()
-			.then((flag) => {
-				status = flag;
-			});
+		await displayService.resetDaytimeColorTemperature().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).displayEyeCareMode = false;
@@ -412,10 +396,9 @@ describe('DisplayService', () => {
 
 	it('should get Privacy Guard Capability', async () => {
 		let status = false;
-		await displayService.getPrivacyGuardCapability()
-			.then(res => {
-				status = res;
-			});
+		await displayService.getPrivacyGuardCapability().then((res) => {
+			status = res;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).privacyGuardSettings = false;
@@ -425,10 +408,9 @@ describe('DisplayService', () => {
 
 	it('should get Privacy Guard Password Capability', async () => {
 		let status = false;
-		await displayService.getPrivacyGuardOnPasswordCapability()
-			.then(res => {
-				status = res;
-			});
+		await displayService.getPrivacyGuardOnPasswordCapability().then((res) => {
+			status = res;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).privacyGuardSettings = false;
@@ -438,10 +420,9 @@ describe('DisplayService', () => {
 
 	it('should get Privacy Guard status', async () => {
 		let status = false;
-		await displayService.getPrivacyGuardStatus()
-			.then(res => {
-				status = res;
-			});
+		await displayService.getPrivacyGuardStatus().then((res) => {
+			status = res;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).privacyGuardSettings = false;
@@ -451,10 +432,9 @@ describe('DisplayService', () => {
 
 	it('should get Privacy Password Guard status', async () => {
 		let status = false;
-		await displayService.getPrivacyGuardOnPasswordStatus()
-			.then(res => {
-				status = res;
-			});
+		await displayService.getPrivacyGuardOnPasswordStatus().then((res) => {
+			status = res;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).privacyGuardSettings = false;
@@ -465,10 +445,9 @@ describe('DisplayService', () => {
 	it('should set Privacy Guard status', async () => {
 		let status = false;
 		const value = true;
-		await displayService.setPrivacyGuardStatus(value)
-			.then(res => {
-				status = res;
-			});
+		await displayService.setPrivacyGuardStatus(value).then((res) => {
+			status = res;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).privacyGuardSettings = false;
@@ -479,10 +458,9 @@ describe('DisplayService', () => {
 	it('should set Privacy Guard password status', async () => {
 		let status = false;
 		const value = true;
-		await displayService.setPrivacyGuardOnPasswordStatus(value)
-			.then(res => {
-				status = res;
-			});
+		await displayService.setPrivacyGuardOnPasswordStatus(value).then((res) => {
+			status = res;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).privacyGuardSettings = false;
@@ -513,34 +491,30 @@ describe('DisplayService', () => {
 	it('should start eye care monitor', async () => {
 		let status = false;
 		await displayService
-			.startEyeCareMonitor(() => { })
-			.then(flag => {
+			.startEyeCareMonitor(() => {})
+			.then((flag) => {
 				status = flag;
 			});
 		expect(status).toBeTruthy();
 
-
 		(displayService as any).isShellAvailable = false;
-		const returnValue = displayService.startEyeCareMonitor(() => { });
+		const returnValue = displayService.startEyeCareMonitor(() => {});
 		expect(returnValue).toBe(undefined);
-
 
 		expect(displayService.startEyeCareMonitor).toThrow();
 	});
 
 	it('should start camera permission monitor', async () => {
 		let status = false;
-		await displayService
-			.startMonitorForCameraPermission()
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.startMonitorForCameraPermission().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 
 		(displayService as any).cameraSettings = {
 			startMonitor() {
 				return Promise.resolve({ permission: true });
-			}
+			},
 		};
 		/* const spySN = spyOn(commonService, 'sendNotification');
 		const returnValue = displayService.startMonitorForCameraPermission();
@@ -558,16 +532,12 @@ describe('DisplayService', () => {
 		expect(displayService.startMonitorForCameraPermission).toThrow();
 	});
 
-
 	it('should stop camera permission monitor', async () => {
 		let status = false;
-		await displayService
-			.stopMonitorForCameraPermission()
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.stopMonitorForCameraPermission().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
-
 	});
 
 	it('should stop camera permission monitor', () => {
@@ -579,11 +549,9 @@ describe('DisplayService', () => {
 
 	it('should stop eyecare monitor', async () => {
 		let status = false;
-		await displayService
-			.stopEyeCareMonitor()
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.stopEyeCareMonitor().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -599,7 +567,7 @@ describe('DisplayService', () => {
 		displayService.displayEyeCareMode = {
 			openPrivacyLocation() {
 				return;
-			}
+			},
 		};
 		const spy = spyOn(displayService.displayEyeCareMode, 'openPrivacyLocation');
 		displayService.openPrivacyLocation();
@@ -614,10 +582,9 @@ describe('DisplayService', () => {
 
 	it('should init eyecare mode', async () => {
 		let status = false;
-		await displayService.initEyecaremodeSettings()
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.initEyecaremodeSettings().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -629,10 +596,9 @@ describe('DisplayService', () => {
 
 	it('should get OLED Capabiliity', async () => {
 		let status = false;
-		await displayService.getOLEDPowerControlCapability()
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.getOLEDPowerControlCapability().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -644,10 +610,9 @@ describe('DisplayService', () => {
 
 	it('should get taskdimmer settings', async () => {
 		let status = false;
-		await displayService.getTaskbarDimmerSetting()
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.getTaskbarDimmerSetting().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -659,10 +624,9 @@ describe('DisplayService', () => {
 
 	it('should get backgronddimmer settings', async () => {
 		let status = false;
-		await displayService.getBackgroundDimmerSetting()
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.getBackgroundDimmerSetting().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -674,10 +638,9 @@ describe('DisplayService', () => {
 
 	it('should get display dimmer settings', async () => {
 		let status = false;
-		await displayService.getDisplayDimmerSetting()
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.getDisplayDimmerSetting().then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -690,10 +653,9 @@ describe('DisplayService', () => {
 	it('should set taskbar dimmer settings', async () => {
 		let status = false;
 		const value = '10';
-		await displayService.setTaskbarDimmerSetting(value)
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.setTaskbarDimmerSetting(value).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -707,10 +669,9 @@ describe('DisplayService', () => {
 	it('should set background dimmer settings', async () => {
 		let status = false;
 		const value = '10';
-		await displayService.setBackgroundDimmerSetting(value)
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.setBackgroundDimmerSetting(value).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -724,10 +685,9 @@ describe('DisplayService', () => {
 	it('should set display dimmer settings', async () => {
 		let status = false;
 		const value = '10';
-		await displayService.setDisplayDimmerSetting(value)
-			.then(flag => {
-				status = flag;
-			});
+		await displayService.setDisplayDimmerSetting(value).then((flag) => {
+			status = flag;
+		});
 		expect(status).toBeTruthy();
 	});
 
@@ -742,7 +702,7 @@ describe('DisplayService', () => {
 		displayService.displayEyeCareMode = {
 			resetEyecaremodeAllSettings() {
 				return;
-			}
+			},
 		};
 		const spy = spyOn(displayService.displayEyeCareMode, 'resetEyecaremodeAllSettings');
 		displayService.resetEyecaremodeAllSettings();
@@ -753,7 +713,7 @@ describe('DisplayService', () => {
 		displayService.displayEyeCareMode = {
 			getWhiteListCapability() {
 				return;
-			}
+			},
 		};
 		const spy = spyOn(displayService.displayEyeCareMode, 'getWhiteListCapability');
 		displayService.getWhiteListCapability();
@@ -764,7 +724,7 @@ describe('DisplayService', () => {
 		const priorityControl = {
 			GetCapability() {
 				return;
-			}
+			},
 		};
 		(displayService as any).priorityControl = priorityControl;
 		const spy = spyOn(priorityControl, 'GetCapability');
@@ -780,7 +740,7 @@ describe('DisplayService', () => {
 		const priorityControl = {
 			GetPriorityControlSetting() {
 				return;
-			}
+			},
 		};
 		(displayService as any).priorityControl = priorityControl;
 		const spy = spyOn(priorityControl, 'GetPriorityControlSetting');
@@ -796,7 +756,7 @@ describe('DisplayService', () => {
 		const priorityControl = {
 			SetPriorityControlSetting(value: string) {
 				return;
-			}
+			},
 		};
 		(displayService as any).priorityControl = priorityControl;
 		const spy = spyOn(priorityControl, 'SetPriorityControlSetting');
@@ -807,5 +767,4 @@ describe('DisplayService', () => {
 		const returnValue = displayService.setPriorityControlSetting('test');
 		expect(returnValue).toBe(undefined);
 	});
-
 });

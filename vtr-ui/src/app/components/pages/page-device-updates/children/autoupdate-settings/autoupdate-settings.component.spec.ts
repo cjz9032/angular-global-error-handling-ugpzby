@@ -8,9 +8,8 @@ xdescribe('AutoupdateSettingsComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [AutoupdateSettingsComponent]
-		})
-			.compileComponents();
+			declarations: [AutoupdateSettingsComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

@@ -10,10 +10,9 @@ describe('WidgetSnapshotComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ WidgetSnapshotComponent ],
-			imports: [ TranslateModule.forRoot() ],
-		})
-		.compileComponents();
+			declarations: [WidgetSnapshotComponent],
+			imports: [TranslateModule.forRoot()],
+		}).compileComponents();
 	});
 
 	beforeEach(() => {
@@ -29,7 +28,8 @@ describe('WidgetSnapshotComponent', () => {
 	it('should validate the title text when instantiate the widget', () => {
 		const widgetTitle = 'snapshot.title';
 
-		const descriptionElement = fixture.debugElement.query(By.css('#snapshot-widget-title')).nativeElement;
+		const descriptionElement = fixture.debugElement.query(By.css('#snapshot-widget-title'))
+			.nativeElement;
 
 		expect(descriptionElement.textContent).toEqual(widgetTitle);
 	});
@@ -37,9 +37,10 @@ describe('WidgetSnapshotComponent', () => {
 	it('should validate the description text when instantiate the widget', () => {
 		const widgetDescription = 'snapshot.description';
 
-		const descriptionElement = fixture.debugElement.query(By.css('#snapshot-widget-description')).nativeElement;
+		const descriptionElement = fixture.debugElement.query(
+			By.css('#snapshot-widget-description')
+		).nativeElement;
 
 		expect(descriptionElement.textContent).toEqual(widgetDescription);
 	});
 });
-

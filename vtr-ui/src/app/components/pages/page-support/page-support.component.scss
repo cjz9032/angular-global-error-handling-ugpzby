@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 :host ::ng-deep {
 	.vtr-page-left-column {
@@ -105,11 +105,8 @@
 						width: 100%;
 						// border: 1px solid #ecf0f1;
 						border-radius: 0.5rem;
-						background: linear-gradient(180deg,
-								#fbfcfc 0%,
-								#f5f7f8 100%);
-						box-shadow: 0 0 0 0.1rem #e9ecec,
-							0 0 2rem 0 rgba(0, 0, 0, 0.01);
+						background: linear-gradient(180deg, #fbfcfc 0%, #f5f7f8 100%);
+						box-shadow: 0 0 0 0.1rem #e9ecec, 0 0 2rem 0 rgba(0, 0, 0, 0.01);
 						display: flex;
 						flex-flow: column;
 						justify-content: center;
@@ -209,9 +206,7 @@
 
 						&:hover,
 						&.selected {
-							background: linear-gradient(90deg,
-									#3968d4 0%,
-									#4a81fd 100%);
+							background: linear-gradient(90deg, #3968d4 0%, #4a81fd 100%);
 							box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.22);
 
 							@media #{$black-on-white} {
@@ -239,9 +234,7 @@
 							}
 
 							.item-button {
-								background: linear-gradient(270deg,
-										#fbfcfc 0%,
-										#f5f7f8 100%);
+								background: linear-gradient(270deg, #fbfcfc 0%, #f5f7f8 100%);
 								box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 								// border: 1px solid #ECF0F1;
 								color: $main_dark;

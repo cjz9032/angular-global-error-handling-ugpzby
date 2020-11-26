@@ -1,12 +1,11 @@
-@import "../../app.theme";
-
+@import '../../app.theme';
 
 .vtr-page {
 	.vtr-page-header {
 		background-image: url(../../../assets/images/HeaderImage.jpg);
-		background-size: cover;
-		background-position: center center;
-		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
 	}
 	.vtr-page-columns {
 		max-width: $max_page_width;
@@ -78,13 +77,13 @@
 				}
 				.vtr-page-column-shift-up {
 					@media #{$breakpoint_sm} {
-						margin-top:-4rem;
+						margin-top: -4rem;
 					}
 					@media #{$breakpoint_md} {
-						margin-top:-4rem;
+						margin-top: -4rem;
 					}
 					@media #{$breakpoint_lg} {
-						margin-top:-4rem;
+						margin-top: -4rem;
 					}
 				}
 				@media #{$white-on-black} {

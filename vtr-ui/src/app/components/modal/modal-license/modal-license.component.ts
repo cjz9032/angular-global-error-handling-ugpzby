@@ -9,10 +9,9 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 	selector: 'vtr-modal-license',
 	templateUrl: './modal-license.component.html',
 	styleUrls: ['./modal-license.component.scss'],
-	providers: [TimerService]
+	providers: [TimerService],
 })
 export class ModalLicenseComponent implements OnInit, OnDestroy {
-
 	url: string;
 	/** type will be 'html' or 'txt' */
 	type: string;
@@ -38,7 +37,11 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 		this.http.get(this.url, { responseType: 'text' }).subscribe((results: any) => {
 			if (this.type === 'txt') {
 				this.loading = false;
-				const openSource = results.replace(/\< /g, '<').replace(/ \>/g, '>').replace(/\</g, '< ').replace(/\>/g, ' >');
+				const openSource = results
+					.replace(/\< /g, '<')
+					.replace(/ \>/g, '>')
+					.replace(/\</g, '< ')
+					.replace(/\>/g, ' >');
 				this.articleBody = `<pre>${openSource}</pre>`;
 			} else {
 				this.loading = false;
@@ -46,7 +49,9 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			}
 		});
 		this.timerService.start();
-		setTimeout(() => { this.initModalFocus(); }, 0);
+		setTimeout(() => {
+			this.initModalFocus();
+		}, 0);
 	}
 
 	ngOnDestroy() {
@@ -55,7 +60,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			PageName: this.licenseModalMetrics.pageName,
 			PageContext: this.licenseModalMetrics.pageContext,
 			PageDuration: this.timerService.stop(),
-			OnlineStatus: ''
+			OnlineStatus: '',
 		};
 		this.sendMetricsAsync(pageViewMetrics);
 	}
@@ -65,11 +70,15 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 		iframe.src = this.url;
 		this.iframeInterval = setInterval(() => {
 			if (iframe.contentWindow) {
-				iframe.contentWindow.addEventListener('mousewheel', (event: any) => {
-					if (event.ctrlKey === true || event.metaKey) {
-						event.preventDefault();
-					}
-				}, false);
+				iframe.contentWindow.addEventListener(
+					'mousewheel',
+					(event: any) => {
+						if (event.ctrlKey === true || event.metaKey) {
+							event.preventDefault();
+						}
+					},
+					false
+				);
 				clearInterval(this.iframeInterval);
 			}
 		}, 50);
@@ -78,7 +87,8 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
-		} else { }
+		} else {
+		}
 	}
 
 	closeModal() {
@@ -91,20 +101,27 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		if (!this.licenseModalMetrics || !this.licenseModalMetrics.closeButton || document.activeElement.id !== `btn-${this.licenseModalMetrics.closeButton}`) {
+		if (
+			!this.licenseModalMetrics ||
+			!this.licenseModalMetrics.closeButton ||
+			document.activeElement.id !== `btn-${this.licenseModalMetrics.closeButton}`
+		) {
 			this.initModalFocus();
 		}
 	}
 
 	@HostListener('keydown', ['$event'])
 	onKeyDown(event: KeyboardEvent) {
-		if (!event.shiftKey &&
+		if (
+			!event.shiftKey &&
 			event.key === 'Tab' &&
 			this.type !== 'txt' &&
 			document.activeElement &&
 			document.activeElement.className.includes('close-button')
 		) {
-			(document.getElementById('license-agreement-iframe') as HTMLIFrameElement).contentWindow.document.body.focus();
+			(document.getElementById(
+				'license-agreement-iframe'
+			) as HTMLIFrameElement).contentWindow.document.body.focus();
 		}
 	}
 }

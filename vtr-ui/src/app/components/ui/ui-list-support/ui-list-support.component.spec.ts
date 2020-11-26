@@ -8,9 +8,8 @@ xdescribe('UiListSupportComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiListSupportComponent]
-		})
-			.compileComponents();
+			declarations: [UiListSupportComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

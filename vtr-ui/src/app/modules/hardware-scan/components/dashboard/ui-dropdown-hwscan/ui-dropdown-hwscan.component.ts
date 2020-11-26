@@ -5,16 +5,13 @@ import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 	selector: 'vtr-ui-dropdown-hwscan',
 	templateUrl: './ui-dropdown-hwscan.component.html',
 	styleUrls: ['./ui-dropdown-hwscan.component.scss'],
-	providers: [NgbDropdownConfig]
+	providers: [NgbDropdownConfig],
 })
 export class UiDropdownHwscanComponent implements OnInit {
-
 	constructor(config: NgbDropdownConfig) {
 		config.placement = 'top-left';
 		config.autoClose = true;
 	}
-
-
 
 	@Input() selectedItem: string;
 
@@ -25,7 +22,6 @@ export class UiDropdownHwscanComponent implements OnInit {
 	@Input() nrSelect: any;
 	@Input() isSmall: boolean;
 	subIsLarge = false;
-
 
 	@Output() selectedOption: EventEmitter<any> = new EventEmitter<any>();
 
@@ -38,11 +34,11 @@ export class UiDropdownHwscanComponent implements OnInit {
 	}
 
 	selected() {
-        this.selectedOption.emit(this.nrSelect);
-    }
+		this.selectedOption.emit(this.nrSelect);
+	}
 
 	select(choice: string) {
-        this.selectedItem = choice;
-        this.selectedOption.emit(choice);
-    }
+		this.selectedItem = choice;
+		this.selectedOption.emit(choice);
+	}
 }

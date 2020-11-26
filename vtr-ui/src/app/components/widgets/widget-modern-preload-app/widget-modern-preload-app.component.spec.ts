@@ -5,7 +5,6 @@ import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translatio
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { WidgetModernPreloadAppComponent } from './widget-modern-preload-app.component';
 
-
 describe('WidgetModernPreloadAppComponent', () => {
 	let component: WidgetModernPreloadAppComponent;
 	let fixture: ComponentFixture<WidgetModernPreloadAppComponent>;
@@ -13,20 +12,21 @@ describe('WidgetModernPreloadAppComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetModernPreloadAppComponent],
-			imports: [HttpClientModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				},
-				isolate: false
-			}),
-				TranslationModule.forChild()
+			imports: [
+				HttpClientModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+					isolate: false,
+				}),
+				TranslationModule.forChild(),
 			],
 
 			schemas: [NO_ERRORS_SCHEMA],
-		})
-			.compileComponents();
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -38,5 +38,4 @@ describe('WidgetModernPreloadAppComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
-
 });

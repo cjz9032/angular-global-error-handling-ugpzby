@@ -20,6 +20,5 @@ export enum SessionStorageKey {
 	FirstPageLoaded = '[SessionStorageKey] FirstPageLoaded',
 
 	// Hardware Scan enums
-	HwScanHasExportLogData = '[SessionStorageKey] HwScan-HasExportLogData'
-
+	HwScanHasExportLogData = '[SessionStorageKey] HwScan-HasExportLogData',
 }

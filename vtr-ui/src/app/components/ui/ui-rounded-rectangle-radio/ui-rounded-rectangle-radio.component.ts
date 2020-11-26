@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import {
+	AfterViewInit,
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+} from '@angular/core';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
@@ -8,9 +16,11 @@ import { AppEvent } from './../../../enums/app-event.enum';
 @Component({
 	selector: 'vtr-ui-rounded-rectangle-radio',
 	templateUrl: './ui-rounded-rectangle-radio.component.html',
-	styleUrls: ['./ui-rounded-rectangle-radio.component.scss']
+	styleUrls: ['./ui-rounded-rectangle-radio.component.scss'],
 })
-export class UiRoundedRectangleRadioComponent extends UICustomRadio implements OnInit, AfterViewInit, OnChanges {
+export class UiRoundedRectangleRadioComponent
+	extends UICustomRadio
+	implements OnInit, AfterViewInit, OnChanges {
 	@Input() radioId: string;
 	@Input() tooltip: string;
 	@Input() disabled = false;
@@ -20,13 +30,12 @@ export class UiRoundedRectangleRadioComponent extends UICustomRadio implements O
 	@Output() customKeyEvent = new EventEmitter();
 	hideIcon = false;
 
-
 	constructor(logger: LoggerService, metrics: MetricService) {
 		super(logger, metrics);
 	}
 
 	ngOnInit() {
-		super.ngOnInit() // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+		super.ngOnInit(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	ngAfterViewInit(): void {
@@ -47,5 +56,4 @@ export class UiRoundedRectangleRadioComponent extends UICustomRadio implements O
 			this.customKeyEvent.emit({ customeEvent: AppEvent.RIGHT });
 		}
 	}
-
 }

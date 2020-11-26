@@ -11,11 +11,10 @@ describe('UiHardwareListComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			imports: [ RouterTestingModule, HttpClientModule, TranslateModule.forRoot() ],
-			providers: [ DevService ],
-			declarations: [UiHardwareListComponent]
-		})
-			.compileComponents();
+			imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
+			providers: [DevService],
+			declarations: [UiHardwareListComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

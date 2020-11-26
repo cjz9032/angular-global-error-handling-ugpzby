@@ -8,9 +8,8 @@ describe('SubpageScanResultsAccordionComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [SubpageScanResultsAccordionComponent]
-		})
-			.compileComponents();
+			declarations: [SubpageScanResultsAccordionComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

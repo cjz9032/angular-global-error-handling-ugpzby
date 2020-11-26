@@ -13,12 +13,11 @@ describe('ModalGamingLegionedgeComponent', () => {
 			declarations: [
 				ModalGamingLegionedgeComponent,
 				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' })
+				mockPipe({ name: 'sanitize' }),
 			],
 			schemas: [NO_ERRORS_SCHEMA],
-			providers: [NgbActiveModal, HttpClient]
-		})
-			.compileComponents();
+			providers: [NgbActiveModal, HttpClient],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -36,21 +35,19 @@ describe('ModalGamingLegionedgeComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('onFocus calling modal focus', (() => {
+	it('onFocus calling modal focus', () => {
 		fixture.detectChanges();
 		const modal = document.createElement('div');
 		modal.setAttribute('class', 'gaming-help-modal');
 		fixture.debugElement.nativeElement.append(modal);
 		component.onFocus();
 		expect(modal).toBeTruthy();
-	}));
-
+	});
 });
-
 
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
 	return Pipe(metadata)(
 		class MockPipe {

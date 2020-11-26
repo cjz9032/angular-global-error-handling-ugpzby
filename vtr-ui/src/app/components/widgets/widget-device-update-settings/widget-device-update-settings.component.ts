@@ -6,9 +6,11 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'vtr-widget-device-update-settings',
 	templateUrl: './widget-device-update-settings.component.html',
-	styleUrls: ['./widget-device-update-settings.component.scss']
+	styleUrls: ['./widget-device-update-settings.component.scss'],
 })
-export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implements OnInit, AfterViewInit {
+export class WidgetDeviceUpdateSettingsComponent
+	extends BaseComponent
+	implements OnInit, AfterViewInit {
 	@Input() title: string;
 	@Input() description: string;
 	@Input() items: any[];
@@ -35,7 +37,7 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 		this.showDriversPopup = true;
 	}
 
-	ngOnInit() { }
+	ngOnInit() {}
 	currentFocus(id) {
 		const focElement = document.getElementById(id);
 		if (focElement) {
@@ -55,7 +57,9 @@ export class WidgetDeviceUpdateSettingsComponent extends BaseComponent implement
 		if (i >= 0 && this.items[i]) {
 			this.items[i].focus = true;
 		}
-		setTimeout(() => { this.items[i].focus = false; }, 50);
+		setTimeout(() => {
+			this.items[i].focus = false;
+		}, 50);
 	}
 	public onClosed($event: any, i: any = false) {
 		this.updateFocus(i);

@@ -7,7 +7,6 @@ import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
 import { BacklightLevel, BacklightStatus } from './backlight.interface';
 import { BacklightService } from './backlight.service';
 
-
 describe('BacklightService', () => {
 	let backlightService: BacklightService;
 	let vantageShellService: VantageShellService;
@@ -19,9 +18,9 @@ describe('BacklightService', () => {
 			providers: [
 				BacklightService,
 				{ provide: VantageShellService, useValue: shellServiceSpy },
-				CommonService
+				CommonService,
 			],
-			imports: [HttpClientModule]
+			imports: [HttpClientModule],
 		});
 		vantageShellService = TestBed.inject(VantageShellService);
 		backlightService = TestBed.inject(BacklightService);
@@ -31,32 +30,32 @@ describe('BacklightService', () => {
 		expect(backlightService).toBeTruthy();
 	});
 
-	it('#get backlight should return backlight\' data', fakeAsync(() => {
+	it("#get backlight should return backlight' data", fakeAsync(() => {
 		const stubValue: Array<BacklightStatus | BacklightLevel> = [
 			{
 				key: 'KeyboardBacklightLevel',
 				value: BacklightLevelEnum.ONE_LEVEL,
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: BacklightStatusEnum.OFF,
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		shellServiceSpy.getBacklight.and.returnValue({
 			getBacklight() {
 				return Promise.resolve({
 					settingList: {
-						setting: stubValue
-					}
+						setting: stubValue,
+					},
 				});
-			}
+			},
 		});
 		backlightService = new BacklightService(shellServiceSpy);
-		backlightService.backlight.subscribe(value => {
+		backlightService.backlight.subscribe((value) => {
 			expect(value).toBe(stubValue);
 		});
 	}));
@@ -67,23 +66,23 @@ describe('BacklightService', () => {
 				key: 'KeyboardBacklightLevel',
 				value: BacklightLevelEnum.ONE_LEVEL,
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: BacklightStatusEnum.OFF,
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		shellServiceSpy.getBacklight.and.returnValue({
 			getBacklight() {
 				return Promise.resolve({
 					settingList: {
-						setting: stubValue
-					}
+						setting: stubValue,
+					},
 				});
-			}
+			},
 		});
 		backlightService = new BacklightService(shellServiceSpy);
 		const cacheStub$ = new Observable<Array<BacklightStatus | BacklightLevel>>();
@@ -109,23 +108,23 @@ describe('BacklightService', () => {
 		shellServiceSpy.getBacklight.and.returnValue({
 			setBacklight() {
 				return Promise.resolve({
-					errorCode: 0
+					errorCode: 0,
 				});
-			}
+			},
 		});
 		backlightService = new BacklightService(shellServiceSpy);
 		backlightService.setBacklight({
 			checked: true,
 			disabled: false,
 			value: BacklightStatusEnum.OFF,
-			title: 'device.deviceSettings.inputAccessories.backlight.level.off'
+			title: 'device.deviceSettings.inputAccessories.backlight.level.off',
 		});
 		expect(shellServiceSpy.getBacklight).toHaveBeenCalled();
 	});
 
 	it('should call backlightFeature.getBacklightOnSystemChange', () => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() { }
+			getBacklightOnSystemChange() {},
 		});
 		backlightService = new BacklightService(shellServiceSpy);
 		backlightService.getBacklightOnSystemChange();
@@ -143,57 +142,70 @@ describe('BacklightService', () => {
 									key: 'KeyboardBacklightLevel',
 									value: BacklightLevelEnum.ONE_LEVEL,
 									enabled: 0,
-									errorCode: 0
+									errorCode: 0,
 								},
 								{
 									key: 'KeyboardBacklightStatus',
 									value: BacklightStatusEnum.OFF,
 									enabled: 0,
-									errorCode: 0
-								}
-							]
-						}
-					}
+									errorCode: 0,
+								},
+							],
+						},
+					},
 				});
-			}
+			},
 		});
 		const svc = new BacklightService(shellServiceSpy);
-		const getBacklightOnSystemChangeSpy = spyOn(svc.backlightFeature, 'getBacklightOnSystemChange');
-		getBacklightOnSystemChangeSpy.and.returnValue(Promise.resolve({
-			settingList: {
-				setting: [
-					{
-						key: 'KeyboardBacklightLevel',
-						value: BacklightLevelEnum.ONE_LEVEL,
-						enabled: 0,
-						errorCode: 0
-					},
-					{
-						key: 'KeyboardBacklightStatus',
-						value: BacklightStatusEnum.OFF,
-						enabled: 0,
-						errorCode: 0
-					}
-				]
-			}
-		}));
+		const getBacklightOnSystemChangeSpy = spyOn(
+			svc.backlightFeature,
+			'getBacklightOnSystemChange'
+		);
+		getBacklightOnSystemChangeSpy.and.returnValue(
+			Promise.resolve({
+				settingList: {
+					setting: [
+						{
+							key: 'KeyboardBacklightLevel',
+							value: BacklightLevelEnum.ONE_LEVEL,
+							enabled: 0,
+							errorCode: 0,
+						},
+						{
+							key: 'KeyboardBacklightStatus',
+							value: BacklightStatusEnum.OFF,
+							enabled: 0,
+							errorCode: 0,
+						},
+					],
+				},
+			})
+		);
 		svc.getBacklightOnSystemChange().subscribe();
 		tick();
-		expect(getBacklightOnSystemChangeSpy).toHaveBeenCalledWith(jasmine.any(Object), jasmine.any(Function));
+		expect(getBacklightOnSystemChangeSpy).toHaveBeenCalledWith(
+			jasmine.any(Object),
+			jasmine.any(Function)
+		);
 	}));
 
 	it('#backlightFeature.getBacklightOnSystemChange should reject this request', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() { }
+			getBacklightOnSystemChange() {},
 		});
 		const svc = new BacklightService(shellServiceSpy);
-		const getBacklightOnSystemChangeSpy = spyOn(svc.backlightFeature, 'getBacklightOnSystemChange');
-		getBacklightOnSystemChangeSpy.and.returnValue(Promise.reject({
-			errorcode: 1
-		}));
+		const getBacklightOnSystemChangeSpy = spyOn(
+			svc.backlightFeature,
+			'getBacklightOnSystemChange'
+		);
+		getBacklightOnSystemChangeSpy.and.returnValue(
+			Promise.reject({
+				errorcode: 1,
+			})
+		);
 		svc.getBacklightOnSystemChange().subscribe(
-			() => { },
-			err => {
+			() => {},
+			(err) => {
 				expect(err.errorcode).toBe(1);
 			}
 		);
@@ -202,32 +214,38 @@ describe('BacklightService', () => {
 
 	it('#backlightFeature.getBacklightOnSystemChange should complete this call when errorcode is 606', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() { }
+			getBacklightOnSystemChange() {},
 		});
 		const svc = new BacklightService(shellServiceSpy);
-		const getBacklightOnSystemChangeSpy = spyOn(svc.backlightFeature, 'getBacklightOnSystemChange');
-		getBacklightOnSystemChangeSpy.and.returnValue(Promise.reject({
-			errorcode: 606,
-			payload: {}
-		}));
-		svc.getBacklightOnSystemChange().subscribe(
-			response => {
-				expect(response).not.toBeNull();
-			}
+		const getBacklightOnSystemChangeSpy = spyOn(
+			svc.backlightFeature,
+			'getBacklightOnSystemChange'
 		);
+		getBacklightOnSystemChangeSpy.and.returnValue(
+			Promise.reject({
+				errorcode: 606,
+				payload: {},
+			})
+		);
+		svc.getBacklightOnSystemChange().subscribe((response) => {
+			expect(response).not.toBeNull();
+		});
 		tick();
 	}));
 
-	it('#backlightFeature.getBacklightOnSystemChange should receive callback\'s data', fakeAsync(() => {
+	it("#backlightFeature.getBacklightOnSystemChange should receive callback's data", fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() { }
+			getBacklightOnSystemChange() {},
 		});
 		const svc = new BacklightService(shellServiceSpy);
-		const getBacklightOnSystemChangeSpy = spyOn(svc.backlightFeature, 'getBacklightOnSystemChange');
+		const getBacklightOnSystemChangeSpy = spyOn(
+			svc.backlightFeature,
+			'getBacklightOnSystemChange'
+		);
 		getBacklightOnSystemChangeSpy.and.callFake((first, second) => {
 			second.call(svc, {
 				errorcode: 0,
-				payload: 'test'
+				payload: 'test',
 			});
 			return Promise.resolve({
 				settingList: {
@@ -236,23 +254,21 @@ describe('BacklightService', () => {
 							key: 'KeyboardBacklightLevel',
 							value: BacklightLevelEnum.ONE_LEVEL,
 							enabled: 0,
-							errorCode: 0
+							errorCode: 0,
 						},
 						{
 							key: 'KeyboardBacklightStatus',
 							value: BacklightStatusEnum.OFF,
 							enabled: 0,
-							errorCode: 0
-						}
-					]
-				}
+							errorCode: 0,
+						},
+					],
+				},
 			});
 		});
-		svc.getBacklightOnSystemChange().subscribe(
-			response => {
-				expect(response).not.toBeNull();
-			}
-		);
+		svc.getBacklightOnSystemChange().subscribe((response) => {
+			expect(response).not.toBeNull();
+		});
 		tick();
 	}));
 });

@@ -1,19 +1,14 @@
-import {
-	Injectable
-} from '@angular/core';
-import {
-	FeatureStatus
-} from 'src/app/data-models/common/feature-status.model';
+import { Injectable } from '@angular/core';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
 import { SuperResolutionResponse } from 'src/app/data-models/smart-assist/superResolution/superResolution.model';
 import { HsaIntelligentSecurityResponse } from 'src/app/data-models/smart-assist/hsa-intelligent-security.model/hsa-intelligent-security.model';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class SmartAssistService {
-
 	private intelligentSensing;
 	private intelligentMedia;
 	private activeProtectionSystem;
@@ -24,8 +19,8 @@ export class SmartAssistService {
 	private hsaIntelligentSecurity;
 	private hpdAdvancedSettings = {
 		zeroTouchLoginAdvanced: false,
-		zeroTouchLockAdvanced: false
-	}
+		zeroTouchLockAdvanced: false,
+	};
 
 	public isShellAvailable = false;
 	public isHPDShellAvailable = false;
@@ -42,11 +37,17 @@ export class SmartAssistService {
 		// this.shellVersion = commonService.getShellVersion();
 		this.antiTheft = shellService.getAntiTheft();
 		this.windows = shellService.getWindows();
-		this.activeProtectionSystem ? this.isAPSavailable = true : this.isAPSavailable = false;
-		if (this.intelligentSensing && this.intelligentMedia && this.lenovoVoice && this.superResolution) {
+		this.activeProtectionSystem ? (this.isAPSavailable = true) : (this.isAPSavailable = false);
+		if (
+			this.intelligentSensing &&
+			this.intelligentMedia &&
+			this.lenovoVoice &&
+			this.superResolution
+		) {
 			this.isShellAvailable = true;
 		}
-		if (this.hsaIntelligentSecurity) { //means can connect to vantage shell with rpc
+		if (this.hsaIntelligentSecurity) {
+			//means can connect to vantage shell with rpc
 			this.isHPDShellAvailable = true;
 		}
 	}
@@ -123,7 +124,6 @@ export class SmartAssistService {
 	public setZeroTouchLockFacialRecoStatus(value: boolean): Promise<boolean> {
 		const option = value ? 'True' : 'False';
 		return this.intelligentSensing.setLockFacialRecognitionSettings(option);
-
 	}
 
 	public resetFacialRecognitionStatus(): Promise<boolean> {
@@ -134,7 +134,6 @@ export class SmartAssistService {
 		// Get Auto Screen Lock section visibility
 		return this.intelligentSensing.GetHPDApproachCapability();
 	}
-
 
 	public getZeroTouchLoginStatus(): Promise<boolean> {
 		// Get Auto Screen Login setting
@@ -212,7 +211,9 @@ export class SmartAssistService {
 	}
 
 	public setHPDAdvancedSetting(section: string, value: boolean) {
-		section == 'zeroTouchLogin' ? this.hpdAdvancedSettings.zeroTouchLoginAdvanced = value : this.hpdAdvancedSettings.zeroTouchLockAdvanced = value;
+		section == 'zeroTouchLogin'
+			? (this.hpdAdvancedSettings.zeroTouchLoginAdvanced = value)
+			: (this.hpdAdvancedSettings.zeroTouchLockAdvanced = value);
 		return Promise.resolve(true);
 	}
 
@@ -225,9 +226,11 @@ export class SmartAssistService {
 					intelligentSecurityDate.capacity = obj.capacity;
 					intelligentSecurityDate.capability = obj.capability;
 					intelligentSecurityDate.sensorType = obj.sensorType;
-					intelligentSecurityDate.zeroTouchLockDistanceAutoAdjust = obj.presenceLeaveDistanceAutoAdjust;
+					intelligentSecurityDate.zeroTouchLockDistanceAutoAdjust =
+						obj.presenceLeaveDistanceAutoAdjust;
 					intelligentSecurityDate.zeroTouchLockDistance = obj.presenceLeaveDistance;
-					intelligentSecurityDate.videoAutoPauseResumeVersion = obj.videoAutoPauseResumeVersion;
+					intelligentSecurityDate.videoAutoPauseResumeVersion =
+						obj.videoAutoPauseResumeVersion;
 				}
 				return Promise.resolve(intelligentSecurityDate);
 			}
@@ -303,7 +306,6 @@ export class SmartAssistService {
 
 	//#endregion
 
-
 	//#region Intelligent Media section
 
 	/**
@@ -358,7 +360,16 @@ export class SmartAssistService {
 	//region Intelligent Sensting (anti theft) section
 
 	public async getAntiTheftStatus(): Promise<AntiTheftResponse> {
-		const antiTheftDate = { available: false, status: false, isSupportPhoto: false, photoAddress: "", cameraPrivacyState: true, authorizedAccessState: true, alarmOften: 0, photoNumber: 5 };
+		const antiTheftDate = {
+			available: false,
+			status: false,
+			isSupportPhoto: false,
+			photoAddress: '',
+			cameraPrivacyState: true,
+			authorizedAccessState: true,
+			alarmOften: 0,
+			photoNumber: 5,
+		};
 		try {
 			if (this.isShellAvailable && this.antiTheft !== undefined) {
 				const data = this.antiTheft.getMotionAlertSetting();
@@ -379,7 +390,7 @@ export class SmartAssistService {
 	}
 
 	public setAntiTheftStatus(value: boolean): Promise<boolean> {
-		if (this.isShellAvailable  && this.antiTheft !== undefined) {
+		if (this.isShellAvailable && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.setMotionAlertEnabled(value);
 			if (ret === 0) {
 				return Promise.resolve(true);
@@ -390,7 +401,7 @@ export class SmartAssistService {
 	}
 
 	public setAlarmOften(value: number): Promise<boolean> {
-		if (this.isShellAvailable  && this.antiTheft !== undefined) {
+		if (this.isShellAvailable && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.setMotionAlertAlarmDuration(value);
 			if (ret === 0) {
 				return Promise.resolve(true);
@@ -401,7 +412,7 @@ export class SmartAssistService {
 	}
 
 	public setPhotoNumber(value: number): Promise<boolean> {
-		if (this.isShellAvailable  && this.antiTheft !== undefined) {
+		if (this.isShellAvailable && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.setMotionAlertPhotoNumber(value);
 			if (ret === 0) {
 				return Promise.resolve(true);
@@ -412,7 +423,7 @@ export class SmartAssistService {
 	}
 
 	public setAllowCamera(value: boolean): Promise<boolean> {
-		if (this.isShellAvailable  && this.antiTheft !== undefined) {
+		if (this.isShellAvailable && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.setMotionAlertCameraAllowed(value);
 			if (ret === 0) {
 				return Promise.resolve(true);
@@ -423,7 +434,7 @@ export class SmartAssistService {
 	}
 
 	public startMonitorAntiTheftStatus(callback: any): Promise<number> {
-		if (this.isShellAvailable  && this.antiTheft !== undefined) {
+		if (this.isShellAvailable && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.registerCallback();
 			this.antiTheft.onstatusupdated = (data: any) => {
 				callback(data);
@@ -434,7 +445,7 @@ export class SmartAssistService {
 	}
 
 	public stopMonitorAntiTheftStatus(): Promise<number> {
-		if (this.isShellAvailable  && this.antiTheft !== undefined) {
+		if (this.isShellAvailable && this.antiTheft !== undefined) {
 			const ret = this.antiTheft.unRegisterCallback();
 			return Promise.resolve(ret);
 		}
@@ -490,7 +501,6 @@ export class SmartAssistService {
 		return undefined;
 	}
 
-
 	public getReadingOrBrowsingVisibility(): Promise<boolean> {
 		if (this.isShellAvailable) {
 			return this.intelligentSensing.GetBrowsingCapability();
@@ -529,7 +539,6 @@ export class SmartAssistService {
 	}
 
 	//#endregion
-
 
 	//#region Active Protection System APS
 	//  APS Capability

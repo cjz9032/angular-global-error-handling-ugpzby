@@ -12,13 +12,13 @@ const routes: Routes = [
 		canActivate: [GuardService, SmartPerformanceGuard],
 		data: {
 			pageName: 'Page.Support.SmartPerformance',
-			pageContent: 'Smart Performance'
-		}
-	}
+			pageContent: 'Smart Performance',
+		},
+	},
 ];
 
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule]
+	exports: [RouterModule],
 })
-export class SmartPerformanceRoutingModule { }
+export class SmartPerformanceRoutingModule {}

@@ -20,9 +20,12 @@ export enum BatteryConditionsEnum {
 	LimitedACAdapterSupport,
 	NotSupportACAdapter,
 
-	PrimaryNotDetected
+	PrimaryNotDetected,
 }
 
 export enum BatteryStatus {
-	Good, Fair, Poor, AcAdapterStatus
+	Good,
+	Fair,
+	Poor,
+	AcAdapterStatus,
 }

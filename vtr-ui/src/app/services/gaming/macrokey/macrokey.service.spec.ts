@@ -9,7 +9,6 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 describe('MacrokeyService', () => {
-
 	let shellService: VantageShellService;
 	let service: MacrokeyService;
 	let localCache: LocalCacheService;
@@ -25,7 +24,6 @@ describe('MacrokeyService', () => {
 	});
 
 	describe(':', () => {
-
 		function getService() {
 			const macrokeyService = TestBed.get(MacrokeyService);
 			return macrokeyService;
@@ -219,7 +217,7 @@ describe('MacrokeyService', () => {
 		it('should call setMacrokeyInputChangeCache', async () => {
 			const macrokeyService = getService();
 			spyOn(macrokeyService, 'setMacrokeyInputChangeCache').and.callThrough();
-			macrokeyService.setMacrokeyInputChangeCache(new MacroKeyInputChange);
+			macrokeyService.setMacrokeyInputChangeCache(new MacroKeyInputChange());
 			expect(macrokeyService.setMacrokeyInputChangeCache).toHaveBeenCalled();
 		});
 
@@ -233,7 +231,7 @@ describe('MacrokeyService', () => {
 		it('should call setMacrokeyInitialKeyDataCache', async () => {
 			const macrokeyService = getService();
 			spyOn(macrokeyService, 'setMacrokeyInitialKeyDataCache').and.callThrough();
-			macrokeyService.setMacrokeyInitialKeyDataCache(new MacroKeyInputChange);
+			macrokeyService.setMacrokeyInitialKeyDataCache(new MacroKeyInputChange());
 			expect(macrokeyService.setMacrokeyInitialKeyDataCache).toHaveBeenCalled();
 		});
 
@@ -260,7 +258,7 @@ describe('MacrokeyService', () => {
 
 		it('should call updateMacrokeyInitialKeyDataCache', async () => {
 			const macrokeyService = getService();
-			const macro = {key: '0', macro: { repeat: 1, interval: 1, inputs: []}}
+			const macro = { key: '0', macro: { repeat: 1, interval: 1, inputs: [] } };
 			spyOn(macrokeyService.localCacheService, 'getLocalCacheValue').and.returnValue(macro);
 			spyOn(macrokeyService.localCacheService, 'setLocalCacheValue').and.callThrough();
 			macrokeyService.updateMacrokeyInitialKeyDataCache('');
@@ -271,7 +269,7 @@ describe('MacrokeyService', () => {
 		it('should call setMacrokeyChangeStatusCache', async () => {
 			const macrokeyService = getService();
 			spyOn(macrokeyService, 'setMacrokeyChangeStatusCache').and.callThrough();
-			macrokeyService.setMacrokeyChangeStatusCache(new MacroKeyTypeStatus);
+			macrokeyService.setMacrokeyChangeStatusCache(new MacroKeyTypeStatus());
 			expect(macrokeyService.setMacrokeyChangeStatusCache).toHaveBeenCalled();
 		});
 
@@ -316,6 +314,5 @@ describe('MacrokeyService', () => {
 			macrokeyService.setOnIntervalStatusCache(2, null);
 			expect(macrokeyService.setOnIntervalStatusCache).toHaveBeenCalled();
 		});
-
 	});
 });

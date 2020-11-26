@@ -14,13 +14,21 @@ describe('ModalGamingLightingComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ModalGamingLightingComponent,
-			mockPipe({ name: 'translate' }),
-			mockPipe({ name: 'sanitize' })],
+			declarations: [
+				ModalGamingLightingComponent,
+				mockPipe({ name: 'translate' }),
+				mockPipe({ name: 'sanitize' }),
+			],
 			schemas: [NO_ERRORS_SCHEMA],
-			providers: [NgbActiveModal, HttpHandler, VantageShellService, LoggerService, NgbModal, TranslateStore ]
-		})
-			.compileComponents();
+			providers: [
+				NgbActiveModal,
+				HttpHandler,
+				VantageShellService,
+				LoggerService,
+				NgbModal,
+				TranslateStore,
+			],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -34,27 +42,25 @@ describe('ModalGamingLightingComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('onFocus calling modal focus', (() => {
+	it('onFocus calling modal focus', () => {
 		fixture.detectChanges();
 		const modalres = document.createElement('div');
 		modalres.setAttribute('class', 'gaming-help-modal');
 		fixture.debugElement.nativeElement.append(modalres);
 		component.onFocus();
 		expect(modalres).toBeTruthy();
-	}));
+	});
 
-
-	it('should check closeModal', (() => {
+	it('should check closeModal', () => {
 		fixture.detectChanges();
 		component.closeModal();
 		expect(component).toBeTruthy();
-	}));
-
+	});
 });
 
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
 	return Pipe(metadata)(
 		class MockPipe {

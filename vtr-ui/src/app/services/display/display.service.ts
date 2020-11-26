@@ -284,13 +284,12 @@ export class DisplayService {
 		return undefined;
 	}
 
-
 	// End Privacy Guard Settings
 
 	public statusChangedLocationPermission(handler: any) {
 		try {
 			if (this.isShellAvailable) {
-				this.displayEyeCareMode.statusChangedLocationPermission((handler));
+				this.displayEyeCareMode.statusChangedLocationPermission(handler);
 			}
 			return undefined;
 		} catch (error) {
@@ -300,7 +299,7 @@ export class DisplayService {
 	public startEyeCareMonitor(handler: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.displayEyeCareMode.startMonitor((handler));
+				return this.displayEyeCareMode.startMonitor(handler);
 			}
 			return undefined;
 		} catch (error) {
@@ -313,7 +312,10 @@ export class DisplayService {
 			if (this.isShellAvailable) {
 				return this.cameraSettings.startMonitor((response: any) => {
 					if (response.permission !== undefined) {
-						this.commonService.sendNotification(DeviceMonitorStatus.CameraStatus, response.permission);
+						this.commonService.sendNotification(
+							DeviceMonitorStatus.CameraStatus,
+							response.permission
+						);
 					}
 				});
 			}
@@ -326,7 +328,7 @@ export class DisplayService {
 	public stopMonitorForCameraPermission() {
 		try {
 			if (this.isShellAvailable) {
-				return this.cameraSettings.stopMonitor((response: boolean) => { });
+				return this.cameraSettings.stopMonitor((response: boolean) => {});
 			}
 			return undefined;
 		} catch (error) {

@@ -5,7 +5,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { WidgetMcafeePeaceOfMindComponent } from './widget-mcafee-peace-of-mind.component';
 
-
 describe('WidgetMcafeePeaceOfMindComponent', () => {
 	let component: WidgetMcafeePeaceOfMindComponent;
 	let fixture: ComponentFixture<WidgetMcafeePeaceOfMindComponent>;
@@ -14,16 +13,9 @@ describe('WidgetMcafeePeaceOfMindComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetMcafeePeaceOfMindComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [
-				TranslateService
-			]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [TranslateService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

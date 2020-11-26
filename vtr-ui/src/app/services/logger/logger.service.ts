@@ -3,7 +3,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 /**
  * logs in shell log file, can be accessed in Logs folder of config.json
@@ -20,9 +20,9 @@ export class LoggerService {
 			this.isShellAvailable = true;
 		}
 		if (!environment.isLoggingEnabled) {
-			this.debug = () => { };
-			this.error = () => { };
-			this.info = () => { };
+			this.debug = () => {};
+			this.error = () => {};
+			this.info = () => {};
 		}
 	}
 

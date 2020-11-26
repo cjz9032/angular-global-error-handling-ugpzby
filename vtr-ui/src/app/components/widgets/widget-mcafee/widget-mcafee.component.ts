@@ -9,20 +9,15 @@ import { AntivirusCommon } from 'src/app/data-models/security-advisor/antivirus-
 	styleUrls: ['./widget-mcafee.component.scss'],
 })
 export class WidgetMcafeeComponent implements OnInit {
-
 	@Input() install: any;
 	@Input() name: string;
 	@Input() isOnline: boolean;
 	@Input() common: AntivirusCommon;
 
 	getMcafeeText = this.translate.instant('security.antivirus.mcafee.getMacfee');
-	launchMcafeeText = this.translate.instant('security.antivirus.mcafee.launch')
+	launchMcafeeText = this.translate.instant('security.antivirus.mcafee.launch');
 
-	constructor(
-		private translate: TranslateService
-	) { }
+	constructor(private translate: TranslateService) {}
 
-	ngOnInit() {
-	}
-
+	ngOnInit() {}
 }

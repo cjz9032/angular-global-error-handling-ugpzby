@@ -2,12 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Pipe({
-	name: 'minutesToHourmin'
+	name: 'minutesToHourmin',
 })
 export class MinutesToHourminPipe implements PipeTransform {
-
-	constructor(private translate: TranslateService) {
-	}
+	constructor(private translate: TranslateService) {}
 
 	transform(value: any, args?: any): any {
 		const totalMin = value;
@@ -26,14 +24,15 @@ export class MinutesToHourminPipe implements PipeTransform {
 			return '0 ' + this.getTranslation('device.deviceSettings.batteryGauge.minutes');
 		}
 
-		const hoursStr = hours > 0 && hours < 2 ?
-			this.getTranslation('device.deviceSettings.batteryGauge.hour') :
-			this.getTranslation('device.deviceSettings.batteryGauge.hours');
+		const hoursStr =
+			hours > 0 && hours < 2
+				? this.getTranslation('device.deviceSettings.batteryGauge.hour')
+				: this.getTranslation('device.deviceSettings.batteryGauge.hours');
 
-		const minutesStr = minutes > 0 && minutes < 2 ?
-			this.getTranslation('device.deviceSettings.batteryGauge.minute') :
-			this.getTranslation('device.deviceSettings.batteryGauge.minutes');
-
+		const minutesStr =
+			minutes > 0 && minutes < 2
+				? this.getTranslation('device.deviceSettings.batteryGauge.minute')
+				: this.getTranslation('device.deviceSettings.batteryGauge.minutes');
 
 		if (hours === 0) {
 			return `${minutes} ${minutesStr}`;
@@ -48,5 +47,4 @@ export class MinutesToHourminPipe implements PipeTransform {
 		});
 		return translation;
 	}
-
 }

@@ -1,4 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	OnDestroy,
+	OnChanges,
+	SimpleChanges,
+} from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { CommonService } from '../../../services/common/common.service';
 import { faSellcast } from '@fortawesome/free-brands-svg-icons';
@@ -6,7 +15,7 @@ import { faSellcast } from '@fortawesome/free-brands-svg-icons';
 @Component({
 	selector: 'vtr-ui-toggle',
 	templateUrl: './ui-toggle.component.html',
-	styleUrls: ['./ui-toggle.component.scss']
+	styleUrls: ['./ui-toggle.component.scss'],
 })
 export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
@@ -24,11 +33,7 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	uiSubscription: Subscription;
 	@Input() parentId: string;
 
-
-
-	constructor(
-		public commonService: CommonService
-	) { }
+	constructor(public commonService: CommonService) {}
 
 	ngOnInit() {
 		this.notChange = this.notChange || false;
@@ -46,7 +51,6 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 
 	ngOnChanges(changes: SimpleChanges) {
 		// Note: commenting for now need to discuss on it. please check the requirement given for VAN-9331 before uncomment the line.
-
 		/* if (changes && changes.focus && Boolean(changes.focus.previousValue) !== this.focus && this.focus) {
 			document.getElementById(this.onOffSwitchId + '_checkbox').focus();
 		}
@@ -60,7 +64,9 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	 */
 	sendChangeEvent($event) {
 		this.currentEvent = $event;
-		if (!this.disabled) { return; }
+		if (!this.disabled) {
+			return;
+		}
 		const setIntervalTimer = setInterval(() => {
 			this.disabled = false;
 			this.timer++;
@@ -84,10 +90,10 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 		event.stopPropagation();
 	}
 
-	public hideColorPicker(){
-		if(document.getElementById("colorPicker")){
-		   document.getElementById("colorPicker").style.display = "none"; 
-		   this.hideColordisk.emit();
+	public hideColorPicker() {
+		if (document.getElementById('colorPicker')) {
+			document.getElementById('colorPicker').style.display = 'none';
+			this.hideColordisk.emit();
 		}
 	}
 }

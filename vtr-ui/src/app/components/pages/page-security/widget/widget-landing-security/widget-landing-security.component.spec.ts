@@ -12,9 +12,8 @@ xdescribe('WidgetLandingSecurityComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetLandingSecurityComponent, UiButtonComponent],
-			schemas: [NO_ERRORS_SCHEMA]
-		})
-			.compileComponents();
+			schemas: [NO_ERRORS_SCHEMA],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

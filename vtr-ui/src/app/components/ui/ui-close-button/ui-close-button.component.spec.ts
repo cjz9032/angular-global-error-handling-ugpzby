@@ -10,9 +10,8 @@ describe('UiCloseButtonComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCloseButtonComponent],
-			imports: [TranslateModule.forRoot()]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot()],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

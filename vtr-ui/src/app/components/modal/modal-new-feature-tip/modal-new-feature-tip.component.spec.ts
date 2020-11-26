@@ -8,9 +8,8 @@ xdescribe('ModalNewFeatureTipComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ModalNewFeatureTipComponent]
-		})
-			.compileComponents();
+			declarations: [ModalNewFeatureTipComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

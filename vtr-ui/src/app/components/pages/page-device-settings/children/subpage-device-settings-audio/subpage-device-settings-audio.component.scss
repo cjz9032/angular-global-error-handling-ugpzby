@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .subpage-device-settings-audio {
 	.smart-settings-card {
@@ -145,8 +145,8 @@
 			.checkbox-custom-label::before {
 				top: -0.1rem !important;
 			}
-			.checkbox-custom:checked+.checkbox-custom-label{
-				&::before{
+			.checkbox-custom:checked + .checkbox-custom-label {
+				&::before {
 					top: -0.1rem !important;
 				}
 			}

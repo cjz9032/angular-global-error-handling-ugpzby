@@ -1,4 +1,4 @@
-@import "../../../../../app.theme.scss";
+@import '../../../../../app.theme.scss';
 
 .vtr-autoupdate-settings {
 	border-radius: $border_radius;
@@ -82,11 +82,11 @@
 				}
 
 				@media #{$white-on-black} {
-					border: 0.1rem solid $light !important
+					border: 0.1rem solid $light !important;
 				}
 
 				@media #{$black-on-white} {
-					border: 0.1rem solid $dark !important
+					border: 0.1rem solid $dark !important;
 				}
 			}
 		}

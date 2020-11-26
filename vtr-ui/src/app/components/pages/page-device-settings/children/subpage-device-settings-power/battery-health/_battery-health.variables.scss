@@ -1,4 +1,3 @@
-
 $battery-title-offset-y: 20px;
 $battery-middle-content-offset-top: 16px;
 
@@ -8,15 +7,17 @@ $battery-capacity-canvas-offset-width: 100px;
 $battery-capacity-canvas-offset-height: 100px;
 
 $battery-temperature-condition: (
-	error:"../../../../../../../../assets/images/smb-temperature-condition-error.png",
-	low: "../../../../../../../../assets/images/smb-temperature-condition-low.png",
-	fine: "../../../../../../../../assets/images/smb-temperature-condition-fine.png",
-	high: "../../../../../../../../assets/images/smb-temperature-condition-high.png",
-	extreme: "../../../../../../../../assets/images/smb-temperature-condition-extreme.png",
+	error: '../../../../../../../../assets/images/smb-temperature-condition-error.png',
+	low: '../../../../../../../../assets/images/smb-temperature-condition-low.png',
+	fine: '../../../../../../../../assets/images/smb-temperature-condition-fine.png',
+	high: '../../../../../../../../assets/images/smb-temperature-condition-high.png',
+	extreme: '../../../../../../../../assets/images/smb-temperature-condition-extreme.png',
 );
 $battery-temperature-condition-high-contrast: (
-	black-on-white: "../../../../../../../../assets/images/smb-temperature-condition-black-on-white.png",
-	white-on-black: "../../../../../../../../assets/images/smb-temperature-condition-white-on-black.png"
+	black-on-white:
+		'../../../../../../../../assets/images/smb-temperature-condition-black-on-white.png',
+	white-on-black:
+		'../../../../../../../../assets/images/smb-temperature-condition-white-on-black.png',
 );
 $battery-temperature-indicator-icon-offset-width: 80px;
 $battery-temperature-indicator-icon-offset-height: 80px;

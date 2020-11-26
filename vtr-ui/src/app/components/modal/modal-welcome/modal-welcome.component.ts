@@ -1,4 +1,12 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, Input, HostListener } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	AfterViewInit,
+	OnDestroy,
+	ViewChildren,
+	Input,
+	HostListener,
+} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
@@ -23,7 +31,7 @@ import { DccService } from 'src/app/services/dcc/dcc.service';
 	selector: 'vtr-modal-welcome',
 	templateUrl: './modal-welcome.component.html',
 	styleUrls: ['./modal-welcome.component.scss'],
-	providers: [TimerService]
+	providers: [TimerService],
 })
 export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	public segmentConst = SegmentConst;
@@ -39,7 +47,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		page2: {
 			title: '',
 			subtitle: '',
-		}
+		},
 	};
 	usageType = null;
 	gamingScenario = null;
@@ -67,7 +75,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			value: this.segmentConst.ConsumerEducation,
 			textKey: 'welcometutorial.segments.consumerEducation',
 			image: 'assets/images/welcome/personal-education-use.jpg',
-		}
+		},
 	];
 	allGamingScenarios = [
 		{
@@ -90,11 +98,31 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		},
 	];
 	allGamingFeatures = [
-		{ id: 'feature1', label: 'welcometutorial.gaming.gamingFeature1', autoId: 'tutorial_text_list_description_computer' },
-		{ id: 'feature2', label: 'welcometutorial.gaming.gamingFeature2', autoId: 'tutorial_text_list_description_performance' },
-		{ id: 'feature3', label: 'welcometutorial.gaming.gamingFeature3', autoId: 'tutorial_text_list_description_lighting' },
-		{ id: 'feature4', label: 'welcometutorial.gaming.gamingFeature4', autoId: 'tutorial_text_list_description_network_boost' },
-		{ id: 'feature5', label: 'welcometutorial.gaming.gamingFeature5', autoId: 'tutorial_text_list_description_auto_close' },
+		{
+			id: 'feature1',
+			label: 'welcometutorial.gaming.gamingFeature1',
+			autoId: 'tutorial_text_list_description_computer',
+		},
+		{
+			id: 'feature2',
+			label: 'welcometutorial.gaming.gamingFeature2',
+			autoId: 'tutorial_text_list_description_performance',
+		},
+		{
+			id: 'feature3',
+			label: 'welcometutorial.gaming.gamingFeature3',
+			autoId: 'tutorial_text_list_description_lighting',
+		},
+		{
+			id: 'feature4',
+			label: 'welcometutorial.gaming.gamingFeature4',
+			autoId: 'tutorial_text_list_description_network_boost',
+		},
+		{
+			id: 'feature5',
+			label: 'welcometutorial.gaming.gamingFeature5',
+			autoId: 'tutorial_text_list_description_auto_close',
+		},
 	];
 	allCoreFeatures = [
 		{ id: 'bullets1', label: 'welcometutorial.bullets1' },
@@ -123,7 +151,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		private localCacheService: LocalCacheService,
 		private initializerService: InitializerService,
 		private dccService: DccService
-		) {
+	) {
 		this.metrics = shellService.getMetrics();
 
 		this.initMetricOption(shellService);
@@ -178,7 +206,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
 				PageContext: `page${page}`,
-				PageDuration: this.timerService.stop()
+				PageDuration: this.timerService.stop(),
 			};
 			this.logger.info('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
@@ -187,15 +215,21 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.progress = 49;
 			tutorialData = new WelcomeTutorial(1, this.tutorialVersion, false);
 			if (this.deviceService.isGaming) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.GamingTutorial, tutorialData);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.GamingTutorial,
+					tutorialData
+				);
 			}
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.WelcomeTutorial, tutorialData);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.WelcomeTutorial,
+				tutorialData
+			);
 			this.focusOnModal();
 		} else {
 			const buttonClickData = {
 				ItemType: 'FeatureClick',
 				ItemName: 'DONE',
-				ItemParent: 'WelcomePage'
+				ItemParent: 'WelcomePage',
 			};
 
 			this.metrics.sendAsync(buttonClickData);
@@ -204,11 +238,11 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				ItemType: 'SettingUpdate',
 				SettingName: 'Accept Privacy Policy',
 				SettingValue: this.privacyPolicy ? 'Enabled' : 'Disabled',
-				SettingParent: 'WelcomePage'
+				SettingParent: 'WelcomePage',
 			};
 
 			this.metrics.sendAsyncEx(settingData, {
-				forced: true
+				forced: true,
 			});
 
 			if (this.vantageToolbarStatus && this.vantageToolbarStatus.available) {
@@ -216,24 +250,24 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 					ItemType: 'SettingUpdate',
 					SettingName: 'Enable Lenovo Vantage Toolbar',
 					SettingValue: this.vantageToolbar ? 'Enabled' : 'Disabled',
-					SettingParent: 'WelcomePage'
+					SettingParent: 'WelcomePage',
 				};
 
 				this.metrics.sendAsync(toolbarSettingData);
-			}
-			else {
+			} else {
 				this.logger.info(`Won't send Vantage toolbar metric for it is not available.`);
 			}
 
 			this.selfSelectService.saveConfig(
 				{ usageType: this.usageType, interests: this.interests },
-				false);
+				false
+			);
 			if (this.deviceService.isGaming && this.gamingScenario) {
 				const gamingScenarioData = {
 					ItemType: 'SettingUpdate',
 					SettingName: 'Gaming Usage Scenario',
 					SettingValue: this.gamingScenario,
-					SettingParent: 'WelcomePage'
+					SettingParent: 'WelcomePage',
 				};
 				this.metrics.sendAsync(gamingScenarioData);
 			}
@@ -241,21 +275,23 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			const usageData = {
 				ItemType: 'SettingUpdate',
 				SettingName: 'UsageType',
-				SettingValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
-				SettingParent: 'WelcomePage'
+				SettingValue: this.deviceService.isGaming
+					? 'Gaming'
+					: this.selfSelectService.usageType,
+				SettingParent: 'WelcomePage',
 			};
 			this.updateHeaderImage(usageData.SettingValue);
 			this.metrics.sendAsync(usageData);
 
 			const interestMetricValue = {};
-			this.selfSelectService.checkedArray.forEach(item => {
+			this.selfSelectService.checkedArray.forEach((item) => {
 				interestMetricValue[item] = true;
 			});
 			const interestData = {
 				ItemType: 'SettingUpdate',
 				SettingName: 'Interest',
 				SettingValue: interestMetricValue,
-				SettingParent: 'WelcomePage'
+				SettingParent: 'WelcomePage',
 			};
 			this.metrics.sendAsync(interestData);
 
@@ -263,12 +299,18 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				ItemType: 'PageView',
 				PageName: 'WelcomePage',
 				PageContext: `page${page}`,
-				PageDuration: this.timerService.stop()
+				PageDuration: this.timerService.stop(),
 			};
 			this.logger.info('PageView Event', JSON.stringify(data));
 			this.metrics.sendAsync(data);
 			this.userService.sendSilentlyLoginMetric();
-			tutorialData = new WelcomeTutorial(2, this.tutorialVersion, true, this.selfSelectService.usageType, this.selfSelectService.checkedArray);
+			tutorialData = new WelcomeTutorial(
+				2,
+				this.tutorialVersion,
+				true,
+				this.selfSelectService.usageType,
+				this.selfSelectService.checkedArray
+			);
 			// this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 			this.activeModal.close(tutorialData);
@@ -351,11 +393,13 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.logger.info('saveToolbar', toolbarStatus);
 		try {
 			if (this.powerService.isShellAvailable) {
-				this.powerService.setVantageToolBarStatus(toolbarStatus)
+				this.powerService
+					.setVantageToolBarStatus(toolbarStatus)
 					.then((value: boolean) => {
 						this.logger.info('setVantageToolBarStatus.then', toolbarStatus);
 						this.getVantageToolBarStatus();
-					}).catch(error => {
+					})
+					.catch((error) => {
 						this.logger.error('setVantageToolBarStatus', error.message);
 						return EMPTY;
 					});
@@ -380,7 +424,9 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.hideMoreInterestBtn = true;
 		if (document.querySelectorAll('.interests input[type=checkbox]').length > 7) {
 			setTimeout(() => {
-				(document.querySelectorAll('.interests input[type=checkbox]')[8] as HTMLElement).focus();
+				(document.querySelectorAll(
+					'.interests input[type=checkbox]'
+				)[8] as HTMLElement).focus();
 			}, 0);
 		}
 	}
@@ -400,11 +446,10 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	privacyPolicyClick(event) {
-		this.configService.getPrivacyPolicyLink().then(policyLink => {
+		this.configService.getPrivacyPolicyLink().then((policyLink) => {
 			window.open(policyLink, '_blank');
 		});
 		event.stopPropagation();
 		event.preventDefault();
 	}
-
 }

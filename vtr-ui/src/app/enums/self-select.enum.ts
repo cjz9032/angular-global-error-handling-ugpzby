@@ -1,3 +1,3 @@
 export enum SelfSelectEvent {
-	SegmentChange = '[SelfSelectEvent] SegmentChange'
+	SegmentChange = '[SelfSelectEvent] SegmentChange',
 }

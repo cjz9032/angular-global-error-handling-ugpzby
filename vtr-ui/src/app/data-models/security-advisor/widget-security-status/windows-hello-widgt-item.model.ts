@@ -10,18 +10,24 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 		windowsHello: WindowsHello,
 		commonService: CommonService,
 		private localCacheService: LocalCacheService,
-		private translateService: TranslateService) {
-		super({
-			id: 'sa-widget-lnk-wh',
-			path: 'ms-settings:signinoptions',
-			type: 'security',
-			isSystemLink: true,
-			metricsItemName: 'fingerPrint'
-		}, translateService);
+		private translateService: TranslateService
+	) {
+		super(
+			{
+				id: 'sa-widget-lnk-wh',
+				path: 'ms-settings:signinoptions',
+				type: 'security',
+				isSystemLink: true,
+				metricsItemName: 'fingerPrint',
+			},
+			translateService
+		);
 		this.translateService.stream('common.securityAdvisor.fingerPrint').subscribe((value) => {
 			this.title = value;
 		});
-		const cacheStatus: string = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWindowsHelloStatus);
+		const cacheStatus: string = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityWindowsHelloStatus
+		);
 		if (cacheStatus) {
 			this.status = cacheStatus === 'enrolled' ? 0 : 1;
 			this.detail = cacheStatus;
@@ -31,20 +37,29 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 			const active = windowsHello.fingerPrintStatus === 'active';
 			this.status = active ? 0 : 1;
 			this.detail = active ? 'enrolled' : 'notEnrolled';
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityWindowsHelloStatus,
+				this.detail
+			);
 			this.translateStatus(this.detail);
 		}
 
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (fpStatus) => {
 			this.status = fpStatus === 'active' ? 0 : 1;
 			this.detail = fpStatus === 'active' ? 'enrolled' : 'notEnrolled';
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWindowsHelloStatus, this.detail);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityWindowsHelloStatus,
+				this.detail
+			);
 			this.translateStatus(this.detail);
 		});
 	}
 
 	translateStatus(status: string) {
-		const translateKey = status === 'enrolled' ? 'common.securityAdvisor.enrolled' : 'common.securityAdvisor.notEnrolled';
+		const translateKey =
+			status === 'enrolled'
+				? 'common.securityAdvisor.enrolled'
+				: 'common.securityAdvisor.notEnrolled';
 		this.translateService.stream(translateKey).subscribe((value) => {
 			this.detail = value;
 		});

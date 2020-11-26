@@ -17,17 +17,9 @@ describe('UiCircleRadioWithCheckboxComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [UiCircleRadioWithCheckboxComponent, CapitalizeFirstPipe],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [
-				LoggerService,
-				MetricService,
-				DevService
-			]
-		})
-			.compileComponents();
+			imports: [HttpClientTestingModule, RouterTestingModule],
+			providers: [LoggerService, MetricService, DevService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

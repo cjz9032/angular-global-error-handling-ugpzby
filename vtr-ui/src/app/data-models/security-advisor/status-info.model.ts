@@ -10,5 +10,5 @@ export enum SecurityTypeConst {
 	NoProtection = 'no protection',
 	Basic = 'basic',
 	Intermediate = 'intermediate',
-	Advanced = 'advanced'
+	Advanced = 'advanced',
 }

@@ -8,9 +8,8 @@ xdescribe('UiSwitchTristateComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiSwitchTristateComponent]
-		})
-			.compileComponents();
+			declarations: [UiSwitchTristateComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

@@ -7,7 +7,12 @@ import { VoipResponse, VoipApp } from 'src/app/data-models/input-accessories/voi
 import { SupportedAppEnum, VoipErrorCodeEnum } from 'src/app/enums/voip.enum';
 
 class KeyBoardManagerMock {
-	setUserDefinedKeySetting(type: string, actionType: string, settingKey: string, settingValue: string): Promise<boolean> {
+	setUserDefinedKeySetting(
+		type: string,
+		actionType: string,
+		settingKey: string,
+		settingValue: string
+	): Promise<boolean> {
 		return Promise.resolve(true);
 	}
 	StartSpecialKeyMonitor(installDirectory: string): Promise<boolean> {
@@ -120,14 +125,12 @@ class KeyBoardManagerMock {
 		return Promise.resolve(new VoipResponse());
 	} */
 
-
 	public RestartMachine() {
 		return;
 	}
 }
 
 class MouseAndTouchPadMock {
-
 	public GetMouseCapability(): Promise<boolean> {
 		return Promise.resolve(true);
 	}
@@ -138,7 +141,6 @@ class MouseAndTouchPadMock {
 }
 
 class KeyBoardMock {
-
 	public GetAutoKBDBacklightCapability(): Promise<boolean> {
 		return Promise.resolve(true);
 	}
@@ -170,26 +172,24 @@ class KeyBoardMock {
 	public SetAutoKBDEnableStatus(): Promise<boolean> {
 		return Promise.resolve(true);
 	}
-
 }
 const voipApp1: VoipApp = {
 	appName: SupportedAppEnum.MICROSOFT_TEAMS,
 	isAppInstalled: false,
-	isSelected: true
+	isSelected: true,
 };
 const voipApp2 = {
 	appName: SupportedAppEnum.SKYPE_FOR_BUSINESS_2016,
 	isAppInstalled: false,
-	isSelected: true
+	isSelected: true,
 };
 const voipResponse: VoipResponse = {
 	errorCode: VoipErrorCodeEnum.FAILED,
 	capability: true,
 	keyboardVersion: 'test',
-	appList: [voipApp1, voipApp2]
+	appList: [voipApp1, voipApp2],
 };
 class VoipHotKeys {
-
 	public getVOIPHotkeysSettings(): Promise<VoipResponse> {
 		return Promise.resolve(voipResponse);
 	}
@@ -201,11 +201,12 @@ class VoipHotKeys {
 
 describe('InputAccessoriesService', () => {
 	// let shellService: VantageShellService;
-	beforeEach(() => TestBed.configureTestingModule({
-		providers: [InputAccessoriesService, VantageShellService, TranslateStore],
-		imports: [TranslationModule.forChild()]
-
-	}));
+	beforeEach(() =>
+		TestBed.configureTestingModule({
+			providers: [InputAccessoriesService, VantageShellService, TranslateStore],
+			imports: [TranslationModule.forChild()],
+		})
+	);
 	describe(':', () => {
 		function setup() {
 			const inputAccessoriesService = TestBed.inject(InputAccessoriesService);
@@ -223,23 +224,38 @@ describe('InputAccessoriesService', () => {
 			const { inputAccessoriesService } = setup();
 
 			// inputAccessoriesService.keyboardManager = new KeyBoardManagerMock();
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'setUserDefinedKeySetting').and.callThrough();
-			inputAccessoriesService.setUserDefinedKeySetting('test', 'testaction', 'settingKey', 'settingValue');
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'setUserDefinedKeySetting'
+			).and.callThrough();
+			inputAccessoriesService.setUserDefinedKeySetting(
+				'test',
+				'testaction',
+				'settingKey',
+				'settingValue'
+			);
 			expect(spy).toHaveBeenCalled();
 
 			inputAccessoriesService.keyboardManager = undefined;
-			const returnValue = inputAccessoriesService.setUserDefinedKeySetting('test', 'testaction', 'settingKey', 'settingValue');
+			const returnValue = inputAccessoriesService.setUserDefinedKeySetting(
+				'test',
+				'testaction',
+				'settingKey',
+				'settingValue'
+			);
 			expect(returnValue).toBe(undefined);
 
 			expect(inputAccessoriesService.setUserDefinedKeySetting).toThrow();
-
 		});
 
 		it('should call StartSpecialKeyMonitor', () => {
 			const { inputAccessoriesService } = setup();
 
 			// inputAccessoriesService.keyboardManager = new KeyBoardManagerMock();
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'StartSpecialKeyMonitor').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'StartSpecialKeyMonitor'
+			).and.callThrough();
 			inputAccessoriesService.StartSpecialKeyMonitor('test');
 			expect(spy).toHaveBeenCalled();
 			// inputAccessoriesService.StartSpecialKeyMonitor('test');
@@ -255,7 +271,10 @@ describe('InputAccessoriesService', () => {
 			const { inputAccessoriesService } = setup();
 
 			// inputAccessoriesService.keyboardManager = new KeyBoardManagerMock();
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'EndSpecialKeyMonitor').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'EndSpecialKeyMonitor'
+			).and.callThrough();
 			inputAccessoriesService.EndSpecialKeyMonitor();
 			expect(spy).toHaveBeenCalled();
 			// inputAccessoriesService.EndSpecialKeyMonitor();
@@ -270,7 +289,10 @@ describe('InputAccessoriesService', () => {
 		it('should call Initialize', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'Initialize').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'Initialize'
+			).and.callThrough();
 			inputAccessoriesService.Initialize();
 			expect(spy).toHaveBeenCalled();
 
@@ -284,13 +306,18 @@ describe('InputAccessoriesService', () => {
 		it('should call AddApplicationOrFiles', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'AddApplicationOrFiles').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'AddApplicationOrFiles'
+			).and.callThrough();
 			inputAccessoriesService.AddApplicationOrFiles('selectedUDK', 'appSelectorType');
 			expect(spy).toHaveBeenCalled();
 
-
 			inputAccessoriesService.keyboardManager = undefined;
-			const returnValue = inputAccessoriesService.AddApplicationOrFiles('selectedUDK', 'appSelectorType');
+			const returnValue = inputAccessoriesService.AddApplicationOrFiles(
+				'selectedUDK',
+				'appSelectorType'
+			);
 			expect(returnValue).toBe(undefined);
 
 			expect(inputAccessoriesService.AddApplicationOrFiles).toThrow();
@@ -299,22 +326,31 @@ describe('InputAccessoriesService', () => {
 		it('should call DeleteUDKApplication', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'DeleteUDKApplication').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'DeleteUDKApplication'
+			).and.callThrough();
 			inputAccessoriesService.DeleteUDKApplication('udkType', 'itemId', 'displayName');
 			expect(spy).toHaveBeenCalled();
 
 			inputAccessoriesService.keyboardManager = undefined;
-			const returnValue = inputAccessoriesService.DeleteUDKApplication('udkType', 'itemId', 'displayName');
+			const returnValue = inputAccessoriesService.DeleteUDKApplication(
+				'udkType',
+				'itemId',
+				'displayName'
+			);
 			expect(returnValue).toBe(undefined);
 
 			expect(inputAccessoriesService.DeleteUDKApplication).toThrow();
 		});
 
-
 		it('should call GetAllCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetAllCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetAllCapability'
+			).and.callThrough();
 			inputAccessoriesService.GetAllCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -328,7 +364,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetUDKTypeList', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetUDKTypeList').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetUDKTypeList'
+			).and.callThrough();
 			inputAccessoriesService.GetUDKTypeList();
 			expect(spy).toHaveBeenCalled();
 
@@ -342,7 +381,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetKeyboardVersion', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetKeyboardVersion').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetKeyboardVersion'
+			).and.callThrough();
 			inputAccessoriesService.GetKeyboardVersion();
 			expect(spy).toHaveBeenCalled();
 
@@ -356,7 +398,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetKBDLayoutName', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetKBDLayoutName').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetKBDLayoutName'
+			).and.callThrough();
 			inputAccessoriesService.GetKBDLayoutName();
 			expect(spy).toHaveBeenCalled();
 
@@ -370,7 +415,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetKBDMachineType', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetKBDMachineType').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetKBDMachineType'
+			).and.callThrough();
 			inputAccessoriesService.GetKBDMachineType();
 			expect(spy).toHaveBeenCalled();
 
@@ -384,7 +432,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetKbdHiddenKeyPrivacyFilterCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetKbdHiddenKeyPrivacyFilterCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetKbdHiddenKeyPrivacyFilterCapability'
+			).and.callThrough();
 			inputAccessoriesService.GetKbdHiddenKeyPrivacyFilterCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -398,7 +449,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetKbdHiddenKeyBackLightCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetKbdHiddenKeyBackLightCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetKbdHiddenKeyBackLightCapability'
+			).and.callThrough();
 			inputAccessoriesService.GetKbdHiddenKeyBackLightCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -412,7 +466,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetKbdHiddenKeyMagnifierCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetKbdHiddenKeyMagnifierCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetKbdHiddenKeyMagnifierCapability'
+			).and.callThrough();
 			inputAccessoriesService.GetKbdHiddenKeyMagnifierCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -426,7 +483,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetKbdHiddenKeyPerformanceModeCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetKbdHiddenKeyPerformanceModeCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetKbdHiddenKeyPerformanceModeCapability'
+			).and.callThrough();
 			inputAccessoriesService.GetKbdHiddenKeyPerformanceModeCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -440,7 +500,10 @@ describe('InputAccessoriesService', () => {
 		it('should call getTopRowFnLockCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetTopRowFnLockCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetTopRowFnLockCapability'
+			).and.callThrough();
 			inputAccessoriesService.getTopRowFnLockCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -454,7 +517,10 @@ describe('InputAccessoriesService', () => {
 		it('should call getTopRowFnStickKeyCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetTopRowFnStickKeyCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetTopRowFnStickKeyCapability'
+			).and.callThrough();
 			inputAccessoriesService.getTopRowFnStickKeyCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -468,7 +534,10 @@ describe('InputAccessoriesService', () => {
 		it('should call getTopRowPrimaryFunctionCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetTopRowPrimaryFunctionCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetTopRowPrimaryFunctionCapability'
+			).and.callThrough();
 			inputAccessoriesService.getTopRowPrimaryFunctionCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -482,7 +551,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetFnLockStatus', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetFnLockStatus').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetFnLockStatus'
+			).and.callThrough();
 			inputAccessoriesService.getFnLockStatus();
 			expect(spy).toHaveBeenCalled();
 
@@ -496,7 +568,10 @@ describe('InputAccessoriesService', () => {
 		it('should call getFnStickKeyStatus', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetFnStickKeyStatus').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetFnStickKeyStatus'
+			).and.callThrough();
 			inputAccessoriesService.getFnStickKeyStatus();
 			expect(spy).toHaveBeenCalled();
 
@@ -510,7 +585,10 @@ describe('InputAccessoriesService', () => {
 		it('should call getPrimaryFunctionStatus', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetPrimaryFunctionStatus').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetPrimaryFunctionStatus'
+			).and.callThrough();
 			inputAccessoriesService.getPrimaryFunctionStatus();
 			expect(spy).toHaveBeenCalled();
 
@@ -524,7 +602,10 @@ describe('InputAccessoriesService', () => {
 		it('should call setFnStickKeyStatus', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'SetFnStickKey').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'SetFnStickKey'
+			).and.callThrough();
 			inputAccessoriesService.setFnStickKeyStatus(10);
 			expect(spy).toHaveBeenCalled();
 
@@ -538,7 +619,10 @@ describe('InputAccessoriesService', () => {
 		it('should call setFnLock', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'SetFnLock').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'SetFnLock'
+			).and.callThrough();
 			inputAccessoriesService.setFnLock(10);
 			expect(spy).toHaveBeenCalled();
 
@@ -552,7 +636,10 @@ describe('InputAccessoriesService', () => {
 		it('should call setPrimaryFunction', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'SetPrimaryFunction').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'SetPrimaryFunction'
+			).and.callThrough();
 			inputAccessoriesService.setPrimaryFunction(10);
 			expect(spy).toHaveBeenCalled();
 
@@ -566,7 +653,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetFnCtrlSwapCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetFnCtrlSwapCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetFnCtrlSwapCapability'
+			).and.callThrough();
 			inputAccessoriesService.GetFnCtrlSwapCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -580,7 +670,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetFnCtrlSwapCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetFnCtrlSwapCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetFnCtrlSwapCapability'
+			).and.callThrough();
 			inputAccessoriesService.GetFnCtrlSwapCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -594,7 +687,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetFnCtrlSwap', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetFnCtrlSwap').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetFnCtrlSwap'
+			).and.callThrough();
 			inputAccessoriesService.GetFnCtrlSwap();
 			expect(spy).toHaveBeenCalled();
 
@@ -608,7 +704,10 @@ describe('InputAccessoriesService', () => {
 		it('should call SetFnCtrlSwap', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'SetFnCtrlSwap').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'SetFnCtrlSwap'
+			).and.callThrough();
 			inputAccessoriesService.SetFnCtrlSwap(10);
 			expect(spy).toHaveBeenCalled();
 
@@ -622,7 +721,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetFnAsCtrlCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetFnAsCtrlCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetFnAsCtrlCapability'
+			).and.callThrough();
 			inputAccessoriesService.GetFnAsCtrlCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -636,7 +738,10 @@ describe('InputAccessoriesService', () => {
 		it('should call GetFnAsCtrl', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'GetFnAsCtrl').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'GetFnAsCtrl'
+			).and.callThrough();
 			inputAccessoriesService.GetFnAsCtrl();
 			expect(spy).toHaveBeenCalled();
 
@@ -650,7 +755,10 @@ describe('InputAccessoriesService', () => {
 		it('should call SetFnAsCtrl', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'SetFnCtrlSwap').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'SetFnCtrlSwap'
+			).and.callThrough();
 			inputAccessoriesService.SetFnAsCtrl(10);
 			expect(spy).toHaveBeenCalled();
 
@@ -660,7 +768,6 @@ describe('InputAccessoriesService', () => {
 
 			expect(inputAccessoriesService.SetFnAsCtrl).toThrow();
 		});
-
 
 		it('should call getMouseCapability', () => {
 			const { inputAccessoriesService } = setup();
@@ -678,7 +785,6 @@ describe('InputAccessoriesService', () => {
 			expect(returnValue).toBeTruthy();
 
 			expect(inputAccessoriesService.getMouseCapability).toThrow();
-
 		});
 
 		it('should call getTouchPadCapability', () => {
@@ -727,7 +833,6 @@ describe('InputAccessoriesService', () => {
 			inputAccessoriesService.setVoipHotkeysSettings(1);
 			expect(spy).toHaveBeenCalled();
 
-
 			(inputAccessoriesService as any).voipHotkeys = undefined;
 			const returnValue = inputAccessoriesService.setVoipHotkeysSettings(1);
 			expect(returnValue).toBe(undefined);
@@ -735,11 +840,13 @@ describe('InputAccessoriesService', () => {
 			expect(inputAccessoriesService.setVoipHotkeysSettings).toThrow();
 		});
 
-
 		it('should call getAutoKBDBacklightCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboard, 'GetAutoKBDBacklightCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboard,
+				'GetAutoKBDBacklightCapability'
+			).and.callThrough();
 			inputAccessoriesService.getAutoKBDBacklightCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -753,7 +860,10 @@ describe('InputAccessoriesService', () => {
 		it('should call getKBDBacklightCapability', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboard, 'GetKBDBacklightCapability').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboard,
+				'GetKBDBacklightCapability'
+			).and.callThrough();
 			inputAccessoriesService.getKBDBacklightCapability();
 			expect(spy).toHaveBeenCalled();
 
@@ -767,10 +877,12 @@ describe('InputAccessoriesService', () => {
 		it('should call getAutoKBDStatus', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboard, 'GetAutoKBDStatus').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboard,
+				'GetAutoKBDStatus'
+			).and.callThrough();
 			inputAccessoriesService.getAutoKBDStatus();
 			expect(spy).toHaveBeenCalled();
-
 
 			inputAccessoriesService.keyboard = undefined;
 			const returnValue = inputAccessoriesService.getAutoKBDStatus();
@@ -782,10 +894,12 @@ describe('InputAccessoriesService', () => {
 		it('should call getKBDBacklightStatus', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboard, 'GetKBDBacklightStatus').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboard,
+				'GetKBDBacklightStatus'
+			).and.callThrough();
 			inputAccessoriesService.getKBDBacklightStatus();
 			expect(spy).toHaveBeenCalled();
-
 
 			inputAccessoriesService.keyboard = undefined;
 			const returnValue = inputAccessoriesService.getKBDBacklightStatus();
@@ -797,7 +911,10 @@ describe('InputAccessoriesService', () => {
 		it('should call getKBDBacklightLevel', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboard, 'GetKBDBacklightLevel').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboard,
+				'GetKBDBacklightLevel'
+			).and.callThrough();
 			inputAccessoriesService.getKBDBacklightLevel();
 			expect(spy).toHaveBeenCalled();
 
@@ -808,11 +925,13 @@ describe('InputAccessoriesService', () => {
 			expect(inputAccessoriesService.getKBDBacklightLevel).toThrow();
 		});
 
-
 		it('should call setKBDBacklightStatus', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboard, 'SetKBDBacklightStaus').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboard,
+				'SetKBDBacklightStaus'
+			).and.callThrough();
 			inputAccessoriesService.setKBDBacklightStatus('1');
 			expect(spy).toHaveBeenCalled();
 
@@ -823,11 +942,13 @@ describe('InputAccessoriesService', () => {
 			expect(inputAccessoriesService.setKBDBacklightStatus).toThrow();
 		});
 
-
 		it('should call setAutomaticKBDBacklight', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboard, 'SetAutomaticKBDBacklight').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboard,
+				'SetAutomaticKBDBacklight'
+			).and.callThrough();
 			inputAccessoriesService.setAutomaticKBDBacklight(true);
 			expect(spy).toHaveBeenCalled();
 
@@ -841,7 +962,10 @@ describe('InputAccessoriesService', () => {
 		it('should call setAutoKBDEnableStatus', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboard, 'SetAutoKBDEnableStatus').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboard,
+				'SetAutoKBDEnableStatus'
+			).and.callThrough();
 			inputAccessoriesService.setAutoKBDEnableStatus();
 			expect(spy).toHaveBeenCalled();
 
@@ -855,7 +979,10 @@ describe('InputAccessoriesService', () => {
 		it('should call restartMachine', () => {
 			const { inputAccessoriesService } = setup();
 
-			const spy = spyOn(inputAccessoriesService.keyboardManager, 'RestartMachine').and.callThrough();
+			const spy = spyOn(
+				inputAccessoriesService.keyboardManager,
+				'RestartMachine'
+			).and.callThrough();
 			inputAccessoriesService.restartMachine();
 			expect(spy).toHaveBeenCalled();
 			inputAccessoriesService.restartMachine();

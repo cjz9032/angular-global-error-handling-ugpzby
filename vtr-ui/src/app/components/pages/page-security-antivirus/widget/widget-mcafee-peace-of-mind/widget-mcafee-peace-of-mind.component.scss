@@ -1,8 +1,8 @@
-@import "../../../../../app.theme.scss";
-@import "../widget-mcafee-features/widget-mcafee-features.component.scss";
+@import '../../../../../app.theme.scss';
+@import '../widget-mcafee-features/widget-mcafee-features.component.scss';
 
 .vtr-widget-mcafee-peace-of-mind {
-	background: linear-gradient(180deg, #ECF7FF 0%, rgba(236, 247, 255, 0) 156.94%);
+	background: linear-gradient(180deg, #ecf7ff 0%, rgba(236, 247, 255, 0) 156.94%);
 	border-radius: $border_radius;
 	color: $shade_blue;
 	@include high-contrast-adjust;

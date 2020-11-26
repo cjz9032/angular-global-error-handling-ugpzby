@@ -18,8 +18,8 @@ describe('RecoverBadSectorsService', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			imports: [ TranslateModule.forRoot(), HttpClientModule ],
-			providers: [ NgbActiveModal, HttpClientModule, DevService ]
+			imports: [TranslateModule.forRoot(), HttpClientModule],
+			providers: [NgbActiveModal, HttpClientModule, DevService],
 		});
 		service = TestBed.inject(RecoverBadSectorsService);
 	});

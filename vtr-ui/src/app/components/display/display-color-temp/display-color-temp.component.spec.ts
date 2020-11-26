@@ -6,14 +6,12 @@ import { TranslationModule } from 'src/app/modules/translation.module';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { DisplayColorTempComponent } from './display-color-temp.component';
 
-
-
 const displayColorTempSettings: EyeCareMode = {
 	available: true,
 	current: 10,
 	maximum: 100,
 	minimum: 0,
-	status: true
+	status: true,
 };
 
 describe('DisplayColorTempComponent', () => {
@@ -26,7 +24,7 @@ describe('DisplayColorTempComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [DisplayColorTempComponent],
 			imports: [TranslationModule],
-			providers: [LoggerService, TranslateStore]
+			providers: [LoggerService, TranslateStore],
 		});
 	}));
 

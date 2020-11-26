@@ -6,15 +6,12 @@ import { PageDashboardAndroidComponent } from 'src/app/components/pages/page-das
 const routes: Routes = [
 	{
 		path: '',
-		component: PageDashboardAndroidComponent
-	}];
+		component: PageDashboardAndroidComponent,
+	},
+];
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(routes)
-	],
-	exports: [
-		RouterModule
-	]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class AndroidDashboardRoutingModule { }
+export class AndroidDashboardRoutingModule {}

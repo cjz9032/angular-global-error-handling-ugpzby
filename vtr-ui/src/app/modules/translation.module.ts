@@ -1,6 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { TranslateLoader, TranslateModule, TranslatePipe, MissingTranslationHandler, TranslateStore } from '@ngx-translate/core';
+import {
+	TranslateLoader,
+	TranslateModule,
+	TranslatePipe,
+	MissingTranslationHandler,
+	TranslateStore,
+} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
@@ -15,26 +21,22 @@ import { TranslateDefaultValueIfNotFoundPipe } from '../pipe/translate-default-v
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [HttpClient]
+				deps: [HttpClient],
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
-				useClass: MissingTranslationDefaultHandler
+				useClass: MissingTranslationDefaultHandler,
 			},
-			isolate: false
-		})
+			isolate: false,
+		}),
 	],
 	exports: [TranslateModule, TranslatePipe],
-	providers: [
-		httpInterceptorProviders,
-		TranslatePipe,
-		TranslateDefaultValueIfNotFoundPipe
-	]
+	providers: [httpInterceptorProviders, TranslatePipe, TranslateDefaultValueIfNotFoundPipe],
 })
 export class TranslationModule {
 	static forChild(): ModuleWithProviders<TranslationModule> {
 		return {
-			ngModule: TranslationModule
+			ngModule: TranslationModule,
 		};
 	}
 }

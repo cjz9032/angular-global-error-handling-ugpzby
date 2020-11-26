@@ -17,10 +17,9 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-page-security-password',
 	templateUrl: './page-security-password.component.html',
-	styleUrls: ['./page-security-password.component.scss']
+	styleUrls: ['./page-security-password.component.scss'],
 })
 export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
-
 	passwordManager: PasswordManager;
 	statusItem: any;
 	cardContentPositionA: any = {};
@@ -40,14 +39,14 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		public vantageShellService: VantageShellService,
 		private guard: GuardService,
 		private router: Router
-	) {	}
+	) {}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.statusItem = {
 			title: 'security.passwordManager.statusTitle',
-			status: 'loading'
+			status: 'loading',
 		};
 		this.featureIntroduction = {
 			featureTitle: '',
@@ -55,10 +54,11 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 			imgSrc: 'assets/images/Dashlane-no-left-img.png',
 			imgAlt: '',
 			featureSubtitle: '',
-			featureIntroList: []
-
+			featureIntroList: [],
 		};
-		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityPasswordManagerStatus
+		);
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
 			this.getFeatureIntro(this.statusItem.status);
@@ -66,19 +66,27 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		if (this.passwordManager && this.passwordManager.status) {
 			this.statusItem.status = this.passwordManager.status;
 			this.getFeatureIntro(this.statusItem.status);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityPasswordManagerStatus,
+				this.statusItem.status
+			);
 		}
 		this.passwordManager.on(EventTypes.pmStatusEvent, (status: string) => {
 			this.statusItem.status = status;
 			this.getFeatureIntro(this.statusItem.status);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, this.statusItem.status);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityPasswordManagerStatus,
+				this.statusItem.status
+			);
 		});
 		this.fetchCMSArticles();
 
 		this.isOnline = this.commonService.isOnline;
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.passwordManager.refresh();
 		}
@@ -108,43 +116,56 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			Page: 'password-protection'
+			Page: 'password-protection',
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(
+					response,
+					'inner-page-right-side-article-image-background',
+					'position-A'
+				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
-						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split(
+							'|'
+						)[0];
 					}
 				}
 			},
-			error => {}
+			(error) => {}
 		);
 
-		this.cmsService.fetchCMSArticle(this.dashlaneArticleId, { Lang: 'EN' }).then((response: any) => {
-			if (response && response.Results && response.Results.Category) {
-				this.dashlaneArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
-			}
-		});
+		this.cmsService
+			.fetchCMSArticle(this.dashlaneArticleId, { Lang: 'EN' })
+			.then((response: any) => {
+				if (response && response.Results && response.Results.Category) {
+					this.dashlaneArticleCategory = response.Results.Category.map(
+						(category: any) => category.Title
+					).join(' ');
+				}
+			});
 	}
 
 	openDashLaneArticle(): void {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'Article-Detail-Modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
+		const articleDetailModal: NgbModalRef = this.modalService.open(
+			ModalArticleDetailComponent,
+			{
+				backdrop: true,
+				size: 'lg',
+				centered: true,
+				windowClass: 'Article-Detail-Modal',
+				keyboard: false,
+				beforeDismiss: () => {
+					if (articleDetailModal.componentInstance.onBeforeDismiss) {
+						articleDetailModal.componentInstance.onBeforeDismiss();
+					}
+					return true;
+				},
 			}
-		});
+		);
 		articleDetailModal.componentInstance.articleId = this.dashlaneArticleId;
 	}
 
@@ -165,23 +186,27 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		if (status === 'installed') {
 			this.reverseContent = true;
 			this.featureIntroduction.featureTitle = 'security.passwordManager.getStarted';
-			this.featureIntroduction.featureTitleDesc = 'security.passwordManager.checkOutThisGuide';
+			this.featureIntroduction.featureTitleDesc =
+				'security.passwordManager.checkOutThisGuide';
 			this.featureIntroduction.descHasLink = true;
 			this.featureIntroduction.featureSubtitle = 'security.passwordManager.allowsYou';
 			this.featureIntroduction.featureIntroList = [
 				{
 					iconName: 'check',
-					detail: 'security.passwordManager.allowsYou1'
-				}, {
+					detail: 'security.passwordManager.allowsYou1',
+				},
+				{
 					iconName: 'check',
-					detail: 'security.passwordManager.allowsYou2'
-				}, {
+					detail: 'security.passwordManager.allowsYou2',
+				},
+				{
 					iconName: 'check',
-					detail: 'security.passwordManager.allowsYou3'
-				}, {
+					detail: 'security.passwordManager.allowsYou3',
+				},
+				{
 					iconName: 'check',
-					detail: 'security.passwordManager.allowsYou4'
-				}
+					detail: 'security.passwordManager.allowsYou4',
+				},
 			];
 		} else if (status === 'not-installed' || status === 'installing') {
 			this.featureIntroduction.featureTitle = 'security.passwordManager.neverForget';
@@ -190,17 +215,20 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 			this.featureIntroduction.featureIntroList = [
 				{
 					iconName: 'check',
-					detail: 'security.passwordManager.helpYou1'
-				}, {
+					detail: 'security.passwordManager.helpYou1',
+				},
+				{
 					iconName: 'check',
-					detail: 'security.passwordManager.helpYou2'
-				}, {
+					detail: 'security.passwordManager.helpYou2',
+				},
+				{
 					iconName: 'check',
-					detail: 'security.passwordManager.helpYou3'
-				}, {
+					detail: 'security.passwordManager.helpYou3',
+				},
+				{
 					iconName: 'check',
-					detail: 'security.passwordManager.helpYou4'
-				}
+					detail: 'security.passwordManager.helpYou4',
+				},
 			];
 		}
 	}

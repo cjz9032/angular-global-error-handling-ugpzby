@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
 	selector: 'vtr-ui-switch-onoff',
 	templateUrl: './ui-switch-onoff.component.html',
-	styleUrls: ['./ui-switch-onoff.component.scss']
+	styleUrls: ['./ui-switch-onoff.component.scss'],
 })
 export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	@Output() toggle: EventEmitter<any> = new EventEmitter();
@@ -27,10 +27,7 @@ export class UiSwitchOnoffComponent implements OnInit, OnDestroy {
 	switchOnText = this.tranlateService.instant('common.ui.on');
 	switchOffText = this.tranlateService.instant('common.ui.off');
 
-	constructor(
-		public commonService: CommonService,
-		public tranlateService: TranslateService
-	) { }
+	constructor(public commonService: CommonService, public tranlateService: TranslateService) {}
 
 	ngOnInit() {
 		this.readonly = this.readonly || false;

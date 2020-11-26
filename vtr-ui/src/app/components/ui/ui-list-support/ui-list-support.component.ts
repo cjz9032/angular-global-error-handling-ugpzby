@@ -5,18 +5,14 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 @Component({
 	selector: 'vtr-ui-list-support',
 	templateUrl: './ui-list-support.component.html',
-	styleUrls: ['./ui-list-support.component.scss']
+	styleUrls: ['./ui-list-support.component.scss'],
 })
 export class UiListSupportComponent implements OnInit {
-
 	@Input() items: any[];
 
-	constructor(
-		private supportService: SupportService,
-	) { }
+	constructor(private supportService: SupportService) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	itemClick(item: any, event: any) {
 		if (item.url) {
@@ -27,5 +23,4 @@ export class UiListSupportComponent implements OnInit {
 		event.stopPropagation();
 		event.preventDefault();
 	}
-
 }

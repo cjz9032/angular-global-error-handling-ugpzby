@@ -17,7 +17,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-page-lightingcustomize',
 	templateUrl: './page-lightingcustomize.component.html',
-	styleUrls: [ './page-lightingcustomize.component.scss' ]
+	styleUrls: ['./page-lightingcustomize.component.scss'],
 })
 export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	isOnline = true;
@@ -29,7 +29,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 	public ledlayoutversion: any;
 	notificationSubscription: Subscription;
-	capabilitySubscription: Subscription
+	capabilitySubscription: Subscription;
 
 	private cmsSubscription: Subscription;
 
@@ -57,14 +57,18 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.getLayOutversion();
-		this.capabilitySubscription = this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapabilities) {
-				this.getLayOutversion();
+		this.capabilitySubscription = this.commonService
+			.getCapabalitiesNotification()
+			.subscribe((response) => {
+				if (response.type === Gaming.GamingCapabilities) {
+					this.getLayOutversion();
+				}
+			});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
 			}
-		});
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		);
 	}
 
 	ngOnDestroy() {
@@ -72,11 +76,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 			this.notificationSubscription.unsubscribe();
 		}
 
-		if(this.cmsSubscription) {
+		if (this.cmsSubscription) {
 			this.cmsSubscription.unsubscribe();
 		}
 
-		if(this.capabilitySubscription) {
+		if (this.capabilitySubscription) {
 			this.capabilitySubscription.unsubscribe();
 		}
 	}
@@ -84,7 +88,8 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	onNotification(notification: AppNotification) {
 		if (
 			notification &&
-			(notification.type === NetworkStatus.Offline || notification.type === NetworkStatus.Online)
+			(notification.type === NetworkStatus.Offline ||
+				notification.type === NetworkStatus.Online)
 		) {
 			this.isOnline = notification.payload.isOnline;
 			this.fetchCMSArticles();
@@ -98,38 +103,42 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
 		const queryOptions = {
-			Page: 'lighting'
+			Page: 'lighting',
 		};
-		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
-			const cardContentPositionC = this.cmsService.getOneCMSContent(
-				response,
-				'half-width-title-description-link-image',
-				'position-C'
-			)[0];
-			if (cardContentPositionC) {
-				this.cardContentPositionC = cardContentPositionC;
-			}
-
-			const cardContentPositionF = this.cmsService.getOneCMSContent(
-				response,
-				'inner-page-right-side-article-image-background',
-				'position-F'
-			)[0];
-			if (cardContentPositionF) {
-				this.cardContentPositionF = cardContentPositionF;
-				if (this.cardContentPositionF.BrandName) {
-					this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split('|')[0];
+		this.cmsSubscription = this.cmsService
+			.fetchCMSContent(queryOptions)
+			.subscribe((response: any) => {
+				const cardContentPositionC = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-C'
+				)[0];
+				if (cardContentPositionC) {
+					this.cardContentPositionC = cardContentPositionC;
 				}
-			}
-		});
+
+				const cardContentPositionF = this.cmsService.getOneCMSContent(
+					response,
+					'inner-page-right-side-article-image-background',
+					'position-F'
+				)[0];
+				if (cardContentPositionF) {
+					this.cardContentPositionF = cardContentPositionF;
+					if (this.cardContentPositionF.BrandName) {
+						this.cardContentPositionF.BrandName = this.cardContentPositionF.BrandName.split(
+							'|'
+						)[0];
+					}
+				}
+			});
 
 		if (!this.isOnline) {
 			this.cardContentPositionC = {
-				FeatureImage: 'assets/cms-cache/GamingPosC.jpg'
+				FeatureImage: 'assets/cms-cache/GamingPosC.jpg',
 			};
 
 			this.cardContentPositionF = {
-				FeatureImage: 'assets/cms-cache/lighting_offline.jpg'
+				FeatureImage: 'assets/cms-cache/lighting_offline.jpg',
 			};
 		}
 	}
@@ -141,10 +150,14 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		}
 	}
 	public getLayOutversion() {
-		let ledSetFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledSetFeature);
+		let ledSetFeature = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.ledSetFeature
+		);
 		let ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver);
-		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion);
-		if(!ledSetFeature || !ledDriver || this.ledlayoutversion === undefined){
+		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.ledLayoutVersion
+		);
+		if (!ledSetFeature || !ledDriver || this.ledlayoutversion === undefined) {
 			this.router.navigate(['/device-gaming']);
 		}
 	}

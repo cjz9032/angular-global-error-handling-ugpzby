@@ -11,15 +11,15 @@ const routes: Routes = [
 	{
 		path: '',
 		component: PageDeviceGamingComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard],
 		data: {
-			pageName: 'Gaming.Dashboard'
-		}
-	}
+			pageName: 'Gaming.Dashboard',
+		},
+	},
 ];
 @NgModule({
-	imports: [ RouterModule.forChild(routes) ],
-	exports: [ RouterModule ]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
 export class GamingDashboardRoutingModule {}

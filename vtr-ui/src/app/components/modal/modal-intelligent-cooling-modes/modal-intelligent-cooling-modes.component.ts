@@ -4,14 +4,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
 	selector: 'vtr-modal-intelligent-cooling-modes',
 	templateUrl: './modal-intelligent-cooling-modes.component.html',
-	styleUrls: ['./modal-intelligent-cooling-modes.component.scss']
+	styleUrls: ['./modal-intelligent-cooling-modes.component.scss'],
 })
 export class ModalIntelligentCoolingModesComponent implements OnInit {
+	constructor(public activeModal: NgbActiveModal) {}
 
-	constructor(public activeModal: NgbActiveModal) { }
-
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	closeModal() {
 		this.activeModal.close('close');
@@ -20,7 +18,9 @@ export class ModalIntelligentCoolingModesComponent implements OnInit {
 		this.closeModal();
 	}
 
-	@HostListener('document:keydown.enter', ['$event']) onKeydownEnterHandler(event: KeyboardEvent) {
+	@HostListener('document:keydown.enter', ['$event']) onKeydownEnterHandler(
+		event: KeyboardEvent
+	) {
 		this.closeModal();
 	}
 

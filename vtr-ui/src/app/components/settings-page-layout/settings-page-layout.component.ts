@@ -6,7 +6,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 @Component({
 	selector: 'vtr-settings-page-layout',
 	templateUrl: './settings-page-layout.component.html',
-	styleUrls: ['./settings-page-layout.component.scss']
+	styleUrls: ['./settings-page-layout.component.scss'],
 })
 export class SettingsPageLayoutComponent implements OnInit, OnDestroy {
 	increasePadding = false;
@@ -18,12 +18,14 @@ export class SettingsPageLayoutComponent implements OnInit, OnDestroy {
 	@Input() backLinkText: string;
 	@Input() menuItems: any[];
 
-	constructor(public commonService: CommonService) { }
+	constructor(public commonService: CommonService) {}
 
 	ngOnInit() {
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onSmartStandbyNotification(notification);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onSmartStandbyNotification(notification);
+			}
+		);
 	}
 
 	onSmartStandbyNotification(notification: AppNotification) {
@@ -40,5 +42,4 @@ export class SettingsPageLayoutComponent implements OnInit, OnDestroy {
 			this.notificationSubscription.unsubscribe();
 		}
 	}
-
 }

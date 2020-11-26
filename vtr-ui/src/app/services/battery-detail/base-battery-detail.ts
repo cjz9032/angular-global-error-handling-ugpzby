@@ -7,9 +7,8 @@ import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
  * battery-detail.service.ts, for time being going to use battery-detail.service.mock.ts
  */
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export abstract class BaseBatteryDetail {
 	abstract getBatteryDetail(): Promise<BatteryDetail[]>;
 }
-

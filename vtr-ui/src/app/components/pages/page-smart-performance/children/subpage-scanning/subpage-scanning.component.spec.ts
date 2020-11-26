@@ -21,9 +21,9 @@ const responseData = {
 		status: { category: 100, subcategory: 101, final: 'Running' },
 		result: { tune: 0, boost: 0, secure: 0 },
 		rating: 0,
-		percentage: 100
+		percentage: 100,
 	},
-	state: true
+	state: true,
 };
 
 describe('SubpageScanningComponent', () => {
@@ -41,9 +41,9 @@ describe('SubpageScanningComponent', () => {
 				SmartPerformanceService,
 				VantageShellService,
 				LoggerService,
-				NgbModal
+				NgbModal,
 			],
-			imports: [TranslationModule, NgbModule]
+			imports: [TranslationModule, NgbModule],
 		});
 		fixture = TestBed.createComponent(SubpageScanningComponent);
 		component = fixture.componentInstance;
@@ -271,7 +271,7 @@ describe('SubpageScanningComponent', () => {
 		component.scheduleScanData = { ...responseData };
 		const spy = spyOn(component, 'updateScanResponse');
 		component.ngOnChanges({
-			isScanningStarted: new SimpleChange(null, null, false)
+			isScanningStarted: new SimpleChange(null, null, false),
 		});
 		expect(spy).toHaveBeenCalled();
 	});
@@ -285,5 +285,4 @@ describe('SubpageScanningComponent', () => {
 		component.updateScanResponse(responseData);
 		expect(component.isLoading).toBe(false);
 	});
-
 });

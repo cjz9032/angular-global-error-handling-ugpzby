@@ -4,10 +4,9 @@ import { DccService } from 'src/app/services/dcc/dcc.service';
 @Component({
 	selector: 'vtr-page-layout',
 	templateUrl: './page-layout.component.html',
-	styleUrls: ['./page-layout.component.scss']
+	styleUrls: ['./page-layout.component.scss'],
 })
 export class PageLayoutComponent implements OnInit {
-
 	@Input() title: string;
 	@Input() textId: string;
 	@Input() pageCssClass: string;
@@ -23,12 +22,9 @@ export class PageLayoutComponent implements OnInit {
 	@Input() showDemo: boolean;
 	@Input() hideTitle: boolean;
 
-	constructor(
-		public dccService: DccService
-	) { }
+	constructor(public dccService: DccService) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	onInnerBack() {
 		this.innerBack.emit();

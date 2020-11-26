@@ -18,261 +18,336 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 
 @Component({ selector: 'vtr-ui-toggle', template: '' })
 export class UiToggleStubComponent {
-    @Input() onOffSwitchId: string;
+	@Input() onOffSwitchId: string;
 }
 
-@Component({ selector: 'vtr-modal-gaming-prompt', template: ''})
+@Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptMockComponent {
-    componentInstance = {
-        title : undefined,
-        description : undefined,
-        comfirmButton : undefined,
-        comfirmButtonAriaLabel : undefined,
-        cancelButton : undefined,
-        cancelButtonAriaLabel : undefined,
-        checkboxTitle : undefined,
-        dontAskNarrator: undefined,
-        confirmMetricEnabled : true,
-        confirmMetricsItemId : undefined,
-        cancelMetricEnabled : false,
-        cancelMetricsItemId : undefined,
-        id : undefined,
-        //emitService: of(1),
-        emitService: new EventEmitter(),
-        setAppList: (arg1, arg2) => {return undefined;}
-    };
-    result = Promise.resolve(true);
+	componentInstance = {
+		title: undefined,
+		description: undefined,
+		comfirmButton: undefined,
+		comfirmButtonAriaLabel: undefined,
+		cancelButton: undefined,
+		cancelButtonAriaLabel: undefined,
+		checkboxTitle: undefined,
+		dontAskNarrator: undefined,
+		confirmMetricEnabled: true,
+		confirmMetricsItemId: undefined,
+		cancelMetricEnabled: false,
+		cancelMetricsItemId: undefined,
+		id: undefined,
+		//emitService: of(1),
+		emitService: new EventEmitter(),
+		setAppList: (arg1, arg2) => {
+			return undefined;
+		},
+	};
+	result = Promise.resolve(true);
 }
 
 describe('PageNetworkboostComponent', () => {
 	let component: PageNetworkboostComponent;
-    let fixture: ComponentFixture<PageNetworkboostComponent>;
-    let shellServices:any;
-    let gamingQuickSettingToolbarService:any;
-    let appnotification: AppNotification;
-    let modalService: any;
+	let fixture: ComponentFixture<PageNetworkboostComponent>;
+	let shellServices: any;
+	let gamingQuickSettingToolbarService: any;
+	let appnotification: AppNotification;
+	let modalService: any;
 
-    describe('quick setting toolbar & toast event', () => {
-        
-        const cmsMock = {
-            Results: [{
-                Id: 'e64d43892d8448d088f3e6037e385122', Title: 'Header Image DCC',
-                ShortTitle: '', Description: '',
-                FeatureImage: 'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/DCC_top_image.jpg?v=5cf8a0151ea84c4ca43e906339c3c3b2',
-                Action: '', ActionType: null, ActionLink: null, BrandName: 'brandname', BrandImage: '',
-                Priority: 'P1', Page: null, Template: 'header', Position: null, ExpirationDate: null,
-                Filters: { 'DeviceTag.Value': { key: 'System.DccGroup', operator: '==', value: 'true' } }
-            },
-            {
-                Id: '8516ba14dba5412ca954c3ccfdcbff90', Title: 'Default Header Image', ShortTitle: '', Description: '',
-                FeatureImage: 'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/Header-Image-Default.jpg?v=5d0bf7fd0065478c977ed284fecac45d', Action: '',
-                ActionType: null, ActionLink: null, BrandName: '', BrandImage: '', Priority: 'P2', Page: null,
-                Template: 'header', Position: null, ExpirationDate: null, Filters: null
-            }], Metadata: { Count: 2 }
-        };
+	describe('quick setting toolbar & toast event', () => {
+		const cmsMock = {
+			Results: [
+				{
+					Id: 'e64d43892d8448d088f3e6037e385122',
+					Title: 'Header Image DCC',
+					ShortTitle: '',
+					Description: '',
+					FeatureImage:
+						'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/DCC_top_image.jpg?v=5cf8a0151ea84c4ca43e906339c3c3b2',
+					Action: '',
+					ActionType: null,
+					ActionLink: null,
+					BrandName: 'brandname',
+					BrandImage: '',
+					Priority: 'P1',
+					Page: null,
+					Template: 'header',
+					Position: null,
+					ExpirationDate: null,
+					Filters: {
+						'DeviceTag.Value': {
+							key: 'System.DccGroup',
+							operator: '==',
+							value: 'true',
+						},
+					},
+				},
+				{
+					Id: '8516ba14dba5412ca954c3ccfdcbff90',
+					Title: 'Default Header Image',
+					ShortTitle: '',
+					Description: '',
+					FeatureImage:
+						'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/Header-Image-Default.jpg?v=5d0bf7fd0065478c977ed284fecac45d',
+					Action: '',
+					ActionType: null,
+					ActionLink: null,
+					BrandName: '',
+					BrandImage: '',
+					Priority: 'P2',
+					Page: null,
+					Template: 'header',
+					Position: null,
+					ExpirationDate: null,
+					Filters: null,
+				},
+			],
+			Metadata: { Count: 2 },
+		};
 
-        const cmsServiceMock = {
-            fetchCMSContent: (params) => of(cmsMock),
-            getOneCMSContent: (res, template, position) => res = cmsMock.Results
-        };
-        const commonServiceSpy = {
-            isOnline: true,
-            notification: new BehaviorSubject<AppNotification>(new AppNotification('init')),
-            getShellVersion: () => {return '1.1.1.1'},
-            compareVersion: (version1, version2) => {return 1},
-            sendNotification: (action, payload,) => {}
-        };
-        const localCacheServiceSpy = {
-            getLocalCacheValue: (key, defaultValue) => {return undefined},
-            setLocalCacheValue: (key, vaule) => {Promise.resolve()}
-        };
-        const loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['error', 'info']);
-        const vantageShellServiceSpy = jasmine.createSpyObj('VantageShellService', ['unRegisterEvent', 'registerEvent']);
-        const networkBoostServiceSpy = jasmine.createSpyObj('NetworkBoostService', ['isShellAvailable', 'getNeedToAsk', 'getNetworkBoostStatus', 'setNetworkBoostStatus']);
-        const gamingQuickSettingToolbarServiceSpy = jasmine.createSpyObj('GamingQuickSettingToolbarService', ['registerEvent', 'unregisterEvent']);
+		const cmsServiceMock = {
+			fetchCMSContent: (params) => of(cmsMock),
+			getOneCMSContent: (res, template, position) => (res = cmsMock.Results),
+		};
+		const commonServiceSpy = {
+			isOnline: true,
+			notification: new BehaviorSubject<AppNotification>(new AppNotification('init')),
+			getShellVersion: () => {
+				return '1.1.1.1';
+			},
+			compareVersion: (version1, version2) => {
+				return 1;
+			},
+			sendNotification: (action, payload) => {},
+		};
+		const localCacheServiceSpy = {
+			getLocalCacheValue: (key, defaultValue) => {
+				return undefined;
+			},
+			setLocalCacheValue: (key, vaule) => {
+				Promise.resolve();
+			},
+		};
+		const loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['error', 'info']);
+		const vantageShellServiceSpy = jasmine.createSpyObj('VantageShellService', [
+			'unRegisterEvent',
+			'registerEvent',
+		]);
+		const networkBoostServiceSpy = jasmine.createSpyObj('NetworkBoostService', [
+			'isShellAvailable',
+			'getNeedToAsk',
+			'getNetworkBoostStatus',
+			'setNetworkBoostStatus',
+		]);
+		const gamingQuickSettingToolbarServiceSpy = jasmine.createSpyObj(
+			'GamingQuickSettingToolbarService',
+			['registerEvent', 'unregisterEvent']
+		);
 
+		beforeEach(async(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					PageNetworkboostComponent,
+					UiToggleStubComponent,
+					ModalGamingPromptMockComponent,
+				],
+				imports: [TranslationModule, HttpClientModule],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient },
+					{ provide: TranslateStore },
+					{ provide: CommonService, useValue: commonServiceSpy },
+					{ provide: LocalCacheService, useValue: localCacheServiceSpy },
+					{ provide: LoggerService, useValue: loggerServiceSpy },
+					{ provide: CMSService, useValue: cmsServiceMock },
+					{ provide: VantageShellService, useValue: vantageShellServiceSpy },
+					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+					{
+						provide: GamingQuickSettingToolbarService,
+						useValue: gamingQuickSettingToolbarServiceSpy,
+					},
+				],
+			}).compileComponents();
+			shellServices = TestBed.inject(VantageShellService);
+			gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
+			fixture = TestBed.createComponent(PageNetworkboostComponent);
+			component = fixture.componentInstance;
+			modalService = TestBed.inject(NgbModal);
+			fixture.detectChanges();
+		}));
 
-        beforeEach(async(() => {
-            TestBed.configureTestingModule({
-                declarations: [PageNetworkboostComponent, UiToggleStubComponent, ModalGamingPromptMockComponent],
-                imports: [ TranslationModule, HttpClientModule ],
-                schemas: [NO_ERRORS_SCHEMA],
-                providers: [
-                    { provide: HttpClient },
-                    { provide: TranslateStore },
-                    { provide: CommonService, useValue: commonServiceSpy },
-                    { provide: LocalCacheService, useValue: localCacheServiceSpy},
-                    { provide: LoggerService, useValue: loggerServiceSpy },
-                    { provide: CMSService, useValue: cmsServiceMock },
-                    { provide: VantageShellService, useValue: vantageShellServiceSpy },
-                    { provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-                    { provide: GamingQuickSettingToolbarService, useValue: gamingQuickSettingToolbarServiceSpy }
-                ]
-            }).compileComponents();
-            shellServices = TestBed.inject(VantageShellService);
-            gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
-            fixture = TestBed.createComponent(PageNetworkboostComponent);
-            component = fixture.componentInstance;
-            modalService = TestBed.inject(NgbModal);
-            fixture.detectChanges();
-        }));
+		describe('PageNetworkBoostComponent init and destory', () => {
+			it('ngOnInit', () => {
+				spyOn(component, 'networkBoostRegisterEvent').and.callThrough();
+				expect(component.networkBoostRegisterEvent).toHaveBeenCalledTimes(0);
 
-        describe('PageNetworkBoostComponent init and destory', () => {
-            it('ngOnInit', () => {
-                spyOn(component, 'networkBoostRegisterEvent').and.callThrough();
-                expect(component.networkBoostRegisterEvent).toHaveBeenCalledTimes(0);
-    
-                component.ngOnInit();
-                expect(component.networkBoostRegisterEvent).toHaveBeenCalledTimes(1); 
-                
-                component.networkBoostRegisterEvent();
-                expect(gamingQuickSettingToolbarService.registerEvent).toHaveBeenCalled();
-                expect(shellServices.registerEvent).toHaveBeenCalled();
-            })
-        
-            it('onGamingQuickSettingsNetworkBoostStatusChangedEvent', () => {
-                component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(1);
-                expect(component.toggleStatus).toBe(true);
-        
-                component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(0);
-                expect(component.toggleStatus).toBe(false);
-            });
-        
-            it('ngOnDestroy', () => {
-                spyOn(component, 'networkBoostUnRegisterEvent').and.callThrough();
-                expect(component.networkBoostUnRegisterEvent).toHaveBeenCalledTimes(0);
-    
-                component.ngOnDestroy();
-                expect(component.networkBoostUnRegisterEvent).toHaveBeenCalledTimes(1); 
-    
-                component.networkBoostUnRegisterEvent();
-                expect(gamingQuickSettingToolbarService.unregisterEvent).toHaveBeenCalled();
-                expect(shellServices.unRegisterEvent).toHaveBeenCalled();
-            });    
-        });
+				component.ngOnInit();
+				expect(component.networkBoostRegisterEvent).toHaveBeenCalledTimes(1);
 
-        describe('openTargetModal Modal actions', () => {
-            it('openTargetModal', fakeAsync(() => {
-                //networkBoostServiceSpy.setNeedToAskStatusCache = () => { return Promise.resolve(true)};
-                component.isModalShowing = false;
-                networkBoostServiceSpy.getNeedToAsk = () => { return true;};
-                component.openTargetModal();
-                tick(50);
-                expect(component.needToAsk).toBe(true);
+				component.networkBoostRegisterEvent();
+				expect(gamingQuickSettingToolbarService.registerEvent).toHaveBeenCalled();
+				expect(shellServices.registerEvent).toHaveBeenCalled();
+			});
 
-                component.openTargetModal();
-                tick(50);
-                expect(component.isModalShowing).toBe(true);
+			it('onGamingQuickSettingsNetworkBoostStatusChangedEvent', () => {
+				component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(1);
+				expect(component.toggleStatus).toBe(true);
 
-                component.isModalShowing = false;
-                networkBoostServiceSpy.getNeedToAsk = () => { return false;};
-                component.toggleStatus = false;
-                component.openTargetModal();
-                tick(50);
-                expect(component.needToAsk).toBe(false);
-    
-                component.isModalShowing = false;
-                networkBoostServiceSpy.getNeedToAsk = () => { return 'undefined';};
-                component.openTargetModal();
-                tick(50);
-                expect(component.needToAsk).toBe(false);
+				component.onGamingQuickSettingsNetworkBoostStatusChangedEvent(0);
+				expect(component.toggleStatus).toBe(false);
+			});
 
-                component.isModalShowing = false;
-                networkBoostServiceSpy.getNeedToAsk = () => { return undefined;};
-                component.openTargetModal();
-                tick(50);
-                expect(component.needToAsk).toBe(false);
-                //expect(component.openTargetModal).toHaveBeenCalled;
-                //expect().nothing();
-            }));
+			it('ngOnDestroy', () => {
+				spyOn(component, 'networkBoostUnRegisterEvent').and.callThrough();
+				expect(component.networkBoostUnRegisterEvent).toHaveBeenCalledTimes(0);
 
-            it('setNetworkBoostStatus', fakeAsync(async() => {
-                localCacheServiceSpy.getLocalCacheValue = (key, defaulvalue) => {return 2};
-                let event = {switchValue: false};
-                await component.setNetworkBoostStatus(event);
-                expect(component.toggleStatus).toBe(false);
+				component.ngOnDestroy();
+				expect(component.networkBoostUnRegisterEvent).toHaveBeenCalledTimes(1);
 
-                localCacheServiceSpy.getLocalCacheValue = (key, defaulvalue) => {return 1};
-                await component.setNetworkBoostStatus(event);
-                expect(component.toggleStatus).toBe(false);
+				component.networkBoostUnRegisterEvent();
+				expect(gamingQuickSettingToolbarService.unregisterEvent).toHaveBeenCalled();
+				expect(shellServices.unRegisterEvent).toHaveBeenCalled();
+			});
+		});
 
-                event.switchValue = true;
-                await component.setNetworkBoostStatus(event);
-                event = null;
-                await component.setNetworkBoostStatus(event);
-                expect(component.toggleStatus).toBe(true);
-            }));
+		describe('openTargetModal Modal actions', () => {
+			it('openTargetModal', fakeAsync(() => {
+				//networkBoostServiceSpy.setNeedToAskStatusCache = () => { return Promise.resolve(true)};
+				component.isModalShowing = false;
+				networkBoostServiceSpy.getNeedToAsk = () => {
+					return true;
+				};
+				component.openTargetModal();
+				tick(50);
+				expect(component.needToAsk).toBe(true);
 
-            it('getNetworkBoostStatus', fakeAsync(async() => {
-                networkBoostServiceSpy.getNetworkBoostStatus = () => { throw new Error('getnetworkbooststatus error')};
-                await component.getNetworkBoostStatus();
-                expect(component.toggleStatus).toBe(undefined);
-            }));
-        });
-    
-        describe('Notification/fetchCMSArticles AppNotification', () => {
-            it('onnotification', fakeAsync(() => {
-                appnotification = {type: '[NetworkStatus] Offline', payload: 'null'};
-                commonServiceSpy.isOnline = undefined;
-                setTimeout(() => {
-                    commonServiceSpy.notification.next(appnotification);
-                }, 20);
-                tick(100);
-                expect(component.isOnline).toBe(true);
-            }));
-    
-            it('onnotification and fetchCMSArticles', fakeAsync(() => {
-                appnotification = {type: '[NetworkStatus] Offline', payload: 'null'};
-                commonServiceSpy.isOnline = false;
-                setTimeout(() => {
-                    commonServiceSpy.notification.next(appnotification);
-                    component.fetchCMSArticles();
-                }, 20);
-                tick(100);
-                expect(component.cardContentPositionC.FeatureImage).toEqual('assets/cms-cache/GamingPosC.jpg');
-            }));
-        });
-    
-        describe('showTurnOn showAddApps', () => {
-            it('showTurnOn--showAddApps', fakeAsync(() => {
-                try {
-                    let modalGamingPromptMock = new ModalGamingPromptMockComponent();
-                    //modalService.open = modalGamingPromptMock;
-                    spyOn(modalService, 'open').and.returnValue(modalGamingPromptMock);
-                    //let modalGamingRunningAppListMock = new ModalGamingRunningAppListMockComponent();
-                    //spyOn(modalService, 'open').and.returnValue(modalGamingRunningAppListMock);
-                    component.showTurnOn();
-                    setTimeout(() => {
-                        modalGamingPromptMock.componentInstance.emitService.next(true);
-                    }, 20);
-                    tick(100);
+				component.openTargetModal();
+				tick(50);
+				expect(component.isModalShowing).toBe(true);
 
-                    setTimeout(() => {
-                        modalGamingPromptMock.componentInstance.emitService.next(false);
-                    }, 20);
-                    tick(100);
+				component.isModalShowing = false;
+				networkBoostServiceSpy.getNeedToAsk = () => {
+					return false;
+				};
+				component.toggleStatus = false;
+				component.openTargetModal();
+				tick(50);
+				expect(component.needToAsk).toBe(false);
 
-                    setTimeout(() => {
-                        modalGamingPromptMock.componentInstance.emitService.next(1);
-                    }, 20);
-                    tick(100);
+				component.isModalShowing = false;
+				networkBoostServiceSpy.getNeedToAsk = () => {
+					return 'undefined';
+				};
+				component.openTargetModal();
+				tick(50);
+				expect(component.needToAsk).toBe(false);
 
-                    setTimeout(() => {
-                        modalGamingPromptMock.componentInstance.emitService.next(2);
-                    }, 20);
-                    tick(100);
-                    expect(component.isModalShowing).toBe(false);
-                } catch (error) {
-                   
-                }
-            }));
-        
-            it('setNotAskAgain', fakeAsync(() => {
-                const throwError = () => { throw new Error('error from setnotaskagain')};
-                networkBoostServiceSpy.setNeedToAskStatusCache = throwError;
-                component.setNotAskAgain(true);
-                expect(component.isModalShowing).toBe(false);
-            }));
-        });
-    });
+				component.isModalShowing = false;
+				networkBoostServiceSpy.getNeedToAsk = () => {
+					return undefined;
+				};
+				component.openTargetModal();
+				tick(50);
+				expect(component.needToAsk).toBe(false);
+				//expect(component.openTargetModal).toHaveBeenCalled;
+				//expect().nothing();
+			}));
+
+			it('setNetworkBoostStatus', fakeAsync(async () => {
+				localCacheServiceSpy.getLocalCacheValue = (key, defaulvalue) => {
+					return 2;
+				};
+				let event = { switchValue: false };
+				await component.setNetworkBoostStatus(event);
+				expect(component.toggleStatus).toBe(false);
+
+				localCacheServiceSpy.getLocalCacheValue = (key, defaulvalue) => {
+					return 1;
+				};
+				await component.setNetworkBoostStatus(event);
+				expect(component.toggleStatus).toBe(false);
+
+				event.switchValue = true;
+				await component.setNetworkBoostStatus(event);
+				event = null;
+				await component.setNetworkBoostStatus(event);
+				expect(component.toggleStatus).toBe(true);
+			}));
+
+			it('getNetworkBoostStatus', fakeAsync(async () => {
+				networkBoostServiceSpy.getNetworkBoostStatus = () => {
+					throw new Error('getnetworkbooststatus error');
+				};
+				await component.getNetworkBoostStatus();
+				expect(component.toggleStatus).toBe(undefined);
+			}));
+		});
+
+		describe('Notification/fetchCMSArticles AppNotification', () => {
+			it('onnotification', fakeAsync(() => {
+				appnotification = { type: '[NetworkStatus] Offline', payload: 'null' };
+				commonServiceSpy.isOnline = undefined;
+				setTimeout(() => {
+					commonServiceSpy.notification.next(appnotification);
+				}, 20);
+				tick(100);
+				expect(component.isOnline).toBe(true);
+			}));
+
+			it('onnotification and fetchCMSArticles', fakeAsync(() => {
+				appnotification = { type: '[NetworkStatus] Offline', payload: 'null' };
+				commonServiceSpy.isOnline = false;
+				setTimeout(() => {
+					commonServiceSpy.notification.next(appnotification);
+					component.fetchCMSArticles();
+				}, 20);
+				tick(100);
+				expect(component.cardContentPositionC.FeatureImage).toEqual(
+					'assets/cms-cache/GamingPosC.jpg'
+				);
+			}));
+		});
+
+		describe('showTurnOn showAddApps', () => {
+			it('showTurnOn--showAddApps', fakeAsync(() => {
+				try {
+					let modalGamingPromptMock = new ModalGamingPromptMockComponent();
+					//modalService.open = modalGamingPromptMock;
+					spyOn(modalService, 'open').and.returnValue(modalGamingPromptMock);
+					//let modalGamingRunningAppListMock = new ModalGamingRunningAppListMockComponent();
+					//spyOn(modalService, 'open').and.returnValue(modalGamingRunningAppListMock);
+					component.showTurnOn();
+					setTimeout(() => {
+						modalGamingPromptMock.componentInstance.emitService.next(true);
+					}, 20);
+					tick(100);
+
+					setTimeout(() => {
+						modalGamingPromptMock.componentInstance.emitService.next(false);
+					}, 20);
+					tick(100);
+
+					setTimeout(() => {
+						modalGamingPromptMock.componentInstance.emitService.next(1);
+					}, 20);
+					tick(100);
+
+					setTimeout(() => {
+						modalGamingPromptMock.componentInstance.emitService.next(2);
+					}, 20);
+					tick(100);
+					expect(component.isModalShowing).toBe(false);
+				} catch (error) {}
+			}));
+
+			it('setNotAskAgain', fakeAsync(() => {
+				const throwError = () => {
+					throw new Error('error from setnotaskagain');
+				};
+				networkBoostServiceSpy.setNeedToAskStatusCache = throwError;
+				component.setNotAskAgain(true);
+				expect(component.isModalShowing).toBe(false);
+			}));
+		});
+	});
 });

@@ -8,15 +8,12 @@ import { QaService } from './qa.service';
 // import { QA } from 'src/app/data-models/qa/qa.model';
 // import { of } from 'rxjs';
 
-
-
 describe('QaService', () => {
 	// let service: QaService;
 	// let translate: TranslateService;
 	// // let http: HttpTestingController;
 	// const TRANSLATIONS_EN = 'assets/i18n/en.json';
 	// const TRANSLATIONS_FR = 'assets/i18n/fr.json';
-
 	// const imagePath = 'assets/images/qa';
 	// const qas: QA[] = [
 	// 	{
@@ -65,7 +62,6 @@ describe('QaService', () => {
 	// 		itemId: '1'
 	// 	}
 	// ];
-
 	// beforeEach(() => TestBed.configureTestingModule({
 	// 	imports: [
 	// 		HttpClientTestingModule,
@@ -82,14 +78,12 @@ describe('QaService', () => {
 	// 		TranslateService
 	// 	]
 	// }));
-
 	// it('should set Translation service', () => {
 	// 	// const translate = TestBed.get(QaService)
 	// 	service = TestBed.get(QaService)
 	// 	service.setTranslationService(translate)
 	// 	expect(service).toEqual(translate)
 	// });
-
 	// it('#QaService should call getById', async () => {
 	// 	const id = 1
 	// 	service = TestBed.get(QaService);
@@ -98,7 +92,6 @@ describe('QaService', () => {
 	// 	})
 	// 	expect(service.getById(id)).toEqual(output);
 	// });
-
 	// it('should set language translations', () => {
 	// 	const evt: LangChangeEvent = {
 	// 		lang: 'en',
@@ -115,7 +108,6 @@ describe('QaService', () => {
 	// 	// spyOn(translate, 'stream').and.returnValue(of(qa))
 	// 	service.setCurrentLangTranslations()
 	// });
-
 	// it('should call getQATranslation --- isPreserved', () => {
 	// 	service = TestBed.get(QaService);
 	// 	service.preserveTransKeys.isPreserved = true
@@ -123,7 +115,6 @@ describe('QaService', () => {
 	// 	service.getQATranslation(translateQA)
 	// 	expect(service.preserveTransKeys.isPreserved).toBe(true)
 	// });
-
 	// it('should call getQATranslation -- isSubscribed', async(() => {
 	// 	const evt: LangChangeEvent = {
 	// 		lang: 'en',
@@ -143,8 +134,6 @@ describe('QaService', () => {
 	// 	// expect(service.title).toEqual('Support Detail')
 	// 	// translateQA['onLangChange'].sub
 	// }))
-
-
 	// it('should call getObjectValue when no object', () => {
 	// 	const evt: LangChangeEvent = {
 	// 		lang: 'en',
@@ -153,9 +142,7 @@ describe('QaService', () => {
 	// 	service = TestBed.get(QaService);
 	// 	const res = service.getObjectValue(evt.translations, 'faq.pageTitle');
 	// 	expect(res).toBe(null)
-
 	// });
-
 	// it('should call getObjectValue', () => {
 	// 	let evt: LangChangeEvent = {
 	// 		lang: 'en',
@@ -164,26 +151,18 @@ describe('QaService', () => {
 	// 	service = TestBed.get(QaService);
 	// 	let res = service.getObjectValue(evt.translations, 'faq.pageTitle');
 	// 	expect(res).toEqual('Support Detail')
-
 	// });
-
 	// it('should unsubscribe', () => {
 	// 	service = TestBed.get(QaService)
 	// 	service.destroyChangeSubscribed()
 	// 	expect(service.preserveTransKeys.isSubscribed).toEqual(false)
-
 	// });
-
 	// it('should unsubscribe - if', () => {
 	// 	service = TestBed.get(QaService)
 	// 	service.preserveTransKeys.isSubscribed = true
 	// 	service.destroyChangeSubscribed()
 	// 	expect(service.preserveTransKeys.isSubscribed).toEqual(false)
-
 	// });
-
-
-
 	/* it('#QaService setCurrentLangTranslations ', async () => {
 		spyOn(service, 'setCurrentLangTranslations').and.callThrough();
 		translateService.use('fr');
@@ -192,9 +171,6 @@ describe('QaService', () => {
 		// passes
 		expect(service.setCurrentLangTranslations).toHaveBeenCalled();
 	}); */
-
-
-
 	/* it('#QaService setTranslationService ', async () => {
 		spyOn(translateService, 'getBrowserLang').and.returnValue('en');
 		spyOn(service, 'setTranslationService').and.callThrough();
@@ -211,5 +187,4 @@ describe('QaService', () => {
 		// passes
 		expect(service.getById).toHaveBeenCalled();
 	}); */
-
 });

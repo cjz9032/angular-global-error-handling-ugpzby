@@ -1,6 +1,3 @@
 export class WelcomeTextContent {
-	constructor(
-		public language: string,
-		public titles: string[],
-	) { }
+	constructor(public language: string, public titles: string[]) {}
 }

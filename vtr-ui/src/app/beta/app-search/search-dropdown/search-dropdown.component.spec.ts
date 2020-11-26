@@ -11,9 +11,8 @@ xdescribe('SearchDropdownComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [SearchDropdownComponent],
-			imports:[FontAwesomeModule,RouterTestingModule]
-		})
-			.compileComponents();
+			imports: [FontAwesomeModule, RouterTestingModule],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

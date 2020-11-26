@@ -20,15 +20,15 @@ import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptStubComponent {
-    componentInstance = {
-        title: undefined,
-        description: undefined,
-        description2: undefined,
-        description3: undefined,
-        comfirmButton: undefined,
-        cancelButton: undefined,
-        emitService: of(1)
-    }
+	componentInstance = {
+		title: undefined,
+		description: undefined,
+		description2: undefined,
+		description3: undefined,
+		comfirmButton: undefined,
+		cancelButton: undefined,
+		emitService: of(1),
+	};
 }
 
 describe('WidgetSystemToolsComponent', () => {
@@ -45,8 +45,8 @@ describe('WidgetSystemToolsComponent', () => {
 				type: '[Gaming] GamingCapabilities',
 				payload: {
 					macroKeyFeature: macroKeyFeatureCache,
-				}
-			}
+				},
+			};
 			return of(res);
 		},
 	};
@@ -69,7 +69,7 @@ describe('WidgetSystemToolsComponent', () => {
 					break;
 			}
 		},
-	}
+	};
 	let GamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
 		getCapabilityFromCache(key: any) {
@@ -77,11 +77,14 @@ describe('WidgetSystemToolsComponent', () => {
 				case '[LocalStorageKey] MacroKeyFeature':
 					return macroKeyFeatureCache;
 			}
-		}
+		},
 	};
 
 	let hardwareScanServiceSpy = jasmine.createSpyObj('HardwareScanService', ['isAvailable']);
-	let gamingAccessoryServiceSpy = jasmine.createSpyObj('GamingAccessoryService', ['isLACSupportUriProtocol', 'launchAccessory']);
+	let gamingAccessoryServiceSpy = jasmine.createSpyObj('GamingAccessoryService', [
+		'isLACSupportUriProtocol',
+		'launchAccessory',
+	]);
 
 	hardwareScanServiceSpy.isAvailable.and.returnValue(Promise.resolve(false));
 	gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(Promise.resolve(false));
@@ -96,11 +99,14 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
-					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: GamingAllCapabilitiesServiceMock,
+					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
-					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy }
-				]
+					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
 			component = fixture.debugElement.componentInstance;
@@ -114,15 +120,27 @@ describe('WidgetSystemToolsComponent', () => {
 		});
 
 		it('ngOnInit not support macroKey', () => {
-			expect(component.gamingProperties.macroKeyFeature).toBe(false, `not support macrokey, component.gamingProperties.macroKeyFeature should keep false`);
-			expect(component.toolLength).toBe(3, `not support macrokey, component.toolLength should keep 3`);
+			expect(component.gamingProperties.macroKeyFeature).toBe(
+				false,
+				`not support macrokey, component.gamingProperties.macroKeyFeature should keep false`
+			);
+			expect(component.toolLength).toBe(
+				3,
+				`not support macrokey, component.toolLength should keep 3`
+			);
 		});
 
 		it('ngOnInit macroKey', () => {
 			macroKeyFeatureCache = true;
 			component.ngOnInit();
-			expect(component.gamingProperties.macroKeyFeature).toBe(true, `macroKey supported, component.gamingProperties.macroKeyFeature should be true`);
-			expect(component.toolLength).toBe(4, `macrokey supported, component.toolLength should be 4`);
+			expect(component.gamingProperties.macroKeyFeature).toBe(
+				true,
+				`macroKey supported, component.gamingProperties.macroKeyFeature should be true`
+			);
+			expect(component.toolLength).toBe(
+				4,
+				`macrokey supported, component.toolLength should be 4`
+			);
 		});
 
 		// Checking path for Macro Key title link.
@@ -131,7 +149,7 @@ describe('WidgetSystemToolsComponent', () => {
 			component.ngOnInit();
 			fixture.detectChanges();
 			const macrokey = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const macrokeyValue = macrokey.findIndex(mc => {
+			const macrokeyValue = macrokey.findIndex((mc) => {
 				return mc.properties.href === '/gaming/macrokey';
 			});
 			expect(macrokeyValue).toBe(1);
@@ -148,11 +166,14 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
-					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: GamingAllCapabilitiesServiceMock,
+					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
-					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy }
-				]
+					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
 			component = fixture.debugElement.componentInstance;
@@ -182,7 +203,9 @@ describe('WidgetSystemToolsComponent', () => {
 		}));
 
 		it('ngOnInit hardwareScan error', fakeAsync(() => {
-			hardwareScanServiceSpy.isAvailable.and.returnValue(Promise.reject('hardwareScan error'));
+			hardwareScanServiceSpy.isAvailable.and.returnValue(
+				Promise.reject('hardwareScan error')
+			);
 			component.showHWScanMenu = true;
 			expect(component.showHWScanMenu).toBe(true);
 			component.ngOnInit();
@@ -196,7 +219,7 @@ describe('WidgetSystemToolsComponent', () => {
 			component.ngOnInit();
 			fixture.detectChanges();
 			const hardwareScan = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const hardwareScanValue = hardwareScan.findIndex(res => {
+			const hardwareScanValue = hardwareScan.findIndex((res) => {
 				return res.properties.href === '/hardware-scan';
 			});
 			expect(hardwareScanValue).toBe(3);
@@ -216,11 +239,14 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
-					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: GamingAllCapabilitiesServiceMock,
+					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
-					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy }
-				]
+					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
+				],
 			}).compileComponents();
 			modalService = TestBed.inject(NgbModal);
 			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
@@ -232,7 +258,9 @@ describe('WidgetSystemToolsComponent', () => {
 			macroKeyFeatureCache = false;
 			hardwareScanFeatureCache = false;
 			accessoryFeatureCache = false;
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(Promise.resolve(false));
+			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+				Promise.resolve(false)
+			);
 			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(false));
 		});
 
@@ -242,7 +270,9 @@ describe('WidgetSystemToolsComponent', () => {
 		});
 
 		it('ngOnInit legionAccessory', fakeAsync(() => {
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(Promise.resolve(true));
+			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+				Promise.resolve(true)
+			);
 			accessoryFeatureCache = false;
 			component.ngOnInit();
 			tick();
@@ -252,22 +282,28 @@ describe('WidgetSystemToolsComponent', () => {
 		}));
 
 		it('launchAccessory', fakeAsync(() => {
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(Promise.resolve(true));
+			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+				Promise.resolve(true)
+			);
 			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(true));
-			spyOn(component, 'openWaringModal').and.callFake(() => { });
+			spyOn(component, 'openWaringModal').and.callFake(() => {});
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 			component.launchAccessory();
 			tick();
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(Promise.resolve(true));
+			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+				Promise.resolve(true)
+			);
 			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(false));
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 			component.launchAccessory();
 			tick();
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(Promise.resolve(false));
+			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+				Promise.resolve(false)
+			);
 			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(undefined));
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 			component.launchAccessory();
@@ -276,10 +312,12 @@ describe('WidgetSystemToolsComponent', () => {
 		}));
 
 		it('launchAccessory error', () => {
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.throwError('launchAccessory error');
+			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.throwError(
+				'launchAccessory error'
+			);
 			try {
 				component.launchAccessory();
-			} catch(error) {
+			} catch (error) {
 				expect(error).toMatch('launchAccessory error');
 			}
 		});
@@ -287,20 +325,22 @@ describe('WidgetSystemToolsComponent', () => {
 		it('openWaringModal', () => {
 			let modalRef = new ModalGamingPromptStubComponent();
 			spyOn(modalService, 'open').and.returnValue(modalRef);
-			spyOn(window, 'open').and.callFake(() => { return null});
+			spyOn(window, 'open').and.callFake(() => {
+				return null;
+			});
 			expect(modalService.open).toHaveBeenCalledTimes(0);
 			expect(window.open).toHaveBeenCalledTimes(0);
 
-			modalRef.componentInstance.emitService = of(0)
-            component.openWaringModal();
+			modalRef.componentInstance.emitService = of(0);
+			component.openWaringModal();
 			expect(modalService.open).toHaveBeenCalledTimes(1);
 			expect(window.open).toHaveBeenCalledTimes(0);
 
-            modalRef.componentInstance.emitService = of(1)
-            component.openWaringModal();
+			modalRef.componentInstance.emitService = of(1);
+			component.openWaringModal();
 			expect(modalService.open).toHaveBeenCalledTimes(2);
 			expect(window.open).toHaveBeenCalledTimes(1);
-		})
+		});
 	});
 
 	describe('systemUpdate & power & media', () => {
@@ -313,11 +353,14 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
 					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock},
-					{ provide: GamingAllCapabilitiesService, useValue: GamingAllCapabilitiesServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: GamingAllCapabilitiesServiceMock,
+					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
-					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy }
-				]
+					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
+				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
 			component = fixture.debugElement.componentInstance;
@@ -327,7 +370,7 @@ describe('WidgetSystemToolsComponent', () => {
 		// Checking path for system update title link.
 		it('should have path /device/system-updates for System Update title link', async () => {
 			const systemUpdate = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const systemUpdateValue = systemUpdate.findIndex(su => {
+			const systemUpdateValue = systemUpdate.findIndex((su) => {
 				return su.properties.href === '/device/system-updates';
 			});
 			expect(systemUpdateValue).toBeGreaterThan(-1);
@@ -336,13 +379,15 @@ describe('WidgetSystemToolsComponent', () => {
 		it('should have title System Updates', async () => {
 			fixture.detectChanges();
 			const compiled = fixture.debugElement.nativeElement;
-			expect(compiled.querySelector('#gaming_dashboard_systemtools_systemupdates').textContent).toEqual(' gaming.dashboard.device.systemTools.systemUpdate ');
+			expect(
+				compiled.querySelector('#gaming_dashboard_systemtools_systemupdates').textContent
+			).toEqual(' gaming.dashboard.device.systemTools.systemUpdate ');
 		});
 
 		// Checking path for Power title link.
 		it('should have path /device/device-settings/power for Power title link', async () => {
 			const power = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const powerValue = power.findIndex(p => {
+			const powerValue = power.findIndex((p) => {
 				return p.properties.href === '/device/device-settings/power';
 			});
 			expect(powerValue).toBeGreaterThan(-1);
@@ -351,13 +396,15 @@ describe('WidgetSystemToolsComponent', () => {
 		it('should have title Power', async () => {
 			fixture.detectChanges();
 			const compiled = fixture.debugElement.nativeElement;
-			expect(compiled.querySelector('#gaming_dashboard_systemtools_power').textContent).toEqual(' gaming.dashboard.device.systemTools.power');
+			expect(
+				compiled.querySelector('#gaming_dashboard_systemtools_power').textContent
+			).toEqual(' gaming.dashboard.device.systemTools.power');
 		});
 
 		// Checking path for Media title link.
 		it('should have path /device/device-settings/display-camera for Media title link', async () => {
 			const camera = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const cameraValue = camera.findIndex(c => {
+			const cameraValue = camera.findIndex((c) => {
 				return c.properties.href === '/device/device-settings/display-camera';
 			});
 			expect(cameraValue).toBeGreaterThan(-1);
@@ -366,7 +413,9 @@ describe('WidgetSystemToolsComponent', () => {
 		it('should have title Media', async () => {
 			fixture.detectChanges();
 			const compiled = fixture.debugElement.nativeElement;
-			expect(compiled.querySelector('#gaming_dashboard_systemtools_displaycamera').textContent).toEqual(' gaming.dashboard.device.systemTools.media');
+			expect(
+				compiled.querySelector('#gaming_dashboard_systemtools_displaycamera').textContent
+			).toEqual(' gaming.dashboard.device.systemTools.media');
 		});
 	});
 });
@@ -378,11 +427,13 @@ describe('WidgetSystemToolsComponent', () => {
  */
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
-	return <any>Pipe(metadata)(class MockPipe {
-		public transform(query: string, ...args: any[]): any {
-			return query;
+	return <any>Pipe(metadata)(
+		class MockPipe {
+			public transform(query: string, ...args: any[]): any {
+				return query;
+			}
 		}
-	})
+	);
 }

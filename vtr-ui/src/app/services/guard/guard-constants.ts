@@ -8,12 +8,12 @@ import { DeviceService } from '../device/device.service';
 export class GuardConstants {
 	defaultRoute: UrlTree | boolean;
 
-	constructor(
-		private router: Router,
-		private deviceService: DeviceService
-	) {
-		this.defaultRoute = this.router.url === '/dashboard' || this.router.url === '/device-gaming' ?
-							false :
-							this.router.parseUrl(this.deviceService.isGaming ? '/device-gaming' : '/dashboard');
+	constructor(private router: Router, private deviceService: DeviceService) {
+		this.defaultRoute =
+			this.router.url === '/dashboard' || this.router.url === '/device-gaming'
+				? false
+				: this.router.parseUrl(
+						this.deviceService.isGaming ? '/device-gaming' : '/dashboard'
+				  );
 	}
 }

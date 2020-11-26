@@ -21,16 +21,14 @@ describe('PowerPlanComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [PowerPlanComponent],
 			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-			providers: [TranslateStore]
-		})
-			.compileComponents();
+			providers: [TranslateStore],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PowerPlanComponent);
 		component = fixture.componentInstance;
 		powerDpmService = fixture.debugElement.injector.get(PowerDpmService);
-
 	});
 
 	it('should create', () => {
@@ -44,7 +42,7 @@ describe('PowerPlanComponent', () => {
 			powerPlanList: [
 				{ powerPlanName: 'Balanced' } as PowerPlan,
 				{ powerPlanName: 'HighPerformance' } as PowerPlan,
-			]
+			],
 		} as AllPowerPlans;
 		spyOn(powerDpmService, 'getAllPowerPlansObs').and.returnValue(of(mockAllPowerPlans));
 		fixture.detectChanges();
@@ -52,15 +50,15 @@ describe('PowerPlanComponent', () => {
 	});
 
 	it('should get null when error occure', () => {
-		component.selectedPowerPlanVal=null;
+		component.selectedPowerPlanVal = null;
 		spyOn(powerDpmService, 'getAllPowerPlansObs').and.returnValue(of(null));
 		fixture.detectChanges();
 		expect(component.selectedPowerPlanVal).toBeNull();
 	});
 
-	it('#onPowerPlanChange should send active power plan',()=>{
+	it('#onPowerPlanChange should send active power plan', () => {
 		spyOn(powerDpmService, 'setCurrentPowerPlan');
-		component.onPowerPlanChange({name:'plan1',value:1}as DPMDropDownInterval);
+		component.onPowerPlanChange({ name: 'plan1', value: 1 } as DPMDropDownInterval);
 		expect(powerDpmService.setCurrentPowerPlan).toHaveBeenCalled();
 	});
 });

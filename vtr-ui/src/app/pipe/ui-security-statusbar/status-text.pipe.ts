@@ -19,7 +19,7 @@ export class StatusTextPipe implements PipeTransform {
 			case 'protected':
 				return 'homeSecurity.ecosystem.protected';
 			case 'not-protected':
-				return  'homeSecurity.ecosystem.notProtected';
+				return 'homeSecurity.ecosystem.notProtected';
 			case 'failedLoad':
 				return 'common.ui.failedLoad';
 		}

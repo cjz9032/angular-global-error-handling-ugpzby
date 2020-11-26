@@ -31,19 +31,18 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 import { PageDashboardComponent } from './page-dashboard.component';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 
-
 class TranslateServiceStub {
 	public onTranslationChange: EventEmitter<any> = new EventEmitter();
 	public onDefaultLangChange: EventEmitter<any> = new EventEmitter();
-	instant(data: string) { }
+	instant(data: string) {}
 	stream(data: string) {
 		return of(data);
 	}
 	get(key: string) {
 		return of(key);
 	}
-	setDefaultLang(lang: string) { }
-	use(lang: string) { }
+	setDefaultLang(lang: string) {}
+	use(lang: string) {}
 	get onLangChange() {
 		return of({ lang: 'en' });
 	}
@@ -51,7 +50,6 @@ class TranslateServiceStub {
 /* const fakeActivatedRoute = {
 	snapshot: { data: { ... } }
 } as ActivatedRoute; */
-
 
 describe('PageDashboardComponent', () => {
 	let component: PageDashboardComponent;
@@ -69,11 +67,7 @@ describe('PageDashboardComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [PageDashboardComponent, FormatLocaleDatePipe],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
 			providers: [
 				DashboardService,
 				QaService,
@@ -100,10 +94,9 @@ describe('PageDashboardComponent', () => {
 				LocalInfoService,
 				MetricService,
 				DevService,
-				CommsService
-			]
-		})
-			.compileComponents();
+				CommsService,
+			],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -122,9 +115,7 @@ describe('PageDashboardComponent', () => {
 		spyOn(component, 'ngOnInit');
 		// const welcomeTut: WelcomeTutorial = { page: 2, tutorialVersion: 'someVersion', isDone: true };
 		// spyOn(commonService, 'getLocalStorageValue').and.returnValue(welcomeTut);
-		spyOnProperty(translate, 'onLangChange', 'get').and.returnValue(
-			of({ lang: 'fr' })
-		);
+		spyOnProperty(translate, 'onLangChange', 'get').and.returnValue(of({ lang: 'fr' }));
 		// fixture.detectChanges();
 		expect(component).toBeTruthy();
 	});
@@ -140,7 +131,6 @@ describe('PageDashboardComponent', () => {
 		component.ngOnDestroy();
 		expect(spy).toHaveBeenCalled();
 	});
-
 
 	afterEach(() => {
 		jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;

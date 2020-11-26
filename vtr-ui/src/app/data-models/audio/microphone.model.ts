@@ -9,5 +9,5 @@ export class Microphone {
 		public AEC: boolean,
 		public disableEffect: boolean,
 		public permission: boolean
-	) { }
+	) {}
 }

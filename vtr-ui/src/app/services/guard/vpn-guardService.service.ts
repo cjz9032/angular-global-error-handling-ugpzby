@@ -13,14 +13,11 @@ export class VpnGuardService extends BasicGuard {
 		private localInfoService: LocalInfoService,
 		public guardConstants: GuardConstants,
 		public commonService: CommonService
-	) { 
+	) {
 		super(commonService, guardConstants);
 	}
 
-    canActivate(
-		route: ActivatedRouteSnapshot,
-		state: RouterStateSnapshot
-	): Promise<any> {
+	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<any> {
 		return this.localInfoService
 			.getLocalInfo()
 			.then((result) => {

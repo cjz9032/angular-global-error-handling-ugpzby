@@ -14,15 +14,18 @@ describe('UiSwitchOnoffComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiSwitchOnoffComponent],
-			imports: [RouterTestingModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				}
-			}), HttpClientTestingModule],
-		})
-			.compileComponents();
+			imports: [
+				RouterTestingModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+				}),
+				HttpClientTestingModule,
+			],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -35,15 +38,15 @@ describe('UiSwitchOnoffComponent', () => {
 		expect(component).toBeTruthy();
 	});
 	it('should call sendChangeEvent', () => {
-		const event = { target: { switchValue: 4 } }
-		component.sendChangeEvent(event)
+		const event = { target: { switchValue: 4 } };
+		component.sendChangeEvent(event);
 	});
 	it('should call stopPropagation', () => {
 		const event = new Event('click');
-		component.stopPropagation(event)
+		component.stopPropagation(event);
 	});
 	it('should call onChange', () => {
-		const event = { target: { switchValue: 4, disabled: true } }
-		component.onChange(event)
+		const event = { target: { switchValue: 4, disabled: true } };
+		component.onChange(event);
 	});
 });

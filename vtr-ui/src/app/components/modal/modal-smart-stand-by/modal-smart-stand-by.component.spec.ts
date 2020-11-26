@@ -117,7 +117,6 @@
 // 			expect(spy).toHaveBeenCalled()
 // 		})
 
-
 // 		// testing http.get
 // 		// it('should call getActivities', (() => {
 // 		// 	const { fixture, component, httpTestingController } = setup();

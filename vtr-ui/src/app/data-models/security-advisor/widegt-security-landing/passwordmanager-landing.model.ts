@@ -16,7 +16,7 @@ export class PasswordManagerLandingViewModel {
 		content: 'security.landing.passwordContent',
 		ownTitle: 'security.landing.haveOwnPassword',
 		id: 'sa-ov-link-passwordManager',
-		detail: ''
+		detail: '',
 	};
 	translateString: any;
 
@@ -24,42 +24,50 @@ export class PasswordManagerLandingViewModel {
 		translate: TranslateService,
 		pmModel: phoenix.PasswordManager,
 		public commonService: CommonService,
-		private localCacheService: LocalCacheService) {
+		private localCacheService: LocalCacheService
+	) {
 		pmModel.on(EventTypes.pmStatusEvent, (data) => {
 			this.setPmStatus(data);
 		});
-		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus);
-		translate.stream([
-			'common.securityAdvisor.installed',
-			'common.securityAdvisor.installing',
-			'common.securityAdvisor.notInstalled',
-			'security.landing.pwdHealth',
-			'common.securityAdvisor.loading',
-			'security.landing.passwordContent',
-			'security.landing.haveOwnPassword',
-			'security.landing.goPassword',
-		]).subscribe((res: any) => {
-			if (!this.pmStatus.detail) {
-				this.pmStatus.detail = res['common.securityAdvisor.loading'];
-			}
-			this.translateString = res;
-			this.pmStatus.title = res['security.landing.pwdHealth'];
-			this.pmStatus.content = res['security.landing.passwordContent'];
-			this.pmStatus.buttonLabel = res['security.landing.goPassword'];
-			this.pmStatus.ownTitle = res['security.landing.haveOwnPassword'];
-			if (pmModel.status) {
-				this.setPmStatus(pmModel.status);
-			} else if (cacheStatus) {
-				this.setPmStatus(cacheStatus);
-			}
-		});
+		const cacheStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityPasswordManagerStatus
+		);
+		translate
+			.stream([
+				'common.securityAdvisor.installed',
+				'common.securityAdvisor.installing',
+				'common.securityAdvisor.notInstalled',
+				'security.landing.pwdHealth',
+				'common.securityAdvisor.loading',
+				'security.landing.passwordContent',
+				'security.landing.haveOwnPassword',
+				'security.landing.goPassword',
+			])
+			.subscribe((res: any) => {
+				if (!this.pmStatus.detail) {
+					this.pmStatus.detail = res['common.securityAdvisor.loading'];
+				}
+				this.translateString = res;
+				this.pmStatus.title = res['security.landing.pwdHealth'];
+				this.pmStatus.content = res['security.landing.passwordContent'];
+				this.pmStatus.buttonLabel = res['security.landing.goPassword'];
+				this.pmStatus.ownTitle = res['security.landing.haveOwnPassword'];
+				if (pmModel.status) {
+					this.setPmStatus(pmModel.status);
+				} else if (cacheStatus) {
+					this.setPmStatus(cacheStatus);
+				}
+			});
 	}
 
 	setPmStatus(status: string) {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingPasswordManagerShowOwn, null);
+		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityLandingPasswordManagerShowOwn,
+			null
+		);
 		this.pmStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		switch (status) {
 			case 'installed':
@@ -74,6 +82,9 @@ export class PasswordManagerLandingViewModel {
 				this.pmStatus.detail = this.translateString['common.securityAdvisor.notInstalled'];
 				this.pmStatus.status = 'not-installed';
 		}
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.SecurityPasswordManagerStatus,
+			status
+		);
 	}
 }

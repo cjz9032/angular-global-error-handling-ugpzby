@@ -10,11 +10,9 @@ import { HardwareScanService } from '../../../services/hardware-scan.service';
 @Component({
 	selector: 'vtr-widget-schedule-scan',
 	templateUrl: './widget-schedule-scan.component.html',
-	styleUrls: ['./widget-schedule-scan.component.scss']
+	styleUrls: ['./widget-schedule-scan.component.scss'],
 })
-
 export class WidgetScheduleScanComponent implements OnInit {
-
 	public title = this.translate.instant('hardwareScan.scheduledScan.title');
 	public description: string;
 	public buttonText = this.translate.instant('hardwareScan.scheduledScan.newScan');
@@ -25,15 +23,18 @@ export class WidgetScheduleScanComponent implements OnInit {
 		public deviceService: DeviceService,
 		private hardwareScanService: HardwareScanService,
 		private modalService: NgbModal,
-		private translate: TranslateService,
-	) { }
+		private translate: TranslateService
+	) {}
 
 	ngOnInit() {
-		if (!this.hardwareScanService.isScanExecuting() && !this.hardwareScanService.isRecoverExecuting()) {
+		if (
+			!this.hardwareScanService.isScanExecuting() &&
+			!this.hardwareScanService.isRecoverExecuting()
+		) {
 			this.hardwareScanService.getNextScans().then((response) => {
 				for (const req of response.scheduleRequests) {
 					const scheduleScanDelete = {
-						taskID: req.taskID
+						taskID: req.taskID,
 					};
 
 					const date = req.scheduleDate[0].split('/');
@@ -46,31 +47,38 @@ export class WidgetScheduleScanComponent implements OnInit {
 					} else {
 						type = this.translate.instant('hardwareScan.scheduledScan.fullScan');
 					}
-					this.items.push({ name: req.nextExecutionDate, scanType: type, frequency: req.scheduleFrequency, date: dateString, time: req.scheduleTime, deleteReq: scheduleScanDelete });
+					this.items.push({
+						name: req.nextExecutionDate,
+						scanType: type,
+						frequency: req.scheduleFrequency,
+						date: dateString,
+						time: req.scheduleTime,
+						deleteReq: scheduleScanDelete,
+					});
 				}
 			});
 		}
 	}
 
 	editScanFromList($event) {
-        let i = 0;
-        for (const scan of this.items) {
-            if (scan.deleteReq.taskID === $event.scanID) {
+		let i = 0;
+		for (const scan of this.items) {
+			if (scan.deleteReq.taskID === $event.scanID) {
 				this.editing = scan;
 				this.onScheduleScanModal(true);
 
 				break;
 			}
-            i++;
-        }
-    }
+			i++;
+		}
+	}
 
 	onScheduleScanModal(edit: boolean) {
 		const modal: NgbModalRef = this.modalService.open(ModalScheduleNewScanComponent, {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'hardware-scan-modal-size'
+			windowClass: 'hardware-scan-modal-size',
 		});
 
 		(<ModalScheduleNewScanComponent>modal.componentInstance).editMode = edit;
@@ -82,101 +90,109 @@ export class WidgetScheduleScanComponent implements OnInit {
 		}
 
 		modal.result.then(
-			result => {
+			(result) => {
 				if (result) {
-                    switch (result.mode) {
+					switch (result.mode) {
 						case 0:
 							this.getScheduleScan(this.buildScheduleScanRequest(result.newScan));
 							break;
 						case 1:
-							this.editScan(this.buildScheduleScanRequest(result.newScan), this.buildScheduleScanRequest(result.oldScan));
+							this.editScan(
+								this.buildScheduleScanRequest(result.newScan),
+								this.buildScheduleScanRequest(result.oldScan)
+							);
 							break;
 						case 2:
 							this.deleteScheduledScan(result.deleteRequest);
 							break;
 					}
-                } else {}
+				} else {
+				}
 			},
-			reason => {
-
-			}
+			(reason) => {}
 		);
 	}
 
 	public deleteScheduledScan(payload) {
-
 		let i = 0;
 		for (const scan of this.items) {
 			if (scan.deleteReq.taskID === payload.taskID) {
-                break;
-            }
+				break;
+			}
 			i++;
 		}
 
 		if (this.hardwareScanService) {
-			this.hardwareScanService.deleteScan(payload)
-				.then((response) => {
-                this.items.splice(i, 1);
-            });
+			this.hardwareScanService.deleteScan(payload).then((response) => {
+				this.items.splice(i, 1);
+			});
 		}
 	}
 
 	public editScan(newScanRequest, oldScanRequest) {
 		const payload = {
 			newScan: newScanRequest,
-			oldScan: oldScanRequest.taskID
+			oldScan: oldScanRequest.taskID,
 		};
 
 		if (this.hardwareScanService) {
-			this.hardwareScanService.editScheduledScan(payload)
-				.then((response) => {
-					if (response.status === 'COLLISION') {
-                        // const error = this.translate.instant('hardwareScan.scheduleScan.error');
-                        // const description = this.translate.instant('hardwareScan.scheduleScan.description');
-                        this.OnCollisionModal();
-                    } else {
-						this.hardwareScanService.getNextScans().then((response) => {
-							this.items = [];
-							for (const req of response.scheduleRequests) {
-								const scheduleScanDelete = {
-									taskID: req.taskID
-								};
+			this.hardwareScanService.editScheduledScan(payload).then((response) => {
+				if (response.status === 'COLLISION') {
+					// const error = this.translate.instant('hardwareScan.scheduleScan.error');
+					// const description = this.translate.instant('hardwareScan.scheduleScan.description');
+					this.OnCollisionModal();
+				} else {
+					this.hardwareScanService.getNextScans().then((response) => {
+						this.items = [];
+						for (const req of response.scheduleRequests) {
+							const scheduleScanDelete = {
+								taskID: req.taskID,
+							};
 
-								const date = req.scheduleDate[0].split('/');
-								const dateString = date[2] + '-' + date[0] + '-' + date[1];
+							const date = req.scheduleDate[0].split('/');
+							const dateString = date[2] + '-' + date[0] + '-' + date[1];
 
-								let type = '';
-								if (req.scheduleType === HardwareScheduleScanType.Quick) {
-									type = this.translate.instant('hardwareScan.quickScan');
-								} else {
-									type = this.translate.instant('hardwareScan.scheduledScan.fullScan');
-								}
-
-								this.items.push({ name: req.nextExecutionDate, scanType: type, frequency: req.scheduleFrequency, date: dateString, time: req.scheduleTime, deleteReq: scheduleScanDelete });
+							let type = '';
+							if (req.scheduleType === HardwareScheduleScanType.Quick) {
+								type = this.translate.instant('hardwareScan.quickScan');
+							} else {
+								type = this.translate.instant(
+									'hardwareScan.scheduledScan.fullScan'
+								);
 							}
-						});
-					}
-				});
+
+							this.items.push({
+								name: req.nextExecutionDate,
+								scanType: type,
+								frequency: req.scheduleFrequency,
+								date: dateString,
+								time: req.scheduleTime,
+								deleteReq: scheduleScanDelete,
+							});
+						}
+					});
+				}
+			});
 		}
 	}
 
 	async OnCollisionModal(error = null, description = null, size: string = 'lg') {
 		let modal;
 		if (size === 'sm') {
-			modal = this.modalService
-			.open(ModalPreScanInfoComponent, { // Component name renamed for PreScanInfo modal. Do it right here when implementing Schedule Scan correctly
+			modal = this.modalService.open(ModalPreScanInfoComponent, {
+				// Component name renamed for PreScanInfo modal. Do it right here when implementing Schedule Scan correctly
 				backdrop: 'static',
 				size: 'sm',
 				centered: true,
-				windowClass: 'hardware-scan-modal-size'
+				windowClass: 'hardware-scan-modal-size',
 			});
 		} else {
-			modal = this.modalService
-				.open(ModalPreScanInfoComponent, { // Component name renamed for PreScanInfo modal. Do it right here when implementing Schedule Scan correctly
-					backdrop: 'static',
-					size: 'lg',
-					centered: true,
-					windowClass: 'hardware-scan-modal-size'
+			modal = this.modalService.open(ModalPreScanInfoComponent, {
+				// Component name renamed for PreScanInfo modal. Do it right here when implementing Schedule Scan correctly
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				windowClass: 'hardware-scan-modal-size',
 			});
 		}
 
@@ -188,18 +204,19 @@ export class WidgetScheduleScanComponent implements OnInit {
 		}
 
 		modal.result.then(
-			result => {
-				if (result) {} else {}
+			(result) => {
+				if (result) {
+				} else {
+				}
 			},
-			reason => {
-			}
+			(reason) => {}
 		);
 	}
 
 	public buildScheduleScanRequest(data: any) {
 		const doScanRequest = {
 			requests: null,
-			categories: this.hardwareScanService.getCategoryInformation()
+			categories: this.hardwareScanService.getCategoryInformation(),
 		};
 
 		if (data.scanOption === '0') {
@@ -228,53 +245,70 @@ export class WidgetScheduleScanComponent implements OnInit {
 	}
 
 	public getScheduleScan(scheduleScanRequest) {
-        if (scheduleScanRequest) {
-            if (this.hardwareScanService) {
-				this.hardwareScanService.getScheduleScan(scheduleScanRequest)
-					.then((response) => {
-						if (response.status === 'COLLISION') {
-                            // const error = this.translate.instant('hardwareScan.scheduleScan.error');
-                            // const description = this.translate.instant('hardwareScan.scheduleScan.description');
-                            this.OnCollisionModal();
-                        } else {
-							this.hardwareScanService.getNextScans().then((response) => {
-								this.items = [];
-								let dateString;
-								let time;
-								for (const req of response.scheduleRequests) {
-									const scheduleScanDelete = {
-										taskID: req.taskID
-									};
+		if (scheduleScanRequest) {
+			if (this.hardwareScanService) {
+				this.hardwareScanService.getScheduleScan(scheduleScanRequest).then((response) => {
+					if (response.status === 'COLLISION') {
+						// const error = this.translate.instant('hardwareScan.scheduleScan.error');
+						// const description = this.translate.instant('hardwareScan.scheduleScan.description');
+						this.OnCollisionModal();
+					} else {
+						this.hardwareScanService.getNextScans().then((response) => {
+							this.items = [];
+							let dateString;
+							let time;
+							for (const req of response.scheduleRequests) {
+								const scheduleScanDelete = {
+									taskID: req.taskID,
+								};
 
-									const date = req.scheduleDate[0].split('/');
-									dateString = date[2] + '-' + date[0] + '-' + date[1];
-									time = this.formatTime(req.scheduleTime);
+								const date = req.scheduleDate[0].split('/');
+								dateString = date[2] + '-' + date[0] + '-' + date[1];
+								time = this.formatTime(req.scheduleTime);
 
-									let type = '';
-									if (req.scheduleType === HardwareScheduleScanType.Quick) {
-										type = this.translate.instant('hardwareScan.quickScan');
-									} else {
-										type = this.translate.instant('hardwareScan.scheduledScan.fullScan');
-									}
-
-									this.items.push({ name: req.nextExecutionDate, scanType: type, frequency: req.scheduleFrequency, date: dateString, time: req.scheduleTime, deleteReq: scheduleScanDelete });
-
+								let type = '';
+								if (req.scheduleType === HardwareScheduleScanType.Quick) {
+									type = this.translate.instant('hardwareScan.quickScan');
+								} else {
+									type = this.translate.instant(
+										'hardwareScan.scheduledScan.fullScan'
+									);
 								}
-								const dateSplit = scheduleScanRequest.scheduleDate[0].split('/');
-								const dateSchedule = dateSplit[2] + '-' + dateSplit[0] + '-' + dateSplit[1];
-								const timeSchedule = this.formatTime(scheduleScanRequest.scheduleTime);
-								const desc = this.translate.instant('hardwareScan.scheduledScan.information') + ' ' + dateSchedule + ' ' + timeSchedule;
-								const title = this.translate.instant('hardwareScan.scheduledScan.name');
-								this.OnCollisionModal(title, desc);
-							});
-						}
-					});
+
+								this.items.push({
+									name: req.nextExecutionDate,
+									scanType: type,
+									frequency: req.scheduleFrequency,
+									date: dateString,
+									time: req.scheduleTime,
+									deleteReq: scheduleScanDelete,
+								});
+							}
+							const dateSplit = scheduleScanRequest.scheduleDate[0].split('/');
+							const dateSchedule =
+								dateSplit[2] + '-' + dateSplit[0] + '-' + dateSplit[1];
+							const timeSchedule = this.formatTime(scheduleScanRequest.scheduleTime);
+							const desc =
+								this.translate.instant('hardwareScan.scheduledScan.information') +
+								' ' +
+								dateSchedule +
+								' ' +
+								timeSchedule;
+							const title = this.translate.instant('hardwareScan.scheduledScan.name');
+							this.OnCollisionModal(title, desc);
+						});
+					}
+				});
 			}
-        } else {}
-    }
+		} else {
+		}
+	}
 
 	public disable() {
-		const isExecuting = !this.hardwareScanService.isScanDoneExecuting() && (this.hardwareScanService.isScanExecuting() || this.hardwareScanService.isRecoverExecuting());
+		const isExecuting =
+			!this.hardwareScanService.isScanDoneExecuting() &&
+			(this.hardwareScanService.isScanExecuting() ||
+				this.hardwareScanService.isRecoverExecuting());
 		return isExecuting;
 	}
 
@@ -291,9 +325,9 @@ export class WidgetScheduleScanComponent implements OnInit {
 			const temp = '0' + (parseInt(hours, 10) - 12);
 			hours = temp.substring(temp.length - 2, temp.length);
 		} else {
-			if(parseInt(hours,10) === 12){
+			if (parseInt(hours, 10) === 12) {
 				ampm = this.translate.instant('hardwareScan.pm');
-			}else{
+			} else {
 				ampm = this.translate.instant('hardwareScan.am');
 			}
 		}
@@ -301,4 +335,3 @@ export class WidgetScheduleScanComponent implements OnInit {
 		return hours + ':' + minute + ' ' + ampm;
 	}
 }
-

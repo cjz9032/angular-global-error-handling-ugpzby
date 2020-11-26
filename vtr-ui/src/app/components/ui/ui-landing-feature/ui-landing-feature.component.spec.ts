@@ -8,9 +8,8 @@ xdescribe('UiLandingFeatureComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiLandingFeatureComponent]
-		})
-			.compileComponents();
+			declarations: [UiLandingFeatureComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

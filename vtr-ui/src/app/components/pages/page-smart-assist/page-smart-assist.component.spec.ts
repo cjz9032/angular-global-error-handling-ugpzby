@@ -28,7 +28,7 @@ const intelligentScreen: IntelligentScreen = {
 	isAutoScreenOffNoteVisible: false,
 	isReadingOrBrowsingVisible: false,
 	isReadingOrBrowsingEnabled: false,
-	readingOrBrowsingTime: 0
+	readingOrBrowsingTime: 0,
 };
 
 const antiTheftResponse: AntiTheftResponse = {
@@ -39,18 +39,14 @@ const antiTheftResponse: AntiTheftResponse = {
 	authorizedAccessState: true,
 	photoAddress: '',
 	alarmOften: 10,
-	photoNumber: 5
+	photoNumber: 5,
 };
 
 describe('Component: PageSmartAssistComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [PageSmartAssistComponent],
-			imports: [
-				HttpClientTestingModule,
-				TranslateModule.forRoot(),
-				RouterTestingModule
-			],
+			imports: [HttpClientTestingModule, TranslateModule.forRoot(), RouterTestingModule],
 			providers: [
 				CommonService,
 				LoggerService,
@@ -58,11 +54,10 @@ describe('Component: PageSmartAssistComponent', () => {
 				DisplayService,
 				DevService,
 				CommsService,
-				IntelligentSecurity
-			]
+				IntelligentSecurity,
+			],
 		}).compileComponents();
 	}));
-
 
 	/* beforeEach(() => {
 		fixture = TestBed.createComponent(
@@ -90,7 +85,16 @@ describe('Component: PageSmartAssistComponent', () => {
 			const vantageShellService = fixture.debugElement.injector.get(VantageShellService);
 			const logger = fixture.debugElement.injector.get(LoggerService);
 			// smartAssistService = fixture.debugElement.injector.get(SmartAssistService);
-			return { fixture, component, smartAssistService, deviceService, commonService, vantageShellService, logger, localCacheService };
+			return {
+				fixture,
+				component,
+				smartAssistService,
+				deviceService,
+				commonService,
+				vantageShellService,
+				logger,
+				localCacheService,
+			};
 		}
 
 		it('PageSmartAssistComponent :: should create', () => {
@@ -102,7 +106,10 @@ describe('Component: PageSmartAssistComponent', () => {
 
 			component.superResolution = new FeatureStatus(false, true);
 			const isSuperResolutionSupported = new FeatureStatus(false, true);
-			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, isSuperResolutionSupported);
+			localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCapability,
+				isSuperResolutionSupported
+			);
 			component.superResolution = { ...isSuperResolutionSupported };
 			fixture.detectChanges();
 			expect(component).toBeTruthy();
@@ -115,14 +122,16 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			const smartAssistCapability = new SmartAssistCapability();
 			smartAssistCapability.isIntelligentSecuritySupported = true;
-			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCapability,
+				smartAssistCapability
+			);
 			fixture.detectChanges();
 			// const spyObject = spyOn(component, 'initZeroTouchLogin');
 			const spyObject = spyOn<any>(component, 'initZeroTouchLogin');
 			component.ngOnInit();
 			expect(spyObject).toHaveBeenCalled();
 		});
-
 
 		it('PageSmartAssistComponent :: should create SmartAssistCapability isLenovoVoiceSupported ', () => {
 			const { fixture, component, localCacheService } = setup();
@@ -131,7 +140,10 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			const smartAssistCapability = new SmartAssistCapability();
 			smartAssistCapability.isLenovoVoiceSupported = true;
-			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCapability,
+				smartAssistCapability
+			);
 			fixture.detectChanges();
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
 			component.ngOnInit();
@@ -146,7 +158,10 @@ describe('Component: PageSmartAssistComponent', () => {
 			const smartAssistCapability = new SmartAssistCapability();
 			const isIntelligentMediaSupported = new FeatureStatus(true, true);
 			smartAssistCapability.isIntelligentMediaSupported = isIntelligentMediaSupported;
-			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCapability,
+				smartAssistCapability
+			);
 			fixture.detectChanges();
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
 			component.ngOnInit();
@@ -157,20 +172,25 @@ describe('Component: PageSmartAssistComponent', () => {
 			const { fixture, component, localCacheService } = setup();
 			const smartAssistCapability = new SmartAssistCapability();
 			smartAssistCapability.isIntelligentScreenSupported = true;
-			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCapability,
+				smartAssistCapability
+			);
 			fixture.detectChanges();
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
 			component.ngOnInit();
 			expect(spyObject).toHaveBeenCalled();
 		});
 
-
 		it('PageSmartAssistComponent :: should create SmartAssistCapability isAPSSupported  ', () => {
 			const { fixture, component, localCacheService } = setup();
 			const smartAssistCapability = new SmartAssistCapability();
 
 			smartAssistCapability.isAPSSupported = true;
-			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCapability,
+				smartAssistCapability
+			);
 			fixture.detectChanges();
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
 			component.ngOnInit();
@@ -184,7 +204,10 @@ describe('Component: PageSmartAssistComponent', () => {
 			// const isIntelligentScreenSupported = new FeatureStatus(true, true);
 
 			smartAssistCapability.isAntiTheftSupported = antiTheftResponse;
-			localCacheService.setLocalCacheValue(LocalStorageKey.SmartAssistCapability, smartAssistCapability);
+			localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCapability,
+				smartAssistCapability
+			);
 			fixture.detectChanges();
 			// const spyObject = spyOn(component, 'initZeroTouchLogin');
 			const spyObject = spyOn<any>(component, 'checkHeaderMenuItems');
@@ -209,7 +232,6 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.ngOnInit();
 			expect(spyObject).toHaveBeenCalled();
 		});
-
 
 		it('PageSmartAssistComponent :: updateSensingHeaderMenu', () => {
 			const { fixture, component } = setup();
@@ -236,11 +258,10 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			smartAssistService.isShellAvailable = true;
 			component.smartAssistCache = new SmartAssistCache();
-			const res = new FeatureStatus (true, true);
-			const spy = spyOn(
-				smartAssistService,
-				'getSuperResolutionStatus'
-			).and.returnValue(Promise.resolve(res));
+			const res = new FeatureStatus(true, true);
+			const spy = spyOn(smartAssistService, 'getSuperResolutionStatus').and.returnValue(
+				Promise.resolve(res)
+			);
 			fixture.detectChanges();
 			component.getSuperResolutionStatus();
 			expect(smartAssistService.getSuperResolutionStatus).toHaveBeenCalled();
@@ -254,10 +275,9 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			component.hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
-			const spy = spyOn(
-				smartAssistService,
-				'setHPDAdvancedSetting'
-			).and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'setHPDAdvancedSetting').and.returnValue(
+				Promise.resolve(true)
+			);
 
 			component.setHPDAdvancedSetting('zeroTouchLogin');
 			expect(smartAssistService.setHPDAdvancedSetting).toHaveBeenCalled();
@@ -285,10 +305,9 @@ describe('Component: PageSmartAssistComponent', () => {
 				'getHsaIntelligentSecurityStatus'
 			).and.returnValue(Promise.resolve(res));
 
-			const spy2 = spyOn(
-				smartAssistService,
-				'registerHPDRpcCallback'
-			).and.returnValue(Promise.resolve(1));
+			const spy2 = spyOn(smartAssistService, 'registerHPDRpcCallback').and.returnValue(
+				Promise.resolve(1)
+			);
 			fixture.detectChanges();
 			component.getHsaIntelligentSecurityStatus();
 			expect(smartAssistService.getHsaIntelligentSecurityStatus).toHaveBeenCalled();
@@ -316,7 +335,9 @@ describe('Component: PageSmartAssistComponent', () => {
 			};
 
 			component.onZeroTouchLockDistanceSensitivityAdjustToggle(para);
-			expect(smartAssistService.setZeroTouchLockDistanceSensitivityAutoAdjust).toHaveBeenCalled();
+			expect(
+				smartAssistService.setZeroTouchLockDistanceSensitivityAutoAdjust
+			).toHaveBeenCalled();
 		});
 
 		it('PageSmartAssistComponent :: SetZeroTouchLockDistanceSensitivity', () => {
@@ -358,7 +379,8 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
-			const jsonData = '{"capacity": true, "capability": 2047, "sensorType": 1, "presenceLeaveDistanceAutoAdjust": false, "presenceLeaveDistance": 1, "errorCode": 0 }';
+			const jsonData =
+				'{"capacity": true, "capability": 2047, "sensorType": 1, "presenceLeaveDistanceAutoAdjust": false, "presenceLeaveDistance": 1, "errorCode": 0 }';
 
 			component.hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
 			component.hsaIntelligentSecurityChange(jsonData);
@@ -384,10 +406,12 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
-			const spyObj = spyOn(smartAssistService, 'SetHPDLeaveSensitivitySetting').and.returnValue(Promise.resolve(true));
+			const spyObj = spyOn(
+				smartAssistService,
+				'SetHPDLeaveSensitivitySetting'
+			).and.returnValue(Promise.resolve(true));
 			component.setHPDLeaveSensitivitySetting(10);
 			expect(spyObj).toHaveBeenCalled();
-
 		});
 
 		it('PageSmartAssistComponent :: should call onHumanPresenceDetectStatusToggle', () => {
@@ -397,7 +421,9 @@ describe('Component: PageSmartAssistComponent', () => {
 			fixture.detectChanges();
 
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'setHPDStatus').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'setHPDStatus').and.returnValue(
+				Promise.resolve(true)
+			);
 			component.onHumanPresenceDetectStatusToggle({ switchValue: true });
 			expect(spy).toHaveBeenCalled();
 		});
@@ -409,7 +435,9 @@ describe('Component: PageSmartAssistComponent', () => {
 			fixture.detectChanges();
 
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'setZeroTouchLoginStatus').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'setZeroTouchLoginStatus').and.returnValue(
+				Promise.resolve(true)
+			);
 			component.onZeroTouchLoginStatusToggle({ switchValue: true });
 			expect(spy).toHaveBeenCalled();
 		});
@@ -420,7 +448,9 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'setZeroTouchLoginDistance').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'setZeroTouchLoginDistance').and.returnValue(
+				Promise.resolve(true)
+			);
 			component.setZeroTouchLoginSensitivity(10);
 			expect(spy).toHaveBeenCalled();
 		});
@@ -431,11 +461,12 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 			fixture.detectChanges();
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'setZeroTouchLockStatus').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'setZeroTouchLockStatus').and.returnValue(
+				Promise.resolve(true)
+			);
 			component.onZeroTouchLockStatusToggle({ switchValue: true });
 			expect(spy).toHaveBeenCalled();
 		});
-
 
 		it('PageSmartAssistComponent :: should call onZeroTouchLockTimerChange', () => {
 			const { fixture, component, smartAssistService } = setup();
@@ -444,11 +475,12 @@ describe('Component: PageSmartAssistComponent', () => {
 			fixture.detectChanges();
 
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'setSelectedLockTimer').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'setSelectedLockTimer').and.returnValue(
+				Promise.resolve(true)
+			);
 			component.onZeroTouchLockTimerChange({ switchValue: true });
 			expect(spy).toHaveBeenCalled();
 		});
-
 
 		it('PageSmartAssistComponent :: should call onZeroTouchLockFacialRecoChange', () => {
 			const { fixture, component, smartAssistService } = setup();
@@ -457,7 +489,10 @@ describe('Component: PageSmartAssistComponent', () => {
 			fixture.detectChanges();
 
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'setZeroTouchLockFacialRecoStatus').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(
+				smartAssistService,
+				'setZeroTouchLockFacialRecoStatus'
+			).and.returnValue(Promise.resolve(true));
 			component.onZeroTouchLockFacialRecoChange(true);
 			expect(spy).toHaveBeenCalled();
 		});
@@ -469,7 +504,9 @@ describe('Component: PageSmartAssistComponent', () => {
 			fixture.detectChanges();
 
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'setZeroTouchLoginAdjustStatus').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'setZeroTouchLoginAdjustStatus').and.returnValue(
+				Promise.resolve(true)
+			);
 			component.onDistanceSensitivityAdjustToggle({ switchValue: true });
 			expect(spy).toHaveBeenCalled();
 		});
@@ -481,11 +518,12 @@ describe('Component: PageSmartAssistComponent', () => {
 			fixture.detectChanges();
 
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'setAutoScreenOffStatus').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'setAutoScreenOffStatus').and.returnValue(
+				Promise.resolve(true)
+			);
 			component.onAutoScreenOffToggle({ switchValue: true });
 			expect(spy).toHaveBeenCalled();
 		});
-
 
 		it('PageSmartAssistComponent :: should call onKeepMyDisplayToggle', () => {
 			const { fixture, component, smartAssistService } = setup();
@@ -494,7 +532,9 @@ describe('Component: PageSmartAssistComponent', () => {
 			fixture.detectChanges();
 
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'setReadingOrBrowsingStatus').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'setReadingOrBrowsingStatus').and.returnValue(
+				Promise.resolve(true)
+			);
 			component.onKeepMyDisplayToggle({ switchValue: true });
 			expect(spy).toHaveBeenCalled();
 		});
@@ -504,7 +544,9 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.isRegisterHPDRpcCallback = true;
 			fixture.detectChanges();
 			// component.smartAssistCache = new SmartAssistCache();
-			const spy = spyOn(smartAssistService, 'unRegisterHPDRpcCallback').and.returnValue(Promise.resolve(true));
+			const spy = spyOn(smartAssistService, 'unRegisterHPDRpcCallback').and.returnValue(
+				Promise.resolve(true)
+			);
 			const spyLogger = spyOn(logger, 'info');
 			component.ngOnDestroy();
 			expect(spy).toHaveBeenCalled();
@@ -514,7 +556,9 @@ describe('Component: PageSmartAssistComponent', () => {
 
 		it('PageSmartAssistComponent :: oonResetDefaultSettings should call', () => {
 			const { fixture, component, smartAssistService } = setup();
-			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
+			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(
+				Promise.resolve(1)
+			);
 			fixture.detectChanges();
 			component.onResetDefaultSettings(true);
 		});
@@ -526,36 +570,37 @@ describe('Component: PageSmartAssistComponent', () => {
 			let windowOpenSpy = spyOn(window, 'open');
 			// let returnValue = { foo: 'bar' };
 			let urlCreateObjectSpy = spyOn(URL, 'createObjectURL').and.returnValue(location); */
-			const spyLaunchURI = spyOn(deviceService, 'launchUri').and.callFake(() => { });
+			const spyLaunchURI = spyOn(deviceService, 'launchUri').and.callFake(() => {});
 
 			fixture.detectChanges();
 			component.onClick(location);
 			// expect(urlCreateObjectSpy).toHaveBeenCalledWith('foo');
 			// expect(windowOpenSpy).toHaveBeenCalledWith(location);
-
 		});
 
 		it('PageSmartAssistComponent :: launchFaceEnrollment should call', () => {
 			const { fixture, component, deviceService } = setup();
 			const location = 'ms-settings:privacy-webcam';
-			const spyLaunchURI = spyOn(deviceService, 'launchUri').and.callFake(() => { });
+			const spyLaunchURI = spyOn(deviceService, 'launchUri').and.callFake(() => {});
 
 			fixture.detectChanges();
 			component.launchFaceEnrollment();
-
 		});
 
 		it('PageSmartAssistComponent :: onJumpClick should call', () => {
 			const { fixture, component, smartAssistService } = setup();
-			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
+			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(
+				Promise.resolve(1)
+			);
 			fixture.detectChanges();
 			component.onJumpClick();
 		});
 
-
 		it('PageSmartAssistComponent :: onVisibilityChanged should call', () => {
 			const { fixture, component, smartAssistService } = setup();
-			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(Promise.resolve(1));
+			const spy = spyOn(smartAssistService, 'resetHSAHPDSetting').and.returnValue(
+				Promise.resolve(1)
+			);
 			fixture.detectChanges();
 			component.onVisibilityChanged();
 		});
@@ -576,5 +621,4 @@ describe('Component: PageSmartAssistComponent', () => {
 			expect(spy).toHaveBeenCalled();
 		});
 	});
-
 });

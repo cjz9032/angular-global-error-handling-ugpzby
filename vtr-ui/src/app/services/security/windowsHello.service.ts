@@ -3,14 +3,12 @@ import * as phoenix from '@lenovo/tan-client-bridge';
 import { CommonService } from '../common/common.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class WindowsHelloService {
 	isRS5OrLater: boolean;
 	securityAdvisor: phoenix.SecurityAdvisor;
-	constructor(
-		private commonService: CommonService
-	) { }
+	constructor(private commonService: CommonService) {}
 
 	showWindowsHello(windowsHello: phoenix.WindowsHello): boolean {
 		const version = this.commonService.getWindowsVersion();
@@ -24,5 +22,4 @@ export class WindowsHelloService {
 		}
 		return false;
 	}
-
 }

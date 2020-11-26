@@ -5,7 +5,7 @@ import { DeviceLocationPermission } from 'src/app/data-models/home-security/devi
 @Component({
 	selector: 'vtr-widget-location-status',
 	templateUrl: './widget-location-status.component.html',
-	styleUrls: ['./widget-location-status.component.scss']
+	styleUrls: ['./widget-location-status.component.scss'],
 })
 export class WidgetLocationStatusComponent implements OnInit {
 	@Input() linkId: string;
@@ -16,13 +16,11 @@ export class WidgetLocationStatusComponent implements OnInit {
 	@Input() locationPermission: DeviceLocationPermission = undefined;
 	@Output() buttonClick = new EventEmitter();
 
-	constructor(public dialogService: DialogService) { }
+	constructor(public dialogService: DialogService) {}
 
-	ngOnInit(): void {
-	}
+	ngOnInit(): void {}
 
 	public enableLocation($event: any) {
 		this.buttonClick.emit($event);
 	}
-
 }

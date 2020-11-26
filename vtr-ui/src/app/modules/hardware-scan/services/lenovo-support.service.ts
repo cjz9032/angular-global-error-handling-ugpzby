@@ -8,7 +8,7 @@ import { formatDate } from '@angular/common';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class LenovoSupportService {
 	private static readonly LenovoSupportBaseUrl = 'https://support.lenovo.com';
@@ -37,7 +37,10 @@ export class LenovoSupportService {
 			.set('DiagnosticsCode', finalResultCode)
 			.set('DiagnosticsDate', formatDate(scanDate, 'yyyy-MM-dd', 'en-US'));
 
-		const url = new URL(LenovoSupportService.ServiceRequestPath, LenovoSupportService.LenovoSupportBaseUrl);
+		const url = new URL(
+			LenovoSupportService.ServiceRequestPath,
+			LenovoSupportService.LenovoSupportBaseUrl
+		);
 		url.search = urlParameters.toString();
 
 		this.logger.info('[LenovoSupportService.getETicketUrl] URL:', url.toString());
@@ -47,10 +50,12 @@ export class LenovoSupportService {
 	public async getContactusUrl(): Promise<string> {
 		const machineSerialNumber = (await this.deviceInfo).sn;
 
-		const urlParameters = new HttpParams()
-			.set('SerialNumber', machineSerialNumber);
+		const urlParameters = new HttpParams().set('SerialNumber', machineSerialNumber);
 
-		const url = new URL(LenovoSupportService.ContactUsPath, LenovoSupportService.LenovoSupportBaseUrl);
+		const url = new URL(
+			LenovoSupportService.ContactUsPath,
+			LenovoSupportService.LenovoSupportBaseUrl
+		);
 		url.search = urlParameters.toString();
 
 		return url.toString();

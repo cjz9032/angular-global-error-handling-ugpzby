@@ -1,4 +1,11 @@
-import { Component, OnInit, ElementRef, HostListener, SecurityContext, ViewChild } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	ElementRef,
+	HostListener,
+	SecurityContext,
+	ViewChild,
+} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -16,7 +23,7 @@ import { ArticleSegment } from 'src/app/data-models/article/article-segment.moda
 	selector: 'vtr-modal-article-detail',
 	templateUrl: './modal-article-detail.component.html',
 	styleUrls: ['./modal-article-detail.component.scss'],
-	providers: [DurationCounterService]
+	providers: [DurationCounterService],
 })
 export class ModalArticleDetailComponent implements OnInit {
 	articleId: string;
@@ -66,7 +73,10 @@ export class ModalArticleDetailComponent implements OnInit {
 				if ('Results' in response) {
 					this.articleTitle = response.Results.Title;
 					this.articleImage = response.Results.Image;
-					const articleBodySanitize = this.sanitizer.sanitize(SecurityContext.HTML, response.Results.Body);
+					const articleBodySanitize = this.sanitizer.sanitize(
+						SecurityContext.HTML,
+						response.Results.Body
+					);
 					const replaceBody = articleBodySanitize
 						.replace(/(\"unsafe:)/gi, '"')
 						.replace(/(<video )/gi, '<iframe ')
@@ -84,28 +94,58 @@ export class ModalArticleDetailComponent implements OnInit {
 							this.articleSegments[index].attribution = segment.Attribution;
 							this.articleSegments[index].body = segment.Body;
 							if (segment.segmentType) {
-								this.articleSegments[index].center = segment.segmentType.toLowerCase().includes('-center') ? true : false;
-								this.articleSegments[index].wrap = segment.segmentType.toLowerCase().includes('-wrap-') ? true : false;
+								this.articleSegments[
+									index
+								].center = segment.segmentType.toLowerCase().includes('-center')
+									? true
+									: false;
+								this.articleSegments[
+									index
+								].wrap = segment.segmentType.toLowerCase().includes('-wrap-')
+									? true
+									: false;
 								if (!segment.segmentType.toLowerCase().includes('-wrap')) {
-									this.articleSegments[index].noWrapLeft = segment.segmentType.toLowerCase().includes('-left') ? true : false;
-									this.articleSegments[index].noWrapRight = segment.segmentType.toLowerCase().includes('-right') ? true : false;
+									this.articleSegments[
+										index
+									].noWrapLeft = segment.segmentType
+										.toLowerCase()
+										.includes('-left')
+										? true
+										: false;
+									this.articleSegments[
+										index
+									].noWrapRight = segment.segmentType
+										.toLowerCase()
+										.includes('-right')
+										? true
+										: false;
 								}
-								this.articleSegments[index].quoteType = segment.segmentType.toLowerCase().startsWith('quote') ? true : false;
-								this.articleSegments[index].imageType = segment.segmentType.toLowerCase().startsWith('image') ? true : false;
+								this.articleSegments[
+									index
+								].quoteType = segment.segmentType.toLowerCase().startsWith('quote')
+									? true
+									: false;
+								this.articleSegments[
+									index
+								].imageType = segment.segmentType.toLowerCase().startsWith('image')
+									? true
+									: false;
 							}
 							index++;
 						}
 					}
 					this.contentStatus = this.AllContentStatus.Content;
 					if (response.Results.Category && response.Results.Category.length > 0) {
-						this.articleCategory = response.Results.Category.map((category: any) => category.Id).join(' ');
+						this.articleCategory = response.Results.Category.map(
+							(category: any) => category.Id
+						).join(' ');
 					}
 				} else {
 					this.articleTitle = response.title;
 					this.contentStatus = this.AllContentStatus.Empty;
 				}
 			},
-			error => {
+			(error) => {
 				this.contentStatus = this.AllContentStatus.Empty;
 				this.logger.error('fetchCMSContent error', error);
 			}
@@ -118,11 +158,11 @@ export class ModalArticleDetailComponent implements OnInit {
 	private getPageName(activatedRoute: ActivatedRoute) {
 		try {
 			return activatedRoute.children[0].firstChild.routeConfig.data.pageName;
-		} catch (ex) { }
+		} catch (ex) {}
 
 		try {
 			return activatedRoute.firstChild.snapshot.data.pageName;
-		} catch (ex) { }
+		} catch (ex) {}
 
 		return undefined;
 	}
@@ -144,12 +184,15 @@ export class ModalArticleDetailComponent implements OnInit {
 			if (viewPort.scrollHeight === 0) {
 				DocReadPosition = 0;
 			} else {
-				DocReadPosition = (viewPort.scrollTop + viewPort.clientHeight) * 100 / viewPort.scrollHeight;
+				DocReadPosition =
+					((viewPort.scrollTop + viewPort.clientHeight) * 100) / viewPort.scrollHeight;
 				DocReadPosition = Math.round(DocReadPosition);
 			}
 		}
-		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
-		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
+		const focusDuration =
+			this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
+		const blurDuration =
+			this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
 		const metricsData = {
 			ItemType: MetricEventName.articleview,
 			ItemID: this.articleId,
@@ -158,7 +201,7 @@ export class ModalArticleDetailComponent implements OnInit {
 			Duration: focusDuration, // this.duration + parseInt(`${Math.floor((Date.now() - this.interTime) / 1000)}`, 10),
 			DurationBlur: blurDuration,
 			DocReadPosition,
-			MediaReadPosition: 0
+			MediaReadPosition: 0,
 		};
 		this.metricService.sendArticleView(metricsData);
 	}
@@ -170,11 +213,18 @@ export class ModalArticleDetailComponent implements OnInit {
 
 	@HostListener('document:keydown.pageup')
 	onClickPageUp() {
-		this.commonService.scrollElementByDistance(this.articleDialogContent.nativeElement, this.articleDialogContent.nativeElement.clientHeight - 40, true);
+		this.commonService.scrollElementByDistance(
+			this.articleDialogContent.nativeElement,
+			this.articleDialogContent.nativeElement.clientHeight - 40,
+			true
+		);
 	}
 	@HostListener('document:keydown.pagedown')
 	onClickPageDown() {
-		this.commonService.scrollElementByDistance(this.articleDialogContent.nativeElement, this.articleDialogContent.nativeElement.clientHeight - 40);
+		this.commonService.scrollElementByDistance(
+			this.articleDialogContent.nativeElement,
+			this.articleDialogContent.nativeElement.clientHeight - 40
+		);
 	}
 
 	@HostListener('document:keydown.escape', ['$event'])
@@ -191,7 +241,9 @@ export class ModalArticleDetailComponent implements OnInit {
 	openProtocol(url: string): boolean {
 		if (url.startsWith('lenovo-vantage3:')) {
 			WinRT.launchUri(url);
-			setTimeout(() => { this.closeModal(); }, 100);
+			setTimeout(() => {
+				this.closeModal();
+			}, 100);
 			return false;
 		}
 		return true;
@@ -212,5 +264,4 @@ export class ModalArticleDetailComponent implements OnInit {
 			}
 		}
 	}
-
 }

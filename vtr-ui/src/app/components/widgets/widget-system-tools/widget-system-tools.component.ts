@@ -16,7 +16,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-widget-system-tools',
 	templateUrl: './widget-system-tools.component.html',
-	styleUrls: ['./widget-system-tools.component.scss']
+	styleUrls: ['./widget-system-tools.component.scss'],
 })
 export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	@Input() title = '';
@@ -30,10 +30,10 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 
 	modalAutomationId: any = {
 		section: 'legion_accessory_central_install_popup',
-		closeButton : 'legion_accessory_close_button',
+		closeButton: 'legion_accessory_close_button',
 		cancelButton: 'legion_accessory_central_install_popup_cancel_button',
-		okButton: 'legion_accessory_central_install_popup_install_button'
-	}
+		okButton: 'legion_accessory_central_install_popup_install_button',
+	};
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -43,30 +43,39 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		// version 3.3 show entrance & launch accessory
 		private gamingAccessoryService: GamingAccessoryService,
 		private logger: LoggerService
-
-	) { }
+	) {}
 
 	ngOnInit() {
-		this.notificationSubscription = this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapabilities) {
-				this.gamingProperties = response.payload;
-			}
-			this.calcToolLength();
-		});
+		this.notificationSubscription = this.commonService
+			.getCapabalitiesNotification()
+			.subscribe((response) => {
+				if (response.type === Gaming.GamingCapabilities) {
+					this.gamingProperties = response.payload;
+				}
+				this.calcToolLength();
+			});
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.macroKeyFeature
 		);
 		// version 3.3 legion accessory cache
-		this.showLegionAccessory = this.localCacheService.getLocalCacheValue(LocalStorageKey.accessoryFeature);
-		this.showHWScanMenu = this.localCacheService.getLocalCacheValue(LocalStorageKey.hardwareScanFeature);
+		this.showLegionAccessory = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.accessoryFeature
+		);
+		this.showHWScanMenu = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.hardwareScanFeature
+		);
 		this.calcToolLength();
 
 		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
-			this.hardwareScanService.isAvailable()
+			this.hardwareScanService
+				.isAvailable()
 				.then((response: any) => {
-					if(response !== this.showHWScanMenu && response !== undefined) {
+					if (response !== this.showHWScanMenu && response !== undefined) {
 						this.showHWScanMenu = response;
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.hardwareScanFeature, response);
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.hardwareScanFeature,
+							response
+						);
 						this.calcToolLength();
 					}
 				})
@@ -76,8 +85,8 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		}
 
 		// version 3.3 legion accessory get reg status
-		this.gamingAccessoryService.isLACSupportUriProtocol().then(res => {
-			if(res !== this.showLegionAccessory && res !== undefined) {
+		this.gamingAccessoryService.isLACSupportUriProtocol().then((res) => {
+			if (res !== this.showLegionAccessory && res !== undefined) {
 				this.showLegionAccessory = res;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.accessoryFeature, res);
 				this.calcToolLength();
@@ -86,10 +95,10 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if(this.notificationSubscription) {
+		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
-		if(this.eventEmitSubscription) {
+		if (this.eventEmitSubscription) {
 			this.eventEmitSubscription.unsubscribe();
 		}
 	}
@@ -97,13 +106,13 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	calcToolLength() {
 		let originalLength = 3;
 		if (this.gamingProperties.macroKeyFeature) {
-			originalLength ++;
+			originalLength++;
 		}
 		if (this.showHWScanMenu) {
-			originalLength ++;
+			originalLength++;
 		}
-		if( this.showLegionAccessory) {
-			originalLength ++;
+		if (this.showLegionAccessory) {
+			originalLength++;
 		}
 
 		this.toolLength = originalLength;
@@ -111,33 +120,44 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 
 	launchAccessory() {
 		try {
-			this.gamingAccessoryService.isLACSupportUriProtocol().then(res => this.gamingAccessoryService.launchAccessory(res)).then(res => {
-				this.logger.info(`Widget-SystemTools-LaunchAccessory: return value: ${res}`);
-				if (!res && res === undefined) {
-					this.openWaringModal();
-				}
-			})
-		} catch(error) {
-			this.logger.error('Widget-SystemTools-LaunchAccessory: launch fail; Error message: ', error.message);
+			this.gamingAccessoryService
+				.isLACSupportUriProtocol()
+				.then((res) => this.gamingAccessoryService.launchAccessory(res))
+				.then((res) => {
+					this.logger.info(`Widget-SystemTools-LaunchAccessory: return value: ${res}`);
+					if (!res && res === undefined) {
+						this.openWaringModal();
+					}
+				});
+		} catch (error) {
+			this.logger.error(
+				'Widget-SystemTools-LaunchAccessory: launch fail; Error message: ',
+				error.message
+			);
 			throw new Error(error.message);
 		}
 	}
 
 	openWaringModal() {
-		let waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static',windowClass: 'modal-prompt' });
-		waringModalRef.componentInstance.info= {
-			title: "gaming.dashboard.device.warningPromptPopup.legionAccessory",
-			description: "gaming.dashboard.device.warningPromptPopup.accessoryDesc",
-			comfirmButton: "gaming.dashboard.device.legionEdge.driverPopup.button",
-			cancelButton: "gaming.dashboard.device.legionEdge.driverPopup.link",
-			confirmMetricEnabled : false,
-			cancelMetricEnabled : false,
-			id : this.modalAutomationId
-		}
-		this.eventEmitSubscription = waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
-			if(emmitedValue === 1) {
-				window.open('https://pcsupport.lenovo.com/downloads/legionaccessorycentral');
+		let waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
+			backdrop: 'static',
+			windowClass: 'modal-prompt',
+		});
+		waringModalRef.componentInstance.info = {
+			title: 'gaming.dashboard.device.warningPromptPopup.legionAccessory',
+			description: 'gaming.dashboard.device.warningPromptPopup.accessoryDesc',
+			comfirmButton: 'gaming.dashboard.device.legionEdge.driverPopup.button',
+			cancelButton: 'gaming.dashboard.device.legionEdge.driverPopup.link',
+			confirmMetricEnabled: false,
+			cancelMetricEnabled: false,
+			id: this.modalAutomationId,
+		};
+		this.eventEmitSubscription = waringModalRef.componentInstance.emitService.subscribe(
+			(emmitedValue) => {
+				if (emmitedValue === 1) {
+					window.open('https://pcsupport.lenovo.com/downloads/legionaccessorycentral');
+				}
 			}
-		})
+		);
 	}
 }

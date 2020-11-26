@@ -1,4 +1,12 @@
-import { Component, OnInit, OnDestroy, SecurityContext, HostListener, ElementRef, ViewChild } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	OnDestroy,
+	SecurityContext,
+	HostListener,
+	ElementRef,
+	ViewChild,
+} from '@angular/core';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -9,10 +17,9 @@ declare let Windows: any;
 @Component({
 	selector: 'vtr-modal-update-change-log.',
 	templateUrl: './modal-update-change-log.component.html',
-	styleUrls: ['./modal-update-change-log.component.scss']
+	styleUrls: ['./modal-update-change-log.component.scss'],
 })
 export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
-
 	url: string;
 	updateModalMetrics: any;
 	metrics: any;
@@ -33,7 +40,10 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		const uri = new Windows.Foundation.Uri(this.url);
-		const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.get, uri);
+		const request = new Windows.Web.Http.HttpRequestMessage(
+			Windows.Web.Http.HttpMethod.get,
+			uri
+		);
 		const httpClient = new Windows.Web.Http.HttpClient();
 		(async () => {
 			try {
@@ -41,11 +51,14 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 				const result = await response.content.readAsStringAsync();
 				if (result) {
 					this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, result);
-				} else {}
+				} else {
+				}
 			} catch (e) {}
 			httpClient.close();
 		})();
-		setTimeout(() => { this.logModal.nativeElement.focus(); }, 0);
+		setTimeout(() => {
+			this.logModal.nativeElement.focus();
+		}, 0);
 	}
 
 	ngOnDestroy() {
@@ -54,7 +67,7 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 			PageName: this.updateModalMetrics.pageName,
 			PageContext: this.updateModalMetrics.pageContext,
 			PageDuration: 0,
-			OnlineStatus: ''
+			OnlineStatus: '',
 		};
 		this.sendMetricsAsync(pageViewMetrics);
 	}
@@ -62,7 +75,8 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
-		} else {}
+		} else {
+		}
 	}
 
 	closeModal() {
@@ -77,12 +91,19 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 
 	@HostListener('document:keydown.pageup')
 	onClickPageUp() {
-		this.commonService.scrollElementByDistance(this.logContent.nativeElement, this.logContent.nativeElement.clientHeight - 40, true);
+		this.commonService.scrollElementByDistance(
+			this.logContent.nativeElement,
+			this.logContent.nativeElement.clientHeight - 40,
+			true
+		);
 	}
 
 	@HostListener('document:keydown.pagedown')
 	onClickPageDown() {
-		this.commonService.scrollElementByDistance(this.logContent.nativeElement, this.logContent.nativeElement.clientHeight - 40);
+		this.commonService.scrollElementByDistance(
+			this.logContent.nativeElement,
+			this.logContent.nativeElement.clientHeight - 40
+		);
 	}
 
 	@HostListener('document:keydown.escape', ['$event'])

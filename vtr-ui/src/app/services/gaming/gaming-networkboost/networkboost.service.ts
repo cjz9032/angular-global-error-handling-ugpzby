@@ -4,18 +4,17 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class NetworkBoostService {
 	private gamingNetworkBoost: any;
 	public isShellAvailable = false;
 
 	public cardContentPositionF: any = {
-		FeatureImage:
-			'assets/cms-cache/content-card-4x4-support.jpg'
+		FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg',
 	};
 	public cardContentPositionB: any = {
-		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg'
+		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg',
 	};
 
 	constructor(
@@ -94,7 +93,9 @@ export class NetworkBoostService {
 
 	getNeedToAsk(): any {
 		try {
-			return this.localCacheService.getLocalCacheValue(LocalStorageKey.NetworkBoosNeedToAskPopup);
+			return this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.NetworkBoosNeedToAskPopup
+			);
 		} catch (error) {
 			throw new Error(error);
 		}
@@ -103,7 +104,10 @@ export class NetworkBoostService {
 	setNeedToAsk(value: boolean) {
 		try {
 			value = value === undefined ? false : value;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.NetworkBoosNeedToAskPopup, value);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.NetworkBoosNeedToAskPopup,
+				value
+			);
 		} catch (error) {
 			throw new Error(error);
 		}

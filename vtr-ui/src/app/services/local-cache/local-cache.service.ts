@@ -4,9 +4,8 @@ import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
-
 export class LocalCacheService {
 	private experienceName = 'VantageExperience';
 	private store: NgForage;
@@ -33,13 +32,17 @@ export class LocalCacheService {
 	public async loadCacheValues() {
 		if (this.transferEnabled) {
 			const start = Date.now();
-			const  indexedDBCache = await this.getItem(this.indexedCacheKey);
+			const indexedDBCache = await this.getItem(this.indexedCacheKey);
 			if (this.isAvailableValue(indexedDBCache)) {
 				Object.assign(this.cacheMap, indexedDBCache);
 			} else {
 				for (const localStorageKey in window.localStorage) {
-					if (Object.prototype.hasOwnProperty.call(window.localStorage, localStorageKey)) {
-						const cacheValue = this.commonService.getLocalStorageValue(localStorageKey as LocalStorageKey);
+					if (
+						Object.prototype.hasOwnProperty.call(window.localStorage, localStorageKey)
+					) {
+						const cacheValue = this.commonService.getLocalStorageValue(
+							localStorageKey as LocalStorageKey
+						);
 						if (this.isAvailableValue(cacheValue)) {
 							this.cacheMap[localStorageKey] = cacheValue;
 						}
@@ -66,13 +69,15 @@ export class LocalCacheService {
 			if (this.transferEnabled) {
 				const oldValue = this.cacheMap[key];
 				this.cacheMap[key] = this.cloneObjectValue(value);
-				this.setItem(this.indexedCacheKey, this.cacheMap).then(() => {
-					this.commonService.sendNotification(key, value);
-					resolve();
-				}).catch((error) => {
-					this.cacheMap[key] = oldValue;
-					reject(error);
-				});
+				this.setItem(this.indexedCacheKey, this.cacheMap)
+					.then(() => {
+						this.commonService.sendNotification(key, value);
+						resolve();
+					})
+					.catch((error) => {
+						this.cacheMap[key] = oldValue;
+						reject(error);
+					});
 			} else {
 				this.commonService.setLocalStorageValue(key, value);
 				resolve();
@@ -136,7 +141,7 @@ export class LocalCacheService {
 		this.store = this.fact.createNgForage({
 			name: dbName,
 			storeName: store,
-			driver: [Driver.INDEXED_DB, Driver.LOCAL_STORAGE]
+			driver: [Driver.INDEXED_DB, Driver.LOCAL_STORAGE],
 		});
 	}
 

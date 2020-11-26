@@ -7,19 +7,18 @@ xdescribe('ModalSnapshotComponent', () => {
 	let fixture: ComponentFixture<ModalSnapshotComponent>;
 
 	beforeEach(async(() => {
-	TestBed.configureTestingModule({
-		declarations: [ ModalSnapshotComponent ]
-	})
-	.compileComponents();
+		TestBed.configureTestingModule({
+			declarations: [ModalSnapshotComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
-	fixture = TestBed.createComponent(ModalSnapshotComponent);
-	component = fixture.componentInstance;
-	fixture.detectChanges();
+		fixture = TestBed.createComponent(ModalSnapshotComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
 	});
 
 	it('should create', () => {
-	expect(component).toBeTruthy();
+		expect(component).toBeTruthy();
 	});
 });

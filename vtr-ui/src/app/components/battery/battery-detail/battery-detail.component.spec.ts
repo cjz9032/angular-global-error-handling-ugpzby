@@ -16,8 +16,7 @@ const dataInfo: BatteryDetail[] = [
 		heading: '',
 		chargeStatusString:
 			'device.deviceSettings.batteryGauge.details.chargeStatusString.charging',
-		remainingTimeText:
-			'device.deviceSettings.batteryGauge.details.chargeCompletionTime',
+		remainingTimeText: 'device.deviceSettings.batteryGauge.details.chargeCompletionTime',
 		barCode: 'X2XP899J0N0',
 		batteryCondition: ['Normal'],
 		batteryHealth: 0,
@@ -39,8 +38,8 @@ const dataInfo: BatteryDetail[] = [
 		voltage: 10.843,
 		wattage: 9,
 		isTemporaryChargeMode: false,
-		isDlsPiCapable: false
-	}
+		isDlsPiCapable: false,
+	},
 ];
 
 const dataIndicator: BatteryIndicator = {
@@ -53,7 +52,7 @@ const dataIndicator: BatteryIndicator = {
 	timeText: 'timeRemaining',
 	isAirplaneMode: false,
 	isChargeThresholdOn: false,
-	convertMin: (totalMin: number) => {}
+	convertMin: (totalMin: number) => {},
 };
 
 const dataConditionsGood: BatteryConditionModel[] = [
@@ -63,8 +62,8 @@ const dataConditionsGood: BatteryConditionModel[] = [
 
 		getBatteryConditionTip(condition: number): string {
 			return 'device.deviceSettings.batteryGauge.condition.Good';
-		}
-	}
+		},
+	},
 ];
 
 describe('Battery Details Component:', () => {
@@ -74,13 +73,9 @@ describe('Battery Details Component:', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				HttpClientTestingModule,
-				TranslateModule.forRoot(),
-				NgbModule
-			],
+			imports: [HttpClientTestingModule, TranslateModule.forRoot(), NgbModule],
 			declarations: [BatteryDetailComponent],
-			providers: [CommonService, VantageShellService, LoggerService]
+			providers: [CommonService, VantageShellService, LoggerService],
 		});
 	}));
 
@@ -105,7 +100,7 @@ describe('Battery Details Component:', () => {
 		const response = {
 			detail: component.dataInfo,
 			indicator: component.dataIndicator,
-			conditions: component.dataConditions
+			conditions: component.dataConditions,
 		};
 		component.preProcessBatteryDetailResponse(response);
 		expect(component.dataSource).toEqual(response.detail);
@@ -120,7 +115,7 @@ describe('Battery Details Component:', () => {
 			},
 			close() {
 				return false;
-			}
+			},
 		};
 		const canOpen = false;
 		const spy = spyOn(tooltip, 'close');
@@ -140,7 +135,7 @@ describe('Battery Details Component:', () => {
 			},
 			open() {
 				return true;
-			}
+			},
 		};
 		const canOpen = true;
 		const spy = spyOn(tooltip, 'open');

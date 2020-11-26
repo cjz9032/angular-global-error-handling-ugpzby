@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .vtr-battery-charge-threshold-settings {
 	padding-top: 1rem;
@@ -39,7 +39,8 @@
 		}
 
 		.toggle-open {
-			.select-title, .select-text {
+			.select-title,
+			.select-text {
 				@media #{$white-on-black} {
 					@include high-contrast-black-text-color;
 				}
@@ -63,7 +64,6 @@
 							@include high-contrast-white-disabled-border;
 							border-width: 0.2rem;
 						}
-
 					}
 					.dropdown-icon {
 						fa-icon {
@@ -78,7 +78,8 @@
 							}
 						}
 					}
-					.select-title, .select-text {
+					.select-title,
+					.select-text {
 						@media #{$white-on-black} {
 							@include high-contrast-black-text-color-disabled;
 							opacity: 0.5;
@@ -115,7 +116,8 @@
 							@include high-contrast-white-border;
 						}
 					}
-					&:hover, &:active {
+					&:hover,
+					&:active {
 						@media #{$white-on-black} {
 							@include high-contrast-black-border;
 						}

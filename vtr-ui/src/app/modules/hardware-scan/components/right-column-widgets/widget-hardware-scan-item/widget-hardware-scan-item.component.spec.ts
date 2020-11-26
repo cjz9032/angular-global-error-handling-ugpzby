@@ -6,8 +6,6 @@ import { DevService } from 'src/app/services/dev/dev.service';
 
 import { WidgetHardwareScanItemComponent } from './widget-hardware-scan-item.component';
 
-
-
 describe('WidgetDeviceHardwareScanItemComponent', () => {
 	let component: WidgetHardwareScanItemComponent;
 	let fixture: ComponentFixture<WidgetHardwareScanItemComponent>;
@@ -15,8 +13,8 @@ describe('WidgetDeviceHardwareScanItemComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetHardwareScanItemComponent],
-			imports: [ RouterTestingModule, HttpClientModule, TranslateModule.forRoot() ],
-			providers: [ DevService]
+			imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
+			providers: [DevService],
 		}).compileComponents();
 	}));
 
@@ -45,6 +43,4 @@ describe('WidgetDeviceHardwareScanItemComponent', () => {
 		expect(component.tooltipText).toEqual('Tooltip Info');
 		expect(component.tooltipIndex).toEqual(0);
 	});
-
-
 });

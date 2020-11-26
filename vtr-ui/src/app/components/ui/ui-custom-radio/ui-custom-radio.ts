@@ -1,4 +1,13 @@
-import { ElementRef, Input, ViewChild, AfterViewInit, OnInit, OnChanges, Component, Directive } from '@angular/core';
+import {
+	ElementRef,
+	Input,
+	ViewChild,
+	AfterViewInit,
+	OnInit,
+	OnChanges,
+	Component,
+	Directive,
+} from '@angular/core';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { KeyCode } from 'src/app/enums/key-code.enum';
@@ -14,7 +23,7 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 	// static readonly ARIA_DISABLED = 'aria-disabled';
 	static readonly NATIVE_ELEMENT = 'nativeElement';
 
-	constructor(private logger: LoggerService, public metrics: MetricService) { }
+	constructor(private logger: LoggerService, public metrics: MetricService) {}
 	// once radio button is visible then execute logic
 	@ViewChild('radioButton', { static: false }) set content(element: ElementRef) {
 		if (element) {
@@ -37,8 +46,7 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 	private radioButton: ElementRef<HTMLElement>;
 	radioLabel = 'radio.';
 
-
-	onChange(event) { }
+	onChange(event) {}
 
 	ngOnInit() {
 		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
@@ -65,8 +73,8 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 	}
 
 	changeRadioOnKeyPress($event, radio: HTMLInputElement) {
-
-		if (!this.checked) { // on only radio change
+		if (!this.checked) {
+			// on only radio change
 			// this.checked = !this.checked;
 			radio.value = this.value;
 			// radio.checked = this.checked;
@@ -76,12 +84,11 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 				itemParent: this.metricsParent,
 				ItemType: 'FeatureClick',
 				itemName: this.radioLabel + this.label,
-				value: !this.checked
+				value: !this.checked,
 			};
 			this.metrics.sendMetrics(metricsData);
 		}
 	}
-
 
 	navigateByKeys($event, radio) {
 		this.setRadioButtons();
@@ -111,44 +118,48 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 			default:
 				break;
 		}
-
 	}
 
 	private setChecked(currentRadioButton: HTMLElement, selectItem: boolean) {
 		let currentRadio: any;
 		currentRadio = currentRadioButton.querySelectorAll('input[type="radio"]');
 		try {
-			if (selectItem && currentRadio && !currentRadio[0].checked && !currentRadio[0].disabled) {
+			if (
+				selectItem &&
+				currentRadio &&
+				!currentRadio[0].checked &&
+				!currentRadio[0].disabled
+			) {
 				try {
 					this.setRadioAriaChecked(currentRadio[0]);
 					currentRadio[0].click();
+				} catch (error) {
+					this.logger.exception(
+						'setChecked error occurred while selecting the current element ::',
+						error
+					);
 				}
-				catch (error) {
-					this.logger.exception('setChecked error occurred while selecting the current element ::', error);
-				}
-			}
-			else {
+			} else {
 				try {
 					if (!selectItem) {
 						// this.setRadioTabIndex(currentRadioButton);
 						currentRadioButton.focus();
 					}
-
-				}
-				catch (error) {
-					this.logger.exception('setChecked error occurred while focusing currentRadioButton only::', error);
+				} catch (error) {
+					this.logger.exception(
+						'setChecked error occurred while focusing currentRadioButton only::',
+						error
+					);
 				}
 			}
-		}
-		catch (error) {
+		} catch (error) {
 			this.logger.exception('setChecked error occurred ::', error);
 		}
-
 	}
 
 	private setRadioAriaChecked(currentRadioButton) {
 		try {
-			this.radioButtons.forEach(radioButton => {
+			this.radioButtons.forEach((radioButton) => {
 				radioButton.removeAttribute(UICustomRadio.ARIA_CHECKED);
 				radioButton.setAttribute(UICustomRadio.ARIA_CHECKED, 'false');
 			});
@@ -160,17 +171,14 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 	}
 	private setRadioTabIndex(currentRadioButton) {
 		try {
-
-			this.radioButtons.forEach(radioButton => {
+			this.radioButtons.forEach((radioButton) => {
 				radioButton.tabIndex = -1; // the unchecked item should also be tabbable
 			});
 			// currentRadioButton[this.TABINDEX] !== UICustomRadio.UN_DEFINED && currentRadioButton.tabIndex !== 0
 			if (currentRadioButton !== UICustomRadio.UN_DEFINED) {
 				currentRadioButton.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
 			}
-
-		}
-		catch (error) {
+		} catch (error) {
 			this.logger.exception('setRadioTabIndex error occurred ::', error);
 		}
 	}
@@ -190,7 +198,6 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 		}
 	}
 
-
 	private setCheckedToNextItem(currentItem) {
 		try {
 			let index;
@@ -201,11 +208,9 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 				index = this.radioButtons.indexOf(currentItem.nativeElement);
 				this.setChecked(this.radioButtons[index + 1], false);
 			}
-
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
-
 	}
 
 	protected setRadioButtons() {
@@ -213,9 +218,12 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 			const rbs = this.getRadioGroup();
 			this.radioButtons = [];
 			if (rbs !== UICustomRadio.UN_DEFINED && rbs && rbs.length > 0) {
-				rbs.forEach(radioButton => {
+				rbs.forEach((radioButton) => {
 					this.radioButtons.push(radioButton);
-					if (this.firstRadioButton === UICustomRadio.UN_DEFINED || !this.firstRadioButton) {
+					if (
+						this.firstRadioButton === UICustomRadio.UN_DEFINED ||
+						!this.firstRadioButton
+					) {
 						this.firstRadioButton = radioButton;
 					}
 					this.lastRadioButton = radioButton;
@@ -227,26 +235,33 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 				});
 				// focus on first non disabled element if not selected any radio items
 				// || this.firstRadioButton.tabIndex !== 0
-				if (this.noRadioButtonSelected && this.firstRadioButton !== UICustomRadio.UN_DEFINED) {
+				if (
+					this.noRadioButtonSelected &&
+					this.firstRadioButton !== UICustomRadio.UN_DEFINED
+				) {
 					this.setRadioTabIndex(this.getNativeElement(this.firstRadioButton));
 				}
 				// || this.selectedRadioButton.tabIndex !== 0
-				else if (!this.noRadioButtonSelected && this.selectedRadioButton !== UICustomRadio.UN_DEFINED) {
+				else if (
+					!this.noRadioButtonSelected &&
+					this.selectedRadioButton !== UICustomRadio.UN_DEFINED
+				) {
 					this.setRadioTabIndex(this.getNativeElement(this.selectedRadioButton));
 				}
 			}
-
 		} catch (error) {
 			this.logger.exception('setRadioButtons error occurred ::', error);
 		}
 	}
 
 	private getRadioGroup() {
-
 		try {
 			// commented to remove the dependency from radiogroup role of parent this component
 
-			this.radioGroup = this.getParentRadioGroup(this.getNativeElement(this.radioButton), UICustomRadio.DEPTH);
+			this.radioGroup = this.getParentRadioGroup(
+				this.getNativeElement(this.radioButton),
+				UICustomRadio.DEPTH
+			);
 			if (this.radioGroup !== UICustomRadio.UN_DEFINED) {
 				// search by radio class and aria-disabled
 				const query = `[class*=${this.group}][aria-disabled=false]`;
@@ -255,46 +270,44 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 				return this.radioGroup.querySelectorAll(query);
 				// return Array.from(this.radioGroup.querySelectorAll(query));
 			}
-
 		} catch (error) {
 			this.logger.exception('UICustomRadio.getRadioGroup exception', error);
 		}
-
 	}
 
 	private getNativeElement(element) {
 		try {
 			if (element !== UICustomRadio.UN_DEFINED) {
-				element = element && element[UICustomRadio.NATIVE_ELEMENT] ? element.nativeElement : element;
+				element =
+					element && element[UICustomRadio.NATIVE_ELEMENT]
+						? element.nativeElement
+						: element;
 			}
 			return element;
-		}
-		catch (error) {
+		} catch (error) {
 			this.logger.exception('UICustomRadio.getElement exception', error);
 		}
 	}
 
-
 	private getParentRadioGroup(element, topUpLevel: number) {
 		try {
-
-
-			if (element && element.getAttribute(UICustomRadio.ROLE) === UICustomRadio.ROLE_RADIO_GROUP) {
+			if (
+				element &&
+				element.getAttribute(UICustomRadio.ROLE) === UICustomRadio.ROLE_RADIO_GROUP
+			) {
 				return element;
-			}
-			else if (element && element.parentElement
-				&& element.getAttribute(UICustomRadio.ROLE) !== UICustomRadio.ROLE_RADIO_GROUP && topUpLevel > 0) {
+			} else if (
+				element &&
+				element.parentElement &&
+				element.getAttribute(UICustomRadio.ROLE) !== UICustomRadio.ROLE_RADIO_GROUP &&
+				topUpLevel > 0
+			) {
 				return this.getParentRadioGroup(element.parentElement, --topUpLevel);
-			}
-			else {
+			} else {
 				return element;
 			}
-		}
-		catch (error) {
+		} catch (error) {
 			this.logger.exception('getParentRadioGroup error occurred ::', error);
-
 		}
 	}
-
-
 }

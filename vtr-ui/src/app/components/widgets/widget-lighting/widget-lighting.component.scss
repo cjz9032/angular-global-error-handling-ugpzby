@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .vtr-widget-lighting {
 	.widget-title {
@@ -11,7 +11,8 @@
 		border-radius: $border_radius;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
-		background: url(../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
+		background: url(../../../../assets/images/gaming/lightingImage@2x.png) center top no-repeat
+			$gaming_dark;
 		background-size: 100% auto;
 		padding-top: 18rem;
 		@media #{$high-contrast} {
@@ -20,8 +21,8 @@
 		}
 	}
 	.widget-container-notebook {
-		background: url(../../../../assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top no-repeat
-			$gaming_dark;
+		background: url(../../../../assets/images/gaming/lighting/lighting-ui-new/bg_note.png)
+			center top no-repeat $gaming_dark;
 		background-size: 100% auto;
 	}
 	.lighting-porfile {
@@ -49,7 +50,7 @@
 			border: solid 0.2rem transparent;
 			padding: 0.2rem;
 			&::after {
-				content: " ";
+				content: ' ';
 				position: absolute;
 				border-radius: 5rem;
 				top: 0rem;
@@ -61,7 +62,7 @@
 				z-index: -1;
 			}
 			&::before {
-				content: " ";
+				content: ' ';
 				position: absolute;
 				border-radius: 5rem;
 				top: 0rem;

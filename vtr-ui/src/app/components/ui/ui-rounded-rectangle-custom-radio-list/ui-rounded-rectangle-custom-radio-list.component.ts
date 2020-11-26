@@ -1,4 +1,16 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
+import {
+	Component,
+	ElementRef,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	QueryList,
+	SimpleChanges,
+	ViewChild,
+	ViewChildren,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -12,7 +24,7 @@ import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.
 @Component({
 	selector: 'vtr-ui-rounded-rectangle-custom-radio-list',
 	templateUrl: './ui-rounded-rectangle-custom-radio-list.component.html',
-	styleUrls: ['./ui-rounded-rectangle-custom-radio-list.component.scss']
+	styleUrls: ['./ui-rounded-rectangle-custom-radio-list.component.scss'],
 })
 export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnChanges {
 	@Input() groupName: string;
@@ -29,12 +41,13 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 	public activeDescendantId;
 	public focusedComponentId = '';
 
-	constructor(logger: LoggerService
-		, private metrics: MetricService
-		, private activatedRoute: ActivatedRoute) {
-	}
+	constructor(
+		logger: LoggerService,
+		private metrics: MetricService,
+		private activatedRoute: ActivatedRoute
+	) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	ngOnChanges(changes: SimpleChanges) {
 		if (changes.radioDetails) {
@@ -61,8 +74,8 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 		let radio: UiRoundedRectangleRadioModel;
 		if (this.radioDetails && this.radioDetails.length > 0) {
 			let hasFound = false;
-			this.radioDetails.forEach(radioDetail => {
-				if ((radioDetail.componentId === radioId)) {
+			this.radioDetails.forEach((radioDetail) => {
+				if (radioDetail.componentId === radioId) {
 					radio = radioDetail;
 					hasFound = true;
 					radioDetail.isChecked = true;
@@ -73,7 +86,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 
 			// set selected if its found had requires focus
 			if (hasFound) {
-				this.radioButtons.forEach(radioButton => {
+				this.radioButtons.forEach((radioButton) => {
 					if (radioButton.nativeElement.id === radioId) {
 						radioButton.nativeElement.checked = true;
 						radioButton.nativeElement.setAttribute('aria-checked', 'true');
@@ -113,7 +126,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 				case KEYCODE.DOWN:
 				case KEYCODE.RIGHT:
 					// if index is equal to last item then set 0 else ++
-					nextIndex = (index === this.radioDetails.length - 1) ? 0 : index + 1;
+					nextIndex = index === this.radioDetails.length - 1 ? 0 : index + 1;
 					isHandled = true;
 
 					break;
@@ -121,7 +134,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 				case KEYCODE.UP:
 				case KEYCODE.LEFT:
 					// if index is equal to 0 item then set length -1 else --
-					nextIndex = (index === 0) ? this.radioDetails.length - 1 : index - 1;
+					nextIndex = index === 0 ? this.radioDetails.length - 1 : index - 1;
 					isHandled = true;
 					break;
 
@@ -149,7 +162,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 				ItemParent: this.metricsParent || this.activatedRoute.snapshot.data.pageName,
 				ItemType: 'FeatureClick',
 				ItemName: radio.metricsItem,
-				ItemValue: radio.isChecked
+				ItemValue: radio.isChecked,
 			};
 			this.metrics.sendMetrics(metricsData);
 		}
@@ -172,7 +185,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 		if (this.radioDetails && this.radioDetails.length > 0) {
 			let hasFound = false;
 			this.radioDetails.forEach((radioDetail, index) => {
-				if ((radioDetail.componentId === componentId)) {
+				if (radioDetail.componentId === componentId) {
 					hasFound = true;
 					itemIndex = index;
 				}
@@ -185,7 +198,7 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 		let selectedRadioId = '';
 		if (this.radioDetails && this.radioDetails.length > 0) {
 			this.radioDetails.forEach((radioDetail) => {
-				if ((radioDetail.isChecked)) {
+				if (radioDetail.isChecked) {
 					selectedRadioId = radioDetail.componentId;
 				}
 			});

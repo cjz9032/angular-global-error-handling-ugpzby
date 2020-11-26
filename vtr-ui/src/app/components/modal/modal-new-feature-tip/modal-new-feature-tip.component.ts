@@ -1,14 +1,22 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, HostListener, OnDestroy } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	ElementRef,
+	HostListener,
+	OnDestroy,
+} from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-modal-new-feature-tip',
 	templateUrl: './modal-new-feature-tip.component.html',
-	styleUrls: ['./modal-new-feature-tip.component.scss']
+	styleUrls: ['./modal-new-feature-tip.component.scss'],
 })
 export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
-
 	@Input() description = 'template description text.';
 	@Input() tipId = 'security';
 	@Output() btnOk = new EventEmitter<any>();
@@ -22,10 +30,7 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	positionInterval: any;
 	positionIntervalTime: number;
 
-	idArray = [
-		'new-feature-tip-ok-btn',
-		'new-feature-tip-mask',
-	];
+	idArray = ['new-feature-tip-ok-btn', 'new-feature-tip-mask'];
 
 	tipsVersions = {
 		'v3.2': 3.002,
@@ -33,9 +38,21 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	};
 
 	allNewTips = {
-		security: { tipId: 'security', desc: 'notification.menu.security', version: this.tipsVersions['v3.2'] },
-		homeSecurity: { tipId: 'home-security', desc: 'notification.menu.connectedHomeSecurity', version: this.tipsVersions['v3.2'] },
-		hardwareScan: { tipId: 'hardware-scan', desc: 'notification.menu.hardwareScan', version: this.tipsVersions['v3.2.5'] },
+		security: {
+			tipId: 'security',
+			desc: 'notification.menu.security',
+			version: this.tipsVersions['v3.2'],
+		},
+		homeSecurity: {
+			tipId: 'home-security',
+			desc: 'notification.menu.connectedHomeSecurity',
+			version: this.tipsVersions['v3.2'],
+		},
+		hardwareScan: {
+			tipId: 'hardware-scan',
+			desc: 'notification.menu.hardwareScan',
+			version: this.tipsVersions['v3.2.5'],
+		},
 	};
 
 	metrics: any;
@@ -43,7 +60,7 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	constructor(
 		private element: ElementRef,
 		private commonService: CommonService,
-		private shellService: VantageShellService,
+		private shellService: VantageShellService
 	) {
 		this.metrics = this.shellService.getMetrics();
 	}
@@ -68,15 +85,30 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 
 	nextTips(positionName: string) {
 		if (this.tipId === this.allNewTips.security.tipId) {
-			const homeSecurityAction = this.tipItemAction(this.allNewTips.homeSecurity, positionName);
-			if (homeSecurityAction) { return; }
+			const homeSecurityAction = this.tipItemAction(
+				this.allNewTips.homeSecurity,
+				positionName
+			);
+			if (homeSecurityAction) {
+				return;
+			}
 
-			const hardwareScanAction = this.tipItemAction(this.allNewTips.hardwareScan, positionName);
-			if (hardwareScanAction) { return; }
+			const hardwareScanAction = this.tipItemAction(
+				this.allNewTips.hardwareScan,
+				positionName
+			);
+			if (hardwareScanAction) {
+				return;
+			}
 		}
 		if (this.tipId === this.allNewTips.homeSecurity.tipId) {
-			const hardwareScanAction = this.tipItemAction(this.allNewTips.hardwareScan, positionName);
-			if (hardwareScanAction) { return; }
+			const hardwareScanAction = this.tipItemAction(
+				this.allNewTips.hardwareScan,
+				positionName
+			);
+			if (hardwareScanAction) {
+				return;
+			}
 		}
 		const newTipsMetrics = this.calcTipItemMetricsData(this.tipId, positionName);
 		this.sendMetricsAsync(newTipsMetrics);
@@ -91,14 +123,16 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 			this.showItemTip(menuItem);
 			this.sendMetricsAsync(newTipsMetrics);
 			return true;
-		} else { return false; }
+		} else {
+			return false;
+		}
 	}
 
 	calcTipItemMetricsData(id: string, positionName: string) {
 		return {
 			ItemType: 'FeatureClick',
 			ItemName: `${id}-${positionName}`,
-			ItemParent: 'New Feature Tips'
+			ItemParent: 'New Feature Tips',
 		};
 	}
 
@@ -114,7 +148,8 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
-		} else { }
+		} else {
+		}
 	}
 
 	setDescAndTipId(tip: NewTipItem) {
@@ -129,13 +164,27 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 
 		const lastFeatureVersion = this.commonService.lastFeatureVersion;
 
-		if (this.isShowMenuTips(securityMenu, this.allNewTips.security.version, lastFeatureVersion)) {
+		if (
+			this.isShowMenuTips(securityMenu, this.allNewTips.security.version, lastFeatureVersion)
+		) {
 			this.setDescAndTipId(this.allNewTips.security);
 			this.showItemTip(securityMenu);
-		} else if (this.isShowMenuTips(homeSecurityMenu, this.allNewTips.homeSecurity.version, lastFeatureVersion)) {
+		} else if (
+			this.isShowMenuTips(
+				homeSecurityMenu,
+				this.allNewTips.homeSecurity.version,
+				lastFeatureVersion
+			)
+		) {
 			this.setDescAndTipId(this.allNewTips.homeSecurity);
 			this.showItemTip(homeSecurityMenu);
-		} else if (this.isShowMenuTips(hardwareScanMenu, this.allNewTips.hardwareScan.version, lastFeatureVersion)) {
+		} else if (
+			this.isShowMenuTips(
+				hardwareScanMenu,
+				this.allNewTips.hardwareScan.version,
+				lastFeatureVersion
+			)
+		) {
 			this.setDescAndTipId(this.allNewTips.hardwareScan);
 			this.showItemTip(hardwareScanMenu);
 		}
@@ -167,21 +216,26 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 				clearInterval(this.positionInterval);
 			}
 		}, 100);
-
 	}
 
 	getLeft(e: any) {
 		if (e) {
 			let offset = e.offsetLeft;
-			if (e.offsetParent != null) { offset += this.getLeft(e.offsetParent); }
+			if (e.offsetParent != null) {
+				offset += this.getLeft(e.offsetParent);
+			}
 			return offset;
-		} else { return null; }
+		} else {
+			return null;
+		}
 	}
 	getWidth(e: any) {
 		if (e) {
 			const offset = e.clientWidth;
 			return offset;
-		} else { return null; }
+		} else {
+			return null;
+		}
 	}
 
 	@HostListener('window:resize')
@@ -205,10 +259,14 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		const idArray = this.idArray;
 		const idIndex = idArray.indexOf(id);
 		if (!reverse) {
-			if (idIndex === -1 || idIndex === idArray.length - 1) { return idArray[0]; }
+			if (idIndex === -1 || idIndex === idArray.length - 1) {
+				return idArray[0];
+			}
 			return idArray[idIndex + 1];
 		} else {
-			if (idIndex === -1 || idIndex === 0) { return idArray[idArray.length - 1]; }
+			if (idIndex === -1 || idIndex === 0) {
+				return idArray[idArray.length - 1];
+			}
 			return idArray[idIndex - 1];
 		}
 	}
@@ -223,4 +281,8 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	}
 }
 
-export class NewTipItem { tipId: string; desc: string; version: number; }
+export class NewTipItem {
+	tipId: string;
+	desc: string;
+	version: number;
+}

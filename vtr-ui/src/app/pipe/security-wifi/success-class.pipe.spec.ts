@@ -1,6 +1,4 @@
-import {
-	SuccessClassPipe
-} from './success-class.pipe';
+import { SuccessClassPipe } from './success-class.pipe';
 
 describe('SuccessClassPipe', () => {
 	// it('create an instance', () => {

@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 .lighting-single-color {
 	::ng-deep {
 		.content-title {
@@ -84,7 +84,7 @@
 				background-color: $white10;
 			}
 			&:after {
-				content: "";
+				content: '';
 				position: absolute;
 				display: none;
 			}

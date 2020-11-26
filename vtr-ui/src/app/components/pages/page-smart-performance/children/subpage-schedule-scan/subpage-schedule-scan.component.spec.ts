@@ -13,7 +13,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
-
 describe('SubpageScheduleScanComponent', () => {
 	let component: SubpageScheduleScanComponent;
 	let fixture: ComponentFixture<SubpageScheduleScanComponent>;
@@ -25,16 +24,8 @@ describe('SubpageScheduleScanComponent', () => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [SubpageScheduleScanComponent],
-			imports: [
-				HttpClientTestingModule,
-				TranslateModule.forRoot(),
-				NgbTooltipModule
-			],
-			providers: [
-				SmartPerformanceService,
-				LoggerService,
-				CommonService
-			]
+			imports: [HttpClientTestingModule, TranslateModule.forRoot(), NgbTooltipModule],
+			providers: [SmartPerformanceService, LoggerService, CommonService],
 		});
 		fixture = TestBed.createComponent(SubpageScheduleScanComponent);
 		component = fixture.componentInstance;
@@ -62,7 +53,12 @@ describe('SubpageScheduleScanComponent', () => {
 	it('scheduleScanFrequency is defined - subscribed user', () => {
 		const payload = enumSmartPerformance.SCHEDULESCANANDFIX;
 		commonService = TestBed.inject(CommonService);
-		spyOn(commonService, 'getLocalStorageValue').and.returnValues(true, component.scanFrequency[0], false, true);
+		spyOn(commonService, 'getLocalStorageValue').and.returnValues(
+			true,
+			component.scanFrequency[0],
+			false,
+			true
+		);
 		const spy = spyOn(component, 'getNextScanRunTime');
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalledWith(payload);
@@ -71,7 +67,12 @@ describe('SubpageScheduleScanComponent', () => {
 	it('scheduleScanFrequency is defined - non-subscribed user', () => {
 		const payload = enumSmartPerformance.SCHEDULESCAN;
 		commonService = TestBed.inject(CommonService);
-		spyOn(commonService, 'getLocalStorageValue').and.returnValues(false, component.scanFrequency[0], false, true);
+		spyOn(commonService, 'getLocalStorageValue').and.returnValues(
+			false,
+			component.scanFrequency[0],
+			false,
+			true
+		);
 		const spy = spyOn(component, 'getNextScanRunTime');
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalledWith(payload);
@@ -104,8 +105,8 @@ describe('SubpageScheduleScanComponent', () => {
 	it('should close schedule scan expansion when clicked outside', () => {
 		const event: any = {
 			target: {
-				classList: ['text']
-			}
+				classList: ['text'],
+			},
 		};
 		component.onClick(event);
 		expect(component.scheduleTab).toEqual('');
@@ -233,7 +234,7 @@ describe('SubpageScheduleScanComponent', () => {
 			frequency: 'onceaweek',
 			day: 'Wednesday',
 			time: '2020-06-17T17:45:00',
-			date: []
+			date: [],
 		};
 		const res: any = { state: true };
 		const spy = spyOn(smartPerformanceService, 'setScanSchedule').and.returnValue(res);
@@ -248,7 +249,7 @@ describe('SubpageScheduleScanComponent', () => {
 			frequency: 'onceaweek',
 			day: 'Wednesday',
 			time: '2020-06-17T17:45:00',
-			date: []
+			date: [],
 		};
 		const res: any = { state: true };
 		const spy = spyOn(smartPerformanceService, 'setScanSchedule').and.returnValue(res);

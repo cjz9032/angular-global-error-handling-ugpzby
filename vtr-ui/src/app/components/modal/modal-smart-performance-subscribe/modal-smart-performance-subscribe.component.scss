@@ -31,7 +31,7 @@ $marginY: 3.5rem;
 	background: $light;
 	height: 100%;
 	overflow: hidden;
-	
+
 	@media #{$white-on-black} {
 		box-shadow: none;
 		@include white-border;
@@ -43,7 +43,6 @@ $marginY: 3.5rem;
 		@include black-border;
 	}
 }
-
 
 .close {
 	&:focus {
@@ -62,5 +61,4 @@ $marginY: 3.5rem;
 			padding-right: 2.4rem;
 		}
 	}
-
 }

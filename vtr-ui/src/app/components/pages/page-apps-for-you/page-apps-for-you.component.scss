@@ -54,15 +54,15 @@
 					flex-flow: column;
 					justify-content: center;
 					padding-left: 2.4rem;
-	
+
 					.app-title {
 						font-size: 2rem;
 						line-height: 1.4;
 					}
-	
+
 					.app-price {
 						font-size: 1.4rem;
-						opacity: .8;
+						opacity: 0.8;
 					}
 				}
 				@media #{$mediaquery_15} {
@@ -71,7 +71,6 @@
 					}
 				}
 			}
-
 
 			.app-spinner {
 				width: 6rem;
@@ -90,7 +89,6 @@
 					}
 				}
 			}
-
 
 			.btn-content {
 				width: 100%;
@@ -151,8 +149,6 @@
 				font-weight: $weight_600;
 			}
 
-
-
 			.description-con {
 				width: 100%;
 			}
@@ -175,7 +171,7 @@
 							width: 32%;
 							height: 100%;
 							top: 0;
-							transition: left .3s;
+							transition: left 0.3s;
 							cursor: pointer;
 							border: 1px solid #ddd;
 
@@ -236,16 +232,16 @@
 							justify-content: center;
 							align-items: center;
 							cursor: pointer;
-							opacity: .5;
+							opacity: 0.5;
 							color: $shade_darker;
-							
+
 							@media #{$black-on-white} {
 								color: $dark;
 								background-color: $light;
 							}
 
 							@media #{$white-on-black} {
-                                opacity: 1;
+								opacity: 1;
 								color: $light;
 								background-color: $dark;
 							}
@@ -255,7 +251,7 @@
 								width: 1.5rem;
 								height: 4rem;
 								font-size: 2.4rem;
-								}
+							}
 						}
 
 						.left-arrow {
@@ -270,19 +266,19 @@
 					&:hover {
 						.arrow-content {
 							.arrow {
-								opacity: .8;
+								opacity: 0.8;
 
 								&:hover {
 									opacity: 1;
-                                    color: $main;
-                                    
-                                    @media #{$white-on-black} {
+									color: $main;
+
+									@media #{$white-on-black} {
 										color: $high-contrast-black-textselected;
 									}
 
 									@media #{$black-on-white} {
 										color: $high-contrast-white-textselected;
-									}	
+									}
 								}
 							}
 						}
@@ -325,12 +321,12 @@
 				background: $dark_cell;
 				color: $gaming_lightest;
 			}
-	
+
 			.apps-content {
 				background: $dark_cell;
 				color: $gaming_lightest;
 				.description {
-					opacity: .6;
+					opacity: 0.6;
 				}
 
 				.title {
@@ -338,15 +334,15 @@
 				}
 
 				.sub-title {
-					opacity: .6;
+					opacity: 0.6;
 				}
-	
+
 				.screenshot-con {
 					.screenshot-slider {
 						.image-content {
 							.screenshot-img {
 								border: none;
-								opacity: .9;
+								opacity: 0.9;
 								&:hover {
 									border: none;
 								}

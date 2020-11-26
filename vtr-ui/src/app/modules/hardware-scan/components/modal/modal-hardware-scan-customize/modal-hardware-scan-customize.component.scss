@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .vtr-modal-hardware-scan-customize {
 	@include high-contrast-border;
@@ -35,7 +35,7 @@
 
 	.button-row {
 		padding-top: 1rem;
-		::ng-deep .vtr-ui-button .button-box{
+		::ng-deep .vtr-ui-button .button-box {
 			padding-left: 0;
 		}
 	}

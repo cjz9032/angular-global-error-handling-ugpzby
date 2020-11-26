@@ -8,7 +8,6 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { BacklightLevelEnum, BacklightStatusEnum } from '../backlight/backlight.enum';
 import { BacklightThinkpadComponent } from './backlight-thinkpad.component';
 
-
 describe('BacklightThinkpadComponent', () => {
 	let component: BacklightThinkpadComponent;
 	let fixture: ComponentFixture<BacklightThinkpadComponent>;
@@ -16,14 +15,16 @@ describe('BacklightThinkpadComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [BacklightThinkpadComponent,
+			declarations: [
+				BacklightThinkpadComponent,
 				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'removeSpace' }), mockPipe({ name: 'separatePascalCase' })],
+				mockPipe({ name: 'removeSpace' }),
+				mockPipe({ name: 'separatePascalCase' }),
+			],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientTestingModule, RouterTestingModule],
-			providers: [TranslateStore]
-		})
-			.compileComponents();
+			providers: [TranslateStore],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -74,7 +75,9 @@ describe('BacklightThinkpadComponent', () => {
 	});
 
 	it('#getAutoKBDBacklightCapability capability: true', async () => {
-		spyOn(keyboardService, 'getAutoKBDBacklightCapability').and.returnValue(Promise.resolve(true));
+		spyOn(keyboardService, 'getAutoKBDBacklightCapability').and.returnValue(
+			Promise.resolve(true)
+		);
 		spyOn(component, 'getAutoKBDStatus');
 		fixture.detectChanges();
 		component.getAutoKBDBacklightCapability();
@@ -82,7 +85,9 @@ describe('BacklightThinkpadComponent', () => {
 	});
 
 	it('#getAutoKBDBacklightCapability capability: false', async () => {
-		spyOn(keyboardService, 'getAutoKBDBacklightCapability').and.returnValue(Promise.resolve(false));
+		spyOn(keyboardService, 'getAutoKBDBacklightCapability').and.returnValue(
+			Promise.resolve(false)
+		);
 		spyOn(component, 'getAutoKBDStatus');
 		fixture.detectChanges();
 		component.getAutoKBDBacklightCapability();
@@ -90,28 +95,36 @@ describe('BacklightThinkpadComponent', () => {
 	});
 
 	it('#getKBDBacklightStatus status: Auto', async () => {
-		spyOn(keyboardService, 'getKBDBacklightStatus').and.returnValue(Promise.resolve(BacklightStatusEnum.AUTO));
+		spyOn(keyboardService, 'getKBDBacklightStatus').and.returnValue(
+			Promise.resolve(BacklightStatusEnum.AUTO)
+		);
 		fixture.detectChanges();
 		component.getKBDBacklightStatus();
 		expect(keyboardService.getKBDBacklightStatus).toHaveBeenCalled();
 	});
 
 	it('#getKBDBacklightStatus status: Level_2', async () => {
-		spyOn(keyboardService, 'getKBDBacklightStatus').and.returnValue(Promise.resolve(BacklightStatusEnum.LEVEL_2));
+		spyOn(keyboardService, 'getKBDBacklightStatus').and.returnValue(
+			Promise.resolve(BacklightStatusEnum.LEVEL_2)
+		);
 		fixture.detectChanges();
 		component.getKBDBacklightStatus();
 		expect(keyboardService.getKBDBacklightStatus).toHaveBeenCalled();
 	});
 
 	it('#getKBDBacklightStatus status: DisabledOff', async () => {
-		spyOn(keyboardService, 'getKBDBacklightStatus').and.returnValue(Promise.resolve(BacklightStatusEnum.DISABLED_OFF));
+		spyOn(keyboardService, 'getKBDBacklightStatus').and.returnValue(
+			Promise.resolve(BacklightStatusEnum.DISABLED_OFF)
+		);
 		fixture.detectChanges();
 		component.getKBDBacklightStatus();
 		expect(keyboardService.getKBDBacklightStatus).toHaveBeenCalled();
 	});
 
 	it('#getKBDBacklightStatus status: Off', async () => {
-		spyOn(keyboardService, 'getKBDBacklightStatus').and.returnValue(Promise.resolve(BacklightStatusEnum.OFF));
+		spyOn(keyboardService, 'getKBDBacklightStatus').and.returnValue(
+			Promise.resolve(BacklightStatusEnum.OFF)
+		);
 		fixture.detectChanges();
 		component.getKBDBacklightStatus();
 		expect(keyboardService.getKBDBacklightStatus).toHaveBeenCalled();
@@ -125,7 +138,9 @@ describe('BacklightThinkpadComponent', () => {
 	});
 
 	it('#getKBDBacklightLevel status: NoCapability', async () => {
-		spyOn(keyboardService, 'getKBDBacklightLevel').and.returnValue(Promise.resolve(BacklightLevelEnum.NO_CAPABILITY));
+		spyOn(keyboardService, 'getKBDBacklightLevel').and.returnValue(
+			Promise.resolve(BacklightLevelEnum.NO_CAPABILITY)
+		);
 		fixture.detectChanges();
 		component.getKBDBacklightLevel();
 		expect(keyboardService.getKBDBacklightLevel).toHaveBeenCalled();
@@ -140,14 +155,18 @@ describe('BacklightThinkpadComponent', () => {
 	});
 
 	it('#getKBDBacklightLevel status: OneLevel', async () => {
-		spyOn(keyboardService, 'getKBDBacklightLevel').and.returnValue(Promise.resolve(BacklightLevelEnum.ONE_LEVEL));
+		spyOn(keyboardService, 'getKBDBacklightLevel').and.returnValue(
+			Promise.resolve(BacklightLevelEnum.ONE_LEVEL)
+		);
 		fixture.detectChanges();
 		component.getKBDBacklightLevel();
 		expect(keyboardService.getKBDBacklightLevel).toHaveBeenCalled();
 	});
 
 	it('#getKBDBacklightLevel status: TWO_LEVELS_AUTO', async () => {
-		spyOn(keyboardService, 'getKBDBacklightLevel').and.returnValue(Promise.resolve(BacklightLevelEnum.TWO_LEVELS_AUTO));
+		spyOn(keyboardService, 'getKBDBacklightLevel').and.returnValue(
+			Promise.resolve(BacklightLevelEnum.TWO_LEVELS_AUTO)
+		);
 		fixture.detectChanges();
 		component.getKBDBacklightLevel();
 		expect(keyboardService.getKBDBacklightLevel).toHaveBeenCalled();
@@ -212,7 +231,7 @@ describe('BacklightThinkpadComponent', () => {
 
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
 	return Pipe(metadata)(
 		class MockPipe {

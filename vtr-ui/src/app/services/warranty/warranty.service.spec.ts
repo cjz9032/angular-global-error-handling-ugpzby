@@ -12,10 +12,18 @@ import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell-mock.service';
 
 xdescribe('WarrantyService', () => {
-	beforeEach(() => TestBed.configureTestingModule({
-		imports: [RouterTestingModule, TranslationModule, HttpClientModule, MetricsModule],
-		providers: [TranslateStore, CommonService, DeviceService, VantageShellService, MetricsDirective]
-	}));
+	beforeEach(() =>
+		TestBed.configureTestingModule({
+			imports: [RouterTestingModule, TranslationModule, HttpClientModule, MetricsModule],
+			providers: [
+				TranslateStore,
+				CommonService,
+				DeviceService,
+				VantageShellService,
+				MetricsDirective,
+			],
+		})
+	);
 
 	it('should be created', () => {
 		const service: WarrantyService = TestBed.inject(WarrantyService);

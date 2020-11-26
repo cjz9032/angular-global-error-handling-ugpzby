@@ -16,7 +16,6 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 	styleUrls: ['./battery-detail.component.scss'],
 })
 export class BatteryDetailComponent implements OnInit, OnDestroy {
-
 	public isLoading = true;
 	public dataSource: BatteryDetail[];
 	@Input() dataInfo: BatteryDetail[];
@@ -40,8 +39,8 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		public commonService: CommonService,
 		public cd: ChangeDetectorRef,
 		private logger: LoggerService,
-		public translate: TranslateService) {
-	}
+		public translate: TranslateService
+	) {}
 
 	onNotification(notification: AppNotification) {
 		if (notification) {
@@ -60,48 +59,64 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		const headings = [
 			'device.deviceSettings.batteryGauge.details.primary',
 			'device.deviceSettings.batteryGauge.details.secondary',
-			'device.deviceSettings.batteryGauge.details.tertiary'];
+			'device.deviceSettings.batteryGauge.details.tertiary',
+		];
 		if (response) {
 			if (response.detail && response.detail.length > 0) {
 				this.isLoading = false;
 				for (let i = 0; i < response.detail.length; i++) {
 					if (response.detail[i] && response.detail[i] !== null) {
-						response.detail[i].remainingCapacity = Math.round(response.detail[i].remainingCapacity * 100) / 100;
-						response.detail[i].fullChargeCapacity = Math.round(response.detail[i].fullChargeCapacity * 100) / 100;
-						response.detail[i].voltage = Math.round(response.detail[i].voltage * 100) / 100;
-						response.detail[i].wattage = Math.round(response.detail[i].wattage * 100) / 100;
+						response.detail[i].remainingCapacity =
+							Math.round(response.detail[i].remainingCapacity * 100) / 100;
+						response.detail[i].fullChargeCapacity =
+							Math.round(response.detail[i].fullChargeCapacity * 100) / 100;
+						response.detail[i].voltage =
+							Math.round(response.detail[i].voltage * 100) / 100;
+						response.detail[i].wattage =
+							Math.round(response.detail[i].wattage * 100) / 100;
 						response.detail[i].heading = response.detail.length > 1 ? headings[i] : '';
 						const id = response.detail[i].chargeStatus;
 
-						response.detail[i].chargeStatusString = this.batteryChargeStatus.getBatteryChargeStatus(id);
+						response.detail[
+							i
+						].chargeStatusString = this.batteryChargeStatus.getBatteryChargeStatus(id);
 
-						if (response.detail[i].chargeStatus === this.batteryChargeStatus.NO_ACTIVITY.id
-							|| response.detail[i].chargeStatus === this.batteryChargeStatus.ERROR.id
-							|| response.detail[i].chargeStatus === this.batteryChargeStatus.NOT_INSTALLED.id) {
+						if (
+							response.detail[i].chargeStatus ===
+								this.batteryChargeStatus.NO_ACTIVITY.id ||
+							response.detail[i].chargeStatus === this.batteryChargeStatus.ERROR.id ||
+							response.detail[i].chargeStatus ===
+								this.batteryChargeStatus.NOT_INSTALLED.id
+						) {
 							/// if chargeStatus is 'No activity' | 'Error' | 'Not installed'
 							// remaining time will not be displayed
 							response.detail[i].remainingTime = undefined;
 						} else {
 							const totalMin = response.detail[i].remainingTime;
-							this.hourText = Math.trunc(totalMin / 60) > 0 && Math.trunc(totalMin / 60) < 2 ?
-								'device.deviceSettings.batteryGauge.hour' :
-								'device.deviceSettings.batteryGauge.hours';
+							this.hourText =
+								Math.trunc(totalMin / 60) > 0 && Math.trunc(totalMin / 60) < 2
+									? 'device.deviceSettings.batteryGauge.hour'
+									: 'device.deviceSettings.batteryGauge.hours';
 
-							this.minutesText = (totalMin % 60) > 0 && (totalMin % 60) < 2 ?
-								'device.deviceSettings.batteryGauge.minute' :
-								'device.deviceSettings.batteryGauge.minutes';
+							this.minutesText =
+								totalMin % 60 > 0 && totalMin % 60 < 2
+									? 'device.deviceSettings.batteryGauge.minute'
+									: 'device.deviceSettings.batteryGauge.minutes';
 						}
 						if (response.indicator.timeText === 'timeCompletion') {
-							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.chargeCompletionTime';
+							response.detail[i].remainingTimeText =
+								'device.deviceSettings.batteryGauge.details.chargeCompletionTime';
 						} else {
-							response.detail[i].remainingTimeText = 'device.deviceSettings.batteryGauge.details.remainingTime';
+							response.detail[i].remainingTimeText =
+								'device.deviceSettings.batteryGauge.details.remainingTime';
 						}
 						const chemistry: string = response.detail[i].deviceChemistry;
 						if (chemistry === null || chemistry === undefined || chemistry === '') {
 							this.deviceChemistry[i] = chemistry;
 						} else {
 							this.deviceChemistry[i] =
-								'device.deviceSettings.batteryGauge.details.deviceChemistry.' + chemistry.toLowerCase();
+								'device.deviceSettings.batteryGauge.details.deviceChemistry.' +
+								chemistry.toLowerCase();
 						}
 					}
 				}
@@ -111,9 +126,7 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 			this.batteryConditions = response.conditions;
 		}
 
-		if (this.cd &&
-			this.cd !== null &&
-			!(this.cd as ViewRef).destroyed) {
+		if (this.cd && this.cd !== null && !(this.cd as ViewRef).destroyed) {
 			this.cd.detectChanges();
 		}
 	}
@@ -124,10 +137,16 @@ export class BatteryDetailComponent implements OnInit, OnDestroy {
 		this.batteryIndicator = this.dataIndicator;
 		this.batteryConditions = this.dataConditions;
 
-		this.preProcessBatteryDetailResponse({ detail: this.dataSource, indicator: this.dataIndicator, conditions: this.dataConditions });
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
+		this.preProcessBatteryDetailResponse({
+			detail: this.dataSource,
+			indicator: this.dataIndicator,
+			conditions: this.dataConditions,
 		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
 
 	onFccIconClick(tooltip, canOpen: any = false) {

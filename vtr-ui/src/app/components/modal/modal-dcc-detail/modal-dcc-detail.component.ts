@@ -1,4 +1,11 @@
-import { Component, OnInit, ElementRef, HostListener, SecurityContext, AfterViewInit } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	ElementRef,
+	HostListener,
+	SecurityContext,
+	AfterViewInit,
+} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
@@ -9,10 +16,9 @@ import { CommonService } from 'src/app/services/common/common.service';
 	selector: 'vtr-modal-dcc-detail',
 	templateUrl: './modal-dcc-detail.component.html',
 	styleUrls: ['./modal-dcc-detail.component.scss'],
-	providers: [TimerService]
+	providers: [TimerService],
 })
 export class ModalDccDetailComponent implements OnInit, AfterViewInit {
-
 	metricClient: any;
 	enterTime: number;
 	metricsParent = '';
@@ -57,7 +63,8 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 			const dccContent = document.querySelector('.dcc-body') as HTMLElement;
 			let DocReadPosition = -1;
 			if (dccBox && dccContent) {
-				DocReadPosition = (dccBox.scrollTop + dccBox.offsetHeight) * 100 / dccContent.offsetHeight;
+				DocReadPosition =
+					((dccBox.scrollTop + dccBox.offsetHeight) * 100) / dccContent.offsetHeight;
 				DocReadPosition = Math.round(DocReadPosition);
 			}
 			const metricsData = {
@@ -67,7 +74,7 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 				ItemCategory: '',
 				Duration: this.timerService.stop(),
 				DocReadPosition,
-				MediaReadPosition: 0
+				MediaReadPosition: 0,
 			};
 			this.metricClient.sendAsync(metricsData);
 		}

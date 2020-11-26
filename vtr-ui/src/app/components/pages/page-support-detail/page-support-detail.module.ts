@@ -25,7 +25,7 @@ import { SupportDetailArticleEComponent } from './children/support-detail-articl
 		SupportDetailArticleBComponent,
 		SupportDetailArticleCComponent,
 		SupportDetailArticleDComponent,
-		SupportDetailArticleEComponent
+		SupportDetailArticleEComponent,
 	],
 	exports: [
 		PageSupportDetailComponent,
@@ -33,7 +33,7 @@ import { SupportDetailArticleEComponent } from './children/support-detail-articl
 		SupportDetailArticleBComponent,
 		SupportDetailArticleCComponent,
 		SupportDetailArticleDComponent,
-		SupportDetailArticleEComponent
+		SupportDetailArticleEComponent,
 	],
 	imports: [
 		CommonModule,
@@ -45,12 +45,9 @@ import { SupportDetailArticleEComponent } from './children/support-detail-articl
 		WidgetSecurityStatusModule,
 		PageLayoutModule,
 		UiButtonModule,
-		FontAwesomeModule
+		FontAwesomeModule,
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class PageSupportDetailModule {
 	constructor(library: FaIconLibrary) {

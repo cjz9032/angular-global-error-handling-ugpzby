@@ -15,19 +15,18 @@ describe('ModalExportLogComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ ModalExportLogComponent ],
+			declarations: [ModalExportLogComponent],
 			providers: [
 				{
 					provide: NgbActiveModal,
-					useValue: ngbActiveModal
+					useValue: ngbActiveModal,
 				},
 				{
 					provide: DeviceService,
-					useValue: deviceService
-				}
-			]
-		})
-		.compileComponents();
+					useValue: deviceService,
+				},
+			],
+		}).compileComponents();
 	});
 
 	beforeEach(() => {
@@ -49,18 +48,23 @@ describe('ModalExportLogComponent', () => {
 		component.errorStatus = ExportLogErrorStatus.SuccessExport;
 		fixture.detectChanges();
 
-		const descriptionElement = fixture.debugElement.query(By.css('#hwscan-export-log-modal-description')).nativeElement;
+		const descriptionElement = fixture.debugElement.query(
+			By.css('#hwscan-export-log-modal-description')
+		).nativeElement;
 
 		expect(descriptionElement.textContent).toEqual(pathMocked);
 	});
 
 	it('should use the access denied description when receive access denied error status', () => {
-		const AccessDeniedDescriptionToken = 'hardwareScan.exportLogModal.exportAccessErrorDescription';
+		const AccessDeniedDescriptionToken =
+			'hardwareScan.exportLogModal.exportAccessErrorDescription';
 
 		component.errorStatus = ExportLogErrorStatus.AccessDenied;
 		fixture.detectChanges();
 
-		const descriptionElement = fixture.debugElement.query(By.css('#hwscan-export-log-modal-description')).nativeElement;
+		const descriptionElement = fixture.debugElement.query(
+			By.css('#hwscan-export-log-modal-description')
+		).nativeElement;
 
 		expect(descriptionElement.textContent).toEqual(AccessDeniedDescriptionToken);
 	});
@@ -71,7 +75,9 @@ describe('ModalExportLogComponent', () => {
 		component.errorStatus = ExportLogErrorStatus.GenericError;
 		fixture.detectChanges();
 
-		const descriptionElement = fixture.debugElement.query(By.css('#hwscan-export-log-modal-description')).nativeElement;
+		const descriptionElement = fixture.debugElement.query(
+			By.css('#hwscan-export-log-modal-description')
+		).nativeElement;
 
 		expect(descriptionElement.textContent).toEqual(ErrorDescriptionToken);
 	});
@@ -82,7 +88,9 @@ describe('ModalExportLogComponent', () => {
 		component.errorStatus = undefined;
 		fixture.detectChanges();
 
-		const descriptionElement = fixture.debugElement.query(By.css('#hwscan-export-log-modal-description')).nativeElement;
+		const descriptionElement = fixture.debugElement.query(
+			By.css('#hwscan-export-log-modal-description')
+		).nativeElement;
 
 		expect(descriptionElement.textContent).toEqual(ErrorDescriptionToken);
 	});

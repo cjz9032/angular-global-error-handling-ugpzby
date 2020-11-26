@@ -8,18 +8,15 @@ const routes: Routes = [
 		path: '',
 		component: PageDashboardComponent,
 		canDeactivate: [GuardService],
-		canActivate: [ GuardService ],
+		canActivate: [GuardService],
 		data: {
-			pageName: 'Dashboard'
-		}
-	}];
+			pageName: 'Dashboard',
+		},
+	},
+];
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(routes)
-	],
-	exports: [
-		RouterModule
-	]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class HardwareDashboardRoutingModule { }
+export class HardwareDashboardRoutingModule {}

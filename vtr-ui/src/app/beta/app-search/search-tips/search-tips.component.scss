@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .search-tips {
 	position: fixed;
@@ -13,7 +13,7 @@
 	max-width: 40rem;
 	z-index: 12;
 	padding: 1rem 3rem;
-	animation: showSearchTips .3s ease-out 1;
+	animation: showSearchTips 0.3s ease-out 1;
 
 	.title {
 		font-size: 2rem;
@@ -39,5 +39,4 @@
 		right: 2.2rem;
 		opacity: 1;
 	}
-
 }

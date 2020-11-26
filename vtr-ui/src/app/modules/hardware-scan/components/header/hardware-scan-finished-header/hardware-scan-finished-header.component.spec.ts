@@ -14,9 +14,9 @@ describe('HardwareScanFinishedHeaderComponent', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			imports: [ RouterTestingModule, HttpClientModule, TranslateModule.forRoot() ],
-			providers: [ DevService ],
-			declarations: [ HardwareScanFinishedHeaderComponent ]
+			imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
+			providers: [DevService],
+			declarations: [HardwareScanFinishedHeaderComponent],
 		}).compileComponents();
 	});
 

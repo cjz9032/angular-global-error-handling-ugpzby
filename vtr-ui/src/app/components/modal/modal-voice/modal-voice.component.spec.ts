@@ -5,11 +5,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 import { ModalVoiceComponent } from './modal-voice.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import {
-	TranslateModule,
-	TranslateService,
-	TranslateLoader
-} from '@ngx-translate/core';
+import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 
@@ -25,17 +21,15 @@ describe('ModalVoiceComponent', () => {
 					loader: {
 						provide: TranslateLoader,
 						useFactory: HttpLoaderFactory,
-						deps: [HttpClient]
-					}
+						deps: [HttpClient],
+					},
 				}),
 				HttpClientTestingModule,
-				RouterTestingModule
+				RouterTestingModule,
 			],
 			declarations: [ModalVoiceComponent, SvgInlinePipe],
-			providers: [NgbActiveModal]
-
-		})
-			.compileComponents();
+			providers: [NgbActiveModal],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -51,13 +45,11 @@ describe('ModalVoiceComponent', () => {
 	it('should call clode modal', () => {
 		component.closeModal();
 	});
-	it('should call onFocus when calling modal focus', (() => {
+	it('should call onFocus when calling modal focus', () => {
 		const modal = document.createElement('div');
 		modal.setAttribute('class', 'Voice-Modal');
 		fixture.debugElement.nativeElement.append(modal);
 		component.onFocus();
 		expect(modal).toBeTruthy();
-	}));
-
-
+	});
 });

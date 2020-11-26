@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class AppSearchService {
 	public targetFeature: any = null;
@@ -34,12 +34,12 @@ export class AppSearchService {
 	private searchDB = {
 		features: {
 			tags: {},
-			relevantTags: {}
+			relevantTags: {},
 		},
 		articles: {
 			tags: {},
-			relevantTags: {}
-		}
+			relevantTags: {},
+		},
 	};
 
 	constructor(
@@ -50,17 +50,20 @@ export class AppSearchService {
 		private localCacheService: LocalCacheService,
 		private localInfoService: LocalInfoService,
 		private betaService: BetaService
-		) {
+	) {
 		this.betaMenuMapPaths();
 		this.loadSearchIndex();
 		this.unsupportedFeatures = new Set();
-		const featuresArray = this.localCacheService.getLocalCacheValue(LocalStorageKey.UnSupportFeatures);
+		const featuresArray = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.UnSupportFeatures
+		);
 		if (featuresArray !== undefined && featuresArray.length !== undefined) {
 			this.unsupportedFeatures = new Set(featuresArray);
 		}
 
 		this.regionPromise = new Promise((resolve) => {
-			this.localInfoService.getLocalInfo()
+			this.localInfoService
+				.getLocalInfo()
 				.then((result) => {
 					resolve(result.GEO);
 				})
@@ -73,7 +76,7 @@ export class AppSearchService {
 	betaMenuMapPaths() {
 		const betaMenu = this.configService.betaItem;
 		if (betaMenu && betaMenu.length > 0) {
-			this.betaRoutes = betaMenu.map(menuItem => '/' + menuItem.path);
+			this.betaRoutes = betaMenu.map((menuItem) => '/' + menuItem.path);
 		}
 	}
 
@@ -142,9 +145,9 @@ export class AppSearchService {
 		const tags = this.searchDB.features.tags;
 		const relevantTags = this.searchDB.features.relevantTags;
 
-
-		const dataSource = await this.http.get(`./assets/i18n/app-search/en.json&v=${environment.appVersion}`)
-			.toPromise() as any;
+		const dataSource = (await this.http
+			.get(`./assets/i18n/app-search/en.json&v=${environment.appVersion}`)
+			.toPromise()) as any;
 		if (!dataSource.features) {
 			return;
 		}
@@ -160,7 +163,7 @@ export class AppSearchService {
 				itemRoute = '/' + key;
 			}
 
-			if (!await this.isFeatureSupported(featuresGroup)) {
+			if (!(await this.isFeatureSupported(featuresGroup))) {
 				return;
 			}
 
@@ -172,17 +175,17 @@ export class AppSearchService {
 
 				feature.id = subKey;
 				feature.route = itemRoute;
-				if (!await this.isFeatureSupported(feature)) {
+				if (!(await this.isFeatureSupported(feature))) {
 					return;
 				}
 				if (feature.tags) {
-					feature.tags.forEach(keyword => {
+					feature.tags.forEach((keyword) => {
 						keyword = keyword.toLocaleLowerCase();
 						this.addFeatureToSet(tags, keyword, feature);
 					});
 				}
 				if (feature.relevantTags) {
-					feature.relevantTags.forEach(keyword => {
+					feature.relevantTags.forEach((keyword) => {
 						keyword = keyword.toLocaleLowerCase();
 						this.addFeatureToSet(relevantTags, keyword, feature);
 					});
@@ -210,41 +213,41 @@ export class AppSearchService {
 		keywords = keywords.toLocaleLowerCase();
 		let result = this.searchDB.features.tags[keywords];
 		if (result) {
-			result.forEach(item => {
+			result.forEach((item) => {
 				this.addSearchResult(resultSet, resultList, item);
 			});
 		}
 
-		Object.keys(this.searchDB.features.tags).forEach(
-			(key) => {
-				if (key !== keywords
-					&& (key.indexOf(keywords) !== -1 || keywords.indexOf(key) !== -1)) {
-					this.searchDB.features.tags[key].forEach(item => {
-						this.addSearchResult(resultSet, resultList, item);
-					});
-				}
+		Object.keys(this.searchDB.features.tags).forEach((key) => {
+			if (
+				key !== keywords &&
+				(key.indexOf(keywords) !== -1 || keywords.indexOf(key) !== -1)
+			) {
+				this.searchDB.features.tags[key].forEach((item) => {
+					this.addSearchResult(resultSet, resultList, item);
+				});
 			}
-		);
+		});
 
 		result = this.searchDB.features.relevantTags[keywords];
 		if (result) {
-			result.forEach(item => {
+			result.forEach((item) => {
 				this.addSearchResult(resultSet, resultList, item);
 			});
 		}
 
-		Object.keys(this.searchDB.features.relevantTags).forEach(
-			(key) => {
-				if (key !== keywords
-					&& (key.indexOf(keywords) !== -1 || keywords.indexOf(key) !== -1)) {
-					this.searchDB.features.relevantTags[key].forEach(item => {
-						this.addSearchResult(resultSet, resultList, item);
-					});
-				}
+		Object.keys(this.searchDB.features.relevantTags).forEach((key) => {
+			if (
+				key !== keywords &&
+				(key.indexOf(keywords) !== -1 || keywords.indexOf(key) !== -1)
+			) {
+				this.searchDB.features.relevantTags[key].forEach((item) => {
+					this.addSearchResult(resultSet, resultList, item);
+				});
 			}
-		);
+		});
 
-		this.searchResults = resultList.filter(item => !this.unsupportedFeatures.has(item.id));
+		this.searchResults = resultList.filter((item) => !this.unsupportedFeatures.has(item.id));
 	}
 
 	activeScroll() {
@@ -259,7 +262,6 @@ export class AppSearchService {
 		} else {
 			this.collectError();
 		}
-
 	}
 
 	registerAnchor(anchorIdArray: Array<string>, scrollAction: any) {
@@ -285,8 +287,13 @@ export class AppSearchService {
 	private collectError() {
 		if (this.targetFeature) {
 			this.unsupportedFeatures.add(this.targetFeature.id);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.UnSupportFeatures, Array.from(this.unsupportedFeatures));
-			this.searchResults = this.searchResults.filter(item => !this.unsupportedFeatures.has(item.id));
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.UnSupportFeatures,
+				Array.from(this.unsupportedFeatures)
+			);
+			this.searchResults = this.searchResults.filter(
+				(item) => !this.unsupportedFeatures.has(item.id)
+			);
 			this.unSupportfeatureEvt.next(this.targetFeature.desc);
 			this.targetFeature = null;
 		}

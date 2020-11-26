@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener, OnDestroy } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	HostListener,
+	OnDestroy,
+} from '@angular/core';
 import { NgbTooltip, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
@@ -9,15 +17,12 @@ import { ModalUpdateChangeLogComponent } from 'src/app/components/modal/modal-up
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { Subscription } from 'rxjs';
 
-
 @Component({
 	selector: 'vtr-ui-list-system-update-checkbox',
 	templateUrl: './ui-list-system-update-checkbox.component.html',
-	styleUrls: ['./ui-list-system-update-checkbox.component.scss']
+	styleUrls: ['./ui-list-system-update-checkbox.component.scss'],
 })
-
 export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
-
 	@Input() items: Array<AvailableUpdateDetail>;
 	@Input() isInstallationSuccess = false;
 	@Input() isInstallationCompleted = false;
@@ -58,8 +63,7 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 		this.translateString();
 	}
 
-	ngOnInit() {
-	 }
+	ngOnInit() {}
 
 	onCheckChange($event: any) {
 		this.checkChange.emit($event);
@@ -73,7 +77,9 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 		this.isReadMeAvailable = false;
 		this.manufacturer = update.packageVendor;
 		this.version = update.packageVersion;
-		this.diskSpaceNeeded = this.commonService.formatBytes(parseInt(update.diskSpaceRequired, 10));
+		this.diskSpaceNeeded = this.commonService.formatBytes(
+			parseInt(update.diskSpaceRequired, 10)
+		);
 		this.readMeUrl = update.readmeUrl;
 		this.packageRebootType = update.packageRebootType;
 		if (this.readMeUrl && this.readMeUrl.length > 0 && this.readMeUrl.startsWith('http', 0)) {
@@ -81,9 +87,15 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 		}
 		this.installedVersion = update.currentInstalledVersion;
 
-		if (update.currentInstalledVersion === null || update.currentInstalledVersion === undefined) {
+		if (
+			update.currentInstalledVersion === null ||
+			update.currentInstalledVersion === undefined
+		) {
 			this.installedVersionStatus = 1; // notInstalledText;
-		} else if (update.currentInstalledVersion.trim() === '' || update.currentInstalledVersion.trim().length === 0) {
+		} else if (
+			update.currentInstalledVersion.trim() === '' ||
+			update.currentInstalledVersion.trim().length === 0
+		) {
 			this.installedVersionStatus = 1; // notInstalledText;
 		} else if (update.currentInstalledVersion === '0') {
 			this.installedVersionStatus = 2; // notAvailableText;
@@ -97,7 +109,7 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 		if (tooltip) {
 			if (tooltip.isOpen()) {
 				tooltip.close();
-			} else{
+			} else {
 				this.initSystemUpdateToolTip(update);
 				tooltip.open();
 				this.currentToolTip = tooltip;
@@ -113,15 +125,18 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	CloseToolTip(activeId){
-		if ( activeId &&
+	CloseToolTip(activeId) {
+		if (
+			activeId &&
 			activeId.indexOf('su-package-readme-') < 0 &&
 			activeId.indexOf('su-ignore-update-') < 0 &&
-			activeId.indexOf('su-unignore-update-') < 0 && this.currentToolTip && this.currentToolTip.isOpen()){
-				this.currentToolTip.close();
+			activeId.indexOf('su-unignore-update-') < 0 &&
+			this.currentToolTip &&
+			this.currentToolTip.isOpen()
+		) {
+			this.currentToolTip.close();
 		}
 	}
-
 
 	public onReadMoreClick($event) {
 		this.readMore.emit($event);
@@ -131,29 +146,36 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 			pageContext: 'Read More',
 			closeButton: 'ReadMoreCloseButton',
 		};
-		const modalRef = this.modalService.open(ModalUpdateChangeLogComponent,
-			{
-				backdrop: true,
-				size: 'lg',
-				windowClass: 'update-read-more-modal-size',
-				centered: true
-			});
+		const modalRef = this.modalService.open(ModalUpdateChangeLogComponent, {
+			backdrop: true,
+			size: 'lg',
+			windowClass: 'update-read-more-modal-size',
+			centered: true,
+		});
 		modalRef.componentInstance.url = this.readMeUrl;
 		modalRef.componentInstance.updateModalMetrics = updateModalMetrics;
 		this.focusOnElement(this.currentQuestionMarkID);
 	}
 
-	public onIgnoreUpdateClick(packageName: string, isIgnored: boolean, packageSeverity: UpdateInstallSeverity) {
-		this.ignoreUpdate.emit({packageName, isIgnored, packageSeverity});
+	public onIgnoreUpdateClick(
+		packageName: string,
+		isIgnored: boolean,
+		packageSeverity: UpdateInstallSeverity
+	) {
+		this.ignoreUpdate.emit({ packageName, isIgnored, packageSeverity });
 	}
 
 	private translateString() {
-		this.translate1Subscription = this.translate.stream(this.notAvailableText).subscribe((res) => {
-			this.notAvailableText = res;
-		});
-		this.translate2Subscription = this.translate.stream(this.notInstalledText).subscribe((res) => {
-			this.notInstalledText = res;
-		});
+		this.translate1Subscription = this.translate
+			.stream(this.notAvailableText)
+			.subscribe((res) => {
+				this.notAvailableText = res;
+			});
+		this.translate2Subscription = this.translate
+			.stream(this.notInstalledText)
+			.subscribe((res) => {
+				this.notInstalledText = res;
+			});
 	}
 
 	private focusOnElement(element) {

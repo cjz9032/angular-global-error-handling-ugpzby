@@ -6,22 +6,9 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { UiCloseButtonComponent } from './ui-close-button.component';
 import { TranslationModule } from 'src/app/modules/translation.module';
 @NgModule({
-	declarations: [
-		UiCloseButtonComponent
-	],
-	exports: [
-		UiCloseButtonComponent
-	],
-	imports: [
-		CommonModule,
-		MetricsModule,
-		RouterModule,
-		TranslationModule,
-		AppSearchModule
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	declarations: [UiCloseButtonComponent],
+	exports: [UiCloseButtonComponent],
+	imports: [CommonModule, MetricsModule, RouterModule, TranslationModule, AppSearchModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class UiCloseButtonModule { }
+export class UiCloseButtonModule {}

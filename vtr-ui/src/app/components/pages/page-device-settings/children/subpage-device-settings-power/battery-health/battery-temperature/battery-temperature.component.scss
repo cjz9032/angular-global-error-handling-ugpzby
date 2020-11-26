@@ -1,8 +1,8 @@
-@import "src/app/app.theme";
-@import "../battery-health.variables";
-@import "../battery-health.theme";
-@import "../battery-health.gaming.theme";
-@import "battery-temperature-theme.component";
+@import 'src/app/app.theme';
+@import '../battery-health.variables';
+@import '../battery-health.theme';
+@import '../battery-health.gaming.theme';
+@import 'battery-temperature-theme.component';
 
 .battery-temperature-wrap {
 	@include flex-column-center();
@@ -29,11 +29,17 @@
 			&.#{$key} {
 				background-image: url($item);
 				@include high-contrast('white-on-black') {
-					$item-white-on-black: map-get($battery-temperature-condition-high-contrast, white-on-black);
+					$item-white-on-black: map-get(
+						$battery-temperature-condition-high-contrast,
+						white-on-black
+					);
 					background-image: url($item-white-on-black);
 				}
 				@include high-contrast('black-on-white') {
-					$item-black-on-white: map-get($battery-temperature-condition-high-contrast, black-on-white);
+					$item-black-on-white: map-get(
+						$battery-temperature-condition-high-contrast,
+						black-on-white
+					);
 					background-image: url($item-black-on-white);
 				}
 			}
@@ -54,7 +60,7 @@
 ::ng-deep .indicator-text svg {
 	width: 26px;
 	height: 26px;
-	stroke: #F7C809;
+	stroke: #f7c809;
 	@include high-contrast('white-on-black') {
 		stroke: #ffffff;
 	}
@@ -62,7 +68,6 @@
 		stroke: #000000;
 	}
 }
-
 
 @include battery-temperature-color($smart-battery-theme);
 :host-context(.is-gaming) {

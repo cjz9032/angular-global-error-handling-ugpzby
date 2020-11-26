@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .offline-icon {
 	position: absolute;
@@ -40,7 +40,7 @@
 		justify-content: center;
 		text-align: center;
 		background: rgba(102, 102, 102, 0.8);
-		transition: all .3s;
+		transition: all 0.3s;
 	}
 
 	&:hover {
@@ -55,5 +55,4 @@
 		line-height: 0;
 		font-size: 0;
 	}
-
 }

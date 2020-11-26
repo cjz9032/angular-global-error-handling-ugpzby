@@ -8,9 +8,8 @@ xdescribe('UiSecurityStatusbarComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiSecurityStatusbarComponent]
-		})
-			.compileComponents();
+			declarations: [UiSecurityStatusbarComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

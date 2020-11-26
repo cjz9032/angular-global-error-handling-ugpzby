@@ -1,13 +1,19 @@
-import { CommonErrorCode, CommonResponse, NumberBoolean } from '../../../../../../data-models/common/common.interface';
+import {
+	CommonErrorCode,
+	CommonResponse,
+	NumberBoolean,
+} from '../../../../../../data-models/common/common.interface';
 import { BacklightLevelEnum, BacklightStatusEnum } from './backlight.enum';
 
 export interface Backlight {
-
 	getBacklight(): Promise<GetBacklightResponse>;
 
 	setBacklight(status: SetBacklightStatus): Promise<CommonResponse<null>>;
 
-	getBacklightOnSystemChange(settings: BacklightOnChangeSettings, callback: (response: {payload: GetBacklightResponse}) => void): Promise<GetBacklightResponse>;
+	getBacklightOnSystemChange(
+		settings: BacklightOnChangeSettings,
+		callback: (response: { payload: GetBacklightResponse }) => void
+	): Promise<GetBacklightResponse>;
 }
 
 export interface BacklightBase<T = string, K = string> {
@@ -17,9 +23,11 @@ export interface BacklightBase<T = string, K = string> {
 	errorCode?: CommonErrorCode;
 }
 
-export interface BacklightLevel extends BacklightBase<'KeyboardBacklightLevel', BacklightLevelEnum> {}
+export interface BacklightLevel
+	extends BacklightBase<'KeyboardBacklightLevel', BacklightLevelEnum> {}
 
-export interface BacklightStatus extends BacklightBase<'KeyboardBacklightStatus', BacklightStatusEnum> {}
+export interface BacklightStatus
+	extends BacklightBase<'KeyboardBacklightStatus', BacklightStatusEnum> {}
 
 export interface GetBacklightResponse {
 	settingList: {
@@ -28,16 +36,18 @@ export interface GetBacklightResponse {
 }
 
 export interface SetBacklightStatus {
-	settingList: [{
-		setting: Array<BacklightStatus>;
-	}];
+	settingList: [
+		{
+			setting: Array<BacklightStatus>;
+		}
+	];
 }
 
 export interface BacklightOnChangeSettings {
 	settingList: [
 		{
-		// value: string like '00:01:00'
-		setting: Array<BacklightBase<'IntermediateResponseDuration'>>;
+			// value: string like '00:01:00'
+			setting: Array<BacklightBase<'IntermediateResponseDuration'>>;
 		}
 	];
 }

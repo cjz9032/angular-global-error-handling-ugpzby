@@ -16,14 +16,9 @@ describe('DownloadFailedModalComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [DownloadFailedModalComponent, SvgInlinePipe],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [NgbActiveModal]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [NgbActiveModal],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

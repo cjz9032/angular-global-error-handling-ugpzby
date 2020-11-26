@@ -294,8 +294,8 @@ export enum LocalStorageKey {
 	IsSPScheduleScanEnabled = '[LocalStorageKey] IsSPScheduleScanEnabled',
 	IsSmartPerformanceFirstRun = '[LocalStorageKey] IsSmartPerformanceFirstRun',
 	SPScheduleScanFrequency = '[LocalStorageKey] SPScheduleScanFrequency',
-	isOldScheduleScanDeleted= '[LocalStorageKey] isOldScheduleScanDeleted',
-	SPProcessStatus= '[LocalStorageKey] SPProcessStatus',
+	isOldScheduleScanDeleted = '[LocalStorageKey] isOldScheduleScanDeleted',
+	SPProcessStatus = '[LocalStorageKey] SPProcessStatus',
 	IsFreePCScanRun = '[LocalStorageKey] IsFreePCScanRun',
 	IsFreeFullFeatureEnabled = '[LocalStorageKey] IsFreeFullFeatureEnabled',
 	IsSmartPerformanceForceClose = '[LocalStorageKey] IsSmartPerformanceForceClose',
@@ -316,5 +316,5 @@ export enum LocalStorageKey {
 	BatteryHealth = '[LocalStorageKey] BatteryHealth',
 
 	ExternalMetricsSettings = '[LocalStorageKey] ExternalMetricsSettings',
-	DeviceCondition = '[LocalStorageKey] DeviceCondition'
+	DeviceCondition = '[LocalStorageKey] DeviceCondition',
 }

@@ -1,4 +1,4 @@
-@import "../../app.theme";
+@import '../../app.theme';
 
 @mixin theme($name, $background, $color, $border) {
 	.vtr-container-collapsible.#{$name} {
@@ -13,7 +13,7 @@
 			.card-header {
 				background: none;
 				border-color: $border;
-				&.hide-border-bottom{
+				&.hide-border-bottom {
 					border-bottom: none;
 				}
 
@@ -23,8 +23,8 @@
 					line-height: 3rem;
 					font-weight: $weight_light;
 					text-transform: none;
-                    max-width: calc(100% - 15rem);
-                    outline: none;
+					max-width: calc(100% - 15rem);
+					outline: none;
 				}
 
 				.collapse-control {
@@ -39,26 +39,24 @@
 						vertical-align: middle;
 						text-decoration: underline;
 						cursor: pointer;
-						@media #{$white-on-black} {	
+						@media #{$white-on-black} {
 							@include hyperlink-yellow-black;
-							}
-							@media #{$black-on-white} {
-		
-								@include hyperlink-blue-white;
-							}
+						}
+						@media #{$black-on-white} {
+							@include hyperlink-blue-white;
+						}
 					}
 
 					fa-icon {
-						font-size: 2.0rem;
+						font-size: 2rem;
 						color: $color;
 						vertical-align: middle;
-						@media #{$white-on-black} {	
+						@media #{$white-on-black} {
 							@include hyperlink-yellow-black;
-							}
-							@media #{$black-on-white} {
-		
-								@include hyperlink-blue-white;
-							}
+						}
+						@media #{$black-on-white} {
+							@include hyperlink-blue-white;
+						}
 					}
 
 					&:hover {
@@ -88,11 +86,11 @@
 		}
 
 		@media #{$black-on-white} {
-			border:0.1rem solid;
+			border: 0.1rem solid;
 			border-radius: 1rem;
 		}
 		@media #{$white-on-black} {
-			border:0.1rem solid;
+			border: 0.1rem solid;
 			border-radius: 1rem;
 		}
 	}

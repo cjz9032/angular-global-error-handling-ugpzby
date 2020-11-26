@@ -1,4 +1,4 @@
-@import "./../../../app.theme.scss";
+@import './../../../app.theme.scss';
 $fill-color-0-14-start: #ed4e04;
 $fill-color-0-14-stop: #f17f14;
 
@@ -27,7 +27,11 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 	// battery error
 	--background-color-error: #{$stop};
 	--border-color-error: #{rgba($stop, 0.4)};
-	--acid-fill-gradient-error: linear-gradient(#{$gradient_angle_reverse}, #{$stop} 0%, #{$stop_light} 100%);
+	--acid-fill-gradient-error: linear-gradient(
+		#{$gradient_angle_reverse},
+		#{$stop} 0%,
+		#{$stop_light} 100%
+	);
 
 	// when % is between 0-14
 	--border-shadow-color-0-14: #{$border-shadow-color-0-14};
@@ -98,14 +102,14 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				height: 35%;
 				background-color: var(--background-color);
 				border-radius: 0rem 0.3rem 0.3rem 0rem;
-				content: "";
+				content: '';
 				border-left-width: 0;
 			}
 			@media #{$black-on-white} {
-				border:none;
+				border: none;
 			}
 			@media #{$white-on-black} {
-						border:none;
+				border: none;
 			}
 		}
 
@@ -131,7 +135,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				height: 35%;
 				background: var(--acid-fill-gradient);
 				border-radius: 0rem 0.3rem 0.3rem 0rem;
-				content: "";
+				content: '';
 				border-left-width: 0;
 				@media #{$black-on-white} {
 					background: $light;
@@ -286,7 +290,7 @@ $border-color-25-100: #{rgba($go_light, 0.4)};
 				width: 4rem;
 				height: 4rem;
 				vertical-align: auto;
-            }
+			}
 			@media #{$mediaquery_X23} {
 				left: 5%;
 			}

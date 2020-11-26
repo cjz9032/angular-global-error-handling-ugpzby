@@ -7,5 +7,5 @@ export enum LightPanelType {
 	PanelCube_R = 32,
 	PanelCube_L = 64,
 	PanelPRCWithOPAndCooler = 128,
-	PanelROWWithOPAndCooler = 256
+	PanelROWWithOPAndCooler = 256,
 }

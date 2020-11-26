@@ -1,14 +1,13 @@
 @import '../../../app.theme.scss';
 
-.vtr-modal-update-change-log  {
-
+.vtr-modal-update-change-log {
 	padding: 1rem 0 0;
 	display: flex;
 	flex-flow: column;
 	height: calc(100vh - 5.5rem);
 	box-sizing: border-box;
 
-	.article-content{
+	.article-content {
 		width: 100%;
 		padding-right: 4rem;
 		overflow-x: hidden;
@@ -21,7 +20,7 @@
 	}
 
 	.log-content {
-		pre{
+		pre {
 			padding: 0 4rem 4rem;
 			width: 100%;
 			height: calc(100vh - 14rem);
@@ -30,13 +29,13 @@
 		}
 	}
 
-	.iframe-content{
+	.iframe-content {
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
 	}
 
-	.article-frame{
+	.article-frame {
 		width: 100% !important;
 		height: 100% !important;
 		border: none;

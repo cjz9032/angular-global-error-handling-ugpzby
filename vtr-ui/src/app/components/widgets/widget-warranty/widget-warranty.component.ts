@@ -4,10 +4,9 @@ import { CommonService } from 'src/app/services/common/common.service';
 @Component({
 	selector: 'vtr-widget-warranty',
 	templateUrl: './widget-warranty.component.html',
-	styleUrls: ['./widget-warranty.component.scss']
+	styleUrls: ['./widget-warranty.component.scss'],
 })
 export class WidgetWarrantyComponent implements OnInit {
-
 	@Input() item: any;
 	@Input() isConnected: boolean;
 	@Input() year: number;
@@ -16,17 +15,16 @@ export class WidgetWarrantyComponent implements OnInit {
 		title: [
 			'support.warranty.titleInWarranty',
 			'support.warranty.titleWarrantyExpired',
-			'support.warranty.titleWarrantyNotFound'
+			'support.warranty.titleWarrantyNotFound',
 		],
 		detail: [
 			'support.warranty.statusInWarranty',
 			'support.warranty.statusWarrantyExpired',
-			'support.warranty.statusWarrantyNotFound'
-		]
+			'support.warranty.statusWarrantyNotFound',
+		],
 	};
 
-	constructor(private commonService: CommonService) { }
+	constructor(private commonService: CommonService) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 }

@@ -8,9 +8,9 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 
 @Component({
-  selector: 'vtr-home-security-after-signup',
-  templateUrl: './home-security-after-signup.component.html',
-  styleUrls: ['./home-security-after-signup.component.scss']
+	selector: 'vtr-home-security-after-signup',
+	templateUrl: './home-security-after-signup.component.html',
+	styleUrls: ['./home-security-after-signup.component.scss'],
 })
 export class HomeSecurityAfterSignupComponent implements OnInit {
 	@Input() allDevices: HomeSecurityAllDevice;
@@ -19,12 +19,9 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 	@Input() location: DeviceLocationPermission;
 
 	metricsParent = 'ConnectedHomeSecurity';
-	constructor(
-		public dialogService: DialogService,
-		private commonService: CommonService
-	) {	}
+	constructor(public dialogService: DialogService, private commonService: CommonService) {}
 
-	ngOnInit() {	}
+	ngOnInit() {}
 
 	disconnect() {
 		if (!this.commonService.isOnline) {
@@ -43,5 +40,4 @@ export class HomeSecurityAfterSignupComponent implements OnInit {
 			return false;
 		}
 	}
-
 }

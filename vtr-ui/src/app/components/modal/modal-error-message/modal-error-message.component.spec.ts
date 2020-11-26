@@ -8,9 +8,8 @@ xdescribe('ModalErrorMessageComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ModalErrorMessageComponent]
-		})
-			.compileComponents();
+			declarations: [ModalErrorMessageComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

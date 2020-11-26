@@ -4,10 +4,9 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class HardwareScanFeaturesService {
-
 	private exportLogAvailable = false;
 
 	public get isExportLogAvailable(): boolean {
@@ -15,10 +14,7 @@ export class HardwareScanFeaturesService {
 	}
 	public featuresChecked: EventEmitter<void> = new EventEmitter();
 
-	constructor(
-		private scanLogService: ScanLogService,
-		private commonService: CommonService
-	) {
+	constructor(private scanLogService: ScanLogService, private commonService: CommonService) {
 		this.startCheckFeatures();
 	}
 
@@ -36,20 +32,28 @@ export class HardwareScanFeaturesService {
 	private checkExportLogAvailable() {
 		return new Promise<boolean>((resolve) => {
 			let hasExportLogData = false;
-			this.scanLogService.getScanLog()
-			.then((response) => {
-				// Checking if there is actually data to be exported
-				if (Array.isArray(response.modulesResults) && response.modulesResults.length && response.scanSummary !== null) {
-					hasExportLogData = true;
-				}
-				resolve(true);
-			})
-			.catch(() => {
-				resolve(false);
-			})
-			.finally(() => {
-				this.commonService.setSessionStorageValue(SessionStorageKey.HwScanHasExportLogData, hasExportLogData);
-			});
+			this.scanLogService
+				.getScanLog()
+				.then((response) => {
+					// Checking if there is actually data to be exported
+					if (
+						Array.isArray(response.modulesResults) &&
+						response.modulesResults.length &&
+						response.scanSummary !== null
+					) {
+						hasExportLogData = true;
+					}
+					resolve(true);
+				})
+				.catch(() => {
+					resolve(false);
+				})
+				.finally(() => {
+					this.commonService.setSessionStorageValue(
+						SessionStorageKey.HwScanHasExportLogData,
+						hasExportLogData
+					);
+				});
 		});
 	}
 }

@@ -14,30 +14,30 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
-import { LenovoSurveyEnum} from 'src/app/enums/lenovo-survey.enum';
+import { LenovoSurveyEnum } from 'src/app/enums/lenovo-survey.enum';
 import { TranslateService } from '@ngx-translate/core';
 
 export class Category {
-	id: string; 	// app category id
-	title: string; 	// app category title
+	id: string; // app category id
+	title: string; // app category title
 }
 
 export class Installtype {
-	id: string; 	// app install type id
-	title: string; 	// app install type i.e., Desktop or Windows Store app or Web App
+	id: string; // app install type id
+	title: string; // app install type i.e., Desktop or Windows Store app or Web App
 }
 
 export class Recommendation {
-	id: string; 	// app recommendation id
-	title: string; 	// app recommendation title
+	id: string; // app recommendation id
+	title: string; // app recommendation title
 }
 
 export class Screenshot {
-	id: string;			// apps-for-you-screenshot-n
-	imageUrl: string;	// url of app screenshot-n
-	position: number;	// n
-	isRepeat: boolean;	// false
-	show: string;		// show
+	id: string; // apps-for-you-screenshot-n
+	imageUrl: string; // url of app screenshot-n
+	position: number; // n
+	isRepeat: boolean; // false
+	show: string; // show
 }
 
 export class AppDetails {
@@ -46,16 +46,16 @@ export class AppDetails {
 	image: string;
 	description: string;
 	category: Category;
-	privacyurl: string; 	// app privacy url
-	pfn: string;			// app pfn
-	url: string; 			// app url
+	privacyurl: string; // app privacy url
+	pfn: string; // app pfn
+	url: string; // app url
 	installtype: Installtype;
-	downloadlink: string;	// app download link (see more url)
-	videourl: string; 		// app video url
+	downloadlink: string; // app download link (see more url)
+	videourl: string; // app video url
 	recommendations: Recommendation[];
 	screenshots: Screenshot[];
-	by: string; 		// app manufacturer name
-	updated: string; 	// app updated date
+	by: string; // app manufacturer name
+	updated: string; // app updated date
 	type: string;
 	filters: [];
 	showAdditionalInfo: boolean;
@@ -69,10 +69,9 @@ export class AppDetails {
 }
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class AppsForYouService {
-
 	constructor(
 		private vantageShellService: VantageShellService,
 		private cmsService: CMSService,
@@ -93,8 +92,8 @@ export class AppsForYouService {
 	private isInitialized = false;
 	private cancelToken = undefined;
 	private isCancelInstall = false;
-	private cmsAppDetailsArray = [];	// Cached app details
-	private cachedAppStatusArray = [];	// Cached app status
+	private cmsAppDetailsArray = []; // Cached app details
+	private cachedAppStatusArray = []; // Cached app status
 	private cmsAppDetails: any;
 	private serialNumber: string;
 	private familyName: string;
@@ -104,13 +103,13 @@ export class AppsForYouService {
 		totalMessage: 0,
 		lmaMenuClicked: false,
 		adobeMenuClicked: false,
-		dccMenuClicked: false
+		dccMenuClicked: false,
 	};
 
 	public lenovoSurvey = {
 		display: false,
 		unread: false,
-		id: '' // surveyId
+		id: '', // surveyId
 	};
 
 	private initialize() {
@@ -138,24 +137,29 @@ export class AppsForYouService {
 			this.isInitialized = true;
 			this.initUnreadMessage();
 		}
-		this.localInfoService.getLocalInfo().then(result => {
-			this.localInfo = result;
-			this.dccService.isDccCapableDevice().then(() => {
-				this.dccService.canShowDccDemo().then(() => {
-					this.initUnreadMessage();
+		this.localInfoService
+			.getLocalInfo()
+			.then((result) => {
+				this.localInfo = result;
+				this.dccService.isDccCapableDevice().then(() => {
+					this.dccService.canShowDccDemo().then(() => {
+						this.initUnreadMessage();
+					});
 				});
+			})
+			.catch((e) => {
+				this.localInfo = undefined;
 			});
-		}).catch(e => {
-			this.localInfo = undefined;
-		});
 
-		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
 
 	getAppDetails(appGuid) {
-		const findItem = this.cmsAppDetailsArray.find(item => item.key === appGuid);
+		const findItem = this.cmsAppDetailsArray.find((item) => item.key === appGuid);
 		this.cmsAppDetails = findItem ? findItem.value : undefined;
 		if (this.isInitialized && !this.cmsAppDetails) {
 			let appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
@@ -172,21 +176,28 @@ export class AppsForYouService {
 					appId = AppsForYouEnum.AppSiteCoreIdLenovoMigrationAssistant;
 					break;
 			}
-			Promise.all([this.cmsService.fetchCMSAppDetails(appId, { Lang: this.localInfo ? this.localInfo.Lang : 'en' })])
+			Promise.all([
+				this.cmsService.fetchCMSAppDetails(appId, {
+					Lang: this.localInfo ? this.localInfo.Lang : 'en',
+				}),
+			])
 				.then((response) => {
 					if (response.length >= 1 && response[0]) {
 						this.cmsAppDetails = response[0];
-						if (this.cmsAppDetailsArray.findIndex(i => i.key === appGuid) === -1) {
+						if (this.cmsAppDetailsArray.findIndex((i) => i.key === appGuid) === -1) {
 							this.cmsAppDetailsArray.push({
 								key: appGuid,
-								value: this.cmsAppDetails
+								value: this.cmsAppDetails,
 							});
 						}
 						this.handleGetAppDetailsResponse(this.cmsAppDetails);
 					}
 				})
 				.catch((error) => {
-					this.logService.error('AppsForYouService.getAppDetails error.', JSON.stringify(error));
+					this.logService.error(
+						'AppsForYouService.getAppDetails error.',
+						JSON.stringify(error)
+					);
 					this.commonService.sendNotification(AppsForYouEnum.CommonException, error);
 				});
 		} else if (this.cmsAppDetails) {
@@ -196,7 +207,10 @@ export class AppsForYouService {
 
 	private handleGetAppDetailsResponse(cmsAppDetails: any) {
 		if (cmsAppDetails) {
-			this.logService.info('AppsForYouService.handleGetAppDetailsResponse response.', JSON.stringify(cmsAppDetails));
+			this.logService.info(
+				'AppsForYouService.handleGetAppDetailsResponse response.',
+				JSON.stringify(cmsAppDetails)
+			);
 			const appDetails: AppDetails = this.serializeCMSAppDetails(this.cmsAppDetails);
 			this.commonService.sendNotification(AppsForYouEnum.GetAppDetailsRespond, appDetails);
 		}
@@ -235,7 +249,12 @@ export class AppsForYouService {
 		appDetails.by = detailFromCMS.By;
 		const dateString = detailFromCMS.Updated;
 		if (dateString && dateString.length >= 8) {
-			appDetails.updated = dateString.substr(4, 2) + '-' + dateString.substr(6, 2) + '-' + dateString.substr(0, 4);
+			appDetails.updated =
+				dateString.substr(4, 2) +
+				'-' +
+				dateString.substr(6, 2) +
+				'-' +
+				dateString.substr(0, 4);
 		} else {
 			appDetails.updated = '';
 		}
@@ -247,11 +266,13 @@ export class AppsForYouService {
 		// Legal Agreement
 		appDetails.privacyurl = detailFromCMS.PrivacyURL;
 
-		if (appDetails.by === '' &&
+		if (
+			appDetails.by === '' &&
 			appDetails.updated === '' &&
 			appDetails.installtype.title === '' &&
 			appDetails.category.title === '' &&
-			appDetails.privacyurl === '') {
+			appDetails.privacyurl === ''
+		) {
 			appDetails.showAdditionalInfo = false;
 		} else {
 			appDetails.showAdditionalInfo = true;
@@ -265,7 +286,9 @@ export class AppsForYouService {
 			this.cancelToken = {};
 			if (this.systemUpdateBridge) {
 				const applicationGuid = appGuid;
-				const result = await this.systemUpdateBridge.downloadAndInstallApp(applicationGuid, null,
+				const result = await this.systemUpdateBridge.downloadAndInstallApp(
+					applicationGuid,
+					null,
 					(progressResponse) => {
 						// SU plugin will launch installer after progress 85, so check status by the progerss;
 						//   for compatibility reasons, SU plugin will not add additonal status indicator
@@ -274,8 +297,12 @@ export class AppsForYouService {
 						} else {
 							this.updateCachedAppStatus(appGuid, 'InstallerRunning');
 						}
-						this.commonService.sendNotification(AppsForYouEnum.InstallAppProgress, progressResponse);
-					});
+						this.commonService.sendNotification(
+							AppsForYouEnum.InstallAppProgress,
+							progressResponse
+						);
+					}
+				);
 				this.updateCachedAppStatus(appGuid, result);
 				this.commonService.sendNotification(AppsForYouEnum.InstallAppResult, result);
 			}
@@ -283,16 +310,16 @@ export class AppsForYouService {
 	}
 
 	public getAppStatus(appGuid) {
-		const findItem = this.cachedAppStatusArray.find(item => item.key === appGuid);
+		const findItem = this.cachedAppStatusArray.find((item) => item.key === appGuid);
 		const appStatus = findItem ? findItem.value : undefined;
 		if (appStatus) {
 			this.commonService.sendNotification(AppsForYouEnum.GetAppStatusResult, appStatus);
 		}
-		this.systemUpdateBridge.getAppStatus(appGuid).then(status => {
+		this.systemUpdateBridge.getAppStatus(appGuid).then((status) => {
 			if (status && !findItem) {
 				this.cachedAppStatusArray.push({
 					key: appGuid,
-					value: status
+					value: status,
 				});
 			} else if (status && findItem) {
 				this.updateCachedAppStatus(appGuid, status);
@@ -304,7 +331,7 @@ export class AppsForYouService {
 	}
 
 	private updateCachedAppStatus(appGuid, status) {
-		const index = this.cachedAppStatusArray.findIndex(i => i.key === appGuid);
+		const index = this.cachedAppStatusArray.findIndex((i) => i.key === appGuid);
 		if (index !== -1) {
 			this.cachedAppStatusArray[index].value = status;
 		}
@@ -314,7 +341,10 @@ export class AppsForYouService {
 		// Open new window with default browser to browse external link
 		if (appGuid === AppsForYouEnum.AppGuidAdobeCreativeCloud) {
 			if (window && this.serialNumber) {
-				const url = AppsForYouEnum.SeeMoreUrlAdobeCreativeCloud.replace('[SerialNumber]', this.serialNumber);
+				const url = AppsForYouEnum.SeeMoreUrlAdobeCreativeCloud.replace(
+					'[SerialNumber]',
+					this.serialNumber
+				);
 				window.open(url);
 			}
 		} else {
@@ -326,8 +356,14 @@ export class AppsForYouService {
 
 	// Wether or not to show 'adobe redemption' in user drop down menu
 	public showAdobeMenu() {
-		if (!this.deviceService.isArm && this.familyName && this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
-			this.localInfo && this.localInfo.Lang.indexOf('en') !== -1 && this.localInfo.GEO.indexOf('cn') === -1) {
+		if (
+			!this.deviceService.isArm &&
+			this.familyName &&
+			this.familyName.indexOf(AppsForYouEnum.AdobeFamilyNameFilter) !== -1 &&
+			this.localInfo &&
+			this.localInfo.Lang.indexOf('en') !== -1 &&
+			this.localInfo.GEO.indexOf('cn') === -1
+		) {
 			return true;
 		} else {
 			return false;
@@ -335,8 +371,12 @@ export class AppsForYouService {
 	}
 
 	public showLmaMenu() {
-		if (!this.deviceService.isArm && !this.deviceService.isSMode &&
-			this.localInfo && this.localInfo.Segment !== SegmentConst.Commercial) {
+		if (
+			!this.deviceService.isArm &&
+			!this.deviceService.isSMode &&
+			this.localInfo &&
+			this.localInfo.Segment !== SegmentConst.Commercial
+		) {
 			return true;
 		} else {
 			return false;
@@ -363,7 +403,7 @@ export class AppsForYouService {
 			totalMessage: 0,
 			lmaMenuClicked: false,
 			adobeMenuClicked: false,
-			dccMenuClicked: false
+			dccMenuClicked: false,
 		};
 	}
 
@@ -376,7 +416,9 @@ export class AppsForYouService {
 		if (cacheUnreadMessageCount) {
 			this.UnreadMessageCount.lmaMenuClicked = cacheUnreadMessageCount.lmaMenuClicked;
 			this.UnreadMessageCount.adobeMenuClicked = cacheUnreadMessageCount.adobeMenuClicked;
-			this.UnreadMessageCount.dccMenuClicked = cacheUnreadMessageCount.dccMenuClicked ? cacheUnreadMessageCount.dccMenuClicked : false;
+			this.UnreadMessageCount.dccMenuClicked = cacheUnreadMessageCount.dccMenuClicked
+				? cacheUnreadMessageCount.dccMenuClicked
+				: false;
 
 			let totalMessage = 0;
 			if (this.showLmaMenu() && !this.UnreadMessageCount.lmaMenuClicked) {
@@ -449,7 +491,10 @@ export class AppsForYouService {
 			}
 		}
 		if (needUpdateLocalStorage) {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.UnreadMessageCount, this.UnreadMessageCount);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.UnreadMessageCount,
+				this.UnreadMessageCount
+			);
 		}
 	}
 
@@ -457,12 +502,15 @@ export class AppsForYouService {
 		if (notification) {
 			switch (notification.type) {
 				case SelfSelectEvent.SegmentChange:
-					this.localInfoService.getLocalInfo().then(result => {
-						this.localInfo = result;
-						this.initUnreadMessage();
-					}).catch(e => {
-						this.localInfo = undefined;
-					});
+					this.localInfoService
+						.getLocalInfo()
+						.then((result) => {
+							this.localInfo = result;
+							this.initUnreadMessage();
+						})
+						.catch((e) => {
+							this.localInfo = undefined;
+						});
 					break;
 				default:
 					break;
@@ -471,13 +519,16 @@ export class AppsForYouService {
 	}
 
 	public checkLenovoSurveyStatus() {
-		this.getLenovoSurveyStatus().then(result => {
+		this.getLenovoSurveyStatus().then((result) => {
 			if (result.status === LenovoSurveyEnum.Unread) {
 				this.increaseUnreadMessage(result.surveyId);
 				this.lenovoSurvey.unread = true;
 			}
 
-			if (result.status !== LenovoSurveyEnum.Disabled && result.status !== LenovoSurveyEnum.Completed) {
+			if (
+				result.status !== LenovoSurveyEnum.Disabled &&
+				result.status !== LenovoSurveyEnum.Completed
+			) {
 				this.lenovoSurvey.display = true;
 				this.lenovoSurvey.id = result.surveyId;
 			}
@@ -487,22 +538,21 @@ export class AppsForYouService {
 	async getLenovoSurveyStatus() {
 		const languageSupport = this.translate.instant('dashboard.survey.title');
 		if (!languageSupport) {
-			return {status: LenovoSurveyEnum.Disabled};
+			return { status: LenovoSurveyEnum.Disabled };
 		}
 
 		// is hypothesis allow?
-		const hyp = await this.hypService.getAllSettings() as any;
+		const hyp = (await this.hypService.getAllSettings()) as any;
 		if (!hyp.LenovoSurvey) {
-			return {status: LenovoSurveyEnum.Disabled};
+			return { status: LenovoSurveyEnum.Disabled };
 		}
 
 		// is survey completed?
 		const tokeSurvey = this.localCacheService.getLocalCacheValue(hyp.LenovoSurvey);
 		if (!tokeSurvey) {
-			return {surveyId: hyp.LenovoSurvey, status: LenovoSurveyEnum.Unread};
+			return { surveyId: hyp.LenovoSurvey, status: LenovoSurveyEnum.Unread };
 		}
 
-		return {surveyId: hyp.LenovoSurvey, status: tokeSurvey} ;
+		return { surveyId: hyp.LenovoSurvey, status: tokeSurvey };
 	}
 }
-

@@ -8,9 +8,8 @@ xdescribe('FeedbackFormComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [FeedbackFormComponent]
-		})
-			.compileComponents();
+			declarations: [FeedbackFormComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

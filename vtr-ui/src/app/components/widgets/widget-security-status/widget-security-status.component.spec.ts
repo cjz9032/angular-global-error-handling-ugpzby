@@ -8,9 +8,8 @@ xdescribe('WidgetSecurityStatusComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetSecurityStatusComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetSecurityStatusComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

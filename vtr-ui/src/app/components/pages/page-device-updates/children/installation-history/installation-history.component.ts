@@ -12,7 +12,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-installation-history',
 	templateUrl: './installation-history.component.html',
-	styleUrls: ['./installation-history.component.scss']
+	styleUrls: ['./installation-history.component.scss'],
 })
 export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	@Output() reinstallUpdate = new EventEmitter<string>();
@@ -33,9 +33,11 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
-			this.onNotification(response);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 
 		if (this.systemUpdateService.installationHistory) {
 			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
@@ -49,17 +51,17 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	}
 
 	getCachedHistory() {
-		const cachedData = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateInstallationHistoryList);
-		if (typeof (cachedData) !== 'undefined' && cachedData.length > 0) {
+		const cachedData = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SystemUpdateInstallationHistoryList
+		);
+		if (typeof cachedData !== 'undefined' && cachedData.length > 0) {
 			this.installationHistory = cachedData;
 		}
 	}
 
-	installUpdates(event) {
-	}
+	installUpdates(event) {}
 
-	installSelectedUpdates(event) {
-	}
+	installSelectedUpdates(event) {}
 
 	toggleSortOrder() {
 		this.sortAsc = !this.sortAsc;
@@ -87,9 +89,11 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 			const date = this.commonService.formatLocalDate(item.utcInstallDate);
 			const time = this.commonService.formatLocalTime(item.utcInstallDate);
 			if (item.status.toLocaleLowerCase() === 'installed') {
-				item.message = this.translate.instant('systemUpdates.successInstall') + date + ' ' + time;
+				item.message =
+					this.translate.instant('systemUpdates.successInstall') + date + ' ' + time;
 			} else {
-				item.message = this.translate.instant('systemUpdates.failedInstall') + date + ' ' + time;
+				item.message =
+					this.translate.instant('systemUpdates.failedInstall') + date + ' ' + time;
 			}
 		});
 		return historyList;
@@ -111,7 +115,10 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	private sortInstallationHistory(history: Array<UpdateHistory>) {
 		this.installationHistory = this.mapMessage(history);
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateInstallationHistoryList, this.installationHistory);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.SystemUpdateInstallationHistoryList,
+			this.installationHistory
+		);
 		this.systemUpdateService.sortInstallationHistory(this.installationHistory, this.sortAsc);
 		if (this.installationHistory.length > 5 && !this.showAll) {
 			this.installationHistory = this.installationHistory.slice(0, 5);

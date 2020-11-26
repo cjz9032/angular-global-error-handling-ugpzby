@@ -14,12 +14,12 @@ import { of } from 'rxjs';
 const lightingService = jasmine.createSpyObj('GamingLightingService', [
 	'isShellAvailable',
 	'setLightingProfileEffectColor',
-	'checkAreaColorFn'
+	'checkAreaColorFn',
 ]);
 
 @Component({ selector: 'vtr-ui-toggle', template: '' })
 export class UiToggleStubComponent {
-    @Input() onOffSwitchId: string;
+	@Input() onOffSwitchId: string;
 }
 
 describe('UiLightingKeyboardLNBx50Component', () => {
@@ -37,15 +37,15 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 	const toggleStatus = {
 		profileId1: {
 			status: true,
-			defaultStatus: false
+			defaultStatus: false,
 		},
 		profileId2: {
 			status: false,
-			defaultStatus: false
+			defaultStatus: false,
 		},
 		profileId3: {
 			status: false,
-			defaultStatus: true
+			defaultStatus: true,
 		},
 	};
 
@@ -57,24 +57,24 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			{
 				lightPanelType: 1,
 				lightEffectType: 4,
-				lightColor: 'FFFFFF'
+				lightColor: 'FFFFFF',
 			},
 			{
 				lightPanelType: 2,
 				lightEffectType: 2,
-				lightColor: 'FF0000'
+				lightColor: 'FF0000',
 			},
 			{
 				lightPanelType: 4,
 				lightEffectType: 4,
-				lightColor: 'FFFFFF'
+				lightColor: 'FFFFFF',
 			},
 			{
 				lightPanelType: 8,
 				lightEffectType: 2,
-				lightColor: 'FF0000'
-			}
-		]
+				lightColor: 'FF0000',
+			},
+		],
 	};
 
 	const commonServiceMock = {
@@ -94,25 +94,24 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 					return LightingProfileByIdNoteOff3Cache;
 				case '[LocalStorageKey] LightingProfileByIdNoteOn3':
 					return LightingProfileByIdNoteOn3Cache;
-
 			}
 		},
 		setLocalStorageValue(key: any, value: any) {
 			switch (key) {
 				case '[LocalStorageKey] KeyboardToggleStatusLNBx50':
-					return KeyboardToggleStatusLNBx50Cache = value;
+					return (KeyboardToggleStatusLNBx50Cache = value);
 				case '[LocalStorageKey] LightingProfileByIdNoteOff1':
-					return LightingProfileByIdNoteOff1Cache = value;
+					return (LightingProfileByIdNoteOff1Cache = value);
 				case '[LocalStorageKey] LightingProfileByIdNoteOn1':
-					return LightingProfileByIdNoteOn1Cache = value;
+					return (LightingProfileByIdNoteOn1Cache = value);
 				case '[LocalStorageKey] LightingProfileByIdNoteOff2':
-					return LightingProfileByIdNoteOff2Cache = value;
+					return (LightingProfileByIdNoteOff2Cache = value);
 				case '[LocalStorageKey] LightingProfileByIdNoteOn2':
-					return LightingProfileByIdNoteOn2Cache = value;
+					return (LightingProfileByIdNoteOn2Cache = value);
 				case '[LocalStorageKey] LightingProfileByIdNoteOff3':
-					return LightingProfileByIdNoteOff3Cache = value;
+					return (LightingProfileByIdNoteOff3Cache = value);
 				case '[LocalStorageKey] LightingProfileByIdNoteOn3':
-					return LightingProfileByIdNoteOn3Cache = value;
+					return (LightingProfileByIdNoteOn3Cache = value);
 			}
 		},
 	};
@@ -131,15 +130,12 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 				TranslateStore,
 				{ provide: CommonService, useValue: commonServiceMock },
 				{ provide: GamingLightingService, useValue: lightingService },
-			]
-		})
-			.compileComponents();
+			],
+		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingKeyboardLNBx50Component);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	}));
-
-
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
@@ -148,15 +144,22 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 	describe('check init : ', () => {
 		it('init KeyboardToggleStatusLNBx50 is undefined', () => {
 			KeyboardToggleStatusLNBx50Cache = undefined;
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50')).toBeUndefined();
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] KeyboardToggleStatusLNBx50'
+				)
+			).toBeUndefined();
 		});
 
 		it('init KeyboardToggleStatusLNBx50 is obj', () => {
 			KeyboardToggleStatusLNBx50Cache = toggleStatus;
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50')).toBeTruthy();
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] KeyboardToggleStatusLNBx50'
+				)
+			).toBeTruthy();
 		});
-	})
-
+	});
 
 	describe('check ngOnChanges : ', () => {
 		it('When changes.listInfo is true, check onChanges', () => {
@@ -205,7 +208,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			expect(component.selectPanel).not.toBe(0);
 			expect(component.selectedArea).not.toBe(0);
 		});
-	})
+	});
 
 	describe('check selectAreaFn : ', () => {
 		it('check selectAreaFn & isDivideArea is false', () => {
@@ -221,7 +224,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			expect(component.selectPanel).toBe(2);
 			expect(component.selectedArea).toBe(2);
 		});
-	})
+	});
 
 	describe('check mouseoverFn : ', () => {
 		it('check mouseoverFn & selectedArea === 0', () => {
@@ -250,7 +253,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			component.mouseoverFn({}, 2, '#434343');
 			expect(component.selectPanel).not.toBe(2);
 		});
-	})
+	});
 
 	describe('check mouseoutFn : ', () => {
 		it('check mouseoutFn & selectedArea === 0 ', () => {
@@ -301,7 +304,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			component.mouseoutFn({}, 1);
 			expect(component.selectPanel).toBe(8);
 		});
-	})
+	});
 
 	describe('check getProfileInfoCache : ', () => {
 		it('check getProfileInfoCache & catch error  ', () => {
@@ -309,57 +312,83 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			try {
 				component.getProfileInfoCache(true);
 			} catch (err) {
-				expect(err).toMatch('getProfileInfoCache Cannot read property \'lightInfo\' of undefined');
+				expect(err).toMatch(
+					"getProfileInfoCache Cannot read property 'lightInfo' of undefined"
+				);
 			}
-		})
+		});
 		it('check getProfileInfoCache & argument is true & profileId is 1', () => {
 			component.profileId = 1;
 			LightingProfileByIdNoteOn1Cache = keyboardInfo;
 			LightingProfileByIdNoteOn1Cache.profileId = 1;
 			component.getProfileInfoCache(true);
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] LightingProfileByIdNoteOn1')).toBeTruthy();
-		})
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] LightingProfileByIdNoteOn1'
+				)
+			).toBeTruthy();
+		});
 
 		it('check getProfileInfoCache & argument is true & profileId is 2', () => {
 			component.profileId = 2;
 			LightingProfileByIdNoteOn2Cache = keyboardInfo;
 			LightingProfileByIdNoteOn2Cache.profileId = 2;
 			component.getProfileInfoCache(true);
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] LightingProfileByIdNoteOn2')).toBeTruthy();
-		})
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] LightingProfileByIdNoteOn2'
+				)
+			).toBeTruthy();
+		});
 
 		it('check getProfileInfoCache & argument is true & profileId is 3', () => {
 			component.profileId = 3;
 			LightingProfileByIdNoteOn3Cache = keyboardInfo;
 			LightingProfileByIdNoteOn3Cache.profileId = 3;
 			component.getProfileInfoCache(true);
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] LightingProfileByIdNoteOn3')).toBeTruthy();
-		})
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] LightingProfileByIdNoteOn3'
+				)
+			).toBeTruthy();
+		});
 
 		it('check getProfileInfoCache & argument is false & profileId is 1', () => {
 			component.profileId = 1;
 			LightingProfileByIdNoteOff1Cache = keyboardInfo;
 			LightingProfileByIdNoteOff1Cache.profileId = 1;
 			component.getProfileInfoCache(false);
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] LightingProfileByIdNoteOff1')).toBeTruthy();
-		})
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] LightingProfileByIdNoteOff1'
+				)
+			).toBeTruthy();
+		});
 
 		it('check getProfileInfoCache & argument is false & profileId is 2', () => {
 			component.profileId = 2;
 			LightingProfileByIdNoteOff2Cache = keyboardInfo;
 			LightingProfileByIdNoteOff2Cache.profileId = 2;
 			component.getProfileInfoCache(false);
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] LightingProfileByIdNoteOff2')).toBeTruthy();
-		})
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] LightingProfileByIdNoteOff2'
+				)
+			).toBeTruthy();
+		});
 
 		it('check getProfileInfoCache & argument is false & profileId is 3', () => {
 			component.profileId = 3;
 			LightingProfileByIdNoteOff3Cache = keyboardInfo;
 			LightingProfileByIdNoteOff3Cache.profileId = 3;
 			component.getProfileInfoCache(false);
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] LightingProfileByIdNoteOff3')).toBeTruthy();
-		})
-	})
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] LightingProfileByIdNoteOff3'
+				)
+			).toBeTruthy();
+		});
+	});
 
 	describe('check onToggleOnOff : ', () => {
 		it('check onToggleOnOff & catch error', async () => {
@@ -369,12 +398,14 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOn1Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
 			try {
-				lightingService.setLightingProfileEffectColor.and.throwError('setLightingProfileEffectColor error');
+				lightingService.setLightingProfileEffectColor.and.throwError(
+					'setLightingProfileEffectColor error'
+				);
 				component.onToggleOnOff(true);
 			} catch (err) {
 				expect(err).toMatch('setLightingProfileEffectColor error');
 			}
-		})
+		});
 
 		it('check onToggleOnOff & toggle is true & profileId is 1 & isShellAvailable is false', fakeAsync(() => {
 			component.profileId = 1;
@@ -384,13 +415,15 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff1Cache = keyboardInfo;
 			LightingProfileByIdNoteOn1Cache = keyboardInfo;
 			lightingService.isShellAvailable = false;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: true }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: true })
+			);
 			try {
 				component.onToggleOnOff(true);
 			} catch (err) {
 				expect(err).toMatch('setLightingProfileEffectColor error');
 			}
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is true & profileId is 1 & response is true', fakeAsync(() => {
 			component.profileId = 1;
@@ -400,12 +433,14 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff1Cache = keyboardInfo;
 			LightingProfileByIdNoteOn1Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: true }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: true })
+			);
 			component.onToggleOnOff(true);
 			// tick();
 			expect(component.isDivideArea).toEqual(true);
 			expect(KeyboardToggleStatusLNBx50Cache).toBeTruthy();
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is true & profileId is 1 & response is false', fakeAsync(() => {
 			component.profileId = 1;
@@ -415,11 +450,13 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff1Cache = keyboardInfo;
 			LightingProfileByIdNoteOn1Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: false }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: false })
+			);
 			component.onToggleOnOff(true);
 			tick();
 			expect(component.isDivideArea).toEqual(false);
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is true & profileId is 2 & response is true', fakeAsync(() => {
 			component.profileId = 2;
@@ -429,12 +466,14 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff2Cache = keyboardInfo;
 			LightingProfileByIdNoteOn2Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: true }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: true })
+			);
 			component.onToggleOnOff(true);
 			tick();
 			expect(component.isDivideArea).toEqual(true);
 			expect(KeyboardToggleStatusLNBx50Cache).toBeTruthy();
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is true & profileId is 2 & response is false', fakeAsync(() => {
 			component.profileId = 2;
@@ -444,11 +483,13 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff2Cache = keyboardInfo;
 			LightingProfileByIdNoteOn2Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: false }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: false })
+			);
 			component.onToggleOnOff(true);
 			tick();
 			expect(component.isDivideArea).toEqual(false);
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is true & profileId is 3 response is true', fakeAsync(() => {
 			component.profileId = 3;
@@ -458,12 +499,14 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff3Cache = keyboardInfo;
 			LightingProfileByIdNoteOn3Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: true }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: true })
+			);
 			component.onToggleOnOff(true);
 			tick();
 			expect(component.isDivideArea).toEqual(true);
 			expect(KeyboardToggleStatusLNBx50Cache).toBeTruthy();
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is true & profileId is 3 & response is false', fakeAsync(() => {
 			component.profileId = 3;
@@ -473,11 +516,13 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff3Cache = keyboardInfo;
 			LightingProfileByIdNoteOn3Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: false }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: false })
+			);
 			component.onToggleOnOff(true);
 			tick();
 			expect(component.isDivideArea).toEqual(false);
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is false & profileId is 1 & response is true', fakeAsync(() => {
 			component.profileId = 1;
@@ -487,12 +532,14 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff1Cache = keyboardInfo;
 			LightingProfileByIdNoteOn1Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: true }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: true })
+			);
 			component.onToggleOnOff(false);
 			tick();
 			expect(component.isDivideArea).toEqual(false);
 			expect(KeyboardToggleStatusLNBx50Cache).toBeTruthy();
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is false & profileId is 1 & response is false', fakeAsync(() => {
 			component.profileId = 1;
@@ -502,11 +549,13 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff1Cache = keyboardInfo;
 			LightingProfileByIdNoteOn1Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: false }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: false })
+			);
 			component.onToggleOnOff(false);
 			tick();
 			expect(component.isDivideArea).toEqual(true);
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is false & profileId is 2 & response is true', fakeAsync(() => {
 			component.profileId = 2;
@@ -516,12 +565,14 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff2Cache = keyboardInfo;
 			LightingProfileByIdNoteOn2Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: true }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: true })
+			);
 			component.onToggleOnOff(false);
 			tick();
 			expect(component.isDivideArea).toEqual(false);
 			expect(KeyboardToggleStatusLNBx50Cache).toBeTruthy();
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is false & profileId is 2 & response is false', fakeAsync(() => {
 			component.profileId = 2;
@@ -531,11 +582,13 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff2Cache = keyboardInfo;
 			LightingProfileByIdNoteOn2Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: false }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: false })
+			);
 			component.onToggleOnOff(false);
 			tick();
 			expect(component.isDivideArea).toEqual(true);
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is false & profileId is 3 & response is true', fakeAsync(() => {
 			component.profileId = 3;
@@ -545,12 +598,14 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff3Cache = keyboardInfo;
 			LightingProfileByIdNoteOn3Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: true }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: true })
+			);
 			component.onToggleOnOff(false);
 			tick();
 			expect(component.isDivideArea).toEqual(false);
 			expect(KeyboardToggleStatusLNBx50Cache).toBeTruthy();
-		}))
+		}));
 
 		it('check onToggleOnOff & toggle is false & profileId is 3 & response is false', fakeAsync(() => {
 			component.profileId = 3;
@@ -560,13 +615,14 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			LightingProfileByIdNoteOff3Cache = keyboardInfo;
 			LightingProfileByIdNoteOn3Cache = keyboardInfo;
 			lightingService.isShellAvailable = true;
-			lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve({ didSuccess: false }));
+			lightingService.setLightingProfileEffectColor.and.returnValue(
+				Promise.resolve({ didSuccess: false })
+			);
 			component.onToggleOnOff(false);
 			tick();
 			expect(component.isDivideArea).toEqual(true);
-		}))
-
-	})
+		}));
+	});
 
 	describe('check setToggleStatusCache : ', () => {
 		it('check setToggleStatusCache & catch error', async () => {
@@ -575,25 +631,35 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 			try {
 				component.setToggleStatusCache();
 			} catch (err) {
-				expect(err).toMatch('setToggleStatusCache Cannot read property \'status\' of undefined');
+				expect(err).toMatch(
+					"setToggleStatusCache Cannot read property 'status' of undefined"
+				);
 			}
-		})
+		});
 
 		it('check setToggleStatusCache & listInfo && profileId=0', async () => {
 			component.listInfo = keyboardInfo.lightInfo;
 			component.profileId = 0;
 			KeyboardToggleStatusLNBx50Cache = false;
 			component.setToggleStatusCache();
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50')).not.toBeTruthy();
-		})
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] KeyboardToggleStatusLNBx50'
+				)
+			).not.toBeTruthy();
+		});
 
 		it('check setToggleStatusCache & listInfo && profileId=1', async () => {
 			component.listInfo = keyboardInfo.lightInfo;
 			component.profileId = 1;
 			KeyboardToggleStatusLNBx50Cache = toggleStatus;
 			component.setToggleStatusCache();
-			expect(commonServiceMock.getLocalStorageValue('[LocalStorageKey] KeyboardToggleStatusLNBx50')).toBeTruthy();
-		})
+			expect(
+				commonServiceMock.getLocalStorageValue(
+					'[LocalStorageKey] KeyboardToggleStatusLNBx50'
+				)
+			).toBeTruthy();
+		});
 
 		it('check setToggleStatusCache & listInfo && profileId is 1 & isDefault is true & defaultStatus = undefined', async () => {
 			for (let i = 1; i <= 3; i++) {
@@ -604,23 +670,29 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 				KeyboardToggleStatusLNBx50Cache = {
 					profileId1: {
 						status: 'undefined',
-						defaultStatus: 'undefined'
+						defaultStatus: 'undefined',
 					},
 					profileId2: {
 						status: 'undefined',
-						defaultStatus: 'undefined'
+						defaultStatus: 'undefined',
 					},
 					profileId3: {
 						status: 'undefined',
-						defaultStatus: 'undefined'
+						defaultStatus: 'undefined',
 					},
 				};
 				component.setToggleStatusCache();
-				expect(lightingService.checkAreaColorFn(keyboardInfo.lightInfo)).toBe(component.isDivideArea);
-				expect(component.toggleStatusLNBx50['profileId' + i].defaultStatus).toBe(component.isDivideArea);
-				expect(component.toggleStatusLNBx50['profileId' + i].status).toBe(component.isDivideArea);
+				expect(lightingService.checkAreaColorFn(keyboardInfo.lightInfo)).toBe(
+					component.isDivideArea
+				);
+				expect(component.toggleStatusLNBx50['profileId' + i].defaultStatus).toBe(
+					component.isDivideArea
+				);
+				expect(component.toggleStatusLNBx50['profileId' + i].status).toBe(
+					component.isDivideArea
+				);
 			}
-		})
+		});
 
 		it('check setToggleStatusCache & listInfo && profileId is 1 & isDefault is false & defaultStatus = undefined', async () => {
 			for (let i = 1; i <= 3; i++) {
@@ -631,22 +703,26 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 				KeyboardToggleStatusLNBx50Cache = {
 					profileId1: {
 						status: 'undefined',
-						defaultStatus: 'undefined'
+						defaultStatus: 'undefined',
 					},
 					profileId2: {
 						status: 'undefined',
-						defaultStatus: 'undefined'
+						defaultStatus: 'undefined',
 					},
 					profileId3: {
 						status: 'undefined',
-						defaultStatus: 'undefined'
+						defaultStatus: 'undefined',
 					},
 				};
 				component.setToggleStatusCache();
-				expect(lightingService.checkAreaColorFn(keyboardInfo.lightInfo)).toBe(component.isDivideArea);
-				expect(component.toggleStatusLNBx50['profileId' + i].status).toBe(component.isDivideArea);
+				expect(lightingService.checkAreaColorFn(keyboardInfo.lightInfo)).toBe(
+					component.isDivideArea
+				);
+				expect(component.toggleStatusLNBx50['profileId' + i].status).toBe(
+					component.isDivideArea
+				);
 			}
-		})
+		});
 
 		it('check setToggleStatusCache & listInfo && profileId is 1 & isDefault is true & defaultStatus != undefined', async () => {
 			for (let i = 1; i <= 3; i++) {
@@ -657,22 +733,26 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 				KeyboardToggleStatusLNBx50Cache = {
 					profileId1: {
 						status: 'undefined',
-						defaultStatus: false
+						defaultStatus: false,
 					},
 					profileId2: {
 						status: 'undefined',
-						defaultStatus: false
+						defaultStatus: false,
 					},
 					profileId3: {
 						status: 'undefined',
-						defaultStatus: false
+						defaultStatus: false,
 					},
 				};
 				component.setToggleStatusCache();
-				expect(component.toggleStatusLNBx50['profileId' + i].status).toBe(KeyboardToggleStatusLNBx50Cache['profileId' + i].defaultStatus);
-				expect(component.isDivideArea).toBe(KeyboardToggleStatusLNBx50Cache['profileId' + i].defaultStatus);
+				expect(component.toggleStatusLNBx50['profileId' + i].status).toBe(
+					KeyboardToggleStatusLNBx50Cache['profileId' + i].defaultStatus
+				);
+				expect(component.isDivideArea).toBe(
+					KeyboardToggleStatusLNBx50Cache['profileId' + i].defaultStatus
+				);
 			}
-		})
+		});
 
 		it('check setToggleStatusCache & listInfo && profileId is 1 & isDefault is false & defaultStatus != undefined', async () => {
 			for (let i = 1; i <= 3; i++) {
@@ -683,23 +763,22 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 				KeyboardToggleStatusLNBx50Cache = {
 					profileId1: {
 						status: 'undefined',
-						defaultStatus: true
+						defaultStatus: true,
 					},
 					profileId2: {
 						status: 'undefined',
-						defaultStatus: false
+						defaultStatus: false,
 					},
 					profileId3: {
 						status: 'undefined',
-						defaultStatus: false
+						defaultStatus: false,
 					},
 				};
 				component.setToggleStatusCache();
-				expect(component.toggleStatusLNBx50['profileId' + i].status).toBe(KeyboardToggleStatusLNBx50Cache['profileId' + i].status);
+				expect(component.toggleStatusLNBx50['profileId' + i].status).toBe(
+					KeyboardToggleStatusLNBx50Cache['profileId' + i].status
+				);
 			}
-		})
-
-	})
-
-
+		});
+	});
 });

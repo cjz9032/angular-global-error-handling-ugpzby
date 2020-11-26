@@ -26,20 +26,20 @@ $triangleSize: 10px;
 		left: 50%;
 		transform: translateX(-50%);
 		background: white;
-		box-shadow: 0 2px 14px 0 rgba(0,0,0,0.20);
+		box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.2);
 		border-radius: 14px;
 
 		&:after {
-			content: " ";
+			content: ' ';
 			position: absolute;
-			bottom: 99%;  /* At the top of the tooltip */
+			bottom: 99%; /* At the top of the tooltip */
 			left: 50%;
 			margin-left: -$triangleSize;
 			border-width: $triangleSize;
 			border-style: solid;
 			border-color: transparent transparent white transparent;
-			-webkit-filter: drop-shadow(0 -3px 2px rgba(0,0,0,.2));
-			filter: drop-shadow(0 -3px 2px rgba(0,0,0,.2));
+			-webkit-filter: drop-shadow(0 -3px 2px rgba(0, 0, 0, 0.2));
+			filter: drop-shadow(0 -3px 2px rgba(0, 0, 0, 0.2));
 		}
 
 		&--left-to-right {

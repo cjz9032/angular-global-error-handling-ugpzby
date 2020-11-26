@@ -10,11 +10,11 @@ export class HomeSecurityCommon {
 		connectedHomeSecurity: ConnectedHomeSecurity,
 		isOnline: boolean,
 		private dialogService: DialogService
-		) {
-			if (connectedHomeSecurity) {
-				this.connectedHomeSecurity = connectedHomeSecurity;
-			}
-			this.isOnline = isOnline;
+	) {
+		if (connectedHomeSecurity) {
+			this.connectedHomeSecurity = connectedHomeSecurity;
+		}
+		this.isOnline = isOnline;
 	}
 
 	openCoronet() {
@@ -28,5 +28,4 @@ export class HomeSecurityCommon {
 	upgrade() {
 		this.connectedHomeSecurity.purchase();
 	}
-
 }

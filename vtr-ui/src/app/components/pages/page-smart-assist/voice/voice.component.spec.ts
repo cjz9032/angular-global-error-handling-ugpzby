@@ -16,14 +16,9 @@ describe('VoiceComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [VoiceComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [SmartAssistService, LoggerService, NgbModal]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [SmartAssistService, LoggerService, NgbModal],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

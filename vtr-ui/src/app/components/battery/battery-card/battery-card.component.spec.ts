@@ -4,10 +4,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {
-	TranslateLoader, TranslateModule,
-	TranslateService
-} from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import BatteryIndicator from 'src/app/data-models/battery/battery-indicator.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -21,9 +18,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { BatteryCardComponent } from './battery-card.component';
 
-
-
-
 // declare var Windows;
 
 const info = {
@@ -32,8 +26,7 @@ const info = {
 			heading: '',
 			chargeStatusString:
 				'device.deviceSettings.batteryGauge.details.chargeStatusString.charging',
-			remainingTimeText:
-				'device.deviceSettings.batteryGauge.details.chargeCompletionTime',
+			remainingTimeText: 'device.deviceSettings.batteryGauge.details.chargeCompletionTime',
 
 			barCode: 'X2XP899J0N0',
 			batteryCondition: [
@@ -42,7 +35,7 @@ const info = {
 				'UnsupportedBattery',
 				'TrickleCharge',
 				'OverheatedBattery',
-				'PermanentError'
+				'PermanentError',
 			],
 			batteryHealth: 0,
 			chargeStatus: 2,
@@ -63,8 +56,8 @@ const info = {
 			voltage: 10.843,
 			wattage: 9,
 			isTemporaryChargeMode: false,
-			isDlsPiCapable: false
-		}
+			isDlsPiCapable: false,
+		},
 	],
 	batteryIndicatorInfo: {
 		acAdapterStatus: 'Supported',
@@ -76,8 +69,8 @@ const info = {
 		isPowerDriverMissing: false,
 		percentage: 75,
 		time: 204,
-		timeType: 'timeRemaining'
-	}
+		timeType: 'timeRemaining',
+	},
 };
 
 const batteryGuage = {
@@ -90,7 +83,7 @@ const batteryGuage = {
 	isPowerDriverMissing: true,
 	percentage: 75,
 	time: 204,
-	timeType: 'timeRemaining'
+	timeType: 'timeRemaining',
 };
 
 describe('BatteryCardComponent', () => {
@@ -110,11 +103,11 @@ describe('BatteryCardComponent', () => {
 					loader: {
 						provide: TranslateLoader,
 						useFactory: HttpLoaderFactory,
-						deps: [HttpClient]
-					}
+						deps: [HttpClient],
+					},
 				}),
 				HttpClientTestingModule,
-				RouterTestingModule
+				RouterTestingModule,
 			],
 			declarations: [BatteryCardComponent],
 			providers: [
@@ -122,8 +115,8 @@ describe('BatteryCardComponent', () => {
 				BatteryDetailService,
 				VantageShellService,
 				LoggerService,
-				NgbModal
-			]
+				NgbModal,
+			],
 		}).compileComponents();
 
 		fixture = TestBed.createComponent(BatteryCardComponent);
@@ -144,11 +137,9 @@ describe('BatteryCardComponent', () => {
 		const batteryInfo = {
 			percentage: 75,
 			remainingTime: 204,
-			status: 1
+			status: 1,
 		};
-		const spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
-			batteryInfo
-		);
+		const spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(batteryInfo);
 		component.updateMainBatteryTime();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -157,11 +148,9 @@ describe('BatteryCardComponent', () => {
 		const batteryInfo = {
 			percentage: 95,
 			remainingTime: 530000,
-			status: 1
+			status: 1,
 		};
-		const spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
-			batteryInfo
-		);
+		const spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(batteryInfo);
 		component.updateMainBatteryTime();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -170,11 +159,9 @@ describe('BatteryCardComponent', () => {
 		const batteryInfo = {
 			percentage: 75,
 			remainingTime: 204,
-			status: 0
+			status: 0,
 		};
-		const spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(
-			batteryInfo
-		);
+		const spy = spyOn(component, 'getMainBatteryInfo').and.returnValue(batteryInfo);
 		component.updateMainBatteryTime();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -209,8 +196,8 @@ describe('BatteryCardComponent', () => {
 				resetErrorLog: 'ERROR_UNEXPECTED',
 				stage: 0,
 				stageNum: 0,
-				startTime: ''
-			}
+				startTime: '',
+			},
 		];
 		const spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
 		component.onPowerBatteryGaugeResetEvent(info);
@@ -231,7 +218,7 @@ describe('BatteryCardComponent', () => {
 	it('should call onNotification - Case ChargeThresholdInformation', () => {
 		const thresholdNotification: AppNotification = {
 			type: ChargeThresholdInformation.ChargeThresholdInfo,
-			payload: true
+			payload: true,
 		};
 		component.batteryIndicator = new BatteryIndicator();
 		component.onNotification(thresholdNotification);
@@ -241,7 +228,7 @@ describe('BatteryCardComponent', () => {
 	it('should call onNotification - Case AirplaneModeStatus', () => {
 		const airplaneModeNotification: AppNotification = {
 			type: 'AirplaneModeStatus',
-			payload: { isCapable: true, isEnabled: true }
+			payload: { isCapable: true, isEnabled: true },
 		};
 		component.batteryIndicator = new BatteryIndicator();
 		component.onNotification(airplaneModeNotification);
@@ -251,7 +238,7 @@ describe('BatteryCardComponent', () => {
 	it('should call onNotification - Case ExpressChargingStatus', () => {
 		const expressChargingNotification: AppNotification = {
 			type: 'ExpressChargingStatus',
-			payload: { available: true, status: true }
+			payload: { available: true, status: true },
 		};
 		component.batteryIndicator = new BatteryIndicator();
 		component.onNotification(expressChargingNotification);
@@ -263,10 +250,7 @@ describe('BatteryCardComponent', () => {
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue(1);
 		component.getBatteryCondition();
 		expect(component.batteryConditions).toContain(
-			new BatteryConditionModel(
-				BatteryConditionsEnum.MissingDriver,
-				BatteryStatus.Poor
-			)
+			new BatteryConditionModel(BatteryConditionsEnum.MissingDriver, BatteryStatus.Poor)
 		);
 	});
 
@@ -283,7 +267,12 @@ describe('BatteryCardComponent', () => {
 		component.batteryInfo = { ...tempBatteryInfo };
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue(0);
 		component.getBatteryCondition();
-		expect(component.batteryConditions).toContain(new BatteryConditionModel(BatteryConditionsEnum.FullACAdapterSupport, BatteryStatus.AcAdapterStatus));
+		expect(component.batteryConditions).toContain(
+			new BatteryConditionModel(
+				BatteryConditionsEnum.FullACAdapterSupport,
+				BatteryStatus.AcAdapterStatus
+			)
+		);
 	});
 
 	it('should call reInitValue', () => {

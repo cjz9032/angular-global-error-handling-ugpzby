@@ -12,7 +12,6 @@ import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCir
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslationModule } from '../../../../../../modules/translation.module';
 
-
 @NgModule({
 	declarations: [
 		BatteryHealthComponent,
@@ -20,18 +19,10 @@ import { TranslationModule } from '../../../../../../modules/translation.module'
 		BatteryLayoutComponent,
 		BatteryTemperatureComponent,
 		BatteryLayoutComponent,
-		BatteryCapacityComponent
+		BatteryCapacityComponent,
 	],
-	imports: [
-		CommonModule,
-		CommonUiModule,
-		FontAwesomeModule,
-		NgbTooltipModule,
-		TranslationModule
-	],
-	exports: [
-		BatteryHealthComponent
-	]
+	imports: [CommonModule, CommonUiModule, FontAwesomeModule, NgbTooltipModule, TranslationModule],
+	exports: [BatteryHealthComponent],
 })
 export class BatteryHealthModule {
 	constructor(library: FaIconLibrary) {

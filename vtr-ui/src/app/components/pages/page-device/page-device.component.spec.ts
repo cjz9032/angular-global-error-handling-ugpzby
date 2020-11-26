@@ -8,9 +8,8 @@ xdescribe('PageDeviceComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [PageDeviceComponent]
-		})
-			.compileComponents();
+			declarations: [PageDeviceComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

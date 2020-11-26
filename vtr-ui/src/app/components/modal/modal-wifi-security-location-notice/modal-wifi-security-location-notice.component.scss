@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 .wifi-security-location-modal {
 	border-radius: $border_radius;
 	background: $white100;
@@ -63,15 +63,15 @@
 		&:hover {
 			color: $blueHover;
 			border-bottom: 0.2rem solid $blueHover;
-		}        
-        @media #{$black-on-white} {
-            @include hyperlink-blue-white;
-            border: none;
+		}
+		@media #{$black-on-white} {
+			@include hyperlink-blue-white;
+			border: none;
 			border-bottom: 0.2rem solid $high-contrast-blue;
 		}
 		@media #{$white-on-black} {
-            @include hyperlink-yellow-black;
-            border: none;
+			@include hyperlink-yellow-black;
+			border: none;
 			border-bottom: 0.2rem solid $high-contrast-black-yellow;
 		}
 	}

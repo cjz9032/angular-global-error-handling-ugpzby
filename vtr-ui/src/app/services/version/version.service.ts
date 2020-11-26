@@ -25,13 +25,12 @@ export enum VersionCodeName {
 	Wind,
 	Xylosma,
 	Yellow,
-	Zenobia
+	Zenobia,
 }
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
-
 export class VersionService {
 	public currentVersion: VersionCodeName = VersionCodeName.Anemone;
 }

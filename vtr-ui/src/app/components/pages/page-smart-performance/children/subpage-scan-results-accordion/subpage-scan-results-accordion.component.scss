@@ -91,11 +91,11 @@
 						.status-text {
 							p {
 								font-size: $fontsize_xs;
-	
+
 								&.issues-number {
 									font-size: $fontsize_xs;
 								}
-	
+
 								@media #{$breakpoint_lg} {
 									font-size: $fontsize_xs;
 								}

@@ -7,6 +7,6 @@ export class AntiTheftResponse {
 		public authorizedAccessState: boolean,
 		public photoAddress: string = '',
 		public alarmOften: number = 10,
-		public photoNumber: number = 5,
-	) { }
+		public photoNumber: number = 5
+	) {}
 }

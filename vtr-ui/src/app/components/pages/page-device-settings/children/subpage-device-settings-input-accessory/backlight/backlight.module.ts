@@ -4,17 +4,9 @@ import { CommonUiModule } from '../../../../../../modules/common/common-ui.modul
 import { SharedModule } from '../../../../../../modules/shared.module';
 import { CommonModule } from '@angular/common';
 
-
 @NgModule({
 	declarations: [BacklightComponent],
-	imports: [
-		CommonModule,
-		CommonUiModule,
-		SharedModule
-	],
-	exports: [
-		BacklightComponent
-	]
+	imports: [CommonModule, CommonUiModule, SharedModule],
+	exports: [BacklightComponent],
 })
-export class BacklightModule {
-}
+export class BacklightModule {}

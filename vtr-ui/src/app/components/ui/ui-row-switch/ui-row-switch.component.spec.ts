@@ -11,7 +11,6 @@ import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/mo
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
 import { UiRowSwitchComponent } from './ui-row-switch.component';
 
-
 const on = {
 	value: true,
 };
@@ -30,17 +29,16 @@ describe('UiRowSwitchComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiRowSwitchComponent, ModalRebootConfirmComponent, ModalVoiceComponent, NgbTooltip],
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule,
-
+			declarations: [
+				UiRowSwitchComponent,
+				ModalRebootConfirmComponent,
+				ModalVoiceComponent,
+				NgbTooltip,
 			],
-			providers: [NgbModal, DevService, DeviceService, TranslateService]
-		})
-			.compileComponents();
+			schemas: [NO_ERRORS_SCHEMA],
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [NgbModal, DevService, DeviceService, TranslateService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -50,9 +48,7 @@ describe('UiRowSwitchComponent', () => {
 		modalService = fixture.debugElement.injector.get(NgbModal);
 		deviceService = fixture.debugElement.injector.get(DeviceService);
 		translate = fixture.debugElement.injector.get(TranslateService);
-
 	});
-
 
 	it('should create', () => {
 		fixture.detectChanges();
@@ -86,7 +82,6 @@ describe('UiRowSwitchComponent', () => {
 		}); */
 		// tick();
 		expect(component.onLinkClick).toHaveBeenCalled();
-
 	});
 
 	it('should test on onRightIconClick method', () => {
@@ -97,7 +92,7 @@ describe('UiRowSwitchComponent', () => {
 
 		const elemID = switchId + '-tooltip_right_icon';
 		component.tooltipText = 'Test';
-		component.rightIcon = '[\'far\', \'question-circle\']';
+		component.rightIcon = "['far', 'question-circle']";
 		fixture.detectChanges();
 
 		spyOn(component, 'onRightIconClick');
@@ -112,12 +107,7 @@ describe('UiRowSwitchComponent', () => {
 		});
 		expect(component.onRightIconClick).toHaveBeenCalled();
 		// expect(component.tooltipClick.emit).toHaveBeenCalled();
-
 	});
-
-
-
-
 
 	it('should test on onOnOffChange method', () => {
 		// component = fixture.componentInstance;
@@ -133,7 +123,6 @@ describe('UiRowSwitchComponent', () => {
 		component.onReadMoreClick(new Event('click'));
 		expect(component.readMoreClick.emit).toHaveBeenCalled();
 	});
-
 
 	/* it('should test on rebootConfirm method', () => {
 		spyOn(component.toggleOnOff, 'emit').and.callThrough();
@@ -167,7 +156,6 @@ describe('UiRowSwitchComponent', () => {
 		spyOn(component, 'rebootConfirm');
 		component.onOnOffChange(on.value);
 		expect(component.rebootConfirm).toHaveBeenCalled();
-
 	});
 
 	/* it('should test on ngAfterViewInit modern-standby-link modern-standby', () => {
@@ -186,7 +174,6 @@ describe('UiRowSwitchComponent', () => {
 
 	}); */
 
-
 	/* it('should test on ngAfterViewInit modern-standby-link modern-standby', () => {
 		// component = fixture.componentInstance;
 		// const modalService = TestBed.inject(NgbModal);
@@ -198,5 +185,4 @@ describe('UiRowSwitchComponent', () => {
 
 
 	}); */
-
 });

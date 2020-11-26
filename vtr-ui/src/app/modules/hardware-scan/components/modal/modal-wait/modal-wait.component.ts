@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Component({
 	selector: 'vtr-modal-wait',
 	templateUrl: './modal-wait.component.html',
-	styleUrls: ['./modal-wait.component.scss']
+	styleUrls: ['./modal-wait.component.scss'],
 })
 export class ModalWaitComponent implements OnInit, OnDestroy {
 	private shouldCloseModalSubscription: any;
@@ -17,10 +17,9 @@ export class ModalWaitComponent implements OnInit, OnDestroy {
 	@Input() ItemParent: string;
 	@Input() CancelItemName: string;
 
-	constructor(public activeModal: NgbActiveModal) {
-	}
+	constructor(public activeModal: NgbActiveModal) {}
 
-	ngOnInit(){
+	ngOnInit() {
 		this.shouldCloseModalSubscription = this.shouldCloseModal.subscribe((result) => {
 			if (result) {
 				this.closeModal();
@@ -28,7 +27,7 @@ export class ModalWaitComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	ngOnDestroy(){
+	ngOnDestroy() {
 		if (this.shouldCloseModalSubscription) {
 			this.shouldCloseModalSubscription.unsubscribe();
 		}

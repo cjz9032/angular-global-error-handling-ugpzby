@@ -9,8 +9,7 @@ xdescribe('ModalScheduleNewScanComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalScheduleNewScanComponent],
-		})
-			.compileComponents();
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

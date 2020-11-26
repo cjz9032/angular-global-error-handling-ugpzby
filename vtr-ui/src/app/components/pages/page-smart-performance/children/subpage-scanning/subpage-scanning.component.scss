@@ -82,14 +82,13 @@ vtr-subpage-smart-performance-scan-summary {
 
 	.scan-cancel-btn {
 		::ng-deep .tooltip-inner {
-			@include tt-inner()
+			@include tt-inner();
 		}
 
 		::ng-deep .arrow::before {
-			@include arrow-before()
+			@include arrow-before();
 		}
 	}
-
 
 	.pc-info-card {
 		padding: $padding_content;
@@ -162,11 +161,11 @@ vtr-subpage-smart-performance-scan-summary {
 							.status-text {
 								p {
 									font-size: $fontsize_xs;
-		
+
 									&.issues-number {
 										font-size: $fontsize_xs;
 									}
-		
+
 									@media #{$breakpoint_lg} {
 										font-size: $fontsize_xs;
 									}
@@ -257,9 +256,7 @@ vtr-subpage-smart-performance-scan-summary {
 							@media #{$breakpoint_sm} {
 								font-size: 1.2rem;
 							}
-
 						}
-
 					}
 				}
 			}
@@ -290,7 +287,7 @@ vtr-subpage-smart-performance-scan-summary {
 			font-weight: bold;
 			line-height: 1.4;
 			margin: 0;
-			color: #8C97A4;
+			color: #8c97a4;
 		}
 	}
 
@@ -304,5 +301,4 @@ vtr-subpage-smart-performance-scan-summary {
 	.current-scan {
 		color: $main;
 	}
-
 }

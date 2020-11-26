@@ -11,9 +11,8 @@ fdescribe('UiQuestionMarkButtonComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ UiQuestionMarkButtonComponent ]
-		})
-		.compileComponents();
+			declarations: [UiQuestionMarkButtonComponent],
+		}).compileComponents();
 	});
 
 	beforeEach(() => {

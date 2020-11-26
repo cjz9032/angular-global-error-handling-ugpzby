@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 ::ng-deep {
 	.vtr-page-device-gaming {
 		.action-link-a:hover {
@@ -15,9 +15,9 @@
 		}
 	}
 }
-::ng-deep body.focus-enable{
+::ng-deep body.focus-enable {
 	.is-gaming {
-		.vtr-page-device-gaming{
+		.vtr-page-device-gaming {
 			vtr-container-card {
 				&:focus {
 					.content {
@@ -27,12 +27,14 @@
 						}
 					}
 				}
-				a.card-image,a.action-link-a{
+				a.card-image,
+				a.action-link-a {
 					outline: none !important;
 				}
 			}
-			.vtr-widget-quicksettings-list,.vtr-widget-lighting{
-				&:focus{
+			.vtr-widget-quicksettings-list,
+			.vtr-widget-lighting {
+				&:focus {
 					@include solid-button-outline;
 					@media #{$high-contrast} {
 						@include solid-button-outline(highlight);

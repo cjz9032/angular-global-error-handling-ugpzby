@@ -47,7 +47,7 @@ export class UiCustomSliderComponent implements OnInit {
 	// public ticksArray = [];
 	public isTooltipHidden = true;
 	public tipValue = '0';
-	constructor(private metrics: CommonMetricsService) { }
+	constructor(private metrics: CommonMetricsService) {}
 
 	ngOnInit() {
 		// if (this.hasTicks) {
@@ -115,15 +115,14 @@ export class UiCustomSliderComponent implements OnInit {
 		const value = this.value;
 		const noOfChar = value.toString(10).length;
 		const suffixLength = this.tipSuffix.length;
-		const bubbleOffset = (5 /* each digit width */ * (noOfChar + suffixLength)) + 18; // 3px both side margin
-		const width = (rangeSlider.offsetWidth - bubbleOffset);
+		const bubbleOffset = 5 /* each digit width */ * (noOfChar + suffixLength) + 18; // 3px both side margin
+		const width = rangeSlider.offsetWidth - bubbleOffset;
 		const min = rangeSlider.min ? rangeSlider.min : 0;
 		const max = rangeSlider.max ? rangeSlider.max : 100;
-		const newPoint = Number(((value - min)) / (max - min));
+		const newPoint = Number((value - min) / (max - min));
 		if (newPoint <= 0) {
 			newPlace = 1;
-		}
-		else {
+		} else {
 			newPlace = Math.floor(width * newPoint);
 		}
 		sliderBubble.style.left = newPlace + 'px';
@@ -134,15 +133,19 @@ export class UiCustomSliderComponent implements OnInit {
 	// added for narrator reading
 	getLegend() {
 		// let position= this.min===0 && this.step
-		const val = (this.min === 0 ? this.step + this.value : this.value);
+		const val = this.min === 0 ? this.step + this.value : this.value;
 		const position = val / this.step;
 		let legend = this.minLegend;
 		switch (position) {
-			case 1: legend = this.minLegend
+			case 1:
+				legend = this.minLegend;
 				break;
-			case 2: legend = (this.midLegend && this.midLegend.length > 0) ? this.midLegend : legend;
+			case 2:
+				legend = this.midLegend && this.midLegend.length > 0 ? this.midLegend : legend;
 				break;
-			case 3: legend = (this.maxLegend && this.maxLegend.length > 0) ? this.maxLegend : this.midLegend;
+			case 3:
+				legend =
+					this.maxLegend && this.maxLegend.length > 0 ? this.maxLegend : this.midLegend;
 				break;
 		}
 		return legend;

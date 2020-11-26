@@ -1,10 +1,7 @@
 import { BatteryConditionsEnum } from 'src/app/enums/battery-conditions.enum';
 
 export class BatteryConditionModel {
-	constructor(
-		public condition: number,
-		public conditionStatus: number
-	) { }
+	constructor(public condition: number, public conditionStatus: number) {}
 
 	getBatteryConditionTip(condition: number): string {
 		switch (condition) {

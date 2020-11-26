@@ -8,9 +8,8 @@ xdescribe('UiCircleRadioComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiCircleRadioComponent]
-		})
-			.compileComponents();
+			declarations: [UiCircleRadioComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

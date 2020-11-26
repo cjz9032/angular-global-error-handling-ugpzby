@@ -4,5 +4,5 @@ export class PageAnchorLink {
 		public title: string,
 		public metricsItem: string,
 		public sortOrder?: number
-	) { }
+	) {}
 }

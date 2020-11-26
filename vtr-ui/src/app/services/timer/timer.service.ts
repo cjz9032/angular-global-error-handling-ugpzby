@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class TimerService {
 	private counter: number;
 	private timer: any;
-	constructor() {
-	}
+	constructor() {}
 
 	/**
 	 * start timer from 0
@@ -29,6 +28,4 @@ export class TimerService {
 		}
 		return this.counter;
 	}
-
 }
-

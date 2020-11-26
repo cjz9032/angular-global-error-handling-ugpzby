@@ -76,24 +76,24 @@
 			padding-right: 0;
 		}
 		text-align: left;
-		font-size:1.4rem;
-		color: #34495E;
+		font-size: 1.4rem;
+		color: #34495e;
 		opacity: 1;
-		::ng-deep p{
-			font-size:1.4rem;
-			color: #34495E;
+		::ng-deep p {
+			font-size: 1.4rem;
+			color: #34495e;
 		}
 	}
 
 	.segment-body {
 		margin-top: 3rem;
 		text-align: left;
-		font-size:1.4rem;
-		color: #34495E;
+		font-size: 1.4rem;
+		color: #34495e;
 		opacity: 1;
-		::ng-deep p{
-			font-size:1.4rem;
-			color: #34495E;
+		::ng-deep p {
+			font-size: 1.4rem;
+			color: #34495e;
 		}
 	}
 
@@ -108,25 +108,25 @@
 			padding-left: 0;
 			padding-right: 0;
 		}
-		::ng-deep img{
+		::ng-deep img {
 			margin-top: 3rem;
 			margin-bottom: 0;
 		}
-		.caption{
-			font-size:1.4rem;
+		.caption {
+			font-size: 1.4rem;
 			letter-spacing: 0.49px;
-			color: #34495E;
+			color: #34495e;
 			text-transform: uppercase;
 			opacity: 1;
 			margin-top: 0.8rem;
-			::ng-deep p{
-				font-size:1.4rem;
-				color: #34495E;
+			::ng-deep p {
+				font-size: 1.4rem;
+				color: #34495e;
 			}
 		}
 	}
 
-	.image-wrap-left{
+	.image-wrap-left {
 		float: left;
 		width: 40%;
 		margin-right: 1.2rem;
@@ -137,27 +137,27 @@
 		@media #{$breakpoint_sm} {
 			display: none;
 		}
-		img{
+		img {
 			margin-top: 0.5rem;
 			margin-bottom: 0;
 		}
-		.caption{
-			font-size:1.4rem;
+		.caption {
+			font-size: 1.4rem;
 			letter-spacing: 0.49px;
-			color: #34495E;
+			color: #34495e;
 			text-transform: uppercase;
 			opacity: 1;
 			margin-bottom: 3rem;
-			::ng-deep p{
-				font-size:1.4rem;
-				color: #34495E;
+			::ng-deep p {
+				font-size: 1.4rem;
+				color: #34495e;
 			}
 		}
 	}
 
-	.image-wrap-right{
+	.image-wrap-right {
 		float: right;
-		margin-left:1.2rem;
+		margin-left: 1.2rem;
 		width: 40%;
 		margin-bottom: 0;
 		@media #{$breakpoint_md} {
@@ -166,95 +166,95 @@
 		@media #{$breakpoint_sm} {
 			display: none;
 		}
-		img{
+		img {
 			margin-top: 0.5rem;
 			margin-bottom: 0.8rem;
 		}
-		.caption{
+		.caption {
 			text-align: left;
-			font-size:1.4rem;
+			font-size: 1.4rem;
 			letter-spacing: 0.49px;
-			color: #34495E;
+			color: #34495e;
 			text-transform: uppercase;
 			opacity: 1;
 			margin-bottom: 3rem;
-			::ng-deep p{
-				font-size:1.4rem;
-				color: #34495E;
+			::ng-deep p {
+				font-size: 1.4rem;
+				color: #34495e;
 			}
 		}
 	}
 
-	.image-left{
+	.image-left {
 		width: 40%;
-		padding-right:1.2rem;
-		img{
+		padding-right: 1.2rem;
+		img {
 			margin-top: 3.8rem;
 			margin-bottom: 0.8rem;
 		}
-		.caption{
-			font-size:1.4rem;
+		.caption {
+			font-size: 1.4rem;
 			letter-spacing: 0.49px;
-			color: #34495E;
+			color: #34495e;
 			text-transform: uppercase;
 			opacity: 1;
 			margin-bottom: 3rem;
-			::ng-deep p{
-				font-size:1.4rem;
-				color: #34495E;
+			::ng-deep p {
+				font-size: 1.4rem;
+				color: #34495e;
 			}
 		}
 	}
 
-	.image-right{
+	.image-right {
 		width: 40%;
-		padding-left:1.2rem;
-		img{
+		padding-left: 1.2rem;
+		img {
 			margin-top: 3.8rem;
 			margin-bottom: 0.8rem;
 		}
-		.caption{
+		.caption {
 			text-align: left;
-			font-size:1.4rem;
+			font-size: 1.4rem;
 			letter-spacing: 0.49px;
-			color: #34495E;
+			color: #34495e;
 			text-transform: uppercase;
 			opacity: 1;
 			margin-bottom: 3rem;
-			::ng-deep p{
-				font-size:1.4rem;
-				color: #34495E;
+			::ng-deep p {
+				font-size: 1.4rem;
+				color: #34495e;
 			}
 		}
 	}
 
-	ul{
+	ul {
 		list-style: none;
 	}
 
-	li{
+	li {
 		list-style: none;
 	}
 
-	.quote{
+	.quote {
 		margin-top: 2rem;
 	}
 
-	.quote-center{
+	.quote-center {
 		width: 40%;
-		background-color:#E74C3C;
+		background-color: #e74c3c;
 		background-repeat: no-repeat;
 		margin-left: 30%;
 		margin-right: 30%;
 		margin-top: 3rem;
-		label{
+		label {
 			padding-top: 3rem;
 			padding-left: 0;
 			margin-left: 0;
 			margin-right: 0;
 			font-weight: 500;
 			font-size: 2rem;
-			color:white;
+			color: white;
 			text-align: left;
 			opacity: 1;
 			@media #{$breakpoint_md} {
@@ -266,10 +266,10 @@
 				font-size: 1.5rem;
 			}
 		}
-		.attribution{
+		.attribution {
 			font-weight: bold;
-			font-size: 1.0rem;
-			color:white;
+			font-size: 1rem;
+			color: white;
 			text-align: left;
 			opacity: 1;
 			margin-top: 1rem;
@@ -283,12 +283,12 @@
 		}
 	}
 
-	.line{
+	.line {
 		margin-top: 1.8rem;
 		border: 0.8px solid;
 		border-color: white;
 		height: 0;
-		vertical-align:middle;
+		vertical-align: middle;
 		padding-left: 0.8rem;
 		@media #{$breakpoint_md} {
 			border: 0.4px solid;
@@ -300,8 +300,8 @@
 		}
 	}
 
-	.icon{
-		color:white;
+	.icon {
+		color: white;
 		font-size: 2.8rem;
 		@media #{$breakpoint_md} {
 			font-size: 0.8rem;
@@ -311,7 +311,7 @@
 		}
 	}
 
-	.quote-wrap-left{
+	.quote-wrap-left {
 		width: 40%;
 		@media #{$breakpoint_md} {
 			display: none;
@@ -322,9 +322,9 @@
 		float: left;
 		margin-top: 0.5rem;
 		margin-right: 1.2rem;
-		background-color: #E74C3C;
+		background-color: #e74c3c;
 		background-repeat: no-repeat;
-		label{
+		label {
 			padding-top: 3rem;
 			padding-left: 0;
 			margin-left: 0;
@@ -339,13 +339,13 @@
 				font-weight: 400;
 				font-size: 1.5rem;
 			}
-			color:white;
+			color: white;
 			text-align: left;
 			opacity: 1;
 		}
-		.attribution{
+		.attribution {
 			font-weight: bold;
-			font-size: 1.0rem;
+			font-size: 1rem;
 			padding-left: 0.6rem;
 			@media #{$breakpoint_md} {
 				font-size: 0.6rem;
@@ -353,14 +353,14 @@
 			@media #{$breakpoint_lg} {
 				font-size: 0.8rem;
 			}
-			color:white;
+			color: white;
 			text-align: left;
 			opacity: 1;
 			margin-top: 1rem;
 		}
 	}
 
-	.quote-wrap-right{
+	.quote-wrap-right {
 		width: 40%;
 		@media #{$breakpoint_md} {
 			display: none;
@@ -369,11 +369,11 @@
 			display: none;
 		}
 		float: right;
-		background-color: #E74C3C;
+		background-color: #e74c3c;
 		background-repeat: no-repeat;
 		margin-top: 0.5rem;
-		margin-left:1.2rem;
-		label{
+		margin-left: 1.2rem;
+		label {
 			padding-top: 3rem;
 			padding-left: 0;
 			margin-left: 0;
@@ -388,13 +388,13 @@
 				font-weight: 400;
 				font-size: 1.5rem;
 			}
-			color:white;
+			color: white;
 			text-align: left;
 			opacity: 1;
 		}
-		.attribution{
+		.attribution {
 			font-weight: bold;
-			font-size: 1.0rem;
+			font-size: 1rem;
 			padding-left: 0.6rem;
 			@media #{$breakpoint_md} {
 				font-size: 0.6rem;
@@ -402,20 +402,20 @@
 			@media #{$breakpoint_lg} {
 				font-size: 0.8rem;
 			}
-			color:white;
+			color: white;
 			text-align: left;
 			opacity: 1;
 			margin-top: 1rem;
 		}
 	}
 
-	.quote-left{
+	.quote-left {
 		width: 40%;
 		height: 100%;
-		background-color: #E74C3C;
+		background-color: #e74c3c;
 		background-repeat: no-repeat;
 		margin-top: 3.5rem;
-		label{
+		label {
 			padding-top: 3rem;
 			padding-left: 0;
 			margin-left: 0;
@@ -430,13 +430,13 @@
 				font-weight: 400;
 				font-size: 1.5rem;
 			}
-			color:white;
+			color: white;
 			text-align: left;
 			opacity: 1;
 		}
-		.attribution{
+		.attribution {
 			font-weight: bold;
-			font-size: 1.0rem;
+			font-size: 1rem;
 			padding-left: 0.6rem;
 			@media #{$breakpoint_md} {
 				font-size: 0.6rem;
@@ -444,20 +444,20 @@
 			@media #{$breakpoint_lg} {
 				font-size: 0.8rem;
 			}
-			color:white;
+			color: white;
 			text-align: left;
 			opacity: 1;
 			margin-top: 1rem;
 		}
 	}
 
-	.quote-right{
+	.quote-right {
 		width: 40%;
 		height: 100%;
-		background-color: #E74C3C;
+		background-color: #e74c3c;
 		background-repeat: no-repeat;
 		margin-top: 3.5rem;
-		label{
+		label {
 			padding-top: 3rem;
 			padding-left: 0;
 			margin-left: 0;
@@ -472,13 +472,13 @@
 				font-weight: 400;
 				font-size: 1.5rem;
 			}
-			color:white;
+			color: white;
 			text-align: left;
 			opacity: 1;
 		}
-		.attribution{
+		.attribution {
 			font-weight: bold;
-			font-size: 1.0rem;
+			font-size: 1rem;
 			padding-left: 0.6rem;
 			@media #{$breakpoint_md} {
 				font-size: 0.6rem;
@@ -486,7 +486,7 @@
 			@media #{$breakpoint_lg} {
 				font-size: 0.8rem;
 			}
-			color:white;
+			color: white;
 			text-align: left;
 			opacity: 1;
 			margin-top: 1rem;

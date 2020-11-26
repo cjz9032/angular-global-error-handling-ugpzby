@@ -6,7 +6,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class AdPolicyService {
 	private adPolicyBridge: any;
@@ -16,7 +16,8 @@ export class AdPolicyService {
 	constructor(
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
-		private localCacheService: LocalCacheService) {
+		private localCacheService: LocalCacheService
+	) {
 		this.adPolicyBridge = this.vantageShellService.getAdPolicy();
 		this.initialize();
 	}
@@ -27,7 +28,10 @@ export class AdPolicyService {
 			this.adPolicyBridge.getAdPolicyList().then((response) => {
 				this.adPolicyList = response;
 				this.updateSystemUpdateStatus();
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.AdPolicyCache, this.adPolicyList);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.AdPolicyCache,
+					this.adPolicyList
+				);
 				this.commonService.sendNotification(AdPolicyEvent.AdPolicyUpdatedEvent, this);
 				this.commonService.sendReplayNotification(AdPolicyEvent.AdPolicyUpdatedEvent, this);
 			});
@@ -35,7 +39,9 @@ export class AdPolicyService {
 	}
 
 	private initializeWithCachedData() {
-		const cachedPolicy = this.localCacheService.getLocalCacheValue(LocalStorageKey.AdPolicyCache);
+		const cachedPolicy = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.AdPolicyCache
+		);
 		if (cachedPolicy) {
 			this.adPolicyList = cachedPolicy;
 			this.updateSystemUpdateStatus();
@@ -43,18 +49,17 @@ export class AdPolicyService {
 	}
 
 	private updateSystemUpdateStatus() {
-		const policy = this.adPolicyList.find(item => item.name === AdPolicyId.SystemUpdate);
+		const policy = this.adPolicyList.find((item) => item.name === AdPolicyId.SystemUpdate);
 		const value = policy === undefined ? undefined : policy.value;
 		if (value === '0') {
 			this.IsSystemUpdateEnabled = false;
-		}
-		else {
+		} else {
 			this.IsSystemUpdateEnabled = true;
 		}
 	}
 
 	public getPolicyValueByIdSync(id) {
-		const policy = this.adPolicyList.find(item => item.name === id);
+		const policy = this.adPolicyList.find((item) => item.name === id);
 		const value = policy === undefined ? undefined : policy.value;
 		return value;
 	}

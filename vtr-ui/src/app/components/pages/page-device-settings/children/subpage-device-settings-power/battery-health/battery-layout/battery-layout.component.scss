@@ -1,7 +1,7 @@
-@import "src/app/app.theme.scss";
-@import "../battery-health.theme";
-@import "../battery-health.gaming.theme";
-@import "battery-layout-theme.component";
+@import 'src/app/app.theme.scss';
+@import '../battery-health.theme';
+@import '../battery-health.gaming.theme';
+@import 'battery-layout-theme.component';
 
 $_grid-column-gap: 2rem;
 $_grid-row-gap: 2rem;
@@ -33,8 +33,7 @@ $_grid-row-gap: 2rem;
 }
 
 .item-1,
-.item-4
-{
+.item-4 {
 	@include grid-fill(1, 3);
 
 	@media #{$breakpoint_md} {
@@ -45,10 +44,9 @@ $_grid-row-gap: 2rem;
 	}
 }
 
-
 // Temp put theme mixin at here.
 @include battery-layout-color($smart-battery-theme);
 
 :host-context(.is-gaming) {
-	@include battery-layout-color($smart-battery-gaming-theme)
+	@include battery-layout-color($smart-battery-gaming-theme);
 }

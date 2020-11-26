@@ -1,23 +1,46 @@
-
 import { TestBed, tick, async } from '@angular/core/testing';
 import { GamingLightingService } from './gaming-lighting.service';
 import { HttpClientModule } from '@angular/common/http';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 
-const listInfo:any = [
-	{lightPanelType:1,lightEffectType:2,lightColor:"009BFA",lightBrightness:2,lightSpeed:1},
-	{lightPanelType:2,lightEffectType:4,lightColor:"009BFA",lightBrightness:2,lightSpeed:1},
-	{lightPanelType:4,lightEffectType:8,lightColor:"009BFA",lightBrightness:2,lightSpeed:1},
-	{lightPanelType:8,lightEffectType:32,lightColor:"009BFA",lightBrightness:2,lightSpeed:1},
+const listInfo: any = [
+	{
+		lightPanelType: 1,
+		lightEffectType: 2,
+		lightColor: '009BFA',
+		lightBrightness: 2,
+		lightSpeed: 1,
+	},
+	{
+		lightPanelType: 2,
+		lightEffectType: 4,
+		lightColor: '009BFA',
+		lightBrightness: 2,
+		lightSpeed: 1,
+	},
+	{
+		lightPanelType: 4,
+		lightEffectType: 8,
+		lightColor: '009BFA',
+		lightBrightness: 2,
+		lightSpeed: 1,
+	},
+	{
+		lightPanelType: 8,
+		lightEffectType: 32,
+		lightColor: '009BFA',
+		lightBrightness: 2,
+		lightSpeed: 1,
+	},
 ];
 const spy = jasmine.createSpyObj('VantageService', ['getGamingLighting']);
-const stubValue =  {
-	getLightingProfileById(profileId:number) {
+const stubValue = {
+	getLightingProfileById(profileId: number) {
 		throw new Error('getLightingProfileById error');
 	},
 	getLightingCapabilities() {
 		throw new Error('getLightingCapabilities error');
-	}
+	},
 };
 
 describe('Shared service:', () => {
@@ -31,10 +54,9 @@ describe('Shared service:', () => {
 			spy.getGamingLighting.and.returnValue(null);
 			TestBed.configureTestingModule({
 				imports: [HttpClientModule],
-				providers: [ GamingLightingService,
-				{ provide: VantageShellService, useValue: spy}]
+				providers: [GamingLightingService, { provide: VantageShellService, useValue: spy }],
 			});
-	
+
 			service = TestBed.inject(GamingLightingService);
 			shellService = TestBed.inject(VantageShellService);
 		});
@@ -50,18 +72,16 @@ describe('Shared service:', () => {
 				expect(e).not.toBeNull();
 			}
 		});
-	
 	});
-	
+
 	describe('isShellAvailable should be true:', () => {
 		beforeEach(() => {
 			spy.getGamingLighting.and.returnValue(stubValue);
 			TestBed.configureTestingModule({
 				imports: [HttpClientModule],
-				providers: [ GamingLightingService,
-				{ provide: VantageShellService, useValue: spy}]
+				providers: [GamingLightingService, { provide: VantageShellService, useValue: spy }],
 			});
-	
+
 			service = TestBed.inject(GamingLightingService);
 			shellService = TestBed.inject(VantageShellService);
 		});
@@ -145,7 +165,6 @@ describe('Shared service:', () => {
 			}
 		});
 
-
 		it('should call getLightingProfileById', () => {
 			service.isShellAvailable = false;
 			const res = service.getLightingProfileById(1);
@@ -181,11 +200,6 @@ describe('Shared service:', () => {
 			} catch (e) {
 				expect(e).not.toBeNull();
 			}
-		})
-
+		});
 	});
-
 });
-
-
-

@@ -6,5 +6,5 @@ export class WelcomeTutorial {
 		public usageType?: string,
 		public interests?: Array<string>,
 		public isPrivacyPolicy?: boolean
-	) { }
+	) {}
 }

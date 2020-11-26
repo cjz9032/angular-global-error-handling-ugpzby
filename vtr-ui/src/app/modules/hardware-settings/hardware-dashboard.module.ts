@@ -2,7 +2,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NgbCarouselModule, NgbDropdownModule, NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+	NgbCarouselModule,
+	NgbDropdownModule,
+	NgbModalModule,
+	NgbTooltipModule,
+} from '@ng-bootstrap/ng-bootstrap';
 
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatIconModule } from '@lenovo/material/icon';
@@ -73,7 +78,7 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		FeedbackModule,
 		MatButtonModule,
 		MatIconModule,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
 	exports: [
 		MetricsModule,
@@ -87,11 +92,11 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		PageLayoutModule,
 		AppSearchModule,
 		WidgetDashboardWarrantyComponent,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
 	providers: [MockService],
 	entryComponents: [],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class HardwareDashboardModule {
 	constructor(library: FaIconLibrary) {

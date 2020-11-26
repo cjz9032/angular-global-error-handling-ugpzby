@@ -18,13 +18,12 @@ describe('SmartPerformanceService', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientModule],
-			providers: [VantageShellService]
+			providers: [VantageShellService],
 		});
 		service = TestBed.get(SmartPerformanceService);
 		shellService = TestBed.get(VantageShellService);
 	});
 	describe(':', () => {
-
 		function setup() {
 			const service = TestBed.get(SmartPerformanceService);
 
@@ -126,7 +125,11 @@ describe('SmartPerformanceService', () => {
 			const { service } = setup();
 
 			spyOn(service, 'getExpiredStatus').and.callThrough();
-			service.getExpiredStatus(new Date(),{currentTime:'2020-11-04T07:46:26.899+0000'}, null);
+			service.getExpiredStatus(
+				new Date(),
+				{ currentTime: '2020-11-04T07:46:26.899+0000' },
+				null
+			);
 			expect(service.getExpiredStatus).toHaveBeenCalled();
 		});
 	});

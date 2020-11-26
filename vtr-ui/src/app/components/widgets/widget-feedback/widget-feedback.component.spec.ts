@@ -8,9 +8,8 @@ xdescribe('WidgetFeedbackComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetFeedbackComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetFeedbackComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

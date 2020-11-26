@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FeedbackRoutingModule } from './feedback-routing.module';
 import { FeedbackFormComponent } from 'src/app/components/feedback-form/feedback-form/feedback-form.component';
-import { SurveyFormComponent} from 'src/app/components/feedback-form/survey-form/survey-form.component';
+import { SurveyFormComponent } from 'src/app/components/feedback-form/survey-form/survey-form.component';
 import { WidgetFeedbackComponent } from 'src/app/components/widgets/widget-feedback/widget-feedback.component';
 import { TranslationModule } from '../translation.module';
 import { CommonPipeModule } from '../common/common-pipe.module';
@@ -17,11 +17,7 @@ import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
 
 @NgModule({
-	declarations: [
-		FeedbackFormComponent,
-		WidgetFeedbackComponent,
-		SurveyFormComponent
-	],
+	declarations: [FeedbackFormComponent, WidgetFeedbackComponent, SurveyFormComponent],
 	imports: [
 		CommonModule,
 		TranslationModule.forChild(),
@@ -36,17 +32,11 @@ import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-cl
 		FormsModule,
 		ReactiveFormsModule,
 		NgbModalModule,
-		MetricsModule
+		MetricsModule,
 	],
-	exports: [
-		FeedbackFormComponent,
-		WidgetFeedbackComponent,
-		SurveyFormComponent
-	],
+	exports: [FeedbackFormComponent, WidgetFeedbackComponent, SurveyFormComponent],
 	providers: [],
-	entryComponents: [
-		FeedbackFormComponent
-	],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	entryComponents: [FeedbackFormComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class FeedbackModule { }
+export class FeedbackModule {}

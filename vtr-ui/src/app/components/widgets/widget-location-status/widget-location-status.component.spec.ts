@@ -19,13 +19,9 @@ describe('WidgetLocationStatusComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetLocationStatusComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule],
-			providers: [DialogService, UserService, CookieService, CommsService, DevService]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [DialogService, UserService, CookieService, CommsService, DevService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

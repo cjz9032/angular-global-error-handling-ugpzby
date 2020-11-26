@@ -1,2 +1,1 @@
-describe('WidgetMcafeeStateComponent', () => {
-});
+describe('WidgetMcafeeStateComponent', () => {});

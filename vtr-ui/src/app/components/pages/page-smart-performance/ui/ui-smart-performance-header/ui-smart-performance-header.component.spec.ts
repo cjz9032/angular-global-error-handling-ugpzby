@@ -8,9 +8,8 @@ describe('UiSmartPerformanceHeaderComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [UiSmartPerformanceHeaderComponent]
-		})
-			.compileComponents();
+			declarations: [UiSmartPerformanceHeaderComponent],
+		}).compileComponents();
 	});
 
 	beforeEach(() => {

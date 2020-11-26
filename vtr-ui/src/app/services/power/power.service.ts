@@ -2,9 +2,13 @@ import { Injectable } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { FlipToBootErrorStatusInterface, FlipToBootInterface, FlipToBootSetStatus } from './flipToBoot.interface';
+import {
+	FlipToBootErrorStatusInterface,
+	FlipToBootInterface,
+	FlipToBootSetStatus,
+} from './flipToBoot.interface';
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class PowerService {
 	private devicePower: any;
@@ -92,7 +96,9 @@ export class PowerService {
 	public setUSBChargingInBatteryModeStatusIdeaNoteBook(value: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerIdeaNoteBook) {
-				return this.devicePowerIdeaNoteBook.alwaysOnUSB.setUSBChargingInBatteryModeStatus(value);
+				return this.devicePowerIdeaNoteBook.alwaysOnUSB.setUSBChargingInBatteryModeStatus(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -110,7 +116,9 @@ export class PowerService {
 	public setConservationModeStatusIdeaNoteBook(value: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerIdeaNoteBook) {
-				return this.devicePowerIdeaNoteBook.conservationMode.setConservationModeStatus(value);
+				return this.devicePowerIdeaNoteBook.conservationMode.setConservationModeStatus(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -147,7 +155,9 @@ export class PowerService {
 		return undefined;
 	}
 
-	public setFlipToBootSettings(status: FlipToBootSetStatus): Promise<FlipToBootErrorStatusInterface> {
+	public setFlipToBootSettings(
+		status: FlipToBootSetStatus
+	): Promise<FlipToBootErrorStatusInterface> {
 		if (this.devicePowerIdeaNoteBook) {
 			return this.devicePowerIdeaNoteBook.flipToBoot.setFlipToBootSettings(status);
 		}
@@ -206,7 +216,9 @@ export class PowerService {
 	public setAirplaneModeAutoDetectionOnThinkPad(value: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionAirplaneMode.setAirplaneModeAutoDetection(value);
+				return this.devicePowerThinkPad.sectionAirplaneMode.setAirplaneModeAutoDetection(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -241,7 +253,7 @@ export class PowerService {
 	public startMonitor(handler: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.devicePower.startMonitor((handler));
+				return this.devicePower.startMonitor(handler);
 			}
 			return undefined;
 		} catch (error) {
@@ -325,7 +337,9 @@ export class PowerService {
 	public setAutoModeSetting(value: boolean): Promise<boolean> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
-				return this.devicePowerItsIntelligentCooling.intelligentCooling.setAutoModeSetting(value);
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setAutoModeSetting(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -335,7 +349,9 @@ export class PowerService {
 	public setManualModeSetting(value: string): Promise<boolean> {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
-				return this.devicePowerItsIntelligentCooling.intelligentCooling.setManualModeSetting(value);
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setManualModeSetting(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -423,7 +439,9 @@ export class PowerService {
 	public setLegacyAutoModeState(value: boolean) {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
-				return this.devicePowerItsIntelligentCooling.intelligentCooling.setLegacyAutoModeState(value);
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setLegacyAutoModeState(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -434,7 +452,9 @@ export class PowerService {
 	public setLegacyManualModeState(value: boolean) {
 		try {
 			if (this.devicePowerItsIntelligentCooling) {
-				return this.devicePowerItsIntelligentCooling.intelligentCooling.setLegacyManualModeState(value);
+				return this.devicePowerItsIntelligentCooling.intelligentCooling.setLegacyManualModeState(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -550,7 +570,10 @@ export class PowerService {
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setChargeThresholdValue(
-					value.batteryNum, value.startValue, value.stopValue, value.checkboxValue
+					value.batteryNum,
+					value.startValue,
+					value.stopValue,
+					value.checkboxValue
 				);
 			}
 			return undefined;
@@ -564,7 +587,10 @@ export class PowerService {
 		try {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionChargeThreshold.setCtAutoCheckbox(
-					value.batteryNum, value.startValue, value.stopValue, value.checkboxValue
+					value.batteryNum,
+					value.startValue,
+					value.stopValue,
+					value.checkboxValue
 				);
 			}
 			return undefined;
@@ -583,8 +609,6 @@ export class PowerService {
 			throw new Error(error.message);
 		}
 	}
-
-
 
 	// End battery threshold settings
 
@@ -636,7 +660,9 @@ export class PowerService {
 	public setSmartStandbyActiveStartEnd(value: string): Promise<any> {
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyActiveStartEnd(value);
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyActiveStartEnd(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -647,7 +673,9 @@ export class PowerService {
 	public setSmartStandbyDaysOfWeekOff(value: string): Promise<any> {
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyDaysOfWeekOff(value);
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyDaysOfWeekOff(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -667,7 +695,9 @@ export class PowerService {
 	public setSmartStandbyIsAutonomic(value: boolean): Promise<number> {
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyIsAutonomic(value);
+				return this.devicePowerThinkPad.sectionSmartStandby.setSmartStandbyIsAutonomic(
+					value
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -706,13 +736,17 @@ export class PowerService {
 			if (this.devicePowerThinkPad) {
 				return this.devicePowerThinkPad.sectionBatteryGaugeReset.getGaugeResetCapability();
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	public startBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionBatteryGaugeReset.startBatteryGaugeReset(handler, barCode, batteryNumber);
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.startBatteryGaugeReset(
+					handler,
+					barCode,
+					batteryNumber
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -723,7 +757,11 @@ export class PowerService {
 	public stopBatteryGaugeReset(handler, barCode: string, batteryNumber: number): Promise<any> {
 		try {
 			if (this.devicePowerThinkPad) {
-				return this.devicePowerThinkPad.sectionBatteryGaugeReset.stopBatteryGaugeReset(handler, barCode, batteryNumber);
+				return this.devicePowerThinkPad.sectionBatteryGaugeReset.stopBatteryGaugeReset(
+					handler,
+					barCode,
+					batteryNumber
+				);
 			}
 			return undefined;
 		} catch (error) {

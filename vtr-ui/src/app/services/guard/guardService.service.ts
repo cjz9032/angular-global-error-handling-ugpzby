@@ -1,6 +1,12 @@
 import { CommonService } from '../common/common.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, UrlTree, NavigationEnd } from '@angular/router';
+import {
+	ActivatedRouteSnapshot,
+	RouterStateSnapshot,
+	Router,
+	UrlTree,
+	NavigationEnd,
+} from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { AdPolicyService } from '../ad-policy/ad-policy.service';
@@ -36,7 +42,8 @@ export class GuardService extends BasicGuard {
 		public guardConstants: GuardConstants,
 		private timerService: DurationCounterService,
 		private metricsService: MetricService,
-		private batteryService: BatteryDetailService) {
+		private batteryService: BatteryDetailService
+	) {
 		super(commonService, guardConstants);
 		this.metrics = shellService.getMetrics();
 	}
@@ -49,23 +56,31 @@ export class GuardService extends BasicGuard {
 		this.focusDurationCounter = this.timerService.getFocusDurationCounter();
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
 
-		if (routerStateSnapshot.url.includes('system-updates') &&
-			(!this.adPolicy.IsSystemUpdateEnabled ||
-				this.deviceService.isSMode)) {
+		if (
+			routerStateSnapshot.url.includes('system-updates') &&
+			(!this.adPolicy.IsSystemUpdateEnabled || this.deviceService.isSMode)
+		) {
 			return super.canActivate(activatedRouteSnapshot, routerStateSnapshot);
 		}
 		if (routerStateSnapshot.url.includes('high-density-battery')) {
-			if(this.batteryService.isTemporaryChargeMode) {
-					return (this.batteryService.isTemporaryChargeMode || this.batteryService.isDlsPiCapable);
+			if (this.batteryService.isTemporaryChargeMode) {
+				return (
+					this.batteryService.isTemporaryChargeMode || this.batteryService.isDlsPiCapable
+				);
 			}
 		}
-		if (routerStateSnapshot.url.includes('dashboard')) { }
+		if (routerStateSnapshot.url.includes('dashboard')) {
+		}
 
 		this.activePageViewMetric = true;
 		return true;
 	}
 
-	canDeactivate(component: object, activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+	canDeactivate(
+		component: object,
+		activatedRouteSnapshot: ActivatedRouteSnapshot,
+		routerStateSnapshot: RouterStateSnapshot
+	): Observable<boolean> | Promise<boolean> | boolean {
 		window.getSelection().empty();
 		this.pageContext = activatedRouteSnapshot.data.pageContent;
 		this.previousPageName = activatedRouteSnapshot.data.pageName;
@@ -83,8 +98,10 @@ export class GuardService extends BasicGuard {
 		if (this.pageContext && this.pageContext.indexOf('[LocalStorageKey]') !== -1) {
 			this.pageContext = this.localCacheService.getLocalCacheValue(this.pageContext);
 		}
-		const focusDuration = this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
-		const blurDuration = this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
+		const focusDuration =
+			this.focusDurationCounter !== null ? this.focusDurationCounter.getDuration() : 0;
+		const blurDuration =
+			this.blurDurationCounter !== null ? this.blurDurationCounter.getDuration() : 0;
 
 		this.metricsService.notifyPageScollEvent(); // trigger service to calulate the scroll percentage
 		const pageName = this.metricsService.getPageName();
@@ -94,7 +111,7 @@ export class GuardService extends BasicGuard {
 			PageDuration: focusDuration,
 			PageDurationBlur: blurDuration,
 			PageContext: this.pageContext,
-			MaxScroll: this.metricsService.maxScrollRecorder[pageName]
+			MaxScroll: this.metricsService.maxScrollRecorder[pageName],
 		};
 		this.metrics.sendAsync(data);
 	}

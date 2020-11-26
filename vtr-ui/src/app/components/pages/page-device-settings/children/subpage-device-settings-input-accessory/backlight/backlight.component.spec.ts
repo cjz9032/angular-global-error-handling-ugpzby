@@ -29,21 +29,21 @@ describe('Backlight', () => {
 				key: 'KeyboardBacklightLevel',
 				value: 'OneLevel',
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: 'Level_1',
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		backlightServiceSpy = jasmine.createSpyObj('BacklightService', [
 			'backlight',
 			'setBacklight',
 			'getBacklightOnSystemChange',
 			'clearCache',
-			'forceReload'
+			'forceReload',
 		]);
 		backlightServiceSpy.backlight.and.returnValue(of(stubValue));
 		backlightServiceSpy.clearCache.and.callThrough();
@@ -51,41 +51,38 @@ describe('Backlight', () => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [BacklightComponent, RemoveSpacePipe],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientModule
-			],
+			imports: [TranslateModule.forRoot(), HttpClientModule],
 			providers: [
 				BacklightService,
 				{ provide: MetricService, useClass: MockMetricService },
-				VantageShellService
-			]
+				VantageShellService,
+			],
 		});
 		// backlightService = fixture.debugElement.injector.get(BacklightService);
 		backlightService = TestBed.inject(BacklightService);
 	});
 
-	it('should create Backlight Component', (() => {
+	it('should create Backlight Component', () => {
 		// backlightServiceSpy.backlight.and.returnValue(of(stubValue));
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 		fixture.destroy();
-	}));
+	});
 
-	it('should call onToggleOnOff - when switchValue is true', (() => {
+	it('should call onToggleOnOff - when switchValue is true', () => {
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		const event = {
-			switchValue: true
+			switchValue: true,
 		};
 		const spy = spyOn(component.update$, 'next');
 		component.onToggleOnOff(event);
 		expect(spy).toHaveBeenCalled();
-	}));
+	});
 
-	it('should call onToggleOnOff - when no switchValue', (() => {
+	it('should call onToggleOnOff - when no switchValue', () => {
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		const event = {};
@@ -93,23 +90,22 @@ describe('Backlight', () => {
 		const spy = spyOn(component.update$, 'next');
 		component.onToggleOnOff(event);
 		expect(spy).toHaveBeenCalled();
-	}));
+	});
 
 	it('should check isSwitchChecked for one level subscription - when backlight status is off', () => {
-
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
 				value: 'OneLevel',
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: 'Level_1',
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		const spy = spyOnProperty(backlightService, 'backlight');
 		spy.and.returnValue(of(stubValue));
@@ -121,20 +117,20 @@ describe('Backlight', () => {
 		fixture.destroy();
 	});
 
-	it('should check off mode when backlight status is disabledOff - TWO_LEVELS_AUTO', (() => {
+	it('should check off mode when backlight status is disabledOff - TWO_LEVELS_AUTO', () => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
 				value: BacklightLevelEnum.TWO_LEVELS_AUTO,
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: BacklightStatusEnum.DISABLED_OFF,
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		const spy = spyOnProperty(backlightService, 'backlight');
 		spy.and.returnValue(of(stubValue));
@@ -143,22 +139,22 @@ describe('Backlight', () => {
 		fixture.detectChanges();
 		expect(component.modes[3].checked).toBe(true);
 		fixture.destroy();
-	}));
+	});
 
-	it('should check off mode when backlight status is disabledOff - TWO_LEVELS', (() => {
+	it('should check off mode when backlight status is disabledOff - TWO_LEVELS', () => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
 				value: BacklightLevelEnum.TWO_LEVELS,
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: BacklightStatusEnum.DISABLED_OFF,
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		const spy = spyOnProperty(backlightService, 'backlight');
 		spy.and.returnValue(of(stubValue));
@@ -167,36 +163,36 @@ describe('Backlight', () => {
 		fixture.detectChanges();
 		expect(component.modes[2].checked).toBe(true);
 		fixture.destroy();
-	}));
+	});
 
-	it('should check off mode when backlight status is disabledOff - TWO_LEVELS_AUTO onSystemChange', (() => {
+	it('should check off mode when backlight status is disabledOff - TWO_LEVELS_AUTO onSystemChange', () => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
 				value: BacklightLevelEnum.TWO_LEVELS_AUTO,
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: BacklightStatusEnum.LEVEL_1,
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		const stubOnChangeValue = [
 			{
 				key: 'KeyboardBacklightLevel',
 				value: BacklightLevelEnum.TWO_LEVELS_AUTO,
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: BacklightStatusEnum.DISABLED_OFF,
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		const backlightSpy = spyOnProperty(backlightService, 'backlight');
 		backlightSpy.and.returnValue(of(stubValue));
@@ -204,15 +200,15 @@ describe('Backlight', () => {
 		let count = 0;
 		spy.and.callFake(() => {
 			if (count > 2) {
-				return new Observable(observer => {
+				return new Observable((observer) => {
 					observer.error('stop');
 				});
 			}
 			count++;
 			return of({
 				settingList: {
-					setting: stubOnChangeValue
-				}
+					setting: stubOnChangeValue,
+				},
 			} as GetBacklightResponse);
 		});
 		fixture = TestBed.createComponent(BacklightComponent);
@@ -220,22 +216,22 @@ describe('Backlight', () => {
 		fixture.detectChanges();
 		expect(component.modes[3].checked).toBe(true);
 		fixture.destroy();
-	}));
+	});
 
-	it('should check level_one', (() => {
+	it('should check level_one', () => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
 				value: BacklightLevelEnum.TWO_LEVELS,
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: BacklightStatusEnum.LEVEL_1,
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		const spy = spyOnProperty(backlightService, 'backlight');
 		spy.and.returnValue(of(stubValue));
@@ -245,29 +241,29 @@ describe('Backlight', () => {
 		component.update$.next(component.modes[0]);
 		expect(component.modes[0].checked).toBe(true);
 		fixture.destroy();
-	}));
+	});
 
-	it('should check level_one', (() => {
+	it('should check level_one', () => {
 		const stubValue = [
 			{
 				key: 'KeyboardBacklightLevel',
 				value: BacklightLevelEnum.TWO_LEVELS,
 				enabled: 0,
-				errorCode: 0
+				errorCode: 0,
 			},
 			{
 				key: 'KeyboardBacklightStatus',
 				value: BacklightStatusEnum.LEVEL_1,
 				enabled: 0,
-				errorCode: 0
-			}
+				errorCode: 0,
+			},
 		];
 		const spy = spyOnProperty(backlightService, 'backlight');
 		spy.and.returnValue(of(stubValue));
 		const setSpy = spyOn(backlightService, 'setBacklight');
 		const forceReoladSpy = spyOn(backlightService, 'forceReload');
 		setSpy.and.callFake(() => {
-			return new Observable(observer => {
+			return new Observable((observer) => {
 				observer.error('fail');
 			});
 		});
@@ -277,5 +273,5 @@ describe('Backlight', () => {
 		component.update$.next(component.modes[0]);
 		expect(forceReoladSpy).toHaveBeenCalled();
 		fixture.destroy();
-	}));
+	});
 });

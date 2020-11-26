@@ -8,19 +8,19 @@ const eyeCareModeSettings = {
 	current: 1,
 	maximum: 1,
 	minimum: 2,
-	status: true
+	status: true,
 };
 const sunsetToSunriseStatus = {
 	available: true,
 	status: true,
 	permission: true,
 	sunriseTime: '06:00',
-	sunsetTime: '06:00'
+	sunsetTime: '06:00',
 };
 
 const changeContext = {
 	value: 10,
-	highValue: 12
+	highValue: 12,
 };
 describe('EyeCareModeComponent', () => {
 	let component: EyeCareModeComponent;
@@ -30,7 +30,7 @@ describe('EyeCareModeComponent', () => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslateModule.forRoot(), HttpClientTestingModule],
-			declarations: [EyeCareModeComponent]
+			declarations: [EyeCareModeComponent],
 		}).compileComponents();
 		fixture = TestBed.createComponent(EyeCareModeComponent);
 		component = fixture.componentInstance;
@@ -54,10 +54,7 @@ describe('EyeCareModeComponent', () => {
 		expect(component.eyeCareTemperatureChange.emit).toHaveBeenCalled();
 	});
 	it('should test onEyeCareTemperaturePreview method', () => {
-		spyOn(
-			component.eyeCareTemperatureValueChange,
-			'emit'
-		).and.callThrough();
+		spyOn(component.eyeCareTemperatureValueChange, 'emit').and.callThrough();
 		component.onEyeCareTemperaturePreview(changeContext.value);
 		expect(component.eyeCareTemperatureValueChange.emit).toHaveBeenCalled();
 	});
@@ -77,22 +74,14 @@ describe('EyeCareModeComponent', () => {
 		// };
 
 		component.ngOnChanges({
-			sunsetToSunriseStatus: new SimpleChange(
-				null,
-				sunsetToSunriseStatus,
-				false
-			)
+			sunsetToSunriseStatus: new SimpleChange(null, sunsetToSunriseStatus, false),
 		});
 		fixture.detectChanges();
 		expect(component.sunriseToSunsetText).toBe('');
 	});
 	it('should check sunsetToSunriseStatus in onChanges method', () => {
 		component.ngOnChanges({
-			sunsetToSunriseStatus: new SimpleChange(
-				null,
-				sunsetToSunriseStatus,
-				true
-			)
+			sunsetToSunriseStatus: new SimpleChange(null, sunsetToSunriseStatus, true),
 		});
 		fixture.detectChanges();
 		expect(component.sunriseToSunsetText).toBe('');

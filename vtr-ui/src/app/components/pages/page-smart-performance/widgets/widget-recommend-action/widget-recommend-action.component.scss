@@ -27,10 +27,9 @@
 		margin-bottom: 2rem;
 		p {
 			font-size: $fontsize_xs;
-			color: #303D49;
+			color: #303d49;
 		}
 	}
-
 
 	.junk-list {
 		position: relative;
@@ -140,7 +139,6 @@
 		text-align: center;
 		border: 0rem;
 		cursor: pointer;
-
 	}
 
 	.cancel-link {
@@ -175,7 +173,6 @@
 			.selected-frequency {
 				color: #11b85b;
 				font-weight: $weight_bold;
-
 			}
 
 			.frequency-text {
@@ -357,7 +354,5 @@
 				}
 			}
 		}
-
 	}
 }
-

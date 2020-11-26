@@ -11,19 +11,22 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { TranslateStore } from '@ngx-translate/core';
 
-
 describe('WidgetLandingNavComponent', () => {
 	let component: WidgetLandingNavComponent;
 	let fixture: ComponentFixture<WidgetLandingNavComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetLandingNavComponent, WidgetLandingSecurityComponent, StatusTransformPipe, UiButtonComponent],
+			declarations: [
+				WidgetLandingNavComponent,
+				WidgetLandingSecurityComponent,
+				StatusTransformPipe,
+				UiButtonComponent,
+			],
 			imports: [TranslationModule],
-			providers: [StatusTransformPipe,TranslateStore,],
+			providers: [StatusTransformPipe, TranslateStore],
 			schemas: [NO_ERRORS_SCHEMA],
-		})
-			.compileComponents();
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

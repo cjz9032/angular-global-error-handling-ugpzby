@@ -3,10 +3,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
 	selector: 'vtr-ui-close-button',
 	templateUrl: './ui-close-button.component.html',
-	styleUrls: ['./ui-close-button.component.scss']
+	styleUrls: ['./ui-close-button.component.scss'],
 })
 export class UiCloseButtonComponent implements OnInit {
-
 	@Input() linkId = '';
 	@Input() metricsItem = '';
 	@Input() metricsEvent = 'FeatureClick';
@@ -15,13 +14,11 @@ export class UiCloseButtonComponent implements OnInit {
 
 	@Output() clickClose = new EventEmitter<any>();
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit(): void {
-	}
+	ngOnInit(): void {}
 
 	clickCloseButton($event) {
 		this.clickClose.emit($event);
 	}
-
 }

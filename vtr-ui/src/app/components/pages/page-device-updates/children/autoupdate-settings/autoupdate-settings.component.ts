@@ -5,10 +5,9 @@ import { DeviceService } from 'src/app/services/device/device.service';
 @Component({
 	selector: 'vtr-autoupdate-settings',
 	templateUrl: './autoupdate-settings.component.html',
-	styleUrls: ['./autoupdate-settings.component.scss']
+	styleUrls: ['./autoupdate-settings.component.scss'],
 })
 export class AutoupdateSettingsComponent extends BaseComponent implements OnInit {
-
 	@Input() title: string;
 	@Input() description: string;
 	@Input() items: any[];
@@ -19,7 +18,7 @@ export class AutoupdateSettingsComponent extends BaseComponent implements OnInit
 		super();
 	}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	public onToggleOnOff($event: any) {
 		this.toggleOnOff.emit($event);
@@ -41,5 +40,3 @@ export class AutoupdateSettingsComponent extends BaseComponent implements OnInit
 		}
 	}
 }
-
-

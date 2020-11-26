@@ -1,4 +1,4 @@
-@import "../../app.theme";
+@import '../../app.theme';
 
 .vtr-header-main {
 	// TEMP STYLING TO BE REPLACED WHEN WE HAVE ACTUAL background: #289cd0;
@@ -30,7 +30,7 @@
 		background: linear-gradient(to right, #185d73 0%, #1e7390 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#185d73", endColorstr="#1e7390", GradientType=1);
 		&::before {
-			content: "";
+			content: '';
 			top: 0;
 			bottom: 0;
 			left: 0;
@@ -177,7 +177,7 @@
 			//left: $padding_side;
 		}
 
-		.welcomeText-placeholder{
+		.welcomeText-placeholder {
 			height: 5rem;
 		}
 	}

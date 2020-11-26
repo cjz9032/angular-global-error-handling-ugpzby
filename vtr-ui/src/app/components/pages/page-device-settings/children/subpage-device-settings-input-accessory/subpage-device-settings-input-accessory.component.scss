@@ -1,4 +1,4 @@
-@import "../../../../../app.theme.scss";
+@import '../../../../../app.theme.scss';
 
 .subpage-device-settings-input-accessories {
 	ul.list-group {
@@ -225,7 +225,8 @@
 	.control-options-block {
 		margin-top: 1rem;
 		margin-bottom: 2rem;
-		h4, h5 {
+		h4,
+		h5 {
 			color: $main_darker;
 			font-weight: $weight_bold;
 			font-size: 1.4rem;
@@ -247,10 +248,10 @@
 				}
 				@media #{$black-on-white} {
 					@include hyperlink-blue-white;
-				  }
-				  @media #{$white-on-black} {
-					@include  hyperlink-yellow-black;
-				  }
+				}
+				@media #{$white-on-black} {
+					@include hyperlink-yellow-black;
+				}
 
 				// span {
 				// 	padding-bottom: .2rem;
@@ -336,10 +337,10 @@
 	}
 
 	&.icon-s4b {
-		background: url("../../../../../../assets/images/S4B_2016.png") center/cover;
+		background: url('../../../../../../assets/images/S4B_2016.png') center/cover;
 	}
 	&.icon-teams {
-		background: url("../../../../../../assets/images/Microsoft_Teams_1.0.png") center/cover;
+		background: url('../../../../../../assets/images/Microsoft_Teams_1.0.png') center/cover;
 	}
 }
 
@@ -358,10 +359,11 @@
 			height: 4rem;
 
 			&.icon-s4b {
-				background: url("../../../../../../assets/images/S4B_2016.png") center/cover;
+				background: url('../../../../../../assets/images/S4B_2016.png') center/cover;
 			}
 			&.icon-teams {
-				background: url("../../../../../../assets/images/Microsoft_Teams_1.0.png") center/cover;
+				background: url('../../../../../../assets/images/Microsoft_Teams_1.0.png')
+					center/cover;
 			}
 		}
 	}

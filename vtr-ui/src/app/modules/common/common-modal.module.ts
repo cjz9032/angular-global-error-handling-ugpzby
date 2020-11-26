@@ -39,7 +39,7 @@ import { MatDialogModule } from '@lenovo/material/dialog';
 		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent,
 		ModalSmartStandByComponent,
-		MaterialDialogComponent
+		MaterialDialogComponent,
 	],
 	imports: [
 		CommonModule,
@@ -49,16 +49,10 @@ import { MatDialogModule } from '@lenovo/material/dialog';
 		NgbTooltipModule,
 		MatButtonModule,
 		MatIconModule,
-		MatDialogModule
+		MatDialogModule,
 	],
-	exports: [
-		SharedModule,
-		MetricsModule,
-		NgbModalModule
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	],
+	exports: [SharedModule, MetricsModule, NgbModalModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	entryComponents: [
 		/*ModalServerSwitchComponent,*/
 		DownloadFailedModalComponent,
@@ -75,7 +69,7 @@ import { MatDialogModule } from '@lenovo/material/dialog';
 		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent,
 		ModalSmartStandByComponent,
-		MaterialDialogComponent
-	]
+		MaterialDialogComponent,
+	],
 })
-export class CommonModalModule { }
+export class CommonModalModule {}

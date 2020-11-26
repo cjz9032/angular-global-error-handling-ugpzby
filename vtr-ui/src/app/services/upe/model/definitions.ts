@@ -8,15 +8,13 @@ export interface IUpeEssential {
 }
 
 export interface IEssentialHelper {
-	getUpeEssential: ()  => any;
+	getUpeEssential: () => any;
 	registerDevice: (upeEssential: IUpeEssential) => any;
 }
-
 
 export interface IGetContentParam {
 	positions: any[];
 }
-
 
 export interface IActionResult {
 	success: boolean;

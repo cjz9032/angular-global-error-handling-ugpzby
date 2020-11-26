@@ -25,11 +25,43 @@ const res = {
 	Secure: 10,
 	recentscantime: '2020-01-03 22:32:00',
 	lastscanresults: [
-		{ scanruntime: '2020-01-03 22:32:00', type: 'MS', fixcount: 7, status: 'C', Tune: 4, Boost: 1, Secure: 2 },
-		{ scanruntime: '2020-01-03 18:32:00', type: 'SS', fixcount: 11, status: 'C', Tune: 4, Boost: 2, Secure: 5 },
-		{ scanruntime: '2020-01-03 16:32:00', type: 'MS', fixcount: 7, status: 'C', Tune: 4, Boost: 1, Secure: 2 },
-		{ scanruntime: '2020-01-03 14:32:00', type: 'SS', fixcount: 10, status: 'C', Tune: 8, Boost: 1, Secure: 1 }
-	]
+		{
+			scanruntime: '2020-01-03 22:32:00',
+			type: 'MS',
+			fixcount: 7,
+			status: 'C',
+			Tune: 4,
+			Boost: 1,
+			Secure: 2,
+		},
+		{
+			scanruntime: '2020-01-03 18:32:00',
+			type: 'SS',
+			fixcount: 11,
+			status: 'C',
+			Tune: 4,
+			Boost: 2,
+			Secure: 5,
+		},
+		{
+			scanruntime: '2020-01-03 16:32:00',
+			type: 'MS',
+			fixcount: 7,
+			status: 'C',
+			Tune: 4,
+			Boost: 1,
+			Secure: 2,
+		},
+		{
+			scanruntime: '2020-01-03 14:32:00',
+			type: 'SS',
+			fixcount: 10,
+			status: 'C',
+			Tune: 8,
+			Boost: 1,
+			Secure: 1,
+		},
+	],
 };
 
 describe('SubpageSmartPerformanceScanSummaryComponent', () => {
@@ -58,32 +90,23 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 				VantageShellService,
 				FormatLocaleDatePipe,
 				DevService,
-				NgbModal
-
+				NgbModal,
 			],
 		});
-		fixture = TestBed.createComponent(
-			SubpageSmartPerformanceScanSummaryComponent
-		);
+		fixture = TestBed.createComponent(SubpageSmartPerformanceScanSummaryComponent);
 		component = fixture.componentInstance;
 	}));
 
 	it('should create SubpageSmartPerformanceScanSummaryComponent', () => {
 		commonService = TestBed.inject(CommonService);
-		spyOn(commonService, 'getLocalStorageValue').and.returnValues(
-			'ThinkPad E470',
-			true
-		);
+		spyOn(commonService, 'getLocalStorageValue').and.returnValues('ThinkPad E470', true);
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	});
 
 	it('should create SubpageSmartPerformanceScanSummaryComponent - else case in ngInit', () => {
 		commonService = TestBed.inject(CommonService);
-		spyOn(commonService, 'getLocalStorageValue').and.returnValues(
-			undefined,
-			false
-		);
+		spyOn(commonService, 'getLocalStorageValue').and.returnValues(undefined, false);
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	});
@@ -92,7 +115,9 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		const startDate = moment().startOf('day').format('YYYY-MM-DD HH:mm:ss');
 		const endDate = moment().endOf('day').format('YYYY-MM-DD HH:mm:ss');
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		const spy = spyOn(smartPerformanceService, 'getHistory').and.returnValue(Promise.resolve(res));
+		const spy = spyOn(smartPerformanceService, 'getHistory').and.returnValue(
+			Promise.resolve(res)
+		);
 		component.getHistory(startDate, endDate);
 		expect(spy).toHaveBeenCalled();
 	});
@@ -130,12 +155,12 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		component.selectedfromDate = {
 			day: 'Monday',
 			month: 5,
-			year: 2020
+			year: 2020,
 		};
 		component.selectedTodate = {
 			day: 'Monday',
 			month: 5,
-			year: 2020
+			year: 2020,
 		};
 		component.customDateScanSummary();
 		expect(component.isDropDownOpen).toBe(false);
@@ -145,7 +170,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		component.selectedfromDate = {
 			day: 'Monday',
 			month: 5,
-			year: 2020
+			year: 2020,
 		};
 		logger = TestBed.inject(LoggerService);
 		component.isFromDate = true;
@@ -158,7 +183,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		component.selectedTodate = {
 			day: 'Monday',
 			month: 5,
-			year: 2020
+			year: 2020,
 		};
 		logger = TestBed.inject(LoggerService);
 		component.isFromDate = false;
@@ -204,7 +229,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 		const annualYear = {
 			displayName: '2019-2020',
 			startDate: '2019-12-01 05:20:09',
-			endDate: '2020-05-31 10:10:10'
+			endDate: '2020-05-31 10:10:10',
 		};
 		component.anualScanSummary(annualYear);
 		expect(component.tabIndex).toBe(0);
@@ -213,7 +238,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 	it('should call quarterlyScanSummary', () => {
 		const val = {
 			startDate: '2019-12-01 05:20:09',
-			endDate: '2020-05-31 10:10:10'
+			endDate: '2020-05-31 10:10:10',
 		};
 		component.quarterlyScanSummary(val);
 		expect(component.isDropDownOpen).toBe(false);
@@ -227,8 +252,7 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 
 	it('should call openDropDown - if case', () => {
 		component.isDropDownOpen = true;
-		component.oldDisplayFromDate = '01/10/2020',
-			component.oldDisplayToDate = '03/10/2020';
+		(component.oldDisplayFromDate = '01/10/2020'), (component.oldDisplayToDate = '03/10/2020');
 		component.openDropDown();
 		expect(component.isDropDownOpen).toBe(false);
 	});
@@ -274,8 +298,10 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 			},
 		};
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		
-		spyOn(smartPerformanceService, 'getLastScanResult').and.returnValue(Promise.resolve(response));
+
+		spyOn(smartPerformanceService, 'getLastScanResult').and.returnValue(
+			Promise.resolve(response)
+		);
 		component.getLastScanResult();
 		expect(smartPerformanceService.isScanning).toBe(false);
 	});

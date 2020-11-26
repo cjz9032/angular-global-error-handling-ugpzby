@@ -7,8 +7,8 @@ describe('HardwareScanFeaturesService', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			imports: [ HttpClientModule ],
-			providers: [ HttpClientModule ]
+			imports: [HttpClientModule],
+			providers: [HttpClientModule],
 		});
 		service = TestBed.inject(HardwareScanFeaturesService);
 	});

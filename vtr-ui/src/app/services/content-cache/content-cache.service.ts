@@ -28,7 +28,7 @@ interface ICacheSettings {
 }
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class ContentCacheService {
 	private buildInContents = {};
@@ -43,7 +43,8 @@ export class ContentCacheService {
 		private upeService: UPEService,
 		private buildInContentService: BuildInContentService,
 		private logger: LoggerService,
-		private metrics: MetricService) {
+		private metrics: MetricService
+	) {
 		this.contentLocalCacheContract = this.vantageShellService.getContentLocalCache();
 	}
 
@@ -63,20 +64,21 @@ export class ContentCacheService {
 						cachedContents[cardId] = tmpBuildInContents[cardId];
 					});
 				}
-			}
-			else {
+			} else {
 				cachedContents = await this.loadBuildInContents(cmsOptions);
 			}
-		}
-		catch (error) {
+		} catch (error) {
 			this.logger.error('Load contents error ', error);
 		}
 
 		if (!this.ongoingCacheProcesses[cacheKey]) {
-			this.ongoingCacheProcesses[cacheKey] = this.cacheContents(cacheKey, cmsOptions, contentCards)
-				.finally(() => {
-					this.ongoingCacheProcesses[cacheKey] = null;
-				});
+			this.ongoingCacheProcesses[cacheKey] = this.cacheContents(
+				cacheKey,
+				cmsOptions,
+				contentCards
+			).finally(() => {
+				this.ongoingCacheProcesses[cacheKey] = null;
+			});
 		}
 
 		this.sendCacheMetrics(startTime, 'LoadCachedContents');
@@ -112,7 +114,7 @@ export class ContentCacheService {
 			ItemParent: 'ContentCache',
 			ItemType: metricsName,
 			ItemName: itemName,
-			ItemValue: diff
+			ItemValue: diff,
 		};
 		this.metrics.sendMetrics(metricsData);
 	}
@@ -125,7 +127,7 @@ export class ContentCacheService {
 
 		const contents = await this.buildInContentService.getContents(queryParams);
 		const contentIds = Object.keys(contents);
-		contentIds.forEach(id => {
+		contentIds.forEach((id) => {
 			contents[id] = this.formalizeContent(contents[id], id, ContentSource.Local);
 		});
 		this.buildInContents[key] = contents;
@@ -138,7 +140,7 @@ export class ContentCacheService {
 		if (contents) {
 			const contentsForPage = {};
 			const contentIds = Object.keys(contents);
-			contentIds.forEach(id => {
+			contentIds.forEach((id) => {
 				contentsForPage[id] = this.removeInvalidContents(contents[id], id);
 				contentsForPage[id] = this.formalizeContent(contentsForPage[id], id);
 			});
@@ -153,8 +155,7 @@ export class ContentCacheService {
 		Object.keys(cachedContents).forEach((cardId) => {
 			if (!cachedContents[cardId]) {
 				postionsWihtoutContents.push(cardId);
-			}
-			else if (cardId === 'positionA' && cachedContents[cardId].length === 0) {
+			} else if (cardId === 'positionA' && cachedContents[cardId].length === 0) {
 				postionsWihtoutContents.push(cardId);
 			}
 		});
@@ -165,13 +166,12 @@ export class ContentCacheService {
 		let contents = null;
 		if (this.latestCachedContetns[cacheKey]) {
 			contents = this.latestCachedContetns[cacheKey];
-		}
-		else {
+		} else {
 			const iCacheSettings: ICacheSettings = {
 				Key: cacheKey,
 				Value: null,
 				Component: 'ContentCache',
-				UserName: 'ContentCache_Contents'
+				UserName: 'ContentCache_Contents',
 			};
 			const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
 			if (cachedObject && cachedObject.Value) {
@@ -184,11 +184,14 @@ export class ContentCacheService {
 
 	private removeInvalidContents(contents, cardId) {
 		const array = [];
-		contents.forEach(content => {
+		contents.forEach((content) => {
 			if (cardId !== 'positionA' && array.length > 0) {
 				return;
 			}
-			if (this.canDisplay(content.DisplayStartDate) && !this.hasExpirated(content.ExpirationDate)) {
+			if (
+				this.canDisplay(content.DisplayStartDate) &&
+				!this.hasExpirated(content.ExpirationDate)
+			) {
 				array.push(content);
 			}
 		});
@@ -212,15 +215,18 @@ export class ContentCacheService {
 
 	private async cacheContents(cacheKey, cmsOptions: any, contentCards: any) {
 		const startTime = new Date();
-		Promise.all([this.fetchCMSContent(cmsOptions, contentCards), this.fetchUPEContent(contentCards)])
-			.then(async response => {
+		Promise.all([
+			this.fetchCMSContent(cmsOptions, contentCards),
+			this.fetchUPEContent(contentCards),
+		])
+			.then(async (response) => {
 				const cacheValueOfContents = {
 					positionA: [],
 					positionB: [],
 					positionC: [],
 					positionD: [],
 					positionE: [],
-					positionF: []
+					positionF: [],
 				};
 				await this.fillCacheValue(response, contentCards, cacheValueOfContents);
 				const contents = await this.getUpdatedContents(cacheKey, cacheValueOfContents);
@@ -228,7 +234,8 @@ export class ContentCacheService {
 				this.latestCachedContetns[cacheKey] = cacheValueOfContents;
 				await this.cacheContentDetail(contents);
 				this.sendCacheMetrics(startTime, 'CacheContents');
-			}).catch(error => {
+			})
+			.catch((error) => {
 				this.logger.error('cacheContents error ', error);
 			});
 	}
@@ -236,19 +243,35 @@ export class ContentCacheService {
 	private async fillCacheValue(response: any, contentCards: any, cacheValueOfContents: any) {
 		const cmsContents = response[0];
 		if (cmsContents && cmsContents.length > 0) {
-			this.populateContent(cmsContents, contentCards, ContentSource.CMS, cacheValueOfContents);
-			const welcomeTextContent = this.cmsService.getOneCMSContent(cmsContents, 'top-title-welcome-text', 'welcome-text')[0];
+			this.populateContent(
+				cmsContents,
+				contentCards,
+				ContentSource.CMS,
+				cacheValueOfContents
+			);
+			const welcomeTextContent = this.cmsService.getOneCMSContent(
+				cmsContents,
+				'top-title-welcome-text',
+				'welcome-text'
+			)[0];
 			if (welcomeTextContent && welcomeTextContent.Title) {
 				const localInfo = await this.getLocalInfo();
-				if (SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)
-					|| SegmentConst.SMB === localInfo.Segment) {
+				if (
+					SegmentConstHelper.includedInCommonConsumer(localInfo.Segment) ||
+					SegmentConst.SMB === localInfo.Segment
+				) {
 					cacheValueOfContents['welcome-text'] = new Array(welcomeTextContent);
 				}
 			}
 		}
 		const upeContents = response[1];
 		if (upeContents && upeContents.length > 0) {
-			this.populateContent(upeContents, contentCards, ContentSource.UPE, cacheValueOfContents);
+			this.populateContent(
+				upeContents,
+				contentCards,
+				ContentSource.UPE,
+				cacheValueOfContents
+			);
 		}
 	}
 
@@ -257,7 +280,7 @@ export class ContentCacheService {
 			Key: cacheKey,
 			Value: JSON.stringify(cacheValueOfContents),
 			Component: 'ContentCache',
-			UserName: 'ContentCache_Contents'
+			UserName: 'ContentCache_Contents',
 		};
 		await this.contentLocalCacheContract.set(iCacheSettings);
 	}
@@ -277,7 +300,7 @@ export class ContentCacheService {
 			}
 		} else {
 			for (const key of Object.keys(cacheValueOfContents)) {
-				cacheValueOfContents[key].forEach(content => {
+				cacheValueOfContents[key].forEach((content) => {
 					contents.push(content);
 				});
 			}
@@ -291,8 +314,10 @@ export class ContentCacheService {
 			let needUpdated = true;
 			for (const idx of Object.keys(cachedContentList)) {
 				const cachedContent = cachedContentList[idx];
-				if (content.Id === cachedContent.Id &&
-					content.Revision === cachedContent.Revision) {
+				if (
+					content.Id === cachedContent.Id &&
+					content.Revision === cachedContent.Revision
+				) {
 					needUpdated = false;
 					break;
 				}
@@ -321,9 +346,13 @@ export class ContentCacheService {
 	}
 
 	private checkArticleCacheable(actionType: any, articId: any): boolean {
-		if (actionType && actionType === 'Internal'
-			&& articId && !articId.startsWith('lenovo-vantage3:')
-			&& !articId.startsWith('dcc-demo')) {
+		if (
+			actionType &&
+			actionType === 'Internal' &&
+			articId &&
+			!articId.startsWith('lenovo-vantage3:') &&
+			!articId.startsWith('dcc-demo')
+		) {
 			return true;
 		}
 		return false;
@@ -339,11 +368,11 @@ export class ContentCacheService {
 				Key: key,
 				Value: null,
 				Component: 'ContentCache',
-				UserName: 'ContentCache_Articles'
+				UserName: 'ContentCache_Articles',
 			};
-			this.contentLocalCacheContract
-				.delete(iCacheSettings)
-				.catch(ex => { this.logger.error('remove article [' + articId + '] failed.'); });
+			this.contentLocalCacheContract.delete(iCacheSettings).catch((ex) => {
+				this.logger.error('remove article [' + articId + '] failed.');
+			});
 		}
 	}
 
@@ -355,22 +384,24 @@ export class ContentCacheService {
 			const downLoadImages = [];
 			const localInfo = await this.getLocalInfo();
 			const cacheArticleResults = [];
-			contents.forEach(content => {
+			contents.forEach((content) => {
 				this.cacheContentImage(content, downLoadImages);
 				const result = this.cacheArticle(content, localInfo.Lang, downLoadImages);
 				cacheArticleResults.push(result);
 			});
-			Promise.all(cacheArticleResults).then(() => {
-				const downLoadImagesTimeInterval = setInterval(() => {
-					const notComplete = downLoadImages.find(item => !item.complete);
-					if (!notComplete) {
-						clearInterval(downLoadImagesTimeInterval);
-						resolve();
-					}
-				}, 500);
-			}).catch(ex => {
-				this.logger.error('Cache content detail error.');
-			});
+			Promise.all(cacheArticleResults)
+				.then(() => {
+					const downLoadImagesTimeInterval = setInterval(() => {
+						const notComplete = downLoadImages.find((item) => !item.complete);
+						if (!notComplete) {
+							clearInterval(downLoadImagesTimeInterval);
+							resolve();
+						}
+					}, 500);
+				})
+				.catch((ex) => {
+					this.logger.error('Cache content detail error.');
+				});
 		});
 	}
 
@@ -398,7 +429,7 @@ export class ContentCacheService {
 			Key: key,
 			Value: JSON.stringify(response),
 			Component: 'ContentCache',
-			UserName: 'ContentCache_Articles'
+			UserName: 'ContentCache_Articles',
 		};
 		await this.contentLocalCacheContract.set(iCacheSettings);
 	}
@@ -429,12 +460,14 @@ export class ContentCacheService {
 
 	private async fetchUPEContent(contentCards: any) {
 		const contentCardList: IConfigItem[] = Object.values(contentCards);
-		const upeContentCards = contentCardList.filter(contentCard => contentCard.tileSource === 'UPE');
+		const upeContentCards = contentCardList.filter(
+			(contentCard) => contentCard.tileSource === 'UPE'
+		);
 		if (upeContentCards.length === 0) {
 			return;
 		}
 		try {
-			const upePositions = upeContentCards.map(contentCard => contentCard.positionParam);
+			const upePositions = upeContentCards.map((contentCard) => contentCard.positionParam);
 			return await this.upeService.fetchUPEContent({ positions: upePositions });
 		} catch (ex) {
 			this.logger.error('fech upe contents error.');
@@ -445,17 +478,29 @@ export class ContentCacheService {
 		return await this.localInfoService.getLocalInfo();
 	}
 
-	private populateContent(response: any, contentCards: any, dataSource: ContentSource, cacheValueOfContents: any) {
+	private populateContent(
+		response: any,
+		contentCards: any,
+		dataSource: ContentSource,
+		cacheValueOfContents: any
+	) {
 		const contentCardList: IConfigItem[] = Object.values(contentCards);
-		contentCardList.filter(contentCard => contentCard.cardId !== 'welcome-text').forEach(contentCard => {
-			let contents: any = this.cmsService.getOneCMSContent(response, contentCard.template, contentCard.positionParam, dataSource);
-			if (contents && contents.length > 0) {
-				if (contentCard.positionParam !== 'position-A') {
-					contents = this.filterContentsByCondition(contents);
+		contentCardList
+			.filter((contentCard) => contentCard.cardId !== 'welcome-text')
+			.forEach((contentCard) => {
+				let contents: any = this.cmsService.getOneCMSContent(
+					response,
+					contentCard.template,
+					contentCard.positionParam,
+					dataSource
+				);
+				if (contents && contents.length > 0) {
+					if (contentCard.positionParam !== 'position-A') {
+						contents = this.filterContentsByCondition(contents);
+					}
+					cacheValueOfContents[contentCard.cardId] = contents;
 				}
-				cacheValueOfContents[contentCard.cardId] = contents;
-			}
-		});
+			});
 	}
 
 	private async saveArticleIfNeed(articleId, lang, article) {
@@ -519,7 +564,7 @@ export class ContentCacheService {
 			Key: key,
 			Value: null,
 			Component: 'ContentCache',
-			UserName: 'ContentCache_Articles'
+			UserName: 'ContentCache_Articles',
 		};
 		const cachedObject = await this.contentLocalCacheContract.get(iCacheSettings);
 		if (cachedObject && cachedObject.Value) {
@@ -529,7 +574,7 @@ export class ContentCacheService {
 	}
 
 	private formalizeContent(contents, cardId, dataSource?) {
-		contents.forEach(content => {
+		contents.forEach((content) => {
 			if (content.BrandName) {
 				content.BrandName = content.BrandName.split('|')[0];
 			}
@@ -550,10 +595,9 @@ export class ContentCacheService {
 					ActionLink: record.ActionLink,
 					ActionType: record.ActionType,
 					OverlayTheme: overlayTheme ? overlayTheme : '',
-					DataSource: record.DataSource
+					DataSource: record.DataSource,
 				};
 			});
-
 		} else {
 			if (contents[0]) {
 				contents[0].OverlayTheme = this.selectOverlayTheme(contents[0]);
@@ -566,19 +610,16 @@ export class ContentCacheService {
 		let overlayTheme;
 		if (record) {
 			if (record.Parameters && record.Parameters.length > 0) {
-				const theme = record.Parameters.find(item => item.Key === 'OverlayTheme');
+				const theme = record.Parameters.find((item) => item.Key === 'OverlayTheme');
 				if (theme) {
 					overlayTheme = theme.Value;
-				}
-				else {
+				} else {
 					overlayTheme = record.OverlayTheme;
 				}
-			}
-			else {
+			} else {
 				overlayTheme = record.OverlayTheme;
 			}
 		}
 		return overlayTheme;
 	}
-
 }

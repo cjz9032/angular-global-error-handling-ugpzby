@@ -1,13 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'statusTransform'
+	name: 'statusTransform',
 })
 export class StatusTransformPipe implements PipeTransform {
-
 	transform(value: Array<any>): any {
 		if (value.length > 0) {
-			value.forEach(e => {
+			value.forEach((e) => {
 				switch (e.status) {
 					case true:
 						e.status = 'enabled';
@@ -35,5 +34,4 @@ export class StatusTransformPipe implements PipeTransform {
 		}
 		return [];
 	}
-
 }

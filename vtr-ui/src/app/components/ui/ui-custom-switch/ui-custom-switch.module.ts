@@ -7,19 +7,9 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faCircleNotch } from '@fortawesome/pro-light-svg-icons/faCircleNotch';
 import { SpinnerModule } from '../../common/spinner/spinner.module';
 @NgModule({
-	declarations: [
-		UiCustomSwitchComponent
-	],
-	imports: [
-		CommonModule,
-		FormsModule,
-		MetricsModule,
-		FontAwesomeModule,
-		SpinnerModule
-	],
-	exports: [
-		UiCustomSwitchComponent
-	]
+	declarations: [UiCustomSwitchComponent],
+	imports: [CommonModule, FormsModule, MetricsModule, FontAwesomeModule, SpinnerModule],
+	exports: [UiCustomSwitchComponent],
 })
 export class UiCustomSwitchModule {
 	constructor(library: FaIconLibrary) {

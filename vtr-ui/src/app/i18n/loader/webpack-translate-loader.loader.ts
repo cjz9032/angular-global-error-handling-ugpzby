@@ -12,9 +12,7 @@ import fr from 'src/assets/i18n/fr.json';
 
 // this loader will convert JSON files to JS and add HASH during deployment
 export class WebpackTranslateLoader implements TranslateLoader {
-
 	getTranslation(lang: string): Observable<any> {
-
 		switch (lang) {
 			case 'en':
 				return of(en as any);

@@ -22,10 +22,9 @@ import { ContentSource } from 'src/app/enums/content.enum';
 @Component({
 	selector: 'vtr-page-support',
 	templateUrl: './page-support.component.html',
-	styleUrls: ['./page-support.component.scss']
+	styleUrls: ['./page-support.component.scss'],
 })
 export class PageSupportComponent implements OnInit, OnDestroy {
-
 	SupportContentStatus = SupportContentStatus;
 	title = 'support.common.getSupport';
 	searchWords = '';
@@ -46,7 +45,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	articleCategories: any = [];
 	isCategoryArticlesShow = false;
 	selectedCategoryId = '';
-	warrantyData: { info: any, cache: boolean };
+	warrantyData: { info: any; cache: boolean };
 	warrantyYear = 0;
 	isOnline: boolean;
 	notificationSubscription: Subscription;
@@ -60,7 +59,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				clickItem: 'userGuide',
 				metricsItem: 'Documentation.UserGuideButton',
 				metricsEvent: 'FeatureClick',
-			}
+			},
 		],
 		needHelp: [],
 		quicklinks: [],
@@ -88,13 +87,35 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	};
 
 	lenaUrls = [
-		{url: 'https://in.lena.lenovo.com/lena',  lang: 'en', geo: ['in', 'lk', 'bd']},
-		{url: 'https://us.lena.lenovo.com/lena',  lang: 'en', geo: ['us', 'ca']},
-		{url: 'https://uki.lena.lenovo.com/lena', lang: 'en', geo: ['gb', 'ie']},
-		{url: 'https://lena.lenovo.com/lena',     lang: 'en', geo: ['au', 'nz', 'sg', 'my', 'ph']},
-		{url: 'https://las.lena.lenovo.com/lena', lang: 'es', geo: ['mx', 'co', 'ar', 'pe', 'cl', 'cr', 'do', 'sv', 'gt', 'hn', 'ni', 'pa', 'bo', 'ec', 'py', 'uy', 've']},
-		{url: 'https://jp.lena.lenovo.com/lena',  lang: 'ja', geo: ['jp']},
-		{url: 'https://eu.lena.lenovo.com/lena',  lang: 'de', geo: ['de', 'at']},
+		{ url: 'https://in.lena.lenovo.com/lena', lang: 'en', geo: ['in', 'lk', 'bd'] },
+		{ url: 'https://us.lena.lenovo.com/lena', lang: 'en', geo: ['us', 'ca'] },
+		{ url: 'https://uki.lena.lenovo.com/lena', lang: 'en', geo: ['gb', 'ie'] },
+		{ url: 'https://lena.lenovo.com/lena', lang: 'en', geo: ['au', 'nz', 'sg', 'my', 'ph'] },
+		{
+			url: 'https://las.lena.lenovo.com/lena',
+			lang: 'es',
+			geo: [
+				'mx',
+				'co',
+				'ar',
+				'pe',
+				'cl',
+				'cr',
+				'do',
+				'sv',
+				'gt',
+				'hn',
+				'ni',
+				'pa',
+				'bo',
+				'ec',
+				'py',
+				'uy',
+				've',
+			],
+		},
+		{ url: 'https://jp.lena.lenovo.com/lena', lang: 'ja', geo: ['jp'] },
+		{ url: 'https://eu.lena.lenovo.com/lena', lang: 'de', geo: ['de', 'at'] },
 	];
 
 	listFindUs = {
@@ -147,15 +168,17 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		private licensesService: LicensesService,
 		private activatedRoute: ActivatedRoute,
 		private loggerService: LoggerService,
-		private feedbackService: FeedbackService,
+		private feedbackService: FeedbackService
 	) {
 		this.isOnline = this.commonService.isOnline;
 	}
 
 	ngOnInit() {
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
-			this.onNotification(response);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 		this.getProtocalActions();
 		this.getWarrantyInfo();
 
@@ -185,8 +208,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 						this.isOnline = notification.payload.isOnline;
 						if (this.isOnline) {
 							const retryInterval = setInterval(() => {
-								if (this.articleCategories.length > 0 &&
-									this.articles.leftTop.length > 0) {
+								if (
+									this.articleCategories.length > 0 &&
+									this.articles.leftTop.length > 0
+								) {
 									clearInterval(retryInterval);
 									return;
 								}
@@ -208,13 +233,21 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	}
 
 	getProtocalActions() {
-		this.actionSubscription = this.activatedRoute.queryParamMap.subscribe((params: ParamMap) => {
-			if (params.has('action') && this.activatedRoute.snapshot.queryParams.action === 'licenseagreement') {
-				this.licensesService.openLicensesAgreement();
-			} else if (params.has('action') && this.activatedRoute.snapshot.queryParams.action === 'feedback') {
-				this.feedbackService.openFeedbackModal();
+		this.actionSubscription = this.activatedRoute.queryParamMap.subscribe(
+			(params: ParamMap) => {
+				if (
+					params.has('action') &&
+					this.activatedRoute.snapshot.queryParams.action === 'licenseagreement'
+				) {
+					this.licensesService.openLicensesAgreement();
+				} else if (
+					params.has('action') &&
+					this.activatedRoute.snapshot.queryParams.action === 'feedback'
+				) {
+					this.feedbackService.openFeedbackModal();
+				}
 			}
-		});
+		);
 	}
 
 	setShowList() {
@@ -223,16 +256,19 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			return;
 		}
 		this.supportDatas.needHelp.push(this.listLenovoCommunity);
-		this.supportService.getSerialnumber().then(sn => {
+		this.supportService.getSerialnumber().then((sn) => {
 			this.listContactCustomerService.url = `https://support.lenovo.com/contactus?serialnumber=${sn}`;
 			this.supportDatas.needHelp.push(this.listContactCustomerService);
-			this.localInfoService.getLocalInfo().then(info => {
+			this.localInfoService.getLocalInfo().then((info) => {
 				const GEO = info.GEO;
 				const Lang = info.Lang;
 				const data = window.btoa(`Brand=${info.Brand}&SourcePage=Lenovo Vantage`);
-				const findUrlItem = this.lenaUrls.find(item => item.geo.indexOf(GEO) >= 0 && item.lang === Lang) ;
+				const findUrlItem = this.lenaUrls.find(
+					(item) => item.geo.indexOf(GEO) >= 0 && item.lang === Lang
+				);
 				if (findUrlItem) {
-					this.listYourVirtualAssistant.url = findUrlItem.url + `?country=${GEO}&language=${Lang}&data=${data}`;
+					this.listYourVirtualAssistant.url =
+						findUrlItem.url + `?country=${GEO}&language=${Lang}&data=${data}`;
 					this.supportDatas.needHelp.push(this.listYourVirtualAssistant);
 				}
 
@@ -255,9 +291,9 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 							endDate: value.endDate,
 							status: value.status,
 							dayDiff: value.dayDiff,
-							url: this.warrantyService.getWarrantyUrl()
+							url: this.warrantyService.getWarrantyUrl(),
 						},
-						cache: true
+						cache: true,
 					};
 					this.warrantyYear = this.warrantyService.getRoundYear(value.dayDiff);
 				}
@@ -270,7 +306,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.articlesType = SupportContentStatus.Loading;
 
 		const queryOptions = {
-			Page: 'support'
+			Page: 'support',
 		};
 		if (lang) {
 			Object.assign(queryOptions, { Lang: lang, GEO: 'US' });
@@ -281,11 +317,14 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				const contentEnd: any = new Date();
 				const contentUseTime = contentEnd - this.contentStartTime;
 				if (response && response.length > 0) {
-					response = response.filter(r => r.Page === 'support');
-					response.forEach(article => {
+					response = response.filter((r) => r.Page === 'support');
+					response.forEach((article) => {
 						article.DataSource = ContentSource.CMS;
 						if (article.FeatureImage) {
-							article.FeatureImage = article.FeatureImage.replace('(', '%28').replace(')', '%29');
+							article.FeatureImage = article.FeatureImage.replace('(', '%28').replace(
+								')',
+								'%29'
+							);
 						}
 					});
 					this.sliceArticles(response);
@@ -301,8 +340,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					this.articlesType = SupportContentStatus.Empty;
 				}
 			},
-			error => {
-				this.getArticlesTimeout = setTimeout(() => { this.fetchCMSContents(); }, 5000);
+			(error) => {
+				this.getArticlesTimeout = setTimeout(() => {
+					this.fetchCMSContents();
+				}, 5000);
 			}
 		);
 	}
@@ -318,7 +359,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				const cateUseTime = cateEnd - this.cateStartTime;
 				if (response && response.length > 0) {
 					this.articleCategories = response.slice(0, 4);
-					response.forEach(cate => {
+					response.forEach((cate) => {
 						if (cate.Image) {
 							cate.Image = cate.Image.replace('(', '%28').replace(')', '%29');
 						}
@@ -330,14 +371,18 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					this.loggerService.info(msg);
 				}
 			},
-			error => {
-				setTimeout(() => { this.fetchCMSArticleCategory(); }, 5000);
+			(error) => {
+				setTimeout(() => {
+					this.fetchCMSArticleCategory();
+				}, 5000);
 			}
 		);
 	}
 
 	clickCategory(categoryId: string) {
-		if (this.selectedCategoryId === categoryId) { return false; }
+		if (this.selectedCategoryId === categoryId) {
+			return false;
+		}
 		this.isCategoryArticlesShow = true;
 		this.selectedCategoryId = categoryId;
 		clearTimeout(this.getArticlesTimeout);
@@ -368,10 +413,13 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.cmsService.fetchCMSArticles(queryOptions, true).then(
 			(response: any) => {
 				if (response && response.length > 0) {
-					response.forEach(article => {
+					response.forEach((article) => {
 						article.DataSource = ContentSource.CMS;
 						if (article.Thumbnail) {
-							article.Thumbnail = article.Thumbnail.replace('(', '%28').replace(')', '%29');
+							article.Thumbnail = article.Thumbnail.replace('(', '%28').replace(
+								')',
+								'%29'
+							);
 						}
 					});
 					this.sliceArticles(response);
@@ -381,9 +429,11 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 					this.articlesType = SupportContentStatus.Empty;
 				}
 			},
-			error => {
+			(error) => {
 				if (lang.toLowerCase() !== 'en') {
-					this.getArticlesTimeout = setTimeout(() => { this.fetchCMSArticles(categoryId, 'en'); }, 5000);
+					this.getArticlesTimeout = setTimeout(() => {
+						this.fetchCMSArticles(categoryId, 'en');
+					}, 5000);
 				}
 			}
 		);

@@ -1,13 +1,7 @@
-import { TestBed, ComponentFixture } from "@angular/core/testing";
-import { UiDropdownNavigate } from "./ui-dropdown-navigate.directive";
-import {
-	Component,
-	ElementRef,
-	Renderer2,
-	DebugElement,
-	Type,
-} from "@angular/core";
-import { By } from "@angular/platform-browser";
+import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { UiDropdownNavigate } from './ui-dropdown-navigate.directive';
+import { Component, ElementRef, Renderer2, DebugElement, Type } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 @Component({
 	selector: 'test-comp',
@@ -35,7 +29,7 @@ class MockComponent {
 	selectedDuration = 0;
 }
 
-xdescribe("UiDropdownNavigate", () => {
+xdescribe('UiDropdownNavigate', () => {
 	let component: MockComponent;
 	let fixture: ComponentFixture<MockComponent>;
 	let dummyElement;
@@ -45,13 +39,13 @@ xdescribe("UiDropdownNavigate", () => {
 		fixture = TestBed.configureTestingModule({
 			declarations: [MockComponent, UiDropdownNavigate],
 			// providers: [Renderer2],
-		}).createComponent(MockComponent)
+		}).createComponent(MockComponent);
 
 		fixture.detectChanges();
-		dummyElement = fixture.debugElement.query(By.directive(UiDropdownNavigate))
+		dummyElement = fixture.debugElement.query(By.directive(UiDropdownNavigate));
 	});
-	it("should create an instance", () => {
+	it('should create an instance', () => {
 		const divEl = dummyElement.nativeElement.focus();
-		expect(divEl).toHaveBeenCalled()
+		expect(divEl).toHaveBeenCalled();
 	});
 });

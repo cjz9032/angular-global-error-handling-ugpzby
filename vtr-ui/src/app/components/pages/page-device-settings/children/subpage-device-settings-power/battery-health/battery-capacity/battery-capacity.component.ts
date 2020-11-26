@@ -1,9 +1,4 @@
-import {
-	Component,
-	OnInit,
-	ViewChild,
-	ElementRef
-} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BatteryHealthService } from '../battery-health.service';
 import { BatteryCapacityCircleStyle } from '../battery-health.enum';
 
@@ -13,16 +8,14 @@ import { BatteryCapacityCircleStyle } from '../battery-health.enum';
 	styleUrls: ['./battery-capacity.component.scss'],
 })
 export class BatteryCapacityComponent implements OnInit {
-		@ViewChild('OverCircle') overCircle: ElementRef;
+	@ViewChild('OverCircle') overCircle: ElementRef;
 	capacity = 100;
 	fullChargeCapacity: string;
 	originalDesignCapacity: string;
 	capacityError = false;
 	overCircleLength = 264;
 	circleStyle = BatteryCapacityCircleStyle.GREEN;
-	constructor(
-		private batteryHealthService: BatteryHealthService
-	) {}
+	constructor(private batteryHealthService: BatteryHealthService) {}
 
 	ngOnInit(): void {
 		this.batteryHealthService.batteryInfo.subscribe((batteryInfo) => {
@@ -55,7 +48,10 @@ export class BatteryCapacityComponent implements OnInit {
 					break;
 			}
 		} else {
-			this.circleStyle = this.capacity === 0 ? BatteryCapacityCircleStyle.GREEN : BatteryCapacityCircleStyle.ERROR;
+			this.circleStyle =
+				this.capacity === 0
+					? BatteryCapacityCircleStyle.GREEN
+					: BatteryCapacityCircleStyle.ERROR;
 		}
 	}
 
@@ -77,13 +73,9 @@ export class BatteryCapacityComponent implements OnInit {
 		this.capacity = batteryInfo.lifePercent > 100 ? 100 : batteryInfo.lifePercent;
 		// circle perimeter : 2 * Math.PI * r = 2 * π * 42 ≈ 264
 		this.fullChargeCapacity =
-			batteryInfo.fullChargeCapacity >= 0
-				? batteryInfo.fullChargeCapacity
-				: undefined;
+			batteryInfo.fullChargeCapacity >= 0 ? batteryInfo.fullChargeCapacity : undefined;
 		this.originalDesignCapacity =
-			batteryInfo.designCapacity > 0
-				? batteryInfo.designCapacity
-				: undefined;
+			batteryInfo.designCapacity > 0 ? batteryInfo.designCapacity : undefined;
 		if (
 			this.capacity < 0 ||
 			this.capacity === undefined ||
@@ -94,7 +86,7 @@ export class BatteryCapacityComponent implements OnInit {
 			this.overCircleLength = 0;
 		} else {
 			this.capacityError = false;
-			this.overCircleLength = 264 / 100 * this.capacity;
+			this.overCircleLength = (264 / 100) * this.capacity;
 		}
 	}
 }

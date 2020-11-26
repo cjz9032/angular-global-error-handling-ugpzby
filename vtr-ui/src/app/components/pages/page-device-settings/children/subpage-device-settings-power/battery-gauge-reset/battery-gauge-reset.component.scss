@@ -1,5 +1,5 @@
-@import "../../../../../../app.theme.scss";
-@import "../../../../../../font-styles.scss";
+@import '../../../../../../app.theme.scss';
+@import '../../../../../../font-styles.scss';
 
 .vtr-battery-gauge-reset {
 	h5 {
@@ -78,28 +78,27 @@
 						background: $grey_light;
 						color: $button_disable_text;
 
-							@media #{$black-on-white} {
-								@include ui-button-high-contrast-white-disabled;
-							}
+						@media #{$black-on-white} {
+							@include ui-button-high-contrast-white-disabled;
+						}
 
+						@media #{$white-on-black} {
+							@include ui-button-high-contrast-black-disabled;
+						}
+						.text {
 							@media #{$white-on-black} {
-								@include ui-button-high-contrast-black-disabled;
+								opacity: 0.5;
 							}
-							.text {
-								@media #{$white-on-black} {
-									opacity: 0.5;
-								}
-								@media #{$black-on-white} {
-									opacity: 0.5;
-								}
+							@media #{$black-on-white} {
+								opacity: 0.5;
 							}
-
+						}
 					}
 				}
 			}
 		}
 	}
 	.percent-note {
-		color: #34495E;
+		color: #34495e;
 	}
 }

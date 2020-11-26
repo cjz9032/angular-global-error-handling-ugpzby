@@ -10,12 +10,11 @@ import { Observable } from 'rxjs/internal/Observable';
 	providedIn: 'root',
 })
 export class NonSmodeGuard extends BasicGuard {
-
 	constructor(
 		private deviceService: DeviceService,
 		public guardConstants: GuardConstants,
 		public commonService: CommonService
-	) { 
+	) {
 		super(commonService, guardConstants);
 	}
 

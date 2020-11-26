@@ -8,9 +8,8 @@ xdescribe('UiHeaderWarrantyComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiHeaderWarrantyComponent]
-		})
-			.compileComponents();
+			declarations: [UiHeaderWarrantyComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

@@ -12,7 +12,7 @@ import { ContentSource } from 'src/app/enums/content.enum';
 @Component({
 	selector: 'vtr-container-card',
 	templateUrl: './container-card.component.html',
-	styleUrls: ['./container-card.component.scss', './container-card.component.gaming.scss']
+	styleUrls: ['./container-card.component.scss', './container-card.component.gaming.scss'],
 })
 export class ContainerCardComponent implements OnInit, OnDestroy {
 	@Input() type = '';
@@ -30,8 +30,10 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 	// @ViewChild('containerCardAndroid', {static: false}) containerCardAndroid: ElementRef;
 	@ViewChild('containerCardWideArticle', { static: false }) containerCardWideArticle: ElementRef;
 	@ViewChild('containerCardArticle', { static: false }) containerCardArticle: ElementRef;
-	@ViewChild('containerCardCornerArticle', { static: false }) containerCardCornerArticle: ElementRef;
-	@ViewChild('containerCardSidebarPartnerCorner', { static: false }) containerCardSidebarPartnerCorner: ElementRef;
+	@ViewChild('containerCardCornerArticle', { static: false })
+	containerCardCornerArticle: ElementRef;
+	@ViewChild('containerCardSidebarPartnerCorner', { static: false })
+	containerCardSidebarPartnerCorner: ElementRef;
 
 	overlayThemeDefaultIsDark = true;
 	overlayThemeDefaultIsLight = true;
@@ -47,8 +49,10 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 	@Input() set item(itemValue: any) {
 		if (itemValue && itemValue.FeatureImage) {
 			this.isLoading = false;
-			this.overlayThemeDefaultIsDark = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light;
-			this.overlayThemeDefaultIsLight = !itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark;
+			this.overlayThemeDefaultIsDark =
+				!itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Light;
+			this.overlayThemeDefaultIsLight =
+				!itemValue.OverlayTheme || itemValue.OverlayTheme !== CardOverlayTheme.Dark;
 			const preItem = this.item;
 			this.innerItem = itemValue;
 
@@ -62,14 +66,19 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 
 			// handle content display metrics event
 			this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
-			const container = () => this.containerCardLoading
-				|| this.containerCardCorner
-				|| this.containerCardWideArticle
-				|| this.containerCardArticle
-				|| this.containerCardCornerArticle
-				|| this.containerCardSidebarPartnerCorner;
+			const container = () =>
+				this.containerCardLoading ||
+				this.containerCardCorner ||
+				this.containerCardWideArticle ||
+				this.containerCardArticle ||
+				this.containerCardCornerArticle ||
+				this.containerCardSidebarPartnerCorner;
 			const position = () => this.sideFlag + this.order;
-			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, container, position);
+			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(
+				itemValue,
+				container,
+				position
+			);
 		} else {
 			this.innerItem = new FeatureContent();
 		}
@@ -84,13 +93,15 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 		private cardService: CardService,
 		public deviceService: DeviceService,
 		private metricsService: MetricService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
 
 	ngOnDestroy() {
@@ -101,12 +112,13 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
 	}
 
-
 	handleLoading() {
 		if (this.item && this.item.FeatureImage) {
 			this.isLoading = false;
-			this.overlayThemeDefaultIsDark = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Light;
-			this.overlayThemeDefaultIsLight = !this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Dark;
+			this.overlayThemeDefaultIsDark =
+				!this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Light;
+			this.overlayThemeDefaultIsLight =
+				!this.item.OverlayTheme || this.item.OverlayTheme !== CardOverlayTheme.Dark;
 		} else {
 			const image = new Image();
 			image.onload = () => {

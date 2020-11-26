@@ -1,8 +1,5 @@
 export class UiRoundedRectangleRadioListModel {
-	constructor(
-		public groupName: string,
-		public radioDetails: UiRoundedRectangleRadioModel[]
-	){}
+	constructor(public groupName: string, public radioDetails: UiRoundedRectangleRadioModel[]) {}
 }
 
 export class UiRoundedRectangleRadioModel {
@@ -12,6 +9,6 @@ export class UiRoundedRectangleRadioModel {
 		public value: any,
 		public isChecked: boolean,
 		public isDisabled: boolean,
-		public metricsItem: string,
-	){}
+		public metricsItem: string
+	) {}
 }

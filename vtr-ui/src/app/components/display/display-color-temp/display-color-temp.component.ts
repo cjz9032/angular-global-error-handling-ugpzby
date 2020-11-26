@@ -6,7 +6,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-display-color-temp',
 	templateUrl: './display-color-temp.component.html',
-	styleUrls: ['./display-color-temp.component.scss']
+	styleUrls: ['./display-color-temp.component.scss'],
 })
 export class DisplayColorTempComponent implements OnInit {
 	@Input() displayColorTempSettings: EyeCareMode;
@@ -18,7 +18,7 @@ export class DisplayColorTempComponent implements OnInit {
 	@Output() colorPreviewValue: any = new EventEmitter();
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
-	constructor(private logger: LoggerService) { }
+	constructor(private logger: LoggerService) {}
 
 	ngOnInit() {
 		this.logger.info('DisplayColorTempComponent', this.displayColorTempSettings);

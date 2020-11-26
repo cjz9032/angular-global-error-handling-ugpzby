@@ -6,13 +6,11 @@ describe('UiNumberButtonComponent', () => {
 	let component: UiNumberButtonComponent;
 	let fixture: ComponentFixture<UiNumberButtonComponent>;
 
-	beforeEach(
-		async(() => {
-			TestBed.configureTestingModule({
-				declarations: [ UiNumberButtonComponent ]
-			}).compileComponents();
-		})
-	);
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [UiNumberButtonComponent],
+		}).compileComponents();
+	}));
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UiNumberButtonComponent);
@@ -31,8 +29,8 @@ describe('UiNumberButtonComponent', () => {
 		component.recordingStatus = false;
 		component.isShowingPopup = false;
 		component.selectedNumber = 1;
-		component.selectedNumber = {'key': 2};
-		component.numberClicked({'key': 3});
-		expect(component.selectedNumber).toEqual({'key': 3});
+		component.selectedNumber = { key: 2 };
+		component.numberClicked({ key: 3 });
+		expect(component.selectedNumber).toEqual({ key: 3 });
 	});
 });

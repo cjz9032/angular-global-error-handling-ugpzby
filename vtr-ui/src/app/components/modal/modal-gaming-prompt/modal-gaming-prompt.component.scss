@@ -1,220 +1,220 @@
 @import '../../../app.theme.scss';
 
 .gaming-modal-prompt {
-    position: relative;
-    color: $gaming_lightest;
-    padding: 2.4rem 2.4rem 2rem 2.4rem;
-    border-radius: .6rem;
-    color: $blue-dark;
-    @media #{$high-contrast} {
-        border: 1px solid windowText;
-    }
-    .modal-header {
-        display: block;
-        padding: 0;
-        border-bottom: none;
-        margin-bottom: 2rem;
-        div {
-            line-height: 2.8rem;
-            font-size: 2.4rem;
-            margin-bottom: 0;
-            color: $lightText;
-        }
-        .close {
-            width: 3.2rem;
-            height: 3.2rem;
-            color: $blueFill;
-            opacity: 1;
-            font-size: 3rem;
-            position: absolute;
-            top: .4rem;
-            right: .4rem;
-            font-weight: normal;
-            margin: 0;
-            padding: 0;
-            letter-spacing: normal;
-            font-family: 'SegoeUI';
-            outline: none;
-            &:hover {
-                color: $blueHover;
-            }
-            &:active {
-                transform: scale(0.96);
-            }
-        }
-    }
-    .modal-body {
-        padding: 0 0 1rem 0;
-        height: auto;
-        max-height: 30rem;
-        overflow-y: auto;
-        overflow-x: hidden;
-        width: 100%;
-        p {
-            line-height: 1.3;
-            font-size: 1.4rem;
-            color: $lightText;
-            &.description-family{
-                font-family: inherit !important;
-            }
-        }
-        .check-asked {
-            margin: 2rem 0 0 0;
-            padding-bottom: 1rem;
-            div {
-                display: inline-block;
-                vertical-align: middle;
-            }
-            .status-text {
-                font-size: $fontsize_xs;
-                padding-left: 3rem;
-                line-height: 1.5rem;
-                color: $lightText;
-                @media #{$high-contrast} {
-                    color: buttonText;
-                }
-            }
-            .ask-again {
-                position: absolute;
-                width: 1.4rem;
-                height: 1.4rem;
-                margin-top: 0.3rem;
-                outline: none;
-                &::after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    top: -0.3rem;
-                    bottom: -0.3rem;
-                    left: -0.3rem;
-                    right: -0.3rem;
-                    border-radius: 0.2rem;
-                    border: 0.1rem solid $blueHover;
-                    width: 2rem;
-                    height: 2rem;
-                    @media #{$high-contrast} {
-                        border: 0.1rem solid windowText;
-                    }
-                }
-                &:hover {
-                    border-color: $blueHover;
-                }
-                @media #{$high-contrast} {
-                    background-color: window;
-                }
-                &.checked {
-                    background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
-                    background-repeat: no-repeat;
-                    background-size: 100% auto;
-                    background-color: $blueFill;
-                    border-radius: 0.1rem;
-                    @media #{$high-contrast} {
-                        outline-color: windowText;
-                        background-color: buttonText;
-                        background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='window' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='window' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
-                    }
-                }
-            }
-        }
-        .check-asked {
-            margin-bottom: 0.3rem;
-            padding-left: 0.5rem;
-            div {
-                display: inline-block;
-                vertical-align: middle;
-            }
-            .status-text {
-                font-size: $fontsize_xs;
-                padding-left: 3rem;
-                line-height: 1.5rem;
-                color: $lightText;
-                @media #{$high-contrast} {
-                    color: buttonText;
-                }
-            }
-            .ask-again {
-                position: absolute;
-                width: 1.4rem;
-                height: 1.4rem;
-                margin-top: 0.3rem;
-                outline: none;
-                &::after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    top: -0.3rem;
-                    bottom: -0.3rem;
-                    left: -0.3rem;
-                    right: -0.3rem;
-                    border-radius: 0.2rem;
-                    border: 0.1rem solid $blueHover;
-                    width: 2rem;
-                    height: 2rem;
-                    @media #{$high-contrast} {
-                        border: 0.1rem solid windowText;
-                    }
-                }
-                &:hover {
-                    border-color: $blueHover;
-                }
-                @media #{$high-contrast} {
-                    background-color: window;
-                }
-                &.checked {
-                    background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
-                    background-repeat: no-repeat;
-                    background-size: 100% auto;
-                    background-color: $blueFill;
-                    border-radius: 0.1rem;
-                    @media #{$high-contrast} {
-                        outline-color: windowText;
-                        background-color: buttonText;
-                        background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='window' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='window' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
-                    }
-                }
-            }
-        }
-    }
-    .modal-footer {
-        justify-content: flex-start;
-        padding: 1.8rem 0 0;
-        height: 5.7rem;
-        border-top: 1px solid $screen_dark_10 !important;
-        button{
-            outline: none;
-        }
-    }
+	position: relative;
+	color: $gaming_lightest;
+	padding: 2.4rem 2.4rem 2rem 2.4rem;
+	border-radius: 0.6rem;
+	color: $blue-dark;
+	@media #{$high-contrast} {
+		border: 1px solid windowText;
+	}
+	.modal-header {
+		display: block;
+		padding: 0;
+		border-bottom: none;
+		margin-bottom: 2rem;
+		div {
+			line-height: 2.8rem;
+			font-size: 2.4rem;
+			margin-bottom: 0;
+			color: $lightText;
+		}
+		.close {
+			width: 3.2rem;
+			height: 3.2rem;
+			color: $blueFill;
+			opacity: 1;
+			font-size: 3rem;
+			position: absolute;
+			top: 0.4rem;
+			right: 0.4rem;
+			font-weight: normal;
+			margin: 0;
+			padding: 0;
+			letter-spacing: normal;
+			font-family: 'SegoeUI';
+			outline: none;
+			&:hover {
+				color: $blueHover;
+			}
+			&:active {
+				transform: scale(0.96);
+			}
+		}
+	}
+	.modal-body {
+		padding: 0 0 1rem 0;
+		height: auto;
+		max-height: 30rem;
+		overflow-y: auto;
+		overflow-x: hidden;
+		width: 100%;
+		p {
+			line-height: 1.3;
+			font-size: 1.4rem;
+			color: $lightText;
+			&.description-family {
+				font-family: inherit !important;
+			}
+		}
+		.check-asked {
+			margin: 2rem 0 0 0;
+			padding-bottom: 1rem;
+			div {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.status-text {
+				font-size: $fontsize_xs;
+				padding-left: 3rem;
+				line-height: 1.5rem;
+				color: $lightText;
+				@media #{$high-contrast} {
+					color: buttonText;
+				}
+			}
+			.ask-again {
+				position: absolute;
+				width: 1.4rem;
+				height: 1.4rem;
+				margin-top: 0.3rem;
+				outline: none;
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: -0.3rem;
+					bottom: -0.3rem;
+					left: -0.3rem;
+					right: -0.3rem;
+					border-radius: 0.2rem;
+					border: 0.1rem solid $blueHover;
+					width: 2rem;
+					height: 2rem;
+					@media #{$high-contrast} {
+						border: 0.1rem solid windowText;
+					}
+				}
+				&:hover {
+					border-color: $blueHover;
+				}
+				@media #{$high-contrast} {
+					background-color: window;
+				}
+				&.checked {
+					background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+					background-repeat: no-repeat;
+					background-size: 100% auto;
+					background-color: $blueFill;
+					border-radius: 0.1rem;
+					@media #{$high-contrast} {
+						outline-color: windowText;
+						background-color: buttonText;
+						background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='window' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='window' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+					}
+				}
+			}
+		}
+		.check-asked {
+			margin-bottom: 0.3rem;
+			padding-left: 0.5rem;
+			div {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.status-text {
+				font-size: $fontsize_xs;
+				padding-left: 3rem;
+				line-height: 1.5rem;
+				color: $lightText;
+				@media #{$high-contrast} {
+					color: buttonText;
+				}
+			}
+			.ask-again {
+				position: absolute;
+				width: 1.4rem;
+				height: 1.4rem;
+				margin-top: 0.3rem;
+				outline: none;
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: -0.3rem;
+					bottom: -0.3rem;
+					left: -0.3rem;
+					right: -0.3rem;
+					border-radius: 0.2rem;
+					border: 0.1rem solid $blueHover;
+					width: 2rem;
+					height: 2rem;
+					@media #{$high-contrast} {
+						border: 0.1rem solid windowText;
+					}
+				}
+				&:hover {
+					border-color: $blueHover;
+				}
+				@media #{$high-contrast} {
+					background-color: window;
+				}
+				&.checked {
+					background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='%23FFFFFF' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+					background-repeat: no-repeat;
+					background-size: 100% auto;
+					background-color: $blueFill;
+					border-radius: 0.1rem;
+					@media #{$high-contrast} {
+						outline-color: windowText;
+						background-color: buttonText;
+						background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='15px' height='15px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3c!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com --%3e%3ctitle%3e6.20pxIcon/checkLine%3c/title%3e%3cdesc%3eCreated with Sketch.%3c/desc%3e%3cg id='6.20pxIcon/checkLine' stroke='none' stroke-width='1' fill='window' fill-rule='evenodd'%3e%3cpath d='M8.1116626,13.630581 L16.0313582,5.35279564 C16.4676981,4.89672665 17.1911384,4.88073301 17.6472074,5.31707287 C18.1032764,5.75341272 18.11927,6.47685303 17.6829301,6.93292202 L8.93558544,16.0757787 C8.48484105,16.5469035 7.73191951,16.546056 7.28223692,16.0739175 L2.31529664,10.8589429 C1.87998466,10.4018927 1.89760695,9.67849027 2.35465713,9.24317828 C2.81170731,8.8078663 3.53510978,8.82548859 3.97042177,9.28253877 L8.1116626,13.630581 Z' id='Path-2' fill='window' fill-rule='nonzero'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+					}
+				}
+			}
+		}
+	}
+	.modal-footer {
+		justify-content: flex-start;
+		padding: 1.8rem 0 0;
+		height: 5.7rem;
+		border-top: 1px solid $screen_dark_10 !important;
+		button {
+			outline: none;
+		}
+	}
 }
-.cancel{
-    margin-left: 3rem;
+.cancel {
+	margin-left: 3rem;
 }
-.detailed-description{
-    font-family: "Segoe UI Semibold";
+.detailed-description {
+	font-family: 'Segoe UI Semibold';
 }
 
-::ng-deep body.focus-enable{
-    .is-gaming {
-        .gaming-modal-prompt{
-            .close:focus{
-                @include default-button-border;
-            }
-            .border-radius-button:focus {
-                outline: 0;
-                box-shadow: none;
-                &::after {
-                    @include circular-button-border;
-                }
-            }
-            .under-line-button:focus {
-                &::after {
-                    @include under-line-button-border;
-                }
-            }
-            .ask-again:focus {
-                &::after{
-                    @include outline-blue-gaming;
-                }
-            }
-        }
-    }
+::ng-deep body.focus-enable {
+	.is-gaming {
+		.gaming-modal-prompt {
+			.close:focus {
+				@include default-button-border;
+			}
+			.border-radius-button:focus {
+				outline: 0;
+				box-shadow: none;
+				&::after {
+					@include circular-button-border;
+				}
+			}
+			.under-line-button:focus {
+				&::after {
+					@include under-line-button-border;
+				}
+			}
+			.ask-again:focus {
+				&::after {
+					@include outline-blue-gaming;
+				}
+			}
+		}
+	}
 }

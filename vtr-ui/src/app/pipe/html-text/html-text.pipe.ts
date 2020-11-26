@@ -2,11 +2,10 @@ import { Pipe, PipeTransform, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Pipe({
-	name: 'htmlText'
+	name: 'htmlText',
 })
 export class HtmlTextPipe implements PipeTransform {
-
-	constructor( private sanitizer: DomSanitizer ){}
+	constructor(private sanitizer: DomSanitizer) {}
 
 	transform(value: any, ...args: any[]): any {
 		const div = document.createElement('div');

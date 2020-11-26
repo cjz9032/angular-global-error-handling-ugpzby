@@ -1,13 +1,9 @@
-import {
-	Pipe,
-	PipeTransform
-} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-	name: 'joinClass'
+	name: 'joinClass',
 })
 export class JoinclassPipe implements PipeTransform {
-
 	transform(value: boolean): any {
 		if (value) {
 			return 'joinfailed';
@@ -15,5 +11,4 @@ export class JoinclassPipe implements PipeTransform {
 			return '';
 		}
 	}
-
 }

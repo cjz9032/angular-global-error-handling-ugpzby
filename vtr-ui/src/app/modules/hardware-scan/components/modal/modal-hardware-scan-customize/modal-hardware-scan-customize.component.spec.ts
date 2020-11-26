@@ -8,9 +8,8 @@ xdescribe('ModalHardwareScanCustomizeComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ ModalHardwareScanCustomizeComponent ]
-		})
-		.compileComponents();
+			declarations: [ModalHardwareScanCustomizeComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

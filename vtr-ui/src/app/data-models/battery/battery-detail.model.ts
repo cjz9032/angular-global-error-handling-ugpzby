@@ -1,8 +1,6 @@
 import BatteryGaugeDetail from './battery-gauge-detail-model';
 
-
 class BatteryDetail {
-
 	//#region UI related properties
 
 	public heading: string;

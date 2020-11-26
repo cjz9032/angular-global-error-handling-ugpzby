@@ -1,35 +1,17 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	Output,
-	EventEmitter
-} from '@angular/core';
-import {
-	NgbModal
-} from '@ng-bootstrap/ng-bootstrap';
-import {
-	WifiSecurityService
-} from 'src/app/services/security/wifi-security.service';
-import {
-	BaseComponent
-} from '../../../../base/base.component';
-import {
-	CommonService
-} from 'src/app/services/common/common.service';
-import {
-	DeviceService
-} from 'src/app/services/device/device.service';
-import {
-	SessionStorageKey
-} from 'src/app/enums/session-storage-key-enum';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
+import { BaseComponent } from '../../../../base/base.component';
+import { CommonService } from 'src/app/services/common/common.service';
+import { DeviceService } from 'src/app/services/device/device.service';
+import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'wifi-security',
 	templateUrl: './wifi-security.component.html',
-	styleUrls: ['./wifi-security.component.scss']
+	styleUrls: ['./wifi-security.component.scss'],
 })
 export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	@Input() data: WifiSecurityService;
@@ -51,18 +33,14 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	wsEnabledLabel = `${this.wsNameText} ${this.wsEnabledText}`;
 	wsDisabledLabel = `${this.wsNameText} ${this.wsDisabledText}`;
 
-	networkLevel = [
-		'neutral network',
-		'abnormal network',
-		'highly suspicious network'
-	];
+	networkLevel = ['neutral network', 'abnormal network', 'highly suspicious network'];
 
 	constructor(
 		public modalService: NgbModal,
 		private commonService: CommonService,
-		public	deviceService: DeviceService,
+		public deviceService: DeviceService,
 		private configService: ConfigService,
-		private translate: TranslateService,
+		private translate: TranslateService
 	) {
 		super();
 	}
@@ -71,7 +49,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		if (this.configService) {
 			this.isShowMore = !this.configService.showCHS;
 		}
-		if (this.data.histories.filter(item => !!item.visible).length > 4) {
+		if (this.data.histories.filter((item) => !!item.visible).length > 4) {
 			this.isShowMoreLink = false;
 		}
 	}
@@ -81,15 +59,21 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	}
 
 	clickShowMore() {
-		const length = this.data.histories.filter(item => !!item.visible).length;
+		const length = this.data.histories.filter((item) => !!item.visible).length;
 		const allLength = this.data.histories.length;
 		if (length === allLength || length === 8) {
 			this.data.hideHistories(this.data.histories, 4);
-			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 4);
+			this.commonService.setSessionStorageValue(
+				SessionStorageKey.SecurityWifiSecurityShowHistoryNum,
+				4
+			);
 			this.isShowMoreLink = true;
 		} else {
 			this.data.hideHistories(this.data.histories, 8);
-			this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityShowHistoryNum, 8);
+			this.commonService.setSessionStorageValue(
+				SessionStorageKey.SecurityWifiSecurityShowHistoryNum,
+				8
+			);
 			this.isShowMoreLink = false;
 		}
 	}

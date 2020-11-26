@@ -1,4 +1,12 @@
-import { Component, OnInit, HostListener, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	HostListener,
+	Output,
+	EventEmitter,
+	ViewChild,
+	ElementRef,
+} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -14,7 +22,7 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 @Component({
 	selector: 'vtr-modal-smart-performance-subscribe',
 	templateUrl: './modal-smart-performance-subscribe.component.html',
-	styleUrls: ['./modal-smart-performance-subscribe.component.scss']
+	styleUrls: ['./modal-smart-performance-subscribe.component.scss'],
 })
 export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 	myDate = new Date();
@@ -29,8 +37,8 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		{
 			UUID: uuid(),
 			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate(this.myDate.setDate(new Date().getDate() + 90), 'yyyy/MM/dd', 'en')
-		}
+			EndDate: formatDate(this.myDate.setDate(new Date().getDate() + 90), 'yyyy/MM/dd', 'en'),
+		},
 	];
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -38,25 +46,28 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		private smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
 		private loggerService: LoggerService
-	) {
-	}
+	) {}
 
 	ngOnInit() {
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
-			this.loggerService.info('MachineInfo ====================================================== ', machineInfo);
+			this.loggerService.info(
+				'MachineInfo ====================================================== ',
+				machineInfo
+			);
 			this.countryCode = machineInfo.country;
 			this.systemSerialNumber = machineInfo.serialnumber; // 'PC0ZEPQ6';
 			this.systemMT = machineInfo.mt;
 			this.langCode = this.getSPSubscriptionSupportedLanguageFromCountry(this.countryCode);
-			this.paymentUrl =
-				`${environment.pcsupportApiRoot}/upgradewarranty?serial=${this.systemSerialNumber}
+			this.paymentUrl = `${environment.pcsupportApiRoot}/upgradewarranty?serial=${this.systemSerialNumber}
 				&smartperformance=true&source=COMPANION`;
 		});
 	}
 
 	closeModal() {
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-		const intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
+		const intervalTime = moment(currentTime)
+			.add(PaymentPage.ORDERWAITINGTIME, 'm')
+			.format('YYYY-MM-DD HH:mm:ss');
 		this.smartPerformanceService.modalStatus.initiatedTime = intervalTime;
 		this.smartPerformanceService.modalStatus.isGettingStatus = true;
 		this.cancelPaymentRequest.emit();
@@ -65,7 +76,8 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 
 	@HostListener('document:keydown.tab', ['$event'])
 	onKeyDown(event: KeyboardEvent) {
-		if (document.activeElement &&
+		if (
+			document.activeElement &&
 			document.activeElement.id.includes('smart-performance-subscribe-dialog-close-button')
 		) {
 			(document.querySelector('.subscribe-modal') as HTMLElement).focus();
@@ -76,7 +88,8 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 
 	@HostListener('window: focus', ['$event'])
 	onFocus(): void {
-		if (!document.activeElement ||
+		if (
+			!document.activeElement ||
 			!document.activeElement.id.includes('smart-performance-subscribe-dialog-close-button')
 		) {
 			const modal = document.querySelector('.subscribe-modal') as HTMLElement;

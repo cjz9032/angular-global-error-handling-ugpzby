@@ -16,14 +16,19 @@ describe('BatteryHealthService', () => {
 	let localCacheServiceSpy: SpyObj<LocalCacheService>;
 
 	beforeEach(() => {
-		shellServiceSpy = jasmine.createSpyObj<VantageShellService>('VantageShellService', ['getSmartBatteryInfo']);
-		localCacheServiceSpy = jasmine.createSpyObj<LocalCacheService>('LocalCacheService', ['setLocalCacheValue', 'getLocalCacheValue']);
+		shellServiceSpy = jasmine.createSpyObj<VantageShellService>('VantageShellService', [
+			'getSmartBatteryInfo',
+		]);
+		localCacheServiceSpy = jasmine.createSpyObj<LocalCacheService>('LocalCacheService', [
+			'setLocalCacheValue',
+			'getLocalCacheValue',
+		]);
 		TestBed.configureTestingModule({
 			providers: [
 				BatteryHealthService,
 				{ provide: VantageShellService, useValue: shellServiceSpy },
-				{ provide: LocalCacheService, useValue: localCacheServiceSpy }
-			]
+				{ provide: LocalCacheService, useValue: localCacheServiceSpy },
+			],
 		});
 		vantageShellService = TestBed.inject(VantageShellService);
 		localCacheService = TestBed.inject(LocalCacheService);
@@ -46,14 +51,14 @@ describe('BatteryHealthService', () => {
 			designCapacity: 20,
 		};
 		shellServiceSpy.getSmartBatteryInfo.and.returnValue({
-			getSmartBatteryInfo: () => Promise.resolve(stubValue)
+			getSmartBatteryInfo: () => Promise.resolve(stubValue),
 		});
 		service = TestBed.inject(BatteryHealthService);
 
 		const subscription1 = service.batteryInfo.subscribe();
 		subscription1.unsubscribe();
 
-		const subscription2 = service.batteryInfo.pipe(skip(1)).subscribe(res => {
+		const subscription2 = service.batteryInfo.pipe(skip(1)).subscribe((res) => {
 			expect(res).toEqual(stubValue);
 		});
 		subscription2.unsubscribe();
@@ -73,16 +78,22 @@ describe('BatteryHealthService', () => {
 			designCapacity: 20,
 		};
 		shellServiceSpy.getSmartBatteryInfo.and.returnValue({
-			getSmartBatteryInfo: () => Promise.resolve(stubValue)
+			getSmartBatteryInfo: () => Promise.resolve(stubValue),
 		});
 		service = TestBed.inject(BatteryHealthService);
 		service.batteryInfo.subscribe();
 
 		tick(0);
-		expect(localCacheServiceSpy.setLocalCacheValue).toHaveBeenCalledWith(LocalStorageKey.BatteryHealth, stubValue);
+		expect(localCacheServiceSpy.setLocalCacheValue).toHaveBeenCalledWith(
+			LocalStorageKey.BatteryHealth,
+			stubValue
+		);
 
 		tick(30000);
-		expect(localCacheServiceSpy.setLocalCacheValue).toHaveBeenCalledWith(LocalStorageKey.BatteryHealth, stubValue);
+		expect(localCacheServiceSpy.setLocalCacheValue).toHaveBeenCalledWith(
+			LocalStorageKey.BatteryHealth,
+			stubValue
+		);
 
 		service.clearMemoryCache();
 	}));

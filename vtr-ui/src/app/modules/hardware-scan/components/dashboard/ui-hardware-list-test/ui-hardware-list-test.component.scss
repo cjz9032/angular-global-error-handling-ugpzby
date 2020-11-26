@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .vtr-ui-hardware-list-test {
 	padding-top: 1.5rem;
@@ -62,7 +62,7 @@
 				padding-left: 0;
 
 				// modifying global checkbox component
-				.custom-control-component ::ng-deep .auto-set-checkbox{
+				.custom-control-component ::ng-deep .auto-set-checkbox {
 					margin: 0;
 
 					// removing default p margin

@@ -7,10 +7,9 @@ import { GuardService } from 'src/app/services/guard/guardService.service';
 import { ProtocolGuardService } from '../services/guard/protocol-guard.service';
 
 @Component({
-	template: 'empty'
+	template: 'empty',
 })
-export class DoNotUseComponent {
-}
+export class DoNotUseComponent {}
 
 const routes: Routes = [
 	{
@@ -19,77 +18,91 @@ const routes: Routes = [
 		component: PageDashboardComponent,
 		canDeactivate: [GuardService],
 		data: {
-			pageName: 'Dashboard'
-		}
+			pageName: 'Dashboard',
+		},
 	},
 	{
 		path: 'device-gaming',
 		component: PageDeviceGamingComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Gaming.Dashboard',
-			pageContent: 'Gaming Dashboard'
-		}
+			pageContent: 'Gaming Dashboard',
+		},
 	},
 	{
 		path: 'gaming',
-		loadChildren: () => import('./gaming.module').then(m => m.GamingModule)
+		loadChildren: () => import('./gaming.module').then((m) => m.GamingModule),
 	},
 	{
 		path: 'device',
-		loadChildren: () => import('./hardware-settings/hardware-settings.module').then(m => m.HardwareSettingsModule)
+		loadChildren: () =>
+			import('./hardware-settings/hardware-settings.module').then(
+				(m) => m.HardwareSettingsModule
+			),
 	},
 	{
 		path: 'settings',
 		component: PageSettingsComponent,
 		data: {
-			pageName: 'Page.Settings'
-		}
+			pageName: 'Page.Settings',
+		},
 	},
 	{
 		path: 'home-security',
-		loadChildren: () => import('./connected-home-security/connected-home-security.module').then(m => m.ConnectedHomeSecurityModule)
+		loadChildren: () =>
+			import('./connected-home-security/connected-home-security.module').then(
+				(m) => m.ConnectedHomeSecurityModule
+			),
 	},
 	{
 		path: 'security',
-		loadChildren: () => import('./security-advisor/security-advisor.module').then(m => m.SecurityAdvisorModule)
+		loadChildren: () =>
+			import('./security-advisor/security-advisor.module').then(
+				(m) => m.SecurityAdvisorModule
+			),
 	},
 	{
 		path: 'support',
-		loadChildren: () => import('./support/support.module').then(m => m.SupportModule)
+		loadChildren: () => import('./support/support.module').then((m) => m.SupportModule),
 	},
 	{
 		path: 'apps-for-you/:id',
-		loadChildren: () => import('./apps-for-you/apps-for-you.module').then(m => m.AppsForYouModule)
+		loadChildren: () =>
+			import('./apps-for-you/apps-for-you.module').then((m) => m.AppsForYouModule),
 	},
 	{
 		path: 'android',
-		loadChildren: () => import('./android/android-dashboard.module').then(m => m.AndroidDashboardModule)
+		loadChildren: () =>
+			import('./android/android-dashboard.module').then((m) => m.AndroidDashboardModule),
 	},
 	{
 		path: 'beta',
-		loadChildren: () => import('../beta/beta.module').then(m => m.BetaModule)
+		loadChildren: () => import('../beta/beta.module').then((m) => m.BetaModule),
 	},
 	{
 		path: 'hardware-scan',
-		loadChildren: () => import('./hardware-scan/hardware-scan.module').then(m => m.HardwareScanModule)
+		loadChildren: () =>
+			import('./hardware-scan/hardware-scan.module').then((m) => m.HardwareScanModule),
 	},
 	{
 		path: 'snapshot',
-		loadChildren: () => import('./snapshot/snapshot.module').then(m => m.SnapshotModule)
+		loadChildren: () => import('./snapshot/snapshot.module').then((m) => m.SnapshotModule),
 	},
 	{
 		path: 'support/smart-performance',
-		loadChildren: () => import('./smart-performance/smart-performance.module').then(m => m.SmartPerformanceModule)
+		loadChildren: () =>
+			import('./smart-performance/smart-performance.module').then(
+				(m) => m.SmartPerformanceModule
+			),
 	},
 	{
 		path: '**',
 		canActivate: [ProtocolGuardService],
-		component: DoNotUseComponent
-	}
+		component: DoNotUseComponent,
+	},
 ];
-
 
 @NgModule({
 	imports: [
@@ -97,9 +110,9 @@ const routes: Routes = [
 			useHash: true,
 			scrollPositionRestoration: 'enabled',
 			enableTracing: false,
-			preloadingStrategy: PreloadAllModules
-		})
+			preloadingStrategy: PreloadAllModules,
+		}),
 	],
-	exports: [RouterModule]
+	exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,4 +1,4 @@
-@import "../a11y";
+@import '../a11y';
 
 @mixin battery-capacity-color($theme) {
 	$color: map-get($theme, color);

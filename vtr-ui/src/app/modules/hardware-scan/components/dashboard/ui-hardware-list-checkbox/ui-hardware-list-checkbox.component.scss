@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .vtr-ui-list-checkbox-hardware {
 	.list-group {
@@ -28,7 +28,7 @@
 			}
 
 			// modifying global checkbox component
-			.custom-control-component ::ng-deep .auto-set-checkbox{
+			.custom-control-component ::ng-deep .auto-set-checkbox {
 				margin: 0;
 
 				// removing default p margin

@@ -8,9 +8,8 @@ describe('UiHyperlinkButtonComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ UiHyperlinkButtonComponent ]
-		})
-			.compileComponents();
+			declarations: [UiHyperlinkButtonComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

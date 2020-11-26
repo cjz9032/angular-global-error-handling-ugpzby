@@ -1,19 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiDropdownHwscanComponent } from './ui-dropdown-hwscan.component';
-const items = [
-	{ name: 'sample' },
-	{ name: 'sample2' }
-];
+const items = [{ name: 'sample' }, { name: 'sample2' }];
 describe('UiDropdownHwscanComponent', () => {
 	let component: UiDropdownHwscanComponent;
 	let fixture: ComponentFixture<UiDropdownHwscanComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiDropdownHwscanComponent]
-		})
-			.compileComponents();
+			declarations: [UiDropdownHwscanComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -26,7 +22,6 @@ describe('UiDropdownHwscanComponent', () => {
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
-
 	});
 	it('should call selected', () => {
 		spyOn(component.selectedOption, 'emit');

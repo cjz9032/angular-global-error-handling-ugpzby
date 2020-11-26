@@ -3,11 +3,10 @@ import { ChunkLoadError } from 'src/app/data-models/common/chunk-load-error.mode
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
-
 export class ChunkLoadErrorHandler implements ErrorHandler {
-	constructor() { }
+	constructor() {}
 
 	handleError(error) {
 		if (!error) return;
@@ -16,10 +15,10 @@ export class ChunkLoadErrorHandler implements ErrorHandler {
 			console.error(error);
 		}
 
-        if (this.isChunkLoadError(error) || this.isChunkLoadError(error.rejection)) {
+		if (this.isChunkLoadError(error) || this.isChunkLoadError(error.rejection)) {
 			window.location.reload(true);
 		}
-    }
+	}
 
 	isChunkLoadError(error: ChunkLoadError | any): error is ChunkLoadError {
 		return Boolean(error && (error as ChunkLoadError).name === 'ChunkLoadError');

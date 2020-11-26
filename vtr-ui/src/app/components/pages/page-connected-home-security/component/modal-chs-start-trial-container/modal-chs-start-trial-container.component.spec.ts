@@ -8,9 +8,8 @@ xdescribe('ModalChsStartTrialContainerComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ModalChsStartTrialContainerComponent]
-		})
-			.compileComponents();
+			declarations: [ModalChsStartTrialContainerComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

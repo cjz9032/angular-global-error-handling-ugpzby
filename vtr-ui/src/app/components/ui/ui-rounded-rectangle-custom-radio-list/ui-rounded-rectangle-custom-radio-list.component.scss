@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 /*
 * UI Spec link
@@ -90,7 +90,7 @@
 		flex-wrap: wrap;
 		outline: 0;
 
-		[role="radio"] {
+		[role='radio'] {
 			margin: $radio-gutter;
 			position: relative;
 			padding-top: $radio-text-padding-top + 0.1;
@@ -121,7 +121,7 @@
 				display: block;
 				position: absolute;
 				border-radius: 50%;
-				content: "";
+				content: '';
 			}
 
 			&::before {
@@ -169,7 +169,7 @@
 				}
 			}
 
-			&[aria-disabled="true"] {
+			&[aria-disabled='true'] {
 				background: $grey_lighter;
 				opacity: 0.6;
 				pointer-events: none;
@@ -192,12 +192,10 @@
 					border-color: $grey_darker;
 					@include high-contrast-disabled-border;
 				}
-
 			}
-
 		}
 
-		[role="radio"][aria-checked="true"] {
+		[role='radio'][aria-checked='true'] {
 			box-shadow: $radio-selected-box-shadow;
 			&.focus:not(:active) {
 				box-shadow: $radio-focus-box-shadow !important;
@@ -228,14 +226,14 @@
 				background-color: $menu_hover;
 				width: $radio-indicator-inner-size;
 				height: $radio-indicator-inner-size;
-				content: "";
+				content: '';
 				@include high-contrast-background;
 			}
 			&::before {
 				@include high-contrast-black-border;
 				@include high-contrast-white-border;
 			}
-			&[aria-disabled="true"] {
+			&[aria-disabled='true'] {
 				background: $grey_lighter;
 				opacity: 0.6;
 				pointer-events: none;

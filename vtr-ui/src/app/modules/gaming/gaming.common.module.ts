@@ -16,14 +16,7 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		// UiGamingDriverPopupComponent,
 		// UiPopoverComponent
 	],
-	imports: [
-		CommonModule,
-		SharedModule,
-		RouterModule,
-		AppSearchModule
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	]
+	imports: [CommonModule, SharedModule, RouterModule, AppSearchModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class GamingCommonModule { }
+export class GamingCommonModule {}

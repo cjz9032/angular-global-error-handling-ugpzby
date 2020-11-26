@@ -14,7 +14,7 @@ import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.servi
 @Component({
 	selector: 'vtr-top-row-functions-ideapad',
 	templateUrl: './top-row-functions-ideapad.component.html',
-	styleUrls: ['./top-row-functions-ideapad.component.scss']
+	styleUrls: ['./top-row-functions-ideapad.component.scss'],
 })
 export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	keyType = KeyType;
@@ -41,8 +41,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
 		private ngZone: NgZone
-	) {
-	}
+	) {}
 
 	ngOnInit() {
 		// this.capability$ = this.topRowFunctionsIdeapadService.capability;
@@ -51,50 +50,68 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 
 		const fnLockStream$ = merge(this.fnLockStatus$, this.fnLockSubject$);
 		// const inUseStream$ = combineLatest([this.primaryKey$, fnLockStream$]);
-		this.hotkey$ = fnLockStream$
-			.pipe(
-				mergeMap(x => this.primaryKey$.pipe(map(primaryKeyResponse => [primaryKeyResponse, x]))),
-				map(([primaryKeyResponse, fnLockStatusResponse]) => {
-					return (primaryKeyResponse.value === this.keyType.HOTKEY && fnLockStatusResponse.value === StringBooleanEnum.FALSY)
-						|| (primaryKeyResponse.value !== this.keyType.HOTKEY && fnLockStatusResponse.value === StringBooleanEnum.TRUTHY);
-				}),
-				tap(status => of(status).pipe(
-					takeWhile(status1 => status1),
+		this.hotkey$ = fnLockStream$.pipe(
+			mergeMap((x) =>
+				this.primaryKey$.pipe(map((primaryKeyResponse) => [primaryKeyResponse, x]))
+			),
+			map(([primaryKeyResponse, fnLockStatusResponse]) => {
+				return (
+					(primaryKeyResponse.value === this.keyType.HOTKEY &&
+						fnLockStatusResponse.value === StringBooleanEnum.FALSY) ||
+					(primaryKeyResponse.value !== this.keyType.HOTKEY &&
+						fnLockStatusResponse.value === StringBooleanEnum.TRUTHY)
+				);
+			}),
+			tap((status) =>
+				of(status).pipe(
+					takeWhile((status1) => status1),
 					tap(() => {
-						const machineFamilyName = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
+						const machineFamilyName = this.localCacheService.getLocalCacheValue(
+							LocalStorageKey.MachineFamilyName
+						);
 
 						this.metrics.sendMetrics(
-							KeyType.HOTKEY
-							, 'radio.TopRowFunctionsIdeapad'
-							, CommonMetricsModel.ParentDeviceSettings
-							, CommonMetricsModel.ItemType
-							, { machineFamilyName }
+							KeyType.HOTKEY,
+							'radio.TopRowFunctionsIdeapad',
+							CommonMetricsModel.ParentDeviceSettings,
+							CommonMetricsModel.ItemType,
+							{ machineFamilyName }
 						);
 					})
-				))
-			);
-		this.fnkey$ = fnLockStream$
-			.pipe(
-				mergeMap(x => this.primaryKey$.pipe(map(primaryKeyResponse => [primaryKeyResponse, x]))),
-				map(([primaryKeyResponse, fnLockStatusResponse]) => {
-					return (primaryKeyResponse.value === this.keyType.FNKEY && fnLockStatusResponse.value === StringBooleanEnum.FALSY)
-						|| (primaryKeyResponse.value !== this.keyType.FNKEY && fnLockStatusResponse.value === StringBooleanEnum.TRUTHY);
-				}),
-				tap(status => of(status).pipe(
-					takeWhile(status1 => status1),
+				)
+			)
+		);
+		this.fnkey$ = fnLockStream$.pipe(
+			mergeMap((x) =>
+				this.primaryKey$.pipe(map((primaryKeyResponse) => [primaryKeyResponse, x]))
+			),
+			map(([primaryKeyResponse, fnLockStatusResponse]) => {
+				return (
+					(primaryKeyResponse.value === this.keyType.FNKEY &&
+						fnLockStatusResponse.value === StringBooleanEnum.FALSY) ||
+					(primaryKeyResponse.value !== this.keyType.FNKEY &&
+						fnLockStatusResponse.value === StringBooleanEnum.TRUTHY)
+				);
+			}),
+			tap((status) =>
+				of(status).pipe(
+					takeWhile((status1) => status1),
 					tap(() => {
-						const machineFamilyName = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName);
+						const machineFamilyName = this.localCacheService.getLocalCacheValue(
+							LocalStorageKey.MachineFamilyName
+						);
 
 						this.metrics.sendMetrics(
-							KeyType.FNKEY
-							, 'radio.TopRowFunctionsIdeapad'
-							, CommonMetricsModel.ParentDeviceSettings
-							, CommonMetricsModel.ItemType
-							, { machineFamilyName }
+							KeyType.FNKEY,
+							'radio.TopRowFunctionsIdeapad',
+							CommonMetricsModel.ParentDeviceSettings,
+							CommonMetricsModel.ItemType,
+							{ machineFamilyName }
 						);
 					})
-				))
-			);
+				)
+			)
+		);
 
 		/**
 		 * Directly send setFnLockStatus request no matter if it is already selected.
@@ -102,11 +119,21 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 		this.setSubscription = this.update$
 			.pipe(
 				throttleTime(100),
-				mergeMap(keyType => this.primaryKey$.pipe(map(primaryKey => keyType === primaryKey.value ? StringBooleanEnum.FALSY : StringBooleanEnum.TRUTHY))),
-				switchMap(stringBoolean => this.topRowFunctionsIdeapadService.setFnLockStatus(stringBoolean)),
+				mergeMap((keyType) =>
+					this.primaryKey$.pipe(
+						map((primaryKey) =>
+							keyType === primaryKey.value
+								? StringBooleanEnum.FALSY
+								: StringBooleanEnum.TRUTHY
+						)
+					)
+				),
+				switchMap((stringBoolean) =>
+					this.topRowFunctionsIdeapadService.setFnLockStatus(stringBoolean)
+				),
 				concatMap(() => this.topRowFunctionsIdeapadService.fnLockStatus)
 			)
-			.subscribe(res => this.fnLockSubject$.next(res));
+			.subscribe((res) => this.fnLockSubject$.next(res));
 
 		this.updateFunctionLockUIModel();
 		this.subscribeForDataChange();
@@ -136,7 +163,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			customIcon: 'Special-function',
 			hideIcon: true,
 			processLabel: false,
-			metricsItem: 'radio.top-row-fn.special-function'
+			metricsItem: 'radio.top-row-fn.special-function',
 		});
 		this.functionLockUIModel.push({
 			componentId: this.functionKeyId,
@@ -148,7 +175,7 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			customIcon: 'F1-F12-funciton',
 			hideIcon: true,
 			processLabel: false,
-			metricsItem: 'radio.top-row-fn.function-key'
+			metricsItem: 'radio.top-row-fn.function-key',
 		});
 	}
 
@@ -163,19 +190,18 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 	}
 
 	subscribeForDataChange() {
-		this.hotKeySubscription = this.hotkey$.subscribe(value => {
+		this.hotKeySubscription = this.hotkey$.subscribe((value) => {
 			this.ngZone.run(() => {
 				this.updateFunctionLockValue(this.specialKeyId, value);
 			});
 		});
 
-		this.functionKeySubscription = this.fnkey$.subscribe(value => {
+		this.functionKeySubscription = this.fnkey$.subscribe((value) => {
 			this.ngZone.run(() => {
 				this.updateFunctionLockValue(this.functionKeyId, value);
 			});
 		});
 	}
-
 
 	onFunctionLockRadioChange($event: UiCircleRadioWithCheckBoxListModel) {
 		if ($event) {

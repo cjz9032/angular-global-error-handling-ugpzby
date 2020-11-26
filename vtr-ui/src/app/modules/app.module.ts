@@ -22,13 +22,17 @@ import { faCircleNotch } from '@fortawesome/pro-light-svg-icons/faCircleNotch';
 import { faCloudDownload } from '@fortawesome/pro-light-svg-icons/faCloudDownload';
 import { faCommentAltDots } from '@fortawesome/pro-light-svg-icons/faCommentAltDots';
 import { faShoePrints } from '@fortawesome/pro-light-svg-icons/faShoePrints';
-import { faQuoteLeft} from '@fortawesome/free-solid-svg-icons/faQuoteLeft';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons/faQuoteLeft';
 import { RouterModule } from '@angular/router';
 import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@lenovo/material/dialog';
-import { MatRippleModule, MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@lenovo/material/core';
+import {
+	MatRippleModule,
+	MAT_RIPPLE_GLOBAL_OPTIONS,
+	RippleGlobalOptions,
+} from '@lenovo/material/core';
 import { MatSnackBarModule } from '@lenovo/material/snack-bar';
 
 import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
@@ -80,13 +84,12 @@ import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
 
-
 const globalRippleConfig: RippleGlobalOptions = {
 	disabled: true,
 	animation: {
 		enterDuration: 300,
-		exitDuration: 0
-	}
+		exitDuration: 0,
+	},
 };
 @NgModule({
 	declarations: [
@@ -105,19 +108,19 @@ const globalRippleConfig: RippleGlobalOptions = {
 		AppRoutingModule,
 		ServiceWorkerModule.register('ngsw-worker.js', {
 			enabled: environment.production,
-			registrationStrategy: 'registerImmediately'
+			registrationStrategy: 'registerImmediately',
 		}),
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [HttpClient]
+				deps: [HttpClient],
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
-				useClass: MissingTranslationDefaultHandler
+				useClass: MissingTranslationDefaultHandler,
 			},
-			isolate: false
+			isolate: false,
 		}),
 		NavbarModule,
 		NgbModalModule,
@@ -140,7 +143,7 @@ const globalRippleConfig: RippleGlobalOptions = {
 		UICustomRadioModule,
 		MatDialogModule,
 		MatRippleModule,
-		MatSnackBarModule
+		MatSnackBarModule,
 	],
 	exports: [
 		NavbarModule,
@@ -149,7 +152,8 @@ const globalRippleConfig: RippleGlobalOptions = {
 		CommonUiModule,
 		ModernPreloadModule,
 		PageLayoutModule,
-		UiCustomSliderModule],
+		UiCustomSliderModule,
+	],
 	providers: [
 		CommonService,
 		MetricsTranslateService,
@@ -160,26 +164,27 @@ const globalRippleConfig: RippleGlobalOptions = {
 		CommsService,
 		{
 			provide: ErrorHandler,
-			useClass: ChunkLoadErrorHandler
+			useClass: ChunkLoadErrorHandler,
 		},
 		{
 			provide: APP_INITIALIZER,
-			useFactory: (initializerService: InitializerService) => initializerService.initialize.bind(initializerService),
+			useFactory: (initializerService: InitializerService) =>
+				initializerService.initialize.bind(initializerService),
 			deps: [InitializerService],
-			multi: true
+			multi: true,
 		},
-		{provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}
+		{ provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },
 	],
 	entryComponents: [
 		ModalWelcomeComponent,
 		ModalArticleDetailComponent,
 		ModalDccDetailComponent,
 		ModalAppUpdateAvailableComponent,
-		ModalNewFeatureTipComponent
+		ModalNewFeatureTipComponent,
 		// ModalErrorMessageComponent
 	],
 	bootstrap: [AppComponent],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {
 	constructor(library: FaIconLibrary) {

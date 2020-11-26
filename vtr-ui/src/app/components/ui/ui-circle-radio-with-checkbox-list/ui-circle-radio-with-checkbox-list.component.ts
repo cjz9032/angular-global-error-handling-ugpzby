@@ -1,4 +1,16 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
+import {
+	Component,
+	ElementRef,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	QueryList,
+	SimpleChanges,
+	ViewChild,
+	ViewChildren,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { KeyCode as KEYCODE } from 'src/app/enums/key-code.enum';
@@ -9,7 +21,7 @@ import { UiCircleRadioWithCheckBoxListModel } from './ui-circle-radio-with-check
 @Component({
 	selector: 'vtr-ui-circle-radio-with-checkbox-list',
 	templateUrl: './ui-circle-radio-with-checkbox-list.component.html',
-	styleUrls: ['./ui-circle-radio-with-checkbox-list.component.scss']
+	styleUrls: ['./ui-circle-radio-with-checkbox-list.component.scss'],
 })
 export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges {
 	@Input() metricsParent: string;
@@ -28,14 +40,13 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 	public focusedComponentId = '';
 
 	constructor(
-		logger: LoggerService
-		, private metrics: MetricService
-		, private translate: TranslateService
-		, private activatedRoute: ActivatedRoute) {
-	}
+		logger: LoggerService,
+		private metrics: MetricService,
+		private translate: TranslateService,
+		private activatedRoute: ActivatedRoute
+	) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	ngOnChanges(changes: SimpleChanges) {
 		if (changes.radioDetails) {
@@ -62,8 +73,8 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 		let radio: UiCircleRadioWithCheckBoxListModel;
 		if (this.radioDetails && this.radioDetails.length > 0) {
 			let hasFound = false;
-			this.radioDetails.forEach(radioDetail => {
-				if ((radioDetail.componentId === radioId)) {
+			this.radioDetails.forEach((radioDetail) => {
+				if (radioDetail.componentId === radioId) {
 					radio = radioDetail;
 					hasFound = true;
 					radioDetail.isChecked = true;
@@ -75,7 +86,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 
 			// set selected if its found had requires focus
 			if (hasFound) {
-				this.radioButtons.forEach(radioButton => {
+				this.radioButtons.forEach((radioButton) => {
 					if (radioButton.nativeElement.id === radioId) {
 						radioButton.nativeElement.checked = true;
 						radioButton.nativeElement.setAttribute('aria-checked', 'true');
@@ -105,7 +116,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 		if (this.radioDetails && this.radioDetails.length > 0) {
 			let hasFound = false;
 			this.radioDetails.forEach((radioDetail, index) => {
-				if ((radioDetail.componentId === componentId)) {
+				if (radioDetail.componentId === componentId) {
 					hasFound = true;
 					itemIndex = index;
 				}
@@ -118,7 +129,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 		let selectedRadioId = '';
 		if (this.radioDetails && this.radioDetails.length > 0) {
 			this.radioDetails.forEach((radioDetail) => {
-				if ((radioDetail.isChecked)) {
+				if (radioDetail.isChecked) {
 					selectedRadioId = radioDetail.componentId;
 				}
 			});
@@ -141,7 +152,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 				case KEYCODE.DOWN:
 				case KEYCODE.RIGHT:
 					// if index is equal to last item then set 0 else ++
-					nextIndex = (index === this.radioDetails.length - 1) ? 0 : index + 1;
+					nextIndex = index === this.radioDetails.length - 1 ? 0 : index + 1;
 					isHandled = true;
 
 					break;
@@ -149,7 +160,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 				case KEYCODE.UP:
 				case KEYCODE.LEFT:
 					// if index is equal to 0 item then set length -1 else --
-					nextIndex = (index === 0) ? this.radioDetails.length - 1 : index - 1;
+					nextIndex = index === 0 ? this.radioDetails.length - 1 : index - 1;
 					isHandled = true;
 					break;
 
@@ -178,7 +189,7 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 					ItemParent: this.metricsParent || this.activatedRoute.snapshot.data.pageName,
 					ItemType: 'FeatureClick',
 					ItemName: radio.metricsItem,
-					ItemValue: radio.isChecked
+					ItemValue: radio.isChecked,
 				};
 				this.metrics.sendMetrics(metricsData);
 			}

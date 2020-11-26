@@ -5,13 +5,11 @@ xdescribe('SettingsPageLayoutComponent', () => {
 	let component: SettingsPageLayoutComponent;
 	let fixture: ComponentFixture<SettingsPageLayoutComponent>;
 
-	beforeEach(
-		async(() => {
-			TestBed.configureTestingModule({
-				declarations: [ SettingsPageLayoutComponent ]
-			}).compileComponents();
-		})
-	);
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [SettingsPageLayoutComponent],
+		}).compileComponents();
+	}));
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(SettingsPageLayoutComponent);

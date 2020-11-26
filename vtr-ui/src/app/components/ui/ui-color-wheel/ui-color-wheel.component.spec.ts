@@ -9,12 +9,13 @@ describe('UiColorWheelComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiColorWheelComponent,
+			declarations: [
+				UiColorWheelComponent,
 				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' })],
-				schemas: [NO_ERRORS_SCHEMA]
-		})
-			.compileComponents();
+				mockPipe({ name: 'sanitize' }),
+			],
+			schemas: [NO_ERRORS_SCHEMA],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -39,7 +40,7 @@ describe('UiColorWheelComponent', () => {
 	});
 
 	it('should Validate the input and return false ', () => {
-		const event: any = {keyCode: 58};
+		const event: any = { keyCode: 58 };
 		const res = component.validateInput(event);
 		expect(res).toBe(false);
 	});
@@ -51,7 +52,7 @@ describe('UiColorWheelComponent', () => {
 	});
 
 	it('should check with the empty text.', () => {
-		const event: any = { target: {value: ''} };
+		const event: any = { target: { value: '' } };
 		const res = component.checkEmpty(event);
 		expect(res).toBe(undefined);
 	});
@@ -63,15 +64,17 @@ describe('UiColorWheelComponent', () => {
 	});
 
 	it('should update based on changes', () => {
-		component.ngOnChanges({ inHEX: { previousValue: '#fff', currentValue: '#ffff'
-		}, btnStatus: { previousValue: 'show', currentValue: 'hide'}});
-		expect(component.inHEX ).toBe('#ffff');
+		component.ngOnChanges({
+			inHEX: { previousValue: '#fff', currentValue: '#ffff' },
+			btnStatus: { previousValue: 'show', currentValue: 'hide' },
+		});
+		expect(component.inHEX).toBe('#ffff');
 	});
 });
 
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
 	return Pipe(metadata)(
 		class MockPipe {

@@ -4,7 +4,7 @@ import { BaseComponent } from '../../base/base.component';
 @Component({
 	selector: 'vtr-widget-questions',
 	templateUrl: './widget-questions.component.html',
-	styleUrls: ['./widget-questions.component.scss']
+	styleUrls: ['./widget-questions.component.scss'],
 })
 export class WidgetQuestionsComponent extends BaseComponent implements OnInit {
 	@Input() itemId: string;
@@ -19,7 +19,5 @@ export class WidgetQuestionsComponent extends BaseComponent implements OnInit {
 		super();
 	}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 }
-

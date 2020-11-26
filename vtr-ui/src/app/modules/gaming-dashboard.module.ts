@@ -61,7 +61,7 @@ import { ModalGamingRunningAppListComponent } from '../components/modal/modal-ga
 		ModalGamingPromptComponent,
 		ModalGamingAdvancedOCComponent,
 		ModalGamingThermalMode2Component,
-		ModalGamingRunningAppListComponent
+		ModalGamingRunningAppListComponent,
 	],
 	imports: [
 		CommonModule,
@@ -74,11 +74,11 @@ import { ModalGamingRunningAppListComponent } from '../components/modal/modal-ga
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [ HttpClient ]
+				deps: [HttpClient],
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
-				useClass: MissingTranslationDefaultHandler
+				useClass: MissingTranslationDefaultHandler,
 			},
 		}),
 		FontAwesomeModule,
@@ -87,7 +87,7 @@ import { ModalGamingRunningAppListComponent } from '../components/modal/modal-ga
 		WidgetOfflineModule,
 		LocationNoticeModule,
 		FeedbackModule,
-		PageLayoutModule
+		PageLayoutModule,
 	],
 	exports: [TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	providers: [MockService, DialogService],
@@ -102,9 +102,9 @@ import { ModalGamingRunningAppListComponent } from '../components/modal/modal-ga
 		ModalGamingPromptComponent,
 		ModalGamingAdvancedOCComponent,
 		ModalGamingThermalMode2Component,
-		ModalGamingRunningAppListComponent
+		ModalGamingRunningAppListComponent,
 	],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class GamingDashboardModule {
 	constructor(library: FaIconLibrary) {

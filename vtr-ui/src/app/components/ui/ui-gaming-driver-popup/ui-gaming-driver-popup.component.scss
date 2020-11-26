@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 ui-gaming-driver-popup {
 	position: absolute;
@@ -21,7 +21,7 @@ ui-gaming-driver-popup {
 		border: 1px solid windowText;
 	}
 	&::after {
-		content: "";
+		content: '';
 		position: absolute;
 		width: 0;
 		height: 0;
@@ -94,7 +94,7 @@ ui-gaming-driver-popup {
 			@media #{$high-contrast} {
 				color: windowText;
 			}
-			&.restart-style{
+			&.restart-style {
 				margin-top: 2rem !important;
 			}
 		}

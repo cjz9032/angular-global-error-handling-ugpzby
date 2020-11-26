@@ -2,7 +2,15 @@ import { Injectable, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { MetricConst, MetricEventName as EventName } from 'src/app/enums/metrics.enum';
-import { AppAction, GetEnvInfo, AppLoaded, FirstRun, TaskAction, ArticleView, ContentDisplay } from 'src/app/services/metric/metrics.model';
+import {
+	AppAction,
+	GetEnvInfo,
+	AppLoaded,
+	FirstRun,
+	TaskAction,
+	ArticleView,
+	ContentDisplay,
+} from 'src/app/services/metric/metrics.model';
 import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { MetricHelper } from './metrics.helper';
@@ -19,7 +27,7 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 declare var Windows;
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class MetricService {
 	private metricsClient: any;
@@ -37,7 +45,7 @@ export class MetricService {
 	public pageContainer: ElementRef;
 	public readonly contentDisplayDetection: ContentDisplayDetection;
 	public externalAppMetricsState = false;
-	private pageScollEvent = (arg: any) => { };
+	private pageScollEvent = (arg: any) => {};
 
 	constructor(
 		private http: HttpClient,
@@ -89,7 +97,7 @@ export class MetricService {
 			appId: MetricHelper.getAppId('dß'),
 			appName: 'vantage3',
 			channel: '',
-			ludpUrl: 'https://chifsr.lenovomm.com/PCJson'
+			ludpUrl: 'https://chifsr.lenovomm.com/PCJson',
 		});
 
 		this.metricsClient.sendAsyncExOrignally = this.metricsClient.sendAsyncEx;
@@ -102,7 +110,10 @@ export class MetricService {
 					data.OnlineStatus = this.commonService.isOnline ? 1 : 0;
 				}
 
-				const isBeta = this.localCacheService.getLocalCacheValue(LocalStorageKey.BetaTag, false);
+				const isBeta = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.BetaTag,
+					false
+				);
 				if (isBeta) {
 					data.IsBetaUser = true;
 				}
@@ -120,7 +131,7 @@ export class MetricService {
 			} catch (ex) {
 				return Promise.resolve({
 					status: 0,
-					desc: 'ok'
+					desc: 'ok',
 				});
 			}
 		};
@@ -136,7 +147,8 @@ export class MetricService {
 		}
 
 		const idleDuration = Math.floor((Date.now() - this.blurStart) / 1000);
-		if (this.metricsClient.updateSessionId && idleDuration > 1800) { // 30 * min
+		if (this.metricsClient.updateSessionId && idleDuration > 1800) {
+			// 30 * min
 			this.metricsClient.updateSessionId();
 		}
 		this.blurStart = 0;
@@ -168,11 +180,9 @@ export class MetricService {
 		if (machineInfo) {
 			isGaming = machineInfo.isGaming;
 		}
-		this.metricsClient.sendAsyncEx(new FirstRun(isGaming),
-			{
-				forced: true
-			}
-		);
+		this.metricsClient.sendAsyncEx(new FirstRun(isGaming), {
+			forced: true,
+		});
 	}
 
 	private async sendEnvInfoMetric() {
@@ -202,12 +212,14 @@ export class MetricService {
 				imcVersion,
 				srvVersion: hsaSrvInfo.vantageSvcVersion,
 				shellVersion,
-				windowSize: `${Math.floor(window.outerWidth / 100) * 100}x${Math.floor(window.outerHeight / 100) * 100}`,
-				displaySize: `${Math.floor(displayWidth * scale / 100) * 100}x${Math.floor(
-					displayHeight * scale / 100
-				) * 100}`,
+				windowSize: `${Math.floor(window.outerWidth / 100) * 100}x${
+					Math.floor(window.outerHeight / 100) * 100
+				}`,
+				displaySize: `${Math.floor((displayWidth * scale) / 100) * 100}x${
+					Math.floor((displayHeight * scale) / 100) * 100
+				}`,
 				scalingSize: scale, // this value would is accurate in edge
-				isFirstLaunch: this.isFirstLaunch
+				isFirstLaunch: this.isFirstLaunch,
 			})
 		);
 	}
@@ -217,18 +229,21 @@ export class MetricService {
 			ItemType: EventName.apploaded,
 			DurationForWeb: this.appInitDuration,
 			DurationActivatePage: this.firstPageActiveDuration,
-			TargePage: this.getPageName()
-		}
+			TargePage: this.getPageName(),
+		};
 		this.metricsClient.sendAsync(loadedEvent);
 	}
 
 	private sendInstallationMetric(metricEnable) {
 		const win: any = window;
-		if (win.VantageShellExtension
-			&& win.VantageShellExtension.Metrics
-			&& win.VantageShellExtension.Metrics.Helper
-			&& win.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper) {
-			const SvcInstallationMetricsHelper = win.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper;
+		if (
+			win.VantageShellExtension &&
+			win.VantageShellExtension.Metrics &&
+			win.VantageShellExtension.Metrics.Helper &&
+			win.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper
+		) {
+			const SvcInstallationMetricsHelper =
+				win.VantageShellExtension.Metrics.Helper.SvcInstallationMetricsHelper;
 			if (SvcInstallationMetricsHelper.needReportError) {
 				SvcInstallationMetricsHelper.sendFinishMetric(metricEnable);
 			}
@@ -240,7 +255,9 @@ export class MetricService {
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
 
 		const stub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricConst.ActionOpen, stub.launchParms, stub.launchType, 0, 0));
+		this.metricsClient.sendAsync(
+			new AppAction(MetricConst.ActionOpen, stub.launchParms, stub.launchType, 0, 0)
+		);
 	}
 
 	public sendAppResumeMetric() {
@@ -248,65 +265,90 @@ export class MetricService {
 		this.blurDurationCounter = this.timerService.getBlurDurationCounter();
 
 		const stub = this.shellService.getVantageStub();
-		const suspendDuration = this.suspendDurationCounter ? this.suspendDurationCounter.getDuration() : 0;
-		this.metricsClient.sendAsync(new AppAction(MetricConst.ActionResume, stub.launchParms, stub.launchType, suspendDuration, 0));
+		const suspendDuration = this.suspendDurationCounter
+			? this.suspendDurationCounter.getDuration()
+			: 0;
+		this.metricsClient.sendAsync(
+			new AppAction(
+				MetricConst.ActionResume,
+				stub.launchParms,
+				stub.launchType,
+				suspendDuration,
+				0
+			)
+		);
 	}
 
 	public sendAppSuspendMetric() {
 		this.suspendDurationCounter = this.timerService.getSuspendDurationCounter();
-		const focusDuration = this.focusDurationCounter ? this.focusDurationCounter.getDuration() : 0;
+		const focusDuration = this.focusDurationCounter
+			? this.focusDurationCounter.getDuration()
+			: 0;
 		const blurDuration = this.blurDurationCounter ? this.blurDurationCounter.getDuration() : 0;
 		const stub = this.shellService.getVantageStub();
-		this.metricsClient.sendAsync(new AppAction(MetricConst.ActionSuspend, stub.launchParms, stub.launchType, focusDuration, blurDuration));
+		this.metricsClient.sendAsync(
+			new AppAction(
+				MetricConst.ActionSuspend,
+				stub.launchParms,
+				stub.launchType,
+				focusDuration,
+				blurDuration
+			)
+		);
 	}
 
 	public sendSystemUpdateStatusMetric(metricsName: string, status: string) {
 		const metricsData = {
 			ItemParent: 'SystemUpdate',
 			ItemName: metricsName,
-			ItemType: status
+			ItemType: status,
 		};
 		this.sendMetrics(metricsData);
 	}
 
-	public sendSystemUpdateMetric(avilablePackage: number, packageIdArray: string, message: string, searchStart: Date) {
-		this.metricsClient.sendAsync(new TaskAction(
-			MetricConst.TaskCheckSystemUpdate,
-			avilablePackage,
-			packageIdArray,
-			message,
-			MetricHelper.timeSpan(new Date(), searchStart)
-		));
+	public sendSystemUpdateMetric(
+		avilablePackage: number,
+		packageIdArray: string,
+		message: string,
+		searchStart: Date
+	) {
+		this.metricsClient.sendAsync(
+			new TaskAction(
+				MetricConst.TaskCheckSystemUpdate,
+				avilablePackage,
+				packageIdArray,
+				message,
+				MetricHelper.timeSpan(new Date(), searchStart)
+			)
+		);
 	}
 
-	public sendInstallUpdateMetric(avilablePackage: number, packageIdArray: string, message: string) {
-		this.metricsClient.sendAsync(new TaskAction(
-			MetricConst.TaskInstallSystemUpdate,
-			avilablePackage,
-			packageIdArray,
-			message,
-			0
-		));
+	public sendInstallUpdateMetric(
+		avilablePackage: number,
+		packageIdArray: string,
+		message: string
+	) {
+		this.metricsClient.sendAsync(
+			new TaskAction(
+				MetricConst.TaskInstallSystemUpdate,
+				avilablePackage,
+				packageIdArray,
+				message,
+				0
+			)
+		);
 	}
 
 	public sendSetUpdateSchedule(taskParam, response) {
-		this.metricsClient.sendAsync(new TaskAction(
-			MetricConst.TaskSetUpdateSchedule,
-			1,
-			taskParam,
-			response,
-			0
-		));
+		this.metricsClient.sendAsync(
+			new TaskAction(MetricConst.TaskSetUpdateSchedule, 1, taskParam, response, 0)
+		);
 	}
 
 	public sendSetScanSchedule(taskParam, response) {
-		this.metricsClient.sendAsync(new TaskAction(
-			MetricConst.TaskSetScanSchedule,
-			1,
-			taskParam,
-			response,
-			0
-		));
+		this.metricsClient.sendAsync(
+			new TaskAction(MetricConst.TaskSetScanSchedule, 1, taskParam, response, 0)
+		);
 	}
 
 	public sendArticleView(articleView: ArticleView) {
@@ -314,10 +356,12 @@ export class MetricService {
 	}
 
 	public getPageName() {
-		return this.activeRouter.snapshot.data.pageName
-			|| this.activeRouter.snapshot.root.firstChild.data.pageName
-			|| this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName
-			|| MetricConst.Unknown;
+		return (
+			this.activeRouter.snapshot.data.pageName ||
+			this.activeRouter.snapshot.root.firstChild.data.pageName ||
+			this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName ||
+			MetricConst.Unknown
+		);
 	}
 
 	public sendContentDisplay(itemID: string, dataSource: string, position: string) {
@@ -327,14 +371,14 @@ export class MetricService {
 			DataSource: this.toLower(dataSource),
 			Position: position,
 			ItemParent: this.getPageName(),
-		}
+		};
 
 		this.metricsClient.sendAsync(contentDisplay);
 	}
 
 	private sendAppLoadedMetrics() {
 		if (this.hasSendAppLoadedEvent) {
-			return;	// send the initialzation metrics once at one session
+			return; // send the initialzation metrics once at one session
 		}
 		this.hasSendAppLoadedEvent = true;
 
@@ -353,11 +397,13 @@ export class MetricService {
 
 	private async onWebLoaded() {
 		await this.metricReady();
-		if (this.metricsClient.metricsEnabled) {	// in normal case for first run, if the welcome page was not done, the metrics will be disable.
-			this.sendAppLoadedMetrics();	// send these metric event in dashboard at the scenarios when welcome page was done.
+		if (this.metricsClient.metricsEnabled) {
+			// in normal case for first run, if the welcome page was not done, the metrics will be disable.
+			this.sendAppLoadedMetrics(); // send these metric event in dashboard at the scenarios when welcome page was done.
 		}
 
-		if (this.welcomeNeeded === false) { // default is undefined
+		if (this.welcomeNeeded === false) {
+			// default is undefined
 			this.sendInstallationMetric(this.metricsClient.metricsEnabled);
 		}
 	}
@@ -373,13 +419,14 @@ export class MetricService {
 			return;
 		}
 
-		this.firstPageActiveDuration = Date.now() - this.appInitTime;	// record the firt time to active a page route
+		this.firstPageActiveDuration = Date.now() - this.appInitTime; // record the firt time to active a page route
 		this.onWebLoaded();
 	}
 
 	public async onCheckedWelcomePageNeeded(welcomeNeeded: boolean) {
 		this.welcomeNeeded = welcomeNeeded;
-		if (this.welcomeNeeded === false) {	 // default is undefined
+		if (this.welcomeNeeded === false) {
+			// default is undefined
 			await this.metricReady();
 			this.sendInstallationMetric(this.metricsClient.metricsEnabled);
 		}
@@ -401,7 +448,9 @@ export class MetricService {
 		if (!container) {
 			return 0;
 		}
-		return Math.round((container.scrollTop + container.clientHeight) * 100 / container.scrollHeight);
+		return Math.round(
+			((container.scrollTop + container.clientHeight) * 100) / container.scrollHeight
+		);
 	}
 
 	public activateScrollCounter(pageName: any) {
@@ -412,11 +461,11 @@ export class MetricService {
 			if (!preRecord || preRecord < curRecord) {
 				this.maxScrollRecorder[pageName] = curRecord;
 			}
-		}
+		};
 	}
 
 	public deactivateScrollCounter(pageName: any = null) {
-		this.pageScollEvent = () => { };
+		this.pageScollEvent = () => {};
 	}
 
 	public notifyPageScollEvent(htmlElm: any = null) {
@@ -426,17 +475,26 @@ export class MetricService {
 
 	public getExternalMetricsSettings(): Promise<boolean> {
 		if (this.metricsClient.getExternalMetricsSettings) {
-			return this.metricsClient.getExternalMetricsSettings().then((result) => {
-				if (result &&
-					((result.deviceMetricsSettings && this.toLower(result.deviceMetricsSettings) === 'enabled') ||
-						(result.freMetricsSettings && this.toLower(result.freMetricsSettings) === 'enabled'))) {
-					this.metricsClient.metricsEnabled = true;
-					this.externalAppMetricsState = true;
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
-					return true;
-				}
-				return false;
-			})
+			return this.metricsClient
+				.getExternalMetricsSettings()
+				.then((result) => {
+					if (
+						result &&
+						((result.deviceMetricsSettings &&
+							this.toLower(result.deviceMetricsSettings) === 'enabled') ||
+							(result.freMetricsSettings &&
+								this.toLower(result.freMetricsSettings) === 'enabled'))
+					) {
+						this.metricsClient.metricsEnabled = true;
+						this.externalAppMetricsState = true;
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.UserDeterminePrivacy,
+							true
+						);
+						return true;
+					}
+					return false;
+				})
 				.catch((error) => {
 					return false;
 				});
@@ -469,23 +527,25 @@ export class MetricService {
 				d_fam: 'NA',
 				d_mtm: 'NA',
 				d_id: 'NA',
-				d_time: currentDate
+				d_time: currentDate,
 			},
 			app_info: {
 				a_key: this.metricsClient.appId,
 				a_ver: this.metricsClient.appVersion,
-				a_name: this.metricsClient.appName
+				a_name: this.metricsClient.appName,
 			},
 			events: [
 				{
 					e_name: `statistic_mcafee_download${environmentValue}`,
-					e_time: currentDate
-				}
-			]
+					e_time: currentDate,
+				},
+			],
 		};
 		const res = await this.metricsClient.sendMcafeeStatisticDownload(settingData);
 		if (!res) {
-			this.http.post('https://chifsr.lenovomm.com/PCJson', `json=${JSON.stringify(settingData)}`).subscribe();
+			this.http
+				.post('https://chifsr.lenovomm.com/PCJson', `json=${JSON.stringify(settingData)}`)
+				.subscribe();
 		}
 	}
 
@@ -510,13 +570,13 @@ export class MetricService {
 		const metricEvent = {
 			e_name: 'LenovoSurvey',
 			// e_time: colectionTime, -- auto supply
-			e_data: customData
+			e_data: customData,
 		};
 		const fullPayload = {
 			app_info: appInfo,
 			device_info: deviceInfo,
 			user_info: userInfo,
-			events: [metricEvent]
+			events: [metricEvent],
 		};
 
 		this.metricsClient.autoFillAndSend(fullPayload, { forced: true, autoFill: true });

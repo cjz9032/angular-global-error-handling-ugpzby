@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .title {
 	color: $light;
@@ -10,12 +10,13 @@
 	color: $light;
 	font-size: $fontsize_xs;
 	line-height: 2.1rem;
-	padding:0rem 2.4rem// updated as per new specs
+	padding: 0rem 2.4rem // updated as per new specs
+;
 }
 
 .progress-div {
 	align-items: flex-end;
-	padding:0rem 2.4rem;
+	padding: 0rem 2.4rem;
 	.progress-percent-text {
 		color: $light;
 		font-size: $fontsize_xl;
@@ -62,27 +63,21 @@
 	animation: dots 2s steps(5, end) infinite;
 
 	@keyframes dots {
-		0%, 20% {
-			color: rgba(0,0,0,0);
-			text-shadow:
-				.25em 0 0 rgba(0,0,0,0),
-				.5em 0 0 rgba(0,0,0,0);
+		0%,
+		20% {
+			color: rgba(0, 0, 0, 0);
+			text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
 		}
 		40% {
 			color: $color;
-			text-shadow:
-				.25em 0 0 rgba(0,0,0,0),
-				.5em 0 0 rgba(0,0,0,0);
+			text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
 		}
 		60% {
-			text-shadow:
-				.25em 0 0 $color,
-				.5em 0 0 rgba(0,0,0,0);
+			text-shadow: 0.25em 0 0 $color, 0.5em 0 0 rgba(0, 0, 0, 0);
 		}
-		80%, 100% {
-			text-shadow:
-				.25em 0 0 $color,
-				.5em 0 0 $color;
+		80%,
+		100% {
+			text-shadow: 0.25em 0 0 $color, 0.5em 0 0 $color;
 		}
 	}
 }
@@ -97,4 +92,3 @@
 		@include dots($dark);
 	}
 }
-

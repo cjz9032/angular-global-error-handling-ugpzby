@@ -8,9 +8,8 @@ xdescribe('PageSupportComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [PageSupportDetailComponent]
-		})
-			.compileComponents();
+			declarations: [PageSupportDetailComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

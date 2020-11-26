@@ -1,15 +1,26 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { AppItem, DownloadButtonStatusEnum, ModernPreloadService } from 'src/app/services/modern-preload/modern-preload.service';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	ViewChild,
+	ElementRef,
+} from '@angular/core';
+import {
+	AppItem,
+	DownloadButtonStatusEnum,
+	ModernPreloadService,
+} from 'src/app/services/modern-preload/modern-preload.service';
 import { ModernPreloadStatusEnum } from 'src/app/enums/modern-preload.enum';
 import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
 	selector: 'vtr-widget-modern-preload-app',
 	templateUrl: './widget-modern-preload-app.component.html',
-	styleUrls: ['./widget-modern-preload-app.component.scss']
+	styleUrls: ['./widget-modern-preload-app.component.scss'],
 })
 export class WidgetModernPreloadAppComponent implements OnInit {
-
 	@Input() appItem: AppItem = new AppItem();
 	@Input() redemptionSupport = false;
 	@Input() successIconBase64 = '';
@@ -27,10 +38,10 @@ export class WidgetModernPreloadAppComponent implements OnInit {
 
 	constructor(
 		public modernPreloadService: ModernPreloadService,
-		private clipboardService: ClipboardService,
-	) { }
+		private clipboardService: ClipboardService
+	) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	copy(text: string, id: string) {
 		this.clipboardService.copyFromContent(text);
@@ -52,5 +63,4 @@ export class WidgetModernPreloadAppComponent implements OnInit {
 	checkedApp() {
 		this.checkedAppEmitter.emit();
 	}
-
 }

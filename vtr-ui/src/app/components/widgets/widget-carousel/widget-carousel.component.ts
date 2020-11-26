@@ -1,4 +1,13 @@
-import { Component, Input, OnInit, SimpleChanges, OnChanges, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import {
+	Component,
+	Input,
+	OnInit,
+	SimpleChanges,
+	OnChanges,
+	ViewChild,
+	ElementRef,
+	OnDestroy,
+} from '@angular/core';
 import { NgbCarouselConfig, NgbCarousel, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -11,9 +20,8 @@ import { ContentSource } from 'src/app/enums/content.enum';
 	selector: 'vtr-widget-carousel',
 	templateUrl: './widget-carousel.component.html',
 	styleUrls: ['./widget-carousel.component.scss'],
-	providers: [NgbCarouselConfig]
+	providers: [NgbCarouselConfig],
 })
-
 export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 	@ViewChild(NgbCarousel) carouselContainer;
 	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
@@ -44,16 +52,20 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 		private config: NgbCarouselConfig,
 		private commonService: CommonService,
 		private cardService: CardService,
-		private metricsService: MetricService,
-	) {
-	}
+		private metricsService: MetricService
+	) {}
 
 	ngOnInit() {
 		this.config.interval = typeof this.interval !== 'undefined' ? this.interval : 5000;
 		this.config.keyboard = typeof this.keyboard !== 'undefined' ? this.keyboard : true;
-		this.config.pauseOnHover = typeof this.pauseOnHover !== 'undefined' ? this.pauseOnHover : true;
-		this.config.showNavigationArrows = typeof this.showNavigationArrows !== 'undefined' ? this.showNavigationArrows : true;
-		this.config.showNavigationIndicators = typeof this.showNavigationIndicators !== 'undefined' ? this.showNavigationIndicators : true;
+		this.config.pauseOnHover =
+			typeof this.pauseOnHover !== 'undefined' ? this.pauseOnHover : true;
+		this.config.showNavigationArrows =
+			typeof this.showNavigationArrows !== 'undefined' ? this.showNavigationArrows : true;
+		this.config.showNavigationIndicators =
+			typeof this.showNavigationIndicators !== 'undefined'
+				? this.showNavigationIndicators
+				: true;
 		this.config.wrap = typeof this.wrap !== 'undefined' ? this.wrap : true;
 		this.parseToCarouselModel();
 
@@ -66,7 +78,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 
 	byString(o: any, s: string) {
 		s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
-		s = s.replace(/^\./, '');           // strip a leading dot
+		s = s.replace(/^\./, ''); // strip a leading dot
 		const a = s.split('.');
 		for (let i = 0, n = a.length; i < n; ++i) {
 			const k = a[i];
@@ -84,7 +96,6 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 		if (!change.isFirstChange()) {
 			this.parseToCarouselModel();
 		}
-
 	}
 
 	parseToCarouselModel() {
@@ -98,7 +109,8 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 				link: carousel.ActionLink ? carousel.ActionLink : '',
 				linkType: carousel.ActionType || '',
 				dataSource: carousel.DataSource || '',
-				overlayThemeDark: !carousel.OverlayTheme || carousel.OverlayTheme !== CardOverlayTheme.Light,
+				overlayThemeDark:
+					!carousel.OverlayTheme || carousel.OverlayTheme !== CardOverlayTheme.Light,
 			});
 		}
 
@@ -109,7 +121,11 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 
 		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
 		if (firstCarousel.DataSource && firstCarousel.DataSource !== ContentSource.Local) {
-			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(this.data, () => this.containerSarousel, 1);
+			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(
+				this.data,
+				() => this.containerSarousel,
+				1
+			);
 		}
 	}
 
@@ -157,7 +173,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 			const index = this.getIndexFromId(this.currentSlideId);
 			if (index >= 0) {
 				const model = this.carouselModel[index];
-				this.linkClicked($event, model.linkType, model.link, model.cardTitle)
+				this.linkClicked($event, model.linkType, model.link, model.cardTitle);
 			}
 		}
 	}
@@ -179,21 +195,20 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 		}
 
 		tooltip.close();
-		if(this.closeTipTimer){
+		if (this.closeTipTimer) {
 			clearTimeout(this.closeTipTimer);
 		}
 	}
 	/**
 	 * Close tooltip after 3sec
 	 */
-	public closeTipTimeout(tooltip:any){
+	public closeTipTimeout(tooltip: any) {
 		this.closeTipTimer = setTimeout(this.closeTip, 5000, tooltip);
 	}
 
 	public ngOnDestroy() {
 		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
 	}
-
 }
 
 interface CarouselModel {
@@ -206,5 +221,3 @@ interface CarouselModel {
 	dataSource?: string;
 	overlayThemeDark?: boolean;
 }
-
-

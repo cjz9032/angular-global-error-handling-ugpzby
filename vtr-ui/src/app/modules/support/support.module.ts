@@ -31,7 +31,6 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
 import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
 
-
 @NgModule({
 	declarations: [
 		PageSupportComponent,
@@ -54,22 +53,12 @@ import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-cl
 		NgbModalModule,
 		FeedbackModule,
 		PageLayoutModule,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
-	providers: [
-		SupportService,
-		LicensesService,
-	],
-	exports: [
-		UIArticleItemComponent,
-		ContainerArticleComponent,
-	],
-	entryComponents: [
-		ModalLicenseComponent,
-		ModalAboutComponent,
-		ModalFindUsComponent,
-	],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	providers: [SupportService, LicensesService],
+	exports: [UIArticleItemComponent, ContainerArticleComponent],
+	entryComponents: [ModalLicenseComponent, ModalAboutComponent, ModalFindUsComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class SupportModule {
 	constructor(library: FaIconLibrary) {
@@ -80,7 +69,7 @@ export class SupportModule {
 			faTicketAlt,
 			faBriefcase,
 			falHeart,
-			faRobot,
+			faRobot
 		);
 	}
 }

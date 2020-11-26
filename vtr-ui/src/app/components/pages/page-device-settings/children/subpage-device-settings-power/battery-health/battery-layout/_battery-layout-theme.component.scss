@@ -1,6 +1,6 @@
-@import "src/app/app.theme";
-@import "../battery-health.theme";
-@import "../a11y";
+@import 'src/app/app.theme';
+@import '../battery-health.theme';
+@import '../a11y';
 
 @mixin battery-layout-color($theme) {
 	$background: map-get($theme, background);

@@ -5,16 +5,15 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 
 @Directive({
-	selector: '[vtrLinkStatus]'
+	selector: '[vtrLinkStatus]',
 })
 export class LinkStatusDirective {
 	private isOnline = this.commonService.isOnline;
 	constructor(
 		private containerRef: ViewContainerRef,
 		private template: TemplateRef<any>,
-		private commonService: CommonService,
-	) {
-	}
+		private commonService: CommonService
+	) {}
 
 	@Input() set vtrLinkStatus(translatedString: string) {
 		this.containerRef.createEmbeddedView(this.template);
@@ -22,14 +21,19 @@ export class LinkStatusDirective {
 		element.insertAdjacentElement('afterend', document.createElement('span'));
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
-			if (this.isOnline || (element.attributes['unSupportOffline'] ? element.attributes['unSupportOffline'] : false)) {
+			if (
+				this.isOnline ||
+				(element.attributes['unSupportOffline']
+					? element.attributes['unSupportOffline']
+					: false)
+			) {
 				element.innerText = translatedString;
-				element.nextElementSibling.innerHTML = ''
+				element.nextElementSibling.innerHTML = '';
 			} else {
 				element.innerText = '';
 				element.nextElementSibling.innerHTML = translatedString;
 			}
-		})
+		});
 	}
 
 	private onNotification(notification: AppNotification) {

@@ -3,14 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { AntivirusService } from './antivirus.service';
 
 xdescribe('AntivirusService', () => {
-  let service: AntivirusService;
+	let service: AntivirusService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AntivirusService);
-  });
+	beforeEach(() => {
+		TestBed.configureTestingModule({});
+		service = TestBed.inject(AntivirusService);
+	});
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+	it('should be created', () => {
+		expect(service).toBeTruthy();
+	});
 });

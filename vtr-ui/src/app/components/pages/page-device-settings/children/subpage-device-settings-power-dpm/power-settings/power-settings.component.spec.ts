@@ -22,9 +22,8 @@ describe('PowerSettingsComponent', () => {
 			declarations: [PowerSettingsComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-			providers: [TranslateStore]
-		})
-			.compileComponents();
+			providers: [TranslateStore],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

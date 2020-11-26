@@ -16,78 +16,77 @@ const routes: Routes = [
 	{
 		path: '',
 		component: PageDeviceGamingComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Device',
-			pageContent: 'Device Status'
-		}
+			pageContent: 'Device Status',
+		},
 	},
 	{
 		path: 'device-gaming',
 		component: PageDeviceGamingComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService],
 		data: {
 			pageName: 'Gaming.Dashboard',
-			pageContent: 'Gaming Dashboard'
-		}
+			pageContent: 'Gaming Dashboard',
+		},
 	},
 	{
 		path: 'macrokey',
 		component: PageMacrokeyComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard],
 		data: {
 			pageName: 'Gaming.Macrokey',
-			pageContent: 'Gaming Macrokey'
-		}
+			pageContent: 'Gaming Macrokey',
+		},
 	},
 	{
 		path: 'lightingcustomize/:id',
 		component: PageLightingcustomizeComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard],
 
 		data: {
 			pageName: 'Gaming.Lighting',
-			pageContent: 'Gaming Lighting'
-		}
+			pageContent: 'Gaming Lighting',
+		},
 	},
 	{
 		path: 'networkboost',
 		component: PageNetworkboostComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard],
 		data: {
 			pageName: 'Gaming.NetworkBoost',
-			pageContent: 'Gaming NetworkBoost'
-
-		}
+			pageContent: 'Gaming NetworkBoost',
+		},
 	},
 	{
 		path: 'autoclose',
 		component: PageAutocloseComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard ],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonCommercialGuard, NonSMBGuard, NonConsumerGuard],
 		data: {
 			pageName: 'Gaming.AutoClose',
-			pageContent: 'Gaming AutoClose'
-		}
+			pageContent: 'Gaming AutoClose',
+		},
 	},
 	{
 		path: 'user',
 		component: PageUserComponent,
-		canDeactivate: [ GuardService ],
-		canActivate: [ GuardService, NonCommercialGuard],
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonCommercialGuard],
 		data: {
-			pageName: 'User'
-		}
-	}
+			pageName: 'User',
+		},
+	},
 ];
 
 @NgModule({
-	imports: [ RouterModule.forChild(routes) ],
-	exports: [ RouterModule ]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
 export class GamingRoutingModule {}

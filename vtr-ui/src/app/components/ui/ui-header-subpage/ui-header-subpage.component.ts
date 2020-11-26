@@ -6,23 +6,20 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-ui-header-subpage',
 	templateUrl: './ui-header-subpage.component.html',
-	styleUrls: ['./ui-header-subpage.component.scss']
+	styleUrls: ['./ui-header-subpage.component.scss'],
 })
-
 export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
-
 	@Input() title: string;
 	@Input() caption: string;
 	@Input() textId: string;
 	@Input() metricsParent: string;
-	@Input() menu: { title: string, items: PageAnchorLink[] };
+	@Input() menu: { title: string; items: PageAnchorLink[] };
 	fromTab = 'fromTab';
 	pageHeader = 'pageHeader';
 	@ViewChild('pageHeadingRef', { static: false }) pageHeadingRef: ElementRef;
-	constructor(private route: ActivatedRoute, private logger: LoggerService) { }
+	constructor(private route: ActivatedRoute, private logger: LoggerService) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	menuItemClick(event, item) {
 		try {
@@ -34,12 +31,11 @@ export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
 
 				// fix for VAN-12795 , focus element only when event is key press for narrator to read element text.
 				// if (event.type !== 'click') {
-				const focusElement = element.querySelector('[tabIndex = \'-1\']') as HTMLElement;
+				const focusElement = element.querySelector("[tabIndex = '-1']") as HTMLElement;
 				if (focusElement) {
 					focusElement.focus();
 				}
 			}
-
 		} catch (error) {
 			this.logger.error('UiHeaderSubpageComponent.menuItemClick ' + error);
 		}
@@ -59,10 +55,6 @@ export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
 			// 		document.getElementById(this.pageHeader).focus();
 			// 	}
 			// }
-
-		} catch (error) {
-
-		}
-
+		} catch (error) {}
 	}
 }

@@ -1,7 +1,7 @@
 @import '../../../app.theme.scss';
 
 .vtr-widget-qa {
-    border-radius: $border_radius;
+	border-radius: $border_radius;
 	background-color: $light;
 	box-shadow: $drop_shadow;
 	padding: 2rem;
@@ -23,7 +23,7 @@
 	}
 
 	.qa_title {
-		color: #194A65;
+		color: #194a65;
 		font-size: 2.5rem;
 		line-height: 2.9rem;
 		font-weight: normal;
@@ -72,15 +72,15 @@
 		color: $menu_hover;
 		max-width: 2.2rem;
 		font-size: 2.4rem;
-        text-align: center;
-        cursor: pointer;
-    }
+		text-align: center;
+		cursor: pointer;
+	}
 
-    .chevron-icon {
+	.chevron-icon {
 		color: $menu_hover;
 		font-size: 2rem;
-        cursor: pointer;
-    }
+		cursor: pointer;
+	}
 
 	.item-description {
 		background-color: $gray_white;

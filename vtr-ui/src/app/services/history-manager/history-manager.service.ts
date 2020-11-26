@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 import { GuardConstants } from '../guard/guard-constants';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class HistoryManager {
 	history: Array<PageRoute>;
@@ -18,18 +18,31 @@ export class HistoryManager {
 		this.history = [];
 		this.subscription = this.router.events
 			.pipe(
-				filter(event => event instanceof NavigationEnd || event instanceof NavigationCancel)
+				filter(
+					(event) => event instanceof NavigationEnd || event instanceof NavigationCancel
+				)
 			)
 			.subscribe((event: NavigationEnd | NavigationCancel) => {
 				if (event instanceof NavigationEnd) {
-					if (this.backRoute && this.backRoute.finalPath.split('?')[0] === event.urlAfterRedirects) {
+					if (
+						this.backRoute &&
+						this.backRoute.finalPath.split('?')[0] === event.urlAfterRedirects
+					) {
 						this.currentRoute = this.backRoute;
 						this.backRoute = null;
 					} else {
 						const currentNavigation = this.router.getCurrentNavigation();
-						const previousNavigation = currentNavigation ? currentNavigation.previousNavigation : null;
-						const skipPreviousUrl = previousNavigation && previousNavigation.extras && previousNavigation.extras.skipLocationChange;
-						const replaceUrl = currentNavigation && currentNavigation.extras && currentNavigation.extras.replaceUrl;
+						const previousNavigation = currentNavigation
+							? currentNavigation.previousNavigation
+							: null;
+						const skipPreviousUrl =
+							previousNavigation &&
+							previousNavigation.extras &&
+							previousNavigation.extras.skipLocationChange;
+						const replaceUrl =
+							currentNavigation &&
+							currentNavigation.extras &&
+							currentNavigation.extras.replaceUrl;
 
 						let newPage = new PageRoute(event.url, event.urlAfterRedirects);
 
@@ -39,7 +52,11 @@ export class HistoryManager {
 
 						this.currentRoute = newPage;
 					}
-				} else if (event instanceof NavigationCancel && this.backRoute && event.url === this.backRoute.finalPath.split('?')[0]) {
+				} else if (
+					event instanceof NavigationCancel &&
+					this.backRoute &&
+					event.url === this.backRoute.finalPath.split('?')[0]
+				) {
 					this.goBack();
 				}
 			});

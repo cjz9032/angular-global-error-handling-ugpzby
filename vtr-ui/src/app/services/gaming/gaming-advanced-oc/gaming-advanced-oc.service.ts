@@ -4,23 +4,22 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class GamingAdvancedOCService {
-
-  private gamingAdvancedOC: any;
+	private gamingAdvancedOC: any;
 	public isShellAvailable = false;
 
 	constructor(
 		private shellService: VantageShellService,
-		private localCacheService: LocalCacheService,
-		) {
+		private localCacheService: LocalCacheService
+	) {
 		this.gamingAdvancedOC = shellService.getGamingAdvancedOC();
 		if (this.gamingAdvancedOC) {
 			this.isShellAvailable = true;
 		}
-  }
-  	getAdvancedOCInfo(): Promise<any> {
+	}
+	getAdvancedOCInfo(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.gamingAdvancedOC.getAdvancedOCInfo();
@@ -31,16 +30,16 @@ export class GamingAdvancedOCService {
 		}
 	}
 
-	setAdvancedOCInfo (value:any): Promise<any> {
+	setAdvancedOCInfo(value: any): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-			return this.gamingAdvancedOC.setAdvancedOCInfo(value);
+				return this.gamingAdvancedOC.setAdvancedOCInfo(value);
 			}
 			return undefined;
 		} catch (error) {
 			throw new Error(error);
 		}
-	  }
+	}
 
 	getAdvancedOCInfoCache() {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.AdvancedOCInfo);

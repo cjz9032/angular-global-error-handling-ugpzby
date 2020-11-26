@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
 	selector: 'vtr-subpage-scan-results-accordion',
 	templateUrl: './subpage-scan-results-accordion.component.html',
-	styleUrls: ['./subpage-scan-results-accordion.component.scss']
+	styleUrls: ['./subpage-scan-results-accordion.component.scss'],
 })
 export class SubpageScanResultsAccordionComponent implements OnInit {
 	@Input() tune = 0;
@@ -85,7 +85,7 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 						'smartPerformance.scanCompletePage.tunepc.registryerrorsscannedareas.area6',
 					],
 				},
-			]
+			],
 		},
 		{
 			id: 'Internet performance',
@@ -161,7 +161,7 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 						'smartPerformance.scanCompletePage.internetperformance.wifiperformancescannedareas.area6',
 					],
 				},
-			]
+			],
 		},
 		{
 			id: 'Malware & Security',
@@ -237,20 +237,18 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 						'smartPerformance.scanCompletePage.malwaresecurity.annoyingadwarescannedareas.area6',
 					],
 				},
-			]
+			],
 		},
 	];
 
-	constructor() { }
-	ngOnInit(): void {
-	}
+	constructor() {}
+	ngOnInit(): void {}
 
 	scrollToCurrentCard(element: any, isExpanded: boolean) {
 		if (isExpanded) {
 			setTimeout(() => {
-				element.scrollIntoView(({behavior: 'smooth', block: 'center', inline: 'nearest'}));
+				element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
 			}, 0);
 		}
 	}
-
 }

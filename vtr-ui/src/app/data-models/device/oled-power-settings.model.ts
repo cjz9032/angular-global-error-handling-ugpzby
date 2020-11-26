@@ -3,5 +3,6 @@ export class OledPowerSettings {
 		public isCapable: boolean,
 		public taskBarDimmerValue: number,
 		public backgroundDimmerValue: number,
-		public displayDimmerValue: number) { }
+		public displayDimmerValue: number
+	) {}
 }

@@ -20,10 +20,8 @@ describe('UiDaysPickerComponent', () => {
 			declarations: [UiDaysPickerComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule],
-			providers: [TranslateStore, CommonService, SmartStandbyService]
-		})
-			.compileComponents();
-
+			providers: [TranslateStore, CommonService, SmartStandbyService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -51,7 +49,7 @@ describe('UiDaysPickerComponent', () => {
 	it('#UiDaysPickerComponent ngOnChanges ', () => {
 		spyOn(ssbService, 'splitDays');
 		component.ngOnChanges({
-			name: new SimpleChange(null, true, false)
+			name: new SimpleChange(null, true, false),
 		});
 		expect(ssbService.splitDays).toHaveBeenCalled();
 	});
@@ -73,9 +71,7 @@ describe('UiDaysPickerComponent', () => {
 		// button.click();
 		// // spyOn(component, 'clearSettings').and.callThrough();
 		// expect(component.clearSettings).toHaveBeenCalled();
-
 	});
-
 
 	it('#UiDaysPickerComponent onToggleDropDown', () => {
 		// component.showDropDown = true;
@@ -97,7 +93,10 @@ describe('UiDaysPickerComponent', () => {
 	it('#UiDaysPickerComponent sendToggleNotification ', () => {
 		spyOn(commonService, 'sendNotification');
 		component.sendToggleNotification(true);
-		expect(commonService.sendNotification).toHaveBeenCalledWith('smartStandbyToggles', { id: 2, value: true });
+		expect(commonService.sendNotification).toHaveBeenCalledWith('smartStandbyToggles', {
+			id: 2,
+			value: true,
+		});
 	});
 
 	it('#UiDaysPickerComponent setOffDays ', () => {
@@ -134,5 +133,4 @@ describe('UiDaysPickerComponent', () => {
 	// 		expect(component.smartStandbyService.selectedDays.length).toEqual(1);
 	// 	}
 	// });
-
 });

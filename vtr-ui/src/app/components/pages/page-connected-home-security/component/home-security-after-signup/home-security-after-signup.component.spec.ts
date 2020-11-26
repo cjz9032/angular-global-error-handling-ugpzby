@@ -8,9 +8,8 @@ xdescribe('HomeSecurityAfterSignupComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [HomeSecurityAfterSignupComponent]
-		})
-			.compileComponents();
+			declarations: [HomeSecurityAfterSignupComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

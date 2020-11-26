@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 .numbers-holder {
 	position: relative;
 	&.recording {
@@ -9,7 +9,7 @@
 				opacity: 0.8;
 			}
 			&:after {
-				content: "";
+				content: '';
 				position: absolute;
 				width: 100%;
 				height: 100%;
@@ -150,7 +150,7 @@
 				div {
 					position: relative;
 					&:after {
-						content: "";
+						content: '';
 						width: 0.5rem;
 						height: 0.5rem;
 						background-color: $gaming_dark;

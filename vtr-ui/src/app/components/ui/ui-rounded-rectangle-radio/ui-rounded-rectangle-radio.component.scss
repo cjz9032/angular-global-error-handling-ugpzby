@@ -1,8 +1,9 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .vtr-ui-rounded-rectangle-radio {
 	box-sizing: border-box;
-	background: transparent linear-gradient(270deg, $solitude 0%, $grey_lighter 100%) 0% 0% no-repeat padding-box;
+	background: transparent linear-gradient(270deg, $solitude 0%, $grey_lighter 100%) 0% 0%
+		no-repeat padding-box;
 	display: inline-block;
 	margin-right: 1.5rem;
 	margin-bottom: 1rem;
@@ -41,7 +42,7 @@
 		position: relative;
 		z-index: 2;
 		overflow: hidden;
-			.label {
+		.label {
 			// @media #{$mediaquery_X4} {
 			// 	padding-right: .5rem;
 			// 	font-size: 1rem;
@@ -67,20 +68,19 @@
 			color: $grey_darker;
 			top: 1.5rem;
 			left: 1.3rem;
-			.checked-circle{
+			.checked-circle {
 				color: $menu_hover;
 			}
-			@media #{$white-on-black}{
+			@media #{$white-on-black} {
 				background-color: $dark;
-				border:none;
+				border: none;
 				color: $highlight_bright;
 			}
-			@media #{$black-on-white}{
+			@media #{$black-on-white} {
 				background-color: $light;
 				border: none;
 				color: $high-contrast-white-textselected;
 			}
-
 		}
 
 		fa-icon.icon {
@@ -89,7 +89,7 @@
 			top: 9rem;
 			font-size: 3.2rem;
 			color: $menu_hover;
-			}
+		}
 
 		span.question {
 			position: absolute;
@@ -100,10 +100,10 @@
 		}
 	}
 
-	input[type="radio"]:not(:checked) + label::after {
+	input[type='radio']:not(:checked) + label::after {
 		opacity: 0;
 		transition: all 1s ease;
-		}
+	}
 	input:checked + label::after {
 		opacity: 1;
 	}
@@ -119,7 +119,6 @@
 		@media #{$black-on-white} {
 			border: 0.2rem solid $high-contrast-white-textselected;
 		}
-
 	}
 	&.border-grey {
 		border: 0.2rem solid $note_border;
@@ -127,7 +126,6 @@
 		@media #{$black-on-white} {
 			border: none;
 		}
-
 	}
 
 	&.border-checked-disabled {
@@ -156,4 +154,3 @@
 .large-width {
 	width: 29rem;
 }
-

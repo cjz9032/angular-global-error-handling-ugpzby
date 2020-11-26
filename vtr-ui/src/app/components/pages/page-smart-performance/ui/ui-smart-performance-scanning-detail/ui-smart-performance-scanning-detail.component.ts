@@ -5,19 +5,15 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 @Component({
 	selector: 'vtr-ui-smart-performance-scanning-detail',
 	templateUrl: './ui-smart-performance-scanning-detail.component.html',
-	styleUrls: ['./ui-smart-performance-scanning-detail.component.scss']
+	styleUrls: ['./ui-smart-performance-scanning-detail.component.scss'],
 })
 export class UiSmartPerformanceScanningDetailComponent implements OnInit, OnChanges {
-
 	itemSliderCount = 0;
 	itemSliderInterval: any;
-	@Input() items: { key: string, isCurrent: boolean }[] = [];
-	detailItems: { key: string, isCurrent: boolean }[] = [];
+	@Input() items: { key: string; isCurrent: boolean }[] = [];
+	detailItems: { key: string; isCurrent: boolean }[] = [];
 
-
-	constructor(
-		public smartPerformanceService: SmartPerformanceService,
-	) { }
+	constructor(public smartPerformanceService: SmartPerformanceService) {}
 
 	ngOnInit() {
 		this.setDetailItems();
@@ -30,7 +26,10 @@ export class UiSmartPerformanceScanningDetailComponent implements OnInit, OnChan
 	}
 
 	setDetailItems() {
-		if (this.items[this.items.length - 1]?.key !== this.detailItems[this.detailItems.length - 1]?.key ) {
+		if (
+			this.items[this.items.length - 1]?.key !==
+			this.detailItems[this.detailItems.length - 1]?.key
+		) {
 			clearInterval(this.itemSliderInterval);
 			this.itemSliderCount = 1;
 			this.detailItems = cloneDeep(this.items);
@@ -50,5 +49,4 @@ export class UiSmartPerformanceScanningDetailComponent implements OnInit, OnChan
 			}
 		}, 2500 * this.itemSliderCount + 1000);
 	}
-
 }

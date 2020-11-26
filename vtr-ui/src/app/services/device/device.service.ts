@@ -14,7 +14,7 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class DeviceService {
 	private device: any;
@@ -41,7 +41,8 @@ export class DeviceService {
 		private router: Router,
 		private logger: LoggerService,
 		private hypSettings: HypothesisService,
-		private localCacheService: LocalCacheService) {
+		private localCacheService: LocalCacheService
+	) {
 		this.device = shellService.getDevice();
 		this.sysInfo = shellService.getSysinfo();
 		this.microphone = shellService.getMicrophoneSettings();
@@ -61,24 +62,33 @@ export class DeviceService {
 			return Promise.resolve(true);
 		}
 		if (this.isShellAvailable) {
-			return this.getMachineInfo().then((res) => {
-				this.isArm = this.isAndroid || (res && res.cpuArchitecture && res.cpuArchitecture.toUpperCase().trim() === 'ARM64');
-				this.isInitArm = true;
-				return this.isArm;
-			}).catch((error) => {
-				this.logger.error('getIsARM' + error.message);
-				return this.isArm;
-			});
+			return this.getMachineInfo()
+				.then((res) => {
+					this.isArm =
+						this.isAndroid ||
+						(res &&
+							res.cpuArchitecture &&
+							res.cpuArchitecture.toUpperCase().trim() === 'ARM64');
+					this.isInitArm = true;
+					return this.isArm;
+				})
+				.catch((error) => {
+					this.logger.error('getIsARM' + error.message);
+					return this.isArm;
+				});
 		}
 	}
 
 	private initShowSearch() {
 		if (this.hypSettings) {
-			this.hypSettings.getFeatureSetting('FeatureSearch').then((searchFeature) => {
-				this.showSearch = ((searchFeature || '').toString() === 'true');
-			}, (error) => {
-				this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
-			});
+			this.hypSettings.getFeatureSetting('FeatureSearch').then(
+				(searchFeature) => {
+					this.showSearch = (searchFeature || '').toString() === 'true';
+				},
+				(error) => {
+					this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
+				}
+			);
 		}
 	}
 
@@ -101,26 +111,28 @@ export class DeviceService {
 		if (this.isShellAvailable && this.sysInfo) {
 			this.logger.debug('DeviceService.getMachineInfo: no cache, invoking API');
 
-			return this.sysInfo.getMachineInfo()
-				.then((info) => {
-					this.logger.debug('DeviceService.getMachineInfo: response received from API');
-					this.machineInfo = info;
-					this.isSMode = info.isSMode;
-					this.isGaming = info.isGaming;
-					if (!this.showWarranty && (!info.mtm || (info.mtm && !info.mtm.toLocaleLowerCase().endsWith('cd')))) {
-						this.showWarranty = true;
+			return this.sysInfo.getMachineInfo().then((info) => {
+				this.logger.debug('DeviceService.getMachineInfo: response received from API');
+				this.machineInfo = info;
+				this.isSMode = info.isSMode;
+				this.isGaming = info.isGaming;
+				if (
+					!this.showWarranty &&
+					(!info.mtm || (info.mtm && !info.mtm.toLocaleLowerCase().endsWith('cd')))
+				) {
+					this.showWarranty = true;
+				}
+				if (info && info.cpuArchitecture) {
+					if (info.cpuArchitecture.indexOf('64') === -1) {
+						this.is64bit = false;
+					} else {
+						this.is64bit = true;
 					}
-					if (info && info.cpuArchitecture) {
-						if (info.cpuArchitecture.indexOf('64') === -1) {
-							this.is64bit = false;
-						} else {
-							this.is64bit = true;
-						}
-					}
-					this.commonService.sendNotification('MachineInfo', this.machineInfo);
-					this.logger.debug('DeviceService.getMachineInfo: returning response from API');
-					return info;
-				});
+				}
+				this.commonService.sendNotification('MachineInfo', this.machineInfo);
+				this.logger.debug('DeviceService.getMachineInfo: returning response from API');
+				return info;
+			});
 		}
 		return Promise.resolve(undefined);
 	}
@@ -178,12 +190,15 @@ export class DeviceService {
 				return Promise.resolve(this.machineType);
 			}
 
-			const cache = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, -1);
+			const cache = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.MachineType,
+				-1
+			);
 			if (cache !== -1) {
 				this.machineType = cache;
 				return Promise.resolve(this.machineType);
 			}
-			const value =  await this.sysInfo.getMachineType()
+			const value = await this.sysInfo.getMachineType();
 			this.machineType = value;
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.DesktopMachine, value === 4);
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.MachineType, value);

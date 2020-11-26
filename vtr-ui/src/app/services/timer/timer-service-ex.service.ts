@@ -38,7 +38,7 @@ class SuspendDuration implements IDuration {
 }
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class DurationCounterService {
 	private activeFocusCounter = 0;
@@ -68,9 +68,11 @@ export class DurationCounterService {
 
 		setInterval(() => {
 			if (this.appVisible) {
-				if (this.appFocus) {	// vantage is visible and in focus
+				if (this.appFocus) {
+					// vantage is visible and in focus
 					this.activeFocusCounter += 1;
-				} else {				// vantage is visible and out of focus
+				} else {
+					// vantage is visible and out of focus
 					this.activeBlurCounter += 1;
 				}
 			}

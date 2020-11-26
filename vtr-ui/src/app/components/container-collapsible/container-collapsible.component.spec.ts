@@ -8,9 +8,8 @@ xdescribe('ContainerCollapsibleComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ContainerCollapsibleComponent]
-		})
-			.compileComponents();
+			declarations: [ContainerCollapsibleComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

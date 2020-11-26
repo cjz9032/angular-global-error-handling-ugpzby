@@ -4,18 +4,17 @@ import { TranslationModule } from 'src/app/modules/translation.module';
 import { CommonService } from '../common/common.service';
 import { SmartStandbyService } from './smart-standby.service';
 
-
 describe('SmartStandbyService', () => {
-
 	const days = 'sun,mon,tue,wed,thurs,fri,sat';
 
-	beforeEach(() => TestBed.configureTestingModule({
-		providers: [SmartStandbyService, TranslateStore, CommonService],
-		imports: [TranslationModule.forChild()]
-	}));
+	beforeEach(() =>
+		TestBed.configureTestingModule({
+			providers: [SmartStandbyService, TranslateStore, CommonService],
+			imports: [TranslationModule.forChild()],
+		})
+	);
 
 	describe(':', () => {
-
 		function setup() {
 			const smartStandbyService = TestBed.get(SmartStandbyService);
 			const commonService = TestBed.get(CommonService);
@@ -63,7 +62,6 @@ describe('SmartStandbyService', () => {
 			smartStandbyService.days = '';
 			smartStandbyService.splitDays();
 			expect(smartStandbyService.selectedDays).toEqual(['']);
-
 		});
 
 		it('should call splitDays weekendays', () => {
@@ -90,9 +88,5 @@ describe('SmartStandbyService', () => {
 			smartStandbyService.getSelectedDays(2);
 			expect(smartStandbyService.selectedDays).not.toBe([]);
 		});
-
-
-
-
 	});
 });

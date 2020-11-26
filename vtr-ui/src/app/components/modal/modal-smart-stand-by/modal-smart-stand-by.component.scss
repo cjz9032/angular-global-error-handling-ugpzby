@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .vtr-modal-smart-stand-by {
 	&.modal-body {
@@ -108,7 +108,7 @@
 				}
 			}
 		}
-		.legends-box{
+		.legends-box {
 			border: 0.1rem solid $dark;
 			@media #{$white-on-black} {
 				@include white-border;
@@ -120,7 +120,7 @@
 	}
 
 	.activity-chart {
-		font-family: "Segoe UI", sans-serif;
+		font-family: 'Segoe UI', sans-serif;
 		font-size: 10px;
 		letter-spacing: 0.35px;
 	}

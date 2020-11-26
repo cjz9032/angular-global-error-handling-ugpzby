@@ -8,7 +8,7 @@ import { ModalRecoverConfirmComponent } from '../modal-recover-confirm/modal-rec
 @Component({
 	selector: 'vtr-modal-hardware-scan-rbs',
 	templateUrl: './modal-hardware-scan-rbs.component.html',
-	styleUrls: ['./modal-hardware-scan-rbs.component.scss']
+	styleUrls: ['./modal-hardware-scan-rbs.component.scss'],
 })
 export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 	public devices: any[];
@@ -28,8 +28,8 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		public activeModal: NgbActiveModal,
 		private translate: TranslateService,
 		private hardwareScanService: HardwareScanService,
-		private modalService: NgbModal,
-	) { }
+		private modalService: NgbModal
+	) {}
 
 	// Used to close modal when press 'ESC' key
 	@HostListener('document:keydown', ['$event'])
@@ -55,7 +55,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		let selectedDevices: any[];
 
 		if (this.devices) {
-			selectedDevices = this.devices.filter(x => x.isSelected);
+			selectedDevices = this.devices.filter((x) => x.isSelected);
 		}
 
 		this.closeModal();
@@ -64,7 +64,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 			size: '500px',
 			centered: true,
 			windowClass: 'hardware-scan-modal-size',
-			ariaLabelledBy: 'hwscan-recover-title'
+			ariaLabelledBy: 'hwscan-recover-title',
 		});
 		modalRef.componentInstance.confirmClicked.subscribe(() => {
 			this.onConfirmClick(selectedDevices);
@@ -93,7 +93,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 				title: this.translate.instant('hardwareScan.pluginTokens.STORAGE'),
 				name: group.name,
 				status: HardwareScanTestResult.NotStarted,
-				isSelected: this.failedDevicesList.some(p => p === group.id),
+				isSelected: this.failedDevicesList.some((p) => p === group.id),
 				percent: 0,
 				numberOfSectors: 0,
 				numberOfBadSectors: 0,

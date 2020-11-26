@@ -8,9 +8,8 @@ xdescribe('UiHardwareScanTestResultComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiHardwareScanTestResultComponent]
-		})
-			.compileComponents();
+			declarations: [UiHardwareScanTestResultComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

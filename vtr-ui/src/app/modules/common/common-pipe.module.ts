@@ -34,7 +34,7 @@ import { TranslateTokenByTokenPipe } from 'src/app/pipe/translate-token-by-token
 		RemoveSpacePipe,
 		FormatLocaleDateTimePipe,
 		TranslateDefaultValueIfNotFoundPipe,
-		TranslateTokenByTokenPipe
+		TranslateTokenByTokenPipe,
 	],
 	exports: [
 		CapitalizeFirstPipe,
@@ -54,21 +54,11 @@ import { TranslateTokenByTokenPipe } from 'src/app/pipe/translate-token-by-token
 		RemoveSpacePipe,
 		FormatLocaleDateTimePipe,
 		TranslateDefaultValueIfNotFoundPipe,
-		TranslateTokenByTokenPipe
+		TranslateTokenByTokenPipe,
 	],
-	imports: [
-		SanitizeModule,
-	],
-	providers: [
-		FormatLocaleDatePipe,
-		FormatLocaleDateTimePipe,
-		TranslateTokenByTokenPipe
-	],
-	entryComponents: [
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	imports: [SanitizeModule],
+	providers: [FormatLocaleDatePipe, FormatLocaleDateTimePipe, TranslateTokenByTokenPipe],
+	entryComponents: [],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class CommonPipeModule { }
+export class CommonPipeModule {}

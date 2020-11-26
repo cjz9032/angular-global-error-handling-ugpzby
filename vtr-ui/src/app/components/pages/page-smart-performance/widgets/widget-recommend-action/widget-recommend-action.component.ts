@@ -5,19 +5,17 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 @Component({
 	selector: 'vtr-widget-recommend-action',
 	templateUrl: './widget-recommend-action.component.html',
-	styleUrls: ['./widget-recommend-action.component.scss']
+	styleUrls: ['./widget-recommend-action.component.scss'],
 })
 export class WidgetRecommendActionComponent {
-
 	@Input() isDisabled = false;
 
 	constructor(
 		private smartPerformanceDialogService: SmartPerformanceDialogService,
-		public smartPerformanceService: SmartPerformanceService,
-	) { }
+		public smartPerformanceService: SmartPerformanceService
+	) {}
 
 	openSubscribeModal() {
 		this.smartPerformanceDialogService.openSubscribeModal();
 	}
-
 }

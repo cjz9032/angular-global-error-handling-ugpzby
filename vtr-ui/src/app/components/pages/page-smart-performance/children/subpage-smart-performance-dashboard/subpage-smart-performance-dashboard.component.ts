@@ -12,10 +12,9 @@ import { SPHeaderImageType } from 'src/app/enums/smart-performance.enum';
 @Component({
 	selector: 'vtr-subpage-smart-performance-dashboard',
 	templateUrl: './subpage-smart-performance-dashboard.component.html',
-	styleUrls: ['./subpage-smart-performance-dashboard.component.scss']
+	styleUrls: ['./subpage-smart-performance-dashboard.component.scss'],
 })
 export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDestroy {
-
 	@Output() scanEmitter = new EventEmitter();
 
 	private subscription: Subscription;
@@ -29,15 +28,16 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		public smartPerformanceService: SmartPerformanceService,
 		public shellServices: VantageShellService,
 		public metricsTranslateService: MetricsTranslateService,
-		public metricsService: MetricService,
-	) {
-	}
+		public metricsService: MetricService
+	) {}
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
-		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -62,5 +62,4 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 	scanNow() {
 		this.scanEmitter.emit();
 	}
-
 }

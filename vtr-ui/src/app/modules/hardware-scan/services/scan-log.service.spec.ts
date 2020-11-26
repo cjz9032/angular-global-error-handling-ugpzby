@@ -7,8 +7,8 @@ describe('ScanLogService', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			imports: [ HttpClientModule ],
-			providers: [ HttpClientModule ]
+			imports: [HttpClientModule],
+			providers: [HttpClientModule],
 		});
 		service = TestBed.inject(ScanLogService);
 	});

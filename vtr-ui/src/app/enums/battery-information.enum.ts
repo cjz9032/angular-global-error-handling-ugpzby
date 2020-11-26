@@ -1,7 +1,7 @@
 export enum BatteryInformation {
-	BatteryInfo = '[BatteryInformation] BatteryInfo'
+	BatteryInfo = '[BatteryInformation] BatteryInfo',
 }
 
 export enum ChargeThresholdInformation {
-	ChargeThresholdInfo = '[ChargeThresholdInformation] ChargeThresholdInfo'
+	ChargeThresholdInfo = '[ChargeThresholdInformation] ChargeThresholdInfo',
 }

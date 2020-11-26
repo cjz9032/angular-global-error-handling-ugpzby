@@ -8,9 +8,8 @@ xdescribe('ModalCommonConfirmationComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ModalCommonConfirmationComponent]
-		})
-			.compileComponents();
+			declarations: [ModalCommonConfirmationComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

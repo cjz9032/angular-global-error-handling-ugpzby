@@ -7,14 +7,11 @@ import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-in
 @Component({
 	selector: 'vtr-power-use',
 	templateUrl: './power-use.component.html',
-	styleUrls: ['./power-use.component.scss']
+	styleUrls: ['./power-use.component.scss'],
 })
 export class PowerUseComponent implements OnInit, OnDestroy {
-
 	@Input() powerplan: any;
-	constructor(
-		public dpmService: PowerDpmService,
-		private translate: TranslateService) { }
+	constructor(public dpmService: PowerDpmService, private translate: TranslateService) {}
 
 	timeItems: DPMDropDownInterval[];
 	turnoffDisplay: number;
@@ -26,14 +23,16 @@ export class PowerUseComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.initIntervals();
-		this.currentPowerPlanSubscription = this.dpmService.getCurrentPowerPlanObs().subscribe(p => {
-			if (p) {
-				this.turnoffDisplay = p.videoTimeoutAC;
-				this.turnoffHDD = p.hddTimeoutAC;
-				this.sleepAfter = p.suspendTimeoutAC;
-				this.hibernateAfter = p.hiberTimeoutAC;
-			}
-		});
+		this.currentPowerPlanSubscription = this.dpmService
+			.getCurrentPowerPlanObs()
+			.subscribe((p) => {
+				if (p) {
+					this.turnoffDisplay = p.videoTimeoutAC;
+					this.turnoffHDD = p.hddTimeoutAC;
+					this.sleepAfter = p.suspendTimeoutAC;
+					this.hibernateAfter = p.hiberTimeoutAC;
+				}
+			});
 	}
 	ngOnDestroy(): void {
 		if (this.currentPowerPlanSubscription) {
@@ -42,93 +41,102 @@ export class PowerUseComponent implements OnInit, OnDestroy {
 	}
 
 	private initIntervals() {
-		const minute = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.minute');
-		const minutes = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.minutes');
+		const minute = this.translate.instant(
+			'device.deviceSettings.power.dpm.powerUse.items.minute'
+		);
+		const minutes = this.translate.instant(
+			'device.deviceSettings.power.dpm.powerUse.items.minutes'
+		);
 		const hour = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.hour');
-		const hours = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.hours');
-		const never = this.translate.instant('device.deviceSettings.power.dpm.powerUse.items.never');
+		const hours = this.translate.instant(
+			'device.deviceSettings.power.dpm.powerUse.items.hours'
+		);
+		const never = this.translate.instant(
+			'device.deviceSettings.power.dpm.powerUse.items.never'
+		);
 
 		this.timeItems = [
 			{
 				name: '1',
 				value: 1,
-				text: `1 ${minute}`
+				text: `1 ${minute}`,
 			},
 			{
 				name: '2',
 				value: 2,
-				text: `2 ${minutes}`
+				text: `2 ${minutes}`,
 			},
 			{
 				name: '3',
 				value: 3,
-				text: `3 ${minutes}`
+				text: `3 ${minutes}`,
 			},
 			{
 				name: '5',
 				value: 5,
-				text: `5 ${minutes}`
+				text: `5 ${minutes}`,
 			},
 			{
 				name: '10',
 				value: 10,
-				text: `10 ${minutes}`
+				text: `10 ${minutes}`,
 			},
 			{
 				name: '15',
 				value: 15,
-				text: `15 ${minutes}`
+				text: `15 ${minutes}`,
 			},
 			{
 				name: '20',
 				value: 20,
-				text: `20 ${minutes}`
+				text: `20 ${minutes}`,
 			},
 			{
 				name: '25',
 				value: 25,
-				text: `25 ${minutes}`
+				text: `25 ${minutes}`,
 			},
 			{
 				name: '30',
 				value: 30,
-				text: `30 ${minutes}`
+				text: `30 ${minutes}`,
 			},
 			{
 				name: '45',
 				value: 45,
-				text: `45 ${minutes}`
+				text: `45 ${minutes}`,
 			},
 			{
 				name: '60',
 				value: 60,
-				text: `1 ${hour}`
+				text: `1 ${hour}`,
 			},
 			{
 				name: '120',
 				value: 120,
-				text: `2 ${hours}`
+				text: `2 ${hours}`,
 			},
 			{
 				name: '180',
 				value: 180,
-				text: `3 ${hours}`
+				text: `3 ${hours}`,
 			},
 			{
 				name: '240',
 				value: 240,
-				text: `4 ${hours}`
+				text: `4 ${hours}`,
 			},
 			{
 				name: '300',
 				value: 300,
-				text: `5 ${hours}`
+				text: `5 ${hours}`,
 			},
 			{
 				name: '0',
 				value: 0,
-				text: never
-			}];
+				text: never,
+			},
+		];
 
 		this.turnoffDisplay = 0;
 		this.turnoffHDD = 0;

@@ -18,14 +18,9 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { UiListSupportComponent } from './ui-list-support.component';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 @NgModule({
-	declarations: [
-		UiListSupportComponent
-	],
-	exports: [
-		UiListSupportComponent
-	],
+	declarations: [UiListSupportComponent],
+	exports: [UiListSupportComponent],
 	imports: [
 		CommonModule,
 		TranslationModule.forChild(),
@@ -34,12 +29,9 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		RouterModule,
 		MetricsModule,
 		AppSearchModule,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class UiListSupportModule {
 	constructor(library: FaIconLibrary) {

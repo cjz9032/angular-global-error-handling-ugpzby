@@ -1,18 +1,18 @@
-@import "../../../../../../app.theme.scss";
+@import '../../../../../../app.theme.scss';
 
-.top-row-key-block{
-	.text{
+.top-row-key-block {
+	.text {
 		font-size: $fontsize_xs;
 		font-weight: $weight_light;
 		color: $grey_dark;
 	}
-    .link-text {
-        font-size: $fontsize_xs2;
-        font-weight: $weight_bold;
-        text-decoration: underline;
-        letter-spacing: 0.05rem;
-        color: $menu_hover;
-        cursor: pointer;
+	.link-text {
+		font-size: $fontsize_xs2;
+		font-weight: $weight_bold;
+		text-decoration: underline;
+		letter-spacing: 0.05rem;
+		color: $menu_hover;
+		cursor: pointer;
 		padding-top: 0.3rem;
 		border: 0.1rem solid transparent;
 		@media #{$white-on-black} {
@@ -34,28 +34,28 @@
 				border-color: $high-contrast-white-blue;
 			}
 		}
-    }
-    .sectn-padding {
-        padding: 2rem 0.7rem 1.5rem;
+	}
+	.sectn-padding {
+		padding: 2rem 0.7rem 1.5rem;
 	}
 	.methods-block {
 		&:focus {
 			@include outline-blue;
 		}
-    }
-    .sub-heading-caption{
-        color: $purple_navy;
-        font-size: $fontsize_md;
-        font-weight: $weight_600;
-    }
+	}
+	.sub-heading-caption {
+		color: $purple_navy;
+		font-size: $fontsize_md;
+		font-weight: $weight_600;
+	}
 
-    .autofocus{
-        outline: none;
-        @media #{$white-on-black} {
-            border:none;
+	.autofocus {
+		outline: none;
+		@media #{$white-on-black} {
+			border: none;
 		}
 		@media #{$black-on-white} {
-            border:none;
-        }
-    }
+			border: none;
+		}
+	}
 }

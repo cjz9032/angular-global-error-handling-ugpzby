@@ -1,6 +1,6 @@
 import { UiGamingCollapsibleContainerComponent } from './ui-gaming-collapsible-container.component';
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA, Pipe, ElementRef} from '@angular/core';
+import { NO_ERRORS_SCHEMA, Pipe, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
@@ -8,7 +8,7 @@ import { By } from '@angular/platform-browser';
 describe('UiGamingCollapsibleContainerComponent', () => {
 	let component: UiGamingCollapsibleContainerComponent;
 	let fixture: ComponentFixture<UiGamingCollapsibleContainerComponent>;
-	let router = { navigate: jasmine.createSpy('navigate') }
+	let router = { navigate: jasmine.createSpy('navigate') };
 	let drop = {
 		curSelected: 1,
 		modeType: 1,
@@ -21,7 +21,7 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 				id: 'cpu overclock on',
 				ariaLabel: 'on',
 				metricitem: 'cpu_overclock_on',
-				value: 1
+				value: 1,
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.whenGaming',
@@ -30,7 +30,7 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 				id: 'cpu overclock when gaming',
 				ariaLabel: 'when gaming',
 				metricitem: 'cpu_overclock_when_gaming',
-				value: 2
+				value: 2,
 			},
 			{
 				header: 'gaming.dashboard.device.legionEdge.status.off',
@@ -39,21 +39,20 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 				id: 'cpu overclock off',
 				ariaLabel: 'off',
 				metricitem: 'cpu_overclock_off',
-				value: 3
-			}
-		]
-	}
+				value: 3,
+			},
+		],
+	};
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiGamingCollapsibleContainerComponent,
+			declarations: [
+				UiGamingCollapsibleContainerComponent,
 				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' })],
-			schemas: [NO_ERRORS_SCHEMA],
-			providers: [
-				{ provide: HttpClient },
-				{ provide: Router, useValue: router },
+				mockPipe({ name: 'sanitize' }),
 			],
+			schemas: [NO_ERRORS_SCHEMA],
+			providers: [{ provide: HttpClient }, { provide: Router, useValue: router }],
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiGamingCollapsibleContainerComponent);
 		component = fixture.componentInstance;
@@ -100,7 +99,6 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 		tick(100);
 		component.focusElement();
 		expect(component.optionSelected).toHaveBeenCalled();
-
 	}));
 
 	it('Checking call have been made for changeDescription function', fakeAsync(() => {
@@ -128,9 +126,7 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 			component.showOptions = false;
 			component.generalClick(event);
 			expect(component.generalClick(event)).toBeUndefined();
-		} catch (e) {
-
-		}
+		} catch (e) {}
 	});
 
 	it('Checking current focus item', fakeAsync(() => {
@@ -149,7 +145,7 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
 	return Pipe(metadata)(
 		class MockPipe {
@@ -159,4 +155,3 @@ export function mockPipe(options: Pipe): Pipe {
 		}
 	);
 }
-

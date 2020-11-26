@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HardwareScanTestResult, HardwareScanOverallResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
+import {
+	HardwareScanTestResult,
+	HardwareScanOverallResult,
+} from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { HardwareScanResultService } from 'src/app/modules/hardware-scan/services/hardware-scan-result.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class PreviousResultService {
-
 	private hardwareScanBridge: any;
 	private viewResultItems: any;
 
@@ -21,7 +23,8 @@ export class PreviousResultService {
 	constructor(
 		shellService: VantageShellService,
 		private localCacheService: LocalCacheService,
-		private hardwareScanResultService: HardwareScanResultService) {
+		private hardwareScanResultService: HardwareScanResultService
+	) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 	}
 
@@ -29,7 +32,13 @@ export class PreviousResultService {
 		const item: any = this.getPreviousResultsWidget();
 		return {
 			date: item?.date,
-			result: !item?.modules ? null : HardwareScanTestResult[this.hardwareScanResultService.consolidateResults(item.modules.map(module => module.resultModule))]
+			result: !item?.modules
+				? null
+				: HardwareScanTestResult[
+						this.hardwareScanResultService.consolidateResults(
+							item.modules.map((module) => module.resultModule)
+						)
+				  ],
 		};
 	}
 
@@ -41,7 +50,9 @@ export class PreviousResultService {
 			const module: any = {};
 			module.name = item.module;
 			module.subname = item.name;
-			module.resultModule = this.hardwareScanResultService.consolidateResults(item.listTest.map(itemTest => itemTest.statusTest));
+			module.resultModule = this.hardwareScanResultService.consolidateResults(
+				item.listTest.map((itemTest) => itemTest.statusTest)
+			);
 
 			previousItems.modules.push(module);
 		}
@@ -68,7 +79,9 @@ export class PreviousResultService {
 
 				for (let i = 0; i < module.response.groupResults.length; i++) {
 					const item: any = {};
-					const groupResultMeta = groupsResultMeta.find(x => x.id === groupResult[i].id);
+					const groupResultMeta = groupsResultMeta.find(
+						(x) => x.id === groupResult[i].id
+					);
 					const moduleName = groupResult[i].moduleName;
 
 					item.id = moduleId;
@@ -85,7 +98,9 @@ export class PreviousResultService {
 					// Use this validation prevent cyclical dependency with hardwareScanService
 					// [NOTICE] When remove the isDesktopMachine from hardware-scan.service to another service
 					// change this line to use the newest function
-					const desktopMachine = this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
+					const desktopMachine = this.localCacheService.getLocalCacheValue(
+						LocalStorageKey.DesktopMachine
+					);
 					if (!desktopMachine) {
 						if (item.icon === 'pci_express') {
 							item.icon += '_laptop';
@@ -99,23 +114,31 @@ export class PreviousResultService {
 					for (let j = 0; j < groupResult[i].testResultList.length; j++) {
 						const testInfo: any = {};
 						testInfo.id = test[j].id;
-						testInfo.name = testMeta.find(x => x.id === test[j].id).name;
-						testInfo.information = testMeta.find(x => x.id === test[j].id).description;
+						testInfo.name = testMeta.find((x) => x.id === test[j].id).name;
+						testInfo.information = testMeta.find(
+							(x) => x.id === test[j].id
+						).description;
 						testInfo.statusTest = test[j].result;
 
-						if (testInfo.statusTest === HardwareScanTestResult.NotStarted ||
-							testInfo.statusTest === HardwareScanTestResult.InProgress) {
+						if (
+							testInfo.statusTest === HardwareScanTestResult.NotStarted ||
+							testInfo.statusTest === HardwareScanTestResult.InProgress
+						) {
 							testInfo.statusTest = HardwareScanOverallResult.Cancelled;
 						}
 						item.listTest.push(testInfo);
 					}
-					item.resultModule = this.hardwareScanResultService.consolidateResults(test.map(itemTest => itemTest.result));
+					item.resultModule = this.hardwareScanResultService.consolidateResults(
+						test.map((itemTest) => itemTest.result)
+					);
 					previousResults.items.push(item);
 				}
 
 				moduleId++;
 			}
-			previousResults.resultTestsTitle = this.hardwareScanResultService.consolidateResults(previousResults.items.map(item => item.resultModule));
+			previousResults.resultTestsTitle = this.hardwareScanResultService.consolidateResults(
+				previousResults.items.map((item) => item.resultModule)
+			);
 
 			this.previousResults = previousResults;
 			this.buildPreviousResultsWidget(this.previousResults);
@@ -137,10 +160,9 @@ export class PreviousResultService {
 
 	public getLastResults() {
 		if (this.hardwareScanBridge) {
-			return this.previousResultsResponse
-				.then((response) => {
-					this.buildPreviousResults(response);
-				});
+			return this.previousResultsResponse.then((response) => {
+				this.buildPreviousResults(response);
+			});
 		}
 		return undefined;
 	}
@@ -154,7 +176,7 @@ export class PreviousResultService {
 		// Clear Failed Tests before count
 		this.hardwareScanResultService.clearFailedTests();
 
-		moduleList.forEach(module => {
+		moduleList.forEach((module) => {
 			this.hardwareScanResultService.countFailedTests(module.listTest);
 		});
 	}
@@ -189,8 +211,7 @@ export class PreviousResultService {
 		const previousResultsWidget: any = this.getPreviousResultsWidget();
 		if (previousResultsWidget) {
 			return previousResultsWidget.date;
-		}
-		else {
+		} else {
 			return undefined;
 		}
 	}

@@ -14,11 +14,10 @@ describe('ModalHardwareScanRbsComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ ModalHardwareScanRbsComponent ],
-			imports: [ TranslateModule.forRoot(), HttpClientModule ],
-			providers: [ NgbActiveModal, HttpClientModule, DevService ]
-		})
-		.compileComponents();
+			declarations: [ModalHardwareScanRbsComponent],
+			imports: [TranslateModule.forRoot(), HttpClientModule],
+			providers: [NgbActiveModal, HttpClientModule, DevService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

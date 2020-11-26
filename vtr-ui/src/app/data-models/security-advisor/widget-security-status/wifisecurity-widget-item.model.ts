@@ -13,42 +13,64 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 		commonService: CommonService,
 		private localCacheService: LocalCacheService,
 		private translateService: TranslateService,
-		private ngZone: NgZone) {
-		super({
-			id: 'sa-widget-lnk-ws',
-			path: 'security/wifi-security',
-			type: 'security',
-			isSystemLink: false,
-			metricsItemName: 'WiFi Security'
-		}, translateService);
+		private ngZone: NgZone
+	) {
+		super(
+			{
+				id: 'sa-widget-lnk-ws',
+				path: 'security/wifi-security',
+				type: 'security',
+				isSystemLink: false,
+				metricsItemName: 'WiFi Security',
+			},
+			translateService
+		);
 		this.translateService.stream('common.securityAdvisor.wifi').subscribe((value) => {
 			this.title = value;
 		});
-		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityWifiSecurityState
+		);
 		if (cacheStatus) {
 			this.updateStatus(cacheStatus, wifiSecurity.isLocationServiceOn);
 		}
 
 		if (wifiSecurity.state) {
 			this.updateStatus(wifiSecurity.state, wifiSecurity.isLocationServiceOn);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, wifiSecurity.state);
-			commonService.setSessionStorageValue(SessionStorageKey.WidgetWifiStatus, wifiSecurity.state);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityWifiSecurityState,
+				wifiSecurity.state
+			);
+			commonService.setSessionStorageValue(
+				SessionStorageKey.WidgetWifiStatus,
+				wifiSecurity.state
+			);
 		}
 
-		wifiSecurity.on(EventTypes.wsStateEvent, (status) => {
-			this.updateStatus(status, wifiSecurity.isLocationServiceOn);
-			if (status) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, status);
-				commonService.setSessionStorageValue(SessionStorageKey.WidgetWifiStatus, status);
-			}
-		}).on(EventTypes.wsIsLocationServiceOnEvent, (status) => {
-			this.updateStatus(wifiSecurity.state, status);
-		});
+		wifiSecurity
+			.on(EventTypes.wsStateEvent, (status) => {
+				this.updateStatus(status, wifiSecurity.isLocationServiceOn);
+				if (status) {
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.SecurityWifiSecurityState,
+						status
+					);
+					commonService.setSessionStorageValue(
+						SessionStorageKey.WidgetWifiStatus,
+						status
+					);
+				}
+			})
+			.on(EventTypes.wsIsLocationServiceOnEvent, (status) => {
+				this.updateStatus(wifiSecurity.state, status);
+			});
 	}
 
 	updateStatus(status: string, location: boolean) {
 		this.ngZone.run(() => {
-			if (!status) { return; }
+			if (!status) {
+				return;
+			}
 			if (location) {
 				this.status = status === 'enabled' ? 0 : 1;
 				this.detail = status;
@@ -62,7 +84,10 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 	}
 
 	translateStatus(status: string) {
-		const translateKey = status === 'enabled' ? 'common.securityAdvisor.enabled' : 'common.securityAdvisor.disabled';
+		const translateKey =
+			status === 'enabled'
+				? 'common.securityAdvisor.enabled'
+				: 'common.securityAdvisor.disabled';
 		this.translateService.stream(translateKey).subscribe((value) => {
 			this.detail = value;
 		});

@@ -16,9 +16,8 @@ import { ContentActionType } from 'src/app/enums/content.enum';
 	selector: 'vtr-page-hardware-scan',
 	templateUrl: './page-hardware-scan.component.html',
 	styleUrls: ['./page-hardware-scan.component.scss'],
-	providers: [NgbModalConfig, NgbModal]
+	providers: [NgbModalConfig, NgbModal],
 })
-
 export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	backarrow = '< ';
 	cardContentPositionA: any;
@@ -33,13 +32,15 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
-		private router: Router,
-	) { }
+		private router: Router
+	) {}
 
 	ngOnInit() {
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
-			this.onNotification(response);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 		this.routeSubscription = this.router.events.subscribe(() => this.observerURL());
 		this.initSupportCard();
 	}
@@ -51,7 +52,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		if (this.routeSubscription) {
 			this.routeSubscription.unsubscribe();
 		}
-
 	}
 
 	private initSupportCard() {
@@ -62,7 +62,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			Action: 'Read More',
 			ActionType: ContentActionType.External,
 			ActionLink: 'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads',
-			isLocal: true
+			isLocal: true,
 		});
 		if (!this.commonService.isOnline) {
 			this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.offline');
@@ -82,9 +82,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onGetSupportClick($event: any) {
-
-	}
+	public onGetSupportClick($event: any) {}
 
 	public isLoadingDone() {
 		if (this.hardwareScanService) {
@@ -136,7 +134,10 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	}
 
 	public disable() {
-		const isExecuting = !this.hardwareScanService.isScanDoneExecuting() && (this.hardwareScanService.isScanExecuting() || this.hardwareScanService.isRecoverExecuting());
+		const isExecuting =
+			!this.hardwareScanService.isScanDoneExecuting() &&
+			(this.hardwareScanService.isScanExecuting() ||
+				this.hardwareScanService.isRecoverExecuting());
 		return isExecuting;
 	}
 
@@ -153,10 +154,14 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			const { type } = notification;
 			switch (type) {
 				case NetworkStatus.Online:
-					this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.support.title');
+					this.hardwareScanSupportCard.Title = this.translate.instant(
+						'hardwareScan.support.title'
+					);
 					break;
 				case NetworkStatus.Offline:
-					this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.offline');
+					this.hardwareScanSupportCard.Title = this.translate.instant(
+						'hardwareScan.offline'
+					);
 					break;
 				default:
 					break;

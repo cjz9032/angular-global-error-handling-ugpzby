@@ -6,22 +6,19 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-modal-gaming-legionedge',
 	templateUrl: './modal-gaming-legionedge.component.html',
-	styleUrls: ['./modal-gaming-legionedge.component.scss']
+	styleUrls: ['./modal-gaming-legionedge.component.scss'],
 })
 export class ModalGamingLegionedgeComponent implements OnInit {
-
 	liteGaming = false;
 	desktopMachine = false;
-	constructor(
-		public activeModal: NgbActiveModal,
-		private localCacheService: LocalCacheService,
-	) {
-		this.desktopMachine = this.localCacheService.getLocalCacheValue( LocalStorageKey.desktopType);
-		this.liteGaming = this.localCacheService.getLocalCacheValue( LocalStorageKey.liteGaming);
+	constructor(public activeModal: NgbActiveModal, private localCacheService: LocalCacheService) {
+		this.desktopMachine = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.desktopType
+		);
+		this.liteGaming = this.localCacheService.getLocalCacheValue(LocalStorageKey.liteGaming);
 	}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	closeModal() {
 		this.activeModal.close('close');

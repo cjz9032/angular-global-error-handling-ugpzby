@@ -1,10 +1,10 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 $block_width: 40rem;
 $item_height: 6rem;
 $icon_size: 2.4rem;
 $clean_icon_size: 1.6rem;
 $font_size: 1.4rem;
-$line_height: 2.0rem;
+$line_height: 2rem;
 
 .mid-text {
 	display: block;
@@ -97,7 +97,7 @@ $line_height: 2.0rem;
 				transform: rotate(-45deg);
 			}
 
-			&.active{
+			&.active {
 				cursor: pointer;
 				&::before,
 				&::after {
@@ -105,9 +105,9 @@ $line_height: 2.0rem;
 				}
 				&:hover {
 					&::before,
-				&::after {
-					background: $menu_hover;
-				}
+					&::after {
+						background: $menu_hover;
+					}
 				}
 			}
 
@@ -167,7 +167,6 @@ $line_height: 2.0rem;
 						text-transform: capitalize;
 					}
 				}
-
 			}
 		}
 	}

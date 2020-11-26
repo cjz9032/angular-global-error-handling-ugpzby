@@ -7,10 +7,9 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 @Component({
 	selector: 'vtr-modal-wifi-security-location-notice',
 	templateUrl: './modal-wifi-security-location-notice.component.html',
-	styleUrls: ['./modal-wifi-security-location-notice.component.scss']
+	styleUrls: ['./modal-wifi-security-location-notice.component.scss'],
 })
 export class ModalWifiSecurityLocationNoticeComponent implements OnInit {
-
 	@Input() header: string;
 	@Input() description: string;
 	@Input() url: string;
@@ -25,19 +24,24 @@ export class ModalWifiSecurityLocationNoticeComponent implements OnInit {
 	@Output() OkClick = new EventEmitter<any>();
 	@Output() CancelClick = new EventEmitter<any>();
 
-	constructor(public activeModal: NgbActiveModal, private commonService: CommonService) { }
+	constructor(public activeModal: NgbActiveModal, private commonService: CommonService) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	public onOkClick() {
 		this.activeModal.close(true);
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'yes');
+		this.commonService.setSessionStorageValue(
+			SessionStorageKey.SecurityWifiSecurityLocationFlag,
+			'yes'
+		);
 		WinRT.launchUri(this.url);
 	}
 
 	public onCancelClick() {
-		this.commonService.setSessionStorageValue(SessionStorageKey.SecurityWifiSecurityLocationFlag, 'no');
+		this.commonService.setSessionStorageValue(
+			SessionStorageKey.SecurityWifiSecurityLocationFlag,
+			'no'
+		);
 		this.activeModal.close('cancelClick');
 		document.getElementById('main-wrapper').focus();
 	}
@@ -54,4 +58,3 @@ export class ModalWifiSecurityLocationNoticeComponent implements OnInit {
 		modal.focus();
 	}
 }
-

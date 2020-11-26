@@ -18,7 +18,7 @@ describe('PowerDpmService', () => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [PowerDpmService, VantageShellService, CommonService],
-			imports: [HttpClientModule]
+			imports: [HttpClientModule],
 		});
 		vantageShellService = TestBed.get(VantageShellService);
 		commonService = TestBed.get(CommonService);
@@ -44,51 +44,63 @@ describe('PowerDpmService', () => {
 					performance: 5,
 					temperature: 4,
 					powerUsage: 7,
-					cpuSpeed: "cpuSpeedAdaptive",
+					cpuSpeed: 'cpuSpeedAdaptive',
 					brightness: 100,
-					settingList: [{
-						key: 'PowerPlan',
-						value: 'Balanced'
-					}, {
-						key: 'PreDefined',
-						value: 'SystemDefined'
-					}, {
-						key: 'HDDTimeoutAC',
-						value: '120'
-					}, {
-						key: 'HiberTimeoutAC',
-						value: '15'
-					}, {
-						key: 'SuspendTimeoutAC',
-						value: '0'
-					}, {
-						key: 'VideoTimeoutAC',
-						value: '45'
-					}, {
-						key: 'Performance',
-						value: '5'
-					}, {
-						key: 'Temperature',
-						value: '4'
-					}, {
-						key: 'PowerUsage',
-						value: '7'
-					}, {
-						key: 'CPUSpeed',
-						value: 'cpuSpeedAdaptive'
-					}, {
-						key: 'Brightness',
-						value: '100'
-					},]
-				} as PowerPlan
-			]
+					settingList: [
+						{
+							key: 'PowerPlan',
+							value: 'Balanced',
+						},
+						{
+							key: 'PreDefined',
+							value: 'SystemDefined',
+						},
+						{
+							key: 'HDDTimeoutAC',
+							value: '120',
+						},
+						{
+							key: 'HiberTimeoutAC',
+							value: '15',
+						},
+						{
+							key: 'SuspendTimeoutAC',
+							value: '0',
+						},
+						{
+							key: 'VideoTimeoutAC',
+							value: '45',
+						},
+						{
+							key: 'Performance',
+							value: '5',
+						},
+						{
+							key: 'Temperature',
+							value: '4',
+						},
+						{
+							key: 'PowerUsage',
+							value: '7',
+						},
+						{
+							key: 'CPUSpeed',
+							value: 'cpuSpeedAdaptive',
+						},
+						{
+							key: 'Brightness',
+							value: '100',
+						},
+					],
+				} as PowerPlan,
+			],
 		} as AllPowerPlans;
 		let mockPowerDpm = {
 			getAllPowerPlans: () => {
 				return new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
 				});
-			}
+			},
 		};
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue(null);
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
@@ -120,7 +132,7 @@ describe('PowerDpmService', () => {
 				return new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
 				});
-			}
+			},
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -136,7 +148,7 @@ describe('PowerDpmService', () => {
 				return new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
 				});
-			}
+			},
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -152,7 +164,7 @@ describe('PowerDpmService', () => {
 				return new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
 				});
-			}
+			},
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -168,7 +180,7 @@ describe('PowerDpmService', () => {
 				return new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
 				});
-			}
+			},
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -184,7 +196,7 @@ describe('PowerDpmService', () => {
 				return new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
 				});
-			}
+			},
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -200,7 +212,7 @@ describe('PowerDpmService', () => {
 				return new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
 				});
-			}
+			},
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -212,14 +224,14 @@ describe('PowerDpmService', () => {
 	it('#setCurrentPowerPlan should call devicePowerDPM.setCurrentPowerPlan', () => {
 		let mockAllPowerPlans = {
 			activePowerPlan: 'Balanced',
-			powerPlanList: []
+			powerPlanList: [],
 		} as AllPowerPlans;
 		let mockPowerDpm = {
 			setCurrentPowerPlan: () => {
 				return new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
 				});
-			}
+			},
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);

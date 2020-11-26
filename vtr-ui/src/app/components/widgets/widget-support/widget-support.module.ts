@@ -5,20 +5,9 @@ import { WidgetSupportComponent } from './widget-support.component';
 import { UiListSupportModule } from '../../ui/ui-list-support/ui-list-support.module';
 
 @NgModule({
-	declarations: [
-		WidgetSupportComponent,
-	],
-	exports: [
-		WidgetSupportComponent,
-	],
-	imports: [
-		CommonModule,
-		TranslationModule.forChild(),
-		UiListSupportModule
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	declarations: [WidgetSupportComponent],
+	exports: [WidgetSupportComponent],
+	imports: [CommonModule, TranslationModule.forChild(), UiListSupportModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class WidgetSupportModule { }
+export class WidgetSupportModule {}

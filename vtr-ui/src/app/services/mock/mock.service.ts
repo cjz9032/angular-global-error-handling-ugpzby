@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class MockService {
-
 	// carousel: any = [{
 	// 	'albumId': 1,
 	// 	'id': 1,
@@ -47,7 +46,7 @@ export class MockService {
 			path: 'ms-settings:about',
 			asLink: false,
 			isSystemLink: true,
-			type: 'system'
+			type: 'system',
 		},
 		{
 			status: 0,
@@ -57,7 +56,7 @@ export class MockService {
 			path: 'ms-settings:storagesense',
 			asLink: false,
 			isSystemLink: true,
-			type: 'system'
+			type: 'system',
 		},
 		{
 			status: 0,
@@ -66,7 +65,7 @@ export class MockService {
 			detail: 'Unitil 01/01/2020',
 			path: '/support',
 			asLink: false,
-			type: 'system'
+			type: 'system',
 		},
 		{
 			status: 1,
@@ -75,10 +74,9 @@ export class MockService {
 			detail: 'Update',
 			path: 'device/system-updates',
 			asLink: false,
-			type: 'system'
-		}
+			type: 'system',
+		},
 	];
-
 
 	securityHealth = [
 		{
@@ -87,7 +85,7 @@ export class MockService {
 			title: 'Apps from unknown sources',
 			detail: 'FAILED',
 			path: '',
-			hideChevron: true
+			hideChevron: true,
 		},
 		{
 			status: 1,
@@ -95,8 +93,7 @@ export class MockService {
 			title: 'Developer mode',
 			detail: 'FAILED',
 			path: '',
-			hideChevron: true
-
+			hideChevron: true,
 		},
 		{
 			status: 1,
@@ -104,7 +101,7 @@ export class MockService {
 			title: 'UAC Notification',
 			detail: 'FAILED',
 			path: '',
-			hideChevron: true
+			hideChevron: true,
 		},
 		{
 			status: 2,
@@ -112,7 +109,7 @@ export class MockService {
 			title: 'Anti-Virus availability',
 			detail: 'PASSED',
 			path: '',
-			hideChevron: true
+			hideChevron: true,
 		},
 		{
 			status: 2,
@@ -120,8 +117,7 @@ export class MockService {
 			title: 'Drive encryption',
 			detail: 'PASSED',
 			path: '',
-			hideChevron: true
-
+			hideChevron: true,
 		},
 		{
 			status: 2,
@@ -129,8 +125,7 @@ export class MockService {
 			title: 'Firewall availability',
 			detail: 'PASSED',
 			path: '',
-			hideChevron: true
-
+			hideChevron: true,
 		},
 		{
 			status: 2,
@@ -138,7 +133,7 @@ export class MockService {
 			title: 'OS integrity',
 			detail: 'PASSED',
 			path: '',
-			hideChevron: true
+			hideChevron: true,
 		},
 		// {
 		// 	'status': 2,
@@ -154,8 +149,8 @@ export class MockService {
 			title: 'Pin or Password',
 			detail: 'PASSED',
 			path: '',
-			hideChevron: true
-		}
+			hideChevron: true,
+		},
 	];
 
 	securityStatus = [
@@ -165,8 +160,7 @@ export class MockService {
 			title: 'Anti-Virus',
 			detail: 'Enabled',
 			path: 'security/anti-virus',
-			type: 'security'
-
+			type: 'security',
 		},
 		{
 			status: 0,
@@ -174,8 +168,7 @@ export class MockService {
 			title: 'WiFi Security',
 			detail: 'Enabled',
 			path: 'security/wifi-security',
-			type: 'security'
-
+			type: 'security',
 		},
 		{
 			status: 2,
@@ -183,7 +176,7 @@ export class MockService {
 			title: 'Password Manager',
 			detail: 'Installed',
 			path: 'security/password-protection',
-			type: 'security'
+			type: 'security',
 		},
 		{
 			status: 2,
@@ -191,7 +184,7 @@ export class MockService {
 			title: 'VPN',
 			detail: 'Installed',
 			path: 'security/internet-protection',
-			type: 'security'
+			type: 'security',
 		},
 		{
 			status: 1,
@@ -199,9 +192,8 @@ export class MockService {
 			title: 'Windows Hello',
 			detail: 'disabled',
 			path: 'security/windows-hello',
-			type: 'security'
-
-		}
+			type: 'security',
+		},
 	];
 
 	securityAntivirus = [
@@ -211,7 +203,7 @@ export class MockService {
 			title: 'Anti-Virus',
 			detail: 'Enabled',
 			path: 'security/anti-virus',
-			type: 'security'
+			type: 'security',
 		},
 		{
 			status: 1,
@@ -219,9 +211,8 @@ export class MockService {
 			title: 'Firewall',
 			detail: 'Disabled',
 			path: 'security/anti-virus',
-			type: 'security'
-
-		}
+			type: 'security',
+		},
 	];
 
 	securityPasswordHealth = [
@@ -231,8 +222,8 @@ export class MockService {
 			title: 'Password Manager',
 			detail: 'Installed',
 			path: 'security/password-protection',
-			type: 'security'
-		}
+			type: 'security',
+		},
 	];
 
 	securityVPN = [
@@ -242,8 +233,8 @@ export class MockService {
 			title: 'Virtual Private Network',
 			detail: 'Installed',
 			path: 'security/internet-protection',
-			type: 'security'
-		}
+			type: 'security',
+		},
 	];
 
 	securityWifi = [
@@ -253,20 +244,21 @@ export class MockService {
 			title: 'WiFi Security',
 			detail: 'Enabled',
 			path: 'wifi-security',
-			type: 'security'
-		}
+			type: 'security',
+		},
 	];
 
 	wifiHistoryList = [
 		{
 			ssid: 'Lenovo',
 			info: '2019-01-25',
-			good: 0
-		}, {
+			good: 0,
+		},
+		{
 			ssid: 'CDL',
 			info: '2019-01-25',
-			good: 1
-		}
+			good: 1,
+		},
 	];
 
 	securityConnectedHome = [
@@ -276,8 +268,8 @@ export class MockService {
 			title: 'Connected Home Security',
 			detail: 'Learn more',
 			path: 'security/wifi-security',
-			type: 'security'
-		}
+			type: 'security',
+		},
 	];
 
 	securityWindowsHello = [
@@ -287,8 +279,8 @@ export class MockService {
 			title: 'Fingerprint Reader',
 			detail: 'Enabled',
 			path: 'security/windows-hello',
-			type: 'security'
-		}
+			type: 'security',
+		},
 	];
 
 	qA = [
@@ -296,26 +288,26 @@ export class MockService {
 			icon: ['fas', 'plane'],
 			title: ' Reduced batterylife working outside.',
 			path: '/support-detail',
-			lightTitle: true
+			lightTitle: true,
 		},
 		{
 			icon: ['fas', 'plane'],
 			title: 'Can I use my Ideapad while in an airplane?',
 			path: '/support-detail',
-			lightTitle: true
+			lightTitle: true,
 		},
 		{
 			icon: ['fas', 'plane'],
 			title: 'Will the security control scanner damage',
 			path: '/support-detail',
-			lightTitle: true
+			lightTitle: true,
 		},
 		{
 			icon: ['fas', 'plane'],
 			title: 'Will the security control scanner damage',
 			path: '/support-detail',
-			lightTitle: true
-		}
+			lightTitle: true,
+		},
 	];
 
 	articles = [
@@ -328,28 +320,32 @@ export class MockService {
 		},
 		{
 			Title: '',
-			Thumbnail: 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			Thumbnail:
+				'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			Logo: 'assets/images/test-logo.svg',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail: 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			Thumbnail:
+				'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			Logo: '',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail: 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			Thumbnail:
+				'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			Logo: 'assets/images/test-logo.svg',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail: 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			Thumbnail:
+				'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			Logo: 'assets/images/test-logo.svg',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
@@ -363,14 +359,16 @@ export class MockService {
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail: 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			Thumbnail:
+				'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			Logo: 'assets/images/test-logo.svg',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail: 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			Thumbnail:
+				'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			Logo: '',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
@@ -385,7 +383,7 @@ export class MockService {
 			detail: ' - 10[64]',
 			path: '',
 			lightTitle: false,
-			rebootRequired: true
+			rebootRequired: true,
 		},
 		{
 			id: '2',
@@ -394,7 +392,7 @@ export class MockService {
 			detail: ' - (Windows 10 Build 1709 And Later) - 10[64]',
 			path: '',
 			lightTitle: false,
-			rebootRequired: false
+			rebootRequired: false,
 		},
 		{
 			id: '3',
@@ -403,8 +401,8 @@ export class MockService {
 			detail: ' - 10[64]',
 			path: '',
 			lightTitle: false,
-			rebootRequired: false
-		}
+			rebootRequired: false,
+		},
 	];
 
 	recommendedUpdates = [
@@ -415,7 +413,7 @@ export class MockService {
 			detail: ' - 10[64]',
 			path: '',
 			lightTitle: false,
-			rebootRequired: false
+			rebootRequired: false,
 		},
 		{
 			id: '2',
@@ -424,7 +422,7 @@ export class MockService {
 			detail: ' - (Windows 10 Build 1709 And Later) - 10[64]',
 			path: '',
 			lightTitle: false,
-			rebootRequired: false
+			rebootRequired: false,
 		},
 		{
 			id: '3',
@@ -433,8 +431,8 @@ export class MockService {
 			detail: ' - 10[64]',
 			path: '',
 			lightTitle: false,
-			rebootRequired: true
-		}
+			rebootRequired: true,
+		},
 	];
 
 	optionalUpdates = [
@@ -445,7 +443,7 @@ export class MockService {
 			detail: ' - 10[64]',
 			path: '',
 			lightTitle: false,
-			rebootRequired: true
+			rebootRequired: true,
 		},
 		{
 			id: '2',
@@ -454,7 +452,7 @@ export class MockService {
 			detail: ' - (Windows 10 Build 1709 And Later) - 10[64]',
 			path: '',
 			lightTitle: false,
-			rebootRequired: false
+			rebootRequired: false,
 		},
 		{
 			id: '3',
@@ -463,8 +461,8 @@ export class MockService {
 			detail: ' - 10[64]',
 			path: '',
 			lightTitle: false,
-			rebootRequired: false
-		}
+			rebootRequired: false,
+		},
 	];
 
 	fullInstallationHistory = [
@@ -476,11 +474,7 @@ export class MockService {
 			path: '',
 			lightTitle: false,
 			success: true,
-			installationDetails: [
-				'Instllation text 1',
-				'Instllation text 2',
-				'Instllation text 3'
-			]
+			installationDetails: ['Instllation text 1', 'Instllation text 2', 'Instllation text 3'],
 		},
 		{
 			id: '2',
@@ -490,10 +484,7 @@ export class MockService {
 			path: '',
 			lightTitle: false,
 			success: false,
-			installationDetails: [
-				'Instllation text 1',
-				'Instllation text 2'
-			]
+			installationDetails: ['Instllation text 1', 'Instllation text 2'],
 		},
 		{
 			id: '3',
@@ -506,11 +497,10 @@ export class MockService {
 			installationDetails: [
 				'Instllation text 11',
 				'Instllation text 22',
-				'Instllation text 33'
-			]
-		}
+				'Instllation text 33',
+			],
+		},
 	];
-
 
 	// antiVirus: Antivirus = {
 	// 	on() {},
@@ -559,5 +549,5 @@ export class MockService {
 	// 	}
 	// };
 
-	constructor() { }
+	constructor() {}
 }

@@ -13,20 +13,21 @@ describe('WidgetQuestionsComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetQuestionsComponent],
-			imports: [HttpClientModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				},
-				isolate: false
-			}),
-				TranslationModule.forChild()
+			imports: [
+				HttpClientModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+					isolate: false,
+				}),
+				TranslationModule.forChild(),
 			],
 
 			schemas: [NO_ERRORS_SCHEMA],
-		})
-			.compileComponents();
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

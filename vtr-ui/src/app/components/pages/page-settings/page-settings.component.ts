@@ -6,7 +6,11 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ConfigService } from 'src/app/services/config/config.service';
-import { SelfSelectService, SegmentConst, SegmentConstHelper } from 'src/app/services/self-select/self-select.service';
+import {
+	SelfSelectService,
+	SegmentConst,
+	SegmentConstHelper,
+} from 'src/app/services/self-select/self-select.service';
 import { BetaService, BetaStatus } from 'src/app/services/beta/beta.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -21,10 +25,9 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 	selector: 'vtr-page-settings',
 	templateUrl: './page-settings.component.html',
 	styleUrls: ['./page-settings.component.scss'],
-	providers: [TimerService]
+	providers: [TimerService],
 })
 export class PageSettingsComponent implements OnInit, OnDestroy {
-
 	public segmentConst = SegmentConst;
 	backId = 'setting-page-btn-back';
 
@@ -57,7 +60,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		},
 		{
 			leftImageSource: ['fal', 'comment-alt-dots'],
-		}
+		},
 	];
 
 	otherSettings = [
@@ -66,13 +69,13 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		},
 		{
 			leftImageSource: ['fal', 'shoe-prints'],
-		}
+		},
 	];
 
 	betaSettings = [
 		{
 			leftImageSource: ['fal', 'flask'],
-		}
+		},
 	];
 
 	allUsageTypes = [
@@ -141,9 +144,11 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.getAllToggles();
 		this.timerService.start();
 		this.getSelfSelectStatus();
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
-			this.onNotification(response);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 	}
 
 	onNotification(response: AppNotification) {
@@ -153,7 +158,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 				try {
 					this.usageType = this.selfSelectService.usageType;
 					this.interests = this.commonService.cloneObj(this.selfSelectService.interests);
-				} catch (error) { }
+				} catch (error) {}
 				break;
 			case SelfSelectEvent.SegmentChange:
 				this.getSegment();
@@ -177,11 +182,14 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	private getSegment() {
 		if (this.localInfoService) {
-			this.localInfoService.getLocalInfo().then((result) => {
-				this.segmentTag = result.Segment;
-			}).catch(() => {
-				this.segmentTag = SegmentConst.ConsumerBase;
-			});
+			this.localInfoService
+				.getLocalInfo()
+				.then((result) => {
+					this.segmentTag = result.Segment;
+				})
+				.catch(() => {
+					this.segmentTag = SegmentConst.ConsumerBase;
+				});
 		}
 	}
 
@@ -191,7 +199,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			PageName: 'Page.Settings',
 			PageContext: 'Preference settings page',
 			PageDuration: this.timerService.stop(),
-			OnlineStatus: ''
+			OnlineStatus: '',
 		};
 		this.sendMetrics(pageViewMetrics);
 	}
@@ -221,59 +229,86 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 	}
 	private getDeviceStatisticsPreference() {
 		if (this.metricsPreference) {
-			this.metricsPreference.getAppMetricCollectionSetting('en', 'com.lenovo.LDI').then((response) => {
-				if (response && response.app && response.app.metricCollectionState === 'On') {
-					this.toggleDeviceStatistics = true;
-					this.isToggleDeviceStatistics = true;
-				} else if (response && response.app && response.app.metricCollectionState === 'Off') {
-					this.toggleDeviceStatistics = false;
-					this.isToggleDeviceStatistics = true;
-				} else {
+			this.metricsPreference
+				.getAppMetricCollectionSetting('en', 'com.lenovo.LDI')
+				.then((response) => {
+					if (response && response.app && response.app.metricCollectionState === 'On') {
+						this.toggleDeviceStatistics = true;
+						this.isToggleDeviceStatistics = true;
+					} else if (
+						response &&
+						response.app &&
+						response.app.metricCollectionState === 'Off'
+					) {
+						this.toggleDeviceStatistics = false;
+						this.isToggleDeviceStatistics = true;
+					} else {
+						this.isToggleDeviceStatistics = false;
+					}
+				})
+				.catch((error) => {
 					this.isToggleDeviceStatistics = false;
-				}
-			}).catch((error) => {
-				this.isToggleDeviceStatistics = false;
-			});
+				});
 		}
 	}
 
 	getPreferenceSettingsValue() {
 		if (this.preferenceSettings) {
 			try {
-				this.preferenceSettings.getMessagingPreference('en').then((messageSettings: any) => {
-					if (messageSettings) {
-						this.toggleAppFeature = this.getMassageStettingValue(messageSettings, 'AppFeatures');
-						this.toggleMarketing = this.getMassageStettingValue(messageSettings, 'Marketing');
-						this.toggleActionTriggered = this.getMassageStettingValue(messageSettings, 'ActionTriggered');
-						this.isMessageSettings = true;
-					}
-				}).catch((error) => {
-					this.isMessageSettings = false;
-				});
+				this.preferenceSettings
+					.getMessagingPreference('en')
+					.then((messageSettings: any) => {
+						if (messageSettings) {
+							this.toggleAppFeature = this.getMassageStettingValue(
+								messageSettings,
+								'AppFeatures'
+							);
+							this.toggleMarketing = this.getMassageStettingValue(
+								messageSettings,
+								'Marketing'
+							);
+							this.toggleActionTriggered = this.getMassageStettingValue(
+								messageSettings,
+								'ActionTriggered'
+							);
+							this.isMessageSettings = true;
+						}
+					})
+					.catch((error) => {
+						this.isMessageSettings = false;
+					});
 			} catch (error) {
-				this.loggerService.exception('PageSettingsComponent.getPreferenceSettingsValue exception', error);
+				this.loggerService.exception(
+					'PageSettingsComponent.getPreferenceSettingsValue exception',
+					error
+				);
 			}
 		}
 	}
 
 	getMassageStettingValue(messageSettings: Array<any>, id: string) {
-		return this.valueToBoolean[messageSettings.find(mss => mss.id === id).settingValue];
+		return this.valueToBoolean[messageSettings.find((mss) => mss.id === id).settingValue];
 	}
 
 	onToggleOfAppFeature(event: any) {
 		this.toggleAppFeature = event.switchValue;
 		this.settingsService.toggleAppFeature = event.switchValue;
 		if (this.preferenceSettings) {
-			const categoryList = [{
-				id: 'AppFeatures',
-				settingValue: event.switchValue ? 1 : 2,
-			}];
-			this.preferenceSettings.setMessagingPreference(categoryList).then((result: any) => {
-				if (!result || result.Result !== 'Success') {
-					this.toggleAppFeature = !event.switchValue;
-					this.settingsService.toggleAppFeature = !event.switchValue;
-				}
-			}).catch(() => { });
+			const categoryList = [
+				{
+					id: 'AppFeatures',
+					settingValue: event.switchValue ? 1 : 2,
+				},
+			];
+			this.preferenceSettings
+				.setMessagingPreference(categoryList)
+				.then((result: any) => {
+					if (!result || result.Result !== 'Success') {
+						this.toggleAppFeature = !event.switchValue;
+						this.settingsService.toggleAppFeature = !event.switchValue;
+					}
+				})
+				.catch(() => {});
 		}
 		this.sendSettingMetrics('SettingAppFeatures', event.switchValue);
 	}
@@ -281,16 +316,21 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.toggleMarketing = event.switchValue;
 		this.settingsService.toggleMarketing = event.switchValue;
 		if (this.preferenceSettings) {
-			const categoryList = [{
-				id: 'Marketing',
-				settingValue: event.switchValue ? 1 : 2,
-			}];
-			this.preferenceSettings.setMessagingPreference(categoryList).then((result: any) => {
-				if (!result || result.Result !== 'Success') {
-					this.toggleMarketing = !event.switchValue;
-					this.settingsService.toggleMarketing = !event.switchValue;
-				}
-			}).catch(() => { });
+			const categoryList = [
+				{
+					id: 'Marketing',
+					settingValue: event.switchValue ? 1 : 2,
+				},
+			];
+			this.preferenceSettings
+				.setMessagingPreference(categoryList)
+				.then((result: any) => {
+					if (!result || result.Result !== 'Success') {
+						this.toggleMarketing = !event.switchValue;
+						this.settingsService.toggleMarketing = !event.switchValue;
+					}
+				})
+				.catch(() => {});
 		}
 		this.sendSettingMetrics('SettingMarketing', event.switchValue);
 	}
@@ -298,16 +338,21 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.toggleActionTriggered = event.switchValue;
 		this.settingsService.toggleActionTriggered = event.switchValue;
 		if (this.preferenceSettings) {
-			const categoryList = [{
-				id: 'ActionTriggered',
-				settingValue: event.switchValue ? 1 : 2,
-			}];
-			this.preferenceSettings.setMessagingPreference(categoryList).then((result: any) => {
-				if (!result || result.Result !== 'Success') {
-					this.toggleActionTriggered = !event.switchValue;
-					this.settingsService.toggleActionTriggered = !event.switchValue;
-				}
-			}).catch(() => { });
+			const categoryList = [
+				{
+					id: 'ActionTriggered',
+					settingValue: event.switchValue ? 1 : 2,
+				},
+			];
+			this.preferenceSettings
+				.setMessagingPreference(categoryList)
+				.then((result: any) => {
+					if (!result || result.Result !== 'Success') {
+						this.toggleActionTriggered = !event.switchValue;
+						this.settingsService.toggleActionTriggered = !event.switchValue;
+					}
+				})
+				.catch(() => {});
 		}
 		this.sendSettingMetrics('SettingActionTriggered', event.switchValue);
 	}
@@ -317,19 +362,32 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.settingsService.toggleDeviceStatistics = event.switchValue;
 		const expectedMetricCollectionState = this.toggleDeviceStatistics ? 'On' : 'Off';
 		if (this.metricsPreference) {
-			this.metricsPreference.setAppMetricCollectionSettings('en', 'com.lenovo.LDI', this.toggleDeviceStatistics).then((result: any) => {
-				if (!result || !result.app || result.app.metricCollectionState === expectedMetricCollectionState) {
-					this.sendSettingMetrics('SettingDeviceStatistics', event.switchValue);
-				} else {
+			this.metricsPreference
+				.setAppMetricCollectionSettings('en', 'com.lenovo.LDI', this.toggleDeviceStatistics)
+				.then((result: any) => {
+					if (
+						!result ||
+						!result.app ||
+						result.app.metricCollectionState === expectedMetricCollectionState
+					) {
+						this.sendSettingMetrics('SettingDeviceStatistics', event.switchValue);
+					} else {
+						this.toggleDeviceStatistics = !event.switchValue;
+						this.settingsService.toggleDeviceStatistics = !event.switchValue;
+						this.loggerService.error(
+							'setAppMetricCollectionSettings result not correct, will revert Device Metric toggle change.',
+							result
+						);
+					}
+				})
+				.catch((error) => {
 					this.toggleDeviceStatistics = !event.switchValue;
 					this.settingsService.toggleDeviceStatistics = !event.switchValue;
-					this.loggerService.error('setAppMetricCollectionSettings result not correct, will revert Device Metric toggle change.', result);
-				}
-			}).catch((error) => {
-				this.toggleDeviceStatistics = !event.switchValue;
-				this.settingsService.toggleDeviceStatistics = !event.switchValue;
-				this.loggerService.error('setAppMetricCollectionSettings exception, will revert Device Metric toggle change.', error);
-			});
+					this.loggerService.error(
+						'setAppMetricCollectionSettings exception, will revert Device Metric toggle change.',
+						error
+					);
+				});
 		}
 	}
 
@@ -346,7 +404,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			ItemType: 'SettingUpdate',
 			SettingName: 'Accept Privacy Policy',
 			SettingValue: event.switchValue ? 'Enabled' : 'Disabled',
-			SettingParent: 'Page.Settings'
+			SettingParent: 'Page.Settings',
 		};
 		if (this.metrics && this.metrics.sendAsyncEx) {
 			this.metrics.sendAsyncEx(settingUpdateMetrics, { forced: true });
@@ -358,7 +416,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.toggleBetaProgram = event.switchValue;
 		this.sendSettingMetrics('SettingBetaProgram', event.switchValue);
 		this.betaService.setBetaStatus(this.toggleBetaProgram ? BetaStatus.On : BetaStatus.Off);
-		this.commonService.sendReplayNotification(MenuItemEvent.MenuBetaItemChange, this.toggleBetaProgram);
+		this.commonService.sendReplayNotification(
+			MenuItemEvent.MenuBetaItemChange,
+			this.toggleBetaProgram
+		);
 	}
 	sendMetrics(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
@@ -371,7 +432,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			ItemType: 'SettingUpdate',
 			SettingName: name,
 			SettingValue: value ? 'Enabled' : 'Disabled',
-			SettingParent: 'Page.Settings'
+			SettingParent: 'Page.Settings',
 		};
 		this.sendMetrics(settingUpdateMetrics);
 	}
@@ -399,19 +460,19 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			ItemType: 'SettingUpdate',
 			SettingName: 'UsageType',
 			SettingValue: this.deviceService.isGaming ? 'Gaming' : this.selfSelectService.usageType,
-			SettingParent: 'Page.Settings'
+			SettingParent: 'Page.Settings',
 		};
 		this.metrics.sendAsync(usageData);
 
 		const interestMetricValue = {};
-		this.selfSelectService.checkedArray.forEach(item => {
+		this.selfSelectService.checkedArray.forEach((item) => {
 			interestMetricValue[item] = true;
 		});
 		const interestData = {
 			ItemType: 'SettingUpdate',
 			SettingName: 'Interest',
 			SettingValue: interestMetricValue,
-			SettingParent: 'Page.Settings'
+			SettingParent: 'Page.Settings',
 		};
 		this.metrics.sendAsync(interestData);
 		if (this.deviceService.isGaming) {
@@ -423,8 +484,10 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 
 	userProfileSelectionChanged() {
 		let result = false;
-		if (this.usageType !== this.selfSelectService.usageType
-			|| JSON.stringify(this.interests) !== JSON.stringify(this.selfSelectService.interests)) {
+		if (
+			this.usageType !== this.selfSelectService.usageType ||
+			JSON.stringify(this.interests) !== JSON.stringify(this.selfSelectService.interests)
+		) {
 			result = true;
 		}
 		return result;

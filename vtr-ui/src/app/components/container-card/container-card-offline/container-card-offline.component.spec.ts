@@ -17,9 +17,8 @@ describe('ContainerCardOfflineComponent', () => {
 			declarations: [ContainerCardOfflineComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-			providers: [TranslateStore, DevService]
-		})
-			.compileComponents();
+			providers: [TranslateStore, DevService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

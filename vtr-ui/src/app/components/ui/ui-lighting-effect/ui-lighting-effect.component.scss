@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .select-box {
 	position: relative;
@@ -70,7 +70,7 @@
 			}
 		}
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			width: 0;
 			height: 0;
@@ -178,14 +178,14 @@
 					background: highlight;
 				}
 			}
-			&:first-child{
-				a.dropdown-item{
-				border-radius: 0.4rem 0.4rem 0 0;
+			&:first-child {
+				a.dropdown-item {
+					border-radius: 0.4rem 0.4rem 0 0;
 				}
 			}
-			&:last-child{
-				a.dropdown-item{
-				border-radius: 0 0 0.4rem 0.4rem;
+			&:last-child {
+				a.dropdown-item {
+					border-radius: 0 0 0.4rem 0.4rem;
 				}
 			}
 			&:hover {
@@ -267,13 +267,13 @@
 					}
 				}
 				.gaming-dropdown-menu {
-					li{
-						&:focus{
-							a{
+					li {
+						&:focus {
+							a {
 								outline: none !important;
 								border: 1px solid $blueFill;
 								@media #{$high-contrast} {
-								border-color: windowText;
+									border-color: windowText;
 								}
 							}
 						}

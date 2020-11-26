@@ -1,4 +1,13 @@
-import { Component, Input, OnInit, OnDestroy, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
+import {
+	Component,
+	Input,
+	OnInit,
+	OnDestroy,
+	ElementRef,
+	ViewChild,
+	Output,
+	EventEmitter,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { cloneDeep } from 'lodash';
@@ -18,15 +27,14 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MatMenu } from '@lenovo/material/menu';
 
-
 @Component({
 	selector: 'vtr-material-hamburger-menu',
 	templateUrl: './material-hamburger-menu.component.html',
 	styleUrls: ['./material-hamburger-menu.component.scss'],
-	exportAs: 'materialHamburgerMenuComponent'
+	exportAs: 'materialHamburgerMenuComponent',
 })
 export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
-	@ViewChild(MatMenu, {static: true}) matMenu: MatMenu;
+	@ViewChild(MatMenu, { static: true }) matMenu: MatMenu;
 	@Input() set menuItems(value: MenuItem[]) {
 		if (Array.isArray(value)) {
 			this.items = cloneDeep(value);
@@ -49,13 +57,15 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 		private cardService: CardService,
 		private dialogService: DialogService,
 		private feedbackService: FeedbackService,
-		private router: Router,
+		private router: Router
 	) {}
 
 	ngOnInit(): void {
-		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
 
 	ngOnDestroy(): void {
@@ -82,7 +92,11 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	private hasSecondaryMenu(item: any) {
 		if (Array.isArray(item?.subitems)) {
 			for (const element of item.subitems) {
-				if (Array.isArray(element?.subitems) && !element.hide && element.subitems.some((it) => !it.hide)) {
+				if (
+					Array.isArray(element?.subitems) &&
+					!element.hide &&
+					element.subitems.some((it) => !it.hide)
+				) {
 					item.hasSecondaryMenu = true;
 					return;
 				}
@@ -102,9 +116,11 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 		if (item.id === 'user' && event) {
 			const target = event.currentTarget || event.srcElement;
 			const id = target?.attributes?.id?.nodeValue;
-			if (id === 'menu-main-lnk-open-lma' ||
+			if (
+				id === 'menu-main-lnk-open-lma' ||
 				id === 'menu-main-lnk-open-adobe' ||
-				id === 'menu-main-lnk-open-dcc') {
+				id === 'menu-main-lnk-open-dcc'
+			) {
 				this.appsForYouService.updateUnreadMessageCount(id);
 				if (id === 'menu-main-lnk-open-dcc') {
 					this.cardService.openDccDetailModal();
@@ -114,9 +130,13 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 	}
 
 	menuItemKeyDown(path, subpath?, secondaryPath?) {
-		secondaryPath ? this.router.navigateByUrl(`/${path}/${subpath}/${secondaryPath}`)
-			: subpath ? this.router.navigateByUrl(`/${path}/${subpath}`)
-			: path ? this.router.navigateByUrl(`/${path}`) : this.router.navigateByUrl(`/`);
+		secondaryPath
+			? this.router.navigateByUrl(`/${path}/${subpath}/${secondaryPath}`)
+			: subpath
+			? this.router.navigateByUrl(`/${path}/${subpath}`)
+			: path
+			? this.router.navigateByUrl(`/${path}`)
+			: this.router.navigateByUrl(`/`);
 	}
 
 	onLogout() {
@@ -143,10 +163,16 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 
 	updateActiveItem(id: string): boolean {
 		if (id === 'security') {
-			return this.currentRoutePath === '/home-security' || this.currentRoutePath?.startsWith('/security');
+			return (
+				this.currentRoutePath === '/home-security' ||
+				this.currentRoutePath?.startsWith('/security')
+			);
 		}
 		if (id === 'support') {
-			return this.currentRoutePath === '/hardware-scan' || this.currentRoutePath?.startsWith('/support');
+			return (
+				this.currentRoutePath === '/hardware-scan' ||
+				this.currentRoutePath?.startsWith('/support')
+			);
 		}
 		return false;
 	}

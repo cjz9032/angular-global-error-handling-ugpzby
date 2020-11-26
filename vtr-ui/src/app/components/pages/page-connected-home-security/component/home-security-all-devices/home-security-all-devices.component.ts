@@ -6,7 +6,7 @@ import { HomeSecurityAllDevice } from 'src/app/data-models/home-security/home-se
 @Component({
 	selector: 'vtr-home-security-all-devices',
 	templateUrl: './home-security-all-devices.component.html',
-	styleUrls: ['./home-security-all-devices.component.scss']
+	styleUrls: ['./home-security-all-devices.component.scss'],
 })
 export class HomeSecurityAllDevicesComponent implements OnInit {
 	@Input() common: HomeSecurityCommon;
@@ -22,9 +22,9 @@ export class HomeSecurityAllDevicesComponent implements OnInit {
 		5: 'homeDevices',
 	};
 
-	constructor() {	}
+	constructor() {}
 
-	ngOnInit() {	}
+	ngOnInit() {}
 
 	getItemStatusIconClass(item) {
 		let itemStatIconClass;

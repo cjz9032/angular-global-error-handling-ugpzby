@@ -26,10 +26,8 @@ import { HomeSecurityAfterSignupComponent } from '../../components/pages/page-co
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-import { faMapMarkerAltSlash } from '@fortawesome/pro-light-svg-icons/faMapMarkerAltSlash'
+import { faMapMarkerAltSlash } from '@fortawesome/pro-light-svg-icons/faMapMarkerAltSlash';
 import { WidgetLocationStatusComponent } from '../../components/widgets/widget-location-status/widget-location-status.component';
-
-
 
 @NgModule({
 	declarations: [
@@ -39,7 +37,7 @@ import { WidgetLocationStatusComponent } from '../../components/widgets/widget-l
 		PageConnectedHomeSecurityComponent,
 		DaysIntervalPipe,
 		HomeSecurityAfterSignupComponent,
-		WidgetLocationStatusComponent
+		WidgetLocationStatusComponent,
 	],
 	imports: [
 		CommonModule,
@@ -52,14 +50,10 @@ import { WidgetLocationStatusComponent } from '../../components/widgets/widget-l
 		UiListChevronModule,
 		PageLayoutModule,
 		FontAwesomeModule,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
-	providers: [
-		DialogService
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	]
+	providers: [DialogService],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ConnectedHomeSecurityModule {
 	constructor(library: FaIconLibrary) {

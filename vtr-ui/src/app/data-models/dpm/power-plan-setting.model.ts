@@ -1,4 +1,4 @@
-export class PowerPlanSetting{
-	public key:string;
-	public value:string;
+export class PowerPlanSetting {
+	public key: string;
+	public value: string;
 }

@@ -12,7 +12,6 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 	providedIn: 'root',
 })
 export class SecurityAdvisorGuard extends BasicGuard {
-
 	constructor(
 		public guardConstants: GuardConstants,
 		public commonService: CommonService,
@@ -27,8 +26,7 @@ export class SecurityAdvisorGuard extends BasicGuard {
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree | any> | boolean | UrlTree {
 		const segment = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
-		if (SegmentConstHelper.includedInCommonConsumer(segment)
-			|| segment === SegmentConst.SMB) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB) {
 			return true;
 		} else {
 			return this.router.parseUrl('/security/wifi-security');

@@ -8,9 +8,8 @@ xdescribe('ModalModernPreloadComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ModalModernPreloadComponent]
-		})
-			.compileComponents();
+			declarations: [ModalModernPreloadComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

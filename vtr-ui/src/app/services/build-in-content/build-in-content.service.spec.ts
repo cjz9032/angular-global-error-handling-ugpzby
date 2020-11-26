@@ -28,7 +28,6 @@ describe('BuildInContentService', () => {
 		httpClientSpy.get.and.returnValue(asyncError(NORMAL_CONTENTS));
 		await expectAsync(service.getContents(queryParam)).toBeRejected();
 		expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
-
 	});
 
 	it('should return one article when get article by id', async () => {

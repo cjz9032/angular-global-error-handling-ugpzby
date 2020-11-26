@@ -14,7 +14,7 @@ import { AutofocusDirective } from '../../directives/ui-autofocus-directive/auto
 		TranslateDirective,
 		LinkStatusDirective,
 		UiDropdownNavigate,
-		AutofocusDirective
+		AutofocusDirective,
 	],
 	exports: [
 		AppEventDirective,
@@ -22,13 +22,9 @@ import { AutofocusDirective } from '../../directives/ui-autofocus-directive/auto
 		TranslateDirective,
 		LinkStatusDirective,
 		UiDropdownNavigate,
-		AutofocusDirective
+		AutofocusDirective,
 	],
-	imports: [
-		CommonModule
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	]
+	imports: [CommonModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class CommonDirectiveModule { }
+export class CommonDirectiveModule {}

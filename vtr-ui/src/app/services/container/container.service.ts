@@ -3,15 +3,10 @@ import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
 
 @Injectable()
-
 export class ContainerService {
-
 	appId = '';
 
-	constructor(
-		private commsService: CommsService,
-		private devService: DevService
-	) { }
+	constructor(private commsService: CommsService, private devService: DevService) {}
 
 	setAppId(appId) {
 		this.commsService.appId = appId;
@@ -21,5 +16,4 @@ export class ContainerService {
 	loadAppId() {
 		this.devService.writeLog('LOAD GUID');
 	}
-
 }

@@ -16,17 +16,16 @@ export type DashboardStateCardData = {
 @Component({
 	selector: 'vtr-material-state-card-container',
 	templateUrl: './material-state-card-container.component.html',
-	styleUrls: ['./material-state-card-container.component.scss']
+	styleUrls: ['./material-state-card-container.component.scss'],
 })
 export class MaterialStateCardContainerComponent {
 	@Input() cardData: DashboardStateCardData;
 	@Input() order: string;
 	@Input() cardId: string;
 
-	public onClick(linkPath, params){
+	public onClick(linkPath, params) {
 		if (WinRT.launchUri && linkPath) {
 			WinRT.launchUri(linkPath);
 		}
 	}
-
 }

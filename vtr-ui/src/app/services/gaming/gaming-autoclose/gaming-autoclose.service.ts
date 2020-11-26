@@ -6,140 +6,140 @@ import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-
 import { LocalCacheService } from '../../local-cache/local-cache.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class GamingAutoCloseService {
-  private gamingAutoClose: any;
-  public isShellAvailable = false;
-  public cardContentPositionF: any = {
-		FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg'
+	private gamingAutoClose: any;
+	public isShellAvailable = false;
+	public cardContentPositionF: any = {
+		FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg',
 	};
 	public cardContentPositionB: any = {
-		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg'
+		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg',
 	};
 
-  constructor(
-	  private shellService: VantageShellService,
-	  private localCacheService: LocalCacheService) {
-	this.gamingAutoClose = shellService.getGamingAutoClose();
-	if (this.gamingAutoClose) {
-		this.isShellAvailable = true;
-	}
-  }
-
-  getAutoCloseStatus(): Promise<boolean> {
-	try {
-		if (this.isShellAvailable) {
-		return this.gamingAutoClose.getStatus();
+	constructor(
+		private shellService: VantageShellService,
+		private localCacheService: LocalCacheService
+	) {
+		this.gamingAutoClose = shellService.getGamingAutoClose();
+		if (this.gamingAutoClose) {
+			this.isShellAvailable = true;
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error);
 	}
-  }
 
-  setAutoCloseStatus(value: boolean): Promise<boolean> {
-	try {
-		if (this.isShellAvailable) {
-		return this.gamingAutoClose.setStatus(value);
+	getAutoCloseStatus(): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingAutoClose.getStatus();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error);
 	}
-  }
 
-  getAppsAutoCloseList(): Promise<boolean> {
-	try {
-		if (this.isShellAvailable) {
-		return this.gamingAutoClose.getAutoCloseList();
+	setAutoCloseStatus(value: boolean): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingAutoClose.setStatus(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error);
 	}
-  }
 
-  getAppsAutoCloseRunningList(): Promise<boolean> {
-	try {
-		if (this.isShellAvailable) {
-		return this.gamingAutoClose.getRunningList();
+	getAppsAutoCloseList(): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingAutoClose.getAutoCloseList();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error);
 	}
-  }
 
-  addAppsAutoCloseList(value: any): Promise<boolean> {
-	try {
-		if (this.isShellAvailable) {
-		return this.gamingAutoClose.addAutoCloseList(value);
+	getAppsAutoCloseRunningList(): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingAutoClose.getRunningList();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error);
 	}
-  }
 
-  delAppsAutoCloseList(value: any): Promise<boolean> {
-	try {
-		if (this.isShellAvailable) {
-		return this.gamingAutoClose.delAutoCloseList(value);
+	addAppsAutoCloseList(value: any): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingAutoClose.addAutoCloseList(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error);
 	}
-  }
 
-  getNeedToAsk(): Promise<boolean> {
-	try {
-		if (this.isShellAvailable) {
-		return this.gamingAutoClose.getNeedToAsk();
+	delAppsAutoCloseList(value: any): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingAutoClose.delAutoCloseList(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error);
 	}
-  }
 
-  setNeedToAsk(value: any): Promise<boolean> {
-	try {
-		if (this.isShellAvailable) {
-		return this.gamingAutoClose.setNeedToAsk(value);
+	getNeedToAsk(): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingAutoClose.getNeedToAsk();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error);
 		}
-		return undefined;
-	} catch (error) {
-		throw new Error(error);
 	}
-  }
 
-  // Auto close  status changes
-  setAutoCloseStatusCache(status: any) {
-	this.localCacheService.setLocalCacheValue(LocalStorageKey.AutoCloseStatus, status);
-  }
+	setNeedToAsk(value: any): Promise<boolean> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingAutoClose.setNeedToAsk(value);
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error);
+		}
+	}
 
-  getAutoCloseStatusCache() {
-	return this.localCacheService.getLocalCacheValue(LocalStorageKey.AutoCloseStatus);
-  }
+	// Auto close  status changes
+	setAutoCloseStatusCache(status: any) {
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.AutoCloseStatus, status);
+	}
 
-  // Need to ask status changes
+	getAutoCloseStatusCache() {
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.AutoCloseStatus);
+	}
 
-  setNeedToAskStatusCache(askStatusChanges: any) {
-	this.localCacheService.setLocalCacheValue(LocalStorageKey.NeedToAsk, askStatusChanges);
-  }
+	// Need to ask status changes
 
-  getNeedToAskStatusCache() {
-	return this.localCacheService.getLocalCacheValue(LocalStorageKey.NeedToAsk);
-  }
+	setNeedToAskStatusCache(askStatusChanges: any) {
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.NeedToAsk, askStatusChanges);
+	}
 
-  setAutoCloseListCache(processList: any) {
-	this.localCacheService.setLocalCacheValue(LocalStorageKey.AutoCloseList, processList);
-  }
+	getNeedToAskStatusCache() {
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.NeedToAsk);
+	}
 
-  getAutoCloseListCache() {
-	return this.localCacheService.getLocalCacheValue(LocalStorageKey.AutoCloseList);
-  }
+	setAutoCloseListCache(processList: any) {
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.AutoCloseList, processList);
+	}
 
+	getAutoCloseListCache() {
+		return this.localCacheService.getLocalCacheValue(LocalStorageKey.AutoCloseList);
+	}
 }

@@ -8,21 +8,21 @@ import { pluck, skip } from 'rxjs/operators';
 @Component({
 	selector: 'vtr-battery-temperature',
 	templateUrl: './battery-temperature.component.html',
-	styleUrls: ['./battery-temperature.component.scss']
+	styleUrls: ['./battery-temperature.component.scss'],
 })
 export class BatteryTemperatureComponent implements OnInit {
 	private conditionBreakpoints = [15, 35, 50];
 	temperature = 25;
 	condition = 'fine';
 
-	constructor(
-		private batteryHealthService: BatteryHealthService
-	) {
-	}
+	constructor(private batteryHealthService: BatteryHealthService) {}
 
 	ngOnInit(): void {
-		const [error$, temperature$] = partition(this.batteryHealthService.batteryInfo.pipe(pluck('temperature')),
-			(temperature) => typeof temperature !== 'number' || temperature === BatteryTemperatureStatus.ERROR);
+		const [error$, temperature$] = partition(
+			this.batteryHealthService.batteryInfo.pipe(pluck('temperature')),
+			(temperature) =>
+				typeof temperature !== 'number' || temperature === BatteryTemperatureStatus.ERROR
+		);
 		error$.pipe(skip(1)).subscribe(() => {
 			/**
 			 * When something went wrong and return unexpected error, including,
@@ -31,14 +31,17 @@ export class BatteryTemperatureComponent implements OnInit {
 			this.temperature = BatteryTemperatureStatus.ERROR;
 			this.condition = Conditions[BatteryTemperatureStatus.ERROR];
 		});
-		temperature$.subscribe(temperature => {
-			this.temperature  = temperature;
+		temperature$.subscribe((temperature) => {
+			this.temperature = temperature;
 			this.condition = Conditions[this._condition(temperature)];
 		});
 	}
 
 	private _condition(temperature) {
 		return this.conditionBreakpoints.reduce(
-			(previousValue, currentValue, currentIndex) => temperature > currentValue ? currentIndex + 1 : previousValue, 0);
+			(previousValue, currentValue, currentIndex) =>
+				temperature > currentValue ? currentIndex + 1 : previousValue,
+			0
+		);
 	}
 }

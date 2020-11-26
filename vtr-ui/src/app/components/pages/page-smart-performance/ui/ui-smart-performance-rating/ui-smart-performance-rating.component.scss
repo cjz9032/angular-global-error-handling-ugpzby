@@ -68,9 +68,7 @@
 					background: $light;
 					@include high-contrast-adjust;
 				}
-
 			}
-
 		}
 
 		.vertical-lines-bg {
@@ -106,7 +104,6 @@
 				}
 			}
 		}
-
 	}
 
 	.number-list {
@@ -151,7 +148,6 @@
 	}
 
 	.pc-status-info {
-
 		.info-text {
 			color: $alt;
 			margin-top: 1.5rem;
@@ -187,7 +183,7 @@
 			}
 
 			&::before {
-				content: "";
+				content: '';
 				position: absolute;
 				width: 100%;
 				height: 0.5rem;
@@ -200,7 +196,7 @@
 			}
 
 			&::after {
-				content: "";
+				content: '';
 				position: absolute;
 				width: 100%;
 				height: 0.5rem;
@@ -266,7 +262,6 @@
 				box-shadow: none;
 				@include black-border;
 			}
-
 		}
 
 		.condition {
@@ -278,7 +273,6 @@
 		}
 
 		.pc-status-info {
-
 			.info-text {
 				color: $alt;
 

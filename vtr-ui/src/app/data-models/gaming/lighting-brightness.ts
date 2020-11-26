@@ -1,3 +1,3 @@
 export class LightingBrightness {
-	lightingBrightnessLevel:1;
+	lightingBrightnessLevel: 1;
 }

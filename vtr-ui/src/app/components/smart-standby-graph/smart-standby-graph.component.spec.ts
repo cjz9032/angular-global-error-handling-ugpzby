@@ -13,30 +13,27 @@ import { Observable, Observer } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
 describe('SmartStandbyGraphComponent', () => {
-
 	const activities: SmartStandbyActivityModel[] = [
 		{
 			day: 'sunday',
 			activities: [
 				{
 					hour: 1,
-					usage: [20, 30, 10]
-				}
-			]
-		}
+					usage: [20, 30, 10],
+				},
+			],
+		},
 	];
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [SmartStandbyGraphComponent],
 			imports: [FontAwesomeModule, TranslationModule, HttpClientTestingModule],
-			providers: [TranslateStore]
+			providers: [TranslateStore],
 		}).compileComponents();
 	}));
 
-
 	describe(':', () => {
-
 		function setup() {
 			const fixture = TestBed.createComponent(SmartStandbyGraphComponent);
 			const component = fixture.debugElement.componentInstance;
@@ -47,10 +44,10 @@ describe('SmartStandbyGraphComponent', () => {
 			return { fixture, component, httpTestingController };
 		}
 
-		it('should create the app', (() => {
+		it('should create the app', () => {
 			const { component } = setup();
 			expect(component).toBeTruthy();
-		}));
+		});
 
 		it('should call getActivities, renderChart', fakeAsync(() => {
 			const { fixture, component } = setup();
@@ -71,25 +68,26 @@ describe('SmartStandbyGraphComponent', () => {
 		}));
 
 		// not async func
-		it('should render chart', (() => {
+		it('should render chart', () => {
 			const { fixture, component } = setup();
 			// spyOn(component, 'renderChart');
 
 			fixture.detectChanges();
 			component.renderChart(activities);
 
-			const dom = fixture.debugElement.nativeElement.querySelector('div[class^="app-smart-standby-activity"]');
+			const dom = fixture.debugElement.nativeElement.querySelector(
+				'div[class^="app-smart-standby-activity"]'
+			);
 			// console.log(dom);
 			expect(dom).toBeTruthy();
-
-		}));
+		});
 
 		// testing http.get
-		it('should call http get', (() => {
+		it('should call http get', () => {
 			const { fixture, component, httpTestingController } = setup();
 			const mockActivities = activities;
 
-			component.getActivities().subscribe(data => {
+			component.getActivities().subscribe((data) => {
 				expect(data).toEqual(mockActivities);
 			});
 
@@ -98,12 +96,11 @@ describe('SmartStandbyGraphComponent', () => {
 			expect(req.request.method).toBe('GET');
 
 			req.flush(mockActivities);
-		}));
+		});
 
 		// afterEach(() => {
 		// 	const { httpTestingController } = setup();
 		// 	httpTestingController.verify();
 		// });
-
 	});
 });

@@ -8,9 +8,8 @@ xdescribe('WidgetRecoverBadSectorsComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ WidgetRecoverBadSectorsComponent ]
-		})
-		.compileComponents();
+			declarations: [WidgetRecoverBadSectorsComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

@@ -7,10 +7,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class StoreRatingService {
-
 	private storeRatingPromptMaxCountKey = 'StoreRatingMaxCount';
 	private storeRatingTargetUserKey = 'StoreRatingFeature';
 	private storeRatingDaysBetween = 'StoreRatingDaysBetween';
@@ -19,8 +18,8 @@ export class StoreRatingService {
 		private localCacheService: LocalCacheService,
 		private hypothesis: HypothesisService,
 		private logger: LoggerService,
-		private ngModal: NgbModal,
-	) { }
+		private ngModal: NgbModal
+	) {}
 
 	public async showRatingAsync() {
 		if (await this.canPromptRating()) {
@@ -29,19 +28,24 @@ export class StoreRatingService {
 				centered: true,
 			});
 
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.RatingLastPromptTime, new Date());
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.RatingLastPromptTime,
+				new Date()
+			);
 			this.addRatingPromptCount();
 			this.markPromptRatingNextLaunch(false);
 		}
 	}
 
 	public markPromptRatingNextLaunch(needPrompt: boolean): boolean {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.RatingConditionMet, needPrompt)
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.RatingConditionMet, needPrompt);
 		return true;
 	}
 
 	private getRatingPromptCount(): number {
-		let currentPromptCount = this.localCacheService.getLocalCacheValue(LocalStorageKey.RatingPromptCount);
+		let currentPromptCount = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.RatingPromptCount
+		);
 		currentPromptCount = currentPromptCount ? currentPromptCount : 0;
 		currentPromptCount = parseInt(currentPromptCount, 10);
 		return currentPromptCount;
@@ -51,7 +55,10 @@ export class StoreRatingService {
 		let currentPromptCount = this.getRatingPromptCount();
 		if (isNaN(currentPromptCount)) currentPromptCount = 0;
 		currentPromptCount += 1;
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.RatingPromptCount, currentPromptCount);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.RatingPromptCount,
+			currentPromptCount
+		);
 	}
 
 	private async canPromptRating(): Promise<boolean> {
@@ -60,14 +67,14 @@ export class StoreRatingService {
 		}
 
 		if (!this.localCacheService.getLocalCacheValue(LocalStorageKey.RatingConditionMet)) {
-			this.logger.info(`Rating won't show, no key action triggered.`)
+			this.logger.info(`Rating won't show, no key action triggered.`);
 			return false;
 		}
 
 		const hypSettings = await this.hypothesis.getAllSettings();
 		const isTargetUserToPrompt = hypSettings[this.storeRatingTargetUserKey];
 		if ((isTargetUserToPrompt || '').toLowerCase() !== 'true') {
-			this.logger.info(`Rating won't show, not a target user`)
+			this.logger.info(`Rating won't show, not a target user`);
 			return false;
 		}
 
@@ -79,12 +86,21 @@ export class StoreRatingService {
 
 		const currentPromptCount = this.getRatingPromptCount();
 
-		if (isNaN(promptMaxCount) || isNaN(currentPromptCount) || isNaN(daysBetween) || currentPromptCount >= promptMaxCount) {
-			this.logger.info(`promptMaxCount is ${promptMaxCount}, currentPromptCount is ${currentPromptCount},daysBetween is ${daysBetween}, rating won't show.`)
+		if (
+			isNaN(promptMaxCount) ||
+			isNaN(currentPromptCount) ||
+			isNaN(daysBetween) ||
+			currentPromptCount >= promptMaxCount
+		) {
+			this.logger.info(
+				`promptMaxCount is ${promptMaxCount}, currentPromptCount is ${currentPromptCount},daysBetween is ${daysBetween}, rating won't show.`
+			);
 			return false;
 		}
 
-		const lastPromptDate = this.localCacheService.getLocalCacheValue(LocalStorageKey.RatingLastPromptTime);
+		const lastPromptDate = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.RatingLastPromptTime
+		);
 		if (lastPromptDate) {
 			const date = new Date(lastPromptDate);
 			const lastPromptMillionSeconds = date.getTime();
@@ -101,4 +117,3 @@ export class StoreRatingService {
 		return true;
 	}
 }
-

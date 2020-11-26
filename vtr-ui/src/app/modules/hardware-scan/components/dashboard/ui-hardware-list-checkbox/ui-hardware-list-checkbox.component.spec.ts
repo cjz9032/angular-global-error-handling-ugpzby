@@ -7,10 +7,9 @@ xdescribe('UiHardwareListCheckboxComponent', () => {
 	let fixture: ComponentFixture<UiHardwareListCheckboxComponent>;
 
 	beforeEach(async(() => {
-	TestBed.configureTestingModule({
-		declarations: [ UiHardwareListCheckboxComponent ]
-	})
-		.compileComponents();
+		TestBed.configureTestingModule({
+			declarations: [UiHardwareListCheckboxComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

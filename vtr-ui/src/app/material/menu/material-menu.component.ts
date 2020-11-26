@@ -1,4 +1,15 @@
-import { Component, OnInit, OnDestroy, Input, ViewChild, ElementRef, ViewChildren, QueryList, ViewContainerRef, HostListener } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	OnDestroy,
+	Input,
+	ViewChild,
+	ElementRef,
+	ViewChildren,
+	QueryList,
+	ViewContainerRef,
+	HostListener,
+} from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -35,9 +46,9 @@ import { TopRowFunctionsIdeapadService } from 'src/app/components/pages/page-dev
 import { BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 
 @Component({
-  selector: 'vtr-material-menu',
-  templateUrl: './material-menu.component.html',
-  styleUrls: ['./material-menu.component.scss']
+	selector: 'vtr-material-menu',
+	templateUrl: './material-menu.component.html',
+	styleUrls: ['./material-menu.component.scss'],
 })
 export class MaterialMenuComponent implements OnInit, OnDestroy {
 	@ViewChildren(MatMenuHoverTrigger) hoverTriggers: QueryList<MatMenuHoverTrigger>;
@@ -93,10 +104,10 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private searchService: AppSearchService,
 		private logger: LoggerService,
-		private keyboardService: InputAccessoriesService,
-		) {
-			newFeatureTipService.viewContainer = this.viewContainerRef;
-		}
+		private keyboardService: InputAccessoriesService
+	) {
+		newFeatureTipService.viewContainer = this.viewContainerRef;
+	}
 
 	ngOnInit(): void {
 		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
@@ -106,13 +117,22 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		if (cacheMachineFamilyName) {
 			this.machineFamilyName = cacheMachineFamilyName;
 		}
-		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 		this.initComponent();
-		window.addEventListener('resize', throttle(() => {
-			this.closeAllMatMenu();
-		}, 100, { leading: true }));
+		window.addEventListener(
+			'resize',
+			throttle(
+				() => {
+					this.closeAllMatMenu();
+				},
+				100,
+				{ leading: true }
+			)
+		);
 		this.routerEventSubscription = this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
 				this.currentRoutePath = ev.url;
@@ -180,13 +200,15 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	}
 
 	private initComponent() {
-		this.translateSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			if (this.translate.currentLang === 'en') {
-				this.showSearchMenu = true;
+		this.translateSubscription = this.translate.onLangChange.subscribe(
+			(event: LangChangeEvent) => {
+				if (this.translate.currentLang === 'en') {
+					this.showSearchMenu = true;
+				}
 			}
-		});
+		);
 		this.unsupportFeatureEvt = this.searchService.getUnsupportFeatureEvt();
-		this.unsupportedFeatureSubscription = this.unsupportFeatureEvt.subscribe(featureDesc => {
+		this.unsupportedFeatureSubscription = this.unsupportFeatureEvt.subscribe((featureDesc) => {
 			if (this.searchTipsTimeout) {
 				clearTimeout(this.searchTipsTimeout);
 			}
@@ -196,12 +218,14 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 				this.searchTipsTimeout = null;
 			}, 3000);
 		});
-		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
+		const machineType = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.MachineType,
+			undefined
+		);
 		if (machineType !== undefined) {
 			this.loadMenuOptions(machineType);
 		} else if (this.deviceService.isShellAvailable) {
-			this.deviceService.getMachineType()
-			.then((value: number) => {
+			this.deviceService.getMachineType().then((value: number) => {
 				this.loadMenuOptions(value);
 			});
 		}
@@ -226,19 +250,27 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad then call below function
 		if (machineType === 0 || machineType === 1) {
-			this.backlightCapabilitySubscription = this.backlightService.backlight.pipe(
-				map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
-				map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY),
-				tap(res => {
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.BacklightCapability, res);
-				}),
-				catchError(() => {
-					window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
-					return undefined;
-				})
-			).subscribe();
+			this.backlightCapabilitySubscription = this.backlightService.backlight
+				.pipe(
+					map((res) => res.find((item) => item.key === 'KeyboardBacklightLevel')),
+					map((res) => res.value !== BacklightLevelEnum.NO_CAPABILITY),
+					tap((res) => {
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.BacklightCapability,
+							res
+						);
+					}),
+					catchError(() => {
+						window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
+						return undefined;
+					})
+				)
+				.subscribe();
 		}
-		const machineFamily = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName, undefined);
+		const machineFamily = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.MachineFamilyName,
+			undefined
+		);
 		// Added special case for KEI machine
 		if (machineFamily) {
 			const familyName = machineFamily.replace(/\s+/g, '');
@@ -248,20 +280,31 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		}
 		if (machineType === 0) {
 			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, false);
-			this.topRowFnSubscription = this.topRowFunctionsIdeapadService.capability.pipe(
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.TopRowFunctionsCapability,
+				false
+			);
+			this.topRowFnSubscription = this.topRowFunctionsIdeapadService.capability
+				.pipe(
 					catchError(() => {
 						window.localStorage.removeItem(LocalStorageKey.TopRowFunctionsCapability);
 						return undefined;
 					})
-				).subscribe((capabilities: Array<any>) => {
+				)
+				.subscribe((capabilities: Array<any>) => {
 					if (Array.isArray(capabilities)) {
 						if (capabilities.length === 0) {
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, false);
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.TopRowFunctionsCapability,
+								false
+							);
 						}
-						capabilities.forEach(capability => {
+						capabilities.forEach((capability) => {
 							if (capability.key === 'FnLock') {
-								this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, capability.value === StringBooleanEnum.TRUTHY);
+								this.localCacheService.setLocalCacheValue(
+									LocalStorageKey.TopRowFunctionsCapability,
+									capability.value === StringBooleanEnum.TRUTHY
+								);
 							}
 						});
 					}
@@ -273,33 +316,50 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		this.logger.error('MenuMainComponent.initInputAccessories before API call');
 		const responses = await Promise.all([
 			this.keyboardService.GetAllCapability(),
-			this.keyboardService.GetKeyboardVersion()
+			this.keyboardService.GetKeyboardVersion(),
 		]);
 		try {
 			if (responses) {
-				this.logger.error('MenuMainComponent.initInputAccessories after API call'
-					, { GetAllCapability: responses[0], GetKeyboardVersion: responses[1] });
-				let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+				this.logger.error('MenuMainComponent.initInputAccessories after API call', {
+					GetAllCapability: responses[0],
+					GetKeyboardVersion: responses[1],
+				});
+				let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.InputAccessoriesCapability,
+					undefined
+				);
 				if (inputAccessoriesCapability === undefined) {
 					inputAccessoriesCapability = new InputAccessoriesCapability();
 				}
-				inputAccessoriesCapability.isUdkAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('uDKCapability') !== -1) ? responses[0].uDKCapability : false;
-				inputAccessoriesCapability.isKeyboardMapAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1) ? responses[0].keyboardMapCapability : false;
-				inputAccessoriesCapability.keyboardVersion = (responses[1] != null) ? responses[1] : '-1';
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability,
+				inputAccessoriesCapability.isUdkAvailable =
+					responses[0] != null &&
+					Object.keys(responses[0]).indexOf('uDKCapability') !== -1
+						? responses[0].uDKCapability
+						: false;
+				inputAccessoriesCapability.isKeyboardMapAvailable =
+					responses[0] != null &&
+					Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
+						? responses[0].keyboardMapCapability
+						: false;
+				inputAccessoriesCapability.keyboardVersion =
+					responses[1] != null ? responses[1] : '-1';
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.InputAccessoriesCapability,
 					inputAccessoriesCapability
 				);
 			}
 		} catch (error) {
 			this.logger.exception('initInputAccessories', error);
 		}
-		this.keyboardService.getVoipHotkeysSettings()
-			.then(response => {
-				if (response.capability) {
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.VOIPCapability, response.capability);
-				}
-				return response;
-			});
+		this.keyboardService.getVoipHotkeysSettings().then((response) => {
+			if (response.capability) {
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.VOIPCapability,
+					response.capability
+				);
+			}
+			return response;
+		});
 	}
 
 	toggleMenu(event) {
@@ -309,7 +369,7 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 
 	private collectPreloadAssets(menu: Array<any>): string[] {
 		let assets = [];
-		menu.forEach(item => {
+		menu.forEach((item) => {
 			if (!item.hide && item.pre) {
 				assets = assets.concat(item.pre);
 			}
@@ -329,9 +389,11 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		} else if (item && item.id === 'user' && event) {
 			const target = event.currentTarget || event.srcElement;
 			const id = target?.attributes?.id?.nodeValue;
-			if (id === 'menu-main-lnk-open-lma' ||
+			if (
+				id === 'menu-main-lnk-open-lma' ||
 				id === 'menu-main-lnk-open-adobe' ||
-				id === 'menu-main-lnk-open-dcc') {
+				id === 'menu-main-lnk-open-dcc'
+			) {
 				this.appsForYouService.updateUnreadMessageCount(id);
 				if (id === 'menu-main-lnk-open-dcc') {
 					this.cardService.openDccDetailModal();
@@ -345,8 +407,11 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	}
 
 	menuItemKeyDown(path, subpath?) {
-		subpath ? this.router.navigateByUrl(`/${path}/${subpath}`)
-			: path ? this.router.navigateByUrl(`/${path}`) : this.router.navigateByUrl(`/`);
+		subpath
+			? this.router.navigateByUrl(`/${path}/${subpath}`)
+			: path
+			? this.router.navigateByUrl(`/${path}`)
+			: this.router.navigateByUrl(`/`);
 	}
 
 	openMatMenu(menuTrigger: MatMenuHoverTrigger) {
@@ -358,17 +423,16 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	}
 
 	closeAllMatMenu() {
-		this.triggers?.toArray().forEach(elem => {
+		this.triggers?.toArray().forEach((elem) => {
 			elem.closeMenu();
 		});
-		this.hoverTriggers?.toArray().forEach(elem => {
+		this.hoverTriggers?.toArray().forEach((elem) => {
 			elem.closeMenu();
 		});
-
 	}
 
 	closeAllOtherMatMenu(activeDropdown: MatMenuHoverTrigger) {
-		this.hoverTriggers?.toArray().forEach(elem => {
+		this.hoverTriggers?.toArray().forEach((elem) => {
 			if (activeDropdown !== elem) {
 				elem.closeMenu();
 			}
@@ -405,10 +469,16 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 
 	updateActiveItem(id: string): boolean {
 		if (id === 'security') {
-			return this.currentRoutePath === '/home-security' || this.currentRoutePath?.startsWith('/security');
+			return (
+				this.currentRoutePath === '/home-security' ||
+				this.currentRoutePath?.startsWith('/security')
+			);
 		}
 		if (id === 'support') {
-			return this.currentRoutePath === '/hardware-scan' || this.currentRoutePath?.startsWith('/support');
+			return (
+				this.currentRoutePath === '/hardware-scan' ||
+				this.currentRoutePath?.startsWith('/support')
+			);
 		}
 		return false;
 	}

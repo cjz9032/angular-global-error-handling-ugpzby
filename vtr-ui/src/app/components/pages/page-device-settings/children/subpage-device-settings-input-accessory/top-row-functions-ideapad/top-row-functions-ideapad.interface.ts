@@ -2,7 +2,7 @@ import {
 	CommonErrorCode,
 	CommonResponse,
 	NumberBoolean,
-	StringBoolean
+	StringBoolean,
 } from '../../../../../../data-models/common/common.interface';
 
 // export interface TopRowFunctionsIdeapad {
@@ -20,9 +20,7 @@ import {
 //
 // }
 
-
 export interface TopRowFunctionsIdeapad {
-
 	getCapability(): Promise<GetCapabilityResponse>;
 
 	getPrimaryKey(): Promise<GetPrimaryKeyResponse>;
@@ -33,7 +31,6 @@ export interface TopRowFunctionsIdeapad {
 	 * @param fnLock "True|False" ATTENTION!!!!!  String type truthy or falsy.
 	 */
 	setFnLockStatus(fnLock: StringBoolean): Promise<CommonResponse<null>>;
-
 }
 
 export type Capabilities = 'keyboardBacklightControl' | 'fnLock';
@@ -53,14 +50,14 @@ export interface CapabilityTemp {
 export interface GetCapabilityResponse {
 	errorCode?: CommonErrorCode;
 	capabilityList: {
-		Items: CapabilityTemp[]
+		Items: CapabilityTemp[];
 	};
 	reservedInformation?: any;
 }
 
 export enum KeyType {
 	HOTKEY = 'Hotkey',
-	FNKEY = 'Fnkey'
+	FNKEY = 'Fnkey',
 }
 
 // export interface GetPrimaryKeyResponse {

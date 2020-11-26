@@ -17,14 +17,9 @@ import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 @NgModule({
-	declarations: [
-		UiListChevronComponent
-	],
-	exports: [
-		UiListChevronComponent
-	],
+	declarations: [UiListChevronComponent],
+	exports: [UiListChevronComponent],
 	imports: [
 		CommonModule,
 		TranslationModule.forChild(),
@@ -33,12 +28,9 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		RouterModule,
 		MetricsModule,
 		AppSearchModule,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class UiListChevronModule {
 	constructor(library: FaIconLibrary) {

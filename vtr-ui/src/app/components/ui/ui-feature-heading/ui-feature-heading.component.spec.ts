@@ -6,25 +6,24 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 
 describe('UiFeatureHeadingComponent', () => {
-  let component: UiFeatureHeadingComponent;
-  let fixture: ComponentFixture<UiFeatureHeadingComponent>;
+	let component: UiFeatureHeadingComponent;
+	let fixture: ComponentFixture<UiFeatureHeadingComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ UiFeatureHeadingComponent,SvgInlinePipe ],
-      imports: [HttpClientTestingModule, TranslateModule.forRoot()],
-			providers: []
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [UiFeatureHeadingComponent, SvgInlinePipe],
+			imports: [HttpClientTestingModule, TranslateModule.forRoot()],
+			providers: [],
+		}).compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(UiFeatureHeadingComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(UiFeatureHeadingComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

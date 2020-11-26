@@ -1,4 +1,4 @@
 export enum MacroKeyInterval {
 	KeepInterval = 1,
-	IgnoreInterval = 2
+	IgnoreInterval = 2,
 }

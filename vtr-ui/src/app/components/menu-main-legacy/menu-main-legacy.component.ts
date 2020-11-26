@@ -1,4 +1,15 @@
-import { Component, ElementRef, HostListener, Input, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
+import {
+	Component,
+	ElementRef,
+	HostListener,
+	Input,
+	OnDestroy,
+	OnInit,
+	QueryList,
+	ViewChild,
+	ViewChildren,
+	ViewContainerRef,
+} from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { NgbDropdown, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
@@ -39,7 +50,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 @Component({
 	selector: 'vtr-menu-main-legacy',
 	templateUrl: './menu-main-legacy.component.html',
-	styleUrls: ['./menu-main-legacy.component.scss']
+	styleUrls: ['./menu-main-legacy.component.scss'],
 })
 export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	@ViewChild('menuTarget', { static: false })
@@ -98,7 +109,9 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	// activeDropdown: NgbDropdown;
 	@ViewChild('menuMainNavbarToggler') navbarToggler: ElementRef;
 
-	get appsForYouEnum() { return AppsForYouEnum; }
+	get appsForYouEnum() {
+		return AppsForYouEnum;
+	}
 
 	constructor(
 		private router: Router,
@@ -134,9 +147,11 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		this.headerLogo = '';
 		this.checkLiteGaming();
 
-		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 
 		this.isDashboard = true;
 
@@ -159,7 +174,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 
 	private collectPreloadAssets(menu: Array<any>): string[] {
 		let assets = [];
-		menu.forEach(item => {
+		menu.forEach((item) => {
 			if (!item.hide && item.pre) {
 				assets = assets.concat(item.pre);
 			}
@@ -184,13 +199,15 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			}
 		});
 
-		this.translateSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-			if (this.translate.currentLang === 'en') {
-				this.showSearchMenu = true;
+		this.translateSubscription = this.translate.onLangChange.subscribe(
+			(event: LangChangeEvent) => {
+				if (this.translate.currentLang === 'en') {
+					this.showSearchMenu = true;
+				}
 			}
-		});
+		);
 		this.unsupportFeatureEvt = this.searchService.getUnsupportFeatureEvt();
-		this.unsupportedFeatureSubscription = this.unsupportFeatureEvt.subscribe(featureDesc => {
+		this.unsupportedFeatureSubscription = this.unsupportFeatureEvt.subscribe((featureDesc) => {
 			if (this.searchTipsTimeout) {
 				clearTimeout(this.searchTipsTimeout);
 			}
@@ -201,15 +218,16 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			}, 3000);
 		});
 
-		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, undefined);
+		const machineType = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.MachineType,
+			undefined
+		);
 		if (machineType !== undefined) {
 			this.loadMenuOptions(machineType);
 		} else if (this.deviceService.isShellAvailable) {
-			this.deviceService
-				.getMachineType()
-				.then((value: number) => {
-					this.loadMenuOptions(value);
-				});
+			this.deviceService.getMachineType().then((value: number) => {
+				this.loadMenuOptions(value);
+			});
 		}
 	}
 
@@ -244,7 +262,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 
 	closeAllDD() {
 		// Close all dropdowns
-		this.dropDowns.toArray().forEach(elem => {
+		this.dropDowns.toArray().forEach((elem) => {
 			elem.close();
 		});
 		// Open the dropdown that was clicked on
@@ -254,7 +272,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	closeAllOtherDD(activeDropdown: NgbDropdown) {
 		// Close all dropdowns
 		// this.activeDropdown = activeDropdown;
-		this.dropDowns.toArray().forEach(elem => {
+		this.dropDowns.toArray().forEach((elem) => {
 			if (activeDropdown !== elem) {
 				elem.close();
 			}
@@ -268,7 +286,9 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			const anchors = Array.from(menuElement.querySelectorAll('[class*=dropdown-item]'));
 			// const anchors = Array.from(menuElement.querySelectorAll('.dropdown-item.link'));
 			const currentIndex = anchors.indexOf(sourceElement);
-			const tabElements = Array.from(document.querySelectorAll('[tabindex]:not([tabindex=\'-1\']'));
+			const tabElements = Array.from(
+				document.querySelectorAll("[tabindex]:not([tabindex='-1']")
+			);
 			/// const tabElements = Array.from(document.querySelectorAll('[tabIndex = \'1\']'));
 			const curElementTabIndex = tabElements.indexOf(sourceElement);
 			// SHIFT+TAB
@@ -282,8 +302,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 				}
 				if (element.id === 'navbarDropdown' && anchors.indexOf(sourceElement)) {
 					(tabElements[curElementTabIndex - 1] as HTMLElement).focus();
-				}
-				else {
+				} else {
 					if (anchors.indexOf(element) === -1) {
 						$event.stopPropagation();
 						$event.preventDefault();
@@ -292,7 +311,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 						activeDropdown.close();
 					}
 				}
-
 			}
 			// TAB
 			if (!$event.shiftKey && $event.keyCode === 9) {
@@ -310,27 +328,24 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 
 					// console.log('tab curElementTabIndex closing current element curElementTabIndex');
 					activeDropdown.close();
-
 				}
-
 			}
 		}
-
 	}
-
 
 	@HostListener('window:keydown', ['$event'])
 	scrollUpDown($event: KeyboardEvent) {
 		if ($event.keyCode === 38 || $event.keyCode === 40) {
 			const activeDom: any = document.activeElement;
 			if (activeDom && activeDom.id.includes('menu-main')) {
-				const contentArea = document.querySelector('.vtr-app.container-fluid') as HTMLElement;
+				const contentArea = document.querySelector(
+					'.vtr-app.container-fluid'
+				) as HTMLElement;
 				contentArea.focus();
 				$event.stopPropagation();
 				$event.preventDefault();
 			}
 		}
-
 	}
 
 	private loadMenuOptions(machineType: number) {
@@ -339,22 +354,29 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			// add try catch for backlight exception; this is temp solution, dongwq2 should add error handle in backlight
 			try {
 				// this.localCacheService.setLocalCacheValue(LocalStorageKey.BacklightCapability, false);
-				this.backlightCapabilitySubscription = this.backlightService.backlight.pipe(
-					map(res => res.find(item => item.key === 'KeyboardBacklightLevel')),
-					map(res => res.value !== BacklightLevelEnum.NO_CAPABILITY),
-					tap(res => {
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.BacklightCapability, res);
-					}),
-					catchError(() => {
-						window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
-						return undefined;
-					})
-				).subscribe();
-			} catch (error) { }
-
+				this.backlightCapabilitySubscription = this.backlightService.backlight
+					.pipe(
+						map((res) => res.find((item) => item.key === 'KeyboardBacklightLevel')),
+						map((res) => res.value !== BacklightLevelEnum.NO_CAPABILITY),
+						tap((res) => {
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.BacklightCapability,
+								res
+							);
+						}),
+						catchError(() => {
+							window.localStorage.removeItem(LocalStorageKey.BacklightCapability);
+							return undefined;
+						})
+					)
+					.subscribe();
+			} catch (error) {}
 		}
 
-		const machineFamily = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName, undefined);
+		const machineFamily = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.MachineFamilyName,
+			undefined
+		);
 		// Added special case for KEI machine
 		if (machineFamily) {
 			const familyName = machineFamily.replace(/\s+/g, '');
@@ -365,7 +387,10 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 
 		if (machineType === 0) {
 			// todo: in case unexpected showing up in edge case when u remove drivers. should be a safety way to check capability.
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, false);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.TopRowFunctionsCapability,
+				false
+			);
 			this.topRowFnSubscription = this.topRowFunctionsIdeapadService.capability
 				.pipe(
 					catchError(() => {
@@ -375,12 +400,18 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 				)
 				.subscribe((capabilities: Array<any>) => {
 					if (capabilities.length === 0) {
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, false);
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.TopRowFunctionsCapability,
+							false
+						);
 					}
 					// todo: there should be a better way to operate this array
-					capabilities.forEach(capability => {
+					capabilities.forEach((capability) => {
 						if (capability.key === 'FnLock') {
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability, capability.value === StringBooleanEnum.TRUTHY);
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.TopRowFunctionsCapability,
+								capability.value === StringBooleanEnum.TRUTHY
+							);
 						}
 					});
 				});
@@ -388,7 +419,9 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	}
 
 	private checkLiteGaming() {
-		const filter: Promise<any> = this.vantageShellService.calcDeviceFilter({ var: 'DeviceTags.System.Profile.LiteGaming' });
+		const filter: Promise<any> = this.vantageShellService.calcDeviceFilter({
+			var: 'DeviceTags.System.Profile.LiteGaming',
+		});
 		if (filter) {
 			filter.then((hyp) => {
 				if (hyp !== null) {
@@ -439,9 +472,11 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			}
 			for (let i = 0; i < 4; i++) {
 				if (document.getElementById('keyboard-area' + i)) {
-					document.getElementById('keyboard-area' + i).addEventListener('click', (event) => {
-						this.showMenu = false;
-					});
+					document
+						.getElementById('keyboard-area' + i)
+						.addEventListener('click', (event) => {
+							this.showMenu = false;
+						});
 				}
 			}
 		}
@@ -507,9 +542,11 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			const target = event.target || event.srcElement || event.currentTarget;
 			const idAttr = target.attributes.id;
 			const id = idAttr.nodeValue;
-			if (id === 'menu-main-lnk-open-lma' ||
+			if (
+				id === 'menu-main-lnk-open-lma' ||
 				id === 'menu-main-lnk-open-adobe' ||
-				id === 'menu-main-lnk-open-dcc') {
+				id === 'menu-main-lnk-open-dcc'
+			) {
 				this.appsForYouService.updateUnreadMessageCount(id);
 				if (id === 'menu-main-lnk-open-dcc') {
 					this.cardService.openDccDetailModal();
@@ -582,20 +619,35 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		this.logger.error('MenuMainComponent.initInputAccessories before API call');
 		const responses = await Promise.all([
 			this.keyboardService.GetAllCapability(),
-			this.keyboardService.GetKeyboardVersion()
+			this.keyboardService.GetKeyboardVersion(),
 		]);
 		try {
 			if (responses) {
-				this.logger.error('MenuMainComponent.initInputAccessories after API call'
-					, { GetAllCapability: responses[0], GetKeyboardVersion: responses[1] });
-				let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, undefined);
+				this.logger.error('MenuMainComponent.initInputAccessories after API call', {
+					GetAllCapability: responses[0],
+					GetKeyboardVersion: responses[1],
+				});
+				let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.InputAccessoriesCapability,
+					undefined
+				);
 				if (inputAccessoriesCapability === undefined) {
 					inputAccessoriesCapability = new InputAccessoriesCapability();
 				}
-				inputAccessoriesCapability.isUdkAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('uDKCapability') !== -1) ? responses[0].uDKCapability : false;
-				inputAccessoriesCapability.isKeyboardMapAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1) ? responses[0].keyboardMapCapability : false;
-				inputAccessoriesCapability.keyboardVersion = (responses[1] != null) ? responses[1] : '-1';
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability,
+				inputAccessoriesCapability.isUdkAvailable =
+					responses[0] != null &&
+					Object.keys(responses[0]).indexOf('uDKCapability') !== -1
+						? responses[0].uDKCapability
+						: false;
+				inputAccessoriesCapability.isKeyboardMapAvailable =
+					responses[0] != null &&
+					Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
+						? responses[0].keyboardMapCapability
+						: false;
+				inputAccessoriesCapability.keyboardVersion =
+					responses[1] != null ? responses[1] : '-1';
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.InputAccessoriesCapability,
 					inputAccessoriesCapability
 				);
 			}
@@ -626,13 +678,15 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		// 		}
 		// 	})
 		// 	.catch((error) => { });
-		this.keyboardService.getVoipHotkeysSettings()
-			.then(response => {
-				if (response.capability) {
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.VOIPCapability, response.capability);
-				}
-				return response;
-			});
+		this.keyboardService.getVoipHotkeysSettings().then((response) => {
+			if (response.capability) {
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.VOIPCapability,
+					response.capability
+				);
+			}
+			return response;
+		});
 	}
 
 	openModernPreloadModal() {
@@ -651,6 +705,4 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		this.appsForYouService.decreaseUnreadMessage(surveyId);
 		this.feedbackService.openSurveyModal(surveyId);
 	}
-
-
 }

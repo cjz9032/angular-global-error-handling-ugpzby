@@ -22,19 +22,18 @@ import { UserService } from 'src/app/services/user/user.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PageDashboardAndroidComponent } from './page-dashboard-android.component';
 
-
 class TranslateServiceStub {
 	public onTranslationChange: EventEmitter<any> = new EventEmitter();
 	public onDefaultLangChange: EventEmitter<any> = new EventEmitter();
-	instant(data: string) { }
+	instant(data: string) {}
 	stream(data: string) {
 		return of(data);
 	}
 	get(key: string) {
 		return of(key);
 	}
-	setDefaultLang(lang: string) { }
-	use(lang: string) { }
+	setDefaultLang(lang: string) {}
+	use(lang: string) {}
 	get onLangChange() {
 		return of({ lang: 'en' });
 	}
@@ -51,11 +50,7 @@ describe('PageDashboardAndroidComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [PageDashboardAndroidComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
 			providers: [
 				DashboardService,
 				MockService,
@@ -74,10 +69,9 @@ describe('PageDashboardAndroidComponent', () => {
 				DomSanitizer,
 				LoggerService,
 				DevService,
-				CommsService
-			]
-		})
-			.compileComponents();
+				CommsService,
+			],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

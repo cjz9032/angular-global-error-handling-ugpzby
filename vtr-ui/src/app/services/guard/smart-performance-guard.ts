@@ -11,7 +11,6 @@ import { ConfigService } from '../config/config.service';
 	providedIn: 'root',
 })
 export class SmartPerformanceGuard extends BasicGuard {
-
 	constructor(
 		public guardConstants: GuardConstants,
 		public commonService: CommonService,
@@ -31,5 +30,4 @@ export class SmartPerformanceGuard extends BasicGuard {
 			return this.router.parseUrl('/dashboard');
 		}
 	}
-
 }

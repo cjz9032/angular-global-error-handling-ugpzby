@@ -1,7 +1,4 @@
-import {
-	Component,
-	Inject,
-} from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@lenovo/material/dialog';
 import { DialogData } from './material-dialog.interface';
 

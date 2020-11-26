@@ -8,16 +8,42 @@ import { Subscription } from 'rxjs';
 @Component({
 	selector: 'vtr-smart-standby-graph',
 	templateUrl: './smart-standby-graph.component.html',
-	styleUrls: ['./smart-standby-graph.component.scss']
+	styleUrls: ['./smart-standby-graph.component.scss'],
 })
 export class SmartStandbyGraphComponent implements OnInit, OnDestroy {
 	@ViewChild('activityChart', { static: false }) private chartContainer: ElementRef;
 	public activities: SmartStandbyActivityModel[];
 	private colors = ['#FFFFFF', '#70B5F1', '#3489DF', '#2B77CC', '#14499C'];
 	private days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-	private hours = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+	private hours = [
+		0,
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		19,
+		20,
+		21,
+		22,
+		23,
+		24,
+	];
 	activitySubscription: Subscription;
-	constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient) {}
 
 	ngOnInit() {
 		this.activitySubscription = this.getActivities().subscribe(
@@ -48,63 +74,67 @@ export class SmartStandbyGraphComponent implements OnInit, OnDestroy {
 		const cellWidth = boxWidth / 4;
 		// const hours = data[0].activities.map((d) => d.hour);
 
-		const svg = d3.select(element).append('svg')
+		const svg = d3
+			.select(element)
+			.append('svg')
 			.attr('width', element.offsetWidth)
 			.attr('height', element.offsetHeight);
 
 		// chart plot area
-		const chart = svg.append('g')
-			.attr('transform', `translate(${margin.left}, ${margin.top})`);
+		const chart = svg.append('g').attr('transform', `translate(${margin.left}, ${margin.top})`);
 
 		// x-axis labels
-		chart.selectAll('g')
+		chart
+			.selectAll('g')
 			.data(this.hours)
 			.enter()
 			.append('text')
-			.text(d => d)
-			.attr('x', (d) => (boxWidth * (d + 1) - 8))
+			.text((d) => d)
+			.attr('x', (d) => boxWidth * (d + 1) - 8)
 			.attr('y', 0)
 			.attr('text-anchor', 'end')
 			.attr('font-size', 16)
 			.attr('font-weight', 550);
 
 		// y-axis labels
-		chart.selectAll('g')
+		chart
+			.selectAll('g')
 			.data(this.days)
 			.enter()
 			.append('text')
-			.text(d => d)
+			.text((d) => d)
 			.attr('x', margin.left - 10)
 			.attr('y', (d, i) => boxHeight * (i + 1))
 			.attr('text-anchor', 'end')
 			.attr('font-size', 16)
 			.attr('font-weight', 550);
 
-		const table = chart.selectAll('g')
+		const table = chart
+			.selectAll('g')
 			.append('g')
 			.data(data)
 			.join('g')
-			.attr('transform', (d, i) => `translate(${margin.left}, ${((i) * boxHeight) + 10})`);
+			.attr('transform', (d, i) => `translate(${margin.left}, ${i * boxHeight + 10})`);
 
 		const cells = table
 			.selectAll('g')
-			.data(d => d.activities)
+			.data((d) => d.activities)
 			.join('g')
 			.attr('width', boxWidth - margin.left)
 			.attr('height', boxHeight)
 			.attr('class', 'cell-container')
-			.attr('transform', (d, i) => `translate(${(i * boxWidth)}, 0)`);
+			.attr('transform', (d, i) => `translate(${i * boxWidth}, 0)`);
 
 		// draw activity cell for each hour, each hour has 4 cells
 		cells
 			.selectAll('g')
-			.data(d => d.usage)
+			.data((d) => d.usage)
 			.join('rect')
 			.attr('class', 'cell-activity')
 			.attr('width', Math.floor(boxWidth / 4) + 2)
 			.attr('height', boxHeight)
 			.attr('fill', (d, i) => this.colors[d])
-			.attr('x', (d, i) => (i * cellWidth));
+			.attr('x', (d, i) => i * cellWidth);
 
 		// add rect with border, repeat once
 		cells
@@ -115,6 +145,6 @@ export class SmartStandbyGraphComponent implements OnInit, OnDestroy {
 			.attr('width', boxWidth)
 			.attr('height', boxHeight)
 			.attr('style', 'stroke: #000; stroke-width: 1; fill-opacity: 0;')
-			.attr('x', (d, i) => (i * cellWidth));
+			.attr('x', (d, i) => i * cellWidth);
 	}
 }

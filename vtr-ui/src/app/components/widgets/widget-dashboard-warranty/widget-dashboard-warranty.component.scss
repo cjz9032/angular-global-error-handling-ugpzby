@@ -19,21 +19,21 @@
 	}
 
 	&.in-warranty {
-		background-image: url("../../../../assets/images/warranty-bg.png"),
+		background-image: url('../../../../assets/images/warranty-bg.png'),
 			linear-gradient(to left bottom, #4980fc, #2e62d9);
 		background-size: cover;
 		@include high-contrast-background-image;
 	}
 
 	&.expired {
-		background-image: url("../../../../assets/images/warranty-bg.png"),
+		background-image: url('../../../../assets/images/warranty-bg.png'),
 			linear-gradient(to left top, $stop_light, $stop_dark);
 		background-size: cover;
 		@include high-contrast-background-image;
 	}
 
 	&.not-found {
-		background-image: url("../../../../assets/images/warranty-bg.png"),
+		background-image: url('../../../../assets/images/warranty-bg.png'),
 			linear-gradient(to left bottom, #e2e4e5, #e4e4e1);
 		color: $blue-dark;
 		@include high-contrast-background-image;
@@ -60,7 +60,7 @@
 	.sub-title {
 		font-size: $fontsize_xs;
 		font-weight: $weight_bold;
-		opacity: .8;
+		opacity: 0.8;
 		padding-bottom: 0.75rem;
 	}
 

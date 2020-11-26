@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
 	selector: 'vtr-widget-feedback',
 	templateUrl: './widget-feedback.component.html',
-	styleUrls: ['./widget-feedback.component.scss']
+	styleUrls: ['./widget-feedback.component.scss'],
 })
 export class WidgetFeedbackComponent implements OnInit {
 	@Input() title = '';
@@ -13,9 +13,9 @@ export class WidgetFeedbackComponent implements OnInit {
 
 	@Output() feedBackClick = new EventEmitter<Event>();
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	feedback($event) {
 		this.feedBackClick.emit($event);

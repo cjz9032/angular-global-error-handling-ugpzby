@@ -7,19 +7,18 @@ xdescribe('PageSnapshotComponent', () => {
 	let fixture: ComponentFixture<PageSnapshotComponent>;
 
 	beforeEach(async(() => {
-	TestBed.configureTestingModule({
-		declarations: [ PageSnapshotComponent ]
-	})
-	.compileComponents();
+		TestBed.configureTestingModule({
+			declarations: [PageSnapshotComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
-	fixture = TestBed.createComponent(PageSnapshotComponent);
-	component = fixture.componentInstance;
-	fixture.detectChanges();
+		fixture = TestBed.createComponent(PageSnapshotComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
 	});
 
 	it('should create', () => {
-	expect(component).toBeTruthy();
+		expect(component).toBeTruthy();
 	});
 });

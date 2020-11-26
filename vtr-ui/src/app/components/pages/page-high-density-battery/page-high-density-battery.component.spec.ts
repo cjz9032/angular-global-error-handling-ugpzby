@@ -10,14 +10,13 @@ import { HttpLoaderFactory } from 'src/app/modules/translation.module';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { PageHighDensityBatteryComponent } from './page-high-density-battery.component';
 
-
 describe('PageHighDensityBatteryComponent', () => {
 	let component: PageHighDensityBatteryComponent;
 	let fixture: ComponentFixture<PageHighDensityBatteryComponent>;
 
 	let batteryService: BatteryDetailService;
 	const mockRouter = {
-		navigate: jasmine.createSpy('navigate')
+		navigate: jasmine.createSpy('navigate'),
 	};
 
 	beforeEach(async(() => {
@@ -28,19 +27,15 @@ describe('PageHighDensityBatteryComponent', () => {
 					loader: {
 						provide: TranslateLoader,
 						useFactory: HttpLoaderFactory,
-						deps: [HttpClient]
-					}
+						deps: [HttpClient],
+					},
 				}),
 				HttpClientTestingModule,
-				RouterTestingModule
+				RouterTestingModule,
 			],
-			providers: [NgbModal,
-				BatteryDetailService,
-				{ provide: Router, useValue: mockRouter }
-			],
-			declarations: [PageHighDensityBatteryComponent]
-		})
-			.compileComponents();
+			providers: [NgbModal, BatteryDetailService, { provide: Router, useValue: mockRouter }],
+			declarations: [PageHighDensityBatteryComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -48,7 +43,6 @@ describe('PageHighDensityBatteryComponent', () => {
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 		batteryService = TestBed.inject(BatteryDetailService);
-
 	});
 
 	it('should create', () => {
@@ -58,14 +52,16 @@ describe('PageHighDensityBatteryComponent', () => {
 	it('should navigate to power page and open battery-details', () => {
 		batteryService.currentOpenModal = 'battery-details';
 		component.gotoBatteryDetails();
-		expect(mockRouter.navigate).toHaveBeenCalledWith(['device/device-settings'], { queryParams: { batterydetail: true } });
-
+		expect(mockRouter.navigate).toHaveBeenCalledWith(['device/device-settings'], {
+			queryParams: { batterydetail: true },
+		});
 	});
 
 	it('should navigate to power page and open battery-charge-threshold popup', () => {
 		batteryService.currentOpenModal = 'threshold';
 		component.gotoBatteryDetails();
-		expect(mockRouter.navigate).toHaveBeenCalledWith(['device/device-settings'], { queryParams: { threshold: true } });
-
+		expect(mockRouter.navigate).toHaveBeenCalledWith(['device/device-settings'], {
+			queryParams: { threshold: true },
+		});
 	});
 });

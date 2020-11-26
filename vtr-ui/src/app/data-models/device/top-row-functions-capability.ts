@@ -6,6 +6,7 @@ export class TopRowFunctionsCapability {
 		public stickyFunCap = false,
 		public stickyFunStatus = false,
 		public primaryFunCap = false,
-		public primaryFunStatus = false) {}
+		public primaryFunStatus = false
+	) {}
 	//#endregion
 }

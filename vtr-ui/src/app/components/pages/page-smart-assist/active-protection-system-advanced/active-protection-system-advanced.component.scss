@@ -1,29 +1,30 @@
-@import "../../../../app.theme.scss";
+@import '../../../../app.theme.scss';
 .caption {
 	font-size: $fontsize_xs;
 	font-weight: $weight_light;
-    color: $purple_navy;
+	color: $purple_navy;
 }
-.input-item{
-    padding: 2rem 0 0;
-    border-bottom: 0.1rem solid rgba(0,0,0,0.1);
-    &:first-child{
-        padding: 0.9rem 0 1.5rem;
-    }
-    &:last-child{
-        margin-bottom: 2rem;
-    }
-    .dropdown{
+.input-item {
+	padding: 2rem 0 0;
+	border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+	&:first-child {
+		padding: 0.9rem 0 1.5rem;
+	}
+	&:last-child {
+		margin-bottom: 2rem;
+	}
+	.dropdown {
 		padding-right: 2rem;
-        ::ng-deep .vtr-ui-dropdown{
-            margin-top: 3rem;
-        }
-        // @media screen and (max-width:640px){
-        //     width: 100%;
-        // }
+		::ng-deep .vtr-ui-dropdown {
+			margin-top: 3rem;
+		}
+		// @media screen and (max-width:640px){
+		//     width: 100%;
+		// }
 	}
 	::ng-deep .vtr-ui-switch-row.white-theme {
-		.vtr-col-pad, .col-12{
+		.vtr-col-pad,
+		.col-12 {
 			padding-left: 0;
 		}
 	}

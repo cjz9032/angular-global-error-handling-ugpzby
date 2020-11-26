@@ -25,7 +25,7 @@ declare const Windows: any;
 @Component({
 	selector: 'vtr-page-device-settings',
 	templateUrl: './page-device-settings.component.html',
-	styleUrls: ['./page-device-settings.component.scss']
+	styleUrls: ['./page-device-settings.component.scss'],
 })
 export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	routerSubscription: Subscription;
@@ -46,8 +46,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
-			active: true
-		}, {
+			active: true,
+		},
+		{
 			id: 'audio',
 			label: 'device.deviceSettings.audio.title',
 			path: 'device-settings/audio',
@@ -56,8 +57,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
-			active: false
-		}, {
+			active: false,
+		},
+		{
 			id: 'display-camera',
 			label: 'device.deviceSettings.displayCamera.title',
 			path: 'device-settings/display-camera',
@@ -66,8 +68,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
-			active: false
-		}, {
+			active: false,
+		},
+		{
 			id: 'input-accessories',
 			label: 'device.deviceSettings.inputAccessories.title',
 			path: 'device-settings/input-accessories',
@@ -76,8 +79,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			canDeactivate: [GuardService],
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
-			active: false
-		}
+			active: false,
+		},
 	];
 	cardContentPositionA: any = {};
 	isDesktopMachine = true;
@@ -85,7 +88,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	private notificationSubscription: Subscription;
 	private cmsSubscription: Subscription;
 	public isOnline: any = true;
-
 
 	constructor(
 		public qaService: QaService,
@@ -99,19 +101,22 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		private localCacheService: LocalCacheService,
 		private router: Router
 	) {
-
 		// translate subheader menus
-		this.menuItems.forEach(m => {
+		this.menuItems.forEach((m) => {
 			m.label = this.translate.instant(m.label);
 		});
 	}
 
 	ngOnInit() {
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
-			this.onNotification(response);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 		this.logger.info('DEVICE SETTINGS INIT', this.menuItems);
-		this.isDesktopMachine = this.localCacheService.getLocalCacheValue(LocalStorageKey.DesktopMachine);
+		this.isDesktopMachine = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.DesktopMachine
+		);
 
 		this.fetchCMSArticles();
 
@@ -120,7 +125,10 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
-			const welcomeTutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(LocalStorageKey.WelcomeTutorial, undefined);
+			const welcomeTutorial: WelcomeTutorial = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.WelcomeTutorial,
+				undefined
+			);
 			// if welcome tutorial is available and page is 2 then onboarding is completed by user. Load device settings features
 			if (welcomeTutorial && welcomeTutorial.isDone) {
 				this.getAudioPageSettings();
@@ -139,7 +147,6 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 					this.activeElement.focus();
 				}
 			} */
-
 		});
 	}
 
@@ -175,31 +182,67 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	async initInputAccessories() {
 		this.machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		if (this.machineType) {
-			const machineFamily = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineFamilyName, undefined);
+			const machineFamily = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.MachineFamilyName,
+				undefined
+			);
 			if (machineFamily) {
 				const familyName = machineFamily.replace(/\s+/g, '');
 				if (this.machineType === 1 && familyName === 'LenovoTablet10') {
-					this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+					this.menuItems = this.commonService.removeObjFrom(
+						this.menuItems,
+						this.menuItems[3].path
+					);
 					return;
 				}
 			}
 			if (this.machineType !== 1 && this.machineType !== 0) {
-				this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+				this.menuItems = this.commonService.removeObjFrom(
+					this.menuItems,
+					this.menuItems[3].path
+				);
 				return;
 			} else {
-				const inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability);
+				const inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.InputAccessoriesCapability
+				);
 				let isAvailable = false;
-				if (inputAccessoriesCapability && (inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable)) {
-					isAvailable = inputAccessoriesCapability.isKeyboardMapAvailable || inputAccessoriesCapability.isUdkAvailable;
+				if (
+					inputAccessoriesCapability &&
+					(inputAccessoriesCapability.isKeyboardMapAvailable ||
+						inputAccessoriesCapability.isUdkAvailable)
+				) {
+					isAvailable =
+						inputAccessoriesCapability.isKeyboardMapAvailable ||
+						inputAccessoriesCapability.isUdkAvailable;
 				} else {
 					const response = await this.keyboardService.GetAllCapability();
-					isAvailable = (response != null && (Object.keys(response).indexOf('keyboardMapCapability') !== -1 || (Object.keys(response).indexOf('isUdkAvailable') !== -1))) ? true : false;
+					isAvailable =
+						response != null &&
+						(Object.keys(response).indexOf('keyboardMapCapability') !== -1 ||
+							Object.keys(response).indexOf('isUdkAvailable') !== -1)
+							? true
+							: false;
 				}
-				const isVOIPAvailable = this.localCacheService.getLocalCacheValue(LocalStorageKey.VOIPCapability);
-				const topRowFunctionsIdeapadCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.TopRowFunctionsCapability);
-				const backlightCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.BacklightCapability);
-				if (!isAvailable && !isVOIPAvailable && !topRowFunctionsIdeapadCapability && !backlightCapability) {
-					this.menuItems = this.commonService.removeObjFrom(this.menuItems, this.menuItems[3].path);
+				const isVOIPAvailable = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.VOIPCapability
+				);
+				const topRowFunctionsIdeapadCapability = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.TopRowFunctionsCapability
+				);
+				const backlightCapability = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.BacklightCapability
+				);
+				if (
+					!isAvailable &&
+					!isVOIPAvailable &&
+					!topRowFunctionsIdeapadCapability &&
+					!backlightCapability
+				) {
+					this.menuItems = this.commonService.removeObjFrom(
+						this.menuItems,
+						this.menuItems[3].path
+					);
 				}
 			}
 		}
@@ -213,14 +256,18 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				const init = new Windows.Media.Capture.MediaCaptureInitializationSettings();
 				init.audioDeviceId = '';
 				init.streamingCaptureMode = 1; // Windows.Media.Capture.StreamingCaptureMode.audio;
-				const microphonePromise = new Promise<boolean>(resolve => {
+				const microphonePromise = new Promise<boolean>((resolve) => {
 					capture.initializeAsync(init).then(
 						() => true,
-						error => {
+						(error) => {
 							if (error.number === -2147024891) {
 								// check if audio device exist or not
-								const defaultRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(0);
-								const commuRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(1);
+								const defaultRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(
+									0
+								);
+								const commuRole = Windows.Media.Devices.MediaDevice.getDefaultAudioCaptureId(
+									1
+								);
 								return resolve(defaultRole !== '' && commuRole !== '');
 							}
 							// if (error.number === -1072845856) {
@@ -231,26 +278,40 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 						}
 					);
 				});
-				Promise.all([
-					this.audioService.getDolbyMode(),
-					microphonePromise
-				]).then((responses: any[]) => {
-					const dolbyModeResponse: DolbyModeResponse = responses[0];
-					const microphone = responses[1];
-					this.logger.info('getAudioPageSettings.Promise.all', responses);
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.IsDolbyModeAvailable, dolbyModeResponse.available);
-					if (!microphone && !dolbyModeResponse.available) {
-						// Array.filter won't trigger changeDetect automatically, so we do it manually.
-						const tempMenuItems = this.commonService.removeObjById(this.menuItems, 'audio');
-						this.menuItems = tempMenuItems.slice();
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.IsAudioPageAvailable, false);
-					} else {
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.IsAudioPageAvailable, true);
-					}
-				}).catch(error => {
-					this.logger.error('error in getAudioPageSettings.Promise.all', error.message);
-					return EMPTY;
-				});
+				Promise.all([this.audioService.getDolbyMode(), microphonePromise])
+					.then((responses: any[]) => {
+						const dolbyModeResponse: DolbyModeResponse = responses[0];
+						const microphone = responses[1];
+						this.logger.info('getAudioPageSettings.Promise.all', responses);
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.IsDolbyModeAvailable,
+							dolbyModeResponse.available
+						);
+						if (!microphone && !dolbyModeResponse.available) {
+							// Array.filter won't trigger changeDetect automatically, so we do it manually.
+							const tempMenuItems = this.commonService.removeObjById(
+								this.menuItems,
+								'audio'
+							);
+							this.menuItems = tempMenuItems.slice();
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.IsAudioPageAvailable,
+								false
+							);
+						} else {
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.IsAudioPageAvailable,
+								true
+							);
+						}
+					})
+					.catch((error) => {
+						this.logger.error(
+							'error in getAudioPageSettings.Promise.all',
+							error.message
+						);
+						return EMPTY;
+					});
 			}
 		} catch (error) {
 			this.logger.error('error in getAudioPageSettings.Promise.all', error.message);
@@ -259,20 +320,26 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			Page: 'device-settings'
+			Page: 'device-settings',
 		};
 
 		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(
+					response,
+					'inner-page-right-side-article-image-background',
+					'position-A'
+				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
-						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split(
+							'|'
+						)[0];
 					}
 				}
 			},
-			error => {
+			(error) => {
 				this.logger.info('fetchCMSContent error', error.message);
 			}
 		);
@@ -291,7 +358,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			Template: 'half-width-title-description-link-image',
 			Position: 'position-B',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
 		};
 	}
 
@@ -311,7 +378,5 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		if (this.cmsSubscription) {
 			this.cmsSubscription.unsubscribe();
 		}
-
 	}
-
 }

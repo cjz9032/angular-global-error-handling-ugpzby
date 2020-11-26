@@ -10,7 +10,7 @@
 	&:focus {
 		outline: 0rem;
 	}
-	
+
 	.close-btn {
 		width: 2.2rem;
 		height: 2.2rem;
@@ -25,22 +25,22 @@
 			height: 100%;
 		}
 	}
-    .modal-header {
+	.modal-header {
 		border: none;
 		padding-top: 2rem;
 		padding-right: 2rem;
-    }
-    .page {
+	}
+	.page {
 		margin: 0 4rem 4rem 4rem;
 		border-bottom: none;
 		color: $main_dark;
-        .description {
-            font-size: $fontsize_xl;
-            font-weight: $weight_bold;
-            letter-spacing: 0;
+		.description {
+			font-size: $fontsize_xl;
+			font-weight: $weight_bold;
+			letter-spacing: 0;
 		}
 		.sub-desc {
-            font-size: 1.8rem;
+			font-size: 1.8rem;
 			margin-bottom: 2rem;
 			::ng-deep .button {
 				font-size: 2rem;
@@ -114,6 +114,5 @@
 				color: $high-contrast-black-yellow;
 			}
 		}
-    }
-
+	}
 }

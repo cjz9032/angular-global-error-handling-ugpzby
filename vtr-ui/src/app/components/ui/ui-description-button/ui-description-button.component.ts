@@ -3,10 +3,9 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 @Component({
 	selector: 'vtr-ui-description-button',
 	templateUrl: './ui-description-button.component.html',
-	styleUrls: ['./ui-description-button.component.scss']
+	styleUrls: ['./ui-description-button.component.scss'],
 })
 export class UiDescriptionButtonComponent implements OnInit {
-
 	@Input() btnHeight = false;
 	@Input() isDisabled = false;
 	@Input() label: string;
@@ -26,10 +25,9 @@ export class UiDescriptionButtonComponent implements OnInit {
 	@Input() upperCaseLabel = true;
 	@Output() buttonClick = new EventEmitter<Event>();
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit(): void {
-	}
+	ngOnInit(): void {}
 
 	clickButton($event: Event) {
 		this.buttonClick.emit($event);

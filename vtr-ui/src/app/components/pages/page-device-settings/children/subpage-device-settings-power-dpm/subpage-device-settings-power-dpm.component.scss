@@ -1,18 +1,19 @@
-@import "../../../../../app.theme";
-.dpmpowersetting{
-    margin:0.4rem;
+@import '../../../../../app.theme';
+.dpmpowersetting {
+	margin: 0.4rem;
 }
 
-::ng-deep{
-	.subpage-device-settings-dpm{
-		.boldtitle{
-			color: #34495E;
+::ng-deep {
+	.subpage-device-settings-dpm {
+		.boldtitle {
+			color: #34495e;
 			font-size: 1.4rem;
 			font-weight: bold;
 		}
-		.vtr-power-use, .vtr-power-plan {
+		.vtr-power-use,
+		.vtr-power-plan {
 			p {
-				color: #34495E;
+				color: #34495e;
 				font-size: 1.2rem;
 				margin: 1.4rem 0rem;
 				font-weight: bold;
@@ -25,8 +26,8 @@
 				}
 			}
 		}
-		h5{
-			color: #34495E;
+		h5 {
+			color: #34495e;
 			font-size: 1.2rem;
 			margin: 1.4rem 0rem;
 			font-weight: bold;
@@ -38,18 +39,18 @@
 				opacity: 1;
 			}
 		}
-		.lefttitle{
-			display:block;
-			color: #34495E;
+		.lefttitle {
+			display: block;
+			color: #34495e;
 			font-size: 1.4rem;
 			clear: left;
 			margin-bottom: 0.6rem;
 			padding-top: 1rem;
 		}
-		.boldtitle.profile{
+		.boldtitle.profile {
 			margin-top: 2.25rem;
 		}
-		div.content{
+		div.content {
 			margin-left: 3.1rem;
 		}
 		.spinner-content {

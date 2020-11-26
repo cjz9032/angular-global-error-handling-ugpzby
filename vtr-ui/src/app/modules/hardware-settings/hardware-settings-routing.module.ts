@@ -23,8 +23,8 @@ const routes: Routes = [
 		canActivate: [GuardService, NonArmGuard],
 		data: {
 			pageName: 'Device.MyDevice',
-			pageContent: 'My Device Status'
-		}
+			pageContent: 'My Device Status',
+		},
 	},
 	{
 		path: 'device',
@@ -33,8 +33,8 @@ const routes: Routes = [
 		canActivate: [GuardService, NonArmGuard],
 		data: {
 			pageName: 'Device.MyDevice',
-			pageContent: 'My Device Status'
-		}
+			pageContent: 'My Device Status',
+		},
 	},
 	{
 		path: 'device-settings',
@@ -43,13 +43,13 @@ const routes: Routes = [
 		canActivate: [GuardService, NonArmGuard],
 		data: {
 			pageName: 'Device.MyDeviceSettings',
-			pageContent: 'My Device Status'
+			pageContent: 'My Device Status',
 		},
 		children: [
 			{
 				path: '',
 				redirectTo: 'power',
-				pathMatch: 'full'
+				pathMatch: 'full',
 			},
 			{
 				path: 'power',
@@ -57,8 +57,8 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
-					pageName: 'Device.MyDeviceSettings'
-				}
+					pageName: 'Device.MyDeviceSettings',
+				},
 			},
 			{
 				path: 'audio',
@@ -66,8 +66,8 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
-					pageName: 'Device.MyDeviceSettings'
-				}
+					pageName: 'Device.MyDeviceSettings',
+				},
 			},
 			{
 				path: 'display-camera',
@@ -75,8 +75,8 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
-					pageName: 'Device.MyDeviceSettings'
-				}
+					pageName: 'Device.MyDeviceSettings',
+				},
 			},
 			{
 				path: 'input-accessories',
@@ -84,10 +84,10 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
-					pageName: 'Device.MyDeviceSettings'
-				}
-			}
-		]
+					pageName: 'Device.MyDeviceSettings',
+				},
+			},
+		],
 	},
 	{
 		path: 'smart-assist',
@@ -97,8 +97,8 @@ const routes: Routes = [
 
 		data: {
 			pageName: 'Device.SmartAssist',
-			pageContent: 'My Device Status'
-		}
+			pageContent: 'My Device Status',
+		},
 	},
 	{
 		path: 'system-updates',
@@ -107,8 +107,8 @@ const routes: Routes = [
 		canActivate: [GuardService, NonArmGuard, NonSmodeGuard],
 		data: {
 			pageName: 'Device.SystemUpdate',
-			pageContent: 'My Device Status'
-		}
+			pageContent: 'My Device Status',
+		},
 	},
 	{
 		path: 'support-detail/:id',
@@ -116,8 +116,8 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Support.Detail'
-		}
+			pageName: 'Support.Detail',
+		},
 	},
 	{
 		path: 'high-density-battery',
@@ -125,13 +125,13 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService],
 		data: {
-			pageName: 'Device.HighDensityBattery'
-		}
-	}
+			pageName: 'Device.HighDensityBattery',
+		},
+	},
 ];
 
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule]
+	exports: [RouterModule],
 })
-export class HardwareSettingRoutingModule { }
+export class HardwareSettingRoutingModule {}

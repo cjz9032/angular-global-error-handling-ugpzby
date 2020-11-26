@@ -10,7 +10,7 @@
 	width: 100%;
 
 	.title {
-		font-size: 2.0rem;
+		font-size: 2rem;
 		font-weight: $weight_semibold;
 
 		fa-icon {
@@ -42,7 +42,7 @@
 			background: $menu_hover;
 
 			&::after {
-				content: "";
+				content: '';
 				position: absolute;
 				top: 0;
 				right: -0.8rem;
@@ -118,7 +118,7 @@
 				// 		top: calc(#{$i} * 3rem);
 				// 	}
 				// }
-				transition: all .1s;
+				transition: all 0.1s;
 				&.is-current {
 					font-weight: bold;
 				}
@@ -128,7 +128,6 @@
 }
 
 @keyframes wordSlider {
-
 	0%,
 	16.6% {
 		transform: translateY(0%);

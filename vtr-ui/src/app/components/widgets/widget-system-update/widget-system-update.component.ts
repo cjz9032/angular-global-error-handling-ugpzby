@@ -5,16 +5,13 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
 	selector: 'vtr-widget-system-update',
 	templateUrl: './widget-system-update.component.html',
-	styleUrls: ['./widget-system-update.component.scss']
+	styleUrls: ['./widget-system-update.component.scss'],
 })
 export class WidgetSystemUpdateComponent implements OnInit {
 	public title: any;
 	public subtitle: any;
 
-	constructor(
-		private router: Router,
-		private translate: TranslateService,
-	) { }
+	constructor(private router: Router, private translate: TranslateService) {}
 
 	ngOnInit(): void {
 		this.title = this.translate.instant('systemUpdates.title');
@@ -24,5 +21,4 @@ export class WidgetSystemUpdateComponent implements OnInit {
 	gotoAndCheckSystemUpdate() {
 		this.router.navigate(['/device/system-updates'], { queryParams: { action: 'start' } });
 	}
-
 }

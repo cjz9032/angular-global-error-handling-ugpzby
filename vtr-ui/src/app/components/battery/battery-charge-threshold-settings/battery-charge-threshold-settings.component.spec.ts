@@ -17,7 +17,7 @@ const bctInfo: any = {
 	isEnabled: false,
 	startValue: 40,
 	stopValue: 45,
-	checkboxValue: false
+	checkboxValue: false,
 };
 
 describe('BatteryChargeThresholdSettingsComponent', () => {
@@ -29,27 +29,32 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 	let devService: DevService; */
 	const dropdown: any = {
 		isOpen: () => false,
-		close: () => null
+		close: () => null,
 	};
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [BatteryChargeThresholdSettingsComponent, NgbDropdown],
-			imports: [HttpClientTestingModule, TranslateModule.forRoot(), NgbModule, RouterTestingModule],
-			providers: [CommonService, CommonMetricsService, MetricService, DevService]
+			imports: [
+				HttpClientTestingModule,
+				TranslateModule.forRoot(),
+				NgbModule,
+				RouterTestingModule,
+			],
+			providers: [CommonService, CommonMetricsService, MetricService, DevService],
 		});
 	}));
 
-	it('should create Battery Charge Threshold component', (() => {
+	it('should create Battery Charge Threshold component', () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 		component = fixture.componentInstance;
 		component.bctInfo = { ...bctInfo };
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
-	}));
+	});
 
-	it('should call onStartValueChange', (() => {
+	it('should call onStartValueChange', () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -59,9 +64,9 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo);
 		component.onStartValueChange(startVal, dropdown, button);
 		expect(spy).toHaveBeenCalled();
-	}));
+	});
 
-	it('should call onStartValueChange - else case', (() => {
+	it('should call onStartValueChange - else case', () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -71,9 +76,9 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo);
 		component.onStartValueChange(startVal, dropdown, button);
 		expect(spy).toHaveBeenCalled();
-	}));
+	});
 
-	it('should call onStopValueChange', (() => {
+	it('should call onStopValueChange', () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -83,9 +88,9 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo);
 		component.onStopValueChange(stopVal, dropdown, button);
 		expect(spy).toHaveBeenCalled();
-	}));
+	});
 
-	it('should call onStopValueChange - inner else case', (() => {
+	it('should call onStopValueChange - inner else case', () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -95,9 +100,9 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo);
 		component.onStopValueChange(stopVal, dropdown, button);
 		expect(spy).toHaveBeenCalled();
-	}));
+	});
 
-	it('should call onStopValueChange - outer else case', (() => {
+	it('should call onStopValueChange - outer else case', () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -107,9 +112,9 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfoo);
 		component.onStopValueChange(stopVal, dropdown, button);
 		expect(spy).toHaveBeenCalled();
-	}));
+	});
 
-	it('should call toggleAutoChargeSettings', (() => {
+	it('should call toggleAutoChargeSettings', () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -118,16 +123,16 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo);
 		component.toggleAutoChargeSettings(event);
 		expect(spy).toHaveBeenCalled();
-	}));
-	it('should call showHideMenuOfItem', (() => {
+	});
+	it('should call showHideMenuOfItem', () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
 		const event = true;
 		component.showHideMenuOfItem(event, dropdown);
-	}));
+	});
 
-	it('should call toggleAutoChargeSettings - else case', (() => {
+	it('should call toggleAutoChargeSettings - else case', () => {
 		fixture = TestBed.createComponent(BatteryChargeThresholdSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -135,5 +140,5 @@ describe('BatteryChargeThresholdSettingsComponent', () => {
 		const spy = spyOn(commonService, 'cloneObj').and.returnValue(bctInfo);
 		component.toggleAutoChargeSettings(event);
 		expect(spy).toHaveBeenCalled();
-	}));
+	});
 });

@@ -4,22 +4,21 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SurveyFormComponent } from 'src/app/components/feedback-form/survey-form/survey-form.component';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class FeedbackService {
-
-	constructor(
-		private modalService: NgbModal,
-	) { }
+	constructor(private modalService: NgbModal) {}
 
 	openFeedbackModal() {
-		if (this.modalService.hasOpenModals()) { return; }
+		if (this.modalService.hasOpenModals()) {
+			return;
+		}
 		this.modalService.open(FeedbackFormComponent, {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
 			ariaLabelledBy: 'feedback-dialog-basic-title',
-			windowClass: 'feedback-modal'
+			windowClass: 'feedback-modal',
 		});
 	}
 
@@ -33,7 +32,7 @@ export class FeedbackService {
 			size: 'lg',
 			centered: true,
 			ariaLabelledBy: 'survey-dialog-basic-title',
-			windowClass: 'survey-modal'
+			windowClass: 'survey-modal',
 		});
 		modalRef.componentInstance.surveyId = surveyId;
 	}

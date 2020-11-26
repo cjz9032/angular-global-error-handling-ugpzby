@@ -1,7 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
-import { NgbTooltipModule, NgbCollapseModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+	NgbTooltipModule,
+	NgbCollapseModule,
+	NgbProgressbarModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
 import { UiCheckboxComponent } from 'src/app/components/ui/ui-checkbox/ui-checkbox.component';
@@ -42,8 +46,8 @@ import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module'
 import { UiRoundedRectangleCustomRadioListModule } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-custom-radio-list.module';
 import { UiCircleRadioWithCheckBoxListModule } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.module';
 import { SafePipeModule } from 'safe-pipe';
-import {UiGroupCardComponent} from 'src/app/components/ui/ui-group-card/ui-group-card.component';
-import {UiDeviceinfoItemComponent} from 'src/app/components/ui/ui-deviceinfo-item/ui-deviceinfo-item.component';
+import { UiGroupCardComponent } from 'src/app/components/ui/ui-group-card/ui-group-card.component';
+import { UiDeviceinfoItemComponent } from 'src/app/components/ui/ui-deviceinfo-item/ui-deviceinfo-item.component';
 import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-point/ui-exclamation-point.component';
 
@@ -74,7 +78,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		UiGroupCardComponent,
 		UiDeviceinfoItemComponent,
 		UiGamingSliderComponent,
-		UiExclamationPointComponent
+		UiExclamationPointComponent,
 	],
 	exports: [
 		UiCheckboxComponent,
@@ -107,7 +111,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		UiGroupCardComponent,
 		UiDeviceinfoItemComponent,
 		UiGamingSliderComponent,
-		UiExclamationPointComponent
+		UiExclamationPointComponent,
 	],
 	imports: [
 		CommonModule,
@@ -122,9 +126,9 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		SpinnerModule,
 		UiRoundedRectangleCustomRadioListModule,
 		UiCircleRadioWithCheckBoxListModule,
-		SafePipeModule
+		SafePipeModule,
 	],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CommonUiModule {
 	constructor(library: FaIconLibrary) {

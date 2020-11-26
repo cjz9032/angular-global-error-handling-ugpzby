@@ -16,16 +16,19 @@ describe('PageContainerComponent', () => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [PageLayoutComponent],
-			imports: [RouterTestingModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				}
-			}), HttpClientTestingModule],
-			providers: [TranslateService, CommsService, DevService]
-		})
-			.compileComponents();
+			imports: [
+				RouterTestingModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+				}),
+				HttpClientTestingModule,
+			],
+			providers: [TranslateService, CommsService, DevService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

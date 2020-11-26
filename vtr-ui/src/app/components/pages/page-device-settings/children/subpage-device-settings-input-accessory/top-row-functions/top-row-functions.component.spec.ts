@@ -5,7 +5,6 @@ import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { TopRowFunctionsComponent } from './top-row-functions.component';
 
-
 xdescribe('TopRowFunctionsComponent', () => {
 	let component: TopRowFunctionsComponent;
 	let fixture: ComponentFixture<TopRowFunctionsComponent>;
@@ -15,9 +14,8 @@ xdescribe('TopRowFunctionsComponent', () => {
 			declarations: [TopRowFunctionsComponent],
 			imports: [FontAwesomeModule, TranslationModule.forChild()],
 			schemas: [NO_ERRORS_SCHEMA],
-			providers: [TranslateStore]
-		})
-			.compileComponents();
+			providers: [TranslateStore],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

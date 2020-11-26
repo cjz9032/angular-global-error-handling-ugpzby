@@ -1,10 +1,8 @@
-
 export class VantageFocusHelper {
 	private shellFocus = false;
 	private webUIFocus = false;
 	private sessionAwake = null;
-	constructor() {
-	}
+	constructor() {}
 
 	start() {
 		const win = window as any;
@@ -87,6 +85,4 @@ export class VantageFocusHelper {
 		vantageSessionLose.initEvent('vantageSessionResume', true, true);
 		document.dispatchEvent(vantageSessionLose);
 	}
-
 }
-

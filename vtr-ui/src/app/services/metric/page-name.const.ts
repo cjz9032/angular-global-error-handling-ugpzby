@@ -1,3 +1,3 @@
 export enum PageName {
-	Dashboard = 'Dashboard'
+	Dashboard = 'Dashboard',
 }

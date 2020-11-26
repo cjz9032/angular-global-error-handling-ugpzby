@@ -5,10 +5,7 @@ import { SmartPerformanceRoutingModule } from './smart-performance-routing.modul
 import { PageSmartPerformanceComponent } from '../../components/pages/page-smart-performance/page-smart-performance.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 
-import {
-	FontAwesomeModule,
-	FaIconLibrary
-} from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faLaptop } from '@fortawesome/free-solid-svg-icons/faLaptop';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
@@ -61,7 +58,7 @@ import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-sm
 		SubpageScanningComponent,
 		SubpageScheduleScanComponent,
 		SubpageSmartPerformanceDashboardComponent,
-		SubpageSmartPerformanceScanSummaryComponent
+		SubpageSmartPerformanceScanSummaryComponent,
 	],
 	imports: [
 		CommonModule,
@@ -80,8 +77,6 @@ import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-sm
 		TranslationModule.forChild(),
 		UiButtonModule,
 		SharedModule,
-
-
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [
@@ -90,8 +85,7 @@ import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-sm
 		SubpageScanningComponent,
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
-		CommonUiModule
-
+		CommonUiModule,
 	],
 	bootstrap: [
 		SubpageSmartPerformanceDashboardComponent,
@@ -99,7 +93,7 @@ import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-sm
 		SubpageScanningComponent,
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
-	]
+	],
 })
 export class SmartPerformanceModule {
 	constructor(library: FaIconLibrary) {

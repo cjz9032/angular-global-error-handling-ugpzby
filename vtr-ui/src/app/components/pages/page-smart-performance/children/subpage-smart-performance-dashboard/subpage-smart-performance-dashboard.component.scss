@@ -1,6 +1,5 @@
 @import '../../../../../app.theme.scss';
 
-
 .light-dashline {
 	border-top: 1px solid $screen_light_15;
 }
@@ -22,11 +21,11 @@
 		}
 
 		::ng-deep .tooltip-inner {
-			@include tt-inner()
+			@include tt-inner();
 		}
 
 		::ng-deep .arrow::before {
-			@include arrow-before()
+			@include arrow-before();
 		}
 
 		.pc-performance-block {
@@ -149,12 +148,12 @@
 					}
 				}
 
-				>div {
+				> div {
 					position: relative;
 
 					&::after {
 						position: absolute;
-						content: "";
+						content: '';
 						right: 0;
 						top: 0;
 						bottom: 0;
@@ -319,7 +318,7 @@
 								@media #{$white-on-black} {
 									@include white-border;
 								}
-					
+
 								@media #{$black-on-white} {
 									@include black-border;
 								}
@@ -343,7 +342,7 @@
 									}
 								}
 								&::before {
-									content: "";
+									content: '';
 									position: absolute;
 									display: block;
 									// height: 4rem;
@@ -361,7 +360,7 @@
 									border-right: 20px solid transparent;
 									border-top: 20px solid $main_darkest;
 									@media #{$white-on-black} {
-										content: "";
+										content: '';
 										width: 2rem;
 										height: 2rem;
 										bottom: -2.6rem;
@@ -374,7 +373,7 @@
 										z-index: -1;
 									}
 									@media #{$black-on-white} {
-										content: "";
+										content: '';
 										width: 2rem;
 										height: 2rem;
 										bottom: -2.6rem;
@@ -501,11 +500,11 @@
 				width: 100%;
 
 				::ng-deep .tooltip-inner {
-					@include tt-inner()
+					@include tt-inner();
 				}
 
 				::ng-deep .arrow::before {
-					@include arrow-before()
+					@include arrow-before();
 				}
 
 				.btn-scan {
@@ -554,5 +553,4 @@
 		color: red;
 		font-weight: bold;
 	}
-
 }

@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .subpage-device-settings-power {
 	.title {
@@ -18,8 +18,8 @@
 		}
 	}
 
-	.icomoon{
-		margin-left:1.8rem;
+	.icomoon {
+		margin-left: 1.8rem;
 		@media #{$white-on-black} {
 			&.icomoon-LE-Charging-USB2x {
 				&::after {
@@ -50,7 +50,6 @@
 				}
 			}
 		}
-
 	}
 	.left-border {
 		border-left: 0.7rem solid $main;
@@ -211,7 +210,7 @@
 		padding-bottom: 1.4rem;
 		margin-top: 1rem;
 		background-color: $grey_lighter;
-		border: 0.1rem solid  $note_border;
+		border: 0.1rem solid $note_border;
 	}
 
 	.energystar-container {

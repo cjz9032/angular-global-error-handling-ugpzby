@@ -6,10 +6,11 @@ import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
 @Component({
 	selector: 'vtr-ui-circle-radio-with-checkbox',
 	templateUrl: './ui-circle-radio-with-checkbox.component.html',
-	styleUrls: ['./ui-circle-radio-with-checkbox.component.scss']
+	styleUrls: ['./ui-circle-radio-with-checkbox.component.scss'],
 })
-export class UiCircleRadioWithCheckboxComponent extends UICustomRadio implements OnInit, AfterViewInit {
-
+export class UiCircleRadioWithCheckboxComponent
+	extends UICustomRadio
+	implements OnInit, AfterViewInit {
 	@Input() radioId: string;
 	@Input() tooltip: string;
 	@Input() disabled = false;
@@ -22,15 +23,15 @@ export class UiCircleRadioWithCheckboxComponent extends UICustomRadio implements
 	@Input() sendMetrics = true;
 	@Output() optionChange: EventEmitter<any> = new EventEmitter();
 
-
 	ngAfterViewInit(): void {
 		super.ngAfterViewInit(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
-	} constructor(logger: LoggerService, metrics: MetricService) {
-		super(logger, metrics)
+	}
+	constructor(logger: LoggerService, metrics: MetricService) {
+		super(logger, metrics);
 	}
 
 	ngOnInit() {
-		super.ngOnInit() // Set up radio buttons first , last etc and if none selected,set tabindex to first element
+		super.ngOnInit(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
 	onChange(event) {
@@ -40,7 +41,7 @@ export class UiCircleRadioWithCheckboxComponent extends UICustomRadio implements
 				ItemParent: this.metricsParent,
 				ItemType: 'FeatureClick',
 				ItemName: this.radioLabel + this.label,
-				ItemValue: !this.checked
+				ItemValue: !this.checked,
 			};
 			this.metrics.sendMetrics(metricsData);
 		}
@@ -62,5 +63,4 @@ export class UiCircleRadioWithCheckboxComponent extends UICustomRadio implements
 			return name;
 		}
 	}
-
 }

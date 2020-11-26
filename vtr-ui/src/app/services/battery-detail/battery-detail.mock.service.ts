@@ -6,12 +6,8 @@ import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
 import { BaseBatteryDetail } from './base-battery-detail';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
-export class BatteryDetailMockService  {
-
-	constructor(
-		private http: HttpClient
-	) {
-	}
+export class BatteryDetailMockService {
+	constructor(private http: HttpClient) {}
 }

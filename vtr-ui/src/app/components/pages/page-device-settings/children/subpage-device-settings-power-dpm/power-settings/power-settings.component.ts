@@ -7,32 +7,33 @@ import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-in
 @Component({
 	selector: 'vtr-power-settings',
 	templateUrl: './power-settings.component.html',
-	styleUrls: ['./power-settings.component.scss']
+	styleUrls: ['./power-settings.component.scss'],
 })
 export class PowerSettingsComponent implements OnInit, OnDestroy {
-
-	constructor(
-		public dpmService: PowerDpmService,
-		private translate: TranslateService) { }
+	constructor(public dpmService: PowerDpmService, private translate: TranslateService) {}
 
 	powerButtonActions: DPMDropDownInterval[];
 	signInOptions: DPMDropDownInterval[];
 	selectAction: number;
 	selectedSignInOptionVal: number;
 	allPowerPlansSubscription: Subscription;
-	private readonly powerButtonOptions = ['DoNothing', 'Sleep', 'Hibernate', 'Shutdown', 'PowerOffDisplay'];
+	private readonly powerButtonOptions = [
+		'DoNothing',
+		'Sleep',
+		'Hibernate',
+		'Shutdown',
+		'PowerOffDisplay',
+	];
 
 	ngOnInit() {
 		this.initPowerActions();
 		this.initSignInOptions();
-		this.allPowerPlansSubscription = this.dpmService.getAllPowerPlansObs().subscribe(
-			v => {
-				if (v) {
-					this.selectAction = v.powerButtonAction;
-					this.selectedSignInOptionVal = v.passwordOnStandby;
-				}
+		this.allPowerPlansSubscription = this.dpmService.getAllPowerPlansObs().subscribe((v) => {
+			if (v) {
+				this.selectAction = v.powerButtonAction;
+				this.selectedSignInOptionVal = v.passwordOnStandby;
 			}
-		);
+		});
 	}
 	ngOnDestroy(): void {
 		if (this.allPowerPlansSubscription) {
@@ -41,50 +42,83 @@ export class PowerSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	private initPowerActions() {
-		const doNothing = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.doNothing');
-		const sleep = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.sleep');
-		const hibernate = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.hibernate');
-		const shutDown = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.shutDown');
-		const turnOfDisplay = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.turnOffTheDisplay');
+		const doNothing = this.translate.instant(
+			'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.doNothing'
+		);
+		const sleep = this.translate.instant(
+			'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.sleep'
+		);
+		const hibernate = this.translate.instant(
+			'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.hibernate'
+		);
+		const shutDown = this.translate.instant(
+			'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.shutDown'
+		);
+		const turnOfDisplay = this.translate.instant(
+			'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.turnOffTheDisplay'
+		);
 
 		this.powerButtonActions = [
 			{
 				name: doNothing,
 				value: 0,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.doNothing'), // 'Do nothing'
-			}, {
+				text: this.translate.instant(
+					'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.doNothing'
+				), // 'Do nothing'
+			},
+			{
 				name: sleep,
 				value: 1,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.sleep'), // 'Sleep'
-			}, {
+				text: this.translate.instant(
+					'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.sleep'
+				), // 'Sleep'
+			},
+			{
 				name: hibernate,
 				value: 2,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.hibernate'), // 'Hibernate'
-			}, {
+				text: this.translate.instant(
+					'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.hibernate'
+				), // 'Hibernate'
+			},
+			{
 				name: shutDown,
 				value: 3,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.shutDown'), // 'Shutdown'
-			}, {
+				text: this.translate.instant(
+					'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.shutDown'
+				), // 'Shutdown'
+			},
+			{
 				name: turnOfDisplay,
 				value: 4,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.turnOffTheDisplay'), // 'Turn off the display'
+				text: this.translate.instant(
+					'device.deviceSettings.power.dpm.globalPowerSettings.powerButton.items.turnOffTheDisplay'
+				), // 'Turn off the display'
 			},
 		];
 		this.selectAction = 0;
 	}
 	private initSignInOptions() {
-		const never = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never');
-		const fromSleep = this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep');
+		const never = this.translate.instant(
+			'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'
+		);
+		const fromSleep = this.translate.instant(
+			'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep'
+		);
 		this.signInOptions = [
 			{
 				name: never, // 'Never',
 				value: 0,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'), // 'Never'
-			}, {
+				text: this.translate.instant(
+					'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'
+				), // 'Never'
+			},
+			{
 				name: fromSleep, // 'When PC wakes up from sleep',
 				value: 1,
-				text: this.translate.instant('device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep'), // 'When PC wakes up from sleep'
-			}
+				text: this.translate.instant(
+					'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.fromSleep'
+				), // 'When PC wakes up from sleep'
+			},
 		];
 		this.selectedSignInOptionVal = 0;
 	}

@@ -1,15 +1,27 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlSegment, UrlMatchResult, UrlTree, Router, ActivatedRoute, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
+import {
+	CanActivate,
+	ActivatedRouteSnapshot,
+	RouterStateSnapshot,
+	UrlSegment,
+	UrlMatchResult,
+	UrlTree,
+	Router,
+	ActivatedRoute,
+	NavigationEnd,
+	NavigationError,
+	NavigationCancel,
+} from '@angular/router';
 import { GuardConstants } from './guard-constants';
 import { CommonService } from '../common/common.service';
 import { DeviceService } from '../device/device.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class ProtocolGuardService implements CanActivate {
 	vantage3xSchema = 'lenovo-vantage3:';
-	semanticToPath: { [semantic: string]: string; } = {
+	semanticToPath: { [semantic: string]: string } = {
 		dashboard: '',
 		device: 'device',
 		'device-settings': 'device/device-settings/power',
@@ -38,23 +50,23 @@ export class ProtocolGuardService implements CanActivate {
 		'gaming-lighting2': 'gaming/lightingcustomize/2',
 		'gaming-lighting3': 'gaming/lightingcustomize/3',
 		'hardware-scan': 'hardware-scan',
-		'smart-performance': 'support/smart-performance'
+		'smart-performance': 'support/smart-performance',
 	};
 
 	backwardCompatibilitySchemas = [
 		'lenovo-metro-discovery:',
 		'lenovo-metro-companion:',
-		'lenovo-companion:'
+		'lenovo-companion:',
 	];
 
-	sectionToSemantic: { [section: string]: string; } = {
+	sectionToSemantic: { [section: string]: string } = {
 		powersection: 'power',
 		multimedia: 'display-camera',
 		input: 'input',
-		multimodesection: 'smart-settings'
+		multimodesection: 'smart-settings',
 	};
 
-	featureIdToSemantic: { [featureId: string]: string; } = {
+	featureIdToSemantic: { [featureId: string]: string } = {
 		'5fbdca5f-02ca-4159-8f1c-725703e31473': 'power',
 		'4efe8c3d-db66-4f91-87fc-31e9aa1cbadf': 'display-camera',
 		'd0ff2f49-ca94-4dd7-a30f-d3d950d5e720': 'input',
@@ -77,12 +89,11 @@ export class ProtocolGuardService implements CanActivate {
 		private router: Router,
 		private commonService: CommonService,
 		private deviceService: DeviceService
-	) {
-	}
+	) {}
 
 	private decodeBase64String(args: string) {
 		try {
-			const supplyCount = args.length % 4 === 0 ? 0 : 4 - args.length % 4;
+			const supplyCount = args.length % 4 === 0 ? 0 : 4 - (args.length % 4);
 			const str = (args + '===').slice(0, args.length + supplyCount);
 			return atob(str.replace(/-/g, '+').replace(/_/g, '/'));
 		} catch (e) {
@@ -108,7 +119,9 @@ export class ProtocolGuardService implements CanActivate {
 	}
 
 	private processPath(path: string): [boolean, string] {
-		const encodedProtocol = path.slice(path.indexOf(this.characteristicCode) + this.characteristicCode.length);
+		const encodedProtocol = path.slice(
+			path.indexOf(this.characteristicCode) + this.characteristicCode.length
+		);
 		const originalProtocol = this.decodeBase64String(encodedProtocol);
 		if (!originalProtocol) {
 			return [false, ''];
@@ -146,7 +159,7 @@ export class ProtocolGuardService implements CanActivate {
 		let semantic = '';
 		try {
 			semantic = url.pathname;
-		} catch (e) { }
+		} catch (e) {}
 		const query = url.search;
 
 		if (schema.toLowerCase() !== this.vantage3xSchema) {
@@ -184,7 +197,9 @@ export class ProtocolGuardService implements CanActivate {
 
 		const featureId: string | null = queryParams.get('featureid');
 		if (featureId) {
-			const featureSemantic: string | undefined = this.featureIdToSemantic[featureId.toLowerCase()];
+			const featureSemantic: string | undefined = this.featureIdToSemantic[
+				featureId.toLowerCase()
+			];
 			if (featureSemantic) {
 				const path: string | undefined = this.semanticToPath[featureSemantic];
 				if (path !== undefined) {
@@ -195,7 +210,9 @@ export class ProtocolGuardService implements CanActivate {
 
 		const section: string | null = queryParams.get('section');
 		if (section) {
-			const sectionSemantic: string | undefined = this.sectionToSemantic[section.toLowerCase()];
+			const sectionSemantic: string | undefined = this.sectionToSemantic[
+				section.toLowerCase()
+			];
 			if (sectionSemantic) {
 				const path = this.semanticToPath[sectionSemantic];
 				if (path !== undefined) {
@@ -207,13 +224,18 @@ export class ProtocolGuardService implements CanActivate {
 		return [false, ''];
 	}
 
-	public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
+	public canActivate(
+		route: ActivatedRouteSnapshot,
+		state: RouterStateSnapshot
+	): boolean | UrlTree {
 		let path = state.url.slice(state.url.indexOf('#') + 1);
 		const dashboardPath = this.deviceService.isGaming ? '/device-gaming' : '/dashboard';
 		if (path.startsWith(this.characteristicCode)) {
 			const checkResult = this.isRedirectUrlNeeded(path.split('&')[0]);
 			if (!checkResult[0]) {
-				return this.commonService.isFirstPageLoaded() ? false : this.router.parseUrl(dashboardPath);
+				return this.commonService.isFirstPageLoaded()
+					? false
+					: this.router.parseUrl(dashboardPath);
 			}
 			path = checkResult[1];
 		}

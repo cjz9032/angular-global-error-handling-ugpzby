@@ -8,9 +8,8 @@ xdescribe('UiListSystemUpdateCheckboxComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiListSystemUpdateCheckboxComponent]
-		})
-			.compileComponents();
+			declarations: [UiListSystemUpdateCheckboxComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

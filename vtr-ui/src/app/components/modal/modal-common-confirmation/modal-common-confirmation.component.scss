@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .common-confirmation-modal {
 	border-radius: $border_radius;
@@ -72,17 +72,17 @@
 		border-radius: 0;
 		text-transform: uppercase;
 		text-align: left;
-		width:auto;
+		width: auto;
 		&:focus {
 			outline: 0;
 			border: 0.1rem solid $menu_hover;
 			@media #{$high-contrast} {
-				border: 0.1rem solid $menu_hover!important;
+				border: 0.1rem solid $menu_hover !important;
 			}
 		}
 	}
 
-	.underline{
+	.underline {
 		border-bottom: 0.2rem solid $main;
 	}
 }

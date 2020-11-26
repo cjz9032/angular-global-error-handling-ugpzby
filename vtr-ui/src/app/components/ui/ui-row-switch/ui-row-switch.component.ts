@@ -1,4 +1,17 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import {
+	AfterViewInit,
+	Component,
+	ElementRef,
+	EventEmitter,
+	Input,
+	NgZone,
+	OnDestroy,
+	OnInit,
+	Output,
+	QueryList,
+	ViewChild,
+	ViewChildren,
+} from '@angular/core';
 import { NgbModal, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
@@ -9,14 +22,15 @@ import { BaseComponent } from '../../base/base.component';
 import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/modal-reboot-confirm.component';
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
 
-
 @Component({
 	selector: 'vtr-ui-row-switch',
 	templateUrl: './ui-row-switch.component.html',
 	styleUrls: ['./ui-row-switch.component.scss'],
-	exportAs: 'uiRowSwitch'
+	exportAs: 'uiRowSwitch',
 })
-export class UiRowSwitchComponent extends BaseComponent implements OnInit, AfterViewInit, OnDestroy {
+export class UiRowSwitchComponent
+	extends BaseComponent
+	implements OnInit, AfterViewInit, OnDestroy {
 	@ViewChild('childContent', { static: false }) childContent: any;
 
 	// Use Fort Awesome Font Awesome Icon Reference Array (library, icon class) ['fas', 'arrow-right']
@@ -74,21 +88,20 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 		private deviceService: DeviceService,
 		private translate: TranslateService,
 		private ngZone: NgZone
-	) { super(); }
+	) {
+		super();
+	}
 
 	ngAfterViewInit(): void {
 		try {
-			Array.from(this.captionRef.nativeElement.querySelectorAll('a'))
-				.forEach((element: any) => {
+			Array.from(this.captionRef.nativeElement.querySelectorAll('a')).forEach(
+				(element: any) => {
 					element.setAttribute('id', 'modern-standby-link');
 					element.setAttribute('class', 'modern-standby');
-				});
-		}
-		catch (error) {
-
-		}
+				}
+			);
+		} catch (error) {}
 	}
-
 
 	ngOnInit() {
 		this.childContent = {};
@@ -102,21 +115,29 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	}
 	public rebootConfirm($event) {
 		const activeElement = document.activeElement as HTMLElement;
-		if (this.title === this.translate.instant('device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title') || this.isRebootRequired) {
+		if (
+			this.title ===
+				this.translate.instant(
+					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title'
+				) ||
+			this.isRebootRequired
+		) {
 			this.isSwitchChecked = !this.isSwitchChecked;
 			const modalRef = this.modalService.open(ModalRebootConfirmComponent, {
 				backdrop: 'static',
 				size: 'sm',
 				centered: true,
-				windowClass: 'Battery-Charge-Threshold-Modal'
+				windowClass: 'Battery-Charge-Threshold-Modal',
 			});
 			if (this.isRebootRequired) {
-				modalRef.componentInstance.description = 'device.deviceSettings.inputAccessories.fnCtrlKey.restartNote';
+				modalRef.componentInstance.description =
+					'device.deviceSettings.inputAccessories.fnCtrlKey.restartNote';
 			} else {
-				modalRef.componentInstance.description = 'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.description';
+				modalRef.componentInstance.description =
+					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.description';
 			}
 			modalRef.result.then(
-				result => {
+				(result) => {
 					if (result === 'enable') {
 						this.rebootToggleOnOff.emit($event);
 					} else if (result === 'close') {
@@ -124,10 +145,8 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 					}
 					activeElement.focus();
 				},
-				reason => {
-				}
+				(reason) => {}
 			);
-
 		} else {
 			this.rebootToggleOnOff.emit($event);
 		}
@@ -144,11 +163,14 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 	}
 
 	checkToolTips() {
-		const subscription = this.scrollEvent.asObservable().pipe(throttleTime(100)).subscribe(event => {
-			this.toggleToolTip(this.rightToolTip1);
-			this.toggleToolTip(this.rightToolTip2);
-			this.toggleToolTip(this.rightToolTip3);
-		});
+		const subscription = this.scrollEvent
+			.asObservable()
+			.pipe(throttleTime(100))
+			.subscribe((event) => {
+				this.toggleToolTip(this.rightToolTip1);
+				this.toggleToolTip(this.rightToolTip2);
+				this.toggleToolTip(this.rightToolTip3);
+			});
 		this.subscriptionList.push(subscription);
 	}
 
@@ -164,7 +186,7 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 
 	closeAllToolTips() {
 		if (this.toolTips && this.toolTips.length > 0) {
-			this.toolTips.forEach(element => {
+			this.toolTips.forEach((element) => {
 				this.closeToolTip(element);
 			});
 		}
@@ -185,30 +207,26 @@ export class UiRowSwitchComponent extends BaseComponent implements OnInit, After
 		}
 	}
 	voicePopUp() {
-		const modalRef = this.modalService.open(ModalVoiceComponent,
-			{
-				backdrop: 'static',
-				size: 'sm',
-				centered: true,
-				windowClass: 'Voice-Modal',
-			});
+		const modalRef = this.modalService.open(ModalVoiceComponent, {
+			backdrop: 'static',
+			size: 'sm',
+			centered: true,
+			windowClass: 'Voice-Modal',
+		});
 		modalRef.componentInstance.value = this.voiceValue;
 		modalRef.componentInstance.metricsParent = this.metricsParent;
 	}
 
 	ngOnDestroy() {
-		window.removeEventListener('scroll', () => { });
+		window.removeEventListener('scroll', () => {});
 		this.subscriptionList.forEach((s: Subscription) => s.unsubscribe());
 	}
 
 	removeHTMLFormatting(source: string) {
 		try {
 			return source.replace(/<\/?.+?\/?>/g, ' ').replace(/  +/g, ' ');
-		}
-		catch (error) {
-
+		} catch (error) {
 			return source;
 		}
 	}
-
 }

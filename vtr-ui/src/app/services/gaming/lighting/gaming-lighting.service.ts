@@ -2,17 +2,17 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class GamingLightingService {
 	private getGamingLighting: any;
 	public isShellAvailable = false;
 
 	public cardContentPositionF: any = {
-		FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg'
+		FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg',
 	};
 	public cardContentPositionB: any = {
-		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg'
+		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg',
 	};
 
 	constructor(shellService: VantageShellService) {
@@ -107,9 +107,9 @@ export class GamingLightingService {
 
 	checkAreaColorFn(listInfo) {
 		try {
-			const array = listInfo.map(o => o.lightColor);
+			const array = listInfo.map((o) => o.lightColor);
 			if (array.length > 0) {
-				return array.some(function(value, index) {
+				return array.some(function (value, index) {
 					return value !== array[0];
 				});
 			} else {

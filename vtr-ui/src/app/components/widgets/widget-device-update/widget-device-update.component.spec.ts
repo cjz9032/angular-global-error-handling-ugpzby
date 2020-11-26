@@ -14,16 +14,19 @@ describe('WidgetDeviceUpdateComponent', () => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [WidgetDeviceUpdateComponent],
-			imports: [RouterTestingModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				}
-			}), HttpClientTestingModule],
-			providers: [TranslateService]
-		})
-			.compileComponents();
+			imports: [
+				RouterTestingModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+				}),
+				HttpClientTestingModule,
+			],
+			providers: [TranslateService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -43,13 +46,10 @@ describe('WidgetDeviceUpdateComponent', () => {
 		spyOn(component.cancelUpdateCheck, 'emit');
 		component.cancelUpdates();
 		expect(component.cancelUpdateCheck.emit).toHaveBeenCalled();
-
 	});
 	it('should call onCancelUpdateDownload', () => {
 		spyOn(component.cancelUpdateDownload, 'emit');
 		component.onCancelUpdateDownload();
 		expect(component.cancelUpdateDownload.emit).toHaveBeenCalled();
-
 	});
-
 });

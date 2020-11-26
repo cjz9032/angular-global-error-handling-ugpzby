@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 :host {
 	display: flex;
@@ -48,7 +48,6 @@
 		text-decoration: none;
 
 		&:hover {
-
 			.title,
 			.description {
 				color: $main;
@@ -71,5 +70,4 @@
 		color: #667481;
 		letter-spacing: 0;
 	}
-
 }

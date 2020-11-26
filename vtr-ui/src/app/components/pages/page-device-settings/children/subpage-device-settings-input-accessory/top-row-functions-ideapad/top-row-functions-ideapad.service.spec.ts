@@ -5,16 +5,13 @@ import { StringBoolean } from 'src/app/data-models/common/common.interface';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
 import {
 	FnLockStatus,
-
-
-
 	GetCapabilityResponse,
 	GetFnLockStatusResponse,
-	GetPrimaryKeyResponse, KeyType, PrimaryKeySetting
+	GetPrimaryKeyResponse,
+	KeyType,
+	PrimaryKeySetting,
 } from './top-row-functions-ideapad.interface';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad.service';
-
-
 
 describe('TopRowFunctionsIdeapadService', () => {
 	let topRowFuncIdeaService: TopRowFunctionsIdeapadService;
@@ -23,7 +20,7 @@ describe('TopRowFunctionsIdeapadService', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientTestingModule],
-			providers: [VantageShellService]
+			providers: [VantageShellService],
 		});
 
 		topRowFuncIdeaService = TestBed.inject(TopRowFunctionsIdeapadService);
@@ -31,16 +28,17 @@ describe('TopRowFunctionsIdeapadService', () => {
 	}));
 
 	it('should call capability', () => {
-		const spy = spyOn(
-			topRowFuncIdeaService,
-			'requestCapability'
-		).and.returnValue(of([{ key: 'Item1', value: 'True' }]));
+		const spy = spyOn(topRowFuncIdeaService, 'requestCapability').and.returnValue(
+			of([{ key: 'Item1', value: 'True' }])
+		);
 		topRowFuncIdeaService['capability'];
 		expect(spy).toHaveBeenCalled();
 	});
 
 	it('should call requestCapability', () => {
-		spyOn<any>(topRowFuncIdeaService, 'topRowFunctionsIdeaPadFeature').and.returnValue(of([{ key: 'Item1', value: 'True' }]));
+		spyOn<any>(topRowFuncIdeaService, 'topRowFunctionsIdeaPadFeature').and.returnValue(
+			of([{ key: 'Item1', value: 'True' }])
+		);
 		const res = topRowFuncIdeaService.requestCapability();
 		expect(res).toBeTruthy();
 	});
@@ -50,12 +48,11 @@ describe('TopRowFunctionsIdeapadService', () => {
 			key: 'item1',
 			value: KeyType.HOTKEY,
 			enabled: 1,
-			errorCode: 0
+			errorCode: 0,
 		};
-		const spy = spyOn(
-			topRowFuncIdeaService,
-			'requestPrimaryKey'
-		).and.returnValue(of(primaryKey));
+		const spy = spyOn(topRowFuncIdeaService, 'requestPrimaryKey').and.returnValue(
+			of(primaryKey)
+		);
 		topRowFuncIdeaService['primaryKey'];
 		expect(spy).toHaveBeenCalled();
 	});
@@ -65,9 +62,11 @@ describe('TopRowFunctionsIdeapadService', () => {
 			key: 'item1',
 			value: KeyType.HOTKEY,
 			enabled: 1,
-			errorCode: 0
+			errorCode: 0,
 		};
-		spyOn<any>(topRowFuncIdeaService, 'topRowFunctionsIdeaPadFeature').and.returnValue(of(primaryKey));
+		spyOn<any>(topRowFuncIdeaService, 'topRowFunctionsIdeaPadFeature').and.returnValue(
+			of(primaryKey)
+		);
 		const res = topRowFuncIdeaService.requestPrimaryKey();
 		expect(res).toBeTruthy();
 	});
@@ -77,12 +76,11 @@ describe('TopRowFunctionsIdeapadService', () => {
 			key: 'item1',
 			value: 'True',
 			enabled: 1,
-			errorCode: 0
+			errorCode: 0,
 		};
-		const spy = spyOn<any>(
-			topRowFuncIdeaService,
-			'requestFnLockStatus'
-		).and.returnValue(of(fnkey));
+		const spy = spyOn<any>(topRowFuncIdeaService, 'requestFnLockStatus').and.returnValue(
+			of(fnkey)
+		);
 		topRowFuncIdeaService['fnLockStatus'];
 		expect(spy).toHaveBeenCalled();
 	});
@@ -92,9 +90,11 @@ describe('TopRowFunctionsIdeapadService', () => {
 			key: 'item1',
 			value: 'True',
 			enabled: 1,
-			errorCode: 0
+			errorCode: 0,
 		};
-		spyOn<any>(topRowFuncIdeaService, 'topRowFunctionsIdeaPadFeature').and.returnValue(of(fnkey));
+		spyOn<any>(topRowFuncIdeaService, 'topRowFunctionsIdeaPadFeature').and.returnValue(
+			of(fnkey)
+		);
 		const res = topRowFuncIdeaService.requestFnLockStatus();
 		expect(res).toBeTruthy();
 	});
@@ -104,20 +104,22 @@ describe('TopRowFunctionsIdeapadService', () => {
 			getCapability() {
 				const data: GetCapabilityResponse = {
 					errorCode: 0,
-					capabilityList: { Items: [{ key: 'Item1', value: 'True' }] }
+					capabilityList: { Items: [{ key: 'Item1', value: 'True' }] },
 				};
 				return Promise.resolve(data);
 			},
 			getFnLockStatus() {
 				const data: GetFnLockStatusResponse = {
 					settingList: {
-						setting: [{
-							key: 'item1',
-							value: 'True',
-							enabled: 1,
-							errorCode: 0
-						}]
-					}
+						setting: [
+							{
+								key: 'item1',
+								value: 'True',
+								enabled: 1,
+								errorCode: 0,
+							},
+						],
+					},
 				};
 				return Promise.resolve(data);
 			},
@@ -127,16 +129,18 @@ describe('TopRowFunctionsIdeapadService', () => {
 			getPrimaryKey() {
 				const data: GetPrimaryKeyResponse = {
 					settingList: {
-						setting: [{
-							key: 'item1',
-							value: KeyType.HOTKEY,
-							enabled: 1,
-							errorCode: 0
-						}]
-					}
+						setting: [
+							{
+								key: 'item1',
+								value: KeyType.HOTKEY,
+								enabled: 1,
+								errorCode: 0,
+							},
+						],
+					},
 				};
 				return Promise.resolve(data);
-			}
+			},
 		};
 		topRowFuncIdeaService.setFnLockStatus('True');
 		expect(topRowFuncIdeaService['fnLockStatus$']).toEqual(null);

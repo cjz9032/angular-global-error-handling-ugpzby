@@ -5,7 +5,7 @@ import { AllDays } from 'src/app/data-models/device/all-days.model';
 import { DaysOfWeek } from 'src/app/enums/days-of-week.enum';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class SmartStandbyService {
 	allDays: AllDays[] = [
@@ -15,7 +15,7 @@ export class SmartStandbyService {
 		{ shortName: 'wed', status: false },
 		{ shortName: 'thurs', status: false },
 		{ shortName: 'fri', status: false },
-		{ shortName: 'sat', status: false }
+		{ shortName: 'sat', status: false },
 	];
 	daysOfWeek = DaysOfWeek;
 	days: string;
@@ -24,16 +24,18 @@ export class SmartStandbyService {
 	schedule: string;
 	scheduleLongForm: string;
 
-	constructor(
-		public translate: TranslateService,
-		public commonService: CommonService) { }
+	constructor(public translate: TranslateService, public commonService: CommonService) {}
 
 	setSelectedDayText(isLongForm: boolean = false): string {
 		let dayText = '';
 		if (this.checkIsWeekends() && this.checkIsWeekDays()) {
-			dayText = this.translate.instant('device.deviceSettings.power.smartStandby.days.everyday');
+			dayText = this.translate.instant(
+				'device.deviceSettings.power.smartStandby.days.everyday'
+			);
 		} else if (this.checkIsWeekDays() && !this.checkIsWeekends()) {
-			dayText = this.translate.instant('device.deviceSettings.power.smartStandby.days.weekdays');
+			dayText = this.translate.instant(
+				'device.deviceSettings.power.smartStandby.days.weekdays'
+			);
 			if (this.getSelectedDays(1, isLongForm).length > 0) {
 				dayText += ', ' + this.getSelectedDays(1, isLongForm);
 			}
@@ -41,8 +43,15 @@ export class SmartStandbyService {
 			if (this.getSelectedDays(2, isLongForm).length > 0) {
 				dayText = this.getSelectedDays(2, isLongForm);
 			}
-			dayText += this.getSelectedDays(2, isLongForm).length !== 0 ? ', ' + this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends'):
-			this.translate.instant('device.deviceSettings.power.smartStandby.days.weekends');
+			dayText +=
+				this.getSelectedDays(2, isLongForm).length !== 0
+					? ', ' +
+					  this.translate.instant(
+							'device.deviceSettings.power.smartStandby.days.weekends'
+					  )
+					: this.translate.instant(
+							'device.deviceSettings.power.smartStandby.days.weekends'
+					  );
 		} else {
 			dayText = this.getSelectedDays(0, isLongForm);
 		}
@@ -55,8 +64,10 @@ export class SmartStandbyService {
 	}
 
 	checkIsWeekends(): boolean {
-		if (this.allDays[this.daysOfWeek.Sunday].status &&
-			this.allDays[this.daysOfWeek.Saturday].status) {
+		if (
+			this.allDays[this.daysOfWeek.Sunday].status &&
+			this.allDays[this.daysOfWeek.Saturday].status
+		) {
 			return true;
 		}
 		return false;
@@ -74,29 +85,33 @@ export class SmartStandbyService {
 	getSelectedDays(reqType, isLongForm: boolean = false): string {
 		let dayText = '';
 		let longDayText = '';
-		if (reqType === 1) {  // weekends check
+		if (reqType === 1) {
+			// weekends check
 			if (this.allDays[this.daysOfWeek.Sunday].status) {
 				if (!isLongForm) {
 					dayText = this.translate.instant(
-						'device.deviceSettings.power.smartStandby.days.shortName.'
-						+ this.allDays[this.daysOfWeek.Sunday].shortName);
+						'device.deviceSettings.power.smartStandby.days.shortName.' +
+							this.allDays[this.daysOfWeek.Sunday].shortName
+					);
 				} else {
 					dayText = this.translate.instant(
-						'device.deviceSettings.power.smartStandby.days.name.'
-						+ this.allDays[this.daysOfWeek.Sunday].shortName);
+						'device.deviceSettings.power.smartStandby.days.name.' +
+							this.allDays[this.daysOfWeek.Sunday].shortName
+					);
 				}
 			} else if (this.allDays[this.daysOfWeek.Saturday].status) {
 				if (!isLongForm) {
 					dayText = this.translate.instant(
-						'device.deviceSettings.power.smartStandby.days.shortName.'
-						+ this.allDays[this.daysOfWeek.Saturday].shortName);
+						'device.deviceSettings.power.smartStandby.days.shortName.' +
+							this.allDays[this.daysOfWeek.Saturday].shortName
+					);
 				} else {
 					dayText = this.translate.instant(
-						'device.deviceSettings.power.smartStandby.days.name.'
-						+ this.allDays[this.daysOfWeek.Saturday].shortName);
+						'device.deviceSettings.power.smartStandby.days.name.' +
+							this.allDays[this.daysOfWeek.Saturday].shortName
+					);
 				}
 			}
-
 		} else if (reqType === 2) {
 			for (let i = 1; i < 6; i++) {
 				if (this.allDays[i].status) {
@@ -107,12 +122,14 @@ export class SmartStandbyService {
 
 					if (!isLongForm) {
 						dayText += this.translate.instant(
-							'device.deviceSettings.power.smartStandby.days.shortName.'
-							+ this.allDays[i].shortName);
+							'device.deviceSettings.power.smartStandby.days.shortName.' +
+								this.allDays[i].shortName
+						);
 					} else {
 						dayText += this.translate.instant(
-							'device.deviceSettings.power.smartStandby.days.name.'
-							+ this.allDays[i].shortName);
+							'device.deviceSettings.power.smartStandby.days.name.' +
+								this.allDays[i].shortName
+						);
 					}
 				}
 			}
@@ -121,11 +138,9 @@ export class SmartStandbyService {
 			this.allDays.forEach((day) => {
 				if (day.status) {
 					if (longDayText === '') {
-
 						longDayText = this.translate.instant(
-							'device.deviceSettings.power.smartStandby.days.name.'
-							+ day.shortName);
-
+							'device.deviceSettings.power.smartStandby.days.name.' + day.shortName
+						);
 					}
 
 					if (dayText.length > 0) {
@@ -133,12 +148,13 @@ export class SmartStandbyService {
 					}
 					if (!isLongForm) {
 						dayText += this.translate.instant(
-							'device.deviceSettings.power.smartStandby.days.shortName.'
-							+ day.shortName);
+							'device.deviceSettings.power.smartStandby.days.shortName.' +
+								day.shortName
+						);
 					} else {
 						dayText += this.translate.instant(
-							'device.deviceSettings.power.smartStandby.days.name.'
-							+ day.shortName);
+							'device.deviceSettings.power.smartStandby.days.name.' + day.shortName
+						);
 					}
 					cnt = cnt + 1;
 				}
@@ -159,7 +175,7 @@ export class SmartStandbyService {
 	}
 
 	setDaysOfWeekOff() {
-		this.allDays.forEach(day => {
+		this.allDays.forEach((day) => {
 			if (this.selectedDays.includes(day.shortName)) {
 				day.status = true;
 			} else {

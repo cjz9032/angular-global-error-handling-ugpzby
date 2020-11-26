@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { CommonMetricsService } from './common-metrics.service';
 
-
 xdescribe('CommonMetricsService', () => {
 	beforeEach(() => TestBed.configureTestingModule({}));
 

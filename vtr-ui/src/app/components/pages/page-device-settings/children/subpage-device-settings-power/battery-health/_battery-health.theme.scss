@@ -6,51 +6,50 @@ $battery-semi-bold: 600;
 $battery-text-color-palette: (
 	default: #34495e,
 	white-on-black: white,
-	black-on-white: black
+	black-on-white: black,
 );
 
 $battery-background-palette: (
 	default: #f5f7f8,
 	white-on-black: black,
-	black-on-white: white
+	black-on-white: white,
 );
 
 $battery-border-palette: (
 	default: #ecf0f1,
 	white-on-black: white,
-	black-on-white: black
+	black-on-white: black,
 );
-
 
 $smart-battery-theme: (
 	color: $battery-text-color-palette,
 	background: $battery-background-palette,
-	border: $battery-border-palette
+	border: $battery-border-palette,
 );
 
 $battery-capacity-circle: (
 	error: (
-		ground: #E6EAEB,
-		over:#E6EAEB
+		ground: #e6eaeb,
+		over: #e6eaeb,
 	),
 	color-green: (
-		ground: #34495E,
-		over: #30D487
+		ground: #34495e,
+		over: #30d487,
 	),
 	color-yellow: (
-		ground: #34495E,
-		over: #F7C809,
+		ground: #34495e,
+		over: #f7c809,
 	),
 	color-pink: (
-		ground: #34495E,
-		over: #FD796C,
+		ground: #34495e,
+		over: #fd796c,
 	),
 	color-red: (
-		ground: #34495E,
-		over: #DB221F,
+		ground: #34495e,
+		over: #db221f,
 	),
 );
 $battery-capacity-circle-high-contrast: (
-	white: #FFFFFF,
-	black: #000000
-)
+	white: #ffffff,
+	black: #000000,
+);

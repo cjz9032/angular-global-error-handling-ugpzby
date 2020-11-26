@@ -3,23 +3,22 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { WidgetMcafeeComponent } from './widget-mcafee.component';
 
 xdescribe('WidgetMcafeeComponent', () => {
-  let component: WidgetMcafeeComponent;
-  let fixture: ComponentFixture<WidgetMcafeeComponent>;
+	let component: WidgetMcafeeComponent;
+	let fixture: ComponentFixture<WidgetMcafeeComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ WidgetMcafeeComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [WidgetMcafeeComponent],
+		}).compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(WidgetMcafeeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(WidgetMcafeeComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

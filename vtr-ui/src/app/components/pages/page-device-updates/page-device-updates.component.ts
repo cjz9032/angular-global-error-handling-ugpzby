@@ -30,7 +30,10 @@ import { ContentActionType } from 'src/app/enums/content.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
-import { SelfSelectService, SegmentConstHelper } from 'src/app/services/self-select/self-select.service';
+import {
+	SelfSelectService,
+	SegmentConstHelper,
+} from 'src/app/services/self-select/self-select.service';
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
@@ -39,7 +42,7 @@ declare var Windows;
 @Component({
 	selector: 'vtr-page-device-updates',
 	templateUrl: './page-device-updates.component.html',
-	styleUrls: ['./page-device-updates.component.scss']
+	styleUrls: ['./page-device-updates.component.scss'],
 })
 export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	title = 'systemUpdates.title';
@@ -51,29 +54,33 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	cardContentPositionA: FeatureContent = new FeatureContent();
 	securityWidgetCard: FeatureContent = new FeatureContent();
 
-	rightCards = [{
-		cardContent: null,
-		id: 'su-security-widget-cardcontent',
-		ariaLabel: 'su-security-widget-cardcontent',
-		type: 'subpage-partner-corner',
-		order: 2,
-		show: false
-	}, {
-		cardContent: null,
-		id: 'su-web-support-cardcontent',
-		ariaLabel: 'su-web-support-cardcontent',
-		type: 'subpage-partner-corner',
-		order: 3,
-		show: true
-	}, {
-		cardContent: null,
-		id: 'su-positionA-cardcontent',
-		ariaLabel: 'su-positionA-cardcontent',
-		type: 'subpage-corner',
-		cornerShift: 'large',
-		order: 4,
-		show: true
-	}];
+	rightCards = [
+		{
+			cardContent: null,
+			id: 'su-security-widget-cardcontent',
+			ariaLabel: 'su-security-widget-cardcontent',
+			type: 'subpage-partner-corner',
+			order: 2,
+			show: false,
+		},
+		{
+			cardContent: null,
+			id: 'su-web-support-cardcontent',
+			ariaLabel: 'su-web-support-cardcontent',
+			type: 'subpage-partner-corner',
+			order: 3,
+			show: true,
+		},
+		{
+			cardContent: null,
+			id: 'su-positionA-cardcontent',
+			ariaLabel: 'su-positionA-cardcontent',
+			type: 'subpage-corner',
+			cornerShift: 'large',
+			order: 4,
+			show: true,
+		},
+	];
 
 	private lastUpdatedText = 'systemUpdates.banner.last';
 	private nextScanText = 'systemUpdates.banner.next';
@@ -130,20 +137,20 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			status: 'fail',
 			icon: 'times',
 			installationDate: '14 FEB 2018',
-			path: '/'
+			path: '/',
 		},
 		{
 			status: 'pause',
 			icon: 'minus',
 			installationDate: '16 MAR 2018',
-			path: '/'
+			path: '/',
 		},
 		{
 			status: 'success',
 			icon: 'check',
 			installationDate: '21 JUL 2018',
-			path: '/'
-		}
+			path: '/',
+		},
 	];
 
 	public autoUpdateOptions = [
@@ -159,7 +166,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			isChecked: true,
 			isDisabled: false,
 			tooltipText: 'systemUpdates.autoUpdateSettings.critical.tooltip',
-			type: 'auto-updates'
+			type: 'auto-updates',
 		},
 		{
 			readMoreText: '',
@@ -173,7 +180,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			isChecked: true,
 			isDisabled: false,
 			tooltipText: 'systemUpdates.autoUpdateSettings.recommended.tooltip',
-			type: 'auto-updates'
+			type: 'auto-updates',
 		},
 		{
 			readMoreText: '',
@@ -188,9 +195,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			isDisabled: false,
 			linkText: 'systemUpdates.autoUpdateSettings.windows.url',
 			linkPath: 'ms-settings:windowsupdate',
-			type: 'auto-updates'
-
-		}
+			type: 'auto-updates',
+		},
 	];
 
 	public updateDetails = {
@@ -198,7 +204,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		version: '11.85.45.123',
 		installedVersion: 'Not available',
 		downloadSize: '7.3 MB',
-		diskSpaceNeeded: '30.5 MB'
+		diskSpaceNeeded: '30.5 MB',
 	};
 
 	private cmsSubscription: Subscription;
@@ -240,7 +246,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					ItemType: 'FeatureClick',
 					ItemName: 'chk.critical-updates',
 					ItemValue: 'True',
-					ItemParent: 'Device.SystemUpdate'
+					ItemParent: 'Device.SystemUpdate',
 				};
 				this.metrics.sendAsync(metricData);
 			} else if (this.protocolAction.toLowerCase() === 'start') {
@@ -256,19 +262,33 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.isUpdatesAvailable = this.updateAvailableAfterCheck();
 		this.isInstallingAllUpdates = this.systemUpdateService.isInstallingAllUpdates;
 
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
-			this.onNotification(response);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 
-		if (this.systemUpdateService.isUpdatesAvailable && !this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.updateInfo) {
+		if (
+			this.systemUpdateService.isUpdatesAvailable &&
+			!this.systemUpdateService.isInstallationCompleted &&
+			this.systemUpdateService.updateInfo
+		) {
 			this.systemUpdateService.isUpdatesAvailable = true;
 			this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
-		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.installedUpdates && this.systemUpdateService.installedUpdates.length > 0) {
+		} else if (
+			this.systemUpdateService.isInstallationCompleted &&
+			this.systemUpdateService.installedUpdates &&
+			this.systemUpdateService.installedUpdates.length > 0
+		) {
 			this.setUpdateByCategory(this.systemUpdateService.installedUpdates);
 			if (this.systemUpdateService.isToastMessageNeeded) {
 				this.showToastMessage(this.systemUpdateService.installedUpdates);
 			}
-		} else if (this.systemUpdateService.isInstallationCompleted && this.systemUpdateService.ignoredRebootDelayUpdates && this.systemUpdateService.ignoredRebootDelayUpdates.length > 0) {
+		} else if (
+			this.systemUpdateService.isInstallationCompleted &&
+			this.systemUpdateService.ignoredRebootDelayUpdates &&
+			this.systemUpdateService.ignoredRebootDelayUpdates.length > 0
+		) {
 			this.setUpdateByCategory(this.systemUpdateService.ignoredRebootDelayUpdates);
 		}
 
@@ -307,9 +327,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			const settingValue = await this.isSecurityWidgetEnabled();
 			const segmentValue = await this.selfSelectService.getSegment();
 			const currentPage = this.antiVirusService.GetAntivirusStatus().currentPage;
-			if (settingValue
-				&& (SegmentConstHelper.includedInCommonConsumer(segmentValue))
-				&& currentPage !== 'mcafee') {
+			if (
+				settingValue &&
+				SegmentConstHelper.includedInCommonConsumer(segmentValue) &&
+				currentPage !== 'mcafee'
+			) {
 				this.translate.stream('systemUpdates.security.title').subscribe((title) => {
 					this.securityWidgetCard = {
 						Id: 'SecurityWidgetCard',
@@ -317,7 +339,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						FeatureImage: 'assets/images/security-bg.jpg',
 						ActionType: ContentActionType.Internal,
 						ActionLink: 'lenovo-vantage3:anti-virus',
-						SupportOffline: true
+						SupportOffline: true,
 					};
 					this.showSecurityWidget = true;
 					this.rightCards[0].cardContent = this.securityWidgetCard;
@@ -336,15 +358,21 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private isSecurityWidgetEnabled(): Promise<boolean> {
 		let enabled = true;
-		return this.hypSetting.getFeatureSetting('SystemUpdateSecurityWidget').then((result) => {
-			if (result === 'false') {
-				enabled = false;
+		return this.hypSetting.getFeatureSetting('SystemUpdateSecurityWidget').then(
+			(result) => {
+				if (result === 'false') {
+					enabled = false;
+				}
+				return enabled;
+			},
+			(error) => {
+				this.logger.error(
+					'PageDeviceUpdatesComponent.isSecurityWidgetEnabled: promise rejected ',
+					error
+				);
+				return enabled;
 			}
-			return enabled;
-		}, (error) => {
-			this.logger.error('PageDeviceUpdatesComponent.isSecurityWidgetEnabled: promise rejected ', error);
-			return enabled;
-		});
+		);
 	}
 
 	popRebootDialogIfNecessary() {
@@ -354,23 +382,31 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private getCachedValue() {
-		let cachedData = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus);
-		if (typeof (cachedData) !== 'undefined') {
+		let cachedData = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SystemUpdateCriticalUpdateStatus
+		);
+		if (typeof cachedData !== 'undefined') {
 			this.autoUpdateOptions[0].isChecked = cachedData;
 			this.isScheduleScanEnabled = cachedData;
 		}
-		cachedData = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus);
-		if (typeof (cachedData) !== 'undefined') {
+		cachedData = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SystemUpdateRecommendUpdateStatus
+		);
+		if (typeof cachedData !== 'undefined') {
 			this.autoUpdateOptions[1].isChecked = cachedData;
 			if (!this.autoUpdateOptions[0].isChecked) {
 				this.autoUpdateOptions[1].isDisabled = true;
 			}
 		}
-		cachedData = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateLastInstallTime);
+		cachedData = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SystemUpdateLastInstallTime
+		);
 		if (cachedData) {
 			this.lastInstallTime = cachedData;
 		}
-		cachedData = this.localCacheService.getLocalCacheValue(LocalStorageKey.SystemUpdateNextScheduleScanTime);
+		cachedData = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SystemUpdateNextScheduleScanTime
+		);
 		if (cachedData) {
 			this.nextScheduleScanTime = cachedData;
 		}
@@ -378,21 +414,27 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			Page: 'system-updates'
+			Page: 'system-updates',
 		};
 
 		this.cmsSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(
+					response,
+					'inner-page-right-side-article-image-background',
+					'position-A'
+				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
-						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split(
+							'|'
+						)[0];
 					}
 					this.rightCards[2].cardContent = this.cardContentPositionA;
 				}
 			},
-			error => {
+			(error) => {
 				this.logger.error('fetchCMSContent error', error);
 			}
 		);
@@ -434,32 +476,42 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private setUpdateTitle(titleStatusCode: number = 0) {
-		if (titleStatusCode < 0 || titleStatusCode > SystemUpdateStatusMessage.StatusMessageMap.length - 1) {
+		if (
+			titleStatusCode < 0 ||
+			titleStatusCode > SystemUpdateStatusMessage.StatusMessageMap.length - 1
+		) {
 			titleStatusCode = 1; // For unknown status code, display common failure error message
 		}
-		this.translate.stream(SystemUpdateStatusMessage.StatusMessageMap[titleStatusCode].message).subscribe((res) => {
-			this.updateTitle = res;
-		});
+		this.translate
+			.stream(SystemUpdateStatusMessage.StatusMessageMap[titleStatusCode].message)
+			.subscribe((res) => {
+				this.updateTitle = res;
+			});
 	}
 
 	private getLastUpdateScanDetail() {
 		if (this.systemUpdateService.isShellAvailable) {
-			this.systemUpdateService.getMostRecentUpdateInfo()
-				.then((value: any) => {
-					if (value.lastInstallTime && value.lastInstallTime.length > 0) {
-						this.lastInstallTime = value.lastInstallTime;
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateLastInstallTime, this.lastInstallTime);
-					}
-					// this.lastScanTime = new Date(value.lastScanTime);
-					this.nextScheduleScanTime = value.nextScheduleScanTime;
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateNextScheduleScanTime, this.nextScheduleScanTime);
-					this.isScheduleScanEnabled = value.scheduleScanEnabled;
-					this.getNextUpdatedScanText();
-					// lastInstallTime: "2019-03-01T10:09:53"
-					// lastScanTime: "2019-03-12T18:24:03"
-					// nextScheduleScanTime: "2019-03-15T10:07:42"
-					// scheduleScanEnabled: true
-				});
+			this.systemUpdateService.getMostRecentUpdateInfo().then((value: any) => {
+				if (value.lastInstallTime && value.lastInstallTime.length > 0) {
+					this.lastInstallTime = value.lastInstallTime;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.SystemUpdateLastInstallTime,
+						this.lastInstallTime
+					);
+				}
+				// this.lastScanTime = new Date(value.lastScanTime);
+				this.nextScheduleScanTime = value.nextScheduleScanTime;
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SystemUpdateNextScheduleScanTime,
+					this.nextScheduleScanTime
+				);
+				this.isScheduleScanEnabled = value.scheduleScanEnabled;
+				this.getNextUpdatedScanText();
+				// lastInstallTime: "2019-03-01T10:09:53"
+				// lastScanTime: "2019-03-12T18:24:03"
+				// nextScheduleScanTime: "2019-03-15T10:07:42"
+				// scheduleScanEnabled: true
+			});
 		}
 	}
 
@@ -525,16 +577,28 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		if (isIgnored === true) {
 			this.systemUpdateService.ignoreUpdate(packageName);
 			if (packageSeverity === UpdateInstallSeverity.Optional) {
-				focusIds = [UpdateInstallTitleId.OptionalUpdates, UpdateInstallTitleId.IgnoredUpdates];
+				focusIds = [
+					UpdateInstallTitleId.OptionalUpdates,
+					UpdateInstallTitleId.IgnoredUpdates,
+				];
 			} else {
-				focusIds = [UpdateInstallTitleId.RecommendedUpdates, UpdateInstallTitleId.IgnoredUpdates];
+				focusIds = [
+					UpdateInstallTitleId.RecommendedUpdates,
+					UpdateInstallTitleId.IgnoredUpdates,
+				];
 			}
 		} else {
 			this.systemUpdateService.unIgnoreUpdate(packageName);
 			if (packageSeverity === UpdateInstallSeverity.Optional) {
-				focusIds = [UpdateInstallTitleId.IgnoredUpdates, UpdateInstallTitleId.OptionalUpdates];
+				focusIds = [
+					UpdateInstallTitleId.IgnoredUpdates,
+					UpdateInstallTitleId.OptionalUpdates,
+				];
 			} else {
-				focusIds = [UpdateInstallTitleId.IgnoredUpdates, UpdateInstallTitleId.RecommendedUpdates];
+				focusIds = [
+					UpdateInstallTitleId.IgnoredUpdates,
+					UpdateInstallTitleId.RecommendedUpdates,
+				];
 			}
 		}
 		this.systemUpdateService.ignoreFocusIds = focusIds;
@@ -591,12 +655,23 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	// 	return packId;
 	// }
 
-	private installUpdates(removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>, isInstallAll: boolean) {
-		if (this.systemUpdateService.isShellAvailable && this.systemUpdateService.isUpdatesAvailable) {
+	private installUpdates(
+		removeDelayedUpdates: boolean,
+		updateList: Array<AvailableUpdateDetail>,
+		isInstallAll: boolean
+	) {
+		if (
+			this.systemUpdateService.isShellAvailable &&
+			this.systemUpdateService.isUpdatesAvailable
+		) {
 			this.isInstallingAllUpdates = isInstallAll;
 			this.systemUpdateService.isInstallingAllUpdates = isInstallAll;
 			this.resetState();
-			this.systemUpdateService.installUpdatesList(removeDelayedUpdates, updateList, isInstallAll);
+			this.systemUpdateService.installUpdatesList(
+				removeDelayedUpdates,
+				updateList,
+				isInstallAll
+			);
 			this.setInstallUpdateByCategory(updateList);
 		}
 	}
@@ -604,7 +679,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public onUpdateToggleOnOff($event) {
 		if (this.systemUpdateService.isShellAvailable) {
 			const { name, switchValue: checked } = $event;
-			let { criticalAutoUpdates, recommendedAutoUpdates } = this.systemUpdateService.autoUpdateStatus;
+			let {
+				criticalAutoUpdates,
+				recommendedAutoUpdates,
+			} = this.systemUpdateService.autoUpdateStatus;
 			if (name === 'critical-updates') {
 				criticalAutoUpdates = checked;
 				const recommendUpdate = this.autoUpdateOptions.find((update) => {
@@ -646,23 +724,33 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	public isUpdateListVisible() {
-		const isVisible = (this.systemUpdateService.isUpdatesAvailable || this.systemUpdateService.isInstallationCompleted)
-			&& ((this.criticalUpdates && this.criticalUpdates.length > 0)
-				|| (this.recommendedUpdates && this.recommendedUpdates.length > 0)
-				|| (this.optionalUpdates && this.optionalUpdates.length > 0)
-				|| (this.ignoredUpdates && this.ignoredUpdates.length > 0));
+		const isVisible =
+			(this.systemUpdateService.isUpdatesAvailable ||
+				this.systemUpdateService.isInstallationCompleted) &&
+			((this.criticalUpdates && this.criticalUpdates.length > 0) ||
+				(this.recommendedUpdates && this.recommendedUpdates.length > 0) ||
+				(this.optionalUpdates && this.optionalUpdates.length > 0) ||
+				(this.ignoredUpdates && this.ignoredUpdates.length > 0));
 		return isVisible;
 	}
 
 	public updateAvailableAfterCheck() {
-		return this.systemUpdateService.isUpdatesAvailable
-			&& !this.systemUpdateService.isUpdateDownloading
-			&& !this.systemUpdateService.isInstallationCompleted;
+		return (
+			this.systemUpdateService.isUpdatesAvailable &&
+			!this.systemUpdateService.isUpdateDownloading &&
+			!this.systemUpdateService.isInstallationCompleted
+		);
 	}
 
 	public isUpdateSelected() {
-		if (this.systemUpdateService.isUpdatesAvailable && this.systemUpdateService.updateInfo && this.systemUpdateService.updateInfo.updateList) {
-			const selectedUpdates = this.systemUpdateService.getSelectedUpdates(this.systemUpdateService.updateInfo.updateList);
+		if (
+			this.systemUpdateService.isUpdatesAvailable &&
+			this.systemUpdateService.updateInfo &&
+			this.systemUpdateService.updateInfo.updateList
+		) {
+			const selectedUpdates = this.systemUpdateService.getSelectedUpdates(
+				this.systemUpdateService.updateInfo.updateList
+			);
 			return selectedUpdates.length > 0;
 		} else {
 			return false;
@@ -673,8 +761,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.systemUpdateService.restartWindows();
 	}
 
-	public onDismissClick($event) {
-	}
+	public onDismissClick($event) {}
 
 	private focusOnElement(element) {
 		if (element && document.getElementById(element)) {
@@ -692,14 +779,13 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	public showInstallConfirmation(source: string) {
 		const isInstallAll = source !== 'selected';
-		const modalRef = this.modalService
-			.open(ModalCommonConfirmationComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				ariaLabelledBy: 'modal_confirm_title',
-				windowClass: 'common-confirmation-modal'
-			});
+		const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			ariaLabelledBy: 'modal_confirm_title',
+			windowClass: 'common-confirmation-modal',
+		});
 		// VAN-16194 touch screen cannot show this modal
 		this.changeCheckboxDisplay('none');
 		setTimeout(() => {
@@ -707,14 +793,22 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}, 0);
 		let removeDelayedUpdates = false;
 		this.updatesToInstall = [];
-		this.systemUpdateService.updateInfo.updateList.map(update => this.updatesToInstall.push(Object.assign({}, update)));
+		this.systemUpdateService.updateInfo.updateList.map((update) =>
+			this.updatesToInstall.push(Object.assign({}, update))
+		);
 		if (!isInstallAll) {
-			this.updatesToInstall = this.systemUpdateService.getSelectedUpdates(this.updatesToInstall);
+			this.updatesToInstall = this.systemUpdateService.getSelectedUpdates(
+				this.updatesToInstall
+			);
 		} else {
 			this.systemUpdateService.selectDependedUpdateForInstallAll(this.updatesToInstall);
-			this.updatesToInstall = this.systemUpdateService.getUnIgnoredUpdatesForInstallAll(this.updatesToInstall);
+			this.updatesToInstall = this.systemUpdateService.getUnIgnoredUpdatesForInstallAll(
+				this.updatesToInstall
+			);
 		}
-		const { rebootType, packages } = this.systemUpdateService.getRebootType(this.updatesToInstall);
+		const { rebootType, packages } = this.systemUpdateService.getRebootType(
+			this.updatesToInstall
+		);
 
 		const diskSpaceEnough = this.checkDiskSpaceEnough(this.updatesToInstall);
 		if (!diskSpaceEnough) {
@@ -725,11 +819,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
 			modalRef.componentInstance.CancelText = '';
 			modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.DiskSpaceNeeded';
-			modalRef.result.then(
-				(result) => {
-					modalRef.close();
-				}
-			);
+			modalRef.result.then((result) => {
+				modalRef.close();
+			});
 		} else {
 			if (rebootType === UpdateRebootType.RebootDelayed) {
 				this.showRebootDelayedModal(modalRef);
@@ -742,34 +834,43 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				// its normal update type installation which doesn't require rebooting/power-off
 				document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
 				this.focusOnElement(this.backButton);
-				this.installUpdateBySource(isInstallAll, removeDelayedUpdates, this.updatesToInstall);
+				this.installUpdateBySource(
+					isInstallAll,
+					removeDelayedUpdates,
+					this.updatesToInstall
+				);
 				return;
 			}
 			modalRef.componentInstance.packages = packages;
 			modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
 			modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';
-			modalRef.result.then(
-				result => {
-					// on open
-					if (result) {
-						document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
-						if (this.systemUpdateService.getACAttachedStatus()) {
-							removeDelayedUpdates = false;
-						} else {
-							removeDelayedUpdates = true;
-						}
-						this.focusOnElement(this.backButton);
-						this.installUpdateBySource(isInstallAll, removeDelayedUpdates, this.updatesToInstall);
+			modalRef.result.then((result) => {
+				// on open
+				if (result) {
+					document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
+					if (this.systemUpdateService.getACAttachedStatus()) {
+						removeDelayedUpdates = false;
+					} else {
+						removeDelayedUpdates = true;
 					}
-				});
-
+					this.focusOnElement(this.backButton);
+					this.installUpdateBySource(
+						isInstallAll,
+						removeDelayedUpdates,
+						this.updatesToInstall
+					);
+				}
+			});
 		}
 	}
 
-	public onGetSupportClick($event: any) {
-	}
+	public onGetSupportClick($event: any) {}
 
-	private installUpdateBySource(isInstallAll: boolean, removeDelayedUpdates: boolean, updateList: Array<AvailableUpdateDetail>) {
+	private installUpdateBySource(
+		isInstallAll: boolean,
+		removeDelayedUpdates: boolean,
+		updateList: Array<AvailableUpdateDetail>
+	) {
 		this.isInstallFailedMessageToasted = false;
 		this.isRebootRequested = false;
 		this.installUpdates(removeDelayedUpdates, updateList, isInstallAll);
@@ -821,8 +922,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private showToastMessage(updateList: Array<AvailableUpdateDetail>) {
 		const failedUpdates = updateList.find((update) => {
-			return (update.installationStatus === UpdateActionResult.DownloadFailed
-				|| update.installationStatus === UpdateActionResult.InstallFailed);
+			return (
+				update.installationStatus === UpdateActionResult.DownloadFailed ||
+				update.installationStatus === UpdateActionResult.InstallFailed
+			);
 		});
 		if (failedUpdates && !this.isInstallFailedMessageToasted) {
 			this.systemUpdateService.queueToastMessage(UpdateFailToastMessage.MessageID, '', '');
@@ -833,13 +936,16 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private filterIgnoredUpdate(updateList: Array<AvailableUpdateDetail>, isIgnored: boolean) {
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return (value.isIgnored === isIgnored);
+			return value.isIgnored === isIgnored;
 		});
 		return updates;
 	}
 
-	private filterUpdateByResult(updateList: Array<AvailableUpdateDetail>, updateStatusArray: Array<string>) {
-		const filterArray = updateStatusArray.map(item => item.toLocaleLowerCase());
+	private filterUpdateByResult(
+		updateList: Array<AvailableUpdateDetail>,
+		updateStatusArray: Array<string>
+	) {
+		const filterArray = updateStatusArray.map((item) => item.toLocaleLowerCase());
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
 			return filterArray.indexOf(value.installationStatus.toLowerCase()) > -1;
 		});
@@ -848,13 +954,13 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 
 	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
 		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return (value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase());
+			return value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase();
 		});
 		return updates;
 	}
 
 	public mapPackageListToIdString(updateList: Array<AvailableUpdateDetail>) {
-		return updateList.map(item => item.packageID).join(',');
+		return updateList.map((item) => item.packageID).join(',');
 	}
 
 	private mapStatusToMessageKey(status: number, defaultValue = 'unknown') {
@@ -865,13 +971,18 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		return messageKey;
 	}
 
-	private sendInstallUpdateMetrics(updateList: Array<AvailableUpdateDetail>, ignoredUpdates: Array<AvailableUpdateDetail>) {
+	private sendInstallUpdateMetrics(
+		updateList: Array<AvailableUpdateDetail>,
+		ignoredUpdates: Array<AvailableUpdateDetail>
+	) {
 		const successUpdates = this.filterUpdateByResult(updateList, [UpdateActionResult.Success]);
-		let failedUpdates = this.filterUpdateByResult(updateList,
-			[UpdateActionResult.DownloadFailed, UpdateActionResult.InstallFailed]);
+		let failedUpdates = this.filterUpdateByResult(updateList, [
+			UpdateActionResult.DownloadFailed,
+			UpdateActionResult.InstallFailed,
+		]);
 
 		if (ignoredUpdates && ignoredUpdates.length > 0) {
-			failedUpdates = failedUpdates.filter(item => {
+			failedUpdates = failedUpdates.filter((item) => {
 				for (const idx in ignoredUpdates) {
 					if (ignoredUpdates[idx].packageID === item.packageID) {
 						return false;
@@ -881,12 +992,20 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			});
 
 			const packageIds = this.mapPackageListToIdString(ignoredUpdates);
-			this.metricService.sendInstallUpdateMetric(ignoredUpdates.length, packageIds, 'Ignored-NotInstallDueToACAdapterNotPluggedIn');
+			this.metricService.sendInstallUpdateMetric(
+				ignoredUpdates.length,
+				packageIds,
+				'Ignored-NotInstallDueToACAdapterNotPluggedIn'
+			);
 		}
 
 		if (successUpdates.length > 0) {
 			const packageIds = this.mapPackageListToIdString(successUpdates);
-			this.metricService.sendInstallUpdateMetric(successUpdates.length, packageIds, 'success');
+			this.metricService.sendInstallUpdateMetric(
+				successUpdates.length,
+				packageIds,
+				'success'
+			);
 		}
 
 		if (failedUpdates.length > 0) {
@@ -917,7 +1036,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.setUpdateTitle(payload.status);
 					}
 					this.focusOnElement(this.backButton);
-					this.metricService.sendSystemUpdateMetric(0, '', messageKey, this.systemUpdateService.timeStartSearch);
+					this.metricService.sendSystemUpdateMetric(
+						0,
+						'',
+						messageKey,
+						this.systemUpdateService.timeStartSearch
+					);
 					break;
 				case UpdateProgress.UpdatesAvailable:
 					this.isUpdateCheckInProgress = false;
@@ -931,7 +1055,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 							payload.updateList.length,
 							this.mapPackageListToIdString(payload.updateList),
 							'success',
-							this.systemUpdateService.timeStartSearch);
+							this.systemUpdateService.timeStartSearch
+						);
 					}
 					this.focusOnElement(this.backButton);
 					break;
@@ -955,15 +1080,24 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					}
 					this.showToastMessage(payload.updateList);
 					this.setUpdateByCategory(payload.updateList);
-					this.sendInstallUpdateMetrics(payload.updateList, this.systemUpdateService.ignoredRebootDelayUpdates);
+					this.sendInstallUpdateMetrics(
+						payload.updateList,
+						this.systemUpdateService.ignoredRebootDelayUpdates
+					);
 					this.getSystemVolumeSpace();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
 					this.autoUpdateOptions[1].isChecked = payload.recommendedAutoUpdates;
 					this.isScheduleScanEnabled = payload.criticalAutoUpdates;
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateCriticalUpdateStatus, payload.criticalAutoUpdates);
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.SystemUpdateRecommendUpdateStatus, payload.recommendedAutoUpdates);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.SystemUpdateCriticalUpdateStatus,
+						payload.criticalAutoUpdates
+					);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.SystemUpdateRecommendUpdateStatus,
+						payload.recommendedAutoUpdates
+					);
 					if (!payload.criticalAutoUpdates) {
 						this.autoUpdateOptions[1].isDisabled = true;
 					} else {
@@ -972,8 +1106,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.getNextUpdatedScanText();
 					break;
 				case NetworkStatus.Online:
-					if (this.isCheckingPluginStatus
-						|| this.systemUpdateService.isImcErrorOrEmptyResponse) {
+					if (
+						this.isCheckingPluginStatus ||
+						this.systemUpdateService.isImcErrorOrEmptyResponse
+					) {
 						this.getScheduleUpdateStatus(false);
 					}
 					this.isOnline = notification.payload.isOnline;
@@ -992,7 +1128,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						this.installationPercent = this.systemUpdateService.installationPercent;
 						this.downloadingPercent = this.systemUpdateService.downloadingPercent;
 					});
-					if (this.systemUpdateService && this.systemUpdateService.updateInfo && this.systemUpdateService.updateInfo.updateList) {
+					if (
+						this.systemUpdateService &&
+						this.systemUpdateService.updateInfo &&
+						this.systemUpdateService.updateInfo.updateList
+					) {
 						this.setUpdateByCategory(this.systemUpdateService.updateInfo.updateList);
 					}
 					break;
@@ -1001,7 +1141,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					break;
 				case UpdateProgress.IgnoredUpdates:
 					this.setUpdateByCategory(notification.payload);
-					setTimeout(() => { this.focusOnElementGroup(this.systemUpdateService.ignoreFocusIds); }, 0);
+					setTimeout(() => {
+						this.focusOnElementGroup(this.systemUpdateService.ignoreFocusIds);
+					}, 0);
 					break;
 				case AdPolicyEvent.AdPolicyUpdatedEvent:
 					if (!payload.IsSystemUpdateEnabled) {
@@ -1116,14 +1258,13 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private checkRebootRequested() {
 		this.isRebootRequested = this.systemUpdateService.isRebootRequested();
 		if (this.isRebootRequested) {
-			const modalRef = this.modalService
-				.open(ModalCommonConfirmationComponent, {
-					backdrop: 'static',
-					size: 'lg',
-					centered: true,
-					ariaLabelledBy: 'modal_confirm_title',
-					windowClass: 'common-confirmation-modal'
-				});
+			const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
+				backdrop: 'static',
+				size: 'lg',
+				centered: true,
+				ariaLabelledBy: 'modal_confirm_title',
+				windowClass: 'common-confirmation-modal',
+			});
 
 			const header = 'systemUpdates.popup.rebootPending';
 			const description = 'systemUpdates.popup.rebootRequiredMsg';
@@ -1132,16 +1273,14 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			modalRef.componentInstance.OkText = 'systemUpdates.popup.rebootButton';
 			modalRef.componentInstance.CancelText = 'systemUpdates.popup.dismissButton';
 			modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
-			modalRef.result.then(
-				(result) => {
-					if (result) {
-						this.systemUpdateService.restartWindows();
-					} else {
-						modalRef.close();
-					}
-					this.systemUpdateService.isRebootRequiredDialogNeeded = false;
+			modalRef.result.then((result) => {
+				if (result) {
+					this.systemUpdateService.restartWindows();
+				} else {
+					modalRef.close();
 				}
-			);
+				this.systemUpdateService.isRebootRequiredDialogNeeded = false;
+			});
 		}
 	}
 
@@ -1154,12 +1293,14 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private getRequiredDiskSpace(updatesToInstall) {
 		let diskSpaceNeeded = 0;
 		if (updatesToInstall && updatesToInstall.length > 0) {
-			updatesToInstall.forEach( update => {
+			updatesToInstall.forEach((update) => {
 				const spaceRequired = parseInt(update.diskSpaceRequired, 10);
 				if (spaceRequired && spaceRequired > 0) {
 					diskSpaceNeeded += spaceRequired;
 				} else {
-					this.logger.info('Invalid diskSpaceRequired: ' + update.packageID + update.diskSpaceNeeded);
+					this.logger.info(
+						'Invalid diskSpaceRequired: ' + update.packageID + update.diskSpaceNeeded
+					);
 				}
 			});
 		}
@@ -1174,8 +1315,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			for (const disk of diskUsage.disks) {
 				if (disk && disk.partitions && disk.partitions.length > 0) {
 					for (const partition of disk.partitions) {
-						if (partition && partition.driveLetter
-							&& partition.driveLetter.toLowerCase() === systemVolumeLabel.toLowerCase()) {
+						if (
+							partition &&
+							partition.driveLetter &&
+							partition.driveLetter.toLowerCase() === systemVolumeLabel.toLowerCase()
+						) {
 							this.systemVolumeSpace = parseInt(partition.avaliableSize, 10);
 							this.logger.info(`System Volume: ${this.systemVolumeSpace}`);
 							return;
@@ -1190,8 +1334,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		const path = Windows.ApplicationModel.Package.current.installedLocation.path;
 		if (path && path.length > 0) {
 			return path[0];
-		}
-		else {
+		} else {
 			return 'C';
 		}
 	}

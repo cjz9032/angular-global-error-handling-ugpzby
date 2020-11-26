@@ -4,20 +4,9 @@ import { HeaderMainModule } from '../header-main/header-main.module';
 import { PageLayoutComponent } from './page-layout.component';
 
 @NgModule({
-	declarations: [
-		PageLayoutComponent
-	],
-	exports: [
-		PageLayoutComponent,
-		HeaderMainModule,
-	],
-	imports: [
-		CommonModule,
-		HeaderMainModule,
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	declarations: [PageLayoutComponent],
+	exports: [PageLayoutComponent, HeaderMainModule],
+	imports: [CommonModule, HeaderMainModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class PageLayoutModule { }
+export class PageLayoutModule {}

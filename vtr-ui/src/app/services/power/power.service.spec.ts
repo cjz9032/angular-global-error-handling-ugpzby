@@ -12,7 +12,7 @@ describe('PowerService', () => {
 			isCapable: true,
 			isOn: false,
 			startValue: 75,
-			stopValue: 80
+			stopValue: 80,
 		},
 		{
 			batteryNumber: 2,
@@ -20,14 +20,15 @@ describe('PowerService', () => {
 			isCapable: true,
 			isOn: false,
 			startValue: 75,
-			stopValue: 80
-		}
+			stopValue: 80,
+		},
 	];
-	beforeEach(() => TestBed.configureTestingModule({
-		providers: [PowerService, VantageShellService, TranslateStore],
-		imports: [TranslationModule.forChild()]
-
-	}));
+	beforeEach(() =>
+		TestBed.configureTestingModule({
+			providers: [PowerService, VantageShellService, TranslateStore],
+			imports: [TranslationModule.forChild()],
+		})
+	);
 	describe(':', () => {
 		function setup() {
 			const powerService: any = TestBed.inject(PowerService);
@@ -41,7 +42,10 @@ describe('PowerService', () => {
 
 		it('should call getLegacyAutoModeState', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getLegacyAutoModeState').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getLegacyAutoModeState'
+			).and.callThrough();
 			powerService.getLegacyAutoModeState();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -52,10 +56,14 @@ describe('PowerService', () => {
 
 		it('should call getITSModeForICIdeapad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad, 'getITSSettings').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad,
+				'getITSSettings'
+			).and.callThrough();
 			powerService.getITSModeForICIdeapad();
-			spy.call(powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad.getITSSettings);
-
+			spy.call(
+				powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad.getITSSettings
+			);
 
 			(powerService as any).intelligentCoolingForIdeaPad = false;
 			const returnValue = powerService.getITSModeForICIdeapad();
@@ -66,9 +74,14 @@ describe('PowerService', () => {
 
 		it('should call setITSModeForICIdeapad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad, 'setITSSettings').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad,
+				'setITSSettings'
+			).and.callThrough();
 			powerService.setITSModeForICIdeapad();
-			spy.call(powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad.setITSSettings);
+			spy.call(
+				powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad.setITSSettings
+			);
 
 			(powerService as any).intelligentCoolingForIdeaPad = false;
 			const returnValue = powerService.setITSModeForICIdeapad();
@@ -79,24 +92,30 @@ describe('PowerService', () => {
 
 		it('should call startMonitorForICIdeapad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad, 'startMonitor').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad,
+				'startMonitor'
+			).and.callThrough();
 			powerService.startMonitorForICIdeapad();
-			spy.call(powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad.startMonitor);
+			spy.call(
+				powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad.startMonitor
+			);
 
 			(powerService as any).intelligentCoolingForIdeaPad = false;
 			const returnValue = powerService.startMonitorForICIdeapad();
 			expect(returnValue).toBe(undefined);
 
 			expect(powerService.startMonitorForICIdeapad).toThrow();
-
 		});
 
 		it('should call stopMonitorForICIdeapad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad, 'stopMonitor').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad,
+				'stopMonitor'
+			).and.callThrough();
 			powerService.stopMonitorForICIdeapad();
 			spy.call(powerService.devicePowerIdeaNoteBook.intelligentCoolingForIdeaPad.stopMonitor);
-
 
 			(powerService as any).intelligentCoolingForIdeaPad = false;
 			const returnValue = powerService.stopMonitorForICIdeapad();
@@ -116,11 +135,15 @@ describe('PowerService', () => {
 
 		it('should call setAutoTransitionForICIdeapad', () => {
 			const { powerService } = setup();
-			(powerService as any).intelligentCoolingForIdeaPad = { setITSAutoTransitionSettings(value) { } };
+			(powerService as any).intelligentCoolingForIdeaPad = {
+				setITSAutoTransitionSettings(value) {},
+			};
 
-			const spy = spyOn(powerService.intelligentCoolingForIdeaPad, 'setITSAutoTransitionSettings').and.callThrough();
+			const spy = spyOn(
+				powerService.intelligentCoolingForIdeaPad,
+				'setITSAutoTransitionSettings'
+			).and.callThrough();
 			powerService.setAutoTransitionForICIdeapad(true);
-
 
 			(powerService as any).intelligentCoolingForIdeaPad = false;
 			const returnValue = powerService.setAutoTransitionForICIdeapad(true);
@@ -132,11 +155,15 @@ describe('PowerService', () => {
 
 		it('should call getAMTCapability', () => {
 			const { powerService } = setup();
-			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = { getAMTCapability() { } };
+			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = {
+				getAMTCapability() {},
+			};
 
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getAMTCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getAMTCapability'
+			).and.callThrough();
 			powerService.getAMTCapability();
-
 
 			(powerService as any).devicePowerItsIntelligentCooling = false;
 			const returnValue = powerService.getAMTCapability();
@@ -148,11 +175,15 @@ describe('PowerService', () => {
 
 		it('should call getAMTSetting', () => {
 			const { powerService } = setup();
-			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = { getAMTSetting() { } };
+			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = {
+				getAMTSetting() {},
+			};
 
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getAMTSetting').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getAMTSetting'
+			).and.callThrough();
 			powerService.getAMTSetting();
-
 
 			(powerService as any).devicePowerItsIntelligentCooling = false;
 			const returnValue = powerService.getAMTSetting();
@@ -164,11 +195,15 @@ describe('PowerService', () => {
 
 		it('should call isMobileWorkStation', () => {
 			const { powerService } = setup();
-			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = { isMobileWorkStation() { } };
+			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = {
+				isMobileWorkStation() {},
+			};
 
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'isMobileWorkStation').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'isMobileWorkStation'
+			).and.callThrough();
 			powerService.isMobileWorkStation();
-
 
 			(powerService as any).devicePowerItsIntelligentCooling = false;
 			const returnValue = powerService.isMobileWorkStation();
@@ -180,7 +215,10 @@ describe('PowerService', () => {
 
 		it('should call getAlwaysOnUSBStatusIdeaNoteBook', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.alwaysOnUSB, 'getUSBChargingInBatteryModeStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.alwaysOnUSB,
+				'getUSBChargingInBatteryModeStatus'
+			).and.callThrough();
 			powerService.getAlwaysOnUSBStatusIdeaNoteBook();
 			powerService.devicePowerIdeaNoteBook.alwaysOnUSB.getUSBChargingInBatteryModeStatus();
 			powerService.devicePowerIdeaNoteBook = false;
@@ -191,7 +229,10 @@ describe('PowerService', () => {
 
 		it('should call getRapidChargeModeStatusIdeaNoteBook', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.rapidChargeMode, 'getRapidChargeModeStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.rapidChargeMode,
+				'getRapidChargeModeStatus'
+			).and.callThrough();
 			powerService.getRapidChargeModeStatusIdeaNoteBook();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
@@ -202,7 +243,10 @@ describe('PowerService', () => {
 
 		it('should call setRapidChargeModeStatusIdeaNoteBook', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.rapidChargeMode, 'setRapidChargeModeStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.rapidChargeMode,
+				'setRapidChargeModeStatus'
+			).and.callThrough();
 			powerService.setRapidChargeModeStatusIdeaNoteBook();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
@@ -213,19 +257,24 @@ describe('PowerService', () => {
 
 		it('should call getFlipToBootCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.flipToBoot, 'getFlipToBootCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.flipToBoot,
+				'getFlipToBootCapability'
+			).and.callThrough();
 			powerService.getFlipToBootCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
 			powerService.getFlipToBootCapability();
 
 			expect(powerService.getFlipToBootCapability).toThrow();
-
 		});
 
 		it('should call setFlipToBootSettings', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.flipToBoot, 'setFlipToBootSettings').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.flipToBoot,
+				'setFlipToBootSettings'
+			).and.callThrough();
 			powerService.setFlipToBootSettings();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
@@ -236,31 +285,38 @@ describe('PowerService', () => {
 
 		it('should call getEasyResumeCapabilityThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionEasyResume, 'getEasyResumeCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionEasyResume,
+				'getEasyResumeCapability'
+			).and.callThrough();
 			powerService.getEasyResumeCapabilityThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
 			powerService.getEasyResumeCapabilityThinkPad();
 
 			expect(powerService.getEasyResumeCapabilityThinkPad).toThrow();
-
 		});
 
 		it('should call getAlwaysOnUSBCapabilityThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionAlwaysOnUsb, 'getAlwaysOnUsbCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionAlwaysOnUsb,
+				'getAlwaysOnUsbCapability'
+			).and.callThrough();
 			powerService.getAlwaysOnUSBCapabilityThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
 			powerService.getAlwaysOnUSBCapabilityThinkPad();
 
 			expect(powerService.getAlwaysOnUSBCapabilityThinkPad).toThrow();
-
 		});
 
 		it('should call getAlwaysOnUSBStatusThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionAlwaysOnUsb, 'getAlwaysOnUsb').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionAlwaysOnUsb,
+				'getAlwaysOnUsb'
+			).and.callThrough();
 			powerService.getAlwaysOnUSBStatusThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -271,7 +327,10 @@ describe('PowerService', () => {
 
 		it('should call setAlwaysOnUSBStatusThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionAlwaysOnUsb, 'setAlwaysOnUsb').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionAlwaysOnUsb,
+				'setAlwaysOnUsb'
+			).and.callThrough();
 			powerService.setAlwaysOnUSBStatusThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -282,7 +341,10 @@ describe('PowerService', () => {
 
 		it('should call getAirplaneModeCapabilityThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionAirplaneMode, 'getAirplaneModeCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionAirplaneMode,
+				'getAirplaneModeCapability'
+			).and.callThrough();
 			powerService.getAirplaneModeCapabilityThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -293,7 +355,10 @@ describe('PowerService', () => {
 
 		it('should call getAirplaneModeThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionAirplaneMode, 'getAirplaneMode').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionAirplaneMode,
+				'getAirplaneMode'
+			).and.callThrough();
 			powerService.getAirplaneModeThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -304,7 +369,10 @@ describe('PowerService', () => {
 
 		it('should call setAirplaneModeThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionAirplaneMode, 'setAirplaneMode').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionAirplaneMode,
+				'setAirplaneMode'
+			).and.callThrough();
 			powerService.setAirplaneModeThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -315,7 +383,10 @@ describe('PowerService', () => {
 
 		it('should call setAirplaneModeAutoDetectionOnThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionAirplaneMode, 'setAirplaneModeAutoDetection').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionAirplaneMode,
+				'setAirplaneModeAutoDetection'
+			).and.callThrough();
 			powerService.setAirplaneModeAutoDetectionOnThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -326,7 +397,10 @@ describe('PowerService', () => {
 
 		it('should call getAirplaneModeAutoDetectionOnThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionAirplaneMode, 'getAirplaneModeAutoDetection').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionAirplaneMode,
+				'getAirplaneModeAutoDetection'
+			).and.callThrough();
 			powerService.getAirplaneModeAutoDetectionOnThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -337,19 +411,24 @@ describe('PowerService', () => {
 
 		it('should call getVantageToolBarStatus', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePower, 'getVantageToolBarStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePower,
+				'getVantageToolBarStatus'
+			).and.callThrough();
 			powerService.getVantageToolBarStatus();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePower = false;
 			powerService.getVantageToolBarStatus();
 
 			expect(powerService.getVantageToolBarStatus).toThrow();
-
 		});
 
 		it('should call setVantageToolBarStatus', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePower, 'setVantageToolBarStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePower,
+				'setVantageToolBarStatus'
+			).and.callThrough();
 			powerService.setVantageToolBarStatus();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePower = false;
@@ -373,7 +452,10 @@ describe('PowerService', () => {
 
 		it('should call getChargeThresholdInfo', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionChargeThreshold, 'getChargeThresholdInfo').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionChargeThreshold,
+				'getChargeThresholdInfo'
+			).and.callThrough();
 			powerService.getChargeThresholdInfo();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -384,7 +466,10 @@ describe('PowerService', () => {
 
 		it('should call getEasyResumeStatusThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionEasyResume, 'getEasyResume').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionEasyResume,
+				'getEasyResume'
+			).and.callThrough();
 			powerService.getEasyResumeStatusThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -395,7 +480,10 @@ describe('PowerService', () => {
 
 		it('should call setEasyResumeThinkPad', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionEasyResume, 'setEasyResume').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionEasyResume,
+				'setEasyResume'
+			).and.callThrough();
 			powerService.setEasyResumeThinkPad();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -406,7 +494,10 @@ describe('PowerService', () => {
 
 		it('should call setChargeThresholdValue', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionChargeThreshold, 'setChargeThresholdValue').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionChargeThreshold,
+				'setChargeThresholdValue'
+			).and.callThrough();
 			powerService.setChargeThresholdValue(batteryThresholdInfo);
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -417,7 +508,10 @@ describe('PowerService', () => {
 
 		it('should call setCtAutoCheckbox', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionChargeThreshold, 'setCtAutoCheckbox').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionChargeThreshold,
+				'setCtAutoCheckbox'
+			).and.callThrough();
 			powerService.setCtAutoCheckbox(batteryThresholdInfo);
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -428,7 +522,10 @@ describe('PowerService', () => {
 
 		it('should call setToggleOff', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionChargeThreshold, 'setToggleOff').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionChargeThreshold,
+				'setToggleOff'
+			).and.callThrough();
 			powerService.setToggleOff();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -439,7 +536,10 @@ describe('PowerService', () => {
 
 		it('should call getEnergyStarCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.imcHelper, 'getIsEnergyStarCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.imcHelper,
+				'getIsEnergyStarCapability'
+			).and.callThrough();
 			powerService.getEnergyStarCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.isShellAvailable = false;
@@ -450,19 +550,24 @@ describe('PowerService', () => {
 
 		it('should call getSmartStandbyCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'getSmartStandbyCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'getSmartStandbyCapability'
+			).and.callThrough();
 			powerService.getSmartStandbyCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
 			powerService.getSmartStandbyCapability();
-
 
 			expect(powerService.getSmartStandbyCapability).toThrow();
 		});
 
 		it('should call getSmartStandbyIsAutonomic', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'getSmartStandbyIsAutonomic').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'getSmartStandbyIsAutonomic'
+			).and.callThrough();
 			powerService.getSmartStandbyIsAutonomic();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -473,7 +578,10 @@ describe('PowerService', () => {
 
 		it('should call GetSmartStandbyActiveHours', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'getSmartStandbyActiveHours').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'getSmartStandbyActiveHours'
+			).and.callThrough();
 			powerService.GetSmartStandbyActiveHours();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -484,9 +592,14 @@ describe('PowerService', () => {
 
 		it('should call getIsPresenceDataSufficient', () => {
 			const { powerService } = setup();
-			(powerService as any).devicePowerThinkPad.sectionSmartStandby = { getIsPresenceDataSufficient() { } };
+			(powerService as any).devicePowerThinkPad.sectionSmartStandby = {
+				getIsPresenceDataSufficient() {},
+			};
 
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'getIsPresenceDataSufficient').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'getIsPresenceDataSufficient'
+			).and.callThrough();
 			powerService.getIsPresenceDataSufficient();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -512,7 +625,10 @@ describe('PowerService', () => {
 
 		it('should call getSmartStandbyPresenceData', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'getSmartStandbyPresenceData').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'getSmartStandbyPresenceData'
+			).and.callThrough();
 			powerService.getSmartStandbyPresenceData();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -523,7 +639,10 @@ describe('PowerService', () => {
 
 		it('should call setSmartStandbyIsAutonomic', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'setSmartStandbyIsAutonomic').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'setSmartStandbyIsAutonomic'
+			).and.callThrough();
 			powerService.setSmartStandbyIsAutonomic();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -534,7 +653,10 @@ describe('PowerService', () => {
 
 		it('should call getIsAutonomicCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'getIsAutonomicCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'getIsAutonomicCapability'
+			).and.callThrough();
 			powerService.getIsAutonomicCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -545,7 +667,10 @@ describe('PowerService', () => {
 
 		it('should call getSmartStandbyActiveStartEnd', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'getSmartStandbyActiveStartEnd').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'getSmartStandbyActiveStartEnd'
+			).and.callThrough();
 			powerService.getSmartStandbyActiveStartEnd();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -556,7 +681,10 @@ describe('PowerService', () => {
 
 		it('should call startBatteryGaugeReset', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionBatteryGaugeReset, 'startBatteryGaugeReset').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionBatteryGaugeReset,
+				'startBatteryGaugeReset'
+			).and.callThrough();
 			powerService.startBatteryGaugeReset();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -567,7 +695,10 @@ describe('PowerService', () => {
 
 		it('should call getGaugeResetCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionBatteryGaugeReset, 'getGaugeResetCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionBatteryGaugeReset,
+				'getGaugeResetCapability'
+			).and.callThrough();
 			powerService.getGaugeResetCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -578,7 +709,10 @@ describe('PowerService', () => {
 
 		it('should call stopBatteryGaugeReset', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionBatteryGaugeReset, 'stopBatteryGaugeReset').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionBatteryGaugeReset,
+				'stopBatteryGaugeReset'
+			).and.callThrough();
 			powerService.stopBatteryGaugeReset();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -589,7 +723,10 @@ describe('PowerService', () => {
 
 		it('should call setSmartStandbyDaysOfWeekOff', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'setSmartStandbyDaysOfWeekOff').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'setSmartStandbyDaysOfWeekOff'
+			).and.callThrough();
 			powerService.setSmartStandbyDaysOfWeekOff();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -600,7 +737,10 @@ describe('PowerService', () => {
 
 		it('should call setSmartStandbyActiveStartEnd', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'setSmartStandbyActiveStartEnd').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'setSmartStandbyActiveStartEnd'
+			).and.callThrough();
 			powerService.setSmartStandbyActiveStartEnd();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -611,7 +751,10 @@ describe('PowerService', () => {
 
 		it('should call setSmartStandbyEnabled', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'setSmartStandbyEnabled').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'setSmartStandbyEnabled'
+			).and.callThrough();
 			powerService.setSmartStandbyEnabled();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -622,7 +765,10 @@ describe('PowerService', () => {
 
 		it('should call getSmartStandbyDaysOfWeekOff', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'getSmartStandbyDaysOfWeekOff').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'getSmartStandbyDaysOfWeekOff'
+			).and.callThrough();
 			powerService.getSmartStandbyDaysOfWeekOff();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -633,7 +779,10 @@ describe('PowerService', () => {
 
 		it('should call getSmartStandbyEnabled', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerThinkPad.sectionSmartStandby, 'getSmartStandbyEnabled').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerThinkPad.sectionSmartStandby,
+				'getSmartStandbyEnabled'
+			).and.callThrough();
 			powerService.getSmartStandbyEnabled();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
@@ -644,7 +793,10 @@ describe('PowerService', () => {
 
 		it('should call getPMDriverStatus', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getPMDriverStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getPMDriverStatus'
+			).and.callThrough();
 			powerService.getPMDriverStatus();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -655,9 +807,14 @@ describe('PowerService', () => {
 
 		it('should call getEMDriverStatus', () => {
 			const { powerService } = setup();
-			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = { getEMDriverStatus() { } };
+			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = {
+				getEMDriverStatus() {},
+			};
 
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getEMDriverStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getEMDriverStatus'
+			).and.callThrough();
 			powerService.getEMDriverStatus();
 			expect(spy).toHaveBeenCalled();
 
@@ -673,7 +830,10 @@ describe('PowerService', () => {
 
 		it('should call getITSServiceStatus', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getITSServiceStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getITSServiceStatus'
+			).and.callThrough();
 			powerService.getITSServiceStatus();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -684,7 +844,10 @@ describe('PowerService', () => {
 
 		it('should call getDYTCRevision', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getDYTCRevision').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getDYTCRevision'
+			).and.callThrough();
 			powerService.getDYTCRevision();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -695,7 +858,10 @@ describe('PowerService', () => {
 
 		it('should call getCQLCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getCQLCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getCQLCapability'
+			).and.callThrough();
 			powerService.getCQLCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -706,7 +872,10 @@ describe('PowerService', () => {
 
 		it('should call getTIOCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getTIOCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getTIOCapability'
+			).and.callThrough();
 			powerService.getTIOCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -717,7 +886,10 @@ describe('PowerService', () => {
 
 		it('should call setManualModeSetting', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'setManualModeSetting').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'setManualModeSetting'
+			).and.callThrough();
 			powerService.setManualModeSetting();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -728,7 +900,10 @@ describe('PowerService', () => {
 
 		it('should call getManualModeSetting', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getManualModeSetting').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getManualModeSetting'
+			).and.callThrough();
 			powerService.getManualModeSetting();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -739,7 +914,10 @@ describe('PowerService', () => {
 
 		it('should call getAPSState', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getAPSState').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getAPSState'
+			).and.callThrough();
 			powerService.getAPSState();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -750,7 +928,10 @@ describe('PowerService', () => {
 
 		it('should call getLegacyCQLCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getLegacyCQLCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getLegacyCQLCapability'
+			).and.callThrough();
 			powerService.getLegacyCQLCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -761,7 +942,10 @@ describe('PowerService', () => {
 
 		it('should call getLegacyTIOCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getLegacyTIOCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getLegacyTIOCapability'
+			).and.callThrough();
 			powerService.getLegacyTIOCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -772,7 +956,10 @@ describe('PowerService', () => {
 
 		it('should call getLegacyManualModeCapability', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getLegacyManualModeCapability').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getLegacyManualModeCapability'
+			).and.callThrough();
 			powerService.getLegacyManualModeCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -783,7 +970,10 @@ describe('PowerService', () => {
 
 		it('should call setLegacyAutoModeState', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'setLegacyAutoModeState').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'setLegacyAutoModeState'
+			).and.callThrough();
 			powerService.setLegacyAutoModeState();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -794,7 +984,10 @@ describe('PowerService', () => {
 
 		it('should call setLegacyManualModeState', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'setLegacyManualModeState').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'setLegacyManualModeState'
+			).and.callThrough();
 			powerService.setLegacyManualModeState();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -805,7 +998,10 @@ describe('PowerService', () => {
 
 		it('should call getLegacyManualModeState', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'getLegacyManualModeState').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'getLegacyManualModeState'
+			).and.callThrough();
 			powerService.getLegacyManualModeState();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -816,7 +1012,10 @@ describe('PowerService', () => {
 
 		it('should call setAutoModeSetting', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerItsIntelligentCooling.intelligentCooling, 'setAutoModeSetting').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerItsIntelligentCooling.intelligentCooling,
+				'setAutoModeSetting'
+			).and.callThrough();
 			powerService.setAutoModeSetting(true);
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerItsIntelligentCooling = false;
@@ -827,7 +1026,10 @@ describe('PowerService', () => {
 
 		it('should call getUSBChargingInBatteryModeStatusIdeaNoteBook', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.alwaysOnUSB, 'getUSBChargingInBatteryModeStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.alwaysOnUSB,
+				'getUSBChargingInBatteryModeStatus'
+			).and.callThrough();
 			powerService.getUSBChargingInBatteryModeStatusIdeaNoteBook();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
@@ -838,7 +1040,10 @@ describe('PowerService', () => {
 
 		it('should call setAlwaysOnUSBStatusIdeaNoteBook', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.alwaysOnUSB, 'setAlwaysOnUSBStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.alwaysOnUSB,
+				'setAlwaysOnUSBStatus'
+			).and.callThrough();
 			powerService.setAlwaysOnUSBStatusIdeaNoteBook();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
@@ -849,7 +1054,10 @@ describe('PowerService', () => {
 
 		it('should call setUSBChargingInBatteryModeStatusIdeaNoteBook', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.alwaysOnUSB, 'setUSBChargingInBatteryModeStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.alwaysOnUSB,
+				'setUSBChargingInBatteryModeStatus'
+			).and.callThrough();
 			powerService.setUSBChargingInBatteryModeStatusIdeaNoteBook();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
@@ -860,7 +1068,10 @@ describe('PowerService', () => {
 
 		it('should call getConservationModeStatusIdeaNoteBook', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.conservationMode, 'getConservationModeStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.conservationMode,
+				'getConservationModeStatus'
+			).and.callThrough();
 			powerService.getConservationModeStatusIdeaNoteBook();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
@@ -871,7 +1082,10 @@ describe('PowerService', () => {
 
 		it('should call setConservationModeStatusIdeaNoteBook', () => {
 			const { powerService } = setup();
-			const spy = spyOn(powerService.devicePowerIdeaNoteBook.conservationMode, 'setConservationModeStatus').and.callThrough();
+			const spy = spyOn(
+				powerService.devicePowerIdeaNoteBook.conservationMode,
+				'setConservationModeStatus'
+			).and.callThrough();
 			powerService.setConservationModeStatusIdeaNoteBook();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;

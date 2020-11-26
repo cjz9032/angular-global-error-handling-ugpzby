@@ -6,8 +6,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { RouterTestingModule } from '@angular/router/testing';
 
-
-
 describe('UiCustomSwitchComponent', () => {
 	let component: UiCustomSwitchComponent;
 	let fixture: ComponentFixture<UiCustomSwitchComponent>;
@@ -15,10 +13,9 @@ describe('UiCustomSwitchComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCustomSwitchComponent],
-			imports: [RouterTestingModule,HttpClientTestingModule, TranslateModule.forRoot()],
-			providers: [DevService,MetricService]
-		})
-			.compileComponents();
+			imports: [RouterTestingModule, HttpClientTestingModule, TranslateModule.forRoot()],
+			providers: [DevService, MetricService],
+		}).compileComponents();
 	}));
 
 	describe(':', () => {
@@ -26,17 +23,13 @@ describe('UiCustomSwitchComponent', () => {
 			const fixture = TestBed.createComponent(UiCustomSwitchComponent);
 			const component = fixture.debugElement.componentInstance;
 			// const componentElement = fixture.debugElement.nativeElement;
-	
+
 			return { fixture, component };
 		}
 
-	it('should create ', (() => {
-		const { component } = setup();
-		expect(component).toBeTruthy();
-	}));
-	
-
-	
-});
-
+		it('should create ', () => {
+			const { component } = setup();
+			expect(component).toBeTruthy();
+		});
+	});
 });

@@ -9,7 +9,6 @@ import { DevService } from 'src/app/services/dev/dev.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SubpageDeviceSettingsPowerContainerComponent } from './subpage-device-settings-power-container.component';
 
-
 describe('SubpageDeviceSettingsPowerContainerComponent', () => {
 	let component: SubpageDeviceSettingsPowerContainerComponent;
 	let fixture: ComponentFixture<SubpageDeviceSettingsPowerContainerComponent>;
@@ -19,9 +18,8 @@ describe('SubpageDeviceSettingsPowerContainerComponent', () => {
 			declarations: [SubpageDeviceSettingsPowerContainerComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-			providers: [TranslateStore, DevService]
-		})
-			.compileComponents();
+			providers: [TranslateStore, DevService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

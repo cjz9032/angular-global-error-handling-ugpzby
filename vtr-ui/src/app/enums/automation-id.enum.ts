@@ -11,5 +11,5 @@ export enum AutomationId {
 	RightSectionIdeaCentreGaming = 'right_section_ideacentre_gaming',
 	HelpPopupIdeaCentreGaming = 'help_popup_ideacentre_gaming',
 	RightSectionIdeapadGaming = 'right_section_ideapad_gaming',
-	HelpPopupIdeapadGaming = 'help_popup_ideapad_gaming'
+	HelpPopupIdeapadGaming = 'help_popup_ideapad_gaming',
 }

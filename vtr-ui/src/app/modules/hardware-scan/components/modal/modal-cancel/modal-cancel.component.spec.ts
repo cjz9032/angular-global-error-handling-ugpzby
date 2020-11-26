@@ -13,11 +13,10 @@ describe('ModalCancelComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			imports: [ RouterTestingModule, HttpClientModule, TranslateModule.forRoot() ],
-			providers: [ DevService, NgbActiveModal ],
-			declarations: [ ModalCancelComponent ]
-		})
-		.compileComponents();
+			imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
+			providers: [DevService, NgbActiveModal],
+			declarations: [ModalCancelComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

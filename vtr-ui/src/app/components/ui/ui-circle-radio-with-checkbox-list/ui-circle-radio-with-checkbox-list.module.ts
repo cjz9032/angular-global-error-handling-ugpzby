@@ -13,9 +13,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
 
 @NgModule({
-	declarations: [
-		UiCircleRadioWithCheckBoxListComponent
-	],
+	declarations: [UiCircleRadioWithCheckBoxListComponent],
 	imports: [
 		CommonModule,
 		FormsModule,
@@ -26,17 +24,15 @@ import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [HttpClient]
+				deps: [HttpClient],
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
-				useClass: MissingTranslationDefaultHandler
+				useClass: MissingTranslationDefaultHandler,
 			},
 		}),
 	],
-	exports: [
-		UiCircleRadioWithCheckBoxListComponent
-	]
+	exports: [UiCircleRadioWithCheckBoxListComponent],
 })
 export class UiCircleRadioWithCheckBoxListModule {
 	constructor(library: FaIconLibrary) {

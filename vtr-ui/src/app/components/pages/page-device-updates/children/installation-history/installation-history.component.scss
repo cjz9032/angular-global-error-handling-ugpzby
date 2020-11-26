@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .vtr-installation-history {
 	background-color: $light;
@@ -16,7 +16,7 @@
 			}
 		}
 
-		.installation-list {		
+		.installation-list {
 			list-style: none;
 			padding: 0;
 			background-color: $shade_extralight;
@@ -88,7 +88,7 @@
 						}
 
 						&::before {
-							content: "";
+							content: '';
 						}
 
 						.ng-fa-icon {
@@ -115,7 +115,11 @@
 							font-size: 1rem;
 							text-align: center;
 							border: 0.1rem solid $stop_dark;
-							background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+							background: linear-gradient(
+								$gradient_angle,
+								$stop 0%,
+								$stop_light 100%
+							);
 							background-color: $stop_dark;
 
 							@media #{$white-on-black} {
@@ -130,7 +134,7 @@
 						}
 
 						&::before {
-							content: "";
+							content: '';
 						}
 
 						.ng-fa-icon {

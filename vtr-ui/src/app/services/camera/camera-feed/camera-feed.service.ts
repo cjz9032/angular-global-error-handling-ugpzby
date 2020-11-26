@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class CameraFeedService {
 	private _stream: MediaStream;

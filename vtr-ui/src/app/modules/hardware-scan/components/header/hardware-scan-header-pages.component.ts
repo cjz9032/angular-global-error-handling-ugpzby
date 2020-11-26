@@ -6,9 +6,8 @@ import { HardwareScanState } from 'src/app/modules/hardware-scan/enums/hardware-
 @Component({
 	selector: 'vtr-hardware-scan-header-pages',
 	templateUrl: './hardware-scan-header-pages.component.html',
-	styleUrls: ['./hardware-scan-header-pages.component.scss']
+	styleUrls: ['./hardware-scan-header-pages.component.scss'],
 })
-
 export class HardwareScanHeaderPagesComponent implements OnInit {
 	// Inputs
 	@Input() percent = 0;
@@ -33,10 +32,9 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 	constructor(
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService
-		) {
-		}
+	) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	onAnchor() {
 		this.checkAnchor.emit();
@@ -64,16 +62,19 @@ export class HardwareScanHeaderPagesComponent implements OnInit {
 		}
 	}
 
-	public getCurrentScanState(){
+	public getCurrentScanState() {
 		if (this.hardwareScanService) {
-			if (this.hardwareScanService.isScanExecuting() || this.hardwareScanService.isRecoverExecuting()) {
+			if (
+				this.hardwareScanService.isScanExecuting() ||
+				this.hardwareScanService.isRecoverExecuting()
+			) {
 				if (this.hardwareScanService.isScanOrRBSFinished()) {
 					return HardwareScanState.StateFinished;
 				} else {
 					return HardwareScanState.StateExecuting;
 				}
-			}
-			else { // main screen
+			} else {
+				// main screen
 				return HardwareScanState.StateHome;
 			}
 		}

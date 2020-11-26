@@ -16,13 +16,9 @@ describe('UiCheckboxComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [UiCheckboxComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				HttpClientTestingModule,
-				RouterTestingModule],
-			providers: [CommonMetricsService, MetricService, DevService]
-
-		})
-			.compileComponents();
+			imports: [HttpClientTestingModule, RouterTestingModule],
+			providers: [CommonMetricsService, MetricService, DevService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

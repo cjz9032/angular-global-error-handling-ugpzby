@@ -5,7 +5,6 @@ import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { ModalIntelligentCoolingModesComponent } from './modal-intelligent-cooling-modes.component';
 
-
 describe('ModalIntelligentCoolingModesComponent', () => {
 	let component: ModalIntelligentCoolingModesComponent;
 	let fixture: ComponentFixture<ModalIntelligentCoolingModesComponent>;
@@ -16,23 +15,19 @@ describe('ModalIntelligentCoolingModesComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [ModalIntelligentCoolingModesComponent],
 			imports: [TranslationModule],
-			providers: [NgbActiveModal, TranslateStore]
+			providers: [NgbActiveModal, TranslateStore],
 		});
 	}));
 
 	it('should create the app', async(() => {
-		fixture = TestBed.createComponent(
-			ModalIntelligentCoolingModesComponent
-		);
+		fixture = TestBed.createComponent(ModalIntelligentCoolingModesComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	}));
 
 	it('should call closeModal', async(() => {
-		fixture = TestBed.createComponent(
-			ModalIntelligentCoolingModesComponent
-		);
+		fixture = TestBed.createComponent(ModalIntelligentCoolingModesComponent);
 		component = fixture.componentInstance;
 		activeModal = TestBed.inject(NgbActiveModal);
 		const spy = spyOn(activeModal, 'close');
@@ -41,9 +36,7 @@ describe('ModalIntelligentCoolingModesComponent', () => {
 	}));
 
 	it('should call onKeydownHandler', async(() => {
-		fixture = TestBed.createComponent(
-			ModalIntelligentCoolingModesComponent
-		);
+		fixture = TestBed.createComponent(ModalIntelligentCoolingModesComponent);
 		component = fixture.componentInstance;
 		const spy = spyOn(component, 'closeModal');
 		const event = new KeyboardEvent('keydown');
@@ -52,9 +45,7 @@ describe('ModalIntelligentCoolingModesComponent', () => {
 	}));
 
 	it('should call onKeydownEnterHandler', async(() => {
-		fixture = TestBed.createComponent(
-			ModalIntelligentCoolingModesComponent
-		);
+		fixture = TestBed.createComponent(ModalIntelligentCoolingModesComponent);
 		component = fixture.componentInstance;
 		const spy = spyOn(component, 'closeModal');
 		const event = new KeyboardEvent('keydown');

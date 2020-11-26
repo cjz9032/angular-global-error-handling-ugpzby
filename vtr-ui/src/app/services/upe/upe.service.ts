@@ -13,9 +13,8 @@ import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
-
 export class UPEService {
 	private channelTags: any;
 	private upeHelper: UPEHelper;
@@ -34,7 +33,9 @@ export class UPEService {
 	) {
 		this.essentialHelper = new EssentialHelper(vantageShellService, devService);
 		this.upeHelper = new UPEHelper(vantageShellService, devService, translate);
-		this.channelTags = this.localCacheService.getLocalCacheValue(LocalStorageKey.UPEChannelTags);
+		this.channelTags = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.UPEChannelTags
+		);
 	}
 
 	public async fetchUPEContent(params: IGetContentParam) {
@@ -56,7 +57,8 @@ export class UPEService {
 	private async sendAndRetry(params: IGetContentParam): Promise<IActionResult> {
 		let result = await this.requestUpeContent(params);
 
-		if (result.errorCode === 401) {	// unathenrized, need to registerDevice
+		if (result.errorCode === 401) {
+			// unathenrized, need to registerDevice
 			this.upeEssential = await this.essentialHelper.registerDevice(this.upeEssential);
 
 			if (this.upeEssential && this.upeEssential.apiKey) {
@@ -64,7 +66,7 @@ export class UPEService {
 			} else {
 				result = {
 					success: false,
-					content: 'register device failed'
+					content: 'register device failed',
 				};
 			}
 		}
@@ -80,7 +82,7 @@ export class UPEService {
 		if (!this.upeEssential) {
 			return {
 				success: false,
-				content: 'upe not support in current version'
+				content: 'upe not support in current version',
 			};
 		}
 
@@ -88,27 +90,31 @@ export class UPEService {
 			return {
 				success: false,
 				errorCode: 401, // need registor device
-				content: 'upe not support in current version'
+				content: 'upe not support in current version',
 			};
 		}
 
 		return await this.httpRequestForUpeContent(this.upeEssential, params);
 	}
 
-	private async httpRequestForUpeContent(upeEssential: IUpeEssential, params: IGetContentParam): Promise<IActionResult> {
+	private async httpRequestForUpeContent(
+		upeEssential: IUpeEssential,
+		params: IGetContentParam
+	): Promise<IActionResult> {
 		const queryParam = await this.makeQueryParam(upeEssential, params);
 		let content = '';
 		let errorCode = '';
 
 		try {
-			const httpResponse = await this.commsService.callUpeApi(
-				`${upeEssential.upeUrlBase}/upe/recommendation/v2/recommends`, queryParam
-			) as any;
+			const httpResponse = (await this.commsService.callUpeApi(
+				`${upeEssential.upeUrlBase}/upe/recommendation/v2/recommends`,
+				queryParam
+			)) as any;
 
 			if (httpResponse.status === 200 && httpResponse.body.results) {
 				return {
 					success: true,
-					content: httpResponse.body.results
+					content: httpResponse.body.results,
 				};
 			} else {
 				content = `get article failed upon http request(unknown)`;
@@ -122,7 +128,7 @@ export class UPEService {
 		return {
 			success: false,
 			content,
-			errorCode
+			errorCode,
 		};
 	}
 
@@ -134,11 +140,14 @@ export class UPEService {
 		const result = await this.httpRequestForTags(upeEssential);
 		if (result.success) {
 			if (result.content && result.content.length > 0) {
-				this.channelTags = result.content.map(item => item.toString());	// VAN-15331 The API does not return string array as spec, but another api need string array
+				this.channelTags = result.content.map((item) => item.toString()); // VAN-15331 The API does not return string array as spec, but another api need string array
 			} else {
 				this.channelTags = [];
 			}
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.UPEChannelTags, this.channelTags);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.UPEChannelTags,
+				this.channelTags
+			);
 		}
 
 		return this.channelTags;
@@ -151,14 +160,15 @@ export class UPEService {
 		let errorCode = '';
 
 		try {
-			const httpResponse = await this.commsService.makeTagRequest(
-				`${upeEssential.upeUrlBase}/upe/tag/api/row/tag/user_tags/sn/${upeEssential.deviceId}?type=c_tag`, header
-			) as any;
+			const httpResponse = (await this.commsService.makeTagRequest(
+				`${upeEssential.upeUrlBase}/upe/tag/api/row/tag/user_tags/sn/${upeEssential.deviceId}?type=c_tag`,
+				header
+			)) as any;
 
 			const jsonResponse = JSON.parse(httpResponse);
 			return {
 				success: true,
-				content: jsonResponse.tags
+				content: jsonResponse.tags,
 			};
 		} catch (ex) {
 			content = `get  upe tags  failed upon http request`;
@@ -168,7 +178,7 @@ export class UPEService {
 		return {
 			success: false,
 			content,
-			errorCode
+			errorCode,
 		};
 	}
 
@@ -205,10 +215,10 @@ export class UPEService {
 				Segment: segment,
 				// SmbRole: null,
 				EnclosureType: systeminfo.enclosureType,
-				UpeTags: channelTags
+				UpeTags: channelTags,
 			},
 			// filterItemSize: 3,
-			positions: upeParams.positions
+			positions: upeParams.positions,
 		};
 		return queryParam;
 	}

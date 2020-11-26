@@ -8,28 +8,24 @@ import { Subscription } from 'rxjs';
 @Component({
 	selector: 'vtr-power-plan',
 	templateUrl: './power-plan.component.html',
-	styleUrls: ['./power-plan.component.scss']
+	styleUrls: ['./power-plan.component.scss'],
 })
 export class PowerPlanComponent implements OnInit, OnDestroy {
-
 	public selectedPowerPlanVal: PowerPlan;
 	public powerPlanIntervals: DPMDropDownInterval[];
 	private allPowerPlansSubscription: Subscription;
 
-	constructor(
-		public dpmService: PowerDpmService,
-		private translate: TranslateService
-	) { }
+	constructor(public dpmService: PowerDpmService, private translate: TranslateService) {}
 
 	ngOnInit() {
-		this.allPowerPlansSubscription = this.dpmService.getAllPowerPlansObs().subscribe(
-			v => {
-				if (v) {
-					this.updatePowerPlanList(v.powerPlanList);
-					this.selectedPowerPlanVal = v.powerPlanList.find(p => p.powerPlanName === v.activePowerPlan);
-				}
+		this.allPowerPlansSubscription = this.dpmService.getAllPowerPlansObs().subscribe((v) => {
+			if (v) {
+				this.updatePowerPlanList(v.powerPlanList);
+				this.selectedPowerPlanVal = v.powerPlanList.find(
+					(p) => p.powerPlanName === v.activePowerPlan
+				);
 			}
-		);
+		});
 	}
 
 	ngOnDestroy(): void {
@@ -41,11 +37,11 @@ export class PowerPlanComponent implements OnInit, OnDestroy {
 	private updatePowerPlanList(list: PowerPlan[]) {
 		if (list) {
 			this.powerPlanIntervals = [];
-			list.forEach(p => {
+			list.forEach((p) => {
 				this.powerPlanIntervals.push({
 					name: p.powerPlanName,
 					value: p,
-					text: p.powerPlanName
+					text: p.powerPlanName,
 				});
 			});
 		}

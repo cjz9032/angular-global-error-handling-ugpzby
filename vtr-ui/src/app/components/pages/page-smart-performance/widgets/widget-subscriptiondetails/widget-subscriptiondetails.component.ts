@@ -15,7 +15,7 @@ import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/moda
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
-	styleUrls: ['./widget-subscriptiondetails.component.scss']
+	styleUrls: ['./widget-subscriptiondetails.component.scss'],
 })
 export class WidgetSubscriptionDetailsComponent implements OnInit {
 	@Output() subScribeEvent = new EventEmitter<boolean>();
@@ -50,47 +50,61 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 		public smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
 		private localCacheService: LocalCacheService,
-		private logger: LoggerService) {
-
-	}
+		private logger: LoggerService
+	) {}
 	public localSubscriptionDetails = {
 		UUID: uuid(),
 		startDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-		endDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
+		endDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en'),
 	};
 	ngOnInit() {
 		this.isFirstLoad = true;
-		this.spProcessStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SPProcessStatus);
-		this.spFrstRunStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun);
+		this.spProcessStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SPProcessStatus
+		);
+		this.spFrstRunStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.IsSmartPerformanceFirstRun
+		);
 
 		if (this.spFrstRunStatus) {
 			this.getSubscriptionDetails();
 		} else {
 			this.initSubscripionDetails();
 		}
-		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
+		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.IsFreeFullFeatureEnabled
+		);
 	}
 
 	initSubscripionDetails() {
 		let subScriptionDates: any = { startDate: '', endDate: '', status: '' };
 		if (this.smartPerformanceService.isSubscribed) {
-			subScriptionDates = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
+			subScriptionDates = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.SmartPerformanceSubscriptionDetails
+			);
 			if (subScriptionDates && subScriptionDates.startDate && subScriptionDates.endDate) {
-				this.subscriptionDetails.startDate = this.formatLocaleDate.transform(subScriptionDates.startDate);
-				this.subscriptionDetails.endDate = this.formatLocaleDate.transform(subScriptionDates.endDate);
+				this.subscriptionDetails.startDate = this.formatLocaleDate.transform(
+					subScriptionDates.startDate
+				);
+				this.subscriptionDetails.endDate = this.formatLocaleDate.transform(
+					subScriptionDates.endDate
+				);
 				this.subscriptionDetails.status = subScriptionDates.status;
-				this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
+				this.subscriptionDetails.status =
+					'smartPerformance.subscriptionDetails.activeStatus';
 				this.strStatus = 'ACTIVE';
 			} else {
 				this.getSubscriptionDetails();
 			}
-		}
-		else {
+		} else {
 			this.resetSubscriptionDetails();
 			this.isLoading = false;
 		}
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-		if (this.smartPerformanceService.modalStatus && this.smartPerformanceService.modalStatus.initiatedTime) {
+		if (
+			this.smartPerformanceService.modalStatus &&
+			this.smartPerformanceService.modalStatus.initiatedTime
+		) {
 			this.intervalTime = this.smartPerformanceService.modalStatus.initiatedTime;
 		} else {
 			this.intervalTime = currentTime;
@@ -98,25 +112,37 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 		this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.processStatus';
 		this.strStatus = 'PROCESSING';
 		this.getSubscriptionDetails();
-
 	}
 
 	enableFullFeature(event) {
 		if (this.smartPerformanceService.isSubscribed === false) {
-			const scanEnabled = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			const scanEnabled = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.IsSPScheduleScanEnabled
+			);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsFreeFullFeatureEnabled,
+				true
+			);
 			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week');
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsSmartPerformanceFirstRun,
+				true
+			);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SPScheduleScanFrequency,
+				'Once a week'
+			);
 			if (!scanEnabled) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.IsSPScheduleScanEnabled,
+					true
+				);
 			}
 			// location.reload();
 			// this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
 			// 	this.router.navigate(['WidgetSubscriptionDetailsComponent']);
 			// });
-		}
-		else {
+		} else {
 			// this.localCacheService.removeLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled);
 			// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			// this.localCacheService.removeLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails);
@@ -134,18 +160,18 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 		//     windowClass: 'subscribe-modal',
 
 		// });
-
 	}
 	openSubscribeModal() {
 		this.isFirstLoad = false;
 		const currentTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-		this.intervalTime = moment(currentTime).add(PaymentPage.ORDERWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
+		this.intervalTime = moment(currentTime)
+			.add(PaymentPage.ORDERWAITINGTIME, 'm')
+			.format('YYYY-MM-DD HH:mm:ss');
 		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
 			backdrop: 'static',
 			size: 'md',
 			centered: true,
 			windowClass: 'subscribe-modal',
-
 		});
 		this.spFrstRunStatus = false;
 		modalCancel.componentInstance.cancelPaymentRequest.subscribe(() => {
@@ -161,7 +187,9 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 		machineInfo = await this.supportService.getMachineInfo();
 		this.isLoading = true;
 		let subscriptionData = [];
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(machineInfo.serialnumber);
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(
+			machineInfo.serialnumber
+		);
 		this.logger.info('Subscription Details', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;
@@ -175,14 +203,28 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 		if (subscriptionData && subscriptionData.length > 0) {
 			this.isLoading = false;
 			if (this.spProcessStatus === undefined || this.spProcessStatus === true) {
-				const scanEnabled = this.localCacheService.getLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled);
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+				const scanEnabled = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.IsSPScheduleScanEnabled
+				);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.IsFreeFullFeatureEnabled,
+					true
+				);
 				// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.localSubscriptionDetails);
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.IsSmartPerformanceFirstRun,
+					true
+				);
 
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SPScheduleScanFrequency, 'Once a week');
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SPScheduleScanFrequency,
+					'Once a week'
+				);
 				if (!scanEnabled) {
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSPScheduleScanEnabled, true);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.IsSPScheduleScanEnabled,
+						true
+					);
 				}
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.SPProcessStatus, false);
 			}
@@ -194,13 +236,15 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
 				this.getExpiredStatus(releaseDate, lastItem);
 			} else {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.IsFreeFullFeatureEnabled,
+					false
+				);
 				this.smartPerformanceService.isSubscribed = false;
 				this.subScribeEvent.emit(this.smartPerformanceService.isSubscribed);
 				this.resetSubscriptionDetails();
 			}
 		} else {
-
 			if (this.smartPerformanceService.modalStatus.isGettingStatus) {
 				this.setTimeOutCallForSubDetails();
 			} else {
@@ -223,7 +267,8 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 				if (this.intervalTime && this.intervalTime > currentTime) {
 					this.getSubscriptionDetails();
 				} else {
-					this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.inactiveStatus';
+					this.subscriptionDetails.status =
+						'smartPerformance.subscriptionDetails.inactiveStatus';
 					this.strStatus = 'INACTIVE';
 					this.isLoading = false;
 					this.isFirstLoad = true;
@@ -245,37 +290,49 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 			startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
 			endDate: this.formatLocaleDate.transform(releaseDate),
 			productNumber: lastItem.products[0].productCode || '',
-			status: 'smartPerformance.subscriptionDetails.activeStatus'
+			status: 'smartPerformance.subscriptionDetails.activeStatus',
 		};
 		const oneDay = 24 * 60 * 60 * 1000;
 		expiryRemainDays = (expiredDate - currentDate) / oneDay;
 		const monthDeff = expiredDate.getMonth() - currentDate.getMonth();
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartPerformanceSubscriptionDetails, this.subscriptionDetails);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.SmartPerformanceSubscriptionDetails,
+			this.subscriptionDetails
+		);
 		if (expiryRemainDays < 0) {
 			this.smartPerformanceService.isExpired = true;
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.expiredStatus';
 			this.strStatus = 'EXPIRED';
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, false);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsFreeFullFeatureEnabled,
+				false
+			);
 			// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceFirstRun, true);
 			this.smartPerformanceService.isSubscribed = false;
 			this.subScribeEvent.emit(this.smartPerformanceService.isSubscribed);
 			this.expiredStatusEvent.emit(this.smartPerformanceService.isExpired);
-		}
-		else {
+		} else {
 			this.subscriptionDetails.status = 'smartPerformance.subscriptionDetails.activeStatus';
 			this.strStatus = 'ACTIVE';
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsFreeFullFeatureEnabled, true);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.IsFreeFullFeatureEnabled,
+				true
+			);
 			this.smartPerformanceService.isSubscribed = true;
 			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
 			this.subScribeEvent.emit(this.smartPerformanceService.isSubscribed);
 		}
 		if (!this.smartPerformanceService.isExpired) {
 			if (expiryRemainDays > 1 && expiryRemainDays <= 31) {
-				this.expiredDaysCount = Math.ceil(expiryRemainDays) + ' ' + this.translate.instant('smartPerformance.subscriptionDetails.days');
-
+				this.expiredDaysCount =
+					Math.ceil(expiryRemainDays) +
+					' ' +
+					this.translate.instant('smartPerformance.subscriptionDetails.days');
 			} else {
 				if (expiryRemainDays >= 0 && expiryRemainDays <= 1) {
-					this.expiredDaysCount = this.translate.instant('smartPerformance.subscriptionDetails.today');
+					this.expiredDaysCount = this.translate.instant(
+						'smartPerformance.subscriptionDetails.today'
+					);
 				}
 			}
 			// switch (true) {
@@ -305,7 +362,6 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 			// 	}
 			// }
 		}
-
 	}
 	resetSubscriptionDetails() {
 		this.subscriptionDetails.startDate = '---';

@@ -1,4 +1,13 @@
-import { Component, OnInit, OnChanges, ViewChild, Input, Output, EventEmitter, ElementRef } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	OnChanges,
+	ViewChild,
+	Input,
+	Output,
+	EventEmitter,
+	ElementRef,
+} from '@angular/core';
 import { NgbAccordion, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
@@ -12,10 +21,9 @@ import { ModalSmartPerformanceCancelComponent } from 'src/app/components/modal/m
 @Component({
 	selector: 'vtr-subpage-scanning',
 	templateUrl: './subpage-scanning.component.html',
-	styleUrls: ['./subpage-scanning.component.scss']
+	styleUrls: ['./subpage-scanning.component.scss'],
 })
 export class SubpageScanningComponent implements OnInit, OnChanges {
-
 	@ViewChild('acc', { static: false }) accordionComponent: NgbAccordion;
 	@ViewChild('spScanningAccordion', { static: false }) spScanningAccordion: ElementRef;
 	loop;
@@ -50,16 +58,20 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		private modalService: NgbModal,
 		public shellServices: VantageShellService,
 		public smartPerformanceService: SmartPerformanceService,
-		private translate: TranslateService,
-	) { }
+		private translate: TranslateService
+	) {}
 
 	ngOnInit() {
 		this.percent = 0;
 		this.isLoading = true;
 
-		this.headerTitle = `${this.translate.instant('smartPerformance.scanningPage.scanningSystem')}...`;
+		this.headerTitle = `${this.translate.instant(
+			'smartPerformance.scanningPage.scanningSystem'
+		)}...`;
 		if (this.isAutoScanRunning) {
-			this.headerTitle += ` <span class="small">(${this.translate.instant('smartPerformance.auto')})</span>`;
+			this.headerTitle += ` <span class="small">(${this.translate.instant(
+				'smartPerformance.auto'
+			)})</span>`;
 		}
 
 		this.spCategoryenum = SPCategory;
@@ -79,7 +91,9 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 			this.sampleDesc
 		);
 		setTimeout(() => {
-			const accordionCards: HTMLButtonElement[] = this.spScanningAccordion.nativeElement.getElementsByTagName('button');
+			const accordionCards: HTMLButtonElement[] = this.spScanningAccordion.nativeElement.getElementsByTagName(
+				'button'
+			);
 			for (const card of accordionCards) {
 				card.setAttribute('tabindex', '-1');
 			}
@@ -107,7 +121,6 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		} else if (catVal === this.spSubCategoryenum.TWOHUNDEREAD) {
 			this.activegroup = this.spCategoryenum.INTERNETPERFORMANCE;
 			this.toggle(this.activegroup);
-
 		} else if (catVal === this.spSubCategoryenum.THREEHUNDEREAD) {
 			this.activegroup = this.spCategoryenum.MALWARESECURITY;
 			this.toggle(this.activegroup);
@@ -152,12 +165,9 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 				);
 			}
 			this.updateTitleAndSubItems(
-				this.translate.instant(
-					'smartPerformance.tunePCPerformance.title'
-				),
+				this.translate.instant('smartPerformance.tunePCPerformance.title'),
 				this.sampleDesc
 			);
-
 		} else if (catVal === this.spSubCategoryenum.TWOHUNDEREAD) {
 			if (this.twohundreadFlag === true) {
 				this.currentCategory = 2;
@@ -200,9 +210,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 				}
 			}
 			this.updateTitleAndSubItems(
-				this.translate.instant(
-					'smartPerformance.boostInternetPerformance.extraTitle'
-				),
+				this.translate.instant('smartPerformance.boostInternetPerformance.extraTitle'),
 				this.sampleDesc
 			);
 		} else if (catVal === this.spSubCategoryenum.THREEHUNDEREAD) {
@@ -246,9 +254,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 				);
 			}
 			this.updateTitleAndSubItems(
-				this.translate.instant(
-					'smartPerformance.malwareSecurity.title'
-				),
+				this.translate.instant('smartPerformance.malwareSecurity.title'),
 				this.sampleDesc
 			);
 		}
@@ -258,7 +264,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		const modalCancel = this.modalService.open(ModalSmartPerformanceCancelComponent, {
 			backdrop: 'static',
 			centered: true,
-			windowClass: 'cancel-modal'
+			windowClass: 'cancel-modal',
 		});
 
 		const response = await modalCancel.result;
@@ -294,13 +300,13 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 
 	updateTitleAndSubItems(nameVal, descVal) {
 		this.smartPerformanceService.subItems = {
-			name: nameVal, desc: descVal,
-			items: this.currentScanningItems
+			name: nameVal,
+			desc: descVal,
+			items: this.currentScanningItems,
 		};
 		nameVal = '';
 		// this.subItemsList.emit(this.smartPerformanceService.subItems);
 	}
-
 
 	// updateInternetPerformanceSubItems(name, desc) {
 	// 	this.smartPerformanceService.subItems = {
@@ -312,8 +318,6 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	// }
 
 	GetCurrentScanninRollingTexts(scanitems: any) {
-
-
 		this.currentScanningItems = [];
 		for (const val in scanitems) {
 			if (Object.prototype.hasOwnProperty.call(scanitems, val)) {
@@ -323,8 +327,5 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		}
 		// console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",this.currentScanningItems);
 		this.currentScanningItems[0].isCurrent = true;
-
 	}
-
 }
-

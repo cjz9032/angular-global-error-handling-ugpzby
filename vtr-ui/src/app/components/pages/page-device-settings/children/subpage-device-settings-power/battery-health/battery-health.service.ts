@@ -2,14 +2,22 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
 import { Battery, BatteryHealthResponse } from './battery-health.interface';
 import { from, Observable, Subject, timer } from 'rxjs';
-import { publishLast, shareReplay, skipWhile, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import {
+	publishLast,
+	shareReplay,
+	skipWhile,
+	startWith,
+	switchMap,
+	takeUntil,
+	tap,
+} from 'rxjs/operators';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 const CACHE_SIZE = 1;
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class BatteryHealthService {
 	private batteryFeature: Battery;
@@ -32,22 +40,28 @@ export class BatteryHealthService {
 				switchMap(() => this.requestBatteryInfo()),
 				takeUntil(this.reload$),
 				shareReplay(CACHE_SIZE),
-				startWith((this.localCacheService.getLocalCacheValue(LocalStorageKey.BatteryHealth, undefined) as object | undefined) || {}),
+				startWith(
+					(this.localCacheService.getLocalCacheValue(
+						LocalStorageKey.BatteryHealth,
+						undefined
+					) as object | undefined) || {}
+				)
 			);
 		}
 		return this.cache$;
 	}
 
 	requestBatteryInfo(): Observable<BatteryHealthResponse> {
-		return from(this.batteryFeature.getSmartBatteryInfo())
-			.pipe(
-				skipWhile((value) => !value),
-				tap(response => this.localCacheService.setLocalCacheValue(LocalStorageKey.BatteryHealth, response)))
+		return from(this.batteryFeature.getSmartBatteryInfo()).pipe(
+			skipWhile((value) => !value),
+			tap((response) =>
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.BatteryHealth, response)
+			)
+		);
 	}
 
 	clearMemoryCache() {
 		this.reload$.next();
 		this.cache$ = null;
 	}
-
 }

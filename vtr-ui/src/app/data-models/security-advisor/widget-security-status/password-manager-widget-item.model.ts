@@ -10,29 +10,41 @@ export class PassWordManagerWidgetItem extends WidgetItem {
 		passwordManager: PasswordManager,
 		commonService: CommonService,
 		private localCacheService: LocalCacheService,
-		private translateService: TranslateService) {
-		super({
-			id: 'sa-widget-lnk-pm',
-			path: 'security/password-protection',
-			type: 'security',
-			isSystemLink: false,
-			metricsItemName: 'Password Manager'
-		}, translateService);
+		private translateService: TranslateService
+	) {
+		super(
+			{
+				id: 'sa-widget-lnk-pm',
+				path: 'security/password-protection',
+				type: 'security',
+				isSystemLink: false,
+				metricsItemName: 'Password Manager',
+			},
+			translateService
+		);
 		this.translateService.stream('common.securityAdvisor.pswdMgr').subscribe((value) => {
 			this.title = value;
 		});
-		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus);
+		const cacheStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityPasswordManagerStatus
+		);
 		if (cacheStatus) {
 			this.updateStatus(cacheStatus);
 		}
 		if (passwordManager.status) {
 			this.updateStatus(passwordManager.status);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, passwordManager.status);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityPasswordManagerStatus,
+				passwordManager.status
+			);
 		}
 
 		passwordManager.on(EventTypes.pmStatusEvent, (status) => {
 			this.updateStatus(status);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityPasswordManagerStatus, status);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityPasswordManagerStatus,
+				status
+			);
 		});
 	}
 

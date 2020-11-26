@@ -5,20 +5,15 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'vtr-search-dropdown',
 	templateUrl: './search-dropdown.component.html',
-	styleUrls: ['./search-dropdown.component.scss']
+	styleUrls: ['./search-dropdown.component.scss'],
 })
-
 export class SearchDropdownComponent implements AfterViewInit {
 	@ViewChild('searchInput', { static: false }) searchInput: ElementRef;
 	@ViewChild('searchBox', { static: false }) searchBox: ElementRef;
 
 	private searchTimer: any;
 	public searchTips = 'Search Query';
-	constructor(
-		public searchService: AppSearchService,
-		private router: Router
-	) {
-	}
+	constructor(public searchService: AppSearchService, private router: Router) {}
 
 	ngAfterViewInit() {
 		setTimeout(() => {

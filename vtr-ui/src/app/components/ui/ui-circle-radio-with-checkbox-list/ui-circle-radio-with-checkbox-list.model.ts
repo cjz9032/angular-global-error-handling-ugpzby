@@ -9,7 +9,7 @@ export class UiCircleRadioWithCheckBoxListModel {
 		public processLabel: boolean,
 		public hideIcon: boolean,
 		public customIcon = '',
-		public metricsItem: string,
-	) { }
+		public metricsItem: string
+	) {}
 	public ariaLabel?: string;
 }

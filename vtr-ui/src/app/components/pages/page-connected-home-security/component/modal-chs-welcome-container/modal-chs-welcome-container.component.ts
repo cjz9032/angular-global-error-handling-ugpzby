@@ -1,12 +1,5 @@
-import {
-	Component,
-	OnInit,
-	ViewChild,
-	ElementRef
-} from '@angular/core';
-import {
-	NgbActiveModal
-} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -17,7 +10,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
 	templateUrl: './modal-chs-welcome-container.component.html',
-	styleUrls: ['./modal-chs-welcome-container.component.scss']
+	styleUrls: ['./modal-chs-welcome-container.component.scss'],
 })
 export class ModalChsWelcomeContainerComponent implements OnInit {
 	switchPage = 1;
@@ -28,13 +21,16 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	permission: any;
 	locationPermission: DeviceLocationPermission;
 	metricsParent = 'HomeSecurity';
-	welcomeDesc = [{
-		icon: 'personalDevice',
-		desc: 'homeSecurity.tour.welcomeDesc1'
-	}, {
-		icon: 'places',
-		desc: 'homeSecurity.tour.welcomeDesc2'
-		}];
+	welcomeDesc = [
+		{
+			icon: 'personalDevice',
+			desc: 'homeSecurity.tour.welcomeDesc1',
+		},
+		{
+			icon: 'places',
+			desc: 'homeSecurity.tour.welcomeDesc2',
+		},
+	];
 
 	@ViewChild('allowButton') allowButton: ElementRef;
 
@@ -42,7 +38,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
 		private localCacheService: LocalCacheService
-	) {	}
+	) {}
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
@@ -56,7 +52,10 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		this.chs.on(EventTypes.wsIsLocationServiceOnEvent, (data) => {
 			this.isLocationServiceOn = data;
 			if (data) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.ConnectedHomeSecurityWelcomeComplete,
+					true
+				);
 				if (this.switchPage === 2) {
 					this.closeModal();
 				}
@@ -70,7 +69,10 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		if (this.locationPermission && this.locationPermission.hasSystemPermissionShowed) {
 			this.isLocationServiceOn = this.locationPermission.isLocationServiceOn;
 			if (this.isLocationServiceOn) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.ConnectedHomeSecurityWelcomeComplete,
+					true
+				);
 			}
 		} else {
 			this.isLocationServiceOn = false;
@@ -82,7 +84,10 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	}
 
 	next() {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.ConnectedHomeSecurityWelcomeComplete,
+			true
+		);
 		if (this.isLocationServiceOn) {
 			this.closeModal();
 		} else {
@@ -96,10 +101,12 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 
 	public openLocation($event: any) {
 		this.closeModal();
-		if (this.locationPermission
-				&& this.locationPermission.isAllAppsServiceOn
-				&& this.locationPermission.isDeviceServiceOn
-				&& !this.locationPermission.hasSystemPermissionShowed) {
+		if (
+			this.locationPermission &&
+			this.locationPermission.isAllAppsServiceOn &&
+			this.locationPermission.isDeviceServiceOn &&
+			!this.locationPermission.hasSystemPermissionShowed
+		) {
 			this.requestVantagePermission();
 		} else {
 			this.permission.openSettingsApp(this.url);
@@ -110,7 +117,10 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 		this.permission.requestPermission('geoLocatorStatus').then((status: boolean) => {
 			this.isLocationServiceOn = status;
 			if (status) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.ConnectedHomeSecurityWelcomeComplete, true);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.ConnectedHomeSecurityWelcomeComplete,
+					true
+				);
 			}
 		});
 	}

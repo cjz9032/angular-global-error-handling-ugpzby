@@ -7,9 +7,7 @@ import { SvgInlinePipe } from 'src/app/pipe/svg-inline/svg-inline.pipe';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 import { ModalBatteryChargeThresholdComponent } from './modal-battery-charge-threshold.component';
 
-
 describe('ModalBatteryChargeThresholdComponent', () => {
-
 	/* 	let title: string;
 		let description1: string;
 		let description2: string;
@@ -22,19 +20,18 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [ModalBatteryChargeThresholdComponent, SvgInlinePipe],
 			imports: [FontAwesomeModule, TranslateModule.forRoot(), HttpClientTestingModule],
-			providers: [NgbActiveModal, BatteryDetailService, TranslateService]
+			providers: [NgbActiveModal, BatteryDetailService, TranslateService],
 		}).compileComponents();
 	}));
 
 	describe(':', () => {
-
 		function setup() {
 			const fixture = TestBed.createComponent(ModalBatteryChargeThresholdComponent);
 			const component = fixture.debugElement.componentInstance;
 			return { fixture, component };
 		}
 
-		it('should create the app', (() => {
+		it('should create the app', () => {
 			const { fixture, component } = setup();
 			const translate = TestBed.inject(TranslateService);
 			const spy = spyOn(translate, 'instant');
@@ -42,7 +39,7 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 			batteryDetailService.currentOpenModal = '1';
 			fixture.detectChanges();
 			expect(component).toBeTruthy();
-		}));
+		});
 
 		it('enableBatteryChargeThreshold calling activeModal close', async(() => {
 			const { fixture, component } = setup();
@@ -65,7 +62,5 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 			component.onKeydownHandler(KeyboardEvent);
 			expect(component.closeModal).toHaveBeenCalled();
 		}));
-
 	});
-
 });

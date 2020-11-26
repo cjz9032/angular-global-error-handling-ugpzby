@@ -1,39 +1,39 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .vtr-page-dashboard-android {
-  .p-30 {
-    padding: 1.875rem;
-  }
+	.p-30 {
+		padding: 1.875rem;
+	}
 
-  .pl-40 {
-    padding-left: 2.5rem;
-  }
+	.pl-40 {
+		padding-left: 2.5rem;
+	}
 
-  .pr-40 {
-    padding-right: 2.5rem;
-  }
+	.pr-40 {
+		padding-right: 2.5rem;
+	}
 
-  .pa-20 {
-    padding: 1.25rem;
-  }
+	.pa-20 {
+		padding: 1.25rem;
+	}
 
-  .mt-20 {
-    margin-top: 2rem;
-  }
+	.mt-20 {
+		margin-top: 2rem;
+	}
 
-  .mt--50 {
-    margin-top: -5.3125rem;
-  }
-  .system-status-block {
-    padding-top: 7.5rem;
-  }
+	.mt--50 {
+		margin-top: -5.3125rem;
+	}
+	.system-status-block {
+		padding-top: 7.5rem;
+	}
 
-  .pt-6 {
-    padding-top: 6rem;
-  }
-  .vtr-page-right-column {
-    @media #{$mediaquery_X8} {
-      padding: 4rem 4rem 4rem 8.5rem;
-    }
-  }
+	.pt-6 {
+		padding-top: 6rem;
+	}
+	.vtr-page-right-column {
+		@media #{$mediaquery_X8} {
+			padding: 4rem 4rem 4rem 8.5rem;
+		}
+	}
 }

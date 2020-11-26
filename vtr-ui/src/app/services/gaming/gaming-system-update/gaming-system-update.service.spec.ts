@@ -13,7 +13,6 @@ describe('GamingSystemUpdateService', () => {
 		shellService = TestBed.get(VantageShellService);
 	});
 	describe(':', () => {
-
 		function setup() {
 			const service = TestBed.get(GamingSystemUpdateService);
 			return { service };
@@ -37,11 +36,15 @@ describe('GamingSystemUpdateService', () => {
 
 		it('should call getCpuOCStatus return error', async () => {
 			const { service } = setup();
-			try{
-				spyOn(service.gamingOverClock, 'getCpuOCStatus').and.throwError(new Error('new getCpuOCStatus error'));
+			try {
+				spyOn(service.gamingOverClock, 'getCpuOCStatus').and.throwError(
+					new Error('new getCpuOCStatus error')
+				);
 				service.getCpuOCStatus();
-			} catch(error) {
-				expect(service.gamingOverClock.getCpuOCStatus).toThrowError('new getCpuOCStatus error');
+			} catch (error) {
+				expect(service.gamingOverClock.getCpuOCStatus).toThrowError(
+					'new getCpuOCStatus error'
+				);
 			}
 		});
 
@@ -58,11 +61,15 @@ describe('GamingSystemUpdateService', () => {
 
 		it('should call setCpuOCStatus return error', async () => {
 			const { service } = setup();
-			try{
-				spyOn(service.gamingOverClock, 'setCpuOCStatus').and.throwError(new Error('new setCpuOCStatus error'));
+			try {
+				spyOn(service.gamingOverClock, 'setCpuOCStatus').and.throwError(
+					new Error('new setCpuOCStatus error')
+				);
 				service.setCpuOCStatus();
-			} catch(error) {
-				expect(service.gamingOverClock.setCpuOCStatus).toThrowError('new setCpuOCStatus error');
+			} catch (error) {
+				expect(service.gamingOverClock.setCpuOCStatus).toThrowError(
+					'new setCpuOCStatus error'
+				);
 			}
 		});
 
@@ -79,11 +86,15 @@ describe('GamingSystemUpdateService', () => {
 
 		it('should call getRamOCStatus return error', async () => {
 			const { service } = setup();
-			try{
-				spyOn(service.gamingOverClock, 'getRamOCStatus').and.throwError(new Error('new getRamOCStatus error'));
+			try {
+				spyOn(service.gamingOverClock, 'getRamOCStatus').and.throwError(
+					new Error('new getRamOCStatus error')
+				);
 				service.getRamOCStatus();
-			} catch(error) {
-				expect(service.gamingOverClock.getRamOCStatus).toThrowError('new getRamOCStatus error');
+			} catch (error) {
+				expect(service.gamingOverClock.getRamOCStatus).toThrowError(
+					'new getRamOCStatus error'
+				);
 			}
 		});
 
@@ -100,11 +111,15 @@ describe('GamingSystemUpdateService', () => {
 
 		it('should call setRamOCStatus return error', async () => {
 			const { service } = setup();
-			try{
-				spyOn(service.gamingOverClock, 'setRamOCStatus').and.throwError(new Error('new setRamOCStatus error'));
+			try {
+				spyOn(service.gamingOverClock, 'setRamOCStatus').and.throwError(
+					new Error('new setRamOCStatus error')
+				);
 				service.setRamOCStatus();
-			} catch(error) {
-				expect(service.gamingOverClock.setRamOCStatus).toThrowError('new setRamOCStatus error');
+			} catch (error) {
+				expect(service.gamingOverClock.setRamOCStatus).toThrowError(
+					'new setRamOCStatus error'
+				);
 			}
 		});
 	});

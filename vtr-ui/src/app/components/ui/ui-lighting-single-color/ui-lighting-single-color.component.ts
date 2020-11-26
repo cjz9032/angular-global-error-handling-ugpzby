@@ -7,7 +7,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 @Component({
 	selector: 'vtr-ui-lighting-single-color',
 	templateUrl: './ui-lighting-single-color.component.html',
-	styleUrls: [ './ui-lighting-single-color.component.scss' ]
+	styleUrls: ['./ui-lighting-single-color.component.scss'],
 })
 export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	@Input() selectedOptionId: any;
@@ -20,11 +20,9 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	@Input() options: any;
 	public singleColorOpt: any = LightEffectSimpleType;
 
-	constructor(
-		private loggerService: LoggerService
-	) {}
+	constructor(private loggerService: LoggerService) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	getValue(optionId) {
 		this.selectedOption = this.options.filter((item) => item.id === optionId)[0];
@@ -36,8 +34,10 @@ export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 		if (!isUndefined(changes.selectedOptionId)) {
 			if (changes.selectedOptionId.previousValue !== changes.selectedOptionId.currentValue) {
 				this.selectedOptionId = changes.selectedOptionId.currentValue;
-				this.loggerService.info('ui-lighting-single-color.component.ngOnChanges',
-				'selectedOptionId changed --->' +  changes.selectedOptionId.currentValue);
+				this.loggerService.info(
+					'ui-lighting-single-color.component.ngOnChanges',
+					'selectedOptionId changed --->' + changes.selectedOptionId.currentValue
+				);
 			}
 		}
 	}

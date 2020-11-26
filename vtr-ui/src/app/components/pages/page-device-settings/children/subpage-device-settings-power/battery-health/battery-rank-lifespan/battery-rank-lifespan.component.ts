@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 @Component({
 	selector: 'vtr-battery-rank-lifespan',
 	templateUrl: './battery-rank-lifespan.component.html',
-	styleUrls: ['./battery-rank-lifespan.component.scss']
+	styleUrls: ['./battery-rank-lifespan.component.scss'],
 })
 export class BatteryRankLifespanComponent implements OnInit {
 	private totalStarCount = 5;
@@ -42,8 +42,8 @@ export class BatteryRankLifespanComponent implements OnInit {
 	constructor(
 		private batteryHealthService: BatteryHealthService,
 		public shellServices: VantageShellService,
-		private logger: LoggerService) {
-	}
+		private logger: LoggerService
+	) {}
 
 	ngOnInit() {
 		this.initStars();
@@ -59,14 +59,17 @@ export class BatteryRankLifespanComponent implements OnInit {
 
 	getBatteryDetails() {
 		this.logger.info('BatteryLifespan: getBatteryDetails ==> start');
-		this.batteryHealthService.batteryInfo
-			.subscribe(batteryInfo => {
-				this.capability = batteryInfo.isSupportSmartBatteryV2;
-				this.currentHealthLevel = this.getActualRank(batteryInfo.batteryHealthLevel);
-				this.lifeSpan = this.getLifeSpanStr(batteryInfo.predictedLifeSpan);
-				this.logger.info(`BatteryLifespan: getBatteryHealth-lifespan  ==> currentHealthLevel ${this.currentHealthLevel}`);
-				this.logger.info('BatteryLifespan: getBatteryHealth-lifespan  ==> lifeSpan ' + this.lifeSpan);
-			});
+		this.batteryHealthService.batteryInfo.subscribe((batteryInfo) => {
+			this.capability = batteryInfo.isSupportSmartBatteryV2;
+			this.currentHealthLevel = this.getActualRank(batteryInfo.batteryHealthLevel);
+			this.lifeSpan = this.getLifeSpanStr(batteryInfo.predictedLifeSpan);
+			this.logger.info(
+				`BatteryLifespan: getBatteryHealth-lifespan  ==> currentHealthLevel ${this.currentHealthLevel}`
+			);
+			this.logger.info(
+				'BatteryLifespan: getBatteryHealth-lifespan  ==> lifeSpan ' + this.lifeSpan
+			);
+		});
 	}
 
 	getActualRank(level: BatteryHealthLevel): number {

@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .vtr-ui-list-chevron {
 	.chevron-list {
@@ -19,7 +19,6 @@
 			@include high-contrast-background-transparent;
 			border: 0.1rem solid;
 		}
-
 
 		li {
 			height: auto;
@@ -88,7 +87,11 @@
 			&.orange {
 				.item-icon {
 					.icon-bkg {
-						background: linear-gradient($gradient_angle, $orange 0%, $orange-light 100%);
+						background: linear-gradient(
+							$gradient_angle,
+							$orange 0%,
+							$orange-light 100%
+						);
 						background-color: $yellow_dark;
 						border-color: $yellow_dark;
 						@include high-contrast-status-icon-and-badge;
@@ -117,7 +120,11 @@
 			&.text-blue {
 				.item-icon {
 					.icon-bkg {
-						background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
+						background: linear-gradient(
+							$gradient_angle,
+							$main_darker 0%,
+							$main_darkest 100%
+						);
 						background-color: $main_darker;
 						border-color: $main_darker;
 						@include high-contrast-status-icon-and-badge;
@@ -130,15 +137,17 @@
 				}
 			}
 
-			a[role="document"] {
+			a[role='document'] {
 				&:hover {
 					text-decoration: none;
-					.title, .detail {
+					.title,
+					.detail {
 						@include high-contrast-color-reversal;
 					}
 				}
 				&:focus {
-					.title, .detail {
+					.title,
+					.detail {
 						@include high-contrast-color-reversal;
 					}
 				}
@@ -151,12 +160,14 @@
 				&:hover {
 					text-decoration: none;
 					@media #{$black-on-white} {
-						.title, .detail {
+						.title,
+						.detail {
 							color: $high-contrast-white-textselected !important;
 						}
 					}
 					@media #{$white-on-black} {
-						.title, .detail {
+						.title,
+						.detail {
 							color: $high-contrast-black-textselected !important;
 						}
 					}
@@ -164,12 +175,14 @@
 				&:focus {
 					top: 100%;
 					@media #{$black-on-white} {
-						.title, .detail {
+						.title,
+						.detail {
 							color: $high-contrast-white-textselected !important;
 						}
 					}
 					@media #{$white-on-black} {
-						.title, .detail {
+						.title,
+						.detail {
 							color: $high-contrast-black-textselected !important;
 						}
 					}
@@ -189,7 +202,6 @@
 						filter: brightness(0);
 					}
 				}
-
 			}
 			.item-icon-class {
 				display: flex;
@@ -202,8 +214,8 @@
 					margin: auto;
 				}
 			}
-// According to Vantage3.0, v1.2 responsive UI SPEC, the text of the chevron component need to be wrapped automatically,
-// if there are special styles, please modify them in their respective pages.
+			// According to Vantage3.0, v1.2 responsive UI SPEC, the text of the chevron component need to be wrapped automatically,
+			// if there are special styles, please modify them in their respective pages.
 			.item-text {
 				overflow: hidden;
 				padding-left: 1rem;
@@ -272,7 +284,7 @@
 						&:hover {
 							text-decoration: none;
 						}
-						&:focus + [role="link"] {
+						&:focus + [role='link'] {
 							//display: block;
 							//position: absolute;
 							//top: 100%;

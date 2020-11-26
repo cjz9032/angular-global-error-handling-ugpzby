@@ -10,13 +10,13 @@ import { DownloadFailedModalComponent } from './download-failed-modal/download-f
 enum InstalledStatus {
 	DONE = 'InstallDone',
 	FAILED = 'InstallFailed',
-	CANCELED = 'InstallCanceled'
+	CANCELED = 'InstallCanceled',
 }
 
 @Component({
 	selector: 'vtr-voice',
 	templateUrl: './voice.component.html',
-	styleUrls: ['./voice.component.scss']
+	styleUrls: ['./voice.component.scss'],
 })
 export class VoiceComponent implements OnInit, OnDestroy {
 	private isInstalledInterval: any;
@@ -30,7 +30,8 @@ export class VoiceComponent implements OnInit, OnDestroy {
 		private smartAssist: SmartAssistService,
 		private translate: TranslateService,
 		private logger: LoggerService,
-		private modalService: NgbModal) { }
+		private modalService: NgbModal
+	) {}
 
 	ngOnInit() {
 		this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
@@ -49,10 +50,14 @@ export class VoiceComponent implements OnInit, OnDestroy {
 	async isLenovoVoiceInstalled() {
 		try {
 			const win: any = window;
-			if (win.VantageShellExtension
-				&& win.VantageShellExtension.Utils
-				&& win.VantageShellExtension.Utils.MSStore) {
-				const status = await win.VantageShellExtension.Utils.MSStore.isAppInstalledAsync('E046963F.LenovoVoiceWorldWide_k1h2ywk1493x8');
+			if (
+				win.VantageShellExtension &&
+				win.VantageShellExtension.Utils &&
+				win.VantageShellExtension.Utils.MSStore
+			) {
+				const status = await win.VantageShellExtension.Utils.MSStore.isAppInstalledAsync(
+					'E046963F.LenovoVoiceWorldWide_k1h2ywk1493x8'
+				);
 				if (status) {
 					this.installedStatus = InstalledStatus.DONE;
 					this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
@@ -61,7 +66,9 @@ export class VoiceComponent implements OnInit, OnDestroy {
 					clearInterval(this.isInstalledInterval);
 				} else {
 					this.installedStatus = InstalledStatus.CANCELED;
-					this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
+					this.btnText = this.translate.instant(
+						'device.smartAssist.voice.installBtnText'
+					);
 					this.voiceStatus = 'Install';
 				}
 			}
@@ -93,7 +100,9 @@ export class VoiceComponent implements OnInit, OnDestroy {
 		try {
 			WinRT.launchUri('ms-windows-store://pdp/?productid=9PBKQPS3BSW1');
 			this.isInstalledInterval = setInterval(async () => {
-				this.logger.debug('Trying after 30 seconds for getting isLenovoVoiceInstalled status');
+				this.logger.debug(
+					'Trying after 30 seconds for getting isLenovoVoiceInstalled status'
+				);
 				this.isLenovoVoiceInstalled();
 			}, 30000);
 			// if (this.smartAssist.isShellAvailable) {
@@ -126,8 +135,10 @@ export class VoiceComponent implements OnInit, OnDestroy {
 	launchLenovoVoice() {
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.launchLenovoVoice()
-					.then((status: boolean) => { }).catch(error => {
+				this.smartAssist
+					.launchLenovoVoice()
+					.then((status: boolean) => {})
+					.catch((error) => {
 						this.logger.error('launchLenovoVoice', error.message);
 						return EMPTY;
 					});
@@ -143,7 +154,7 @@ export class VoiceComponent implements OnInit, OnDestroy {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'voice-install-failed-modal'
+			windowClass: 'voice-install-failed-modal',
 		});
 	}
 

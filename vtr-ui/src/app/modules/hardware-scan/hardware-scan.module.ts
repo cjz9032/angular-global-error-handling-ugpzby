@@ -1,6 +1,12 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbModalModule, NgbDropdownModule, NgbDatepickerModule, NgbCollapseModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+	NgbModalModule,
+	NgbDropdownModule,
+	NgbDatepickerModule,
+	NgbCollapseModule,
+	NgbTooltipModule,
+} from '@ng-bootstrap/ng-bootstrap';
 
 import { CommonUiModule } from '../common/common-ui.module';
 import { HardwareScanRoutingModule } from './hardware-scan-routing.module';
@@ -84,7 +90,7 @@ import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-questio
 		UiHyperlinkButtonComponent,
 		ModalExportLogComponent,
 		UiQuestionMarkButtonComponent,
-		UiHyperlinkButtonComponent
+		UiHyperlinkButtonComponent,
 	],
 	imports: [
 		CommonModule,
@@ -101,14 +107,10 @@ import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-questio
 		MetricsModule,
 		PageLayoutModule,
 		FontAwesomeModule,
-		SnapshotModule
+		SnapshotModule,
 	],
-	exports: [
-		NgbCollapseModule,
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	],
+	exports: [NgbCollapseModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	entryComponents: [
 		ModalWaitComponent,
 		ModalRecoverConfirmComponent,
@@ -118,7 +120,7 @@ import { UiQuestionMarkButtonComponent } from './components/dashboard/ui-questio
 		ModalScheduleNewScanComponent,
 		ModalPreScanInfoComponent,
 		ModalHardwareScanRbsComponent,
-	]
+	],
 })
 export class HardwareScanModule {
 	constructor(library: FaIconLibrary) {
@@ -134,5 +136,4 @@ export class HardwareScanModule {
 		library.addIcons(faCheckCircle);
 		library.addIcons(faTimesCircle);
 	}
- }
-
+}

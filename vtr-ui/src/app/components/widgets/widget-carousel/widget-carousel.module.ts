@@ -7,28 +7,22 @@ import { NgbCarouselModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap'
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { TranslationModule } from 'src/app/modules/translation.module';
 
-import {
-	HammerGestureConfig,
-	HAMMER_GESTURE_CONFIG
-} from '@angular/platform-browser';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import * as Hammer from 'hammerjs';
 @Injectable()
 export class HammerConfig extends HammerGestureConfig {
 	overrides = <any>{
-		swipe: { direction: Hammer.DIRETION_ALLL }
+		swipe: { direction: Hammer.DIRETION_ALLL },
 	};
 }
 @NgModule({
-	declarations: [
-		WidgetCarouselComponent
-	],
-	exports: [
-		WidgetCarouselComponent
-	],
-	providers: [{
+	declarations: [WidgetCarouselComponent],
+	exports: [WidgetCarouselComponent],
+	providers: [
+		{
 			provide: HAMMER_GESTURE_CONFIG,
-			useClass: HammerGestureConfig
-		  }
+			useClass: HammerGestureConfig,
+		},
 	],
 	imports: [
 		CommonModule,
@@ -37,11 +31,8 @@ export class HammerConfig extends HammerGestureConfig {
 		MetricsModule,
 		NgbCarouselModule,
 		AppSearchModule,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class WidgetCarouselModule { }
+export class WidgetCarouselModule {}

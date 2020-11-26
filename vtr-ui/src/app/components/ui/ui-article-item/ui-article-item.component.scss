@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .vtr-ui-article-item {
 	box-shadow: $drop_shadow;
@@ -67,7 +67,6 @@
 			width: 100%;
 			cursor: pointer;
 			font-family: $font_family_semilight;
-
 		}
 
 		.logo-text {
@@ -91,8 +90,8 @@
 			color: $main;
 
 			.link-label {
-				padding-bottom: .2rem;
-				border-bottom: .2rem solid $main;
+				padding-bottom: 0.2rem;
+				border-bottom: 0.2rem solid $main;
 				font-weight: $weight_bold;
 			}
 
@@ -113,7 +112,6 @@
 		position: relative;
 
 		.bottomright {
-
 			position: absolute;
 			bottom: 0;
 			right: 0;
@@ -122,7 +120,6 @@
 				bottom: -8rem;
 				right: -8rem;
 			}
-
 		}
 
 		.logo {

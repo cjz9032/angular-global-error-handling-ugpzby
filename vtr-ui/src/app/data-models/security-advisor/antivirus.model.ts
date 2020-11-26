@@ -1,4 +1,12 @@
-import { Antivirus, McAfeeInfo, WindowsDefender, OtherInfo, EventTypes, McafeeMetricsList, McafeeFeature } from '@lenovo/tan-client-bridge';
+import {
+	Antivirus,
+	McAfeeInfo,
+	WindowsDefender,
+	OtherInfo,
+	EventTypes,
+	McafeeMetricsList,
+	McafeeFeature,
+} from '@lenovo/tan-client-bridge';
 import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
@@ -24,7 +32,7 @@ export class AntiVirusViewModel {
 	windowsDefender: WindowsDefender = {
 		firewallStatus: undefined,
 		status: undefined,
-		enabled: false
+		enabled: false,
 	};
 	otherAntiVirus: OtherInfo = {
 		status: false,
@@ -33,15 +41,18 @@ export class AntiVirusViewModel {
 	metricsList: Array<any> = [];
 	otherFirewall: OtherInfo;
 	mcafeestatusList: Array<any> = [];
-	windowsDefenderstatusList: Array<any> = [{
-		status: 'loading',
-		title: 'security.antivirus.windowsDefender.virus',
-		type: 'antivirus'
-	}, {
-		status: 'loading',
-		title: 'security.antivirus.windowsDefender.homeNetwork',
-		type: 'firewall'
-	}];
+	windowsDefenderstatusList: Array<any> = [
+		{
+			status: 'loading',
+			title: 'security.antivirus.windowsDefender.virus',
+			type: 'antivirus',
+		},
+		{
+			status: 'loading',
+			title: 'security.antivirus.windowsDefender.homeNetwork',
+			type: 'firewall',
+		},
+	];
 	othersAntistatusList: Array<any> = [];
 	othersFirewallstatusList: Array<any> = [];
 	showMetricsList = true;
@@ -62,12 +73,13 @@ export class AntiVirusViewModel {
 		public antiVirus: Antivirus,
 		private localCacheService: LocalCacheService,
 		public translate: TranslateService,
-		public antivirusService: AntivirusService) {
+		public antivirusService: AntivirusService
+	) {
 		translate.stream(this.otherAntiVirus.name).subscribe((res) => {
 			this.otherAntiVirus.name = res;
 		});
 
-		this.windowsDefenderstatusList.forEach(element => this.waitTimeout(element.type));
+		this.windowsDefenderstatusList.forEach((element) => this.waitTimeout(element.type));
 
 		this.readCache();
 		this.updateCommonInfo();
@@ -78,114 +90,168 @@ export class AntiVirusViewModel {
 	}
 
 	private readCache() {
-		const cacheMcafeeStatusList = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityMcAfeeStatusList);
+		const cacheMcafeeStatusList = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityMcAfeeStatusList
+		);
 		if (cacheMcafeeStatusList) {
 			this.mcafeestatusList = cacheMcafeeStatusList;
 		}
 
-		const cacheMcafeeMetricsList = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityMcAfeeMetricList);
+		const cacheMcafeeMetricsList = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityMcAfeeMetricList
+		);
 		if (cacheMcafeeMetricsList) {
 			this.metricsList = cacheMcafeeMetricsList;
 		}
 
-		const cacheShowMetricButton = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowMetricButton);
+		const cacheShowMetricButton = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityShowMetricButton
+		);
 		if (typeof cacheShowMetricButton === 'boolean') {
 			this.showMetricButton = cacheShowMetricButton;
 		}
 
-		const cacheShowMetricList = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowMetricList);
+		const cacheShowMetricList = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityShowMetricList
+		);
 		if (typeof cacheShowMetricList === 'boolean') {
 			this.showMetricsList = cacheShowMetricList;
 		}
 
-		const cacheShowMcafee = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowMcafee);
+		const cacheShowMcafee = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityShowMcafee
+		);
 		if (typeof cacheShowMcafee === 'boolean') {
 			this.showMcafee = cacheShowMcafee;
 		}
 
-		const cacheWindowsList = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWindowsDefenderStatusList);
+		const cacheWindowsList = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityWindowsDefenderStatusList
+		);
 		if (cacheWindowsList) {
 			this.windowsDefenderstatusList = cacheWindowsList;
 		}
 
-		const cacheOtherAntiVirusList = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityOthersAntiStatusList);
+		const cacheOtherAntiVirusList = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityOthersAntiStatusList
+		);
 		if (cacheOtherAntiVirusList) {
 			this.othersAntistatusList = cacheOtherAntiVirusList;
 		}
-		const cacheOtherFirewallList = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityOthersFirewallStatusList);
+		const cacheOtherFirewallList = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityOthersFirewallStatusList
+		);
 		if (cacheOtherFirewallList) {
 			this.othersFirewallstatusList = cacheOtherFirewallList;
 		}
 
-		const cacheOtherAntiVirus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityOtherAntiVirus);
+		const cacheOtherAntiVirus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityOtherAntiVirus
+		);
 		if (cacheOtherAntiVirus) {
 			this.otherAntiVirus = cacheOtherAntiVirus;
 		}
-		const cacheOtherFirewall = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityOtherFirewall);
+		const cacheOtherFirewall = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityOtherFirewall
+		);
 		if (cacheOtherFirewall) {
 			this.otherFirewall = cacheOtherFirewall;
 		}
 
-		const cacheMcafee = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityMcAfee);
+		const cacheMcafee = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityMcAfee
+		);
 		if (cacheMcafee) {
 			this.mcafee = cacheMcafee;
 		}
 	}
 
 	private addEventListener() {
-		this.antiVirus.on(EventTypes.avMcafeeFeaturesEvent, (data) => {
-			this.mcafeestatusList = this.getMcafeeFeature(this.mcafee, data);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfeeStatusList, this.mcafeestatusList);
-			this.updateCommonInfo();
-		}).on(EventTypes.avOthersEvent, (data) => {
-			this.updateOthersAntivirus(data);
-			this.updateCommonInfo();
-		}).on(EventTypes.avWindowsDefenderAntivirusStatusEvent, (data) => {
-			this.windowsDefender.status = data;
-			this.setDefenderStatus(this.windowsDefender.status,
-				this.windowsDefender.firewallStatus,
-				this.currentPage)
-			this.updateCommonInfo();
-		}).on(EventTypes.avWindowsDefenderFirewallStatusEvent, (data) => {
-			this.windowsDefender.firewallStatus = data;
-			this.setDefenderStatus(this.windowsDefender.status,
-				this.windowsDefender.firewallStatus,
-				this.currentPage)
-			this.updateCommonInfo();
-		}).on(EventTypes.avMcafeeExpireAtEvent, (data) => {
-			this.mcafee.expireAt = data;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
-		}).on(EventTypes.avMcafeeSubscriptionEvent, (data) => {
-			this.mcafee.subscription = data.toLowerCase();
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
-			this.updateCommonInfo();
-		}).on(EventTypes.avMcafeeRegisteredEvent, (data) => {
-			this.mcafeestatusList = this.updateRegister(this.mcafeestatusList, data);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfeeStatusList, this.mcafeestatusList);
-			this.updateCommonInfo();
-		}).on(EventTypes.avMcafeeMetricsEvent, (data) => {
-			this.metricsList = this.getMcafeeMetric(this.metricsList, data);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfeeMetricList, this.metricsList);
-		}).on(EventTypes.avMcafeeTrialUrlEvent, (data) => {
-			this.mcafee.trialUrl = data;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfeeTrialUrl, this.mcafee.trialUrl);
-		}).on(EventTypes.avStartRefreshEvent, () => {
-			if (this.currentPage === 'windows') {
-				this.windowsDefenderstatusList.forEach(element => {
-					if(element.status === 'failedLoad') {
-						element.status = 'loading';
-						this.waitTimeout(element.type);
-					}
-				});
-			}
-		});
+		this.antiVirus
+			.on(EventTypes.avMcafeeFeaturesEvent, (data) => {
+				this.mcafeestatusList = this.getMcafeeFeature(this.mcafee, data);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SecurityMcAfeeStatusList,
+					this.mcafeestatusList
+				);
+				this.updateCommonInfo();
+			})
+			.on(EventTypes.avOthersEvent, (data) => {
+				this.updateOthersAntivirus(data);
+				this.updateCommonInfo();
+			})
+			.on(EventTypes.avWindowsDefenderAntivirusStatusEvent, (data) => {
+				this.windowsDefender.status = data;
+				this.setDefenderStatus(
+					this.windowsDefender.status,
+					this.windowsDefender.firewallStatus,
+					this.currentPage
+				);
+				this.updateCommonInfo();
+			})
+			.on(EventTypes.avWindowsDefenderFirewallStatusEvent, (data) => {
+				this.windowsDefender.firewallStatus = data;
+				this.setDefenderStatus(
+					this.windowsDefender.status,
+					this.windowsDefender.firewallStatus,
+					this.currentPage
+				);
+				this.updateCommonInfo();
+			})
+			.on(EventTypes.avMcafeeExpireAtEvent, (data) => {
+				this.mcafee.expireAt = data;
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SecurityMcAfee,
+					this.mcafee
+				);
+			})
+			.on(EventTypes.avMcafeeSubscriptionEvent, (data) => {
+				this.mcafee.subscription = data.toLowerCase();
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SecurityMcAfee,
+					this.mcafee
+				);
+				this.updateCommonInfo();
+			})
+			.on(EventTypes.avMcafeeRegisteredEvent, (data) => {
+				this.mcafeestatusList = this.updateRegister(this.mcafeestatusList, data);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SecurityMcAfeeStatusList,
+					this.mcafeestatusList
+				);
+				this.updateCommonInfo();
+			})
+			.on(EventTypes.avMcafeeMetricsEvent, (data) => {
+				this.metricsList = this.getMcafeeMetric(this.metricsList, data);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SecurityMcAfeeMetricList,
+					this.metricsList
+				);
+			})
+			.on(EventTypes.avMcafeeTrialUrlEvent, (data) => {
+				this.mcafee.trialUrl = data;
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SecurityMcAfeeTrialUrl,
+					this.mcafee.trialUrl
+				);
+			})
+			.on(EventTypes.avStartRefreshEvent, () => {
+				if (this.currentPage === 'windows') {
+					this.windowsDefenderstatusList.forEach((element) => {
+						if (element.status === 'failedLoad') {
+							element.status = 'loading';
+							this.waitTimeout(element.type);
+						}
+					});
+				}
+			});
 	}
 
 	private updateCommonInfo() {
 		this.setAntivirusPageUI(this.antivirusService.GetAntivirusStatus());
 	}
 
-	private setAntivirusPageUI (antivirusCommonData: AntivirusCommonData) {
+	private setAntivirusPageUI(antivirusCommonData: AntivirusCommonData) {
 		this.currentPage = antivirusCommonData.currentPage;
 		this.mcafeeInstall = antivirusCommonData.isMcAfeeInstalled;
 	}
@@ -196,39 +262,53 @@ export class AntiVirusViewModel {
 		}
 
 		if (this.windowsDefender) {
-			this.setDefenderStatus(this.windowsDefender.status,
+			this.setDefenderStatus(
+				this.windowsDefender.status,
 				this.windowsDefender.firewallStatus,
-				this.currentPage)
+				this.currentPage
+			);
 		}
 	}
 
 	private updateMcAfeeInfo() {
 		if (!this.antiVirus.mcafee) return;
 
-		this.mcafee = Object.assign({}, {
-			localName: this.antiVirus.mcafee.localName,
-			registered: this.antiVirus.mcafee.registered,
-			subscription: this.antiVirus.mcafee.subscription.toLowerCase(),
-			trialUrl: this.antiVirus.mcafee.trialUrl,
-			enabled: this.antiVirus.mcafee.enabled,
-			firewallStatus: this.antiVirus.mcafee.firewallStatus,
-			status: this.antiVirus.mcafee.status,
-			features: this.antiVirus.mcafee.features,
-			expireAt: this.antiVirus.mcafee.expireAt,
-			metrics: this.antiVirus.mcafee.metrics,
-			additionalCapabilities: this.antiVirus.mcafee.additionalCapabilities,
-		});
+		this.mcafee = Object.assign(
+			{},
+			{
+				localName: this.antiVirus.mcafee.localName,
+				registered: this.antiVirus.mcafee.registered,
+				subscription: this.antiVirus.mcafee.subscription.toLowerCase(),
+				trialUrl: this.antiVirus.mcafee.trialUrl,
+				enabled: this.antiVirus.mcafee.enabled,
+				firewallStatus: this.antiVirus.mcafee.firewallStatus,
+				status: this.antiVirus.mcafee.status,
+				features: this.antiVirus.mcafee.features,
+				expireAt: this.antiVirus.mcafee.expireAt,
+				metrics: this.antiVirus.mcafee.metrics,
+				additionalCapabilities: this.antiVirus.mcafee.additionalCapabilities,
+			}
+		);
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfee, this.mcafee);
 		if (this.mcafee.features) {
 			this.mcafeestatusList = this.getMcafeeFeature(this.mcafee);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfeeStatusList, this.mcafeestatusList);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityMcAfeeStatusList,
+				this.mcafeestatusList
+			);
 		}
 		if (this.mcafee.metrics && this.mcafee.metrics.length > 0) {
 			this.metricsList = this.getMcafeeMetric(this.mcafee.metrics);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfeeMetricList, this.metricsList);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityMcAfeeMetricList,
+				this.metricsList
+			);
 		} else {
 			this.showMetricsList = false;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowMetricList, false);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityShowMetricList,
+				false
+			);
 		}
 	}
 
@@ -237,27 +317,49 @@ export class AntiVirusViewModel {
 
 		if (data.firewall && data.firewall.length > 0) {
 			this.otherFirewall = data.firewall[0];
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityOtherFirewall, this.otherFirewall);
-			this.othersFirewallstatusList = [{
-				status: this.otherFirewall.status,
-				title: this.fireWall,
-			}];
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityOthersFirewallStatusList, this.othersFirewallstatusList);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityOtherFirewall,
+				this.otherFirewall
+			);
+			this.othersFirewallstatusList = [
+				{
+					status: this.otherFirewall.status,
+					title: this.fireWall,
+				},
+			];
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityOthersFirewallStatusList,
+				this.othersFirewallstatusList
+			);
 		} else {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityOthersFirewallStatusList, null);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityOthersFirewallStatusList,
+				null
+			);
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityOtherFirewall, null);
 		}
 		if (data.antiVirus && data.antiVirus.length > 0) {
 			this.getShowMcafee(data.antiVirus);
 			this.otherAntiVirus = data.antiVirus[0];
-			this.othersAntistatusList = [{
-				status: this.otherAntiVirus.status,
-				title: this.virusScan,
-			}];
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityOthersAntiStatusList, this.othersAntistatusList);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityOtherAntiVirus, this.otherAntiVirus);
+			this.othersAntistatusList = [
+				{
+					status: this.otherAntiVirus.status,
+					title: this.virusScan,
+				},
+			];
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityOthersAntiStatusList,
+				this.othersAntistatusList
+			);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityOtherAntiVirus,
+				this.otherAntiVirus
+			);
 		} else {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityOthersAntiStatusList, null);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityOthersAntiStatusList,
+				null
+			);
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityOtherAntiVirus, null);
 		}
 	}
@@ -265,7 +367,10 @@ export class AntiVirusViewModel {
 	getShowMcafee(others: Array<OtherInfo>) {
 		const show = this.findArray(others, this.partyAvList);
 		this.showMcafee = show;
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowMcafee, this.showMcafee);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.SecurityShowMcafee,
+			this.showMcafee
+		);
 	}
 
 	findArray(others: Array<OtherInfo>, partyAvList) {
@@ -284,7 +389,7 @@ export class AntiVirusViewModel {
 		this.mcafee.registered = data;
 		const registerList = {
 			status: data ? 'enabled' : 'disabled',
-			title: this.register
+			title: this.register,
 		};
 		if (list.length > 0) {
 			list.splice(0, 1, registerList);
@@ -303,7 +408,10 @@ export class AntiVirusViewModel {
 		}
 		if (metricsFeature.length === 0) {
 			this.showMetricsList = false;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowMetricList, false);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityShowMetricList,
+				false
+			);
 		} else {
 			this.showMetricsList = true;
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowMetricList, true);
@@ -315,68 +423,82 @@ export class AntiVirusViewModel {
 				case 2: {
 					if (e.value > 1000000) {
 						value = 1000000;
-					} else { value = e.value; }
+					} else {
+						value = e.value;
+					}
 					id = 1;
 					break;
 				}
 				case 1: {
 					if (e.value > 1000000) {
 						value = 1000000;
-					} else { value = e.value; }
+					} else {
+						value = e.value;
+					}
 					id = 2;
 					break;
 				}
 				case 4: {
 					if (e.value > 1000000) {
 						value = 1000000;
-					} else { value = e.value; }
+					} else {
+						value = e.value;
+					}
 					id = 3;
 					break;
 				}
 				case 6: {
 					if (e.value > 1000000) {
 						value = 1000000;
-					} else { value = e.value; }
+					} else {
+						value = e.value;
+					}
 					id = 4;
 					break;
 				}
 			}
-			metricsList.push(
-				{
-					value,
-					id
-				}
-			);
+			metricsList.push({
+				value,
+				id,
+			});
 		});
 		if (metricsFeature.length > 1) {
 			for (let index = 1; index < 5; index++) {
-				const metricsInfor = metricsList.find(e => e.id === index).value;
+				const metricsInfor = metricsList.find((e) => e.id === index).value;
 				list.push(metricsInfor);
 			}
-			if (list.filter(id => id > 0).length > 0) {
+			if (list.filter((id) => id > 0).length > 0) {
 				this.showMetricButton = false;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowMetricButton, false);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SecurityShowMetricButton,
+					false
+				);
 				return list;
 			} else {
 				this.showMetricButton = true;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityShowMetricButton, true);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SecurityShowMetricButton,
+					true
+				);
 			}
 		}
 		return list;
 	}
 
 	getMcafeeFeature(mcafee: McAfeeInfo, data?: Array<McafeeFeature>) {
-		const featureList = [{
-			status: mcafee.registered,
-			title: this.register,
-			installed: true
-		}];
+		const featureList = [
+			{
+				status: mcafee.registered,
+				title: this.register,
+				installed: true,
+			},
+		];
 		let list = mcafee.features;
 		if (data) {
 			list = data;
 		}
-		if (list.filter(e => e.id !== null).length > 1) {
-			list.filter(e => e.id !== null).forEach((features) => {
+		if (list.filter((e) => e.id !== null).length > 1) {
+			list.filter((e) => e.id !== null).forEach((features) => {
 				let status;
 				let title;
 				let installed;
@@ -416,7 +538,7 @@ export class AntiVirusViewModel {
 					featureList.push({
 						status,
 						title,
-						installed
+						installed,
 					});
 				}
 			});
@@ -425,53 +547,53 @@ export class AntiVirusViewModel {
 				featureList.push({
 					status: data[0].value,
 					title: this.virusScan,
-					installed: data[0].installed
+					installed: data[0].installed,
 				});
 				featureList.push({
 					status: data[1].value,
 					title: this.fireWall,
-					installed: data[1].installed
+					installed: data[1].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.antiSpam,
-					installed: data[2].installed
+					installed: data[2].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.quickClean,
-					installed: data[3].installed
+					installed: data[3].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.vulnerability,
-					installed: data[4].installed
+					installed: data[4].installed,
 				});
 			} else {
 				featureList.push({
 					status: data[0].value,
 					title: this.virusScan,
-					installed: data[0].installed
+					installed: data[0].installed,
 				});
 				featureList.push({
 					status: data[1].value,
 					title: this.fireWall,
-					installed: data[1].installed
+					installed: data[1].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.antiSpam,
-					installed: data[3].installed
+					installed: data[3].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.quickClean,
-					installed: data[4].installed
+					installed: data[4].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.vulnerability,
-					installed: data[5].installed
+					installed: data[5].installed,
 				});
 			}
 		} else {
@@ -479,53 +601,53 @@ export class AntiVirusViewModel {
 				featureList.push({
 					status: mcafee.status,
 					title: this.virusScan,
-					installed: true
+					installed: true,
 				});
 				featureList.push({
 					status: mcafee.firewallStatus,
 					title: this.fireWall,
-					installed: true
+					installed: true,
 				});
 				featureList.push({
 					status: null,
 					title: this.antiSpam,
-					installed: mcafee.features[2].installed
+					installed: mcafee.features[2].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.quickClean,
-					installed: mcafee.features[3].installed
+					installed: mcafee.features[3].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.vulnerability,
-					installed: mcafee.features[4].installed
+					installed: mcafee.features[4].installed,
 				});
 			} else {
 				featureList.push({
 					status: mcafee.status,
 					title: this.virusScan,
-					installed: true
+					installed: true,
 				});
 				featureList.push({
 					status: mcafee.firewallStatus,
 					title: this.fireWall,
-					installed: true
+					installed: true,
 				});
 				featureList.push({
 					status: null,
 					title: this.antiSpam,
-					installed: mcafee.features[3].installed
+					installed: mcafee.features[3].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.quickClean,
-					installed: mcafee.features[4].installed
+					installed: mcafee.features[4].installed,
 				});
 				featureList.push({
 					status: null,
 					title: this.vulnerability,
-					installed: mcafee.features[5].installed
+					installed: mcafee.features[5].installed,
 				});
 			}
 		}
@@ -553,20 +675,26 @@ export class AntiVirusViewModel {
 			return;
 		}
 
-		this.windowsDefenderstatusList = [{
-			status: avStatus,
-			title: this.virus,
-			type: 'antivirus'
-		}, {
-			status: fwStatus,
-			title: this.homeNetwork,
-			type: 'firewall'
-		}];
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWindowsDefenderStatusList, this.windowsDefenderstatusList);
+		this.windowsDefenderstatusList = [
+			{
+				status: avStatus,
+				title: this.virus,
+				type: 'antivirus',
+			},
+			{
+				status: fwStatus,
+				title: this.homeNetwork,
+				type: 'firewall',
+			},
+		];
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.SecurityWindowsDefenderStatusList,
+			this.windowsDefenderstatusList
+		);
 	}
 
 	retry(type: string) {
-		this.windowsDefenderstatusList.forEach(element => {
+		this.windowsDefenderstatusList.forEach((element) => {
 			if (element.type === type) {
 				element.status = 'loading';
 				this.waitTimeout(type);
@@ -578,7 +706,7 @@ export class AntiVirusViewModel {
 
 	waitTimeout(type: string) {
 		setTimeout(() => {
-			this.windowsDefenderstatusList.forEach(element => {
+			this.windowsDefenderstatusList.forEach((element) => {
 				if (element.status === 'loading' && element.type === type) {
 					element.status = 'failedLoad';
 					return;

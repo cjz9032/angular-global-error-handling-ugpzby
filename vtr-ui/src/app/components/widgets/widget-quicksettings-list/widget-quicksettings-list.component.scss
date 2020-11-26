@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .vtr-widget-quicksettings-list {
 	.widget-title {
@@ -71,7 +71,7 @@
 									line-height: 4rem;
 									position: relative;
 									&::after {
-										content: "";
+										content: '';
 										position: absolute;
 										height: 4rem;
 										width: 4rem;

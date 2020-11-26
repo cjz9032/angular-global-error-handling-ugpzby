@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class GamingKeyLockService {
 	private gamingKeyLock: any;
@@ -36,5 +36,4 @@ export class GamingKeyLockService {
 			throw new Error(error.message);
 		}
 	}
-
 }

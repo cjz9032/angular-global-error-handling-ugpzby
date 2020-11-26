@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, OnDestroy } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	AfterViewInit,
+	OnDestroy,
+} from '@angular/core';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
@@ -6,16 +14,13 @@ import { HistoryManager } from 'src/app/services/history-manager/history-manager
 @Component({
 	selector: 'vtr-header-main',
 	templateUrl: './header-main.component.html',
-	styleUrls: [
-		'./header-main.component.scss'
-	]
+	styleUrls: ['./header-main.component.scss'],
 })
 export class HeaderMainComponent implements OnInit, AfterViewInit, OnDestroy {
-
 	@Input() title: string;
 	@Input() back: string;
 	@Input() backarrow = '<';
-	@Input() forwardLink: { path: string, label: string; };
+	@Input() forwardLink: { path: string; label: string };
 	@Input() menuItems: any[];
 	@Input() parentPath: string;
 	@Input() backId: string;
@@ -31,8 +36,7 @@ export class HeaderMainComponent implements OnInit, AfterViewInit, OnDestroy {
 		public deviceService: DeviceService,
 		public dccService: DccService,
 		public historyManager: HistoryManager
-	) {
-	}
+	) {}
 
 	ngOnInit() {
 		const self = this;

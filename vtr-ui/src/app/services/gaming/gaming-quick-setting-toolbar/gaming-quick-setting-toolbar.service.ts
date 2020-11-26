@@ -2,16 +2,13 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from './../../vantage-shell/vantage-shell.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class GamingQuickSettingToolbarService {
-
 	private gamingQuickSettingToolbar: any;
 	public isShellAvailable = false;
 
-	constructor(
-		private shellService: VantageShellService,
-	) {
+	constructor(private shellService: VantageShellService) {
 		this.gamingQuickSettingToolbar = shellService.getQuickSettingToolbar();
 		if (this.gamingQuickSettingToolbar) {
 			this.isShellAvailable = true;
@@ -39,5 +36,4 @@ export class GamingQuickSettingToolbarService {
 			throw new Error(error.message);
 		}
 	}
-
 }

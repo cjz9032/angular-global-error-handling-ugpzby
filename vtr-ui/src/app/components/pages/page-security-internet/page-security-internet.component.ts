@@ -16,10 +16,9 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-page-security-internet',
 	templateUrl: './page-security-internet.component.html',
-	styleUrls: ['./page-security-internet.component.scss']
+	styleUrls: ['./page-security-internet.component.scss'],
 })
 export class PageSecurityInternetComponent implements OnInit, OnDestroy {
-
 	vpn: Vpn;
 	statusItem: any;
 	cardContentPositionA: any = {};
@@ -35,24 +34,25 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 		public vantageShellService: VantageShellService,
 		private guard: GuardService,
 		private router: Router
-	) {	}
+	) {}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.statusItem = {
 			title: 'security.vpn.statusTitle',
-			status: 'loading'
+			status: 'loading',
 		};
 		this.featureIntroduction = {
 			featureTitle: '',
 			featureTitleDesc: '',
 			imgSrc: '',
 			featureSubtitle: '',
-			featureIntroList: []
-
+			featureIntroList: [],
 		};
 		this.vpn = this.securityAdvisor.vpn;
-		const cacheStatus: string = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityVPNStatus);
+		const cacheStatus: string = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityVPNStatus
+		);
 		if (cacheStatus) {
 			this.statusItem.status = cacheStatus;
 			this.getFeatureIntro(this.statusItem.status);
@@ -60,19 +60,27 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 		if (this.vpn && this.vpn.status) {
 			this.statusItem.status = this.vpn.status;
 			this.getFeatureIntro(this.statusItem.status);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityVPNStatus,
+				this.statusItem.status
+			);
 		}
 		this.vpn.on(EventTypes.vpnStatusEvent, (status: string) => {
 			this.statusItem.status = status;
 			this.getFeatureIntro(this.statusItem.status);
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityVPNStatus, this.statusItem.status);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityVPNStatus,
+				this.statusItem.status
+			);
 		});
 		this.fetchCMSArticles();
 
 		this.isOnline = this.commonService.isOnline;
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 
 		if (!this.guard.previousPageName.startsWith('Security')) {
 			this.vpn.refresh();
@@ -103,20 +111,26 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 
 	fetchCMSArticles() {
 		const queryOptions = {
-			Page: 'internet-protection'
+			Page: 'internet-protection',
 		};
 
 		this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
-				const cardContentPositionA = this.cmsService.getOneCMSContent(response, 'inner-page-right-side-article-image-background', 'position-A')[0];
+				const cardContentPositionA = this.cmsService.getOneCMSContent(
+					response,
+					'inner-page-right-side-article-image-background',
+					'position-A'
+				)[0];
 				if (cardContentPositionA) {
 					this.cardContentPositionA = cardContentPositionA;
 					if (this.cardContentPositionA.BrandName) {
-						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split('|')[0];
+						this.cardContentPositionA.BrandName = this.cardContentPositionA.BrandName.split(
+							'|'
+						)[0];
 					}
 				}
 			},
-			error => {}
+			(error) => {}
 		);
 	}
 
@@ -142,14 +156,16 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 			this.featureIntroduction.featureIntroList = [
 				{
 					mark: '1.',
-					detail: 'security.vpn.getStarted1'
-				}, {
+					detail: 'security.vpn.getStarted1',
+				},
+				{
 					mark: '2.',
-					detail: 'security.vpn.getStarted2'
-				}, {
+					detail: 'security.vpn.getStarted2',
+				},
+				{
 					mark: '3.',
-					detail: 'security.vpn.getStarted3'
-				}
+					detail: 'security.vpn.getStarted3',
+				},
 			];
 		} else if (status === 'not-installed' || status === 'installing') {
 			this.featureIntroduction.featureTitle = 'security.vpn.whySufEasy';
@@ -159,14 +175,16 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 			this.featureIntroduction.featureIntroList = [
 				{
 					iconName: 'check',
-					detail: 'security.vpn.startUseSufEasy1'
-				}, {
+					detail: 'security.vpn.startUseSufEasy1',
+				},
+				{
 					iconName: 'check',
-					detail: 'security.vpn.startUseSufEasy2'
-				}, {
+					detail: 'security.vpn.startUseSufEasy2',
+				},
+				{
 					iconName: 'check',
-					detail: 'security.vpn.startUseSufEasy3'
-				}
+					detail: 'security.vpn.startUseSufEasy3',
+				},
 			];
 		}
 	}

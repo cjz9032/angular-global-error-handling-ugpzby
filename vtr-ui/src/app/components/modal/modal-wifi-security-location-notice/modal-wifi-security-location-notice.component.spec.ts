@@ -8,9 +8,8 @@ xdescribe('ModalWifiSecurityLocationNoticeComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ModalWifiSecurityLocationNoticeComponent]
-		})
-			.compileComponents();
+			declarations: [ModalWifiSecurityLocationNoticeComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

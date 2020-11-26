@@ -9,9 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { MissingTranslationDefaultHandler } from 'src/app/i18n/handler/missing-tranlsation-default-handler';
 
 @NgModule({
-	declarations: [
-		UiRoundedRectangleCustomRadioListComponent
-	],
+	declarations: [UiRoundedRectangleCustomRadioListComponent],
 	imports: [
 		CommonModule,
 		FormsModule,
@@ -20,16 +18,14 @@ import { MissingTranslationDefaultHandler } from 'src/app/i18n/handler/missing-t
 			loader: {
 				provide: TranslateLoader,
 				useClass: WebpackTranslateLoader,
-				deps: [ HttpClient ]
+				deps: [HttpClient],
 			},
 			missingTranslationHandler: {
 				provide: MissingTranslationHandler,
-				useClass: MissingTranslationDefaultHandler
+				useClass: MissingTranslationDefaultHandler,
 			},
 		}),
 	],
-	exports: [
-		UiRoundedRectangleCustomRadioListComponent
-	]
+	exports: [UiRoundedRectangleCustomRadioListComponent],
 })
-export class UiRoundedRectangleCustomRadioListModule { }
+export class UiRoundedRectangleCustomRadioListModule {}

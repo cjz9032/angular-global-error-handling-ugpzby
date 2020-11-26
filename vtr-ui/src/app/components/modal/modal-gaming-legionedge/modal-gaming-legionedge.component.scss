@@ -1,19 +1,19 @@
 @import '../../../app.theme.scss';
-.gaming-help-popup{
+.gaming-help-popup {
 	position: relative;
 	background: $darkCell;
 	color: $gaming_lightest;
 	@media #{$high-contrast} {
 		border: 1px solid windowText;
 	}
-	.modal-header{
+	.modal-header {
 		height: 7rem;
 		padding: 3rem 4rem;
-		border-bottom:none;
+		border-bottom: none;
 		.modal-title {
 			img {
 				height: 3rem;
-				@media #{$high-contrast}{
+				@media #{$high-contrast} {
 					background-color: $darkCell;
 				}
 			}
@@ -36,7 +36,7 @@
 	.modal-body {
 		padding: 0 4rem 3rem 4rem;
 		width: 100%;
-		.innerContent{
+		.innerContent {
 			width: 100%;
 			background: $background;
 			padding: 2rem;
@@ -52,18 +52,19 @@
 	}
 }
 
-::ng-deep{
-	body.focus-enable{
-		.is-gaming{
-			.gaming-help-popup{
-				&:focus{
+::ng-deep {
+	body.focus-enable {
+		.is-gaming {
+			.gaming-help-popup {
+				&:focus {
 					@include solid-button-outline;
 					@media #{$high-contrast} {
 						@include solid-button-outline(highlight);
 					}
 				}
-				button.close,.innerContent{
-					&:focus{
+				button.close,
+				.innerContent {
+					&:focus {
 						@include solid-button-outline;
 						@media #{$high-contrast} {
 							@include solid-button-outline(highlight);

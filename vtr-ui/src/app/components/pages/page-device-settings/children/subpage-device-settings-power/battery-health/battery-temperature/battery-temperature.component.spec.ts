@@ -9,7 +9,7 @@ import {
 	BatteryHealthLevel,
 	BatteryHealthTip,
 	BatteryLifeSpan,
-	BatteryTemperatureStatus
+	BatteryTemperatureStatus,
 } from '../battery-health.enum';
 import { Observable, of } from 'rxjs';
 import { Conditions } from './condition-class.enum';
@@ -21,15 +21,16 @@ describe('BatteryTemperatureComponent', () => {
 	let batteryHealthServiceSpy: SpyObj<BatteryHealthService>;
 
 	beforeEach(async(() => {
-		batteryHealthServiceSpy = jasmine.createSpyObj<BatteryHealthService>('BatteryHealthService', {},
-			['batteryInfo']);
+		batteryHealthServiceSpy = jasmine.createSpyObj<BatteryHealthService>(
+			'BatteryHealthService',
+			{},
+			['batteryInfo']
+		);
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [BatteryTemperatureComponent],
 			imports: [TranslateModule.forRoot()],
-			providers: [
-				{ provide: BatteryHealthService, useValue: batteryHealthServiceSpy }
-			]
+			providers: [{ provide: BatteryHealthService, useValue: batteryHealthServiceSpy }],
 		}).compileComponents();
 		fixture = TestBed.createComponent(BatteryTemperatureComponent);
 		component = fixture.componentInstance;
@@ -52,7 +53,8 @@ describe('BatteryTemperatureComponent', () => {
 			fullChargeCapacity: 16,
 			designCapacity: 20,
 		};
-		(Object.getOwnPropertyDescriptor(batteryHealthServiceSpy, 'batteryInfo').get as any).and.returnValue(of({}, stubValue));
+		(Object.getOwnPropertyDescriptor(batteryHealthServiceSpy, 'batteryInfo')
+			.get as any).and.returnValue(of({}, stubValue));
 
 		fixture.detectChanges();
 
@@ -71,7 +73,8 @@ describe('BatteryTemperatureComponent', () => {
 			fullChargeCapacity: 16,
 			designCapacity: 20,
 		};
-		(Object.getOwnPropertyDescriptor(batteryHealthServiceSpy, 'batteryInfo').get as any).and.returnValue(of(stubValue));
+		(Object.getOwnPropertyDescriptor(batteryHealthServiceSpy, 'batteryInfo')
+			.get as any).and.returnValue(of(stubValue));
 
 		fixture.detectChanges();
 

@@ -1,52 +1,50 @@
-@import "../../../app.theme";
-.ui-gaming-slider{
-   width: 100%;
-   input[type=range]{
-      width: 100%;
-      height: 4rem;
-      outline: none;
-   }
-   /*进度条轨道*/
-   input[type=range]::-ms-track {
-      width: 100%;
-      color: transparent;
-      height: 0.6rem;
-      border: none;
-      border-radius: 10px;
-      background: $gaming_square_button20;
-      @media #{$high-contrast} {
-         background: windowText;
-         color: transparent;
-      }
-   }
-   /*进度条滑块*/
-   input[type=range]::-webkit-slider-thumb {
-      height: 17px;
-      width: 17px;
-      background: $gaming_lightest; 
-      border-radius: 50%;
-      border: solid 0.125em rgba(205, 224, 230, 0.5);
-      box-shadow: 0 4px 8px 0 $screen_dark_20;
-      &:hover {
-         background:#c9cacc;
-      }
-      @media #{$high-contrast} {
-         background: highLight;
-         border: none;
-      } 
-   }
-   /*进度条已填充的部分*/
-   input[type=range]::-ms-fill-lower{
-       border-radius: 10px;
-       background: $blueFill;
-   }
+@import '../../../app.theme';
+.ui-gaming-slider {
+	width: 100%;
+	input[type='range'] {
+		width: 100%;
+		height: 4rem;
+		outline: none;
+	}
+	/*进度条轨道*/
+	input[type='range']::-ms-track {
+		width: 100%;
+		color: transparent;
+		height: 0.6rem;
+		border: none;
+		border-radius: 10px;
+		background: $gaming_square_button20;
+		@media #{$high-contrast} {
+			background: windowText;
+			color: transparent;
+		}
+	}
+	/*进度条滑块*/
+	input[type='range']::-webkit-slider-thumb {
+		height: 17px;
+		width: 17px;
+		background: $gaming_lightest;
+		border-radius: 50%;
+		border: solid 0.125em rgba(205, 224, 230, 0.5);
+		box-shadow: 0 4px 8px 0 $screen_dark_20;
+		&:hover {
+			background: #c9cacc;
+		}
+		@media #{$high-contrast} {
+			background: highLight;
+			border: none;
+		}
+	}
+	/*进度条已填充的部分*/
+	input[type='range']::-ms-fill-lower {
+		border-radius: 10px;
+		background: $blueFill;
+	}
 }
-::ng-deep body.focus-enable .is-gaming{
-   .ui-gaming-slider{
-      input[type=range]:focus {
-         @include default-button-border;
-      } 
-   }
+::ng-deep body.focus-enable .is-gaming {
+	.ui-gaming-slider {
+		input[type='range']:focus {
+			@include default-button-border;
+		}
+	}
 }
-
-

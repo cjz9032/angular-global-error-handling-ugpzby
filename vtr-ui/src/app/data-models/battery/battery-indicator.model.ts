@@ -1,5 +1,5 @@
 class BatteryIndicator {
-	constructor() { }
+	constructor() {}
 	public percent = 0;
 	public charging = false;
 	public batteryNotDetected = false;

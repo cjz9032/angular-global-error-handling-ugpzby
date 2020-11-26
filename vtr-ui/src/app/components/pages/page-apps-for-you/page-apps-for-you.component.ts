@@ -16,10 +16,9 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 @Component({
 	selector: 'vtr-page-apps-for-you',
 	templateUrl: './page-apps-for-you.component.html',
-	styleUrls: ['./page-apps-for-you.component.scss']
+	styleUrls: ['./page-apps-for-you.component.scss'],
 })
 export class PageAppsForYouComponent implements OnInit, OnDestroy {
-
 	title = '';
 	headerTitle = '';
 	isOnline: boolean;
@@ -39,7 +38,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		INSTALLING: 3,
 		LAUNCH: 4,
 		SEEMORE: 5,
-		UNKNOWN: -1
+		UNKNOWN: -1,
 	};
 
 	statusEnum = {
@@ -48,7 +47,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		DOWNLOADING: 3,
 		DOWNLOAD_COMPLETE: 4,
 		INSTALLING: 5,
-		FAILED_INSTALL: -1
+		FAILED_INSTALL: -1,
 	};
 
 	// mockScreenShots = [
@@ -98,9 +97,11 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.errorMessage = '';
 		this.installButtonStatus = this.installButtonStatusEnum.UNKNOWN;
-		this.notificationSubscription = this.commonService.notification.subscribe((response: AppNotification) => {
-			this.onNotification(response);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 	}
 
 	ngOnDestroy() {
@@ -130,18 +131,22 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	swipeRightToLeft() {
-		if (!this.arrowClickable) { return false; }
+		if (!this.arrowClickable) {
+			return false;
+		}
 		this.arrowClickable = false;
 		const screenshotNumber = this.appDetails.screenshots.length;
-		const preScreenShotIndex = this.appDetails.screenshots.findIndex(m => m.position === 0);
+		const preScreenShotIndex = this.appDetails.screenshots.findIndex((m) => m.position === 0);
 		if (preScreenShotIndex > -1) {
-			const temp = JSON.parse(JSON.stringify(this.appDetails.screenshots[preScreenShotIndex]));
+			const temp = JSON.parse(
+				JSON.stringify(this.appDetails.screenshots[preScreenShotIndex])
+			);
 			this.appDetails.screenshots.splice(preScreenShotIndex, 1);
 			temp.position = screenshotNumber;
 			this.appDetails.screenshots.push(temp);
 		}
 		setTimeout(() => {
-			this.appDetails.screenshots.forEach(ss => {
+			this.appDetails.screenshots.forEach((ss) => {
 				ss.position--;
 			});
 			this.arrowClickable = true;
@@ -149,18 +154,24 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	swipeLeftToRight() {
-		if (!this.arrowClickable) { return false; }
+		if (!this.arrowClickable) {
+			return false;
+		}
 		this.arrowClickable = false;
 		const screenshotNumber = this.appDetails.screenshots.length;
-		const lastScreenShotIndex = this.appDetails.screenshots.findIndex(m => m.position === screenshotNumber);
+		const lastScreenShotIndex = this.appDetails.screenshots.findIndex(
+			(m) => m.position === screenshotNumber
+		);
 		if (lastScreenShotIndex > -1) {
-			const temp = JSON.parse(JSON.stringify(this.appDetails.screenshots[lastScreenShotIndex]));
+			const temp = JSON.parse(
+				JSON.stringify(this.appDetails.screenshots[lastScreenShotIndex])
+			);
 			this.appDetails.screenshots.splice(lastScreenShotIndex, 1);
 			temp.position = 0;
 			this.appDetails.screenshots.push(temp);
 		}
 		const timeout = setTimeout(() => {
-			this.appDetails.screenshots.forEach(ss => {
+			this.appDetails.screenshots.forEach((ss) => {
 				ss.position++;
 			});
 			this.arrowClickable = true;
@@ -188,7 +199,11 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					this.initAppDetails(notification.payload);
 					break;
 				case AppsForYouEnum.InstallAppProgress:
-					if (this.appDetails && this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
+					if (
+						this.appDetails &&
+						this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !==
+							-1
+					) {
 						if (notification.payload < 85) {
 							this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
 							this.installButtonStatus = this.installButtonStatusEnum.DOWNLOADING;
@@ -199,12 +214,21 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					}
 					break;
 				case AppsForYouEnum.InstallAppResult:
-					if (this.appDetails && this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
-						if (notification.payload === 'InstallDone' || notification.payload === 'InstalledBefore') {
+					if (
+						this.appDetails &&
+						this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !==
+							-1
+					) {
+						if (
+							notification.payload === 'InstallDone' ||
+							notification.payload === 'InstalledBefore'
+						) {
 							this.appDetails.showStatus = this.statusEnum.INSTALLED;
 							this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
 						} else if (notification.payload === 'NotFinished') {
-							this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
+							this.errorMessage = this.translateService.instant(
+								'appsForYou.common.errorMessage.installationFailed'
+							);
 							this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 							this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 						} else if (notification.payload === 'Downloading') {
@@ -214,7 +238,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 							this.appDetails.showStatus = this.statusEnum.INSTALLING;
 							this.installButtonStatus = this.installButtonStatusEnum.INSTALLING;
 						} else {
-							this.errorMessage = this.translateService.instant('appsForYou.common.errorMessage.installationFailed');
+							this.errorMessage = this.translateService.instant(
+								'appsForYou.common.errorMessage.installationFailed'
+							);
 							this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 							this.installButtonStatus = this.installButtonStatusEnum.INSTALL;
 						}
@@ -236,8 +262,10 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		Object.assign(appDetails, { showStatus: this.statusEnum.NOT_INSTALL });
 		this.appDetails = appDetails;
 		this.title = appDetails.title;
-		if (this.appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeWeb) !== -1
-			|| this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeWebId) !== -1) {
+		if (
+			this.appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeWeb) !== -1 ||
+			this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeWebId) !== -1
+		) {
 			this.appDetails.showStatus = this.statusEnum.NOT_INSTALL;
 			this.installButtonStatus = this.installButtonStatusEnum.SEEMORE;
 		} else {
@@ -254,9 +282,11 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 
 	updateInstallButtonStatus(status) {
 		if (this.appDetails && status) {
-			if (this.appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeDesktop) !== -1
-				|| this.appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeNative) !== -1
-				|| this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1) {
+			if (
+				this.appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeDesktop) !== -1 ||
+				this.appDetails.installtype.title.indexOf(AppsForYouEnum.AppTypeNative) !== -1 ||
+				this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !== -1
+			) {
 				if (status === 'InstallDone' || status === 'InstalledBefore') {
 					this.appDetails.showStatus = this.statusEnum.INSTALLED;
 					this.installButtonStatus = this.installButtonStatusEnum.LAUNCH;
@@ -277,30 +307,37 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	private isLMASupportUriProtocol() {
-		return new Promise(resovle => {
+		return new Promise((resovle) => {
 			const regUtil = this.vantageShellService.getRegistryUtil();
 			if (regUtil) {
 				const regPath = 'HKEY_LOCAL_MACHINE\\Software\\Lenovo\\Lenovo Migration Assistant';
-				regUtil.queryValue(regPath).then(val => {
-					if (!val || (val.keyList || []).length === 0) {
-						resovle(false);
-					} else {
-						let support = false;
-						for (const key of val.keyList) {
-							const child = key.keyChildren.find(item => item.name === 'DisplayVersion');
-							if (child && child.value) {
-								const version = child.value;
-								if (this.commonService.compareVersion(version, '2.0.1.15') >= 0) {
-									support = true;
-									break;
+				regUtil
+					.queryValue(regPath)
+					.then((val) => {
+						if (!val || (val.keyList || []).length === 0) {
+							resovle(false);
+						} else {
+							let support = false;
+							for (const key of val.keyList) {
+								const child = key.keyChildren.find(
+									(item) => item.name === 'DisplayVersion'
+								);
+								if (child && child.value) {
+									const version = child.value;
+									if (
+										this.commonService.compareVersion(version, '2.0.1.15') >= 0
+									) {
+										support = true;
+										break;
+									}
 								}
 							}
+							resovle(support);
 						}
-						resovle(support);
-					}
-				}).catch((e) => {
-					resovle(false);
-				});
+					})
+					.catch((e) => {
+						resovle(false);
+					});
 			} else {
 				resovle(false);
 			}
@@ -318,7 +355,9 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 						WinRT.launchUri('lenovo-migration-assistant:vantage');
 					} else {
 						// If installed LMA does not support launch by URL protocol, try to launch it by GCP
-						const launchPath = await this.systemUpdateBridge.getLaunchPath(this.appGuid);
+						const launchPath = await this.systemUpdateBridge.getLaunchPath(
+							this.appGuid
+						);
 						if (launchPath) {
 							const paths = launchPath.split('|');
 							for (const path of paths) {
@@ -342,22 +381,27 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	openScreenshotModal(imgUrl: string) {
-		const screenshotModal: NgbModalRef = this.modalService.open(ModalAppsForYouScreenshotComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'apps-for-you-dialog',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (screenshotModal.componentInstance.onBeforeDismiss) {
-					screenshotModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
+		const screenshotModal: NgbModalRef = this.modalService.open(
+			ModalAppsForYouScreenshotComponent,
+			{
+				backdrop: true,
+				size: 'lg',
+				centered: true,
+				windowClass: 'apps-for-you-dialog',
+				keyboard: false,
+				beforeDismiss: () => {
+					if (screenshotModal.componentInstance.onBeforeDismiss) {
+						screenshotModal.componentInstance.onBeforeDismiss();
+					}
+					return true;
+				},
 			}
-		});
+		);
 		screenshotModal.componentInstance.metricsParent = this.metricsParent;
 		screenshotModal.componentInstance.image = imgUrl;
-		setTimeout(() => { (document.querySelector('.apps-for-you-dialog') as HTMLElement).focus(); }, 0);
+		setTimeout(() => {
+			(document.querySelector('.apps-for-you-dialog') as HTMLElement).focus();
+		}, 0);
 	}
 
 	copyObjectArray(obj: any) {
@@ -365,22 +409,23 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	shouldFocusScreenshot(position: number) {
-		return (position >= 1 && position <= 3)
+		return position >= 1 && position <= 3;
 	}
 
 	@HostListener('keydown', ['$event'])
 	onKeyDown(event: KeyboardEvent) {
-		if (!event.shiftKey &&
+		if (
+			!event.shiftKey &&
 			event.key === 'Tab' &&
 			document.activeElement &&
-			(document.activeElement.className.includes('back')
-			|| document.activeElement.className.includes('btn-box')
-			|| document.activeElement.className.includes('screenshot-img'))
+			(document.activeElement.className.includes('back') ||
+				document.activeElement.className.includes('btn-box') ||
+				document.activeElement.className.includes('screenshot-img'))
 		) {
 			clearInterval(this.screenshotInterval);
 			if (document.activeElement.className.includes('screenshot-img')) {
 				const focusClassName = document.activeElement.className.toLowerCase();
-				const positionClassName = focusClassName.replace('screenshot-img','').trim();
+				const positionClassName = focusClassName.replace('screenshot-img', '').trim();
 				const position = Number(positionClassName.match(/\d+$/)[0]);
 				if (position >= 3) {
 					this.startScreenshotAutoSwipe();

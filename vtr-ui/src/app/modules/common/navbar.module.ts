@@ -35,7 +35,6 @@ import { MaterialMenuComponent } from 'src/app/material/menu/material-menu.compo
 import { MaterialMenuDropdownComponent } from 'src/app/material/menu/material-menu-dropdown/material-menu-dropdown.component';
 import { MaterialHamburgerMenuComponent } from 'src/app/material/menu/material-hamburger-menu/material-hamburger-menu.component';
 
-
 @NgModule({
 	declarations: [
 		MenuMainComponent,
@@ -55,7 +54,7 @@ import { MaterialHamburgerMenuComponent } from 'src/app/material/menu/material-h
 		CommonPipeModule,
 		MetricsModule,
 		NgbDropdownModule,
-		AppSearchModule
+		AppSearchModule,
 	],
 	imports: [
 		CommonModule,
@@ -68,12 +67,9 @@ import { MaterialHamburgerMenuComponent } from 'src/app/material/menu/material-h
 		UiButtonModule,
 		AppSearchModule,
 		MatButtonModule,
-		MatMenuModule
+		MatMenuModule,
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class NavbarModule {
 	constructor(library: FaIconLibrary) {

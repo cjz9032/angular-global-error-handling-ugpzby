@@ -23,42 +23,48 @@ export class UacLandingViewModel {
 		uacModel: UAC,
 		public commonService: CommonService,
 		private localCacheService: LocalCacheService
-		) {
+	) {
 		uacModel.on(EventTypes.uacStatusEvent, (data) => {
 			if (data !== 'unknown') {
 				this.setUacStatus(data);
 			}
 		});
-		const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityUacStatus);
-		translate.stream([
-			'common.securityAdvisor.enabled',
-			'common.securityAdvisor.disabled',
-			'common.securityAdvisor.loading',
-			'security.landing.uac',
-			'security.landing.uacContent',
-			'security.landing.visitUac',
-		]).subscribe((res: any) => {
-			if (!this.uacStatus.detail) {
-				this.uacStatus.detail = res['common.securityAdvisor.loading'];
-			}
-			this.translateString = res;
-			this.uacStatus.title = res['security.landing.uac'];
-			this.uacStatus.content = res['security.landing.uacContent'];
-			this.uacStatus.buttonLabel = res['security.landing.visitUac'];
-			this.uacStatus.launch = uacModel.launch.bind(uacModel);
-			if (uacModel.status !== 'unknown') {
-				this.setUacStatus(uacModel.status);
-			} else if (cacheStatus) {
-				this.setUacStatus(cacheStatus);
-			}
-		});
+		const cacheStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityUacStatus
+		);
+		translate
+			.stream([
+				'common.securityAdvisor.enabled',
+				'common.securityAdvisor.disabled',
+				'common.securityAdvisor.loading',
+				'security.landing.uac',
+				'security.landing.uacContent',
+				'security.landing.visitUac',
+			])
+			.subscribe((res: any) => {
+				if (!this.uacStatus.detail) {
+					this.uacStatus.detail = res['common.securityAdvisor.loading'];
+				}
+				this.translateString = res;
+				this.uacStatus.title = res['security.landing.uac'];
+				this.uacStatus.content = res['security.landing.uacContent'];
+				this.uacStatus.buttonLabel = res['security.landing.visitUac'];
+				this.uacStatus.launch = uacModel.launch.bind(uacModel);
+				if (uacModel.status !== 'unknown') {
+					this.setUacStatus(uacModel.status);
+				} else if (cacheStatus) {
+					this.setUacStatus(cacheStatus);
+				}
+			});
 	}
 
 	setUacStatus(status: string) {
 		if (!this.translateString) {
 			return;
 		}
-		this.uacStatus.detail = this.translateString[`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`];
+		this.uacStatus.detail = this.translateString[
+			`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`
+		];
 		this.uacStatus.status = status === 'enable' ? 'enabled' : 'disabled';
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityUacStatus, status);
 	}

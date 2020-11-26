@@ -10,7 +10,6 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { UiSwitchOnoffComponent } from '../ui/ui-switch-onoff/ui-switch-onoff.component';
 import { CameraControlComponent } from './camera-control.component';
 
-
 xdescribe('CameraControlComponent', () => {
 	let component: CameraControlComponent;
 	let fixture: ComponentFixture<CameraControlComponent>;
@@ -20,9 +19,15 @@ xdescribe('CameraControlComponent', () => {
 			declarations: [CameraControlComponent, UiSwitchOnoffComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule],
-			providers: [TranslateStore, UiSwitchOnoffComponent, CameraFeedService, BaseCameraDetail, VantageShellService, LoggerService],
-		})
-			.compileComponents();
+			providers: [
+				TranslateStore,
+				UiSwitchOnoffComponent,
+				CameraFeedService,
+				BaseCameraDetail,
+				VantageShellService,
+				LoggerService,
+			],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

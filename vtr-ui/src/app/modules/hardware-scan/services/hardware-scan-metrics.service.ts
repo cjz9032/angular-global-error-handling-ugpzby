@@ -2,18 +2,16 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class HardwareScanMetricsService {
-
 	public static readonly EXPORT_LOG_TASK_NAME = 'ExportLog';
 	public static readonly SUCCESS_RESULT = 'Success';
-	public static readonly  FAIL_RESULT = 'Fail';
+	public static readonly FAIL_RESULT = 'Fail';
 
 	private metricsService: any;
 
-	constructor(
-		shellService: VantageShellService) {
+	constructor(shellService: VantageShellService) {
 		this.metricsService = shellService.getMetrics();
 	}
 
@@ -22,25 +20,30 @@ export class HardwareScanMetricsService {
 			ItemType: 'FeatureClick',
 			ItemName: itemName,
 			ItemParent: itemParent,
-			ItemParam: itemParam
+			ItemParam: itemParam,
 		};
 		if (this.metricsService) {
 			this.metricsService.sendAsync(data);
 		}
 	}
 
-	public sendTaskActionMetrics(taskName: string, taskCount: number, taskParam: string, taskResult: any, taskDuration: number) {
+	public sendTaskActionMetrics(
+		taskName: string,
+		taskCount: number,
+		taskParam: string,
+		taskResult: any,
+		taskDuration: number
+	) {
 		const data = {
 			ItemType: 'TaskAction',
 			TaskName: taskName,
 			TaskCount: taskCount,
 			TaskResult: taskResult,
 			TaskParam: taskParam,
-			TaskDuration: taskDuration
+			TaskDuration: taskDuration,
 		};
 		if (this.metricsService) {
 			this.metricsService.sendAsync(data);
 		}
 	}
-
 }

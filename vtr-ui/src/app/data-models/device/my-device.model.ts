@@ -10,5 +10,4 @@ export class MyDevice {
 	public processor: any;
 	public sysupdate: any;
 	public warranty: any;
-
 }

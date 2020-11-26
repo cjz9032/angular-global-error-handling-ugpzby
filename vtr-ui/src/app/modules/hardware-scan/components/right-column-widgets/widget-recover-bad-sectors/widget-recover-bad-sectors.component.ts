@@ -4,7 +4,7 @@ import { RecoverBadSectorsService } from 'src/app/modules/hardware-scan/services
 @Component({
 	selector: 'vtr-widget-recover-bad-sectors',
 	templateUrl: './widget-recover-bad-sectors.component.html',
-	styleUrls: ['./widget-recover-bad-sectors.component.scss']
+	styleUrls: ['./widget-recover-bad-sectors.component.scss'],
 })
 export class WidgetRecoverBadSectorsComponent implements OnInit, OnDestroy {
 	@Input() widgetId: string;
@@ -13,11 +13,11 @@ export class WidgetRecoverBadSectorsComponent implements OnInit, OnDestroy {
 	@Input() disable = false;
 	@Input() tooltipText: string;
 
-	constructor( private rbsService: RecoverBadSectorsService ) { }
+	constructor(private rbsService: RecoverBadSectorsService) {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
-	ngOnDestroy() { }
+	ngOnDestroy() {}
 
 	public onRecoverBadSectors() {
 		if (this.rbsService) {

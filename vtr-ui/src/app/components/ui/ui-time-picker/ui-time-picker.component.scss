@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 $radio-box-shadow: 0 0 0 0.1rem $grey_dark;
 $radio-box-shadow-hover: 0 0 0 0.1rem $menu_hover;
@@ -40,14 +40,14 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 					@include outline-blue;
 				}
 				&:hover {
-						@media #{$white-on-black} {
-							@include high-contrast-black-text-color;
-						}
-						@media #{$black-on-white} {
-							@include high-contrast-white-text-color;
-						}
+					@media #{$white-on-black} {
+						@include high-contrast-black-text-color;
+					}
+					@media #{$black-on-white} {
+						@include high-contrast-white-text-color;
+					}
+				}
 			}
-		}
 			span {
 				color: $shade_light;
 				font-size: 1.6rem;
@@ -69,17 +69,17 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 				}
 
 				/*custom radio code*/
-                .label-radio[type="radio"] {
-                    display: none;
-                }
+				.label-radio[type='radio'] {
+					display: none;
+				}
 
-                .label-radio[type="radio"] + p.label-text::before {
-                    content: "";
-                    display: inline-block;
-                    width: 1.6rem;
-                    height: 1.6rem;
-                    padding: 0.2rem;
-                    margin-right: 0.8rem;
+				.label-radio[type='radio'] + p.label-text::before {
+					content: '';
+					display: inline-block;
+					width: 1.6rem;
+					height: 1.6rem;
+					padding: 0.2rem;
+					margin-right: 0.8rem;
 					box-shadow: $radio-box-shadow;
 					border-radius: 50%;
 					@media #{$white-on-black} {
@@ -90,7 +90,8 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 					}
 				}
 
-				.label-radio[type="radio"] + p.label-text:hover, .label-radio[type="radio"] + p.label-text:active {
+				.label-radio[type='radio'] + p.label-text:hover,
+				.label-radio[type='radio'] + p.label-text:active {
 					&::before {
 						box-shadow: $radio-box-shadow-hover;
 						@media #{$white-on-black} {
@@ -102,8 +103,8 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 					}
 				}
 
-                /* appearance for checked radiobutton */
-                .label-radio[type="radio"]:checked + p.label-text::before {
+				/* appearance for checked radiobutton */
+				.label-radio[type='radio']:checked + p.label-text::before {
 					background-color: $menu_hover;
 					border: 0.2rem solid $light;
 					box-shadow: $radio-box-shadow;
@@ -119,13 +120,13 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 					}
 				}
 
-				.label-radio[type="radio"]:checked + p.label-text:hover {
+				.label-radio[type='radio']:checked + p.label-text:hover {
 					&::before {
 						box-shadow: $radio-box-shadow-hover;
 					}
 				}
 
-				.label-radio[type="radio"]:checked + p.label-text:active {
+				.label-radio[type='radio']:checked + p.label-text:active {
 					&::before {
 						box-shadow: 0 0 0 0.1rem $grey_darker;
 						background-color: $grey_darker;
@@ -133,21 +134,19 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 				}
 
 				.label-radio + p.label-text {
-                    display: flex;
-                    align-items: center;
-                }
-                /* custom radio code*/
+					display: flex;
+					align-items: center;
+				}
+				/* custom radio code*/
 			}
 			.highlight {
 				color: $shade_blue;
 				@media #{$white-on-black} {
-					@include high-contrast-black-text-color ;
-					}
-					@media #{$black-on-white} {
-
-						@include high-contrast-white-text-color ;
-					}
-
+					@include high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-text-color;
+				}
 			}
 		}
 		.minutes-block {
@@ -168,13 +167,13 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 			&:hover {
 				@media #{$white-on-black} {
 					@include high-contrast-black-border;
-					@include high-contrast-black-text-color ;
-					}
-					@media #{$black-on-white} {
-						@include  high-contrast-white-border;
-						@include high-contrast-white-text-color ;
-					}
-		}
+					@include high-contrast-black-text-color;
+				}
+				@media #{$black-on-white} {
+					@include high-contrast-white-border;
+					@include high-contrast-white-text-color;
+				}
+			}
 		}
 	}
 	.weekdays-block {
@@ -240,13 +239,14 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 			border: 0.1rem solid $light;
 		}
 
-		&:hover, &:focus {
-				@media #{$white-on-black} {
-					@include high-contrast-black-border;
-					}
-					@media #{$black-on-white} {
-						@include  high-contrast-white-border;
-					}
+		&:hover,
+		&:focus {
+			@media #{$white-on-black} {
+				@include high-contrast-black-border;
+			}
+			@media #{$black-on-white} {
+				@include high-contrast-white-border;
+			}
 		}
 		&:active {
 			@media #{$white-on-black} {
@@ -293,12 +293,12 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 		background-color: transparent;
 		@media #{$white-on-black} {
 			@include high-contrast-black-border;
-			@include high-contrast-black-text-color ;
-			}
-			@media #{$black-on-white} {
-				@include  high-contrast-white-border;
-				@include  high-contrast-white-text-color;
-			}
+			@include high-contrast-black-text-color;
+		}
+		@media #{$black-on-white} {
+			@include high-contrast-white-border;
+			@include high-contrast-white-text-color;
+		}
 	}
 
 	.time-headings {
@@ -343,10 +343,10 @@ $high-contrast-white-box-shadow: 0 0 0 0.2rem $high-contrast-white-dark-magenta;
 		pointer-events: none;
 		@media #{$white-on-black} {
 			@include high-contrast-black-disabled-border;
-			}
-			@media #{$black-on-white} {
-				@include  high-contrast-white-disabled-border;
-			}
+		}
+		@media #{$black-on-white} {
+			@include high-contrast-white-disabled-border;
+		}
 	}
 }
 

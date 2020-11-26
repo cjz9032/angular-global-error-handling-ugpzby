@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	SimpleChanges,
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -7,7 +15,7 @@ import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standb
 @Component({
 	selector: 'vtr-ui-days-picker',
 	templateUrl: './ui-days-picker.component.html',
-	styleUrls: ['./ui-days-picker.component.scss']
+	styleUrls: ['./ui-days-picker.component.scss'],
 })
 export class UiDaysPickerComponent implements OnInit, OnChanges {
 	@Input() subHeadingText: string;
@@ -19,7 +27,8 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	constructor(
 		public translate: TranslateService,
 		public commonService: CommonService,
-		public smartStandbyService: SmartStandbyService) { }
+		public smartStandbyService: SmartStandbyService
+	) {}
 
 	ngOnInit() {
 		this.smartStandbyService.splitDays();
@@ -71,7 +80,9 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 			case KeyCode.UP:
 			case KeyCode.LEFT:
 				const previousDay = this.smartStandbyService.allDays[index - 1].shortName;
-				const previousDayHtml = document.querySelector('div[aria-labelledby="' + previousDay + '"]') as HTMLElement;
+				const previousDayHtml = document.querySelector(
+					'div[aria-labelledby="' + previousDay + '"]'
+				) as HTMLElement;
 				previousDayHtml.focus();
 				$event.preventDefault();
 				$event.stopPropagation();
@@ -79,7 +90,9 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 			case KeyCode.DOWN:
 			case KeyCode.RIGHT:
 				const nextDay = this.smartStandbyService.allDays[index + 1].shortName;
-				const nextDayHtml = document.querySelector('div[aria-labelledby="' + nextDay + '"]') as HTMLElement;
+				const nextDayHtml = document.querySelector(
+					'div[aria-labelledby="' + nextDay + '"]'
+				) as HTMLElement;
 				nextDayHtml.focus();
 				$event.preventDefault();
 				$event.stopPropagation();

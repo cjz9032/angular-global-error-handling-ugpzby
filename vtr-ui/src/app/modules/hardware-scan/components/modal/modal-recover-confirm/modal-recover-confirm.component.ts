@@ -1,17 +1,19 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/utils/ModalBackgroundNavigationUtils';
+import {
+	disableBackgroundNavigation,
+	reEnableBackgroundNavigation,
+} from '../../../services/utils/ModalBackgroundNavigationUtils';
 
 @Component({
 	selector: 'vtr-modal-recover-confirm',
 	templateUrl: './modal-recover-confirm.component.html',
-	styleUrls: ['./modal-recover-confirm.component.scss']
+	styleUrls: ['./modal-recover-confirm.component.scss'],
 })
 export class ModalRecoverConfirmComponent implements OnInit, OnDestroy {
 	@Output() confirmClicked: EventEmitter<any> = new EventEmitter();
 
-	constructor(public activeModal: NgbActiveModal) {
-	}
+	constructor(public activeModal: NgbActiveModal) {}
 
 	ngOnInit() {
 		disableBackgroundNavigation(document);

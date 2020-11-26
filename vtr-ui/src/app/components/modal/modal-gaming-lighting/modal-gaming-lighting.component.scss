@@ -1,12 +1,12 @@
 @import '../../../app.theme.scss';
-.gaming-help-popup{
+.gaming-help-popup {
 	position: relative;
 	background: $gaming_darkest;
 	color: $gaming_lightest;
-	.modal-header{
+	.modal-header {
 		height: 12rem;
 		padding: 3rem 4rem;
-		border-bottom:none;
+		border-bottom: none;
 		background: url(../../../../assets/images/gaming/light800@2x.jpg) no-repeat center;
 		background-size: 100% auto;
 		@media #{$black-on-white} {
@@ -45,7 +45,7 @@
 		@media #{$white-on-black} {
 			border: 0.1rem solid $gaming_darkest;
 		}
-		.innerContent{
+		.innerContent {
 			width: 100%;
 			background: $light;
 			padding: 2rem;
@@ -56,7 +56,7 @@
 				color: $gaming_darkest;
 				margin-top: 1.5rem;
 			}
-			.title{
+			.title {
 				font-weight: $weight_black;
 			}
 			h3 {

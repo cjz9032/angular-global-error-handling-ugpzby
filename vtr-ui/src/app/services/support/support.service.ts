@@ -9,7 +9,7 @@ import { DeviceService } from '../device/device.service';
 // import { window } from 'rxjs/operators';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class SupportService {
 	private sysinfo: any;
@@ -21,9 +21,9 @@ export class SupportService {
 		viewOrder: 1,
 		pageNumber: 1,
 	};
-	warrantyData: { info: any, cache: boolean };
+	warrantyData: { info: any; cache: boolean };
 	warrantyNormalUrl = 'https://pcsupport.lenovo.com/us/en/warrantylookup';
-	warrantyDataCache: { info: any, cache: boolean };
+	warrantyDataCache: { info: any; cache: boolean };
 	supportDatas: any;
 
 	constructor(
@@ -37,18 +37,24 @@ export class SupportService {
 		this.metrics = shellService.getMetrics();
 		this.userGuide = shellService.getUserGuide();
 		this.commonService = commonService;
-		this.warrantyDataCache = this.commonService.getSessionStorageValue(SessionStorageKey.WarrantyDataCache, undefined);
+		this.warrantyDataCache = this.commonService.getSessionStorageValue(
+			SessionStorageKey.WarrantyDataCache,
+			undefined
+		);
 		if (this.warrantyDataCache) {
 			this.warrantyData = commonService.cloneObj(this.warrantyDataCache);
 		} else {
 			this.warrantyData = {
 				info: {
 					status: -1,
-					url: this.warrantyNormalUrl
+					url: this.warrantyNormalUrl,
 				},
-				cache: false
+				cache: false,
 			};
-			this.commonService.setSessionStorageValue(SessionStorageKey.WarrantyDataCache, this.warrantyData);
+			this.commonService.setSessionStorageValue(
+				SessionStorageKey.WarrantyDataCache,
+				this.warrantyData
+			);
 		}
 		if (this.userGuide) {
 			this.userGuide.refresh();
@@ -78,7 +84,8 @@ export class SupportService {
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);
-		} else { }
+		} else {
+		}
 	}
 
 	widgetItemClick(clickItem: string) {
@@ -102,7 +109,7 @@ export class SupportService {
 			backdrop: true,
 			centered: true,
 			ariaLabelledBy: 'find-us-modal-basic-title',
-			windowClass: 'Find-Us-Modal'
+			windowClass: 'Find-Us-Modal',
 		});
 	}
 	showAboutPop() {
@@ -110,7 +117,7 @@ export class SupportService {
 			backdrop: true,
 			centered: true,
 			ariaLabelledBy: 'about-modal-basic-title',
-			windowClass: 'About-Modal'
+			windowClass: 'About-Modal',
 		});
 	}
 

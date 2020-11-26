@@ -4,17 +4,15 @@ import { SystemEventFeature, EventTypes, SystemEvent } from '@lenovo/tan-client-
 import { CommonService } from '../common/common.service';
 import { LoggerService } from '../logger/logger.service';
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class SystemEventService {
-
 	private sysEvent: SystemEventFeature;
 
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
-		private logger: LoggerService,
-
+		private logger: LoggerService
 	) {
 		this.sysEvent = this.shellService.getSysEventFeature();
 		if (this.sysEvent) {
@@ -29,7 +27,7 @@ export class SystemEventService {
 		try {
 			await this.sysEvent.registerCustomEvent(eventName);
 			return true;
-		} catch{
+		} catch {
 			this.logger.error(`registerCustomEvent ${eventName} failed`);
 		}
 		return false;
@@ -39,7 +37,7 @@ export class SystemEventService {
 		try {
 			await this.sysEvent.unRegisterCustomEvent(eventName);
 			return true;
-		} catch{
+		} catch {
 			this.logger.error(`unRegisterCustomEvent ${eventName} failed`);
 		}
 		return false;
@@ -48,10 +46,8 @@ export class SystemEventService {
 	cancelListen(): void {
 		try {
 			this.sysEvent.cancelListen();
-		}
-		catch{
+		} catch {
 			this.logger.error(`cancelListen failed`);
 		}
 	}
-
 }

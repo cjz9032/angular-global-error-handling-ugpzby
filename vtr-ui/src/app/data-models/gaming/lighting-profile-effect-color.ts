@@ -6,5 +6,5 @@ export class LightingProfileEffectColorNUmber {
 export class LightingProfileEffectColorString {
 	profileId?: number;
 	lightPanelType?: number;
-	lightColor?: String
+	lightColor?: String;
 }

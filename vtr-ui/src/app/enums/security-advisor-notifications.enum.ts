@@ -1,3 +1,3 @@
 export enum SecurityAdvisorNotifications {
-	WifiSecurityTurnedOn = 'WifiSecurityTurnedOn'
+	WifiSecurityTurnedOn = 'WifiSecurityTurnedOn',
 }

@@ -8,9 +8,8 @@ xdescribe('WidgetOfflineInfoComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetOfflineInfoComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetOfflineInfoComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

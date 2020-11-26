@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .vtr-widget-hardware-scan-item {
 	padding: 0 2.4rem;
@@ -19,7 +19,7 @@
 		}
 
 		//angle-up and angle-down icon
-		fa-icon{
+		fa-icon {
 			font-size: 2.4rem;
 			color: $gaming_grey_lightest;
 		}
@@ -69,7 +69,7 @@
 
 		fa-icon {
 			font-size: $fontsize_xs;
-			color:$blue_lightest;
+			color: $blue_lightest;
 			padding: 0 1rem;
 		}
 	}
@@ -81,8 +81,8 @@
 		@include high-contrast-border;
 
 		.table-details {
-			font-size:$fontsize_xs;
-			font-weight:$weight_regular;
+			font-size: $fontsize_xs;
+			font-weight: $weight_regular;
 		}
 	}
 
@@ -122,7 +122,8 @@
 		padding-left: 3.2rem;
 		align-items: center;
 
-		.title, .subtitle{
+		.title,
+		.subtitle {
 			margin-bottom: 0;
 		}
 
@@ -132,7 +133,7 @@
 		}
 	}
 
-	.test-list{
+	.test-list {
 		padding-left: 4.2rem;
 	}
 

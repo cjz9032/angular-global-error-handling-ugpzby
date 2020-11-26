@@ -36,7 +36,7 @@ import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-b
 		// MenuMainComponent,
 		ModalCommonConfirmationComponent,
 		ModalLenovoIdComponent,
-		PageUserComponent
+		PageUserComponent,
 	],
 	imports: [
 		AngularSvgIconModule,
@@ -54,7 +54,7 @@ import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-b
 		UiCloseButtonModule,
 		MetricsModule,
 		HeaderMainModule,
-		AppSearchModule
+		AppSearchModule,
 	],
 	exports: [
 		AngularSvgIconModule,
@@ -78,7 +78,7 @@ import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-b
 		UiCloseButtonModule,
 		MetricsModule,
 		HeaderMainModule,
-		AppSearchModule
+		AppSearchModule,
 	],
 	providers: [
 		CommsService,
@@ -88,13 +88,13 @@ import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-b
 		DisplayService,
 		MockService,
 		SettingsService,
-		httpInterceptorProviders
+		httpInterceptorProviders,
 	],
 	entryComponents: [
 		// ModalWelcomeComponent,
 		ModalCommonConfirmationComponent,
-		ModalLenovoIdComponent
+		ModalLenovoIdComponent,
 	],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class SharedModule { }
+export class SharedModule {}

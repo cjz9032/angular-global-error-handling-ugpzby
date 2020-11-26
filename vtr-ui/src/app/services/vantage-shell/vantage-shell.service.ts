@@ -14,9 +14,8 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 declare var window;
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
-
 export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
@@ -32,15 +31,22 @@ export class VantageShellService {
 			this.setConsoleLogProxy();
 			const metricClient = this.shell.MetricsClient ? new this.shell.MetricsClient() : null;
 			const powerClient = this.shell.PowerClient ? this.shell.PowerClient() : null;
-			this.phoenix = Phoenix.default(new Container({
-				defaultScope: BindingScopeEnum.Singleton
-			}), {
-				metricsBroker: metricClient,
-				hsaPowerBroker: powerClient,
-				hsaDolbyBroker: this.shell.DolbyRpcClient ? this.shell.DolbyRpcClient.instance : null,
-				hsaForteBroker: this.shell.ForteRpcClient ? this.shell.ForteRpcClient.getInstance() : null,
-				hsaHPDIdeaBroker: this.getHsaIntelligentSecurity()
-			});
+			this.phoenix = Phoenix.default(
+				new Container({
+					defaultScope: BindingScopeEnum.Singleton,
+				}),
+				{
+					metricsBroker: metricClient,
+					hsaPowerBroker: powerClient,
+					hsaDolbyBroker: this.shell.DolbyRpcClient
+						? this.shell.DolbyRpcClient.instance
+						: null,
+					hsaForteBroker: this.shell.ForteRpcClient
+						? this.shell.ForteRpcClient.getInstance()
+						: null,
+					hsaHPDIdeaBroker: this.getHsaIntelligentSecurity(),
+				}
+			);
 
 			this.phoenix.loadFeatures([
 				Phoenix.Features.Device,
@@ -65,7 +71,7 @@ export class VantageShellService {
 				Phoenix.Features.SmartPerformance,
 				Phoenix.Features.SystemEvent,
 				Phoenix.Features.ContentLocalCache,
-				Phoenix.Features.Snapshot
+				Phoenix.Features.Snapshot,
 			]);
 		} else {
 			this.isShellAvailable = false;
@@ -238,7 +244,10 @@ export class VantageShellService {
 			if (!this.phoenix.securityAdvisor) {
 				this.phoenix.loadFeatures([Phoenix.Features.SecurityAdvisor]);
 				const wifiSecurity = this.phoenix.securityAdvisor.wifiSecurity;
-				this.phoenix.securityAdvisor.wifiSecurity = new WifisecurityProxy(wifiSecurity, this.commonService).getObj();
+				this.phoenix.securityAdvisor.wifiSecurity = new WifisecurityProxy(
+					wifiSecurity,
+					this.commonService
+				).getObj();
 			}
 			return this.phoenix.securityAdvisor;
 		}
@@ -475,7 +484,7 @@ export class VantageShellService {
 				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) { }
+			} catch (error) {}
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
@@ -488,16 +497,18 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-	
-	public async isDeviceTagExists(tagName){
+
+	public async isDeviceTagExists(tagName) {
 		if (this.phoenix) {
-			try{
-				return await this.phoenix.deviceFilter.deviceFilterEval(JSON.parse(`{"DeviceTags.Any": ["${tagName}"]}`));
-			} catch (error){}
+			try {
+				return await this.phoenix.deviceFilter.deviceFilterEval(
+					JSON.parse(`{"DeviceTags.Any": ["${tagName}"]}`)
+				);
+			} catch (error) {}
 		}
 		return false;
 	}
-	
+
 	public getLogger(): any {
 		if (this.shell) {
 			return this.shell.Logger;
@@ -655,7 +666,10 @@ export class VantageShellService {
 	public getHsaIntelligentSecurity(): any {
 		try {
 			const win: any = window;
-			if (win.VantageShellExtension && win.VantageShellExtension.HumanPresenceDetectionRpcClient) {
+			if (
+				win.VantageShellExtension &&
+				win.VantageShellExtension.HumanPresenceDetectionRpcClient
+			) {
 				return new win.VantageShellExtension.HumanPresenceDetectionRpcClient();
 			}
 			return undefined;
@@ -698,8 +712,8 @@ export class VantageShellService {
 		return undefined;
 	}
 	/***
-     * returns macroKeyClearInfo object from VantageShellService of JS Bridge
-     ***/
+	 * returns macroKeyClearInfo object from VantageShellService of JS Bridge
+	 ***/
 	public setMacroKeyClear(macroKey: string): any {
 		if (this.phoenix) {
 			if (!this.phoenix.gaming) {
@@ -913,13 +927,15 @@ export class VantageShellService {
 
 	public getVantageStub(): any {
 		const win = window as any;
-		return win.VantageStub || {
-			appStartTime: 0,
-			navigateTime: 0,
-			domloadedTime: 0,
-			launchParms: null,
-			launchType: null
-		};
+		return (
+			win.VantageStub || {
+				appStartTime: 0,
+				navigateTime: 0,
+				domloadedTime: 0,
+				launchParms: null,
+				launchType: null,
+			}
+		);
 	}
 
 	public getBetaUser(): any {

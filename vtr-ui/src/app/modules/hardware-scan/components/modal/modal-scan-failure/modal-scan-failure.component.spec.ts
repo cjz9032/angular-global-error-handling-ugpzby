@@ -8,9 +8,8 @@ xdescribe('ModalEticketComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ ModalScanFailureComponent ]
-		})
-		.compileComponents();
+			declarations: [ModalScanFailureComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

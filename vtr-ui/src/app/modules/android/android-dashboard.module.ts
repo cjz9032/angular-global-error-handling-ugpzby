@@ -12,9 +12,7 @@ import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel
 import { PageDashboardAndroidComponent } from 'src/app/components/pages/page-dashboard-android/page-dashboard-android.component';
 
 @NgModule({
-	declarations: [
-		PageDashboardAndroidComponent
-	],
+	declarations: [PageDashboardAndroidComponent],
 	imports: [
 		CommonModule,
 		AndroidDashboardRoutingModule,
@@ -31,10 +29,10 @@ import { PageDashboardAndroidComponent } from 'src/app/components/pages/page-das
 		WidgetCarouselModule,
 		WidgetOfflineModule,
 		HeaderMainModule,
-		PageDashboardAndroidComponent
+		PageDashboardAndroidComponent,
 	],
 	providers: [MockService],
 	entryComponents: [FeedbackFormComponent],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class AndroidDashboardModule { }
+export class AndroidDashboardModule {}

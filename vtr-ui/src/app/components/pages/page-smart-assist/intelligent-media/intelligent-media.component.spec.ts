@@ -11,7 +11,6 @@ import { RouteHandlerService } from 'src/app/services/route-handler/route-handle
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { IntelligentMediaComponent } from './intelligent-media.component';
 
-
 describe('component: IntelligentMediaComponent', () => {
 	let component: IntelligentMediaComponent;
 	let fixture: ComponentFixture<IntelligentMediaComponent>;
@@ -20,11 +19,7 @@ describe('component: IntelligentMediaComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [IntelligentMediaComponent],
-			imports: [
-				HttpClientTestingModule,
-				TranslateModule.forRoot(),
-				RouterTestingModule
-			],
+			imports: [HttpClientTestingModule, TranslateModule.forRoot(), RouterTestingModule],
 			providers: [
 				SmartAssistService,
 				LoggerService,
@@ -33,10 +28,9 @@ describe('component: IntelligentMediaComponent', () => {
 				RouteHandlerService,
 				DisplayService,
 				TranslateService,
-				MetricService
-			]
-		})
-			.compileComponents();
+				MetricService,
+			],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -52,10 +46,9 @@ describe('component: IntelligentMediaComponent', () => {
 	it('setVideoPauseResumeStatus', () => {
 		smartAssist = TestBed.inject(SmartAssistService);
 		smartAssist.isShellAvailable = true;
-		const spy = spyOn(
-			smartAssist,
-			'setVideoPauseResumeStatus'
-		).and.returnValue(Promise.resolve(true));
+		const spy = spyOn(smartAssist, 'setVideoPauseResumeStatus').and.returnValue(
+			Promise.resolve(true)
+		);
 
 		component.setVideoPauseResumeStatus({ switchValue: true });
 		expect(smartAssist.setVideoPauseResumeStatus).toHaveBeenCalled();
@@ -64,10 +57,9 @@ describe('component: IntelligentMediaComponent', () => {
 	it('setSuperResolutionStatus', () => {
 		smartAssist = TestBed.inject(SmartAssistService);
 		smartAssist.isShellAvailable = true;
-		const spy = spyOn(
-			smartAssist,
-			'setSuperResolutionStatus'
-		).and.returnValue(Promise.resolve(true));
+		const spy = spyOn(smartAssist, 'setSuperResolutionStatus').and.returnValue(
+			Promise.resolve(true)
+		);
 
 		component.setSuperResolutionStatus({ switchValue: true });
 		expect(smartAssist.setSuperResolutionStatus).toHaveBeenCalled();

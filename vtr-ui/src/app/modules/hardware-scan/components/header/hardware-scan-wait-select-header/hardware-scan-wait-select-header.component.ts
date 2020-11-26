@@ -3,9 +3,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
 	selector: 'vtr-hardware-scan-wait-select-header',
 	templateUrl: './hardware-scan-wait-select-header.component.html',
-	styleUrls: ['./hardware-scan-wait-select-header.component.scss']
+	styleUrls: ['./hardware-scan-wait-select-header.component.scss'],
 })
-
 export class HardwareScanWaitSelectHeaderComponent implements OnInit {
 	// Input
 	@Input() disableButtonScan: boolean;
@@ -14,9 +13,9 @@ export class HardwareScanWaitSelectHeaderComponent implements OnInit {
 	@Output() startQuickScan = new EventEmitter();
 	@Output() checkAnchor = new EventEmitter();
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	onQuickScan() {
 		this.startQuickScan.emit();

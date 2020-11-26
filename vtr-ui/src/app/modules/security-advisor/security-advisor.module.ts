@@ -76,7 +76,6 @@ import { WidgetMcafeeGraphicIntroductionComponent } from '../../components/pages
 import { WidgetMcafeePeaceOfMindComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-peace-of-mind/widget-mcafee-peace-of-mind.component';
 import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-content-card/widget-mcafee-content-card.component';
 
-
 @NgModule({
 	declarations: [
 		PageSecurityComponent,
@@ -134,14 +133,10 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		NgbTooltipModule,
 		MetricsModule,
 		MatButtonModule,
-		MatCheckboxModule
+		MatCheckboxModule,
 	],
-	providers: [
-		DialogService
-	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	]
+	providers: [DialogService],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SecurityAdvisorModule {
 	constructor(library: FaIconLibrary) {

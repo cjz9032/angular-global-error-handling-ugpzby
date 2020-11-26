@@ -5,7 +5,6 @@ import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { BatteryGaugeResetComponent } from './battery-gauge-reset.component';
 
-
 describe('BatteryGaugeResetComponent', () => {
 	let component: BatteryGaugeResetComponent;
 	let modalService;
@@ -23,7 +22,7 @@ describe('BatteryGaugeResetComponent', () => {
 			resetErrorLog: 'ERROR_UNEXPECTED',
 			stage: 1,
 			stageNum: 3,
-			startTime: '28 Jan 2020'
+			startTime: '28 Jan 2020',
 		},
 		{
 			barCode: 'X2XP899J0N0',
@@ -35,17 +34,16 @@ describe('BatteryGaugeResetComponent', () => {
 			resetErrorLog: 'ERROR_SUCCESS',
 			stage: 0,
 			stageNum: 0,
-			startTime: ''
-		}
+			startTime: '',
+		},
 	];
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [BatteryGaugeResetComponent],
 			imports: [TranslationModule.forChild()],
 			providers: [TranslateStore],
-			schemas: [NO_ERRORS_SCHEMA]
-		})
-			.compileComponents();
+			schemas: [NO_ERRORS_SCHEMA],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -54,7 +52,6 @@ describe('BatteryGaugeResetComponent', () => {
 		fixture.detectChanges();
 		modalService = fixture.debugElement.injector.get(NgbModal);
 		powerService = fixture.debugElement.injector.get(NgbModal);
-
 	});
 
 	it('should create', () => {
@@ -63,7 +60,16 @@ describe('BatteryGaugeResetComponent', () => {
 
 	it('should call onBatteryGaugeReset', () => {
 		component.batteryService.gaugeResetInfo = gaugeResetInfo;
-		spyOn(modalService, 'open').and.returnValue({ result: Promise.resolve('positive'), componentInstance: { title: '', negativeResponseText: '', positiveResponseText: '', description1: '', description2: '' } });
+		spyOn(modalService, 'open').and.returnValue({
+			result: Promise.resolve('positive'),
+			componentInstance: {
+				title: '',
+				negativeResponseText: '',
+				positiveResponseText: '',
+				description1: '',
+				description2: '',
+			},
+		});
 
 		const event = new MouseEvent('click');
 		// spyOn(component, 'stopBatteryGaugeReset');

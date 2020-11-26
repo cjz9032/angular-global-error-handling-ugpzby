@@ -12,5 +12,5 @@ export class SunsetToSunriseStatus {
 		public permission: boolean,
 		public sunriseTime: string,
 		public sunsetTime: string
-	) { }
+	) {}
 }

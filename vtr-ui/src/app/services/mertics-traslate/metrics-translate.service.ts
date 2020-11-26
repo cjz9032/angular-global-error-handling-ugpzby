@@ -3,11 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class MetricsTranslateService {
-
-
 	private baseLanguage;
 	private targetLanguage;
 
@@ -15,7 +13,6 @@ export class MetricsTranslateService {
 		setTimeout(() => {
 			this.loadBaseAndTargetFile();
 		}, 0);
-
 	}
 
 	public setBaseLanguage(baseLanguage) {
@@ -48,12 +45,16 @@ export class MetricsTranslateService {
 		const toReturn = {};
 
 		for (const i in ob) {
-			if (!ob.hasOwnProperty(i)) { continue; }
+			if (!ob.hasOwnProperty(i)) {
+				continue;
+			}
 
-			if ((typeof ob[i]) === 'object' && ob[i] !== null) {
+			if (typeof ob[i] === 'object' && ob[i] !== null) {
 				const flatObject = this.flatten(ob[i]);
 				for (const x in flatObject) {
-					if (!flatObject.hasOwnProperty(x)) { continue; }
+					if (!flatObject.hasOwnProperty(x)) {
+						continue;
+					}
 
 					toReturn[i + '.' + x] = flatObject[x];
 				}
@@ -81,13 +82,13 @@ export class MetricsTranslateService {
 	loadBaseAndTargetFile() {
 		this.http.get('assets/i18n/en.json').subscribe((baseLanguage) => {
 			if (this.translateService.currentLang) {
-				return this.http.get('assets/i18n/' + this.translateService.currentLang + '.json').subscribe((targetLanguage) => {
-					this.setTargetLanguage(targetLanguage);
-					this.setBaseLanguage(baseLanguage);
-				});
+				return this.http
+					.get('assets/i18n/' + this.translateService.currentLang + '.json')
+					.subscribe((targetLanguage) => {
+						this.setTargetLanguage(targetLanguage);
+						this.setBaseLanguage(baseLanguage);
+					});
 			}
 		});
-
-
 	}
 }

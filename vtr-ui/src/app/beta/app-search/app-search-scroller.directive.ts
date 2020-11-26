@@ -2,17 +2,12 @@ import { Directive, Input, ElementRef, AfterViewInit, OnDestroy } from '@angular
 import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 
 @Directive({
-	selector: '[vtrAppSearchScroller]'
+	selector: '[vtrAppSearchScroller]',
 })
-
 export class AppSearchScrollerDirective implements AfterViewInit, OnDestroy {
 	@Input('vtrAppSearchScroller') anchorIdArray: Array<string>;
 
-	constructor(
-		private elm: ElementRef,
-		private appSearchService: AppSearchService
-	) {
-	}
+	constructor(private elm: ElementRef, private appSearchService: AppSearchService) {}
 
 	scrollIntoView() {
 		this.elm.nativeElement.scrollIntoView(true);

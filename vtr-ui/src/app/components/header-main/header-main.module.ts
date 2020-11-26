@@ -11,19 +11,9 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 @NgModule({
-	declarations: [
-		HeaderMainComponent,
-		UiHeaderSubpageComponent,
-		MenuHeaderComponent
-	],
-	exports: [
-		MetricsModule,
-		HeaderMainComponent,
-		UiHeaderSubpageComponent,
-		MenuHeaderComponent
-	],
+	declarations: [HeaderMainComponent, UiHeaderSubpageComponent, MenuHeaderComponent],
+	exports: [MetricsModule, HeaderMainComponent, UiHeaderSubpageComponent, MenuHeaderComponent],
 	imports: [
 		CommonModule,
 		MetricsModule,
@@ -31,12 +21,9 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		RouterModule,
 		FontAwesomeModule,
 		AppSearchModule,
-		NgbTooltipModule
+		NgbTooltipModule,
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA,
-		NO_ERRORS_SCHEMA
-	]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class HeaderMainModule {
 	constructor(library: FaIconLibrary) {

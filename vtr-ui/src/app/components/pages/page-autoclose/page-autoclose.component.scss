@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 .vtr-widget-auto-close {
 	color: $gaming_lightest;
 	@media #{$high-contrast} {
@@ -33,7 +33,7 @@
 							margin-top: 0.1rem;
 							transition: all 0.2s ease-in;
 							@media #{$high-contrast} {
-								background:window;
+								background: window;
 							}
 						}
 					}
@@ -135,11 +135,11 @@
 	}
 }
 
-::ng-deep body.focus-enable{
+::ng-deep body.focus-enable {
 	.is-gaming {
-		.Article-Detail-Modal{
-			button.close-button{
-				&:focus{
+		.Article-Detail-Modal {
+			button.close-button {
+				&:focus {
 					@media #{$high-contrast} {
 						border-color: highlight !important;
 					}

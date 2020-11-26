@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, ContentChild, TemplateRef, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'vtr-ui-tooltips',
-  templateUrl: './ui-tooltips.component.html',
-  styleUrls: ['./ui-tooltips.component.scss']
+	selector: 'vtr-ui-tooltips',
+	templateUrl: './ui-tooltips.component.html',
+	styleUrls: ['./ui-tooltips.component.scss'],
 })
 export class UiTooltipsComponent implements OnInit {
 	@Input() positionContextTo: 'center' | 'right' | 'left' = 'center';
@@ -11,16 +11,15 @@ export class UiTooltipsComponent implements OnInit {
 	@ContentChild('tooltipContext', { static: false }) tooltipContext: TemplateRef<ElementRef>;
 	isShowContext = false;
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
-  	showContext() {
+	showContext() {
 		this.isShowContext = true;
 	}
 
 	hideContext() {
 		this.isShowContext = false;
 	}
-
 }

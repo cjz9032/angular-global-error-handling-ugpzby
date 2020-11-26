@@ -1,16 +1,10 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	Output,
-	EventEmitter
-} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 // @ts-ignore
 @Component({
 	selector: 'vtr-widget-switch-icon',
 	templateUrl: './widget-switch-icon.component.html',
-	styleUrls: ['./widget-switch-icon.component.scss']
+	styleUrls: ['./widget-switch-icon.component.scss'],
 })
 export class WidgetSwitchIconComponent implements OnInit {
 	@Input() title: string;
@@ -27,13 +21,11 @@ export class WidgetSwitchIconComponent implements OnInit {
 	@Input() switchId: string;
 	@Input() hideOnOffLabel = false;
 	@Input() buttonRole: string;
-	constructor() { }
+	constructor() {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	onChange(event: Event) {
-
 		if (this.disable || this.isLoading) {
 			this.value = false;
 			// event.stopPropagation();
@@ -45,7 +37,6 @@ export class WidgetSwitchIconComponent implements OnInit {
 		} else {
 			this.value = !this.value;
 			this.toggle.emit(this.value);
-
 		}
 	}
 	findId(value, disable) {
@@ -56,7 +47,5 @@ export class WidgetSwitchIconComponent implements OnInit {
 		} else {
 			return 'qs-' + this.switchId + '-switch-disable-state';
 		}
-
 	}
-
 }

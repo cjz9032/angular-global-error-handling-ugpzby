@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .vtr-hardware-components {
 	.body-content {
@@ -28,7 +28,7 @@
 		}
 	}
 
-	.header2{
+	.header2 {
 		color: $menu_hover;
 		font-size: $fontsize_xl;
 		font-weight: $weight_light;
@@ -69,11 +69,11 @@
 	}
 
 	.link-support {
-	padding-top: 1rem;
-	text-decoration: underline;
-	&:hover {
-		color: $menu_hover;
-		text-decoration: none;
+		padding-top: 1rem;
+		text-decoration: underline;
+		&:hover {
+			color: $menu_hover;
+			text-decoration: none;
+		}
 	}
-}
 }

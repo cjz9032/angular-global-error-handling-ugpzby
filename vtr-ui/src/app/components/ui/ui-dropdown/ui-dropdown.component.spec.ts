@@ -9,49 +9,50 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiDropDownComponent } from './ui-dropdown.component';
 
-
-const interval = [{
-	name: 'Always on',
-	value: 0,
-	placeholder: '',
-	text: 'Always on',
-	metricsValue: {}
-},
-{
-	name: '30',
-	value: 1,
-	placeholder: 'seconds',
-	text: '30 seconds',
-	metricsValue: {}
-},
-{
-	name: '1',
-	value: 2,
-	placeholder: 'minute',
-	text: '1 minute',
-	metricsValue: {}
-},
-{
-	name: '15',
-	value: 7,
-	placeholder: 'minutes',
-	text: '15 minutes',
-	metricsValue: {}
-},
-{
-	name: 'Never',
-	value: 9,
-	placeholder: '',
-	text: 'Never',
-	metricsValue: {}
-},
-{
-	name: 'Half time of display off timer',
-	value: 10,
-	placeholder: '',
-	text: 'Half time of display off timer',
-	metricsValue: {}
-}];
+const interval = [
+	{
+		name: 'Always on',
+		value: 0,
+		placeholder: '',
+		text: 'Always on',
+		metricsValue: {},
+	},
+	{
+		name: '30',
+		value: 1,
+		placeholder: 'seconds',
+		text: '30 seconds',
+		metricsValue: {},
+	},
+	{
+		name: '1',
+		value: 2,
+		placeholder: 'minute',
+		text: '1 minute',
+		metricsValue: {},
+	},
+	{
+		name: '15',
+		value: 7,
+		placeholder: 'minutes',
+		text: '15 minutes',
+		metricsValue: {},
+	},
+	{
+		name: 'Never',
+		value: 9,
+		placeholder: '',
+		text: 'Never',
+		metricsValue: {},
+	},
+	{
+		name: 'Half time of display off timer',
+		value: 10,
+		placeholder: '',
+		text: 'Half time of display off timer',
+		metricsValue: {},
+	},
+];
 
 describe('UiDropdownComponent', () => {
 	let component: UiDropDownComponent;
@@ -64,13 +65,17 @@ describe('UiDropdownComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [UiDropDownComponent],
 			providers: [LoggerService, DevService, MetricService],
-			imports: [RouterTestingModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				}
-			}), HttpClientTestingModule],
+			imports: [
+				RouterTestingModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+				}),
+				HttpClientTestingModule,
+			],
 		});
 	}));
 

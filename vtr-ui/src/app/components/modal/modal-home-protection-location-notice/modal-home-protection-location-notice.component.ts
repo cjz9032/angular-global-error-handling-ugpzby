@@ -5,10 +5,9 @@ import { WinRT, WifiSecurity } from '@lenovo/tan-client-bridge';
 @Component({
 	selector: 'vtr-modal-home-protection-location-notice',
 	templateUrl: './modal-home-protection-location-notice.component.html',
-	styleUrls: ['./modal-home-protection-location-notice.component.scss']
+	styleUrls: ['./modal-home-protection-location-notice.component.scss'],
 })
 export class ModalHomeProtectionLocationNoticeComponent implements OnInit {
-
 	@Input() header: string;
 	@Input() description: string;
 	@Input() url: string;
@@ -20,10 +19,9 @@ export class ModalHomeProtectionLocationNoticeComponent implements OnInit {
 	@Output() OkClick = new EventEmitter<any>();
 	@Output() CancelClick = new EventEmitter<any>();
 
-	constructor(public activeModal: NgbActiveModal) { }
+	constructor(public activeModal: NgbActiveModal) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	public onOkClick($event: any) {
 		this.activeModal.close(true);
@@ -40,4 +38,3 @@ export class ModalHomeProtectionLocationNoticeComponent implements OnInit {
 		modal.focus();
 	}
 }
-

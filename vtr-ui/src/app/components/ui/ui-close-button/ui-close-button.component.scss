@@ -21,7 +21,7 @@
 		line-height: 0;
 		font-size: 0;
 		transform: rotate(45deg);
-		transition: background .2s;
+		transition: background 0.2s;
 
 		&::before {
 			content: '';
@@ -30,12 +30,11 @@
 			height: 100%;
 			background: $grey_dark;
 			transform: rotate(-90deg);
-			transition: background .2s;
+			transition: background 0.2s;
 		}
 	}
 
 	&:hover {
-
 		.x,
 		.x::before {
 			background: $main;
@@ -48,7 +47,6 @@
 	}
 
 	@media #{$high-contrast} {
-
 		.x,
 		.x::before,
 		&:hover .x,
@@ -58,7 +56,6 @@
 	}
 
 	@media #{$black-on-white} {
-
 		.x,
 		.x::before,
 		&:hover .x,
@@ -68,7 +65,6 @@
 	}
 
 	@media #{$white-on-black} {
-
 		.x,
 		.x::before,
 		&:hover .x,

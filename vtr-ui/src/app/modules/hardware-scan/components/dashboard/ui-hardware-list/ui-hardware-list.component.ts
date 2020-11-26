@@ -5,7 +5,7 @@ import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hard
 @Component({
 	selector: 'vtr-ui-hardware-list',
 	templateUrl: './ui-hardware-list.component.html',
-	styleUrls: ['./ui-hardware-list.component.scss']
+	styleUrls: ['./ui-hardware-list.component.scss'],
 })
 export class UiHardwareListComponent implements OnInit {
 	@Input() componentId: string;
@@ -18,10 +18,9 @@ export class UiHardwareListComponent implements OnInit {
 
 	constructor(private translate: TranslateService) {
 		this.testResultEnum = HardwareScanTestResult;
-	 }
-
-	ngOnInit() {
 	}
+
+	ngOnInit() {}
 
 	public setTooltipInfo(text: string, index: number) {
 		this.information = text;

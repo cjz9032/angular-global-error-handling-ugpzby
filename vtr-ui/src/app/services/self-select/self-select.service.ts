@@ -19,7 +19,7 @@ export enum SegmentConst {
 	ConsumerEducation = 'Consumer_Education',
 	SMB = 'SMB',
 	Commercial = 'Commercial',
-	Gaming = 'Gaming'
+	Gaming = 'Gaming',
 }
 
 export class SegmentConstHelper {
@@ -29,14 +29,16 @@ export class SegmentConstHelper {
 	 * @param segment Current segment value
 	 */
 	public static includedInCommonConsumer(segment): boolean {
-		return [SegmentConst.ConsumerBase,
+		return [
+			SegmentConst.ConsumerBase,
 			SegmentConst.ConsumerGaming,
-			SegmentConst.ConsumerEducation].includes(segment);
+			SegmentConst.ConsumerEducation,
+		].includes(segment);
 	}
 }
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class SelfSelectService {
 	public interests = [
@@ -61,7 +63,7 @@ export class SelfSelectService {
 		personal: SegmentConst.ConsumerBase,
 		gaming: SegmentConst.ConsumerGaming,
 		education: SegmentConst.ConsumerEducation,
-		work: SegmentConst.SMB
+		work: SegmentConst.SMB,
 	};
 	private _savedSegment = null; // for feature filter use
 	private get savedSegment() {
@@ -70,9 +72,15 @@ export class SelfSelectService {
 	private set savedSegment(value) {
 		if (value && this._savedSegment !== value) {
 			this._savedSegment = value;
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.LocalInfoSegment, this._savedSegment);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.LocalInfoSegment,
+				this._savedSegment
+			);
 			this.commonService.sendNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
-			this.commonService.sendReplayNotification(SelfSelectEvent.SegmentChange, this.savedSegment);
+			this.commonService.sendReplayNotification(
+				SelfSelectEvent.SegmentChange,
+				this.savedSegment
+			);
 		}
 	}
 	private selfSelect: any;
@@ -123,7 +131,8 @@ export class SelfSelectService {
 	 */
 	public saveConfig(changedConfig, reloadRequired?) {
 		try {
-			const reloadNecessary = reloadRequired === true && this.savedSegment !== changedConfig.usageType;
+			const reloadNecessary =
+				reloadRequired === true && this.savedSegment !== changedConfig.usageType;
 			this.interests = this.commonService.cloneObj(changedConfig.interests);
 			this.usageType = changedConfig.usageType;
 			this.savedSegment = this.usageType;
@@ -133,14 +142,17 @@ export class SelfSelectService {
 					this.checkedArray.push(item.label);
 				}
 				if (item && !item.checked && this.checkedArray.includes(item.label)) {
-					this.checkedArray = this.checkedArray.filter(e => e !== item.label);
+					this.checkedArray = this.checkedArray.filter((e) => e !== item.label);
 				}
 			});
 			const config = {
 				customtags: this.checkedArray.join(','),
-				segment: this.usageType
+				segment: this.usageType,
 			};
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig, config);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.ChangedSelfSelectConfig,
+				config
+			);
 			this.syncConfigToService(config);
 			if (reloadNecessary) {
 				this.reloadVantage();
@@ -159,30 +171,37 @@ export class SelfSelectService {
 	}
 
 	private async initialize() {
-		let config = this.localCacheService.getLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig);
+		let config = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.ChangedSelfSelectConfig
+		);
 		this.machineInfo = await this.deviceService.getMachineInfo();
 		this.userProfileEnabled = this.checkUserProfileEnabled();
-		if (!config
-			|| !config.segment
-			|| !this.isSegmentMatchCurrentMachine(config.segment, this.machineInfo)) {
+		if (
+			!config ||
+			!config.segment ||
+			!this.isSegmentMatchCurrentMachine(config.segment, this.machineInfo)
+		) {
 			let defaultSegment = this.calcDefaultSegment(this.machineInfo);
 			config = {
 				customtags: '',
-				segment: defaultSegment
+				segment: defaultSegment,
 			};
 			const freSegment = await this.getPersonaFromLenovoWelcome();
-			if (defaultSegment !== SegmentConst.Gaming
-				&& freSegment) {
+			if (defaultSegment !== SegmentConst.Gaming && freSegment) {
 				this.userSelectedInFre = true;
 				config.segment = freSegment;
 				config.segmentSelectedInFre = this.userSelectedInFre;
 			}
-			if (defaultSegment === SegmentConst.Gaming
-				|| this.userSelectedInFre) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig, config);
+			if (defaultSegment === SegmentConst.Gaming || this.userSelectedInFre) {
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.ChangedSelfSelectConfig,
+					config
+				);
 				this.segmentSelected = true;
 			} else {
-				this.localCacheService.removeLocalCacheValue(LocalStorageKey.ChangedSelfSelectConfig);
+				this.localCacheService.removeLocalCacheValue(
+					LocalStorageKey.ChangedSelfSelectConfig
+				);
 			}
 		} else {
 			this.segmentSelected = true;
@@ -200,8 +219,10 @@ export class SelfSelectService {
 
 	private isSegmentMatchCurrentMachine(segment, machineInfo) {
 		let result = true;
-		if ((machineInfo && machineInfo.isGaming && segment !== SegmentConst.Gaming)
-		|| (machineInfo && !machineInfo.isGaming && segment === SegmentConst.Gaming)) {
+		if (
+			(machineInfo && machineInfo.isGaming && segment !== SegmentConst.Gaming) ||
+			(machineInfo && !machineInfo.isGaming && segment === SegmentConst.Gaming)
+		) {
 			result = false;
 		}
 		return result;
@@ -213,7 +234,7 @@ export class SelfSelectService {
 		if (config && config.customtags) {
 			const checkedTags = config.customtags;
 			this.checkedArray = checkedTags.split(',');
-			this.interests.forEach(item => {
+			this.interests.forEach((item) => {
 				item.checked = checkedTags && checkedTags.includes(item.label);
 			});
 		}
@@ -222,21 +243,29 @@ export class SelfSelectService {
 	private syncConfigToService(config) {
 		if (this.selfSelect) {
 			this.selfSelect.updateConfig(config).catch((error) => {
-				this.logger.error('syncConfigToService failed for updateConfig error: ', JSON.stringify(error));
+				this.logger.error(
+					'syncConfigToService failed for updateConfig error: ',
+					JSON.stringify(error)
+				);
 			});
 		}
 	}
 
 	private isArm(machineInfo) {
-		return machineInfo && machineInfo.cpuArchitecture
-		&& machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64';
+		return (
+			machineInfo &&
+			machineInfo.cpuArchitecture &&
+			machineInfo.cpuArchitecture.toUpperCase().trim() === 'ARM64'
+		);
 	}
 
 	private calcDefaultSegment(machineInfo) {
 		try {
 			let segment = SegmentConst.ConsumerBase;
 			if (!machineInfo) {
-				this.logger.info('SelfSelectService.calcDefaultSegment failed for machine info undefined. ');
+				this.logger.info(
+					'SelfSelectService.calcDefaultSegment failed for machine info undefined. '
+				);
 			} else if (machineInfo.isGaming) {
 				segment = SegmentConst.Gaming;
 			} else if (this.isArm(machineInfo)) {
@@ -255,22 +284,24 @@ export class SelfSelectService {
 			return Promise.resolve(this.frePersona);
 		}
 		if (this.selfSelect.getLenovoWelcomePersona) {
-			return this.selfSelect.getLenovoWelcomePersona().then((persona) => {
-				this.logger.info('getLenovoWelcomePersona result: ', persona);
-				if (persona) {
-					this.frePersona = this.frePersonaToSegmentMap[persona];
-				} else {
+			return this.selfSelect
+				.getLenovoWelcomePersona()
+				.then((persona) => {
+					this.logger.info('getLenovoWelcomePersona result: ', persona);
+					if (persona) {
+						this.frePersona = this.frePersonaToSegmentMap[persona];
+					} else {
+						this.frePersona = '';
+					}
+					return this.frePersona;
+				})
+				.catch((error) => {
+					this.logger.error('getLenovoWelcomePersona error: ', error.message);
 					this.frePersona = '';
-				}
-				return this.frePersona;
-			}).catch((error) => {
-				this.logger.error('getLenovoWelcomePersona error: ', error.message);
-				this.frePersona = '';
-				return this.frePersona;
-			});
+					return this.frePersona;
+				});
 		}
 		this.frePersona = '';
 		return Promise.resolve(this.frePersona);
 	}
 }
-

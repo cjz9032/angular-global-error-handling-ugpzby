@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 
-
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class HardwareScanResultService {
-
 	private failedTests = 0;
 
 	// This is used to determine the scan overall status when sending metrics information
@@ -32,9 +30,12 @@ export class HardwareScanResultService {
 	public consolidateResults(partialResults: any): HardwareScanTestResult {
 		let consolidatedResult = HardwareScanTestResult.Na;
 
-		partialResults.forEach(partialResult => {
+		partialResults.forEach((partialResult) => {
 			// Only change result when finds a worse case
-			if (this.resultSeverityConversion[consolidatedResult] < this.resultSeverityConversion[partialResult]) {
+			if (
+				this.resultSeverityConversion[consolidatedResult] <
+				this.resultSeverityConversion[partialResult]
+			) {
 				consolidatedResult = partialResult;
 			}
 		});
@@ -43,7 +44,9 @@ export class HardwareScanResultService {
 	}
 
 	public countFailedTests(testList: any) {
-		this.failedTests += testList.filter(item => (item.statusTest || item.result) === HardwareScanTestResult.Fail).length;
+		this.failedTests += testList.filter(
+			(item) => (item.statusTest || item.result) === HardwareScanTestResult.Fail
+		).length;
 	}
 
 	public getFailedTests() {

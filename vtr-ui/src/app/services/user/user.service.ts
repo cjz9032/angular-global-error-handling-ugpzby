@@ -24,15 +24,13 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 declare var Windows;
 
 interface IUserService {
-	isLenovoIdSupported() : boolean;
+	isLenovoIdSupported(): boolean;
 }
 
-
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class UserService implements IUserService {
-
 	cookies: any = {};
 	public auth = false;
 	public starter = false;
@@ -77,8 +75,9 @@ export class UserService implements IUserService {
 			</div>
 		</div>
 	</div>
-`.replace(/[\r\n]/g, '').replace(/[\t]/g, ' ');
-
+`
+		.replace(/[\r\n]/g, '')
+		.replace(/[\t]/g, ' ');
 
 	constructor(
 		private cookieService: CookieService,
@@ -103,7 +102,7 @@ export class UserService implements IUserService {
 		if (!this.metrics) {
 			this.devService.writeLog('UserService constructor: metrics object is undefined');
 			this.metrics = {
-				sendAsync() { }
+				sendAsync() {},
 			};
 		}
 
@@ -113,22 +112,29 @@ export class UserService implements IUserService {
 
 		this.updateLidSupported();
 
-		this.lidStarterHelper = new LIDStarterHelper(devService, this.localCacheService, deviceService, vantageShellService, this);
+		this.lidStarterHelper = new LIDStarterHelper(
+			devService,
+			this.localCacheService,
+			deviceService,
+			vantageShellService,
+			this
+		);
 
-		this.subscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
 
 	// error is come from response status of LID contact request
 	popupErrorMessage(error: number) {
-		const modalRef = this.modalService
-			.open(ModalCommonConfirmationComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'common-confirmation-modal'
-			});
+		const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			windowClass: 'common-confirmation-modal',
+		});
 		const header = 'lenovoId.ssoErrorTitle';
 		let description = 'lenovoId.ssoErrorCommonEx';
 		switch (error) {
@@ -183,7 +189,7 @@ export class UserService implements IUserService {
 		const cookieManager = myFilter.cookieManager;
 		const myCookieJar = cookieManager.getCookies(new Windows.Foundation.Uri(domain));
 		if (myCookieJar) {
-			myCookieJar.forEach(cookie => cookieManager.deleteCookie(cookie));
+			myCookieJar.forEach((cookie) => cookieManager.deleteCookie(cookie));
 		}
 	}
 
@@ -241,48 +247,63 @@ export class UserService implements IUserService {
 		this.commonService.sendNotification(LenovoIdStatus.Pending, this.auth);
 		const isStarterAccount = await this.lidStarterHelper.isStarterAccountScenario();
 		if (!isStarterAccount && self.lid) {
-			self.lid.loginSilently().then(result => {
-				if (result.success && result.status === 0) {
-					self.silentlyLoginSuccess = true;
-					const firstName = self.getLidUserFirstNameFromLocalStorage(result.userGuid);
-					if (firstName) {
-						self.setName(firstName, '');
-					}
-					self.lid.getUserProfile().then(profile => {
-						self.hasFirstName = Boolean(profile.firstName);
-						if (profile.success && profile.status === 0) {
-							if (profile.firstName && profile.firstName !== firstName) {
-								self.setName(profile.firstName, profile.lastName);
-							}
-						} else {
-							if (result.userName && !firstName) {
-								const userName = self.obscureUserName(result.userName);
-								self.setName(userName, '');
-							}
+			self.lid
+				.loginSilently()
+				.then((result) => {
+					if (result.success && result.status === 0) {
+						self.silentlyLoginSuccess = true;
+						const firstName = self.getLidUserFirstNameFromLocalStorage(result.userGuid);
+						if (firstName) {
+							self.setName(firstName, '');
 						}
-					}).catch((res) => {
-						self.devService.writeLog('getUserProfile() Exception happen ', res);
-					});
-					self.setAuth(true);
-					self.commonService.sendNotification(LenovoIdStatus.SignedIn, appFeature);
-					self.sendSilentlyLoginMetric();
-				} else {
-					self.commonService.sendNotification(LenovoIdStatus.SignedOut, appFeature);
-					self.sendSilentlyLoginMetric();
-				}
-			}).catch((res) => {
-				self.devService.writeLog('loginSilently() Exception happen ', res);
-			});
+						self.lid
+							.getUserProfile()
+							.then((profile) => {
+								self.hasFirstName = Boolean(profile.firstName);
+								if (profile.success && profile.status === 0) {
+									if (profile.firstName && profile.firstName !== firstName) {
+										self.setName(profile.firstName, profile.lastName);
+									}
+								} else {
+									if (result.userName && !firstName) {
+										const userName = self.obscureUserName(result.userName);
+										self.setName(userName, '');
+									}
+								}
+							})
+							.catch((res) => {
+								self.devService.writeLog('getUserProfile() Exception happen ', res);
+							});
+						self.setAuth(true);
+						self.commonService.sendNotification(LenovoIdStatus.SignedIn, appFeature);
+						self.sendSilentlyLoginMetric();
+					} else {
+						self.commonService.sendNotification(LenovoIdStatus.SignedOut, appFeature);
+						self.sendSilentlyLoginMetric();
+					}
+				})
+				.catch((res) => {
+					self.devService.writeLog('loginSilently() Exception happen ', res);
+				});
 		} else {
-			this.lidStarterHelper.getStarterAccountToken().then((token) => {
-				if (token && self.lidStarterHelper.isStarterToken(token)) {
-					self.starter = true;
-					self.sendSilentlyLoginMetric();
-				}
-				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
-			}).catch(() => {
-				self.commonService.sendNotification(self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut, appFeature);
-			});
+			this.lidStarterHelper
+				.getStarterAccountToken()
+				.then((token) => {
+					if (token && self.lidStarterHelper.isStarterToken(token)) {
+						self.starter = true;
+						self.sendSilentlyLoginMetric();
+					}
+					self.commonService.sendNotification(
+						self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut,
+						appFeature
+					);
+				})
+				.catch(() => {
+					self.commonService.sendNotification(
+						self.starter ? LenovoIdStatus.StarterId : LenovoIdStatus.SignedOut,
+						appFeature
+					);
+				});
 		}
 	}
 
@@ -296,7 +317,12 @@ export class UserService implements IUserService {
 		if (this.starter === true || this.silentlyLoginSuccess === true) {
 			this.sendSigninMetrics('success', this.starterStatus, this.accountState, 'AppOpen');
 		} else {
-			this.sendSigninMetrics('failure(rc=UserInteractionRequired)', this.starterStatus, this.accountState, 'AppOpen');
+			this.sendSigninMetrics(
+				'failure(rc=UserInteractionRequired)',
+				this.starterStatus,
+				this.accountState,
+				'AppOpen'
+			);
 		}
 	}
 
@@ -330,11 +356,19 @@ export class UserService implements IUserService {
 	}
 
 	setAuth(auth = false, appFeature = null) {
-		let signinDate = this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate);
+		let signinDate = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LidFirstSignInDate
+		);
 		if (!signinDate) {
 			signinDate = new Date().toISOString().substring(0, 19);
-			this.localCacheService.getLocalCacheValue(LocalStorageKey.LidFirstSignInDate, signinDate);
-			this.lidStarterHelper.updateUserSettingXml({ lastSignIndate: signinDate, staterAccount: null });
+			this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.LidFirstSignInDate,
+				signinDate
+			);
+			this.lidStarterHelper.updateUserSettingXml({
+				lastSignIndate: signinDate,
+				staterAccount: null,
+			});
 		}
 		if (auth && this.starter) {
 			this.starter = false;
@@ -342,7 +376,10 @@ export class UserService implements IUserService {
 		this.devService.writeLog('setAuth(): auth = ', auth);
 		if (this.auth !== auth) {
 			this.auth = auth;
-			this.commonService.sendNotification(auth ? LenovoIdStatus.SignedIn : LenovoIdStatus.SignedOut, auth);
+			this.commonService.sendNotification(
+				auth ? LenovoIdStatus.SignedIn : LenovoIdStatus.SignedOut,
+				auth
+			);
 		}
 	}
 
@@ -371,47 +408,64 @@ export class UserService implements IUserService {
 			}
 			if (this.webView) {
 				// This is the link to clear cache for SSO production environment
-				await this.webView.navigate('https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null');
+				await this.webView.navigate(
+					'https://passport.lenovo.com/wauthen5/userLogout?lenovoid.action=uilogout&lenovoid.display=null'
+				);
 			}
-			this.lid.logout().then((result) => {
-				let metricsData: any;
-				if (result.success && result.status === 0) {
-					metricsData = {
-						ItemType: 'TaskAction',
-						TaskName: 'LID.SignOut',
-						TaskCount: '1',
-						TaskResult: 'success',
-						TaskParam: ''
-					};
-				} else {
-					this.devService.writeLog('removeAuth(): request lid.logout() failed - ', result.status);
-					this.popupErrorMessage(result.status);
-					metricsData = {
-						ItemType: 'TaskAction',
-						TaskName: 'LID.SignOut',
-						TaskCount: '1',
-						TaskResult: 'failure',
-						TaskParam: ''
-					};
-				}
-				this.metrics.sendAsyncEx(metricsData, {
-					lidGuid
-				}).catch((error) => {
-					this.devService.writeLog('removeAuth(): Exception happen when send metric - ', error);
+			this.lid
+				.logout()
+				.then((result) => {
+					let metricsData: any;
+					if (result.success && result.status === 0) {
+						metricsData = {
+							ItemType: 'TaskAction',
+							TaskName: 'LID.SignOut',
+							TaskCount: '1',
+							TaskResult: 'success',
+							TaskParam: '',
+						};
+					} else {
+						this.devService.writeLog(
+							'removeAuth(): request lid.logout() failed - ',
+							result.status
+						);
+						this.popupErrorMessage(result.status);
+						metricsData = {
+							ItemType: 'TaskAction',
+							TaskName: 'LID.SignOut',
+							TaskCount: '1',
+							TaskResult: 'failure',
+							TaskParam: '',
+						};
+					}
+					this.metrics
+						.sendAsyncEx(metricsData, {
+							lidGuid,
+						})
+						.catch((error) => {
+							this.devService.writeLog(
+								'removeAuth(): Exception happen when send metric - ',
+								error
+							);
+						});
+					this.devService.writeLog('removeAuth(): ', result.success);
+				})
+				.catch((error) => {
+					this.devService.writeLog(
+						'removeAuth(): Exception happen when request lid.logout() - ',
+						error
+					);
+					this.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
+				})
+				.finally(() => {
+					this.setAuth(false);
+					this.translate.stream('lenovoId.user').subscribe((value) => {
+						this.setName(value, '');
+					});
+					this.commonService.sendNotification(LenovoIdStatus.LoggingOut, false);
+					this.commonService.sendNotification(LenovoIdStatus.SignedOut, this.auth);
+					this.logoutInProcess = false;
 				});
-				this.devService.writeLog('removeAuth(): ', result.success);
-			}).catch((error) => {
-				this.devService.writeLog('removeAuth(): Exception happen when request lid.logout() - ', error);
-				this.popupErrorMessage(ssoErroType.SSO_ErrorType_UnknownCrashed);
-			}).finally(() => {
-				this.setAuth(false);
-				this.translate.stream('lenovoId.user').subscribe((value) => {
-					this.setName(value, '');
-				});
-				this.commonService.sendNotification(LenovoIdStatus.LoggingOut, false);
-				this.commonService.sendNotification(LenovoIdStatus.SignedOut, this.auth);
-				this.logoutInProcess = false;
-			});
 		} else {
 			this.devService.writeLog('removeAuth(): undefined lid object!');
 			this.logoutInProcess = false;
@@ -428,8 +482,11 @@ export class UserService implements IUserService {
 		} else {
 			this.firstName = firstName ? firstName : '';
 			this.lastName = lastName ? lastName : '';
-			this.initials = this.firstName ? this.firstName[0] : '' +
-				this.lastName ? this.lastName[0] : '';
+			this.initials = this.firstName
+				? this.firstName[0]
+				: '' + this.lastName
+				? this.lastName[0]
+				: '';
 		}
 		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName ? firstName : '');
 	}
@@ -449,8 +506,8 @@ export class UserService implements IUserService {
 			TaskParam: {
 				StarterStatus: starterStatusResult,
 				AccountState: everSignInResult ? 'AlreadySignedIn' : 'NeverSignedIn', // {Signin | AlreadySignedIn | NeverSignedIn},
-				FeatureRequested: appFeature ? appFeature : 'SignIn' // {AppOpen | SignIn | Vantage feature}
-			}
+				FeatureRequested: appFeature ? appFeature : 'SignIn', // {AppOpen | SignIn | Vantage feature}
+			},
 		};
 
 		self.metrics.sendAsync(metricsData).catch((ex) => {
@@ -477,34 +534,41 @@ export class UserService implements IUserService {
 	private updateLidSupported() {
 		let lidSupported = true;
 		const previousLidSupported = this.lidSupported;
-		this.hypSettings.getFeatureSetting('LenovoId').then((result) => {
-			if (!result) {
-				this.lidSupported = true;
-			} else {
-				this.lidSupported = result === 'true';
-			}
-		}).catch((error) => {
-			this.lidSupported = true;
-			this.devService.writeLog('updateLidSupported(): Exception happen when read Lenovo ID Hypothesis switch - ', error);
-		}).finally(() => {
-			if (this.lidSupported) {
-				if (typeof Windows !== 'undefined') {
-					const packageVersion = Windows.ApplicationModel.Package.current.id.version;
-					if (packageVersion.minor < 1908) {
-						lidSupported = false;
-					}
+		this.hypSettings
+			.getFeatureSetting('LenovoId')
+			.then((result) => {
+				if (!result) {
+					this.lidSupported = true;
+				} else {
+					this.lidSupported = result === 'true';
 				}
-				this.localInfoService.getLocalInfo().then(localInfo => {
-					if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
-						lidSupported = false;
+			})
+			.catch((error) => {
+				this.lidSupported = true;
+				this.devService.writeLog(
+					'updateLidSupported(): Exception happen when read Lenovo ID Hypothesis switch - ',
+					error
+				);
+			})
+			.finally(() => {
+				if (this.lidSupported) {
+					if (typeof Windows !== 'undefined') {
+						const packageVersion = Windows.ApplicationModel.Package.current.id.version;
+						if (packageVersion.minor < 1908) {
+							lidSupported = false;
+						}
 					}
-					this.lidSupported = lidSupported;
+					this.localInfoService.getLocalInfo().then((localInfo) => {
+						if (localInfo && localInfo.Segment === SegmentConst.Commercial) {
+							lidSupported = false;
+						}
+						this.lidSupported = lidSupported;
 
-					if (previousLidSupported !== this.lidSupported) {
-						this.lidStarterHelper.updateUserSettingXml(null);
-					}
-				});
-			}
-		});
+						if (previousLidSupported !== this.lidSupported) {
+							this.lidStarterHelper.updateUserSettingXml(null);
+						}
+					});
+				}
+			});
 	}
 }

@@ -51,18 +51,22 @@ export class AntivirusCommon {
 	urlGetMcAfee: string;
 	country: string;
 	pluginSupport: boolean;
-	constructor(antivirus: Antivirus,
+	constructor(
+		antivirus: Antivirus,
 		isOnline: boolean,
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
 		public translate: TranslateService,
 		public metrics: MetricService,
 		public metricsTranslateService: MetricsTranslateService,
-		public hypSettings: HypothesisService) {
+		public hypSettings: HypothesisService
+	) {
 		this.hypSettings.getFeatureSetting('AntivirusLaunchMcAfeeBuy').then((result) => {
 			this.pluginSupport = result === 'true';
-		})
-		const cacheMcafee = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityMcAfee);
+		});
+		const cacheMcafee = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityMcAfee
+		);
 		if (cacheMcafee) {
 			this.mcafee = cacheMcafee;
 		}
@@ -85,14 +89,17 @@ export class AntivirusCommon {
 			if (avInfo.mcafee) {
 				this.mcafee = avInfo.mcafee;
 			}
-		})
-		this.isOnline = isOnline;
-		this.localInfoService.getLocalInfo().then(result => {
-			this.country = result.GEO;
-			this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
-		}).catch(e => {
-			this.country = 'us';
 		});
+		this.isOnline = isOnline;
+		this.localInfoService
+			.getLocalInfo()
+			.then((result) => {
+				this.country = result.GEO;
+				this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
+			})
+			.catch((e) => {
+				this.country = 'us';
+			});
 		this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
 	}
 
@@ -100,30 +107,44 @@ export class AntivirusCommon {
 		const metricsData = {
 			ItemParent: this.metricsParent,
 			ItemName: this.metricsTranslateService.translate('launchMcAfeeBuy.noAPIRequested'),
-			ItemType: 'FeatureClick'
+			ItemType: 'FeatureClick',
 		};
 		if (type === 'button') {
 			this.purchaseBtnIsLoading = true;
 		}
-		const isTrial = this.mcafee?.subscription.toLowerCase() === 'trialactive' || this.mcafee?.subscription.toLowerCase() === 'trialinactive';
-		if (this.mcafee?.additionalCapabilities?.includes('LaunchMcAfeeBuy')
-			&& isTrial
-			&& this.pluginSupport) {
-			this.antivirus.openMcAfeePurchaseUrl().then((response) => {
-				this.purchaseBtnIsLoading = false;
-				if (response?.result) {
-					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.success');
-				} else {
-					metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.failed');
+		const isTrial =
+			this.mcafee?.subscription.toLowerCase() === 'trialactive' ||
+			this.mcafee?.subscription.toLowerCase() === 'trialinactive';
+		if (
+			this.mcafee?.additionalCapabilities?.includes('LaunchMcAfeeBuy') &&
+			isTrial &&
+			this.pluginSupport
+		) {
+			this.antivirus
+				.openMcAfeePurchaseUrl()
+				.then((response) => {
+					this.purchaseBtnIsLoading = false;
+					if (response?.result) {
+						metricsData.ItemName = this.metricsTranslateService.translate(
+							'launchMcAfeeBuy.success'
+						);
+					} else {
+						metricsData.ItemName = this.metricsTranslateService.translate(
+							'launchMcAfeeBuy.failed'
+						);
+						WinRT.launchUri(this.urlGetMcAfee);
+					}
+				})
+				.catch(() => {
+					this.purchaseBtnIsLoading = false;
+					metricsData.ItemName = this.metricsTranslateService.translate(
+						'launchMcAfeeBuy.exception'
+					);
 					WinRT.launchUri(this.urlGetMcAfee);
-				}
-			}).catch(() => {
-				this.purchaseBtnIsLoading = false;
-				metricsData.ItemName = this.metricsTranslateService.translate('launchMcAfeeBuy.exception');
-				WinRT.launchUri(this.urlGetMcAfee);
-			}).finally(() => {
-				this.metrics.sendMetrics(metricsData);
-			});
+				})
+				.finally(() => {
+					this.metrics.sendMetrics(metricsData);
+				});
 		} else {
 			this.purchaseBtnIsLoading = false;
 			WinRT.launchUri(this.urlGetMcAfee);
@@ -137,7 +158,7 @@ export class AntivirusCommon {
 			ItemParent: this.metricsParent,
 			ItemName: 'launchMcAfee',
 			ItemType: 'FeatureClick',
-			ItemParm: 'unregistered'
+			ItemParm: 'unregistered',
 		};
 		if (this.antivirus) {
 			if (this.antivirus.mcafee) {
@@ -148,19 +169,23 @@ export class AntivirusCommon {
 				metricsData.ItemParm = 'registered';
 			}
 
-			if (this.mcafee
-				&& !this.mcafee.registered
-				&& this.mcafee.additionalCapabilities
-				&& this.mcafee.additionalCapabilities.includes('OpenWSSInContext')) {
-				this.antivirus.openMcAfeeRegistry().then((response) => {
-					if (response && response.result === false) {
+			if (
+				this.mcafee &&
+				!this.mcafee.registered &&
+				this.mcafee.additionalCapabilities &&
+				this.mcafee.additionalCapabilities.includes('OpenWSSInContext')
+			) {
+				this.antivirus
+					.openMcAfeeRegistry()
+					.then((response) => {
+						if (response && response.result === false) {
+							this.antivirus.launch();
+						}
+					})
+					.catch(() => {
 						this.antivirus.launch();
-					}
-				}).catch(() => {
-					this.antivirus.launch();
-				});
-			}
-			else {
+					});
+			} else {
 				this.antivirus.launch();
 			}
 			this.metrics.sendMetrics(metricsData);
@@ -181,7 +206,10 @@ export class AntivirusCommon {
 	}
 
 	getLanguageIdentifier() {
-		const language = (typeof this.translate.currentLang === 'string') ? this.translate.currentLang.substring(0, 2) : '*';
+		const language =
+			typeof this.translate.currentLang === 'string'
+				? this.translate.currentLang.substring(0, 2)
+				: '*';
 		if (language === 'en' && this.country === 'gb') {
 			return this.nls.get('gb');
 		}
@@ -195,12 +223,19 @@ export class AntivirusCommon {
 	}
 
 	sendMcaffeStatisticDownloadInfo() {
-		const cacheMcafeeStatisticDownload = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityMcAfeeStatisticDownload);
+		const cacheMcafeeStatisticDownload = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityMcAfeeStatisticDownload
+		);
 		const currentDate = Date.now();
-		if (!cacheMcafeeStatisticDownload || currentDate - cacheMcafeeStatisticDownload > 24 * 60 * 60 * 1000) {
+		if (
+			!cacheMcafeeStatisticDownload ||
+			currentDate - cacheMcafeeStatisticDownload > 24 * 60 * 60 * 1000
+		) {
 			this.metrics.mcaffeStatisticDownloadInfo();
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityMcAfeeStatisticDownload, currentDate);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityMcAfeeStatisticDownload,
+				currentDate
+			);
 		}
 	}
-
 }

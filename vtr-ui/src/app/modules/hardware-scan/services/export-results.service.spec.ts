@@ -7,8 +7,8 @@ describe('ExportResultsService', () => {
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			imports: [ HttpClientModule ],
-			providers: [ HttpClientModule ]
+			imports: [HttpClientModule],
+			providers: [HttpClientModule],
 		});
 		service = TestBed.inject(ExportResultsService);
 	});

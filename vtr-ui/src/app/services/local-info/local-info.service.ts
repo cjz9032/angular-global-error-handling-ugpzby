@@ -6,13 +6,43 @@ import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class LocalInfoService {
-
 	// private sysInfo: any;
 	private localInfo: any;
-	private supportLanguages = ['en', 'zh-hans', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hr', 'hu', 'it', 'ja', 'ko', 'nb', 'nl', 'pl', 'pt-br', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr', 'sv', 'tr', 'uk', 'zh-hant'];
+	private supportLanguages = [
+		'en',
+		'zh-hans',
+		'ar',
+		'cs',
+		'da',
+		'de',
+		'el',
+		'es',
+		'fi',
+		'fr',
+		'he',
+		'hr',
+		'hu',
+		'it',
+		'ja',
+		'ko',
+		'nb',
+		'nl',
+		'pl',
+		'pt-br',
+		'pt',
+		'ro',
+		'ru',
+		'sk',
+		'sl',
+		'sr',
+		'sv',
+		'tr',
+		'uk',
+		'zh-hant',
+	];
 	private readonly gamingTag = SegmentConst.Gaming;
 	private selfSelectSegment = null;
 
@@ -34,11 +64,10 @@ export class LocalInfoService {
 			return this.localInfo;
 		} else {
 			if (this.deviceService) {
-				return this.deviceService.getMachineInfo().then(result => {
+				return this.deviceService.getMachineInfo().then((result) => {
 					if (result) {
 						let osName = 'Windows';
-						if (result.os &&
-							result.os.toLowerCase().indexOf('android') > -1) {
+						if (result.os && result.os.toLowerCase().indexOf('android') > -1) {
 							osName = 'Android';
 						}
 						let lang = 'en';

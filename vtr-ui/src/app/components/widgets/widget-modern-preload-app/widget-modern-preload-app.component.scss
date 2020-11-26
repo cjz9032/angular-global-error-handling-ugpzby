@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .app-item {
 	display: flex;
@@ -7,8 +7,8 @@
 
 	.custom-checkbox {
 		.custom-control-input {
-			&:focus~.custom-control-label-out::before {
-				content: "";
+			&:focus ~ .custom-control-label-out::before {
+				content: '';
 				display: block;
 				position: absolute;
 				left: -0.4rem;
@@ -19,7 +19,7 @@
 				height: 7.2rem;
 				border: thin solid $menu_hover;
 			}
-			&:focus~.custom-control-label::before {
+			&:focus ~ .custom-control-label::before {
 				outline: 0;
 				box-shadow: none;
 			}
@@ -42,7 +42,7 @@
 		}
 	}
 
-	.custom-control-input:disabled+.custom-control-label {
+	.custom-control-input:disabled + .custom-control-label {
 		cursor: default;
 
 		.app-logo {
@@ -135,14 +135,14 @@
 				line-height: 1.4;
 
 				.redemption-code {
-					opacity: .8;
+					opacity: 0.8;
 					font-size: $section_header;
 					font-family: 'Consolas';
 					word-break: break-all;
 					cursor: text;
 
 					&.hide-characters {
-						opacity: .6;
+						opacity: 0.6;
 					}
 				}
 			}

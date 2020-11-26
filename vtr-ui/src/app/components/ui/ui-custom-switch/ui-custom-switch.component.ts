@@ -6,7 +6,7 @@ import { Subject, Subscription } from 'rxjs';
 @Component({
 	selector: 'vtr-ui-custom-switch',
 	templateUrl: './ui-custom-switch.component.html',
-	styleUrls: ['./ui-custom-switch.component.scss']
+	styleUrls: ['./ui-custom-switch.component.scss'],
 })
 export class UiCustomSwitchComponent implements OnInit, OnDestroy {
 	public static switchChange: Subject<boolean> = new Subject<boolean>();
@@ -26,15 +26,16 @@ export class UiCustomSwitchComponent implements OnInit, OnDestroy {
 
 	switchChangeSubscription: Subscription;
 
-	constructor(private metrics: MetricService, private activatedRoute: ActivatedRoute) {
-	 }
+	constructor(private metrics: MetricService, private activatedRoute: ActivatedRoute) {}
 
 	ngOnInit(): void {
-		this.switchChangeSubscription = UiCustomSwitchComponent.switchChange.asObservable().subscribe(res => {
-			if (this.componentId === 'ds-power-battery-threshold') {
-				this.value = res;
-			}
-		});
+		this.switchChangeSubscription = UiCustomSwitchComponent.switchChange
+			.asObservable()
+			.subscribe((res) => {
+				if (this.componentId === 'ds-power-battery-threshold') {
+					this.value = res;
+				}
+			});
 	}
 
 	ngOnDestroy(): void {
@@ -53,7 +54,7 @@ export class UiCustomSwitchComponent implements OnInit, OnDestroy {
 				ItemType: 'ItemClick',
 				ItemName: this.componentId,
 				ItemParam: this.switchParam,
-				ItemValue: this.value
+				ItemValue: this.value,
 			};
 			this.metrics.sendMetrics(metricsData);
 		}

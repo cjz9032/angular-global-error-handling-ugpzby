@@ -3,9 +3,7 @@ export class ContentDisplayDetection {
 	private taskTable = {};
 	private itemGroupTable = {};
 
-	constructor(
-		private metricsService: any
-	) {
+	constructor(private metricsService: any) {
 		window.addEventListener('resize', this.checkAll.bind(this));
 	}
 
@@ -18,21 +16,22 @@ export class ContentDisplayDetection {
 		const taskId = this.taskId;
 
 		const taskItem = {
-			status : {
+			status: {
 				top: false,
 				right: false,
 				bottom: false,
-				left: false
+				left: false,
 			},
 			item,
 			container,
 			position,
-			complete: false
+			complete: false,
 		};
 
 		this.taskTable[taskId] = taskItem;
 
-		if (item.Id) {	// igore item arrays which exist in the dashboard carousel image group
+		if (item.Id) {
+			// igore item arrays which exist in the dashboard carousel image group
 			if (!this.itemGroupTable[item.Id]) {
 				this.itemGroupTable[item.Id] = [taskItem];
 			} else {
@@ -55,7 +54,7 @@ export class ContentDisplayDetection {
 
 	private checkAll() {
 		const taskIds = Object.keys(this.taskTable);
-		taskIds.forEach(taskId => {
+		taskIds.forEach((taskId) => {
 			this.checkVisiblityStatus(taskId);
 		});
 	}
@@ -79,8 +78,8 @@ export class ContentDisplayDetection {
 		}
 
 		const itemGroups = this.itemGroupTable[itemId];
-		itemGroups.forEach(taskItem => {
-			taskItem.complete = true;			// checkVisiblityStatus will clean the complete task
+		itemGroups.forEach((taskItem) => {
+			taskItem.complete = true; // checkVisiblityStatus will clean the complete task
 		});
 		delete this.itemGroupTable[itemId];
 	}
@@ -121,7 +120,7 @@ export class ContentDisplayDetection {
 		const rec = contentCard.nativeElement.getBoundingClientRect();
 		const vp = {
 			width: window.innerWidth,
-			height: window.innerHeight
+			height: window.innerHeight,
 		};
 
 		if (!taskContext.status.top) {
@@ -140,15 +139,24 @@ export class ContentDisplayDetection {
 			taskContext.status.right = rec.right > 0 && rec.right <= vp.width;
 		}
 
-		if ( taskContext.status.top && taskContext.status.bottom && taskContext.status.left && taskContext.status.right) {
-				if (Array.isArray(taskContext.item)) {
-					taskContext.item.forEach(item => {
-						this.metricsService.sendContentDisplay(item.Id, item.DataSource, position);
-					});
-				} else {
-					this.metricsService.sendContentDisplay(taskContext.item.Id, taskContext.item.DataSource, position);
-				}
-				this.removeDuplicateTask(taskId);
+		if (
+			taskContext.status.top &&
+			taskContext.status.bottom &&
+			taskContext.status.left &&
+			taskContext.status.right
+		) {
+			if (Array.isArray(taskContext.item)) {
+				taskContext.item.forEach((item) => {
+					this.metricsService.sendContentDisplay(item.Id, item.DataSource, position);
+				});
+			} else {
+				this.metricsService.sendContentDisplay(
+					taskContext.item.Id,
+					taskContext.item.DataSource,
+					position
+				);
+			}
+			this.removeDuplicateTask(taskId);
 		}
 	}
 }

@@ -1,4 +1,4 @@
-@import "../../app.theme.scss";
+@import '../../app.theme.scss';
 
 .vtr-material-menu {
 	@include high-contrast-adjust;
@@ -77,7 +77,7 @@
 				}
 			}
 			.menu-item {
-				font-family: "Segoe UI",sans-serif;
+				font-family: 'Segoe UI', sans-serif;
 				font-size: $fontsize_sm;
 				font-weight: $weight_light;
 				outline: none;
@@ -98,7 +98,8 @@
 					@include outline-white-high-contrast;
 					@include menu-color-hover-high-contrast;
 				}
-				&.active, &.actived {
+				&.active,
+				&.actived {
 					outline: none;
 					background-color: $menu_hover;
 					@include high-contrast-color;
@@ -194,21 +195,21 @@
 			color: $main_shade;
 			font-size: $fontsize_xs;
 			font-weight: $weight_regular;
-			font-family: "Segoe UI",sans-serif;
+			font-family: 'Segoe UI', sans-serif;
 			min-height: 2.2rem;
 			line-height: 1;
 			@include high-contrast-text-color-disabled;
 			.user-menu-item-text {
 				word-break: normal;
 				white-space: pre-wrap;
-				word-wrap : break-word;
+				word-wrap: break-word;
 				line-height: 1.3;
 			}
 		}
 		.user-menu-item {
 			color: $main_shade;
 			font-weight: $weight_regular;
-			font-family: "Segoe UI",sans-serif;
+			font-family: 'Segoe UI', sans-serif;
 			min-height: 2.2rem;
 			line-height: 1;
 			outline: none !important;
@@ -218,7 +219,7 @@
 			.user-menu-item-text {
 				word-break: normal;
 				white-space: pre-wrap;
-				word-wrap : break-word;
+				word-wrap: break-word;
 				line-height: 1.3;
 			}
 			@include menu-color-high-contrast;

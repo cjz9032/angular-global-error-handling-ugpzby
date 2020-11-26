@@ -1,7 +1,7 @@
 export class GamingAllCapabilities {
 	public ledLayoutVersion: number = 1;
 	public ledSwitchButtonFeature: boolean = false;
-	public desktopType: boolean = false
+	public desktopType: boolean = false;
 	public liteGaming: boolean = false;
 	public thermalModeVersion: number = 1;
 	public supporttedThermalMode: number[] = [1, 2, 3];

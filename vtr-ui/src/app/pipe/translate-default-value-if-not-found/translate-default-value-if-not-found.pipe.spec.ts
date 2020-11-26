@@ -7,7 +7,7 @@ import { TranslateDefaultValueIfNotFoundPipe } from './translate-default-value-i
 // A mocked class which acts equal to the real TranslatePipe,
 // i.e. returning an empty string if the given token is not found
 @Pipe({
-	name: 'translateMock'
+	name: 'translateMock',
 })
 class TranslatePipeMock implements PipeTransform {
 	public transform(value: any, ...args: any[]): any {
@@ -26,8 +26,8 @@ describe('TranslateDefaultValueIfNotFoundPipe', () => {
 				{
 					provide: TranslatePipe,
 					useValue: translatePipeMock,
-				}
-			]
+				},
+			],
 		});
 
 		pipe = TestBed.inject(TranslateDefaultValueIfNotFoundPipe);
@@ -37,7 +37,7 @@ describe('TranslateDefaultValueIfNotFoundPipe', () => {
 		expect(pipe).toBeTruthy();
 	});
 
-	it ('translates a found token should return the translated value', () => {
+	it('translates a found token should return the translated value', () => {
 		spyOn(translatePipeMock, 'transform').and.returnValue('A translation for a valid token!');
 		const result = pipe.transform('hardwareScan.foundToken');
 		expect(result).toBe('A translation for a valid token!');

@@ -12,17 +12,13 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, NonArmGuard, NonSmodeGuard],
 		data: {
-			pageName: 'AppsForYou'
-		}
-	}
+			pageName: 'AppsForYou',
+		},
+	},
 ];
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(routes)
-	],
-	exports: [
-		RouterModule
-	]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class AppsForYouRoutingModule { }
+export class AppsForYouRoutingModule {}

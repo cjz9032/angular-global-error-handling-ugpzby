@@ -42,7 +42,6 @@ import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTo
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { FeedbackModule } from './feedback/feedback.module';
 
-
 @NgModule({
 	declarations: [
 		PageMacrokeyComponent,
@@ -61,7 +60,7 @@ import { FeedbackModule } from './feedback/feedback.module';
 		WidgetMacrokeySettingsComponent,
 		WidgetAddedAppListComponent,
 		PageNetworkboostComponent,
-		UiLightingKeyboardLNBx50Component
+		UiLightingKeyboardLNBx50Component,
 	],
 	imports: [
 		CommonModule,
@@ -79,11 +78,11 @@ import { FeedbackModule } from './feedback/feedback.module';
 		NgbModalModule,
 		NgbTooltipModule,
 		FeedbackModule,
-		PageLayoutModule
+		PageLayoutModule,
 	],
-	exports: [ ContainerCardModule, MetricsModule, WidgetOfflineModule ],
-	schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-	entryComponents: []
+	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	entryComponents: [],
 })
 export class GamingModule {
 	constructor(library: FaIconLibrary) {

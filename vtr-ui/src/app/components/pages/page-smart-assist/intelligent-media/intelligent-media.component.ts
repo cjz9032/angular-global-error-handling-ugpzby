@@ -6,7 +6,7 @@ import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.s
 @Component({
 	selector: 'vtr-intelligent-media',
 	templateUrl: './intelligent-media.component.html',
-	styleUrls: ['./intelligent-media.component.scss']
+	styleUrls: ['./intelligent-media.component.scss'],
 })
 export class IntelligentMediaComponent implements OnInit {
 	@Input() isChecked = false;
@@ -23,20 +23,18 @@ export class IntelligentMediaComponent implements OnInit {
 
 	@Input() videoPlaybackSupportHSA = false;
 
-	constructor(
-		private smartAssist: SmartAssistService,
-		private logger: LoggerService
-	) { }
+	constructor(private smartAssist: SmartAssistService, private logger: LoggerService) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	public setVideoPauseResumeStatus(event) {
 		this.videoPlaybackToggle.emit(event.switchValue);
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setVideoPauseResumeStatus(event.switchValue)
-					.then((value: boolean) => { }).catch(error => {
+				this.smartAssist
+					.setVideoPauseResumeStatus(event.switchValue)
+					.then((value: boolean) => {})
+					.catch((error) => {
 						this.logger.error('setVideoPauseResumeStatus', error.message);
 						return EMPTY;
 					});
@@ -51,13 +49,15 @@ export class IntelligentMediaComponent implements OnInit {
 		this.superResolutionToggle.emit(event.switchValue);
 		try {
 			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist.setSuperResolutionStatus(event.switchValue)
+				this.smartAssist
+					.setSuperResolutionStatus(event.switchValue)
 					.then((value: boolean) => {
 						this.logger.info('setSuperResolutionStatus', value);
-					}).catch(error => {
+					})
+					.catch((error) => {
 						this.logger.error('setSuperResolutionStatus' + error.message);
 					});
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 }

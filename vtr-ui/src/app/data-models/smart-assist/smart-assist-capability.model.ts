@@ -9,10 +9,23 @@ export class SmartAssistCapability {
 	public isIntelligentScreenSupported = false;
 	public isIntelligentMediaSupported: FeatureStatus = new FeatureStatus(false, false); // promise is returning object
 	public isAPSSupported = false;
-	public isSuperResolutionSupported: SuperResolutionResponse = new SuperResolutionResponse(false, false,'');
-	public isAntiTheftSupported: AntiTheftResponse = new AntiTheftResponse(false, false,false,false,false);
+	public isSuperResolutionSupported: SuperResolutionResponse = new SuperResolutionResponse(
+		false,
+		false,
+		''
+	);
+	public isAntiTheftSupported: AntiTheftResponse = new AntiTheftResponse(
+		false,
+		false,
+		false,
+		false,
+		false
+	);
 	public isAPSCapable = false;
 	public isAPSSensorSupported = false;
 	public isAPSHDDStatus = -1;
-	public isHsaIntelligentSecuritySupported: HsaIntelligentSecurityResponse = new HsaIntelligentSecurityResponse(false, false);
+	public isHsaIntelligentSecuritySupported: HsaIntelligentSecurityResponse = new HsaIntelligentSecurityResponse(
+		false,
+		false
+	);
 }

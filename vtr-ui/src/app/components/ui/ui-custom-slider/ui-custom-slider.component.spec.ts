@@ -12,18 +12,22 @@ describe('UiCustomSliderComponent', () => {
 	let component: UiCustomSliderComponent;
 	let fixture: ComponentFixture<UiCustomSliderComponent>;
 	let devService: DevService;
-	let metricService: MetricService
+	let metricService: MetricService;
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCustomSliderComponent],
 			providers: [DevService, MetricService, HttpClient],
-			imports: [RouterTestingModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				}
-			}), HttpClientTestingModule],
+			imports: [
+				RouterTestingModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+				}),
+				HttpClientTestingModule,
+			],
 		}).compileComponents();
 	}));
 
@@ -37,15 +41,15 @@ describe('UiCustomSliderComponent', () => {
 		expect(component).toBeTruthy();
 	});
 	it('should call onInputChange', () => {
-		const event = { target: { valueAsNumber: 4 } }
-		component.onInputChange(event)
+		const event = { target: { valueAsNumber: 4 } };
+		component.onInputChange(event);
 	});
 	it('should call onDragStart', () => {
-		const event = { target: { valueAsNumber: 3 } }
-		component.onDragStart(event)
+		const event = { target: { valueAsNumber: 3 } };
+		component.onDragStart(event);
 	});
 	it('should call onDragEnd', () => {
-		const event = { target: { valueAsNumber: 2 } }
-		component.onDragEnd(event)
+		const event = { target: { valueAsNumber: 2 } };
+		component.onDragEnd(event);
 	});
 });

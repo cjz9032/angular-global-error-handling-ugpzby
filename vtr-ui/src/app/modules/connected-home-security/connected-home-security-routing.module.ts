@@ -13,24 +13,22 @@ const routes: Routes = [
 		path: '',
 		component: PageConnectedHomeSecurityComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService,
+		canActivate: [
+			GuardService,
 			NonGamingGuard,
 			NonArmGuard,
 			NonSmodeGuard,
 			NonCommercialGuard,
-			HomeSecurityGuard],
+			HomeSecurityGuard,
+		],
 		data: {
-			pageName: 'HomeSecurity'
-		}
-	}
+			pageName: 'HomeSecurity',
+		},
+	},
 ];
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(routes)
-	],
-	exports: [
-		RouterModule
-	]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class ConnectedHomeSecurityRoutingModule { }
+export class ConnectedHomeSecurityRoutingModule {}

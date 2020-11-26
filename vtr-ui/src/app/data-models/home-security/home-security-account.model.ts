@@ -1,9 +1,7 @@
 import { CHSAccountState, CHSAccountRole } from '@lenovo/tan-client-bridge';
 import { HomeSecurityCommon } from './home-security-common.model';
 
-
 export class HomeSecurityAccount {
-
 	state: CHSAccountState;
 	role: CHSAccountRole;
 	expirationDay: number;
@@ -19,7 +17,9 @@ export class HomeSecurityAccount {
 				this.role = chs.account.role;
 			}
 			if (chs.account.expiration && chs.account.serverTimeUTC) {
-				this.expirationDay = (chs.account.expiration.getTime() - chs.account.serverTimeUTC.getTime()) / 86400000;
+				this.expirationDay =
+					(chs.account.expiration.getTime() - chs.account.serverTimeUTC.getTime()) /
+					86400000;
 				if (this.expirationDay < 0) {
 					this.expirationDay = 0;
 				}

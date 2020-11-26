@@ -9,20 +9,21 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
 import { DeviceService } from './device.service';
 
-const deviceMock = {
-}
+const deviceMock = {};
 
 const sysinfoMock = {
-	getMachineType: () => { return 1; }
-}
+	getMachineType: () => {
+		return 1;
+	},
+};
 
 describe('DeviceService', () => {
-	let deviceService: DeviceService
+	let deviceService: DeviceService;
 	const vantageShellServiceMock = <VantageShellService>{
 		getDevice: null,
 		getSysinfo: null,
 		getMicrophoneSettings: null,
-		getWindows: null
+		getWindows: null,
 	};
 	const commonService = <CommonService>{};
 	const androidService = <AndroidService>{};
@@ -31,7 +32,7 @@ describe('DeviceService', () => {
 	const hypSettings = null;
 	const localCacheService = <LocalCacheService>{
 		getLocalCacheValue: null,
-		setLocalCacheValue: null
+		setLocalCacheValue: null,
 	};
 
 	beforeEach(() => {
@@ -40,17 +41,31 @@ describe('DeviceService', () => {
 		spyOn(vantageShellServiceMock, 'getMicrophoneSettings');
 		spyOn(vantageShellServiceMock, 'getWindows');
 
-		deviceService = new DeviceService(vantageShellServiceMock, commonService, androidService, router, logger, hypSettings, localCacheService)
+		deviceService = new DeviceService(
+			vantageShellServiceMock,
+			commonService,
+			androidService,
+			router,
+			logger,
+			hypSettings,
+			localCacheService
+		);
 	});
 
 	it('Given the cache and local variable does not have values When call getMachineType then should call the getMachineType service and return the machine type', fakeAsync(() => {
-		spyOn(deviceService['localCacheService'], 'getLocalCacheValue').withArgs(LocalStorageKey.MachineType, -1).and.returnValue(-1);
-		const setLocalCache = spyOn(deviceService['localCacheService'], 'setLocalCacheValue')
-		const desktopMachineCache = setLocalCache.withArgs(LocalStorageKey.DesktopMachine, false).and.returnValue(Promise.resolve());
-		const machineTypeCache = setLocalCache.withArgs(LocalStorageKey.MachineType, 1).and.returnValue(Promise.resolve());
+		spyOn(deviceService['localCacheService'], 'getLocalCacheValue')
+			.withArgs(LocalStorageKey.MachineType, -1)
+			.and.returnValue(-1);
+		const setLocalCache = spyOn(deviceService['localCacheService'], 'setLocalCacheValue');
+		const desktopMachineCache = setLocalCache
+			.withArgs(LocalStorageKey.DesktopMachine, false)
+			.and.returnValue(Promise.resolve());
+		const machineTypeCache = setLocalCache
+			.withArgs(LocalStorageKey.MachineType, 1)
+			.and.returnValue(Promise.resolve());
 
 		let machineType: any = -10;
-		deviceService.getMachineType().then((value => machineType = value));
+		deviceService.getMachineType().then((value) => (machineType = value));
 
 		tick();
 		expect(machineType).toBe(1);

@@ -1,4 +1,13 @@
-import { Component, OnInit, HostListener, EventEmitter, Output, Input, ViewChild, ElementRef } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	HostListener,
+	EventEmitter,
+	Output,
+	Input,
+	ViewChild,
+	ElementRef,
+} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { Router } from '@angular/router';
@@ -21,14 +30,17 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 		private router: Router,
 		private localCacheService: LocalCacheService,
 		private logger: LoggerService
-	) { }
+	) {}
 	private timerRef: any;
 	public secondsCountdown = 9;
 	public isLoading = false;
 
 	ngOnInit() {
 		// this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartPerformanceForceClose, false);
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.HasSubscribedScanCompleted,
+			false
+		);
 		this.timerRef = setInterval(() => {
 			if (this.secondsCountdown-- === 0) {
 				this.cancelScan();
@@ -63,7 +75,10 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 			this.stopCountdown();
 		}
 		try {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, true);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.HasSubscribedScanCompleted,
+				true
+			);
 			this.isLoading = true;
 			const cancelScanFromService = await this.smartPerformanceService.cancelScan();
 			this.logger.info('modal-smart-performance-cancel.cancelScan', cancelScanFromService);
@@ -72,12 +87,9 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 				this.cancelRequested.emit();
 				//  de-activates the pop-up,
 				this.activeModal.close(true);
-
 			}
-
 		} catch (err) {
 			this.logger.error('Error while leaving page', err.message);
 		}
 	}
-
 }

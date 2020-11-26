@@ -9,16 +9,16 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class InitializerService {
-
 	constructor(
 		private vantageShellService: VantageShellService,
 		private deviceService: DeviceService,
 		private localCacheService: LocalCacheService,
 		private translate: TranslateService,
-		private commonService: CommonService) { }
+		private commonService: CommonService
+	) {}
 
 	initialize(): Promise<any> {
 		this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, false);
@@ -28,14 +28,22 @@ export class InitializerService {
 			this.localCacheService.loadCacheValues().then(() => {
 				this.initializeAntivirus();
 				this.deviceService.getMachineType();
-			})
+			}),
 		]);
 	}
 
 	initializeAntivirus() {
 		if (this.vantageShellService.isShellAvailable) {
-			const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
-			if (segment && segment !== SegmentConst.Commercial && segment !== SegmentConst.Gaming && !this.deviceService.isArm && !this.deviceService.isSMode) {
+			const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.LocalInfoSegment
+			);
+			if (
+				segment &&
+				segment !== SegmentConst.Commercial &&
+				segment !== SegmentConst.Gaming &&
+				!this.deviceService.isArm &&
+				!this.deviceService.isSMode
+			) {
 				const securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 				if (securityAdvisor && securityAdvisor.antivirus) {
 					securityAdvisor.antivirus.refresh();
@@ -75,7 +83,7 @@ export class InitializerService {
 			'tr', // Turkish
 			'uk', // Ukrainian
 			'zh-hans', // Chinese (Simplified)
-			'zh-hant' // Chinese (Traditional)
+			'zh-hant', // Chinese (Traditional)
 		];
 
 		this.translate.addLangs(supportedLanguages);
@@ -94,6 +102,8 @@ export class InitializerService {
 			}
 		}
 
-		return this.translate.use(supportedLanguages.includes(langCode) ? langCode : 'en').toPromise();
+		return this.translate
+			.use(supportedLanguages.includes(langCode) ? langCode : 'en')
+			.toPromise();
 	}
 }

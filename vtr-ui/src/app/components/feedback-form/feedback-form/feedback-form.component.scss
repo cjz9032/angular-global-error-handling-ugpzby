@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 :host {
 	display: flex;
@@ -92,7 +92,7 @@ $normalPadding: 2.4rem;
 					display: block;
 					width: 2rem;
 					height: 2rem;
-					content: "";
+					content: '';
 				}
 
 				&::before {
@@ -132,13 +132,13 @@ $normalPadding: 2.4rem;
 				}
 			}
 
-			.form-check-input:focus~.form-check-label-out {
+			.form-check-input:focus ~ .form-check-label-out {
 				&::before {
 					border: 0.1rem solid $menu_hover;
 				}
 			}
 
-			.form-check-input:checked~label::after {
+			.form-check-input:checked ~ label::after {
 				color: #fff;
 				background-color: $menu_hover;
 				width: 1.4rem;
@@ -180,7 +180,7 @@ $normalPadding: 2.4rem;
 					}
 				}
 
-				.form-check-input:checked~label::after {
+				.form-check-input:checked ~ label::after {
 					margin: 0.3rem 0 0 1.3rem;
 				}
 
@@ -224,7 +224,7 @@ $normalPadding: 2.4rem;
 		.user-email {
 			border: 1px solid $shade_lighter;
 			border-radius: 5px;
-			background-color: #FFFFFF;
+			background-color: #ffffff;
 			box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
 			height: 12rem;
 			padding: 2rem 2.4rem;
@@ -295,7 +295,6 @@ $normalPadding: 2.4rem;
 
 	@media screen and (max-height: 750px) {
 		.content {
-
 			.qa-item,
 			.user-comment {
 				margin-bottom: 2rem;
@@ -345,7 +344,7 @@ $normalPadding: 2.4rem;
 			font-weight: $weight_light;
 			text-align: center;
 			letter-spacing: 0.1rem;
-			opacity: .5;
+			opacity: 0.5;
 		}
 	}
 

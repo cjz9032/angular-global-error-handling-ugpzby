@@ -23,7 +23,6 @@
 }
 
 .vtr-modal-intelligent-cooling-modes {
-
 	&.modal-body {
 		padding: 0;
 	}
@@ -58,17 +57,17 @@
 		text-transform: uppercase;
 		position: relative;
 
-		&:focus{
+		&:focus {
 			outline: 0;
 			box-shadow: none;
 			&::after {
 				@include button-outline-blue;
 				@media #{$black-on-white} {
 					@include button-outline-blue($dark);
-			}
+				}
 
 				@media #{$white-on-black} {
-						@include button-outline-blue($light);
+					@include button-outline-blue($light);
 				}
 			}
 		}
@@ -76,8 +75,6 @@
 		@include ui-button-high-contrast-white;
 		@include high-contrast-adjust;
 	}
-
-
 
 	.number-list {
 		margin-top: 1rem;
@@ -89,21 +86,21 @@
 			padding: 0.8rem;
 			font-size: 1.8rem;
 		}
-		.serial-bakcground{
-				background: linear-gradient(270deg, #4980FC 0%, #2E62D9 100%);
-				border-radius: 50%;
-				width: 5rem;
-				height: 5rem;
-				@include high-contrast-adjust;
-				@media #{$white-on-black} {
-					@include white-border;
-					@include high-contrast-background-transparent;
-				}
-				@media #{$black-on-white} {
-					@include black-border;
-					@include high-contrast-background-transparent;
-				}
-			.serial{
+		.serial-bakcground {
+			background: linear-gradient(270deg, #4980fc 0%, #2e62d9 100%);
+			border-radius: 50%;
+			width: 5rem;
+			height: 5rem;
+			@include high-contrast-adjust;
+			@media #{$white-on-black} {
+				@include white-border;
+				@include high-contrast-background-transparent;
+			}
+			@media #{$black-on-white} {
+				@include black-border;
+				@include high-contrast-background-transparent;
+			}
+			.serial {
 				font-size: $fontsize_xl;
 				color: $light;
 				width: 5rem;
@@ -119,29 +116,26 @@
 				&.serial2 {
 					width: 5rem;
 				}
-
 			}
 		}
-
 	}
 
-.battery-guage-block  {
-	width: 85%;
-}
-.toolbar-block  {
-	width: 75%;
-}
-.battery-guage-block, .toolbar-block {
-	img {
-		@media #{$black-on-white} {
-			@include black-border;
-		}
+	.battery-guage-block {
+		width: 85%;
+	}
+	.toolbar-block {
+		width: 75%;
+	}
+	.battery-guage-block,
+	.toolbar-block {
+		img {
+			@media #{$black-on-white} {
+				@include black-border;
+			}
 
-		@media #{$white-on-black} {
-			@include white-border;
+			@media #{$white-on-black} {
+				@include white-border;
+			}
 		}
 	}
-}
-
-
 }

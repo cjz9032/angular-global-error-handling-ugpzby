@@ -4,18 +4,16 @@ import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/mo
 import { LocalInfoService } from '../local-info/local-info.service';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class LicensesService {
-
-	constructor(
-		public modalService: NgbModal,
-		public localInfoService: LocalInfoService,
-	) { }
+	constructor(public modalService: NgbModal, public localInfoService: LocalInfoService) {}
 
 	openLicensesAgreement(isCalledbyAbout?: boolean) {
-		if (!isCalledbyAbout && this.modalService.hasOpenModals()) { return; }
-		this.localInfoService.getLocalInfo().then(localInfo => {
+		if (!isCalledbyAbout && this.modalService.hasOpenModals()) {
+			return;
+		}
+		this.localInfoService.getLocalInfo().then((localInfo) => {
 			let fileName = this.checkLangName(localInfo.Lang);
 			if (localInfo.GEO === 'cn' && localInfo.Lang === 'zh-hans') {
 				fileName = 'zh-Hans-cn';
@@ -31,7 +29,7 @@ export class LicensesService {
 				size: 'lg',
 				centered: true,
 				ariaLabelledBy: 'license-agreement-dialog-basic-title',
-				windowClass: 'license-Modal'
+				windowClass: 'license-Modal',
 			});
 			licenseModal.componentInstance.url = agreementUrl;
 			licenseModal.componentInstance.type = 'html';
@@ -40,7 +38,9 @@ export class LicensesService {
 	}
 
 	openOpenSource(isCalledbyAbout?: boolean) {
-		if (!isCalledbyAbout && this.modalService.hasOpenModals()) { return; }
+		if (!isCalledbyAbout && this.modalService.hasOpenModals()) {
+			return;
+		}
 		const openSourceUrl = `assets/licenses/OpenSource/OpenSourceLicenses.txt`;
 		const licenseModalMetrics = {
 			pageName: 'Page.Support.Article',
@@ -52,7 +52,7 @@ export class LicensesService {
 			size: 'lg',
 			centered: true,
 			ariaLabelledBy: 'other-software-licenses-dialog-basic-title',
-			windowClass: 'license-Modal'
+			windowClass: 'license-Modal',
 		});
 		licenseModal.componentInstance.url = openSourceUrl;
 		licenseModal.componentInstance.type = 'txt';

@@ -1,23 +1,14 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	ViewChild,
-	Output,
-	EventEmitter
-} from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
 
-
 @Component({
-  selector: 'vtr-ui-list-scheduled-scan',
-  templateUrl: './ui-list-scheduled-scan.component.html',
-  styleUrls: ['./ui-list-scheduled-scan.component.scss']
+	selector: 'vtr-ui-list-scheduled-scan',
+	templateUrl: './ui-list-scheduled-scan.component.html',
+	styleUrls: ['./ui-list-scheduled-scan.component.scss'],
 })
 export class UiListScheduledScanComponent implements OnInit {
-
 	@Input() title = '';
 	@Input() caption = '';
 	@Input() theme = 'white';
@@ -36,16 +27,17 @@ export class UiListScheduledScanComponent implements OnInit {
 		private hardwareScanService: HardwareScanService
 	) {}
 
-
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	public disable() {
-		const isExecuting = !this.hardwareScanService.isScanDoneExecuting() && (this.hardwareScanService.isScanExecuting() || this.hardwareScanService.isRecoverExecuting());
+		const isExecuting =
+			!this.hardwareScanService.isScanDoneExecuting() &&
+			(this.hardwareScanService.isScanExecuting() ||
+				this.hardwareScanService.isRecoverExecuting());
 		return isExecuting;
 	}
 
 	public onEdit() {
-        this.editClick.emit({scanID: this.scanID});
-    }
+		this.editClick.emit({ scanID: this.scanID });
+	}
 }

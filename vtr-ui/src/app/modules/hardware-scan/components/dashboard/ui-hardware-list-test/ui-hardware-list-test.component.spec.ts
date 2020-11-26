@@ -8,9 +8,8 @@ xdescribe('UiHardwareListTestComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ UiHardwareListTestComponent ]
-		})
-		.compileComponents();
+			declarations: [UiHardwareListTestComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

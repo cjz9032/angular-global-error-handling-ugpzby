@@ -6,7 +6,7 @@ import { BatteryDetailService } from 'src/app/services/battery-detail/battery-de
 @Component({
 	selector: 'vtr-modal-battery-charge-threshold',
 	templateUrl: './modal-battery-charge-threshold.component.html',
-	styleUrls: ['./modal-battery-charge-threshold.component.scss']
+	styleUrls: ['./modal-battery-charge-threshold.component.scss'],
 })
 export class ModalBatteryChargeThresholdComponent implements OnInit {
 	title: string;
@@ -20,7 +20,8 @@ export class ModalBatteryChargeThresholdComponent implements OnInit {
 	constructor(
 		public activeModal: NgbActiveModal,
 		public translate: TranslateService,
-		public batteryService: BatteryDetailService) { }
+		public batteryService: BatteryDetailService
+	) {}
 
 	ngOnInit() {
 		this.batteryService.currentOpenModal = this.id;
@@ -40,5 +41,4 @@ export class ModalBatteryChargeThresholdComponent implements OnInit {
 	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
 		this.closeModal();
 	}
-
 }

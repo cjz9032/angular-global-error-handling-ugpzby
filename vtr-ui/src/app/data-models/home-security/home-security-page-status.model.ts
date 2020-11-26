@@ -1,4 +1,4 @@
 export class HomeSecurityPageStatus {
-    locationPermission: boolean;
-    isOnline: boolean;
+	locationPermission: boolean;
+	isOnline: boolean;
 }

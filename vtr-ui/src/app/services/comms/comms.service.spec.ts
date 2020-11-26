@@ -3,10 +3,10 @@ import { TestBed } from '@angular/core/testing';
 import { CommsService } from './comms.service';
 
 xdescribe('CommsService', () => {
- beforeEach(() => TestBed.configureTestingModule({}));
+	beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
-     const service: CommsService = TestBed.get(CommsService);
-     expect(service).toBeTruthy();
-  });
+	it('should be created', () => {
+		const service: CommsService = TestBed.get(CommsService);
+		expect(service).toBeTruthy();
+	});
 });

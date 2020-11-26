@@ -5,7 +5,7 @@ import { BaseComponent } from '../base/base.component';
 	selector: 'vtr-container-collapsible',
 	templateUrl: './container-collapsible.component.html',
 	styleUrls: ['./container-collapsible.component.scss'],
-	exportAs: 'containerCollapisble'
+	exportAs: 'containerCollapisble',
 })
 export class ContainerCollapsibleComponent extends BaseComponent {
 	@Input() cardTitle: string;
@@ -26,5 +26,4 @@ export class ContainerCollapsibleComponent extends BaseComponent {
 		this.isCollapsed = !this.isCollapsed;
 		this.toggle.emit(this.isCollapsed);
 	}
-
 }

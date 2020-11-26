@@ -152,7 +152,7 @@ import { BatteryHealthModule } from '../../components/pages/page-device-settings
 		SubpageDeviceSettingsPowerContainerComponent,
 		BacklightThinkpadComponent,
 		AntiTheftComponent,
-		PageHighDensityBatteryComponent
+		PageHighDensityBatteryComponent,
 	],
 	imports: [
 		CommonModule,
@@ -177,7 +177,7 @@ import { BatteryHealthModule } from '../../components/pages/page-device-settings
 		UiCustomSliderModule,
 		PageSupportDetailModule,
 		SpinnerModule,
-		BatteryHealthModule
+		BatteryHealthModule,
 	],
 	exports: [
 		CommonModule,
@@ -188,10 +188,10 @@ import { BatteryHealthModule } from '../../components/pages/page-device-settings
 		SettingsPageLayoutModule,
 		RouterModule,
 		HeaderMainModule,
-		UiCustomSliderModule
+		UiCustomSliderModule,
 	],
 	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class HardwareSettingsModule {
 	constructor(library: FaIconLibrary) {

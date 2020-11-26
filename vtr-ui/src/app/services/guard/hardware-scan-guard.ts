@@ -6,10 +6,9 @@ import { CommonService } from '../common/common.service';
 import { BasicGuard } from './basic-guard';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class HardwareScanGuard extends BasicGuard {
-
 	constructor(
 		public guardConstants: GuardConstants,
 		private hardwareScanService: HardwareScanService,
@@ -23,7 +22,7 @@ export class HardwareScanGuard extends BasicGuard {
 		state: RouterStateSnapshot
 	): Promise<boolean | UrlTree> {
 		return this.hardwareScanService.isAvailable().then((available) => {
-			if (available){
+			if (available) {
 				return true;
 			}
 			return super.canActivate(route, state);

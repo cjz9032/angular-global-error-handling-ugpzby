@@ -1,34 +1,29 @@
-import {
-	WidgetItem
-} from './widget-item.model';
-import {
-	Antivirus,
-	EventTypes
-} from '@lenovo/tan-client-bridge';
-import {
-	CommonService
-} from '../../../services/common/common.service';
-import {
-	LocalStorageKey
-} from '../../../enums/local-storage-key.enum';
-import {
-	TranslateService
-} from '@ngx-translate/core';
-import {
-	AntivirusService
-} from 'src/app/services/security/antivirus.service';
+import { WidgetItem } from './widget-item.model';
+import { Antivirus, EventTypes } from '@lenovo/tan-client-bridge';
+import { CommonService } from '../../../services/common/common.service';
+import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
+import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { AntivirusCommonData } from '../antivirus-common.data.model';
 
 export class AntivirusWidgetItem extends WidgetItem {
 	currentPage: string;
-	constructor(public antivirus: Antivirus, public commonService: CommonService, public translateService: TranslateService, public antivirusService: AntivirusService) {
-		super({
-			id: 'sa-widget-lnk-av',
-			path: 'security/anti-virus',
-			type: 'security',
-			isSystemLink: false,
-			metricsItemName: 'Anti-Virus',
-		}, translateService);
+	constructor(
+		public antivirus: Antivirus,
+		public commonService: CommonService,
+		public translateService: TranslateService,
+		public antivirusService: AntivirusService
+	) {
+		super(
+			{
+				id: 'sa-widget-lnk-av',
+				path: 'security/anti-virus',
+				type: 'security',
+				isSystemLink: false,
+				metricsItemName: 'Anti-Virus',
+			},
+			translateService
+		);
 
 		this.waitTimeout();
 		this.translateService.stream('common.securityAdvisor.antiVirus').subscribe((value) => {
@@ -37,18 +32,22 @@ export class AntivirusWidgetItem extends WidgetItem {
 
 		this.setWidgetUI(this.antivirusService.GetAntivirusStatus());
 
-		antivirus.on(EventTypes.avRefreshedEvent, (av) => {
-			this.setWidgetUI(this.antivirusService.GetAntivirusStatus());
-		}).on(EventTypes.avStartRefreshEvent, () => {
-			if (this.status === 7) {
-				this.translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
-					this.detail = value;
-					this.status = 4;
-					this.retryText = undefined;
-				});
-				this.waitTimeout();
-			}
-		});
+		antivirus
+			.on(EventTypes.avRefreshedEvent, (av) => {
+				this.setWidgetUI(this.antivirusService.GetAntivirusStatus());
+			})
+			.on(EventTypes.avStartRefreshEvent, () => {
+				if (this.status === 7) {
+					this.translateService
+						.stream('common.securityAdvisor.loading')
+						.subscribe((value) => {
+							this.detail = value;
+							this.status = 4;
+							this.retryText = undefined;
+						});
+					this.waitTimeout();
+				}
+			});
 	}
 
 	private setWidgetUI(antivirusCommonData: AntivirusCommonData) {
@@ -60,9 +59,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 		if (typeof av !== 'boolean' && typeof fw !== 'boolean') {
 			return;
 		}
-		if ((av && fw) ||
-			(av && typeof fw !== 'boolean') ||
-			(fw && typeof av !== 'boolean')) {
+		if ((av && fw) || (av && typeof fw !== 'boolean') || (fw && typeof av !== 'boolean')) {
 			this.translateService.stream('common.securityAdvisor.enabled').subscribe((value) => {
 				this.detail = value;
 				this.status = 0;
@@ -73,10 +70,12 @@ export class AntivirusWidgetItem extends WidgetItem {
 				this.status = 1;
 			});
 		} else {
-			this.translateService.stream('common.securityAdvisor.partiallyProtected').subscribe((value) => {
-				this.detail = value;
-				this.status = 3;
-			});
+			this.translateService
+				.stream('common.securityAdvisor.partiallyProtected')
+				.subscribe((value) => {
+					this.detail = value;
+					this.status = 3;
+				});
 		}
 	}
 
@@ -101,6 +100,6 @@ export class AntivirusWidgetItem extends WidgetItem {
 					this.retryText = value;
 				});
 			}
-		}, 15000)
+		}, 15000);
 	}
 }

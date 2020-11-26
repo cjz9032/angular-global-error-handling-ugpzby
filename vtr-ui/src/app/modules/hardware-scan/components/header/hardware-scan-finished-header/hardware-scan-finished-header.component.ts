@@ -1,4 +1,13 @@
-import { Component, OnInit, Input, NgZone, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	NgZone,
+	Output,
+	EventEmitter,
+	OnChanges,
+	SimpleChanges,
+} from '@angular/core';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { PreviousResultService } from '../../../services/previous-result.service';
 import { HardwareScanResultService } from '../../../services/hardware-scan-result.service';
@@ -7,12 +16,11 @@ import { LenovoSupportService } from 'src/app/modules/hardware-scan/services/len
 import { HardwareScanFinishedHeaderType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 
 @Component({
-  selector: 'vtr-hardware-scan-finished-header',
-  templateUrl: './hardware-scan-finished-header.component.html',
-  styleUrls: ['./hardware-scan-finished-header.component.scss']
+	selector: 'vtr-hardware-scan-finished-header',
+	templateUrl: './hardware-scan-finished-header.component.html',
+	styleUrls: ['./hardware-scan-finished-header.component.scss'],
 })
 export class HardwareScanFinishedHeaderComponent implements OnInit {
-
 	supportUrl: string;
 	contactusUrl: string;
 	headerType: HardwareScanFinishedHeaderType = HardwareScanFinishedHeaderType.None;
@@ -37,7 +45,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 		private hardwareScanResultService: HardwareScanResultService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private lenovoSupportService: LenovoSupportService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.headerType = this.hardwareScanService.getScanFinishedHeaderType();
@@ -45,7 +53,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 		let finalResultCode: string;
 
 		if (this.headerType === HardwareScanFinishedHeaderType.Scan) {
-			scanDate =  this.hardwareScanService.getFinalResultStartDate();
+			scanDate = this.hardwareScanService.getFinalResultStartDate();
 			this.scanResult = this.hardwareScanService.getScanResult();
 			finalResultCode = this.getFinalResultCode();
 		} else if (this.headerType === HardwareScanFinishedHeaderType.ViewResults) {
@@ -63,7 +71,8 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 	}
 
 	private async configureSupportUrl(scanDate: Date, finalResultCode: string) {
-		await this.lenovoSupportService.getETicketUrl(scanDate, finalResultCode)
+		await this.lenovoSupportService
+			.getETicketUrl(scanDate, finalResultCode)
 			.then((response) => {
 				this.supportUrl = response;
 			});

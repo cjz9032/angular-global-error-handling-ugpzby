@@ -17,7 +17,6 @@ import { DevService } from '../../../services/dev/dev.service';
 import { DeviceService } from '../../../services/device/device.service';
 import { WidgetDeviceComponent } from './widget-device.component';
 
-
 describe('WidgetDeviceComponent', () => {
 	let component: WidgetDeviceComponent;
 	let fixture: ComponentFixture<WidgetDeviceComponent>;
@@ -36,16 +35,29 @@ describe('WidgetDeviceComponent', () => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [WidgetDeviceComponent, SvgInlinePipe],
-			imports: [RouterTestingModule, TranslateModule.forRoot({
-				loader: {
-					provide: TranslateLoader,
-					useFactory: HttpLoaderFactory,
-					deps: [HttpClient]
-				}
-			}), HttpClientTestingModule],
-			providers: [TimerService, DashboardService, CommonService, TranslateService, WarrantyService, MetricService, DeviceService, DevService, FormatLocaleDatePipe]
-		})
-			.compileComponents();
+			imports: [
+				RouterTestingModule,
+				TranslateModule.forRoot({
+					loader: {
+						provide: TranslateLoader,
+						useFactory: HttpLoaderFactory,
+						deps: [HttpClient],
+					},
+				}),
+				HttpClientTestingModule,
+			],
+			providers: [
+				TimerService,
+				DashboardService,
+				CommonService,
+				TranslateService,
+				WarrantyService,
+				MetricService,
+				DeviceService,
+				DevService,
+				FormatLocaleDatePipe,
+			],
+		}).compileComponents();
 	}));
 	beforeEach(() => {
 		fixture = TestBed.createComponent(WidgetDeviceComponent);

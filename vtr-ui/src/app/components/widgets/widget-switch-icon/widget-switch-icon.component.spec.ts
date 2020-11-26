@@ -8,9 +8,8 @@ xdescribe('WidgetSwitchIconComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetSwitchIconComponent]
-		})
-			.compileComponents();
+			declarations: [WidgetSwitchIconComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

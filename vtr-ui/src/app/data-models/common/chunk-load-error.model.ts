@@ -8,8 +8,8 @@ export class ChunkLoadError extends Error {
 	public type: string;
 	public test1: string;
 	public test2?: string;
-	constructor ( ) {
+	constructor() {
 		super();
 		Object.setPrototypeOf(this, ChunkLoadError.prototype);
-    }
+	}
 }

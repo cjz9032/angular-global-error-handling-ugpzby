@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 /* height */
 $h: 2rem;
 /* width */
@@ -7,7 +7,7 @@ $w: $h * 6;
 $p: $h / 6;
 /* toggle dimensions */
 $tw: $w / 3;
-$th: $h - .4;
+$th: $h - 0.4;
 /* font size */
 $fs: 1rem;
 /* toggle's border thickness */
@@ -56,7 +56,7 @@ $colors: $go, $main_light, $alt;
 		height: $th;
 		position: absolute;
 		left: $w / 2 - $tw / 2;
-		top: .2rem;
+		top: 0.2rem;
 		border-radius: $tw / 2;
 		box-sizing: border-box;
 		transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -74,7 +74,7 @@ $colors: $go, $main_light, $alt;
 		z-index: 1;
 		display: inline-block;
 		text-align: center;
-		line-height: $h + .1;
+		line-height: $h + 0.1;
 		text-transform: uppercase;
 		font-size: $fs;
 		font-weight: $weight_medium;
@@ -92,16 +92,15 @@ $colors: $go, $main_light, $alt;
 #yes_radio:checked {
 	background: $alt;
 	~ .toggle {
-		left: .2rem;
+		left: 0.2rem;
 	}
 }
 #no_radio:checked {
 	background: $alt;
 	~ .toggle {
-		left: $w - $tw - .2;
+		left: $w - $tw - 0.2;
 	}
 }
-
 
 .wrapper {
 	&.on {
@@ -127,7 +126,7 @@ $colors: $go, $main_light, $alt;
 	}
 	#yes_radio,
 	#yes-lbl {
-		left: $p * .7;
+		left: $p * 0.7;
 	}
 	#maybe_radio,
 	#maybe-lbl {
@@ -135,13 +134,13 @@ $colors: $go, $main_light, $alt;
 	}
 	#no_radio,
 	#no-lbl {
-		right: $p * .7;
+		right: $p * 0.7;
 	}
 }
 
 #maybe-lbl {
 	@include animationDelay($ta / 3);
-	letter-spacing: -.02rem;
+	letter-spacing: -0.02rem;
 }
 #no-lbl {
 	@include animationDelay($ta * 2 / 3);

@@ -1,11 +1,16 @@
-import { AfterContentInit, Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';
-
+import {
+	AfterContentInit,
+	Directive,
+	ElementRef,
+	Input,
+	OnChanges,
+	SimpleChanges,
+} from '@angular/core';
 
 @Directive({
-	selector: '[vtrAutoFocus],[autofocus]'
+	selector: '[vtrAutoFocus],[autofocus]',
 })
 export class AutofocusDirective implements AfterContentInit, OnChanges {
-
 	private focus = true;
 	private element: HTMLElement;
 	private hadTabIndex = true;
@@ -14,20 +19,16 @@ export class AutofocusDirective implements AfterContentInit, OnChanges {
 	constructor(private el: ElementRef) {
 		try {
 			this.element = this.el.nativeElement;
-		}
-		catch (error) {
+		} catch (error) {
 			// console.log('constructor ' + JSON.stringify(error));
 		}
-
 	}
 	ngOnChanges(changes: SimpleChanges): void {
-
 		try {
 			// console.log('ngOnChanges ' + JSON.stringify(changes));
 			if (changes.autofocus.currentValue) {
 				this.focusElement();
 			}
-
 		} catch (error) {
 			// console.log('ngOnChanges error' + JSON.stringify(error));
 		}
@@ -36,7 +37,6 @@ export class AutofocusDirective implements AfterContentInit, OnChanges {
 	private focusElement() {
 		try {
 			if (this.focus) {
-
 				if (!this.element.hasAttribute(this.TAB_INDEX)) {
 					this.hadTabIndex = false;
 					this.element.setAttribute(this.TAB_INDEX, '0');
@@ -54,11 +54,9 @@ export class AutofocusDirective implements AfterContentInit, OnChanges {
 						// Fix for Edge browser
 						window.scrollBy(0, -100);
 					} */
-
 				}, 100);
 			}
-		}
-		catch (error) {
+		} catch (error) {
 			// console.log('focusElement error' + JSON.stringify(error));
 		}
 	}
@@ -69,12 +67,9 @@ export class AutofocusDirective implements AfterContentInit, OnChanges {
 				// console.log('had not hadTabIndex : added remove it');
 				this.element.removeAttribute(this.TAB_INDEX);
 			}
-
 		} catch (error) {
 			// console.log('handleBur error' + JSON.stringify(error));
 		}
-
-
 	}
 
 	@Input() set autofocus(condition: boolean) {
@@ -88,7 +83,5 @@ export class AutofocusDirective implements AfterContentInit, OnChanges {
 		} catch (error) {
 			// console.log('ngAfterContentInit error' + JSON.stringify(error))
 		}
-
 	}
-
 }

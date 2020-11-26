@@ -8,9 +8,8 @@ xdescribe('AvailableUpdatesComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [AvailableUpdatesComponent]
-		})
-			.compileComponents();
+			declarations: [AvailableUpdatesComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

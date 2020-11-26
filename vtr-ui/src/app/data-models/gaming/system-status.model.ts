@@ -11,15 +11,14 @@ export class SystemStatus {
 	public memorySize: string;
 	public memoryModuleName: string;
 	public ramOver: string;
-		public diskList: [{
-			isSystemDisk: boolean,
-			capacity: number,
-			type: string,
-			hddName: string,
-			usedDisk: number,
-			diskUsage: number
-
-		}]
-
-
+	public diskList: [
+		{
+			isSystemDisk: boolean;
+			capacity: number;
+			type: string;
+			hddName: string;
+			usedDisk: number;
+			diskUsage: number;
+		}
+	];
 }

@@ -12,7 +12,6 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 	providedIn: 'root',
 })
 export class NonCommercialGuard extends BasicGuard {
-
 	constructor(
 		private localCacheService: LocalCacheService,
 		public guardConstants: GuardConstants,
@@ -25,7 +24,9 @@ export class NonCommercialGuard extends BasicGuard {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment)
+		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LocalInfoSegment
+		);
 		if (segment !== SegmentConst.Commercial) {
 			return true;
 		} else {

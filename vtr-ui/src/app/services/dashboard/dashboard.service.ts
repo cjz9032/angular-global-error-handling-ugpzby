@@ -5,7 +5,11 @@ import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { SegmentConst, SelfSelectService, SegmentConstHelper } from '../self-select/self-select.service';
+import {
+	SegmentConst,
+	SelfSelectService,
+	SegmentConstHelper,
+} from '../self-select/self-select.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
@@ -22,7 +26,6 @@ import { SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum'
 import { DeviceCondition, DeviceStatus } from 'src/app/data-models/widgets/status.model';
 import { DashboardStateCardData } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
 
-
 interface IContentGroup {
 	positionA: any[];
 	positionB: FeatureContent;
@@ -33,7 +36,7 @@ interface IContentGroup {
 }
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class DashboardService {
 	private dashboard: any;
@@ -51,7 +54,7 @@ export class DashboardService {
 		positionC: null,
 		positionD: null,
 		positionE: null,
-		positionF: null
+		positionF: null,
 	};
 	onlineCardContent: IContentGroup = {
 		positionA: null,
@@ -59,7 +62,7 @@ export class DashboardService {
 		positionC: null,
 		positionD: null,
 		positionE: null,
-		positionF: null
+		positionF: null,
 	};
 	translateString: any;
 
@@ -73,7 +76,7 @@ export class DashboardService {
 		state: SystemState.Loading,
 		metricsItem: 'loading',
 		statusText: '',
-		isActionLink: false
+		isActionLink: false,
 	};
 
 	goodConditionData: DashboardStateCardData = {
@@ -84,7 +87,7 @@ export class DashboardService {
 		state: SystemState.GoodCondition,
 		metricsItem: 'good-condition',
 		statusText: 'device.myDevice.goodCondition',
-		isActionLink: false
+		isActionLink: false,
 	};
 
 	needMaintainSU: DashboardStateCardData = {
@@ -95,7 +98,7 @@ export class DashboardService {
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-su',
 		statusText: 'device.myDevice.needAction',
-		isActionLink: true
+		isActionLink: true,
 	};
 
 	needMaintainHWS: DashboardStateCardData = {
@@ -106,7 +109,7 @@ export class DashboardService {
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-hws',
 		statusText: 'device.myDevice.needAction',
-		isActionLink: true
+		isActionLink: true,
 	};
 
 	needMaintainSP: DashboardStateCardData = {
@@ -117,7 +120,7 @@ export class DashboardService {
 		state: SystemState.NeedMaintenance,
 		metricsItem: 'need-maintenance-sp',
 		statusText: 'device.myDevice.needAction',
-		isActionLink: true
+		isActionLink: true,
 	};
 
 	positionBResponseReceived: boolean;
@@ -276,7 +279,9 @@ export class DashboardService {
 			if (this.sysupdate) {
 				return new Observable((observer) => {
 					// from local storage
-					const cacheSu = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastSystemUpdateStatus);
+					const cacheSu = this.localCacheService.getLocalCacheValue(
+						LocalStorageKey.LastSystemUpdateStatus
+					);
 					if (cacheSu) {
 						observer.next(cacheSu);
 					}
@@ -292,13 +297,19 @@ export class DashboardService {
 								result.status = 0;
 							}
 							// save to localstorage
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.LastSystemUpdateStatus, result);
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.LastSystemUpdateStatus,
+								result
+							);
 							observer.next(result);
 							observer.complete();
 						},
 						(e) => {
 							observer.next(result);
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.LastSystemUpdateStatus, result);
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.LastSystemUpdateStatus,
+								result
+							);
 							observer.complete();
 						}
 					);
@@ -323,8 +334,8 @@ export class DashboardService {
 				url: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null,
 				DataSource: ContentSource.Local,
-				isLocal: true
-			}
+				isLocal: true,
+			},
 		];
 		this.offlineCardContent.positionB = {
 			Title: this.translateString['common.menu.support'],
@@ -343,7 +354,7 @@ export class DashboardService {
 			ExpirationDate: null,
 			Filters: null,
 			DataSource: ContentSource.Local,
-			isLocal: true
+			isLocal: true,
 		};
 
 		this.offlineCardContent.positionC = {
@@ -363,7 +374,7 @@ export class DashboardService {
 			ExpirationDate: null,
 			Filters: null,
 			DataSource: ContentSource.Local,
-			isLocal: true
+			isLocal: true,
 		};
 
 		this.offlineCardContent.positionD = {
@@ -383,7 +394,7 @@ export class DashboardService {
 			ExpirationDate: null,
 			Filters: null,
 			DataSource: ContentSource.Local,
-			isLocal: true
+			isLocal: true,
 		};
 
 		this.offlineCardContent.positionE = {
@@ -403,7 +414,7 @@ export class DashboardService {
 			ExpirationDate: null,
 			Filters: null,
 			DataSource: ContentSource.Local,
-			isLocal: true
+			isLocal: true,
 		};
 
 		this.offlineCardContent.positionF = {
@@ -423,14 +434,13 @@ export class DashboardService {
 			ExpirationDate: null,
 			Filters: null,
 			DataSource: ContentSource.Local,
-			isLocal: true
+			isLocal: true,
 		};
-
 	}
 	// checking self select status for HW Settings
 	public getSelfSelectStatus(): Promise<boolean> {
 		let response = false;
-		return this.localInfoService.getLocalInfo().then(result => {
+		return this.localInfoService.getLocalInfo().then((result) => {
 			const segmentVal = result.Segment.toLowerCase();
 			if (segmentVal && segmentVal !== SegmentConst.Gaming) {
 				response = true;
@@ -441,11 +451,12 @@ export class DashboardService {
 		});
 	}
 
-
 	public getPositionBData(): Observable<any> {
 		return new Observable((subscriber) => {
 			subscriber.next(this.positionBLoadingData);
-			const locDevCondition = this.localCacheService.getLocalCacheValue(LocalStorageKey.DeviceCondition);
+			const locDevCondition = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.DeviceCondition
+			);
 			const locDevStatus = this.getStateCardData(locDevCondition);
 			if (locDevStatus) {
 				subscriber.next(locDevStatus);
@@ -497,14 +508,18 @@ export class DashboardService {
 		const isHardwareScanEnabled = await this.hardwareScanService.isAvailable();
 		const isSmartPerformanceEnabled = await this.configService.showSmartPerformance();
 
-		return !this.deviceService.isSMode && !this.deviceService.isArm
-			&& (isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled);
+		return (
+			!this.deviceService.isSMode &&
+			!this.deviceService.isArm &&
+			(isSystemUpdateEnabled || isHardwareScanEnabled || isSmartPerformanceEnabled)
+		);
 	}
 
 	public async getDeviceStatus() {
 		const machineInfo = this.deviceService.getMachineInfoSync();
 		const oobeDate = machineInfo?.firstRunDate || Date.now();
-		const isOobeOver31days = this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.OOBE;
+		const isOobeOver31days =
+			this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.OOBE;
 		if (this.metricService.isFirstLaunch || !isOobeOver31days) {
 			return DeviceCondition.Good;
 		}
@@ -541,30 +556,36 @@ export class DashboardService {
 	}
 
 	public async isSMPNeedPromote(): Promise<boolean> {
-		if (!await this.configService.showSmartPerformance() || !this.commonService.isOnline) {
+		if (!(await this.configService.showSmartPerformance()) || !this.commonService.isOnline) {
 			return false;
 		}
 		return !(await this.isSmartPerformanceSuscripted());
 	}
 
-	public async isSmartPerformanceSuscripted(): Promise<boolean> {		
+	public async isSmartPerformanceSuscripted(): Promise<boolean> {
 		await this.spService.getSubscriptionDataDetail(null);
-		return this.spService.isSubscribed;		
+		return this.spService.isSubscribed;
 	}
 
 	public async isHWScanNeedPromote(): Promise<boolean> {
-		if (!await this.hardwareScanService.isAvailable()) {
+		if (!(await this.hardwareScanService.isAvailable())) {
 			return false;
 		}
 		await this.previousResultService.getLastResults();
 		const lastSacnInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
-		if (lastSacnInfo.date && this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) > SystemHealthDates.HardwareScan) {
+		if (
+			lastSacnInfo.date &&
+			this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) >
+				SystemHealthDates.HardwareScan
+		) {
 			return true;
 		}
 
 		if (!lastSacnInfo.date) {
 			const oobeDate = this.deviceService.getMachineInfoSync()?.firstRunDate || Date.now();
-			if (this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan) {
+			if (
+				this.systemUpdateService.dateDiffInDays(oobeDate) > SystemHealthDates.HardwareScan
+			) {
 				return true;
 			}
 		}
@@ -575,6 +596,11 @@ export class DashboardService {
 	public async isPositionCShowSecurityCard(): Promise<boolean> {
 		const result = await this.selfselectService.getSegment();
 		const activeSegment: SegmentConst = result;
-		return !this.deviceService.isSMode && !this.deviceService.isArm && (SegmentConstHelper.includedInCommonConsumer(activeSegment) || activeSegment === SegmentConst.SMB);
+		return (
+			!this.deviceService.isSMode &&
+			!this.deviceService.isArm &&
+			(SegmentConstHelper.includedInCommonConsumer(activeSegment) ||
+				activeSegment === SegmentConst.SMB)
+		);
 	}
 }

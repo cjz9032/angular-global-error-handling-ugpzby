@@ -1,21 +1,13 @@
-import {
-	EventTypes
-} from '@lenovo/tan-client-bridge';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import {
-	CommonService
-} from 'src/app/services/common/common.service';
-import {
-	LocalStorageKey
-} from 'src/app/enums/local-storage-key.enum';
-import {
-	TranslateService
-} from '@ngx-translate/core';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 import { NgZone } from '@angular/core';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class WifiSecurityLandingViewModel {
-	wfStatus  = {
+	wfStatus = {
 		status: 'loading',
 		icon: 'landing-wifi',
 		title: 'common.securityAdvisor.wifi',
@@ -45,54 +37,68 @@ export class WifiSecurityLandingViewModel {
 			this.setWiFiSecurityState(data, wfModel.isLocationServiceOn);
 		});
 
-		translate.stream([
-			'common.securityAdvisor.loading',
-			'common.securityAdvisor.enabled',
-			'common.securityAdvisor.disabled',
-			'common.securityAdvisor.wifi',
-			'security.landing.goWifi',
-			'security.landing.wifiContent',
-			'security.landing.haveOwnWifi'
-		]).subscribe((res) => {
-			this.translateString = res;
-			if (!this.wfStatus.detail) {
-				this.wfStatus.detail = res['common.securityAdvisor.loading'];
-			}
-			this.wfStatus.title = res['common.securityAdvisor.wifi'];
-			this.wfStatus.content = res['security.landing.wifiContent'];
-			this.wfStatus.ownTitle = res['security.landing.haveOwnWifi'];
-			this.wfStatus.buttonLabel = res['security.landing.goWifi'];
-			const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState);
-			const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
-			this.wfStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
-			if (wfModel && wfModel.state) {
-				if (wfModel.isLocationServiceOn !== undefined) {
-					this.setWiFiSecurityState(wfModel.state, wfModel.isLocationServiceOn);
+		translate
+			.stream([
+				'common.securityAdvisor.loading',
+				'common.securityAdvisor.enabled',
+				'common.securityAdvisor.disabled',
+				'common.securityAdvisor.wifi',
+				'security.landing.goWifi',
+				'security.landing.wifiContent',
+				'security.landing.haveOwnWifi',
+			])
+			.subscribe((res) => {
+				this.translateString = res;
+				if (!this.wfStatus.detail) {
+					this.wfStatus.detail = res['common.securityAdvisor.loading'];
 				}
-			} else if (cacheStatus) {
-				if (wfModel && wfModel.isLocationServiceOn !== undefined) {
-					this.setWiFiSecurityState(cacheStatus, wfModel.isLocationServiceOn);
+				this.wfStatus.title = res['common.securityAdvisor.wifi'];
+				this.wfStatus.content = res['security.landing.wifiContent'];
+				this.wfStatus.ownTitle = res['security.landing.haveOwnWifi'];
+				this.wfStatus.buttonLabel = res['security.landing.goWifi'];
+				const cacheStatus = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.SecurityWifiSecurityState
+				);
+				const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.SecurityLandingWifiSecurityShowOwn,
+					null
+				);
+				this.wfStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
+				if (wfModel && wfModel.state) {
+					if (wfModel.isLocationServiceOn !== undefined) {
+						this.setWiFiSecurityState(wfModel.state, wfModel.isLocationServiceOn);
+					}
+				} else if (cacheStatus) {
+					if (wfModel && wfModel.isLocationServiceOn !== undefined) {
+						this.setWiFiSecurityState(cacheStatus, wfModel.isLocationServiceOn);
+					}
 				}
-			}
-		});
+			});
 	}
 
 	setWiFiSecurityState(state: string, location: any) {
 		if (!this.translateString) {
 			return;
 		}
-		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWifiSecurityShowOwn, null);
+		const cacheShowOwn: boolean = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityLandingWifiSecurityShowOwn,
+			null
+		);
 		this.wfStatus.showOwn = cacheShowOwn ? cacheShowOwn : false;
 		if (location) {
 			this.wfStatus.status = state === 'enabled' ? 'enabled' : 'disabled';
-			this.wfStatus.detail = this.translateString[`common.securityAdvisor.${state === 'enabled' ? 'enabled' : 'disabled'}`];
+			this.wfStatus.detail = this.translateString[
+				`common.securityAdvisor.${state === 'enabled' ? 'enabled' : 'disabled'}`
+			];
 		} else {
 			this.wfStatus.status = 'disabled';
 			this.wfStatus.detail = this.translateString['common.securityAdvisor.disabled'];
 		}
 		if (state) {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityWifiSecurityState, state);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SecurityWifiSecurityState,
+				state
+			);
 		}
 	}
-
 }

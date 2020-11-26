@@ -9,10 +9,9 @@ import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 @Component({
 	selector: 'vtr-ui-article-item',
 	templateUrl: './ui-article-item.component.html',
-	styleUrls: ['./ui-article-item.component.scss']
+	styleUrls: ['./ui-article-item.component.scss'],
 })
 export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy {
-
 	SupportContentStatus = SupportContentStatus;
 	@Input() index: any;
 	@Input() tabIndex: number;
@@ -26,15 +25,14 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 	ratio = 420 / 430;
 
 	metricsDatas: {
-		viewOrder: number
-		pageNumber: number
+		viewOrder: number;
+		pageNumber: number;
 	};
 
 	constructor(
 		private supportService: SupportService,
 		public cardService: CardService,
 		private metricsService: MetricService
-
 	) {
 		this.metricsDatas = this.supportService.metricsDatas;
 	}
@@ -52,21 +50,28 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 		}
 
 		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
-		this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(itemValue, () => this.articleItemDiv, () => this.index);
+		this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(
+			itemValue,
+			() => this.articleItemDiv,
+			() => this.index
+		);
 	}
 
 	get item() {
 		return this.innerItem;
 	}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	ngAfterViewInit() {
 		const delay = setInterval(() => {
 			if (this.item) {
 				this.calcHeight();
-				if (this.item.Category && this.item.Category.length > 0 && this.item.Category[0].Id) {
+				if (
+					this.item.Category &&
+					this.item.Category.length > 0 &&
+					this.item.Category[0].Id
+				) {
 					this.itemCategory = this.item.Category[0].Id;
 				}
 				clearInterval(delay);
@@ -87,9 +92,18 @@ export class UIArticleItemComponent implements OnInit, AfterViewInit, OnDestroy 
 	clickContent() {
 		this.metricsDatas.viewOrder++;
 		if (this.articleType === SupportContentStatus.Content) {
-			return this.cardService.linkClicked(this.item.ActionType, this.item.ActionLink, false, this.item.Title);
+			return this.cardService.linkClicked(
+				this.item.ActionType,
+				this.item.ActionLink,
+				false,
+				this.item.Title
+			);
 		} else {
-			this.cardService.openArticleModal(ContentActionType.Internal, this.item.Id, this.item.Title);
+			this.cardService.openArticleModal(
+				ContentActionType.Internal,
+				this.item.Id,
+				this.item.Title
+			);
 			return false;
 		}
 	}

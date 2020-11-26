@@ -8,7 +8,7 @@ import { DeviceLocationPermission } from 'src/app/data-models/home-security/devi
 @Component({
 	selector: 'vtr-home-security-content',
 	templateUrl: './home-security-content.component.html',
-	styleUrls: ['./home-security-content.component.scss']
+	styleUrls: ['./home-security-content.component.scss'],
 })
 export class HomeSecurityContentComponent implements OnInit {
 	@Input() page: string;
@@ -17,39 +17,45 @@ export class HomeSecurityContentComponent implements OnInit {
 	peaceOfMindArticleId = '988BE19B75554E09B5A914D5F803C3F3';
 	peaceOfMindArticleCategory: string;
 
-
 	constructor(
 		public dialogService: DialogService,
 		public modalService: NgbModal,
-		private cmsService: CMSService,
-	) {	}
+		private cmsService: CMSService
+	) {}
 
 	ngOnInit(): void {
 		this.fetchCMSArticles();
 	}
 
 	fetchCMSArticles() {
-		this.cmsService.fetchCMSArticle(this.peaceOfMindArticleId, { Lang: 'EN' }).then((response: any) => {
-			if (response && response.Results && response.Results.Category) {
-				this.peaceOfMindArticleCategory = response.Results.Category.map((category: any) => category.Title).join(' ');
-			}
-		});
+		this.cmsService
+			.fetchCMSArticle(this.peaceOfMindArticleId, { Lang: 'EN' })
+			.then((response: any) => {
+				if (response && response.Results && response.Results.Category) {
+					this.peaceOfMindArticleCategory = response.Results.Category.map(
+						(category: any) => category.Title
+					).join(' ');
+				}
+			});
 	}
 
 	openPeaceOfMindArticle(): void {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
-			windowClass: 'Article-Detail-Modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
+		const articleDetailModal: NgbModalRef = this.modalService.open(
+			ModalArticleDetailComponent,
+			{
+				backdrop: true,
+				size: 'lg',
+				centered: true,
+				windowClass: 'Article-Detail-Modal',
+				keyboard: false,
+				beforeDismiss: () => {
+					if (articleDetailModal.componentInstance.onBeforeDismiss) {
+						articleDetailModal.componentInstance.onBeforeDismiss();
+					}
+					return true;
+				},
 			}
-		});
+		);
 
 		articleDetailModal.componentInstance.articleId = this.peaceOfMindArticleId;
 	}

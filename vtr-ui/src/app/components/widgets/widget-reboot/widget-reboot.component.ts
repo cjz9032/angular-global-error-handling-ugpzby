@@ -5,16 +5,15 @@ import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confi
 @Component({
 	selector: 'vtr-widget-reboot',
 	templateUrl: './widget-reboot.component.html',
-	styleUrls: ['./widget-reboot.component.scss']
+	styleUrls: ['./widget-reboot.component.scss'],
 })
 export class WidgetRebootComponent implements OnInit {
 	@Output() rebootClick = new EventEmitter<any>();
 	@Output() dismissClick = new EventEmitter<any>();
 
-	constructor(public modalService: NgbModal) { }
+	constructor(public modalService: NgbModal) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	onRebootClick($event) {
 		this.rebootClick.emit($event);
@@ -27,7 +26,7 @@ export class WidgetRebootComponent implements OnInit {
 	openConfirmationModal() {
 		const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
 			size: 'lg',
-			windowClass: 'common-confirmation-modal'
+			windowClass: 'common-confirmation-modal',
 		});
 		// modalRef.componentInstance.title = 'Hello';
 		// modalRef.componentInstance.body = `Protect the airplane AC power outlet by controlling

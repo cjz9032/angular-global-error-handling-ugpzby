@@ -10,8 +10,11 @@ describe('UiLightingEffectComponent', () => {
 	let fixture: ComponentFixture<UiLightingEffectComponent>;
 
 	const deviceServiceMock = { getMachineInfo: () => Promise.resolve({ locale: 'en' }) };
-	const options = [{ description: 'desc1', value: 1 },
-	{ description: 'desc2', value: 2 }, { description: 'desc3', value: 3 }];
+	const options = [
+		{ description: 'desc1', value: 1 },
+		{ description: 'desc2', value: 2 },
+		{ description: 'desc3', value: 3 },
+	];
 
 	const dummyElement = document.createElement('div');
 	dummyElement.id = 'menu-main-btn-navbar-toggler';
@@ -19,14 +22,18 @@ describe('UiLightingEffectComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiLightingEffectComponent,
+			declarations: [
+				UiLightingEffectComponent,
 				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' })],
+				mockPipe({ name: 'sanitize' }),
+			],
 			providers: [
-				NgbModal,NgbActiveModal,
-				{ provide: DeviceService, useValue: deviceServiceMock }],
+				NgbModal,
+				NgbActiveModal,
+				{ provide: DeviceService, useValue: deviceServiceMock },
+			],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [HttpClientModule]
+			imports: [HttpClientModule],
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingEffectComponent);
 		component = fixture.componentInstance;
@@ -70,7 +77,9 @@ describe('UiLightingEffectComponent', () => {
 		expect(component.optionSelected(sampleOption)).toBeUndefined();
 		component.isEffectChange = true;
 		component.optionSelected({ description: 'sample description', value: 2 });
-		expect(component.optionSelected({ description: 'sample description', value: 2 })).toBeUndefined();
+		expect(
+			component.optionSelected({ description: 'sample description', value: 2 })
+		).toBeUndefined();
 	});
 
 	it('should reset the description', () => {
@@ -89,9 +98,7 @@ describe('UiLightingEffectComponent', () => {
 			component.showOptions = false;
 			component.generalClick(event);
 			expect(component.generalClick(event)).toBeUndefined();
-		} catch (e) {
-
-		}
+		} catch (e) {}
 	});
 
 	it('should send the keydown fun', () => {
@@ -110,12 +117,12 @@ describe('UiLightingEffectComponent', () => {
 		expect(component.selectedOption).toBe(options[0]);
 		component.selectedValue = 1;
 		const changes = {
-			options : {
-				currentValue : {
-					dropOptions : options
-				}
-			}
-		}
+			options: {
+				currentValue: {
+					dropOptions: options,
+				},
+			},
+		};
 		component.ngOnChanges(changes);
 		expect(component.selectedValue).toBe(1);
 		component.options = undefined;
@@ -125,33 +132,31 @@ describe('UiLightingEffectComponent', () => {
 		component.ngOnChanges(changes);
 		expect(component.ngOnChanges(changes)).toBeUndefined();
 		const changes2 = {
-			options : {
-				currentValue : undefined
-			}
-		}
+			options: {
+				currentValue: undefined,
+			},
+		};
 		component.ngOnChanges(changes2);
 		expect(component.ngOnChanges(changes2)).toBeUndefined();
 	});
 
-	it('should focus on the item', fakeAsync (() => {
-		const dropDownEle: any = { nativeElement: {querySelectorAll: (param) => []}};
+	it('should focus on the item', fakeAsync(() => {
+		const dropDownEle: any = { nativeElement: { querySelectorAll: (param) => [] } };
 		component.showOptions = true;
 		component.isItemsFocused = false;
 		component.dropdownEle = dropDownEle;
 		component.itemsFocused();
 		tick(110);
-		expect(component.showOptions  ).toBe(false);
+		expect(component.showOptions).toBe(false);
 		component.showOptions = false;
 		component.itemsFocused();
 		expect(component.itemsFocused()).toBeUndefined();
-
 	}));
 });
 
-
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
-		name: options.name
+		name: options.name,
 	};
 	return Pipe(metadata)(
 		class MockPipe {

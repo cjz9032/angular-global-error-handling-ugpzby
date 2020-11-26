@@ -1,4 +1,4 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
 .list-group {
 	border-radius: $border_radius;
@@ -72,7 +72,6 @@
 			vertical-align: 0.1rem;
 		}
 	}
-
 }
 
 .badge {
@@ -92,18 +91,18 @@
 	flex: 1;
 }
 
-.badge-item{
-	a:hover{
+.badge-item {
+	a:hover {
 		cursor: default;
 	}
 }
 
-.badge-item-click{
-	a:hover{
+.badge-item-click {
+	a:hover {
 		cursor: pointer;
 	}
 
-	span:hover{
+	span:hover {
 		cursor: pointer;
 	}
 }

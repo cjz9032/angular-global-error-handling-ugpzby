@@ -9,5 +9,5 @@ export class DolbyModeResponse {
 		public voIPStatus: string,
 		public entertainmentStatus: string,
 		public driverAvailability: boolean
-	) { }
+	) {}
 }

@@ -1,3 +1,1 @@
-
-describe('WidgetAntivirusComponent', () => {
-});
+describe('WidgetAntivirusComponent', () => {});

@@ -4,7 +4,7 @@ import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 @Component({
 	selector: 'vtr-ui-brightness-slider',
 	templateUrl: './ui-brightness-slider.component.html',
-	styleUrls: ['./ui-brightness-slider.component.scss']
+	styleUrls: ['./ui-brightness-slider.component.scss'],
 })
 export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked {
 	@Input() lightingData: any;
@@ -26,7 +26,7 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Input() vtrMetricEnabled: any;
 	@Output() onSliderChanged: EventEmitter<ChangeContext> = new EventEmitter();
 
-	constructor() { }
+	constructor() {}
 
 	ngAfterContentChecked() {
 		this.options = Object.assign({}, this.options, { disabled: this.enableSlider });
@@ -44,7 +44,7 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 			floor: Number(this.minValue), // min value
 			ceil: Number(this.maxValue), // max value
 			step: Number(this.step), // value to change on each slide, default is 1
-			ariaLabel: this.ariaLabelValue
+			ariaLabel: this.ariaLabelValue,
 		};
 	}
 

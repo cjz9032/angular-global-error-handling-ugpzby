@@ -9,23 +9,25 @@ import { MenuItem } from 'src/app/services/config/config.service';
 	selector: 'vtr-material-menu-dropdown',
 	templateUrl: './material-menu-dropdown.component.html',
 	styleUrls: ['./material-menu-dropdown.component.scss'],
-	exportAs: 'materialMenuDropdownComponent'
+	exportAs: 'materialMenuDropdownComponent',
 })
 export class MaterialMenuDropdownComponent implements OnInit {
-	@ViewChild(MatMenu, {static: true}) matMenu: MatMenu;
+	@ViewChild(MatMenu, { static: true }) matMenu: MatMenu;
 	@Input() dropdownMenu: MenuItem;
 	@Input() parentPath: string;
 	@Input() parentId: string;
 	hasSecondaryMenu = false;
 
-	constructor(
-		private router: Router,
-	) {}
+	constructor(private router: Router) {}
 
 	ngOnInit(): void {
 		if (Array.isArray(this.dropdownMenu?.subitems)) {
 			this.dropdownMenu.subitems.forEach((element) => {
-				if (Array.isArray(element?.subitems) && !element.hide && element.subitems.some((item) => !item.hide)) {
+				if (
+					Array.isArray(element?.subitems) &&
+					!element.hide &&
+					element.subitems.some((item) => !item.hide)
+				) {
 					this.hasSecondaryMenu = true;
 				}
 			});
@@ -39,8 +41,12 @@ export class MaterialMenuDropdownComponent implements OnInit {
 	}
 
 	menuItemKeyDown(path, subpath?, secondaryPath?) {
-		secondaryPath ? this.router.navigateByUrl(`/${path}/${subpath}/${secondaryPath}`)
-			: subpath ? this.router.navigateByUrl(`/${path}/${subpath}`)
-			: path ? this.router.navigateByUrl(`/${path}`) : this.router.navigateByUrl(`/`);
+		secondaryPath
+			? this.router.navigateByUrl(`/${path}/${subpath}/${secondaryPath}`)
+			: subpath
+			? this.router.navigateByUrl(`/${path}/${subpath}`)
+			: path
+			? this.router.navigateByUrl(`/${path}`)
+			: this.router.navigateByUrl(`/`);
 	}
 }

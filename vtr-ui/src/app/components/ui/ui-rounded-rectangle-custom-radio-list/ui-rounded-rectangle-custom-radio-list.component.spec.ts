@@ -1,4 +1,3 @@
-
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -21,7 +20,7 @@ const radioDetailsModel = [
 		customIcon: 'Special-function',
 		hideIcon: true,
 		processLabel: false,
-		metricsItem: 'radio.top-row-fn.special-function'
+		metricsItem: 'radio.top-row-fn.special-function',
 	},
 	{
 		componentId: 'thinkpad-F1-F12-funciton-radio-button',
@@ -33,8 +32,9 @@ const radioDetailsModel = [
 		customIcon: 'F1-F12-funciton',
 		hideIcon: true,
 		processLabel: false,
-		metricsItem: 'radio.top-row-fn.function-key'
-	}];
+		metricsItem: 'radio.top-row-fn.function-key',
+	},
+];
 const testValue = 'test';
 const groupName = 'groupName';
 
@@ -47,19 +47,9 @@ describe('UiRoundedRectangleCustomRadioListComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [UiRoundedRectangleCustomRadioListComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [
-				LoggerService,
-				MetricService,
-				DevService,
-				TranslateService
-			]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [LoggerService, MetricService, DevService, TranslateService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -74,7 +64,6 @@ describe('UiRoundedRectangleCustomRadioListComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-
 	it('UiRoundedRectangleCustomRadioListComponent  :: should  call onClick', () => {
 		fixture = TestBed.createComponent(UiRoundedRectangleCustomRadioListComponent);
 		component = fixture.componentInstance;
@@ -85,7 +74,9 @@ describe('UiRoundedRectangleCustomRadioListComponent', () => {
 		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent');
 		const spySetFocusComponentId = spyOn<any>(component, 'setFocusComponentId');
 
-		const options: DebugElement[] = fixture.debugElement.queryAll(By.css('[role=radio][aria-disabled=false]'));
+		const options: DebugElement[] = fixture.debugElement.queryAll(
+			By.css('[role=radio][aria-disabled=false]')
+		);
 		const secondOption: HTMLInputElement = options[1].nativeElement;
 		secondOption.click();
 
@@ -127,7 +118,6 @@ describe('UiRoundedRectangleCustomRadioListComponent', () => {
 		// expect(spyInvokeSelectionChangeEvent).toHaveBeenCalled();
 	});
 
-
 	it('UiRoundedRectangleCustomRadioListComponent ::  should call invokeSelectionChangeEvent', () => {
 		fixture = TestBed.createComponent(UiRoundedRectangleCustomRadioListComponent);
 		component = fixture.componentInstance;
@@ -138,12 +128,13 @@ describe('UiRoundedRectangleCustomRadioListComponent', () => {
 		fixture.detectChanges();
 
 		const spy = spyOn(metricService, 'sendMetrics');
-		const spyInvokeSelectionChangeEvent = spyOn<any>(component, 'invokeSelectionChangeEvent').and.callThrough();
+		const spyInvokeSelectionChangeEvent = spyOn<any>(
+			component,
+			'invokeSelectionChangeEvent'
+		).and.callThrough();
 		const id = spyInvokeSelectionChangeEvent.call(component, radioDetailsModel[1]);
 		expect(spy).toHaveBeenCalled();
 	});
-
-
 
 	/* it('UiRoundedRectangleCustomRadioListComponent ::  should call handleKeyPressEvent down arrow ', () => {
 		fixture = TestBed.createComponent(UiRoundedRectangleCustomRadioListComponent);
@@ -198,5 +189,4 @@ describe('UiRoundedRectangleCustomRadioListComponent', () => {
 		// expect(spySetFocusComponentId).toHaveBeenCalled();
 
 	}); */
-
 });

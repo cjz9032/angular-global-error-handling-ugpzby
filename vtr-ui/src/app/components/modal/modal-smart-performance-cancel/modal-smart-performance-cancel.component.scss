@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .modal-smart-performance-cancel {
 	.close {
@@ -48,8 +48,6 @@
 			box-shadow: none;
 			@include outline-blue;
 		}
-
-
 	}
 
 	.resume-scan {
@@ -82,5 +80,4 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
-
 }

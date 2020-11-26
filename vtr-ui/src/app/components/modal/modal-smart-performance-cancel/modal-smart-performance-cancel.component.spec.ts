@@ -88,11 +88,11 @@ describe('ModalSmartPerformanceCancelComponent', () => {
 		expect(spy).not.toHaveBeenCalled();
 	});
 
-	it('should call onFocus when calling modal focus', (() => {
+	it('should call onFocus when calling modal focus', () => {
 		const modalDiv = document.createElement('div');
 		modalDiv.setAttribute('class', 'cancel-modal');
 		fixture.debugElement.nativeElement.append(modal);
 		component.onFocus();
 		expect(modal).toBeTruthy();
-	}));
+	});
 });

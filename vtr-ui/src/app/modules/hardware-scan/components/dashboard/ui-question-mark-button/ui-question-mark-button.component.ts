@@ -3,10 +3,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
 	selector: 'vtr-ui-question-mark-button',
 	templateUrl: './ui-question-mark-button.component.html',
-	styleUrls: ['./ui-question-mark-button.component.scss']
+	styleUrls: ['./ui-question-mark-button.component.scss'],
 })
 export class UiQuestionMarkButtonComponent implements OnInit {
-
 	@Input() componentId: string;
 	@Input() componentRole: string;
 	@Input() tabIndex: number;
@@ -15,7 +14,7 @@ export class UiQuestionMarkButtonComponent implements OnInit {
 	@Output() clickEvent: EventEmitter<Event> = new EventEmitter<Event>();
 	@Output() blurEvent: EventEmitter<Event> = new EventEmitter<Event>();
 
-	constructor() { }
+	constructor() {}
 
 	ngOnInit(): void {
 		this.tabIndex = this.tabIndex ?? 0;

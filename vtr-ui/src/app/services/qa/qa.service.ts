@@ -3,7 +3,7 @@ import { QA } from '../../data-models/qa/qa.model';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class QaService {
 	imagePath = 'assets/images/qa';
@@ -52,28 +52,26 @@ export class QaService {
 			like: false,
 			dislike: false,
 			itemId: 'widget-support-detail-5',
-		}
+		},
 	];
 
-	constructor(
-		private translate: TranslateService,
-	) { }
+	constructor(private translate: TranslateService) {}
 
 	setCurrentLangTranslations() {
 		this.translate
-		.stream([
-			'faq.question1.title',
-			'faq.question2.title',
-			'faq.question3.title',
-			'faq.question4.title',
-			'faq.question5.title'
-		])
-		.subscribe((result) => {
-			for (let i = 0; i < this.qas.length; i++) {
-				const key = `faq.question${i + 1}.title`
-				this.qas[i].title = result[key];
-			}
-		});
+			.stream([
+				'faq.question1.title',
+				'faq.question2.title',
+				'faq.question3.title',
+				'faq.question4.title',
+				'faq.question5.title',
+			])
+			.subscribe((result) => {
+				for (let i = 0; i < this.qas.length; i++) {
+					const key = `faq.question${i + 1}.title`;
+					this.qas[i].title = result[key];
+				}
+			});
 	}
 
 	getById(id: number): QA {

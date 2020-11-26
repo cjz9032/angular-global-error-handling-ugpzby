@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import { TaskStep, TaskType, HardwareScanTestResult, HardwareScanProtocolModule } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
+import {
+	TaskStep,
+	TaskType,
+	HardwareScanTestResult,
+	HardwareScanProtocolModule,
+} from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalPreScanInfoComponent } from '../components/modal/modal-pre-scan-info/modal-pre-scan-info.component';
 import { HardwareScanResultService } from './hardware-scan-result.service';
@@ -23,7 +28,7 @@ const CloseButton = 'Close';
 const ViewResultsButton = 'ViewResults';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class ScanExecutionService {
 	private startScanClicked = false;
@@ -39,7 +44,7 @@ export class ScanExecutionService {
 	private lastModules: HardwareScanProtocolModule;
 
 	private cancelHandler = {
-		cancel: undefined
+		cancel: undefined,
 	};
 
 	constructor(
@@ -52,9 +57,10 @@ export class ScanExecutionService {
 		private lenovoSupportService: LenovoSupportService,
 		private previousResultService: PreviousResultService,
 		private shellService: VantageShellService,
-		private formatDateTime: FormatLocaleDateTimePipe) {
-			this.culture = this.hardwareScanService.getCulture();
-			this.metrics = this.shellService.getMetrics();
+		private formatDateTime: FormatLocaleDateTimePipe
+	) {
+		this.culture = this.hardwareScanService.getCulture();
+		this.metrics = this.shellService.getMetrics();
 	}
 
 	// Getters and Setters
@@ -147,32 +153,41 @@ export class ScanExecutionService {
 		}
 
 		const payload = {
-			devices: devicesId
+			devices: devicesId,
 		};
 
 		if (this.hardwareScanService) {
 			this.timerService.start();
 			this.rbsStartDate = new Date();
-			this.hardwareScanService.getRecoverBadSectors(payload)
+			this.hardwareScanService
+				.getRecoverBadSectors(payload)
 				.then((response) => {
-				this.hardwareScanService.setEnableViewResults(true);
-				// Sending the RBS's TaskAction metrics
-				const rbsTaskActionResult = this.getRecoverBadSectorsMetricsTaskResult(response);
-				this.sendTaskActionMetrics(TaskType.RecoverBadSectors, rbsTaskActionResult.taskCount,
-					'', rbsTaskActionResult.taskResult, this.timerService.stop());
-			})
-			.finally(() => {
-				this.onViewResultsRecover();
-			});
+					this.hardwareScanService.setEnableViewResults(true);
+					// Sending the RBS's TaskAction metrics
+					const rbsTaskActionResult = this.getRecoverBadSectorsMetricsTaskResult(
+						response
+					);
+					this.sendTaskActionMetrics(
+						TaskType.RecoverBadSectors,
+						rbsTaskActionResult.taskCount,
+						'',
+						rbsTaskActionResult.taskResult,
+						this.timerService.stop()
+					);
+				})
+				.finally(() => {
+					this.onViewResultsRecover();
+				});
 		}
 	}
 
 	/* This function is used to standardize the RBS intermediate response with the same used by a Scan. */
-	public standardizeRbsResponse(){
+	public standardizeRbsResponse() {
 		const moduleInformation = this.hardwareScanService.getModulesRetrieved();
-		if ( moduleInformation ) {
-			const storageModule =
-				moduleInformation.categoryList.find( category => category.id === 'storage' );
+		if (moduleInformation) {
+			const storageModule = moduleInformation.categoryList.find(
+				(category) => category.id === 'storage'
+			);
 
 			const results = { items: [] };
 
@@ -183,12 +198,14 @@ export class ScanExecutionService {
 					name: device.name,
 					expanded: false,
 					detailsExpanded: false,
-					listTest: [{
-						id: '',
-						name: device.name,
-						statusTest: device.status,
-						percent: device.percent,
-					}],
+					listTest: [
+						{
+							id: '',
+							name: device.name,
+							statusTest: device.status,
+							percent: device.percent,
+						},
+					],
 				};
 
 				results.items.push(item);
@@ -199,14 +216,16 @@ export class ScanExecutionService {
 
 	public onViewResultsRecover() {
 		const moduleInformation = this.hardwareScanService.getModulesRetrieved();
-		if ( moduleInformation ) {
-			const storageModule = moduleInformation.categoryList.find( category => category.id === 'storage' );
+		if (moduleInformation) {
+			const storageModule = moduleInformation.categoryList.find(
+				(category) => category.id === 'storage'
+			);
 
 			const results = {
 				resultModule: HardwareScanTestResult.Pass,
 				startDate: this.rbsStartDate,
 				date: new Date(),
-				items: []
+				items: [],
 			};
 
 			for (const device of this.devicesRecoverBadSectors) {
@@ -222,27 +241,35 @@ export class ScanExecutionService {
 						{ key: 'numberBadSectors', value: device.numberOfBadSectors },
 						{ key: 'numberFixedSectors', value: device.numberOfFixedSectors },
 						{ key: 'numberNonFixedSectors', value: device.numberOfNonFixedSectors },
-						{ key: 'elapsedTime', value: device.elapsedTime }
+						{ key: 'elapsedTime', value: device.elapsedTime },
 					],
-					listTest: [{
-						id: device.id,
-						name: device.name,
-						statusTest: device.status,
-						percent: device.percent,
-					}],
+					listTest: [
+						{
+							id: device.id,
+							name: device.name,
+							statusTest: device.status,
+							percent: device.percent,
+						},
+					],
 				};
 
 				results.items.push(item);
 			}
 
-			results.resultModule = this.hardwareScanResultService.consolidateResults(this.devicesRecoverBadSectors.map(item => item.status));
+			results.resultModule = this.hardwareScanResultService.consolidateResults(
+				this.devicesRecoverBadSectors.map((item) => item.status)
+			);
 
 			this.recoverBadSectorsService.setRecoverResultItems(results);
 			this.modules = results.items;
 		}
 	}
 
-	public generateRequestAndResponseScan(taskType: TaskType, scanAgain = false, moduleExecution = HardwareScanProtocolModule.all) {
+	public generateRequestAndResponseScan(
+		taskType: TaskType,
+		scanAgain = false,
+		moduleExecution = HardwareScanProtocolModule.all
+	) {
 		let requests;
 		let response;
 
@@ -253,10 +280,12 @@ export class ScanExecutionService {
 			response = this.hardwareScanService.getQuickScanResponse();
 			requests = this.hardwareScanService.getQuickScanRequest();
 		} else {
-			response = this.hardwareScanService.getQuickScanResponse()
-							.filter(moduleName => moduleName.id === moduleExecution);
-			requests = this.hardwareScanService.getQuickScanRequest()
-							.filter(moduleName => moduleName.moduleId === moduleExecution);
+			response = this.hardwareScanService
+				.getQuickScanResponse()
+				.filter((moduleName) => moduleName.id === moduleExecution);
+			requests = this.hardwareScanService
+				.getQuickScanRequest()
+				.filter((moduleName) => moduleName.moduleId === moduleExecution);
 		}
 
 		if (taskType === TaskType.CustomScan) {
@@ -276,15 +305,21 @@ export class ScanExecutionService {
 		return [response, requests];
 	}
 
-
 	// Scan Execution Functions
-	public checkPreScanInfo(taskType: TaskType, scanAgain = false, moduleExecution = HardwareScanProtocolModule.all) {
-
+	public checkPreScanInfo(
+		taskType: TaskType,
+		scanAgain = false,
+		moduleExecution = HardwareScanProtocolModule.all
+	) {
 		let requests;
-		[this.modules, requests] = this.generateRequestAndResponseScan(taskType, scanAgain, moduleExecution);
+		[this.modules, requests] = this.generateRequestAndResponseScan(
+			taskType,
+			scanAgain,
+			moduleExecution
+		);
 
 		// Resets the 'expanded' state and User visibility to the default value (closed)
-		this.modules.forEach(module => {
+		this.modules.forEach((module) => {
 			module.expanded = false;
 			module.expandedStatusChangedByUser = false;
 		});
@@ -307,15 +342,23 @@ export class ScanExecutionService {
 		// Scan Again should not send these metrics here because they're already sent in html as feature click
 		if (!scanAgain) {
 			if (taskType === TaskType.QuickScan) {
-				this.sendFeatureClickMetrics('HardwareScan.QuickScan', 'HardwareScan', testMapMetrics);
+				this.sendFeatureClickMetrics(
+					'HardwareScan.QuickScan',
+					'HardwareScan',
+					testMapMetrics
+				);
 			} else if (taskType === TaskType.CustomScan) {
-				this.sendFeatureClickMetrics('CustomizeScan.RunSelectedTests', 'HardwareScan.CustomizeScan', testMapMetrics);
+				this.sendFeatureClickMetrics(
+					'CustomizeScan.RunSelectedTests',
+					'HardwareScan.CustomizeScan',
+					testMapMetrics
+				);
 			}
 		}
 
 		const preScanInformationRequest = {
 			lang: this.culture,
-			tests: testList
+			tests: testList,
 		};
 
 		this.validateBatteryModal(preScanInformationRequest, taskType, requests);
@@ -337,26 +380,31 @@ export class ScanExecutionService {
 					size: 'lg',
 					centered: true,
 					windowClass: 'hardware-scan-modal-size',
-					ariaLabelledBy: 'hwscan-pre-scan-info-modal-title'
+					ariaLabelledBy: 'hwscan-pre-scan-info-modal-title',
 				});
 
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
 
-				( modal.componentInstance as ModalPreScanInfoComponent).error = this.translate.instant('hardwareScan.warning');
-				( modal.componentInstance as ModalPreScanInfoComponent).description = this.batteryMessage;
-				( modal.componentInstance as ModalPreScanInfoComponent).ItemParent = this.getMetricsParentValue();
-				( modal.componentInstance as ModalPreScanInfoComponent).CancelItemName = this.getMetricsItemNameClose();
-				( modal.componentInstance as ModalPreScanInfoComponent).ConfirmItemName = this.getMetricsItemNameConfirm();
+				(modal.componentInstance as ModalPreScanInfoComponent).error = this.translate.instant(
+					'hardwareScan.warning'
+				);
+				(modal.componentInstance as ModalPreScanInfoComponent).description = this.batteryMessage;
+				(modal.componentInstance as ModalPreScanInfoComponent).ItemParent = this.getMetricsParentValue();
+				(modal.componentInstance as ModalPreScanInfoComponent).CancelItemName = this.getMetricsItemNameClose();
+				(modal.componentInstance as ModalPreScanInfoComponent).ConfirmItemName = this.getMetricsItemNameConfirm();
 
-				modal.result.then((result) => {
-					this.getDoScan(requests);
-					// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
-					this.startScanClicked = false;
-				}, () => {
-					this.hardwareScanService.cleanCustomTests();
-					// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
-					this.startScanClicked = false;
-				});
+				modal.result.then(
+					(result) => {
+						this.getDoScan(requests);
+						// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
+						this.startScanClicked = false;
+					},
+					() => {
+						this.hardwareScanService.cleanCustomTests();
+						// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
+						this.startScanClicked = false;
+					}
+				);
 			} else {
 				this.getDoScan(requests);
 			}
@@ -364,8 +412,8 @@ export class ScanExecutionService {
 	}
 
 	/*
-	* Used to start a scan, 0 is a quick scan, and 1 is a custom scan
-	*/
+	 * Used to start a scan, 0 is a quick scan, and 1 is a custom scan
+	 */
 	private getDoScan(requests: any): any {
 		this.progress = 0;
 
@@ -374,41 +422,48 @@ export class ScanExecutionService {
 		const payload = {
 			requests,
 			categories: [],
-			localizedItems: []
+			localizedItems: [],
 		};
 
 		if (this.hardwareScanService) {
-
 			this.timerService.start();
 
 			this.itemParentCancelScan = this.getMetricsParentValue();
 			this.itemNameCancelScan = this.getMetricsItemNameCancel();
 
 			this.hardwareScanService.setFinalResponse(null);
-			this.hardwareScanService.getDoScan(payload, this.modules, this.cancelHandler)
-			.then((response) => {
-				this.cleaningUpScan(response);
-				this.showSupportPopupIfNeeded();
-			})
-			.catch((ex: any) => {
-				// Clean up the scan variables when occurs a power event (CLI stopped brusquely)
-				this.hardwareScanService.setIsScanDone(false);
-				this.hardwareScanService.setScanExecutionStatus(false);
-				this.hardwareScanService.setRecoverExecutionStatus(false);
+			this.hardwareScanService
+				.getDoScan(payload, this.modules, this.cancelHandler)
+				.then((response) => {
+					this.cleaningUpScan(response);
+					this.showSupportPopupIfNeeded();
+				})
+				.catch((ex: any) => {
+					// Clean up the scan variables when occurs a power event (CLI stopped brusquely)
+					this.hardwareScanService.setIsScanDone(false);
+					this.hardwareScanService.setScanExecutionStatus(false);
+					this.hardwareScanService.setRecoverExecutionStatus(false);
 
-				return undefined;
-			})
-			.finally(() => {
-				this.cleaningUpScan(undefined);
+					return undefined;
+				})
+				.finally(() => {
+					this.cleaningUpScan(undefined);
 
-				const metricsResult = this.getMetricsTaskResult();
-				this.sendTaskActionMetrics(this.hardwareScanService.getCurrentTaskType(), metricsResult.countSuccesses,
-					'', metricsResult.scanResultJson, this.timerService.stop());
+					const metricsResult = this.getMetricsTaskResult();
+					this.sendTaskActionMetrics(
+						this.hardwareScanService.getCurrentTaskType(),
+						metricsResult.countSuccesses,
+						'',
+						metricsResult.scanResultJson,
+						this.timerService.stop()
+					);
 
-				// Defines information about module details
-				this.onViewResults();
-				this.modules.forEach(module => { module.expanded = true; });
-			});
+					// Defines information about module details
+					this.onViewResults();
+					this.modules.forEach((module) => {
+						module.expanded = true;
+					});
+				});
 		}
 
 		return false;
@@ -433,64 +488,78 @@ export class ScanExecutionService {
 		if (finalResponse) {
 			const categoryInfoList = this.hardwareScanService.getCategoryInformation();
 
-			const failedModules = finalResponse.responses.map(response => {
-				// Extracting the module list of responses having at least one test failed
-				const modulesContainingTestsFailed = response.groupResults.filter(device =>
-					device.testResultList.some(test => test.result === HardwareScanTestResult.Fail));
+			const failedModules = finalResponse.responses
+				.map((response) => {
+					// Extracting the module list of responses having at least one test failed
+					const modulesContainingTestsFailed = response.groupResults.filter((device) =>
+						device.testResultList.some(
+							(test) => test.result === HardwareScanTestResult.Fail
+						)
+					);
 
-				// Returning undefined here once this response there's no failures.
-				// It'll be removed by the 'filter' ahead.
-				if (modulesContainingTestsFailed.length === 0) {
-					return undefined;
-				}
+					// Returning undefined here once this response there's no failures.
+					// It'll be removed by the 'filter' ahead.
+					if (modulesContainingTestsFailed.length === 0) {
+						return undefined;
+					}
 
-				// Transforms the filtered data to the desired format.
-				// At the beginning result is an object containing no data and it's updated with the information of each device
-				return modulesContainingTestsFailed.reduce((result, device) => {
-					// Retriving device information (id, name, etc ...)
-					const category = categoryInfoList.find(categoryItem => categoryItem.id === device.moduleName);
-					const deviceInfo = category.groupList.find(groupDevice => groupDevice.id === device.id);
+					// Transforms the filtered data to the desired format.
+					// At the beginning result is an object containing no data and it's updated with the information of each device
+					return modulesContainingTestsFailed.reduce(
+						(result, device) => {
+							// Retriving device information (id, name, etc ...)
+							const category = categoryInfoList.find(
+								(categoryItem) => categoryItem.id === device.moduleName
+							);
+							const deviceInfo = category.groupList.find(
+								(groupDevice) => groupDevice.id === device.id
+							);
 
-					// Updates result with the device information grouped by module (cpu, storage, etc ...)
-					// Resulting in something like:
-					// {
-					// 		moduleId: "storage",
-					// 		moduleName: "Storage",
-					// 		devices: [
-					// 			{ deviceId: "0", deviceName: "WDC PC SN720 SDAPNTW-256G-1101 - 238.47 GBs" },
-					// 			{ deviceId: "1", deviceName: "SAMSUNG HM160HX - 149.05 GBs" }
-					// 		]
-					// }
-					result.moduleId = category.id;
-					result.moduleName = category.name;
-					result.resultModule = HardwareScanTestResult.Fail;
-					result.devices.push({
-						deviceId: deviceInfo.id,
-						deviceName: deviceInfo.name
-					});
+							// Updates result with the device information grouped by module (cpu, storage, etc ...)
+							// Resulting in something like:
+							// {
+							// 		moduleId: "storage",
+							// 		moduleName: "Storage",
+							// 		devices: [
+							// 			{ deviceId: "0", deviceName: "WDC PC SN720 SDAPNTW-256G-1101 - 238.47 GBs" },
+							// 			{ deviceId: "1", deviceName: "SAMSUNG HM160HX - 149.05 GBs" }
+							// 		]
+							// }
+							result.moduleId = category.id;
+							result.moduleName = category.name;
+							result.resultModule = HardwareScanTestResult.Fail;
+							result.devices.push({
+								deviceId: deviceInfo.id,
+								deviceName: deviceInfo.name,
+							});
 
-					return result;
-				},
-				// This is the initial value of the resulting object.
-				{
-					moduleId: '',
-					moduleName: '',
-					devices: []
-				});
-			}).filter(module => module !== undefined); // Removing empty elements from resulting list
+							return result;
+						},
+						// This is the initial value of the resulting object.
+						{
+							moduleId: '',
+							moduleName: '',
+							devices: [],
+						}
+					);
+				})
+				.filter((module) => module !== undefined); // Removing empty elements from resulting list
 
 			// If there's failure, shows the support pop-up
 			if (failedModules.length > 0) {
-				const scanDate =  this.hardwareScanService.getFinalResultStartDate();
+				const scanDate = this.hardwareScanService.getFinalResultStartDate();
 				const finalResultCode = this.hardwareScanService.getFinalResultCode();
-				const supportUrl = await this.lenovoSupportService.getETicketUrl(scanDate, finalResultCode);
+				const supportUrl = await this.lenovoSupportService.getETicketUrl(
+					scanDate,
+					finalResultCode
+				);
 				const rbsDevices = this.hardwareScanService.getDevicesToRecoverBadSectors();
 				const modalRef = this.modalService.open(ModalScanFailureComponent, {
 					backdrop: 'static',
 					size: 'lg',
 					centered: true,
 					windowClass: 'support-modal-hwscan',
-					ariaLabelledBy: 'hwscan-scan-failure-title'
+					ariaLabelledBy: 'hwscan-scan-failure-title',
 				});
 				modalRef.componentInstance.supportUrl = supportUrl;
 				modalRef.componentInstance.configureDevicesLists(failedModules, rbsDevices);
@@ -503,7 +572,7 @@ export class ScanExecutionService {
 			finalResultCode: this.hardwareScanService.getFinalResultCode(),
 			date: this.hardwareScanService.getFinalResultStartDate(),
 			information: this.hardwareScanService.getFinalResultDescription(),
-			items: []
+			items: [],
 		};
 
 		for (const module of this.modules) {
@@ -538,7 +607,9 @@ export class ScanExecutionService {
 				});
 			}
 
-			item.resultModule = this.hardwareScanResultService.consolidateResults(item.listTest.map(itemTest => itemTest.statusTest));
+			item.resultModule = this.hardwareScanResultService.consolidateResults(
+				item.listTest.map((itemTest) => itemTest.statusTest)
+			);
 			results.items.push(item);
 		}
 
@@ -550,7 +621,7 @@ export class ScanExecutionService {
 		// the home screen (this.getItemToDisplay()) the modules name and description
 		// If the scan finished without cancellation, then the scan result will be display.
 		// In this case, the module list is updated with the scan results and modules details (results.items)
-		if (!this.hardwareScanService.isCancelRequested()){
+		if (!this.hardwareScanService.isCancelRequested()) {
 			this.modules = results.items;
 		} else {
 			this.modules = this.getItemToDisplay();
@@ -601,7 +672,7 @@ export class ScanExecutionService {
 			size: 'lg',
 			centered: true,
 			windowClass: 'cancel-modal-hwscan',
-			ariaLabelledBy: 'hwscan-cancel-modal-title'
+			ariaLabelledBy: 'hwscan-cancel-modal-title',
 		});
 
 		modalCancel.componentInstance.ItemParent = this.getMetricsParentValue();
@@ -682,10 +753,15 @@ export class ScanExecutionService {
 				this.modules = this.getItemToDisplay();
 
 				const taskResult = {
-					Result: 'Pass'
+					Result: 'Pass',
 				};
-				this.sendTaskActionMetrics(TaskType.RefreshModules, 1,
-					'', taskResult, this.timerService.stop());
+				this.sendTaskActionMetrics(
+					TaskType.RefreshModules,
+					1,
+					'',
+					taskResult,
+					this.timerService.stop()
+				);
 			}
 		});
 	}
@@ -701,14 +777,16 @@ export class ScanExecutionService {
 				numberOfSuccess++;
 			}
 		}
-		result = this.hardwareScanResultService.consolidateResults(rbsFinalResponse.devices.map(item => item.status));
+		result = this.hardwareScanResultService.consolidateResults(
+			rbsFinalResponse.devices.map((item) => item.status)
+		);
 
 		return {
 			taskCount: numberOfSuccess,
 			taskResult: {
 				Reason: 'NA',
-				Result: HardwareScanTestResult[result]
-			}
+				Result: HardwareScanTestResult[result],
+			},
 		};
 	}
 
@@ -719,14 +797,13 @@ export class ScanExecutionService {
 		const resultJson = {
 			Result: '',
 			Reason: '',
-			TestsList: {}
+			TestsList: {},
 		};
 
 		// scanResultJson["TestsList"] = {};
 		if (this.modules) {
 			for (const module of this.modules) {
 				for (const test of module.listTest) {
-
 					const testName = test.id.split(':::')[0];
 					if (!(testName in resultJson.TestsList)) {
 						resultJson.TestsList[testName] = [];
@@ -746,7 +823,9 @@ export class ScanExecutionService {
 					resultJson.TestsList[testName].push(testObj);
 				}
 			}
-			overalTestResult = this.hardwareScanResultService.consolidateResults(this.modules.map(test => test.resultModule));
+			overalTestResult = this.hardwareScanResultService.consolidateResults(
+				this.modules.map((test) => test.resultModule)
+			);
 		}
 
 		resultJson.Result = HardwareScanTestResult[overalTestResult];
@@ -754,7 +833,7 @@ export class ScanExecutionService {
 
 		return {
 			scanResultJson: resultJson,
-			countSuccesses
+			countSuccesses,
 		};
 	}
 
@@ -790,7 +869,9 @@ export class ScanExecutionService {
 		const currentTaskStep = this.hardwareScanService.getCurrentTaskStep();
 		const currentTaskType = this.hardwareScanService.getCurrentTaskType();
 		// For summary metrics, it was defined that only the word "Scan" will be sent, so we should remove "Custom" or "Quick" from it
-		const taskTypeMetrics = TaskType[currentTaskType].replace('Custom', '').replace('Quick', '');
+		const taskTypeMetrics = TaskType[currentTaskType]
+			.replace('Custom', '')
+			.replace('Quick', '');
 		return TaskStep[currentTaskStep] + taskTypeMetrics + '.' + ViewResultsButton;
 	}
 
@@ -799,21 +880,27 @@ export class ScanExecutionService {
 			ItemType: 'FeatureClick',
 			ItemName: itemName,
 			ItemParent: itemParent,
-			ItemParam: itemParam
+			ItemParam: itemParam,
 		};
 		if (this.metrics) {
 			this.metrics.sendAsync(data);
 		}
 	}
 
-	private sendTaskActionMetrics(taskName: TaskType, taskCount: number, taskParam: string, taskResult: any, taskDuration: number) {
+	private sendTaskActionMetrics(
+		taskName: TaskType,
+		taskCount: number,
+		taskParam: string,
+		taskResult: any,
+		taskDuration: number
+	) {
 		const data = {
 			ItemType: 'TaskAction',
 			TaskName: TaskType[taskName],
 			TaskCount: taskCount,
 			TaskResult: taskResult,
 			TaskParam: taskParam,
-			TaskDuration: taskDuration
+			TaskDuration: taskDuration,
 		};
 		if (this.metrics) {
 			this.metrics.sendAsync(data);

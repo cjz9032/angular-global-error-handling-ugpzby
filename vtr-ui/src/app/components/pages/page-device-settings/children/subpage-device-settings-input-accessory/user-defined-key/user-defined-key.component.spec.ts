@@ -16,19 +16,9 @@ describe('UserDefinedKeyComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [UserDefinedKeyComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [
-				InputAccessoriesService,
-				TranslateService,
-				LoggerService,
-				CommonService
-			]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [InputAccessoriesService, TranslateService, LoggerService, CommonService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

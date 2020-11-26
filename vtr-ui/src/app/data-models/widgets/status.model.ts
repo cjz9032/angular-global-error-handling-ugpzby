@@ -2,8 +2,7 @@
  * model for status widgets
  */
 export class Status {
-	constructor(
-	) {
+	constructor() {
 		this.status = 4;
 	}
 	public status: number;
@@ -21,7 +20,7 @@ export class Status {
 }
 
 export class DeviceStatus {
-	constructor() {	}
+	constructor() {}
 	public id: string;
 	public icon: string;
 	public title: string;
@@ -31,13 +30,13 @@ export class DeviceStatus {
 	public used: string;
 	public percent: number;
 	public checkedDate: string;
-  	public showSepline: boolean;
+	public showSepline: boolean;
 }
 
-export enum DeviceCondition{
+export enum DeviceCondition {
 	Loading = 0,
 	Good = 1,
 	NeedRunSU = 2,
 	NeedRunSMPScan = 3,
-	NeedRunHWScan = 4
- }
+	NeedRunHWScan = 4,
+}

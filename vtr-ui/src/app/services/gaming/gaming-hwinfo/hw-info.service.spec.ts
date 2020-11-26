@@ -9,14 +9,13 @@ describe('HwInfoService', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientModule],
-			providers: [VantageShellService, HwInfoService]
+			providers: [VantageShellService, HwInfoService],
 		});
 		service = TestBed.get(HwInfoService);
 		shellService = TestBed.get(VantageShellService);
 	});
 
 	describe(':', () => {
-
 		function setup() {
 			const service = TestBed.get(HwInfoService);
 			return { service };
@@ -37,11 +36,15 @@ describe('HwInfoService', () => {
 		it('should call getDynamicInformation return error', () => {
 			const { service } = setup();
 			service.isShellAvailable = true;
-			spyOn(service.gamingHwInfo, 'getDynamicInformation').and.throwError('shellService.getGamingHwInfo().getDynamicInformation error.');
+			spyOn(service.gamingHwInfo, 'getDynamicInformation').and.throwError(
+				'shellService.getGamingHwInfo().getDynamicInformation error.'
+			);
 			try {
 				service.getDynamicInformation();
 			} catch (err) {
-				expect(err.message).toEqual('shellService.getGamingHwInfo().getDynamicInformation error.');
+				expect(err.message).toEqual(
+					'shellService.getGamingHwInfo().getDynamicInformation error.'
+				);
 			}
 		});
 
@@ -59,11 +62,15 @@ describe('HwInfoService', () => {
 		it('should call getMachineInfomation return error', () => {
 			const { service } = setup();
 			service.isShellAvailable = true;
-			spyOn(service.gamingHwInfo, 'getMachineInfomation').and.throwError('shellService.getGamingHwInfo().getMachineInfomation error.');
+			spyOn(service.gamingHwInfo, 'getMachineInfomation').and.throwError(
+				'shellService.getGamingHwInfo().getMachineInfomation error.'
+			);
 			try {
 				service.getMachineInfomation();
 			} catch (err) {
-				expect(err.message).toEqual('shellService.getGamingHwInfo().getMachineInfomation error.');
+				expect(err.message).toEqual(
+					'shellService.getGamingHwInfo().getMachineInfomation error.'
+				);
 			}
 		});
 	});

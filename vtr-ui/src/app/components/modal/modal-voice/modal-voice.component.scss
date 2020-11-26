@@ -1,7 +1,6 @@
 @import '../../../app.theme.scss';
 
 .vtr-modal-voice {
-
 	.close-btn {
 		position: absolute;
 		right: -1.8rem;
@@ -33,13 +32,13 @@
 			}
 		}
 	}
-.line {
-	width: 100%;
-	height: 1px;
-	background-color: #f5f7f8;
-	margin-bottom: 1rem;
-	margin-top: 1.5rem;
-}
+	.line {
+		width: 100%;
+		height: 1px;
+		background-color: #f5f7f8;
+		margin-bottom: 1rem;
+		margin-top: 1.5rem;
+	}
 	&.modal-body {
 		padding: 0;
 	}
@@ -54,11 +53,10 @@
 		font-weight: normal;
 		color: $main_dark;
 		line-height: 29px;
-		&.sub-heading{
+		&.sub-heading {
 			font-weight: $weight_bold;
 		}
 	}
-
 
 	p {
 		font-size: 1.6rem;
@@ -106,8 +104,6 @@
 		@include high-contrast-adjust;
 	}
 
-
-
 	.number-list {
 		margin-top: 1rem;
 		list-style: none;
@@ -119,20 +115,18 @@
 			padding: 1.4rem 0 0 1.5rem;
 			font-size: 1.8rem;
 			line-height: 1.2;
-			color:#667481;;
+			color: #667481;
 		}
-			.serial{
-				font-size: 4rem;
-				color: $main_dark;
-				// width: 4.3rem;
-				// height: 2.9rem;
-				font-weight: $weight_regular;
-				text-align: center;
-				padding: 0;
-				margin: 0 auto;
-				//line-height: 1.8;
-			}
-
-
+		.serial {
+			font-size: 4rem;
+			color: $main_dark;
+			// width: 4.3rem;
+			// height: 2.9rem;
+			font-weight: $weight_regular;
+			text-align: center;
+			padding: 0;
+			margin: 0 auto;
+			//line-height: 1.8;
+		}
 	}
 }

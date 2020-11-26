@@ -16,58 +16,76 @@ import { WifiGuardService } from 'src/app/services/guard/wifi-guardService.servi
 import { DashlaneGuardService } from 'src/app/services/guard/dashlane-guardService.service';
 import { SecurityAdvisorGuard } from 'src/app/services/guard/security-advisor-guard';
 
-
 const routes: Routes = [
 	{
 		path: '',
 		redirectTo: 'mysecurity',
-		pathMatch: 'full'
-	}, {
+		pathMatch: 'full',
+	},
+	{
 		path: 'mysecurity',
 		component: PageSecurityComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, SecurityAdvisorGuard, NonSmodeGuard, NonArmGuard],
 		data: {
-			pageName: 'Security'
-		}
-	}, {
+			pageName: 'Security',
+		},
+	},
+	{
 		path: 'anti-virus',
 		component: PageSecurityAntivirusComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
 		data: {
 			pageName: 'Security.AntiVirus',
-			pageContent: LocalStorageKey.SecurityCurrentPage
-		}
-	}, {
+			pageContent: LocalStorageKey.SecurityCurrentPage,
+		},
+	},
+	{
 		path: 'password-protection',
 		component: PageSecurityPasswordComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, DashlaneGuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [
+			GuardService,
+			DashlaneGuardService,
+			NonCommercialGuard,
+			NonSmodeGuard,
+			NonArmGuard,
+			NonGamingGuard,
+		],
 		data: {
-			pageName: 'Security.PasswordProtection'
-		}
-	}, {
+			pageName: 'Security.PasswordProtection',
+		},
+	},
+	{
 		path: 'wifi-security',
 		component: PageSecurityWifiComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, WifiGuardService,  NonSmodeGuard, NonArmGuard],
+		canActivate: [GuardService, WifiGuardService, NonSmodeGuard, NonArmGuard],
 		data: {
-			pageName: 'Security.WifiSecurity'
-		}
-	}, {
+			pageName: 'Security.WifiSecurity',
+		},
+	},
+	{
 		path: 'internet-protection',
 		component: PageSecurityInternetComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, VpnGuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [
+			GuardService,
+			VpnGuardService,
+			NonCommercialGuard,
+			NonSmodeGuard,
+			NonArmGuard,
+			NonGamingGuard,
+		],
 		data: {
-			pageName: 'Security.InternetProtection'
-		}
-	}
+			pageName: 'Security.InternetProtection',
+		},
+	},
 ];
 
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule]
+	exports: [RouterModule],
 })
-export class SecurityAdvisorRoutingModule { }
+export class SecurityAdvisorRoutingModule {}

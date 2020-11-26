@@ -9,18 +9,16 @@ export class EssentialHelper implements IEssentialHelper {
 	private iessentialHelper: IEssentialHelper;
 	private getUpeEssentialTask: Promise<IUpeEssential>;
 	private registerDeviceTask: Promise<IUpeEssential>;
-	public readonly isSupportUpeTag: boolean;		// old version of vantage service do not support upe tag, reserve for future
+	public readonly isSupportUpeTag: boolean; // old version of vantage service do not support upe tag, reserve for future
 
-	constructor(
-		vantageShellService: VantageShellService,
-		devService: DevService
-	) {
+	constructor(vantageShellService: VantageShellService, devService: DevService) {
 		this.isSupportUpeTag = true;
 		this.iessentialHelper = new ServiceEssentialHelper(vantageShellService, devService);
 	}
 
 	public async getUpeEssential(): Promise<IUpeEssential> {
-		if (!this.getUpeEssentialTask) {	// cache the request in case of duplicated call
+		if (!this.getUpeEssentialTask) {
+			// cache the request in case of duplicated call
 			this.getUpeEssentialTask = this.iessentialHelper.getUpeEssential();
 		}
 		const result = await this.getUpeEssentialTask;
@@ -29,7 +27,8 @@ export class EssentialHelper implements IEssentialHelper {
 	}
 
 	public async registerDevice(essential: IUpeEssential): Promise<IUpeEssential> {
-		if (!this.registerDeviceTask) {	// cache the request in case of duplicated call
+		if (!this.registerDeviceTask) {
+			// cache the request in case of duplicated call
 			this.registerDeviceTask = this.iessentialHelper.registerDevice(essential);
 		}
 		const result = await this.registerDeviceTask;

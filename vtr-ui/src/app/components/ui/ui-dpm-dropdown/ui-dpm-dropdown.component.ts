@@ -1,14 +1,21 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	SimpleChanges,
+	OnChanges,
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-interval.model';
 
 @Component({
 	selector: 'vtr-ui-dpm-dropdown',
 	templateUrl: './ui-dpm-dropdown.component.html',
-	styleUrls: ['./ui-dpm-dropdown.component.scss']
+	styleUrls: ['./ui-dpm-dropdown.component.scss'],
 })
 export class UiDpmDropdownComponent implements OnInit {
-
 	@Input() dropDownId;
 	@Input() label = '';
 	@Input() list: DPMDropDownInterval[];
@@ -19,7 +26,7 @@ export class UiDpmDropdownComponent implements OnInit {
 	public text: string;
 	public refocus: boolean = true;
 	public itemBlur: boolean = true;
-	constructor(private translate: TranslateService) { }
+	constructor(private translate: TranslateService) {}
 
 	ngOnInit() {
 		this.setDropDownValue();
@@ -32,11 +39,10 @@ export class UiDpmDropdownComponent implements OnInit {
 		}
 	}
 
-
 	private setDropDownValue() {
 		if (this.list) {
 			const interval = this.list.find((ddi: DPMDropDownInterval) => {
-				return (this.value === ddi.value);
+				return this.value === ddi.value;
 			});
 			if (interval) {
 				this.value = interval.value;
@@ -64,7 +70,6 @@ export class UiDpmDropdownComponent implements OnInit {
 	}
 
 	public customCamelCase(value: string) {
-
 		if (value === null) {
 			return '';
 		}
@@ -86,7 +91,6 @@ export class UiDpmDropdownComponent implements OnInit {
 		} else {
 			this.itemBlur = true;
 		}
-
 	}
 
 	public onDropdownFocus(toggle) {

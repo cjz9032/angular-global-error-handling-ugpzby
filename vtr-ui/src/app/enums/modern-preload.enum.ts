@@ -9,7 +9,7 @@ export enum ModernPreloadEnum {
 	StatusNotInstalled = 'not installed',
 	StatusDownloaded = 'downloaded',
 	StatusDownloading = 'downloading',
-	StatusInstalling = 'installing'
+	StatusInstalling = 'installing',
 }
 
 export enum ModernPreloadStatusEnum {

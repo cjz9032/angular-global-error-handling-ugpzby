@@ -12,11 +12,10 @@ describe('ModalRecoverConfirm', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ ModalRecoverConfirmComponent ],
-			imports: [ TranslateModule.forRoot(), HttpClientModule ],
-			providers: [ NgbActiveModal, HttpClientModule, DevService ]
-		})
-		.compileComponents();
+			declarations: [ModalRecoverConfirmComponent],
+			imports: [TranslateModule.forRoot(), HttpClientModule],
+			providers: [NgbActiveModal, HttpClientModule, DevService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

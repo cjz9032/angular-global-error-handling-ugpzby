@@ -19,25 +19,25 @@ import { SharedModule } from '../shared.module';
 		SnapshotHeaderComponent,
 		SnapshotMainComponent,
 		WidgetSnapshotComponent,
-		ModalSnapshotComponent
+		ModalSnapshotComponent,
 	],
 	exports: [
 		PageSnapshotComponent,
 		SnapshotHeaderComponent,
 		SnapshotMainComponent,
-		WidgetSnapshotComponent
+		WidgetSnapshotComponent,
 	],
 	imports: [
 		CommonModule,
 		FontAwesomeModule,
 		NgbCollapseModule,
 		SnapshotRoutingModule,
-		SharedModule
-	]
+		SharedModule,
+	],
 })
 export class SnapshotModule {
 	constructor(library: FaIconLibrary) {
 		library.addIcons(faChevronUp);
 		library.addIcons(faChevronDown);
 	}
- }
+}

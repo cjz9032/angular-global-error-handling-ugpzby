@@ -16,7 +16,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-modal-lenovo-id',
 	templateUrl: './modal-lenovo-id.component.html',
-	styleUrls: ['./modal-lenovo-id.component.scss']
+	styleUrls: ['./modal-lenovo-id.component.scss'],
 })
 export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 	public isOnline = true;
@@ -44,9 +44,11 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 	) {
 		this.isBroswerVisible = false;
 		this.isOnline = this.commonService.isOnline;
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 		this.metrics = vantageShellService.getMetrics();
 		const win: any = window;
 		if (win.webviewPopup) {
@@ -55,9 +57,11 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 		this.starterStatus = this.userService.getStarterIdStatus();
 		this.everSignIn = this.userService.hadEverSignIn();
 		if (!this.metrics) {
-			this.devService.writeLog('ModalLenovoIdComponent constructor: metrics object is undefined');
+			this.devService.writeLog(
+				'ModalLenovoIdComponent constructor: metrics object is undefined'
+			);
 			this.metrics = {
-				sendAsync() { }
+				sendAsync() {},
 			};
 		}
 	}
@@ -76,7 +80,9 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		if (!this.webView) {
-			this.devService.writeLog('ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!');
+			this.devService.writeLog(
+				'ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!'
+			);
 			this.activeModal.close('Null webView object');
 			return;
 		}
@@ -90,9 +96,18 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 		}
 		const eventData = JSON.parse(e);
 		if (eventData) {
-			if ((eventData.event === 'click' && eventData.id === 'btnClose') ||
-				(eventData.event === 'keypress' && eventData.id === 'btnClose' && eventData.keyCode === this.KEYCODE_RETURN)) {
-				this.userService.sendSigninMetrics('failure(rc=UserCancelled)', this.starterStatus, this.everSignIn, this.appFeature);
+			if (
+				(eventData.event === 'click' && eventData.id === 'btnClose') ||
+				(eventData.event === 'keypress' &&
+					eventData.id === 'btnClose' &&
+					eventData.keyCode === this.KEYCODE_RETURN)
+			) {
+				this.userService.sendSigninMetrics(
+					'failure(rc=UserCancelled)',
+					this.starterStatus,
+					this.everSignIn,
+					this.appFeature
+				);
 				this.activeModal.close('User close');
 			}
 		}
@@ -112,8 +127,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 		}
 		const url = e;
 
-		if (url.indexOf('facebook.com/r.php') !== -1 ||
-			url.indexOf('facebook.com/reg/') !== -1) {
+		if (url.indexOf('facebook.com/r.php') !== -1 || url.indexOf('facebook.com/reg/') !== -1) {
 			// Open new window to launch default browser to create facebook account
 			if (window) {
 				window.open(url);
@@ -124,12 +138,14 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 			return;
 		}
 
-		if (url.indexOf('passport.lenovo.com/wauthen5/userLogin') !== -1 ||
+		if (
+			url.indexOf('passport.lenovo.com/wauthen5/userLogin') !== -1 ||
 			url.indexOf('sso.lenovo.com') !== -1 ||
 			url.indexOf('facebook.com') !== -1 ||
 			url.indexOf('accounts.google.com') !== -1 ||
 			url.indexOf('login.live.com') !== -1 ||
-			url.indexOf('login.yahoo.co.jp') !== -1) {
+			url.indexOf('login.yahoo.co.jp') !== -1
+		) {
 			this.isBroswerVisible = false;
 			if (!this.changeDisplay('spinnerCtrl', 'block')) {
 				this.webView.changeVisibility('spinnerCtrl', true);
@@ -169,21 +185,31 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 					const lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
 					if (firstname && userguid) {
 						const encryptedFirstName = AES.encrypt(firstname, userguid).toString();
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.LidUserFirstName, encryptedFirstName);
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.LidUserFirstName,
+							encryptedFirstName
+						);
 					}
 					// Default to enable SSO after login success
-					this.userService.enableSSO(useruad, username, userid, userguid).then(result => {
-						if (result.success && result.status === 0) {
-							this.userService.hasFirstName = Boolean(firstname);
-							this.userService.setName(firstname, lastname);
-							this.userService.setAuth(true);
-							// Close logon dialog
-							this.activeModal.close('Login success');
-							this.devService.writeLog('onNavigationCompleted: Login success!');
-							// The metrics need to be sent after enabling sso, some data like user guid would be available after that.
-							this.userService.sendSigninMetrics('success', this.starterStatus, this.everSignIn, this.appFeature);
-						}
-					});
+					this.userService
+						.enableSSO(useruad, username, userid, userguid)
+						.then((result) => {
+							if (result.success && result.status === 0) {
+								this.userService.hasFirstName = Boolean(firstname);
+								this.userService.setName(firstname, lastname);
+								this.userService.setAuth(true);
+								// Close logon dialog
+								this.activeModal.close('Login success');
+								this.devService.writeLog('onNavigationCompleted: Login success!');
+								// The metrics need to be sent after enabling sso, some data like user guid would be available after that.
+								this.userService.sendSigninMetrics(
+									'success',
+									this.starterStatus,
+									this.everSignIn,
+									this.appFeature
+								);
+							}
+						});
 				}
 			} catch (error) {
 				this.devService.writeLog('onNavigationCompleted: ' + error);
@@ -191,7 +217,12 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 		} else {
 			// Handle error
 			this.devService.writeLog('onNavigationCompleted: navigation completed unsuccessfully!');
-			this.userService.sendSigninMetrics('failure', this.starterStatus, this.everSignIn, this.appFeature);
+			this.userService.sendSigninMetrics(
+				'failure',
+				this.starterStatus,
+				this.everSignIn,
+				this.appFeature
+			);
 			this.activeModal.dismiss(ssoErroType.SSO_ErrorType_UnknownCrashed);
 		}
 	}
@@ -276,59 +307,92 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 	}
 
 	isLidSupportedLanguage(lang) {
-		const supportedLangs = ['zh_CN', 'zh_HANT', 'da_DK', 'de_DE', 'en_US', 'fr_FR', 'it_IT', 'ja_JP', 'ko_KR', 'no_NO', 'nl_NL', 'pt_BR', 'fi_FI', 'es_ES', 'sv_SE', 'ru_RU'];
+		const supportedLangs = [
+			'zh_CN',
+			'zh_HANT',
+			'da_DK',
+			'de_DE',
+			'en_US',
+			'fr_FR',
+			'it_IT',
+			'ja_JP',
+			'ko_KR',
+			'no_NO',
+			'nl_NL',
+			'pt_BR',
+			'fi_FI',
+			'es_ES',
+			'sv_SE',
+			'ru_RU',
+		];
 		return supportedLangs.includes(lang, 0);
 	}
 
 	loadLoginUrl() {
 		const self = this;
 		// Get logon url and navigate to it
-		self.userService.getLoginUrl().then((result) => {
-			if (result.success && result.status === ssoErroType.SSO_ErrorType_NoErr) {
-				let loginUrl = result.logonURL;
-				if (loginUrl.indexOf('sso.lenovo.com') === -1) {
-					self.devService.writeLog('User has already logged in');
-					setTimeout(() => {
-						self.activeModal.close('User has already logged in');
-					}, 1000);
-					return;
-				} else {
-					// Change UI language to current system local or user selection saved in cookie
-					self.supportService.getMachineInfo().then(async (machineInfo) => {
-						const lang = self.userService.getLidLanguageSelectionFromCookies('https://passport.lenovo.com');
-						if (lang !== '') {
-							if (self.isLidSupportedLanguage(lang)) {
-								loginUrl += '&lang=' + lang;
-							} else {
-								loginUrl += '&lang=en_US';
+		self.userService
+			.getLoginUrl()
+			.then((result) => {
+				if (result.success && result.status === ssoErroType.SSO_ErrorType_NoErr) {
+					let loginUrl = result.logonURL;
+					if (loginUrl.indexOf('sso.lenovo.com') === -1) {
+						self.devService.writeLog('User has already logged in');
+						setTimeout(() => {
+							self.activeModal.close('User has already logged in');
+						}, 1000);
+						return;
+					} else {
+						// Change UI language to current system local or user selection saved in cookie
+						self.supportService.getMachineInfo().then(
+							async (machineInfo) => {
+								const lang = self.userService.getLidLanguageSelectionFromCookies(
+									'https://passport.lenovo.com'
+								);
+								if (lang !== '') {
+									if (self.isLidSupportedLanguage(lang)) {
+										loginUrl += '&lang=' + lang;
+									} else {
+										loginUrl += '&lang=en_US';
+									}
+								} else {
+									loginUrl +=
+										'&lang=' +
+										self.getLidSupportedLanguageFromLocale(machineInfo.locale);
+								}
+								self.devService.writeLog('Loading login page ', loginUrl);
+								await self.webView.navigate(loginUrl);
+							},
+							async (error) => {
+								self.devService.writeLog(
+									'getMachineInfo() failed ' +
+										error +
+										', loading default login page ' +
+										loginUrl
+								);
+								await self.webView.navigate(loginUrl);
 							}
-						} else {
-							loginUrl += '&lang=' + self.getLidSupportedLanguageFromLocale(machineInfo.locale);
-						}
-						self.devService.writeLog('Loading login page ', loginUrl);
-						await self.webView.navigate(loginUrl);
-					}, async error => {
-						self.devService.writeLog('getMachineInfo() failed ' + error + ', loading default login page ' + loginUrl);
-						await self.webView.navigate(loginUrl);
-					});
-				}
-			} else {
-				self.devService.writeLog('getLoginUrl() failed, ' + result.status);
-				setTimeout(() => {
-					self.activeModal.dismiss(result.status);
-				}, 500);
-			}
-		}).catch((error) => {
-			self.devService.writeLog('getLoginUrl() exception happen');
-			setTimeout(() => {
-				if (error && error.errorcode === 513) {
-					self.activeModal.dismiss(ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist);
+						);
+					}
 				} else {
-					self.activeModal.dismiss(ssoErroType.SSO_ErrorType_UnknownCrashed);
+					self.devService.writeLog('getLoginUrl() failed, ' + result.status);
+					setTimeout(() => {
+						self.activeModal.dismiss(result.status);
+					}, 500);
 				}
-			}, 500);
-		});
-
+			})
+			.catch((error) => {
+				self.devService.writeLog('getLoginUrl() exception happen');
+				setTimeout(() => {
+					if (error && error.errorcode === 513) {
+						self.activeModal.dismiss(
+							ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist
+						);
+					} else {
+						self.activeModal.dismiss(ssoErroType.SSO_ErrorType_UnknownCrashed);
+					}
+				}, 500);
+			});
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -336,7 +400,9 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 			switch (notification.type) {
 				case NetworkStatus.Online:
 				case NetworkStatus.Offline:
-					this.devService.writeLog('onNotification() NetworkStatus: ' + notification.type);
+					this.devService.writeLog(
+						'onNotification() NetworkStatus: ' + notification.type
+					);
 					const currentIsOnline = notification.payload.isOnline;
 					if (!currentIsOnline && this.isOnline !== currentIsOnline) {
 						this.activeModal.dismiss(ssoErroType.SSO_ErrorType_DisConnect);

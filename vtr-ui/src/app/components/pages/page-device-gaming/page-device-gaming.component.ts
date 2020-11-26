@@ -27,7 +27,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
 	styleUrls: ['./page-device-gaming.component.scss'],
-	providers: [NgbModalConfig, NgbModal]
+	providers: [NgbModalConfig, NgbModal],
 })
 export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 	public static allCapablitiyFlag = false;
@@ -71,9 +71,10 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		// TODO Lite Gaming
 		this.desktopType = this.localCacheService.getLocalCacheValue(LocalStorageKey.desktopType);
-		this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
+		this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(
+			LocalStorageKey.liteGaming
+		);
 	}
-
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
@@ -90,7 +91,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 					// this.desktopType = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.desktopType);
 					// this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 				})
-				.catch((err) => { });
+				.catch((err) => {});
 		}
 		this.translateSubscription = this.translate
 			.stream([
@@ -100,17 +101,20 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 				'dashboard.offlineInfo.systemHealth',
 				'common.securityAdvisor.wifi',
 				'systemUpdates.title',
-				'systemUpdates.readMore'
-			]).subscribe((result) => {
+				'systemUpdates.readMore',
+			])
+			.subscribe((result) => {
 				this.dashboardService.translateString = result;
 				this.dashboardService.setDefaultCMSContent();
 				this.getPreviousContent();
 				this.fetchCmsContents();
 			});
 
-		this.notificationSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
 
 	ngOnDestroy() {
@@ -140,7 +144,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		const queryOptions: any = {
-			Page: 'dashboard'
+			Page: 'dashboard',
 		};
 		if (this.isOnline) {
 			if (this.dashboardService.onlineCardContent.positionD) {
@@ -171,11 +175,11 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 					this.fetchCmsContents('en');
 				}
 			},
-			(error) => { }
+			(error) => {}
 		);
 	}
 
-	public onConnectivityClick($event: any) { }
+	public onConnectivityClick($event: any) {}
 
 	private getPreviousContent() {
 		this.cardContentPositionD = this.dashboardService.offlineCardContent.positionD;
@@ -198,5 +202,4 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 			}
 		}
 	}
-
 }

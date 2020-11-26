@@ -21,7 +21,7 @@
 		margin-bottom: 2rem;
 		p {
 			font-size: $fontsize_xs;
-			color: #303D49;
+			color: #303d49;
 		}
 	}
 
@@ -47,16 +47,16 @@
 			cursor: default;
 			color: $grey_dark;
 			border-bottom: 0.2rem solid $grey_dark;
-			opacity: .4;
+			opacity: 0.4;
 
 			@media #{$black-on-white} {
-				opacity: .5;
+				opacity: 0.5;
 				color: $high-contrast-white-disabled-maroon;
 				border-bottom: 0.2rem solid $high-contrast-white-disabled-maroon;
 			}
 
 			@media #{$white-on-black} {
-				opacity: .5;
+				opacity: 0.5;
 				color: $high-contrast-black-disabled-green;
 				border-bottom: 0.2rem solid $high-contrast-black-disabled-green;
 			}
@@ -69,7 +69,6 @@
 
 	.link-text-payment {
 		font-size: 1.4rem;
-
 
 		letter-spacing: 0.05rem;
 		color: $menu_hover;
@@ -125,7 +124,6 @@
 				background-color: orangered;
 			}
 		}
-
 	}
 
 	.chevron-list {
@@ -183,7 +181,7 @@
 			height: 2rem;
 
 			&::after {
-				content: "";
+				content: '';
 				position: absolute;
 				top: 1px;
 				right: -7px;
@@ -220,7 +218,7 @@
 		justify-content: flex-start;
 		align-items: center;
 
-		&>span {
+		& > span {
 			display: inline-block;
 			background-color: $shade_extradark;
 			width: 0rem;
@@ -231,12 +229,12 @@
 			animation: bounce 0.6s infinite alternate;
 		}
 
-		&>span:nth-child(2) {
+		& > span:nth-child(2) {
 			background-color: $shade_darker;
 			animation-delay: 0.2s;
 		}
 
-		&>span:nth-child(3) {
+		& > span:nth-child(3) {
 			animation-delay: 0.4s;
 		}
 	}
@@ -248,5 +246,4 @@
 			transform: translate3d(0, -0.5rem, 0);
 		}
 	}
-
 }

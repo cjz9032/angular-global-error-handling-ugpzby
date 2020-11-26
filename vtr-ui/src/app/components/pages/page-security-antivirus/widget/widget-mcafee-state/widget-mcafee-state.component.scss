@@ -1,4 +1,4 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .list-group {
 	border-radius: $border_radius;
@@ -105,8 +105,8 @@
 			.button-box {
 				.button {
 					border: 0.1rem solid $main !important;
-					background: $light!important;
-					color: $main!important;
+					background: $light !important;
+					color: $main !important;
 					min-width: 24rem !important;
 					font-weight: $weight_bold;
 
@@ -115,11 +115,11 @@
 					@media #{$black-on-white} {
 						border-color: $dark !important;
 						background: $light !important;
-						color: $dark!important;
+						color: $dark !important;
 						&:hover {
 							border-color: $high-contrast-white-textselected !important;
 							background: $high-contrast-white-textselected !important;
-							color: $light!important;
+							color: $light !important;
 						}
 					}
 
@@ -142,24 +142,24 @@
 		::ng-deep {
 			.button-box {
 				.button {
-					color: $light!important;
+					color: $light !important;
 					min-width: 20rem;
 					@include high-contrast-adjust;
 					@media #{$black-on-white} {
 						border-color: $high-contrast-white-textselected !important;
 						background: $high-contrast-white-textselected !important;
 						&:hover {
-							background: $light!important;
-							color: $high-contrast-white-textselected!important;
+							background: $light !important;
+							color: $high-contrast-white-textselected !important;
 						}
 					}
 
 					@media #{$white-on-black} {
-						color: $dark!important;
+						color: $dark !important;
 						border-color: $high-contrast-black-textselected !important;
-						background: $high-contrast-black-textselected!important;
+						background: $high-contrast-black-textselected !important;
 						&:hover {
-							background: $dark!important;
+							background: $dark !important;
 							color: $high-contrast-black-textselected !important;
 						}
 					}
@@ -192,8 +192,8 @@
 
 					@media #{$white-on-black} {
 						border: 0.1rem solid $high-contrast-black-disabled !important;
-						background: $dark!important;
-						color: $high-contrast-black-disabled!important;
+						background: $dark !important;
+						color: $high-contrast-black-disabled !important;
 						&:hover {
 							border: 0.1rem solid $high-contrast-black-disabled !important;
 							background: $dark !important;
@@ -232,7 +232,6 @@
 				font-size: 1.3rem;
 				line-height: 2rem;
 			}
-
 		}
 
 		.icon-check {
@@ -257,7 +256,7 @@
 		}
 
 		.icon-check:before {
-			content: "";
+			content: '';
 		}
 
 		.icon-times {
@@ -328,5 +327,4 @@
 	.visible {
 		visibility: hidden !important;
 	}
-
 }

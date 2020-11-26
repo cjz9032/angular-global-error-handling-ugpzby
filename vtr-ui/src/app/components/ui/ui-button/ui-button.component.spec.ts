@@ -12,9 +12,8 @@ describe('UiButtonComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [UiButtonComponent],
 			schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-			providers: [MetricService]
-		})
-			.compileComponents();
+			providers: [MetricService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -78,5 +77,4 @@ describe('UiButtonComponent', () => {
 		component.onClickButton(new Event('click'));
 		expect(component.onClick.emit).toHaveBeenCalled();
 	}); */
-
 });

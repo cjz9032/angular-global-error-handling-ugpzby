@@ -1,4 +1,4 @@
-@import "./../../../app.theme.scss";
+@import './../../../app.theme.scss';
 
 .vtr-battery-detail {
 	.battery-detail-max-height {
@@ -8,11 +8,11 @@
 		@media #{$breakpoint_md} {
 			max-height: 55rem;
 		}
-		 @media #{$breakpoint_sm} {
-		 	max-height: 50rem;
+		@media #{$breakpoint_sm} {
+			max-height: 50rem;
 		}
 
-		.fcc-tooltip-icon{
+		.fcc-tooltip-icon {
 			margin-left: 1.5rem;
 			font-size: 1.8rem;
 			cursor: pointer;

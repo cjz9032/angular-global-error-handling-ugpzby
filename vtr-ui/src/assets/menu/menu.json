@@ -4,10 +4,7 @@
 			"id": "device",
 			"label": "common.menu.device.title",
 			"path": "device-gaming",
-			"icon": [
-				"fas",
-				"desktop"
-			],
+			"icon": ["fas", "desktop"],
 			"metricsEvent": "itemClick",
 			"metricsParent": "device.navbar",
 			"metricsItem": "link.device",
@@ -21,10 +18,7 @@
 			"id": "security",
 			"label": "common.menu.security.title",
 			"path": "security/wifi-security",
-			"icon": [
-				"fal",
-				"lock"
-			],
+			"icon": ["fal", "lock"],
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.security",
@@ -41,9 +35,7 @@
 						"exact": true
 					},
 					"subitems": [],
-					"pre": [
-						"assets/images/coronet-logo-gaming.svg"
-					]
+					"pre": ["assets/images/coronet-logo-gaming.svg"]
 				}
 			]
 		},
@@ -51,10 +43,7 @@
 			"id": "support",
 			"label": "gaming.common.menu.support.title",
 			"path": "support",
-			"icon": [
-				"fal",
-				"wrench"
-			],
+			"icon": ["fal", "wrench"],
 			"metricsEvent": "featureClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.support",
@@ -62,9 +51,7 @@
 				"exact": true
 			},
 			"sMode": true,
-			"pre": [
-				"assets/images/support/svg_icon_about_us.svg"
-			],
+			"pre": ["assets/images/support/svg_icon_about_us.svg"],
 			"subitems": [
 				{
 					"id": "support",
@@ -139,10 +126,7 @@
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
-			"icon": [
-				"fal",
-				"search"
-			],
+			"icon": ["fal", "search"],
 			"subitems": []
 		},
 		{
@@ -164,10 +148,7 @@
 			"id": "dashboard",
 			"label": "common.menu.dashboard",
 			"path": "dashboard",
-			"icon": [
-				"fal",
-				"columns"
-			],
+			"icon": ["fal", "columns"],
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.dashboard",
@@ -181,10 +162,7 @@
 			"id": "device",
 			"label": "common.menu.device.title",
 			"path": "device",
-			"icon": [
-				"fal",
-				"laptop"
-			],
+			"icon": ["fal", "laptop"],
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.device",
@@ -275,7 +253,8 @@
 							},
 							"sMode": true,
 							"subitems": []
-						},{
+						},
+						{
 							"id": "power",
 							"label": "device.deviceSettings.power.title",
 							"path": "power",
@@ -339,10 +318,7 @@
 			"id": "security",
 			"label": "common.menu.security.title",
 			"path": "security",
-			"icon": [
-				"fal",
-				"lock"
-			],
+			"icon": ["fal", "lock"],
 			"segment": "-[Commercial]",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
@@ -384,14 +360,9 @@
 							"routerLinkActiveOptions": {
 								"exact": true
 							},
-							"icon": [
-								"fal",
-								"house-signal"
-							],
+							"icon": ["fal", "house-signal"],
 							"subitems": [],
-							"pre": [
-								"assets/images/connected-home-security/welcome-slide1@2x.png"
-							]
+							"pre": ["assets/images/connected-home-security/welcome-slide1@2x.png"]
 						}
 					]
 				},
@@ -452,9 +423,7 @@
 								"exact": true
 							},
 							"subitems": [],
-							"pre": [
-								"assets/images/coronet-logo.svg"
-							]
+							"pre": ["assets/images/coronet-logo.svg"]
 						},
 						{
 							"id": "internet-protection",
@@ -486,18 +455,13 @@
 				"exact": true
 			},
 			"subitems": [],
-			"pre": [
-				"assets/images/coronet-logo.svg"
-			]
+			"pre": ["assets/images/coronet-logo.svg"]
 		},
 		{
 			"id": "support",
 			"label": "common.menu.support",
 			"path": "support",
-			"icon": [
-				"fal",
-				"wrench"
-			],
+			"icon": ["fal", "wrench"],
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.support",
@@ -505,9 +469,7 @@
 				"exact": true
 			},
 			"sMode": true,
-			"pre": [
-				"assets/images/support/svg_icon_about_us.svg"
-			],
+			"pre": ["assets/images/support/svg_icon_about_us.svg"],
 			"subitems": [
 				{
 					"id": "support",
@@ -551,10 +513,7 @@
 					"routerLinkActiveOptions": {
 						"exact": true
 					},
-					"icon": [
-						"fal",
-						"flask"
-					],
+					"icon": ["fal", "flask"],
 					"subitems": []
 				}
 			]
@@ -571,10 +530,7 @@
 			"routerLinkActiveOptions": {
 				"exact": true
 			},
-			"icon": [
-				"fal",
-				"search"
-			],
+			"icon": ["fal", "search"],
 			"subitems": []
 		},
 		{
@@ -597,10 +553,7 @@
 			"id": "dashboard",
 			"label": "common.menu.dashboard",
 			"path": "dashboard",
-			"icon": [
-				"fal",
-				"columns"
-			],
+			"icon": ["fal", "columns"],
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.dashboard",
@@ -613,10 +566,7 @@
 			"id": "smart-performance",
 			"label": "gaming.common.menu.smartPerformance",
 			"path": "support/smart-performance",
-			"icon": [
-				"fal",
-				"wrench"
-			],
+			"icon": ["fal", "wrench"],
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.smartPerfomance",

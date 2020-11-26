@@ -6,16 +6,16 @@ import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hard
 import { HardwareScanService } from './hardware-scan.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class RecoverBadSectorsService {
-
 	private recoverBadSectorsLastResult;
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
 		private modalService: NgbModal,
-		private router: Router) { }
+		private router: Router
+	) {}
 
 	public getLastRecoverResultTitle() {
 		return HardwareScanTestResult[this.recoverBadSectorsLastResult.resultModule];
@@ -30,11 +30,11 @@ export class RecoverBadSectorsService {
 	}
 
 	public openRecoverBadSectorsModal(failedDevices = null) {
-		const modalRef =  this.modalService.open(ModalHardwareScanRbsComponent, {
+		const modalRef = this.modalService.open(ModalHardwareScanRbsComponent, {
 			size: 'lg',
 			centered: true,
 			backdrop: true,
-			ariaLabelledBy: 'hwscan-rbs-modal-title'
+			ariaLabelledBy: 'hwscan-rbs-modal-title',
 		});
 
 		if (failedDevices !== null) {

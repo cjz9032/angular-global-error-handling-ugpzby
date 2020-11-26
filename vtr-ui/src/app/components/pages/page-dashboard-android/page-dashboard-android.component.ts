@@ -25,7 +25,7 @@ import { Subscription } from 'rxjs';
 @Component({
 	selector: 'vtr-page-dashboard-android',
 	templateUrl: './page-dashboard-android.component.html',
-	styleUrls: ['./page-dashboard-android.component.scss']
+	styleUrls: ['./page-dashboard-android.component.scss'],
 })
 export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 	/* submit = this.translate.instant('dashboard.feedback.form.button');
@@ -83,7 +83,9 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		// reroute default application's default URL if gaming device
 		if (this.deviceService.isGaming) {
-			this.router.navigateByUrl(this.configService.getMenuItems(this.deviceService.isGaming)[0].path);
+			this.router.navigateByUrl(
+				this.configService.getMenuItems(this.deviceService.isGaming)[0].path
+			);
 		}
 
 		this.isOnline = this.commonService.isOnline;
@@ -93,67 +95,95 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 
 		this.setDefaultCMSContent();
 
-
-		this.commonServiceSubscription = this.commonService.notification.subscribe((notification: AppNotification) => {
-			this.onNotification(notification);
-		});
-
+		this.commonServiceSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
-
 
 	private fetchCmsContents() {
 		const queryOptions = {
-			Page: 'dashboard'
+			Page: 'dashboard',
 		};
 
 		this.cmsServiceSubscription = this.cmsService.fetchCMSContent(queryOptions).subscribe(
 			(response: any) => {
-				const heroBannerItems = this.cmsService.getOneCMSContent(response, 'home-page-hero-banner', 'position-A').map((record, index) => {
-					return {
-						albumId: 1,
-						id: record.Id,
-						source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-						title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
-						url: record.FeatureImage,
-						ActionLink: record.ActionLink
-					};
-				});
+				const heroBannerItems = this.cmsService
+					.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
+					.map((record, index) => {
+						return {
+							albumId: 1,
+							id: record.Id,
+							source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+							title: this.sanitizer.sanitize(
+								SecurityContext.HTML,
+								record.Description
+							),
+							url: record.FeatureImage,
+							ActionLink: record.ActionLink,
+						};
+					});
 				if (heroBannerItems && heroBannerItems.length) {
 					this.heroBannerItems = heroBannerItems;
 				}
 
-				const cardContentPositionB = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-B')[0];
+				const cardContentPositionB = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-B'
+				)[0];
 				if (cardContentPositionB) {
 					this.cardContentPositionB = cardContentPositionB;
 					if (this.cardContentPositionB.BrandName) {
-						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split('|')[0];
+						this.cardContentPositionB.BrandName = this.cardContentPositionB.BrandName.split(
+							'|'
+						)[0];
 					}
 				}
 
-				const cardContentPositionC = this.cmsService.getOneCMSContent(response, 'half-width-title-description-link-image', 'position-C')[0];
+				const cardContentPositionC = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-title-description-link-image',
+					'position-C'
+				)[0];
 				if (cardContentPositionC) {
 					this.cardContentPositionC = cardContentPositionC;
 					if (this.cardContentPositionC.BrandName) {
-						this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split('|')[0];
+						this.cardContentPositionC.BrandName = this.cardContentPositionC.BrandName.split(
+							'|'
+						)[0];
 					}
 				}
 
-				const cardContentPositionD = this.cmsService.getOneCMSContent(response, 'full-width-title-image-background', 'position-D')[0];
+				const cardContentPositionD = this.cmsService.getOneCMSContent(
+					response,
+					'full-width-title-image-background',
+					'position-D'
+				)[0];
 				if (cardContentPositionD) {
 					this.cardContentPositionD = cardContentPositionD;
 				}
 
-				const cardContentPositionE = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-E')[0];
+				const cardContentPositionE = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-E'
+				)[0];
 				if (cardContentPositionE) {
 					this.cardContentPositionE = cardContentPositionE;
 				}
 
-				const cardContentPositionF = this.cmsService.getOneCMSContent(response, 'half-width-top-image-title-link', 'position-F')[0];
+				const cardContentPositionF = this.cmsService.getOneCMSContent(
+					response,
+					'half-width-top-image-title-link',
+					'position-F'
+				)[0];
 				if (cardContentPositionF) {
 					this.cardContentPositionF = cardContentPositionF;
 				}
 			},
-			error => {
+			(error) => {
 				this.logger.error('fetchCMSContent error', error);
 			}
 		);
@@ -164,22 +194,23 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			backdrop: 'static',
 			size: 'lg',
 			centered: true,
-			windowClass: 'feedback-modal'
+			windowClass: 'feedback-modal',
 		});
 	}
 
-	public onConnectivityClick($event: any) {
-	}
+	public onConnectivityClick($event: any) {}
 
 	private setDefaultCMSContent() {
-		this.heroBannerItems = [{
-			albumId: 1,
-			id: 1,
-			source: 'Vantage',
-			title: 'Welcome to the next generation of Lenovo Vantage!',
-			url: 'assets/cms-cache/Vantage3Hero-zone0.jpg',
-			ActionLink: null
-		}];
+		this.heroBannerItems = [
+			{
+				albumId: 1,
+				id: 1,
+				source: 'Vantage',
+				title: 'Welcome to the next generation of Lenovo Vantage!',
+				url: 'assets/cms-cache/Vantage3Hero-zone0.jpg',
+				ActionLink: null,
+			},
+		];
 
 		this.cardContentPositionB = {
 			Title: '',
@@ -196,7 +227,7 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Template: 'half-width-title-description-link-image',
 			Position: 'position-B',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
 		};
 
 		this.cardContentPositionC = {
@@ -214,7 +245,7 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Template: 'half-width-title-description-link-image',
 			Position: 'position-C',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
 		};
 
 		this.cardContentPositionD = {
@@ -232,7 +263,7 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Template: 'full-width-title-image-background',
 			Position: 'position-D',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
 		};
 
 		this.cardContentPositionE = {
@@ -250,7 +281,7 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Template: 'half-width-top-image-title-link',
 			Position: 'position-E',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
 		};
 
 		this.cardContentPositionF = {
@@ -268,7 +299,7 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Template: 'half-width-top-image-title-link',
 			Position: 'position-F',
 			ExpirationDate: null,
-			Filters: null
+			Filters: null,
 		};
 	}
 

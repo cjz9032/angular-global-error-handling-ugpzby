@@ -2,7 +2,7 @@
  * this enum is for local storage keys. new keys can be added here. please give meaningful names to key.
  */
 export enum LenovoIdKey {
-	FirstName = '[LenovoIdKey] FirstName'
+	FirstName = '[LenovoIdKey] FirstName',
 }
 
 export enum LenovoIdStatus {
@@ -12,11 +12,10 @@ export enum LenovoIdStatus {
 	SignedOut = '[LenovoIdStatus] SignedOut',
 	LoggingOut = '[LenovoIdStatus] LoggingOut',
 	Disabled = '[LenovoIdStatus] Disabled',
-	Pending = '[LenovoIdStatus] Pending'
+	Pending = '[LenovoIdStatus] Pending',
 }
 
 export enum ssoErroType {
-
 	SSO_ErrorType_NoErr = 0,
 
 	//

@@ -8,9 +8,8 @@ xdescribe('ModalLicenseComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ModalLicenseComponent]
-		})
-			.compileComponents();
+			declarations: [ModalLicenseComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

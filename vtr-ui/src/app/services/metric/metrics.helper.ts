@@ -7,12 +7,11 @@ import { MetricEventName as EventName, MetricEventName } from 'src/app/enums/met
 
 declare var window;
 export class MetricHelper {
-	private static EventList  = Object.values(EventName).map(item => {
+	private static EventList = Object.values(EventName).map((item) => {
 		item.toLowerCase();
 	});
 
-	constructor() {
-	}
+	constructor() {}
 
 	public static timeSpan(dateEnd: Date, dateStart: Date) {
 		return Math.round((dateEnd.getTime() - dateStart.getTime()) / 1000);
@@ -21,15 +20,15 @@ export class MetricHelper {
 	// try to hide appId
 	public static getAppId(factor) {
 		const entireFactor = factor + 'ÓaS­¼';
-		return (window && window.btoa) ? window.btoa(entireFactor) : '';
+		return window && window.btoa ? window.btoa(entireFactor) : '';
 	}
 
 	// enable this feature to track a bug
 	public static async setupMetricDbg(hypothesisService: HypothesisService, metricClient, data) {
 		if (metricClient.enableDbg === undefined) {
 			try {
-				const hyp = await hypothesisService.getAllSettings() as any;
-				metricClient.enableDbg = (hyp && hyp.metricDbg === 'true');
+				const hyp = (await hypothesisService.getAllSettings()) as any;
+				metricClient.enableDbg = hyp && hyp.metricDbg === 'true';
 			} catch (ex) {
 				metricClient.enableDbg = false; // not use
 			}
@@ -51,7 +50,7 @@ export class MetricHelper {
 			return EventName.unknown;
 		}
 
-		return MetricEventName[eventName.toLowerCase()] || eventName
+		return MetricEventName[eventName.toLowerCase()] || eventName;
 	}
 
 	public static createSimulateObj() {
@@ -60,18 +59,18 @@ export class MetricHelper {
 			sendAsync() {
 				return Promise.resolve({
 					status: 0,
-					desc: 'ok'
+					desc: 'ok',
 				});
 			},
 			sendAsyncEx() {
 				return Promise.resolve({
 					status: 0,
-					desc: 'ok'
+					desc: 'ok',
 				});
 			},
 			metricsEnabled: false,
 			initializationResolved: true,
-			initPromise: Promise.resolve(false)
+			initPromise: Promise.resolve(false),
 		};
 	}
 }

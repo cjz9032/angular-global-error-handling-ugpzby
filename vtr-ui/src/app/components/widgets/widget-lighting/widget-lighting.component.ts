@@ -15,7 +15,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 @Component({
 	selector: 'vtr-widget-lighting',
 	templateUrl: './widget-lighting.component.html',
-	styleUrls: ['./widget-lighting.component.scss']
+	styleUrls: ['./widget-lighting.component.scss'],
 })
 export class WidgetLightingComponent implements OnInit {
 	public response: any;
@@ -49,18 +49,20 @@ export class WidgetLightingComponent implements OnInit {
 	ngOnInit() {
 		this.setprofId = 0;
 		this.getCapabilities();
-		this.notificationSubscribe = this.commonService.getCapabalitiesNotification().subscribe((response) => {
-			if (response.type === Gaming.GamingCapabilities) {
-				this.getCapabilities();
-			}
-		});
+		this.notificationSubscribe = this.commonService
+			.getCapabalitiesNotification()
+			.subscribe((response) => {
+				if (response.type === Gaming.GamingCapabilities) {
+					this.getCapabilities();
+				}
+			});
 		this.deviceService.getMachineInfo().then((value: any) => {
 			this.defaultLanguage = value.locale;
 		});
 	}
 
 	ngOnDestroy() {
-		if(this.notificationSubscribe) {
+		if (this.notificationSubscribe) {
 			this.notificationSubscribe.unsubscribe();
 		}
 		this.shellServices.unRegisterEvent(
@@ -70,14 +72,21 @@ export class WidgetLightingComponent implements OnInit {
 	}
 
 	public getCapabilities() {
-		this.ledSetFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledSetFeature);
+		this.ledSetFeature = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.ledSetFeature
+		);
 		this.ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver);
-		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion);
-		this.ledSwitchButtonFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.LedSwitchButtonFeature);
+		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.ledLayoutVersion
+		);
+		this.ledSwitchButtonFeature = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LedSwitchButtonFeature
+		);
 
 		if (this.ledSetFeature) {
 			if (LocalStorageKey.ProfileId !== undefined) {
-				this.setprofId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) || 0;
+				this.setprofId =
+					this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) || 0;
 			}
 			this.getLightingProfileId();
 		}
@@ -95,7 +104,7 @@ export class WidgetLightingComponent implements OnInit {
 		}
 		this.logger.info('ledSwitchButtonFeature: ', this.ledSwitchButtonFeature);
 		if (this.ledSwitchButtonFeature) {
-		 this.regLightingProfileIdChangeEvent();
+			this.regLightingProfileIdChangeEvent();
 		}
 	}
 
@@ -107,18 +116,23 @@ export class WidgetLightingComponent implements OnInit {
 					this.profileId = response.profileId;
 					if (!this.didSuccess) {
 						if (LocalStorageKey.ProfileId !== undefined) {
-							this.setprofId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) || 0;
+							this.setprofId =
+								this.localCacheService.getLocalCacheValue(
+									LocalStorageKey.ProfileId
+								) || 0;
 						}
 					} else {
 						if (LocalStorageKey.ProfileId !== undefined) {
-							this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, this.profileId);
+							this.localCacheService.setLocalCacheValue(
+								LocalStorageKey.ProfileId,
+								this.profileId
+							);
 						}
 						this.setprofId = this.profileId;
 					}
 				});
 			}
-		} catch (error) {
-		}
+		} catch (error) {}
 	}
 
 	public SetProfile(event) {
@@ -136,42 +150,49 @@ export class WidgetLightingComponent implements OnInit {
 					this.setprofId = eventval;
 				}
 				if (!this.isPopupVisible) {
-					this.gamingLightingService.setLightingProfileId(0, eventval).then((response: any) => {
-
-						this.didSuccess = response.didSuccess;
-						if (this.didSuccess) {
-							if (LocalStorageKey.ProfileId !== undefined) {
-								this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, response.profileId);
+					this.gamingLightingService
+						.setLightingProfileId(0, eventval)
+						.then((response: any) => {
+							this.didSuccess = response.didSuccess;
+							if (this.didSuccess) {
+								if (LocalStorageKey.ProfileId !== undefined) {
+									this.localCacheService.setLocalCacheValue(
+										LocalStorageKey.ProfileId,
+										response.profileId
+									);
+								}
+								if (!this.isPopupVisible) {
+									this.setprofId = response.profileId;
+								}
+							} else {
+								this.setprofId = prevSetprofId;
 							}
-							if (!this.isPopupVisible) {
-								this.setprofId = response.profileId;
-							}
-						} else {
-							this.setprofId = prevSetprofId;
-						}
-					});
+						});
 				}
 			}
-		} catch (error) {
-		}
+		} catch (error) {}
 	}
-
 
 	public regLightingProfileIdChangeEvent() {
 		this.gamingLightingService.regLightingProfileIdChangeEvent();
 		this.shellServices.registerEvent(
-		  EventTypes.gamingLightingProfileIdChangeEvent,
-		  this.profileChangeEvent
+			EventTypes.gamingLightingProfileIdChangeEvent,
+			this.profileChangeEvent
 		);
 	}
 
 	public setProfileEvent(profileId) {
 		this.ngZone.run(() => {
 			this.logger.info('profileId event ', profileId);
-			if (this.setprofId === profileId) { return; }
+			if (this.setprofId === profileId) {
+				return;
+			}
 			this.setprofId = profileId;
 			if (this.setprofId !== undefined) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.ProfileId, this.setprofId);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.ProfileId,
+					this.setprofId
+				);
 			}
 		});
 	}

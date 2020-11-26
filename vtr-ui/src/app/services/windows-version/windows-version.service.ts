@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class WindowsVersionService {
 	private readonly VERSION_19H2 = 18363;
@@ -12,7 +12,7 @@ export class WindowsVersionService {
 	private regexp: RegExp = /Edge\/(\d+).(\d+)$/gm;
 	private build: number = undefined;
 
-	public get currentBuildVersion() : number | null {
+	public get currentBuildVersion(): number | null {
 		if (this.build === undefined) {
 			const result = this.regexp.exec(navigator.userAgent);
 			this.build = Array.isArray(result) ? Number(result[2]) : null;
@@ -30,18 +30,24 @@ export class WindowsVersionService {
 	}
 
 	public is19H2(): boolean {
-		return this.currentBuildVersion > this.VERSION_19H1
-			&& this.currentBuildVersion <= this.VERSION_19H2;
+		return (
+			this.currentBuildVersion > this.VERSION_19H1 &&
+			this.currentBuildVersion <= this.VERSION_19H2
+		);
 	}
 
 	public is19H1(): boolean {
-		return this.currentBuildVersion > this.VERSION_REDSTONE_5
-			&& this.currentBuildVersion <= this.VERSION_19H1;
+		return (
+			this.currentBuildVersion > this.VERSION_REDSTONE_5 &&
+			this.currentBuildVersion <= this.VERSION_19H1
+		);
 	}
 
 	public isRS5(): boolean {
-		return this.currentBuildVersion > this.VERSION_REDSTONE_4
-			&& this.currentBuildVersion <= this.VERSION_REDSTONE_5;
+		return (
+			this.currentBuildVersion > this.VERSION_REDSTONE_4 &&
+			this.currentBuildVersion <= this.VERSION_REDSTONE_5
+		);
 	}
 
 	public isRS4(): boolean {

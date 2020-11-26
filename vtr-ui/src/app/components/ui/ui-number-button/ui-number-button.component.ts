@@ -4,7 +4,7 @@ import { Component, OnInit, Input, EventEmitter, Output, ChangeDetectorRef } fro
 @Component({
 	selector: 'vtr-ui-number-button',
 	templateUrl: './ui-number-button.component.html',
-	styleUrls: [ './ui-number-button.component.scss' ]
+	styleUrls: ['./ui-number-button.component.scss'],
 })
 export class UiNumberButtonComponent implements OnInit {
 	@Input() public numbers;
@@ -17,7 +17,7 @@ export class UiNumberButtonComponent implements OnInit {
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.maximumInput.title',
 		bodyText: 'gaming.macroKey.popupContent.maximumInput.body',
-		btnConfirm: false
+		btnConfirm: false,
 	};
 
 	constructor() {}

@@ -6,19 +6,18 @@ import { TranslationModule } from 'src/app/modules/translation.module';
 import { VantageShellService } from '../vantage-shell/vantage-shell-mock.service';
 import { SmartAssistService } from './smart-assist.service';
 
-
 describe('SmartAssistService', () => {
-
 	const smartAssistCapability: SmartAssistCapability = new SmartAssistCapability();
 	const smartAssistCache: SmartAssistCache = new SmartAssistCache();
 
-	beforeEach(() => TestBed.configureTestingModule({
-		providers: [SmartAssistService, TranslateStore, VantageShellService],
-		imports: [TranslationModule.forChild()]
-	}));
+	beforeEach(() =>
+		TestBed.configureTestingModule({
+			providers: [SmartAssistService, TranslateStore, VantageShellService],
+			imports: [TranslationModule.forChild()],
+		})
+	);
 
 	describe(':', () => {
-
 		function setup() {
 			const smartAssistService = TestBed.get(SmartAssistService);
 			const shellService = TestBed.get(VantageShellService);
@@ -33,7 +32,10 @@ describe('SmartAssistService', () => {
 
 		it('getHPDVisibility called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDCapability'
+			).and.callThrough();
 
 			smartAssistService.getHPDVisibility();
 			expect(privateSpy).toHaveBeenCalled();
@@ -41,7 +43,10 @@ describe('SmartAssistService', () => {
 
 		it('getHPDStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDGlobalSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDGlobalSetting'
+			).and.callThrough();
 
 			smartAssistService.getHPDStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -49,7 +54,10 @@ describe('SmartAssistService', () => {
 
 		it('setHPDStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'SetHPDGlobalSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'SetHPDGlobalSetting'
+			).and.callThrough();
 
 			smartAssistService.setHPDStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -60,7 +68,10 @@ describe('SmartAssistService', () => {
 
 		it('getZeroTouchLockVisibility called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDLeaveCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDLeaveCapability'
+			).and.callThrough();
 
 			smartAssistService.getZeroTouchLockVisibility();
 			expect(privateSpy).toHaveBeenCalled();
@@ -68,7 +79,10 @@ describe('SmartAssistService', () => {
 
 		it('getZeroTouchLockStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDPresentLeaveSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDPresentLeaveSetting'
+			).and.callThrough();
 
 			smartAssistService.getZeroTouchLockStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -76,7 +90,10 @@ describe('SmartAssistService', () => {
 
 		it('getHPDLeaveSensitivityVisibility called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDLeaveSensitivityVisibility').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDLeaveSensitivityVisibility'
+			).and.callThrough();
 
 			smartAssistService.getHPDLeaveSensitivityVisibility();
 			expect(privateSpy).toHaveBeenCalled();
@@ -84,7 +101,10 @@ describe('SmartAssistService', () => {
 
 		it('getHPDLeaveSensitivity called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDLeaveSensitivity').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDLeaveSensitivity'
+			).and.callThrough();
 
 			smartAssistService.getHPDLeaveSensitivity();
 			expect(privateSpy).toHaveBeenCalled();
@@ -92,7 +112,10 @@ describe('SmartAssistService', () => {
 
 		it('SetHPDLeaveSensitivitySetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'SetHPDLeaveSensitivitySetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'SetHPDLeaveSensitivitySetting'
+			).and.callThrough();
 
 			smartAssistService.SetHPDLeaveSensitivitySetting();
 			expect(privateSpy).toHaveBeenCalled();
@@ -100,7 +123,10 @@ describe('SmartAssistService', () => {
 
 		it('setZeroTouchLockStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'SetHPDPresentLeaveSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'SetHPDPresentLeaveSetting'
+			).and.callThrough();
 
 			smartAssistService.setZeroTouchLockStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -111,7 +137,10 @@ describe('SmartAssistService', () => {
 
 		it('getZeroTouchLockFacialRecoStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'getLockFacialRecognitionSettings').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'getLockFacialRecognitionSettings'
+			).and.callThrough();
 
 			smartAssistService.getZeroTouchLockFacialRecoStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -119,7 +148,10 @@ describe('SmartAssistService', () => {
 
 		it('setZeroTouchLockFacialRecoStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'setLockFacialRecognitionSettings').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'setLockFacialRecognitionSettings'
+			).and.callThrough();
 
 			smartAssistService.setZeroTouchLockFacialRecoStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -130,7 +162,10 @@ describe('SmartAssistService', () => {
 
 		it('getZeroTouchLoginVisibility called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDApproachCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDApproachCapability'
+			).and.callThrough();
 
 			smartAssistService.getZeroTouchLoginVisibility();
 			expect(privateSpy).toHaveBeenCalled();
@@ -138,7 +173,10 @@ describe('SmartAssistService', () => {
 
 		it('getZeroTouchLoginStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDApproachSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDApproachSetting'
+			).and.callThrough();
 
 			smartAssistService.getZeroTouchLoginStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -146,7 +184,10 @@ describe('SmartAssistService', () => {
 
 		it('getZeroTouchLoginDistance called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDApproachDistance').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDApproachDistance'
+			).and.callThrough();
 
 			smartAssistService.getZeroTouchLoginDistance();
 			expect(privateSpy).toHaveBeenCalled();
@@ -154,7 +195,10 @@ describe('SmartAssistService', () => {
 
 		it('setZeroTouchLoginStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'SetHPDApproachSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'SetHPDApproachSetting'
+			).and.callThrough();
 
 			smartAssistService.setZeroTouchLoginStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -165,7 +209,10 @@ describe('SmartAssistService', () => {
 
 		it('getZeroTouchLoginAdjustVisibility called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDAutoAdjustCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDAutoAdjustCapability'
+			).and.callThrough();
 
 			smartAssistService.getZeroTouchLoginAdjustVisibility();
 			expect(privateSpy).toHaveBeenCalled();
@@ -173,7 +220,10 @@ describe('SmartAssistService', () => {
 
 		it('getZeroTouchLoginAdjustStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDAutoAdjustSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDAutoAdjustSetting'
+			).and.callThrough();
 
 			smartAssistService.getZeroTouchLoginAdjustStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -181,7 +231,10 @@ describe('SmartAssistService', () => {
 
 		it('setZeroTouchLoginAdjustStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'SetHPDAutoAdjustSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'SetHPDAutoAdjustSetting'
+			).and.callThrough();
 
 			smartAssistService.setZeroTouchLoginAdjustStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -192,7 +245,10 @@ describe('SmartAssistService', () => {
 
 		it('setZeroTouchLoginDistance called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'SetHPDApproachDistanceSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'SetHPDApproachDistanceSetting'
+			).and.callThrough();
 
 			smartAssistService.setZeroTouchLoginDistance(1);
 			expect(privateSpy).toHaveBeenCalled();
@@ -200,7 +256,10 @@ describe('SmartAssistService', () => {
 
 		it('getSelectedLockTimer called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDLeaveWait').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDLeaveWait'
+			).and.callThrough();
 
 			smartAssistService.getSelectedLockTimer();
 			expect(privateSpy).toHaveBeenCalled();
@@ -208,7 +267,10 @@ describe('SmartAssistService', () => {
 
 		it('setSelectedLockTimer called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'SetHPDLeaveWaitSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'SetHPDLeaveWaitSetting'
+			).and.callThrough();
 
 			smartAssistService.setSelectedLockTimer('2');
 			expect(privateSpy).toHaveBeenCalled();
@@ -216,14 +278,16 @@ describe('SmartAssistService', () => {
 
 		it('resetHPDSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'HPDSettingReset').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'HPDSettingReset'
+			).and.callThrough();
 
 			smartAssistService.resetHPDSetting();
 			expect(privateSpy).toHaveBeenCalled();
 
 			smartAssistService.isShellAvailable = false;
 			expect(smartAssistService.resetHPDSetting()).toBeUndefined();
-
 		});
 
 		it('getHPDAdvancedSetting called', () => {
@@ -258,8 +322,13 @@ describe('SmartAssistService', () => {
 			).and.callThrough();
 
 			smartAssistService.isHPDShellAvailable = true;
-			const jsonData = '{"capacity": true, "capability": true, "sensorType": 1, "presenceLeaveDistanceAutoAdjust": true, "presenceLeaveDistance": 1, "errorCode": 0, "videoAutoPauseResumeVersion": 0 }';
-			smartAssistService.hsaIntelligentSecurity = { getAllSetting() { return jsonData; } };
+			const jsonData =
+				'{"capacity": true, "capability": true, "sensorType": 1, "presenceLeaveDistanceAutoAdjust": true, "presenceLeaveDistance": 1, "errorCode": 0, "videoAutoPauseResumeVersion": 0 }';
+			smartAssistService.hsaIntelligentSecurity = {
+				getAllSetting() {
+					return jsonData;
+				},
+			};
 
 			smartAssistService.getHsaIntelligentSecurityStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -285,7 +354,9 @@ describe('SmartAssistService', () => {
 			).and.callThrough();
 
 			smartAssistService.hsaIntelligentSecurity = {
-				registerCallback() { return 1; }
+				registerCallback() {
+					return 1;
+				},
 			};
 
 			smartAssistService.isHPDShellAvailable = true;
@@ -304,7 +375,9 @@ describe('SmartAssistService', () => {
 			).and.callThrough();
 
 			smartAssistService.hsaIntelligentSecurity = {
-				unRegisterCallback() { return 0; }
+				unRegisterCallback() {
+					return 0;
+				},
 			};
 
 			smartAssistService.isHPDShellAvailable = true;
@@ -324,14 +397,18 @@ describe('SmartAssistService', () => {
 
 			smartAssistService.isHPDShellAvailable = true;
 			smartAssistService.hsaIntelligentSecurity = {
-				setPresenceLeaveDistanceAutoAdjust() { return 0; }
+				setPresenceLeaveDistanceAutoAdjust() {
+					return 0;
+				},
 			};
 
 			smartAssistService.setZeroTouchLockDistanceSensitivityAutoAdjust(true);
 			expect(privateSpy).toHaveBeenCalled();
 
 			smartAssistService.isHPDShellAvailable = false;
-			expect(smartAssistService.setZeroTouchLockDistanceSensitivityAutoAdjust(true)).toBeUndefined();
+			expect(
+				smartAssistService.setZeroTouchLockDistanceSensitivityAutoAdjust(true)
+			).toBeUndefined();
 		});
 
 		it('setZeroTouchLockDistanceSensitivity called', () => {
@@ -343,7 +420,9 @@ describe('SmartAssistService', () => {
 
 			smartAssistService.isHPDShellAvailable = true;
 			smartAssistService.hsaIntelligentSecurity = {
-				setPresenceLeaveDistance() { return 0; }
+				setPresenceLeaveDistance() {
+					return 0;
+				},
 			};
 
 			smartAssistService.setZeroTouchLockDistanceSensitivity(true);
@@ -362,7 +441,9 @@ describe('SmartAssistService', () => {
 
 			smartAssistService.isHPDShellAvailable = true;
 			smartAssistService.hsaIntelligentSecurity = {
-				resetAllSetting() { return 0; }
+				resetAllSetting() {
+					return 0;
+				},
 			};
 
 			smartAssistService.resetHSAHPDSetting();
@@ -380,7 +461,7 @@ describe('SmartAssistService', () => {
 			).and.callThrough();
 
 			smartAssistService.isHPDShellAvailable = true;
-			smartAssistService.hsaIntelligentSecurity = { onstatusupdated() { } };
+			smartAssistService.hsaIntelligentSecurity = { onstatusupdated() {} };
 
 			smartAssistService.startMonitorHsaIntelligentSecurityStatus(1);
 			expect(privateSpy).toHaveBeenCalled();
@@ -391,19 +472,24 @@ describe('SmartAssistService', () => {
 
 		it('getWindowsHelloStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetFacialFeatureRegistered').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetFacialFeatureRegistered'
+			).and.callThrough();
 
 			smartAssistService.getWindowsHelloStatus();
 			expect(privateSpy).toHaveBeenCalled();
 
 			smartAssistService.isShellAvailable = false;
 			expect(smartAssistService.getWindowsHelloStatus()).toBeUndefined();
-
 		});
 
 		it('getVideoPauseResumeStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentMedia, 'getVideoPauseResumeStatus').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentMedia,
+				'getVideoPauseResumeStatus'
+			).and.callThrough();
 
 			smartAssistService.getVideoPauseResumeStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -414,7 +500,10 @@ describe('SmartAssistService', () => {
 
 		it('setVideoPauseResumeStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentMedia, 'setVideoPauseResumeStatus').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentMedia,
+				'setVideoPauseResumeStatus'
+			).and.callThrough();
 
 			smartAssistService.setVideoPauseResumeStatus('2');
 			expect(privateSpy).toHaveBeenCalled();
@@ -425,7 +514,10 @@ describe('SmartAssistService', () => {
 
 		it('getSuperResolutionStatus called', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.superResolution, 'getSuperResolutionStatus').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.superResolution,
+				'getSuperResolutionStatus'
+			).and.callThrough();
 
 			smartAssistService.getSuperResolutionStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -436,7 +528,10 @@ describe('SmartAssistService', () => {
 
 		it('setSuperResolutionStatus called', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.superResolution, 'setSuperResolutionStatus').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.superResolution,
+				'setSuperResolutionStatus'
+			).and.callThrough();
 
 			smartAssistService.setSuperResolutionStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -452,8 +547,13 @@ describe('SmartAssistService', () => {
 				'getAntiTheftStatus'
 			).and.callThrough();
 			smartAssistService.isShellAvailable = true;
-			const jsonData = '{ "available": false, "enabled": false, "cameraAllowed": false, "photoAddress": "", "cameraPrivacyState": true, "authorizedAccessState": true, "alarmDuration": 0, "photoNumber": 5, "errorCode": 0 }';
-			smartAssistService.antiTheft = { getMotionAlertSetting() { return jsonData; } };
+			const jsonData =
+				'{ "available": false, "enabled": false, "cameraAllowed": false, "photoAddress": "", "cameraPrivacyState": true, "authorizedAccessState": true, "alarmDuration": 0, "photoNumber": 5, "errorCode": 0 }';
+			smartAssistService.antiTheft = {
+				getMotionAlertSetting() {
+					return jsonData;
+				},
+			};
 			smartAssistService.getAntiTheftStatus();
 			expect(privateSpy).toHaveBeenCalled();
 		});
@@ -487,7 +587,13 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'setAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertEnabled(value: boolean) { if (value) { return 0; } } };
+			smartAssistService.antiTheft = {
+				setMotionAlertEnabled(value: boolean) {
+					if (value) {
+						return 0;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.setAntiTheftStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -499,7 +605,13 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'setAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertEnabled(value: boolean) { if (value) { return 2; } } };
+			smartAssistService.antiTheft = {
+				setMotionAlertEnabled(value: boolean) {
+					if (value) {
+						return 2;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.setAntiTheftStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -511,7 +623,13 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'setAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertEnabled(value: boolean) { if (value) { return 0; } } };
+			smartAssistService.antiTheft = {
+				setMotionAlertEnabled(value: boolean) {
+					if (value) {
+						return 0;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = false;
 			smartAssistService.setAntiTheftStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -519,11 +637,14 @@ describe('SmartAssistService', () => {
 
 		it('setAlarmOften called', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(
-				smartAssistService,
-				'setAlarmOften'
-			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertAlarmDuration(value: boolean) { if (value) { return 0; } } };
+			const privateSpy = spyOn<any>(smartAssistService, 'setAlarmOften').and.callThrough();
+			smartAssistService.antiTheft = {
+				setMotionAlertAlarmDuration(value: boolean) {
+					if (value) {
+						return 0;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.setAlarmOften(10);
 			expect(privateSpy).toHaveBeenCalled();
@@ -531,11 +652,14 @@ describe('SmartAssistService', () => {
 
 		it('setAlarmOften called return Failed', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(
-				smartAssistService,
-				'setAlarmOften'
-			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertAlarmDuration(value: number) { if (value) { return 2; } } };
+			const privateSpy = spyOn<any>(smartAssistService, 'setAlarmOften').and.callThrough();
+			smartAssistService.antiTheft = {
+				setMotionAlertAlarmDuration(value: number) {
+					if (value) {
+						return 2;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.setAlarmOften(10);
 			expect(privateSpy).toHaveBeenCalled();
@@ -543,11 +667,14 @@ describe('SmartAssistService', () => {
 
 		it('setAlarmOften called shell Failed', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(
-				smartAssistService,
-				'setAlarmOften'
-			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertAlarmDuration(value: number) { if (value) { return 0; } } };
+			const privateSpy = spyOn<any>(smartAssistService, 'setAlarmOften').and.callThrough();
+			smartAssistService.antiTheft = {
+				setMotionAlertAlarmDuration(value: number) {
+					if (value) {
+						return 0;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = false;
 			smartAssistService.setAlarmOften(10);
 			expect(privateSpy).toHaveBeenCalled();
@@ -555,11 +682,14 @@ describe('SmartAssistService', () => {
 
 		it('setPhotoNumber called', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(
-				smartAssistService,
-				'setPhotoNumber'
-			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertPhotoNumber(value: boolean) { if (value) { return 0; } } };
+			const privateSpy = spyOn<any>(smartAssistService, 'setPhotoNumber').and.callThrough();
+			smartAssistService.antiTheft = {
+				setMotionAlertPhotoNumber(value: boolean) {
+					if (value) {
+						return 0;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.setPhotoNumber(10);
 			expect(privateSpy).toHaveBeenCalled();
@@ -567,11 +697,14 @@ describe('SmartAssistService', () => {
 
 		it('setPhotoNumber called return Failed', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(
-				smartAssistService,
-				'setPhotoNumber'
-			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertPhotoNumber(value: number) { if (value) { return 2; } } };
+			const privateSpy = spyOn<any>(smartAssistService, 'setPhotoNumber').and.callThrough();
+			smartAssistService.antiTheft = {
+				setMotionAlertPhotoNumber(value: number) {
+					if (value) {
+						return 2;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.setPhotoNumber(10);
 			expect(privateSpy).toHaveBeenCalled();
@@ -579,11 +712,14 @@ describe('SmartAssistService', () => {
 
 		it('setPhotoNumber called shell Failed', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(
-				smartAssistService,
-				'setPhotoNumber'
-			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertPhotoNumber(value: number) { if (value) { return 0; } } };
+			const privateSpy = spyOn<any>(smartAssistService, 'setPhotoNumber').and.callThrough();
+			smartAssistService.antiTheft = {
+				setMotionAlertPhotoNumber(value: number) {
+					if (value) {
+						return 0;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = false;
 			smartAssistService.setPhotoNumber(10);
 			expect(privateSpy).toHaveBeenCalled();
@@ -591,11 +727,14 @@ describe('SmartAssistService', () => {
 
 		it('setAllowCamera called', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(
-				smartAssistService,
-				'setAllowCamera'
-			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertCameraAllowed(value: boolean) { if (value) { return 0; } } };
+			const privateSpy = spyOn<any>(smartAssistService, 'setAllowCamera').and.callThrough();
+			smartAssistService.antiTheft = {
+				setMotionAlertCameraAllowed(value: boolean) {
+					if (value) {
+						return 0;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.setAllowCamera(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -603,11 +742,14 @@ describe('SmartAssistService', () => {
 
 		it('setAllowCamera called return Failed', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(
-				smartAssistService,
-				'setAllowCamera'
-			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertCameraAllowed(value: boolean) { if (value) { return 2; } } };
+			const privateSpy = spyOn<any>(smartAssistService, 'setAllowCamera').and.callThrough();
+			smartAssistService.antiTheft = {
+				setMotionAlertCameraAllowed(value: boolean) {
+					if (value) {
+						return 2;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.setAllowCamera(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -615,11 +757,14 @@ describe('SmartAssistService', () => {
 
 		it('setAllowCamera called shell Failed', () => {
 			const { smartAssistService } = setup();
-			const privateSpy = spyOn<any>(
-				smartAssistService,
-				'setAllowCamera'
-			).and.callThrough();
-			smartAssistService.antiTheft = { setMotionAlertCameraAllowed(value: boolean) { if (value) { return 0; } } };
+			const privateSpy = spyOn<any>(smartAssistService, 'setAllowCamera').and.callThrough();
+			smartAssistService.antiTheft = {
+				setMotionAlertCameraAllowed(value: boolean) {
+					if (value) {
+						return 0;
+					}
+				},
+			};
 			smartAssistService.isShellAvailable = false;
 			smartAssistService.setAllowCamera(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -631,9 +776,11 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'startMonitorAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { onstatusupdated() { }, registerCallback() { } };
+			smartAssistService.antiTheft = { onstatusupdated() {}, registerCallback() {} };
 			smartAssistService.isShellAvailable = true;
-			smartAssistService.startMonitorAntiTheftStatus(smartAssistService.antiTheft.registerCallback());
+			smartAssistService.startMonitorAntiTheftStatus(
+				smartAssistService.antiTheft.registerCallback()
+			);
 			expect(privateSpy).toHaveBeenCalled();
 		});
 
@@ -643,9 +790,11 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'startMonitorAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { registerCallback() { } };
+			smartAssistService.antiTheft = { registerCallback() {} };
 			smartAssistService.isShellAvailable = false;
-			smartAssistService.startMonitorAntiTheftStatus(smartAssistService.antiTheft.registerCallback());
+			smartAssistService.startMonitorAntiTheftStatus(
+				smartAssistService.antiTheft.registerCallback()
+			);
 			expect(privateSpy).toHaveBeenCalled();
 		});
 
@@ -655,7 +804,7 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'stopMonitorAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { unRegisterCallback() { } };
+			smartAssistService.antiTheft = { unRegisterCallback() {} };
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.stopMonitorAntiTheftStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -667,7 +816,7 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'stopMonitorAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { unRegisterCallback() { } };
+			smartAssistService.antiTheft = { unRegisterCallback() {} };
 			smartAssistService.isShellAvailable = false;
 			smartAssistService.stopMonitorAntiTheftStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -675,7 +824,10 @@ describe('SmartAssistService', () => {
 
 		it('getIntelligentScreenVisibility called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetSmartSensecapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetSmartSensecapability'
+			).and.callThrough();
 
 			smartAssistService.getIntelligentScreenVisibility();
 			expect(privateSpy).toHaveBeenCalled();
@@ -686,7 +838,10 @@ describe('SmartAssistService', () => {
 
 		it('getAutoScreenOffVisibility called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetWalkingCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetWalkingCapability'
+			).and.callThrough();
 
 			smartAssistService.getAutoScreenOffVisibility();
 			expect(privateSpy).toHaveBeenCalled();
@@ -697,7 +852,10 @@ describe('SmartAssistService', () => {
 
 		it('getAutoScreenOffStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetWalkingSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetWalkingSetting'
+			).and.callThrough();
 
 			smartAssistService.getAutoScreenOffStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -708,7 +866,10 @@ describe('SmartAssistService', () => {
 
 		it('setAutoScreenOffStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'SetWalkingMode').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'SetWalkingMode'
+			).and.callThrough();
 
 			smartAssistService.setAutoScreenOffStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -722,7 +883,10 @@ describe('SmartAssistService', () => {
 
 		it('getAutoScreenOffNoteStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetWalkingCautionVisibility').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetWalkingCautionVisibility'
+			).and.callThrough();
 
 			smartAssistService.getAutoScreenOffNoteStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -733,7 +897,10 @@ describe('SmartAssistService', () => {
 
 		it('getReadingOrBrowsingVisibility called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetBrowsingCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetBrowsingCapability'
+			).and.callThrough();
 
 			smartAssistService.getReadingOrBrowsingVisibility();
 			expect(privateSpy).toHaveBeenCalled();
@@ -744,7 +911,10 @@ describe('SmartAssistService', () => {
 
 		it('getReadingOrBrowsingStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetBrowsingSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetBrowsingSetting'
+			).and.callThrough();
 
 			smartAssistService.getReadingOrBrowsingStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -755,7 +925,10 @@ describe('SmartAssistService', () => {
 
 		it('setReadingOrBrowsingStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'setBrowsingMode').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'setBrowsingMode'
+			).and.callThrough();
 
 			smartAssistService.setReadingOrBrowsingStatus(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -769,7 +942,10 @@ describe('SmartAssistService', () => {
 
 		it('getReadingOrBrowsingTime called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetBrowsingTime').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetBrowsingTime'
+			).and.callThrough();
 
 			smartAssistService.getReadingOrBrowsingTime();
 			expect(privateSpy).toHaveBeenCalled();
@@ -780,7 +956,10 @@ describe('SmartAssistService', () => {
 
 		it('setReadingOrBrowsingTime called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'SetBrowsingTime').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'SetBrowsingTime'
+			).and.callThrough();
 
 			smartAssistService.setReadingOrBrowsingTime(5);
 			expect(privateSpy).toHaveBeenCalled();
@@ -791,7 +970,10 @@ describe('SmartAssistService', () => {
 
 		it('getAPSCapability called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getAPSCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getAPSCapability'
+			).and.callThrough();
 
 			smartAssistService.getAPSCapability();
 			expect(privateSpy).toHaveBeenCalled();
@@ -802,7 +984,10 @@ describe('SmartAssistService', () => {
 
 		it('getSensorStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getSensorStatus').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getSensorStatus'
+			).and.callThrough();
 
 			smartAssistService.getSensorStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -813,7 +998,10 @@ describe('SmartAssistService', () => {
 
 		it('getHDDStatus called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getHDDStatus').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getHDDStatus'
+			).and.callThrough();
 
 			smartAssistService.getHDDStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -824,7 +1012,10 @@ describe('SmartAssistService', () => {
 
 		it('getAPSMode called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getAPSMode').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getAPSMode'
+			).and.callThrough();
 
 			smartAssistService.getAPSMode();
 			expect(privateSpy).toHaveBeenCalled();
@@ -835,7 +1026,10 @@ describe('SmartAssistService', () => {
 
 		it('setAPSMode called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'setAPSMode').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'setAPSMode'
+			).and.callThrough();
 
 			smartAssistService.setAPSMode(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -846,7 +1040,10 @@ describe('SmartAssistService', () => {
 
 		it('getAPSSensitivityLevel called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getAPSSensitivityLevel').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getAPSSensitivityLevel'
+			).and.callThrough();
 
 			smartAssistService.getAPSSensitivityLevel();
 			expect(privateSpy).toHaveBeenCalled();
@@ -857,7 +1054,10 @@ describe('SmartAssistService', () => {
 
 		it('setAPSSensitivityLevel called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'setAPSSensitivityLevel').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'setAPSSensitivityLevel'
+			).and.callThrough();
 
 			smartAssistService.setAPSSensitivityLevel(20);
 			expect(privateSpy).toHaveBeenCalled();
@@ -868,7 +1068,10 @@ describe('SmartAssistService', () => {
 
 		it('getAutoDisableSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getAutoDisableSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getAutoDisableSetting'
+			).and.callThrough();
 
 			smartAssistService.getAutoDisableSetting();
 			expect(privateSpy).toHaveBeenCalled();
@@ -879,7 +1082,10 @@ describe('SmartAssistService', () => {
 
 		it('setAutoDisableSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'setAutoDisableSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'setAutoDisableSetting'
+			).and.callThrough();
 
 			smartAssistService.setAutoDisableSetting(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -890,7 +1096,10 @@ describe('SmartAssistService', () => {
 
 		it('getSnoozeSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getSnoozeSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getSnoozeSetting'
+			).and.callThrough();
 
 			smartAssistService.getSnoozeSetting();
 			expect(privateSpy).toHaveBeenCalled();
@@ -901,7 +1110,10 @@ describe('SmartAssistService', () => {
 
 		it('setSnoozeSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'setSnoozeSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'setSnoozeSetting'
+			).and.callThrough();
 
 			smartAssistService.setSnoozeSetting(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -912,7 +1124,10 @@ describe('SmartAssistService', () => {
 
 		it('getSnoozeTime called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getSnoozeTime').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getSnoozeTime'
+			).and.callThrough();
 
 			smartAssistService.getSnoozeTime();
 			expect(privateSpy).toHaveBeenCalled();
@@ -923,7 +1138,10 @@ describe('SmartAssistService', () => {
 
 		it('setSnoozeTime called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'setSnoozeTime').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'setSnoozeTime'
+			).and.callThrough();
 
 			smartAssistService.setSnoozeTime('Mocking');
 			expect(privateSpy).toHaveBeenCalled();
@@ -934,7 +1152,10 @@ describe('SmartAssistService', () => {
 
 		it('sendSnoozeCommand called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'sendSnoozeCommand').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'sendSnoozeCommand'
+			).and.callThrough();
 
 			smartAssistService.sendSnoozeCommand('Mocking');
 			expect(privateSpy).toHaveBeenCalled();
@@ -945,7 +1166,10 @@ describe('SmartAssistService', () => {
 
 		it('getPenCapability called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getPenCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getPenCapability'
+			).and.callThrough();
 
 			smartAssistService.getPenCapability();
 			expect(privateSpy).toHaveBeenCalled();
@@ -956,7 +1180,10 @@ describe('SmartAssistService', () => {
 
 		it('getTouchCapability called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getTouchCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getTouchCapability'
+			).and.callThrough();
 
 			smartAssistService.getTouchCapability();
 			expect(privateSpy).toHaveBeenCalled();
@@ -967,7 +1194,10 @@ describe('SmartAssistService', () => {
 
 		it('getPSensorCapability called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getPSensorCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getPSensorCapability'
+			).and.callThrough();
 
 			smartAssistService.getPSensorCapability();
 			expect(privateSpy).toHaveBeenCalled();
@@ -978,7 +1208,10 @@ describe('SmartAssistService', () => {
 
 		it('getPenSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getPenSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getPenSetting'
+			).and.callThrough();
 
 			smartAssistService.getPenSetting();
 			expect(privateSpy).toHaveBeenCalled();
@@ -989,7 +1222,10 @@ describe('SmartAssistService', () => {
 
 		it('getPenDelayTime called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getPenDelayTime').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getPenDelayTime'
+			).and.callThrough();
 
 			smartAssistService.getPenDelayTime();
 			expect(privateSpy).toHaveBeenCalled();
@@ -1000,7 +1236,10 @@ describe('SmartAssistService', () => {
 
 		it('getTouchInputSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getTouchInputSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getTouchInputSetting'
+			).and.callThrough();
 
 			smartAssistService.getTouchInputSetting();
 			expect(privateSpy).toHaveBeenCalled();
@@ -1011,7 +1250,10 @@ describe('SmartAssistService', () => {
 
 		it('getPSensorSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'getPSensorSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'getPSensorSetting'
+			).and.callThrough();
 
 			smartAssistService.getPSensorSetting();
 			expect(privateSpy).toHaveBeenCalled();
@@ -1022,7 +1264,10 @@ describe('SmartAssistService', () => {
 
 		it('setPenSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'setPenSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'setPenSetting'
+			).and.callThrough();
 
 			smartAssistService.setPenSetting(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -1033,7 +1278,10 @@ describe('SmartAssistService', () => {
 
 		it('setPenDelayTime called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'setPenDelayTime').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'setPenDelayTime'
+			).and.callThrough();
 
 			smartAssistService.setPenDelayTime(25);
 			expect(privateSpy).toHaveBeenCalled();
@@ -1044,7 +1292,10 @@ describe('SmartAssistService', () => {
 
 		it('setTouchInputSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'setTouchInputSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'setTouchInputSetting'
+			).and.callThrough();
 
 			smartAssistService.setTouchInputSetting(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -1055,7 +1306,10 @@ describe('SmartAssistService', () => {
 
 		it('setPSensorSetting called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.activeProtectionSystem, 'setPSensorSetting').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.activeProtectionSystem,
+				'setPSensorSetting'
+			).and.callThrough();
 
 			smartAssistService.setPSensorSetting(true);
 			expect(privateSpy).toHaveBeenCalled();
@@ -1066,7 +1320,10 @@ describe('SmartAssistService', () => {
 
 		it('isLenovoVoiceAvailable called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.lenovoVoice, 'getCapability').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.lenovoVoice,
+				'getCapability'
+			).and.callThrough();
 
 			smartAssistService.isLenovoVoiceAvailable();
 			expect(privateSpy).toHaveBeenCalled();
@@ -1077,7 +1334,10 @@ describe('SmartAssistService', () => {
 
 		it('isLenovoVoiceInstalled called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.lenovoVoice, 'getInstallStatus').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.lenovoVoice,
+				'getInstallStatus'
+			).and.callThrough();
 
 			smartAssistService.isLenovoVoiceInstalled();
 			expect(privateSpy).toHaveBeenCalled();
@@ -1088,7 +1348,10 @@ describe('SmartAssistService', () => {
 
 		it('downloadLenovoVoice called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.lenovoVoice, 'downloadAndInstallVoiceApp').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.lenovoVoice,
+				'downloadAndInstallVoiceApp'
+			).and.callThrough();
 
 			smartAssistService.downloadLenovoVoice();
 			expect(privateSpy).toHaveBeenCalled();
@@ -1099,7 +1362,10 @@ describe('SmartAssistService', () => {
 
 		it('launchLenovoVoice called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.lenovoVoice, 'launchVoiceApp').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.lenovoVoice,
+				'launchVoiceApp'
+			).and.callThrough();
 
 			smartAssistService.launchLenovoVoice();
 			expect(privateSpy).toHaveBeenCalled();
@@ -1110,7 +1376,10 @@ describe('SmartAssistService', () => {
 
 		it('getHPDSensorType called', () => {
 			const { smartAssistService, shellService } = setup();
-			const privateSpy = spyOn<any>(smartAssistService.intelligentSensing, 'GetHPDSensorType').and.callThrough();
+			const privateSpy = spyOn<any>(
+				smartAssistService.intelligentSensing,
+				'GetHPDSensorType'
+			).and.callThrough();
 
 			smartAssistService.getHPDSensorType();
 			expect(privateSpy).toHaveBeenCalled();
@@ -1122,17 +1391,24 @@ describe('SmartAssistService', () => {
 		// when shellService.getActiveProtectionSystem() is false
 		it('isAPSavailable = false', () => {
 			const { shellService } = setup();
-			const privateSpy = spyOn<any>(shellService, 'getActiveProtectionSystem').and.returnValue(false);
+			const privateSpy = spyOn<any>(
+				shellService,
+				'getActiveProtectionSystem'
+			).and.returnValue(false);
 
 			const smartAssistServiceTemp = new SmartAssistService(shellService);
 			expect(smartAssistServiceTemp.isAPSavailable).toBe(false);
 		});
 
 		// Testing exceptions on service
-		it('Testing exception getVideoPauseResumeStatus', (() => {
+		it('Testing exception getVideoPauseResumeStatus', () => {
 			const { shellService } = setup();
-			const privateSpy = spyOn<any>(shellService, 'getIntelligentMedia').and.returnValue(new Error('caught exception'));
-			const privateSpy1 = spyOn<any>(shellService, 'getSuperResolution').and.returnValue(new Error('caught exception'));
+			const privateSpy = spyOn<any>(shellService, 'getIntelligentMedia').and.returnValue(
+				new Error('caught exception')
+			);
+			const privateSpy1 = spyOn<any>(shellService, 'getSuperResolution').and.returnValue(
+				new Error('caught exception')
+			);
 
 			const smartAssistServiceTemp = new SmartAssistService(shellService);
 			let excp = () => {
@@ -1154,8 +1430,6 @@ describe('SmartAssistService', () => {
 				smartAssistServiceTemp.setSuperResolutionStatus(false);
 			};
 			expect(excp).toThrowError(Error);
-
-		}));
-
+		});
 	});
 });

@@ -8,17 +8,21 @@ import { DeviceService } from '../device/device.service';
 import { ContentActionType } from 'src/app/enums/content.enum';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class CardService {
-
 	constructor(
 		private modalService: NgbModal,
 		private appsForYouService: AppsForYouService,
-		public deviceService: DeviceService,
-	) { }
+		public deviceService: DeviceService
+	) {}
 
-	linkClicked(actionType: string, actionLink: string, isOfflineArm?: boolean, articleTitle: string = '') {
+	linkClicked(
+		actionType: string,
+		actionLink: string,
+		isOfflineArm?: boolean,
+		articleTitle: string = ''
+	) {
 		if (isOfflineArm || !actionType) {
 			return false;
 		}
@@ -28,7 +32,7 @@ export class CardService {
 		const isDccDemo = actionLink.startsWith('dcc-demo');
 
 		if ((isProtocol && !isDccDetails) || actionType === ContentActionType.External) {
-			this.deviceService.getMachineInfo().then(machineInfo => {
+			this.deviceService.getMachineInfo().then((machineInfo) => {
 				if (machineInfo && machineInfo.serialnumber) {
 					actionLink = actionLink.replace(/\[SerialNumber\]/gi, machineInfo.serialnumber);
 				}
@@ -45,21 +49,26 @@ export class CardService {
 	}
 
 	openArticleModal(actionType: string, articleId: string, articleTitle: string = '') {
-		const articleClass = this.deviceService.isGaming ? 'Article-Detail-Modal content-gaming' : 'Article-Detail-Modal';
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalArticleDetailComponent, {
-			backdrop: true, /*'static',*/
-			size: 'lg',
-			centered: true,
-			ariaLabelledBy: 'article-dialog-basic-title',
-			windowClass: articleClass,
-			keyboard: false,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
+		const articleClass = this.deviceService.isGaming
+			? 'Article-Detail-Modal content-gaming'
+			: 'Article-Detail-Modal';
+		const articleDetailModal: NgbModalRef = this.modalService.open(
+			ModalArticleDetailComponent,
+			{
+				backdrop: true /*'static',*/,
+				size: 'lg',
+				centered: true,
+				ariaLabelledBy: 'article-dialog-basic-title',
+				windowClass: articleClass,
+				keyboard: false,
+				beforeDismiss: () => {
+					if (articleDetailModal.componentInstance.onBeforeDismiss) {
+						articleDetailModal.componentInstance.onBeforeDismiss();
+					}
+					return true;
+				},
 			}
-		});
+		);
 
 		articleDetailModal.componentInstance.articleId = articleId;
 		if (articleTitle !== '') {
@@ -70,7 +79,7 @@ export class CardService {
 
 	openDccDetailModal() {
 		const articleDetailModal: NgbModalRef = this.modalService.open(ModalDccDetailComponent, {
-			backdrop: true, /*'static',*/
+			backdrop: true /*'static',*/,
 			size: 'lg',
 			centered: true,
 			windowClass: 'Dcc-Detail-Modal',
@@ -80,7 +89,7 @@ export class CardService {
 					articleDetailModal.componentInstance.onBeforeDismiss();
 				}
 				return true;
-			}
+			},
 		});
 	}
 }

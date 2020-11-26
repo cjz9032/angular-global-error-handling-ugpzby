@@ -1,29 +1,29 @@
-@import "../../../../../app.theme";
+@import '../../../../../app.theme';
 
 .vtr-ui-question-mark-button {
-    font-size: $fontsize_sm;
-    
-    .question-icon {
-        color: $menu_hover;
-        cursor: pointer;
+	font-size: $fontsize_sm;
 
-        @media #{$white-on-black} {
-            color:($high-contrast-black-yellow)
-        }
+	.question-icon {
+		color: $menu_hover;
+		cursor: pointer;
 
-        @media #{$black-on-white} {
-            color:($high-contrast-white-blue);
-        }
+		@media #{$white-on-black} {
+			color: ($high-contrast-black-yellow);
+		}
 
-        &:hover {
-            color: $highlight;
-        }
-        &:focus {
-            @include outline_blue;
-        }
+		@media #{$black-on-white} {
+			color: ($high-contrast-white-blue);
+		}
 
-        .gray-icon {
-            color: rgb(102, 116, 129);
-        }
-    }
+		&:hover {
+			color: $highlight;
+		}
+		&:focus {
+			@include outline_blue;
+		}
+
+		.gray-icon {
+			color: rgb(102, 116, 129);
+		}
+	}
 }

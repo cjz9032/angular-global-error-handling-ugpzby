@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	ViewChild,
+	ElementRef,
+} from '@angular/core';
 import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -8,7 +16,11 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
-import { enumSmartPerformance, PaymentPage, SPHeaderImageType } from 'src/app/enums/smart-performance.enum';
+import {
+	enumSmartPerformance,
+	PaymentPage,
+	SPHeaderImageType,
+} from 'src/app/enums/smart-performance.enum';
 import { formatDate } from '@angular/common';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
@@ -21,7 +33,7 @@ import { SmartPerformanceDialogService } from 'src/app/services/smart-performanc
 @Component({
 	selector: 'vtr-subpage-smart-performance-scan-summary',
 	templateUrl: './subpage-smart-performance-scan-summary.component.html',
-	styleUrls: ['./subpage-smart-performance-scan-summary.component.scss']
+	styleUrls: ['./subpage-smart-performance-scan-summary.component.scss'],
 })
 export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	constructor(
@@ -34,9 +46,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		private translate: TranslateService,
 		private localCacheService: LocalCacheService,
 		private formatLocaleDate: FormatLocaleDatePipe
-	) {
-
-	}
+	) {}
 	public sizeExtension: string;
 	public isLoading = true;
 	public machineFamilyName: string;
@@ -50,13 +60,28 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	// 	{ itemName: 'Custom', itemKey: 'CUSTOM' }
 	// ];
 	public menuItems: any = [
-		{ itemName: 'smartPerformance.subscriberScanHomePage.scanSummary.annual', itemKey: 'ANNUAL' },
-		{ itemName: 'smartPerformance.subscriberScanHomePage.scanSummary.custom', itemKey: 'CUSTOM' }
+		{
+			itemName: 'smartPerformance.subscriberScanHomePage.scanSummary.annual',
+			itemKey: 'ANNUAL',
+		},
+		{
+			itemName: 'smartPerformance.subscriberScanHomePage.scanSummary.custom',
+			itemKey: 'CUSTOM',
+		},
 	];
 	subscribeScanSummaries = [
-		{ id: 'smart-performance-scan-summary-tunePC-title', textKey: 'smartPerformance.tunePCPerformance.title' },
-		{ id: 'smart-performance-scan-summary-extraTitle', textKey: 'smartPerformance.boostInternetPerformance.extraTitle' },
-		{ id: 'smart-performance-scan-summary-malware-title', textKey: 'smartPerformance.malwareSecurity.title' },
+		{
+			id: 'smart-performance-scan-summary-tunePC-title',
+			textKey: 'smartPerformance.tunePCPerformance.title',
+		},
+		{
+			id: 'smart-performance-scan-summary-extraTitle',
+			textKey: 'smartPerformance.boostInternetPerformance.extraTitle',
+		},
+		{
+			id: 'smart-performance-scan-summary-malware-title',
+			textKey: 'smartPerformance.malwareSecurity.title',
+		},
 	];
 	leftAnimator: any;
 	@Input() inputIsScanningCompleted = false;
@@ -81,7 +106,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		{ displayName: 'Jan-Mar', ...this.getQuartesDates(0, 2), key: 1 },
 		{ displayName: 'Apr-Jun', ...this.getQuartesDates(3, 5), key: 2 },
 		{ displayName: 'Jul-Sept', ...this.getQuartesDates(6, 8), key: 3 },
-		{ displayName: 'Oct-Dec', ...this.getQuartesDates(9, 11), key: 4 }
+		{ displayName: 'Oct-Dec', ...this.getQuartesDates(9, 11), key: 4 },
 	];
 	menuStatus = true;
 	selectedResult: any;
@@ -140,8 +165,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		{
 			UUID: uuid(),
 			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en')
-		}
+			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en'),
+		},
 	];
 	SPHeaderImageType = SPHeaderImageType;
 
@@ -197,12 +222,12 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.minDate = {
 			year: this.currentDate.getFullYear() - 1,
 			month: this.currentDate.getMonth() + 1,
-			day: this.currentDate.getDate() + 1
+			day: this.currentDate.getDate() + 1,
 		};
 		this.maxDate = {
 			year: this.currentDate.getFullYear(),
 			month: this.currentDate.getMonth() + 1,
-			day: this.currentDate.getDate()
+			day: this.currentDate.getDate(),
 		};
 	}
 
@@ -213,21 +238,24 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		// Deleting unnecessary keys & manupulating date time.
 		for (let i = 0; i < 5; i++) {
 			// Adding new key scanrunDate with formating
-			this.historyScanResultsDateTime[i].scanrunDate = this.formatLocaleDate.transform(new Date(this.historyScanResultsDateTime[i].scanruntime));
+			this.historyScanResultsDateTime[i].scanrunDate = this.formatLocaleDate.transform(
+				new Date(this.historyScanResultsDateTime[i].scanruntime)
+			);
 
 			// Adding new key scanrunTime
 			this.historyScanResultsDateTime[i].scanrunTime = new Intl.DateTimeFormat('default', {
 				hour12: true,
 				hour: '2-digit',
-				minute: '2-digit'
+				minute: '2-digit',
 			}).format(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
 			// Removing sapace between time stamp and AM/PM
-			this.historyScanResultsDateTime[i].scanrunTime = this.historyScanResultsDateTime[i].scanrunTime.replace(/ /g, '');
+			this.historyScanResultsDateTime[i].scanrunTime = this.historyScanResultsDateTime[
+				i
+			].scanrunTime.replace(/ /g, '');
 		}
 
 		return this.historyScanResultsDateTime;
-
 	}
 
 	getMostecentScanDateTime(scandate) {
@@ -236,17 +264,19 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			// const momentObj = moment(dateObj);
 			// const momentString = momentObj.format('YYYY-MM-DD');
 			const spLocalDate = this.formatLocaleDate.transformWithoutYear(dateObj);
-			const now =
-				new Intl.DateTimeFormat(this.translate.currentLang,
-					{
-						hour12: true,
-						hour: 'numeric',
-						minute: 'numeric'
-					}).format(dateObj);
+			const now = new Intl.DateTimeFormat(this.translate.currentLang, {
+				hour12: true,
+				hour: 'numeric',
+				minute: 'numeric',
+			}).format(dateObj);
 			// this.mostRecentScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
-			this.mostRecentScan = spLocalDate + (this.translate.currentLang === 'en' ? ' at ' : ' ') + now;
+			this.mostRecentScan =
+				spLocalDate + (this.translate.currentLang === 'en' ? ' at ' : ' ') + now;
 		} catch (err) {
-			this.logger.error('ui-smart-performance-scan-summary.getMostecentScanDateTime.then', err);
+			this.logger.error(
+				'ui-smart-performance-scan-summary.getMostecentScanDateTime.then',
+				err
+			);
 		}
 	}
 
@@ -282,11 +312,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				if (yearObj) {
 					// this.yearsList.push(yearObj);
 					this.annualYear = yearObj.displayName;
-					this.getHistory(
-						yearObj.startDate,
-						yearObj.endDate,
-						true
-					);
+					this.getHistory(yearObj.startDate, yearObj.endDate, true);
 				}
 			}
 			/* Quarterly option is hidden for current 3.3 release */
@@ -303,17 +329,9 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 
 				this.isFromDate = true;
 				const fromDateFormat =
-					this.fromDate.month +
-					'/' +
-					this.fromDate.day +
-					'/' +
-					this.fromDate.year;
+					this.fromDate.month + '/' + this.fromDate.day + '/' + this.fromDate.year;
 				const toDateFormat =
-					this.toDate.month +
-					'/' +
-					this.toDate.day +
-					'/' +
-					this.toDate.year;
+					this.toDate.month + '/' + this.toDate.day + '/' + this.toDate.year;
 				this.displayFromDate = this.formatLocaleDate.transform(fromDateFormat);
 				this.displayToDate = this.formatLocaleDate.transform(toDateFormat);
 				this.selectedfromDate = this.fromDate;
@@ -400,12 +418,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.toDate.setFullYear(this.selectedTodate.year);
 		this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
 		this.getHistory(
-			moment(this.fromDate)
-				.startOf('day')
-				.format('YYYY-MM-DD HH:mm:ss'),
-			moment(this.toDate)
-				.endOf('day')
-				.format('YYYY-MM-DD HH:mm:ss')
+			moment(this.fromDate).startOf('day').format('YYYY-MM-DD HH:mm:ss'),
+			moment(this.toDate).endOf('day').format('YYYY-MM-DD HH:mm:ss')
 		);
 		setTimeout(() => {
 			this.menuTab.nativeElement.focus();
@@ -468,18 +482,11 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 
 	getQuartesDates(start, end) {
 		return {
-			startDate: moment()
-				.month(start)
-				.startOf('month')
-				.format('YYYY-MM-DD HH:mm:ss'),
-			endDate: moment()
-				.month(end)
-				.endOf('month')
-				.format('YYYY-MM-DD HH:mm:ss')
+			startDate: moment().month(start).startOf('month').format('YYYY-MM-DD HH:mm:ss'),
+			endDate: moment().month(end).endOf('month').format('YYYY-MM-DD HH:mm:ss'),
 		};
 	}
 	getYearObj(prevDate, currentDate) {
-
 		// const year = moment().add(yearCount, 'year');
 		// return {
 		// 	displayName: year.format('YYYY'),
@@ -489,7 +496,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		return {
 			displayName: moment(prevDate).format('YYYY') + '-' + moment(currentDate).format('YYYY'),
 			startDate: moment(prevDate).format('YYYY-MM-DD HH:mm:ss'),
-			endDate: moment(currentDate).format('YYYY-MM-DD HH:mm:ss')
+			endDate: moment(currentDate).format('YYYY-MM-DD HH:mm:ss'),
 		};
 	}
 
@@ -497,13 +504,17 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	async getLastScanResult(isInit?: boolean) {
 		try {
 			const lastScanResultRequest = {
-				scanType: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan'
+				scanType: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan',
 			};
-			const response = await this.smartPerformanceService.getLastScanResult(lastScanResultRequest);
+			const response = await this.smartPerformanceService.getLastScanResult(
+				lastScanResultRequest
+			);
 			this.logger.info('ui-smart-performance-scan-summary.getLastScanResult', response);
 			const scanRunTime = response.scanruntime;
 			const now = moment().format('YYYY-MM-DD HH:mm:ss');
-			const fiveMinutesFromRecentScan = moment(scanRunTime).add(enumSmartPerformance.SUMMARYWAITINGTIME, 'm').format('YYYY-MM-DD HH:mm:ss');
+			const fiveMinutesFromRecentScan = moment(scanRunTime)
+				.add(enumSmartPerformance.SUMMARYWAITINGTIME, 'm')
+				.format('YYYY-MM-DD HH:mm:ss');
 
 			if (now < fiveMinutesFromRecentScan) {
 				if (response) {
@@ -527,7 +538,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 					}
 				}
 			}
-
 		} catch (error) {
 			this.logger.error('Smart-Performance, LastScanResult error:', error);
 		}
@@ -538,35 +548,32 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		const payload = {
 			filterType: 'C',
 			startDate,
-			endDate
+			endDate,
 		};
 		try {
 			const res: any = await this.smartPerformanceService.getHistory(payload);
 			this.logger.info('ui-smart-performance-scan-summary.getHistory', res);
 
 			if (res) {
-
 				this.isLoading = false;
 				this.historyRes = {
 					tuneCount: res.Tunecount,
 					boostCount: res.Boostcount,
 					secure: res.Secure,
 					tuneSize: res.Tunesize,
-					boostSize: res.Boostsize
+					boostSize: res.Boostsize,
 				};
 
 				this.historyScanResults = res.lastscanresults || [];
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
 				this.getScanHistoryWithTime();
 				this.getLastScanResult(isInit);
-
 			} else {
 				this.historyScanResults = [];
 				this.historyRes = {};
 			}
 		} catch (err) {
 			this.logger.error('Ui-smart-performance-scan-summary.getHistory Error', err);
-
 		}
 	}
 	formatMemorySize(mbytes: number) {
@@ -604,7 +611,15 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 
-	seeScanResultDetails(scanrunDate: any, scanrunTime: any, tune: number, boost: number, secure: number, index: number, itemType: string): void {
+	seeScanResultDetails(
+		scanrunDate: any,
+		scanrunTime: any,
+		tune: number,
+		boost: number,
+		secure: number,
+		index: number,
+		itemType: string
+	): void {
 		this.showResult = {
 			show: true,
 			isLastFix: index === 0,
@@ -614,11 +629,15 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			secure,
 			itemType,
 		};
-		setTimeout(() => { document.getElementById('smart-performance-check-previous-results').focus(); }, 0);
+		setTimeout(() => {
+			document.getElementById('smart-performance-check-previous-results').focus();
+		}, 0);
 	}
 
 	checkPreviousResults() {
 		this.showResult.show = false;
-		setTimeout(() => { document.getElementById('smart-performance-scan-summary-scan-result-1').focus(); }, 0);
+		setTimeout(() => {
+			document.getElementById('smart-performance-scan-summary-scan-result-1').focus();
+		}, 0);
 	}
 }

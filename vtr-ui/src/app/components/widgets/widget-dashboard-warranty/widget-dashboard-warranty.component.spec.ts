@@ -5,13 +5,11 @@ xdescribe('WidgetDashboardWarrantyComponent', () => {
 	let component: WidgetDashboardWarrantyComponent;
 	let fixture: ComponentFixture<WidgetDashboardWarrantyComponent>;
 
-	beforeEach(
-		async(() => {
-			TestBed.configureTestingModule({
-				declarations: [WidgetDashboardWarrantyComponent]
-			}).compileComponents();
-		})
-	);
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [WidgetDashboardWarrantyComponent],
+		}).compileComponents();
+	}));
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(WidgetDashboardWarrantyComponent);

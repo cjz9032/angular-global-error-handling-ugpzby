@@ -3,22 +3,19 @@ import { GamingKeyLockService } from './gaming-key-lock.service';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { HttpClientModule } from '@angular/common/http';
 
-
 describe('GamingKeyLockService', () => {
 	let shellService: VantageShellService;
 	let service: GamingKeyLockService;
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientModule],
-			providers: [VantageShellService, GamingKeyLockService]
+			providers: [VantageShellService, GamingKeyLockService],
 		});
 		service = TestBed.get(GamingKeyLockService);
 		shellService = TestBed.get(VantageShellService);
-
 	});
 
 	describe(':', () => {
-
 		function setup() {
 			// tslint:disable-next-line: no-shadowed-variable
 			const service = TestBed.get(GamingKeyLockService);
@@ -41,7 +38,9 @@ describe('GamingKeyLockService', () => {
 		it('should call getKeyLockStatus return error', async () => {
 			const { service } = setup();
 			service.isShellAvailable = true;
-			spyOn(service.gamingKeyLock, 'getKeyLockStatus').and.throwError('shellService.gamingKeyLock().getKeyLockStatus error.');
+			spyOn(service.gamingKeyLock, 'getKeyLockStatus').and.throwError(
+				'shellService.gamingKeyLock().getKeyLockStatus error.'
+			);
 			try {
 				service.getKeyLockStatus();
 			} catch (err) {
@@ -65,7 +64,9 @@ describe('GamingKeyLockService', () => {
 		it('should call setKeyLockStatus return error', async () => {
 			const { service } = setup();
 			service.isShellAvailable = true;
-			spyOn(service.gamingKeyLock, 'setKeyLockStatus').and.throwError('shellService.gamingKeyLock().setKeyLockStatus error.');
+			spyOn(service.gamingKeyLock, 'setKeyLockStatus').and.throwError(
+				'shellService.gamingKeyLock().setKeyLockStatus error.'
+			);
 			try {
 				service.setKeyLockStatus(true);
 			} catch (err) {

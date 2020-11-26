@@ -1,4 +1,4 @@
-@import "./../../../app.theme.scss";
+@import './../../../app.theme.scss';
 
 .vtr-ui-custom-switch {
 	$font-size-base: 14px;
@@ -11,10 +11,12 @@
 	$custom-switch-indicator-border-radius: 10px;
 	$custom-switch-indicator-size: 14px;
 	$input-focus-indicator: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(0, 123, 255, 1);
-	$input-checked-background: transparent linear-gradient(113deg, $green_darker 0%, $green-light 100%) 0% 0% no-repeat
-		padding-box;
-	$high-contrast-black-focus-indicator: 0 0 0 2px rgba(0, 0, 0, 1), 0 0 0 3px $high-contrast-black-cyan;
-	$high-contrast-white-focus-indicator: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px $high-contrast-white-dark-magenta;
+	$input-checked-background: transparent
+		linear-gradient(113deg, $green_darker 0%, $green-light 100%) 0% 0% no-repeat padding-box;
+	$high-contrast-black-focus-indicator: 0 0 0 2px rgba(0, 0, 0, 1),
+		0 0 0 3px $high-contrast-black-cyan;
+	$high-contrast-white-focus-indicator: 0 0 0 2px rgba(255, 255, 255, 1),
+		0 0 0 3px $high-contrast-white-dark-magenta;
 
 	.custom-switch {
 		height: 26px;
@@ -110,7 +112,6 @@
 			&::after {
 				background-color: $light;
 				transform: translateX(24px);
-
 			}
 			&:hover::before {
 				@media #{$black-on-white} {
@@ -161,7 +162,6 @@
 			&::before {
 				border-color: $grey_darker;
 				background-color: $grey_light;
-
 			}
 			&::after {
 				background-color: $grey_darker;
@@ -250,7 +250,6 @@
 					background: $dark;
 					background-image: none !important;
 				}
-
 			}
 		}
 	}

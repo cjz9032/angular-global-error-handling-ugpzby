@@ -1,127 +1,126 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .select-box {
-  &:hover {
-    .dropdown-menu {
-      display: none;
-      &.show {
-        display: block;
-      }
-    }
-  }
-  .dropdown-toggle {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.6rem;
-    color: $shade_light;
-    margin-bottom: -1.2rem;
-    .icon {
-      display: block!important ;
-      position: relative;
-      font-size: 2.2rem;
-	  top: -0.8rem;
-	  margin-right: 1rem;
-    }
-    &::after {
-      display: none;
-    }
-  }
-  .gaming-dropdown-menu {
-    width: 100%;
-    background-color: $gaming_shade;
-    border: none;
-    border-radius: 0.8rem;
-    position: absolute;
-    overflow: hidden;
-    z-index: 9;
-    top: 3.5rem;
-    @media #{$high-contrast} {
-      border: 1px solid windowText;
-    }
-    li {
-      list-style: none;
-      .dropdown-item {
-        color: $gaming_lightest;
-        font-size: 1.6rem;
-        height: 5.5rem;
-        line-height: 5.5rem;
-        position: relative;
-        padding-left: 5rem;
-        .icon {
-          position: absolute;
-          left: 2rem;
-          font-size: 2rem;
-          background: $gaming_green_gradient;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          opacity: 0;
-        }
-        &:hover {
-          background: $gaming_hover;
-          @media #{$high-contrast}{
-            background: highlight;
-          }
-        }
-         &:focus {
-          background: $gaming_hover;
-         }
-      }
-      &.selected {
-        .dropdown-item {
-          .icon {
-            display: block;
-            opacity: 1;
-            color: $good_dark;
-          }
-        }
-      }
-      &:first-child{
-        a.dropdown-item{
-        border-radius: 0.8rem 0.8rem 0 0;
-        }
-      }
-    }
-    .information {
-      margin: 1.6rem;
-      margin-top: 0;
-      border-top: 1px solid $gaming_darkest;
-      padding-top: 1.6rem;
-      p {
-        font-size: 1.4rem;
-        color: $main_lightest;
-
-      }
-    }
-  }
+	&:hover {
+		.dropdown-menu {
+			display: none;
+			&.show {
+				display: block;
+			}
+		}
+	}
+	.dropdown-toggle {
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.6rem;
+		color: $shade_light;
+		margin-bottom: -1.2rem;
+		.icon {
+			display: block !important ;
+			position: relative;
+			font-size: 2.2rem;
+			top: -0.8rem;
+			margin-right: 1rem;
+		}
+		&::after {
+			display: none;
+		}
+	}
+	.gaming-dropdown-menu {
+		width: 100%;
+		background-color: $gaming_shade;
+		border: none;
+		border-radius: 0.8rem;
+		position: absolute;
+		overflow: hidden;
+		z-index: 9;
+		top: 3.5rem;
+		@media #{$high-contrast} {
+			border: 1px solid windowText;
+		}
+		li {
+			list-style: none;
+			.dropdown-item {
+				color: $gaming_lightest;
+				font-size: 1.6rem;
+				height: 5.5rem;
+				line-height: 5.5rem;
+				position: relative;
+				padding-left: 5rem;
+				.icon {
+					position: absolute;
+					left: 2rem;
+					font-size: 2rem;
+					background: $gaming_green_gradient;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					background-clip: text;
+					opacity: 0;
+				}
+				&:hover {
+					background: $gaming_hover;
+					@media #{$high-contrast} {
+						background: highlight;
+					}
+				}
+				&:focus {
+					background: $gaming_hover;
+				}
+			}
+			&.selected {
+				.dropdown-item {
+					.icon {
+						display: block;
+						opacity: 1;
+						color: $good_dark;
+					}
+				}
+			}
+			&:first-child {
+				a.dropdown-item {
+					border-radius: 0.8rem 0.8rem 0 0;
+				}
+			}
+		}
+		.information {
+			margin: 1.6rem;
+			margin-top: 0;
+			border-top: 1px solid $gaming_darkest;
+			padding-top: 1.6rem;
+			p {
+				font-size: 1.4rem;
+				color: $main_lightest;
+			}
+		}
+	}
 }
 ::ng-deep {
-  body.focus-enable{
-	.is-gaming {
-      .vtr-page-device-gaming {
-      .dropdown-toggle{
-        &:focus{
-          @include solid-button-outline;
-          @media #{$high-contrast} {
-            @include solid-button-outline(highlight);
-          }
-        }
-      }
-      .gaming-dropdown-menu {
-        li{
-          &:focus{
-            a{
-              outline: none !important;
-              border: 1px solid $blueFill;
-              @media #{$high-contrast} {
-              border-color: windowText;
-              }
-            }
-          }
-        }
-      } 
-    }
-  }
-}
+	body.focus-enable {
+		.is-gaming {
+			.vtr-page-device-gaming {
+				.dropdown-toggle {
+					&:focus {
+						@include solid-button-outline;
+						@media #{$high-contrast} {
+							@include solid-button-outline(highlight);
+						}
+					}
+				}
+				.gaming-dropdown-menu {
+					li {
+						&:focus {
+							a {
+								outline: none !important;
+								border: 1px solid $blueFill;
+								@media #{$high-contrast} {
+									border-color: windowText;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

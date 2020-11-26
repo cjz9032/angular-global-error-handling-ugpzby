@@ -1,10 +1,10 @@
-export enum SPCategory{
+export enum SPCategory {
 	TUNEUPPERFORMANCE = 'Tune up performance',
 	INTERNETPERFORMANCE = 'Internet performance',
-	MALWARESECURITY = 'Malware & Security'
+	MALWARESECURITY = 'Malware & Security',
 }
 
-export enum SPSubCategory{
+export enum SPSubCategory {
 	HUNDEREAD = 100,
 	HUNDEREADANDONE = 101,
 	HUNDEREADANDTWO = 102,
@@ -24,30 +24,30 @@ export enum SPSubCategory{
 	THREEHUNDEREADANDFOUR = 304,
 	THREEHUNDEREADANDFIVE = 305,
 }
-export enum enumScanFrequency{
+export enum enumScanFrequency {
 	ONCEAMONTH = 'Once a month',
 }
-export enum enumSmartPerformance{
+export enum enumSmartPerformance {
 	SCHEDULESCANENDDATE = '2020/07/27',
 	SUMMARYWAITINGTIME = 5,
 	OLDSCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.ScheduleScan',
-	OLDSCHEDULESCANANDFIX= 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',
+	OLDSCHEDULESCANANDFIX = 'Lenovo.Vantage.SmartPerformance.ScheduleScanAndFix',
 	SCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.SScan',
-	SCHEDULESCANANDFIX = 'Lenovo.Vantage.SmartPerformance.SScanAndFix'
+	SCHEDULESCANANDFIX = 'Lenovo.Vantage.SmartPerformance.SScanAndFix',
 }
-export enum PaymentPage{
+export enum PaymentPage {
 	APPLICATIONNAME = 'COMPANION',
 	SMARTPERFORMANCE = '&smartperformance=',
-	SERIALQUERYPARAMETER= 'serial=',
-	MTQUERYPARAMETER= '&mt=',
-	SOURCEQUERYPARAMETER= '&source=',
-	SLASH= '/',
-	TRUE= 'true',
+	SERIALQUERYPARAMETER = 'serial=',
+	MTQUERYPARAMETER = '&mt=',
+	SOURCEQUERYPARAMETER = '&source=',
+	SLASH = '/',
+	TRUE = 'true',
 	ORDERWAITINGTIME = 1.5, // MINUTES,
 }
 export enum SpSubscriptionDetails {
 	MONTH = 31,
-	TWOMONTHS = 60
+	TWOMONTHS = 60,
 }
 
 export enum SPHeaderImageType {
@@ -57,11 +57,7 @@ export enum SPHeaderImageType {
 	Well = 4,
 }
 
-export const actualScanFrequency: any = [
-	'Once a week',
-	'Every other week',
-	'Every month'
-];
+export const actualScanFrequency: any = ['Once a week', 'Every other week', 'Every month'];
 export const actualDays: any = [
 	'Sunday',
 	'Monday',
@@ -69,7 +65,7 @@ export const actualDays: any = [
 	'Wednesday',
 	'Thursday',
 	'Friday',
-	'Saturday'
+	'Saturday',
 ];
 
 export const actualMeridiem = ['AM', 'PM'];

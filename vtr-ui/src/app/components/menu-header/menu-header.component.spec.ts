@@ -8,9 +8,8 @@ xdescribe('MenuHeaderComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [MenuHeaderComponent]
-		})
-			.compileComponents();
+			declarations: [MenuHeaderComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

@@ -7,13 +7,13 @@ import {
 	CapabilityTemp,
 	FnLockStatus,
 	PrimaryKeySetting,
-	TopRowFunctionsIdeapad
+	TopRowFunctionsIdeapad,
 } from './top-row-functions-ideapad.interface';
 
 const CACHE_SIZE = 1;
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class TopRowFunctionsIdeapadService {
 	topRowFunctionsIdeaPadFeature: TopRowFunctionsIdeapad;
@@ -21,58 +21,47 @@ export class TopRowFunctionsIdeapadService {
 	private primaryKey$: Observable<PrimaryKeySetting>;
 	private fnLockStatus$: Observable<FnLockStatus>;
 
-	constructor(
-		private shellService: VantageShellService
-	) {
+	constructor(private shellService: VantageShellService) {
 		this.topRowFunctionsIdeaPadFeature = this.shellService.getTopRowFunctionsIdeapad();
 	}
 
 	get capability() {
 		if (!this.capability$) {
-			this.capability$ = this.requestCapability().pipe(
-				shareReplay(CACHE_SIZE)
-			);
+			this.capability$ = this.requestCapability().pipe(shareReplay(CACHE_SIZE));
 		}
 		return this.capability$;
 	}
 
 	requestCapability(): Observable<CapabilityTemp[]> {
-		return from(this.topRowFunctionsIdeaPadFeature.getCapability())
-			.pipe(
-				map(res => res.capabilityList.Items)
-			);
+		return from(this.topRowFunctionsIdeaPadFeature.getCapability()).pipe(
+			map((res) => res.capabilityList.Items)
+		);
 	}
 
 	get primaryKey(): Observable<PrimaryKeySetting> {
 		if (!this.primaryKey$) {
-			this.primaryKey$ = this.requestPrimaryKey().pipe(
-				shareReplay(CACHE_SIZE)
-			);
+			this.primaryKey$ = this.requestPrimaryKey().pipe(shareReplay(CACHE_SIZE));
 		}
 		return this.primaryKey$;
 	}
 
 	requestPrimaryKey(): Observable<PrimaryKeySetting> {
-		return from(this.topRowFunctionsIdeaPadFeature.getPrimaryKey())
-			.pipe(
-				map(res => res.settingList.setting.find(item => item.key === 'PrimeKey'))
-			);
+		return from(this.topRowFunctionsIdeaPadFeature.getPrimaryKey()).pipe(
+			map((res) => res.settingList.setting.find((item) => item.key === 'PrimeKey'))
+		);
 	}
 
 	get fnLockStatus(): Observable<FnLockStatus> {
 		if (!this.fnLockStatus$) {
-			this.fnLockStatus$ = this.requestFnLockStatus().pipe(
-				shareReplay(CACHE_SIZE)
-			);
+			this.fnLockStatus$ = this.requestFnLockStatus().pipe(shareReplay(CACHE_SIZE));
 		}
 		return this.fnLockStatus$;
 	}
 
 	requestFnLockStatus(): Observable<FnLockStatus> {
-		return from(this.topRowFunctionsIdeaPadFeature.getFnLockStatus())
-			.pipe(
-				map(res => res.settingList.setting.find(item => item.key === 'FnLock'))
-			);
+		return from(this.topRowFunctionsIdeaPadFeature.getFnLockStatus()).pipe(
+			map((res) => res.settingList.setting.find((item) => item.key === 'FnLock'))
+		);
 	}
 
 	setFnLockStatus(fnLock: StringBoolean) {

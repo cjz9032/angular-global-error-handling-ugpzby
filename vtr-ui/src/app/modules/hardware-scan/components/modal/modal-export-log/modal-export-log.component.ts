@@ -2,12 +2,15 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ExportLogErrorStatus } from '../../../enums/hardware-scan.enum';
-import { disableBackgroundNavigation, reEnableBackgroundNavigation } from '../../../services/utils/ModalBackgroundNavigationUtils';
+import {
+	disableBackgroundNavigation,
+	reEnableBackgroundNavigation,
+} from '../../../services/utils/ModalBackgroundNavigationUtils';
 
 @Component({
 	selector: 'vtr-modal-export-log',
 	templateUrl: './modal-export-log.component.html',
-	styleUrls: ['./modal-export-log.component.scss']
+	styleUrls: ['./modal-export-log.component.scss'],
 })
 export class ModalExportLogComponent implements OnInit, OnDestroy {
 	@Input() logPath = '';
@@ -15,13 +18,13 @@ export class ModalExportLogComponent implements OnInit, OnDestroy {
 
 	public enumExportLogErrorStatus = ExportLogErrorStatus;
 
-	constructor(public activeModal: NgbActiveModal, private deviceService: DeviceService) { }
+	constructor(public activeModal: NgbActiveModal, private deviceService: DeviceService) {}
 
-	ngOnInit(){
+	ngOnInit() {
 		disableBackgroundNavigation(document);
 	}
 
-	ngOnDestroy(){
+	ngOnDestroy() {
 		reEnableBackgroundNavigation(document);
 	}
 
@@ -32,5 +35,4 @@ export class ModalExportLogComponent implements OnInit, OnDestroy {
 	openWindowsSettings() {
 		this.deviceService.launchUri('ms-settings:privacy-broadfilesystemaccess');
 	}
-
 }

@@ -4,10 +4,9 @@ import { SPHeaderImageType } from 'src/app/enums/smart-performance.enum';
 @Component({
 	selector: 'vtr-ui-smart-performance-header',
 	templateUrl: './ui-smart-performance-header.component.html',
-	styleUrls: ['./ui-smart-performance-header.component.scss']
+	styleUrls: ['./ui-smart-performance-header.component.scss'],
 })
 export class UiSmartPerformanceHeaderComponent implements OnInit {
-
 	@Input() image: SPHeaderImageType = SPHeaderImageType.Normal;
 	@Input() headerTitle = '';
 	@Input() subTitle = '';
@@ -24,9 +23,7 @@ export class UiSmartPerformanceHeaderComponent implements OnInit {
 		[SPHeaderImageType.Well]: 'sp-pc-well.png',
 	};
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit(): void {
-	}
-
+	ngOnInit(): void {}
 }

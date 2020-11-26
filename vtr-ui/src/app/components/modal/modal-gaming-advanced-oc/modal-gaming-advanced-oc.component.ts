@@ -13,7 +13,7 @@ import { TimerService } from 'src/app/services/timer/timer.service';
 @Component({
 	selector: 'vtr-modal-gaming-advanced-oc',
 	templateUrl: './modal-gaming-advanced-oc.component.html',
-	styleUrls: ['./modal-gaming-advanced-oc.component.scss']
+	styleUrls: ['./modal-gaming-advanced-oc.component.scss'],
 })
 export class ModalGamingAdvancedOCComponent implements OnInit {
 	public loading = true;
@@ -29,7 +29,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 				defaultValue: '40',
 				minValue: '28',
 				maxValue: '80',
-				stepValue: '1'
+				stepValue: '1',
 			},
 			{
 				tuneId: 117,
@@ -37,8 +37,8 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 				defaultValue: '40',
 				minValue: '28',
 				maxValue: '80',
-				stepValue: '1'
-			}
+				stepValue: '1',
+			},
 		],
 		gpuParameterList: [
 			{
@@ -47,7 +47,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 				OCValue: '100',
 				minValue: '200',
 				maxValue: '300',
-				stepValue: '1'
+				stepValue: '1',
 			},
 			{
 				tuneId: 1,
@@ -55,29 +55,29 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 				OCValue: '100',
 				minValue: '200',
 				maxValue: '300',
-				stepValue: '1'
-			}
-		]
+				stepValue: '1',
+			},
+		],
 	};
 
-  modalAutomationId: any = {
-	section: 'save_change_dialog',
-	headerText: 'save_change_dialog_header_text',
-	description: 'save_change_dialog_oc_recovery_description',
-	description2: 'save_change_dialog_oc_recovery_pressing_power_button',
-	closeButton : 'save_change_dialog_close_button',
-	cancelButton: 'save_change_dialog_do_not_save_button',
-	okButton: 'save_change_dialog_save_button'
-	}
+	modalAutomationId: any = {
+		section: 'save_change_dialog',
+		headerText: 'save_change_dialog_header_text',
+		description: 'save_change_dialog_oc_recovery_description',
+		description2: 'save_change_dialog_oc_recovery_pressing_power_button',
+		closeButton: 'save_change_dialog_close_button',
+		cancelButton: 'save_change_dialog_do_not_save_button',
+		okButton: 'save_change_dialog_save_button',
+	};
 
-  defaultModalAutomationId: any = {
+	defaultModalAutomationId: any = {
 		section: 'set_to_default_dialog',
-		headerText : 'set_to_default_header_text',
-		description : 'set_to_default_description',
-		closeButton : 'set_to_default_close_button',
+		headerText: 'set_to_default_header_text',
+		description: 'set_to_default_description',
+		closeButton: 'set_to_default_close_button',
 		cancelButton: 'set_to_default_cancel_button',
-		okButton: 'set_to_default_ok_button'
-	}
+		okButton: 'set_to_default_ok_button',
+	};
 
 	constructor(
 		private modalService: NgbModal,
@@ -88,12 +88,22 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		private logger: LoggerService,
 		private metrics: MetricService,
 		private timer: TimerService
-	) { }
+	) {}
 
 	ngOnInit() {
-		this.advanceGPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.advanceGPUOCFeature);
-		this.advanceCPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache(LocalStorageKey.advanceCPUOCFeature);
-		this.logger.info('advanceCPUOCFeature init cache:' + this.advanceCPUOCFeature + ';  advanceGPUOCFeature init cache:' + this.advanceGPUOCFeature + ' ;');
+		this.advanceGPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.advanceGPUOCFeature
+		);
+		this.advanceCPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
+			LocalStorageKey.advanceCPUOCFeature
+		);
+		this.logger.info(
+			'advanceCPUOCFeature init cache:' +
+				this.advanceCPUOCFeature +
+				';  advanceGPUOCFeature init cache:' +
+				this.advanceGPUOCFeature +
+				' ;'
+		);
 		this.getAdvancedOCInfo();
 		this.timer.start();
 	}
@@ -116,8 +126,11 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			this.advancedOCInfo = advancedInfoCache;
 		}
 		this.gamingAdvancedOCService.getAdvancedOCInfo().then((response) => {
-			this.logger.info('getAdvancedOCInfo response', response)
-			if (response && (response.cpuParameterList.length > 0 || response.gpuParameterList.length > 0)) {
+			this.logger.info('getAdvancedOCInfo response', response);
+			if (
+				response &&
+				(response.cpuParameterList.length > 0 || response.gpuParameterList.length > 0)
+			) {
 				this.loading = false;
 				this.advancedOCInfo = response;
 				this.gamingAdvancedOCService.setAdvancedOCInfoCache(response);
@@ -128,24 +141,24 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	public setRangeValue(event, idx, type, tuneId, isAddReduceBtn) {
 		this.logger.info(`setRangeValue event: ${event} ; isAddReduceBtn: ${isAddReduceBtn}`);
 		const arr1 = [2, 77, 34, 79, 102, 106];
-      	const arr2 = [29,30,31,32,42,43,96,97,107,108];
-      	let btnType = 0;
+		const arr2 = [29, 30, 31, 32, 42, 43, 96, 97, 107, 108];
+		let btnType = 0;
 		this.isChange = true;
 		if (isAddReduceBtn) {
-        	btnType = event[1];
+			btnType = event[1];
 			event = event[0];
 		}
 		if (type === 'cpuParameterList') {
 			if (arr1.includes(tuneId)) {
 				this.pairwiseAssociation(tuneId, event);
-			}else if(arr2.includes(tuneId)) {
+			} else if (arr2.includes(tuneId)) {
 				let isPlusSlider = 0;
-				if(this.advancedOCInfo[type][idx].OCValue > event){
+				if (this.advancedOCInfo[type][idx].OCValue > event) {
 					isPlusSlider = 1;
-				}else if(this.advancedOCInfo[type][idx].OCValue < event){
+				} else if (this.advancedOCInfo[type][idx].OCValue < event) {
 					isPlusSlider = 2;
 				}
-				this.multipleAssociations(arr2,tuneId,event,btnType,isPlusSlider);
+				this.multipleAssociations(arr2, tuneId, event, btnType, isPlusSlider);
 			} else {
 				this.advancedOCInfo[type][idx].OCValue = event;
 			}
@@ -154,13 +167,13 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		}
 	}
 
-	public multipleAssociations (arr, tuneId, event, btnType,isPlusSlider) {
+	public multipleAssociations(arr, tuneId, event, btnType, isPlusSlider) {
 		let index = arr.indexOf(tuneId);
-		if(btnType === 2 || isPlusSlider === 2) {
-			for (let i = 0; i<=index; i++) {
-				this.advancedOCInfo.cpuParameterList.filter(x => {
-					if(x.tuneId === arr[i]){
-						if(Number(event) > Number(x.OCValue)){
+		if (btnType === 2 || isPlusSlider === 2) {
+			for (let i = 0; i <= index; i++) {
+				this.advancedOCInfo.cpuParameterList.filter((x) => {
+					if (x.tuneId === arr[i]) {
+						if (Number(event) > Number(x.OCValue)) {
 							x.OCValue = event;
 						}
 					}
@@ -168,10 +181,10 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			}
 		}
 		if (btnType === 1 || isPlusSlider === 1) {
-			for (let j = index; j<arr.length; j++) {
-				this.advancedOCInfo.cpuParameterList.filter(x => {
-					if(x.tuneId === arr[j]){
-						if(Number(event) < Number(x.OCValue)){
+			for (let j = index; j < arr.length; j++) {
+				this.advancedOCInfo.cpuParameterList.filter((x) => {
+					if (x.tuneId === arr[j]) {
+						if (Number(event) < Number(x.OCValue)) {
 							x.OCValue = event;
 						}
 					}
@@ -181,31 +194,44 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	}
 	public pairwiseAssociation(tuneId, event) {
 		if (tuneId === 2 || tuneId === 77) {
-			this.advancedOCInfo.cpuParameterList.filter(x => {
+			this.advancedOCInfo.cpuParameterList.filter((x) => {
 				if (x.tuneId === 77 || x.tuneId === 2) {
 					x.OCValue = event;
 				}
 			});
-			this.logger.info('pairwiseAssociation cpuParameterList 1', this.advancedOCInfo.cpuParameterList);
+			this.logger.info(
+				'pairwiseAssociation cpuParameterList 1',
+				this.advancedOCInfo.cpuParameterList
+			);
 		} else if (tuneId === 34 || tuneId === 79) {
-			this.advancedOCInfo.cpuParameterList.filter(x => {
+			this.advancedOCInfo.cpuParameterList.filter((x) => {
 				if (x.tuneId === 79 || x.tuneId === 34) {
 					x.OCValue = event;
 				}
 			});
-			this.logger.info('pairwiseAssociation cpuParameterList 2', this.advancedOCInfo.cpuParameterList);
+			this.logger.info(
+				'pairwiseAssociation cpuParameterList 2',
+				this.advancedOCInfo.cpuParameterList
+			);
 		} else if (tuneId === 102 || tuneId === 106) {
-			this.advancedOCInfo.cpuParameterList.filter(x => {
+			this.advancedOCInfo.cpuParameterList.filter((x) => {
 				if (x.tuneId === 106 || x.tuneId === 102) {
 					x.OCValue = event;
 				}
 			});
-			this.logger.info('pairwiseAssociation cpuParameterList 3', this.advancedOCInfo.cpuParameterList);
+			this.logger.info(
+				'pairwiseAssociation cpuParameterList 3',
+				this.advancedOCInfo.cpuParameterList
+			);
 		}
 	}
 
 	public openSaveChangeModal() {
-		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop: 'static', windowClass: 'modal-prompt', backdropClass: 'backdrop-prompt' });
+		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
+			backdrop: 'static',
+			windowClass: 'modal-prompt',
+			backdropClass: 'backdrop-prompt',
+		});
 		waringModalRef.componentInstance.info = {
 			title: 'gaming.dashboard.device.savePromptPopup.title',
 			description: 'gaming.dashboard.device.savePromptPopup.description1',
@@ -214,12 +240,12 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			comfirmButton: 'gaming.dashboard.device.savePromptPopup.save',
 			cancelButton: 'gaming.dashboard.device.savePromptPopup.notSave',
 			comfirmButtonAriaLabel: 'SAVE',
-			cancelButtonAriaLabel: 'DON\'T SAVE',
-			confirmMetricEnabled : false,
-			confirmMetricsItemId : '',
-			cancelMetricEnabled : false,
-			cancelMetricsItemId : '',
-			id: this.modalAutomationId
+			cancelButtonAriaLabel: "DON'T SAVE",
+			confirmMetricEnabled: false,
+			confirmMetricsItemId: '',
+			cancelMetricEnabled: false,
+			cancelMetricsItemId: '',
+			id: this.modalAutomationId,
 		};
 		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
 			this.logger.info('openSaveChangeModal emmitedValue', emmitedValue);
@@ -236,13 +262,19 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			this.sendOCChangedMetricsData(emmitedValue);
 		});
 
-		this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"advancedoc_savechange_warningmodal"}`));
+		this.sendFeatureClickMetrics(
+			JSON.parse(`{"ItemName":"advancedoc_savechange_warningmodal"}`)
+		);
 	}
 
 	public setAdvancedOCInfo(advancedOCInfo) {
 		try {
 			this.gamingAdvancedOCService.setAdvancedOCInfo(advancedOCInfo).then((response) => {
-				this.logger.info(`setAdvancedOCInfo response: ${response} ; advancedOCInfo: ${JSON.stringify(advancedOCInfo)}`);
+				this.logger.info(
+					`setAdvancedOCInfo response: ${response} ; advancedOCInfo: ${JSON.stringify(
+						advancedOCInfo
+					)}`
+				);
 				if (response) {
 					this.gamingAdvancedOCService.setAdvancedOCInfoCache(advancedOCInfo);
 				} else {
@@ -255,39 +287,46 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		} catch (error) {
 			throw new Error('setAdvancedOCInfo ' + error.message);
 		}
-
 	}
 
-  public openSetToDefaultModal () {
-	const waringModalRef = this.modalService.open(ModalGamingPromptComponent, { backdrop:'static', windowClass: 'modal-prompt',backdropClass:'backdrop-prompt' });
-	waringModalRef.componentInstance.info = {
-		title : 'gaming.dashboard.device.defaultPromptPopup.title',
-		description : 'gaming.dashboard.device.defaultPromptPopup.description',
-		comfirmButton : 'gaming.dashboard.device.legionEdge.popup.button',
-		cancelButton : 'gaming.dashboard.device.legionEdge.driverPopup.link',
-		comfirmButtonAriaLabel : 'OK',
-		cancelButtonAriaLabel : 'CANCEL',
-		confirmMetricEnabled : false,
-		confirmMetricsItemId : '',
-		cancelMetricEnabled : false,
-		cancelMetricsItemId : '',
-		id : this.defaultModalAutomationId
-	};
-	waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
-		this.logger.info('openSetToDefaultModal emmitedValue',emmitedValue);
-		if(emmitedValue === 1) {
-		this.isChange = false;
-		this.setToDefaultValue(this.advancedOCInfo.cpuParameterList);
-		this.setToDefaultValue(this.advancedOCInfo.gpuParameterList);
-		this.setAdvancedOCInfo(this.advancedOCInfo);
-		}
+	public openSetToDefaultModal() {
+		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
+			backdrop: 'static',
+			windowClass: 'modal-prompt',
+			backdropClass: 'backdrop-prompt',
+		});
+		waringModalRef.componentInstance.info = {
+			title: 'gaming.dashboard.device.defaultPromptPopup.title',
+			description: 'gaming.dashboard.device.defaultPromptPopup.description',
+			comfirmButton: 'gaming.dashboard.device.legionEdge.popup.button',
+			cancelButton: 'gaming.dashboard.device.legionEdge.driverPopup.link',
+			comfirmButtonAriaLabel: 'OK',
+			cancelButtonAriaLabel: 'CANCEL',
+			confirmMetricEnabled: false,
+			confirmMetricsItemId: '',
+			cancelMetricEnabled: false,
+			cancelMetricsItemId: '',
+			id: this.defaultModalAutomationId,
+		};
+		waringModalRef.componentInstance.emitService.subscribe((emmitedValue) => {
+			this.logger.info('openSetToDefaultModal emmitedValue', emmitedValue);
+			if (emmitedValue === 1) {
+				this.isChange = false;
+				this.setToDefaultValue(this.advancedOCInfo.cpuParameterList);
+				this.setToDefaultValue(this.advancedOCInfo.gpuParameterList);
+				this.setAdvancedOCInfo(this.advancedOCInfo);
+			}
 
-			this.sendFeatureClickMetrics(JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SetToDefaultWarningModal",
+			this.sendFeatureClickMetrics(
+				JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SetToDefaultWarningModal",
       "ItemName":"advancedoc_settodefaultwarningmodal_btn",
-      "ItemValue":"${emmitedValue === 1 ? 'ok' : emmitedValue === 2 ? 'cancel' : 'close'}"}`));
+      "ItemValue":"${emmitedValue === 1 ? 'ok' : emmitedValue === 2 ? 'cancel' : 'close'}"}`)
+			);
 		});
 
-		this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"advancedoc_settodefault_warningmodal"}`));
+		this.sendFeatureClickMetrics(
+			JSON.parse(`{"ItemName":"advancedoc_settodefault_warningmodal"}`)
+		);
 	}
 
 	public setToDefaultValue(list) {
@@ -299,14 +338,18 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	}
 
 	/**
-	* metrics collection for advancedoc feature
-	* @param metricsdata
-	*/
+	 * metrics collection for advancedoc feature
+	 * @param metricsdata
+	 */
 	public sendFeatureClickMetrics(metricsdata: any) {
 		try {
 			const metricData = {
-				ItemType: Object.prototype.hasOwnProperty.call(metricsdata, 'ItmeType') ? metricsdata.ItemType : 'FeatureClick',
-				ItemParent: Object.prototype.hasOwnProperty.call(metricsdata, 'ItemParent') ? metricsdata.ItemParent : 'Gaming.AdvancedOC'
+				ItemType: Object.prototype.hasOwnProperty.call(metricsdata, 'ItmeType')
+					? metricsdata.ItemType
+					: 'FeatureClick',
+				ItemParent: Object.prototype.hasOwnProperty.call(metricsdata, 'ItemParent')
+					? metricsdata.ItemParent
+					: 'Gaming.AdvancedOC',
 			};
 			Object.keys(metricsdata).forEach((key) => {
 				if (metricsdata[key]) {
@@ -316,7 +359,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			if (this.metrics && this.metrics.sendMetrics) {
 				this.metrics.sendMetrics(metricData);
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 	/**
 	 * metrics collection of OC parameter changed
@@ -328,24 +371,40 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			if (occhangedinfo === 1) {
 				if (Object.prototype.hasOwnProperty.call(this.advancedOCInfo, 'cpuParameterList')) {
 					for (let i = 0; i < this.advancedOCInfo.cpuParameterList.length; i += 1) {
-						parameterValue[this.itemUnit.cpuOCNames['cpuOCName' + this.advancedOCInfo.cpuParameterList[i].tuneId]] = this.advancedOCInfo.cpuParameterList[i].OCValue;
+						parameterValue[
+							this.itemUnit.cpuOCNames[
+								'cpuOCName' + this.advancedOCInfo.cpuParameterList[i].tuneId
+							]
+						] = this.advancedOCInfo.cpuParameterList[i].OCValue;
 					}
 				}
 				if (Object.prototype.hasOwnProperty.call(this.advancedOCInfo, 'gpuParameterList')) {
 					for (let i = 0; i < this.advancedOCInfo.gpuParameterList.length; i += 1) {
-						parameterValue[this.itemUnit.gpuOCNames['gpuOCName' + this.advancedOCInfo.gpuParameterList[i].tuneId]] = this.advancedOCInfo.gpuParameterList[i].OCValue;
+						parameterValue[
+							this.itemUnit.gpuOCNames[
+								'gpuOCName' + this.advancedOCInfo.gpuParameterList[i].tuneId
+							]
+						] = this.advancedOCInfo.gpuParameterList[i].OCValue;
 					}
 				}
 			}
 
-			this.sendFeatureClickMetrics(JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SaveChangeWarningModal","ItemName":"advancedoc_savechangewarningmodal_btn",
-        "ItemValue":"${occhangedinfo === 1 ? 'save' : occhangedinfo === 2 ? 'don\'t save' : 'close'}",
-        "ItemParam":${(occhangedinfo === 1 && Object.keys(parameterValue).length !== 0) ? JSON.stringify(parameterValue) : null}}`));
+			this.sendFeatureClickMetrics(
+				JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SaveChangeWarningModal","ItemName":"advancedoc_savechangewarningmodal_btn",
+        "ItemValue":"${
+			occhangedinfo === 1 ? 'save' : occhangedinfo === 2 ? "don't save" : 'close'
+		}",
+        "ItemParam":${
+			occhangedinfo === 1 && Object.keys(parameterValue).length !== 0
+				? JSON.stringify(parameterValue)
+				: null
+		}}`)
+			);
 
 			if (occhangedinfo === 1 || occhangedinfo === 2) {
 				this.sendPageViewMetricsData();
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 	/**
 	 * page view metrics collection for advanced oc feature
@@ -356,17 +415,17 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 				ItemType: 'PageView',
 				PageName: 'Gaming.AdvancedOC',
 				PageContext: 'AdvancedOC settings page',
-				PageDuration: this.timer.stop()
+				PageDuration: this.timer.stop(),
 			};
 			if (this.metrics && this.metrics.sendMetrics) {
 				this.metrics.sendMetrics(pageViewMetrics);
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	public removeSpaces(str: any) {
 		if (str) {
-			return str.replace(/ /g,'_').toLowerCase();
+			return str.replace(/ /g, '_').toLowerCase();
 		}
-  }
+	}
 }

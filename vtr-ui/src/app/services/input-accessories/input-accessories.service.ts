@@ -3,7 +3,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { VoipResponse } from '../../data-models/input-accessories/voip.model';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class InputAccessoriesService {
 	public keyboardManager: any;
@@ -25,11 +25,20 @@ export class InputAccessoriesService {
 		}
 	}
 
-
-	public setUserDefinedKeySetting(type: string, actionType: string, settingKey: string, settingValue: string): Promise<boolean> {
+	public setUserDefinedKeySetting(
+		type: string,
+		actionType: string,
+		settingKey: string,
+		settingValue: string
+	): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
-				return this.keyboardManager.setUserDefinedKeySetting(type, actionType, settingKey, settingValue);
+				return this.keyboardManager.setUserDefinedKeySetting(
+					type,
+					actionType,
+					settingKey,
+					settingValue
+				);
 			}
 			return undefined;
 		} catch (error) {
@@ -45,7 +54,6 @@ export class InputAccessoriesService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-
 	}
 	public EndSpecialKeyMonitor(): Promise<boolean> {
 		try {
@@ -56,7 +64,6 @@ export class InputAccessoriesService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-
 	}
 	public Initialize(): Promise<boolean> {
 		try {
@@ -67,7 +74,6 @@ export class InputAccessoriesService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-
 	}
 	public AddApplicationOrFiles(selectedUDK: string, appSelectorType: string): Promise<any> {
 		try {
@@ -78,9 +84,12 @@ export class InputAccessoriesService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-
 	}
-	public DeleteUDKApplication(udkType: string, itemId: string, displayName: string): Promise<boolean> {
+	public DeleteUDKApplication(
+		udkType: string,
+		itemId: string,
+		displayName: string
+	): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.DeleteUDKApplication(udkType, itemId, displayName);
@@ -89,7 +98,6 @@ export class InputAccessoriesService {
 		} catch (error) {
 			throw new Error(error.message);
 		}
-
 	}
 	//  Check Keyboard UDK Compatability Status and KeyboardMapCapability
 	public GetAllCapability(): Promise<any> {
@@ -149,7 +157,6 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-
 
 	public GetKbdHiddenKeyPrivacyFilterCapability(): Promise<boolean> {
 		try {

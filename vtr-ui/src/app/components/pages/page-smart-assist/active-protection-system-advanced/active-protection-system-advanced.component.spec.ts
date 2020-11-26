@@ -26,23 +26,22 @@ describe('ActiveProtectionSystemAdvancedComponent', () => {
 					loader: {
 						provide: TranslateLoader,
 						useFactory: HttpLoaderFactory,
-						deps: [HttpClient]
+						deps: [HttpClient],
 					},
-					isolate: false
+					isolate: false,
 				}),
 				TranslateModule.forChild(),
 				HttpClientTestingModule,
-				RouterTestingModule
+				RouterTestingModule,
 			],
 			providers: [
 				SmartAssistService,
 				TranslateService,
 				CommonMetricsService,
 				MetricService,
-				DevService
-			]
-		})
-			.compileComponents();
+				DevService,
+			],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
@@ -58,7 +57,6 @@ describe('ActiveProtectionSystemAdvancedComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-
 	it('should set Pen Setting', () => {
 		const spyOnObject = spyOn(commonMetricsService, 'sendMetrics');
 		component.setPenSetting(new Event('click'));
@@ -66,8 +64,12 @@ describe('ActiveProtectionSystemAdvancedComponent', () => {
 	});
 
 	it('should set Pen Delay Time', () => {
-		const spySetPenDelayTime = spyOn(smartAssist, 'setPenDelayTime').and.returnValue(Promise.resolve(true));
-		const spyGetPenDelayTime = spyOn(smartAssist, 'getPenDelayTime').and.returnValue(Promise.resolve(10));
+		const spySetPenDelayTime = spyOn(smartAssist, 'setPenDelayTime').and.returnValue(
+			Promise.resolve(true)
+		);
+		const spyGetPenDelayTime = spyOn(smartAssist, 'getPenDelayTime').and.returnValue(
+			Promise.resolve(10)
+		);
 
 		// const spyOnObject = spyOn(commonMetricsService, 'sendMetrics');
 		component.setPenDelayTime({ value: 10 });
@@ -88,5 +90,4 @@ describe('ActiveProtectionSystemAdvancedComponent', () => {
 		component.setPSensorSetting({ value: 10 });
 		expect(spyOnObject).toHaveBeenCalled();
 	});
-
 });

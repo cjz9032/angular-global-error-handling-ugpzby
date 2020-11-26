@@ -1,4 +1,4 @@
-@import "../../../../app.theme.scss";
+@import '../../../../app.theme.scss';
 .auto-screen-block,
 .auto-screen-off-block {
 	::ng-deep .vtr-ui-switch-row {
@@ -69,11 +69,10 @@
 			}
 			@media #{$white-on-black} {
 				@include hyperlink-yellow-black;
-				}
-				@media #{$black-on-white} {
-
-					@include hyperlink-blue-white;
-				}
+			}
+			@media #{$black-on-white} {
+				@include hyperlink-blue-white;
+			}
 		}
 		.hide-settings {
 			display: inline-block;
@@ -127,4 +126,3 @@
 		left: -1.7rem;
 	}
 }
-

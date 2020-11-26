@@ -1,14 +1,21 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	SimpleChanges,
+} from '@angular/core';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
 	selector: 'vtr-ui-time-picker',
 	templateUrl: './ui-time-picker.component.html',
-	styleUrls: ['./ui-time-picker.component.scss']
+	styleUrls: ['./ui-time-picker.component.scss'],
 })
 export class UiTimePickerComponent implements OnInit, OnChanges {
-
 	@Input() time: string;
 	@Input() subHeadingText: string;
 	@Input() id: string;
@@ -25,8 +32,10 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	copyAmPm: number;
 	hours = ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];
 	minutes = ['00', '15', '30', '45'];
-	amPms = ['device.deviceSettings.power.smartStandby.timer.amPms.am',
-		'device.deviceSettings.power.smartStandby.timer.amPms.pm'];
+	amPms = [
+		'device.deviceSettings.power.smartStandby.timer.amPms.am',
+		'device.deviceSettings.power.smartStandby.timer.amPms.pm',
+	];
 
 	prevHour: number;
 	nextHour: number;
@@ -43,10 +52,10 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 		LEFT: 37,
 		UP: 38,
 		RIGHT: 39,
-		DOWN: 40
+		DOWN: 40,
 	});
 
-	constructor(public commonService: CommonService) { }
+	constructor(public commonService: CommonService) {}
 
 	ngOnInit() {
 		this.splitTime();
@@ -65,12 +74,12 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	}
 
 	updateMinutes(value: boolean) {
-		value ? this.copyMinute = this.nextMinute : this.copyMinute = this.prevMinute;
+		value ? (this.copyMinute = this.nextMinute) : (this.copyMinute = this.prevMinute);
 		this.setTimerBlock();
 	}
 
 	updateHours(value: boolean) {
-		value ? this.copyHour = this.nextHour : this.copyHour = this.prevHour;
+		value ? (this.copyHour = this.nextHour) : (this.copyHour = this.prevHour);
 		this.setTimerBlock();
 	}
 
@@ -103,7 +112,6 @@ export class UiTimePickerComponent implements OnInit, OnChanges {
 	onToggleDropDown() {
 		this.initiateBlock();
 		this.sendToggleNotification(!this.showDropDown);
-
 	}
 
 	sendToggleNotification(dropDown: boolean) {

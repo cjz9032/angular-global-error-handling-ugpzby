@@ -1,11 +1,21 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	ElementRef,
+	Output,
+	EventEmitter,
+	OnChanges,
+	SimpleChanges,
+	ViewChild,
+} from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
 	templateUrl: './ui-gaming-collapsible-container.component.html',
 	styleUrls: ['./ui-gaming-collapsible-container.component.scss'],
 	host: {
-		'(document:click)': 'generalClick($event)'
+		'(document:click)': 'generalClick($event)',
 	},
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
@@ -25,13 +35,13 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	intervalObj: any;
 	isItemsFocused = false;
 
-	constructor(
-		private elementRef: ElementRef,
-	) {
+	constructor(private elementRef: ElementRef) {
 		if (document.getElementById('menu-main-btn-navbar-toggler')) {
-			document.getElementById('menu-main-btn-navbar-toggler').addEventListener('click', (event) => {
-				this.generalClick(event);
-			});
+			document
+				.getElementById('menu-main-btn-navbar-toggler')
+				.addEventListener('click', (event) => {
+					this.generalClick(event);
+				});
 		}
 	}
 

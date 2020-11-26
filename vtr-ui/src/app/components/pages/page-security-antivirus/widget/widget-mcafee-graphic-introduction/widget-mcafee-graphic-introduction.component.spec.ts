@@ -5,7 +5,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { WidgetMcafeeGraphicIntroductionComponent } from './widget-mcafee-graphic-introduction.component';
 
-
 describe('WidgetMcafeeGraphicIntroductionComponent', () => {
 	let component: WidgetMcafeeGraphicIntroductionComponent;
 	let fixture: ComponentFixture<WidgetMcafeeGraphicIntroductionComponent>;
@@ -14,16 +13,9 @@ describe('WidgetMcafeeGraphicIntroductionComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetMcafeeGraphicIntroductionComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot(),
-				HttpClientTestingModule,
-				RouterTestingModule
-			],
-			providers: [
-				TranslateService
-			]
-		})
-			.compileComponents();
+			imports: [TranslateModule.forRoot(), HttpClientTestingModule, RouterTestingModule],
+			providers: [TranslateService],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

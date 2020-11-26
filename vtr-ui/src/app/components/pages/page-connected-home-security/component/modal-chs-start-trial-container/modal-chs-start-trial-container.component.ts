@@ -1,4 +1,4 @@
-import { Component,	OnInit,	OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import * as Phoenix from '@lenovo/tan-client-bridge';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -10,7 +10,7 @@ import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.
 @Component({
 	selector: 'vtr-modal-chs-start-trial-container',
 	templateUrl: './modal-chs-start-trial-container.component.html',
-	styleUrls: ['./modal-chs-start-trial-container.component.scss']
+	styleUrls: ['./modal-chs-start-trial-container.component.scss'],
 })
 export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	chs: Phoenix.ConnectedHomeSecurity;
@@ -26,8 +26,8 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 
 	constructor(
 		public activeModal: NgbActiveModal,
-		private vantageShellService: VantageShellService,
-	) {	}
+		private vantageShellService: VantageShellService
+	) {}
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
@@ -58,11 +58,14 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 		setTimeout(() => {
 			this.loadingCHSMsg.nativeElement.focus();
 		}, 0);
-		this.chs.quitAccount().then((response) => {
-			if (response === 'success') {
-				this.closeModal();
-			}
-		}).catch((err) => {});
+		this.chs
+			.quitAccount()
+			.then((response) => {
+				if (response === 'success') {
+					this.closeModal();
+				}
+			})
+			.catch((err) => {});
 	}
 
 	ngOnDestroy() {
@@ -80,12 +83,11 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	countdown() {
 		const numbers = interval(1000);
 		const takeNumbers = numbers.pipe(take(3));
-		this.subscribe = takeNumbers.subscribe( x => {
-			this.countdownNumber = (3 - x - 1);
+		this.subscribe = takeNumbers.subscribe((x) => {
+			this.countdownNumber = 3 - x - 1;
 			if (this.countdownNumber === 0) {
 				this.openCoronet();
 			}
 		});
 	}
-
 }

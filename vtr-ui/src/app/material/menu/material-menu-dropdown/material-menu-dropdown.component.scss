@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 ::ng-deep {
 	.vtr-material-menu-dropdown {
@@ -17,7 +17,7 @@
 		.dropdown-menu-item {
 			color: $main_shade;
 			font-weight: $weight_regular;
-			font-family: "Segoe UI",sans-serif;
+			font-family: 'Segoe UI', sans-serif;
 			min-height: 2.2rem;
 			line-height: 1;
 			outline: none !important;
@@ -28,7 +28,7 @@
 			span {
 				word-break: normal;
 				white-space: pre-wrap;
-				word-wrap : break-word;
+				word-wrap: break-word;
 				line-height: 1.3;
 			}
 			&:hover {

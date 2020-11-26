@@ -1,4 +1,4 @@
-@import "../../app.theme";
+@import '../../app.theme';
 
 :host-context(.is-gaming) {
 	position: absolute;
@@ -220,14 +220,12 @@
 							border-bottom: $menu_hover solid 0.5rem;
 
 							@media #{$black-on-white} {
-								border-bottom: $high-contrast-white-dark-magenta
-									solid 0.5rem;
+								border-bottom: $high-contrast-white-dark-magenta solid 0.5rem;
 								@include high-contrast-white-text-color;
 							}
 
 							@media #{$white-on-black} {
-								border-bottom: $high-contrast-black-cyan solid
-									0.5rem;
+								border-bottom: $high-contrast-black-cyan solid 0.5rem;
 								@include high-contrast-black-text-color;
 							}
 
@@ -325,7 +323,7 @@
 							border-left: 0.1rem solid transparent;
 							border-top: 0.1rem solid transparent;
 							transform: rotate(45deg);
-							content: "";
+							content: '';
 						}
 
 						&.user {
@@ -456,7 +454,7 @@
 
 							&::after {
 								border: none;
-								content: "";
+								content: '';
 								position: absolute;
 								height: 1.4rem;
 								width: 0.2rem;
@@ -476,7 +474,7 @@
 
 							&::before {
 								border: none;
-								content: "";
+								content: '';
 								position: absolute;
 								height: 1.4rem;
 								width: 0.2rem;
@@ -590,13 +588,11 @@
 								border-left: $menu_hover solid 0.5rem;
 
 								@media #{$black-on-white} {
-									border-left: 0.5rem solid
-										$high-contrast-white-dark-magenta;
+									border-left: 0.5rem solid $high-contrast-white-dark-magenta;
 								}
 
 								@media #{$white-on-black} {
-									border-left: 0.5rem solid
-										$high-contrast-black-cyan;
+									border-left: 0.5rem solid $high-contrast-black-cyan;
 								}
 
 								.fa-icon {

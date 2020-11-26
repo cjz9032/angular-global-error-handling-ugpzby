@@ -7,7 +7,7 @@ import { BaseCameraDetail } from './base-camera-detail.service';
 import { CameraDetail } from 'src/app/data-models/camera/camera-detail.model';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class CameraDetailService implements BaseCameraDetail {
 	public cameraDetailObservable: Observable<CameraDetail>;

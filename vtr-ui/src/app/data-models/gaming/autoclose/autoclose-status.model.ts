@@ -1,3 +1,3 @@
 export class AutoCloseStatus {
-    public autoCloseStatus: boolean = false;
+	public autoCloseStatus: boolean = false;
 }

@@ -3,10 +3,10 @@ import { TestBed } from '@angular/core/testing';
 import { AndroidService } from './android.service';
 
 xdescribe('AndroidService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+	beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
-    const service: AndroidService = TestBed.get(AndroidService);
-    expect(service).toBeTruthy();
-  });
+	it('should be created', () => {
+		const service: AndroidService = TestBed.get(AndroidService);
+		expect(service).toBeTruthy();
+	});
 });

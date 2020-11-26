@@ -3,10 +3,10 @@ import { TestBed } from '@angular/core/testing';
 import { SelfSelectService } from './self-select.service';
 
 xdescribe('SelfSelectService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+	beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
-	const service: SelfSelectService = TestBed.get(SelfSelectService);
-	expect(service).toBeTruthy();
-  });
+	it('should be created', () => {
+		const service: SelfSelectService = TestBed.get(SelfSelectService);
+		expect(service).toBeTruthy();
+	});
 });

@@ -1,4 +1,13 @@
-import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output, Input, OnChanges } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	ViewChild,
+	ElementRef,
+	EventEmitter,
+	Output,
+	Input,
+	OnChanges,
+} from '@angular/core';
 import ReinventedColorWheel from 'reinvented-color-wheel';
 import 'reinvented-color-wheel/css/reinvented-color-wheel.css';
 import { isUndefined } from 'util';
@@ -7,7 +16,7 @@ import { ColorWheelStatus } from './../../../enums/color-wheel-status.enum';
 @Component({
 	selector: 'vtr-ui-color-wheel',
 	templateUrl: './ui-color-wheel.component.html',
-	styleUrls: ['./ui-color-wheel.component.scss']
+	styleUrls: ['./ui-color-wheel.component.scss'],
 })
 export class UiColorWheelComponent implements OnInit, OnChanges {
 	colorWheelStatus = ColorWheelStatus;
@@ -24,7 +33,7 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 	@Input() automationId: string;
 	colorWheel: any;
 
-	constructor() { }
+	constructor() {}
 
 	ngOnInit() {
 		const that = this;
@@ -42,7 +51,7 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 				that.color = color.rgb;
 				that.btnStatus = that.colorWheelStatus.apply;
 				that.colorChanged.emit(color);
-			}
+			},
 		});
 
 		this.colorWheel.rgb = this.color;
@@ -78,7 +87,7 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 	}
 
 	validateInput(event: any) {
-		const charCode = (event.which) ? event.which : event.keyCode;
+		const charCode = event.which ? event.which : event.keyCode;
 		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
 			return false;
 		}

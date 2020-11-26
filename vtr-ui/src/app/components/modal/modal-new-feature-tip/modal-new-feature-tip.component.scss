@@ -1,7 +1,7 @@
 @import '../../../app.theme.scss';
 
-$bgOpacity: .6;
-$transition: all .1s;
+$bgOpacity: 0.6;
+$transition: all 0.1s;
 
 .new-feature-tip-dialog {
 	position: fixed;
@@ -125,11 +125,10 @@ $transition: all .1s;
 			margin-left: -0.7rem;
 			top: -0.7rem;
 			transform: rotate(45deg);
-			background-color: #FFF;
+			background-color: #fff;
 			border-right: 0px;
 			border-bottom: 0px;
 			cursor: pointer;
 		}
-
 	}
 }

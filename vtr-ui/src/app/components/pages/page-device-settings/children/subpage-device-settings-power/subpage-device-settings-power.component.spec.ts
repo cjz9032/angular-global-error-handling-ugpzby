@@ -1,6 +1,13 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, discardPeriodicTasks, fakeAsync, TestBed, tick, ComponentFixture } from '@angular/core/testing';
+import {
+	async,
+	discardPeriodicTasks,
+	fakeAsync,
+	TestBed,
+	tick,
+	ComponentFixture,
+} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
@@ -25,7 +32,7 @@ const featureStatus = {
 	available: true,
 	status: true,
 	permission: true,
-	isLoading: true
+	isLoading: true,
 };
 const ChargeThresholdData = {
 	batteryNum: 1,
@@ -33,7 +40,7 @@ const ChargeThresholdData = {
 	isEnabled: false,
 	startValue: 40,
 	stopValue: 45,
-	checkboxValue: false
+	checkboxValue: false,
 };
 
 const alwaysOnUSBCapability = {
@@ -45,13 +52,13 @@ const easyResumeCache = {
 	available: true,
 	status: true,
 	permission: true,
-	isLoading: true
+	isLoading: true,
 };
 
 const airplanePowerCache = {
 	toggleState: featureStatus,
 	checkbox: featureStatus,
-}
+};
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
@@ -67,22 +74,22 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			startValue: 40,
 			stopValue: 45,
 			checkboxValue: false,
-		}
+		},
 	];
 	beforeEach(async(() => {
 		const localCacheServiceMock = <LocalCacheService>{
 			getLocalCacheValue: (key, value) => Promise.resolve(),
-			setLocalCacheValue: (key, value) => Promise.resolve()
+			setLocalCacheValue: (key, value) => Promise.resolve(),
 		};
 		const loggerServiceMock = <LoggerService>{
-			error: (message, data) => { },
-			info: (message, data) => { },
-			debug: (message, data) => { }
+			error: (message, data) => {},
+			info: (message, data) => {},
+			debug: (message, data) => {},
 		};
 		TestBed.configureTestingModule({
 			declarations: [SubpageDeviceSettingsPowerComponent],
 			schemas: [NO_ERRORS_SCHEMA],
-			imports: [TranslationModule, HttpClientModule, RouterTestingModule,],
+			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
 			providers: [
 				DevService,
 				MetricService,
@@ -91,12 +98,13 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 				TranslateStore,
 				{
 					provide: LocalCacheService,
-					useValue: localCacheServiceMock
-				}, {
+					useValue: localCacheServiceMock,
+				},
+				{
 					provide: LoggerService,
-					useValue: loggerServiceMock
-				}
-			]
+					useValue: loggerServiceMock,
+				},
+			],
 		}).compileComponents();
 	}));
 
@@ -114,7 +122,15 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			component.easyResumeCache = new FeatureStatus(true, true);
 			component.airplanePowerCache = new AlwaysOnUSBCapability();
 
-			return { fixture, component, commonService, modalService, powerService, localCacheService, loggerService };
+			return {
+				fixture,
+				component,
+				commonService,
+				modalService,
+				powerService,
+				localCacheService,
+				loggerService,
+			};
 		}
 
 		it('should create', () => {
@@ -127,7 +143,6 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			fixture.detectChanges();
 			component.startMonitor();
 			expect(powerService.startMonitor).toHaveBeenCalled();
-
 		});
 		it('#getStartMonitorCallBack should call', () => {
 			const { fixture, component, powerService } = setup();
@@ -153,22 +168,28 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		});
 
 		it('#getGaugeResetCapability should call', fakeAsync(() => {
-			const { component, powerService, localCacheService } = setup();			
-			
-			const getGaugeResetCapabilitySpy = spyOn(powerService, 'getGaugeResetCapability').and.returnValue(Promise.resolve(true));
+			const { component, powerService, localCacheService } = setup();
 
-			const setLocalCacheValueSpy = spyOn(localCacheService, 'setLocalCacheValue')
-			.and.returnValue(Promise.resolve());
+			const getGaugeResetCapabilitySpy = spyOn(
+				powerService,
+				'getGaugeResetCapability'
+			).and.returnValue(Promise.resolve(true));
+
+			const setLocalCacheValueSpy = spyOn(
+				localCacheService,
+				'setLocalCacheValue'
+			).and.returnValue(Promise.resolve());
 
 			component.batteryService.gaugeResetInfo = [];
 
-			component.getGaugeResetCapability()
+			component.getGaugeResetCapability();
 
 			tick();
 
 			expect(getGaugeResetCapabilitySpy).toHaveBeenCalled();
 			expect(setLocalCacheValueSpy).toHaveBeenCalledWith(
-				LocalStorageKey.GaugeResetCapability, true
+				LocalStorageKey.GaugeResetCapability,
+				true
 			);
 			discardPeriodicTasks();
 		}));
@@ -188,7 +209,10 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		}));
 		it('#changeBatteryMode should call', async () => {
 			const { fixture, component, powerService } = setup();
-			const myPrivateSpy = spyOn<any>(component, 'setConservationModeStatusIdeaNoteBook').and.callThrough();
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setConservationModeStatusIdeaNoteBook'
+			).and.callThrough();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
 			mode = 'expressCharging';
 			fixture.detectChanges();
@@ -211,7 +235,10 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(component, 'getBatteryAndPowerSettings');
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			const myPrivateSpy = spyOn<any>(component, 'getEasyResumeCapabilityThinkPad').and.callThrough();
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'getEasyResumeCapabilityThinkPad'
+			).and.callThrough();
 			fixture.detectChanges();
 			component.machineType = machineType;
 			await component.getBatteryAndPowerSettings();
@@ -222,12 +249,17 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#getEasyResumeCapabilityThinkPad should call', fakeAsync(() => {
 			const { component, powerService, localCacheService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'getEasyResumeCapabilityThinkPad').and.returnValue(Promise.resolve(true));
-			const getEasyResumeCapabilityThinkPadSpy = spyOn<any>(component, 'getEasyResumeCapabilityThinkPad').and.callThrough();
-			
+			spyOn(powerService, 'getEasyResumeCapabilityThinkPad').and.returnValue(
+				Promise.resolve(true)
+			);
+			const getEasyResumeCapabilityThinkPadSpy = spyOn<any>(
+				component,
+				'getEasyResumeCapabilityThinkPad'
+			).and.callThrough();
+
 			const setLocalCacheValueSpy = spyOn(localCacheService, 'setLocalCacheValue')
-			.withArgs(LocalStorageKey.EasyResumeCapability, component.easyResumeCache)
-			.and.returnValue(Promise.resolve());
+				.withArgs(LocalStorageKey.EasyResumeCapability, component.easyResumeCache)
+				.and.returnValue(Promise.resolve());
 
 			getEasyResumeCapabilityThinkPadSpy.call(component);
 
@@ -242,7 +274,10 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#updatePowerMode should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			const myPrivateSpy = spyOn<any>(component, 'setAlwaysOnUSBStatusThinkPad').and.callThrough();
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setAlwaysOnUSBStatusThinkPad'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			component.machineType = 1;
@@ -252,12 +287,16 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#getAlwaysOnUSBCapabilityThinkPad should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'getAlwaysOnUSBCapabilityThinkPad').and.returnValue(Promise.resolve(true));
-			const myPrivateSpy = spyOn<any>(component, 'getAlwaysOnUSBCapabilityThinkPad').and.callThrough();
+			spyOn(powerService, 'getAlwaysOnUSBCapabilityThinkPad').and.returnValue(
+				Promise.resolve(true)
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'getAlwaysOnUSBCapabilityThinkPad'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(powerService.getAlwaysOnUSBCapabilityThinkPad).toHaveBeenCalled();
-
 		});
 		it('#setEasyResumeThinkPad should call', async () => {
 			const { fixture, component, powerService } = setup();
@@ -270,8 +309,13 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#setAlwaysOnUSBStatusThinkPad should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'setAlwaysOnUSBStatusThinkPad').and.returnValue(Promise.resolve(true));
-			const myPrivateSpy = spyOn<any>(component, 'setAlwaysOnUSBStatusThinkPad').and.callThrough();
+			spyOn(powerService, 'setAlwaysOnUSBStatusThinkPad').and.returnValue(
+				Promise.resolve(true)
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setAlwaysOnUSBStatusThinkPad'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(powerService.setAlwaysOnUSBStatusThinkPad).toHaveBeenCalled();
@@ -280,21 +324,31 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#getAirplaneModeAutoDetectionOnThinkPad should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'getAirplaneModeAutoDetectionOnThinkPad').and.returnValue(Promise.resolve(true));
-			const myPrivateSpy = spyOn<any>(component, 'getAirplaneModeAutoDetectionOnThinkPad').and.callThrough();
+			spyOn(powerService, 'getAirplaneModeAutoDetectionOnThinkPad').and.returnValue(
+				Promise.resolve(true)
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'getAirplaneModeAutoDetectionOnThinkPad'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(powerService.getAirplaneModeAutoDetectionOnThinkPad).toHaveBeenCalled();
 		});
-		it('#getUSBChargingInBatteryModeStatusIdeaNoteBook should call', fakeAsync( () => {
+		it('#getUSBChargingInBatteryModeStatusIdeaNoteBook should call', fakeAsync(() => {
 			const { component, powerService, localCacheService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'getUSBChargingInBatteryModeStatusIdeaNoteBook').and.returnValue(Promise.resolve(featureStatus));
-			const getUSBChargingInBatteryModeStatusIdeaNoteBookSpy = spyOn<any>(component, 'getUSBChargingInBatteryModeStatusIdeaNoteBook').and.callThrough();
+			spyOn(powerService, 'getUSBChargingInBatteryModeStatusIdeaNoteBook').and.returnValue(
+				Promise.resolve(featureStatus)
+			);
+			const getUSBChargingInBatteryModeStatusIdeaNoteBookSpy = spyOn<any>(
+				component,
+				'getUSBChargingInBatteryModeStatusIdeaNoteBook'
+			).and.callThrough();
 
 			const setLocalCacheValueSpy = spyOn(localCacheService, 'setLocalCacheValue')
-			.withArgs(LocalStorageKey.AlwaysOnUSBCapability, alwaysOnUSBCapability)
-			.and.returnValue(Promise.resolve());
+				.withArgs(LocalStorageKey.AlwaysOnUSBCapability, alwaysOnUSBCapability)
+				.and.returnValue(Promise.resolve());
 
 			getUSBChargingInBatteryModeStatusIdeaNoteBookSpy.call(component);
 
@@ -308,12 +362,17 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#getAlwaysOnUSBStatusIdeaPad should call', fakeAsync(() => {
 			const { component, powerService, localCacheService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'getAlwaysOnUSBStatusIdeaNoteBook').and.returnValue(Promise.resolve(featureStatus));
-			const getAlwaysOnUSBStatusIdeaPadSpy = spyOn<any>(component, 'getAlwaysOnUSBStatusIdeaPad').and.callThrough();
-			
+			spyOn(powerService, 'getAlwaysOnUSBStatusIdeaNoteBook').and.returnValue(
+				Promise.resolve(featureStatus)
+			);
+			const getAlwaysOnUSBStatusIdeaPadSpy = spyOn<any>(
+				component,
+				'getAlwaysOnUSBStatusIdeaPad'
+			).and.callThrough();
+
 			const setLocalCacheValueSpy = spyOn(localCacheService, 'setLocalCacheValue')
-			.withArgs(LocalStorageKey.AlwaysOnUSBCapability, alwaysOnUSBCapability)
-			.and.returnValue(Promise.resolve());
+				.withArgs(LocalStorageKey.AlwaysOnUSBCapability, alwaysOnUSBCapability)
+				.and.returnValue(Promise.resolve());
 
 			getAlwaysOnUSBStatusIdeaPadSpy.call(component);
 
@@ -327,8 +386,13 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#setUSBChargingInBatteryModeStatusIdeaNoteBook should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'setUSBChargingInBatteryModeStatusIdeaNoteBook').and.returnValue(Promise.resolve(true));
-			const myPrivateSpy = spyOn<any>(component, 'setUSBChargingInBatteryModeStatusIdeaNoteBook').and.callThrough();
+			spyOn(powerService, 'setUSBChargingInBatteryModeStatusIdeaNoteBook').and.returnValue(
+				Promise.resolve(true)
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setUSBChargingInBatteryModeStatusIdeaNoteBook'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(powerService.setUSBChargingInBatteryModeStatusIdeaNoteBook).toHaveBeenCalled();
@@ -337,8 +401,13 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#setConservationModeStatusIdeaNoteBook should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'setConservationModeStatusIdeaNoteBook').and.returnValue(Promise.resolve(true));
-			const myPrivateSpy = spyOn<any>(component, 'setConservationModeStatusIdeaNoteBook').and.callThrough();
+			spyOn(powerService, 'setConservationModeStatusIdeaNoteBook').and.returnValue(
+				Promise.resolve(true)
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setConservationModeStatusIdeaNoteBook'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(powerService.setConservationModeStatusIdeaNoteBook).toHaveBeenCalled();
@@ -346,8 +415,13 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#getConservationModeStatusIdeaPad should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'getConservationModeStatusIdeaNoteBook').and.returnValue(Promise.resolve(featureStatus));
-			const myPrivateSpy = spyOn<any>(component, 'getConservationModeStatusIdeaPad').and.callThrough();
+			spyOn(powerService, 'getConservationModeStatusIdeaNoteBook').and.returnValue(
+				Promise.resolve(featureStatus)
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'getConservationModeStatusIdeaPad'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(powerService.getConservationModeStatusIdeaNoteBook).toHaveBeenCalled();
@@ -359,18 +433,22 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			const myPrivateSpy = spyOn<any>(component, 'onNotification').and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
-
 		});
 
 		it('#getAlwaysOnUSBStatusThinkPad should call', fakeAsync(() => {
 			const { component, powerService, localCacheService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'getAlwaysOnUSBStatusThinkPad').and.returnValue(Promise.resolve(true));
-			const getAlwaysOnUSBStatusThinkPadSpy = spyOn<any>(component, 'getAlwaysOnUSBStatusThinkPad').and.callThrough();
-			
+			spyOn(powerService, 'getAlwaysOnUSBStatusThinkPad').and.returnValue(
+				Promise.resolve(true)
+			);
+			const getAlwaysOnUSBStatusThinkPadSpy = spyOn<any>(
+				component,
+				'getAlwaysOnUSBStatusThinkPad'
+			).and.callThrough();
+
 			const setLocalCacheValueSpy = spyOn(localCacheService, 'setLocalCacheValue')
-			.withArgs(LocalStorageKey.AlwaysOnUSBCapability, alwaysOnUSBCapability)
-			.and.returnValue(Promise.resolve());
+				.withArgs(LocalStorageKey.AlwaysOnUSBCapability, alwaysOnUSBCapability)
+				.and.returnValue(Promise.resolve());
 
 			getAlwaysOnUSBStatusThinkPadSpy.call(component);
 
@@ -415,12 +493,17 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#getEasyResumeStatusThinkPad should call', fakeAsync(() => {
 			const { component, powerService, localCacheService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			spyOn(powerService, 'getEasyResumeStatusThinkPad').and.returnValue(Promise.resolve(true));
-			const getEasyResumeStatusThinkPadSpy = spyOn<any>(component, 'getEasyResumeStatusThinkPad').and.callThrough();
-			
+			spyOn(powerService, 'getEasyResumeStatusThinkPad').and.returnValue(
+				Promise.resolve(true)
+			);
+			const getEasyResumeStatusThinkPadSpy = spyOn<any>(
+				component,
+				'getEasyResumeStatusThinkPad'
+			).and.callThrough();
+
 			const setLocalCacheValueSpy = spyOn(localCacheService, 'setLocalCacheValue')
-			.withArgs(LocalStorageKey.EasyResumeCapability, component.easyResumeCache)
-			.and.returnValue(Promise.resolve());			
+				.withArgs(LocalStorageKey.EasyResumeCapability, component.easyResumeCache)
+				.and.returnValue(Promise.resolve());
 
 			getEasyResumeStatusThinkPadSpy.call(component);
 
@@ -434,7 +517,10 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#setAlwaysOnUSBStatusIdeaPad should call', async () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			const myPrivateSpy = spyOn<any>(component, 'setAlwaysOnUSBStatusIdeaPad').and.callThrough();
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setAlwaysOnUSBStatusIdeaPad'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 		});
@@ -476,11 +562,14 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		it('#onToggleOfAlwaysOnUsb should call', async () => {
 			const { component, powerService, localCacheService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
-			const setAlwaysOnUSBStatusThinkPadSpy = spyOn<any>(component, 'setAlwaysOnUSBStatusThinkPad').and.callThrough();
+			const setAlwaysOnUSBStatusThinkPadSpy = spyOn<any>(
+				component,
+				'setAlwaysOnUSBStatusThinkPad'
+			).and.callThrough();
 
 			const setLocalCacheValueSpy = spyOn(localCacheService, 'setLocalCacheValue')
-			.withArgs(LocalStorageKey.AlwaysOnUSBCapability, component.alwaysOnUSBCache)
-			.and.returnValue(Promise.resolve());
+				.withArgs(LocalStorageKey.AlwaysOnUSBCapability, component.alwaysOnUSBCache)
+				.and.returnValue(Promise.resolve());
 
 			component.machineType = 1;
 			await component.onToggleOfAlwaysOnUsb(true);
@@ -492,18 +581,18 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 
 			expect(setLocalCacheValueSpy).toHaveBeenCalled();
 		});
-		it('should call getBatteryAndPowerSettings', (() => {
+		it('should call getBatteryAndPowerSettings', () => {
 			const { component } = setup();
 			component.machineType = 0;
 			component.getBatteryAndPowerSettings();
 			expect(component.showEasyResumeSection).toBe(false);
-		}));
+		});
 
-		it('should call getBatteryAndPowerSettings', (() => {
+		it('should call getBatteryAndPowerSettings', () => {
 			const { component } = setup();
 			component.machineType = 1;
 			component.getBatteryAndPowerSettings();
-		}));
+		});
 
 		it('onSetSmatStandbyCapability else case', () => {
 			const { component, commonService } = setup();
@@ -534,7 +623,6 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			component.thresholdInfo = thresholdInfo;
 			component.isThresholdWarningMsgShown();
 			expect(component.thresholdInfo.length).toEqual(1);
-
 		});
 		it('onAutoCheckChange', () => {
 			const { component } = setup();
@@ -549,10 +637,11 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		});
 		it('#onToggleOfFlipToBoot catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setFlipToBootSettings').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setFlipToBootSettings').and.returnValue(
+				Promise.reject()
+			);
 			component.onToggleOfFlipToBoot(true);
 			expect(spy).toHaveBeenCalled();
-
 		});
 		it('should call setChargeThresholdUI', () => {
 			const { component } = setup();
@@ -571,28 +660,39 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		});
 		it('#getGaugeResetCapability catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'getGaugeResetCapability').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'getGaugeResetCapability').and.returnValue(
+				Promise.reject()
+			);
 			component.getGaugeResetCapability();
 			expect(spy).toHaveBeenCalled();
 		});
 
 		it('#getVantageToolBarStatus catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'getVantageToolBarStatus').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'getVantageToolBarStatus').and.returnValue(
+				Promise.reject()
+			);
 			component.getVantageToolBarStatus();
 			expect(spy).toHaveBeenCalled();
 		});
 		describe('#getEnergyStarCapability', () => {
 			it('given getEnergyStarCapability result is reject then should go to catch block', () => {
 				const { component, powerService } = setup();
-				const spy = spyOn(powerService, 'getEnergyStarCapability').and.returnValue(Promise.reject());
+				const spy = spyOn(powerService, 'getEnergyStarCapability').and.returnValue(
+					Promise.reject()
+				);
 				component.getEnergyStarCapability();
 				expect(spy).toHaveBeenCalled();
 			});
 			it('given getEnergyStarCapability is completed then should go to then block, set isEnergyStarProduct and call setLocalStorageValue', fakeAsync(() => {
 				const { component, powerService, localCacheService } = setup();
-				const getEnergyStarCapabilitySpy = spyOn(powerService, 'getEnergyStarCapability').and.returnValue(Promise.resolve(true));
-				const setLocalCacheValueSpy = spyOn(localCacheService, 'setLocalCacheValue').withArgs(LocalStorageKey.EnergyStarCapability, true).and.returnValue(Promise.resolve());
+				const getEnergyStarCapabilitySpy = spyOn(
+					powerService,
+					'getEnergyStarCapability'
+				).and.returnValue(Promise.resolve(true));
+				const setLocalCacheValueSpy = spyOn(localCacheService, 'setLocalCacheValue')
+					.withArgs(LocalStorageKey.EnergyStarCapability, true)
+					.and.returnValue(Promise.resolve());
 
 				component.getEnergyStarCapability();
 
@@ -605,70 +705,104 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 		});
 		it('#setEasyResumeThinkPad catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setEasyResumeThinkPad').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setEasyResumeThinkPad').and.returnValue(
+				Promise.reject()
+			);
 			const myPrivateSpy = spyOn<any>(component, 'setEasyResumeThinkPad').and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 		});
 		it('#setRapidChargeModeStatusIdeaNoteBook catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setRapidChargeModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
-			const myPrivateSpy = spyOn<any>(component, 'setRapidChargeModeStatusIdeaNoteBook').and.callThrough();
+			const spy = spyOn(powerService, 'setRapidChargeModeStatusIdeaNoteBook').and.returnValue(
+				Promise.reject()
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setRapidChargeModeStatusIdeaNoteBook'
+			).and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 		});
 		it('#setAlwaysOnUSBStatusThinkPad catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setAlwaysOnUSBStatusThinkPad').and.returnValue(Promise.reject());
-			const myPrivateSpy = spyOn<any>(component, 'setAlwaysOnUSBStatusThinkPad').and.callThrough();
+			const spy = spyOn(powerService, 'setAlwaysOnUSBStatusThinkPad').and.returnValue(
+				Promise.reject()
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setAlwaysOnUSBStatusThinkPad'
+			).and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 		});
 		it('#onBCTInfoChange catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setChargeThresholdValue').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setChargeThresholdValue').and.returnValue(
+				Promise.reject()
+			);
 			component.onBCTInfoChange(thresholdInfo[0], batteryNum);
 			expect(spy).toHaveBeenCalled();
-
 		});
 		it('#onBCTInfoChange should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setChargeThresholdValue').and.returnValue(Promise.resolve(0));
+			const spy = spyOn(powerService, 'setChargeThresholdValue').and.returnValue(
+				Promise.resolve(0)
+			);
 			component.chargeThresholdStatus = true;
 			component.onBCTInfoChange(thresholdInfo[0], batteryNum);
 			expect(spy).toHaveBeenCalled();
-
 		});
 		it('#getAlwaysOnUSBCapabilityThinkPad catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-			const spy = spyOn(powerService, 'getAlwaysOnUSBCapabilityThinkPad').and.returnValue(Promise.reject());
-			const myPrivateSpy = spyOn<any>(component, 'getAlwaysOnUSBCapabilityThinkPad').and.callThrough();
+			const spy = spyOn(powerService, 'getAlwaysOnUSBCapabilityThinkPad').and.returnValue(
+				Promise.reject()
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'getAlwaysOnUSBCapabilityThinkPad'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
-
 		});
 		it('#setAirplaneModeAutoDetectionOnThinkPad catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setAirplaneModeAutoDetectionOnThinkPad').and.returnValue(Promise.reject());
-			const myPrivateSpy = spyOn<any>(component, 'setAirplaneModeAutoDetectionOnThinkPad').and.callThrough();
+			const spy = spyOn(
+				powerService,
+				'setAirplaneModeAutoDetectionOnThinkPad'
+			).and.returnValue(Promise.reject());
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setAirplaneModeAutoDetectionOnThinkPad'
+			).and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
-
 		});
 
 		it('#setUSBChargingInBatteryModeStatusIdeaNoteBook catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-			const spy = spyOn(powerService, 'setUSBChargingInBatteryModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
-			const myPrivateSpy = spyOn<any>(component, 'setUSBChargingInBatteryModeStatusIdeaNoteBook').and.callThrough();
+			const spy = spyOn(
+				powerService,
+				'setUSBChargingInBatteryModeStatusIdeaNoteBook'
+			).and.returnValue(Promise.reject());
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setUSBChargingInBatteryModeStatusIdeaNoteBook'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 		});
 		it('#setAlwaysOnUSBStatusIdeaPad catch block should call', () => {
 			const { fixture, component, powerService } = setup();
-			const spy = spyOn(powerService, 'setAlwaysOnUSBStatusIdeaNoteBook').and.returnValue(Promise.reject());
-			const myPrivateSpy = spyOn<any>(component, 'setAlwaysOnUSBStatusIdeaPad').and.callThrough();
+			const spy = spyOn(powerService, 'setAlwaysOnUSBStatusIdeaNoteBook').and.returnValue(
+				Promise.reject()
+			);
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setAlwaysOnUSBStatusIdeaPad'
+			).and.callThrough();
 			fixture.detectChanges();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
@@ -676,29 +810,44 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 
 		it('#setAirplaneModeThinkPad catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setAirplaneModeThinkPad').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'setAirplaneModeThinkPad').and.returnValue(
+				Promise.reject()
+			);
 			const myPrivateSpy = spyOn<any>(component, 'setAirplaneModeThinkPad').and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 		});
 		it('#setConservationModeStatusIdeaNoteBook catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setConservationModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
-			const myPrivateSpy = spyOn<any>(component, 'setConservationModeStatusIdeaNoteBook').and.callThrough();
+			const spy = spyOn(
+				powerService,
+				'setConservationModeStatusIdeaNoteBook'
+			).and.returnValue(Promise.reject());
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'setConservationModeStatusIdeaNoteBook'
+			).and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
-
 		});
 		it('#getConservationModeStatusIdeaPad catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'getConservationModeStatusIdeaNoteBook').and.returnValue(Promise.reject());
-			const myPrivateSpy = spyOn<any>(component, 'getConservationModeStatusIdeaPad').and.callThrough();
+			const spy = spyOn(
+				powerService,
+				'getConservationModeStatusIdeaNoteBook'
+			).and.returnValue(Promise.reject());
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'getConservationModeStatusIdeaPad'
+			).and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 		});
 		it('#getFlipToBootCapability catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'getFlipToBootCapability').and.returnValue(Promise.reject());
+			const spy = spyOn(powerService, 'getFlipToBootCapability').and.returnValue(
+				Promise.reject()
+			);
 			const myPrivateSpy = spyOn<any>(component, 'getFlipToBootCapability').and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
@@ -709,7 +858,6 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			component.thresholdInfo = [];
 			component.setBCTToggleOff(true);
 			expect(spy).toHaveBeenCalled();
-
 		});
 		it('#setBCTToggleOff  should call', () => {
 			const { component, powerService, commonService } = setup();
@@ -735,7 +883,9 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			it('given has EnergyStarCapability and the value is true should call getLocalStorageValue from LocalCacheService and set isEnergyStarProduct', fakeAsync(() => {
 				const { component } = setup();
 				const localCacheService = TestBed.inject(LocalCacheService);
-				const getLocalCacheValueSpy = spyOn(localCacheService, 'getLocalCacheValue').withArgs(LocalStorageKey.EnergyStarCapability, undefined).and.returnValue(Promise.resolve(true));
+				const getLocalCacheValueSpy = spyOn(localCacheService, 'getLocalCacheValue')
+					.withArgs(LocalStorageKey.EnergyStarCapability, undefined)
+					.and.returnValue(Promise.resolve(true));
 
 				component.initEnergyStarFromCache();
 
@@ -750,7 +900,9 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			it('given it pass the value as true and new id then should add id to goto link and save IsPowerPageAvailable cache as true', () => {
 				const someKey = 'someKey_1';
 				const { component, localCacheService } = setup();
-				const spy = spyOn(localCacheService, 'setLocalCacheValue').withArgs(LocalStorageKey.IsPowerPageAvailable, true).and.returnValue(Promise.resolve());
+				const spy = spyOn(localCacheService, 'setLocalCacheValue')
+					.withArgs(LocalStorageKey.IsPowerPageAvailable, true)
+					.and.returnValue(Promise.resolve());
 
 				component.gotoLinks = [];
 				component.checkIsPowerPageAvailable(true, someKey);
@@ -764,7 +916,9 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 				const someKey = 'someKey_2';
 				const otherKey = 'otherKey';
 				const { component, localCacheService } = setup();
-				const spy = spyOn(localCacheService, 'setLocalCacheValue').withArgs(LocalStorageKey.IsPowerPageAvailable, true).and.returnValue(Promise.resolve());
+				const spy = spyOn(localCacheService, 'setLocalCacheValue')
+					.withArgs(LocalStorageKey.IsPowerPageAvailable, true)
+					.and.returnValue(Promise.resolve());
 
 				component.gotoLinks = [someKey, otherKey];
 				component.checkIsPowerPageAvailable(false, someKey);
@@ -778,7 +932,9 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			it('given it pass the value as false and existent id and gotoLinks has only one id then should remove the id from goto link and save IsPowerPageAvailable cache as false', () => {
 				const someKey = 'someKey_3';
 				const { component, localCacheService } = setup();
-				const spy = spyOn(localCacheService, 'setLocalCacheValue').withArgs(LocalStorageKey.IsPowerPageAvailable, false).and.returnValue(Promise.resolve());
+				const spy = spyOn(localCacheService, 'setLocalCacheValue')
+					.withArgs(LocalStorageKey.IsPowerPageAvailable, false)
+					.and.returnValue(Promise.resolve());
 
 				component.gotoLinks = [someKey];
 				component.checkIsPowerPageAvailable(false, someKey);
@@ -800,11 +956,13 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 
 				expect(spy).toHaveBeenCalled();
 				done();
-			});			
+			});
 			it('should call getLocalStorageValue from LocalCacheService and set gaugeResetCapability', fakeAsync(() => {
 				const { component, localCacheService } = setup();
-				
-				const getLocalCacheValueSpy = spyOn(localCacheService, 'getLocalCacheValue').withArgs(LocalStorageKey.GaugeResetCapability, undefined).and.returnValue(Promise.resolve(true));
+
+				const getLocalCacheValueSpy = spyOn(localCacheService, 'getLocalCacheValue')
+					.withArgs(LocalStorageKey.GaugeResetCapability, undefined)
+					.and.returnValue(Promise.resolve(true));
 
 				component.initGaugeResetInfoFromCache();
 
@@ -825,18 +983,23 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 
 				expect(spy).toHaveBeenCalled();
 				done();
-			});			
+			});
 			it('should call getLocalStorageValue from LocalCacheService and set alwaysOnUSBCache', fakeAsync(() => {
 				const { component, localCacheService } = setup();
 
-				const getLocalCacheValueFromAlwaysOnUSBCapabilitySpy = spyOn(localCacheService, 'getLocalCacheValue')
-				.and.returnValue(Promise.resolve(alwaysOnUSBCapability));
+				const getLocalCacheValueFromAlwaysOnUSBCapabilitySpy = spyOn(
+					localCacheService,
+					'getLocalCacheValue'
+				).and.returnValue(Promise.resolve(alwaysOnUSBCapability));
 
 				component.getAlwaysOnUSBCacheFromCache();
 
 				tick(200);
 
-				expect(getLocalCacheValueFromAlwaysOnUSBCapabilitySpy).toHaveBeenCalledWith(LocalStorageKey.AlwaysOnUSBCapability, undefined);
+				expect(getLocalCacheValueFromAlwaysOnUSBCapabilitySpy).toHaveBeenCalledWith(
+					LocalStorageKey.AlwaysOnUSBCapability,
+					undefined
+				);
 				expect(component.alwaysOnUSBCache).toEqual(alwaysOnUSBCapability);
 
 				discardPeriodicTasks();
@@ -844,14 +1007,19 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			it('should call getLocalStorageValue from LocalCacheService and set easyResumeCache', fakeAsync(() => {
 				const { component, localCacheService } = setup();
 
-				const getLocalCacheValueFromEasyResumeCacheSpy = spyOn(localCacheService, 'getLocalCacheValue')
-				.and.returnValue(Promise.resolve(easyResumeCache));
+				const getLocalCacheValueFromEasyResumeCacheSpy = spyOn(
+					localCacheService,
+					'getLocalCacheValue'
+				).and.returnValue(Promise.resolve(easyResumeCache));
 
 				component.getEasyResumeCacheFromCache();
 
 				tick(200);
 
-				expect(getLocalCacheValueFromEasyResumeCacheSpy).toHaveBeenCalledWith(LocalStorageKey.EasyResumeCapability, undefined);
+				expect(getLocalCacheValueFromEasyResumeCacheSpy).toHaveBeenCalledWith(
+					LocalStorageKey.EasyResumeCapability,
+					undefined
+				);
 				expect(component.easyResumeCache).toEqual(easyResumeCache);
 
 				discardPeriodicTasks();
@@ -867,18 +1035,23 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 
 				expect(spy).toHaveBeenCalled();
 				done();
-			});	
+			});
 			it('should call getLocalStorageValue from LocalCacheService and set airplanePowerCache', fakeAsync(() => {
 				const { component, localCacheService } = setup();
 
-				const getLocalCacheValueSpy = spyOn(localCacheService, 'getLocalCacheValue')
-				.and.returnValue(Promise.resolve(airplanePowerCache));
+				const getLocalCacheValueSpy = spyOn(
+					localCacheService,
+					'getLocalCacheValue'
+				).and.returnValue(Promise.resolve(airplanePowerCache));
 
 				component.initAirplanePowerFromCache();
 
 				tick(200);
 
-				expect(getLocalCacheValueSpy).toHaveBeenCalledWith(LocalStorageKey.AirplanePowerModeCapability, undefined);
+				expect(getLocalCacheValueSpy).toHaveBeenCalledWith(
+					LocalStorageKey.AirplanePowerModeCapability,
+					undefined
+				);
 				expect(component.airplanePowerCache).toEqual(airplanePowerCache);
 
 				discardPeriodicTasks();
@@ -897,9 +1070,14 @@ describe('Airplane Power Mode', () => {
 			declarations: [SubpageDeviceSettingsPowerComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-			providers: [ LocalCacheService, DevService, MetricService,
-				CommonMetricsService, HypothesisService, TranslateStore,
-			]
+			providers: [
+				LocalCacheService,
+				DevService,
+				MetricService,
+				CommonMetricsService,
+				HypothesisService,
+				TranslateStore,
+			],
 		}).compileComponents();
 
 		fixture = TestBed.createComponent(SubpageDeviceSettingsPowerComponent);
@@ -919,7 +1097,10 @@ describe('Airplane Power Mode', () => {
 		component.ngOnInit();
 
 		expect(component.airplanePowerCache).toEqual(expectedFeature);
-		expect(localCacheServiceSpy).toHaveBeenCalledWith(LocalStorageKey.AirplanePowerModeCapability, expectedFeature);
+		expect(localCacheServiceSpy).toHaveBeenCalledWith(
+			LocalStorageKey.AirplanePowerModeCapability,
+			expectedFeature
+		);
 	});
 });
 
@@ -932,9 +1113,14 @@ describe('Battery Charge Threshold', () => {
 			declarations: [SubpageDeviceSettingsPowerComponent],
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslationModule, HttpClientModule, RouterTestingModule],
-			providers: [ LocalCacheService, DevService, MetricService,
-				CommonMetricsService, HypothesisService, TranslateStore,
-			]
+			providers: [
+				LocalCacheService,
+				DevService,
+				MetricService,
+				CommonMetricsService,
+				HypothesisService,
+				TranslateStore,
+			],
 		}).compileComponents();
 
 		fixture = TestBed.createComponent(SubpageDeviceSettingsPowerComponent);
@@ -946,7 +1132,9 @@ describe('Battery Charge Threshold', () => {
 		const enabledChargeThreshold = new ChargeThreshold();
 		enabledChargeThreshold.checkboxValue = true;
 		const chargeThresholds = [enabledChargeThreshold];
-		spyOn(batteryService, 'getChargeThresholdInfo').and.returnValue(observableOf(chargeThresholds));
+		spyOn(batteryService, 'getChargeThresholdInfo').and.returnValue(
+			observableOf(chargeThresholds)
+		);
 
 		component.ngOnInit();
 

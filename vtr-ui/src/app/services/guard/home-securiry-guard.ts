@@ -10,12 +10,11 @@ import { Observable } from 'rxjs/internal/Observable';
 	providedIn: 'root',
 })
 export class HomeSecurityGuard extends BasicGuard {
-
 	constructor(
 		private configService: ConfigService,
 		public guardConstants: GuardConstants,
 		public commonService: CommonService
-	) { 
+	) {
 		super(commonService, guardConstants);
 	}
 

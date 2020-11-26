@@ -1,4 +1,4 @@
-@import "../../../app.theme.scss";
+@import '../../../app.theme.scss';
 
 .vtr-modal-reboot-machine {
 	&.modal-body {
@@ -21,7 +21,7 @@
 					@include outline-blue;
 				}
 			}
-			}
+		}
 	}
 
 	fa-icon {
@@ -77,6 +77,6 @@
 			color: $blueHover;
 			border-bottom: 2px solid $blueHover;
 			cursor: pointer;
-		  }
+		}
 	}
 }

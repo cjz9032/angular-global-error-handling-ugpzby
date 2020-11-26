@@ -1,16 +1,8 @@
-import {
-	EventTypes
-} from '@lenovo/tan-client-bridge';
+import { EventTypes } from '@lenovo/tan-client-bridge';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import {
-	CommonService
-} from 'src/app/services/common/common.service';
-import {
-	LocalStorageKey
-} from 'src/app/enums/local-storage-key.enum';
-import {
-	TranslateService
-} from '@ngx-translate/core';
+import { CommonService } from 'src/app/services/common/common.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { TranslateService } from '@ngx-translate/core';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 export class FingerPrintLandingViewModel {
@@ -36,36 +28,45 @@ export class FingerPrintLandingViewModel {
 			this.setWhStatus(data);
 		});
 
-		translate.stream([
-			'common.securityAdvisor.loading',
-			'common.securityAdvisor.enrolled',
-			'common.securityAdvisor.notEnrolled',
-			'security.landing.fingerprint',
-			'security.landing.fingerprintContent',
-			'security.landing.visitFingerprint',
-		]).subscribe((res: any) => {
-			this.translateString = res;
-			if (!this.whStatus.detail) {
-				this.whStatus.detail = res['common.securityAdvisor.loading'];
-			}
-			this.whStatus.title = res['security.landing.fingerprint'];
-			this.whStatus.content = res['security.landing.fingerprintContent'];
-			this.whStatus.buttonLabel = res['security.landing.visitFingerprint'];
-			const cacheStatus = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus);
-			if (whModel && whModel.fingerPrintStatus) {
-				this.setWhStatus(whModel.fingerPrintStatus);
-			} else if (cacheStatus) {
-				this.setWhStatus(cacheStatus);
-			}
-		});
+		translate
+			.stream([
+				'common.securityAdvisor.loading',
+				'common.securityAdvisor.enrolled',
+				'common.securityAdvisor.notEnrolled',
+				'security.landing.fingerprint',
+				'security.landing.fingerprintContent',
+				'security.landing.visitFingerprint',
+			])
+			.subscribe((res: any) => {
+				this.translateString = res;
+				if (!this.whStatus.detail) {
+					this.whStatus.detail = res['common.securityAdvisor.loading'];
+				}
+				this.whStatus.title = res['security.landing.fingerprint'];
+				this.whStatus.content = res['security.landing.fingerprintContent'];
+				this.whStatus.buttonLabel = res['security.landing.visitFingerprint'];
+				const cacheStatus = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus
+				);
+				if (whModel && whModel.fingerPrintStatus) {
+					this.setWhStatus(whModel.fingerPrintStatus);
+				} else if (cacheStatus) {
+					this.setWhStatus(cacheStatus);
+				}
+			});
 	}
 
 	setWhStatus(finger: string) {
 		if (!this.translateString) {
 			return;
 		}
-		this.whStatus.detail = this.translateString[`common.securityAdvisor.${finger === 'active' ? 'enrolled' : 'notEnrolled'}`];
+		this.whStatus.detail = this.translateString[
+			`common.securityAdvisor.${finger === 'active' ? 'enrolled' : 'notEnrolled'}`
+		];
 		this.whStatus.status = finger === 'active' ? 'enabled' : 'disabled';
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus, finger);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.SecurityLandingWindowsHelloFingerprintStatus,
+			finger
+		);
 	}
 }

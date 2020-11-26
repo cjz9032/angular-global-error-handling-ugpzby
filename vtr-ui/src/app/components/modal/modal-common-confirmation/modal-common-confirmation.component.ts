@@ -5,7 +5,7 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 @Component({
 	selector: 'vtr-modal-common-confirmation',
 	templateUrl: './modal-common-confirmation.component.html',
-	styleUrls: ['./modal-common-confirmation.component.scss']
+	styleUrls: ['./modal-common-confirmation.component.scss'],
 })
 export class ModalCommonConfirmationComponent implements OnInit {
 	@Input() header: string;
@@ -21,10 +21,9 @@ export class ModalCommonConfirmationComponent implements OnInit {
 	@Output() OkClick = new EventEmitter<any>();
 	@Output() CancelClick = new EventEmitter<any>();
 
-	constructor(public activeModal: NgbActiveModal) { }
+	constructor(public activeModal: NgbActiveModal) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	// closeModal() {
 	// 	this.activeModal.close('close');

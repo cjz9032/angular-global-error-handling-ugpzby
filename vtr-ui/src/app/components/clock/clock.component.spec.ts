@@ -8,9 +8,8 @@ xdescribe('ClockComponent', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [ClockComponent]
-		})
-			.compileComponents();
+			declarations: [ClockComponent],
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {

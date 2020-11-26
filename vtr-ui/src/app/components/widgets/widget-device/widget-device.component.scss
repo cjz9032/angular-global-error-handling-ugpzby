@@ -1,58 +1,58 @@
-@import "../../../app.theme";
+@import '../../../app.theme';
 
-$size500px-hw-show1col: "only screen and (min-width: 500px) and (max-width: 800px)";
-$size800px-hw-show2col: "only screen and (min-width: 800px) and (max-width: 992px)";
-$size992px-hw-show1col: "only screen and (min-width: 992px) and (max-width: 1200px)";
-$size1200px-hw-show2col: "only screen and (min-width: 1200px)";
-$size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200px)";
+$size500px-hw-show1col: 'only screen and (min-width: 500px) and (max-width: 800px)';
+$size800px-hw-show2col: 'only screen and (min-width: 800px) and (max-width: 992px)';
+$size992px-hw-show1col: 'only screen and (min-width: 992px) and (max-width: 1200px)';
+$size1200px-hw-show2col: 'only screen and (min-width: 1200px)';
+$size500px-sw-show1col: 'only screen and (min-width: 500px) and (max-width: 1200px)';
 
 .vtr-widget-device {
 	padding: 0 !important;
 
-	.device-brief{
+	.device-brief {
 		box-shadow: $drop_shadow;
 		border-radius: $border_radius;
-		background: linear-gradient(102deg, #191C28 0%, #2F3447 100%) 0% 0% no-repeat;
+		background: linear-gradient(102deg, #191c28 0%, #2f3447 100%) 0% 0% no-repeat;
 		height: 22rem;
-		color:white;
+		color: white;
 		font-size: 1.4rem;
-		
-		.device-brief-bios{
+
+		.device-brief-bios {
 			padding-top: 2.2rem;
 			padding-left: 2.4rem;
-			p{
+			p {
 				font-weight: bold;
 				font-size: 2.4rem;
 				word-wrap: break-word;
-				&:not(:first-child){
+				&:not(:first-child) {
 					font-size: 1.4rem;
-					&:before{
-						content: "·";
+					&:before {
+						content: '·';
 						vertical-align: sub;
 						font-size: 2.4rem;
 						padding-right: 1.6rem;
 						line-height: 0;
 					}
-					&>span{
-						&:hover{
-							background-color: #F7F8FA;
+					& > span {
+						&:hover {
+							background-color: #f7f8fa;
 							border-radius: 2.2rem;
 							color: #33495e;
 							padding: 0.2rem 1.2rem;
-							a{
+							a {
 								visibility: visible;
 								outline-width: 1px;
 							}
 						}
-						span:nth-child(2){
+						span:nth-child(2) {
 							font-weight: lighter;
-							margin-left: 0.3rem;;
+							margin-left: 0.3rem;
 						}
-						a{
+						a {
 							margin-left: 1rem;
 							font-weight: lighter;
 							text-decoration: underline;
-							color:$blue-lighter;
+							color: $blue-lighter;
 							visibility: collapse;
 							outline-width: 0px;
 						}
@@ -61,7 +61,7 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 			}
 		}
 
-		.device-overall-status{
+		.device-overall-status {
 			height: 14.2rem;
 			width: 14.2rem;
 			margin-left: auto;
@@ -76,43 +76,42 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 		}
 	}
 
-	.device-detail{
+	.device-detail {
 		margin-top: 2.4rem;
 		padding: 0 !important;
 
-		.container{
+		.container {
 			padding: 0 !important;
 			margin: 0 !important;
 			max-width: 100rem;
-			.row{
+			.row {
 				padding: 1.6rem;
 			}
 		}
 
-		.device-detail-item{
+		.device-detail-item {
 			padding: 0.8rem;
 			@media #{$size500px-hw-show1col} {
 				width: 100%;
-			};
+			}
 			@media #{$size800px-hw-show2col} {
 				width: 50%;
-			};
+			}
 			@media #{$size992px-hw-show1col} {
 				width: 100%;
-			};
+			}
 			@media #{$size1200px-hw-show2col} {
 				width: 50%;
-			};
+			}
 		}
 
-		.device-detail-hw-item{
+		.device-detail-hw-item {
 			height: 16rem;
 		}
 
-		.device-detail-sw-item{
+		.device-detail-sw-item {
 			min-height: 10.8rem;
 		}
-
 	}
 
 	@media #{$black-on-white} {
@@ -122,7 +121,6 @@ $size500px-sw-show1col: "only screen and (min-width: 500px) and (max-width: 1200
 
 	@media #{$white-on-black} {
 		border: 0.1rem solid;
-		border-radius: $border_radius; 
+		border-radius: $border_radius;
 	}
-
 }
