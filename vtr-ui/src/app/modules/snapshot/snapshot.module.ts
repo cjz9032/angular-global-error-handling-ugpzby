@@ -28,10 +28,7 @@ import { CommonUiModule } from '../common/common-ui.module';
 		CUSTOM_ELEMENTS_SCHEMA
 	],
 	exports: [
-		PageSnapshotComponent,
-		SnapshotHeaderComponent,
-		SnapshotMainComponent,
-		WidgetSnapshotComponent,
+		WidgetSnapshotComponent
 	],
 	imports: [
 		CommonModule,
@@ -41,8 +38,8 @@ import { CommonUiModule } from '../common/common-ui.module';
 		SnapshotRoutingModule,
 		SharedModule,
 		PageLayoutModule,
-		ContainerCardModule,
-	],
+		ContainerCardModule
+	]
 })
 export class SnapshotModule {
 	constructor(library: FaIconLibrary) {
