@@ -4,7 +4,7 @@
 	"scripts": {
 	  "postinstall": "ngcc",
 	  "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
-	  "format:fix": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
+	  "format:fix": "prettier --config ./.prettierrc --write \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
 	  "build:dev": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev",
 	  "build:dev1": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --codeCoverage=true",
 	  "build:dev2": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=dev  && node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng test --watch=false --browsers=ChromeHeadless --codeCoverage=true",
