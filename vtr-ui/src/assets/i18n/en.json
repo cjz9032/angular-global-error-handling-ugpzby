@@ -5251,7 +5251,8 @@
 	},
 	"snapshot": {
 		"title": "Snapshot",
-		"description": "This is a snapshot POC"
+		"description": "Some description to snapshot widget",
+		"snapshotWidgetButton": "take snapshot"
 	},
 	"notification": {
 		"menu": {
