@@ -8,8 +8,9 @@ describe('PageSnapshotComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [PageSnapshotComponent],
-		}).compileComponents();
+			declarations: [ PageSnapshotComponent ]
+		})
+		.compileComponents();
 	});
 
 	beforeEach(() => {
