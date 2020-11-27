@@ -6,7 +6,7 @@ import { SnapshotStatus } from '../../enums/snapshot-enum';
 import { SnapshotService } from '../../services/snapshot.service';
 import { SnapshotHeaderComponent } from './snapshot-header.component';
 
-fdescribe('SnapshotHeaderComponent', () => {
+describe('SnapshotHeaderComponent', () => {
 	let component: SnapshotHeaderComponent;
 	let fixture: ComponentFixture<SnapshotHeaderComponent>;
 
@@ -40,7 +40,7 @@ fdescribe('SnapshotHeaderComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	fit('should show the Perform a snapshot title when snapshot screen starts', () => {
+	it('should show the Perform a snapshot title when snapshot screen starts', () => {
 		const snapshotNotStartedDescription = 'snapshot.titleNotStarted';
 
 		component.snapshotStatus = SnapshotStatus.NotStarted;
@@ -51,7 +51,7 @@ fdescribe('SnapshotHeaderComponent', () => {
 		expect(descriptionElement.textContent).toEqual(snapshotNotStartedDescription);
 	});
 
-	fit('should show the inProgress title when an update is started', () => {
+	it('should show the inProgress title when an update is started', () => {
 		const snapshotInProgressDescription = 'snapshot.titleSnapshotInProgress';
 
 		component.snapshotStatus = SnapshotStatus.SnapshotInProgress;
@@ -62,7 +62,7 @@ fdescribe('SnapshotHeaderComponent', () => {
 		expect(descriptionElement.textContent).toEqual(snapshotInProgressDescription);
 	});
 
-	fit('should show the completed title when an update is completed', () => {
+	it('should show the completed title when an update is completed', () => {
 		const snapshotCompletedDescription = 'snapshot.titleSnapshotCompleted';
 
 		component.snapshotStatus = SnapshotStatus.SnapshotCompleted;
@@ -73,7 +73,7 @@ fdescribe('SnapshotHeaderComponent', () => {
 		expect(descriptionElement.textContent).toEqual(snapshotCompletedDescription);
 	});
 
-	fit('should show the inProgress title when a replace baseline is started', () => {
+	it('should show the inProgress title when a replace baseline is started', () => {
 		const snapshotBaselineDescription = 'snapshot.titleBaselineInProgress';
 
 		component.snapshotStatus = SnapshotStatus.BaselineInProgress;
@@ -84,7 +84,7 @@ fdescribe('SnapshotHeaderComponent', () => {
 		expect(descriptionElement.textContent).toEqual(snapshotBaselineDescription);
 	});
 
-	fit('should show the completed title when a replace is finished', () => {
+	it('should show the completed title when a replace is finished', () => {
 		const snapshotBaselineCompletedDescription = 'snapshot.titleBaselineCompleted';
 
 		component.snapshotStatus = SnapshotStatus.BaselineCompleted;
