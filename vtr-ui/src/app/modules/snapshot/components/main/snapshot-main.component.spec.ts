@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SnapshotMainComponent } from './snapshot-main.component';
 
-xdescribe('SnapshotMainComponent', () => {
+describe('SnapshotMainComponent', () => {
 	let component: SnapshotMainComponent;
 	let fixture: ComponentFixture<SnapshotMainComponent>;
 
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [SnapshotMainComponent],
-		}).compileComponents();
-	}));
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [ SnapshotMainComponent ]
+		})
+		.compileComponents();
+	});
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(SnapshotMainComponent);

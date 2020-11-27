@@ -5264,6 +5264,8 @@
 	},
 	"snapshot": {
 		"title": "Snapshot",
+		"hardwareListTitle": "Hardware Components",
+		"softwareListTitle": "Software Components",
 		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "take snapshot"
 	},
