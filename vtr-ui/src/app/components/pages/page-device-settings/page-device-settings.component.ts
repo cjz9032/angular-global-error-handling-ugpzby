@@ -80,7 +80,18 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: false,
-		},
+		},		
+		{
+			id: 'smart-assist',
+			label: 'device.smartAssist.title',
+			path: 'device-settings/smart-assist',
+			icon: 'smart-assist',
+			iconClass: 'icomoon-Smart-Assist',
+			canDeactivate: [GuardService],
+			canActivate: [GuardService, NonArmGuard],
+			subitems: [],
+			active: false,
+		}
 	];
 	cardContentPositionA: any = {};
 	isDesktopMachine = true;

@@ -208,21 +208,6 @@
 							},
 							"adPolicyId": "E40B12CE-C5DD-4571-BBC6-7EA5879A8472",
 							"subitems": []
-						},
-						{
-							"id": "smart-assist",
-							"label": "common.menu.device.sub4",
-							"path": "smart-assist",
-							"metricsEvent": "itemClick",
-							"metricsParent": "device.device.navbar",
-							"metricsItem": "link.smartassist",
-							"externallink": false,
-							"routerLinkActiveOptions": {
-								"exact": true
-							},
-							"icon": null,
-							"sMode": true,
-							"subitems": []
 						}
 					]
 				},
@@ -307,6 +292,21 @@
 							"routerLinkActiveOptions": {
 								"exact": true
 							},
+							"sMode": true,
+							"subitems": []
+						},
+						{
+							"id": "smart-assist",
+							"label": "common.menu.device.sub4",
+							"path": "smart-assist",
+							"metricsEvent": "itemClick",
+							"metricsParent": "device.device.navbar",
+							"metricsItem": "link.smartassist",
+							"externallink": false,
+							"routerLinkActiveOptions": {
+								"exact": true
+							},
+							"icon": null,
 							"sMode": true,
 							"subitems": []
 						}

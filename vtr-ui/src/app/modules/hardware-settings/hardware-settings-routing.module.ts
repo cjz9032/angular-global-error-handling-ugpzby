@@ -87,18 +87,18 @@ const routes: Routes = [
 					pageName: 'Device.MyDeviceSettings',
 				},
 			},
+			{
+				path: 'smart-assist',
+				component: PageSmartAssistComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, NonGamingGuard, NonArmGuard],
+		
+				data: {
+					pageName: 'Device.SmartAssist',
+					pageContent: 'My Device Status',
+				},
+			},
 		],
-	},
-	{
-		path: 'smart-assist',
-		component: PageSmartAssistComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonGamingGuard, NonArmGuard],
-
-		data: {
-			pageName: 'Device.SmartAssist',
-			pageContent: 'My Device Status',
-		},
 	},
 	{
 		path: 'system-updates',
