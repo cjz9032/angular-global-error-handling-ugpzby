@@ -5,6 +5,7 @@
 	border-radius: $border_radius;
 	font-size: 1.4rem;
 	background-color: white;
+	@include high-contrast-border;
 
 	p {
 		line-height: 2rem;
@@ -23,5 +24,6 @@
 		height: 0.1rem;
 		width: 100%;
 		background-color: #e6e6e6;
+		@include high-contrast-border;
 	}
 }
