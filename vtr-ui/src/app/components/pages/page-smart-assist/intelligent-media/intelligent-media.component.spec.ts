@@ -7,7 +7,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
-// import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
+import { RouteHandlerService } from 'src/app/services/route-handler/route-handler.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
 import { IntelligentMediaComponent } from './intelligent-media.component';
 
@@ -25,7 +25,7 @@ describe('component: IntelligentMediaComponent', () => {
 				LoggerService,
 				DeviceService,
 				DevService,
-				// RouteHandlerService,
+				RouteHandlerService,
 				DisplayService,
 				TranslateService,
 				MetricService,

@@ -50,7 +50,7 @@ describe('Component: PageSmartAssistComponent', () => {
 			providers: [
 				CommonService,
 				LoggerService,
-				// RouteHandlerService,
+				RouteHandlerService,
 				DisplayService,
 				DevService,
 				CommsService,
@@ -104,7 +104,7 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 
-			// component.superResolution = new FeatureStatus(false, true);
+			component.superResolution = new FeatureStatus(false, true);
 			const isSuperResolutionSupported = new FeatureStatus(false, true);
 			localCacheService.setLocalCacheValue(
 				LocalStorageKey.SmartAssistCapability,
@@ -224,7 +224,7 @@ describe('Component: PageSmartAssistComponent', () => {
 			component.intelligentSecurity = new IntelligentSecurity();
 			component.intelligentSecurity.isIntelligentSecuritySupported = true;
 
-			// component.superResolution = new FeatureStatus(false, true);
+			component.superResolution = new FeatureStatus(false, true);
 
 			fixture.detectChanges();
 

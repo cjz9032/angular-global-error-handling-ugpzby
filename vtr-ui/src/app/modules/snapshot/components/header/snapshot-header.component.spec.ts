@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SnapshotStatus } from '../../enums/snapshot-enum';
 import { SnapshotService } from '../../services/snapshot.service';
@@ -14,6 +15,7 @@ fdescribe('SnapshotHeaderComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
+			imports: [TranslateModule.forRoot()],
 			declarations: [SnapshotHeaderComponent],
 			providers: [
 				{

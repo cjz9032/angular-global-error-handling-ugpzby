@@ -82,7 +82,7 @@ describe('Battery Details Component:', () => {
 	it('should create component', waitForAsync(() => {
 		fixture = TestBed.createComponent(BatteryDetailComponent);
 		component = fixture.componentInstance;
-		// component.dataInfo = [...dataInfo];
+		component.dataInfo = [...dataInfo];
 		component.dataConditions = [...dataConditionsGood];
 		component.dataIndicator = dataIndicator;
 		fixture.detectChanges();
@@ -92,7 +92,7 @@ describe('Battery Details Component:', () => {
 	it('should call preProcessBatteryDetailResponse with no deviceChemistry', waitForAsync(() => {
 		fixture = TestBed.createComponent(BatteryDetailComponent);
 		component = fixture.componentInstance;
-		// component.dataInfo = [...dataInfo];
+		component.dataInfo = [...dataInfo];
 		component.dataInfo[0].deviceChemistry = '';
 		component.dataConditions = [...dataConditionsGood];
 		component.dataIndicator = dataIndicator;

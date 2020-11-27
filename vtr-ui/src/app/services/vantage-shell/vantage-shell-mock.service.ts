@@ -2277,6 +2277,15 @@ export class VantageShellService {
 	}
 	// ==================== End Hardware Scan
 
+	// ==================== Start Snapshot
+	public getSnapshot(): any {
+		if (this.phoenix) {
+			return this.phoenix.snapshot;
+		}
+		return undefined;
+	}
+	// ==================== End Snapshot
+
 	public getMouseAndTouchPad(): any {
 		const inputControlLinks: any = {
 			GetMouseCapability: this.getPromise(true),

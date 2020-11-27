@@ -24,7 +24,7 @@ export class SnapshotHeaderComponent implements OnInit {
 		.then((async() => {
 			await this.delay(5000);
 		}))
-		.finally(() => 
+		.finally(() =>
 		{
 			this.disableSnapshotButton = false;
 			this.snapshotStatus = SnapshotStatus.SnapshotCompleted;
@@ -39,7 +39,7 @@ export class SnapshotHeaderComponent implements OnInit {
 		.then((async() => {
 			await this.delay(3000);
 		}))
-		.finally(() => 
+		.finally(() =>
 		{
 			this.disableSnapshotButton = false;
 			this.snapshotStatus = SnapshotStatus.BaselineCompleted;
