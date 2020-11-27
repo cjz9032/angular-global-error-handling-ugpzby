@@ -1,5 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { SnapshotService } from '../../snapshot/services/snapshot.service';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
@@ -12,11 +11,9 @@ import { ContentActionType } from 'src/app/enums/content.enum';
 })
 export class PageSnapshotComponent implements OnInit {
 
-	@Output() installedProgramInfo: EventEmitter<any> = new EventEmitter();
 	hardwareScanSupportCard: FeatureContent = new FeatureContent();
 
 	constructor(
-		private snapshotService: SnapshotService,
 		private translate: TranslateService,
 		private commonService: CommonService
 	) { }
