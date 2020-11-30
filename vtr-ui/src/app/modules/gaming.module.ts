@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler } from '@angular/core';
 import { PageMacrokeyComponent } from '../components/pages/page-macrokey/page-macrokey.component';
 import { PageLightingcustomizeComponent } from '../components/pages/page-lightingcustomize/page-lightingcustomize.component';
-import { UiLightingProfileToggleComponent } from '../components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { UiLightingEffectComponent } from '../components/ui/ui-lighting-effect/ui-lighting-effect.component';
 import { UiLightingSingleColorComponent } from '../components/ui/ui-lighting-single-color/ui-lighting-single-color.component';
 import { UiColorWheelComponent } from '../components/ui/ui-color-wheel/ui-color-wheel.component';
@@ -47,7 +46,6 @@ import { FeedbackModule } from './feedback/feedback.module';
 		PageMacrokeyComponent,
 		PageLightingcustomizeComponent,
 		PageAutocloseComponent,
-		UiLightingProfileToggleComponent,
 		UiLightingEffectComponent,
 		UiLightingSingleColorComponent,
 		UiColorWheelComponent,

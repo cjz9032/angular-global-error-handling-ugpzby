@@ -33,6 +33,7 @@ export class WidgetLightingComponent implements OnInit {
 	public ledSwitchButtonFeature: boolean;
 	profileChangeEvent: any;
 	private notificationSubscribe: Subscription;
+	public isWidgetContainer:boolean = true;
 
 	constructor(
 		private ngZone: NgZone,
