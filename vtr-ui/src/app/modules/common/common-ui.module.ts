@@ -29,7 +29,7 @@ import { ContainerCollapsibleComponent } from 'src/app/components/container-coll
 import { UiBrightnessSliderComponent } from 'src/app/components/ui/ui-brightness-slider/ui-brightness-slider.component';
 import { UiAddReduceButtonComponent } from 'src/app/components/ui/ui-add-reduce-button/ui-add-reduce-button.component';
 import { UiGamingSliderComponent } from 'src/app/components/ui/ui-gaming-slider/ui-gaming-slider.component';
-
+import { UiLightingProfileToggleComponent } from 'src/app/components/ui/ui-lighting-profile-toggle/ui-lighting-profile-toggle.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
@@ -79,6 +79,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		UiDeviceinfoItemComponent,
 		UiGamingSliderComponent,
 		UiExclamationPointComponent,
+		UiLightingProfileToggleComponent
 	],
 	exports: [
 		UiCheckboxComponent,
@@ -112,6 +113,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		UiDeviceinfoItemComponent,
 		UiGamingSliderComponent,
 		UiExclamationPointComponent,
+		UiLightingProfileToggleComponent
 	],
 	imports: [
 		CommonModule,

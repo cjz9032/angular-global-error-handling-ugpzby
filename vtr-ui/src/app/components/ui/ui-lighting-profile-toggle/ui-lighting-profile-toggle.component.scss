@@ -85,6 +85,12 @@
 			position: relative;
 			z-index: 1;
 			cursor: pointer;
+			.widget-num {
+				display: none;
+				&+span {
+				  display: block;	
+				}
+			}
 			.num {
 				display: none;
 			}
@@ -107,7 +113,20 @@
 			}
 		}
 	}
-
+	.toggle-stable {
+		position: absolute;
+		background: $gaming_lighting_gradient;
+		width: 25%;
+		height: 4.2rem;
+		border-radius: 4.2rem;
+		margin: 0.4rem 0.2rem;
+		transition: all 0.3s ease-in-out;
+		left: 0;
+		color: $gaming_lightest !important;
+		// .num {
+		//   color: $gaming_lightest !important;
+		// }
+	}
 	.toggle {
 		position: absolute;
 		background: $gaming_lighting_gradient;
