@@ -8,14 +8,16 @@
             </svg>
         </div>
         <section id="battery-health-lifespan" class="col-right">
-            <h5 class="desc" id="battery-health-lifespan-desc" role="text">
+            <h5 class="desc" id="battery-health-lifespan-desc" attr.aria-label="predicted lifespan">
                 {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.lifeSpan' | translate }}
             </h5>
 			<p *ngIf="lifeSpan; else lifeSpan_errorTemp" class="desc-light" id="battery-health-lifespan-months" role="text">
                 {{lifeSpan}} {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.months' | translate }}
             </p>
             <ng-template #lifeSpan_errorTemp>
-                <vtr-ui-exclamation-point attr.aria-label="battery health lifespan data is not available"></vtr-ui-exclamation-point>
+				<div style="display:inline-block; padding-bottom: 8px;" [attr.aria-label]="'battery health lifespan data is not available'" role="img">
+					<vtr-ui-exclamation-point ></vtr-ui-exclamation-point>
+				</div>
             </ng-template>
         </section>
     </div>
