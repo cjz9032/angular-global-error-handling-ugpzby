@@ -47,7 +47,7 @@
 				</div>
 			</span>
 		</div>
-		<ng-container *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable)">
+		<ng-container *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable) && isHamburgerAvailable">
 			<button mat-icon-button
 				[matMenuTriggerFor]="hamburgerDropdownMenu?.matMenu"
 				id="menu-main-btn-navbar-toggler"
@@ -72,7 +72,7 @@
 				[currentRoutePath]="currentRoutePath">
 			</vtr-material-hamburger-menu>
 		</ng-container>
-		<div *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable)"
+		<div *ngIf="!loadMenuItem?.hideMenus && (loadMenuItem?.firstRunDate?.length || !deviceService.isShellAvailable) && isDefaultMenuAvailable"
 			class="h-100 flex-1 menu-container"
 			#menuTarget>
 			<ul class="h-100 ml-auto list-unstyled row justify-content-end">

@@ -78,6 +78,8 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	showSearchBox = false;
 	activeItemId: string;
 	currentRoutePath: string;
+	isHamburgerAvailable = false;
+	isDefaultMenuAvailable = false;
 	private subscription: Subscription;
 	private backlightCapabilitySubscription: Subscription;
 	private topRowFnSubscription: Subscription;
@@ -123,11 +125,13 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 			}
 		);
 		this.initComponent();
+		this.updateMenuVisibility();
 		window.addEventListener(
 			'resize',
 			throttle(
 				() => {
 					this.closeAllMatMenu();
+					this.updateMenuVisibility();
 				},
 				100,
 				{ leading: true }
@@ -168,6 +172,14 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		if (menu && menu.length > 0) {
 			this.items = menu;
 			this.preloadImages = this.collectPreloadAssets(menu);
+		}
+	}
+
+	private updateMenuVisibility() {
+		if (document.documentElement.clientWidth < 1200) {
+			this.isHamburgerAvailable = true;
+		} else {
+			this.isDefaultMenuAvailable = true;
 		}
 	}
 
