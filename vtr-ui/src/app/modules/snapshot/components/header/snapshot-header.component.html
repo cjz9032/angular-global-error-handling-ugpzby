@@ -1,20 +1,20 @@
 <div class="vtr-snapshot-header">
 	<div class="row">
-		<h2 id="snapshot-title" class="col title"
+		<h2 id="snapshot-header-title" class="col title"
 			[ngClass]="{'animated-dots': disableSnapshotButton }"
 		>{{ ('snapshot.') + snapshotStatus | translate }}</h2>
 	</div>
 	<div class="row">
 		<div class="col button-row">
 			<vtr-ui-button
-				linkId="snapshot-take-snapshot-btn"
+				linkId="snapshot-header-take-snapshot-btn"
 				[vtrMetricEnabled]="false"
 				[label]= "'snapshot.snapshotWidgetButton' | translate"
 				[isDisabled]="disableSnapshotButton"
 				(onClick)="onTakeSnapshot()">
 			</vtr-ui-button>
 			<vtr-ui-hyperlink-button
-				linkId="snapshot-replace-baseline-btn"
+				linkId="snapshot-header-replace-baseline-btn"
 				linkRole="button"
 				class="hyperlink-container"
 				hyperlinkStyle="xs-white"

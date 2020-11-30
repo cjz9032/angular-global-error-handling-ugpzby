@@ -4348,6 +4348,20 @@
 		"na": "N/D",
 		"exportLog": "Esporta log"
 	},
+	"snapshot": {
+		"title": "Snapshot",
+		"hardwareListTitle": "Hardware Components",
+		"softwareListTitle": "Software Components",
+		"description": "Some description to snapshot widget",
+		"snapshotWidgetButton": "take snapshot",
+		"titleNotStarted": "Perform a Snapshot",
+		"titleSnapshotCompleted": "Snapshot Completed",
+		"titleSnapshotInProgress": "The Snapshot may take some time as it needs to load all the components",
+		"titleBaselineCompleted": "Replace Baseline Completed",
+		"titleBaselineInProgress": "The Baseline updates may take some time as it needs to load all the components",
+		"snapshotUpdateButton": "Update",
+		"replaceBaseline": "Replace Baseline"
+	},
 	"smartPerformance": {
 		"title": "Smart Performance",
 		"back": "INDIETRO",
