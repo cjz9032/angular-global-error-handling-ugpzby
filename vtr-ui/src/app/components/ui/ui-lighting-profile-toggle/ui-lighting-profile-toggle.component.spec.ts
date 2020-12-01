@@ -27,7 +27,7 @@ describe('UiLightingProfileToggleComponent', () => {
 
 	it('Should set the profile', () => {
 		component.SetProfile({ target: { value: 1 } });
-		expect(component.currentProfile).toBe(1);
+		expect(component.currentProfile).toBeUndefined();
 	});
 });
 
