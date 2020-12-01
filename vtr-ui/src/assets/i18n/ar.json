@@ -4363,7 +4363,7 @@
 		"titleBaselineInProgress": "The Baseline updates may take some time as it needs to load all the components",
 		"snapshotUpdateButton": "Update",
 		"replaceBaseline": "Replace Baseline"
-	}
+	},
 	"smartPerformance": {
 		"title": "Smart Performance",
 		"back": "السابق",
