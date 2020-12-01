@@ -136,64 +136,32 @@
 		transition: left 0.3s ease-in-out;
 		left: 0;
 	}
-	#profile_off_radio:checked {
-		& ~ #gaming_profile_RGBlighting_profile_off {
+	#profile_off_radio:checked, #off_radio:checked, #single_off_radio:checked {
+		& ~ #gaming_profile_RGBlighting_profile_off, & ~ #gaming_single_lighting_profile_off, & ~ #gaming_dashboard_lighting_profile_off {
 			color: $gaming_lightest;
 		}
 		& ~ .toggle {
 			left: 0%;
 		}
 	}
-	#profile_first_radio:checked {
-		& ~ #gaming_profile_RGBlighting_profile1 {
+	#profile_first_radio:checked, #first_radio:checked, #single_first_radio:checked {
+		& ~ #gaming_profile_RGBlighting_profile1, & ~ #gaming_single_lighting_profile1, & ~ #gaming_dashboard_lighting_profile1 {
 			color: $gaming_lightest;
 		}
 		& ~ .toggle {
 			left: 25%;
 		}
 	}
-	#profile_second_radio:checked {
-		& ~ #gaming_profile_RGBlighting_profile2 {
+	#profile_second_radio:checked, #second_radio:checked, #single_second_radio:checked {
+		& ~ #gaming_profile_RGBlighting_profile2, & ~ #gaming_single_lighting_profile2, & ~ #gaming_dashboard_lighting_profile2 {
 			color: $gaming_lightest;
 		}
 		& ~ .toggle {
 			left: 50%;
 		}
 	}
-	#profile_third_radio:checked {
-		& ~ #gaming_profile_RGBlighting_profile3 {
-			color: $gaming_lightest;
-		}
-		& ~ .toggle {
-			left: 75%;
-		}
-	}
-	#single_off_radio:checked {
-		& ~ #gaming_single_lighting_profile_off {
-			color: $gaming_lightest;
-		}
-		& ~ .toggle {
-			left: 0%;
-		}
-	}
-	#single_first_radio:checked {
-		& ~ #gaming_single_lighting_profile1 {
-			color: $gaming_lightest;
-		}
-		& ~ .toggle {
-			left: 25%;
-		}
-	}
-	#single_second_radio:checked {
-		& ~ #gaming_single_lighting_profile2 {
-			color: $gaming_lightest;
-		}
-		& ~ .toggle {
-			left: 50%;
-		}
-	}
-	#single_third_radio:checked {
-		& ~ #gaming_single_lighting_profile3 {
+	#profile_third_radio:checked, #third_radio:checked, #single_third_radio:checked {
+		& ~ #gaming_profile_RGBlighting_profile3, & ~ #gaming_single_lighting_profile3, & ~ #gaming_dashboard_lighting_profile3 {
 			color: $gaming_lightest;
 		}
 		& ~ .toggle {
