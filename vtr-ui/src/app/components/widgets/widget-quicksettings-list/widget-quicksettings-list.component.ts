@@ -281,7 +281,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			);
 		}
 
-		if(this.dolbySettings.available) {
+		if(this.dolbySettings !== undefined && this.dolbySettings.available) {
 			this.unRegisterDolbyEvent();
 		}
 
