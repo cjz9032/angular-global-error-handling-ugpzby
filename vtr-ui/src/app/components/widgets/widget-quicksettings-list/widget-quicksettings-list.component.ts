@@ -1,31 +1,20 @@
-import { Component, HostListener, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-// It is better to import the bridge in service, but there is no service belong to wifi security to integrate all dependency
-import {
-	EventTypes,
-	PluginMissingError,
-	SecurityAdvisor,
-	WifiSecurity,
-} from '@lenovo/tan-client-bridge';
+import { Component, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
-import { ThermalModeStatus } from 'src/app/data-models/gaming/thermal-mode-status.model';
-import { Gaming } from 'src/app/enums/gaming.enum';
+import { EventTypes, SecurityAdvisor, WifiSecurity} from '@lenovo/tan-client-bridge';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
-import { AudioService } from 'src/app/services/audio/audio.service';
+import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
+import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
 import { CommonService } from 'src/app/services/common/common.service';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingThermalModeService } from 'src/app/services/gaming/gaming-thermal-mode/gaming-thermal-mode.service';
-import { GuardService } from 'src/app/services/guard/guardService.service';
-import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { DialogService } from './../../../services/dialog/dialog.service';
 import { PowerService } from './../../../services/power/power.service';
+import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
+import { DialogService } from './../../../services/dialog/dialog.service';
+import { AudioService } from 'src/app/services/audio/audio.service';
 
 @Component({
 	selector: 'vtr-widget-quicksettings-list',
@@ -34,14 +23,13 @@ import { PowerService } from './../../../services/power/power.service';
 })
 export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	@Input() title = '';
-	securityAdvisor: SecurityAdvisor;
-	wifiSecurity: WifiSecurity;
-	public thermalModeStatusObj = new ThermalModeStatus();
-	public setThermalModeStatus: any;
-	public gamingCapabilities: any = new GamingAllCapabilities();
-	private notificationService: Subscription;
-
-	public quickSettings = [
+	public quickSettingsListIndex = {
+		thermalMode: 0,
+		rapidCharge: 1,
+		wifiSecurity: 2,
+		dolby: 3
+	}
+	public quickSettingsList = [
 		{
 			readMoreText: '',
 			rightImageSource: '',
@@ -129,8 +117,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			isQuickSettings: true,
 		},
 	];
-
-	public drop = {
+	public thermalModeDropList = {
 		curSelected: 2,
 		modeType: 2,
 		dropOptions: [
@@ -163,556 +150,139 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			},
 		],
 	};
+
+	
+	public gamingCapabilities = new GamingAllCapabilities();
 	public isQuickSettingsVisible = false;
-	wsPluginMissingEventHandler = () => {
-		this.updateWifiSecurityState(false);
-		this.handleError(new PluginMissingError());
-	};
-	wsIsSupportWifiEventHandler = (res) => {
-		this.updateWifiSecurityState(res);
-	};
-	wsStateEventHandler = (value) => {
-		if (value) {
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.SecurityWifiSecurityState,
-				value
-			);
-			if (this.wifiSecurity.isLocationServiceOn !== undefined) {
-				if (value === 'enabled' && this.wifiSecurityService.isLWSEnabled === true) {
-					this.quickSettings[2].isChecked = true;
-				} else {
-					this.quickSettings[2].isChecked = false;
-				}
-			}
-		}
-	};
-	wsIsLocationServiceOnEventHandler = (value) => {
-		this.ngZone.run(() => {
-			if (value !== undefined) {
-				if (
-					!value &&
-					this.wifiSecurity.state === 'enabled' &&
-					this.wifiSecurity.hasSystemPermissionShowed
-				) {
-					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-					this.quickSettings[2].isChecked = false;
-				} else if (value) {
-					if (
-						this.commonService.getSessionStorageValue(
-							SessionStorageKey.SecurityWifiSecurityLocationFlag
-						) === 'yes'
-					) {
-						this.commonService.setSessionStorageValue(
-							SessionStorageKey.SecurityWifiSecurityLocationFlag,
-							'no'
-						);
-						this.wifiSecurity.enableWifiSecurity();
-					}
-					if (this.wifiSecurityService.isLWSEnabled) {
-						this.quickSettings[2].isChecked = true;
-					} else {
-						this.quickSettings[2].isChecked = false;
-					}
-				}
-			}
-		});
-	};
+	// only support thermal mode 1.0
+	public thermalModeEvent: any;
+	public rapidChargeSettings: any;
+	public locationServiceState = false;
+	public dolbySettings: DolbyModeResponse;
+	private notificationService: Subscription;
 
-	thermalModeEvent: any;
-
+	// public wifiSecurity: WifiSecurity;
+	// public securityAdvisor: SecurityAdvisor;
+	
+	
 	constructor(
-		public wifiSecurityService: WifiSecurityService,
+		public shellServices: VantageShellService,
+		private commonService: CommonService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingThermalModeService: GamingThermalModeService,
-		private commonService: CommonService,
-		private localCacheService: LocalCacheService,
-		public shellServices: VantageShellService,
-		private audioService: AudioService,
 		private powerService: PowerService,
+		private wifiSecurityService: WifiSecurityService,
+		private localCacheService: LocalCacheService,
 		private dialogService: DialogService,
-		private ngZone: NgZone,
-		private guard: GuardService,
-		private router: Router,
-		private logger: LoggerService
-	) {
-		this.thermalModeEvent = this.onRegThermalModeEvent.bind(this);
-	}
+		private audioService: AudioService,
+		private logger: LoggerService,
+		private ngZone: NgZone
+	) {}
 
 	ngOnInit() {
-		this.initializeWifiSecCache();
-		this.initialiseDolbyCache();
-		this.initialiseRapidChargeCache();
-		this.getDolbySettings();
-		this.initialiseRapidChargeSettings();
-		this.getWifiSecuritySettings();
-		this.runLocationService();
+		//////////////////////////////////////////////////////////////////////
+		// Get capabilities from cache                                      //
+		// Feature 0: Smart fan feature & thermal Mode version              //
+		// Feature 1: Rapid charge                                          //
+		// Feature 2: Wifi Security                                         //
+		// Feature 3: Dolby                                                 //
+		//////////////////////////////////////////////////////////////////////
 		this.gamingCapabilities.smartFanFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.smartFanFeature
-		);
-		this.gamingCapabilities.smartFanStatus = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.PrevThermalModeStatus
 		);
 		this.gamingCapabilities.thermalModeVersion = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.thermalModeVersion
 		);
-
-		if (!this.gamingCapabilities.smartFanFeature) {
-			this.quickSettings[0].isVisible = false;
+		if (this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 1) {
+			this.quickSettingsList[this.quickSettingsListIndex.thermalMode].isVisible = true;
 		}
-
-		this.checkQuickSettingsVisibility();
-		// Initialize Quicksetting;
-		this.quicksettingListInit();
-		// Binding regThermalMode event
-		if (
-			this.gamingCapabilities.smartFanFeature &&
-			this.gamingCapabilities.thermalModeVersion === 1
-		) {
-			this.registerThermalModeEvent();
-		}
-		// Version3.3 Binding regDolby event
-		if (this.quickSettings[3].isVisible) {
-			this.registerDolbyChangeEvent();
-		}
-		this.notificationService = this.commonService
-			.getCapabalitiesNotification()
-			.subscribe((response) => {
-				if (response.type === Gaming.GamingCapabilities) {
-					this.gamingCapabilities = response.payload;
-					if (
-						this.gamingCapabilities.smartFanFeature &&
-						this.gamingCapabilities.thermalModeVersion === 1
-					) {
-						this.unRegisterThermalModeEvent();
-						this.registerThermalModeEvent();
-					}
-					this.quicksettingListInit();
-				}
-			});
-	}
-
-	handleError(err) {
-		if (err && err instanceof PluginMissingError) {
-			this.quickSettings[2].isVisible = false;
-		} else {
-			this.quickSettings[2].isVisible = true;
-		}
-	}
-
-	public unRegisterThermalModeEvent() {
-		this.shellServices.unRegisterEvent(
-			EventTypes.gamingThermalModeChangeEvent,
-			this.thermalModeEvent
-		);
-	}
-
-	public registerThermalModeEvent() {
-		if (this.gamingCapabilities.smartFanFeature) {
-			this.gamingThermalModeService.regThermalModeChangeEvent();
-			this.shellServices.registerEvent(
-				EventTypes.gamingThermalModeChangeEvent,
-				this.thermalModeEvent
-			);
-		}
-	}
-
-	public onRegThermalModeEvent(status: any) {
-		if (status !== undefined) {
-			// setting previous value to localstorage
-			const regThermalModePreValue = this.GetThermalModeCacheStatus();
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.PrevThermalModeStatus,
-				regThermalModePreValue
-			);
-			// setting current value to local storage
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.CurrentThermalModeStatus,
-				status
-			);
-			// updating model with current value
-			this.thermalModeStatusObj.thermalModeStatus = status;
-			// UI binding with current value
-			this.drop.curSelected = status;
-		} else {
-			const regThermalModeObj = new ThermalModeStatus();
-			// getting previous value from localstorage
-			const thermalModePreValue = this.GetThermalModePrevCacheStatus();
-			// updating model with previous value
-			regThermalModeObj.thermalModeStatus = thermalModePreValue;
-			// UI binding with previous value
-			this.drop.curSelected = regThermalModeObj.thermalModeStatus;
-		}
-	}
-
-	public checkQuickSettingsVisibility() {
-		let isVisible = false;
-		this.quickSettings.forEach((settings: any) => {
-			if (settings.isVisible) {
-				isVisible = true;
-			}
-		});
-		this.isQuickSettingsVisible = isVisible;
-	}
-	public quicksettingListInit() {
-		const gamingStatus = this.gamingCapabilities;
-		// Version 3.2 thermalModeVersion 2.0
-		// Version 3.5 thermal mode 3
-		if (gamingStatus.thermalModeVersion === 1) {
-			this.quickSettings[0].isVisible = gamingStatus.smartFanFeature;
-			if (gamingStatus.smartFanFeature) {
-				this.renderThermalModeStatus();
-			}
-		} else {
-			this.quickSettings[0].isVisible = false;
-		}
-		this.checkQuickSettingsVisibility();
-	}
-
-	public GetThermalModeCacheStatus(): any {
-		return this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.CurrentThermalModeStatus,
-			2
-		);
-	}
-
-	public GetThermalModePrevCacheStatus(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.PrevThermalModeStatus);
-	}
-
-	public async renderThermalModeStatus() {
-		try {
-			this.drop.curSelected = this.GetThermalModeCacheStatus();
-			if (this.gamingThermalModeService) {
-				const thermalModeStatus = await this.gamingThermalModeService.getThermalModeSettingStatus();
-				if (thermalModeStatus !== undefined) {
-					this.drop.curSelected = thermalModeStatus;
-					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.CurrentThermalModeStatus,
-						this.drop.curSelected
-					);
-				}
-			}
-		} catch (error) {}
-	}
-
-	public onOptionSelected(event) {
-		if (event.target.name === 'gaming.dashboard.device.quickSettings.title') {
-			if (this.setThermalModeStatus === undefined) {
-				this.setThermalModeStatus = new ThermalModeStatus();
-			}
-			this.setThermalModeStatus.thermalModeStatus = event.option.value;
-			this.gamingThermalModeService
-				.setThermalModeSettingStatus(this.setThermalModeStatus.thermalModeStatus)
-				.then((statusValue: boolean) => {
-					if (!statusValue) {
-						this.drop.curSelected = this.GetThermalModeCacheStatus();
-					}
-					if (statusValue) {
-						// binding to UI
-						this.drop.curSelected = this.setThermalModeStatus.thermalModeStatus;
-						// updating the previous local cache value with last value of current local cache value
-						const previousValue = this.GetThermalModeCacheStatus();
-						this.localCacheService.setLocalCacheValue(
-							LocalStorageKey.PrevThermalModeStatus,
-							previousValue
-						);
-						try {
-							// updating the current local cache value
-							this.localCacheService.setLocalCacheValue(
-								LocalStorageKey.CurrentThermalModeStatus,
-								this.drop.curSelected
-							);
-						} catch (error) {
-							// fail update loading previous cache value
-							this.drop.curSelected = this.GetThermalModePrevCacheStatus();
-						}
-					}
-				})
-				.catch((error) => {
-					throw new Error(error.message);
-				});
-		}
-	}
-
-	public onToggleStateChanged(event: any) {
-		const { name } = event.target;
-		let status = event.target.value;
-		status = status === 'false' ? false : true;
-		if (name === 'gaming.dashboard.device.quickSettings.dolby') {
-			this.setDolbySettings(status);
-		} else if (name === 'gaming.dashboard.device.quickSettings.rapidCharge') {
-			this.setRapidChargeSettings(status);
-		} else if (name === 'gaming.dashboard.device.quickSettings.wifiSecurity') {
-			this.setWifiSecuritySettings(status);
-		}
-	}
-	public async getDolbySettings() {
-		try {
-			// version 3.3  update due to dolby API modification
-			this.audioService.getDolbyMode().then((res: DolbyModeResponse) => {
-				if (res !== undefined) {
-					this.logger.info(
-						`Widget-quicksettingslist-getDolbySettings: return value: ${res}, dolby.checked from ${this.quickSettings[3].isChecked} to: ${res.isAudioProfileEnabled}`
-					);
-					if (
-						this.quickSettings[3].isVisible !== res.available ||
-						this.quickSettings[3].isChecked !== res.isAudioProfileEnabled
-					) {
-						this.quickSettings[3].isVisible = res.available;
-						this.quickSettings[3].isChecked = res.isAudioProfileEnabled;
-						this.localCacheService.setLocalCacheValue(
-							LocalStorageKey.DolbyAudioToggleCache,
-							res
-						);
-					}
-				} else {
-					this.logger.error(
-						`Widget-quicksettingslist-getDolbySettings: return value: ${res}; dolby.visible keep ${this.quickSettings[3].isVisible}, dolby.checked keep ${this.quickSettings[3].isChecked}`
-					);
-				}
-			});
-		} catch (error) {
-			this.logger.error(
-				`Widget-quicksettingslist-getDolbySettings: get fail; Error message: `,
-				error.message
-			);
-		} finally {
-			this.checkQuickSettingsVisibility();
-		}
-	}
-
-	public async setDolbySettings(value: any) {
-		try {
-			// version 3.3 update due to dolby API modification
-			this.audioService.setDolbyAudioState(value).then((res) => {
-				if (res) {
-					this.logger.info(
-						`Widget-quicksettingslist-setDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${value}`
-					);
-					this.quickSettings[3].isChecked = value;
-					const dolbyAudioCache: DolbyModeResponse = this.localCacheService.getLocalCacheValue(
-						LocalStorageKey.DolbyAudioToggleCache
-					);
-					dolbyAudioCache.isAudioProfileEnabled = value;
-					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.DolbyAudioToggleCache,
-						dolbyAudioCache
-					);
-				} else {
-					this.quickSettings[3].isChecked = !value;
-					this.logger.error(
-						`Widget-quicksettingslist-setDolbySettings: return value: ${res}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${value}`
-					);
-				}
-			});
-		} catch (error) {
-			this.logger.error(
-				`Widget-quicksettingslist-getDolbySettings: set fail; Error message: `,
-				error.message
-			);
-		}
-	}
-
-	public async getWifiSecuritySettings() {
-		// It's unreasonable to get bridge in component, there are too many works that shouldn't do here
-		// maybe you need a wifiSecurity service to deal this processes
-		this.securityAdvisor = this.shellServices.getSecurityAdvisor();
-		this.wifiSecurity = this.securityAdvisor.wifiSecurity;
-		if (this.wifiSecurity) {
-			this.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler);
-			this.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, this.wsIsSupportWifiEventHandler);
-			this.commonService.setSessionStorageValue(
-				SessionStorageKey.SecurityWifiSecurityInGamingDashboard,
-				true
-			);
-			this.commonService.setSessionStorageValue(
-				SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
-				true
-			);
-			this.wifiSecurity.getWifiState().then(
-				(res) => {},
-				(error) => {
-					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
-				}
-			);
-			if (this.wifiSecurityService.isLWSEnabled) {
-				this.quickSettings[2].isChecked = true;
-			} else {
-				this.quickSettings[2].isChecked = false;
-			}
-			await this.wifiSecurity.refresh().catch((err) => this.handleError(err));
-			this.wifiSecurity.getWifiSecurityState();
-		}
-	}
-
-	public updateWifiSecurityState(state = false) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.WifiSecurityCache, state);
-		this.quickSettings[2].isVisible = state;
-		this.checkQuickSettingsVisibility();
-	}
-
-	public runLocationService() {
-		const wifiSecurity = this.securityAdvisor.wifiSecurity;
-		if (this.wifiSecurity) {
-			wifiSecurity
-				.on(EventTypes.wsStateEvent, this.wsStateEventHandler)
-				.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler);
-		}
-	}
-
-	public async setWifiSecuritySettings(value: any) {
-		if (
-			this.commonService.getSessionStorageValue(
-				SessionStorageKey.SecurityWifiSecurityInGamingDashboard
-			) === true
-		) {
-			if (this.wifiSecurityService.isLWSEnabled) {
-				this.wifiSecurityService.wifiSecurity.disableWifiSecurity().then((res) => {
-					if (res === true) {
-						this.wifiSecurityService.isLWSEnabled = false;
-						this.quickSettings[2].isChecked = false;
-						this.quickSettings[2].readonly = true;
-					} else {
-						this.wifiSecurityService.isLWSEnabled = true;
-						this.quickSettings[2].isChecked = true;
-						this.quickSettings[2].readonly = false;
-					}
-				});
-			} else {
-				this.wifiSecurityService.wifiSecurity.enableWifiSecurity().then(
-					(res) => {
-						if (res === true) {
-							this.wifiSecurityService.isLWSEnabled = true;
-							this.quickSettings[2].isChecked = true;
-							this.quickSettings[2].readonly = false;
-						} else {
-							this.wifiSecurityService.isLWSEnabled = false;
-							this.quickSettings[2].isChecked = false;
-							this.quickSettings[2].readonly = true;
-						}
-					},
-					(error) => {
-						this.dialogService.wifiSecurityLocationDialog(
-							this.wifiSecurityService.wifiSecurity
-						);
-						this.quickSettings[2].isChecked = false;
-						this.quickSettings[2].readonly = true;
-						this.wifiSecurityService.isLWSEnabled = false;
-					}
-				);
-			}
-		}
-	}
-
-	public initialiseDolbyCache() {
-		try {
-			// version 3.3 update due to dolby api modification
-			const dolbyAudioCache: DolbyModeResponse = this.localCacheService.getLocalCacheValue(
-				LocalStorageKey.DolbyAudioToggleCache
-			);
-			if (dolbyAudioCache) {
-				this.quickSettings[3].isVisible = dolbyAudioCache.available;
-				this.quickSettings[3].isChecked = dolbyAudioCache.isAudioProfileEnabled;
-			}
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
-	public initializeWifiSecCache() {
-		const cacheWifiSecurityState = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.SecurityWifiSecurityState
-		);
-		const status = this.localCacheService.getLocalCacheValue(LocalStorageKey.WifiSecurityCache);
-		cacheWifiSecurityState === 'enabled'
-			? (this.quickSettings[2].isChecked = true)
-			: (this.quickSettings[2].isChecked = false);
-		status === true
-			? (this.quickSettings[2].isVisible = true)
-			: (this.quickSettings[2].isVisible = false);
-	}
-
-	public async initialiseRapidChargeSettings() {
-		try {
-			const rapidChargeSettings: FeatureStatus = await this.powerService.getRapidChargeModeStatusIdeaNoteBook();
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.RapidChargeCache,
-				rapidChargeSettings
-			);
-			this.quickSettings[1].isVisible = rapidChargeSettings.available || false;
-			this.quickSettings[1].isChecked = rapidChargeSettings.status || false;
-		} catch (err) {
-		} finally {
-			this.checkQuickSettingsVisibility();
-		}
-	}
-
-	public async setRapidChargeSettings(status: any) {
-		try {
-			const isRapidChargeStatusUpdated = await this.powerService.setRapidChargeModeStatusIdeaNoteBook(
-				status
-			);
-			if (isRapidChargeStatusUpdated) {
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.RapidChargeCache, {
-					available: this.quickSettings[1].isVisible,
-					status,
-				});
-			} else {
-				this.initialiseRapidChargeCache();
-			}
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
-	public initialiseRapidChargeCache() {
-		const { available, status } = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.RapidChargeCache,
+		this.rapidChargeSettings = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.RapidChargeCache, 
 			{
 				available: false,
 				status: false,
 			}
 		);
-		this.quickSettings[1].isVisible = available;
-		this.quickSettings[1].isChecked = status;
-	}
-
-	@HostListener('window:focus')
-	onFocus(): void {
-		if (this.wifiSecurity) {
-			this.wifiSecurity.refresh().catch((err) => this.handleError(err));
+		this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isVisible = this.rapidChargeSettings.available;
+		// wifi
+		this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.WifiSecurityCache,
+			false
+		)
+		// dolby
+		this.dolbySettings = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.DolbyAudioToggleCache
+		)
+		if(this.dolbySettings) {
+			this.quickSettingsList[this.quickSettingsListIndex.dolby].isVisible = this.dolbySettings.available;
 		}
+		
+		//////////////////////////////////////////////////////////////////////
+		// Get status from cache                                            //
+		// Feature 0: Smart fan feature & thermal Mode version              //
+		// Feature 1: Rapid charge                                          //
+		// Feature 2: Wifi Security                                         //
+		// Feature 3: Dolby                                                 //
+		//////////////////////////////////////////////////////////////////////
+		if(this.quickSettingsList[this.quickSettingsListIndex.thermalMode].isVisible === true) {
+			this.thermalModeDropList.curSelected = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.CurrentThermalModeStatus
+			);
+		}
+		if(this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isVisible) {
+			this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isChecked = this.rapidChargeSettings.status;
+		}
+		// wifi
+		if(this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible) {
+			this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.SecurityWifiSecurityState
+			) === 'enabled' ? true : false;
+		}
+		// dolby
+		if(this.quickSettingsList[this.quickSettingsListIndex.dolby].isVisible) {
+			this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked = this.dolbySettings.isAudioProfileEnabled;
+		}
+		//////////////////////////////////////////////////////////////////////
+		// Initialize Quick Settings Component                              //
+		//////////////////////////////////////////////////////////////////////
+		this.quicksettingListInit();
 	}
 
 	ngOnDestroy(): void {
-		this.unRegisterThermalModeEvent();
-		this.unRegisterDolbyEvent();
-		this.commonService.setSessionStorageValue(
-			SessionStorageKey.SecurityWifiSecurityInGamingDashboard,
-			false
-		);
-		this.commonService.setSessionStorageValue(
-			SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
-			false
-		);
-		if (this.securityAdvisor !== undefined && this.securityAdvisor.wifiSecurity) {
-			this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
-			this.securityAdvisor.wifiSecurity.off(
+		if(this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 1) {
+			this.unRegisterThermalModeChangeEvent();
+		}
+
+		if (this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible) {
+			this.commonService.setSessionStorageValue(
+				SessionStorageKey.SecurityWifiSecurityInGamingDashboard,
+				false
+			);
+			this.commonService.setSessionStorageValue(
+				SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
+				false
+			);
+			this.wifiSecurityService.wifiSecurity.cancelGetWifiSecurityState();
+			this.wifiSecurityService.wifiSecurity.off(
 				EventTypes.wsStateEvent,
-				this.wsStateEventHandler
+				this.wifiSecurityStateEventHandler
 			);
-			this.securityAdvisor.wifiSecurity.off(
+			this.wifiSecurityService.wifiSecurity.off(
 				EventTypes.wsIsLocationServiceOnEvent,
-				this.wsIsLocationServiceOnEventHandler
+				this.wifiSecurityLocationServiceEventHandler
 			);
-			this.securityAdvisor.wifiSecurity.off(
+			this.wifiSecurityService.wifiSecurity.off(
 				EventTypes.wsPluginMissingEvent,
-				this.wsPluginMissingEventHandler
+				this.wifiSecurityPluginMissingEventHandler
 			);
-			this.securityAdvisor.wifiSecurity.off(
+			this.wifiSecurityService.wifiSecurity.off(
 				EventTypes.wsIsSupportWifiEvent,
-				this.wsIsSupportWifiEventHandler
+				this.wifiSecuritySupportedEventHandler
 			);
+		}
+
+		if(this.dolbySettings !== undefined && this.dolbySettings.available) {
+			this.unRegisterDolbyEvent();
 		}
 
 		if (this.notificationService) {
@@ -720,76 +290,608 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	// version 3.3 register & unregister dolby event
+
+	public quicksettingListInit() {
+		//////////////////////////////////////////////////////////////////////
+		// Render isVisiable & get status from JSBridge                     //
+		// Feature 0: Refresh gaming capabilities                           //
+		// Feature 1: Thermal Mode 1.0                                      //
+		// Feature 2: Rapid Charge                                          //
+		// Feature 3: Wifi Security                                         //
+		// Feature 4: Dolby                                                 //
+		//////////////////////////////////////////////////////////////////////
+		this.notificationService = this.commonService.getCapabalitiesNotification().subscribe((response) => {
+			if (response.type === '[Gaming] GamingCapabilities') {
+				this.gamingCapabilities = response.payload;
+				if (this.gamingCapabilities.smartFanFeature &&
+					this.gamingCapabilities.thermalModeVersion === 1
+				) {
+					this.quickSettingsList[this.quickSettingsListIndex.thermalMode].isVisible = true;
+					this.unRegisterThermalModeChangeEvent();
+					this.getThermalModeStatus();
+					this.thermalModeEvent = this.onRegThermalModeChangeEvent.bind(this);
+					this.registerThermalChangeModeEvent();
+				} else {
+					this.quickSettingsList[this.quickSettingsListIndex.thermalMode].isVisible = false;
+					this.unRegisterThermalModeChangeEvent();
+				}
+				this.checkQuickSettingsVisibility();
+			}
+		});
+		if (this.quickSettingsList[this.quickSettingsListIndex.thermalMode].isVisible === true) {
+			this.getThermalModeStatus();
+			this.thermalModeEvent = this.onRegThermalModeChangeEvent.bind(this);
+			this.registerThermalChangeModeEvent();
+		}
+		this.getRapidChargeSettings();
+		this.getWifiSecuritySupported();
+		this.getDolbySettings();
+		this.checkQuickSettingsVisibility();
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// Common Function                                                  //
+	// 1. Check quick settings visibility                               //
+	// 2. Drop down menu iption selected for thermal mode 1.0           //
+	// 2. Toggle statue changed                                         //
+	//////////////////////////////////////////////////////////////////////
+	public checkQuickSettingsVisibility() {
+		let isVisible = false;
+		this.quickSettingsList.forEach((settings: any) => {
+			if (settings.isVisible) {
+				isVisible = true;
+				this.logger.info(
+					`Widget-QuickSettingsList-CheckQuickSettingsVisibility: 
+						${settings.name} is visible`
+				);
+			}
+		});
+		this.isQuickSettingsVisible = isVisible;
+	}
+	public onOptionSelected(event) {
+		this.logger.info(
+			`Widget-QuickSettingsList-OnOptionSelected: 
+				event name is ${event.target.name}, event status is ${event.option.value}`
+		);
+		if (event.target.name === 'gaming.dashboard.device.quickSettings.title') {
+			this.setThermalModeStatus(event.option.value);
+		}
+	}
+	public onToggleStateChanged(event: any) {
+		let { name } = event.target;
+		let status = event.target.value === 'false' ? false : true;
+		this.logger.info(
+			`Widget-QuickSettingsList-OnToggleStateChanged: 
+				event name is ${event.target}, event status is ${status}`
+		);
+		if (name === 'gaming.dashboard.device.quickSettings.rapidCharge') {
+			this.setRapidChargeSettings(status);
+		} else if (name === 'gaming.dashboard.device.quickSettings.wifiSecurity') {
+			this.setWifiSecuritySettings(status);
+		} else if (name === 'gaming.dashboard.device.quickSettings.dolby') {
+			this.setDolbySettings(status);
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// Thermal Mode 1.0                                                 //
+	// 1. Get status of thermal mode from JSBridge                      //
+	// 2. Set thermal mode status                                       //
+	// 2. Register thermal mode change event                            //
+	// 3. Unregister thermal mode change event                          //
+	// 4. Callback of thermal mode change event                         //
+	//////////////////////////////////////////////////////////////////////
+	public getThermalModeStatus() {
+		try {
+			this.gamingThermalModeService.getThermalModeSettingStatus().then(res => {
+				this.logger.info(
+					`Widget-QuickSettingsList-GetThermalModeStatus: 
+						get value from ${this.thermalModeDropList.curSelected} to ${res}`
+				);
+				if(res !== undefined && res !== this.thermalModeDropList.curSelected) {
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.PrevThermalModeStatus, 
+						this.thermalModeDropList.curSelected
+					);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.CurrentThermalModeStatus, res
+					);
+					this.thermalModeDropList.curSelected = res;
+				}
+			})
+		} catch (error) {
+			this.logger.error(
+				'Widget-QuickSettingsList-GetThermalModeStatus: get fail; Error message: ', 
+				error.message
+			);
+		}
+	}
+	public setThermalModeStatus(value: number) {
+		if (value !== this.thermalModeDropList.curSelected) {
+			let prevThermalModeStatus = this.thermalModeDropList.curSelected;
+			this.thermalModeDropList.curSelected = value;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.CurrentThermalModeStatus, this.thermalModeDropList.curSelected
+			);
+			try {
+				this.gamingThermalModeService.setThermalModeSettingStatus(value).then((res) => {
+					if (res) {
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.PrevThermalModeStatus, prevThermalModeStatus
+						);
+						this.logger.info(
+							`Widget-QuickSettingsList-setThermalModeStatus: 
+								return value: ${res}, thermalmode setting from ${prevThermalModeStatus} to ${this.thermalModeDropList.curSelected}`
+						);
+					} else {
+						this.thermalModeDropList.curSelected = prevThermalModeStatus;
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.CurrentThermalModeStatus, this.thermalModeDropList.curSelected
+						);
+						this.logger.error(
+							`Widget-QuickSettingsList-setThermalModeStatus: 
+								return value: ${res}, thermalmode setting unchanged`
+						);
+					}
+				});
+			} catch (error) {
+				this.thermalModeDropList.curSelected = prevThermalModeStatus;
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.CurrentThermalModeStatus,	this.thermalModeDropList.curSelected
+				);
+				this.logger.error(
+					`Widget-QuickSettingsList-setThermalModeStatus: set fail; Error message: `, 
+					error.message
+				);
+				throw new Error(error.message);
+			}
+		}
+	}
+	public registerThermalChangeModeEvent() {
+		if (this.gamingCapabilities.smartFanFeature) {
+			try {
+				this.gamingThermalModeService.regThermalModeChangeEvent();
+				this.shellServices.registerEvent(EventTypes.gamingThermalModeChangeEvent, this.thermalModeEvent);
+				this.logger.info(
+					'Widget-QuickSettingsList-registerThermalModeEvent: register success'
+				);
+			} catch (error) {
+				this.logger.error(
+					'Widget-QuickSettingsList-registerThermalModeEvent: register fail; Error message: ', 
+					error.message
+				);
+				throw new Error(error.message);
+			}
+		}
+	}
+	public unRegisterThermalModeChangeEvent() {
+		this.shellServices.unRegisterEvent(
+			EventTypes.gamingThermalModeChangeEvent, 
+			this.thermalModeEvent
+		);
+	}
+	public onRegThermalModeChangeEvent(status: any) {
+		this.logger.info(
+			`Widget-QuickSettingsList-OnRegThermalModeEvent: 
+				call back from ${this.thermalModeDropList.curSelected} to ${status}`
+		);
+		if (status !== undefined) {
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.PrevThermalModeStatus, 
+				this.thermalModeDropList.curSelected
+			);
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.CurrentThermalModeStatus, 
+				status
+			);
+			this.thermalModeDropList.curSelected = status;
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// Rapid Charge                                                     //
+	// 1. Get rapid charge settings from JSBridge                       //
+	// 2. Set rapid charge state                                        //
+	//////////////////////////////////////////////////////////////////////
+	public getRapidChargeSettings() {
+		try {
+			this.powerService.getRapidChargeModeStatusIdeaNoteBook().then(res => {
+				this.logger.info(
+					`Widget-QuickSettingsList-getRapidChargeSettings: 
+						get value from ${this.rapidChargeSettings} to ${res}`
+				);
+				if(res !== undefined && res.available === true) {
+					if(res.status !== undefined && res.status !== this.rapidChargeSettings.status) {
+						this.rapidChargeSettings = res;
+						this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isChecked = res.status;
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.RapidChargeCache,
+							res
+						);
+					}
+				} else {
+					this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isVisible = false;
+				}
+			})
+		} catch (error) {
+			this.logger.error(
+				'Widget-QuickSettingsList-GetThermalModeStatus: get fail; Error message: ', 
+				error.message
+			);
+		} finally {
+			this.checkQuickSettingsVisibility();
+		}
+	}
+	public setRapidChargeSettings(status: any) {
+		try {
+			this.powerService.setRapidChargeModeStatusIdeaNoteBook(status).then(res => {
+				this.logger.info(
+					`Widget-QuickSettingsList-setThermalModeStatus: 
+						return value: ${res}, thermalmode setting from ${this.rapidChargeSettings} to ${status}`
+				);
+				if(res !== undefined) {
+					this.rapidChargeSettings.status = status;
+					this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isChecked = status;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.RapidChargeCache,
+						this.rapidChargeSettings
+					);
+				}
+			})
+		} catch (error) {
+			this.logger.error(
+				'Widget-QuickSettingsList-setRapidChargeSettings: get fail; Error message: ', 
+				error.message
+			);
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// Wifi Security                                                    //
+	// 1. Get wifi security supported state form JSBridge               //
+	// 2. Get wifi security state form JSBridge                         //
+	// 3. Set wifi security state                                       //
+	// 4. Handle wifi security supported change event                   //
+	// 5. Handle wifi security plugin missing event                     //
+	// 6. Handle wifi security state change event                       //
+	// 7. Handle location service change event                          //
+	//////////////////////////////////////////////////////////////////////
+	public getWifiSecuritySupported() {
+		let isSupported = this.wifiSecurityService.wifiSecurity.isSupported;
+		this.logger.info(
+			`Widget-QuickSettingsList-GetWifiSecuritySupported: 
+				get value from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible} to ${isSupported}`
+		);
+		if(isSupported !== undefined &&
+			this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible !== isSupported
+		) {
+			this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible = isSupported;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.WifiSecurityCache, 
+				isSupported
+			)
+		}
+		this.wifiSecurityService.wifiSecurity.on(EventTypes.wsIsSupportWifiEvent, this.wifiSecuritySupportedEventHandler);
+		this.wifiSecurityService.wifiSecurity.on(EventTypes.wsPluginMissingEvent, this.wifiSecurityPluginMissingEventHandler);
+		this.checkQuickSettingsVisibility();
+		if(this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible) {
+			this.getWifiSecuritySettings();
+		}
+	}
+
+	public async getWifiSecuritySettings() {
+		//  Pop up location permission dialog
+		this.wifiSecurityService.wifiSecurity.getWifiState().then(
+			(res) => {
+			},
+			(error) => {
+				this.logger.info(
+					`Widget-QuickSettingsList-GetWifiSecuritySettings: 
+						Location Service off, pop up a dialog`
+				);
+				this.dialogService.wifiSecurityLocationDialog(this.wifiSecurityService.wifiSecurity);
+			}
+		);
+		this.logger.info(
+			`Widget-QuickSettingsList-GetWifiSecuritySettings: 
+				get value from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked} to ${this.wifiSecurityService.isLWSEnabled}`
+		);
+		if(this.wifiSecurityService.isLWSEnabled !== undefined) {
+			this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = this.wifiSecurityService.isLWSEnabled;
+		}
+		this.commonService.setSessionStorageValue(
+			SessionStorageKey.SecurityWifiSecurityInGamingDashboard,
+			true
+		);
+		this.commonService.setSessionStorageValue(
+			SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
+			true
+		);
+		this.wifiSecurityService.wifiSecurity.on(EventTypes.wsStateEvent, this.wifiSecurityStateEventHandler);
+		this.wifiSecurityService.wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, this.wifiSecurityLocationServiceEventHandler);
+		// Event connected of JSBridge and plugin ???
+		this.wifiSecurityService.wifiSecurity.getWifiSecurityState();
+	}
+
+	public async setWifiSecuritySettings(value: any) {
+		if (this.wifiSecurityService.isLWSEnabled) {
+			this.wifiSecurityService.wifiSecurity.disableWifiSecurity().then((res) => {
+				this.logger.info(
+					`Widget-QuickSettingsList-SetWifiSecuritySettings: 
+						return value: ${res}, wifiSecurity state from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked} to ${!res}`
+				);
+				if (res === true) {
+					this.wifiSecurityService.isLWSEnabled = false;
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = false;
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].readonly = true;
+				} else {
+					this.wifiSecurityService.isLWSEnabled = true;
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = true;
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].readonly = false;
+				}
+			});
+		} else {
+			this.wifiSecurityService.wifiSecurity.enableWifiSecurity().then((res) => {
+				this.logger.info(
+					`Widget-QuickSettingsList-SetWifiSecuritySettings: 
+						return value: ${res}, wifiSecurity state from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked} to ${res}`
+				);
+				if (res === true) {
+					this.wifiSecurityService.isLWSEnabled = true;
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = true;
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].readonly = false;
+				} else {
+					this.wifiSecurityService.isLWSEnabled = false;
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = false;
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].readonly = true;
+				}
+			}, (error) => {
+				//  Pop up location permission dialog
+				this.logger.info(
+					`Widget-QuickSettingsList-SetWifiSecuritySettings: 
+						Location Service off, pop up a dialog`
+				);
+				this.dialogService.wifiSecurityLocationDialog(
+					this.wifiSecurityService.wifiSecurity
+				);
+				this.wifiSecurityService.isLWSEnabled = false;
+				this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = false;
+				this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].readonly = true;
+			});
+		}
+	}
+	
+	wifiSecuritySupportedEventHandler = (res) => {
+		this.logger.info(
+			`Widget-QuickSettingsList-WifiSecuritySupportedEventHandler: 
+				call back from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible} to ${res}`
+		);
+		if(res !== undefined && res !== this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible) {
+			this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible =  res;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.WifiSecurityCache, 
+				res
+			)
+			this.checkQuickSettingsVisibility();
+		}
+	};
+
+	wifiSecurityPluginMissingEventHandler = () => {
+		this.logger.info(
+			`Widget-QuickSettingsList-WifiSecurityPluginMissingEventHandler: 
+				call back from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible} to false`
+		);
+		this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible =  false;
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.WifiSecurityCache, 
+			false
+		)
+		this.checkQuickSettingsVisibility();
+	};
+
+	wifiSecurityStateEventHandler = (value) => {
+		this.logger.info(
+			`Widget-QuickSettingsList-WifiSecurityStateEventHandler: 
+				call back from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked} to ${this.wifiSecurityService.isLWSEnabled}`
+		);
+		this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = this.wifiSecurityService.isLWSEnabled;
+	};
+
+	wifiSecurityLocationServiceEventHandler = (value) => {
+		this.ngZone.run(() => {
+			if (value !== undefined) {
+				this.logger.info(
+					`Widget-QuickSettingsList-WifiSecurityLocationServiceEventHandler: 
+						location service state is ${value}`
+				);
+				if (!value && 
+					this.wifiSecurityService.wifiSecurity.state === 'enabled' && 
+					this.wifiSecurityService.wifiSecurity.hasSystemPermissionShowed
+				) {
+					this.logger.info(
+						`Widget-QuickSettingsList-WifiSecurityLocationServiceEventHandler: 
+							wifiSecurite state from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked} to false,
+							pop up a dialog`
+					);
+					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurityService.wifiSecurity);
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = false;
+					this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].readonly = true;
+				} else if (value) {
+					if (this.commonService.getSessionStorageValue(
+							SessionStorageKey.SecurityWifiSecurityLocationFlag
+						) === 'yes'
+					) {
+						this.commonService.setSessionStorageValue(
+							SessionStorageKey.SecurityWifiSecurityLocationFlag,
+							'no'
+						);
+						this.wifiSecurityService.wifiSecurity.enableWifiSecurity().then(res => {
+							this.logger.info(
+								`Widget-QuickSettingsList-WifiSecurityLocationServiceEventHandler:
+									locationFlag is yes,
+									enableWifiSecurity return value: ${res}, 
+									wifiSecurity state from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked} to ${res}`
+							);
+							if (res === true) {
+								this.wifiSecurityService.isLWSEnabled = true;
+								this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = true;
+								this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].readonly = false;
+							} else {
+								this.wifiSecurityService.isLWSEnabled = false;
+								this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = false;
+								this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].readonly = true;
+							}
+						});
+					} else {
+						this.logger.info(
+							`Widget-QuickSettingsList-WifiSecurityLocationServiceEventHandler:
+								locationFlag is no,
+								wifiSecurity state from ${this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked} to ${this.wifiSecurityService.isLWSEnabled}`
+						);
+						this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isChecked = this.wifiSecurityService.isLWSEnabled;
+					}
+				}
+			}
+		});
+	};
+	
+
+	//////////////////////////////////////////////////////////////////////
+	// Dolby                                                            //
+	// 1. Get dolby settings from JSBridge                              //
+	// 2. Set dolby status                                              //
+	// 3. Version 3.3: Register dolby change event                      //
+	// 4. Version 3.3: Unregister dolby change event                    //
+	// 5. Version 3.3: Handle dolby change event                        //
+	//////////////////////////////////////////////////////////////////////
+	public getDolbySettings() {
+		try {
+			this.audioService.getDolbyMode().then((res: DolbyModeResponse) => {
+				if (res !== undefined) {
+					this.logger.info(
+						`Widget-quicksettingslist-GetDolbySettings: 
+							return value: ${res}, dolby.checked from ${this.quickSettingsList[3].isChecked} to: ${res.isAudioProfileEnabled}`
+					);
+					if (this.quickSettingsList[this.quickSettingsListIndex.dolby].isVisible !== res.available ||
+						this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked !== res.isAudioProfileEnabled
+					) {
+						this.dolbySettings = res;
+						this.quickSettingsList[this.quickSettingsListIndex.dolby].isVisible = res.available;
+						this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked = res.isAudioProfileEnabled;
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.DolbyAudioToggleCache,
+							res
+						);
+					}
+					if(res.available) {
+						this.registerDolbyChangeEvent();
+					}
+				} else {
+					this.logger.error(
+						`Widget-quicksettingslist-GetDolbySettings: 
+							return value: ${res}; dolby.visible keep ${this.quickSettingsList[this.quickSettingsListIndex.dolby].isVisible}, 
+							dolby.checked keep ${this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked}`
+					);
+				}
+			});
+		} catch (error) {
+			this.logger.error(
+				`Widget-quicksettingslist-GetDolbySettings: get fail; Error message: `,
+				error.message
+			);
+		}
+	}
+	public setDolbySettings(value: any) {
+		try {
+			// version 3.3 update due to dolby API modification
+			this.audioService.setDolbyAudioState(value).then((res) => {
+				if (res) {
+					this.logger.info(
+						`Widget-quicksettingslist-setDolbySettings: 
+							return value: ${res}, dolbyMode from ${this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked} to: ${value}`
+					);
+					this.dolbySettings.isAudioProfileEnabled = value;
+					this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked = value;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.DolbyAudioToggleCache,
+						this.dolbySettings
+					);
+				} else {
+					this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked = !value;
+					this.logger.error(
+						`Widget-quicksettingslist-setDolbySettings: 
+							return value: ${res}, dolbyMode from ${this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked} to: ${value}`
+					);
+				}
+			});
+		} catch (error) {
+			this.logger.error(
+				`Widget-quicksettingslist-SetDolbySettings: set fail; Error message: `,
+				error.message
+			);
+		}
+	}
 	public registerDolbyChangeEvent() {
 		try {
 			this.audioService
-				.startMonitorForDolby(this.handleDolbyChangeEvent.bind(this))
-				.then((res) => {
+				.startMonitorForDolby(this.handleDolbyChangeEvent.bind(this)).then((res) => {
 					if (res) {
 						this.logger.info(
-							`Widget-quicksettingslist-registerDolbyChangeEvent: return value: ${res}`
+							`Widget-QuickSettingsList-RegisterDolbyChangeEvent: return value: ${res}`
 						);
 					} else {
 						this.logger.error(
-							`Widget-quicksettingslist-registerDolbyChangeEvent: return value: ${res}`
+							`Widget-QuickSettingsList-RegisterDolbyChangeEvent: return value: ${res}`
 						);
 					}
 				});
 		} catch (error) {
 			this.logger.error(
-				`Widget-quicksettingslist-registerDolbyChangeEvent: register fail; Error message: `,
+				`Widget-QuickSettingsList-RegisterDolbyChangeEvent: register fail; Error message: `,
 				error.message
 			);
-			throw new Error(error.message);
 		}
 	}
-
+	public unRegisterDolbyEvent() {
+		try {
+			this.audioService.stopMonitorForDolby().then((res) => {
+				if (res) {
+					this.logger.info(
+						`Widget-QuickSettingsList-UnRegisterDolbyEvent: return value: ${res}`
+					);
+				} else {
+					this.logger.error(
+						`Widget-QuickSettingsList-UnRegisterDolbyEvent: return value: ${res}`
+					);
+				}
+			});
+		} catch (error) {
+			this.logger.error(
+				`Widget-QuickSettingsList-UnRegisterDolbyEvent: unRegisterDolbyEvent fail; Error message: `,
+				error.message
+			);
+		}
+	}
 	public handleDolbyChangeEvent(dolbyModeResponse) {
-		if (
-			dolbyModeResponse.available !== undefined &&
+		if (dolbyModeResponse.available !== undefined &&
 			dolbyModeResponse.isAudioProfileEnabled !== undefined
 		) {
 			this.logger.info(
-				`Widget-quicksettingslist-handleDolbyChangeEvent: return value: ${dolbyModeResponse}, dolbyMode from ${this.quickSettings[3].isChecked} to: ${dolbyModeResponse.isAudioProfileEnabled}`
+				`Widget-quicksettingslist-handleDolbyChangeEvent: 
+					return value: ${dolbyModeResponse}, dolbyMode from ${this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked} to: ${dolbyModeResponse.isAudioProfileEnabled}`
 			);
-			if (dolbyModeResponse.isAudioProfileEnabled !== this.quickSettings[3].isChecked) {
-				this.quickSettings[3].isChecked = dolbyModeResponse.isAudioProfileEnabled;
-				const dolbyAudioCache: DolbyModeResponse = this.localCacheService.getLocalCacheValue(
-					LocalStorageKey.DolbyAudioToggleCache
-				);
-				dolbyAudioCache.isAudioProfileEnabled = dolbyModeResponse.isAudioProfileEnabled;
+			if (dolbyModeResponse.isAudioProfileEnabled !== this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked) {
+				this.dolbySettings.isAudioProfileEnabled = dolbyModeResponse.isAudioProfileEnabled
+				this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked = dolbyModeResponse.isAudioProfileEnabled;
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.DolbyAudioToggleCache,
-					dolbyAudioCache
+					this.dolbySettings
 				);
 			}
 		} else {
 			this.logger.error(
 				`Widget-quicksettingslist-handleDolbyChangeEvent: wrong response: ${dolbyModeResponse}`
 			);
-		}
-	}
-
-	public unRegisterDolbyEvent() {
-		try {
-			this.audioService.stopMonitorForDolby().then((res) => {
-				if (res) {
-					this.logger.info(
-						`Widget-quicksettingslist-unRegisterDolbyEvent: return value: ${res}`
-					);
-				} else {
-					this.logger.error(
-						`Widget-quicksettingslist-unRegisterDolbyEvent: return value: ${res}`
-					);
-				}
-			});
-		} catch (error) {
-			this.logger.error(
-				`Widget-quicksettingslist-unRegisterDolbyEvent: unRegisterDolbyEvent fail; Error message: `,
-				error.message
-			);
-			throw new Error(error.message);
 		}
 	}
 }

@@ -9,8 +9,8 @@
 				<div class="col quickSettings-list-items" title="">
 					<vtr-widget-device-update-settings
 						componentName="Quick Setting"
-						[items]="quickSettings"
-						[options]="drop"
+						[items]="quickSettingsList"
+						[options]="thermalModeDropList"
 						(toggleOnOff)="onToggleStateChanged($event)"
 						(optionSelected)="onOptionSelected($event)">
 					</vtr-widget-device-update-settings>
