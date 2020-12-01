@@ -25,7 +25,7 @@
 							"crypto-js",
 							"hammerjs",
 							"util"
-						 ],
+						],
 						"customWebpackConfig": {
 							"path": "./custom-webpack.config.js"
 						},
@@ -41,9 +41,7 @@
 							"src/manifest.webmanifest",
 							"src/pre-load.js"
 						],
-						"styles": [
-							"src/styles.scss"
-						],
+						"styles": ["src/styles.scss"],
 						"scripts": []
 					},
 					"configurations": {
@@ -270,15 +268,9 @@
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.spec.json",
 						"karmaConfig": "karma.conf.js",
-						"styles": [
-							"src/styles.scss"
-						],
+						"styles": ["src/styles.scss"],
 						"scripts": [],
-						"assets": [
-							"src/favicon.ico",
-							"src/assets",
-							"src/manifest.webmanifest"
-						],
+						"assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
 						"codeCoverage": true,
 						"fileReplacements": [
 							{
@@ -297,16 +289,9 @@
 					}
 				},
 				"lint": {
-					"builder": "@angular-devkit/build-angular:tslint",
+					"builder": "@angular-eslint/builder:lint",
 					"options": {
-						"tsConfig": [
-							"tsconfig.app.json",
-							"tsconfig.spec.json",
-							"e2e/tsconfig.json"
-						],
-						"exclude": [
-							"**/node_modules/**"
-						]
+						"lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
 					}
 				},
 				"e2e": {

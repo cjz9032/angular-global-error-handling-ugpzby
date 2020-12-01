@@ -20,7 +20,6 @@ import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 
 import { NgbModule, NgbDatepickerModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-import { UiSmartTunePcComponent } from '../../components/ui/ui-smart-tune-pc/ui-smart-tune-pc.component';
 import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -46,7 +45,6 @@ import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-sm
 @NgModule({
 	declarations: [
 		PageSmartPerformanceComponent,
-		UiSmartTunePcComponent,
 		ModalSmartPerformanceCancelComponent,
 		ModalSmartPerformanceSubscribeComponent,
 		WidgetSubscriptionDetailsComponent,

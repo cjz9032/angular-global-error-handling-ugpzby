@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./snapshot-main.component.scss'],
 })
 export class SnapshotMainComponent implements OnInit {
-
 	constructor() {}
 
 	ngOnInit(): void {}

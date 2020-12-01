@@ -8,7 +8,7 @@ import { of } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
 
-// tslint:disable-next-line: no-duplicate-imports
+// eslint-disable-next-line no-duplicate-imports
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { WidgetSystemToolsComponent } from './widget-system-tools.component';
 

@@ -57,7 +57,7 @@ describe('BatteryRankLifespanComponent', () => {
 		component.ngOnInit();
 		// component.getBatteryDetails();
 		// fixture.detectChanges();
-		// tslint:disable-next-line: no-unused-expression
+		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 		expect(component.getBatteryDetails).toHaveBeenCalled;
 	});
 

@@ -213,7 +213,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	private patchNgbModalOpen() {
 		const original = NgbModal.prototype.open;
-		// tslint:disable-next-line: only-arrow-functions
+		// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 		NgbModal.prototype.open = function (): NgbModalRef {
 			if (arguments.length > 1 && 'container' in arguments[1] === false) {
 				Object.assign(arguments[1], { container: 'vtr-root div' });

@@ -12,7 +12,7 @@ const routes: Routes = [
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, SnapshotGuard],
 		data: {
-			pageName: 'Snapshot'
+			pageName: 'Snapshot',
 		},
 		children: [
 			{
@@ -21,11 +21,11 @@ const routes: Routes = [
 				// canDeactivate: [GuardService],
 				// canActivate: [GuardService],
 				data: {
-					pageName: 'Snapshot'
-				}
-			}
-		]
-	}
+					pageName: 'Snapshot',
+				},
+			},
+		],
+	},
 ];
 
 @NgModule({

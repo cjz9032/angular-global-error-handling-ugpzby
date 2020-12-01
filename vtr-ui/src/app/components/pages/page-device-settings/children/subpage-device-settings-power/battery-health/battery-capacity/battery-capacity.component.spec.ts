@@ -84,15 +84,15 @@ describe('BatteryCapacityComponent', () => {
 	it('should call toggleToolTip', () => {
 		const tooltip = {
 			isOpen() {
-				// tslint:disable-next-line:no-unused-expression
+				// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 				true;
 			},
 			close() {
-				// tslint:disable-next-line:no-unused-expression
+				// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 				true;
 			},
 			open() {
-				// tslint:disable-next-line:no-unused-expression
+				// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 				true;
 			},
 		};

@@ -87,7 +87,7 @@ describe('Shared service:', () => {
 		});
 
 		function setup() {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const service = new GamingLightingService(shellService);
 			// const batteryDetailComponent = TestBed.get(BatteryDetailComponent);
 			return { service };

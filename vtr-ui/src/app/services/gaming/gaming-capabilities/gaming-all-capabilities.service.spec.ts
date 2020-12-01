@@ -37,7 +37,7 @@ describe('Shared service:', () => {
 
 	describe('GamingAllCapabilitiesService', () => {
 		function setup() {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const service = TestBed.get(GamingAllCapabilitiesService);
 			// const batteryDetailComponent = TestBed.get(BatteryDetailComponent);
 			return { service };
@@ -48,7 +48,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call getCapabilities', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			spyOn(service.gamingAllCapabilities, 'getCapabilities').and.callThrough();
 			service.getCapabilities();
@@ -70,7 +70,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call setCapabilityValuesGlobally', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			spyOn(service, 'setCapabilityValuesGlobally').and.callThrough();
 			service.setCapabilityValuesGlobally(capabilities);
@@ -82,7 +82,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call getCapabilityFromCache', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			spyOn(service, 'getCapabilityFromCache').and.callThrough();
 			service.getCapabilityFromCache();

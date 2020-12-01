@@ -79,7 +79,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		UiDeviceinfoItemComponent,
 		UiGamingSliderComponent,
 		UiExclamationPointComponent,
-		UiLightingProfileToggleComponent
+		UiLightingProfileToggleComponent,
 	],
 	exports: [
 		UiCheckboxComponent,
@@ -113,7 +113,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		UiDeviceinfoItemComponent,
 		UiGamingSliderComponent,
 		UiExclamationPointComponent,
-		UiLightingProfileToggleComponent
+		UiLightingProfileToggleComponent,
 	],
 	imports: [
 		CommonModule,

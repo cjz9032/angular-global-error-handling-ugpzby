@@ -20,14 +20,14 @@ describe('Shared service:', () => {
 	});
 	describe(':', () => {
 		function setup() {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const service = TestBed.get(NetworkBoostService);
 			// const batteryDetailComponent = TestBed.get(BatteryDetailComponent);
 			return { service };
 		}
 
 		it('should call getNetworkBoostStatus', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			const mockNetworkBoostData = {
 				networkBoostFeature: true,
@@ -41,7 +41,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call getNetworkBoostList', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			const mockNetworkBoostData = {
 				networkBoostFeature: true,
@@ -55,7 +55,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call getNeedToAsk', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			const mockNetworkBoostData = {
 				networkBoostFeature: true,
@@ -66,7 +66,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call setNeedToAsk', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			const mockNetworkBoostData = {
 				networkBoostFeature: true,
@@ -77,7 +77,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call getNetworkBoostStatus', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			spyOn(service.gamingNetworkBoost, 'getStatus').and.callThrough();
 			service.getNetworkBoostStatus();
@@ -88,7 +88,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call setNetworkBoostStatus', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			spyOn(service.gamingNetworkBoost, 'setStatus').and.callThrough();
 			service.setNetworkBoostStatus();
@@ -99,7 +99,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call addProcessToNetworkBoost', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			spyOn(service.gamingNetworkBoost, 'addProcessToNetBoost').and.callThrough();
 			service.addProcessToNetworkBoost();
@@ -110,7 +110,7 @@ describe('Shared service:', () => {
 		});
 
 		it('should call deleteProcessInNetBoost', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			spyOn(service.gamingNetworkBoost, 'deleteProcessInNetBoost').and.callThrough();
 			service.deleteProcessInNetBoost('apps');

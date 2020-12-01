@@ -280,7 +280,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 
-	// tslint:disable-next-line: use-lifecycle-interface
+	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
 	ngAfterViewInit() {
 		this.issueCount = this.tune + this.boost + this.secure;
 		this.leftAnimator = (this.rating * 10 - 0).toString() + '%';

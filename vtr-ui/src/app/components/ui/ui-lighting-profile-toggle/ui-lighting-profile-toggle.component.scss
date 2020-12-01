@@ -87,8 +87,8 @@
 			cursor: pointer;
 			.widget-num {
 				display: none;
-				&+span {
-				  display: block;	
+				& + span {
+					display: block;
 				}
 			}
 			.num {

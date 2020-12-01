@@ -5,21 +5,14 @@ import { CommonService } from '../common/common.service';
 import { BasicGuard } from './basic-guard';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class SnapshotGuard extends BasicGuard {
-
-	constructor(
-		public guardConstants: GuardConstants,
-		public commonService: CommonService
-	) {
+	constructor(public guardConstants: GuardConstants, public commonService: CommonService) {
 		super(commonService, guardConstants);
 	}
 
-	canActivate(
-		route: ActivatedRouteSnapshot,
-		state: RouterStateSnapshot
-	): boolean | UrlTree {
+	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
 		return true;
 		// TODO: Update to this return when create a function to
 		// validate if Snapshot feature can be used (Ex.: HardwareScanGuard)

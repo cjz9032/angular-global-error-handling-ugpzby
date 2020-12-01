@@ -17,13 +17,13 @@ describe('GamingKeyLockService', () => {
 
 	describe(':', () => {
 		function setup() {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const service = TestBed.get(GamingKeyLockService);
 			return { service };
 		}
 
 		it('should call getKeyLockStatus', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			service.isShellAvailable = true;
 			spyOn(service.gamingKeyLock, 'getKeyLockStatus').and.callThrough();
@@ -49,7 +49,7 @@ describe('GamingKeyLockService', () => {
 		});
 
 		it('should call setKeyLockStatus', () => {
-			// tslint:disable-next-line: no-shadowed-variable
+			// eslint-disable-next-line no-shadow
 			const { service } = setup();
 			service.isShellAvailable = true;
 			spyOn(service.gamingKeyLock, 'setKeyLockStatus').and.callThrough();
