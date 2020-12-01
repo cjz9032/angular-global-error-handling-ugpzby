@@ -241,12 +241,11 @@ export class ModalGamingThermalMode2Component implements OnInit {
 					}
 				});
 
-				this.sendFeatureClickMetrics(
-					JSON.parse(`{"ItemName":"thermalmode_mode_change",
-        "ItemValue":"${
-			value === 1 ? 'Quiet Mode' : value === 2 ? 'Balance Mode' : 'Performance Mode'
-		}"}`)
-				);
+				const metricsData = {
+					ItemName: 'thermalmode_mode_change',
+					ItemValue: value === 1 ? 'Quiet Mode' : value === 2 ? 'Balance Mode'
+						: 'Performance Mode'};
+				this.sendFeatureClickMetrics(metricsData);
 			} catch (error) {
 				this.thermalModeSettingStatus = prevThermalModeStatus;
 				this.localCacheService.setLocalCacheValue(
@@ -358,13 +357,11 @@ export class ModalGamingThermalMode2Component implements OnInit {
 			throw new Error(error.message);
 		}
 
-		this.sendFeatureClickMetrics(
-			JSON.parse(
-				`{"ItemName":"thermalmode_enableOC","ItemValue":"${
-					this.OCSettings ? 'checked' : 'unchecked'
-				}"}`
-			)
-		);
+		const metricsData = {
+			ItemName: 'thermalmode_enableOC',
+			ItemValue: this.OCSettings ? 'checked' : 'unchecked'
+		};
+		this.sendFeatureClickMetrics(metricsData);
 	}
 
 	getAutoSwitchStatus() {
@@ -528,13 +525,11 @@ export class ModalGamingThermalMode2Component implements OnInit {
 			);
 			throw new Error(error.message);
 		}
-		this.sendFeatureClickMetrics(
-			JSON.parse(
-				`{"ItemName":"thermalmode_enableAutoAdjust","ItemValue":"${
-					this.autoAdjustSettings ? 'checked' : 'unchecked'
-				}"}`
-			)
-		);
+		const metricsData = {
+			ItemName: 'thermalmode_enableAutoAdjust',
+			ItemValue: this.autoAdjustSettings ? 'checked' : 'unchecked'
+		};
+		this.sendFeatureClickMetrics(metricsData);
 	}
 
 	// fengxu start
@@ -562,15 +557,18 @@ export class ModalGamingThermalMode2Component implements OnInit {
 				this.openAdvancedOCModal();
 			}
 
-			this.sendFeatureClickMetrics(
-				JSON.parse(`{"ItemParent":"Gaming.OCWarningModal","ItemName":"ocwarningmodal_btn",
-      "ItemValue":"${emmitedValue === 1 ? 'proceed' : emmitedValue === 2 ? 'cancle' : 'close'}"}`)
-			);
+			const metricsData = {
+				ItemParent: 'Gaming.OCWarningModal',
+				ItemName: 'ocwarningmodal_btn',
+				ItemValue: emmitedValue === 1 ? 'proceed' : emmitedValue === 2 ? 'cancle' : 'close'
+			};
+			this.sendFeatureClickMetrics(metricsData);
 		});
 
-		this.sendFeatureClickMetrics(
-			JSON.parse(`{"ItemName":"thermalmode_advacedoc_warningmodal"}`)
-		);
+		const metricsData = {
+			ItemName: 'thermalmode_advacedoc_warningmodal'
+		};
+		this.sendFeatureClickMetrics(metricsData);
 	}
 	openAdvancedOCModal() {
 		this.modalService.open(ModalGamingAdvancedOCComponent, {
@@ -598,12 +596,8 @@ export class ModalGamingThermalMode2Component implements OnInit {
 	public sendFeatureClickMetrics(metricsdata: any) {
 		try {
 			const metricData = {
-				ItemType: Object.prototype.hasOwnProperty.call(metricsdata, 'ItmeType')
-					? metricsdata.ItemType
-					: 'FeatureClick',
-				ItemParent: Object.prototype.hasOwnProperty.call(metricsdata, 'ItemParent')
-					? metricsdata.ItemParent
-					: 'Gaming.ThermalMode',
+				ItemType: metricsdata.ItemType ? metricsdata.ItemType : 'FeatureClick',
+				ItemParent: metricsdata.ItemParent ? metricsdata.ItemParent : 'Gaming.ThermalMode'
 			};
 			Object.keys(metricsdata).forEach((key) => {
 				if (metricsdata[key]) {

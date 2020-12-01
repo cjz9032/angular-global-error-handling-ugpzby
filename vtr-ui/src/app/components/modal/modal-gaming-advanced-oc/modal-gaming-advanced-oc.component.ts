@@ -116,7 +116,10 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			this.sendPageViewMetricsData();
 		}
 
-		this.sendFeatureClickMetrics(JSON.parse(`{"ItemName":"advancedoc_close"}`));
+		const metricsData = {
+			ItemName: 'advancedoc_close'
+		};
+		this.sendFeatureClickMetrics(metricsData);
 	}
 
 	public getAdvancedOCInfo() {
@@ -262,9 +265,10 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			this.sendOCChangedMetricsData(emmitedValue);
 		});
 
-		this.sendFeatureClickMetrics(
-			JSON.parse(`{"ItemName":"advancedoc_savechange_warningmodal"}`)
-		);
+		const metricsData = {
+			ItemName: 'advancedoc_savechange_warningmodal'
+		};
+		this.sendFeatureClickMetrics(metricsData);
 	}
 
 	public setAdvancedOCInfo(advancedOCInfo) {
@@ -317,16 +321,18 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 				this.setAdvancedOCInfo(this.advancedOCInfo);
 			}
 
-			this.sendFeatureClickMetrics(
-				JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SetToDefaultWarningModal",
-      "ItemName":"advancedoc_settodefaultwarningmodal_btn",
-      "ItemValue":"${emmitedValue === 1 ? 'ok' : emmitedValue === 2 ? 'cancel' : 'close'}"}`)
-			);
+			const metricsData = {
+				ItemParent: 'Gaming.AdvancedOC.SetToDefaultWarningModal',
+				ItemName: 'advancedoc_settodefaultwarningmodal_btn',
+				ItemValue: emmitedValue === 1 ? 'ok' : emmitedValue === 2 ? 'cancel' : 'close'
+			};
+			this.sendFeatureClickMetrics(metricsData);
 		});
 
-		this.sendFeatureClickMetrics(
-			JSON.parse(`{"ItemName":"advancedoc_settodefault_warningmodal"}`)
-		);
+		const metricsData = {
+			ItemName: 'advancedoc_settodefault_warningmodal'
+		};
+		this.sendFeatureClickMetrics(metricsData);
 	}
 
 	public setToDefaultValue(list) {
@@ -344,12 +350,8 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	public sendFeatureClickMetrics(metricsdata: any) {
 		try {
 			const metricData = {
-				ItemType: Object.prototype.hasOwnProperty.call(metricsdata, 'ItmeType')
-					? metricsdata.ItemType
-					: 'FeatureClick',
-				ItemParent: Object.prototype.hasOwnProperty.call(metricsdata, 'ItemParent')
-					? metricsdata.ItemParent
-					: 'Gaming.AdvancedOC',
+				ItemType: metricsdata.ItemType ? metricsdata.ItemType : 'FeatureClick',
+				ItemParent: metricsdata.ItemParent ? metricsdata.ItemParent : 'Gaming.AdvancedOC'
 			};
 			Object.keys(metricsdata).forEach((key) => {
 				if (metricsdata[key]) {
@@ -389,17 +391,17 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 				}
 			}
 
-			this.sendFeatureClickMetrics(
-				JSON.parse(`{"ItemParent":"Gaming.AdvancedOC.SaveChangeWarningModal","ItemName":"advancedoc_savechangewarningmodal_btn",
-        "ItemValue":"${
-			occhangedinfo === 1 ? 'save' : occhangedinfo === 2 ? "don't save" : 'close'
-		}",
-        "ItemParam":${
-			occhangedinfo === 1 && Object.keys(parameterValue).length !== 0
-				? JSON.stringify(parameterValue)
-				: null
-		}}`)
-			);
+			const metricsData = {
+				ItemParent: 'Gaming.AdvancedOC.SaveChangeWarningModal',
+				ItemName: 'advancedoc_savechangewarningmodal_btn',
+				ItemValue:
+					occhangedinfo === 1 ? 'save' : occhangedinfo === 2 ? 'don\'t save' : 'close',
+				ItemParam:
+					occhangedinfo === 1 && Object.keys(parameterValue).length !== 0
+						? JSON.stringify(parameterValue)
+						: null
+			};
+			this.sendFeatureClickMetrics(metricsData);
 
 			if (occhangedinfo === 1 || occhangedinfo === 2) {
 				this.sendPageViewMetricsData();

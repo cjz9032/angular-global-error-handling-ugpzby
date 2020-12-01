@@ -321,9 +321,11 @@ export class WidgetLightingNotebookComponent implements OnInit {
 					});
 			}
 
-			this.sendFeatureClickMetrics(
-				JSON.parse(`{"ItemName":"lighting_brightness","ItemValue":"${event[0]}"}`)
-			);
+			const metricsData = {
+				ItemName: 'lighting_brightness',
+				ItemValue: `${event[0]}`
+			};
+			this.sendFeatureClickMetrics(metricsData);
 		} catch (error) {}
 	}
 
@@ -359,9 +361,11 @@ export class WidgetLightingNotebookComponent implements OnInit {
 					});
 			}
 
-			this.sendFeatureClickMetrics(
-				JSON.parse(`{"ItemName":"lighting_speed","ItemValue":"${event[0]}"}`)
-			);
+			const metricsData = {
+				ItemName: 'lighting_speed',
+				ItemValue: `${event[0]}`
+			};
+			this.sendFeatureClickMetrics(metricsData);
 		} catch (error) {}
 	}
 
@@ -451,9 +455,11 @@ export class WidgetLightingNotebookComponent implements OnInit {
 					});
 			}
 
-			this.sendFeatureClickMetrics(
-				JSON.parse(`{"ItemName":"lighting_color_change","ItemValue":"${event}"}`)
-			);
+			const metricsData = {
+				ItemName: 'lighting_color_change',
+				ItemValue: `${event}`
+			};
+			this.sendFeatureClickMetrics(metricsData);
 		} catch (error) {}
 	}
 
@@ -767,12 +773,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
 	public sendFeatureClickMetrics(metricsdata: any) {
 		try {
 			const metricData = {
-				ItemType: Object.prototype.hasOwnProperty.call(metricsdata, 'ItmeType')
-					? metricsdata.ItemType
-					: 'FeatureClick',
-				ItemParent: Object.prototype.hasOwnProperty.call(metricsdata, 'ItemParent')
-					? metricsdata.ItemParent
-					: 'Gaming.Lighting',
+				ItemType: metricsdata.ItemType ? metricsdata.ItemType : 'FeatureClick',
+				ItemParent: metricsdata.ItemParent ? metricsdata.ItemParent : 'Gaming.Lighting'
 			};
 			Object.keys(metricsdata).forEach((key) => {
 				if (metricsdata[key]) {
