@@ -557,6 +557,13 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	// 7. Handle location service change event                          //
 	//////////////////////////////////////////////////////////////////////
 	public getWifiSecuritySupported() {
+		if(this.wifiSecurityService === undefined) {
+			this.logger.error(
+				`Widget-QuickSettingsList-GetWifiSecuritySupported: 
+					JSBridge is ${this.wifiSecurityService}`
+			);
+			return undefined;
+		}
 		let isSupported = this.wifiSecurityService.wifiSecurity.isSupported;
 		this.logger.info(
 			`Widget-QuickSettingsList-GetWifiSecuritySupported: 
@@ -580,6 +587,13 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 
 	public async getWifiSecuritySettings() {
+		if(this.wifiSecurityService === undefined) {
+			this.logger.error(
+				`Widget-QuickSettingsList-GetWifiSecuritySettings: 
+					JSBridge is ${this.wifiSecurityService}`
+			);
+			return undefined;
+		}
 		//  Pop up location permission dialog
 		this.wifiSecurityService.wifiSecurity.getWifiState().then(
 			(res) => {
@@ -614,6 +628,13 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 
 	public async setWifiSecuritySettings(value: any) {
+		if(this.wifiSecurityService === undefined) {
+			this.logger.error(
+				`Widget-QuickSettingsList-SetWifiSecuritySettings: 
+					JSBridge is ${this.wifiSecurityService}`
+			);
+			return undefined;
+		}
 		if (this.wifiSecurityService.isLWSEnabled) {
 			this.wifiSecurityService.wifiSecurity.disableWifiSecurity().then((res) => {
 				this.logger.info(
@@ -673,6 +694,9 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 				res
 			)
 			this.checkQuickSettingsVisibility();
+			if(res) {
+				this.getWifiSecuritySettings();
+			}
 		}
 	};
 
