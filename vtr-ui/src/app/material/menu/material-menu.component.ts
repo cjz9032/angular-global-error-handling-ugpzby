@@ -176,7 +176,10 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	}
 
 	private updateMenuVisibility() {
-		if (document.documentElement.clientWidth < 1200) {
+		if (this.isDefaultMenuAvailable && this.isHamburgerAvailable) {
+			return;
+		}
+		if (window.innerWidth < 1200) {
 			this.isHamburgerAvailable = true;
 		} else {
 			this.isDefaultMenuAvailable = true;
