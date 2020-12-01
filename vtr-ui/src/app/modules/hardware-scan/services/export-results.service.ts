@@ -12,7 +12,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RecoverBadSectorsService } from './recover-bad-sectors.service';
 import { HardwareScanService } from './hardware-scan.service';
 import { DeviceService } from '../../../services/device/device.service';
-import { TranslateTokenByTokenPipe } from 'src/app/pipe/translate-token-by-token/translate-token-by-token.pipe';
 import {
 	ExportLogErrorStatus,
 	HardwareScanOverallResult,
@@ -45,7 +44,6 @@ export class ExportResultsService {
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private hardwareScanService: HardwareScanService,
 		private deviceService: DeviceService,
-		private translateTokenByToken: TranslateTokenByTokenPipe,
 		private logger: LoggerService
 	) {
 		this.experienceVersion = environment.appVersion;
@@ -424,7 +422,10 @@ export class ExportResultsService {
 			for (const detail of detailsGroupedByIndex['']) {
 				const div = this.createItemDiv(
 					this.translate.transform('hardwareScan.pluginTokens.' + detail.key, detail.key),
-					this.translateTokenByToken.transform(detail.value, 'hardwareScan.pluginTokens.')
+					this.translate.transform(
+						'hardwareScan.pluginTokens.' + detail.value,
+						detail.value
+					)
 				);
 				divInfo.appendChild(div);
 			}
@@ -475,9 +476,9 @@ export class ExportResultsService {
 							'hardwareScan.pluginTokens.' + detail.key,
 							detail.key
 						),
-						this.translateTokenByToken.transform(
-							detail.value,
-							'hardwareScan.pluginTokens.'
+						this.translate.transform(
+							'hardwareScan.pluginTokens.' + detail.value,
+							detail.value
 						),
 						grayResource,
 						isResource
