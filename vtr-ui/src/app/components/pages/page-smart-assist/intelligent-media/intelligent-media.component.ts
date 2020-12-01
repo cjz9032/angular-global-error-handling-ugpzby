@@ -19,7 +19,7 @@ export class IntelligentMediaComponent implements OnInit {
 	@Input() superResolutionAvailable = false;
 	@Input() superResolutionTip: string;
 	@Output() superResolutionToggle: EventEmitter<any> = new EventEmitter();
-	public image = '/assets/images/smart-assist/intelligent-media/VideoResolutionUpscaling.png';
+	public image = '/assets/images/hardware-settings/smart-assist/intelligent-media/VideoResolutionUpscaling.png';
 
 	@Input() videoPlaybackSupportHSA = false;
 
