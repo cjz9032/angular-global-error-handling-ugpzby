@@ -25,13 +25,13 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnDestroy {
 	title = 'device.deviceSettings.inputAccessories.title';
 	public shortcutKeys: any[] = [];
-	public privacyIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
-	public kbdBlIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
-	public merlynIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
-	public zoomIcon = 'assets/images/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
-	public imagePath = 'assets/images/keyboard-images/KeyboardMap_Images/';
-	public imagePathGrafEvo = 'assets/images/keyboard-images/KeyboardMap_Images/GrafEvo/';
-	public imagePathCS20 = 'assets/images/keyboard-images/KeyboardMap_Images/CS20/';
+	public privacyIcon = 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
+	public kbdBlIcon = 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
+	public merlynIcon = 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
+	public zoomIcon = 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
+	public imagePath = 'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/';
+	public imagePathGrafEvo = 'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/GrafEvo/';
+	public imagePathCS20 = 'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/CS20/';
 	public imagesArray: string[] = [
 		'Belgium.png',
 		'French.png',
