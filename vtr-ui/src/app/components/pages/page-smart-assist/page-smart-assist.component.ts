@@ -765,9 +765,9 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					.getHsaIntelligentSecurityStatus()
 					.then((response: HsaIntelligentSecurityResponse) => {
 						this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability =
-							(response.capability && 0x100) !== 0;
+							(response.capability & 0x100) !== 0;
 						this.zeroTouchPresenceLeaveDistanceCapability =
-							(response.capability && 0x80) !== 0;
+							(response.capability & 0x80) !== 0;
 						this.isVideoPlaybackHsaAvailable = response.videoAutoPauseResumeVersion > 0;
 						this.hsaIntelligentSecurity = response;
 
@@ -839,8 +839,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				response.presenceLeaveDistanceAutoAdjust;
 			this.hsaIntelligentSecurity.zeroTouchLockDistance = response.presenceLeaveDistance;
 			this.zeroTouchPresenceLeaveDistanceAutoAdjustCapability =
-				(response.capability && 0x100) !== 0;
-			this.zeroTouchPresenceLeaveDistanceCapability = (response.capability && 0x80) !== 0;
+				(response.capability & 0x100) !== 0;
+			this.zeroTouchPresenceLeaveDistanceCapability = (response.capability & 0x80) !== 0;
 		}
 		this.logger.info('hsaIntelligentSecurityChange', data);
 	}
