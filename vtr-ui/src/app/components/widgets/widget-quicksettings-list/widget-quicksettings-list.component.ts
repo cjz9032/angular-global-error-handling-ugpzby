@@ -157,14 +157,12 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	// only support thermal mode 1.0
 	public thermalModeEvent: any;
 	public rapidChargeSettings: any;
-	public wifiSecurityFeature = false;
-	public wifiSecurityState = false;
 	public locationServiceState = false;
 	public dolbySettings: DolbyModeResponse;
 	private notificationService: Subscription;
 
-	public wifiSecurity: WifiSecurity;
-	public securityAdvisor: SecurityAdvisor;
+	// public wifiSecurity: WifiSecurity;
+	// public securityAdvisor: SecurityAdvisor;
 	
 	
 	constructor(
@@ -251,17 +249,36 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		this.commonService.setSessionStorageValue(
-			SessionStorageKey.SecurityWifiSecurityInGamingDashboard,
-			false
-		);
-		this.commonService.setSessionStorageValue(
-			SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
-			false
-		);
-
 		if(this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion === 1) {
 			this.unRegisterThermalModeChangeEvent();
+		}
+
+		if (this.quickSettingsList[this.quickSettingsListIndex.wifiSecurity].isVisible) {
+			this.commonService.setSessionStorageValue(
+				SessionStorageKey.SecurityWifiSecurityInGamingDashboard,
+				false
+			);
+			this.commonService.setSessionStorageValue(
+				SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
+				false
+			);
+			this.wifiSecurityService.wifiSecurity.cancelGetWifiSecurityState();
+			this.wifiSecurityService.wifiSecurity.off(
+				EventTypes.wsStateEvent,
+				this.wifiSecurityStateEventHandler
+			);
+			this.wifiSecurityService.wifiSecurity.off(
+				EventTypes.wsIsLocationServiceOnEvent,
+				this.wifiSecurityLocationServiceEventHandler
+			);
+			this.wifiSecurityService.wifiSecurity.off(
+				EventTypes.wsPluginMissingEvent,
+				this.wifiSecurityPluginMissingEventHandler
+			);
+			this.wifiSecurityService.wifiSecurity.off(
+				EventTypes.wsIsSupportWifiEvent,
+				this.wifiSecuritySupportedEventHandler
+			);
 		}
 
 		if(this.dolbySettings.available) {
@@ -271,27 +288,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		if (this.notificationService) {
 			this.notificationService.unsubscribe();
 		}
-
-		// TODO
-		// if (this.securityAdvisor !== undefined && this.securityAdvisor.wifiSecurity) {
-		// 	this.securityAdvisor.wifiSecurity.cancelGetWifiSecurityState();
-		// 	this.securityAdvisor.wifiSecurity.off(
-		// 		EventTypes.wsStateEvent,
-		// 		this.wifiSecurityStateEventHandler
-		// 	);
-		// 	this.securityAdvisor.wifiSecurity.off(
-		// 		EventTypes.wsIsLocationServiceOnEvent,
-		// 		this.wifiSecurityLocationServiceEventHandler
-		// 	);
-		// 	this.securityAdvisor.wifiSecurity.off(
-		// 		EventTypes.wsPluginMissingEvent,
-		// 		this.wifiSecurityPluginMissingEventHandler
-		// 	);
-		// 	this.securityAdvisor.wifiSecurity.off(
-		// 		EventTypes.wsIsSupportWifiEvent,
-		// 		this.wifiSecuritySupportedEventHandler
-		// 	);
-		// }
 	}
 
 
