@@ -1,5 +1,6 @@
 {
 	"root": true,
+	"noInlineConfig": true,
 	"ignorePatterns": [
 		"projects/**/*"
 	],
@@ -42,6 +43,12 @@
 					{
 						"accessibility": "explicit"
 					}
+				],
+				"@typescript-eslint/member-ordering": [
+					"warn"
+				],
+				"@typescript-eslint/naming-convention": [
+					"warn"
 				],
 				"arrow-parens": [
 					"off",
