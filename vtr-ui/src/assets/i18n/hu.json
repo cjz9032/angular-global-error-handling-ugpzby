@@ -28,6 +28,11 @@
 						"balance": "Egyensúly",
 						"quiet": "Csendes"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU- és GPU-túlpörgetés bekapcsolva",
+						"CPU_ON": "CPU-túlpörgetés bekapcsolva",
+						"GPU_ON": "GPU-túlpörgetés bekapcsolva"
+					},
 					"title": "CPU-túlpörgetés",
 					"status": {
 						"alwayson": "Be",
@@ -121,7 +126,7 @@
 					"OCDesc": "Úgy is dönthet, hogy bekapcsolja a Túlpörgetés funkciót.",
 					"ac_dcDesc": "A Teljesítmény mód csak akkor alkalmazható, ha a hálózati adapter csatlakoztatva van.",
 					"balanceTitle": "Kiegyensúlyozott mód",
-					"balanceDesc": "Automatikusan kiegyenlíti a teljesítményt és a ventilátor sebességét a hőmérséklet alapján, közepes energiafogyasztás mellett.",
+					"balanceDesc": "A teljesítmény és a ventilátor sebességének automatikus beállítása a rendszer követelményeinek megfelelően.",
 					"quietTitle": "Csendes mód",
 					"quietDesc": "A készülék csendes marad a számítógép teljesítményének és a ventilátor sebességének csökkentésével, ahol csak lehet, alacsony energiafogyasztás mellett.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "GPU-illesztőprogram telepítése a Túlpörgetés funkcióhoz.",
 						"goInstall": "TELEPÍTÉS"
 					},
+					"autoAdjustDesc": "Automatikusan észleli az aktuális játékot, és annak megfelelően hangolja a CPU/GPU teljesítményét.",
 					"autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd visszaváltás a játékból való kilépést követően."
 				},
 				"advancedOC": {

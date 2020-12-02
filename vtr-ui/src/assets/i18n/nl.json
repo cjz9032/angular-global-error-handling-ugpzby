@@ -28,6 +28,11 @@
 						"balance": "Balans",
 						"quiet": "Stil"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU en GPU overklokken aan",
+						"CPU_ON": "CPU overklokken aan",
+						"GPU_ON": "GPU overklokken aan"
+					},
 					"title": "CPU overklok",
 					"status": {
 						"alwayson": "Aan",
@@ -121,7 +126,7 @@
 					"OCDesc": "U kunt de functie Overklokken inschakelen.",
 					"ac_dcDesc": "De prestatiemodus is alleen te gebruiken als de netvoedingsadapter is aangesloten.",
 					"balanceTitle": "Gebalanceerde modus",
-					"balanceDesc": "Laat de prestaties en ventilatorsnelheid automatisch aanpassen op basis van de temperatuur en met middelhoog energieverbruik.",
+					"balanceDesc": "De prestaties en ventilatorsnelheid automatisch aanpassen op basis van de vereisten van het systeem.",
 					"quietTitle": "Stille modus",
 					"quietDesc": "Zorg voor een stille computer door de prestaties en de ventilatorsnelheid indien mogelijk te verlagen, met een laag energieverbruik.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Installeer GPU-stuurprogramma om de functie Overklokken te gebruiken.",
 						"goInstall": "GA NAAR INSTALLEREN"
 					},
+					"autoAdjustDesc": "De huidige game automatisch detecteren en de CPU/GPU-prestaties erop afstemmen.",
 					"autoSwitch": "Schakel automatisch naar de prestatiemodus bij het starten van games en schakel terug na het afsluiten van de game."
 				},
 				"advancedOC": {

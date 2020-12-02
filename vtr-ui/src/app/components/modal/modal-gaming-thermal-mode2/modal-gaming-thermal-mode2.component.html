@@ -44,7 +44,7 @@
                                 tabindex="1" [attr.aria-label]="OCsupportted === thermalMode2Enum.cpu_gpu ? 'Enable CPU and GPU Overclocking in Performance Mode' :
                                 OCsupportted === thermalMode2Enum.cpu ? 'Enable CPU Overclocking in Performance Mode' : 'Enable GPU Overclocking in Performance Mode'"
                                 [attr.aria-checked]="OCSettings">
-                                  <label class="checkedIcon"></label>
+                                    <label class="checkedIcon"></label>
                                 </button>
                             </div>
                             <div class="item-oc-right">
@@ -112,13 +112,13 @@
                         <div class="item-oc-left">
                             <button class="oc-checkbox" [ngClass]="{'checked':autoAdjustSettings}" role="checkbox" id="{{!autoAdjustSettings? 'enable_autoAdjustSettings_checkbox_unchecked':'enable_autoAdjustSettings_checkbox_checked'}}"  (click)="setAutoAdjustSetting($event)"
                             tabindex="1" aria-label="自动侦测并调优CPU和GPU在游戏下的性能" [attr.aria-checked]="autoAdjustSettings">
-                              <label class="checkedIcon"></label>
+                                <label class="checkedIcon"></label>
                             </button>
                         </div>
                         <div class="item-oc-right">
                             <p role="text" id="enable_autoAdjustSettings_description">
                                 <a class="oc-description" (click)="setAutoAdjustSetting($event)">
-                                    <span >自动侦测并调优CPU和GPU在游戏下的性能</span>
+                                    <span >{{ 'gaming.dashboard.device.thermalMode2Popup.autoAdjustDesc' | translate }}</span>
                                 </a> 
                             </p>
                         </div>

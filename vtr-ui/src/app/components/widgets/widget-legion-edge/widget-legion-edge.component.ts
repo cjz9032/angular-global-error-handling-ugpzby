@@ -909,13 +909,13 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		) {
 			let OCTips;
 			if (this.OCSupported === this.thermalMode2Enum.cpu_gpu) {
-				OCTips = 'CPU & GPU ';
+				OCTips = this.translateService.instant('gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_GPU_On');
 			} else if (this.OCSupported === this.thermalMode2Enum.cpu) {
-				OCTips = 'CPU ';
+				OCTips = this.translateService.instant('gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_On');
 			} else if (this.OCSupported === this.thermalMode2Enum.gpu) {
-				OCTips = 'GPU ';
+				OCTips = this.translateService.instant('gaming.dashboard.device.legionEdge.thermalMode3Tips.GPU_On');
 			}
-			return OCTips + 'overclocking activated';
+			return OCTips;
 		} else {
 			// return this.translateService.instant('gaming.dashboard.device.quickSettings.title');
 			return '';

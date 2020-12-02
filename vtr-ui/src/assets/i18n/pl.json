@@ -28,6 +28,11 @@
 						"balance": "Równowaga",
 						"quiet": "Cichy"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Przetaktowywanie CPU i GPU włączone",
+						"CPU_ON": "Przetaktowywanie CPU włączone",
+						"GPU_ON": "Przetaktowywanie GPU włączone"
+					},
 					"title": "Przetaktowywanie CPU",
 					"status": {
 						"alwayson": "Włącz",
@@ -121,7 +126,7 @@
 					"OCDesc": "Możesz włączyć funkcję Przetaktowania.",
 					"ac_dcDesc": "Tryb wydajności ma zastosowanie tylko wtedy, gdy podłączony jest zasilacz sieciowy.",
 					"balanceTitle": "Tryb zrównoważony",
-					"balanceDesc": "Automatycznie równoważy wydajność komputera i prędkość wentylatora na podstawie temperatury przy średnim zużyciu mocy.",
+					"balanceDesc": "Automatycznie dostosuj wydajność i prędkość wentylatora do wymagań systemowych.",
 					"quietTitle": "Tryb cichy",
 					"quietDesc": "Cicha praca dzięki zmniejszeniu wydajności komputera i prędkości wentylatora, jeśli to możliwe, przy niskim zużyciu mocy.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Zainstaluj sterownik GPU w celu użycia funkcji Przetaktowania.",
 						"goInstall": "ZAINSTALUJ"
 					},
+					"autoAdjustDesc": "Automatycznie wykryj bieżącą grę i dostosuj wydajność CPU/GPU do jej wymagań.",
 					"autoSwitch": "Automatycznie włączaj tryb wydajności po uruchomianiu gry i wyłączaj go po jej zamknięciu."
 				},
 				"advancedOC": {

@@ -28,6 +28,11 @@
 						"balance": "Equilibrio",
 						"quiet": "Silencioso"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Aceleración de CPU y GPU activada",
+						"CPU_ON": "Aceleración de CPU activada",
+						"GPU_ON": "Aceleración de GPU activada"
+					},
 					"title": "Aceleración de CPU",
 					"status": {
 						"alwayson": "Encendido",
@@ -121,7 +126,7 @@
 					"OCDesc": "Puede seleccionar que se active la función de Aceleración.",
 					"ac_dcDesc": "La modalidad de rendimiento solo se aplica cuando está conectado el adaptador de alimentación de CA.",
 					"balanceTitle": "Modalidad balanceada",
-					"balanceDesc": "Equilibre automáticamente el rendimiento y la velocidad del ventilador según la temperatura con un consumo de energía medio.",
+					"balanceDesc": "Ajustar automáticamente el rendimiento y la velocidad del ventilador según los requisitos del sistema.",
 					"quietTitle": "Modalidad silenciosa",
 					"quietDesc": "Continúe deduciendo el rendimiento y la velocidad del ventilador de equipo siempre que sea posible con el consumo de energía bajo.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Instale el controlador de GPU para usar la función de Aceleración.",
 						"goInstall": "VAYA A INSTALAR"
 					},
+					"autoAdjustDesc": "Detectar automáticamente el juego actual y ajustar el rendimiento de la CPU/GPU.",
 					"autoSwitch": "Cambie automáticamente a la modalidad de rendimiento al iniciar juegos y vuelva a cambiar después de salir del juego."
 				},
 				"advancedOC": {

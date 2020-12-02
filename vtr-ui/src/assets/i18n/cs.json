@@ -28,6 +28,11 @@
 						"balance": "Vyvážení",
 						"quiet": "Tichý"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Přetaktování CPU a GPU zapnuto",
+						"CPU_ON": "Přetaktování CPU zapnuto",
+						"GPU_ON": "Přetaktování GPU zapnuto"
+					},
 					"title": "Přetaktování CPU",
 					"status": {
 						"alwayson": "Zapnuto",
@@ -121,7 +126,7 @@
 					"OCDesc": "Můžete se rozhodnout zapnout funkci přetaktování.",
 					"ac_dcDesc": "Režim Performance (Výkon) je použitelný pouze v případě, že je připojen napájecí adaptér.",
 					"balanceTitle": "Režim vyvážení",
-					"balanceDesc": "Automatické vyvážení výkonu a rychlosti ventilátoru na základě teploty se středně vysokou spotřebou.",
+					"balanceDesc": "Automaticky přizpůsobuje výkon a otáčky ventilátoru podle požadavků systému.",
 					"quietTitle": "Tichý režim",
 					"quietDesc": "Pokud je to možné, snižte hlasitost redukcí výkonu počítače a rychlosti ventilátoru díky nízké spotřebě.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač GPU.",
 						"goInstall": "ZAčíT INSTALACI"
 					},
+					"autoAdjustDesc": "Automatická detekce aktuální hry a vyladění výkonu CPU/GPU.",
 					"autoSwitch": "Automatické přepínání do režimu Performance (Výkon) na výkon při spouštění her a jeho ukončení po opuštění hry."
 				},
 				"advancedOC": {

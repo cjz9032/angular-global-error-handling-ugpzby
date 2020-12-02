@@ -28,6 +28,11 @@
 						"balance": "Denge",
 						"quiet": "Sessiz"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU ve GPU hız aşırtma açık",
+						"CPU_ON": "CPU hız aşırtma açık",
+						"GPU_ON": "GPU hız aşırtma açık"
+					},
 					"title": "CPU Hız Aşırtma",
 					"status": {
 						"alwayson": "Açık",
@@ -121,7 +126,7 @@
 					"OCDesc": "Hız Aşırtma işlevini açmayı seçebilirsiniz.",
 					"ac_dcDesc": "Performans Kipi yalnızca AC güç bağdaştırıcısı takılıyken geçerlidir.",
 					"balanceTitle": "Denge Kipi",
-					"balanceDesc": "Orta düzeyde güç tüketimiyle performansı ve fan hızını sıcaklığa göre otomatik olarak dengeleyin.",
+					"balanceDesc": "Performansı ve fan hızını sistem gereksinimine göre otomatik olarak ayarlayın.",
 					"quietTitle": "Sessiz Kipi",
 					"quietDesc": "Düşük güç tüketimiyle mümkün olduğunda bilgisayarınızın performansını ve fan hızını azaltarak sessiz olun.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
 						"goInstall": "YÜKLE"
 					},
+					"autoAdjustDesc": "Otomatik olarak geçerli oyunu algılayıp CPU/GPU performansını ayarlayın.",
 					"autoSwitch": "Oyunları başlatırken otomatik olarak Performans Kipi'ne geçip oyundan çıktıktan sonra eski kipe geri dönün."
 				},
 				"advancedOC": {

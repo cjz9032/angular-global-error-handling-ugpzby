@@ -28,6 +28,11 @@
 						"balance": "Tasapaino",
 						"quiet": "Hiljainen"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU:n/GPU:n ylikellotus käytössä",
+						"CPU_ON": "CPU:n ylikellotus käytössä",
+						"GPU_ON": "GPU:n ylikellotus käytössä"
+					},
 					"title": "CPU-ylikellotus",
 					"status": {
 						"alwayson": "Käytössä",
@@ -121,7 +126,7 @@
 					"OCDesc": "Voit halutessasi ottaa käyttöön ylikellotustoiminnon.",
 					"ac_dcDesc": "Suorituskykytila on käytettävissä vain, kun verkkolaite on liitetty tietokoneeseen.",
 					"balanceTitle": "Tasapainotettu tila",
-					"balanceDesc": "Suorituskyvyn ja tuulettimen nopeuden automaattinen tasapainotus lämpötilan mukaan, keskitason virrankulutus.",
+					"balanceDesc": "Säädä suorituskykyä ja tuulettimen nopeutta automaattisesti järjestelmävaatimusten mukaisesti.",
 					"quietTitle": "Hiljainen tila",
 					"quietDesc": "Pidä laite hiljaisena alentamalla tietokoneen suorituskykyä ja tuulettimen nopeutta, jos mahdollista, alhainen virrankulutus.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Asenna GPU-ajuri käyttämään ylikellotustoimintoa.",
 						"goInstall": "ASENNA"
 					},
+					"autoAdjustDesc": "Havaitse nykyinen peli automaattisesti ja säädä CPU:n/GPU:n suorituskykyä.",
 					"autoSwitch": "Automaattinen vaihto suorituskykytilaan pelien käynnistyessä ja paluu takaisin pelin jälkeen."
 				},
 				"advancedOC": {

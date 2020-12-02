@@ -28,6 +28,11 @@
 						"balance": "Ravnovesje",
 						"quiet": "Tiho"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Vklopljeno zvišanje takta CPE in GPE",
+						"CPU_ON": "Vklopljeno zvišanje takta CPE",
+						"GPU_ON": "Vklopljeno zvišanje takta GPE"
+					},
 					"title": "Zvišanje takta CPE",
 					"status": {
 						"alwayson": "Vklopljeno",
@@ -121,7 +126,7 @@
 					"OCDesc": "Vklopite lahko funkcijo Zvišanje takta.",
 					"ac_dcDesc": "Zmogljivejši način lahko uporabite le, kadar je v računalnik priključen napajalnik.",
 					"balanceTitle": "Uravnoteženi način",
-					"balanceDesc": "Samodejno uravnotežite zmogljivost in hitrost ventilatorja glede na temperaturo pri srednje visoki porabi energije.",
+					"balanceDesc": "Samodejno prilagodi zmogljivost in hitrost ventilatorja glede na sistemske zahteve.",
 					"quietTitle": "Tihi način",
 					"quietDesc": "Zmanjšajte zmogljivost računalnika in hitrost ventilatorja, kadar je to mogoče, in poskrbite za tiho delovanje pri nizki porabi energije.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za GPE.",
 						"goInstall": "NAMESTI"
 					},
+					"autoAdjustDesc": "Samodejno zazna trenutno igro in nastavi zmogljivost CPE/GPE.",
 					"autoSwitch": "Samodejno preklopite na zmogljivejši način pri zagonu iger in preklopite nazaj po izhodu iz igre."
 				},
 				"advancedOC": {

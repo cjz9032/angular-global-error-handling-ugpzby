@@ -28,6 +28,11 @@
 						"balance": "Vyvážený",
 						"quiet": "Tichý"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Pretaktovanie CPU a GPU zapnuté",
+						"CPU_ON": "Pretaktovanie CPU zapnuté",
+						"GPU_ON": "Pretaktovanie GPU zapnuté"
+					},
 					"title": "Pretaktovanie CPU",
 					"status": {
 						"alwayson": "Zap.",
@@ -121,7 +126,7 @@
 					"OCDesc": "Môžete sa rozhodnúť zapnúť funkciu pretaktovania.",
 					"ac_dcDesc": "Režim vysokého výkonu je možné použiť, len ak je pripojený sieťový adaptér.",
 					"balanceTitle": "Vyvážený režim",
-					"balanceDesc": "Automatické nastavovanie rovnováhy medzi výkonom a otáčkami ventilátora v závislosti od teploty so strednou spotrebou energie.",
+					"balanceDesc": "Automaticky upraví výkon a rýchlosť ventilátora podľa systémových požiadaviek.",
 					"quietTitle": "Tichý režim",
 					"quietDesc": "Udržiavanie nízkej hlučnosti znížením výkonu počítača a otáčok ventilátora, pokiaľ je to možné, s nízkou spotrebou energie.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač grafického procesora.",
 						"goInstall": "INŠTALOVAŤ"
 					},
+					"autoAdjustDesc": "Automaticky rozpozná aktuálnu hru a vyladí výkon CPU/GPU.",
 					"autoSwitch": "Automaticky prepínajte do režimu vysokého výkonu pri spustení hry a po ukončení hry prepnite späť."
 				},
 				"advancedOC": {

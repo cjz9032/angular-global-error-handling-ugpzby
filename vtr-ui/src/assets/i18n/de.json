@@ -28,6 +28,11 @@
 						"balance": "Abstimmung",
 						"quiet": "Leise"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU‑ und GPU-Übertaktung eingeschaltet",
+						"CPU_ON": "CPU‑Übertaktung eingeschaltet",
+						"GPU_ON": "GPU‑Übertaktung eingeschaltet"
+					},
 					"title": "CPU-Übertaktung",
 					"status": {
 						"alwayson": "Ein",
@@ -121,7 +126,7 @@
 					"OCDesc": "Sie können die Overclocking-Funktion aktivieren.",
 					"ac_dcDesc": "Der Leistungsmodus kann nur eingesetzt werden, wenn das Netzteil angeschlossen ist.",
 					"balanceTitle": "Ausbalancierter Modus",
-					"balanceDesc": "Automatische Anpassung von Leistung und Lüftergeschwindigkeit basierend auf der Temperatur für einen durchschnittlichen Stromverbrauch.",
+					"balanceDesc": "Leistung und Lüftergeschwindigkeit automatisch entsprechend der Systemanforderung anpassen.",
 					"quietTitle": "Ruhemodus",
 					"quietDesc": "Leiser Betrieb durch Senken der Leistung und Lüftergeschwindigkeit des Computers für niedrigen Stromverbrauch.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "GPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
 						"goInstall": "INSTALLIEREN"
 					},
+					"autoAdjustDesc": "Aktuelles Spiel automatisch erkennen und die CPU/GPU-Leistung anpassen",
 					"autoSwitch": "Automatischer Wechsel in den Leistungsmodus, wenn Spiele gestartet werden. Nach dem Beenden des Spiels wird der Modus automatisch zurückgeschaltet."
 				},
 				"advancedOC": {

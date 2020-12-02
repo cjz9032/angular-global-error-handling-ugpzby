@@ -28,6 +28,11 @@
 						"balance": "Balanse",
 						"quiet": "Stille"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU/GPU-overklokking på",
+						"CPU_ON": "CPU-overklokking på",
+						"GPU_ON": "GPU-overklokking på"
+					},
 					"title": "CPU-overklokking",
 					"status": {
 						"alwayson": "På",
@@ -121,7 +126,7 @@
 					"OCDesc": "Du kan velge å skru på funksjonen for overklokking.",
 					"ac_dcDesc": "Ytelsesmodus er bare tilgjengelig når en strømadapter er koblet til.",
 					"balanceTitle": "Balansert modus",
-					"balanceDesc": "Balanserer automatisk ytelse og viftehastighet basert på temperatur, med middels strømforbruk.",
+					"balanceDesc": "Justerer ytelses- og viftehastigheten automatisk i henhold til systemkravet.",
 					"quietTitle": "Stillemodus",
 					"quietDesc": "Holdes stille ved å redusere datamaskinens ytelse og viftehastighet der det er mulig, med lavt strømforbruk.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
 						"goInstall": "INSTALLER"
 					},
+					"autoAdjustDesc": "Finner det gjeldende spillet automatisk og justerer CPU/GPU-ytelsen.",
 					"autoSwitch": "Bytt automatisk til ytelsesmodus når du starter spill, og bytt tilbake etter at du har avsluttet spillet."
 				},
 				"advancedOC": {

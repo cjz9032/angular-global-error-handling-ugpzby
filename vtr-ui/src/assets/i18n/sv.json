@@ -28,6 +28,11 @@
 						"balance": "Balans",
 						"quiet": "Tyst"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Aktivera CPU- och GPU-överklockning",
+						"CPU_ON": "Aktivera CPU-överklockning",
+						"GPU_ON": "Aktivera GPU-överklockning"
+					},
 					"title": "CPU-överklockning",
 					"status": {
 						"alwayson": "På",
@@ -195,7 +200,7 @@
 					"OCDesc": "Du kan välja att slå på överklockningsfunktionen.",
 					"ac_dcDesc": "Prestandaläget går bara att använda när nätadaptern är inkopplad.",
 					"balanceTitle": "Balansläge",
-					"balanceDesc": "Gör en automatisk avvägning mellan prestanda och fläkthastighet utifrån temperatur med medelhög effektförbrukning.",
+					"balanceDesc": "Justera automatiskt prestanda och fläkthastighet automatiskt utifrån systemkrav.",
 					"quietTitle": "Tyst läge",
 					"quietDesc": "Gör datorn tystare genom att minska datorns prestanda och fläkthastighet med låg effektförbrukning när det är möjligt.",
 					"OC": {
@@ -208,6 +213,7 @@
 						"gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockningsfunktionen.",
 						"goInstall": "INSTALLERA"
 					},
+					"autoAdjustDesc": "Identifiera automatiskt aktuellt spel och finjustera CPU-/GPU-prestanda.",
 					"autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."
 				},
 				"popup": {
