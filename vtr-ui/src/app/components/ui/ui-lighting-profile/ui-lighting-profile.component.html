@@ -3,7 +3,7 @@
 		<vtr-ui-lighting-profile-toggle (setLightingProfileId)="setLightingProfileId($event)"
 			[currentProfile]="currentProfile" [defaultLang]="defaultLanguage"
 			[id]="!isProfileOff && simpleOrComplex===1 ? 'single':'profile'"
-			[automationId]="(simpleOrComplex===1) ? 'single':'profile'"></vtr-ui-lighting-profile-toggle>
+			[automationId]="(simpleOrComplex===1) ? 'single':'profile_'" [labelId]="'profile_RGBlighting'"></vtr-ui-lighting-profile-toggle>
 		<!-- <vtr-ui-brightness-slider *ngIf="!isProfileOff && showBrightnessSlider===true"
 			[automationId]="'gaming_lighting_brightness_slider'+profileBrightness" [lightingData]="profileBrightness"
 			[metricsId]="'lighting_profile_brightness'" (onSliderChanged)="setLightingBrightness($event)">

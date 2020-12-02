@@ -11,7 +11,7 @@
 							{{'gaming.lightingProfile.lightingProfileHeading.heading.title' | translate}}</h5>
 						<vtr-ui-lighting-profile-toggle [currentProfile]="setprofId"
 						(setLightingProfileId)="SetProfile($event)"
-						[id]="'profile'" [automationId]="isPopupVisible?'profile_null':'profile'" [isWidgetContainer]="isWidgetContainer" [isToggle]="isPopupVisible"></vtr-ui-lighting-profile-toggle>
+						[id]="'profile'" [automationId]="isPopupVisible?'profile_null':''" [labelId]="'dashboard_lighting'" [isWidgetContainer]="isWidgetContainer" [isToggle]="isPopupVisible"></vtr-ui-lighting-profile-toggle>
 						<hr class="dark-dashline" />
 						<vtr-ui-gaming-driver-popup *ngIf="isdriverpopup==true" [showMePartially]="isdriverpopup"
 							(driverpopval)="isdriverpopup=false" [automationId]="'gaming_lighting'"

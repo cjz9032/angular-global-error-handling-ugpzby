@@ -10,6 +10,7 @@ export class UiLightingProfileToggleComponent implements OnInit {
 	@Output() public setLightingProfileId = new EventEmitter<any>();
 	@Input() id: string = '';
 	@Input() automationId: string = '';
+	@Input() labelId: string = '';
 	@Input() isWidgetContainer: boolean = false;
 	@Input() isToggle: boolean = false;
 	constructor() {}
