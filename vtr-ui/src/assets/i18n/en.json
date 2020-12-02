@@ -1330,7 +1330,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Enable auto-transition to \"Extreme performance\" mode. When enabled, the temperature on your computer and fan noise might automatically increase.",
+							"description": {
+								"line1": "Enable auto-transition to \"Extreme performance\" mode. When enabled, your computer might enter \"Extreme performance\" mode, depending on the system load and user scenario.",
+								"line2": "In this mode, the temperature on your computer and fan noise might increase."
+							},
 							"more": "MORE",
 							"less": "LESS",
 							"moreContent": {
