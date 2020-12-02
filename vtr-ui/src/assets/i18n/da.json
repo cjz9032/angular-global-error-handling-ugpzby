@@ -28,6 +28,11 @@
 						"balance": "Balance",
 						"quiet": "Stille"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU- og GPU-overclocking aktiveret",
+						"CPU_ON": "CPU-overclocking aktiveret",
+						"GPU_ON": "GPU-overclocking aktiveret"
+					},
 					"title": "CPU-overclocking",
 					"status": {
 						"alwayson": "Aktiveret",
@@ -121,7 +126,7 @@
 					"OCDesc": "Du kan vælge at aktivere overclockingfunktionen.",
 					"ac_dcDesc": "Ydeevnetilstand kan kun benyttes, når vekselstrømsadapteren er tilsluttet.",
 					"balanceTitle": "Balanceret tilstand",
-					"balanceDesc": "Afbalancer automatisk ydeevnen og blæserhastigheden med udgangspunkt i temperaturen og med mellemstort strømforbrug.",
+					"balanceDesc": "Juster automatisk ydeevnen og blæserhastigheden i henhold til systemkravet.",
 					"quietTitle": "Stille tilstand",
 					"quietDesc": "Bevar et lavt støjniveau ved at reducere computerens ydeevne og blæserhastighed, når det er muligt, med et lavt strømforbrug.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Installer GPU-driver for at bruge overclockingfunktionen.",
 						"goInstall": "INSTALLER"
 					},
+					"autoAdjustDesc": "Find automatisk det aktuelle spil, og juster CPU-/GPU-ydeevnen.",
 					"autoSwitch": "Skift automatisk til ydeevnetilstand, når du starter spil, og skift tilbage, når spillet af afsluttet."
 				},
 				"advancedOC": {

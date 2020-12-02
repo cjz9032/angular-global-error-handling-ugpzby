@@ -28,6 +28,11 @@
 						"balance": "平衡",
 						"quiet": "安靜"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU 和 GPU 超頻開啟",
+						"CPU_ON": "CPU 超頻開啟",
+						"GPU_ON": "GPU 超頻開啟"
+					},
 					"title": "CPU 超頻",
 					"status": {
 						"alwayson": "開啟",
@@ -195,7 +200,7 @@
 					"OCDesc": "您可以選擇開啟超頻功能。",
 					"ac_dcDesc": "只有在已插入 AC 電源整流器時，才適用效能模式。",
 					"balanceTitle": "平衡模式",
-					"balanceDesc": "根據溫度自動平衡效能和風扇速度，耗電量中等。",
+					"balanceDesc": "根據系統需求自動調整效能和風扇速度。",
 					"quietTitle": "安靜模式",
 					"quietDesc": "盡可能降低電腦效能和風扇速度以保持安靜，耗電量低。",
 					"OC": {
@@ -208,6 +213,7 @@
 						"gpuDriverLack": "安裝 GPU 驅動程式以使用超頻功能。",
 						"goInstall": "執行安裝"
 					},
+					"autoAdjustDesc": "自動偵測目前遊戲並調整 CPU/GPU 效能。",
 					"autoSwitch": "啟動遊戲時自動切換到效能模式，結束遊戲之後再切換回來。"
 				},
 				"popup": {

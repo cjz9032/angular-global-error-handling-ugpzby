@@ -28,6 +28,11 @@
 						"balance": "Echilibru",
 						"quiet": "Silențios"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Overclocking CPU și GPU activat",
+						"CPU_ON": "Overclocking CPU activat",
+						"GPU_ON": "Overclocking GPU activat"
+					},
 					"title": "Overclocking CPU",
 					"status": {
 						"alwayson": "Act.",
@@ -121,7 +126,7 @@
 					"OCDesc": "Puteți porni funcția Overclocking.",
 					"ac_dcDesc": "Modul Performanță este disponibil numai atunci când este conectat un adaptor de c. a.",
 					"balanceTitle": "Mod echilibrat",
-					"balanceDesc": "Echilibrați automat performanța și viteza ventilatorului în funcție de temperatură, cu ajutorul consumului mediu de energie.",
+					"balanceDesc": "Reglați automat performanța și viteza ventilatorului în funcție de cerințele sistemului.",
 					"quietTitle": "Mod silențios",
 					"quietDesc": "Mențineți o funcționare silențioasă a computerului, reducând performanța acestuia și viteza ventilatorului, atunci când este posibil, cu ajutorul consumului redus de energie.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Pentru a utiliza funcția Overclocking, instalați driverul GPU.",
 						"goInstall": "INSTALAȚI"
 					},
+					"autoAdjustDesc": "Detectați automat jocul curent și reglați performanța CPU / GPU.",
 					"autoSwitch": "Treceți automat la modul Performanță atunci când lansați jocuri și reveniți după ce ieșiți din joc."
 				},
 				"advancedOC": {

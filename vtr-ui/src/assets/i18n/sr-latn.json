@@ -28,6 +28,11 @@
 						"balance": "Ujednačeno",
 						"quiet": "Tiho"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU&GPU overkloking uključen",
+						"CPU_ON": "CPU overkloking uključen",
+						"GPU_ON": "GPU overkloking uključen"
+					},
 					"title": "CPU overklok",
 					"status": {
 						"alwayson": "Uključeno",
@@ -121,7 +126,7 @@
 					"OCDesc": "Možete odabrati da uključite funkciju Overkloking.",
 					"ac_dcDesc": "Režim performansi je primenljiv samo kada je uključen adapter za napajanja na struju.",
 					"balanceTitle": "Ujednačeni režim",
-					"balanceDesc": "Automatski balansira performanse i brzinu ventilatora na osnovu temperature sa srednjom potrošnjom struje.",
+					"balanceDesc": "Automatsko podešavanje performansi i brzine ventilatora u skladu sa zahtevom sistema.",
 					"quietTitle": "Tihi režim",
 					"quietDesc": "Budite tihi tako što ćete smanjiti performanse računara i brzinu ventilatora gde je to moguće sa malom potrošnjom struje.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Instalirajte GPU upravljački program da biste koristili funkciju Overkloking.",
 						"goInstall": "IDI NA INSTALACIJU"
 					},
+					"autoAdjustDesc": "Automatsko otkrivanje trenutne igre i podešavanje performansi centralnog procesora (CPU)/grafičke kartice (GPU).",
 					"autoSwitch": "Automatski prebacite na režim performansi pri pokretanju igara i vratite se iz njega nakon što izađete iz igre."
 				},
 				"advancedOC": {

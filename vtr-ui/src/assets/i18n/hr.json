@@ -28,6 +28,11 @@
 						"balance": "Balans",
 						"quiet": "Tiho"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Overklokiranje CPU i GPU na",
+						"CPU_ON": "Overklokiranje CPU na",
+						"GPU_ON": "Overklokiranje GPU na"
+					},
 					"title": "Overclock CPU-a",
 					"status": {
 						"alwayson": "Uključeno",
@@ -121,7 +126,7 @@
 					"OCDesc": "Možete odabrati uključivanje funkcije overclockinga.",
 					"ac_dcDesc": "Način performansi rada primjenjiv je samo kad je uključen ispravljač.",
 					"balanceTitle": "Način rada uravnoteženosti",
-					"balanceDesc": "Automatski uravnotežite performanse i brzinu ventilatora na temelju temperature sa srednjom potrošnjom energije.",
+					"balanceDesc": "Automatski prilagodite performanse i brzinu ventilatora u skladu sa zahtjevima sustava.",
 					"quietTitle": "Tihi način rada",
 					"quietDesc": "Zadržite tihi rad smanjujući performanse računala i brzinu ventilatora kad je to moguće uz smanjenje potrošnje energije.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Instalirajte upravljački program GPU za upotrebu funkcije overclockinga.",
 						"goInstall": "INSTALIRAJ"
 					},
+					"autoAdjustDesc": "Automatsko otkrivanje trenutne igre i prilagodba performansi CPU/GPU.",
 					"autoSwitch": "Automatski prebacite u način rada performansi pri pokretanju igara i vratite natrag nakon zatvaranja igre."
 				},
 				"advancedOC": {

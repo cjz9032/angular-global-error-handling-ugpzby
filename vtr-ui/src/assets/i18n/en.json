@@ -36,6 +36,11 @@
 						"balance": "Balance",
 						"quiet": "Quiet"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "CPU&GPU overclocking on",
+						"CPU_ON": "CPU overclocking on",
+						"GPU_ON": "GPU overclocking on"
+					},
 					"title": "CPU Overclock",
 					"status": {
 						"alwayson": "On",
@@ -126,7 +131,7 @@
 					"OCDesc": "You can choose to turn on the Overclocking function.",
 					"ac_dcDesc": "Performance Mode is applicable only when ac power adaptor is plugged in.",
 					"balanceTitle": "Balance Mode",
-					"balanceDesc": "Automatically balance performance and fan speed based on temperature with medium power consumption.",
+					"balanceDesc": "Automatically adjust the performance and fan speed according to the system requirement.",
 					"quietTitle": "Quiet Mode",
 					"quietDesc": "Keep quiet by reducing your computer performance and fan speed where possible with low power consumption.",
 					"OC": {
@@ -139,6 +144,7 @@
 						"gpuDriverLack": "Install GPU driver to use the Overclocking function.",
 						"goInstall": "GO INSTALL"
 					},
+					"autoAdjustDesc": "Automatically detect the current game and tune CPU/GPU performance.",
 					"autoSwitch": "Automatically switch to Performance Mode when launching games and switch back after exiting the game."
 				},
 				"advancedOC": {

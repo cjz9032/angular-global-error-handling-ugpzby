@@ -28,6 +28,11 @@
 						"balance": "Bilanciamento",
 						"quiet": "Silenzioso"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Overclock CPU e GPU su",
+						"CPU_ON": "Overclock CPU su",
+						"GPU_ON": "Overclock GPU su"
+					},
 					"title": "Overclock della CPU",
 					"status": {
 						"alwayson": "Attivato",
@@ -121,7 +126,7 @@
 					"OCDesc": "È possibile scegliere di attivare la funzione di overclock.",
 					"ac_dcDesc": "La modalità Prestazioni è attivabile solo quando l'adattatore di alimentazione CA è collegato.",
 					"balanceTitle": "Modalità bilanciata",
-					"balanceDesc": "Bilancia automaticamente le prestazioni e la velocità della ventola in base alla temperatura con un consumo energetico intermedio.",
+					"balanceDesc": "Regola automaticamente le prestazioni e la velocità della ventola in base al requisito del sistema.",
 					"quietTitle": "Modalità silenziosa",
 					"quietDesc": "Laddove possibile, aumenta la silenziosità riducendo le prestazioni del computer e la velocità della ventola, ottenendo un consumo energetico più basso.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Installare il driver GPU per utilizzare la funzione di overclock.",
 						"goInstall": "VAI A INSTALLA"
 					},
+					"autoAdjustDesc": "Rileva automaticamente il gioco corrente e ottimizza le prestazioni di CPU/GPU.",
 					"autoSwitch": "Passa automaticamente alla modalità Prestazioni per giocare e chiudila quando esci dal gioco."
 				},
 				"advancedOC": {

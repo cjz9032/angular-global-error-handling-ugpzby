@@ -28,6 +28,11 @@
 						"balance": "Equilibre",
 						"quiet": "Silencieux"
 					},
+					"thermalMode3Tips": {
+						"CPU_GPU_On": "Overclocking UC et GPU activé",
+						"CPU_ON": "Overclocking UC activé",
+						"GPU_ON": "Overclocking GPU activé"
+					},
 					"title": "Overclocking UC",
 					"status": {
 						"alwayson": "Activé",
@@ -121,7 +126,7 @@
 					"OCDesc": "Vous pouvez choisir d'activer la fonction overclocking.",
 					"ac_dcDesc": "Le mode de performance n'est applicable que lorsque le boîtier d'alimentation est branché.",
 					"balanceTitle": "Mode équilibré",
-					"balanceDesc": "Équilibre automatiquement les performances et la vitesse du ventilateur en fonction de la température avec une consommation d'énergie moyenne.",
+					"balanceDesc": "Régler automatiquement les performances et la vitesse du ventilateur en fonction de la configuration système requise.",
 					"quietTitle": "Mode silencieux",
 					"quietDesc": "Reste silencieux en diminuant les performances de votre ordinateur et en réduisant la vitesse du ventilateur dans la mesure du possible avec une consommation d'énergie faible.",
 					"OC": {
@@ -134,6 +139,7 @@
 						"gpuDriverLack": "Installer les pilotes GPU pour utiliser la fonction overclocking.",
 						"goInstall": "PROCÉDER À L'INSTALLATION"
 					},
+					"autoAdjustDesc": "Détecter automatiquement le jeu en cours et optimiser les performances de l'UC/GPU.",
 					"autoSwitch": "Passage automatique au mode performance lors du lancement d'un jeu et retour au mode précédent à la fermeture du jeu."
 				},
 				"advancedOC": {
