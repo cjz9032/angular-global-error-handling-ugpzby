@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.20](https://bitbucket.tc.lenovo.com///compare/v1.9.19...v1.9.20) (2020-12-02)
+
+
+### Features
+
+* **Performance optimization:** reduce the number of components loaded at first ([5970064](https://bitbucket.tc.lenovo.com///commit/59700644d0f2d3ec312780d5f55d312f4f50ca82))
+
+
+### Bug Fixes
+
+* **performance optimization:** update document to angular DOCUMENT ([23b3cb0](https://bitbucket.tc.lenovo.com///commit/23b3cb0b4bff09e08b87ce0f383cd4131bdac890))
+* **Performance optimization:** update code ([06735ea](https://bitbucket.tc.lenovo.com///commit/06735ea512b92764f1fa057fe42c7212c97b38cc))
+
 ### [1.9.19](https://bitbucket.tc.lenovo.com///compare/v1.9.18...v1.9.19) (2020-12-01)
 
 ### [1.9.18](https://bitbucket.tc.lenovo.com///compare/v1.9.17...v1.9.18) (2020-11-30)
