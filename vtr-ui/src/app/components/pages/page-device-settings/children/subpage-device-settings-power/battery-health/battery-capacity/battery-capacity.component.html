@@ -21,7 +21,7 @@
 		<div id="battery-health-capacity-tooltip-content" role="tooltip"
 		[innerHTML]="'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate"></div>
 	</ng-template>
-	<div class="capacity-area">
+	<div class="capacity-area" [attr.aria-label]="'battery capacity percent'" role="img">
 		<svg class="capacity-indicator" id="battery-health-capacity-circle">　　　　　　　　　
 			<circle class="ground-circle" [ngClass]="circleStyle" cx="50" cy="50" r="42"/>
 			<circle cx="50" cy="50" r="49" class="thin-circle"/>
@@ -42,7 +42,7 @@
 			<span *ngIf="originalDesignCapacity !== undefined;else yellowExclamation">{{ originalDesignCapacity + " Wh" }}</span>
 		</p>
 		<ng-template #yellowExclamation>
-			<vtr-ui-exclamation-point></vtr-ui-exclamation-point>
+			<vtr-ui-exclamation-point [attr.aria-label]="'capacity data is not available'" role="img"></vtr-ui-exclamation-point>
 		</ng-template>
 	</div>
 </div>
