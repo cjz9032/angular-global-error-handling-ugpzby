@@ -5,20 +5,18 @@
 		</div>
 	</div>
 
-	<vtr-ui-group-card class="snapshot-group-card-list col-12" [hostPage]="'SnapshotPage'" [title]="'snapshot.hardwareListTitle' | translate">
-		<div class="container">
-			<div class="row">
-				<!-- Hardware Components List -->
-			</div>
-		</div>
+	<vtr-ui-group-card class="snapshot-group-card-list col-12" [hostPage]="'SnapshotPage'" [title]="'snapshot.hardwareListTitle' | translate">	
+		<vtr-ui-snapshot-item-list
+			class="components-list"
+			[componentId]="'teste'"
+		></vtr-ui-snapshot-item-list>
 	</vtr-ui-group-card>
 
 	<vtr-ui-group-card class="snapshot-group-card-list col-12" [hostPage]="'SnapshotPage'" [title]="'snapshot.softwareListTitle' | translate">
-		<div class="container">
-			<div class="row">
-				<!-- Software Components List -->
-			</div>
-		</div>
+		<vtr-ui-snapshot-item-list
+			class="components-list"
+			[componentId]="'teste2'"
+		></vtr-ui-snapshot-item-list>
 	</vtr-ui-group-card>
 
 	<div class="row container">

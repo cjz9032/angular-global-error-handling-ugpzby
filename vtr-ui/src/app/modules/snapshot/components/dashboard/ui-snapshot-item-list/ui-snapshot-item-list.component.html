@@ -1,0 +1,87 @@
+<div id="hwscan-item-{{ i }}" class="vtr-widget-hardware-scan-item"
+	*ngFor="let item of items; let i = index; let last = last">
+	<div>
+		<div class="row">
+			<div class="module-information" [ngClass]="{ 'last-child': last }">
+				<div class="module-icon" *ngIf="item.icon !== undefined">
+
+					<!-- Defines an icon according with hardware component -->
+					<div class="test-status">
+						<img id="snapshot-item-{{ i }}-icon"
+							alt="{{ this.modulesAttributes.get(item.icon).src }}"
+							class="img-icon"
+							[src]="this.modulesAttributes.get(item.icon).src | svgInline | async" />
+					</div>
+
+				</div>
+
+				<!-- Icon to expand and collapse module information -->
+				<div class="row">
+					<p id="snapshot-item-{{ i }}-module" role="text" class="title">
+						{{ ('hardwareScan.pluginTokens.' + item.module) | translateDefault:item.module }}</p>
+					<p id="snapshot-item-{{ i }}-device" role="text" class="subtitle" *ngIf="item.name">
+						{{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</p>
+				</div>
+
+				<!-- Shows load icon until modules are not loaded -->
+				<img *ngIf="!isComponentsLoaded; else updateButton" class="load-icon" src="assets/icons/snapshot/icon_snapshot_progress.svg"/>
+
+				<!-- Shows button to update after modules get loaded -->
+				<ng-template #updateButton>
+					<vtr-ui-hyperlink-button
+						class="hyperlink-container"
+						[metricsParent]="'Snapshot'"
+						(hyperlinkClick)="'#'"
+					 	[class]="'update-btn'"
+						linkId="snapshot-update-btn"
+						hyperlinkStyle="xs-blue-lighter"
+						[label]=" 'UPDATE' "
+						[disableTooltip]="true">
+					</vtr-ui-hyperlink-button>
+				</ng-template>
+
+				<!-- Icon to expand and collapse module information -->
+				<div id="snapshot-item-{{ i }}-details-btn"
+					class="module-info-expand-btn"
+					tabindex="0"
+					[attr.aria-label]="!item.detailsExpanded ? item.module + 'expand-module-details': item.module + 'collapse-module-details'"
+					(click)="item.detailsExpanded = !item.detailsExpanded"
+					(keyup.enter)="item.detailsExpanded = !item.detailsExpanded" role="button">
+					<fa-icon *ngIf="!item.detailsExpanded; else expandIcon" [icon]="['fal', 'angle-down']"></fa-icon>
+					<ng-template #expandIcon>
+						<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
+					</ng-template>
+				</div>
+			</div>
+		</div>
+
+		<!-- Table containing module information -->
+		<div [ngbCollapse]="!item.detailsExpanded" class="details-list">
+			<table id="hwscan-item-{{ i }}-details" class="table table-details table-active table-borderless">
+				<tbody>
+					<div *ngIf="!isComponentsLoaded; else moduleInfo" class="progress-warning-image">
+						<fa-icon [icon]="['fal', 'circle-notch']"></fa-icon>
+					</div>
+					<ng-template #moduleInfo>
+						<tr>
+							<td></td>
+							<th>Baseline snapshot</th>
+							<th>Last snapshot</th>
+						</tr>
+						<tr *ngFor="let detail of item.details; let j = index">
+							<th id="snapshot-item-{{ i }}-detail-{{ j }}-name" class="table-info-name">
+								huehue
+							</th>
+							<td id="snapshot-item-{{ i }}-detail-{{ j }}-value">
+								brsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</td>
+							<td id="snapshot-item-{{ i }}-detail-{{ j }}-value">
+								br</td>
+						</tr>
+					</ng-template>
+				</tbody>
+			</table>
+		</div>
+
+		<hr *ngIf="!last" aria-hidden="true">
+	</div>
+</div>

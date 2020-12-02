@@ -1,0 +1,170 @@
+@import '../../../../../app.theme';
+
+.vtr-widget-hardware-scan-item {
+    padding: 0 2.4rem;
+    margin-top: 1rem;
+    width: 100%;
+
+	.module-information {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+        flex-wrap: nowrap;
+        
+        .load-icon {
+            margin-left: auto;
+            color: $blue_lightest;
+		}
+		
+		.update-btn {
+			margin-left: auto;
+		}
+    }
+    
+    .last-child {
+        margin-bottom: 1rem;
+    }
+
+	.title {
+		font-size: $fontsize_xs;
+		font-weight: $weight_600;
+		padding-left: 1rem;
+		color: $shade_blue;
+	}
+
+	.subtitle {
+		font-size: $fontsize_xs;
+		padding: 0 1rem;
+		color: $shade_blue;
+		font-weight: $weight_light;
+	}
+
+	.module-icon {
+		display: flex;
+		align-items: center;
+		font-size: 3rem;
+	}
+
+	.img-icon {
+		width: 1.4rem;
+		height: 1.4rem;
+		vertical-align: middle;
+		margin-bottom: 1rem;
+	}
+
+    .module-info-expand-btn {
+		margin: 0 1rem 0 2.2rem;
+
+		&:focus {
+			outline: 1px;
+		}
+
+		fa-icon {
+			font-size: $fontsize_lg;
+			vertical-align: middle;
+		}
+
+		&:hover {
+			opacity: 1;
+
+			.collapse-text {
+				text-decoration: underline;
+			}
+		}
+		&:focus {
+			@include outline-blue;
+		}
+    }
+
+	.details-list {
+		border-radius: $border_radius;
+		overflow: hidden;
+		
+		@include high-contrast-border;
+		
+		table {
+			table-layout: fixed;
+
+			tbody tr .table-info-name {
+				padding-left: 4rem;
+			}
+
+			tbody tr td, th {
+				word-wrap: break-word;
+			}
+
+			tbody .progress-warning-image {
+				// display: block;
+				// margin: 4rem auto 4rem auto;
+
+				fa-icon {
+					font-size: 6.2rem;
+				}
+				p {
+					color: blue;
+				}
+			}
+		}
+	}
+
+	.button-box {
+		padding: 0.5rem;
+		@media #{$mediaquery_7} {
+			margin-top: 1.2rem;
+		}
+
+		.button {
+			min-height: 2rem;
+			border-radius: 3rem;
+			min-width: 5rem;
+			background: $gradient_main !important;
+			border: none;
+			color: $light !important;
+			font-size: 1rem;
+			font-weight: $weight_bold !important;
+			text-align: center !important;
+			text-decoration: none;
+			display: inline-block;
+			padding: 0 2.5rem;
+		}
+	}
+
+	.hyperlink-container {
+		::ng-deep.vtr-ui-hyperlink-button {
+			padding-left: 0;
+		}
+	}
+
+	.collapse-control {
+		cursor: pointer;
+
+		fa-icon {
+			font-size: $fontsize_lg;
+			vertical-align: middle;
+		}
+
+		&:hover {
+			opacity: 1;
+
+			.collapse-text {
+				text-decoration: underline;
+			}
+		}
+		&:focus {
+			@include outline-blue;
+		}
+	}
+
+	.not-wrap {
+		flex-wrap: nowrap;
+	}
+
+	.collapse-item {
+		padding-right: 0;
+	}
+
+	p {
+		margin-bottom: 0rem;
+	}
+}
