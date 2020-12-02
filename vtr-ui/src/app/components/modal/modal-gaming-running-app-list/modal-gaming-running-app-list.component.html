@@ -1,8 +1,8 @@
-<div class="modal-gaming-running-app-list" role="text" [id]="info.id.section" (keydown.esc)="closeModal()" (keyup.esc)="closeModal()">
+<div class="modal-gaming-running-app-list" role="text" (keydown.esc)="closeModal()" (keyup.esc)="closeModal()">
     <div class="spinner-content h-100 d-flex align-items-center justify-content-center modal-gaming-running-app-list-loading" *ngIf="loading">
         <fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
     </div>
-    <div class="modal-gaming-running-app-list-loaded" *ngIf="!loading" attr.aria-label="{{ariaLabel | translate}}">
+    <div class="modal-gaming-running-app-list-loaded" *ngIf="!loading" attr.aria-label="{{ariaLabel | translate}}" [id]="info.id.section">
         <div class="modal-header">
             <div [id]="info.id.headerText" *ngIf="!emptyAppList">{{info.title | translate}}</div>
             <p role="text" [id]="info.id.description" *ngIf="!emptyAppList">
