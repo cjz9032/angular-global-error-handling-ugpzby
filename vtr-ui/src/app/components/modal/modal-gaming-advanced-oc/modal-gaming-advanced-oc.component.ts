@@ -233,7 +233,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
-			backdropClass: 'backdrop-prompt',
+			backdropClass: 'backdrop-level',
 		});
 		waringModalRef.componentInstance.info = {
 			title: 'gaming.dashboard.device.savePromptPopup.title',
@@ -297,7 +297,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
-			backdropClass: 'backdrop-prompt',
+			backdropClass: 'backdrop-level',
 		});
 		waringModalRef.componentInstance.info = {
 			title: 'gaming.dashboard.device.defaultPromptPopup.title',

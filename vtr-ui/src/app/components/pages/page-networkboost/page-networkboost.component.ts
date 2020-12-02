@@ -152,7 +152,8 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	showTurnOn() {
 		let promptRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
-			windowClass: 'modal-prompt',
+			windowClass: 'modal-prompt', 
+			backdropClass: 'backdrop-level'
 		});
 		promptRef.componentInstance.info = {
 			title: 'gaming.networkBoost.modalTurn.title',
@@ -186,7 +187,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 
 	showAddApps() {
 		let appListRef = this.modalService.open(ModalGamingRunningAppListComponent, {
-			backdrop: 'static',
+			backdrop: 'static', backdropClass: 'backdrop-level'
 		});
 		appListRef.componentInstance.setAppList(true, this.appsCount);
 		appListRef.result.then(() => {

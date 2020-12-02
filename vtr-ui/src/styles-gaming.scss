@@ -2505,17 +2505,15 @@ button {
 	}
 }
 
-.backdrop-prompt {
+.backdrop-level {
 	z-index: 10002 !important;
 }
-
 .modal-prompt {
 	z-index: 10003;
 	overflow: hidden !important;
 	display: flex !important;
 	align-items: center;
 	justify-content: center;
-	background: $screen_dark_50;
 	.modal-dialog {
 		width: 35% !important;
 		min-width: 340px !important;
