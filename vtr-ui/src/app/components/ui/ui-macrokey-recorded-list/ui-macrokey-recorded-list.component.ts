@@ -241,6 +241,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		let promptRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
+			backdropClass: 'backdrop-level'
 		});
 		promptRef.componentInstance.info = {
 			title: 'gaming.macroKey.popupContent.clearMacrokey.title',

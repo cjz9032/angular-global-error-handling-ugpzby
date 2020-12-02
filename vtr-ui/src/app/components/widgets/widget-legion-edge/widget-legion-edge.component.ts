@@ -810,6 +810,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		const modalRef = this.modalService.open(ModalGamingThermalMode2Component, {
 			backdrop: 'static',
 			windowClass: 'modal-fun',
+			backdropClass: 'backdrop-level'
 		});
 		this.OCSettingsSubscription = modalRef.componentInstance.OCSettingsMsg.subscribe((res) => {
 			this.performanceOCSettings = res;
@@ -928,6 +929,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		this.modalService.open(ModalGamingLegionedgeComponent, {
 			backdrop: true,
 			windowClass: 'gaming-help-modal',
+			backdropClass: 'backdrop-level'
 		});
 	}
 
