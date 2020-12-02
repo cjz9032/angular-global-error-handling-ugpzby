@@ -9,12 +9,14 @@ import {
 	QueryList,
 	ViewContainerRef,
 	HostListener,
+	Inject,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { throttle } from 'lodash';
+import { DOCUMENT } from '@angular/common';
 
 import { MatMenuHoverTrigger, MatMenuTrigger } from '@lenovo/material/menu';
 
@@ -78,6 +80,8 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	showSearchBox = false;
 	activeItemId: string;
 	currentRoutePath: string;
+	isHamburgerAvailable = false;
+	isDefaultMenuAvailable = false;
 	private subscription: Subscription;
 	private backlightCapabilitySubscription: Subscription;
 	private topRowFnSubscription: Subscription;
@@ -104,7 +108,8 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private searchService: AppSearchService,
 		private logger: LoggerService,
-		private keyboardService: InputAccessoriesService
+		private keyboardService: InputAccessoriesService,
+		@Inject(DOCUMENT) private document: Document
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
 	}
@@ -123,11 +128,13 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 			}
 		);
 		this.initComponent();
+		this.updateMenuVisibility();
 		window.addEventListener(
 			'resize',
 			throttle(
 				() => {
 					this.closeAllMatMenu();
+					this.updateMenuVisibility();
 				},
 				100,
 				{ leading: true }
@@ -168,6 +175,17 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		if (menu && menu.length > 0) {
 			this.items = menu;
 			this.preloadImages = this.collectPreloadAssets(menu);
+		}
+	}
+
+	private updateMenuVisibility() {
+		if (this.isDefaultMenuAvailable && this.isHamburgerAvailable) {
+			return;
+		}
+		if (this.document.documentElement.clientWidth < 1200) {
+			this.isHamburgerAvailable = true;
+		} else {
+			this.isDefaultMenuAvailable = true;
 		}
 	}
 
