@@ -3,10 +3,10 @@ import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import {
-	FlipToBootErrorStatusInterface,
-	FlipToBootInterface,
-	FlipToBootSetStatus,
-} from './flipToBoot.interface';
+	FlipToStartErrorStatusInterface,
+	FlipToStartInterface,
+	FlipToStartSetStatus,
+} from './flip-to-start.interface';
 @Injectable({
 	providedIn: 'root',
 })
@@ -148,16 +148,16 @@ export class PowerService {
 		}
 	}
 
-	public getFlipToBootCapability(): Promise<FlipToBootInterface> {
+	public getFlipToStartCapability(): Promise<FlipToStartInterface> {
 		if (this.devicePowerIdeaNoteBook) {
 			return this.devicePowerIdeaNoteBook.flipToBoot.getFlipToBootCapability();
 		}
 		return undefined;
 	}
 
-	public setFlipToBootSettings(
-		status: FlipToBootSetStatus
-	): Promise<FlipToBootErrorStatusInterface> {
+	public setFlipToStartSettings(
+		status: FlipToStartSetStatus
+	): Promise<FlipToStartErrorStatusInterface> {
 		if (this.devicePowerIdeaNoteBook) {
 			return this.devicePowerIdeaNoteBook.flipToBoot.setFlipToBootSettings(status);
 		}

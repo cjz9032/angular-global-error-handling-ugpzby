@@ -1287,7 +1287,7 @@
 						"description": "Zapnutím tejto funkcie skrátite čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača.",
 						"tooltip": "Táto funkcia skracuje čas obnovenia prevádzky pri častom zatváraní a otváraní obrazovky počítača. Ak je zapnutá, počítač prejde do úsporného režimu po zatvorení obrazovky. Po otvorení obrazovky do 15 minút od zatvorenia sa však prevádzka obnoví okamžite. Táto funkcia umožňuje prenosnému počítaču pokúsiť sa dokončiť prebiehajúce aktivity (napríklad odosielanie e-mailu alebo preberanie súboru), skôr ako počítač prejde do režimu odstavenia."
 					},
-					"flipToBoot": {
+					"flipToStart": {
 						"title": "Spustenie po vyklopení",
 						"description": "Táto funkcia umožňuje zapnúť počítač pri otvorení obrazovky počítača, tak ako pri stlačení tlačidla napájania. ",
 						"tooltip": "Táto funkcia automaticky spustí počítač pri otvorení obrazovky.  Je užitočná najmä vtedy, ak ste v službe Windows Hello nastavili informácie na prihlasovanie pomocou tváre."

@@ -1287,7 +1287,7 @@
 						"description": "Aktiver denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte.",
 						"tooltip": "Denne funksjonen forbedrer gjenopptakelsestiden hvis du åpner og lukker lokket på datamaskinen ofte. Når den er aktivert, går datamaskinen i en modus med lavt strømforbruk når du lukker lokket, men gjenopptar umiddelbart hvis du åpner lokket innen 15 minutter etter at du lukket det. Denne funksjonen gjør også at den bærbare datamaskinen forsøker å fullføre aktiviteter som venter (som å sende e-post eller laste ned en fil) før systemet går i hvilemodus."
 					},
-					"flipToBoot": {
+					"flipToStart": {
 						"title": "Vend for å starte",
 						"description": "Med denne funksjonen kan du slå på datamaskinen når du åpner lokket, på samme måte som når du trykker på på-knappen. ",
 						"tooltip": "Denne funksjonen starter datamaskinen automatisk når du åpner lokket.  Dette er spesielt nyttig hvis du har aktivert ansiktspålogging i Windows Hello."

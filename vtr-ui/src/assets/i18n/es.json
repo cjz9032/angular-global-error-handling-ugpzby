@@ -1390,7 +1390,7 @@
 						"description": "Habilite esta función para mejorar el tiempo de reanudación, en caso de que abra y cierre frecuentemente la tapa del equipo.",
 						"tooltip": "Esta función mejorará el tiempo de reanudación, en caso de que abra y cierre frecuentemente la tapa del equipo. Cuando está habilitada, el equipo entrará a una modalidad de baja energía cuando cierre la tapa, pero se reanudará instantáneamente si la vuelve a abrir dentro de 15 minutos de haberla cerrado. Esta función también permite que el equipo portátil intente finalizar actividades pendientes (como enviar un correo electrónico o descargar un archivo) antes de que el sistema se suspenda."
 					},
-					"flipToBoot": {
+					"flipToStart": {
 						"title": "Voltear para iniciar",
 						"description": "Esta característica le permite activar el sistema al abrir la tapa del equipo, exactamente igual que al presionar el botón de encendido. ",
 						"tooltip": "Esta característica inicia automáticamente el equipo al abrir la tapa.  Es especialmente útil si configuró la información de inicio de sesión del rostro en Windows Hello."

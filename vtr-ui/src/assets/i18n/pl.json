@@ -1287,7 +1287,7 @@
 						"description": "Włącz tę funkcję, aby skrócić czas wznawiania, jeśli często otwierasz i zamykasz pokrywę komputera.",
 						"tooltip": "Ta funkcja skraca czas wznawiania, jeśli użytkownik często otwiera i zamyka pokrywę komputera. Gdy ta funkcja jest włączona, na komputerze jest uruchamiany tryb niskiego zużycia energii, jeśli zostanie zamknięta pokrywa, a jego praca jest natychmiast wznawiana po ponownym otwarciu pokrywy w ciągu 15 minut. Dzięki tej funkcji notebook może podjąć próbę dokończenia nieukończonych operacji (na przykład wysłanie wiadomości e-mail lub pobranie pliku) zanim praca systemu zostanie wstrzymana."
 					},
-					"flipToBoot": {
+					"flipToStart": {
 						"title": "Odwróć, aby uruchomić",
 						"description": "Ta funkcja umożliwia włączenie komputera po otwarciu jego pokrywy, tak samo jak w przypadku naciśnięcia przycisku zasilania. ",
 						"tooltip": "Ta funkcja automatycznie uruchamia komputer po otwarciu pokrywy.  Jest to szczególnie przydatne, jeśli skonfigurowano dane logowania za pomocą twarzy w funkcji Windows Hello."

@@ -1287,7 +1287,7 @@
 						"description": "Se abrir e fechar a tampa do computador com frequência, ative esta função para melhorar o tempo para retomar o funcionamento normal.",
 						"tooltip": "Esta função melhorará o tempo para retomar o funcionamento normal, se abrir e fechar a tampa do computador com frequência. Quando esta opção está ativada, o computador entra num modo de baixo consumo de energia ao fechar a respetiva tampa, mas retomará de imediato se voltar a abrir a tampa até 15 minutos depois de fechá-la. Esta função também permite que o seu portátil tente terminar as atividades pendentes (como o envio de correio eletrónico ou a transferência de um ficheiro) antes de o sistema entrar em suspensão."
 					},
-					"flipToBoot": {
+					"flipToStart": {
 						"title": "Abrir tampa para arrancar",
 						"description": "Esta funcionalidade permite ligar o computador quando a respetiva tampa é aberta, tal como quando o botão para ligar/desligar é premido. ",
 						"tooltip": "Esta funcionalidade inicia automaticamente o computador quando a respetiva tampa é aberta.  É especialmente útil se tiver configurado as informações de início de sessão por reconhecimento facial no Windows Hello."

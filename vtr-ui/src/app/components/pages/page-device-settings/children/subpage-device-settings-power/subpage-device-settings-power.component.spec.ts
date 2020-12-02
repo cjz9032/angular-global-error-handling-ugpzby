@@ -622,18 +622,18 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			component.thresholdInfo = thresholdInfo;
 			component.onAutoCheckChange(ChargeThresholdData, 0);
 		});
-		it('onToggleOfFlipToBoot', () => {
+		it('onToggleOfFlipToStart', () => {
 			const { component } = setup();
-			const spy = spyOn(component, 'onToggleOfFlipToBoot').and.callThrough();
-			component.onToggleOfFlipToBoot(true);
+			const spy = spyOn(component, 'onToggleOfFlipToStart').and.callThrough();
+			component.onToggleOfFlipToStart(true);
 			expect(spy).toHaveBeenCalled();
 		});
-		it('#onToggleOfFlipToBoot catch block should call', () => {
+		it('#onToggleOfFlipToStart catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'setFlipToBootSettings').and.returnValue(
+			const spy = spyOn(powerService, 'setFlipToStartSettings').and.returnValue(
 				Promise.reject()
 			);
-			component.onToggleOfFlipToBoot(true);
+			component.onToggleOfFlipToStart(true);
 			expect(spy).toHaveBeenCalled();
 		});
 		it('should call setChargeThresholdUI', () => {
@@ -836,12 +836,15 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 		});
-		it('#getFlipToBootCapability catch block should call', () => {
+		it('#getFlipToStartCapability catch block should call', () => {
 			const { component, powerService } = setup();
-			const spy = spyOn(powerService, 'getFlipToBootCapability').and.returnValue(
+			const spy = spyOn(powerService, 'getFlipToStartCapability').and.returnValue(
 				Promise.reject()
 			);
-			const myPrivateSpy = spyOn<any>(component, 'getFlipToBootCapability').and.callThrough();
+			const myPrivateSpy = spyOn<any>(
+				component,
+				'getFlipToStartCapability'
+			).and.callThrough();
 			myPrivateSpy.call(component);
 			expect(spy).toHaveBeenCalled();
 		});

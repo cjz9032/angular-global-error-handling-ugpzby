@@ -1390,7 +1390,7 @@
 						"description": "Activez cette fonction pour améliorer la sortie du mode veille si vous ouvrez et rabattez fréquemment l'écran de votre ordinateur.",
 						"tooltip": "Cette fonction améliorera la sortie du mode veille de votre ordinateur si vous ouvrez et rabattez fréquemment l'écran. Lorsque cette fonction est activée, votre ordinateur se mettra en mode économie d'énergie lorsque vous le fermez, et sortira du mode veille instantanément si vous le réouvrez moins de 15 minutes après l'avoir fermé. Cette fonction permet également à votre ordinateur de tenter de terminer les activités en cours (par exemple, l'envoi d'un email ou le téléchargement d'un fichier) avant que le système ne s'interrompe."
 					},
-					"flipToBoot": {
+					"flipToStart": {
 						"title": "Retourner pour démarrer",
 						"description": "Cette fonction vous permet d'allumer l'ordinateur lorsque vous ouvrez le capot de l'ordinateur, exactement de la même manière que lorsque vous appuyez sur le bouton d'alimentation. ",
 						"tooltip": "Cette fonction démarre automatiquement l'ordinateur lorsque vous ouvrez le capot.  Cela s'avère particulièrement utile si vous avez configuré les informations de connexion avec la reconnaissance faciale dans Windows Hello."
