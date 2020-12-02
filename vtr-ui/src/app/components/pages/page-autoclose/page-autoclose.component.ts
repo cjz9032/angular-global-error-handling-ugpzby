@@ -120,6 +120,7 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		let promptRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
+			backdropClass: 'backdrop-level'
 		});
 		promptRef.componentInstance.info = {
 			title: 'gaming.autoClose.modalTurnAutoClose.title',
@@ -154,6 +155,7 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 	showAddApps() {
 		let appListRef = this.modalService.open(ModalGamingRunningAppListComponent, {
 			backdrop: 'static',
+			backdropClass: 'backdrop-level'
 		});
 		appListRef.componentInstance.setAppList(false, 0);
 		appListRef.componentInstance.emitService.subscribe((val) => {

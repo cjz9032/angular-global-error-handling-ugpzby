@@ -102,6 +102,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				let promptRef = this.modalService.open(ModalGamingPromptComponent, {
 					backdrop: 'static',
 					windowClass: 'modal-prompt',
+					backdropClass: 'backdrop-level'
 				});
 				promptRef.componentInstance.info = {
 					title: 'gaming.macroKey.popupContent.timeoutRecording.title',
@@ -128,6 +129,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				let promptRef = this.modalService.open(ModalGamingPromptComponent, {
 					backdrop: 'static',
 					windowClass: 'modal-prompt',
+					backdropClass: 'backdrop-level'
 				});
 				promptRef.componentInstance.info = {
 					title: 'gaming.macroKey.popupContent.timeoutRecording.title',
@@ -154,6 +156,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				let promptRef = this.modalService.open(ModalGamingPromptComponent, {
 					backdrop: 'static',
 					windowClass: 'modal-prompt',
+					backdropClass: 'backdrop-level'
 				});
 				promptRef.componentInstance.info = {
 					title: 'gaming.macroKey.popupContent.maximumInput.title',

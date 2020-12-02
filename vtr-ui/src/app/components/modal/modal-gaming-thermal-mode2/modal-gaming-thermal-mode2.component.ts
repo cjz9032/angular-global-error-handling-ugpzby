@@ -538,6 +538,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
 		let waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
+			backdropClass: 'backdrop-level'
 		});
 		waringModalRef.componentInstance.info = {
 			title: 'gaming.dashboard.device.warningPromptPopup.title',
@@ -574,6 +575,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
 		this.modalService.open(ModalGamingAdvancedOCComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-fun',
+			backdropClass: 'backdrop-level'
 		});
 	}
 	// fengxu end

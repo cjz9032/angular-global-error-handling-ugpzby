@@ -27,7 +27,7 @@
 				font-size: 4rem;
 				font-family: 'Arial';
 				font-weight: 200;
-				color: buttonText;
+				color: $gaming_lightest;
 				@media #{$high-contrast} {
 					border: none;
 				}
