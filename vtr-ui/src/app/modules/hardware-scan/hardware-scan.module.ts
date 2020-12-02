@@ -55,7 +55,6 @@ import { HardwareScanWaitSelectHeaderComponent } from './components/header/hardw
 import { HardwareScanFinishedHeaderComponent } from './components/header/hardware-scan-finished-header/hardware-scan-finished-header.component';
 import { UiHardwareScanTestResultComponent } from './components/dashboard/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
 import { UiTestResultIconComponent } from './components/dashboard/ui-test-result-icon/ui-test-result-icon.component';
-import { UiHyperlinkButtonComponent } from '../../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
 import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
 
 @NgModule({

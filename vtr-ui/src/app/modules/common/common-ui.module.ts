@@ -50,6 +50,7 @@ import { UiGroupCardComponent } from 'src/app/components/ui/ui-group-card/ui-gro
 import { UiDeviceinfoItemComponent } from 'src/app/components/ui/ui-deviceinfo-item/ui-deviceinfo-item.component';
 import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-point/ui-exclamation-point.component';
+import { UiHyperlinkButtonComponent } from 'src/app/components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
 
 @NgModule({
 	declarations: [
@@ -80,6 +81,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		UiGamingSliderComponent,
 		UiExclamationPointComponent,
 		UiLightingProfileToggleComponent,
+		UiHyperlinkButtonComponent,
 	],
 	exports: [
 		UiCheckboxComponent,
@@ -114,6 +116,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		UiGamingSliderComponent,
 		UiExclamationPointComponent,
 		UiLightingProfileToggleComponent,
+		UiHyperlinkButtonComponent,
 	],
 	imports: [
 		CommonModule,
