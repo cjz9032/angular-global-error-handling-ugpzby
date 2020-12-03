@@ -29,7 +29,7 @@
 						"quiet": "Silencieux"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "Overclocking UC et GPU activé",
+						"CPU_GPU_ON": "Overclocking UC et GPU activé",
 						"CPU_ON": "Overclocking UC activé",
 						"GPU_ON": "Overclocking GPU activé"
 					},

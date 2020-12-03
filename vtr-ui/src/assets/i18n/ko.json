@@ -29,7 +29,7 @@
 						"quiet": "저소음"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "CPU&GPU 오버클럭킹 설정",
+						"CPU_GPU_ON": "CPU&GPU 오버클럭킹 설정",
 						"CPU_ON": "CPU 오버클럭킹 설정",
 						"GPU_ON": "GPU 오버클럭킹 설정"
 					},

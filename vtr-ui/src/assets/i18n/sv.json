@@ -29,7 +29,7 @@
 						"quiet": "Tyst"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "Aktivera CPU- och GPU-överklockning",
+						"CPU_GPU_ON": "Aktivera CPU- och GPU-överklockning",
 						"CPU_ON": "Aktivera CPU-överklockning",
 						"GPU_ON": "Aktivera GPU-överklockning"
 					},

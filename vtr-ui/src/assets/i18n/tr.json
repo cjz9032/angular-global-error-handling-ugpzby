@@ -29,7 +29,7 @@
 						"quiet": "Sessiz"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "CPU ve GPU hız aşırtma açık",
+						"CPU_GPU_ON": "CPU ve GPU hız aşırtma açık",
 						"CPU_ON": "CPU hız aşırtma açık",
 						"GPU_ON": "GPU hız aşırtma açık"
 					},

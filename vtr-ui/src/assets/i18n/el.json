@@ -29,7 +29,7 @@
 						"quiet": "Αθόρυβο"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "Υπερχρονισμός CPU&GPU ενεργ.",
+						"CPU_GPU_ON": "Υπερχρονισμός CPU&GPU ενεργ.",
 						"CPU_ON": "Υπερχρονισμός CPU ενεργ.",
 						"GPU_ON": "Υπερχρονισμός GPU ενεργ."
 					},

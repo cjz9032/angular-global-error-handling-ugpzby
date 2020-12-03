@@ -29,7 +29,7 @@
 						"quiet": "Tiho"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "Vklopljeno zvišanje takta CPE in GPE",
+						"CPU_GPU_ON": "Vklopljeno zvišanje takta CPE in GPE",
 						"CPU_ON": "Vklopljeno zvišanje takta CPE",
 						"GPU_ON": "Vklopljeno zvišanje takta GPE"
 					},

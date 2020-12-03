@@ -29,7 +29,7 @@
 						"quiet": "שקט"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "אוברקלוקינג של CPU&GPU",
+						"CPU_GPU_ON": "אוברקלוקינג של CPU&GPU",
 						"CPU_ON": "אוברקלוקינג של CPU",
 						"GPU_ON": "אוברקלוקינג של GPU"
 					},

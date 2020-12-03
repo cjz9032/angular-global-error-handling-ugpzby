@@ -29,7 +29,7 @@
 						"quiet": "节能模式"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "CPU&GPU 超频开启",
+						"CPU_GPU_ON": "CPU&GPU 超频开启",
 						"CPU_ON": "CPU 超频开启",
 						"GPU_ON": "GPU 超频开启"
 					},
