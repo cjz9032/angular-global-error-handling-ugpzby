@@ -3,7 +3,7 @@
         <div class="lighting-profile-toggle">
             <vtr-ui-lighting-profile-toggle [currentProfile]="currentProfileId"
             (setLightingProfileId)="setLightingProfileId($event)"
-            [id]="'profile'" [automationId]="'profile_'" [labelId]="'profile_RGBlighting'"></vtr-ui-lighting-profile-toggle>
+            [id]="'profile'" [automationId]="'profile_'" [labelId]="'rgb'"></vtr-ui-lighting-profile-toggle>
         </div>
         <div class="lighting-panel-select" *ngIf="!isProfileOff">
             <button class="lighting-arrow lighting-arrow-lef" (click)="panelSwitchLef()"  tabindex="{{isDisabledlef[this.currentProfileId-1]?-1:0}}" role="button"
