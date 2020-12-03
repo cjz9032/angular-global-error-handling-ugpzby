@@ -29,7 +29,7 @@
 						"quiet": "Stille"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "CPU/GPU-overklokking på",
+						"CPU_GPU_ON": "CPU/GPU-overklokking på",
 						"CPU_ON": "CPU-overklokking på",
 						"GPU_ON": "GPU-overklokking på"
 					},

@@ -29,7 +29,7 @@
 						"quiet": "Silenzioso"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "Overclock CPU e GPU su",
+						"CPU_GPU_ON": "Overclock CPU e GPU su",
 						"CPU_ON": "Overclock CPU su",
 						"GPU_ON": "Overclock GPU su"
 					},

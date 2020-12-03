@@ -29,7 +29,7 @@
 						"quiet": "Stil"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "CPU en GPU overklokken aan",
+						"CPU_GPU_ON": "CPU en GPU overklokken aan",
 						"CPU_ON": "CPU overklokken aan",
 						"GPU_ON": "GPU overklokken aan"
 					},

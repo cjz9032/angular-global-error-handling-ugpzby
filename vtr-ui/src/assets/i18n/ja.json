@@ -29,7 +29,7 @@
 						"quiet": "静音"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "CPU/GPU クロックアップ日",
+						"CPU_GPU_ON": "CPU/GPU クロックアップ日",
 						"CPU_ON": "CPU クロックアップ日",
 						"GPU_ON": "GPU クロックアップ日"
 					},

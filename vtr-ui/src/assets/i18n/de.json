@@ -29,7 +29,7 @@
 						"quiet": "Leise"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "CPU‑ und GPU-Übertaktung eingeschaltet",
+						"CPU_GPU_ON": "CPU‑ und GPU-Übertaktung eingeschaltet",
 						"CPU_ON": "CPU‑Übertaktung eingeschaltet",
 						"GPU_ON": "GPU‑Übertaktung eingeschaltet"
 					},

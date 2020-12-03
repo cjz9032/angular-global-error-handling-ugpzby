@@ -29,7 +29,7 @@
 						"quiet": "Tichý"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "Přetaktování CPU a GPU zapnuto",
+						"CPU_GPU_ON": "Přetaktování CPU a GPU zapnuto",
 						"CPU_ON": "Přetaktování CPU zapnuto",
 						"GPU_ON": "Přetaktování GPU zapnuto"
 					},

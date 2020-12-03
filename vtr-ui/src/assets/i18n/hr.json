@@ -29,7 +29,7 @@
 						"quiet": "Tiho"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "Overklokiranje CPU i GPU na",
+						"CPU_GPU_ON": "Overklokiranje CPU i GPU na",
 						"CPU_ON": "Overklokiranje CPU na",
 						"GPU_ON": "Overklokiranje GPU na"
 					},

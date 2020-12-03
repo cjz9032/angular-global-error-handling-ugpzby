@@ -37,7 +37,7 @@
 						"quiet": "Quiet"
 					},
 					"thermalMode3Tips": {
-						"CPU_GPU_On": "CPU&GPU overclocking on",
+						"CPU_GPU_ON": "CPU&GPU overclocking on",
 						"CPU_ON": "CPU overclocking on",
 						"GPU_ON": "GPU overclocking on"
 					},
