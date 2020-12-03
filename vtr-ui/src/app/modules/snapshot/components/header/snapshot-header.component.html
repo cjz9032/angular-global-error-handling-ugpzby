@@ -30,7 +30,8 @@
 		<div class="col button-row">
 			<vtr-ui-button
 				linkId="snapshot-header-take-snapshot-btn"
-				[vtrMetricEnabled]="false"
+				metricsParent="Snapshot"
+				metricsItem="Snapshot.TakeSnapshot"
 				[label]= "'snapshot.snapshotWidgetButton' | translate"
 				[isDisabled]="disableSnapshotButton"
 				(onClick)="onTakeSnapshot()">
