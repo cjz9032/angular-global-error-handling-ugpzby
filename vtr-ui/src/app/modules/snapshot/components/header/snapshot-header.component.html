@@ -1,6 +1,6 @@
 <div class="vtr-snapshot-header">
 	<div class="row">
-		<h2 id="snapshot-header-title" class="col title"
+		<h2 id="snapshot-header-title" class="col title" role="heading" aria-live="polite"
 			[ngClass]="{'animated-dots': disableSnapshotButton }"
 		>{{ ('snapshot.') + snapshotStatus | translate }}</h2>
 	</div>
@@ -12,8 +12,11 @@
 		<vtr-ui-question-mark-button
 			[componentId]="'snapshot-header-tooltip-information'"
 			[componentRole]="'link'"
-			[ariaLabel]="'snapshot-information-tooltip'"
-			triggers="click"
+			[ariaLabel]="'snapshot-header-information tooltip, which reads: ' + ('snapshot.informationTooltipDescription' | translate)"
+			triggers="manual"
+			#tooltip="ngbTooltip"
+			(blurEvent)="tooltip.close()"
+			(clickEvent)="tooltip.toggle()"
 			[placement]="['left-top', 'right-top']"
 			[ngbTooltip]="tooltipSnapshotInformation"
 			container="vtr-root"

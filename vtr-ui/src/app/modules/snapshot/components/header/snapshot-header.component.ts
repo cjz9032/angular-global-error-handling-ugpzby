@@ -31,7 +31,6 @@ export class SnapshotHeaderComponent implements OnInit {
 		}))
 		.finally(() =>
 		{
-			this.showSnapshotInformation = true;
 			this.disableSnapshotButton = false;
 			this.disableBaselineButton = false;
 			this.snapshotStatus = SnapshotStatus.SnapshotCompleted;
@@ -50,7 +49,6 @@ export class SnapshotHeaderComponent implements OnInit {
 		}))
 		.finally(() =>
 		{
-			this.showSnapshotInformation = true;
 			this.disableSnapshotButton = false;
 			this.disableBaselineButton = false;
 			this.snapshotStatus = SnapshotStatus.BaselineCompleted;
