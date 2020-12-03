@@ -34,10 +34,10 @@
                     </h2>
                     <p class="description" role="text" id="thermal_mode_setting_performance_mode_description">
                         {{ 'gaming.dashboard.device.thermalMode2Popup.performanceDesc' | translate }}
-                        <span *ngIf="OCsupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion!==4"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
+                        <span *ngIf="OCsupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion === 2"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
                         <span *ngIf="!gamingCapabilities.desktopType"> {{ 'gaming.dashboard.device.thermalMode2Popup.ac_dcDesc' | translate }}</span>
                     </p>
-                    <div class="item-oc" *ngIf="OCsupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion!==4">
+                    <div class="item-oc" *ngIf="OCsupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion === 2">
                         <ng-container *ngIf="OCsupportted === driverStatus || driverStatus === thermalMode2Enum.cpu_gpu">
                             <div class="item-oc-left">
                                 <button class="oc-checkbox" [ngClass]="{'checked':OCSettings}" role="checkbox" id="{{!OCSettings? 'enable_OC_checkbox_unchecked':'enable_OC_checkbox_checked'}}"  (click)="setPerformanceOCSetting($event)"
@@ -111,7 +111,7 @@
                     <div class="item-oc" *ngIf="gamingCapabilities.thermalModeVersion === 4">
                         <div class="item-oc-left">
                             <button class="oc-checkbox" [ngClass]="{'checked':autoAdjustSettings}" role="checkbox" id="{{!autoAdjustSettings? 'enable_autoAdjustSettings_checkbox_unchecked':'enable_autoAdjustSettings_checkbox_checked'}}"  (click)="setAutoAdjustSetting($event)"
-                            tabindex="1" aria-label="自动侦测并调优CPU和GPU在游戏下的性能" [attr.aria-checked]="autoAdjustSettings">
+                            tabindex="1" aria-label="Automatically detect the current game and tune CPU&GPU performance" [attr.aria-checked]="autoAdjustSettings">
                                 <label class="checkedIcon"></label>
                             </button>
                         </div>
@@ -142,7 +142,7 @@
                     </p>
                 </div>
             </div>
-            <div class="item-auto-switch" *ngIf="gamingCapabilities.thermalModeVersion!==4">
+            <div class="item-auto-switch" *ngIf="gamingCapabilities.thermalModeVersion === 2">
                 <div class="auto-switch-left">
                     <div class="auto-switch-toggle">
                         <vtr-ui-toggle (toggleStatus)="setAutoSwitchStatus($event)" [value]="autoSwitchStatus" [toggleId]="'auto switch'"
