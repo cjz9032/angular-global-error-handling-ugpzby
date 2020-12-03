@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { SnapshotStatus } from 'src/app/modules/snapshot/enums/snapshot-enum';
+import { SnapshotStatus } from 'src/app/modules/snapshot/enums/snapshot.enum';
 import { SnapshotService } from '../../services/snapshot.service';
 
 @Component({
