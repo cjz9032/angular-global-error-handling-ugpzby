@@ -10,14 +10,19 @@ import { SnapshotService } from '../../services/snapshot.service';
 export class SnapshotHeaderComponent implements OnInit {
 	// Input
 	@Input() disableSnapshotButton: boolean;
+	@Input() disableBaselineButton: boolean;
 	@Input() snapshotStatus: SnapshotStatus = SnapshotStatus.NotStarted;
+
+	public showSnapshotInformation = true;
 
 	constructor(private snapshotService: SnapshotService) { }
 
 	ngOnInit() { }
 
 	onTakeSnapshot() {
+		this.showSnapshotInformation = false;
 		this.disableSnapshotButton = true;
+		this.disableBaselineButton = true;
 		this.snapshotStatus = SnapshotStatus.SnapshotInProgress;
 		// This is just to simulate a call on snapshotService
 		this.snapshotService.getLoadProcessorsInfo()
@@ -26,13 +31,17 @@ export class SnapshotHeaderComponent implements OnInit {
 		}))
 		.finally(() =>
 		{
+			this.showSnapshotInformation = true;
 			this.disableSnapshotButton = false;
+			this.disableBaselineButton = false;
 			this.snapshotStatus = SnapshotStatus.SnapshotCompleted;
 		});
 	}
 
 	onReplaceBaseline() {
+		this.showSnapshotInformation = false;
 		this.disableSnapshotButton = true;
+		this.disableBaselineButton = true;
 		this.snapshotStatus = SnapshotStatus.BaselineInProgress;
 		// This is just to simulate a call on snapshotService
 		this.snapshotService.getLoadProcessorsInfo()
@@ -41,7 +50,9 @@ export class SnapshotHeaderComponent implements OnInit {
 		}))
 		.finally(() =>
 		{
+			this.showSnapshotInformation = true;
 			this.disableSnapshotButton = false;
+			this.disableBaselineButton = false;
 			this.snapshotStatus = SnapshotStatus.BaselineCompleted;
 		});
 	}

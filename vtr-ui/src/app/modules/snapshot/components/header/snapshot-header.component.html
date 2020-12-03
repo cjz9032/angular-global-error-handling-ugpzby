@@ -4,6 +4,25 @@
 			[ngClass]="{'animated-dots': disableSnapshotButton }"
 		>{{ ('snapshot.') + snapshotStatus | translate }}</h2>
 	</div>
+
+	<div class="row snapshot-information" *ngIf="showSnapshotInformation">
+		<p class="snapshot-information-text">
+			<span id="snapshot-header-information" role="text">{{ 'snapshot.snapshotInformation' | translate }}</span>
+		</p>
+		<vtr-ui-question-mark-button
+			[componentId]="'snapshot-header-tooltip-information'"
+			[componentRole]="'link'"
+			[ariaLabel]="'snapshot-information-tooltip'"
+			triggers="click"
+			[placement]="['left-top', 'right-top']"
+			[ngbTooltip]="tooltipSnapshotInformation"
+			container="vtr-root"
+			tooltipClass="vtr-tooltip"
+			[tabIndex]="1"
+			class="question-mark-container"
+		></vtr-ui-question-mark-button>
+	</div>
+
 	<div class="row">
 		<div class="col button-row">
 			<vtr-ui-button
@@ -20,11 +39,18 @@
 				hyperlinkStyle="xs-white"
 				metricsParent="Snapshot"
 				metricsItem="Snapshot.ReplaceBaseline"
-				[isDisabled]="disableSnapshotButton"
+				[isDisabled]="disableBaselineButton"
 				[label]="'snapshot.replaceBaseline' | translate"
 				[upperCaseLabel]="true"
 				(hyperlinkClick)="onReplaceBaseline()">
 			</vtr-ui-hyperlink-button>
 		</div>
 	</div>
+
+	<ng-template #tooltipSnapshotInformation>
+		<div
+			id="snapshot-header-information-tooltip" role="text"
+			[innerHTML]="'snapshot.informationTooltipDescription' | translate">
+		</div>
+	</ng-template>
 </div>

@@ -9,25 +9,85 @@
 
 	@include high-contrast-border;
 
-	.title {
-		color: $light;
-		font-size: $fontsize_xl;
-		font-weight: $weight_600;
-		padding: 2.4rem 2.4rem 0.5rem;
+}
+
+.title {
+	color: $light;
+	font-size: $fontsize_xl;
+	font-weight: $weight_600;
+	padding: 2.4rem 2.4rem 0.5rem;
+}
+
+.button-row {
+	padding: 2.4rem;
+	display: flex;
+
+	::ng-deep .vtr-ui-button {
+		.button-box {
+			padding-left: 0;
+		}
 	}
 
-	.button-row {
-		padding: 2.4rem;
-		display: flex;
+	.hyperlink-container {
+		margin: 0 0 0 1.9rem;
+	}
+}
 
-		::ng-deep .vtr-ui-button {
-			.button-box {
-				padding-left: 0;
+.snapshot-information {
+	color: $grey_light;
+	font-size: $fontsize_xs;
+	font-weight: $weight_light;
+	padding-left: 2.4rem;
+	line-height: 1.5rem;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+
+	.snapshot-information-text {
+		margin-bottom: 0;
+		padding-left: 0;
+	}
+
+	.question-mark-container {
+		padding-left: 0rem;
+	}
+
+	::ng-deep ngb-tooltip-window.vtr-tooltip.tooltip {
+		&.bs-tooltip-auto[x-placement^='left-top'],
+		&.tooltip.bs-tooltip-left-top {
+			margin-top: -6rem;
+			.arrow {
+				&::before {
+					top: calc(5rem + 50%);
+				}
+
+				// Used to fix arrow top when is in high contrast
+				@media #{$white-on-black} {
+					top: calc(0% + 6.5rem);
+				}
+				@media #{$black-on-white} {
+					top: calc(0% + 6.5rem);
+				}
 			}
 		}
 
-		.hyperlink-container {
-			margin: 0 0 0 1.9rem;
+		&.bs-tooltip-auto[x-placement^='right-top'],
+		&.tooltip.bs-tooltip-right-top {
+			margin-top: -6rem;
+			.arrow {
+				&::before {
+					top: calc(5rem + 50%);
+				}
+
+				// Used to fix arrow top when is in high contrast
+				@media #{$white-on-black} {
+					top: calc(0% + 6.3rem);
+				}
+				@media #{$black-on-white} {
+					top: calc(0% + 6.3rem);
+				}
+			}
 		}
 	}
 }

@@ -27,6 +27,7 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
 import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
 import { UiHyperlinkButtonComponent } from '../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
+import { UiQuestionMarkButtonComponent } from './hardware-scan/components/dashboard/ui-question-mark-button/ui-question-mark-button.component';
 
 @NgModule({
 	declarations: [
@@ -38,7 +39,8 @@ import { UiHyperlinkButtonComponent } from '../components/ui/ui-hyperlink-button
 		ModalCommonConfirmationComponent,
 		ModalLenovoIdComponent,
 		PageUserComponent,
-		UiHyperlinkButtonComponent
+		UiHyperlinkButtonComponent,
+		UiQuestionMarkButtonComponent
 	],
 	imports: [
 		AngularSvgIconModule,
@@ -81,7 +83,8 @@ import { UiHyperlinkButtonComponent } from '../components/ui/ui-hyperlink-button
 		MetricsModule,
 		HeaderMainModule,
 		AppSearchModule,
-		UiHyperlinkButtonComponent
+		UiHyperlinkButtonComponent,
+		UiQuestionMarkButtonComponent
 	],
 	providers: [
 		CommsService,

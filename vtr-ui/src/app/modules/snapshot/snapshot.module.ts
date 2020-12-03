@@ -10,11 +10,12 @@ import { ModalSnapshotComponent } from './components/modal/modal-snapshot/modal-
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronUp } from '@fortawesome/pro-light-svg-icons/faChevronUp';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { CommonUiModule } from '../common/common-ui.module';
+import { MetricsModule } from 'src/app/services/metric/metrics.module';
 
 @NgModule({
 	declarations: [
@@ -35,8 +36,10 @@ import { CommonUiModule } from '../common/common-ui.module';
 		CommonUiModule,
 		FontAwesomeModule,
 		NgbCollapseModule,
+		NgbTooltipModule,
 		SnapshotRoutingModule,
 		SharedModule,
+		MetricsModule,
 		PageLayoutModule,
 		ContainerCardModule
 	]
