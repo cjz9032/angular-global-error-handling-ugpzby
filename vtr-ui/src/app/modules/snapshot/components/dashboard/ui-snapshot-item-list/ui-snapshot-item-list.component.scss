@@ -1,6 +1,6 @@
 @import '../../../../../app.theme';
 
-.vtr-widget-hardware-scan-item {
+.vtr-snapshot-list-item {
     padding: 0 2.4rem;
     margin-top: 1rem;
     width: 100%;
@@ -14,21 +14,36 @@
         
         .load-icon {
             margin-left: auto;
-            color: $blue_lightest;
+			color: $blue_lightest;
+			animation-name: rotation;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			transform-origin: 50% 50%;
+			display: inline-block;
 		}
+		@keyframes rotation {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		
 		
 		.update-btn {
 			margin-left: auto;
 		}
-    }
+	}
     
     .last-child {
         margin-bottom: 1rem;
-    }
+	}
 
 	.title {
 		font-size: $fontsize_xs;
-		font-weight: $weight_600;
+		font-weight: $weight_bold;
 		padding-left: 1rem;
 		color: $shade_blue;
 	}
@@ -47,18 +62,14 @@
 	}
 
 	.img-icon {
-		width: 1.4rem;
-		height: 1.4rem;
+		width: 2.4rem;
+		height: 2.4rem;
 		vertical-align: middle;
 		margin-bottom: 1rem;
 	}
 
-    .module-info-expand-btn {
+    .collapse-control {
 		margin: 0 1rem 0 2.2rem;
-
-		&:focus {
-			outline: 1px;
-		}
 
 		fa-icon {
 			font-size: $fontsize_lg;
@@ -72,6 +83,7 @@
 				text-decoration: underline;
 			}
 		}
+
 		&:focus {
 			@include outline-blue;
 		}
@@ -85,86 +97,64 @@
 		
 		table {
 			table-layout: fixed;
+			background-color: $shade_extralight;
 
-			tbody tr .table-info-name {
-				padding-left: 4rem;
-			}
-
-			tbody tr td, th {
-				word-wrap: break-word;
-			}
-
-			tbody .progress-warning-image {
-				// display: block;
-				// margin: 4rem auto 4rem auto;
-
-				fa-icon {
-					font-size: 6.2rem;
+			tbody {
+				.progress-warning-image {
+					padding-top: 12.3rem;
+					padding-bottom: 12.3rem;
+					text-align: center;
+					vertical-align: middle;
+	
+					fa-icon {
+						color: $blue_lightest;
+						font-size: 6.4rem;
+					}
 				}
-				p {
-					color: blue;
+
+				.table-info-separator {
+					height: 2.4rem;
+				}
+
+				.snapshot-table-titles {
+					padding-top: 2.4rem;
+				}
+
+				tr {
+					.table-info-name {
+						padding-left: 4.9rem;
+					}
+		
+					.modified-item {
+						color: $menu_hover;
+						font-weight:  $weight_600;
+					}
+		
+					td, th {
+						word-wrap: break-word;
+					}
 				}
 			}
 		}
-	}
-
-	.button-box {
-		padding: 0.5rem;
-		@media #{$mediaquery_7} {
-			margin-top: 1.2rem;
-		}
-
-		.button {
-			min-height: 2rem;
-			border-radius: 3rem;
-			min-width: 5rem;
-			background: $gradient_main !important;
-			border: none;
-			color: $light !important;
-			font-size: 1rem;
-			font-weight: $weight_bold !important;
-			text-align: center !important;
-			text-decoration: none;
-			display: inline-block;
-			padding: 0 2.5rem;
-		}
-	}
-
-	.hyperlink-container {
-		::ng-deep.vtr-ui-hyperlink-button {
-			padding-left: 0;
-		}
-	}
-
-	.collapse-control {
-		cursor: pointer;
-
-		fa-icon {
-			font-size: $fontsize_lg;
-			vertical-align: middle;
-		}
-
-		&:hover {
-			opacity: 1;
-
-			.collapse-text {
-				text-decoration: underline;
-			}
-		}
-		&:focus {
-			@include outline-blue;
-		}
-	}
-
-	.not-wrap {
-		flex-wrap: nowrap;
-	}
-
-	.collapse-item {
-		padding-right: 0;
 	}
 
 	p {
-		margin-bottom: 0rem;
+		margin-bottom: 0.5rem;
+	}
+}
+
+.modified-module {
+	background-color: $grey_light;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+
+	.modified-module-name {
+		font-weight: $weight_600;
+		color: $blue-lighter;
+		margin-bottom: 0;
+	}
+
+	hr {
+		margin-bottom: 0;
 	}
 }
