@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiListScheduledScanComponent } from './ui-list-scheduled-scan.component';
 
@@ -6,7 +6,7 @@ xdescribe('UiListScheduledScanComponent', () => {
 	let component: UiListScheduledScanComponent;
 	let fixture: ComponentFixture<UiListScheduledScanComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiListScheduledScanComponent],
 		}).compileComponents();

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiCircleRadioWithCheckboxComponent } from './ui-circle-radio-with-checkbox.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -13,7 +13,7 @@ describe('UiCircleRadioWithCheckboxComponent', () => {
 	let component: UiCircleRadioWithCheckboxComponent;
 	let fixture: ComponentFixture<UiCircleRadioWithCheckboxComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCircleRadioWithCheckboxComponent, CapitalizeFirstPipe],
 			schemas: [NO_ERRORS_SCHEMA],

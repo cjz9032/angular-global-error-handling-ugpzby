@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalFindUsComponent } from './modal-find-us.component';
 
@@ -6,7 +6,7 @@ describe('ModalFindUsComponent', () => {
 	//   let component: ModalFindUsComponent;
 	//   let fixture: ComponentFixture<ModalFindUsComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		// TestBed.configureTestingModule({
 		//   declarations: [ ModalFindUsComponent ]
 		// })

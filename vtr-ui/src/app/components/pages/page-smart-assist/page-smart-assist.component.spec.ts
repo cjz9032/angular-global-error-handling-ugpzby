@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { AntiTheftResponse } from 'src/app/data-models/antiTheft/antiTheft.model';
@@ -43,7 +43,7 @@ const antiTheftResponse: AntiTheftResponse = {
 };
 
 describe('Component: PageSmartAssistComponent', () => {
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [PageSmartAssistComponent],
 			imports: [HttpClientTestingModule, TranslateModule.forRoot(), RouterTestingModule],

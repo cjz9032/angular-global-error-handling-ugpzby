@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { DevService } from 'src/app/services/dev/dev.service';
@@ -10,7 +10,7 @@ describe('WidgetDeviceHardwareScanItemComponent', () => {
 	let component: WidgetHardwareScanItemComponent;
 	let fixture: ComponentFixture<WidgetHardwareScanItemComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetHardwareScanItemComponent],
 			imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
@@ -23,7 +23,7 @@ describe('WidgetDeviceHardwareScanItemComponent', () => {
 		component = fixture.componentInstance;
 	});
 
-	it('should create', async(() => {
+	it('should create', waitForAsync(() => {
 		expect(component).toBeTruthy();
 	}));
 

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiTimePickerComponent } from './ui-time-picker.component';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -14,7 +14,7 @@ describe('UiTimePickerComponent', () => {
 	let commonService: CommonService;
 	const time = '12:30';
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiTimePickerComponent],
 			schemas: [NO_ERRORS_SCHEMA],

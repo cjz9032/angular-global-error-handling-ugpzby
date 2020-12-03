@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -142,7 +142,7 @@ describe('Component: SmartStandby', () => {
 			expect(spy).toHaveBeenCalled();
 		})); */
 
-		it('should call setSmartStandbySection - else case - 2', async(() => {
+		it('should call setSmartStandbySection - else case - 2', waitForAsync(() => {
 			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
 			const smartStandbyComponent = fixture.debugElement.componentInstance;
 			const powerService = fixture.debugElement.injector.get(PowerService); */

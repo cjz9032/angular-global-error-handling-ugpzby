@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalLicenseComponent } from './modal-license.component';
 
@@ -6,7 +6,7 @@ xdescribe('ModalLicenseComponent', () => {
 	let component: ModalLicenseComponent;
 	let fixture: ComponentFixture<ModalLicenseComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalLicenseComponent],
 		}).compileComponents();

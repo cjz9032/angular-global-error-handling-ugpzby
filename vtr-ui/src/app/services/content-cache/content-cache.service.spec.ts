@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ContentActionType } from 'src/app/enums/content.enum';
 import { ContentCacheService } from './content-cache.service';

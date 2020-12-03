@@ -1,4 +1,4 @@
-import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GamingOverDriveService } from './gaming-over-drive.service';
@@ -84,7 +84,7 @@ describe('GamingOverDriveService', () => {
 			expect(gamingOverDriveService.isShellAvailable).toBe(true);
 		});
 
-		it('get over drive status should return boolean value', async(() => {
+		it('get over drive status should return boolean value', waitForAsync(() => {
 			overDriveStatus = true;
 			gamingOverDriveService.getOverDriveStatus().then((res) => {
 				expect(res).toBe(true, 'getOverDriveStatus should return true');
@@ -167,7 +167,7 @@ describe('GamingOverDriveService', () => {
 		it('isShellAvailable is true', () => {
 			expect(gamingOverDriveService.isShellAvailable).toBe(true);
 		});
-		it('get over drive status should return err', async(() => {
+		it('get over drive status should return err', waitForAsync(() => {
 			try {
 				gamingOverDriveService.getOverDriveStatus();
 			} catch (err) {

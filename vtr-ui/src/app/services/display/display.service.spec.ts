@@ -1,4 +1,4 @@
-import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 
 import { DisplayService } from './display.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';

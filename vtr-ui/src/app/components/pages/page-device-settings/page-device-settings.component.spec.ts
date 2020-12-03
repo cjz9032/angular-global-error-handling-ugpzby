@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
@@ -65,7 +65,7 @@ describe('PageDeviceSettingsComponent', () => {
 	let keyboardService: InputAccessoriesService;
 	let translate: TranslateService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [PageDeviceSettingsComponent],
 			schemas: [NO_ERRORS_SCHEMA],
@@ -84,7 +84,7 @@ describe('PageDeviceSettingsComponent', () => {
 		});
 	}));
 
-	it('should create', async(() => {
+	it('should create', waitForAsync(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		translate = TestBed.inject(TranslateService);
@@ -101,7 +101,7 @@ describe('PageDeviceSettingsComponent', () => {
 		expect(component).toBeTruthy();
 	}));
 
-	it('should call hidePowerPage', async(() => {
+	it('should call hidePowerPage', waitForAsync(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		spyOn(component['router'], 'navigate').and.returnValue(Promise.resolve(true));
@@ -113,7 +113,7 @@ describe('PageDeviceSettingsComponent', () => {
 		);
 	}));
 
-	it('should call onNotification - WelcomeTutorial', async(() => {
+	it('should call onNotification - WelcomeTutorial', waitForAsync(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		const spy = spyOn(component, 'getAudioPageSettings');
@@ -125,7 +125,7 @@ describe('PageDeviceSettingsComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call onNotification - IsPowerPageAvailable with no payload', async(() => {
+	it('should call onNotification - IsPowerPageAvailable with no payload', waitForAsync(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		const spy = spyOn(component, 'hidePowerPage');
@@ -136,7 +136,7 @@ describe('PageDeviceSettingsComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call onNotification - IsPowerPageAvailable with payload', async(() => {
+	it('should call onNotification - IsPowerPageAvailable with payload', waitForAsync(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		const spy = spyOn(component, 'hidePowerPage');
@@ -148,7 +148,7 @@ describe('PageDeviceSettingsComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initInputAccessories - machineType equal to 1', async(async () => {
+	it('should call initInputAccessories - machineType equal to 1', waitForAsync(async () => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -160,7 +160,7 @@ describe('PageDeviceSettingsComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initInputAccessories - machineType equal to 1,machine family LenovoTablet10', async(async () => {
+	it('should call initInputAccessories - machineType equal to 1,machine family LenovoTablet10', waitForAsync(async () => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -176,7 +176,7 @@ describe('PageDeviceSettingsComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initInputAccessories - machineType  equal to 0.1, no input accessories', async(async () => {
+	it('should call initInputAccessories - machineType  equal to 0.1, no input accessories', waitForAsync(async () => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		const inputAccessoriesCapability = new InputAccessoriesCapability();
 		component = fixture.componentInstance;
@@ -210,7 +210,7 @@ describe('PageDeviceSettingsComponent', () => {
 		expect(spy).toBeTruthy();
 	}));
 
-	it('should call getAudioPageSettings - method call on ngOnInit', async(() => {
+	it('should call getAudioPageSettings - method call on ngOnInit', waitForAsync(() => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);

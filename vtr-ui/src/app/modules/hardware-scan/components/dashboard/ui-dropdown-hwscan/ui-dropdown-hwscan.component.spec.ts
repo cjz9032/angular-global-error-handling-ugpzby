@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiDropdownHwscanComponent } from './ui-dropdown-hwscan.component';
 const items = [{ name: 'sample' }, { name: 'sample2' }];
@@ -6,7 +6,7 @@ describe('UiDropdownHwscanComponent', () => {
 	let component: UiDropdownHwscanComponent;
 	let fixture: ComponentFixture<UiDropdownHwscanComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiDropdownHwscanComponent],
 		}).compileComponents();

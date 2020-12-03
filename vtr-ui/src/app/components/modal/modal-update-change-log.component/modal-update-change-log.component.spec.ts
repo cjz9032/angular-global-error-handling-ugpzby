@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalUpdateChangeLogComponent } from './modal-update-change-log.component';
 
@@ -6,7 +6,7 @@ describe('UpdateChangeLogComponent', () => {
 	// let component: ModalUpdateChangeLogComponent;
 	// let fixture: ComponentFixture<ModalUpdateChangeLogComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		// TestBed.configureTestingModule({
 		// 	declarations: [ModalUpdateChangeLogComponent]
 		// })

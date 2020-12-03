@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiFeatureHeadingComponent } from './ui-feature-heading.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -9,7 +9,7 @@ describe('UiFeatureHeadingComponent', () => {
 	let component: UiFeatureHeadingComponent;
 	let fixture: ComponentFixture<UiFeatureHeadingComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiFeatureHeadingComponent, SvgInlinePipe],
 			imports: [HttpClientTestingModule, TranslateModule.forRoot()],

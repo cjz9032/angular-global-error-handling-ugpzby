@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -16,7 +16,7 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 	let batteryDetailService: BatteryDetailService;
 	let activeModal;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalBatteryChargeThresholdComponent, SvgInlinePipe],
 			imports: [FontAwesomeModule, TranslateModule.forRoot(), HttpClientTestingModule],
@@ -41,7 +41,7 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 			expect(component).toBeTruthy();
 		});
 
-		it('enableBatteryChargeThreshold calling activeModal close', async(() => {
+		it('enableBatteryChargeThreshold calling activeModal close', waitForAsync(() => {
 			const { fixture, component } = setup();
 			activeModal = TestBed.inject(NgbActiveModal);
 			const spy = spyOn(activeModal, 'close');
@@ -49,14 +49,14 @@ describe('ModalBatteryChargeThresholdComponent', () => {
 			expect(spy).toHaveBeenCalled();
 		}));
 
-		it('closeModal calling activeModal close', async(() => {
+		it('closeModal calling activeModal close', waitForAsync(() => {
 			const { fixture, component } = setup();
 			spyOn(component.activeModal, 'close').and.returnValue(Promise.resolve('negative'));
 			component.closeModal();
 			expect(component.activeModal.close).toHaveBeenCalled();
 		}));
 
-		it('onKeydownHandler calling activeModal close', async(() => {
+		it('onKeydownHandler calling activeModal close', waitForAsync(() => {
 			const { fixture, component } = setup();
 			spyOn(component, 'closeModal');
 			component.onKeydownHandler(KeyboardEvent);

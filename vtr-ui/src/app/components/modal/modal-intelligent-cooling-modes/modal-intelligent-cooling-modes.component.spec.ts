@@ -1,5 +1,5 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
@@ -10,7 +10,7 @@ describe('ModalIntelligentCoolingModesComponent', () => {
 	let fixture: ComponentFixture<ModalIntelligentCoolingModesComponent>;
 	let activeModal: NgbActiveModal;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [ModalIntelligentCoolingModesComponent],
@@ -19,14 +19,14 @@ describe('ModalIntelligentCoolingModesComponent', () => {
 		});
 	}));
 
-	it('should create the app', async(() => {
+	it('should create the app', waitForAsync(() => {
 		fixture = TestBed.createComponent(ModalIntelligentCoolingModesComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	}));
 
-	it('should call closeModal', async(() => {
+	it('should call closeModal', waitForAsync(() => {
 		fixture = TestBed.createComponent(ModalIntelligentCoolingModesComponent);
 		component = fixture.componentInstance;
 		activeModal = TestBed.inject(NgbActiveModal);
@@ -35,7 +35,7 @@ describe('ModalIntelligentCoolingModesComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call onKeydownHandler', async(() => {
+	it('should call onKeydownHandler', waitForAsync(() => {
 		fixture = TestBed.createComponent(ModalIntelligentCoolingModesComponent);
 		component = fixture.componentInstance;
 		const spy = spyOn(component, 'closeModal');
@@ -44,7 +44,7 @@ describe('ModalIntelligentCoolingModesComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call onKeydownEnterHandler', async(() => {
+	it('should call onKeydownEnterHandler', waitForAsync(() => {
 		fixture = TestBed.createComponent(ModalIntelligentCoolingModesComponent);
 		component = fixture.componentInstance;
 		const spy = spyOn(component, 'closeModal');

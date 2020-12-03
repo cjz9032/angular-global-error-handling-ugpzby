@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiRectangleRadioComponent } from './ui-rectangle-radio.component';
 
@@ -6,7 +6,7 @@ xdescribe('UiRectangleRadioComponent', () => {
 	let component: UiRectangleRadioComponent;
 	let fixture: ComponentFixture<UiRectangleRadioComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiRectangleRadioComponent],
 		}).compileComponents();

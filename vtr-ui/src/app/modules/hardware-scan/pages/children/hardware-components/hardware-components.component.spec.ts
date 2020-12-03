@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HardwareComponentsComponent } from './hardware-components.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,7 +21,7 @@ describe('HardwareComponentsComponent', () => {
 	let hwScanService: HardwareScanService;
 	let exportService: ExportResultsService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [HardwareComponentsComponent],
 			imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
@@ -76,7 +76,7 @@ describe('HardwareComponentsComponent', () => {
 		expect(refreshDisabled).toBeTrue();
 	});
 
-	it('it should retrieve default items list', async(() => {
+	it('it should retrieve default items list', waitForAsync(() => {
 		const spy = spyOn(hwScanService, 'getInitialHardwareComponentList');
 		hwScanService.getInitialHardwareComponentList();
 		expect(spy).not.toBeUndefined();

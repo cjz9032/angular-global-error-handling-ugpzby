@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiProgressBarComponent } from './ui-progress-bar.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -7,7 +7,7 @@ describe('UiProgressBarComponent', () => {
 	let component: UiProgressBarComponent;
 	let fixture: ComponentFixture<UiProgressBarComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiProgressBarComponent],
 			imports: [TranslateModule.forRoot()],

@@ -1,5 +1,5 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateStore } from '@ngx-translate/core';
 import { EyeCareMode } from 'src/app/data-models/camera/eyeCareMode.model';
 import { TranslationModule } from 'src/app/modules/translation.module';
@@ -19,7 +19,7 @@ describe('DisplayColorTempComponent', () => {
 	let fixture: ComponentFixture<DisplayColorTempComponent>;
 	let logger: LoggerService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [DisplayColorTempComponent],

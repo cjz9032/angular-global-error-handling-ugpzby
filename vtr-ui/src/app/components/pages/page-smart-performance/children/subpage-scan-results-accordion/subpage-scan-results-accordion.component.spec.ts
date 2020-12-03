@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SubpageScanResultsAccordionComponent } from './subpage-scan-results-accordion.component';
 
@@ -6,7 +6,7 @@ describe('SubpageScanResultsAccordionComponent', () => {
 	let component: SubpageScanResultsAccordionComponent;
 	let fixture: ComponentFixture<SubpageScanResultsAccordionComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [SubpageScanResultsAccordionComponent],
 		}).compileComponents();

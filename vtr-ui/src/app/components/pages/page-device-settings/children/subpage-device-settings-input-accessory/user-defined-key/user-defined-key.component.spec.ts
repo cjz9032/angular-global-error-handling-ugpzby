@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { UserDefinedKeyComponent } from './user-defined-key.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -12,7 +12,7 @@ describe('UserDefinedKeyComponent', () => {
 	let component: UserDefinedKeyComponent;
 	let fixture: ComponentFixture<UserDefinedKeyComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UserDefinedKeyComponent],
 			schemas: [NO_ERRORS_SCHEMA],

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BatteryCapacityComponent } from './battery-capacity.component';
 import { BatteryHealthService } from '../battery-health.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -17,7 +17,7 @@ describe('BatteryCapacityComponent', () => {
 	let powerService: PowerService;
 	let batteryHealthService: BatteryHealthService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [BatteryCapacityComponent],

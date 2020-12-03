@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalSnapshotComponent } from './modal-snapshot.component';
 
@@ -6,7 +6,7 @@ xdescribe('ModalSnapshotComponent', () => {
 	let component: ModalSnapshotComponent;
 	let fixture: ComponentFixture<ModalSnapshotComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalSnapshotComponent],
 		}).compileComponents();

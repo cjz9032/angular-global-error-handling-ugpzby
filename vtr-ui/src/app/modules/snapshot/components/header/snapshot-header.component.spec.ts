@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SnapshotHeaderComponent } from './snapshot-header.component';
 
@@ -6,7 +6,7 @@ describe('SnapshotHeaderComponent', () => {
 	let component: SnapshotHeaderComponent;
 	let fixture: ComponentFixture<SnapshotHeaderComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [SnapshotHeaderComponent],
 		}).compileComponents();

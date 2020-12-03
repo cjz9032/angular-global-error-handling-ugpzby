@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WidgetLocationStatusComponent } from './widget-location-status.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -15,7 +15,7 @@ describe('WidgetLocationStatusComponent', () => {
 	let component: WidgetLocationStatusComponent;
 	let fixture: ComponentFixture<WidgetLocationStatusComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetLocationStatusComponent],
 			schemas: [NO_ERRORS_SCHEMA],

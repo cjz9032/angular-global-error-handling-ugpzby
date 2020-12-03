@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiMacrokeyDetailsComponent } from './ui-macrokey-details.component';
 import { Component, Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -27,7 +27,7 @@ describe('UiMacrokeyDetailsComponent', () => {
 	dummyElement.id = 'gaming_macrokey_startrecording';
 	document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiMacrokeyDetailsComponent,

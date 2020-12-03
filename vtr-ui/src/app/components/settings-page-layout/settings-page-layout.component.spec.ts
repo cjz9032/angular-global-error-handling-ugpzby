@@ -1,11 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { SettingsPageLayoutComponent } from './settings-page-layout.component';
 
 xdescribe('SettingsPageLayoutComponent', () => {
 	let component: SettingsPageLayoutComponent;
 	let fixture: ComponentFixture<SettingsPageLayoutComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [SettingsPageLayoutComponent],
 		}).compileComponents();

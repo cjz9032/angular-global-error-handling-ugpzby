@@ -1,5 +1,5 @@
 import { DeviceService } from 'src/app/services/device/device.service';
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, tick, fakeAsync, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UiLightingEffectComponent } from './ui-lighting-effect.component';
@@ -20,7 +20,7 @@ describe('UiLightingEffectComponent', () => {
 	dummyElement.id = 'menu-main-btn-navbar-toggler';
 	document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiLightingEffectComponent,

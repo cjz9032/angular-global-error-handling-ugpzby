@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WidgetFeedbackComponent } from './widget-feedback.component';
 
@@ -6,7 +6,7 @@ xdescribe('WidgetFeedbackComponent', () => {
 	let component: WidgetFeedbackComponent;
 	let fixture: ComponentFixture<WidgetFeedbackComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetFeedbackComponent],
 		}).compileComponents();

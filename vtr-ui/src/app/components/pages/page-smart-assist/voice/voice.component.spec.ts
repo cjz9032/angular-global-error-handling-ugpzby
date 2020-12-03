@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { VoiceComponent } from './voice.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
@@ -12,7 +12,7 @@ describe('VoiceComponent', () => {
 	let component: VoiceComponent;
 	let fixture: ComponentFixture<VoiceComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [VoiceComponent],
 			schemas: [NO_ERRORS_SCHEMA],

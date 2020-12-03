@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { BatteryTemperatureComponent } from './battery-temperature.component';
 import SpyObj = jasmine.SpyObj;
@@ -20,7 +20,7 @@ describe('BatteryTemperatureComponent', () => {
 	let fixture: ComponentFixture<BatteryTemperatureComponent>;
 	let batteryHealthServiceSpy: SpyObj<BatteryHealthService>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		batteryHealthServiceSpy = jasmine.createSpyObj<BatteryHealthService>(
 			'BatteryHealthService',
 			{},

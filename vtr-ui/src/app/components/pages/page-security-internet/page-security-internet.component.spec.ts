@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PageSecurityInternetComponent } from './page-security-internet.component';
 
@@ -6,7 +6,7 @@ describe('PageSecurityInternetComponent', () => {
 	// let component: PageSecurityInternetComponent;
 	// let fixture: ComponentFixture<PageSecurityInternetComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		// TestBed.configureTestingModule({
 		// 	declarations: [PageSecurityInternetComponent]
 		// })

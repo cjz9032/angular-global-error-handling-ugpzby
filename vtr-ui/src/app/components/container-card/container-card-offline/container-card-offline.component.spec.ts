@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ContainerCardOfflineComponent } from './container-card-offline.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -12,7 +12,7 @@ describe('ContainerCardOfflineComponent', () => {
 	let component: ContainerCardOfflineComponent;
 	let fixture: ComponentFixture<ContainerCardOfflineComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ContainerCardOfflineComponent],
 			schemas: [NO_ERRORS_SCHEMA],

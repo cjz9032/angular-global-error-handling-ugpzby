@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalHardwareScanRbsComponent } from './modal-hardware-scan-rbs.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
@@ -12,7 +12,7 @@ describe('ModalHardwareScanRbsComponent', () => {
 	let component: ModalHardwareScanRbsComponent;
 	let fixture: ComponentFixture<ModalHardwareScanRbsComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalHardwareScanRbsComponent],
 			imports: [TranslateModule.forRoot(), HttpClientModule],

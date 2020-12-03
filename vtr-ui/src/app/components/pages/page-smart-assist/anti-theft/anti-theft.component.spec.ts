@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NavigationExtras, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -36,7 +36,7 @@ describe('component: AntiTheftComponent', () => {
 	// let navigationExtras: NavigationExtras;
 	let vantageShellService: VantageShellService;
 	let cameraAccessChangedHandler: any;
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [AntiTheftComponent],
 			imports: [HttpClientTestingModule, TranslateModule.forRoot(), RouterTestingModule],

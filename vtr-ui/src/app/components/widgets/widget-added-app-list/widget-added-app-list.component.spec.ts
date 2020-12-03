@@ -1,5 +1,5 @@
 import { Pipe } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 
 import { WidgetAddedAppListComponent } from './widget-added-app-list.component';
@@ -56,7 +56,7 @@ describe('WidgetAddedAppListComponent', () => {
 		],
 	};
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetAddedAppListComponent, mockPipe({ name: 'translate' })],
 			providers: [

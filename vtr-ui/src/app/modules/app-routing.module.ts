@@ -9,7 +9,7 @@ import { ProtocolGuardService } from '../services/guard/protocol-guard.service';
 @Component({
 	template: 'empty',
 })
-export class DoNotUseComponent {}
+export class DoNotUseComponent { }
 
 const routes: Routes = [
 	{
@@ -111,8 +111,9 @@ const routes: Routes = [
 			scrollPositionRestoration: 'enabled',
 			enableTracing: false,
 			preloadingStrategy: PreloadAllModules,
+			relativeLinkResolution: 'legacy',
 		}),
 	],
 	exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

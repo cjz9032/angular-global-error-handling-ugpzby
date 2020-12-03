@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { StringBoolean } from 'src/app/data-models/common/common.interface';
 import { VantageShellService } from '../../../../../../services/vantage-shell/vantage-shell.service';
@@ -17,7 +17,7 @@ describe('TopRowFunctionsIdeapadService', () => {
 	let topRowFuncIdeaService: TopRowFunctionsIdeapadService;
 	let shellService: VantageShellService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			imports: [HttpClientTestingModule],
 			providers: [VantageShellService],

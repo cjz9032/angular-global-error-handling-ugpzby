@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
@@ -14,7 +14,7 @@ describe('PageSmartPerformanceComponent', () => {
 	let commonService: CommonService;
 	let systemEventService: SystemEventService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [PageSmartPerformanceComponent],
@@ -25,12 +25,12 @@ describe('PageSmartPerformanceComponent', () => {
 		component = fixture.componentInstance;
 	}));
 
-	it('should create PageSmartPerformanceComponent', async(() => {
+	it('should create PageSmartPerformanceComponent', waitForAsync(() => {
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	}));
 
-	it('should call registerScanEvent', async(() => {
+	it('should call registerScanEvent', waitForAsync(() => {
 		component.eventName = 'SmartPerformance.ScheduleEventStarted';
 		systemEventService = TestBed.inject(SystemEventService);
 		commonService = TestBed.inject(CommonService);

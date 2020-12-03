@@ -1,5 +1,5 @@
 import { MacrokeyService } from './../../../services/gaming/macrokey/macrokey.service';
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { WidgetMacrokeySettingsComponent } from './widget-macrokey-settings.component';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -90,7 +90,7 @@ describe('WidgetMacrokeySettingsComponent', () => {
 	macrokeyServiceMock.setMacroKeyApplyStatus.and.returnValue(Promise.resolve(true));
 	macrokeyServiceMock.setKey.and.returnValue(true);
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		let shellServiveSpy = jasmine.createSpyObj('VantageService', [
 			'registerEvent',
 			'unRegisterEvent',

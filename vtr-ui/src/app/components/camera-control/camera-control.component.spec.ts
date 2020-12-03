@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
@@ -14,7 +14,7 @@ xdescribe('CameraControlComponent', () => {
 	let component: CameraControlComponent;
 	let fixture: ComponentFixture<CameraControlComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [CameraControlComponent, UiSwitchOnoffComponent],
 			schemas: [NO_ERRORS_SCHEMA],

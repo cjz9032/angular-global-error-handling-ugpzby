@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ModalGamingLegionedgeComponent } from './modal-gaming-legionedge.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -8,7 +8,7 @@ describe('ModalGamingLegionedgeComponent', () => {
 	let component: ModalGamingLegionedgeComponent;
 	let fixture: ComponentFixture<ModalGamingLegionedgeComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				ModalGamingLegionedgeComponent,

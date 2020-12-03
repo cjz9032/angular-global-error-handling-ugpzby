@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
@@ -35,7 +35,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		metricsItem: null,
 	};
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [SubpageDeviceSettingsInputAccessoryComponent],
@@ -51,7 +51,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		});
 	}));
 
-	it('should create SubpageDeviceSettingsInputAccessoryComponent', async(() => {
+	it('should create SubpageDeviceSettingsInputAccessoryComponent', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -68,7 +68,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component.fnLockCapability).toEqual(true);
 	}));
 
-	it('should create SubpageDeviceSettingsInputAccessoryComponent - capability else case', async(() => {
+	it('should create SubpageDeviceSettingsInputAccessoryComponent - capability else case', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -85,7 +85,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component.fnLockCapability).toEqual(false);
 	}));
 
-	it('should create SubpageDeviceSettingsInputAccessoryComponent - keyboardCompatibility else case', async(() => {
+	it('should create SubpageDeviceSettingsInputAccessoryComponent - keyboardCompatibility else case', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -96,7 +96,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component).toBeTruthy();
 	}));
 
-	it('should create SubpageDeviceSettingsInputAccessoryComponent - machineType else case', async(() => {
+	it('should create SubpageDeviceSettingsInputAccessoryComponent - machineType else case', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -105,7 +105,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component).toBeTruthy();
 	}));
 
-	it('should call getVoipHotkeysSettings - res is available', async(() => {
+	it('should call getVoipHotkeysSettings - res is available', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
@@ -128,7 +128,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call getVoipHotkeysSettings - error catch block', async(() => {
+	it('should call getVoipHotkeysSettings - error catch block', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
@@ -140,7 +140,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call setVoipHotkeysSettings', async(() => {
+	it('should call setVoipHotkeysSettings', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
@@ -161,7 +161,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call setVoipHotkeysSettings - else case', async(() => {
+	it('should call setVoipHotkeysSettings - else case', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
@@ -180,7 +180,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component.installedApps).toEqual(voipRes.appList);
 	}));
 
-	it('should call setVoipHotkeysSettings - catch block', async(() => {
+	it('should call setVoipHotkeysSettings - catch block', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
@@ -201,7 +201,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initHiddwnKbdFnfromCache', async(() => {
+	it('should call initHiddwnKbdFnfromCache', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -219,7 +219,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component.cacheFound).toEqual(true);
 	}));
 
-	it('should call initHiddwnKbdFnfromCache - else case', async(() => {
+	it('should call initHiddwnKbdFnfromCache - else case', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		commonService = TestBed.inject(CommonService);
@@ -228,7 +228,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component.cacheFound).toEqual(false);
 	}));
 
-	it('should call getAdditionalCapabilitiesFromCache', async(() => {
+	it('should call getAdditionalCapabilitiesFromCache', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		component.additionalCapabilitiesObj = {
@@ -241,7 +241,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component.shortcutKeys.length).toEqual(5);
 	}));
 
-	it('should call getKBDLayoutName - else case', async(() => {
+	it('should call getKBDLayoutName - else case', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
@@ -251,7 +251,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).not.toHaveBeenCalled();
 	}));
 
-	it('should call getKBDMachineType - else case', async(() => {
+	it('should call getKBDMachineType - else case', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
@@ -524,7 +524,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 	// 	expect(spy).not.toHaveBeenCalled();
 	// }));
 
-	it('should call getKeyboardMap keyboardVersion is 1', async(() => {
+	it('should call getKeyboardMap keyboardVersion is 1', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		const layoutName = 'turkish_f';
@@ -544,7 +544,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component.image).not.toEqual('');
 	}));
 
-	it('should call getKeyboardMap type is grafevo', async(() => {
+	it('should call getKeyboardMap type is grafevo', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		const layoutName = 'turkish_f';
@@ -564,7 +564,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(component.image).not.toEqual('');
 	}));
 
-	it('should call getAdditionalCapabilities - empty response', async(() => {
+	it('should call getAdditionalCapabilities - empty response', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
@@ -587,7 +587,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call getAdditionalCapabilities - else case', async(() => {
+	it('should call getAdditionalCapabilities - else case', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
@@ -597,7 +597,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).not.toHaveBeenCalled();
 	}));
 
-	it('should call getLayoutTable - layout is TURKISH_F', async(() => {
+	it('should call getLayoutTable - layout is TURKISH_F', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		const layoutName = 'turkish_f';
@@ -606,7 +606,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call getLayoutTable - layout is BELGIUM', async(() => {
+	it('should call getLayoutTable - layout is BELGIUM', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		const layoutName = 'belgium';
@@ -615,7 +615,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call getLayoutTable - layout is FRENCH', async(() => {
+	it('should call getLayoutTable - layout is FRENCH', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		const layoutName = 'french';
@@ -624,7 +624,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call getLayoutTable - layout is FRENC_CANADIAN', async(() => {
+	it('should call getLayoutTable - layout is FRENC_CANADIAN', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		const layoutName = 'french_canadian';
@@ -633,7 +633,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call getLayoutTable - layout is ''", async(() => {
+	it("should call getLayoutTable - layout is ''", waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		const layoutName = '';
@@ -642,7 +642,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call generateLayOutTable', async(() => {
+	it('should call generateLayOutTable', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		const array = [7, 4, 10, 11, 2, 9, 13, 12];
@@ -713,14 +713,14 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 	// 	expect(spy).toHaveBeenCalled();
 	// }));
 
-	it('should call showHideKeyboardBacklight', async(() => {
+	it('should call showHideKeyboardBacklight', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		component.showHideKeyboardBacklight(true);
 		expect(component.isKbdBacklightAvailable).toEqual(true);
 	}));
 
-	it('should call getMouseAndTouchPadCapability - else case', async(() => {
+	it('should call getMouseAndTouchPadCapability - else case', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);

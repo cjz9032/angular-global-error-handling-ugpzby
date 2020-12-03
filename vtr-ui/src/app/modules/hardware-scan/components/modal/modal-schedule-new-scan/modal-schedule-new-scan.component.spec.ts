@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalScheduleNewScanComponent } from './modal-schedule-new-scan.component';
 
@@ -6,7 +6,7 @@ xdescribe('ModalScheduleNewScanComponent', () => {
 	let component: ModalScheduleNewScanComponent;
 	let fixture: ComponentFixture<ModalScheduleNewScanComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalScheduleNewScanComponent],
 		}).compileComponents();

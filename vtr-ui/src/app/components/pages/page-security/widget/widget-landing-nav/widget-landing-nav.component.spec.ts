@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WidgetLandingNavComponent } from './widget-landing-nav.component';
 import { WidgetLandingSecurityComponent } from '../widget-landing-security/widget-landing-security.component';
@@ -15,7 +15,7 @@ describe('WidgetLandingNavComponent', () => {
 	let component: WidgetLandingNavComponent;
 	let fixture: ComponentFixture<WidgetLandingNavComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				WidgetLandingNavComponent,

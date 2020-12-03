@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 
 import { QaService } from './qa.service';
 // import { TranslateModule, TranslateService, TranslateLoader, LangChangeEvent } from '@ngx-translate/core';

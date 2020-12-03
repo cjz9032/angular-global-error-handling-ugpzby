@@ -1,4 +1,4 @@
-import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GamingThermalModeService } from './gaming-thermal-mode.service';
@@ -147,7 +147,7 @@ describe('GamingThermalModeService', () => {
 		it('isShellAvailable is true', () => {
 			expect(gamingThermalModeService.isShellAvailable).toBe(true);
 		});
-		it('getThermalModeSettingStatus should return value', async(() => {
+		it('getThermalModeSettingStatus should return value', waitForAsync(() => {
 			thermalModeStatus = 1;
 			gamingThermalModeService.getThermalModeSettingStatus().then((res) => {
 				expect(res).toBe(1, 'get thermal mode status should be 1');
@@ -204,7 +204,7 @@ describe('GamingThermalModeService', () => {
 			//     expect(thermalModeStatus).toBe(3);
 			// });
 		}));
-		it('regThermalModeChangeEvent should return boolean value', async(() => {
+		it('regThermalModeChangeEvent should return boolean value', waitForAsync(() => {
 			setReturnValue = false;
 			gamingThermalModeService.regThermalModeChangeEvent().then((res) => {
 				expect(res).toBe(false, 'regThermalModeChangeEvent shoule return false');
@@ -215,7 +215,7 @@ describe('GamingThermalModeService', () => {
 			});
 		}));
 		// thermal mode 2
-		it('getThermalModeRealStatus should return value', async(() => {
+		it('getThermalModeRealStatus should return value', waitForAsync(() => {
 			thermalModeStatus = 1;
 			gamingThermalModeService.getThermalModeRealStatus().then((res) => {
 				expect(res).toBe(1, 'getThermalModeRealStatus shoule be 1');
@@ -229,7 +229,7 @@ describe('GamingThermalModeService', () => {
 				expect(res).toBe(3, 'getThermalModeRealStatus shoule be 3');
 			});
 		}));
-		it('getAutoSwitchStatus should return boolean value', async(() => {
+		it('getAutoSwitchStatus should return boolean value', waitForAsync(() => {
 			autoSwitchStatus = true;
 			gamingThermalModeService.getAutoSwitchStatus().then((res) => {
 				expect(res).toBe(true, 'getAutoSwitchStatus should be true');
@@ -288,7 +288,7 @@ describe('GamingThermalModeService', () => {
 				);
 			});
 		}));
-		it('regThermalModeRealStatusChangeEvent should return undefined', async(() => {
+		it('regThermalModeRealStatusChangeEvent should return undefined', waitForAsync(() => {
 			setReturnValue = true;
 			gamingThermalModeService.regThermalModeRealStatusChangeEvent().then((res) => {
 				expect(res).toBe(true, 'regThermalModeRealStatusChangeEvent should return true');
@@ -344,7 +344,7 @@ describe('GamingThermalModeService', () => {
 		it('isShellAvailable is true', () => {
 			expect(gamingThermalModeService.isShellAvailable).toBe(true);
 		});
-		it('getThermalModeSettingStatus should return err', async(() => {
+		it('getThermalModeSettingStatus should return err', waitForAsync(() => {
 			try {
 				gamingThermalModeService.getThermalModeSettingStatus();
 			} catch (err) {
@@ -379,7 +379,7 @@ describe('GamingThermalModeService', () => {
 				);
 			}
 		}));
-		it('regThermalModeChangeEvent should return err', async(() => {
+		it('regThermalModeChangeEvent should return err', waitForAsync(() => {
 			try {
 				gamingThermalModeService.regThermalModeChangeEvent();
 			} catch (err) {
@@ -387,14 +387,14 @@ describe('GamingThermalModeService', () => {
 			}
 		}));
 		// thermal mode 2
-		it('getThermalModeRealStatus should return err', async(() => {
+		it('getThermalModeRealStatus should return err', waitForAsync(() => {
 			try {
 				gamingThermalModeService.getThermalModeRealStatus();
 			} catch (err) {
 				expect(err).toMatch('getThermalModeRealStatus error');
 			}
 		}));
-		it('getAutoSwitchStatus should return err', async(() => {
+		it('getAutoSwitchStatus should return err', waitForAsync(() => {
 			try {
 				gamingThermalModeService.getAutoSwitchStatus();
 			} catch (err) {
@@ -420,7 +420,7 @@ describe('GamingThermalModeService', () => {
 				);
 			}
 		}));
-		it('regThermalModeRealStatusChangeEvent should return err', async(() => {
+		it('regThermalModeRealStatusChangeEvent should return err', waitForAsync(() => {
 			try {
 				gamingThermalModeService.regThermalModeRealStatusChangeEvent();
 			} catch (err) {

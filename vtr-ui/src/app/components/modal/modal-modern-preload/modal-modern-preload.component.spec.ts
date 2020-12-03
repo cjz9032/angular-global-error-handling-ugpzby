@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalModernPreloadComponent } from './modal-modern-preload.component';
 
@@ -6,7 +6,7 @@ xdescribe('ModalModernPreloadComponent', () => {
 	let component: ModalModernPreloadComponent;
 	let fixture: ComponentFixture<ModalModernPreloadComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalModernPreloadComponent],
 		}).compileComponents();

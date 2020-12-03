@@ -1,6 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of, throwError } from 'rxjs';
 import { CommonService } from '../common/common.service';
@@ -48,7 +48,7 @@ describe('CMSService', () => {
 	let commService: CommsService;
 	let commonService: CommonService;
 
-	beforeEach(async(() =>
+	beforeEach(waitForAsync(() =>
 		TestBed.configureTestingModule({
 			imports: [HttpClientTestingModule, RouterTestingModule],
 			providers: [
@@ -61,12 +61,12 @@ describe('CMSService', () => {
 			],
 		})));
 
-	it('should be created', async(() => {
+	it('should be created', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		expect(service).toBeTruthy();
 	}));
 
-	it('should call deviceFilter when filter is empty', async(() => {
+	it('should call deviceFilter when filter is empty', waitForAsync(() => {
 		const filter = undefined;
 		service = TestBed.inject(CMSService);
 		shellservice = TestBed.inject(VantageShellService);
@@ -75,7 +75,7 @@ describe('CMSService', () => {
 		expect(spy).not.toHaveBeenCalled();
 	}));
 
-	it('should call deviceFilter when filter not empty', async(() => {
+	it('should call deviceFilter when filter not empty', waitForAsync(() => {
 		const filter = {};
 		service = TestBed.inject(CMSService);
 		shellservice = TestBed.inject(VantageShellService);
@@ -84,7 +84,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call deviceFilter when filter not empty and error', async(() => {
+	it('should call deviceFilter when filter not empty and error', waitForAsync(() => {
 		const filter = {};
 		service = TestBed.inject(CMSService);
 		shellservice = TestBed.inject(VantageShellService);
@@ -93,7 +93,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call filterCMSContent', async(() => {
+	it('should call filterCMSContent', waitForAsync(() => {
 		const results = [{ Filter: 'some' }];
 		service = TestBed.inject(CMSService);
 		const spy = spyOn(service, 'deviceFilter');
@@ -101,7 +101,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSContent', async(() => {
+	it('should call fetchCMSContent', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		localInfoService = TestBed.inject(LocalInfoService);
 		const queryParams = { queryParams: { filter: 'ababab' } };
@@ -113,7 +113,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSContent - catch block', async(() => {
+	it('should call fetchCMSContent - catch block', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		localInfoService = TestBed.inject(LocalInfoService);
 		const queryParams = { queryParams: { filter: 'ababab' } };
@@ -125,7 +125,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSContent - else', async(() => {
+	it('should call fetchCMSContent - else', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		service.localInfo = {
 			Lang: 'en',
@@ -164,7 +164,7 @@ describe('CMSService', () => {
 	// 	expect(spy).not.toHaveBeenCalled();
 	// }));
 
-	it('should call getCMSContent - if results', async(() => {
+	it('should call getCMSContent - if results', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		commService = TestBed.inject(CommsService);
 		const httpOptions = {
@@ -246,7 +246,7 @@ describe('CMSService', () => {
 	// 	expect(spy).toHaveBeenCalled();
 	// }));
 
-	it('should call fetchCMSArticleCategories', async(() => {
+	it('should call fetchCMSArticleCategories', waitForAsync(() => {
 		const results = {
 			Lang: 'en',
 			GEO: 'us',
@@ -266,7 +266,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSArticleCategories - catch block', async(() => {
+	it('should call fetchCMSArticleCategories - catch block', waitForAsync(() => {
 		const results = {
 			Lang: 'en',
 			GEO: 'us',
@@ -286,7 +286,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSArticleCategories - else case', async(() => {
+	it('should call fetchCMSArticleCategories - else case', waitForAsync(() => {
 		const queryParams = { queryParams: { filter: 'ababab' } };
 		service = TestBed.inject(CMSService);
 		localInfoService = TestBed.inject(LocalInfoService);
@@ -355,7 +355,7 @@ describe('CMSService', () => {
 	// 	expect(spy).toHaveBeenCalled();
 	// }));
 
-	it('should call fetchCMSArticles', async(() => {
+	it('should call fetchCMSArticles', waitForAsync(() => {
 		const queryParams = {};
 		const results = {
 			Lang: 'en',
@@ -376,7 +376,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSArticles -catch block', async(() => {
+	it('should call fetchCMSArticles -catch block', waitForAsync(() => {
 		const queryParams = {};
 		const results = {
 			Lang: 'en',
@@ -465,7 +465,7 @@ describe('CMSService', () => {
 	// 	expect(spy).toHaveBeenCalled();
 	// }));
 
-	it('should call fetchCMSArticle', async(() => {
+	it('should call fetchCMSArticle', waitForAsync(() => {
 		const queryParams = {};
 		const articleId = '1DHKKM344LL599000';
 		const results = {
@@ -486,7 +486,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSArticle -catch block', async(() => {
+	it('should call fetchCMSArticle -catch block', waitForAsync(() => {
 		const queryParams = {};
 		const articleId = '1DHKKM344LL599000';
 		service = TestBed.inject(CMSService);
@@ -497,7 +497,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSArticle - else case', async(() => {
+	it('should call fetchCMSArticle - else case', waitForAsync(() => {
 		const queryParams = {};
 		const articleId = '1DHKKM344LL599000';
 		service = TestBed.inject(CMSService);
@@ -515,7 +515,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call getOneCMSContent', async(() => {
+	it('should call getOneCMSContent', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		const results = [{ Template: 'template', Position: 'position' }];
 		const template = 'template';
@@ -524,7 +524,7 @@ describe('CMSService', () => {
 		expect(service.getOneCMSContent).toBeTruthy();
 	}));
 
-	it('should call fetchCMSEntitledAppList', async(() => {
+	it('should call fetchCMSEntitledAppList', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		commService = TestBed.inject(CommsService);
 		service.localInfo = {
@@ -537,7 +537,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSEntitledAppList -error', async(() => {
+	it('should call fetchCMSEntitledAppList -error', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		commService = TestBed.inject(CommsService);
 		service.localInfo = {
@@ -552,7 +552,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSAppDetails', async(() => {
+	it('should call fetchCMSAppDetails', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		commService = TestBed.inject(CommsService);
 		service.localInfo = {
@@ -565,7 +565,7 @@ describe('CMSService', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call fetchCMSAppDetails -error', async(() => {
+	it('should call fetchCMSAppDetails -error', waitForAsync(() => {
 		service = TestBed.inject(CMSService);
 		commService = TestBed.inject(CommsService);
 		service.localInfo = {

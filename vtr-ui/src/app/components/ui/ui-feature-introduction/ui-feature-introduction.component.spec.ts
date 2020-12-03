@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiFeatureIntroductionComponent } from './ui-feature-introduction.component';
 
@@ -6,7 +6,7 @@ xdescribe('UiFeatureIntroductionComponent', () => {
 	let component: UiFeatureIntroductionComponent;
 	let fixture: ComponentFixture<UiFeatureIntroductionComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiFeatureIntroductionComponent],
 		}).compileComponents();

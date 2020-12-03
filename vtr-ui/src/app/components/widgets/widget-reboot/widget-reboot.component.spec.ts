@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WidgetRebootComponent } from './widget-reboot.component';
 
@@ -6,7 +6,7 @@ xdescribe('WidgetRebootComponent', () => {
 	let component: WidgetRebootComponent;
 	let fixture: ComponentFixture<WidgetRebootComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetRebootComponent],
 		}).compileComponents();

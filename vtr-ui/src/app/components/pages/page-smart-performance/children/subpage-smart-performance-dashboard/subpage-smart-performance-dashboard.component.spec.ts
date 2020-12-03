@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -44,7 +44,7 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 		component = fixture.componentInstance;
 	});
 
-	it('should create SubpageSmartPerformanceDashboardComponent', async(() => {
+	it('should create SubpageSmartPerformanceDashboardComponent', waitForAsync(() => {
 		commonService = TestBed.inject(CommonService);
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		shellServices = TestBed.inject(VantageShellService);
@@ -55,7 +55,7 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 		expect(component).toBeTruthy();
 	}));
 
-	it('should start scanning - getReadiness returns false', async(() => {
+	it('should start scanning - getReadiness returns false', waitForAsync(() => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		smartPerformanceService.isShellAvailable = true;
 		const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(
@@ -66,7 +66,7 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should start scanning - getReadiness returns false when shell not available', async(() => {
+	it('should start scanning - getReadiness returns false when shell not available', waitForAsync(() => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		smartPerformanceService.isShellAvailable = false;
 		const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(
@@ -77,7 +77,7 @@ describe('SubpageSmartPerformanceDashboardComponent', () => {
 		expect(spy).not.toHaveBeenCalled();
 	}));
 
-	it('should start scanning - getReadiness throw error', async(() => {
+	it('should start scanning - getReadiness throw error', waitForAsync(() => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		smartPerformanceService.isShellAvailable = true;
 		const spy = spyOn(smartPerformanceService, 'getReadiness').and.returnValue(

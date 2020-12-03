@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { UiCustomSwitchComponent } from './ui-custom-switch.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -10,7 +10,7 @@ describe('UiCustomSwitchComponent', () => {
 	let component: UiCustomSwitchComponent;
 	let fixture: ComponentFixture<UiCustomSwitchComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCustomSwitchComponent],
 			imports: [RouterTestingModule, HttpClientTestingModule, TranslateModule.forRoot()],

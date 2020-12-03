@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiNumberButtonComponent } from './ui-number-button.component';
 
@@ -6,7 +6,7 @@ describe('UiNumberButtonComponent', () => {
 	let component: UiNumberButtonComponent;
 	let fixture: ComponentFixture<UiNumberButtonComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiNumberButtonComponent],
 		}).compileComponents();

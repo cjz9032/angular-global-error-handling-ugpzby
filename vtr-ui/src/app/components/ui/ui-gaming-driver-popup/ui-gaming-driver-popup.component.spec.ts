@@ -1,5 +1,5 @@
 import { UiGamingDriverPopupComponent } from './ui-gaming-driver-popup.component';
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -9,7 +9,7 @@ describe('UiGamingDriverPopupComponent', () => {
 	let component: UiGamingDriverPopupComponent;
 	let fixture: ComponentFixture<UiGamingDriverPopupComponent>;
 	let router = { navigate: jasmine.createSpy('navigate') };
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiGamingDriverPopupComponent,

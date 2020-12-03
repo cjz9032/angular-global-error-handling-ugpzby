@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { Pipe, NO_ERRORS_SCHEMA, Component } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -90,7 +90,7 @@ describe('WidgetSystemToolsComponent', () => {
 	gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(Promise.resolve(false));
 
 	describe('macroKey', () => {
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				imports: [RouterTestingModule.withRoutes([])],
 				declarations: [WidgetSystemToolsComponent, mockPipe({ name: 'translate' })],
@@ -157,7 +157,7 @@ describe('WidgetSystemToolsComponent', () => {
 	});
 
 	describe('hardwareScan', () => {
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				imports: [RouterTestingModule.withRoutes([])],
 				declarations: [WidgetSystemToolsComponent, mockPipe({ name: 'translate' })],
@@ -228,7 +228,7 @@ describe('WidgetSystemToolsComponent', () => {
 
 	describe('legionAccessory', () => {
 		let modalService: any;
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				imports: [TranslationModule, RouterTestingModule.withRoutes([])],
 				declarations: [WidgetSystemToolsComponent, ModalGamingPromptStubComponent],
@@ -344,7 +344,7 @@ describe('WidgetSystemToolsComponent', () => {
 	});
 
 	describe('systemUpdate & power & media', () => {
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				imports: [RouterTestingModule.withRoutes([])],
 				declarations: [WidgetSystemToolsComponent, mockPipe({ name: 'translate' })],

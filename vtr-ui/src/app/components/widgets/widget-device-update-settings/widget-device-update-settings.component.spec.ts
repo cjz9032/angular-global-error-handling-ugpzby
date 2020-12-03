@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { WidgetDeviceUpdateSettingsComponent } from './widget-device-update-settings.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -13,7 +13,7 @@ describe('WidgetDeviceUpdateSettingsComponent', () => {
 	let component: WidgetDeviceUpdateSettingsComponent;
 	let fixture: ComponentFixture<WidgetDeviceUpdateSettingsComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetDeviceUpdateSettingsComponent],
 			imports: [

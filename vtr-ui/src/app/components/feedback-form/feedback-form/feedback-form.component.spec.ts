@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { FeedbackFormComponent } from './feedback-form.component';
 
@@ -6,7 +6,7 @@ xdescribe('FeedbackFormComponent', () => {
 	let component: FeedbackFormComponent;
 	let fixture: ComponentFixture<FeedbackFormComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [FeedbackFormComponent],
 		}).compileComponents();

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiListSupportComponent } from './ui-list-support.component';
 
@@ -6,7 +6,7 @@ xdescribe('UiListSupportComponent', () => {
 	let component: UiListSupportComponent;
 	let fixture: ComponentFixture<UiListSupportComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiListSupportComponent],
 		}).compileComponents();

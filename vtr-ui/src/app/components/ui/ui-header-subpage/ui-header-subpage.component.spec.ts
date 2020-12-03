@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { UiHeaderSubpageComponent } from './ui-header-subpage.component';
@@ -13,7 +13,7 @@ describe('UiHeaderSubpageComponent', () => {
 	let component: UiHeaderSubpageComponent;
 	let fixture: ComponentFixture<UiHeaderSubpageComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [UiHeaderSubpageComponent],
