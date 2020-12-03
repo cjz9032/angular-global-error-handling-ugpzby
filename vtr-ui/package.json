@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "1.9.20",
+	"version": "1.9.21",
 	"scripts": {
 		"postinstall": "ngcc",
 		"format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
@@ -51,7 +51,7 @@
 		"@lenovo/cdk": "^10.2.6",
 		"@lenovo/material": "^10.2.6",
 		"@lenovo/tan-client-bridge": "10.2101.0.unstablelatest",
-		"@ng-bootstrap/ng-bootstrap": "^8.0.0",
+		"@ng-bootstrap/ng-bootstrap": "^7.0.0",
 		"@ngx-translate/core": "^13.0.0",
 		"@ngx-translate/http-loader": "^6.0.0",
 		"angular-svg-icon": "^10.0.0",
