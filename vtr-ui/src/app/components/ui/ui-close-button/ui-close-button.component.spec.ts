@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiCloseButtonComponent } from './ui-close-button.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -7,7 +7,7 @@ describe('UiCloseButtonComponent', () => {
 	let component: UiCloseButtonComponent;
 	let fixture: ComponentFixture<UiCloseButtonComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCloseButtonComponent],
 			imports: [TranslateModule.forRoot()],

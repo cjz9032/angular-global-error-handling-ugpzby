@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiLandingFeatureComponent } from './ui-landing-feature.component';
 
@@ -6,7 +6,7 @@ xdescribe('UiLandingFeatureComponent', () => {
 	let component: UiLandingFeatureComponent;
 	let fixture: ComponentFixture<UiLandingFeatureComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiLandingFeatureComponent],
 		}).compileComponents();

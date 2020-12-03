@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiDaysPickerComponent } from './ui-days-picker.component';
 import { NO_ERRORS_SCHEMA, SimpleChange } from '@angular/core';
@@ -15,7 +15,7 @@ describe('UiDaysPickerComponent', () => {
 	let commonService: CommonService;
 	const days = ['mon', 'tue'];
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiDaysPickerComponent],
 			schemas: [NO_ERRORS_SCHEMA],

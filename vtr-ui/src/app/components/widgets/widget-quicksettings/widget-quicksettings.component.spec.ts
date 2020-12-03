@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { WidgetQuicksettingsComponent } from './widget-quicksettings.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -30,7 +30,7 @@ describe('WidgetQuicksettingsComponent', () => {
 	let fixture: ComponentFixture<WidgetQuicksettingsComponent>;
 	const routerMock = { params: of({ id: 1 }) };
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetQuicksettingsComponent],
 			imports: [

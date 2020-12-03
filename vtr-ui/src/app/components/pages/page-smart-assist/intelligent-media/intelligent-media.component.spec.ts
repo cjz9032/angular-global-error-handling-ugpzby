@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DevService } from 'src/app/services/dev/dev.service';
@@ -16,7 +16,7 @@ describe('component: IntelligentMediaComponent', () => {
 	let fixture: ComponentFixture<IntelligentMediaComponent>;
 	let smartAssist: SmartAssistService;
 	// let vantageShellService: VantageShellService;
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [IntelligentMediaComponent],
 			imports: [HttpClientTestingModule, TranslateModule.forRoot(), RouterTestingModule],

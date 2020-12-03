@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GamingAccessoryService } from './gaming-accessory.service';
@@ -112,28 +112,28 @@ describe('GamingAccessoryService', () => {
 			expect(gamingAccessoryService.isShellAvailable).toBe(true);
 		});
 
-		it('register existed: isLACSupportUriProtocol should return true', async(() => {
+		it('register existed: isLACSupportUriProtocol should return true', waitForAsync(() => {
 			stubRes.keyList = [1];
 			gamingAccessoryService.isLACSupportUriProtocol().then((res) => {
 				expect(res).toBe(true, 'isLACSupportUriProtocol should return true');
 			});
 		}));
 
-		it('register unexisted: isLACSupportUriProtocolshould should return false', async(() => {
+		it('register unexisted: isLACSupportUriProtocolshould should return false', waitForAsync(() => {
 			stubRes.keyList = [];
 			gamingAccessoryService.isLACSupportUriProtocol().then((res) => {
 				expect(res).toBe(false, 'isLACSupportUriProtocol should return false');
 			});
 		}));
 
-		it('register existed: launch successed, should return true', async(() => {
+		it('register existed: launch successed, should return true', waitForAsync(() => {
 			spyOn(WinRT, 'launchUri').and.returnValue(true);
 			gamingAccessoryService.launchAccessory(true).then((res) => {
 				expect(res).toBe(true, 'launchAccessory should return true');
 			});
 		}));
 
-		it('register existed: launch fail, should return false', async(() => {
+		it('register existed: launch fail, should return false', waitForAsync(() => {
 			spyOn(WinRT, 'launchUri').and.returnValue(false);
 			gamingAccessoryService.launchAccessory(true).then((res) => {
 				expect(res).toBe(false, 'launchAccessory should return false');
@@ -186,7 +186,7 @@ describe('GamingAccessoryService', () => {
 			expect(gamingAccessoryService.isShellAvailable).toBe(true);
 		});
 
-		it('isLACSupportUriProtocol should return err', async(() => {
+		it('isLACSupportUriProtocol should return err', waitForAsync(() => {
 			gamingAccessoryService
 				.isLACSupportUriProtocol()
 				.then()

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { PageDeviceGamingComponent } from './page-device-gaming.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
@@ -83,7 +83,7 @@ const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabili
 describe('PageDeviceGamingComponent', () => {
 	let component: PageDeviceGamingComponent;
 	let fixture: ComponentFixture<PageDeviceGamingComponent>;
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				PageDeviceGamingComponent,

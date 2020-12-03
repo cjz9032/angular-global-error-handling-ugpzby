@@ -1,13 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import {
-	async,
-	discardPeriodicTasks,
-	fakeAsync,
-	TestBed,
-	tick,
-	ComponentFixture,
-} from '@angular/core/testing';
+import { discardPeriodicTasks, fakeAsync, TestBed, tick, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
@@ -76,7 +69,7 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			checkboxValue: false,
 		},
 	];
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		const localCacheServiceMock = <LocalCacheService>{
 			getLocalCacheValue: (key, value) => Promise.resolve(),
 			setLocalCacheValue: (key, value) => Promise.resolve(),

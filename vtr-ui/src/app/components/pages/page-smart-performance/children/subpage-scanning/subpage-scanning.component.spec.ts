@@ -1,5 +1,5 @@
 import { NO_ERRORS_SCHEMA, SimpleChange } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SubpageScanningComponent } from './subpage-scanning.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -32,7 +32,7 @@ describe('SubpageScanningComponent', () => {
 	let shellService: VantageShellService;
 	let modalService: NgbModal;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [SubpageScanningComponent],

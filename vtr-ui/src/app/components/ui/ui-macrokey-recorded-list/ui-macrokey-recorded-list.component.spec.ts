@@ -1,6 +1,6 @@
 import { TranslateService } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, tick, fakeAsync, waitForAsync } from '@angular/core/testing';
 import { UiMacrokeyRecordedListComponent } from './ui-macrokey-recorded-list.component';
 import { NO_ERRORS_SCHEMA, Pipe, Component } from '@angular/core';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
@@ -52,7 +52,7 @@ describe('UiMacrokeyRecordedListComponent', () => {
 	let component: UiMacrokeyRecordedListComponent;
 	let fixture: ComponentFixture<UiMacrokeyRecordedListComponent>;
 	let modalService: any;
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiMacrokeyRecordedListComponent,

@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -60,7 +60,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 	let dashboardService: DashboardService;
 	let logService: LoggerService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				SubpageDeviceSettingsAudioComponent,
@@ -840,7 +840,7 @@ describe("Microphone Optimization Section's block status", () => {
 	let component: SubpageDeviceSettingsAudioComponent;
 	let deviceService: DeviceService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [SubpageDeviceSettingsAudioComponent],
 			schemas: [NO_ERRORS_SCHEMA],

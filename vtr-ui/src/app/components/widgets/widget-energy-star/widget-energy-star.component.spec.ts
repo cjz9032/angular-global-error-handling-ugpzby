@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WidgetEnergyStarComponent } from './widget-energy-star.component';
 
@@ -6,7 +6,7 @@ xdescribe('WidgetEnergyStarComponent', () => {
 	let component: WidgetEnergyStarComponent;
 	let fixture: ComponentFixture<WidgetEnergyStarComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetEnergyStarComponent],
 		}).compileComponents();

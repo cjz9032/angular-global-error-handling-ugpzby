@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiCheckboxComponent } from './ui-checkbox.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -12,7 +12,7 @@ describe('UiCheckboxComponent', () => {
 	let component: UiCheckboxComponent;
 	let fixture: ComponentFixture<UiCheckboxComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCheckboxComponent],
 			schemas: [NO_ERRORS_SCHEMA],

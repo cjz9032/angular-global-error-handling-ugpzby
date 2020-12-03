@@ -1,4 +1,4 @@
-import { async, fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
+import { fakeAsync, ComponentFixture, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { UiLightingKeyboardLNBx50Component } from './ui-lighting-keyboard-lnbx50.component';
 import { KeyboardToggleStatusLNBx50 } from 'src/app/data-models/gaming/lighting-keyboard/keyboard-toggle-status-LNBx50';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
@@ -120,7 +120,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 	lightingService.setLightingProfileEffectColor.and.returnValue(Promise.resolve(keyboardInfo));
 	lightingService.checkAreaColorFn.and.returnValue(true);
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiLightingKeyboardLNBx50Component, UiToggleStubComponent],
 			imports: [TranslationModule],

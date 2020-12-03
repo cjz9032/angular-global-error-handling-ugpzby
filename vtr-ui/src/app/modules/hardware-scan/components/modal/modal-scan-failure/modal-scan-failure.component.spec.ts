@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalScanFailureComponent } from './modal-scan-failure.component';
 
@@ -6,7 +6,7 @@ xdescribe('ModalEticketComponent', () => {
 	let component: ModalScanFailureComponent;
 	let fixture: ComponentFixture<ModalScanFailureComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalScanFailureComponent],
 		}).compileComponents();

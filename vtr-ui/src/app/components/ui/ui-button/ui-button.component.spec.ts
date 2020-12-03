@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiButtonComponent } from './ui-button.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -8,7 +8,7 @@ describe('UiButtonComponent', () => {
 	let component: UiButtonComponent;
 	let fixture: ComponentFixture<UiButtonComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiButtonComponent],
 			schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
@@ -32,7 +32,7 @@ describe('UiButtonComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('should call onClickButton', async(() => {
+	it('should call onClickButton', waitForAsync(() => {
 		fixture.detectChanges();
 		spyOn(component, 'onClickButton');
 

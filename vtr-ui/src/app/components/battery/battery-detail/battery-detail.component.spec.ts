@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
@@ -70,7 +70,7 @@ describe('Battery Details Component:', () => {
 	let component: BatteryDetailComponent;
 	let fixture: ComponentFixture<BatteryDetailComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [HttpClientTestingModule, TranslateModule.forRoot(), NgbModule],
@@ -79,7 +79,7 @@ describe('Battery Details Component:', () => {
 		});
 	}));
 
-	it('should create component', async(() => {
+	it('should create component', waitForAsync(() => {
 		fixture = TestBed.createComponent(BatteryDetailComponent);
 		component = fixture.componentInstance;
 		component.dataInfo = [...dataInfo];
@@ -89,7 +89,7 @@ describe('Battery Details Component:', () => {
 		expect(component).toBeTruthy();
 	}));
 
-	it('should call preProcessBatteryDetailResponse with no deviceChemistry', async(() => {
+	it('should call preProcessBatteryDetailResponse with no deviceChemistry', waitForAsync(() => {
 		fixture = TestBed.createComponent(BatteryDetailComponent);
 		component = fixture.componentInstance;
 		component.dataInfo = [...dataInfo];

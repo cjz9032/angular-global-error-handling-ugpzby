@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiToggleComponent } from './ui-toggle.component';
 
@@ -6,7 +6,7 @@ xdescribe('UiToggleComponent', () => {
 	let component: UiToggleComponent;
 	let fixture: ComponentFixture<UiToggleComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiToggleComponent],
 		}).compileComponents();

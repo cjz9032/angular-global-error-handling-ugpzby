@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalNewFeatureTipComponent } from './modal-new-feature-tip.component';
 
@@ -6,7 +6,7 @@ xdescribe('ModalNewFeatureTipComponent', () => {
 	let component: ModalNewFeatureTipComponent;
 	let fixture: ComponentFixture<ModalNewFeatureTipComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalNewFeatureTipComponent],
 		}).compileComponents();

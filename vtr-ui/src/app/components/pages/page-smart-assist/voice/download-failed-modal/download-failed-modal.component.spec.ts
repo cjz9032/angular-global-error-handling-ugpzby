@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DownloadFailedModalComponent } from './download-failed-modal.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -12,7 +12,7 @@ describe('DownloadFailedModalComponent', () => {
 	let component: DownloadFailedModalComponent;
 	let fixture: ComponentFixture<DownloadFailedModalComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [DownloadFailedModalComponent, SvgInlinePipe],
 			schemas: [NO_ERRORS_SCHEMA],

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalWaitComponent } from './modal-wait.component';
 
@@ -6,7 +6,7 @@ xdescribe('ModalWait', () => {
 	let component: ModalWaitComponent;
 	let fixture: ComponentFixture<ModalWaitComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalWaitComponent],
 		}).compileComponents();

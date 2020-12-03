@@ -1,7 +1,7 @@
 import { UICustomRadio } from './ui-custom-radio';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -11,7 +11,7 @@ xdescribe('UICustomRadioBase', () => {
 	let component: UICustomRadio;
 	let fixture: ComponentFixture<UICustomRadio>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UICustomRadio],
 			schemas: [NO_ERRORS_SCHEMA],

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WifiSecurityComponent } from './wifi-security.component';
 
@@ -6,7 +6,7 @@ describe('WifiSecurityComponent', () => {
 	// let component: WifiSecurityComponent;
 	// let fixture: ComponentFixture<WifiSecurityComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		// TestBed.configureTestingModule({
 		// 	declarations: [WifiSecurityComponent]
 		// })

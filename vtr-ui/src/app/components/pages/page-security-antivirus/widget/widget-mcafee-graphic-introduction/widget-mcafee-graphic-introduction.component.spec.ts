@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { WidgetMcafeeGraphicIntroductionComponent } from './widget-mcafee-graphic-introduction.component';
@@ -9,7 +9,7 @@ describe('WidgetMcafeeGraphicIntroductionComponent', () => {
 	let component: WidgetMcafeeGraphicIntroductionComponent;
 	let fixture: ComponentFixture<WidgetMcafeeGraphicIntroductionComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetMcafeeGraphicIntroductionComponent],
 			schemas: [NO_ERRORS_SCHEMA],

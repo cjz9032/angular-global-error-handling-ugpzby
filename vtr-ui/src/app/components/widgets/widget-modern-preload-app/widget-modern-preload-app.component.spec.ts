@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpLoaderFactory, TranslationModule } from 'src/app/modules/translation.module';
@@ -9,7 +9,7 @@ describe('WidgetModernPreloadAppComponent', () => {
 	let component: WidgetModernPreloadAppComponent;
 	let fixture: ComponentFixture<WidgetModernPreloadAppComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [WidgetModernPreloadAppComponent],
 			imports: [

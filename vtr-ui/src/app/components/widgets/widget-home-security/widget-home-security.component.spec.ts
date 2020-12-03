@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WidgetHomeSecurityComponent } from './widget-home-security.component';
 
@@ -6,7 +6,7 @@ xdescribe('WidgetHomeSecurityComponent', () => {
 	// let component: ConnectedHomeComponent;
 	// let fixture: ComponentFixture<ConnectedHomeComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		// TestBed.configureTestingModule({
 		// 	declarations: [ConnectedHomeComponent]
 		// })

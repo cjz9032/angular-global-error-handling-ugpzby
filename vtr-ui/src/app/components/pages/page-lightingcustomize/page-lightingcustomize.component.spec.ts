@@ -10,7 +10,7 @@ import { CMSService } from './../../../services/cms/cms.service';
 import { CommonService } from './../../../services/common/common.service';
 import { Title } from '@angular/platform-browser';
 import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA, Pipe } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { PageLightingcustomizeComponent } from './page-lightingcustomize.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Gaming } from './../../../enums/gaming.enum';
@@ -78,7 +78,7 @@ describe('PageLightingcustomizeComponent', () => {
 		getOneCMSContent: (res, template, position) => (res = cmsMock.Results),
 	};
 	const shellServiceMock = { getMetrics: () => ({ sendAsync: (data) => {} }) };
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				PageLightingcustomizeComponent,

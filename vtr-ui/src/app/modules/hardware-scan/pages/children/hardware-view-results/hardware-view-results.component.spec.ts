@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HardwareViewResultsComponent } from './hardware-view-results.component';
 
@@ -6,7 +6,7 @@ xdescribe('HardwareViewResultsComponent', () => {
 	let component: HardwareViewResultsComponent;
 	let fixture: ComponentFixture<HardwareViewResultsComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [HardwareViewResultsComponent],
 		}).compileComponents();

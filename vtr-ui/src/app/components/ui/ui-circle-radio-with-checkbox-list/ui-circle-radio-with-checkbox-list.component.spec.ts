@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA, DebugElement } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CapitalizeFirstPipe } from 'src/app/pipe/capitalize-pipe/capitalize-first.pipe';
@@ -43,7 +43,7 @@ describe('UiCircleRadioWithCheckBoxListComponent', () => {
 	let fixture: ComponentFixture<UiCircleRadioWithCheckBoxListComponent>;
 	let metricService: MetricService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCircleRadioWithCheckBoxListComponent, CapitalizeFirstPipe],
 			schemas: [NO_ERRORS_SCHEMA],

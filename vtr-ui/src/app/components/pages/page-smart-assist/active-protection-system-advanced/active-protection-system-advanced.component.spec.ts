@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ActiveProtectionSystemAdvancedComponent } from './active-protection-system-advanced.component';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
@@ -18,7 +18,7 @@ describe('ActiveProtectionSystemAdvancedComponent', () => {
 	let translate;
 	let commonMetricsService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ActiveProtectionSystemAdvancedComponent],
 			imports: [

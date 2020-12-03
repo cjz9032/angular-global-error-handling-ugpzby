@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiSecurityStatusbarComponent } from './ui-security-statusbar.component';
 
@@ -6,7 +6,7 @@ xdescribe('UiSecurityStatusbarComponent', () => {
 	let component: UiSecurityStatusbarComponent;
 	let fixture: ComponentFixture<UiSecurityStatusbarComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiSecurityStatusbarComponent],
 		}).compileComponents();

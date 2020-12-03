@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalWifiSecurityLocationNoticeComponent } from './modal-wifi-security-location-notice.component';
 
@@ -6,7 +6,7 @@ xdescribe('ModalWifiSecurityLocationNoticeComponent', () => {
 	let component: ModalWifiSecurityLocationNoticeComponent;
 	let fixture: ComponentFixture<ModalWifiSecurityLocationNoticeComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalWifiSecurityLocationNoticeComponent],
 		}).compileComponents();

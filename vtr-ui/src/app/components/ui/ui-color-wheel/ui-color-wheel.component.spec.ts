@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiColorWheelComponent } from './ui-color-wheel.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
@@ -7,7 +7,7 @@ describe('UiColorWheelComponent', () => {
 	let component: UiColorWheelComponent;
 	let fixture: ComponentFixture<UiColorWheelComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiColorWheelComponent,

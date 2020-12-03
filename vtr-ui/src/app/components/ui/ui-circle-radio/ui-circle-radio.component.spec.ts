@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiCircleRadioComponent } from './ui-circle-radio.component';
 
@@ -6,7 +6,7 @@ xdescribe('UiCircleRadioComponent', () => {
 	let component: UiCircleRadioComponent;
 	let fixture: ComponentFixture<UiCircleRadioComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCircleRadioComponent],
 		}).compileComponents();

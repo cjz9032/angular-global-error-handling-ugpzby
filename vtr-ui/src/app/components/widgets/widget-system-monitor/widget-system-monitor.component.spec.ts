@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { WidgetSystemMonitorComponent } from './widget-system-monitor.component';
 import { Pipe } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';

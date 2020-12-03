@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiDescriptionButtonComponent } from './ui-description-button.component';
 
@@ -6,7 +6,7 @@ describe('UiDescriptionButtonComponent', () => {
 	let component: UiDescriptionButtonComponent;
 	let fixture: ComponentFixture<UiDescriptionButtonComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiDescriptionButtonComponent],
 		}).compileComponents();

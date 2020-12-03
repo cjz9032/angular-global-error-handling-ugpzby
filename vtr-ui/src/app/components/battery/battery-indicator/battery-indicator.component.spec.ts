@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { BatteryIndicatorComponent } from './battery-indicator.component';
@@ -7,7 +7,7 @@ describe('BatteryIndicatorComponent', () => {
 	let component: BatteryIndicatorComponent;
 	let fixture: ComponentFixture<BatteryIndicatorComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [BatteryIndicatorComponent],
 			imports: [TranslationModule],

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TopRowFunctionsIdeapadComponent } from './top-row-functions-ideapad.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -19,7 +19,7 @@ xdescribe('TopRowFunctionsIdeapadComponent', () => {
 	let component: TopRowFunctionsIdeapadComponent;
 	let fixture: ComponentFixture<TopRowFunctionsIdeapadComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [TopRowFunctionsIdeapadComponent],
 			schemas: [NO_ERRORS_SCHEMA],

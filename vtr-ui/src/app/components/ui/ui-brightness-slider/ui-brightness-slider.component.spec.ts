@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, tick, fakeAsync, waitForAsync } from '@angular/core/testing';
 
 import { UiBrightnessSliderComponent } from './ui-brightness-slider.component';
 import { By } from '@angular/platform-browser';
@@ -7,7 +7,7 @@ describe('UiBrightnessSliderComponent', () => {
 	let component: UiBrightnessSliderComponent;
 	let fixture: ComponentFixture<UiBrightnessSliderComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiBrightnessSliderComponent],
 		}).compileComponents();

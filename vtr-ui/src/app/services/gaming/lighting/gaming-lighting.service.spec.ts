@@ -1,4 +1,4 @@
-import { TestBed, tick, async } from '@angular/core/testing';
+import { TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { GamingLightingService } from './gaming-lighting.service';
 import { HttpClientModule } from '@angular/common/http';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';

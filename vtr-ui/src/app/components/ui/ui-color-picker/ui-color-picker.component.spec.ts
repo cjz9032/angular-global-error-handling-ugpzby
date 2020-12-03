@@ -1,4 +1,4 @@
-import { async, fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
+import { fakeAsync, ComponentFixture, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { UiColorPickerComponent } from './ui-color-picker.component';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -16,7 +16,7 @@ describe('UiColorPickerComponent', () => {
 	dummyElement.id = 'menu-main-btn-navbar-toggler';
 	document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiColorPickerComponent,

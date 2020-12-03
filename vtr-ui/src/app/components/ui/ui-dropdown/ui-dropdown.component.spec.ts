@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpLoaderFactory } from 'src/app/modules/translation.module';
@@ -61,7 +61,7 @@ describe('UiDropdownComponent', () => {
 	/* let devService: DevService;
 	let metricService: MetricService */
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiDropDownComponent],
 			providers: [LoggerService, DevService, MetricService],
@@ -84,7 +84,7 @@ describe('UiDropdownComponent', () => {
 		component = fixture.componentInstance;
 	});
 
-	it('should create', async(() => {
+	it('should create', waitForAsync(() => {
 		component.dropDownId = 'oled-taskbar-dimmer-dropDown';
 		fixture.detectChanges();
 		expect(component).toBeTruthy();

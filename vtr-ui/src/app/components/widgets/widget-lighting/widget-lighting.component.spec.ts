@@ -3,7 +3,7 @@ import { CommonService } from './../../../services/common/common.service';
 import { GamingLightingService } from 'src/app/services/gaming/lighting/gaming-lighting.service';
 import { DeviceService } from './../../../services/device/device.service';
 import { HttpClientModule } from '@angular/common/http';
-import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, waitForAsync } from '@angular/core/testing';
 import { WidgetLightingComponent } from './widget-lighting.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { of } from 'rxjs';
@@ -56,7 +56,7 @@ describe('WidgetLightingComponent', () => {
 		'regLightingProfileIdChangeEvent',
 	]);
 	const deviceServiceMock = { getMachineInfo: () => Promise.resolve({}) };
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		spy.isShellAvailable = true;
 		spy.setLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: true }));
 		spy.getLightingProfileId.and.returnValue(

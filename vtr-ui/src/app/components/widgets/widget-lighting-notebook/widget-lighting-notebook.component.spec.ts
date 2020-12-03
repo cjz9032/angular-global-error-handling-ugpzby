@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
 import { LocalCacheService } from './../../../services/local-cache/local-cache.service';
 import { WidgetLightingNotebookComponent } from './widget-lighting-notebook.component';

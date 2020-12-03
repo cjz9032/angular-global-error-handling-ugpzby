@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { UiCustomSliderComponent } from './ui-custom-slider.component';
 import { DevService } from 'src/app/services/dev/dev.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
@@ -13,7 +13,7 @@ describe('UiCustomSliderComponent', () => {
 	let fixture: ComponentFixture<UiCustomSliderComponent>;
 	let devService: DevService;
 	let metricService: MetricService;
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiCustomSliderComponent],
 			providers: [DevService, MetricService, HttpClient],

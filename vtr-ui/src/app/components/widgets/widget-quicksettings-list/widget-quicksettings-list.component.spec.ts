@@ -1,5 +1,5 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { AudioService } from 'src/app/services/audio/audio.service';
@@ -190,7 +190,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			shellServiveSpy.getSecurityAdvisor.and.returnValue(
 				new Promise((resolve) => {
 					resolve(true);
@@ -462,7 +462,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			shellServiveSpy.getSecurityAdvisor.and.returnValue(
 				new Promise((resolve) => {
 					resolve(true);
@@ -853,7 +853,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				return true;
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			shellServiveSpy.getSecurityAdvisor.and.returnValue(securityAdvisorStub);
 			audioServiceSpy.getDolbyMode.and.returnValue(
 				new Promise((resolve) => {
@@ -1100,7 +1100,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			shellServiveSpy.getSecurityAdvisor.and.returnValue(
 				new Promise((resolve) => {
 					resolve(true);
@@ -1624,7 +1624,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 			'info',
 			'exception',
 		]);
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			shellServiveSpy.getSecurityAdvisor.and.returnValue(
 				new Promise((resolve) => {
 					resolve(true);

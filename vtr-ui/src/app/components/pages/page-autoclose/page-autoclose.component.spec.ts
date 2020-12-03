@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, tick, fakeAsync, waitForAsync } from '@angular/core/testing';
 import { Component, NO_ERRORS_SCHEMA, Input, EventEmitter, Output, Pipe } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateStore } from '@ngx-translate/core';
@@ -183,7 +183,7 @@ describe('PageAutocloseComponent', () => {
 			},
 		};
 
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					PageAutocloseComponent,

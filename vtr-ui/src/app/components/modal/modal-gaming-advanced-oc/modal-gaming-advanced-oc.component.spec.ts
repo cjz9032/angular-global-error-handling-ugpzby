@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { ModalGamingAdvancedOCComponent } from './modal-gaming-advanced-oc.component';
 import { GamingAdvancedOCService } from 'src/app/services/gaming/gaming-advanced-oc/gaming-advanced-oc.service';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
@@ -208,7 +208,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 	timerService.stop.and.returnValue(2);
 	// gamingAllCapabilitiesService.getCapabilityFromCache.and.returnValue(true);
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalGamingAdvancedOCComponent, ModalGamingPromptStubComponent],
 			imports: [TranslationModule, HttpClientModule],
@@ -294,13 +294,13 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 			}
 		});
 
-		it('setAdvancedOCInfo response : true ', async(() => {
+		it('setAdvancedOCInfo response : true ', waitForAsync(() => {
 			advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(true));
 			component.setAdvancedOCInfo(advancedOCInfo);
 			expect(advancedOCService.setAdvancedOCInfoCache).toHaveBeenCalled();
 		}));
 
-		it('setAdvancedOCInfo response : false', async(() => {
+		it('setAdvancedOCInfo response : false', waitForAsync(() => {
 			component.advancedOCInfo = advancedOCInfo;
 			advancedOCService.getAdvancedOCInfoCache.and.returnValue(advancedOCInfo);
 			advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(false));
@@ -308,7 +308,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 			expect(component.advancedOCInfo).toEqual(advancedOCInfo);
 		}));
 
-		it('setAdvancedOCInfo response : false & getAdvancedOCInfoCache is false', async(() => {
+		it('setAdvancedOCInfo response : false & getAdvancedOCInfoCache is false', waitForAsync(() => {
 			component.advancedOCInfo = advancedOCInfo;
 			advancedOCService.getAdvancedOCInfoCache.and.returnValue(false);
 			advancedOCService.setAdvancedOCInfo.and.returnValue(Promise.resolve(false));
@@ -351,7 +351,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 	});
 
 	describe('check setRangeValue : ', () => {
-		it('setRangeValue gpuParameterList', async(() => {
+		it('setRangeValue gpuParameterList', waitForAsync(() => {
 			component.advancedOCInfo = advancedOCInfo;
 
 			component.setRangeValue([30], 0, 'gpuParameterList', 0, true);
@@ -829,7 +829,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 	});
 
 	describe('check pairwiseAssociation : ', () => {
-		it('pairwiseAssociation & (tuneId === 2 || tuneId === 77)', async(() => {
+		it('pairwiseAssociation & (tuneId === 2 || tuneId === 77)', waitForAsync(() => {
 			component.advancedOCInfo.cpuParameterList = [
 				{
 					tuneId: 2,
@@ -901,7 +901,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 			expect(component.advancedOCInfo.cpuParameterList[1].OCValue).not.toBe(11);
 		}));
 
-		it('pairwiseAssociation & (tuneId === 34 || tuneId === 79)', async(() => {
+		it('pairwiseAssociation & (tuneId === 34 || tuneId === 79)', waitForAsync(() => {
 			component.advancedOCInfo.cpuParameterList = [
 				{
 					tuneId: 2,
@@ -973,7 +973,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 			expect(component.advancedOCInfo.cpuParameterList[3].OCValue).not.toBe(0);
 		}));
 
-		it('pairwiseAssociation & (tuneId === 102 || tuneId === 106)', async(() => {
+		it('pairwiseAssociation & (tuneId === 102 || tuneId === 106)', waitForAsync(() => {
 			component.advancedOCInfo.cpuParameterList = [
 				{
 					tuneId: 2,
@@ -1047,7 +1047,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 	});
 
 	describe('check multipleAssociations : ', () => {
-		it('multipleAssociations add', async(() => {
+		it('multipleAssociations add', waitForAsync(() => {
 			const arr2 = [29, 30, 31, 32, 42, 43, 96, 97, 107, 108];
 			component.advancedOCInfo.cpuParameterList = [
 				{
@@ -1145,7 +1145,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 			}
 		}));
 
-		it('multipleAssociations reduce', async(() => {
+		it('multipleAssociations reduce', waitForAsync(() => {
 			const arr2 = [29, 30, 31, 32, 42, 43, 96, 97, 107, 108];
 			component.advancedOCInfo.cpuParameterList = [
 				{

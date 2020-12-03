@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { Component, NO_ERRORS_SCHEMA, Input, EventEmitter } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateStore } from '@ngx-translate/core';
@@ -144,7 +144,7 @@ describe('PageNetworkboostComponent', () => {
 			['registerEvent', 'unregisterEvent']
 		);
 
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					PageNetworkboostComponent,

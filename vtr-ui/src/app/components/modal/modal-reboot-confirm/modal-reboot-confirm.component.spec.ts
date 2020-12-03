@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Component, Directive, Input, ViewChild, ElementRef } from '@angular/core';
 
 import { ModalRebootConfirmComponent } from './modal-reboot-confirm.component';
@@ -13,7 +13,7 @@ describe('ModalRebootConfirmComponent', () => {
 	let fixture: ComponentFixture<ModalRebootConfirmComponent>;
 	let debugElement;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalRebootConfirmComponent],
 			schemas: [NO_ERRORS_SCHEMA],

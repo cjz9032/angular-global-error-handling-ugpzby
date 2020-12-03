@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ModalGamingPromptComponent } from './modal-gaming-prompt.component';
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
@@ -10,7 +10,7 @@ describe('ModalGamingPromptComponent', () => {
 	let component: ModalGamingPromptComponent;
 	let fixture: ComponentFixture<ModalGamingPromptComponent>;
 	let activeModalService: any;
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalGamingPromptComponent],
 			imports: [TranslationModule],

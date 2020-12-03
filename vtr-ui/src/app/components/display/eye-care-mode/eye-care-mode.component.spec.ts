@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NO_ERRORS_SCHEMA, SimpleChange } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { EyeCareModeComponent } from './eye-care-mode.component';
 const eyeCareModeSettings = {
@@ -26,7 +26,7 @@ describe('EyeCareModeComponent', () => {
 	let component: EyeCareModeComponent;
 	let fixture: ComponentFixture<EyeCareModeComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			imports: [TranslateModule.forRoot(), HttpClientTestingModule],

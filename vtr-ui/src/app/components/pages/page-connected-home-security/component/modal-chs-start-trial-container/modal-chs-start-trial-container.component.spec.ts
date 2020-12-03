@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalChsStartTrialContainerComponent } from './modal-chs-start-trial-container.component';
 
@@ -6,7 +6,7 @@ xdescribe('ModalChsStartTrialContainerComponent', () => {
 	let component: ModalChsStartTrialContainerComponent;
 	let fixture: ComponentFixture<ModalChsStartTrialContainerComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [ModalChsStartTrialContainerComponent],
 		}).compileComponents();

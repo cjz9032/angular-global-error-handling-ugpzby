@@ -1,5 +1,5 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,7 +20,7 @@ describe('SubpageScheduleScanComponent', () => {
 	let localCacheService: LocalCacheService;
 	let smartPerformanceService: SmartPerformanceService;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			schemas: [NO_ERRORS_SCHEMA],
 			declarations: [SubpageScheduleScanComponent],

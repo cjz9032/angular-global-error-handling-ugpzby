@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiSwitchOnoffComponent } from './ui-switch-onoff.component';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -11,7 +11,7 @@ describe('UiSwitchOnoffComponent', () => {
 	let component: UiSwitchOnoffComponent;
 	let fixture: ComponentFixture<UiSwitchOnoffComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [UiSwitchOnoffComponent],
 			imports: [

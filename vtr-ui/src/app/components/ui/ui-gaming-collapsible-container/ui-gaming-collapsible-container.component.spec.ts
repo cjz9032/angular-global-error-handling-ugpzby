@@ -1,5 +1,5 @@
 import { UiGamingCollapsibleContainerComponent } from './ui-gaming-collapsible-container.component';
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Pipe, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -44,7 +44,7 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 		],
 	};
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiGamingCollapsibleContainerComponent,

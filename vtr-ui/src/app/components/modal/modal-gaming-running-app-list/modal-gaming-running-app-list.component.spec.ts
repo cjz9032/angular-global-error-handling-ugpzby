@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, tick, fakeAsync, waitForAsync } from '@angular/core/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { CMSService } from 'src/app/services/cms/cms.service';
@@ -100,7 +100,7 @@ describe('ModalGamingRunningAppListComponent', () => {
 	let component: ModalGamingRunningAppListComponent;
 	let fixture: ComponentFixture<ModalGamingRunningAppListComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				ModalGamingRunningAppListComponent,

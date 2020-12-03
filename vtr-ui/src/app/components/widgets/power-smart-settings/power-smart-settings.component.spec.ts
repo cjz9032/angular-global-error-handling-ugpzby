@@ -1,4 +1,4 @@
-import { async, TestBed, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -36,7 +36,7 @@ describe('Component: PowerSmartSetting', () => {
 	// const ideapad = 0;
 	// const TRANSLATIONS_EN = require('assets/i18n/en.json');
 	// const TRANSLATIONS_FR = require('assets/i18n/fr.json');
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		// originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
 		// jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 		TestBed.configureTestingModule({
@@ -117,7 +117,7 @@ describe('Component: PowerSmartSetting', () => {
 	// 	expect(component.dytc6Mode).toEqual(component.cache.captionText)
 	// });
 
-	it('should call checkDriverForThinkPad', async(() => {
+	it('should call checkDriverForThinkPad', waitForAsync(() => {
 		// spyOn<any>(component, 'isYoga730').and.returnValue(true);
 		component.cache = new IntelligentCoolingCapability();
 		component.checkDriverForThinkPad();
@@ -178,7 +178,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(component.isCollapsed).toEqual(true);
 	});
 
-	it('should call initPowerSmartSettingsForIdeaPad', async(() => {
+	it('should call initPowerSmartSettingsForIdeaPad', waitForAsync(() => {
 		const response = {
 			// available: true,
 			itsVersion: 4,
@@ -191,7 +191,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initPowerSmartSettingsForIdeaPad - available is present', async(() => {
+	it('should call initPowerSmartSettingsForIdeaPad - available is present', waitForAsync(() => {
 		const response = {
 			available: true,
 			itsVersion: 3,
@@ -203,7 +203,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initPowerSmartSettingsForIdeaPad -catch block', async(() => {
+	it('should call initPowerSmartSettingsForIdeaPad -catch block', waitForAsync(() => {
 		// let response = {
 		// 	available: true,
 		// 	itsVersion: 3,
@@ -216,7 +216,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initPowerSmartSettingsForIdeaPad - itsVersion = 4', async(() => {
+	it('should call initPowerSmartSettingsForIdeaPad - itsVersion = 4', waitForAsync(() => {
 		const response = {
 			available: true,
 			itsVersion: 4,
@@ -228,7 +228,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call initPowerSmartSettingsForIdeaPad - itsVersion >= 5', async(() => {
+	it('should call initPowerSmartSettingsForIdeaPad - itsVersion >= 5', waitForAsync(() => {
 		const response = {
 			available: true,
 			itsVersion: 5,
@@ -482,7 +482,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(component.getTIOCapability).toThrow();
 	});
 
-	it('should call setAutoModeSetting', async(() => {
+	it('should call setAutoModeSetting', waitForAsync(() => {
 		const event = { switchValue: true };
 		component.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
 		const spy = spyOn<any>(component, 'setPowerSmartSettingsForIdeaPad');
@@ -491,7 +491,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call setAutoModeSetting - switchValue is false', async(() => {
+	it('should call setAutoModeSetting - switchValue is false', waitForAsync(() => {
 		const event = { switchValue: false };
 		component.intelligentCoolingModes = IntelligentCoolingHardware.ITS13;
 		const spy = spyOn<any>(component, 'setPowerSmartSettingsForIdeaPad');
@@ -500,7 +500,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call setManualModeSetting - IntelligentCoolingHardware.ITS13', async(() => {
+	it('should call setManualModeSetting - IntelligentCoolingHardware.ITS13', waitForAsync(() => {
 		const mode: IntelligentCoolingMode = {
 			type: ICModes.Cool,
 			status: true,
@@ -514,7 +514,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call setManualModeSetting - IntelligentCoolingHardware.ITS14', async(() => {
+	it('should call setManualModeSetting - IntelligentCoolingHardware.ITS14', waitForAsync(() => {
 		const mode: IntelligentCoolingMode = {
 			type: ICModes.Performance,
 			status: false,
@@ -528,7 +528,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call setManualModeSetting - IntelligentCoolingHardware.Legacy', async(() => {
+	it('should call setManualModeSetting - IntelligentCoolingHardware.Legacy', waitForAsync(() => {
 		const mode: IntelligentCoolingMode = {
 			type: ICModes.Cool,
 			status: true,
@@ -542,7 +542,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call setManualModeSetting - isShellAvailable else', async(() => {
+	it('should call setManualModeSetting - isShellAvailable else', waitForAsync(() => {
 		const mode: IntelligentCoolingMode = {
 			type: ICModes.Cool,
 			status: true,
@@ -636,7 +636,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call onAutoTransitionToggle', async(() => {
+	it('should call onAutoTransitionToggle', waitForAsync(() => {
 		powerService.isShellAvailable = true;
 		component.isAutoTransitionVisible = true;
 
@@ -648,7 +648,7 @@ describe('Component: PowerSmartSetting', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it('should call onAutoTransitionToggle set failed', async(() => {
+	it('should call onAutoTransitionToggle set failed', waitForAsync(() => {
 		powerService.isShellAvailable = true;
 		component.isAutoTransitionVisible = true;
 

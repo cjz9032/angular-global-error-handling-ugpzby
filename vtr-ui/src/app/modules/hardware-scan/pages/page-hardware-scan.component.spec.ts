@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PageHardwareScanComponent } from './page-hardware-scan.component';
 
@@ -6,7 +6,7 @@ xdescribe('PageDeviceHardwareScanComponent', () => {
 	let component: PageHardwareScanComponent;
 	let fixture: ComponentFixture<PageHardwareScanComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [PageHardwareScanComponent],
 		}).compileComponents();

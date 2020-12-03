@@ -1,4 +1,4 @@
-import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GamingOCService } from './gaming-oc.service';
@@ -80,7 +80,7 @@ describe('GamingOCService', () => {
 		it('isShellAvailable is true', () => {
 			expect(gamingOCService.isShellAvailable).toBe(true);
 		});
-		it('get performanceOCSetting should return boolean value', async(() => {
+		it('get performanceOCSetting should return boolean value', waitForAsync(() => {
 			performanceOCSetting = true;
 			gamingOCService.getPerformanceOCSetting().then((res) => {
 				expect(res).toBe(true, 'getPerformanceOCSetting should return true');
@@ -160,7 +160,7 @@ describe('GamingOCService', () => {
 		it('isShellAvailable is true', () => {
 			expect(gamingOCService.isShellAvailable).toBe(true);
 		});
-		it('get performanceOCSetting should return err', async(() => {
+		it('get performanceOCSetting should return err', waitForAsync(() => {
 			try {
 				gamingOCService.getPerformanceOCSetting();
 			} catch (err) {

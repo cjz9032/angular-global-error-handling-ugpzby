@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -278,7 +278,7 @@ describe('WidgetLegionEdgeComponent', () => {
 			},
 		};
 
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -820,7 +820,7 @@ describe('WidgetLegionEdgeComponent', () => {
 			},
 		};
 
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -1075,7 +1075,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -1283,7 +1283,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -1537,7 +1537,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -1810,7 +1810,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -2022,7 +2022,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -2230,7 +2230,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -2449,7 +2449,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -2656,7 +2656,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	});
 
 	describe('catch error', () => {
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -2970,7 +2970,7 @@ describe('WidgetLegionEdgeComponent', () => {
 	});
 
 	describe('ITP', () => {
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,
@@ -3009,7 +3009,7 @@ describe('WidgetLegionEdgeComponent', () => {
 			fixture.detectChanges();
 		}));
 
-		it('should render the Question icon image on legion edge container', async(() => {
+		it('should render the Question icon image on legion edge container', waitForAsync(() => {
 			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
 			fixture.detectChanges();
 			const compiled = fixture.debugElement.nativeElement;
@@ -3030,7 +3030,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					WidgetLegionEdgeComponent,

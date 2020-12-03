@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiLightingSingleColorComponent } from './ui-lighting-single-color.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
@@ -10,7 +10,7 @@ describe('UiLightingSingleColorComponent', () => {
 	let component: UiLightingSingleColorComponent;
 	let fixture: ComponentFixture<UiLightingSingleColorComponent>;
 	const items = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiLightingSingleColorComponent,

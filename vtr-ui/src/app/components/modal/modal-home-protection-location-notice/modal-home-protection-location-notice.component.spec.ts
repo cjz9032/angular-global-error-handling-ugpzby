@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalHomeProtectionLocationNoticeComponent } from './modal-home-protection-location-notice.component';
 
@@ -6,7 +6,7 @@ describe('ModalHomeProtectionLocationNoticeComponent', () => {
 	// let component: ModalHomeProtectionLocationNoticeComponent;
 	// let fixture: ComponentFixture<ModalHomeProtectionLocationNoticeComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		// TestBed.configureTestingModule({
 		// 	declarations: [ModalHomeProtectionLocationNoticeComponent]
 		// })

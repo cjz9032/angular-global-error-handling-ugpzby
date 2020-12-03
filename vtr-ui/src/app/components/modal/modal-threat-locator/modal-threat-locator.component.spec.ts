@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalThreatLocatorComponent } from './modal-threat-locator.component';
 
@@ -6,7 +6,7 @@ describe('ModalThreatLocatorComponent', () => {
 	// let component: ModalThreatLocatorComponent;
 	// let fixture: ComponentFixture<ModalThreatLocatorComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		// TestBed.configureTestingModule({
 		// 	declarations: [ModalThreatLocatorComponent]
 		// })

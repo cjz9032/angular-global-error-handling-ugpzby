@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
@@ -13,7 +13,7 @@ describe('SubpageDeviceSettingsPowerContainerComponent', () => {
 	let component: SubpageDeviceSettingsPowerContainerComponent;
 	let fixture: ComponentFixture<SubpageDeviceSettingsPowerContainerComponent>;
 	let deviceService: DeviceService;
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [SubpageDeviceSettingsPowerContainerComponent],
 			schemas: [NO_ERRORS_SCHEMA],

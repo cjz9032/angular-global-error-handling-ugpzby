@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { BuildInContentService } from './build-in-content.service';
 import { asyncData, asyncError } from 'src/testing/async-observable-helpers';
 import { NORMAL_CONTENTS, ARTICLE } from 'src/testing/content-data';

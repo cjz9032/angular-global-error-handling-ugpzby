@@ -1,5 +1,5 @@
 import { Component, NO_ERRORS_SCHEMA, Input } from '@angular/core';
-import { TestBed, ComponentFixture, async, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, ComponentFixture, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateStore } from '@ngx-translate/core';
@@ -193,7 +193,7 @@ describe('ModalGamingThermalMode2Component', () => {
 	let metricSpy = jasmine.createSpyObj('MetricService', ['sendMetrics']);
 	let timerSpy = jasmine.createSpyObj('TimerService', ['start', 'stop']);
 	describe('thermalMode', () => {
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			let shellServiveSpy = jasmine.createSpyObj('VantageService', [
 				'registerEvent',
 				'unRegisterEvent',
@@ -593,7 +593,7 @@ describe('ModalGamingThermalMode2Component', () => {
 		}));
 	});
 	describe('performanceOC', () => {
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					ModalGamingThermalMode2Component,
@@ -1029,7 +1029,7 @@ describe('ModalGamingThermalMode2Component', () => {
 		let thermalModeService: any;
 		let gamingOCService: any;
 		let metricService: any;
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', [
 				'getThermalModeSettingStatus',
 				'setThermalModeSettingStatus',
@@ -1074,7 +1074,7 @@ describe('ModalGamingThermalMode2Component', () => {
 			fixture = TestBed.createComponent(ModalGamingThermalMode2Component);
 			component = fixture.componentInstance;
 		}));
-		it('should create', async(() => {
+		it('should create', waitForAsync(() => {
 			thermalModeService.getThermalModeSettingStatus.and.returnValue(Promise.resolve(2));
 			thermalModeService.getAutoSwitchStatus.and.returnValue(Promise.resolve(false));
 			gamingOCService.getPerformanceOCSetting.and.returnValue(Promise.resolve(false));
@@ -1391,7 +1391,7 @@ describe('ModalGamingThermalMode2Component', () => {
 		let activeModalService: any;
 		let modalService: any;
 		let metricService: any;
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				declarations: [
 					ModalGamingThermalMode2Component,
@@ -1448,7 +1448,7 @@ describe('ModalGamingThermalMode2Component', () => {
 	});
 	describe('about metric', () => {
 		let metricService: any;
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			let metricSpyForFeature = jasmine.createSpyObj('MetricService', ['sendMetrics']);
 			TestBed.configureTestingModule({
 				declarations: [

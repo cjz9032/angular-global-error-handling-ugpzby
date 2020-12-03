@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { BatteryLayoutComponent } from './battery-layout.component';
 
@@ -6,7 +6,7 @@ describe('BatteryLayoutComponent', () => {
 	let component: BatteryLayoutComponent;
 	let fixture: ComponentFixture<BatteryLayoutComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [BatteryLayoutComponent],
 		}).compileComponents();
