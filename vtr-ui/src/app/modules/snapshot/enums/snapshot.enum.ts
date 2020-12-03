@@ -5,3 +5,28 @@ export enum SnapshotStatus {
 	BaselineInProgress = 'titleBaselineInProgress',
 	BaselineCompleted = 'titleBaselineCompleted'
 }
+export enum SnapshotModules {
+	CdRomDrives,
+	DateOfCreation,
+	DisplayDevices,
+	HardDrives,
+	Keyboards,
+	Memory,
+	Motherboard,
+	MouseDevices,
+	Network,
+	OperatingSystems,
+	Printers,
+	Processors,
+	Programs,
+	SoundCards,
+	ReturnCode,
+	StartupPrograms,
+	VideoCards,
+	WebBrowsers
+}
+
+export enum SnapshotEnvironment {
+	Software,
+	Hardware
+}
