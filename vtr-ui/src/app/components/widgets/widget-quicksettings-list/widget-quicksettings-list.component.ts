@@ -310,7 +310,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 					this.unRegisterThermalModeChangeEvent();
 					this.getThermalModeStatus();
 					this.thermalModeEvent = this.onRegThermalModeChangeEvent.bind(this);
-					this.registerThermalChangeModeEvent();
+					this.registerThermalModeChangeEvent();
 				} else {
 					this.quickSettingsList[this.quickSettingsListIndex.thermalMode].isVisible = false;
 					this.unRegisterThermalModeChangeEvent();
@@ -321,7 +321,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		if (this.quickSettingsList[this.quickSettingsListIndex.thermalMode].isVisible === true) {
 			this.getThermalModeStatus();
 			this.thermalModeEvent = this.onRegThermalModeChangeEvent.bind(this);
-			this.registerThermalChangeModeEvent();
+			this.registerThermalModeChangeEvent();
 		}
 		this.getRapidChargeSettings();
 		this.getWifiSecuritySupported();
@@ -420,7 +420,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 							LocalStorageKey.PrevThermalModeStatus, prevThermalModeStatus
 						);
 						this.logger.info(
-							`Widget-QuickSettingsList-setThermalModeStatus: 
+							`Widget-QuickSettingsList-SetThermalModeStatus: 
 								return value: ${res}, thermalmode setting from ${prevThermalModeStatus} to ${this.thermalModeDropList.curSelected}`
 						);
 					} else {
@@ -429,7 +429,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 							LocalStorageKey.CurrentThermalModeStatus, this.thermalModeDropList.curSelected
 						);
 						this.logger.error(
-							`Widget-QuickSettingsList-setThermalModeStatus: 
+							`Widget-QuickSettingsList-SetThermalModeStatus: 
 								return value: ${res}, thermalmode setting unchanged`
 						);
 					}
@@ -440,24 +440,24 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 					LocalStorageKey.CurrentThermalModeStatus,	this.thermalModeDropList.curSelected
 				);
 				this.logger.error(
-					`Widget-QuickSettingsList-setThermalModeStatus: set fail; Error message: `, 
+					`Widget-QuickSettingsList-SetThermalModeStatus: set fail; Error message: `, 
 					error.message
 				);
 				throw new Error(error.message);
 			}
 		}
 	}
-	public registerThermalChangeModeEvent() {
+	public registerThermalModeChangeEvent() {
 		if (this.gamingCapabilities.smartFanFeature) {
 			try {
 				this.gamingThermalModeService.regThermalModeChangeEvent();
 				this.shellServices.registerEvent(EventTypes.gamingThermalModeChangeEvent, this.thermalModeEvent);
 				this.logger.info(
-					'Widget-QuickSettingsList-registerThermalModeEvent: register success'
+					'Widget-QuickSettingsList-RegisterThermalModeChangeEvent: register success'
 				);
 			} catch (error) {
 				this.logger.error(
-					'Widget-QuickSettingsList-registerThermalModeEvent: register fail; Error message: ', 
+					'Widget-QuickSettingsList-RegisterThermalModeChangeEvent: register fail; Error message: ', 
 					error.message
 				);
 				throw new Error(error.message);
@@ -472,7 +472,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 	}
 	public onRegThermalModeChangeEvent(status: any) {
 		this.logger.info(
-			`Widget-QuickSettingsList-OnRegThermalModeEvent: 
+			`Widget-QuickSettingsList-OnRegThermalModeChangeEvent: 
 				call back from ${this.thermalModeDropList.curSelected} to ${status}`
 		);
 		if (status !== undefined) {
@@ -497,25 +497,26 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		try {
 			this.powerService.getRapidChargeModeStatusIdeaNoteBook().then(res => {
 				this.logger.info(
-					`Widget-QuickSettingsList-getRapidChargeSettings: 
+					`Widget-QuickSettingsList-GetRapidChargeSettings: 
 						get value from ${this.rapidChargeSettings} to ${res}`
 				);
-				if(res !== undefined && res.available === true) {
-					if(res.status !== undefined && res.status !== this.rapidChargeSettings.status) {
+				if(res !== undefined) {
+					if(res.available !== this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isVisible ||
+						res.status !== this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isChecked
+					) {
 						this.rapidChargeSettings = res;
+						this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isVisible = res.available;
 						this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isChecked = res.status;
 						this.localCacheService.setLocalCacheValue(
 							LocalStorageKey.RapidChargeCache,
 							res
 						);
 					}
-				} else {
-					this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isVisible = false;
 				}
 			})
 		} catch (error) {
 			this.logger.error(
-				'Widget-QuickSettingsList-GetThermalModeStatus: get fail; Error message: ', 
+				'Widget-QuickSettingsList-GetRapidChargeSettings: get fail; Error message: ', 
 				error.message
 			);
 		} finally {
@@ -526,8 +527,8 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		try {
 			this.powerService.setRapidChargeModeStatusIdeaNoteBook(status).then(res => {
 				this.logger.info(
-					`Widget-QuickSettingsList-setThermalModeStatus: 
-						return value: ${res}, thermalmode setting from ${this.rapidChargeSettings} to ${status}`
+					`Widget-QuickSettingsList-SetRapidChargeSettings: 
+						return value: ${res}, rapidCharge state from ${this.rapidChargeSettings.status} to ${status}`
 				);
 				if(res !== undefined) {
 					this.rapidChargeSettings.status = status;
@@ -540,7 +541,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			})
 		} catch (error) {
 			this.logger.error(
-				'Widget-QuickSettingsList-setRapidChargeSettings: get fail; Error message: ', 
+				'Widget-QuickSettingsList-SetRapidChargeSettings: get fail; Error message: ', 
 				error.message
 			);
 		}
@@ -831,7 +832,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			this.audioService.setDolbyAudioState(value).then((res) => {
 				if (res) {
 					this.logger.info(
-						`Widget-quicksettingslist-setDolbySettings: 
+						`Widget-quicksettingslist-SetDolbySettings: 
 							return value: ${res}, dolbyMode from ${this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked} to: ${value}`
 					);
 					this.dolbySettings.isAudioProfileEnabled = value;
@@ -843,7 +844,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 				} else {
 					this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked = !value;
 					this.logger.error(
-						`Widget-quicksettingslist-setDolbySettings: 
+						`Widget-quicksettingslist-SetDolbySettings: 
 							return value: ${res}, dolbyMode from ${this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked} to: ${value}`
 					);
 				}
@@ -901,7 +902,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			dolbyModeResponse.isAudioProfileEnabled !== undefined
 		) {
 			this.logger.info(
-				`Widget-quicksettingslist-handleDolbyChangeEvent: 
+				`Widget-quicksettingslist-HandleDolbyChangeEvent: 
 					return value: ${dolbyModeResponse}, dolbyMode from ${this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked} to: ${dolbyModeResponse.isAudioProfileEnabled}`
 			);
 			if (dolbyModeResponse.isAudioProfileEnabled !== this.quickSettingsList[this.quickSettingsListIndex.dolby].isChecked) {
@@ -914,7 +915,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 			}
 		} else {
 			this.logger.error(
-				`Widget-quicksettingslist-handleDolbyChangeEvent: wrong response: ${dolbyModeResponse}`
+				`Widget-quicksettingslist-HandleDolbyChangeEvent: wrong response: ${dolbyModeResponse}`
 			);
 		}
 	}
