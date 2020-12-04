@@ -2,12 +2,12 @@
 	<h5 class="battery-title" id="battery-health-temperature-title" role="text">{{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryTemperature.title' | translate }}</h5>
 	<div class="battery-indicator">
 		<div class="indicator-icon" [ngClass]="condition" [attr.aria-label]="'battery temperature'" role="img"></div>
-		<div class="indicator-text" id="battery-health-temperature-indicator-text">
+		<div class="indicator-text" id="battery-health-temperature-indicator-text" role="text">
 			<span *ngIf="temperature !== -300 else elseTempLeftSpan">{{temperature}}&nbsp;&#8451;</span>
 			<ng-template #elseTempLeftSpan>
 				<vtr-ui-exclamation-point [attr.aria-label]="'battery temperature data is not available'" role="img"></vtr-ui-exclamation-point>
 			</ng-template>
 		</div>
 	</div>
-	<div class="battery-description" id="battery-health-temperature-description">{{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryTemperature.' + condition | translate}}</div>
+	<div class="battery-description" id="battery-health-temperature-description" role="text">{{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryTemperature.' + condition | translate}}</div>
 </div>

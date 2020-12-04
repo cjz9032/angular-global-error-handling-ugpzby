@@ -21,7 +21,7 @@
 		<div id="battery-health-capacity-tooltip-content" role="tooltip"
 		[innerHTML]="'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate"></div>
 	</ng-template>
-	<div class="capacity-area" [attr.aria-label]="'battery capacity percent'" role="img">
+	<div class="capacity-area" [attr.aria-label]="'battery capacity percent'" id="battery-health-capacity-percent" role="img">
 		<svg class="capacity-indicator" id="battery-health-capacity-circle">　　　　　　　　　
 			<circle class="ground-circle" [ngClass]="circleStyle" cx="50" cy="50" r="42"/>
 			<circle cx="50" cy="50" r="49" class="thin-circle"/>
