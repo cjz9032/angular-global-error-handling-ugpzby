@@ -30,8 +30,7 @@
 				transform: rotate(360deg);
 			}
 		}
-		
-		
+			
 		.update-btn {
 			margin-left: auto;
 		}
@@ -156,5 +155,14 @@
 
 	hr {
 		margin-bottom: 0;
+	}
+
+	@media #{$black-on-white} {
+		border-top: 1px solid #000000;
+		border-bottom: 1px solid #000000;
+	}
+	@media #{$white-on-black} {
+		border-top: 1px solid #FFFFFF;
+		border-bottom: 1px solid #FFFFFF;
 	}
 }

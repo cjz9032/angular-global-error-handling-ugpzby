@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SnapshotEnvironment, SnapshotModules } from '../../../enums/snapshot.enum';
-import { SnapshotService } from '../../../services/snapshot.service';
 
 @Component({
 	selector: 'vtr-ui-snapshot-item-list',
@@ -215,7 +213,7 @@ export class UiSnapshotItemListComponent implements OnInit {
 	}
 
 	private getModulesToSnapshot(modules) {
-		// A mock is implemented, but it must have the correct calls and fill this structure
+		// Here is mocked, but it must have the correct calls and fill this structure
 		Object.entries(modules).forEach(([key, value]) => {
 			const itemObject = {
 				name: key,
@@ -237,7 +235,7 @@ export class UiSnapshotItemListComponent implements OnInit {
 	}
 
 	private hasModification(values) {
-		// It must implement call to get if a property was changed
+		// Must implement a call to return if a property was changed
 		return false;
 	}
 

@@ -1,14 +1,13 @@
 <div id="snapshot-item-{{ i }}" class="vtr-snapshot-list-item" *ngFor="let item of itemsAttributes; let i = index; let last = last" 
 	[ngClass]="{'modified-module': item.hasModification}" >
 	<div class="row">
-		
 		<div class="module-information" [ngClass]="{ 'last-child': last }">
 			<div class="module-icon">
 
 				<!-- Defines an icon according with component -->
 				<div class="test-status">
 					<img id="snapshot-item-{{ i }}-icon"
-						alt="bla"
+						alt="{{ item.name }}"
 						class="img-icon"
 						role="img"
 						[src]="item.iconSrc | svgInline | async" />
@@ -17,12 +16,11 @@
 
 			<!-- Icon to expand and collapse module information -->
 			<div class="row">
-				
 				<p id="snapshot-item-{{ i }}-module" role="text" class="title" *ngIf="!item.hasModification; else modifiedTitle">
 					{{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</p>
 				
 				<ng-template #modifiedTitle>
-					<p id="snapshot-item-{{ i }}-module" role="text" class="title storage-name">
+					<p id="snapshot-item-{{ i }}-module" role="text" class="title">
 						* {{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</p>
 				</ng-template>
 
@@ -51,10 +49,12 @@
 			<!-- Icon to expand and collapse module information -->
 			<div id="snapshot-item-{{ i }}-details-btn"
 				class="collapse-control"
-				[attr.aria-label]="!item.detailsExpanded ? item.module + 'expand-module-details': item.module + 'collapse-module-details'"
+				[attr.aria-label]="!item.detailsExpanded ? item.name + 'expand-module-details': item.name + 'collapse-module-details'"
+				[attr.aria-expanded]="item.detailsExpanded"
 				(click)="item.detailsExpanded = !item.detailsExpanded"
-				(keyup.enter)="item.detailsExpanded = !item.detailsExpanded" role="button">
-
+				(keyup.enter)="item.detailsExpanded = !item.detailsExpanded"
+				tabindex="0"
+				role="button">
 				<fa-icon *ngIf="!item.detailsExpanded; else expandIcon" [icon]="['fal', 'angle-down']"></fa-icon>
 				<ng-template #expandIcon>
 					<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
@@ -92,10 +92,8 @@
 							
 							<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': propertie.IsDifferent}">
 								{{ propertie.CurrentValue }}</td>
-							
 						</tr>
 						<tr class="table-info-separator" aria-hidden="true"></tr>
-
 					</ng-container>
 				</ng-template>
 			</tbody>
