@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Automatisk optimering af lyd til VoIP",
-								"tooltip": "Denne funktion træder i kraft, når du har et VoIP-opkald (ved hjælp af Skype, Microsoft Teams, WeChat osv.). Når den er aktiveret, ændres Dolby-lyd automatisk til stemmetilstand, så stemmekvaliteten bliver bedre."
+								"tooltip": "Denne funktion træder i kraft, når du har et VoIP-opkald (ved hjælp af Skype, Microsoft Teams, WeChat osv.). Når den er aktiveret, ændres Dolby-lyd automatisk til stemmetilstand, så stemmekvaliteten bliver bedre.<br>Bemærk! Denne indstilling er kun tilgængelig for interne højttalere."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Automatisk optimering af lyd til underholdning",

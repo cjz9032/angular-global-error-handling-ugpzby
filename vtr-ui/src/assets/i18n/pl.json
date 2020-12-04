@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Automatycznie optymalizuj dźwięk pod kątem VoIP",
-								"tooltip": "Ta funkcja działa podczas korzystania z połączeń VoIP (za pomocą aplikacji takich jak Skype, Microsoft Teams, WeChat itp.). Po jej włączeniu dźwięk Dolby zostaje automatycznie przełączony w tryb Głos w celu zapewnienia lepszej jakości głosu."
+								"tooltip": "Ta funkcja działa podczas korzystania z połączeń VoIP (za pomocą aplikacji takich jak Skype, Microsoft Teams, WeChat itp.). Po jej włączeniu dźwięk Dolby zostaje automatycznie przełączony w tryb Głos w celu zapewnienia lepszej jakości głosu.<br>Uwaga: ta opcja jest dostępna tylko w przypadku głośników wewnętrznych."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Automatycznie optymalizuj dźwięk pod kątem materiałów rozrywkowych",

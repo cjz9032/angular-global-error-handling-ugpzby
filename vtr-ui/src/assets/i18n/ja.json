@@ -1685,7 +1685,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "VoIP 向けのオーディオの自動最適化",
-								"tooltip": "この機能は、VoIP 通話時に有効になります（Skype、Microsoft Teams、WeChat などを使用）。有効にすると、Dolby オーディオは自動的に音声モードに変わり、音声品質が向上します。"
+								"tooltip": "この機能は、VoIP 通話時に有効になります（Skype、Microsoft Teams、WeChat などを使用）。有効にすると、Dolby オーディオは自動的に音声モードに変わり、音声品質が向上します。<br>注: このオプションは、内蔵スピーカーでのみ使用できます。"
 							},
 							"entertainmentMode": {
 								"checkboxText": "エンターテイメント向けのオーディオの自動最適化",

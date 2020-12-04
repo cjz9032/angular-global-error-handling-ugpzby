@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Automatisk optimalisering av lyd for VoIP",
-								"tooltip": "Denne funksjonen brukes når du er på VoIP-samtaler (ved bruk av Skype, Microsoft Teams, WeChat og så videre). Når denne funksjonen er aktivert, endres Dolby-lyd automatisk til talemodus for å gi bedre talekvalitet."
+								"tooltip": "Denne funksjonen brukes når du er på VoIP-samtaler (ved bruk av Skype, Microsoft Teams, WeChat og så videre). Når denne funksjonen er aktivert, endres Dolby Audio automatisk til talemodus for å gi bedre talekvalitet.<br>Merk: Dette alternativet er bare tilgjengelig for interne høyttalere."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Automatisk optimalisering av lyd for underholdning",

@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Otimização automática do áudio para VoIP",
-								"tooltip": "Esta função fica ativada quando efetua chamadas VoIP (ao utilizar Skype, Microsoft Teams, WeChat, etc.). Quando ativado, o áudio Dolby muda automaticamente para o modo de Voz para uma melhor qualidade de voz."
+								"tooltip": "Esta função fica ativada quando efetua chamadas VoIP (ao utilizar Skype, Microsoft Teams, WeChat, etc.). Quando ativado, o áudio Dolby muda automaticamente para o modo de Voz para uma melhor qualidade de voz.<br>Nota: Esta opção só está disponível para altifalantes internos."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Otimização automática do áudio para entretenimento",

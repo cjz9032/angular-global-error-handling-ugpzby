@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "מיטוב שמע אוטומטי עבור VoIP",
-								"tooltip": "פונקציה זו מופעלת בשיחות VoIP (באמצעות Skype, Microsoft Teams, WeChat וכו'). כאשר היא מופעלת, שמע Dolby משתנה אוטומטית למצב קולי כדי לספק איכות קול טובה יותר."
+								"tooltip": "פונקציה זו מופעלת בשיחות VoIP (באמצעות Skype, Microsoft Teams, WeChat וכו'). כאשר היא מופעלת, שמע Dolby משתנה אוטומטית למצב קולי כדי לספק איכות קול טובה יותר.<br>הערה: אפשרות זו זמינה רק עבור רמקולים פנימיים."
 							},
 							"entertainmentMode": {
 								"checkboxText": "מיטוב שמע אוטומטי עבור בידור",

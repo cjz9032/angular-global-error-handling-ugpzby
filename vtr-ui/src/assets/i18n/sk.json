@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Automatická optimalizácia zvuku pre VoIP",
-								"tooltip": "Táto funkcia sa prejaví, keď práve telefonujete cez VoIP (pomocou programov Skype, Microsoft Teams, WeChat atď.). Ak je povolená, zvuk Dolby sa automaticky prepne do hlasového režimu, aby sa dosiahla lepšia kvalita hlasu."
+								"tooltip": "Táto funkcia sa prejaví, keď práve telefonujete cez VoIP (pomocou programov Skype, Microsoft Teams, WeChat atď.). Ak je povolená, zvuk Dolby sa automaticky prepne do hlasového režimu, aby sa dosiahla lepšia kvalita hlasu.<br>Poznámka: Táto možnosť je k dispozícii iba pre interné reproduktory."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Automatická optimalizácia zvuku pre zábavu",

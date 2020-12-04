@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Optimoi ääniasetukset automaattisesti VoIP:lle",
-								"tooltip": "Tämä ominaisuus on käytössä VoIP-puheluiden aikana (Skype, Microsoft Teams, WeChat jne.). Kun se on käytössä, Dolby Audio siirtyy automaattisesti Ääni-tilaan, jotta puheen äänenlaatu paranee."
+								"tooltip": "Tämä ominaisuus on käytössä VoIP-puheluiden aikana (Skype, Microsoft Teams, WeChat jne.). Kun se on käytössä, Dolby Audio siirtyy automaattisesti Ääni-tilaan, jotta puheen äänenlaatu paranee.<br>Huomautus: Tämä vaihtoehto on käytettävissä vain sisäisille kaiuttimille."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Optimoi ääniasetukset automaattisesti viihteelle",
