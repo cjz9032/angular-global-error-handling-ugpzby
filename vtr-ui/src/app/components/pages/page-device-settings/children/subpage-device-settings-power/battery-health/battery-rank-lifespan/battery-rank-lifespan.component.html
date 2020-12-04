@@ -9,7 +9,7 @@
         </div>
         <section id="battery-health-lifespan" class="col-right">
             <h5 class="desc" id="battery-health-lifespan-desc" attr.aria-label="predicted lifespan">
-                {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.lifeSpan' | translate }}
+                {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.lifeSpan' | translate }}&ensp;{{lifeSpanSymbol}}
             </h5>
 			<p *ngIf="lifeSpan; else lifeSpan_errorTemp" class="desc-light" id="battery-health-lifespan-months" role="text">
                 {{lifeSpan}} {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.months' | translate }}

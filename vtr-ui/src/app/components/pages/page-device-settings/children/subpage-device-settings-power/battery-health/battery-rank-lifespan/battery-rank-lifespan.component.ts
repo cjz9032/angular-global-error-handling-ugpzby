@@ -18,7 +18,8 @@ export class BatteryRankLifespanComponent implements OnInit {
 	activatedRouteSubscription: Subscription;
 	items: boolean[] = [];
 	currentHealthLevel = 7;
-	lifeSpan = '>36';
+	lifeSpanSymbol = '>';
+	lifeSpan = '36';
 	rankStarMap = new Map([
 		[BatteryHealthLevel.ERROR, -1],
 		[BatteryHealthLevel.LEVEL_1, 0],
@@ -29,14 +30,24 @@ export class BatteryRankLifespanComponent implements OnInit {
 		[BatteryHealthLevel.LEVEL_6, 5],
 		[BatteryHealthLevel.LEVEL_7, 5],
 	]);
-	lifeSpanMap = new Map([
-		[BatteryLifeSpan.LT_6, '<6'],
-		[BatteryLifeSpan.GT_6, '>6'],
-		[BatteryLifeSpan.GT_12, '>12'],
-		[BatteryLifeSpan.GT_18, '>18'],
-		[BatteryLifeSpan.GT_24, '>24'],
-		[BatteryLifeSpan.GT_30, '>30'],
-		[BatteryLifeSpan.GT_36, '>36'],
+	lifeSpanMapMonth = new Map([
+		[BatteryLifeSpan.LT_6, '6'],
+		[BatteryLifeSpan.GT_6, '6'],
+		[BatteryLifeSpan.GT_12, '12'],
+		[BatteryLifeSpan.GT_18, '18'],
+		[BatteryLifeSpan.GT_24, '24'],
+		[BatteryLifeSpan.GT_30, '30'],
+		[BatteryLifeSpan.GT_36, '36'],
+		[BatteryLifeSpan.ERROR, ''],
+	]);
+	lifeSpanMapSymbol = new Map([
+		[BatteryLifeSpan.LT_6, '<'],
+		[BatteryLifeSpan.GT_6, '>'],
+		[BatteryLifeSpan.GT_12, '>'],
+		[BatteryLifeSpan.GT_18, '>'],
+		[BatteryLifeSpan.GT_24, '>'],
+		[BatteryLifeSpan.GT_30, '>'],
+		[BatteryLifeSpan.GT_36, '>'],
 		[BatteryLifeSpan.ERROR, ''],
 	]);
 	constructor(
@@ -62,6 +73,7 @@ export class BatteryRankLifespanComponent implements OnInit {
 		this.batteryHealthService.batteryInfo.subscribe((batteryInfo) => {
 			this.capability = batteryInfo.isSupportSmartBatteryV2;
 			this.currentHealthLevel = this.getActualRank(batteryInfo.batteryHealthLevel);
+			this.lifeSpanSymbol = this.getLifeSpanSymbolStr(batteryInfo.predictedLifeSpan);
 			this.lifeSpan = this.getLifeSpanStr(batteryInfo.predictedLifeSpan);
 			this.logger.info(
 				`BatteryLifespan: getBatteryHealth-lifespan  ==> currentHealthLevel ${this.currentHealthLevel}`
@@ -79,8 +91,14 @@ export class BatteryRankLifespanComponent implements OnInit {
 	}
 
 	getLifeSpanStr(index: number): string {
-		const val = this.lifeSpanMap.get(index);
+		const val = this.lifeSpanMapMonth.get(index);
 		this.logger.info(`BatteryLifespan: lifeSpanMap ==> res ${val}`);
+		return val ? val : '';
+	}
+
+	getLifeSpanSymbolStr(index: number): string {
+		const val = this.lifeSpanMapSymbol.get(index);
+		this.logger.info(`BatteryLifespan: lifeSpanMap_symbol ==> res ${val}`);
 		return val ? val : '';
 	}
 }
