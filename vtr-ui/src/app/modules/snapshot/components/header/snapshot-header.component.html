@@ -1,1 +1,60 @@
+<div class="vtr-snapshot-header">
+	<div class="row">
+		<h2 id="snapshot-header-title" class="col title" role="heading" aria-live="polite"
+			[ngClass]="{'animated-dots': disableSnapshotButton }"
+		>{{ ('snapshot.') + snapshotStatus | translate }}</h2>
+	</div>
 
+	<div class="row snapshot-information" *ngIf="showSnapshotInformation">
+		<p class="snapshot-information-text">
+			<span id="snapshot-header-information" role="text">{{ 'snapshot.snapshotInformation' | translate }}</span>
+		</p>
+		<vtr-ui-question-mark-button
+			[componentId]="'snapshot-header-tooltip-information'"
+			[componentRole]="'link'"
+			[ariaLabel]="'snapshot-header-information tooltip, which reads: ' + ('snapshot.informationTooltipDescription' | translate)"
+			triggers="manual"
+			#tooltip="ngbTooltip"
+			(blurEvent)="tooltip.close()"
+			(clickEvent)="tooltip.toggle()"
+			[placement]="['left-top', 'right-top']"
+			[ngbTooltip]="tooltipSnapshotInformation"
+			container="vtr-root"
+			tooltipClass="vtr-tooltip"
+			[tabIndex]="1"
+			class="question-mark-container"
+		></vtr-ui-question-mark-button>
+	</div>
+
+	<div class="row">
+		<div class="col button-row">
+			<vtr-ui-button
+				linkId="snapshot-header-take-snapshot-btn"
+				metricsParent="Snapshot"
+				metricsItem="Snapshot.TakeSnapshot"
+				[label]= "'snapshot.snapshotWidgetButton' | translate"
+				[isDisabled]="disableSnapshotButton"
+				(onClick)="onTakeSnapshot()">
+			</vtr-ui-button>
+			<vtr-ui-hyperlink-button
+				linkId="snapshot-header-replace-baseline-btn"
+				linkRole="button"
+				class="hyperlink-container"
+				hyperlinkStyle="xs-white"
+				metricsParent="Snapshot"
+				metricsItem="Snapshot.ReplaceBaseline"
+				[isDisabled]="disableBaselineButton"
+				[label]="'snapshot.replaceBaseline' | translate"
+				[upperCaseLabel]="true"
+				(hyperlinkClick)="onReplaceBaseline()">
+			</vtr-ui-hyperlink-button>
+		</div>
+	</div>
+
+	<ng-template #tooltipSnapshotInformation>
+		<div
+			id="snapshot-header-information-tooltip" role="text"
+			[innerHTML]="'snapshot.informationTooltipDescription' | translate">
+		</div>
+	</ng-template>
+</div>

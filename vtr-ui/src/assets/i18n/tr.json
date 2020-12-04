@@ -4348,6 +4348,22 @@
 		"na": "Yok",
 		"exportLog": "Günlüğü Dışa Aktar"
 	},
+	"snapshot": {
+		"title": "Snapshot",
+		"hardwareListTitle": "Hardware Components",
+		"softwareListTitle": "Software Components",
+		"description": "Some description to snapshot widget",
+		"snapshotWidgetButton": "Take Snapshot",
+		"titleNotStarted": "Perform a Snapshot",
+		"titleSnapshotCompleted": "Snapshot Completed",
+		"titleSnapshotInProgress": "The Snapshot may take some time as it needs to load all the components",
+		"titleBaselineCompleted": "Replace Baseline Completed",
+		"titleBaselineInProgress": "The Baseline updates may take some time as it needs to load all the components",
+		"snapshotUpdateButton": "Update",
+		"replaceBaseline": "Replace Baseline",
+		"snapshotInformation": "Start a new snapshot of your software and hardware inventory",
+		"informationTooltipDescription": "A snapshot is a saved inventory of your computer system's hardware and software. The snapshot feature displays a side-by-side compartison of your system's current hardware and software configuration and the snapshot configuration. Differences in the current configuration are highlighted so you can easily see the changed. If you start to experience a problem with your computer, comparing the last snapshot or baseline configuration, with your current configuration may help isolate which change caused the problem."
+	},
 	"smartPerformance": {
 		"title": "Smart Performance",
 		"back": "GERİ",
