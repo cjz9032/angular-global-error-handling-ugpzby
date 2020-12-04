@@ -62,7 +62,7 @@ section .desc-light {
 	display: inline-block;
 	font-size: $base;
 	color: $grey_darker;
-	margin-left: 6px;
+	font-family: $font_family_semilight;
 	padding-top: 12px;
 }
 .col-left {
@@ -82,7 +82,8 @@ section .desc-light {
 	}
 }
 ::ng-deep .col-right svg {
-	margin-left: 24px;
+	margin-left: 10px;
+	margin-top: -5px;
 	width: 26px;
 	height: 26px;
 	stroke: #f7c809;
