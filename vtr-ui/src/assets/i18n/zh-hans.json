@@ -1677,7 +1677,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "针对 VoIP 自动优化音频",
-								"tooltip": "在使用 VoIP 通话（使用 Skype、Microsoft Teams、微信等）时，此功能生效。启用后，Dolby 音频会自动更改为“语音”模式，以提高语音质量。"
+								"tooltip": "在使用 VoIP 通话（使用 Skype、Microsoft Teams、微信等）时，此功能生效。启用后，Dolby 音频会自动更改为“语音”模式，以提高语音质量。<br>注意：此选项仅适用于内置扬声器。"
 							},
 							"entertainmentMode": {
 								"checkboxText": "针对娱乐自动优化音频",

@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Optimizare audio automată pentru VoIP",
-								"tooltip": "Această funcție are efect atunci când sunteți în apeluri VoIP (la utilizarea Skype, Microsoft Teams, WeChat etc.). Când este activată, funcția audio Dolby trece automat în modul Voce, pentru o calitate mai bună a vocii."
+								"tooltip": "Această funcție are efect atunci când sunteți în apeluri VoIP (la utilizarea Skype, Microsoft Teams, WeChat etc.). Când este activată, funcția audio Dolby trece automat în modul Voce, pentru o calitate mai bună a vocii.<br>Notă: această opțiune este disponibilă numai pentru difuzoarele interne."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Optimizare audio automată pentru divertisment",

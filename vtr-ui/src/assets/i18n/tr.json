@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "VoIP için otomatik olarak en iyi duruma getir",
-								"tooltip": "Bu işlev, (Skype, Microsoft Teams, WeChat ve benzeri kullanılarak yapılan) VoIP aramalarında etkili olur. Etkinleştirildiğinde, daha iyi ses kalitesi için Dolby sesi otomatik olarak Ses kipine geçer."
+								"tooltip": "Bu işlev, (Skype, Microsoft Teams, WeChat ve benzeri kullanılarak yapılan) VoIP aramalarında etkili olur. Etkinleştirildiğinde, daha iyi ses kalitesi için Dolby sesi otomatik olarak Ses kipine geçer.<br>Not: Bu seçenek yalnızca dahili hoparlörler için kullanılabilir."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Eğlence için otomatik olarak en iyi duruma getir",

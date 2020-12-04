@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Optimera ljud automatiskt för VoIP",
-								"tooltip": "Den här funktionen aktiveras när du använder VoIP-samtal (med Skype, Microsoft Teams, WeChat och så vidare). När funktionen har aktiverats ändras röstläget automatiskt så att kvaliteten blir bättre."
+								"tooltip": "Den här funktionen aktiveras när du använder VoIP-samtal (med Skype, Microsoft Teams, WeChat och så vidare). När funktionen har aktiverats ändras röstläget automatiskt så att kvaliteten blir bättre.<br>Obs! Detta alternativ är endast tillgängligt för inbyggda högtalare."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Optimera ljud automatiskt för underhållning",

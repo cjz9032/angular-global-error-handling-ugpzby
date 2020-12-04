@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Audio automatisch optimaliseren voor VoIP",
-								"tooltip": "Deze functie is van kracht als u in een VoIP-gesprek bent (zoals Skype, Microsoft Teams, WeChat, enz.). Als deze functie is ingeschakeld, verandert Dolby-audio automatisch in de spraakwerkstand voor een betere spraakkwaliteit."
+								"tooltip": "Deze functie is van kracht als u een VoIP-gesprek voert (zoals Skype, Microsoft Teams, WeChat enz.). Als deze functie is ingeschakeld, verandert Dolby-audio automatisch in de spraakwerkstand voor een betere spraakkwaliteit.<br>Opmerking: deze optie is alleen beschikbaar voor interne luidsprekers."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Audio automatisch optimaliseren voor entertainment",

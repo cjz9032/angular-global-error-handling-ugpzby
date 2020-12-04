@@ -1686,7 +1686,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Audio automatisch für VoIP optimieren",
-								"tooltip": "Diese Funktion wird wirksam, wenn Sie VoIP-Anrufe führen (über Skype, Microsoft Teams, WeChat usw.). Wenn diese Option aktiviert ist, wechselt Dolby Audio automatisch in den Sprachmodus für bessere Sprachqualität."
+								"tooltip": "Diese Funktion wird wirksam, wenn Sie VoIP-Anrufe führen (über Skype, Microsoft Teams, WeChat usw.). Wenn diese Option aktiviert ist, wechselt Dolby Audio automatisch in den Sprachmodus für bessere Sprachqualität.<br>Hinweis: Diese Option ist nur für interne Lautsprecher verfügbar."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Audio automatisch für Entertainment optimieren",

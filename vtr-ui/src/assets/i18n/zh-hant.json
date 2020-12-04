@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "自動針對 VoIP 最佳化音訊",
-								"tooltip": "此功能會在您進行 VoIP 通話（使用 Skype、Microsoft Teams、WeChat 等）時生效。啟用後，Dolby 音訊會自動變更為語音模式以提升語音品質。"
+								"tooltip": "此功能會在您進行 VoIP 通話（使用 Skype、Microsoft Teams、WeChat 等）時生效。啟用後，Dolby 音訊會自動變更為語音模式以提升語音品質。<br>注意：此選項僅適用於內建喇叭。"
 							},
 							"entertainmentMode": {
 								"checkboxText": "自動針對娛樂最佳化音訊",

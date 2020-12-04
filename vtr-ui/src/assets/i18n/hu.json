@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Hangzás automatikus optimalizálása VoIP-hez",
-								"tooltip": "Ez a funkció VoIP-hívások során lép életbe (például Skype, Microsoft Teams, WeChat stb. használata esetén). Ha engedélyezve van, a Dolby hangzás automatikusan a Hang módra vált a jobb hangminőség érdekében."
+								"tooltip": "Ez a funkció VoIP-hívások során lép életbe (például Skype, Microsoft Teams, WeChat stb. használata esetén). Ha engedélyezve van, a Dolby hangzás automatikusan a Hang módra vált a jobb hangminőség érdekében.<br>Megjegyzés: Ez a beállítás csak a belső hangszórókhoz használható."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Hangzás automatikus optimalizálása szórakoztató tartalmakhoz",

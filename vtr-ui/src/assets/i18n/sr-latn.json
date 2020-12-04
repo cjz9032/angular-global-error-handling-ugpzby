@@ -1583,7 +1583,7 @@
 						"automaticAudioMode": {
 							"voIPMode": {
 								"checkboxText": "Automatska optimizacija zvuka za VoIP",
-								"tooltip": "Ova funkcija stupa na snagu kada se nalazite na VoIP pozivima (koristeći Skype, Microsoft Teams, WeChat i sl.). Kada se omogući, Dolby audio se automatski menja u režim Govor radi boljeg kvaliteta glasa."
+								"tooltip": "Ova funkcija stupa na snagu kada se nalazite na VoIP pozivima (koristeći Skype, Microsoft Teams, WeChat i sl.). Kada se omogući, Dolby audio se automatski menja u režim Govor radi boljeg kvaliteta glasa.<br>Napomena: Ova opcija je dostupna samo za interne zvučnike."
 							},
 							"entertainmentMode": {
 								"checkboxText": "Automatska optimizacija zvuka za zabavu",
