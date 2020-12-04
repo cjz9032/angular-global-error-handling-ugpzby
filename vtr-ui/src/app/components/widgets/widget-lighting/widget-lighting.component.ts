@@ -5,7 +5,7 @@ import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { GamingAllCapabilitiesService } from './../../../services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingLightingService } from './../../../services/gaming/lighting/gaming-lighting.service';
-import { Component, OnInit, Input, NgZone } from '@angular/core';
+import { Component, OnInit, Input, NgZone, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
@@ -17,9 +17,10 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 	templateUrl: './widget-lighting.component.html',
 	styleUrls: ['./widget-lighting.component.scss'],
 })
-export class WidgetLightingComponent implements OnInit {
-	public response: any;
+export class WidgetLightingComponent implements OnInit, OnDestroy {
 	@Input() title = '';
+	public isWidgetContainer = true;
+	public response: any;
 	public didSuccess: any;
 	public profileId: any;
 	public setprofId: any;
@@ -33,7 +34,6 @@ export class WidgetLightingComponent implements OnInit {
 	public ledSwitchButtonFeature: boolean;
 	profileChangeEvent: any;
 	private notificationSubscribe: Subscription;
-	public isWidgetContainer: boolean = true;
 
 	constructor(
 		private ngZone: NgZone,
@@ -136,7 +136,7 @@ export class WidgetLightingComponent implements OnInit {
 		} catch (error) {}
 	}
 
-	public SetProfile(event) {
+	public setLightingProfileId(event) {
 		try {
 			const eventval: number = event.target.value;
 			let prevSetprofId;

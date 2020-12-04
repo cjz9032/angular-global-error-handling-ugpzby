@@ -18,14 +18,14 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	public countObj: any = { count1: 0, count2: 0, count3: 0 };
 	public isDisabledlef: any = [true, true, true];
 	public isDisabledrig: any = [false, false, false];
-	public isProfileOff: boolean = false;
+	public isProfileOff = false;
 	public lightingProfileCurrentDetail: any = new LightingDataList().lightingCurrentDetailDesk;
 	public lightingEffectList: any;
-	public isColorPicker: boolean = false;
-	public isShow: boolean = true;
-	public supportSpeed: boolean = true;
-	public supportBrightness: boolean = true;
-	public supportColor: boolean = true;
+	public isColorPicker = false;
+	public isShow = true;
+	public supportSpeed = true;
+	public supportBrightness = true;
+	public supportColor = true;
 	public lightingCapabilities: any = new LightingDataList().lightingCapality;
 	public lightingProfileById: any;
 	public lightingPanelImage: any = new LightingDataList().lightingPanelImage;
@@ -34,7 +34,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	public lightingEffectRgbData: any = new LightingDataList().lightingEffectRgbData;
 	public lightingEffectSingleData: any = new LightingDataList().lightingEffectSingleData;
 	public isEffectChange: boolean;
-	public isValChange: boolean = true;
+	public isValChange = true;
 
 	constructor(
 		private commonService: CommonService,
@@ -84,12 +84,12 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	public getLightingProfileByIdFromcache(lightingProfileByIdRes, lightingCapabilitiesRes) {
 		try {
 			if (lightingProfileByIdRes !== undefined) {
-				let ProfileId = this.localCacheService.getLocalCacheValue(
+				const profileId = this.localCacheService.getLocalCacheValue(
 					LocalStorageKey.ProfileId
 				);
-				this.logger.info('ProfileId cache ', ProfileId);
-				if (ProfileId !== 'undefined') {
-					this.currentProfileId = ProfileId;
+				this.logger.info('ProfileId cache ', profileId);
+				if (profileId !== 'undefined') {
+					this.currentProfileId = profileId;
 				}
 				if (lightingProfileByIdRes.lightInfo !== null) {
 					this.isShowpageInfo(lightingProfileByIdRes);
@@ -125,7 +125,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	public getLightingProfileById(currProfileId) {
 		try {
 			//if profileId is 0,no need to use interfae
-			if (currProfileId === 0) return;
+			if (currProfileId === 0){ return; };
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService
 					.getLightingProfileById(currProfileId)
@@ -143,7 +143,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 		try {
 			this.isColorPicker = false;
 			this.isShow = true;
-			let profileId = Number(event.target.value);
+			const profileId = Number(event.target.value);
 			this.currentProfileId = profileId;
 			this.imgDefaultOff();
 			if (this.currentProfileId === 0) {
@@ -218,7 +218,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingCapabilities
 			);
 			/* Use cache before set    end */
-			let colorJson: any = {
+			const colorJson: any = {
 				profileId: this.currentProfileId,
 				lightPanelType: this.lightingProfileCurrentDetail.lightPanelType,
 				lightColor: event,
@@ -267,7 +267,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingCapabilities
 			);
 			/* Use cache before set    end */
-			let effectJson: any = {
+			const effectJson: any = {
 				profileId: this.currentProfileId,
 				lightPanelType: this.lightingProfileCurrentDetail.lightPanelType,
 				lightEffectType: event.value,
@@ -310,7 +310,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingCapabilities
 			);
 			/* Use cache before set    end */
-			let brightJson: any = {
+			const brightJson: any = {
 				profileId: this.currentProfileId,
 				lightPanelType: this.lightingProfileCurrentDetail.lightPanelType,
 				lightBrightness: event[0],
@@ -360,7 +360,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingCapabilities
 			);
 			/* Use cache before set    end */
-			let speedJson: any = {
+			const speedJson: any = {
 				profileId: this.currentProfileId,
 				lightPanelType: this.lightingProfileCurrentDetail.lightPanelType,
 				lightSpeed: event[0],
@@ -479,9 +479,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	}
 
 	public getCurrentName(lightingPanelImage, lightPanelType) {
-		let nameObj = lightingPanelImage.filter((element) => {
-			return element.value === lightPanelType;
-		});
+		const nameObj = lightingPanelImage.filter(
+			(element) => element.value === lightPanelType
+		);
 		this.logger.info('nameObj ', nameObj);
 		return nameObj;
 	}
@@ -566,7 +566,8 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 									'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png';
 								if (this.lightingProfileCurrentDetail.lightPanelType === 128) {
 									this.lightingProfileCurrentDetail.pathUrl =
-										'M112,74.863197 L112.916507,74.8674839 C126.299053,74.9928726 137,77.8531206 137,81.363197 C137,84.9131607 126.054468,87.7984431 112.459257,87.8621223 L112,87.863197 C98.1928813,87.863197 87,84.9530479 87,81.363197 C87,77.7733462 98.1928813,74.863197 112,74.863197 Z M142.080665,63 L142.080665,76.8631566 L141.194164,76.8083655 C130.186845,76.0682405 122,73.2702241 122,69.9315783 C122,66.5039019 130.629298,63.646073 142.080665,63 Z';
+										'M112,74.863197 L112.916507,74.8674839 C126.299053,74.9928726 137,77.8531206 137,81.363197 C137,84.9131607 126.054468,87.7984431 112.459257,87.8621223 L112,87.863197 C98.1928813,87.863197 87,'+
+										'84.9530479 87,81.363197 C87,77.7733462 98.1928813,74.863197 112,74.863197 Z M142.080665,63 L142.080665,76.8631566 L141.194164,76.8083655 C130.186845,76.0682405 122,73.2702241 122,69.9315783 C122,66.5039019 130.629298,63.646073 142.080665,63 Z';
 									this.lightingProfileCurrentDetail.panelName =
 										'gaming.lightingNewversion.machineName.name6';
 								} else if (
@@ -695,8 +696,11 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
 		) {
-			if (val === 268435456 || val === 4 || val === 256) this.supportBrightness = false;
-			else this.supportBrightness = true;
+			if (val === 268435456 || val === 4 || val === 256){
+				this.supportBrightness = false;
+			}else{
+				this.supportBrightness = true;
+			}
 		} else {
 			this.supportBrightness = false;
 		}
@@ -728,8 +732,11 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
 		) {
-			if (val === 268435456 || val === 1 || val === 256) this.supportSpeed = false;
-			else this.supportSpeed = true;
+			if (val === 268435456 || val === 1 || val === 256){
+				this.supportSpeed = false;
+			}else{
+				this.supportSpeed = true;
+			}
 		} else {
 			this.supportSpeed = false;
 		}
@@ -752,8 +759,11 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
 		) {
-			if (val !== 256 && val !== 268435456) this.supportColor = true;
-			else this.supportColor = false;
+			if (val !== 256 && val !== 268435456){
+				this.supportColor = true;
+			}else{
+				this.supportColor = false;
+			}
 		} else {
 			this.supportColor = false;
 		}
@@ -943,7 +953,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 
 	/**
 	 * metrics collection for lighting feature of desktop machine
-	 * @param metricsdata
+	 param metricsdata
 	 */
 	public sendFeatureClickMetrics(metricsdata: any) {
 		try {
