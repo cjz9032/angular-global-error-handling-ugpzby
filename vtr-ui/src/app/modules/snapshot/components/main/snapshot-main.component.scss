@@ -8,6 +8,14 @@
 	.snapshot-group-card-list {
 		margin-top: 2.4rem;
 		padding: 0;
+
+		.container {
+			padding: 0;
+			margin: 0;
+			.row {
+				padding: 1.6rem;
+			}
+		}
 	}
 	.components-list {
 		width: 100%;
