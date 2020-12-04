@@ -1,7 +1,7 @@
 <div class="ui-lighting-profile">
 	<div class="d-flex justify-content-between">
 		<vtr-ui-lighting-profile-toggle (setLightingProfileId)="setLightingProfileId($event)"
-			[currentProfile]="currentProfile" [defaultLang]="defaultLanguage"
+		    [currentProfile]="currentProfileId" [defaultLang]="defaultLanguage"
 			[id]="!isProfileOff && simpleOrComplex===1 ? 'single':'profile'"
 			[automationId]="(simpleOrComplex===1) ? 'single_':'profile_'" [labelId]="'rgb'"></vtr-ui-lighting-profile-toggle>
 		<!-- <vtr-ui-brightness-slider *ngIf="!isProfileOff && showBrightnessSlider===true"

@@ -17,8 +17,6 @@ export class UiLightingProfileToggleComponent implements OnInit {
 
 	ngOnInit() {}
 	SetProfile(event) {
-		const val = event.target.value;
-		this.currentProfile = Number(val);
 		this.setLightingProfileId.emit(event);
 	}
 }
