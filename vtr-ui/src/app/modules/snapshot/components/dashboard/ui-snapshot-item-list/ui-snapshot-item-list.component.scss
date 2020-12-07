@@ -1,19 +1,19 @@
 @import '../../../../../app.theme';
 
 .vtr-snapshot-list-item {
-    padding: 0 2.4rem;
-    margin-top: 1rem;
-    width: 100%;
+	padding: 0 2.4rem;
+	margin-top: 1rem;
+	width: 100%;
 
 	.module-information {
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-        flex-wrap: nowrap;
-        
-        .load-icon {
-            margin-left: auto;
+		flex-wrap: nowrap;
+
+		.load-icon {
+			margin-left: auto;
 			color: $blue_lightest;
 			animation-name: rotation;
 			animation-duration: 3s;
@@ -30,14 +30,14 @@
 				transform: rotate(360deg);
 			}
 		}
-			
+
 		.update-btn {
 			margin-left: auto;
 		}
 	}
-    
-    .last-child {
-        margin-bottom: 1rem;
+
+	.last-child {
+		margin-bottom: 1rem;
 	}
 
 	.title {
@@ -67,7 +67,7 @@
 		margin-bottom: 1rem;
 	}
 
-    .collapse-control {
+	.collapse-control {
 		margin: 0 1rem 0 2.2rem;
 
 		fa-icon {
@@ -86,14 +86,14 @@
 		&:focus {
 			@include outline-blue;
 		}
-    }
+	}
 
 	.details-list {
 		border-radius: $border_radius;
 		overflow: hidden;
-		
+
 		@include high-contrast-border;
-		
+
 		table {
 			table-layout: fixed;
 			background-color: $shade_extralight;
@@ -104,7 +104,7 @@
 					padding-bottom: 12.3rem;
 					text-align: center;
 					vertical-align: middle;
-	
+
 					fa-icon {
 						color: $blue_lightest;
 						font-size: 6.4rem;
@@ -123,13 +123,13 @@
 					.table-info-name {
 						padding-left: 4.9rem;
 					}
-		
-					.modified-item {
+
+					.modified-module {
 						color: $menu_hover;
-						font-weight:  $weight_600;
+						font-weight: $weight_600;
 					}
-		
-					td, th {
+
+					td,	th {
 						word-wrap: break-word;
 					}
 				}
@@ -162,7 +162,7 @@
 		border-bottom: 1px solid #000000;
 	}
 	@media #{$white-on-black} {
-		border-top: 1px solid #FFFFFF;
-		border-bottom: 1px solid #FFFFFF;
+		border-top: 1px solid #ffffff;
+		border-bottom: 1px solid #ffffff;
 	}
 }

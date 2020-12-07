@@ -1,5 +1,5 @@
 <div id="snapshot-item-{{ i }}" class="vtr-snapshot-list-item" *ngFor="let item of itemsAttributes; let i = index; let last = last" 
-	[ngClass]="{'modified-module': item.hasModification}" >
+	[ngClass]="{'modified-module': item.properties.IsDifferent}" >
 	<div class="row">
 		<div class="module-information" [ngClass]="{ 'last-child': last }">
 			<div class="module-icon">
@@ -16,16 +16,16 @@
 
 			<!-- Icon to expand and collapse module information -->
 			<div class="row">
-				<p id="snapshot-item-{{ i }}-module" role="text" class="title" *ngIf="!item.hasModification; else modifiedTitle">
-					{{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</p>
+				<p id="snapshot-item-{{ i }}-module" role="text" class="title" *ngIf="!item.properties.IsDifferent; else modifiedTitle">
+					{{ item.name }}</p>
 				
 				<ng-template #modifiedTitle>
 					<p id="snapshot-item-{{ i }}-module" role="text" class="title">
-						* {{ ('hardwareScan.pluginTokens.' + item.name) | translateDefault:item.name }}</p>
+						* {{ item.name }}</p>
 				</ng-template>
 
 				<p id="snapshot-item-{{ i }}-device" role="text" class="subtitle" *ngIf="item.properties !== null">
-					{{ ('hardwareScan.pluginTokens.' + item.properties.DeviceId) | translateDefault:item.properties.DeviceId }}</p>
+					{{ item.properties.DeviceId }}</p>
 			</div>
 
 			<!-- Shows load icon until modules are not loaded -->
@@ -82,16 +82,16 @@
 							{{ 'snapshot.lastSnapshot' | translate }}
 						</th>
 					</tr>
-					<ng-container *ngFor="let values of item.properties; let itemIndex = index">
-						<tr *ngFor="let propertie of values.Properties; let j = index">
+					<ng-container *ngFor="let values of item.properties.Items; let itemIndex = index">
+						<tr *ngFor="let property of values.Properties; let j = index">
 							<th id="snapshot-item-{{ i }}-detail-{{ j }}-property-name" class="table-info-name">
-								{{ propertie.PropertyName }}
+								{{ property.PropertyName }}
 							</th>
 							<td id="snapshot-item-{{ i }}-detail-{{ j }}-base-value">
-								{{ propertie.BaseValue }}</td>
+								{{ property.BaseValue }}</td>
 							
-							<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': propertie.IsDifferent}">
-								{{ propertie.CurrentValue }}</td>
+							<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
+								{{ property.CurrentValue }}</td>
 						</tr>
 						<tr class="table-info-separator" aria-hidden="true"></tr>
 					</ng-container>
@@ -100,5 +100,5 @@
 		</table>
 	</div>
 	
-	<hr *ngIf="!last && !item.hasModification && !itemsAttributes[i + 1].hasModification" aria-hidden="true">
+	<hr *ngIf="!last && !item.properties.IsDifferent && !itemsAttributes[i + 1].properties.IsDifferent" aria-hidden="true">
 </div>
