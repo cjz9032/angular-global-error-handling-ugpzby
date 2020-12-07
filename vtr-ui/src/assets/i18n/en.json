@@ -2269,7 +2269,7 @@
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Manual active protection suspension",
-					"caption": "Allow me to manually suspend the Active Protection System",
+					"caption": "Allow me to manually suspend the Active protection system",
 					"dropdown-title": "Suspend for",
 					"button": "Suspend Now"
 				},
