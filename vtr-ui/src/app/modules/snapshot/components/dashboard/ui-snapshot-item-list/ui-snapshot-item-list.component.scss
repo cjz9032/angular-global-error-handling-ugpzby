@@ -158,11 +158,11 @@
 	}
 
 	@media #{$black-on-white} {
-		border-top: 1px solid #000000;
-		border-bottom: 1px solid #000000;
+		border-top: 1px solid $dark;
+		border-bottom: 1px solid $dark;
 	}
 	@media #{$white-on-black} {
-		border-top: 1px solid #ffffff;
-		border-bottom: 1px solid #ffffff;
+		border-top: 1px solid $light;
+		border-bottom: 1px solid $light;
 	}
 }
