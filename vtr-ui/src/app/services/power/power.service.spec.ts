@@ -255,32 +255,32 @@ describe('PowerService', () => {
 			expect(powerService.setRapidChargeModeStatusIdeaNoteBook).toThrow();
 		});
 
-		it('should call getFlipToBootCapability', () => {
+		it('should call getFlipToStartCapability', () => {
 			const { powerService } = setup();
 			const spy = spyOn(
-				powerService.devicePowerIdeaNoteBook.flipToBoot,
-				'getFlipToBootCapability'
+				powerService.devicePowerIdeaNoteBook.flipToStart,
+				'getFlipToStartCapability'
 			).and.callThrough();
-			powerService.getFlipToBootCapability();
+			powerService.getFlipToStartCapability();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
-			powerService.getFlipToBootCapability();
+			powerService.getFlipToStartCapability();
 
-			expect(powerService.getFlipToBootCapability).toThrow();
+			expect(powerService.getFlipToStartCapability).toThrow();
 		});
 
-		it('should call setFlipToBootSettings', () => {
+		it('should call setFlipToStartSettings', () => {
 			const { powerService } = setup();
 			const spy = spyOn(
-				powerService.devicePowerIdeaNoteBook.flipToBoot,
-				'setFlipToBootSettings'
+				powerService.devicePowerIdeaNoteBook.flipToStart,
+				'setFlipToStartSettings'
 			).and.callThrough();
-			powerService.setFlipToBootSettings();
+			powerService.setFlipToStartSettings();
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerIdeaNoteBook = false;
-			powerService.setFlipToBootSettings();
+			powerService.setFlipToStartSettings();
 
-			expect(powerService.setFlipToBootSettings).toThrow();
+			expect(powerService.setFlipToStartSettings).toThrow();
 		});
 
 		it('should call getEasyResumeCapabilityThinkPad', () => {

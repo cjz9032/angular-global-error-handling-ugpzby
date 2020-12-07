@@ -1287,7 +1287,7 @@
 						"description": "Omogočite to funkcijo in skrajšajte čas, potreben za preklop iz stanja pripravljenosti, če pogosto odpirate in zapirate pokrov računalnika.",
 						"tooltip": "Ta funkcija skrajša čas, potreben za preklop iz stanja pripravljenosti, če pogosto odpirate in zapirate pokrov računalnika. Ko je omogočena, bo računalnik preklopil v način majhne porabe, ko zaprete pokrov, vendar bo takoj spet na voljo, če pokrov spet odprete največ 15 minut potem, ko ste ga zaprli. S to funkcijo lahko prenosni računalnik konča dejavnosti, ki potekajo (na primer pošiljanje e-pošte in prenos datotek), preden sistem preklopi v stanje mirovanja."
 					},
-					"flipToBoot": {
+					"flipToStart": {
 						"title": "Zagon z odpiranjem",
 						"description": "S to funkcijo lahko računalnik vklopite, ko odprete njegov pokrov, na enak način, kot če bi pritisnili gumb za vklop. ",
 						"tooltip": "Ta funkcija samodejno zažene računalnik, ko odprete pokrov.  To je zlasti uporabno, če ste v funkciji Windows Hello nastavili prijavo z obrazom."

@@ -20,12 +20,16 @@ If you are adding any new icon to icommon font file, don't forget to copy SVG fi
 5. Click on Import icons.
 6. Select all files except _readme.md and click on Open in File Dialogue.
 7. Click on select all option.
-8. Goto Generate Font from bottom of the page .
-9. Set Preferences:
+8. Go to the "Generate Font" tab at the bottom of the page.
 
-10. Click on Download from same pace as above.
-11. icomoon.zip will be downloaded.
-12. Extract that file & Copy *icomoon.woff* file from icomoon/fonts/ folder to vtr-ui/src/assets/fonts folder.
+9. Click "Preferences" at the top-left of the page and change the following preferences:
+	Change the "Class prefix" field to "icomoon-";
+	Change the "CSS selector" field to "Use a class";
+	Change the "Generate preprocessor variables for" to "Sass".
+
+10. Click on "Download" at the bottom-right of the page
+11. A file "icomoon.zip" will be downloaded.
+12. Extract the file & Copy *icomoon.woff* file from icomoon/fonts/ folder to vtr-ui/src/assets/fonts folder.
 13. Copy All the content from icomoon/variables.scss to icomoon-variables.scss.
 14. Copy all content from line no 29 to eof of icomoon/style.scss to icomoon-style.scss.
 

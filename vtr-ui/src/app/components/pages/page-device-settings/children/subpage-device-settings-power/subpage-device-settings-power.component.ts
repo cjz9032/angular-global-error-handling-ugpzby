@@ -20,12 +20,12 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { PowerService } from 'src/app/services/power/power.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import {
-	FlipToBootCurrentModeEnum,
-	FlipToBootErrorCodeEnum,
-	FlipToBootSetStatusEnum,
-	FlipToBootSupportedEnum,
-} from '../../../../../services/power/flipToBoot.enum';
-import { FlipToBootSetStatus } from '../../../../../services/power/flipToBoot.interface';
+	FlipToStartCurrentModeEnum,
+	FlipToStartErrorCodeEnum,
+	FlipToStartSetStatusEnum,
+	FlipToStartSupportedEnum,
+} from '../../../../../services/power/flip-to-start.enum';
+import { FlipToStartSetStatus } from '../../../../../services/power/flip-to-start.interface';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { BatteryHealthService } from './battery-health/battery-health.service';
@@ -104,9 +104,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	isPowerDriverMissing = false;
 
-	// Flip to boot
-	toggleFlipToBootStatus = true;
-	showFlipToBootSection$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+	// Flip to start
+	toggleFlipToStartStatus = true;
+	showFlipToStartSection$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
 	bctInfoSubscription: Subscription;
 	airplaneModeSubscription: Subscription;
@@ -466,7 +466,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		this.isBatterySectionAvailable = false;
 		this.isPowerSectionAvailable = false;
 
-		this.getFlipToBootCapability();
+		this.getFlipToStartCapability();
 		this.batteryService.getBatterySettings();
 		switch (this.machineType) {
 			case 1:
@@ -1595,50 +1595,50 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	// Start Flip To Boot
-	public getFlipToBootCapability() {
-		this.logger.info('Before getFlipToBootCapability');
+	// Start Flip To Start
+	public getFlipToStartCapability() {
+		this.logger.info('Before getFlipToStartCapability');
 		this.powerService
-			.getFlipToBootCapability()
+			.getFlipToStartCapability()
 			.then((res) => {
-				this.logger.info('getFlipToBootCapability.then ===>', res);
+				this.logger.info('getFlipToStartCapability.then ===>', res);
 				if (
-					+res.ErrorCode === FlipToBootErrorCodeEnum.Succeed &&
-					+res.Supported === FlipToBootSupportedEnum.Succeed
+					+res.ErrorCode === FlipToStartErrorCodeEnum.Succeed &&
+					+res.Supported === FlipToStartSupportedEnum.Succeed
 				) {
 					this.updatePowerLinkStatus(true);
-					this.showFlipToBootSection$.next(true);
-					this.toggleFlipToBootStatus =
-						+res.CurrentMode === FlipToBootCurrentModeEnum.SucceedEnable;
+					this.showFlipToStartSection$.next(true);
+					this.toggleFlipToStartStatus =
+						+res.CurrentMode === FlipToStartCurrentModeEnum.SucceedEnable;
 				} else {
 					this.updatePowerLinkStatus(false);
 				}
 			})
 			.catch((error) => {
-				this.logger.info('getFlipToBootCapability.error', error);
+				this.logger.info('getFlipToStartCapability.error', error);
 			});
 	}
 
-	onToggleOfFlipToBoot(event: any) {
+	onToggleOfFlipToStart(event: any) {
 		const value = event.switchValue;
-		const status: FlipToBootSetStatus = value
-			? FlipToBootSetStatusEnum.On
-			: FlipToBootSetStatusEnum.Off;
+		const status: FlipToStartSetStatus = value
+			? FlipToStartSetStatusEnum.On
+			: FlipToStartSetStatusEnum.Off;
 		this.powerService
-			.setFlipToBootSettings(status)
+			.setFlipToStartSettings(status)
 			.then((res) => {
-				if (+res.ErrorCode !== FlipToBootErrorCodeEnum.Succeed) {
-					this.toggleFlipToBootStatus = false;
+				if (+res.ErrorCode !== FlipToStartErrorCodeEnum.Succeed) {
+					this.toggleFlipToStartStatus = false;
 					return res;
 				}
 
-				this.metrics.sendMetrics(status, 'FlipToBoot', this.metricsParent);
+				this.metrics.sendMetrics(status, 'FlipToStart', this.metricsParent);
 			})
 			.catch((error) => {
-				this.logger.info('setFlipToBootSettings.error', error);
+				this.logger.info('setFlipToStartSettings.error', error);
 			});
 	}
-	// End Flip To Boot
+	// End Flip To Start
 
 	// Gauge Reset Capability
 	getGaugeResetCapability() {

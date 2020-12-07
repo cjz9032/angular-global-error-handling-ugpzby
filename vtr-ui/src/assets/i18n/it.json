@@ -1287,7 +1287,7 @@
 						"description": "Abilita questa funzione per migliorare il tempo di ripresa se apri e chiudi di frequente il coperchio del computer.",
 						"tooltip": "Questa funzione migliora il tempo di ripresa se apri e chiudi di frequente il coperchio del computer. Quando è abilitata, il computer entra in modalità di risparmio energia se chiudi il coperchio, ma si riprende immediatamente se lo riapri entro 15 minuti dalla chiusura. Questa funzione consente inoltre al notebook di tentare di completare le attività in sospeso (come l'invio di un'e-mail o il download di un file) prima che il sistema entri in modalità di sospensione."
 					},
-					"flipToBoot": {
+					"flipToStart": {
 						"title": "Capovolgi per l'avvio",
 						"description": "Questa funzione consente di accendere il computer all'apertura del relativo coperchio, proprio come se si stesse premendo il pulsante di alimentazione. ",
 						"tooltip": "Questa funzione avvia automaticamente il computer all'apertura del coperchio.  È particolarmente utile se sono state impostate le informazioni di accesso tramite riconoscimento facciale in Windows Hello."

@@ -1,9 +1,9 @@
 import {
-	FlipToBootCurrentModeEnum,
-	FlipToBootErrorCodeEnum,
-	FlipToBootSetStatusEnum,
-	FlipToBootSupportedEnum,
-} from './flipToBoot.enum';
+	FlipToStartCurrentModeEnum,
+	FlipToStartErrorCodeEnum,
+	FlipToStartSetStatusEnum,
+	FlipToStartSupportedEnum,
+} from './flip-to-start.enum';
 
 type ErrorCodeSucceedCode = 0;
 type ErrorCodeFailCode1 = -1;
@@ -31,13 +31,13 @@ type CurrentModeStatusCode =
 	| CurrentModeFailPermissionErrorCode
 	| CurrentModeFailSystemErrorCode;
 
-export interface FlipToBootErrorStatusInterface {
-	ErrorCode: FlipToBootErrorCodeEnum;
+export interface FlipToStartErrorStatusInterface {
+	ErrorCode: FlipToStartErrorCodeEnum;
 }
 
-export interface FlipToBootInterface extends FlipToBootErrorStatusInterface {
-	Supported: FlipToBootSupportedEnum;
-	CurrentMode: FlipToBootCurrentModeEnum;
+export interface FlipToStartInterface extends FlipToStartErrorStatusInterface {
+	Supported: FlipToStartSupportedEnum;
+	CurrentMode: FlipToStartCurrentModeEnum;
 }
 
-export type FlipToBootSetStatus = FlipToBootSetStatusEnum;
+export type FlipToStartSetStatus = FlipToStartSetStatusEnum;

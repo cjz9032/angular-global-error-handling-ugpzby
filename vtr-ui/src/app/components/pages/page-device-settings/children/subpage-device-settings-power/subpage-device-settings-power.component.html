@@ -244,23 +244,23 @@
 							</li>
 							<!-- End Airplane Power Mode -->
 
-							<!-- Start Flip to boot -->
-							<li *ngIf="showFlipToBootSection$ | async"
+							<!-- Start Flip to start -->
+							<li *ngIf="showFlipToStartSection$ | async"
 								class="common-li-padding">
 								<vtr-ui-row-switch
-									[title]="'device.deviceSettings.power.powerSettings.flipToBoot.title' | translate"
-									[caption]="'device.deviceSettings.power.powerSettings.flipToBoot.description' | translate"
+									[title]="'device.deviceSettings.power.powerSettings.flipToStart.title' | translate"
+									[caption]="'device.deviceSettings.power.powerSettings.flipToStart.description' | translate"
 									[isSwitchVisible]=true
 									[isLastChild]=false
-									[isSwitchChecked]='toggleFlipToBootStatus'
-									[leftIcon]="['icomoon','icomoon-Flip-to-boot']"
+									[isSwitchChecked]='toggleFlipToStartStatus'
+									[leftIcon]="['icomoon','icomoon-Flip-to-start']"
 									[rightIcon]="['far', 'question-circle']"
-									[tooltipText]="'device.deviceSettings.power.powerSettings.flipToBoot.tooltip' | translate"
-									[switchId]="'ds-power-flipToBoot'"
-									(toggleOnOff)="onToggleOfFlipToBoot($event)">
+									[tooltipText]="'device.deviceSettings.power.powerSettings.flipToStart.tooltip' | translate"
+									[switchId]="'ds-power-flipToStart'"
+									(toggleOnOff)="onToggleOfFlipToStart($event)">
 								</vtr-ui-row-switch>
 							</li>
-							<!-- End Flip to boot -->
+							<!-- End Flip to start -->
 
 							<!-- Start Always on USB -->
 							<li class="common-li-padding"

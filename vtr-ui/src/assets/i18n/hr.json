@@ -1287,7 +1287,7 @@
 						"description": "Omogućite ovu značajku da biste skratiti vrijeme potrebno za nastavak rada ako često otvarate i zatvarate poklopac računala.",
 						"tooltip": "Ta će značajka skratiti vrijeme potrebno za nastavak rada ako često otvarate i zatvarate poklopac računala. Kad je omogućena, računalo će prilikom zatvaranja poklopca prijeći u način male potrošnje energije, ali će odmah nastaviti s radom ako poklopac otvorite u roku od 15 minuta od zatvaranja. Značajka prijenosnom računalu omogućuje da pokuša dovršiti aktivnosti koje su u tijeku (npr. slanje e-pošte ili preuzimanje datoteke) prije nego što se obustavi rad sustava."
 					},
-					"flipToBoot": {
+					"flipToStart": {
 						"title": "Okreni za pokretanje",
 						"description": "Ova značajka omogućuje vam uključivanje računala kad otvorite poklopac računala, upravo kao kad pritisnete gumb za napajanje. ",
 						"tooltip": "Ova značajka automatski pokreće računalo otvaranjem poklopca.  Posebno je korisno ako ste postavili podatke za prijavu pomoću lica u sustavu Windows Hello."
