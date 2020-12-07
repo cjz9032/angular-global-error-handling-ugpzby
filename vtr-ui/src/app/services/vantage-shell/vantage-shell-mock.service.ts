@@ -196,10 +196,6 @@ export class VantageShellService {
 		return `v${environment.appVersion}:- ${message}`;
 	}
 
-	public getSnapshot() {
-		return undefined;
-	}
-
 	public getLenovoId(): any {
 		if (this.phoenix && this.phoenix.lid) {
 			return this.phoenix.lid;
