@@ -2103,14 +2103,14 @@
 		},
 		"smartAssist": {
 			"title": "Smart Assist",
-			"description": "Lenovo Intelligent Sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
+			"description": "Lenovo intelligent sensing combines sensors on your computer to detect your activities, adjust settings for optimal power management, and protect your privacy.",
 			"jumpTo": {
 				"title": "JUMP TO SETTINGS",
-				"security": "Intelligent Security",
-				"screen": "Intelligent Screen",
-				"media": "Intelligent Media",
+				"security": "Intelligent security",
+				"screen": "Intelligent screen",
+				"media": "Intelligent media",
 				"voice": "Voice",
-				"APS": "Active Protection System"
+				"APS": "Active protection system"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent security",
@@ -2128,11 +2128,11 @@
 					"tooltip": "Click here to reset the human presence detection settings."
 				},
 				"humanPresenceDetection": {
-					"title": "User Presence Sensing",
+					"title": "User presence sensing",
 					"tooltip": "Click here to reset human presence Detection settings."
 				},
 				"zeroTouchLogin": {
-					"title": "Zero Touch Login",
+					"title": "Zero touch login",
 					"caption": "This feature unlocks or wakes up the computer automatically when you are in front of it or approaching it.",
 					"tooltip": "When you are in front of your computer or approaching it (within the distance of 1.2 meters), this feature enables you to automatically log in to the system after your face is recognized. If you are in outdoor rather than the office, you need to be closer to your computer and the wakeup will take longer."
 				},
@@ -2241,16 +2241,16 @@
 				"resetToDefault": "RESET"
 			},
 			"intelligentScreen": {
-				"title": "Intelligent Screen",
-				"description": "Lenovo Intelligent Sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+				"title": "Intelligent screen",
+				"description": "Lenovo intelligent sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
 				"autoScreenOff": {
-					"title": "Auto Screen Off",
+					"title": "Auto screen off",
 					"caption": "Automatically turn off display when face-down or walking.",
 					"note": "This feature does not work when your Power Plan settings is set to \"<b>Never</b> turn off the screen on battery power\" in Windows Settings. To enable this feature, go to <b>Settings</b> -> <b>System</b> -> <b>Power & Sleep</b> -> <b>Screen</b>, and then select another value.",
 					"windowsLink": "Go to Power & sleep settings in Windows settings"
 				},
 				"keepMyDisplay": {
-					"title": "Keep My Display",
+					"title": "Keep my display",
 					"caption": "Keep my display when I am reading or browsing.",
 					"displaySlider": {
 						"title": "Minutes before display dims when browsing",
@@ -2260,15 +2260,15 @@
 				}
 			},
 			"activeProtectionSystem": {
-				"title": "Active Protection System",
-				"description": "The Lenovo Active Protection System is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
+				"title": "Active protection system",
+				"description": "The Lenovo Active protection system is an autonomic feature that helps protect your hard drive from damage caused by strong physical shock and vibration. It continuously monitors that movement of your computer and temporarily stops the hard drive when a fall or similar damaging event is predicted.",
 				"activeProtection": {
-					"title": "Active Protection",
+					"title": "Active protection",
 					"caption": "Change the sensitivity, in low sensitive mode, only harder shocks will activate protection.",
 					"checkbox": "Ignore repetitive shocks such as those of a train or a car"
 				},
 				"manualActiveProtectionSuspension": {
-					"title": "Manual Active Protection Suspension",
+					"title": "Manual active protection suspension",
 					"caption": "Allow me to manually suspend the Active Protection System",
 					"dropdown-title": "Suspend for",
 					"button": "Suspend Now"
@@ -2277,17 +2277,17 @@
 					"more": "MORE",
 					"advanced-settings": "ADVANCED SETTINGS",
 					"hide": "HIDE ADVANCED SETTINGS",
-					"description": "To improve the access to the hard disk drive during tablet use, suspend Active Protection System when the following activities are detected",
+					"description": "To improve the access to the hard disk drive during tablet use, suspend Active protection system when the following activities are detected.",
 					"pen": {
-						"title": "Pen Input",
-						"description": "When pen input is used, enable APS when pen input is out of range for"
+						"title": "Pen input",
+						"description": "When Pen input is used, enable APS when Pen input is out of range for"
 					},
 					"touch": {
-						"title": "Touch Input",
+						"title": "Touch input",
 						"description": "When Touch input is used, Enable APS when touch input is not detected"
 					},
 					"hand": {
-						"title": "Hand Proximity Sensing on Computer Edges",
+						"title": "Hand proximity sensing on computer edges",
 						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
 					}
 				},
@@ -2295,9 +2295,9 @@
 					"more": "MORE",
 					"advancedSettings": "ADVANCED SETTINGS",
 					"hideAdvancedSettings": "HIDE ADVANCED SETTINGS",
-					"lowSensitivity": "Low Sensitivity",
-					"mediumSensitivity": "Medium Sensitivity",
-					"highSensitivity": "High Sensitivity"
+					"lowSensitivity": "Low sensitivity",
+					"mediumSensitivity": "Medium sensitivity",
+					"highSensitivity": "High sensitivity"
 				}
 			},
 			"intelligentMedia": {
@@ -2403,7 +2403,7 @@
 					"heading": "Getting started:",
 					"point1": "Start Lenovo Voice from Start Menu and the Lenovo Voice icon is displayed in the Windows system tray.",
 					"point2": "Open the application where you want to type in text.",
-					"point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to text.",
+					"point3": "Click the Lenovo Voice icon in the Windows system tray and select Voice to Text.",
 					"point4": "Select the languages by your need and click the microphone icon to start.",
 					"point5": "Put the cursor in the application and begin to speak.",
 					"point6": "Click the Lenovo Voice icon in the Windows system tray and select Translation.",
