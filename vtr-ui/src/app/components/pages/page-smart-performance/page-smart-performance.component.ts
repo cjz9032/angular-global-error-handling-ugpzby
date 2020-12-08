@@ -19,6 +19,8 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { SmartPerformanceDialogService } from 'src/app/services/smart-performance/smart-performance-dialog.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { SPHistoryScanResultsDateTime } from './interface/smart-performance.interface';
+import { cloneDeep } from 'lodash';
 
 @Component({
 	selector: 'vtr-page-smart-performance',
@@ -37,10 +39,11 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	isScheduleScanRunning = false;
 	isScanStarted = false;
 
-	public tune = 0;
-	public boost = 0;
-	public secure = 0;
+	public issueCount = 0;
+	public scanResult: SPHistoryScanResultsDateTime;
+
 	public rating = 10;
+	public leftAnimator = '0%';
 
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
@@ -320,32 +323,21 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 							timeDeff = scanEndedTime - scanStartedTime;
 						}
 						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
-					} else {
-						this.rating = res.rating;
-						this.tune = res.result.tune;
-						this.boost = res.result.boost;
-						this.secure = res.result.secure;
+
+					}
+					else {
+						this.setScanResultsAndStatus(res);
 						if (res.percentage === 100) {
 							scanEndedTime = new Date().getTime();
 							if (scanStartedTime && scanEndedTime) {
 								timeDeff = scanEndedTime - scanStartedTime;
 							}
 							this.sendsmartPerformanceMetrics('Success', timeDeff);
-							this.shellServices.unRegisterEvent(
-								EventTypes.smartPerformanceScanStatus,
-								(event) => {
-									this.updateScheduleScanStatus(event);
-								}
-							);
+							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {
+								this.updateScheduleScanStatus(event);
+							});
 						}
-						this.smartPerformanceService.isScanning = false;
-						this.smartPerformanceService.isScanningCompleted = true;
-						this.isScanStarted = false;
-						this.showSubscribersummary = true;
-						this.logger.info(
-							'ui-smart-performance.getSmartPerformanceScheduleScanStatus',
-							JSON.stringify(res)
-						);
+						this.logger.info('ui-smart-performance.getSmartPerformanceScheduleScanStatus', JSON.stringify(res));
 					}
 				}
 			} catch (error) {
@@ -357,6 +349,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+
 	public async scanAndFixInformation() {
 		const scanStartedTime: any = new Date().getTime();
 		let scanEndedTime;
@@ -387,34 +380,20 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 						}
 						this.sendsmartPerformanceMetrics('Cancelled', timeDeff);
 						// this.localCacheService.setLocalCacheValue(LocalStorageKey.HasSubscribedScanCompleted, false);
-					} else {
-						// this.hasSubscribedScanCompleted = true;
-						this.showSubscribersummary = true;
-						this.smartPerformanceService.isScanning = false;
-						this.rating = res.rating;
-						this.tune = res.result.tune;
-						this.boost = res.result.boost;
-						this.secure = res.result.secure;
+					}
+					else {
+						this.setScanResultsAndStatus(res);
 						if (res.percentage === 100) {
 							scanEndedTime = new Date().getTime();
 							if (scanStartedTime && scanEndedTime) {
 								timeDeff = scanEndedTime - scanStartedTime;
 							}
 							this.sendsmartPerformanceMetrics('Success', timeDeff);
-							this.shellServices.unRegisterEvent(
-								EventTypes.smartPerformanceScanStatus,
-								(event) => {
-									this.updateScheduleScanStatus(event);
-								}
-							);
+							this.shellServices.unRegisterEvent(EventTypes.smartPerformanceScanStatus, event => {
+								this.updateScheduleScanStatus(event);
+							});
 						}
-						this.smartPerformanceService.isScanning = false;
-						this.smartPerformanceService.isScanningCompleted = true;
-						this.showSubscribersummary = true;
-						this.logger.info(
-							'ui-smart-performance.scanAndFixInformation ',
-							JSON.stringify(res)
-						);
+						this.logger.info('ui-smart-performance.scanAndFixInformation ', JSON.stringify(res));
 					}
 				}
 			} catch (error) {
@@ -478,7 +457,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		const data = {
 			TaskAction: {
 				TaskResult: taskResult,
-				TaskCount: this.tune + this.boost + this.secure || 0,
+				TaskCount: this.issueCount || 0,
 				TaskName: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan',
 				TaskParm: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan',
 				TaskDuration: taskDuration || 0,
@@ -564,14 +543,14 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		);
 		const nextDateObj = new Date(
 			nextScheduleScanEvent.nextScanDateWithYear +
-				', ' +
-				nextScheduleScanEvent.nextScanHour +
-				':' +
-				nextScheduleScanEvent.nextScanMin +
-				' ' +
-				(nextScheduleScanEvent.nextScanAMPM === 'smartPerformance.scanSettings.am'
-					? 'AM'
-					: 'PM')
+			', ' +
+			nextScheduleScanEvent.nextScanHour +
+			':' +
+			nextScheduleScanEvent.nextScanMin +
+			' ' +
+			(nextScheduleScanEvent.nextScanAMPM === 'smartPerformance.scanSettings.am'
+				? 'AM'
+				: 'PM')
 		);
 		const timeSection = new Intl.DateTimeFormat(this.translate.currentLang, {
 			hour12: true,
@@ -612,4 +591,14 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			}
 		);
 	}
+	setScanResultsAndStatus(res: any) {
+		this.rating = res.rating;
+		this.leftAnimator = (this.rating * 10 - 0).toString() + '%';
+		this.scanResult = cloneDeep(res.result);
+		this.issueCount = res.result.tune + res.result.boost + res.result.secure;
+		this.smartPerformanceService.isScanning = false;
+		this.smartPerformanceService.isScanningCompleted = true;
+		this.showSubscribersummary = true;
+	}
+
 }

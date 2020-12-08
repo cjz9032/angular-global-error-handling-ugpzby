@@ -9,7 +9,7 @@
 					<ng-template ngbPanelHeader>
 						<button ngbPanelToggle
 							id="scan-results-accordion-item-{{i + 1}}"
-							(click)="scrollToCurrentCard(scanResultsAccordion, a.isExpanded(result.id))"
+							(click)="switchToResultCard(scanResultsAccordion, a.isExpanded(result.id), result)"
 							class="d-flex justify-content-between align-items-center w-100 card-heading">
 							<div class="heading"
 								[id]="result.header.id"
@@ -21,11 +21,14 @@
 								<p [id]="result.header.pId"
 									role="text"
 									[ngSwitch]="i">
-									<b *ngSwitchCase="0">{{tune}}</b>
-									<b *ngSwitchCase="1">{{boost}}</b>
-									<b *ngSwitchCase="2">{{secure}}</b>
+									<b *ngSwitchCase="0">{{ resultItem.Tune > -1 ? resultItem.Tune : resultItem.tune }}</b>
+									<b *ngSwitchCase="1">{{ resultItem.Boost > -1 ? resultItem.Boost : resultItem.boost }}</b>
+									<b *ngSwitchCase="2">{{ resultItem.Secure > -1 ? resultItem.Secure : resultItem.secure }}</b>
 									<b *ngSwitchDefault>0</b>
-									{{'smartPerformance.scanCompletePage.issues' |translate}}
+									<span *ngIf="smartPerformanceService.isSubscribed; else nonSubscribedIssues">&#32;{{ 'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate }}</span>
+									<ng-template #nonSubscribedIssues>
+										<span>&#32;{{ 'smartPerformance.scanCompletePage.issues' | translate}}</span>
+									</ng-template>
 									<span>
 										<fa-icon class="chevron-down"
 											[icon]="['fal', 'chevron-down']">
@@ -39,30 +42,69 @@
 						</button>
 					</ng-template>
 					<ng-template ngbPanelContent>
-						<div class="mt-2 d-flex justify-content-between align-items-center">
-							<div class="scan-result-tabs w-100">
+						<div class="notes pt-3 pr-3 mb-5">
+							<h4 id="smart-performance-note-title"><b>{{ 'smartPerformance.noteFindings' | translate }}</b></h4>
+							<p id="smart-performance-note-description"
+								role="text">{{ 'smartPerformance.noteNavigateTab' | translate }}</p>
+						</div>
+						<div class="d-flex justify-content-between">
+							<div class="scan-result-tabs">
 								<div class="d-flex scan-result-content"
-									*ngFor="let content of result.contents">
-									<div class="icon-box">
-										<div class="d-flex align-items-center">
-											<div class="icomoon {{content.icon}}"></div>
-											<p [id]="content.id"
-												role="text"
-												[title]="content.title | translate">
-												{{content.title | translate}}</p>
+									*ngFor="let content of result.contents"
+									[class.is-selected]="result.activeContentId === content.id"
+									role="button"
+									tabindex="0"
+									[id]="'smart-performance-sub-tab-' + content.id"
+									(keydown.enter)="switchToSubCategory(result, content)"
+									(click)="switchToSubCategory(result, content)">
+									<div class="d-flex align-items-start icon-box h-100">
+										<div class="icomoon {{content.icon}}"></div>
+										<div class="title-con d-flex flex-column justify-content-between h-100">
+											<div class="d-flex align-items-center sub-category-title">
+												<p [id]="content.id"
+													role="text"
+													class="text-two-ellipsis mb-1"
+													[class.is-en]="isEn"
+													[title]="content.title | translate">
+													{{content.title | translate}}</p>
+											</div>
+											<div class="d-flex align-items-end">
+												<p class="sub-category-issues"
+													role="text"
+													#subCategoryIssues
+													[title]="subCategoryIssues.innerText"
+													[id]="content.id + '-issue-count'">
+													<span *ngIf="smartPerformanceService.isSubscribed; else nonSubscribedIssues2">{{resultItem[content.countId]}} {{ 'smartPerformance.subscriberScanHomePage.scanSummary.fixes' | translate }}</span>
+													<ng-template #nonSubscribedIssues2>
+														<span>{{resultItem[content.countId]}} {{ 'smartPerformance.scanCompletePage.issues' | translate}}</span>
+													</ng-template>
+												</p>
+											</div>
 										</div>
 									</div>
-									<ul class="scanned-list">
-										<li class="list-item list-heading"
-											*ngFor="let item of content.sections">
-											<p id="{{content.id}}-{{item | translate}}"
-												class="mb-0 pl-20"
-												[title]="item | translate"
-												role="text">
-												{{item | translate}}
-											</p>
-										</li>
-									</ul>
+								</div>
+							</div>
+							<div class="result-details pl-4">
+								<h4 class="pl-2 mb-3"
+									id="smart-performance-scanned-areas"><b>{{ 'smartPerformance.scannedAreas' | translate }}</b></h4>
+								<div class="scanned-list row">
+									<div class="list-item p-2 list-heading col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4"
+										*ngFor="let item of currentContent.sections">
+										<div class="scan-detail-item">
+											<div class="d-flex">
+												<div class="icon-bkg"
+													[id]="'icon-check-' + item">
+													<fa-icon [icon]="['fal', 'check']"></fa-icon>
+												</div>
+												<p id="{{currentContent.id}}-{{item | translate}}"
+													class="mb-0 pl-3"
+													[title]="item | translate"
+													role="text">
+													{{item | translate}}
+												</p>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

@@ -29,6 +29,7 @@ vtr-subpage-smart-performance-scan-summary {
 					padding-top: 1rem;
 				}
 			}
+
 			.spinner-border {
 				@media #{$high-contrast} {
 					display: inline-block;
@@ -158,6 +159,7 @@ vtr-subpage-smart-performance-scan-summary {
 									}
 								}
 							}
+
 							.status-text {
 								p {
 									font-size: $fontsize_xs;
@@ -287,7 +289,7 @@ vtr-subpage-smart-performance-scan-summary {
 			font-weight: bold;
 			line-height: 1.4;
 			margin: 0;
-			color: #8c97a4;
+			color: $tab_gray;
 		}
 	}
 

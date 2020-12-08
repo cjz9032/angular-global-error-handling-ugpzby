@@ -8,27 +8,30 @@ import {
 	ElementRef,
 } from '@angular/core';
 import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
-import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SupportService } from 'src/app/services/support/support.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Router } from '@angular/router';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import {
 	enumSmartPerformance,
-	PaymentPage,
 	SPHeaderImageType,
 } from 'src/app/enums/smart-performance.enum';
 import { formatDate } from '@angular/common';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { v4 as uuid } from 'uuid';
-import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { cloneDeep } from 'lodash';
 
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { SmartPerformanceDialogService } from 'src/app/services/smart-performance/smart-performance-dialog.service';
+import {
+	SPHistory,
+	SPHistoryScanResultsDateTime,
+	SPLastScanResult,
+	SPShowResult
+} from '../../interface/smart-performance.interface';
 
 @Component({
 	selector: 'vtr-subpage-smart-performance-scan-summary',
@@ -46,7 +49,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		private translate: TranslateService,
 		private localCacheService: LocalCacheService,
 		private formatLocaleDate: FormatLocaleDatePipe
-	) {}
+	) { }
 	public sizeExtension: string;
 	public isLoading = true;
 	public machineFamilyName: string;
@@ -83,12 +86,11 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			textKey: 'smartPerformance.malwareSecurity.title',
 		},
 	];
-	leftAnimator: any;
+	@Input() leftAnimator = '0%';
 	@Input() inputIsScanningCompleted = false;
 	@Input() hasSubscribedScanCompleted = false;
-	@Input() tune = 0;
-	@Input() boost = 0;
-	@Input() secure = 0;
+	@Input() scanResult: SPHistoryScanResultsDateTime;
+	@Input() issueCount = 0;
 	@Input() rating = 0;
 	@Input() isOnline = true;
 
@@ -100,8 +102,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	public lastYear: any;
 	Data = [1, 2, 3];
 	historyRes: any = {};
-	historyScanResults = [];
-	historyScanResultsDateTime = [];
+	historyScanResults: SPLastScanResult[] = [];
+	historyScanResultsDateTime: SPHistoryScanResultsDateTime[] = [];
 	public quarterlyMenu: any = [
 		{ displayName: 'Jan-Mar', ...this.getQuartesDates(0, 2), key: 1 },
 		{ displayName: 'Apr-Jun', ...this.getQuartesDates(3, 5), key: 2 },
@@ -145,7 +147,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	dayValue = 0;
 	dateValue = 0;
 	scanScheduleDate: any;
-	issueCount = 0;
 	mostRecentScan: any;
 	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
@@ -170,18 +171,15 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	];
 	SPHeaderImageType = SPHeaderImageType;
 
-	showResult = {
+	showResultStatus: SPShowResult = {
 		show: false,
 		isLastFix: false,
-		time: '',
-		tune: 0,
-		boost: 0,
-		secure: 0,
 		itemType: '',
+		time: '',
 	};
+	showResultItem: SPHistoryScanResultsDateTime;
 
 	ngOnInit() {
-		this.leftAnimator = '0%';
 		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsFreeFullFeatureEnabled
 		);
@@ -198,7 +196,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.smartPerformanceService.scanningStopped.subscribe(() => {
 			this.backToNonSubScriberHome();
 		});
-		// this.leftAnimatorCalc = ((this.rating*10) - 1);
 		this.currentDate = new Date();
 		this.currentDateLocalFormat = this.formatLocaleDate.transform(this.currentDate);
 		this.selectedDate = this.calendar.getToday();
@@ -237,22 +234,18 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 
 		// Deleting unnecessary keys & manupulating date time.
 		for (let i = 0; i < 5; i++) {
-			// Adding new key scanrunDate with formating
-			this.historyScanResultsDateTime[i].scanrunDate = this.formatLocaleDate.transform(
-				new Date(this.historyScanResultsDateTime[i].scanruntime)
-			);
+			// Adding new key scanRunDate with formating
+			this.historyScanResultsDateTime[i].scanRunDate = this.formatLocaleDate.transform(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
-			// Adding new key scanrunTime
-			this.historyScanResultsDateTime[i].scanrunTime = new Intl.DateTimeFormat('default', {
+			// Adding new key scanRunTime
+			this.historyScanResultsDateTime[i].scanRunTime = new Intl.DateTimeFormat('default', {
 				hour12: true,
 				hour: '2-digit',
 				minute: '2-digit',
 			}).format(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
 			// Removing sapace between time stamp and AM/PM
-			this.historyScanResultsDateTime[i].scanrunTime = this.historyScanResultsDateTime[
-				i
-			].scanrunTime.replace(/ /g, '');
+			this.historyScanResultsDateTime[i].scanRunTime = this.historyScanResultsDateTime[i].scanRunTime.replace(/ /g, '');
 		}
 
 		return this.historyScanResultsDateTime;
@@ -280,11 +273,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 
-	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
-	ngAfterViewInit() {
-		this.issueCount = this.tune + this.boost + this.secure;
-		this.leftAnimator = (this.rating * 10 - 0).toString() + '%';
-	}
 
 	expandRow(value) {
 		if (this.toggleValue === value) {
@@ -519,17 +507,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			if (now < fiveMinutesFromRecentScan) {
 				if (response) {
 					this.isLoading = false;
-					// this.historyRes = {
-					// 	tuneCount: response.Tune,
-					// 	boostCount: response.Boost,
-					// 	secure: response.Secure
-					// }
-					this.rating = response.rating;
-					this.issueCount = response.Tune + response.Boost + response.Secure;
-					this.tune = response.Tune;
-					this.boost = response.Boost;
-					this.secure = response.Secure;
-					this.leftAnimator = (response.rating * 10 - 0).toString() + '%';
 					this.smartPerformanceService.isScanning = false;
 					if (isInit && this.smartPerformanceService.isEnterSmartPerformance) {
 						this.smartPerformanceService.isEnterSmartPerformance = false;
@@ -551,7 +528,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			endDate,
 		};
 		try {
-			const res: any = await this.smartPerformanceService.getHistory(payload);
+			const res: SPHistory = await this.smartPerformanceService.getHistory(payload);
 			this.logger.info('ui-smart-performance-scan-summary.getHistory', res);
 
 			if (res) {
@@ -611,33 +588,19 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 
-	seeScanResultDetails(
-		scanrunDate: any,
-		scanrunTime: any,
-		tune: number,
-		boost: number,
-		secure: number,
-		index: number,
-		itemType: string
-	): void {
-		this.showResult = {
+	seeScanResultDetails(item: SPHistoryScanResultsDateTime, index: number): void {
+		this.showResultStatus = {
 			show: true,
 			isLastFix: index === 0,
-			time: `${scanrunDate} - ${scanrunTime.toString().toUpperCase()}`,
-			tune,
-			boost,
-			secure,
-			itemType,
+			time: `${item.scanRunDate} - ${item.scanRunTime.toString().toUpperCase()}`,
+			itemType: item.type.toUpperCase(),
 		};
-		setTimeout(() => {
-			document.getElementById('smart-performance-check-previous-results').focus();
-		}, 0);
+		this.showResultItem = cloneDeep(item);
+		setTimeout(() => { document.getElementById('smart-performance-check-previous-results').focus(); }, 0);
 	}
 
 	checkPreviousResults() {
-		this.showResult.show = false;
-		setTimeout(() => {
-			document.getElementById('smart-performance-scan-summary-scan-result-1').focus();
-		}, 0);
+		this.showResultStatus.show = false;
+		setTimeout(() => { document.getElementById('smart-performance-scan-summary-scan-result-1').focus(); }, 0);
 	}
 }
