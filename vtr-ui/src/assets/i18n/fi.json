@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Ota käyttöön automaattinen siirtyminen \"Erinomainen suorituskyky\" -tilaan. Kun tämä ominaisuus on käytössä, tietokoneesi lämpötila ja tuulettimen äänentaso saattavat nousta automaattisesti.",
+							"description": {
+								"line1": "Ota käyttöön automaattinen siirtyminen \"Erinomainen suorituskyky\" -tilaan. Kun tämä asetus on käytössä, tietokoneesi saattaa siirtyä \"Erinomainen suorituskyky\" -tilaan järjestelmän kuormituksen ja käyttäjäskenaarion mukaan.",
+								"line2": "Tietokoneesi lämpötila ja tuulettimen äänentaso saattavat nousta tässä tilassa."
+							},
 							"more": "ENEMMÄN",
 							"less": "VÄHEMMÄN",
 							"moreContent": {

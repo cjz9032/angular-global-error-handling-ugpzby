@@ -933,7 +933,10 @@
 					"summary": "Piense en los atributos más importantes a la hora de seleccionar un equipo portátil para su uso personal.",
 					"question": "Seleccione el atributo más importante.",
 					"question1": {
-						"options": ["Precio", "Nombre/marca del fabricante"]
+						"options": [
+							"Precio",
+							"Nombre/marca del fabricante"
+						]
 					},
 					"question2": {
 						"options": [
@@ -942,10 +945,16 @@
 						]
 					},
 					"question3": {
-						"options": ["Capacidades gráficas", "Tamaño de la pantalla"]
+						"options": [
+							"Capacidades gráficas",
+							"Tamaño de la pantalla"
+						]
 					},
 					"question4": {
-						"options": ["Tamaño de la pantalla", "Peso"]
+						"options": [
+							"Tamaño de la pantalla",
+							"Peso"
+						]
 					}
 				},
 				"page2": {
@@ -1326,7 +1335,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Active la transición automática a la modalidad \"Rendimiento extremo\". Cuando está habilitada, la temperatura del sistema y el ruido del ventilador pueden aumentar automáticamente.",
+							"description": {
+								"line1": "Active la transición automática a la modalidad \"Rendimiento extremo\". Cuando está habilitada, el sistema puede entrar en modalidad \"Rendimiento extremo\", según la carga del sistema y el escenario del usuario.",
+								"line2": "En esta modalidad, la temperatura del sistema y el ruido del ventilador podrían aumentar."
+							},
 							"more": "MÁS",
 							"less": "MENOS",
 							"moreContent": {

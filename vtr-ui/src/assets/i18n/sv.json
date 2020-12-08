@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Aktivera automatisk övergång till läget \"Extrem kapacitet\". När funktionen är aktiverad kan temperaturen på datorn och fläktljudet öka.",
+							"description": {
+								"line1": "Aktivera automatisk övergång till läget Extrem prestanda. När detta är aktiverat kan datorn sättas i läget Extrem prestanda beroende på systembelastning och användarscenario.",
+								"line2": "I detta läge fall kan datorns temperatur och fläktljud öka."
+							},
 							"more": "MER",
 							"less": "MINDRE",
 							"moreContent": {

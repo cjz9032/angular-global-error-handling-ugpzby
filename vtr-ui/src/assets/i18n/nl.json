@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Schakel de automatische overgang in naar de werkstand \"Extreme prestaties\". Als u deze functie inschakelt, kan de temperatuur van de buitenkant van uw computer hoger worden en de ventilator luider klinken.",
+							"description": {
+								"line1": "Schakel de automatische overgang in naar de werkstand \"Extreme prestaties\". Als de computer is ingeschakeld, kan de \"Extreme prestaties\"-modus worden ingevoerd, afhankelijk van de systeembelasting en het gebruikersscenario.",
+								"line2": "In deze modus kan de temperatuur van uw computer hoger worden en de ventilator luider klinken."
+							},
 							"more": "MEER",
 							"less": "MINDER",
 							"moreContent": {

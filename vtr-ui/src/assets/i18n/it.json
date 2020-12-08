@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Abilita transizione automatica alla modalità \"Prestazioni estreme\". Se abilitata, la temperatura del computer e il rumore della ventola potrebbero aumentare automaticamente.",
+							"description": {
+								"line1": "Abilita transizione automatica alla modalità \"Prestazioni estreme\". Quando è abilitata, è possibile che il computer entri in modalità \"Prestazioni estreme\", a seconda del carico di sistema e dello scenario utente.",
+								"line2": "In questa modalità la temperatura del computer e il rumore della ventola potrebbero aumentare."
+							},
 							"more": "ALTRO",
 							"less": "MENO",
 							"moreContent": {

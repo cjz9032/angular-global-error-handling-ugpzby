@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "A \"Különleges Teljesítmény\" mód automatikus bekapcsolásának engedélyezése. Ha engedélyezi, a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet.",
+							"description": {
+								"line1": "A \"Különleges Teljesítmény\" mód automatikus bekapcsolásának engedélyezése. Ha engedélyezve van, a rendszer terhelésétől és a használat típusától függően előfordulhat, hogy a számítógép belép a \"Különleges Teljesítmény\" módba.",
+								"line2": "Ebben a módban a számítógép felületeinek hőmérséklete megnőhet, és a ventilátor is hangosabban üzemelhet."
+							},
 							"more": "TOVÁBBIAK",
 							"less": "KEVESEBB",
 							"moreContent": {

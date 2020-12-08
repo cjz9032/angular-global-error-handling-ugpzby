@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Povoliť automatický prechod do režimu Najvyšší výkon. Keď je povolený, teplota počítača a hluk ventilátora sa môžu automaticky zvýšiť.",
+							"description": {
+								"line1": "Povoliť automatický prechod do režimu Najvyšší výkon. Ak je táto možnosť povolená, v závislosti od zaťaženia systému a používateľského scenára môže počítač prejsť do režimu Najvyšší výkon.",
+								"line2": "V tomto režime sa môže zvýšiť teplota počítača a hluk ventilátora."
+							},
 							"more": "VIAC",
 							"less": "MENEJ",
 							"moreContent": {

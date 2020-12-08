@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Omogućite automatski prelazak u način \"Izuzetne performanse\". Kada se omogući, temperatura na računalu i šum ventilatora se mogu automatski povećati.",
+							"description": {
+								"line1": "Omogućite automatski prelazak u način \"Izuzetne performanse\". Kad je omogućeno, vaše računalo može ući u način rada \"Izuzetne performanse\", ovisno o opterećenju sustava i korisničkom scenariju.",
+								"line2": "U tom načinu rada, temperatura računala i šum ventilatora mogu se povećati."
+							},
 							"more": "DODATNO",
 							"less": "MANJE",
 							"moreContent": {

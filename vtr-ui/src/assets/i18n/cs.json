@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Povolte automatický přechod do režimu \"Extrémní výkon\". Jakmile je tato možnost povolena, může se automaticky zvýšit teplota povrchu počítače a hluk ventilátoru.",
+							"description": {
+								"line1": "Povolte automatický přechod do režimu \"Extrémní výkon\". Je-li zapnuto, může váš počítač přejít do režimu \"Extrémní výkon\", v závislosti na zatížení systému a scénáři uživatele.",
+								"line2": "V tomto režimu se může zvýšit teplota počítače a hluk ventilátoru."
+							},
 							"more": "DALŠÍ",
 							"less": "MÉNĚ",
 							"moreContent": {

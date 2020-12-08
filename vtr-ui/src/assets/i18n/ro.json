@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Activați trecerea automată la modul „Performanță extremă”. Atunci când este activat, temperatura computerului și zgomotul ventilatorului pot crește în mod automat.",
+							"description": {
+								"line1": "Activați trecerea automată la modul „Performanță extremă”. Când este activat, computerul dvs. poate intra în modul „Performanță extremă”, în funcție de încărcarea sistemului și de scenariul utilizatorului.",
+								"line2": "În acest mod, temperatura computerului și zgomotul ventilatorului ar putea crește."
+							},
 							"more": "MAI MULTE",
 							"less": "MAI PUŢIN",
 							"moreContent": {
