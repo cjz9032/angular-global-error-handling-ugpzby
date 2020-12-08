@@ -933,7 +933,10 @@
 					"summary": "Pensez aux attributs qui sont les plus importants pour vous lors de la sélection d'un ordinateur portable/notebook pour un usage personnel.",
 					"question": "Sélectionnez l’attribut le plus important.",
 					"question1": {
-						"options": ["Tarif", "Fabricant/nom de marque"]
+						"options": [
+							"Tarif",
+							"Fabricant/nom de marque"
+						]
 					},
 					"question2": {
 						"options": [
@@ -942,10 +945,16 @@
 						]
 					},
 					"question3": {
-						"options": ["Capacités graphiques", "Taille de l’écran"]
+						"options": [
+							"Capacités graphiques",
+							"Taille de l’écran"
+						]
 					},
 					"question4": {
-						"options": ["Taille de l’écran", "Poids"]
+						"options": [
+							"Taille de l’écran",
+							"Poids"
+						]
 					}
 				},
 				"page2": {
@@ -1326,7 +1335,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Activer la transition automatique vers le mode \"Performances extrêmes\". Lorsque cette option est activée, la température de votre ordinateur et le bruit du ventilateur peuvent augmenter automatiquement.",
+							"description": {
+								"line1": "Activer la transition automatique vers le mode \"Performances extrêmes\". Lorsque cette option est activée, votre ordinateur peut passer en mode \"Performances extrêmes\", selon la charge système et le scénario utilisateur.",
+								"line2": "Dans ce mode, la température de votre ordinateur et le bruit du ventilateur peuvent augmenter."
+							},
 							"more": "PLUS",
 							"less": "MOINS",
 							"moreContent": {

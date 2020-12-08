@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Omogućite automatsko prelaz na režim „Ekstremne performanse“. Kada je omogućeno, temperatura na računaru i buka ventilatora se mogu automatski povećati.",
+							"description": {
+								"line1": "Omogućite automatsko prelaz na režim „Ekstremne performanse“. Kada je omogućen, računar može ući u režim „Ekstremne performanse“, u zavisnosti od opterećenja sistema i scenarija korisnika.",
+								"line2": "U ovom režimu se mogu povećati temperatura računara i buka ventilatora."
+							},
 							"more": "VIŠE",
 							"less": "MANJE",
 							"moreContent": {

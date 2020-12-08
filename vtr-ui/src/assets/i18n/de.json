@@ -933,7 +933,10 @@
 					"summary": "Überlegen Sie, welche Attribute Ihnen bei der Auswahl eines Laptop/Notebook-Computers für die private Nutzung besonders wichtig sind.",
 					"question": "Bitte wählen Sie das wichtigere Attribut aus.",
 					"question1": {
-						"options": ["Preis", "Hersteller/Markenname"]
+						"options": [
+							"Preis",
+							"Hersteller/Markenname"
+						]
 					},
 					"question2": {
 						"options": [
@@ -942,10 +945,16 @@
 						]
 					},
 					"question3": {
-						"options": ["Grafikeigenschaften", "Bildschirmgröße"]
+						"options": [
+							"Grafikeigenschaften",
+							"Bildschirmgröße"
+						]
 					},
 					"question4": {
-						"options": ["Bildschirmgröße", "Gewicht"]
+						"options": [
+							"Bildschirmgröße",
+							"Gewicht"
+						]
 					}
 				},
 				"page2": {
@@ -1326,7 +1335,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Automatischen Übergang zum Modus \"Höchstleistung\" aktivieren. Wenn diese Funktion aktiviert ist, kann es automatisch zu einer erhöhten Temperatur und mehr Lüftergeräuschen kommen.",
+							"description": {
+								"line1": "Automatischen Übergang zum Modus \"Höchstleistung\" aktivieren. Wenn diese Funktion aktiviert ist, kann Ihr Computer je nach Systembelastung und Benutzerszenario in den Modus \"Höchstleistung\" schalten.",
+								"line2": "In diesem Modus kann es automatisch zu einer erhöhten Temperatur des Computers und mehr Lüftergeräuschen kommen."
+							},
 							"more": "MEHR",
 							"less": "WENIGER",
 							"moreContent": {

@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Włącz automatyczne przejście do trybu „Ekstremalna wydajność”. Po włączeniu tego trybu temperatura na powierzchni komputera oraz poziom hałasu wentylatora mogą automatycznie wzrosnąć.",
+							"description": {
+								"line1": "Włącz automatyczne przejście do trybu „Ekstremalna wydajność”. Gdy ta funkcja jest włączona, komputer może przejść w tryb „Ekstremalna wydajność” w oparciu o obciążenie systemu i działania użytkownika.",
+								"line2": "W tym trybie temperatura na powierzchni komputera oraz poziom hałasu wentylatora mogą wzrosnąć."
+							},
 							"more": "WIĘCEJ",
 							"less": "LESS",
 							"moreContent": {

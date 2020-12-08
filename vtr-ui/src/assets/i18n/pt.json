@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Ative a transição automática no modo \"Desempenho extremo\". Quando ativado, a temperatura no computador e o ruído da ventoinha poderão aumentar automaticamente.",
+							"description": {
+								"line1": "Ative a transição automática no modo \"Desempenho extremo\". Quando ativado, o seu computador poderá entrar no modo \"Desempenho extremo\", dependendo da carga do sistema e do cenário do utilizador.",
+								"line2": "Neste modo, a temperatura do computador e o ruído da ventoinha poderão aumentar."
+							},
 							"more": "MAIS",
 							"less": "MENOS",
 							"moreContent": {

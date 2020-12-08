@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Aktiver automatisk overgang til \"Ekstrem ytelse\"-modus. Når denne funksjonen er aktivert, kan temperaturen på datamaskinen og viftestøyen øke automatisk.",
+							"description": {
+								"line1": "Aktiver automatisk overgang til \"Ekstrem ytelse\"-modus. Når denne funksjonen er aktivert, kan datamaskinen gå inn i \"Ekstrem ytelse\"-modus, avhengig av systembelastning og brukerscenario.",
+								"line2": "I denne modusen kan temperaturen på datamaskinens overflate og viftestøyen øke."
+							},
 							"more": "MER",
 							"less": "MINDRE",
 							"moreContent": {

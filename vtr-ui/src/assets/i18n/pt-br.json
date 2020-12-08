@@ -933,7 +933,10 @@
 					"summary": "Pense nos atributos que são mais importantes para você ao selecionar um laptop/notebook para uso pessoal.",
 					"question": "Selecione o atributo mais importante.",
 					"question1": {
-						"options": ["Preço", "Nome do fabricante/marca"]
+						"options": [
+							"Preço",
+							"Nome do fabricante/marca"
+						]
 					},
 					"question2": {
 						"options": [
@@ -942,10 +945,16 @@
 						]
 					},
 					"question3": {
-						"options": ["Capacidades gráficas", "Tamanho da tela"]
+						"options": [
+							"Capacidades gráficas",
+							"Tamanho da tela"
+						]
 					},
 					"question4": {
-						"options": ["Tamanho da tela", "Peso"]
+						"options": [
+							"Tamanho da tela",
+							"Peso"
+						]
 					}
 				},
 				"page2": {
@@ -1326,7 +1335,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Ative a transição automática para o modo \"Desempenho extremo\". Quando ativado, a temperatura do computador e o ruído do ventilador podem aumentar automaticamente.",
+							"description": {
+								"line1": "Ative a transição automática para o modo \"Desempenho extremo\". Quando ativado, o computador pode entrar no modo \"Desempenho extremo\", dependendo da carga do sistema e do cenário do usuário.",
+								"line2": "Nesse modo, a temperatura no computador e o ruído do ventilador podem aumentar."
+							},
 							"more": "MAIS",
 							"less": "MENOS",
 							"moreContent": {

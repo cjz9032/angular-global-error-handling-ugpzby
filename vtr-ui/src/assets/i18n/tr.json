@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "“Yüksek performans” kipine otomatik geçişi etkinleştirin. Etkinleştirildiğinde, bilgisayarınızın sıcaklığı ve fan gürültüsü otomatik olarak artabilir.",
+							"description": {
+								"line1": "\"Yüksek performans\" kipine otomatik geçişi etkinleştirin. Etkinleştirildiğinde, bilgisayarınız sistem yüküne ve kullanıcı senaryosuna bağlı olarak “Yüksek performans” kipine girebilir.",
+								"line2": "Bu kipte, bilgisayarınızın sıcaklığı ve fan gürültüsü artabilir."
+							},
 							"more": "DAHA FAZLA",
 							"less": "DAHA AZ",
 							"moreContent": {

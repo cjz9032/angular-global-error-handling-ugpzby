@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Aktiver automatisk skift til tilstanden \"Ekstrem ydeevne\". Når den er aktiveret, kan temperaturen på computeren og støjen fra blæseren blive øget automatisk.",
+							"description": {
+								"line1": "Aktiver automatisk skift til tilstanden \"Ekstrem ydeevne\". Når den er aktiveret, kan computeren skifte til tilstanden \"Ekstrem ydeevne\" afhængigt af systembelastningen og brugerscenariet.",
+								"line2": "I denne tilstand kan temperaturen på computeren og støjen fra blæseren blive øget."
+							},
 							"more": "FLERE",
 							"less": "FÆRRE",
 							"moreContent": {

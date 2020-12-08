@@ -1223,7 +1223,10 @@
 							}
 						},
 						"autoTransition": {
-							"description": "Omogočite samodejni prehod v način »Izjemna zmogljivost«. Ko je omogočen, se temperatura računalnika in glasnost delovanja ventilatorja lahko samodejno povečata.",
+							"description": {
+								"line1": "Omogočite samodejni prehod v način »Izjemna zmogljivost«. Ko je omogočen, računalnik lahko preklopi v način »Izjemna zmogljivost«, odvisno od obremenitve sistema in scenarija uporabe.",
+								"line2": "V tem načinu se temperatura na računalniku in glasnost delovanja ventilatorja lahko povečata."
+							},
 							"more": "VEČ",
 							"less": "MANJ",
 							"moreContent": {
