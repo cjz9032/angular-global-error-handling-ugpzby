@@ -244,6 +244,32 @@
 									border-left: 2rem solid $grey_light;
 									border-bottom: 3.5rem solid transparent;
 								}
+								@media #{$black-on-white} {
+									background: $shade_light;
+									color: $dark;
+									&::before {
+										background: $light;
+									}
+
+									&::after {
+										border-top: 3.5rem solid transparent;
+										border-left: 2rem solid $shade_light;
+										border-bottom: 3.5rem solid transparent;
+									}
+								}
+								@media #{$white-on-black} {
+									background: $shade_dark;
+									color: $light;
+									&::before {
+										background: $dark;
+									}
+
+									&::after {
+										border-top: 3.5rem solid transparent;
+										border-left: 2rem solid $shade_dark;
+										border-bottom: 3.5rem solid transparent;
+									}
+								}
 
 								.icon-box {
 
