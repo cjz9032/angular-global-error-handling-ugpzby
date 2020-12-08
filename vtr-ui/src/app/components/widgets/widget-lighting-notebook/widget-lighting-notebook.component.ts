@@ -18,15 +18,15 @@ export class WidgetLightingNotebookComponent implements OnInit {
 	@Input() currentProfileId: number;
 	public color: string;
 	public isDefault: boolean;
-	public isDisabled: boolean = false;
+	public isDisabled = false;
 	public lightingCapabilities: any = new LightingDataList().lightingCapality;
 	public lightingProfileById: any;
 	public lightingEffectData: any = new LightingDataList().lightingEffectNoteData;
 	public lightingEffectList: any;
 	public lightingCurrentDetail: any = new LightingDataList().lightingCurrentDetailNote;
-	public isProfileOff: boolean = true;
-	public isColorPicker: boolean = false;
-	public isShow: boolean = true;
+	public isProfileOff = true;
+	public isColorPicker = false;
+	public isShow = true;
 	public lightingArea: any;
 	public toggleStatus: any;
 	public isSupportSpeed: boolean;
@@ -34,12 +34,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
 	public lightInfo: any;
 	public isSetDefault: boolean;
 	public isEffectChange: boolean;
-	public isValChange: boolean = true;
-	public showOptions: boolean = false;
-
-	@HostListener('document:click', ['$event']) onClick(event) {
-		this.isSetDefault = false;
-	}
+	public isValChange = true;
+	public showOptions = false;
 
 	constructor(
 		private ngZone: NgZone,
@@ -50,6 +46,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
 		private logger: LoggerService,
 		private metrics: MetricService
 	) {}
+
+	@HostListener('document:click', ['$event']) onClick(event) {
+		this.isSetDefault = false;
+	}
 
 	ngOnInit() {
 		this.initProfileId();
@@ -91,7 +91,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 	public getLightingProfileByIdFromcache(res) {
 		try {
 			if (res !== undefined) {
-				let ProfileId;
+				let profileId;
 				if (res.lightInfo !== null && res.lightInfo.length > 0) {
 					this.ifDisabledKeyboard(res.lightInfo[0].lightEffectType);
 				}
@@ -99,10 +99,10 @@ export class WidgetLightingNotebookComponent implements OnInit {
 					this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId) !==
 					undefined
 				) {
-					ProfileId = this.localCacheService.getLocalCacheValue(
+					profileId = this.localCacheService.getLocalCacheValue(
 						LocalStorageKey.ProfileId
 					);
-					this.currentProfileId = ProfileId;
+					this.currentProfileId = profileId;
 				}
 				this.getLightingCurrentDetail(res);
 			}
@@ -136,7 +136,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 				this.isProfileOff = false;
 			}
 			//if profileId is 0,no need to use interfae
-			if (currentProfileId === 0) return;
+			if (currentProfileId === 0) { return; };
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService
 					.getLightingProfileById(currentProfileId)
@@ -152,7 +152,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 		try {
 			this.isColorPicker = false;
 			this.isShow = true;
-			let profileId = Number(event.target.value);
+			const profileId = Number(event.target.value);
 			this.currentProfileId = profileId;
 			if (this.currentProfileId === 0) {
 				this.isProfileOff = true;
@@ -219,7 +219,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 	public getProfileEvent(profileId) {
 		this.ngZone.run(() => {
 			this.logger.info('profileId event ', profileId);
-			if (this.currentProfileId === profileId) return;
+			if (this.currentProfileId === profileId){ return; };
 			this.isColorPicker = false;
 			this.showOptions = false;
 			this.isShow = true;
@@ -251,7 +251,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 			this.getCacheList();
 			this.getLightingCurrentDetail(this.lightingProfileById);
 			/* Use cache before set    end */
-			let effectJson: any = {
+			const effectJson: any = {
 				profileId: this.currentProfileId,
 				lightPanelType: this.lightingCurrentDetail.lightPanelType,
 				lightEffectType: event.value,
@@ -296,7 +296,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 			this.getLightingCurrentDetail(this.lightingProfileById);
 			/* Use cache before set    end */
 
-			let brightJson: any = {
+			const brightJson: any = {
 				profileId: this.currentProfileId,
 				lightPanelType: this.lightingCurrentDetail.lightPanelType,
 				lightBrightness: event[0],
@@ -336,7 +336,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 			this.getLightingCurrentDetail(this.lightingProfileById);
 			/* Use cache before set    end */
 
-			let speedJson: any = {
+			const speedJson: any = {
 				profileId: this.currentProfileId,
 				lightPanelType: this.lightingCurrentDetail.lightPanelType,
 				lightSpeed: event[0],
@@ -431,7 +431,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 			this.getLightingCurrentDetail(this.lightingProfileById);
 			/* Use cache before set    end */
 			this.color = event;
-			let colorJson: any = {
+			const colorJson: any = {
 				profileId: this.currentProfileId,
 				lightPanelType: this.lightingArea,
 				lightColor: event,
@@ -464,9 +464,9 @@ export class WidgetLightingNotebookComponent implements OnInit {
 	}
 
 	public getCurrentName(lightingPanelImage, lightPanelType) {
-		let nameObj = lightingPanelImage.filter((element) => {
-			return element.value === lightPanelType;
-		});
+		const nameObj = lightingPanelImage.filter(
+			(element) => element.value === lightPanelType
+		);
 		this.logger.info('nameObj: ', nameObj);
 		return nameObj;
 	}
@@ -483,7 +483,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 				if (res.lightInfo !== null && res.lightInfo.length > 0) {
 					this.lightingCurrentDetail = res.lightInfo[0];
 					this.lightInfo = res.lightInfo;
-					let currentName = this.getCurrentName(
+					const currentName = this.getCurrentName(
 						this.lightingEffectData.dropOptions,
 						this.lightingCurrentDetail.lightEffectType
 					);
@@ -573,11 +573,11 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
 	public setCacheInitList() {
 		if (this.currentProfileId !== 0) {
-			let isDiffColor = this.gamingLightingService.checkAreaColorFn(
+			const isDiffColor = this.gamingLightingService.checkAreaColorFn(
 				this.lightingProfileById.lightInfo
 			);
 			if (isDiffColor) {
-				let lightcolorList = this.getColorList(
+				const lightcolorList = this.getColorList(
 					JSON.parse(JSON.stringify(this.lightingProfileById))
 				);
 				this.localCacheService.setLocalCacheValue(
@@ -602,7 +602,6 @@ export class WidgetLightingNotebookComponent implements OnInit {
 	}
 
 	public setCacheDafaultList() {
-		let toggleOnCache: any, toggleOffCache: any;
 		this.toggleStatus = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.KeyboardToggleStatusLNBx50
 		);
@@ -704,7 +703,8 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
 	public publicProfileIdInfo(response) {
 		if (response !== undefined) {
-			let toggleOnCache: any, toggleOffCache: any;
+			let toggleOnCache: any;
+			let toggleOffCache: any;
 			this.lightingProfileById = response;
 			this.currentProfileId = response.profileId;
 			if (
@@ -768,7 +768,7 @@ export class WidgetLightingNotebookComponent implements OnInit {
 
 	/**
 	 * metrics collection for lighting feature of notebook machine
-	 * @param metricsdata
+	 param metricsdata
 	 */
 	public sendFeatureClickMetrics(metricsdata: any) {
 		try {
