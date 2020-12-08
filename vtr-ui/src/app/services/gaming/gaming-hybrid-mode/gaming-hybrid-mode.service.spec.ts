@@ -15,66 +15,66 @@ describe('GamingHybridModeService', () => {
 		shellService = TestBed.get(VantageShellService);
 	});
 	describe(':', () => {
-		function setup() {
-			const service = TestBed.get(GamingHybridModeService);
-			return { service };
-		}
+		const setup = () => {
+			const setUpService = TestBed.get(GamingHybridModeService);
+			return { setUpService };
+		};
 
 		it('should be created', () => {
-			const service: GamingHybridModeService = TestBed.get(GamingHybridModeService);
-			expect(service).toBeTruthy();
+			const setUpService: GamingHybridModeService = TestBed.get(GamingHybridModeService);
+			expect(setUpService).toBeTruthy();
 		});
 
 		it('should call getHybridModeStatus on false', async () => {
-			const { service } = setup();
-			spyOn(service, 'getHybridModeStatus').and.callThrough();
-			service.isShellAvailable = false;
-			service.getHybridModeStatus();
-			expect(service.getHybridModeStatus).toHaveBeenCalled();
-			service.isShellAvailable = true;
-			service.getHybridModeStatus();
-			expect(service.getHybridModeStatus).toHaveBeenCalled();
+			const { setUpService } = setup();
+			spyOn(setUpService, 'getHybridModeStatus').and.callThrough();
+			setUpService.isShellAvailable = false;
+			setUpService.getHybridModeStatus();
+			expect(setUpService.getHybridModeStatus).toHaveBeenCalled();
+			setUpService.isShellAvailable = true;
+			setUpService.getHybridModeStatus();
+			expect(setUpService.getHybridModeStatus).toHaveBeenCalled();
 		});
 
 		it('should call getHybridModeStatus return error', async () => {
-			const { service } = setup();
-			service.isShellAvailable = true;
-			spyOn(service, 'getHybridModeStatus').and.callThrough();
-			spyOn(service.gamingHybridMode, 'getHybridModeStatus').and.throwError(
-				'shellService.gamingHybridMode().getHybridModeStatus error.'
+			const { setUpService } = setup();
+			setUpService.isShellAvailable = true;
+			spyOn(setUpService, 'getHybridModeStatus').and.callThrough();
+			spyOn(setUpService.gamingHybridMode, 'getHybridModeStatus').and.throwError(
+				'shellsetUpService.gamingHybridMode().getHybridModeStatus error.'
 			);
 			try {
-				service.getHybridModeStatus();
+				setUpService.getHybridModeStatus();
 			} catch (err) {
 				expect(err.message).toEqual(
-					'shellService.gamingHybridMode().getHybridModeStatus error.'
+					'shellsetUpService.gamingHybridMode().getHybridModeStatus error.'
 				);
 			}
 		});
 
 		it('should call setHybridModeStatus on false', () => {
-			const { service } = setup();
-			spyOn(service, 'setHybridModeStatus').and.callThrough();
-			service.isShellAvailable = false;
-			service.setHybridModeStatus();
-			expect(service.setHybridModeStatus).toHaveBeenCalled();
-			service.isShellAvailable = true;
-			service.setHybridModeStatus();
-			expect(service.setHybridModeStatus).toHaveBeenCalled();
+			const { setUpService } = setup();
+			spyOn(setUpService, 'setHybridModeStatus').and.callThrough();
+			setUpService.isShellAvailable = false;
+			setUpService.setHybridModeStatus();
+			expect(setUpService.setHybridModeStatus).toHaveBeenCalled();
+			setUpService.isShellAvailable = true;
+			setUpService.setHybridModeStatus();
+			expect(setUpService.setHybridModeStatus).toHaveBeenCalled();
 		});
 
 		it('should call setHybridModeStatus return error', async () => {
-			const { service } = setup();
-			service.isShellAvailable = true;
-			spyOn(service, 'setHybridModeStatus').and.callThrough();
-			spyOn(service.gamingHybridMode, 'setHybridModeStatus').and.throwError(
-				'shellService.gamingHybridMode().setHybridModeStatus error.'
+			const { setUpService } = setup();
+			setUpService.isShellAvailable = true;
+			spyOn(setUpService, 'setHybridModeStatus').and.callThrough();
+			spyOn(setUpService.gamingHybridMode, 'setHybridModeStatus').and.throwError(
+				'shellsetUpService.gamingHybridMode().setHybridModeStatus error.'
 			);
 			try {
-				service.setHybridModeStatus(true);
+				setUpService.setHybridModeStatus(true);
 			} catch (err) {
 				expect(err.message).toEqual(
-					'shellService.gamingHybridMode().setHybridModeStatus error.'
+					'shellsetUpService.gamingHybridMode().setHybridModeStatus error.'
 				);
 			}
 		});

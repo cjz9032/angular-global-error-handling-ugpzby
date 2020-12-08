@@ -16,27 +16,27 @@ describe('HwInfoService', () => {
 	});
 
 	describe(':', () => {
-		function setup() {
-			const service = TestBed.get(HwInfoService);
-			return { service };
-		}
+		const setup = () => {
+			const setUpService = TestBed.get(HwInfoService);
+			return { setUpService };
+		};
 
 		it('should call getDynamicInformation', () => {
-			const { service } = setup();
+			const { setUpService } = setup();
 			service.isShellAvailable = true;
-			spyOn(service.gamingHwInfo, 'getDynamicInformation').and.callThrough();
+			spyOn(setUpService.gamingHwInfo, 'getDynamicInformation').and.callThrough();
 			service.getDynamicInformation();
-			expect(service.gamingHwInfo.getDynamicInformation).toHaveBeenCalled();
+			expect(setUpService.gamingHwInfo.getDynamicInformation).toHaveBeenCalled();
 
 			service.isShellAvailable = false;
 			service.getDynamicInformation();
-			expect(service.gamingHwInfo.getDynamicInformation).toHaveBeenCalled();
+			expect(setUpService.gamingHwInfo.getDynamicInformation).toHaveBeenCalled();
 		});
 
 		it('should call getDynamicInformation return error', () => {
-			const { service } = setup();
+			const { setUpService } = setup();
 			service.isShellAvailable = true;
-			spyOn(service.gamingHwInfo, 'getDynamicInformation').and.throwError(
+			spyOn(setUpService.gamingHwInfo, 'getDynamicInformation').and.throwError(
 				'shellService.getGamingHwInfo().getDynamicInformation error.'
 			);
 			try {
@@ -49,24 +49,24 @@ describe('HwInfoService', () => {
 		});
 
 		it('should call getMachineInfomation', () => {
-			const { service } = setup();
-			service.isShellAvailable = true;
-			spyOn(service.gamingHwInfo, 'getMachineInfomation').and.callThrough();
-			service.getMachineInfomation();
-			expect(service.gamingHwInfo.getMachineInfomation).toHaveBeenCalled();
-			service.isShellAvailable = false;
-			service.getMachineInfomation();
-			expect(service.gamingHwInfo.getMachineInfomation).toHaveBeenCalled();
+			const { setUpService } = setup();
+			setUpService.isShellAvailable = true;
+			spyOn(setUpService.gamingHwInfo, 'getMachineInfomation').and.callThrough();
+			setUpService.getMachineInfomation();
+			expect(setUpService.gamingHwInfo.getMachineInfomation).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.getMachineInfomation();
+			expect(setUpService.gamingHwInfo.getMachineInfomation).toHaveBeenCalled();
 		});
 
 		it('should call getMachineInfomation return error', () => {
-			const { service } = setup();
-			service.isShellAvailable = true;
-			spyOn(service.gamingHwInfo, 'getMachineInfomation').and.throwError(
+			const { setUpService } = setup();
+			setUpService.isShellAvailable = true;
+			spyOn(setUpService.gamingHwInfo, 'getMachineInfomation').and.throwError(
 				'shellService.getGamingHwInfo().getMachineInfomation error.'
 			);
 			try {
-				service.getMachineInfomation();
+				setUpService.getMachineInfomation();
 			} catch (err) {
 				expect(err.message).toEqual(
 					'shellService.getGamingHwInfo().getMachineInfomation error.'

@@ -5,8 +5,7 @@ import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/mo
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { Component, NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MetricService } from 'src/app/services/metric/metrics.service';
@@ -41,7 +40,7 @@ const gamingAllCapabilitiesService = jasmine.createSpyObj('GamingAllCapabilities
 	'getCapabilityFromCache',
 ]);
 
-let advancedOCInfo: any = {
+const advancedOCInfo: any = {
 	cpuParameterList: [
 		{
 			tuneId: 2,
@@ -256,7 +255,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 		}));
 
 		it('getAdvancedOCInfo & response is false', fakeAsync(() => {
-			let advancedOCInfo2: any = {
+			const advancedOCInfo2: any = {
 				cpuParameterList: [],
 				gpuParameterList: [],
 			};
@@ -319,7 +318,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 
 	describe('check open save modal : ', () => {
 		it('should open save modal', () => {
-			let modalRef = new ModalGamingPromptStubComponent();
+			const modalRef = new ModalGamingPromptStubComponent();
 			component.advancedOCInfo = advancedOCInfo;
 			spyOn(modalService, 'open').and.returnValue(modalRef);
 			expect(modalService.open).toHaveBeenCalledTimes(0);
@@ -337,7 +336,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 
 	describe('check open set to default modal : ', () => {
 		it('should open set to default modal', () => {
-			let modalRef = new ModalGamingPromptStubComponent();
+			const modalRef = new ModalGamingPromptStubComponent();
 			component.advancedOCInfo = advancedOCInfo;
 			spyOn(modalService, 'open').and.returnValue(modalRef);
 			expect(modalService.open).toHaveBeenCalledTimes(0);
@@ -1246,7 +1245,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 
 	describe('check setToDefaultValue : ', () => {
 		it('setToDefaultValue & length>0', () => {
-			let cpuParameterList = [
+			const cpuParameterList = [
 				{
 					tuneId: 2,
 					OCValue: '41',
@@ -1398,7 +1397,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 		});
 
 		it('setToDefaultValue & length=0', () => {
-			let cpuParameterList = [];
+			const cpuParameterList = [];
 			component.setToDefaultValue(cpuParameterList);
 			expect(cpuParameterList.length).toBe(0);
 		});

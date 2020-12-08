@@ -34,25 +34,25 @@
                     </h2>
                     <p class="description" role="text" id="thermal_mode_setting_performance_mode_description">
                         {{ 'gaming.dashboard.device.thermalMode2Popup.performanceDesc' | translate }}
-                        <span *ngIf="OCsupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion === 2"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
+                        <span *ngIf="ocSupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion === 2"> {{ 'gaming.dashboard.device.thermalMode2Popup.OCDesc' | translate }}</span>
                         <span *ngIf="!gamingCapabilities.desktopType"> {{ 'gaming.dashboard.device.thermalMode2Popup.ac_dcDesc' | translate }}</span>
                     </p>
-                    <div class="item-oc" *ngIf="OCsupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion === 2">
-                        <ng-container *ngIf="OCsupportted === driverStatus || driverStatus === thermalMode2Enum.cpu_gpu">
+                    <div class="item-oc" *ngIf="ocSupportted !== thermalMode2Enum.none && gamingCapabilities.thermalModeVersion === 2">
+                        <ng-container *ngIf="ocSupportted === driverStatus || driverStatus === thermalMode2Enum.cpu_gpu">
                             <div class="item-oc-left">
-                                <button class="oc-checkbox" [ngClass]="{'checked':OCSettings}" role="checkbox" id="{{!OCSettings? 'enable_OC_checkbox_unchecked':'enable_OC_checkbox_checked'}}"  (click)="setPerformanceOCSetting($event)"
-                                tabindex="1" [attr.aria-label]="OCsupportted === thermalMode2Enum.cpu_gpu ? 'Enable CPU and GPU Overclocking in Performance Mode' :
-                                OCsupportted === thermalMode2Enum.cpu ? 'Enable CPU Overclocking in Performance Mode' : 'Enable GPU Overclocking in Performance Mode'"
-                                [attr.aria-checked]="OCSettings">
+                                <button class="oc-checkbox" [ngClass]="{'checked':ocSettings}" role="checkbox" id="{{!ocSettings? 'enable_OC_checkbox_unchecked':'enable_OC_checkbox_checked'}}"  (click)="setPerformanceOCSetting($event)"
+                                tabindex="1" [attr.aria-label]="ocSupportted === thermalMode2Enum.cpu_gpu ? 'Enable CPU and GPU Overclocking in Performance Mode' :
+                                ocSupportted === thermalMode2Enum.cpu ? 'Enable CPU Overclocking in Performance Mode' : 'Enable GPU Overclocking in Performance Mode'"
+                                [attr.aria-checked]="ocSettings">
                                     <label class="checkedIcon"></label>
                                 </button>
                             </div>
                             <div class="item-oc-right">
                                 <p role="text" id="enable_OC_description">
                                     <a class="oc-description" (click)="setPerformanceOCSetting($event)">
-                                        <span *ngIf="OCsupportted === thermalMode2Enum.cpu_gpu">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuOC' | translate }}</span>
-                                        <span *ngIf="OCsupportted === thermalMode2Enum.cpu">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuOC' | translate }}</span>
-                                        <span *ngIf="OCsupportted === thermalMode2Enum.gpu">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuOC' | translate }}</span>
+                                        <span *ngIf="ocSupportted === thermalMode2Enum.cpu_gpu">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuOC' | translate }}</span>
+                                        <span *ngIf="ocSupportted === thermalMode2Enum.cpu">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuOC' | translate }}</span>
+                                        <span *ngIf="ocSupportted === thermalMode2Enum.gpu">{{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuOC' | translate }}</span>
                                         &nbsp;
                                     </a>
                                     <a class="oc-advance-button" *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature"
@@ -62,9 +62,9 @@
                                 </p>
                             </div>
                         </ng-container>
-                        <ng-container *ngIf="OCsupportted !== driverStatus && driverStatus !== thermalMode2Enum.cpu_gpu">
+                        <ng-container *ngIf="ocSupportted !== driverStatus && driverStatus !== thermalMode2Enum.cpu_gpu">
                             <div class="item-oc-right">
-                                <p *ngIf="OCsupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.none" role="text" id="thermal_mode_CPU/GPU_driver_description">
+                                <p *ngIf="ocSupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.none" role="text" id="thermal_mode_CPU/GPU_driver_description">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
                                     tabindex="1" aria-label="Install CPU and GPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
@@ -72,7 +72,7 @@
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
                                     </a>
                                 </p>
-                                <p *ngIf="(OCsupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.gpu) || (OCsupportted === thermalMode2Enum.cpu)" role="text" id="thermal_mode_CPU_driver_description">
+                                <p *ngIf="(ocSupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.gpu) || (ocSupportted === thermalMode2Enum.cpu)" role="text" id="thermal_mode_CPU_driver_description">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
                                     tabindex="1" aria-label="Install CPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
@@ -80,7 +80,7 @@
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
                                     </a>
                                 </p>
-                                <p *ngIf="(OCsupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.cpu) || (OCsupportted === thermalMode2Enum.gpu)"  role="text" id="thermal_mode_GPU_driver_description">
+                                <p *ngIf="(ocSupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.cpu) || (ocSupportted === thermalMode2Enum.gpu)"  role="text" id="thermal_mode_GPU_driver_description">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
                                     tabindex="1" aria-label="Install GPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"

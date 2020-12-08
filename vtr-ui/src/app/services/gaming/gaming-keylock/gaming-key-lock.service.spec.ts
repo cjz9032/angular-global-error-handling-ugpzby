@@ -16,61 +16,58 @@ describe('GamingKeyLockService', () => {
 	});
 
 	describe(':', () => {
-		function setup() {
-			// eslint-disable-next-line no-shadow
-			const service = TestBed.get(GamingKeyLockService);
-			return { service };
-		}
+		const setup = () => {
+			const setUpService = TestBed.get(GamingKeyLockService);
+			return { setUpService };
+		};
 
 		it('should call getKeyLockStatus', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
-			service.isShellAvailable = true;
-			spyOn(service.gamingKeyLock, 'getKeyLockStatus').and.callThrough();
-			service.getKeyLockStatus();
-			expect(service.gamingKeyLock.getKeyLockStatus).toHaveBeenCalled();
+			const { setUpService } = setup();
+			setUpService.isShellAvailable = true;
+			spyOn(setUpService.gamingKeyLock, 'getKeyLockStatus').and.callThrough();
+			setUpService.getKeyLockStatus();
+			expect(setUpService.gamingKeyLock.getKeyLockStatus).toHaveBeenCalled();
 
-			service.isShellAvailable = false;
-			service.getKeyLockStatus();
-			expect(service.gamingKeyLock.getKeyLockStatus).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.getKeyLockStatus();
+			expect(setUpService.gamingKeyLock.getKeyLockStatus).toHaveBeenCalled();
 		});
 
 		it('should call getKeyLockStatus return error', async () => {
-			const { service } = setup();
-			service.isShellAvailable = true;
-			spyOn(service.gamingKeyLock, 'getKeyLockStatus').and.throwError(
-				'shellService.gamingKeyLock().getKeyLockStatus error.'
+			const { setUpService } = setup();
+			setUpService.isShellAvailable = true;
+			spyOn(setUpService.gamingKeyLock, 'getKeyLockStatus').and.throwError(
+				'shellsetUpService.gamingKeyLock().getKeyLockStatus error.'
 			);
 			try {
-				service.getKeyLockStatus();
+				setUpService.getKeyLockStatus();
 			} catch (err) {
-				expect(err.message).toEqual('shellService.gamingKeyLock().getKeyLockStatus error.');
+				expect(err.message).toEqual('shellsetUpService.gamingKeyLock().getKeyLockStatus error.');
 			}
 		});
 
 		it('should call setKeyLockStatus', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
-			service.isShellAvailable = true;
-			spyOn(service.gamingKeyLock, 'setKeyLockStatus').and.callThrough();
-			service.setKeyLockStatus();
-			expect(service.gamingKeyLock.setKeyLockStatus).toHaveBeenCalled();
+			const { setUpService } = setup();
+			setUpService.isShellAvailable = true;
+			spyOn(setUpService.gamingKeyLock, 'setKeyLockStatus').and.callThrough();
+			setUpService.setKeyLockStatus();
+			expect(setUpService.gamingKeyLock.setKeyLockStatus).toHaveBeenCalled();
 
-			service.isShellAvailable = false;
-			service.setKeyLockStatus();
-			expect(service.gamingKeyLock.setKeyLockStatus).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.setKeyLockStatus();
+			expect(setUpService.gamingKeyLock.setKeyLockStatus).toHaveBeenCalled();
 		});
 
 		it('should call setKeyLockStatus return error', async () => {
-			const { service } = setup();
-			service.isShellAvailable = true;
-			spyOn(service.gamingKeyLock, 'setKeyLockStatus').and.throwError(
-				'shellService.gamingKeyLock().setKeyLockStatus error.'
+			const { setUpService } = setup();
+			setUpService.isShellAvailable = true;
+			spyOn(setUpService.gamingKeyLock, 'setKeyLockStatus').and.throwError(
+				'shellsetUpService.gamingKeyLock().setKeyLockStatus error.'
 			);
 			try {
-				service.setKeyLockStatus(true);
+				setUpService.setKeyLockStatus(true);
 			} catch (err) {
-				expect(err.message).toEqual('shellService.gamingKeyLock().setKeyLockStatus error.');
+				expect(err.message).toEqual('shellsetUpService.gamingKeyLock().setKeyLockStatus error.');
 			}
 		});
 	});

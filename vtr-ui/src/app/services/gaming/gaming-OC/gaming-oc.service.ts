@@ -6,9 +6,9 @@ import { LoggerService } from '../../logger/logger.service';
 	providedIn: 'root',
 })
 export class GamingOCService {
+	public isShellAvailable = false;
 	private gamingOverClock: any;
 	private gamingPerformanceOC: any;
-	public isShellAvailable = false;
 
 	constructor(shellService: VantageShellService, private logger: LoggerService) {
 		// performance OC is a sub-feature of thermal mode 2
@@ -42,7 +42,7 @@ export class GamingOCService {
 		}
 	}
 
-	setPerformanceOCSetting(value: Boolean): Promise<any> {
+	setPerformanceOCSetting(value: boolean): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.gamingPerformanceOC.setPerformanceOCSetting(value);

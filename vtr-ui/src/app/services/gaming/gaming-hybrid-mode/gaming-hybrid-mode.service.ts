@@ -5,8 +5,8 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 	providedIn: 'root',
 })
 export class GamingHybridModeService {
-	private gamingHybridMode: any;
 	public isShellAvailable = false;
+	private gamingHybridMode: any;
 
 	constructor(shellService: VantageShellService) {
 		this.gamingHybridMode = shellService.getGamingHybridMode();

@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { WidgetSystemMonitorComponent } from './widget-system-monitor.component';
-import { Pipe } from '@angular/core';
+import { Pipe, NO_ERRORS_SCHEMA} from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { RouterLinkWithHref } from '@angular/router';
@@ -27,7 +26,7 @@ describe('WidgetSystemMonitorComponent', () => {
 	let fixture: ComponentFixture<WidgetSystemMonitorComponent>;
 	let timerCallback;
 
-	beforeEach(function () {
+	beforeEach(() => {
 		timerCallback = jasmine.createSpy('timerCallback');
 		jasmine.clock().install();
 		TestBed.configureTestingModule({
@@ -50,12 +49,12 @@ describe('WidgetSystemMonitorComponent', () => {
 		fixture.detectChanges();
 	});
 
-	afterEach(function () {
+	afterEach(() => {
 		jasmine.clock().uninstall();
 	});
 
-	it('should render "INFO" as a link', function () {
-		setTimeout(function () {
+	it('should render "INFO" as a link', () => {
+		setTimeout(() => {
 			timerCallback();
 		}, 100);
 		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
@@ -66,27 +65,27 @@ describe('WidgetSystemMonitorComponent', () => {
 		jasmine.clock().tick(101);
 	});
 
-	it('should have path /device for "INFO" link', function () {
-		const info_link = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-		const infoLink = info_link.findIndex((c) => {
+	it('should have path /device for "INFO" link', () => {
+		let infoLink: any = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
+		infoLink = infoLink.findIndex((c) => {
 			return c.properties.href === '/device';
 		});
 		expect(infoLink).toEqual(-1);
 	});
 
-	it('Should have title GPU, CPU, RAM', function () {
+	it('Should have title GPU, CPU, RAM', () => {
 		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
 		fixture.detectChanges();
-		const component = fixture.debugElement.nativeElement;
-		expect(component.querySelector('div.stack-title').textContent).toEqual(' GPU ');
-		expect(component.querySelector('div.cpu-title').textContent).toEqual(' CPU ');
+		const changedComponent = fixture.debugElement.nativeElement;
+		expect(changedComponent.querySelector('div.stack-title').textContent).toEqual(' GPU ');
+		expect(changedComponent.querySelector('div.cpu-title').textContent).toEqual(' CPU ');
 		expect(
-			component.querySelector('div.ram>div.monitor-stack>div.stack-label>div.stack-title')
+			changedComponent.querySelector('div.ram>div.monitor-stack>div.stack-label>div.stack-title')
 				.textContent
 		).toEqual(' RAM ');
 	});
 
-	it('Should mock the Hwinfoservice to get cpuMax, cpuModuleName, gpuMax, gpuModuleName, ramMax & ramOver using getMachineInfomation function', function () {
+	it('Should mock the Hwinfoservice to get cpuMax, cpuModuleName, gpuMax, gpuModuleName, ramMax & ramOver using getMachineInfomation function', () => {
 		let hwInfo = {
 			cpuBaseFrequence: '2.9GHz',
 			cpuModuleName: 'Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz',
@@ -126,8 +125,8 @@ describe('WidgetSystemMonitorComponent', () => {
 		expect(hwInfo.memoryModuleName).toEqual('Samsung');
 	});
 
-	it('Should mock the Hwinfoservice to get cpuUsage, gpuUsage, memoryUsage, cpuCurrent, gpuCurrent & ramCurrent using getDynamicInformation function', function () {
-		let DynamicInfov;
+	it('Should mock the Hwinfoservice to get cpuUsage, gpuUsage, memoryUsage, cpuCurrent, gpuCurrent & ramCurrent using getDynamicInformation function', () => {
+		let dynamicInfov;
 		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
 		component = fixture.debugElement.componentInstance;
 		gamingHwinfoMock.getDynamicInformation.and.returnValue(
@@ -158,18 +157,18 @@ describe('WidgetSystemMonitorComponent', () => {
 				memoryUsage: 31,
 			})
 		);
-		gamingHwinfoMock.getDynamicInformation().then((DynamicInfoRes: any) => {
-			JSON.stringify(DynamicInfoRes);
-			DynamicInfov = DynamicInfoRes;
-			component.formDynamicInformation(DynamicInfoRes);
-			component.setFormDynamicInformationCache(DynamicInfoRes);
-			expect(DynamicInfov.gpuUsage).toEqual(2);
-			expect(DynamicInfov.cpuUsage).toEqual(18);
-			expect(DynamicInfov.memoryUsage).toEqual(31);
-			expect(DynamicInfov.cpuUseFrequency).toEqual('1.2');
-			expect(DynamicInfov.memoryUsed).toEqual('20.2GB');
+		gamingHwinfoMock.getDynamicInformation().then((dynamicInfoRes: any) => {
+			JSON.stringify(dynamicInfoRes);
+			dynamicInfov = dynamicInfoRes;
+			component.formDynamicInformation(dynamicInfoRes);
+			component.setFormDynamicInformationCache(dynamicInfoRes);
+			expect(dynamicInfov.gpuUsage).toEqual(2);
+			expect(dynamicInfov.cpuUsage).toEqual(18);
+			expect(dynamicInfov.memoryUsage).toEqual(31);
+			expect(dynamicInfov.cpuUseFrequency).toEqual('1.2');
+			expect(dynamicInfov.memoryUsed).toEqual('20.2GB');
 		});
-		expect(DynamicInfov).toEqual(undefined);
+		expect(dynamicInfov).toEqual(undefined);
 	});
 });
 

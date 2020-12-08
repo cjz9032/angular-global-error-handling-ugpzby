@@ -5,8 +5,8 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 	providedIn: 'root',
 })
 export class GamingSystemUpdateService {
-	private gamingOverClock: any;
 	public isShellAvailable = false;
+	private gamingOverClock: any;
 
 	constructor(shellService: VantageShellService) {
 		this.gamingOverClock = shellService.getGamingOverClock();

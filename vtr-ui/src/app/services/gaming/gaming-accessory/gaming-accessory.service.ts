@@ -7,12 +7,12 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 	providedIn: 'root',
 })
 export class GamingAccessoryService {
-	private gamingAccessory: any;
+	public isShellAvailable = false;
 	// protocol
 	private regUtil: any;
 	// plugin?
 	private systemUpdateBridge: any;
-	public isShellAvailable: boolean = false;
+	private gamingAccessory: any;
 
 	constructor(private shellService: VantageShellService, private logger: LoggerService) {
 		this.gamingAccessory = shellService.getGamingAccessory();
@@ -26,7 +26,7 @@ export class GamingAccessoryService {
 	public isLACSupportUriProtocol(): Promise<any> {
 		if (this.isShellAvailable) {
 			return new Promise((resolve) => {
-				let regPath =
+				const regPath =
 					'HKEY_LOCAL_MACHINE\\Software\\WOW6432Node\\Lenovo\\Legion Accessory Central';
 				try {
 					this.regUtil.queryValue(regPath).then((res) => {

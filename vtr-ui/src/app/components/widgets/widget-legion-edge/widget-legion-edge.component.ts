@@ -44,11 +44,9 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	public networkBoostEvent: any;
 	public autoCloseEvent: any;
 	public performanceOCSettings = false;
-	private notifcationSubscription: Subscription;
-	private OCSettingsSubscription: Subscription;
 	// Version 3.5: OC event of thermal mode 3.0
-	public OCSupported = this.thermalMode2Enum.none;
-	public OCRealStatusEvent: any;
+	public ocSupported = this.thermalMode2Enum.none;
+	public ocRealStatusEvent: any;
 
 	// use enum instead of hard code on 200319 by Guo Jing
 	public legionItemIndex = {
@@ -258,6 +256,9 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			},
 		],
 	};
+
+	private notifcationSubscription: Subscription;
+	private ocSettingsSubscription: Subscription;
 
 	constructor(
 		private modalService: NgbModal,
@@ -496,8 +497,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		if (this.notifcationSubscription) {
 			this.notifcationSubscription.unsubscribe();
 		}
-		if (this.OCSettingsSubscription) {
-			this.OCSettingsSubscription.unsubscribe();
+		if (this.ocSettingsSubscription) {
+			this.ocSettingsSubscription.unsubscribe();
 		}
 		this.unRegisterThermalModeRealStatusChangeEvent();
 		this.unGamingQuickSettingsStatusChangedEvent(
@@ -603,8 +604,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.renderThermalMode2RealStatus();
 			this.registerThermalModeRealStatusChangeEvent();
 
-			if (this.OCSupported !== this.thermalMode2Enum.none) {
-				this.OCRealStatusEvent = this.onRegOCRealStatusChangeEvent.bind(this);
+			if (this.ocSupported !== this.thermalMode2Enum.none) {
+				this.ocRealStatusEvent = this.onRegOCRealStatusChangeEvent.bind(this);
 				this.registerOCRealStatusChangeEvent();
 			} else {
 				this.performanceOCSettings = false;
@@ -812,7 +813,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			windowClass: 'modal-fun',
 			backdropClass: 'backdrop-level'
 		});
-		this.OCSettingsSubscription = modalRef.componentInstance.OCSettingsMsg.subscribe((res) => {
+		this.ocSettingsSubscription = modalRef.componentInstance.ocSettingsMsg.subscribe((res) => {
 			this.performanceOCSettings = res;
 		});
 	}
@@ -828,24 +829,24 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	renderOCSupported() {
 		if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
 			if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
-				this.OCSupported = this.thermalMode2Enum.cpu_gpu;
+				this.ocSupported = this.thermalMode2Enum.cpu_gpu;
 			} else {
-				this.OCSupported = this.thermalMode2Enum.none;
+				this.ocSupported = this.thermalMode2Enum.none;
 			}
 		} else if (this.gamingCapabilities.cpuOCFeature && !this.gamingCapabilities.gpuOCFeature) {
 			if (this.gamingCapabilities.xtuService) {
-				this.OCSupported = this.thermalMode2Enum.cpu;
+				this.ocSupported = this.thermalMode2Enum.cpu;
 			} else {
-				this.OCSupported = this.thermalMode2Enum.none;
+				this.ocSupported = this.thermalMode2Enum.none;
 			}
 		} else if (!this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
 			if (this.gamingCapabilities.nvDriver) {
-				this.OCSupported = this.thermalMode2Enum.gpu;
+				this.ocSupported = this.thermalMode2Enum.gpu;
 			} else {
-				this.OCSupported = this.thermalMode2Enum.none;
+				this.ocSupported = this.thermalMode2Enum.none;
 			}
 		} else {
-			this.OCSupported = this.thermalMode2Enum.none;
+			this.ocSupported = this.thermalMode2Enum.none;
 		}
 	}
 	registerOCRealStatusChangeEvent() {
@@ -853,7 +854,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.gamingOCService.regOCRealStatusChangeEvent();
 			this.shellServices.registerEvent(
 				EventTypes.gamingOCStatusChangeEvent,
-				this.OCRealStatusEvent
+				this.ocRealStatusEvent
 			);
 			this.logger.info('Widget-LegionEdge-registerOCRealStatusChangeEvent: register success');
 		} catch (error) {
@@ -866,7 +867,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	unRegisterOCRealStatusChangeEvent() {
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingOCStatusChangeEvent,
-			this.OCRealStatusEvent
+			this.ocRealStatusEvent
 		);
 	}
 	onRegOCRealStatusChangeEvent(realOCStatusInfo: any) {
@@ -874,13 +875,13 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.logger.info(
 				`Widget-LegionEdge-onRegOCRealStatusChangeEvent: call back from ${this.performanceOCSettings} to ${realOCStatusInfo}`
 			);
-			let tmpOCStatus: boolean = undefined;
-			if (this.OCSupported === this.thermalMode2Enum.cpu_gpu) {
+			let tmpOCStatus: boolean;
+			if (this.ocSupported === this.thermalMode2Enum.cpu_gpu) {
 				tmpOCStatus = realOCStatusInfo.cpuOCState && realOCStatusInfo.gpuOCstate;
-			} else if (this.OCSupported === this.thermalMode2Enum.cpu) {
+			} else if (this.ocSupported === this.thermalMode2Enum.cpu) {
 				tmpOCStatus = realOCStatusInfo.cpuOCState;
 			}
-			if (this.OCSupported === this.thermalMode2Enum.gpu) {
+			if (this.ocSupported === this.thermalMode2Enum.gpu) {
 				tmpOCStatus = realOCStatusInfo.gpuOCState;
 			}
 			if (tmpOCStatus !== undefined && this.performanceOCSettings !== tmpOCStatus) {
@@ -907,15 +908,15 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				this.thermalModeRealStatus === this.thermalMode2Enum.balance) &&
 			this.performanceOCSettings
 		) {
-			let OCTips;
-			if (this.OCSupported === this.thermalMode2Enum.cpu_gpu) {
-				OCTips = this.translateService.instant('gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_GPU_ON');
-			} else if (this.OCSupported === this.thermalMode2Enum.cpu) {
-				OCTips = this.translateService.instant('gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_ON');
-			} else if (this.OCSupported === this.thermalMode2Enum.gpu) {
-				OCTips = this.translateService.instant('gaming.dashboard.device.legionEdge.thermalMode3Tips.GPU_ON');
+			let ocTips;
+			if (this.ocSupported === this.thermalMode2Enum.cpu_gpu) {
+				ocTips = this.translateService.instant('gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_GPU_ON');
+			} else if (this.ocSupported === this.thermalMode2Enum.cpu) {
+				ocTips = this.translateService.instant('gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_ON');
+			} else if (this.ocSupported === this.thermalMode2Enum.gpu) {
+				ocTips = this.translateService.instant('gaming.dashboard.device.legionEdge.thermalMode3Tips.GPU_ON');
 			}
-			return OCTips;
+			return ocTips;
 		} else {
 			// return this.translateService.instant('gaming.dashboard.device.quickSettings.title');
 			return '';
@@ -1393,12 +1394,10 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	// Feature 8: Touchpad lock                                         //
 	//////////////////////////////////////////////////////////////////////
 	toggleOnOffStatus($event) {
-		let name = $event.target.name;
+		const name = $event.target.name;
 		let status = $event.target.value;
 		status = status === 'false' ? false : status;
 		status = status === 'true' ? true : status;
-		// TODO
-		// this.closeLegionEdgePopups();
 		this.logger.info(
 			`Widget-LegionEdge-toggleOnOffStatus: event name is ${name}, event status is ${status}`
 		);

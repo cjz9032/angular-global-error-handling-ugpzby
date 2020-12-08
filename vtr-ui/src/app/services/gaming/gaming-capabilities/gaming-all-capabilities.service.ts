@@ -9,9 +9,9 @@ import { LocalCacheService } from '../../local-cache/local-cache.service';
 	providedIn: 'root',
 })
 export class GamingAllCapabilitiesService {
-	private gamingAllCapabilities: any;
 	public isShellAvailable = false;
 	public macrokey: any;
+	private gamingAllCapabilities: any;
 	constructor(
 		shellService: VantageShellService,
 		private localCacheService: LocalCacheService,

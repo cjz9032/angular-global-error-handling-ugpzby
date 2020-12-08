@@ -61,16 +61,16 @@ describe('WidgetLegionEdgeComponent', () => {
 
 	let setReturnValue = true;
 
-	let commonServiceMock = {
-		getCapabalitiesNotification() {
-			let res = {
+	const commonServiceMock = {
+		getCapabalitiesNotification: () => {
+			const res = {
 				type: '',
 				payload: {},
 			};
 			return of(res);
 		},
 	};
-	let localCacheServiceMock = {
+	const localCacheServiceMock = {
 		getLocalCacheValue(key: any, defaultValue?: any) {
 			let returnValue: any;
 			switch (key) {
@@ -111,7 +111,7 @@ describe('WidgetLegionEdgeComponent', () => {
 				return returnValue;
 			}
 		},
-		setLocalCacheValue(key: any, value: any) {
+		setLocalCacheValue: (key: any, value: any) => {
 			switch (key) {
 				case '[LocalStorageKey] RealThermalModeStatus':
 					thermalModeRealStatusCache = value;
@@ -147,9 +147,9 @@ describe('WidgetLegionEdgeComponent', () => {
 		},
 	};
 
-	let gamingAllCapabilitiesServiceMock = {
+	const gamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
-		getCapabilityFromCache(key: any) {
+		getCapabilityFromCache: (key: any) => {
 			switch (key) {
 				case '[LocalStorageKey] LiteGaming':
 					return liteGamingCache;
@@ -258,23 +258,26 @@ describe('WidgetLegionEdgeComponent', () => {
 	describe('thermal mode 2 & performanceOC', () => {
 		let thermalModeRealStatus = 2;
 		let performanceOCStatus = false;
-		let gamingThermalModeServiceMock = {
-			getThermalModeRealStatus() {
-				return new Promise((resolve) => {
-					resolve(thermalModeRealStatus);
-				});
+		const gamingThermalModeServiceMock = {
+			getThermalModeRealStatus: () => {
+				Promise.resolve(thermalModeRealStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(thermalModeRealStatus);
+				// });
 			},
-			regThermalModeRealStatusChangeEvent() {
-				return new Promise((resolve) => {
-					resolve(setReturnValue);
-				});
+			regThermalModeRealStatusChangeEvent: () => {
+				Promise.resolve(setReturnValue);
+				// return new Promise((resolve) => {
+				// 	resolve(setReturnValue);
+				// });
 			},
 		};
-		let gamingOCServiceMoke = {
-			getPerformanceOCSetting() {
-				return new Promise((resolve) => {
-					resolve(performanceOCStatus);
-				});
+		const gamingOCServiceMoke = {
+			getPerformanceOCSetting: () => {
+				Promise.resolve(performanceOCStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(performanceOCStatus);
+				// });
 			},
 		};
 
@@ -798,25 +801,28 @@ describe('WidgetLegionEdgeComponent', () => {
 	});
 
 	describe('thermal mode 3.0', () => {
-		let thermalModeRealStatus = 2;
-		let performanceOCStatus = false;
-		let gamingThermalModeServiceMock = {
-			getThermalModeRealStatus() {
-				return new Promise((resolve) => {
-					resolve(thermalModeRealStatus);
-				});
+		const thermalModeRealStatus = 2;
+		const performanceOCStatus = false;
+		const gamingThermalModeServiceMock = {
+			getThermalModeRealStatus: () => {
+				Promise.resolve(thermalModeRealStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(thermalModeRealStatus);
+				// });
 			},
-			regThermalModeRealStatusChangeEvent() {
-				return new Promise((resolve) => {
-					resolve(setReturnValue);
-				});
+			regThermalModeRealStatusChangeEvent: () => {
+				Promise.resolve(setReturnValue);
+				// return new Promise((resolve) => {
+				// 	resolve(setReturnValue);
+				// });
 			},
 		};
-		let gamingOCServiceMoke = {
-			getPerformanceOCSetting() {
-				return new Promise((resolve) => {
-					resolve(performanceOCStatus);
-				});
+		const gamingOCServiceMoke = {
+			getPerformanceOCSetting: () => {
+				Promise.resolve(performanceOCStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(performanceOCStatus);
+				// });
 			},
 		};
 
@@ -938,7 +944,7 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCFeatureCache = false;
 			component.performanceOCSettings = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(
+			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.none,
 				`cpuOCFeatureCache&gpuOCFeatureCache are false, component.OCSupported should be thermalMode2Enum.none`
 			);
@@ -950,13 +956,13 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCFeatureCache = false;
 			xtuServiceCache = true;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(
+			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.cpu,
 				`cpuOCFeatureCache&xtuServiceCache are true, gpuOCFeatureCache is false, component.OCSupported should be thermalMode2Enum.cpu`
 			);
 			xtuServiceCache = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(
+			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.none,
 				`cpuOCFeatureCache is true, xtuServiceCache&gpuOCFeatureCache are false, component.OCSupported should be thermalMode2Enum.none`
 			);
@@ -964,13 +970,13 @@ describe('WidgetLegionEdgeComponent', () => {
 			gpuOCFeatureCache = true;
 			nvDriverCache = true;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(
+			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.gpu,
 				`cpuOCFeatureCache is false, gpuOCFeatureCache&nvDriverCache are true, component.OCSupported should be thermalMode2Enum.gpu`
 			);
 			nvDriverCache = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(
+			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.none,
 				`cpuOCFeatureCache&nvDriverCache are false, gpuOCFeatureCache is true, component.OCSupported should be thermalMode2Enum.none`
 			);
@@ -979,28 +985,28 @@ describe('WidgetLegionEdgeComponent', () => {
 			xtuServiceCache = true;
 			nvDriverCache = true;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(
+			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.cpu_gpu,
 				`cpuOCFeatureCache&xtuServiceCache are true, gpuOCFeatureCache&nvDriverCache are true, component.OCSupported should be thermalMode2Enum.cpu_gpu`
 			);
 			xtuServiceCache = false;
 			nvDriverCache = true;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(
+			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.none,
 				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&nvDriverCache are true, xtuServiceCache is false, component.OCSupported should be thermalMode2Enum.none`
 			);
 			xtuServiceCache = true;
 			nvDriverCache = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(
+			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.none,
 				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache&xtuServiceCache are true, nvDriverCache is false, component.OCSupported should be thermalMode2Enum.none`
 			);
 			xtuServiceCache = false;
 			nvDriverCache = false;
 			component.ngOnInit();
-			expect(component.OCSupported).toBe(
+			expect(component.ocSupported).toBe(
 				component.thermalMode2Enum.none,
 				`cpuOCFeatureCache&xtuServiceCache&gpuOCFeatureCache are true, xtuServiceCache&nvDriverCache are false, component.OCSupported should be thermalMode2Enum.none`
 			);
@@ -1035,17 +1041,17 @@ describe('WidgetLegionEdgeComponent', () => {
 			component.gamingCapabilities.thermalModeVersion = 4;
 			component.thermalModeRealStatus = component.thermalMode2Enum.performance;
 			component.performanceOCSettings = true;
-			component.OCSupported = component.thermalMode2Enum.cpu_gpu;
+			component.ocSupported = component.thermalMode2Enum.cpu_gpu;
 			expect(component.getOCTips()).toBe(
 				'CPU & GPU overclocking activated',
 				'getOCTips should be CPU & GPU overclocking activated'
 			);
-			component.OCSupported = component.thermalMode2Enum.cpu;
+			component.ocSupported = component.thermalMode2Enum.cpu;
 			expect(component.getOCTips()).toBe(
 				'CPU overclocking activated',
 				'getOCTips should be CPU overclocking activated'
 			);
-			component.OCSupported = component.thermalMode2Enum.gpu;
+			component.ocSupported = component.thermalMode2Enum.gpu;
 			expect(component.getOCTips()).toBe(
 				'GPU overclocking activated',
 				'getOCTips should be GPU overclocking activated'
@@ -1055,24 +1061,27 @@ describe('WidgetLegionEdgeComponent', () => {
 
 	describe('cpu over clock', () => {
 		let cpuOCStatus = 3;
-		let gamingSystemUpdateServiceMock = {
-			getCpuOCStatus() {
-				return new Promise((resolve) => {
-					resolve(cpuOCStatus);
-				});
+		const gamingSystemUpdateServiceMock = {
+			getCpuOCStatus: () => {
+				Promise.resolve(cpuOCStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(cpuOCStatus);
+				// });
 			},
-			setCpuOCStatus(value: number) {
+			setCpuOCStatus: (value: number) => {
 				if (setReturnValue) {
 					cpuOCStatus = value;
 				}
+				// Promise.resolve(setReturnValue);
 				return new Promise((resolve) => {
 					resolve(setReturnValue);
 				});
 			},
-			getRamOCStatus() {
-				return new Promise((resolve) => {
-					resolve(false);
-				});
+			getRamOCStatus: () => {
+				Promise.resolve(false);
+				// return new Promise((resolve) => {
+				// 	resolve(false);
+				// });
 			},
 		};
 		beforeEach(waitForAsync(() => {
@@ -1202,7 +1211,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 
 		it('onShowDropdown', () => {
-			let event = {
+			const event = {
 				type: 'gaming.dashboard.device.legionEdge.title',
 			};
 			component.drop.hideDropDown = false;
@@ -1223,7 +1232,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		});
 
 		it('onOptionSelected', fakeAsync(() => {
-			let event = {
+			const event = {
 				target: {
 					name: 'gaming.dashboard.device.legionEdge.wrongTitle',
 				},
@@ -1268,13 +1277,14 @@ describe('WidgetLegionEdgeComponent', () => {
 
 	describe('RAM over clock', () => {
 		let ramOCStatus = false;
-		let gamingSystemUpdateServiceMock = {
-			getRamOCStatus() {
-				return new Promise((resolve) => {
-					resolve(ramOCStatus);
-				});
+		const gamingSystemUpdateServiceMock = {
+			getRamOCStatus: () => {
+				Promise.resolve(ramOCStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(ramOCStatus);
+				// });
 			},
-			setRamOCStatus(value: boolean) {
+			setRamOCStatus: (value: boolean) => {
 				if (setReturnValue) {
 					ramOCStatus = value;
 				}
@@ -1522,13 +1532,14 @@ describe('WidgetLegionEdgeComponent', () => {
 
 	describe('network boost', () => {
 		let networkBoostModeStatus = false;
-		let networkBoostServiceMoke = {
-			getNetworkBoostStatus() {
-				return new Promise((resolve) => {
-					resolve(networkBoostModeStatus);
-				});
+		const networkBoostServiceMoke = {
+			getNetworkBoostStatus: () => {
+				Promise.resolve(networkBoostModeStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(networkBoostModeStatus);
+				// });
 			},
-			setNetworkBoostStatus(value: boolean) {
+			setNetworkBoostStatus: (value: boolean) => {
 				if (setReturnValue) {
 					networkBoostModeStatus = value;
 				}
@@ -1795,13 +1806,14 @@ describe('WidgetLegionEdgeComponent', () => {
 
 	describe('auto close', () => {
 		let autoCloseModeStatus = false;
-		let gamingAutoCloseServiceMock = {
-			getAutoCloseStatus() {
-				return new Promise((resolve) => {
-					resolve(autoCloseModeStatus);
-				});
+		const gamingAutoCloseServiceMock = {
+			getAutoCloseStatus: () => {
+				Promise.resolve(autoCloseModeStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(autoCloseModeStatus);
+				// });
 			},
-			setAutoCloseStatus(value: boolean) {
+			setAutoCloseStatus: (value: boolean) => {
 				if (setReturnValue) {
 					autoCloseModeStatus = value;
 				}
@@ -2007,13 +2019,14 @@ describe('WidgetLegionEdgeComponent', () => {
 
 	describe('hybrid mode', () => {
 		let hybridModeStatus = false;
-		let gamingHybridModeServiceMock = {
-			getHybridModeStatus() {
-				return new Promise((resolve) => {
-					resolve(hybridModeStatus);
-				});
+		const gamingHybridModeServiceMock = {
+			getHybridModeStatus: () => {
+				Promise.resolve(hybridModeStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(hybridModeStatus);
+				// });
 			},
-			setHybridModeStatus(value: boolean) {
+			setHybridModeStatus: (value: boolean) => {
 				if (setReturnValue) {
 					hybridModeStatus = value;
 				}
@@ -2215,13 +2228,14 @@ describe('WidgetLegionEdgeComponent', () => {
 
 	describe('over drive', () => {
 		let overDriveStatus = true;
-		let gamingOverDriveServiceMock = {
-			getOverDriveStatus() {
-				return new Promise((resolve) => {
-					resolve(overDriveStatus);
-				});
+		const gamingOverDriveServiceMock = {
+			getOverDriveStatus: () => {
+				Promise.resolve(overDriveStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(overDriveStatus);
+				// });
 			},
-			setOverDriveStatus(value: boolean) {
+			setOverDriveStatus: (value: boolean) => {
 				if (setReturnValue) {
 					overDriveStatus = value;
 				}
@@ -2434,13 +2448,14 @@ describe('WidgetLegionEdgeComponent', () => {
 
 	describe('touchpad lock', () => {
 		let touchpadLockStatus = false;
-		let gamingKeyLockServiceMock = {
-			getKeyLockStatus() {
-				return new Promise((resolve) => {
-					resolve(touchpadLockStatus);
-				});
+		const gamingKeyLockServiceMock = {
+			getKeyLockStatus: () => {
+				Promise.resolve(touchpadLockStatus);
+				// return new Promise((resolve) => {
+				// 	resolve(touchpadLockStatus);
+				// });
 			},
-			setKeyLockStatus(value: boolean) {
+			setKeyLockStatus: (value: boolean) => {
 				if (setReturnValue) {
 					touchpadLockStatus = value;
 				}
@@ -2764,7 +2779,7 @@ describe('WidgetLegionEdgeComponent', () => {
 
 		it('onOptionSelected catch error', () => {
 			gamingSystemUpdateServiceSpy.setCpuOCStatus.and.throwError('setCpuOCStatus error');
-			let event = {
+			const event = {
 				target: {
 					name: 'gaming.dashboard.device.legionEdge.title',
 				},
@@ -3018,16 +3033,18 @@ describe('WidgetLegionEdgeComponent', () => {
 	});
 
 	describe('quick setting toolbar & toast event', () => {
-		let gamingQuickSettingToolbarServiceMock = {
-			registerEvent() {
-				return new Promise((resolve) => {
-					resolve(true);
-				});
+		const gamingQuickSettingToolbarServiceMock = {
+			registerEvent: () => {
+				Promise.resolve(true);
+				// return new Promise((resolve) => {
+				// 	resolve(true);
+				// });
 			},
-			unregisterEvent() {
-				return new Promise((resolve) => {
-					resolve(true);
-				});
+			unregisterEvent: () => {
+				Promise.resolve(true);
+				// return new Promise((resolve) => {
+				// 	resolve(true);
+				// });
 			},
 		};
 		beforeEach(waitForAsync(() => {

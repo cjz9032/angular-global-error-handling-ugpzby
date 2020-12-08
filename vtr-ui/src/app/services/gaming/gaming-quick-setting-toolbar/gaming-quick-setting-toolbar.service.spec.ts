@@ -47,8 +47,8 @@ describe('GamingQuickSettingToolbarService', () => {
 	describe('isShellAvailable is true: ', () => {
 		beforeEach(() => {
 			const spy = jasmine.createSpyObj('VantageService', ['getQuickSettingToolbar']);
-			let spyValue = {
-				registerEvent(type: any) {
+			const spyValue = {
+				registerEvent: (type: any) => {
 					return new Promise((resolve, reject) => {
 						if (type) {
 							resolve(true);
@@ -56,7 +56,7 @@ describe('GamingQuickSettingToolbarService', () => {
 						reject('registerEvent error');
 					});
 				},
-				unregisterEvent(type: any) {
+				unregisterEvent: (type: any) => {
 					return new Promise((resolve, reject) => {
 						if (type) {
 							resolve(true);
@@ -77,10 +77,10 @@ describe('GamingQuickSettingToolbarService', () => {
 			gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
 			shellService = TestBed.inject(VantageShellService);
 		});
-		function setup() {
+		const setup = () => {
 			const service = TestBed.get(GamingQuickSettingToolbarService);
 			return { service };
-		}
+		};
 		it('inject shellService', () => {
 			expect(shellService).toBeTruthy();
 		});
@@ -110,12 +110,12 @@ describe('GamingQuickSettingToolbarService', () => {
 		beforeEach(() => {
 			const spy = jasmine.createSpyObj('VantageService', ['getQuickSettingToolbar']);
 			const stubValue = {
-				registerEvent(type: string) {
+				registerEvent: (type: string) => {
 					if (typeof type !== 'string') {
 						throw new Error('registerEvent error');
 					}
 				},
-				unregisterEvent(type: string) {
+				unregisterEvent: (type: string) => {
 					if (typeof type !== 'string') {
 						throw new Error('unregisterEvent error');
 					}
