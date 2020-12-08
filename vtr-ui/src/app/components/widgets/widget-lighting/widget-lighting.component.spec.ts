@@ -118,7 +118,7 @@ describe('WidgetLightingComponent', () => {
 
 	it('should show popup', () => {
 		component.isPopupVisible = true;
-		component.SetProfile({ target: { value: 1 } });
+		component.setLightingProfileId({ target: { value: 1 } });
 		expect(component.isPopupVisible).toBe(true);
 	});
 
@@ -127,15 +127,15 @@ describe('WidgetLightingComponent', () => {
 		component.setprofId = 0;
 		spy.setLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: true }));
 		component.didSuccess = true;
-		component.SetProfile({ target: { value: 1 } });
+		component.setLightingProfileId({ target: { value: 1 } });
 		expect(component.setprofId).toEqual(1);
 		component.setprofId = 1;
-		component.SetProfile({ target: { value: 1 } });
+		component.setLightingProfileId({ target: { value: 1 } });
 		expect(component.setprofId).toEqual(1);
 		component.isPopupVisible = false;
 		spy.setLightingProfileId.and.returnValue(Promise.resolve({ didSuccess: null }));
-		component.SetProfile({ target: { value: 2 } });
-		expect(component.SetProfile({ target: { value: 1 } })).toBeUndefined();
+		component.setLightingProfileId({ target: { value: 2 } });
+		expect(component.setLightingProfileId({ target: { value: 1 } })).toBeUndefined();
 	});
 
 	it('should setProfileEvent', () => {

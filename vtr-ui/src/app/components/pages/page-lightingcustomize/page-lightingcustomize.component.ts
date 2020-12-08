@@ -26,7 +26,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 	cardContentPositionF: any = {};
 	startDateTime: any = new Date();
 	metrics: any;
-	dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
+	// dynamic_metricsItem: any = 'lighting_profile_cms_inner_content';
 	public ledlayoutversion: any;
 	notificationSubscription: Subscription;
 	capabilitySubscription: Subscription;
@@ -150,10 +150,10 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		}
 	}
 	public getLayOutversion() {
-		let ledSetFeature = this.localCacheService.getLocalCacheValue(
+		const ledSetFeature = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.ledSetFeature
 		);
-		let ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver);
+		const ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver);
 		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.ledLayoutVersion
 		);
