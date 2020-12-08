@@ -7,7 +7,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 describe('Shared service:', () => {
 	let shellService: VantageShellService;
 	let service: GamingAllCapabilitiesService;
-	let capabilities: any = {
+	const capabilities: any = {
 		macroKeyFeature: true,
 		cpuOCFeature: true,
 		memOCFeature: true,
@@ -36,61 +36,57 @@ describe('Shared service:', () => {
 	});
 
 	describe('GamingAllCapabilitiesService', () => {
-		function setup() {
-			// eslint-disable-next-line no-shadow
-			const service = TestBed.get(GamingAllCapabilitiesService);
+		const setup = () => {
+			const getService = TestBed.get(GamingAllCapabilitiesService);
 			// const batteryDetailComponent = TestBed.get(BatteryDetailComponent);
-			return { service };
-		}
+			return { service: getService };
+		};
 		it('should be created', () => {
-			const service: GamingAllCapabilitiesService = TestBed.get(GamingAllCapabilitiesService);
-			expect(service).toBeTruthy();
+			const getService: GamingAllCapabilitiesService = TestBed.get(GamingAllCapabilitiesService);
+			expect(getService).toBeTruthy();
 		});
 
 		it('should call getCapabilities', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
-			spyOn(service.gamingAllCapabilities, 'getCapabilities').and.callThrough();
-			service.getCapabilities();
-			expect(service.gamingAllCapabilities.getCapabilities).toHaveBeenCalled();
+			const { service: setUpService } = setup();
+			spyOn(setUpService.gamingAllCapabilities, 'getCapabilities').and.callThrough();
+			setUpService.getCapabilities();
+			expect(setUpService.gamingAllCapabilities.getCapabilities).toHaveBeenCalled();
 
-			service.isShellAvailable = false;
-			service.getCapabilities();
-			expect(service.gamingAllCapabilities.getCapabilities).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.getCapabilities();
+			expect(setUpService.gamingAllCapabilities.getCapabilities).toHaveBeenCalled();
 		});
 
 		it('should call getCapabilities return err', () => {
-			const { service } = setup();
-			spyOn(service.gamingAllCapabilities, 'getCapabilities').and.throwError(
+			const { service: setUpService } = setup();
+			spyOn(setUpService.gamingAllCapabilities, 'getCapabilities').and.throwError(
 				'GamingAllCapabilitiesService .getCapabilities error'
 			);
-			expect(function () {
-				service.getCapabilities();
+			expect(() => {
+				setUpService.getCapabilities();
 			}).toThrow(new Error('GamingAllCapabilitiesService .getCapabilities error'));
 		});
 
 		it('should call setCapabilityValuesGlobally', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
-			spyOn(service, 'setCapabilityValuesGlobally').and.callThrough();
-			service.setCapabilityValuesGlobally(capabilities);
-			expect(service.setCapabilityValuesGlobally).toHaveBeenCalled();
+			const { service: setUpService } = setup();
+			spyOn(setUpService, 'setCapabilityValuesGlobally').and.callThrough();
+			setUpService.setCapabilityValuesGlobally(capabilities);
+			expect(setUpService.setCapabilityValuesGlobally).toHaveBeenCalled();
 
-			service.isShellAvailable = false;
-			service.setCapabilityValuesGlobally(capabilities);
-			expect(service.setCapabilityValuesGlobally).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.setCapabilityValuesGlobally(capabilities);
+			expect(setUpService.setCapabilityValuesGlobally).toHaveBeenCalled();
 		});
 
 		it('should call getCapabilityFromCache', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
-			spyOn(service, 'getCapabilityFromCache').and.callThrough();
-			service.getCapabilityFromCache();
-			expect(service.getCapabilityFromCache).toHaveBeenCalled();
+			const { service: setUpService } = setup();
+			spyOn(setUpService, 'getCapabilityFromCache').and.callThrough();
+			setUpService.getCapabilityFromCache();
+			expect(setUpService.getCapabilityFromCache).toHaveBeenCalled();
 
-			service.isShellAvailable = false;
-			service.getCapabilityFromCache();
-			expect(service.getCapabilityFromCache).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.getCapabilityFromCache();
+			expect(setUpService.getCapabilityFromCache).toHaveBeenCalled();
 		});
 	});
 });

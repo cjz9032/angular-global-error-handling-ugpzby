@@ -5,8 +5,8 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 	providedIn: 'root',
 })
 export class GamingKeyLockService {
-	private gamingKeyLock: any;
 	public isShellAvailable = false;
+	private gamingKeyLock: any;
 
 	constructor(shellService: VantageShellService) {
 		this.gamingKeyLock = shellService.getGamingKeyLock();

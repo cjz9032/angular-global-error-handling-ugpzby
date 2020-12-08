@@ -20,13 +20,11 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 })
 export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	@Input() title = '';
-	public showHWScanMenu: boolean = false;
+	public showHWScanMenu = false;
 	public gamingProperties: any = new GamingAllCapabilities();
 	// version 3.3 for accessory entrance
-	public showLegionAccessory: boolean = false;
-	public toolLength: number = 3;
-	private notificationSubscription: Subscription;
-	private eventEmitSubscription: Subscription;
+	public showLegionAccessory = false;
+	public toolLength = 3;
 
 	modalAutomationId: any = {
 		section: 'legion_accessory_central_install_popup',
@@ -34,6 +32,9 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		cancelButton: 'legion_accessory_central_install_popup_cancel_button',
 		okButton: 'legion_accessory_central_install_popup_install_button',
 	};
+
+	private notificationSubscription: Subscription;
+	private eventEmitSubscription: Subscription;
 	constructor(
 		private modalService: NgbModal,
 		private commonService: CommonService,
@@ -139,7 +140,7 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	}
 
 	openWaringModal() {
-		let waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
+		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
 		});

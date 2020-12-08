@@ -54,8 +54,8 @@ describe('ModalGamingThermalMode2Component', () => {
 	let autoAdjustSettingStatus = true;
 	let autoAdjustSettingStatusCache = false;
 
-	let localCacheServiceMock = {
-		getLocalCacheValue(key: any) {
+	const localCacheServiceMock = {
+		getLocalCacheValue: (key: any) => {
 			switch (key) {
 				case '[LocalStorageKey] CurrentThermalModeStatus':
 					return thermalModeSettingStatusCache;
@@ -74,7 +74,7 @@ describe('ModalGamingThermalMode2Component', () => {
 					return autoAdjustSettingStatusCache;
 			}
 		},
-		setLocalCacheValue(key: any, value: any) {
+		setLocalCacheValue: (key: any, value: any) => {
 			switch (key) {
 				case '[LocalStorageKey] CurrentThermalModeStatus':
 					thermalModeSettingStatusCache = value;
@@ -101,9 +101,9 @@ describe('ModalGamingThermalMode2Component', () => {
 			}
 		},
 	};
-	let GamingAllCapabilitiesServiceMock = {
+	const gamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
-		getCapabilityFromCache(key: any) {
+		getCapabilityFromCache: (key: any) => {
 			switch (key) {
 				case '[LocalStorageKey] ThermalModeVersion':
 					return thermalModeVersionCache;
@@ -128,14 +128,15 @@ describe('ModalGamingThermalMode2Component', () => {
 			}
 		},
 	};
-	let gamingThermalModeServiceMock = {
+	const gamingThermalModeServiceMock = {
 		isShellAvailable: true,
-		getThermalModeSettingStatus() {
-			return new Promise((resolve) => {
-				resolve(thermalModeSettingStatus);
-			});
+		getThermalModeSettingStatus: () => {
+			Promise.resolve(thermalModeSettingStatus);
+			// return new Promise((resolve) => {
+			// 	resolve(thermalModeSettingStatus);
+			// });
 		},
-		setThermalModeSettingStatus(value: number) {
+		setThermalModeSettingStatus: (value: number) => {
 			if (setReturnValue) {
 				thermalModeSettingStatus = value;
 			}
@@ -143,12 +144,13 @@ describe('ModalGamingThermalMode2Component', () => {
 				resolve(setReturnValue);
 			});
 		},
-		getAutoSwitchStatus() {
-			return new Promise((resolve) => {
-				resolve(autoSwitchStatus);
-			});
+		getAutoSwitchStatus: () => {
+			Promise.resolve(autoSwitchStatus);
+			// return new Promise((resolve) => {
+			// 	resolve(autoSwitchStatus);
+			// });
 		},
-		setAutoSwitchStatus(value: boolean) {
+		setAutoSwitchStatus: (value: boolean) => {
 			if (setReturnValue) {
 				autoSwitchStatus = value;
 			}
@@ -156,32 +158,35 @@ describe('ModalGamingThermalMode2Component', () => {
 				resolve(setReturnValue);
 			});
 		},
-		regThermalModeChangeEvent() {
-			return new Promise((resolve) => {
-				resolve(setReturnValue);
-			});
+		regThermalModeChangeEvent: () => {
+			Promise.resolve(setReturnValue);
+			// return new Promise((resolve) => {
+			// 	resolve(setReturnValue);
+			// });
 		},
 		// Version 3.5 auto adjuste
-		getAutoAdjustSetting() {
-			return new Promise((resolve) => {
-				resolve(autoAdjustSettingStatus);
-			});
+		getAutoAdjustSetting: () => {
+			Promise.resolve(autoAdjustSettingStatus);
+			// return new Promise((resolve) => {
+			// 	resolve(autoAdjustSettingStatus);
+			// });
 		},
-		setAutoAdjustSetting(value) {
+		setAutoAdjustSetting: (value) => {
 			if (setReturnValue) {
 				autoAdjustSettingStatus = value;
 			}
 			return Promise.resolve(setReturnValue);
 		},
 	};
-	let gamingOCServiceMock = {
+	const gamingOCServiceMock = {
 		isShellAvailable: true,
-		getPerformanceOCSetting() {
-			return new Promise((resolve) => {
-				resolve(performanceOCSetting);
-			});
+		getPerformanceOCSetting: () => {
+			Promise.resolve(performanceOCSetting);
+			// return new Promise((resolve) => {
+			// 	resolve(performanceOCSetting);
+			// });
 		},
-		setPerformanceOCSetting(value: boolean) {
+		setPerformanceOCSetting: (value: boolean) => {
 			if (setReturnValue) {
 				performanceOCSetting = value;
 			}
@@ -190,11 +195,11 @@ describe('ModalGamingThermalMode2Component', () => {
 			});
 		},
 	};
-	let metricSpy = jasmine.createSpyObj('MetricService', ['sendMetrics']);
-	let timerSpy = jasmine.createSpyObj('TimerService', ['start', 'stop']);
+	const metricSpy = jasmine.createSpyObj('MetricService', ['sendMetrics']);
+	const timerSpy = jasmine.createSpyObj('TimerService', ['start', 'stop']);
 	describe('thermalMode', () => {
 		beforeEach(waitForAsync(() => {
-			let shellServiveSpy = jasmine.createSpyObj('VantageService', [
+			const shellServiveSpy = jasmine.createSpyObj('VantageService', [
 				'registerEvent',
 				'unRegisterEvent',
 				'getLogger',
@@ -215,7 +220,7 @@ describe('ModalGamingThermalMode2Component', () => {
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{
 						provide: GamingAllCapabilitiesService,
-						useValue: GamingAllCapabilitiesServiceMock,
+						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: GamingOCService, useValue: gamingOCServiceMock },
@@ -609,7 +614,7 @@ describe('ModalGamingThermalMode2Component', () => {
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{
 						provide: GamingAllCapabilitiesService,
-						useValue: GamingAllCapabilitiesServiceMock,
+						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: GamingOCService, useValue: gamingOCServiceMock },
@@ -628,37 +633,37 @@ describe('ModalGamingThermalMode2Component', () => {
 		it('getPerformanceOC(cpu&gpu)', fakeAsync(() => {
 			component.gamingCapabilities.cpuOCFeature = true;
 			component.gamingCapabilities.gpuOCFeature = true;
-			expect(component.OCsupportted).toBe(3, 'OCsupported should be 3');
+			expect(component.ocSupportted).toBe(3, 'OCsupported should be 3');
 			component.isPerformancOCSetted = false;
 			performanceOCSetting = false;
-			component.OCSettings = true;
+			component.ocSettings = true;
 			component.getPerformanceOCSetting();
 			tick();
-			expect(component.OCSettings).toBe(false, 'component.OCSettings should be false');
+			expect(component.ocSettings).toBe(false, 'component.OCSettings should be false');
 			expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should be 3(false)');
 			expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should be 3(false)');
 			tick();
 			performanceOCSetting = true;
-			component.OCSettings = false;
+			component.ocSettings = false;
 			component.getPerformanceOCSetting();
 			tick();
-			expect(component.OCSettings).toBe(true, 'component.OCSettings should be true');
+			expect(component.ocSettings).toBe(true, 'component.OCSettings should be true');
 			expect(cpuOCStatusCache).toBe(1, 'cpuOCStatusCache should be 1(true)');
 			expect(gpuOCStatusCache).toBe(1, 'gpuOCStatusCache should be 1(true)');
 		}));
 		it('setPerformanceOC(cpu&gpu)', fakeAsync(() => {
 			component.gamingCapabilities.cpuOCFeature = true;
 			component.gamingCapabilities.gpuOCFeature = true;
-			expect(component.OCsupportted).toBe(3, 'OCsupported should be 3');
+			expect(component.ocSupportted).toBe(3, 'OCsupported should be 3');
 			setReturnValue = true;
 			// set false to true
-			component.OCSettings = false;
+			component.ocSettings = false;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 3;
 			performanceOCSetting = false;
 			component.setPerformanceOCSetting(true);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				true,
 				`setReturnValue is ${setReturnValue}, component.OCSettings should be true`
 			);
@@ -671,13 +676,13 @@ describe('ModalGamingThermalMode2Component', () => {
 				`setReturnValue is ${setReturnValue},gpuOCStatusCache should be 1(true)`
 			);
 			// set true to false
-			component.OCSettings = true;
+			component.ocSettings = true;
 			cpuOCStatusCache = 1;
 			gpuOCStatusCache = 1;
 			performanceOCSetting = true;
 			component.setPerformanceOCSetting(false);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				false,
 				`setReturnValue is ${setReturnValue}, component.OCSettings should be false`
 			);
@@ -692,13 +697,13 @@ describe('ModalGamingThermalMode2Component', () => {
 
 			setReturnValue = false;
 			// set true return false
-			component.OCSettings = false;
+			component.ocSettings = false;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 3;
 			performanceOCSetting = false;
 			component.setPerformanceOCSetting(true);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				false,
 				`setReturnValue is ${setReturnValue}, component.OCSettings keep false`
 			);
@@ -711,13 +716,13 @@ describe('ModalGamingThermalMode2Component', () => {
 				`setReturnValue is ${setReturnValue},gpuOCStatusCache should keep 3(false)`
 			);
 			// set false return false
-			component.OCSettings = true;
+			component.ocSettings = true;
 			cpuOCStatusCache = 1;
 			gpuOCStatusCache = 1;
 			performanceOCSetting = true;
 			component.setPerformanceOCSetting(false);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				true,
 				`setReturnValue is ${setReturnValue}, component.OCSettings keep true`
 			);
@@ -735,16 +740,16 @@ describe('ModalGamingThermalMode2Component', () => {
 			component.gamingCapabilities.gpuOCFeature = false;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 3;
-			component.OCSettings = true;
+			component.ocSettings = true;
 			component.ngOnInit();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				false,
 				'cpuOCStatusCache is 3, componentOSSettings should be init to false'
 			);
 			cpuOCStatusCache = 1;
-			component.OCSettings = false;
+			component.ocSettings = false;
 			component.ngOnInit();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				true,
 				'cpuOCStatusCache is 1, componentOSSettings should be init to true'
 			);
@@ -753,19 +758,19 @@ describe('ModalGamingThermalMode2Component', () => {
 			component.gamingCapabilities.cpuOCFeature = true;
 			component.gamingCapabilities.gpuOCFeature = false;
 			component.renderOCSupported();
-			expect(component.OCsupportted).toBe(2, 'OCsupported should be 2');
+			expect(component.ocSupportted).toBe(2, 'OCsupported should be 2');
 			performanceOCSetting = false;
 			gpuOCStatusCache = 3;
 			component.getPerformanceOCSetting();
 			tick();
-			expect(component.OCSettings).toBe(false, 'component.OCSettings should be false');
+			expect(component.ocSettings).toBe(false, 'component.OCSettings should be false');
 			expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should be 3(false)');
 			expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should keep 3(false)');
 
 			performanceOCSetting = true;
 			component.getPerformanceOCSetting();
 			tick();
-			expect(component.OCSettings).toBe(true, 'component.OCSettings should be true');
+			expect(component.ocSettings).toBe(true, 'component.OCSettings should be true');
 			expect(cpuOCStatusCache).toBe(1, 'cpuOCStatusCache should be 1(true)');
 			expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should keep 3(false)');
 		}));
@@ -773,16 +778,16 @@ describe('ModalGamingThermalMode2Component', () => {
 			component.gamingCapabilities.cpuOCFeature = true;
 			component.gamingCapabilities.gpuOCFeature = false;
 			component.renderOCSupported();
-			expect(component.OCsupportted).toBe(2, 'OCsupported should be 2');
+			expect(component.ocSupportted).toBe(2, 'OCsupported should be 2');
 			setReturnValue = true;
 			// set false to true
-			component.OCSettings = false;
+			component.ocSettings = false;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 3;
 			performanceOCSetting = false;
 			component.setPerformanceOCSetting(true);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				true,
 				`setReturnValue is ${setReturnValue}, component.OCSettings should be true`
 			);
@@ -795,13 +800,13 @@ describe('ModalGamingThermalMode2Component', () => {
 				`setReturnValue is ${setReturnValue},gpuOCStatusCache should keep 3(false)`
 			);
 			// set true to false
-			component.OCSettings = true;
+			component.ocSettings = true;
 			cpuOCStatusCache = 1;
 			gpuOCStatusCache = 3;
 			performanceOCSetting = true;
 			component.setPerformanceOCSetting(false);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				false,
 				`setReturnValue is ${setReturnValue}, component.OCSettings should be false`
 			);
@@ -816,13 +821,13 @@ describe('ModalGamingThermalMode2Component', () => {
 
 			setReturnValue = false;
 			// set true return false
-			component.OCSettings = false;
+			component.ocSettings = false;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 3;
 			performanceOCSetting = false;
 			component.setPerformanceOCSetting(true);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				false,
 				`setReturnValue is ${setReturnValue}, component.OCSettings keep false`
 			);
@@ -835,13 +840,13 @@ describe('ModalGamingThermalMode2Component', () => {
 				`setReturnValue is ${setReturnValue},gpuOCStatusCache should keep 3(false)`
 			);
 			// set false return false
-			component.OCSettings = true;
+			component.ocSettings = true;
 			cpuOCStatusCache = 1;
 			gpuOCStatusCache = 3;
 			performanceOCSetting = true;
 			component.setPerformanceOCSetting(false);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				true,
 				`setReturnValue is ${setReturnValue}, component.OCSettings keep true`
 			);
@@ -859,16 +864,16 @@ describe('ModalGamingThermalMode2Component', () => {
 			component.gamingCapabilities.gpuOCFeature = true;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 3;
-			component.OCSettings = true;
+			component.ocSettings = true;
 			component.ngOnInit();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				false,
 				'gpuOCStatusCache is 3, componentOSSettings should be init to false'
 			);
 			gpuOCStatusCache = 1;
-			component.OCSettings = false;
+			component.ocSettings = false;
 			component.ngOnInit();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				true,
 				'gpuOCStatusCache is 1, componentOSSettings should be init to true'
 			);
@@ -877,23 +882,23 @@ describe('ModalGamingThermalMode2Component', () => {
 			component.gamingCapabilities.cpuOCFeature = false;
 			component.gamingCapabilities.gpuOCFeature = true;
 			component.renderOCSupported();
-			expect(component.OCsupportted).toBe(1, 'OCsupported should be 1');
+			expect(component.ocSupportted).toBe(1, 'OCsupported should be 1');
 			tick();
 			cpuOCStatusCache = 3;
 			component.isPerformancOCSetted = false;
 			performanceOCSetting = false;
-			component.OCSettings = true;
+			component.ocSettings = true;
 			component.getPerformanceOCSetting();
 			tick();
-			expect(component.OCSettings).toBe(false, 'component.OCSettings should be false');
+			expect(component.ocSettings).toBe(false, 'component.OCSettings should be false');
 			expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should keep 3(false)');
 			expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should be 3(false)');
 			tick();
 			performanceOCSetting = true;
-			component.OCSettings = false;
+			component.ocSettings = false;
 			component.getPerformanceOCSetting();
 			tick();
-			expect(component.OCSettings).toBe(true, 'component.OCSettings should be true');
+			expect(component.ocSettings).toBe(true, 'component.OCSettings should be true');
 			expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should keep 3(false)');
 			expect(gpuOCStatusCache).toBe(1, 'gpuOCStatusCache should be 1(true)');
 		}));
@@ -901,16 +906,16 @@ describe('ModalGamingThermalMode2Component', () => {
 			component.gamingCapabilities.cpuOCFeature = false;
 			component.gamingCapabilities.gpuOCFeature = true;
 			component.renderOCSupported();
-			expect(component.OCsupportted).toBe(1, 'OCsupported should be 1');
+			expect(component.ocSupportted).toBe(1, 'OCsupported should be 1');
 			setReturnValue = true;
 			// set false to true
-			component.OCSettings = false;
+			component.ocSettings = false;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 3;
 			performanceOCSetting = false;
 			component.setPerformanceOCSetting(true);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				true,
 				`setReturnValue is ${setReturnValue}, component.OCSettings should be true`
 			);
@@ -923,13 +928,13 @@ describe('ModalGamingThermalMode2Component', () => {
 				`setReturnValue is ${setReturnValue},gpuOCStatusCache should be 1(true)`
 			);
 			// set true to false
-			component.OCSettings = true;
+			component.ocSettings = true;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 1;
 			performanceOCSetting = true;
 			component.setPerformanceOCSetting(false);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				false,
 				`setReturnValue is ${setReturnValue}, component.OCSettings should be false`
 			);
@@ -944,13 +949,13 @@ describe('ModalGamingThermalMode2Component', () => {
 
 			setReturnValue = false;
 			// set true return false
-			component.OCSettings = false;
+			component.ocSettings = false;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 3;
 			performanceOCSetting = false;
 			component.setPerformanceOCSetting(true);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				false,
 				`setReturnValue is ${setReturnValue}, component.OCSettings keep false`
 			);
@@ -963,13 +968,13 @@ describe('ModalGamingThermalMode2Component', () => {
 				`setReturnValue is ${setReturnValue},gpuOCStatusCache should keep 3(false)`
 			);
 			// set false return false
-			component.OCSettings = true;
+			component.ocSettings = true;
 			cpuOCStatusCache = 3;
 			gpuOCStatusCache = 1;
 			performanceOCSetting = true;
 			component.setPerformanceOCSetting(false);
 			tick();
-			expect(component.OCSettings).toBe(
+			expect(component.ocSettings).toBe(
 				true,
 				`setReturnValue is ${setReturnValue}, component.OCSettings keep true`
 			);
@@ -985,10 +990,10 @@ describe('ModalGamingThermalMode2Component', () => {
 		it('not OC supported', () => {
 			component.gamingCapabilities.cpuOCFeature = false;
 			component.gamingCapabilities.gpuOCFeature = false;
-			component.OCSettings = false;
+			component.ocSettings = false;
 			component.ngOnInit();
-			expect(component.OCsupportted).toBe(0, 'component OCsupported should keep 0');
-			expect(component.OCSettings).toBe(false, 'component OSSettings should keep false');
+			expect(component.ocSupportted).toBe(0, 'component OCsupported should keep 0');
+			expect(component.ocSettings).toBe(false, 'component OSSettings should keep false');
 		});
 		it('driver lack', () => {
 			component.gamingCapabilities.xtuService = true;
@@ -1030,7 +1035,7 @@ describe('ModalGamingThermalMode2Component', () => {
 		let gamingOCService: any;
 		let metricService: any;
 		beforeEach(waitForAsync(() => {
-			let gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', [
+			const gamingThermalModeServiceSpy = jasmine.createSpyObj('GamingThermalModeService', [
 				'getThermalModeSettingStatus',
 				'setThermalModeSettingStatus',
 				'getAutoSwitchStatus',
@@ -1039,11 +1044,11 @@ describe('ModalGamingThermalMode2Component', () => {
 				'getAutoAdjustSetting',
 				'setAutoAdjustSetting',
 			]);
-			let gamingOCServiceSpy = jasmine.createSpyObj('GamingOCService', [
+			const gamingOCServiceSpy = jasmine.createSpyObj('GamingOCService', [
 				'getPerformanceOCSetting',
 				'setPerformanceOCSetting',
 			]);
-			let metricSpyForError = jasmine.createSpyObj('MetricService', ['sendMetrics']);
+			const metricSpyForError = jasmine.createSpyObj('MetricService', ['sendMetrics']);
 			TestBed.configureTestingModule({
 				declarations: [
 					ModalGamingThermalMode2Component,
@@ -1059,7 +1064,7 @@ describe('ModalGamingThermalMode2Component', () => {
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{
 						provide: GamingAllCapabilitiesService,
-						useValue: GamingAllCapabilitiesServiceMock,
+						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
 					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
@@ -1200,14 +1205,14 @@ describe('ModalGamingThermalMode2Component', () => {
 				gamingOCService.setPerformanceOCSetting.and.throwError(
 					'setPerformanceOCSetting error'
 				);
-				component.OCSettings = false;
+				component.ocSettings = false;
 				cpuOCStatusCache = 3;
 				gpuOCStatusCache = 3;
 				fixture.detectChanges();
 				component.setPerformanceOCSetting(true);
 			} catch (err) {
 				expect(err).toMatch('setPerformanceOCSetting error');
-				expect(component.OCSettings).toBe(false, 'component.OCSettings should keep false');
+				expect(component.ocSettings).toBe(false, 'component.OCSettings should keep false');
 				expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should keep 3(false)');
 				expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should keep 3(false)');
 			}
@@ -1218,14 +1223,14 @@ describe('ModalGamingThermalMode2Component', () => {
 				gamingOCService.setPerformanceOCSetting.and.throwError(
 					'setPerformanceOCSetting error'
 				);
-				component.OCSettings = true;
+				component.ocSettings = true;
 				cpuOCStatusCache = 1;
 				gpuOCStatusCache = 1;
 				fixture.detectChanges();
 				component.setPerformanceOCSetting(false);
 			} catch (err) {
 				expect(err).toMatch('setPerformanceOCSetting error');
-				expect(component.OCSettings).toBe(true, 'component.OCSettings should keep true');
+				expect(component.ocSettings).toBe(true, 'component.OCSettings should keep true');
 				expect(cpuOCStatusCache).toBe(1, 'cpuOCStatusCache should keep 1(true)');
 				expect(gpuOCStatusCache).toBe(1, 'gpuOCStatusCache should keep 1(true)');
 			}
@@ -1240,14 +1245,14 @@ describe('ModalGamingThermalMode2Component', () => {
 				gamingOCService.setPerformanceOCSetting.and.throwError(
 					'setPerformanceOCSetting error'
 				);
-				component.OCSettings = false;
+				component.ocSettings = false;
 				cpuOCStatusCache = 3;
 				gpuOCStatusCache = 3;
 				fixture.detectChanges();
 				component.setPerformanceOCSetting(true);
 			} catch (err) {
 				expect(err).toMatch('setPerformanceOCSetting error');
-				expect(component.OCSettings).toBe(false, 'component.OCSettings should keep false');
+				expect(component.ocSettings).toBe(false, 'component.OCSettings should keep false');
 				expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should keep 3(false)');
 				expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should keep 3(false)');
 			}
@@ -1258,14 +1263,14 @@ describe('ModalGamingThermalMode2Component', () => {
 				gamingOCService.setPerformanceOCSetting.and.throwError(
 					'setPerformanceOCSetting error'
 				);
-				component.OCSettings = true;
+				component.ocSettings = true;
 				cpuOCStatusCache = 1;
 				gpuOCStatusCache = 3;
 				fixture.detectChanges();
 				component.setPerformanceOCSetting(false);
 			} catch (err) {
 				expect(err).toMatch('setPerformanceOCSetting error');
-				expect(component.OCSettings).toBe(true, 'component.OCSettings should keep true');
+				expect(component.ocSettings).toBe(true, 'component.OCSettings should keep true');
 				expect(cpuOCStatusCache).toBe(1, 'cpuOCStatusCache should keep 1(true)');
 				expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should keep 3(false)');
 			}
@@ -1280,14 +1285,14 @@ describe('ModalGamingThermalMode2Component', () => {
 				gamingOCService.setPerformanceOCSetting.and.throwError(
 					'setPerformanceOCSetting error'
 				);
-				component.OCSettings = false;
+				component.ocSettings = false;
 				cpuOCStatusCache = 3;
 				gpuOCStatusCache = 3;
 				fixture.detectChanges();
 				component.setPerformanceOCSetting(true);
 			} catch (err) {
 				expect(err).toMatch('setPerformanceOCSetting error');
-				expect(component.OCSettings).toBe(false, 'component.OCSettings should keep false');
+				expect(component.ocSettings).toBe(false, 'component.OCSettings should keep false');
 				expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should keep 3(false)');
 				expect(gpuOCStatusCache).toBe(3, 'gpuOCStatusCache should keep 3(false)');
 			}
@@ -1298,14 +1303,14 @@ describe('ModalGamingThermalMode2Component', () => {
 				gamingOCService.setPerformanceOCSetting.and.throwError(
 					'setPerformanceOCSetting error'
 				);
-				component.OCSettings = true;
+				component.ocSettings = true;
 				cpuOCStatusCache = 3;
 				gpuOCStatusCache = 1;
 				fixture.detectChanges();
 				component.setPerformanceOCSetting(false);
 			} catch (err) {
 				expect(err).toMatch('setPerformanceOCSetting error');
-				expect(component.OCSettings).toBe(true, 'component.OCSettings should keep true');
+				expect(component.ocSettings).toBe(true, 'component.OCSettings should keep true');
 				expect(cpuOCStatusCache).toBe(3, 'cpuOCStatusCache should keep 3(false)');
 				expect(gpuOCStatusCache).toBe(1, 'gpuOCStatusCache should keep 1(true)');
 			}
@@ -1317,7 +1322,7 @@ describe('ModalGamingThermalMode2Component', () => {
 				gamingOCService.getPerformanceOCSetting.and.returnValue(Promise.resolve(false));
 				metricService.sendMetrics.and.throwError('sendMetrics error');
 				fixture.detectChanges();
-				let metricsdataMoke = {
+				const metricsdataMoke = {
 					ItemName: undefined,
 					ItemValue: undefined,
 				};
@@ -1407,7 +1412,7 @@ describe('ModalGamingThermalMode2Component', () => {
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{
 						provide: GamingAllCapabilitiesService,
-						useValue: GamingAllCapabilitiesServiceMock,
+						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: GamingOCService, useValue: gamingOCServiceMock },
@@ -1436,7 +1441,7 @@ describe('ModalGamingThermalMode2Component', () => {
 			expect(activeModalService.close).toHaveBeenCalledTimes(2);
 		});
 		it('openWaringModal & openAdvanceOCModal', () => {
-			let modalRef = new ModalGamingPromptStubComponent();
+			const modalRef = new ModalGamingPromptStubComponent();
 			spyOn(modalService, 'open').and.returnValue(modalRef);
 			expect(modalService.open).toHaveBeenCalledTimes(0);
 			component.openWaringModal();
@@ -1449,7 +1454,7 @@ describe('ModalGamingThermalMode2Component', () => {
 	describe('about metric', () => {
 		let metricService: any;
 		beforeEach(waitForAsync(() => {
-			let metricSpyForFeature = jasmine.createSpyObj('MetricService', ['sendMetrics']);
+			const metricSpyForFeature = jasmine.createSpyObj('MetricService', ['sendMetrics']);
 			TestBed.configureTestingModule({
 				declarations: [
 					ModalGamingThermalMode2Component,
@@ -1465,7 +1470,7 @@ describe('ModalGamingThermalMode2Component', () => {
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{
 						provide: GamingAllCapabilitiesService,
-						useValue: GamingAllCapabilitiesServiceMock,
+						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
 					{ provide: GamingOCService, useValue: gamingOCServiceMock },
@@ -1484,7 +1489,7 @@ describe('ModalGamingThermalMode2Component', () => {
 		});
 		it('sendFeatureClickMetrics', () => {
 			fixture.detectChanges();
-			let metricsdataMoke = {
+			const metricsdataMoke = {
 				ItmeType: undefined,
 				ItemParent: undefined,
 				ItemName: undefined,

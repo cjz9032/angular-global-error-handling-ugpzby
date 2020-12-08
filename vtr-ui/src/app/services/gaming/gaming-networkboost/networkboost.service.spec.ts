@@ -19,167 +19,158 @@ describe('Shared service:', () => {
 		localCache = TestBed.get(LocalCacheService);
 	});
 	describe(':', () => {
-		function setup() {
-			// eslint-disable-next-line no-shadow
-			const service = TestBed.get(NetworkBoostService);
+		const setup = () => {
+			const setUpService = TestBed.get(NetworkBoostService);
 			// const batteryDetailComponent = TestBed.get(BatteryDetailComponent);
-			return { service };
-		}
+			return { setUpService };
+		};
 
 		it('should call getNetworkBoostStatus', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
+			const { setUpService } = setup();
 			const mockNetworkBoostData = {
 				networkBoostFeature: true,
 			};
-			spyOn(service.gamingNetworkBoost, 'getNetUsingProcesses').and.callThrough();
-			service.getNetUsingProcesses();
-			expect(service.gamingNetworkBoost.getNetUsingProcesses).toHaveBeenCalled();
-			service.isShellAvailable = false;
-			service.getNetUsingProcesses();
-			expect(service.gamingNetworkBoost.getNetUsingProcesses).toHaveBeenCalled();
+			spyOn(setUpService.gamingNetworkBoost, 'getNetUsingProcesses').and.callThrough();
+			setUpService.getNetUsingProcesses();
+			expect(setUpService.gamingNetworkBoost.getNetUsingProcesses).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.getNetUsingProcesses();
+			expect(setUpService.gamingNetworkBoost.getNetUsingProcesses).toHaveBeenCalled();
 		});
 
 		it('should call getNetworkBoostList', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
+			const { setUpService } = setup();
 			const mockNetworkBoostData = {
 				networkBoostFeature: true,
 			};
-			const myobj = spyOn(service, 'getNetworkBoostList').and.callThrough();
-			service.getNetworkBoostList();
+			const myobj = spyOn(setUpService, 'getNetworkBoostList').and.callThrough();
+			setUpService.getNetworkBoostList();
 			expect(myobj).toHaveBeenCalled();
-			service.isShellAvailable = false;
-			service.getNetworkBoostList();
+			setUpService.isShellAvailable = false;
+			setUpService.getNetworkBoostList();
 			expect(myobj).toHaveBeenCalled();
 		});
 
 		it('should call getNeedToAsk', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
+			const { setUpService } = setup();
 			const mockNetworkBoostData = {
 				networkBoostFeature: true,
 			};
-			const myobj = spyOn(service, 'getNeedToAsk').and.callThrough();
-			service.getNeedToAsk();
+			const myobj = spyOn(setUpService, 'getNeedToAsk').and.callThrough();
+			setUpService.getNeedToAsk();
 			expect(myobj).toHaveBeenCalled();
 		});
 
 		it('should call setNeedToAsk', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
+			const { setUpService } = setup();
 			const mockNetworkBoostData = {
 				networkBoostFeature: true,
 			};
-			const myobj = spyOn(service, 'setNeedToAsk').and.callThrough();
-			service.setNeedToAsk();
+			const myobj = spyOn(setUpService, 'setNeedToAsk').and.callThrough();
+			setUpService.setNeedToAsk();
 			expect(myobj).toHaveBeenCalled();
 		});
 
 		it('should call getNetworkBoostStatus', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
-			spyOn(service.gamingNetworkBoost, 'getStatus').and.callThrough();
-			service.getNetworkBoostStatus();
-			expect(service.gamingNetworkBoost.getStatus).toHaveBeenCalled();
-			service.isShellAvailable = false;
-			service.getNetworkBoostStatus();
-			expect(service.gamingNetworkBoost.getStatus).toHaveBeenCalled();
+			const { setUpService } = setup();
+			spyOn(setUpService.gamingNetworkBoost, 'getStatus').and.callThrough();
+			setUpService.getNetworkBoostStatus();
+			expect(setUpService.gamingNetworkBoost.getStatus).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.getNetworkBoostStatus();
+			expect(setUpService.gamingNetworkBoost.getStatus).toHaveBeenCalled();
 		});
 
 		it('should call setNetworkBoostStatus', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
-			spyOn(service.gamingNetworkBoost, 'setStatus').and.callThrough();
-			service.setNetworkBoostStatus();
-			expect(service.gamingNetworkBoost.setStatus).toHaveBeenCalled();
-			service.isShellAvailable = false;
-			service.setNetworkBoostStatus();
-			expect(service.gamingNetworkBoost.setStatus).toHaveBeenCalled();
+			const { setUpService } = setup();
+			spyOn(setUpService.gamingNetworkBoost, 'setStatus').and.callThrough();
+			setUpService.setNetworkBoostStatus();
+			expect(setUpService.gamingNetworkBoost.setStatus).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.setNetworkBoostStatus();
+			expect(setUpService.gamingNetworkBoost.setStatus).toHaveBeenCalled();
 		});
 
 		it('should call addProcessToNetworkBoost', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
-			spyOn(service.gamingNetworkBoost, 'addProcessToNetBoost').and.callThrough();
-			service.addProcessToNetworkBoost();
-			expect(service.gamingNetworkBoost.addProcessToNetBoost).toHaveBeenCalled();
-			service.isShellAvailable = false;
-			service.addProcessToNetworkBoost();
-			expect(service.gamingNetworkBoost.addProcessToNetBoost).toHaveBeenCalled();
+			const { setUpService } = setup();
+			spyOn(setUpService.gamingNetworkBoost, 'addProcessToNetBoost').and.callThrough();
+			setUpService.addProcessToNetworkBoost();
+			expect(setUpService.gamingNetworkBoost.addProcessToNetBoost).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.addProcessToNetworkBoost();
+			expect(setUpService.gamingNetworkBoost.addProcessToNetBoost).toHaveBeenCalled();
 		});
 
 		it('should call deleteProcessInNetBoost', () => {
-			// eslint-disable-next-line no-shadow
-			const { service } = setup();
-			spyOn(service.gamingNetworkBoost, 'deleteProcessInNetBoost').and.callThrough();
-			service.deleteProcessInNetBoost('apps');
-			expect(service.gamingNetworkBoost.deleteProcessInNetBoost).toHaveBeenCalled();
-			service.isShellAvailable = false;
-			service.deleteProcessInNetBoost('apps');
-			expect(service.gamingNetworkBoost.deleteProcessInNetBoost).toHaveBeenCalled();
+			const { setUpService } = setup();
+			spyOn(setUpService.gamingNetworkBoost, 'deleteProcessInNetBoost').and.callThrough();
+			setUpService.deleteProcessInNetBoost('apps');
+			expect(setUpService.gamingNetworkBoost.deleteProcessInNetBoost).toHaveBeenCalled();
+			setUpService.isShellAvailable = false;
+			setUpService.deleteProcessInNetBoost('apps');
+			expect(setUpService.gamingNetworkBoost.deleteProcessInNetBoost).toHaveBeenCalled();
 		});
 
 		it('should call functions throw error', () => {
-			const { service } = setup();
+			const { setUpService } = setup();
 			try {
-				spyOn(service.gamingNetworkBoost, 'getStatus').and.throwError(
+				spyOn(setUpService.gamingNetworkBoost, 'getStatus').and.throwError(
 					new Error('new getStatus error')
 				);
-				service.getNetworkBoostStatus();
+				setUpService.getNetworkBoostStatus();
 			} catch (error) {
-				expect(service.gamingNetworkBoost.getStatus).toThrowError('new getStatus error');
+				expect(setUpService.gamingNetworkBoost.getStatus).toThrowError('new getStatus error');
 			}
 
 			try {
-				spyOn(service.gamingNetworkBoost, 'getProcessesInNetworkBoost').and.throwError(
+				spyOn(setUpService.gamingNetworkBoost, 'getProcessesInNetworkBoost').and.throwError(
 					new Error('new getProcessesInNetworkBoost error')
 				);
-				service.getNetworkBoostList();
+				setUpService.getNetworkBoostList();
 			} catch (error) {
-				expect(service.gamingNetworkBoost.getProcessesInNetworkBoost).toThrowError(
+				expect(setUpService.gamingNetworkBoost.getProcessesInNetworkBoost).toThrowError(
 					'new getProcessesInNetworkBoost error'
 				);
 			}
 
 			try {
-				spyOn(service.gamingNetworkBoost, 'getNetUsingProcesses').and.throwError(
+				spyOn(setUpService.gamingNetworkBoost, 'getNetUsingProcesses').and.throwError(
 					new Error('new getNetUsingProcesses error')
 				);
-				service.getNetUsingProcesses();
+				setUpService.getNetUsingProcesses();
 			} catch (error) {
-				expect(service.gamingNetworkBoost.getNetUsingProcesses).toThrowError(
+				expect(setUpService.gamingNetworkBoost.getNetUsingProcesses).toThrowError(
 					'new getNetUsingProcesses error'
 				);
 			}
 
 			try {
-				spyOn(service.gamingNetworkBoost, 'setStatus').and.throwError(
+				spyOn(setUpService.gamingNetworkBoost, 'setStatus').and.throwError(
 					new Error('new setStatus error')
 				);
-				service.setNetworkBoostStatus();
+				setUpService.setNetworkBoostStatus();
 			} catch (error) {
-				expect(service.gamingNetworkBoost.setStatus).toThrowError('new setStatus error');
+				expect(setUpService.gamingNetworkBoost.setStatus).toThrowError('new setStatus error');
 			}
 
 			try {
-				spyOn(service.gamingNetworkBoost, 'addProcessToNetBoost').and.throwError(
+				spyOn(setUpService.gamingNetworkBoost, 'addProcessToNetBoost').and.throwError(
 					new Error('new addProcessToNetBoost error')
 				);
-				service.addProcessToNetworkBoost(true);
+				setUpService.addProcessToNetworkBoost(true);
 			} catch (error) {
-				expect(service.gamingNetworkBoost.addProcessToNetBoost).toThrowError(
+				expect(setUpService.gamingNetworkBoost.addProcessToNetBoost).toThrowError(
 					'new addProcessToNetBoost error'
 				);
 			}
 
 			try {
-				spyOn(service.gamingNetworkBoost, 'deleteProcessInNetBoost').and.throwError(
+				spyOn(setUpService.gamingNetworkBoost, 'deleteProcessInNetBoost').and.throwError(
 					new Error('new deleteProcessInNetBoost error')
 				);
-				service.deleteProcessInNetBoost(true);
+				setUpService.deleteProcessInNetBoost(true);
 			} catch (error) {
-				expect(service.gamingNetworkBoost.deleteProcessInNetBoost).toThrowError(
+				expect(setUpService.gamingNetworkBoost.deleteProcessInNetBoost).toThrowError(
 					'new deleteProcessInNetBoost error'
 				);
 			}
@@ -188,7 +179,7 @@ describe('Shared service:', () => {
 				spyOn(localCache, 'getLocalCacheValue').and.throwError(
 					new Error('new getLocalCacheValue error')
 				);
-				service.getNeedToAsk();
+				setUpService.getNeedToAsk();
 			} catch (error) {
 				expect(localCache.getLocalCacheValue).toThrowError('new getLocalCacheValue error');
 			}
@@ -197,7 +188,7 @@ describe('Shared service:', () => {
 				spyOn(localCache, 'setLocalCacheValue').and.throwError(
 					new Error('new setLocalCacheValue error')
 				);
-				service.setNeedToAsk(true);
+				setUpService.setNeedToAsk(true);
 			} catch (error) {
 				expect(localCache.setLocalCacheValue).toThrowError('new setLocalCacheValue error');
 			}

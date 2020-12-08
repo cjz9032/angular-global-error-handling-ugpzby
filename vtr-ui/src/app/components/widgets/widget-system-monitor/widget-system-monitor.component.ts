@@ -8,11 +8,18 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
-	selector: 'app-widget-system-monitor',
+	selector: 'vtr-widget-system-monitor',
 	templateUrl: './widget-system-monitor.component.html',
 	styleUrls: ['./widget-system-monitor.component.scss'],
 })
 export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
+	@Input() cpuCurrent = 0.22;
+	@Input() cpuMax = 2.2;
+	@Input() gpuCurrent = 0.33;
+	@Input() gpuMax = 3.3;
+	@Input() ramCurrent = 0;
+	@Input() ramMax = 0;
+
 	public cpuUseFrequency: string;
 	public cpuBaseFrequence: string;
 	public gpuMemorySize: string;
@@ -39,13 +46,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public memoryUsed: string;
 	public loop: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
-	public SystemStatusObj: any = new SystemStatus();
-	@Input() cpuCurrent = 0.22;
-	@Input() cpuMax = 2.2;
-	@Input() gpuCurrent = 0.33;
-	@Input() gpuMax = 3.3;
-	@Input() ramCurrent = 0;
-	@Input() ramMax = 0;
+	public systemStatusObj: any = new SystemStatus();
+
 	public hds: any = [
 		{
 			capacity: 476,
@@ -77,64 +79,64 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	// CPU Panel Data
-	GetcpuBaseFrequencyCache(): any {
+	getCPUBaseFrequencyCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuBaseFrequency);
 	}
-	SetcpuBaseFrequencyeCache(cpuBaseFrequecnyCache) {
+	setCPUBaseFrequencyeCache(cpuBaseFrequecnyCache) {
 		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.cpuBaseFrequency,
 			cpuBaseFrequecnyCache
 		);
 	}
-	GetcpuCapacityCache(): any {
+	getCPUCapacityCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuCapacity);
 	}
-	SetcpuCapacityCache(cpuCapacityCache) {
+	setCPUCapacityCache(cpuCapacityCache) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuCapacity, cpuCapacityCache);
 	}
-	GetcpuUsageCache(): any {
+	getCPUUsageCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage);
 	}
-	SetcpuUsageCache(cpuUsageCache) {
+	setCPUUsageCache(cpuUsageCache) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, cpuUsageCache);
 	}
-	GetcpuoverCache(): any {
+	getCPUOverCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuOver);
 	}
-	SetcpuoverCache(cpuOverCache) {
+	setCPUOverCache(cpuOverCache) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuOver, cpuOverCache);
 	}
 
 	// GPU Panel Data
-	GetgpuCapacityCache(): any {
+	getGPUCapacityCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuCapacity);
 	}
-	SetgpuCapacityCache(gpuCapacityCache) {
+	setGPUCapacityCache(gpuCapacityCache) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuCapacity, gpuCapacityCache);
 	}
 
-	GetgpuMaxFrequencyCache(): any {
+	getGPUMaxFrequencyCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMaxFrequency);
 	}
-	SetgpuMaxFrequencyCache(gpuMaxFrequenceyCache) {
+	setGPUMaxFrequencyCache(gpuMaxFrequenceyCache) {
 		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.gpuMaxFrequency,
 			gpuMaxFrequenceyCache
 		);
 	}
-	GetgpuUsageCache(): any {
+	getGPUUsageCache(): any {
 		return this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.gpuUsage,
 			(this.gpuCurrent * 100) / this.gpuMax
 		);
 	}
-	SetgpuUsageCache(gpuUsageCache) {
+	setGPUUsageCache(gpuUsageCache) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuUsage, gpuUsageCache);
 	}
-	GetgpuModulenameCache(): any {
+	getGPUModulenameCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuModulename);
 	}
-	SetgpuModulenameCache(gpuModulenameCache) {
+	setGOUModulenameCache(gpuModulenameCache) {
 		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.gpuModulename,
 			gpuModulenameCache
@@ -142,128 +144,128 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	// Ram Panel Data
-	GetmemorySizeCache(): any {
+	getMemorySizeCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.memorySize);
 	}
-	SetmemorySizeCache(memorySizeCache) {
+	setMemorySizeCache(memorySizeCache) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.memorySize, memorySizeCache);
 	}
-	GetramCapacityCache(): any {
+	getRamCapacityCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.ramCapacity);
 	}
-	SetramCapacityCache(ramCapacityCache) {
+	setRamCapacityCache(ramCapacityCache) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramCapacity, ramCapacityCache);
 	}
-	GetramUsageCache(): any {
+	getRamUsageCache(): any {
 		return this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.ramUsage,
 			this.memoryUsage
 		);
 	}
-	SetramUsageCache(ramUsageCache) {
+	setRamUsageCache(ramUsageCache) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramUsage, ramUsageCache);
 	}
-	GetramaOverCache(): any {
+	getRamOverCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.ramOver);
 	}
-	SetramOverCache(ramOverCache) {
+	setRamOverCache(ramOverCache) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramOver, ramOverCache);
 	}
 
 	// SSD & HDD Panel
-	GetTypeCache(): any {
+	getTypeCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.type);
 	}
-	SetTypeCache(type) {
+	setTypeCache(type) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.type, type);
 	}
-	GetCapacityCache(): any {
+	getCapacityCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.capacity);
 	}
-	SetCapacityCache(capacity) {
+	setCapacityCache(capacity) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.capacity, capacity);
 	}
-	GetDiskUsageCache(): any {
+	getDiskUsageCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.diskUsage);
 	}
-	SetDiskUsageCache(diskUsage) {
+	setDiskUsageCache(diskUsage) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.diskUsage, diskUsage);
 	}
-	GethddNameCache(): any {
+	getHDDNameCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.hddName);
 	}
-	SethddNameCache(hddName) {
+	setHDDNameCache(hddName) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.hddName, hddName);
 	}
 
-	GetusedDiskkCache(): any {
+	getUsedDiskCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.usedDisk);
 	}
-	SetusedDiskCache(usedDisk) {
+	setUsedDiskCache(usedDisk) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.usedDisk, usedDisk);
 	}
-	GetisSystemDiskkCache(): any {
+	getIsSystemDiskCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.isSystemDisk);
 	}
-	SetisSystemDiskCache(isSystemDisk) {
+	setIsSystemDiskCache(isSystemDisk) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.isSystemDisk, isSystemDisk);
 	}
 
 	public getLocalSystemCache() {
-		if (this.GetcpuBaseFrequencyCache() !== undefined) {
-			this.cpuCurrent = this.GetcpuBaseFrequencyCache();
+		if (this.getCPUBaseFrequencyCache() !== undefined) {
+			this.cpuCurrent = this.getCPUBaseFrequencyCache();
 		}
-		if (this.GetcpuCapacityCache() !== undefined) {
-			this.cpuMax = this.GetcpuCapacityCache();
+		if (this.getCPUCapacityCache() !== undefined) {
+			this.cpuMax = this.getCPUCapacityCache();
 		}
-		if (this.GetcpuUsageCache() !== undefined) {
-			this.cpuUsage = this.GetcpuUsageCache() / 100;
+		if (this.getCPUUsageCache() !== undefined) {
+			this.cpuUsage = this.getCPUUsageCache() / 100;
 		}
-		if (this.GetcpuoverCache() !== undefined) {
-			this.cpuover = this.GetcpuoverCache();
+		if (this.getCPUOverCache() !== undefined) {
+			this.cpuover = this.getCPUOverCache();
 		}
-		if (this.GetgpuCapacityCache() !== undefined) {
-			this.gpuCurrent = this.GetgpuCapacityCache();
+		if (this.getGPUCapacityCache() !== undefined) {
+			this.gpuCurrent = this.getGPUCapacityCache();
 		}
-		if (this.GetgpuMaxFrequencyCache() !== undefined) {
-			this.gpuMax = this.GetgpuMaxFrequencyCache();
+		if (this.getGPUMaxFrequencyCache() !== undefined) {
+			this.gpuMax = this.getGPUMaxFrequencyCache();
 		}
-		if (this.GetgpuUsageCache() !== undefined) {
-			this.gpuUsage = this.getStackHeight(this.GetgpuUsageCache() || 1);
+		if (this.getGPUUsageCache() !== undefined) {
+			this.gpuUsage = this.getStackHeight(this.getGPUUsageCache() || 1);
 		}
-		if (this.GetgpuModulenameCache() !== undefined) {
-			this.gpuModuleName = this.GetgpuModulenameCache();
+		if (this.getGPUModulenameCache() !== undefined) {
+			this.gpuModuleName = this.getGPUModulenameCache();
 		}
-		if (this.GetmemorySizeCache() !== undefined) {
-			this.ramCurrent = this.GetmemorySizeCache();
+		if (this.getMemorySizeCache() !== undefined) {
+			this.ramCurrent = this.getMemorySizeCache();
 		}
-		if (this.GetramCapacityCache() !== undefined) {
-			this.ramMax = this.GetramCapacityCache();
+		if (this.getRamCapacityCache() !== undefined) {
+			this.ramMax = this.getRamCapacityCache();
 		}
-		if (this.GetramUsageCache() !== undefined) {
+		if (this.getRamUsageCache() !== undefined) {
 			// this.ramUsage = this.GetramUsageCache();
-			this.memoryUsage = this.getStackHeight(this.GetramUsageCache());
+			this.memoryUsage = this.getStackHeight(this.getRamUsageCache());
 		}
-		if (this.GetramaOverCache() !== undefined) {
-			this.ramOver = this.GetramaOverCache();
+		if (this.getRamOverCache() !== undefined) {
+			this.ramOver = this.getRamOverCache();
 		}
-		if (this.GetTypeCache() !== undefined) {
-			this.type = this.GetTypeCache();
+		if (this.getTypeCache() !== undefined) {
+			this.type = this.getTypeCache();
 		}
-		if (this.GetCapacityCache() !== undefined) {
-			this.capacity = this.GetCapacityCache();
+		if (this.getCapacityCache() !== undefined) {
+			this.capacity = this.getCapacityCache();
 		}
-		if (this.GethddNameCache() !== undefined) {
-			this.hddName = this.GethddNameCache();
+		if (this.getHDDNameCache() !== undefined) {
+			this.hddName = this.getHDDNameCache();
 		}
-		if (this.GetusedDiskkCache() !== undefined) {
-			this.usedDisk = this.GetusedDiskkCache();
+		if (this.getUsedDiskCache() !== undefined) {
+			this.usedDisk = this.getUsedDiskCache();
 		}
-		if (this.GetDiskUsageCache() !== undefined) {
-			this.diskUsage = this.GetDiskUsageCache();
+		if (this.getDiskUsageCache() !== undefined) {
+			this.diskUsage = this.getDiskUsageCache();
 		}
-		if (this.GethddNameCache() !== undefined) {
-			this.hddName = this.GethddNameCache();
+		if (this.getHDDNameCache() !== undefined) {
+			this.hddName = this.getHDDNameCache();
 		}
 	}
 	public async getDynamicInfoService() {
@@ -288,19 +290,19 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.cpuCurrent = hwInfo.cpuUseFrequency.split('GHz')[0];
 			}
 
-			this.SystemStatusObj.cpuBaseFrequency = this.cpuCurrent;
-			this.SystemStatusObj.cpuUsage = hwInfo.cpuUsage;
+			this.systemStatusObj.cpuBaseFrequency = this.cpuCurrent;
+			this.systemStatusObj.cpuUsage = hwInfo.cpuUsage;
 			if (hwInfo.gpuUsedMemory !== '') {
 				this.gpuCurrent = hwInfo.gpuUsedMemory.split('GB')[0];
 			}
 
-			this.SystemStatusObj.gpuCapacity = this.gpuCurrent;
-			this.SystemStatusObj.gpuUsage = hwInfo.gpuUsage;
+			this.systemStatusObj.gpuCapacity = this.gpuCurrent;
+			this.systemStatusObj.gpuUsage = hwInfo.gpuUsage;
 			if (hwInfo.memoryUsed !== '') {
 				this.ramCurrent = hwInfo.memoryUsed.split('GB')[0];
 			}
-			this.SystemStatusObj.memorySize = this.ramCurrent;
-			this.SystemStatusObj.ramUsage = hwInfo.memoryUsage;
+			this.systemStatusObj.memorySize = this.ramCurrent;
+			this.systemStatusObj.ramUsage = hwInfo.memoryUsage;
 			this.initialiseDisksList(hwInfo.diskList);
 			this.setFormDynamicInformationCache(hwInfo);
 		} catch (err) {}
@@ -309,22 +311,22 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public initialiseDisksList(diskList: any[] = []) {
 		this.hds = diskList;
 		this.hds.forEach((hd: any) => {
-			this.SetisSystemDiskCache(hd.isSystemDisk);
-			this.SetCapacityCache(hd.capacity);
-			this.SetTypeCache(hd.type);
-			this.SethddNameCache(hd.hddName);
-			this.SetusedDiskCache(hd.usedDisk);
-			this.SetDiskUsageCache(hd.diskUsage);
+			this.setIsSystemDiskCache(hd.isSystemDisk);
+			this.setCapacityCache(hd.capacity);
+			this.setTypeCache(hd.type);
+			this.setHDDNameCache(hd.hddName);
+			this.setUsedDiskCache(hd.usedDisk);
+			this.setDiskUsageCache(hd.diskUsage);
 			if (this.convertToBoolean(hd.isSystemDisk) === true) {
 				this.showIcon = true;
 			}
 		});
-		for (let _i = 0; _i < diskList.length; _i++) {
-			let hd = JSON.stringify(diskList[_i]);
-			if (_i === 0 && this.showIcon === true) {
+		for (let i = 0; i < diskList.length; i++) {
+			const hd = JSON.stringify(diskList[i]);
+			if (i === 0 && this.showIcon === true) {
 				diskList[0].isSystemDisk = true;
 			} else {
-				diskList[_i].isSystemDisk = false;
+				diskList[i].isSystemDisk = false;
 			}
 		}
 	}
@@ -349,12 +351,12 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				if (hwInfo.cpuBaseFrequence !== '') {
 					this.cpuMax = hwInfo.cpuBaseFrequence;
 				}
-				this.SystemStatusObj.cpuCapacity = this.cpuMax;
+				this.systemStatusObj.cpuCapacity = this.cpuMax;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuCapacity, this.cpuMax);
 				if (hwInfo.gpuMemorySize !== '') {
 					this.gpuMax = hwInfo.gpuMemorySize;
 				}
-				this.SystemStatusObj.gpuMaxFrequency = this.gpuMax;
+				this.systemStatusObj.gpuMaxFrequency = this.gpuMax;
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.gpuMaxFrequency,
 					this.gpuMax
@@ -362,22 +364,22 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				if (hwInfo.memorySize) {
 					this.ramMax = hwInfo.memorySize;
 				}
-				this.SystemStatusObj.ramCapacity = this.ramMax;
+				this.systemStatusObj.ramCapacity = this.ramMax;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.ramCapacity, this.ramMax);
 				this.cpuModuleName = hwInfo.cpuModuleName;
 				this.cpuover = this.cpuModuleName;
-				this.SystemStatusObj.cpuOver = this.cpuModuleName;
+				this.systemStatusObj.cpuOver = this.cpuModuleName;
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.cpuOver,
 					this.cpuModuleName
 				);
 				this.gpuModuleName = hwInfo.gpuModuleName;
 				this.gpuOver = this.gpuModuleName;
-				this.SystemStatusObj.gpuOver = this.gpuModuleName;
+				this.systemStatusObj.gpuOver = this.gpuModuleName;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuOver, this.gpuOver);
 				this.memoryModuleName = hwInfo.memoryModuleName;
 				this.ramOver = this.memoryModuleName;
-				this.SystemStatusObj.ramOver = this.ramOver;
+				this.systemStatusObj.ramOver = this.ramOver;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.ramOver, this.ramOver);
 			});
 		} catch (error) {}

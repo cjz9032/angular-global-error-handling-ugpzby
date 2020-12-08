@@ -6,8 +6,8 @@ import { LoggerService } from '../../logger/logger.service';
 	providedIn: 'root',
 })
 export class GamingOverDriveService {
-	private gamingOverDrive: any;
 	public isShellAvailable = false;
+	private gamingOverDrive: any;
 
 	constructor(shellService: VantageShellService, private logger: LoggerService) {
 		this.gamingOverDrive = shellService.getGamingOverDrive();
@@ -34,7 +34,7 @@ export class GamingOverDriveService {
 		}
 	}
 
-	setOverDriveStatus(value: Boolean): Promise<any> {
+	setOverDriveStatus(value: boolean): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.gamingOverDrive.setOverDriveStatus(value);

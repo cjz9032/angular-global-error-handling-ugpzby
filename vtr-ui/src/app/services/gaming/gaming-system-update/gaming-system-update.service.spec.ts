@@ -13,10 +13,10 @@ describe('GamingSystemUpdateService', () => {
 		shellService = TestBed.get(VantageShellService);
 	});
 	describe(':', () => {
-		function setup() {
+		const setup = () => {
 			const service = TestBed.get(GamingSystemUpdateService);
 			return { service };
-		}
+		};
 
 		it('should be created', () => {
 			const service: GamingSystemUpdateService = TestBed.get(GamingSystemUpdateService);

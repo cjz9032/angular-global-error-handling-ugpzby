@@ -8,7 +8,6 @@ import { of } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
 
-// eslint-disable-next-line no-duplicate-imports
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { WidgetSystemToolsComponent } from './widget-system-tools.component';
 
@@ -39,9 +38,9 @@ describe('WidgetSystemToolsComponent', () => {
 	let hardwareScanFeatureCache = false;
 	let accessoryFeatureCache = false;
 
-	let commonServiceMock = {
-		getCapabalitiesNotification() {
-			let res = {
+	const commonServiceMock = {
+		getCapabalitiesNotification: () => {
+			const res = {
 				type: '[Gaming] GamingCapabilities',
 				payload: {
 					macroKeyFeature: macroKeyFeatureCache,
@@ -50,8 +49,8 @@ describe('WidgetSystemToolsComponent', () => {
 			return of(res);
 		},
 	};
-	let localCacheServiceMock = {
-		getLocalCacheValue(key: any, defaultValue?: any) {
+	const localCacheServiceMock = {
+		getLocalCacheValue: (key: any, defaultValue?: any) => {
 			switch (key) {
 				case '[LocalStorageKey] HardwareScanFeature':
 					return hardwareScanFeatureCache;
@@ -59,7 +58,7 @@ describe('WidgetSystemToolsComponent', () => {
 					return accessoryFeatureCache;
 			}
 		},
-		setLocalCacheValue(key: any, value: any) {
+		setLocalCacheValue: (key: any, value: any) => {
 			switch (key) {
 				case '[LocalStorageKey] HardwareScanFeature':
 					hardwareScanFeatureCache = value;
@@ -70,9 +69,9 @@ describe('WidgetSystemToolsComponent', () => {
 			}
 		},
 	};
-	let GamingAllCapabilitiesServiceMock = {
+	const gamingAllCapabilitiesServiceMock = {
 		isShellAvailable: true,
-		getCapabilityFromCache(key: any) {
+		getCapabilityFromCache: (key: any) => {
 			switch (key) {
 				case '[LocalStorageKey] MacroKeyFeature':
 					return macroKeyFeatureCache;
@@ -80,8 +79,8 @@ describe('WidgetSystemToolsComponent', () => {
 		},
 	};
 
-	let hardwareScanServiceSpy = jasmine.createSpyObj('HardwareScanService', ['isAvailable']);
-	let gamingAccessoryServiceSpy = jasmine.createSpyObj('GamingAccessoryService', [
+	const hardwareScanServiceSpy = jasmine.createSpyObj('HardwareScanService', ['isAvailable']);
+	const gamingAccessoryServiceSpy = jasmine.createSpyObj('GamingAccessoryService', [
 		'isLACSupportUriProtocol',
 		'launchAccessory',
 	]);
@@ -102,7 +101,7 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{
 						provide: GamingAllCapabilitiesService,
-						useValue: GamingAllCapabilitiesServiceMock,
+						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
 					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
@@ -169,7 +168,7 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{
 						provide: GamingAllCapabilitiesService,
-						useValue: GamingAllCapabilitiesServiceMock,
+						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
 					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
@@ -242,7 +241,7 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{
 						provide: GamingAllCapabilitiesService,
-						useValue: GamingAllCapabilitiesServiceMock,
+						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
 					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
@@ -323,7 +322,7 @@ describe('WidgetSystemToolsComponent', () => {
 		});
 
 		it('openWaringModal', () => {
-			let modalRef = new ModalGamingPromptStubComponent();
+			const modalRef = new ModalGamingPromptStubComponent();
 			spyOn(modalService, 'open').and.returnValue(modalRef);
 			spyOn(window, 'open').and.callFake(() => {
 				return null;
@@ -356,7 +355,7 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
 					{
 						provide: GamingAllCapabilitiesService,
-						useValue: GamingAllCapabilitiesServiceMock,
+						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
 					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
@@ -429,7 +428,7 @@ export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
 		name: options.name,
 	};
-	return <any>Pipe(metadata)(
+	return Pipe(metadata)(
 		class MockPipe {
 			public transform(query: string, ...args: any[]): any {
 				return query;

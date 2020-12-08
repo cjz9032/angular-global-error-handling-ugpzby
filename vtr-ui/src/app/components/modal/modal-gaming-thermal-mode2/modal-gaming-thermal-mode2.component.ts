@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener, OnDestroy } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
@@ -20,19 +20,18 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 	templateUrl: './modal-gaming-thermal-mode2.component.html',
 	styleUrls: ['./modal-gaming-thermal-mode2.component.scss'],
 })
-export class ModalGamingThermalMode2Component implements OnInit {
+export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
+	@Output() ocSettingsMsg = new EventEmitter<boolean>();
 	public loading = false;
 	public gamingCapabilities: GamingAllCapabilities = new GamingAllCapabilities();
 	public thermalMode2Enum = GamingThermal2;
 	public thermalModeSettingStatus = this.thermalMode2Enum.balance;
-	public OCsupportted = this.thermalMode2Enum.none;
+	public ocSupportted = this.thermalMode2Enum.none;
 	public driverStatus = this.thermalMode2Enum.none;
-	public OCSettings = false;
+	public ocSettings = false;
 	public autoSwitchStatus = false;
 	public isThermalModeSetted = false;
 	public isPerformancOCSetted = false;
-	// @Output() thermalModeMsg = new EventEmitter<number>();
-	@Output() OCSettingsMsg = new EventEmitter<boolean>();
 	// Version 3.5 thermal mode 3 for x60
 	public autoAdjustSettings = true;
 	public isAutoAdjustSetted = false;
@@ -101,21 +100,32 @@ export class ModalGamingThermalMode2Component implements OnInit {
 		);
 	}
 
+	// Version 3.5 keyboard nevigation to close
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal: HTMLElement = document.querySelector('.close');
+		let modalTimer = setTimeout(() => {
+			modal.focus();
+			clearTimeout(modalTimer);
+			modalTimer = null;
+		}, 5);
+	}
+
 	ngOnInit() {
 		this.getThermalModeSettingStatus();
 		this.registerThermalModeChangeEvent();
 		// Version 3.5 auto adjust in thermal mode 3
 		if (this.gamingCapabilities.thermalModeVersion !== 4) {
 			this.renderOCSupported();
-			if (this.OCsupportted === this.thermalMode2Enum.cpu_gpu) {
-				this.OCSettings =
+			if (this.ocSupportted === this.thermalMode2Enum.cpu_gpu) {
+				this.ocSettings =
 					this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) === 1 &&
 					this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) === 1;
-			} else if (this.OCsupportted === this.thermalMode2Enum.cpu) {
-				this.OCSettings =
+			} else if (this.ocSupportted === this.thermalMode2Enum.cpu) {
+				this.ocSettings =
 					this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) === 1;
-			} else if (this.OCsupportted === this.thermalMode2Enum.gpu) {
-				this.OCSettings =
+			} else if (this.ocSupportted === this.thermalMode2Enum.gpu) {
+				this.ocSettings =
 					this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) === 1;
 			}
 			this.getPerformanceOCSetting();
@@ -134,15 +144,15 @@ export class ModalGamingThermalMode2Component implements OnInit {
 		// oc supported status
 		if (this.gamingCapabilities.cpuOCFeature) {
 			if (this.gamingCapabilities.gpuOCFeature) {
-				this.OCsupportted = this.thermalMode2Enum.cpu_gpu;
+				this.ocSupportted = this.thermalMode2Enum.cpu_gpu;
 			} else {
-				this.OCsupportted = this.thermalMode2Enum.cpu;
+				this.ocSupportted = this.thermalMode2Enum.cpu;
 			}
 		} else {
 			if (this.gamingCapabilities.gpuOCFeature) {
-				this.OCsupportted = this.thermalMode2Enum.gpu;
+				this.ocSupportted = this.thermalMode2Enum.gpu;
 			} else {
-				this.OCsupportted = this.thermalMode2Enum.none;
+				this.ocSupportted = this.thermalMode2Enum.none;
 			}
 		}
 		// driver status
@@ -213,7 +223,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
 	setThermalModeSettingStatus(value: number) {
 		this.isThermalModeSetted = true;
 		if (value !== this.thermalModeSettingStatus) {
-			let prevThermalModeStatus = this.thermalModeSettingStatus;
+			const prevThermalModeStatus = this.thermalModeSettingStatus;
 			this.thermalModeSettingStatus = value;
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.CurrentThermalModeStatus,
@@ -265,9 +275,9 @@ export class ModalGamingThermalMode2Component implements OnInit {
 		try {
 			this.gamingOCService.getPerformanceOCSetting().then((res) => {
 				this.logger.info(
-					`Modal-ThermamMode2-GetPerformanceOCSetting: get value from ${this.OCSettings} to ${res}`
+					`Modal-ThermamMode2-GetPerformanceOCSetting: get value from ${this.ocSettings} to ${res}`
 				);
-				if (!this.isPerformancOCSetted && res !== this.OCSettings) {
+				if (!this.isPerformancOCSetted && res !== this.ocSettings) {
 					if (this.gamingCapabilities.cpuOCFeature) {
 						this.localCacheService.setLocalCacheValue(
 							LocalStorageKey.CpuOCStatus,
@@ -280,7 +290,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
 							res ? 1 : 3
 						);
 					}
-					this.OCSettings = res;
+					this.ocSettings = res;
 				}
 			});
 		} catch (error) {
@@ -294,62 +304,62 @@ export class ModalGamingThermalMode2Component implements OnInit {
 
 	setPerformanceOCSetting(event: any) {
 		this.isPerformancOCSetted = true;
-		this.OCSettings = !this.OCSettings;
+		this.ocSettings = !this.ocSettings;
 		if (this.gamingCapabilities.cpuOCFeature) {
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.CpuOCStatus,
-				this.OCSettings ? 1 : 3
+				this.ocSettings ? 1 : 3
 			);
 		}
 		if (this.gamingCapabilities.gpuOCFeature) {
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.GpuOCStatus,
-				this.OCSettings ? 1 : 3
+				this.ocSettings ? 1 : 3
 			);
 		}
-		this.OCSettingsMsg.emit(this.OCSettings);
+		this.ocSettingsMsg.emit(this.ocSettings);
 		try {
-			this.gamingOCService.setPerformanceOCSetting(this.OCSettings).then((res) => {
+			this.gamingOCService.setPerformanceOCSetting(this.ocSettings).then((res) => {
 				if (res) {
 					this.logger.info(
 						`Modal-ThermalMode2-SetPerformanceOCSetting: return value: ${res}, OCSettings from ${!this
-							.OCSettings} to ${this.OCSettings}`
+							.ocSettings} to ${this.ocSettings}`
 					);
 				} else {
-					this.OCSettings = !this.OCSettings;
+					this.ocSettings = !this.ocSettings;
 					if (this.gamingCapabilities.cpuOCFeature) {
 						this.localCacheService.setLocalCacheValue(
 							LocalStorageKey.CpuOCStatus,
-							this.OCSettings ? 1 : 3
+							this.ocSettings ? 1 : 3
 						);
 					}
 					if (this.gamingCapabilities.gpuOCFeature) {
 						this.localCacheService.setLocalCacheValue(
 							LocalStorageKey.GpuOCStatus,
-							this.OCSettings ? 1 : 3
+							this.ocSettings ? 1 : 3
 						);
 					}
-					this.OCSettingsMsg.emit(this.OCSettings);
+					this.ocSettingsMsg.emit(this.ocSettings);
 					this.logger.error(
 						`Modal-ThermalMode2-SetPerformanceOCSetting: return value: ${res}, OCSettings unchanged`
 					);
 				}
 			});
 		} catch (error) {
-			this.OCSettings = !this.OCSettings;
+			this.ocSettings = !this.ocSettings;
 			if (this.gamingCapabilities.cpuOCFeature) {
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.CpuOCStatus,
-					this.OCSettings ? 1 : 3
+					this.ocSettings ? 1 : 3
 				);
 			}
 			if (this.gamingCapabilities.gpuOCFeature) {
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.GpuOCStatus,
-					this.OCSettings ? 1 : 3
+					this.ocSettings ? 1 : 3
 				);
 			}
-			this.OCSettingsMsg.emit(this.OCSettings);
+			this.ocSettingsMsg.emit(this.ocSettings);
 			this.logger.error(
 				`Modal-ThermalMode2-SetPerformanceOCSetting: set fail; Error message: `,
 				error.message
@@ -359,7 +369,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
 
 		const metricsData = {
 			ItemName: 'thermalmode_enableOC',
-			ItemValue: this.OCSettings ? 'checked' : 'unchecked'
+			ItemValue: this.ocSettings ? 'checked' : 'unchecked'
 		};
 		this.sendFeatureClickMetrics(metricsData);
 	}
@@ -535,7 +545,7 @@ export class ModalGamingThermalMode2Component implements OnInit {
 	// fengxu start
 	openWaringModal() {
 		this.closeThermalMode2Modal();
-		let waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
+		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
 			backdropClass: 'backdrop-level'
@@ -580,19 +590,9 @@ export class ModalGamingThermalMode2Component implements OnInit {
 	}
 	// fengxu end
 
-	// Version 3.5 keyboard nevigation
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal: HTMLElement = document.querySelector('.close');
-		let modalTimer = setTimeout(() => {
-			modal.focus();
-			clearTimeout(modalTimer);
-			modalTimer = null;
-		}, 5);
-	}
-
 	/**
 	 * metrics collection for thermalmode feature
+	 *
 	 * @param metricsdata
 	 */
 	public sendFeatureClickMetrics(metricsdata: any) {

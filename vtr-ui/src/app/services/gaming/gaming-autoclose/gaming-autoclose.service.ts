@@ -9,7 +9,6 @@ import { LocalCacheService } from '../../local-cache/local-cache.service';
 	providedIn: 'root',
 })
 export class GamingAutoCloseService {
-	private gamingAutoClose: any;
 	public isShellAvailable = false;
 	public cardContentPositionF: any = {
 		FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg',
@@ -17,6 +16,7 @@ export class GamingAutoCloseService {
 	public cardContentPositionB: any = {
 		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg',
 	};
+	private gamingAutoClose: any;
 
 	constructor(
 		private shellService: VantageShellService,

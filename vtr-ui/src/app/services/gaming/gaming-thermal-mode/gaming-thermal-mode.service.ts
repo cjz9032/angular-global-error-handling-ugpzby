@@ -6,8 +6,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	providedIn: 'root',
 })
 export class GamingThermalModeService {
-	private gamingThermalMode: any;
 	public isShellAvailable = false;
+	private gamingThermalMode: any;
 
 	constructor(shellService: VantageShellService, private logger: LoggerService) {
 		this.gamingThermalMode = shellService.getGamingThermalMode();
@@ -112,7 +112,7 @@ export class GamingThermalModeService {
 		}
 	}
 
-	setAutoSwitchStatus(value: Boolean): Promise<any> {
+	setAutoSwitchStatus(value: boolean): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
 				return this.gamingThermalMode.setAutoSwitchStatus(value);

@@ -12,7 +12,7 @@ describe('GamingAccessoryService', () => {
 
 	describe('isShellAvailable is false', () => {
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', [
+			const spy = jasmine.createSpyObj('VantageService', [
 				'getGamingAccessory',
 				'getRegistryUtil',
 				'getSystemUpdate',
@@ -66,21 +66,22 @@ describe('GamingAccessoryService', () => {
 		});
 	});
 	describe('isShellAvailable is true', () => {
-		let stubRes = {
+		const stubRes = {
 			keyList: [1, 2],
 		};
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', [
+			const spy = jasmine.createSpyObj('VantageService', [
 				'getGamingAccessory',
 				'getRegistryUtil',
 				'getSystemUpdate',
 				'getLogger',
 			]);
-			let stubRegValue = {
-				queryValue(regPath: string) {
-					return new Promise((resolve) => {
-						resolve(stubRes);
-					});
+			const stubRegValue = {
+				queryValue: (regPath: string) => {
+					Promise.resolve(stubRes);
+					// return new Promise((resolve) => {
+					// 	resolve(stubRes);
+					// });
 				},
 			};
 			spy.getGamingAccessory.and.returnValue(
@@ -146,14 +147,14 @@ describe('GamingAccessoryService', () => {
 	});
 	describe('catch error', () => {
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', [
+			const spy = jasmine.createSpyObj('VantageService', [
 				'getGamingAccessory',
 				'getRegistryUtil',
 				'getSystemUpdate',
 				'getLogger',
 			]);
-			let stubRegValue = {
-				queryValue(regPath: string) {
+			const stubRegValue = {
+				queryValue: (regPath: string) => {
 					throw new Error('queryValue error');
 				},
 			};

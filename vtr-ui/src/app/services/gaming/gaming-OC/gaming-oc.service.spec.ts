@@ -10,7 +10,7 @@ describe('GamingOCService', () => {
 	let gamingOCService: GamingOCService;
 	describe('isShellAvailable is false', () => {
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
+			const spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
 			spy.getGamingThermalMode.and.returnValue(undefined);
 			TestBed.configureTestingModule({
 				imports: [HttpClientModule],
@@ -45,18 +45,19 @@ describe('GamingOCService', () => {
 		let performanceOCSetting = false;
 		let setReturnValue = false;
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
-			let stubValue = {
-				getPerformanceOCSetting() {
-					return new Promise((resolve) => {
-						resolve(performanceOCSetting);
-					});
+			const spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
+			const stubValue = {
+				getPerformanceOCSetting: () => {
+					Promise.resolve(performanceOCSetting);
+					// return new Promise((resolve) => {
+					// 	resolve(performanceOCSetting);
+					// });
 				},
-				setPerformanceOCSetting(value: boolean) {
+				setPerformanceOCSetting: (value: boolean) => {
+					if (setReturnValue) {
+						performanceOCSetting = value;
+					}
 					return new Promise((resolve) => {
-						if (setReturnValue) {
-							performanceOCSetting = value;
-						}
 						resolve(setReturnValue);
 					});
 				},
@@ -132,12 +133,12 @@ describe('GamingOCService', () => {
 	});
 	describe('catch error', () => {
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
-			let stubValue = {
-				getPerformanceOCSetting() {
+			const spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
+			const stubValue = {
+				getPerformanceOCSetting: () => {
 					throw new Error('getPerformanceOCSetting error');
 				},
-				setPerformanceOCSetting(value: boolean) {
+				setPerformanceOCSetting: (value: boolean) => {
 					throw new Error('setPerformanceOCSetting error');
 				},
 			};

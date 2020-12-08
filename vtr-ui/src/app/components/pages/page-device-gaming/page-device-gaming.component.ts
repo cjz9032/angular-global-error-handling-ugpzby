@@ -31,15 +31,16 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 })
 export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 	public static allCapablitiyFlag = false;
-	submit = 'Submit';
-	feedbackButtonText = this.submit;
-	securityAdvisor: SecurityAdvisor;
 	public isOnline = true;
-	private protocolAction: any;
-	cardContentPositionD: any = {};
-	// TODO Lite Gaming
+	public submit = 'Submit';
+	public feedbackButtonText = this.submit;
+	public securityAdvisor: SecurityAdvisor;
+	public cardContentPositionD: any = {};
+	// Version 3.2 lite gaming
 	public liteGaming = false;
 	public desktopType = false;
+
+	private protocolAction: any;
 	private translateSubscription: Subscription;
 	private notificationSubscription: Subscription;
 	private cmsSubscription: Subscription;
@@ -179,9 +180,9 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 		);
 	}
 
-	public onConnectivityClick($event: any) {}
+	onConnectivityClick($event: any) {}
 
-	private getPreviousContent() {
+	getPreviousContent() {
 		this.cardContentPositionD = this.dashboardService.offlineCardContent.positionD;
 	}
 

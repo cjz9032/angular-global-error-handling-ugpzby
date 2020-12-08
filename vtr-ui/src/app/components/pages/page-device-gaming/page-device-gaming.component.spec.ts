@@ -114,21 +114,21 @@ describe('PageDeviceGamingComponent', () => {
 	});
 
 	it('#PageDeviceGamingComponent : ngDoCheck protocolAction lenovoid', () => {
-		let route: ActivatedRoute = fixture.debugElement.injector.get(ActivatedRoute);
-		let snapshot: ActivatedRouteSnapshot = route.snapshot;
+		const route: ActivatedRoute = fixture.debugElement.injector.get(ActivatedRoute);
+		const snapshot: ActivatedRouteSnapshot = route.snapshot;
 		snapshot.queryParams = { action: 'lenovoid' };
 		spyOn(component, 'ngDoCheck').and.callThrough();
 		component.ngDoCheck();
-		expect(component['ngDoCheck']).toHaveBeenCalled();
+		expect(component.ngDoCheck).toHaveBeenCalled();
 	});
 
 	it('#PageDeviceGamingComponent : ngDoCheck protocolAction modernpreload', () => {
-		let route: ActivatedRoute = fixture.debugElement.injector.get(ActivatedRoute);
-		let snapshot: ActivatedRouteSnapshot = route.snapshot;
+		const route: ActivatedRoute = fixture.debugElement.injector.get(ActivatedRoute);
+		const snapshot: ActivatedRouteSnapshot = route.snapshot;
 		snapshot.queryParams = { action: 'modernpreload' };
 		spyOn(component, 'ngDoCheck').and.callThrough();
 		component.ngDoCheck();
-		expect(component['ngDoCheck']).toHaveBeenCalled();
+		expect(component.ngDoCheck).toHaveBeenCalled();
 		const modalService = fixture.debugElement.injector.get(NgbModal);
 		modalService.hasOpenModals();
 		modalService.dismissAll();
@@ -141,7 +141,7 @@ describe('PageDeviceGamingComponent', () => {
 			.withArgs(mockNetworkStatusOnline)
 			.and.callThrough();
 		onNotificationSpy.call(component, mockNetworkStatusOnline);
-		expect(component['onNotification']).toHaveBeenCalled();
+		expect(component.onNotification).toHaveBeenCalled();
 	});
 
 	it('#PageDeviceGamingComponent : onNotification network status offline ', () => {
@@ -149,7 +149,7 @@ describe('PageDeviceGamingComponent', () => {
 			.withArgs(mockNetworkStatusOffline)
 			.and.callThrough();
 		offNotificationSpy.call(component, mockNetworkStatusOffline);
-		expect(component['onNotification']).toHaveBeenCalled();
+		expect(component.onNotification).toHaveBeenCalled();
 	});
 
 	it('#PageDeviceGamingComponent : onConnectivityClick', () => {
@@ -179,7 +179,7 @@ const mockNetworkStatusOnline = {
 	},
 };
 
-let mockSystemStatus = {
+const mockSystemStatus = {
 	memory: {
 		total: 8261181440,
 		used: 7720923136,
@@ -239,6 +239,7 @@ const mockSecurityStatus = {
 		type: 'security',
 	},
 };
+
 export function mockPipe(options: Pipe): Pipe {
 	const metadata: Pipe = {
 		name: options.name,

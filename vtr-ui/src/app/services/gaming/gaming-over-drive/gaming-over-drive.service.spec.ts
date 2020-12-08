@@ -11,7 +11,7 @@ describe('GamingOverDriveService', () => {
 
 	describe('isShellAvailable is false', () => {
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', ['getGamingOverDrive', 'getLogger']);
+			const spy = jasmine.createSpyObj('VantageService', ['getGamingOverDrive', 'getLogger']);
 			spy.getGamingOverDrive.and.returnValue(undefined);
 			TestBed.configureTestingModule({
 				imports: [HttpClientModule],
@@ -47,18 +47,19 @@ describe('GamingOverDriveService', () => {
 		let overDriveStatus = true;
 		let setReturnValue = false;
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', ['getGamingOverDrive', 'getLogger']);
-			let stubValue = {
-				getOverDriveStatus() {
-					return new Promise((resolve) => {
-						resolve(overDriveStatus);
-					});
+			const spy = jasmine.createSpyObj('VantageService', ['getGamingOverDrive', 'getLogger']);
+			const stubValue = {
+				getOverDriveStatus: () => {
+					Promise.resolve(overDriveStatus);
+					// return new Promise((resolve) => {
+					// 	resolve(overDriveStatus);
+					// });
 				},
-				setOverDriveStatus(value: boolean) {
+				setOverDriveStatus: (value: boolean) => {
+					if (setReturnValue) {
+						overDriveStatus = value;
+					}
 					return new Promise((resolve) => {
-						if (setReturnValue) {
-							overDriveStatus = value;
-						}
 						resolve(setReturnValue);
 					});
 				},
@@ -139,12 +140,12 @@ describe('GamingOverDriveService', () => {
 
 	describe('catch error', () => {
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', ['getGamingOverDrive', 'getLogger']);
-			let stubValue = {
-				getOverDriveStatus() {
+			const spy = jasmine.createSpyObj('VantageService', ['getGamingOverDrive', 'getLogger']);
+			const stubValue = {
+				getOverDriveStatus: () => {
 					throw new Error('getOverDriveStatus error');
 				},
-				setOverDriveStatus(value: boolean) {
+				setOverDriveStatus: (value: boolean) => {
 					throw new Error('setOverDriveStatus error');
 				},
 			};

@@ -69,9 +69,9 @@ describe('GamingThermalModeService', () => {
 		let autoSwitchStatus = false;
 		let setReturnValue = true;
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
-			let stubValue = {
-				getThermalModeStatus() {
+			const spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
+			const stubValue = {
+				getThermalModeStatus: () => {
 					return new Promise((resolve, reject) => {
 						if (thermalModeStatus !== 0) {
 							resolve(thermalModeStatus);
@@ -79,7 +79,7 @@ describe('GamingThermalModeService', () => {
 						reject('getThermalModeStatus error');
 					});
 				},
-				setThermalModeStatus(value: any) {
+				setThermalModeStatus: (value: any) => {
 					return new Promise((resolve, reject) => {
 						if (setReturnValue) {
 							thermalModeStatus = value;
@@ -90,13 +90,13 @@ describe('GamingThermalModeService', () => {
 						reject('setThermalModeStatus error');
 					});
 				},
-				regThermalModeEvent() {
+				regThermalModeEvent: () => {
 					return new Promise((resolve, reject) => {
 						resolve(setReturnValue);
 						reject('regThermalModeEvent error');
 					});
 				},
-				getThermalModeRealStatus() {
+				getThermalModeRealStatus: () => {
 					return new Promise((resolve, reject) => {
 						if (thermalModeStatus !== 0) {
 							resolve(thermalModeStatus);
@@ -104,13 +104,13 @@ describe('GamingThermalModeService', () => {
 						reject('getThermalModeRealStatus error');
 					});
 				},
-				getAutoSwitchStatus() {
+				getAutoSwitchStatus: () => {
 					return new Promise((resolve, reject) => {
 						resolve(autoSwitchStatus);
 						reject('getAutoSwitchStatus error');
 					});
 				},
-				setAutoSwitchStatus(value: boolean) {
+				setAutoSwitchStatus: (value: boolean) => {
 					return new Promise((resolve, reject) => {
 						if (setReturnValue) {
 							autoSwitchStatus = value;
@@ -121,7 +121,7 @@ describe('GamingThermalModeService', () => {
 						reject('setThermalModeStatus error');
 					});
 				},
-				regThermalModeRealStatusEvent() {
+				regThermalModeRealStatusEvent: () => {
 					return new Promise((resolve, reject) => {
 						resolve(setReturnValue);
 						reject('regThermalModeRealStatusEvent error');
@@ -301,27 +301,27 @@ describe('GamingThermalModeService', () => {
 	});
 	describe('catch error', () => {
 		beforeEach(() => {
-			let spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
-			let stubValue = {
-				getThermalModeStatus() {
+			const spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
+			const stubValue = {
+				getThermalModeStatus: () => {
 					throw new Error('getThermalModeStatus error');
 				},
-				setThermalModeStatus(value: any) {
+				setThermalModeStatus: (value: any) => {
 					throw new Error('setThermalModeStatus error');
 				},
-				regThermalModeEvent() {
+				regThermalModeEvent: () => {
 					throw new Error('regThermalModeEvent error');
 				},
-				getThermalModeRealStatus() {
+				getThermalModeRealStatus: () => {
 					throw new Error('getThermalModeRealStatus error');
 				},
-				getAutoSwitchStatus() {
+				getAutoSwitchStatus: () => {
 					throw new Error('getAutoSwitchStatus error');
 				},
-				setAutoSwitchStatus(value: boolean) {
+				setAutoSwitchStatus: (value: boolean) => {
 					throw new Error('setAutoSwitchStatus error');
 				},
-				regThermalModeRealStatusEvent() {
+				regThermalModeRealStatusEvent: () => {
 					throw new Error('regThermalModeRealStatusEvent error');
 				},
 			};

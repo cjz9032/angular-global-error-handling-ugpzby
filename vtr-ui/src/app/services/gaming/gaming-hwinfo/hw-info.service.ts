@@ -5,8 +5,8 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 	providedIn: 'root',
 })
 export class HwInfoService {
-	private gamingHwInfo: any;
 	public isShellAvailable = false;
+	private gamingHwInfo: any;
 
 	constructor(shellService: VantageShellService) {
 		this.gamingHwInfo = shellService.getGamingHwInfo();

@@ -17,247 +17,247 @@ describe('GamingAutoCloseService', () => {
 			shellService = TestBed.get(VantageShellService);
 		});
 		describe(':', () => {
-			function setup() {
-				const service = TestBed.get(GamingAutoCloseService);
+			const setup = () => {
+				const setUpService = TestBed.get(GamingAutoCloseService);
 
-				return { service };
-			}
+				return { setUpService };
+			};
 
 			it('should call getAutoCloseStatus', () => {
-				const { service } = setup();
-				spyOn(service.gamingAutoClose, 'getStatus').and.callThrough();
-				service.getAutoCloseStatus();
-				expect(service.gamingAutoClose.getStatus).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService.gamingAutoClose, 'getStatus').and.callThrough();
+				setUpService.getAutoCloseStatus();
+				expect(setUpService.gamingAutoClose.getStatus).toHaveBeenCalled();
 
-				service.isShellAvailable = false;
-				service.getAutoCloseStatus();
-				expect(service.gamingAutoClose.getStatus).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.getAutoCloseStatus();
+				expect(setUpService.gamingAutoClose.getStatus).toHaveBeenCalled();
 			});
 
 			it('should call setAutoCloseStatus', () => {
-				const { service } = setup();
-				spyOn(service.gamingAutoClose, 'setStatus').and.callThrough();
-				service.setAutoCloseStatus(true);
-				expect(service.gamingAutoClose.setStatus).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService.gamingAutoClose, 'setStatus').and.callThrough();
+				setUpService.setAutoCloseStatus(true);
+				expect(setUpService.gamingAutoClose.setStatus).toHaveBeenCalled();
 
-				service.isShellAvailable = false;
-				service.setAutoCloseStatus(true);
-				expect(service.gamingAutoClose.setStatus).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.setAutoCloseStatus(true);
+				expect(setUpService.gamingAutoClose.setStatus).toHaveBeenCalled();
 			});
 
 			it('should call getAppsAutoCloseList', () => {
-				const { service } = setup();
+				const { setUpService } = setup();
 
-				spyOn(service.gamingAutoClose, 'getAutoCloseList').and.callThrough();
-				service.getAppsAutoCloseList();
-				expect(service.gamingAutoClose.getAutoCloseList).toHaveBeenCalled();
+				spyOn(setUpService.gamingAutoClose, 'getAutoCloseList').and.callThrough();
+				setUpService.getAppsAutoCloseList();
+				expect(setUpService.gamingAutoClose.getAutoCloseList).toHaveBeenCalled();
 
-				service.isShellAvailable = false;
-				service.getAppsAutoCloseList();
-				expect(service.gamingAutoClose.getAutoCloseList).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.getAppsAutoCloseList();
+				expect(setUpService.gamingAutoClose.getAutoCloseList).toHaveBeenCalled();
 			});
 
 			it('should call getAppsAutoCloseRunningList', () => {
-				const { service } = setup();
+				const { setUpService } = setup();
 
-				spyOn(service.gamingAutoClose, 'getRunningList').and.callThrough();
-				service.getAppsAutoCloseRunningList();
-				expect(service.gamingAutoClose.getRunningList).toHaveBeenCalled();
+				spyOn(setUpService.gamingAutoClose, 'getRunningList').and.callThrough();
+				setUpService.getAppsAutoCloseRunningList();
+				expect(setUpService.gamingAutoClose.getRunningList).toHaveBeenCalled();
 
-				service.isShellAvailable = false;
-				service.getAppsAutoCloseRunningList();
-				expect(service.gamingAutoClose.getRunningList).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.getAppsAutoCloseRunningList();
+				expect(setUpService.gamingAutoClose.getRunningList).toHaveBeenCalled();
 			});
 
 			it('should call addAppsAutoCloseList', () => {
-				const { service } = setup();
-				spyOn(service.gamingAutoClose, 'addAutoCloseList').and.callThrough();
-				service.addAppsAutoCloseList(true);
-				expect(service.gamingAutoClose.addAutoCloseList).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService.gamingAutoClose, 'addAutoCloseList').and.callThrough();
+				setUpService.addAppsAutoCloseList(true);
+				expect(setUpService.gamingAutoClose.addAutoCloseList).toHaveBeenCalled();
 
-				service.isShellAvailable = false;
-				service.addAppsAutoCloseList(true);
-				expect(service.gamingAutoClose.addAutoCloseList).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.addAppsAutoCloseList(true);
+				expect(setUpService.gamingAutoClose.addAutoCloseList).toHaveBeenCalled();
 			});
 
 			it('should call delAppsAutoCloseList', () => {
-				const { service } = setup();
-				spyOn(service.gamingAutoClose, 'delAutoCloseList').and.callThrough();
-				service.delAppsAutoCloseList(true);
-				expect(service.gamingAutoClose.delAutoCloseList).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService.gamingAutoClose, 'delAutoCloseList').and.callThrough();
+				setUpService.delAppsAutoCloseList(true);
+				expect(setUpService.gamingAutoClose.delAutoCloseList).toHaveBeenCalled();
 
-				service.isShellAvailable = false;
-				service.delAppsAutoCloseList(true);
-				expect(service.gamingAutoClose.delAutoCloseList).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.delAppsAutoCloseList(true);
+				expect(setUpService.gamingAutoClose.delAutoCloseList).toHaveBeenCalled();
 			});
 
 			it('should call setNeedToAsk', () => {
-				const { service } = setup();
-				spyOn(service.gamingAutoClose, 'setNeedToAsk').and.callThrough();
-				service.setNeedToAsk(true);
-				expect(service.gamingAutoClose.setNeedToAsk).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService.gamingAutoClose, 'setNeedToAsk').and.callThrough();
+				setUpService.setNeedToAsk(true);
+				expect(setUpService.gamingAutoClose.setNeedToAsk).toHaveBeenCalled();
 
-				service.isShellAvailable = false;
-				service.setNeedToAsk(true);
-				expect(service.gamingAutoClose.setNeedToAsk).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.setNeedToAsk(true);
+				expect(setUpService.gamingAutoClose.setNeedToAsk).toHaveBeenCalled();
 			});
 
 			it('should call getNeedToAsk', () => {
-				const { service } = setup();
-				spyOn(service.gamingAutoClose, 'getNeedToAsk').and.callThrough();
-				service.getNeedToAsk(true);
-				expect(service.gamingAutoClose.getNeedToAsk).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService.gamingAutoClose, 'getNeedToAsk').and.callThrough();
+				setUpService.getNeedToAsk(true);
+				expect(setUpService.gamingAutoClose.getNeedToAsk).toHaveBeenCalled();
 
-				service.isShellAvailable = false;
-				service.getNeedToAsk(true);
-				expect(service.gamingAutoClose.getNeedToAsk).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.getNeedToAsk(true);
+				expect(setUpService.gamingAutoClose.getNeedToAsk).toHaveBeenCalled();
 			});
 
 			it('should call functions throw error', () => {
-				const { service } = setup();
+				const { setUpService } = setup();
 				try {
-					spyOn(service.gamingAutoClose, 'getStatus').and.throwError(
+					spyOn(setUpService.gamingAutoClose, 'getStatus').and.throwError(
 						new Error('new getStatus error')
 					);
-					service.getAutoCloseStatus();
+					setUpService.getAutoCloseStatus();
 				} catch (error) {
-					expect(service.gamingAutoClose.getStatus).toThrowError('new getStatus error');
+					expect(setUpService.gamingAutoClose.getStatus).toThrowError('new getStatus error');
 				}
 
 				try {
-					spyOn(service.gamingAutoClose, 'setStatus').and.throwError(
+					spyOn(setUpService.gamingAutoClose, 'setStatus').and.throwError(
 						new Error('new setStatus error')
 					);
-					service.setAutoCloseStatus(true);
+					setUpService.setAutoCloseStatus(true);
 				} catch (error) {
-					expect(service.gamingAutoClose.setStatus).toThrowError('new setStatus error');
+					expect(setUpService.gamingAutoClose.setStatus).toThrowError('new setStatus error');
 				}
 
 				try {
-					spyOn(service.gamingAutoClose, 'getAutoCloseList').and.throwError(
+					spyOn(setUpService.gamingAutoClose, 'getAutoCloseList').and.throwError(
 						new Error('new getAutoCloseList error')
 					);
-					service.getAppsAutoCloseList();
+					setUpService.getAppsAutoCloseList();
 				} catch (error) {
-					expect(service.gamingAutoClose.getAutoCloseList).toThrowError(
+					expect(setUpService.gamingAutoClose.getAutoCloseList).toThrowError(
 						'new getAutoCloseList error'
 					);
 				}
 
 				try {
-					spyOn(service.gamingAutoClose, 'getRunningList').and.throwError(
+					spyOn(setUpService.gamingAutoClose, 'getRunningList').and.throwError(
 						new Error('new getRunningList error')
 					);
-					service.getAppsAutoCloseRunningList();
+					setUpService.getAppsAutoCloseRunningList();
 				} catch (error) {
-					expect(service.gamingAutoClose.getRunningList).toThrowError(
+					expect(setUpService.gamingAutoClose.getRunningList).toThrowError(
 						'new getRunningList error'
 					);
 				}
 
 				try {
-					spyOn(service.gamingAutoClose, 'addAutoCloseList').and.throwError(
+					spyOn(setUpService.gamingAutoClose, 'addAutoCloseList').and.throwError(
 						new Error('new addAutoCloseList error')
 					);
-					service.addAppsAutoCloseList(true);
+					setUpService.addAppsAutoCloseList(true);
 				} catch (error) {
-					expect(service.gamingAutoClose.addAutoCloseList).toThrowError(
+					expect(setUpService.gamingAutoClose.addAutoCloseList).toThrowError(
 						'new addAutoCloseList error'
 					);
 				}
 
 				try {
-					spyOn(service.gamingAutoClose, 'delAutoCloseList').and.throwError(
+					spyOn(setUpService.gamingAutoClose, 'delAutoCloseList').and.throwError(
 						new Error('new delAutoCloseList error')
 					);
-					service.delAppsAutoCloseList(true);
+					setUpService.delAppsAutoCloseList(true);
 				} catch (error) {
-					expect(service.gamingAutoClose.delAutoCloseList).toThrowError(
+					expect(setUpService.gamingAutoClose.delAutoCloseList).toThrowError(
 						'new delAutoCloseList error'
 					);
 				}
 
 				try {
-					spyOn(service.gamingAutoClose, 'setNeedToAsk').and.throwError(
+					spyOn(setUpService.gamingAutoClose, 'setNeedToAsk').and.throwError(
 						new Error('new setNeedToAsk error')
 					);
-					service.setNeedToAsk(true);
+					setUpService.setNeedToAsk(true);
 				} catch (error) {
-					expect(service.gamingAutoClose.setNeedToAsk).toThrowError(
+					expect(setUpService.gamingAutoClose.setNeedToAsk).toThrowError(
 						'new setNeedToAsk error'
 					);
 				}
 
 				try {
-					spyOn(service.gamingAutoClose, 'getNeedToAsk').and.throwError(
+					spyOn(setUpService.gamingAutoClose, 'getNeedToAsk').and.throwError(
 						new Error('new getNeedToAsk error')
 					);
-					service.getNeedToAsk();
+					setUpService.getNeedToAsk();
 				} catch (error) {
-					expect(service.gamingAutoClose.getNeedToAsk).toThrowError(
+					expect(setUpService.gamingAutoClose.getNeedToAsk).toThrowError(
 						'new getNeedToAsk error'
 					);
 				}
 			});
 
 			it('should call setAutoCloseStatusCache', () => {
-				const { service } = setup();
-				spyOn(service, 'setAutoCloseStatusCache').and.callThrough();
-				service.setAutoCloseStatusCache();
-				expect(service.setAutoCloseStatusCache).toHaveBeenCalled();
-				service.isShellAvailable = false;
-				service.setAutoCloseStatusCache();
-				expect(service.setAutoCloseStatusCache).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService, 'setAutoCloseStatusCache').and.callThrough();
+				setUpService.setAutoCloseStatusCache();
+				expect(setUpService.setAutoCloseStatusCache).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.setAutoCloseStatusCache();
+				expect(setUpService.setAutoCloseStatusCache).toHaveBeenCalled();
 			});
 
 			it('should call getAutoCloseStatusCache', () => {
-				const { service } = setup();
-				spyOn(service, 'getAutoCloseStatusCache').and.callThrough();
-				service.getAutoCloseStatusCache();
-				expect(service.getAutoCloseStatusCache).toHaveBeenCalled();
-				service.isShellAvailable = false;
-				service.getAutoCloseStatusCache();
-				expect(service.getAutoCloseStatusCache).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService, 'getAutoCloseStatusCache').and.callThrough();
+				setUpService.getAutoCloseStatusCache();
+				expect(setUpService.getAutoCloseStatusCache).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.getAutoCloseStatusCache();
+				expect(setUpService.getAutoCloseStatusCache).toHaveBeenCalled();
 			});
 
 			it('should call setNeedToAskStatusCache', () => {
-				const { service } = setup();
-				spyOn(service, 'setNeedToAskStatusCache').and.callThrough();
-				service.setNeedToAskStatusCache();
-				expect(service.setNeedToAskStatusCache).toHaveBeenCalled();
-				service.isShellAvailable = false;
-				service.setNeedToAskStatusCache();
-				expect(service.setNeedToAskStatusCache).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService, 'setNeedToAskStatusCache').and.callThrough();
+				setUpService.setNeedToAskStatusCache();
+				expect(setUpService.setNeedToAskStatusCache).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.setNeedToAskStatusCache();
+				expect(setUpService.setNeedToAskStatusCache).toHaveBeenCalled();
 			});
 
 			it('should call getNeedToAskStatusCache', () => {
-				const { service } = setup();
-				spyOn(service, 'getNeedToAskStatusCache').and.callThrough();
-				service.getNeedToAskStatusCache();
-				expect(service.getNeedToAskStatusCache).toHaveBeenCalled();
-				service.isShellAvailable = false;
-				service.getNeedToAskStatusCache();
-				expect(service.getNeedToAskStatusCache).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService, 'getNeedToAskStatusCache').and.callThrough();
+				setUpService.getNeedToAskStatusCache();
+				expect(setUpService.getNeedToAskStatusCache).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.getNeedToAskStatusCache();
+				expect(setUpService.getNeedToAskStatusCache).toHaveBeenCalled();
 			});
 
 			it('should call setAutoCloseListCache', () => {
-				const { service } = setup();
-				spyOn(service, 'setAutoCloseListCache').and.callThrough();
-				service.setAutoCloseListCache();
-				expect(service.setAutoCloseListCache).toHaveBeenCalled();
-				service.isShellAvailable = false;
-				service.setAutoCloseListCache();
-				expect(service.setAutoCloseListCache).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService, 'setAutoCloseListCache').and.callThrough();
+				setUpService.setAutoCloseListCache();
+				expect(setUpService.setAutoCloseListCache).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.setAutoCloseListCache();
+				expect(setUpService.setAutoCloseListCache).toHaveBeenCalled();
 			});
 
 			it('should call getAutoCloseListCache', () => {
-				const { service } = setup();
-				spyOn(service, 'getAutoCloseListCache').and.callThrough();
-				service.getAutoCloseListCache();
-				expect(service.getAutoCloseListCache).toHaveBeenCalled();
-				service.isShellAvailable = false;
-				service.getAutoCloseListCache();
-				expect(service.getAutoCloseListCache).toHaveBeenCalled();
+				const { setUpService } = setup();
+				spyOn(setUpService, 'getAutoCloseListCache').and.callThrough();
+				setUpService.getAutoCloseListCache();
+				expect(setUpService.getAutoCloseListCache).toHaveBeenCalled();
+				setUpService.isShellAvailable = false;
+				setUpService.getAutoCloseListCache();
+				expect(setUpService.getAutoCloseListCache).toHaveBeenCalled();
 			});
 		});
 	});

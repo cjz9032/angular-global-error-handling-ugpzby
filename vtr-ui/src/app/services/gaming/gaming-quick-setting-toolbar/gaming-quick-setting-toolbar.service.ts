@@ -5,8 +5,8 @@ import { VantageShellService } from './../../vantage-shell/vantage-shell.service
 	providedIn: 'root',
 })
 export class GamingQuickSettingToolbarService {
-	private gamingQuickSettingToolbar: any;
 	public isShellAvailable = false;
+	private gamingQuickSettingToolbar: any;
 
 	constructor(private shellService: VantageShellService) {
 		this.gamingQuickSettingToolbar = shellService.getQuickSettingToolbar();
