@@ -3,15 +3,12 @@
 	<div class="row">
 		<div class="module-information" [ngClass]="{ 'last-child': last }">
 			<div class="module-icon">
-
 				<!-- Defines an icon according with component -->
-				<div class="test-status">
-					<img id="snapshot-item-{{ i }}-icon"
-						alt="{{ item.name }}"
-						class="img-icon"
-						role="img"
-						[src]="item.iconSrc | svgInline | async" />
-				</div>
+				<img id="snapshot-item-{{ i }}-icon" *ngIf="item.iconSrc !== ''"
+					alt="{{ item.name }}"
+					class="img-icon"
+					role="img"
+					[src]="item.iconSrc | svgInline | async" />
 			</div>
 
 			<!-- Icon to expand and collapse module information -->

@@ -6,6 +6,7 @@ export enum SnapshotStatus {
 	BaselineCompleted = 'titleBaselineCompleted'
 }
 export enum SnapshotModules {
+	CdRomDrives,
 	DisplayDevices,
 	HardDrives,
 	Keyboards,

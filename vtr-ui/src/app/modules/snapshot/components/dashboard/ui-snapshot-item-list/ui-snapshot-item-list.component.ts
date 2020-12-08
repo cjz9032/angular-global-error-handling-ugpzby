@@ -250,9 +250,8 @@ export class UiSnapshotItemListComponent implements OnInit {
 
 	// Method to get correct icon
 	private getModuleIcon(module: string): string {
-		// Processor icon is the default icon
-		const moduleIcon = SnapshotModules[SnapshotModules[module]] ?? 'processors';
+		const moduleIcon = SnapshotModules[SnapshotModules[module]] ?? '';
 
-		return 'assets/icons/snapshot/icon_' + moduleIcon.toLowerCase() + '.svg';
+		return moduleIcon === '' ? moduleIcon : 'assets/icons/snapshot/icon_' + moduleIcon.toLowerCase() + '.svg';
 	}
 }
