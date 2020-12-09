@@ -9,20 +9,7 @@ import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from '../logger/logger.service';
-
-interface IYearlyPrice {
-	code: string;
-	price: number;
-	formatPrice: string;
-	symbol: string;
-	isoCode: string;
-}
-
-interface ILocalPriceData {
-	geo: string;
-	yearlyPrice: string;
-	monthlyPrice: string;
-}
+import { SPLocalPriceData, SPYearPrice } from 'src/app/components/pages/page-smart-performance/interface/smart-performance.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -44,7 +31,7 @@ export class SmartPerformanceService {
 	subItems: any = {};
 
 	isShowPrice = false;
-	localPriceData: ILocalPriceData;
+	localPriceData: SPLocalPriceData;
 	isLocalPriceOnlineChecked = false;
 
 	constructor(
@@ -250,17 +237,15 @@ export class SmartPerformanceService {
 			const url = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getPrice?country=${localInfo.GEO}`;
 			const priceData = (await this.httpClient.get(url).toPromise()) as any;
 			if (priceData && priceData.data) {
-				const yearlyPrices = priceData.data.filter(
-					(item) => item.code === SPPriceCode.YEAR
-				);
-				const yearlyPriceData: IYearlyPrice = yearlyPrices[0];
+				const yearlyPrices = priceData.data.filter(item => item.code === SPPriceCode.YEAR);
+				const yearlyPriceData: SPYearPrice = yearlyPrices[0];
 				this.setLocalPriceData(yearlyPriceData, localInfo.GEO);
 				this.isLocalPriceOnlineChecked = true;
 			}
 		}
 	}
 
-	setLocalPriceData(yearlyPriceData: IYearlyPrice, GEO: string) {
+	setLocalPriceData(yearlyPriceData: SPYearPrice, GEO: string) {
 		if (yearlyPriceData && yearlyPriceData.price !== 0) {
 			const mp = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
 			const yearlyPrice = yearlyPriceData.formatPrice;
@@ -270,11 +255,8 @@ export class SmartPerformanceService {
 				: mp + symbol;
 			this.localPriceData = { geo: GEO, yearlyPrice, monthlyPrice };
 			this.isShowPrice = true;
-			let localPrices: ILocalPriceData[] = [];
-			const localPricesCache = this.localCacheService.getLocalCacheValue(
-				LocalStorageKey.SmartPerformanceLocalPrices,
-				undefined
-			);
+			let localPrices: SPLocalPriceData[] = [];
+			const localPricesCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceLocalPrices, undefined);
 			if (localPricesCache && localPricesCache.length > 0) {
 				localPrices = localPricesCache;
 				const geoInCacheIndex = localPrices.findIndex((lp) => lp.geo === GEO);

@@ -24,7 +24,8 @@
 									[isFullWidth]="true"
 									[label]="'smartPerformance.signUpAndFix' | translate"></vtr-ui-button>
 								<p id="smart-performance-scan-complete-purchase-tip"
-									role="text" [innerHTML]="'smartPerformance.scanCompletePage.summaryPurchaseTip' | translate"></p>
+									role="text"
+									[innerHTML]="'smartPerformance.scanCompletePage.summaryPurchaseTip' | translate"></p>
 							</div>
 						</vtr-ui-smart-performance-header>
 
@@ -97,9 +98,7 @@
 									</p>
 								</div>
 							</div>
-							<vtr-subpage-scan-results-accordion [tune]="tune"
-								[boost]="boost"
-								[secure]="secure">
+							<vtr-subpage-scan-results-accordion [resultItem]="scanResult">
 							</vtr-subpage-scan-results-accordion>
 						</div>
 					</div>
@@ -232,7 +231,8 @@
 							</div>
 							<div *ngIf="!isLoading && (!historyScanResultsDateTime || (historyScanResultsDateTime && historyScanResultsDateTime.length === 0))"
 								class="row pt-4 d-flex justify-content-between px-0 position-relative">
-								<h4 class="py-5" id="smart-performance-scan-summary-noScanResults">{{'smartPerformance.noScanResults' |translate }}</h4>
+								<h4 class="py-5"
+									id="smart-performance-scan-summary-noScanResults">{{'smartPerformance.noScanResults' |translate }}</h4>
 							</div>
 							<div *ngIf="isLoading || (historyScanResultsDateTime && historyScanResultsDateTime.length > 0)"
 								class="row pt-5 d-flex justify-content-between px-0 position-relative">
@@ -404,7 +404,7 @@
 			</div>
 
 			<div class="vtr-device-information mb-24"
-				*ngIf="(smartPerformanceService.isSubscribed || smartPerformanceService.isExpired) && !showResult.show && historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
+				*ngIf="(smartPerformanceService.isSubscribed || smartPerformanceService.isExpired) && !showResultStatus.show && historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
 				<div class="vtr-ui-smart-performance-scan-summary">
 					<div class="vtr-scan-information">
 						<div class="scan-summary-block">
@@ -430,12 +430,12 @@
 														metricsEvent="FeatureClick"
 														metricsParent="Page.Support.SmartPerformance"
 														(keypress)="onKeyPress($event)"
-														(click)="seeScanResultDetails(item.scanrunDate, item.scanrunTime, item.Tune, item.Boost, item.Secure, ind, item.type.toUpperCase())">
+														(click)="seeScanResultDetails(item, ind)">
 														<div class="container-fluid">
 															<div class="row no-gutters align-items-center">
 																<div class="col-7 scan-run-time">
-																	<b>{{item.scanrunDate}}</b> -
-																	<span>{{item.scanrunTime | uppercase}}</span>
+																	<b>{{item.scanRunDate}}</b> -
+																	<span>{{item.scanRunTime | uppercase}}</span>
 																	<span class="ml-1"
 																		id="smart-performance-scan-summary-manual-{{ind + 1}}"
 																		role="text"
@@ -468,7 +468,7 @@
 				</div>
 			</div>
 			<div class="vtr-device-information mb-24"
-				*ngIf="(smartPerformanceService.isSubscribed || smartPerformanceService.isExpired) && showResult.show">
+				*ngIf="(smartPerformanceService.isSubscribed || smartPerformanceService.isExpired) && showResultStatus.show">
 				<div class="vtr-ui-smart-performance-scan-summary">
 					<div class="vtr-scan-information">
 						<div class="scan-summary-block">
@@ -476,20 +476,20 @@
 								<div class="title-block">
 									<h3 id="smart-performance-scan-summary-scanResults-title"
 										class="text-capitalize"
-										*ngIf="showResult.isLastFix">{{'smartPerformance.lastFix' |translate }}</h3>
+										*ngIf="showResultStatus.isLastFix">{{'smartPerformance.lastFix' |translate }}</h3>
 									<h3 id="smart-performance-scan-summary-scanResults-title"
 										class="text-capitalize"
-										*ngIf="!showResult.isLastFix">{{'smartPerformance.fixResult' |translate }}</h3>
+										*ngIf="!showResultStatus.isLastFix">{{'smartPerformance.fixResult' |translate }}</h3>
 									<p class="mb-20">
-										<span>{{showResult.time}}</span>
+										<span>{{showResultStatus.time}}</span>
 										<span class="ml-1"
 											id="smart-performance-scan-summary-manual"
 											role="text"
-											*ngIf="showResult.itemType == 'MS'">({{'smartPerformance.manual' |translate }})</span>
+											*ngIf="showResultStatus.itemType == 'MS'">({{'smartPerformance.manual' |translate }})</span>
 										<span class="ml-1"
 											id="smart-performance-scan-summary-auto"
 											role="text"
-											*ngIf="showResult.itemType == 'SS'">({{'smartPerformance.auto' |translate }})</span>
+											*ngIf="showResultStatus.itemType == 'SS'">({{'smartPerformance.auto' |translate }})</span>
 									</p>
 								</div>
 								<a class="ml-auto pt-2 d-flex align-items-center check-previous-results-content"
@@ -506,9 +506,8 @@
 								</a>
 							</div>
 							<div class="summary-block w-100">
-								<vtr-subpage-scan-results-accordion [tune]="showResult.tune"
-									[boost]="showResult.boost"
-									[secure]="showResult.secure">
+								<vtr-subpage-scan-results-accordion [resultItem]="showResultItem"
+									[resultStatus]="showResultStatus">
 								</vtr-subpage-scan-results-accordion>
 							</div>
 						</div>
