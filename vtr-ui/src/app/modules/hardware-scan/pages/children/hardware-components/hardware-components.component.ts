@@ -119,7 +119,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private hardwareScanMetricsService: HardwareScanMetricsService,
 		private timerService: TimerService
 	) {
-		this.viewResultsPath = '/snapshot';
+		this.viewResultsPath = '/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
 		this.metrics = this.shellService.getMetrics();
 	}
