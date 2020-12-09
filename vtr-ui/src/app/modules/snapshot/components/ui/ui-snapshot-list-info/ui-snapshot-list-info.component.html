@@ -1,0 +1,90 @@
+<div id="{{ componentId }}" class="vtr-ui-snapshot-list-info">
+	<ul class="list-group modal-scroll">
+		<li *ngFor="let item of snapshotInfo; let i = index"
+			id="{{ componentId }}-item-{{ i }}"
+			class="list-group-item"
+			>
+			<div class="module" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
+				<div class="custom-control">
+					<vtr-ui-checkbox
+						#checkbox
+						[componentId]="componentId + '-item-' + i"
+						[ariaLabel]="('snapshot.' + item.name | translateDefault:item.name) + '-checkbox'"
+					 	[indeterminate]="item.indeterminate"
+						(click)="onDeviceSelectionClicked(item,checkbox.checked)"
+						[hasChild]="true"
+						[checked]="item.selected"
+						[value]="item.selected"
+						class="custom-control-component"
+					>
+						<p id="{{ componentId }}-item-{{ i }}-name" role="text" class="custom-control-label-text name">
+							{{ ('snapshot.' + item.name) | translateDefault: item.name  }}
+						</p>
+					</vtr-ui-checkbox>
+				</div>
+
+				<div class="col-auto">
+					<div id="{{ componentId }}-item-{{ i }}-collapse-btn"
+						class="collapse-control select-item"
+						tabindex="0"
+						[attr.aria-label]="('snapshot.' + item.name | translateDefault:item.name) + (item.collapsed ? '-collapse-submodules-list': '-expand-submodules-list')"
+						(click)="item.collapsed = !item.collapsed"
+						(keyup.enter)="item.collapsed = !item.collapsed"
+						role="button"
+						[attr.aria-expanded]="item.collapsed">
+						<fa-icon *ngIf="item.collapsed; else expandArrow" [icon]="['fal', 'chevron-up']"></fa-icon>
+						<ng-template #expandArrow>
+							<fa-icon [icon]="['fal', 'chevron-down']"></fa-icon>
+						</ng-template>
+					</div>
+				</div>
+			</div>
+			<div id="{{ componentId }}-item-{{ i }}-subitems" class="sub-module" [ngbCollapse]="!item.collapsed" >
+				<ul class="list-group">
+					<li *ngFor="let module of item.modules; let j = index"
+						id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
+						class="list-group-item"
+						(change)=onCheckChildren(item)
+						[ngClass]="{'isSelected-item' : module.selected}"
+						>
+						<div class="module">
+							<div class="custom-control custom-checkbox">
+								<vtr-ui-checkbox
+									componentId="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
+									[ariaLabel]="('snapshot.modules.' + module.name | translateDefault:module.name) + ('snapshot.' + module.name | translateDefault:module.name) + '-checkbox'"
+									[checked]="module.selected"
+									[hasChild]="true"
+									[value]="module.selected"
+									(toggle)="module.selected = $event"
+									class="custom-control-component"
+								>
+									<p class="custom-control-label-text module-name" id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}-name" role="text">
+										{{ 'snapshot.modules.' + module.name | translate }}
+									</p>
+								</vtr-ui-checkbox>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+	<div class="options">
+		<vtr-ui-hyperlink-button
+			linkId="snapshot-select-all-modules-link"
+			hyperlinkStyle="xs-300-blue-lighter"
+			class="hyperlink-container"
+			(hyperlinkClick)="onSelectAll()"
+			[label]=" 'snapshot.select' | translate "
+			[disableTooltip]="true"
+			></vtr-ui-hyperlink-button>
+		<span class="select-item-subtitle">/</span>
+		<vtr-ui-hyperlink-button
+			linkId="snapshot-deselect-all-modules-link"
+			hyperlinkStyle="xs-300-blue-lighter"
+			(hyperlinkClick)="onDeselectAll()"
+			[label]=" 'snapshot.deselect' | translate "
+			[disableTooltip]="true"
+		></vtr-ui-hyperlink-button>
+	</div>
+</div>

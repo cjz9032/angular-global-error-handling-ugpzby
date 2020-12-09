@@ -1,0 +1,135 @@
+@import '../../../../../app.theme';
+
+.vtr-ui-snapshot-list-info {
+	padding-top: 1.5rem;
+
+	.list-group {
+		.list-group-item {
+			background-color: $grey_lighter;
+			border-color: $grey_light;
+			color: $main_dark;
+			padding: 0;
+
+			.module {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 1.9rem;
+				height: 6rem;
+
+				&:not(.isSelected-item):hover {
+					background-color: $note_border;
+				}
+
+				.rotate {
+					-webkit-transform: rotate(180deg);
+					transform: rotate(180deg);
+				}
+			}
+
+			.sub-module {
+				.list-group-item {
+					border-width: 1px 0 0 0;
+					border-radius: 0 !important;
+
+					.module {
+						padding: 0 0 0 5.2rem;
+						background-color: transparent;
+					}
+
+					&:hover {
+						background-color: $note_border;
+					}
+				}
+			}
+
+			&:first-child {
+				border-radius: 0.5rem 0.5rem 0 0 !important;
+			}
+
+			&:last-child {
+				border-radius: 0 0 0.5rem 0.5rem !important;
+
+				.sub-module {
+					li:last-child {
+						border-radius: 0 0 0.5rem 0.5rem !important;
+					}
+				}
+			}
+
+			.custom-control {
+				display: inline-block;
+				padding-left: 0;
+
+				// modifying global checkbox component
+				.custom-control-component ::ng-deep .auto-set-checkbox {
+					margin: 0;
+
+					// removing default p margin
+					.custom-control-label {
+						padding-left: 1.5rem;
+
+						.custom-control-label-text {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+
+			.name {
+				font-size: $fontsize_xs;
+				font-weight: $weight_600;
+			}
+
+			.subname {
+				font-size: $fontsize_xs;
+				font-weight: $weight_light !important;
+			}
+
+			.module-name {
+				font-size: $fontsize_xs;
+				font-weight: $weight_medium;
+			}
+
+			fa-icon {
+				font-size: $fontsize_lg;
+				vertical-align: middle;
+				cursor: pointer;
+			}
+		}
+
+		.isSelected-item {
+			background: rgba($menu_hover, 0.1) 0 0 no-repeat padding-box !important;
+
+			&:hover {
+				background: rgba($menu_hover, 0.15) 0 0 no-repeat padding-box !important;
+			}
+		}
+	}
+
+	.modal-scroll {
+		max-height: calc(100vh - 32rem);
+		overflow-y: auto;
+	}
+
+	.options {
+		padding: 1.1rem 0;
+		font-size: $fontsize_xs;
+		display: flex;
+
+		// Remove default padding-left from Select hyperlink-button
+		:first-child {
+			&.hyperlink-container {
+				::ng-deep.vtr-ui-hyperlink-button {
+					padding-left: 0;
+				}
+			}
+		}
+
+		.select-item-subtitle {
+			padding: 0.5rem;
+			font-weight: $shade_lighter;
+			color: $shade_darker;
+		}
+	}
+}

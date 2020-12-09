@@ -1,18 +1,29 @@
 <div class="modal-body vtr-modal-snapshot">
 	<div class="row modal-information">
-		<h1 class="title" id="snapshot-modal-title" role="heading">{{ 'snapshot.title' | translate }}</h1>
-		<p class="description" id="snapshot-modal-description" role="text">{{ 'snapshot.description' | translate }}</p>
+		<h1 class="title" id="snapshot-modal-title" role="heading">{{ 'snapshot.replaceBaseline' | translate }}</h1>
+		<p class="description" id="snapshot-modal-description" role="text">{{ 'snapshot.replaceBaselineDescription' | translate }}</p>
+		<p class="errorMessage" id="snapshot-modal-error-message" role="text" [hidden]="!errorMessage">{{ 'snapshot.errorResult' | translate }}</p>
 	</div>
 
-	<vtr-snapshot-main
-		[snapshots]="snapshotInfo"
-		[componentId]="'snapshot-information-list'">
-	</vtr-snapshot-main>
+	<vtr-ui-snapshot-list-info
+		[componentId]="'snapshot-replace-baseline-list'"
+		[snapshotInfo]="snapshotModulesInfo"
+		(selectAny)="receiveSelect()">
+	</vtr-ui-snapshot-list-info>
+
+	<div class="row button-row">
+		<vtr-ui-button
+			linkId="snapshot-modal-run-selected-modules-btn"
+			[vtrMetricEnabled]= false
+			[label]= " 'snapshot.replaceBaseline' | translate "
+			(onClick)="onClickRun()">
+		</vtr-ui-button>
+	</div>
 
 	<div class="btn-modal-close">
 		<vtr-ui-close-button
 			linkId="snapshot-modal-close-btn"
-			(clickClose)="closeButtonClick()">
+			(clickClose)="closeModal()">
 		</vtr-ui-close-button>
 	</div>
 </div>
