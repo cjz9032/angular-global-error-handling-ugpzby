@@ -19,6 +19,7 @@ import { InputAccessoriesService } from 'src/app/services/input-accessories/inpu
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { ConfigService } from 'src/app/services/config/config.service';
 
 declare const Windows: any;
 
@@ -110,7 +111,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private translate: TranslateService,
 		private localCacheService: LocalCacheService,
-		private router: Router
+		private router: Router,
+		private configService: ConfigService
 	) {
 		// translate subheader menus
 		this.menuItems.forEach((m) => {
@@ -133,6 +135,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 		this.qaService.setCurrentLangTranslations();
 		this.initInputAccessories();
+		this.getSmartAssistCapability();
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
@@ -376,6 +379,25 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	onRouteActivate($event, hsRouterOutlet: HTMLElement) {
 		// On route change , change foucs to immediate next below first tabindex on route change response
 		this.activeElement = document.activeElement as HTMLElement;
+	}
+
+	getSmartAssistCapability() {
+		let smartAssistCap = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.IsSmartAssistSupported
+		);
+		if (!smartAssistCap) {
+			this.menuItems = this.commonService.removeObjFrom(
+				this.menuItems,
+				this.menuItems[4].path
+			);
+		}
+		smartAssistCap = this.configService.isSmartAssistAvailable;
+		if (!smartAssistCap) {
+			this.menuItems = this.commonService.removeObjFrom(
+				this.menuItems,
+				this.menuItems[4].path
+			);
+		}
 	}
 
 	// VAN-5872, server switch feature
