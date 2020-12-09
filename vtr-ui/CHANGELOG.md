@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.25](https://bitbucket.tc.lenovo.com///compare/v1.9.24...v1.9.25) (2020-12-09)
+
+
+### Features
+
+* **Smart Performance:** VAN-23034 new addin issue count high contrast ([8472366](https://bitbucket.tc.lenovo.com///commit/8472366612494af58240e8d6fdd9f70a8b9ab806))
+* **Smart Performance:** VAN-23034 use new sp addin, show sub category issue count ([aef0a7e](https://bitbucket.tc.lenovo.com///commit/aef0a7e14a1203c3d9b3af43dcea86115a6a292d))
+
 ### [1.9.24](https://bitbucket.tc.lenovo.com///compare/v1.9.23...v1.9.24) (2020-12-08)
 
 ### [1.9.23](https://bitbucket.tc.lenovo.com///compare/v1.9.22...v1.9.23) (2020-12-07)
