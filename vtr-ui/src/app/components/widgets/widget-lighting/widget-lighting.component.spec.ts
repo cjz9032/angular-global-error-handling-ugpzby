@@ -8,19 +8,20 @@ import { WidgetLightingComponent } from './widget-lighting.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { of } from 'rxjs';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { GAMING_DATA } from 'src/testing/gaming-data';
 
 describe('WidgetLightingComponent', () => {
 	let component: WidgetLightingComponent;
 	let fixture: ComponentFixture<WidgetLightingComponent>;
-	let ledSwitchButtonFeature: boolean = true;
-	let ledSetFeature: boolean = true;
-	let ledDriver: boolean = true;
-	let profileId: number = 2;
-	let commonServiceMock = {
+	let ledSwitchButtonFeature = true;
+	let ledSetFeature = true;
+	let ledDriver = true;
+	let profileId = 2;
+	const commonServiceMock = {
 		getCapabalitiesNotification: () => of({ type: Gaming.GamingCapabilities }),
 	};
-	let LocalCacheServiceMock = {
-		getLocalCacheValue(key: any) {
+	const localCacheServiceMock = {
+		getLocalCacheValue:(key: any) => {
 			switch (key) {
 				case '[LocalStorageKey] LedSwitchButtonFeature':
 					return ledSwitchButtonFeature;
@@ -32,7 +33,7 @@ describe('WidgetLightingComponent', () => {
 					return profileId;
 			}
 		},
-		setLocalCacheValue(key: any, value: any) {
+		setLocalCacheValue:(key: any, value: any) => {
 			switch (key) {
 				case '[LocalStorageKey] LedSwitchButtonFeature':
 					ledSwitchButtonFeature = value;
@@ -65,8 +66,8 @@ describe('WidgetLightingComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				WidgetLightingComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+				GAMING_DATA.mockPipe({ name: 'sanitize' }),
 			],
 			providers: [
 				{ provide: DeviceService, useValue: deviceServiceMock },
@@ -164,15 +165,3 @@ describe('WidgetLightingComponent', () => {
 	}));
 });
 
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

@@ -6,6 +6,7 @@ import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MetricService } from '../../../services/metric/metrics.service';
+import { GAMING_DATA } from 'src/testing/gaming-data';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', [
 	'getLightingProfileId',
@@ -19,8 +20,8 @@ const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', 
 	'checkAreaColorFn',
 	'regLightingProfileIdChangeEvent',
 ]);
-let localcacheServiceMock = {
-	getLocalCacheValue(key: any) {
+const localcacheServiceMock = {
+	getLocalCacheValue: (key: any) => {
 		switch (key) {
 			case '[LocalStorageKey] KeyboardToggleStatusLNBx50':
 				return toggleStatus;
@@ -40,7 +41,7 @@ let localcacheServiceMock = {
 				return lightingCapility;
 		}
 	},
-	setLocalCacheValue(key: any, value: any) {
+	setLocalCacheValue: (key: any, value: any) => {
 		switch (key) {
 			case '[LocalStorageKey] KeyboardToggleStatusLNBx50':
 				toggleStatus = value;
@@ -70,8 +71,8 @@ let localcacheServiceMock = {
 	},
 };
 
-let profileId: number = 2;
-let ledSwitchButtonFeature: boolean = true;
+let profileId = 2;
+let ledSwitchButtonFeature = true;
 let lightingProfileById: any = {
 	didSuccess: true,
 	profileId: 2,
@@ -142,18 +143,7 @@ const lightingProfileByIdFail: any = {
 		},
 	],
 };
-let lightingCapility: any = {
-	LightPanelType: [1, 2, 4, 8],
-	LedType_Complex: [268435456, 1, 2, 4, 8, 32, 256, 512],
-	LedType_simple: [268435456, 1, 2, 3, 4],
-	BrightAdjustLevel: 4,
-	RGBfeature: 256,
-	SpeedSetLevel: 4,
-	SupportBrightnessSetList: [1, 2, 4, 8],
-	SupportRGBSetList: [4, 8],
-	SupportSpeedSetList: [4, 8],
-	UnifySetList: [0],
-};
+let lightingCapility: any = GAMING_DATA.lightingCapility;
 let toggleStatus: any = {
 	profileId2: { status: true, defaultStatus: 'undefined' },
 	profileId1: { status: false, defaultStatus: 'undefined' },
@@ -185,7 +175,7 @@ describe('WidgetLightingNotebookComponent', () => {
 	);
 	beforeEach(fakeAsync(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetLightingNotebookComponent, mockPipe({ name: 'translate' })],
+			declarations: [WidgetLightingNotebookComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
 				NgbModal,
@@ -413,14 +403,14 @@ describe('WidgetLightingNotebookComponent', () => {
 	}));
 
 	it('should get cache list', () => {
-		const toggleStatus = {
+		const toggleStatus1 = {
 			profileId2: { status: false, defaultStatus: 'undefined' },
 			profileId1: { status: false, defaultStatus: 'undefined' },
 			profileId3: { status: true, defaultStatus: 'undefined' },
 		};
 		localcacheServiceMock.setLocalCacheValue(
 			'[LocalStorageKey] KeyboardToggleStatusLNBx50',
-			toggleStatus
+			toggleStatus1
 		);
 		component.getCacheList();
 		expect(component.currentProfileId).toEqual(2);
@@ -489,14 +479,14 @@ describe('WidgetLightingNotebookComponent', () => {
 	});
 
 	it('should set cache list', () => {
-		const toggleStatus = {
+		const toggleStatus3 = {
 			profileId2: { status: false, defaultStatus: 'undefined' },
 			profileId1: { status: false, defaultStatus: 'undefined' },
 			profileId3: { status: true, defaultStatus: 'undefined' },
 		};
 		localcacheServiceMock.setLocalCacheValue(
 			'[LocalStorageKey] KeyboardToggleStatusLNBx50',
-			toggleStatus
+			toggleStatus3
 		);
 		component.setCacheList();
 		expect(component.currentProfileId).toEqual(2);
@@ -535,7 +525,7 @@ describe('WidgetLightingNotebookComponent', () => {
 	});
 
 	it('should show public profile detail', () => {
-		const lightingProfileById: any = {
+		const lightingProfileById1: any = {
 			didSuccess: true,
 			profileId: 1,
 			brightness: 0,
@@ -574,22 +564,9 @@ describe('WidgetLightingNotebookComponent', () => {
 			'[LocalStorageKey] LightingProfileByIdNoteOn1',
 			undefined
 		);
-		component.publicProfileIdInfo(lightingProfileById);
+		component.publicProfileIdInfo(lightingProfileById1);
 		expect(component.currentProfileId).toEqual(1);
 		component.publicProfileIdInfo(undefined);
 		expect(component.publicProfileIdInfo(undefined)).toBeUndefined();
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	) as any;
-}
