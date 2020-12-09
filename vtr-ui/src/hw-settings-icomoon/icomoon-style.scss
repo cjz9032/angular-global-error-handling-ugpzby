@@ -729,6 +729,12 @@
 		color: #4a81fd;
 	}
 }
+.icomoon-Smart-Assist {
+	&:before {
+		content: $icomoon-LE-Smart-Assist2x;
+		color: #fff;
+	}
+}
 .icomoon-LE-Smart-Assist2x {
 	&:before {
 		content: $icomoon-LE-Smart-Assist2x;

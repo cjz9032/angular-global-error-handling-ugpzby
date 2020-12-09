@@ -65,7 +65,7 @@ export class ConfigService {
 	windowsHello: WindowsHello;
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	subscription: Subscription;
-	private isSmartAssistAvailable = false;
+	public isSmartAssistAvailable = false;
 	public isSmartPerformanceAvailable = false;
 	private isBetaUser: boolean;
 	private country: string;
