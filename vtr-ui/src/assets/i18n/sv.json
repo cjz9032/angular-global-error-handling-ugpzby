@@ -1291,7 +1291,7 @@
 						"tooltip": "Funktionen förkortar tiden det tar att återgå till arbetsläge om du ofta öppnar eller stänger datorlocket. När den är aktiverad försätts datorn i ett lågenergiläge när du stänger locket, men återgår direkt till arbetsläge om du öppnar locket igen inom 15 minuter. Funktionen gör även att din bärbara dator kan försöka avsluta pågående aktiviteter (som att skicka ett e-postmeddelande eller hämta en fil) innan systemet försätts i vänteläge."
 					},
 					"flipToStart": {
-						"title": "Starta när locket öppnas",
+						"title": "Vänd för att börja",
 						"description": "Med hjälp av den här funktionen kan du slå på datorn genom att öppna locket, precis som när du trycker på strömbrytaren. ",
 						"tooltip": "Den här funktionen startar datorn automatiskt när locket öppnas.  Funktionen är särskilt användbar om du har ställt in biometrisk ansiktsigenkänning med Windows Hello."
 					},

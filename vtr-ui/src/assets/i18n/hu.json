@@ -1291,7 +1291,7 @@
 						"tooltip": "Ha gyakran nyitja fel és csukja le a számítógép képernyőjét, akkor ezzel a funkcióval gyorsabbá tehető a visszatérés. Ha engedélyezi a funkciót, akkor a számítógép a képernyő lehajtásakor alacsony energiafogyasztási állapotba lép, de azonnal visszatér, ha a képernyő lecsukásától számított 15 percen belül nyitja fel a képernyőt. A funkció használata esetén a notebook megpróbálja befejezni a függőben lévő tevékenységeket (például az e-mailek küldését vagy a fájlok letöltését) a rendszer működésének felfüggesztése előtt."
 					},
 					"flipToStart": {
-						"title": "Rendszerindítás kinyitással",
+						"title": "Indítás kinyitással",
 						"description": "Ez a funkció lehetővé teszi a számítógép bekapcsolását fedelének kinyitásával, ugyanúgy, mintha megnyomná a bekapcsoló gombot. ",
 						"tooltip": "Ez a funkció a fedél kinyitásakor automatikusan elindítja a számítógépet.  Különösen akkor hasznos, ha beállította az arcképpel történő bejelentkezést a Windows Hello segítségével."
 					},

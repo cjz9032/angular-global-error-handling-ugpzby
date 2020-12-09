@@ -1403,7 +1403,7 @@
 						"tooltip": "Mit dieser Funktion wird die Aktivierungszeit verkürzt, wenn Sie die Abdeckung Ihres Computers häufig öffnen und schließen. Ist diese Funktion aktiviert, wird der Computer beim Schließen der Abdeckung in einen Modus mit niedrigen Stromverbrauch versetzt, ist aber sofort wieder einsatzbereit, wenn Sie die Abdeckung innerhalb von 15 Minuten wieder öffnen. Bei dieser Funktion führt Ihr Notebook außerdem noch nicht abgeschlossene Aktivitäten zu Ende (wie das Senden einer E-Mail oder das Herunterladen einer Datei), bevor das System in den Energiesparmodus übergeht."
 					},
 					"flipToStart": {
-						"title": "Beim Aufklappen einschalten",
+						"title": "Beim Aufklappen starten",
 						"description": "Mit dieser Funktion wird der Computer eingeschaltet, wenn Sie den Deckel öffnen – so, als hätten Sie auf den Netzschalter gedrückt. ",
 						"tooltip": "Mit dieser Funktion startet der Computer beim Öffnen des Deckels.  Sie ist besonders nützlich, wenn Sie Anmeldedaten zur Gesichtserkennung über Windows Hello hinterlegt haben."
 					},

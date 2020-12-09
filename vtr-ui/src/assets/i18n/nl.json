@@ -1291,7 +1291,7 @@
 						"tooltip": "Door deze functie herstelt de computer sneller als u de klep van uw computer vaak opent en sluit. Als deze functie is ingeschakeld, wordt de modus voor laag energieverbruik ingeschakeld als u de klep sluit, maar meteen weer hersteld als u de klep binnen 15 minuten nadat u de klep sloot weer opent. Deze functie zorgt er ook voor dat uw notebook lopende activiteiten (zoals het versturen van e-mail of het downloaden van een bestand) probeert af te ronden voordat de slaapstand wordt geactiveerd."
 					},
 					"flipToStart": {
-						"title": "Opstarten door open te klappen",
+						"title": "Starten door open te klappen",
 						"description": "Met deze functie kunt u de computer inschakelen als u de klep van de computer opent alsof u op de aan/uit-knop drukt. ",
 						"tooltip": "Met deze functie start de computer automatisch door het openen van de klep.  Dit is vooral handig als u gezichtsherkenning om aan te melden hebt ingesteld in Windows Hello."
 					},

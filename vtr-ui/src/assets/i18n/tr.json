@@ -1291,7 +1291,7 @@
 						"tooltip": "Bu özellik, bilgisayarınızın kapağını sıklıkla açıp kapatıyorsanız sürdürme süresini kısaltır. Etkinleştirildiğinde, kapağını kapattığınızda bilgisayarınız düşük güç kipine girer ancak kapattıktan sonraki 15 dakika içerisinde yeniden açmanız durumunda anında önceki konumdan sürdürülür. Bu özellik, sistem askıda kipine geçmeden önce bilgisayarınızın bekleyen etkinlikleri (e-posta gönderme veya dosya indirme gibi) tamamlamaya çalışmasına olanak sağlar."
 					},
 					"flipToStart": {
-						"title": "Kapağı açınca önyükle",
+						"title": "Başlatmak için çevirin",
 						"description": "Bu özellik, bilgisayarın kapağını açtığınızda, güç düğmesine bastığınız zaman olduğu gibi bilgisayarınızı açabilmenizi sağlar. ",
 						"tooltip": "Bu özellik, kapağı açıldığında bilgisayarı otomatik olarak başlatır.  Özellikle Windows Hello'da yüzünüzü kullanarak oturum açma bilgilerini ayarlarsanız faydalı olur."
 					},
