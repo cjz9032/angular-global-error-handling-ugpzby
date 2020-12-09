@@ -2581,3 +2581,41 @@ ngb-tooltip-window.schedule-scan.tooltip {
 .snackbar {
 	white-space: pre-wrap
 }
+
+.hyperlink-button {
+	color: $blue-lighter;
+	font-size: $fontsize_xs;
+	font-weight: $weight_bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	letter-spacing: 0.49px;
+	padding-bottom: 0.2rem;
+	border-bottom: 0.2rem solid $blue-lighter;
+	&:hover {
+		text-decoration: none;
+		color: $blue-light;
+		border-color: $blue-light;
+	}
+	&:focus {
+		color: $blue-light;
+		outline: 0.1rem solid $menu_hover !important;
+		outline-offset: 0.1rem;
+		border-color: $blue-light;
+	}
+	&:active {
+		color: $menu_hover;
+		border-color: $menu_hover;
+	}
+	&:disabled {
+		color: $grey_darker !important;
+		border-color: $grey_darker !important;
+		outline: none !important;
+	}
+	@media #{$black-on-white} {
+		@include hyperlink-blue-white;
+	}
+	@media #{$white-on-black} {
+		@include hyperlink-yellow-black;
+	}
+}
