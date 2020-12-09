@@ -1,17 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { WinRT } from '@lenovo/tan-client-bridge';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
-import { EMPTY } from 'rxjs';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
-import { DownloadFailedModalComponent } from './download-failed-modal/download-failed-modal.component';
+import VoiceInterface from './voice.interface';
 
-enum InstalledStatus {
-	DONE = 'InstallDone',
-	FAILED = 'InstallFailed',
-	CANCELED = 'InstallCanceled',
-}
+const installedStatus = {
+	done: 'InstallDone',
+	failed: 'InstallFailed',
+	canceled: 'InstallCanceled',
+};
 
 @Component({
 	selector: 'vtr-voice',
@@ -19,35 +16,49 @@ enum InstalledStatus {
 	styleUrls: ['./voice.component.scss'],
 })
 export class VoiceComponent implements OnInit, OnDestroy {
+	public voiceToText = 'voiceToText';
+	public translation = 'translation';
+	public showLoader = false;
+	public btnText = '';
+	public installedStatus = installedStatus.canceled;
+	public voiceStatus = '';
+
 	private isInstalledInterval: any;
-	voiceToText: any = 'voiceToText';
-	translation: any = 'translation';
-	showLoader = false;
-	btnText = '';
-	installedStatus = InstalledStatus.CANCELED;
-	voiceStatus = '';
+	private voiceOnlineConfig: VoiceInterface;
+
 	constructor(
-		private smartAssist: SmartAssistService,
 		private translate: TranslateService,
-		private logger: LoggerService,
-		private modalService: NgbModal
-	) {}
+		private logger: LoggerService
+	) { }
 
 	ngOnInit() {
 		this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
 		this.voiceStatus = 'Install';
-		this.isLenovoVoiceInstalled();
+		this.loadOnlineConfig();
 	}
 
-	btnClicked() {
-		if (this.installedStatus === InstalledStatus.DONE) {
+	ngOnDestroy() {
+		clearInterval(this.isInstalledInterval);
+	}
+
+	handleClickVoiceButton() {
+		if (this.installedStatus === installedStatus.done) {
 			this.launchLenovoVoice();
 		} else {
 			this.downloadLenovoVoice();
 		}
 	}
 
-	async isLenovoVoiceInstalled() {
+	private async loadOnlineConfig(): Promise<any>  {
+		const win: any = window;
+		win.VantageShellExtension.OnlineConfig.getAll()
+			.then(data => {
+				this.voiceOnlineConfig = data;
+				this.isLenovoVoiceInstalled();
+			});
+	}
+
+	private async isLenovoVoiceInstalled(): Promise<any> {
 		try {
 			const win: any = window;
 			if (
@@ -55,110 +66,45 @@ export class VoiceComponent implements OnInit, OnDestroy {
 				win.VantageShellExtension.Utils &&
 				win.VantageShellExtension.Utils.MSStore
 			) {
-				const status = await win.VantageShellExtension.Utils.MSStore.isAppInstalledAsync(
-					'E046963F.LenovoVoiceWorldWide_k1h2ywk1493x8'
-				);
+				const status = await win.VantageShellExtension.Utils.MSStore.isAppInstalledAsync(this.voiceOnlineConfig.LenovoVoiceFamilyName);
 				if (status) {
-					this.installedStatus = InstalledStatus.DONE;
+					this.installedStatus = installedStatus.done;
 					this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
 					this.voiceStatus = 'Launch';
 					this.showLoader = false;
 					clearInterval(this.isInstalledInterval);
 				} else {
-					this.installedStatus = InstalledStatus.CANCELED;
+					this.installedStatus = installedStatus.canceled;
 					this.btnText = this.translate.instant(
 						'device.smartAssist.voice.installBtnText'
 					);
 					this.voiceStatus = 'Install';
 				}
 			}
-			// if (this.smartAssist.isShellAvailable) {
-			// 	this.smartAssist.isLenovoVoiceInstalled()
-			// 		.then((status: boolean) => {
-			//         if (status) {
-			//             this.installedStatus = InstalledStatus.DONE;
-			//             this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
-			//             this.voiceStatus = 'Launch';
-			//         } else {
-			//             this.installedStatus = InstalledStatus.CANCELED;
-			//             this.btnText = this.translate.instant('device.smartAssist.voice.installBtnText');
-			//             this.voiceStatus = 'Install';
-			//         }
-			//     }).catch(error => {
-			// 			this.logger.error('isLenovoVoiceInstalled', error.message);
-			// 			return EMPTY;
-			// 		});
-			// }
 		} catch (error) {
 			this.logger.error('isLenovoVoiceInstalled' + error.message);
-			return EMPTY;
 		}
 	}
 
-	downloadLenovoVoice() {
+	private downloadLenovoVoice() {
 		this.showLoader = true;
 		try {
-			WinRT.launchUri('ms-windows-store://pdp/?productid=9PBKQPS3BSW1');
+			WinRT.launchUri(this.voiceOnlineConfig.LenovoVoiceDownLoadLink);
 			this.isInstalledInterval = setInterval(async () => {
-				this.logger.debug(
-					'Trying after 30 seconds for getting isLenovoVoiceInstalled status'
-				);
+				this.logger.debug('Trying after 30 seconds for getting isLenovoVoiceInstalled status');
 				this.isLenovoVoiceInstalled();
 			}, 30000);
-			// if (this.smartAssist.isShellAvailable) {
-			// 	this.smartAssist.downloadLenovoVoice()
-			// 		.then((status: string) => {
-			//         this.showLoader = false;
-			//         if (status === InstalledStatus.DONE) {
-			//             this.installedStatus = InstalledStatus.DONE;
-			//             this.btnText = this.translate.instant('device.smartAssist.voice.launchBtnText');
-			//             this.voiceStatus = 'Launch';
-			//         } else if (status === InstalledStatus.FAILED) {
-			//             this.installedStatus = InstalledStatus.FAILED;
-			//             this.onDownloadFailedModal();
-			//         } else {
-			//             this.installedStatus = InstalledStatus.FAILED;
-			//         }
-			//     }).catch(error => {
-			// 			this.showLoader = false;
-			// 			this.logger.error('downloadLenovoVoice', error.message);
-			// 			return EMPTY;
-			// 		});
-			// }
 		} catch (error) {
 			this.showLoader = false;
 			this.logger.error('downloadLenovoVoice' + error.message);
-			return EMPTY;
 		}
 	}
 
-	launchLenovoVoice() {
+	private launchLenovoVoice() {
 		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.smartAssist
-					.launchLenovoVoice()
-					.then((status: boolean) => {})
-					.catch((error) => {
-						this.logger.error('launchLenovoVoice', error.message);
-						return EMPTY;
-					});
-			}
+			WinRT.launchUri(this.voiceOnlineConfig.LenovoVoiceLaunchURI);
 		} catch (error) {
 			this.logger.error('launchLenovoVoice' + error.message);
-			return EMPTY;
 		}
-	}
-
-	onDownloadFailedModal() {
-		this.modalService.open(DownloadFailedModalComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'voice-install-failed-modal',
-		});
-	}
-
-	ngOnDestroy() {
-		clearInterval(this.isInstalledInterval);
 	}
 }
