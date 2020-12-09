@@ -25,6 +25,7 @@ import { ConfigService } from '../config/config.service';
 import { SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum';
 import { DeviceCondition, DeviceStatus } from 'src/app/data-models/widgets/status.model';
 import { DashboardStateCardData } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
+import { map, startWith } from 'rxjs/operators';
 
 interface IContentGroup {
 	positionA: any[];
@@ -452,35 +453,28 @@ export class DashboardService {
 	}
 
 	public getPositionBData(): Observable<any> {
+		return this.getDeviceStatusWithTimeOut(10000).pipe(map(conditon => this.getStateCardData(conditon))).pipe(startWith(this.positionBLoadingData));
+	}
+
+	public getDeviceStatusWithTimeOut(timeout: number): Observable<DeviceCondition> {
 		return new Observable((subscriber) => {
-			subscriber.next(this.positionBLoadingData);
-			const locDevCondition = this.localCacheService.getLocalCacheValue(
+			const cacheDeviceCondition = this.localCacheService.getLocalCacheValue(
 				LocalStorageKey.DeviceCondition
 			);
-			const locDevStatus = this.getStateCardData(locDevCondition);
-			if (locDevStatus) {
-				subscriber.next(locDevStatus);
-			} else {
-				this.positionBResponseReceived = false;
-				if (this.positionBLoadingTimer) {
-					clearTimeout(this.positionBLoadingTimer);
-					this.positionBLoadingTimer = undefined;
-				}
-				// if over 10s, show good condition at first
-				this.positionBLoadingTimer = setTimeout(() => {
-					if (!this.positionBResponseReceived) {
-						subscriber.next(this.goodConditionData);
-					}
-				}, 10000);
+			if (cacheDeviceCondition) {
+				subscriber.next(cacheDeviceCondition);
 			}
 
-			this.getDeviceStatus().then((ds) => {
-				this.positionBResponseReceived = true;
-				clearTimeout(this.positionBLoadingTimer);
-				const devCondition = this.getStateCardData(ds);
-				if (devCondition) {
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.DeviceCondition, ds);
-					subscriber.next(devCondition);
+			// if over 10s, return good condition at first
+			const loadingTimer = setTimeout(() => {
+				subscriber.next(DeviceCondition.Good);
+			}, timeout);
+
+			this.getDeviceStatus().then((dvsconditon) => {
+				clearTimeout(loadingTimer);
+				if (dvsconditon) {
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.DeviceCondition, dvsconditon);
+					subscriber.next(dvsconditon);
 				}
 				subscriber.complete();
 			});
