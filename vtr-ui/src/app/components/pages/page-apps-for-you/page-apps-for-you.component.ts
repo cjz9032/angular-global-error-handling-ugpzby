@@ -74,6 +74,16 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.systemUpdateBridge = vantageShellService.getSystemUpdate();
+	}
+
+	ngOnInit() {
+		this.errorMessage = '';
+		this.installButtonStatus = this.installButtonStatusEnum.UNKNOWN;
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
 		this.route.params.subscribe((params) => {
 			if (!this.appGuid || this.appGuid !== params.id) {
 				this.appDetails = undefined;
@@ -92,16 +102,6 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			}
 			this.route.snapshot.data.pageName = this.metricsParent;
 		});
-	}
-
-	ngOnInit() {
-		this.errorMessage = '';
-		this.installButtonStatus = this.installButtonStatusEnum.UNKNOWN;
-		this.notificationSubscription = this.commonService.notification.subscribe(
-			(response: AppNotification) => {
-				this.onNotification(response);
-			}
-		);
 	}
 
 	ngOnDestroy() {
