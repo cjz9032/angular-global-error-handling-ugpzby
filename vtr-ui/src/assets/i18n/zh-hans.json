@@ -1799,7 +1799,7 @@
 						"tooltip": "此功能可以有选择地使显示屏的部分区域变暗，从而降低功耗并延长电池使用时间。",
 						"dropDown": {
 							"seconds": "秒",
-							"minute": "分",
+							"minute": "分钟",
 							"minutes": "分钟",
 							"alwaysOn": "始终开启",
 							"never": "永不",
