@@ -73,7 +73,7 @@ describe('WidgetLightingComponent', () => {
 				{ provide: DeviceService, useValue: deviceServiceMock },
 				{ provide: GamingLightingService, useValue: spy },
 				{ provide: CommonService, useValue: commonServiceMock },
-				{ provide: LocalCacheService, useValue: LocalCacheServiceMock },
+				{ provide: LocalCacheService, useValue: localCacheServiceMock },
 			],
 			imports: [HttpClientModule],
 			schemas: [NO_ERRORS_SCHEMA],
@@ -95,23 +95,23 @@ describe('WidgetLightingComponent', () => {
 	});
 
 	it('should get the capabilities and should set islighting as false', () => {
-		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', true);
-		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', false);
+		localCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', true);
+		localCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', false);
 		component.ledSetFeature = true;
 		const res = component.getCapabilities();
 		expect(res).toBe(undefined);
-		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', false);
-		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', true);
+		localCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', false);
+		localCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', true);
 		component.getCapabilities();
 		expect(component.isLightingVisible).toEqual(false);
-		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', false);
+		localCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', false);
 		component.getCapabilities();
 		expect(component.isLightingVisible).toEqual(false);
 	});
 
 	it('should get the capabilities and should set islighting as true', () => {
-		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', true);
-		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', true);
+		localCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSetFeature', true);
+		localCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedDriver', true);
 		fixture.detectChanges();
 		const res = component.getCapabilities();
 		expect(res).toBe(undefined);
@@ -148,10 +148,10 @@ describe('WidgetLightingComponent', () => {
 	});
 
 	it('should regLightingProfileIdChangeEvent', () => {
-		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSwitchButtonFeature', true);
+		localCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSwitchButtonFeature', true);
 		component.getCapabilities();
 		expect(component.ledSwitchButtonFeature).toEqual(true);
-		LocalCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSwitchButtonFeature', false);
+		localCacheServiceMock.setLocalCacheValue('[LocalStorageKey] LedSwitchButtonFeature', false);
 		component.getCapabilities();
 		expect(component.getCapabilities()).toBeUndefined();
 	});
