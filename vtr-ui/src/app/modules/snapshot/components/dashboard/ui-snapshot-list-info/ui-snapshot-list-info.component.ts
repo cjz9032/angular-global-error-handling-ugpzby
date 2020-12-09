@@ -17,7 +17,7 @@ export class UiSnapshotListInfoComponent {
 		this.snapshotInfo.forEach((item) => {
 			item.selected = true;
 			item.indeterminate = false;
-			item.modules.forEach((module) => (module.selected = true));
+			item.components.forEach((component) => (component.selected = true));
 		});
 		this.selectAny.emit();
 	}
@@ -26,13 +26,13 @@ export class UiSnapshotListInfoComponent {
 		this.snapshotInfo.forEach((item) => {
 			item.selected = false;
 			item.indeterminate = false;
-			item.modules.forEach((module) => (module.selected = false));
+			item.components.forEach((component) => (component.selected = false));
 		});
 	}
 
 	public onDeviceSelectionClicked(item, isChecked) {
 		// Toggle the item state base on the user click event
-		item.modules.forEach((module) => (module.selected = isChecked));
+		item.components.forEach((component) => (component.selected = isChecked));
 		item.indeterminate = false;
 		item.selected = isChecked;
 
@@ -41,8 +41,8 @@ export class UiSnapshotListInfoComponent {
 
 	public onCheckChildren(item) {
 		// Change the item state based on the quantity of selected tests
-		const numberOfTests = item.modules.length;
-		const numberOfSelectedTests = item.modules.filter(x => x.selected).length;
+		const numberOfTests = item.components.length;
+		const numberOfSelectedTests = item.components.filter(x => x.selected).length;
 
 		if (numberOfSelectedTests === 0) {
 			item.selected = false;

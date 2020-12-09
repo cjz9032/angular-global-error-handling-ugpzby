@@ -18,7 +18,7 @@ export class SnapshotHeaderComponent implements OnInit {
 	public showSnapshotInformation = true;
 
 	// Mocked data until has no call to bridge
-	public snapshotModules: any = {
+	public snapshotComponents: any = {
 		CdRomDrives: null,
 		DisplayDevices: null,
 		HardDrives: null,
@@ -204,8 +204,8 @@ export class SnapshotHeaderComponent implements OnInit {
 
 	public snapshotInfo: any = {
 		// Just a mock, should be separated when implement the real execution.
-		hardwareListTitle: this.snapshotModules,
-		softwareListTitle: this.snapshotModules
+		hardwareList: this.snapshotComponents,
+		softwareList: this.snapshotComponents
 	}
 
 	constructor(private snapshotService: SnapshotService,

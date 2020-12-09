@@ -4,12 +4,12 @@
 			id="{{ componentId }}-item-{{ i }}"
 			class="list-group-item"
 			>
-			<div class="module" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
+			<div class="component" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 				<div class="custom-control">
 					<vtr-ui-checkbox
 						#checkbox
 						[componentId]="componentId + '-item-' + i"
-						[ariaLabel]="('snapshot.' + item.name | translateDefault:item.name) + '-checkbox'"
+						[ariaLabel]="('snapshot.' + item.name + 'Title' | translateDefault:item.name) + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
 						(click)="onDeviceSelectionClicked(item,checkbox.checked)"
 						[hasChild]="true"
@@ -18,7 +18,7 @@
 						class="custom-control-component"
 					>
 						<p id="{{ componentId }}-item-{{ i }}-name" role="text" class="custom-control-label-text name">
-							{{ ('snapshot.' + item.name) | translateDefault: item.name  }}
+							{{ ('snapshot.' + item.name + 'Title') | translateDefault: item.name  }}
 						</p>
 					</vtr-ui-checkbox>
 				</div>
@@ -27,7 +27,7 @@
 					<div id="{{ componentId }}-item-{{ i }}-collapse-btn"
 						class="collapse-control select-item"
 						tabindex="0"
-						[attr.aria-label]="('snapshot.' + item.name | translateDefault:item.name) + (item.collapsed ? '-collapse-submodules-list': '-expand-submodules-list')"
+						[attr.aria-label]="('snapshot.' + item.name | translateDefault:item.name) + (item.collapsed ? '-collapse-subcomponents-list': '-expand-subcomponents-list')"
 						(click)="item.collapsed = !item.collapsed"
 						(keyup.enter)="item.collapsed = !item.collapsed"
 						role="button"
@@ -39,27 +39,27 @@
 					</div>
 				</div>
 			</div>
-			<div id="{{ componentId }}-item-{{ i }}-subitems" class="sub-module" [ngbCollapse]="!item.collapsed" >
+			<div id="{{ componentId }}-item-{{ i }}-subitems" class="sub-component" [ngbCollapse]="!item.collapsed" >
 				<ul class="list-group">
-					<li *ngFor="let module of item.modules; let j = index"
+					<li *ngFor="let component of item.components; let j = index"
 						id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
 						class="list-group-item"
 						(change)=onCheckChildren(item)
-						[ngClass]="{'isSelected-item' : module.selected}"
+						[ngClass]="{'isSelected-item' : component.selected}"
 						>
-						<div class="module">
+						<div class="component">
 							<div class="custom-control custom-checkbox">
 								<vtr-ui-checkbox
 									componentId="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
-									[ariaLabel]="('snapshot.modules.' + module.name | translateDefault:module.name) + ('snapshot.' + module.name | translateDefault:module.name) + '-checkbox'"
-									[checked]="module.selected"
+									[ariaLabel]="('snapshot.components.' + component.name | translateDefault:component.name) + ('snapshot.' + component.name | translateDefault:component.name) + '-checkbox'"
+									[checked]="component.selected"
 									[hasChild]="true"
-									[value]="module.selected"
-									(toggle)="module.selected = $event"
+									[value]="component.selected"
+									(toggle)="component.selected = $event"
 									class="custom-control-component"
 								>
-									<p class="custom-control-label-text module-name" id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}-name" role="text">
-										{{ 'snapshot.modules.' + module.name | translate }}
+									<p class="custom-control-label-text component-name" id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}-name" role="text">
+										{{ 'snapshot.components.' + component.name | translate }}
 									</p>
 								</vtr-ui-checkbox>
 							</div>
@@ -71,7 +71,7 @@
 	</ul>
 	<div class="options">
 		<vtr-ui-hyperlink-button
-			linkId="snapshot-select-all-modules-link"
+			linkId="snapshot-select-all-components-link"
 			hyperlinkStyle="xs-300-blue-lighter"
 			class="hyperlink-container"
 			(hyperlinkClick)="onSelectAll()"
@@ -80,7 +80,7 @@
 			></vtr-ui-hyperlink-button>
 		<span class="select-item-subtitle">/</span>
 		<vtr-ui-hyperlink-button
-			linkId="snapshot-deselect-all-modules-link"
+			linkId="snapshot-deselect-all-components-link"
 			hyperlinkStyle="xs-300-blue-lighter"
 			(hyperlinkClick)="onDeselectAll()"
 			[label]=" 'snapshot.deselect' | translate "

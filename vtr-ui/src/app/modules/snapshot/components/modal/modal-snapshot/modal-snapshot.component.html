@@ -7,13 +7,13 @@
 
 	<vtr-ui-snapshot-list-info
 		[componentId]="'snapshot-replace-baseline-list'"
-		[snapshotInfo]="snapshotModulesInfo"
+		[snapshotInfo]="snapshotComponentsInfo"
 		(selectAny)="receiveSelect()">
 	</vtr-ui-snapshot-list-info>
 
 	<div class="row button-row">
 		<vtr-ui-button
-			linkId="snapshot-modal-run-selected-modules-btn"
+			linkId="snapshot-modal-run-selected-components-btn"
 			[vtrMetricEnabled]= false
 			[label]= " 'snapshot.replaceBaseline' | translate "
 			(onClick)="onClickRun()">

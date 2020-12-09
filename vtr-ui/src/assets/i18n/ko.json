@@ -4372,7 +4372,7 @@
 		"errorResult": "Please, you need to choose a module to run.",
 		"select": "Select All",
 		"deselect": "Deselect All",
-		"modules": {
+		"components": {
 			"CdRomDrives": "Optical Drives",
 			"DisplayDevices": "Display Devices",
 			"HardDrives": "Hard Drives",

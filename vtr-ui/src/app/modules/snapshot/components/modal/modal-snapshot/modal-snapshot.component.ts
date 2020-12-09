@@ -10,7 +10,7 @@ export class ModalSnapshotComponent implements OnInit {
 	@Input() componentId: string;
 	@Input() snapshotInfo: any;
 
-	public snapshotModulesInfo: any = [];
+	public snapshotComponentsInfo: any = [];
 
 	public errorMessage: boolean = false;
 	private isSuccessful = false;
@@ -36,44 +36,44 @@ export class ModalSnapshotComponent implements OnInit {
 		Object.entries(this.snapshotInfo).forEach(([key, value]) => {
 			const environment = {
 				name: key,
-				modules: (name == 'hardwareListTitle') ? this.getHardwareListModules(value) : this.getSoftwareListModules(value),
+				components: (name == 'hardwareListTitle') ? this.getHardwareListComponents(value) : this.getSoftwareListComponents(value),
 				collapsed: false,
 				selected: false,
 				indeterminate: false
 			}
 
-			this.snapshotModulesInfo.push(environment);
+			this.snapshotComponentsInfo.push(environment);
 		});
 	}
 
-	private getHardwareListModules(modules: any) : any {
-		let hardwareListModules: any = [];
+	private getHardwareListComponents(components: any) : any {
+		let hardwareListComponents: any = [];
 
-		Object.entries(modules).forEach(([key, value]) => {
-			const module = {
+		Object.entries(components).forEach(([key, value]) => {
+			const component = {
 				name: key,
 				selected: false
 			}
 
-			hardwareListModules.push(module);
+			hardwareListComponents.push(component);
 		});
 
-		return hardwareListModules;
+		return hardwareListComponents;
 	}
 
-	private getSoftwareListModules(modules: any) : any {
-		let softwareListModules: any = [];
+	private getSoftwareListComponents(components: any) : any {
+		let softwareListComponents: any = [];
 
-		Object.entries(modules).forEach(([key, value]) => {
-			const module = {
+		Object.entries(components).forEach(([key, value]) => {
+			const component = {
 				name: key,
 				selected: false
 			}
 
-			softwareListModules.push(module);
+			softwareListComponents.push(component);
 		});
 
-		return softwareListModules;
+		return softwareListComponents;
 	}
 
 	public ngOnDestroy() {
@@ -85,11 +85,11 @@ export class ModalSnapshotComponent implements OnInit {
 	}
 
 	public onClickRun() {
-		const leastOneSelected = this.snapshotModulesInfo.find((x) => x.selected || x.indeterminate);
+		const leastOneSelected = this.snapshotComponentsInfo.find((x) => x.selected || x.indeterminate);
 		if (leastOneSelected !== undefined) {
 			this.isSuccessful = true;
 			this.closeModal();
-			this.passEntry.emit(this.snapshotModulesInfo);
+			this.passEntry.emit(this.snapshotComponentsInfo);
 		} else {
 			this.errorMessage = true;
 		}

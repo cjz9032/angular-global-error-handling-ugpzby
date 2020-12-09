@@ -10,7 +10,7 @@
 			color: $main_dark;
 			padding: 0;
 
-			.module {
+			.component {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -27,12 +27,12 @@
 				}
 			}
 
-			.sub-module {
+			.sub-component {
 				.list-group-item {
 					border-width: 1px 0 0 0;
 					border-radius: 0 !important;
 
-					.module {
+					.component {
 						padding: 0 0 0 5.2rem;
 						background-color: transparent;
 					}
@@ -50,7 +50,7 @@
 			&:last-child {
 				border-radius: 0 0 0.5rem 0.5rem !important;
 
-				.sub-module {
+				.sub-component {
 					li:last-child {
 						border-radius: 0 0 0.5rem 0.5rem !important;
 					}
@@ -86,7 +86,7 @@
 				font-weight: $weight_light !important;
 			}
 
-			.module-name {
+			.component-name {
 				font-size: $fontsize_xs;
 				font-weight: $weight_medium;
 			}
