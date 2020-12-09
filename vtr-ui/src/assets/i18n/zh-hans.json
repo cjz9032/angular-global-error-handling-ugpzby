@@ -2297,7 +2297,7 @@
 				"heading": "智能媒体",
 				"title": "视频播放智能控制",
 				"note": {
-					"supportedList": "支持的播放器如下所列：<br>&bull; Netflix <br>&bull; 电影和电视 <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "支持的播放器如下所列：<br>&bull; 电影和电视 <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "注意：不支持 Web 视频播放器。"
 				},
 				"desc": "此功能将在离开计算机时暂停视频，并在您回来时重新播放视频。",

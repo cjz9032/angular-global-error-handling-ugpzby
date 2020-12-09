@@ -2187,7 +2187,7 @@
 				"heading": "Pametni medijski sadržaj",
 				"title": "Automatska reprodukcija videozapisa",
 				"note": {
-					"supportedList": "Podržani reproduktori navedeni su kako slijedi: <br>&bull; Netflix <br>&bull; Filmovi i TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Podržani reproduktori navedeni su kako slijedi: <br>&bull; Filmovi i TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Napomena: reproduktori internetskog videozapisa nisu podržani."
 				},
 				"desc": "Ta će značajka pauzirati reprodukciju videozapisa kada se udaljite od računala i nastaviti je kada se vratite.",

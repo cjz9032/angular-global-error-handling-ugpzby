@@ -2187,7 +2187,7 @@
 				"heading": "Inteligentne multimedia",
 				"title": "Odtwarzanie filmów bez dotyku",
 				"note": {
-					"supportedList": "Obsługiwane są następujące odtwarzacze: <br>&bull; Netflix <br>&bull; Filmy i TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Obsługiwane są następujące odtwarzacze: <br>&bull; Filmy i TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Uwaga: Odtwarzacze wideo w sieci Web nie są obsługiwane."
 				},
 				"desc": "Ta funkcja wstrzymuje odtwarzanie wideo, gdy odchodzisz od komputera, i wznawia je, gdy wracasz.",

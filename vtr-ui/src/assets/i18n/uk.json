@@ -2187,7 +2187,7 @@
 				"heading": "Інтелектуальне відтворення мультимедіа",
 				"title": "Автоматичне відтворення відео",
 				"note": {
-					"supportedList": "Підтримуються такі програвачі: <br>&bull; Netflix <br>&bull; Фільми й телепрограми <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Підтримуються такі програвачі: <br>&bull; Фільми й телепрограми <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Примітка. Програвачі онлайн-відео не підтримуються."
 				},
 				"desc": "Ця функція призупинятиме відео, коли ви відходите від комп'ютера, та відновлятиме відтворення, коли ви повертаєтесь.",

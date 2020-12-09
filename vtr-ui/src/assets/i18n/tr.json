@@ -2187,7 +2187,7 @@
 				"heading": "Akıllı medya",
 				"title": "Sıfır dokunma ile video oynatma",
 				"note": {
-					"supportedList": "Şu oynatıcılar desteklenmektedir: <br>&bull; Netflix <br>&bull; Filmler ve TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Şu oynatıcılar desteklenmektedir: <br>&bull; Filmler ve TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Not: Web üzerindeki video oynatıcılar desteklenmez."
 				},
 				"desc": "Bu özellik, bilgisayarın başından ayrıldığınızda videoyu duraklatır ve geri döndüğünüzde videoyu oynatmaya devam eder.",

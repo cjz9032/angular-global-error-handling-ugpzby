@@ -2187,7 +2187,7 @@
 				"heading": "Fișiere media inteligente",
 				"title": "Redare video fără atingere",
 				"note": {
-					"supportedList": "Playerele acceptate sunt afișate după cum urmează: <br>&bull; Netflix <br>&bull; Filme și TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Playerele acceptate sunt afișate după cum urmează: <br>&bull; Filme și TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Notă: playerele video web nu sunt acceptate."
 				},
 				"desc": "Această funcție întrerupe videoclipul atunci când părăsiți computerul și reia redarea atunci când vă întoarceți.",

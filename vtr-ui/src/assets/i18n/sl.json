@@ -2187,7 +2187,7 @@
 				"heading": "Inteligentni mediji",
 				"title": "Predvajanje videoposnetkov brez dotika",
 				"note": {
-					"supportedList": "Podprti predvajalniki so: <br>&bull; Netflix <br>&bull; Filmi in oddaje <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Podprti predvajalniki so: <br>&bull; Filmi in oddaje <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Opomba: Spletni videopredvajalniki niso podprti."
 				},
 				"desc": "Ta funkcija bo začasno ustavila videoposnetek, ko zapustite računalnik, in nadaljevala predvajanje, ko se vrnete.",

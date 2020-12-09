@@ -2299,7 +2299,7 @@
 				"heading": "Intelligente Medien",
 				"title": "Zero-Touch-Videowiedergabe",
 				"note": {
-					"supportedList": "Die folgenden Player werden unterstützt: <br>&bull; Netflix <br>&bull; Filme & TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Die folgenden Player werden unterstützt: <br>&bull; Filme & TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Hinweis: Web-Videoplayer werden nicht unterstützt."
 				},
 				"desc": "Diese Funktion pausiert das Video, wenn Sie sich vom Computer entfernen, und spielt es weiter ab, wenn Sie zurück sind.",
