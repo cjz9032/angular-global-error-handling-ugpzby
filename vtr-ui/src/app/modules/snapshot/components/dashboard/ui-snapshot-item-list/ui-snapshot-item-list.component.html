@@ -1,0 +1,101 @@
+<div id="snapshot-item-{{ i }}" class="vtr-snapshot-list-item" *ngFor="let item of itemsAttributes; let i = index; let last = last" 
+	[ngClass]="{'modified-module': item.properties.IsDifferent}" >
+	<div class="row">
+		<div class="module-information" [ngClass]="{ 'last-child': last }">
+			<div class="module-icon">
+				<!-- Defines an icon according with component -->
+				<img id="snapshot-item-{{ i }}-icon" *ngIf="item.iconSrc !== ''"
+					alt="{{ item.name }}"
+					class="img-icon"
+					role="img"
+					[src]="item.iconSrc | svgInline | async" />
+			</div>
+
+			<!-- Icon to expand and collapse module information -->
+			<div class="row">
+				<p id="snapshot-item-{{ i }}-module" role="text" class="title" *ngIf="!item.properties.IsDifferent; else modifiedTitle">
+					{{ item.name }}</p>
+				
+				<ng-template #modifiedTitle>
+					<p id="snapshot-item-{{ i }}-module" role="text" class="title">
+						* {{ item.name }}</p>
+				</ng-template>
+
+				<p id="snapshot-item-{{ i }}-device" role="text" class="subtitle" *ngIf="item.properties !== null">
+					{{ item.properties.DeviceId }}</p>
+			</div>
+
+			<!-- Shows load icon until modules are not loaded -->
+			<img *ngIf="!item.isComponentLoaded; else updateButton" role="img" class="load-icon" src="assets/icons/snapshot/icon_snapshot_progress.svg"/>
+
+			<!-- Shows button to update after modules get loaded -->
+			<ng-template #updateButton>
+				<vtr-ui-hyperlink-button
+					class="hyperlink-container"
+					[metricsParent]="'Snapshot'"
+					[metricsItem]="'Snapshot.UpdateSnapshotModule'"
+					(hyperlinkClick)="'#'"
+					[class]="'update-btn'"
+					linkId="snapshot-update-btn"
+					hyperlinkStyle="xs-blue-lighter"
+					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
+					[disableTooltip]="true">
+				</vtr-ui-hyperlink-button>
+			</ng-template>
+
+			<!-- Icon to expand and collapse module information -->
+			<div id="snapshot-item-{{ i }}-details-btn"
+				class="collapse-control"
+				[attr.aria-label]="!item.detailsExpanded ? item.name + 'expand-module-details': item.name + 'collapse-module-details'"
+				[attr.aria-expanded]="item.detailsExpanded"
+				(click)="item.detailsExpanded = !item.detailsExpanded"
+				(keyup.enter)="item.detailsExpanded = !item.detailsExpanded"
+				tabindex="0"
+				role="button">
+				<fa-icon *ngIf="!item.detailsExpanded; else expandIcon" [icon]="['fal', 'angle-down']"></fa-icon>
+				<ng-template #expandIcon>
+					<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
+				</ng-template>
+			</div>
+		</div>
+	</div>
+
+	<!-- Table containing module information -->
+	<div [ngbCollapse]="!item.detailsExpanded" class="details-list">
+		<table id="snapshot-item-{{ i }}-details" class="table table-details table-borderless">
+			<tbody>
+				<tr *ngIf="!item.isComponentLoaded; else moduleInfo">
+					<td class="progress-warning-image">
+						<fa-icon [icon]="['fal', 'circle-notch']" [spin]="true"></fa-icon>
+					</td>
+				</tr>
+				<ng-template #moduleInfo>
+					<tr>
+						<td aria-hidden="true"></td>
+						<th id="snapshot-item-{{ i }}-detail-baseline-snapshot-title" class="snapshot-table-titles">
+							{{ 'snapshot.baselineSnapshot' | translate }}
+						</th>
+						<th id="snapshot-item-{{ i }}-detail-baseline-snapshot-title" class="snapshot-table-titles">
+							{{ 'snapshot.lastSnapshot' | translate }}
+						</th>
+					</tr>
+					<ng-container *ngFor="let values of item.properties.Items; let itemIndex = index">
+						<tr *ngFor="let property of values.Properties; let j = index">
+							<th id="snapshot-item-{{ i }}-detail-{{ j }}-property-name" class="table-info-name">
+								{{ property.PropertyName }}
+							</th>
+							<td id="snapshot-item-{{ i }}-detail-{{ j }}-base-value">
+								{{ property.BaseValue }}</td>
+							
+							<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
+								{{ property.CurrentValue }}</td>
+						</tr>
+						<tr class="table-info-separator" aria-hidden="true"></tr>
+					</ng-container>
+				</ng-template>
+			</tbody>
+		</table>
+	</div>
+	
+	<hr *ngIf="!last && !item.properties.IsDifferent && !itemsAttributes[i + 1].properties.IsDifferent" aria-hidden="true">
+</div>
