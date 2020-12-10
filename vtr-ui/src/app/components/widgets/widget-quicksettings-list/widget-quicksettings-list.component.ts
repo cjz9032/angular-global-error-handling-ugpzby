@@ -438,7 +438,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 					`Widget-QuickSettingsList-SetThermalModeStatus: set fail; Error message: `,
 					error.message
 				);
-				throw new Error(error.message);
 			}
 		}
 	}
@@ -455,7 +454,6 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 					'Widget-QuickSettingsList-RegisterThermalModeChangeEvent: register fail; Error message: ',
 					error.message
 				);
-				throw new Error(error.message);
 			}
 		}
 	}
@@ -525,7 +523,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 					`Widget-QuickSettingsList-SetRapidChargeSettings: 
 						return value: ${res}, rapidCharge state from ${this.rapidChargeSettings.status} to ${status}`
 				);
-				if(res !== undefined) {
+				if(res !== undefined && res === true) {
 					this.rapidChargeSettings.status = status;
 					this.quickSettingsList[this.quickSettingsListIndex.rapidCharge].isChecked = status;
 					this.localCacheService.setLocalCacheValue(
@@ -582,7 +580,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public async getWifiSecuritySettings() {
+	public getWifiSecuritySettings() {
 		if(this.wifiSecurityService === undefined) {
 			this.logger.error(
 				`Widget-QuickSettingsList-GetWifiSecuritySettings: 
@@ -623,7 +621,7 @@ export class WidgetQuicksettingsListComponent implements OnInit, OnDestroy {
 		this.wifiSecurityService.wifiSecurity.getWifiSecurityState();
 	}
 
-	public async setWifiSecuritySettings(value: any) {
+	public setWifiSecuritySettings(value: any) {
 		if(this.wifiSecurityService === undefined) {
 			this.logger.error(
 				`Widget-QuickSettingsList-SetWifiSecuritySettings: 
