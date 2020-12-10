@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { ModalSnapshotComponent } from './modal-snapshot.component';
 
-fdescribe('ModalSnapshotComponent', () => {
+describe('ModalSnapshotComponent', () => {
 	let component: ModalSnapshotComponent;
 	let fixture: ComponentFixture<ModalSnapshotComponent>;
 
@@ -37,23 +37,23 @@ fdescribe('ModalSnapshotComponent', () => {
 		fixture.detectChanges();
 	});
 
-	fit('should create', () => {
+	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
 
-	fit('should call closeModal', () => {
+	it('should call closeModal', () => {
 		const spy = spyOn(component, 'closeModal');
 		component.closeModal();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	fit('should call onClickRun', () => {
+	it('should call onClickRun', () => {
 		const spy = spyOn(component, 'onClickRun');
 		component.onClickRun();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	fit('should appears errorMessage after click onClickRun', () => {
+	it('should appears errorMessage after click onClickRun', () => {
 		const spy = spyOn(component, 'onClickRun');
 		component.errorMessage = true;
 		fixture.detectChanges();

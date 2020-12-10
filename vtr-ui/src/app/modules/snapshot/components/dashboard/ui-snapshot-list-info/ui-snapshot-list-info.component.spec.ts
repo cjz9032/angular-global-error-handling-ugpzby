@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { UiSnapshotListInfoComponent } from './ui-snapshot-list-info.component';
 
-fdescribe('UiSnapshotListInfoComponent', () => {
+describe('UiSnapshotListInfoComponent', () => {
 	let component: UiSnapshotListInfoComponent;
 	let fixture: ComponentFixture<UiSnapshotListInfoComponent>;
 
@@ -22,11 +22,11 @@ fdescribe('UiSnapshotListInfoComponent', () => {
 		fixture.detectChanges();
 	});
 
-	fit('should create', () => {
+	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
 
-	fit('should test selectAny emitter onSelectAll method', () => {
+	it('should test selectAny emitter onSelectAll method', () => {
 		component.snapshotInfo = [{
 			components: [],
 			selected: true,
@@ -38,7 +38,7 @@ fdescribe('UiSnapshotListInfoComponent', () => {
 		expect(component.selectAny.emit).toHaveBeenCalled();
 	});
 
-	fit('should test selectAny emitter onDeviceSelectionClicked method', () => {
+	it('should test selectAny emitter onDeviceSelectionClicked method', () => {
 		const item = {
 			components: [],
 			selected: true,
@@ -49,7 +49,7 @@ fdescribe('UiSnapshotListInfoComponent', () => {
 		expect(component.selectAny.emit).toHaveBeenCalled();
 	});
 
-	fit('should test selectAny emitter onCheckChildren method', () => {
+	it('should test selectAny emitter onCheckChildren method', () => {
 		const item = {
 			components: [],
 			selected: true,
