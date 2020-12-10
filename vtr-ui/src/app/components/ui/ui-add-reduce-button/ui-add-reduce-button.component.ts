@@ -12,10 +12,10 @@ export class UiAddReduceButtonComponent implements OnInit {
 	@Input() maxData: number;
 	@Input() step: number;
 	@Input() unit: string;
-	@Input() btnWidth: string = '33.3%';
-	@Input() isValChange: boolean = true;
-	@Input() ariaLabelValue: string = '';
-	@Input() tabIndexNum: number = 0;
+	@Input() btnWidth = '33.3%';
+	@Input() isValChange = true;
+	@Input() ariaLabelValue = '';
+	@Input() tabIndexNum = 0;
 	@Output() setVal = new EventEmitter<any>();
 	@Input() automationId = '';
 	constructor() {}
@@ -27,7 +27,8 @@ export class UiAddReduceButtonComponent implements OnInit {
 		this.step = Number(this.step);
 	}
 	public calculate(num1, num2, type) {
-		let sq1, sq2, m;
+		let sq1;
+		let sq2;
 		try {
 			sq1 = num1.toString().split('.')[1].length;
 		} catch (e) {
@@ -38,7 +39,7 @@ export class UiAddReduceButtonComponent implements OnInit {
 		} catch (e) {
 			sq2 = 0;
 		}
-		m = Math.pow(10, Math.max(sq1, sq2));
+		const m = Math.pow(10, Math.max(sq1, sq2));
 
 		if (type) {
 			return (Math.round(num1 * m) + Math.round(num2 * m)) / m;
@@ -47,7 +48,7 @@ export class UiAddReduceButtonComponent implements OnInit {
 		}
 	}
 	public reduceFn() {
-		if (this.value == this.minData) {
+		if (this.value === this.minData) {
 			return;
 		}
 		if (this.isValChange) {
@@ -60,7 +61,7 @@ export class UiAddReduceButtonComponent implements OnInit {
 		this.setVal.emit([this.value, 1]);
 	}
 	public addFn() {
-		if (this.value == this.maxData) {
+		if (this.value === this.maxData) {
 			return;
 		}
 		if (this.isValChange) {

@@ -27,27 +27,27 @@ describe('UiAddReduceButtonComponent', () => {
 			expect(component.calculate(255, 1, false)).toBe(254);
 		});
 
-		it("should call calculate & reduce & vaule is '255' & speed is '1'", () => {
+		it('should call calculate & reduce & vaule is 255 & speed is 1', () => {
 			expect(component.calculate('255', '1', false)).toBe(254);
 		});
 
-		it("should call calculate & reduce & vaule is '255' & speed is 1", () => {
+		it('should call calculate & reduce & vaule is 255 & speed is 1', () => {
 			expect(component.calculate('255', 1, false)).toBe(254);
 		});
 
-		it("should call calculate & reduce & vaule is 255 & speed is '1'", () => {
+		it('should call calculate & reduce & vaule is 255 & speed is 1', () => {
 			expect(component.calculate(255, '1', false)).toBe(254);
 		});
 
-		it("should call calculate & reduce & vaule is '2.05' & speed is '0.05'", () => {
+		it('should call calculate & reduce & vaule is 2.05 & speed is 0.05', () => {
 			expect(component.calculate('2.05', '0.05', false)).toBe(2);
 		});
 
-		it("should call calculate & reduce & vaule is 2.05 & speed is '0.05'", () => {
+		it('should call calculate & reduce & vaule is 2.05 & speed is 0.05', () => {
 			expect(component.calculate(2.05, '0.05', false)).toBe(2);
 		});
 
-		it("should call calculate & reduce & vaule is '2.05' & speed is 0.05", () => {
+		it('should call calculate & reduce & vaule is 2.05 & speed is 0.05', () => {
 			expect(component.calculate('2.05', 0.05, false)).toBe(2);
 		});
 
@@ -55,15 +55,15 @@ describe('UiAddReduceButtonComponent', () => {
 			expect(component.calculate(2.05, 0.05, false)).toBe(2);
 		});
 
-		it("should call calculate & reduce & vaule is '0.60' & speed is '0.10'", () => {
+		it('should call calculate & reduce & vaule is 0.60 & speed is 0.10', () => {
 			expect(component.calculate('0.60', '0.10', false)).toBe(0.5);
 		});
 
-		it("should call calculate & reduce & vaule is 0.60 & speed is '0.10'", () => {
+		it('should call calculate & reduce & vaule is 0.60 & speed is 0.10', () => {
 			expect(component.calculate(0.6, '0.10', false)).toBe(0.5);
 		});
 
-		it("should call calculate & reduce & vaule is '0.60' & speed is 0.10", () => {
+		it('should call calculate & reduce & vaule is 0.60 & speed is 0.10', () => {
 			expect(component.calculate('0.60', 0.1, false)).toBe(0.5);
 		});
 
@@ -77,27 +77,27 @@ describe('UiAddReduceButtonComponent', () => {
 			expect(component.calculate(255, 1, true)).toBe(256);
 		});
 
-		it("should call calculate & add & vaule is '255' & speed is '1'", () => {
+		it('should call calculate & add & vaule is 255 & speed is 1', () => {
 			expect(component.calculate('255', '1', true)).toBe(256);
 		});
 
-		it("should call calculate & add & vaule is '255' & speed is 1", () => {
+		it('should call calculate & add & vaule is 255 & speed is 1', () => {
 			expect(component.calculate('255', 1, true)).toBe(256);
 		});
 
-		it("should call calculate & add & vaule is 255 & speed is '1'", () => {
+		it('should call calculate & add & vaule is 255 & speed is 1', () => {
 			expect(component.calculate(255, '1', true)).toBe(256);
 		});
 
-		it("should call calculate & add & vaule is '2.05' & speed is '0.05'", () => {
+		it('should call calculate & add & vaule is 2.05 & speed is 0.05', () => {
 			expect(component.calculate('2.05', '0.05', true)).toBe(2.1);
 		});
 
-		it("should call calculate & add & vaule is 2.05 & speed is '0.05'", () => {
+		it('should call calculate & add & vaule is 2.05 & speed is 0.05', () => {
 			expect(component.calculate(2.05, '0.05', true)).toBe(2.1);
 		});
 
-		it("should call calculate & add & vaule is '2.05' & speed is 0.05", () => {
+		it('should call calculate & add & vaule is 2.05 & speed is 0.05', () => {
 			expect(component.calculate('2.05', 0.05, true)).toBe(2.1);
 		});
 
@@ -105,15 +105,15 @@ describe('UiAddReduceButtonComponent', () => {
 			expect(component.calculate(2.05, 0.05, true)).toBe(2.1);
 		});
 
-		it("should call calculate & add & vaule is '0.60' & speed is '0.10'", () => {
+		it('should call calculate & add & vaule is 0.60 & speed is 0.10', () => {
 			expect(component.calculate('0.60', '0.10', true)).toBe(0.7);
 		});
 
-		it("should call calculate & add & vaule is 0.60 & speed is '0.10'", () => {
+		it('should call calculate & add & vaule is 0.60 & speed is 0.10', () => {
 			expect(component.calculate(0.6, '0.10', true)).toBe(0.7);
 		});
 
-		it("should call calculate & add & vaule is '0.60' & speed is 0.10", () => {
+		it('should call calculate & add & vaule is 0.60 & speed is 0.10', () => {
 			expect(component.calculate('0.60', 0.1, true)).toBe(0.7);
 		});
 
