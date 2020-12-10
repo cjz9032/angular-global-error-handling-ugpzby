@@ -5,18 +5,22 @@
 	[shiftRightUp]="true"
 	[back]="'common.ui.back' | translate"
 	[backId]="'smartPerformance-back-btn'">
-
 	<left-content>
 		<vtr-subpage-smart-performance-dashboard (scanEmitter)="scanNow()"
-			*ngIf="!smartPerformanceService.isScanning && !smartPerformanceService.isScanningCompleted && !smartPerformanceService.isSubscribed"></vtr-subpage-smart-performance-dashboard>
-		<vtr-subpage-scanning *ngIf="smartPerformanceService.isScanning"
+			*ngIf="(smartPerformanceService.scanningState === ScanningState.NotStart
+					||smartPerformanceService.scanningState === ScanningState.Canceled)
+					&&!smartPerformanceService.isSubscribed">
+		</vtr-subpage-smart-performance-dashboard>
+		<vtr-subpage-scanning
+			*ngIf="smartPerformanceService.scanningState === ScanningState.Running"
 			(sendModelStatus)="cancelScanfromScanning()"
 			[scheduleScanData]="smartPerformanceService.scheduleScanObj"
 			[isAutoScanRunning]="isScheduleScanRunning">
 		</vtr-subpage-scanning>
-		<vtr-subpage-smart-performance-scan-summary *ngIf="(smartPerformanceService.isScanningCompleted || smartPerformanceService.isSubscribed) && !smartPerformanceService.isScanning"
+		<vtr-subpage-smart-performance-scan-summary
+			*ngIf="isShowScanSummary(smartPerformanceService.scanningState)"
 			[hasSubscribedScanCompleted]="hasSubscribedScanCompleted"
-			[inputIsScanningCompleted]="showSubscribersummary"
+			[scanningState]="smartPerformanceService.scanningState"
 			(backToScan)="changeScanEvent()"
 			(backToNonSubscriber)="changeSummaryToHome()"
 			[rating]="rating"
@@ -25,26 +29,28 @@
 			[issueCount]="issueCount"
 			[isOnline]="isOnline">
 		</vtr-subpage-smart-performance-scan-summary>
-
 	</left-content>
 	<right-content>
 		<div class="container-fluid smart-performance-right-content">
 			<div class="row align-items-stretch no-gutters"
-				*ngIf="!smartPerformanceService.isScanning && !smartPerformanceService.isScanningCompleted && !smartPerformanceService.isSubscribed">
+				*ngIf="(smartPerformanceService.scanningState === ScanningState.NotStart || smartPerformanceService.scanningState === ScanningState.Canceled) &&
+					!smartPerformanceService.isSubscribed">
 				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card">
 					<vtr-widget-recommend-action [isDisabled]="!isOnline"></vtr-widget-recommend-action>
 				</div>
 				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
 					*ngIf="!isOldVersion">
 					<vtr-subpage-schedule-scan [isOnline]="isOnline"
-						(hideBasedOnOldAddIn)="hideBasedOnOldAddInVersion($event)"></vtr-subpage-schedule-scan>
+						(hideBasedOnOldAddIn)="hideBasedOnOldAddInVersion($event)">
+					</vtr-subpage-schedule-scan>
 				</div>
 			</div>
 			<div class="row align-items-stretch no-gutters"
-				*ngIf="(smartPerformanceService.isScanningCompleted || smartPerformanceService.isSubscribed) && !smartPerformanceService.isScanning">
+				*ngIf=" smartPerformanceService.scanningState === ScanningState.Completed
+					|| (smartPerformanceService.scanningState !== ScanningState.Running && smartPerformanceService.isSubscribed)">
 				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
 					*ngIf="smartPerformanceService.isSubscribed && !isOldVersion">
-					<vtr-subpage-schedule-scan (scanDateValueChange)='changeNextScanDateValue($event)'
+					<vtr-subpage-schedule-scan (scanDateValueChange)="changeNextScanDateValue($event)"
 						(hideBasedOnOldAddInSummary)="hideBasedOnOldAddInVersionInSummaryPage($event)"
 						[isOnline]="isOnline">
 					</vtr-subpage-schedule-scan>
@@ -59,23 +65,24 @@
 				</div>
 			</div>
 			<div class="row align-items-stretch no-gutters"
-				*ngIf="smartPerformanceService.isScanning">
+				*ngIf="smartPerformanceService.scanningState === ScanningState.Running">
 				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
 					*ngIf="!smartPerformanceService.isSubscribed">
 					<vtr-widget-recommend-action [isDisabled]="true"></vtr-widget-recommend-action>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
-					*ngIf="smartPerformanceService.isSubscribed">
-					<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)"
-						(expiredStatusEvent)="subscriptionInfo($event)"
-						[isClickDisabled]="true"
-						[isOnline]="isOnline"></vtr-widget-subscriptiondetails>
 				</div>
 				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
 					*ngIf="!isOldVersion">
 					<vtr-subpage-schedule-scan [isOnline]="isOnline"
 						[isClickDisabled]="true"
 						(hideBasedOnOldAddIn)="hideBasedOnOldAddInVersion($event)"></vtr-subpage-schedule-scan>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
+					*ngIf="smartPerformanceService.isSubscribed">
+					<vtr-widget-subscriptiondetails (subScribeEvent)="changeManageSubscription($event)"
+						(expiredStatusEvent)="subscriptionInfo($event)"
+						[isClickDisabled]="true"
+						[isOnline]="isOnline">
+					</vtr-widget-subscriptiondetails>
 				</div>
 			</div>
 		</div>

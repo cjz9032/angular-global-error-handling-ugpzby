@@ -16,6 +16,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import {
 	enumSmartPerformance,
+	ScanningState,
 	SPHeaderImageType,
 } from 'src/app/enums/smart-performance.enum';
 import { formatDate } from '@angular/common';
@@ -170,6 +171,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		},
 	];
 	SPHeaderImageType = SPHeaderImageType;
+	ScanningState = ScanningState;
 
 	showResultStatus: SPShowResult = {
 		show: false,
@@ -226,6 +228,11 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			month: this.currentDate.getMonth() + 1,
 			day: this.currentDate.getDate(),
 		};
+
+	}
+
+	isScanningFinished(state) {
+		return (state === ScanningState.Completed || state === ScanningState.Canceled);
 	}
 
 	getScanHistoryWithTime() {
@@ -434,8 +441,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		}
 	}
 	BackToSummary() {
-		if (this.inputIsScanningCompleted) {
-			this.inputIsScanningCompleted = false;
+		if (this.smartPerformanceService.scanningState !== ScanningState.NotStart) {
+			this.smartPerformanceService.scanningState = ScanningState.NotStart;
 		}
 	}
 	// scan settings
@@ -507,11 +514,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			if (now < fiveMinutesFromRecentScan) {
 				if (response) {
 					this.isLoading = false;
-					this.smartPerformanceService.isScanning = false;
 					if (isInit && this.smartPerformanceService.isEnterSmartPerformance) {
 						this.smartPerformanceService.isEnterSmartPerformance = false;
-					} else {
-						this.inputIsScanningCompleted = true;
 					}
 				}
 			}
