@@ -171,7 +171,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	}
 
 	public multipleAssociations(arr, tuneId, event, btnType, isPlusSlider) {
-		let index = arr.indexOf(tuneId);
+		const index = arr.indexOf(tuneId);
 		if (btnType === 2 || isPlusSlider === 2) {
 			for (let i = 0; i <= index; i++) {
 				this.advancedOCInfo.cpuParameterList.filter((x) => {
@@ -321,12 +321,12 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 				this.setAdvancedOCInfo(this.advancedOCInfo);
 			}
 
-			const metricsData = {
+			const metricsDataSetDefault = {
 				ItemParent: 'Gaming.AdvancedOC.SetToDefaultWarningModal',
 				ItemName: 'advancedoc_settodefaultwarningmodal_btn',
 				ItemValue: emmitedValue === 1 ? 'ok' : emmitedValue === 2 ? 'cancel' : 'close'
 			};
-			this.sendFeatureClickMetrics(metricsData);
+			this.sendFeatureClickMetrics(metricsDataSetDefault);
 		});
 
 		const metricsData = {
@@ -345,7 +345,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 
 	/**
 	 * metrics collection for advancedoc feature
-	 * @param metricsdata
+	 * param metricsdata
 	 */
 	public sendFeatureClickMetrics(metricsdata: any) {
 		try {
@@ -365,7 +365,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	}
 	/**
 	 * metrics collection of OC parameter changed
-	 * @param occhangedinfo
+	 * param occhangedinfo
 	 */
 	public sendOCChangedMetricsData(occhangedinfo: any) {
 		try {

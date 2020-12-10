@@ -60,5 +60,22 @@ export const GAMING_DATA = {
             },
         ],
         Metadata: { Count: 2 },
+    },
+    lightingCapility: {
+        LightPanelType: [1, 2, 4, 8],
+        LedType_Complex: [268435456, 1, 2, 4, 8, 32, 256, 512],
+        LedType_simple: [268435456, 1, 2, 3, 4],
+        BrightAdjustLevel: 4,
+        RGBfeature: 256,
+        SpeedSetLevel: 4,
+        SupportBrightnessSetList: [1, 2, 4, 8],
+        SupportRGBSetList: [4, 8],
+        SupportSpeedSetList: [4, 8],
+        UnifySetList: [0],
+        MemoryEffect: [268435456, 1, 2, 4, 1024],
+        MemorySpeedLevel: 4,
+        MemoryBrightLevel: 4,
+        MemoryPanelType: [40961, 40962, 40963, 40964],
+        MemoryUnifySetList: [0],
     }
 }

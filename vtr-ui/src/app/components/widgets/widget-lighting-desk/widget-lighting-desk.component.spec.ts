@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MetricService } from '../../../services/metric/metrics.service';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { GAMING_DATA } from 'src/testing/gaming-data';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', [
 	'getLightingProfileId',
@@ -17,8 +18,8 @@ const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', 
 	'setLightingDefaultProfileById',
 	'setLightingProfileEffectColor',
 ]);
-let localcacheServiceMock = {
-	getLocalCacheValue(key: any) {
+const localcacheServiceMock = {
+	getLocalCacheValue:(key: any) => {
 		switch (key) {
 			case '[LocalStorageKey] LightingCapabilitiesNewversionDesk':
 				return lightingCapility;
@@ -30,7 +31,7 @@ let localcacheServiceMock = {
 				return getLightingProfileById;
 		}
 	},
-	setLocalCacheValue(key: any, value: any) {
+	setLocalCacheValue:(key: any, value: any) => {
 		switch (key) {
 			case '[LocalStorageKey] LightingCapabilitiesNewversionDesk':
 				lightingCapility = value;
@@ -47,7 +48,7 @@ let localcacheServiceMock = {
 		}
 	},
 };
-let profileId: number = 2;
+let profileId = 2;
 let getLightingProfileById: any = {
 	didSuccess: true,
 	profileId: 2,
@@ -174,23 +175,7 @@ const getLightingProfileByIdFail: any = {
 		},
 	],
 };
-let lightingCapility: any = {
-	LightPanelType: [1, 2, 4, 8],
-	LedType_Complex: [268435456, 1, 2, 4, 8, 32, 256, 512],
-	LedType_simple: [268435456, 1, 2, 3, 4],
-	BrightAdjustLevel: 4,
-	RGBfeature: 256,
-	SpeedSetLevel: 4,
-	SupportBrightnessSetList: [1, 2, 4, 8],
-	SupportRGBSetList: [4, 8],
-	SupportSpeedSetList: [4, 8],
-	UnifySetList: [0],
-	MemoryEffect: [268435456, 1, 2, 4, 1024],
-	MemorySpeedLevel: 4,
-	MemoryBrightLevel: 4,
-	MemoryPanelType: [40961, 40962, 40963, 40964],
-	MemoryUnifySetList: [0],
-};
+let lightingCapility: any = GAMING_DATA.lightingCapility;
 const metricsMock = jasmine.createSpyObj('MetricService', ['sendMetrics']);
 
 describe('WidgetLightingDeskComponent', () => {
@@ -216,7 +201,7 @@ describe('WidgetLightingDeskComponent', () => {
 	);
 	beforeEach(fakeAsync(() => {
 		TestBed.configureTestingModule({
-			declarations: [WidgetLightingDeskComponent, mockPipe({ name: 'translate' })],
+			declarations: [WidgetLightingDeskComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
 			providers: [
 				NgbModal,
 				NgbActiveModal,
@@ -520,23 +505,7 @@ describe('WidgetLightingDeskComponent', () => {
 				},
 			],
 		};
-		const lightingCapabilitiesRes = {
-			LightPanelType: [16, 128, 32],
-			LedType_Complex: [268435456, 1, 2, 4, 8, 32, 256, 512],
-			LedType_simple: [268435456, 1, 2, 3, 4],
-			BrightAdjustLevel: 4,
-			RGBfeature: 256,
-			SpeedSetLevel: 4,
-			SupportBrightnessSetList: [1, 2, 4, 8],
-			SupportRGBSetList: [16],
-			SupportSpeedSetList: [4, 8],
-			UnifySetList: [0],
-			MemoryEffect: [268435456, 1, 2, 4, 1024],
-			MemorySpeedLevel: 4,
-			MemoryBrightLevel: 4,
-			MemoryPanelType: [40961, 40962, 40963, 40964],
-			MemoryUnifySetList: [0],
-		};
+		const lightingCapabilitiesRes = GAMING_DATA.lightingCapility;
 		const count = 0;
 		component.ledlayoutversion = 3;
 		component.lightingProfileDetail(lightingProfileByIdRes, count, lightingCapabilitiesRes);
@@ -578,12 +547,12 @@ describe('WidgetLightingDeskComponent', () => {
 		lightingProfileByIdRes.lightInfo[0].lightPanelType = 128;
 		component.lightingProfileDetail(lightingProfileByIdRes, count, lightingCapabilitiesRes);
 		expect(component.lightingProfileCurrentDetail.panelName).toMatch(
-			'gaming.lightingNewversion.machineName.name6'
+			'gaming.lightingNewversion.machineName.name12'
 		);
 		lightingProfileByIdRes.lightInfo[0].lightPanelType = 32;
 		component.lightingProfileDetail(lightingProfileByIdRes, count, lightingCapabilitiesRes);
 		expect(component.lightingProfileCurrentDetail.panelName).toMatch(
-			'gaming.lightingNewversion.machineName.name3'
+			'gaming.lightingNewversion.machineName.name6'
 		);
 		lightingProfileByIdRes.lightInfo[0].lightPanelType = 40962;
 		component.lightingProfileDetail(lightingProfileByIdRes, count, lightingCapabilitiesRes);
@@ -771,16 +740,3 @@ describe('WidgetLightingDeskComponent', () => {
 		expect(result).toEqual('automation_Id');
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	) as any;
-}
