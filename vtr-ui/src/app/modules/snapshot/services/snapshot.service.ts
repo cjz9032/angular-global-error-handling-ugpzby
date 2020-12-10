@@ -7,6 +7,7 @@ import {
 	SnapshotSoftwareComponents,
 	SnapshotStatus,
 } from 'src/app/modules/snapshot/enums/snapshot.enum';
+import { SnapshotInfo } from '../models/snapshot.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -46,7 +47,14 @@ export class SnapshotService {
 		return this.getSnapshotInfo(componentName, true);
 	}
 
-	public async updateBaselineInfo(componentName: string) {}
+	public async updateBaselineInfo(snapshotInfo: SnapshotInfo) {
+		if (this.snapshotBridge) {
+			return this.snapshotBridge.getUpdateBaseline(snapshotInfo).catch((error: string) => {
+				this.loggerService.error('[UpdateBaseline] ' + error);
+			});
+		}
+		return undefined;
+	}
 
 	public getAllComponentsList() {
 		return this.getSoftwareComponentsList().concat(this.getHardwareComponentsList());

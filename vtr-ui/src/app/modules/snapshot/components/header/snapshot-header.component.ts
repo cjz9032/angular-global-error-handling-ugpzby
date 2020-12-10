@@ -1,11 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {
-	SnapshotHardwareComponents,
-	SnapshotSoftwareComponents,
-	SnapshotStatus,
-} from 'src/app/modules/snapshot/enums/snapshot.enum';
+import { SnapshotStatus } from 'src/app/modules/snapshot/enums/snapshot.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SnapshotInfo } from '../../models/snapshot.interface';
 import { SnapshotService } from '../../services/snapshot.service';
 import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.component';
 
@@ -70,14 +67,14 @@ export class SnapshotHeaderComponent implements OnInit {
 			windowClass: 'custom-modal-size',
 		});
 		modalRef.componentInstance.snapshotInfo = this.snapshotInfo;
-		modalRef.componentInstance.passEntry.subscribe((response) => {
+		modalRef.componentInstance.passEntry.subscribe((modalResponse) => {
 			this.showSnapshotInformation = false;
 			this.snapshotService.snapshotStatus = SnapshotStatus.baselineInProgress;
 			// This is just to simulate a call on snapshotService
 			this.snapshotService
 				.getCurrentSnapshotInfo('')
 				.then(async () => {
-					//await this.delay(3000);
+					// await this.delay(3000);
 				})
 				.finally(() => {
 					this.snapshotService.snapshotStatus = SnapshotStatus.baselineCompleted;
@@ -91,6 +88,21 @@ export class SnapshotHeaderComponent implements OnInit {
 				this.snapshotService.snapshotStatus = SnapshotStatus.notStarted;
 			}
 		});
+	}
+
+	public prepareDataToUpdateBaseline(data: Array<any>): SnapshotInfo {
+		const snapshotInfo: SnapshotInfo = {};
+		data.forEach((snapshotInfoType) => {
+			const componentList: Array<any> = snapshotInfoType.components;
+
+			componentList.forEach((component) => {
+				if (component.selected) {
+					snapshotInfo[component.name] = this.snapshotInfo[component.name];
+				}
+			});
+		});
+
+		return snapshotInfo;
 	}
 
 	public getHeaderText() {
