@@ -2310,7 +2310,7 @@
 				"tooltip": "This feature is not applicable to Web video players. Popular local video players, such as Windows Media Player, 5KPlayer, and etc. support this feature."
 			},
 			"superResolution": {
-				"title": "Video resolution upscaling",
+				"title": "Super resolution",
 				"desc1": "This feature enhances the experience of video playback by improving the video resolution. It works especially when the video is in poor resolution.",
 				"desc2": "This function might impact the battery life, skin temperature, and fan noises. Please do not use it in DC mode (battery mode). Otherwise, it will speed up the power consumption and shorten the battery life.",
 				"tooltip": {
