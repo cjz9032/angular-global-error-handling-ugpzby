@@ -1093,7 +1093,9 @@
 			"cardSummary": {
 				"detecting": "Detecting system information now...",
 				"goodCondition": "Your device is in good condition",
-				"maintenanceNeeded": "Your device needs some maintenance"
+				"needSUScan": "Click to update device driver",
+				"needSPScan": "Click to optimize computer performance",
+				"needHWScan": "Click to scan computer hardware"
 			}
 		}
 	},
