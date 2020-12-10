@@ -3,7 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { ModalSnapshotComponent } from './modal-snapshot.component';
 
-describe('ModalSnapshotComponent', () => {
+fdescribe('ModalSnapshotComponent', () => {
 	let component: ModalSnapshotComponent;
 	let fixture: ComponentFixture<ModalSnapshotComponent>;
 
@@ -18,22 +18,46 @@ describe('ModalSnapshotComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalSnapshotComponent);
 		component = fixture.componentInstance;
+		component.snapshotInfo = [{
+			hardwareList: [
+				{
+					CdRomDrives: null,
+					DisplayDevices: null,
+					HardDrives: null
+				}
+			],
+			softwareList: [
+				{
+					Processors: null,
+					OperatingSystems: null,
+					Printers: null,
+				}
+			]
+		}];
 		fixture.detectChanges();
 	});
 
-	it('should create', () => {
+	fit('should create', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('should call closeModal', () => {
+	fit('should call closeModal', () => {
 		const spy = spyOn(component, 'closeModal');
 		component.closeModal();
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call onClickRun', () => {
+	fit('should call onClickRun', () => {
 		const spy = spyOn(component, 'onClickRun');
 		component.onClickRun();
 		expect(spy).toHaveBeenCalled();
+	});
+
+	fit('should appears errorMessage after click onClickRun', () => {
+		const spy = spyOn(component, 'onClickRun');
+		component.errorMessage = true;
+		fixture.detectChanges();
+		component.onClickRun();
+		expect(component.errorMessage).toBeTrue();
 	});
 });

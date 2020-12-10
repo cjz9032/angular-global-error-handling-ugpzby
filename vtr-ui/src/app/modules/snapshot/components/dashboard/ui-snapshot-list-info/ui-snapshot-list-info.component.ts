@@ -40,14 +40,14 @@ export class UiSnapshotListInfoComponent {
 	}
 
 	public onCheckChildren(item) {
-		// Change the item state based on the quantity of selected tests
-		const numberOfTests = item.components.length;
-		const numberOfSelectedTests = item.components.filter(x => x.selected).length;
+		// Change the item state based on the quantity of selected components
+		const numberOfComponents = item.components.length;
+		const numberOfSelectedComponents = item.components.filter(x => x.selected).length;
 
-		if (numberOfSelectedTests === 0) {
+		if (numberOfSelectedComponents === 0) {
 			item.selected = false;
 			item.indeterminate = false;
-		} else if (numberOfTests > numberOfSelectedTests) {
+		} else if (numberOfComponents > numberOfSelectedComponents) {
 			item.selected = false;
 			item.indeterminate = true;
 		} else {
