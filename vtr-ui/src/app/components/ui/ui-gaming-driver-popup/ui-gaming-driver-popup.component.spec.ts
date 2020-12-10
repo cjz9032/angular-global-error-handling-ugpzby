@@ -4,17 +4,18 @@ import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
+import { GAMING_DATA } from 'src/testing/gaming-data';
 
 describe('UiGamingDriverPopupComponent', () => {
 	let component: UiGamingDriverPopupComponent;
 	let fixture: ComponentFixture<UiGamingDriverPopupComponent>;
-	let router = { navigate: jasmine.createSpy('navigate') };
+	const router = { navigate: jasmine.createSpy('navigate') };
 	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiGamingDriverPopupComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+				GAMING_DATA.mockPipe({ name: 'sanitize' }),
 			],
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [{ provide: HttpClient }, { provide: Router, useValue: router }],
@@ -51,11 +52,11 @@ describe('UiGamingDriverPopupComponent', () => {
 
 	it('Checking set time out for isPopupWindowGetFocus function', (done) => {
 		component.isGamingDriverPop = true;
-		let event = { which: 9, srcElement: { className: 'enable-button' } };
+		const event = { which: 9, srcElement: { className: 'enable-button' } };
 		component.isPopupWindowGetFocus(event);
 		expect(component.isPopupWindowGetFocus(event)).toBeUndefined();
 		component.isGamingDriverPop = false;
-		let event2 = { which: 9, srcElement: { className: 'enable-button' } };
+		const event2 = { which: 9, srcElement: { className: 'enable-button' } };
 		component.isPopupWindowGetFocus(event2);
 		const p = new Promise((resolve, reject) => setTimeout(() => resolve(''), 50));
 		p.then((result) => {
@@ -64,7 +65,7 @@ describe('UiGamingDriverPopupComponent', () => {
 			});
 			done();
 		});
-		let event3 = { which: 8, srcElement: { className: 'enable-button' } };
+		const event3 = { which: 8, srcElement: { className: 'enable-button' } };
 		component.isPopupWindowGetFocus(event3);
 		expect(component.isPopupWindowGetFocus(event3)).toBeUndefined();
 	});
@@ -84,16 +85,3 @@ describe('UiGamingDriverPopupComponent', () => {
 		expect(component.ngOnInit()).toBeUndefined();
 	}));
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

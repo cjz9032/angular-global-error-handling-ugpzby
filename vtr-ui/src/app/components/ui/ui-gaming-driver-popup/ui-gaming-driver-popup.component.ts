@@ -33,21 +33,31 @@ export class UiGamingDriverPopupComponent implements OnInit {
 	}
 	close() {
 		this.showMePartially = !this.showMePartially;
-		if (this.isGamingDriverPop) this.driverpopval.emit(false);
-		else this.driverpopval.emit(this.item);
+		if (this.isGamingDriverPop){
+			this.driverpopval.emit(false);
+		}else{
+			this.driverpopval.emit(this.item);
+		}
 		this.focusElement('#main-wrapper');
 	}
 
 	clickEnableBtn() {
-		this.isGamingDriverPop ? this.systemUpdatePage() : this.close();
+		if(this.isGamingDriverPop){
+			this.systemUpdatePage();
+		}else{
+			this.close();
+		}
 	}
 
 	systemUpdatePage() {
-		if (this.isGamingDriverPop) this.router.navigate(['device/system-updates']);
+		if (this.isGamingDriverPop){
+			this.router.navigate(['device/system-updates']);
+		}
 	}
 	isPopupWindowGetFocus(event) {
-		if (event.srcElement.className.indexOf('enable-button') > -1 && this.isGamingDriverPop)
+		if (event.srcElement.className.indexOf('enable-button') > -1 && this.isGamingDriverPop){
 			return;
+		}
 		if (event.which === 9) {
 			setTimeout(() => {
 				this.focusElement('ui-gaming-driver-popup');

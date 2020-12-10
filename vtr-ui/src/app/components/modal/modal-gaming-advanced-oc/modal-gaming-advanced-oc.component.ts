@@ -372,21 +372,21 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			const parameterValue = {};
 			if (occhangedinfo === 1) {
 				if (Object.prototype.hasOwnProperty.call(this.advancedOCInfo, 'cpuParameterList')) {
-					for (let i = 0; i < this.advancedOCInfo.cpuParameterList.length; i += 1) {
+					for (const item of this.advancedOCInfo.cpuParameterList) {
 						parameterValue[
 							this.itemUnit.cpuOCNames[
-								'cpuOCName' + this.advancedOCInfo.cpuParameterList[i].tuneId
+								'cpuOCName' + item.tuneId
 							]
-						] = this.advancedOCInfo.cpuParameterList[i].OCValue;
+						] = item.OCValue;
 					}
 				}
 				if (Object.prototype.hasOwnProperty.call(this.advancedOCInfo, 'gpuParameterList')) {
-					for (let i = 0; i < this.advancedOCInfo.gpuParameterList.length; i += 1) {
+					for (const item of this.advancedOCInfo.gpuParameterList) {
 						parameterValue[
 							this.itemUnit.gpuOCNames[
-								'gpuOCName' + this.advancedOCInfo.gpuParameterList[i].tuneId
+								'gpuOCName' + item.tuneId
 							]
-						] = this.advancedOCInfo.gpuParameterList[i].OCValue;
+						] = item.OCValue;
 					}
 				}
 			}

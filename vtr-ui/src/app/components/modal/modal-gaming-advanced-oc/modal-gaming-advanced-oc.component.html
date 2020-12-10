@@ -20,10 +20,8 @@
                         </p>
                         <div class="overclock-range" tooltipClass="vtr-tool-tip" container="body">
                             <div class="left-slider">
-                                <vtr-ui-gaming-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [currentVal]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'gpuParameterList',0,false)"
+                                <vtr-ui-gaming-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [currentVal]="item.OCValue" (sliderChanged)="setRangeValue($event,idx,'gpuParameterList',0,false)"
                                 [automationId]="removeSpaces(itemUnit.gpuOCNames['gpuOCName'+item.tuneId]) + '_slider'"  [vtrMetricEnabled]="false" [ariaLabelValue]="itemUnit.gpuOCNames['gpuOCName'+item.tuneId]"></vtr-ui-gaming-slider>
-                                <!-- <vtr-ui-brightness-slider [automationId]="removeSpaces(itemUnit.gpuOCNames['gpuOCName'+item.tuneId]) + '_slider'" [vtrMetricEnabled]="false" [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'gpuParameterList',0,false)" [ariaLabelValue]="itemUnit.gpuOCNames['gpuOCName'+item.tuneId]">
-                                </vtr-ui-brightness-slider> -->
                             </div>
                             <div class="right-range">
                                 <vtr-ui-add-reduce-button [automationId]="removeSpaces(itemUnit.gpuOCNames['gpuOCName'+item.tuneId])" [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['gpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'gpuParameterList',0,true)"
@@ -43,9 +41,7 @@
                         </p>
                         <div class="overclock-range" tooltipClass="vtr-tool-tip" container="body">
                             <div class="left-slider">
-                                <!-- <vtr-ui-brightness-slider [automationId]="removeSpaces(itemUnit.cpuOCNames['cpuOCName'+item.tuneId]) + '_slider'" [vtrMetricEnabled]="false"  [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [lightingData]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,false)" [ariaLabelValue]="itemUnit.cpuOCNames['cpuOCName'+item.tuneId]">
-                                </vtr-ui-brightness-slider> -->
-                                <vtr-ui-gaming-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [currentVal]="item.OCValue" (onSliderChanged)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,false)"
+                                <vtr-ui-gaming-slider [minValue]="item.minValue" [maxValue]="item.maxValue" [step]="item.stepValue" [currentVal]="item.OCValue" (sliderChanged)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,false)"
                                 [automationId]="removeSpaces(itemUnit.cpuOCNames['cpuOCName'+item.tuneId]) + '_slider'"  [vtrMetricEnabled]="false" [ariaLabelValue]="itemUnit.cpuOCNames['cpuOCName'+item.tuneId]"></vtr-ui-gaming-slider>
                             </div>
                             <div class="right-range">
