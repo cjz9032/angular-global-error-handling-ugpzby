@@ -61,6 +61,7 @@ export class SystemUpdateService {
 	public isToastMessageNeeded = false;
 	public timeStartSearch;
 	public retryTimes = 0;
+	private capabilityList = [];
 	private timeStartGetStatus: Date;
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
@@ -145,9 +146,45 @@ export class SystemUpdateService {
 		}
 	}
 
+	public getCapability(): Promise<any[]> {
+		if (this.capabilityList.length > 0) {
+			return Promise.resolve(this.capabilityList);
+		}
+		if (this.systemUpdateBridge) {
+			return new Promise((resolve) => {
+				this.systemUpdateBridge.getCapability().then((response: Array<UpdateHistory>) => {
+					if (response && response.length > 0) {
+						this.capabilityList = response;
+					} else {
+						this.loggerService.error(`SystemUpdateService.getCapability invalid response: ${response}.`);
+					}
+					resolve(this.capabilityList);
+				}, (error) => {
+					this.loggerService.error(`SystemUpdateService.getCapability error: ${error}.`);
+					resolve(this.capabilityList);
+				});
+			});
+		} else {
+			this.loggerService.info(`SystemUpdateService.getCapability systemUpdateBridge not exist.`);
+			return Promise.resolve(this.capabilityList);
+		}
+	}
+
 	public getUpdateHistory() {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.getUpdateHistory().then((response: Array<UpdateHistory>) => {
+				this.installationHistory = response;
+				this.commonService.sendNotification(
+					UpdateProgress.FullHistory,
+					this.installationHistory
+				);
+			});
+		}
+	}
+
+	public deleteHistoryItems(packageIds) {
+		if (this.systemUpdateBridge) {
+			this.systemUpdateBridge.deleteUpdateHistoryItems(packageIds).then((response: Array<UpdateHistory>) => {
 				this.installationHistory = response;
 				this.commonService.sendNotification(
 					UpdateProgress.FullHistory,

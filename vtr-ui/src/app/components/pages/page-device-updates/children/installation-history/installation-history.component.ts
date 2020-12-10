@@ -22,6 +22,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	public installationHistory: Array<UpdateHistory> = [];
 	private notificationSubscription: Subscription;
 	public showAll = false;
+	public enableDelete = false;
 
 	constructor(
 		public systemUpdateService: SystemUpdateService,
@@ -30,6 +31,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		private localCacheService: LocalCacheService
 	) {
 		this.getCachedHistory();
+		this.checkIfDeleteHistoryEnabled();
 	}
 
 	ngOnInit() {
@@ -57,6 +59,24 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		if (typeof cachedData !== 'undefined' && cachedData.length > 0) {
 			this.installationHistory = cachedData;
 		}
+	}
+
+	async checkIfDeleteHistoryEnabled() {
+		this.enableDelete = false;
+		const capabilities = await this.systemUpdateService.getCapability();
+		if (capabilities && capabilities.length > 0) {
+			capabilities.forEach(capability => {
+				if (capability
+					&& capability.key === 'Do-DeleteHistoryItems'
+					&& capability.keyvalue === 'true') {
+						this.enableDelete = true;
+					}
+			});
+		}
+	}
+
+	onDeleteClick(item) {
+		this.systemUpdateService.deleteHistoryItems([item.packageID]);
 	}
 
 	installUpdates(event) {}
