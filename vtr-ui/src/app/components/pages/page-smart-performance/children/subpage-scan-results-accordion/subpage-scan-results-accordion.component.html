@@ -42,7 +42,7 @@
 						</button>
 					</ng-template>
 					<ng-template ngbPanelContent>
-						<div class="notes pt-3 pr-3 mb-5">
+						<div class="notes pt-3 pr-3 mb-4">
 							<h4 id="smart-performance-note-title"><b>{{ 'smartPerformance.noteFindings' | translate }}</b></h4>
 							<p id="smart-performance-note-description"
 								role="text">{{ 'smartPerformance.noteNavigateTab' | translate }}</p>
@@ -84,11 +84,11 @@
 									</div>
 								</div>
 							</div>
-							<div class="result-details pl-4">
+							<div class="result-details">
 								<h4 class="pl-2 mb-3"
 									id="smart-performance-scanned-areas"><b>{{ 'smartPerformance.scannedAreas' | translate }}</b></h4>
 								<div class="scanned-list row">
-									<div class="list-item p-2 list-heading col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4"
+									<div class="list-item p-2 list-heading col-12 col-sm-12 col-md-6 col-lg-12 col-xl-4"
 										*ngFor="let item of currentContent.sections">
 										<div class="scan-detail-item">
 											<div class="d-flex">
