@@ -56,6 +56,18 @@ export class SnapshotService {
 		return SnapshotHardwareComponents.values();
 	}
 
+	public anyIndividualSnapshotInProgress() {
+		for (const snapshot in this.pvtSnapshotInfo) {
+			if (this.pvtSnapshotInfo.hasOwnProperty(snapshot)) {
+				const status = this.pvtSnapshotInfo[snapshot].status;
+				if (status === SnapshotComponentStatus.inProgress) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 	private initEmptySnapshot() {
 		this.pvtSnapshotInfo = {};
 		this.getSoftwareComponentsList().forEach((key) => {

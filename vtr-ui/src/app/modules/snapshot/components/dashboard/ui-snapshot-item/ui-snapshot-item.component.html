@@ -29,6 +29,7 @@
 			<!-- Shows button to update after modules get loaded -->
 			<ng-template #updateButton>
 				<vtr-ui-hyperlink-button
+					(click)="updateSnapshot()"
 					class="hyperlink-container"
 					[metricsParent]="'Snapshot'"
 					[metricsItem]="'Snapshot.UpdateSnapshotModule'"
@@ -37,7 +38,9 @@
 					linkId="snapshot-update-btn"
 					hyperlinkStyle="xs-blue-lighter"
 					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
-					[disableTooltip]="true">
+					[disableTooltip]="true"
+					[isDisabled]="!isUpdateEnabled()"
+					>
 				</vtr-ui-hyperlink-button>
 			</ng-template>
 
@@ -77,23 +80,27 @@
 							{{ 'snapshot.lastSnapshot' | translate }}
 						</th>
 					</tr>
-					<ng-container *ngFor="let values of component.info.Items; let itemIndex = index">
-						<tr *ngFor="let property of values.Properties; let j = index">
-							<th id="snapshot-item-{{ i }}-detail-{{ j }}-property-name" class="table-info-name">
-								{{ property.PropertyName }}
-							</th>
-							<td id="snapshot-item-{{ i }}-detail-{{ j }}-base-value">
-								{{ property.BaseValue }}</td>
+					<ng-template #recursiveList let-list>
+						<ng-container *ngFor="let values of list; let itemIndex = index">
+							<tr *ngFor="let property of values.Properties; let j = index">
+								<th id="snapshot-item-{{ i }}-detail-{{ j }}-property-name" class="table-info-name">
+									{{ property.PropertyName }}
+								</th>
+								<td id="snapshot-item-{{ i }}-detail-{{ j }}-base-value">
+									{{ property.BaseValue }}</td>
 
-							<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
-								{{ property.CurrentValue }}</td>
-						</tr>
-						<tr class="table-info-separator" aria-hidden="true"></tr>
-					</ng-container>
+								<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
+									{{ property.CurrentValue }}</td>
+							</tr>
+							<tr *ngIf="values.SubDevices != null && values.SubDevices != undefined && values.SubDevices.length > 0">
+								<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: values.SubDevices }"></ng-container>
+							</tr>
+							<tr class="table-info-separator" aria-hidden="true"></tr>
+						</ng-container>
+					</ng-template>
+					<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: component.info.Items }"></ng-container>
 				</ng-template>
 			</tbody>
 		</table>
 	</div>
-
-	<hr *ngIf="!last && !component.info.IsDifferent" aria-hidden="true"> <!--&& !itemsAttributes[i + 1].properties.IsDifferent"-->
 </div>

@@ -1,10 +1,11 @@
 export enum SnapshotStatus {
-	firstLoad = 'titleNotStarted',
-	notStarted = 'titleNotStarted',
-	snapshotInProgress = 'titleSnapshotInProgress',
-	snapshotCompleted = 'titleSnapshotCompleted',
-	baselineInProgress = 'titleBaselineInProgress',
-	baselineCompleted = 'titleBaselineCompleted',
+	firstLoad,
+	notStarted,
+	individualSnapshotInProgress,
+	fullSnapshotInProgress,
+	snapshotCompleted,
+	baselineInProgress,
+	baselineCompleted,
 }
 
 export enum SnapshotComponentStatus {

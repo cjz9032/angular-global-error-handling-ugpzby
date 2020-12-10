@@ -36,7 +36,7 @@ export class PageSnapshotComponent implements OnInit, OnDestroy {
 			this.snapshotService.snapshotStatus = SnapshotStatus.notStarted;
 		} else if (this.snapshotService.snapshotStatus === SnapshotStatus.firstLoad) {
 			// If it is the first time I'm on this page, initialize it with the first snapshot
-			this.snapshotService.snapshotStatus = SnapshotStatus.snapshotInProgress;
+			this.snapshotService.snapshotStatus = SnapshotStatus.fullSnapshotInProgress;
 
 			const componentSnapshotPromises = [];
 			this.snapshotService.getSoftwareComponentsList().forEach((key) => {

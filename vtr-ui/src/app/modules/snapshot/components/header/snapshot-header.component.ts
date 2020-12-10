@@ -18,6 +18,16 @@ export class SnapshotHeaderComponent implements OnInit {
 	public showSnapshotInformation = true;
 	public snapshotInfo: any = {};
 
+	private readonly mapStatusToText: any = {
+		[SnapshotStatus.firstLoad]: 'titleNotStarted',
+		[SnapshotStatus.individualSnapshotInProgress]: 'titleSnapshotInProgress',
+		[SnapshotStatus.fullSnapshotInProgress]: 'titleSnapshotInProgress',
+		[SnapshotStatus.snapshotCompleted]: 'titleSnapshotCompleted',
+		[SnapshotStatus.baselineInProgress]: 'titleBaselineInProgress',
+		[SnapshotStatus.baselineCompleted]: 'titleBaselineCompleted',
+		[SnapshotStatus.notStarted]: 'titleNotStarted',
+	};
+
 	constructor(private snapshotService: SnapshotService, private modalService: NgbModal) {
 		this.snapshotInfo = {
 			hardwareList: this.snapshotService.getHardwareComponentsList(),
@@ -28,17 +38,17 @@ export class SnapshotHeaderComponent implements OnInit {
 	ngOnInit() {}
 
 	onTakeSnapshot() {
-		this.snapshotService.snapshotStatus = SnapshotStatus.snapshotInProgress;
+		this.snapshotService.snapshotStatus = SnapshotStatus.fullSnapshotInProgress;
 
 		// Quick implementation, just for test
 		const componentSnapshotPromises = [];
 
 		SnapshotSoftwareComponents.values().forEach((key) => {
-			componentSnapshotPromises.push(this.snapshotService.getCurrentSnapshotInfo(key));
+			componentSnapshotPromises.push(this.snapshotService.updateSnapshotInfo(key));
 		});
 
 		SnapshotHardwareComponents.values().forEach((key) => {
-			componentSnapshotPromises.push(this.snapshotService.getCurrentSnapshotInfo(key));
+			componentSnapshotPromises.push(this.snapshotService.updateSnapshotInfo(key));
 		});
 
 		Promise.all(componentSnapshotPromises)
@@ -84,15 +94,20 @@ export class SnapshotHeaderComponent implements OnInit {
 		});
 	}
 
+	public getHeaderText() {
+		return this.mapStatusToText[this.snapshotService.snapshotStatus];
+	}
+
 	public getSnapshotStatus() {
 		return this.snapshotService.snapshotStatus;
 	}
 
 	public isButtonEnabled() {
-		return (
-			this.snapshotService.snapshotStatus === SnapshotStatus.notStarted ||
-			this.snapshotService.snapshotStatus === SnapshotStatus.snapshotCompleted ||
-			this.snapshotService.snapshotStatus === SnapshotStatus.baselineCompleted
-		);
+		const statesToEnable = [
+			SnapshotStatus.notStarted,
+			SnapshotStatus.snapshotCompleted,
+			SnapshotStatus.baselineCompleted,
+		];
+		return statesToEnable.includes(this.snapshotService.snapshotStatus);
 	}
 }

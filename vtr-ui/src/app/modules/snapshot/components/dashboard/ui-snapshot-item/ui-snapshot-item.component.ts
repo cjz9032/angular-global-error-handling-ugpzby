@@ -3,8 +3,10 @@ import {
 	SnapshotHardwareComponents,
 	SnapshotSoftwareComponents,
 	SnapshotComponentStatus,
+	SnapshotStatus,
 } from 'src/app/modules/snapshot/enums/snapshot.enum';
 import { Subscription } from 'rxjs';
+import { SnapshotService } from '../../../services/snapshot.service';
 
 @Component({
 	selector: 'vtr-ui-snapshot-item',
@@ -22,9 +24,7 @@ export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 	public itemsAttributes = new Array();
 	public snapshotStatus: any;
 
-	private notificationSubscription: Subscription;
-
-	constructor() {}
+	constructor(private snapshotService: SnapshotService) {}
 
 	ngOnInit(): void {
 		this.itemsAttributes = new Array();
@@ -32,11 +32,7 @@ export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 		this.detailsExpanded = false;
 	}
 
-	ngOnDestroy() {
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
-		}
-	}
+	ngOnDestroy() {}
 
 	public getModuleIcon(module: string): string {
 		if (
@@ -46,5 +42,23 @@ export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 			return '';
 		}
 		return 'assets/icons/snapshot/icon_' + module.toLowerCase() + '.svg';
+	}
+
+	public async updateSnapshot() {
+		this.snapshotService.snapshotStatus = SnapshotStatus.individualSnapshotInProgress;
+		await this.snapshotService.updateSnapshotInfo(this.name);
+		if (!this.snapshotService.anyIndividualSnapshotInProgress()) {
+			this.snapshotService.snapshotStatus = SnapshotStatus.snapshotCompleted;
+		}
+	}
+
+	public isUpdateEnabled() {
+		const statesToEnable = [
+			SnapshotStatus.notStarted,
+			SnapshotStatus.snapshotCompleted,
+			SnapshotStatus.baselineCompleted,
+			SnapshotStatus.individualSnapshotInProgress,
+		];
+		return statesToEnable.includes(this.snapshotService.snapshotStatus);
 	}
 }
