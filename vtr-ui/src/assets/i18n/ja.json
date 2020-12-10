@@ -3173,9 +3173,9 @@
 		},
 		"segments": {
 			"consumer": "個人用",
-			"smb": "仕事",
-			"consumerGaming": "ゲーム",
-			"consumerEducation": "学歴",
+			"smb": "仕事用",
+			"consumerGaming": "ゲーム用",
+			"consumerEducation": "教育用",
 			"commercial": "企業用"
 		},
 		"gaming": {
