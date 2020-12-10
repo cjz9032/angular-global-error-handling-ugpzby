@@ -14,52 +14,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { PageMacrokeyComponent } from './page-macrokey.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-
-const cmsMock = {
-	Results: [
-		{
-			Id: 'e64d43892d8448d088f3e6037e385122',
-			Title: 'Header Image DCC',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage:
-				'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/DCC_top_image.jpg?v=5cf8a0151ea84c4ca43e906339c3c3b2',
-			Action: '',
-			ActionType: null,
-			ActionLink: null,
-			BrandName: 'brandname',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: null,
-			Template: 'header',
-			Position: null,
-			ExpirationDate: null,
-			Filters: {
-				'DeviceTag.Value': { key: 'System.DccGroup', operator: '==', value: 'true' },
-			},
-		},
-		{
-			Id: '8516ba14dba5412ca954c3ccfdcbff90',
-			Title: 'Default Header Image',
-			ShortTitle: '',
-			Description: '',
-			FeatureImage:
-				'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/Header-Image-Default.jpg?v=5d0bf7fd0065478c977ed284fecac45d',
-			Action: '',
-			ActionType: null,
-			ActionLink: null,
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P2',
-			Page: null,
-			Template: 'header',
-			Position: null,
-			ExpirationDate: null,
-			Filters: null,
-		},
-	],
-	Metadata: { Count: 2 },
-};
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('PageMacrokeyComponent', () => {
 	let component: PageMacrokeyComponent;
@@ -73,42 +28,44 @@ describe('PageMacrokeyComponent', () => {
 	};
 	const translateServiceMock = { onLangChange: of('en') };
 	const cmsServiceMock = {
-		fetchCMSContent: (params) => of(cmsMock),
-		getOneCMSContent: (res, template, position) => (res = cmsMock.Results),
+		fetchCMSContent: (params) => of(GAMING_DATA.cmsMock),
+		getOneCMSContent: (res, template, position) => (res = GAMING_DATA.cmsMock.Results),
 	};
 	const shellServiceMock = { getMetrics: () => ({ sendAsync: (data) => {} }) };
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				PageMacrokeyComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
-				mockPipe({ name: 'htmlText' }),
-			],
-			providers: [
-				NgbModal,
-				NgbActiveModal,
-				{ provide: Title, useValue: titleServiceMock },
-				{ provide: CMSService, useValue: cmsServiceMock },
-				{ provide: ActivatedRoute, useValue: routerMock },
-				{ provide: VantageShellService, useValue: shellServiceMock },
-				{ provide: DashboardService, useValue: {} },
-				{ provide: TranslateService, useValue: translateServiceMock },
-				{ provide: DeviceService, useValue: deviceServiceMock },
-				{
-					provide: Router,
-					useClass: class {
-						navigate = jasmine.createSpy('navigate');
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					PageMacrokeyComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+					GAMING_DATA.mockPipe({ name: 'sanitize' }),
+					GAMING_DATA.mockPipe({ name: 'htmlText' }),
+				],
+				providers: [
+					NgbModal,
+					NgbActiveModal,
+					{ provide: Title, useValue: titleServiceMock },
+					{ provide: CMSService, useValue: cmsServiceMock },
+					{ provide: ActivatedRoute, useValue: routerMock },
+					{ provide: VantageShellService, useValue: shellServiceMock },
+					{ provide: DashboardService, useValue: {} },
+					{ provide: TranslateService, useValue: translateServiceMock },
+					{ provide: DeviceService, useValue: deviceServiceMock },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
 					},
-				},
-				RouterTestingModule,
-			],
-			schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
-			imports: [HttpClientModule],
-		}).compileComponents();
-		commonService = TestBed.inject(CommonService);
-		commonService.isOnline = false;
-	}));
+					RouterTestingModule,
+				],
+				schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
+				imports: [HttpClientModule],
+			}).compileComponents();
+			commonService = TestBed.inject(CommonService);
+			commonService.isOnline = false;
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PageMacrokeyComponent);
@@ -133,16 +90,3 @@ describe('PageMacrokeyComponent', () => {
 		expect(res).toBe(undefined);
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

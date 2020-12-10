@@ -7,6 +7,7 @@ import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost
 import { GamingAutoCloseService } from './../../../services/gaming/gaming-autoclose/gaming-autoclose.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { exception } from 'console';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('WidgetAddedAppListComponent', () => {
 	let component: WidgetAddedAppListComponent;
@@ -44,32 +45,39 @@ describe('WidgetAddedAppListComponent', () => {
 	const autoClostList = {
 		processList: [
 			{
-				ProcessDescription: 'Q-Dir',
+				processDescription: 'Q-Dir',
 				iconName: 'icon\\12345678.icon',
-				ReleaseTimes: '0',
+				releaseTimes: '0',
 			},
 			{
-				ProcessDescription: 'Chrome',
-				IconName: 'icon\\12345678.icon',
-				ReleaseTimes: 'c:\\chrome\\chrome.exe',
+				processDescription: 'Chrome',
+				iconName: 'icon\\12345678.icon',
+				releaseTimes: 'c:\\chrome\\chrome.exe',
 			},
 		],
 	};
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [WidgetAddedAppListComponent, mockPipe({ name: 'translate' })],
-			providers: [
-				{ provide: NetworkBoostService, useValue: networkBoostServiceMock },
-				{ provide: GamingAutoCloseService, useValue: autoCloseServiceMock },
-				{ provide: HttpClient },
-				{ provide: HttpHandler },
-			],
-		}).compileComponents();
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					WidgetAddedAppListComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+				],
+				providers: [
+					{ provide: NetworkBoostService, useValue: networkBoostServiceMock },
+					{ provide: GamingAutoCloseService, useValue: autoCloseServiceMock },
+					{ provide: HttpClient },
+					{ provide: HttpHandler },
+				],
+			}).compileComponents();
 
-		const dummyElement = document.createElement('button');
-		document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
-	}));
+			const dummyElement = document.createElement('button');
+			document.getElementById = jasmine
+				.createSpy('HTML Element')
+				.and.returnValue(dummyElement);
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(WidgetAddedAppListComponent);
@@ -143,16 +151,3 @@ describe('WidgetAddedAppListComponent', () => {
 		expect(component.appList.length).toBe(0);
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

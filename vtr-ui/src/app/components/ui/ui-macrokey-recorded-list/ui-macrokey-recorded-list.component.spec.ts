@@ -6,6 +6,7 @@ import { NO_ERRORS_SCHEMA, Pipe, Component } from '@angular/core';
 import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptStubComponent {
@@ -52,40 +53,42 @@ describe('UiMacrokeyRecordedListComponent', () => {
 	let component: UiMacrokeyRecordedListComponent;
 	let fixture: ComponentFixture<UiMacrokeyRecordedListComponent>;
 	let modalService: any;
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				UiMacrokeyRecordedListComponent,
-				ModalGamingPromptStubComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
-			],
-			schemas: [NO_ERRORS_SCHEMA],
-			providers: [
-				{ provide: HttpClient, useValue: HttpClient },
-				HttpClientModule,
-				{ provide: TranslateService, useValue: translateServiceMock },
-				{ provide: MacrokeyService, useValue: macrokeyServiceMock },
-			],
-		}).compileComponents();
-		fixture = TestBed.createComponent(UiMacrokeyRecordedListComponent);
-		modalService = TestBed.inject(NgbModal);
-		component = fixture.componentInstance;
-		component.number = { key: '0' };
-		component.recordingStatus = false;
-		component.recordsData = sampleInputData.macro;
-		component.isNumberpad = true;
-		fixture.detectChanges();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					UiMacrokeyRecordedListComponent,
+					ModalGamingPromptStubComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+					GAMING_DATA.mockPipe({ name: 'sanitize' }),
+				],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient, useValue: HttpClient },
+					HttpClientModule,
+					{ provide: TranslateService, useValue: translateServiceMock },
+					{ provide: MacrokeyService, useValue: macrokeyServiceMock },
+				],
+			}).compileComponents();
+			fixture = TestBed.createComponent(UiMacrokeyRecordedListComponent);
+			modalService = TestBed.inject(NgbModal);
+			component = fixture.componentInstance;
+			component.selectedNumber = { key: '0' };
+			component.recordingStatus = false;
+			component.recordsData = sampleInputData.macro;
+			component.isNumberpad = true;
+			fixture.detectChanges();
+		})
+	);
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
 	it('when Parameter is false fuction will return', () => {
-		component.number.key = 'M1';
+		component.selectedNumber.key = 'M1';
 		component.deleteAllMacros(true);
 		expect(component.ignoreInterval).toBeFalse();
-		component.number.key = 'K';
+		component.selectedNumber.key = 'K';
 		component.deleteAllMacros(true);
 		expect(component.deleteAllMacros(false)).toBeUndefined();
 		component.deleteAllMacros(false);
@@ -128,39 +131,16 @@ describe('UiMacrokeyRecordedListComponent', () => {
 		expect(component.recordsData.interval).toEqual(2);
 		expect(component.ignoreInterval).toEqual(true);
 		component.onIntervalChanged({});
-		expect(component.tooltips_delay).toEqual('');
+		expect(component.tooltipsDelay).toEqual('');
 	}));
 	it('Interval should set to undefined', fakeAsync(() => {
 		macrokeyServiceMock.setInterval.and.returnValue(Promise.resolve(false));
 		component.onIntervalChanged({ value: 1 });
 		expect(component.onIntervalChanged({ value: 1 })).toBeUndefined();
 	}));
-	it('Do check should detect changes', fakeAsync(() => {
-		component.recordsData = {
-			repeat: 3,
-			interval: 2,
-			inputs: [
-				{ status: 1, key: 'S', interval: 0, pairName: 'pair-S-1' },
-				{ status: 0, key: 'S', interval: 208, pairName: 'pair-S-1' },
-			],
-		};
-		component.ngDoCheck();
-		tick(20);
-		expect(component.recordsList.length).toEqual(2);
-		expect(component.repeatSelectedValue).toEqual(3);
-		expect(component.delaySelectedValue).toEqual(2);
-		component.recordsList = [
-			{ status: 1, key: 'S', interval: 0, pairName: 'pair-S-1' },
-			{ status: 0, key: 'S', interval: 208, pairName: 'pair-S-1' },
-		];
-		component.ngDoCheck();
-		expect(component.ngDoCheck()).toBeUndefined();
-		component.recordsData = undefined;
-		component.ngDoCheck();
-		expect(component.ngDoCheck()).toBeUndefined();
-	}));
+
 	it('Should clear records', fakeAsync(() => {
-		let modalRef = new ModalGamingPromptStubComponent();
+		const modalRef = new ModalGamingPromptStubComponent();
 		spyOn(modalService, 'open').and.returnValue(modalRef);
 		component.clearRecords();
 		expect(component.clearRecords()).toBeUndefined();
@@ -171,7 +151,7 @@ describe('UiMacrokeyRecordedListComponent', () => {
 		expect(component.pairCounter[1]).toEqual(2);
 	}));
 	it('Should update page info when change some val', fakeAsync(() => {
-		let changes = {
+		const changes = {
 			recordsData: {
 				currentValue: {
 					inputs: [
@@ -195,16 +175,3 @@ describe('UiMacrokeyRecordedListComponent', () => {
 		expect(component.ngOnChanges(undefined)).toBeUndefined();
 	}));
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

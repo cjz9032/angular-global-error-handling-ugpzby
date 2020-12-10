@@ -15,6 +15,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { CommonService } from 'src/app/services/common/common.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({ selector: 'vtr-ui-toggle', template: '' })
 export class UiToggleStubComponent {
@@ -39,9 +40,7 @@ export class ModalGamingPromptMockComponent {
 		id: undefined,
 		//emitService: of(1),
 		emitService: new EventEmitter(),
-		setAppList: (arg1, arg2) => {
-			return undefined;
-		},
+		setAppList: (arg1, arg2) => undefined,
 	};
 	result = Promise.resolve(true);
 }
@@ -55,75 +54,19 @@ describe('PageNetworkboostComponent', () => {
 	let modalService: any;
 
 	describe('quick setting toolbar & toast event', () => {
-		const cmsMock = {
-			Results: [
-				{
-					Id: 'e64d43892d8448d088f3e6037e385122',
-					Title: 'Header Image DCC',
-					ShortTitle: '',
-					Description: '',
-					FeatureImage:
-						'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/DCC_top_image.jpg?v=5cf8a0151ea84c4ca43e906339c3c3b2',
-					Action: '',
-					ActionType: null,
-					ActionLink: null,
-					BrandName: 'brandname',
-					BrandImage: '',
-					Priority: 'P1',
-					Page: null,
-					Template: 'header',
-					Position: null,
-					ExpirationDate: null,
-					Filters: {
-						'DeviceTag.Value': {
-							key: 'System.DccGroup',
-							operator: '==',
-							value: 'true',
-						},
-					},
-				},
-				{
-					Id: '8516ba14dba5412ca954c3ccfdcbff90',
-					Title: 'Default Header Image',
-					ShortTitle: '',
-					Description: '',
-					FeatureImage:
-						'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/Header-Image-Default.jpg?v=5d0bf7fd0065478c977ed284fecac45d',
-					Action: '',
-					ActionType: null,
-					ActionLink: null,
-					BrandName: '',
-					BrandImage: '',
-					Priority: 'P2',
-					Page: null,
-					Template: 'header',
-					Position: null,
-					ExpirationDate: null,
-					Filters: null,
-				},
-			],
-			Metadata: { Count: 2 },
-		};
-
 		const cmsServiceMock = {
-			fetchCMSContent: (params) => of(cmsMock),
-			getOneCMSContent: (res, template, position) => (res = cmsMock.Results),
+			fetchCMSContent: (params) => of(GAMING_DATA.cmsMock),
+			getOneCMSContent: (res, template, position) => (res = GAMING_DATA.cmsMock.Results),
 		};
 		const commonServiceSpy = {
 			isOnline: true,
 			notification: new BehaviorSubject<AppNotification>(new AppNotification('init')),
-			getShellVersion: () => {
-				return '1.1.1.1';
-			},
-			compareVersion: (version1, version2) => {
-				return 1;
-			},
+			getShellVersion: () => '1.1.1.1',
+			compareVersion: (version1, version2) => 1,
 			sendNotification: (action, payload) => {},
 		};
 		const localCacheServiceSpy = {
-			getLocalCacheValue: (key, defaultValue) => {
-				return undefined;
-			},
+			getLocalCacheValue: (key, defaultValue) => undefined,
 			setLocalCacheValue: (key, vaule) => {
 				Promise.resolve();
 			},
@@ -144,37 +87,39 @@ describe('PageNetworkboostComponent', () => {
 			['registerEvent', 'unregisterEvent']
 		);
 
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					PageNetworkboostComponent,
-					UiToggleStubComponent,
-					ModalGamingPromptMockComponent,
-				],
-				imports: [TranslationModule, HttpClientModule],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: TranslateStore },
-					{ provide: CommonService, useValue: commonServiceSpy },
-					{ provide: LocalCacheService, useValue: localCacheServiceSpy },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-					{ provide: CMSService, useValue: cmsServiceMock },
-					{ provide: VantageShellService, useValue: vantageShellServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-				],
-			}).compileComponents();
-			shellServices = TestBed.inject(VantageShellService);
-			gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
-			fixture = TestBed.createComponent(PageNetworkboostComponent);
-			component = fixture.componentInstance;
-			modalService = TestBed.inject(NgbModal);
-			fixture.detectChanges();
-		}));
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						PageNetworkboostComponent,
+						UiToggleStubComponent,
+						ModalGamingPromptMockComponent,
+					],
+					imports: [TranslationModule, HttpClientModule],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: TranslateStore },
+						{ provide: CommonService, useValue: commonServiceSpy },
+						{ provide: LocalCacheService, useValue: localCacheServiceSpy },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+						{ provide: CMSService, useValue: cmsServiceMock },
+						{ provide: VantageShellService, useValue: vantageShellServiceSpy },
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+					],
+				}).compileComponents();
+				shellServices = TestBed.inject(VantageShellService);
+				gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
+				fixture = TestBed.createComponent(PageNetworkboostComponent);
+				component = fixture.componentInstance;
+				modalService = TestBed.inject(NgbModal);
+				fixture.detectChanges();
+			})
+		);
 
 		describe('PageNetworkBoostComponent init and destory', () => {
 			it('ngOnInit', () => {
@@ -214,9 +159,7 @@ describe('PageNetworkboostComponent', () => {
 			it('openTargetModal', fakeAsync(() => {
 				//networkBoostServiceSpy.setNeedToAskStatusCache = () => { return Promise.resolve(true)};
 				component.isModalShowing = false;
-				networkBoostServiceSpy.getNeedToAsk = () => {
-					return true;
-				};
+				networkBoostServiceSpy.getNeedToAsk = () => true;
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(true);
@@ -226,26 +169,20 @@ describe('PageNetworkboostComponent', () => {
 				expect(component.isModalShowing).toBe(true);
 
 				component.isModalShowing = false;
-				networkBoostServiceSpy.getNeedToAsk = () => {
-					return false;
-				};
+				networkBoostServiceSpy.getNeedToAsk = () => false;
 				component.toggleStatus = false;
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(false);
 
 				component.isModalShowing = false;
-				networkBoostServiceSpy.getNeedToAsk = () => {
-					return 'undefined';
-				};
+				networkBoostServiceSpy.getNeedToAsk = () => 'undefined';
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(false);
 
 				component.isModalShowing = false;
-				networkBoostServiceSpy.getNeedToAsk = () => {
-					return undefined;
-				};
+				networkBoostServiceSpy.getNeedToAsk = () => undefined;
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(false);
@@ -254,16 +191,12 @@ describe('PageNetworkboostComponent', () => {
 			}));
 
 			it('setNetworkBoostStatus', fakeAsync(async () => {
-				localCacheServiceSpy.getLocalCacheValue = (key, defaulvalue) => {
-					return 2;
-				};
+				localCacheServiceSpy.getLocalCacheValue = (key, defaulvalue) => 2;
 				let event = { switchValue: false };
 				await component.setNetworkBoostStatus(event);
 				expect(component.toggleStatus).toBe(false);
 
-				localCacheServiceSpy.getLocalCacheValue = (key, defaulvalue) => {
-					return 1;
-				};
+				localCacheServiceSpy.getLocalCacheValue = (key, defaulvalue) => 1;
 				await component.setNetworkBoostStatus(event);
 				expect(component.toggleStatus).toBe(false);
 
@@ -311,7 +244,7 @@ describe('PageNetworkboostComponent', () => {
 		describe('showTurnOn showAddApps', () => {
 			it('showTurnOn--showAddApps', fakeAsync(() => {
 				try {
-					let modalGamingPromptMock = new ModalGamingPromptMockComponent();
+					const modalGamingPromptMock = new ModalGamingPromptMockComponent();
 					//modalService.open = modalGamingPromptMock;
 					spyOn(modalService, 'open').and.returnValue(modalGamingPromptMock);
 					//let modalGamingRunningAppListMock = new ModalGamingRunningAppListMockComponent();

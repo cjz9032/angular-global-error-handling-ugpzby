@@ -16,6 +16,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { ModalGamingRunningAppListComponent } from './../../modal/modal-gaming-running-app-list/modal-gaming-running-app-list.component';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({
 	selector: 'vtr-page-autoclose',
@@ -23,11 +24,8 @@ import { ModalGamingRunningAppListComponent } from './../../modal/modal-gaming-r
 	styleUrls: ['./page-autoclose.component.scss'],
 })
 export class PageAutocloseComponent implements OnInit, OnDestroy {
-	public autoCloseAppList: any;
-	public autoCloseEvent: any;
-	private cmsSubscription: Subscription;
 	notificationSubscription: Subscription;
-	refreshTrigger: number = 0;
+	refreshTrigger = 0;
 
 	// Toggle status
 	isOnline = true;
@@ -40,7 +38,7 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
 	backId = 'vtr-gaming-autoclose-btn-back';
-	dynamic_metricsItem: any = 'autoclose_cms_inner_content';
+	dynamicMetricsItem: any = 'autoclose_cms_inner_content';
 
 	isModalShowing: boolean;
 
@@ -53,6 +51,10 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		cancelButton: 'autoclose_turnon_dialog_notnow',
 		okButton: 'autoclose_turnon_dialog_turnon',
 	};
+
+	public autoCloseAppList: any;
+	public autoCloseEvent: any;
+	private cmsSubscription: Subscription;
 
 	constructor(
 		private cmsService: CMSService,
@@ -82,7 +84,7 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		);
 	}
 
-	private onNotification(notification: AppNotification) {
+	onNotification(notification: AppNotification) {
 		if (
 			notification &&
 			(notification.type === NetworkStatus.Offline ||
@@ -117,10 +119,10 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 	}
 
 	showTurnOn() {
-		let promptRef = this.modalService.open(ModalGamingPromptComponent, {
+		const promptRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
-			backdropClass: 'backdrop-level'
+			backdropClass: 'backdrop-level',
 		});
 		promptRef.componentInstance.info = {
 			title: 'gaming.autoClose.modalTurnAutoClose.title',
@@ -153,9 +155,9 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 	}
 
 	showAddApps() {
-		let appListRef = this.modalService.open(ModalGamingRunningAppListComponent, {
+		const appListRef = this.modalService.open(ModalGamingRunningAppListComponent, {
 			backdrop: 'static',
-			backdropClass: 'backdrop-level'
+			backdropClass: 'backdrop-level',
 		});
 		appListRef.componentInstance.setAppList(false, 0);
 		appListRef.componentInstance.emitService.subscribe((val) => {
@@ -194,9 +196,7 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 	// Get the CMS content for the container card
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
-		const queryOptions = {
-			Page: 'auto-close',
-		};
+		const queryOptions = GAMING_DATA.buildPage('auto-close');
 		this.cmsSubscription = this.cmsService
 			.fetchCMSContent(queryOptions)
 			.subscribe((response: any) => {
@@ -224,13 +224,12 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 			});
 
 		if (!this.isOnline) {
-			this.cardContentPositionC = {
-				FeatureImage: 'assets/cms-cache/GamingPosC.jpg',
-			};
-
-			this.cardContentPositionF = {
-				FeatureImage: 'assets/cms-cache/autoclose_offline.jpg',
-			};
+			this.cardContentPositionC = GAMING_DATA.buildFeatureImage(
+				'assets/cms-cache/GamingPosC.jpg'
+			);
+			this.cardContentPositionF = GAMING_DATA.buildFeatureImage(
+				'assets/cms-cache/autoclose_offline.jpg'
+			);
 		}
 	}
 

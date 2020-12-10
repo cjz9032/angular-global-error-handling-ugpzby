@@ -21,7 +21,7 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	metrics: any;
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
-	dynamic_metricsItem: any = 'macrokey_cms_inner_content';
+	dynamicMetricsItem: any = 'macrokey_cms_inner_content';
 	notificationSubscrition: Subscription;
 	fetchSubscrition: Subscription;
 

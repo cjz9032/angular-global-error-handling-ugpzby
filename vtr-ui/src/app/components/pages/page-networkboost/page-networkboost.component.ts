@@ -33,7 +33,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	// CMS Content block
 	cardContentPositionC: any = {};
 	cardContentPositionF: any = {};
-	dynamic_metricsItem: any = 'networkboost_cms_inner_content';
+	dynamicMetricsItem: any = 'networkboost_cms_inner_content';
 	backId = 'vtr-gaming-networkboost-btn-back';
 	notificationSubscrition: Subscription;
 	fetchSubscrition: Subscription;
@@ -150,10 +150,10 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	}
 
 	showTurnOn() {
-		let promptRef = this.modalService.open(ModalGamingPromptComponent, {
+		const promptRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
-			windowClass: 'modal-prompt', 
-			backdropClass: 'backdrop-level'
+			windowClass: 'modal-prompt',
+			backdropClass: 'backdrop-level',
 		});
 		promptRef.componentInstance.info = {
 			title: 'gaming.networkBoost.modalTurn.title',
@@ -186,8 +186,9 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	}
 
 	showAddApps() {
-		let appListRef = this.modalService.open(ModalGamingRunningAppListComponent, {
-			backdrop: 'static', backdropClass: 'backdrop-level'
+		const appListRef = this.modalService.open(ModalGamingRunningAppListComponent, {
+			backdrop: 'static',
+			backdropClass: 'backdrop-level',
 		});
 		appListRef.componentInstance.setAppList(true, this.appsCount);
 		appListRef.result.then(() => {
@@ -196,7 +197,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	private onNotification(notification: AppNotification) {
+	onNotification(notification: AppNotification) {
 		if (
 			notification &&
 			(notification.type === NetworkStatus.Offline ||

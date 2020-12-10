@@ -14,6 +14,7 @@ import { Gaming } from './../../../enums/gaming.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 const macrokeyServiceMock = jasmine.createSpyObj('MacrokeyService', [
 	'isMacroKeyAvailable',
@@ -39,14 +40,8 @@ const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabili
 	'getCapabilityFromCache',
 ]);
 
-const notificationMock = {
-	subscribe() {
-		return { type: '[Gaming] GamingCapabilities', payload: '{ macroKeyFeature: true }' };
-	},
-};
-
 const keyTypeSampleData = { MacroKeyStatus: 1, MacroKeyType: 0 };
-let recordedStatusSampleData = [
+const recordedStatusSampleData = [
 	{ key: '7', status: false },
 	{ key: '8', status: false },
 	{ key: '9', status: false },
@@ -90,32 +85,34 @@ describe('WidgetMacrokeySettingsComponent', () => {
 	macrokeyServiceMock.setMacroKeyApplyStatus.and.returnValue(Promise.resolve(true));
 	macrokeyServiceMock.setKey.and.returnValue(true);
 
-	beforeEach(waitForAsync(() => {
-		let shellServiveSpy = jasmine.createSpyObj('VantageService', [
-			'registerEvent',
-			'unRegisterEvent',
-		]);
-		TestBed.configureTestingModule({
-			declarations: [
-				WidgetMacrokeySettingsComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
-			],
-			schemas: [NO_ERRORS_SCHEMA],
-			providers: [
-				{ provide: HttpClient },
-				{ provide: Router, useValue: { navigate: (route) => route } },
-				{ provide: MacrokeyService, useValue: macrokeyServiceMock },
-				{
-					provide: GamingAllCapabilitiesService,
-					useValue: gamingAllCapabilitiesServiceMock,
-				},
-				{ provide: VantageShellService, useValue: shellServiveSpy },
-				TranslateStore,
-			],
-			imports: [FontAwesomeModule, TranslationModule],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			const shellServiveSpy = jasmine.createSpyObj('VantageService', [
+				'registerEvent',
+				'unRegisterEvent',
+			]);
+			TestBed.configureTestingModule({
+				declarations: [
+					WidgetMacrokeySettingsComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+					GAMING_DATA.mockPipe({ name: 'sanitize' }),
+				],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient },
+					{ provide: Router, useValue: { navigate: (route) => route } },
+					{ provide: MacrokeyService, useValue: macrokeyServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
+					{ provide: VantageShellService, useValue: shellServiveSpy },
+					TranslateStore,
+				],
+				imports: [FontAwesomeModule, TranslationModule],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		shellService = TestBed.inject(VantageShellService);
@@ -234,11 +231,11 @@ describe('WidgetMacrokeySettingsComponent', () => {
 	}));
 
 	it('Should update the efffect option', fakeAsync(() => {
-		component.tooltips_value = 'macroKey';
+		component.tooltipsValue = 'macroKey';
 		component.optionChanged({ value: 2, name: 'macroKey' });
 		expect(component.macroKeyTypeStatus.MacroKeyStatus).toBeLessThanOrEqual(4);
 		component.optionChanged({ value: 3, name: 'macroKey' });
-		expect(component.tooltips_value).toMatch('');
+		expect(component.tooltipsValue).toMatch('');
 	}));
 
 	it('Should update initMacroKeyEvents', fakeAsync(() => {
@@ -247,16 +244,3 @@ describe('WidgetMacrokeySettingsComponent', () => {
 		expect(component.initMacroKeyEvents()).toBeUndefined();
 	}));
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

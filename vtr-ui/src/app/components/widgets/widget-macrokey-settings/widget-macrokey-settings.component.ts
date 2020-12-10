@@ -56,10 +56,10 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			],
 		},
 	];
-	tooltips_value: any = '';
+	tooltipsValue: any = '';
 	numberSelected;
-	isNumpad: boolean = true;
-	isRecording: boolean = false;
+	isNumpad = true;
+	isRecording = false;
 	recordedKeyData: any;
 	gamingProperties: GamingAllCapabilities = new GamingAllCapabilities();
 	macroKeyTypeStatus: MacroKeyTypeStatus = new MacroKeyTypeStatus();
@@ -72,6 +72,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	inputChangeEvent: any;
 	inputMessageChangeEvent: any;
 	notificationSubscription: Subscription;
+	refreshTicks = new Date().getTime();
 
 	constructor(
 		private macroKeyService: MacrokeyService,
@@ -112,13 +113,11 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		}
 		this.macroKeyInputData = this.macroKeyService.getMacrokeyInitialKeyDataCache();
 		this.numberSelected = this.macroKeyRecordedStatus.filter(
-			(number) => number.key === this.macroKeyInputData.key
+			(macroKey) => macroKey.key === this.macroKeyInputData.key
 		)[0];
 
 		if (this.macroKeyTypeStatus.MacroKeyStatus === 2) {
-			this.tooltips_value = this.translate.instant(
-				'gaming.macroKey.status.whileGaming.title'
-			);
+			this.tooltipsValue = this.translate.instant('gaming.macroKey.status.whileGaming.title');
 		}
 	}
 
@@ -200,7 +199,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		this.macroKeyService.setMacrokeyRecordedStatusCache(this.macroKeyRecordedStatus);
 		if (!(this.numberSelected === undefined)) {
 			this.numberSelected = this.macroKeyRecordedStatus.filter(
-				(number) => number.key === this.numberSelected.key
+				(macroKey) => macroKey.key === this.numberSelected.key
 			)[0];
 		}
 	}
@@ -216,7 +215,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 			this.macroKeyInputData = macroKeyKeyChangeEventData;
 			this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
 			this.numberSelected = this.macroKeyRecordedStatus.filter(
-				(number) => number.key === macroKeyKeyChangeEventData.key
+				(macroKey) => macroKey.key === macroKeyKeyChangeEventData.key
 			)[0];
 
 			if (macroKeyKeyChangeEventData.key === '0' || macroKeyKeyChangeEventData.key === 'M1') {
@@ -226,10 +225,10 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 	}
 
 	optionChanged(option: any) {
-		if (option.value == 2) {
-			this.tooltips_value = this.translate.instant(option.name);
+		if (option.value === 2) {
+			this.tooltipsValue = this.translate.instant(option.name);
 		} else {
-			this.tooltips_value = '';
+			this.tooltipsValue = '';
 		}
 
 		this.macroKeyService.setMacroKeyApplyStatus(option.value).then((responseStatus) => {
@@ -241,9 +240,9 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	onNumberSelected(number) {
-		this.macroKeyService.setKey(number.key);
-		this.numberSelected = number;
+	onNumberSelected(macroKey) {
+		this.macroKeyService.setKey(macroKey.key);
+		this.numberSelected = macroKey;
 	}
 
 	onRecordingChanged(recordingChangeData) {
@@ -287,6 +286,7 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 		if (macroKeyInputChangeData) {
 			this.macroKeyService.setMacrokeyInputChangeCache(this.macroKeyInputData);
 			this.macroKeyInputData.macro.inputs = macroKeyInputChangeData;
+			this.refreshTicks = new Date().getTime();
 		}
 	}
 
@@ -298,5 +298,9 @@ export class WidgetMacrokeySettingsComponent implements OnInit, OnDestroy {
 
 	updateMacroKeyInputMessageEvent(macroKeyInputMessageData) {
 		this.macroKeyMessageData = macroKeyInputMessageData;
+	}
+
+	clearMacroKey() {
+		this.macroKeyInputData.macro.inputs = [];
 	}
 }

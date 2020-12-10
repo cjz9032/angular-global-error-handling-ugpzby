@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { WidgetSystemMonitorComponent } from './widget-system-monitor.component';
-import { Pipe, NO_ERRORS_SCHEMA} from '@angular/core';
+import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
@@ -8,6 +8,9 @@ import { RouterLinkWithHref } from '@angular/router';
 import { By } from '@angular/platform-browser';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabilitiesService', [
 	'isShellAvailable',
@@ -15,6 +18,7 @@ const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabili
 	'setCapabilityValuesGlobally',
 	'getCapabilityFromCache',
 ]);
+
 const gamingHwinfoMock = jasmine.createSpyObj('HwInfoService', [
 	'isShellAvailable',
 	'getDynamicInformation',
@@ -26,11 +30,62 @@ describe('WidgetSystemMonitorComponent', () => {
 	let fixture: ComponentFixture<WidgetSystemMonitorComponent>;
 	let timerCallback;
 
+	const getTextContent = (element, filter) => element.querySelector(filter).textContent;
+
+	const localCacheServiceSpy = {
+		getLocalCacheValue: (key, defaultValue) => {
+			switch (key) {
+				case LocalStorageKey.cpuBaseFrequency:
+					return '2.9GHz';
+				case LocalStorageKey.cpuCapacity:
+					return '2.9GHz';
+				case LocalStorageKey.cpuUsage:
+					return '10';
+				case LocalStorageKey.cpuOver:
+					return '10';
+				case LocalStorageKey.gpuCapacity:
+					return '2.9GHz';
+				case LocalStorageKey.gpuMaxFrequency:
+					return '2.9GHz';
+				case LocalStorageKey.gpuUsage:
+					return '10';
+				case LocalStorageKey.gpuModulename:
+					return 'NVIDIA GeForce GTX 3090';
+				case LocalStorageKey.memorySize:
+					return '64.0GB';
+				case LocalStorageKey.ramCapacity:
+					return '2.9GHz';
+				case LocalStorageKey.ramUsage:
+					return '10';
+				case LocalStorageKey.ramOver:
+					return '10';
+				case LocalStorageKey.hddName:
+					return 'LENSE30512GMSP34MEAT3TA';
+				case LocalStorageKey.type:
+					return 'SSD';
+				case LocalStorageKey.capacity:
+					return 500;
+				case LocalStorageKey.usedDisk:
+					return 100;
+				case LocalStorageKey.diskUsage:
+					return '20';
+				case LocalStorageKey.isSystemDisk:
+					return 'true';
+			}
+		},
+		setLocalCacheValue: (key, vaule) => {
+			Promise.resolve();
+		},
+	};
+
 	beforeEach(() => {
 		timerCallback = jasmine.createSpy('timerCallback');
 		jasmine.clock().install();
 		TestBed.configureTestingModule({
-			declarations: [WidgetSystemMonitorComponent, mockPipe({ name: 'translate' })],
+			declarations: [
+				WidgetSystemMonitorComponent,
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+			],
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
 				{ provide: HttpClient },
@@ -42,6 +97,7 @@ describe('WidgetSystemMonitorComponent', () => {
 					useValue: gamingAllCapabilitiesServiceMock,
 				},
 				{ provide: HwInfoService, useValue: gamingHwinfoMock },
+				{ provide: LocalCacheService, useValue: localCacheServiceSpy },
 			],
 		}).compileComponents();
 		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
@@ -66,22 +122,19 @@ describe('WidgetSystemMonitorComponent', () => {
 	});
 
 	it('should have path /device for "INFO" link', () => {
-		let infoLink: any = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-		infoLink = infoLink.findIndex((c) => {
-			return c.properties.href === '/device';
-		});
+		const infoLinkRef = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
+		const infoLink = infoLinkRef.findIndex((c) => c.properties.href === '/device');
 		expect(infoLink).toEqual(-1);
 	});
 
 	it('Should have title GPU, CPU, RAM', () => {
 		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
 		fixture.detectChanges();
-		const changedComponent = fixture.debugElement.nativeElement;
-		expect(changedComponent.querySelector('div.stack-title').textContent).toEqual(' GPU ');
-		expect(changedComponent.querySelector('div.cpu-title').textContent).toEqual(' CPU ');
+		const element = fixture.debugElement.nativeElement;
+		expect(getTextContent(element, 'div.stack-title')).toEqual(' GPU ');
+		expect(getTextContent(element, 'div.cpu-title')).toEqual(' CPU ');
 		expect(
-			changedComponent.querySelector('div.ram>div.monitor-stack>div.stack-label>div.stack-title')
-				.textContent
+			getTextContent(element, 'div.ram>div.monitor-stack>div.stack-label>div.stack-title')
 		).toEqual(' RAM ');
 	});
 
@@ -90,7 +143,7 @@ describe('WidgetSystemMonitorComponent', () => {
 			cpuBaseFrequence: '2.9GHz',
 			cpuModuleName: 'Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz',
 			gpuMemorySize: '8GB',
-			gpuModuleName: 'NVIDIA GeForce GTX 1070',
+			gpuModuleName: 'NVIDIA GeForce GTX 3090',
 			memorySize: '64.0GB',
 			memoryModuleName: 'Samsung',
 		};
@@ -101,7 +154,7 @@ describe('WidgetSystemMonitorComponent', () => {
 				cpuBaseFrequence: '2.9GHz',
 				cpuModuleName: 'Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz',
 				gpuMemorySize: '8GB',
-				gpuModuleName: 'NVIDIA GeForce GTX 1070',
+				gpuModuleName: 'NVIDIA GeForce GTX 3090',
 				memorySize: '64.0GB',
 				memoryModuleName: 'Samsung',
 			})
@@ -113,14 +166,14 @@ describe('WidgetSystemMonitorComponent', () => {
 			// expect(hwInfoRes.cpuBaseFrequency).toEqual('2.9');
 			expect(hwInfoRes.cpuModuleName).toEqual('Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz');
 			expect(hwInfoRes.gpuMemorySize).toEqual('8GB');
-			expect(hwInfoRes.gpuModuleName).toEqual('NVIDIA GeForce GTX 1070');
+			expect(hwInfoRes.gpuModuleName).toEqual('NVIDIA GeForce GTX 3090');
 			expect(hwInfoRes.memorySize).toEqual('64.0GB');
 			expect(hwInfoRes.memoryModuleName).toEqual('Samsung');
 		});
 		expect(hwInfo.cpuBaseFrequence).toEqual('2.9GHz');
 		expect(hwInfo.cpuModuleName).toEqual('Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz');
 		expect(hwInfo.gpuMemorySize).toEqual('8GB');
-		expect(hwInfo.gpuModuleName).toEqual('NVIDIA GeForce GTX 1070');
+		expect(hwInfo.gpuModuleName).toEqual('NVIDIA GeForce GTX 3090');
 		expect(hwInfo.memorySize).toEqual('64.0GB');
 		expect(hwInfo.memoryModuleName).toEqual('Samsung');
 	});
@@ -170,22 +223,78 @@ describe('WidgetSystemMonitorComponent', () => {
 		});
 		expect(dynamicInfov).toEqual(undefined);
 	});
-});
 
-/**
- * @param options pipeName which has to be mock
- * @description To mock the pipe.
- * @summary This has to move to one utils file.
- */
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	) as any;
-}
+	it('Should call toggleHDs', () => {
+		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
+		component = fixture.debugElement.componentInstance;
+		component.hds = [
+			{
+				isSystemDisk: false,
+				capacity: 1863,
+				type: 'HDD',
+				hddName: 'ST2000LM007-1R8174',
+				usedDisk: 186,
+				diskUsage: 10,
+			},
+			{
+				isSystemDisk: true,
+				capacity: 1907,
+				type: 'SSD',
+				hddName: 'Intel Raid 0 Volume',
+				usedDisk: 380,
+				diskUsage: 20,
+			},
+			{
+				isSystemDisk: false,
+				capacity: 1907,
+				type: 'SSD',
+				hddName: 'Intel Raid 1 Volume',
+				usedDisk: 380,
+				diskUsage: 20,
+			},
+		];
+		component.toggleHDs(true);
+		expect(component.showAllHDs).toBeFalse();
+
+		component.toggleHDs(false);
+		expect(component.showAllHDs).toBeTrue();
+	});
+
+	it('Should call getLeftDeg, getRightDeg, getStackHeight &  getFloorPct', () => {
+		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
+		component = fixture.debugElement.componentInstance;
+
+		let result = component.getLeftDeg(1.1);
+		expect(result).toBe(180);
+		result = component.getLeftDeg(0.6);
+		expect(result).toBe(36);
+		result = component.getLeftDeg(0.1);
+		expect(result).toBe(0);
+
+		result = component.getRightDeg(1.1);
+		expect(result).toBe(360);
+		result = component.getRightDeg(-0.6);
+		expect(result).toBe(0);
+		result = component.getRightDeg(0.1);
+		expect(result).toBe(36);
+
+		result = component.getStackHeight(109);
+		expect(result).toBe(0);
+		result = component.getStackHeight(-1);
+		expect(result).toBe(100);
+		result = component.getStackHeight(10);
+		expect(result).toBe(90);
+
+		result = component.getFloorPct(10, 100);
+		expect(result).toBe(10);
+
+		expect(component.convertToBoolean('aaa')).toBeUndefined();
+
+		component.getIsSystemDiskCache();
+
+		let size = component.getHDSize(100);
+		expect(size).toBe('100GB');
+		size = component.getHDSize(2000);
+		expect(size).toBe('2.00TB');
+	});
+});

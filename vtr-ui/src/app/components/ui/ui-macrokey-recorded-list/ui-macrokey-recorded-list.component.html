@@ -6,7 +6,7 @@
 				{{ 'gaming.macroKey.details.recorded.title' | translate }}
 				<span>
 					<span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>
-					{{ number.key }}
+					{{ selectedNumber.key }}
 				</span>
 			</div>
 		</div>
@@ -22,7 +22,7 @@
 		<div class="col-12" *ngIf="!recordingStatus" class="w-100">
 			<div class="select-wrapper">
 				<vtr-ui-lighting-effect [ariaLabel]="'gaming.macroKey.narrator.ignoreIntervalStatus.label' | translate"
-					[tooltip_value]="tooltips_delay | translate" [showDescription]="true"
+					[tooltip_value]="tooltipsDelay | translate" [showDescription]="true"
 					[selectedValue]="delaySelectedValue" [options]="intervalOptions[0]"
 					(change)="onIntervalChanged($event)" [tabindex]="1"
 					[automationId]="'gaming_macro_key_settings_delay drop'">

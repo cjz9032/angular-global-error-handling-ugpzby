@@ -82,47 +82,22 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	getCPUBaseFrequencyCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuBaseFrequency);
 	}
-	setCPUBaseFrequencyeCache(cpuBaseFrequecnyCache) {
-		this.localCacheService.setLocalCacheValue(
-			LocalStorageKey.cpuBaseFrequency,
-			cpuBaseFrequecnyCache
-		);
-	}
 	getCPUCapacityCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuCapacity);
-	}
-	setCPUCapacityCache(cpuCapacityCache) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuCapacity, cpuCapacityCache);
 	}
 	getCPUUsageCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage);
 	}
-	setCPUUsageCache(cpuUsageCache) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, cpuUsageCache);
-	}
 	getCPUOverCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuOver);
-	}
-	setCPUOverCache(cpuOverCache) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuOver, cpuOverCache);
 	}
 
 	// GPU Panel Data
 	getGPUCapacityCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuCapacity);
 	}
-	setGPUCapacityCache(gpuCapacityCache) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuCapacity, gpuCapacityCache);
-	}
-
 	getGPUMaxFrequencyCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMaxFrequency);
-	}
-	setGPUMaxFrequencyCache(gpuMaxFrequenceyCache) {
-		this.localCacheService.setLocalCacheValue(
-			LocalStorageKey.gpuMaxFrequency,
-			gpuMaxFrequenceyCache
-		);
 	}
 	getGPUUsageCache(): any {
 		return this.localCacheService.getLocalCacheValue(
@@ -130,31 +105,16 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			(this.gpuCurrent * 100) / this.gpuMax
 		);
 	}
-	setGPUUsageCache(gpuUsageCache) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuUsage, gpuUsageCache);
-	}
 	getGPUModulenameCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuModulename);
-	}
-	setGOUModulenameCache(gpuModulenameCache) {
-		this.localCacheService.setLocalCacheValue(
-			LocalStorageKey.gpuModulename,
-			gpuModulenameCache
-		);
 	}
 
 	// Ram Panel Data
 	getMemorySizeCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.memorySize);
 	}
-	setMemorySizeCache(memorySizeCache) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.memorySize, memorySizeCache);
-	}
 	getRamCapacityCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.ramCapacity);
-	}
-	setRamCapacityCache(ramCapacityCache) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramCapacity, ramCapacityCache);
 	}
 	getRamUsageCache(): any {
 		return this.localCacheService.getLocalCacheValue(
@@ -162,14 +122,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.memoryUsage
 		);
 	}
-	setRamUsageCache(ramUsageCache) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramUsage, ramUsageCache);
-	}
 	getRamOverCache(): any {
 		return this.localCacheService.getLocalCacheValue(LocalStorageKey.ramOver);
-	}
-	setRamOverCache(ramOverCache) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramOver, ramOverCache);
 	}
 
 	// SSD & HDD Panel
