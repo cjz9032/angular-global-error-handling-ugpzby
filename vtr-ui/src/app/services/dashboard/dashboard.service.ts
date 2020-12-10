@@ -478,6 +478,7 @@ export class DashboardService {
 				}
 				subscriber.complete();
 			});
+			return () => clearTimeout(loadingTimer);
 		});
 	}
 
