@@ -123,7 +123,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public downloadingPercent = 0;
 	public isInstallingAllUpdates = true;
 	public isInstallFailedMessageToasted = false;
-	private systemVolumeSpace = 0;
 
 	public isOnline = true;
 	public offlineSubtitle: string;
@@ -306,7 +305,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.popRebootDialogIfNecessary();
 		this.initSupportCard();
 		this.initSecurityCard();
-		this.getSystemVolumeSpace();
 	}
 
 	private initSupportCard() {
@@ -777,20 +775,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	public showInstallConfirmation(source: string) {
+	public async showInstallConfirmation(source: string) {
 		const isInstallAll = source !== 'selected';
-		const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			ariaLabelledBy: 'modal_confirm_title',
-			windowClass: 'common-confirmation-modal',
-		});
-		// VAN-16194 touch screen cannot show this modal
-		this.changeCheckboxDisplay('none');
-		setTimeout(() => {
-			this.changeCheckboxDisplay('');
-		}, 0);
 		let removeDelayedUpdates = false;
 		this.updatesToInstall = [];
 		this.systemUpdateService.updateInfo.updateList.map((update) =>
@@ -809,19 +795,23 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		const { rebootType, packages } = this.systemUpdateService.getRebootType(
 			this.updatesToInstall
 		);
+		const diskSpaceEnough = await this.checkDiskSpaceEnough(this.updatesToInstall);
 
-		const diskSpaceEnough = this.checkDiskSpaceEnough(this.updatesToInstall);
+		const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
+			backdrop: 'static',
+			size: 'lg',
+			centered: true,
+			ariaLabelledBy: 'modal_confirm_title',
+			windowClass: 'common-confirmation-modal',
+		});
+		// VAN-16194 touch screen cannot show this modal
+		this.changeCheckboxDisplay('none');
+		setTimeout(() => {
+			this.changeCheckboxDisplay('');
+		}, 0);
+
 		if (!diskSpaceEnough) {
-			const header = 'systemUpdates.popup.diskSpaceNeeded';
-			const description = 'systemUpdates.popup.diskSpaceNotEnoughMsg';
-			modalRef.componentInstance.header = header;
-			modalRef.componentInstance.description = description;
-			modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
-			modalRef.componentInstance.CancelText = '';
-			modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.DiskSpaceNeeded';
-			modalRef.result.then((result) => {
-				modalRef.close();
-			});
+			this.showDiskSpaceNotEnough(modalRef);
 		} else {
 			if (rebootType === UpdateRebootType.RebootDelayed) {
 				this.showRebootDelayedModal(modalRef);
@@ -862,6 +852,19 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				}
 			});
 		}
+	}
+
+	private showDiskSpaceNotEnough(modalRef: NgbModalRef) {
+		const header = 'systemUpdates.popup.diskSpaceNeeded';
+		const description = 'systemUpdates.popup.diskSpaceNotEnoughMsg';
+		modalRef.componentInstance.header = header;
+		modalRef.componentInstance.description = description;
+		modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
+		modalRef.componentInstance.CancelText = '';
+		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.DiskSpaceNeeded';
+		modalRef.result.then((result) => {
+			modalRef.close();
+		});
 	}
 
 	public onGetSupportClick($event: any) {}
@@ -1084,7 +1087,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 						payload.updateList,
 						this.systemUpdateService.ignoredRebootDelayUpdates
 					);
-					this.getSystemVolumeSpace();
 					break;
 				case UpdateProgress.AutoUpdateStatus:
 					this.autoUpdateOptions[0].isChecked = payload.criticalAutoUpdates;
@@ -1233,7 +1235,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					if (!this.isRebootRequested) {
 						this.checkRebootRequested();
 					}
-					this.getSystemVolumeSpace();
 					break;
 				default:
 					break;
@@ -1284,9 +1285,10 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	private checkDiskSpaceEnough(updatesToInstall) {
+	private async checkDiskSpaceEnough(updatesToInstall) {
 		const diskSpaceNeeded = this.getRequiredDiskSpace(updatesToInstall);
-		const diskSpaceEnough = diskSpaceNeeded < this.systemVolumeSpace;
+		const systemVolumeSpace = await this.getSystemVolumeSpace();
+		const diskSpaceEnough = diskSpaceNeeded < systemVolumeSpace;
 		return diskSpaceEnough;
 	}
 
@@ -1311,6 +1313,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private async getSystemVolumeSpace() {
 		const systemVolumeLabel = this.getSystemVolumeLabel();
 		const diskUsage = await this.deviceService.getAllDisksUsage();
+		let systemVolumeSpace = 0;
 		if (diskUsage && diskUsage.disks) {
 			for (const disk of diskUsage.disks) {
 				if (disk && disk.partitions && disk.partitions.length > 0) {
@@ -1320,14 +1323,15 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 							partition.driveLetter &&
 							partition.driveLetter.toLowerCase() === systemVolumeLabel.toLowerCase()
 						) {
-							this.systemVolumeSpace = parseInt(partition.avaliableSize, 10);
-							this.logger.info(`System Volume: ${this.systemVolumeSpace}`);
-							return;
+							systemVolumeSpace = parseInt(partition.avaliableSize, 10);
+							this.logger.info(`System Volume: ${systemVolumeSpace}`);
+							return systemVolumeSpace;
 						}
 					}
 				}
 			}
 		}
+		return systemVolumeSpace;
 	}
 
 	private getSystemVolumeLabel() {
