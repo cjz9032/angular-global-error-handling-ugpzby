@@ -93,7 +93,7 @@ export class DashboardService {
 
 	needMaintainSU: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
-		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
+		summary: 'dashboard.positionB.cardSummary.needSUScan',
 		linkText: 'common.ui.improveNow',
 		linkPath: 'lenovo-vantage3:system-updates?action=start',
 		state: SystemState.NeedMaintenance,
@@ -104,7 +104,7 @@ export class DashboardService {
 
 	needMaintainHWS: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
-		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
+		summary: 'dashboard.positionB.cardSummary.needHWScan',
 		linkText: 'common.ui.improveNow',
 		linkPath: 'lenovo-vantage3:hardware-scan?scan=quickscan',
 		state: SystemState.NeedMaintenance,
@@ -115,7 +115,7 @@ export class DashboardService {
 
 	needMaintainSP: DashboardStateCardData = {
 		title: 'dashboard.positionB.cardTitle',
-		summary: 'dashboard.positionB.cardSummary.maintenanceNeeded',
+		summary: 'dashboard.positionB.cardSummary.needSPScan',
 		linkText: 'common.ui.improveNow',
 		linkPath: 'lenovo-vantage3:smart-performance?action=start',
 		state: SystemState.NeedMaintenance,
@@ -571,7 +571,7 @@ export class DashboardService {
 		if (
 			lastSacnInfo.date &&
 			this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) >
-				SystemHealthDates.HardwareScan
+			SystemHealthDates.HardwareScan
 		) {
 			return true;
 		}
