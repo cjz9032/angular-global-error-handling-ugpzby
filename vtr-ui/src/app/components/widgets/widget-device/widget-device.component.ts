@@ -182,8 +182,11 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			this.updateHwScanStatus(hwscan);
 		}
 	}
-	async loadOverAllStatus() {
-		this.deviceStatus = await this.dashboardService.getDeviceStatus();
+
+	loadOverAllStatus() {
+		this.dashboardService.getDeviceStatusWithTimeOut(10000).subscribe(status => {
+			this.deviceStatus = status;
+		});
 	}
 
 	startMonitorPerformance() {
