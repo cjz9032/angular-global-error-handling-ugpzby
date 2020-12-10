@@ -512,8 +512,8 @@ export class ConfigService {
 				assistCapability.isSuperResolutionSupported.available ||
 				assistCapability.isAntiTheftSupported.available ||
 				assistCapability.isAPSSupported ||
-				(assistCapability.isHsaIntelligentSecuritySupported.capability && 0x100) != 0 ||
-				(assistCapability.isHsaIntelligentSecuritySupported.capability && 0x80) != 0;
+				(assistCapability.isHsaIntelligentSecuritySupported.capability & 0x100) !== 0 ||
+				(assistCapability.isHsaIntelligentSecuritySupported.capability & 0x80) !== 0;
 
 			if (this.isSmartAssistAvailable) {
 				this.addSmartAssistMenu(this.menu);
