@@ -4,7 +4,7 @@
 			[name]='item.name'
 			[component]="item.content"
 			[index]="i">
-			[last]="last"
+			[isLastElement]="last"
 		</vtr-ui-snapshot-item>
 		<hr *ngIf="!last && !item.content.IsDifferent" aria-hidden="true"> <!--&& !snapshotComponents[i + 1].info.IsDifferent-->
 	</div>

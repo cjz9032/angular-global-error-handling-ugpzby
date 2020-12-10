@@ -37,11 +37,6 @@ export enum SnapshotSoftwareComponents {
 	WebBrowsers,
 }
 
-export enum SnapshotComponentTypes {
-	software,
-	hardware,
-}
-
 export namespace SnapshotSoftwareComponents {
 	export function values() {
 		return Object.keys(SnapshotSoftwareComponents).filter(

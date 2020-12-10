@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-	SnapshotComponentTypes,
-	SnapshotHardwareComponents,
-	SnapshotSoftwareComponents,
-} from '../../enums/snapshot.enum';
+import { SnapshotHardwareComponents, SnapshotSoftwareComponents } from '../../enums/snapshot.enum';
 import { SnapshotService } from '../../services/snapshot.service';
 @Component({
 	selector: 'vtr-snapshot-main',
@@ -11,7 +7,6 @@ import { SnapshotService } from '../../services/snapshot.service';
 	styleUrls: ['./snapshot-main.component.scss'],
 })
 export class SnapshotMainComponent implements OnInit {
-	componentTypeEnum = SnapshotComponentTypes;
 	public softwareComponents: Array<any>;
 	public hardwareComponents: Array<any>;
 

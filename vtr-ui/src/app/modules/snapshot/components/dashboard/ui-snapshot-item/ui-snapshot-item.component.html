@@ -1,10 +1,10 @@
-<div id="snapshot-item-{{ i }}" class="vtr-snapshot-list-item"
+<div id="snapshot-item-{{ index }}" class="vtr-snapshot-list-item"
 	[ngClass]="{'modified-module': component.info.IsDifferent}" >
 	<div class="row">
-		<div class="module-information" [ngClass]="{ 'last-child': last }">
+		<div class="module-information" [ngClass]="{ 'last-child': isLastElement }">
 			<div class="module-icon">
 				<!-- Defines an icon according with component -->
-				<img id="snapshot-item-{{ i }}-icon" *ngIf="getModuleIcon(name) !== ''"
+				<img id="snapshot-item-{{ index }}-icon" *ngIf="getModuleIcon(name) !== ''"
 					alt="{{ name }}"
 					class="img-icon"
 					role="img"
@@ -13,11 +13,11 @@
 
 			<!-- Icon to expand and collapse module information -->
 			<div class="row">
-				<p id="snapshot-item-{{ i }}-module" role="text" class="title" *ngIf="!component.info.IsDifferent; else modifiedTitle">
+				<p id="snapshot-item-{{ index }}-module" role="text" class="title" *ngIf="!component.info.IsDifferent; else modifiedTitle">
 					{{ name }}</p>
 
 				<ng-template #modifiedTitle>
-					<p id="snapshot-item-{{ i }}-module" role="text" class="title">
+					<p id="snapshot-item-{{ index }}-module" role="text" class="title">
 						* {{ name }}</p>
 				</ng-template>
 
@@ -45,7 +45,7 @@
 			</ng-template>
 
 			<!-- Icon to expand and collapse module information -->
-			<div id="snapshot-item-{{ i }}-details-btn"
+			<div id="snapshot-item-{{ index }}-details-btn"
 				class="collapse-control"
 				[attr.aria-label]="!detailsExpanded ? name + 'expand-module-details': name + 'collapse-module-details'"
 				[attr.aria-expanded]="detailsExpanded"
@@ -63,7 +63,7 @@
 
 	<!-- Table containing module information -->
 	<div [ngbCollapse]="!detailsExpanded" class="details-list">
-		<table id="snapshot-item-{{ i }}-details" class="table table-details table-borderless">
+		<table id="snapshot-item-{{ index }}-details" class="table table-details table-borderless">
 			<tbody>
 				<tr *ngIf="component.status !== snapshotStatus.hasData; else moduleInfo">
 					<td class="progress-warning-image">
@@ -73,23 +73,23 @@
 				<ng-template #moduleInfo>
 					<tr>
 						<td aria-hidden="true"></td>
-						<th id="snapshot-item-{{ i }}-detail-baseline-snapshot-title" class="snapshot-table-titles">
+						<th id="snapshot-item-{{ index }}-detail-baseline-snapshot-title" class="snapshot-table-titles">
 							{{ 'snapshot.baselineSnapshot' | translate }}
 						</th>
-						<th id="snapshot-item-{{ i }}-detail-baseline-snapshot-title" class="snapshot-table-titles">
+						<th id="snapshot-item-{{ index }}-detail-baseline-snapshot-title" class="snapshot-table-titles">
 							{{ 'snapshot.lastSnapshot' | translate }}
 						</th>
 					</tr>
 					<ng-template #recursiveList let-list>
 						<ng-container *ngFor="let values of list; let itemIndex = index">
 							<tr *ngFor="let property of values.Properties; let j = index">
-								<th id="snapshot-item-{{ i }}-detail-{{ j }}-property-name" class="table-info-name">
+								<th id="snapshot-item-{{ index }}-detail-{{ j }}-property-name" class="table-info-name">
 									{{ property.PropertyName }}
 								</th>
-								<td id="snapshot-item-{{ i }}-detail-{{ j }}-base-value">
+								<td id="snapshot-item-{{ index }}-detail-{{ j }}-base-value">
 									{{ property.BaseValue }}</td>
 
-								<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
+								<td id="snapshot-item-{{ index }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
 									{{ property.CurrentValue }}</td>
 							</tr>
 							<tr *ngIf="values.SubDevices != null && values.SubDevices != undefined && values.SubDevices.length > 0">

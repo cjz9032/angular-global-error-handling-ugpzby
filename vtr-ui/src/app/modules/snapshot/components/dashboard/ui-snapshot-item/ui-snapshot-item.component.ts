@@ -5,7 +5,6 @@ import {
 	SnapshotComponentStatus,
 	SnapshotStatus,
 } from 'src/app/modules/snapshot/enums/snapshot.enum';
-import { Subscription } from 'rxjs';
 import { SnapshotService } from '../../../services/snapshot.service';
 
 @Component({
@@ -16,8 +15,8 @@ import { SnapshotService } from '../../../services/snapshot.service';
 export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 	@Input() name: string;
 	@Input() component: any;
-	@Input() i: number;
-	@Input() last: number;
+	@Input() index: number;
+	@Input() isLastElement: number;
 
 	public detailsExpanded: boolean;
 
@@ -36,8 +35,8 @@ export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 
 	public getModuleIcon(module: string): string {
 		if (
-			SnapshotHardwareComponents[SnapshotHardwareComponents[module]] === '' &&
-			SnapshotSoftwareComponents[SnapshotSoftwareComponents[module]] === ''
+			SnapshotHardwareComponents[SnapshotHardwareComponents[module]] === undefined &&
+			SnapshotSoftwareComponents[SnapshotSoftwareComponents[module]] === undefined
 		) {
 			return '';
 		}
