@@ -10,17 +10,16 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 	styleUrls: ['./modal-gaming-running-app-list.component.scss'],
 })
 export class ModalGamingRunningAppListComponent implements OnInit, OnChanges {
+	@Input() addedApps = 0;
+	@Output() emitService = new EventEmitter();
 	loading = true;
 	runningList: any = [];
 	emptyAppList = false;
 	ariaLabel = '';
-	public isChecked: any = [];
-	@Input() addedApps = 0;
 	maxAppsCount = 5;
-	@Output() emitService = new EventEmitter();
-
 	isNetworkBoost = false;
 
+	public isChecked: any = [];
 	public info: any = {
 		id: {
 			section: '',
@@ -86,7 +85,7 @@ export class ModalGamingRunningAppListComponent implements OnInit, OnChanges {
 
 	async refreshList() {
 		try {
-			let result: any = undefined;
+			let result: any;
 			if (this.isNetworkBoost) {
 				result = await this.networkBoostService.getNetUsingProcesses();
 			} else {
@@ -197,7 +196,7 @@ export class ModalGamingRunningAppListComponent implements OnInit, OnChanges {
 	}
 
 	isLastCheckedApp(index) {
-		if (index == this.runningList.length - 1) {
+		if (index === this.runningList.length - 1) {
 			return true;
 		}
 		for (let i = index; i < this.runningList.length; i++) {

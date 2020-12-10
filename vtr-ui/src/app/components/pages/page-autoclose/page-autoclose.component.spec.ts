@@ -15,6 +15,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { CommonService } from 'src/app/services/common/common.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({ selector: 'vtr-ui-toggle', template: '' })
 export class UiToggleStubComponent {
@@ -39,9 +40,7 @@ export class ModalGamingPromptMockComponent {
 		id: undefined,
 		//emitService: of(1),
 		emitService: new EventEmitter(),
-		setAppList: (arg1, arg2) => {
-			return undefined;
-		},
+		setAppList: (arg1, arg2) => undefined,
 	};
 	result = Promise.resolve(true);
 }
@@ -63,56 +62,6 @@ describe('PageAutocloseComponent', () => {
 	// });
 
 	describe('quick setting toolbar & toast event', () => {
-		const cmsMock = {
-			Results: [
-				{
-					Id: 'e64d43892d8448d088f3e6037e385122',
-					Title: 'Header Image DCC',
-					ShortTitle: '',
-					Description: '',
-					FeatureImage:
-						'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/DCC_top_image.jpg?v=5cf8a0151ea84c4ca43e906339c3c3b2',
-					Action: '',
-					ActionType: null,
-					ActionLink: null,
-					BrandName: 'brandname',
-					BrandImage: '',
-					Priority: 'P1',
-					Page: null,
-					Template: 'header',
-					Position: null,
-					ExpirationDate: null,
-					Filters: {
-						'DeviceTag.Value': {
-							key: 'System.DccGroup',
-							operator: '==',
-							value: 'true',
-						},
-					},
-				},
-				{
-					Id: '8516ba14dba5412ca954c3ccfdcbff90',
-					Title: 'Default Header Image',
-					ShortTitle: '',
-					Description: '',
-					FeatureImage:
-						'https://qa.csw.lenovo.com/-/media/Lenovo/Vantage/Features/Header-Image-Default.jpg?v=5d0bf7fd0065478c977ed284fecac45d',
-					Action: '',
-					ActionType: null,
-					ActionLink: null,
-					BrandName: '',
-					BrandImage: '',
-					Priority: 'P2',
-					Page: null,
-					Template: 'header',
-					Position: null,
-					ExpirationDate: null,
-					Filters: null,
-				},
-			],
-			Metadata: { Count: 2 },
-		};
-
 		const appDataList = {
 			processList: [
 				{
@@ -134,8 +83,8 @@ describe('PageAutocloseComponent', () => {
 		};
 
 		const cmsServiceMock = {
-			fetchCMSContent: (params) => of(cmsMock),
-			getOneCMSContent: (res, template, position) => (res = cmsMock.Results),
+			fetchCMSContent: (params) => of(GAMING_DATA.cmsMock),
+			getOneCMSContent: (res, template, position) => (res = GAMING_DATA.cmsMock.Results),
 		};
 		const commonServiceSpy = {
 			isOnline: true,
@@ -169,51 +118,49 @@ describe('PageAutocloseComponent', () => {
 			'getAutoCloseStatus',
 		]);
 		const modalGamingPromptComponentServiceSpy = {
-			open: (arg1, arg2) => {
-				return modalGamingPromptCompoentMock;
-			},
+			open: (arg1, arg2) => modalGamingPromptCompoentMock,
 		};
 		const modalGamingPromptCompoentMock = {
 			componentInstance: {
 				info: null,
 			},
 			emitService: new EventEmitter(),
-			result: () => {
-				return Promise.resolve();
-			},
+			result: () => Promise.resolve(),
 		};
 
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					PageAutocloseComponent,
-					UiToggleStubComponent,
-					ModalGamingPromptMockComponent,
-					mockPipe({ name: 'translate' }),
-				],
-				imports: [TranslationModule, HttpClientModule],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: TranslateStore },
-					{ provide: CommonService, useValue: commonServiceSpy },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-					{ provide: CMSService, useValue: cmsServiceMock },
-					{ provide: VantageShellService, useValue: vantageShellServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-				],
-			}).compileComponents();
-			shellServices = TestBed.inject(VantageShellService);
-			gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
-			fixture = TestBed.createComponent(PageAutocloseComponent);
-			component = fixture.componentInstance;
-			modalService = TestBed.inject(NgbModal);
-			fixture.detectChanges();
-		}));
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						PageAutocloseComponent,
+						UiToggleStubComponent,
+						ModalGamingPromptMockComponent,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					imports: [TranslationModule, HttpClientModule],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: TranslateStore },
+						{ provide: CommonService, useValue: commonServiceSpy },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+						{ provide: CMSService, useValue: cmsServiceMock },
+						{ provide: VantageShellService, useValue: vantageShellServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+					],
+				}).compileComponents();
+				shellServices = TestBed.inject(VantageShellService);
+				gamingQuickSettingToolbarService = TestBed.inject(GamingQuickSettingToolbarService);
+				fixture = TestBed.createComponent(PageAutocloseComponent);
+				component = fixture.componentInstance;
+				modalService = TestBed.inject(NgbModal);
+				fixture.detectChanges();
+			})
+		);
 
 		describe('PageAutoCloseComponent init and destory', () => {
 			it('ngOnInit', () => {
@@ -251,9 +198,7 @@ describe('PageAutocloseComponent', () => {
 
 		describe('openTargetModal Modal actions', () => {
 			it('openTargetModal', fakeAsync(() => {
-				gamingAutoCloseServiceSpy.setNeedToAskStatusCache = () => {
-					return Promise.resolve(true);
-				};
+				gamingAutoCloseServiceSpy.setNeedToAskStatusCache = () => Promise.resolve(true);
 				component.isModalShowing = false;
 				component.openTargetModal();
 				tick(50);
@@ -264,35 +209,27 @@ describe('PageAutocloseComponent', () => {
 				expect(component.isModalShowing).toBe(true);
 
 				component.isModalShowing = false;
-				gamingAutoCloseServiceSpy.getNeedToAskStatusCache = () => {
-					return true;
-				};
+				gamingAutoCloseServiceSpy.getNeedToAskStatusCache = () => true;
 				component.toggleStatus = true;
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(true);
 
 				component.isModalShowing = false;
-				gamingAutoCloseServiceSpy.getNeedToAskStatusCache = () => {
-					return false;
-				};
+				gamingAutoCloseServiceSpy.getNeedToAskStatusCache = () => false;
 				component.toggleStatus = false;
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(false);
 
 				component.isModalShowing = false;
-				gamingAutoCloseServiceSpy.getNeedToAskStatusCache = () => {
-					return 'undefined';
-				};
+				gamingAutoCloseServiceSpy.getNeedToAskStatusCache = () => 'undefined';
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(false);
 
 				component.isModalShowing = false;
-				gamingAutoCloseServiceSpy.getNeedToAskStatusCache = () => {
-					return undefined;
-				};
+				gamingAutoCloseServiceSpy.getNeedToAskStatusCache = () => undefined;
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(false);
@@ -304,16 +241,16 @@ describe('PageAutocloseComponent', () => {
 				gamingAutoCloseServiceSpy.setAutoCloseStatus.and.returnValue(
 					Promise.resolve(false)
 				);
-
+				component.toggleStatus = undefined;
 				const event = { switchValue: false };
 				component.toggleAutoClose(event);
 				tick(50);
-				expect(component.toggleStatus).toBeUndefined;
+				expect(component.toggleStatus).toBeUndefined();
 
 				gamingAutoCloseServiceSpy.setAutoCloseStatus.and.returnValue(Promise.resolve(true));
 				component.toggleAutoClose(event);
 				tick(50);
-				expect(component.toggleStatus).toBe(false);
+				expect(component.toggleStatus).toBeFalse();
 			}));
 
 			it('getautoclosestatus', async () => {
@@ -321,7 +258,7 @@ describe('PageAutocloseComponent', () => {
 					Promise.reject('reject test')
 				);
 				await component.getAutoCloseStatus();
-				expect(component.toggleStatus).toBeUndefined;
+				expect(component.toggleStatus).toBeUndefined();
 
 				gamingAutoCloseServiceSpy.getAutoCloseStatus.and.returnValue(Promise.resolve(true));
 				await component.getAutoCloseStatus();
@@ -357,7 +294,7 @@ describe('PageAutocloseComponent', () => {
 		describe('showTurnOn showAddApps', () => {
 			it('showTurnOn--showAddApps', fakeAsync(() => {
 				try {
-					let modalGamingPromptMock = new ModalGamingPromptMockComponent();
+					const modalGamingPromptMock = new ModalGamingPromptMockComponent();
 					//modalService.open = modalGamingPromptMock;
 					spyOn(modalService, 'open').and.returnValue(modalGamingPromptMock);
 					//let modalGamingRunningAppListMock = new ModalGamingRunningAppListMockComponent();
@@ -401,16 +338,3 @@ describe('PageAutocloseComponent', () => {
 		});
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	) as any;
-}

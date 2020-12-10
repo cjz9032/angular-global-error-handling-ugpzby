@@ -1,10 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
 import { UiMacrokeyDetailsComponent } from './ui-macrokey-details.component';
 import { Component, Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
-
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptStubComponent {
@@ -27,19 +26,21 @@ describe('UiMacrokeyDetailsComponent', () => {
 	dummyElement.id = 'gaming_macrokey_startrecording';
 	document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				UiMacrokeyDetailsComponent,
-				ModalGamingPromptStubComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
-			],
-			imports: [],
-			providers: [NgbModal],
-			schemas: [NO_ERRORS_SCHEMA],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					UiMacrokeyDetailsComponent,
+					ModalGamingPromptStubComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+					GAMING_DATA.mockPipe({ name: 'sanitize' }),
+				],
+				imports: [],
+				providers: [NgbModal],
+				schemas: [NO_ERRORS_SCHEMA],
+			}).compileComponents();
+		})
+	);
 
 	let modalService: any;
 
@@ -93,7 +94,7 @@ describe('UiMacrokeyDetailsComponent', () => {
 	});
 
 	it('should call the ngOnchanges with timeout10', async () => {
-		let modalRef = new ModalGamingPromptStubComponent();
+		const modalRef = new ModalGamingPromptStubComponent();
 		spyOn(modalService, 'open').and.returnValue(modalRef);
 		const result = await component.ngOnChanges({ messageData: { currentValue: 'timeout10' } });
 		modalRef.componentInstance.emitService = of(1);
@@ -101,7 +102,7 @@ describe('UiMacrokeyDetailsComponent', () => {
 	});
 
 	it('should call the ngOnchanges with timeout20 ', async () => {
-		let modalRef = new ModalGamingPromptStubComponent();
+		const modalRef = new ModalGamingPromptStubComponent();
 		spyOn(modalService, 'open').and.returnValue(modalRef);
 		const result = await component.ngOnChanges({ messageData: { currentValue: 'timeout20' } });
 		modalRef.componentInstance.emitService = of(1);
@@ -109,7 +110,7 @@ describe('UiMacrokeyDetailsComponent', () => {
 	});
 
 	it('should call the ngOnchanges with maximum timeout', async () => {
-		let modalRef = new ModalGamingPromptStubComponent();
+		const modalRef = new ModalGamingPromptStubComponent();
 		spyOn(modalService, 'open').and.returnValue(modalRef);
 		const result = await component.ngOnChanges({ messageData: { currentValue: 'maximum' } });
 		modalRef.componentInstance.emitService = of(1);
@@ -146,7 +147,7 @@ describe('UiMacrokeyDetailsComponent', () => {
 	});
 
 	it('should onStartClicked with empty pointer', async () => {
-		var event = new PointerEvent('pointerdown', {
+		const event = new PointerEvent('pointerdown', {
 			pointerId: 0,
 			bubbles: true,
 			cancelable: true,
@@ -160,23 +161,10 @@ describe('UiMacrokeyDetailsComponent', () => {
 	});
 
 	it('should onStopClicked with empty pointer', async () => {
-		const dummyElement = document.createElement('button');
-		document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
+		const button = document.createElement('button');
+		document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(button);
 		component.recording = true;
 		await component.onStopClicked(null);
 		expect(component.recording).toEqual(false);
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

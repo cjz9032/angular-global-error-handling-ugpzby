@@ -9,7 +9,7 @@
 					<div class="select-wrapper">
 						<vtr-ui-lighting-effect
 							[ariaLabel]="'gaming.macroKey.narrator.macrokeyStatus.label' | translate"
-							[tooltip_value]="tooltips_value | translate" [isRecording]="isRecording"
+							[tooltip_value]="tooltipsValue | translate" [isRecording]="isRecording"
 							[options]="macroKeyOptions[0]" [selectedValue]="macroKeyTypeStatus.MacroKeyStatus"
 							(change)="optionChanged($event)" [tabindex]="1"
 							[automationId]="'gaming_macrokey_settings_drop_menu'">
@@ -27,9 +27,10 @@
 
 						</div>
 						<div class="details-wrapper">
-							<vtr-ui-macrokey-details [number]="numberSelected" [isNumberpad]="isNumpad"
+							<vtr-ui-macrokey-details [selectedNumber]="numberSelected" [isNumberpad]="isNumpad"
 								[messageData]="macroKeyMessageData" (isRecording)="onRecordingChanged($event)"
-								[keyData]="macroKeyInputData.macro" [recordingData]="macroKeyInputData.macro.inputs">
+								[keyData]="macroKeyInputData.macro" [recordingData]="macroKeyInputData.macro.inputs"
+								[refreshTicks]="refreshTicks" (clearAll)="clearMacroKey()">
 							</vtr-ui-macrokey-details>
 						</div>
 					</div>

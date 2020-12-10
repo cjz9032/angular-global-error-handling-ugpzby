@@ -1,22 +1,22 @@
-<div class="macrokey-wrapper" [ngClass]="{'recording': recording && number, 'numberpad':isNumberpad}">
-	<div class="header-component" *ngIf="number && !number.status">
+<div class="macrokey-wrapper" [ngClass]="{'recording': recording && selectedNumber, 'numberpad':isNumberpad}">
+	<div class="header-component" *ngIf="selectedNumber && !selectedNumber.status">
 		<div class="title-main">
-			{{ 'gaming.macroKey.recording.title' | translate }} <span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>{{ number.key }}
+			{{ 'gaming.macroKey.recording.title' | translate }} <span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>{{ selectedNumber.key }}
 		</div>
 	</div>
 	<div class="section-details">
 		<div class="intro"
-			[ngClass]="{'no-key': !number, 'data-exists': number && number.status, 'recording-data': recording && keyData.inputs.length > 0}">
-			<div class="select-key" *ngIf="!number">
+			[ngClass]="{'no-key': !selectedNumber, 'data-exists': selectedNumber && selectedNumber.status, 'recording-data': recording && keyData && keyData.inputs && keyData.inputs.length > 0}">
+			<div class="select-key" *ngIf="!selectedNumber">
 				<div class="title-main">
 					<p>{{ 'gaming.macroKey.details.intro.noNumber' | translate }}</p>
 				</div>
 			</div>
-			<div *ngIf="number && !number.status">
+			<div *ngIf="selectedNumber && !selectedNumber.status">
 				<div class="can-record" *ngIf="!recording">
 					<div class="title-main">
 						<p>{{ 'gaming.macroKey.details.intro.title' | translate }}</p>
-						<p><span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>{{ number.key }}</p>
+						<p><span *ngIf="isNumberpad">{{ 'gaming.macroKey.details.buttons.numberPrefix' | translate }}</span>{{ selectedNumber.key }}</p>
 					</div>
 					<div class="description">
 						<p>{{ 'gaming.macroKey.details.intro.line1' | translate }}</p>
@@ -25,29 +25,24 @@
 					</div>
 				</div>
 				<div class="is-recording" *ngIf="recording">
-					<div class="initalize" *ngIf="keyData.inputs.length == 0">
+					<div class="initalize" *ngIf="!keyData || !keyData.inputs || keyData.inputs.length == 0">
 						<div class="title-main">
 							<p>{{ 'gaming.macroKey.details.recording.title' | translate }}</p>
 							<p>{{ 'gaming.macroKey.details.recording.description' | translate }}</p>
 						</div>
 						<div class="description"></div>
 					</div>
-					<div class="recorded-data" *ngIf="keyData.inputs.length > 0">
-						<vtr-ui-macrokey-recorded-list [number]="number" [isNumberpad]="isNumberpad"
-							[recordingStatus]="recording" [recordsData]="keyData"
-							(deleteRecords)="recordsDelete($event)">
-						</vtr-ui-macrokey-recorded-list>
-					</div>
 				</div>
 			</div>
-			<div *ngIf="number && number.status && keyData.inputs.length > 0">
-				<vtr-ui-macrokey-recorded-list [number]="number" [isNumberpad]="isNumberpad"
-					[recordingStatus]="recording" [recordsData]="keyData" (deleteRecords)="recordsDelete($event)">
+			<div *ngIf="keyData && keyData.inputs && keyData.inputs.length > 0">
+				<vtr-ui-macrokey-recorded-list [selectedNumber]="selectedNumber" [isNumberpad]="isNumberpad"
+					[recordingStatus]="recording" [recordsData]="keyData" [refreshTicks]="refreshTicks"
+					(deleteRecords)="recordsDelete($event)" (clearAll)="recordClear()">
 				</vtr-ui-macrokey-recorded-list>
 			</div>
 		</div>
 	</div>
-	<div class="footer-component text-center" *ngIf="number && !number.status">
+	<div class="footer-component text-center" *ngIf="selectedNumber && !selectedNumber.status">
 		<div class="button-container">
 			<button id="gaming_macrokey_startrecording" [tabIndex]="1" class="start-button border-radius-button"
 				vtrMetrics metricsEvent="featureClick" [metricsItem]="'macrokey_start_recording'"

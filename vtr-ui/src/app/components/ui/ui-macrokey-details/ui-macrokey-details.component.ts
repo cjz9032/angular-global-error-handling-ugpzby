@@ -1,4 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import {
+	Component,
+	OnInit,
+	Input,
+	Output,
+	EventEmitter,
+	OnChanges,
+	HostBinding,
+} from '@angular/core';
 import { MacroKeyMessageData } from 'src/app/enums/macrokey-message-data.enum';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
@@ -7,19 +15,16 @@ import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/mo
 	selector: 'vtr-ui-macrokey-details',
 	templateUrl: './ui-macrokey-details.component.html',
 	styleUrls: ['./ui-macrokey-details.component.scss'],
-	host: {
-		'(document:visibilitychange)': 'toggleOnPageMinimized()',
-	},
 })
 export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
-	@Input() number;
+	@Input() selectedNumber;
 	@Input() isNumberpad = false;
-	@Output() isRecording = new EventEmitter<any>();
 	@Input() keyData: any;
 	@Input() recordingData: any = 0;
 	@Input() messageData: any;
-	public recording: Boolean = false;
-	public recordsList: any = [];
+	@Input() refreshTicks: number;
+	@Output() isRecording = new EventEmitter<any>();
+	@Output() clearAll = new EventEmitter<any>();
 
 	modalContent = {
 		headerTitle: 'gaming.macroKey.popupContent.timeoutRecording.title',
@@ -41,17 +46,20 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 		okButton: '',
 	};
 
+	public recording = false;
+	public recordsList: any = [];
+
 	constructor(private modalService: NgbModal) {}
 
-	ngOnInit() {}
-
-	toggleOnPageMinimized() {
+	@HostBinding('document:visibilitychange') toggleOnPageMinimized() {
 		if (document.hidden) {
 			if (this.recording) {
 				this.toggleRecording(true);
 			}
 		}
 	}
+
+	ngOnInit() {}
 
 	onStartClicked(event) {
 		if (event instanceof PointerEvent) {
@@ -88,10 +96,14 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 		records.forEach((record: any, ri: number) => {});
 	}
 
+	recordClear() {
+		this.clearAll.emit();
+	}
+
 	ngOnChanges(changes) {
 		if (!(changes.messageData === undefined)) {
 			if (changes.messageData.currentValue === MacroKeyMessageData.timeout10) {
-				let idPrefix = 'macrokey_10s_timeout_dialog';
+				const idPrefix = 'macrokey_10s_timeout_dialog';
 				this.modalAutomationId = {
 					section: idPrefix,
 					headerText: idPrefix + '_header_text',
@@ -99,10 +111,10 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					closeButton: idPrefix + '_close_button',
 					okButton: idPrefix + 'ob_btn',
 				};
-				let promptRef = this.modalService.open(ModalGamingPromptComponent, {
+				const promptRef = this.modalService.open(ModalGamingPromptComponent, {
 					backdrop: 'static',
 					windowClass: 'modal-prompt',
-					backdropClass: 'backdrop-level'
+					backdropClass: 'backdrop-level',
 				});
 				promptRef.componentInstance.info = {
 					title: 'gaming.macroKey.popupContent.timeoutRecording.title',
@@ -118,7 +130,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				this.toggleRecording(true);
 			}
 			if (changes.messageData.currentValue === MacroKeyMessageData.timeout20) {
-				let idPrefix = 'macrokey_20s_timeout_dialog';
+				const idPrefix = 'macrokey_20s_timeout_dialog';
 				this.modalAutomationId = {
 					section: idPrefix,
 					headerText: idPrefix + '_header_text',
@@ -126,10 +138,10 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					closeButton: idPrefix + '_close_button',
 					okButton: idPrefix + 'ob_btn',
 				};
-				let promptRef = this.modalService.open(ModalGamingPromptComponent, {
+				const promptRef = this.modalService.open(ModalGamingPromptComponent, {
 					backdrop: 'static',
 					windowClass: 'modal-prompt',
-					backdropClass: 'backdrop-level'
+					backdropClass: 'backdrop-level',
 				});
 				promptRef.componentInstance.info = {
 					title: 'gaming.macroKey.popupContent.timeoutRecording.title',
@@ -145,7 +157,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 				this.toggleRecording(true);
 			}
 			if (changes.messageData.currentValue === MacroKeyMessageData.maximumInput) {
-				let idPrefix = 'macrokey_maximum_input_dialog';
+				const idPrefix = 'macrokey_maximum_input_dialog';
 				this.modalAutomationId = {
 					section: idPrefix,
 					headerText: idPrefix + '_header_text',
@@ -153,10 +165,10 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					closeButton: idPrefix + '_close_button',
 					okButton: idPrefix + 'ob_btn',
 				};
-				let promptRef = this.modalService.open(ModalGamingPromptComponent, {
+				const promptRef = this.modalService.open(ModalGamingPromptComponent, {
 					backdrop: 'static',
 					windowClass: 'modal-prompt',
-					backdropClass: 'backdrop-level'
+					backdropClass: 'backdrop-level',
 				});
 				promptRef.componentInstance.info = {
 					title: 'gaming.macroKey.popupContent.maximumInput.title',

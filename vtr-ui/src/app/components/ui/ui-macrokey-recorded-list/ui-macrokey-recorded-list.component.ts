@@ -12,21 +12,22 @@ import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/mo
 	templateUrl: './ui-macrokey-recorded-list.component.html',
 	styleUrls: ['./ui-macrokey-recorded-list.component.scss'],
 })
-export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoCheck {
-	@Input() number: any;
+export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
+	@Input() selectedNumber: any;
 	@Input() recordingStatus: any;
 	@Input() recordsData: any;
 	@Input() isNumberpad = false;
+	@Input() refreshTicks: number;
 	@Output() deleteRecords = new EventEmitter<any>();
 	@Output() clearAll = new EventEmitter<any>();
-	public clearRecordPopup: Boolean = false;
-	public deleteCalled: Boolean = false;
-	public showModal: Boolean = false;
-	public ignoreInterval: Boolean = false;
+	public clearRecordPopup = false;
+	public deleteCalled = false;
+	public showModal = false;
+	public ignoreInterval = false;
 	public recordsList: any = [];
 	public pairCounter = {};
 	public hoveredPair = '';
-	tooltips_delay: any = '';
+	tooltipsDelay: any = '';
 	deleteStart: any = new Date();
 
 	repeatOptions: any = [
@@ -215,7 +216,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 
 				this.deleteStart = new Date();
 				await this.macrokeyService
-					.setMacroKey(this.number.key, remainingInputs)
+					.setMacroKey(this.selectedNumber.key, remainingInputs)
 					.then((responseStatus) => {
 						// response;
 						const deleteTime = Date.now() - this.deleteStart;
@@ -226,7 +227,10 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 						this.deleteCalled = false;
 						if (responseStatus) {
 							this.recordsData.inputs = remainingInputs;
-							if (this.number.key === '0' || this.number.key === 'M1') {
+							if (
+								this.selectedNumber.key === '0' ||
+								this.selectedNumber.key === 'M1'
+							) {
 								this.macrokeyService.updateMacrokeyInitialKeyDataCache(
 									this.recordsData.inputs
 								);
@@ -238,10 +242,10 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 	}
 
 	clearRecords() {
-		let promptRef = this.modalService.open(ModalGamingPromptComponent, {
+		const promptRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
-			backdropClass: 'backdrop-level'
+			backdropClass: 'backdrop-level',
 		});
 		promptRef.componentInstance.info = {
 			title: 'gaming.macroKey.popupContent.clearMacrokey.title',
@@ -267,8 +271,9 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 		if (canDelete === false) {
 			return;
 		}
-		this.macrokeyService.clearKey(this.number.key);
-		if (this.number.key === '0' || this.number.key === 'M1') {
+		this.macrokeyService.clearKey(this.selectedNumber.key);
+		this.clearAll.emit();
+		if (this.selectedNumber.key === '0' || this.selectedNumber.key === 'M1') {
 			this.macrokeyService.updateMacrokeyInitialKeyDataCache([]);
 			this.recordsData.repeat = MacroKeyRepeat.Repeat1;
 			this.recordsData.interval = MacroKeyInterval.KeepInterval;
@@ -296,9 +301,6 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 				}
 			}
 		}
-	}
-
-	ngDoCheck() {
 		if (!(this.recordsData === undefined)) {
 			if (this.recordsList !== this.recordsData.inputs) {
 				this.recordsList = this.pairRecordingData(this.recordsData.inputs);
@@ -314,13 +316,13 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 
 	onRepeatChanged(repeatOption) {
 		this.macrokeyService
-			.setRepeat(this.number.key, repeatOption.value)
+			.setRepeat(this.selectedNumber.key, repeatOption.value)
 			.then((responseStatus) => {
 				if (responseStatus) {
 					this.recordsData.repeat = repeatOption.value;
 					this.macrokeyService.setOnRepeatStatusCache(
 						repeatOption.value,
-						this.number.key
+						this.selectedNumber.key
 					);
 				}
 			});
@@ -328,18 +330,18 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges, DoChe
 
 	onIntervalChanged(intervalOption) {
 		if (intervalOption.value) {
-			this.tooltips_delay = this.translate.instant(intervalOption.name);
+			this.tooltipsDelay = this.translate.instant(intervalOption.name);
 		} else {
-			this.tooltips_delay = '';
+			this.tooltipsDelay = '';
 		}
 		this.macrokeyService
-			.setInterval(this.number.key, intervalOption.value)
+			.setInterval(this.selectedNumber.key, intervalOption.value)
 			.then((responseStatus) => {
 				if (responseStatus) {
 					this.recordsData.interval = intervalOption.value;
 					this.macrokeyService.setOnIntervalStatusCache(
 						intervalOption.value,
-						this.number.key
+						this.selectedNumber.key
 					);
 				}
 			});
