@@ -147,7 +147,7 @@ export class SystemUpdateService {
 	}
 
 	public getCapability(): Promise<any[]> {
-		if (this.capabilityList && this.capabilityList.length > 0) {
+		if (this.capabilityList.length > 0) {
 			return Promise.resolve(this.capabilityList);
 		}
 		if (this.systemUpdateBridge) {
