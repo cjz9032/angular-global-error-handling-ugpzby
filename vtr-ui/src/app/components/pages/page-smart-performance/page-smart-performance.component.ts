@@ -328,7 +328,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 
 					}
 					else {
-						console.log('setScanResultsAndStatus');
 						this.setScanResultsAndStatus(res);
 						if (res.percentage === 100) {
 							scanEndedTime = new Date().getTime();
