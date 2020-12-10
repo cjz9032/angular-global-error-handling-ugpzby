@@ -211,9 +211,11 @@ export class SmartAssistService {
 	}
 
 	public setHPDAdvancedSetting(section: string, value: boolean) {
-		section == 'zeroTouchLogin'
-			? (this.hpdAdvancedSettings.zeroTouchLoginAdvanced = value)
-			: (this.hpdAdvancedSettings.zeroTouchLockAdvanced = value);
+		if (section === 'zeroTouchLogin') {
+			this.hpdAdvancedSettings.zeroTouchLoginAdvanced = value;
+		} else {
+			this.hpdAdvancedSettings.zeroTouchLockAdvanced = value;
+		}
 		return Promise.resolve(true);
 	}
 
