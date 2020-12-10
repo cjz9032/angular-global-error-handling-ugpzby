@@ -14,13 +14,10 @@ import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.c
 	styleUrls: ['./snapshot-header.component.scss'],
 })
 export class SnapshotHeaderComponent implements OnInit {
-	// Input
-	@Input() disableSnapshotButton: boolean;
-	@Input() disableBaselineButton: boolean;
-	@Input() snapshotStatus: SnapshotStatus = this.snapshotService.snapshotStatus;
-
+	public snapshotStatusEnum = SnapshotStatus;
 	public showSnapshotInformation = true;
 	public snapshotInfo: any = {};
+
 	constructor(private snapshotService: SnapshotService, private modalService: NgbModal) {
 		this.snapshotInfo = {
 			hardwareList: this.snapshotService.getHardwareComponentsList(),
@@ -31,9 +28,6 @@ export class SnapshotHeaderComponent implements OnInit {
 	ngOnInit() {}
 
 	onTakeSnapshot() {
-		this.showSnapshotInformation = false;
-		this.disableSnapshotButton = true;
-		this.disableBaselineButton = true;
 		this.snapshotService.snapshotStatus = SnapshotStatus.snapshotInProgress;
 
 		// Quick implementation, just for test
@@ -49,14 +43,13 @@ export class SnapshotHeaderComponent implements OnInit {
 
 		Promise.all(componentSnapshotPromises)
 			.then(() => {
-				// TBD
+				// TBD. Something needed here?
 			})
 			.catch((error) => {
-				// TBD
+				// TBD. Something needed here?
 			})
 			.finally(() => {
 				this.snapshotService.snapshotStatus = SnapshotStatus.snapshotCompleted;
-				// unlock buttons
 			});
 	}
 
@@ -70,19 +63,15 @@ export class SnapshotHeaderComponent implements OnInit {
 		modalRef.componentInstance.snapshotInfo = this.snapshotInfo;
 		modalRef.componentInstance.passEntry.subscribe((response) => {
 			this.showSnapshotInformation = false;
-			this.disableSnapshotButton = true;
-			this.disableBaselineButton = true;
-			this.snapshotStatus = SnapshotStatus.baselineInProgress;
+			this.snapshotService.snapshotStatus = SnapshotStatus.baselineInProgress;
 			// This is just to simulate a call on snapshotService
 			this.snapshotService
 				.getCurrentSnapshotInfo('')
 				.then(async () => {
-					await this.delay(3000);
+					//await this.delay(3000);
 				})
 				.finally(() => {
-					this.disableSnapshotButton = false;
-					this.disableBaselineButton = false;
-					this.snapshotStatus = SnapshotStatus.baselineCompleted;
+					this.snapshotService.snapshotStatus = SnapshotStatus.baselineCompleted;
 				});
 		});
 
@@ -90,15 +79,20 @@ export class SnapshotHeaderComponent implements OnInit {
 			// Re-enabling the button, once the modal has been closed in a way
 			// the user didn't started the Scan proccess.
 			if (!success) {
-				this.disableSnapshotButton = false;
-				this.disableBaselineButton = false;
-				this.snapshotStatus = SnapshotStatus.notStarted;
+				this.snapshotService.snapshotStatus = SnapshotStatus.notStarted;
 			}
 		});
 	}
 
-	// Remove this code when implement Update method and Replace baseline method.
-	delay(ms: number) {
-		return new Promise((resolve) => setTimeout(resolve, ms));
+	public getSnapshotStatus() {
+		return this.snapshotService.snapshotStatus;
+	}
+
+	public isButtonEnabled() {
+		return (
+			this.snapshotService.snapshotStatus === SnapshotStatus.notStarted ||
+			this.snapshotService.snapshotStatus === SnapshotStatus.snapshotCompleted ||
+			this.snapshotService.snapshotStatus === SnapshotStatus.baselineCompleted
+		);
 	}
 }

@@ -32,37 +32,31 @@ export class PageSnapshotComponent implements OnInit, OnDestroy {
 			this.snapshotService.snapshotStatus === SnapshotStatus.snapshotCompleted ||
 			this.snapshotService.snapshotStatus === SnapshotStatus.baselineCompleted
 		) {
+			// If a snapshot/baseline was finished while I'm not on snapshot page, I'll reset it to initial state
 			this.snapshotService.snapshotStatus = SnapshotStatus.notStarted;
-		} else {
-			if (this.snapshotService.snapshotStatus === SnapshotStatus.firstLoad) {
-				// TODO: block buttons
-				this.snapshotService.snapshotStatus = SnapshotStatus.snapshotInProgress;
+		} else if (this.snapshotService.snapshotStatus === SnapshotStatus.firstLoad) {
+			// If it is the first time I'm on this page, initialize it with the first snapshot
+			this.snapshotService.snapshotStatus = SnapshotStatus.snapshotInProgress;
 
-				const componentSnapshotPromises = [];
-				this.snapshotService.getSoftwareComponentsList().forEach((key) => {
-					componentSnapshotPromises.push(
-						this.snapshotService.getCurrentSnapshotInfo(key)
-					);
+			const componentSnapshotPromises = [];
+			this.snapshotService.getSoftwareComponentsList().forEach((key) => {
+				componentSnapshotPromises.push(this.snapshotService.getCurrentSnapshotInfo(key));
+			});
+
+			this.snapshotService.getHardwareComponentsList().forEach((key) => {
+				componentSnapshotPromises.push(this.snapshotService.getCurrentSnapshotInfo(key));
+			});
+
+			Promise.all(componentSnapshotPromises)
+				.then(() => {
+					// TBD. Something needed here?
+				})
+				.catch((error) => {
+					// TBD. Something needed here?
+				})
+				.finally(() => {
+					this.snapshotService.snapshotStatus = SnapshotStatus.snapshotCompleted;
 				});
-
-				this.snapshotService.getHardwareComponentsList().forEach((key) => {
-					componentSnapshotPromises.push(
-						this.snapshotService.getCurrentSnapshotInfo(key)
-					);
-				});
-
-				Promise.all(componentSnapshotPromises)
-					.then(() => {
-						// TBD
-					})
-					.catch((error) => {
-						// TBD
-					})
-					.finally(() => {
-						this.snapshotService.snapshotStatus = SnapshotStatus.snapshotCompleted;
-						// TODO: unlock buttons
-					});
-			}
 		}
 	}
 
