@@ -258,6 +258,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		statusText: 'GOOD CONDITION',
 		isActionLink: false,
 	};
+	getPbSubscrpition: Subscription;
 
 	securityAdvisorHandler = () => {
 		clearTimeout(this.getSecurityInfoTimeout);
@@ -467,12 +468,14 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		if (this.actionSubscription) {
 			this.actionSubscription.unsubscribe();
 		}
+
+		this.getPbSubscrpition?.unsubscribe();
 	}
 
 	private async getCachedContent(lang?: string) {
 		this.isShowStateCard = await this.dashboardService.isPositionBShowDeviceState();
 		if (this.isShowStateCard) {
-			this.dashboardService.getPositionBData().subscribe((data) => {
+			this.getPbSubscrpition = this.dashboardService.getPositionBData().subscribe((data) => {
 				this.positionBData = data;
 			});
 		}

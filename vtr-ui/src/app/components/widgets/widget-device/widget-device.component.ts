@@ -184,7 +184,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	}
 
 	loadOverAllStatus() {
-		this.dashboardService.getDeviceStatusWithTimeOut(10000).subscribe(status => {
+		this.dashboardService.getDeviceStatusWithTimeOut(10000).pipe(takeUntil(this.ngUnsubscribe)).subscribe(status => {
 			this.deviceStatus = status;
 		});
 	}
