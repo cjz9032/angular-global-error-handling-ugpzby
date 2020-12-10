@@ -2187,7 +2187,7 @@
 				"heading": "Supporti intelligenti",
 				"title": "Riproduzione video automatica",
 				"note": {
-					"supportedList": "I lettori supportati sono i seguenti: <br>&bull; Netflix <br>&bull; Film e TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "I lettori supportati sono i seguenti: <br>&bull; Film e TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Nota: i lettori video Web non sono supportati."
 				},
 				"desc": "Questa funzione metterà in pausa il video quando ci si allontana dal computer e riprenderà la riproduzione del video al rientro dell'utente.",

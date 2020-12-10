@@ -2187,7 +2187,7 @@
 				"heading": "Pametan medij",
 				"title": "Reprodukcija video zapisa bez dodira",
 				"note": {
-					"supportedList": "Podržani plejeri su sledeći: <br>&bull; Netflix <br>&bull; Film i TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Podržani plejeri su sledeći: <br>&bull; Film i TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Napomena: Video plejeri na vebu nisu podržani."
 				},
 				"desc": "Ova funkcija će pauzirati video kada odlazite od računara i nastaviti video kada se vratite.",

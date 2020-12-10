@@ -2187,7 +2187,7 @@
 				"heading": "Intelligens média",
 				"title": "Érintés nélküli videolejátszás",
 				"note": {
-					"supportedList": "A támogatott lejátszók az alábbi felsorolásban láthatók: <br>&bull; Netflix <br>&bull; Filmek+TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "A támogatott lejátszók az alábbi felsorolásban láthatók: <br>&bull; Filmek+TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Megjegyzés: A webes videolejátszók nem támogatottak."
 				},
 				"desc": "Ez a funkció szünetelteti a videólejátszást, amikor a felhasználó magára hagyja a számítógépet, és újraindítja a lejátszást, amikor visszatér.",

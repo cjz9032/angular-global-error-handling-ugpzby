@@ -2187,7 +2187,7 @@
 				"heading": "Multimédia Inteligente",
 				"title": "Reprodução de vídeo Zero Touch",
 				"note": {
-					"supportedList": "Os leitores suportados são os seguintes: <br>&bull; Netflix <br>&bull; Filmes e Programas de TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Os leitores suportados são os seguintes: <br>&bull; Filmes e Programas de TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Nota: Os leitores de vídeo da Web não são suportados."
 				},
 				"desc": "Esta funcionalidade irá colocar o vídeo em pausa quando o utilizador deixar o computador e retomar o vídeo quando este voltar.",

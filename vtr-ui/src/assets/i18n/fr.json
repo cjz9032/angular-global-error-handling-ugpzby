@@ -2299,7 +2299,7 @@
 				"heading": "Support intelligent",
 				"title": "Lecture de la vidéo sans pression tactile",
 				"note": {
-					"supportedList": "Les lecteurs compatibles sont les suivants : <br>&bull; Netflix <br>&bull; Films et séries TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "Les lecteurs compatibles sont les suivants : <br>&bull; Films et séries TV <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "Remarque : Les lecteurs vidéo Web ne sont pas pris en charge."
 				},
 				"desc": "Cette fonctionnalité interrompra la vidéo lorsque vous quittez l'ordinateur et reprendra sa lecture lorsque vous revenez.",

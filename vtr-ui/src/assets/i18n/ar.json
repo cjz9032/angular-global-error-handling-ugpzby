@@ -2189,7 +2189,7 @@
 				"heading": "الوسائط الذكية",
 				"title": "تشغيل الفيديو من دون لمس",
 				"note": {
-					"supportedList": "المشغلات المعتمدة مسردة كالتالي: <br>&bull; Netflix <br>&bull; الأفلام والتليفزيون <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "المشغلات المعتمدة مسردة كالتالي: <br>&bull; الأفلام والتليفزيون <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "ملاحظة: مشغلات فيديو الويب غير مدعومة."
 				},
 				"desc": "ستعمل هذه الميزة على إيقاف الفيديو بشكل مؤقت عندما تغادر الكمبيوتر، وتستأنف الفيديو عند عودتك إليه.",

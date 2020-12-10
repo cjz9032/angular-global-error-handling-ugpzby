@@ -2187,7 +2187,7 @@
 				"heading": "智慧型媒體",
 				"title": "視頻播放智慧控制",
 				"note": {
-					"supportedList": "支援的播放程式如下：<br>&bull; Netflix <br>&bull; 電影與電視 <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
+					"supportedList": "支援的播放程式如下：<br>&bull; 電影與電視 <br>&bull; 5K Player <br>&bull; GOM Player <br>&bull; VLC Player <br>&bull; PotPlayer",
 					"note": "注意：不支援 Web 視訊播放程式。"
 				},
 				"desc": "此功能將在您離開電腦時暫停視訊，並在您回來時繼續播放視訊。",
