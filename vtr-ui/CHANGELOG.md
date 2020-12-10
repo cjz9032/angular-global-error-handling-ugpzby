@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.26](https://bitbucket.tc.lenovo.com///compare/v1.9.25...v1.9.26) (2020-12-10)
+
+
+### Features
+
+* **About:** VAN-23616 change the copyright to 2021 ([8471686](https://bitbucket.tc.lenovo.com///commit/8471686636ced629df7e0ae6e3f809e7eba086ba))
+
+
+### Bug Fixes
+
+* **SystemUpdate:** VAN-24094 getSystemVolumeSpace before every install ([d52511f](https://bitbucket.tc.lenovo.com///commit/d52511f6f2ab8f6ddbf33ee241f9e9f1932ff256))
+
 ### [1.9.25](https://bitbucket.tc.lenovo.com///compare/v1.9.24...v1.9.25) (2020-12-09)
 
 
