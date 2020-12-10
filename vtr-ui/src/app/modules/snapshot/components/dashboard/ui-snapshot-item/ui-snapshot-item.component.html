@@ -29,18 +29,17 @@
 			<!-- Shows button to update after modules get loaded -->
 			<ng-template #updateButton>
 				<vtr-ui-hyperlink-button
-					(click)="updateSnapshot()"
 					class="hyperlink-container"
 					[metricsParent]="'Snapshot'"
 					[metricsItem]="'Snapshot.UpdateSnapshotModule'"
-					(hyperlinkClick)="'#'"
 					[class]="'update-btn'"
 					linkId="snapshot-update-btn"
 					hyperlinkStyle="xs-blue-lighter"
 					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
 					[disableTooltip]="true"
 					[isDisabled]="!isUpdateEnabled()"
-					>
+					(hyperlinkClick)="updateSnapshot()"
+				>
 				</vtr-ui-hyperlink-button>
 			</ng-template>
 
