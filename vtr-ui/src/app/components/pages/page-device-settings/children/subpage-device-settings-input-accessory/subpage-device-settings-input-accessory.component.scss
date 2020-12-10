@@ -238,30 +238,6 @@
 			font-size: 1.3rem;
 			font-weight: $weight_bold;
 			padding-top: 0.5rem;
-
-			a {
-				padding-bottom: 0.2rem;
-				border-bottom: 0.2rem solid $main;
-				&:hover {
-					text-decoration: none;
-					color: $main;
-				}
-				@media #{$black-on-white} {
-					@include hyperlink-blue-white;
-				}
-				@media #{$white-on-black} {
-					@include hyperlink-yellow-black;
-				}
-
-				// span {
-				// 	padding-bottom: .2rem;
-				// 	border-bottom: .2rem solid $main;
-				// }
-
-				&:focus {
-					outline-offset: 0;
-				}
-			}
 		}
 	}
 

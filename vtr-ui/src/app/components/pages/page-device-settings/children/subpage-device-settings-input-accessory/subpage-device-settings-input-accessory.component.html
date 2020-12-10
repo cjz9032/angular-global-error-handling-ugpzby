@@ -282,6 +282,7 @@
 									*ngIf="isTouchPadVisible">
 									<a id="inputAccessories.controlOptions.touchpad"
 										role="link"
+										class="hyperlink-button"
 										(click)='launchProtocol("ms-settings:devices-touchpad")'
 										(keydown.enter)='launchProtocol("ms-settings:devices-touchpad")'
 										tabindex="0">{{'device.deviceSettings.inputAccessories.controlOptions.control1' | translate}}
@@ -291,6 +292,7 @@
 									*ngIf="isMouseVisible">
 									<a *ngIf="machineType === 1"
 										role="link"
+										class="hyperlink-button"
 										id="inputAccessories.controlOptions.trackpoint"
 										(click)='launchProtocol("ms-settings:mousetouchpad")'
 										(keydown.enter)='launchProtocol("ms-settings:mousetouchpad")'
@@ -299,6 +301,7 @@
 									</a>
 									<a *ngIf="machineType !== 1"
 										role="link"
+										class="hyperlink-button"
 										[tabindex]="isMouseVisible && machineType !== 1 ? 0 : -1"
 										id="inputAccessories.controlOptions.mousecontrol"
 										(click)='launchProtocol("ms-settings:mousetouchpad")'
