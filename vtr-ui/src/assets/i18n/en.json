@@ -939,7 +939,10 @@
 					"summary": "Please think about the attributes that are most important to you when selecting a laptop/notebook for personal use.",
 					"question": "Please select the attribute that is more important.",
 					"question1": {
-						"options": ["Price", "Manufacturer / Brand Name"]
+						"options": [
+							"Price",
+							"Manufacturer / Brand Name"
+						]
 					},
 					"question2": {
 						"options": [
@@ -948,10 +951,16 @@
 						]
 					},
 					"question3": {
-						"options": ["Graphics Capabilities", "Screen Size"]
+						"options": [
+							"Graphics Capabilities",
+							"Screen Size"
+						]
 					},
 					"question4": {
-						"options": ["Screen Size", "Weight"]
+						"options": [
+							"Screen Size",
+							"Weight"
+						]
 					}
 				},
 				"page2": {
@@ -3175,6 +3184,7 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "All is well with your ",
+			"titleScanCanceled":"The rating was 0 because the last scan was canceled. Please click \"BACK TO HOME\" and scan again",
 			"serialNumber": "Serial number: ",
 			"subTitle": "You are subscribed to Lenovo Smart Performance Service",
 			"description": "We are frequently scanning and fixing your computer for PC performance, internet performance, and malware issues proactively. You are adequately covered. You can also initiate performance check on-demand by clicking on the scan now button.",
