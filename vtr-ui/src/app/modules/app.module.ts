@@ -45,6 +45,7 @@ import { faGift } from '@fortawesome/pro-light-svg-icons/faGift';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { ChunkLoadErrorHandler } from '../services/error-handler/global.service';
@@ -218,5 +219,6 @@ export class AppModule {
 		library.addIcons(faTimes);
 		library.addIcons(fasHeart);
 		library.addIcons(faQuoteLeft);
+		library.addIcons(faTrashAlt);
 	}
 }

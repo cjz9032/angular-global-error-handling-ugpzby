@@ -37,7 +37,8 @@
 								id="{{'su_history_item_'+item.packageID}}">
 								<div class="container-fluid">
 									<div class="row">
-										<div class="col col-11 item-text">
+										<div class="col item-text"
+											[ngClass]="{'col-11': !enableDelete, 'col-10 col-xs-10 col-sm-11 col-md-11 col-lg-10 col-xl-11 ': enableDelete}">
 											<div class="row">
 												<div class="col status-icon">
 													<div class="icon-check"
@@ -104,19 +105,34 @@
 											</div>
 
 										</div>
-										<div class="col col-1 text-right">
-											<div class="expand">
-												<a (keydown.enter)="toggleExpand(item.packageID)"
-													(click)="toggleExpand(item.packageID)"
-													id="{{'su_installation_update_expand_'+item.packageID}}"
-													role="button"
-													[attr.aria-label]="item.packageID === expandedRecordId ? 'collapse' : 'expand'"
-													tabindex="0">
-													<fa-icon *ngIf="expandedRecordId!==item.packageID"
-														[icon]="['fas', 'plus-circle']"></fa-icon>
-													<fa-icon *ngIf="expandedRecordId===item.packageID"
-														[icon]="['fas', 'minus-circle']"></fa-icon>
-												</a>
+										<div class="col"
+											[ngClass]="{'col-1': !enableDelete, 'col-2 col-xs-2 col-sm-1 col-md-1 col-lg-2 col-xl-1': enableDelete}">
+											<div class="d-flex"
+												[ngClass]="{'justify-content-end': !enableDelete, 'justify-content-around': enableDelete}">
+												<div class="expand"
+													*ngIf="enableDelete">
+													<a (keydown.enter)="onDeleteClick(item)"
+														(click)="onDeleteClick(item)"
+														id="{{'su_history_delete_'+item.packageID}}"
+														role="button"
+														aria-label="delete"
+														tabindex="0">
+														<fa-icon [icon]="['far', 'trash-alt']"></fa-icon>
+													</a>
+												</div>
+												<div class="expand">
+													<a (keydown.enter)="toggleExpand(item.packageID)"
+														(click)="toggleExpand(item.packageID)"
+														id="{{'su_installation_update_expand_'+item.packageID}}"
+														role="button"
+														[attr.aria-label]="item.packageID === expandedRecordId ? 'collapse' : 'expand'"
+														tabindex="0">
+														<fa-icon *ngIf="expandedRecordId!==item.packageID"
+															[icon]="['fas', 'plus-circle']"></fa-icon>
+														<fa-icon *ngIf="expandedRecordId===item.packageID"
+															[icon]="['fas', 'minus-circle']"></fa-icon>
+													</a>
+												</div>
 											</div>
 										</div>
 									</div>
