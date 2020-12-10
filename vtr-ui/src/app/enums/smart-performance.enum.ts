@@ -76,3 +76,10 @@ export enum SPPriceCode {
 	THREEYEAR = '5WS0X58672',
 	FOURYEAR = '5WS0X58669',
 }
+
+export enum ScanningState {
+	NotStart = 0,
+	Running = 1,
+	Canceled = 2,
+	Completed = 3
+}
