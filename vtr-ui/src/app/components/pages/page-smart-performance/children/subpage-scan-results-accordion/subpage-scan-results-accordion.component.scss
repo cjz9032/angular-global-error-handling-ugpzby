@@ -272,7 +272,6 @@
 								}
 
 								.icon-box {
-
 									.icomoon {
 										color: $menu_hover;
 									}
@@ -326,7 +325,6 @@
 						.scanned-area {
 							font-weight: $weight_bold;
 						}
-
 					}
 
 					.scanned-list {
@@ -334,7 +332,7 @@
 							padding: 0.5rem;
 
 							.scan-detail-item {
-								border: 0.1rem solid #E2E2E2;
+								border: 0.1rem solid #e2e2e2;
 								padding: 3rem 2rem;
 								border-radius: 0.5rem;
 								width: 100%;
@@ -346,7 +344,11 @@
 									height: 2rem;
 									border: 0.2rem solid $go_dark;
 									text-align: center;
-									background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+									background: linear-gradient(
+										$gradient_angle,
+										$go 0%,
+										$go_light 100%
+									);
 									background-color: $go_dark;
 									flex-shrink: 0;
 									@include high-contrast-status-icon-and-badge;
@@ -377,7 +379,9 @@
 								}
 
 								@media #{$breakpoint_sm} {
-									font-size: $fontsize_xs2;
+									p {
+										font-size: $fontsize_xs2;
+									}
 								}
 							}
 						}
