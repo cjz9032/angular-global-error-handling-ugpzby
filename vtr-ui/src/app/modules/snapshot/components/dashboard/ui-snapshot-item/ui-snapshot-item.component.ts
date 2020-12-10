@@ -15,8 +15,8 @@ import { SnapshotService } from '../../../services/snapshot.service';
 export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 	@Input() name: string;
 	@Input() component: any;
-	@Input() index: number;
-	@Input() isLastElement: number;
+	@Input() componentIndex: number;
+	@Input() isLastElement: boolean;
 
 	public detailsExpanded: boolean;
 
