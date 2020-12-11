@@ -4,6 +4,11 @@
 			<input type="checkbox"
 				class="custom-control-input"
 				id="select-all-checkbox"
+				vtrMetrics
+				metricsParent="Page.SystemUpdate"
+				metricsItem="AvailableUpdates.SelectAll"
+				[metricsValue]="isSelectAll"
+				metricsEvent="FeatureClick"
 				[disabled]="disableSelectAll"
 				[checked]="isSelectAll"
 				name="'select-all-checkbox'"
