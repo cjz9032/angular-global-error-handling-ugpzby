@@ -1,4 +1,25 @@
 <div class="vtr-available-updates">
+	<div class="row select-all" *ngIf="!isUpdateDownloading && !isInstallationCompleted">
+		<div class="custom-checkbox custom-control">
+			<input type="checkbox"
+				class="custom-control-input"
+				id="select-all-checkbox"
+				vtrMetrics
+				metricsParent="Page.SystemUpdate"
+				metricsItem="AvailableUpdates.SelectAll"
+				[metricsValue]="isSelectAll"
+				metricsEvent="FeatureClick"
+				[disabled]="disableSelectAll"
+				[checked]="isSelectAll"
+				name="'select-all-checkbox'"
+				(change)="onSelectAllChange($event)"/>
+			<label class="custom-control-label"
+				id="select-all-text"
+				for="select-all-checkbox"
+				role="text">{{'systemUpdates.banner.selectAll' | translate}}</label>
+		</div>
+	</div>
+	<div class="row-seperator" *ngIf="!isUpdateDownloading && !isInstallationCompleted"></div>
 	<div class="row">
 		<div class="col">
 			<div class="updates-lists-container">

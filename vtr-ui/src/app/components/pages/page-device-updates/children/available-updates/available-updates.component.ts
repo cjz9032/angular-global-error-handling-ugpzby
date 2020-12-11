@@ -2,6 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AvailableUpdateDetail } from 'src/app/data-models/system-update/available-update-detail.model';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
+import { Subscription } from 'rxjs';
+import { CommonService } from 'src/app/services/common/common.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 
 @Component({
 	selector: 'vtr-available-updates',
@@ -44,13 +48,25 @@ export class AvailableUpdatesComponent implements OnInit {
 	public isUpdateSelected = false;
 
 	public isCollapsed = true;
+	public isSelectAll = false;
+	public disableSelectAll = false;
 
 	private mIsInstallationCompleted = false;
 	private mIgnoredUpdates: AvailableUpdateDetail[];
+	private notificationSubscription: Subscription;
 
 	public UpdateInstallTitleId = UpdateInstallTitleId;
 
-	constructor(private systemUpdateService: SystemUpdateService) {}
+	constructor(
+		private systemUpdateService: SystemUpdateService,
+		private commonService: CommonService,
+		) {
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
+		);
+	}
 
 	public criticalUpdatesIcon = 'assets/icons/Icon_Critical_Update.svg';
 	public recommendedUpdatesIcon = 'assets/icons/Icon_Recommended_Update.svg';
@@ -84,17 +100,52 @@ export class AvailableUpdatesComponent implements OnInit {
 		this.installSelectedUpdate.emit(event);
 	}
 
+	public onSelectAllChange($event: any) {
+		const isSelectedAll = $event.target.checked;
+		this.isSelectAll = isSelectedAll;
+		this.systemUpdateService.toggleSelectAllUpdates(isSelectedAll);
+		this.checkSelectedUpdateStatus();
+	}
+
 	public onCheckChange($event: any) {
 		this.checkChange.emit($event);
 		this.checkSelectedUpdateStatus();
+		this.checkSelectAllStatus();
 	}
 
 	public onIgnoreUpdate($event: any) {
 		this.ignoreUpdate.emit($event);
+		this.checkSelectAllStatus();
 	}
 
 	public onToggle() {
 		this.isCollapsed = !this.isCollapsed;
+	}
+
+	private onNotification(notification) {
+		if (notification) {
+			const { type, payload } = notification;
+			switch (type) {
+				case UpdateProgress.IgnoredUpdates:
+					this.checkSelectAllStatus();
+					break;
+			}
+		}
+	}
+
+	private checkSelectAllStatus() {
+		let selectAll = true;
+		let unIgnoredUpdates = 0;
+		this.systemUpdateService.updateInfo.updateList.forEach((update) => {
+			if (!update.isIgnored) {
+				unIgnoredUpdates++;
+			}
+			if (!update.isIgnored && !update.isSelected) {
+				selectAll = false;
+			}
+		});
+		this.disableSelectAll = unIgnoredUpdates === 0;
+		this.isSelectAll = !this.disableSelectAll && selectAll;
 	}
 
 	private checkSelectedUpdateStatus() {
