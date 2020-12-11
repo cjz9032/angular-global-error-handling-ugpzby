@@ -21,6 +21,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import sha256 from 'crypto-js/sha256';
 import { DeviceService } from '../../../../../services/device/device.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { ForteClientService } from './forte-client.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -92,6 +93,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	canShowMicrophoneOptimization = false;
 
+	newForteDriver = false;
+
 	constructor(
 		private audioService: AudioService,
 		private dashboardService: DashboardService,
@@ -101,7 +104,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private batteryService: BatteryDetailService,
 		private localCacheService: LocalCacheService,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		private forteClientService: ForteClientService
 	) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
@@ -153,6 +157,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.microphnePermissionHandler,
 				false
 			);
+			this.newForteDriver = this.forteClientService.forteClient.isForteHSASupport
+				&& typeof this.forteClientService.forteClient.isClassicLayout !== 'undefined'
+				&& !this.forteClientService.forteClient.isClassicLayout;
+			this.logger.info(`Forte driver is new?`, this.newForteDriver);
 		}
 		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
 		this._isInMicrophoneOptimizationBlockList().then((blocked) => {
