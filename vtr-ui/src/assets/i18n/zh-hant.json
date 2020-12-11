@@ -1710,7 +1710,7 @@
 						"dropDown": {
 							"seconds": "秒",
 							"minute": "分鐘",
-							"minutes": "分钟",
+							"minutes": "分鐘",
 							"alwaysOn": "保持開啟",
 							"never": "永不",
 							"halfTime": "顯示器關閉計時器的一半時間",
