@@ -20,6 +20,7 @@ export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 
 	public detailsExpanded: boolean;
 
+	public array = Array;
 	public itemsAttributes = new Array();
 	public snapshotStatus: any;
 

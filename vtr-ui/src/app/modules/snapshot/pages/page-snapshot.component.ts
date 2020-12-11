@@ -5,6 +5,7 @@ import { FeatureContent } from 'src/app/data-models/common/feature-content.model
 import { ContentActionType } from 'src/app/enums/content.enum';
 import { SnapshotService } from 'src/app/modules/snapshot/services/snapshot.service';
 import { SnapshotStatus } from '../enums/snapshot.enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-page-snapshot',
@@ -17,7 +18,8 @@ export class PageSnapshotComponent implements OnInit, OnDestroy {
 	constructor(
 		private translate: TranslateService,
 		private commonService: CommonService,
-		private snapshotService: SnapshotService
+		private snapshotService: SnapshotService,
+		private loggerService: LoggerService
 	) {}
 
 	ngOnInit(): void {
@@ -39,20 +41,17 @@ export class PageSnapshotComponent implements OnInit, OnDestroy {
 			this.snapshotService.snapshotStatus = SnapshotStatus.fullSnapshotInProgress;
 
 			const componentSnapshotPromises = [];
-			this.snapshotService.getSoftwareComponentsList().forEach((key) => {
-				componentSnapshotPromises.push(this.snapshotService.getCurrentSnapshotInfo(key));
-			});
 
-			this.snapshotService.getHardwareComponentsList().forEach((key) => {
+			this.snapshotService.getAllComponentsList().forEach((key) => {
 				componentSnapshotPromises.push(this.snapshotService.getCurrentSnapshotInfo(key));
 			});
 
 			Promise.all(componentSnapshotPromises)
 				.then(() => {
-					// TBD. Something needed here?
+					this.loggerService.info('Success on all promises');
 				})
 				.catch((error) => {
-					// TBD. Something needed here?
+					this.loggerService.error(`Failure requesting snapshot data: ${error}`);
 				})
 				.finally(() => {
 					this.snapshotService.snapshotStatus = SnapshotStatus.snapshotCompleted;

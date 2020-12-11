@@ -27,11 +27,11 @@ export class SnapshotService {
 		this.pvtSnapshotStatus = value;
 	}
 
-	constructor(shellService: VantageShellService, private logger: LoggerService) {
+	constructor(shellService: VantageShellService, private loggerService: LoggerService) {
 		this.snapshotBridge = shellService.getSnapshot();
 
 		if (!this.snapshotBridge) {
-			throw new Error('Error: Invalid SnapshotComposer.');
+			throw new Error('Error: Invalid Snapshot Bride!');
 		}
 
 		this.initEmptySnapshot();
@@ -47,6 +47,10 @@ export class SnapshotService {
 	}
 
 	public async updateBaselineInfo(componentName: string) {}
+
+	public getAllComponentsList() {
+		return this.getSoftwareComponentsList().concat(this.getHardwareComponentsList());
+	}
 
 	public getSoftwareComponentsList() {
 		return SnapshotSoftwareComponents.values();
@@ -70,19 +74,8 @@ export class SnapshotService {
 
 	private initEmptySnapshot() {
 		this.pvtSnapshotInfo = {};
-		this.getSoftwareComponentsList().forEach((key) => {
-			this.pvtSnapshotInfo[key] = {
-				status: SnapshotComponentStatus.inProgress,
-				info: {
-					BaselineDate: '',
-					LastSnapshotDate: '',
-					IsDifferent: false,
-					Items: [],
-				},
-			};
-		});
 
-		this.getHardwareComponentsList().forEach((key) => {
+		this.getAllComponentsList().forEach((key) => {
 			this.pvtSnapshotInfo[key] = {
 				status: SnapshotComponentStatus.inProgress,
 				info: {
@@ -113,6 +106,10 @@ export class SnapshotService {
 			this.pvtSnapshotInfo[componentName].info = componentSnapshot;
 			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
 		} catch (error) {
+			this.loggerService.error(
+				`Error ${error} during request for snapshot data from ${componentName}`
+			);
+
 			// need to think better how to deal with errors
 			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.error;
 		}

@@ -5,6 +5,7 @@ import {
 	SnapshotSoftwareComponents,
 	SnapshotStatus,
 } from 'src/app/modules/snapshot/enums/snapshot.enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SnapshotService } from '../../services/snapshot.service';
 import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.component';
 
@@ -28,7 +29,11 @@ export class SnapshotHeaderComponent implements OnInit {
 		[SnapshotStatus.notStarted]: 'titleNotStarted',
 	};
 
-	constructor(private snapshotService: SnapshotService, private modalService: NgbModal) {
+	constructor(
+		private snapshotService: SnapshotService,
+		private loggerService: LoggerService,
+		private modalService: NgbModal
+	) {
 		this.snapshotInfo = {
 			hardwareList: this.snapshotService.getHardwareComponentsList(),
 			softwareList: this.snapshotService.getSoftwareComponentsList(),
@@ -40,23 +45,17 @@ export class SnapshotHeaderComponent implements OnInit {
 	onTakeSnapshot() {
 		this.snapshotService.snapshotStatus = SnapshotStatus.fullSnapshotInProgress;
 
-		// Quick implementation, just for test
 		const componentSnapshotPromises = [];
-
-		SnapshotSoftwareComponents.values().forEach((key) => {
-			componentSnapshotPromises.push(this.snapshotService.updateSnapshotInfo(key));
-		});
-
-		SnapshotHardwareComponents.values().forEach((key) => {
+		this.snapshotService.getAllComponentsList().forEach((key) => {
 			componentSnapshotPromises.push(this.snapshotService.updateSnapshotInfo(key));
 		});
 
 		Promise.all(componentSnapshotPromises)
 			.then(() => {
-				// TBD. Something needed here?
+				this.loggerService.info('Success on all promises');
 			})
 			.catch((error) => {
-				// TBD. Something needed here?
+				this.loggerService.error(`Failure requesting snapshot data: ${error}`);
 			})
 			.finally(() => {
 				this.snapshotService.snapshotStatus = SnapshotStatus.snapshotCompleted;

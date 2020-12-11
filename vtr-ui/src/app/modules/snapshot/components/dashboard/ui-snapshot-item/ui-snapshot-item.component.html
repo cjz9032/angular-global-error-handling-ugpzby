@@ -91,7 +91,7 @@
 								<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
 									{{ property.CurrentValue }}</td>
 							</tr>
-							<tr *ngIf="values.SubDevices != null && values.SubDevices != undefined && values.SubDevices.length > 0">
+							<tr *ngIf="array.isArray(values.SubDevices) && values.SubDevices.length > 0">
 								<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: values.SubDevices }"></ng-container>
 							</tr>
 							<tr class="table-info-separator" aria-hidden="true"></tr>
