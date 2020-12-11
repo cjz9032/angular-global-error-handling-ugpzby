@@ -19,19 +19,19 @@ import { ColorWheelStatus } from './../../../enums/color-wheel-status.enum';
 	styleUrls: ['./ui-color-wheel.component.scss'],
 })
 export class UiColorWheelComponent implements OnInit, OnChanges {
-	colorWheelStatus = ColorWheelStatus;
 	@ViewChild('colorWheel', { static: true }) canvasElement: ElementRef;
-	color: any = [255, 0, 0];
-	backColor: String = '#ff0000';
 	@Output() colorChanged = new EventEmitter<any>();
 	@Output() colorEffectChanged = new EventEmitter<any>();
 	@Input() inRGB: any;
 	@Input() inHEX: any;
-	@Input() btnStatus: string = this.colorWheelStatus.apply;
-	@Input() showOverlay: Boolean;
+	@Input() btnStatus: string = ColorWheelStatus.apply;
+	@Input() showOverlay: boolean;
 	@Input() defaultLang: any;
 	@Input() automationId: string;
 	colorWheel: any;
+	colorWheelStatus = ColorWheelStatus;
+	color: any = [255, 0, 0];
+	backColor = '#ff0000';
 
 	constructor() {}
 
@@ -46,7 +46,7 @@ export class UiColorWheelComponent implements OnInit, OnChanges {
 			handleDiameter: 16,
 			wheelReflectsSaturation: false,
 
-			onChange: function (color) {
+			onChange: (color) => {
 				that.backColor = color.hex;
 				that.color = color.rgb;
 				that.btnStatus = that.colorWheelStatus.apply;

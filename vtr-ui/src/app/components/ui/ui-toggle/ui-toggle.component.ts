@@ -27,11 +27,11 @@ export class UiToggleComponent implements OnInit, OnDestroy, OnChanges {
 	@Input() toggleId: any;
 	@Input() focus = false;
 	@Input() tabIndexNum = 1;
+	@Input() parentId: string;
 	public currentEvent: any;
 	public disabled = true;
 	public timer = 0;
 	uiSubscription: Subscription;
-	@Input() parentId: string;
 
 	constructor(public commonService: CommonService) {}
 

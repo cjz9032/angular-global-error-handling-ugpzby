@@ -3,6 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UiColorPickerComponent } from './ui-color-picker.component';
 import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
+import { By } from '@angular/platform-browser';
 
 const presetColorList = [
 	{ color: 'FFECE6', isChecked: true },
@@ -20,8 +22,8 @@ describe('UiColorPickerComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiColorPickerComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+				GAMING_DATA.mockPipe({ name: 'sanitize' }),
 			],
 			providers: [NgbModal, NgbActiveModal],
 			schemas: [NO_ERRORS_SCHEMA],
@@ -29,12 +31,25 @@ describe('UiColorPickerComponent', () => {
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiColorPickerComponent);
 		component = fixture.componentInstance;
+		component.color = '';
 		fixture.detectChanges();
 	}));
 
-	it('should create', () => {
+	it('should create', fakeAsync(() => {
 		expect(component).toBeTruthy();
-	});
+
+		fixture.detectChanges();
+		component.isSliderOut = false;
+		const button = document.getElementById('menu-main-btn-navbar-toggler');
+		if (button) {
+			button.click();
+			fixture.detectChanges();
+		}
+		fixture.whenStable().then(() => {
+			expect(component.isColorPicker).toBe(false);
+		});
+		tick(100);
+	}));
 
 	it('should hide color picker when resize', () => {
 		component.onResize({});
@@ -133,16 +148,3 @@ describe('UiColorPickerComponent', () => {
 		expect(component.ngOnChanges({})).toBeUndefined();
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	) as any;
-}
