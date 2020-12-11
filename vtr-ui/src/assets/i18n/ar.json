@@ -938,7 +938,8 @@
 				"cameraPrivacyNote": "لا يتمتع Lenovo Vantage بالوصول إلى الكاميرا."
 			},
 			"threshold": "حد",
-			"conservation": "ترشيد الاستهلاك"
+			"conservation": "ترشيد الاستهلاك",
+			"more": "مزيد من الإعدادات"
 		},
 		"systemStatus": {
 			"title": "حالة النظام",

@@ -1048,7 +1048,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage n'a pas accès à la caméra."
 			},
 			"threshold": "Seuil",
-			"conservation": "Conservation"
+			"conservation": "Conservation",
+			"more": "PLUS DE RÉGLAGES"
 		},
 		"systemStatus": {
 			"title": "État du système",

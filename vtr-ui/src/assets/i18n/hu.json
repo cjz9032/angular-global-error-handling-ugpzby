@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "A Lenovo Vantage nem fér hozzá a kamerához."
 			},
 			"threshold": "Küszöb",
-			"conservation": "Tárolás"
+			"conservation": "Tárolás",
+			"more": "TOVÁBBI BEÁLLÍTÁSOK"
 		},
 		"systemStatus": {
 			"title": "Rendszerállapot",

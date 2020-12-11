@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Το Lenovo Vantage δεν έχει πρόσβαση στην κάμερα."
 			},
 			"threshold": "Κατώφλι",
-			"conservation": "Συντήρηση"
+			"conservation": "Συντήρηση",
+			"more": "ΠΕΡΙΣΣΟΤΕΡΕΣ ΡΥΘΜΙΣΕΙΣ"
 		},
 		"systemStatus": {
 			"title": "Κατάσταση συστήματος",

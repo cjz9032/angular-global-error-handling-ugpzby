@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage nemá přístup ke kameře."
 			},
 			"threshold": "Práh",
-			"conservation": "Ochrana baterie"
+			"conservation": "Ochrana baterie",
+			"more": "DALŠÍ NASTAVENÍ"
 		},
 		"systemStatus": {
 			"title": "Stav systému",

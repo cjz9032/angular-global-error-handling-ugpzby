@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage nema pristup kameri."
 			},
 			"threshold": "Prag",
-			"conservation": "Ušteda"
+			"conservation": "Ušteda",
+			"more": "DODATNE POSTAVKE"
 		},
 		"systemStatus": {
 			"title": "Status sistema",

@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage не надано доступ до камери."
 			},
 			"threshold": "Граничне значення",
-			"conservation": "Збереження"
+			"conservation": "Збереження",
+			"more": "ІНШІ НАСТРОЙКИ"
 		},
 		"systemStatus": {
 			"title": "Стан системи",

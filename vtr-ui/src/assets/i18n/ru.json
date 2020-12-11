@@ -1048,7 +1048,8 @@
 				"cameraPrivacyNote": "У Lenovo Vantage нет доступа к камере."
 			},
 			"threshold": "Пороговое значение",
-			"conservation": "Экономия энергии"
+			"conservation": "Экономия энергии",
+			"more": "ДРУГИЕ НАСТРОЙКИ"
 		},
 		"systemStatus": {
 			"title": "Состояние системы",

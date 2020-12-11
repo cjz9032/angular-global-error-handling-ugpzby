@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Aplikacja Lenovo Vantage nie ma dostępu do kamery."
 			},
 			"threshold": "Próg",
-			"conservation": "Oszczędzanie energii"
+			"conservation": "Oszczędzanie energii",
+			"more": "WIĘCEJ USTAWIEŃ"
 		},
 		"systemStatus": {
 			"title": "Stan systemu",

@@ -1047,7 +1047,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage がカメラにアクセスできません。"
 			},
 			"threshold": "しきい値",
-			"conservation": "保全"
+			"conservation": "保全",
+			"more": "詳細設定"
 		},
 		"systemStatus": {
 			"title": "システム状況",

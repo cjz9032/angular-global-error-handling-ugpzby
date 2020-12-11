@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage 沒有攝影機的存取權。"
 			},
 			"threshold": "臨界值",
-			"conservation": "省電"
+			"conservation": "省電",
+			"more": "其他設定"
 		},
 		"systemStatus": {
 			"title": "系統狀態",

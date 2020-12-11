@@ -1049,6 +1049,7 @@
 			"eyeCareMode": "Eye Care",
 			"threshold": "Threshold",
 			"conservation": "Conservation",
+			"more": "MORE SETTINGS",
 			"note": {
 				"microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
 				"cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera.",

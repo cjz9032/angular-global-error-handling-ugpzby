@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage heeft geen toegang tot de camera."
 			},
 			"threshold": "Drempel",
-			"conservation": "Behoud"
+			"conservation": "Behoud",
+			"more": "MEER INSTELLINGEN"
 		},
 		"systemStatus": {
 			"title": "Systeemstatus",
