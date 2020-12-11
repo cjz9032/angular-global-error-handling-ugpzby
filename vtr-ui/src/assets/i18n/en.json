@@ -2480,6 +2480,7 @@
 			"checkButton": "CHECK FOR UPDATES ",
 			"checkAgain": "Check Again",
 			"updateNow": "Update Now",
+			"selectAll": "Select all",
 			"checking": "Checking for updates",
 			"downloading": "Downloading updates",
 			"installing": "Installing updates",

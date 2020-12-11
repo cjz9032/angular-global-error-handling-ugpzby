@@ -589,6 +589,44 @@ export class SystemUpdateService {
 		}
 	}
 
+	public toggleSelectAllUpdates(isSelectAll: boolean) {
+		if (isSelectAll) {
+			this.updateInfo.updateList.forEach((update) => {
+				if (!update.isIgnored) {
+					update.isSelected = true;
+					this.selectDependedUpdates(update);
+				}
+			});
+		} else {
+			// unselect all unIgnored updates and depended updates
+			this.updateInfo.updateList.forEach((update) => {
+				if (!update.isIgnored || update.isDependency) {
+					update.isSelected = false;
+					update.isDependency = false;
+				}
+			});
+			// select depended updates if depended by selected ignored updates.
+			this.updateInfo.updateList.forEach((update) => {
+				if (update.isIgnored
+					&& update.isSelected) {
+					this.selectDependedUpdates(update);
+				}
+			});
+		}
+	}
+
+	private selectDependedUpdates(update: AvailableUpdateDetail) {
+		if (update.dependedPackageID) {
+			const dependedPackages = update.dependedPackageID.split(',');
+			this.selectDependedUpdate(
+				this.updateInfo.updateList,
+				dependedPackages,
+				update.isSelected,
+				update.packageID
+			);
+		}
+	}
+
 	public selectDependedUpdateForInstallAll(updateList: any) {
 		if (updateList && updateList.length > 0) {
 			updateList.forEach((update) => {
