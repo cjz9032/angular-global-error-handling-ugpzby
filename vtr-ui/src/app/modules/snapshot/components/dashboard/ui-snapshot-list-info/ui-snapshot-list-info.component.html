@@ -74,6 +74,7 @@
 			linkId="snapshot-select-all-components-link"
 			hyperlinkStyle="xs-300-blue-lighter"
 			class="hyperlink-container"
+			[vtrMetricEnabled]= false
 			(hyperlinkClick)="onSelectAll()"
 			[label]=" 'snapshot.select' | translate "
 			[disableTooltip]="true"
@@ -82,6 +83,7 @@
 		<vtr-ui-hyperlink-button
 			linkId="snapshot-deselect-all-components-link"
 			hyperlinkStyle="xs-300-blue-lighter"
+			[vtrMetricEnabled]= false
 			(hyperlinkClick)="onDeselectAll()"
 			[label]=" 'snapshot.deselect' | translate "
 			[disableTooltip]="true"
