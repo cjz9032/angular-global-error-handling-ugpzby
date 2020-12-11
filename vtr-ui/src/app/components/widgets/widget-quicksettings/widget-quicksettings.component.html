@@ -23,14 +23,14 @@
 							[switchId]="'microphone'"
 							[isBlocked]="!microphoneStatus.status || !microphoneStatus.permission"
 							(toggle)="onMicrophoneStatusToggle($event)"
-							[disable]="!(microphoneStatus.permission && microphoneStatus.available && quickSettingsWidget[0].state) || microPhoneGreyOut"
+							[disable]="!(microphoneStatus.permission && quickSettingsWidget[0].state) || microPhoneGreyOut"
 							[isLoading]="microphoneStatus.isLoading"
 							[buttonRole]="'button'">
 						</vtr-widget-switch-icon>
 					</div>
 
 					<!-- camera privacy -->
-					<div *ngIf="cameraStatus.available">
+					<div *ngIf="cameraStatus.available || !cameraStatus.permission">
 						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-Camera'"
 							[offIconDefinition]="'icomoon icomoon-Camera-slash'"
 							[value]="!cameraStatus.status && cameraStatus.permission && !cameraPrivacyGreyOut"
@@ -42,7 +42,7 @@
 							[isBlocked]="cameraStatus.status || !cameraStatus.permission"
 							[isCamera]="true"
 							(toggle)="onCameraStatusToggle($event)"
-							[disable]="!(cameraStatus.available && cameraStatus.permission && quickSettingsWidget[1].state) || cameraPrivacyGreyOut"
+							[disable]="!(cameraStatus.permission && quickSettingsWidget[1].state) || cameraPrivacyGreyOut"
 							[isLoading]="cameraStatus.isLoading"
 							[buttonRole]="'button'">
 						</vtr-widget-switch-icon>
@@ -67,170 +67,12 @@
 							[buttonRole]="'link'">
 						</vtr-widget-switch-icon>
 					</div>
-					<!-- <div *ngIf="vantageToolbarStatus.available"
-						class="">
-						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
-							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
-							[value]="!vantageToolbarStatus.status"
-							[title]="'dashboard.quickSettings.cameraPrivacy' | translate"
-							metricsItem="camera"
-							id="qs-switch-camera"
-							aria-label="qs-switch-camera"
-							[switchId]="'camera'"
-							[isBlocked]="vantageToolbarStatus.status"
-							[isCamera]="true"
-							(toggle)="onToolbarStatusToggle($event)"
-							[disable]="!vantageToolbarStatus.available"
-							[isLoading]="vantageToolbarStatus.isLoading">
-						</vtr-widget-switch-icon>
-					</div> -->
-					<!-- <div class="">
-						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Eye2x'"
-							[offIconDefinition]="'icomoon icomoon-FA-Eye-Slash2x'"
-							[title]="'dashboard.quickSettings.eyeCareMode' | translate"
-							metricsItem="eyeCareMode"
-							id="qs-switch-eyeCareMode"
-							aria-label="qs-switch-eyeCareMode"
-							[switchId]="'eyeCareMode'"
-							[value]="eyeCareModeStatus.status"
-							[isBlocked]="!eyeCareModeStatus.status"
-							(toggle)="onEyeCareModeToggle($event)"
-							[disable]="!(eyeCareModeStatus.available && quickSettingsWidget[2].state)"
-							[isLoading]="eyeCareModeStatus.isLoading"></vtr-widget-switch-icon>
-					</div> -->
-					<!-- <div class="" *ngIf="machineType ==1">
-						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Battery-three-quarters2x'"
-							[offIconDefinition]="'icomoon icomoon-Quick-settings_Charge-threshold-off'"
-							[title]="'dashboard.quickSettings.threshold' | translate"
-							id="qs-switch-threshold"
-							(toggle)="showBatteryThresholdsettings(!thresholdStatus)"
-							aria-label="qs-switch-threshold"
-							[switchId]="'threshold'"
-							[value]="thresholdStatus"
-							[isBlocked]="!thresholdStatus"
-							[disable]="batteryInfo && batteryInfo.length > 0 && !batteryInfo[0].isCapable"
-							[isLoading]="thresholdLoadingStatus">
-						</vtr-widget-switch-icon>
-					</div>
-					<div class="" *ngIf="machineType ==0">
-						<vtr-widget-switch-icon [iconDefinition]="'icomoon icomoon-FA-Battery-three-quarters2x'"
-							[offIconDefinition]="'icomoon icomoon-Quick-settings_Charge-threshold-off'"
-							[title]="'dashboard.quickSettings.conservation' | translate"
-							id="qs-switch-conservation"
-							aria-label="qs-switch-conservation"
-							[switchId]="'conservation'"
-							(toggle)="setConservationModeStatusIdeaNoteBook(!conservationModeStatus.status)"
-							[value]="conservationModeStatus.status"
-							[disable]="!conservationModeStatus.available"
-							[isBlocked]="!conservationModeStatus.status"
-							[isLoading]="false">
-						</vtr-widget-switch-icon>
-					</div> -->
 				</div>
 			</div>
 		</div>
 
-		<div *ngIf="!microphoneStatus.isLoading || !cameraStatus.isLoading">
-			<!-- <div *ngIf="(!microphoneStatus.permission && cameraStatus.permission) || (!microphoneStatus.permission && !isCameraPrivacyCacheExist && !microPhoneGreyOut && cameraPrivacyGreyOut)" -->
-			<!-- microphone permission -->
-			<div *ngIf="microphoneStatus.available && (!microphoneStatus.permission)"
-				class="row permission-note mt-4">
-				<div class="col-12 p-3 d-flex">
-					<div class="col-1 pl-0 text-center">
-						<fa-icon [icon]="['fas', 'exclamation-circle']"
-							class="note-icon">
-						</fa-icon>
-					</div>
-					<div class="col-11 pr-0 pl-2">
-						<p class="mb-0 mt-auto"
-							id="qs-microphone-note"
-							attr.aria-label="qs-microphone-note">
-							{{'dashboard.quickSettings.note.microphoneNote' | translate}}
-						</p>
-						<button type="button"
-							class="btn btn-link privacy-button pl-0"
-							(click)="onClick('ms-settings:privacy-microphone')"
-							id="qs-microphone-access-link"
-							attr.aria-label="qs-microphone-access-link" role="link">
-							{{'dashboard.quickSettings.note.accessUrl' | translate}}
-						</button>
-					</div>
-				</div>
-			</div>
-
-
-			<!-- <div *ngIf="!cameraStatus.permission && !cameraStatus.isLoading && cameraStatus.available && microphoneStatus.permission && cameraNoAccessNoteShow" -->
-			<!-- camera permission -->
-			<!-- <div *ngIf="cameraStatus.available && !cameraStatus.permission && (!cameraStatus.isLoading) && (!(!microphoneStatus.permission && microphoneStatus.available)) && cameraNoAccessNoteShow"
-				class="row permission-note mt-4">
-				<div class="col-12 p-3 d-flex">
-					<div class="col-1 pl-0 text-center">
-						<fa-icon [icon]="['fas', 'exclamation-circle']"
-							class="note-icon">
-						</fa-icon>
-					</div>
-					<div class="col-11 pr-0 pl-2">
-						<p class="mb-0 mt-auto"
-							id="qs-camera-note"
-							attr.aria-label="qs-camera-note">
-							{{'dashboard.quickSettings.note.cameraPrivacyNote' | translate}}
-						</p>
-						<button type="button"
-							class="btn btn-link privacy-button pl-0"
-							(click)="onClick('ms-settings:privacy-webcam')"
-							id="qs-camera-access-link"
-							attr.aria-label="qs-camera-access-link" role="link">
-							{{'dashboard.quickSettings.note.accessUrl' | translate}}
-						</button>
-					</div>
-				</div>
-			</div> -->
-
-			<!-- <div *ngIf="!microphoneStatus.permission && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow" -->
-			<!-- microphone & camera permission -->
-			<!-- <div *ngIf="cameraStatus.available && microphoneStatus.available && (!microphoneStatus.permission) && !cameraStatus.permission && !cameraStatus.isLoading && cameraNoAccessNoteShow"
-				class="row permission-note mt-4">
-				<div class="col-12 p-3 d-flex">
-					<div class="col-1 pl-0 text-center">
-						<fa-icon [icon]="['fas', 'exclamation-circle']"
-							class="note-icon">
-						</fa-icon>
-					</div>
-					<div class="col-11 pr-0 pl-2"
-						*ngIf="!cameraStatus.available">
-						<div class="col-11 pr-0 pl-2">
-							<p class="mb-0 mt-auto"
-								id="qs-microphone-dt-machine-note"
-								attr.aria-label="qs-microphone-dt-machine-note">
-								{{'dashboard.quickSettings.note.microphoneNote' | translate}}
-							</p>
-							<button type="button"
-								class="btn btn-link privacy-button pl-0"
-								(click)="onClick('ms-settings:privacy-microphone')"
-								id="qs-microphone-dt-machine-access-ink"
-								attr.aria-label="qs-microphone-dt-machine-access-ink" role="link">
-								{{'dashboard.quickSettings.note.accessUrl' | translate}}
-							</button>
-						</div>
-					</div>
-					<div class="col-11 pr-0 pl-2"
-						*ngIf="cameraStatus.available">
-						<p class="mb-0 mt-auto"
-							id="qs-microphone-camera-note"
-							attr.aria-label="qs-microphone-camera-note">
-							{{'dashboard.quickSettings.note.microphoneAndcameraPrivacyNotes' | translate}}
-						</p>
-						<button type="button"
-							class="btn btn-link privacy-button pl-0"
-							(click)="onClick('ms-settings:privacy-webcam')"
-							id="qs-microphone-camera-access-ink"
-							attr.aria-label="qs-microphone-camera-access-ink" role="link">
-							{{'dashboard.quickSettings.note.accessUrl' | translate}}
-						</button>
-					</div>
-				</div>
-			</div> -->
-		</div>
+		<vtr-widget-quicksettings-note *ngIf="showMicrophonePermissionNote()" [note]="microphoneNote"></vtr-widget-quicksettings-note>
+		<vtr-widget-quicksettings-note *ngIf="showCameraPrivacyPermissionNote()" [note]="cameraPrivacyNote"></vtr-widget-quicksettings-note>
 
 		<!-- my device settings link -->
 		<div class="text-right text-uppercase mt-4">

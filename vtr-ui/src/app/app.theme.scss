@@ -78,6 +78,9 @@ $stop: #ea5545;
 $stop_light: #f97264;
 $stop_dark: #d94839;
 
+$alert_border: #D34503;
+$alert_bg: linear-gradient(122deg, #EB4B00, #EB7200);
+
 $shade_extradark: #1b1b1b;
 $shade_darkest: #333;
 $shade_darker: #6b6b6b;
@@ -963,4 +966,37 @@ $high-contrast-sky-blue: #81bbf5;
 	position: absolute;
 	left: 3.8rem;
 	top: 1.2rem;
+}
+
+
+%hyperlink-text {
+	font-size: $fontsize_xs;
+	color: $blueHyperLink;
+	text-decoration: underline;
+	display: inline-block;
+
+	&:hover {
+		cursor: pointer;
+		color: $blue-light;
+		outline: none !important;
+	}
+
+	&:focus {
+		color: $blue-light;
+		@include outline-blue;
+		outline-offset: 0.1rem;
+	}
+
+	&:active {
+		color: $menu_hover;
+		outline: none !important;
+	}
+
+	@media #{$black-on-white} {
+		@include hyperlink-blue-white;
+	}
+
+	@media #{$white-on-black} {
+		@include hyperlink-yellow-black;
+	}
 }

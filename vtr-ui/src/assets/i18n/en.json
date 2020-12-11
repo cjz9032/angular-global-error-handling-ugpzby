@@ -1051,8 +1051,8 @@
 			"conservation": "Conservation",
 			"more": "MORE SETTINGS",
 			"note": {
-				"microphoneNote": "Lenovo Vantage doesn't have access to Microphone.",
-				"cameraPrivacyNote": "Lenovo Vantage doesn't have access to Camera.",
+				"microphoneNote": "Lenovo Vantage doesn't have access to the microphone.",
+				"cameraPrivacyNote": "Lenovo Vantage doesn't have access to the camera.",
 				"microphoneAndcameraPrivacyNotes": "Lenovo Vantage doesn't have access to Camera and Microphone.",
 				"accessUrl": "Go to Windows settings to give access"
 			}

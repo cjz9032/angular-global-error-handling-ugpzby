@@ -17,6 +17,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { of } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 const featureStatus: FeatureStatus = {
 	available: true,
@@ -26,11 +27,10 @@ const featureStatus: FeatureStatus = {
 };
 
 describe('WidgetQuicksettingsComponent', () => {
-	let component: WidgetQuicksettingsComponent;
-	let fixture: ComponentFixture<WidgetQuicksettingsComponent>;
 	const routerMock = { params: of({ id: 1 }) };
 
 	beforeEach(waitForAsync(() => {
+		environment.isLoggingEnabled = false;
 		TestBed.configureTestingModule({
 			declarations: [WidgetQuicksettingsComponent],
 			imports: [
@@ -66,28 +66,17 @@ describe('WidgetQuicksettingsComponent', () => {
 			schemas: [NO_ERRORS_SCHEMA],
 		}).compileComponents();
 	}));
+
 	describe(':', () => {
-		let displayService: DisplayService;
-		let commonService: CommonService;
-		let logger: LoggerService;
-		let dashboardService: DashboardService;
-		function setup() {
-			const s = TestBed.createComponent(WidgetQuicksettingsComponent);
+		const setup = () => {
+			const fixture = TestBed.createComponent(WidgetQuicksettingsComponent);
 			const component = fixture.componentInstance;
-			displayService = fixture.debugElement.injector.get(DisplayService);
-			dashboardService = fixture.debugElement.injector.get(DashboardService);
+			const displayService = fixture.debugElement.injector.get(DisplayService);
+			const dashboardService = fixture.debugElement.injector.get(DashboardService);
+			const commonService = fixture.debugElement.injector.get(CommonService);
+			const logger = fixture.debugElement.injector.get(LoggerService);
 			return { fixture, component, commonService, logger, displayService, dashboardService };
-		}
-
-		beforeEach(() => {
-			fixture = TestBed.createComponent(WidgetQuicksettingsComponent);
-			component = fixture.componentInstance;
-			fixture.detectChanges();
-		});
-
-		it('should create', () => {
-			expect(component).toBeTruthy();
-		});
+		};
 
 		it('#stopMonitorForCamera should call', () => {
 			const { fixture, component, displayService } = setup();
@@ -111,14 +100,6 @@ describe('WidgetQuicksettingsComponent', () => {
 			fixture.detectChanges();
 			component.onCameraStatusToggle(true);
 			expect(dashboardService.setCameraStatus).toHaveBeenCalled();
-		});
-
-		it('#getCameraPermission should call', () => {
-			const { fixture, component, displayService } = setup();
-			spyOn(displayService, 'getCameraSettingsInfo');
-			fixture.detectChanges();
-			component.getCameraPermission();
-			expect(displayService.getCameraSettingsInfo).toHaveBeenCalled();
 		});
 
 		it('#startMonitorForCameraPrivacy should call', () => {
@@ -161,22 +142,63 @@ describe('WidgetQuicksettingsComponent', () => {
 			myPrivateSpy.call(component);
 			expect(dashboardService.getCameraStatus).toHaveBeenCalled();
 		});
+	});
 
-		it('#defaultAudioCaptureDeviceChanged should call', () => {
-			const { fixture, component, dashboardService } = setup();
-			const myPrivateSpy = spyOn<any>(
-				component,
-				'defaultAudioCaptureDeviceChanged'
-			).and.callThrough();
-			const myPrivateSpy1 = spyOn<any>(component, 'updateMicrophoneStatus').and.callThrough();
-			myPrivateSpy.call(component);
-			myPrivateSpy1.call(component);
+	describe('class', () => {
+		describe('Given Vantage does not have access to the Microphone', () => {
+			let fixture: ComponentFixture<WidgetQuicksettingsComponent>;
+			let component: WidgetQuicksettingsComponent;
+
+			beforeEach(() => {
+				fixture = TestBed.createComponent(WidgetQuicksettingsComponent);
+				component = fixture.componentInstance;
+				component.microphoneStatus = {
+					available: false,
+					status: false,
+					permission: false,
+					isLoading: false
+				};
+			});
+
+			it('When call showMicrophonePermissionNote, then should return true', () => {
+				component.microphoneStatus.available = true;
+				const showMicrophonePermissionNote = component.showMicrophonePermissionNote();
+				expect(showMicrophonePermissionNote).toBeTruthy();
+			});
+
+			it('When call showMicrophonePermissionNote and microphne is not available, then should return false', () => {
+				component.microphoneStatus.available = false;
+				const showMicrophonePermissionNote = component.showMicrophonePermissionNote();
+				expect(showMicrophonePermissionNote).toBeFalsy();
+			});
 		});
 
-		it('#startMonitorHandlerForCamera should call', () => {
-			const { fixture, component, displayService } = setup();
-			fixture.detectChanges();
-			component.startMonitorHandlerForCamera(featureStatus);
+		describe('Given Vantage does not have access to the Camera', () => {
+			let fixture: ComponentFixture<WidgetQuicksettingsComponent>;
+			let component: WidgetQuicksettingsComponent;
+
+			beforeEach(() => {
+				fixture = TestBed.createComponent(WidgetQuicksettingsComponent);
+				component = fixture.componentInstance;
+				component.cameraStatus = {
+					available: false,
+					status: false,
+					permission: false,
+					isLoading: false
+				};
+			});
+
+			it('When call showCameraPrivacyPermissionNote, then should return true', () => {
+				component.cameraStatus.available = true;
+				const showMicrophonePermissionNote = component.showCameraPrivacyPermissionNote();
+				expect(showMicrophonePermissionNote).toBeTruthy();
+			});
+
+			it('When call showCameraPrivacyPermissionNote and camera is not available, then should return true', () => {
+				component.cameraStatus.available = false;
+				const showMicrophonePermissionNote = component.showCameraPrivacyPermissionNote();
+				expect(showMicrophonePermissionNote).toBeTruthy();
+			});
 		});
 	});
 });
