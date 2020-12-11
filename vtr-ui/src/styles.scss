@@ -1,12 +1,12 @@
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "./styles-bootstrap.scss";
-@import "app/app.theme";
-@import "./app/beta/beta-styles.scss";
+@import '~bootstrap/dist/css/bootstrap.css';
+@import './styles-bootstrap.scss';
+@import 'app/app.theme';
+@import './app/beta/beta-styles.scss';
 
-@import "./hw-settings-icomoon/icomoon-base64.scss";
+@import './hw-settings-icomoon/icomoon-base64.scss';
 
-@import "./app/material.scss";
-@import "./app/material-gaming.scss";
+@import './app/material.scss';
+@import './app/material-gaming.scss';
 
 html {
 	margin: 0;
@@ -27,7 +27,7 @@ div {
 
 *:not(a),
 *:not(a > *),
-input:not([type="radio"]):not([type="checkbox"]),
+input:not([type='radio']):not([type='checkbox']),
 p,
 h1,
 h2,
@@ -49,10 +49,10 @@ a.disabled {
 	pointer-events: none;
 }
 
-
 .default-theme {
 	&:not(.is-gaming) {
-		a, .a {
+		a,
+		.a {
 			@media #{$black-on-white} {
 				@include hyperlink-blue-white;
 				&:hover {
@@ -65,9 +65,9 @@ a.disabled {
 					@include hyperlink-yellow-black;
 				}
 			}
-
 		}
-		a.disabled, .offline-a {
+		a.disabled,
+		.offline-a {
 			@media #{$black-on-white} {
 				@include high-contrast-white-text-color-disabled;
 				text-decoration: none;
@@ -76,7 +76,6 @@ a.disabled {
 				@include high-contrast-black-text-color-disabled;
 				text-decoration: none;
 			}
-
 		}
 	}
 }
@@ -430,7 +429,7 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	font-family: "Segoe UI", sans-serif;
+	font-family: 'Segoe UI', sans-serif;
 	cursor: default;
 	overflow-x: hidden;
 	// font-weight: 300;
@@ -621,7 +620,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			max-width: 24.2rem !important;
 		}
 	}
-	&.bs-tooltip-auto[x-placement^=top], &.bs-tooltip-top {
+	&.bs-tooltip-auto[x-placement^='top'],
+	&.bs-tooltip-top {
 		margin-bottom: 0.5rem;
 		.arrow {
 			&::before {
@@ -653,7 +653,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			}
 		}
 	}
-	&.bs-tooltip-auto[x-placement^=bottom], &.tooltip.bs-tooltip-bottom {
+	&.bs-tooltip-auto[x-placement^='bottom'],
+	&.tooltip.bs-tooltip-bottom {
 		margin-top: 0.5rem;
 		.arrow {
 			&::before {
@@ -685,7 +686,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			}
 		}
 	}
-	&.bs-tooltip-auto[x-placement^=left], &.tooltip.bs-tooltip-left {
+	&.bs-tooltip-auto[x-placement^='left'],
+	&.tooltip.bs-tooltip-left {
 		margin-right: 0.8rem;
 		.arrow {
 			&::before {
@@ -714,7 +716,8 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		}
 	}
 
-	&.bs-tooltip-auto[x-placement^=right], &.tooltip.bs-tooltip-right {
+	&.bs-tooltip-auto[x-placement^='right'],
+	&.tooltip.bs-tooltip-right {
 		margin-left: 0.8rem;
 		.arrow {
 			&::before {
@@ -888,26 +891,26 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		margin-top: 8rem;
 
 		.modal-content {
-            border-radius: $border_radius;
-            @media #{$black-on-white} {
-                @include black-border;
-            }
-            @media #{$white-on-black} {
-                @include white-border;
-            }
+			border-radius: $border_radius;
+			@media #{$black-on-white} {
+				@include black-border;
+			}
+			@media #{$white-on-black} {
+				@include white-border;
+			}
 		}
 	}
 }
 
 .home-security-offline-modal {
-    .modal-content {
-        border-radius: $border_radius;
-        @media #{$black-on-white} {
-            @include black-border;
-        }
-        @media #{$white-on-black} {
-            @include white-border;
-        }
+	.modal-content {
+		border-radius: $border_radius;
+		@media #{$black-on-white} {
+			@include black-border;
+		}
+		@media #{$white-on-black} {
+			@include white-border;
+		}
 	}
 }
 
@@ -1073,7 +1076,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .modal-backdrop.show {
 	@media #{$high-contrast} {
 		background: $dark;
-		opacity: .5;
+		opacity: 0.5;
 	}
 }
 
@@ -1114,13 +1117,13 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		border-radius: 1rem;
 		background: $light;
 		padding: 3rem 0 0 4rem;
-        overflow: hidden;
-        @media #{$black-on-white} {
-            @include black-border;
-        }
-        @media #{$white-on-black} {
-            @include white-border;
-        }
+		overflow: hidden;
+		@media #{$black-on-white} {
+			@include black-border;
+		}
+		@media #{$white-on-black} {
+			@include white-border;
+		}
 	}
 }
 
@@ -1294,13 +1297,13 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	.modal-content {
 		border-radius: 1rem;
 		background: $light;
-        overflow: hidden;
-        @media #{$black-on-white} {
-            @include black-border;
-        }
-        @media #{$white-on-black} {
-            @include white-border;
-        }
+		overflow: hidden;
+		@media #{$black-on-white} {
+			@include black-border;
+		}
+		@media #{$white-on-black} {
+			@include white-border;
+		}
 	}
 }
 
@@ -1603,7 +1606,11 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		.button-box {
 			.button {
 				min-height: 5rem !important;
-				background: linear-gradient(135deg, $shade_lighter 0%, $shade_lightest 100%) !important;
+				background: linear-gradient(
+					135deg,
+					$shade_lighter 0%,
+					$shade_lightest 100%
+				) !important;
 				color: $blue-dark !important;
 				border: 0.1rem solid $shade_light !important;
 				width: 100%;
@@ -1652,7 +1659,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 }
 
 // gaming overrides need to be at the bottom here
-@import "./styles-gaming.scss";
+@import './styles-gaming.scss';
 
 /* ngb-modal-window overriding the class fade  =========== */
 .fade {
@@ -1670,7 +1677,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		box-shadow: none;
 	}
 	&:focus::after {
-		content: "";
+		content: '';
 		display: block;
 		position: absolute;
 		left: -0.4rem;
@@ -1714,12 +1721,12 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 // smart performance icons
 
 @font-face {
-	font-family: "smart-icons";
-	src: url("./assets/smart-icons/smart-icons.eot");
-	src: url("./assets/smart-icons/smart-icons.eot?#iefix") format("embedded-opentype"),
-		url("./assets/smart-icons/smart-icons.woff") format("woff"),
-		url("./assets/smart-icons/smart-icons.ttf") format("truetype"),
-		url("./assets/smart-icons/smart-icons.svg#smart-icons") format("svg");
+	font-family: 'smart-icons';
+	src: url('./assets/smart-icons/smart-icons.eot');
+	src: url('./assets/smart-icons/smart-icons.eot?#iefix') format('embedded-opentype'),
+		url('./assets/smart-icons/smart-icons.woff') format('woff'),
+		url('./assets/smart-icons/smart-icons.ttf') format('truetype'),
+		url('./assets/smart-icons/smart-icons.svg#smart-icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -1728,7 +1735,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	font-family: 'Material Icons';
 	font-style: normal;
 	font-weight: 400;
-	src: url(assets/fonts/MaterialIcons-Regular.woff) format('woff')
+	src: url(assets/fonts/MaterialIcons-Regular.woff) format('woff');
 }
 
 .material-icons {
@@ -1748,7 +1755,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 }
 
 [data-icon]:before {
-	font-family: "smart-icons" !important;
+	font-family: 'smart-icons' !important;
 	content: attr(data-icon);
 	font-style: normal !important;
 	font-weight: normal !important;
@@ -1760,9 +1767,9 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-	font-family: "smart-icons" !important;
+[class^='icon-']:before,
+[class*=' icon-']:before {
+	font-family: 'smart-icons' !important;
 	font-style: normal !important;
 	font-weight: normal !important;
 	font-variant: normal !important;
@@ -1774,94 +1781,94 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 }
 
 .icon-computer-scan-756353:before {
-	content: "\61";
+	content: '\61';
 }
 .icon-easy-resume:before {
-	content: "\63";
+	content: '\63';
 }
 .icon-error-1582584:before {
-	content: "\64";
+	content: '\64';
 }
 .icon-internet-performance:before {
-	content: "\66";
+	content: '\66';
 }
 .icon-malware-security:before {
-	content: "\67";
+	content: '\67';
 }
 .icon-microsoft-windows-22:before {
-	content: "\68";
+	content: '\68';
 }
 .icon-noun-registery-key-1581151:before {
-	content: "\69";
+	content: '\69';
 }
 .icon-noun-touch-200038:before {
-	content: "\6a";
+	content: '\6a';
 }
 .icon-performance:before {
-	content: "\6b";
+	content: '\6b';
 }
 .icon-power-agenda:before {
-	content: "\6c";
+	content: '\6c';
 }
 .icon-question-circle:before {
-	content: "\6d";
+	content: '\6d';
 }
 .icon-recycling-2025397:before {
-	content: "\6e";
+	content: '\6e';
 }
 .icon-multitasking:before {
-	content: "\6f";
+	content: '\6f';
 }
 .icon-virus:before {
-	content: "\70";
+	content: '\70';
 }
 .icon-wifi:before {
-	content: "\62";
+	content: '\62';
 }
 .icon-visible-to-online-trackers:before {
-	content: "\71";
+	content: '\71';
 }
 .icon-uninstall-375971-2:before {
-	content: "\72";
+	content: '\72';
 }
 .icon-uninstall-375971:before {
-	content: "\73";
+	content: '\73';
 }
 .icon-uninstall:before {
-	content: "\74";
+	content: '\74';
 }
 .icon-thumbsup:before {
-	content: "\75";
+	content: '\75';
 }
 .icon-router:before {
-	content: "\76";
+	content: '\76';
 }
 .icon-responsive:before {
-	content: "\77";
+	content: '\77';
 }
 .icon-icon-247-protection:before {
-	content: "\65";
+	content: '\65';
 }
 .icon-icon-automated-resolution:before {
-	content: "\78";
+	content: '\78';
 }
 .icon-icon-browser-security:before {
-	content: "\79";
+	content: '\79';
 }
 .icon-icon-browser-settings:before {
-	content: "\7a";
+	content: '\7a';
 }
 .icon-icon-e-junk:before {
-	content: "\41";
+	content: '\41';
 }
 .icon-icon-schedule-scan:before {
-	content: "\42";
+	content: '\42';
 }
 .icon-icon-security-settings:before {
-	content: "\43";
+	content: '\43';
 }
 .icon-icon-zero-day:before {
-	content: "\44";
+	content: '\44';
 }
 
 // smart-performance-scan-summary-calendar-styles
@@ -2322,7 +2329,10 @@ vtr-ui-smart-performance-scanning {
 	.vtr-ui-switch-row.white-theme {
 		padding: 0 0 1.5rem !important;
 	}
-	.intelligent-security-block, .power-settings-block, .battery-settings-block, .intelligent-keyboard-block {
+	.intelligent-security-block,
+	.power-settings-block,
+	.battery-settings-block,
+	.intelligent-keyboard-block {
 		.vtr-container-collapsible.white-theme {
 			.card-body {
 				padding-top: 0 !important;
@@ -2355,7 +2365,7 @@ label {
 	&:focus {
 		outline: none !important;
 		&:before {
-			content: "";
+			content: '';
 			position: absolute;
 			width: calc(100% + 0.6rem);
 			height: calc(100% + 0.6rem);
@@ -2427,8 +2437,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	.vtr-disabled {
 		.vtr-ui-circle-radio-with-checkbox-list.white-theme {
 			.radio-container {
-				[role="radio"][aria-checked="true"] {
-
+				[role='radio'][aria-checked='true'] {
 					@media #{$white-on-black} {
 						border: 0.2rem solid $high-contrast-black-disabled-green !important;
 					}
@@ -2468,7 +2477,6 @@ ngb-tooltip-window.schedule-scan.tooltip {
 							}
 						}
 					}
-
 				}
 
 				.text {
@@ -2568,7 +2576,17 @@ ngb-tooltip-window.schedule-scan.tooltip {
 }
 
 .uppercase {
-	&, span, p, div, a, h1, h2, h3, h4, h5, h6 {
+	&,
+	span,
+	p,
+	div,
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		text-transform: uppercase;
 	}
 }
@@ -2579,7 +2597,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 }
 
 .snackbar {
-	white-space: pre-wrap
+	white-space: pre-wrap;
 }
 
 .hyperlink-button {
@@ -2617,5 +2635,13 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	}
 	@media #{$white-on-black} {
 		@include hyperlink-yellow-black;
+	}
+}
+
+.vtr-container-collapsible {
+	.header {
+		.collapse-header {
+			font-size: $fontsize_lg;
+		}
 	}
 }
