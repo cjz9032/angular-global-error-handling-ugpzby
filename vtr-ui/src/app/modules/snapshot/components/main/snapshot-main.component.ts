@@ -16,14 +16,14 @@ export class SnapshotMainComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		SnapshotSoftwareComponents.values().forEach((key) => {
+		this.snapshotService.getSoftwareComponentsList().forEach((key) => {
 			this.softwareComponents.push({
 				name: key,
 				content: this.snapshotService.snapshotInfo[key],
 			});
 		});
 
-		SnapshotHardwareComponents.values().forEach((key) => {
+		this.snapshotService.getHardwareComponentsList().forEach((key) => {
 			this.hardwareComponents.push({
 				name: key,
 				content: this.snapshotService.snapshotInfo[key],
