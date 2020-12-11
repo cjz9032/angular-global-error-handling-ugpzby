@@ -1,7 +1,8 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, waitForAsync, tick } from '@angular/core/testing';
 
 import { UiColorWheelComponent } from './ui-color-wheel.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('UiColorWheelComponent', () => {
 	let component: UiColorWheelComponent;
@@ -11,8 +12,8 @@ describe('UiColorWheelComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiColorWheelComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+				GAMING_DATA.mockPipe({ name: 'sanitize' }),
 			],
 			schemas: [NO_ERRORS_SCHEMA],
 		}).compileComponents();
@@ -24,9 +25,23 @@ describe('UiColorWheelComponent', () => {
 		fixture.detectChanges();
 	});
 
-	it('should create', () => {
+	it('should create', fakeAsync(() => {
 		expect(component).toBeTruthy();
-	});
+
+		fixture.detectChanges();
+		if (component.colorWheel) {
+			component.colorWheel.onChange({
+				hex: 'ff0000', rgb: '00ff00'
+			});
+			fixture.detectChanges();
+
+			fixture.whenStable().then(() => {
+				expect(component.backColor).toBe('ff0000');
+				expect(component.color).toBe('00ff00');
+			});
+			tick(100);
+		}
+	}));
 
 	it('should emit the color ', () => {
 		const res = component.onApplyColorEffect('#ffff');
@@ -71,16 +86,3 @@ describe('UiColorWheelComponent', () => {
 		expect(component.inHEX).toBe('#ffff');
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

@@ -5,6 +5,7 @@ import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('UiLightingSingleColorComponent', () => {
 	let component: UiLightingSingleColorComponent;
@@ -14,8 +15,8 @@ describe('UiLightingSingleColorComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiLightingSingleColorComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+				GAMING_DATA.mockPipe({ name: 'sanitize' }),
 			],
 			providers: [
 				{ provide: HttpClient },
@@ -51,16 +52,3 @@ describe('UiLightingSingleColorComponent', () => {
 		expect(component.selectedOptionId).toBe(1);
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

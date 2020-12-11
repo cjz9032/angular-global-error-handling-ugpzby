@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UiLightingProfileToggleComponent } from './ui-lighting-profile-toggle.component';
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('UiLightingProfileToggleComponent', () => {
 	let component: UiLightingProfileToggleComponent;
@@ -11,8 +12,8 @@ describe('UiLightingProfileToggleComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiLightingProfileToggleComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+				GAMING_DATA.mockPipe({ name: 'sanitize' }),
 			],
 			schemas: [NO_ERRORS_SCHEMA],
 		}).compileComponents();
@@ -26,20 +27,7 @@ describe('UiLightingProfileToggleComponent', () => {
 	});
 
 	it('Should set the profile', () => {
-		component.SetProfile({ target: { value: 1 } });
+		component.setProfile({ target: { value: 1 } });
 		expect(component.currentProfile).toBeUndefined();
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

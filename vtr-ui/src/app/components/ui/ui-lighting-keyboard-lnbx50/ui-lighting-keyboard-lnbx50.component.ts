@@ -239,13 +239,13 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges {
 		this.selectPanel = area;
 		if (this.isDivideArea) {
 			this.areaSetting.emit({
-				area: area,
-				color: color,
+				area,
+				color
 			});
 		} else {
 			this.areaSetting.emit({
 				area: [1, 2, 4, 8],
-				color: color,
+				color
 			});
 		}
 	}
@@ -267,12 +267,12 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges {
 	public getProfileInfoCache(event) {
 		try {
 			if (event) {
-				let response = this.localCacheService.getLocalCacheValue(
+				const response = this.localCacheService.getLocalCacheValue(
 					LocalStorageKey['LightingProfileByIdNoteOn' + this.profileId]
 				);
 				this.listInfo = response.lightInfo;
 			} else {
-				let response = this.localCacheService.getLocalCacheValue(
+				const response = this.localCacheService.getLocalCacheValue(
 					LocalStorageKey['LightingProfileByIdNoteOff' + this.profileId]
 				);
 				this.listInfo = response.lightInfo;
@@ -317,7 +317,7 @@ export class UiLightingKeyboardLNBx50Component implements OnInit, OnChanges {
 
 	public setToggleStatusCache() {
 		try {
-			if (this.listInfo && this.profileId != 0) {
+			if (this.listInfo && this.profileId !== 0) {
 				this.toggleStatusLNBx50 = this.localCacheService.getLocalCacheValue(
 					LocalStorageKey.KeyboardToggleStatusLNBx50
 				);

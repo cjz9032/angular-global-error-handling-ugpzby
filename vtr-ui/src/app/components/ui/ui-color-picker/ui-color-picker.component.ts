@@ -15,26 +15,18 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	selector: 'vtr-ui-color-picker',
 	templateUrl: './ui-color-picker.component.html',
 	styleUrls: ['./ui-color-picker.component.scss'],
-	host: {
-		'(document:click)': 'generalClick($event)',
-	},
 })
 export class UiColorPickerComponent implements OnInit, OnChanges {
 	@Input() isColorPicker: boolean;
 	@Input() color: any;
 	@Output() isToggleColorPicker = new EventEmitter<any>();
 	@Output() setColor = new EventEmitter<any>();
+	@Input() automationId: any;
 	public isToggleMoreColor = false;
 	public presetColorList: any = new LightingDataList().presetColorListData;
 	public isSliderOut: boolean;
 	public clickEvent: any = { target: '' };
 	public isFirstTrigger: boolean;
-	@Input() automationId: any;
-
-	@HostListener('window:resize', ['$event']) onResize($event) {
-		this.isColorPicker = false;
-		this.isToggleColorPicker.emit(this.isColorPicker);
-	}
 
 	constructor(private elementRef: ElementRef, private logger: LoggerService) {
 		if (document.getElementById('menu-main-btn-navbar-toggler')) {
@@ -43,6 +35,30 @@ export class UiColorPickerComponent implements OnInit, OnChanges {
 				.addEventListener('click', (event) => {
 					this.generalClick(event);
 				});
+		}
+	}
+
+	@HostListener('window:resize', ['$event']) onResize($event) {
+		this.isColorPicker = false;
+		this.isToggleColorPicker.emit(this.isColorPicker);
+	}
+
+	@HostListener('document:click', ['$event'])
+	public generalClick(event: Event) {
+		this.clickEvent = event;
+		this.isFirstTrigger = true;
+		if (this.elementRef.nativeElement) {
+			if (!this.elementRef.nativeElement.contains(event.target)) {
+				setTimeout(() => {
+					if (this.isSliderOut) {
+						this.isColorPicker = true;
+						this.isSliderOut = false;
+					} else {
+						this.isColorPicker = false;
+						this.isToggleColorPicker.emit(this.isColorPicker);
+					}
+				}, 50);
+			}
 		}
 	}
 
@@ -134,23 +150,5 @@ export class UiColorPickerComponent implements OnInit, OnChanges {
 			newColor += element.toUpperCase();
 		});
 		return newColor;
-	}
-
-	public generalClick(event: Event) {
-		this.clickEvent = event;
-		this.isFirstTrigger = true;
-		if (this.elementRef.nativeElement) {
-			if (!this.elementRef.nativeElement.contains(event.target)) {
-				setTimeout(() => {
-					if (this.isSliderOut) {
-						this.isColorPicker = true;
-						this.isSliderOut = false;
-					} else {
-						this.isColorPicker = false;
-						this.isToggleColorPicker.emit(this.isColorPicker);
-					}
-				}, 50);
-			}
-		}
 	}
 }

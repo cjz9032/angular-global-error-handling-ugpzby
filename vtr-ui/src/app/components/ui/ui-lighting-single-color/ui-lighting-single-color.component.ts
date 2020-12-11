@@ -11,13 +11,13 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 })
 export class UiLightingSingleColorComponent implements OnInit, OnChanges {
 	@Input() selectedOptionId: any;
+	@Output() public changeSingleColorOption = new EventEmitter<any>();
+	@Input() options: any;
 	selectedOption: Options = new Options(
 		1,
 		'gaming.lightingProfile.lightingSingleLightingOption.option1.title',
-		"'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option1.title' | translate"
+		'\'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option1.title\' | translate'
 	);
-	@Output() public changeSingleColorOption = new EventEmitter<any>();
-	@Input() options: any;
 	public singleColorOpt: any = LightEffectSimpleType;
 
 	constructor(private loggerService: LoggerService) {}
