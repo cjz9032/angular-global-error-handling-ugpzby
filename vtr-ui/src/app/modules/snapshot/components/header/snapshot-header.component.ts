@@ -206,7 +206,7 @@ export class SnapshotHeaderComponent implements OnInit {
 		// Just a mock, should be separated when implement the real execution.
 		hardwareList: this.snapshotComponents,
 		softwareList: this.snapshotComponents
-	}
+	};
 
 	constructor(private snapshotService: SnapshotService,
 				private modalService: NgbModal) { }
@@ -220,7 +220,7 @@ export class SnapshotHeaderComponent implements OnInit {
 		this.snapshotStatus = SnapshotStatus.SnapshotInProgress;
 		// This is just to simulate a call on snapshotService
 		this.snapshotService.getLoadProcessorsInfo()
-		.then((async() => {
+		.then((async () => {
 			await this.delay(5000);
 		}))
 		.finally(() =>
@@ -246,7 +246,7 @@ export class SnapshotHeaderComponent implements OnInit {
 			this.snapshotStatus = SnapshotStatus.BaselineInProgress;
 			// This is just to simulate a call on snapshotService
 			this.snapshotService.getLoadProcessorsInfo()
-			.then((async() => {
+			.then((async () => {
 				await this.delay(3000);
 			}))
 			.finally(() =>

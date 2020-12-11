@@ -1,26 +1,24 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener, OnDestroy } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'vtr-modal-snapshot',
 	templateUrl: './modal-snapshot.component.html',
-	styleUrls: ['./modal-snapshot.component.scss'],
+	styleUrls: ['./modal-snapshot.component.scss']
 })
-export class ModalSnapshotComponent implements OnInit {
+export class ModalSnapshotComponent implements OnInit, OnDestroy {
 	@Input() componentId: string;
 	@Input() snapshotInfo: any;
 
-	public snapshotComponentsInfo: any = [];
-
-	public errorMessage: boolean = false;
-	private isSuccessful = false;
-
 	@Output() passEntry: EventEmitter<any> = new EventEmitter();
-
 	// Used to signalize to the caller that the modal is being closed.
 	// It emits true when the modal is closed in a successful way,
 	// e.g. user clicked in the OK button or false otherwise.
 	@Output() modalClosing: EventEmitter<boolean> = new EventEmitter();
+
+	public snapshotComponentsInfo: any = [];
+	public errorMessage = false;
+	private isSuccessful = false;
 
 	constructor(public activeModal: NgbActiveModal) {}
 
@@ -36,47 +34,17 @@ export class ModalSnapshotComponent implements OnInit {
 		Object.entries(this.snapshotInfo).forEach(([key, value]) => {
 			const environment = {
 				name: key,
-				components: (name == 'hardwareListTitle') ? this.getHardwareListComponents(value) : this.getSoftwareListComponents(value),
+				components: (name === 'hardwareListTitle') ? this.getHardwareListComponents(value) : this.getSoftwareListComponents(value),
 				collapsed: false,
 				selected: false,
 				indeterminate: false
-			}
+			};
 
 			this.snapshotComponentsInfo.push(environment);
 		});
 	}
 
-	private getHardwareListComponents(components: any) : any {
-		let hardwareListComponents: any = [];
-
-		Object.entries(components).forEach(([key, value]) => {
-			const component = {
-				name: key,
-				selected: false
-			}
-
-			hardwareListComponents.push(component);
-		});
-
-		return hardwareListComponents;
-	}
-
-	private getSoftwareListComponents(components: any) : any {
-		let softwareListComponents: any = [];
-
-		Object.entries(components).forEach(([key, value]) => {
-			const component = {
-				name: key,
-				selected: false
-			}
-
-			softwareListComponents.push(component);
-		});
-
-		return softwareListComponents;
-	}
-
-	public ngOnDestroy() {
+	ngOnDestroy(): void {
 		this.modalClosing.emit(this.isSuccessful);
 	}
 
@@ -99,5 +67,35 @@ export class ModalSnapshotComponent implements OnInit {
 		if (this.errorMessage) {
 			this.errorMessage = false;
 		}
+	}
+
+	private getHardwareListComponents(components: any): any {
+		const hardwareListComponents: any = [];
+
+		Object.entries(components).forEach(([key, value]) => {
+			const component = {
+				name: key,
+				selected: false
+			};
+
+			hardwareListComponents.push(component);
+		});
+
+		return hardwareListComponents;
+	}
+
+	private getSoftwareListComponents(components: any): any {
+		const softwareListComponents: any = [];
+
+		Object.entries(components).forEach(([key, value]) => {
+			const component = {
+				name: key,
+				selected: false
+			};
+
+			softwareListComponents.push(component);
+		});
+
+		return softwareListComponents;
 	}
 }
