@@ -13,6 +13,7 @@
 							subTitleId="smart-performance-scan-summary-desc"
 							[contentWrap]="true">
 							<vtr-ui-smart-performance-rating [leftAnimator]="leftAnimator"
+								[rating]="rating"
 								[hideStatus]="true"></vtr-ui-smart-performance-rating>
 							<div class="d-flex align-items-center purchase-content">
 								<vtr-ui-button (onClick)="openSubscribeModal()"
@@ -42,6 +43,7 @@
 							[bottomRadius]="true"
 							[contentWrap]="true">
 							<vtr-ui-smart-performance-rating [leftAnimator]="isScanningFinished(smartPerformanceService.scanningState) ? leftAnimator : '100%'"
+								[rating]="rating"
 								[hidePointer]="!isScanningFinished(smartPerformanceService.scanningState)"
 								[hideStatus]="true">
 							</vtr-ui-smart-performance-rating>
