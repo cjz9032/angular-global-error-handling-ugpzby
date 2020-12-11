@@ -17,6 +17,7 @@ import { ContainerCardModule } from 'src/app/components/container-card/container
 import { CommonUiModule } from '../common/common-ui.module';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { UiSnapshotItemListComponent } from './components/dashboard/ui-snapshot-item-list/ui-snapshot-item-list.component';
+import { UiSnapshotListInfoComponent } from './components/dashboard/ui-snapshot-list-info/ui-snapshot-list-info.component';
 
 @NgModule({
 	declarations: [
@@ -26,6 +27,7 @@ import { UiSnapshotItemListComponent } from './components/dashboard/ui-snapshot-
 		WidgetSnapshotComponent,
 		ModalSnapshotComponent,
 		UiSnapshotItemListComponent,
+		UiSnapshotListInfoComponent
 	],
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
