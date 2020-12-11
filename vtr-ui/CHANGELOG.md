@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.28](https://bitbucket.tc.lenovo.com///compare/v1.9.27...v1.9.28) (2020-12-11)
+
+
+### Features
+
+* **SystemUpdate:** VAN-21958 add remove option for history items ([b803879](https://bitbucket.tc.lenovo.com///commit/b803879582ca38a4fb526812db718cb498904a4d))
+* **SystemUpdate:** VAN-21958 update for code review ([6c8b06a](https://bitbucket.tc.lenovo.com///commit/6c8b06a264fdb68d1415d9c0ddf7585ed77851dd))
+
+
+### Bug Fixes
+
+* **SP:** VAN-24130 modify issue description column ([62ac38b](https://bitbucket.tc.lenovo.com///commit/62ac38b4724609b09fcb9c0c98abc39baee6305e))
+* **Styles:** VAN-23996 fix:container-collapse header font-size ([98266f0](https://bitbucket.tc.lenovo.com///commit/98266f051f1f8d33d490af7ecfc05d56f485b987))
+
 ### [1.9.27](https://bitbucket.tc.lenovo.com///compare/v1.9.26...v1.9.27) (2020-12-10)
 
 ### [1.9.26](https://bitbucket.tc.lenovo.com///compare/v1.9.25...v1.9.26) (2020-12-10)
