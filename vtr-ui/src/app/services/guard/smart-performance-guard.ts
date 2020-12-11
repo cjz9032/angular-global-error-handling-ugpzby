@@ -24,10 +24,12 @@ export class SmartPerformanceGuard extends BasicGuard {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-		if (this.configService.isSmartPerformanceAvailable) {
-			return true;
-		} else {
-			return this.router.parseUrl('/dashboard');
-		}
+		return new Promise(async (resolve) => {
+			if (await this.configService.showSmartPerformance()) {
+				resolve(true);
+			} else {
+				resolve(this.router.parseUrl('/dashboard'));
+			}
+		});
 	}
 }
