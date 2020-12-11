@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <g id="Icon_WebBrowsers_24px" data-name="Icon/WebBrowsers/24px" transform="translate(0 5)">
-    <rect id="Rectangle" width="24" height="24" transform="translate(0 -5)" fill="rgba(255,255,255,0)"/>
+  <g id="Keyboard_2" data-name="Keyboard 2" transform="translate(0 5)">
+    <rect id="Rectangle" width="24" height="24" transform="translate(0 -5)" fill="none"/>
     <g id="Group_4314" data-name="Group 4314" transform="translate(0 -19)">
-      <g id="Rectangle_1914" data-name="Rectangle 1914" transform="translate(0 16)" fill="#fff" stroke="#4a81fd" stroke-width="1">
+      <g id="Rectangle_1914" data-name="Rectangle 1914" transform="translate(0 16)" fill="none" stroke="#4a81fd" stroke-width="1">
         <rect width="24" height="20" rx="4" stroke="none"/>
         <rect x="0.5" y="0.5" width="23" height="19" rx="3.5" fill="none"/>
       </g>

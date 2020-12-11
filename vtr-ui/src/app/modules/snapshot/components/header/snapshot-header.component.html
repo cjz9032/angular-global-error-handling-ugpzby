@@ -1,11 +1,11 @@
 <div class="vtr-snapshot-header">
 	<div class="row">
 		<h2 id="snapshot-header-title" class="col title" role="heading" aria-live="polite"
-			[ngClass]="{'animated-dots': disableSnapshotButton }"
-		>{{ ('snapshot.') + snapshotStatus | translate }}</h2>
+			[ngClass]="{'animated-dots': !isButtonEnabled() }"
+		>{{ ('snapshot.') + getHeaderText() | translate }}</h2>
 	</div>
 
-	<div class="row snapshot-information" *ngIf="showSnapshotInformation">
+	<div class="row snapshot-information" *ngIf="getSnapshotStatus() === snapshotStatusEnum.notStarted">
 		<p class="snapshot-information-text">
 			<span id="snapshot-header-information" role="text">{{ 'snapshot.snapshotInformation' | translate }}</span>
 		</p>
@@ -33,7 +33,7 @@
 				metricsParent="Snapshot"
 				metricsItem="Snapshot.Update"
 				[label]= "'snapshot.snapshotUpdateButton' | translate"
-				[isDisabled]="disableSnapshotButton"
+				[isDisabled]="!isButtonEnabled()"
 				(onClick)="onTakeSnapshot()">
 			</vtr-ui-button>
 			<vtr-ui-hyperlink-button
@@ -43,7 +43,7 @@
 				hyperlinkStyle="xs-white"
 				metricsParent="Snapshot"
 				metricsItem="Snapshot.ReplaceBaseline"
-				[isDisabled]="disableBaselineButton"
+				[isDisabled]="!isButtonEnabled()"
 				[label]="'snapshot.replaceBaseline' | translate"
 				[upperCaseLabel]="true"
 				(hyperlinkClick)="onReplaceBaseline()">

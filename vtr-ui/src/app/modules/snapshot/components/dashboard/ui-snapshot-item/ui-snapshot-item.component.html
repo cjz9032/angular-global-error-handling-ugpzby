@@ -1,0 +1,105 @@
+<div id="snapshot-item-{{ componentIndex }}" class="vtr-snapshot-list-item"
+	[ngClass]="{'modified-module': component.info.IsDifferent}" >
+	<div class="row">
+		<div class="module-information" [ngClass]="{ 'last-child': isLastElement }">
+			<div class="module-icon">
+				<!-- Defines an icon according with component -->
+				<img id="snapshot-item-{{ componentIndex }}-icon" *ngIf="getModuleIcon(name) !== ''"
+					alt="{{ name }}"
+					class="img-icon"
+					role="img"
+					[src]="getModuleIcon(name) | svgInline | async" />
+			</div>
+
+			<!-- Icon to expand and collapse module information -->
+			<div class="row">
+				<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title" *ngIf="!component.info.IsDifferent; else modifiedTitle">
+					{{ name }}</p>
+
+				<ng-template #modifiedTitle>
+					<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title">
+						* {{ name }}</p>
+				</ng-template>
+
+			</div>
+
+			<!-- Shows load icon until modules are not loaded -->
+			<img *ngIf="component.status !== snapshotStatus.hasData; else updateButton" role="img" class="load-icon" src="assets/icons/snapshot/icon_snapshot_progress.svg"/>
+
+			<!-- Shows button to update after modules get loaded -->
+			<ng-template #updateButton>
+				<vtr-ui-hyperlink-button
+					class="hyperlink-container"
+					[metricsParent]="'Snapshot'"
+					[metricsItem]="'Snapshot.UpdateSnapshotModule'"
+					[class]="'update-btn'"
+					linkId="snapshot-update-btn"
+					hyperlinkStyle="xs-blue-lighter"
+					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
+					[disableTooltip]="true"
+					[isDisabled]="!isUpdateEnabled()"
+					(hyperlinkClick)="updateSnapshot()"
+				>
+				</vtr-ui-hyperlink-button>
+			</ng-template>
+
+			<!-- Icon to expand and collapse module information -->
+			<div id="snapshot-item-{{ componentIndex }}-details-btn"
+				class="collapse-control"
+				[attr.aria-label]="!detailsExpanded ? name + 'expand-module-details': name + 'collapse-module-details'"
+				[attr.aria-expanded]="detailsExpanded"
+				(click)="detailsExpanded = !detailsExpanded"
+				(keyup.enter)="detailsExpanded = !detailsExpanded"
+				tabindex="0"
+				role="button">
+				<fa-icon *ngIf="!detailsExpanded; else expandIcon" [icon]="['fal', 'angle-down']"></fa-icon>
+				<ng-template #expandIcon>
+					<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
+				</ng-template>
+			</div>
+		</div>
+	</div>
+
+	<!-- Table containing module information -->
+	<div [ngbCollapse]="!detailsExpanded" class="details-list">
+		<table id="snapshot-item-{{ componentIndex }}-details" class="table table-details table-borderless">
+			<tbody>
+				<tr *ngIf="component.status !== snapshotStatus.hasData; else moduleInfo">
+					<td class="progress-warning-image">
+						<fa-icon [icon]="['fal', 'circle-notch']" [spin]="true"></fa-icon>
+					</td>
+				</tr>
+				<ng-template #moduleInfo>
+					<tr>
+						<td aria-hidden="true"></td>
+						<th id="snapshot-item-{{ componentIndex }}-detail-baseline-snapshot-title" class="snapshot-table-titles">
+							{{ 'snapshot.baselineSnapshot' | translate }}
+						</th>
+						<th id="snapshot-item-{{ componentIndex }}-detail-baseline-snapshot-title" class="snapshot-table-titles">
+							{{ 'snapshot.lastSnapshot' | translate }}
+						</th>
+					</tr>
+					<ng-template #recursiveList let-list>
+						<ng-container *ngFor="let values of list; let i = index">
+							<tr *ngFor="let property of values.Properties; let j = index">
+								<th id="snapshot-item-{{ i }}-detail-{{ j }}-property-name" class="table-info-name">
+									{{ property.PropertyName }}
+								</th>
+								<td id="snapshot-item-{{ i }}-detail-{{ j }}-base-value">
+									{{ property.BaseValue }}</td>
+
+								<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
+									{{ property.CurrentValue }}</td>
+							</tr>
+							<tr *ngIf="array.isArray(values.SubDevices) && values.SubDevices.length > 0">
+								<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: values.SubDevices }"></ng-container>
+							</tr>
+							<tr class="table-info-separator" aria-hidden="true"></tr>
+						</ng-container>
+					</ng-template>
+					<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: component.info.Items }"></ng-container>
+				</ng-template>
+			</tbody>
+		</table>
+	</div>
+</div>

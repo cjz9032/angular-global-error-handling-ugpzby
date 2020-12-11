@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import {
+	SnapshotComponentStatus,
+	SnapshotHardwareComponents,
+	SnapshotSoftwareComponents,
+	SnapshotStatus,
+} from 'src/app/modules/snapshot/enums/snapshot.enum';
 
 @Injectable({
 	providedIn: 'root',
@@ -8,151 +14,104 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 export class SnapshotService {
 	private snapshotBridge: any;
 
-	constructor(shellService: VantageShellService, private logger: LoggerService) {
+	private pvtSnapshotInfo: any;
+	get snapshotInfo(): any {
+		return this.pvtSnapshotInfo;
+	}
+
+	private pvtSnapshotStatus: SnapshotStatus;
+	get snapshotStatus(): SnapshotStatus {
+		return this.pvtSnapshotStatus;
+	}
+	set snapshotStatus(value: SnapshotStatus) {
+		this.pvtSnapshotStatus = value;
+	}
+
+	constructor(shellService: VantageShellService, private loggerService: LoggerService) {
 		this.snapshotBridge = shellService.getSnapshot();
+
+		if (!this.snapshotBridge) {
+			throw new Error('Error: Invalid Snapshot Bride!');
+		}
+
+		this.initEmptySnapshot();
+		this.snapshotStatus = SnapshotStatus.firstLoad;
 	}
 
-	public getLoadInstalledProgramsInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadInstalledProgramsInfo().catch((error) => {
-				this.logger.error('[GetLoadInstalledProgramsInfo] ' + error);
-			});
-		}
-		return undefined;
+	public async getCurrentSnapshotInfo(componentName: string) {
+		return this.getSnapshotInfo(componentName, false);
 	}
 
-	public getLoadVideoCardsInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadVideoCardsInfo().catch((error) => {
-				this.logger.error('[getLoadVideoCardsInfo] ' + error);
-			});
-		}
-		return undefined;
+	public async updateSnapshotInfo(componentName: string) {
+		return this.getSnapshotInfo(componentName, true);
 	}
 
-	public getLoadProcessorsInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadProcessorsInfo().catch((error) => {
-				this.logger.error('[getLoadProcessorsInfo] ' + error);
-			});
-		}
-		return undefined;
+	public async updateBaselineInfo(componentName: string) {}
+
+	public getAllComponentsList() {
+		return this.getSoftwareComponentsList().concat(this.getHardwareComponentsList());
 	}
 
-	public getLoadMemoryInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadMemoryInfo().catch((error) => {
-				this.logger.error('[getLoadMemoryInfo] ' + error);
-			});
-		}
-		return undefined;
+	public getSoftwareComponentsList() {
+		return SnapshotSoftwareComponents.values();
 	}
 
-	public getLoadMotherboardInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadMotherboardInfo().catch((error) => {
-				this.logger.error('[getLoadMotherboardInfo] ' + error);
-			});
-		}
-		return undefined;
+	public getHardwareComponentsList() {
+		return SnapshotHardwareComponents.values();
 	}
 
-	public getLoadSoundCardsInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadSoundCardsInfo().catch((error) => {
-				this.logger.error('[getLoadSoundCardsInfo] ' + error);
-			});
+	public anyIndividualSnapshotInProgress() {
+		for (const snapshot in this.pvtSnapshotInfo) {
+			if (this.pvtSnapshotInfo.hasOwnProperty(snapshot)) {
+				const status = this.pvtSnapshotInfo[snapshot].status;
+				if (status === SnapshotComponentStatus.inProgress) {
+					return true;
+				}
+			}
 		}
-		return undefined;
+		return false;
 	}
 
-	public getLoadStartupProgramsInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadStartupProgramsInfo().catch((error) => {
-				this.logger.error('[getLoadStartupProgramsInfo] ' + error);
-			});
-		}
-		return undefined;
+	private initEmptySnapshot() {
+		this.pvtSnapshotInfo = {};
+
+		this.getAllComponentsList().forEach((key) => {
+			this.pvtSnapshotInfo[key] = {
+				status: SnapshotComponentStatus.inProgress,
+				info: {
+					BaselineDate: '',
+					LastSnapshotDate: '',
+					IsDifferent: false,
+					Items: [],
+				},
+			};
+		});
 	}
 
-	public getLoadDisplayDevicesInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadDisplayDevicesInfo().catch((error) => {
-				this.logger.error('[getLoadDisplayDevicesInfo] ' + error);
-			});
-		}
-		return undefined;
-	}
+	private async getSnapshotInfo(componentName: string, updateSnapshot) {
+		this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.inProgress;
 
-	public getLoadKeyboardsInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadKeyboardsInfo().catch((error) => {
-				this.logger.error('[getLoadKeyboardsInfo] ' + error);
-			});
-		}
-		return undefined;
-	}
+		try {
+			const snapshotInfoResponse = await this.snapshotBridge.getSnapshotInfo(
+				componentName,
+				updateSnapshot
+			);
+			if (!snapshotInfoResponse) {
+				throw Error('Could not get response from Addin');
+			}
+			const componentSnapshot = snapshotInfoResponse[componentName];
+			if (componentSnapshot === undefined) {
+				throw Error('Could not find requested component info');
+			}
+			this.pvtSnapshotInfo[componentName].info = componentSnapshot;
+			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+		} catch (error) {
+			this.loggerService.error(
+				`Error ${error} during request for snapshot data from ${componentName}`
+			);
 
-	public getLoadPrintersInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadPrintersInfo().catch((error) => {
-				this.logger.error('[getLoadPrintersInfo] ' + error);
-			});
+			// need to think better how to deal with errors
+			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.error;
 		}
-		return undefined;
-	}
-
-	public getLoadMouseDevicesInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadMouseDevicesInfo().catch((error) => {
-				this.logger.error('[getLoadMouseDevicesInfo] ' + error);
-			});
-		}
-		return undefined;
-	}
-
-	public getLoadWebBrowsersInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadWebBrowsersInfo().catch((error) => {
-				this.logger.error('[getLoadWebBrowsersInfo] ' + error);
-			});
-		}
-		return undefined;
-	}
-
-	public getLoadCdRomDrivesInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadCdRomDrivesInfo().catch((error) => {
-				this.logger.error('[getLoadCdRomDrivesInfo] ' + error);
-			});
-		}
-		return undefined;
-	}
-
-	public getLoadOperatingSystemsInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadOperatingSystemsInfo().catch((error) => {
-				this.logger.error('[getLoadOperatingSystemsInfo] ' + error);
-			});
-		}
-		return undefined;
-	}
-
-	public getLoadStorageDevicesInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadStorageDevicesInfo().catch((error) => {
-				this.logger.error('[getLoadStorageDevicesInfo] ' + error);
-			});
-		}
-		return undefined;
-	}
-
-	public getLoadNetworkDevicesInfo() {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getLoadNetworkDevicesInfo().catch((error) => {
-				this.logger.error('[getLoadNetworkDevicesInfo] ' + error);
-			});
-		}
-		return undefined;
 	}
 }

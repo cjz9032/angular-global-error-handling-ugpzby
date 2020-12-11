@@ -18,7 +18,7 @@ import { CommonUiModule } from '../common/common-ui.module';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { UiSnapshotItemListComponent } from './components/dashboard/ui-snapshot-item-list/ui-snapshot-item-list.component';
 import { UiSnapshotListInfoComponent } from './components/dashboard/ui-snapshot-list-info/ui-snapshot-list-info.component';
-
+import { UiSnapshotItemComponent } from './components/dashboard/ui-snapshot-item/ui-snapshot-item.component';
 @NgModule({
 	declarations: [
 		PageSnapshotComponent,
@@ -26,15 +26,12 @@ import { UiSnapshotListInfoComponent } from './components/dashboard/ui-snapshot-
 		SnapshotMainComponent,
 		WidgetSnapshotComponent,
 		ModalSnapshotComponent,
+		UiSnapshotItemComponent,
 		UiSnapshotItemListComponent,
-		UiSnapshotListInfoComponent
+		UiSnapshotListInfoComponent,
 	],
-	schemas: [
-		CUSTOM_ELEMENTS_SCHEMA
-	],
-	exports: [
-		WidgetSnapshotComponent
-	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	exports: [WidgetSnapshotComponent],
 	imports: [
 		CommonModule,
 		CommonUiModule,
@@ -45,8 +42,8 @@ import { UiSnapshotListInfoComponent } from './components/dashboard/ui-snapshot-
 		SharedModule,
 		MetricsModule,
 		PageLayoutModule,
-		ContainerCardModule
-	]
+		ContainerCardModule,
+	],
 })
 export class SnapshotModule {
 	constructor(library: FaIconLibrary) {
