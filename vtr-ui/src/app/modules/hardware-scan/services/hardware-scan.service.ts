@@ -409,10 +409,10 @@ export class HardwareScanService {
 	public isMachineAvailable() {
 		// Variable containing machine names without HWScan enabled
 		const blackList = [
-			 'thinkstationp520',
-			 'thinkstationp520c',
-			 'thinkstationp720',
-			 'thinkstationp920',
+			'thinkstationp520',
+			'thinkstationp520c',
+			'thinkstationp720',
+			'thinkstationp920',
 		];
 
 		// Variable containing machine family name in the specific format
