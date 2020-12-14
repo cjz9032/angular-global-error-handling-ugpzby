@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.29](https://bitbucket.tc.lenovo.com///compare/v1.9.28...v1.9.29) (2020-12-14)
+
+
+### Features
+
+* **SP:** VAN-23048 indicater to user recommended action for none entitled user ([4e0071f](https://bitbucket.tc.lenovo.com///commit/4e0071f53c22008d27365500d579c90141cf5828))
+* **SystemUpdate:** VAN-23636 add feature click for Select All ([5838cbc](https://bitbucket.tc.lenovo.com///commit/5838cbc4d29c61f6ef501f56807a8dc69f323963))
+* **SystemUpdate:** VAN-23636 add select all ([77d1c02](https://bitbucket.tc.lenovo.com///commit/77d1c025c7b0beeaeb3eeb38b7ef86afb81889d5))
+
 ### [1.9.28](https://bitbucket.tc.lenovo.com///compare/v1.9.27...v1.9.28) (2020-12-11)
 
 
