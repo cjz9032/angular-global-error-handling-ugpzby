@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage nu are acces la cameră."
 			},
 			"threshold": "Prag",
-			"conservation": "Economisire"
+			"conservation": "Economisire",
+			"more": "MAI MULTE SETĂRI"
 		},
 		"systemStatus": {
 			"title": "Starea sistemului",

@@ -1046,7 +1046,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage 无法访问摄像头。"
 			},
 			"threshold": "阈值",
-			"conservation": "节电"
+			"conservation": "节电",
+			"more": "更多设置"
 		},
 		"systemStatus": {
 			"title": "系统状态",

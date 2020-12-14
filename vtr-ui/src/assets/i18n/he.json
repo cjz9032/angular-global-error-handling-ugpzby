@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "ל-Lenovo Vantage אין גישה למצלמה."
 			},
 			"threshold": "סף",
-			"conservation": "חיסכון"
+			"conservation": "חיסכון",
+			"more": "הגדרות נוספות"
 		},
 		"systemStatus": {
 			"title": "מצב המערכת",

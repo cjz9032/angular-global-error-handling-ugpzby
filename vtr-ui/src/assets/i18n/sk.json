@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage nemá prístup k fotoaparátu."
 			},
 			"threshold": "Hraničná úroveň",
-			"conservation": "Úspora"
+			"conservation": "Úspora",
+			"more": "ĎALŠIE NASTAVENIA"
 		},
 		"systemStatus": {
 			"title": "Stav systému",

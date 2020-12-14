@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage가 카메라에 액세스할 수 없습니다."
 			},
 			"threshold": "임계값",
-			"conservation": "보존"
+			"conservation": "보존",
+			"more": "추가 설정"
 		},
 		"systemStatus": {
 			"title": "시스템 상태",

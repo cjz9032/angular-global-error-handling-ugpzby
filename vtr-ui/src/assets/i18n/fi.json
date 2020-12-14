@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage ei voi käyttää kameraa."
 			},
 			"threshold": "Kynnys",
-			"conservation": "Säästö"
+			"conservation": "Säästö",
+			"more": "LISÄÄ ASETUKSIA"
 		},
 		"systemStatus": {
 			"title": "Järjestelmän tila",

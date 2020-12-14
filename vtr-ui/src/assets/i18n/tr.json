@@ -936,7 +936,8 @@
 				"cameraPrivacyNote": "Lenovo Vantage, Kamera'ya erişemiyor."
 			},
 			"threshold": "Eşik",
-			"conservation": "Tasarruf"
+			"conservation": "Tasarruf",
+			"more": "DİĞER AYARLAR"
 		},
 		"systemStatus": {
 			"title": "Sistem Durumu",
