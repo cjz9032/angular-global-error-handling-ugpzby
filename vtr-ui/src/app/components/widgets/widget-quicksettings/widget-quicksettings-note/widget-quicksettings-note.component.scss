@@ -1,0 +1,21 @@
+@import '../../../../app.theme.scss';
+
+.vtr-widget-quicksettings-note {
+	width: 100%;
+	background-color: $grey_lighter;
+	font-size: $fontsize_xs;
+	border: 0.1rem solid $grey_light;
+	border-radius: 0.5rem;
+	justify-content: space-between;
+	color: $shade_blue;
+	.note-icon {
+		font-size: 20px;
+	}
+	.privacy-link{
+		@extend %hyperlink-text;
+	}
+
+	#qs-note {
+		margin-top: 0.4rem;
+	}
+}

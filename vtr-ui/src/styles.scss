@@ -2650,3 +2650,41 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		}
 	}
 }
+
+
+.icomoon-Alert {
+	background-color: $alert_border;
+	border-radius: 100%;
+	padding: 2px;
+	.path1 {
+		background-image: $alert_bg;
+		border-radius: 100%;
+		color: transparent;
+
+		@media #{$black-on-white} {
+			background-color: transparent;
+			color: $dark
+		}
+		@media #{$white-on-black} {
+			background-color: transparent;
+			color: $light;
+		}
+	}
+	.path2 {
+		color: $light;
+
+		@media #{$black-on-white} {
+			color: $light;
+		}
+		@media #{$white-on-black} {
+			color: $dark;
+		}
+	}
+
+	@media #{$black-on-white} {
+		background-color: $dark;
+	}
+	@media #{$white-on-black} {
+		background-color: $light;
+	}
+}

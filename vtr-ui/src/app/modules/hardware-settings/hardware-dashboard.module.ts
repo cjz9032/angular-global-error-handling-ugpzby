@@ -42,12 +42,14 @@ import { WidgetSystemUpdateComponent } from 'src/app/components/widgets/widget-s
 import { WidgetEnergyStarComponent } from 'src/app/components/widgets/widget-energy-star/widget-energy-star.component';
 import { MaterialStateCardContainerComponent } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
 import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
+import { WidgetQuicksettingsNoteComponent } from 'src/app/components/widgets/widget-quicksettings/widget-quicksettings-note/widget-quicksettings-note.component';
 
 @NgModule({
 	declarations: [
 		PageDashboardComponent,
 		WidgetSwitchIconComponent,
 		WidgetQuicksettingsComponent,
+		WidgetQuicksettingsNoteComponent,
 		WidgetSystemUpdateComponent,
 		WidgetEnergyStarComponent,
 		WidgetDashboardWarrantyComponent,
