@@ -26,12 +26,6 @@
 			</button>
 		</div>
 		<div class="navbar-text ml-2 mr-auto clearfix">
-			<span *ngIf="configService.appBrand && configService.appName">
-				<div class="text-uppercase app-title" id="menu-main-text-appBrand" role="text">{{configService.appBrand}}
-					<span role="text"
-						class="app-name" id="menu-main-text-appName" [innerHTML]="configService.appName"></span>
-				</div>
-			</span>
 			<span>
 				<div class="text-left device-type">
 					<span *ngIf="!machineFamilyName">&nbsp;</span>
@@ -51,15 +45,15 @@
 			<button mat-icon-button
 				[matMenuTriggerFor]="hamburgerDropdownMenu?.matMenu"
 				id="menu-main-btn-navbar-toggler"
-				class="position-relative w-auto h-auto mr-1 py-1 px-3 rounded-0 text-center navbar-toggler line-height-normal"
+				class="position-relative w-auto h-auto mr-1 my-0 px-3 rounded-0 text-center navbar-toggler line-height-normal"
 				tabindex="1"
 				aria-label="menu-main-btn-navbar-toggler"
 				aria-haspopup="true"
 				aria-expanded="false"
 				(click)="toggleMenu($event)"
 				(keydown.enter)="toggleMenu($event)">
-				<span class="h-100 navbar-toggler-icon">
-					<fa-icon class="align-middle" [icon]="['fas', 'bars']"></fa-icon>
+				<span class="h-100 navbar-toggler-icon d-block">
+					<fa-icon class="d-block align-middle" [icon]="['fas', 'bars']"></fa-icon>
 				</span>
 				<span *ngIf="appsForYouService.UnreadMessageCount.totalMessage"
 					class="d-flex position-absolute rounded-circle justify-content-center align-items-center letter-spacing-0 top-0 unread-count-tag"
@@ -77,7 +71,7 @@
 			#menuTarget>
 			<ul class="h-100 ml-auto list-unstyled row justify-content-end">
 				<ng-container *ngFor="let item of items" class="h-100">
-					<li *ngIf="item && !item.hide && (!item.subitems || item.subitems.length === 0) && item.id !== 'user' && item.id !== 'app-search'">
+					<li class='h-100' *ngIf="item && !item.hide && (!item.subitems || item.subitems.length === 0) && item.id !== 'user' && item.id !== 'app-search'">
 						<button mat-button
 							*ngIf="item.label | translate"
 							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
@@ -101,7 +95,7 @@
 								class="beta">Beta</span>
 						</button>
 					</li>
-					<li *ngIf="item && !item.hide && item.subitems && item.subitems.length > 0 && item.id !== 'user' && item.id !== 'app-search'">
+					<li class='h-100' *ngIf="item && !item.hide && item.subitems && item.subitems.length > 0 && item.id !== 'user' && item.id !== 'app-search'">
 						<button mat-button
 							#menuTrigger="matMenuHoverTrigger"
 							[matMenuHoverTriggerFor]="materialMenuDropdown?.matMenu"
@@ -136,7 +130,7 @@
 							class="d-inline-block align-top">
 						</vtr-material-menu-dropdown>
 					</li>
-					<li class="user-item" *ngIf="item && !item.hide && item.id === 'user'">
+					<li class="h-100 user-item" *ngIf="item && !item.hide && item.id === 'user'">
 						<button mat-button
 							#menuTrigger="matMenuHoverTrigger"
 							[matMenuHoverTriggerFor]="userMenuMain"
@@ -151,7 +145,7 @@
 							(click)="onMenuItemClick(item)"
 							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
 							(focus)="closeAllOtherMatMenu(menuTrigger)">
-							<div class="d-inline-block text-center user-initials"
+							<div class="d-inline-block text-center user-initials rounded-circle"
 								[innerHTML]="deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials">
 							</div>
 							<span class="d-flex position-absolute rounded-circle justify-content-center align-items-center letter-spacing-0 unread-count-tag"
@@ -190,7 +184,7 @@
 								(click)="onMenuItemClick(item, $event)"
 								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)]"
 								href="javascript:void(0)">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'appsForYou.menuText.lenovoMigrationAssistant' | translate">
 								</span>
 								<span class="position-absolute rounded-circle unread-tag"
@@ -214,7 +208,7 @@
 								(click)="onMenuItemClick(item, $event)"
 								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)]"
 								href="javascript:void(0)">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'appsForYou.menuText.adobeRedemption' | translate">
 								</span>
 								<span class="position-absolute rounded-circle unread-tag"
@@ -234,7 +228,7 @@
 								metricsItem="DccRedemptionButton"
 								(click)="onMenuItemClick(item, $event)"
 								href="javascript:void(0)">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'dcc.menuText.lenovoDigitalOffer' | translate">
 								</span>
 								<span class="position-absolute rounded-circle unread-tag"
@@ -254,7 +248,7 @@
 								metricsItem="ModernPreloadButton"
 								href="javascript:void(0)"
 								(click)="openModernPreloadModal()">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'modernPreload.title' | translate">
 								</span>
 							</button>
@@ -271,7 +265,7 @@
 								routerLinkActive="active"
 								(click)="onMenuItemClick(item)"
 								(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown('settings')]">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'settings.preferenceSettings' | translate">
 								</span>
 							</button>
@@ -286,7 +280,7 @@
 								metricsItem="GiveFeedbackButton"
 								href="javascript:void(0)"
 								(click)="openFeedbackModal()">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'dashboard.feedback.title' | translate">
 								</span>
 							</button>
@@ -301,7 +295,7 @@
 								metricsItem="LenovoSurvey"
 								href="javascript:void(0)"
 								(click)="openSurveyModal(appsForYouService.lenovoSurvey.id)">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'dashboard.survey.title' | translate">
 								</span>
 								<span class="position-absolute rounded-circle unread-tag"
@@ -321,7 +315,7 @@
 								metricsItem="LenovoIdSignInButton"
 								href="javascript:void(0)"
 								(click)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'lenovoId.login' | translate">
 								</span>
 							</button>
@@ -336,7 +330,7 @@
 								metricsItem="LenovoIdStarterIdButton"
 								href="javascript:void(0)"
 								(click)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'lenovoId.unlockExclusives' | translate">
 								</span>
 							</button>
@@ -352,7 +346,7 @@
 								href="javascript:void(0)"
 								(click)="[onLogout(), onMenuItemClick(item)]"
 								[class.disabled]="isLoggingOut">
-								<span class="d-block overflow-hidden w-auto user-menu-item-text"
+								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="isLoggingOut ? ('lenovoId.loggingOut' | translate) : ('lenovoId.logout' | translate)">
 								</span>
 							</button>

@@ -2159,6 +2159,11 @@
 			}
 		}
 	}
+	.new-feature-tip-dialog {
+		.tips-content {
+			top: $menu_height;
+		}
+	}
 }
 
 body.focus-enable{

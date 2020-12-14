@@ -251,6 +251,7 @@ $fontsize_xl5: 5rem;
 $fontsize_xl4: 4.6rem;
 $fontsize_xl3: 4rem;
 $fontsize_xl2: 3.4rem;
+$fontsize_xl1: 3.2rem;
 $fontsize_xl: 2.4rem;
 $fontsize_lg: 2rem;
 $fontsize_md: 1.8rem;
@@ -418,6 +419,9 @@ $percent_100_light: $good_light;
 
 $menu_height: 9rem;
 $header_height: 20.5rem;
+$material_menu_height: 4.8rem;
+$menu_item_height: 3.6rem;
+$menu_item_tag_height: 1.6rem;
 
 $modal_top_margin: 8rem;
 
@@ -593,6 +597,15 @@ $high-contrast-sky-blue: #81bbf5;
 	}
 	@media #{$black-on-white} {
 		color: $high-contrast-white-textselected;
+	}
+}
+
+@mixin menu-color-focus-high-contrast {
+	@media #{$white-on-black} {
+		color: $high-contrast-black-yellow;
+	}
+	@media #{$black-on-white} {
+		color: $shade_blue;
 	}
 }
 

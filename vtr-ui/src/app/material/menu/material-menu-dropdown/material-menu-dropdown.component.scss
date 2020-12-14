@@ -32,22 +32,27 @@
 				line-height: 1.3;
 			}
 			&:hover {
-				text-decoration: underline;
-				color: $blue-light;
-				@include menu-color-hover-high-contrast;
-			}
-			&:focus {
-				text-decoration: underline;
 				color: $blue-light;
 				@include menu-color-hover-high-contrast;
 				span {
+					text-decoration: underline;
+				}
+			}
+			&:focus {
+				color: $blue-light;
+				@include menu-color-focus-high-contrast;
+				span {
+					text-decoration: none;
 					@include border-blue-high-contrast;
 				}
 			}
 			&.active {
-				text-decoration: underline;
 				color: $blue-light;
 				@include menu-color-hover-high-contrast;
+				span {
+					border: none;
+					text-decoration: underline;
+				}
 			}
 		}
 	}
