@@ -15,7 +15,7 @@
 		(click)="onRightIconClick(rightToolTip1, $event)"
 		(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
 		tabindex="0"
-		attr.aria-label="'battery health capacity tooltip, which reads:'+ {{'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate}}">
+		attr.aria-label="'battery health capacity tooltip, which reads:'{{'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate}}">
 	</fa-icon>
 	<ng-template #tooltipRef>
 		<div id="battery-health-capacity-tooltip-content" role="tooltip"

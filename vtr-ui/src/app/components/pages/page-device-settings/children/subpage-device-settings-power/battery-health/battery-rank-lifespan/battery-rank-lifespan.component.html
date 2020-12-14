@@ -9,14 +9,14 @@
         </div>
         <section id="battery-health-lifespan" class="col-right">
             <h5 class="desc" id="battery-health-lifespan-desc" attr.aria-label="predicted lifespan">
-                {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.lifeSpan' | translate }}&ensp;{{lifeSpanSymbol}}
+                {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.lifeSpan' | translate }}&nbsp;
             </h5>
 			<p *ngIf="lifeSpan; else lifeSpan_errorTemp" class="desc-light" id="battery-health-lifespan-months" role="text">
-                {{lifeSpan}} {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.months' | translate }}
+                <span class="symbol">{{lifeSpanSymbol}}</span>{{lifeSpan}} {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.months' | translate }}
             </p>
             <ng-template #lifeSpan_errorTemp>
-				<div style="display:inline-block; padding-bottom: 8px;" [attr.aria-label]="'battery health lifespan data is not available'" role="img">
-					<vtr-ui-exclamation-point ></vtr-ui-exclamation-point>
+				<div class="exclamation" [attr.aria-label]="'battery health lifespan data is not available'" role="img">
+					<vtr-ui-exclamation-point></vtr-ui-exclamation-point>
 				</div>
             </ng-template>
         </section>
