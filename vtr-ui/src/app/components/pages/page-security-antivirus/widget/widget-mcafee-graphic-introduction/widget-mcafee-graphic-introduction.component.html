@@ -24,7 +24,10 @@
 			</div>
 		</div>
 		<div class="right-side d-none d-md-block d-lg-none d-xl-block">
-			<img id="activeImag" [style.height.px]="introduction.clientHeight" src="assets/images/antivirus/hero_side.png" alt="" srcset="">
+			<picture>
+				<source srcset="assets/images/antivirus/hero_side.webp" type="image/webp">
+				<img id="activeImag" [style.height.px]="introduction.clientHeight" src="assets/images/antivirus/hero_side.png" alt="" srcset="">
+			</picture>
 		</div>
 		<div class="col-0 col col-lg-0 col p-0 hero-background d-none d-md-block d-lg-none d-xl-block position-relative"
 			>

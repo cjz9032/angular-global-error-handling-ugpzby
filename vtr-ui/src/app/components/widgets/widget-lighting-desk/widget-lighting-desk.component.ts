@@ -6,6 +6,7 @@ import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-versio
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from '../../../services/metric/metrics.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-widget-lighting-desk',
@@ -41,7 +42,8 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 		private localCacheService: LocalCacheService,
 		private gamingLightingService: GamingLightingService,
 		private logger: LoggerService,
-		private metrics: MetricService
+		private metrics: MetricService,
+		private windowsVerisonService: WindowsVersionService
 	) {}
 
 	ngOnInit() {
@@ -125,7 +127,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	public getLightingProfileById(currProfileId) {
 		try {
 			//if profileId is 0,no need to use interfae
-			if (currProfileId === 0){ return; };
+			if (currProfileId === 0) {
+				return;
+			}
 			if (this.gamingLightingService.isShellAvailable) {
 				this.gamingLightingService
 					.getLightingProfileById(currProfileId)
@@ -248,7 +252,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 
 			const metricsData = {
 				ItemName: 'lighting_color_change',
-				ItemValue: `${event}`
+				ItemValue: `${event}`,
 			};
 			this.sendFeatureClickMetrics(metricsData);
 		} catch (error) {}
@@ -343,7 +347,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 
 			const metricsData = {
 				ItemName: 'lighting_brightness',
-				ItemValue: `${event[0]}`
+				ItemValue: `${event[0]}`,
 			};
 			this.sendFeatureClickMetrics(metricsData);
 		} catch (error) {}
@@ -393,7 +397,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 
 			const metricsData = {
 				ItemName: 'lighting_speed',
-				ItemValue: `${event[0]}`
+				ItemValue: `${event[0]}`,
 			};
 			this.sendFeatureClickMetrics(metricsData);
 		} catch (error) {}
@@ -479,9 +483,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	}
 
 	public getCurrentName(lightingPanelImage, lightPanelType) {
-		const nameObj = lightingPanelImage.filter(
-			(element) => element.value === lightPanelType
-		);
+		const nameObj = lightingPanelImage.filter((element) => element.value === lightPanelType);
 		this.logger.info('nameObj ', nameObj);
 		return nameObj;
 	}
@@ -550,23 +552,26 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 								this.ledlayoutversion === 3 &&
 								lightingCapabilitiesRes.LightPanelType.indexOf(16) > -1
 							) {
-								this.lightingProfileCurrentDetail.panelImage =
-									'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
+								this.lightingProfileCurrentDetail.panelImage = this.windowsVerisonService.isNewerThanRS4()
+									? 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.webp'
+									: 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
 							} else if (
 								this.ledlayoutversion === 5 &&
 								lightingCapabilitiesRes.LightPanelType.indexOf(16) > -1
 							) {
-								this.lightingProfileCurrentDetail.panelImage =
-									'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
+								this.lightingProfileCurrentDetail.panelImage = this.windowsVerisonService.isNewerThanRS4()
+									? 'assets/images/gaming/lighting/lighting-ui-new/T750_water.webp'
+									: 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
 							} else if (
 								this.ledlayoutversion === 4 &&
 								lightingCapabilitiesRes.LightPanelType.indexOf(16) > -1
 							) {
-								this.lightingProfileCurrentDetail.panelImage =
-									'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png';
+								this.lightingProfileCurrentDetail.panelImage = this.windowsVerisonService.isNewerThanRS4()
+									? 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.webp'
+									: 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png';
 								if (this.lightingProfileCurrentDetail.lightPanelType === 128) {
 									this.lightingProfileCurrentDetail.pathUrl =
-										'M112,74.863197 L112.916507,74.8674839 C126.299053,74.9928726 137,77.8531206 137,81.363197 C137,84.9131607 126.054468,87.7984431 112.459257,87.8621223 L112,87.863197 C98.1928813,87.863197 87,'+
+										'M112,74.863197 L112.916507,74.8674839 C126.299053,74.9928726 137,77.8531206 137,81.363197 C137,84.9131607 126.054468,87.7984431 112.459257,87.8621223 L112,87.863197 C98.1928813,87.863197 87,' +
 										'84.9530479 87,81.363197 C87,77.7733462 98.1928813,74.863197 112,74.863197 Z M142.080665,63 L142.080665,76.8631566 L141.194164,76.8083655 C130.186845,76.0682405 122,73.2702241 122,69.9315783 C122,66.5039019 130.629298,63.646073 142.080665,63 Z';
 									this.lightingProfileCurrentDetail.panelName =
 										'gaming.lightingNewversion.machineName.name6';
@@ -696,9 +701,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
 		) {
-			if (val === 268435456 || val === 4 || val === 256){
+			if (val === 268435456 || val === 4 || val === 256) {
 				this.supportBrightness = false;
-			}else{
+			} else {
 				this.supportBrightness = true;
 			}
 		} else {
@@ -732,9 +737,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
 		) {
-			if (val === 268435456 || val === 1 || val === 256){
+			if (val === 268435456 || val === 1 || val === 256) {
 				this.supportSpeed = false;
-			}else{
+			} else {
 				this.supportSpeed = true;
 			}
 		} else {
@@ -759,9 +764,9 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 				this.lightingProfileCurrentDetail.lightPanelType
 			) > -1
 		) {
-			if (val !== 256 && val !== 268435456){
+			if (val !== 256 && val !== 268435456) {
 				this.supportColor = true;
-			}else{
+			} else {
 				this.supportColor = false;
 			}
 		} else {
@@ -835,49 +840,71 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 			if (this.ledlayoutversion === 3) {
 				this.getCurrentPanelImg(
 					4,
-					'assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png'
 				);
 				this.getCurrentPanelImg(
 					16,
-					'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png'
 				);
 				this.getCurrentPanelImg(
 					64,
-					'assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T550_big_y.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png'
 				);
 				this.getCurrentPanelImg(
 					128,
-					'assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png'
 				);
 				this.getCurrentPanelImg(
 					256,
-					'assets/images/gaming/lighting/lighting-ui-new/T550_front.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T550_front.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T550_front.png'
 				);
 			} else if (this.ledlayoutversion === 5) {
 				this.getCurrentPanelImg(
 					4,
-					'assets/images/gaming/lighting/lighting-ui-new/T750_wind.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T750_wind.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T750_wind.png'
 				);
 				this.getCurrentPanelImg(
 					16,
-					'assets/images/gaming/lighting/lighting-ui-new/T750_water.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T750_water.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png'
 				);
 				this.getCurrentPanelImg(
 					256,
-					'assets/images/gaming/lighting/lighting-ui-new/T750_fct.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T750_fct.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T750_fct.png'
 				);
 			} else if (this.ledlayoutversion === 4) {
 				this.getCurrentPanelImg(
 					8,
-					'assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.png'
 				);
 				this.getCurrentPanelImg(
 					16,
-					'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png'
 				);
 				this.getCurrentPanelImg(
 					256,
-					'assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.png'
+					this.windowsVerisonService.isNewerThanRS4()
+						? 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.webp'
+						: 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.png'
 				);
 			}
 		}
@@ -959,7 +986,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 		try {
 			const metricData = {
 				ItemType: metricsdata.ItemType ? metricsdata.ItemType : 'FeatureClick',
-				ItemParent: metricsdata.ItemParent ? metricsdata.ItemParent : 'Gaming.Lighting'
+				ItemParent: metricsdata.ItemParent ? metricsdata.ItemParent : 'Gaming.Lighting',
 			};
 			Object.keys(metricsdata).forEach((key) => {
 				if (metricsdata[key]) {

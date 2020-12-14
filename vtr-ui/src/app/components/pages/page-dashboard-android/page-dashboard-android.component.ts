@@ -21,6 +21,7 @@ import { UserService } from 'src/app/services/user/user.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { Subscription } from 'rxjs';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-dashboard-android',
@@ -66,7 +67,8 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 		vantageShellService: VantageShellService,
 		public androidService: AndroidService,
 		private sanitizer: DomSanitizer,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		config.backdrop = 'static';
 		config.keyboard = false;
@@ -111,19 +113,14 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			(response: any) => {
 				const heroBannerItems = this.cmsService
 					.getOneCMSContent(response, 'home-page-hero-banner', 'position-A')
-					.map((record, index) => {
-						return {
-							albumId: 1,
-							id: record.Id,
-							source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
-							title: this.sanitizer.sanitize(
-								SecurityContext.HTML,
-								record.Description
-							),
-							url: record.FeatureImage,
-							ActionLink: record.ActionLink,
-						};
-					});
+					.map((record, index) => ({
+						albumId: 1,
+						id: record.Id,
+						source: this.sanitizer.sanitize(SecurityContext.HTML, record.Title),
+						title: this.sanitizer.sanitize(SecurityContext.HTML, record.Description),
+						url: record.FeatureImage,
+						ActionLink: record.ActionLink,
+					}));
 				if (heroBannerItems && heroBannerItems.length) {
 					this.heroBannerItems = heroBannerItems;
 				}
@@ -207,7 +204,9 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 				id: 1,
 				source: 'Vantage',
 				title: 'Welcome to the next generation of Lenovo Vantage!',
-				url: 'assets/cms-cache/Vantage3Hero-zone0.jpg',
+				url: this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/cms-cache/Vantage3Hero-zone0.webp'
+					: 'assets/cms-cache/Vantage3Hero-zone0.jpg',
 				ActionLink: null,
 			},
 		];
@@ -216,7 +215,9 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/Alexa4x3-zone1.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/Alexa4x3-zone1.webp'
+				: 'assets/cms-cache/Alexa4x3-zone1.jpg',
 			Action: '',
 			ActionType: ContentActionType.External,
 			ActionLink: null,
@@ -234,7 +235,9 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/Security4x3-zone2.webp'
+				: 'assets/cms-cache/Security4x3-zone2.jpg',
 			Action: '',
 			ActionType: ContentActionType.External,
 			ActionLink: null,
@@ -252,7 +255,9 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/Gamestore8x3-zone3.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/Gamestore8x3-zone3.webp'
+				: 'assets/cms-cache/Gamestore8x3-zone3.jpg',
 			Action: '',
 			ActionType: ContentActionType.External,
 			ActionLink: null,
@@ -270,7 +275,9 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/content-card-4x4-support.webp'
+				: 'assets/cms-cache/content-card-4x4-support.jpg',
 			Action: '',
 			ActionType: ContentActionType.External,
 			ActionLink: null,
@@ -288,7 +295,9 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/content-card-4x4-award.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/content-card-4x4-award.webp'
+				: 'assets/cms-cache/content-card-4x4-award.jpg',
 			Action: '',
 			ActionType: ContentActionType.External,
 			ActionLink: null,

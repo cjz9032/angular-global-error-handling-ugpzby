@@ -16,6 +16,7 @@ import { BacklightService } from './backlight/backlight.service';
 import { TopRowFunctionsIdeapadService } from './top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { UiCircleRadioWithCheckBoxListModel } from 'src/app/components/ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-input-accessory',
@@ -25,22 +26,34 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnDestroy {
 	title = 'device.deviceSettings.inputAccessories.title';
 	public shortcutKeys: any[] = [];
-	public privacyIcon = 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
-	public kbdBlIcon = 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
-	public merlynIcon = 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
-	public zoomIcon = 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
+	public privacyIcon = this.windowsVerisonService.isNewerThanRS4()
+		? 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.webp'
+		: 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
+	public kbdBlIcon = this.windowsVerisonService.isNewerThanRS4()
+		? 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/KBD-BL.webp'
+		: 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
+	public merlynIcon = this.windowsVerisonService.isNewerThanRS4()
+		? 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.webp'
+		: 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
+	public zoomIcon = this.windowsVerisonService.isNewerThanRS4()
+		? 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Zoom-app.webp'
+		: 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
 	public imagePath = 'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/';
-	public imagePathGrafEvo = 'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/GrafEvo/';
-	public imagePathCS20 = 'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/CS20/';
+	public imagePathGrafEvo =
+		'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/GrafEvo/';
+	public imagePathCS20 =
+		'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/CS20/';
 	public imagesArray: string[] = [
-		'Belgium.png',
-		'French.png',
-		'French_Canadian.png',
-		'German.png',
-		'Italian.png',
-		'Spanish.png',
-		'Turkish_F.png',
-		'Standered.png',
+		this.windowsVerisonService.isNewerThanRS4() ? 'Belgium.webp' : 'Belgium.png',
+		this.windowsVerisonService.isNewerThanRS4() ? 'French.webp' : 'French.png',
+		this.windowsVerisonService.isNewerThanRS4()
+			? 'French_Canadian.webp'
+			: 'French_Canadian.png',
+		this.windowsVerisonService.isNewerThanRS4() ? 'German.webp' : 'German.png',
+		this.windowsVerisonService.isNewerThanRS4() ? 'Italian.webp' : 'Italian.png',
+		this.windowsVerisonService.isNewerThanRS4() ? 'Spanish.webp' : 'Spanish.png',
+		this.windowsVerisonService.isNewerThanRS4() ? 'Turkish_F.webp' : 'Turkish_F.png',
+		this.windowsVerisonService.isNewerThanRS4() ? 'Standered.webp' : 'Standered.png',
 	];
 	public image = '';
 	public additionalCapabilitiesObj: any = {};
@@ -82,7 +95,8 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		private logger: LoggerService,
 		private backlightService: BacklightService,
 		private localCacheService: LocalCacheService,
-		private batteryService: BatteryDetailService
+		private batteryService: BatteryDetailService,
+		private windowsVerisonService: WindowsVersionService
 	) {}
 
 	ngOnInit() {
@@ -323,7 +337,12 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	public getKeyboardMap(layOutName, machineType) {
 		const type = machineType.toLowerCase();
 		this.imagesArray.forEach((element) => {
-			if (element.toLowerCase() === layOutName.toLowerCase() + '.png') {
+			if (
+				element.toLowerCase() ===
+				layOutName.toLowerCase() + this.windowsVerisonService.isNewerThanRS4()
+					? '.webp'
+					: '.png'
+			) {
 				if (this.keyboardVersion === '1') {
 					this.image = this.imagePathCS20 + element;
 				} else {

@@ -17,6 +17,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { ModalGamingRunningAppListComponent } from './../../modal/modal-gaming-running-app-list/modal-gaming-running-app-list.component';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-autoclose',
@@ -65,7 +66,8 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		private shellServices: VantageShellService,
 		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
 		private ngZone: NgZone,
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;
@@ -225,10 +227,14 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 
 		if (!this.isOnline) {
 			this.cardContentPositionC = GAMING_DATA.buildFeatureImage(
-				'assets/cms-cache/GamingPosC.jpg'
+				this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/cms-cache/GamingPosC.webp'
+					: 'assets/cms-cache/GamingPosC.jpg'
 			);
 			this.cardContentPositionF = GAMING_DATA.buildFeatureImage(
-				'assets/cms-cache/autoclose_offline.jpg'
+				this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/cms-cache/autoclose_offline.webp'
+					: 'assets/cms-cache/autoclose_offline.jpg'
 			);
 		}
 	}

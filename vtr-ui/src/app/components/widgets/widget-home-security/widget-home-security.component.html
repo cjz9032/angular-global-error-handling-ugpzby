@@ -15,8 +15,11 @@
 				<ul class="bullet-list">
 					<div class="gem-box mb-5 pl-3 d-none d-md-block d-lg-none d-xl-block">
 						<div class="gem" id="gem">
-							<img src="assets/images/Banner_no_logo_h&f.jpg"
-								center />
+							<picture>
+								<source srcset="assets/images/Banner_no_logo_h&f.webp" type="image/webp">
+								<img src="assets/images/Banner_no_logo_h&f.jpg"
+									center />
+							</picture>
 						</div>
 					</div>
 					<li class="good" *ngFor="let item of items;">
@@ -48,8 +51,11 @@
 
 					<div class="gem-box mb-5 d-block d-md-none d-lg-block d-xl-none">
 						<div class="gem" id="gem">
-							<img src="assets/images/Banner_no_logo_h&f.jpg"
+							<picture>
+                      <source srcset="assets/images/Banner_no_logo_h&f.webp" type="image/webp">
+                      <img src="assets/images/Banner_no_logo_h&f.jpg"
 								center />
+                      </picture>
 						</div>
 					</div>
 

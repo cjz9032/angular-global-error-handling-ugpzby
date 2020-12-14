@@ -20,6 +20,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { ConfigService } from 'src/app/services/config/config.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 declare const Windows: any;
 
@@ -81,7 +82,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: false,
-		},		
+		},
 		{
 			id: 'smart-assist',
 			label: 'device.smartAssist.title',
@@ -92,7 +93,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			canActivate: [GuardService, NonArmGuard],
 			subitems: [],
 			active: false,
-		}
+		},
 	];
 	cardContentPositionA: any = {};
 	isDesktopMachine = true;
@@ -112,7 +113,8 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private localCacheService: LocalCacheService,
 		private router: Router,
-		private configService: ConfigService
+		private configService: ConfigService,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		// translate subheader menus
 		this.menuItems.forEach((m) => {
@@ -361,7 +363,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/Alexa4x3-zone1.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/Alexa4x3-zone1.webp'
+				: 'assets/cms-cache/Alexa4x3-zone1.jpg',
 			Action: '',
 			ActionType: ContentActionType.External,
 			ActionLink: null,

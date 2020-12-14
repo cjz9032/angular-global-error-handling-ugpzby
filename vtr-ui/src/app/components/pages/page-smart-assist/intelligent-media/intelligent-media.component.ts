@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EMPTY } from 'rxjs';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-intelligent-media',
@@ -19,11 +20,17 @@ export class IntelligentMediaComponent implements OnInit {
 	@Input() superResolutionAvailable = false;
 	@Input() superResolutionTip: string;
 	@Output() superResolutionToggle: EventEmitter<any> = new EventEmitter();
-	public image = '/assets/images/hardware-settings/smart-assist/intelligent-media/VideoResolutionUpscaling.png';
+	public image = this.windowsVerisonService.isNewerThanRS4()
+		? '/assets/images/hardware-settings/smart-assist/intelligent-media/VideoResolutionUpscaling.webp'
+		: '/assets/images/hardware-settings/smart-assist/intelligent-media/VideoResolutionUpscaling.png';
 
 	@Input() videoPlaybackSupportHSA = false;
 
-	constructor(private smartAssist: SmartAssistService, private logger: LoggerService) {}
+	constructor(
+		private smartAssist: SmartAssistService,
+		private logger: LoggerService,
+		private windowsVerisonService: WindowsVersionService
+	) {}
 
 	ngOnInit() {}
 

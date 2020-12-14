@@ -20,6 +20,7 @@ import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-settings',
@@ -83,31 +84,41 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 			id: 'business-use',
 			value: this.segmentConst.SMB,
 			textKey: 'welcometutorial.segments.smb',
-			image: 'assets/images/welcome/business-use.jpg',
+			image: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/images/welcome/business-use.webp'
+				: 'assets/images/welcome/business-use.jpg',
 		},
 		{
 			id: 'personal-use',
 			value: this.segmentConst.ConsumerBase,
 			textKey: 'welcometutorial.segments.consumer',
-			image: 'assets/images/welcome/personal-use.jpg',
+			image: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/images/welcome/personal-use.webp'
+				: 'assets/images/welcome/personal-use.jpg',
 		},
 		{
 			id: 'personal-gaming-use',
 			value: this.segmentConst.ConsumerGaming,
 			textKey: 'welcometutorial.segments.consumerGaming',
-			image: 'assets/images/welcome/personal-gaming-use.jpg',
+			image: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/images/welcome/personal-gaming-use.webp'
+				: 'assets/images/welcome/personal-gaming-use.jpg',
 		},
 		{
 			id: 'personal-education-use',
 			value: this.segmentConst.ConsumerEducation,
 			textKey: 'welcometutorial.segments.consumerEducation',
-			image: 'assets/images/welcome/personal-education-use.jpg',
+			image: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/images/welcome/personal-education-use.webp'
+				: 'assets/images/welcome/personal-education-use.jpg',
 		},
 		{
 			id: 'custom-use',
 			value: this.segmentConst.Commercial,
 			textKey: 'welcometutorial.segments.commercial',
-			image: 'assets/images/welcome/custom-use.jpg',
+			image: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/images/welcome/custom-use.webp'
+				: 'assets/images/welcome/custom-use.jpg',
 		},
 	];
 
@@ -128,7 +139,8 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		private localInfoService: LocalInfoService,
 		private loggerService: LoggerService,
 		private localCacheService: LocalCacheService,
-		public smartPerformanceService: SmartPerformanceService
+		public smartPerformanceService: SmartPerformanceService,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();

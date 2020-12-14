@@ -26,6 +26,7 @@ import { SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum'
 import { DeviceCondition, DeviceStatus } from 'src/app/data-models/widgets/status.model';
 import { DashboardStateCardData } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
 import { map, startWith } from 'rxjs/operators';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 interface IContentGroup {
 	positionA: any[];
@@ -140,7 +141,8 @@ export class DashboardService {
 		private hardwareScanService: HardwareScanService,
 		private configService: ConfigService,
 		private spService: SmartPerformanceService,
-		private selfselectService: SelfSelectService
+		private selfselectService: SelfSelectService,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
@@ -332,7 +334,9 @@ export class DashboardService {
 				id: 1,
 				source: 'Vantage',
 				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'],
-				url: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
+				url: this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/cms-cache/offline/Default-SMB-Welcome.webp'
+					: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null,
 				DataSource: ContentSource.Local,
 				isLocal: true,
@@ -342,7 +346,9 @@ export class DashboardService {
 			Title: this.translateString['common.menu.support'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/offline/Default-SMB-Support.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/offline/Default-SMB-Support.webp'
+				: 'assets/cms-cache/offline/Default-SMB-Support.jpg',
 			Action: '',
 			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:support',
@@ -362,7 +368,9 @@ export class DashboardService {
 			Title: this.translateString['common.menu.device.sub2'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/offline/Default-SMB-Device-Settings.webp'
+				: 'assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
 			Action: '',
 			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:device-settings',
@@ -382,7 +390,9 @@ export class DashboardService {
 			Title: this.translateString['dashboard.offlineInfo.systemHealth'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/offline/Default-SMB-My-Device.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/offline/Default-SMB-My-Device.webp'
+				: 'assets/cms-cache/offline/Default-SMB-My-Device.jpg',
 			Action: '',
 			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:device',
@@ -402,7 +412,9 @@ export class DashboardService {
 			Title: this.translateString['settings.preferenceSettings'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/offline/Default-Preference-Settings.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/offline/Default-Preference-Settings.webp'
+				: 'assets/cms-cache/offline/Default-Preference-Settings.jpg',
 			Action: this.translateString['systemUpdates.readMore'],
 			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:preference',
@@ -422,7 +434,9 @@ export class DashboardService {
 			Title: this.translateString['systemUpdates.title'],
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: 'assets/cms-cache/offline/Default-SMB-System-Update.jpg',
+			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'assets/cms-cache/offline/Default-SMB-System-Update.webp'
+				: 'assets/cms-cache/offline/Default-SMB-System-Update.jpg',
 			Action: this.translateString['systemUpdates.readMore'],
 			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:system-updates',
@@ -453,7 +467,9 @@ export class DashboardService {
 	}
 
 	public getPositionBData(): Observable<any> {
-		return this.getDeviceStatusWithTimeOut(10000).pipe(map(conditon => this.getStateCardData(conditon))).pipe(startWith(this.positionBLoadingData));
+		return this.getDeviceStatusWithTimeOut(10000)
+			.pipe(map((conditon) => this.getStateCardData(conditon)))
+			.pipe(startWith(this.positionBLoadingData));
 	}
 
 	public getDeviceStatusWithTimeOut(timeout: number): Observable<DeviceCondition> {
@@ -473,7 +489,10 @@ export class DashboardService {
 			this.getDeviceStatus().then((dvsconditon) => {
 				clearTimeout(loadingTimer);
 				if (dvsconditon) {
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.DeviceCondition, dvsconditon);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.DeviceCondition,
+						dvsconditon
+					);
 					subscriber.next(dvsconditon);
 				}
 				subscriber.complete();
@@ -571,7 +590,7 @@ export class DashboardService {
 		if (
 			lastSacnInfo.date &&
 			this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) >
-			SystemHealthDates.HardwareScan
+				SystemHealthDates.HardwareScan
 		) {
 			return true;
 		}

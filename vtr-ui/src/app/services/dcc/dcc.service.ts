@@ -6,6 +6,7 @@ import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceService } from '../device/device.service';
 import { CommonService } from '../common/common.service';
 import { SelfSelectService, SegmentConst } from './../self-select/self-select.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -15,9 +16,15 @@ export class DccService {
 	public isDccDevice = false;
 	private cmsHeaderDccBackgroundUpdated = false;
 	public headerBackground = '';
-	private headerDefaultBackground = 'assets/images/HeaderImage.jpg';
-	private headerDccBackground = 'assets/images/HeaderImageDcc.jpg';
-	private headerSmbBackground = 'assets/images/HeaderImageSmb.png';
+	private headerDefaultBackground = this.windowsVerisonService.isNewerThanRS4()
+		? 'assets/images/HeaderImage.webp'
+		: 'assets/images/HeaderImage.jpg';
+	private headerDccBackground = this.windowsVerisonService.isNewerThanRS4()
+		? 'assets/images/HeaderImageDcc.webp'
+		: 'assets/images/HeaderImageDcc.jpg';
+	private headerSmbBackground = this.windowsVerisonService.isNewerThanRS4()
+		? 'assets/images/HeaderImageSmb.webp'
+		: 'assets/images/HeaderImageSmb.png';
 
 	constructor(
 		private logger: LoggerService,
@@ -25,7 +32,8 @@ export class DccService {
 		private deviceService: DeviceService,
 		private commonService: CommonService,
 		private vantageShellService: VantageShellService,
-		private selfSelectService: SelfSelectService
+		private selfSelectService: SelfSelectService,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		this.initialize();
 	}

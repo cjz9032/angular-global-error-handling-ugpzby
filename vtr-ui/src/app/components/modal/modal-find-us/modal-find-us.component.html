@@ -3,11 +3,14 @@
 	<div class="content py-40"
 		*ngIf="region === 'cn'">
 		<div class="img-con pt-4 pb-40">
-			<img class="qr-img"
-				src="assets/images/wechat-qrcode.png"
-				alt="{{ 'support.needHelp.listContactUsOnWechat' | translate}}"
-				id="find-us-modal-wechat-qrcode"
-				role="img" />
+			<picture>
+				<source srcset="assets/images/wechat-qrcode.webp" type="image/webp">
+				<img class="qr-img"
+					src="assets/images/wechat-qrcode.png"
+					alt="{{ 'support.needHelp.listContactUsOnWechat' | translate}}"
+					id="find-us-modal-wechat-qrcode"
+					role="img" />
+			</picture>
 		</div>
 		<div id="find-us-modal-basic-title"
 			class="text-center title mb-2"
@@ -28,9 +31,12 @@
 			metricsEvent="FeatureClick"
 			metricsParent="Page.Support.FindUs">
 			<div class="img-con pt-4 pb-40">
-				<img class="fb-img"
-					src="assets/images/logo-facebook.png"
-					alt="{{ 'support.needHelp.listContactUsOnFacebook' | translate}}" />
+				<picture>
+					<source srcset="assets/images/logo-facebook.webp" type="image/webp">
+					<img class="fb-img"
+						src="assets/images/logo-facebook.png"
+						alt="{{ 'support.needHelp.listContactUsOnFacebook' | translate}}" />
+				</picture>
 			</div>
 			<div id="find-us-modal-basic-title"
 				class="text-center title mb-2"

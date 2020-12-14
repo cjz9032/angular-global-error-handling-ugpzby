@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -320,32 +321,36 @@ export class MockService {
 		},
 		{
 			Title: '',
-			Thumbnail:
-				'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			Thumbnail: this.windowsVerisonService.isNewerThanRS4()
+				? 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.webp'
+				: 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			Logo: 'assets/images/test-logo.svg',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail:
-				'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			Thumbnail: this.windowsVerisonService.isNewerThanRS4()
+				? 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.webp'
+				: 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			Logo: '',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail:
-				'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			Thumbnail: this.windowsVerisonService.isNewerThanRS4()
+				? 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.webp'
+				: 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			Logo: 'assets/images/test-logo.svg',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail:
-				'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			Thumbnail: this.windowsVerisonService.isNewerThanRS4()
+				? 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.webp'
+				: 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			Logo: 'assets/images/test-logo.svg',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
@@ -359,16 +364,18 @@ export class MockService {
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail:
-				'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
+			Thumbnail: this.windowsVerisonService.isNewerThanRS4()
+				? 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.webp'
+				: 'https://d3w2mpp70f6o8z.cloudfront.net/media/images/MareNostrum.original.jpg',
 			Logo: 'assets/images/test-logo.svg',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
 		},
 		{
 			Title: 'Lenovo Reprehenderit Officia Porro Iure est Deserunt Velit',
-			Thumbnail:
-				'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
+			Thumbnail: this.windowsVerisonService.isNewerThanRS4()
+				? 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.webp'
+				: 'https://www.channelweb.co.uk/w-images/7703f0aa-a9d4-48ec-a719-c993f0388479/3/Datacentre-580x358.jpg',
 			Logo: '',
 			LogoText: 'LENOVO SPECIAL',
 			ReadMore: '/#/support-detail/1',
@@ -549,5 +556,5 @@ export class MockService {
 	// 	}
 	// };
 
-	constructor() {}
+	constructor(private windowsVerisonService: WindowsVersionService) {}
 }

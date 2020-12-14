@@ -36,8 +36,9 @@ import {
 } from 'src/app/services/self-select/self-select.service';
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
-declare var Windows;
+declare let Windows;
 
 @Component({
 	selector: 'vtr-page-device-updates',
@@ -224,7 +225,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private antiVirusService: AntivirusService,
 		private selfSelectService: SelfSelectService,
 		private localCacheService: LocalCacheService,
-		private metricService: MetricService
+		private metricService: MetricService,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.metrics = shellService.getMetrics();
@@ -312,7 +314,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.supportWebsiteCard = {
 				Id: 'LenovoSupportWebsite',
 				Title: value,
-				FeatureImage: 'assets/images/support.jpg',
+				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/images/support.webp'
+					: 'assets/images/support.jpg',
 				ActionType: ContentActionType.External,
 				ActionLink: this.supportLink,
 			};
@@ -334,7 +338,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.securityWidgetCard = {
 						Id: 'SecurityWidgetCard',
 						Title: title,
-						FeatureImage: 'assets/images/security-bg.jpg',
+						FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+							? 'assets/images/security-bg.webp'
+							: 'assets/images/security-bg.jpg',
 						ActionType: ContentActionType.Internal,
 						ActionLink: 'lenovo-vantage3:anti-virus',
 						SupportOffline: true,
@@ -683,9 +689,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			} = this.systemUpdateService.autoUpdateStatus;
 			if (name === 'critical-updates') {
 				criticalAutoUpdates = checked;
-				const recommendUpdate = this.autoUpdateOptions.find((update) => {
-					return update.name === 'recommended-updates';
-				});
+				const recommendUpdate = this.autoUpdateOptions.find(
+					(update) => update.name === 'recommended-updates'
+				);
 				if (!checked) {
 					recommendedAutoUpdates = false;
 					recommendUpdate.isChecked = false;
@@ -695,9 +701,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				}
 			} else if (name === 'recommended-updates') {
 				recommendedAutoUpdates = checked;
-				const criticalUpdate = this.autoUpdateOptions.find((update) => {
-					return update.name === 'critical-updates';
-				});
+				const criticalUpdate = this.autoUpdateOptions.find(
+					(update) => update.name === 'critical-updates'
+				);
 				if (checked && !criticalUpdate.isChecked) {
 					criticalUpdate.isChecked = true;
 					criticalAutoUpdates = true;
@@ -924,12 +930,11 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private showToastMessage(updateList: Array<AvailableUpdateDetail>) {
-		const failedUpdates = updateList.find((update) => {
-			return (
+		const failedUpdates = updateList.find(
+			(update) =>
 				update.installationStatus === UpdateActionResult.DownloadFailed ||
 				update.installationStatus === UpdateActionResult.InstallFailed
-			);
-		});
+		);
 		if (failedUpdates && !this.isInstallFailedMessageToasted) {
 			this.systemUpdateService.queueToastMessage(UpdateFailToastMessage.MessageID, '', '');
 			this.isInstallFailedMessageToasted = true;
@@ -938,9 +943,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	}
 
 	private filterIgnoredUpdate(updateList: Array<AvailableUpdateDetail>, isIgnored: boolean) {
-		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return value.isIgnored === isIgnored;
-		});
+		const updates = updateList.filter(
+			(value: AvailableUpdateDetail) => value.isIgnored === isIgnored
+		);
 		return updates;
 	}
 
@@ -949,16 +954,18 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		updateStatusArray: Array<string>
 	) {
 		const filterArray = updateStatusArray.map((item) => item.toLocaleLowerCase());
-		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return filterArray.indexOf(value.installationStatus.toLowerCase()) > -1;
-		});
+		const updates = updateList.filter(
+			(value: AvailableUpdateDetail) =>
+				filterArray.indexOf(value.installationStatus.toLowerCase()) > -1
+		);
 		return updates;
 	}
 
 	private filterUpdate(updateList: Array<AvailableUpdateDetail>, packageSeverity: string) {
-		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase();
-		});
+		const updates = updateList.filter(
+			(value: AvailableUpdateDetail) =>
+				value.packageSeverity.toLowerCase() === packageSeverity.toLowerCase()
+		);
 		return updates;
 	}
 

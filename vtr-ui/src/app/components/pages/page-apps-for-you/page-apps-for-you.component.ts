@@ -12,6 +12,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAppsForYouScreenshotComponent } from '../../modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
 import { TranslateService } from '@ngx-translate/core';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-apps-for-you',
@@ -53,7 +54,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	// mockScreenShots = [
 	// 	{
 	// 		id: 'apps-for-you-screenshot-1',
-	// 		imageUrl: 'assets/images/apps-for-you/screenshot1(1).png',
+	// 		imageUrl: this.windowsVerisonService.isNewerThanRS4() ? 'assets/images/apps-for-you/screenshot1(1).webp' : 'assets/images/apps-for-you/screenshot1(1).png',
 	// 		position: 1,
 	// 		isRepeat: false,
 	// 		show: 'show',
@@ -70,7 +71,8 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		public modalService: NgbModal,
 		private appsForYouService: AppsForYouService,
-		private translateService: TranslateService
+		private translateService: TranslateService,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.systemUpdateBridge = vantageShellService.getSystemUpdate();

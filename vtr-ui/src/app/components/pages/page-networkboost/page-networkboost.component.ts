@@ -14,6 +14,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { ModalGamingRunningAppListComponent } from './../../modal/modal-gaming-running-app-list/modal-gaming-running-app-list.component';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-networkboost',
@@ -60,7 +61,8 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 		private shellServices: VantageShellService,
 		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
 		private ngZone: NgZone,
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;
@@ -306,11 +308,15 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 
 		if (!this.isOnline) {
 			this.cardContentPositionC = {
-				FeatureImage: 'assets/cms-cache/GamingPosC.jpg',
+				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/cms-cache/GamingPosC.webp'
+					: 'assets/cms-cache/GamingPosC.jpg',
 			};
 
 			this.cardContentPositionF = {
-				FeatureImage: 'assets/cms-cache/network_boost_offline.jpg',
+				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/cms-cache/network_boost_offline.webp'
+					: 'assets/cms-cache/network_boost_offline.jpg',
 			};
 		}
 	}
