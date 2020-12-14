@@ -64,6 +64,15 @@ section .desc-light {
 	color: $grey_darker;
 	font-family: $font_family_semilight;
 	padding-top: 12px;
+	margin-left: 2px;
+}
+section .symbol {
+	font-weight: 600;
+}
+section .exclamation {
+	margin-left: 0.5rem;
+	padding-bottom: 8px;
+	display: inline-block;
 }
 .col-left {
 	min-width: 173px;
