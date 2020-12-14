@@ -7,33 +7,37 @@ describe('ModalSnapshotComponent', () => {
 	let component: ModalSnapshotComponent;
 	let fixture: ComponentFixture<ModalSnapshotComponent>;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [ModalSnapshotComponent],
-			imports: [TranslateModule.forRoot()],
-			providers: [NgbActiveModal],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [ModalSnapshotComponent],
+				imports: [TranslateModule.forRoot()],
+				providers: [NgbActiveModal],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalSnapshotComponent);
 		component = fixture.componentInstance;
-		component.snapshotInfo = [{
-			hardwareList: [
-				{
-					CdRomDrives: null,
-					DisplayDevices: null,
-					HardDrives: null
-				}
-			],
-			softwareList: [
-				{
-					Processors: null,
-					OperatingSystems: null,
-					Printers: null,
-				}
-			]
-		}];
+		component.snapshotComponentsByType = [
+			{
+				hardwareList: [
+					{
+						CdRomDrives: null,
+						DisplayDevices: null,
+						HardDrives: null,
+					},
+				],
+				softwareList: [
+					{
+						Processors: null,
+						OperatingSystems: null,
+						Printers: null,
+					},
+				],
+			},
+		];
 		fixture.detectChanges();
 	});
 

@@ -48,9 +48,9 @@ export class SnapshotService {
 	}
 
 	public async updateBaselineInfo(selectedComponents: Array<string>) {
-		// TODO: Set component status to inProgress
+		// Set component status from selectedComponents list to inProgress.
 		selectedComponents.map((componentName) => {
-			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.inProgress;
 		});
 
 		const payload = this.prepareUpdateBaselinePayload(selectedComponents);

@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SnapshotStatus } from 'src/app/modules/snapshot/enums/snapshot.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { SnapshotInfo } from '../../models/snapshot.interface';
 import { SnapshotService } from '../../services/snapshot.service';
 import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.component';
 
@@ -13,7 +12,7 @@ import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.c
 })
 export class SnapshotHeaderComponent implements OnInit {
 	public snapshotStatusEnum = SnapshotStatus;
-	public snapshotInfo: any = {};
+	public snapshotComponentsByType: any = {};
 
 	private readonly mapStatusToText: any = {
 		[SnapshotStatus.firstLoad]: 'titleNotStarted',
@@ -30,7 +29,7 @@ export class SnapshotHeaderComponent implements OnInit {
 		private loggerService: LoggerService,
 		private modalService: NgbModal
 	) {
-		this.snapshotInfo = {
+		this.snapshotComponentsByType = {
 			hardwareList: this.snapshotService.getHardwareComponentsList(),
 			softwareList: this.snapshotService.getSoftwareComponentsList(),
 		};
@@ -65,7 +64,7 @@ export class SnapshotHeaderComponent implements OnInit {
 			backdrop: true,
 			windowClass: 'custom-modal-size',
 		});
-		modalRef.componentInstance.snapshotInfo = this.snapshotInfo;
+		modalRef.componentInstance.snapshotComponentsByType = this.snapshotComponentsByType;
 		modalRef.componentInstance.passEntry.subscribe((modalResponse: Array<string>) => {
 			this.snapshotService.snapshotStatus = SnapshotStatus.baselineInProgress;
 

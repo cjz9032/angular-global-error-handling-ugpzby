@@ -17,7 +17,7 @@ import { SnapshotInfo } from '../../../models/snapshot.interface';
 })
 export class ModalSnapshotComponent implements OnInit, OnDestroy {
 	@Input() componentId: string;
-	@Input() snapshotInfo: any;
+	@Input() snapshotComponentsByType: any;
 
 	@Output() passEntry: EventEmitter<Array<string>> = new EventEmitter();
 	// Used to signalize to the caller that the modal is being closed.
@@ -40,7 +40,7 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit(): void {
-		Object.entries(this.snapshotInfo).forEach(([key, value]) => {
+		Object.entries(this.snapshotComponentsByType).forEach(([key, value]) => {
 			const environment = {
 				name: key,
 				components:
@@ -71,10 +71,8 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 		if (leastOneSelected !== undefined) {
 			this.isSuccessful = true;
 			this.closeModal();
-			const snapshotInfoPayload = this.getSelectedSnapshotInfoComponents(
-				this.snapshotComponentsInfo
-			);
-			this.passEntry.emit(snapshotInfoPayload);
+			const selectedComponents = this.getSelectedComponents(this.snapshotComponentsInfo);
+			this.passEntry.emit(selectedComponents);
 		} else {
 			this.errorMessage = true;
 		}
@@ -116,10 +114,10 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 		return softwareListComponents;
 	}
 
-	private getSelectedSnapshotInfoComponents(selectedModules: Array<any>): Array<string> {
+	private getSelectedComponents(selectedComponents: Array<any>): Array<string> {
 		const selectedSnapshotInfoComponents: Array<string> = [];
 
-		selectedModules.map((componentType) => {
+		selectedComponents.map((componentType) => {
 			const componentList: Array<any> = componentType.components;
 
 			componentList.map((component) => {
