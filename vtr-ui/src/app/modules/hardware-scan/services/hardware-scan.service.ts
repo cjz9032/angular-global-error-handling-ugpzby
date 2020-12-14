@@ -407,13 +407,12 @@ export class HardwareScanService {
 	 * If yes, the HWScan menu not appear.
 	 */
 	public isMachineAvailable() {
-		// Emptying blacklist to test on Test/QA servers if those models are stable
 		// Variable containing machine names without HWScan enabled
 		const blackList = [
-			// 'thinkstationp520',
-			// 'thinkstationp520c',
-			// 'thinkstationp720',
-			// 'thinkstationp920',
+			 'thinkstationp520',
+			 'thinkstationp520c',
+			 'thinkstationp720',
+			 'thinkstationp920',
 		];
 
 		// Variable containing machine family name in the specific format
