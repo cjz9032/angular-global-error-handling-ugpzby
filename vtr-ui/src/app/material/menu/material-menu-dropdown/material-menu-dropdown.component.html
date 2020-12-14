@@ -21,7 +21,7 @@
 				rel="noopener"
 				href="javascript:void(0)"
 				(click)="openExternalLink(subitem.path)">
-				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
+				<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
 				*ngIf="subitem && !subitem.hide && !subitem.externallink && !subitem.singleLayerRouting"
@@ -38,7 +38,7 @@
 				href="javascript:void(0)"
 				role="menuitem"
 				(keydown.enter)="menuItemKeyDown(parentPath, subitem.path)">
-				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
+				<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
 				*ngIf="subitem && !subitem.hide && !subitem.externallink && subitem.singleLayerRouting"
@@ -55,7 +55,7 @@
 				href="javascript:void(0)"
 				role="menuitem"
 				(keydown.enter)="menuItemKeyDown(subitem.path)">
-				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
+				<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
 		</ng-container>
 	</section>
@@ -102,7 +102,7 @@
 						rel="noopener"
 						href="javascript:void(0)"
 						(click)="openExternalLink(secondarySubitem.path)">
-						<span class="d-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
+						<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 					<button mat-menu-item
 						*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink && !secondarySubitem.singleLayerRouting"
@@ -120,7 +120,7 @@
 						href="javascript:void(0)"
 						role="menuitem"
 						(keydown.enter)="menuItemKeyDown(parentPath, subitem.path, secondarySubitem.path)">
-						<span class="d-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
+						<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 					<button mat-menu-item
 						*ngIf="secondarySubitem && !secondarySubitem.hide && !secondarySubitem.externallink && secondarySubitem.singleLayerRouting"
@@ -138,7 +138,7 @@
 						href="javascript:void(0)"
 						role="menuitem"
 						(keydown.enter)="menuItemKeyDown(secondarySubitem.path)">
-						<span class="d-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
+						<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
 				</ng-container>
 			</section>

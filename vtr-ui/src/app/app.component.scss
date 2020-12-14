@@ -2,12 +2,12 @@
 
 .vtr-app {
 	position: absolute;
-	top: calc(#{$menu_height} - 1px);
+	top: calc(#{$material_menu_height} - 1px);
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-width: 400px;
-	height: calc(100vh - #{$menu_height} + 1px);
+	height: calc(100vh - #{$material_menu_height} + 1px);
 	overflow-y: auto;
 	overflow-x: hidden;
 	outline: none !important;
@@ -38,6 +38,8 @@
 .is-gaming {
 	.vtr-app {
 		z-index: inherit;
+		top: calc(#{$menu_height} - 1px);
+		height: calc(100vh - #{$menu_height} + 1px);
 	}
 }
 

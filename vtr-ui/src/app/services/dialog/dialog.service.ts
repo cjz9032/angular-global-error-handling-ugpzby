@@ -367,7 +367,7 @@ export class DialogService {
 			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: true,
-			backdropClass: 'dialogBackdropExcludeMenu',
+			backdropClass: [this.deviceService.isGaming ? 'dialogBackdropExcludeGamingMenu' : 'dialogBackdropExcludeMenu'],
 			panelClass: [this.deviceService.isGaming ? 'is-gaming' : '', 'm-5', 'h-auto'],
 			id: 'wifi-security-expire-prompt-dialog',
 		});
