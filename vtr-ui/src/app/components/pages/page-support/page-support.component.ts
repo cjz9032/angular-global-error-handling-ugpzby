@@ -18,6 +18,7 @@ import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ContentSource } from 'src/app/enums/content.enum';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -141,10 +142,18 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	};
 
 	offlineImages = [
-		'assets/images/support/support-offline-1.jpg',
-		'assets/images/support/support-offline-2.jpg',
-		'assets/images/support/support-offline-3.jpg',
-		'assets/images/support/support-offline-4.jpg',
+		this.windowsVerisonService.isNewerThanRS4()
+			? 'assets/images/support/support-offline-1.webp'
+			: 'assets/images/support/support-offline-1.jpg',
+		this.windowsVerisonService.isNewerThanRS4()
+			? 'assets/images/support/support-offline-2.webp'
+			: 'assets/images/support/support-offline-2.jpg',
+		this.windowsVerisonService.isNewerThanRS4()
+			? 'assets/images/support/support-offline-3.webp'
+			: 'assets/images/support/support-offline-3.jpg',
+		this.windowsVerisonService.isNewerThanRS4()
+			? 'assets/images/support/support-offline-4.webp'
+			: 'assets/images/support/support-offline-4.jpg',
 	];
 	localCateIcons = [
 		'assets/images/support/design-innovation.svg',
@@ -168,7 +177,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		private licensesService: LicensesService,
 		private activatedRoute: ActivatedRoute,
 		private loggerService: LoggerService,
-		private feedbackService: FeedbackService
+		private feedbackService: FeedbackService,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		this.isOnline = this.commonService.isOnline;
 	}

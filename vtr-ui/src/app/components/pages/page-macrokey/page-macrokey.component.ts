@@ -8,6 +8,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-macrokey',
@@ -31,7 +32,8 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 		private shellService: VantageShellService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		public deviceService: DeviceService
+		public deviceService: DeviceService,
+		private windowsVerisonService: WindowsVersionService
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.fetchCMSArticles();
@@ -105,11 +107,15 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 
 		if (!this.isOnline) {
 			this.cardContentPositionC = {
-				FeatureImage: 'assets/cms-cache/GamingPosC.jpg',
+				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/cms-cache/GamingPosC.webp'
+					: 'assets/cms-cache/GamingPosC.jpg',
 			};
 
 			this.cardContentPositionF = {
-				FeatureImage: 'assets/cms-cache/macrokey_offline.jpg',
+				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/cms-cache/macrokey_offline.webp'
+					: 'assets/cms-cache/macrokey_offline.jpg',
 			};
 		}
 	}

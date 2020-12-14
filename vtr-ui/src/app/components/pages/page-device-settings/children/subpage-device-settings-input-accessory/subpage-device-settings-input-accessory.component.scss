@@ -313,12 +313,13 @@
 	}
 
 	&.icon-s4b {
-		background: url('../../../../../../assets/images/hardware-settings/S4B_2016.png')
-			center/cover;
+		background: url('../../../../../../assets/images/hardware-settings/S4B_2016.webp'),
+			url('../../../../../../assets/images/hardware-settings/S4B_2016.png') center/cover;
 	}
 	&.icon-teams {
-		background: url('../../../../../../assets/images/hardware-settings/Microsoft_Teams_1.0.png')
-			center/cover;
+		background: url('../../../../../../assets/images/hardware-settings/Microsoft_Teams_1.0.webp'),
+			url('../../../../../../assets/images/hardware-settings/Microsoft_Teams_1.0.png')
+				center/cover;
 	}
 }
 
@@ -337,12 +338,14 @@
 			height: 4rem;
 
 			&.icon-s4b {
-				background: url('../../../../../../assets/images/hardware-settings/S4B_2016.png')
-					center/cover;
+				background: url('../../../../../../assets/images/hardware-settings/S4B_2016.webp'),
+					url('../../../../../../assets/images/hardware-settings/S4B_2016.png')
+						center/cover;
 			}
 			&.icon-teams {
-				background: url('../../../../../../assets/images/hardware-settings/Microsoft_Teams_1.0.png')
-					center/cover;
+				background: url('../../../../../../assets/images/hardware-settings/Microsoft_Teams_1.0.webp'),
+					url('../../../../../../assets/images/hardware-settings/Microsoft_Teams_1.0.png')
+						center/cover;
 			}
 		}
 	}

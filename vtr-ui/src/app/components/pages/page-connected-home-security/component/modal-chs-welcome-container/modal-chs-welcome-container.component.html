@@ -3,7 +3,10 @@
 	<div class="page page-one" *ngIf="switchPage === 1">
 		<div class="text-center">
 			<div class="page-img mb-5">
-				<img src="assets/images/connected-home-security/welcome-slide1@2x.png" alt="">
+				<picture>
+					<source srcset="assets/images/connected-home-security/welcome-slide1@2x.webp" type="image/webp">
+					<img src="assets/images/connected-home-security/welcome-slide1@2x.png" alt="">
+				</picture>
 			</div>
 			<p class="page-title text-uppercase mb-80" [innerHTML]="'homeSecurity.tour.welcomeTitle' | translate"></p>
 			<div class="row text-left">

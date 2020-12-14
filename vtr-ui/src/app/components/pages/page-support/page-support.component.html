@@ -138,7 +138,10 @@
 			</div>
 			<div class="spinner-content w-100 text-center"
 				*ngIf="articlesType === SupportContentStatus.Empty && isOnline">
-				<img src="assets/images/support/empty.png" />
+				<picture>
+					<source srcset="assets/images/support/empty.webp" type="image/webp">
+					<img src="assets/images/support/empty.png" />
+				</picture>
 			</div>
 		</div>
 	</left-content>

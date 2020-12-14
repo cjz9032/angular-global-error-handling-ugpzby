@@ -5,7 +5,10 @@
 <p>{{'faq.question5.para1' | translate}}</p>
 <h3 class="heading2">{{'faq.question5.heading1' | translate}}</h3>
 <p [innerHTML]="'faq.question5.para2' | translate"></p>
-<img [src]="'assets/images/qa/' + langCode + '5.1.jpg'" />
+<picture>
+	<source srcset="'assets/images/qa/' + langCode + '5.1.webp" type="image/webp">
+	<img [src]="'assets/images/qa/' + langCode + '5.1.jpg'" />
+</picture>
 <p></p>
 <h3 class="heading2">{{'faq.question5.heading2' | translate}}</h3>
 <p>{{'faq.question5.para3' | translate}}</p>

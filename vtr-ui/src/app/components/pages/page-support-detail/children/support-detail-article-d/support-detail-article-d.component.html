@@ -22,7 +22,10 @@
 <h3 class="heading2">{{'faq.question4.heading6' | translate}}</h3>
 <p [innerHTML]="'faq.question4.para6' | translate"></p>
 <p [innerHTML]="'faq.question4.para7' | translate"></p>
-<img [src]="'assets/images/qa/' + langCode + '4.1.jpg'" />
+<picture>
+    <source srcset="'assets/images/qa/' + langCode + '4.1.webp" type="image/webp">
+    <img [src]="'assets/images/qa/' + langCode + '4.1.jpg'" />
+</picture>
 <p></p>
 <p [innerHTML]="'faq.question4.para8' | translate"></p>
 <h3 class="heading2">{{'faq.question4.heading7' | translate}}</h3>
@@ -31,5 +34,8 @@
 <p [innerHTML]="'faq.question4.para11' | translate"></p>
 <p [innerHTML]="'faq.question4.para12' | translate"></p>
 <p>{{'faq.question4.para13' | translate}}</p>
-<img [src]="'assets/images/qa/' + langCode + '4.2.jpg'" />
+<picture>
+    <source srcset="'assets/images/qa/' + langCode + '4.2.webp" type="image/webp">
+    <img [src]="'assets/images/qa/' + langCode + '4.2.jpg'" />
+</picture>
 <p></p>

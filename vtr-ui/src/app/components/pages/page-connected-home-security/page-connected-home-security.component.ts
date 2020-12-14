@@ -64,10 +64,14 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	showContentB = false;
 
 	cardContentPositionA: any = {
-		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png',
+		FeatureImage: this.windowsVersionService.isNewerThanRS4()
+			? 'assets/images/connected-home-security/card-gamestore.webp'
+			: 'assets/images/connected-home-security/card-gamestore.png',
 	};
 	cardContentPositionB: any = {
-		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png',
+		FeatureImage: this.windowsVersionService.isNewerThanRS4()
+			? 'assets/images/connected-home-security/card-gamestore.webp'
+			: 'assets/images/connected-home-security/card-gamestore.png',
 	};
 	devicePostureEventHandler = (devicePosture: DevicePosture) => {
 		if (devicePosture && Array.isArray(devicePosture.value) && devicePosture.value.length > 0) {
@@ -96,19 +100,23 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		newDevicePostureValue: DeviceCondition[]
 	): boolean {
 		let hasChange = false;
-		if (isEqual(preDevicePostureValue, newDevicePostureValue)) return false;
+		if (isEqual(preDevicePostureValue, newDevicePostureValue)) {
+			return false;
+		}
 		if (preDevicePostureValue.length <= newDevicePostureValue.length) {
 			this.preDevicePostureValue = cloneDeep(newDevicePostureValue);
 			hasChange = true;
 		} else {
 			newDevicePostureValue.forEach((item) => {
-				let index = findIndex(preDevicePostureValue, { name: item.name });
+				const index = findIndex(preDevicePostureValue, { name: item.name });
 				if (preDevicePostureValue[index].vulnerable !== item.vulnerable) {
 					preDevicePostureValue[index].vulnerable = item.vulnerable;
 					hasChange = true;
 				}
 			});
-			if (hasChange) this.preDevicePostureValue = cloneDeep(preDevicePostureValue);
+			if (hasChange) {
+				this.preDevicePostureValue = cloneDeep(preDevicePostureValue);
+			}
 		}
 		return hasChange;
 	}

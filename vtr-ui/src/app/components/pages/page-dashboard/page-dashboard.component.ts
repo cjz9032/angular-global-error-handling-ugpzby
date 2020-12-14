@@ -51,6 +51,7 @@ import {
 	securityStatus,
 	getSecurityLevel,
 } from 'src/app/data-models/security-advisor/security-status';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 interface IConfigItem {
 	cardId: string;
@@ -300,7 +301,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private localCacheService: LocalCacheService,
 		private metricsService: MetricService,
 		private contentLocalCache: ContentCacheService,
-		private windowsHelloService: WindowsHelloService
+		private windowsHelloService: WindowsHelloService,
+		private windowsVerisonService: WindowsVersionService
 	) {}
 
 	ngOnInit() {
@@ -528,7 +530,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				id: '',
 				source: 'VANTAGE',
 				title: 'Lenovo exclusive offer of Adobe designer suite',
-				url: 'assets/images/dcc/hero-banner-dcc.jpg',
+				url: this.windowsVerisonService.isNewerThanRS4()
+					? 'assets/images/dcc/hero-banner-dcc.webp'
+					: 'assets/images/dcc/hero-banner-dcc.jpg',
 				ActionLink: 'dcc-demo',
 				ActionType: ContentActionType.Internal,
 				DataSource: ContentSource.Local,

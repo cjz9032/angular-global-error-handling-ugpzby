@@ -9,17 +9,20 @@
 	letter-spacing: 0;
 
 	&.in-warranty {
-		background-image: url('../../../../assets/images/warranty-bg.png'),
+		background-image: url('../../../../assets/images/warranty-bg.webp'),
+			url('../../../../assets/images/warranty-bg.png'),
 			linear-gradient(to left bottom, #4980fc, #2e62d9);
 	}
 
 	&.expired {
-		background-image: url('../../../../assets/images/warranty-bg.png'),
+		background-image: url('../../../../assets/images/warranty-bg.webp'),
+			url('../../../../assets/images/warranty-bg.png'),
 			linear-gradient(to left top, #f17f14, #ed4e04);
 	}
 
 	&.not-found {
-		background-image: url('../../../../assets/images/warranty-bg.png'),
+		background-image: url('../../../../assets/images/warranty-bg.webp'),
+			url('../../../../assets/images/warranty-bg.png'),
 			linear-gradient(to left bottom, #bbb, #888);
 	}
 

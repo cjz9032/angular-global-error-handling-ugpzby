@@ -16,6 +16,7 @@ import {
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ColorWheelStatus } from 'src/app/enums/color-wheel-status.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-ui-lighting-profile',
@@ -233,67 +234,91 @@ export class UiLightingProfileComponent implements OnInit {
 		{
 			PanelType: 1,
 			RGB: 1,
-			PanelImage: 'C530@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'C530@2x.webp'
+				: 'C530@2x.png',
 		},
 		{
 			PanelType: 2,
 			RGB: 255,
-			PanelImage: 'T730Front@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'T730Front@2x.webp'
+				: 'T730Front@2x.png',
 		},
 		{
 			PanelType: 2,
 			RGB: 1,
-			PanelImage: 'T530@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'T530@2x.webp'
+				: 'T530@2x.png',
 		},
 		{
 			PanelType: 4,
 			RGB: 255,
-			PanelImage: 'renRGBFront@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'renRGBFront@2x.webp'
+				: 'renRGBFront@2x.png',
 		},
 		{
 			PanelType: 4,
 			RGB: 1,
-			PanelImage: 'renFront@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'renFront@2x.webp'
+				: 'renFront@2x.png',
 		},
 		{
 			PanelType: 8,
 			RGB: 255,
-			PanelImage: 'T730Side@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'T730Side@2x.webp'
+				: 'T730Side@2x.png',
 		},
 		{
 			PanelType: 16,
 			RGB: 255,
-			PanelImage: 'T730Side@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'T730Side@2x.webp'
+				: 'T730Side@2x.png',
 		},
 		{
 			PanelType: 32,
 			RGB: 255,
-			PanelImage: 'C730Left@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'C730Left@2x.webp'
+				: 'C730Left@2x.png',
 		},
 		{
 			PanelType: 64,
 			RGB: 255,
-			PanelImage: 'C730Right@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'C730Right@2x.webp'
+				: 'C730Right@2x.png',
 		},
 		{
 			PanelType: 128,
 			RGB: 1,
-			PanelImage: 'ren@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4() ? 'ren@2x.webp' : 'ren@2x.png',
 		},
 		{
 			PanelType: 256,
 			RGB: 1,
-			PanelImage: 'T530Perspective@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'T530Perspective@2x.webp'
+				: 'T530Perspective@2x.png',
 		},
 		{
 			PanelType: 32,
 			RGB: 1,
-			PanelImage: 'C530Left@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'C530Left@2x.webp'
+				: 'C530Left@2x.png',
 		},
 		{
 			PanelType: 64,
 			RGB: 1,
-			PanelImage: 'C530Right@2x.png',
+			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+				? 'C530Right@2x.webp'
+				: 'C530Right@2x.png',
 		},
 	];
 	optionsSingleColor = [
@@ -327,7 +352,8 @@ export class UiLightingProfileComponent implements OnInit {
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
-		private deviceService: DeviceService
+		private deviceService: DeviceService,
+		private windowsVerisonService: WindowsVersionService
 	) {}
 
 	ngOnInit() {
@@ -1521,9 +1547,9 @@ export class UiLightingProfileComponent implements OnInit {
 	}
 
 	public getLightEffectOptionName(optionValue: any) {
-		const result = this.lightingEffectData.drop[0].dropOptions.filter((obj) => {
-			return obj.value === optionValue;
-		});
+		const result = this.lightingEffectData.drop[0].dropOptions.filter(
+			(obj) => obj.value === optionValue
+		);
 		return result;
 	}
 
