@@ -42,7 +42,8 @@
 			padding: 0;
 			height: 100%;
 			overflow: hidden;
-			transition: width 1s ease-in-out;
+			backface-visibility: hidden;
+			transition: width 0.5s linear;
 			position: relative;
 			left: 0;
 			top: 0;
@@ -88,7 +89,8 @@
 				top: -6rem;
 				left: 0%;
 				margin-left: -0.8rem;
-				transition: all 1s ease-in-out;
+				backface-visibility: hidden;
+				transition: all 0.5s linear;
 
 				@media #{$white-on-black} {
 					@include high-contrast-adjust;
@@ -137,6 +139,8 @@
 		display: flex;
 		justify-content: space-between;
 		color: $light;
+		position: relative;
+		height: 2.4rem;
 
 		.critical {
 			margin-left: 0.2rem;
@@ -144,6 +148,39 @@
 
 		.well {
 			margin-right: 0.2rem;
+		}
+
+		.info-tip {
+			position: absolute;
+			top: 1rem;
+			left: 0;
+			color: $light;
+			text-transform: none;
+			font-size: $caption;
+			.label {
+				width: 100%;
+				height: 100%;
+				padding: 0 1rem;
+				border-radius: 10rem;
+			}
+			.label-fix {
+				background: $alt;
+			}
+			.label-optimize {
+				background: $button_gradient_start;
+			}
+			.label-maintain {
+				background: $green_darker;
+			}
+			&.info-tip-rating-0 {
+				margin-left: 0 !important;
+			}
+			&.info-tip-rating-10 {
+				left: auto !important;
+				right: 0 !important;
+				margin-left: 0 !important;
+				text-align: right;
+			}
 		}
 	}
 
