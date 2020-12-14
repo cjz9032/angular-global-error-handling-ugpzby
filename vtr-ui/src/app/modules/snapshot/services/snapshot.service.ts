@@ -15,8 +15,8 @@ import { SnapshotInfo } from '../models/snapshot.interface';
 export class SnapshotService {
 	private snapshotBridge: any;
 
-	private pvtSnapshotInfo: any;
-	get snapshotInfo(): any {
+	private pvtSnapshotInfo: SnapshotInfo;
+	get snapshotInfo(): SnapshotInfo {
 		return this.pvtSnapshotInfo;
 	}
 
@@ -47,13 +47,36 @@ export class SnapshotService {
 		return this.getSnapshotInfo(componentName, true);
 	}
 
-	public async updateBaselineInfo(snapshotInfo: SnapshotInfo) {
-		if (this.snapshotBridge) {
-			return this.snapshotBridge.getUpdateBaseline(snapshotInfo).catch((error: string) => {
-				this.loggerService.error('[UpdateBaseline] ' + error);
+	public async updateBaselineInfo(selectedComponents: Array<string>) {
+		// TODO: Set component status to inProgress
+		selectedComponents.map((componentName) => {
+			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+		});
+
+		const payload = this.prepareUpdateBaselinePayload(selectedComponents);
+		try {
+			const snapshotUpdateBaselineResponse: SnapshotInfo = await this.snapshotBridge.getUpdateBaseline(
+				payload
+			);
+			if (!snapshotUpdateBaselineResponse) {
+				throw Error('Could not get response from Addin');
+			}
+
+			// Iterate over snapshotInfo and set only components that had the baseline updated;
+			selectedComponents.map((componentName) => {
+				this.pvtSnapshotInfo[componentName].info =
+					snapshotUpdateBaselineResponse[componentName];
+				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+			});
+		} catch (error) {
+			this.loggerService.error(
+				`Error ${error} during request for snapshot data from UpdateBaseline`
+			);
+
+			selectedComponents.map((componentName) => {
+				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.error;
 			});
 		}
-		return undefined;
 	}
 
 	public getAllComponentsList() {
@@ -96,7 +119,17 @@ export class SnapshotService {
 		});
 	}
 
-	private async getSnapshotInfo(componentName: string, updateSnapshot) {
+	private prepareUpdateBaselinePayload(data: Array<string>): SnapshotInfo {
+		const snapshotInfo: SnapshotInfo = {};
+
+		data.map((componentName) => {
+			snapshotInfo[componentName] = this.pvtSnapshotInfo[componentName].info;
+		});
+
+		return snapshotInfo;
+	}
+
+	private async getSnapshotInfo(componentName: string, updateSnapshot: boolean): Promise<void> {
 		this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.inProgress;
 
 		try {

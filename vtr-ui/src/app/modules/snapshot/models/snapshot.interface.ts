@@ -1,21 +1,33 @@
+import { SnapshotComponentStatus } from '../enums/snapshot.enum';
+
 export interface SnapshotInfo {
-	HardDrives?: SnapshotModule;
-	Memory?: SnapshotModule;
-	Motherboard?: SnapshotModule;
-	Processors?: SnapshotModule;
-	Network?: SnapshotModule;
-	Programs?: SnapshotModule;
-	VideoCards?: SnapshotModule;
-	StartupPrograms?: SnapshotModule;
-	SoundCards?: SnapshotModule;
-	DisplayDevices?: SnapshotModule;
-	Keyboards?: SnapshotModule;
-	Printers?: SnapshotModule;
-	MouseDevices?: SnapshotModule;
-	WebBrowsers?: SnapshotModule;
-	CdRomDrives?: SnapshotModule;
-	OperatingSystems?: SnapshotModule;
+	HardDrives?: SnapshotModuleComponentStatus;
+	Memory?: SnapshotModuleComponentStatus;
+	Motherboard?: SnapshotModuleComponentStatus;
+	Processors?: SnapshotModuleComponentStatus;
+	Network?: SnapshotModuleComponentStatus;
+	Programs?: SnapshotModuleComponentStatus;
+	VideoCards?: SnapshotModuleComponentStatus;
+	StartupPrograms?: SnapshotModuleComponentStatus;
+	SoundCards?: SnapshotModuleComponentStatus;
+	DisplayDevices?: SnapshotModuleComponentStatus;
+	Keyboards?: SnapshotModuleComponentStatus;
+	Printers?: SnapshotModuleComponentStatus;
+	MouseDevices?: SnapshotModuleComponentStatus;
+	WebBrowsers?: SnapshotModuleComponentStatus;
+	CdRomDrives?: SnapshotModuleComponentStatus;
+	OperatingSystems?: SnapshotModuleComponentStatus;
 	ReturnCode?: number;
+}
+
+export interface SnapshotInfoByType {
+	hardwareComponents?: SnapshotInfo;
+	softwareComponents?: SnapshotInfo;
+}
+
+export interface SnapshotModuleComponentStatus {
+	info: SnapshotModule;
+	status: SnapshotComponentStatus;
 }
 
 export interface SnapshotModule {

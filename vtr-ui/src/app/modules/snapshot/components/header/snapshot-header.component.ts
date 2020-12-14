@@ -13,7 +13,6 @@ import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.c
 })
 export class SnapshotHeaderComponent implements OnInit {
 	public snapshotStatusEnum = SnapshotStatus;
-	public showSnapshotInformation = true;
 	public snapshotInfo: any = {};
 
 	private readonly mapStatusToText: any = {
@@ -67,14 +66,16 @@ export class SnapshotHeaderComponent implements OnInit {
 			windowClass: 'custom-modal-size',
 		});
 		modalRef.componentInstance.snapshotInfo = this.snapshotInfo;
-		modalRef.componentInstance.passEntry.subscribe((modalResponse) => {
-			this.showSnapshotInformation = false;
+		modalRef.componentInstance.passEntry.subscribe((modalResponse: Array<string>) => {
 			this.snapshotService.snapshotStatus = SnapshotStatus.baselineInProgress;
-			// This is just to simulate a call on snapshotService
+
 			this.snapshotService
-				.getCurrentSnapshotInfo('')
-				.then(async () => {
-					// await this.delay(3000);
+				.updateBaselineInfo(modalResponse)
+				.then(() => {
+					this.loggerService.info('Success on Replace Baseline');
+				})
+				.catch((error) => {
+					this.loggerService.error(`Failure on Replace Baseline: ${error}`);
 				})
 				.finally(() => {
 					this.snapshotService.snapshotStatus = SnapshotStatus.baselineCompleted;
@@ -88,21 +89,6 @@ export class SnapshotHeaderComponent implements OnInit {
 				this.snapshotService.snapshotStatus = SnapshotStatus.notStarted;
 			}
 		});
-	}
-
-	public prepareDataToUpdateBaseline(data: Array<any>): SnapshotInfo {
-		const snapshotInfo: SnapshotInfo = {};
-		data.forEach((snapshotInfoType) => {
-			const componentList: Array<any> = snapshotInfoType.components;
-
-			componentList.forEach((component) => {
-				if (component.selected) {
-					snapshotInfo[component.name] = this.snapshotInfo[component.name];
-				}
-			});
-		});
-
-		return snapshotInfo;
 	}
 
 	public getHeaderText() {

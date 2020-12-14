@@ -8,6 +8,7 @@ import {
 	OnDestroy,
 } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { SnapshotInfo } from '../../../models/snapshot.interface';
 
 @Component({
 	selector: 'vtr-modal-snapshot',
@@ -18,7 +19,7 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 	@Input() componentId: string;
 	@Input() snapshotInfo: any;
 
-	@Output() passEntry: EventEmitter<any> = new EventEmitter();
+	@Output() passEntry: EventEmitter<Array<string>> = new EventEmitter();
 	// Used to signalize to the caller that the modal is being closed.
 	// It emits true when the modal is closed in a successful way,
 	// e.g. user clicked in the OK button or false otherwise.
@@ -70,7 +71,10 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 		if (leastOneSelected !== undefined) {
 			this.isSuccessful = true;
 			this.closeModal();
-			this.passEntry.emit(this.snapshotComponentsInfo);
+			const snapshotInfoPayload = this.getSelectedSnapshotInfoComponents(
+				this.snapshotComponentsInfo
+			);
+			this.passEntry.emit(snapshotInfoPayload);
 		} else {
 			this.errorMessage = true;
 		}
@@ -110,5 +114,22 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 		});
 
 		return softwareListComponents;
+	}
+
+	private getSelectedSnapshotInfoComponents(selectedModules: Array<any>): Array<string> {
+		const selectedSnapshotInfoComponents: Array<string> = [];
+
+		selectedModules.map((componentType) => {
+			const componentList: Array<any> = componentType.components;
+
+			componentList.map((component) => {
+				if (component.selected) {
+					const componentName = component.name;
+					selectedSnapshotInfoComponents.push(componentName);
+				}
+			});
+		});
+
+		return selectedSnapshotInfoComponents;
 	}
 }
