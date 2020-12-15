@@ -281,7 +281,7 @@ export class SmartPerformanceService {
 			'smart-performance.service.getSubscriptionDataDetail',
 			subscriptionDetails
 		);
-		if (subscriptionDetails && subscriptionDetails.data) {
+		if (subscriptionDetails && subscriptionDetails.data && subscriptionDetails.data.length > 0) {
 			subscriptionData = subscriptionDetails.data;
 			const lastItem = subscriptionData[subscriptionData.length - 1];
 			const releaseDate = new Date(lastItem.releaseDate);
