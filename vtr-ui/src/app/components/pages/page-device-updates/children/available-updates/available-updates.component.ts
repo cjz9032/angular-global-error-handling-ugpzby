@@ -90,6 +90,7 @@ export class AvailableUpdatesComponent implements OnInit {
 			});
 		}
 		this.checkSelectedUpdateStatus();
+		this.checkSelectAllStatus();
 	}
 
 	onInstallAllUpdates(event) {
