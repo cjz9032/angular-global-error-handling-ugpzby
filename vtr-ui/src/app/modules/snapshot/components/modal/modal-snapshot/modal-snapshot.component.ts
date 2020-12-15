@@ -8,6 +8,10 @@ import {
 	OnDestroy,
 } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import {
+	SnapshotComponentsListByType,
+	ModalSnapshotComponentItem,
+} from '../../../models/snapshot.interface';
 
 @Component({
 	selector: 'vtr-modal-snapshot',
@@ -16,15 +20,15 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalSnapshotComponent implements OnInit, OnDestroy {
 	@Input() componentId: string;
-	@Input() snapshotInfo: any;
+	@Input() snapshotComponentsByType: SnapshotComponentsListByType;
 
-	@Output() passEntry: EventEmitter<any> = new EventEmitter();
+	@Output() passEntry: EventEmitter<Array<string>> = new EventEmitter();
 	// Used to signalize to the caller that the modal is being closed.
 	// It emits true when the modal is closed in a successful way,
 	// e.g. user clicked in the OK button or false otherwise.
 	@Output() modalClosing: EventEmitter<boolean> = new EventEmitter();
 
-	public snapshotComponentsInfo: any = [];
+	public componentItemList: Array<ModalSnapshotComponentItem> = [];
 	public errorMessage = false;
 	private isSuccessful = false;
 
@@ -39,19 +43,19 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit(): void {
-		Object.entries(this.snapshotInfo).forEach(([key, value]) => {
-			const environment = {
+		Object.entries(this.snapshotComponentsByType).forEach(([key, value]) => {
+			const environment: ModalSnapshotComponentItem = {
 				name: key,
 				components:
 					name === 'hardwareListTitle'
-						? this.getHardwareListComponents(value)
-						: this.getSoftwareListComponents(value),
+						? this.getHardwareListItems(value)
+						: this.getSoftwareListItems(value),
 				collapsed: false,
 				selected: false,
 				indeterminate: false,
 			};
 
-			this.snapshotComponentsInfo.push(environment);
+			this.componentItemList.push(environment);
 		});
 	}
 
@@ -64,13 +68,14 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 	}
 
 	public onClickRun() {
-		const leastOneSelected = this.snapshotComponentsInfo.find(
-			(x) => x.selected || x.indeterminate
+		const leastOneSelected = this.componentItemList.some(
+			(x: ModalSnapshotComponentItem) => x.selected || x.indeterminate
 		);
-		if (leastOneSelected !== undefined) {
+		if (leastOneSelected) {
 			this.isSuccessful = true;
 			this.closeModal();
-			this.passEntry.emit(this.snapshotComponentsInfo);
+			const selectedComponents = this.getSelectedItems(this.componentItemList);
+			this.passEntry.emit(selectedComponents);
 		} else {
 			this.errorMessage = true;
 		}
@@ -82,7 +87,7 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getHardwareListComponents(components: any): any {
+	private getHardwareListItems(components: Array<string>): Array<ModalSnapshotComponentItem> {
 		const hardwareListComponents: any = [];
 
 		components.forEach((name) => {
@@ -97,8 +102,8 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 		return hardwareListComponents;
 	}
 
-	private getSoftwareListComponents(components: any): any {
-		const softwareListComponents: any = [];
+	private getSoftwareListItems(components: Array<string>): Array<ModalSnapshotComponentItem> {
+		const softwareListItems: any = [];
 
 		components.forEach((name) => {
 			const component = {
@@ -106,9 +111,24 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 				selected: false,
 			};
 
-			softwareListComponents.push(component);
+			softwareListItems.push(component);
 		});
 
-		return softwareListComponents;
+		return softwareListItems;
+	}
+
+	private getSelectedItems(selectedItems: Array<ModalSnapshotComponentItem>): Array<string> {
+		const selectedItemsList = [];
+
+		selectedItems.forEach((componentType: ModalSnapshotComponentItem) => {
+			// Get item names from items that are selected in the array
+			const selectedComponents = componentType.components
+				.filter((component) => component.selected)
+				.map((component) => component.name);
+
+			selectedItemsList.push(...selectedComponents);
+		});
+
+		return selectedItemsList;
 	}
 }

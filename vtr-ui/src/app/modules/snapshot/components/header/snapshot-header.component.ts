@@ -1,11 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {
-	SnapshotHardwareComponents,
-	SnapshotSoftwareComponents,
-	SnapshotStatus,
-} from 'src/app/modules/snapshot/enums/snapshot.enum';
+import { SnapshotStatus } from 'src/app/modules/snapshot/enums/snapshot.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SnapshotComponentsListByType } from '../../models/snapshot.interface';
 import { SnapshotService } from '../../services/snapshot.service';
 import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.component';
 
@@ -16,8 +13,7 @@ import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.c
 })
 export class SnapshotHeaderComponent implements OnInit {
 	public snapshotStatusEnum = SnapshotStatus;
-	public showSnapshotInformation = true;
-	public snapshotInfo: any = {};
+	public snapshotComponentsByType: SnapshotComponentsListByType = {};
 
 	private readonly mapStatusToText: any = {
 		[SnapshotStatus.firstLoad]: 'titleNotStarted',
@@ -34,7 +30,7 @@ export class SnapshotHeaderComponent implements OnInit {
 		private loggerService: LoggerService,
 		private modalService: NgbModal
 	) {
-		this.snapshotInfo = {
+		this.snapshotComponentsByType = {
 			hardwareList: this.snapshotService.getHardwareComponentsList(),
 			softwareList: this.snapshotService.getSoftwareComponentsList(),
 		};
@@ -69,15 +65,17 @@ export class SnapshotHeaderComponent implements OnInit {
 			backdrop: true,
 			windowClass: 'custom-modal-size',
 		});
-		modalRef.componentInstance.snapshotInfo = this.snapshotInfo;
-		modalRef.componentInstance.passEntry.subscribe((response) => {
-			this.showSnapshotInformation = false;
+		modalRef.componentInstance.snapshotComponentsByType = this.snapshotComponentsByType;
+		modalRef.componentInstance.passEntry.subscribe((modalResponse: Array<string>) => {
 			this.snapshotService.snapshotStatus = SnapshotStatus.baselineInProgress;
-			// This is just to simulate a call on snapshotService
+
 			this.snapshotService
-				.getCurrentSnapshotInfo('')
-				.then(async () => {
-					//await this.delay(3000);
+				.updateBaselineInfo(modalResponse)
+				.then(() => {
+					this.loggerService.info('Success on Replace Baseline');
+				})
+				.catch((error) => {
+					this.loggerService.error(`Failure on Replace Baseline: ${error}`);
 				})
 				.finally(() => {
 					this.snapshotService.snapshotStatus = SnapshotStatus.baselineCompleted;

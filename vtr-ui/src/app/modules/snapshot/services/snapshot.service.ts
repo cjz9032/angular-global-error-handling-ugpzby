@@ -7,6 +7,7 @@ import {
 	SnapshotSoftwareComponents,
 	SnapshotStatus,
 } from 'src/app/modules/snapshot/enums/snapshot.enum';
+import { SnapshotInfo } from '../models/snapshot.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -14,8 +15,8 @@ import {
 export class SnapshotService {
 	private snapshotBridge: any;
 
-	private pvtSnapshotInfo: any;
-	get snapshotInfo(): any {
+	private pvtSnapshotInfo: SnapshotInfo;
+	get snapshotInfo(): SnapshotInfo {
 		return this.pvtSnapshotInfo;
 	}
 
@@ -46,7 +47,37 @@ export class SnapshotService {
 		return this.getSnapshotInfo(componentName, true);
 	}
 
-	public async updateBaselineInfo(componentName: string) {}
+	public async updateBaselineInfo(selectedComponents: Array<string>) {
+		// Set component status from selectedComponents list to inProgress.
+		selectedComponents.forEach((componentName) => {
+			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.inProgress;
+		});
+
+		const payload = this.prepareUpdateBaselinePayload(selectedComponents);
+		try {
+			const snapshotUpdateBaselineResponse: SnapshotInfo = await this.snapshotBridge.getUpdateBaseline(
+				payload
+			);
+			if (!snapshotUpdateBaselineResponse) {
+				throw Error('Could not get response from Addin');
+			}
+
+			// Iterate over snapshotInfo and set only components that had the baseline updated;
+			selectedComponents.forEach((componentName) => {
+				this.pvtSnapshotInfo[componentName].info =
+					snapshotUpdateBaselineResponse[componentName];
+				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+			});
+		} catch (error) {
+			this.loggerService.error(
+				`Error ${error} during request for snapshot data from UpdateBaseline`
+			);
+
+			selectedComponents.forEach((componentName) => {
+				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.error;
+			});
+		}
+	}
 
 	public getAllComponentsList() {
 		return this.getSoftwareComponentsList().concat(this.getHardwareComponentsList());
@@ -88,7 +119,17 @@ export class SnapshotService {
 		});
 	}
 
-	private async getSnapshotInfo(componentName: string, updateSnapshot) {
+	private prepareUpdateBaselinePayload(data: Array<string>): SnapshotInfo {
+		const snapshotInfo: SnapshotInfo = {};
+
+		data.forEach((componentName) => {
+			snapshotInfo[componentName] = this.pvtSnapshotInfo[componentName].info;
+		});
+
+		return snapshotInfo;
+	}
+
+	private async getSnapshotInfo(componentName: string, updateSnapshot: boolean): Promise<void> {
 		this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.inProgress;
 
 		try {
