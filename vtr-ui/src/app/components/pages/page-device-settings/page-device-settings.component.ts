@@ -390,9 +390,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			LocalStorageKey.IsSmartAssistSupported
 		);
 		if (!smartAssistCap) {
-			this.menuItems = this.commonService.removeObjFrom(
+			this.menuItems = this.commonService.removeObjById(
 				this.menuItems,
-				this.menuItems[4].path
+				'smart-assist'
 			);
 		}
 	}
