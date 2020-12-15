@@ -6,8 +6,8 @@
 	height: auto;
 	.lighting-desk-content {
 		background: $gaming_lighting_profile_bg;
-		background: url(../../../../assets/images/gaming/lighting/blueBG.webp),
-			url(../../../../assets/images/gaming/lighting/blueBG.png) left center no-repeat
+		background: url(^assets/images/gaming/lighting/blueBG.webp),
+			url(^assets/images/gaming/lighting/blueBG.png) left center no-repeat
 				$gaming_lighting_profile_bg;
 		background-size: contain;
 		border-radius: 0.4rem;
@@ -18,8 +18,8 @@
 			border: 1px solid windowText;
 		}
 		@media #{$small-screen} {
-			background: url(../../../../assets/images/gaming/lighting/blueBG-horizontal.webp),
-				url(../../../../assets/images/gaming/lighting/blueBG-horizontal.png) center top
+			background: url(^assets/images/gaming/lighting/blueBG-horizontal.webp),
+				url(^assets/images/gaming/lighting/blueBG-horizontal.png) center top
 					no-repeat $gaming_lighting_profile_bg;
 			background-size: 100% auto;
 			.d-flex {
@@ -27,8 +27,8 @@
 			}
 		}
 		@media #{$below-large-screen} {
-			background: url(../../../../assets/images/gaming/lighting/blueBG-horizontal.webp),
-				url(../../../../assets/images/gaming/lighting/blueBG-horizontal.png) center top
+			background: url(^assets/images/gaming/lighting/blueBG-horizontal.webp),
+				url(^assets/images/gaming/lighting/blueBG-horizontal.png) center top
 					no-repeat $gaming_lighting_profile_bg;
 			background-size: 100% auto;
 			.d-flex {
