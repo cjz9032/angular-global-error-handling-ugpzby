@@ -22,7 +22,7 @@
 			<div placement="bottom" [title]="app.processDescription">
 				{{app.processDescription}}
 			</div>
-			<button class="remove-app" role="button" id="{{(isNetworkBoost ? 'autoclose_appremove' : 'nb_remove') + i}}" tabindex="1"
+			<button class="remove-app" role="button" id="{{(isNetworkBoost ? 'nb_remove' : 'autoclose_appremove') + i}}" tabindex="1"
 				(click)="removeApp(app, i)" (focus)="app.isHovered=true" (focusout)="app.isHovered=false"
 				attr.aria-label="{{((isNetworkBoost ? 'gaming.narrator.networkBoost.subPage.remove' : 'gaming.autoClose.autocClosenarratorremove') | translate) + ' ' + app.processDescription}}">
 			</button>
