@@ -82,9 +82,9 @@
 		</div>
 		<div *ngIf="appItem.company"
 			[dir]="'dir' | translate">{{ appItem.company }}</div>
-		<div *ngIf="appItem.size"
+		<div *ngIf="!appItem.redemptionURL && appItem.size"
 			[dir]="'dir' | translate">{{'modernPreload.sizeText' | translate}}: {{ appItem.size }}</div>
-		<div *ngIf="appItem.version"
+		<div *ngIf="!appItem.redemptionURL && appItem.version"
 			[dir]="'dir' | translate">{{'modernPreload.versionText' | translate}}: {{ appItem.version }}
 		</div>
 		<div *ngIf="redemptionSupport && appItem.activationCode"
