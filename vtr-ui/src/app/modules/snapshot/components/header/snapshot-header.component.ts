@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SnapshotStatus } from 'src/app/modules/snapshot/enums/snapshot.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { SnapshotComponentsListByType } from '../../models/snapshot.interface';
 import { SnapshotService } from '../../services/snapshot.service';
 import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.component';
 
@@ -12,7 +13,7 @@ import { ModalSnapshotComponent } from '../modal/modal-snapshot/modal-snapshot.c
 })
 export class SnapshotHeaderComponent implements OnInit {
 	public snapshotStatusEnum = SnapshotStatus;
-	public snapshotComponentsByType: any = {};
+	public snapshotComponentsByType: SnapshotComponentsListByType = {};
 
 	private readonly mapStatusToText: any = {
 		[SnapshotStatus.firstLoad]: 'titleNotStarted',

@@ -20,9 +20,9 @@ export interface SnapshotInfo {
 	ReturnCode?: number;
 }
 
-export interface SnapshotInfoByType {
-	hardwareComponents?: SnapshotInfo;
-	softwareComponents?: SnapshotInfo;
+export interface SnapshotComponentsListByType {
+	hardwareList?: SnapshotInfo | Array<string>;
+	softwareList?: SnapshotInfo | Array<string>;
 }
 
 export interface SnapshotModuleComponentStatus {
@@ -34,7 +34,7 @@ export interface SnapshotModule {
 	BaselineDate?: string;
 	LastSnapshotDate?: string;
 	Items?: Array<SnapshotDeviceInfo>;
-	IsDifferent?: string | boolean;
+	IsDifferent?: boolean;
 }
 
 export interface SnapshotDeviceInfo {
@@ -42,12 +42,20 @@ export interface SnapshotDeviceInfo {
 	DeviceTypeName?: string;
 	Properties?: Array<SnapshotPropertyInfo>;
 	SubDevices?: Array<SnapshotDeviceInfo>;
-	IsDifferent?: string | boolean;
+	IsDifferent?: boolean;
 }
 
 export interface SnapshotPropertyInfo {
 	PropertyName?: string;
 	BaseValue?: string;
 	CurrentValue?: string;
-	IsDifferent?: string | boolean;
+	IsDifferent?: boolean;
+}
+
+export interface ModalSnapshotComponentItem {
+	name: string;
+	selected: boolean;
+	components?: Array<ModalSnapshotComponentItem>;
+	collapsed?: boolean;
+	indeterminate?: boolean;
 }

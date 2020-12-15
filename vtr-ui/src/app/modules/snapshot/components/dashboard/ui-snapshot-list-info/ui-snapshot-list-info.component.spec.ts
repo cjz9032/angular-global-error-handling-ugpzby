@@ -10,11 +10,10 @@ describe('UiSnapshotListInfoComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			  declarations: [ UiSnapshotListInfoComponent ],
-			  imports: [TranslateModule.forRoot()]
-		})
-		.compileComponents();
-  	});
+			declarations: [UiSnapshotListInfoComponent],
+			imports: [TranslateModule.forRoot()],
+		}).compileComponents();
+	});
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UiSnapshotListInfoComponent);
@@ -27,11 +26,14 @@ describe('UiSnapshotListInfoComponent', () => {
 	});
 
 	it('should test selectAny emitter onSelectAll method', () => {
-		component.snapshotInfo = [{
-			components: [],
-			selected: true,
-			indeterminate: true,
-		}];
+		component.componentList = [
+			{
+				name: '',
+				components: [],
+				selected: true,
+				indeterminate: true,
+			},
+		];
 
 		spyOn(component.selectAny, 'emit').and.callThrough();
 		component.onSelectAll();
@@ -40,10 +42,11 @@ describe('UiSnapshotListInfoComponent', () => {
 
 	it('should test selectAny emitter onDeviceSelectionClicked method', () => {
 		const item = {
+			name: '',
 			components: [],
 			selected: true,
 			indeterminate: true,
-		}
+		};
 		spyOn(component.selectAny, 'emit').and.callThrough();
 		component.onDeviceSelectionClicked(item, true);
 		expect(component.selectAny.emit).toHaveBeenCalled();
@@ -51,10 +54,11 @@ describe('UiSnapshotListInfoComponent', () => {
 
 	it('should test selectAny emitter onCheckChildren method', () => {
 		const item = {
+			name: '',
 			components: [],
 			selected: true,
 			indeterminate: true,
-		}
+		};
 		spyOn(component.selectAny, 'emit').and.callThrough();
 		component.onCheckChildren(item);
 		expect(component.selectAny.emit).toHaveBeenCalled();

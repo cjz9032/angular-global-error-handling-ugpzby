@@ -49,7 +49,7 @@ export class SnapshotService {
 
 	public async updateBaselineInfo(selectedComponents: Array<string>) {
 		// Set component status from selectedComponents list to inProgress.
-		selectedComponents.map((componentName) => {
+		selectedComponents.forEach((componentName) => {
 			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.inProgress;
 		});
 
@@ -63,7 +63,7 @@ export class SnapshotService {
 			}
 
 			// Iterate over snapshotInfo and set only components that had the baseline updated;
-			selectedComponents.map((componentName) => {
+			selectedComponents.forEach((componentName) => {
 				this.pvtSnapshotInfo[componentName].info =
 					snapshotUpdateBaselineResponse[componentName];
 				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
@@ -73,7 +73,7 @@ export class SnapshotService {
 				`Error ${error} during request for snapshot data from UpdateBaseline`
 			);
 
-			selectedComponents.map((componentName) => {
+			selectedComponents.forEach((componentName) => {
 				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.error;
 			});
 		}
