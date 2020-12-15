@@ -14,7 +14,7 @@
 			<div class="select-wrapper">
 				<vtr-ui-lighting-effect [ariaLabel]="'gaming.macroKey.narrator.repeatStatus.label' | translate"
 					[selectedValue]="repeatSelectedValue" [options]="repeatOptions[0]" [enableDescription]="false"
-					(change)="onRepeatChanged($event)" [tabindex]="1"
+					(changeEffect)="onRepeatChanged($event)" [tabindex]="1"
 					[automationId]="'gaming_macro_key_ settings_repeat drop'">
 				</vtr-ui-lighting-effect>
 			</div>
@@ -22,9 +22,9 @@
 		<div class="col-12" *ngIf="!recordingStatus" class="w-100">
 			<div class="select-wrapper">
 				<vtr-ui-lighting-effect [ariaLabel]="'gaming.macroKey.narrator.ignoreIntervalStatus.label' | translate"
-					[tooltip_value]="tooltipsDelay | translate" [showDescription]="true"
+					[tooltipValue]="tooltipsDelay | translate" [showDescription]="true"
 					[selectedValue]="delaySelectedValue" [options]="intervalOptions[0]"
-					(change)="onIntervalChanged($event)" [tabindex]="1"
+					(changeEffect)="onIntervalChanged($event)" [tabindex]="1"
 					[automationId]="'gaming_macro_key_settings_delay drop'">
 				</vtr-ui-lighting-effect>
 			</div>

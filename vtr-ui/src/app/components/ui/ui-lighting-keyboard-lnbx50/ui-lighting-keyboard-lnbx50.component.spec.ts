@@ -151,7 +151,7 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 		component.hideColordisk();
 		expect(component.selectPanel).toBe(0);
 		expect(component.selectedArea).toBe(0);
-	})
+	});
 
 	describe('check init : ', () => {
 		it('init KeyboardToggleStatusLNBx50 is undefined', () => {
@@ -174,19 +174,21 @@ describe('UiLightingKeyboardLNBx50Component', () => {
 	});
 
 	describe('check ngOnChanges : ', () => {
-		it('When changes.listInfo is true, check onChanges', () => {
+		it('When changes.listInfo is true, check onChanges', fakeAsync(() => {
 			const spy = spyOn(component, 'setToggleStatusCache');
 			component.ngOnChanges({ listInfo: true });
 			fixture.detectChanges();
+			tick(150);
 			expect(spy).toHaveBeenCalled();
-		});
+		}));
 
-		it('When changes.listInfo is false, check onChanges', () => {
+		it('When changes.listInfo is false, check onChanges', fakeAsync(() => {
 			const spy2 = spyOn(component, 'setToggleStatusCache');
 			component.ngOnChanges({ listInfo: false });
 			fixture.detectChanges();
+			tick(150);
 			expect(spy2).not.toHaveBeenCalled();
-		});
+		}));
 
 		it('When changes.isColorPicker is true, check onChanges', () => {
 			component.isColorPicker = true;

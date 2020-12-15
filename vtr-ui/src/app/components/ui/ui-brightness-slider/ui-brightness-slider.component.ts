@@ -8,8 +8,6 @@ import { Options, ChangeContext, ValueToPositionFunction } from 'ng5-slider';
 })
 export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked {
 	@Input() lightingData: any;
-	public options: Options;
-
 	@Input() enableSlider;
 	@Input() automationId = '';
 	@Input() ariaLabelValue = 'Brightness';
@@ -24,7 +22,8 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	@Input() manualRefresh = new EventEmitter<void>();
 	@Input() metricsId = '';
 	@Input() vtrMetricEnabled: any;
-	@Output() onSliderChanged: EventEmitter<ChangeContext> = new EventEmitter();
+	@Output() sliderChanged: EventEmitter<ChangeContext> = new EventEmitter();
+	public options: Options;
 
 	constructor() {}
 
@@ -49,7 +48,7 @@ export class UiBrightnessSliderComponent implements OnInit, AfterContentChecked 
 	}
 
 	public dragEnd($event: any) {
-		this.onSliderChanged.emit($event.value);
+		this.sliderChanged.emit($event.value);
 	}
 
 	onFocusSlider($event: any) {

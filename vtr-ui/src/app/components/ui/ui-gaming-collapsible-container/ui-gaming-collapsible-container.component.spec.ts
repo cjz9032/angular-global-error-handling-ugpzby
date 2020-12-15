@@ -3,13 +3,13 @@ import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angul
 import { NO_ERRORS_SCHEMA, Pipe, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { By } from '@angular/platform-browser';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('UiGamingCollapsibleContainerComponent', () => {
 	let component: UiGamingCollapsibleContainerComponent;
 	let fixture: ComponentFixture<UiGamingCollapsibleContainerComponent>;
-	let router = { navigate: jasmine.createSpy('navigate') };
-	let drop = {
+	const router = { navigate: jasmine.createSpy('navigate') };
+	const drop = {
 		curSelected: 1,
 		modeType: 1,
 		hideDropDown: false,
@@ -48,8 +48,8 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiGamingCollapsibleContainerComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+				GAMING_DATA.mockPipe({ name: 'sanitize' }),
 			],
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [{ provide: HttpClient }, { provide: Router, useValue: router }],
@@ -60,9 +60,21 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 		fixture.detectChanges();
 	}));
 
-	it('should create', () => {
+	it('should create', fakeAsync(() => {
 		expect(component).toBeTruthy();
-	});
+
+		fixture.detectChanges();
+		component.showOptions = true;
+		const button = document.getElementById('menu-main-btn-navbar-toggler');
+		if (button) {
+			button.click();
+			fixture.detectChanges();
+		}
+		fixture.whenStable().then(() => {
+			expect(component.showOptions).toBe(false);
+		});
+		tick(100);
+	}));
 
 	it('Checking call have been made for getCurrentOption function', fakeAsync(() => {
 		component.getCurrentOption();
@@ -102,19 +114,25 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 	}));
 
 	it('Checking call have been made for changeDescription function', fakeAsync(() => {
-		component.changeDescription(Option);
 		component.options.curSelected = 1;
-		spyOn(component, 'changeDescription');
-		component.changeDescription(Option);
-		expect(component.changeDescription).toHaveBeenCalled();
+		component.currentDescription = 'description1';
+		component.changeDescription({ value: 1, description: 'description2' });
+		expect(component.currentDescription).toBe('description2');
+		//spyOn(component, 'changeDescription');
+		component.changeDescription({ value: 2, description: 'description3' });
+		expect(component.currentDescription).toBe('description2');
+		//expect(component.changeDescription).toHaveBeenCalled();
 	}));
 
 	it('Checking call have been made for resetDescription function', fakeAsync(() => {
-		component.resetDescription(Option);
+		component.options.curSelected = 1;
 		component.currentDescription = '';
-		spyOn(component, 'resetDescription');
-		component.resetDescription(Option);
-		expect(component.resetDescription).toHaveBeenCalled();
+		component.resetDescription({ value: 1, description: 'description1' });
+		expect(component.currentDescription).toBe('description1');
+		//spyOn(component, 'resetDescription');
+		component.resetDescription({ value: 2, description: 'description2' });
+		expect(component.currentDescription).toBe('description1');
+		//expect(component.resetDescription).toHaveBeenCalled();
 	}));
 
 	it('should generate the click', () => {
@@ -142,16 +160,3 @@ describe('UiGamingCollapsibleContainerComponent', () => {
 		expect(component.itemsFocused()).toBeUndefined();
 	}));
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

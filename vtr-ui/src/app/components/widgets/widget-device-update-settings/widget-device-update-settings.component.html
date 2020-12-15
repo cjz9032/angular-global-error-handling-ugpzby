@@ -22,7 +22,7 @@
 												title="{{ item.header | translate }}"></div>
 											<vtr-ui-gaming-collapsible-container id="{{item.id}}"
 												[ariaLabel]="item.ariaLabel" [options]="options"
-												*ngIf="item.isCollapsible" (change)="optionChanged($event,item, in)"
+												*ngIf="item.isCollapsible" (changeSelect)="optionChanged($event,item, in)"
 												(showDropDown)="showDropDown.emit(item)">
 											</vtr-ui-gaming-collapsible-container>
 											<vtr-ui-gaming-driver-popup [ngClass]="{'overclock-driver-popup' : item.id === 'legionedge cpuoverlock'}" *ngIf="item.isCollapsible && item.isDriverPopup"

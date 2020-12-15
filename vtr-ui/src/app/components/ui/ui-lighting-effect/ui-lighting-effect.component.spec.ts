@@ -4,6 +4,7 @@ import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UiLightingEffectComponent } from './ui-lighting-effect.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('UiLightingEffectComponent', () => {
 	let component: UiLightingEffectComponent;
@@ -24,8 +25,8 @@ describe('UiLightingEffectComponent', () => {
 		TestBed.configureTestingModule({
 			declarations: [
 				UiLightingEffectComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
+				GAMING_DATA.mockPipe({ name: 'translate' }),
+				GAMING_DATA.mockPipe({ name: 'sanitize' }),
 			],
 			providers: [
 				NgbModal,
@@ -41,9 +42,21 @@ describe('UiLightingEffectComponent', () => {
 		fixture.detectChanges();
 	}));
 
-	it('should create', () => {
+	it('should create', fakeAsync(() => {
 		expect(component).toBeTruthy();
-	});
+
+		fixture.detectChanges();
+		component.showOptions = true;
+		const button = document.getElementById('menu-main-btn-navbar-toggler');
+		if (button) {
+			button.click();
+			fixture.detectChanges();
+		}
+		fixture.whenStable().then(() => {
+			expect(component.showOptions).toBe(false);
+		});
+		tick(100);
+	}));
 
 	it('should show button as HIDE', () => {
 		component.showOptions = false;
@@ -138,6 +151,11 @@ describe('UiLightingEffectComponent', () => {
 		};
 		component.ngOnChanges(changes2);
 		expect(component.ngOnChanges(changes2)).toBeUndefined();
+
+		component.selectedOption = undefined;
+		component.options = { curSelected: 1, dropOptions: [...options] };
+		component.ngOnInit();
+		expect(component.selectedOption[0]).toEqual(options[0]);
 	});
 
 	it('should focus on the item', fakeAsync(() => {
@@ -153,16 +171,3 @@ describe('UiLightingEffectComponent', () => {
 		expect(component.itemsFocused()).toBeUndefined();
 	}));
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

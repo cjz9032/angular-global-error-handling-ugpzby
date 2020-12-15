@@ -194,6 +194,9 @@ describe('UiAddReduceButtonComponent', () => {
 
 	describe('should call hideColorPicker : ', () => {
 		it('should call hideColorPicker & focus button', () => {
+			document.getElementById = jasmine
+				.createSpy('HTML Element')
+				.and.returnValue(null);
 			component.hideColorPicker();
 			expect(component.hideColorPicker()).toBeUndefined();
 			const dummyElement = document.createElement('div');

@@ -7,6 +7,7 @@ import {
 	EventEmitter,
 	OnChanges,
 	ViewChild,
+	HostListener
 } from '@angular/core';
 import { isUndefined } from 'util';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -16,9 +17,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 	selector: 'vtr-ui-lighting-effect',
 	templateUrl: './ui-lighting-effect.component.html',
 	styleUrls: ['./ui-lighting-effect.component.scss'],
-	host: {
-		'(document:click)': 'generalClick($event)',
-	},
 })
 export class UiLightingEffectComponent implements OnInit, OnChanges {
 	@ViewChild('focusDropdown', { static: false }) focusDropdown: ElementRef;
@@ -26,19 +24,29 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 	@Input() public tabindex;
 	@Input() public selectedValue;
 	@Input() lightingData: any;
-	@Output() public change = new EventEmitter<any>();
+	@Output() public changeEffect = new EventEmitter<any>();
 	@Input() enableBrightCondition1: boolean;
 	@Input() showDescription: boolean;
-	@Input() isEffectChange: boolean = true;
-	@Input() showOptions: boolean = false;
+	@Input() isEffectChange = true;
+	@Input() showOptions = false;
+	@Input() effectOptionName: string;
+	@Input() ariaLabel = '';
+	@Input() automationId: string;
+	@Input() defaultLang: any;
+	@ViewChild('dropdownLightingEle', { static: false }) dropdownEle: ElementRef;
+	@Output() public isEffectList = new EventEmitter<any>();
+	// for macrokey
+	@Input() public enableDescription = true;
+	@Input() isRecording = false;
+	@Input() tooltipValue: any;
+	intervalObj: any;
+	isItemsFocused = false;
+	defaultLanguage: any;
 	public buttonName: any = 'Show';
 	public selected = false;
 	public currentOption: string;
 	public currentDescription: string;
 	public selectedDescription: string;
-	@Input() effectOptionName: string;
-	@Input() ariaLabel: string = '';
-	@Input() automationId: string;
 	public selectedOption: any = {
 		header: '',
 		id: '',
@@ -47,17 +55,6 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		name: '',
 		value: 1,
 	};
-	@Input() defaultLang: any;
-	@ViewChild('dropdownLightingEle', { static: false })
-	dropdownEle: ElementRef;
-	intervalObj: any;
-	isItemsFocused = false;
-	@Output() public isEffectList = new EventEmitter<any>();
-	// for macrokey
-	@Input() public enableDescription = true;
-	@Input() isRecording = false;
-	defaultLanguage: any;
-	@Input() tooltip_value: any;
 	// end
 
 	constructor(
@@ -71,6 +68,17 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 				.addEventListener('click', (event) => {
 					this.generalClick(event);
 				});
+		}
+	}
+
+	@HostListener('document:click', ['$event'])
+	public generalClick(event: Event) {
+		if (this.elementRef.nativeElement) {
+			if (!this.elementRef.nativeElement.contains(event.target)) {
+				if (this.showOptions) {
+					this.showOptions = false;
+				}
+			}
 		}
 	}
 
@@ -127,7 +135,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 		}
 
 		this.showOptions = false;
-		this.change.emit(option);
+		this.changeEffect.emit(option);
 		document.getElementById('');
 		this.focusElement();
 	}
@@ -138,16 +146,6 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 
 	public resetDescription(option) {
 		this.currentDescription = this.selectedDescription;
-	}
-
-	public generalClick(event: Event) {
-		if (this.elementRef.nativeElement) {
-			if (!this.elementRef.nativeElement.contains(event.target)) {
-				if (this.showOptions) {
-					this.showOptions = false;
-				}
-			}
-		}
 	}
 
 	keydownFn(event, i) {

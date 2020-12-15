@@ -47,7 +47,7 @@
                     <h3 id="gaming_lighting_effect_text" role="text" class="content-title">{{'gaming.lightingProfile.profile.text3.title' | translate}} </h3>
                     <vtr-ui-lighting-effect [options]="lightingEffectList"
                         [effectOptionName]="lightingProfileCurrentDetail.currentEffectName" [selectedValue]="lightingProfileCurrentDetail.lightEffectType"
-                        [isEffectChange] = "isEffectChange" (change)="setLightingProfileEffect($event)" [tabindex]="0" [automationId]="'gaming_lighting_effect_drop_menu'">
+                        [isEffectChange] = "isEffectChange" (changeEffect)="setLightingProfileEffect($event)" [tabindex]="0" [automationId]="'gaming_lighting_effect_drop_menu'">
                     </vtr-ui-lighting-effect>
                     <div class="lighting-panel-group">
                        <div class="lighting-panel-brightness" *ngIf="supportBrightness">
