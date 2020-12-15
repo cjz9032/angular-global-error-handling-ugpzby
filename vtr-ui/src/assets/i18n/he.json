@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "מזהה פרטי מערכת עכשיו...",
 				"goodCondition": "המכשיר במצב תקין",
-				"maintenanceNeeded": "המכשיר זקוק לתחזוקה מסוימת"
+				"maintenanceNeeded": "המכשיר זקוק לתחזוקה מסוימת",
+				"needSUScan": "לחצו כדי לעדכן את מנהל ההתקנים",
+				"needSPScan": "לחצו כדי למטב את ביצועי המחשב",
+				"needHWScan": "לחצו כדי לסרוק את חומרת המחשב"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "העדכון המתוכנן הבא: ",
 			"checkButton": "חיפוש עדכונים",
 			"checkAgain": "בדיקה נוספת",
-			"updateNow": "עדכון כעת",
+			"updateNow": "התקינו כעת",
+			"selectAll": "בחרו הכל",
 			"checking": "חיפוש עדכונים",
 			"downloading": "הורדת העדכונים הושלמה",
 			"installing": "מתקין עדכונים",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "הרשמה ותיקון",
 		"cancel": "ביטול",
 		"scanning": "סורק",
-		"fixIt": "תיקון",
-		"optimizeIt": "מיטוב",
+		"fixIt": "תקנו עכשיו",
+		"optimizeIt": "מטב",
 		"maintainIt": "תחזוקה",
+		"noteFindings": "הגענו לממצאים שלנו על סמך ניתוח מפורט של המחשב שלכם.",
+		"noteNavigateTab": "נווטו בכרטיסיות למידע נוסף:",
+		"scannedAreas": "אזורים שנסרקו",
 		"lastFix": "תיקון אחרון",
 		"fixResult": "תוצאות התיקון",
 		"checkPreviousResults": "בדיקת תוצאות קודמות",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "הכל טוב עם המחשב ",
+			"titleScanCanceled": "הדירוג היה 0 מכיוון שהסריקה האחרונה בוטלה. לחצו על \"חזרה לדף הבית\" וסרקו שוב.",
 			"serialNumber": "מספר סידורי: ",
 			"subTitle": "אתם מנויים לשירות Lenovo Smart Performance",
 			"description": "אנו סורקים ומתקנים את מחשבכם באופן יזום ולעיתים תכופות כדי לשפר את ביצועי המחשב והאינטרנט ולנטרל בעיות הקשורות לתוכנה זדונית. יש לכם הגנה טובה. ניתן גם להפעיל בדיקת ביצועים לפי דרישה על-ידי לחיצה על הלחצן \"סרוק עכשיו\".",
 			"scanNow": "סריקה ותיקון",
+			"backToHome": "חזרה למסך הבית",
 			"returnto": "חזרה ל‏‫לוח מחוונים‬",
 			"mostRecent": "הסריקה האחרונה:",
 			"nextScheduled": "הסריקה המתוזמנת הבאה:",
+			"successTitle": "מחשבכם עבר את הטיפול!",
+			"successDescription": "השירות Smart Performance פתר <b>{{issueCount}} בעיות</b> כדי שמחשבכם ימשיך לפעול בצורה חלקה; תוכלו לצפות בדוח ובסיכום הסריקה למטה.",
 			"scanSummary": {
 				"title": "סיכום סריקה:",
 				"description": "אנו משפרים את מחשבכם באופן מתמיד",
@@ -5126,10 +5137,7 @@
 				"scanDate": "תאריך הסריקה",
 				"results": "תוצאות",
 				"status": "מצב"
-			},
-			"backToHome": "חזרה למסך הבית",
-			"successTitle": "מחשבכם עבר את הטיפול!",
-			"successDescription": "השירות Smart Performance פתר <b>{{issueCount}} בעיות</b> כדי שמחשבכם ימשיך לפעול בצורה חלקה; תוכלו לצפות בדוח ובסיכום הסריקה למטה."
+			}
 		},
 		"feedbackContainer": {
 			"title": "השאירו לנו משוב",

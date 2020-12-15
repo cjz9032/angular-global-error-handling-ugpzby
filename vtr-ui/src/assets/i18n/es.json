@@ -933,10 +933,7 @@
 					"summary": "Piense en los atributos más importantes a la hora de seleccionar un equipo portátil para su uso personal.",
 					"question": "Seleccione el atributo más importante.",
 					"question1": {
-						"options": [
-							"Precio",
-							"Nombre/marca del fabricante"
-						]
+						"options": ["Precio", "Nombre/marca del fabricante"]
 					},
 					"question2": {
 						"options": [
@@ -945,16 +942,10 @@
 						]
 					},
 					"question3": {
-						"options": [
-							"Capacidades gráficas",
-							"Tamaño de la pantalla"
-						]
+						"options": ["Capacidades gráficas", "Tamaño de la pantalla"]
 					},
 					"question4": {
-						"options": [
-							"Tamaño de la pantalla",
-							"Peso"
-						]
+						"options": ["Tamaño de la pantalla", "Peso"]
 					}
 				},
 				"page2": {
@@ -1101,7 +1092,10 @@
 			"cardSummary": {
 				"detecting": "Detectando información de sistema...",
 				"goodCondition": "Su dispositivo está en buen estado",
-				"maintenanceNeeded": "El dispositivo necesita algo de mantenimiento"
+				"maintenanceNeeded": "El dispositivo necesita algo de mantenimiento",
+				"needSUScan": "Haga clic para actualizar el controlador del dispositivo",
+				"needSPScan": "Haga clic para optimizar el rendimiento del equipo",
+				"needHWScan": "Haga clic para analizar el hardware del equipo"
 			}
 		}
 	},
@@ -2476,7 +2470,8 @@
 			"next": "Siguiente actualización programada: ",
 			"checkButton": "COMPROBAR ACTUALIZACIONES",
 			"checkAgain": "Volver a comp.",
-			"updateNow": "Actual. ahora",
+			"updateNow": "Instalar ahora",
+			"selectAll": "Seleccionar todos",
 			"checking": "Comprobando si hay actualizaciones",
 			"downloading": "Descarga de actualizaciones completa",
 			"installing": "Instalación de actualizaciones",
@@ -4614,9 +4609,12 @@
 		"signUpAndFix": "Regístrese y corríjalo",
 		"cancel": "Cancelar",
 		"scanning": "Explorando",
-		"fixIt": "Corríjalo",
-		"optimizeIt": "Optimícelo",
+		"fixIt": "Corregir ahora",
+		"optimizeIt": "Optimizar",
 		"maintainIt": "Realice mantenimiento",
+		"noteFindings": "Hemos llegado a nuestras conclusiones en función del análisis detallado del equipo.",
+		"noteNavigateTab": "Navegue a las pestañas para obtener más información:",
+		"scannedAreas": "Áreas analizadas",
 		"lastFix": "Última corrección",
 		"fixResult": "Resultado de la corrección",
 		"checkPreviousResults": "Comprobar los resultados anteriores",
@@ -5207,13 +5205,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Todo funciona bien con su ",
+			"titleScanCanceled": "La clasificación fue 0 porque el último análisis se canceló. Haga clic en “VOLVER AL INICIO” y realice el análisis nuevamente.",
 			"serialNumber": "Número de serie: ",
 			"subTitle": "Está suscrito al servicio Smart Performance de Lenovo",
 			"description": "Frecuentemente analizamos y corregimos los problemas de su equipo para el rendimiento del PC, el rendimiento de Internet y los problemas de malware de forma proactiva. Ya posee una cobertura adecuada. También puede iniciar la comprobación del rendimiento según demanda, haciendo clic en el botón Analizar ahora.",
 			"scanNow": "ANALIZAR Y CORREGIR",
+			"backToHome": "Volver al Inicio",
 			"returnto": "VOLVER AL PANEL DE MANDOS",
 			"mostRecent": "ANÁLISIS MÁS RECIENTE:",
 			"nextScheduled": "SIGUIENTE ANÁLISIS PLANIFICADO:",
+			"successTitle": "¡Hemos ajustado su PC!",
+			"successDescription": "Smart Performance resolvió <b>{{issueCount}} problema(s)</b> para mantener su PC funcionando sin problemas. Encontrará el resumen e informe del análisis a continuación.",
 			"scanSummary": {
 				"title": "Resumen del análisis:",
 				"description": "Constantemente realizamos ajustes a su equipo",
@@ -5238,10 +5240,7 @@
 				"scanDate": "Fecha de análisis",
 				"results": "Resultados",
 				"status": "Estado"
-			},
-			"backToHome": "Volver al Inicio",
-			"successTitle": "¡Hemos ajustado su PC!",
-			"successDescription": "Smart Performance resolvió <b>{{issueCount}} problema(s)</b> para mantener su PC funcionando sin problemas. Encontrará el resumen e informe del análisis a continuación."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Déjenos algunos comentarios",

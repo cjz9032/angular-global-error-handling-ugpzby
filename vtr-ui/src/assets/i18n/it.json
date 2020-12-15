@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Rilevamento informazioni sul sistema in corso...",
 				"goodCondition": "Il dispositivo è in buone condizioni",
-				"maintenanceNeeded": "Il dispositivo richiede manutenzione"
+				"maintenanceNeeded": "Il dispositivo richiede manutenzione",
+				"needSUScan": "Fare clic per aggiornare il driver di dispositivo",
+				"needSPScan": "Fare clic per ottimizzare le prestazioni del computer",
+				"needHWScan": "Fare clic per analizzare l'hardware del computer"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Prossimo aggiornamento pianificato: ",
 			"checkButton": "VERIFICA DISPONIBILITÀ AGGIORNAMENTI",
 			"checkAgain": "Ricontrolla",
-			"updateNow": "Aggiorna ora",
+			"updateNow": "Installa adesso",
+			"selectAll": "Seleziona tutto",
 			"checking": "Controllo degli aggiornamenti",
 			"downloading": "Fine download aggiornamenti",
 			"installing": "Installazione aggiornamenti",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Registrati e correggi",
 		"cancel": "Annulla",
 		"scanning": "Scansione",
-		"fixIt": "Correggi",
+		"fixIt": "Correggi ora",
 		"optimizeIt": "Ottimizza",
 		"maintainIt": "Gestisci",
+		"noteFindings": "Sono disponibili i risultati in base all'analisi dettagliata del computer.",
+		"noteNavigateTab": "Selezionare le schede per ulteriori informazioni:",
+		"scannedAreas": "Aree analizzate",
 		"lastFix": "Ultima correzione",
 		"fixResult": "Risultato correzione",
 		"checkPreviousResults": "Controlla risultati precedenti",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Il sistema funziona correttamente ",
+			"titleScanCanceled": "La classificazione è 0 perché l'ultima scansione è stata annullata. Fare clic su \"TORNA ALLA SCHERMATA PRINCIPALE\" e avviare nuovamente l'analisi.",
 			"serialNumber": "Numero di serie: ",
 			"subTitle": "Sei iscritto al servizio Lenovo Smart Performance",
 			"description": "La scansione e la correzione dei problemi del computer vengono eseguite frequentemente per ottimizzare le prestazioni di PC e Internet, nonché per rilevare i problemi malware in modo proattivo. Il tuo sistema è protetto. Puoi anche avviare il controllo delle prestazioni su richiesta facendo clic sul pulsante Avvia scansione.",
 			"scanNow": "ESEGUI SCANSIONE E CORREGGI",
+			"backToHome": "Torna alla schermata principale",
 			"returnto": "TORNA AL DASHBOARD",
 			"mostRecent": "SCANSIONE PIÙ RECENTE:",
 			"nextScheduled": "PROSSIMA SCANSIONE PIANIFICATA:",
+			"successTitle": "Il tuo PC è ottimizzato.",
+			"successDescription": "Smart Performance ha risolto <b>{{issueCount}} problemi</b> per assicurare la corretta esecuzione del PC. Di seguito puoi trovare il riepilogo e il report della scansione.",
 			"scanSummary": {
 				"title": "Riepilogo scansione:",
 				"description": "Il tuo computer viene costantemente ottimizzato",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Data scansione",
 				"results": "Risultati",
 				"status": "Stato"
-			},
-			"backToHome": "Torna alla schermata principale",
-			"successTitle": "Il tuo PC è ottimizzato.",
-			"successDescription": "Smart Performance ha risolto <b>{{issueCount}} problemi</b> per assicurare la corretta esecuzione del PC. Di seguito puoi trovare il riepilogo e il report della scansione."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Inviaci un feedback",

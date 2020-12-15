@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Otkrivanje informacija o sistemu sada...",
 				"goodCondition": "Uređaj je u dobrom stanju",
-				"maintenanceNeeded": "Uređaju je potrebno održavanje"
+				"maintenanceNeeded": "Uređaju je potrebno održavanje",
+				"needSUScan": "Kliknite da biste ažurirali upravljački program uređaja",
+				"needSPScan": "Kliknite da biste optimizovali performanse računara",
+				"needHWScan": "Kliknite da biste skenirali hardver na računaru"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Sledeće planirano ažuriranje: ",
 			"checkButton": "PROVERI DA LI POSTOJE ISPRAVKE",
 			"checkAgain": "Proverite ponovo",
-			"updateNow": "Ažurirajte sada",
+			"updateNow": "Instalirajte odmah",
+			"selectAll": "Izaberite sve",
 			"checking": "Traženje ažuriranja",
 			"downloading": "Preuzimanje ažuriranja je završeno",
 			"installing": "Instaliranje ažuriranja",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Registrujte se i popravite",
 		"cancel": "Otkaži",
 		"scanning": "Skeniranje",
-		"fixIt": "Popravi ga",
-		"optimizeIt": "Optimizuj ga",
-		"maintainIt": "Održavaj ga",
+		"fixIt": "Popravi odmah",
+		"optimizeIt": "Optimizuj",
+		"maintainIt": "Održavaj",
+		"noteFindings": "Do naših saznanja smo došli na osnovu detaljne analize vašeg računara.",
+		"noteNavigateTab": "Krećite se karticama da biste saznali više:",
+		"scannedAreas": "Skenirana područja",
 		"lastFix": "Poslednja ispravka",
 		"fixResult": "Rezultati ispravke",
 		"checkPreviousResults": "Provera prethodnih rezultata",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Sve je u redu sa vašim ",
+			"titleScanCanceled": "Ocena je bila 0 jer je poslednje skeniranje otkazano. Kliknite na dugme „NAZAD NA POČETNU STRANICU“ i ponovo skenirajte.",
 			"serialNumber": "Serijski broj: ",
 			"subTitle": "Pretplaćeni ste na Lenovo uslugu Smart Performance",
 			"description": "Povremeno proaktivno skeniramo i popravljamo vaš računar radi performansi računara i interneta, kao i problema sa malverom. Vi ste adekvatno zaštićeni. Takođe odmah možete da pokrenete proveru performansi na zahtev klikom na dugme za skeniranje.",
 			"scanNow": "SKENIRANJE I POPRAVKA",
+			"backToHome": "Nazad na početnu stranicu",
 			"returnto": "POVRATAK NA KONTROLNU TABLU",
 			"mostRecent": "NAJNOVIJE SKENIRANJE:",
 			"nextScheduled": "SLEDEĆE PLANIRANO SKENIRANJE:",
+			"successTitle": "Računar je podešen!",
+			"successDescription": "Smart Performance je rešio <b>{{issueCount}} probleme</b> kako bi računar neometano radio, a rezime skeniranja i izveštaj možete pronaći u nastavku.",
 			"scanSummary": {
 				"title": "Rezime skeniranja:",
 				"description": "Neprestano podešavamo računar",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Datum skeniranja",
 				"results": "Rezultati",
 				"status": "Status"
-			},
-			"backToHome": "Nazad na početnu stranicu",
-			"successTitle": "Računar je podešen!",
-			"successDescription": "Smart Performance je rešio <b>{{issueCount}} probleme</b> kako bi računar neometano radio, a rezime skeniranja i izveštaj možete pronaći u nastavku."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Ostavite nam neke povratne informacije",

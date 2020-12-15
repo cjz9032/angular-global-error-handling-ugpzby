@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Etsitään järjestelmän tietoja...",
 				"goodCondition": "Laitteesi on hyvässä kunnossa",
-				"maintenanceNeeded": "Laitteesi tarvitsee jonkin verran huoltoa"
+				"maintenanceNeeded": "Laitteesi tarvitsee jonkin verran huoltoa",
+				"needSUScan": "Napsauta päivittääksesi laitteen ajurin",
+				"needSPScan": "Napsauta optimoidaksesi tietokoneen suorituskyvyn",
+				"needHWScan": "Napsauta tarkistaaksesi tietokoneen laitteiston"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Seuraava ajoitettu päivitys: ",
 			"checkButton": "TARKISTA PÄIVITYKSET",
 			"checkAgain": "Tarkista uudelleen",
-			"updateNow": "Päivitä nyt",
+			"updateNow": "Asenna",
+			"selectAll": "Kaikkien valinta",
 			"checking": "Tarkistetaan päivityksiä",
 			"downloading": "Päivitysten nouto on valmis",
 			"installing": "Päivityksiä asennetaan",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Rekisteröidy ja korjaa",
 		"cancel": "Peruuta",
 		"scanning": "Etsitään",
-		"fixIt": "Korjaa",
+		"fixIt": "Korjaa nyt",
 		"optimizeIt": "Optimoi",
 		"maintainIt": "Ylläpidä",
+		"noteFindings": "Teimme havaintomme tietokoneesi yksityiskohtaisen analyysin perusteella.",
+		"noteNavigateTab": "Selaa välilehtiä saadaksesi lisätietoja:",
+		"scannedAreas": "Tarkistetut alueet",
 		"lastFix": "Viimeinen korjaus",
 		"fixResult": "Korjauksen tulos",
 		"checkPreviousResults": "Tarkista aiemmat tulokset",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Kaikki hyvin laitteessasi ",
+			"titleScanCanceled": "Arvosana oli 0, koska viimeinen tarkistus peruutettiin. Napsauta \"TAKAISIN ALOITUSSIVULLE\" ja suorita tarkistus uudelleen.",
 			"serialNumber": "Sarjanumero: ",
 			"subTitle": "Olet tilannut Lenovo Smart Performance -palvelun",
 			"description": "Tarkistamme ja korjaamme tietokonettasi usein ennakoivasti tietokoneen suorituskykyyn, Internetin suorituskykyyn ja haittaohjelmiin liittyvien ongelmien varalta. Tietokoneesi on tarpeeksi hyvin suojattu. Voit myös aloittaa suorituskyvyn tarkistuksen tarvittaessa napsauttamalla Tarkista nyt -painiketta.",
 			"scanNow": "TARKISTA JA KORJAA",
+			"backToHome": "Takaisin aloitussivulle",
 			"returnto": "PALAA KOONTINÄKYMÄÄN",
 			"mostRecent": "VIIMEISIN TARKISTUS:",
 			"nextScheduled": "SEURAAVA AJOITETTU TARKISTUS:",
+			"successTitle": "Tietokoneesi on viritetty!",
+			"successDescription": "Smart Performance ratkaisi <b>{{issueCount}} ongelmaa</b>, jotta tietokoneesi pysyy hyvässä kunnossa. Tarkistuksen yhteenveto ja raportti ovat alla.",
 			"scanSummary": {
 				"title": "Tarkistuksen yhteenveto:",
 				"description": "Viritämme tietokonettasi jatkuvasti",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Tarkistuksen päivämäärä",
 				"results": "Tulokset",
 				"status": "Tila"
-			},
-			"backToHome": "Takaisin aloitussivulle",
-			"successTitle": "Tietokoneesi on viritetty!",
-			"successDescription": "Smart Performance ratkaisi <b>{{issueCount}} ongelmaa</b>, jotta tietokoneesi pysyy hyvässä kunnossa. Tarkistuksen yhteenveto ja raportti ovat alla."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Lähetä meille palautetta",

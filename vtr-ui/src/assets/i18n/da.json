@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Registrerer systemoplysninger nu...",
 				"goodCondition": "Din enhed er i god stand",
-				"maintenanceNeeded": "Din enhed har brug for vedligeholdelse"
+				"maintenanceNeeded": "Din enhed har brug for vedligeholdelse",
+				"needSUScan": "Klik for at opdatere enhedsdriver",
+				"needSPScan": "Klik for at optimere computerens ydeevne",
+				"needHWScan": "Klik for at scanne computerens hardware"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Næste planlagte opdatering: ",
 			"checkButton": "SØG EFTER OPDATERINGER",
 			"checkAgain": "Kontrollér igen",
-			"updateNow": "Opdater nu",
+			"updateNow": "Installér nu",
+			"selectAll": "Markér alle",
 			"checking": "Søger efter opdateringer",
 			"downloading": "Opdateringer er downloadet",
 			"installing": "Opdateringer installeres",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Tilmeld dig, og løs det",
 		"cancel": "Annuller",
 		"scanning": "Søger",
-		"fixIt": "Løs det",
-		"optimizeIt": "Optimer det",
-		"maintainIt": "Vedligehold det",
+		"fixIt": "Løs problemet nu",
+		"optimizeIt": "Optimer",
+		"maintainIt": "Vedligehold",
+		"noteFindings": "Vores resultater er baseret på en detaljeret analyse af computeren.",
+		"noteNavigateTab": "Naviger til fanerne for at få flere oplysninger:",
+		"scannedAreas": "Scannede områder",
 		"lastFix": "Seneste rettelse",
 		"fixResult": "Resultat af rettelse",
 		"checkPreviousResults": "Tjek tidligere resultater",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Alt fungerer med ",
+			"titleScanCanceled": "Ratingen var 0, fordi den sidste scanning blev annulleret. Klik på \"TILBAGE TIL START\", og scan igen.",
 			"serialNumber": "Serienummer: ",
 			"subTitle": "Du abonnerer på Lenovo Smart Performance-service",
 			"description": "Vi scanner og reparerer ofte computeren proaktivt for computerens ydeevne, internetydeevne og malwareproblemer. Du er dækket i passende omfang. Du kan også starte kontrol af ydeevne efter behov ved at klikke på knappen Scan nu.",
 			"scanNow": "SCAN & FIX",
+			"backToHome": "Tilbage til start",
 			"returnto": "TILBAGE TIL DASHBOARD",
 			"mostRecent": "SENESTE SCANNING:",
 			"nextScheduled": "NÆSTE PLANLAGTE SCANNING:",
+			"successTitle": "Din computer er opdateret!",
+			"successDescription": "Smart Performance løste <b>{{issueCount}} problem(er)</b> for at få computeren til at fungere problemfrit kan du finde en scanningsoversigt og rapporten herunder.",
 			"scanSummary": {
 				"title": "Scanningsoversigt:",
 				"description": "Vi optimerer konstant computeren",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Scanningsdato",
 				"results": "Resultater",
 				"status": "Status"
-			},
-			"backToHome": "Tilbage til start",
-			"successTitle": "Din computer er opdateret!",
-			"successDescription": "Smart Performance løste <b>{{issueCount}} problem(er)</b> for at få computeren til at fungere problemfrit kan du finde en scanningsoversigt og rapporten herunder."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Giv os feedback",

@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Zaznavanje sistemskih informacij ...",
 				"goodCondition": "Vaša naprava je v dobrem stanju",
-				"maintenanceNeeded": "Vaša naprava potrebuje nekaj vzdrževanja"
+				"maintenanceNeeded": "Vaša naprava potrebuje nekaj vzdrževanja",
+				"needSUScan": "Kliknite za posodobitev gonilnika naprave",
+				"needSPScan": "Kliknite za optimizacijo delovanja računalnika",
+				"needHWScan": "Kliknite za pregled strojne opreme računalnika"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Naslednja načrtovana posodobitev: ",
 			"checkButton": "ISKANJE POSODOBITEV",
 			"checkAgain": "Preveri znova",
-			"updateNow": "Posodobi zdaj",
+			"updateNow": "Namesti zdaj",
+			"selectAll": "Izberi vse",
 			"checking": "Preverite, ali so na voljo posodobitve",
 			"downloading": "Prenos posodobitev je končan",
 			"installing": "Nameščanje posodobitev",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Prijava in odpravljanje težav",
 		"cancel": "Prekliči",
 		"scanning": "Pregledovanje",
-		"fixIt": "Odpravljanje težav",
+		"fixIt": "Nujni popravek",
 		"optimizeIt": "Optimiziranje",
 		"maintainIt": "Vzdrževanje",
+		"noteFindings": "Do naših ugotovitev smo prišli na podlagi podrobne analize vašega računalnika.",
+		"noteNavigateTab": "Če želite izvedeti več, se pomaknite po zavihkih:",
+		"scannedAreas": "Pregledana področja",
 		"lastFix": "Zadnji popravek",
 		"fixResult": "Rezultat popravka",
 		"checkPreviousResults": "Preveri prejšnje rezultate",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Vse je v redu z ",
+			"titleScanCanceled": "Ocena je bila 0, ker je bil zadnji pregled preklican. Kliknite »NAZAJ NA ZAČETNO STRAN« in preglejte znova.",
 			"serialNumber": "Serijska številka: ",
 			"subTitle": "Naročeni ste na storitev Lenovo Smart Performance",
 			"description": "Računalnik pogosto pregledujemo in sproti odpravljamo težave z njegovo učinkovitostjo delovanja, delovanjem interneta in zlonamerno programsko opremo. Ustrezno ste zaščiteni. Preverjanje učinkovitosti delovanja lahko sprožite tudi na zahtevo, in sicer s klikom na gumb »Preglej«.",
 			"scanNow": "PREGLED IN POPRAVILO",
+			"backToHome": "Nazaj na začetno stran",
 			"returnto": "NAZAJ NA NADZORNO PLOŠČO",
 			"mostRecent": "ZADNJI PREGLED:",
 			"nextScheduled": "NASLEDNJI NAČRTOVANI PREGLED:",
+			"successTitle": "Vaš računalnik je optimiziran!",
+			"successDescription": "Smart Performance je odpravil <b>{{issueCount}} težav</b>, tako da bo računalnik deloval brezhibno. Povzetek pregleda in poročilo o njem si lahko ogledate spodaj.",
 			"scanSummary": {
 				"title": "Povzetek pregleda:",
 				"description": "Stalno optimiziramo vaš računalnik",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Datum pregleda",
 				"results": "Rezultati",
 				"status": "Stanje"
-			},
-			"backToHome": "Nazaj na začetno stran",
-			"successTitle": "Vaš računalnik je optimiziran!",
-			"successDescription": "Smart Performance je odpravil <b>{{issueCount}} težav</b>, tako da bo računalnik deloval brezhibno. Povzetek pregleda in poročilo o njem si lahko ogledate spodaj."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Pošljite nam povratne informacije",

@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Zjišťování informací o systému...",
 				"goodCondition": "Stav vašeho zařízení je dobrý",
-				"maintenanceNeeded": "Vaše zařízení vyžaduje určitou údržbu"
+				"maintenanceNeeded": "Vaše zařízení vyžaduje určitou údržbu",
+				"needSUScan": "Kliknutím aktualizujete ovladač zařízení",
+				"needSPScan": "Kliknutím optimalizujete výkon počítače",
+				"needHWScan": "Kliknutím zkontrolujete hardware počítače"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Příští plánovaná aktualizace: ",
 			"checkButton": "ZKONTROLOVAT AKTUALIZACE",
 			"checkAgain": "Znovu zkontrolovat",
-			"updateNow": "Aktualizovat",
+			"updateNow": "Instalovat nyní",
+			"selectAll": "Vybrat vše",
 			"checking": "Kontrola aktualizací",
 			"downloading": "Stahování aktualizací je dokončeno",
 			"installing": "Probíhá instalace aktualizací",
@@ -4505,6 +4509,9 @@
 		"fixIt": "Opravit",
 		"optimizeIt": "Optimalizovat",
 		"maintainIt": "Udržovat",
+		"noteFindings": "Ke zjištěním jsme dospěli na základě podrobné analýzy počítače.",
+		"noteNavigateTab": "Na následujících kartách se dozvíte více:",
+		"scannedAreas": "Kontrolované oblasti",
 		"lastFix": "Poslední oprava",
 		"fixResult": "Výsledek opravy",
 		"checkPreviousResults": "Zkontrolovat předchozí výsledky",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Vše je v pořádku ve vašem ",
+			"titleScanCanceled": "Hodnocení bylo 0, protože poslední kontrola byla zrušena. Klikněte na možnost „ZPĚT DOMŮ“ a proveďte kontrolu znovu.",
 			"serialNumber": "Sériové číslo: ",
 			"subTitle": "Jste přihlášeni k odběru služby Lenovo Smart Performance Service",
 			"description": "Často a proaktivně kontrolujeme a opravujeme váš počítač, jeho výkon, optimalizujeme internet a hledáme malware. Jste dostatečně chráněni. Kontrolu výkonu můžete spustit také na vyžádání klepnutím na tlačítko Spustit kontrolu.",
 			"scanNow": "VYHLEDAT A OPRAVIT",
+			"backToHome": "Zpět domů",
 			"returnto": "NÁVRAT NA OVLÁDACÍ PANEL",
 			"mostRecent": "NEDÁVNÁ KONTROLA:",
 			"nextScheduled": "DALŠÍ PLÁNOVANÁ KONTROLA:",
+			"successTitle": "Váš počítač je vyladěn!",
+			"successDescription": "Nástroj Smart Performance zajistil plynulejší používání vašeho počítače odstraněním následujícího počtu chyb: <b>{{issueCount}}</b>. V následující části najdete souhrn kontroly a odpovídající zprávu.",
 			"scanSummary": {
 				"title": "Souhrn kontroly:",
 				"description": "Neustále ladíme váš počítač",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Datum kontroly",
 				"results": "Výsledky",
 				"status": "Stav"
-			},
-			"backToHome": "Zpět domů",
-			"successTitle": "Váš počítač je vyladěn!",
-			"successDescription": "Nástroj Smart Performance zajistil plynulejší používání vašeho počítače odstraněním následujícího počtu chyb: <b>{{issueCount}}</b>. V následující části najdete souhrn kontroly a odpovídající zprávu."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Dejte nám vědět, co si myslíte",

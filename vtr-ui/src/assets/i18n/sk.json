@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Teraz sa zisťujú sa informácie o systéme...",
 				"goodCondition": "Vaše zariadenie je v dobrom stave",
-				"maintenanceNeeded": "Vaše zariadenie vyžaduje určitú údržbu"
+				"maintenanceNeeded": "Vaše zariadenie vyžaduje určitú údržbu",
+				"needSUScan": "Kliknutím aktualizujete ovládač zariadenia",
+				"needSPScan": "Kliknutím optimalizujete výkon počítača",
+				"needHWScan": "Kliknutím skontrolujete hardvér počítača"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Ďalšia plánovaná aktualizácia: ",
 			"checkButton": "VYHĽADAŤ AKTUALIZÁCIE",
 			"checkAgain": "Skontrolovať znova",
-			"updateNow": "Aktualizovať",
+			"updateNow": "Inštalovať",
+			"selectAll": "Vybrať všetko",
 			"checking": "Vyhľadávajú sa aktualizácie",
 			"downloading": "Aktualizácie boli prevzaté",
 			"installing": "Inštalujú sa aktualizácie",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Zaregistrovať sa a opraviť",
 		"cancel": "Zrušiť",
 		"scanning": "Kontrola",
-		"fixIt": "Opraviť",
+		"fixIt": "Opraviť teraz",
 		"optimizeIt": "Optimalizovať",
-		"maintainIt": "Udržiavať",
+		"maintainIt": "Údržba",
+		"noteFindings": "K zisteniam sme dospeli na základe podrobnej analýzy vášho počítača.",
+		"noteNavigateTab": "Prejdite karty a dozviete sa viac:",
+		"scannedAreas": "Kontrolované oblasti",
 		"lastFix": "Posledná oprava",
 		"fixResult": "Výsledok opravy",
 		"checkPreviousResults": "Zobraziť predchádzajúce výsledky",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Všetko je v poriadku v zariadení ",
+			"titleScanCanceled": "Hodnotenie bolo 0, pretože posledná kontrola bola zrušená. Kliknite na \"SPÄŤ NA ÚVOD\" a skontrolujte znova.",
 			"serialNumber": "Sériové číslo: ",
 			"subTitle": "Ste prihlásení na odber služby Lenovo Smart Performance Service",
 			"description": "Často a aktívne kontrolujeme a opravujeme počítač, jeho výkon, optimalizujeme internet a hľadáme malvér. Ste primerane chránení. Kontrolu výkonu môžete spustiť aj na vyžiadanie kliknutím na tlačidlo Spustiť kontrolu.",
 			"scanNow": "VYHĽADAŤ A OPRAVIŤ",
+			"backToHome": "Späť domov",
 			"returnto": "NÁVRAT NA INFORMAČNÚ TABUĽU",
 			"mostRecent": "NAJNOVŠIA KONTROLA:",
 			"nextScheduled": "ĎALŠIA PLÁNOVANÁ KONTROLA:",
+			"successTitle": "Váš počítač je vyladený!",
+			"successDescription": "Nástroj Smart Performance zaistil plynulejšie používanie počítača odstránením <b>{{issueCount}}chyby/chýb</b>. V nasledujúcej časti nájdete zhrnutie výsledkov kontroly a príslušnú správu.",
 			"scanSummary": {
 				"title": "Zhrnutie kontroly:",
 				"description": "Neustále ladíme váš počítač",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Dátum kontroly",
 				"results": "Výsledky",
 				"status": "Stav"
-			},
-			"backToHome": "Späť domov",
-			"successTitle": "Váš počítač je vyladený!",
-			"successDescription": "Nástroj Smart Performance zaistil plynulejšie používanie počítača odstránením <b>{{issueCount}}chyby/chýb</b>. V nasledujúcej časti nájdete zhrnutie výsledkov kontroly a príslušnú správu."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Nechajte nám spätnú väzbu",

@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "A detetar as informações do sistema...",
 				"goodCondition": "O seu dispositivo está em boas condições",
-				"maintenanceNeeded": "O seu dispositivo precisa de manutenção"
+				"maintenanceNeeded": "O seu dispositivo precisa de manutenção",
+				"needSUScan": "Clique para atualizar o controlador de dispositivo",
+				"needSPScan": "Clique para otimizar o desempenho do computador",
+				"needHWScan": "Clique para analisar o hardware do computador"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Próxima atualização agendada: ",
 			"checkButton": "VERIFICAR A EXISTÊNCIA DE ATUALIZAÇÕES",
 			"checkAgain": "Verificar Novamente",
-			"updateNow": "Atualizar Agora",
+			"updateNow": "Instalar agora",
+			"selectAll": "Selecionar tudo",
 			"checking": "A verificar a existência de atualizações",
 			"downloading": "Transferência de atualizações concluída",
 			"installing": "A instalar atualizações",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Registar e corrigir",
 		"cancel": "Cancelar",
 		"scanning": "A examinar",
-		"fixIt": "Corrija",
-		"optimizeIt": "Otimize",
-		"maintainIt": "Faça a manutenção",
+		"fixIt": "Reparar agora",
+		"optimizeIt": "Otimizar",
+		"maintainIt": "Manutenção",
+		"noteFindings": "Chegámos às nossas conclusões com base na análise detalhada do seu computador.",
+		"noteNavigateTab": "Navegue pelos separadores para saber mais:",
+		"scannedAreas": "Áreas analisadas",
 		"lastFix": "Última correção",
 		"fixResult": "Resultados da correção",
 		"checkPreviousResults": "Confirmar resultados anteriores",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Está tudo a funcionar corretamente com o seu ",
+			"titleScanCanceled": "A classificação foi 0 porque a última análise foi cancelada. Por favor clique em \"VOLTAR À PÁGINA INICIAL\" e volte a analisar.",
 			"serialNumber": "Número de série: ",
 			"subTitle": "Está subscrito no Lenovo Smart Performance Service",
 			"description": "Analisamos e corrigimos frequentemente de forma proativa os problemas de desempenho do PC, desempenho da Internet performance e malware. Possui uma cobertura adequada. Também pode iniciar a verificação do desempenho a pedido ao clicar no botão Analisar agora.",
 			"scanNow": "ANALISAR E CORRIGIR",
+			"backToHome": "Voltar ao início",
 			"returnto": "VOLTAR AO DASHBOARD",
 			"mostRecent": "ANÁLISE MAIS RECENTE:",
 			"nextScheduled": "ANÁLISE AGENDADA SEGUINTE:",
+			"successTitle": "O seu PC está otimizado!",
+			"successDescription": "O Smart Performance resolveu <b>{{issueCount}} problema(s)</b> para manter o seu PC a funcionar sem problemas, poderá encontrar o resumo da análise e o relatório abaixo.",
 			"scanSummary": {
 				"title": "Resumo da análise:",
 				"description": "Estamos constantemente a otimizar o seu computador",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Data da análise",
 				"results": "Resultados",
 				"status": "Estado"
-			},
-			"backToHome": "Voltar ao início",
-			"successTitle": "O seu PC está otimizado!",
-			"successDescription": "O Smart Performance resolveu <b>{{issueCount}} problema(s)</b> para manter o seu PC a funcionar sem problemas, poderá encontrar o resumo da análise e o relatório abaixo."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Partilhe os seus comentários",

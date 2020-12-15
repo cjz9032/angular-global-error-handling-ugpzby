@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Systeemgegevens worden gedetecteerd...",
 				"goodCondition": "De conditie van het apparaat is goed",
-				"maintenanceNeeded": "Uw apparaat heeft enig onderhoud nodig"
+				"maintenanceNeeded": "Uw apparaat heeft enig onderhoud nodig",
+				"needSUScan": "Klik om het stuurprogramma bij te werken",
+				"needSPScan": "Klik om de computerprestaties te optimaliseren",
+				"needHWScan": "Klik om de computerhardware te scannen"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Volgende geplande update: ",
 			"checkButton": "CONTROLEREN OP UPDATES",
 			"checkAgain": "Opn. controleren",
-			"updateNow": "Nu bijwerken",
+			"updateNow": "Nu installeren",
+			"selectAll": "Alles selecteren",
 			"checking": "Zoeken naar updates",
 			"downloading": "Updates downloaden voltooid",
 			"installing": "Updates installeren",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Aanmelden en oplossen",
 		"cancel": "Annuleren",
 		"scanning": "Bezig met scannen...",
-		"fixIt": "Oplossen",
+		"fixIt": "Nu oplossen",
 		"optimizeIt": "Optimaliseren",
 		"maintainIt": "Onderhouden",
+		"noteFindings": "We zijn tot deze resultaten gekomen op basis van een gedetailleerde analyse van uw computer.",
+		"noteNavigateTab": "Ga naar de tabbladen voor meer informatie:",
+		"scannedAreas": "Gescande gebieden",
 		"lastFix": "Laatste oplossing",
 		"fixResult": "Oplossingsresultaat",
 		"checkPreviousResults": "Controleer voorgaande resultaten",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Alles werkt goed met uw ",
+			"titleScanCanceled": "De score is 0 omdat de laatste scan is geannuleerd. Klik op 'TERUG NAAR STARTPAGINA' scan opnieuw.",
 			"serialNumber": "Serienummer: ",
 			"subTitle": "U bent geabonneerd op Lenovo Smart Performance Service",
 			"description": "We scannen en herstellen uw computer regelmatig en proactief voor pc-prestaties, internetprestaties en malwareproblemen. U bent adequaat gedekt. U kunt de prestatiecontrole ook op aanvraag starten door op de knop Nu scannen te klikken.",
 			"scanNow": "SCANNEN EN HERSTELLEN",
+			"backToHome": "Terug naar startpagina",
 			"returnto": "TERUG NAAR DASHBOARD",
 			"mostRecent": "MEEST RECENTE SCAN:",
 			"nextScheduled": "VOLGENDE GEPLANDE SCAN:",
+			"successTitle": "Uw pc is geoptimaliseerd!",
+			"successDescription": "Smart Performance heeft <b>{{issueCount}} problemen</b> opgelost om uw pc goed te laten werken. Hieronder vindt u een scanoverzicht en een rapport.",
 			"scanSummary": {
 				"title": "Scanoverzicht:",
 				"description": "We zijn uw computer voortdurend aan het optimaliseren",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Scandatum",
 				"results": "Resultaten",
 				"status": "Status"
-			},
-			"backToHome": "Terug naar startpagina",
-			"successTitle": "Uw pc is geoptimaliseerd!",
-			"successDescription": "Smart Performance heeft <b>{{issueCount}} problemen</b> opgelost om uw pc goed te laten werken. Hieronder vindt u een scanoverzicht en een rapport."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Geef ons uw feedback",

@@ -933,10 +933,7 @@
 					"summary": "Überlegen Sie, welche Attribute Ihnen bei der Auswahl eines Laptop/Notebook-Computers für die private Nutzung besonders wichtig sind.",
 					"question": "Bitte wählen Sie das wichtigere Attribut aus.",
 					"question1": {
-						"options": [
-							"Preis",
-							"Hersteller/Markenname"
-						]
+						"options": ["Preis", "Hersteller/Markenname"]
 					},
 					"question2": {
 						"options": [
@@ -945,16 +942,10 @@
 						]
 					},
 					"question3": {
-						"options": [
-							"Grafikeigenschaften",
-							"Bildschirmgröße"
-						]
+						"options": ["Grafikeigenschaften", "Bildschirmgröße"]
 					},
 					"question4": {
-						"options": [
-							"Bildschirmgröße",
-							"Gewicht"
-						]
+						"options": ["Bildschirmgröße", "Gewicht"]
 					}
 				},
 				"page2": {
@@ -1101,7 +1092,10 @@
 			"cardSummary": {
 				"detecting": "Systeminformationen werden ermittelt …",
 				"goodCondition": "Ihre Einheit befindet sich in einem guten Zustand",
-				"maintenanceNeeded": "Ihre Einheit muss gewartet werden"
+				"maintenanceNeeded": "Ihre Einheit muss gewartet werden",
+				"needSUScan": "Klicken, um den Einheitentreiber zu aktualisieren",
+				"needSPScan": "Klicken, um die Computerleistung zu optimieren",
+				"needHWScan": "Klicken, um die Computerhardware zu scannen"
 			}
 		}
 	},
@@ -2476,7 +2470,8 @@
 			"next": "Nächste geplante Aktualisierung: ",
 			"checkButton": "AUF UPDATES PRÜFEN",
 			"checkAgain": "Erneut prüfen",
-			"updateNow": "Jetzt aktualisieren",
+			"updateNow": "Jetzt installieren",
+			"selectAll": "Alle auswählen",
 			"checking": "Es wird nach Aktualisierungen gesucht",
 			"downloading": "Herunterladen von Updates abgeschlossen",
 			"installing": "Updates werden installiert",
@@ -4614,9 +4609,12 @@
 		"signUpAndFix": "Registrieren & reparieren",
 		"cancel": "Abbrechen",
 		"scanning": "Scanvorgang wird durchgeführt",
-		"fixIt": "Reparieren",
+		"fixIt": "Jetzt reparieren",
 		"optimizeIt": "Optimieren",
 		"maintainIt": "Warten",
+		"noteFindings": "Wir sind durch eine detaillierte Analyse Ihres Computers zu diesem Ergebnis gekommen.",
+		"noteNavigateTab": "Öffnen Sie die Registerkarten, um mehr zu erfahren:",
+		"scannedAreas": "Gescannte Bereiche",
 		"lastFix": "Letzte Korrektur",
 		"fixResult": "Korrekturergebnis",
 		"checkPreviousResults": "Vorherige Ergebnisse prüfen",
@@ -5207,13 +5205,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Ordnungsgemäße Funktion sichergestellt für Ihr ",
+			"titleScanCanceled": "Die Bewertung war 0, da der letzte Scan abgebrochen wurde. Klicken Sie auf \"ZURÜCK ZUR STARTSEITE\" und wiederholen Sie den Scan.",
 			"serialNumber": "Seriennummer: ",
 			"subTitle": "Sie haben Lenovo Smart Performance Service abonniert",
 			"description": "Wir scannen Ihren Computer regelmäßig proaktiv auf PC-Leistung, Internetleistung und Malware-Probleme und beheben gefundene Fehler. Sie sind ausreichend geschützt. Sie können die Leistungsprüfung bei Bedarf auch durch einen Klick auf die Schaltfläche \"Jetzt scannen\" starten.",
 			"scanNow": "SCANNEN UND REPARIEREN",
+			"backToHome": "Zurück zur Startseite",
 			"returnto": "ZURÜCK ZUM DASHBOARD",
 			"mostRecent": "LETZTER SCAN:",
 			"nextScheduled": "NÄCHSTER GEPLANTER SCAN:",
+			"successTitle": "Ihr PC ist optimiert!",
+			"successDescription": "Smart Performance hat <b>{{issueCount}} Problem(e)</b> behoben, damit Ihr PC reibungslos läuft. Eine Zusammenfassung des Scans und Berichte finden Sie unten.",
 			"scanSummary": {
 				"title": "Zusammenfassung des Scans:",
 				"description": "Wir optimieren Ihren Computer fortlaufend",
@@ -5238,10 +5240,7 @@
 				"scanDate": "Scan-Datum",
 				"results": "Ergebnisse",
 				"status": "Status"
-			},
-			"backToHome": "Zurück zur Startseite",
-			"successTitle": "Ihr PC ist optimiert!",
-			"successDescription": "Smart Performance hat <b>{{issueCount}} Problem(e)</b> behoben, damit Ihr PC reibungslos läuft. Eine Zusammenfassung des Scans und Berichte finden Sie unten."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Geben Sie uns Feedback",

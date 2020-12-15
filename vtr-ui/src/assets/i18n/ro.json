@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Se detectează informațiile despre sistem acum...",
 				"goodCondition": "Dispozitivul dvs. este în stare bună",
-				"maintenanceNeeded": "Dispozitivul dvs. necesită întreținere"
+				"maintenanceNeeded": "Dispozitivul dvs. necesită întreținere",
+				"needSUScan": "Faceți clic pentru a actualiza driverul de dispozitiv",
+				"needSPScan": "Faceți clic pentru a optimiza performanța computerului",
+				"needHWScan": "Faceți clic pentru a scana hardware-ul computerului"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Următoarea actualizare programată: ",
 			"checkButton": "CĂUTAȚI ACTUALIZĂRI",
 			"checkAgain": "Verif. din nou",
-			"updateNow": "Act. imediată",
+			"updateNow": "Instalare imediată",
+			"selectAll": "Selectare totală",
 			"checking": "Se caută actualizări",
 			"downloading": "S-a finalizat descărcarea actualizărilor",
 			"installing": "Se instalează actualizările",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Înregistrare și remediere",
 		"cancel": "Anulare",
 		"scanning": "Se scanează",
-		"fixIt": "Remediați",
-		"optimizeIt": "Optimizați",
-		"maintainIt": "Întrețineți",
+		"fixIt": "Reparați acum",
+		"optimizeIt": "Optimizare",
+		"maintainIt": "Întreținere",
+		"noteFindings": "Am ajuns la concluziile noastre în baza analizei detaliate a computerului dvs.",
+		"noteNavigateTab": "Navigați în file pentru a afla mai multe:",
+		"scannedAreas": "Zone scanate",
 		"lastFix": "Ultima remediere",
 		"fixResult": "Rezultatul remedierii",
 		"checkPreviousResults": "Verificați rezultatele anterioare",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Totul funcționează corect privind ",
+			"titleScanCanceled": "Evaluarea a fost 0, deoarece ultima scanare a fost anulată. Faceți clic pe „ÎNAPOI LA PAGINA DE PORNIRE” și scanați din nou.",
 			"serialNumber": "Număr de serie: ",
 			"subTitle": "Sunteți abonat la serviciul Lenovo Smart Performance",
 			"description": "Scanăm și remediem frecvent computerul dumneavoastră pentru a oferi performanță PC-ului, performanță pe internet și pentru a gestiona în mod proactiv problemele privind malware-urile. Sunteți asigurat în mod corespunzător. De asemenea, puteți efectua la cerere verificări ale performanțelor, făcând clic pe butonul de scanare imediată.",
 			"scanNow": "SCANARE ȘI REMEDIERE",
+			"backToHome": "Înapoi la pagina de pornire",
 			"returnto": "REVENIRE LA TABLOUL DE BORD",
 			"mostRecent": "CEA MAI RECENTĂ SCANARE:",
 			"nextScheduled": "URMĂTOARE SCANARE PROGRAMATĂ:",
+			"successTitle": "PC-ul dumneavoastră este reglat!",
+			"successDescription": "Smart Performance a rezolvat <b>{{issueCount}} probleme</b>, pentru ca PC-ul dumneavoastră să funcționeze fără probleme. Mai jos, puteți găsi rezumatul și raportul scanării.",
 			"scanSummary": {
 				"title": "Rezumatul scanării:",
 				"description": "Vă reglăm în permanență computerul",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Data scanării",
 				"results": "Rezultate",
 				"status": "Stare"
-			},
-			"backToHome": "Înapoi la pagina de pornire",
-			"successTitle": "PC-ul dumneavoastră este reglat!",
-			"successDescription": "Smart Performance a rezolvat <b>{{issueCount}} probleme</b>, pentru ca PC-ul dumneavoastră să funcționeze fără probleme. Mai jos, puteți găsi rezumatul și raportul scanării."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Oferiți-ne feedback",

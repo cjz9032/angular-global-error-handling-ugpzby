@@ -933,10 +933,7 @@
 					"summary": "请思考在选择个人使用的笔记本电脑时您最看重的属性。",
 					"question": "请选择较为重要的属性。",
 					"question1": {
-						"options": [
-							"价格",
-							"制造商/品牌名称"
-						]
+						"options": ["价格", "制造商/品牌名称"]
 					},
 					"question2": {
 						"options": [
@@ -945,30 +942,17 @@
 						]
 					},
 					"question3": {
-						"options": [
-							"显卡功能",
-							"屏幕尺寸"
-						]
+						"options": ["显卡功能", "屏幕尺寸"]
 					},
 					"question4": {
-						"options": [
-							"屏幕尺寸",
-							"粗细"
-						]
+						"options": ["屏幕尺寸", "粗细"]
 					}
 				},
 				"page2": {
 					"summary": "在考虑笔记本电脑时，以下各项显示屏特性的重要性如何？",
 					"question1": "HDR/高动态范围（高清晰度/分辨率）",
 					"question2": "触摸屏",
-					"options": [
-						"1 - 完全不重要",
-						"2",
-						"3",
-						"4",
-						"5 - 非常重要",
-						"6 - 不熟悉此选项"
-					]
+					"options": ["1 - 完全不重要", "2", "3", "4", "5 - 非常重要", "6 - 不熟悉此选项"]
 				},
 				"page3": {
 					"summary": "您对以下关于笔记本电脑描述的同意程度如何？",
@@ -1099,7 +1083,10 @@
 			"cardSummary": {
 				"detecting": "正在检测系统信息...",
 				"goodCondition": "您的设备状况良好",
-				"maintenanceNeeded": "您的设备需要维护"
+				"maintenanceNeeded": "您的设备需要维护",
+				"needSUScan": "单击以更新设备驱动程序",
+				"needSPScan": "单击以优化计算机性能",
+				"needHWScan": "单击以扫描计算机硬件"
 			}
 		}
 	},
@@ -2474,7 +2461,8 @@
 			"next": "下次计划更新时间：",
 			"checkButton": "检查更新",
 			"checkAgain": "再次检查",
-			"updateNow": "立即更新",
+			"updateNow": "立即安装",
+			"selectAll": "全选",
 			"checking": "正在检查更新",
 			"downloading": "正在下载更新",
 			"installing": "正在安装更新",
@@ -4612,9 +4600,12 @@
 		"signUpAndFix": "注册并解决",
 		"cancel": "取消",
 		"scanning": "正在扫描",
-		"fixIt": "解决",
+		"fixIt": "立即修复",
 		"optimizeIt": "优化",
 		"maintainIt": "维护",
+		"noteFindings": "根据对您计算机的详细分析，我们得到了这些发现。",
+		"noteNavigateTab": "浏览选项卡以了解更多信息：",
+		"scannedAreas": "已扫描区域",
 		"lastFix": "上一次修复",
 		"fixResult": "修复结果",
 		"checkPreviousResults": "查看以前的结果",
@@ -5205,13 +5196,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "一切正常",
+			"titleScanCanceled": "评分为 0，因为上一次扫描被取消了。请单击“返回首页”，然后再次扫描。",
 			"serialNumber": "序列号：",
 			"subTitle": "您已订阅 Lenovo Smart Performance Service",
 			"description": "我们经常主动扫描并修复您的电脑的性能、互联网性能和恶意软件问题。您将获得充分的保障。您也可以单击立即扫描按钮按需启动性能检查。",
 			"scanNow": "扫描并修复",
+			"backToHome": "返回主屏幕",
 			"returnto": "返回仪表板",
 			"mostRecent": "最近扫描：",
 			"nextScheduled": "计划的下次扫描：",
+			"successTitle": "您的电脑已优化完毕！",
+			"successDescription": "Smart Performance 解决了 <b>{{issueCount}} 个问题</b>来让您的电脑顺利运行，您可以在下面找到扫描摘要和报告。",
 			"scanSummary": {
 				"title": "扫描摘要：",
 				"description": "我们将持续不断地优化您的计算机",
@@ -5236,10 +5231,7 @@
 				"scanDate": "扫描日期",
 				"results": "结果",
 				"status": "状态"
-			},
-			"backToHome": "返回主屏幕",
-			"successTitle": "您的电脑已优化完毕！",
-			"successDescription": "Smart Performance 解决了 <b>{{issueCount}} 个问题</b>来让您的电脑顺利运行，您可以在下面找到扫描摘要和报告。"
+			}
 		},
 		"feedbackContainer": {
 			"title": "为我们提供一些反馈",
