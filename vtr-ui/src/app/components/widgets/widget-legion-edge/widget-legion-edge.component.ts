@@ -484,11 +484,11 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 						EventTypes.gamingQuickSettingsAutoCloseStatusChangedEvent,
 						this.autoCloseEvent
 					);
-					this.legionEdgeInit();
 					// Version 3.5 OCRealStatusChangeEvent in thermak mode 3.0
 					if (this.gamingCapabilities.thermalModeVersion === 4) {
 						this.unRegisterOCRealStatusChangeEvent();
 					}
+					this.legionEdgeInit();
 				}
 			});
 	}
