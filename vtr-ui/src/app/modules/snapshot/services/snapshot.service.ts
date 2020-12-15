@@ -122,7 +122,7 @@ export class SnapshotService {
 	private prepareUpdateBaselinePayload(data: Array<string>): SnapshotInfo {
 		const snapshotInfo: SnapshotInfo = {};
 
-		data.map((componentName) => {
+		data.forEach((componentName) => {
 			snapshotInfo[componentName] = this.pvtSnapshotInfo[componentName].info;
 		});
 
