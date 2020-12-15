@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.30](https://bitbucket.tc.lenovo.com///compare/v1.9.29...v1.9.30) (2020-12-15)
+
+
+### Features
+
+* **menu:** update menu style ([e9a9be9](https://bitbucket.tc.lenovo.com///commit/e9a9be932da945e5bb3e7130b1387bb87090271d))
+* **ModernPreload:** Hide version and size when redemption url available ([0660dd1](https://bitbucket.tc.lenovo.com///commit/0660dd125810007478e77e31797158c398267e8a))
+
 ### [1.9.29](https://bitbucket.tc.lenovo.com///compare/v1.9.28...v1.9.29) (2020-12-14)
 
 
