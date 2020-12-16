@@ -8,10 +8,10 @@ export class SearchEngineWraper {
 		this.searchEngineImpl  = new Fuse(context, {
   			threshold: 0.4,
 			keys: [
-			  {
-				name: 'featureName',
-				weight: 1
-			  },
+			//   {
+			// 	name: 'featureName',
+			// 	weight: 1
+			//   },
 			  {
 				name: 'highRelevantKeywords',
 				weight: 1
