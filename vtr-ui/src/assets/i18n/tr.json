@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Şimdi sistem bilgileri algılanıyor...",
 				"goodCondition": "Cihazınız iyi durumda",
-				"maintenanceNeeded": "Cihazınızın biraz bakıma ihtiyacı var"
+				"maintenanceNeeded": "Cihazınızın biraz bakıma ihtiyacı var",
+				"needSUScan": "Cihaz sürücüsünü güncellemek için tıklatın",
+				"needSPScan": "Bilgisayar performansını iyileştirmek için tıklatın",
+				"needHWScan": "Bilgisayar donanımını taramak için tıklatın"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Sonraki zamanlanmış güncelleme: ",
 			"checkButton": "GÜNCELLEMELERİ DENETLE",
 			"checkAgain": "Tekrar Kontrol Et",
-			"updateNow": "Şimdi Güncelle",
+			"updateNow": "Şimdi Kur",
+			"selectAll": "Tümünü seç",
 			"checking": "Güncellemeler denetleniyor",
 			"downloading": "Güncellemelerin indirilmesi tamamlandı",
 			"installing": "Güncellemeler yükleniyor",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Kaydol ve düzelt",
 		"cancel": "İptal",
 		"scanning": "Taranıyor",
-		"fixIt": "Düzeltin",
-		"optimizeIt": "İyileştirin",
-		"maintainIt": "Bakımını yapın",
+		"fixIt": "Şimdi düzelt",
+		"optimizeIt": "İyileştir",
+		"maintainIt": "Bakımını yap",
+		"noteFindings": "Bilgisayarınızın ayrıntılı analizine dayalı olarak bulgularımıza ulaştık.",
+		"noteNavigateTab": "Daha fazla bilgi edinmek için sekmelerde gezinin:",
+		"scannedAreas": "Taranan alanlar",
 		"lastFix": "Son düzeltme",
 		"fixResult": "Düzeltme sonucu",
 		"checkPreviousResults": "Önceki sonuçları denetle",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Her şey yolunda: ",
+			"titleScanCanceled": "Son tarama iptal edildiği için değerlendirme 0 oldu. Lütfen \"ANA SAYFAYA DÖN\" öğesini tıklatıp yeniden tarayın.",
 			"serialNumber": "Seri numarası: ",
 			"subTitle": "Lenovo Smart Performance Hizmetine abonesiniz",
 			"description": "Bilgisayarınızı sık sık bilgisayar performansı, internet performansı ve kötü amaçlı yazılım sorunları için proaktif olarak tarayıp sorunları düzeltiriz. Yeterince koruma altındasınız. Şimdi tara düğmesine tıklayarak istek üzerine performans kontrolü de başlatabilirsiniz.",
 			"scanNow": "TARA VE DÜZELT",
+			"backToHome": "Ana Sayfaya Dön",
 			"returnto": "PANOYA GERİ DÖN",
 			"mostRecent": "EN SON TARAMA:",
 			"nextScheduled": "SONRAKİ PLANLANMIŞ TARAMA:",
+			"successTitle": "Bilgisayarınız ayarlandı!",
+			"successDescription": "Smart Performance, bilgisayarınızın sorunsuz çalışması için <b>{{issueCount}} sorun</b> çözdü. Tarama özetine ve raporuna aşağıdan ulaşabilirsiniz.",
 			"scanSummary": {
 				"title": "Tarama özeti:",
 				"description": "Bilgisayarınızı sürekli olarak ayarlıyoruz",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Tarama tarihi",
 				"results": "Sonuçlar",
 				"status": "Durum"
-			},
-			"backToHome": "Ana Sayfaya Dön",
-			"successTitle": "Bilgisayarınız ayarlandı!",
-			"successDescription": "Smart Performance, bilgisayarınızın sorunsuz çalışması için <b>{{issueCount}} sorun</b> çözdü. Tarama özetine ve raporuna aşağıdan ulaşabilirsiniz."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Bize geri bildirimde bulunun",

@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "正在偵測系統資訊...",
 				"goodCondition": "裝置狀況良好",
-				"maintenanceNeeded": "您的裝置需要維護"
+				"maintenanceNeeded": "您的裝置需要維護",
+				"needSUScan": "按一下以更新裝置驅動程式",
+				"needSPScan": "按一下以最佳化電腦效能",
+				"needHWScan": "按一下以掃描電腦硬體"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "下次的排定更新：",
 			"checkButton": "檢查更新",
 			"checkAgain": "再檢查一次",
-			"updateNow": "立即更新",
+			"updateNow": "立即安裝",
+			"selectAll": "全選",
 			"checking": "檢查更新項目",
 			"downloading": "下載更新完成",
 			"installing": "正在安裝更新",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "註冊及修正",
 		"cancel": "取消",
 		"scanning": "掃描中",
-		"fixIt": "修正",
+		"fixIt": "立即修正",
 		"optimizeIt": "最佳化",
 		"maintainIt": "維護",
+		"noteFindings": "根據對您電腦的詳細分析，我們得到這些發現。",
+		"noteNavigateTab": "導覽不同標籤以進一步了解：",
+		"scannedAreas": "掃描區域",
 		"lastFix": "上次修正",
 		"fixResult": "修正結果",
 		"checkPreviousResults": "檢查先前的結果",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "您的系統一切正常",
+			"titleScanCanceled": "評分為 0，因為上次的掃描取消了。請按一下「返回首頁」，然後再次掃描。",
 			"serialNumber": "序號：",
 			"subTitle": "您已經訂閱 Lenovo Smart Performance 服務",
 			"description": "我們經常主動針對 PC 效能、網際網路效能和惡意軟體等問題，掃描並修正您的電腦。您享有充分的保護。您還可以視需要按一下「立即掃描」按鈕來啟動效能檢查。",
 			"scanNow": "掃描並修正",
+			"backToHome": "返回首頁",
 			"returnto": "返回儀表板",
 			"mostRecent": "最近的掃描：",
 			"nextScheduled": "下一個排程掃描：",
+			"successTitle": "您的電腦效能已調升！",
+			"successDescription": "Smart Performance 已解決 <b>{{issueCount}} 個問題，</b>以保持電腦順暢執行，您可在下方找到掃描摘要和報告。",
 			"scanSummary": {
 				"title": "掃描摘要：",
 				"description": "我們一直不斷調校您的電腦",
@@ -5126,10 +5137,7 @@
 				"scanDate": "掃描日期",
 				"results": "結果",
 				"status": "狀態"
-			},
-			"backToHome": "返回首頁",
-			"successTitle": "您的電腦效能已調升！",
-			"successDescription": "Smart Performance 已解決 <b>{{issueCount}} 個問題，</b>以保持電腦順暢執行，您可在下方找到掃描摘要和報告。"
+			}
 		},
 		"feedbackContainer": {
 			"title": "給我們一些意見回饋",

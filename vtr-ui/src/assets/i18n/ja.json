@@ -933,10 +933,7 @@
 					"summary": "個人的な用途でラップトップ / ノートブックを選択するときに、あなたにとって最も重要な要素について教えてください。",
 					"question": "より重要な要素を選択してください。",
 					"question1": {
-						"options": [
-							"価格",
-							"製造元 / ブランドの名称"
-						]
+						"options": ["価格", "製造元 / ブランドの名称"]
 					},
 					"question2": {
 						"options": [
@@ -945,16 +942,10 @@
 						]
 					},
 					"question3": {
-						"options": [
-							"グラフィック機能",
-							"画面サイズ"
-						]
+						"options": ["グラフィック機能", "画面サイズ"]
 					},
 					"question4": {
-						"options": [
-							"画面サイズ",
-							"線の太さ"
-						]
+						"options": ["画面サイズ", "線の太さ"]
 					}
 				},
 				"page2": {
@@ -1100,7 +1091,10 @@
 			"cardSummary": {
 				"detecting": "システム情報を検出しています...",
 				"goodCondition": "デバイスは良好な状態です",
-				"maintenanceNeeded": "デバイスのメンテナンスが必要です"
+				"maintenanceNeeded": "デバイスのメンテナンスが必要です",
+				"needSUScan": "クリックしてデバイス・ドライバーを更新",
+				"needSPScan": "クリックしてコンピューターのパフォーマンスを最適化",
+				"needHWScan": "クリックしてコンピューターのハードウェアをスキャン"
 			}
 		}
 	},
@@ -2475,7 +2469,8 @@
 			"next": "次回の更新スケジュール:",
 			"checkButton": "更新の確認",
 			"checkAgain": "再度確認する",
-			"updateNow": "今すぐ更新",
+			"updateNow": "今すぐインストール",
+			"selectAll": "すべて選択",
 			"checking": "更新を確認しています",
 			"downloading": "更新のダウンロード状況",
 			"installing": "更新をインストールしています",
@@ -4613,9 +4608,12 @@
 		"signUpAndFix": "登録と修正",
 		"cancel": "キャンセル",
 		"scanning": "スキャン中です",
-		"fixIt": "修正する",
-		"optimizeIt": "最適化する",
-		"maintainIt": "保守する",
+		"fixIt": "今すぐ修正",
+		"optimizeIt": "最適化",
+		"maintainIt": "維持",
+		"noteFindings": "お使いのコンピューターを詳細に分析した結果をご報告いたします。",
+		"noteNavigateTab": "詳しい内容については、それぞれのタブをご覧ください。",
+		"scannedAreas": "スキャン対象領域",
 		"lastFix": "直近の修正",
 		"fixResult": "修正結果",
 		"checkPreviousResults": "前の結果を確認",
@@ -5206,13 +5204,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "問題なし",
+			"titleScanCanceled": "最後のスキャンがキャンセルされたため、評価は 0 でした。「ホームに戻る」をクリックして、もう一度スキャンしてください。",
 			"serialNumber": "シリアル番号:",
 			"subTitle": "Lenovo Smart Performance Service に登録されています",
 			"description": "頻繁にお使いのコンピューターの PC パフォーマンス、インターネット・パフォーマンス、マルウェアの問題をスキャンして積極的に修正しています。十分にカバーされています。「今すぐスキャン」ボタンをクリックして、オンデマンドでパフォーマンス・チェックを開始することもできます。",
 			"scanNow": "スキャンして修正",
+			"backToHome": "ホームに戻る",
 			"returnto": "ダッシュボードに戻る",
 			"mostRecent": "最近のスキャン:",
 			"nextScheduled": "次回のスケジュール済みスキャン:",
+			"successTitle": "PC がチューンアップされました!",
+			"successDescription": "PC の円滑な稼働を維持するために、Smart Performance で <b>{{issueCount}} 件の問題</b>を解決しました。スキャンの概要とレポートは以下で確認できます。",
 			"scanSummary": {
 				"title": "スキャンの概要:",
 				"description": "常にコンピューターを調整しています",
@@ -5237,10 +5239,7 @@
 				"scanDate": "スキャン日",
 				"results": "結果",
 				"status": "ステータス"
-			},
-			"backToHome": "ホームに戻る",
-			"successTitle": "PC がチューンアップされました!",
-			"successDescription": "PC の円滑な稼働を維持するために、Smart Performance で <b>{{issueCount}} 件の問題</b>を解決しました。スキャンの概要とレポートは以下で確認できます。"
+			}
 		},
 		"feedbackContainer": {
 			"title": "フィードバックをお寄せください",

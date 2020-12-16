@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Oppdager systeminformasjon nå …",
 				"goodCondition": "Enheten er i god stand",
-				"maintenanceNeeded": "Enheten trenger noe vedlikehold"
+				"maintenanceNeeded": "Enheten trenger noe vedlikehold",
+				"needSUScan": "Klikk for å oppdatere enhetsdriveren",
+				"needSPScan": "Klikk for å optimalisere datamaskinytelsen",
+				"needHWScan": "Klikk for å skanne datamaskinens maskinvare"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Neste planlagte oppdatering: ",
 			"checkButton": "SE ETTER OPPDATERINGER",
 			"checkAgain": "Kontroller på nytt",
-			"updateNow": "Oppdater nå",
+			"updateNow": "Installer nå",
+			"selectAll": "Velg alle",
 			"checking": "Ser etter oppdateringer",
 			"downloading": "Nedlasting av oppdateringer er ferdig",
 			"installing": "Installerer oppdateringer",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Registrer deg og reparer",
 		"cancel": "Avbryt",
 		"scanning": "Søker",
-		"fixIt": "Reparer",
+		"fixIt": "Fiks nå",
 		"optimizeIt": "Optimaliser",
 		"maintainIt": "Vedlikehold",
+		"noteFindings": "Funnene våre er basert på detaljert analyse av datamaskinen din.",
+		"noteNavigateTab": "Naviger på fanene for å finne ut mer:",
+		"scannedAreas": "Skannede områder",
 		"lastFix": "Siste reparasjon",
 		"fixResult": "Reparasjonsresultat",
 		"checkPreviousResults": "Sjekk tidligere resultater",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Alt er bra med ",
+			"titleScanCanceled": "Rangeringen var 0 fordi den siste skanningen ble avbrutt. Klikk på \"GÅ TIL HJEM\", og skann igjen.",
 			"serialNumber": "Serienummer: ",
 			"subTitle": "Du abonnerer på Lenovo Smart Performance Service",
 			"description": "Vi skanner regelmessig etter og reparerer datamaskinen for PC-ytelse, Internettytelse og problemer med skadevare på en proaktiv måte. Du er godt dekket. Du kan også starte ytelseskontroll ved å klikke på skann nå-knappen.",
 			"scanNow": "SKANN OG REPARER",
+			"backToHome": "Tilbake til hjem",
 			"returnto": "RETURNER TIL DASHBORD",
 			"mostRecent": "NYLIGSTE SKANNING:",
 			"nextScheduled": "NESTE PLANLAGTE SKANNING:",
+			"successTitle": "PC-en din er justert !",
+			"successDescription": "Smart Performance har løst <b>{{issueCount}}problem(er)</b> for å holde PC-en din i gang, du finner sammendrag og rapport nedenfor.",
 			"scanSummary": {
 				"title": "Skannesammendrag:",
 				"description": "Vi justerer datamaskinen din kontinuerlig",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Skannedato",
 				"results": "Resultater",
 				"status": "Status"
-			},
-			"backToHome": "Tilbake til hjem",
-			"successTitle": "PC-en din er justert !",
-			"successDescription": "Smart Performance har løst <b>{{issueCount}}problem(er)</b> for å holde PC-en din i gang, du finner sammendrag og rapport nedenfor."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Gi oss tilbakemeldinger",

@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Identifierar systeminformation nu …",
 				"goodCondition": "Enheten är i gott skick",
-				"maintenanceNeeded": "Enheten behöver visst underhåll"
+				"maintenanceNeeded": "Enheten behöver visst underhåll",
+				"needSUScan": "Klicka för att uppdatera drivrutinen",
+				"needSPScan": "Klicka för att optimera datorns prestanda",
+				"needHWScan": "Klicka för att genomsöka datorns maskinvara"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Nästa schemalagda uppdatering: ",
 			"checkButton": "SÖK EFTER UPPDATERINGAR",
 			"checkAgain": "Kontrollera",
-			"updateNow": "Uppdatera",
+			"updateNow": "Installera nu",
+			"selectAll": "Markera alla",
 			"checking": "Söker efter uppdateringar",
 			"downloading": "Uppdateringar har hämtats",
 			"installing": "Installerar uppdateringar",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Registrera dig och korrigera",
 		"cancel": "Avbryt",
 		"scanning": "Genomsöker",
-		"fixIt": "Korrigera",
+		"fixIt": "Åtgärda nu",
 		"optimizeIt": "Optimera",
 		"maintainIt": "Underhåll",
+		"noteFindings": "Resultaten beräknades utifrån en detaljerad analys av din dator.",
+		"noteNavigateTab": "Öppna flikarna för att se mer information:",
+		"scannedAreas": "Genomsökta områden",
 		"lastFix": "Senaste korrigering",
 		"fixResult": "Resultat av korrigering",
 		"checkPreviousResults": "Se tidigare resultat",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Allt fungerar som det ska på din ",
+			"titleScanCanceled": "Klassificeringen är 0 eftersom den senaste genomsökningen avbröts. Klicka på Tillbaka till startsidan och gör en ny genomsökning.",
 			"serialNumber": "Serienummer: ",
 			"subTitle": "Du prenumererar på Lenovo Smart Performance.",
 			"description": "Vi genomsöker och åtgärdar regelbundet din dator för att proaktivt förbättra datorprestanda, Internetprestanda och problem med skadlig kod. Du är tillräckligt skyddad. Du kan också starta prestandakontroller på begäran genom att klicka på Genomsök nu.",
 			"scanNow": "GENOMSÖK OCH ÅTGÄRDA",
+			"backToHome": "Tillbaka till startsidan",
 			"returnto": "TILLBAKA TILL INSTRUMENTPANELEN",
 			"mostRecent": "SENASTE GENOMSÖKNING:",
 			"nextScheduled": "NÄSTA SCHEMALAGDA GENOMSÖKNING:",
+			"successTitle": "Datorn är finjusterad!",
+			"successDescription": "Smart Performance löste <b>{{issueCount}} problem</b> så att din dator fungerar smidigt. Du hittar en översikt och rapport över genomsökningen nedan.",
 			"scanSummary": {
 				"title": "Översikt över genomsökning:",
 				"description": "Vi finjusterar din dator löpande",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Genomsökningsdatum",
 				"results": "Resultat",
 				"status": "Status"
-			},
-			"backToHome": "Tillbaka till startsidan",
-			"successTitle": "Datorn är finjusterad!",
-			"successDescription": "Smart Performance löste <b>{{issueCount}} problem</b> så att din dator fungerar smidigt. Du hittar en översikt och rapport över genomsökningen nedan."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Ge feedback",

@@ -933,10 +933,7 @@
 					"summary": "Pensez aux attributs qui sont les plus importants pour vous lors de la sélection d'un ordinateur portable/notebook pour un usage personnel.",
 					"question": "Sélectionnez l’attribut le plus important.",
 					"question1": {
-						"options": [
-							"Tarif",
-							"Fabricant/nom de marque"
-						]
+						"options": ["Tarif", "Fabricant/nom de marque"]
 					},
 					"question2": {
 						"options": [
@@ -945,16 +942,10 @@
 						]
 					},
 					"question3": {
-						"options": [
-							"Capacités graphiques",
-							"Taille de l’écran"
-						]
+						"options": ["Capacités graphiques", "Taille de l’écran"]
 					},
 					"question4": {
-						"options": [
-							"Taille de l’écran",
-							"Poids"
-						]
+						"options": ["Taille de l’écran", "Poids"]
 					}
 				},
 				"page2": {
@@ -1101,7 +1092,10 @@
 			"cardSummary": {
 				"detecting": "Détection des informations système en cours…",
 				"goodCondition": "Votre périphérique est en bon état",
-				"maintenanceNeeded": "Votre périphérique nécessite une maintenance"
+				"maintenanceNeeded": "Votre périphérique nécessite une maintenance",
+				"needSUScan": "Cliquer pour mettre à jour le pilote de périphérique",
+				"needSPScan": "Cliquer pour optimiser les performances de l'ordinateur",
+				"needHWScan": "Cliquer pour analyser le matériel de l'ordinateur"
 			}
 		}
 	},
@@ -2476,7 +2470,8 @@
 			"next": "Prochaine mise à jour prévue : ",
 			"checkButton": "RECHERCHER DES MISES À JOUR",
 			"checkAgain": "Vérifier encore",
-			"updateNow": "Mettre à jour",
+			"updateNow": "Installer maintenant",
+			"selectAll": "Tout sélectionner",
 			"checking": "Recherche de mises à jour",
 			"downloading": "Téléchargement des mises à jour effectué",
 			"installing": "Installation des mises à jour",
@@ -4614,9 +4609,12 @@
 		"signUpAndFix": "S'inscrire et corriger",
 		"cancel": "Annuler",
 		"scanning": "Balayage",
-		"fixIt": "Corriger",
+		"fixIt": "Corriger maintenant",
 		"optimizeIt": "Optimiser",
 		"maintainIt": "Tenir à jour",
+		"noteFindings": "Nos conclusions sont issues d'une analyse détaillée de votre ordinateur.",
+		"noteNavigateTab": "Naviguez dans les onglets pour en savoir plus :",
+		"scannedAreas": "Zones analysées",
 		"lastFix": "Dernier correctif",
 		"fixResult": "Résultat du correctif",
 		"checkPreviousResults": "Consulter les résultats précédents",
@@ -5207,13 +5205,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Tout va bien concernant votre ",
+			"titleScanCanceled": "La note a été de 0 car la dernière analyse a été annulée. Cliquez sur le bouton \"RETOUR À LA PAGE D'ACCUEIL\" et recommencez l'analyse.",
 			"serialNumber": "Numéro de série : ",
 			"subTitle": "Vous êtes abonné(e) au service Lenovo Smart Performance",
 			"description": "Nous analysons votre PC fréquemment et de manière proactive afin de corriger ses performances, ses performances Internet et tout problème de logiciel malveillant. Votre ordinateur est bien protégé. Vous pouvez également lancer la vérification des performances à la demande en cliquant sur le bouton Analyser maintenant.",
 			"scanNow": "ANALYSE ET CORRECTION",
+			"backToHome": "Retour à l’écran Accueil",
 			"returnto": "RETOUR AU TABLEAU DE BORD",
 			"mostRecent": "ANALYSE LA PLUS RÉCENTE :",
 			"nextScheduled": "PROCHAINE ANALYSE PROGRAMMÉE :",
+			"successTitle": "Votre PC est optimisé !",
+			"successDescription": "Smart Performance a résolu <b>{{issueCount}} problème(s)</b> afin de garantir le bon fonctionnement de votre PC. Le récapitulatif et le rapport de l’analyse se trouvent ci-dessous.",
 			"scanSummary": {
 				"title": "Résumé de l’analyse :",
 				"description": "Nous optimisons constamment votre ordinateur",
@@ -5238,10 +5240,7 @@
 				"scanDate": "Date d’analyse",
 				"results": "Résultats",
 				"status": "Etat"
-			},
-			"backToHome": "Retour à l’écran Accueil",
-			"successTitle": "Votre PC est optimisé !",
-			"successDescription": "Smart Performance a résolu <b>{{issueCount}} problème(s)</b> afin de garantir le bon fonctionnement de votre PC. Le récapitulatif et le rapport de l’analyse se trouvent ci-dessous."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Nous laisser des commentaires",

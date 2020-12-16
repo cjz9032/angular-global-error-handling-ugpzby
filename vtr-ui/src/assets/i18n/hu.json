@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Rendszerinformációk észlelése...",
 				"goodCondition": "Az eszköz jó állapotban van",
-				"maintenanceNeeded": "Az eszköz karbantartást igényel"
+				"maintenanceNeeded": "Az eszköz karbantartást igényel",
+				"needSUScan": "Kattintson az eszköz illesztőprogramának frissítéséhez",
+				"needSPScan": "Kattintson a számítógép teljesítményének optimalizálásához",
+				"needHWScan": "Kattintson a számítógép hardverének ellenőrzéséhez"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Következő ütemezett frissítés: ",
 			"checkButton": "FRISSÍTÉSEK KERESÉSE",
 			"checkAgain": "Ellenőrzés ismét",
-			"updateNow": "Frissítés most",
+			"updateNow": "Telepítés most",
+			"selectAll": "Összes kijelölése",
 			"checking": "Frissítések keresése",
 			"downloading": "A frissítések letöltve",
 			"installing": "Frissítések telepítése",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Regisztráció és javítás",
 		"cancel": "Mégse",
 		"scanning": "Vizsgálat",
-		"fixIt": "Javítás",
+		"fixIt": "Javítás most",
 		"optimizeIt": "Optimalizálás",
 		"maintainIt": "Karbantartás",
+		"noteFindings": "A számítógépe részletes elemzése alapján meghoztuk döntésünket.",
+		"noteNavigateTab": "További tudnivalókért navigáljon a lapok között:",
+		"scannedAreas": "Ellenőrzött területek",
 		"lastFix": "Utolsó javítás",
 		"fixResult": "Javítás eredménye",
 		"checkPreviousResults": "Korábbi eredmények ellenőrzése",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Minden rendben van az Ön ",
+			"titleScanCanceled": "Az értékelés 0, mert az utolsó ellenőrzést törölték. Kattintson a „VISSZA A KEZDŐLAPRA” lehetőségre, és ellenőrizze újra.",
 			"serialNumber": "Gyári szám: ",
 			"subTitle": "Ön előfizetett a Lenovo Smart Performance szolgáltatásra.",
 			"description": "Gyakori proaktív ellenőrzéseket végzünk a számítógépén a megfelelő teljesítmény, internetteljesítmény és a kártevők kiküszöbölése érdekében, illetve szükség esetén orvosoljuk a problémákat. Ön megfelelő védelmet élvez. Az „ellenőrzés most” gombra kattintva igény szerinti teljesítmény-ellenőrzést is végezhet.",
 			"scanNow": "ELLENŐRZÉS ÉS JAVÍTÁS",
+			"backToHome": "Vissza a kezdőlapra",
 			"returnto": "VISSZA AZ IRÁNYÍTÓPULTRA",
 			"mostRecent": "LEGFRISSEBB ELLENŐRZÉS:",
 			"nextScheduled": "KÖVETKEZŐ BEÜTEMEZETT ELLENŐRZÉS:",
+			"successTitle": "Számítógépe fel van frissítve!",
+			"successDescription": "A Smart Performance <b>{{issueCount}} problémát</b> oldott meg számítógépe zökkenőmentes működése érdekében. Az ellenőrzés összefoglalását és az arról készült jelentést lent tekintheti meg.",
 			"scanSummary": {
 				"title": "Ellenőrzés összefoglalása:",
 				"description": "Folyamatosan rendbe tesszük a számítógépet",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Ellenőrzés dátuma",
 				"results": "Eredmények",
 				"status": "Állapot"
-			},
-			"backToHome": "Vissza a kezdőlapra",
-			"successTitle": "Számítógépe fel van frissítve!",
-			"successDescription": "A Smart Performance <b>{{issueCount}} problémát</b> oldott meg számítógépe zökkenőmentes működése érdekében. Az ellenőrzés összefoglalását és az arról készült jelentést lent tekintheti meg."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Adjon visszajelzést",

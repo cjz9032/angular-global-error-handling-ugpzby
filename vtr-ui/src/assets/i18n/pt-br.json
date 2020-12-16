@@ -933,10 +933,7 @@
 					"summary": "Pense nos atributos que são mais importantes para você ao selecionar um laptop/notebook para uso pessoal.",
 					"question": "Selecione o atributo mais importante.",
 					"question1": {
-						"options": [
-							"Preço",
-							"Nome do fabricante/marca"
-						]
+						"options": ["Preço", "Nome do fabricante/marca"]
 					},
 					"question2": {
 						"options": [
@@ -945,16 +942,10 @@
 						]
 					},
 					"question3": {
-						"options": [
-							"Capacidades gráficas",
-							"Tamanho da tela"
-						]
+						"options": ["Capacidades gráficas", "Tamanho da tela"]
 					},
 					"question4": {
-						"options": [
-							"Tamanho da tela",
-							"Peso"
-						]
+						"options": ["Tamanho da tela", "Peso"]
 					}
 				},
 				"page2": {
@@ -1101,7 +1092,10 @@
 			"cardSummary": {
 				"detecting": "Detectando informações do sistema agora...",
 				"goodCondition": "Seu dispositivo está em boas condições",
-				"maintenanceNeeded": "Seu dispositivo precisa de alguma manutenção"
+				"maintenanceNeeded": "Seu dispositivo precisa de alguma manutenção",
+				"needSUScan": "Clique para atualizar o driver de dispositivo",
+				"needSPScan": "Clique para otimizar o desempenho do computador",
+				"needHWScan": "Clique para verificar o hardware do computador"
 			}
 		}
 	},
@@ -2476,7 +2470,8 @@
 			"next": "Próxima atualização agendada: ",
 			"checkButton": "VERIFICAR ATUALIZAÇÕES",
 			"checkAgain": "Verificar novamente",
-			"updateNow": "Atualizar Agora",
+			"updateNow": "Instalar Agora",
+			"selectAll": "Selecionar tudo",
 			"checking": "Verificando atualizações",
 			"downloading": "Download de atualizações concluído",
 			"installing": "Instalando atualizações",
@@ -4614,9 +4609,12 @@
 		"signUpAndFix": "Inscrever-se e corrigir",
 		"cancel": "Cancelar",
 		"scanning": "Procurando",
-		"fixIt": "Corrigir",
+		"fixIt": "Corrigir agora",
 		"optimizeIt": "Otimizar",
 		"maintainIt": "Manter",
+		"noteFindings": "Chegamos às nossas conclusões com base em análises detalhadas do seu computador.",
+		"noteNavigateTab": "Navegue pelas guias para saber mais:",
+		"scannedAreas": "Áreas verificadas",
 		"lastFix": "Última correção",
 		"fixResult": "Corrigir resultado",
 		"checkPreviousResults": "Verificar resultados anteriores",
@@ -5207,13 +5205,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Tudo está bem com seu ",
+			"titleScanCanceled": "A avaliação foi 0 porque a última verificação foi cancelada. Clique em \"VOLTAR PARA A TELA INICIAL\" e verifique novamente.",
 			"serialNumber": "Número de série: ",
 			"subTitle": "Você está inscrito no serviço Lenovo Smart Performance",
 			"description": "Frequentemente, examinamos e corrigimos o seu computador para detectar problemas de desempenho do PC, desempenho da Internet e malware de maneira proativa. Você está coberto adequadamente. Você também pode iniciar a verificação de desempenho sob demanda clicando no botão Verificar agora.",
 			"scanNow": "VERIFICAR E CORRIGIR",
+			"backToHome": "Voltar para a tela inicial",
 			"returnto": "RETORNAR AO PAINEL",
 			"mostRecent": "VERIFICAÇÃO MAIS RECENTE:",
 			"nextScheduled": "PRÓXIMA VERIFICAÇÃO PROGRAMADA:",
+			"successTitle": "Seu PC está ajustado.",
+			"successDescription": "O Smart Performance resolveu <b>{{issueCount}} problemas</b> para manter seu PC funcionando sem problemas. Você pode encontrar o resumo e o relatório da verificação abaixo.",
 			"scanSummary": {
 				"title": "Resumo da verificação:",
 				"description": "Estamos constantemente ajustando seu computador",
@@ -5238,10 +5240,7 @@
 				"scanDate": "Data da verificação",
 				"results": "Resultados",
 				"status": "Status"
-			},
-			"backToHome": "Voltar para a tela inicial",
-			"successTitle": "Seu PC está ajustado.",
-			"successDescription": "O Smart Performance resolveu <b>{{issueCount}} problemas</b> para manter seu PC funcionando sem problemas. Você pode encontrar o resumo e o relatório da verificação abaixo."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Deixe-nos um feedback",

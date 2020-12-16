@@ -989,7 +989,10 @@
 			"cardSummary": {
 				"detecting": "Wykrywanie informacji o systemie operacyjnym...",
 				"goodCondition": "Urządzenie jest w dobrym stanie",
-				"maintenanceNeeded": "Twoje urządzenie wymaga nieco konserwacji"
+				"maintenanceNeeded": "Twoje urządzenie wymaga nieco konserwacji",
+				"needSUScan": "Kliknij, aby zaktualizować sterownik urządzenia",
+				"needSPScan": "Kliknij, aby zoptymalizować wydajność komputera",
+				"needHWScan": "Kliknij, aby przeprowadzić skanowanie sprzętu"
 			}
 		}
 	},
@@ -2364,7 +2367,8 @@
 			"next": "Następna planowana aktualizacja: ",
 			"checkButton": "SPRAWDŹ AKTUALIZACJE",
 			"checkAgain": "Sprawdź teraz",
-			"updateNow": "Aktualizuj",
+			"updateNow": "Zainstaluj teraz",
+			"selectAll": "Wybierz wszystkie",
 			"checking": "Sprawdzanie aktualizacji",
 			"downloading": "Ukończono pobieranie aktualizacji",
 			"installing": "Instalowanie aktualizacji",
@@ -4502,9 +4506,12 @@
 		"signUpAndFix": "Zarejestruj się i rozwiąż problemy",
 		"cancel": "Anuluj",
 		"scanning": "Skanowanie",
-		"fixIt": "Napraw",
+		"fixIt": "Napraw teraz",
 		"optimizeIt": "Zoptymalizuj",
 		"maintainIt": "Przeprowadź konserwację",
+		"noteFindings": "Nasze ustalenia są oparte na szczegółowej analizie Twojego komputera.",
+		"noteNavigateTab": "Zapoznaj się z zawartością poszczególnych kart, aby dowiedzieć się więcej:",
+		"scannedAreas": "Przeskanowane obszary",
 		"lastFix": "Ostatnia poprawka",
 		"fixResult": "Wynik poprawki",
 		"checkPreviousResults": "Sprawdź poprzednie wyniki",
@@ -5095,13 +5102,17 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Wszystko jest w porządku z ",
+			"titleScanCanceled": "Ocena wyniosła 0, ponieważ ostatnie skanowanie zostało anulowane. Kliknij „POWRÓT DO STRONY GŁÓWNEJ” i przeprowadź ponowne skanowanie.",
 			"serialNumber": "Numer seryjny: ",
 			"subTitle": "Masz subskrypcję usługi Lenovo Smart Performance",
 			"description": "Często aktywnie skanujemy komputer w celu zwiększenia wydajności, zapewnienia sprawnego działania Internetu oraz rozwiązania problemów ze złośliwym oprogramowaniem. Możesz na nas liczyć. Możesz także zainicjować proces kontroli wydajności na żądanie, klikając przycisk Skanuj teraz.",
 			"scanNow": "SKANUJ I NAPRAW",
+			"backToHome": "Powrót do strony głównej",
 			"returnto": "POWRÓT DO PULPITU NAWIGACYJNEGO",
 			"mostRecent": "OSTATNIE SKANOWANIE:",
 			"nextScheduled": "NASTĘPNE ZAPLANOWANE SKANOWANIE:",
+			"successTitle": "Komputer został zoptymalizowany!",
+			"successDescription": "Funkcja Smart Performance pozwoliła Ci pozbyć się <b>{{issueCount}} problemów</b>, dzięki czemu komputer będzie działał płynnie. Poniżej znajdziesz podsumowanie skanowania oraz raport.",
 			"scanSummary": {
 				"title": "Podsumowanie skanowania:",
 				"description": "Stale optymalizujemy Twój komputer",
@@ -5126,10 +5137,7 @@
 				"scanDate": "Data skanowania",
 				"results": "Wyniki",
 				"status": "Stan"
-			},
-			"backToHome": "Powrót do strony głównej",
-			"successTitle": "Komputer został zoptymalizowany!",
-			"successDescription": "Funkcja Smart Performance pozwoliła Ci pozbyć się <b>{{issueCount}} problemów</b>, dzięki czemu komputer będzie działał płynnie. Poniżej znajdziesz podsumowanie skanowania oraz raport."
+			}
 		},
 		"feedbackContainer": {
 			"title": "Podziel się z nami swoją opinią",
