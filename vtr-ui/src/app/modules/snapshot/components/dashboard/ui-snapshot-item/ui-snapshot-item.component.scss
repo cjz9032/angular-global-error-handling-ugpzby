@@ -40,6 +40,11 @@
 		margin-bottom: 1rem;
 	}
 
+	.component-disabled {
+		color: $grey_darker;
+		opacity: 0.4;
+	}
+
 	.title {
 		font-size: $fontsize_xs;
 		font-weight: $weight_bold;
@@ -65,6 +70,10 @@
 		height: 2.4rem;
 		vertical-align: middle;
 		margin-bottom: 1rem;
+	}
+
+	.hide-details-info {
+		padding-right: 4.2rem;
 	}
 
 	.collapse-control {

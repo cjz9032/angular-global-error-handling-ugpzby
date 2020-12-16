@@ -41,6 +41,10 @@ export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 		) {
 			return '';
 		}
+
+		if (this.component.info.Items.length <= 0) {
+			return 'assets/icons/snapshot/disabled/icon_' + module.toLowerCase() + '_disabled.svg';
+		}
 		return 'assets/icons/snapshot/icon_' + module.toLowerCase() + '.svg';
 	}
 

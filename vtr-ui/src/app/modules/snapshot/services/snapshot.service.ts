@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { formatDate } from '@angular/common';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import {
 	SnapshotComponentStatus,
@@ -164,6 +165,11 @@ export class SnapshotService {
 				throw Error('Could not find requested component info');
 			}
 			this.pvtSnapshotInfo[componentName].info = componentSnapshot;
+			const utcBaselineDate = new Date(this.pvtSnapshotInfo[componentName].info.BaselineDate + ' UTC');
+			const utcLastSnapshotDate = new Date(this.pvtSnapshotInfo[componentName].info.LastSnapshotDate + ' UTC');
+
+			this.pvtSnapshotInfo[componentName].info.BaselineDate = formatDate(utcBaselineDate, 'EEEE, MMMM d, y', 'en-US');
+			this.pvtSnapshotInfo[componentName].info.LastSnapshotDate = formatDate(utcLastSnapshotDate, 'EEEE, MMMM d, y', 'en-US');
 			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
 		} catch (error) {
 			this.loggerService.error(
