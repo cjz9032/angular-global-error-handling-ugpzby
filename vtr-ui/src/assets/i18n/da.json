@@ -932,8 +932,8 @@
 			"note": {
 				"microphoneAndcameraPrivacyNotes": "Lenovo Vantage har ikke adgang til kamera og mikrofon.",
 				"accessUrl": "Gå til Windows-indstillingerne for at give adgang",
-				"microphoneNote": "Lenovo Vantage har ikke adgang til mikrofon.",
-				"cameraPrivacyNote": "Lenovo Vantage har ikke adgang til kamera."
+				"microphoneNote": "Lenovo Vantage har ikke adgang til mikrofonen.",
+				"cameraPrivacyNote": "Lenovo Vantage har ikke adgang til kameraet."
 			},
 			"threshold": "Grænse",
 			"conservation": "Bevaring",
