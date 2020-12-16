@@ -1603,10 +1603,11 @@
 					},
 					"batteryHealth": {
 						"title": "Battery health",
-						"description": "This section provides prediction on the battery lifespan, battery capacity, tips on how to maintain the battery capacity, and so on.<br/>The capacity loss depends on the daily use, battery temperature, charging voltage, etc. Follow tips below to extend your battery lifespan.",
+						"description": "This section provides information on battery capacity, tips on how to maintain the battery capacity, and so on.<br/>The capacity loss depends on the daily use, battery temperature, charging voltage, etc. Follow tips below to extend your battery lifespan.",
 						"batteryLifeSpan": {
 							"lifeSpan": "Predicted lifespan: ",
-							"months": "months"
+							"months": "months",
+							"title": "Battery health status: "
 						},
 						"batteryCapacity": {
 							"title": "Battery capacity",
