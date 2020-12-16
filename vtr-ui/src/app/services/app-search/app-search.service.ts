@@ -150,14 +150,16 @@ export class AppSearchService {
 		this.extractRouteMap(payload);
 	}
 
-	private extractRouteMap(menuItems) {
+	private extractRouteMap(menuItems: any, upperPath: string = null) {
 		menuItems.forEach(item => {
+			let routePath = upperPath
 			if (item.id && item.path) {
-				this.menuRouteMap[item.id] = item.path;
+				routePath = upperPath ? upperPath + "/" + item.path : item.path;
+				this.menuRouteMap[item.id] = upperPath ? upperPath + "/" + item.path: item.path;
 			}
 
 			if (item.subitems?.length > 0) {
-				this.extractRouteMap(item.subitems);
+				this.extractRouteMap(item.subitems, routePath);
 			}
 		});
 	}
