@@ -2198,7 +2198,7 @@
 				"tooltip": "Denne funktion kan ikke bruges med internetvideoafspillere. Populære lokale videoafspillere som f.eks. Windows Media Player, 5KPlayer osv. understøtter denne funktion."
 			},
 			"superResolution": {
-				"title": "Opskalering af videoopløsning",
+				"title": "Superopløsning",
 				"desc1": "Denne funktion giver en bedre oplevelse i forbindelse med videoafspilning ved at forbedre videoopløsningen. Det fungerer især godt, når videoen er i dårlig opløsning.",
 				"desc2": "Denne funktion kan påvirke batteriets levetid, overfladetemperatur og støj fra blæseren. Brug den ikke i DC-tilstand (batteritilstand). Ellers bliver strømforbruget større, og batterilevetiden afkortes.",
 				"tooltip": {
@@ -5364,3 +5364,4 @@
 		"feedback": "Give feedback"
 	}
 }
+

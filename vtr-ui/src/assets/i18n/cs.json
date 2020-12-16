@@ -2198,7 +2198,7 @@
 				"tooltip": "Tato funkce není použitelná pro webové přehrávače videa. Oblíbené přehrávače videí v počítači (například Windows Media Player, 5KPlayer apod.) tuto funkci podporují."
 			},
 			"superResolution": {
-				"title": "Zvýšení rozlišení videa",
+				"title": "Super rozlišení",
 				"desc1": "Tato funkce vylepšuje zlepšením rozlišení videa zážitek z přehrávání videa. Funguje zejména v případě, kdy má video špatné rozlišení.",
 				"desc2": "Tato funkce může ovlivnit životnost baterie, teplotu povrchu a způsobit šum ventilátoru. V režimu DC (režim s napájením z baterie) ji nepoužívejte. Jinak se zvýší spotřeba energie a zkrátí výdrž baterie.",
 				"tooltip": {
@@ -5364,3 +5364,4 @@
 		"feedback": "Zanechat zpětnou vazbu"
 	}
 }
+

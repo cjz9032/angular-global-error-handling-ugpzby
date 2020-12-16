@@ -2198,7 +2198,7 @@
 				"tooltip": "Ta funkcija se ne uporablja za spletne videopredvajalnike. To funkcijo podpirajo priljubljeni lokalni videopredvajalniki, kot so Windows Media Player, 5KPlayer in drugi."
 			},
 			"superResolution": {
-				"title": "Povečanje ločljivosti videoposnetkov",
+				"title": "Super ločljivost",
 				"desc1": "Ta funkcija s povečanjem ločljivosti videoposnetka izboljša izkušnjo predvajanja videoposnetkov. Posebej primerna je za videoposnetke v slabši ločljivosti.",
 				"desc2": "Ta funkcija lahko vpliva na čas delovanja baterije, temperaturo kože in glasnost ventilatorja. Ne uporabljajte je pri napajanju iz baterije (način DC). sicer bo pospešila porabo energije in skrajšala čas delovanja baterije.",
 				"tooltip": {

@@ -2198,7 +2198,7 @@
 				"tooltip": "Táto funkcia sa nevzťahuje na webové video prehrávače. Obľúbené lokálne prehrávače videa (prehrávač Windows Media Player, 5KPlayer a pod.) túto funkciu podporujú."
 			},
 			"superResolution": {
-				"title": "Zvýšenie rozlíšenia videa",
+				"title": "Super rozlíšenie",
 				"desc1": "Táto funkcia zvyšuje zážitok z prehrávania videa zlepšením jeho rozlíšenia. Prejaví sa najmä pri nízkom rozlíšení videa.",
 				"desc2": "Táto funkcia môže ovplyvniť výdrž batérie, teplotu povrchu a hluk ventilátora. Nepoužívajte v režime jednosmerného prúdu (režim napájania z batérie). V opačnom prípade sa zväčší spotreba energie a skráti životnosť batérie.",
 				"tooltip": {
@@ -5364,3 +5364,4 @@
 		"feedback": "Poskytnúť spätnú väzbu"
 	}
 }
+

@@ -2198,7 +2198,7 @@
 				"tooltip": "Denna funktion fungerar inte på onlinevideospelare. Vanliga lokala videospelare (som Windows Media Player och 5KPlayer) har stöd för denna funktion."
 			},
 			"superResolution": {
-				"title": "Öka videoupplösningen",
+				"title": "Superupplösning",
 				"desc1": "Denna funktion förbättrar videoupplösningen, vilket gör videouppspelningen bättre. Den är särskilt användbar om videon har dålig upplösning.",
 				"desc2": "Funktionen kan påverka batteriets livslängd, yttertemperatur och fläktljud. Använd inte funktionen i DC-läge (batteriläge). Detta orsakar ökad energiförbrukning och batteriets livslängd förkortas.",
 				"tooltip": {

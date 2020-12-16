@@ -2198,7 +2198,7 @@
 				"tooltip": "Ta značajka nije primjenjiva na web-reproduktore videosadržaja. Popularni lokalni reproduktori videosadržaja, kao što su Windows Media Player, 5KPlayer itd., podržavaju tu značajku."
 			},
 			"superResolution": {
-				"title": "Povećanje razlučivosti videozapisa",
+				"title": "Super razlučivost",
 				"desc1": "Ova značajka poboljšava iskustvo reprodukcije videa poboljšanjem razlučivosti videozapisa. Posebno djeluje kada je video loše razlučivosti.",
 				"desc2": "Ova funkcija može utjecati na trajanje baterije, temperaturu kože i buku ventilatora. Nemojte ga koristiti u DC načinu rada (način rada baterije). U suprotnom će doći do ubrzanja potrošnje električne energije i skraćivanja vijeka trajanja baterije.",
 				"tooltip": {
