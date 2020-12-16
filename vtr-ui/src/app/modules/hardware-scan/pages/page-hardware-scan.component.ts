@@ -12,6 +12,7 @@ import { HardwareScanService } from '../services/hardware-scan.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType } from 'src/app/enums/content.enum';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import { SnapshotService } from '../../snapshot/services/snapshot.service';
 
 @Component({
 	selector: 'vtr-page-hardware-scan',
@@ -27,6 +28,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	routeSubscription: Subscription;
 	currentRouter: any;
 	hidePreviousResult = false;
+	isSnapshotEnabledOnHypothesis = false;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -34,10 +36,11 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		private router: Router,
-		private windowsVerisonService: WindowsVersionService
+		private windowsVerisonService: WindowsVersionService,
+		private snapshotService: SnapshotService
 	) {}
 
-	ngOnInit() {
+	async ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe(
 			(response: AppNotification) => {
 				this.onNotification(response);
@@ -45,6 +48,8 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		);
 		this.routeSubscription = this.router.events.subscribe(() => this.observerURL());
 		this.initSupportCard();
+
+		this.isSnapshotEnabledOnHypothesis = await this.snapshotService.isAvailable();
 	}
 
 	ngOnDestroy() {
