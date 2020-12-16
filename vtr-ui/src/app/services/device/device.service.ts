@@ -79,19 +79,6 @@ export class DeviceService {
 		}
 	}
 
-	private initShowSearch() {
-		if (this.hypSettings) {
-			this.hypSettings.getFeatureSetting('FeatureSearch').then(
-				(searchFeature) => {
-					this.showSearch = (searchFeature || '').toString() === 'true';
-				},
-				(error) => {
-					this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
-				}
-			);
-		}
-	}
-
 	public getDeviceInfo(): Promise<MyDevice> {
 		if (this.device) {
 			return this.device.getDeviceInfo();
@@ -205,6 +192,19 @@ export class DeviceService {
 			return value;
 		} else {
 			return undefined;
+		}
+	}
+
+	private initShowSearch() {
+		if (this.hypSettings) {
+			this.hypSettings.getFeatureSetting('FeatureSearch').then(
+				(searchFeature) => {
+					this.showSearch = (searchFeature || '').toString() === 'true';
+				},
+				(error) => {
+					this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
+				}
+			);
 		}
 	}
 }

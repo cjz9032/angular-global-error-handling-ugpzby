@@ -5473,5 +5473,363 @@
 		"title": "Send us your voice",
 		"likeUs": "Like us",
 		"feedback": "Leave feedback"
+	},
+	"appSearch": {
+		"menuName": "Search",
+		"searchResultTips": "Results for '{{userInput}}'",
+		"pages": {
+			"dashboard": {
+				"featureName": "Dashboard",
+				"highRelevantKeywords": [
+					"Warranty",
+					"System status",
+					"controlers",
+					"Front",
+					"home",
+					"dashboard",
+					"toggles"
+				]
+			},
+			"myDevice": {
+				"featureName": "MyDevice",
+				"highRelevantKeywords": [
+					"SN",
+					"serial",
+					"BIOS",
+					"version",
+					"Product",
+					"Device",
+					"Status"
+				]
+			},
+			"systemUpdate": {
+				"featureName": "SystemUpdate",
+				"highRelevantKeywords": [
+					"Update",
+					"driver",
+					"history",
+					"upgrade",
+					"critical",
+					"recommend",
+					"Check update",
+					"Windows udpate"
+				]
+			},
+			"mySecurity": {
+				"featureName": "MYSecurity",
+				"highRelevantKeywords": [
+					"101",
+					"security",
+					"Anti-virus",
+					"Firewall",
+					"activation",
+					"password",
+					"health",
+					"fingperint",
+					"UAC",
+					"user account control",
+					"WiFi",
+					"Wifi Security",
+					"VPN",
+					"virtual private Network"
+				]
+			},
+			"vsp": {
+				"featureName": "VSP",
+				"highRelevantKeywords": [
+					"optimize",
+					"boost",
+					"velocity",
+					"speed",
+					"network",
+					"cache",
+					"clean",
+					"malware",
+					"boost",
+					"performance",
+					"proactive",
+					"junk",
+					"registry clean",
+					"scan"
+				]
+			},
+			"hwScan": {
+				"featureName": "HWScan",
+				"highRelevantKeywords": [
+					"HW",
+					"PC",
+					"component",
+					"CPU",
+					"memory",
+					"DDR",
+					"HDD",
+					"hard disk",
+					"Motherboard",
+					"PCI",
+					"Network",
+					"wireless",
+					"storage",
+					"SSD"
+				]
+			}
+		},
+		"features": {
+			"power": {
+				"batteryInformation": {
+					"featureName": "Battery Information",
+					"highRelevantKeywords": [
+						"Remaining time",
+						"remaining percentage",
+						"battery status"
+					]
+				},
+				"batteryDetails": {
+					"featureName": "Battery Details",
+					"highRelevantKeywords": [
+						"Wattage",
+						"Temperature",
+						"Chemistry",
+						"Design capacity",
+						"Remaining capacity",
+						"Manufacturer",
+						"Design capacity",
+						"Full charge capacity",
+						"Manufacture date",
+						"Design voltage",
+						"Voltage",
+						"First use date",
+						"Firmware version",
+						"Bar-code",
+						"FRU part number",
+						"Cycle count"
+					]
+				},
+				"smartStandby": {
+					"featureName": "Smart Standby",
+					"highRelevantKeywords": [
+						"Modern Standby"
+					]
+				},
+				"alwaysOnUSB": {
+					"featureName": "Always On USB",
+					"highRelevantKeywords": [
+						"Power settings"
+					]
+				},
+				"batteryChargeThreshold": {
+					"featureName": "Battery Charge Threshold",
+					"highRelevantKeywords": [
+						"Battery settings",
+						"conservation mode",
+						"increase battery lifespan"
+					]
+				},
+				"intelligentCooling": {
+					"featureName": "Intelligent Cooling",
+					"highRelevantKeywords": [
+						"Power smart settings",
+						"performance mode",
+						"Cool & quiet mode",
+						"Extreme performance mode",
+						"Intelligent mode",
+						"Battery Saving mode",
+						"Balanced mode"
+					]
+				},
+				"easyResume": {
+					"featureName": "Easy Resume",
+					"highRelevantKeywords": [
+						"Power settings"
+					]
+				},
+				"rapidCharge": {
+					"featureName": "Rapid Charge",
+					"highRelevantKeywords": [
+						"Express charge"
+					]
+				},
+				"vantageToolbar": {
+					"featureName": "Vantage Toolbar",
+					"highRelevantKeywords": [
+						"Toolbar",
+						"quick settings",
+						"quick controls"
+					]
+				}
+			},
+			"cameraAndDisplay": {
+				"cameraPrivacyMode": {
+					"featureName": "Camera Privacy Mode",
+					"highRelevantKeywords": [
+						"camera",
+						"privacy protection"
+					]
+				},
+				"privacyGuard": {
+					"featureName": "Privacy Guard",
+					"highRelevantKeywords": [
+						"screen shutter"
+					]
+				},
+				"eyeCareMode": {
+					"featureName": "Eye Care Mode",
+					"highRelevantKeywords": [
+						"Night light",
+						"Eye comfort",
+						"blue light"
+					]
+				},
+				"cameraSettings": {
+					"featureName": "Camera Settings",
+					"highRelevantKeywords": [
+						"camera brightness",
+						"camera contrast",
+						"camera exposure"
+					]
+				},
+				"cameraBackgroundBlur": {
+					"featureName": "camera background blur",
+					"highRelevantKeywords": [
+						"camera blur",
+						"camera background blur"
+					]
+				}
+			},
+			"audio": {
+				"dolbyAudio": {
+					"featureName": "Dolby audio",
+					"highRelevantKeywords": [
+						"Dolby Effects",
+						"Automatically optimize audio for VoIP",
+						"Automatically optimize audio for entertainment",
+						"Dolby profiles"
+					]
+				},
+				"microphoneSettings": {
+					"featureName": "Microphone Settings",
+					"highRelevantKeywords": [
+						"Microphone volume",
+						"Acoustic Echo cancellation",
+						"microphone effects",
+						"voice recognition",
+						"only my voice",
+						"multiple voice"
+					]
+				},
+				"automaticOptimizationForECourse": {
+					"featureName": "Automatic optimization for E-Course",
+					"highRelevantKeywords": [
+						"voice recognition"
+					]
+				}
+			},
+			"input": {
+				"touchPadSettings": {
+					"featureName": "TouchPad Settings",
+					"highRelevantKeywords": [
+						"touchpad"
+					]
+				},
+				"trackPointSettings": {
+					"featureName": "TrackPoint Settings",
+					"highRelevantKeywords": [
+						"trackpoint"
+					]
+				},
+				"keyboardBacklight1_0": {
+					"featureName": "Keyboard Backlight 1.0",
+					"highRelevantKeywords": [
+						"keyboard backlight",
+						"backlit"
+					]
+				},
+				"smartKeyboardBacklight2_0": {
+					"featureName": "Smart Keyboard Backlight 2.0 (ALS-based auto-adjust backlight)",
+					"highRelevantKeywords": [
+						"atuomatic backlight",
+						"smart backlight"
+					]
+				},
+				"hiddenKeyboardFunctions": {
+					"featureName": "Hidden Keyboard Functions",
+					"highRelevantKeywords": [
+						"keyboard map",
+						"hidden keyboard functions"
+					]
+				},
+				"voIPHotkeyFunction": {
+					"featureName": "VoIP hotkey function",
+					"highRelevantKeywords": [
+						"VoIP hotkey"
+					]
+				},
+				"topRowKeyFunctions": {
+					"featureName": "Top-row Key functions",
+					"highRelevantKeywords": [
+						"top row key functions",
+						"Fn special functions",
+						"Fn functions"
+					]
+				},
+				"userDefinedKey": {
+					"featureName": "User-Defined Key",
+					"highRelevantKeywords": [
+						"open applications or files",
+						"open website",
+						"invoke key sequence",
+						"enter text"
+					]
+				},
+				"fnAndCtrlKeySwap": {
+					"featureName": "Fn and Ctrl key swap",
+					"highRelevantKeywords": [
+						"swap Fn and ctrl function"
+					]
+				}
+			},
+			"smartAssist": {
+				"activeProtectionSystem": {
+					"featureName": "Active Protection System",
+					"highRelevantKeywords": [
+						"HDD protection",
+						"Active protection system against HDD"
+					]
+				},
+				"intelligentSensing": {
+					"featureName": "Intelligent Sensing(i.e. Intelligent Screen On/Off)",
+					"highRelevantKeywords": [
+						"Intelligent screen"
+					]
+				},
+				"zeroTouchLogin1_0": {
+					"featureName": "Zero Touch Login 1.0",
+					"highRelevantKeywords": [
+						"Zero touch login",
+						"ToF sensor"
+					]
+				},
+				"zeroTouchLock1_0": {
+					"featureName": "Zero Touch Lock 1.0",
+					"highRelevantKeywords": [
+						"Zero touch lock",
+						"ToF sensor"
+					]
+				},
+				"zeroTouchVideoPlayback1_0": {
+					"featureName": "Zero Touch Video Playback 1.0",
+					"highRelevantKeywords": [
+						"Smart pause",
+						"zero touch video playback"
+					]
+				},
+				"videoResolutionUpscalingSR1_0": {
+					"featureName": "Video Resolution Upscaling (SR 1.0) on Consumer X40 Gen.",
+					"highRelevantKeywords": [
+						"Super resolution",
+						"video resolution upscaling"
+					]
+				}
+			}
+		}
 	}
 }

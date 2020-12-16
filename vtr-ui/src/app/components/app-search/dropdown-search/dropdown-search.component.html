@@ -1,0 +1,33 @@
+<div class="search-block" #searchBox (click)="onParentClick($event)">
+	<div class="input-block" [class.is-show-result]="false">
+		<!-- search button-->
+		<div class="search-icon" (click)="onClickSearch()">
+			<fa-icon [icon]="['fal', 'search']"></fa-icon>
+		</div>
+
+		<!-- user input-->
+		<input type="text" #searchInput class="search-input" [placeholder]="searchTips"
+			(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput" (keydown.enter)="onClickSearch()" (click)="onInputClick($event)"/>
+
+		<!-- x button-->
+		<div class="clean-button" [class.active]="userInput" vtrMetrics metricsEvent="FeatureClick"
+			metricsParent="Dropdown.Search" metricsItem="cleanSearch" (click)="onCleanClick()">
+		</div>
+	</div>
+
+	<div class="dropdown-block mt-1" (click)="onDropDownClick($event)">
+		<ul>
+			<li *ngFor="let recItem of recommandedItems" (click)="onClickRecommandationItem(recItem.name)" vtrMetrics
+				metricsEvent="FeatureClick" metricsParent="Dropdown.Search" [metricsItem]="recItem.id">
+				<!--recommandation item-->
+				<a href="javascript:;" class="item-block">
+					<div class="item-icon">
+						<fa-icon *ngIf="recItem.icon" [icon]="recItem.icon"></fa-icon>
+						<fa-icon *ngIf="!recItem.icon" [icon]="['fal', 'gem']"></fa-icon>
+					</div>
+					<span class="item-text">{{recItem.name}}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -21,7 +21,6 @@
 
 					<vtr-widget-device-update [title]="updateTitle"
 						*ngIf="isOnline"
-						[vtrAppSearchScroller]="['search-check-update']"
 						[subTitle1]="getLastUpdatedText()"
 						[subTitle2]="getNextUpdatedScanText()"
 						[percent]="percentCompleted"
@@ -83,8 +82,7 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row mb-5">
-				<div class="col col-12 cont"
-					[vtrAppSearchScroller]="['search-critical-update', 'search-recommend-update', 'search-windows-update']">
+				<div class="col col-12 cont">
 					<vtr-autoupdate-settings [title]="'systemUpdates.autoUpdateSettings.title' | translate"
 						componentName="Auto Update Settings"
 						[description]="'systemUpdates.autoUpdateSettings.subtitle' | translate"

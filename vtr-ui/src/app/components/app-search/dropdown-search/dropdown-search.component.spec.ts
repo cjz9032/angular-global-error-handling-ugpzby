@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-
-import { SearchDropdownComponent } from './search-dropdown.component';
+import { SearchDropdownComponent } from './dropdown-search.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterTestingModule } from '@angular/router/testing';
 

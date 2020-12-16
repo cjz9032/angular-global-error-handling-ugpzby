@@ -23,7 +23,6 @@ import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { CommonPipeModule } from '../common/common-pipe.module';
-import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { WidgetCarouselModule } from 'src/app/components/widgets/widget-carousel/widget-carousel.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
@@ -43,6 +42,9 @@ import { WidgetEnergyStarComponent } from 'src/app/components/widgets/widget-ene
 import { MaterialStateCardContainerComponent } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
 import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
 import { WidgetQuicksettingsNoteComponent } from 'src/app/components/widgets/widget-quicksettings/widget-quicksettings-note/widget-quicksettings-note.component';
+import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
+import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
+import { AppSearchModule } from '../app-search/app-search.module';
 
 @NgModule({
 	declarations: [
@@ -92,7 +94,6 @@ import { WidgetQuicksettingsNoteComponent } from 'src/app/components/widgets/wid
 		FormsModule,
 		ReactiveFormsModule,
 		PageLayoutModule,
-		AppSearchModule,
 		WidgetDashboardWarrantyComponent,
 		NgbTooltipModule,
 	],
@@ -105,5 +106,7 @@ export class HardwareDashboardModule {
 		library.addIcons(faTimes);
 		library.addIcons(faExclamationCircle);
 		library.addIcons(faCheckCircle);
+		library.addIcons(faChevronRight);
+		library.addIcons(faChevronLeft);
 	}
 }

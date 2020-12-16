@@ -95,6 +95,41 @@
 								class="beta">Beta</span>
 						</button>
 					</li>
+					<li class='h-100' *ngIf="item && !item.hide && item.id == 'app-search'">
+						<button mat-button
+							#menuTrigger="matMenuHoverTrigger"
+							[matMenuHoverTriggerFor]="materialMenuDropdown?.matMenu"
+							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
+							[ngClass]="{'beta-item': item.beta, 'actived': updateActiveItem(item.id)}"
+							role="menu"
+							vtrMetrics
+							id="menu-main-nav-lnk-dropdown-toggle-{{item.id}}"
+							attr.aria-label="{{item.id}}"
+							attr.new-tip-id="new-tip-{{item.id}}"
+							aria-haspopup="true"
+							aria-expanded="false"
+							tabindex="1"
+							[metricsEvent]="item.metricsEvent"
+							[metricsParent]="item.metricsParent"
+							[metricsItem]="item.metricsItem"
+							routerLink="/{{item.path}}"
+							routerLinkActive="active"
+							href="javascript:void(0)"
+							(click)="onMenuItemClick(item)"
+							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
+							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
+							(focus)="closeAllOtherMatMenu(menuTrigger)">
+							<fa-icon class="align-middle" [icon]="item.icon"></fa-icon>
+							<span [innerHTML]="item.label | translate"></span>
+						</button>
+						<vtr-material-menu-dropdown
+							#materialMenuDropdown="materialMenuDropdownComponent"
+							[dropdownMenu]="item"
+							[parentPath]="item.path"
+							[parentId]="item.id"
+							class="d-inline-block align-top">
+						</vtr-material-menu-dropdown>
+					</li>
 					<li class='h-100' *ngIf="item && !item.hide && item.subitems && item.subitems.length > 0 && item.id !== 'user' && item.id !== 'app-search'">
 						<button mat-button
 							#menuTrigger="matMenuHoverTrigger"

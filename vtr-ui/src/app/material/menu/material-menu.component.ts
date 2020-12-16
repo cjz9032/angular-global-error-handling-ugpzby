@@ -39,7 +39,6 @@ import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { StringBooleanEnum } from 'src/app/data-models/common/common.interface';
 import { NewFeatureTipService } from 'src/app/services/new-feature-tip/new-feature-tip.service';
-import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
@@ -73,9 +72,8 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	preloadImages: string[];
 	isLoggingOut = false;
 	appsForYouEnum = AppsForYouEnum;
-	showSearchMenu = false;
+	showSearchMenu = true;
 	translateSubscription: Subscription;
-	unsupportedFeatureSubscription: Subscription;
 	searchTips = '';
 	showSearchBox = false;
 	activeItemId: string;
@@ -86,7 +84,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	private backlightCapabilitySubscription: Subscription;
 	private topRowFnSubscription: Subscription;
 	private routerEventSubscription: Subscription;
-	private unsupportFeatureEvt: Observable<string>;
 	private searchTipsTimeout: any;
 	constructor(
 		public dashboardService: DashboardService,
@@ -106,12 +103,24 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		private newFeatureTipService: NewFeatureTipService,
 		private viewContainerRef: ViewContainerRef,
 		private translate: TranslateService,
-		private searchService: AppSearchService,
 		private logger: LoggerService,
 		private keyboardService: InputAccessoriesService,
 		@Inject(DOCUMENT) private document: Document
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
+	}
+
+	updateSearchBoxState(isActive) {
+		this.searchTips = '';
+		this.showSearchBox = isActive;
+		if (isActive && this.searchTipsTimeout) {
+			this.searchTipsTimeout = clearTimeout(this.searchTipsTimeout);
+			this.searchTipsTimeout = null;
+		}
+	}
+
+	onClickSearchMask() {
+		this.updateSearchBoxState(false);
 	}
 
 	ngOnInit(): void {
@@ -159,9 +168,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		}
 		if (this.translateSubscription) {
 			this.translateSubscription.unsubscribe();
-		}
-		if (this.unsupportedFeatureSubscription) {
-			this.unsupportedFeatureSubscription.unsubscribe();
 		}
 		if (this.topRowFnSubscription) {
 			this.topRowFnSubscription.unsubscribe();
@@ -225,17 +231,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-		this.unsupportFeatureEvt = this.searchService.getUnsupportFeatureEvt();
-		this.unsupportedFeatureSubscription = this.unsupportFeatureEvt.subscribe((featureDesc) => {
-			if (this.searchTipsTimeout) {
-				clearTimeout(this.searchTipsTimeout);
-			}
-			this.searchTips = featureDesc;
-			this.searchTipsTimeout = setTimeout(() => {
-				this.searchTips = '';
-				this.searchTipsTimeout = null;
-			}, 3000);
-		});
 		const machineType = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineType,
 			undefined
@@ -253,15 +248,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	onClick(event) {
 		if (!event.fromSearchBox && !event.fromSearchMenu) {
 			this.updateSearchBoxState(false);
-		}
-	}
-
-	updateSearchBoxState(isActive) {
-		this.searchTips = '';
-		this.showSearchBox = isActive;
-		if (isActive && this.searchTipsTimeout) {
-			this.searchTipsTimeout = clearTimeout(this.searchTipsTimeout);
-			this.searchTipsTimeout = null;
 		}
 	}
 
@@ -420,9 +406,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onClickSearchMask() {
-		this.updateSearchBoxState(false);
-	}
 
 	menuItemKeyDown(path, subpath?) {
 		subpath

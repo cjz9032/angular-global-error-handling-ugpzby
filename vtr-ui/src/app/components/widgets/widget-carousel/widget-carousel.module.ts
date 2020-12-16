@@ -4,7 +4,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA, Injectable } from '
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { WidgetCarouselComponent } from './widget-carousel.component';
 import { NgbCarouselModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { TranslationModule } from 'src/app/modules/translation.module';
 
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
@@ -30,7 +29,6 @@ export class HammerConfig extends HammerGestureConfig {
 		CommonPipeModule,
 		MetricsModule,
 		NgbCarouselModule,
-		AppSearchModule,
 		NgbTooltipModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

@@ -49,6 +49,20 @@ const routes: Routes = [
 			pageName: 'Page.Settings',
 		},
 	},
+	// {
+	// 	path: 'search',
+	// 	component: PageSearchComponent,
+	// 	data: {
+	// 		pageName: 'Page.Search',
+	// 	},
+	// },
+	{
+		path: 'search',
+		loadChildren: () =>
+			import('./app-search/app-search.module').then(
+				(m) => m.AppSearchModule
+			),
+	},
 	{
 		path: 'home-security',
 		loadChildren: () =>

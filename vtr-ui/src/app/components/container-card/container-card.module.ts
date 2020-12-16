@@ -6,7 +6,6 @@ import { ContainerCardComponent } from './container-card.component';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { SanitizeModule } from 'src/app/modules/sanitize.module';
-import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { ContainerCardOfflineComponent } from './container-card-offline/container-card-offline.component';
@@ -22,7 +21,6 @@ import { RouterModule } from '@angular/router';
 		MetricsModule,
 		FontAwesomeModule,
 		SanitizeModule,
-		AppSearchModule,
 		NgbTooltipModule,
 		RouterModule,
 	],

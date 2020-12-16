@@ -23,7 +23,6 @@ import { UiButtonModule } from '../components/ui/ui-button/ui-button.module';
 import { MetricsModule } from '../services/metric/metrics.module';
 import { HeaderMainModule } from '../components/header-main/header-main.module';
 import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
-import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptors';
 import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
 import { UiHyperlinkButtonComponent } from '../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
@@ -57,8 +56,7 @@ import { UiQuestionMarkButtonComponent } from './hardware-scan/components/dashbo
 		UiButtonModule,
 		UiCloseButtonModule,
 		MetricsModule,
-		HeaderMainModule,
-		AppSearchModule,
+		HeaderMainModule
 	],
 	exports: [
 		AngularSvgIconModule,
@@ -82,7 +80,6 @@ import { UiQuestionMarkButtonComponent } from './hardware-scan/components/dashbo
 		UiCloseButtonModule,
 		MetricsModule,
 		HeaderMainModule,
-		AppSearchModule,
 		UiHyperlinkButtonComponent,
 		UiQuestionMarkButtonComponent
 	],

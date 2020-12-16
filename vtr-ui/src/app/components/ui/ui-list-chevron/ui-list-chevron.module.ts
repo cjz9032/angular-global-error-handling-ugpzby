@@ -14,7 +14,6 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { RouterModule } from '@angular/router';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
-import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		FontAwesomeModule,
 		RouterModule,
 		MetricsModule,
-		AppSearchModule,
 		NgbTooltipModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

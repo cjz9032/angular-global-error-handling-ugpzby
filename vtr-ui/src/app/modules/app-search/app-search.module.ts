@@ -1,11 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SearchDropdownComponent } from './search-dropdown/search-dropdown.component';
-import { AppSearchScrollerDirective } from 'src/app/beta/app-search/app-search-scroller.directive';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
-import { AppSearchRoutingModule } from 'src/app/beta/app-search/app-search-routing.module';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
@@ -30,19 +27,33 @@ import { faNetworkWired } from '@fortawesome/pro-light-svg-icons/faNetworkWired'
 import { faWrench } from '@fortawesome/pro-light-svg-icons/faWrench';
 import { faGem } from '@fortawesome/pro-light-svg-icons/faGem';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
-import { SearchTipsComponent } from './search-tips/search-tips.component';
+import { TranslationModule } from 'src/app/modules/translation.module';
+import { SearchDropdownComponent } from 'src/app/components/app-search/dropdown-search/dropdown-search.component';
+import { SearchTipsComponent } from 'src/app/components/app-search/search-tips/search-tips.component';
+import { PageSearchComponent } from 'src/app/components/app-search/page-search/page-search.component';
+import { CommonUiModule } from '../common/common-ui.module';
+import { CommonWidgetModule } from '../common/common-widget.module';
+import { SharedModule } from '../shared.module';
+import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
+import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
+import { AppSearchRoutingModule } from './app-search-routing.module';
 
 @NgModule({
-	declarations: [SearchDropdownComponent, AppSearchScrollerDirective, SearchTipsComponent],
+	declarations: [SearchDropdownComponent, SearchTipsComponent, PageSearchComponent],
 	imports: [
-		FontAwesomeModule,
-		CommonPipeModule,
-		CommonModule,
 		MetricsModule,
 		AppSearchRoutingModule,
-		FormsModule,
+		TranslationModule.forChild(),
+		CommonModule,
+		CommonUiModule,
+		CommonPipeModule,
+		CommonWidgetModule,
+		SharedModule,
+		WidgetOfflineModule,
+		PageLayoutModule,
+		FontAwesomeModule,
 	],
-	exports: [SearchDropdownComponent, AppSearchScrollerDirective, SearchTipsComponent],
+	exports: [SearchDropdownComponent, SearchTipsComponent, PageSearchComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class AppSearchModule {
