@@ -2,12 +2,12 @@
 
 @font-face {
 	font-family: "gaming-icon";
-	src: url("./assets/gaming-icons/gaming-icons.eot");
-	src: url("./assets/gaming-icons/gaming-icons.eot?#iefix")
+	src: url("^assets/gaming-icons/gaming-icons.eot");
+	src: url("^assets/gaming-icons/gaming-icons.eot?#iefix")
 			format("embedded-opentype"),
-		url("./assets/gaming-icons/gaming-icons.woff") format("woff"),
-		url("./assets/gaming-icons/gaming-icons.ttf") format("truetype"),
-		url("./assets/gaming-icons/gaming-icons.svg#gaming-icons") format("svg");
+		url("^assets/gaming-icons/gaming-icons.woff") format("woff"),
+		url("^assets/gaming-icons/gaming-icons.ttf") format("truetype"),
+		url("^assets/gaming-icons/gaming-icons.svg#gaming-icons") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }

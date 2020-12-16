@@ -94,8 +94,8 @@
 
 		.hero-background {
 			max-height: 36rem;
-			background-image: url('../../../../../../assets/images/antivirus/hero_blob.webp'),
-				url('../../../../../../assets/images/antivirus/hero_blob.png');
+			background-image: url('^assets/images/antivirus/hero_blob.webp'),
+				url('^assets/images/antivirus/hero_blob.png');
 			background-repeat: no-repeat;
 			background-position: 100% 0%;
 			background-size: cover;
