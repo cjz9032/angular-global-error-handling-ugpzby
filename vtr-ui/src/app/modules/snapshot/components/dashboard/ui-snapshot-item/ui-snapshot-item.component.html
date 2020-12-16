@@ -15,11 +15,11 @@
 			<div class="row" [ngClass]="{ 'component-disabled': component.info.Items.length === 0 }">
 				<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title"
 						*ngIf="!component.info.IsDifferent; else modifiedTitle">
-					{{ name }}</p>
+					{{ 'snapshot.components.' + name | translate }}</p>
 
 				<ng-template #modifiedTitle>
-					<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title">
-						* {{ name }}</p>
+					<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title modified-item">
+						* {{ 'snapshot.components.' + name | translate }}</p>
 				</ng-template>
 			</div>
 

@@ -33,6 +33,11 @@
 		.update-btn {
 			margin-left: auto;
 		}
+
+		.modified-item {
+			color: $menu_hover;
+			font-weight: $weight_600;
+		}
 	}
 
 	.last-child {
