@@ -34,7 +34,6 @@ import { CommonPipeModule } from './common-pipe.module';
 import { MaterialMenuComponent } from 'src/app/material/menu/material-menu.component';
 import { MaterialMenuDropdownComponent } from 'src/app/material/menu/material-menu-dropdown/material-menu-dropdown.component';
 import { MaterialHamburgerMenuComponent } from 'src/app/material/menu/material-hamburger-menu/material-hamburger-menu.component';
-import { MenuHoverDirective } from 'src/app/directives/menu-hover.directive';
 
 @NgModule({
 	declarations: [
@@ -44,7 +43,6 @@ import { MenuHoverDirective } from 'src/app/directives/menu-hover.directive';
 		MaterialMenuDropdownComponent,
 		MaterialHamburgerMenuComponent,
 		UiHeaderWarrantyComponent,
-		MenuHoverDirective
 	],
 	exports: [
 		MenuMainComponent,

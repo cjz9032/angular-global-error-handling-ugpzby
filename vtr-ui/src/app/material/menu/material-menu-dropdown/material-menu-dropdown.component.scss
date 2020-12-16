@@ -22,7 +22,7 @@
 			line-height: 1;
 			outline: none !important;
 			@include menu-color-high-contrast;
-			&.text-lowercase > span::first-letter {
+			&.text-lowercase::first-letter {
 				text-transform: uppercase !important;
 			}
 			span {

@@ -18,7 +18,7 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { throttle } from 'lodash';
 import { DOCUMENT } from '@angular/common';
 
-import { MatMenuTrigger } from '@lenovo/material/menu';
+import { MatMenuHoverTrigger, MatMenuTrigger } from '@lenovo/material/menu';
 
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { ConfigService } from 'src/app/services/config/config.service';
@@ -45,7 +45,6 @@ import { InputAccessoriesCapability } from 'src/app/data-models/input-accessorie
 import { BacklightService } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { TopRowFunctionsIdeapadService } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
-import { MenuHoverDirective } from 'src/app/directives/menu-hover.directive';
 
 @Component({
 	selector: 'vtr-material-menu',
@@ -53,7 +52,7 @@ import { MenuHoverDirective } from 'src/app/directives/menu-hover.directive';
 	styleUrls: ['./material-menu.component.scss'],
 })
 export class MaterialMenuComponent implements OnInit, OnDestroy {
-	@ViewChildren(MenuHoverDirective) hoverTriggers: QueryList<MenuHoverDirective>;
+	@ViewChildren(MatMenuHoverTrigger) hoverTriggers: QueryList<MatMenuHoverTrigger>;
 	@ViewChildren(MatMenuTrigger) triggers: QueryList<MatMenuTrigger>;
 	@Input() loadMenuItem: any = {};
 	VantageLogo = `
@@ -86,7 +85,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	private topRowFnSubscription: Subscription;
 	private routerEventSubscription: Subscription;
 	private searchTipsTimeout: any;
-	private closeAllOtherMatMenuTimer: any;
 	constructor(
 		public dashboardService: DashboardService,
 		public configService: ConfigService,
@@ -417,11 +415,11 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 			: this.router.navigateByUrl(`/`);
 	}
 
-	openMatMenu(menuTrigger: MenuHoverDirective) {
+	openMatMenu(menuTrigger: MatMenuHoverTrigger) {
 		menuTrigger.openMenu();
 	}
 
-	closeMatMenu(menuTrigger: MenuHoverDirective) {
+	closeMatMenu(menuTrigger: MatMenuHoverTrigger) {
 		menuTrigger.closeMenu();
 	}
 
@@ -434,22 +432,12 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	closeAllOtherMatMenu(activeDropdown: MenuHoverDirective) {
-		this.closeAllOtherMatMenuTimer = setTimeout(() => {
-			this.hoverTriggers?.toArray().forEach(elem => {
-				if (activeDropdown !== elem) {
-					elem.closeMenu();
-				}
-			});
-			this.clearCloseAllOtherMatMenu();
-		}, 190);
-	}
-
-	clearCloseAllOtherMatMenu() {
-		if (this.closeAllOtherMatMenuTimer) {
-			clearTimeout(this.closeAllOtherMatMenuTimer);
-			this.closeAllOtherMatMenuTimer = null;
-		}
+	closeAllOtherMatMenu(activeDropdown: MatMenuHoverTrigger) {
+		this.hoverTriggers?.toArray().forEach((elem) => {
+			if (activeDropdown !== elem) {
+				elem.closeMenu();
+			}
+		});
 	}
 
 	openExternalLink(link) {

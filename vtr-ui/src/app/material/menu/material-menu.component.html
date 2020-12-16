@@ -87,7 +87,9 @@
 							routerLinkActive="active"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
-							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]">
+							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
+							(mouseover)="closeAllMatMenu()"
+							(focus)="closeAllMatMenu()">
 							{{item.label | translate}}
 							<span *ngIf="item.beta"
 								class="beta">Beta</span>
@@ -130,9 +132,8 @@
 					</li>
 					<li class='h-100' *ngIf="item && !item.hide && item.subitems && item.subitems.length > 0 && item.id !== 'user' && item.id !== 'app-search'">
 						<button mat-button
-							vtrMenuHover
-							#menuTrigger="menuHoverDirective"
-							[menuHoverTriggerFor]="materialMenuDropdown?.matMenu"
+							#menuTrigger="matMenuHoverTrigger"
+							[matMenuHoverTriggerFor]="materialMenuDropdown?.matMenu"
 							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
 							[ngClass]="{'beta-item': item.beta, 'actived': updateActiveItem(item.id)}"
 							role="menu"
@@ -151,8 +152,7 @@
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
-							(pointerenter)="closeAllOtherMatMenu(menuTrigger)"
-							(pointerleave)="clearCloseAllOtherMatMenu()"
+							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
 							(focus)="closeAllOtherMatMenu(menuTrigger)">
 							<span [innerHTML]="item.label | translate"></span>
 							<fa-icon class="px-2 menu-angle-down-icon" [icon]="['fal', 'angle-down']"></fa-icon>
@@ -167,9 +167,8 @@
 					</li>
 					<li class="h-100 user-item" *ngIf="item && !item.hide && item.id === 'user'">
 						<button mat-button
-							vtrMenuHover
-							#menuTrigger="menuHoverDirective"
-							[menuHoverTriggerFor]="userMenuMain"
+							#menuTrigger="matMenuHoverTrigger"
+							[matMenuHoverTriggerFor]="userMenuMain"
 							class="h-100 d-flex align-items-center m-0 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
 							id="navbarDropdown"
 							attr.aria-label="navbarDropdown"
@@ -179,8 +178,7 @@
 							tabindex="1"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
-							(pointerenter)="closeAllOtherMatMenu(menuTrigger)"
-							(pointerleave)="clearCloseAllOtherMatMenu()"
+							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
 							(focus)="closeAllOtherMatMenu(menuTrigger)">
 							<div class="d-inline-block text-center user-initials rounded-circle"
 								[innerHTML]="deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials">
