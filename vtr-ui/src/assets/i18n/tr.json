@@ -932,8 +932,8 @@
 			"note": {
 				"microphoneAndcameraPrivacyNotes": "Lenovo Vantage, Kamera ve Mikrofon'a erişemiyor.",
 				"accessUrl": "Erişim vermek için Windows ayarlarına gidin",
-				"microphoneNote": "Lenovo Vantage, Mikrofon'a erişemiyor.",
-				"cameraPrivacyNote": "Lenovo Vantage, Kamera'ya erişemiyor."
+				"microphoneNote": "Lenovo Vantage mikrofona erişemiyor.",
+				"cameraPrivacyNote": "Lenovo Vantage kameraya erişemiyor."
 			},
 			"threshold": "Eşik",
 			"conservation": "Tasarruf",
@@ -5364,3 +5364,4 @@
 		"feedback": "Geri bildirimde bulunun"
 	}
 }
+

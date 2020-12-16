@@ -932,8 +932,8 @@
 			"note": {
 				"microphoneAndcameraPrivacyNotes": "O Lenovo Vantage não tem acesso à Câmara nem ao Microfone.",
 				"accessUrl": "Aceda às definições do Windows para conceder acesso",
-				"microphoneNote": "O Lenovo Vantage não tem acesso ao Microfone.",
-				"cameraPrivacyNote": "O Lenovo Vantage não tem acesso à Câmara."
+				"microphoneNote": "O Lenovo Vantage não tem acesso ao microfone.",
+				"cameraPrivacyNote": "O Lenovo Vantage não tem acesso à câmara."
 			},
 			"threshold": "Limiar",
 			"conservation": "Conservação",
