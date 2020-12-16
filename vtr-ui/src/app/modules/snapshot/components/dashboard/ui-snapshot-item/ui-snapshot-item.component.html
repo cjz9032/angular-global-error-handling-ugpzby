@@ -29,10 +29,9 @@
 			<!-- Shows button to update after modules get loaded -->
 			<ng-template #updateButton>
 				<vtr-ui-hyperlink-button
-					class="hyperlink-container"
+					class="hyperlink-container update-btn"
 					[metricsParent]="'Snapshot'"
 					[metricsItem]="'Snapshot.UpdateSnapshotModule'"
-					[class]="'update-btn'"
 					linkId="snapshot-update-btn"
 					hyperlinkStyle="xs-blue-lighter"
 					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
@@ -96,7 +95,7 @@
 					</tr>
 
 					<ng-template #recursiveList let-list>
-						<ng-container *ngFor="let values of list; let i = index">
+						<ng-container *ngFor="let values of list; let i = index; let last = last;">
 							<tr *ngFor="let property of values.Properties; let j = index">
 								<th id="snapshot-item-{{ i }}-detail-{{ j }}-property-name" class="table-info-name">
 									{{ 'snapshot.properties.' + property.PropertyName | translateDefault:property.PropertyName }}
@@ -110,11 +109,12 @@
 							<ng-container *ngIf="array.isArray(values.SubDevices) && values.SubDevices.length > 0">
 								<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: values.SubDevices }"></ng-container>
 							</ng-container>
-							<tr class="table-info-separator" aria-hidden="true"></tr>
+							<tr *ngIf="!last" class="table-info-separator" aria-hidden="true"></tr>
 						</ng-container>
 					</ng-template>
 					<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: component.info.Items }"></ng-container>
 				</ng-template>
+				<tr class="table-info-separator" aria-hidden="true"></tr>
 			</tbody>
 		</table>
 	</div>
