@@ -11,8 +11,8 @@
 				metricsEvent="FeatureClick"
 				[disabled]="disableSelectAll"
 				[checked]="isSelectAll"
-				name="'select-all-checkbox'"
-				(change)="onSelectAllChange($event)"/>
+				(click)="onSelectAllClick($event)"
+				(keypress)="onKeyPress($event)"/>
 			<label class="custom-control-label"
 				id="select-all-text"
 				for="select-all-checkbox"

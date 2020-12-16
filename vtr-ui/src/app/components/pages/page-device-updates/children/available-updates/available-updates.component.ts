@@ -40,7 +40,6 @@ export class AvailableUpdatesComponent implements OnInit {
 		return this.mIsInstallationCompleted;
 	}
 
-	@Output() checkChange = new EventEmitter<any>();
 	@Output() ignoreUpdate = new EventEmitter<any>();
 	@Output() installAllUpdate = new EventEmitter<any>();
 	@Output() installSelectedUpdate = new EventEmitter<any>();
@@ -101,15 +100,25 @@ export class AvailableUpdatesComponent implements OnInit {
 		this.installSelectedUpdate.emit(event);
 	}
 
-	public onSelectAllChange($event: any) {
-		const isSelectedAll = $event.target.checked;
-		this.isSelectAll = isSelectedAll;
-		this.systemUpdateService.toggleSelectAllUpdates(isSelectedAll);
+	public onSelectAllClick($event: any) {
+		this.isSelectAll = $event.target.checked;
+		this.systemUpdateService.toggleSelectAllUpdates(this.isSelectAll);
 		this.checkSelectedUpdateStatus();
 	}
 
+	public onKeyPress($event: any) {
+		if ($event.keyCode === 13) {
+			$event.target.click();
+		}
+	}
+
 	public onCheckChange($event: any) {
-		this.checkChange.emit($event);
+		const item = $event.target;
+		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
+		// set the value twice to trigger the ui refresh, Some times the ui get some strange problems
+		document.body.style.zoom = '1.1';
+		document.body.style.zoom = '1.0';
+
 		this.checkSelectedUpdateStatus();
 		this.checkSelectAllStatus();
 	}

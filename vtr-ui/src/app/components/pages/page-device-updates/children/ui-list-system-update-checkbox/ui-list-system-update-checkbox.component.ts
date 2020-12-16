@@ -65,8 +65,14 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {}
 
-	onCheckChange($event: any) {
+	onCheckClick($event: any) {
 		this.checkChange.emit($event);
+	}
+
+	onKeyPress($event: any) {
+		if ($event.keyCode === 13) {
+			$event.target.click();
+		}
 	}
 
 	initSystemUpdateToolTip(update: AvailableUpdateDetail) {

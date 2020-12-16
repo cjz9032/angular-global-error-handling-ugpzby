@@ -15,7 +15,8 @@
 								class="custom-control-input"
 								[checked]="item.isSelected"
 								[name]="item.packageName"
-								(change)="onCheckChange($event)" />
+								(click)="onCheckClick($event)"
+								(keypress)="onKeyPress($event)"/>
 							<label class="custom-control-label "
 								for="{{ 'updateCheckbox_'  + item.packageID }}"
 								id="{{'su_item_' + item.packageID}}" role="text">
