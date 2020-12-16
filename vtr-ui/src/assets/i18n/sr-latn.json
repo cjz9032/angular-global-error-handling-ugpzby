@@ -2198,7 +2198,7 @@
 				"tooltip": "Ova funkcija nije primenjiva na Web video plejere. Popularni lokalni video plejeri kao što su Windows Media Player, 5KPlayer itd. podržavaju ovu funkciju."
 			},
 			"superResolution": {
-				"title": "Poboljšavanje video rezolucije",
+				"title": "Super rezolucija",
 				"desc1": "Ova funkcija poboljšava iskustvo reprodukcije video zapisa poboljšanjem video rezolucije. On radi posebno kada je video u slaboj rezoluciji.",
 				"desc2": "Ova funkcija može da utiče na vek trajanja baterije, temperaturu baterije i na buku ventilatora. Nemojte koristiti u režimu rada na jednosmernu struju (režim baterije). U suprotnom će se baterija brže istrošiti i skratiće se radni vek baterije.",
 				"tooltip": {
@@ -5364,3 +5364,4 @@
 		"feedback": "Ostavite povratne informacije"
 	}
 }
+

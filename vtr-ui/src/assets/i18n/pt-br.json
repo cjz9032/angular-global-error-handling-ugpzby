@@ -933,7 +933,10 @@
 					"summary": "Pense nos atributos que são mais importantes para você ao selecionar um laptop/notebook para uso pessoal.",
 					"question": "Selecione o atributo mais importante.",
 					"question1": {
-						"options": ["Preço", "Nome do fabricante/marca"]
+						"options": [
+							"Preço",
+							"Nome do fabricante/marca"
+						]
 					},
 					"question2": {
 						"options": [
@@ -942,10 +945,16 @@
 						]
 					},
 					"question3": {
-						"options": ["Capacidades gráficas", "Tamanho da tela"]
+						"options": [
+							"Capacidades gráficas",
+							"Tamanho da tela"
+						]
 					},
 					"question4": {
-						"options": ["Tamanho da tela", "Peso"]
+						"options": [
+							"Tamanho da tela",
+							"Peso"
+						]
 					}
 				},
 				"page2": {
@@ -2301,7 +2310,7 @@
 				"tooltip": "Esse recurso não é aplicável a players de vídeo da Web. Os players de vídeo populares, como o Windows Media Player, 5KPlayer, dentre outros, oferecem suporte a esse recurso."
 			},
 			"superResolution": {
-				"title": "Upscaling da resolução de vídeo",
+				"title": "Super-resolução",
 				"desc1": "Esse recurso melhora a resolução do vídeo para aprimorar a experiência de reprodução. Funciona especialmente quando o vídeo tem baixa resolução.",
 				"desc2": "Essa função pode afetar a vida útil da bateria, a temperatura da pele e ruídos no ventilador. Não a use no modo DC (modo de bateria). Caso contrário, ela acelerará o consumo de energia e reduzirá a duração da bateria.",
 				"tooltip": {

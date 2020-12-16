@@ -933,7 +933,10 @@
 					"summary": "Überlegen Sie, welche Attribute Ihnen bei der Auswahl eines Laptop/Notebook-Computers für die private Nutzung besonders wichtig sind.",
 					"question": "Bitte wählen Sie das wichtigere Attribut aus.",
 					"question1": {
-						"options": ["Preis", "Hersteller/Markenname"]
+						"options": [
+							"Preis",
+							"Hersteller/Markenname"
+						]
 					},
 					"question2": {
 						"options": [
@@ -942,10 +945,16 @@
 						]
 					},
 					"question3": {
-						"options": ["Grafikeigenschaften", "Bildschirmgröße"]
+						"options": [
+							"Grafikeigenschaften",
+							"Bildschirmgröße"
+						]
 					},
 					"question4": {
-						"options": ["Bildschirmgröße", "Gewicht"]
+						"options": [
+							"Bildschirmgröße",
+							"Gewicht"
+						]
 					}
 				},
 				"page2": {
@@ -2301,7 +2310,7 @@
 				"tooltip": "Diese Funktion funktioniert nicht bei Web-Videoplayern. Bekannte lokale Videoplayer unterstützen diese Funktion, z. B. Windows Media Player, 5KPlayer etc."
 			},
 			"superResolution": {
-				"title": "Upscaling der Videoauflösung",
+				"title": "Super-Auflösung",
 				"desc1": "Diese Funktion optimiert die Videowiedergabe, indem die Videoauflösung verbessert wird. Sie ist besonders nützlich, wenn das Video eine schlechte Auflösung hat.",
 				"desc2": "Diese Funktion kann die Akkulebensdauer, Oberflächentemperatur und Lüftergeräusche beeinflussen. Verwenden Sie sie nicht im Gleichstrommodus (Akkubetrieb). Andernfalls wird schneller Strom verbraucht und die Lebensdauer des Akkus verkürzt.",
 				"tooltip": {

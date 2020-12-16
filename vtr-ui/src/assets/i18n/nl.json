@@ -2198,7 +2198,7 @@
 				"tooltip": "Deze functie is niet van toepassing op webvideospelers. Populaire lokale videospelers, zoals Windows Media Player, 5KPlayer en dergelijke, ondersteunen deze functie."
 			},
 			"superResolution": {
-				"title": "Schaalverhoging beeldschermresolutie",
+				"title": "Superresolutie",
 				"desc1": "Deze functie verbetert de beleving van het kijken van video's door de beeldschermresolutie te verbeteren. Dit werkt het beste als de video een lage resolutie heeft.",
 				"desc2": "Deze functie kan invloed hebben op de werkingsduur van de batterij, de temperatuur en ventilatorgeluiden. Niet gebruiken in gelijkstroommodus (batterijstroom), anders neemt het stroomverbruik toe en gaat de batterij minder lang mee.",
 				"tooltip": {

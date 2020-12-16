@@ -2198,7 +2198,7 @@
 				"tooltip": "Denne funksjonen støttes ikke av nettvideospillere. Populære lokale videospillere, for eksempel Windows Media Player og 5KPlayer, støtter denne funksjonen."
 			},
 			"superResolution": {
-				"title": "Oppskalering av videooppløsning",
+				"title": "Superoppløsning",
 				"desc1": "Denne funksjonen forbedrer opplevelsen av videoavspilling ved å forbedre videooppløsningen. Den fungerer spesielt når videoen har dårlig oppløsning.",
 				"desc2": "Denne funksjonen kan påvirke batterilevetiden, overflatetemperaturen og forårsake viftestøy. Ikke bruk i likestrømmodus (batterimodus). Ellers vil det øke strømforbruket og forkorte batteriets levetid.",
 				"tooltip": {

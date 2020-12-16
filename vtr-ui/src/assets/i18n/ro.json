@@ -2198,7 +2198,7 @@
 				"tooltip": "Această funcție nu se aplică jucătorilor de jocuri video pe web. Cele mai populare playere video locale, cum ar fi Windows Media Player, 5KPlayer și altele, acceptă această funcție."
 			},
 			"superResolution": {
-				"title": "Mărirea rezoluției video",
+				"title": "Rezoluție superioară",
 				"desc1": "Această caracteristică îmbunătățește experiența de redare video, oferind o rezoluție video mai bună. Funcționează mai ales atunci când videoclipul este la o rezoluție slabă.",
 				"desc2": "Această funcție ar putea afecta durata de viață a bateriei, temperatura superficială și zgomotele ventilatorului. Nu o utilizați în modul de alimentare c.c. (mod baterie). În caz contrar, va accelera consumul de energie și va scurta durata de viață a bateriei.",
 				"tooltip": {

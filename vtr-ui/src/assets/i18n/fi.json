@@ -2198,7 +2198,7 @@
 				"tooltip": "Tämä ominaisuus ei ole käytettävissä verkkovideosoittimissa. Suositut paikalliset videosoittimet (kuten Windows Media Player ja 5KPlayer) tukevat tätä ominaisuutta."
 			},
 			"superResolution": {
-				"title": "Näytön tarkkuuden skaalaus",
+				"title": "Huipputarkkuus",
 				"desc1": "Tämä ominaisuus parantaa videoiden katselukokemusta parantamalla videoiden resoluutiota. Se toimii erityisen hyvin, kun videon resoluutio on alhainen.",
 				"desc2": "Tämä toiminto saattaa vaikuttaa akun käyttöaikaan, ihon lämpötilaan ja tuulettimen ääniin. Älä käytä sitä DC-tilassa (akkuvirralla). Muutoin se nopeuttaa virrankulutusta ja lyhentää akun käyttöikää.",
 				"tooltip": {

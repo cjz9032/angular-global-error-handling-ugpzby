@@ -2198,7 +2198,7 @@
 				"tooltip": "Questa funzione non è applicabile ai lettori video Web. I principali lettori video locali, come Windows Media Player, 5KPlayer e così via supportano questa funzione."
 			},
 			"superResolution": {
-				"title": "Upscaling della risoluzione video",
+				"title": "Super risoluzione",
 				"desc1": "Questa funzione migliora l'esperienza della riproduzione video aumentando la risoluzione video. Funziona soprattutto in caso di scarsa risoluzione video.",
 				"desc2": "Questa funzione potrebbe influire sulla durata della batteria, la temperatura esterna e la rumorosità delle ventole. Non utilizzarla in modalità CC (modalità batteria). altrimenti accelererà il consumo energetico e ridurrà la durata della batteria.",
 				"tooltip": {

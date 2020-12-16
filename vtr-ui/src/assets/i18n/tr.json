@@ -2198,7 +2198,7 @@
 				"tooltip": "Bu özellik, Web üzerindeki video oynatıcılar için geçerli değildir. Windows Media Player ya da 5KPlayer gibi popüler yerel video oynatıcılar bu özelliği destekler."
 			},
 			"superResolution": {
-				"title": "Video çözünürlüğünü yükseltme",
+				"title": "Süper çözünürlük",
 				"desc1": "Bu özellik, video çözünürlüğünü iyileştirerek video oynatma deneyimini geliştirir. Özellikle video düşük çözünürlükte olduğunda çalışır.",
 				"desc2": "Bu işlev pil ömrünü, kaplama sıcaklığını ve fan gürültüsünü etkileyebilir. Lütfen DC kipinde (pil kipi) kullanmayın. Aksi takdirde, güç tüketimini hızlandırır ve pil ömrünü kısaltır.",
 				"tooltip": {

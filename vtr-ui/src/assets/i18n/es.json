@@ -933,7 +933,10 @@
 					"summary": "Piense en los atributos más importantes a la hora de seleccionar un equipo portátil para su uso personal.",
 					"question": "Seleccione el atributo más importante.",
 					"question1": {
-						"options": ["Precio", "Nombre/marca del fabricante"]
+						"options": [
+							"Precio",
+							"Nombre/marca del fabricante"
+						]
 					},
 					"question2": {
 						"options": [
@@ -942,10 +945,16 @@
 						]
 					},
 					"question3": {
-						"options": ["Capacidades gráficas", "Tamaño de la pantalla"]
+						"options": [
+							"Capacidades gráficas",
+							"Tamaño de la pantalla"
+						]
 					},
 					"question4": {
-						"options": ["Tamaño de la pantalla", "Peso"]
+						"options": [
+							"Tamaño de la pantalla",
+							"Peso"
+						]
 					}
 				},
 				"page2": {
@@ -2301,7 +2310,7 @@
 				"tooltip": "Esta característica no se aplica a reproductores de video Web. Los reproductores de video locales más populares, como Windows Media Player, 5KPlayer, etc., admiten esta característica."
 			},
 			"superResolution": {
-				"title": "Escalado de resolución del video",
+				"title": "Super resolución",
 				"desc1": "Esta característica mejora la experiencia de la reproducción de video al mejorar la resolución del video. Funciona especialmente cuando el video tiene una mala resolución.",
 				"desc2": "Esta función puede afectar a la duración de la batería, a la temperatura de la piel y el ruido del ventilador. No lo utilice en la modalidad de CC (modalidad de batería). De lo contrario, se acelerará el consumo de energía y se acortará la vida de la batería.",
 				"tooltip": {

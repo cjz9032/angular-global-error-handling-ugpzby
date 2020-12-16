@@ -2198,7 +2198,7 @@
 				"tooltip": "Ez a funkció nem használható internetes videólejátszókhoz. A népszerű helyi videólejátszók (pl. a Windows Media Player vagy a 5KPlayer) támogatják ezt a funkciót."
 			},
 			"superResolution": {
-				"title": "Videófelbontás megnövelése",
+				"title": "Szuper felbontás",
 				"desc1": "Ez a funkció növeli a videók felbontását, és ezzel élvezetesebbé teszi a videók megtekintését. Különösen akkor hasznos, ha a videó felbontása alacsony.",
 				"desc2": "Ez a funkció befolyásolhatja az akkumulátor élettartamát, a hőmérsékletet, valamint a ventilátor által keltett zajt. Ne használja DC üzemmódban (a rendszer akkumulátorról üzemel). Ellenkező esetben felgyorsítja az energiafogyasztást és lerövidíti az akkumulátor élettartamát.",
 				"tooltip": {

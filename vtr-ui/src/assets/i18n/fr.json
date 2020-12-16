@@ -933,7 +933,10 @@
 					"summary": "Pensez aux attributs qui sont les plus importants pour vous lors de la sélection d'un ordinateur portable/notebook pour un usage personnel.",
 					"question": "Sélectionnez l’attribut le plus important.",
 					"question1": {
-						"options": ["Tarif", "Fabricant/nom de marque"]
+						"options": [
+							"Tarif",
+							"Fabricant/nom de marque"
+						]
 					},
 					"question2": {
 						"options": [
@@ -942,10 +945,16 @@
 						]
 					},
 					"question3": {
-						"options": ["Capacités graphiques", "Taille de l’écran"]
+						"options": [
+							"Capacités graphiques",
+							"Taille de l’écran"
+						]
 					},
 					"question4": {
-						"options": ["Taille de l’écran", "Poids"]
+						"options": [
+							"Taille de l’écran",
+							"Poids"
+						]
 					}
 				},
 				"page2": {
@@ -2301,7 +2310,7 @@
 				"tooltip": "Cette fonction n'est pas applicable aux lecteurs vidéo Web. Les lecteurs vidéo locaux populaires tels que Windows Media Player, 5KPlayer, etc. prennent en charge cette fonction."
 			},
 			"superResolution": {
-				"title": "Mise à l'échelle de la résolution vidéo",
+				"title": "Super résolution",
 				"desc1": "Cette fonction améliore l'expérience de la lecture vidéo en améliorant la résolution de la vidéo. Cela est particulièrement efficace lorsque la vidéo est de faible résolution.",
 				"desc2": "Cette fonction peut influencer la durée de vie de la batterie, la température de la peau et les sons de ventilateur. Veillez à ne pas l'utiliser en mode courant continu (mode batterie). Sinon, cela accélérera la consommation d'énergie et réduira la durée de vie de la batterie.",
 				"tooltip": {

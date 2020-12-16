@@ -2198,7 +2198,7 @@
 				"tooltip": "Ta funkcja nie dotyczy odtwarzaczy wideo w sieci Web. Popularne lokalne odtwarzacze wideo, takie jak program Windows Media Player, 5KPlayer itd., obsługują tę funkcję."
 			},
 			"superResolution": {
-				"title": "Skalowanie rozdzielczości wideo",
+				"title": "Doskonała rozdzielczość",
 				"desc1": "Ta funkcja poprawia rozdzielczość odtwarzania filmów, a tym samym zapewnia lepsze wrażenia z ich oglądania. Jej skuteczność jest największa w przypadku materiałów wideo o niskiej rozdzielczości.",
 				"desc2": "Ta funkcja może wpływać na czas pracy akumulatora, temperaturę powierzchni i poziom hałasu wentylatora. Nie należy używać jej w trybie prądu stałego (tryb akumulatora). Może to przyspieszyć zużycie energii i skrócić żywotność akumulatora.",
 				"tooltip": {
