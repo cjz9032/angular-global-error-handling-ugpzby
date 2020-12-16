@@ -35,14 +35,17 @@
 	<div class="capacity-text">
 		<p class="capacity-text-bottom" id="battery-health-capacity-fullChargeCapacity" role="text">
 			{{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.fullChargeCapacity' | translate }}
-			<span *ngIf="fullChargeCapacity !== undefined; else yellowExclamation">{{ fullChargeCapacity + " Wh" }}</span>
+			<span *ngIf="fullChargeCapacity !== undefined; else fullChargeYellowExclamation">{{ fullChargeCapacity + " Wh" }}</span>
 		</p>
 		<p class="capacity-text-bottom" id="battery-health-capacity-originalDesignCapacity" role="text">
 			{{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.originalDesignCapacity' | translate }}
-			<span *ngIf="originalDesignCapacity !== undefined;else yellowExclamation">{{ originalDesignCapacity + " Wh" }}</span>
+			<span *ngIf="originalDesignCapacity !== undefined;else designYellowExclamation">{{ originalDesignCapacity + " Wh" }}</span>
 		</p>
-		<ng-template #yellowExclamation>
-			<vtr-ui-exclamation-point [attr.aria-label]="'capacity data is not available'" role="img"></vtr-ui-exclamation-point>
+		<ng-template #fullChargeYellowExclamation>
+			<vtr-ui-exclamation-point [attr.aria-label]="'full charge capacity data is not available'" id="battery-health-full-charge-capacity-exclamation" role="img"></vtr-ui-exclamation-point>
+		</ng-template>
+		<ng-template #designYellowExclamation>
+			<vtr-ui-exclamation-point [attr.aria-label]="'design capacity data is not available'" id="battery-health-design-capacity-exclamation" role="img"></vtr-ui-exclamation-point>
 		</ng-template>
 	</div>
 </div>
