@@ -5,7 +5,7 @@
 @import '../a11y';
 
 .rank-star-container {
-	margin-left: 24px;
+	margin-left: 16px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	padding-right: 5px;
@@ -13,8 +13,8 @@
 
 .rank-star {
 	margin-right: 10px;
-	width: 22px;
-	height: 21px;
+	width: 20px;
+	height: 20px;
 	margin-top: 10px;
 }
 .rank-star-filled {
@@ -80,7 +80,7 @@ section .exclamation {
 	min-width: 173px;
 }
 .col-desc {
-	padding-right: 3px;
+	margin-right: 16px;
 }
 .alert-icon {
 	margin-left: 10px;
@@ -95,8 +95,8 @@ section .exclamation {
 ::ng-deep .col-desc svg {
 	margin-left: 10px;
 	margin-top: -5px;
-	width: 26px;
-	height: 26px;
+	width: 20px;
+	height: 20px;
 	stroke: #f7c809;
 	@media #{$black-on-white} {
 		stroke: #000000;

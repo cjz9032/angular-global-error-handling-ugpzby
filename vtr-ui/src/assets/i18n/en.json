@@ -1607,7 +1607,7 @@
 						"batteryLifeSpan": {
 							"lifeSpan": "Predicted lifespan: ",
 							"months": "months",
-							"title": "Battery health status: "
+							"title": "Battery health status:"
 						},
 						"batteryCapacity": {
 							"title": "Battery capacity",

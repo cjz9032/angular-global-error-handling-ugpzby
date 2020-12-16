@@ -60,8 +60,8 @@
 	font-family: $font_family_semilight;
 }
 ::ng-deep .indicator-text svg {
-	width: 26px;
-	height: 26px;
+	width: 20px;
+	height: 20px;
 	stroke: #f7c809;
 	@include high-contrast('white-on-black') {
 		stroke: #ffffff;
