@@ -17,6 +17,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { ColorWheelStatus } from 'src/app/enums/color-wheel-status.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import { LightingDataList } from './../../../data-models/gaming/lighting-new-version/lighting-data-list';
 
 @Component({
 	selector: 'vtr-ui-lighting-profile',
@@ -65,258 +66,95 @@ export class UiLightingProfileComponent implements OnInit {
 	public lightEffectRGBOptionNameSide: string;
 	public simpleOrComplex: number;
 	public showHideDescription = false;
-	public lightingEffectData = {
-		drop: [
-			{
-				curSelected: 1,
-				modeType: 1,
-				dropOptions: [
-					{
-						header: 'gaming.lightingProfile.effect.option8.title',
-						name: 'gaming.lightingProfile.effect.option8.title',
-						id: 'lighting_front_effect_off',
-						label: 'gaming.lightingProfile.lightingeffectnarrator.option8.title',
-						metricitem: 'lighting_front_effect_off',
-						value: 268435456,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option1.title',
-						name: 'gaming.lightingProfile.effect.option1.title',
-						id: 'lighting_front_effect_on',
-						label: 'gaming.lightingProfile.lightingeffectnarrator.option1.title',
-						metricitem: 'lighting_front_effect_on',
-						value: 1,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option2.title',
-						name: 'gaming.lightingProfile.effect.option2.title',
-						id: 'lighting_front_effect_flicker',
-						label: 'gaming.lightingProfile.lightingeffectnarrator.option2.title',
-						metricitem: 'lighting_front_effect_flicker',
-						value: 2,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option3.title',
-						name: 'gaming.lightingProfile.effect.option3.title',
-						id: 'lighting_front_effect_breath',
-						label: 'gaming.lightingProfile.lightingeffectnarrator.option3.title',
-						metricitem: 'lighting_front_effect_breath',
-						value: 4,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option4.title',
-						name: 'gaming.lightingProfile.effect.option4.title',
-						id: 'lighting_front_effect_wave',
-						label: 'gaming.lightingProfile.lightingeffectnarrator.option4.title',
-						metricitem: 'lighting_front_effect_wave',
-						value: 8,
-					},
-					// {
-					// 	header: 'gaming.lightingProfile.effect.option5.title',
-					// 	name: 'gaming.lightingProfile.effect.option5.title',
-					// 	value: 16
-					// },
-					{
-						header: 'gaming.lightingProfile.effect.option5.title',
-						name: 'gaming.lightingProfile.effect.option5.title',
-						id: 'lighting_front_effect_smooth',
-						label: 'gaming.lightingProfile.lightingeffectnarrator.option5.title',
-						metricitem: 'lighting_front_effect_smooth',
-						value: 32,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option6.title',
-						name: 'gaming.lightingProfile.effect.option6.title',
-						id: 'lighting_front_effect_cpu_temperature',
-						label: 'gaming.lightingProfile.lightingeffectnarrator.option6.title',
-						metricitem: 'lighting_front_effect_cpu_temperature',
-						value: 64,
-						show_tool_tip: true,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option7.title',
-						name: 'gaming.lightingProfile.effect.option7.title',
-						id: 'lighting_front_effect_cpu_utilization',
-						label: 'gaming.lightingProfile.lightingeffectnarrator.option7.title',
-						metricitem: 'lighting_front_effect_cpu_utilization',
-						value: 128,
-						show_tool_tip: true,
-					},
-				],
-			},
-			{
-				curSelected: 2,
-				modeType: 1,
-				dropOptions: [
-					{
-						header: 'gaming.lightingProfile.effect.option8.title',
-						name: 'gaming.lightingProfile.effect.option8.title',
-						id: 'lighting_side_effect_off',
-						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option8.title',
-						metricitem: 'lighting_side_effect_off',
-						value: 268435456,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option1.title',
-						name: 'gaming.lightingProfile.effect.option1.title',
-						id: 'lighting_side_effect_on',
-						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option1.title',
-						metricitem: 'lighting_side_effect_on',
-						value: 1,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option2.title',
-						name: 'gaming.lightingProfile.effect.option2.title',
-						id: 'lighting_side_effect_flicker',
-						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option2.title',
-						metricitem: 'lighting_side_effect_flicker',
-						value: 2,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option3.title',
-						name: 'gaming.lightingProfile.effect.option3.title',
-						id: 'lighting_side_effect_breath',
-						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option3.title',
-						metricitem: 'lighting_side_effect_breath',
-						value: 4,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option4.title',
-						name: 'gaming.lightingProfile.effect.option4.title',
-						id: 'lighting_side_effect_wave',
-						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option4.title',
-						metricitem: 'lighting_side_effect_wave',
-						value: 8,
-					},
-					// {
-					// 	header: 'gaming.lightingProfile.effect.option5.title',
-					// 	name: 'gaming.lightingProfile.effect.option5.title',
-					// 	value: 16
-					// },
-					{
-						header: 'gaming.lightingProfile.effect.option5.title',
-						name: 'gaming.lightingProfile.effect.option5.title',
-						id: 'lighting_side_effect_smooth',
-						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option5.title',
-						metricitem: 'lighting_side_effect_smooth',
-						value: 32,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option6.title',
-						name: 'gaming.lightingProfile.effect.option6.title',
-						id: 'lighting_side_effect_cpu_temperature',
-						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option6.title',
-						metricitem: 'lighting_side_effect_cpu_temperature',
-						value: 64,
-						show_tool_tip: true,
-					},
-					{
-						header: 'gaming.lightingProfile.effect.option7.title',
-						name: 'gaming.lightingProfile.effect.option7.title',
-						id: 'lighting_side_effect_cpu_utilization',
-						label: 'gaming.lightingProfile.lightingeffectsidenarrator.option7.title',
-						metricitem: 'lighting_side_effect_cpu_utilization',
-						value: 128,
-						show_tool_tip: true,
-					},
-				],
-			},
-		],
-		btnOpt: [
-			{
-				apply: 'gaming.lightingProfile.effect.apply.title ',
-				applied: 'gaming.lightingProfile.effect.applied.title ',
-			},
-		],
-	};
+	public lightingEffectData = new LightingDataList().lightingEffectData;
 
 	public panelImageData = [
 		{
-			PanelType: 1,
-			RGB: 1,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 1,
+			colorRGB: 1,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'C530@2x.webp'
 				: 'C530@2x.png',
 		},
 		{
-			PanelType: 2,
-			RGB: 255,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 2,
+			colorRGB: 255,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'T730Front@2x.webp'
 				: 'T730Front@2x.png',
 		},
 		{
-			PanelType: 2,
-			RGB: 1,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 2,
+			colorRGB: 1,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'T530@2x.webp'
 				: 'T530@2x.png',
 		},
 		{
-			PanelType: 4,
-			RGB: 255,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 4,
+			colorRGB: 255,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'renRGBFront@2x.webp'
 				: 'renRGBFront@2x.png',
 		},
 		{
-			PanelType: 4,
-			RGB: 1,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 4,
+			colorRGB: 1,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'renFront@2x.webp'
 				: 'renFront@2x.png',
 		},
 		{
-			PanelType: 8,
-			RGB: 255,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 8,
+			colorRGB: 255,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'T730Side@2x.webp'
 				: 'T730Side@2x.png',
 		},
 		{
-			PanelType: 16,
-			RGB: 255,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 16,
+			colorRGB: 255,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'T730Side@2x.webp'
 				: 'T730Side@2x.png',
 		},
 		{
-			PanelType: 32,
-			RGB: 255,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 32,
+			colorRGB: 255,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'C730Left@2x.webp'
 				: 'C730Left@2x.png',
 		},
 		{
-			PanelType: 64,
-			RGB: 255,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 64,
+			colorRGB: 255,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'C730Right@2x.webp'
 				: 'C730Right@2x.png',
 		},
 		{
-			PanelType: 128,
-			RGB: 1,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4() ? 'ren@2x.webp' : 'ren@2x.png',
+			panelType: 128,
+			colorRGB: 1,
+			panelImage: this.windowsVerisonService.isNewerThanRS4() ? 'ren@2x.webp' : 'ren@2x.png',
 		},
 		{
-			PanelType: 256,
-			RGB: 1,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 256,
+			colorRGB: 1,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'T530Perspective@2x.webp'
 				: 'T530Perspective@2x.png',
 		},
 		{
-			PanelType: 32,
-			RGB: 1,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 32,
+			colorRGB: 1,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'C530Left@2x.webp'
 				: 'C530Left@2x.png',
 		},
 		{
-			PanelType: 64,
-			RGB: 1,
-			PanelImage: this.windowsVerisonService.isNewerThanRS4()
+			panelType: 64,
+			colorRGB: 1,
+			panelImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'C530Right@2x.webp'
 				: 'C530Right@2x.png',
 		},
@@ -325,22 +163,22 @@ export class UiLightingProfileComponent implements OnInit {
 		new Options(
 			1,
 			'gaming.lightingProfile.lightingSingleLightingOption.option1.title',
-			"'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option1.title'"
+			'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option1.title'
 		),
 		new Options(
 			2,
 			'gaming.lightingProfile.lightingSingleLightingOption.option2.title',
-			"'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option2.title'"
+			'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option2.title'
 		),
 		new Options(
 			3,
 			'gaming.lightingProfile.lightingSingleLightingOption.option3.title',
-			"'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option3.title'"
+			'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option3.title'
 		),
 		new Options(
 			4,
 			'gaming.lightingProfile.lightingSingleLightingOption.option4.title',
-			"'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option4.title'"
+			'gaming.lightingProfile.lightingSingleLightingOptionnarrator.option4.title'
 		),
 	];
 
@@ -362,8 +200,7 @@ export class UiLightingProfileComponent implements OnInit {
 		});
 		this.isProfileOff = false;
 		if (LocalStorageKey.LightingCapabilities !== undefined) {
-			let response: any;
-			response = this.localCacheService.getLocalCacheValue(
+			const response = this.localCacheService.getLocalCacheValue(
 				LocalStorageKey.LightingCapabilities
 			);
 			if (response !== undefined) {
@@ -445,20 +282,18 @@ export class UiLightingProfileComponent implements OnInit {
 				const ledRGB = this.lightingCapabilities.RGBfeature;
 				if (this.lightingCapabilities.LightPanelType.length > 0) {
 					const ledPanel = this.lightingCapabilities.LightPanelType[0];
-					const resultImg = this.panelImageData.filter(function (v, i) {
-						return v.PanelType === ledPanel && v.RGB === ledRGB;
-					});
+					const resultImg = this.panelImageData.filter(
+						(v) => v.panelType === ledPanel && v.colorRGB === ledRGB);
 					if (resultImg.length > 0) {
-						this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
+						this.panelImage1 = this.imagePath + '/' + resultImg[0].panelImage;
 					}
 
 					if (this.lightingCapabilities.LightPanelType.length > 1) {
 						const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
-						const resultImg2 = this.panelImageData.filter(function (v, i) {
-							return v.PanelType === ledPanel2 && v.RGB === ledRGB;
-						});
+						const resultImg2 = this.panelImageData.filter(
+							(v) => v.panelType === ledPanel2 && v.colorRGB === ledRGB);
 						if (resultImg2.length > 0) {
-							this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
+							this.panelImage2 = this.imagePath + '/' + resultImg2[0].panelImage;
 						}
 					}
 				}
@@ -613,20 +448,18 @@ export class UiLightingProfileComponent implements OnInit {
 				const ledRGB = this.lightingCapabilities.RGBfeature;
 				if (this.lightingCapabilities.LightPanelType.length > 0) {
 					const ledPanel = this.lightingCapabilities.LightPanelType[0];
-					const resultImg = this.panelImageData.filter(function (v, i) {
-						return v.PanelType === ledPanel && v.RGB === ledRGB;
-					});
+					const resultImg = this.panelImageData.filter(
+						(v) => v.panelType === ledPanel && v.colorRGB === ledRGB);
 					if (resultImg.length > 0) {
-						this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
+						this.panelImage1 = this.imagePath + '/' + resultImg[0].panelImage;
 					}
 
 					if (this.lightingCapabilities.LightPanelType.length > 1) {
 						const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
-						const resultImg2 = this.panelImageData.filter(function (v, i) {
-							return v.PanelType === ledPanel2 && v.RGB === ledRGB;
-						});
+						const resultImg2 = this.panelImageData.filter(
+							(v) => v.panelType === ledPanel2 && v.colorRGB === ledRGB);
 						if (resultImg2.length > 0) {
-							this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
+							this.panelImage2 = this.imagePath + '/' + resultImg2[0].panelImage;
 						}
 					}
 				}
@@ -686,19 +519,17 @@ export class UiLightingProfileComponent implements OnInit {
 					const ledRGB = this.lightingCapabilities.RGBfeature;
 					if (this.lightingCapabilities.LightPanelType.length > 0) {
 						const ledPanel = this.lightingCapabilities.LightPanelType[0];
-						const resultImg = this.panelImageData.filter(function (v, i) {
-							return v.PanelType === ledPanel && v.RGB === ledRGB;
-						});
+						const resultImg = this.panelImageData.filter(
+							(v) => v.panelType === ledPanel && v.colorRGB === ledRGB);
 						if (resultImg.length > 0) {
-							this.panelImage1 = this.imagePath + '/' + resultImg[0].PanelImage;
+							this.panelImage1 = this.imagePath + '/' + resultImg[0].panelImage;
 						}
 						if (this.lightingCapabilities.LightPanelType.length > 1) {
 							const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
-							const resultImg2 = this.panelImageData.filter(function (v, i) {
-								return v.PanelType === ledPanel2 && v.RGB === ledRGB;
-							});
+							const resultImg2 = this.panelImageData.filter(
+								(v) => v.panelType === ledPanel2 && v.colorRGB === ledRGB);
 							if (resultImg2.length > 0) {
-								this.panelImage2 = this.imagePath + '/' + resultImg2[0].PanelImage;
+								this.panelImage2 = this.imagePath + '/' + resultImg2[0].panelImage;
 							}
 						}
 					}
@@ -820,7 +651,7 @@ export class UiLightingProfileComponent implements OnInit {
 						if (response.lightInfo.length > 0) {
 							if (
 								this.lightingCapabilities.LedType_Complex.length > 0 &&
-								this.simpleOrComplex == this.enumLightEffectSingleOrComplex.Complex
+								this.simpleOrComplex === this.enumLightEffectSingleOrComplex.Complex
 							) {
 								this.frontSelectedValue = response.lightInfo[0].lightEffectType;
 								this.lightingEffectData.drop[0].curSelected =
@@ -1548,8 +1379,7 @@ export class UiLightingProfileComponent implements OnInit {
 
 	public getLightEffectOptionName(optionValue: any) {
 		const result = this.lightingEffectData.drop[0].dropOptions.filter(
-			(obj) => obj.value === optionValue
-		);
+			(obj) => obj.value === optionValue);
 		return result;
 	}
 

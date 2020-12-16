@@ -87,5 +87,36 @@ export const GAMING_DATA = {
 		MemoryBrightLevel: 4,
 		MemoryPanelType: [40961, 40962, 40963, 40964],
 		MemoryUnifySetList: [0],
-	},
+    },
+    singleColorResponse: {
+        LightPanelType: [1],
+        LedType_Complex: [0],
+        LedType_simple: [1, 2, 3, 4],
+        BrightAdjustLevel: 0,
+        RGBfeature: 1,
+    },
+    multipleColorResponse: {
+        LightPanelType: [32, 64],
+        LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
+        LedType_simple: [0],
+        BrightAdjustLevel: 4,
+        RGBfeature: 255,
+    },
+    lightEffectComplexTypeMock: {
+        Static: 1, // Same as On
+        Flicker: 2,
+        Breath: 4,
+        Wave: 8,
+        Music: 16,
+        Smooth: 32, ///change spectrum to smooth
+        CPU_thermal: 64,
+        CPU_frequency: 128,
+        Response: 256,
+        Ripple: 512,
+        Off: 268435456, ///same Off
+    },
+    panelImageData: [
+        { panelType: 1, colorRGB: 1, panelImage: 'C530@2x.png' },
+        { panelType: 4, colorRGB: 1, panelImage: 'T730Front@2x.png' },
+    ]
 };

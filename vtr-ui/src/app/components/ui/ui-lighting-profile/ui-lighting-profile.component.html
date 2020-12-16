@@ -41,7 +41,7 @@
 							[effectOptionName]="lightEffectRGBOptionName"
 							[ariaLabel]="'gaming.lightingProfile.lightingeffectnarrator.lightingEffect.title' | translate"
 							[enableBrightCondition1] = "enableBrightCondition" [selectedValue]="frontSelectedValue"
-							[showDescription]="showHideDescription" (change)="optionChangedRGBTop($event, null)"
+							[showDescription]="showHideDescription" (changeEffect)="optionChangedRGBTop($event, null)"
 							[tabindex]="0" [automationId]="'gaming_lighting_profile_effect_front'">
 						</vtr-ui-lighting-effect>
 
@@ -75,7 +75,7 @@
 						[enableBrightCondition1] = "enableBrightConditionside" [selectedValue]="sideSelectedValue"
 						[ariaLabel]="'gaming.lightingProfile.lightingeffectnarrator.lightingEffect.title' | translate"
 						[showDescription]="showHideDescription" [effectOptionName]="lightEffectRGBOptionNameSide"
-						(change)="optionChangedRGBSide($event,null)" [tabindex]="0"
+						(changeEffect)="optionChangedRGBSide($event,null)" [tabindex]="0"
 						[automationId]="'gaming_lighting_profile_effect_side'">
 					</vtr-ui-lighting-effect>
 

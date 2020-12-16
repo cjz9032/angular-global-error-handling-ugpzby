@@ -141,6 +141,14 @@ describe('UiColorPickerComponent', () => {
 		component.isFirstTrigger = true;
 		component.cpSliderDragEndFun({});
 		expect(component.isSliderOut).toEqual(true);
+
+		component.clickEvent = {target: ''};
+		component.cpSliderDragEndFun(event);
+		expect(component.isFirstTrigger).toBe(false);
+
+		component.isFirstTrigger = false;
+		component.cpSliderDragEndFun(event);
+		expect(component.isSliderOut).toBe(true);
 	});
 
 	it('should change some message when page change', () => {

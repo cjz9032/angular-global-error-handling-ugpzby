@@ -16,6 +16,7 @@ describe('UiBrightnessSliderComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UiBrightnessSliderComponent);
 		component = fixture.componentInstance;
+		component.stepsArray = [];
 		fixture.detectChanges();
 	});
 
@@ -24,16 +25,16 @@ describe('UiBrightnessSliderComponent', () => {
 	});
 
 	it('should check dragEnd when event false', () => {
-		spyOn(component.onSliderChanged, 'emit').and.callThrough();
-		component.onSliderChanged.subscribe((res: any) => {
+		spyOn(component.sliderChanged, 'emit').and.callThrough();
+		component.sliderChanged.subscribe((res: any) => {
 			expect(res).toBe(false);
 		});
 		component.dragEnd({ value: false });
 	});
 
 	it('should check dragEnd when event true', () => {
-		spyOn(component.onSliderChanged, 'emit').and.callThrough();
-		component.onSliderChanged.subscribe((res: any) => {
+		spyOn(component.sliderChanged, 'emit').and.callThrough();
+		component.sliderChanged.subscribe((res: any) => {
 			expect(res).toBe(true);
 		});
 		component.dragEnd({ value: true });
@@ -41,6 +42,9 @@ describe('UiBrightnessSliderComponent', () => {
 
 	it('call onFocusSlider when tab focus', fakeAsync(() => {
 		spyOn(component, 'onFocusSlider').and.callThrough();
+		component.onFocusSlider({ which: 10 });
+		expect(component.onFocusSlider).toHaveBeenCalled();
+
 		component.onFocusSlider({ which: 9 });
 		expect(component.onFocusSlider).toHaveBeenCalled();
 	}));

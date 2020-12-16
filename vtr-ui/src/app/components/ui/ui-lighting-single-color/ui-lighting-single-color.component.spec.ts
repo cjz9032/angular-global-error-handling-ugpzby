@@ -50,5 +50,11 @@ describe('UiLightingSingleColorComponent', () => {
 	it('should update the selectedoption based on the input changes', () => {
 		component.ngOnChanges({ selectedOptionId: { previousValue: 2, currentValue: 1 } });
 		expect(component.selectedOptionId).toBe(1);
+
+		component.ngOnChanges({ selectedOptionId: { previousValue: 1, currentValue: 1 } });
+		expect(component.selectedOptionId).toBe(1);
+
+		component.ngOnChanges({ selectedOptionId: undefined});
+		expect(component.selectedOptionId).toBe(1);
 	});
 });

@@ -84,5 +84,30 @@ describe('UiColorWheelComponent', () => {
 			btnStatus: { previousValue: 'show', currentValue: 'hide' },
 		});
 		expect(component.inHEX).toBe('#ffff');
+
+		component.ngOnChanges({
+			inHEX: undefined,
+			btnStatus: { previousValue: 'show', currentValue: 'hide' },
+		});
+		expect(component.inHEX).toBe('#ffff');
+
+		component.ngOnChanges({
+			inHEX: { previousValue: '#ffff', currentValue: '#ffff' },
+			btnStatus: { previousValue: 'show', currentValue: 'hide' },
+		});
+		expect(component.inHEX).toBe('#ffff');
+
+		component.colorWheel = undefined;
+		component.ngOnChanges({
+			inHEX: { previousValue: '#fff', currentValue: '#ffff' },
+			btnStatus: undefined,
+		});
+		expect(component.inHEX).toBe('#ffff');
+
+		component.ngOnChanges({
+			inHEX: { previousValue: '#fff', currentValue: '#ffff' },
+			btnStatus:  { previousValue: 'show', currentValue: 'show' }
+		});
+		expect(component.inHEX).toBe('#ffff');
 	});
 });

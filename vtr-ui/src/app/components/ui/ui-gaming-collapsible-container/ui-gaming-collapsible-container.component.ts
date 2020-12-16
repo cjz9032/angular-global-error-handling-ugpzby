@@ -8,15 +8,13 @@ import {
 	OnChanges,
 	SimpleChanges,
 	ViewChild,
+	HostListener
 } from '@angular/core';
 
 @Component({
 	selector: 'vtr-ui-gaming-collapsible-container',
 	templateUrl: './ui-gaming-collapsible-container.component.html',
 	styleUrls: ['./ui-gaming-collapsible-container.component.scss'],
-	host: {
-		'(document:click)': 'generalClick($event)',
-	},
 })
 export class UiGamingCollapsibleContainerComponent implements OnInit {
 	@ViewChild('focusDropdown', { static: false }) focusDropdown: ElementRef;
@@ -24,7 +22,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	dropdownEle: ElementRef;
 	@Input() public options;
 	@Input() ariaLabel: any;
-	@Output() public change = new EventEmitter<any>();
+	@Output() public changeSelect = new EventEmitter<any>();
 	@Output() showDropDown = new EventEmitter();
 	public showOptions = false;
 	public buttonName: any = 'Show';
@@ -42,6 +40,17 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 				.addEventListener('click', (event) => {
 					this.generalClick(event);
 				});
+		}
+	}
+
+	@HostListener('document:click', ['$event'])
+	public generalClick(event: Event) {
+		if (this.elementRef.nativeElement) {
+			if (!this.elementRef.nativeElement.contains(event.target)) {
+				if (this.showOptions) {
+					this.showOptions = false;
+				}
+			}
 		}
 	}
 
@@ -82,7 +91,7 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 		this.selectedDescription = option.description;
 		this.currentDescription = this.selectedDescription;
 		this.showOptions = false;
-		this.change.emit(option);
+		this.changeSelect.emit(option);
 		this.focusElement();
 	}
 
@@ -95,16 +104,6 @@ export class UiGamingCollapsibleContainerComponent implements OnInit {
 	public resetDescription(option) {
 		if (this.options.curSelected === option.value) {
 			this.currentDescription = option.description;
-		}
-	}
-
-	public generalClick(event: Event) {
-		if (this.elementRef.nativeElement) {
-			if (!this.elementRef.nativeElement.contains(event.target)) {
-				if (this.showOptions) {
-					this.showOptions = false;
-				}
-			}
 		}
 	}
 

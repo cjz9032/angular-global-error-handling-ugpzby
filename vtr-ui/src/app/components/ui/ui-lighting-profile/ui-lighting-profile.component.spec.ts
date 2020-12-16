@@ -10,6 +10,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LocalCacheService } from './../../../services/local-cache/local-cache.service';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 const gamingLightingServiceMock = jasmine.createSpyObj('GamingLightingService', [
 	'getLightingProfileById',
@@ -26,20 +27,6 @@ const deviceServiceMock = jasmine.createSpyObj('DeviceService', [
 	'isShellAvailable',
 	'getMachineInfo',
 ]);
-let singleColorResponse = {
-	LightPanelType: [1],
-	LedType_Complex: [0],
-	LedType_simple: [1, 2, 3, 4],
-	BrightAdjustLevel: 0,
-	RGBfeature: 1,
-};
-let multipleColorResponse = {
-	LightPanelType: [32, 64],
-	LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
-	LedType_simple: [0],
-	BrightAdjustLevel: 4,
-	RGBfeature: 255,
-};
 let getLightingProfileById: any = {
 	didSuccess: true,
 	profileId: 2,
@@ -49,19 +36,15 @@ let getLightingProfileById: any = {
 		{ lightPanelType: 64, lightEffectType: 2, lightColor: '4A9325' },
 	],
 };
-const lightingResp = {
-	LightPanelType: [32, 64],
-	LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
-	LedType_simple: [0],
-	BrightAdjustLevel: 4,
-	RGBfeature: 255,
-};
 const gamingAllCapabilitiesService = jasmine.createSpyObj('GamingAllCapabilitiesService', [
 	'getCapabilityFromCache',
 ]);
+let singleColorResponse = JSON.parse(JSON.stringify(GAMING_DATA.singleColorResponse));
+const multipleColorResponse = JSON.parse(JSON.stringify(GAMING_DATA.multipleColorResponse));
+const lightEffectComplexTypeMock = JSON.parse(JSON.stringify(GAMING_DATA.lightEffectComplexTypeMock));
 
-let localcacheServiceMock = {
-	getLocalCacheValue(key: any) {
+const localcacheServiceMock = {
+	getLocalCacheValue: (key: any) => {
 		switch (key) {
 			case '[LocalStorageKey] LightingCapabilities':
 				return singleColorResponse;
@@ -71,7 +54,7 @@ let localcacheServiceMock = {
 				return getLightingProfileById;
 		}
 	},
-	setLocalCacheValue(key: any, value: any) {
+	setLocalCacheValue: (key: any, value: any) => {
 		switch (key) {
 			case '[LocalStorageKey] LightingCapabilities':
 				singleColorResponse = value;
@@ -85,23 +68,6 @@ let localcacheServiceMock = {
 		}
 	},
 };
-let LightEffectComplexTypeMock = {
-	Static: 1, // Same as On
-	Flicker: 2,
-	Breath: 4,
-	Wave: 8,
-	Music: 16,
-	Smooth: 32, ///change spectrum to smooth
-	CPU_thermal: 64,
-	CPU_frequency: 128,
-	Response: 256,
-	Ripple: 512,
-	Off: 268435456, ///same Off
-};
-let panelImageData = [
-	{ PanelType: 1, RGB: 1, PanelImage: 'C530@2x.png' },
-	{ PanelType: 4, RGB: 1, PanelImage: 'T730Front@2x.png' },
-];
 
 describe('UiLightingProfileComponent', () => {
 	let component: UiLightingProfileComponent;
@@ -114,7 +80,7 @@ describe('UiLightingProfileComponent', () => {
 	deviceServiceMock.getMachineInfo.and.returnValue(Promise.resolve({ disSuccess: true }));
 	beforeEach(fakeAsync(() => {
 		TestBed.configureTestingModule({
-			declarations: [UiLightingProfileComponent, mockPipe({ name: 'translate' })],
+			declarations: [UiLightingProfileComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
 			schemas: [NO_ERRORS_SCHEMA],
 			providers: [
 				{ provide: HttpClient },
@@ -130,13 +96,13 @@ describe('UiLightingProfileComponent', () => {
 				{ provide: DeviceService, useValue: deviceServiceMock },
 				{ provide: GamingLightingService, useValue: gamingLightingServiceMock },
 				{ provide: LocalCacheService, useValue: localcacheServiceMock },
-				{ provide: LightEffectComplexType, useValue: LightEffectComplexTypeMock },
+				{ provide: LightEffectComplexType, useValue: lightEffectComplexTypeMock },
 			],
 		}).compileComponents();
 		fixture = TestBed.createComponent(UiLightingProfileComponent);
 		component = fixture.debugElement.componentInstance;
 		if (!component.lightingCapabilities) {
-			component.lightingCapabilities = { RGBfeature: false };
+			component.lightingCapabilities = JSON.parse('{"RGBfeature": false }');
 		}
 	}));
 
@@ -146,7 +112,7 @@ describe('UiLightingProfileComponent', () => {
 
 	it('get cache lighting profileById when enter lighting subpage', fakeAsync(() => {
 		component.lightingCapabilities = multipleColorResponse;
-		component.enumLightingRGBFeature = { Simple: 255, Complex: 2 };
+		component.enumLightingRGBFeature = JSON.parse('{"Simple": 255, "Complex": 2 }');
 		getLightingProfileById.lightInfo[0].lightEffectType = 2;
 		getLightingProfileById.lightInfo[1].lightEffectType = 2;
 		component.getLightingProfileByIdFromcache(getLightingProfileById);
@@ -183,15 +149,15 @@ describe('UiLightingProfileComponent', () => {
 		expect(component.showBrightnessSlider).toEqual(false);
 		tick(30);
 		singleColorResponse.BrightAdjustLevel = 1;
-		component.enumLightEffectSingleOrComplex = { Simple: 1, Complex: 1 };
+		component.enumLightEffectSingleOrComplex = JSON.parse('{"Simple": 1, "Complex": 1 }');
 		singleColorResponse.LightPanelType = [1, 4];
 		singleColorResponse.LedType_simple = [1, 2, 4, 8];
-		component.panelImageData = panelImageData;
+		component.panelImageData = GAMING_DATA.panelImageData;
 		component.updateGetGamingLightingCapabilities(singleColorResponse);
 		expect(component.showBrightnessSlider).toEqual(true);
 		tick(30);
-		component.enumLightEffectSingleOrComplex = { Simple: 1, Complex: 1 };
-		component.enumLightingRGBFeature = { Simple: 1, Complex: 1 };
+		component.enumLightEffectSingleOrComplex = JSON.parse('{"Simple": 1, "Complex": 1 }');
+		component.enumLightingRGBFeature = JSON.parse('{"Simple": 1, "Complex": 1 }');
 		singleColorResponse.RGBfeature = 1;
 		localcacheServiceMock.setLocalCacheValue(
 			'[LocalStorageKey] LightingCapabilities',
@@ -215,7 +181,7 @@ describe('UiLightingProfileComponent', () => {
 		expect(component.isProfileOff).toEqual(true);
 	});
 
-	it("Profile shouldn't be off", () => {
+	it('Profile shouldn\'t be off', () => {
 		component.currentProfileId = 1;
 		fixture.detectChanges();
 		component.ngOnInit();
@@ -316,7 +282,7 @@ describe('UiLightingProfileComponent', () => {
 	it('get cache lighting capabilities when enter lighting subpage', () => {
 		component.getCacheLightingCapabilities(multipleColorResponse);
 		expect(component.showBrightnessSlider).toEqual(true);
-		component.enumLightEffectSingleOrComplex = { Simple: 2, Complex: 2 };
+		component.enumLightEffectSingleOrComplex = JSON.parse('{"Simple": 2, "Complex": 2 }');
 		multipleColorResponse.RGBfeature = 2;
 		multipleColorResponse.LightPanelType = [64];
 		component.getCacheLightingCapabilities(multipleColorResponse);
@@ -336,15 +302,13 @@ describe('UiLightingProfileComponent', () => {
 
 	it('Should call the optionChangedRGBTop', fakeAsync(() => {
 		const event = { value: LightEffectComplexType.CPU_frequency };
-		component.lightingCapabilities = {
-			RGBfeature: LightEffectRGBFeature.Complex,
-			LightPanelType: [{}],
-			LedType_Complex: [{}],
-			lightInfo: [
-				{ lightPanelType: 32, lightEffectType: 2, lightColor: '55943D' },
-				{ lightPanelType: 64, lightEffectType: 2, lightColor: '4A9325' },
-			],
-		};
+		component.lightingCapabilities = JSON.parse('{"RGBfeature": 255, "LightPanelType": [{}], "LedType_Complex": [{}], "lightInfo": []}');
+		component.lightingCapabilities.RGBfeature = LightEffectRGBFeature.Complex;
+		component.lightingCapabilities.LightPanelType = [{}];
+		component.lightingCapabilities.LedType_Complex = [{}];
+		component.lightingCapabilities.lightInfo = [];
+		component.lightingCapabilities.lightInfo.push(JSON.parse('{"lightPanelType": 32, "lightEffectType": 2, "lightColor": "55943D"}'));
+		component.lightingCapabilities.lightInfo.push(JSON.parse('{"lightPanelType": 128, "lightEffectType": 2, "lightColor": "4A9325"}'));
 		const res = component.optionChangedRGBTop(event, {});
 		expect(res).toBe(undefined);
 		tick(5);
@@ -387,15 +351,10 @@ describe('UiLightingProfileComponent', () => {
 			'[LocalStorageKey] LightingProfileById ',
 			getLightingProfileById
 		);
-		component.lightingCapabilities = {
-			LightPanelType: [32, 64],
-			LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
-			LedType_simple: [0],
-			BrightAdjustLevel: 4,
-			RGBfeature: 255,
-		};
+		component.lightingCapabilities = JSON.parse('{"LightPanelType": [32, 64], "LedType_Complex": [268435456, 1, 2, 4, 8, 32, 64, 128], "LedType_simple": [0], "BrightAdjustLevel": 4, "RGBfeature": 255}');
+
 		component.simpleOrComplex = 4;
-		component.enumLightEffectSingleOrComplex = { Simple: 2, Complex: 4 };
+		component.enumLightEffectSingleOrComplex = JSON.parse('{"Simple": 2, "Complex": 4 }');
 		component.optionChangedRGBTop({ value: 2 }, {});
 		expect(component.showHideOverlaySide).toEqual(false);
 		tick(20);
@@ -420,15 +379,14 @@ describe('UiLightingProfileComponent', () => {
 
 	it('Should call the optionChangedRGBSide', fakeAsync(() => {
 		const event = { value: LightEffectComplexType.CPU_frequency };
-		component.lightingCapabilities = {
-			RGBfeature: LightEffectRGBFeature.Complex,
-			LightPanelType: [{}],
-			LedType_Complex: [{}],
-			lightInfo: [
-				{ lightPanelType: 32, lightEffectType: 2, lightColor: '55943D' },
-				{ lightPanelType: 64, lightEffectType: 2, lightColor: '4A9325' },
-			],
-		};
+		component.lightingCapabilities = JSON.parse('{"RGBfeature": 255, "LightPanelType": [{}], "LedType_Complex": [{}], "lightInfo": []}');
+		component.lightingCapabilities.RGBfeature = LightEffectRGBFeature.Complex;
+		component.lightingCapabilities.LightPanelType = [{}];
+		component.lightingCapabilities.LedType_Complex = [{}];
+		component.lightingCapabilities.lightInfo = [];
+		component.lightingCapabilities.lightInfo.push(JSON.parse('{"lightPanelType": 32, "lightEffectType": 2, "lightColor": "55943D"}'));
+		component.lightingCapabilities.lightInfo.push(JSON.parse('{"lightPanelType": 64, "lightEffectType": 2, "lightColor": "4A9325"}'));
+
 		const res = component.optionChangedRGBSide(event, {});
 		expect(res).toBe(undefined);
 		tick(5);
@@ -443,7 +401,7 @@ describe('UiLightingProfileComponent', () => {
 	}));
 
 	it('should call the colorEffectChangedSide', fakeAsync(() => {
-		component.lightingCapabilities = { LightPanelType: [] };
+		component.lightingCapabilities = JSON.parse('{"LightPanelType": []}');
 		gamingLightingServiceMock.setLightingProfileEffectColor.and.returnValue(
 			Promise.resolve({ ...getLightingProfileById, didSuccess: true })
 		);
@@ -452,7 +410,7 @@ describe('UiLightingProfileComponent', () => {
 	}));
 
 	it('should call the colorEffectChangedSide', fakeAsync(() => {
-		component.lightingCapabilities = { LightPanelType: [] };
+		component.lightingCapabilities = JSON.parse('{"LightPanelType": []}');
 		gamingLightingServiceMock.setLightingProfileEffectColor.and.returnValue(
 			Promise.resolve({ ...getLightingProfileById, didSuccess: true })
 		);
@@ -482,14 +440,9 @@ describe('UiLightingProfileComponent', () => {
 		component.setLightingProfileId({ target: { value: 2 } });
 		expect(component.isProfileOff).toEqual(false);
 		tick(20);
-		component.lightingCapabilities = {
-			LightPanelType: [32, 64],
-			LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
-			LedType_simple: [0],
-			BrightAdjustLevel: 4,
-			RGBfeature: 255,
-		};
-		component.enumLightingRGBFeature = { Simple: 255, Complex: 2 };
+		component.lightingCapabilities = JSON.parse('{"LightPanelType": [32, 64], "LedType_Complex": [268435456, 1, 2, 4, 8, 32, 64, 128], "LedType_simple": [0], "BrightAdjustLevel": 4, "RGBfeature": 255}');
+
+		component.enumLightingRGBFeature = JSON.parse('{"Simple": 255, "Complex": 2 }');
 		component.setLightingProfileId({ target: { value: 2 } });
 		expect(component.isProfileOff).toEqual(false);
 		tick(20);
@@ -518,25 +471,15 @@ describe('UiLightingProfileComponent', () => {
 		component.setLightingProfileId({ target: { value: 2 } });
 		expect(component.isProfileOff).toEqual(false);
 		tick(20);
-		component.lightingCapabilities = {
-			LightPanelType: [32, 64],
-			LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
-			LedType_simple: [0],
-			BrightAdjustLevel: 4,
-			RGBfeature: 255,
-		};
-		component.enumLightingRGBFeature = { Simple: 255, Complex: 2 };
+		component.lightingCapabilities = JSON.parse('{"LightPanelType": [32, 64], "LedType_Complex": [268435456, 1, 2, 4, 8, 32, 64, 128], "LedType_simple": [0], "BrightAdjustLevel": 4, "RGBfeature": 255}');
+
+		component.enumLightingRGBFeature = JSON.parse('{"Simple": 255, "Complex": 2 }');
 		component.setLightingProfileId({ target: { value: 2 } });
 		expect(component.isProfileOff).toEqual(false);
 		tick(20);
-		component.lightingCapabilities = {
-			LightPanelType: [1],
-			LedType_Complex: [0],
-			LedType_simple: [1, 2, 3, 4],
-			BrightAdjustLevel: 0,
-			RGBfeature: 1,
-		};
-		component.enumLightingRGBFeature = { Simple: 1, Complex: 2 };
+		component.lightingCapabilities = JSON.parse('{"LightPanelType": [1], "LedType_Complex": [0], "LedType_simple": [1, 2, 3, 4], "BrightAdjustLevel": 0, "RGBfeature": 1}');
+
+		component.enumLightingRGBFeature = JSON.parse('{"Simple": 1, "Complex": 2 }');
 		component.setLightingProfileId({ target: { value: 2 } });
 		expect(component.isProfileOff).toEqual(false);
 	}));
@@ -555,20 +498,13 @@ describe('UiLightingProfileComponent', () => {
 	}));
 
 	it('should call the changeSingleCoorEffect', fakeAsync(() => {
-		component.lightingCapabilities = {
-			LightPanelType: [1],
-			LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
-		};
+		component.lightingCapabilities = JSON.parse('{"LightPanelType": [1], "LedType_Complex": [268435456, 1, 2, 4, 8, 32, 64, 128]}');
 		const res = component.changeSingleCoorEffect({});
 		expect(res).toBe(undefined);
 	}));
 
 	it('should call the getLightingProfileById with available shell', fakeAsync(() => {
-		component.lightingCapabilities = {
-			LightPanelType: [1],
-			RGBfeature: LightEffectRGBFeature.Simple,
-			LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
-		};
+		component.lightingCapabilities = JSON.parse('{"LightPanelType": [1], "RGBfeature": 1, "LedType_Complex": [268435456, 1, 2, 4, 8, 32, 64, 128]}');
 		gamingLightingServiceMock.getLightingProfileById.and.returnValue(
 			Promise.resolve(getLightingProfileById)
 		);
@@ -579,11 +515,7 @@ describe('UiLightingProfileComponent', () => {
 	}));
 
 	it('should call the getLightingProfileById with no shell available', fakeAsync(() => {
-		component.lightingCapabilities = {
-			LightPanelType: [1],
-			RGBfeature: LightEffectRGBFeature.Simple,
-			LedType_Complex: [268435456, 1, 2, 4, 8, 32, 64, 128],
-		};
+		component.lightingCapabilities = JSON.parse('{"LightPanelType": [1], "RGBfeature": 1, "LedType_Complex": [268435456, 1, 2, 4, 8, 32, 64, 128]}');
 		gamingLightingServiceMock.getLightingProfileById.and.returnValue(
 			Promise.resolve({ ...getLightingProfileById, didSuccess: false })
 		);
@@ -593,21 +525,3 @@ describe('UiLightingProfileComponent', () => {
 		expect(res).toBe(undefined);
 	}));
 });
-
-/**
- * @param options pipeName which has to be mock
- * @description To mock the pipe.
- * @summary This has to move to one utils file.
- */
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	) as any;
-}
