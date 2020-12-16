@@ -57,6 +57,7 @@ section .desc {
 	color: $grey_darker;
 	font-weight: $battery-semi-bold;
 	padding-top: 12px;
+	font-family: $font_family_semibold;
 }
 section .desc-light {
 	display: inline-block;
