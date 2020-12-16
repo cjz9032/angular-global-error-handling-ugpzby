@@ -7,7 +7,7 @@
 .rank-star-container {
 	margin-left: 16px;
 	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-bottom: 22px;
 	padding-right: 5px;
 }
 
@@ -15,8 +15,9 @@
 	margin-right: 10px;
 	width: 20px;
 	height: 20px;
-	margin-top: 10px;
+	margin-top: 0px;
 }
+
 .rank-star-filled {
 	@extend .rank-star;
 	fill: #30d487;
@@ -56,7 +57,7 @@ section .desc {
 	font-size: $base;
 	color: $grey_darker;
 	font-weight: $battery-semi-bold;
-	padding-top: 12px;
+    padding-top: 12px;
 	font-family: $font_family_semibold;
 }
 section .desc-light {
@@ -78,6 +79,7 @@ section .exclamation {
 }
 .col-stars {
 	min-width: 173px;
+	margin-top: 10px;
 }
 .col-desc {
 	margin-right: 16px;
