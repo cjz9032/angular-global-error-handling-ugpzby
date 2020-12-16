@@ -167,7 +167,6 @@ export class SnapshotService {
 			this.pvtSnapshotInfo[componentName].info = componentSnapshot;
 			const utcBaselineDate = new Date(this.pvtSnapshotInfo[componentName].info.BaselineDate + ' UTC');
 			const utcLastSnapshotDate = new Date(this.pvtSnapshotInfo[componentName].info.LastSnapshotDate + ' UTC');
-
 			this.pvtSnapshotInfo[componentName].info.BaselineDate = formatDate(utcBaselineDate, 'EEEE, MMMM d, y', 'en-US');
 			this.pvtSnapshotInfo[componentName].info.LastSnapshotDate = formatDate(utcLastSnapshotDate, 'EEEE, MMMM d, y', 'en-US');
 			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
