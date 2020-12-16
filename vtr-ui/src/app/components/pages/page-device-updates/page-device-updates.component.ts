@@ -565,14 +565,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	public onUpdateSelectionChange($event: any) {
-		const item = $event.target;
-		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
-		// set the value twice to trigger the ui refresh, Some times the ui get some strange problems
-		document.body.style.zoom = '1.1';
-		document.body.style.zoom = '1.0';
-	}
-
 	public onIgnoredUpdate($event: any) {
 		const packageName = $event.packageName;
 		const isIgnored = $event.isIgnored;
