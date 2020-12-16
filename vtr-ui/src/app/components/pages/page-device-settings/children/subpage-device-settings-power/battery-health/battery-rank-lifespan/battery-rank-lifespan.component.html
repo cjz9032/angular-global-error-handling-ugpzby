@@ -1,6 +1,6 @@
 <div class="rank-star-container">
     <div class="row">
-        <div class="col-left" [attr.aria-label] = "'battery health level'" role="img">
+        <div class="col-left" [attr.aria-label] = "'battery health level'"  id="battery-health-level-stars" role="img">
 			<svg id="battery-health-level-star"*ngFor="let item of items; let i = index;" viewBox="0 0 21.69 20.628" class="bi bi-star-fill"
                 [ngClass]="{'rank-star-filled': currentHealthLevel !== -1  && i < currentHealthLevel, 'rank-star-unfilled': currentHealthLevel !== -1 && i >= currentHealthLevel, 'rank-star-error': currentHealthLevel === -1}"
                 xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +15,7 @@
                 <span class="symbol">{{lifeSpanSymbol}}</span>{{lifeSpan}} {{ 'device.deviceSettings.power.batterySettings.batteryHealth.batteryLifeSpan.months' | translate }}
             </p>
             <ng-template #lifeSpan_errorTemp>
-				<div class="exclamation" [attr.aria-label]="'battery health lifespan data is not available'" role="img">
+				<div class="exclamation" [attr.aria-label]="'battery health lifespan data is not available'" id="battery-health-lifespan-exclamation" role="img">
 					<vtr-ui-exclamation-point></vtr-ui-exclamation-point>
 				</div>
             </ng-template>

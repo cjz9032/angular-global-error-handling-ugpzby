@@ -44,6 +44,10 @@
 	&:hover {
 		color: $highlight;
 	}
+	border: 0.1rem solid transparent;
+	&:focus {
+		@include outline-border-blue;
+	}
 }
 
 .capacity-indicator {
