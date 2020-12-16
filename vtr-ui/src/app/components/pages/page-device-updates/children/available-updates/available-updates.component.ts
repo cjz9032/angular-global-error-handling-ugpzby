@@ -146,16 +146,20 @@ export class AvailableUpdatesComponent implements OnInit {
 	private checkSelectAllStatus() {
 		let selectAll = true;
 		let unIgnoredUpdates = 0;
+		let disableSelect = true;
 		this.systemUpdateService.updateInfo.updateList.forEach((update) => {
 			if (!update.isIgnored) {
 				unIgnoredUpdates++;
+			}
+			if (!update.isIgnored && !update.isDependency) {
+				disableSelect = false;
 			}
 			if (!update.isIgnored && !update.isSelected) {
 				selectAll = false;
 			}
 		});
-		this.disableSelectAll = unIgnoredUpdates === 0;
-		this.isSelectAll = !this.disableSelectAll && selectAll;
+		this.disableSelectAll = disableSelect;
+		this.isSelectAll = unIgnoredUpdates > 0 && selectAll;
 	}
 
 	private checkSelectedUpdateStatus() {
