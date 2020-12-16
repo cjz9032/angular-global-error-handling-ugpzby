@@ -39,7 +39,7 @@ export class SnapshotService {
 		this.snapshotBridge = shellService.getSnapshot();
 
 		if (!this.snapshotBridge) {
-			throw new Error('Error: Invalid Snapshot Bride!');
+			throw new Error('Error: Invalid Snapshot Bridge!');
 		}
 
 		this.initEmptySnapshot();
