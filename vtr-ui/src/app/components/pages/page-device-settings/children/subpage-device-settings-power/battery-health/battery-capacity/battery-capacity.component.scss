@@ -36,8 +36,6 @@
 	position: absolute;
 	top: 18px;
 	right: 20px;
-	width: 20px;
-	height: 20px;
 	font-size: $fontsize_sm;
 	color: $menu_hover;
 	cursor: pointer;
@@ -45,8 +43,20 @@
 		color: $highlight;
 	}
 	border: 0.1rem solid transparent;
+	@media #{$white-on-black} {
+		@include black-border;
+	}
+	@media #{$black-on-white} {
+		@include white-border;
+	}
 	&:focus {
 		@include outline-border-blue;
+		@media #{$white-on-black} {
+			border-color: $light;
+		}
+		@media #{$black-on-white} {
+			border-color: $dark;
+		}
 	}
 }
 
