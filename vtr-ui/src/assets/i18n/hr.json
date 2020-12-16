@@ -1993,11 +1993,11 @@
 			"description": "Pametni senzori tvrtke Lenovo kombiniraju senzore na računalu kako bi otkrili vaše aktivnosti, prilagodili postavke za optimalno upravljanje potrošnjom energije i zaštitili vašu privatnost.",
 			"jumpTo": {
 				"title": "SKOČI NA POSTAVKE",
-				"security": "Sigurnost",
-				"screen": "Zaslon",
-				"media": "Mediji",
+				"security": "Inteligentna sigurnost",
+				"screen": "Inteligentni zaslon",
+				"media": "Inteligentni mediji",
 				"voice": "Glas",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Inteligentna sigurnost",
@@ -2148,7 +2148,7 @@
 			},
 			"activeProtectionSystem": {
 				"title": "Active Protection System",
-				"description": "Lenovo Active Protection System automatska je značajka koja pomaže u zaštiti tvrdog diska od oštećenja nastalih snažnim fizičkih udarcem i vibracijama. Neprekidno nadzire pomicanje računala i privremeno zaustavlja tvrdi disk ako pretpostavi udarac ili sličnu radnju koja bi ga mogla oštetiti.",
+				"description": "Lenovo Active Protection System automatska je značajka koja pomaže u zaštiti tvrdog diska od oštećenja nastalih snažnim fizičkim udarcem i vibracijama. Neprekidno nadzire pomicanje računala i privremeno zaustavlja tvrdi disk ako pretpostavi udarac ili sličnu radnju koja bi ga mogla oštetiti.",
 				"activeProtection": {
 					"title": "Active Protection",
 					"caption": "Promjena osjetljivosti: u načinu rada niske osjetljivosti samo će jači udarci aktivirati zaštitu",
@@ -2164,7 +2164,7 @@
 					"description": "Da biste poboljšali pristup pogonu tvrdog diska tijekom korištenja tableta, obustavite značajku Active Protection System za sljedeće radnje",
 					"pen": {
 						"title": "Unos olovkom",
-						"description": "Kada koristite unos olovkom, omogućite APS ako se ulazni podaci olovke nalaze izvan raspona"
+						"description": "Kada koristite unos olovkom, omogućite APS ako se ulazni podaci olovke nalaze izvan raspona za"
 					},
 					"touch": {
 						"title": "Unos dodirom",
@@ -2182,9 +2182,9 @@
 					"more": "DODATNO",
 					"advancedSettings": "NAPREDNE POSTAVKE",
 					"hideAdvancedSettings": "SAKRIJ NAPREDNE POSTAVKE",
-					"lowSensitivity": "NISKA OSJETLJIVOST",
-					"mediumSensitivity": "SREDNJA OSJETLJIVOST",
-					"highSensitivity": "VISOKA OSJETLJIVOST"
+					"lowSensitivity": "Niska osjetljivost",
+					"mediumSensitivity": "Srednja osjetljivost",
+					"highSensitivity": "Visoka osjetljivost"
 				}
 			},
 			"intelligentMedia": {
@@ -2290,7 +2290,7 @@
 					"heading": "Početak rada:",
 					"point1": "Pokrenite Lenovo Voice iz izbornika Start, a ikona Lenovo Voice prikazana je u programskoj traci sustava Windows.",
 					"point2": "Otvorite aplikaciju u kojoj želite upisati tekst.",
-					"point3": "Kliknite ikonu Lenovo Voice u paleti sustava Windows i odaberite funkciju Voice to text (Govor u tekst).",
+					"point3": "Kliknite ikonu Lenovo Voice u paleti sustava Windows i odaberite funkciju Govor u tekst.",
 					"point4": "Odaberite jezike prema potrebi i kliknite ikonu mikrofona da biste počeli.",
 					"point5": "Postavite pokazivač u aplikaciju i počnite govoriti.",
 					"point6": "Kliknite ikonu Lenovo Voice u programskoj traci sustava Windows i odaberite Prijevod.",

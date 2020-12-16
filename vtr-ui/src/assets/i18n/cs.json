@@ -1993,11 +1993,11 @@
 			"description": "Technologie inteligentní detekce Lenovo používá snímače v počítači, kterými sleduje vaši aktuální činnost, přizpůsobuje řízení spotřeby a chrání vaše soukromí.",
 			"jumpTo": {
 				"title": "PŘEJÍT K NASTAVENÍ",
-				"security": "Zabezpečení",
-				"screen": "Obrazovka",
-				"media": "Média",
+				"security": "Inteligentní zabezpečení",
+				"screen": "Inteligentní obrazovka",
+				"media": "Inteligentní média",
 				"voice": "Hlas",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Inteligentní zabezpečení",
@@ -2150,7 +2150,7 @@
 				"title": "Active Protection System",
 				"description": "Lenovo Active Protection System je automatická funkce, která pomáhá chránit pevný disk před poškozením způsobeným silnými nárazy a vibracemi. Průběžně sleduje pohyb vašeho počítače a dočasně zastaví pevný disk, pokud předpokládá, že došlo k pádu nebo k podobné nebezpečné události.",
 				"activeProtection": {
-					"title": "Aktivní ochrana Active Protection",
+					"title": "Ochrana Active Protection",
 					"caption": "Změňte citlivost, v režimu s nízkou citlivostí aktivují ochranu pouze tvrdší otřesy",
 					"checkbox": "Ignorujte opakované otřesy, ke kterým dochází například ve vlaku nebo automobilu"
 				},
@@ -2164,10 +2164,10 @@
 					"description": "Aby byl pevný disk během používání v režimu tabletu přístupnější, bude systém aktivní ochrany Active Protection System deaktivován v případě rozpoznání následujících činností",
 					"pen": {
 						"title": "Psaní perem",
-						"description": "Při používání vstupu pomocí pera aktivovat APS, je-li vstup pomocí pera mimo přípustný rozsah"
+						"description": "Při používání vstupu pomocí pera aktivovat APS, je-li vstup pomocí pera mimo rozsah po dobu"
 					},
 					"touch": {
-						"title": "Používání dotykové obrazovky",
+						"title": "Dotykový vstup",
 						"description": "Je-li používán dotykový vstup, aktivujte systém APS, pokud není dotykový vstup detekován"
 					},
 					"hand": {
@@ -2290,7 +2290,7 @@
 					"heading": "Jak začít:",
 					"point1": "Z nabídky Start spusťte program Lenovo Voice a na hlavním panelu Windows se zobrazí ikona Lenovo Voice.",
 					"point2": "Otevřete aplikaci, do které chcete psát text.",
-					"point3": "Klepněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Hlas na text.",
+					"point3": "Klikněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Hlas na text.",
 					"point4": "Podle své potřeby vyberte jazyky a začněte kliknutím na ikonu mikrofonu.",
 					"point5": "Umístěte kurzor do aplikace a začněte mluvit.",
 					"point6": "Klikněte na ikonu Lenovo Voice na hlavním panelu systému Windows a vyberte možnost Překlad.",
@@ -5364,4 +5364,3 @@
 		"feedback": "Zanechat zpětnou vazbu"
 	}
 }
-

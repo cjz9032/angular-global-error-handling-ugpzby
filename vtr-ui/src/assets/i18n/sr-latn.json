@@ -1993,11 +1993,11 @@
 			"description": "Lenovo inteligentno raspoznavanje kombinuje različite senzore na računaru kako bi se otkrile vaše aktivnosti, prilagodile postavke za optimalno upravljanje napajanjem i zaštitila vaša privatnost.",
 			"jumpTo": {
 				"title": "PRELAZAK NA POSTAVKE",
-				"security": "Bezbednost",
-				"screen": "Ekran",
-				"media": "Mediji",
+				"security": "Inteligentna bezbednost",
+				"screen": "Inteligentni ekran",
+				"media": "Inteligentni mediji",
 				"voice": "Glas",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Inteligentna bezbednost",
@@ -2016,10 +2016,10 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Osetljivost na ljudsko prisustvo",
-					"tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskih prisustva."
+					"tooltip": "Kliknite ovde da biste uspostavili početne vrednosti postavki za otkrivanje ljudskog prisustva."
 				},
 				"zeroTouchLogin": {
-					"title": "Bezdodirno prijavljivanje",
+					"title": "Prijavljivanje bez dodira",
 					"caption": "Ova funkcija automatski otključava ili budi računar kada ste ispred njega ili mu prilazite.",
 					"tooltip": "Kada se nalazite ispred računara ili mu se približavate (unutar razdaljine od 1,2 metara), ova funkcija vam omogućava da se automatski prijavite u sistem nakon prepoznavanja lica. Ako ste na otvorenom, a ne u kancelariji, morate da budete bliži računaru i buđenje će trajati duže."
 				},
@@ -2148,7 +2148,7 @@
 			},
 			"activeProtectionSystem": {
 				"title": "Active Protection System",
-				"description": "Active Protection System je autonomna funkcija koja vam pomaže da zaštitite hard disk od oštećenja nastalog usled jakog fizičkog potresa i vibracije. Ona neprekidno nadgleda kretanje vašeg računara i privremeno zaustavlja hard disk kada se predvidi pad sistema ili sličan događaj koji može da prouzrokuje oštećenje.",
+				"description": "Lenovo Active Protection System je autonomna funkcija koja vam pomaže da zaštitite hard disk od oštećenja nastalog usled jakog fizičkog potresa i vibracije. Ona neprekidno nadgleda kretanje vašeg računara i privremeno zaustavlja hard disk kada se predvidi pad sistema ili sličan događaj koji može da prouzrokuje oštećenje.",
 				"activeProtection": {
 					"title": "Active Protection",
 					"caption": "Promenite osetljivost. U režimu niske osetljivosti, samo će jači udarci aktivirati zaštitu",
@@ -2164,11 +2164,11 @@
 					"description": "Radi boljeg pristupa hard disku tokom korišćenja tablet uređaja, obustavite funkciju Active Protection System kada se detektuju sledeće aktivnosti",
 					"pen": {
 						"title": "Unos olovkom",
-						"description": "Tokom korišćenja režima Unos olovkom, omogući APS kada unos olovkom nije u opsegu u trajanju od"
+						"description": "Tokom korišćenja režima unosa olovkom, omogući APS kada unos olovkom nije u opsegu u trajanju od"
 					},
 					"touch": {
 						"title": "Unos dodirom",
-						"description": "Kada se koristi režim Unos dodirom, omogući APS kada unos dodirom nije detektovan"
+						"description": "Tokom korišćenja režima unosa dodirom, omogući APS kada unos dodirom nije detektovan"
 					},
 					"hand": {
 						"title": "Osećaj rastojanja ruku na ivicama računara",
@@ -2290,7 +2290,7 @@
 					"heading": "Prvi koraci:",
 					"point1": "Pokrenite Lenovo Voice iz menija Start i ikona Lenovo Voice se prikazuje na Windows sistemskoj paleti.",
 					"point2": "Otvorite aplikaciju u kojoj želite da kucate tekst.",
-					"point3": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Voice to text (Glas u tekst).",
+					"point3": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Glas u tekst.",
 					"point4": "Izaberite jezike prema svojoj potrebi i kliknite na ikonu mikrofona za početak.",
 					"point5": "Postavite kursor u aplikaciju i počnite da govorite.",
 					"point6": "Kliknite na ikonu Lenovo Voice u Windows sistemskoj paleti i izaberite Translation (Prevod).",
@@ -5364,4 +5364,3 @@
 		"feedback": "Ostavite povratne informacije"
 	}
 }
-

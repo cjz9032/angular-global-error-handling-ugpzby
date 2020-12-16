@@ -1990,14 +1990,14 @@
 		},
 		"smartAssist": {
 			"title": "Akıllı Yardım",
-			"description": "Lenovo Akıllı Algılama özelliği, etkinliklerinizi algılamak, ideal güç yönetimi ayarlarını düzenlemek ve gizliliğinizi korumak için bilgisayarınızdaki çeşitli sensörleri birleştirir.",
+			"description": "Lenovo akıllı algılama özelliği, etkinliklerinizi algılamak, ideal güç yönetimi ayarlarını düzenlemek ve gizliliğinizi korumak için bilgisayarınızdaki çeşitli sensörleri birleştirir.",
 			"jumpTo": {
 				"title": "AYARLARA GİT",
-				"security": "Güvenlik",
-				"screen": "Ekran",
-				"media": "Ortam",
+				"security": "Akıllı güvenlik",
+				"screen": "Akıllı ekran",
+				"media": "Akıllı medya",
 				"voice": "Ses",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Akıllı güvenlik",
@@ -2015,11 +2015,11 @@
 					"tooltip": "İnsan varlığını algılama ayarlarını sıfırlamak için burayı tıklatın."
 				},
 				"humanPresenceDetection": {
-					"title": "Kullanıcı Varlığını Algılama",
-					"tooltip": "İnsan varlığını Algılama ayarlarını sıfırlamak için buraya tıklayın."
+					"title": "Kullanıcı varlığını algılama",
+					"tooltip": "İnsan varlığını algılama ayarlarını sıfırlamak için buraya tıklayın."
 				},
 				"zeroTouchLogin": {
-					"title": "Sıfır Dokunma ile Oturum Açma",
+					"title": "Sıfır dokunma ile oturum açma",
 					"caption": "Bu özellik, bilgisayarın karşısında olduğunuzda veya bilgisayara yaklaştığınızda bilgisayar kilidini otomatik olarak açar ya da bilgisayarı uyandırır.",
 					"tooltip": "Bu özellik, bilgisayarınızın önündeyken veya bilgisayarınıza yaklaşırken (1,2 metre mesafe içerisinde) yüzünüzün tanınmasından sonra sistemde otomatik olarak oturum açmanızı sağlar. Ofis yerine dışarıda olduğunuzda, bilgisayarınıza daha yakın olmanız gerekir ve uyandırma işlevi daha uzun sürer."
 				},
@@ -2128,8 +2128,8 @@
 				}
 			},
 			"intelligentScreen": {
-				"title": "Akıllı Ekran",
-				"description": "Lenovo Akıllı Algılama özelliği, etkinliklerinizi algılamak ve güç yönetimi ayarlarını düzenlemek için bilgisayarınızın çeşitli algılayıcılarını birleştirir. Örneğin; yürüdüğünüzü algılarsa ekranı karartır ancak okuduğunuzu algılarsa ekranı karartmaz.",
+				"title": "Akıllı ekran",
+				"description": "Lenovo akıllı algılama özelliği, etkinliklerinizi algılamak ve güç yönetimi ayarlarını düzenlemek için bilgisayarınızın çeşitli algılayıcılarını birleştirir. Örneğin; yürüdüğünüzü algılarsa ekranı karartır ancak okuduğunuzu algılarsa ekranı karartmaz.",
 				"autoScreenOff": {
 					"title": "Otomatik ekran kapatma",
 					"caption": "Ekran aşağı baktığında veya yürüdüğünüzde ekranı otomatik olarak kapatır.",
@@ -2155,24 +2155,24 @@
 					"checkbox": "Bir tren veya arabadaki gibi tekrarlayan darbeleri göz ardı et"
 				},
 				"manualActiveProtectionSuspension": {
-					"title": "Active Protection'ı Manuel Olarak Askıya Alma",
+					"title": "Active Protection'ı manuel olarak askıya alma",
 					"caption": "Active Protection System'i manuel olarak askıya almama izin ver",
 					"dropdown-title": "Askıya alma süresi:",
 					"button": "Şimdi Askıya Al"
 				},
 				"advanced": {
-					"description": "Tablet kullanımı sırasında sabit disk sürücüsüne erişimi iyileştirmek için aşağıdakiler algılandığında Active Protection System öğesini askıya al",
+					"description": "Tablet kullanımı sırasında sabit disk sürücüsüne erişimi iyileştirmek için aşağıdakiler algılandığında Active Protection System özelliğini askıya al",
 					"pen": {
-						"title": "Kalemle Giriş",
-						"description": "Kalemle giriş kullanılırken kalem aralık dışı olduğunda APS'yi etkinleştir"
+						"title": "Kalemle giriş",
+						"description": "Kalemle giriş kullanılırken Kalemle giriş aralık dışı olduğunda APS'yi etkinleştir"
 					},
 					"touch": {
-						"title": "Dokunarak Giriş",
-						"description": "Dokunarak giriş kullanılırken dokunarak giriş algılanmadığında APS'yi etkinleştir"
+						"title": "Dokunarak giriş",
+						"description": "Dokunarak giriş kullanılırken Dokunarak giriş algılanmadığında APS'yi etkinleştir"
 					},
 					"hand": {
 						"title": "Bilgisayarın kenarlarında el yakınlığı algılayıcılar",
-						"description": "Tablet modu etkin durumdayken el algılanmadığında APS'yi etkinleştir"
+						"description": "Tablet kipi etkin durumdayken El algılanmadığında APS'yi etkinleştir"
 					},
 					"more": "DAHA FAZLA",
 					"advanced-settings": "GELİŞMİŞ AYARLAR",
@@ -2290,7 +2290,7 @@
 					"heading": "Başlayın:",
 					"point1": "Start (Başlat) Menüsü'nden Lenovo Voice uygulamasını başlatın; Windows sistem tepsisinde Lenovo Voice simgesi görüntülenir.",
 					"point2": "Metin yazmak istediğiniz uygulamayı açın.",
-					"point3": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Voice to text (Sesten metne) özelliğini seçin.",
+					"point3": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Sesten Metne özelliğini seçin.",
 					"point4": "Gereksiniminize bağlı olarak dilleri seçin ve başlamak için mikrofon simgesine tıklayın.",
 					"point5": "İmleci uygulamaya yerleştirin ve konuşmaya başlayın.",
 					"point6": "Windows sistem tepsisinde Lenovo Voice simgesine tıklayın ve Translate (Çevir) seçeneğini belirleyin.",
@@ -5364,4 +5364,3 @@
 		"feedback": "Geri bildirimde bulunun"
 	}
 }
-

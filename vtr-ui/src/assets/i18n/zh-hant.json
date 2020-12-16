@@ -1993,11 +1993,11 @@
 			"description": "Lenovo 智慧型感應會結合您電腦上的感應器來偵測您的活動，並調整最佳電源管理的設定，以及保護您的隱私。",
 			"jumpTo": {
 				"title": "移至設定",
-				"security": "安全性",
-				"screen": "螢幕",
-				"media": "媒體",
+				"security": "智慧型安全",
+				"screen": "智慧型螢幕",
+				"media": "智慧型媒體",
 				"voice": "語音",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "智慧型安全",
@@ -2019,7 +2019,7 @@
 					"tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
 				},
 				"zeroTouchLogin": {
-					"title": "紅外線攝影機自動登入",
+					"title": "零接觸登入",
 					"caption": "當您坐在電腦前面或接近電腦時，此功能會自動解除鎖定或喚醒電腦。",
 					"tooltip": "當您坐在電腦前面或接近電腦時（在 1.2 公尺的距離內），這項功能可讓您在辨識出您的臉部之後自動登入系統。如果您是在室外而非辦公室中，則需要更靠近電腦，以及更長的時間才能喚醒。"
 				},

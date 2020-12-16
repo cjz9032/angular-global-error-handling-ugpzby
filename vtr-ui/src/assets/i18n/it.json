@@ -1993,11 +1993,11 @@
 			"description": "Rilevamento intelligente Lenovo combina vari sensori del computer per rilevare le attività, modificare le impostazioni per un risparmio ottimale dell'energia e proteggere la privacy.",
 			"jumpTo": {
 				"title": "PASSA ALLE IMPOSTAZIONI",
-				"security": "Protezione",
-				"screen": "Schermo",
-				"media": "Multimedia",
+				"security": "Protezione intelligente",
+				"screen": "Schermo intelligente",
+				"media": "Supporti intelligenti",
 				"voice": "Voce",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Protezione intelligente",
@@ -2016,7 +2016,7 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Rilevamento presenza utente",
-					"tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevazione presenza umana."
+					"tooltip": "Fare clic qui per ripristinare le impostazioni di Rilevamento presenza umana."
 				},
 				"zeroTouchLogin": {
 					"title": "Accesso automatico",
@@ -2148,7 +2148,7 @@
 			},
 			"activeProtectionSystem": {
 				"title": "Active Protection System",
-				"description": "Active Protection System è una funzione automatica che aiuta a proteggere l'unità disco fisso dai danni che possono essere causati da forti urti e vibrazioni. Monitora continuamente il movimento del computer e interrompe temporaneamente l'unità disco fisso quando si prevede un evento come una caduta o un evento simile che può causare danni.",
+				"description": "Lenovo Active Protection System è una funzione automatica che consente di proteggere l'unità disco fisso dai danni che possono essere causati da forti urti e vibrazioni. Monitora continuamente il movimento del computer e interrompe temporaneamente l'unità disco fisso quando si prevede un evento come una caduta o un evento simile che può causare danni.",
 				"activeProtection": {
 					"title": "Active Protection",
 					"caption": "Modifica la sensibilità in modalità a bassa sensibilità: solo gli urti più forti attiveranno la protezione",

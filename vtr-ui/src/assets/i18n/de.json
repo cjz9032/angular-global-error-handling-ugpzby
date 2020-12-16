@@ -2102,14 +2102,14 @@
 		},
 		"smartAssist": {
 			"title": "Intelligente Unterstützung",
-			"description": "Bei der Funktion \"Intelligente Sensorik\" von Lenovo werden verschiedene Sensoren auf Ihrem Computer kombiniert, um Ihre Aktivitäten zu analysieren, die Energieverwaltung optimal anzupassen und Ihre Privatsphäre zu schützen.",
+			"description": "Bei der intelligenten Sensorik von Lenovo werden verschiedene Sensoren auf Ihrem Computer kombiniert, um Ihre Aktivitäten zu analysieren, die Energieverwaltung optimal anzupassen und Ihre Privatsphäre zu schützen.",
 			"jumpTo": {
 				"title": "EINSTELLUNGEN AUFRUFEN",
-				"security": "Sicherheit",
-				"screen": "Bildschirm",
-				"media": "Datenträger",
+				"security": "Intelligente Sicherheit",
+				"screen": "Intelligente Anzeige",
+				"media": "Intelligente Medien",
 				"voice": "Sprache",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligente Sicherheit",
@@ -2241,7 +2241,7 @@
 			},
 			"intelligentScreen": {
 				"title": "Intelligente Anzeige",
-				"description": "Bei der Funktion \"Intelligente Sensorik\" von Lenovo werden die verschiedenen Sensoren auf Ihrem Computer kombiniert, um Ihre Aktivitäten zu analysieren und die Energieverwaltung entsprechend anzupassen. Wenn die Sensoren erkennen, dass Sie laufen, wird der Bildschirm z. B. abgedunkelt. Wenn erkannt wird, dass Sie gerade etwas lesen, wird der Bildschirm dagegen nicht abgedunkelt.",
+				"description": "Bei der intelligenten Sensorik von Lenovo werden die verschiedenen Sensoren auf Ihrem Computer kombiniert, um Ihre Aktivitäten zu analysieren und die Energieverwaltung entsprechend anzupassen. Wenn die Sensoren erkennen, dass Sie laufen, wird der Bildschirm z. B. abgedunkelt. Wenn erkannt wird, dass Sie gerade etwas lesen, wird der Bildschirm dagegen nicht abgedunkelt.",
 				"autoScreenOff": {
 					"title": "Automatische Bildschirmabschaltung",
 					"caption": "Bildschirm automatisch ausschalten, wenn das Gerät nach unten zeigt oder ich laufe.",
@@ -2273,10 +2273,10 @@
 					"button": "Jetzt aussetzen"
 				},
 				"advanced": {
-					"description": "Um während der Verwendung des Tablets den Zugriff auf das Festplattenlaufwerk zu verbessern, setzen Sie Active Protection System aus, wenn folgende Aktivitäten erkannt werden",
+					"description": "Für besseren Zugriff auf das Festplattenlaufwerk bei Verwendung des Tablets das Active Protection System aussetzen, wenn folgende Aktivitäten erkannt werden",
 					"pen": {
 						"title": "Stifteingabe",
-						"description": "APS bei Stifteingabe aktivieren, wenn sich die Stifteingabe außerhalb des gültigen Bereichs befindet"
+						"description": "APS bei Stifteingabe aktivieren, wenn sich die Stifteingabe außerhalb des gültigen Bereichs befindet für"
 					},
 					"touch": {
 						"title": "Touch-Eingabe",

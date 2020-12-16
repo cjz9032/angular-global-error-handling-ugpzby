@@ -1993,11 +1993,11 @@
 			"description": "Lenovo 지능형 감지 기능은 컴퓨터의 다양한 센서를 조합하여 사용자의 활동을 감지하고 전원 관리 최적화 설정을 조정하며 개인정보를 보호합니다.",
 			"jumpTo": {
 				"title": "설정으로 건너뛰기",
-				"security": "보안",
-				"screen": "화면",
-				"media": "미디어",
+				"security": "지능형 보안",
+				"screen": "지능형 화면",
+				"media": "지능형 미디어",
 				"voice": "음성",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "지능형 보안",
@@ -2161,10 +2161,10 @@
 					"button": "지금 일시 중단"
 				},
 				"advanced": {
-					"description": "태블릿 사용 중에 하드 디스크 드라이브의 액세스를 개선하려면, 다음 작업이 감지될 때 Active Protection System를 중단하십시오",
+					"description": "태블릿 사용 중에 하드 디스크 드라이브의 액세스를 개선하려면, 다음 작업이 감지될 때 Active Protection System을 중단하십시오",
 					"pen": {
 						"title": "펜 입력",
-						"description": "펜을 사용할 때 펜 입력이 범위를 벗어나면 APS를 사용 가능으로 설정하십시오"
+						"description": "펜을 사용할 때 펜 입력이 범위를 벗어나면 APS를 사용으로 설정하십시오"
 					},
 					"touch": {
 						"title": "터치 입력",
@@ -2172,7 +2172,7 @@
 					},
 					"hand": {
 						"title": "컴퓨터 가장자리에서 손 근접 감지",
-						"description": "태블릿 모드를 사용할 때 손이 감지되지 않으면 APS를 사용 가능으로 설정하십시오"
+						"description": "태블릿 모드를 사용할 때 손이 감지되지 않으면 APS를 사용으로 설정하십시오"
 					},
 					"more": "자세히",
 					"advanced-settings": "고급 설정",
@@ -2184,7 +2184,7 @@
 					"hideAdvancedSettings": "고급 설정 숨기기",
 					"lowSensitivity": "낮은 감도",
 					"mediumSensitivity": "보통 감도",
-					"highSensitivity": "높은 감도"
+					"highSensitivity": "낮은 감도"
 				}
 			},
 			"intelligentMedia": {

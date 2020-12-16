@@ -1993,11 +1993,11 @@
 			"description": "Detectarea inteligentă Lenovo combină senzorii de pe computerul dvs. pentru a vă detecta activitățile, a vă regla setările pentru gestionarea optimă a alimentării și a vă proteja confidențialitatea.",
 			"jumpTo": {
 				"title": "ACCESAȚI SETĂRILE",
-				"security": "Securitate",
-				"screen": "Ecran",
-				"media": "Media",
+				"security": "Securitate inteligentă",
+				"screen": "Ecran inteligent",
+				"media": "Fișiere media inteligente",
 				"voice": "Voce",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Securitate inteligentă",
@@ -2016,7 +2016,7 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Detectarea prezenței utilizatorului",
-					"tooltip": "Dați clic aici pentru a reseta setările pentru detecția prezenței umane."
+					"tooltip": "Faceți clic aici pentru a reseta setările pentru detecția prezenței umane."
 				},
 				"zeroTouchLogin": {
 					"title": "Conectare fără atingere",
@@ -2148,7 +2148,7 @@
 			},
 			"activeProtectionSystem": {
 				"title": "Active Protection System",
-				"description": "Lenovo Active Protection System este o caracteristică autonomă, care vă ajută să protejaţi unitatea HDD împotriva deteriorărilor cauzate de şocurile fizice şi de vibraţiile puternice. Aceasta monitorizează încontinuu mișcarea computerului și oprește temporar unitatea HDD când o eroare sau un eveniment similar de deteriorare este prevăzut.",
+				"description": "Lenovo Active Protection System este o caracteristică autonomă, care vă ajută să protejați unitatea HDD împotriva deteriorărilor cauzate de șocurile fizice și de vibrațiile puternice. Aceasta monitorizează încontinuu mișcarea computerului și oprește temporar unitatea HDD când o eroare sau un eveniment similar de deteriorare este prevăzut.",
 				"activeProtection": {
 					"title": "Active Protection",
 					"caption": "Modificând sensibilitatea, în modul de sensibilitate redusă, doar șocurile mai puternice vor activa protecția",
@@ -2164,7 +2164,7 @@
 					"description": "Pentru a îmbunătăți accesul la unitatea HDD în timpul utilizării tabletei, suspendați Active Protection System când sunt detectate următoarele activități",
 					"pen": {
 						"title": "Introducere date cu creionul",
-						"description": "Când se utilizează introducerea datelor cu ajutorul creionului, activați APS în momentul în care creionul este în afara ariei de acoperire"
+						"description": "Când se utilizează introducerea datelor cu ajutorul creionului, activați APS în momentul în care creionul este în afara ariei de acoperire pentru"
 					},
 					"touch": {
 						"title": "Introducere date prin atingere",
@@ -2290,7 +2290,7 @@
 					"heading": "Introducere:",
 					"point1": "Porniţi Lenovo Voice din meniul Start şi pictograma Lenovo Voice va fi afişată în bara de sistem Windows.",
 					"point2": "Deschideţi aplicaţia în care doriţi să introduceţi text.",
-					"point3": "Faceți clic pe pictograma Lenovo Voice din bara de sistem Windows și selectați Voice to text.",
+					"point3": "Faceți clic pe pictograma Lenovo Voice din bara de sistem Windows și selectați Voce în text.",
 					"point4": "Pentru a începe, selectaţi limba dorită şi faceţi clic pe pictograma Microfon.",
 					"point5": "Puneţi cursorul în aplicaţie şi începeţi să vorbiţi.",
 					"point6": "Faceţi clic pe pictograma Lenovo Voice din bara de sistem Windows şi selectaţi Traducere.",

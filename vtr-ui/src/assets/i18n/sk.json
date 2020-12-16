@@ -1993,11 +1993,11 @@
 			"description": "Funkcia inteligentného snímania Lenovo prostredníctvom kombinácie rôznych senzorov v počítači zisťuje vaše aktivity, upravuje nastavenia týkajúce sa optimálnej správy napájania a chráni vaše súkromie.",
 			"jumpTo": {
 				"title": "PREJSŤ NA NASTAVENIA",
-				"security": "Zabezpečenie",
-				"screen": "Obrazovka",
-				"media": "Médiá",
+				"security": "Inteligentné zabezpečenie",
+				"screen": "Inteligentná obrazovka",
+				"media": "Inteligentné médiá",
 				"voice": "Hlas",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Inteligentné zabezpečenie",
@@ -2164,15 +2164,15 @@
 					"description": "Na zlepšenie prístupu k jednotke pevného disku pri používaní tabletu pozastaviť systém Active Protection System pri zistení nasledujúcich činností",
 					"pen": {
 						"title": "Vstup pomocou pera",
-						"description": "Keď sa používa vstup pomocou pera, zapnúť systém APS, keď je vstup pomocou pera mimo dosahu"
+						"description": "Pri používaní vstupu pomocou pera zapnúť systém APS, keď je vstup pomocou pera mimo dosahu na"
 					},
 					"touch": {
 						"title": "Dotykový vstup",
-						"description": "Keď sa používa dotykový vstup, zapnúť systém APS, keď nebol zistený dotykový vstup"
+						"description": "Pri používaní dotykového vstupu zapnúť systém APS, keď nebol zistený dotykový vstup"
 					},
 					"hand": {
 						"title": "Zisťovanie blízkosti ruky na okrajoch počítača",
-						"description": "Keď je zapnutý režim tabletu, zapnúť systém APS, keď nebola zistená ruka"
+						"description": "Po zapnutí režimu tabletu zapnúť systém APS, keď nebola zistená ruka"
 					},
 					"more": "VIAC",
 					"advanced-settings": "ROZŠÍRENÉ NASTAVENIA",
@@ -5364,4 +5364,3 @@
 		"feedback": "Poskytnúť spätnú väzbu"
 	}
 }
-

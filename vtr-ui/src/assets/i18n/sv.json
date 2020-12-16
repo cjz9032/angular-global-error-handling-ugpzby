@@ -1990,14 +1990,14 @@
 		},
 		"smartAssist": {
 			"title": "Smart hjälp",
-			"description": "Lenovo Intelligent avkänning kombinerar datorns olika sensorer för att känna av vad du gör och justera inställningarna för optimalt energisparläge och sekretesskydd.",
+			"description": "Lenovos intelligenta avkänning kombinerar datorns olika sensorer för att känna av vad du gör och justera inställningarna för optimalt energisparläge och sekretesskydd.",
 			"jumpTo": {
 				"title": "ÖPPNA INSTÄLLNINGAR",
-				"security": "Säkerhet",
-				"screen": "Skärm",
-				"media": "Medier",
+				"security": "Intelligent säkerhet",
+				"screen": "Intelligent skärm",
+				"media": "Intelligenta medier",
 				"voice": "Röst",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent säkerhet",
@@ -2161,7 +2161,7 @@
 					"button": "Pausa nu"
 				},
 				"advanced": {
-					"description": "Förbättra åtkomsten till hårddisken när du använder enheten i pekplatteläge genom att inaktivera Active Protection System när följande aktiviteter identifieras",
+					"description": "Förbättra åtkomsten till hårddisken när du använder enheten i surfplatteläge genom att inaktivera Active Protection System när följande aktiviteter identifieras",
 					"pen": {
 						"title": "Penninmatning",
 						"description": "Vid penninmatning aktiveras APS när pennan är utom räckvidd"
@@ -2172,7 +2172,7 @@
 					},
 					"hand": {
 						"title": "Handavkänning på datorkanter",
-						"description": "Vid användning i pekplatteläge aktiveras APS om handgester inte identifieras"
+						"description": "Vid användning i surfplatteläge aktiveras APS om handgester inte identifieras"
 					},
 					"more": "MER",
 					"advanced-settings": "AVANCERADE INSTÄLLNINGAR",

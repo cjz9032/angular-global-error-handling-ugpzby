@@ -2107,7 +2107,7 @@
 				"screen": "智能屏幕",
 				"media": "智能媒体",
 				"voice": "语音",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "智能安全",
@@ -2126,10 +2126,10 @@
 				},
 				"humanPresenceDetection": {
 					"title": "用户存在感知",
-					"tooltip": "单击此处以重置人类存在检测设置。"
+					"tooltip": "单击此处以重置人员存在检测设置。"
 				},
 				"zeroTouchLogin": {
-					"title": "红外摄像头自动登录",
+					"title": "零触摸登录",
 					"caption": "当您坐在计算机面前或接近计算机时，此功能会自动解锁或唤醒计算机。",
 					"tooltip": "当您在计算机前面或接近计算机时（在 1.2 米的距离内），此功能可让您能够在计算机识别您的面部后自动登录系统。如果您是在室外而不是在办公室中，则需要离计算机更近，且唤醒所需的时间更长。"
 				},
@@ -2239,7 +2239,7 @@
 			},
 			"intelligentScreen": {
 				"title": "智能屏幕",
-				"description": "Lenovo 智能感知通过计算机上的各种传感器检测您的活动并调整设置以进行电源管理。例如，如果它检测到您正在走路，则将让显示屏变暗，但如果它检测到您正在阅读，则不会让显示屏变暗。",
+				"description": "Lenovo 智能感知通过计算机上的各种传感器检测您的活动，并调整设置以进行电源管理。例如，如果它检测到您正在走路，则将让显示屏变暗，但如果它检测到您正在阅读，则不会让显示屏变暗。",
 				"autoScreenOff": {
 					"title": "自动关闭屏幕",
 					"caption": "面朝下或行走时自动关闭显示屏。",
@@ -2258,7 +2258,7 @@
 			},
 			"activeProtectionSystem": {
 				"title": "Active Protection System",
-				"description": "Lenovo Active Protection System 是一种自主功能部件，它有助于保护硬盘驱动器免受因强烈的物理震动和振动所造成的损坏。它还会持续监视计算机的移动，并且会在预测到掉落或类似损坏事件时暂停硬盘驱动器。",
+				"description": "Lenovo Active Protection System 是一种自主功能，它有助于避免硬盘驱动器因剧烈的物理冲击和振动而发生损坏。它还会持续监视计算机的移动，并且会在预测到掉落或类似损坏事件时暂停硬盘驱动器。",
 				"activeProtection": {
 					"title": "Active Protection",
 					"caption": "改变敏感度，因为在低敏感模式下，只有更大的撞击才能激活保护功能",
@@ -2274,7 +2274,7 @@
 					"description": "为改善使用平板电脑期间对硬盘驱动器的访问，当检测到以下活动时，暂挂 Active Protection System",
 					"pen": {
 						"title": "数字笔输入",
-						"description": "使用数字笔输入时，如果数字笔输入超出范围，则启用 APS"
+						"description": "使用数字笔输入时，如果数字笔输入超出以下范围，则启用 APS"
 					},
 					"touch": {
 						"title": "触摸输入",

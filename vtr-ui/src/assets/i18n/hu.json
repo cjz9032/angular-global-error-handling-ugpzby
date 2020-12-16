@@ -1993,11 +1993,11 @@
 			"description": "A Lenovo intelligens észlelési funkciója a számítógép különböző érzékelőivel észleli a felhasználói tevékenységeket, és úgy módosítja a beállításokat, hogy védje az Ön adatait, és az energiagazdálkodás optimális legyen.",
 			"jumpTo": {
 				"title": "UGRÁS A BEÁLLÍTÁSOKHOZ",
-				"security": "Biztonság",
-				"screen": "Képernyő",
-				"media": "Média",
+				"security": "Intelligens biztonság",
+				"screen": "Intelligens képernyő",
+				"media": "Intelligens média",
 				"voice": "Hang",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligens biztonság",

@@ -1993,11 +1993,11 @@
 			"description": "Funkcja inteligentnej detekcji Lenovo łączy działanie różnych czujników w komputerze, co pozwala wykryć aktywność użytkownika i odpowiednio dostosować optymalne ustawienia zarządzania energią oraz chronić prywatność.",
 			"jumpTo": {
 				"title": "PRZEJDŹ DO USTAWIEŃ",
-				"security": "Ochrona",
-				"screen": "Ekran",
-				"media": "Multimedia",
+				"security": "Inteligentne zabezpieczenia",
+				"screen": "Inteligentny ekran",
+				"media": "Inteligentne multimedia",
 				"voice": "Głos",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Inteligentne zabezpieczenia",
