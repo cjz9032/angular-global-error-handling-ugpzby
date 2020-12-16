@@ -3,7 +3,7 @@
 	<div class="battery-indicator">
 		<div class="indicator-icon" id="battery-health-temperature-indicator-image" [ngClass]="condition" [attr.aria-label]="'battery temperature'" role="img"></div>
 		<div class="indicator-text" id="battery-health-temperature-indicator-text" role="text">
-			<span *ngIf="temperature !== -300 else elseTempLeftSpan">{{temperature}}&nbsp;&#8451;</span>
+			<span class="temperature-value"*ngIf="temperature !== -300 else elseTempLeftSpan">{{temperature}}&nbsp;&#8451;</span>
 			<ng-template #elseTempLeftSpan>
 				<vtr-ui-exclamation-point [attr.aria-label]="'battery temperature data is not available'" id="battery-health-temperature-exclamation" role="img"></vtr-ui-exclamation-point>
 			</ng-template>

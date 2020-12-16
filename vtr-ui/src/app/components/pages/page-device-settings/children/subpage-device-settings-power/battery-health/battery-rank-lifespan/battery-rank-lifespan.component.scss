@@ -5,18 +5,19 @@
 @import '../a11y';
 
 .rank-star-container {
-	margin-left: 24px;
+	margin-left: 16px;
 	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-bottom: 22px;
 	padding-right: 5px;
 }
 
 .rank-star {
 	margin-right: 10px;
-	width: 22px;
-	height: 21px;
-	margin-top: 10px;
+	width: 20px;
+	height: 20px;
+	margin-top: 0px;
 }
+
 .rank-star-filled {
 	@extend .rank-star;
 	fill: #30d487;
@@ -56,7 +57,8 @@ section .desc {
 	font-size: $base;
 	color: $grey_darker;
 	font-weight: $battery-semi-bold;
-	padding-top: 12px;
+    padding-top: 12px;
+	font-family: $font_family_semibold;
 }
 section .desc-light {
 	display: inline-block;
@@ -68,17 +70,19 @@ section .desc-light {
 }
 section .symbol {
 	font-weight: $battery-semi-bold;
+	font-family: $font_family_semilight;
 }
 section .exclamation {
 	margin-left: 0.5rem;
 	padding-bottom: 8px;
 	display: inline-block;
 }
-.col-left {
+.col-stars {
 	min-width: 173px;
+	margin-top: 10px;
 }
-.col-right {
-	padding-right: 3px;
+.col-desc {
+	margin-right: 16px;
 }
 .alert-icon {
 	margin-left: 10px;
@@ -90,11 +94,11 @@ section .exclamation {
 		fill: #ffffff;
 	}
 }
-::ng-deep .col-right svg {
+::ng-deep .col-desc svg {
 	margin-left: 10px;
 	margin-top: -5px;
-	width: 26px;
-	height: 26px;
+	width: 20px;
+	height: 20px;
 	stroke: #f7c809;
 	@media #{$black-on-white} {
 		stroke: #000000;
