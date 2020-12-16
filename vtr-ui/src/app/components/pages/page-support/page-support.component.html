@@ -148,9 +148,7 @@
 
 	<right-content>
 		<div class="container-fluid">
-
 			<div class="row"
-				[vtrAppSearchScroller]="['search-warranty']"
 				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status >= 0 && deviceService.showWarranty">
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-warranty [item]="warrantyData"
@@ -159,8 +157,7 @@
 				</div>
 			</div>
 
-			<div class="row"
-				[vtrAppSearchScroller]="['search-feedback']">
+			<div class="row">
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
 						[description]="'dashboard.feedback.subtitle' | translate"
@@ -171,8 +168,7 @@
 				</div>
 			</div>
 
-			<div class="row"
-				[vtrAppSearchScroller]="['search-user-guide']">
+			<div class="row">
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.documentation.title' | translate"
 						[description]="''"
@@ -183,8 +179,7 @@
 				</div>
 			</div>
 
-			<div class="row"
-				[vtrAppSearchScroller]="['search-lenovo-help']">
+			<div class="row">
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.needHelp.title' | translate"
 						[description]="'support.needHelp.description' | translate"
@@ -195,8 +190,7 @@
 				</div>
 			</div>
 
-			<div class="row"
-				[vtrAppSearchScroller]="['search-lenovo-service']">
+			<div class="row">
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-support [title]="'support.quicklinks.title' | translate"
 						[description]="''"

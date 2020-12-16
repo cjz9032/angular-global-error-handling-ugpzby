@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SharedModule } from '../shared.module';
 import { RouterModule } from '@angular/router';
-import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 
 @NgModule({
 	declarations: [
@@ -16,7 +15,7 @@ import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 		// UiGamingDriverPopupComponent,
 		// UiPopoverComponent
 	],
-	imports: [CommonModule, SharedModule, RouterModule, AppSearchModule],
+	imports: [CommonModule, SharedModule, RouterModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class GamingCommonModule {}

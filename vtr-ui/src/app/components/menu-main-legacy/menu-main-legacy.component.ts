@@ -15,7 +15,6 @@ import { NgbDropdown, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { AppSearchService } from 'src/app/beta/app-search/app-search.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
@@ -44,7 +43,6 @@ import { BacklightLevelEnum } from '../pages/page-device-settings/children/subpa
 import { BacklightService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.service';
 import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { LenovoSurveyEnum } from 'src/app/enums/lenovo-survey.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
@@ -70,7 +68,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	public showSearchMenu = false;
 	public searchTips = '';
 	private searchTipsTimeout: any;
-	private unsupportFeatureEvt: Observable<string>;
 	private subscription: Subscription;
 	private relaySubscription: Subscription;
 	public isLoggingOut = false;
@@ -88,7 +85,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	headerLogo: string;
 	routerEventSubscription: Subscription;
 	translateSubscription: Subscription;
-	unsupportedFeatureSubscription: Subscription;
 	topRowFnSubscription: Subscription;
 	private focusMenuDropDownTimer: any;
 
@@ -133,7 +129,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		public appsForYouService: AppsForYouService,
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
-		private searchService: AppSearchService,
 		public dashboardService: DashboardService,
 		private newFeatureTipService: NewFeatureTipService,
 		private viewContainerRef: ViewContainerRef,
@@ -145,6 +140,20 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		private windowsVerisonService: WindowsVersionService
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
+	}
+
+	updateSearchBoxState(isActive) {
+		this.searchTips = '';
+		this.showSearchBox = isActive;
+		if (isActive && this.searchTipsTimeout) {
+			this.searchTipsTimeout = clearTimeout(this.searchTipsTimeout);
+			this.searchTipsTimeout = null;
+		}
+	}
+
+	onClickSearchMask() {
+		this.showMenu = false;
+		this.updateSearchBoxState(false);
 	}
 
 	ngOnInit() {
@@ -210,17 +219,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-		this.unsupportFeatureEvt = this.searchService.getUnsupportFeatureEvt();
-		this.unsupportedFeatureSubscription = this.unsupportFeatureEvt.subscribe((featureDesc) => {
-			if (this.searchTipsTimeout) {
-				clearTimeout(this.searchTipsTimeout);
-			}
-			this.searchTips = featureDesc;
-			this.searchTipsTimeout = setTimeout(() => {
-				this.searchTips = '';
-				this.searchTipsTimeout = null;
-			}, 3000);
-		});
 
 		const machineType = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineType,
@@ -452,9 +450,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		if (this.translateSubscription) {
 			this.translateSubscription.unsubscribe();
 		}
-		if (this.unsupportedFeatureSubscription) {
-			this.unsupportedFeatureSubscription.unsubscribe();
-		}
 		if (this.topRowFnSubscription) {
 			this.topRowFnSubscription.unsubscribe();
 		}
@@ -513,15 +508,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		return item.id !== 'user' && item.id !== 'app-search';
 	}
 
-	updateSearchBoxState(isActive) {
-		this.searchTips = '';
-		this.showSearchBox = isActive;
-		if (isActive && this.searchTipsTimeout) {
-			this.searchTipsTimeout = clearTimeout(this.searchTipsTimeout);
-			this.searchTipsTimeout = null;
-		}
-	}
-
 	onFocusMenuDropDown(menuDropDown) {
 		if (this.focusMenuDropDownTimer) {
 			clearTimeout(this.focusMenuDropDownTimer);
@@ -560,10 +546,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		this.navbarToggler.nativeElement.focus();
 	}
 
-	onClickSearchMask() {
-		this.showMenu = false;
-		this.updateSearchBoxState(false);
-	}
 
 	menuItemKeyDown(path, subpath?) {
 		if (path) {

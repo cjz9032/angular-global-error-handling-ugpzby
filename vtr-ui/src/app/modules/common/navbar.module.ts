@@ -28,7 +28,7 @@ import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faAngleDown } from '@fortawesome/pro-light-svg-icons/faAngleDown';
 import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
 //#endregion
-import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
+import { AppSearchModule } from '../app-search/app-search.module';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { CommonPipeModule } from './common-pipe.module';
 import { MaterialMenuComponent } from 'src/app/material/menu/material-menu.component';
@@ -53,8 +53,7 @@ import { MaterialHamburgerMenuComponent } from 'src/app/material/menu/material-h
 		UiHeaderWarrantyComponent,
 		CommonPipeModule,
 		MetricsModule,
-		NgbDropdownModule,
-		AppSearchModule,
+		NgbDropdownModule
 	],
 	imports: [
 		CommonModule,
@@ -65,8 +64,8 @@ import { MaterialHamburgerMenuComponent } from 'src/app/material/menu/material-h
 		CommonPipeModule,
 		RouterModule,
 		UiButtonModule,
-		AppSearchModule,
 		MatButtonModule,
+		AppSearchModule,
 		MatMenuModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

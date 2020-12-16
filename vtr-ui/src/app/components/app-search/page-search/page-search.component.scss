@@ -1,0 +1,318 @@
+@import '../../../app.theme';
+
+$block_width: 40rem;
+$item_height: 6rem;
+$icon_size: 2.4rem;
+$clean_icon_size: 1.6rem;
+$font_size: 1.4rem;
+$line_height: 2rem;
+
+.mid-text {
+	display: block;
+	height: 100%;
+	line-height: $line_height;
+	font-size: $font_size;
+	flex-grow: 1;
+}
+
+.flex-all-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.default-item-container {
+	display: flex;
+	width: 100%;
+	min-height: $item_height;
+	position: relative;
+}
+
+:host ::ng-deep {
+	.vtr-page-left-column {
+		background: $shade_lightest;
+
+		.widget-search-input {
+			@extend .default-item-container;
+			background: $light;
+			box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+			border: 1px solid $menu_hover;
+			border-radius: 0.5rem;
+			position: relative;
+			overflow: hidden;
+			z-index: 11;
+			&.is-show-result {
+				border-radius: 0.5rem 0.5rem 0 0;
+			}
+
+			::-ms-clear {
+				display: none;
+			}
+
+			.search-icon {
+				font-size: $icon_size;
+				height: calc(#{$item_height} - 2px);
+				width: $icon_size + 3rem;
+				color: $menu_hover;
+				@extend .flex-all-center;
+			}
+
+			.search-input {
+				@extend .mid-text;
+				border: none;
+				outline: none;
+
+				:focus {
+					border: none;
+				}
+
+				@extend .flex-all-center;
+			}
+
+			.search-btn {
+				height: calc(#{$item_height} - 2px);
+				@extend .flex-all-center;
+				::ng-deep {
+					.vtr-ui-button {
+						.button-box {
+							.button {
+								margin-top: 0;
+								min-height: 3.6rem;
+								text-transform: uppercase;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.offline-indicator {
+			margin-top: 3.7rem;
+			::ng-deep {
+				.vtr-widget-offline-info {
+					.offline-info-background {
+						border-radius: 0.7rem;
+					}
+				}
+			}
+		}
+
+		.offline-tips {
+			margin-top: 6rem;
+			font-size: 3.5rem;
+		}
+
+		.loading-indicator {
+			margin-top: 11.3rem;
+			width: 100%;
+			.cycle {
+				width: 4.8rem;
+				height: 4.8rem;
+				background: transparent linear-gradient(135deg, #2955BC 0%, var(--bluehyperlink) 100%) 0% 0% no-repeat padding-box;
+				background: transparent linear-gradient(135deg, #2955BC 0%, #346CEF 100%) 0% 0% no-repeat padding-box;
+				opacity: 1;
+			}
+
+			.loading-tips {
+				margin-top: 3.2rem;
+			}
+		}
+
+		.search-results {
+			width: 100%;
+
+			.result-counter {
+				margin-top: 4.1rem;
+				color: $gray_dark;
+				font-size: 1.8rem;
+				opacity: 0.8;
+
+				.part1 {
+					font-weight: bold;
+				}
+			}
+
+			.no-search-result {
+				.title {
+					margin-top: 4.96rem;
+					@extend .flex-all-center;
+				}
+
+				.description {
+					margin-top: 1.2rem;
+					@extend .flex-all-center;
+				}
+			}
+
+			.has-search-result {
+				margin-top: 1.2rem;
+				.result-item {
+					@extend .default-item-container;
+					background: $light 0% 0% no-repeat padding-box;
+					border: 1px solid $grey_light;
+					border-bottom: none;
+					&:first-child {
+						border-radius: 0.4rem 0.4rem 0 0;
+					}
+					&:last-child {
+						border-radius: 0 0 0.4rem 0.4rem;
+						border-bottom: 1px solid $grey_light;
+					}
+
+					.feature-icon-part {
+						font-size: $icon_size;
+						height: calc(#{$item_height} - 2px);
+						width: $icon_size + 3rem;
+						color: $menu_hover;
+						@extend .flex-all-center;
+					}
+
+					.feature-name-part {
+						@extend .mid-text;
+						@extend .flex-all-center;
+						height: calc(#{$item_height} - 2px);
+						font-weight: bold;
+						color: $gray_dark;
+						justify-content: left;
+						// max-width: 10rem;
+					}
+
+					.navigation-narrow-part {
+						height: calc(#{$item_height} - 2px);
+						@extend .flex-all-center;
+						padding-left: 0.4rem;
+
+						.category {
+							line-height: 2rem;
+							font-size: 1.4rem;
+							flex-grow: 1;
+							font-style: italic;
+							color: $gray_dark;
+							margin-right: 1.4rem;
+						}
+
+						.narrow-icon {
+							color: $gray_dark;
+							margin-right: 1.8rem;
+						}
+					}
+
+				}
+			}
+
+			.result-pagination-bar {
+				width: 100%;
+				@extend .flex-all-center;
+				font-size: 1.8rem;
+				opacity: 0.8;
+
+
+				.chevron-left {
+					padding: 1.6rem;
+				}
+
+				.chevron-right {
+					padding: 1.6rem;
+				}
+
+				.pagination-item {
+					padding: 0.6rem;
+				}
+
+				.active {
+					font-weight: bold;
+				}
+			}
+		}
+
+	}
+
+	.vtr-page-right-column {
+		@media #{$mediaquery_X5} {
+			padding: 4rem 8.5rem;
+		}
+	}
+}
+
+:host-context(.is-gaming) {
+	::ng-deep {
+		.vtr-page-left-column {
+			.card {
+				background: $gaming_darkest;
+
+				&.quick-access {
+					background: $gaming_darkest;
+
+					.quick-access-title {
+						color: $gaming_lightest;
+					}
+
+					.quick-assess-categories {
+						.quick-assess-item {
+							.item-con {
+								background: $gaming_bg;
+								border: none;
+								box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.01);
+
+								&:hover {
+									background: $gaming;
+								}
+
+								.item-title {
+									color: $gaming_lightest !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.vtr-page-right-column {
+			.vtr-widget-support {
+				background: $gaming_darkest;
+				box-shadow: $drop_shadow_gaming;
+
+				.title {
+					color: $gaming_lightest !important;
+				}
+
+				.vtr-ui-list-support {
+					.support-list {
+						background-color: $gaming_bg !important;
+						border: none !important;
+
+						button {
+							&:hover {
+								background-color: transparent !important;
+							}
+						}
+
+						.title {
+							color: $gaming_lightest;
+						}
+
+						.arrow {
+							color: $gaming_lightest !important;
+						}
+
+						.description {
+							color: $gaming_grey_lightest;
+							font-size: 1.2rem;
+						}
+
+						li {
+							border-bottom: 0.1rem solid $gaming_darkest !important;
+
+							a {
+								&:hover {
+									background-color: transparent !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

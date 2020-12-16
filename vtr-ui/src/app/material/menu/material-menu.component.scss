@@ -5,6 +5,7 @@
 	button > * {
 		cursor: pointer;
 	}
+
 	.menu-navbar {
 		height: $material_menu_height;
 		background-color: $main_darker;
@@ -132,6 +133,16 @@
 				}
 			}
 		}
+
+		.app-search {
+			::ng-deep {
+				.mat-button-wrapper {
+					padding-left: 2rem;
+					padding-right: 2rem;
+				}
+			}
+		}
+
 		.search-dropdown {
 			position: absolute;
 			top: calc(#{$material_menu_height} + 0.5rem);

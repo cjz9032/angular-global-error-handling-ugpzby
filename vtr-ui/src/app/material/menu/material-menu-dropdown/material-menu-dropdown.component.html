@@ -4,6 +4,9 @@
 	class="vtr-material-menu-dropdown mt-0 overflow-wrap-normal max-width-none min-height-0 menu-dropdown-container"
 	attr.aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{dropdownMenu.id}}"
 	xPosition="before">
+	<section *ngIf="dropdownMenu.id==='app-search'">
+		<vtr-search-dropdown></vtr-search-dropdown>
+	</section>
 	<section *ngIf="!hasSecondaryMenu && dropdownMenu.id!=='user'">
 		<ng-container *ngFor="let subitem of dropdownMenu.subitems; let i=index">
 			<button mat-menu-item

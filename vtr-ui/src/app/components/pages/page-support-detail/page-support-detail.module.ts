@@ -3,7 +3,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/cor
 import { PageSupportDetailComponent } from './page-support-detail.component';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { RouterModule } from '@angular/router';
-import { AppSearchModule } from 'src/app/beta/app-search/app-search.module';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
@@ -39,7 +38,6 @@ import { SupportDetailArticleEComponent } from './children/support-detail-articl
 		CommonModule,
 		MetricsModule,
 		RouterModule,
-		AppSearchModule,
 		NgbTooltipModule,
 		TranslationModule,
 		WidgetSecurityStatusModule,

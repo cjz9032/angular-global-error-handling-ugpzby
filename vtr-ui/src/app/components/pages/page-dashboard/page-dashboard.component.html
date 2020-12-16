@@ -73,14 +73,14 @@
 							[cardData]="positionBData"
 							[cardId]="'dashboard-lnk-systemInfo-position-b'">
 							<div *ngIf="positionBData.isActionLink" class="circle-state action-content">
-								<vtr-widget-round-status								   
+								<vtr-widget-round-status
 									[status]="positionBData.state"
 									[statusId]="'dashboard-system-info-position-b'"
 									[statusText]="positionBData.statusText">
 								</vtr-widget-round-status>
 							</div>
 							<div *ngIf="!positionBData.isActionLink" class="circle-state link-content">
-								<vtr-widget-round-status								   
+								<vtr-widget-round-status
 									[status]="positionBData.state"
 									[statusId]="'dashboard-system-info-position-b'"
 									[statusText]="positionBData.statusText">
@@ -199,7 +199,7 @@
 			<div class="row"
 				*ngIf="!deviceService.isArm && showQuickSettings">
 				<div class="col-sm-12 px-0 pt-3">
-					<vtr-widget-quicksettings [vtrAppSearchScroller]="['search-microphone-quick', 'search-camera-quick', 'search-eye-care-quick']">
+					<vtr-widget-quicksettings>
 					</vtr-widget-quicksettings>
 				</div>
 			</div>

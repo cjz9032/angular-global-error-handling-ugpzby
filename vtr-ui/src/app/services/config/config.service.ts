@@ -23,6 +23,7 @@ import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { NewFeatureTipService } from '../new-feature-tip/new-feature-tip.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
+import { AppSearchService } from '../app-search/app-search.service';
 
 export interface MenuItem {
 	id: string;
@@ -84,7 +85,8 @@ export class ConfigService {
 		private newFeatureTipService: NewFeatureTipService,
 		private localCacheService: LocalCacheService,
 		private commonService: CommonService,
-		private hardwareScanService: HardwareScanService
+		private hardwareScanService: HardwareScanService,
+		private appSearchService: AppSearchService
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (this.securityAdvisor) {
@@ -101,6 +103,22 @@ export class ConfigService {
 				}
 			);
 			this.showNewFeatureTipsWithMenuItems();
+		});
+	}
+
+	public canShowSearch(): Promise<boolean> {
+		return new Promise((resolve) => {
+			if (this.hypSettings) {
+				this.hypSettings.getFeatureSetting('FeatureSearch').then(
+					(searchFeature) => {
+						resolve((searchFeature || '').toString().toLowerCase() === 'true');
+					},
+					(error) => {
+						this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
+						resolve(false);
+					}
+				);
+			}
 		});
 	}
 
@@ -170,11 +188,14 @@ export class ConfigService {
 					resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
 				}
 
+				this.initializeAppSearchItem(resultMenu, true, true);
+
 				this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
 
 				await this.initializeSmartAssist(machineType);
 				this.notifyMenuChange(this.menu);
 			}
+
 			return resolve(this.menu);
 		});
 	}
@@ -207,6 +228,12 @@ export class ConfigService {
 		if (appSearchItem) {
 			appSearchItem.availability = supportSearch && !appSearchItem.hide;
 			appSearchItem.hide = !appSearchItem.availability || !isBeta;
+
+			if (appSearchItem.availability) {
+				setTimeout(() => {
+					this.appSearchService.load();
+				}, 3000);
+			}
 		}
 	}
 
@@ -576,21 +603,7 @@ export class ConfigService {
 		this.commonService.sendNotification(MenuItemEvent.MenuItemChange, payload);
 	}
 
-	public canShowSearch(): Promise<boolean> {
-		return new Promise((resolve) => {
-			if (this.hypSettings) {
-				this.hypSettings.getFeatureSetting('FeatureSearch').then(
-					(searchFeature) => {
-						resolve((searchFeature || '').toString().toLowerCase() === 'true');
-					},
-					(error) => {
-						this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
-						resolve(false);
-					}
-				);
-			}
-		});
-	}
+
 
 	updateSegmentMenu(segment): MenuItem[] {
 		if (segment === this.activeSegment || segment === SegmentConst.Gaming) {
@@ -612,7 +625,7 @@ export class ConfigService {
 		this.updateBetaMenu(menu, isBeta, true);
 
 		const result = await this.canShowSearch();
-		this.updateAvailability(menu, 'app-search', result);
+		this.updateAvailability(menu, 'app-search', true);
 
 		this.isSmartPerformanceAvailable = await this.showSmartPerformance();
 		this.updateAvailability(menu, 'smart-performance', this.isSmartPerformanceAvailable);
@@ -775,4 +788,5 @@ export class ConfigService {
 			});
 		}
 	}
+
 }

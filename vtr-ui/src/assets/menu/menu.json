@@ -520,13 +520,12 @@
 		},
 		{
 			"id": "app-search",
-			"label": " ",
-			"beta": true,
-			"path": null,
+			"label": "",
+			"beta": false,
+			"path": "search",
 			"metricsEvent": "itemClick",
 			"metricsParent": "navbar",
 			"metricsItem": "link.app-search",
-			"segment": "-[Commercial]",
 			"routerLinkActiveOptions": {
 				"exact": true
 			},

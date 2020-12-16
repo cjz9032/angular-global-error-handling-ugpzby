@@ -1,0 +1,156 @@
+<vtr-page-layout [title]="pageTitle" [textId]="'appSearch'" [pageCssClass]="'appSearch'"
+	[shiftLeftUp]="true" [shiftRightUp]="true" [back]="'common.ui.back' | translate" [backId]="'appSearch-page-btn-back'"
+	[isInnerBack]="isCategoryArticlesShow" (innerBack)="onInnerBack()">
+
+	<left-content>
+		<div class="container-fluid">
+
+			<!-- user input widget-->
+			<div class="row">
+				<div class="widget-search-input">
+					<!-- search icon-->
+					<div class="search-icon" (click)="onClickSearchBtn()">
+						<fa-icon [icon]="['fal', 'search']"></fa-icon>
+					</div>
+
+					<!-- search input -->
+					<input type="text" #searchInput [placeholder]="searchTips" class="search-input"
+						(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput"  (keydown.enter)="onClickSearchBtn()"/>
+
+					<!-- search button -->
+					<div class="search-btn">
+						<vtr-ui-button (onClick)="onClickSearchBtn()"
+						[tabIndex]="100"
+						id="search-btn-in-search-page"
+						aria-label="search-btn-in-search-page"
+						vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsParent="Page.Search"
+						metricsItem="search"
+						[btnHeight]="true"
+						[isFullWidth]="true"
+						[label]="'SEARCH'"
+						[isDisabled]="!isOnline || !userInput"
+						[linkId]="'search-btn-in-search-page'"></vtr-ui-button>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- offline indicator bannar -->
+			<div *ngIf="!isOnline">
+				<div class="row" >
+					<div class="col col-12 px-0 offline-indicator">
+						<vtr-widget-offline-info [isButtonVisible]="false" [isSubtitleVisible]="false"
+							[title]="'dashboard.offlineInfo.title' | translate"
+							[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+							[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+							[offlineConnection]="offlineConnection">
+						</vtr-widget-offline-info>
+					</div>
+				</div>
+
+				<div class="row flex-all-center offline-tips" >
+					App Search is unavailable when network is disconnected at present
+				</div>
+			</div>
+
+
+			<!--loading indicator-->
+			<div class="loading-indicator" *ngIf="!loadedCompleted">
+				<div class="row flex-all-center loading-animation">
+					<div class="cycle"></div>
+				</div>
+				<div class="row flex-all-center loading-tips">
+					Please wait while we check your device for available settings
+				</div>
+			</div>
+
+			<!-- result item -->
+			<div class="search-results" *ngIf='isOnline && searchCompleted'>
+				<div class="row result-counter" *ngIf="resultItems.length <= pageSize"> <div class="part1">{{ resultItems.length }}</div>&nbsp;<div class="part2">results</div></div>
+				<div class="row result-counter" *ngIf="resultItems.length > pageSize"> <div class="part1">{{ pageStartIdx + '-' + pageEndIdx }}</div>&nbsp;<div class="part2">{{ '/  ' + resultItems.length + '  results' }}</div></div>
+
+				<!-- no search result tips -->
+				<div class="no-search-result" *ngIf="resultItems.length === 0">
+					<div class="title">
+						{{ 'No results for ' + (userInput || '***')}}
+					</div>
+					<div class="description pt-24">
+						<div class="detail">
+							<div>Your search did not match any items.</div>
+							<ul>
+								<li>Check the spelling of your keyword</li>
+								<li>Try a different keyword</li>
+								<li>Try fewer or more general keywords</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- search result item list-->
+				<div class="has-search-result" *ngIf="resultItems.length > 0">
+					<div class="row result-item" (click)="onClickResultItem(resultItem)" *ngFor="let resultItem of resultItems">
+						<!-- result icon-->
+						<div class="feature-icon-part">
+							<fa-icon [icon]="resultItem.icon || ['fal', 'gem']"></fa-icon>
+						</div>
+
+						<!-- feature name-->
+						<div class="feature-name-part">
+							{{resultItem.featureName}}
+						</div>
+
+						<!-- category and feature icon -->
+						<div class="navigation-narrow-part">
+							<div class="category"> {{resultItem.category}}</div>
+							<div class="narrow-icon">
+								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+							</div>
+						</div>
+					</div>
+
+					<!-- pagination bar-->
+					<div class="row result-pagination-bar" *ngIf="resultItems.length > pageSize">
+						<fa-icon class='chevron-left' [icon]="['fal', 'chevron-left']"></fa-icon>
+						<div *ngFor="let i of pageArray;let pageNum = index">
+							<span class="pagination-item" [ngClass]="{'active': currentPage === pageNum + 1 }" > {{ pageNum + 1 }}</span>
+						</div>
+						<fa-icon class='chevron-right' [icon]="['fal', 'chevron-right']"></fa-icon>
+					</div>
+				</div>
+			</div>
+		</div>
+	</left-content>
+
+	<right-content>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col col-12 px-0 pt-0 pb-24">
+					<vtr-widget-support [title]="'support.documentation.title' | translate" [description]="''"
+						[items]="supportDatas.documentation" [widgetTittleId]="'documentation'"
+						[widgetDescriptionId]="''">
+					</vtr-widget-support>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-12 px-0 pt-0 pb-24">
+					<vtr-widget-support [title]="'support.needHelp.title' | translate"
+						[description]="'support.needHelp.description' | translate" [items]="supportDatas.needHelp"
+						[widgetTittleId]="'need-help'" [widgetDescriptionId]="'contact-us-help'">
+					</vtr-widget-support>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-12 px-0 pt-0 pb-24">
+					<vtr-widget-support [title]="'support.quicklinks.title' | translate" [description]="''"
+						[items]="supportDatas.quicklinks" [widgetTittleId]="'quicklinks'" [widgetDescriptionId]="''">
+					</vtr-widget-support>
+				</div>
+			</div>
+		</div>
+	</right-content>
+
+</vtr-page-layout>
