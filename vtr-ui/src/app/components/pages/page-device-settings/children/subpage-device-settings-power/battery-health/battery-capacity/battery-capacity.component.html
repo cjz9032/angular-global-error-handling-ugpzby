@@ -18,7 +18,7 @@
 		attr.aria-label="'battery health capacity tooltip, which reads:'{{'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate}}">
 	</fa-icon>
 	<ng-template #tooltipRef>
-		<div id="battery-health-capacity-tooltip-content" role="tooltip"
+		<div class="tooltip-content" id="battery-health-capacity-tooltip-content" role="tooltip"
 		[innerHTML]="'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate"></div>
 	</ng-template>
 	<div class="capacity-area" [attr.aria-label]="'battery capacity percent'" id="battery-health-capacity-percent" role="img">

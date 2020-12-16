@@ -74,3 +74,6 @@
 :host-context(.is-gaming) {
 	@include battery-temperature-color($smart-battery-gaming-theme);
 }
+.temperature-value {
+	font-family: $font_family_semilight;
+}
