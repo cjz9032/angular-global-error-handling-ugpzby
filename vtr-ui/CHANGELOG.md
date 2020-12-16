@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.31](https://bitbucket.tc.lenovo.com///compare/v1.9.30...v1.9.31) (2020-12-16)
+
+
+### Features
+
+* **scss:** unify the output folder of the image in scss ([383abe2](https://bitbucket.tc.lenovo.com///commit/383abe2cccfa32f41fd669623470552871df4a94))
+
+
+### Bug Fixes
+
+* **menu:** add 200ms delay for menu ([50527cb](https://bitbucket.tc.lenovo.com///commit/50527cbcea7594c0dac1ef5a25c25486ba8ee3d2))
+* **SP:** VAN-24247 fix a condition detected in sp ([40d6fbb](https://bitbucket.tc.lenovo.com///commit/40d6fbb52badbc55b8f4f7316fba91d2544036e3))
+
 ### [1.9.30](https://bitbucket.tc.lenovo.com///compare/v1.9.29...v1.9.30) (2020-12-15)
 
 
