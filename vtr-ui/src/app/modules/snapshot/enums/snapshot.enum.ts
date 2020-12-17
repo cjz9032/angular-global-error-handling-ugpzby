@@ -10,6 +10,7 @@ export enum SnapshotStatus {
 
 export enum SnapshotComponentStatus {
 	hasData,
+	noData,
 	inProgress,
 	error,
 }

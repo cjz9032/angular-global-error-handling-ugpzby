@@ -165,11 +165,11 @@ export class SnapshotService {
 				throw Error('Could not find requested component info');
 			}
 			this.pvtSnapshotInfo[componentName].info = componentSnapshot;
-			const utcBaselineDate = new Date(this.pvtSnapshotInfo[componentName].info.BaselineDate + ' UTC');
-			const utcLastSnapshotDate = new Date(this.pvtSnapshotInfo[componentName].info.LastSnapshotDate + ' UTC');
-			this.pvtSnapshotInfo[componentName].info.BaselineDate = formatDate(utcBaselineDate, 'EEEE, MMMM d, y', 'en-US');
-			this.pvtSnapshotInfo[componentName].info.LastSnapshotDate = formatDate(utcLastSnapshotDate, 'EEEE, MMMM d, y', 'en-US');
-			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+			if (this.pvtSnapshotInfo[componentName].info.Items.length > 0) {
+				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+			} else {
+				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.noData;
+			}
 		} catch (error) {
 			this.loggerService.error(
 				`Error ${error} during request for snapshot data from ${componentName}`

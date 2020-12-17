@@ -5,6 +5,7 @@ import {
 	SnapshotComponentStatus,
 	SnapshotStatus,
 } from 'src/app/modules/snapshot/enums/snapshot.enum';
+import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
 import { SnapshotService } from '../../../services/snapshot.service';
 
 @Component({
@@ -23,16 +24,27 @@ export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 	public array = Array;
 	public itemsAttributes = new Array();
 	public snapshotStatus: any;
+	public baselineDate: Date;
+	public lastSnapshotDate: Date;
 
-	constructor(private snapshotService: SnapshotService) {}
+	constructor(private snapshotService: SnapshotService,
+				private formatDateTime: FormatLocaleDateTimePipe) {}
 
 	ngOnInit(): void {
 		this.itemsAttributes = new Array();
 		this.snapshotStatus = SnapshotComponentStatus;
 		this.detailsExpanded = false;
+		this.convertBaselineAndLastSnapshotDate();
 	}
 
 	ngOnDestroy() {}
+
+	public convertBaselineAndLastSnapshotDate() {
+		const utcBaselineDate = new Date(this.component.info.BaselineDate + ' UTC');
+		const utcLastSnapshotDate = new Date(this.component.info.LastSnapshotDate + ' UTC');
+		this.baselineDate = this.formatDateTime.transform(utcBaselineDate);
+		this.lastSnapshotDate = this.formatDateTime.transform(utcLastSnapshotDate);
+	}
 
 	public getModuleIcon(module: string): string {
 		if (
@@ -51,6 +63,7 @@ export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 	public async updateSnapshot() {
 		this.snapshotService.snapshotStatus = SnapshotStatus.individualSnapshotInProgress;
 		await this.snapshotService.updateSnapshotInfo(this.name);
+		this.convertBaselineAndLastSnapshotDate();
 		if (!this.snapshotService.anyIndividualSnapshotInProgress()) {
 			this.snapshotService.snapshotStatus = SnapshotStatus.snapshotCompleted;
 		}

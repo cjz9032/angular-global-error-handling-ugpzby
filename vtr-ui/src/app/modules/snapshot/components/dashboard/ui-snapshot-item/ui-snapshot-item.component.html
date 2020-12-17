@@ -12,7 +12,7 @@
 			</div>
 
 			<!-- Icon to expand and collapse module information -->
-			<div class="row" [ngClass]="{ 'component-disabled': component.info.Items.length === 0 }">
+			<div class="row" [ngClass]="{ 'component-disabled': component.status === snapshotStatus.noData }">
 				<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title"
 						*ngIf="!component.info.IsDifferent; else modifiedTitle">
 					{{ 'snapshot.components.' + name | translate }}</p>
@@ -24,7 +24,9 @@
 			</div>
 
 			<!-- Shows load icon until modules are not loaded -->
-			<img *ngIf="component.status !== snapshotStatus.hasData; else updateButton" role="img" class="load-icon" src="assets/icons/snapshot/icon_snapshot_progress.svg"/>
+			<img *ngIf="component.status !== snapshotStatus.hasData &&
+						component.status !== snapshotStatus.noData; else updateButton"
+				role="img" class="load-icon" src="assets/icons/snapshot/icon_snapshot_progress.svg"/>
 
 			<!-- Shows button to update after modules get loaded -->
 			<ng-template #updateButton>
@@ -43,7 +45,7 @@
 			</ng-template>
 
 			<!-- Icon to expand and collapse module information -->
-			<div *ngIf="component.info.Items.length > 0; else hideDetailsInfo">
+			<div *ngIf="component.status !== snapshotStatus.noData; else hideDetailsInfo">
 				<div id="snapshot-item-{{ componentIndex }}-details-btn"
 					class="collapse-control"
 					[attr.aria-label]="!detailsExpanded ? name + 'expand-module-details': name + 'collapse-module-details'"
@@ -89,9 +91,9 @@
 							{{ 'snapshot.properties.UpdatedDate' | translate }}
 						</th>
 						<td id="snapshot-item-{{ componentIndex }}-detail-update-date-base-value">
-							{{ component.info.BaselineDate }}</td>
+							{{ baselineDate }}</td>
 						<td id="snapshot-item-{{ componentIndex }}-detail-update-date-current-value" [ngClass]="{'modified-item': component.IsDifferent}">
-							{{ component.info.LastSnapshotDate }}</td>
+							{{ lastSnapshotDate }}</td>
 					</tr>
 
 					<ng-template #recursiveList let-list>
