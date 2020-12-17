@@ -3,16 +3,16 @@
 		<div class="row">
 			<div class="col d-flex justify-content-between">
 				<picture>
-					<source srcset="'assets/images/gaming/legionEdge.webp" type="image/webp">
-					<img id="right_section_legion_edge" role="img" class="gaming-header-image" *ngIf="!gamingCapabilities.liteGaming" [src]="'assets/images/gaming/legionEdge.png'  | svgInline | async" />
+					<source srcset="assets/images/gaming/legionEdge.webp" type="image/webp">
+					<img id="right_section_legion_edge" role="img" class="gaming-header-image" *ngIf="!gamingCapabilities.liteGaming" [src]="'assets/images/gaming/legionEdge.png'" />
 				</picture>
 				<picture>
-					<source srcset="'assets/images/gaming/ideaCentre@2x.webp" type="image/webp">
-					<img id="right_section_ideacentre_gaming" role="img" class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaCentre@2x.png'  | svgInline | async" />
+					<source srcset="assets/images/gaming/ideaCentre@2x.webp" type="image/webp">
+					<img id="right_section_ideacentre_gaming" role="img" class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaCentre@2x.png'" />
 				</picture>
 				<picture>
-					<source srcset="'assets/images/gaming/ideaPad@2x.webp" type="image/webp">
-					<img id="right_section_ideapad_gaming" role="img" class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && !gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaPad@2x.png'  | svgInline | async" />
+					<source srcset="assets/images/gaming/ideaPad@2x.webp" type="image/webp">
+					<img id="right_section_ideapad_gaming" role="img" class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && !gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaPad@2x.png'" />
 				</picture>
 				<div class="help-box" >
 					<button (click)="openModal()" id="gaming_dashboard_help"
