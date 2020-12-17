@@ -15,7 +15,12 @@
 		@extend %hyperlink-text;
 	}
 
+	.icon-container {
+		max-width: 2.2rem;
+	}
+
 	#qs-note {
-		margin-top: 0.4rem;
+		margin-top: 0.2rem;
+		margin-left: 1.2rem;
 	}
 }

@@ -2,7 +2,7 @@
 <div *ngIf="((!deviceService.isSMode && cameraStatus.available) || (cameraStatus.available && microphoneStatus.available) || (!deviceService.isSMode && microphoneStatus.available))"
 	class="vtr-widget-quicksettings vtr-widget">
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row vtr-widget-quicksettings-buttons">
 			<div class="col col-12">
 				<!-- title -->
 				<h2 class="heading pb-20"
@@ -71,7 +71,7 @@
 			</div>
 		</div>
 
-		<vtr-widget-quicksettings-note *ngIf="showMicrophonePermissionNote()" [note]="microphoneNote"></vtr-widget-quicksettings-note>
+		<vtr-widget-quicksettings-note class="microphone-note" *ngIf="showMicrophonePermissionNote()" [note]="microphoneNote"></vtr-widget-quicksettings-note>
 		<vtr-widget-quicksettings-note *ngIf="showCameraPrivacyPermissionNote()" [note]="cameraPrivacyNote"></vtr-widget-quicksettings-note>
 
 		<!-- my device settings link -->
