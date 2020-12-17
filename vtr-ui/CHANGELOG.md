@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.32](https://bitbucket.tc.lenovo.com///compare/v1.9.31...v1.9.32) (2020-12-17)
+
+
+### Features
+
+* **SystemUpdate:** VAN-23514 update install button text ([c17c750](https://bitbucket.tc.lenovo.com///commit/c17c7507b89ff99a2f0900d29bba79fc8439f372))
+
+
+### Bug Fixes
+
+* **Device settings style:** VAN-24232 fixed settings pages not aligned ([9f5d33d](https://bitbucket.tc.lenovo.com///commit/9f5d33db845292826a720259bda1a225a3ef9460))
+* **menu:** add 200ms delay for menu dropdown ([3fca7a3](https://bitbucket.tc.lenovo.com///commit/3fca7a3708d2f4a2b239c56f9f18006e8f763846))
+
 ### [1.9.31](https://bitbucket.tc.lenovo.com///compare/v1.9.30...v1.9.31) (2020-12-16)
 
 
