@@ -1,6 +1,6 @@
 import { MacroKeyMacro } from './macrokey-input-macro.model';
 
 export class MacroKeyInputChange {
-	public key: String;
+	public key: string;
 	public macro: MacroKeyMacro = new MacroKeyMacro();
 }

@@ -3,22 +3,25 @@ import { ModalGamingLegionedgeComponent } from './modal-gaming-legionedge.compon
 import { NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 describe('ModalGamingLegionedgeComponent', () => {
 	let component: ModalGamingLegionedgeComponent;
 	let fixture: ComponentFixture<ModalGamingLegionedgeComponent>;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				ModalGamingLegionedgeComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
-			],
-			schemas: [NO_ERRORS_SCHEMA],
-			providers: [NgbActiveModal, HttpClient],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					ModalGamingLegionedgeComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+					GAMING_DATA.mockPipe({ name: 'sanitize' }),
+				],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [NgbActiveModal, HttpClient],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalGamingLegionedgeComponent);
@@ -44,16 +47,3 @@ describe('ModalGamingLegionedgeComponent', () => {
 		expect(modal).toBeTruthy();
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}

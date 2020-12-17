@@ -1,3 +1,3 @@
 export class ThermalModeStatus {
-	public thermalModeStatus: number = 2;
+	public thermalModeStatus = 2;
 }

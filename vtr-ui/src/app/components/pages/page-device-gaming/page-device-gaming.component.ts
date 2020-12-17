@@ -22,6 +22,7 @@ import { Title } from '@angular/platform-browser';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { Subscription } from 'rxjs';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
@@ -144,9 +145,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
-		const queryOptions: any = {
-			Page: 'dashboard',
-		};
+		const queryOptions = GAMING_DATA.buildPage('dashboard');
 		if (this.isOnline) {
 			if (this.dashboardService.onlineCardContent.positionD) {
 				this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;

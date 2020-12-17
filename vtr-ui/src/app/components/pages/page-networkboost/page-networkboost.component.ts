@@ -15,6 +15,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { ModalGamingRunningAppListComponent } from './../../modal/modal-gaming-running-app-list/modal-gaming-running-app-list.component';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({
 	selector: 'vtr-page-networkboost',
@@ -78,9 +79,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 		// AutoClose Init
 		this.getNetworkBoostStatus();
 		this.networkBoostRegisterEvent();
-		const queryOptions = {
-			Page: 'network-boost',
-		};
+		const queryOptions = GAMING_DATA.buildPage('network-boost');
 
 		this.fetchCacheSubscrition = this.cmsService
 			.fetchCMSContent(queryOptions)
@@ -276,9 +275,7 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 	// Get the CMS content for the container card
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
-		const queryOptions = {
-			Page: 'network-boost',
-		};
+		const queryOptions = GAMING_DATA.buildPage('network-boost');
 		this.fetchSubscrition = this.cmsService
 			.fetchCMSContent(queryOptions)
 			.subscribe((response: any) => {
@@ -307,17 +304,16 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 			});
 
 		if (!this.isOnline) {
-			this.cardContentPositionC = {
-				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+			this.cardContentPositionC = GAMING_DATA.buildFeatureImage(
+				this.windowsVerisonService.isNewerThanRS4()
 					? 'assets/cms-cache/GamingPosC.webp'
-					: 'assets/cms-cache/GamingPosC.jpg',
-			};
-
-			this.cardContentPositionF = {
-				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+					: 'assets/cms-cache/GamingPosC.jpg'
+			);
+			this.cardContentPositionF = GAMING_DATA.buildFeatureImage(
+				this.windowsVerisonService.isNewerThanRS4()
 					? 'assets/cms-cache/network_boost_offline.webp'
-					: 'assets/cms-cache/network_boost_offline.jpg',
-			};
+					: 'assets/cms-cache/network_boost_offline.jpg'
+			);
 		}
 	}
 

@@ -9,6 +9,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Component({
 	selector: 'vtr-page-macrokey',
@@ -76,9 +77,7 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 	// Get the CMS content for the container card
 	fetchCMSArticles() {
 		this.isOnline = this.commonService.isOnline;
-		const queryOptions = {
-			Page: 'macro-key',
-		};
+		const queryOptions = GAMING_DATA.buildPage('macro-key');
 		this.fetchSubscrition = this.cmsService
 			.fetchCMSContent(queryOptions)
 			.subscribe((response: any) => {
@@ -106,17 +105,16 @@ export class PageMacrokeyComponent implements OnInit, OnDestroy {
 			});
 
 		if (!this.isOnline) {
-			this.cardContentPositionC = {
-				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+			this.cardContentPositionC = GAMING_DATA.buildFeatureImage(
+				this.windowsVerisonService.isNewerThanRS4()
 					? 'assets/cms-cache/GamingPosC.webp'
-					: 'assets/cms-cache/GamingPosC.jpg',
-			};
-
-			this.cardContentPositionF = {
-				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+					: 'assets/cms-cache/GamingPosC.jpg'
+			);
+			this.cardContentPositionF = GAMING_DATA.buildFeatureImage(
+				this.windowsVerisonService.isNewerThanRS4()
 					? 'assets/cms-cache/macrokey_offline.webp'
-					: 'assets/cms-cache/macrokey_offline.jpg',
-			};
+					: 'assets/cms-cache/macrokey_offline.jpg'
+			);
 		}
 	}
 

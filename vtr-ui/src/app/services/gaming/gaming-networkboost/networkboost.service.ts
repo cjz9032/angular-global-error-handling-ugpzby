@@ -3,22 +3,23 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { LocalCacheService } from '../../local-cache/local-cache.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class NetworkBoostService {
 	public isShellAvailable = false;
-	public cardContentPositionF: any = {
-		FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+	public cardContentPositionF: any = GAMING_DATA.buildFeatureImage(
+		this.windowsVerisonService.isNewerThanRS4()
 			? 'assets/cms-cache/content-card-4x4-support.webp'
-			: 'assets/cms-cache/content-card-4x4-support.jpg',
-	};
-	public cardContentPositionB: any = {
-		FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+			: 'assets/cms-cache/content-card-4x4-support.jpg'
+	);
+	public cardContentPositionB: any = GAMING_DATA.buildFeatureImage(
+		this.windowsVerisonService.isNewerThanRS4()
 			? 'assets/cms-cache/Security4x3-zone2.webp'
-			: 'assets/cms-cache/Security4x3-zone2.jpg',
-	};
+			: 'assets/cms-cache/Security4x3-zone2.jpg'
+	);
 	private gamingNetworkBoost: any;
 
 	constructor(

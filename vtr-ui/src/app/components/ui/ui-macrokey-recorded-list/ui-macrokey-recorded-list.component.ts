@@ -42,7 +42,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat1.title',
 					metricitem: 'macrokey_no_repeat',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat1,
+					value: MacroKeyRepeat.repeat1,
 				},
 				{
 					title: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.title',
@@ -53,7 +53,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat2.title',
 					metricitem: 'macrokey_no_repeat_2times',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat2,
+					value: MacroKeyRepeat.repeat2,
 				},
 				{
 					title: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.title',
@@ -64,7 +64,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat3.title',
 					metricitem: 'macrokey_no_repeat_3times',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat3,
+					value: MacroKeyRepeat.repeat3,
 				},
 				{
 					title: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.title',
@@ -75,7 +75,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat4.title',
 					metricitem: 'macrokey_no_repeat_4times',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat4,
+					value: MacroKeyRepeat.repeat4,
 				},
 				{
 					title: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.title',
@@ -86,7 +86,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat5.title',
 					metricitem: 'macrokey_no_repeat_5times',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat5,
+					value: MacroKeyRepeat.repeat5,
 				},
 				{
 					title: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.title',
@@ -97,7 +97,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat6.title',
 					metricitem: 'macrokey_no_repeat_6times',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat6,
+					value: MacroKeyRepeat.repeat6,
 				},
 				{
 					title: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.title',
@@ -108,7 +108,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat7.title',
 					metricitem: 'macrokey_no_repeat_7times',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat7,
+					value: MacroKeyRepeat.repeat7,
 				},
 				{
 					title: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.title',
@@ -119,7 +119,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat8.title',
 					metricitem: 'macrokey_no_repeat_8times',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat8,
+					value: MacroKeyRepeat.repeat8,
 				},
 				{
 					title: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.title',
@@ -130,7 +130,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat9.title',
 					metricitem: 'macrokey_no_repeat_9times',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat9,
+					value: MacroKeyRepeat.repeat9,
 				},
 				{
 					title: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.title',
@@ -141,7 +141,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 					label: 'gaming.macroKey.details.recorded.repeatStatus.repeat10.title',
 					metricitem: 'macrokey_no_repeat_10times',
 					show_tool_tip: true,
-					value: MacroKeyRepeat.Repeat10,
+					value: MacroKeyRepeat.repeat10,
 				},
 			],
 		},
@@ -275,7 +275,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 		this.clearAll.emit();
 		if (this.selectedNumber.key === '0' || this.selectedNumber.key === 'M1') {
 			this.macrokeyService.updateMacrokeyInitialKeyDataCache([]);
-			this.recordsData.repeat = MacroKeyRepeat.Repeat1;
+			this.recordsData.repeat = MacroKeyRepeat.repeat1;
 			this.recordsData.interval = MacroKeyInterval.KeepInterval;
 			this.ignoreInterval = false;
 			this.repeatSelectedValue = this.recordsData.repeat;
@@ -283,7 +283,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 			this.macrokeyService.updateMacrokeyInitialKeyIntervalDataCache(
 				MacroKeyInterval.KeepInterval
 			);
-			this.macrokeyService.updateMacrokeyInitialKeyRepeatDataCache(MacroKeyRepeat.Repeat1);
+			this.macrokeyService.updateMacrokeyInitialKeyRepeatDataCache(MacroKeyRepeat.repeat1);
 		}
 	}
 

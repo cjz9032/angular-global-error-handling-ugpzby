@@ -27,6 +27,8 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { GamingThermal2 } from 'src/app/enums/gaming-thermal2.enum';
 import { AutomationId } from 'src/app/enums/automation-id.enum';
 
+import { GAMING_DATA } from './../../../../testing/gaming-data';
+
 describe('WidgetLegionEdgeComponent', () => {
 	let component: WidgetLegionEdgeComponent;
 	let fixture: ComponentFixture<WidgetLegionEdgeComponent>;
@@ -71,7 +73,7 @@ describe('WidgetLegionEdgeComponent', () => {
 		},
 	};
 	const localCacheServiceMock = {
-		getLocalCacheValue(key: any, defaultValue?: any) {
+		getLocalCacheValue: (key: any, defaultValue?: any) => {
 			let returnValue: any;
 			switch (key) {
 				case '[LocalStorageKey] RealThermalModeStatus':
@@ -105,11 +107,10 @@ describe('WidgetLegionEdgeComponent', () => {
 					returnValue = touchpadLockStatusCache;
 					break;
 			}
-			if (returnValue === undefined && arguments.length === 2) {
-				return defaultValue;
-			} else {
+			if (returnValue !== undefined) {
 				return returnValue;
 			}
+			return defaultValue;
 		},
 		setLocalCacheValue: (key: any, value: any) => {
 			switch (key) {
@@ -281,51 +282,59 @@ describe('WidgetLegionEdgeComponent', () => {
 			},
 		};
 
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{ provide: TranslateService, useValue: translateServiceMock },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
-					{ provide: GamingOCService, useValue: gamingOCServiceMoke },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{ provide: TranslateService, useValue: translateServiceMock },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceMock,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceMoke },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -826,50 +835,58 @@ describe('WidgetLegionEdgeComponent', () => {
 			},
 		};
 
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceMock },
-					{ provide: GamingOCService, useValue: gamingOCServiceMoke },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceMock,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceMoke },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -1084,50 +1101,58 @@ describe('WidgetLegionEdgeComponent', () => {
 				// });
 			},
 		};
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceMock },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceMock,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -1293,50 +1318,58 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceMock },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceMock,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -1548,50 +1581,58 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceMoke },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceMoke },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -1822,50 +1863,58 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceMock },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceMock },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -2035,50 +2084,58 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceMock },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceMock },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -2244,50 +2301,58 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceMock },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceMock },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -2464,46 +2529,54 @@ describe('WidgetLegionEdgeComponent', () => {
 				});
 			},
 		};
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceMock },
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceMock },
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -2671,48 +2744,56 @@ describe('WidgetLegionEdgeComponent', () => {
 	});
 
 	describe('catch error', () => {
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: VantageShellService },
-					{ provide: HttpHandler },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: VantageShellService },
+						{ provide: HttpHandler },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
 						},
-					},
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceSpy,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
+						},
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceSpy,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -2985,51 +3066,62 @@ describe('WidgetLegionEdgeComponent', () => {
 	});
 
 	describe('ITP', () => {
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: VantageShellService },
-					{ provide: HttpHandler },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: VantageShellService },
+						{ provide: HttpHandler },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
 						},
-					},
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
+						},
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
-		it('should render the Question icon image on legion edge container', waitForAsync(() => {
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			fixture.detectChanges();
-			const compiled = fixture.debugElement.nativeElement;
-			expect(compiled.querySelector('div.help-box>button>fa-icon')).toBeTruthy();
-		}));
+		it(
+			'should render the Question icon image on legion edge container',
+			waitForAsync(() => {
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				fixture.detectChanges();
+				const compiled = fixture.debugElement.nativeElement;
+				expect(compiled.querySelector('div.help-box>button>fa-icon')).toBeTruthy();
+			})
+		);
 	});
 
 	describe('quick setting toolbar & toast event', () => {
@@ -3047,50 +3139,58 @@ describe('WidgetLegionEdgeComponent', () => {
 				// });
 			},
 		};
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				declarations: [
-					WidgetLegionEdgeComponent,
-					SvgInlinePipe,
-					mockPipe({ name: 'translate' }),
-				],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{
-						provide: Router,
-						useClass: class {
-							navigate = jasmine.createSpy('navigate');
+		beforeEach(
+			waitForAsync(() => {
+				TestBed.configureTestingModule({
+					declarations: [
+						WidgetLegionEdgeComponent,
+						SvgInlinePipe,
+						GAMING_DATA.mockPipe({ name: 'translate' }),
+					],
+					schemas: [NO_ERRORS_SCHEMA],
+					providers: [
+						{ provide: HttpClient },
+						{ provide: HttpHandler },
+						{
+							provide: Router,
+							useClass: class {
+								navigate = jasmine.createSpy('navigate');
+							},
 						},
-					},
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{ provide: VantageShellService },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: GamingThermalModeService, useValue: gamingThermalModeServiceSpy },
-					{ provide: GamingOCService, useValue: gamingOCServiceSpy },
-					{ provide: GamingSystemUpdateService, useValue: gamingSystemUpdateServiceSpy },
-					{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
-					{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
-					{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
-					{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
-					{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
-					{
-						provide: GamingQuickSettingToolbarService,
-						useValue: gamingQuickSettingToolbarServiceMock,
-					},
-					{ provide: NgbModal, useValue: { open: () => 0 } },
-					{ provide: LoggerService, useValue: loggerServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
+						{ provide: CommonService, useValue: commonServiceMock },
+						{ provide: LocalCacheService, useValue: localCacheServiceMock },
+						{ provide: VantageShellService },
+						{
+							provide: GamingAllCapabilitiesService,
+							useValue: gamingAllCapabilitiesServiceMock,
+						},
+						{
+							provide: GamingThermalModeService,
+							useValue: gamingThermalModeServiceSpy,
+						},
+						{ provide: GamingOCService, useValue: gamingOCServiceSpy },
+						{
+							provide: GamingSystemUpdateService,
+							useValue: gamingSystemUpdateServiceSpy,
+						},
+						{ provide: NetworkBoostService, useValue: networkBoostServiceSpy },
+						{ provide: GamingAutoCloseService, useValue: gamingAutoCloseServiceSpy },
+						{ provide: GamingHybridModeService, useValue: gamingHybridModeServiceSpy },
+						{ provide: GamingOverDriveService, useValue: gamingOverDriveServiceSpy },
+						{ provide: GamingKeyLockService, useValue: gamingKeyLockServiceSpy },
+						{
+							provide: GamingQuickSettingToolbarService,
+							useValue: gamingQuickSettingToolbarServiceMock,
+						},
+						{ provide: NgbModal, useValue: { open: () => 0 } },
+						{ provide: LoggerService, useValue: loggerServiceSpy },
+					],
+				}).compileComponents();
+				fixture = TestBed.createComponent(WidgetLegionEdgeComponent);
+				component = fixture.debugElement.componentInstance;
+				fixture.detectChanges();
+			})
+		);
 
 		afterEach(() => {
 			liteGamingCache = false;
@@ -3187,21 +3287,3 @@ describe('WidgetLegionEdgeComponent', () => {
 		});
 	});
 });
-
-/**
- * @param options pipeName which has to be mock
- * @description To mock the pipe.
- * @summary This has to move to one utils file.
- */
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	) as any;
-}
