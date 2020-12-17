@@ -3,7 +3,7 @@
 @import '../battery-health.gaming.theme';
 @import 'battery-layout-theme.component';
 
-$_grid-column-gap: 11px;
+$_grid-column-gap: 2rem;
 $_grid-row-gap: 2rem;
 
 @mixin grid-fill($start, $end) {
@@ -17,7 +17,6 @@ $_grid-row-gap: 2rem;
 	*  This padding is to correct the top level's padding.
 	*/
 	margin-left: 0.4rem;
-	margin-right: 2.6rem;
 	padding: 0 2.4rem 0 2.6rem;
 	grid-template-columns: 50% 50%;
 	grid-auto-flow: row;
