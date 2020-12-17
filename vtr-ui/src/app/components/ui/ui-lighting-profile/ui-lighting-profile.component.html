@@ -6,7 +6,7 @@
 			[automationId]="(simpleOrComplex===1) ? 'single_':'profile_'" [labelId]="'rgb'"></vtr-ui-lighting-profile-toggle>
 		<vtr-ui-gaming-slider *ngIf="!isProfileOff && showBrightnessSlider===true" [minValue]="1" [maxValue]="4" [step]="1"
 			[automationId]="'gaming_lighting_brightness_slider'+profileBrightness" [currentVal]="profileBrightness"
-			[metricsId]="'lighting_profile_brightness'" (sliderChanged)="setLightingBrightness($event)">
+			[metricsId]="'lighting_profile_brightness'" (onSliderChanged)="setLightingBrightness($event)">
 		</vtr-ui-gaming-slider>
 	</div>
 	<div class="lighting-area">

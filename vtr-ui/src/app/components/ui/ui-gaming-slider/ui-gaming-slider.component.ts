@@ -14,12 +14,12 @@ export class UiGamingSliderComponent implements OnInit {
 	@Input() metricsId = '';
 	@Input() ariaLabelValue: any;
 	@Input() vtrMetricEnabled: any;
-	@Output() sliderChanged = new EventEmitter();
+	@Output() onSliderChanged = new EventEmitter();
 
 	constructor(private el: ElementRef) {}
 
 	ngOnInit() {}
 	public userChange($event: any) {
-		this.sliderChanged.emit(Number($event.target.value));
+		this.onSliderChanged.emit(Number($event.target.value));
 	}
 }
