@@ -12,13 +12,6 @@ import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose
 export class ModalGamingRunningAppListComponent implements OnInit, OnChanges {
 	@Input() addedApps = 0;
 	@Output() emitService = new EventEmitter();
-	loading = true;
-	runningList: any = [];
-	emptyAppList = false;
-	ariaLabel = '';
-	maxAppsCount = 5;
-	isNetworkBoost = false;
-
 	public isChecked: any = [];
 	public info: any = {
 		id: {
@@ -32,6 +25,13 @@ export class ModalGamingRunningAppListComponent implements OnInit, OnChanges {
 		description2: '',
 		description3: '',
 	};
+
+	loading = true;
+	runningList: any = [];
+	emptyAppList = false;
+	ariaLabel = '';
+	maxAppsCount = 5;
+	isNetworkBoost = false;
 
 	constructor(
 		private networkBoostService: NetworkBoostService,

@@ -33,41 +33,43 @@ describe('PageLightingcustomizeComponent', () => {
 		getOneCMSContent: (res, template, position) => (res = GAMING_DATA.cmsMock.Results),
 	};
 	const shellServiceMock = { getMetrics: () => ({ sendAsync: (data) => {} }) };
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				PageLightingcustomizeComponent,
-				GAMING_DATA.mockPipe({ name: 'translate' }),
-				GAMING_DATA.mockPipe({ name: 'sanitize' }),
-				GAMING_DATA.mockPipe({ name: 'htmlText' })
-			],
-			providers: [
-				NgbModal,
-				NgbActiveModal,
-				{ provide: Title, useValue: titleServiceMock },
-				{ provide: CMSService, useValue: cmsServiceMock },
-				{ provide: ActivatedRoute, useValue: routerMock },
-				{ provide: VantageShellService, useValue: shellServiceMock },
-				{ provide: DashboardService, useValue: {} },
-				{ provide: TranslateService, useValue: translateServiceMock },
-				{ provide: DeviceService, useValue: deviceServiceMock },
-				{
-					provide: Router,
-					useClass: class {
-						navigate = jasmine.createSpy('navigate');
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					PageLightingcustomizeComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+					GAMING_DATA.mockPipe({ name: 'sanitize' }),
+					GAMING_DATA.mockPipe({ name: 'htmlText' }),
+				],
+				providers: [
+					NgbModal,
+					NgbActiveModal,
+					{ provide: Title, useValue: titleServiceMock },
+					{ provide: CMSService, useValue: cmsServiceMock },
+					{ provide: ActivatedRoute, useValue: routerMock },
+					{ provide: VantageShellService, useValue: shellServiceMock },
+					{ provide: DashboardService, useValue: {} },
+					{ provide: TranslateService, useValue: translateServiceMock },
+					{ provide: DeviceService, useValue: deviceServiceMock },
+					{
+						provide: Router,
+						useClass: class {
+							navigate = jasmine.createSpy('navigate');
+						},
 					},
-				},
-				RouterTestingModule,
-			],
-			schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
-			imports: [HttpClientModule],
-		}).compileComponents();
-		commonService = TestBed.inject(CommonService);
-		commonService.isOnline = false;
-		spyOn(commonService, 'getCapabalitiesNotification').and.returnValue(
-			of({ type: '[Gaming] GamingCapabilities' })
-		);
-	}));
+					RouterTestingModule,
+				],
+				schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
+				imports: [HttpClientModule],
+			}).compileComponents();
+			commonService = TestBed.inject(CommonService);
+			commonService.isOnline = false;
+			spyOn(commonService, 'getCapabalitiesNotification').and.returnValue(
+				of({ type: '[Gaming] GamingCapabilities' })
+			);
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(PageLightingcustomizeComponent);

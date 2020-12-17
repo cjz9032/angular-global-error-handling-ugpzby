@@ -1,4 +1,4 @@
 export class MacroKeyRecordedChange {
-	public key: String;
-	public status: Boolean;
+	public key: string;
+	public status: boolean;
 }

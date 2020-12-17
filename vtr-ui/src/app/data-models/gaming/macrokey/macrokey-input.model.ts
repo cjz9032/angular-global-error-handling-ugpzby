@@ -1,5 +1,5 @@
 export class MacroKeyInput {
-	public status: Number;
-	public key: String;
-	public interval: Number;
+	public status: number;
+	public key: string;
+	public interval: number;
 }

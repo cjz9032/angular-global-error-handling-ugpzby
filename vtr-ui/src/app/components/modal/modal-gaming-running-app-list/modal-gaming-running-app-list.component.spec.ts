@@ -12,6 +12,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { ModalGamingRunningAppListComponent } from './modal-gaming-running-app-list.component';
 import { NetworkBoostService } from 'src/app/services/gaming/gaming-networkboost/networkboost.service';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
+import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 const autoCloseServiceMock = jasmine.createSpyObj('GamingAutoCloseService', [
 	'isShellAvailable',
@@ -99,29 +100,31 @@ describe('ModalGamingRunningAppListComponent', () => {
 	let component: ModalGamingRunningAppListComponent;
 	let fixture: ComponentFixture<ModalGamingRunningAppListComponent>;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [
-				ModalGamingRunningAppListComponent,
-				mockPipe({ name: 'translate' }),
-				mockPipe({ name: 'sanitize' }),
-			],
-			schemas: [NO_ERRORS_SCHEMA],
-			providers: [
-				{ provide: HttpClient },
-				{ provide: GamingAutoCloseService, useValue: autoCloseServiceMock },
-				{ provide: NetworkBoostService, useValue: networkBoostServiceMock },
-				{ provide: CommsService },
-				{ provide: DevService },
-				{ provide: LoggerService },
-				{ provide: VantageShellService },
-				{ provide: HttpHandler },
-				{ provide: CMSService, useValue: cmsServiceMock },
-				{ provide: CommonService, useValue: commonServiceMock },
-				{ provide: NgbActiveModal },
-			],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					ModalGamingRunningAppListComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' }),
+					GAMING_DATA.mockPipe({ name: 'sanitize' }),
+				],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient },
+					{ provide: GamingAutoCloseService, useValue: autoCloseServiceMock },
+					{ provide: NetworkBoostService, useValue: networkBoostServiceMock },
+					{ provide: CommsService },
+					{ provide: DevService },
+					{ provide: LoggerService },
+					{ provide: VantageShellService },
+					{ provide: HttpHandler },
+					{ provide: CMSService, useValue: cmsServiceMock },
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: NgbActiveModal },
+				],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalGamingRunningAppListComponent);
@@ -382,10 +385,3 @@ describe('ModalGamingRunningAppListComponent', () => {
 		expect(item.isChecked).toBeFalse();
 	});
 });
-
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(class MockPipe {});
-}

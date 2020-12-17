@@ -24,10 +24,10 @@ describe('MacrokeyService', () => {
 	});
 
 	describe(':', () => {
-		function getService() {
+		const getService = () => {
 			const macrokeyService = TestBed.get(MacrokeyService);
 			return macrokeyService;
-		}
+		};
 
 		it('should be created', () => {
 			const macrokeyService: MacrokeyService = TestBed.get(MacrokeyService);

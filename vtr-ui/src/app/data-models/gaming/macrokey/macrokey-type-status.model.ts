@@ -1,4 +1,4 @@
 export class MacroKeyTypeStatus {
-	public MacroKeyType: Number;
-	public MacroKeyStatus: Number;
+	public MacroKeyType: number;
+	public MacroKeyStatus: number;
 }

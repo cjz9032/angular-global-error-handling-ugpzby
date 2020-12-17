@@ -1,3 +1,3 @@
 export class NetworkBoostStatus {
-	public networkBoostStatus: boolean = false;
+	public networkBoostStatus = false;
 }

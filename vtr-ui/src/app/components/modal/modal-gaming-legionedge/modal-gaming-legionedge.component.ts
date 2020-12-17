@@ -18,15 +18,14 @@ export class ModalGamingLegionedgeComponent implements OnInit {
 		this.liteGaming = this.localCacheService.getLocalCacheValue(LocalStorageKey.liteGaming);
 	}
 
+	@HostListener('window: focus') onFocus(): void {
+		const modal = document.querySelector('.gaming-help-modal') as HTMLElement;
+		modal.focus();
+	}
+
 	ngOnInit() {}
 
 	closeModal() {
 		this.activeModal.close('close');
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.gaming-help-modal') as HTMLElement;
-		modal.focus();
 	}
 }

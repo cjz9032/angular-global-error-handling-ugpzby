@@ -47,7 +47,7 @@ describe('GamingAdvancedOCService', () => {
 	});
 
 	describe('isShellAvailable is true: ', () => {
-		let advancedOCInfo: any = {
+		const advancedOCInfo: any = {
 			cpuParameterList: [
 				{
 					tuneId: 116,
@@ -87,25 +87,23 @@ describe('GamingAdvancedOCService', () => {
 		};
 		beforeEach(() => {
 			const spy = jasmine.createSpyObj('VantageService', ['getGamingAdvancedOC']);
-			let spyValue = {
-				getAdvancedOCInfo() {
-					return new Promise((resolve, reject) => {
+			const spyValue = {
+				getAdvancedOCInfo: () =>
+					new Promise((resolve, reject) => {
 						if (advancedOCInfo) {
 							resolve(advancedOCInfo);
 						}
 						reject('advancedOCInfo error');
-					});
-				},
-				setAdvancedOCInfo(value: any) {
-					return new Promise((resolve, reject) => {
+					}),
+				setAdvancedOCInfo: (value: any) =>
+					new Promise((resolve, reject) => {
 						if (value) {
 							resolve(true);
 						} else {
 							resolve(false);
 						}
 						reject('setAdvancedOCInfo error');
-					});
-				},
+					}),
 			};
 			spy.getGamingAdvancedOC.and.returnValue(spyValue);
 			TestBed.configureTestingModule({
@@ -118,10 +116,10 @@ describe('GamingAdvancedOCService', () => {
 			gamingAdvancedOCService = TestBed.inject(GamingAdvancedOCService);
 			shellService = TestBed.inject(VantageShellService);
 		});
-		function setup() {
+		const setup = () => {
 			const service = TestBed.get(GamingAdvancedOCService);
 			return { service };
-		}
+		};
 		it('inject shellService', () => {
 			expect(shellService).toBeTruthy();
 		});
@@ -167,10 +165,10 @@ describe('GamingAdvancedOCService', () => {
 		beforeEach(() => {
 			const spy = jasmine.createSpyObj('VantageService', ['getGamingAdvancedOC']);
 			const stubValue = {
-				getAdvancedOCInfo() {
+				getAdvancedOCInfo: () => {
 					throw new Error('getAdvancedOCInfo error');
 				},
-				setAdvancedOCInfo(value: any) {
+				setAdvancedOCInfo: (value: any) => {
 					throw new Error('setAdvancedOCInfo error');
 				},
 			};

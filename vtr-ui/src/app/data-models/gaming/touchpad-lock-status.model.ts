@@ -1,3 +1,3 @@
 export class TouchpadLockStatus {
-	public touchpadLockStatus: boolean = true;
+	public touchpadLockStatus = true;
 }

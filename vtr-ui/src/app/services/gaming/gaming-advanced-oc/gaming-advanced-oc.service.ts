@@ -7,8 +7,8 @@ import { LocalCacheService } from '../../local-cache/local-cache.service';
 	providedIn: 'root',
 })
 export class GamingAdvancedOCService {
-	private gamingAdvancedOC: any;
 	public isShellAvailable = false;
+	private gamingAdvancedOC: any;
 
 	constructor(
 		private shellService: VantageShellService,

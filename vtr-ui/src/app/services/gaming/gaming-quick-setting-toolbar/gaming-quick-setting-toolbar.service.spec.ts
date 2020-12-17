@@ -48,22 +48,20 @@ describe('GamingQuickSettingToolbarService', () => {
 		beforeEach(() => {
 			const spy = jasmine.createSpyObj('VantageService', ['getQuickSettingToolbar']);
 			const spyValue = {
-				registerEvent: (type: any) => {
-					return new Promise((resolve, reject) => {
+				registerEvent: (type: any) =>
+					new Promise((resolve, reject) => {
 						if (type) {
 							resolve(true);
 						}
 						reject('registerEvent error');
-					});
-				},
-				unregisterEvent: (type: any) => {
-					return new Promise((resolve, reject) => {
+					}),
+				unregisterEvent: (type: any) =>
+					new Promise((resolve, reject) => {
 						if (type) {
 							resolve(true);
 						}
 						reject('unregisterEvent error');
-					});
-				},
+					}),
 			};
 			spy.getQuickSettingToolbar.and.returnValue(spyValue);
 			TestBed.configureTestingModule({

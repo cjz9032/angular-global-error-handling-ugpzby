@@ -69,18 +69,20 @@ describe('GamingThermalModeService', () => {
 		let autoSwitchStatus = false;
 		let setReturnValue = true;
 		beforeEach(() => {
-			const spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
+			const spy = jasmine.createSpyObj('VantageService', [
+				'getGamingThermalMode',
+				'getLogger',
+			]);
 			const stubValue = {
-				getThermalModeStatus: () => {
-					return new Promise((resolve, reject) => {
+				getThermalModeStatus: () =>
+					new Promise((resolve, reject) => {
 						if (thermalModeStatus !== 0) {
 							resolve(thermalModeStatus);
 						}
 						reject('getThermalModeStatus error');
-					});
-				},
-				setThermalModeStatus: (value: any) => {
-					return new Promise((resolve, reject) => {
+					}),
+				setThermalModeStatus: (value: any) =>
+					new Promise((resolve, reject) => {
 						if (setReturnValue) {
 							thermalModeStatus = value;
 							resolve(setReturnValue);
@@ -88,30 +90,26 @@ describe('GamingThermalModeService', () => {
 							resolve(setReturnValue);
 						}
 						reject('setThermalModeStatus error');
-					});
-				},
-				regThermalModeEvent: () => {
-					return new Promise((resolve, reject) => {
+					}),
+				regThermalModeEvent: () =>
+					new Promise((resolve, reject) => {
 						resolve(setReturnValue);
 						reject('regThermalModeEvent error');
-					});
-				},
-				getThermalModeRealStatus: () => {
-					return new Promise((resolve, reject) => {
+					}),
+				getThermalModeRealStatus: () =>
+					new Promise((resolve, reject) => {
 						if (thermalModeStatus !== 0) {
 							resolve(thermalModeStatus);
 						}
 						reject('getThermalModeRealStatus error');
-					});
-				},
-				getAutoSwitchStatus: () => {
-					return new Promise((resolve, reject) => {
+					}),
+				getAutoSwitchStatus: () =>
+					new Promise((resolve, reject) => {
 						resolve(autoSwitchStatus);
 						reject('getAutoSwitchStatus error');
-					});
-				},
-				setAutoSwitchStatus: (value: boolean) => {
-					return new Promise((resolve, reject) => {
+					}),
+				setAutoSwitchStatus: (value: boolean) =>
+					new Promise((resolve, reject) => {
 						if (setReturnValue) {
 							autoSwitchStatus = value;
 							resolve(setReturnValue);
@@ -119,14 +117,12 @@ describe('GamingThermalModeService', () => {
 							resolve(setReturnValue);
 						}
 						reject('setThermalModeStatus error');
-					});
-				},
-				regThermalModeRealStatusEvent: () => {
-					return new Promise((resolve, reject) => {
+					}),
+				regThermalModeRealStatusEvent: () =>
+					new Promise((resolve, reject) => {
 						resolve(setReturnValue);
 						reject('regThermalModeRealStatusEvent error');
-					});
-				},
+					}),
 			};
 			spy.getGamingThermalMode.and.returnValue(stubValue);
 			TestBed.configureTestingModule({
@@ -147,20 +143,23 @@ describe('GamingThermalModeService', () => {
 		it('isShellAvailable is true', () => {
 			expect(gamingThermalModeService.isShellAvailable).toBe(true);
 		});
-		it('getThermalModeSettingStatus should return value', waitForAsync(() => {
-			thermalModeStatus = 1;
-			gamingThermalModeService.getThermalModeSettingStatus().then((res) => {
-				expect(res).toBe(1, 'get thermal mode status should be 1');
-			});
-			thermalModeStatus = 2;
-			gamingThermalModeService.getThermalModeSettingStatus().then((res) => {
-				expect(res).toBe(2, 'get thermal mode status should be 2');
-			});
-			thermalModeStatus = 3;
-			gamingThermalModeService.getThermalModeSettingStatus().then((res) => {
-				expect(res).toBe(3, 'get thermal mode status should be 3');
-			});
-		}));
+		it(
+			'getThermalModeSettingStatus should return value',
+			waitForAsync(() => {
+				thermalModeStatus = 1;
+				gamingThermalModeService.getThermalModeSettingStatus().then((res) => {
+					expect(res).toBe(1, 'get thermal mode status should be 1');
+				});
+				thermalModeStatus = 2;
+				gamingThermalModeService.getThermalModeSettingStatus().then((res) => {
+					expect(res).toBe(2, 'get thermal mode status should be 2');
+				});
+				thermalModeStatus = 3;
+				gamingThermalModeService.getThermalModeSettingStatus().then((res) => {
+					expect(res).toBe(3, 'get thermal mode status should be 3');
+				});
+			})
+		);
 		it('setThermalModeSettingStatus should return boolean value', fakeAsync(() => {
 			setReturnValue = true;
 			for (let i = 1; i < 4; i++) {
@@ -204,41 +203,48 @@ describe('GamingThermalModeService', () => {
 			//     expect(thermalModeStatus).toBe(3);
 			// });
 		}));
-		it('regThermalModeChangeEvent should return boolean value', waitForAsync(() => {
-			setReturnValue = false;
-			gamingThermalModeService.regThermalModeChangeEvent().then((res) => {
-				expect(res).toBe(false, 'regThermalModeChangeEvent shoule return false');
-			});
-			setReturnValue = true;
-			gamingThermalModeService.regThermalModeChangeEvent().then((res) => {
-				expect(res).toBe(true, 'regThermalModeChangeEvent shoule return true');
-			});
-		}));
+		it(
+			'regThermalModeChangeEvent should return boolean value',
+			waitForAsync(() => {
+				setReturnValue = false;
+				gamingThermalModeService.regThermalModeChangeEvent().then((res) => {
+					expect(res).toBe(false, 'regThermalModeChangeEvent shoule return false');
+				});
+				setReturnValue = true;
+				gamingThermalModeService.regThermalModeChangeEvent().then((res) => {
+					expect(res).toBe(true, 'regThermalModeChangeEvent shoule return true');
+				});
+			})
+		);
 		// thermal mode 2
-		it('getThermalModeRealStatus should return value', waitForAsync(() => {
-			thermalModeStatus = 1;
-			gamingThermalModeService.getThermalModeRealStatus().then((res) => {
-				expect(res).toBe(1, 'getThermalModeRealStatus shoule be 1');
-			});
-			thermalModeStatus = 2;
-			gamingThermalModeService.getThermalModeRealStatus().then((res) => {
-				expect(res).toBe(2, 'getThermalModeRealStatus shoule be 2');
-			});
-			thermalModeStatus = 3;
-			gamingThermalModeService.getThermalModeRealStatus().then((res) => {
-				expect(res).toBe(3, 'getThermalModeRealStatus shoule be 3');
-			});
-		}));
-		it('getAutoSwitchStatus should return boolean value', waitForAsync(() => {
-			autoSwitchStatus = true;
-			gamingThermalModeService.getAutoSwitchStatus().then((res) => {
-				expect(res).toBe(true, 'getAutoSwitchStatus should be true');
-			});
-			autoSwitchStatus = false;
-			gamingThermalModeService.getAutoSwitchStatus().then((res) => {
-				expect(res).toBe(false, 'getAutoSwitchStatus should be false');
-			});
-		}));
+		it('getThermalModeRealStatus should return value',
+			waitForAsync(() => {
+				thermalModeStatus = 1;
+				gamingThermalModeService.getThermalModeRealStatus().then((res) => {
+					expect(res).toBe(1, 'getThermalModeRealStatus shoule be 1');
+				});
+				thermalModeStatus = 2;
+				gamingThermalModeService.getThermalModeRealStatus().then((res) => {
+					expect(res).toBe(2, 'getThermalModeRealStatus shoule be 2');
+				});
+				thermalModeStatus = 3;
+				gamingThermalModeService.getThermalModeRealStatus().then((res) => {
+					expect(res).toBe(3, 'getThermalModeRealStatus shoule be 3');
+				});
+			})
+		);
+		it('getAutoSwitchStatus should return boolean value',
+			waitForAsync(() => {
+				autoSwitchStatus = true;
+				gamingThermalModeService.getAutoSwitchStatus().then((res) => {
+					expect(res).toBe(true, 'getAutoSwitchStatus should be true');
+				});
+				autoSwitchStatus = false;
+				gamingThermalModeService.getAutoSwitchStatus().then((res) => {
+					expect(res).toBe(false, 'getAutoSwitchStatus should be false');
+				});
+			})
+		);
 		it('setAutoSwitchStatus should return undefined', fakeAsync(() => {
 			setReturnValue = true;
 			gamingThermalModeService.setAutoSwitchStatus(true).then((res) => {
@@ -288,20 +294,31 @@ describe('GamingThermalModeService', () => {
 				);
 			});
 		}));
-		it('regThermalModeRealStatusChangeEvent should return undefined', waitForAsync(() => {
-			setReturnValue = true;
-			gamingThermalModeService.regThermalModeRealStatusChangeEvent().then((res) => {
-				expect(res).toBe(true, 'regThermalModeRealStatusChangeEvent should return true');
-			});
-			setReturnValue = false;
-			gamingThermalModeService.regThermalModeRealStatusChangeEvent().then((res) => {
-				expect(res).toBe(false, 'regThermalModeRealStatusChangeEvent should return false');
-			});
-		}));
+		it('regThermalModeRealStatusChangeEvent should return undefined',
+			waitForAsync(() => {
+				setReturnValue = true;
+				gamingThermalModeService.regThermalModeRealStatusChangeEvent().then((res) => {
+					expect(res).toBe(
+						true,
+						'regThermalModeRealStatusChangeEvent should return true'
+					);
+				});
+				setReturnValue = false;
+				gamingThermalModeService.regThermalModeRealStatusChangeEvent().then((res) => {
+					expect(res).toBe(
+						false,
+						'regThermalModeRealStatusChangeEvent should return false'
+					);
+				});
+			})
+		);
 	});
 	describe('catch error', () => {
 		beforeEach(() => {
-			const spy = jasmine.createSpyObj('VantageService', ['getGamingThermalMode', 'getLogger']);
+			const spy = jasmine.createSpyObj('VantageService', [
+				'getGamingThermalMode',
+				'getLogger',
+			]);
 			const stubValue = {
 				getThermalModeStatus: () => {
 					throw new Error('getThermalModeStatus error');
@@ -344,13 +361,15 @@ describe('GamingThermalModeService', () => {
 		it('isShellAvailable is true', () => {
 			expect(gamingThermalModeService.isShellAvailable).toBe(true);
 		});
-		it('getThermalModeSettingStatus should return err', waitForAsync(() => {
-			try {
-				gamingThermalModeService.getThermalModeSettingStatus();
-			} catch (err) {
-				expect(err).toMatch('getThermalModeStatus error');
-			}
-		}));
+		it('getThermalModeSettingStatus should return err',
+			waitForAsync(() => {
+				try {
+					gamingThermalModeService.getThermalModeSettingStatus();
+				} catch (err) {
+					expect(err).toMatch('getThermalModeStatus error');
+				}
+			})
+		);
 		it('setThermalModeSettingStatus should return err', fakeAsync(() => {
 			try {
 				gamingThermalModeService.setThermalModeSettingStatus(1);
@@ -379,28 +398,34 @@ describe('GamingThermalModeService', () => {
 				);
 			}
 		}));
-		it('regThermalModeChangeEvent should return err', waitForAsync(() => {
-			try {
-				gamingThermalModeService.regThermalModeChangeEvent();
-			} catch (err) {
-				expect(err).toMatch('regThermalModeEvent error');
-			}
-		}));
+		it('regThermalModeChangeEvent should return err',
+			waitForAsync(() => {
+				try {
+					gamingThermalModeService.regThermalModeChangeEvent();
+				} catch (err) {
+					expect(err).toMatch('regThermalModeEvent error');
+				}
+			})
+		);
 		// thermal mode 2
-		it('getThermalModeRealStatus should return err', waitForAsync(() => {
-			try {
-				gamingThermalModeService.getThermalModeRealStatus();
-			} catch (err) {
-				expect(err).toMatch('getThermalModeRealStatus error');
-			}
-		}));
-		it('getAutoSwitchStatus should return err', waitForAsync(() => {
-			try {
-				gamingThermalModeService.getAutoSwitchStatus();
-			} catch (err) {
-				expect(err).toMatch('getAutoSwitchStatus error');
-			}
-		}));
+		it('getThermalModeRealStatus should return err',
+			waitForAsync(() => {
+				try {
+					gamingThermalModeService.getThermalModeRealStatus();
+				} catch (err) {
+					expect(err).toMatch('getThermalModeRealStatus error');
+				}
+			})
+		);
+		it('getAutoSwitchStatus should return err',
+			waitForAsync(() => {
+				try {
+					gamingThermalModeService.getAutoSwitchStatus();
+				} catch (err) {
+					expect(err).toMatch('getAutoSwitchStatus error');
+				}
+			})
+		);
 		it('setAutoSwitchStatus should return err', fakeAsync(() => {
 			try {
 				gamingThermalModeService.setAutoSwitchStatus(true);
@@ -420,12 +445,14 @@ describe('GamingThermalModeService', () => {
 				);
 			}
 		}));
-		it('regThermalModeRealStatusChangeEvent should return err', waitForAsync(() => {
-			try {
-				gamingThermalModeService.regThermalModeRealStatusChangeEvent();
-			} catch (err) {
-				expect(err).toMatch('regThermalModeRealStatusEvent error');
-			}
-		}));
+		it('regThermalModeRealStatusChangeEvent should return err',
+			waitForAsync(() => {
+				try {
+					gamingThermalModeService.regThermalModeRealStatusChangeEvent();
+				} catch (err) {
+					expect(err).toMatch('regThermalModeRealStatusEvent error');
+				}
+			})
+		);
 	});
 });

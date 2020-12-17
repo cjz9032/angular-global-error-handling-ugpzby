@@ -1,3 +1,3 @@
 export class AutoCloseNeedToAsk {
-	public needToAsk: boolean = true;
+	public needToAsk = true;
 }

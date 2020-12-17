@@ -1,3 +1,3 @@
 export class HybridModeStatus {
-	public hybridModeStatus: boolean = false;
+	public hybridModeStatus = false;
 }

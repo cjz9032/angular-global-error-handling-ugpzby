@@ -1,3 +1,3 @@
 export class RamOCSatus {
-	public ramOcStatus: boolean = false;
+	public ramOcStatus = false;
 }
