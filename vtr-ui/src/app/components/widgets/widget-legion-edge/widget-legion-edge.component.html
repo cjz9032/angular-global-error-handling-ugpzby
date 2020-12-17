@@ -3,15 +3,15 @@
 		<div class="row">
 			<div class="col d-flex justify-content-between">
 				<picture>
-					<source srcset="'assets/images/gaming/legionEdge.webp" type="image/webp">
+					<source srcset="'assets/images/gaming/legionEdge.webp' | svgInline | async" type="image/webp">
 					<img id="right_section_legion_edge" role="img" class="gaming-header-image" *ngIf="!gamingCapabilities.liteGaming" [src]="'assets/images/gaming/legionEdge.png'  | svgInline | async" />
 				</picture>
 				<picture>
-					<source srcset="'assets/images/gaming/ideaCentre@2x.webp" type="image/webp">
+					<source srcset="'assets/images/gaming/ideaCentre@2x.webp' | svgInline | async" type="image/webp">
 					<img id="right_section_ideacentre_gaming" role="img" class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaCentre@2x.png'  | svgInline | async" />
 				</picture>
 				<picture>
-					<source srcset="'assets/images/gaming/ideaPad@2x.webp" type="image/webp">
+					<source srcset="'assets/images/gaming/ideaPad@2x.webp' | svgInline | async" type="image/webp">
 					<img id="right_section_ideapad_gaming" role="img" class="gaming-header-image" *ngIf="gamingCapabilities.liteGaming && !gamingCapabilities.desktopType" [src]="'assets/images/gaming/ideaPad@2x.png'  | svgInline | async" />
 				</picture>
 				<div class="help-box" >

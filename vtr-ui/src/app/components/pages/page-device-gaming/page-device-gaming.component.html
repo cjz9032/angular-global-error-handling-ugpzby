@@ -4,12 +4,12 @@
 	<header-content>
 				<img class="gaming-header-image" id="system_status_header_legion" *ngIf="!liteGaming" [src]=" 'assets/images/gaming/gaming-logo-full.svg' | svgInline | async" />
 				<picture>
-					<source srcset=" 'assets/images/gaming/ideaCentre@2x.webp" type="image/webp">
-					<img class="gaming-header-image" id="system_status_header_ideapadcentre" *ngIf="liteGaming && desktopType" [src]=" 'assets/images/gaming/ideaCentre@2x.png' | svgInline | async" />
+					<source srcset="'assets/images/gaming/ideaCentre@2x.webp' | svgInline | async" type="image/webp">
+					<img class="gaming-header-image" id="system_status_header_ideapadcentre" *ngIf="liteGaming && desktopType" [src]="'assets/images/gaming/ideaCentre@2x.png' | svgInline | async" />
 				</picture>
 				<picture>
-					<source srcset=" 'assets/images/gaming/ideaPad@2x.webp" type="image/webp">
-					<img class="gaming-header-image" id="system_status_header_ideapad_gaming" *ngIf="liteGaming && !desktopType" [src]=" 'assets/images/gaming/ideaPad@2x.png' | svgInline | async" />
+					<source srcset="'assets/images/gaming/ideaPad@2x.webp' | svgInline | async" type="image/webp">
+					<img class="gaming-header-image" id="system_status_header_ideapad_gaming" *ngIf="liteGaming && !desktopType" [src]="'assets/images/gaming/ideaPad@2x.png' | svgInline | async" />
 				</picture>
 	</header-content>
 
