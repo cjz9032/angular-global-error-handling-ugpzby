@@ -87,7 +87,7 @@
 		<div *ngIf="!appItem.redemptionURL && appItem.version"
 			[dir]="'dir' | translate">{{'modernPreload.versionText' | translate}}: {{ appItem.version }}
 		</div>
-		<div *ngIf="redemptionSupport && appItem.activationCode"
+		<div *ngIf="appItem.activationCode"
 			class="redemption-code-content mb-3">
 			<div class="text"
 				role="text"
@@ -139,7 +139,7 @@
 			</div>
 		</div>
 		<div class="redemption-url d-flex align-items-center"
-			*ngIf="redemptionSupport && appItem.redemptionURL">
+			*ngIf="appItem.redemptionURL">
 			<a class="mr-2"
 				href="javascript:void(0)"
 				(click)="launchURL()"

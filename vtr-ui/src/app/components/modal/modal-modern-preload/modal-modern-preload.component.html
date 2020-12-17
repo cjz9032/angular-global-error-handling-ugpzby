@@ -51,10 +51,9 @@
 						*ngFor="let app of appList"
 						id="modern-preload-app-item-{{app.udcId}}"
 						role="listitem"
-						[hidden]="(!redemptionSupport && app.isCheckDisabled) || app.category === ModernPreloadAppCategoryEnum.OFFERED">
+						[hidden]="app.category === ModernPreloadAppCategoryEnum.OFFERED">
 						<vtr-widget-modern-preload-app [appItem]="app"
 							*ngIf="app.category !== ModernPreloadAppCategoryEnum.OFFERED"
-							[redemptionSupport]="redemptionSupport"
 							[successIconBase64]="successIconBase64"
 							[errorIconBase64]="errorIconBase64"
 							[downloadIconBase64]="downloadIconBase64"
@@ -71,10 +70,9 @@
 						*ngFor="let app of appList"
 						id="modern-preload-app-item-{{app.udcId}}"
 						role="listitem"
-						[hidden]="(!redemptionSupport && app.isCheckDisabled) || app.category !== ModernPreloadAppCategoryEnum.OFFERED">
+						[hidden]="app.category !== ModernPreloadAppCategoryEnum.OFFERED">
 						<vtr-widget-modern-preload-app [appItem]="app"
 							*ngIf="app.category === ModernPreloadAppCategoryEnum.OFFERED"
-							[redemptionSupport]="redemptionSupport"
 							[successIconBase64]="successIconBase64"
 							[errorIconBase64]="errorIconBase64"
 							[downloadIconBase64]="downloadIconBase64"

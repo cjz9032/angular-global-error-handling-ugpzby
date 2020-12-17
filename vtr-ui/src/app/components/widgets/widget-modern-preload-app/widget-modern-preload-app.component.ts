@@ -22,7 +22,6 @@ import { ClipboardService } from 'ngx-clipboard';
 })
 export class WidgetModernPreloadAppComponent implements OnInit {
 	@Input() appItem: AppItem = new AppItem();
-	@Input() redemptionSupport = false;
 	@Input() successIconBase64 = '';
 	@Input() errorIconBase64 = '';
 	@Input() downloadIconBase64 = '';
@@ -39,9 +38,9 @@ export class WidgetModernPreloadAppComponent implements OnInit {
 	constructor(
 		public modernPreloadService: ModernPreloadService,
 		private clipboardService: ClipboardService
-	) {}
+	) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	copy(text: string, id: string) {
 		this.clipboardService.copyFromContent(text);
