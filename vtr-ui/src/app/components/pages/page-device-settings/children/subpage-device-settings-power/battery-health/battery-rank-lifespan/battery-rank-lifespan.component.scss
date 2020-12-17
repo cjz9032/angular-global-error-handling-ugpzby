@@ -25,7 +25,7 @@
 		fill: #000000;
 	}
 	@include high-contrast('white-on-black') {
-		fill: #ffffff;
+		fill: #e6eaeb;
 	}
 }
 .rank-star-unfilled {
@@ -37,7 +37,7 @@
 	}
 	@media #{$white-on-black} {
 		fill: #000000;
-		stroke: #ffffff;
+		fill: #e6eaeb;
 	}
 }
 
@@ -59,6 +59,9 @@ section .desc {
 	font-weight: $battery-semi-bold;
     padding-top: 12px;
 	font-family: $font_family_semibold;
+	@media #{$white-on-black} {
+		color: #e6eaeb;
+	}
 }
 section .desc-light {
 	display: inline-block;
@@ -104,7 +107,7 @@ section .exclamation {
 		stroke: #000000;
 	}
 	@media #{$white-on-black} {
-		stroke: #ffffff;
+		stroke: #f5f7f8;
 	}
 }
 
