@@ -1993,11 +1993,11 @@
 			"description": "Lenovo Intelligent Sensing bruker sensorer på datamaskinen til å gjenkjenne hva du gjør, justere innstillingene for optimal strømstyring og beskytte personvernet ditt.",
 			"jumpTo": {
 				"title": "GÅ TIL INNSTILLINGER",
-				"security": "Sikkerhet",
-				"screen": "Skjerm",
-				"media": "Media",
+				"security": "Intelligent sikkerhet",
+				"screen": "Intelligent skjerm",
+				"media": "Intelligent medieavspilling",
 				"voice": "Tale",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent sikkerhet",
@@ -2148,31 +2148,31 @@
 			},
 			"activeProtectionSystem": {
 				"title": "Active Protection System",
-				"description": "Lenovo Active Protection System er en autonom funksjon som hjelper til med å beskytte harddisken mot skade forårsaket av kraftige fysiske støt eller vibrasjon. Den overvåker bevegelsene til datamaskinen kontinuerlig og stanser harddisken midlertidig når den forutser et fall eller en lignende situasjon som kan medføre skade.",
+				"description": "Lenovo Active Protection System er en autonom funksjon som hjelper til med å beskytte harddisken mot skade forårsaket av kraftige fysiske støt eller vibrasjoner. Den overvåker bevegelsene til datamaskinen kontinuerlig og stanser harddisken midlertidig når den forutser et fall eller en lignende situasjon som kan medføre skade.",
 				"activeProtection": {
 					"title": "Active Protection",
 					"caption": "Endre sentivity, i modus for lite sensitiv, vil bare hardere støt aktivere beskyttelsen",
 					"checkbox": "Ignorer repetative-støt som for eksempel et tog eller en bil"
 				},
 				"manualActiveProtectionSuspension": {
-					"title": "Manuell Active Protection-Suspensjon",
-					"caption": "La meg stanse Active Protection System manuelt",
+					"title": "Manuell Active Protection-utkobling",
+					"caption": "La meg koble ut Active Protection System manuelt",
 					"dropdown-title": "Koble ut i",
 					"button": "Utsett Nå"
 				},
 				"advanced": {
-					"description": "Hvis du vil forbedre tilgangen til harddisken i nettbrettmodus, kan du suspendere Active Protection System når følgende aktiviteter oppdages",
+					"description": "Hvis du vil forbedre tilgangen til harddisken i nettbrettmodus, kan du koble ut Active Protection System når følgende aktiviteter oppdages",
 					"pen": {
 						"title": "Inndata fra penn",
-						"description": "Ved penneinndata skal APS Aktiveres når pennen er utenfor rekkevidde i"
+						"description": "Når det brukes inndata fra penn, aktiver APS når pennen er utenfor rekkevidde i"
 					},
 					"touch": {
 						"title": "Inndata fra berøring",
-						"description": "Når du bruker berørings inn data, må du aktivere APS når det ikke blir oppdaget berørings inn data"
+						"description": "Når du bruker inndata fra berøring, aktiver APS når det ikke blir oppdaget berøringsinndata"
 					},
 					"hand": {
 						"title": "Kantene på datamaskinen føler hvor nær hendene er",
-						"description": "Når nett brett modus er aktivert, må du aktivere APS når hånd ikke gjenkjennes"
+						"description": "Når nettbrettmodus er aktivert, aktiver APS når hånd ikke oppdages"
 					},
 					"more": "MER",
 					"advanced-settings": "AVANSERTE INNSTILLINGER",
@@ -2290,7 +2290,7 @@
 					"heading": "Kom i gang:",
 					"point1": "Start Lenovo Voice fra Start-menyen, og tale Lenovo Voice-ikonet vises i systemfeltet i Windows.",
 					"point2": "Åpne programmet der du vil skrive inn tekst.",
-					"point3": "Klikk på Lenovo Voice ikonet i system skuffen i Windows og velg tale til tekst.",
+					"point3": "Klikk på Lenovo Voice-ikonet i Windows System-skuffen og velg tale til tekst.",
 					"point4": "Velg ønsket språk, og klikk på mikrofonikonet for å starte.",
 					"point5": "Plasser markøren i programmet, og begynn å snakke.",
 					"point6": "Klikk på Lenovo Voice-ikonet i systemfeltet i Windows, og velg Oversette.",
@@ -5363,4 +5363,5 @@
 		"likeUs": "Lik oss",
 		"feedback": "Gi tilbakemelding"
 	}
+}
 }

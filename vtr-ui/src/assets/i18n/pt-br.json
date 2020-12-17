@@ -2102,14 +2102,14 @@
 		},
 		"smartAssist": {
 			"title": "Assistência inteligente",
-			"description": "A Detecção inteligente da Lenovo combina sensores no computador para detectar suas atividades, ajustar as configurações para gerenciamento de energia ideal e proteger sua privacidade.",
+			"description": "A detecção inteligente da Lenovo combina sensores no computador para detectar suas atividades, ajustar as configurações para gerenciamento de energia ideal e proteger sua privacidade.",
 			"jumpTo": {
 				"title": "IR PARA CONFIGURAÇÕES",
-				"security": "Segurança",
-				"screen": "Tela",
-				"media": "Mídia",
+				"security": "Segurança inteligente",
+				"screen": "Tela inteligente",
+				"media": "Mídia inteligente",
 				"voice": "Voz",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Segurança inteligente",
@@ -2128,7 +2128,7 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Detecção de presença do usuário",
-					"tooltip": "Clique aqui para redefinir as configurações de Detecção de presença humana."
+					"tooltip": "Clique aqui para redefinir as configurações de detecção de presença humana."
 				},
 				"zeroTouchLogin": {
 					"title": "Login sem toques",
@@ -2241,7 +2241,7 @@
 			},
 			"intelligentScreen": {
 				"title": "Tela inteligente",
-				"description": "A Detecção inteligente da Lenovo combina os vários sensores no computador para detectar suas atividades e ajustar as configurações para gerenciamento de energia. Por exemplo, ela esmaecerá a tela se detectar que você está caminhando, mas não esmaecerá se detectar que você está lendo.",
+				"description": "A detecção inteligente da Lenovo combina os vários sensores no computador para detectar suas atividades e ajustar as configurações para gerenciamento de energia. Por exemplo, ela esmaecerá a tela se detectar que você está caminhando, mas não esmaecerá se detectar que você está lendo.",
 				"autoScreenOff": {
 					"title": "Desligamento automático de tela",
 					"caption": "Desligue a tela automaticamente quando estiver com a face para baixo ou caminhando.",
@@ -2276,15 +2276,15 @@
 					"description": "Para melhorar o acesso à unidade de disco rígido durante o uso do tablet, suspenda o Active Protection System quando as seguintes atividades forem detectadas",
 					"pen": {
 						"title": "Entrada de caneta",
-						"description": "Quando a entrada de caneta for usada, ative o APS no momento em que a entrada de caneta estiver fora do intervalo"
+						"description": "Quando a entrada de caneta for usada, ative o APS no momento em que a entrada de caneta estiver fora do intervalo por"
 					},
 					"touch": {
 						"title": "Entrada de toque",
-						"description": "Quando a entrada de toque for usada, ative o APS quando a Entrada de toque não for detectada"
+						"description": "Quando a entrada de toque for usada, ative o APS quando a entrada de toque não for detectada"
 					},
 					"hand": {
 						"title": "Sensor de proximidade das mãos nas bordas do computador",
-						"description": "Quando o modo tablet for ativado, ative o APS quando a mão não for detectada"
+						"description": "Quando o modo Tablet for ativado, ative o APS quando a mão não for detectada"
 					},
 					"more": "MAIS",
 					"advanced-settings": "CONFIGURAÇÕES AVANÇADAS",

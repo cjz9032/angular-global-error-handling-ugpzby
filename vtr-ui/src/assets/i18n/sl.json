@@ -1993,11 +1993,11 @@
 			"description": "Tehnologija Lenovo za pametno zaznavanje združuje senzorje v računalniku, ki zaznavajo vaše dejavnosti, prilagodijo nastavitve za optimalno upravljanje porabe energije in zaščitijo vašo zasebnost.",
 			"jumpTo": {
 				"title": "SKOK NA NASTAVITVE",
-				"security": "Zaščita",
-				"screen": "Zaslon",
-				"media": "Predstavnost",
+				"security": "Pametna varnost",
+				"screen": "Pametni zaslon",
+				"media": "Inteligentni mediji",
 				"voice": "Glas",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Pametna varnost",
@@ -2016,7 +2016,7 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Zaznavanje prisotnosti uporabnika",
-					"tooltip": "Kliknite tukaj za ponastavitev nastavitev zaznavanja človeške prisotnosti."
+					"tooltip": "Kliknite tukaj za ponastavitev zaznavanja človeške prisotnosti."
 				},
 				"zeroTouchLogin": {
 					"title": "Prijava brez dotika",
@@ -2128,7 +2128,7 @@
 				}
 			},
 			"intelligentScreen": {
-				"title": "Inteligentni zaslon",
+				"title": "Pametni zaslon",
 				"description": "Tehnologija Lenovo za pametno zaznavanje združuje različne senzorje v računalniku, ki zaznavajo vaše dejavnosti in prilagodijo nastavitve za upravljanje porabe energije. Če ta tehnologija na primer zazna, da hodite, bo zatemnila zaslon, če zazna, da berete, pa tega ne bo storila.",
 				"autoScreenOff": {
 					"title": "Samodejni zaslon je izklopljen",
@@ -2148,7 +2148,7 @@
 			},
 			"activeProtectionSystem": {
 				"title": "Active Protection System",
-				"description": "Tehnologija Lenovo Active Protection System je samodejna funkcija, ki pomaga trdi disk zaščititi pred poškodbami, ki nastanejo zaradi močnega fizičnega udarca in vibracij. Stalno spremlja gibanje računalnika in začasno ustavi trdi disk, ko predvidi padec ali podoben dogodek, ki lahko poškoduje disk.",
+				"description": "Lenovo Active Protection System je samodejna funkcija, ki pomaga trdi disk zaščititi pred poškodbami, ki nastanejo zaradi močnega fizičnega udarca in vibracij. Stalno spremlja gibanje računalnika in začasno ustavi trdi disk, ko predvidi padec ali podoben dogodek, ki lahko poškoduje disk.",
 				"activeProtection": {
 					"title": "Active Protection",
 					"caption": "Spremenite občutljivost – zaščita bo v načinu nizke občutljivosti aktivirana samo ob močnejših udarcih",
@@ -2290,7 +2290,7 @@
 					"heading": "Začnimo:",
 					"point1": "Lenovo Voice zaženite iz menija Start. V sistemski vrstici za Windows bo prikazana ikona Lenovo Voice.",
 					"point2": "Odprite aplikacijo, v kateri želite vnesti besedilo.",
-					"point3": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Voice to text (Pretvorba glasu v besedilo).",
+					"point3": "Kliknite ikono Lenovo Voice na sistemskem pladnju Windows in izberite Pretvorba glasu v besedilo.",
 					"point4": "Izberite želene jezike in kliknite ikono mikrofona, da začnete.",
 					"point5": "Kazalec postavite v aplikacijo in začnite govoriti.",
 					"point6": "Kliknite ikono Lenovo Voice v sistemski vrstici za Windows in izberite možnost Translation (Prevajanje).",

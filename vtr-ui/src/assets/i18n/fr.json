@@ -2105,11 +2105,11 @@
 			"description": "Le capteur intelligent Lenovo combine plusieurs capteurs sur votre ordinateur pour détecter vos activités, régler les paramètres pour une gestion de l'alimentation optimale et protéger votre confidentialité.",
 			"jumpTo": {
 				"title": "ACCÉDER AUX PARAMÈTRES",
-				"security": "Sécurité",
-				"screen": "Ecran",
-				"media": "Médias",
+				"security": "Sécurité intelligente",
+				"screen": "Écran intelligent",
+				"media": "Support intelligent",
 				"voice": "Voix",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Sécurité intelligente",
@@ -2268,7 +2268,7 @@
 				},
 				"manualActiveProtectionSuspension": {
 					"title": "Suspension manuelle de l'Active Protection",
-					"caption": "M'autorise à suspendre manuellement l'Active Protection System",
+					"caption": "Permet de suspendre manuellement l'Active Protection System",
 					"dropdown-title": "Suspendu pour",
 					"button": "Suspendre maintenant"
 				},

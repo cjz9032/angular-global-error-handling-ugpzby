@@ -1990,14 +1990,14 @@
 		},
 		"smartAssist": {
 			"title": "Slimme hulp",
-			"description": "Lenovo Intelligente detectie combineert verschillende sensoren van uw computer om uw activiteiten te volgen, instellingen voor optimaal energiebeheer aan te passen en uw privacy te beschermen.",
+			"description": "Intelligente detectie van Lenovo combineert verschillende sensoren van uw computer om uw activiteiten te volgen, instellingen voor optimaal energiebeheer aan te passen en uw privacy te beschermen.",
 			"jumpTo": {
 				"title": "NAAR INSTELLINGEN GAAN",
-				"security": "Beveiliging",
-				"screen": "Scherm",
-				"media": "Media",
+				"security": "Intelligente beveiliging",
+				"screen": "Intelligent beeldscherm",
+				"media": "Intelligente media",
 				"voice": "Spraak",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligente beveiliging",
@@ -2129,7 +2129,7 @@
 			},
 			"intelligentScreen": {
 				"title": "Intelligent beeldscherm",
-				"description": "Lenovo Intelligente detectie combineert de verschillende sensoren van uw computer om uw activiteiten te volgen en instellingen voor energiebeheer aan te passen. Zo wordt bijvoorbeeld het licht van uw beeldscherm gedempt als Slimme Sensor merkt dat u loopt, maar als wordt gedetecteerd dat u aan het lezen bent, wordt het licht niet gedempt.",
+				"description": "Intelligente detectie van Lenovo combineert de verschillende sensoren van uw computer om uw activiteiten te volgen en instellingen voor energiebeheer aan te passen. Zo wordt bijvoorbeeld het licht van uw beeldscherm gedempt als Slimme Sensor merkt dat u loopt, maar als wordt gedetecteerd dat u aan het lezen bent, wordt het licht niet gedempt.",
 				"autoScreenOff": {
 					"title": "Automatische scherm uit",
 					"caption": "Beeldscherm automatisch uitschakelen als het beeldscherm met het beeld omlaag ligt of als u loopt.",
@@ -2155,7 +2155,7 @@
 					"checkbox": "Herhaaldelijke schokken, zoals in een trein of auto, negeren"
 				},
 				"manualActiveProtectionSuspension": {
-					"title": "Handmatige Active Protection Suspension",
+					"title": "Handmatige Active Protection sonderbreking",
 					"caption": "Laat me het Active Protection System handmatig onderbreken",
 					"dropdown-title": "Onderbreken gedurende",
 					"button": "Nu onderbreken"
@@ -2164,7 +2164,7 @@
 					"description": "Om tijdens het gebruik van de tablet de toegang tot het vasteschijfstation te verbeteren, schakelt u Active Protection System uit wanneer de onderstaande activiteiten worden gedetecteerd",
 					"pen": {
 						"title": "Peninvoer",
-						"description": "Wanneer peninvoer wordt gebruikt, schakelt u APS in als de pen buiten bereik is"
+						"description": "Wanneer peninvoer wordt gebruikt, schakelt u APS in als de pen buiten bereik is voor"
 					},
 					"touch": {
 						"title": "Invoer via aanraken",
@@ -2172,7 +2172,7 @@
 					},
 					"hand": {
 						"title": "Sensors voor handnabijheid aan de randen van de computer",
-						"description": "Als de Tablet werkstand is ingeschakeld, moet u APS inschakelen als de hand niet wordt gedetecteerd"
+						"description": "Als de tabletmodus is ingeschakeld, schakelt u APS in als de hand niet wordt gedetecteerd"
 					},
 					"more": "MEER",
 					"advanced-settings": "GEAVANCEERDE INSTELLINGEN",

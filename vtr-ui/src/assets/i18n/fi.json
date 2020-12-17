@@ -1990,14 +1990,14 @@
 		},
 		"smartAssist": {
 			"title": "Älykäs apu",
-			"description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneen tunnistimia toimintojen tunnistamista, virranhallinnan asetusten muuttamista ja käyttäjän yksityisyyden suojaamista varten.",
+			"description": "Lenovon älykäs tunnistustoiminto yhdistää tietokoneesi tunnistimet toimintojesi tunnistamista, virranhallinta-asetusten optimointia ja käyttäjän yksityisyyden suojaamista varten.",
 			"jumpTo": {
 				"title": "SIIRRY ASETUKSIIN",
-				"security": "Suojaus",
-				"screen": "Kuvaruutu",
-				"media": "Media",
+				"security": "Älykäs suojaus",
+				"screen": "Älykäs näyttö",
+				"media": "Älykäs media",
 				"voice": "Ääni",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Älykäs suojaus",
@@ -2016,10 +2016,10 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Käyttäjän läsnäolon tunnistus",
-					"tooltip": "Napsauta tätä, jos haluat palauttaa ihmisten läsnäolon tunnistusasetukset."
+					"tooltip": "Napsauta tätä nollataksesi ihmisten läsnäolon tunnistusasetukset."
 				},
 				"zeroTouchLogin": {
-					"title": "Zero Touch -kirjautuminen",
+					"title": "Zero touch -kirjautuminen",
 					"caption": "Tämä ominaisuus avaa tietokoneen lukituksen tai herättää tietokoneen automaattisesti, kun olet tietokoneen edessä tai lähestyt tietokonetta.",
 					"tooltip": "Kun olet tietokoneen äärellä tai lähestyt sitä (1,2 metrin etäisyydellä), tämän toiminnon avulla voit kirjautua järjestelmään automaattisesti, kun kasvosi on tunnistettu. Jos olet ulkona etkä toimistossa, sinun on oltava lähempänä tietokonettasi ja herääminen kestää kauemmin."
 				},
@@ -2129,7 +2129,7 @@
 			},
 			"intelligentScreen": {
 				"title": "Älykäs näyttö",
-				"description": "Lenovo älykäs tunnistustoiminto yhdistää tietokoneen useita tunnistimia toimintojen tunnistamista ja virranhallinnan asetusten muuttamista varten. Toiminto esimerkiksi himmentää näytön, jos se havaitsee sinun kävelevän, tai jättää näytön himmentämättä, jos se havaitsee sinun lukevan.",
+				"description": "Lenovo älykäs tunnistustoiminto yhdistää tietokoneesi useita eri tunnistimia toimintojesi tunnistamista ja virranhallinta-asetusten optimointia varten. Toiminto esimerkiksi himmentää näytön, jos se havaitsee sinun kävelevän, tai jättää näytön himmentämättä, jos se havaitsee sinun lukevan.",
 				"autoScreenOff": {
 					"title": "Automaattinen näyttö ei käytössä",
 					"caption": "Katkaise näytön virta automaattisesti, kun en katso näyttöä tai kävelen.",
@@ -2155,24 +2155,24 @@
 					"checkbox": "Jätä toistuvat iskut, kuten junan tai auton aiheuttamat iskut, huomiotta"
 				},
 				"manualActiveProtectionSuspension": {
-					"title": "Manuaalinen Active Protection -ohjelman keskeyttäminen",
+					"title": "Active Protection -ohjelman keskeyttäminen manuaalisesti",
 					"caption": "Salli Active Protection System -ohjelman keskeyttäminen manuaalisesti",
 					"dropdown-title": "Keskeytä ajaksi",
 					"button": "Keskeytä nyt"
 				},
 				"advanced": {
-					"description": "Paranna kiintolevyn käytettävyyttä muistiotilassa keskeyttämällä Active Protection System, kun seuraavia toimintoja havaitaan",
+					"description": "Paranna kiintolevyn käytettävyyttä taulutilassa keskeyttämällä Active Protection System, kun seuraavia toimintoja havaitaan",
 					"pen": {
 						"title": "Kynäsyöttö",
 						"description": "Ota APS käyttöön, kun kynäsyöttö on käytössä ja kynä on alueen ulkopuolella"
 					},
 					"touch": {
 						"title": "Kosketussyöttö",
-						"description": "Ota APS käyttöön, kun kosketussyöttö on käytössä ja järjestelmä havaitsee kosketussyötön"
+						"description": "Ota APS käyttöön, kun kosketussyöttö on käytössä ja järjestelmä ei havaitse kosketussyöttöä"
 					},
 					"hand": {
 						"title": "Käden läheisyyden tunnistus tietokoneen reunoilla",
-						"description": "Ota APS käyttöön, kun muistiotila on käytössä ja järjestelmä ei havaitse kättä"
+						"description": "Ota APS käyttöön, kun taulutila on käytössä ja järjestelmä ei havaitse kättä"
 					},
 					"more": "ENEMMÄN",
 					"advanced-settings": "LISÄASETUKSET",

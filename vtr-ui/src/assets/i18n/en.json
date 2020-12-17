@@ -2130,7 +2130,7 @@
 				},
 				"humanPresenceDetection": {
 					"title": "User presence sensing",
-					"tooltip": "Click here to reset human presence Detection settings."
+					"tooltip": "Click here to reset human presence detection settings."
 				},
 				"zeroTouchLogin": {
 					"title": "Zero touch login",
@@ -2243,7 +2243,7 @@
 			},
 			"intelligentScreen": {
 				"title": "Intelligent screen",
-				"description": "Lenovo intelligent sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+            	"description": "Lenovo intelligent sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
 				"autoScreenOff": {
 					"title": "Auto screen off",
 					"caption": "Automatically turn off display when face-down or walking.",
@@ -2285,11 +2285,11 @@
 					},
 					"touch": {
 						"title": "Touch input",
-						"description": "When Touch input is used, Enable APS when touch input is not detected"
+						"description": "When Touch input is used, enable APS when Touch input is not detected"
 					},
 					"hand": {
 						"title": "Hand proximity sensing on computer edges",
-						"description": "When tablet mode is enabled, Enable APS when hand is not detected"
+						"description": "When Tablet mode is enabled, enable APS when Hand is not detected"
 					}
 				},
 				"APS": {

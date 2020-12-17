@@ -1990,14 +1990,14 @@
 		},
 		"smartAssist": {
 			"title": "Smart hjælp",
-			"description": "Lenovo Intelligent registrering kombinerer sensorer på computeren for at registrere dine aktiviteter, justere indstillinger, så du får den optimale strømstyring, og beskytte dine personlige oplysninger.",
+			"description": "Lenovos intelligente registrering kombinerer sensorer på computeren for at registrere dine aktiviteter, justere indstillinger, så du får den optimale strømstyring, og beskytte dine personlige oplysninger.",
 			"jumpTo": {
 				"title": "HOP TIL INDSTILLINGER",
-				"security": "Sikkerhed",
-				"screen": "Skærm",
-				"media": "Medier",
+				"security": "Intelligent sikkerhed",
+				"screen": "Intelligent skærm",
+				"media": "Intelligente medier",
 				"voice": "stemme",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Intelligent sikkerhed",
@@ -2129,7 +2129,7 @@
 			},
 			"intelligentScreen": {
 				"title": "Intelligent skærm",
-				"description": "Lenovo Intelligent registrering kombinerer de forskellige sensorer på computeren for at registrere dine aktiviteter og justere indstillinger for strømstyring. F.eks. dæmper den din skærm, hvis den registrerer, at du går, men den dæmper den ikke, hvis den registrerer, at du læser.",
+				"description": "Lenovos intelligente registrering kombinerer de forskellige sensorer på computeren for at registrere dine aktiviteter og justere indstillinger for strømstyring. F.eks. dæmper den din skærm, hvis den registrerer, at du går, men den dæmper den ikke, hvis den registrerer, at du læser.",
 				"autoScreenOff": {
 					"title": "Automatisk skærm fra",
 					"caption": "Sluk automatisk for skærmen, når låget er lukket, eller når du går.",
@@ -2163,12 +2163,12 @@
 				"advanced": {
 					"description": "For at forbedre adgangen til harddisken under tabletbrug skal Active Protection System afbrydes, når følgende aktiviteter registreres",
 					"pen": {
-						"title": "Input via pen",
+						"title": "Input med pennen",
 						"description": "Når der bruges input med pennen, skal APS aktiveres, når pennens input er uden for rækkevidde"
 					},
 					"touch": {
 						"title": "Input via berøring",
-						"description": "Når der bruges berøringsinput, skal du APS aktiveres, når berøringsinput ikke registreres"
+						"description": "Når der bruges berøringsinput, skal APS aktiveres, når berøringsinput ikke registreres"
 					},
 					"hand": {
 						"title": "Registrering af, hvor langt hånden er fra computerens kanter",
@@ -5364,4 +5364,3 @@
 		"feedback": "Give feedback"
 	}
 }
-

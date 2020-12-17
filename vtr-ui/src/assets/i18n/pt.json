@@ -1990,14 +1990,14 @@
 		},
 		"smartAssist": {
 			"title": "Assistente Inteligente",
-			"description": "A Deteção Inteligente Lenovo combina os vários sensores no computador para detetar as suas atividades, ajustar as definições para uma gestão da energia ideal e proteger a sua privacidade.",
+			"description": "A deteção inteligente Lenovo combina os vários sensores no computador para detetar as suas atividades, ajustar as definições para uma gestão da energia ideal e proteger a sua privacidade.",
 			"jumpTo": {
 				"title": "IR PARA AS DEFINIÇÕES",
-				"security": "Segurança",
-				"screen": "Ecrã",
-				"media": "Multimédia",
+				"security": "Segurança inteligente",
+				"screen": "Ecrã inteligente",
+				"media": "Multimédia inteligente",
 				"voice": "Voz",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Segurança inteligente",
@@ -2016,10 +2016,10 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Deteção de presença do utilizador",
-					"tooltip": "Clique aqui para repor as definições de Deteção de presença humana."
+					"tooltip": "Clique aqui para repor as definições de deteção de presença humana."
 				},
 				"zeroTouchLogin": {
-					"title": "Login sem toques",
+					"title": "Login Zero Touch",
 					"caption": "Esta funcionalidade desbloqueia ou reativa automaticamente o computador quando o utilizador estiver sentado em frente ou se aproximar do mesmo.",
 					"tooltip": "Quando está em frente ao computador ou a aproximar-se do mesmo (a uma distância máxima de 1,2 metros), esta funcionalidade permite iniciar sessão automaticamente no sistema após o seu rosto ser reconhecido. Se estiver no exterior e não no escritório, é necessário estar mais próximo do computador e a reativação demorará mais."
 				},
@@ -2128,8 +2128,8 @@
 				}
 			},
 			"intelligentScreen": {
-				"title": "Ecrã Inteligente",
-				"description": "A Deteção Inteligente Lenovo combina os vários sensores no computador para detetar as suas atividades e ajustar as definições de gestão da energia. Por exemplo, escurecerá o ecrã se detetar que está a caminhar, mas não escurecerá se detetar que está a ler.",
+				"title": "Ecrã inteligente",
+				"description": "A deteção inteligente Lenovo combina os vários sensores no computador para detetar as suas atividades e ajustar as definições de gestão da energia. Por exemplo, escurecerá o ecrã se detetar que está a caminhar, mas não escurecerá se detetar que está a ler.",
 				"autoScreenOff": {
 					"title": "Desligar o ecrã automaticamente",
 					"caption": "Desativa o ecrã automaticamente quando voltado para baixo ou ao caminhar.",
@@ -2155,7 +2155,7 @@
 					"checkbox": "Ignorar impactos repetidos, tais como os que ocorrem num comboio ou carro"
 				},
 				"manualActiveProtectionSuspension": {
-					"title": "Suspensão Manual da Active Protection",
+					"title": "Suspensão manual da Active Protection",
 					"caption": "Permitir a suspensão manual do Active Protection System",
 					"dropdown-title": "Suspender durante",
 					"button": "Suspender agora"
@@ -2163,12 +2163,12 @@
 				"advanced": {
 					"description": "Para melhorar o acesso à unidade de disco rígido durante a utilização do tablet, suspender o Active Protection System quando forem detetadas as seguintes atividades",
 					"pen": {
-						"title": "Introdução de Dados com Caneta",
-						"description": "Quando for utilizada a introdução de dados com caneta, ativar o sistema APS se a caneta estiver fora do alcance"
+						"title": "Introdução de dados com caneta",
+						"description": "Quando for utilizada a introdução de dados com caneta, ativar o sistema APS se a caneta estiver fora do alcance para"
 					},
 					"touch": {
-						"title": "Introdução de Dados Tátil",
-						"description": "Quando for utilizada a introdução por toque, ativar o sistema APS quando não for detetada a introdução por toque"
+						"title": "Introdução tátil de dados",
+						"description": "Quando for utilizada a introdução tátil, ativar o sistema APS quando não for detetada a introdução tátil"
 					},
 					"hand": {
 						"title": "Deteção da proximidade das mãos nas extremidades do computador",
@@ -2290,7 +2290,7 @@
 					"heading": "Para começar:",
 					"point1": "Inicie o Lenovo Voice no menu Iniciar e o ícone do Lenovo Voice é exibido no tabuleiro do sistema do Windows.",
 					"point2": "Abra a aplicação onde pretende introduzir o texto.",
-					"point3": "Clique no ícone do Lenovo Voice no tabuleiro do sistema do Windows e selecione Voz em texto.",
+					"point3": "Clique no ícone do Lenovo Voice no tabuleiro do sistema do Windows e selecione Voz em Texto.",
 					"point4": "Selecione os idiomas de acordo com a sua necessidade e clique no ícone de microfone para começar.",
 					"point5": "Coloque o cursor na aplicação e comece a falar.",
 					"point6": "Clique no ícone do Lenovo Voice no tabuleiro do sistema do Windows e selecione Tradução.",

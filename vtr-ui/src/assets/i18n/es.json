@@ -2105,11 +2105,11 @@
 			"description": "La detección inteligente de Lenovo combina los sensores del equipo para detectar sus actividades, ajustar los valores para una administración óptima de la energía y proteger su privacidad.",
 			"jumpTo": {
 				"title": "IR A CONFIGURACIÓN",
-				"security": "Seguridad",
-				"screen": "Pantalla",
-				"media": "Multimedia",
+				"security": "Seguridad inteligente",
+				"screen": "Pantalla inteligente",
+				"media": "Medios inteligentes",
 				"voice": "Voz",
-				"APS": "APS"
+				"APS": "Active Protection System"
 			},
 			"intelligentSecurity": {
 				"title": "Seguridad inteligente",
@@ -2128,7 +2128,7 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Detección de presencia de usuario",
-					"tooltip": "Haga clic aquí para restablecer los valores de Detección de presencia humana."
+					"tooltip": "Haga clic aquí para restablecer los valores de detección de presencia humana."
 				},
 				"zeroTouchLogin": {
 					"title": "Inicio de sesión sin interacción",
