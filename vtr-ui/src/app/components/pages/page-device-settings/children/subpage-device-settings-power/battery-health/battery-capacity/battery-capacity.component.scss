@@ -130,7 +130,7 @@
 	height: 14px;
 	stroke: #f7c809;
 	@include high-contrast('white-on-black') {
-		stroke: #ffffff;
+		stroke: #f5f7f8;
 	}
 	@include high-contrast('black-on-white') {
 		stroke: #000000;
