@@ -8,11 +8,14 @@ import {
 	SnapshotStatus,
 } from 'src/app/modules/snapshot/enums/snapshot.enum';
 import { SnapshotInfo } from '../models/snapshot.interface';
+import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class SnapshotService {
+	private readonly snapshotHypothesisConfigName: string = 'Snapshot';
+
 	private snapshotBridge: any;
 
 	private pvtSnapshotInfo: SnapshotInfo;
@@ -28,11 +31,15 @@ export class SnapshotService {
 		this.pvtSnapshotStatus = value;
 	}
 
-	constructor(shellService: VantageShellService, private loggerService: LoggerService) {
+	constructor(
+		shellService: VantageShellService,
+		private loggerService: LoggerService,
+		private hypothesisService: HypothesisService
+	) {
 		this.snapshotBridge = shellService.getSnapshot();
 
 		if (!this.snapshotBridge) {
-			throw new Error('Error: Invalid Snapshot Bride!');
+			throw new Error('Error: Invalid Snapshot Bridge!');
 		}
 
 		this.initEmptySnapshot();
@@ -101,6 +108,18 @@ export class SnapshotService {
 			}
 		}
 		return false;
+	}
+
+	public async isAvailable(): Promise<boolean> {
+		if (this.hypothesisService) {
+			const featureEnabled = await this.hypothesisService.getFeatureSetting(
+				this.snapshotHypothesisConfigName
+			);
+
+			return (featureEnabled || '').toString() === 'true';
+		}
+
+		throw new Error('Hypothesis Service unavailable!');
 	}
 
 	private initEmptySnapshot() {

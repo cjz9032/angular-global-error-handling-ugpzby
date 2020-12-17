@@ -41,7 +41,7 @@
 			</div>
 
 			<!-- Snapshot Widget -->
-			<div class="row">
+			<div class="row" *ngIf="isSnapshotEnabledOnHypothesis">
 				<div class="col col-12 mb-40">
 					<vtr-widget-snapshot [itemParent]="'HardwareScan'">
 					</vtr-widget-snapshot>
