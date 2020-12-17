@@ -2312,12 +2312,20 @@ vtr-ui-smart-performance-scanning {
 	.vtr-container-collapsible.blue-theme,
 	.vtr-container-collapsible.white-theme {
 		.card-header {
-			padding: 0.75rem 0.9rem;
+			padding: 0.75rem 0.7rem;
+			.header {
+				padding: 0 2rem;
+			}
 		}
 		.card-body {
-			padding-left: 0.9rem !important;
+			padding-left: 0.7rem !important;
 			padding-right: 2.4rem !important;
 			padding-top: 2rem !important;
+			.vtr-ui-switch-row {
+				.vtr-col-pad {
+					padding: 0 2rem;
+				}
+			}
 		}
 		.collapse-header {
 			&:focus {
@@ -2651,7 +2659,6 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	}
 }
 
-
 .icomoon-Alert {
 	background-color: $alert_border;
 	border-radius: 100%;
@@ -2663,7 +2670,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 
 		@media #{$black-on-white} {
 			background-color: transparent;
-			color: $dark
+			color: $dark;
 		}
 		@media #{$white-on-black} {
 			background-color: transparent;
