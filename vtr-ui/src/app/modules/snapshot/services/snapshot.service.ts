@@ -74,7 +74,11 @@ export class SnapshotService {
 			selectedComponents.forEach((componentName) => {
 				this.pvtSnapshotInfo[componentName].info =
 					snapshotUpdateBaselineResponse[componentName];
-				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+				if (this.pvtSnapshotInfo[componentName].info.Items.length > 0) {
+					this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+				} else {
+					this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.noData;
+				}
 			});
 		} catch (error) {
 			this.loggerService.error(
