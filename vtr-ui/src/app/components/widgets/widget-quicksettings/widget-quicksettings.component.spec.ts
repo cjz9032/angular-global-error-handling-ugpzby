@@ -160,13 +160,13 @@ describe('WidgetQuicksettingsComponent', () => {
 				};
 			});
 
-			it('When call showMicrophonePermissionNote, then should return true', () => {
+			it('When call showMicrophonePermissionNote, then should show the microphone permission note', () => {
 				component.microphoneStatus.available = true;
 				const showMicrophonePermissionNote = component.showMicrophonePermissionNote();
 				expect(showMicrophonePermissionNote).toBeTruthy();
 			});
 
-			it('When call showMicrophonePermissionNote and microphne is not available, then should return false', () => {
+			it('When call showMicrophonePermissionNote and microphne is not available, then should not show the microphone permission note', () => {
 				component.microphoneStatus.available = false;
 				const showMicrophonePermissionNote = component.showMicrophonePermissionNote();
 				expect(showMicrophonePermissionNote).toBeFalsy();
@@ -189,20 +189,19 @@ describe('WidgetQuicksettingsComponent', () => {
 				};
 			});
 
-			it('When call showCameraPrivacyPermissionNote, then should return true', () => {
+			it('When call showCameraPrivacyPermissionNote, then should show the camera privacy permission note', () => {
 				component.cameraStatus.available = true;
 				const showMicrophonePermissionNote = component.showCameraPrivacyPermissionNote();
 				expect(showMicrophonePermissionNote).toBeTruthy();
 			});
 
-			it('When call showCameraPrivacyPermissionNote and camera is not available, then should return true', () => {
+			it('When call showCameraPrivacyPermissionNote and camera is not available, then should show the camera privacy permission note', () => {
 				component.cameraStatus.available = false;
 				const showMicrophonePermissionNote = component.showCameraPrivacyPermissionNote();
 				expect(showMicrophonePermissionNote).toBeTruthy();
 			});
 
-			it('When call showCameraPrivacyPermissionNote and camera is not available and camera greyout is true, then should return false', () => {
-				component.cameraStatus.available = false;
+			it('When call showCameraPrivacyPermissionNote and camera greyout is true, then should not show the camera privacy permission note', () => {
 				component.cameraPrivacyGreyOut = true;
 				const showMicrophonePermissionNote = component.showCameraPrivacyPermissionNote();
 				expect(showMicrophonePermissionNote).toBeFalsy();
