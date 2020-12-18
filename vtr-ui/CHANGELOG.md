@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.34](https://bitbucket.tc.lenovo.com///compare/v1.9.33...v1.9.34) (2020-12-18)
+
+
+### Bug Fixes
+
+* **nls:** remove extra ending bracket in nb.json ([864a09e](https://bitbucket.tc.lenovo.com///commit/864a09ee9fe3506b1f1be973de53a1a3a8186b0c))
+
 ### [1.9.33](https://bitbucket.tc.lenovo.com///compare/v1.9.32...v1.9.33) (2020-12-18)
 
 ### [1.9.32](https://bitbucket.tc.lenovo.com///compare/v1.9.31...v1.9.32) (2020-12-17)
