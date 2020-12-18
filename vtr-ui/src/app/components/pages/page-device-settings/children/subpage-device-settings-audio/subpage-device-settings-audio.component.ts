@@ -29,40 +29,35 @@ import { ForteClientService } from './forte-client.service';
 	styleUrls: ['./subpage-device-settings-audio.component.scss'],
 })
 export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
-	title = 'device.deviceSettings.audio.subtitle';
-	headerCaption = 'device.deviceSettings.audio.description';
-	radioGroupAutoDolbySettings = 'radio-grp-auto-dolby-settings';
-	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';
-
-	public microphoneProperties: Microphone;
-	public autoDolbyFeatureStatus: FeatureStatus;
-	public dolbyModeResponse: DolbyModeResponse;
-	public microOptimizeModeResponse: MicrophoneOptimizeModes;
-	microphoneLoader = true;
-	autoDolbyFeatureLoader = true;
-	isDTmachine = false;
-	private notificationSubscription: Subscription;
-	public readonly helpIcon = ['far', 'question-circle'];
-	public automaticDolbyHelpIcon = [];
-	public isOnline: any = true;
-	private microphoneDevice: any;
-	private microphnePermissionHandler: any;
-	private Windows: any;
-	public eCourseStatus = new FeatureStatus(false, true);
-	public voipStatus = new FeatureStatus(false, true);
-	public entertainmentStatus = new FeatureStatus(false, true);
-	public entertainmentTooltip;
-	public eCourseLoader = true;
-	public isNewplugin = true;
-	public dolbyToggleButtonStatus = undefined;
-	public eCourseToggleButtonStatus = undefined;
-	public dolbyModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
-	public microphoneModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 	@Output() tooltipClick = new EventEmitter<boolean>();
 
 	@Input() dolbyModeDisabled = false;
 	@Input() automaticAudioDisabled = false;
 	@Input() enumMode = '1';
+	title = 'device.deviceSettings.audio.subtitle';
+	headerCaption = 'device.deviceSettings.audio.description';
+	radioGroupAutoDolbySettings = 'radio-grp-auto-dolby-settings';
+	radioOptimiseMicSettings = 'radio-grp-optimise-mic-settings';
+
+	microphoneProperties: Microphone;
+	autoDolbyFeatureStatus: FeatureStatus;
+	dolbyModeResponse: DolbyModeResponse;
+	microOptimizeModeResponse: MicrophoneOptimizeModes;
+	microphoneLoader = true;
+	autoDolbyFeatureLoader = true;
+	isDTmachine = false;
+	automaticDolbyHelpIcon = [];
+	isOnline: any = true;
+	eCourseStatus = new FeatureStatus(false, true);
+	voipStatus = new FeatureStatus(false, true);
+	entertainmentStatus = new FeatureStatus(false, true);
+	entertainmentTooltip;
+	eCourseLoader = true;
+	isNewplugin = true;
+	dolbyToggleButtonStatus = undefined;
+	eCourseToggleButtonStatus = undefined;
+	dolbyModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	microphoneModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 
 	headerMenuItems: PageAnchorLink[] = [
 		{
@@ -88,12 +83,18 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		currentMode: true,
 	};
 
-	public dolbyAudioToggleCache: DolbyAudioToggleCapability;
-	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	dolbyAudioToggleCache: DolbyAudioToggleCapability;
 
 	canShowMicrophoneOptimization = false;
 
 	newForteDriver = false;
+
+	readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	readonly helpIcon = ['far', 'question-circle'];
+	private notificationSubscription: Subscription;
+	private readonly microphoneDevice: any;
+	private microphnePermissionHandler: any;
+	private readonly Windows: any;
 
 	constructor(
 		private audioService: AudioService,
@@ -163,7 +164,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			this.logger.info(`Forte driver is new?`, this.newForteDriver);
 		}
 		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
-		this._isInMicrophoneOptimizationBlockList().then((blocked) => {
+		this.isInMicrophoneOptimizationBlockList().then((blocked) => {
 			this.canShowMicrophoneOptimization = !blocked;
 		});
 	}
@@ -303,12 +304,12 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	// 	}
 	// }
 
-	public onRightIconClick(tooltip: any, $event: any) {
+	onRightIconClick(tooltip: any, $event: any) {
 		this.toggleToolTip(tooltip, true);
 		this.tooltipClick.emit($event);
 	}
 
-	public toggleToolTip(tooltip: any, canOpen = false) {
+	toggleToolTip(tooltip: any, canOpen = false) {
 		if (tooltip) {
 			if (tooltip.isOpen()) {
 				tooltip.close();
@@ -751,7 +752,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onMicrophoneVolumeChange($event: number) {
+	onMicrophoneVolumeChange($event: number) {
 		const volume = $event;
 		try {
 			this.microphoneProperties.volume = volume;
@@ -774,7 +775,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onToggleOfMicrophone(event: any) {
+	onToggleOfMicrophone(event: any) {
 		try {
 			this.microphoneProperties.muteDisabled = event.switchValue;
 			this.updateMicrophoneCache();
@@ -804,7 +805,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onToggleOfSuppressKbdNoise(event: any) {
+	onToggleOfSuppressKbdNoise(event: any) {
 		try {
 			this.microphoneProperties.keyboardNoiseSuppression = event.switchValue;
 			this.updateMicrophoneCache();
@@ -827,7 +828,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public setMicrophoneAEC(event: any) {
+	setMicrophoneAEC(event: any) {
 		try {
 			this.microphoneProperties.AEC = event.switchValue;
 			this.updateMicrophoneCache();
@@ -1107,13 +1108,13 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public checkMenuItemsLength() {
+	checkMenuItemsLength() {
 		if (this.headerMenuItems.length === 1) {
 			this.headerMenuItems = [];
 		}
 	}
 
-	private _isInMicrophoneOptimizationBlockList() {
+	private isInMicrophoneOptimizationBlockList() {
 		// noinspection SpellCheckingInspection
 		const microphoneOptimizationBlockList = [
 			'7da89d20abf717b0b691aa96dac96c4db06f8166e1bb94d88572f1b73d074e6a',

@@ -270,9 +270,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 		this.cameraSessionId = this.route.queryParamMap
 			.pipe(
-				takeWhile((par) => {
-					return par.get('cameraSession_id') === 'camera';
-				})
+				takeWhile((par) => par.get('cameraSession_id') === 'camera')
 			)
 			.subscribe(() => {
 				this.logger.debug(`get queryParamMap for navigation from smart assist`);
