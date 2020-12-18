@@ -11,14 +11,12 @@
 					||smartPerformanceService.scanningState === ScanningState.Canceled)
 					&&!smartPerformanceService.isSubscribed">
 		</vtr-subpage-smart-performance-dashboard>
-		<vtr-subpage-scanning
-			*ngIf="smartPerformanceService.scanningState === ScanningState.Running"
+		<vtr-subpage-scanning *ngIf="smartPerformanceService.scanningState === ScanningState.Running"
 			(sendModelStatus)="cancelScanfromScanning()"
 			[scheduleScanData]="smartPerformanceService.scheduleScanObj"
 			[isAutoScanRunning]="isScheduleScanRunning">
 		</vtr-subpage-scanning>
-		<vtr-subpage-smart-performance-scan-summary
-			*ngIf="isShowScanSummary(smartPerformanceService.scanningState)"
+		<vtr-subpage-smart-performance-scan-summary *ngIf="isShowScanSummary(smartPerformanceService.scanningState)"
 			[hasSubscribedScanCompleted]="hasSubscribedScanCompleted"
 			[scanningState]="smartPerformanceService.scanningState"
 			(backToScan)="changeScanEvent()"
@@ -48,16 +46,17 @@
 			<div class="row align-items-stretch no-gutters"
 				*ngIf=" smartPerformanceService.scanningState === ScanningState.Completed
 					|| (smartPerformanceService.scanningState !== ScanningState.Running && smartPerformanceService.isSubscribed)">
+
 				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
-					*ngIf="smartPerformanceService.isSubscribed && !isOldVersion">
+					*ngIf="!smartPerformanceService.isSubscribed && !smartPerformanceService.isExpired">
+					<vtr-widget-recommend-action [isDisabled]="!isOnline"></vtr-widget-recommend-action>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
+					*ngIf="!isOldVersion">
 					<vtr-subpage-schedule-scan (scanDateValueChange)="changeNextScanDateValue($event)"
 						(hideBasedOnOldAddInSummary)="hideBasedOnOldAddInVersionInSummaryPage($event)"
 						[isOnline]="isOnline">
 					</vtr-subpage-schedule-scan>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
-					*ngIf="!smartPerformanceService.isSubscribed && !smartPerformanceService.isExpired">
-					<vtr-widget-recommend-action [isDisabled]="!isOnline"></vtr-widget-recommend-action>
 				</div>
 				<div class="col-12 col-sm-6 col-lg-12 mb-24 widget-card"
 					*ngIf="smartPerformanceService.isSubscribed || smartPerformanceService.isExpired">
@@ -90,7 +89,7 @@
 </vtr-page-layout>
 
 <!-- For PA test UI use, it will remove before rc1 -->
-<div style="position:fixed; top: 10.5rem; right: 3.2rem; width: 16rem; z-index: 9999999999; 
+<div style="position:fixed; top: 10.5rem; right: 3.2rem; width: 16rem; z-index: 9999999999;
 	background: rgba(255,255,255,.9); padding: 1.6rem; border-radius: 0.6rem;"
 	*ngIf="smartPerformanceService.scanningState === ScanningState.Completed && !smartPerformanceService.isSubscribed">
 	<div class="mb-2"
