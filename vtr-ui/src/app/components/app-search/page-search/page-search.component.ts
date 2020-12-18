@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -15,8 +15,9 @@ import { SupportService } from 'src/app/services/support/support.service';
 	styleUrls: ['./page-search.component.scss']
 })
 
-export class PageSearchComponent implements OnInit {
-	public notificationSubscription: any;
+export class PageSearchComponent implements OnInit, OnDestroy {
+	paramSubscription: any;
+	notificationSubscription: any;
 	public userInput: string;
 	public pageTitle: string;
 	public noSearchResultTips: string;
@@ -118,11 +119,13 @@ export class PageSearchComponent implements OnInit {
 
 	ngOnInit(): void {
 		//1. parse query parameter
-		this.activateRoute.queryParams
+		this.paramSubscription = this.activateRoute.queryParams
 			.subscribe(params => {
-				this.userInput = params.userInput;
-				this.updatePageTitle();	// setup page title at initialization
-				this.fireSearch();
+				if (params.userInput) {
+					this.userInput = params.userInput;
+					this.updatePageTitle();	// setup page title at initialization
+					this.fireSearch();
+				}
 			});
 
 		//2. subscibe to common event
@@ -180,6 +183,11 @@ export class PageSearchComponent implements OnInit {
 
 	onSearchInputChange() {
 		// to do, update recommandation items
+	}
+
+	ngOnDestroy() {
+		this.paramSubscription?.unsubscribe();
+		this.notificationSubscription?.unsubscribe();
 	}
 
 	private fireSearch() {
@@ -249,7 +257,7 @@ export class PageSearchComponent implements OnInit {
 		});
 	}
 
-	setShowList() {
+	private setShowList() {
 		if (this.supportService.supportDatas) {
 			this.supportDatas = this.supportService.supportDatas;
 			return;

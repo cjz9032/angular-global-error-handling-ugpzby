@@ -73,10 +73,8 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	preloadImages: string[];
 	isLoggingOut = false;
 	appsForYouEnum = AppsForYouEnum;
-	showSearchMenu = true;
+	showSearchMenu = false;
 	translateSubscription: Subscription;
-	searchTips = '';
-	showSearchBox = false;
 	activeItemId: string;
 	currentRoutePath: string;
 	isHamburgerAvailable = false;
@@ -85,7 +83,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	private backlightCapabilitySubscription: Subscription;
 	private topRowFnSubscription: Subscription;
 	private routerEventSubscription: Subscription;
-	private searchTipsTimeout: any;
 	private closeAllOtherMatMenuTimer: any;
 	constructor(
 		public dashboardService: DashboardService,
