@@ -180,6 +180,7 @@ describe('WidgetQuicksettingsComponent', () => {
 			beforeEach(() => {
 				fixture = TestBed.createComponent(WidgetQuicksettingsComponent);
 				component = fixture.componentInstance;
+				component.cameraPrivacyGreyOut = false;
 				component.cameraStatus = {
 					available: false,
 					status: false,
@@ -198,6 +199,13 @@ describe('WidgetQuicksettingsComponent', () => {
 				component.cameraStatus.available = false;
 				const showMicrophonePermissionNote = component.showCameraPrivacyPermissionNote();
 				expect(showMicrophonePermissionNote).toBeTruthy();
+			});
+
+			it('When call showCameraPrivacyPermissionNote and camera is not available and camera greyout is true, then should return false', () => {
+				component.cameraStatus.available = false;
+				component.cameraPrivacyGreyOut = true;
+				const showMicrophonePermissionNote = component.showCameraPrivacyPermissionNote();
+				expect(showMicrophonePermissionNote).toBeFalsy();
 			});
 		});
 	});

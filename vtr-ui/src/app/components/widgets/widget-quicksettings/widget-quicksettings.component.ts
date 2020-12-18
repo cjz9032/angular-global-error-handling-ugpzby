@@ -319,7 +319,7 @@ export class WidgetQuicksettingsComponent implements OnInit, OnDestroy {
 	}
 
 	showCameraPrivacyPermissionNote() {
-		return !this.cameraStatus.isLoading && !this.cameraStatus.permission; //&& this.cameraStatus.available;
+		return !this.cameraStatus.isLoading && !this.cameraStatus.permission && !this.cameraPrivacyGreyOut;
 	}
 
 	//#region private functions
