@@ -129,12 +129,12 @@ export class LocalCacheService {
 		const value = await this.store.getItem<string>(key);
 		if (this.isAvailableValue(value)) {
 			try {
-				return JSON.parse(value);
+				return Promise.resolve(JSON.parse(value));
 			} catch (e) {
-				return value;
+				return Promise.resolve(value);
 			}
 		}
-		return arguments.length === 1 ? undefined : defaultValue;
+		return Promise.resolve(arguments.length === 1 ? undefined : defaultValue);
 	}
 
 	private createForage(dbName: string, store: string) {
