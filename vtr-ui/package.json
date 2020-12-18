@@ -34,6 +34,7 @@
 	"private": true,
 	"dependencies": {
 		"@angular/animations": "~11.0.4",
+		"@angular/cdk": "^11.0.3",
 		"@angular/common": "~11.0.4",
 		"@angular/core": "~11.0.4",
 		"@angular/forms": "~11.0.4",
@@ -48,8 +49,7 @@
 		"@fortawesome/free-regular-svg-icons": "^5.15.1",
 		"@fortawesome/free-solid-svg-icons": "^5.15.1",
 		"@fortawesome/pro-light-svg-icons": "^5.15.1",
-		"@lenovo/cdk": "^10.2.6",
-		"@lenovo/material": "^10.2.6",
+		"@lenovo/material": "^11.0.3",
 		"@lenovo/tan-client-bridge": "10.2101.0.unstablelatest",
 		"@ng-bootstrap/ng-bootstrap": "^7.0.0",
 		"@ngx-translate/core": "^13.0.0",

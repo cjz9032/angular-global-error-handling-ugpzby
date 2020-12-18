@@ -34,6 +34,7 @@ import {
 	RippleGlobalOptions,
 } from '@lenovo/material/core';
 import { MatSnackBarModule } from '@lenovo/material/snack-bar';
+import { MatTooltipModule, MatTooltipDefaultOptions, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@lenovo/material/tooltip';
 
 import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
 import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
@@ -92,6 +93,15 @@ const globalRippleConfig: RippleGlobalOptions = {
 		exitDuration: 0,
 	},
 };
+
+const matTooltipDefaultOptions: MatTooltipDefaultOptions = {
+	showDelay: 0,
+	hideDelay: 0,
+	touchendHideDelay: 0,
+	position: 'above'
+};
+
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -145,6 +155,7 @@ const globalRippleConfig: RippleGlobalOptions = {
 		MatDialogModule,
 		MatRippleModule,
 		MatSnackBarModule,
+		MatTooltipModule,
 	],
 	exports: [
 		NavbarModule,
@@ -175,6 +186,9 @@ const globalRippleConfig: RippleGlobalOptions = {
 			multi: true,
 		},
 		{ provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },
+		{
+			provide: MAT_TOOLTIP_DEFAULT_OPTIONS, useFactory: () => matTooltipDefaultOptions
+		},
 	],
 	entryComponents: [
 		ModalWelcomeComponent,

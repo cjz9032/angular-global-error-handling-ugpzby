@@ -12,9 +12,9 @@ import {
 	Self,
 	ViewContainerRef,
 } from '@angular/core';
-import { FocusMonitor, FocusOrigin, isFakeMousedownFromScreenReader } from '@lenovo/cdk/a11y';
-import { Direction, Directionality } from '@lenovo/cdk/bidi';
-import { LEFT_ARROW, RIGHT_ARROW } from '@lenovo/cdk/keycodes';
+import { FocusMonitor, FocusOrigin, isFakeMousedownFromScreenReader } from '@angular/cdk/a11y';
+import { Direction, Directionality } from '@angular/cdk/bidi';
+import { LEFT_ARROW, RIGHT_ARROW } from '@angular/cdk/keycodes';
 import {
 	FlexibleConnectedPositionStrategy,
 	HorizontalConnectionPos,
@@ -24,9 +24,9 @@ import {
 	VerticalConnectionPos,
 	ScrollStrategy,
 	OverlayContainer,
-} from '@lenovo/cdk/overlay';
-import { TemplatePortal } from '@lenovo/cdk/portal';
-import { normalizePassiveListenerOptions } from '@lenovo/cdk/platform';
+} from '@angular/cdk/overlay';
+import { TemplatePortal } from '@angular/cdk/portal';
+import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
 import { asapScheduler, merge, of as observableOf, Subscription } from 'rxjs';
 import { delay, filter, take, takeUntil } from 'rxjs/operators';
 import { MatMenu, MatMenuItem, MatMenuPanel, MAT_MENU_SCROLL_STRATEGY, MenuPositionX, MenuPositionY } from '@lenovo/material/menu';
@@ -493,9 +493,9 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		const parentClose = this._parentMenu ? this._parentMenu.closed : observableOf();
 		const hover = this._parentMenu
 			? this._parentMenu._hovered().pipe(
-					filter((active) => active !== this._menuItemInstance),
-					filter(() => this._menuOpen)
-			  )
+				filter((active) => active !== this._menuItemInstance),
+				filter(() => this._menuOpen)
+			)
 			: observableOf();
 
 		return merge(backdrop, parentClose, hover, detachments);
