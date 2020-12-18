@@ -116,7 +116,8 @@
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
-							(mouseover)="closeAllOtherMatMenu(menuTrigger)"
+							(pointerenter)="closeAllOtherMatMenu(menuTrigger)"
+							(pointerleave)="clearCloseAllOtherMatMenu()"
 							(focus)="closeAllOtherMatMenu(menuTrigger)">
 							<fa-icon class="align-middle" [icon]="item.icon"></fa-icon>
 							<span [innerHTML]="item.label | translate"></span>

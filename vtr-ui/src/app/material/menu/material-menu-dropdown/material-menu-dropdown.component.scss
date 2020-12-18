@@ -8,6 +8,14 @@
 			@include high-contrast-background;
 			box-shadow: $menu_dropdown_shadow;
 		}
+		&.app-search {
+			border-radius: 0.5rem;
+			.mat-menu-content {
+				padding-top: 0;
+				padding-bottom: 0;
+				background: transparent;
+			}
+		}
 		.secondary-menu-container {
 			max-width: 60rem;
 			.column-container {

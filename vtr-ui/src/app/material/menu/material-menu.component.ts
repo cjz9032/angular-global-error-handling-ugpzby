@@ -112,19 +112,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
 	}
 
-	updateSearchBoxState(isActive) {
-		this.searchTips = '';
-		this.showSearchBox = isActive;
-		if (isActive && this.searchTipsTimeout) {
-			this.searchTipsTimeout = clearTimeout(this.searchTipsTimeout);
-			this.searchTipsTimeout = null;
-		}
-	}
-
-	onClickSearchMask() {
-		this.updateSearchBoxState(false);
-	}
-
 	ngOnInit(): void {
 		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
@@ -246,13 +233,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	@HostListener('document:click', ['$event'])
-	onClick(event) {
-		if (!event.fromSearchBox && !event.fromSearchMenu) {
-			this.updateSearchBoxState(false);
-		}
-	}
-
 	private loadMenuOptions(machineType: number) {
 		// if IdeaPad then call below function
 		if (machineType === 0 || machineType === 1) {
@@ -369,7 +349,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	}
 
 	toggleMenu(event) {
-		this.updateSearchBoxState(false);
 		event.stopPropagation();
 	}
 
@@ -387,12 +366,7 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	}
 
 	onMenuItemClick(item, event?) {
-		if (item.id === 'app-search') {
-			this.updateSearchBoxState(!this.showSearchBox);
-			if (event) {
-				event.fromSearchMenu = true;
-			}
-		} else if (item && item.id === 'user' && event) {
+		if (item && item.id === 'user' && event) {
 			const target = event.currentTarget || event.srcElement;
 			const id = target?.attributes?.id?.nodeValue;
 			if (

@@ -99,7 +99,9 @@ $line_height: 2rem;
 
 		.offline-tips {
 			margin-top: 6rem;
-			font-size: 3.5rem;
+			color: $grey_dark;
+			opacity: 0.8;
+			font-size: 2.0rem;
 		}
 
 		.loading-indicator {
@@ -133,14 +135,18 @@ $line_height: 2rem;
 			}
 
 			.no-search-result {
+				color: $grey_dark;
+				opacity: 0.8;
 				.title {
-					margin-top: 4.96rem;
 					@extend .flex-all-center;
+					margin-top: 4.96rem;
+					font-size: 2.0rem;
 				}
 
 				.description {
-					margin-top: 1.2rem;
 					@extend .flex-all-center;
+					margin-top: 1.2rem;
+					font-size: 1.4rem;
 				}
 			}
 
@@ -151,6 +157,10 @@ $line_height: 2rem;
 					background: $light 0% 0% no-repeat padding-box;
 					border: 1px solid $grey_light;
 					border-bottom: none;
+					div {
+						cursor: pointer;
+					}
+
 					&:first-child {
 						border-radius: 0.4rem 0.4rem 0 0;
 					}
@@ -205,22 +215,31 @@ $line_height: 2rem;
 				@extend .flex-all-center;
 				font-size: 1.8rem;
 				opacity: 0.8;
+				margin-top: 2.4rem;
+				margin-bottom: 2.4rem;
+				cursor: pointer;
 
-
-				.chevron-left {
+				.chevron-left .chevron-right {
 					padding: 1.6rem;
-				}
-
-				.chevron-right {
-					padding: 1.6rem;
+					font-size: 2.0rem;
+					opacity: 1;
 				}
 
 				.pagination-item {
 					padding: 0.6rem;
+					cursor: pointer;
 				}
 
-				.active {
+				.high-light {
+					color: $hover_dark;
 					font-weight: bold;
+					cursor: default;
+				}
+
+				.deactive-chevron {
+					opacity: 0.6;
+					color: $grey_dark;
+					cursor: default;
 				}
 			}
 		}

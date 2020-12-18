@@ -1,21 +1,21 @@
-<div class="search-block" #searchBox (click)="onParentClick($event)">
+<div class="search-block" #searchBox>
 	<div class="input-block" [class.is-show-result]="false">
 		<!-- search button-->
-		<div class="search-icon" (click)="onClickSearch()">
+		<div class="search-icon" (click)="onClickSearch($event)">
 			<fa-icon [icon]="['fal', 'search']"></fa-icon>
 		</div>
 
 		<!-- user input-->
 		<input type="text" #searchInput class="search-input" [placeholder]="searchTips"
-			(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput" (keydown.enter)="onClickSearch()" (click)="onInputClick($event)"/>
+			(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput" (keydown.enter)="onClickSearch($event)" (click)="onInputClick($event)"/>
 
 		<!-- x button-->
 		<div class="clean-button" [class.active]="userInput" vtrMetrics metricsEvent="FeatureClick"
-			metricsParent="Dropdown.Search" metricsItem="cleanSearch" (click)="onCleanClick()">
+			metricsParent="Dropdown.Search" metricsItem="cleanSearch" (click)="onCleanClick($event)">
 		</div>
 	</div>
 
-	<div class="dropdown-block mt-1" (click)="onDropDownClick($event)">
+	<div class="dropdown-block mt-1" *ngIf="recommandedItems.length > 0">
 		<ul>
 			<li *ngFor="let recItem of recommandedItems" (click)="onClickRecommandationItem(recItem.name)" vtrMetrics
 				metricsEvent="FeatureClick" metricsParent="Dropdown.Search" [metricsItem]="recItem.id">
