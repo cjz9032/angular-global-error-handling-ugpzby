@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { DolbyModeResponse } from 'src/app/data-models/audio/dolby-mode-response';
-import { MicrophoneOptimizeModes } from 'src/app/data-models/audio/microphone-optimize-modes';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class AudioService {
+	isShellAvailable = false;
 	private microphone: any;
 	private dolby: any;
 	private smartSettings: any;
-	public isShellAvailable = false;
 	constructor(shellService: VantageShellService) {
 		this.microphone = shellService.getMicrophoneSettings();
 		this.dolby = shellService.getDolbySettings();
@@ -44,10 +42,10 @@ export class AudioService {
 		}
 	}
 
-	setMicrophoneVolume(volumn: number): Promise<boolean> {
+	setMicrophoneVolume(volume: number): Promise<boolean> {
 		try {
 			if (this.isShellAvailable) {
-				return this.microphone.setMicrophoneVolume(volumn);
+				return this.microphone.setMicrophoneVolume(volume);
 			}
 			return undefined;
 		} catch (error) {
@@ -55,7 +53,7 @@ export class AudioService {
 		}
 	}
 
-	// TODO: We need to remove this as we have to use dashboard.setMicphoneStatus
+	// TODO: We need to remove this as we have to use dashboard.setMicrophoneStatus
 	setMicophoneOnMute(isAvailable: boolean): Promise<boolean> {
 		try {
 			if (this.isShellAvailable) {

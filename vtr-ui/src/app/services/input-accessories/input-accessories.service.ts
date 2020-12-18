@@ -6,11 +6,11 @@ import { VoipResponse } from '../../data-models/input-accessories/voip.model';
 	providedIn: 'root',
 })
 export class InputAccessoriesService {
-	public keyboardManager: any;
+	keyboardManager: any;
+	isShellAvailable = false;
+	keyboard;
 	private mouseAndTouchPad: any;
-	public isShellAvailable = false;
 	private voipHotkeys;
-	public keyboard;
 
 	constructor(shellService: VantageShellService) {
 		this.voipHotkeys = shellService.getVoipHotkeysObject();
@@ -25,7 +25,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public setUserDefinedKeySetting(
+	setUserDefinedKeySetting(
 		type: string,
 		actionType: string,
 		settingKey: string,
@@ -45,7 +45,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	public StartSpecialKeyMonitor(installDirectory: string): Promise<boolean> {
+	StartSpecialKeyMonitor(installDirectory: string): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.StartSpecialKeyMonitor(installDirectory);
@@ -55,7 +55,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	public EndSpecialKeyMonitor(): Promise<boolean> {
+	EndSpecialKeyMonitor(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.EndSpecialKeyMonitor();
@@ -65,7 +65,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	public Initialize(): Promise<boolean> {
+	Initialize(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.Initialize();
@@ -75,7 +75,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	public AddApplicationOrFiles(selectedUDK: string, appSelectorType: string): Promise<any> {
+	AddApplicationOrFiles(selectedUDK: string, appSelectorType: string): Promise<any> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.AddApplicationOrFiles(selectedUDK, appSelectorType);
@@ -85,7 +85,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	public DeleteUDKApplication(
+	DeleteUDKApplication(
 		udkType: string,
 		itemId: string,
 		displayName: string
@@ -100,7 +100,7 @@ export class InputAccessoriesService {
 		}
 	}
 	//  Check Keyboard UDK Compatability Status and KeyboardMapCapability
-	public GetAllCapability(): Promise<any> {
+	GetAllCapability(): Promise<any> {
 		try {
 			if (this.keyboardManager) {
 				const value = this.keyboardManager.GetAllCapability();
@@ -113,7 +113,7 @@ export class InputAccessoriesService {
 	}
 
 	//  Get the UDKTypeList
-	public GetUDKTypeList(): Promise<any> {
+	GetUDKTypeList(): Promise<any> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetUDKTypeList();
@@ -124,7 +124,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public GetKeyboardVersion(): Promise<string> {
+	GetKeyboardVersion(): Promise<string> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.GetKeyboardVersion();
@@ -136,7 +136,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public GetKBDLayoutName(): Promise<any> {
+	GetKBDLayoutName(): Promise<any> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetKBDLayoutName();
@@ -147,7 +147,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public GetKBDMachineType(): Promise<any> {
+	GetKBDMachineType(): Promise<any> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetKBDMachineType();
@@ -158,7 +158,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public GetKbdHiddenKeyPrivacyFilterCapability(): Promise<boolean> {
+	GetKbdHiddenKeyPrivacyFilterCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetKbdHiddenKeyPrivacyFilterCapability();
@@ -169,7 +169,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public GetKbdHiddenKeyBackLightCapability(): Promise<boolean> {
+	GetKbdHiddenKeyBackLightCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetKbdHiddenKeyBackLightCapability();
@@ -180,7 +180,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public GetKbdHiddenKeyMagnifierCapability(): Promise<boolean> {
+	GetKbdHiddenKeyMagnifierCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetKbdHiddenKeyMagnifierCapability();
@@ -191,7 +191,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public GetKbdHiddenKeyPerformanceModeCapability(): Promise<boolean> {
+	GetKbdHiddenKeyPerformanceModeCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetKbdHiddenKeyPerformanceModeCapability();
@@ -206,7 +206,7 @@ export class InputAccessoriesService {
 
 	// Start Top Row Function keys
 
-	public getTopRowFnLockCapability(): Promise<boolean> {
+	getTopRowFnLockCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.GetTopRowFnLockCapability();
@@ -217,7 +217,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	public getTopRowFnStickKeyCapability(): Promise<boolean> {
+	getTopRowFnStickKeyCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.GetTopRowFnStickKeyCapability();
@@ -228,7 +228,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	public getTopRowPrimaryFunctionCapability(): Promise<boolean> {
+	getTopRowPrimaryFunctionCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.GetTopRowPrimaryFunctionCapability();
@@ -240,7 +240,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public getFnLockStatus(): Promise<boolean> {
+	getFnLockStatus(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.GetFnLockStatus();
@@ -252,7 +252,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public getFnStickKeyStatus(): Promise<boolean> {
+	getFnStickKeyStatus(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.GetFnStickKeyStatus();
@@ -263,7 +263,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	public getPrimaryFunctionStatus(): Promise<boolean> {
+	getPrimaryFunctionStatus(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.GetPrimaryFunctionStatus();
@@ -275,7 +275,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public setFnStickKeyStatus(value): Promise<boolean> {
+	setFnStickKeyStatus(value): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.SetFnStickKey(value);
@@ -287,7 +287,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public setFnLock(value): Promise<boolean> {
+	setFnLock(value): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.SetFnLock(value);
@@ -298,7 +298,7 @@ export class InputAccessoriesService {
 			throw new Error(error.message);
 		}
 	}
-	public setPrimaryFunction(value): Promise<boolean> {
+	setPrimaryFunction(value): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				const response = this.keyboardManager.SetPrimaryFunction(value);
@@ -312,7 +312,7 @@ export class InputAccessoriesService {
 
 	// FnCtrlSwap feature start here
 	// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
-	public GetFnCtrlSwapCapability(): Promise<boolean> {
+	GetFnCtrlSwapCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetFnCtrlSwapCapability();
@@ -323,7 +323,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public GetFnCtrlSwap() {
+	GetFnCtrlSwap() {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetFnCtrlSwap();
@@ -334,7 +334,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public SetFnCtrlSwap(value) {
+	SetFnCtrlSwap(value) {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.SetFnCtrlSwap(value);
@@ -346,7 +346,7 @@ export class InputAccessoriesService {
 	}
 	// FnCtrlSwap feature end here
 
-	public GetFnAsCtrlCapability(): Promise<boolean> {
+	GetFnAsCtrlCapability(): Promise<boolean> {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetFnAsCtrlCapability();
@@ -357,7 +357,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public GetFnAsCtrl() {
+	GetFnAsCtrl() {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.GetFnAsCtrl();
@@ -368,7 +368,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public SetFnAsCtrl(value) {
+	SetFnAsCtrl(value) {
 		try {
 			if (this.keyboardManager) {
 				return this.keyboardManager.SetFnCtrlSwap(value);
@@ -381,7 +381,7 @@ export class InputAccessoriesService {
 
 	// FnAsCtrl feature end here
 
-	public getMouseCapability(): Promise<boolean> {
+	getMouseCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {
 				return this.mouseAndTouchPad.GetMouseCapability();
@@ -392,7 +392,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public getTouchPadCapability(): Promise<boolean> {
+	getTouchPadCapability(): Promise<boolean> {
 		try {
 			if (this.mouseAndTouchPad) {
 				return this.mouseAndTouchPad.GetTouchpadCapability();
@@ -404,7 +404,7 @@ export class InputAccessoriesService {
 	}
 
 	// Voiphotkeys Feature
-	public getVoipHotkeysSettings(): Promise<VoipResponse> {
+	getVoipHotkeysSettings(): Promise<VoipResponse> {
 		try {
 			if (this.voipHotkeys) {
 				return this.voipHotkeys.getVOIPHotkeysSettings();
@@ -415,7 +415,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public setVoipHotkeysSettings(selectedApp: number): Promise<VoipResponse> {
+	setVoipHotkeysSettings(selectedApp: number): Promise<VoipResponse> {
 		try {
 			if (this.voipHotkeys) {
 				return this.voipHotkeys.setVOIPHotkeysSettings(selectedApp);
@@ -427,7 +427,7 @@ export class InputAccessoriesService {
 	}
 
 	// Start of Keyboard backlight thinkpad model
-	public getAutoKBDBacklightCapability(): Promise<boolean> {
+	getAutoKBDBacklightCapability(): Promise<boolean> {
 		try {
 			if (this.keyboard) {
 				return this.keyboard.GetAutoKBDBacklightCapability();
@@ -438,7 +438,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public getKBDBacklightCapability(): Promise<boolean> {
+	getKBDBacklightCapability(): Promise<boolean> {
 		try {
 			if (this.keyboard) {
 				return this.keyboard.GetKBDBacklightCapability();
@@ -449,7 +449,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public getAutoKBDStatus(): Promise<boolean> {
+	getAutoKBDStatus(): Promise<boolean> {
 		try {
 			if (this.keyboard) {
 				return this.keyboard.GetAutoKBDStatus();
@@ -460,7 +460,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public getKBDBacklightStatus(): Promise<string> {
+	getKBDBacklightStatus(): Promise<string> {
 		try {
 			if (this.keyboard) {
 				return this.keyboard.GetKBDBacklightStatus();
@@ -471,7 +471,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public getKBDBacklightLevel(): Promise<string> {
+	getKBDBacklightLevel(): Promise<string> {
 		try {
 			if (this.keyboard) {
 				return this.keyboard.GetKBDBacklightLevel();
@@ -482,7 +482,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public setKBDBacklightStatus(level: string): Promise<boolean> {
+	setKBDBacklightStatus(level: string): Promise<boolean> {
 		try {
 			if (this.keyboard) {
 				return this.keyboard.SetKBDBacklightStaus(level);
@@ -493,7 +493,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public setAutomaticKBDBacklight(level: boolean): Promise<boolean> {
+	setAutomaticKBDBacklight(level: boolean): Promise<boolean> {
 		try {
 			if (this.keyboard) {
 				return this.keyboard.SetAutomaticKBDBacklight(level);
@@ -504,7 +504,7 @@ export class InputAccessoriesService {
 		}
 	}
 
-	public setAutoKBDEnableStatus(): Promise<boolean> {
+	setAutoKBDEnableStatus(): Promise<boolean> {
 		try {
 			if (this.keyboard) {
 				return this.keyboard.SetAutoKBDEnableStatus(true);
@@ -517,7 +517,7 @@ export class InputAccessoriesService {
 	// End of Keyboard backlight thinkpad model
 
 	// To Restart Windows
-	public restartMachine() {
+	restartMachine() {
 		this.keyboardManager.RestartMachine();
 	}
 }

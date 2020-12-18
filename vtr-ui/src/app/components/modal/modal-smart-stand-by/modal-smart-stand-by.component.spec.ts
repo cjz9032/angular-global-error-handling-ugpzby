@@ -73,32 +73,32 @@
 // 		it('getActiviesData calling powerService', async(() => {
 // 			const { fixture, component, powerService } = setup();
 // 			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
-// 			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
+// 			spyOn(powerService, 'getSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
 // 			component['getActivitiesData']();
 // 			fixture.detectChanges();
 
 // 			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
-// 			expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
+// 			expect(powerService.getSmartStandbyActiveHours).toHaveBeenCalled();
 // 		}));
 
 // 		it('getSmartStandbyActiveHours calling powerService', async(() => {
 // 			const { fixture, component, powerService } = setup();
 // 			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(activities));
-// 			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
+// 			spyOn(powerService, 'getSmartStandbyActiveHours').and.returnValue(Promise.resolve(activities));
 
 // 			component.getSmartStandbyActiveHours();
 // 			fixture.detectChanges();
 
 // 			expect(powerService.getSmartStandbyPresenceData).toHaveBeenCalled();
-// 			expect(powerService.GetSmartStandbyActiveHours).toHaveBeenCalled();
+// 			expect(powerService.getSmartStandbyActiveHours).toHaveBeenCalled();
 // 		}));
 
 // 		// Testing exceptions
 // 		it('Testing exception', async(() => {
 // 			const { fixture, component, powerService } = setup();
 // 			spyOn(powerService, 'getSmartStandbyPresenceData').and.returnValue(Promise.resolve(new TypeError('caught exception')));
-// 			spyOn(powerService, 'GetSmartStandbyActiveHours').and.returnValue(Promise.resolve(new TypeError('caught exception')));
+// 			spyOn(powerService, 'getSmartStandbyActiveHours').and.returnValue(Promise.resolve(new TypeError('caught exception')));
 
 // 			fixture.detectChanges(); // onInit()
 // 			const excp = () => {

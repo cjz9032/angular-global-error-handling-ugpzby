@@ -576,7 +576,7 @@ describe('PowerService', () => {
 			expect(powerService.getSmartStandbyIsAutonomic).toThrow();
 		});
 
-		it('should call GetSmartStandbyActiveHours', () => {
+		it('should call getSmartStandbyActiveHours', () => {
 			const { powerService } = setup();
 			const spy = spyOn(
 				powerService.devicePowerThinkPad.sectionSmartStandby,
