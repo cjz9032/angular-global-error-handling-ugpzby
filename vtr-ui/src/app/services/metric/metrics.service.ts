@@ -224,12 +224,20 @@ export class MetricService {
 		);
 	}
 
-	private sendAppLoadedMetric() {
+	public sendAppLoadedMetric(performanceTimes) {
 		const loadedEvent: AppLoaded = {
 			ItemType: EventName.apploaded,
 			DurationForWeb: this.appInitDuration,
 			DurationActivatePage: this.firstPageActiveDuration,
 			TargePage: this.getPageName(),
+			WebAppSource: performanceTimes.webAppSource ?? '',
+			CERT_PIN_DONE: performanceTimes.certPingDone ?? 0,
+			INDEXPAGE_CONNECTION_ESTABLISHED: performanceTimes.indexPageEstablished,
+			DOM_INTERACTIVED: performanceTimes.domInteractived ?? 0,
+			SCRIPT_LOADED: performanceTimes.scriptLoaded ?? 0,
+			APP_INITIALIZED: performanceTimes.appInitialized ?? 0,
+			APP_ENTRY_LOADED: performanceTimes.appEntryLoaded ?? 0,
+			FIRST_PAGE_LOADED: performanceTimes.firstPageLoaded ?? 0
 		};
 		this.metricsClient.sendAsync(loadedEvent);
 	}
@@ -385,7 +393,6 @@ export class MetricService {
 		// the following metrics need to be send when the welcome page was done or the page was loaded at which point the metrics privacy was determined
 		this.sendAppLaunchMetric();
 		this.sendEnvInfoMetric();
-		this.sendAppLoadedMetric();
 	}
 
 	public async metricReady() {

@@ -40,6 +40,14 @@ export class AppLoaded extends IMetricEvent {
 	public DurationForWeb: number;
 	public DurationActivatePage: number;
 	public TargePage: string;
+	public WebAppSource: string;
+	public CERT_PIN_DONE: number;
+	public INDEXPAGE_CONNECTION_ESTABLISHED: number;
+	public DOM_INTERACTIVED: number;
+	public SCRIPT_LOADED: number;
+	public APP_INITIALIZED: number;
+	public APP_ENTRY_LOADED: number;
+	public FIRST_PAGE_LOADED: number;
 }
 
 export class ArticleDisplay extends IMetricEvent {

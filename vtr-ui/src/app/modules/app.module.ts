@@ -101,6 +101,11 @@ const matTooltipDefaultOptions: MatTooltipDefaultOptions = {
 	position: 'above'
 };
 
+const initializerFactory = (initializerService: InitializerService) => () =>
+	initializerService.initialize()
+		.finally(() => {
+			window.performance.mark('app initialized');
+		});
 
 @NgModule({
 	declarations: [
@@ -180,8 +185,7 @@ const matTooltipDefaultOptions: MatTooltipDefaultOptions = {
 		},
 		{
 			provide: APP_INITIALIZER,
-			useFactory: (initializerService: InitializerService) =>
-				initializerService.initialize.bind(initializerService),
+			useFactory: initializerFactory,
 			deps: [InitializerService],
 			multi: true,
 		},
