@@ -32,7 +32,7 @@
 				<div class="col-1 basis-width"></div>
 				<section class="landing-content col-11 pl-3">
 					<p id="sa-ov-widget-security-content-{{i+1}}" role="text">{{item.content}}</p>
-					<button mat-flat-button *ngIf="!item.showOwn && item.buttonLink"
+					<button mat-customize-button *ngIf="!item.showOwn && item.buttonLink"
 						id="{{item.id}}"
 						[color]="(item.status === 'enabled' || item.status === 'installed') ? 'accent':'primary'"
 						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
@@ -43,7 +43,7 @@
 						metricsEvent="FeatureClick"
 						[metricsItem]="item.id"
 					>{{item.buttonLabel}}</button>
-					<button mat-flat-button *ngIf="item.buttonHref"
+					<button mat-customize-button *ngIf="item.buttonHref"
 						id="{{item.id}}"
 						[color]="item.status === 'enabled'?'accent':'primary'"
 						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
@@ -53,7 +53,7 @@
 						metricsEvent="FeatureClick"
 						[metricsItem]="item.id"
 					>{{item.buttonLabel}}</button>
-					<button mat-flat-button *ngIf="item.launch"
+					<button mat-customize-button *ngIf="item.launch"
 						id="{{item.id}}"
 						[color]="item.status === 'enabled'?'accent':'primary'"
 						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
