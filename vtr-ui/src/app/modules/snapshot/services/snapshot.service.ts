@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { formatDate } from '@angular/common';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import {
 	SnapshotComponentStatus,
@@ -164,7 +165,11 @@ export class SnapshotService {
 				throw Error('Could not find requested component info');
 			}
 			this.pvtSnapshotInfo[componentName].info = componentSnapshot;
-			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+			if (this.pvtSnapshotInfo[componentName].info.Items.length > 0) {
+				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
+			} else {
+				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.noData;
+			}
 		} catch (error) {
 			this.loggerService.error(
 				`Error ${error} during request for snapshot data from ${componentName}`

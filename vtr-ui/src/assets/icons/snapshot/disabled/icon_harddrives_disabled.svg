@@ -1,0 +1,11 @@
+<svg id="Icon_HardDrives_24px" data-name="Icon/HardDrives/24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle" width="24" height="24" fill="none" opacity="0"/>
+  <g id="icon" transform="translate(1 5.5)" opacity="0.4">
+    <path id="Path_281" data-name="Path 281" d="M22.6,11H3.4A1.431,1.431,0,0,0,2,12.4V22.6A1.431,1.431,0,0,0,3.4,24H22.6A1.4,1.4,0,0,0,24,22.6V12.4A1.431,1.431,0,0,0,22.6,11Zm.55,11.6a.555.555,0,0,1-.55.55H3.4a.555.555,0,0,1-.55-.55V20.7h.6a.5.5,0,0,0,0-1H2.9V19h.6a.5.5,0,0,0,0-1H2.9v-.75h.6a.5.5,0,0,0,0-1H2.9V15.5h.6a.5.5,0,0,0,0-1H2.9V12.4a.555.555,0,0,1,.55-.55h19.2a.555.555,0,0,1,.55.55V22.6Z" transform="translate(-2 -11)" fill="#34495e"/>
+    <path id="Path_282" data-name="Path 282" d="M40.2,14.7a.473.473,0,0,0-.5.5.5.5,0,1,0,1,0,.473.473,0,0,0-.5-.5Z" transform="translate(-20.849 -12.849)" fill="#34495e"/>
+    <path id="Path_283" data-name="Path 283" d="M40.2,31.6a.473.473,0,0,0-.5.5.5.5,0,0,0,1,0,.472.472,0,0,0-.5-.5Z" transform="translate(-20.849 -21.299)" fill="#34495e"/>
+    <path id="Path_284" data-name="Path 284" d="M6.5,14.7a.472.472,0,0,0-.5.5.5.5,0,1,0,.5-.5Z" transform="translate(-3.999 -12.849)" fill="#34495e"/>
+    <path id="Path_285" data-name="Path 285" d="M6.5,31.6a.473.473,0,0,0-.5.5.5.5,0,1,0,.5-.5Z" transform="translate(-3.999 -21.299)" fill="#34495e"/>
+    <path id="Path_286" data-name="Path 286" d="M23.749,18.6H16.3a.472.472,0,0,0-.5.5v4.4a.472.472,0,0,0,.5.5h7.45a.473.473,0,0,0,.5-.5V19.1a.473.473,0,0,0-.5-.5Zm-.5,4.4H16.8V19.6h6.45Z" transform="translate(-8.899 -14.799)" fill="#34495e"/>
+  </g>
+</svg>

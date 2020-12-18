@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
 	SnapshotHardwareComponents,
 	SnapshotSoftwareComponents,
@@ -12,7 +12,7 @@ import { SnapshotService } from '../../../services/snapshot.service';
 	templateUrl: './ui-snapshot-item.component.html',
 	styleUrls: ['./ui-snapshot-item.component.scss'],
 })
-export class UiSnapshotItemComponent implements OnInit, OnDestroy {
+export class UiSnapshotItemComponent implements OnInit {
 	@Input() name: string;
 	@Input() component: any;
 	@Input() componentIndex: number;
@@ -32,14 +32,16 @@ export class UiSnapshotItemComponent implements OnInit, OnDestroy {
 		this.detailsExpanded = false;
 	}
 
-	ngOnDestroy() {}
-
 	public getModuleIcon(module: string): string {
 		if (
 			SnapshotHardwareComponents[SnapshotHardwareComponents[module]] === undefined &&
 			SnapshotSoftwareComponents[SnapshotSoftwareComponents[module]] === undefined
 		) {
 			return '';
+		}
+
+		if (this.component.info.Items.length <= 0) {
+			return 'assets/icons/snapshot/disabled/icon_' + module.toLowerCase() + '_disabled.svg';
 		}
 		return 'assets/icons/snapshot/icon_' + module.toLowerCase() + '.svg';
 	}

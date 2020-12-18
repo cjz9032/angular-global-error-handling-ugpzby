@@ -2,15 +2,14 @@
 
 .vtr-snapshot-list-item {
 	padding: 0 2.4rem;
-	margin-top: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 	width: 100%;
 
 	.module-information {
 		width: 100%;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		flex-wrap: nowrap;
 
 		.load-icon {
 			margin-left: auto;
@@ -34,10 +33,20 @@
 		.update-btn {
 			margin-left: auto;
 		}
+
+		.modified-item {
+			color: $menu_hover;
+			font-weight: $weight_600;
+		}
 	}
 
 	.last-child {
 		margin-bottom: 1rem;
+	}
+
+	.component-disabled {
+		color: $grey_darker;
+		opacity: 0.4;
 	}
 
 	.title {
@@ -45,13 +54,6 @@
 		font-weight: $weight_bold;
 		padding-left: 1rem;
 		color: $shade_blue;
-	}
-
-	.subtitle {
-		font-size: $fontsize_xs;
-		padding: 0 1rem;
-		color: $shade_blue;
-		font-weight: $weight_light;
 	}
 
 	.module-icon {
@@ -64,7 +66,10 @@
 		width: 2.4rem;
 		height: 2.4rem;
 		vertical-align: middle;
-		margin-bottom: 1rem;
+	}
+
+	.hide-details-info {
+		padding-right: 4.2rem;
 	}
 
 	.collapse-control {
@@ -89,14 +94,17 @@
 	}
 
 	.details-list {
+		margin-top: 1rem;
 		border-radius: $border_radius;
 		overflow: hidden;
 
 		@include high-contrast-border;
 
-		table {
+		.table {
+			border-radius: $border_radius;
 			table-layout: fixed;
 			background-color: $shade_extralight;
+			color: $shade_blue;
 
 			tbody {
 				.progress-warning-image {
@@ -145,25 +153,13 @@
 
 .modified-module {
 	background-color: $grey_light;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-
-	.modified-module-name {
-		font-weight: $weight_600;
-		color: $blue-lighter;
-		margin-bottom: 0;
-	}
-
-	hr {
-		margin-bottom: 0;
-	}
 
 	@media #{$black-on-white} {
-		border-top: 1px solid #000000;
-		border-bottom: 1px solid #000000;
+		border-top: 1px solid $dark;
+		border-bottom: 1px solid $dark;
 	}
 	@media #{$white-on-black} {
-		border-top: 1px solid #ffffff;
-		border-bottom: 1px solid #ffffff;
+		border-top: 1px solid $light;
+		border-bottom: 1px solid $light;
 	}
 }

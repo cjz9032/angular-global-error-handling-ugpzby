@@ -10,13 +10,13 @@ export enum SnapshotStatus {
 
 export enum SnapshotComponentStatus {
 	hasData,
+	noData,
 	inProgress,
 	error,
 }
 
 // First letter in capital to match the responses from SnapshotAddin
 export enum SnapshotHardwareComponents {
-	CdRomDrives,
 	DisplayDevices,
 	HardDrives,
 	Keyboards,
@@ -24,6 +24,7 @@ export enum SnapshotHardwareComponents {
 	Motherboard,
 	MouseDevices,
 	Network,
+	CdRomDrives,
 	Printers,
 	Processors,
 	SoundCards,

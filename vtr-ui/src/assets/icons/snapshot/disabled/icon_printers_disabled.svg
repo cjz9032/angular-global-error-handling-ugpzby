@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Icon_Printer_24px" data-name="Icon/Printer/24px" transform="translate(-1205.001 -1087)" opacity="0.997">
+    <rect id="Rectangle" width="24" height="24" transform="translate(1205.001 1087)" fill="rgba(255,255,255,0)"/>
+    <g id="Group_4316" data-name="Group 4316" transform="translate(1173.1 1055.1)">
+      <path id="Path_339" data-name="Path 339" d="M53.152,34.9H34.71a.825.825,0,0,0-.81.81v9.47a.825.825,0,0,0,.81.81h3.3v6.916a.825.825,0,0,0,.81.81H48.978a.825.825,0,0,0,.81-.81V45.99h3.3a.825.825,0,0,0,.81-.81V35.71A.816.816,0,0,0,53.152,34.9ZM48.23,52.159h-8.6V41.691h8.6Zm4.112-7.726H49.788V40.944a.825.825,0,0,0-.81-.81H38.822a.825.825,0,0,0-.81.81v3.489H35.458V36.458H52.28v7.975Z" transform="translate(0 0)" fill="rgba(52,73,94,0.4)"/>
+      <path id="Path_340" data-name="Path 340" d="M50.137,50.7H46.71a.81.81,0,0,0,0,1.62h3.427a.81.81,0,1,0,0-1.62Z" transform="translate(-4.523 -5.956)" fill="rgba(52,73,94,0.4)"/>
+      <path id="Path_341" data-name="Path 341" d="M50.137,55.2H46.71a.81.81,0,0,0,0,1.62h3.427a.81.81,0,1,0,0-1.62Z" transform="translate(-4.523 -7.652)" fill="rgba(52,73,94,0.4)"/>
+    </g>
+  </g>
+</svg>

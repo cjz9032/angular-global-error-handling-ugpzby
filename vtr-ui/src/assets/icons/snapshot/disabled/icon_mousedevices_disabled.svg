@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1871" data-name="Rectangle 1871" width="15.505" height="22" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Icons_Mouse_24px" data-name="Icons/Mouse/24px" transform="translate(5 3)">
+    <rect id="Rectangle" width="24" height="24" transform="translate(-5 -3)" fill="none"/>
+    <g id="Group_4305" data-name="Group 4305" transform="translate(-1 -2)" clip-path="url(#clip-path)">
+      <path id="Path_315" data-name="Path 315" d="M7.752,22A7.825,7.825,0,0,0,15.5,14.143V7.857A7.8,7.8,0,0,0,7.752,0,7.8,7.8,0,0,0,0,7.857v6.286A7.825,7.825,0,0,0,7.752,22M1.4,7.857A6.4,6.4,0,0,1,7.752,1.4a6.4,6.4,0,0,1,6.356,6.46v6.286A6.4,6.4,0,0,1,7.752,20.6,6.4,6.4,0,0,1,1.4,14.143Z" fill="rgba(52,73,94,0.4)"/>
+      <path id="Path_316" data-name="Path 316" d="M20.9,21.246a.7.7,0,0,0,.7-.7V18a.7.7,0,1,0-1.4,0v2.549a.7.7,0,0,0,.7.7" transform="translate(-13.146 -11.259)" fill="rgba(52,73,94,0.4)"/>
+    </g>
+  </g>
+</svg>

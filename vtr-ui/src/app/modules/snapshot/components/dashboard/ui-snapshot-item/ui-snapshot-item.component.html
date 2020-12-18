@@ -12,27 +12,28 @@
 			</div>
 
 			<!-- Icon to expand and collapse module information -->
-			<div class="row">
-				<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title" *ngIf="!component.info.IsDifferent; else modifiedTitle">
-					{{ name }}</p>
+			<div class="row" [ngClass]="{ 'component-disabled': component.status === snapshotStatus.noData }">
+				<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title"
+						*ngIf="!component.info.IsDifferent; else modifiedTitle">
+					{{ 'snapshot.components.' + name | translate }}</p>
 
 				<ng-template #modifiedTitle>
-					<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title">
-						* {{ name }}</p>
+					<p id="snapshot-item-{{ componentIndex }}-module" role="text" class="title modified-item">
+						* {{ 'snapshot.components.' + name | translate }}</p>
 				</ng-template>
-
 			</div>
 
 			<!-- Shows load icon until modules are not loaded -->
-			<img *ngIf="component.status !== snapshotStatus.hasData; else updateButton" role="img" class="load-icon" src="assets/icons/snapshot/icon_snapshot_progress.svg"/>
+			<img *ngIf="component.status !== snapshotStatus.hasData &&
+						component.status !== snapshotStatus.noData; else updateButton"
+				role="img" class="load-icon" src="assets/icons/snapshot/icon_snapshot_progress.svg"/>
 
 			<!-- Shows button to update after modules get loaded -->
 			<ng-template #updateButton>
 				<vtr-ui-hyperlink-button
-					class="hyperlink-container"
+					class="hyperlink-container update-btn"
 					[metricsParent]="'Snapshot'"
 					[metricsItem]="'Snapshot.UpdateSnapshotModule'"
-					[class]="'update-btn'"
 					linkId="snapshot-update-btn"
 					hyperlinkStyle="xs-blue-lighter"
 					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
@@ -44,19 +45,24 @@
 			</ng-template>
 
 			<!-- Icon to expand and collapse module information -->
-			<div id="snapshot-item-{{ componentIndex }}-details-btn"
-				class="collapse-control"
-				[attr.aria-label]="!detailsExpanded ? name + 'expand-module-details': name + 'collapse-module-details'"
-				[attr.aria-expanded]="detailsExpanded"
-				(click)="detailsExpanded = !detailsExpanded"
-				(keyup.enter)="detailsExpanded = !detailsExpanded"
-				tabindex="0"
-				role="button">
-				<fa-icon *ngIf="!detailsExpanded; else expandIcon" [icon]="['fal', 'angle-down']"></fa-icon>
-				<ng-template #expandIcon>
-					<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
-				</ng-template>
+			<div *ngIf="component.status !== snapshotStatus.noData; else hideDetailsInfo">
+				<div id="snapshot-item-{{ componentIndex }}-details-btn"
+					class="collapse-control"
+					[attr.aria-label]="!detailsExpanded ? name + 'expand-module-details': name + 'collapse-module-details'"
+					[attr.aria-expanded]="detailsExpanded"
+					(click)="detailsExpanded = !detailsExpanded"
+					(keyup.enter)="detailsExpanded = !detailsExpanded"
+					tabindex="0"
+					role="button">
+					<fa-icon *ngIf="!detailsExpanded; else expandIcon" [icon]="['fal', 'angle-down']"></fa-icon>
+					<ng-template #expandIcon>
+						<fa-icon [icon]="['fal', 'angle-up']"></fa-icon>
+					</ng-template>
+				</div>
 			</div>
+			<ng-template #hideDetailsInfo>
+				<div class="hide-details-info"></div>
+			</ng-template>
 		</div>
 	</div>
 
@@ -79,8 +85,21 @@
 							{{ 'snapshot.lastSnapshot' | translate }}
 						</th>
 					</tr>
+
+					<tr>
+						<th id="snapshot-item-{{ componentIndex }}-detail-updated-date" class="table-info-name">
+							{{ 'snapshot.properties.UpdatedDate' | translate }}
+						</th>
+						<td id="snapshot-item-{{ componentIndex }}-detail-update-date-base-value">
+							<!-- Adding UTC string to ensure the correct date/time format -->
+							{{ component.info.BaselineDate + ' UTC' | formatLocaleDateTime }}</td>
+						<td id="snapshot-item-{{ componentIndex }}-detail-update-date-current-value" [ngClass]="{'modified-item': component.IsDifferent}">
+							<!-- Adding UTC string to ensure the correct date/time format -->
+							{{ component.info.LastSnapshotDate + ' UTC' | formatLocaleDateTime }}</td>
+					</tr>
+
 					<ng-template #recursiveList let-list>
-						<ng-container *ngFor="let values of list; let i = index">
+						<ng-container *ngFor="let values of list; let i = index; let last = last;">
 							<tr *ngFor="let property of values.Properties; let j = index">
 								<th id="snapshot-item-{{ i }}-detail-{{ j }}-property-name" class="table-info-name">
 									{{ 'snapshot.properties.' + property.PropertyName | translateDefault:property.PropertyName }}
@@ -91,14 +110,15 @@
 								<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
 									{{ property.CurrentValue }}</td>
 							</tr>
-							<tr *ngIf="array.isArray(values.SubDevices) && values.SubDevices.length > 0">
+							<ng-container *ngIf="array.isArray(values.SubDevices) && values.SubDevices.length > 0">
 								<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: values.SubDevices }"></ng-container>
-							</tr>
-							<tr class="table-info-separator" aria-hidden="true"></tr>
+							</ng-container>
+							<tr *ngIf="!last" class="table-info-separator" aria-hidden="true"></tr>
 						</ng-container>
 					</ng-template>
 					<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: component.info.Items }"></ng-container>
 				</ng-template>
+				<tr class="table-info-separator" aria-hidden="true"></tr>
 			</tbody>
 		</table>
 	</div>
