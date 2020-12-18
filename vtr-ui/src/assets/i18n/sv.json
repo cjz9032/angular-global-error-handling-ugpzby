@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Batteriets tillstånd",
-						"description": "Detta avsnitt visar bland annat batteriets beräknade livslängd och kapacitet och tips på hur du bibehåller batterikapaciteten.<br/>Försämrad kapacitet beror på faktorer som daglig användning, batteritemperatur, laddningsspänning och annat. Följ tipsen nedan för att förlänga batteriets livslängd.",
+						"description": "Detta avsnitt visar bland annat information om batteriets kapacitet och tips på hur du bibehåller batterikapaciteten.<br/>Försämrad kapacitet beror på faktorer som daglig användning, batteritemperatur, laddningsspänning och annat. Följ tipsen nedan för att förlänga batteriets livslängd.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Beräknad livslängd: ",
+							"title": "Batteriets tillstånd:",
+							"lifeSpan": "Beräknad livslängd:",
 							"months": "månader"
 						},
 						"batteryCapacity": {

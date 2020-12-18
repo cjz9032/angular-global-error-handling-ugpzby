@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Pil durumu",
-						"description": "Bu bölümde pil ömrü, pil kapasitesi, pil kapasitesinin nasıl korunacağına ilişkin ipuçları vb. hakkında tahmini bilgiler sağlanır.<br/>Kapasite kaybı günlük kullanıma, pil sıcaklığına, şarj voltajına vb. bağlıdır. Pilinizin ömrünü uzatmak için aşağıdaki ipuçlarını izleyin.",
+						"description": "Bu bölümde pil kapasitesi, pil kapasitesinin nasıl korunacağına ilişkin ipuçları ve benzer konularda bilgiler sağlanır.<br/>Kapasite kaybı günlük kullanıma, pil sıcaklığına, şarj voltajına vb. bağlıdır. Pilinizin ömrünü uzatmak için aşağıdaki ipuçlarını izleyin.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Öngörülen ömür: ",
+							"title": "Pil durumu:",
+							"lifeSpan": "Öngörülen ömür:",
 							"months": "ay"
 						},
 						"batteryCapacity": {

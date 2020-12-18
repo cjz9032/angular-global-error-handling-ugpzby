@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Condição da bateria",
-						"description": "Esta secção fornece previsões sobre a vida útil da bateria, a capacidade da bateria, sugestões sobre como manter a capacidade da bateria, etc.<br/>A perda de capacidade depende do uso diário, da temperatura da bateria, da tensão de carga, etc. Siga as sugestões abaixo para prolongar a vida útil da sua bateria.",
+						"description": "Esta secção fornece informações sobre a capacidade da bateria, sugestões sobre como manter a capacidade da bateria, entre outros.<br/>A perda de capacidade depende do uso diário, da temperatura da bateria, da tensão de carga, etc. Siga as sugestões abaixo para prolongar a vida útil da sua bateria.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Vida útil prevista: ",
+							"title": "Estado de saúde da bateria:",
+							"lifeSpan": "Vida útil prevista:",
 							"months": "meses"
 						},
 						"batteryCapacity": {

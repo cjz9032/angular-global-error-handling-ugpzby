@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Zdravje baterije",
-						"description": "Ta razdelek vsebuje napovedi glede življenjske dobe baterije, zmogljivosti baterije, nasvete o ohranjanju zmogljivosti baterije itd.<br/>Izguba zmogljivosti je odvisna od dnevne uporabe, temperature baterije, polnilne napetosti itd. Upoštevajte spodnje nasvete za podaljšanje življenjske dobe baterije.",
+						"description": "V tem razdelku so na voljo informacije o zmogljivosti baterije, nasveti o ohranjanju zmogljivosti baterije itd.<br/>Izguba zmogljivosti je odvisna od dnevne uporabe, temperature baterije, polnilne napetosti itd. Upoštevajte spodnje nasvete za podaljšanje življenjske dobe baterije.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Predvidena življenjska doba: ",
+							"title": "Stanje zdravja baterije:",
+							"lifeSpan": "Predvidena življenjska doba:",
 							"months": "mesecev"
 						},
 						"batteryCapacity": {

@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Kondycja akumulatora",
-						"description": "Ta sekcja zawiera prognozy dotyczące przewidywanej żywotności akumulatora, a także informacje o jego pojemności i sposobach na jej zachowanie itp.<br/>Spadek pojemności akumulatora zależy od sposobu codziennego użytkowania, temperatury akumulatora, napięcia ładowania itp. Stosując się do poniższych wskazówek, można wydłużyć żywotność akumulatora.",
+						"description": "Ta sekcja zawiera informacje dotyczące pojemności akumulatora oraz sposobów na jej zachowanie itp.<br/>Spadek pojemności akumulatora zależy od sposobu codziennego użytkowania, temperatury akumulatora, napięcia ładowania itp. Stosując się do poniższych wskazówek, można wydłużyć żywotność akumulatora.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Przewidywana żywotność: ",
+							"title": "Kondycja akumulatora:",
+							"lifeSpan": "Przewidywana żywotność:",
 							"months": "mies."
 						},
 						"batteryCapacity": {

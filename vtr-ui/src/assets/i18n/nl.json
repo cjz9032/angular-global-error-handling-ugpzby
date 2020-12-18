@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Batterijconditie",
-						"description": "In dit gedeelte vindt u een prognose voor de levensduur van de batterij, informatie over de batterijcapaciteit en tips hoe u deze kunt onderhouden en nog meer.<br/>Het capaciteitsverlies is afhankelijk van verschillende factoren zoals het dagelijks gebruik, de batterijtemperatuur en de oplaadspanning. Volg de tips hieronder om de levensduur van de batterij te verlengen.",
+						"description": "In dit gedeelte vindt u informatie over de batterijcapaciteit, tips over hoe u de capaciteit kunt behouden en nog meer.<br/>Het capaciteitsverlies is afhankelijk van factoren zoals het dagelijks gebruik, de batterijtemperatuur en de laadspanning. Volg de tips hieronder om de levensduur van de batterij te verlengen.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Voorspelde levensduur: ",
+							"title": "Batterijstatus:",
+							"lifeSpan": "Voorspelde levensduur:",
 							"months": "maanden"
 						},
 						"batteryCapacity": {

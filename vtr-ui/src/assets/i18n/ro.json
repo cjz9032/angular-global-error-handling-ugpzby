@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Funcționare baterie",
-						"description": "Această secțiune oferă previziuni privind durata de viață a bateriei, capacitatea bateriei, sfaturi despre cum să mențineți capacitatea bateriei și așa mai departe.<br/>Pierderea capacității depinde de utilizarea zilnică, de temperatura bateriei, de tensiunea de încărcare etc. Urmați sfaturile de mai jos pentru a extinde durata de viață a bateriei.",
+						"description": "Această secțiune oferă informații despre capacitatea bateriei, sfaturi despre cum să mențineți capacitatea bateriei și altele.<br/>Pierderea capacității depinde de utilizarea zilnică, de temperatura bateriei, de tensiunea de încărcare etc. Urmați sfaturile de mai jos pentru a extinde durata de viață a bateriei.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Durata de viață estimată: ",
+							"title": "Starea de bună funcționare a bateriei:",
+							"lifeSpan": "Durata de viață estimată:",
 							"months": "luni"
 						},
 						"batteryCapacity": {

@@ -1509,9 +1509,10 @@
 					},
 					"batteryHealth": {
 						"title": "Integridade da bateria",
-						"description": "Esta seção fornece previsões sobre a vida útil da bateria, capacidade da bateria, dicas sobre como manter a capacidade da bateria e assim por diante.<br/>A perda de capacidade depende do uso diário, da temperatura da bateria, da tensão de carregamento etc. Siga as dicas abaixo para prolongar a vida útil da bateria.",
+						"description": "Esta seção fornece informações sobre a capacidade da bateria, dicas sobre como manter a capacidade da bateria e assim por diante.<br/>A perda de capacidade depende do uso diário, da temperatura da bateria, da tensão de carregamento etc. Siga as dicas abaixo para prolongar a vida útil da bateria.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Vida útil prevista: ",
+							"title": "Status de integridade da bateria:",
+							"lifeSpan": "Vida útil prevista:",
 							"months": "meses"
 						},
 						"batteryCapacity": {
