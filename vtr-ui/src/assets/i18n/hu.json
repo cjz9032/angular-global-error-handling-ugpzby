@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Akkumulátorállapot",
-						"description": "Ez a szakasz előrejelzést ad az akkumulátor élettartamáról, az akkumulátor kapacitásáról, tippeket ad az akkumulátor kapacitásának megőrzésével kapcsolatban és hasonlók.<br/>A kapacitásveszteség a napi használattól, az akkumulátor hőmérsékletétől, a töltési feszültségtől és hasonló tényezőktől függ. Az alábbi tippeket alkalmazva meghosszabbíthatja az akkumulátor élettartamát.",
+						"description": "Ez a szakasz információkat nyújt az akkumulátor kapacitásáról, tippeket ad az akkumulátor kapacitásának megőrzésével kapcsolatban, stb.<br/>A kapacitásveszteség a napi használattól, az akkumulátor hőmérsékletétől, a töltési feszültségtől és hasonló tényezőktől függ. Az alábbi tippeket alkalmazva meghosszabbíthatja az akkumulátor élettartamát.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Várható élettartam: ",
+							"title": "Akkumulátorállapot:",
+							"lifeSpan": "Várható élettartam:",
 							"months": "hónap"
 						},
 						"batteryCapacity": {

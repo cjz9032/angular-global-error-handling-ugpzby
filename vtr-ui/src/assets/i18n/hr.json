@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Stanje baterije",
-						"description": "Ovaj odjeljak pruža predviđanje vijeka trajanja baterije, kapaciteta baterije, savjete o održavanju kapaciteta baterije itd.<br/>Gubitak kapaciteta ovisi o svakodnevnoj upotrebi, temperaturi baterije, naponu punjenja itd. Slijedite dolje navedene savjete za produljenje vijeka trajanja baterije.",
+						"description": "Ovaj odjeljak pruža informacije o kapacitetu baterije, savjetima o održavanju kapaciteta baterije itd.<br/>Gubitak kapaciteta ovisi o svakodnevnoj upotrebi, temperaturi baterije, naponu punjenja itd. Slijedite dolje navedene savjete za produljenje vijeka trajanja baterije.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Predviđeno trajanje: ",
+							"title": "Stanje baterije:",
+							"lifeSpan": "Predviđeno trajanje:",
 							"months": "mjeseci"
 						},
 						"batteryCapacity": {

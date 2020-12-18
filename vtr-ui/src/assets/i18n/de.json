@@ -1509,9 +1509,10 @@
 					},
 					"batteryHealth": {
 						"title": "Akkuzustand",
-						"description": "Dieser Abschnitt enthält Prognosen zur Akkulebensdauer, Akkukapazität, Tipps zum Erhalt der Akkukapazität usw.<br/>Der Kapazitätsverlust ist abhängig von täglichem Gebrauch, Akkutemperatur, Ladespannung etc. Mithilfe der folgenden Tipps können Sie die Akkulebensdauer verlängern.",
+						"description": "Dieser Abschnitt enthält Informationen zur Akkukapazität, Tipps zum Erhalt der Akkukapazität usw.<br/>Der Kapazitätsverlust ist abhängig von täglichem Gebrauch, Akkutemperatur, Ladespannung etc. Mithilfe der folgenden Tipps können Sie die Akkulebensdauer verlängern.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Voraussichtliche Lebensdauer: ",
+							"title": "Akkuzustand:",
+							"lifeSpan": "Voraussichtliche Lebensdauer:",
 							"months": "Monate"
 						},
 						"batteryCapacity": {

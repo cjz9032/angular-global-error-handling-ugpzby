@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Batterilevetid",
-						"description": "Denne sektion indeholder en forudsigelse af batterilevetiden og -kapaciteten samt tip om, hvordan du vedligeholder batterikapaciteten osv.<br/>Kapacitetstabet afhænger af den daglige brug, batteritemperaturen, opladningsspændingen osv. Følg vejledningen nedenfor for at forlænge batterilevetiden.",
+						"description": "Denne sektion indeholder oplysninger om batterikapacitet samt tip om, hvordan du vedligeholder batterikapaciteten osv.<br/>Kapacitetstabet afhænger af den daglige brug, batteritemperaturen, opladningsspændingen osv. Følg vejledningen nedenfor for at forlænge batterilevetiden.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Estimeret levetid: ",
+							"title": "Status for batterilevetid:",
+							"lifeSpan": "Estimeret levetid:",
 							"months": "måneder"
 						},
 						"batteryCapacity": {

@@ -1509,9 +1509,10 @@
 					},
 					"batteryHealth": {
 						"title": "Estado de batería",
-						"description": "En esta sección se proporciona predicciones sobre la duración de la batería, la capacidad de la batería, sugerencias sobre cómo mantener la capacidad de la batería, etc.<br/>La pérdida de capacidad depende del uso diario, la temperatura de la batería, el voltaje de carga, entre otros. Siga las sugerencias que aparecen a continuación para prolongar la duración de la batería.",
+						"description": "En esta sección se proporciona información sobre la capacidad de la batería, sugerencias sobre cómo mantener la capacidad de la batería, etc.<br/>La pérdida de capacidad depende del uso diario, la temperatura de la batería, el voltaje de carga, entre otros. Siga las sugerencias que aparecen a continuación para prolongar la duración de la batería.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Duración prevista: ",
+							"title": "Estado de la batería:",
+							"lifeSpan": "Duración prevista:",
 							"months": "meses"
 						},
 						"batteryCapacity": {
