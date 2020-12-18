@@ -5477,7 +5477,9 @@
 	},
 	"appSearch": {
 		"menuName": "Search",
-		"searchResultTips": "Results for '{{userInput}}'",
+		"pageTitle": "Results for '{{userInput}}'",
+		"noSearchResultTips": "No results for '{{userInput}}'",
+
 		"pages": {
 			"dashboard": {
 				"featureName": "Dashboard",

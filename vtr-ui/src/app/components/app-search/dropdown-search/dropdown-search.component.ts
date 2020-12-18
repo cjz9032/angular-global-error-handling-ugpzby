@@ -1,6 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faGem } from '@fortawesome/pro-light-svg-icons/faGem';
 import { IFeature } from 'src/app/services/app-search/interface.model';
 
 @Component({
@@ -14,7 +13,6 @@ export class SearchDropdownComponent implements AfterViewInit {
 
 	public searchTips = 'Search Query';
 	public userInput = '';
-	public featureList: IFeature[] = [];
 	public recommandedItems = [];
 	// public recommandedItems = [ {
 	// 	id: 'item1',
@@ -43,22 +41,23 @@ export class SearchDropdownComponent implements AfterViewInit {
 		}, 0);
 	}
 
-	onParentClick(event) {
-		if (!event.dropdownClick) {
-			event.fromSearchBox = true;
-		}
-	}
-
-	onDropDownClick(event) {
-		event.dropdownClick = true;
-	}
-
-	onCleanClick() {
+	onCleanClick($event) {
 		this.searchInput.nativeElement.value = '';
+		$event.stopPropagation();
 	}
 
-	onClickSearch() {
-		this.navigateToSearchPage(this.searchInput.nativeElement.value);
+	onInputClick($event) {
+		$event.stopPropagation();
+	}
+
+	onClickSearch($event) {
+		var userInput = this.searchInput.nativeElement.value.trim();
+		if (!userInput) {
+			$event.stopPropagation();
+			return;
+		}
+
+		this.navigateToSearchPage(userInput);
 	}
 
 	onClickRecommandationItem(userInput) {
@@ -67,10 +66,6 @@ export class SearchDropdownComponent implements AfterViewInit {
 
 	onSearchInputChange() {
 		// to do, show input recommandation
-	}
-
-	onInputClick($event) {
-		$event.stopPropagation();
 	}
 
 	private navigateToSearchPage(userInput: string) {

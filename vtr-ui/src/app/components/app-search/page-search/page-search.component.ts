@@ -6,6 +6,8 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppSearchService } from 'src/app/services/app-search/app-search.service';
 import { IFeature } from 'src/app/services/app-search/interface.model';
 import { CommonService } from 'src/app/services/common/common.service';
+import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { SupportService } from 'src/app/services/support/support.service';
 
 @Component({
 	selector: 'vtr-page-search',
@@ -14,23 +16,24 @@ import { CommonService } from 'src/app/services/common/common.service';
 })
 
 export class PageSearchComponent implements OnInit {
-	[x: string]: any;
-	public queryInput: string;
+	public notificationSubscription: any;
 	public userInput: string;
 	public pageTitle: string;
-	public isCategoryArticlesShow = false;
+	public noSearchResultTips: string;
+	public isInnerBack = false;
 	public searchTips = 'Search Query';
 	public loadedCompleted = true;
 	public searchCompleted = false;
-	public currentPage = 1;
-	public pageStartIdx = 1;
-	public pageEndIdx = 1;
-	public readonly pageSize = 40;
+	public currentPageIdx = 0;
+	public startItemOfCurPageIdx = 0;
+	public startItemOfNextPageIdx = 0;
+	public readonly pageSize = 10;
 	public isOnline = true;
 	public offlineConnection = '';
 	public loadingGif = false;
 	public resultItems: IFeature[] = [];
-	public pageArray = [];
+	public displayItems: IFeature[] = [];
+	public pagesArray = [];
 	public supportDatas = {
 		documentation: [
 			{
@@ -44,16 +47,77 @@ export class PageSearchComponent implements OnInit {
 		needHelp: [],
 		quicklinks: [],
 	};
+	public listLenovoCommunity = {
+		icon: ['fal', 'comment-alt'],
+		title: 'support.needHelp.listLenovoCommunity',
+		url: 'https://community.lenovo.com',
+		metricsItem: 'NeedHelp.LenovoCommunityButton',
+		metricsEvent: 'FeatureClick',
+	};
+	public listContactCustomerService = {
+		icon: ['fal', 'share-alt'],
+		title: 'support.needHelp.listContactCustomerService',
+		url: 'https://support.lenovo.com/contactus?serialnumber=',
+		metricsItem: 'NeedHelp.ContactCustomerServiceButton',
+		metricsEvent: 'FeatureClick',
+	};
+	public lenaUrls = [
+		{ url: 'https://in.lena.lenovo.com/lena', lang: 'en', geo: ['in', 'lk', 'bd'] },
+		{ url: 'https://us.lena.lenovo.com/lena', lang: 'en', geo: ['us', 'ca'] },
+		{ url: 'https://uki.lena.lenovo.com/lena', lang: 'en', geo: ['gb', 'ie'] },
+		{ url: 'https://lena.lenovo.com/lena', lang: 'en', geo: ['au', 'nz', 'sg', 'my', 'ph'] },
+		{
+			url: 'https://las.lena.lenovo.com/lena',
+			lang: 'es',
+			geo: [
+				'mx',
+				'co',
+				'ar',
+				'pe',
+				'cl',
+				'cr',
+				'do',
+				'sv',
+				'gt',
+				'hn',
+				'ni',
+				'pa',
+				'bo',
+				'ec',
+				'py',
+				'uy',
+				've',
+			],
+		},
+		{ url: 'https://jp.lena.lenovo.com/lena', lang: 'ja', geo: ['jp'] },
+		{ url: 'https://eu.lena.lenovo.com/lena', lang: 'de', geo: ['de', 'at'] },
+	];
+	public listFindUs = {
+		icon: ['fal', 'heart'],
+		title: 'support.needHelp.listFindUs',
+		clickItem: 'findUs',
+		metricsItem: 'NeedHelp.FindUsButton',
+		metricsEvent: 'FeatureClick',
+	};
+	public listAboutLenovoVantage = {
+		iconPath: 'assets/images/support/svg_icon_about_us.svg',
+		title: 'support.quicklinks.listAboutLenovoVantage',
+		clickItem: 'about',
+		metricsItem: 'Quicklinks.AboutLenovoVantageButton',
+		metricsEvent: 'FeatureClick',
+	};
 
 	constructor(
 		private searchService: AppSearchService,
 		private activateRoute: ActivatedRoute,
 		private translate: TranslateService,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private supportService: SupportService,
+		private localInfoService: LocalInfoService
 	) { }
 
 	ngOnInit(): void {
-		// parse query parameter
+		//1. parse query parameter
 		this.activateRoute.queryParams
 			.subscribe(params => {
 				this.userInput = params.userInput;
@@ -61,18 +125,19 @@ export class PageSearchComponent implements OnInit {
 				this.fireSearch();
 			});
 
-			// subscibe to common event
-			this.isOnline = this.commonService.isOnline;
-			this.notificationSubscription = this.commonService.notification.subscribe(
-				(notification: AppNotification) => {
-					this.onNotification(notification);
-				}
-			);
+		//2. subscibe to common event
+		this.isOnline = this.commonService.isOnline;
+		this.notificationSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 
-		// to do - remove
-		this.pageStartIdx = this.calcCurrentPageStartIdx();
-		this.pageEndIdx = this.calcCurrentPageEndIdx();
-		this.pageArray = [].constructor(Math.ceil(this.resultItems.length / this.pageSize));
+		//3. populate right panel
+		this.setShowList();
+	}
+
+	onInnerBack() {
 	}
 
 	onClickSearchBtn() {
@@ -83,8 +148,30 @@ export class PageSearchComponent implements OnInit {
 		this.searchService.handleAction(feature.action);
 	}
 
-	onInnerBack() {
+	onClickBackResultView() {
+		const nextIdx = this.currentPageIdx - 1;
+		if (nextIdx < 0) {
+			return;
+		}
 
+		this.updateResultView(nextIdx);
+	}
+
+	onClickResultView(pageIdx: number) {
+		if (pageIdx === this.currentPageIdx) {
+			return;
+		}
+
+		this.updateResultView(pageIdx);
+	}
+
+	onClickForwardResultView() {
+		const nextIdx = this.currentPageIdx + 1;
+		if (nextIdx >= this.pagesArray.length) {
+			return;
+		}
+
+		this.updateResultView(nextIdx);
 	}
 
 	onClickRecommandationItem(item) {
@@ -92,33 +179,20 @@ export class PageSearchComponent implements OnInit {
 	}
 
 	onSearchInputChange() {
-		// to do, show input recommandation
-	}
-
-	private calcCurrentPageStartIdx() {
-		return this.currentPage + (this.currentPage - 1) * this.pageSize;
-	}
-
-	private calcCurrentPageEndIdx() {
-		return this.currentPage * this.pageSize;
+		// to do, update recommandation items
 	}
 
 	private fireSearch() {
-		if (!this.userInput) {
+		var userInput = this.userInput?.trim();
+		if (!userInput) {
 			return;
 		}
 
 		this.searchCompleted = false;
 		this.updatePageTitle();
-
-		// To do, if not online, show disconnect
-		const resultList = this.searchService.search(this.userInput);
-		if (resultList && resultList.length > 0) {
-			this.resultItems = resultList;
-		} else {
-			this.resultItems = [];
-		}
-
+		this.populateSearchResults(this.searchService.search(this.userInput));
+		this.updatePageArray();
+		this.updateResultView(0);
 		this.searchCompleted = true;
 	}
 
@@ -126,7 +200,8 @@ export class PageSearchComponent implements OnInit {
 		if (!this.userInput) {
 			this.pageTitle = this.translate.instant('appSearch.menuName');
 		} else {
-			this.pageTitle = this.translate.instant('appSearch.searchResultTips', {userInput: this.userInput});
+			this.pageTitle = this.translate.instant('appSearch.pageTitle', { userInput: this.userInput });
+			this.noSearchResultTips = this.translate.instant('appSearch.noSearchResultTips', { userInput: this.userInput });
 		}
 	}
 
@@ -141,5 +216,54 @@ export class PageSearchComponent implements OnInit {
 					break;
 			}
 		}
+	}
+
+	private populateSearchResults(resultList: any) {
+		if (resultList && resultList.length > 0) {
+			this.resultItems = resultList;
+		} else {
+			this.resultItems = [];
+		}
+	}
+
+	private updatePageArray() {
+		this.pagesArray = [].constructor(Math.ceil(this.resultItems.length / this.pageSize));
+	}
+
+	private updatePageStartIdx() {
+		this.startItemOfCurPageIdx = this.currentPageIdx * this.pageSize;
+	}
+
+	private updatePageEndIdx() {
+		const startItemOfNextPageIdx = (this.currentPageIdx + 1) * this.pageSize;
+		this.startItemOfNextPageIdx = Math.min(startItemOfNextPageIdx, this.resultItems.length);
+	}
+
+	private updateResultView(pageIdx: number) {
+		this.currentPageIdx = pageIdx;
+		this.updatePageStartIdx();
+		this.updatePageEndIdx();
+
+		this.displayItems = this.resultItems.filter((item, idx) => {
+			return idx >= this.startItemOfCurPageIdx && idx < this.startItemOfNextPageIdx;
+		});
+	}
+
+	setShowList() {
+		if (this.supportService.supportDatas) {
+			this.supportDatas = this.supportService.supportDatas;
+			return;
+		}
+		this.supportDatas.needHelp.push(this.listLenovoCommunity);
+		this.supportService.getSerialnumber().then((sn) => {
+			this.listContactCustomerService.url = `https://support.lenovo.com/contactus?serialnumber=${sn}`;
+			this.supportDatas.needHelp.push(this.listContactCustomerService);
+			this.localInfoService.getLocalInfo().then((info) => {
+				this.supportDatas.needHelp.push(this.listFindUs);
+				this.supportService.supportDatas = this.supportDatas;
+			});
+		});
+
+		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
 	}
 }
