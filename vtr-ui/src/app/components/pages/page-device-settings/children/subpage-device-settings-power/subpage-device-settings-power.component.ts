@@ -441,6 +441,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Set boolean indicating show/hide PowerSmartSettings
+	 *
 	 * @param value boolean (true/false)
 	 */
 	onSetSmartSettingsCapability(value: boolean) {
@@ -450,6 +451,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Set boolean indicating show/hide SmartStandby settings
+	 *
 	 * @param value boolean(true/false)
 	 */
 	onSetSmartStandbyCapability(value: boolean) {
@@ -531,6 +533,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Add or remove smart settings link based on value of addLink
+	 *
 	 * @param addLink boolean (true: adds link, false: removes link if exists)
 	 */
 	updateSmartSettingsLinkStatus(addLink: boolean) {
@@ -553,6 +556,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Add or remove smart standby link based on value of addLink
+	 *
 	 * @param addLink boolean (true: adds link, false: removes link if exists)
 	 */
 	updateSmartStandbyLinkStatus(addLink: boolean) {
@@ -579,6 +583,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	/**
 	 * Add or remove battery settings link based on value of addLink
 	 * Called from capability check method of each feature in battery section
+	 *
 	 * @param addLink boolean (true: adds link, false: removes link if exists)
 	 */
 	updateBatteryLinkStatus(addLink: boolean, feature: string) {
@@ -632,6 +637,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	/**
 	 * Add or remove power settings link based on value of addLink
 	 * Called from capability check method of each feature in power section
+	 *
 	 * @param addLink boolean (true: adds link, false: removes link if exists)
 	 */
 	updatePowerLinkStatus(addLink: boolean) {
@@ -655,6 +661,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Add or remove other settings link based on value of addLink
+	 *
 	 * @param addLink boolean (true: adds link, false: removes link if exists)
 	 */
 	updateOtherSettingsStatus(addLink: boolean) {
@@ -675,6 +682,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	/**
 	 * adds/removes a link in gotoLinks array,
 	 * checks length of gotoLinks and if 0, removes Power page and redirects to Audio Page
+	 *
 	 * @param value boolean, if a feature is supported in machine
 	 * @param id string, unique id of feature (an entry from gotoLinks array)
 	 */
@@ -688,9 +696,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		} else {
 			// remove from array if exists
 			if (index !== -1) {
-				this.gotoLinks = this.gotoLinks.filter((link) => {
-					return link !== id;
-				});
+				this.gotoLinks = this.gotoLinks.filter((link) => link !== id);
 			}
 		}
 		const isPowerPageAvailable = this.gotoLinks.length > 0;
@@ -715,6 +721,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	/**
 	 * Called on changing Always on USB toggle event,
 	 * calls setAlwaysOnUSBStatus to set value at plugin
+	 *
 	 * @param event toggle event value
 	 */
 	onToggleOfAlwaysOnUsb(event: any) {
@@ -750,6 +757,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	/**
 	 * Called on changing Easy Resume toggle event,
 	 * calls setEasyResume to set value at plugin
+	 *
 	 * @param event toggle event value
 	 */
 	onToggleOfEasyResume(event: any) {
@@ -761,6 +769,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	/**
 	 * Called on changing Airplane Power Mode toggle event,
 	 * calls setAirplaneMode to set value at plugin
+	 *
 	 * @param event toggle event value
 	 */
 	onToggleOfAirplanePowerMode(event) {
@@ -800,6 +809,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	/**
 	 * Called when battery status event is triggered
 	 * now, every 30s to keep threshold in sync with toolbar
+	 *
 	 * @param thresholdInfo charge threshold information
 	 */
 	onPowerBatteryStatusEvent(thresholdInfo: ChargeThreshold[]) {
@@ -1290,16 +1300,14 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			if (this.powerService.isShellAvailable) {
 				this.isVantageToolbarSetEnd = false;
 				// for fix van-11383
-				function backoff(maxTries, ms) {
-					return pipe(
-						retryWhen((attempts) =>
-							zip(range(1, maxTries), attempts).pipe(
-								map(([i]) => i * i),
-								mergeMap((i) => timer(i * ms))
-							)
+				const backoff = (maxTries, ms) => pipe(
+					retryWhen((attempts) =>
+						zip(range(1, maxTries), attempts).pipe(
+							map(([i]) => i * i),
+							mergeMap((i) => timer(i * ms))
 						)
-					);
-				}
+					)
+				);
 
 				const setEvent$ = from(this.powerService.setVantageToolBarStatus(value)).pipe(
 					tap(() =>

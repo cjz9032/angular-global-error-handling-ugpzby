@@ -30,7 +30,7 @@ describe('BacklightService', () => {
 		expect(backlightService).toBeTruthy();
 	});
 
-	it("#get backlight should return backlight' data", fakeAsync(() => {
+	it('#get backlight should return backlight\' data', fakeAsync(() => {
 		const stubValue: Array<BacklightStatus | BacklightLevel> = [
 			{
 				key: 'KeyboardBacklightLevel',
@@ -46,13 +46,11 @@ describe('BacklightService', () => {
 			},
 		];
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklight() {
-				return Promise.resolve({
-					settingList: {
-						setting: stubValue,
-					},
-				});
-			},
+			getBacklight: () => Promise.resolve({
+				settingList: {
+					setting: stubValue,
+				},
+			}),
 		});
 		backlightService = new BacklightService(shellServiceSpy);
 		backlightService.backlight.subscribe((value) => {
@@ -76,13 +74,11 @@ describe('BacklightService', () => {
 			},
 		];
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklight() {
-				return Promise.resolve({
-					settingList: {
-						setting: stubValue,
-					},
-				});
-			},
+			getBacklight: () => Promise.resolve({
+				settingList: {
+					setting: stubValue,
+				},
+			}),
 		});
 		backlightService = new BacklightService(shellServiceSpy);
 		const cacheStub$ = new Observable<Array<BacklightStatus | BacklightLevel>>();
@@ -106,11 +102,9 @@ describe('BacklightService', () => {
 
 	it('should call backlightFeature.setBacklight', () => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			setBacklight() {
-				return Promise.resolve({
-					errorCode: 0,
-				});
-			},
+			setBacklight: () => Promise.resolve({
+				errorCode: 0,
+			}),
 		});
 		backlightService = new BacklightService(shellServiceSpy);
 		backlightService.setBacklight({
@@ -233,7 +227,7 @@ describe('BacklightService', () => {
 		tick();
 	}));
 
-	it("#backlightFeature.getBacklightOnSystemChange should receive callback's data", fakeAsync(() => {
+	it('#backlightFeature.getBacklightOnSystemChange should receive callback\'s data', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
 			getBacklightOnSystemChange() {},
 		});

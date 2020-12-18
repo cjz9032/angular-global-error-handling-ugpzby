@@ -169,19 +169,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	private initFeatures() {
-		this.initMockData();
-
-		this.initMicrophoneFromCache();
-		this.initDolbyAudioFromCache();
-
-		this.getMicrophoneSettingsAsync();
-		this.getDolbyModesStatus();
-
-		this.startMicrophoneMonitor();
-		this.startMonitorForDolby();
-	}
-
 	ngOnDestroy() {
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
@@ -197,6 +184,19 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			);
 		}
 		// this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
+	}
+
+	private initFeatures() {
+		this.initMockData();
+
+		this.initMicrophoneFromCache();
+		this.initDolbyAudioFromCache();
+
+		this.getMicrophoneSettingsAsync();
+		this.getDolbyModesStatus();
+
+		this.startMicrophoneMonitor();
+		this.startMonitorForDolby();
 	}
 
 	initDolbyAudioFromCache() {

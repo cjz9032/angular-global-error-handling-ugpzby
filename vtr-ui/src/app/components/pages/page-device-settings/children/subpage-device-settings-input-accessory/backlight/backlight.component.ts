@@ -56,24 +56,20 @@ export class BacklightComponent implements OnInit, OnDestroy {
 		checked: false,
 		disabled: false,
 	};
+	supportType$: Observable<BacklightLevelEnum>;
+	update$ = new Subject<BacklightMode>();
+	isSwitchChecked = false;
+	kbBacklightUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 
 	private backlightFlat$: Observable<BacklightStatus | BacklightLevel>;
 	private level$: Observable<BacklightLevel>;
-	supportType$: Observable<BacklightLevelEnum>;
-	// private modesAuto$: Observable<BacklightMode[]>;
-	// modes$: Observable<BacklightMode[]>;
 	private status$: Observable<BacklightStatus>;
 	private checked$: Observable<BacklightStatusEnum>;
-
-	update$ = new Subject<BacklightMode>();
 	private setSubscription: Subscription;
-	isSwitchChecked = false;
 	private oneLevelSubscription: Subscription;
 	private autoSubscription: Subscription;
 	private twoLevelSubscription: Subscription;
 	private changeSubscription: Subscription;
-
-	public kbBacklightUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 
 	constructor(
 		private backlightService: BacklightService,

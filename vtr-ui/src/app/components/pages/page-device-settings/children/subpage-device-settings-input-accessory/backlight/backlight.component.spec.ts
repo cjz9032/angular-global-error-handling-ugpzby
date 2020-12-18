@@ -261,17 +261,15 @@ describe('Backlight', () => {
 		const spy = spyOnProperty(backlightService, 'backlight');
 		spy.and.returnValue(of(stubValue));
 		const setSpy = spyOn(backlightService, 'setBacklight');
-		const forceReoladSpy = spyOn(backlightService, 'forceReload');
-		setSpy.and.callFake(() => {
-			return new Observable((observer) => {
-				observer.error('fail');
-			});
-		});
+		const forceReloadSpy = spyOn(backlightService, 'forceReload');
+		setSpy.and.callFake(() => new Observable((observer) => {
+			observer.error('fail');
+		}));
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 		component.update$.next(component.modes[0]);
-		expect(forceReoladSpy).toHaveBeenCalled();
+		expect(forceReloadSpy).toHaveBeenCalled();
 		fixture.destroy();
 	});
 });
