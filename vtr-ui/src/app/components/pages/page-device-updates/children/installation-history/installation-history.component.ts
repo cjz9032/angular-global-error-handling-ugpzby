@@ -23,6 +23,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	private notificationSubscription: Subscription;
 	public showAll = false;
 	public enableDelete = false;
+	private needManualSetFocus = false;
 
 	constructor(
 		public systemUpdateService: SystemUpdateService,
@@ -77,6 +78,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 
 	onDeleteClick(item) {
 		this.systemUpdateService.deleteHistoryItems([item.packageID]);
+		this.needManualSetFocus = true;
 	}
 
 	installUpdates(event) {}
@@ -126,6 +128,10 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case UpdateProgress.FullHistory:
 					this.sortInstallationHistory(payload);
+					if (this.needManualSetFocus) {
+						this.needManualSetFocus = false;
+						this.adjustFocus();
+					}
 					break;
 				default:
 					break;
@@ -152,9 +158,16 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		if (this.systemUpdateService.installationHistory) {
 			this.sortInstallationHistory(this.systemUpdateService.installationHistory);
 		}
+		this.adjustFocus();
+	}
+
+	private adjustFocus() {
 		let focusId = 'su_installation_update_sort_order';
 		if (this.installationHistory && this.installationHistory.length >= 5) {
 			focusId = 'su_installation_update_expand_' + this.installationHistory[4].packageID;
+		}
+		if (!this.installationHistory || this.installationHistory.length < 1) {
+			focusId = 'system-update-back-btn';
 		}
 		this.focusOnElement(focusId);
 	}
