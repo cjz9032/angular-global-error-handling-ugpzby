@@ -91,9 +91,11 @@
 							{{ 'snapshot.properties.UpdatedDate' | translate }}
 						</th>
 						<td id="snapshot-item-{{ componentIndex }}-detail-update-date-base-value">
-							{{ baselineDate }}</td>
+							<!-- Adding UTC string to ensure the correct date/time format -->
+							{{ component.info.BaselineDate + ' UTC' | formatLocaleDateTime }}</td>
 						<td id="snapshot-item-{{ componentIndex }}-detail-update-date-current-value" [ngClass]="{'modified-item': component.IsDifferent}">
-							{{ lastSnapshotDate }}</td>
+							<!-- Adding UTC string to ensure the correct date/time format -->
+							{{ component.info.LastSnapshotDate + ' UTC' | formatLocaleDateTime }}</td>
 					</tr>
 
 					<ng-template #recursiveList let-list>
