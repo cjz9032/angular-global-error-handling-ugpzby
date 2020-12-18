@@ -14,7 +14,7 @@ import { WindowsVersionService } from 'src/app/services/windows-version/windows-
 	styleUrls: ['./page-snapshot.component.scss'],
 })
 export class PageSnapshotComponent implements OnInit, OnDestroy {
-	hardwareScanSupportCard: FeatureContent = new FeatureContent();
+	snapshotSupportCard: FeatureContent = new FeatureContent();
 
 	constructor(
 		private translate: TranslateService,
@@ -65,8 +65,8 @@ export class PageSnapshotComponent implements OnInit, OnDestroy {
 	// Look for a way to move this function to a common place (maybe a service)
 	// in order to allow HWScan and Snapshot to use it, but without creating an undesired dependency between them.
 	private initSupportCard() {
-		Object.assign(this.hardwareScanSupportCard, {
-			Id: 'HardwareScan.DiagnosticsTools',
+		Object.assign(this.snapshotSupportCard, {
+			Id: 'Snapshot.DiagnosticsTools',
 			Title: this.translate.instant('hardwareScan.support.title'),
 			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
 				? 'assets/images/support.webp'
@@ -77,7 +77,7 @@ export class PageSnapshotComponent implements OnInit, OnDestroy {
 			isLocal: true,
 		});
 		if (!this.commonService.isOnline) {
-			this.hardwareScanSupportCard.Title = this.translate.instant('hardwareScan.offline');
+			this.snapshotSupportCard.Title = this.translate.instant('hardwareScan.offline');
 		}
 	}
 }
