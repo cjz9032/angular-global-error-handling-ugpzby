@@ -1509,9 +1509,10 @@
 					},
 					"batteryHealth": {
 						"title": "Etat de la batterie",
-						"description": "Cette section fournit une prévision de la durée de vie de la batterie, la capacité de la batterie, des conseils sur la manière de maintenir la capacité de la batterie, etc.<br/>La perte de capacité dépend de l'utilisation quotidienne, de la température de la batterie, de la tension de chargement, etc. Suivez les conseils ci-dessous pour prolonger la durée de vie de la batterie.",
+						"description": "Cette section fournit des informations sur la capacité de la batterie, conseils sur la manière de la maintenir, etc.<br/>La perte de capacité dépend de l'utilisation quotidienne, de la température de la batterie, de la tension de chargement, etc. Suivez les conseils ci-dessous pour prolonger la durée de vie de la batterie.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Durée de vie prévue : ",
+							"title": "État d'intégrité de la batterie :",
+							"lifeSpan": "Durée de vie prévue :",
 							"months": "mois"
 						},
 						"batteryCapacity": {

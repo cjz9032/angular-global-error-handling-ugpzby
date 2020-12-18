@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Stav batérie",
-						"description": "Táto časť obsahuje predpokladané hodnoty životnosti batérie, kapacity batérie, tipy, ako udržať kapacitu batérie atď.<br/>Strata kapacity závisí od každodenného používania, teploty batérie, nabíjacieho napätia atď. Nasledovaním tipov nižšie možno predĺžiť životnosť batérie.",
+						"description": "Táto časť obsahuje informácie o kapacite batérie, tipy na jej zachovanie atď.<br/>Strata kapacity závisí od každodenného používania, teploty batérie, nabíjacieho napätia atď. Nasledovaním tipov nižšie možno predĺžiť životnosť batérie.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Predpokladaná životnosť: ",
+							"title": "Stav batérie:",
+							"lifeSpan": "Predpokladaná životnosť:",
 							"months": "mesiacov"
 						},
 						"batteryCapacity": {

@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Batterihelse",
-						"description": "Denne delen anslår batteriets levetid og batterikapasitet samt gir tips om hvordan du opprettholder batterikapasiteten med mer.<br/>Kapasitetstapet avhenger av daglig bruk, batteritemperatur, ladespenning med mer. Følg tipsene nedenfor for å forlenge batterilevetiden.",
+						"description": "Denne delen gir informasjon om batteriets levetid, batterikapasitet, gir tips om hvordan du opprettholder batterikapasiteten med mer.<br/>Kapasitetstapet avhenger av daglig bruk, batteritemperatur, ladespenning med mer. Følg tipsene nedenfor for å forlenge batterilevetiden.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Anslått levetid: ",
+							"title": "Test av batteriets tilstand:",
+							"lifeSpan": "Anslått levetid:",
 							"months": "måneder"
 						},
 						"batteryCapacity": {

@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Stav baterie",
-						"description": "Tato část obsahuje předpoklady o životnosti baterie, kapacitě baterie, tipy, jak udržovat kapacitu baterie atd.<br/>Ztráta kapacity závisí na každodenním používání, teplotě baterie, nabíjecím napětí atd. Následováním tipů níže lze prodloužit životnost baterie.",
+						"description": "Tato část obsahuje informace o kapacitě baterie, tipy, jak udržovat kapacitu baterie atd.<br/>Ztráta kapacity závisí na každodenním používání, teplotě baterie, nabíjecím napětí atd. Následováním tipů níže lze prodloužit životnost baterie.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Předpokládaná životnost: ",
+							"title": "Stav baterie:",
+							"lifeSpan": "Předpokládaná životnost:",
 							"months": "měsíců"
 						},
 						"batteryCapacity": {

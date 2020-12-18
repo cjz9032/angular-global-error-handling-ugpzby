@@ -1397,9 +1397,10 @@
 					},
 					"batteryHealth": {
 						"title": "Durata batteria",
-						"description": "In questa sezione vengono fornite stime sulla durata e la capacità della batteria, suggerimenti per prolungare la durata della batteria e così via.<br/>La perdita di capacità dipende dall'utilizzo giornaliero, dalla temperatura della batteria, dalla tensione di carica e così via. I seguenti suggerimenti consentono di estendere la durata della batteria.",
+						"description": "In questa sezione vengono fornite informazioni sulla capacità della batteria, suggerimenti per prolungarla e così via.<br/>La perdita di capacità dipende dall'utilizzo giornaliero, dalla temperatura della batteria, dalla tensione di carica e così via. I seguenti suggerimenti consentono di estendere la durata della batteria.",
 						"batteryLifeSpan": {
-							"lifeSpan": "Durata prevista: ",
+							"title": "Stato di integrità della batteria:",
+							"lifeSpan": "Durata prevista:",
 							"months": "mesi"
 						},
 						"batteryCapacity": {
