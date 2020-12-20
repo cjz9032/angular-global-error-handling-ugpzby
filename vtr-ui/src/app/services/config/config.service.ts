@@ -70,7 +70,7 @@ export class ConfigService {
 	public isSmartPerformanceAvailable = false;
 	private isBetaUser: boolean;
 	private country: string;
-	private betaFeature = ['smart-performance', 'app-search'];
+	private betaFeature = ['smart-performance'];
 	private chsAvailability = false;
 
 	constructor(
@@ -103,22 +103,6 @@ export class ConfigService {
 				}
 			);
 			this.showNewFeatureTipsWithMenuItems();
-		});
-	}
-
-	public canShowSearch(): Promise<boolean> {
-		return new Promise((resolve) => {
-			if (this.hypSettings) {
-				this.hypSettings.getFeatureSetting('FeatureSearch').then(
-					(searchFeature) => {
-						resolve((searchFeature || '').toString().toLowerCase() === 'true');
-					},
-					(error) => {
-						this.logger.error('DeviceService.initShowSearch: promise rejected ', error);
-						resolve(false);
-					}
-				);
-			}
 		});
 	}
 
@@ -186,9 +170,8 @@ export class ConfigService {
 				await this.initializeHardwareScan(resultMenu);
 				if (this.hypSettings) {
 					resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
+					resultMenu = await this.initializeAppSearchItem(resultMenu);
 				}
-
-				this.initializeAppSearchItem(resultMenu, true, true);
 
 				this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
 
@@ -223,18 +206,18 @@ export class ConfigService {
 		});
 	}
 
-	private initializeAppSearchItem(menu: any, supportSearch: boolean, isBeta: boolean) {
-		const appSearchItem = menu.find((item) => item.id === 'app-search');
-		if (appSearchItem) {
-			appSearchItem.availability = supportSearch && !appSearchItem.hide;
-			appSearchItem.hide = !appSearchItem.availability || !isBeta;
+	private async canShowSearch() {
+		try {
+			const result = await this.hypSettings.getFeatureSetting('AppSearch');
+			return result?.toString().toLowerCase() === 'true';
+		} catch { }
 
-			if (appSearchItem.availability) {
-				setTimeout(() => {
-					this.appSearchService.load();
-				}, 3000);
-			}
-		}
+		return false;
+	}
+
+	private async initializeAppSearchItem(menu: any) {
+		let showSearch = await this.canShowSearch();
+		return this.supportFilter(menu, 'app-search', showSearch);
 	}
 
 	private async initShowCHSMenu(
@@ -335,8 +318,8 @@ export class ConfigService {
 			securityMenu.subitems,
 			'wifi-security',
 			!securityMenuCondition.isSmode &&
-				!securityMenuCondition.isArm &&
-				securityMenuCondition.wifiIsSupport
+			!securityMenuCondition.isArm &&
+			securityMenuCondition.wifiIsSupport
 		);
 	}
 
@@ -603,8 +586,6 @@ export class ConfigService {
 		this.commonService.sendNotification(MenuItemEvent.MenuItemChange, payload);
 	}
 
-
-
 	updateSegmentMenu(segment): MenuItem[] {
 		if (segment === this.activeSegment || segment === SegmentConst.Gaming) {
 			return this.menu;
@@ -623,9 +604,6 @@ export class ConfigService {
 
 	async initializeByBeta(menu: MenuItem[], isBeta: boolean) {
 		this.updateBetaMenu(menu, isBeta, true);
-
-		const result = await this.canShowSearch();
-		this.updateAvailability(menu, 'app-search', true);
 
 		this.isSmartPerformanceAvailable = await this.showSmartPerformance();
 		this.updateAvailability(menu, 'smart-performance', this.isSmartPerformanceAvailable);
@@ -710,8 +688,8 @@ export class ConfigService {
 	updateSystemUpdatesMenu() {
 		const showSystemUpdate = Boolean(
 			this.adPolicyService.IsSystemUpdateEnabled &&
-				!this.deviceService.isSMode &&
-				!this.deviceService.isGaming
+			!this.deviceService.isSMode &&
+			!this.deviceService.isGaming
 		);
 		this.supportFilter(this.menu, 'system-updates', showSystemUpdate);
 	}
