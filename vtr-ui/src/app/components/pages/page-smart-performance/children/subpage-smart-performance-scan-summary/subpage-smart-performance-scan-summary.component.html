@@ -22,6 +22,7 @@
 									metricsItem="btn.signUpAndFix"
 									metricsEvent="ItemClick"
 									metricsParent="Page.Support.SmartPerformance"
+									[isDisabled]="!isOnline"
 									[isFullWidth]="true"
 									[label]="'smartPerformance.signUpAndFix' | translate"></vtr-ui-button>
 								<p id="smart-performance-scan-complete-purchase-tip"
