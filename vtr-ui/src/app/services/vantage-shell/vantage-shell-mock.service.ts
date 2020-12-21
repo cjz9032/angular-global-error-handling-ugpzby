@@ -647,7 +647,7 @@ export class VantageShellService {
 				},
 			},
 			wifiSecurity: {
-				getWifiSecurityTrialDays: () => { },
+				getWifiSecurityTrialDays: () => {},
 				mitt: null,
 				state: 'enabled',
 				wifiHistory: [
@@ -678,7 +678,7 @@ export class VantageShellService {
 				getWifiSecurityStateOnce(): Promise<any> {
 					return Promise.resolve();
 				},
-				updateWifiSecurityState(): void { },
+				updateWifiSecurityState(): void {},
 				getWifiSecurityState(): Promise<any> {
 					return Promise.resolve();
 				},
@@ -692,13 +692,13 @@ export class VantageShellService {
 					return this;
 				},
 				refresh() {
-					const p1 = new Promise((resolve) => { });
-					const p2 = new Promise((resolve) => { });
+					const p1 = new Promise((resolve) => {});
+					const p2 = new Promise((resolve) => {});
 					return Promise.all([p1, p2]);
 				},
-				cancelGetWifiSecurityState() { },
-				getWifiHistory() { },
-				cancelGetWifiHistory() { },
+				cancelGetWifiSecurityState() {},
+				getWifiHistory() {},
+				cancelGetWifiHistory() {},
 			},
 			windowsActivation: {
 				mitt: null,
@@ -836,7 +836,7 @@ export class VantageShellService {
 			getDevicePosture() {
 				return Promise.resolve();
 			},
-			cancelGetDevicePosture() { },
+			cancelGetDevicePosture() {},
 			on(type, handler) {
 				return this;
 			},
@@ -1359,7 +1359,7 @@ export class VantageShellService {
 				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) { }
+			} catch (error) {}
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}
@@ -2425,6 +2425,10 @@ export class VantageShellService {
 		if (this.phoenix) {
 			return this.phoenix.selfSelect;
 		}
+		return undefined;
+	}
+
+	public purchase(): void {
 		return undefined;
 	}
 

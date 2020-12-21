@@ -62,7 +62,7 @@
 			</vtr-battery-indicator>
 		</div>
 
-		<vtr-battery-condition-notes 
+		<vtr-battery-condition-notes
 			[batteryConditions]="batteryConditions"
 			[batteryGauge]="batteryGauge"
 			[batteryDetected]="!batteryIndicator.batteryNotDetected"
@@ -71,7 +71,7 @@
 			[isChargeThresholdOn]="batteryIndicator.isChargeThresholdOn"
 			[batteryFullChargeCapacity]="batteryInfo ? batteryInfo[0]?.fullChargeCapacity : undefined"
 			[batteryDesignCapacity]="batteryInfo ? batteryInfo[0]?.designCapacity : undefined"
-		> 
+		>
 		</vtr-battery-condition-notes>
 
 		<div class="pt-4 text-center"
