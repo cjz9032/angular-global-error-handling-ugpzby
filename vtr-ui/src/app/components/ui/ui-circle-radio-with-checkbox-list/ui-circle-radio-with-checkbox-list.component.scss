@@ -3,7 +3,7 @@
 @mixin theme($name, $background, $foreground, $label-color) {
 	$focus-indicator: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 3px rgba(0, 123, 255, 1);
 	.vtr-ui-circle-radio-with-checkbox-list.#{$name} {
-		$container-width: 12rem;
+		$container-width: 14rem;
 		margin-right: 1.5rem;
 		margin-top: 1.5rem;
 
@@ -35,18 +35,18 @@
 					border: 0.2rem solid $background;
 					display: inline-block;
 					vertical-align: middle;
-					width: 6rem;
-					height: 6rem;
+					width: calc(#{$container-width} / 2);
+					height: calc(#{$container-width} / 2);
 					border-radius: 50%;
 					text-align: center;
-					line-height: 6rem;
+					line-height: calc(#{$container-width} / 2);
 					cursor: pointer;
 					outline: 0;
 
 					.fa-layers {
 						position: absolute;
 						top: 0.3rem;
-						left: 3.1rem;
+						left: calc(#{$container-width} / 2 - 2.5rem);
 					}
 
 					.check-circle {
@@ -359,11 +359,12 @@
 				// icon file css class name
 				span {
 					&.icomoon {
-						font-size: 6.8rem !important;
+						$font-size: calc(#{$container-width} / 2 + 0.8rem);
+						font-size: $font-size !important;
 						background: transparent;
 						position: absolute;
-						left: 2.6rem;
-						top: -0.1rem;
+						left: calc(#{$font-size} / 2 - 0.8rem);
+						top: -0.06rem;
 						@include high-contrast-adjust;
 						&::before {
 							color: $background !important;
