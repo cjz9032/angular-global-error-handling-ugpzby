@@ -5,7 +5,7 @@ import {
 	Output,
 	EventEmitter,
 	OnChanges,
-	HostBinding,
+	HostListener,
 } from '@angular/core';
 import { MacroKeyMessageData } from 'src/app/enums/macrokey-message-data.enum';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -51,7 +51,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 
 	constructor(private modalService: NgbModal) {}
 
-	@HostBinding('document:visibilitychange') toggleOnPageMinimized() {
+	@HostListener('document: visibilitychange') toggleOnPageMinimized() {
 		if (document.hidden) {
 			if (this.recording) {
 				this.toggleRecording(true);
