@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateStore } from '@ngx-translate/core';
 import { PowerDpmService } from 'src/app/services/power-dpm/power-dpm.service';
-import { PowerPlan } from 'src/app/data-models/dpm/power-plan.model';
 import { AllPowerPlans } from 'src/app/data-models/dpm/all-power-plans.model';
 import { of } from 'rxjs';
 import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-interval.model';
@@ -38,7 +37,7 @@ describe('PowerSettingsComponent', () => {
 	});
 
 	it('should get powerButtonAction and passwordOnStandby', () => {
-		let mockAllPowerPlans = {
+		const mockAllPowerPlans = {
 			powerButtonAction: 1,
 			passwordOnStandby: 0,
 		} as AllPowerPlans;

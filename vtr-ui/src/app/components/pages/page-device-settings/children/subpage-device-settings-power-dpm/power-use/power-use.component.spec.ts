@@ -7,7 +7,6 @@ import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { PowerPlan } from 'src/app/data-models/dpm/power-plan.model';
-import { AllPowerPlans } from 'src/app/data-models/dpm/all-power-plans.model';
 import { of } from 'rxjs';
 
 describe('PowerUseComponent', () => {
@@ -36,7 +35,7 @@ describe('PowerUseComponent', () => {
 	});
 
 	it('should get the current power plan', () => {
-		let mockCurrentPowerPlan = {
+		const mockCurrentPowerPlan = {
 			powerPlanName: 'Balanced',
 			preDefined: true,
 			hddTimeoutAC: 120,

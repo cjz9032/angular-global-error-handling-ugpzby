@@ -15,7 +15,6 @@ import { CommonService } from '../common/common.service';
 })
 export class BatteryDetailService {
 	isBatteryModalShown = false;
-	private battery: any;
 	isAcAttached: boolean;
 	gaugePercent: number;
 	remainingPercentages: number[] = [];
@@ -26,13 +25,13 @@ export class BatteryDetailService {
 	isTemporaryChargeMode: boolean;
 	isDlsPiCapable: boolean;
 	currentOpenModal: string;
-
 	chargeThresholdInfo = new BehaviorSubject([new ChargeThreshold()]);
 	airplaneModeSubject = new BehaviorSubject(new FeatureStatus(false, false));
 	expressChargingSubject = new BehaviorSubject(new FeatureStatus(false, false));
 	setGaugeResetSectionSubject = new BehaviorSubject(false);
+	isShellAvailable = false;
+	private readonly battery: any;
 
-	public isShellAvailable = false;
 	constructor(
 		shellService: VantageShellService,
 		private logger: LoggerService,
@@ -85,7 +84,7 @@ export class BatteryDetailService {
 
 	public stopMonitor() {
 		if (this.isShellAvailable) {
-			this.battery.stopBatteryMonitor((response: boolean) => {});
+			this.battery.stopBatteryMonitor(() => {});
 		}
 	}
 

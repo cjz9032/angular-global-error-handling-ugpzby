@@ -7,7 +7,6 @@ import { CommonService } from '../common/common.service';
 import { AllPowerPlans } from 'src/app/data-models/dpm/all-power-plans.model';
 import { HttpClientModule } from '@angular/common/http';
 import { PowerPlan } from 'src/app/data-models/dpm/power-plan.model';
-import { of } from 'rxjs';
 
 describe('PowerDpmService', () => {
 	let powerDpmService: PowerDpmService;
@@ -20,18 +19,18 @@ describe('PowerDpmService', () => {
 			providers: [PowerDpmService, VantageShellService, CommonService],
 			imports: [HttpClientModule],
 		});
-		vantageShellService = TestBed.get(VantageShellService);
-		commonService = TestBed.get(CommonService);
+		vantageShellService = TestBed.inject(VantageShellService);
+		commonService = TestBed.inject(CommonService);
 	});
 
 	it('should be created', () => {
-		powerDpmService = TestBed.get(PowerDpmService);
+		powerDpmService = TestBed.inject(PowerDpmService);
 		expect(powerDpmService).toBeTruthy();
 	});
 
 	it('#getAllPowerPlansObs should emit AllPowerPlans', fakeAsync(() => {
 		let allPowerPlans = null;
-		let mockAllPowerPlans = {
+		const mockAllPowerPlans = {
 			activePowerPlan: 'Balanced',
 			powerPlanList: [
 				{
@@ -95,12 +94,10 @@ describe('PowerDpmService', () => {
 				} as PowerPlan,
 			],
 		} as AllPowerPlans;
-		let mockPowerDpm = {
-			getAllPowerPlans: () => {
-				return new Promise((resolve) => {
+		const mockPowerDpm = {
+			getAllPowerPlans: () => new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
-				});
-			},
+				}),
 		};
 		spyOn(commonService, 'getLocalStorageValue').and.returnValue(null);
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
@@ -126,13 +123,11 @@ describe('PowerDpmService', () => {
 	// });
 
 	it('#setPowerButton should call devicePowerDPM.setPowerButton', () => {
-		let mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
-		let mockPowerDpm = {
-			setPowerButton: () => {
-				return new Promise((resolve) => {
+		const mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
+		const mockPowerDpm = {
+			setPowerButton: () => new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
-				});
-			},
+				}),
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -142,13 +137,11 @@ describe('PowerDpmService', () => {
 	});
 
 	it('#setSignInOption should call devicePowerDPM.setSignInOption', () => {
-		let mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
-		let mockPowerDpm = {
-			setSignInOption: () => {
-				return new Promise((resolve) => {
+		const mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
+		const mockPowerDpm = {
+			setSignInOption: () => new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
-				});
-			},
+				}),
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -158,13 +151,11 @@ describe('PowerDpmService', () => {
 	});
 
 	it('#setTurnoffDisplay should call devicePowerDPM.setTurnoffDisplay', () => {
-		let mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
-		let mockPowerDpm = {
-			setTurnoffDisplay: () => {
-				return new Promise((resolve) => {
+		const mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
+		const mockPowerDpm = {
+			setTurnoffDisplay: () => new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
-				});
-			},
+				}),
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -174,13 +165,11 @@ describe('PowerDpmService', () => {
 	});
 
 	it('#setTurnoffHDD should call devicePowerDPM.setTurnoffHDD', () => {
-		let mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
-		let mockPowerDpm = {
-			setTurnoffHDD: () => {
-				return new Promise((resolve) => {
+		const mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
+		const mockPowerDpm = {
+			setTurnoffHDD: () => new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
-				});
-			},
+				}),
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -190,13 +179,11 @@ describe('PowerDpmService', () => {
 	});
 
 	it('#setSleepAfter should call devicePowerDPM.setSleepAfter', () => {
-		let mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
-		let mockPowerDpm = {
-			setSleepAfter: () => {
-				return new Promise((resolve) => {
+		const mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
+		const mockPowerDpm = {
+			setSleepAfter: () => new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
-				});
-			},
+				}),
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -206,13 +193,11 @@ describe('PowerDpmService', () => {
 	});
 
 	it('#setHibernateAfter should call devicePowerDPM.setHibernateAfter', () => {
-		let mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
-		let mockPowerDpm = {
-			setHibernateAfter: () => {
-				return new Promise((resolve) => {
+		const mockAllPowerPlans = { activePowerPlan: 'Balanced', powerPlanList: [] } as AllPowerPlans;
+		const mockPowerDpm = {
+			setHibernateAfter: () => new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
-				});
-			},
+				}),
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);
@@ -222,16 +207,14 @@ describe('PowerDpmService', () => {
 	});
 
 	it('#setCurrentPowerPlan should call devicePowerDPM.setCurrentPowerPlan', () => {
-		let mockAllPowerPlans = {
+		const mockAllPowerPlans = {
 			activePowerPlan: 'Balanced',
 			powerPlanList: [],
 		} as AllPowerPlans;
-		let mockPowerDpm = {
-			setCurrentPowerPlan: () => {
-				return new Promise((resolve) => {
+		const mockPowerDpm = {
+			setCurrentPowerPlan: () => new Promise((resolve) => {
 					resolve(mockAllPowerPlans);
-				});
-			},
+				}),
 		};
 		spyOn(vantageShellService, 'getPowerDPM').and.returnValue(mockPowerDpm);
 		powerDpmService = TestBed.get(PowerDpmService);

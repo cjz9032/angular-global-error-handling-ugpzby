@@ -11,15 +11,14 @@ import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-in
 })
 export class PowerUseComponent implements OnInit, OnDestroy {
 	@Input() powerplan: any;
-	constructor(public dpmService: PowerDpmService, private translate: TranslateService) {}
-
 	timeItems: DPMDropDownInterval[];
 	turnoffDisplay: number;
 	turnoffHDD: number;
 	sleepAfter: number;
 	hibernateAfter: number;
-
 	private currentPowerPlanSubscription: Subscription;
+
+	constructor(public dpmService: PowerDpmService, private translate: TranslateService) {}
 
 	ngOnInit() {
 		this.initIntervals();
@@ -37,6 +36,34 @@ export class PowerUseComponent implements OnInit, OnDestroy {
 	ngOnDestroy(): void {
 		if (this.currentPowerPlanSubscription) {
 			this.currentPowerPlanSubscription.unsubscribe();
+		}
+	}
+
+	onTurnOffDisplayChange($event: DPMDropDownInterval) {
+		if ($event) {
+			this.turnoffDisplay = $event.value;
+			this.dpmService.setTurnoffDisplay($event.name);
+		}
+	}
+
+	onTurnOffHDDChange($event: DPMDropDownInterval) {
+		if ($event) {
+			this.turnoffHDD = $event.value;
+			this.dpmService.setTurnoffHDD($event.name);
+		}
+	}
+
+	onSleepChange($event: DPMDropDownInterval) {
+		if ($event) {
+			this.sleepAfter = $event.value;
+			this.dpmService.setSleepAfter($event.name);
+		}
+	}
+
+	onHibernateChange($event: DPMDropDownInterval) {
+		if ($event) {
+			this.hibernateAfter = $event.value;
+			this.dpmService.setHibernateAfter($event.name);
 		}
 	}
 
@@ -144,31 +171,4 @@ export class PowerUseComponent implements OnInit, OnDestroy {
 		this.hibernateAfter = 0;
 	}
 
-	public onTurnOffDisplayChange($event: DPMDropDownInterval) {
-		if ($event) {
-			this.turnoffDisplay = $event.value;
-			this.dpmService.setTurnoffDisplay($event.name);
-		}
-	}
-
-	public onTurnOffHDDChange($event: DPMDropDownInterval) {
-		if ($event) {
-			this.turnoffHDD = $event.value;
-			this.dpmService.setTurnoffHDD($event.name);
-		}
-	}
-
-	public onSleepChange($event: DPMDropDownInterval) {
-		if ($event) {
-			this.sleepAfter = $event.value;
-			this.dpmService.setSleepAfter($event.name);
-		}
-	}
-
-	public onHibernateChange($event: DPMDropDownInterval) {
-		if ($event) {
-			this.hibernateAfter = $event.value;
-			this.dpmService.setHibernateAfter($event.name);
-		}
-	}
 }

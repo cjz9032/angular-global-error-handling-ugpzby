@@ -7,7 +7,6 @@ import { TranslationModule } from 'src/app/modules/translation.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateStore } from '@ngx-translate/core';
-import { Observable, of, from } from 'rxjs';
 import { BatteryHealthResponse } from '../battery-health.interface';
 import {
 	BatteryHealthLevel,

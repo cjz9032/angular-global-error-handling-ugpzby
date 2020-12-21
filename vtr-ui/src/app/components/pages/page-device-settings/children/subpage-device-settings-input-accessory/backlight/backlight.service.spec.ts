@@ -118,7 +118,7 @@ describe('BacklightService', () => {
 
 	it('should call backlightFeature.getBacklightOnSystemChange', () => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() {},
+			getBacklightOnSystemChange: () => {},
 		});
 		backlightService = new BacklightService(shellServiceSpy);
 		backlightService.getBacklightOnSystemChange();
@@ -127,28 +127,26 @@ describe('BacklightService', () => {
 
 	it('#backlightFeature.getBacklightOnSystemChange should receive two arguments', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() {
-				return Promise.resolve({
-					response: {
-						settingList: {
-							setting: [
-								{
-									key: 'KeyboardBacklightLevel',
-									value: BacklightLevelEnum.ONE_LEVEL,
-									enabled: 0,
-									errorCode: 0,
-								},
-								{
-									key: 'KeyboardBacklightStatus',
-									value: BacklightStatusEnum.OFF,
-									enabled: 0,
-									errorCode: 0,
-								},
-							],
-						},
+			getBacklightOnSystemChange: () => Promise.resolve({
+				response: {
+					settingList: {
+						setting: [
+							{
+								key: 'KeyboardBacklightLevel',
+								value: BacklightLevelEnum.ONE_LEVEL,
+								enabled: 0,
+								errorCode: 0,
+							},
+							{
+								key: 'KeyboardBacklightStatus',
+								value: BacklightStatusEnum.OFF,
+								enabled: 0,
+								errorCode: 0,
+							},
+						],
 					},
-				});
-			},
+				},
+			}),
 		});
 		const svc = new BacklightService(shellServiceSpy);
 		const getBacklightOnSystemChangeSpy = spyOn(
@@ -185,7 +183,7 @@ describe('BacklightService', () => {
 
 	it('#backlightFeature.getBacklightOnSystemChange should reject this request', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() {},
+			getBacklightOnSystemChange:() => {},
 		});
 		const svc = new BacklightService(shellServiceSpy);
 		const getBacklightOnSystemChangeSpy = spyOn(
@@ -208,7 +206,7 @@ describe('BacklightService', () => {
 
 	it('#backlightFeature.getBacklightOnSystemChange should complete this call when errorcode is 606', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() {},
+			getBacklightOnSystemChange:() => {},
 		});
 		const svc = new BacklightService(shellServiceSpy);
 		const getBacklightOnSystemChangeSpy = spyOn(
@@ -229,7 +227,7 @@ describe('BacklightService', () => {
 
 	it('#backlightFeature.getBacklightOnSystemChange should receive callback\'s data', fakeAsync(() => {
 		shellServiceSpy.getBacklight.and.returnValue({
-			getBacklightOnSystemChange() {},
+			getBacklightOnSystemChange:() => {},
 		});
 		const svc = new BacklightService(shellServiceSpy);
 		const getBacklightOnSystemChangeSpy = spyOn(

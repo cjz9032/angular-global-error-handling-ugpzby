@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PowerDpmService } from 'src/app/services/power-dpm/power-dpm.service';
-import { Subscription, from } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-interval.model';
 
@@ -10,8 +10,6 @@ import { DPMDropDownInterval } from 'src/app/data-models/common/dpm-drop-down-in
 	styleUrls: ['./power-settings.component.scss'],
 })
 export class PowerSettingsComponent implements OnInit, OnDestroy {
-	constructor(public dpmService: PowerDpmService, private translate: TranslateService) {}
-
 	powerButtonActions: DPMDropDownInterval[];
 	signInOptions: DPMDropDownInterval[];
 	selectAction: number;
@@ -24,6 +22,8 @@ export class PowerSettingsComponent implements OnInit, OnDestroy {
 		'Shutdown',
 		'PowerOffDisplay',
 	];
+
+	constructor(public dpmService: PowerDpmService, private translate: TranslateService) {}
 
 	ngOnInit() {
 		this.initPowerActions();
@@ -38,6 +38,21 @@ export class PowerSettingsComponent implements OnInit, OnDestroy {
 	ngOnDestroy(): void {
 		if (this.allPowerPlansSubscription) {
 			this.allPowerPlansSubscription.unsubscribe();
+		}
+	}
+
+	onActionChange($event: DPMDropDownInterval) {
+		if ($event) {
+			this.selectAction = $event.value;
+			const value = this.powerButtonOptions[$event.value];
+			this.dpmService.setPowerButton(value);
+		}
+	}
+
+	onSignInOptionChanged($event: DPMDropDownInterval) {
+		if ($event) {
+			this.selectedSignInOptionVal = $event.value;
+			this.dpmService.setSignInOption($event.value === 1 ? 'Yes' : 'No');
 		}
 	}
 
@@ -97,6 +112,7 @@ export class PowerSettingsComponent implements OnInit, OnDestroy {
 		];
 		this.selectAction = 0;
 	}
+
 	private initSignInOptions() {
 		const never = this.translate.instant(
 			'device.deviceSettings.power.dpm.globalPowerSettings.requiredSignIn.items.never'
@@ -123,17 +139,4 @@ export class PowerSettingsComponent implements OnInit, OnDestroy {
 		this.selectedSignInOptionVal = 0;
 	}
 
-	public onActionChange($event: DPMDropDownInterval) {
-		if ($event) {
-			this.selectAction = $event.value;
-			const value = this.powerButtonOptions[$event.value];
-			this.dpmService.setPowerButton(value);
-		}
-	}
-	public onSignInOptionChanged($event: DPMDropDownInterval) {
-		if ($event) {
-			this.selectedSignInOptionVal = $event.value;
-			this.dpmService.setSignInOption($event.value === 1 ? 'Yes' : 'No');
-		}
-	}
 }

@@ -1,4 +1,4 @@
-import { TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
+import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { DisplayService } from './display.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -32,7 +32,7 @@ describe('DisplayService', () => {
 	let commonService: CommonService;
 	let http: HttpClient;
 	let localCacheService: LocalCacheService;
-	let dedicatedInstanceFactory = <DedicatedInstanceFactory>{};
+	const dedicatedInstanceFactory = {} as DedicatedInstanceFactory;
 	beforeEach(() => {
 		commonService = new CommonService();
 		localCacheService = new LocalCacheService(dedicatedInstanceFactory, commonService);
@@ -90,9 +90,7 @@ describe('DisplayService', () => {
 
 	it('should get EyeCareMode State', () => {
 		displayService.displayEyeCareMode = {
-			getEyeCareModeState() {
-				return;
-			},
+			getEyeCareModeState: () => undefined,
 		};
 		const spy = spyOn(displayService.displayEyeCareMode, 'getEyeCareModeState');
 		displayService.getEyeCareModeState();
@@ -145,9 +143,7 @@ describe('DisplayService', () => {
 	});
 
 	it('should start Camera privacy monitor - else', () => {
-		const callback = () => {
-			return;
-		};
+		const callback = () => undefined;
 		displayService.cameraPrivacyStatus = undefined;
 		const res = displayService.startCameraPrivacyMonitor(callback);
 		expect(res).toBeUndefined();
@@ -469,9 +465,7 @@ describe('DisplayService', () => {
 	});
 
 	it('should get status changed location permission', () => {
-		const handler = () => {
-			return;
-		};
+		const handler = () => undefined;
 		displayService.isShellAvailable = true;
 		const spy = spyOn(displayService.displayEyeCareMode, 'statusChangedLocationPermission');
 		displayService.statusChangedLocationPermission(handler);
@@ -480,9 +474,7 @@ describe('DisplayService', () => {
 	});
 
 	it('should get status changed location permission', () => {
-		const handler = () => {
-			return;
-		};
+		const handler = () => undefined;
 		displayService.isShellAvailable = false;
 		const res = displayService.statusChangedLocationPermission(handler);
 		expect(res).toBeUndefined();
@@ -512,9 +504,7 @@ describe('DisplayService', () => {
 		expect(status).toBeTruthy();
 
 		(displayService as any).cameraSettings = {
-			startMonitor() {
-				return Promise.resolve({ permission: true });
-			},
+			startMonitor: () => Promise.resolve({ permission: true }),
 		};
 		/* const spySN = spyOn(commonService, 'sendNotification');
 		const returnValue = displayService.startMonitorForCameraPermission();
@@ -565,9 +555,7 @@ describe('DisplayService', () => {
 	it('should open Privacy Location', () => {
 		displayService.isShellAvailable = true;
 		displayService.displayEyeCareMode = {
-			openPrivacyLocation() {
-				return;
-			},
+			openPrivacyLocation: () => undefined,
 		};
 		const spy = spyOn(displayService.displayEyeCareMode, 'openPrivacyLocation');
 		displayService.openPrivacyLocation();
@@ -700,9 +688,7 @@ describe('DisplayService', () => {
 
 	it('should reset Eye care mode all settings', () => {
 		displayService.displayEyeCareMode = {
-			resetEyecaremodeAllSettings() {
-				return;
-			},
+			resetEyecaremodeAllSettings: () => undefined,
 		};
 		const spy = spyOn(displayService.displayEyeCareMode, 'resetEyecaremodeAllSettings');
 		displayService.resetEyecaremodeAllSettings();
@@ -711,9 +697,7 @@ describe('DisplayService', () => {
 
 	it('should be able to get whiteList', () => {
 		displayService.displayEyeCareMode = {
-			getWhiteListCapability() {
-				return;
-			},
+			getWhiteListCapability: () => undefined,
 		};
 		const spy = spyOn(displayService.displayEyeCareMode, 'getWhiteListCapability');
 		displayService.getWhiteListCapability();
@@ -722,9 +706,7 @@ describe('DisplayService', () => {
 
 	it('should be able to get getPriorityControlCapability', () => {
 		const priorityControl = {
-			GetCapability() {
-				return;
-			},
+			GetCapability: () => undefined,
 		};
 		(displayService as any).priorityControl = priorityControl;
 		const spy = spyOn(priorityControl, 'GetCapability');
@@ -738,9 +720,7 @@ describe('DisplayService', () => {
 
 	it('should be able to get getPriorityControlSetting', () => {
 		const priorityControl = {
-			GetPriorityControlSetting() {
-				return;
-			},
+			GetPriorityControlSetting: () => undefined,
 		};
 		(displayService as any).priorityControl = priorityControl;
 		const spy = spyOn(priorityControl, 'GetPriorityControlSetting');
@@ -754,9 +734,7 @@ describe('DisplayService', () => {
 
 	it('should be able to get getPriorityControlCapability', () => {
 		const priorityControl = {
-			SetPriorityControlSetting(value: string) {
-				return;
-			},
+			SetPriorityControlSetting: (value: string) => undefined,
 		};
 		(displayService as any).priorityControl = priorityControl;
 		const spy = spyOn(priorityControl, 'SetPriorityControlSetting');

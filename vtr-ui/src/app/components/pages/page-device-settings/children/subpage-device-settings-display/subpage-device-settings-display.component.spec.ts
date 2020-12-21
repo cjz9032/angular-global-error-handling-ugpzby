@@ -60,7 +60,7 @@ describe('SubpageDeviceSettingsDisplayComponent', () => {
 
 	beforeEach(waitForAsync(() => {
 		const mockFunction = (message, data) => {};
-		let logger = <LoggerService>{
+		const logger: Partial<LoggerService> = {
 			error: mockFunction,
 			info: mockFunction,
 			debug: mockFunction,

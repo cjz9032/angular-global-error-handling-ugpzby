@@ -7,18 +7,17 @@ import { DevService } from '../dev/dev.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 @Injectable()
 export class DisplayService {
+	@Output() windowResize: EventEmitter<any> = new EventEmitter();
 	displayEyeCareMode: any;
 	cameraPrivacyStatus: any;
 	cameraSettings: any;
-	private privacyGuardSettings: any;
 	oledSettings: any;
-	private priorityControl: any;
-	public isShellAvailable = false;
-	@Output() windowResize: EventEmitter<any> = new EventEmitter();
-
+	isShellAvailable = false;
 	loading = 0;
 	windowWidth = 0;
 	windowHeight = 0;
+	private privacyGuardSettings: any;
+	private priorityControl: any;
 
 	constructor(
 		private devService: DevService,
@@ -328,7 +327,7 @@ export class DisplayService {
 	public stopMonitorForCameraPermission() {
 		try {
 			if (this.isShellAvailable) {
-				return this.cameraSettings.stopMonitor((response: boolean) => {});
+				return this.cameraSettings.stopMonitor(() => {});
 			}
 			return undefined;
 		} catch (error) {
@@ -338,7 +337,7 @@ export class DisplayService {
 
 	public stopEyeCareMonitor() {
 		if (this.isShellAvailable) {
-			return this.displayEyeCareMode.stopMonitor((response: boolean) => {
+			return this.displayEyeCareMode.stopMonitor(() => {
 				// this.commonService.sendNotification(DeviceMonitorStatus.MicrophoneStatus, response);
 			});
 		}
