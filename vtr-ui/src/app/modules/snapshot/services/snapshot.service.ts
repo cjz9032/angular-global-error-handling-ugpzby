@@ -187,6 +187,4 @@ export class SnapshotService {
 			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.error;
 		}
 	}
-
-
 }
