@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Securitate WiFi Lenovo este un serviciu software avansat bazat pe cloud care ajută dispozitivul să diferenţieze reţelele fără fir sigure de cele potenţial rău intenţionate.",
 				"enabledDescribe": "În prezent, Securitate WiFi Lenovo vă monitorizează activitatea în rețeaua WiFi."
 			},
-			"threatlocator": {
-				"describe": "Utilizați detectorul de amenințări pentru a determina siguranța rețelelor din jurul dvs.",
-				"button": "Verificați amenințarea",
-				"connectionError": "Eroare de conexiune",
-				"tryAgain": "Nu putem localiza amenințarea din cauză că rețeaua nu este disponibilă. Conectați-vă la internet și încercați din nou."
-			},
 			"locationmodal": {
 				"title": "Activare servicii de localizare",
 				"describe1": "Pentru a utiliza funcția Securitate WiFi Lenovo, trebuie să activați serviciile de localizare pentru Lenovo Vantage. Doriţi să activaţi acum localizarea?",

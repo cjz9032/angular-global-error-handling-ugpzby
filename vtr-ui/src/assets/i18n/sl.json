@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Program družbe Lenovo za varnost WiFi-ja je napredna oblačna storitev programske opreme, ki vaši napravi pomaga razlikovati med varnimi brezžičnimi omrežji in morebitnimi zlonamernimi.",
 				"enabledDescribe": "Program družbe Lenovo za varnost WiFi-ja trenutno nadzoruje omrežje WiFi."
 			},
-			"threatlocator": {
-				"describe": "Če želite ugotoviti, kako varna so omrežja okrog vas, uporabite detektor groženj.",
-				"button": "Preverite, da",
-				"connectionError": "Napaka povezave",
-				"tryAgain": "Grožnje ne moremo poiskati, ker omrežje ni na voljo. Vzpostavite internetno povezavo in poskusite znova."
-			},
 			"locationmodal": {
 				"title": "Omogoči lokacijske storitve",
 				"describe1": "Če želite uporabljati funkcije programa družbe Lenovo za varnost WiFi-ja, morate omogočiti lokacijske storitve za Lenovo Vantage. Ali želite omogočiti lokacijo?",

@@ -2802,12 +2802,6 @@
 				"disableDescribe": "O Lenovo Segurança WiFi é um serviço avançado de software na nuvem que ajuda o dispositivo a diferenciar as redes sem fio seguras das potencialmente perigosas.",
 				"enabledDescribe": "O Lenovo Segurança WiFi está monitorando a rede WiFi no momento."
 			},
-			"threatlocator": {
-				"describe": "Use o detector de ameaças para determinar a segurança das redes ao seu redor.",
-				"button": "Verificar ameaças",
-				"connectionError": "Erro de conexão",
-				"tryAgain": "Não foi possível localizar ameaças devido à rede não estar disponível, conecte-se à Internet e tente novamente."
-			},
 			"locationmodal": {
 				"title": "Ativar serviços de localização",
 				"describe1": "Para usar o Lenovo Segurança WiFi, é necessário ativar os serviços de localização do Lenovo Vantage. Deseja ativar a localização agora?",

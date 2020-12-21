@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Sigurnost WiFija tvrtke Lenovo napredna je softverska usluga u oblaku koja vašem uređaju pojednostavnjuje razlikovanje sigurnih bežičnih veza od potencijalno zlonamjernih.",
 				"enabledDescribe": "Lenovo WiFi Security trenutno nadgleda vašu WiFi mrežu."
 			},
-			"threatlocator": {
-				"describe": "Upotrijebite alat za lociranje prijetnji da biste utvrdili sigurnost mreža koje su vam dostupne.",
-				"button": "Provjeri prijetnju",
-				"connectionError": "Pogreška prilikom povezivanja",
-				"tryAgain": "Nismo u mogućnosti locirati prijetnju uslijed nedostupnosti mreže, povežite se na Internet i pokušajte iznova."
-			},
 			"locationmodal": {
 				"title": "Omogući lokacijske usluge",
 				"describe1": "Da biste upotrijebili značajku Sigurnost WiFi mreže tvrtke Lenovo, morate omogućiti lokacijske usluge za Lenovo Vantage. Želite li sad omogućiti lokacijske usluge?",

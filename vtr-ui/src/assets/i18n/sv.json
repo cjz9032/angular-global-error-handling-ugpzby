@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Lenovo WiFi-säkerhet är en avancerad molnbaserad programvarutjänst som hjälper din enhet att skilja mellan säkra trådlösa nätverk och potentiellt skadliga.",
 				"enabledDescribe": "Lenovo WiFi-säkerhet övervakar WiFi-nätverket."
 			},
-			"threatlocator": {
-				"describe": "Använd hotidentifieraren för att utvärdera säkerheten i nätverken.",
-				"button": "Kontrollera hot",
-				"connectionError": "Anslutningsfel",
-				"tryAgain": "Det gick inte att hitta något hot på grund av att nätverket inte är tillgängligt. Anslut till internet och försök igen."
-			},
 			"locationmodal": {
 				"title": "Aktivera platstjänster",
 				"describe1": "För att kunna använda Lenovo WiFi-säkerhet måste du aktivera platstjänster för Lenovo Vantage. Vill du aktivera platstjänster nu?",

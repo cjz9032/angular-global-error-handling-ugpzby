@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Lenovo WiFi -suojaus on kehittynyt pilvipohjainen ohjelmistopalvelu, joka auttaa laitetta erottamaan turvalliset langattomat verkot mahdollisista haitallisista verkoista.",
 				"enabledDescribe": "Lenovo WiFi -suojaus valvoo tällä hetkellä WiFi-verkon toimintaa."
 			},
-			"threatlocator": {
-				"describe": "Määritä uhkien paikantimen avulla ympärilläsi olevien verkkojen turvallisuus.",
-				"button": "Tarkista uhat",
-				"connectionError": "Yhteysvirhe",
-				"tryAgain": "Uhan paikantaminen ei onnistu, koska verkko ei ole käytettävissä. Muodosta yhteys Internetiin ja yritä uudelleen."
-			},
 			"locationmodal": {
 				"title": "Ota sijaintipalvelut käyttöön",
 				"describe1": "Jotta voit käyttää Lenovo WiFi -suojausominaisuutta, sinun on otettava käyttöön Lenovo Vantage -sovelluksen sijaintipalvelut. Haluatko ottaa sijainnin käyttöön nyt?",

@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Lenovo WiFi-sikkerhed er en udvidet skybaseret softwaretjeneste, der hjælper din enhed med at adskille sikre trådløse netværk fra dem, der er potentielt skadelige.",
 				"enabledDescribe": "Lenovo WiFi-sikkerhed overvåger i øjeblikket din WiFi-netværk."
 			},
-			"threatlocator": {
-				"describe": "Brug trusselssensoren til at bestemme sikkerheden i dine nærliggende netværk.",
-				"button": "Kontrollér trussel",
-				"connectionError": "Forbindelsesfejl",
-				"tryAgain": "Vi kan ikke finde truslen for dig, fordi netværket ikke er tilgængeligt. Opret forbindelse til internettet, og prøv igen."
-			},
 			"locationmodal": {
 				"title": "Aktivér placeringstjenester",
 				"describe1": "Hvis du vil bruge Lenovo WiFi-sikkerhed, skal du aktivere placeringstjenester for Lenovo Vantage. Vil du aktivere placering nu?",
