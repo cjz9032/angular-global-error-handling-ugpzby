@@ -298,6 +298,8 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 							systemUpdate.subtitle = this.translate.instant(
 								'device.myDevice.systemUpdate.detail.neverRanUpdate'
 							);
+							systemUpdate.checkedDate = null;
+							systemUpdate.showSepline = false;
 						}
 					}
 				});
