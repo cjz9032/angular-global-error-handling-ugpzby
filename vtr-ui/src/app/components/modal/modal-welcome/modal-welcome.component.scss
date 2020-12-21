@@ -60,7 +60,7 @@
 	}
 
 	.banner-page-1 {
-		background: url('^assets/images/welcome/header-1.webp'),
+		background: url('^assets/images/welcome/header-1.webp') no-repeat,
 			url('^assets/images/welcome/header-1.jpg') no-repeat;
 		background-size: cover;
 		background-position: center;
