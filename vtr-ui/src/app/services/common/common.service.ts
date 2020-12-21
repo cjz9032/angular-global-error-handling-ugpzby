@@ -352,7 +352,7 @@ export class CommonService {
 	}
 
 	public delay(milliseconds: number) {
-		return new Promise((resolve) => setTimeout(resolve, milliseconds));
+		return new Promise(() => setTimeout(() => { }, milliseconds));
 	}
 
 	public markPerformanceNode(name: string) {
