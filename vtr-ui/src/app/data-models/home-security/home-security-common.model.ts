@@ -24,8 +24,4 @@ export class HomeSecurityCommon {
 			this.connectedHomeSecurity.visitWebConsole();
 		}
 	}
-
-	upgrade() {
-		this.connectedHomeSecurity.purchase();
-	}
 }

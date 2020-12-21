@@ -67,7 +67,6 @@ import { WidgetCommonAntivirusComponent } from '../../components/pages/page-secu
 import { WidgetQaComponent } from 'src/app/components/widgets/widget-qa/widget-qa.component';
 import { WidgetLandingSecurityComponent } from '../../components/pages/page-security/widget/widget-landing-security/widget-landing-security.component';
 import { WidgetLandingNavComponent } from '../../components/pages/page-security/widget/widget-landing-nav/widget-landing-nav.component';
-import { ThreatLocatorComponent } from '../../components/pages/page-security-wifi/children/threat-locator/threat-locator.component';
 import { UiFeatureHeadingComponent } from 'src/app/components/ui/ui-feature-heading/ui-feature-heading.component';
 import { UiFeatureIntroductionComponent } from 'src/app/components/ui/ui-feature-introduction/ui-feature-introduction.component';
 import { UiDescriptionButtonComponent } from 'src/app/components/ui/ui-description-button/ui-description-button.component';
@@ -99,7 +98,6 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		WidgetMcafeeGraphicIntroductionComponent,
 		WidgetMcafeePeaceOfMindComponent,
 		WidgetMcafeeContentCardComponent,
-		ThreatLocatorComponent,
 		// UI
 		UiLandingFeatureComponent,
 		UiSecurityStatusbarComponent,
