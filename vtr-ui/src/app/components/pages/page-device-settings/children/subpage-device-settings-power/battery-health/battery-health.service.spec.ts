@@ -4,7 +4,6 @@ import { VantageShellService } from '../../../../../../services/vantage-shell/va
 import SpyObj = jasmine.SpyObj;
 import { BatteryHealthLevel, BatteryHealthTip, BatteryLifeSpan } from './battery-health.enum';
 import { LocalStorageKey } from '../../../../../../enums/local-storage-key.enum';
-import { Subscription } from 'rxjs';
 import { skip } from 'rxjs/operators';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 

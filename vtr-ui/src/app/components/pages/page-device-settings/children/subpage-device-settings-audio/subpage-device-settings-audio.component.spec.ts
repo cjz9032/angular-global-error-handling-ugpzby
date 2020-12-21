@@ -104,7 +104,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
 		component = fixture.componentInstance;
 		const spy = spyOn(component, 'getDolbyModesStatus');
-		component['initFeatures']();
+		component.initFeatures();
 		expect(spy).toHaveBeenCalled();
 	});
 
@@ -128,10 +128,8 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.microphoneProperties = { ...microphoneProperties };
 		fixture.detectChanges();
 		const tooltip = {
-			isOpen() {
-				return true;
-			},
-			close() {},
+			isOpen: () => true,
+			close: () => {}
 		};
 		component.toggleToolTip(tooltip, false);
 	});
@@ -145,10 +143,8 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.microphoneProperties = { ...microphoneProperties };
 		fixture.detectChanges();
 		const tooltip = {
-			isOpen() {
-				return false;
-			},
-			open() {},
+			isOpen: () => false,
+			open: () => {},
 		};
 		component.toggleToolTip(tooltip, true);
 	});
@@ -835,7 +831,7 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(component.cacheFlag.AEC).toEqual(true);
 	});
 });
-describe("Microphone Optimization Section's block status", () => {
+describe('Microphone Optimization Section\'s block status', () => {
 	let fixture: ComponentFixture<SubpageDeviceSettingsAudioComponent>;
 	let component: SubpageDeviceSettingsAudioComponent;
 	let deviceService: DeviceService;
@@ -864,7 +860,7 @@ describe("Microphone Optimization Section's block status", () => {
 		expect(component.canShowMicrophoneOptimization).toBeFalsy();
 	});
 
-	it("should be blocked when machine's mt code is in block list", async () => {
+	it('should be blocked when machine\'s mt code is in block list', async () => {
 		const machineMtCodeInBlockList = '20YC';
 		const deviceServiceSpy = spyOn(deviceService, 'getMachineInfo');
 		deviceServiceSpy.and.returnValue(
@@ -878,7 +874,7 @@ describe("Microphone Optimization Section's block status", () => {
 		expect(component.canShowMicrophoneOptimization).toBeTruthy('Filter logic has gone wrong');
 	});
 
-	it("should NOT be blocked when machine's mt code is in block list", async () => {
+	it('should NOT be blocked when machine\'s mt code is in block list', async () => {
 		const machineMtCodeNotInBlockList = '81RS';
 		const deviceServiceSpy = spyOn(deviceService, 'getMachineInfo');
 		deviceServiceSpy.and.returnValue(

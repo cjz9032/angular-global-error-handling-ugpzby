@@ -30,15 +30,15 @@ declare const Windows: any;
 	styleUrls: ['./page-device-settings.component.scss'],
 })
 export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
+	@ViewChild('hsRouterOutlet', { static: false }) hsRouterOutlet: ElementRef;
 	routerSubscription: Subscription;
 	activeElement: HTMLElement;
-	@ViewChild('hsRouterOutlet', { static: false }) hsRouterOutlet: ElementRef;
 	title = 'Device Settings';
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
 	params = { fromTab: true };
-	public menuItems = [
+	menuItems = [
 		{
 			id: 'power',
 			label: 'device.deviceSettings.power.title',
@@ -98,9 +98,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 	isDesktopMachine = true;
 	machineType: number;
+	isOnline: any = true;
 	private notificationSubscription: Subscription;
 	private cmsSubscription: Subscription;
-	public isOnline: any = true;
 
 	constructor(
 		public qaService: QaService,
@@ -114,7 +114,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		private localCacheService: LocalCacheService,
 		private router: Router,
 		private configService: ConfigService,
-		private windowsVerisonService: WindowsVersionService
+		private windowsVersionService: WindowsVersionService
 	) {
 		// translate subheader menus
 		this.menuItems.forEach((m) => {
@@ -166,32 +166,23 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		});
 	}
 
+	// VAN-5872, server switch feature
+	ngOnDestroy() {
+		if (this.notificationSubscription) {
+			this.notificationSubscription.unsubscribe();
+		}
+		if (this.routerSubscription) {
+			this.routerSubscription.unsubscribe();
+		}
+		if (this.cmsSubscription) {
+			this.cmsSubscription.unsubscribe();
+		}
+	}
+
 	hidePowerPage(routeTo: boolean = true) {
 		this.menuItems = this.commonService.removeObjById(this.menuItems, 'power');
 		if (routeTo) {
 			this.router.navigate(['device/device-settings/audio'], { replaceUrl: true });
-		}
-	}
-
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			const { type, payload } = notification;
-			switch (type) {
-				case LocalStorageKey.WelcomeTutorial:
-					if (payload.page === 2) {
-						this.getAudioPageSettings();
-					}
-					break;
-				case LocalStorageKey.IsPowerPageAvailable:
-					if (!payload) {
-						this.hidePowerPage();
-					} else if (typeof payload === 'object') {
-						this.hidePowerPage(payload.link);
-					}
-					break;
-				default:
-					break;
-			}
 		}
 	}
 
@@ -363,7 +354,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			Title: '',
 			ShortTitle: '',
 			Description: '',
-			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
+			FeatureImage: this.windowsVersionService.isNewerThanRS4()
 				? 'assets/cms-cache/Alexa4x3-zone1.webp'
 				: 'assets/cms-cache/Alexa4x3-zone1.jpg',
 			Action: '',
@@ -397,16 +388,26 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	// VAN-5872, server switch feature
-	ngOnDestroy() {
-		if (this.notificationSubscription) {
-			this.notificationSubscription.unsubscribe();
-		}
-		if (this.routerSubscription) {
-			this.routerSubscription.unsubscribe();
-		}
-		if (this.cmsSubscription) {
-			this.cmsSubscription.unsubscribe();
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			const { type, payload } = notification;
+			switch (type) {
+				case LocalStorageKey.WelcomeTutorial:
+					if (payload.page === 2) {
+						this.getAudioPageSettings();
+					}
+					break;
+				case LocalStorageKey.IsPowerPageAvailable:
+					if (!payload) {
+						this.hidePowerPage();
+					} else if (typeof payload === 'object') {
+						this.hidePowerPage(payload.link);
+					}
+					break;
+				default:
+					break;
+			}
 		}
 	}
+
 }

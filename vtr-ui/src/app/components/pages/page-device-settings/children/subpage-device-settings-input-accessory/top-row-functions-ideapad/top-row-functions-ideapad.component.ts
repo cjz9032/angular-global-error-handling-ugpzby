@@ -54,14 +54,12 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			mergeMap((x) =>
 				this.primaryKey$.pipe(map((primaryKeyResponse) => [primaryKeyResponse, x]))
 			),
-			map(([primaryKeyResponse, fnLockStatusResponse]) => {
-				return (
-					(primaryKeyResponse.value === this.keyType.HOTKEY &&
-						fnLockStatusResponse.value === StringBooleanEnum.FALSY) ||
-					(primaryKeyResponse.value !== this.keyType.HOTKEY &&
-						fnLockStatusResponse.value === StringBooleanEnum.TRUTHY)
-				);
-			}),
+			map(([primaryKeyResponse, fnLockStatusResponse]) =>
+				(primaryKeyResponse.value === this.keyType.HOTKEY &&
+					fnLockStatusResponse.value === StringBooleanEnum.FALSY) ||
+				(primaryKeyResponse.value !== this.keyType.HOTKEY &&
+					fnLockStatusResponse.value === StringBooleanEnum.TRUTHY)
+			),
 			tap((status) =>
 				of(status).pipe(
 					takeWhile((status1) => status1),
@@ -85,14 +83,12 @@ export class TopRowFunctionsIdeapadComponent implements OnInit, OnDestroy {
 			mergeMap((x) =>
 				this.primaryKey$.pipe(map((primaryKeyResponse) => [primaryKeyResponse, x]))
 			),
-			map(([primaryKeyResponse, fnLockStatusResponse]) => {
-				return (
+			map(([primaryKeyResponse, fnLockStatusResponse]) => (
 					(primaryKeyResponse.value === this.keyType.FNKEY &&
 						fnLockStatusResponse.value === StringBooleanEnum.FALSY) ||
 					(primaryKeyResponse.value !== this.keyType.FNKEY &&
 						fnLockStatusResponse.value === StringBooleanEnum.TRUTHY)
-				);
-			}),
+				)),
 			tap((status) =>
 				of(status).pipe(
 					takeWhile((status1) => status1),

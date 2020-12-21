@@ -23,11 +23,9 @@ export interface BacklightBase<T = string, K = string> {
 	errorCode?: CommonErrorCode;
 }
 
-export interface BacklightLevel
-	extends BacklightBase<'KeyboardBacklightLevel', BacklightLevelEnum> {}
+export type BacklightLevel = BacklightBase<'KeyboardBacklightLevel', BacklightLevelEnum>;
 
-export interface BacklightStatus
-	extends BacklightBase<'KeyboardBacklightStatus', BacklightStatusEnum> {}
+export type BacklightStatus = BacklightBase<'KeyboardBacklightStatus', BacklightStatusEnum>;
 
 export interface GetBacklightResponse {
 	settingList: {

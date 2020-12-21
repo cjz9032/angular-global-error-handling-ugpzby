@@ -3,7 +3,6 @@ import { VantageShellService } from '../../../../../../services/vantage-shell/va
 import { Battery, BatteryHealthResponse } from './battery-health.interface';
 import { from, Observable, Subject, timer } from 'rxjs';
 import {
-	publishLast,
 	shareReplay,
 	skipWhile,
 	startWith,
@@ -44,7 +43,7 @@ export class BatteryHealthService {
 					(this.localCacheService.getLocalCacheValue(
 						LocalStorageKey.BatteryHealth,
 						undefined
-					) as object | undefined) || {}
+					) as Partial<BatteryHealthResponse> | undefined) || {}
 				)
 			);
 		}

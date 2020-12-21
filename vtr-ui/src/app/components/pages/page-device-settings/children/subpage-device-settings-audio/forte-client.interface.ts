@@ -38,6 +38,7 @@ export interface ForteClient {
 
 	/**
 	 * Get FMAPOCTL.dll version
+	 *
 	 * @return string for example: 1.0.0.0
 	 */
 	getUIVersion(): string;

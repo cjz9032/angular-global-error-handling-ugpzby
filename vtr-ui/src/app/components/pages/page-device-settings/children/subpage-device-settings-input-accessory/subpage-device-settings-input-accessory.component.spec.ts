@@ -165,11 +165,6 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
-		const app: VoipApp = {
-			appName: SupportedAppEnum.MICROSOFT_TEAMS,
-			isAppInstalled: true,
-			isSelected: true,
-		};
 		const voipRes: VoipResponse = {
 			errorCode: 0,
 			capability: true,
@@ -184,16 +179,6 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		keyboardService = TestBed.inject(InputAccessoriesService);
-		const app: VoipApp = {
-			appName: SupportedAppEnum.MICROSOFT_TEAMS,
-			isAppInstalled: true,
-			isSelected: true,
-		};
-		const voipRes: VoipResponse = {
-			errorCode: 0,
-			capability: true,
-			appList: [],
-		};
 		const spy = spyOn(keyboardService, 'setVoipHotkeysSettings').and.returnValue(
 			Promise.reject()
 		);
@@ -633,7 +618,7 @@ describe('SubpageDeviceSettingsInputAccessoryComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	}));
 
-	it("should call getLayoutTable - layout is ''", waitForAsync(() => {
+	it('should call getLayoutTable - layout is \'\'', waitForAsync(() => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsInputAccessoryComponent);
 		component = fixture.componentInstance;
 		const layoutName = '';

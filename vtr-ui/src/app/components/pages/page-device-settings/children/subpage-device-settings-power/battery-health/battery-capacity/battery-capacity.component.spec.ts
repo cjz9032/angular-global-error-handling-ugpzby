@@ -83,18 +83,9 @@ describe('BatteryCapacityComponent', () => {
 	});
 	it('should call toggleToolTip', () => {
 		const tooltip = {
-			isOpen() {
-				// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-				true;
-			},
-			close() {
-				// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-				true;
-			},
-			open() {
-				// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-				true;
-			},
+			isOpen: () => true,
+			close: () => true,
+			open: () => true,
 		};
 		component.toggleToolTip(tooltip, true);
 	});

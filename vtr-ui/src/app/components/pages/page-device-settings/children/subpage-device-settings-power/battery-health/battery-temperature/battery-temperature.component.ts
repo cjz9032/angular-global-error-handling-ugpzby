@@ -11,9 +11,9 @@ import { pluck, skip } from 'rxjs/operators';
 	styleUrls: ['./battery-temperature.component.scss'],
 })
 export class BatteryTemperatureComponent implements OnInit {
-	private conditionBreakpoints = [15, 35, 50];
 	temperature = 25;
 	condition = 'fine';
+	private conditionBreakpoints = [15, 35, 50];
 
 	constructor(private batteryHealthService: BatteryHealthService) {}
 
@@ -33,11 +33,11 @@ export class BatteryTemperatureComponent implements OnInit {
 		});
 		temperature$.subscribe((temperature) => {
 			this.temperature = temperature;
-			this.condition = Conditions[this._condition(temperature)];
+			this.condition = Conditions[this.conditionIndex(temperature)];
 		});
 	}
 
-	private _condition(temperature) {
+	private conditionIndex(temperature) {
 		return this.conditionBreakpoints.reduce(
 			(previousValue, currentValue, currentIndex) =>
 				temperature > currentValue ? currentIndex + 1 : previousValue,

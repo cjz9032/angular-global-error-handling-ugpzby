@@ -5,7 +5,6 @@ import { CommonUiModule } from '../../../../../../modules/common/common-ui.modul
 import { BatteryRankLifespanComponent } from './battery-rank-lifespan/battery-rank-lifespan.component';
 import { BatteryLayoutComponent } from './battery-layout/battery-layout.component';
 import { BatteryTemperatureComponent } from './battery-temperature/battery-temperature.component';
-import { BatteryHealthService } from './battery-health.service';
 import { BatteryCapacityComponent } from './battery-capacity/battery-capacity.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCircle';

@@ -8,8 +8,8 @@ import { BatteryHealthService } from './battery-health.service';
 	styleUrls: ['./battery-health.component.scss'],
 })
 export class BatteryHealthComponent implements OnInit {
-	batteryHealthCapability = false;
 	@Input() hideSeparation = false;
+	batteryHealthCapability = false;
 	constructor(private batteryHealthService: BatteryHealthService) {}
 
 	ngOnInit(): void {

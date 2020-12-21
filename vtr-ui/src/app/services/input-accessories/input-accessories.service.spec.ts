@@ -208,13 +208,13 @@ describe('InputAccessoriesService', () => {
 		})
 	);
 	describe(':', () => {
-		function setup() {
+		const setup = () => {
 			const inputAccessoriesService = TestBed.inject(InputAccessoriesService);
 			const shellService = TestBed.inject(VantageShellService);
 			inputAccessoriesService.keyboardManager = new KeyBoardManagerMock();
 			inputAccessoriesService.keyboard = new KeyBoardMock();
 			return { inputAccessoriesService, shellService };
-		}
+		};
 		it('should be created', () => {
 			const { inputAccessoriesService } = setup();
 			expect(inputAccessoriesService).toBeTruthy();

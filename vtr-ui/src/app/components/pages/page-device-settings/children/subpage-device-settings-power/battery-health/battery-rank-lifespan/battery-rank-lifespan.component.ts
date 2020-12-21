@@ -5,7 +5,6 @@ import { BatteryHealthService } from '../battery-health.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { Subscription } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { catchError } from 'rxjs/operators';
 
 @Component({
 	selector: 'vtr-battery-rank-lifespan',
@@ -13,7 +12,6 @@ import { catchError } from 'rxjs/operators';
 	styleUrls: ['./battery-rank-lifespan.component.scss'],
 })
 export class BatteryRankLifespanComponent implements OnInit {
-	private totalStarCount = 5;
 	capability = false;
 	activatedRouteSubscription: Subscription;
 	items: boolean[] = [];
@@ -50,6 +48,8 @@ export class BatteryRankLifespanComponent implements OnInit {
 		[BatteryLifeSpan.GT_36, '>'],
 		[BatteryLifeSpan.ERROR, ''],
 	]);
+	private totalStarCount = 5;
+
 	constructor(
 		private batteryHealthService: BatteryHealthService,
 		public shellServices: VantageShellService,

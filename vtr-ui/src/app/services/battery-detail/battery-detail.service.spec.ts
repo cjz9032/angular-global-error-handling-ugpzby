@@ -11,11 +11,9 @@ describe('Battery Detail Service', () => {
 	const batteryThresholdFixture = { battery: 'battery' };
 	const powerServiceFixture = {
 		isShellAvailable: true,
-		getChargeThresholdInfo() {
-			return new Promise((resolve) => {
-				resolve(batteryThresholdFixture);
-			});
-		},
+		getChargeThresholdInfo: () => new Promise((resolve) => {
+			resolve(batteryThresholdFixture);
+		})
 	};
 
 	beforeEach(() => {

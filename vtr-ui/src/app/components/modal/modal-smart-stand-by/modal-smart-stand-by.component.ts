@@ -207,7 +207,7 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 		// this.renderActivityChart(this.chartContainer2, this.activities, this.colors.second);
 		// return;
 		this.powerService
-			.GetSmartStandbyActiveHours()
+			.getSmartStandbyActiveHours()
 			.then((data: SmartStandbyActivityModel[]) => {
 				if (data && data.length > 0) {
 					this.renderActivityChart(this.chartContainer2, data, this.colors.second);

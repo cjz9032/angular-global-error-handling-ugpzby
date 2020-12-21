@@ -25,25 +25,25 @@ import { WindowsVersionService } from 'src/app/services/windows-version/windows-
 })
 export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnDestroy {
 	title = 'device.deviceSettings.inputAccessories.title';
-	public shortcutKeys: any[] = [];
-	public privacyIcon = this.windowsVerisonService.isNewerThanRS4()
+	shortcutKeys: any[] = [];
+	privacyIcon = this.windowsVerisonService.isNewerThanRS4()
 		? 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.webp'
 		: 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Privacy-Screen.png';
-	public kbdBlIcon = this.windowsVerisonService.isNewerThanRS4()
+	kbdBlIcon = this.windowsVerisonService.isNewerThanRS4()
 		? 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/KBD-BL.webp'
 		: 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/KBD-BL.png';
-	public merlynIcon = this.windowsVerisonService.isNewerThanRS4()
+	merlynIcon = this.windowsVerisonService.isNewerThanRS4()
 		? 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.webp'
 		: 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Merlyn-Perf-mode.png';
-	public zoomIcon = this.windowsVerisonService.isNewerThanRS4()
+	zoomIcon = this.windowsVerisonService.isNewerThanRS4()
 		? 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Zoom-app.webp'
 		: 'assets/images/hardware-settings/keyboard-images/KeyboarmMap_Icons/Zoom-app.png';
-	public imagePath = 'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/';
-	public imagePathGrafEvo =
+	imagePath = 'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/';
+	imagePathGrafEvo =
 		'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/GrafEvo/';
-	public imagePathCS20 =
+	imagePathCS20 =
 		'assets/images/hardware-settings/keyboard-images/KeyboardMap_Images/CS20/';
-	public imagesArray: string[] = [
+	imagesArray: string[] = [
 		this.windowsVerisonService.isNewerThanRS4() ? 'Belgium.webp' : 'Belgium.png',
 		this.windowsVerisonService.isNewerThanRS4() ? 'French.webp' : 'French.png',
 		this.windowsVerisonService.isNewerThanRS4()
@@ -55,38 +55,37 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		this.windowsVerisonService.isNewerThanRS4() ? 'Turkish_F.webp' : 'Turkish_F.png',
 		this.windowsVerisonService.isNewerThanRS4() ? 'Standered.webp' : 'Standered.png',
 	];
-	public image = '';
-	public additionalCapabilitiesObj: any = {};
-	public machineType: number;
-	public keyboardCompatibility: boolean;
-	public stickyFunStatus = false;
-	public isTouchPadVisible = false;
-	public isMouseVisible = false;
-	public keyboardVersion: string;
-
-	public selectedApp: VoipApp;
-	public installedApps: VoipApp[] = [];
-	public voipUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
-	public showVoipHotkeysSection = false;
-	public isAppInstalled = false;
-	public fnCtrlSwapCapability = false;
-	public fnCtrlSwapStatus = false;
-	public fnAsCtrlCapability = false;
-	public fnAsCtrlStatus = false;
-	public isRestartRequired = false;
+	image = '';
+	additionalCapabilitiesObj: any = {};
+	machineType: number;
+	keyboardCompatibility: boolean;
+	stickyFunStatus = false;
+	isTouchPadVisible = false;
+	isMouseVisible = false;
+	keyboardVersion: string;
+	selectedApp: VoipApp;
+	installedApps: VoipApp[] = [];
+	voipUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	showVoipHotkeysSection = false;
+	isAppInstalled = false;
+	fnCtrlSwapCapability = false;
+	fnCtrlSwapStatus = false;
+	fnAsCtrlCapability = false;
+	fnAsCtrlStatus = false;
+	isRestartRequired = false;
 	voipAppName = ['Skype For Business 2016', 'Microsoft Teams'];
 	iconName: string[] = ['skype-business', 'microsoft-teams'];
-	public tooltipString = 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.';
-
-	public inputAccessoriesCapability: InputAccessoriesCapability;
+	tooltipString = 'device.deviceSettings.inputAccessories.fnCtrlKey.tootTip.';
+	inputAccessoriesCapability: InputAccessoriesCapability;
 	hasUDKCapability = false;
 	fnLockCapability = false;
 	cacheFound = false;
-	public isFrenchKeyboard = false;
-	private topRowFunctionsIdeapadSubscription: Subscription;
+	isFrenchKeyboard = false;
 	backlightCapability$: Observable<boolean>;
-	public fnCtrlKeyTooltipContent = [];
-	public isKbdBacklightAvailable = true;
+	fnCtrlKeyTooltipContent = [];
+	isKbdBacklightAvailable = true;
+
+	private topRowFunctionsIdeapadSubscription: Subscription;
 
 	constructor(
 		private keyboardService: InputAccessoriesService,
@@ -173,12 +172,12 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	setVoipHotkeysSettings(model: UiCircleRadioWithCheckBoxListModel) {
 		this.keyboardService
 			.setVoipHotkeysSettings(+model.value)
-			.then((VoipResponse) => {
-				if (+VoipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
+			.then((voipResponse) => {
+				if (+voipResponse.errorCode !== VoipErrorCodeEnum.SUCCEED) {
 					this.updateVoipUIModel(model.value);
-					return VoipResponse;
+					return voipResponse;
 				}
-				this.installedApps = VoipResponse.appList;
+				this.installedApps = voipResponse.appList;
 				this.setUpVoipUIModel();
 			})
 			.catch((error) => {
@@ -278,7 +277,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	// To get Keyboard Layout Name
-	public getKBDLayoutName() {
+	getKBDLayoutName() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService
@@ -307,7 +306,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	// To get Machine Type
-	public getKBDMachineType(layOutName) {
+	getKBDMachineType(layOutName) {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService
@@ -334,7 +333,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	// To display the keyboard map image
-	public getKeyboardMap(layOutName, machineType) {
+	getKeyboardMap(layOutName, machineType) {
 		const type = machineType.toLowerCase();
 		this.imagesArray.forEach((element) => {
 			if (
@@ -357,7 +356,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 
 	// To get Additional Capability Status
-	public getAdditionalCapabilities() {
+	getAdditionalCapabilities() {
 		this.shortcutKeys = [];
 		try {
 			if (this.keyboardService.isShellAvailable) {
@@ -423,7 +422,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	}
 	// fnCtrlSwap & fnAsCtrl features hidden in 3.2.001
 	// FnCtrlSwap feature start here
-	public getFnCtrlSwapCapability() {
+	getFnCtrlSwapCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService
@@ -443,7 +442,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
-	public getFnCtrlSwap() {
+	getFnCtrlSwap() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService
@@ -462,7 +461,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		}
 	}
 
-	public fnCtrlKey(event) {
+	fnCtrlKey(event) {
 		this.fnCtrlSwapStatus = event.switchValue;
 		try {
 			if (this.keyboardService.isShellAvailable) {
@@ -486,7 +485,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	// FnCtrlSwap feature end here
 
 	// FnAsCtrl feature start here
-	public getFnAsCtrlCapability() {
+	getFnAsCtrlCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService
@@ -506,7 +505,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 			return EMPTY;
 		}
 	}
-	public getFnAsCtrlStatus() {
+	getFnAsCtrlStatus() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService
@@ -525,13 +524,13 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		}
 	}
 
-	public setFnAsCtrl(event) {
+	setFnAsCtrl(event) {
 		this.fnAsCtrlStatus = event.switchValue;
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				this.keyboardService
 					.SetFnAsCtrl(this.fnAsCtrlStatus)
-					.then((res) => {})
+					.then(() => {})
 					.catch((error) => {
 						this.logger.error('SetFnAsCtrl', error.message);
 					});
@@ -542,7 +541,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		}
 	}
 
-	public getLayoutTable(layOutName) {
+	getLayoutTable(layOutName) {
 		this.fnCtrlKeyTooltipContent = [];
 		let array = [];
 		switch (layOutName.toUpperCase()) {
@@ -563,7 +562,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 				break;
 		}
 	}
-	public generateLayOutTable(array) {
+	generateLayOutTable(array) {
 		let obj: any = {};
 		this.fnCtrlKeyTooltipContent = [];
 		array.forEach((el) => {
@@ -584,13 +583,13 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		});
 	}
 	// FnAsCtrl feature end here
-	public launchProtocol(protocol: string) {
+	launchProtocol(protocol: string) {
 		if (this.keyboardService.isShellAvailable && protocol && protocol.length > 0) {
 			WinRT.launchUri(protocol);
 		}
 	}
 
-	public getMouseAndTouchPadCapability() {
+	getMouseAndTouchPadCapability() {
 		if (this.keyboardService.isShellAvailable) {
 			Promise.all([
 				this.keyboardService.getMouseCapability(),
@@ -613,7 +612,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 		}
 	}
 
-	public showHideKeyboardBacklight(available: any) {
+	showHideKeyboardBacklight(available: any) {
 		this.isKbdBacklightAvailable = available;
 	}
 
@@ -652,11 +651,7 @@ export class SubpageDeviceSettingsInputAccessoryComponent implements OnInit, OnD
 	// updated selected option in model
 	private updateVoipUIModel(selectedAppId: string) {
 		this.voipUIModel.forEach((app: UiCircleRadioWithCheckBoxListModel) => {
-			if (app.value === selectedAppId) {
-				app.isChecked = true;
-			} else {
-				app.isChecked = false;
-			}
+			app.isChecked = app.value === selectedAppId;
 		});
 	}
 }

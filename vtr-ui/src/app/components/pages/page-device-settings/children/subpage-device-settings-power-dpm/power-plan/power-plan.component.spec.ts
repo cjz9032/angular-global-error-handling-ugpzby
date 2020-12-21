@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { PowerPlanComponent } from './power-plan.component';
 import { PowerDpmService } from 'src/app/services/power-dpm/power-dpm.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { of } from 'rxjs';
 import { AllPowerPlans } from 'src/app/data-models/dpm/all-power-plans.model';
 import { PowerPlan } from 'src/app/data-models/dpm/power-plan.model';
 import { TranslationModule } from 'src/app/modules/translation.module';
@@ -37,7 +37,7 @@ describe('PowerPlanComponent', () => {
 	});
 
 	it('should get the active power plan', () => {
-		let mockAllPowerPlans = {
+		const mockAllPowerPlans = {
 			activePowerPlan: 'Balanced',
 			powerPlanList: [
 				{ powerPlanName: 'Balanced' } as PowerPlan,
@@ -49,7 +49,7 @@ describe('PowerPlanComponent', () => {
 		expect(component.selectedPowerPlanVal.powerPlanName).toEqual('Balanced');
 	});
 
-	it('should get null when error occure', () => {
+	it('should get null when error occur', () => {
 		component.selectedPowerPlanVal = null;
 		spyOn(powerDpmService, 'getAllPowerPlansObs').and.returnValue(of(null));
 		fixture.detectChanges();

@@ -12,7 +12,7 @@ import { QaService } from 'src/app/services/qa/qa.service';
 import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-screen.model';
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, NavigationExtras } from '@angular/router';
 import { throttleTime } from 'rxjs/operators';
@@ -32,52 +32,52 @@ import { WindowsVersionService } from 'src/app/services/windows-version/windows-
 	styleUrls: ['./page-smart-assist.component.scss'],
 })
 export class PageSmartAssistComponent implements OnInit, OnDestroy {
+	@Output() distanceChange: any = new EventEmitter();
 	title = 'Smart Assist';
 	back = 'BACK';
 	backarrow = '< ';
 	parentPath = 'device';
-	@Output() distanceChange: any = new EventEmitter();
-	public isThinkPad = true;
-	public tooltipText =
+	isThinkPad = true;
+	tooltipText =
 		'device.smartAssist.intelligentSecurity.zeroTouchLock.autoScreenLockTimer.toolTipContent';
-	public humanPresenceDetectStatus = new FeatureStatus(false, true);
-	public autoIrCameraLoginStatus = new FeatureStatus(false, true);
-	public intelligentSecurity: IntelligentSecurity = new IntelligentSecurity();
+	humanPresenceDetectStatus = new FeatureStatus(false, true);
+	autoIrCameraLoginStatus = new FeatureStatus(false, true);
+	intelligentSecurity: IntelligentSecurity = new IntelligentSecurity();
 	// public intelligentSecurityCopy: IntelligentSecurity;
-	public autoScreenLockTimer = false;
-	public zeroTouchLoginStatus = new FeatureStatus(false, true);
-	public zeroTouchLockTitle: string;
-	public options: any;
+	autoScreenLockTimer = false;
+	zeroTouchLoginStatus = new FeatureStatus(false, true);
+	zeroTouchLockTitle: string;
+	options: any;
 	// public keepMyDisplay: boolean;
-	public getAutoScreenOffNoteStatus: any;
-	public intelligentScreen: IntelligentScreen = new IntelligentScreen();
-	public intelligentMedia = new FeatureStatus(false, true);
-	public lenovoVoice = new FeatureStatus(false, true);
-	public isIntelligentMediaLoading = true;
-	public isAPSAvailable = false;
+	getAutoScreenOffNoteStatus: any;
+	intelligentScreen: IntelligentScreen = new IntelligentScreen();
+	intelligentMedia = new FeatureStatus(false, true);
+	lenovoVoice = new FeatureStatus(false, true);
+	isIntelligentMediaLoading = true;
+	isAPSAvailable = false;
 	private visibilityChange: any;
 	private Windows: any;
 	private windowsObj: any;
-	public hpdSensorType = 0;
-	public sensitivityVisibility = false;
-	public sensitivityAdjustVal: number;
+	hpdSensorType = 0;
+	sensitivityVisibility = false;
+	sensitivityAdjustVal: number;
 	smartAssistCache: SmartAssistCache;
-	public isSuperResolutionLoading = true;
-	public superResolution = new SuperResolutionResponse(false, true, '');
-	public hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
-	public image = this.windowsVerisonService.isNewerThanRS4()
+	isSuperResolutionLoading = true;
+	superResolution = new SuperResolutionResponse(false, true, '');
+	hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
+	image = this.windowsVerisonService.isNewerThanRS4()
 		? '/assets/images/hardware-settings/smart-assist/intelligent-security/HPD_Img.webp'
 		: '/assets/images/hardware-settings/smart-assist/intelligent-security/HPD_Img.png';
-	public zeroTouchLoginShowAdvancedSection: boolean;
-	public zeroTouchLockShowAdvancedSection: boolean;
-	public zeroTouchPresenceLeaveDistanceCapability = false;
-	public zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
-	public isRegisterHPDRpcCallback = false;
-	public isVideoPlaybackHsaAvailable = false;
+	zeroTouchLoginShowAdvancedSection: boolean;
+	zeroTouchLockShowAdvancedSection: boolean;
+	zeroTouchPresenceLeaveDistanceCapability = false;
+	zeroTouchPresenceLeaveDistanceAutoAdjustCapability = false;
+	isRegisterHPDRpcCallback = false;
+	isVideoPlaybackHsaAvailable = false;
 	private cameraAccessChangedHandler: any;
-	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
-	public featureInitialize = {
+	featureInitialize = {
 		security: true,
 		sensing: false,
 		screen: true,
@@ -92,11 +92,11 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	cardContentPositionA: any = {};
 	private machineType: number;
 	private smartAssistCapability: SmartAssistCapability = undefined;
-	public jumpToSettingsTitle: string;
-	public readonly FAST = '1';
-	public readonly MEDIUM = '2';
-	public readonly SLOW = '3';
-	public zeroTouchLockTimersUIModel: Array<UiRoundedRectangleRadioModel> = [
+	jumpToSettingsTitle: string;
+	readonly FAST = '1';
+	readonly MEDIUM = '2';
+	readonly SLOW = '3';
+	zeroTouchLockTimersUIModel: Array<UiRoundedRectangleRadioModel> = [
 		{
 			componentId: 'autoScreenLockTimer_fast',
 			label:
@@ -148,7 +148,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		),
 	};
 
-	public superResolutionTip =
+	superResolutionTip =
 		this.superResolutionTips.description1 +
 		this.superResolutionTips.player1 +
 		this.superResolutionTips.player2 +
