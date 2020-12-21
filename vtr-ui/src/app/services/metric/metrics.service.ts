@@ -224,20 +224,20 @@ export class MetricService {
 		);
 	}
 
-	public sendAppLoadedMetric(performanceTimes) {
+	public sendAppLoadedMetric(performanceTimePoints) {
 		const loadedEvent: AppLoaded = {
 			ItemType: EventName.apploaded,
 			DurationForWeb: this.appInitDuration,
 			DurationActivatePage: this.firstPageActiveDuration,
 			TargePage: this.getPageName(),
-			WebAppSource: performanceTimes.webAppSource ?? '',
-			CERT_PIN_DONE: performanceTimes.certPingDone ?? 0,
-			INDEXPAGE_CONNECTION_ESTABLISHED: performanceTimes.indexPageEstablished,
-			DOM_INTERACTIVED: performanceTimes.domInteractived ?? 0,
-			SCRIPT_LOADED: performanceTimes.scriptLoaded ?? 0,
-			APP_INITIALIZED: performanceTimes.appInitialized ?? 0,
-			APP_ENTRY_LOADED: performanceTimes.appEntryLoaded ?? 0,
-			FIRST_PAGE_LOADED: performanceTimes.firstPageLoaded ?? 0
+			WebAppSource: performanceTimePoints.webAppSource ?? '',
+			CERT_PIN_DONE: performanceTimePoints.certPingDone ?? 0,
+			INDEXPAGE_CONNECTION_ESTABLISHED: performanceTimePoints.indexPageEstablished,
+			DOM_INTERACTIVED: performanceTimePoints.domInteractived ?? 0,
+			SCRIPT_LOADED: performanceTimePoints.scriptLoaded ?? 0,
+			APP_INITIALIZED: performanceTimePoints.appInitialized ?? 0,
+			APP_ENTRY_LOADED: performanceTimePoints.appEntryLoaded ?? 0,
+			FIRST_PAGE_LOADED: performanceTimePoints.firstPageLoaded ?? 0
 		};
 		this.metricsClient.sendAsync(loadedEvent);
 	}

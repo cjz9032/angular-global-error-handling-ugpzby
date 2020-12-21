@@ -618,43 +618,43 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	private analyzePerformance(firstPage: string) {
+		const win: any = window;
+		const navPerf = performance.getEntriesByType(
+			'navigation'
+		)[0] as PerformanceNavigationTiming;
+		const performanceTimePoints = {
+			certPingDone: win.VantageStub?.certpinTime ?? 0,
+			webAppSource: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? 'local' : `aws-s3, ${win.location.host}`,
+			indexPageEstablished: 0,
+			domInteractived: 0,
+			scriptLoaded: 0,
+			appInitialized: 0,
+			appEntryLoaded: 0,
+			firstPageLoaded: 0
+		};
+		if (win.VantageStub?.navigationStartingTime && win.VantageStub?.appStartTime) {
+			const navigationStartTime = (win.VantageStub.navigationStartingTime - win.VantageStub.appStartTime) / 10000;
+			performanceTimePoints.indexPageEstablished = Math.round(navigationStartTime + navPerf.connectEnd - navPerf.startTime);
+			performanceTimePoints.domInteractived = Math.round(navigationStartTime + navPerf.domInteractive - navPerf.startTime);
+			performanceTimePoints.scriptLoaded = Math.round(navigationStartTime + navPerf.duration);
+			performanceTimePoints.appInitialized = Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app initialized')?.startTime ?? 0) - navPerf.startTime);
+			performanceTimePoints.appEntryLoaded = Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app entry loaded')?.startTime ?? 0) - navPerf.startTime);
+			performanceTimePoints.firstPageLoaded = Math.round(navigationStartTime + (this.commonService.getPerformanceNode(firstPage)?.startTime ?? 0)  - navPerf.startTime);
+		}
+		this.metricService.sendAppLoadedMetric(performanceTimePoints);
 		if (this.environment.debuggingSnackbar) {
-			const win: any = window;
-			const navPerf = performance.getEntriesByType(
-				'navigation'
-			)[0] as PerformanceNavigationTiming;
-			const performanceTimes = {
-				certPingDone: win.VantageStub?.certpinTime ?? 0,
-				webAppSource: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? 'local' : `aws-s3, ${win.location.host}`,
-				indexPageEstablished: 0,
-				domInteractived: 0,
-				scriptLoaded: 0,
-				appInitialized: 0,
-				appEntryLoaded: 0,
-				firstPageLoaded: 0
-			};
-			if (win.VantageStub?.navigationStartingTime && win.VantageStub?.appStartTime) {
-				const navigationStartTime = (win.VantageStub.navigationStartingTime - win.VantageStub.appStartTime) / 10000;
-				performanceTimes.indexPageEstablished = Math.round(navigationStartTime + navPerf.connectEnd - navPerf.startTime);
-				performanceTimes.domInteractived = Math.round(navigationStartTime + navPerf.domInteractive - navPerf.startTime);
-				performanceTimes.scriptLoaded = Math.round(navigationStartTime + navPerf.duration);
-				performanceTimes.appInitialized = Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app initialized')?.startTime ?? 0) - navPerf.startTime);
-				performanceTimes.appEntryLoaded = Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app entry loaded')?.startTime ?? 0) - navPerf.startTime);
-				performanceTimes.firstPageLoaded = Math.round(navigationStartTime + (this.commonService.getPerformanceNode(firstPage)?.startTime ?? 0)  - navPerf.startTime);
-			}
-			let content = `You are now accessing ${performanceTimes.webAppSource} \n \n`;
-			content += `Cert ping time: ${performanceTimes.certPingDone} ms \n`;
-			content += `Index page established: ${performanceTimes.indexPageEstablished} ms \n`;
-			content += `Dom interactived: ${performanceTimes.domInteractived} ms \n`;
-			content += `Script loaded: ${performanceTimes.scriptLoaded} ms \n`;
-			content += `App initialized: ${performanceTimes.appInitialized} ms \n`;
-			content += `App entry loaded: ${performanceTimes.appEntryLoaded} ms \n`;
-			content += `First page loaded: ${performanceTimes.firstPageLoaded} ms`;
+			let content = `You are now accessing ${performanceTimePoints.webAppSource} \n \n`;
+			content += `Cert ping time: ${performanceTimePoints.certPingDone} ms \n`;
+			content += `Index page established: ${performanceTimePoints.indexPageEstablished} ms \n`;
+			content += `Dom interactived: ${performanceTimePoints.domInteractived} ms \n`;
+			content += `Script loaded: ${performanceTimePoints.scriptLoaded} ms \n`;
+			content += `App initialized: ${performanceTimePoints.appInitialized} ms \n`;
+			content += `App entry loaded: ${performanceTimePoints.appEntryLoaded} ms \n`;
+			content += `First page loaded: ${performanceTimePoints.firstPageLoaded} ms`;
 			console.log(content);
 			this.snackBar.open(content, 'Close', {
 				panelClass: ['snackbar'],
 			});
-			this.metricService.sendAppLoadedMetric(performanceTimes);
 		}
 	}
 }
