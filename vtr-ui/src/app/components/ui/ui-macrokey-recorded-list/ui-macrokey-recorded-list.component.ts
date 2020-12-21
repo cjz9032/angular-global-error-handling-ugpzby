@@ -235,6 +235,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 									this.recordsData.inputs
 								);
 							}
+							this.recordsList = this.pairRecordingData(this.recordsData.inputs);
 						}
 					});
 			}
