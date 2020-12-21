@@ -29,13 +29,13 @@ export class GamingThirdPartyAppService {
 		}
 	}
 
-	public isLACSupportUriProtocol(index: number): Promise<any> {
+	public isLACSupportUriProtocol(key: string): Promise<any> {
 		if (this.isShellAvailable) {
 			return new Promise((resolve) => {
 				try {
-					this.regUtil.queryValue(this.regPath[index]).then((res) => {
+					this.regUtil.queryValue(this.regPath[key]).then((res) => {
 						this.logger.info(
-							`Service-thirdPartyApp-isLACSupportUriProtocol: index is ${index}, queryValue return value: ${res}`
+							`Service-thirdPartyApp-isLACSupportUriProtocol: app is ${key}, queryValue return value: ${res}`
 						);
 						if (res.keyList.length !== 0) {
 							resolve(true);
@@ -44,7 +44,7 @@ export class GamingThirdPartyAppService {
 					});
 				} catch (error) {
 					this.logger.error(
-						`Service-thirdPartyApp-isLACSupportUriProtocol: index is ${index}, queryValue fail; Error message: `,
+						`Service-thirdPartyApp-isLACSupportUriProtocol: app is ${key}, queryValue fail; Error message: `,
 						error.message
 					);
 					throw new Error(error.message);
@@ -58,21 +58,21 @@ export class GamingThirdPartyAppService {
 		}
 	}
 
-	launchThirdPartyApp(isSupported: any, index: number): Promise<any> {
+	launchThirdPartyApp(isSupported: any, key: string): Promise<any> {
 		if (this.isShellAvailable && isSupported) {
 			return new Promise(async (resolve) => {
 				try {
 					// launch win32 app through protocol
-					const result = await WinRT.launchUri(this.protocolUrl[index]);
+					const result = await WinRT.launchUri(this.protocolUrl[key]);
 					this.logger.info(
-						`Service-thirdPartyApp-launchThirdPartyApp: index is ${index}, WinRT.launchUri return: ${result}`
+						`Service-thirdPartyApp-launchThirdPartyApp: app is ${key}, WinRT.launchUri return: ${result}`
 					);
 					if (result) {
 						resolve(true);
 					}
 				} catch (error) {
 					this.logger.error(
-						`Service-thirdPartyApp-launchThirdPartyApp: index is ${index}, launch fail; Error message: `,
+						`Service-thirdPartyApp-launchThirdPartyApp: app is ${key}, launch fail; Error message: `,
 						error.message
 					);
 					throw new Error(error.message);

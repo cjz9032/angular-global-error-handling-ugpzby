@@ -280,14 +280,14 @@ describe('WidgetSystemToolsComponent', () => {
 			expect(accessoryFeatureCache).toBe(true);
 		}));
 
-		it('launchAccessory', fakeAsync(() => {
+		it('launchThirdPartyApp', fakeAsync(() => {
 			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
 				Promise.resolve(true)
 			);
 			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(true));
 			spyOn(component, 'openWaringModal').and.callFake(() => {});
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
-			component.launchAccessory();
+			component.launchThirdPartyApp('accessory');
 			tick();
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 
@@ -296,7 +296,7 @@ describe('WidgetSystemToolsComponent', () => {
 			);
 			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(false));
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
-			component.launchAccessory();
+			component.launchThirdPartyApp('accessory');
 			tick();
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 
@@ -305,19 +305,19 @@ describe('WidgetSystemToolsComponent', () => {
 			);
 			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(undefined));
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
-			component.launchAccessory();
+			component.launchThirdPartyApp('accessory');
 			tick();
 			expect(component.openWaringModal).toHaveBeenCalledTimes(1);
 		}));
 
-		it('launchAccessory error', () => {
+		it('launchThirdPartyApp error', () => {
 			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.throwError(
-				'launchAccessory error'
+				'launchThirdPartyApp error'
 			);
 			try {
-				component.launchAccessory();
+				component.launchThirdPartyApp('accessory');
 			} catch (error) {
-				expect(error).toMatch('launchAccessory error');
+				expect(error).toMatch('launchThirdPartyApp error');
 			}
 		});
 

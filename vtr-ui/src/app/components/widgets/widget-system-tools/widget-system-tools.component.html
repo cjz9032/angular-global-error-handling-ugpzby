@@ -84,7 +84,7 @@
 						</li>
 
 						<li *ngIf="showLegionAccessory">
-							<button class="button-container" (click)="launchAccessory()"
+							<button class="button-container" (click)="launchThirdPartyApp('accessory')"
 							 tabindex="1"  id="systemtools_legion_accessory_central_icon" aria-label="legion accessory central" role="button"
 							 vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
 								<a tabindex="-1">
@@ -94,6 +94,23 @@
 										</div>
 										<figcaption class="system-tool-title" title="{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}">
 											{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}
+										</figcaption>
+									</figure>
+								</a>
+							</button>
+						</li>
+
+						<li *ngIf="showNahimic">
+							<button class="button-container" (click)="launchThirdPartyApp('nahimic')"
+							 tabindex="1"  id="systemtools_legion_accessory_central_icon" aria-label="legion accessory central" role="button"
+							 vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
+								<a tabindex="-1">
+									<figure>
+										<div class="system-icon" title="">
+											<img class="image"/>
+										</div>
+										<figcaption class="system-tool-title" title="{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}">
+											Nahimic
 										</figcaption>
 									</figure>
 								</a>

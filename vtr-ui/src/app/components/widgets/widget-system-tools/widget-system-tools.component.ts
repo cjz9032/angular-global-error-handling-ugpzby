@@ -2,7 +2,6 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { GamingAllCapabilities } from './../../../data-models/gaming/gaming-all-capabilities';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { isUndefined } from 'util';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Gaming } from 'src/app/enums/gaming.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -12,6 +11,7 @@ import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/mo
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory/gaming-accessory.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-third-party-App/gaming-third-party-app.service';
 
 @Component({
 	selector: 'vtr-widget-system-tools',
@@ -24,6 +24,8 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	public gamingProperties: any = new GamingAllCapabilities();
 	// version 3.3 for accessory entrance
 	public showLegionAccessory = false;
+	// Vsrsion 3.5 for nahimic entrance
+	public showNahimic = false;
 	public toolLength = 3;
 
 	modalAutomationId: any = {
@@ -43,6 +45,7 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		private hardwareScanService: HardwareScanService,
 		// version 3.3 show entrance & launch accessory
 		private gamingAccessoryService: GamingAccessoryService,
+		private gamingThirdPartyAppService: GamingThirdPartyAppService,
 		private logger: LoggerService
 	) {}
 
@@ -86,9 +89,16 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		}
 
 		// version 3.3 legion accessory get reg status
-		this.gamingAccessoryService.isLACSupportUriProtocol().then((res) => {
+		this.gamingThirdPartyAppService.isLACSupportUriProtocol('accessory').then((res) => {
 			if (res !== this.showLegionAccessory && res !== undefined) {
 				this.showLegionAccessory = res;
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.accessoryFeature, res);
+				this.calcToolLength();
+			}
+		});
+		this.gamingThirdPartyAppService.isLACSupportUriProtocol('nahimic').then((res) => {
+			if (res !== this.showNahimic && res !== undefined) {
+				this.showNahimic = res;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.accessoryFeature, res);
 				this.calcToolLength();
 			}
@@ -115,15 +125,18 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		if (this.showLegionAccessory) {
 			originalLength++;
 		}
+		if(this.showNahimic) {
+			originalLength++;
+		}
 
 		this.toolLength = originalLength;
 	}
 
-	launchAccessory() {
+	launchThirdPartyApp(key: string) {
 		try {
-			this.gamingAccessoryService
-				.isLACSupportUriProtocol()
-				.then((res) => this.gamingAccessoryService.launchAccessory(res))
+			this.gamingThirdPartyAppService
+				.isLACSupportUriProtocol(key)
+				.then((res) => this.gamingThirdPartyAppService.launchThirdPartyApp(res, key))
 				.then((res) => {
 					this.logger.info(`Widget-SystemTools-LaunchAccessory: return value: ${res}`);
 					if (!res && res === undefined) {
