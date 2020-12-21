@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Lenovo WiFi-beveiliging is een geavanceerde cloudgebaseerde softwareservice die uw apparaat helpt onderscheid te maken tussen veilige draadloze netwerken en mogelijk schadelijke.",
 				"enabledDescribe": "Lenovo WiFi-beveiliging bewaakt je WiFi-netwerk op dit moment."
 			},
-			"threatlocator": {
-				"describe": "Gebruik de dreigingsdetector om de veiligheid van de netwerken om u heen te bepalen.",
-				"button": "Bedreiging controleren",
-				"connectionError": "Verbindingsfout",
-				"tryAgain": "We kunnen de bedreiging niet voor u vinden omdat er geen netwerk beschikbaar is. Maak verbinding met internet en probeer het nog eens."
-			},
 			"locationmodal": {
 				"title": "Locatieservices inschakelen",
 				"describe1": "Als u Lenovo WiFi-beveiliging wilt gebruiken, moet u locatieservices inschakelen voor Lenovo Vantage. Wilt u uw locatie nu inschakelen?",

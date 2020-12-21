@@ -2800,12 +2800,6 @@
 				"disableDescribe": "Lenovo WiFi 安全是一项基于云的先进软件服务，可帮助您的设备区分安全的无线网络与潜在的恶意网络。",
 				"enabledDescribe": "Lenovo WiFi 安全目前正在监控您的 WiFi 网络。"
 			},
-			"threatlocator": {
-				"describe": "使用威胁检测程序来确定您周围网络的安全性。",
-				"button": "检查威胁",
-				"connectionError": "连接错误",
-				"tryAgain": "由于网络不可用，我们无法找到针对您的威胁，请连接到因特网并重试。"
-			},
 			"locationmodal": {
 				"title": "启用位置服务",
 				"describe1": "要使用 Lenovo WiFi 安全，您必须为 Lenovo Vantage 启用位置服务。是否立即启用位置？",

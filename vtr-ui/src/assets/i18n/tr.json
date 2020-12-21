@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Lenovo WiFi Güvenliği, cihazınızın güvenli kablosuz ağları olası kötü amaçlı ağlardan ayırmasına yardımcı olan gelişmiş bulut tabanlı bir yazılım hizmetidir.",
 				"enabledDescribe": "Lenovo WiFi Güvenliği şu anda WiFi ağınızı izliyor."
 			},
-			"threatlocator": {
-				"describe": "Çevrenizdeki ağların güvenliğini belirlemek için tehdit algılayıcıyı kullanın.",
-				"button": "Tehdidi denetle",
-				"connectionError": "Bağlantı Hatası",
-				"tryAgain": "Ağ kullanılamadığından size yönelik tehdidi bulamıyoruz, lütfen İnternet’e bağlanın ve yeniden deneyin."
-			},
 			"locationmodal": {
 				"title": "Konum hizmetlerini etkinleştir",
 				"describe1": "Lenovo WiFi Güvenliği'ni kullanmak isterseniz Lenovo Vantage için konum hizmetlerini etkinleştirmeniz gerekir. Konumu şimdi etkinleştirmek ister misiniz?",

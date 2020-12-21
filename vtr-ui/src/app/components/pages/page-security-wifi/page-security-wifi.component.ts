@@ -1,20 +1,20 @@
 import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, NgZone } from '@angular/core';
-import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs/internal/Subscription';
 import * as phoenix from '@lenovo/tan-client-bridge';
-import { EventTypes, PluginMissingError } from '@lenovo/tan-client-bridge';
+
+import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
-import { ActivatedRoute } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { Subscription } from 'rxjs/internal/Subscription';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
@@ -22,7 +22,6 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
 import { UserService } from 'src/app/services/user/user.service';
-import { MatDialog } from '@lenovo/material/dialog';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 
@@ -55,8 +54,37 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	interval = 15000;
 	segmentConst = SegmentConst;
 	maxCanTrialTime = 31;
+	constructor(
+		public activeRouter: ActivatedRoute,
+		private commonService: CommonService,
+		private dialogService: DialogService,
+		public modalService: NgbModal,
+		public shellService: VantageShellService,
+		private cmsService: CMSService,
+		public translate: TranslateService,
+		private ngZone: NgZone,
+		public configService: ConfigService,
+		public deviceService: DeviceService,
+		private localInfoService: LocalInfoService,
+		private localCacheService: LocalCacheService,
+		public wifiSecurityService: WifiSecurityService,
+		public userService: UserService,
+		private metrics: MetricService
+	) { }
+
+	@HostListener('window:focus')
+	onFocus(): void {
+		if (this.wifiSecurity) {
+			this.wifiSecurity.refresh();
+			this.getTrialDay();
+		}
+		if (!this.intervalId) {
+			this.pullCHS();
+		}
+	}
+
 	wsPluginMissingEventHandler = () => {
-		this.handleError(new PluginMissingError());
+		this.handleError(new phoenix.PluginMissingError());
 	};
 	wsIsLocationServiceOnEventHandler = (value) => {
 		this.ngZone.run(() => {
@@ -94,23 +122,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.getTrialDay();
 		}
 	};
-	constructor(
-		public activeRouter: ActivatedRoute,
-		private commonService: CommonService,
-		private dialogService: DialogService,
-		public modalService: NgbModal,
-		public shellService: VantageShellService,
-		private cmsService: CMSService,
-		public translate: TranslateService,
-		private ngZone: NgZone,
-		public configService: ConfigService,
-		public deviceService: DeviceService,
-		private localInfoService: LocalInfoService,
-		private localCacheService: LocalCacheService,
-		public wifiSecurityService: WifiSecurityService,
-		public userService: UserService,
-		private metrics: MetricService
-	) {}
 
 	ngOnInit() {
 		this.securityAdvisor = this.shellService.getSecurityAdvisor();
@@ -133,10 +144,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.fetchCMSArticles();
 
 		this.wifiSecurity
-			.on(EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
-			.on(EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler)
-			.on(EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler)
-			.on(EventTypes.wsStateEvent, this.wsStateEventHandler);
+			.on(phoenix.EventTypes.wsPluginMissingEvent, this.wsPluginMissingEventHandler)
+			.on(phoenix.EventTypes.wsIsLocationServiceOnEvent, this.wsIsLocationServiceOnEventHandler)
+			.on(phoenix.EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler)
+			.on(phoenix.EventTypes.wsStateEvent, this.wsStateEventHandler);
 		this.getTrialDay();
 		this.sendMetrics();
 
@@ -159,7 +170,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.wifiSecurity.getWifiSecurityState();
 			this.wifiSecurity.getWifiHistory();
 			this.wifiSecurity.getWifiState().then(
-				(res) => {},
+				(res) => { },
 				(error) => {
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				}
@@ -173,17 +184,6 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (fragment) {
 			document.getElementById(fragment).scrollIntoView();
 			window.scrollBy(0, -100);
-		}
-	}
-
-	@HostListener('window:focus')
-	onFocus(): void {
-		if (this.wifiSecurity) {
-			this.wifiSecurity.refresh();
-			this.getTrialDay();
-		}
-		if (!this.intervalId) {
-			this.pullCHS();
 		}
 	}
 
@@ -201,15 +201,15 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 			this.wifiSecurity.cancelGetWifiHistory();
 			this.wifiSecurity.cancelGetWifiSecurityState();
 			this.wifiSecurity.off(
-				EventTypes.wsPluginMissingEvent,
+				phoenix.EventTypes.wsPluginMissingEvent,
 				this.wsPluginMissingEventHandler
 			);
 			this.wifiSecurity.off(
-				EventTypes.wsIsLocationServiceOnEvent,
+				phoenix.EventTypes.wsIsLocationServiceOnEvent,
 				this.wsIsLocationServiceOnEventHandler
 			);
-			this.wifiSecurity.off(EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler);
-			this.wifiSecurity.off(EventTypes.wsStateEvent, this.wsStateEventHandler);
+			this.wifiSecurity.off(phoenix.EventTypes.wsTrialDaysOnEvent, this.wsTrialTimeOnEventHandler);
+			this.wifiSecurity.off(phoenix.EventTypes.wsStateEvent, this.wsStateEventHandler);
 		}
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
@@ -251,7 +251,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 					}
 				}
 			},
-			(error) => {}
+			(error) => { }
 		);
 
 		this.cmsService
@@ -326,7 +326,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	private handleError(err) {
-		if (err && err instanceof PluginMissingError) {
+		if (err && err instanceof phoenix.PluginMissingError) {
 			this.dialogService.wifiSecurityErrorMessageDialog();
 		}
 	}
@@ -382,7 +382,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		}
 	}
 
-	needOpenExpireDialog(hasTrialDays: number): boolean {
+	private needOpenExpireDialog(hasTrialDays: number): boolean {
 		const lastTrialTime = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.SecurityWifiSecurityPromptDialogPopUpDays,
 			1
@@ -390,12 +390,10 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		if (hasTrialDays >= this.maxCanTrialTime) {
 			return true;
 		}
-		return [7, 14, 21, 28].reduce((prev, cur) => {
-			return prev || (hasTrialDays >= cur && lastTrialTime < cur);
-		}, false);
+		return [7, 14, 21, 28].reduce((prev, cur) => prev || (hasTrialDays >= cur && lastTrialTime < cur), false);
 	}
 
-	sendMetrics() {
+	private sendMetrics() {
 		const state = this.wifiSecurityService.isLWSEnabled ? 'enabled' : 'disabled';
 		const loginState = this.userService.auth ? 'logged-in' : 'not-logged-in';
 		const metricsData = {
@@ -406,7 +404,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		this.metrics.sendMetrics(metricsData);
 	}
 
-	getTrialDay() {
+	private getTrialDay() {
 		if (
 			this.wifiSecurityService.isLWSEnabled &&
 			!this.userService.auth &&

@@ -6,7 +6,6 @@ export class HomeSecurityAccount {
 	role: CHSAccountRole;
 	expirationDay: number;
 	lenovoId: string;
-	purchase() {}
 
 	constructor(chs?: any, common?: HomeSecurityCommon) {
 		if (chs && chs.account) {
@@ -26,9 +25,6 @@ export class HomeSecurityAccount {
 			}
 			if (chs.account.lenovoId) {
 				this.lenovoId = chs.account.lenovoId;
-			}
-			if (common) {
-				this.purchase = common.upgrade.bind(common);
 			}
 		}
 	}

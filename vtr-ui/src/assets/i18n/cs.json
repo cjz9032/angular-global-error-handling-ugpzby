@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Zabezpečení WiFi Lenovo je pokročilá cloudová softwarová služba, která pomáhá vašemu zařízení odlišit bezpečné bezdrátové sítě od potenciálně škodlivých.",
 				"enabledDescribe": "Zabezpečení Lenovo WiFi aktuálně sleduje vaši síť WiFi."
 			},
-			"threatlocator": {
-				"describe": "Vyhledávač hrozeb vám pomůže zjistit, jak bezpečné jsou sítě kolem vás.",
-				"button": "Zkontrolovat hrozby",
-				"connectionError": "Chyba spojení",
-				"tryAgain": "Z důvodu nedostupné sítě nemůžeme najít hrozbu. Připojte se k internetu a zkuste to znovu."
-			},
 			"locationmodal": {
 				"title": "Povolit zjišťování polohy",
 				"describe1": "Před použitím zabezpečení WiFi Lenovo musíte pro program Lenovo Vantage povolit zjišťování polohy. Chcete nyní zapnout zjišťování polohy?",

@@ -2801,12 +2801,6 @@
 				"disableDescribe": "Lenovo WiFi セキュリティーは高度なクラウドベースのソフトウェアサービスで、デバイスが安全な無線ネットワークを潜在的に悪意のあるものと区別するのに役立ちます。",
 				"enabledDescribe": "Lenovo WiFi セキュリティーが現在 WiFi ネットワークを監視しています。"
 			},
-			"threatlocator": {
-				"describe": "脅威検出器を使用して、周囲のネットワークの安全性を判断します。",
-				"button": "脅威を確認",
-				"connectionError": "接続エラー",
-				"tryAgain": "ネットワークが利用できないため、脅威を見つけることができません。インターネットに接続してからもう一度お試しください。"
-			},
 			"locationmodal": {
 				"title": "位置情報サービスの有効化",
 				"describe1": "Lenovo WiFi セキュリティーを使用するには、Lenovo Vantage に対して位置情報サービスを有効にする必要があります。位置情報を今すぐ有効にしますか?",

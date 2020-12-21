@@ -665,7 +665,7 @@ export class VantageShellService {
 				},
 			},
 			wifiSecurity: {
-				getWifiSecurityTrialDays: () => {},
+				getWifiSecurityTrialDays: () => { },
 				mitt: null,
 				state: 'enabled',
 				wifiHistory: [
@@ -696,7 +696,7 @@ export class VantageShellService {
 				getWifiSecurityStateOnce(): Promise<any> {
 					return Promise.resolve();
 				},
-				updateWifiSecurityState(): void {},
+				updateWifiSecurityState(): void { },
 				getWifiSecurityState(): Promise<any> {
 					return Promise.resolve();
 				},
@@ -710,13 +710,13 @@ export class VantageShellService {
 					return this;
 				},
 				refresh() {
-					const p1 = new Promise((resolve) => {});
-					const p2 = new Promise((resolve) => {});
+					const p1 = new Promise((resolve) => { });
+					const p2 = new Promise((resolve) => { });
 					return Promise.all([p1, p2]);
 				},
-				cancelGetWifiSecurityState() {},
-				getWifiHistory() {},
-				cancelGetWifiHistory() {},
+				cancelGetWifiSecurityState() { },
+				getWifiHistory() { },
+				cancelGetWifiHistory() { },
 			},
 			windowsActivation: {
 				mitt: null,
@@ -827,15 +827,6 @@ export class VantageShellService {
 			quitAccount() {
 				return Promise.resolve('success');
 			},
-			purchase() {
-				WinRT.launchUri(
-					'https://vantagestore.lenovo.com/en/shop/product/connectedhomesecurityoneyearlicense-windows'
-				);
-				this.account.state =
-					this.state === CHSAccountState.trial
-						? CHSAccountState.trialExpired
-						: CHSAccountState.standard;
-			},
 			visitWebConsole(feature: string) {
 				WinRT.launchUri(`https://chs.lenovo.com/`);
 				this.account.state =
@@ -863,7 +854,7 @@ export class VantageShellService {
 			getDevicePosture() {
 				return Promise.resolve();
 			},
-			cancelGetDevicePosture() {},
+			cancelGetDevicePosture() { },
 			on(type, handler) {
 				return this;
 			},
@@ -1386,7 +1377,7 @@ export class VantageShellService {
 				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
 				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
-			} catch (error) {}
+			} catch (error) { }
 			return true;
 			// return await this.phoenix.deviceFilter(filter);
 		}

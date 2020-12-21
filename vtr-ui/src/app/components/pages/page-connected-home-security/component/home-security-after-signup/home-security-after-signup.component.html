@@ -64,38 +64,6 @@
 					<span [innerHTML]="account?.lenovoId"></span>
 				</p>
 			</div>
-			<div class="common-btn subscription-btn">
-				<p class="m-0 pl-0" *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
-					[innerHTML]="'homeSecurity.overview.discountPrice' | translate">
-				</p>
-				<vtr-ui-button *ngIf="account?.state === 'trial' || account?.state === 'trialExpired'"
-					metricsItem="buyNow"
-					metricsEvent="featureClick"
-					(onClick)="common.upgrade()"
-					[isDisabled]="!common"
-					linkId="chs-btn-buyNow"
-					[btnHeight]=true
-					[label]="'homeSecurity.overview.buyNow' | translate">
-				</vtr-ui-button>
-				<vtr-ui-button *ngIf="account?.state === 'standardExpired'"
-					metricsItem="renew"
-					metricsEvent="featureClick"
-					(onClick)="common.upgrade()"
-					[isDisabled]="!common"
-					linkId="chs-btn-renew"
-					[btnHeight]=true
-					[label]="'homeSecurity.overview.renewNow' | translate">
-				</vtr-ui-button>
-				<vtr-ui-button
-					metricsItem="extendNow" *ngIf="account?.state === 'standard'"
-					metricsEvent="featureClick"
-					(onClick)="common.upgrade()"
-					[isDisabled]="!common"
-					linkId="chs-btn-extendNow"
-					[btnHeight]=true
-					[label]="'homeSecurity.overview.extendNow' | translate">
-				</vtr-ui-button>
-			</div>
 		</div>
 	</div>
 	<div class="content-container p-20">

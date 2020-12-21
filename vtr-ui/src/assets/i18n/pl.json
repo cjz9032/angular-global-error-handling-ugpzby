@@ -2690,12 +2690,6 @@
 				"disableDescribe": "Bezpieczeństwo WiFi Lenovo to zaawansowana usługa chmurowa, dzięki której Twoje urządzenie może odróżniać bezpieczne sieci bezprzewodowe od potencjalnie szkodliwych.",
 				"enabledDescribe": "Funkcja Bezpieczeństwo Wi-Fi Lenovo obecnie monitoruje aktywność w sieci."
 			},
-			"threatlocator": {
-				"describe": "Funkcja Detektor zagrożeń sprawdza bezpieczeństwo sieci wokół Ciebie.",
-				"button": "Sprawdź zagrożenie",
-				"connectionError": "Błąd połączenia",
-				"tryAgain": "Nie możemy zlokalizować zagrożenia z powodu braku dostępu do sieci, połącz się z Internetem i spróbuj ponownie."
-			},
 			"locationmodal": {
 				"title": "Włącz usługi lokalizacyjne",
 				"describe1": "Korzystanie z funkcji Bezpieczeństwo WiFi Lenovo wymaga włączenia usług lokalizacji dla aplikacji Lenovo Vantage. Czy chcesz teraz włączyć usługi lokalizacji?",
