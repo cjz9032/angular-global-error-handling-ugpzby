@@ -994,6 +994,9 @@
 				"needSPScan": "Bilgisayar performansını iyileştirmek için tıklatın",
 				"needHWScan": "Bilgisayar donanımını taramak için tıklatın"
 			}
+		},
+		"survey": {
+			"pddStatement": "Bu anket aracılığıyla herhangi bir kişisel veri toplanmayacaktır. Lütfen <tag>Lenovo Gizlilik Politikası</tag>'nda ayrıntıları kontrol edin."
 		}
 	},
 	"device": {

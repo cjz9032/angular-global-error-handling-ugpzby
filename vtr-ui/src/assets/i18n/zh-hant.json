@@ -994,6 +994,9 @@
 				"needSPScan": "按一下以最佳化電腦效能",
 				"needHWScan": "按一下以掃描電腦硬體"
 			}
+		},
+		"survey": {
+			"pddStatement": "此調查不會收集任何個人資料。請查看 <tag>Lenovo 的隱私權政策</tag>中的詳細資料。"
 		}
 	},
 	"device": {

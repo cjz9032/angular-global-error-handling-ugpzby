@@ -15,6 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
+import { CommonDirectiveModule } from '../common/common-directive.module';
 
 @NgModule({
 	declarations: [FeedbackFormComponent, WidgetFeedbackComponent, SurveyFormComponent],
@@ -33,6 +34,7 @@ import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-cl
 		ReactiveFormsModule,
 		NgbModalModule,
 		MetricsModule,
+		CommonDirectiveModule
 	],
 	exports: [FeedbackFormComponent, WidgetFeedbackComponent, SurveyFormComponent],
 	providers: [],

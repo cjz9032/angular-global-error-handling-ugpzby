@@ -240,10 +240,20 @@ $normalPadding: 2.4rem;
 			padding-right: $normalPadding;
 		}
 
+		.privacy-statement {
+			margin-bottom: 1.6rem;
+			font-size: 1.4rem;
+			color: $grey_darker;
+		}
+
 		.btn-submit {
-			flex: 0 0 22rem;
 			max-width: 24rem;
 			margin-right: 1rem;
+		}
+
+		.page-progress {
+			font-size: 1.4rem;
+			color: $grey_darker;
 		}
 	}
 

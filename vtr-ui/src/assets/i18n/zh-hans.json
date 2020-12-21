@@ -953,7 +953,7 @@
 					"question4": {
 						"options": [
 							"屏幕尺寸",
-							"粗细"
+							"重量"
 						]
 					}
 				},
@@ -1032,7 +1032,8 @@
 				"messages": {
 					"feedbackSuccess": "感谢您的反馈！"
 				}
-			}
+			},
+			"pddStatement": "此调查不会收集任何个人数据。详情请参阅 <tag>Lenovo 隐私政策</tag>。"
 		},
 		"quickSettings": {
 			"title": "快速设置",

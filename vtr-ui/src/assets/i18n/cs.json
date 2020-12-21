@@ -994,6 +994,9 @@
 				"needSPScan": "Kliknutím optimalizujete výkon počítače",
 				"needHWScan": "Kliknutím zkontrolujete hardware počítače"
 			}
+		},
+		"survey": {
+			"pddStatement": "Během tohoto průzkumu nebudou shromažďovány žádné osobní údaje. Podrobnosti viz <tag>Zásady ochrany osobních údajů společnosti Lenovo</tag>."
 		}
 	},
 	"device": {

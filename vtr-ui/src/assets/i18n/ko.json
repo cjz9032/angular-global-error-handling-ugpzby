@@ -994,6 +994,9 @@
 				"needSPScan": "컴퓨터 성능을 최적화하려면 클릭",
 				"needHWScan": "컴퓨터 하드웨어를 검사하려면 클릭"
 			}
+		},
+		"survey": {
+			"pddStatement": "이 설문 조사를 통해 개인 데이터는 수집되지 않습니다. <tag>Lenovo 개인정보 보호정책</tag>에서 상세 정보를 확인하십시오."
 		}
 	},
 	"device": {

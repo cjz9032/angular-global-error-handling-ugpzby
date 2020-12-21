@@ -994,6 +994,9 @@
 				"needSPScan": "Kliknite za optimizaciju performansi računala",
 				"needHWScan": "Kliknite za skeniranje računalnog hardvera"
 			}
+		},
+		"survey": {
+			"pddStatement": "Putem ove ankete neće se prikupljati osobni podaci. Pojedinosti potražite u <tag>Pravilnik o zaštiti privatnosti tvrtke Lenovo</tag>."
 		}
 	},
 	"device": {

@@ -49,6 +49,8 @@ import { enumSmartPerformance } from './enums/smart-performance.enum';
 import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
 import { PerformanceNotifications } from './enums/performance-notifications.enum';
+import { DialogService } from './services/dialog/dialog.service';
+import { FeedbackService } from './services/feedback/feedback.service';
 
 @Component({
 	selector: 'vtr-root',
@@ -92,7 +94,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private selfSelectService: SelfSelectService,
 		private localCacheService: LocalCacheService,
 		@Inject(DOCUMENT) public document: Document,
-		private snackBar: MatSnackBar
+		private snackBar: MatSnackBar,
+		private feedbackService: FeedbackService
 	) {
 		this.ngbTooltipConfig.triggers = 'hover';
 		this.patchNgbModalOpen();
@@ -142,6 +145,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		// 		}
 		// 	}
 		// });
+
+		this.feedbackService.openSurveyModal("11111");
 
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();

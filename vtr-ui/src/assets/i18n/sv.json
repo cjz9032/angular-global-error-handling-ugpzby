@@ -994,6 +994,9 @@
 				"needSPScan": "Klicka för att optimera datorns prestanda",
 				"needHWScan": "Klicka för att genomsöka datorns maskinvara"
 			}
+		},
+		"survey": {
+			"pddStatement": "Inga personliga uppgifter samlas in i denna enkät. Läs informationen i <tag>Lenovos sekretesspolicy</tag>."
 		}
 	},
 	"device": {

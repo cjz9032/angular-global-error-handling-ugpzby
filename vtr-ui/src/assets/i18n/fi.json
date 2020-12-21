@@ -994,6 +994,9 @@
 				"needSPScan": "Napsauta optimoidaksesi tietokoneen suorituskyvyn",
 				"needHWScan": "Napsauta tarkistaaksesi tietokoneen laitteiston"
 			}
+		},
+		"survey": {
+			"pddStatement": "Tässä kyselyssä ei kerätä mitään henkilökohtaisia tietoja. Lisätietoja on <tag>Lenovon tietosuojakäytännössä</tag>."
 		}
 	},
 	"device": {
