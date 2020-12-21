@@ -1040,7 +1040,8 @@
 				"messages": {
 					"feedbackSuccess": "Thank you for your feedback !"
 				}
-			}
+			},
+			"pddStatement": "No personal data will be collected through this survey. Please check the details in <tag>Lenovo's Privacy Policy</tag>."
 		},
 		"quickSettings": {
 			"title": "Quick settings",

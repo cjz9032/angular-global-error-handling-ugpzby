@@ -8,7 +8,7 @@
 			<div class="page-summary" [id]="'survey-page-basic-title-' + pIdx" role="text">{{ page.summary | translate}}</div>
 
 			<div class="qa-item" *ngFor="let qa of page.questions; index as qIdx">
-				<div class="question" [dir]="'dir' | translate" [innerHTML]=" qIdx + 1 +  '. ' + (qa.title | translate)"
+				<div class="question" [dir]="'dir' | translate" [innerHTML]=" qa.qNum + '. ' + (qa.title | translate)"
 					[id]="qa.name" role="text"></div>
 				<div *ngIf="!qa.multipleChoice">
 					<div class="form-check form-check-inline" *ngFor="let option of qa.options; index as oIdx">
@@ -48,6 +48,13 @@
 
 		<div class="line"></div>
 
+		<div class="d-flex align-items-center btn-box privacy-statement" *ngIf="progress == pages.length - 1">
+			<span *vtrTranslate="'dashboard.survey.pddStatement' | translate">
+				<a id="survey-av-link-privacypolicy" vtrMetrics metricsEvent="itemClick" metricsItem="privacyPolicy"
+				metricsParent="Dialog.Survey"
+				href="https://www.lenovo.com/privacy/" target="_blank"></a>
+			</span>
+		</div>
 		<div class="d-flex align-items-center btn-box">
 			<div class="btn-submit">
 				<vtr-ui-button *ngIf="progress < pages.length - 1" linkId="modal-survey-btn-next" metricsEvent="FeatureClick"
@@ -61,6 +68,7 @@
 					[isDisabled]="isAllSelected()">
 				</vtr-ui-button>
 			</div>
+			<div class="page-progress">{{ progress + 1 }}/{{ pages.length }}</div>
 		</div>
 	</div>
 

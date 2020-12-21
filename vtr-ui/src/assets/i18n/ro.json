@@ -994,6 +994,9 @@
 				"needSPScan": "Faceți clic pentru a optimiza performanța computerului",
 				"needHWScan": "Faceți clic pentru a scana hardware-ul computerului"
 			}
+		},
+		"survey": {
+			"pddStatement": "În acest sondaj nu vor fi colectate date cu caracter personal. Verificați detaliile în <tag>Politica de confidențialitate Lenovo</tag>."
 		}
 	},
 	"device": {

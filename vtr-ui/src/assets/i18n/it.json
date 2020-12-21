@@ -994,6 +994,9 @@
 				"needSPScan": "Fare clic per ottimizzare le prestazioni del computer",
 				"needHWScan": "Fare clic per analizzare l'hardware del computer"
 			}
+		},
+		"survey": {
+			"pddStatement": "Nessun dato personale verrà raccolto con questo sondaggio. Controllare i dettagli nelle <tag>Norme di tutela della privacy Lenovo</tag>."
 		}
 	},
 	"device": {

@@ -49,7 +49,6 @@ import { enumSmartPerformance } from './enums/smart-performance.enum';
 import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
 import { PerformanceNotifications } from './enums/performance-notifications.enum';
-
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',

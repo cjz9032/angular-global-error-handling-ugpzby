@@ -1034,7 +1034,8 @@
 				"messages": {
 					"feedbackSuccess": "Vielen Dank für Ihr Feedback!"
 				}
-			}
+			},
+			"pddStatement": "Bei dieser Umfrage werden keine personenbezogenen Daten erhoben. Weitere Informationen finden Sie in der <tag>Datenschutzrichtlinie von Lenovo</tag>."
 		},
 		"quickSettings": {
 			"title": "Schnelleinstellungen",

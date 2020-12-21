@@ -953,7 +953,7 @@
 					"question4": {
 						"options": [
 							"画面サイズ",
-							"線の太さ"
+							"重量"
 						]
 					}
 				},
@@ -1033,7 +1033,8 @@
 				"messages": {
 					"feedbackSuccess": "フィードバックをありがとうございました!"
 				}
-			}
+			},
+			"pddStatement": "この調査で収集される個人情報はありません。詳細は<tag>Lenovoのプライバシー・ポリシー</tag>でご確認ください。"
 		},
 		"quickSettings": {
 			"title": "クイック設定",

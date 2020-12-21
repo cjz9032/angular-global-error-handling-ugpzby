@@ -994,6 +994,9 @@
 				"needSPScan": "Kliknij, aby zoptymalizować wydajność komputera",
 				"needHWScan": "Kliknij, aby przeprowadzić skanowanie sprzętu"
 			}
+		},
+		"survey": {
+			"pddStatement": "W ramach tej ankiety nie będą gromadzone żadne dane osobowe. Szczegółowe informacje można znaleźć w treści <tag>Zasad ochrony prywatności firmy Lenovo</tag>."
 		}
 	},
 	"device": {

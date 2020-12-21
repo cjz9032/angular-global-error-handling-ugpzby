@@ -38,9 +38,11 @@ export class SurveyFormComponent implements OnInit {
 			});
 		}
 
+		let question1Num = 1;
 		const page1Questions = this.pages[0].questions;
 		for (let i = 0; i < 4; i++) {
 			page1Questions.push({
+				qNum: question1Num++,
 				name: `dashboard.survey.form.page1.question${i + 1}`,
 				title: 'dashboard.survey.form.page1.question',
 				optionKey: `dashboard.survey.form.page1.question${i + 1}.options`,
@@ -54,6 +56,7 @@ export class SurveyFormComponent implements OnInit {
 		const p2Options = this.translate.instant('dashboard.survey.form.page2.options');
 		for (let i = 0; i < 2; i++) {
 			page2Questions.push({
+				qNum: question1Num++,
 				name: `dashboard.survey.form.page2.question${i + 1}`,
 				title: `dashboard.survey.form.page2.question${i + 1}`,
 				optionKey: 'dashboard.survey.form.page2.options',
@@ -65,6 +68,7 @@ export class SurveyFormComponent implements OnInit {
 		const p3Options = this.translate.instant('dashboard.survey.form.page3.options');
 		for (let i = 0; i < 2; i++) {
 			page3Questions.push({
+				qNum: question1Num++,
 				name: `dashboard.survey.form.page3.question${i + 1}`,
 				title: `dashboard.survey.form.page3.question${i + 1}`,
 				optionKey: 'dashboard.survey.form.page3.options',
@@ -76,6 +80,7 @@ export class SurveyFormComponent implements OnInit {
 		const p4Options = this.translate.instant('dashboard.survey.form.page4.options');
 		for (let i = 0; i < 4; i++) {
 			page4Questions.push({
+				qNum: question1Num++,
 				name: `dashboard.survey.form.page4.question${i + 1}`,
 				title: `dashboard.survey.form.page4.question${i + 1}`,
 				optionKey: 'dashboard.survey.form.page4.options',
@@ -86,6 +91,7 @@ export class SurveyFormComponent implements OnInit {
 		const page5Questions = this.pages[4].questions;
 		for (let i = 0; i < 3; i++) {
 			page5Questions.push({
+				qNum: question1Num++,
 				name: `dashboard.survey.form.page5.question${i + 1}`,
 				title: `dashboard.survey.form.page5.question${i + 1}.title`,
 				optionKey: `dashboard.survey.form.page5.question${i + 1}.options`,

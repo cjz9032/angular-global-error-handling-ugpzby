@@ -1034,7 +1034,8 @@
 				"messages": {
 					"feedbackSuccess": "Merci pour votre commentaire !"
 				}
-			}
+			},
+			"pddStatement": "Aucune donnée personnelle ne sera recueillie dans le cadre de cette enquête. Veuillez consulter les détails dans la <tag>Politique de confidentialité de Lenovo</tag>."
 		},
 		"quickSettings": {
 			"title": "Paramètres rapides",

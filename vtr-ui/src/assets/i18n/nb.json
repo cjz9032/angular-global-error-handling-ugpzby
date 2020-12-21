@@ -994,6 +994,9 @@
 				"needSPScan": "Klikk for å optimalisere datamaskinytelsen",
 				"needHWScan": "Klikk for å skanne datamaskinens maskinvare"
 			}
+		},
+		"survey": {
+			"pddStatement": "Det blir ikke samlet inn noen personlige data i løpet av denne spørreundersøkelsen. Se <tag>Lenovos personvernerklæring</tag> for mer informasjon."
 		}
 	},
 	"device": {

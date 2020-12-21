@@ -994,6 +994,9 @@
 				"needSPScan": "Kattintson a számítógép teljesítményének optimalizálásához",
 				"needHWScan": "Kattintson a számítógép hardverének ellenőrzéséhez"
 			}
+		},
+		"survey": {
+			"pddStatement": "A felmérés során nem gyűjtünk semmilyen személyes adatot. Kérjük, olvassa el a részleteket a <tag>Lenovo adatvédelemi irányelvében</tag>."
 		}
 	},
 	"device": {

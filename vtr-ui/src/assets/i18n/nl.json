@@ -994,6 +994,9 @@
 				"needSPScan": "Klik om de computerprestaties te optimaliseren",
 				"needHWScan": "Klik om de computerhardware te scannen"
 			}
+		},
+		"survey": {
+			"pddStatement": "Er worden geen persoonlijke gegevens verzameld via deze enquête. Lees het <tag>privacybeleid van Lenovo</tag> voor meer informatie."
 		}
 	},
 	"device": {

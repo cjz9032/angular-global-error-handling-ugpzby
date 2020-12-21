@@ -994,6 +994,9 @@
 				"needSPScan": "Klik for at optimere computerens ydeevne",
 				"needHWScan": "Klik for at scanne computerens hardware"
 			}
+		},
+		"survey": {
+			"pddStatement": "Der indsamles ingen personlige data i forbindelse med denne undersøgelse. Se oplysningerne i <tag>Lenovos praksis vedrørende personlige oplysninger</tag>."
 		}
 	},
 	"device": {
