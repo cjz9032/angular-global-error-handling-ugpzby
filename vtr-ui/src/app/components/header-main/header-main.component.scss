@@ -175,6 +175,12 @@
 		.menu {
 			position: absolute;
 			bottom: 0;
+			@media #{$mediaquery_X44} {
+				max-width: 58.33%;
+			}
+			@media #{$large-screen} {
+				max-width: 66.66%;
+			}
 			//left: $padding_side;
 		}
 

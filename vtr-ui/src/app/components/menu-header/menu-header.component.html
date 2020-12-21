@@ -1,4 +1,4 @@
-<div class="vtr-menu-header">
+<div class="vtr-menu-header d-flex">
 	<ng-container *ngFor="let tab of menuItems; let i=index;">
 		<div class="menu-header-tab {{tab.prop}}"
 			tabindex="1"
@@ -16,7 +16,7 @@
 				tooltipClass="vtr-system-tooltip"
 				container="body">
 				<i class="icomoon {{tab.iconClass}}"></i>
-				<span class="text"
+				<span class="text text-ellipsis"
 					id="myDevice-settings-header-menu-{{tab.icon}}-title"
 					attr.aria-label="myDevice-settings-header-menu-{{tab.label}}"
 					aria-hidden="true">{{tab.label}}</span>

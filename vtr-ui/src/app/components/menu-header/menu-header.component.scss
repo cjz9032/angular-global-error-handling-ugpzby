@@ -61,68 +61,46 @@
 				display: none;
 			}
 			.text {
-				display: inline-block;
 				@include high-contrast-adjust;
 			}
 			@media #{$breakpoint_xl6} {
 				font-size: $fontsize_md;
-				.text {
-					display: inline-block;
-				}
 				.icomoon {
 					display: none;
 				}
 			}
 			@media #{$breakpoint_xl5} {
 				font-size: $fontsize_md;
-				.text {
-					display: inline-block;
-				}
 				.icomoon {
 					display: none;
 				}
 			}
 			@media #{$breakpoint_xl4} {
 				font-size: $fontsize_md;
-				.text {
-					display: inline-block;
-				}
 				.icomoon {
 					display: none;
 				}
 			}
 			@media #{$breakpoint_xl3} {
 				font-size: $fontsize_md;
-				.text {
-					display: inline-block;
-				}
 				.icomoon {
 					display: none;
 				}
 			}
 			@media #{$breakpoint_xl2} {
 				font-size: $fontsize_md;
-				.text {
-					display: inline-block;
-				}
 				.icomoon {
 					display: none;
 				}
 			}
 			@media #{$breakpoint_xl} {
 				font-size: $fontsize_sm;
-				.text {
-					display: inline-block;
-				}
 				.icomoon {
 					display: none;
 				}
 			}
 			@media #{$breakpoint_lg} {
 				font-size: $fontsize_sm;
-				.text {
-					display: inline-block;
-				}
 				.icomoon {
 					display: none;
 				}
