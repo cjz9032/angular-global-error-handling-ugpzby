@@ -52,7 +52,6 @@ export class MenuRecursiveError extends Error {
 		'[attr.aria-controls]': 'menuOpen ? menu.panelId : null',
 		'(mousedown)': '_handleMousedown($event)',
 		'(keydown)': '_handleKeydown($event)',
-		'(click)': '_handleClick($event)',
 		'(pointerenter)': '_handlePointerEnter($event)',
 		'(pointerleave)': '_handlePointerLeave($event)',
 		'(focus)': '_handleFocus($event)',
@@ -69,6 +68,8 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 	private _scrollStrategy: () => ScrollStrategy;
 	private _menu: MatMenuPanel;
 	private _pointerEnterTimer: any;
+	private _pointOutsideSubscription = Subscription.EMPTY;
+	private _pointerType: 'touch' | 'mouse' | null = null;
 	/** Data to be passed along to any lazily-rendered content. */
 	// tslint:disable-next-line:no-input-rename
 	@Input('matMenuHoverTriggerData') menuData: any;
@@ -186,6 +187,7 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		this._menuCloseSubscription.unsubscribe();
 		this._closingActionsSubscription.unsubscribe();
 		this._hoverSubscription.unsubscribe();
+		this._pointOutsideSubscription.unsubscribe();
 	}
 
 	/** Whether the menu is open. */
@@ -223,18 +225,20 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 			this._setPosition(overlayConfig.positionStrategy as FlexibleConnectedPositionStrategy);
 			overlayRef.attach(this._getPortal());
 
-			overlayRef.outsidePointerEvents().subscribe(($event) => {
-				const element = this._element.nativeElement;
-				const position = {
-					x1: element.offsetLeft,
-					y1: element.offsetTop,
-					x2: element.clientWidth + element.offsetLeft,
-					y2: element.clientHeight + element.offsetTop,
-				};
-				if (!this.isPointerInRectangle({ x: $event.x, y: $event.y }, position)) {
-					this.closeMenu();
-				}
-			});
+			if (this._pointOutsideSubscription === Subscription.EMPTY) {
+				this._pointOutsideSubscription = overlayRef.outsidePointerEvents().subscribe(($event) => {
+					const element = this._element.nativeElement;
+					const position = {
+						x1: element.offsetLeft,
+						y1: element.offsetTop,
+						x2: element.clientWidth + element.offsetLeft,
+						y2: element.clientHeight + element.offsetTop,
+					};
+					if (!this.isPointerInRectangle({ x: $event.x, y: $event.y }, position)) {
+						this.closeMenu();
+					}
+				});
+			}
 
 			if (this.menu.lazyContent) {
 				this.menu.lazyContent.attach(this.menuData);
@@ -248,6 +252,11 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 			if (this.menu instanceof MatMenu) {
 				this.menu._startAnimation();
 			}
+			if (this._pointerEnterTimer) {
+				clearTimeout(this._pointerEnterTimer);
+				this._pointerEnterTimer = null;
+			}
+			this._pointerType = null;
 		}, 200);
 	}
 
@@ -531,23 +540,24 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 	}
 
 	_handlePointerEnter(event: any): void {
+		if (event.pointerType) {
+			this._pointerType = event.pointerType;
+		}
 		this.openMenu();
 	}
 
 	_handlePointerLeave(event: any): void {
-		if (this._pointerEnterTimer) {
+		if (this._pointerEnterTimer && event.pointerType !== 'touch') {
 			clearTimeout(this._pointerEnterTimer);
 			this._pointerEnterTimer = null;
+			this._pointerType = null;
 		}
 	}
 
 	_handleFocus(event: any): void {
-		this.openMenu();
-	}
-
-	/** Handles click events on the trigger. */
-	_handleClick(event: MouseEvent): void {
-		this.openMenu();
+		if (!this._pointerType) {
+			this.openMenu();
+		}
 	}
 
 	/** Handles the cases where the user hovers over the trigger. */
