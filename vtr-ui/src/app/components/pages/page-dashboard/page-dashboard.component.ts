@@ -52,6 +52,7 @@ import {
 	getSecurityLevel,
 } from 'src/app/data-models/security-advisor/security-status';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import { PerformanceNotifications } from 'src/app/enums/performance-notifications.enum';
 
 interface IConfigItem {
 	cardId: string;
@@ -878,6 +879,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	ngAfterViewInit() {
+		this.commonService.markPerformanceNode('dashboard');
+		this.commonService.sendNotification(PerformanceNotifications.firstPageInitialized, 'dashboard');
 		this.metricsService.activateScrollCounter(PageName.Dashboard);
 	}
 

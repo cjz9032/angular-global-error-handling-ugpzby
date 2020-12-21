@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
@@ -23,6 +23,7 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { Subscription } from 'rxjs';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
+import { PerformanceNotifications } from 'src/app/enums/performance-notifications.enum';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
@@ -30,7 +31,7 @@ import { GAMING_DATA } from './../../../../testing/gaming-data';
 	styleUrls: ['./page-device-gaming.component.scss'],
 	providers: [NgbModalConfig, NgbModal],
 })
-export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
+export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit, OnDestroy {
 	public static allCapablitiyFlag = false;
 	public isOnline = true;
 	public submit = 'Submit';
@@ -117,6 +118,11 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, OnDestroy {
 				this.onNotification(notification);
 			}
 		);
+	}
+
+	ngAfterViewInit(): void {
+		this.commonService.markPerformanceNode('device-gaming');
+		this.commonService.sendNotification(PerformanceNotifications.firstPageInitialized, 'device-gaming');
 	}
 
 	ngOnDestroy() {

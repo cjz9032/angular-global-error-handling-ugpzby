@@ -12,10 +12,7 @@ import {
 } from '@angular/core';
 import {
 	Router,
-	ActivatedRoute,
-	NavigationCancel,
-	NavigationEnd,
-	NavigationError,
+	ActivatedRoute
 } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -51,6 +48,7 @@ import { SmartPerformanceService } from './services/smart-performance/smart-perf
 import { enumSmartPerformance } from './enums/smart-performance.enum';
 import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
+import { PerformanceNotifications } from './enums/performance-notifications.enum';
 
 @Component({
 	selector: 'vtr-root',
@@ -70,7 +68,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private newTutorialVersion = '3.1.2';
 	@ViewChild('pageContainer', { static: true }) pageContainer: ElementRef;
 	environment = environment;
-	perfSubscription$: Subscription;
+	private isFirstPageInitialized = false;
 
 	constructor(
 		private displayService: DisplayService,
@@ -96,34 +94,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		@Inject(DOCUMENT) public document: Document,
 		private snackBar: MatSnackBar
 	) {
-		if (this.environment.debuggingSnackbar) {
-			this.perfSubscription$ = this.router.events.subscribe((event) => {
-				if (
-					event instanceof NavigationEnd ||
-					event instanceof NavigationCancel ||
-					event instanceof NavigationError
-				) {
-					if (['/dashboard', '/device-gaming'].includes(event.url)) {
-						this.perfSubscription$.unsubscribe();
-
-						const navPerf = performance.getEntriesByType(
-							'navigation'
-						)[0] as PerformanceNavigationTiming;
-						let content = `You are now accessing ${location.origin} \n \n`;
-						content += `Necessary dowload: ${
-							navPerf.domInteractive - navPerf.startTime
-						} ms \n`;
-						content += `App parsing: ${navPerf.duration} ms \n`;
-						content += `Navigation complete: ${window.performance.now()} ms`;
-						console.log(content);
-						this.snackBar.open(content, 'Close', {
-							panelClass: ['snackbar'],
-						});
-					}
-				}
-			});
-		}
-
 		this.ngbTooltipConfig.triggers = 'hover';
 		this.patchNgbModalOpen();
 		// to check web and js bridge version in browser console
@@ -526,6 +496,12 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 						this.storeRating.markPromptRatingNextLaunch(true);
 					}
 					break;
+				case PerformanceNotifications.firstPageInitialized:
+					if (!this.isFirstPageInitialized) {
+						this.isFirstPageInitialized = true;
+						this.analyzePerformance(notification.payload);
+					}
+					break;
 				default:
 					break;
 			}
@@ -609,6 +585,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	ngAfterViewInit() {
+		this.commonService.markPerformanceNode('app entry loaded');
 		this.metricService.pageContainer = this.pageContainer;
 		this.metricService.onAppInitDone();
 	}
@@ -637,6 +614,47 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				LocalStorageKey.isOldScheduleScanDeleted,
 				true
 			);
+		}
+	}
+
+	private analyzePerformance(firstPage: string) {
+		const win: any = window;
+		const navPerf = performance.getEntriesByType(
+			'navigation'
+		)[0] as PerformanceNavigationTiming;
+		const performanceTimePoints = {
+			certPingDone: win.VantageStub?.certpinTime ?? 0,
+			webAppSource: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? 'local' : `aws-s3, ${win.location.host}`,
+			indexPageEstablished: 0,
+			domInteractived: 0,
+			scriptLoaded: 0,
+			appInitialized: 0,
+			appEntryLoaded: 0,
+			firstPageLoaded: 0
+		};
+		if (win.VantageStub?.navigationStartingTime && win.VantageStub?.appStartTime) {
+			const navigationStartTime = (win.VantageStub.navigationStartingTime - win.VantageStub.appStartTime) / 10000;
+			performanceTimePoints.indexPageEstablished = Math.round(navigationStartTime + navPerf.connectEnd - navPerf.startTime);
+			performanceTimePoints.domInteractived = Math.round(navigationStartTime + navPerf.domInteractive - navPerf.startTime);
+			performanceTimePoints.scriptLoaded = Math.round(navigationStartTime + navPerf.duration);
+			performanceTimePoints.appInitialized = Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app initialized')?.startTime ?? 0) - navPerf.startTime);
+			performanceTimePoints.appEntryLoaded = Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app entry loaded')?.startTime ?? 0) - navPerf.startTime);
+			performanceTimePoints.firstPageLoaded = Math.round(navigationStartTime + (this.commonService.getPerformanceNode(firstPage)?.startTime ?? 0)  - navPerf.startTime);
+		}
+		this.metricService.sendAppLoadedMetric(performanceTimePoints);
+		if (this.environment.debuggingSnackbar) {
+			let content = `You are now accessing ${performanceTimePoints.webAppSource} \n \n`;
+			content += `Cert ping time: ${performanceTimePoints.certPingDone} ms \n`;
+			content += `Index page established: ${performanceTimePoints.indexPageEstablished} ms \n`;
+			content += `Dom interactived: ${performanceTimePoints.domInteractived} ms \n`;
+			content += `Script loaded: ${performanceTimePoints.scriptLoaded} ms \n`;
+			content += `App initialized: ${performanceTimePoints.appInitialized} ms \n`;
+			content += `App entry loaded: ${performanceTimePoints.appEntryLoaded} ms \n`;
+			content += `First page loaded: ${performanceTimePoints.firstPageLoaded} ms`;
+			console.log(content);
+			this.snackBar.open(content, 'Close', {
+				panelClass: ['snackbar'],
+			});
 		}
 	}
 }

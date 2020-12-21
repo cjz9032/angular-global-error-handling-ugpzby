@@ -354,4 +354,15 @@ export class CommonService {
 	public delay(milliseconds: number) {
 		return new Promise((resolve) => setTimeout(resolve, milliseconds));
 	}
+
+	public markPerformanceNode(name: string) {
+		window.performance.mark(name);
+	}
+
+	public getPerformanceNode(name: string, type?: string) {
+		if (type) {
+			return window.performance.getEntriesByName(name, type)[0];
+		}
+		return window.performance.getEntriesByName(name)[0];
+	}
 }
