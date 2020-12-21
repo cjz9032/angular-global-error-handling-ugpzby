@@ -4358,7 +4358,6 @@
 		"title": "Øyeblikksbilde",
 		"hardwareListTitle": "Maskinvare Komponenter",
 		"softwareListTitle": "Programvarekomponenter",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Ta et øyeblikksbilde",
 		"titleNotStarted": "Gjennomfør et øyeblikksbilde",
 		"titleSnapshotCompleted": "Øyeblikksbilde er tatt",

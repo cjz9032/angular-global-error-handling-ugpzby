@@ -4358,7 +4358,6 @@
 		"title": "Ögonblicksbild",
 		"hardwareListTitle": "Maskinvarukomponenter",
 		"softwareListTitle": "Programvarukomponenter",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Ta ögonblicksbild",
 		"titleNotStarted": "Ta en ögonblicksbild",
 		"titleSnapshotCompleted": "Ögonblicksbilden är klar",

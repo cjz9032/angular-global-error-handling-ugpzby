@@ -4468,7 +4468,6 @@
 		"title": "Снимок",
 		"hardwareListTitle": "Аппаратные компоненты",
 		"softwareListTitle": "Программные компоненты",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Создать снимок",
 		"titleNotStarted": "Создать снимок",
 		"titleSnapshotCompleted": "Снимок создан",

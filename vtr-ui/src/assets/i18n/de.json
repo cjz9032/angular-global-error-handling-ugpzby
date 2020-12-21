@@ -4468,7 +4468,6 @@
 		"title": "Momentaufnahme",
 		"hardwareListTitle": "Hardwarekomponenten",
 		"softwareListTitle": "Softwarekomponenten",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Momentaufnahme erstellen",
 		"titleNotStarted": "Momentaufnahme ausführen",
 		"titleSnapshotCompleted": "Momentaufnahme abgeschlossen",

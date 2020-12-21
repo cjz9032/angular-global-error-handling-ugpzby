@@ -4466,7 +4466,6 @@
 		"title": "快照",
 		"hardwareListTitle": "硬件组件",
 		"softwareListTitle": "软件组件",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "生成快照",
 		"titleNotStarted": "执行快照",
 		"titleSnapshotCompleted": "快照已完成",

@@ -4358,7 +4358,6 @@
 		"title": "Istantanea",
 		"hardwareListTitle": "Componenti hardware",
 		"softwareListTitle": "Componenti software",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Crea istantanea",
 		"titleNotStarted": "Esegui un'istantanea",
 		"titleSnapshotCompleted": "Istantanea completata",

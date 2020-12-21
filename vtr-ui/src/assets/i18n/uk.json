@@ -4358,7 +4358,6 @@
 		"title": "Знімок",
 		"hardwareListTitle": "Компоненти устаткування",
 		"softwareListTitle": "Програмні компоненти",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Зробити знімок",
 		"titleNotStarted": "Виконати знімок",
 		"titleSnapshotCompleted": "Знімок завершено",

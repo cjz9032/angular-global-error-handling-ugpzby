@@ -35,7 +35,7 @@ describe('WidgetSnapshotComponent', () => {
 	});
 
 	it('should validate the description text when instantiate the widget', () => {
-		const widgetDescription = 'snapshot.description';
+		const widgetDescription = 'snapshot.snapshotInformation';
 
 		const descriptionElement = fixture.debugElement.query(
 			By.css('#snapshot-widget-description')

@@ -4358,7 +4358,6 @@
 		"title": "Instantaneu",
 		"hardwareListTitle": "Componente hardware",
 		"softwareListTitle": "Componente software",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Realizare instantaneu",
 		"titleNotStarted": "Efectuare instantaneu",
 		"titleSnapshotCompleted": "Instantaneu finalizat",

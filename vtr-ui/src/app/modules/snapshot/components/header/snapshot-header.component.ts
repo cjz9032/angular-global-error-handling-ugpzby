@@ -81,14 +81,6 @@ export class SnapshotHeaderComponent implements OnInit {
 					this.snapshotService.snapshotStatus = SnapshotStatus.baselineCompleted;
 				});
 		});
-
-		modalRef.componentInstance.modalClosing.subscribe((success) => {
-			// Re-enabling the button, once the modal has been closed in a way
-			// the user didn't started the Scan proccess.
-			if (!success) {
-				this.snapshotService.snapshotStatus = SnapshotStatus.notStarted;
-			}
-		});
 	}
 
 	public getHeaderText() {
