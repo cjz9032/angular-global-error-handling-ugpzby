@@ -411,24 +411,6 @@ export class VantageShellService {
 		return MetricHelper.createSimulateObj();
 	}
 
-	public getMetricsPolicy(callback) {
-		const self = this;
-		this.downloadMetricsPolicy().subscribe((response) => {
-			self.deviceFilter(JSON.stringify(response)).then((result) => {
-				const userDeterminePrivacy = self.localCacheService.getLocalCacheValue(
-					LocalStorageKey.UserDeterminePrivacy
-				);
-				if (!userDeterminePrivacy) {
-					callback(result);
-				}
-			});
-		});
-	}
-
-	private downloadMetricsPolicy() {
-		return this.http.get<string>('assets/privacy-json/metrics.json');
-	}
-
 	/**
 	 * returns modern preload object from VantageShellService of JS Bridge
 	 */

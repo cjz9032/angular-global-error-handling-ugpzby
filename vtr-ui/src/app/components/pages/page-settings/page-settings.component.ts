@@ -145,7 +145,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metrics = shellService.getMetrics();
 		this.metricsPreference = shellService.getMetricPreferencePlugin();
-		shellService.getMetricsPolicy((result) => {
+		this.settingsService.getMetricsPolicy((result) => {
 			this.metrics.metricsEnabled = result;
 			this.toggleUsageStatistics = this.metrics.metricsEnabled;
 		});
