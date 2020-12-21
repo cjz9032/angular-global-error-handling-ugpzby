@@ -25,8 +25,7 @@
 			*ngIf="!hidePointer">
 			<div class="scan-pointer"
 				[ngStyle]="{'left': leftAnimator}">
-				<object type="image/svg+xml"
-					data="assets/images/smart-performance/sp-point-white.svg"></object>
+				<img [src]="'assets/images/smart-performance/sp-point-white.svg' | svgInline | async" />
 			</div>
 		</div>
 	</div>
