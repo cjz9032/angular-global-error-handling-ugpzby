@@ -1,6 +1,8 @@
 @import '../../../../../app.theme';
 
 .vtr-modal-hardware-scan-rbs {
+	position: inherit;
+	padding: 2.4rem;
 	@include high-contrast-border;
 
 	.modal-information {
@@ -27,8 +29,4 @@
 		right: 2.3rem;
 		top: 2.4rem;
 	}
-}
-
-.modal-body {
-	padding: 2.4rem;
 }

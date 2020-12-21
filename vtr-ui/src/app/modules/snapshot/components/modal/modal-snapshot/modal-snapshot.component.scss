@@ -1,6 +1,8 @@
 @import '../../../../../app.theme';
 
 .vtr-modal-snapshot {
+	position: inherit;
+	padding: 2.4rem;
 	@include high-contrast-border;
 
 	fa-icon {
@@ -9,7 +11,6 @@
 	}
 
 	.modal-information {
-
 		.title {
 			width: 100%;
 			font-size: $fontsize_xl;
@@ -43,8 +44,4 @@
 		right: 2.3rem;
 		top: 2.4rem;
 	}
-}
-
-.modal-body {
-	padding: 2.4rem;
 }
