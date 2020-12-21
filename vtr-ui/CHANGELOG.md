@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.35](https://bitbucket.tc.lenovo.com///compare/v1.9.34...v1.9.35) (2020-12-21)
+
+
+### Features
+
+* **CHS:** VAN-24361 remove purchase link and threat locator ([7c5e09d](https://bitbucket.tc.lenovo.com///commit/7c5e09d702b6657e1d9394bec952afd3cd717f42))
+* **performance:** add performance check point and metrics ([f9a8442](https://bitbucket.tc.lenovo.com///commit/f9a844233e79d39e136f943fea8f9cff074d8da5))
+* **Threat locator:** VAN-24361 remove threat locator model ([4fc1719](https://bitbucket.tc.lenovo.com///commit/4fc17193b3200fca55b2a85aeded13e512a2f12d))
+
+
+### Bug Fixes
+
+* **performance:** Metrics should be sent on all serve ([340f2ba](https://bitbucket.tc.lenovo.com///commit/340f2baf74bb19bab359e2b7f079dae1503ce1e6))
+* **Settings Style:** VAN-24174 modify radio checkbox width ([a1c6a12](https://bitbucket.tc.lenovo.com///commit/a1c6a122ed3862b69891f779d23b31d0e6afc898))
+* **SP:** VAN-24125 disable sign up and fix button if offline. ([664df88](https://bitbucket.tc.lenovo.com///commit/664df88d7ab934a922067808c374fccfd0d73366))
+
 ### [1.9.34](https://bitbucket.tc.lenovo.com///compare/v1.9.33...v1.9.34) (2020-12-18)
 
 
