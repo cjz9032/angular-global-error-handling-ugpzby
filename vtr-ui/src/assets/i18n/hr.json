@@ -4358,7 +4358,6 @@
 		"title": "Snimka stanja",
 		"hardwareListTitle": "Komponente hardvera",
 		"softwareListTitle": "Komponente softvera",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Snimi snimku stanja",
 		"titleNotStarted": "Napravi snimku stanja",
 		"titleSnapshotCompleted": "Snimka stanja dovršena",

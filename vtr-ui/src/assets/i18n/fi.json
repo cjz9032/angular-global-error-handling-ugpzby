@@ -4358,7 +4358,6 @@
 		"title": "Pikakuva",
 		"hardwareListTitle": "Laitteisto-osat",
 		"softwareListTitle": "Ohjelmisto-osat",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Ota tilannevedos",
 		"titleNotStarted": "Tee tilannevedos",
 		"titleSnapshotCompleted": "Tilannevedos valmis",

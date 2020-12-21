@@ -4358,7 +4358,6 @@
 		"title": "Pillanatfelvétel",
 		"hardwareListTitle": "Hardverösszetevők",
 		"softwareListTitle": "Szoftverösszetevők",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Pillanatfelvétel készítése",
 		"titleNotStarted": "Készítsen egy pillanatfelvételt",
 		"titleSnapshotCompleted": "Pillanatkép elkészült",

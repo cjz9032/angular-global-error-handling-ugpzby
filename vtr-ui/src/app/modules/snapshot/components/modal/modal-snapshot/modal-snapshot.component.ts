@@ -18,15 +18,11 @@ import {
 	templateUrl: './modal-snapshot.component.html',
 	styleUrls: ['./modal-snapshot.component.scss'],
 })
-export class ModalSnapshotComponent implements OnInit, OnDestroy {
+export class ModalSnapshotComponent implements OnInit {
 	@Input() componentId: string;
 	@Input() snapshotComponentsByType: SnapshotComponentsListByType;
 
 	@Output() passEntry: EventEmitter<Array<string>> = new EventEmitter();
-	// Used to signalize to the caller that the modal is being closed.
-	// It emits true when the modal is closed in a successful way,
-	// e.g. user clicked in the OK button or false otherwise.
-	@Output() modalClosing: EventEmitter<boolean> = new EventEmitter();
 
 	public componentItemList: Array<ModalSnapshotComponentItem> = [];
 	public errorMessage = false;
@@ -57,10 +53,6 @@ export class ModalSnapshotComponent implements OnInit, OnDestroy {
 
 			this.componentItemList.push(environment);
 		});
-	}
-
-	ngOnDestroy(): void {
-		this.modalClosing.emit(this.isSuccessful);
 	}
 
 	public closeModal() {

@@ -4,7 +4,7 @@
 			<div class="col">
 				<div class="row information">
 					<h2 id="snapshot-widget-title" role="heading" class="title">{{'snapshot.title' | translate}}</h2>
-					<p id="snapshot-widget-description" role="text" class="description">{{'snapshot.description' | translate}}</p>
+					<p id="snapshot-widget-description" role="text" class="description">{{'snapshot.snapshotInformation' | translate}}</p>
 				</div>
 			</div>
 		</div>
@@ -17,8 +17,7 @@
 						[metricsItem]="itemParent + '.Snapshot'"
 						[isFullWidth]="true"
 						[label]="'snapshot.snapshotWidgetButton' | translate"
-						(onClick)="navigateToSnapshotPage()"
-						[tooltipText]="'snapshot.description' | translate">
+						(onClick)="navigateToSnapshotPage()">
 					</vtr-ui-button>
 				</div>
 			</div>

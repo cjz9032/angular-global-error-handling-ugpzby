@@ -4358,7 +4358,6 @@
 		"title": "快照",
 		"hardwareListTitle": "硬體元件",
 		"softwareListTitle": "軟體元件",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "拍攝快照",
 		"titleNotStarted": "執行快照",
 		"titleSnapshotCompleted": "快照完成",

@@ -32,24 +32,8 @@ export enum SnapshotHardwareComponents {
 }
 
 export enum SnapshotSoftwareComponents {
-	OperatingSystems,
 	Programs,
+	OperatingSystems,
 	StartupPrograms,
 	WebBrowsers,
-}
-
-export namespace SnapshotSoftwareComponents {
-	export function values() {
-		return Object.keys(SnapshotSoftwareComponents).filter(
-			(type) => isNaN(<any>type) && type !== 'values'
-		);
-	}
-}
-
-export namespace SnapshotHardwareComponents {
-	export function values() {
-		return Object.keys(SnapshotHardwareComponents).filter(
-			(type) => isNaN(<any>type) && type !== 'values'
-		);
-	}
 }

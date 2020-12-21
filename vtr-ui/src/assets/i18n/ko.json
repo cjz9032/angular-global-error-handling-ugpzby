@@ -4358,7 +4358,6 @@
 		"title": "스냅샷",
 		"hardwareListTitle": "하드웨어 구성 요소",
 		"softwareListTitle": "소프트웨어 구성 요소",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "스냅샷 만들기",
 		"titleNotStarted": "스냅샷 수행",
 		"titleSnapshotCompleted": "스냅샷 완료됨",

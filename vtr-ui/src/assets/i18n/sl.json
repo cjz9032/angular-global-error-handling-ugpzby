@@ -4358,7 +4358,6 @@
 		"title": "Posnetek",
 		"hardwareListTitle": "Komponente strojne opreme",
 		"softwareListTitle": "Komponente programske opreme",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Naredi posnetek",
 		"titleNotStarted": "Izvedi posnetek",
 		"titleSnapshotCompleted": "Posnetek končan",

@@ -4467,7 +4467,6 @@
 		"title": "スナップショット",
 		"hardwareListTitle": "ハードウェア・コンポーネント",
 		"softwareListTitle": "ソフトウェア・コンポーネント",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "スナップショットを撮る",
 		"titleNotStarted": "スナップショットを実行する",
 		"titleSnapshotCompleted": "スナップショットが完了しました",

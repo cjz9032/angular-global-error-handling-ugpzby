@@ -4358,7 +4358,6 @@
 		"title": "Snímek",
 		"hardwareListTitle": "Hardwarové součásti",
 		"softwareListTitle": "Součásti softwaru",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Pořídit snímek",
 		"titleNotStarted": "Vytvořit snímek",
 		"titleSnapshotCompleted": "Snímek dokončen",

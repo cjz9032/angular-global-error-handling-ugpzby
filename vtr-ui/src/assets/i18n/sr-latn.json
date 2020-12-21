@@ -4358,7 +4358,6 @@
 		"title": "Snimak",
 		"hardwareListTitle": "Hardverske komponente",
 		"softwareListTitle": "Softverske komponente",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Napravi snimak",
 		"titleNotStarted": "Pravljenje snimka",
 		"titleSnapshotCompleted": "Snimak je dovršen",

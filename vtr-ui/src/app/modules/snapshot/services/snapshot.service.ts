@@ -96,12 +96,16 @@ export class SnapshotService {
 	}
 
 	public getSoftwareComponentsList() {
-		return SnapshotSoftwareComponents.values();
-	}
+        return Object.keys(SnapshotSoftwareComponents).filter(
+            (type) => isNaN(type as any) && type !== 'values'
+        );
+    }
 
-	public getHardwareComponentsList() {
-		return SnapshotHardwareComponents.values();
-	}
+    public getHardwareComponentsList() {
+        return Object.keys(SnapshotHardwareComponents).filter(
+            (type) => isNaN(type as any) && type !== 'values'
+        );
+    }
 
 	public anyIndividualSnapshotInProgress() {
 		for (const snapshot in this.pvtSnapshotInfo) {
@@ -183,4 +187,6 @@ export class SnapshotService {
 			this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.error;
 		}
 	}
+
+
 }

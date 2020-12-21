@@ -4358,7 +4358,6 @@
 		"title": "Øjebliksbillede",
 		"hardwareListTitle": "Hardwarekomponenter",
 		"softwareListTitle": "Softwarekomponenter",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Tag et øjebliksbillede",
 		"titleNotStarted": "Opret et øjebliksbillede",
 		"titleSnapshotCompleted": "Øjebliksbillede udført",

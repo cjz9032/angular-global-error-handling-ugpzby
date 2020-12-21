@@ -4359,7 +4359,6 @@
 		"title": "لقطة",
 		"hardwareListTitle": "مكونات الجهاز",
 		"softwareListTitle": "مكونات البرامج",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "أخذ لقطة",
 		"titleNotStarted": "عمل لقطة",
 		"titleSnapshotCompleted": "اكتملت اللقطة",

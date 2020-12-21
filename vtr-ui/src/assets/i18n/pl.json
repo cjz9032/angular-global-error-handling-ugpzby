@@ -4358,7 +4358,6 @@
 		"title": "Migawka",
 		"hardwareListTitle": "Komponenty sprzętowe",
 		"softwareListTitle": "Komponenty programowe",
-		"description": "Some description to snapshot widget",
 		"snapshotWidgetButton": "Zrób migawkę",
 		"titleNotStarted": "Wykonaj migawkę",
 		"titleSnapshotCompleted": "Zakończono tworzenie migawki",
