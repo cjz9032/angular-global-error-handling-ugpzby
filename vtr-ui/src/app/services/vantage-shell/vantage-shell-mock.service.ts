@@ -2428,10 +2428,6 @@ export class VantageShellService {
 		return undefined;
 	}
 
-	public purchase(): void {
-		return undefined;
-	}
-
 	// returns DPM AllPowerPlans object from VantageShellService of JS Bridge
 	public getPowerDPM(): any {
 		const allPowerPlansResponse = {

@@ -29,6 +29,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 	public canShowAcDetailedNote = false;
 	public acAdapter: AcAdapter;
 	public storeLimitationValue: object;
+	public acFullSupportIconClass = '.icomoon-ConditionACAdapterError';
 
 	constructor() {}
 
