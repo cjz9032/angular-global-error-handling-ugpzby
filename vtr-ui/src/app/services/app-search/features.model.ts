@@ -1,7 +1,7 @@
 export const featureMap = {
 	pages: {
 		dashboard: {
-			icon: ['fal', 'columns'],
+			icon: ['fal', 'gem'],
 			action: {
 				type: 'navigation',
 				menuId: 'dashboard',
@@ -10,7 +10,7 @@ export const featureMap = {
 			}
 		},
 		myDevice: {
-			icon: ['fal', 'columns'],
+			icon: ['fal', 'gem'],
 			action: {
 				type: 'navigation',
 				menuId: 'device',
@@ -19,7 +19,7 @@ export const featureMap = {
 			}
 		},
 		systemUpdate: {
-			icon: ['fal', 'columns'],
+			icon: ['fal', 'gem'],
 			action: {
 				type: 'navigation',
 				menuId: 'system-updates',
@@ -28,7 +28,7 @@ export const featureMap = {
 			}
 		},
 		mySecurity: {
-			icon: ['fal', 'columns'],
+			icon: ['fal', 'gem'],
 			action: {
 				type: 'navigation',
 				menuId: 'security',
@@ -37,7 +37,7 @@ export const featureMap = {
 			}
 		},
 		vsp: {
-			icon: ['fal', 'columns'],
+			icon: ['fal', 'gem'],
 			action: {
 				type: 'navigation',
 				menuId: 'smart-performance',
@@ -46,7 +46,7 @@ export const featureMap = {
 			}
 		},
 		hwScan: {
-			icon: ['fal', 'columns'],
+			icon: ['fal', 'gem'],
 			action: {
 				type: 'navigation',
 				menuId: 'hardware-scan',
@@ -58,7 +58,7 @@ export const featureMap = {
 	features: {
 		power: {
 			batteryInformation: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'power',
@@ -67,7 +67,7 @@ export const featureMap = {
 				}
 			},
 			batteryDetails: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'power',
@@ -76,7 +76,7 @@ export const featureMap = {
 				}
 			},
 			smartStandby: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'power',
@@ -85,7 +85,7 @@ export const featureMap = {
 				}
 			},
 			alwaysOnUSB: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'power',
@@ -94,7 +94,7 @@ export const featureMap = {
 				}
 			},
 			batteryChargeThreshold: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: '',
@@ -103,7 +103,7 @@ export const featureMap = {
 				}
 			},
 			intelligentCooling: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'power',
@@ -112,7 +112,7 @@ export const featureMap = {
 				}
 			},
 			easyResume: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'power',
@@ -121,7 +121,7 @@ export const featureMap = {
 				}
 			},
 			rapidCharge: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'power',
@@ -130,7 +130,7 @@ export const featureMap = {
 				}
 			},
 			vantageToolbar: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'power',
@@ -141,7 +141,7 @@ export const featureMap = {
 		},
 		cameraAndDisplay: {
 			cameraPrivacyMode: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'display-camera',
@@ -150,7 +150,7 @@ export const featureMap = {
 				}
 			},
 			privacyGuard: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'display-camera',
@@ -159,7 +159,7 @@ export const featureMap = {
 				}
 			},
 			eyeCareMode: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'display-camera',
@@ -168,7 +168,7 @@ export const featureMap = {
 				}
 			},
 			cameraSettings: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'display-camera',
@@ -177,7 +177,7 @@ export const featureMap = {
 				}
 			},
 			cameraBackgroundBlur: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'display-camera',
@@ -188,7 +188,7 @@ export const featureMap = {
 		},
 		audio: {
 			dolbyAudio: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'audio',
@@ -197,7 +197,7 @@ export const featureMap = {
 				}
 			},
 			microphoneSettings: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'audio',
@@ -206,7 +206,7 @@ export const featureMap = {
 				}
 			},
 			automaticOptimizationForECourse: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'audio',
@@ -217,7 +217,7 @@ export const featureMap = {
 		},
 		input: {
 			touchPadSettings: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'input-accessories',
@@ -226,7 +226,7 @@ export const featureMap = {
 				}
 			},
 			trackPointSettings: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'input-accessories',
@@ -235,7 +235,7 @@ export const featureMap = {
 				}
 			},
 			keyboardBacklight: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'input-accessories',
@@ -244,7 +244,7 @@ export const featureMap = {
 				}
 			},
 			smartKeyboardBacklight: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'input-accessories',
@@ -253,7 +253,7 @@ export const featureMap = {
 				}
 			},
 			hiddenKeyboardFunctions: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'input-accessories',
@@ -262,7 +262,7 @@ export const featureMap = {
 				}
 			},
 			voIPHotkeyFunction: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'input-accessories',
@@ -271,7 +271,7 @@ export const featureMap = {
 				}
 			},
 			topRowKeyFunctions: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'input-accessories',
@@ -280,7 +280,7 @@ export const featureMap = {
 				}
 			},
 			userDefinedKey: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'input-accessories',
@@ -289,7 +289,7 @@ export const featureMap = {
 				}
 			},
 			fnAndCtrlKeySwap: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'input-accessories',
@@ -300,7 +300,7 @@ export const featureMap = {
 		},
 		smartAssist: {
 			activeProtectionSystem: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'smart-assist',
@@ -309,7 +309,7 @@ export const featureMap = {
 				}
 			},
 			intelligentSensing: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'smart-assist',
@@ -318,7 +318,7 @@ export const featureMap = {
 				}
 			},
 			zeroTouchLogin: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'smart-assist',
@@ -327,7 +327,7 @@ export const featureMap = {
 				}
 			},
 			zeroTouchLock: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'smart-assist',
@@ -336,7 +336,7 @@ export const featureMap = {
 				}
 			},
 			zeroTouchVideoPlayback: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'smart-assist',
@@ -345,7 +345,7 @@ export const featureMap = {
 				}
 			},
 			videoResolutionUpscalingSR: {
-				icon: ['fal', 'columns'],
+				icon: ['fal', 'gem'],
 				action: {
 					type: 'navigation',
 					menuId: 'smart-assist',
