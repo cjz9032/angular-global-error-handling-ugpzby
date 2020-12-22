@@ -2695,3 +2695,10 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		background-color: $light;
 	}
 }
+
+.icomoon-Smart-Assist {
+	&:before {
+		content: $icomoon-LE-Smart-Assist2x;
+		color: #fff;
+	}
+}
