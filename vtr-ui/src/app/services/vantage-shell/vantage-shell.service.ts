@@ -4,7 +4,6 @@ import { environment } from '../../../environments/environment';
 import { CommonService } from '../../services/common/common.service';
 import { CPUOCStatus } from 'src/app/data-models/gaming/cpu-overclock-status.model';
 import { HttpClient } from '@angular/common/http';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Container, BindingScopeEnum } from 'inversify';
 import { Backlight } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.interface';
 import { MetricHelper } from 'src/app/services/metric/metrics.helper';
@@ -21,9 +20,7 @@ export class VantageShellService {
 	private phoenix: any;
 	private shell: any;
 	constructor(
-		private commonService: CommonService,
-		private localCacheService: LocalCacheService,
-		private http: HttpClient
+		private commonService: CommonService
 	) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
@@ -189,24 +186,6 @@ export class VantageShellService {
 		}
 
 		return MetricHelper.createSimulateObj();
-	}
-
-	public getMetricsPolicy(callback) {
-		const self = this;
-		this.downloadMetricsPolicy().subscribe((response) => {
-			self.deviceFilter(JSON.stringify(response)).then((result) => {
-				const userDeterminePrivacy = self.localCacheService.getLocalCacheValue(
-					LocalStorageKey.UserDeterminePrivacy
-				);
-				if (!userDeterminePrivacy) {
-					callback(result);
-				}
-			});
-		});
-	}
-
-	private downloadMetricsPolicy() {
-		return this.http.get<string>('assets/privacy-json/metrics.json');
 	}
 
 	/**

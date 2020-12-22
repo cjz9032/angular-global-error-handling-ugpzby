@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { NgForage, Driver, DedicatedInstanceFactory } from 'ngforage';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LoggerService } from '../logger/logger.service';
+import { IdleService } from '../idle/idle.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -13,15 +15,36 @@ export class LocalCacheService {
 	private transferredShellVersion = '10.2011.8';
 	private cacheMap = {};
 	private indexedCacheKey = 'VantageExperienceCache';
-	private setPromise: Promise<any>;
+	private needSaveIndexedDB = false;
 
 	constructor(
 		private readonly fact: DedicatedInstanceFactory,
+		private idleService: IdleService,
+		private loggerService: LoggerService,
 		private commonService: CommonService
 	) {
 		this.transferEnabled = this.checkTransferEnabled();
 		if (this.transferEnabled) {
 			this.createForage(this.experienceName, this.experienceName);
+		}
+		this.idleService.start();
+		this.idleService.schedule('SaveIndexedDB', false, function () {
+			this.saveIndexedDB();
+		}, this)
+	}
+
+	private saveIndexedDB() {
+		if (this.needSaveIndexedDB) {
+			this.needSaveIndexedDB = false;
+			this.setItem(this.indexedCacheKey, this.cacheMap)
+				.then(() => {
+					if (window.localStorage.length > 0) {
+						window.localStorage.clear();
+					}
+					this.loggerService.info(`LocalCacheService.saveIndexedDB succeed.`);
+				}).catch((error) => {
+					this.loggerService.error(`LocalCacheService.saveIndexedDB error: ${error}`);
+				});
 		}
 	}
 
@@ -48,13 +71,10 @@ export class LocalCacheService {
 						}
 					}
 				}
-				this.setPromise = this.setItem(this.indexedCacheKey, this.cacheMap).then(() => {
-					window.localStorage.clear();
-					this.setPromise = undefined;
-				});
+				this.needSaveIndexedDB = true;
 			}
 			const end = Date.now();
-			// console.log('Local Cache Value time cost:', end - start);
+			this.loggerService.info('LocalCacheService.loadCacheValues time cost:', end - start);
 		}
 	}
 
@@ -69,15 +89,8 @@ export class LocalCacheService {
 			if (this.transferEnabled) {
 				const oldValue = this.cacheMap[key];
 				this.cacheMap[key] = this.cloneObjectValue(value);
-				this.setItem(this.indexedCacheKey, this.cacheMap)
-					.then(() => {
-						this.commonService.sendNotification(key, value);
-						resolve();
-					})
-					.catch((error) => {
-						this.cacheMap[key] = oldValue;
-						reject(error);
-					});
+				this.needSaveIndexedDB = true;
+				this.commonService.sendNotification(key, value);
 			} else {
 				this.commonService.setLocalStorageValue(key, value);
 				resolve();

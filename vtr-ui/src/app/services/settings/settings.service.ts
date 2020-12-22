@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
@@ -20,7 +23,10 @@ export class SettingsService {
 
 	valueToBoolean = [false, true, false];
 
-	constructor(private shellService: VantageShellService, private loggerService: LoggerService) {
+	constructor(private shellService: VantageShellService,
+		private http: HttpClient,
+		private localCacheService: LocalCacheService,
+		private loggerService: LoggerService) {
 		this.preferenceSettings = this.shellService.getPreferenceSettings();
 		this.metricsPreference = this.shellService.getMetricPreferencePlugin();
 	}
@@ -80,5 +86,23 @@ export class SettingsService {
 
 	getMassageStettingValue(messageSettings: Array<any>, id: string) {
 		return this.valueToBoolean[messageSettings.find((mss) => mss.id === id).settingValue];
+	}
+
+	public getMetricsPolicy(callback) {
+		const self = this;
+		this.downloadMetricsPolicy().subscribe((response) => {
+			this.shellService.deviceFilter(JSON.stringify(response)).then((result) => {
+				const userDeterminePrivacy = self.localCacheService.getLocalCacheValue(
+					LocalStorageKey.UserDeterminePrivacy
+				);
+				if (!userDeterminePrivacy) {
+					callback(result);
+				}
+			});
+		});
+	}
+
+	private downloadMetricsPolicy() {
+		return this.http.get<string>('assets/privacy-json/metrics.json');
 	}
 }

@@ -27,6 +27,7 @@ import { InitializerService } from 'src/app/services/initializer/initializer.ser
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import { SettingsService } from 'src/app/services/settings/settings.service';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -160,6 +161,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		shellService: VantageShellService,
 		public commonService: CommonService,
 		public selfSelectService: SelfSelectService,
+		private settingsService: SettingsService,
 		private timerService: TimerService,
 		private userService: UserService,
 		public metricService: MetricService,
@@ -191,7 +193,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			await this.metricService.metricReady();
 			this.privacyPolicy = this.metrics.metricsEnabled;
 		} else {
-			shellService.getMetricsPolicy((result) => {
+			this.settingsService.getMetricsPolicy((result) => {
 				this.privacyPolicy = result;
 			});
 		}
