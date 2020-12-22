@@ -501,6 +501,13 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			scanRunDate: Date.now().toLocaleString(),
 			scanRunTime: Date.now().toLocaleString()
 		};
+
+		const requestParam = {
+			scanType: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan',
+		};
+		this.smartPerformanceService.getLastScanResult(requestParam).then((result) => {
+			Object.assign(this.scanResult, result);
+		});
 	}
 
 	changeManageSubscription(event) {
