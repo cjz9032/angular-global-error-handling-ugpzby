@@ -550,9 +550,7 @@ describe('SmartAssistService', () => {
 			const jsonData =
 				'{ "available": false, "enabled": false, "cameraAllowed": false, "photoAddress": "", "cameraPrivacyState": true, "authorizedAccessState": true, "alarmDuration": 0, "photoNumber": 5, "errorCode": 0 }';
 			smartAssistService.antiTheft = {
-				getMotionAlertSetting() {
-					return jsonData;
-				},
+				getMotionAlertSetting:() => jsonData
 			};
 			smartAssistService.getAntiTheftStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -588,7 +586,7 @@ describe('SmartAssistService', () => {
 				'setAntiTheftStatus'
 			).and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertEnabled(value: boolean) {
+				setMotionAlertEnabled:(value: boolean) => {
 					if (value) {
 						return 0;
 					}
@@ -606,7 +604,7 @@ describe('SmartAssistService', () => {
 				'setAntiTheftStatus'
 			).and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertEnabled(value: boolean) {
+				setMotionAlertEnabled:(value: boolean) => {
 					if (value) {
 						return 2;
 					}
@@ -624,7 +622,7 @@ describe('SmartAssistService', () => {
 				'setAntiTheftStatus'
 			).and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertEnabled(value: boolean) {
+				setMotionAlertEnabled:(value: boolean) => {
 					if (value) {
 						return 0;
 					}
@@ -639,7 +637,7 @@ describe('SmartAssistService', () => {
 			const { smartAssistService } = setup();
 			const privateSpy = spyOn<any>(smartAssistService, 'setAlarmOften').and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertAlarmDuration(value: boolean) {
+				setMotionAlertAlarmDuration:(value: boolean) => {
 					if (value) {
 						return 0;
 					}
@@ -654,7 +652,7 @@ describe('SmartAssistService', () => {
 			const { smartAssistService } = setup();
 			const privateSpy = spyOn<any>(smartAssistService, 'setAlarmOften').and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertAlarmDuration(value: number) {
+				setMotionAlertAlarmDuration:(value: number) => {
 					if (value) {
 						return 2;
 					}
@@ -669,7 +667,7 @@ describe('SmartAssistService', () => {
 			const { smartAssistService } = setup();
 			const privateSpy = spyOn<any>(smartAssistService, 'setAlarmOften').and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertAlarmDuration(value: number) {
+				setMotionAlertAlarmDuration:(value: number) => {
 					if (value) {
 						return 0;
 					}
@@ -684,7 +682,7 @@ describe('SmartAssistService', () => {
 			const { smartAssistService } = setup();
 			const privateSpy = spyOn<any>(smartAssistService, 'setPhotoNumber').and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertPhotoNumber(value: boolean) {
+				setMotionAlertPhotoNumber:(value: boolean) => {
 					if (value) {
 						return 0;
 					}
@@ -699,7 +697,7 @@ describe('SmartAssistService', () => {
 			const { smartAssistService } = setup();
 			const privateSpy = spyOn<any>(smartAssistService, 'setPhotoNumber').and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertPhotoNumber(value: number) {
+				setMotionAlertPhotoNumber:(value: number) => {
 					if (value) {
 						return 2;
 					}
@@ -714,7 +712,7 @@ describe('SmartAssistService', () => {
 			const { smartAssistService } = setup();
 			const privateSpy = spyOn<any>(smartAssistService, 'setPhotoNumber').and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertPhotoNumber(value: number) {
+				setMotionAlertPhotoNumber:(value: number) => {
 					if (value) {
 						return 0;
 					}
@@ -729,7 +727,7 @@ describe('SmartAssistService', () => {
 			const { smartAssistService } = setup();
 			const privateSpy = spyOn<any>(smartAssistService, 'setAllowCamera').and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertCameraAllowed(value: boolean) {
+				setMotionAlertCameraAllowed:(value: boolean) => {
 					if (value) {
 						return 0;
 					}
@@ -744,7 +742,7 @@ describe('SmartAssistService', () => {
 			const { smartAssistService } = setup();
 			const privateSpy = spyOn<any>(smartAssistService, 'setAllowCamera').and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertCameraAllowed(value: boolean) {
+				setMotionAlertCameraAllowed:(value: boolean) => {
 					if (value) {
 						return 2;
 					}
@@ -759,7 +757,7 @@ describe('SmartAssistService', () => {
 			const { smartAssistService } = setup();
 			const privateSpy = spyOn<any>(smartAssistService, 'setAllowCamera').and.callThrough();
 			smartAssistService.antiTheft = {
-				setMotionAlertCameraAllowed(value: boolean) {
+				setMotionAlertCameraAllowed:(value: boolean) => {
 					if (value) {
 						return 0;
 					}
@@ -776,7 +774,7 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'startMonitorAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { onstatusupdated() {}, registerCallback() {} };
+			smartAssistService.antiTheft = { onstatusupdated:() => {}, registerCallback:() => {} };
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.startMonitorAntiTheftStatus(
 				smartAssistService.antiTheft.registerCallback()
@@ -790,7 +788,7 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'startMonitorAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { registerCallback() {} };
+			smartAssistService.antiTheft = { registerCallback:() => {} };
 			smartAssistService.isShellAvailable = false;
 			smartAssistService.startMonitorAntiTheftStatus(
 				smartAssistService.antiTheft.registerCallback()
@@ -804,7 +802,7 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'stopMonitorAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { unRegisterCallback() {} };
+			smartAssistService.antiTheft = { unRegisterCallback:() => {} };
 			smartAssistService.isShellAvailable = true;
 			smartAssistService.stopMonitorAntiTheftStatus();
 			expect(privateSpy).toHaveBeenCalled();
@@ -816,7 +814,7 @@ describe('SmartAssistService', () => {
 				smartAssistService,
 				'stopMonitorAntiTheftStatus'
 			).and.callThrough();
-			smartAssistService.antiTheft = { unRegisterCallback() {} };
+			smartAssistService.antiTheft = { unRegisterCallback:() => {} };
 			smartAssistService.isShellAvailable = false;
 			smartAssistService.stopMonitorAntiTheftStatus();
 			expect(privateSpy).toHaveBeenCalled();

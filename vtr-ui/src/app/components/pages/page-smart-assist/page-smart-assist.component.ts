@@ -1036,19 +1036,19 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.superResolution = response;
 						if (response.players) {
 							this.superResolutionTip = this.superResolutionTips.description1;
-							if (response.players.indexOf('wmplayer') != -1) {
+							if (response.players.indexOf('wmplayer') !== -1) {
 								this.superResolutionTip += this.superResolutionTips.player1;
 							}
-							if (response.players.indexOf('chrome') != -1) {
+							if (response.players.indexOf('chrome') !== -1) {
 								this.superResolutionTip += this.superResolutionTips.player2;
 							}
-							if (response.players.indexOf('potplayer') != -1) {
+							if (response.players.indexOf('potplayer') !== -1) {
 								this.superResolutionTip += this.superResolutionTips.player3;
 							}
-							if (response.players.indexOf('opera') != -1) {
+							if (response.players.indexOf('opera') !== -1) {
 								this.superResolutionTip += this.superResolutionTips.player4;
 							}
-							if (response.players.indexOf('msedge') != -1) {
+							if (response.players.indexOf('msedge') !== -1) {
 								this.superResolutionTip += this.superResolutionTips.player5;
 							}
 							this.superResolutionTip += this.superResolutionTips.description2;
