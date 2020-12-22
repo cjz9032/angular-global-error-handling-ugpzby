@@ -7,6 +7,7 @@ import { SnapshotService } from 'src/app/modules/snapshot/services/snapshot.serv
 import { SnapshotStatus } from '../enums/snapshot.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-page-snapshot',
@@ -15,16 +16,19 @@ import { WindowsVersionService } from 'src/app/services/windows-version/windows-
 })
 export class PageSnapshotComponent implements OnInit, OnDestroy {
 	snapshotSupportCard: FeatureContent = new FeatureContent();
+	showDownloadToolCard = true;
 
 	constructor(
 		private translate: TranslateService,
 		private commonService: CommonService,
 		private snapshotService: SnapshotService,
 		private loggerService: LoggerService,
-		private windowsVerisonService: WindowsVersionService
+		private windowsVerisonService: WindowsVersionService,
+		private deviceService: DeviceService
 	) {}
 
 	ngOnInit(): void {
+		this.showDownloadToolCard = !this.deviceService.isSMode;
 		this.initSupportCard();
 		this.initializeSnapshots();
 	}
