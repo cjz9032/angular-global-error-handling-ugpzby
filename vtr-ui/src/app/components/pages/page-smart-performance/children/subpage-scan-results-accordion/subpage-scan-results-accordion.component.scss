@@ -364,6 +364,8 @@
 								p {
 									font-size: $fontsize_xs;
 									font-family: $font_family_semibold;
+									hyphens: auto;
+									max-width: 96%;
 								}
 
 								@media #{$breakpoint_xl} {
