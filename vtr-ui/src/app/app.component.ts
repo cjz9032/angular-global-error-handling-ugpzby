@@ -621,26 +621,18 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		const navPerf = performance.getEntriesByType(
 			'navigation'
 		)[0] as PerformanceNavigationTiming;
+		const navigationStartTime = (win.VantageStub?.navigationStartingTime ?? 0) - (win.VantageStub?.appStartTime ?? 0);
 		const performanceTimePoints = {
 			certPingDone: win.VantageStub?.certpinTime ?? 0,
 			source: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? 'local' : 'remote',
 			hostname: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? '' : win.location.host,
-			indexPageEstablished: 0,
-			domInteractived: 0,
-			scriptLoaded: 0,
-			appInitialized: 0,
-			appEntryLoaded: 0,
-			firstPageLoaded: 0
+			indexPageEstablished: Math.round(navigationStartTime + navPerf.connectEnd - navPerf.startTime),
+			domInteractived: Math.round(navigationStartTime + navPerf.domInteractive - navPerf.startTime),
+			scriptLoaded: Math.round(navigationStartTime + navPerf.duration),
+			appInitialized: Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app initialized')?.startTime ?? 0) - navPerf.startTime),
+			appEntryLoaded: Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app entry loaded')?.startTime ?? 0) - navPerf.startTime),
+			firstPageLoaded: Math.round(navigationStartTime + (this.commonService.getPerformanceNode(firstPage)?.startTime ?? 0)  - navPerf.startTime)
 		};
-		if (win.VantageStub?.navigationStartingTime && win.VantageStub?.appStartTime) {
-			const navigationStartTime = win.VantageStub.navigationStartingTime - win.VantageStub.appStartTime;
-			performanceTimePoints.indexPageEstablished = Math.round(navigationStartTime + navPerf.connectEnd - navPerf.startTime);
-			performanceTimePoints.domInteractived = Math.round(navigationStartTime + navPerf.domInteractive - navPerf.startTime);
-			performanceTimePoints.scriptLoaded = Math.round(navigationStartTime + navPerf.duration);
-			performanceTimePoints.appInitialized = Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app initialized')?.startTime ?? 0) - navPerf.startTime);
-			performanceTimePoints.appEntryLoaded = Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app entry loaded')?.startTime ?? 0) - navPerf.startTime);
-			performanceTimePoints.firstPageLoaded = Math.round(navigationStartTime + (this.commonService.getPerformanceNode(firstPage)?.startTime ?? 0)  - navPerf.startTime);
-		}
 		this.metricService.sendAppLoadedMetric(performanceTimePoints);
 		if (this.environment.debuggingSnackbar) {
 			let content = `You are now accessing ${performanceTimePoints.source}, ${performanceTimePoints.hostname} \n \n`;
