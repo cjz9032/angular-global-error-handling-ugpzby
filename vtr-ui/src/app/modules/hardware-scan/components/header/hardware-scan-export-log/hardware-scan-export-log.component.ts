@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import {
@@ -29,6 +30,7 @@ export class HardwareScanExportLogComponent implements OnInit {
 	private isInList = false;
 
 	constructor(
+		private deviceService: DeviceService,
 		private exportService: ExportResultsService,
 		private timerService: TimerService,
 		private hardwareScanMetricsService: HardwareScanMetricsService,
@@ -37,7 +39,9 @@ export class HardwareScanExportLogComponent implements OnInit {
 		private hardwareScanService: HardwareScanService
 	) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.isPdfAvailable();
+	}
 
 	// Necessary to control navigation through tab key
 	public onExportClick(): void {
@@ -89,6 +93,19 @@ export class HardwareScanExportLogComponent implements OnInit {
 		this.exportService.setExportExtensionSelected(ExportLogExtensions[extension]);
 
 		this.exportResults();
+	}
+
+	private isPdfAvailable() {
+		const supportedLanguage = 'en';
+
+		this.deviceService.getMachineInfo().then((value: any) => {
+			if (value.locale !== supportedLanguage) {
+				this.exportExtensions.splice(
+					this.exportExtensions.indexOf(ExportLogExtensions.pdf),
+					1
+				);
+			}
+		});
 	}
 
 	private exportResults() {
