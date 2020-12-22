@@ -61,7 +61,7 @@ describe('component: AntiTheftComponent', () => {
 		logger = TestBed.inject(LoggerService);
 		vantageShellService = TestBed.inject(VantageShellService);
 		smartAssist.windows = vantageShellService.getWindows();
-		cameraAccessChangedHandler;
+		cameraAccessChangedHandler = (args: any) => {};
 	});
 
 	it('should create', () => {
@@ -303,20 +303,16 @@ describe('component: AntiTheftComponent', () => {
 
 	it('toggleToolTip', () => {
 		const tooltip = {
-			isOpen() {
-				return true;
-			},
-			close() {},
+			isOpen:() => true,
+			close:() => {},
 		};
 		component.toggleToolTip(tooltip, false);
 	});
 
 	it('toggleToolTip', () => {
 		const tooltip = {
-			isOpen() {
-				return false;
-			},
-			open() {},
+			isOpen:() => false,
+			open:() => {},
 		};
 		component.toggleToolTip(tooltip, true);
 	});

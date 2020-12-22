@@ -608,9 +608,7 @@ export class AntiTheftComponent implements OnInit, OnDestroy {
 					settings.streamingCaptureMode = 2;
 					settings.photoCaptureSource = 0;
 					return this.mediaCapture.initializeAsync(settings).then(
-						() => {
-							return Promise.resolve(true);
-						},
+						() => Promise.resolve(true),
 						(error: any) => {
 							if (error && error.number === -2147024891) {
 								return Promise.resolve(false);
@@ -620,9 +618,7 @@ export class AntiTheftComponent implements OnInit, OnDestroy {
 				}
 				return Promise.resolve(false);
 			},
-			(error: any) => {
-				return Promise.resolve(false);
-			}
+			(error: any) => Promise.resolve(false)
 		);
 	}
 }
