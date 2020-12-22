@@ -1,18 +1,16 @@
-import { Subscription } from 'rxjs/internal/Subscription';
-import { GamingAllCapabilities } from './../../../data-models/gaming/gaming-all-capabilities';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { CommonService } from 'src/app/services/common/common.service';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { GamingAllCapabilities } from './../../../data-models/gaming/gaming-all-capabilities';
 import { Gaming } from 'src/app/enums/gaming.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory/gaming-accessory.service';
+import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
+import { CommonService } from 'src/app/services/common/common.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-third-party-App/gaming-third-party-app.service';
-
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 @Component({
 	selector: 'vtr-widget-system-tools',
 	templateUrl: './widget-system-tools.component.html',
@@ -29,10 +27,41 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	public toolLength = 3;
 
 	modalAutomationId: any = {
-		section: 'legion_accessory_central_install_popup',
-		closeButton: 'legion_accessory_close_button',
-		cancelButton: 'legion_accessory_central_install_popup_cancel_button',
-		okButton: 'legion_accessory_central_install_popup_install_button',
+		accessory: {
+			section: 'legion_accessory_central_install_popup',
+			closeButton: 'legion_accessory_close_button',
+			cancelButton: 'legion_accessory_central_install_popup_cancel_button',
+			okButton: 'legion_accessory_central_install_popup_install_button',
+		},
+		nahimic: {
+			section: 'nahimic_install_popup',
+			closeButton: 'nahimic_close_button',
+			cancelButton: 'nahimic_install_popup_cancel_button',
+			okButton: 'nahimic_install_popup_install_button',
+		}
+
+	};
+	modalInfo = {
+		accessory: {
+			title: 'gaming.dashboard.device.warningPromptPopup.legionAccessory',
+			description: 'gaming.dashboard.device.warningPromptPopup.accessoryDesc',
+			comfirmButton: 'gaming.dashboard.device.legionEdge.driverPopup.button',
+			cancelButton: 'gaming.dashboard.device.legionEdge.driverPopup.link',
+			confirmMetricEnabled: false,
+			cancelMetricEnabled: false,
+			id: this.modalAutomationId.accessory,
+			webLink: 'https://pcsupport.lenovo.com/downloads/legionaccessorycentral'
+		},
+		nahimic: {
+			title: 'Nahimic',
+			description: 'nahimic is a media software',
+			comfirmButton: 'gaming.dashboard.device.legionEdge.driverPopup.button',
+			cancelButton: 'gaming.dashboard.device.legionEdge.driverPopup.link',
+			confirmMetricEnabled: false,
+			cancelMetricEnabled: false,
+			id: this.modalAutomationId.nahimic,
+			webLink: 'https://www.microsoft.com/store/apps/9N36PPMP8S23'
+		}
 	};
 
 	private notificationSubscription: Subscription;
@@ -44,7 +73,6 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private hardwareScanService: HardwareScanService,
 		// version 3.3 show entrance & launch accessory
-		private gamingAccessoryService: GamingAccessoryService,
 		private gamingThirdPartyAppService: GamingThirdPartyAppService,
 		private logger: LoggerService
 	) {}
@@ -96,10 +124,11 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 				this.calcToolLength();
 			}
 		});
+		// Version 3.5 nahimic get reg status
 		this.gamingThirdPartyAppService.isLACSupportUriProtocol('nahimic').then((res) => {
 			if (res !== this.showNahimic && res !== undefined) {
 				this.showNahimic = res;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.accessoryFeature, res);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.nahimicFeature, res);
 				this.calcToolLength();
 			}
 		});
@@ -140,7 +169,7 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 				.then((res) => {
 					this.logger.info(`Widget-SystemTools-LaunchAccessory: return value: ${res}`);
 					if (!res && res === undefined) {
-						this.openWaringModal();
+						this.openWaringModal(key);
 					}
 				});
 		} catch (error) {
@@ -152,24 +181,24 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	openWaringModal() {
+	openWaringModal(key: string) {
 		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
 			backdrop: 'static',
 			windowClass: 'modal-prompt',
 		});
 		waringModalRef.componentInstance.info = {
-			title: 'gaming.dashboard.device.warningPromptPopup.legionAccessory',
-			description: 'gaming.dashboard.device.warningPromptPopup.accessoryDesc',
-			comfirmButton: 'gaming.dashboard.device.legionEdge.driverPopup.button',
-			cancelButton: 'gaming.dashboard.device.legionEdge.driverPopup.link',
-			confirmMetricEnabled: false,
-			cancelMetricEnabled: false,
-			id: this.modalAutomationId,
+			title: this.modalInfo[key].title,
+			description: this.modalInfo[key].description,
+			comfirmButton: this.modalInfo[key].comfirmButton,
+			cancelButton: this.modalInfo[key].cancelButton,
+			confirmMetricEnabled: this.modalInfo[key].confirmMetricEnabled,
+			cancelMetricEnabled: this.modalInfo[key].cancelMetricEnabled,
+			id: this.modalInfo[key].id,
 		};
 		this.eventEmitSubscription = waringModalRef.componentInstance.emitService.subscribe(
 			(emmitedValue) => {
 				if (emmitedValue === 1) {
-					window.open('https://pcsupport.lenovo.com/downloads/legionaccessorycentral');
+					window.open(this.modalInfo[key].webLink);
 				}
 			}
 		);

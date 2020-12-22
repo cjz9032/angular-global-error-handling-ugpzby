@@ -15,7 +15,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
-import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory/gaming-accessory.service';
+import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-third-party-App/gaming-third-party-app.service';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptStubComponent {
@@ -37,6 +37,7 @@ describe('WidgetSystemToolsComponent', () => {
 	let macroKeyFeatureCache = false;
 	let hardwareScanFeatureCache = false;
 	let accessoryFeatureCache = false;
+	let nahimicFeatureCache = false;
 
 	const commonServiceMock = {
 		getCapabalitiesNotification: () => {
@@ -56,6 +57,8 @@ describe('WidgetSystemToolsComponent', () => {
 					return hardwareScanFeatureCache;
 				case '[LocalStorageKey] AccessoryFeature':
 					return accessoryFeatureCache;
+				case '[LocalStorageKey] Nahicim':
+					return nahimicFeatureCache;
 			}
 		},
 		setLocalCacheValue: (key: any, value: any) => {
@@ -65,6 +68,9 @@ describe('WidgetSystemToolsComponent', () => {
 					break;
 				case '[LocalStorageKey] AccessoryFeature':
 					accessoryFeatureCache = value;
+					break;
+				case '[LocalStorageKey] Nahicim':
+					nahimicFeatureCache = value;
 					break;
 			}
 		},
@@ -80,13 +86,13 @@ describe('WidgetSystemToolsComponent', () => {
 	};
 
 	const hardwareScanServiceSpy = jasmine.createSpyObj('HardwareScanService', ['isAvailable']);
-	const gamingAccessoryServiceSpy = jasmine.createSpyObj('GamingAccessoryService', [
+	const gamingThirdPartyAppServiceSpy = jasmine.createSpyObj('GamingThirdPartyAppService', [
 		'isLACSupportUriProtocol',
-		'launchAccessory',
+		'launchThirdPartyApp',
 	]);
 
 	hardwareScanServiceSpy.isAvailable.and.returnValue(Promise.resolve(false));
-	gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(Promise.resolve(false));
+	gamingThirdPartyAppServiceSpy.isLACSupportUriProtocol.and.returnValue(Promise.resolve(false));
 
 	describe('macroKey', () => {
 		beforeEach(waitForAsync(() => {
@@ -104,7 +110,7 @@ describe('WidgetSystemToolsComponent', () => {
 						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
-					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
+					{ provide: GamingThirdPartyAppService, useValue: gamingThirdPartyAppServiceSpy },
 				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
@@ -171,7 +177,7 @@ describe('WidgetSystemToolsComponent', () => {
 						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
-					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
+					{ provide: GamingThirdPartyAppService, useValue: gamingThirdPartyAppServiceSpy },
 				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
@@ -244,7 +250,7 @@ describe('WidgetSystemToolsComponent', () => {
 						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
-					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
+					{ provide: GamingThirdPartyAppService, useValue: gamingThirdPartyAppServiceSpy },
 				],
 			}).compileComponents();
 			modalService = TestBed.inject(NgbModal);
@@ -257,53 +263,57 @@ describe('WidgetSystemToolsComponent', () => {
 			macroKeyFeatureCache = false;
 			hardwareScanFeatureCache = false;
 			accessoryFeatureCache = false;
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+			gamingThirdPartyAppServiceSpy.isLACSupportUriProtocol.and.returnValue(
 				Promise.resolve(false)
 			);
-			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(false));
+			gamingThirdPartyAppServiceSpy.launchThirdPartyApp.and.returnValue(Promise.resolve(false));
 		});
 
-		it('ngOnInit not support legionAccessory', () => {
+		it('ngOnInit not support third party app', () => {
 			expect(component.showLegionAccessory).toBe(false);
+			expect(component.showNahimic).toBe(false);
 			expect(component.toolLength).toBe(3);
 		});
 
-		it('ngOnInit legionAccessory', fakeAsync(() => {
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+		it('ngOnInit third party app', fakeAsync(() => {
+			gamingThirdPartyAppServiceSpy.isLACSupportUriProtocol.and.returnValue(
 				Promise.resolve(true)
 			);
 			accessoryFeatureCache = false;
+			nahimicFeatureCache = false;
 			component.ngOnInit();
 			tick();
-			expect(component.showLegionAccessory).toBe(true);
-			expect(component.toolLength).toBe(4);
-			expect(accessoryFeatureCache).toBe(true);
+			expect(component.showLegionAccessory).toBe(true, `showLegionAccessory should be true`);
+			expect(component.showNahimic).toBe(true, `showNahimic should be true`);
+			expect(component.toolLength).toBe(5, `appList length shoulde be 5`);
+			expect(accessoryFeatureCache).toBe(true, `accessory cache should be true`);
+			expect(nahimicFeatureCache).toBe(true, `nahimic cache should be true`);
 		}));
 
 		it('launchThirdPartyApp', fakeAsync(() => {
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+			gamingThirdPartyAppServiceSpy.isLACSupportUriProtocol.and.returnValue(
 				Promise.resolve(true)
 			);
-			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(true));
+			gamingThirdPartyAppServiceSpy.launchThirdPartyApp.and.returnValue(Promise.resolve(true));
 			spyOn(component, 'openWaringModal').and.callFake(() => {});
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 			component.launchThirdPartyApp('accessory');
 			tick();
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+			gamingThirdPartyAppServiceSpy.isLACSupportUriProtocol.and.returnValue(
 				Promise.resolve(true)
 			);
-			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(false));
+			gamingThirdPartyAppServiceSpy.launchThirdPartyApp.and.returnValue(Promise.resolve(false));
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 			component.launchThirdPartyApp('accessory');
 			tick();
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.returnValue(
+			gamingThirdPartyAppServiceSpy.isLACSupportUriProtocol.and.returnValue(
 				Promise.resolve(false)
 			);
-			gamingAccessoryServiceSpy.launchAccessory.and.returnValue(Promise.resolve(undefined));
+			gamingThirdPartyAppServiceSpy.launchThirdPartyApp.and.returnValue(Promise.resolve(undefined));
 			expect(component.openWaringModal).toHaveBeenCalledTimes(0);
 			component.launchThirdPartyApp('accessory');
 			tick();
@@ -311,7 +321,7 @@ describe('WidgetSystemToolsComponent', () => {
 		}));
 
 		it('launchThirdPartyApp error', () => {
-			gamingAccessoryServiceSpy.isLACSupportUriProtocol.and.throwError(
+			gamingThirdPartyAppServiceSpy.isLACSupportUriProtocol.and.throwError(
 				'launchThirdPartyApp error'
 			);
 			try {
@@ -331,12 +341,12 @@ describe('WidgetSystemToolsComponent', () => {
 			expect(window.open).toHaveBeenCalledTimes(0);
 
 			modalRef.componentInstance.emitService = of(0);
-			component.openWaringModal();
+			component.openWaringModal('accessory');
 			expect(modalService.open).toHaveBeenCalledTimes(1);
 			expect(window.open).toHaveBeenCalledTimes(0);
 
 			modalRef.componentInstance.emitService = of(1);
-			component.openWaringModal();
+			component.openWaringModal('accessory');
 			expect(modalService.open).toHaveBeenCalledTimes(2);
 			expect(window.open).toHaveBeenCalledTimes(1);
 		});
@@ -358,7 +368,7 @@ describe('WidgetSystemToolsComponent', () => {
 						useValue: gamingAllCapabilitiesServiceMock,
 					},
 					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
-					{ provide: GamingAccessoryService, useValue: gamingAccessoryServiceSpy },
+					{ provide: GamingThirdPartyAppService, useValue: gamingThirdPartyAppServiceSpy },
 				],
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
