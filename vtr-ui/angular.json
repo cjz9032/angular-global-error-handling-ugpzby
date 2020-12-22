@@ -24,7 +24,8 @@
 							"uuid",
 							"crypto-js",
 							"hammerjs",
-							"util"
+							"util",
+							"jspdf-autotable"
 						],
 						"customWebpackConfig": {
 							"path": "./custom-webpack.config.js"
