@@ -42,7 +42,7 @@
 		}
 	}
 
-	.custom-control-input:disabled + .custom-control-label {
+	.custom-control-input:disabled ~ .custom-control-label {
 		cursor: default;
 
 		.app-logo {
