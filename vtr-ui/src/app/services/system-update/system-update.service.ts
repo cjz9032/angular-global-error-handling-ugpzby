@@ -1125,12 +1125,18 @@ export class SystemUpdateService {
 				if (status === true) {
 					this.isUpdateDownloading = false;
 					this.percentCompleted = 0;
-					this.isUpdatesAvailable = true;
 					this.installationPercent = 0;
 					this.downloadingPercent = 0;
 					this.isInstallationCompleted = false;
 					this.isDownloadingCancel = true;
 					this.isInstallingAllUpdates = true;
+					if (this.updateInfo
+						&& this.updateInfo.updateList
+						&& this.updateInfo.updateList.length > 0) {
+						this.isUpdatesAvailable = true;
+					} else {
+						this.isUpdatesAvailable = false;
+					}
 					this.commonService.sendNotification(
 						UpdateProgress.UpdateDownloadCancelled,
 						status
