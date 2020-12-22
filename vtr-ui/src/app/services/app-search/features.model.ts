@@ -1,7 +1,6 @@
 export const featureMap = {
 	pages: {
 		dashboard: {
-			featureName: 'Dashboard',
 			icon: ['fal', 'columns'],
 			action: {
 				type: 'navigation',
@@ -11,7 +10,6 @@ export const featureMap = {
 			}
 		},
 		myDevice: {
-			featureName: 'MyDevice',
 			icon: ['fal', 'columns'],
 			action: {
 				type: 'navigation',
@@ -21,7 +19,6 @@ export const featureMap = {
 			}
 		},
 		systemUpdate: {
-			featureName: 'SystemUpdate',
 			icon: ['fal', 'columns'],
 			action: {
 				type: 'navigation',
@@ -31,7 +28,6 @@ export const featureMap = {
 			}
 		},
 		mySecurity: {
-			featureName: 'MYSecurity',
 			icon: ['fal', 'columns'],
 			action: {
 				type: 'navigation',
@@ -41,7 +37,6 @@ export const featureMap = {
 			}
 		},
 		vsp: {
-			featureName: 'Smart Performance',
 			icon: ['fal', 'columns'],
 			action: {
 				type: 'navigation',
@@ -51,7 +46,6 @@ export const featureMap = {
 			}
 		},
 		hwScan: {
-			featureName: 'HWScan',
 			icon: ['fal', 'columns'],
 			action: {
 				type: 'navigation',
@@ -64,7 +58,6 @@ export const featureMap = {
 	features: {
 		power: {
 			batteryInformation: {
-				featureName: 'Battery Information',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -74,7 +67,6 @@ export const featureMap = {
 				}
 			},
 			batteryDetails: {
-				featureName: 'Battery Details',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -84,7 +76,6 @@ export const featureMap = {
 				}
 			},
 			smartStandby: {
-				featureName: 'Smart Standby',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -94,7 +85,6 @@ export const featureMap = {
 				}
 			},
 			alwaysOnUSB: {
-				featureName: 'Always On USB',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -104,7 +94,6 @@ export const featureMap = {
 				}
 			},
 			batteryChargeThreshold: {
-				featureName: 'Battery Charge Threshold',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -114,7 +103,6 @@ export const featureMap = {
 				}
 			},
 			intelligentCooling: {
-				featureName: 'Intelligent Cooling',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -124,7 +112,6 @@ export const featureMap = {
 				}
 			},
 			easyResume: {
-				featureName: 'Easy Resume',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -134,7 +121,6 @@ export const featureMap = {
 				}
 			},
 			rapidCharge: {
-				featureName: 'Rapid Charge',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -144,7 +130,6 @@ export const featureMap = {
 				}
 			},
 			vantageToolbar: {
-				featureName: 'Vantage Toolbar',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -156,7 +141,6 @@ export const featureMap = {
 		},
 		cameraAndDisplay: {
 			cameraPrivacyMode: {
-				featureName: 'Camera Privacy Mode',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -166,7 +150,6 @@ export const featureMap = {
 				}
 			},
 			privacyGuard: {
-				featureName: 'Privacy Guard',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -176,7 +159,6 @@ export const featureMap = {
 				}
 			},
 			eyeCareMode: {
-				featureName: 'Eye Care Mode',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -186,7 +168,6 @@ export const featureMap = {
 				}
 			},
 			cameraSettings: {
-				featureName: 'Camera Settings',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -196,7 +177,6 @@ export const featureMap = {
 				}
 			},
 			cameraBackgroundBlur: {
-				featureName: 'camera background blur',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -208,7 +188,6 @@ export const featureMap = {
 		},
 		audio: {
 			dolbyAudio: {
-				featureName: 'Dolby audio',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -218,7 +197,6 @@ export const featureMap = {
 				}
 			},
 			microphoneSettings: {
-				featureName: 'Microphone Settings',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -228,7 +206,6 @@ export const featureMap = {
 				}
 			},
 			automaticOptimizationForECourse: {
-				featureName: 'Automatic optimization for E-Course',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -240,7 +217,6 @@ export const featureMap = {
 		},
 		input: {
 			touchPadSettings: {
-				featureName: 'TouchPad Settings',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -250,7 +226,6 @@ export const featureMap = {
 				}
 			},
 			trackPointSettings: {
-				featureName: 'TrackPoint Settings',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -259,8 +234,7 @@ export const featureMap = {
 					params: []
 				}
 			},
-			keyboardBacklight1_0: {
-				featureName: 'Keyboard Backlight 1.0',
+			keyboardBacklight: {
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -269,8 +243,7 @@ export const featureMap = {
 					params: []
 				}
 			},
-			smartKeyboardBacklight2_0: {
-				featureName: 'Smart Keyboard Backlight 2.0 (ALS-based auto-adjust backlight)',
+			smartKeyboardBacklight: {
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -280,7 +253,6 @@ export const featureMap = {
 				}
 			},
 			hiddenKeyboardFunctions: {
-				featureName: 'Hidden Keyboard Functions',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -290,7 +262,6 @@ export const featureMap = {
 				}
 			},
 			voIPHotkeyFunction: {
-				featureName: 'VoIP hotkey function',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -300,7 +271,6 @@ export const featureMap = {
 				}
 			},
 			topRowKeyFunctions: {
-				featureName: 'Top-row Key functions',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -310,7 +280,6 @@ export const featureMap = {
 				}
 			},
 			userDefinedKey: {
-				featureName: 'User-Defined Key',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -320,7 +289,6 @@ export const featureMap = {
 				}
 			},
 			fnAndCtrlKeySwap: {
-				featureName: 'Fn and Ctrl key swap',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -332,7 +300,6 @@ export const featureMap = {
 		},
 		smartAssist: {
 			activeProtectionSystem: {
-				featureName: 'Active Protection System',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -342,7 +309,6 @@ export const featureMap = {
 				}
 			},
 			intelligentSensing: {
-				featureName: 'Intelligent Sensing(i.e. Intelligent Screen On/Off)',
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -351,8 +317,7 @@ export const featureMap = {
 					params: []
 				}
 			},
-			zeroTouchLogin1_0: {
-				featureName: 'Zero Touch Login 1.0',
+			zeroTouchLogin: {
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -361,8 +326,7 @@ export const featureMap = {
 					params: []
 				}
 			},
-			zeroTouchLock1_0: {
-				featureName: 'Zero Touch Lock 1.0',
+			zeroTouchLock: {
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -371,8 +335,7 @@ export const featureMap = {
 					params: []
 				}
 			},
-			zeroTouchVideoPlayback1_0: {
-				featureName: 'Zero Touch Video Playback 1.0',
+			zeroTouchVideoPlayback: {
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',
@@ -381,8 +344,7 @@ export const featureMap = {
 					params: []
 				}
 			},
-			videoResolutionUpscalingSR1_0: {
-				featureName: 'Video Resolution Upscaling (SR 1.0) on Consumer X40 Gen.',
+			videoResolutionUpscalingSR: {
 				icon: ['fal', 'columns'],
 				action: {
 					type: 'navigation',

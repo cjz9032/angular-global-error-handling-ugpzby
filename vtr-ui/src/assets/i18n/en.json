@@ -5491,7 +5491,7 @@
 				]
 			},
 			"myDevice": {
-				"featureName": "MyDevice",
+				"featureName": "My device",
 				"highRelevantKeywords": [
 					"SN",
 					"serial",
@@ -5503,7 +5503,7 @@
 				]
 			},
 			"systemUpdate": {
-				"featureName": "SystemUpdate",
+				"featureName": "System update",
 				"highRelevantKeywords": [
 					"Update",
 					"driver",
@@ -5516,7 +5516,7 @@
 				]
 			},
 			"mySecurity": {
-				"featureName": "MYSecurity",
+				"featureName": "My security",
 				"highRelevantKeywords": [
 					"101",
 					"security",
@@ -5535,7 +5535,7 @@
 				]
 			},
 			"vsp": {
-				"featureName": "Smart Performance",
+				"featureName": "Smart performance",
 				"highRelevantKeywords": [
 					"optimize",
 					"boost",
@@ -5554,7 +5554,7 @@
 				]
 			},
 			"hwScan": {
-				"featureName": "HWScan",
+				"featureName": "Hardware scan",
 				"highRelevantKeywords": [
 					"HW",
 					"PC",
@@ -5575,8 +5575,9 @@
 		},
 		"features": {
 			"power": {
+				"category": "Power",
 				"batteryInformation": {
-					"featureName": "Battery Information",
+					"featureName": "Battery information",
 					"highRelevantKeywords": [
 						"Remaining time",
 						"remaining percentage",
@@ -5584,7 +5585,7 @@
 					]
 				},
 				"batteryDetails": {
-					"featureName": "Battery Details",
+					"featureName": "Battery details",
 					"highRelevantKeywords": [
 						"Wattage",
 						"Temperature",
@@ -5605,19 +5606,19 @@
 					]
 				},
 				"smartStandby": {
-					"featureName": "Smart Standby",
+					"featureName": "Smart standby",
 					"highRelevantKeywords": [
 						"Modern Standby"
 					]
 				},
 				"alwaysOnUSB": {
-					"featureName": "Always On USB",
+					"featureName": "Always on USB",
 					"highRelevantKeywords": [
 						"Power settings"
 					]
 				},
 				"batteryChargeThreshold": {
-					"featureName": "Battery Charge Threshold",
+					"featureName": "Battery charge threshold",
 					"highRelevantKeywords": [
 						"Battery settings",
 						"conservation mode",
@@ -5625,7 +5626,7 @@
 					]
 				},
 				"intelligentCooling": {
-					"featureName": "Intelligent Cooling",
+					"featureName": "Intelligent cooling",
 					"highRelevantKeywords": [
 						"Power smart settings",
 						"performance mode",
@@ -5637,19 +5638,19 @@
 					]
 				},
 				"easyResume": {
-					"featureName": "Easy Resume",
+					"featureName": "Easy resume",
 					"highRelevantKeywords": [
 						"Power settings"
 					]
 				},
 				"rapidCharge": {
-					"featureName": "Rapid Charge",
+					"featureName": "Rapid charge",
 					"highRelevantKeywords": [
 						"Express charge"
 					]
 				},
 				"vantageToolbar": {
-					"featureName": "Vantage Toolbar",
+					"featureName": "Vantage toolbar",
 					"highRelevantKeywords": [
 						"Toolbar",
 						"quick settings",
@@ -5658,21 +5659,22 @@
 				}
 			},
 			"cameraAndDisplay": {
+				"category": "Camera and display",
 				"cameraPrivacyMode": {
-					"featureName": "Camera Privacy Mode",
+					"featureName": "Camera privacy mode",
 					"highRelevantKeywords": [
 						"camera",
 						"privacy protection"
 					]
 				},
 				"privacyGuard": {
-					"featureName": "Privacy Guard",
+					"featureName": "Privacy guard",
 					"highRelevantKeywords": [
 						"screen shutter"
 					]
 				},
 				"eyeCareMode": {
-					"featureName": "Eye Care Mode",
+					"featureName": "Eye care mode",
 					"highRelevantKeywords": [
 						"Night light",
 						"Eye comfort",
@@ -5680,7 +5682,7 @@
 					]
 				},
 				"cameraSettings": {
-					"featureName": "Camera Settings",
+					"featureName": "Camera settings",
 					"highRelevantKeywords": [
 						"camera brightness",
 						"camera contrast",
@@ -5688,7 +5690,7 @@
 					]
 				},
 				"cameraBackgroundBlur": {
-					"featureName": "camera background blur",
+					"featureName": "Camera background blur",
 					"highRelevantKeywords": [
 						"camera blur",
 						"camera background blur"
@@ -5696,6 +5698,7 @@
 				}
 			},
 			"audio": {
+				"category": "Audio",
 				"dolbyAudio": {
 					"featureName": "Dolby audio",
 					"highRelevantKeywords": [
@@ -5706,7 +5709,7 @@
 					]
 				},
 				"microphoneSettings": {
-					"featureName": "Microphone Settings",
+					"featureName": "Microphone settings",
 					"highRelevantKeywords": [
 						"Microphone volume",
 						"Acoustic Echo cancellation",
@@ -5724,34 +5727,35 @@
 				}
 			},
 			"input": {
+				"category": "Input and accessories",
 				"touchPadSettings": {
-					"featureName": "TouchPad Settings",
+					"featureName": "TouchPad settings",
 					"highRelevantKeywords": [
 						"touchpad"
 					]
 				},
 				"trackPointSettings": {
-					"featureName": "TrackPoint Settings",
+					"featureName": "TrackPoint settings",
 					"highRelevantKeywords": [
 						"trackpoint"
 					]
 				},
-				"keyboardBacklight1_0": {
-					"featureName": "Keyboard Backlight 1.0",
+				"keyboardBacklight": {
+					"featureName": "Keyboard backlight",
 					"highRelevantKeywords": [
 						"keyboard backlight",
 						"backlit"
 					]
 				},
-				"smartKeyboardBacklight2_0": {
-					"featureName": "Smart Keyboard Backlight 2.0 (ALS-based auto-adjust backlight)",
+				"smartKeyboardBacklight": {
+					"featureName": "Smart keyboard backlight 2.0 (ALS-based auto-adjust backlight)",
 					"highRelevantKeywords": [
 						"atuomatic backlight",
 						"smart backlight"
 					]
 				},
 				"hiddenKeyboardFunctions": {
-					"featureName": "Hidden Keyboard Functions",
+					"featureName": "Hidden keyboard functions",
 					"highRelevantKeywords": [
 						"keyboard map",
 						"hidden keyboard functions"
@@ -5788,42 +5792,43 @@
 				}
 			},
 			"smartAssist": {
+				"category": "Smart assist",
 				"activeProtectionSystem": {
-					"featureName": "Active Protection System",
+					"featureName": "Active protection system",
 					"highRelevantKeywords": [
 						"HDD protection",
 						"Active protection system against HDD"
 					]
 				},
 				"intelligentSensing": {
-					"featureName": "Intelligent Sensing(i.e. Intelligent Screen On/Off)",
+					"featureName": "Intelligent sensing(i.e. Intelligent screen on/off)",
 					"highRelevantKeywords": [
 						"Intelligent screen"
 					]
 				},
-				"zeroTouchLogin1_0": {
-					"featureName": "Zero Touch Login 1.0",
+				"zeroTouchLogin": {
+					"featureName": "Zero touch login",
 					"highRelevantKeywords": [
 						"Zero touch login",
 						"ToF sensor"
 					]
 				},
-				"zeroTouchLock1_0": {
-					"featureName": "Zero Touch Lock 1.0",
+				"zeroTouchLock": {
+					"featureName": "Zero touch lock",
 					"highRelevantKeywords": [
 						"Zero touch lock",
 						"ToF sensor"
 					]
 				},
-				"zeroTouchVideoPlayback1_0": {
-					"featureName": "Zero Touch Video Playback 1.0",
+				"zeroTouchVideoPlayback": {
+					"featureName": "Zero touch video playback",
 					"highRelevantKeywords": [
 						"Smart pause",
 						"zero touch video playback"
 					]
 				},
-				"videoResolutionUpscalingSR1_0": {
-					"featureName": "Video Resolution Upscaling (SR 1.0) on Consumer X40 Gen.",
+				"videoResolutionUpscalingSR": {
+					"featureName": "Video resolution upscaling",
 					"highRelevantKeywords": [
 						"Super resolution",
 						"video resolution upscaling"
