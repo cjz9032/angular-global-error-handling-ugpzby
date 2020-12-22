@@ -8,7 +8,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
-import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-third-party-App/gaming-third-party-app.service';
+import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-third-party-app/gaming-third-party-app.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 @Component({

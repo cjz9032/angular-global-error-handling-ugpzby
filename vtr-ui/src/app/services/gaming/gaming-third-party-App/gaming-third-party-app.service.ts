@@ -22,7 +22,10 @@ export class GamingThirdPartyAppService {
     xRite: ``
   } 
 
-	constructor(private shellService: VantageShellService, private logger: LoggerService) {
+	constructor(
+		private shellService: VantageShellService, 
+		private logger: LoggerService
+	) {
 		this.regUtil = this.shellService.getRegistryUtil();
 		if (this.regUtil) {
 			this.isShellAvailable = true;
@@ -70,6 +73,7 @@ export class GamingThirdPartyAppService {
 					if (result) {
 						resolve(true);
 					}
+					resolve(false);
 				} catch (error) {
 					this.logger.error(
 						`Service-thirdPartyApp-launchThirdPartyApp: app is ${key}, launch fail; Error message: `,
@@ -77,7 +81,6 @@ export class GamingThirdPartyAppService {
 					);
 					throw new Error(error.message);
 				}
-				resolve(false);
 			});
 		} else {
 			this.logger.error(
@@ -85,5 +88,5 @@ export class GamingThirdPartyAppService {
 			);
 			return undefined;
 		}
-  }
+	}
 }
