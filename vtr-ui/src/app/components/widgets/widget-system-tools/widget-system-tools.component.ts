@@ -22,8 +22,9 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	public gamingProperties: any = new GamingAllCapabilities();
 	// version 3.3 for accessory entrance
 	public showLegionAccessory = false;
-	// Vsrsion 3.5 for nahimic entrance
+	// Vsrsion 3.5 for nahimic & X-Rite entrance
 	public showNahimic = false;
+	public showXRite = true;
 	public toolLength = 3;
 
 	modalAutomationId: any = {
@@ -156,6 +157,9 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		}
 		if(this.showNahimic) {
 			originalLength++;
+		}
+		if(this.showXRite) {
+			originalLength++
 		}
 
 		this.toolLength = originalLength;

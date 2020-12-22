@@ -123,13 +123,34 @@
 							z-index: 2;
 							height: 4rem;
 							width: 4rem;
-							background-image: url(^assets/images/gaming/gaming-accessory.png);
 							background-size: cover;
+						}
+						.accessoryImg {
+							background-image: url(^assets/images/gaming/gaming-accessory.webp),
+								url(^assets/images/gaming/gaming-accessory.png);
 							@media #{$black-on-white} {
 								background-image: url(^assets/images/gaming/gaming-accessory-black.png);
 							}
 							@media #{$white-on-black} {
 								background-image: url(^assets/images/gaming/gaming-accessory-white.png);
+							}
+						}
+						.nahimicImg {
+							background-image: url(^assets/images/gaming/thirdPartyApp/gaming-nahimic@2x.png);
+							@media #{$black-on-white} {
+								background-image: url(^assets/images/gaming/thirdPartyApp/gaming-nahimic-black@2x.png);
+							}
+							@media #{$white-on-black} {
+								background-image: url(^assets/images/gaming/thirdPartyApp/gaming-nahimic-white@2x.png);
+							}
+						}
+						.xRiteImg {
+							background-image: url(^assets/images/gaming/thirdPartyApp/gaming-xRite@2x.png);
+							@media #{$black-on-white} {
+								background-image: url(^assets/images/gaming/thirdPartyApp/gaming-xRite-black@2x.png);
+							}
+							@media #{$white-on-black} {
+								background-image: url(^assets/images/gaming/thirdPartyApp/gaming-xRite-white@2x.png);
 							}
 						}
 					}
