@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
+import { BatteryConditionModel as BatteryCondition } from 'src/app/data-models/battery/battery-conditions.model';
 import AcAdapter from 'src/app/data-models/power/ac-adapter.model';
 import BatteryGaugeDetail from 'src/app/data-models/battery/battery-gauge-detail-model';
 import {
@@ -13,7 +13,10 @@ import {
 	styleUrls: ['./battery-condition-notes.component.scss'],
 })
 export class BatteryConditionNotesComponent implements OnInit, OnChanges {
-	@Input() batteryConditions: BatteryConditionModel[] = [];
+	static readonly AC_CONNECTED_TEXT =
+		'device.deviceSettings.batteryGauge.condition.AcAdapterConnected';
+
+	@Input() batteryConditions: BatteryCondition[] = [];
 	@Input() batteryGauge: BatteryGaugeDetail;
 	@Input() batteryFullChargeCapacity: number;
 	@Input() batteryDesignCapacity: number;
@@ -26,8 +29,6 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 	public canShowAcDetailedNote = false;
 	public acAdapter: AcAdapter;
 	public storeLimitationValue: object;
-	static readonly AC_CONNECTED_TEXT =
-		'device.deviceSettings.batteryGauge.condition.AcAdapterConnected';
 
 	constructor() {}
 
@@ -39,25 +40,11 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 		this.setOrUpdateNotes();
 	}
 
-	private setOrUpdateNotes(): void {
-		this.setAdapterInfo();
-		this.setStoreLimitationForFairAndBadCondition();
-		this.notes = this.getTranslatedConditionTips();
-	}
-
-	private setAdapterInfo(): void {
-		this.acAdapter = new AcAdapter(
-			this.batteryGauge.acWattage,
-			this.batteryGauge.acAdapterType,
-			this.batteryGauge.isAttached
-		);
-	}
-
 	public getTranslatedConditionTips(): string[] {
 		return this.batteryConditions.map((condition) => this.buildTranslatedTip(condition));
 	}
 
-	public buildTranslatedTip(condition: BatteryConditionModel): string {
+	public buildTranslatedTip(condition: BatteryCondition): string {
 		let translation = condition.getBatteryConditionTip(condition.condition);
 		const translationRephrasing = this.conditionRephrasing(condition);
 		if (translationRephrasing) {
@@ -67,7 +54,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 		return translation;
 	}
 
-	public getConditionSuffix(condition: BatteryConditionModel): string {
+	public getConditionSuffix(condition: BatteryCondition): string {
 		if (
 			this.isConditionStatusAdapter(condition) &&
 			condition.condition !== Conditions.FullACAdapterSupport &&
@@ -78,7 +65,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 		return '';
 	}
 
-	public conditionRephrasing(condition: BatteryConditionModel): string {
+	public conditionRephrasing(condition: BatteryCondition): string {
 		const isAcAdapterConnected = this.isConditionStatusAdapter(condition);
 		const isAcAdapterSupported = condition.condition == Conditions.FullACAdapterSupport;
 		const isAcAdapterInfoUnknown = this.acAdapter?.isAttached && this.acAdapter.wattage == 0;
@@ -112,10 +99,6 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 			!this.isAcAdapterInUse(index) &&
 			!this.canShowAcDetailedNote
 		);
-	}
-
-	private isConditionStatusAdapter(condition): boolean {
-		return condition.conditionStatus === Status.AcAdapterStatus;
 	}
 
 	public isStoreLimitated(index: number): boolean {
@@ -164,7 +147,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 			this.isAcAdapterInUse(index) &&
 			this.acAdapter &&
 			this.acAdapter.isAttached &&
-			this.acAdapter.wattage != 0
+			this.acAdapter.wattage !== 0
 		);
 	}
 
@@ -176,7 +159,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 	}
 
 	public canShowAcAdapterConnectedNote(index: number): boolean {
-		return this.isAcAdapterInUse(index) && this.acAdapter?.wattage == 0;
+		return this.isAcAdapterInUse(index) && this.acAdapter?.wattage === 0;
 	}
 
 	get notes(): string[] {
@@ -185,5 +168,23 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 
 	set notes(newNotes) {
 		this._notes = newNotes;
+	}
+
+	private setOrUpdateNotes(): void {
+		this.setAdapterInfo();
+		this.setStoreLimitationForFairAndBadCondition();
+		this.notes = this.getTranslatedConditionTips();
+	}
+
+	private setAdapterInfo(): void {
+		this.acAdapter = new AcAdapter(
+			this.batteryGauge.acWattage,
+			this.batteryGauge.acAdapterType,
+			this.batteryGauge.isAttached
+		);
+	}
+
+	private isConditionStatusAdapter(condition): boolean {
+		return condition.conditionStatus === Status.AcAdapterStatus;
 	}
 }

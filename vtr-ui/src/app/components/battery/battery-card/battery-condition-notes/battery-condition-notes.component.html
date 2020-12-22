@@ -7,7 +7,7 @@
     <div class='col battery-conditions-tips'>
         <h6 [innerHTML]="'device.deviceSettings.batteryGauge.condition.NotDetected' | translate"
             id="battery-condition-battery-not-detected"> </h6>
-    </div>  
+    </div>
 </div>
 
 <div class="row px-3"
@@ -40,8 +40,7 @@
     <!-- Full Support Adapter -->
     <div *ngIf="canShowAdapterIcon(i)"
         class="p-0 pr-2 col-auto">
-        <span class="icomoon icomoon-ConditionACAdapter"
-            role="img"
+        <span class="icomoon icomoon-ConditionACAdapterSupport" role="img"
             id="icon-FullACAdapterSupport"></span>
     </div>
     <!-- End Icons -->
