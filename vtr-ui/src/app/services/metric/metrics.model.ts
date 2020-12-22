@@ -40,9 +40,10 @@ export class AppLoaded extends IMetricEvent {
 	public DurationForWeb: number;
 	public DurationActivatePage: number;
 	public TargePage: string;
-	public WebAppSource: string;
-	public CERT_PIN_DONE: number;
-	public INDEXPAGE_CONNECTION_ESTABLISHED: number;
+	public Source: string;
+	public Hostname: string;
+	public CERTPIN_DONE: number;
+	public SOURCE_DOWNLOADED: number;
 	public DOM_INTERACTIVED: number;
 	public SCRIPT_LOADED: number;
 	public APP_INITIALIZED: number;
