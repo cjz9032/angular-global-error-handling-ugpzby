@@ -20,10 +20,13 @@ export class ModalCommonConfirmationComponent implements OnInit {
 
 	@Output() OkClick = new EventEmitter<any>();
 	@Output() CancelClick = new EventEmitter<any>();
+	okButtonId: string;
 
 	constructor(public activeModal: NgbActiveModal) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.okButtonId = this.OkText.replace(/\./g, '_');
+	}
 
 	// closeModal() {
 	// 	this.activeModal.close('close');
