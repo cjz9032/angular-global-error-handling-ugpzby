@@ -41,11 +41,11 @@ export const featureMap = {
 			}
 		},
 		vsp: {
-			featureName: 'VSP',
+			featureName: 'Smart Performance',
 			icon: ['fal', 'columns'],
 			action: {
 				type: 'navigation',
-				menuId: '',
+				menuId: 'smart-performance',
 				route: '',
 				params: []
 			}
