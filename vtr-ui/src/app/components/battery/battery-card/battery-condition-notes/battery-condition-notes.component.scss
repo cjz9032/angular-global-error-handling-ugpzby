@@ -1,4 +1,5 @@
 @import './../../../../app.theme.scss';
+@import '../../../../../hw-settings-icomoon/icomoon-style.scss';
 
 .battery-conditions-tips {
 	font-size: $fontsize_xs;
@@ -18,20 +19,22 @@
 	font-size: 3.5rem;
 }
 .icomoon-ConditionACAdapterError {
+	@extend .icomoon-ConditionACAdapter;
 	&:before {
 		color: #f17f14;
+	}
+}
+
+.icomoon-ConditionACAdapterSupport {
+	@extend .icomoon-ConditionACAdapter;
+	&:before {
+		color: #30d487;
 	}
 }
 
 .icomoon-ConditionBadBattery {
 	&:before {
 		color: #e74c3c;
-	}
-}
-
-.icomoon-ConditionACAdapter {
-	&:before {
-		color: #30d487;
 	}
 }
 
