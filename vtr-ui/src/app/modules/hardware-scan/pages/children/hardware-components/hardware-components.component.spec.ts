@@ -6,14 +6,10 @@ import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 import { DevService } from '../../../../../services/dev/dev.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { By } from '@angular/platform-browser';
-import {
-	HardwareScanFinishedHeaderType,
-	TaskType,
-} from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
+import { TaskType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { ExportResultsService } from '../../../services/export-results.service';
 import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
 import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
-import { resolve } from 'path';
 
 describe('HardwareComponentsComponent', () => {
 	let component: HardwareComponentsComponent;
@@ -21,18 +17,20 @@ describe('HardwareComponentsComponent', () => {
 	let hwScanService: HardwareScanService;
 	let exportService: ExportResultsService;
 
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			declarations: [HardwareComponentsComponent],
-			imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
-			providers: [
-				DevService,
-				TranslateDefaultValueIfNotFoundPipe,
-				TranslatePipe,
-				FormatLocaleDateTimePipe,
-			],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [HardwareComponentsComponent],
+				imports: [RouterTestingModule, HttpClientModule, TranslateModule.forRoot()],
+				providers: [
+					DevService,
+					TranslateDefaultValueIfNotFoundPipe,
+					TranslatePipe,
+					FormatLocaleDateTimePipe,
+				],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(HardwareComponentsComponent);
@@ -76,39 +74,11 @@ describe('HardwareComponentsComponent', () => {
 		expect(refreshDisabled).toBeTrue();
 	});
 
-	it('it should retrieve default items list', waitForAsync(() => {
-		const spy = spyOn(hwScanService, 'getInitialHardwareComponentList');
-		hwScanService.getInitialHardwareComponentList();
-		expect(spy).not.toBeUndefined();
-	}));
-
 	it('it should have $menu_hover color on hardware scan title', () => {
 		const customColor = 'rgb(74, 129, 253)'; // RGB value for $menu_hover color.
 		const refreshlink = fixture.debugElement.query(By.css('#hwscan-components-title'))
 			.nativeElement;
 		const result = window.getComputedStyle(refreshlink).color;
 		expect(result).toEqual(customColor);
-	});
-
-	it('it should call exportScanResults when the hardwareScanService.getScanFinishedHeaderType returns HardwareScanFinishedHeaderType.Scan', () => {
-		const spy = spyOn(hwScanService, 'getScanFinishedHeaderType').and.returnValue(
-			HardwareScanFinishedHeaderType.Scan
-		);
-		const exportScanResultsSpy = spyOn(exportService, 'exportScanResults').and.callFake(() => {
-			return new Promise<any>(() => {
-				resolve();
-			});
-		});
-		component.exportResults();
-		expect(exportScanResultsSpy).toHaveBeenCalled();
-	});
-
-	it('it should not call exportScanResults if the this.hardwareScanService.getScanFinishedHeaderType returns HardwareScanFinishedHeaderType.RecoverBadSectors', () => {
-		const spy = spyOn(hwScanService, 'getScanFinishedHeaderType').and.returnValue(
-			HardwareScanFinishedHeaderType.RecoverBadSectors
-		);
-		const exportScanResultsSpy = spyOn(exportService, 'exportScanResults');
-		component.exportResults();
-		expect(exportScanResultsSpy).not.toHaveBeenCalled();
 	});
 });

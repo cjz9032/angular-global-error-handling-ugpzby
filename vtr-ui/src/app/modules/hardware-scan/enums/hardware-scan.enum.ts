@@ -80,3 +80,8 @@ export enum ExportLogErrorStatus {
 	AccessDenied,
 	GenericError,
 }
+
+export enum ExportLogExtensions {
+	pdf = 'pdf',
+	html = 'html',
+}

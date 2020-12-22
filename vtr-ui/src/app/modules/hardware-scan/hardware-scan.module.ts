@@ -56,6 +56,8 @@ import { HardwareScanFinishedHeaderComponent } from './components/header/hardwar
 import { UiHardwareScanTestResultComponent } from './components/dashboard/ui-hardware-scan-test-result/ui-hardware-scan-test-result.component';
 import { UiTestResultIconComponent } from './components/dashboard/ui-test-result-icon/ui-test-result-icon.component';
 import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
+import { HardwareScanExportLogComponent } from './components/header/hardware-scan-export-log/hardware-scan-export-log.component';
+import { MatCardModule } from '@lenovo/material/card';
 
 @NgModule({
 	declarations: [
@@ -85,7 +87,8 @@ import { ModalExportLogComponent } from './components/modal/modal-export-log/mod
 		HardwareScanFinishedHeaderComponent,
 		UiHardwareScanTestResultComponent,
 		UiTestResultIconComponent,
-		ModalExportLogComponent
+		ModalExportLogComponent,
+		HardwareScanExportLogComponent,
 	],
 	imports: [
 		CommonModule,
@@ -103,6 +106,7 @@ import { ModalExportLogComponent } from './components/modal/modal-export-log/mod
 		PageLayoutModule,
 		FontAwesomeModule,
 		SnapshotModule,
+		MatCardModule,
 	],
 	exports: [NgbCollapseModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

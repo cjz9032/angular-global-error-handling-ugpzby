@@ -15,7 +15,6 @@ import {
 	TaskStep,
 	HardwareScanProgress,
 	HardwareScanFinishedHeaderType,
-	ExportLogErrorStatus,
 } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { ScanExecutionService } from '../../../services/scan-execution.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,7 +24,6 @@ import { HardwareScanFeaturesService } from '../../../services/hardware-scan-fea
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ExportResultsService } from '../../../services/export-results.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import { ModalExportLogComponent } from '../../../components/modal/modal-export-log/modal-export-log.component';
 
 const RootParent = 'HardwareScan';
 const ViewResultsButton = 'ViewResults';
@@ -243,70 +241,6 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	public isRecoverExecuting() {
 		if (this.hardwareScanService) {
 			return this.hardwareScanService.isRecoverExecuting();
-		}
-	}
-
-	private openExportLogComponentsModal(): NgbModalRef {
-		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
-			size: 'lg',
-			centered: true,
-			windowClass: 'hardware-scan-modal-size',
-		});
-
-		this.updateExportLogComponentsModal(modal);
-
-		return modal;
-	}
-
-	private updateExportLogComponentsModal(
-		modal: NgbModalRef,
-		error: ExportLogErrorStatus = ExportLogErrorStatus.LoadingExport,
-		logPath: string = ''
-	) {
-		(modal.componentInstance as ModalExportLogComponent).logPath = logPath;
-		(modal.componentInstance as ModalExportLogComponent).errorStatus = error;
-	}
-
-	public exportResults() {
-		if (this.exportService) {
-			let exportLogType;
-			if (
-				this.hardwareScanService.getScanFinishedHeaderType() ===
-				HardwareScanFinishedHeaderType.Scan
-			) {
-				exportLogType = this.exportService.exportScanResults();
-			} else if (
-				this.hardwareScanService.getScanFinishedHeaderType() ===
-				HardwareScanFinishedHeaderType.RecoverBadSectors
-			) {
-				exportLogType = this.exportService.exportRbsResults();
-			}
-
-			let statusExport = ExportLogErrorStatus.LoadingExport;
-			let filePath = '';
-			const exportModal = this.openExportLogComponentsModal();
-
-			this.timerService.start();
-			let result = HardwareScanMetricsService.FAIL_RESULT;
-			exportLogType
-				.then((status) => {
-					result = HardwareScanMetricsService.SUCCESS_RESULT;
-					[statusExport, filePath] = status;
-				})
-				.catch((error) => {
-					this.logger.error('Export Scan Results rejected');
-					statusExport = error;
-				})
-				.finally(() => {
-					this.updateExportLogComponentsModal(exportModal, statusExport, filePath);
-					this.hardwareScanMetricsService.sendTaskActionMetrics(
-						HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
-						result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
-						'',
-						result,
-						this.timerService.stop()
-					);
-				});
 		}
 	}
 
