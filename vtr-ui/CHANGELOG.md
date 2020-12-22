@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.36](https://bitbucket.tc.lenovo.com///compare/v1.9.35...v1.9.36) (2020-12-22)
+
+
+### Features
+
+* **CHS NLS:** VAN-24361 remove inappropriate descriptions in chs ([98678a2](https://bitbucket.tc.lenovo.com///commit/98678a2d4ce87e1b7cb61e246c0f773394a1faae))
+* **performance:** change performance checkpoint name ([2dca9ec](https://bitbucket.tc.lenovo.com///commit/2dca9ec7a7d0327576c6a3b431a6b423e0581b07))
+
+
+### Bug Fixes
+
+* **device settings:** VAN-24213 fixed device settings menu style ([9040e02](https://bitbucket.tc.lenovo.com///commit/9040e029c64aaa31f591c598abeec0a71c770d5a))
+* **Device settings:** VAN-24213 fixed device settings menu style ([258ef30](https://bitbucket.tc.lenovo.com///commit/258ef30516de4bad2acce874e905fde775b908a6))
+* **menu:** fix open menu for several times ([2c7f4fe](https://bitbucket.tc.lenovo.com///commit/2c7f4fe16263b1688334d165b43b3206ed89a119))
+* **menu:** update unread count tag style ([84d91b5](https://bitbucket.tc.lenovo.com///commit/84d91b5a45d1f35b43d54d158f29f6bb8a5fdf37))
+* **SP:** VAN-24479 adds a hyphen to the scan results for long text ([a89d347](https://bitbucket.tc.lenovo.com///commit/a89d347c825d3f81b13287c95284aa8353d43924))
+* SU data render was correct ([c34a839](https://bitbucket.tc.lenovo.com///commit/c34a83983056c2c9d8569f71a549269e350a55d5))
+
 ### [1.9.35](https://bitbucket.tc.lenovo.com///compare/v1.9.34...v1.9.35) (2020-12-21)
 
 
