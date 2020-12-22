@@ -152,6 +152,10 @@ export class AppSearchService {
 
 	private extractRouteMap(menuItems: any, upperPath: string = null) {
 		menuItems.forEach(item => {
+			if (!this.isMenuAvailble(item)) {
+				return;
+			}
+
 			let routePath = upperPath
 			if (item.id && item.path) {
 				routePath = upperPath ? upperPath + "/" + item.path : item.path;
@@ -162,5 +166,14 @@ export class AppSearchService {
 				this.extractRouteMap(item.subitems, routePath);
 			}
 		});
+	}
+
+	private isMenuAvailble(menuItem): boolean {
+		if (menuItem.hide === true) {
+			return false;
+		}
+
+		// For features in user menu, need seperate logic to adjudge the feature availability.
+		return true;
 	}
 }
