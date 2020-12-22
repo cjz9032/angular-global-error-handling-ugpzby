@@ -1,6 +1,9 @@
 @import '../../../../../app.theme';
 
 .vtr-hardware-components {
+	border-radius: 0.5rem;
+	background-color: $light;
+
 	.body-content {
 		border-radius: 0rem 0rem 0.5rem 0.5rem;
 		@include high-contrast-border;

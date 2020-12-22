@@ -35,18 +35,12 @@
 					[label]="'hardwareScan.refreshModule' | translate"
 					(hyperlinkClick)="refreshModules()">
 				</vtr-ui-hyperlink-button>
-				<vtr-ui-hyperlink-button
-					linkId="hwscan-export-log-btn"
-					linkRole="button"
-					*ngIf="isFeatureExportAvailable"
-					hyperlinkStyle="xs-300-blue-lighter"
-					metricsEvent="FeatureClick"
-					metricsParent="HardwareScan.ViewResults"
+				<vtr-hardware-scan-export-log
+					componentId="hwscan"
+					metricsParent="HardwareScan"
 					metricsItem="ViewResults.ExportLog"
-				 	[imgIconSrc]="'assets/icons/hardware-scan/icon_hardware_export-log.svg'"
-					[label]="'hardwareScan.exportLog' | translate"
-					(hyperlinkClick)="exportResults()">
-				</vtr-ui-hyperlink-button>
+					*ngIf="isFeatureExportAvailable">
+				</vtr-hardware-scan-export-log>
 			</div>
 		</div>
 		<hr aria-hidden="true">
