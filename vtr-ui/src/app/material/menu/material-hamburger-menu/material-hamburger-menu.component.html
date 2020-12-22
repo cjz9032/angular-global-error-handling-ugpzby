@@ -24,6 +24,7 @@
 						href="javascript:void(0)"
 						(click)="onMenuItemClick(item)"
 						(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]">
+						<fa-icon *ngIf="item.id === 'app-search'" [icon]="item.icon"></fa-icon>
 						<span class="menu-item-text">
 							{{item.label | translate}}
 							<span *ngIf="item.beta"
