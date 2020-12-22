@@ -623,7 +623,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		)[0] as PerformanceNavigationTiming;
 		const performanceTimePoints = {
 			certPingDone: win.VantageStub?.certpinTime ?? 0,
-			webAppSource: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? 'local' : `aws-s3, ${win.location.host}`,
+			source: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? 'local' : 'remote',
+			hostname: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? '' : win.location.host,
 			indexPageEstablished: 0,
 			domInteractived: 0,
 			scriptLoaded: 0,
@@ -632,7 +633,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			firstPageLoaded: 0
 		};
 		if (win.VantageStub?.navigationStartingTime && win.VantageStub?.appStartTime) {
-			const navigationStartTime = (win.VantageStub.navigationStartingTime - win.VantageStub.appStartTime) / 10000;
+			const navigationStartTime = win.VantageStub.navigationStartingTime - win.VantageStub.appStartTime;
 			performanceTimePoints.indexPageEstablished = Math.round(navigationStartTime + navPerf.connectEnd - navPerf.startTime);
 			performanceTimePoints.domInteractived = Math.round(navigationStartTime + navPerf.domInteractive - navPerf.startTime);
 			performanceTimePoints.scriptLoaded = Math.round(navigationStartTime + navPerf.duration);
@@ -642,9 +643,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 		this.metricService.sendAppLoadedMetric(performanceTimePoints);
 		if (this.environment.debuggingSnackbar) {
-			let content = `You are now accessing ${performanceTimePoints.webAppSource} \n \n`;
-			content += `Cert ping time: ${performanceTimePoints.certPingDone} ms \n`;
-			content += `Index page established: ${performanceTimePoints.indexPageEstablished} ms \n`;
+			let content = `You are now accessing ${performanceTimePoints.source}, ${performanceTimePoints.hostname} \n \n`;
+			content += `Certpin done: ${performanceTimePoints.certPingDone} ms \n`;
+			content += `Source downloaded: ${performanceTimePoints.indexPageEstablished} ms \n`;
 			content += `Dom interactived: ${performanceTimePoints.domInteractived} ms \n`;
 			content += `Script loaded: ${performanceTimePoints.scriptLoaded} ms \n`;
 			content += `App initialized: ${performanceTimePoints.appInitialized} ms \n`;
