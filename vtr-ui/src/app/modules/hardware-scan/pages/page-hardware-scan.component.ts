@@ -29,6 +29,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	currentRouter: any;
 	hidePreviousResult = false;
 	isSnapshotEnabledOnHypothesis = false;
+	showDownloadToolCard = true;
 
 	constructor(
 		public deviceService: DeviceService,
@@ -47,6 +48,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			}
 		);
 		this.routeSubscription = this.router.events.subscribe(() => this.observerURL());
+		this.showDownloadToolCard = !this.deviceService.isSMode;
 		this.initSupportCard();
 
 		this.isSnapshotEnabledOnHypothesis = await this.snapshotService.isAvailable();
