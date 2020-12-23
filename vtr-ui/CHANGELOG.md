@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.37](https://bitbucket.tc.lenovo.com///compare/v1.9.36...v1.9.37) (2020-12-23)
+
+
+### Bug Fixes
+
+* **MP:** modify Japanese translate for modern preload ([7472684](https://bitbucket.tc.lenovo.com///commit/7472684eaf9330a447328d91317ebd345cbbb45b))
+* **MP:** VAN-24252 disabled checkbox show arrow in modern preload ([0fc2212](https://bitbucket.tc.lenovo.com///commit/0fc22123dd473dcbe774efee920920de103fed2c))
+* **performance:** performance time points support browser ([b5e6acf](https://bitbucket.tc.lenovo.com///commit/b5e6acf388af8c1cdf3abd56d2d44df4b63502b2))
+* **SP:** VAN-24503 default show gray icon in sp results ([1597c7c](https://bitbucket.tc.lenovo.com///commit/1597c7c3c8aaf40a09b96acc848e7bd2687b9c2b))
+
 ### [1.9.36](https://bitbucket.tc.lenovo.com///compare/v1.9.35...v1.9.36) (2020-12-22)
 
 
