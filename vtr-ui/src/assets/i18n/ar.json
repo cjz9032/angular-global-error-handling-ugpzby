@@ -4378,7 +4378,7 @@
 		"deselect": "إلغاء تحديد الكل",
 		"components": {
 			"CdRomDrives": "أقراص تشغيل ضوئية",
-			"DisplayDevices": "جهاز العرض",
+			"DisplayDevices": "عرض",
 			"HardDrives": "محركات أقراص ثابتة",
 			"Keyboards": "لوحة المفاتيح",
 			"Memory": "الذاكرة",

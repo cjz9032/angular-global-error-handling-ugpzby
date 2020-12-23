@@ -4486,7 +4486,7 @@
 		"deselect": "Desmarcar tudo",
 		"components": {
 			"CdRomDrives": "Unidades ópticas",
-			"DisplayDevices": "Exibir",
+			"DisplayDevices": "Tela",
 			"HardDrives": "Unidades de disco rígido",
 			"Keyboards": "Teclado",
 			"Memory": "Memória",

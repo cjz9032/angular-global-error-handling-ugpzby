@@ -4376,7 +4376,7 @@
 		"deselect": "Počisti vse",
 		"components": {
 			"CdRomDrives": "Optični pogoni",
-			"DisplayDevices": "Prikaz",
+			"DisplayDevices": "Zaslon",
 			"HardDrives": "Trdi diski",
 			"Keyboards": "Tipkovnica",
 			"Memory": "Pomnilnik",

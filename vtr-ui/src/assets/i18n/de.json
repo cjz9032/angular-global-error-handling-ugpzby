@@ -4486,7 +4486,7 @@
 		"deselect": "Alle abwählen",
 		"components": {
 			"CdRomDrives": "Optische Laufwerke",
-			"DisplayDevices": "Anzeigen",
+			"DisplayDevices": "Anzeige",
 			"HardDrives": "Festplatten",
 			"Keyboards": "Tastatur",
 			"Memory": "Hauptspeicher",
