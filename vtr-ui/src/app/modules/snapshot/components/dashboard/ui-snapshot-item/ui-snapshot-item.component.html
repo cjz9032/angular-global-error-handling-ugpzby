@@ -26,7 +26,7 @@
 			<!-- Shows load icon until modules are not loaded -->
 			<img *ngIf="component.status !== snapshotStatus.hasData &&
 						component.status !== snapshotStatus.noData; else updateButton"
-				role="img" class="load-icon" src="assets/icons/snapshot/icon_snapshot_progress.svg"/>
+				role="img" class="load-icon" [src]="'assets/icons/snapshot/icon_snapshot_progress.svg' | svgInline | async"/>
 
 			<!-- Shows button to update after modules get loaded -->
 			<ng-template #updateButton>
