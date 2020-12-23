@@ -89,7 +89,7 @@
 				<div class="has-search-result" *ngIf="displayItems.length > 0">
 					<div class="row result-item" tabindex="0" (click)="onClickResultItem(resultItem)"
 						*ngFor="let resultItem of displayItems;" vtrMetrics metricsEvent="FeatureClick"
-						[metricsItem]="resultItem.id" [metricsParam]="resultItem.categoryId">
+						[metricsItem]="resultItem.id" [metricsParam]="'category:' + resultItem.categoryId">
 						<!-- result icon-->
 						<div class="feature-icon-part">
 							<fa-icon [icon]="resultItem.icon || ['fal', 'gem']"></fa-icon>
@@ -115,7 +115,7 @@
 							class='chevron-left' [class.deactive-chevron]="currentPageIdx === 0"
 							[icon]="['fal', 'chevron-left']" (click)="onClickBackResultView()"></fa-icon>
 						<div vtrMetrics metricsEvent="FeatureClick" metricsItem="pagination-item"
-							metricsParam="{{pageNum + 1}}" *ngFor="let i of pagesArray; let pageNum = index"
+							metricsParam="page:{{pageNum + 1}}" *ngFor="let i of pagesArray; let pageNum = index"
 							(click)="onClickResultView(pageNum)">
 							<span class="pagination-item" [class.high-light]="currentPageIdx === pageNum"> {{ pageNum +
 								1 }}</span>
