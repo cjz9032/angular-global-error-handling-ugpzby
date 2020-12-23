@@ -1,7 +1,8 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IFeature } from 'src/app/services/app-search/interface.model';
-
+import { FeatureClick } from 'src/app/services/metric/metrics.model';
+import { MetricService } from 'src/app/services/metric/metrics.service';
+import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 @Component({
 	selector: 'vtr-search-dropdown',
 	templateUrl: './dropdown-search.component.html',
@@ -14,6 +15,16 @@ export class SearchDropdownComponent implements AfterViewInit {
 	public searchTips = 'Search Query';
 	public userInput = '';
 	public recommandedItems = [];
+	public clickSearchIconEvent: FeatureClick = {
+		ItemType: EventName.featureclick,
+		ItemParent: 'Dropdown.Search',
+		ItemName: 'icon.search'
+	}
+	public enterSearchEvent: FeatureClick = {
+		ItemType: EventName.featureclick,
+		ItemParent: 'Dropdown.Search',
+		ItemName: 'input.search'
+	}
 	// public recommandedItems = [ {
 	// 	id: 'item1',
 	// 	icon: faGem,
@@ -33,7 +44,8 @@ export class SearchDropdownComponent implements AfterViewInit {
 	// } ];
 
 	constructor(
-		private router: Router) { }
+		private router: Router,
+		private metricService: MetricService) { }
 
 	ngAfterViewInit() {
 		setTimeout(() => {
@@ -50,13 +62,14 @@ export class SearchDropdownComponent implements AfterViewInit {
 		$event.stopPropagation();
 	}
 
-	onClickSearch($event) {
+	onClickSearch($event, metricEvent) {
 		var userInput = this.searchInput.nativeElement.value.trim();
 		if (!userInput) {
 			$event.stopPropagation();
 			return;
 		}
 
+		this.metricService.sendMetrics(metricEvent);
 		this.navigateToSearchPage(userInput);
 	}
 

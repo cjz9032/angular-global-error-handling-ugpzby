@@ -22,6 +22,7 @@ export interface ICustomAction {
 
 export interface IFeature {
 	id: string;
+	categoryId: string;
 	featureName: string;
 	category: string;
 	icon: any;

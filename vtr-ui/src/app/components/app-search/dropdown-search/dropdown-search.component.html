@@ -1,13 +1,13 @@
 <div class="search-block" #searchBox>
 	<div class="input-block" [class.is-show-result]="false">
 		<!-- search button-->
-		<div class="search-icon" (click)="onClickSearch($event)">
+		<div class="search-icon" (click)="onClickSearch($event, clickSearchIconEvent)">
 			<fa-icon [icon]="['fal', 'search']"></fa-icon>
 		</div>
 
 		<!-- user input-->
 		<input type="text" #searchInput class="search-input" [placeholder]="searchTips" maxlength="30"
-			(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput" (keydown.enter)="onClickSearch($event)" (click)="onInputClick($event)"/>
+			(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput" (keydown.enter)="onClickSearch($event, enterSearchEvent)" (click)="onInputClick($event)"/>
 
 		<!-- x button-->
 		<div class="clean-button" [class.active]="userInput" vtrMetrics metricsEvent="FeatureClick"
