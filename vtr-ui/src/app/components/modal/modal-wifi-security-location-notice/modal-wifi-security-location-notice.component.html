@@ -14,11 +14,18 @@
 				[label]="OkText | translate"></vtr-ui-button>
 		</div>
 		<div class="ml-0 mr-4 pl-0">
-			<a (keydown)="keydownFn($event)" role="button" id="{{cancelButtonId}}" role="button" class="btn btn-default modal-button-cancel"
-				(click)="onCancelClick()" vtrMetrics metricsParent="Security.WifiSecurity"
-				metricsItem="cancelOpenLocation" metricsEvent="featureClick" tabindex="0">
+			<button 
+				id="{{cancelButtonId}}" 
+				class="btn btn-default modal-button-cancel"
+				(click)="onCancelClick()"
+				vtrMetrics 
+				metricsParent="Security.WifiSecurity"
+				metricsItem="cancelOpenLocation" 
+				metricsEvent="featureClick"
+				(keydown)="keydownFn($event)"
+				tabindex="0">
 				{{CancelText | translate}}
-			</a>
+			</button>
 		</div>
 	</div>
 	<div class="btn-modal-close">
