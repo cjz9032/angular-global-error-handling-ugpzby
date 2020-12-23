@@ -39,7 +39,7 @@
 					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
 					[isDisabled]="!isUpdateEnabled()"
 					(hyperlinkClick)="updateSnapshot()"
-					[ngbTooltip]="'snapshot.startComponentSnapshot' | translate: {'component':(('snapshot.components.'+ name) | translate)}"
+					[ngbTooltip]="'snapshot.startComponentSnapshot' | translate: {'component':('snapshot.components.'+ name) | translate}"
 					tooltipClass="vtr-system-tooltip"
 				>
 				</vtr-ui-hyperlink-button>
