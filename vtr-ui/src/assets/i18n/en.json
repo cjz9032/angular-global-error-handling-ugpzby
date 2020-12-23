@@ -5652,6 +5652,13 @@
 						"Balanced mode"
 					]
 				},
+				"dynamicThermalControl": {
+					"featureName": "Dynamic thermal control solution",
+					"highRelevantKeywords": [
+						"Dynamic thermal control solution",
+						"Intelligent cooling"
+					]
+				},
 				"easyResume": {
 					"featureName": "Easy resume",
 					"highRelevantKeywords": [
