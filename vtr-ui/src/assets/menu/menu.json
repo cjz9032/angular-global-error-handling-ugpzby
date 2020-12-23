@@ -115,21 +115,6 @@
 			]
 		},
 		{
-			"id": "app-search",
-			"label": " ",
-			"beta": true,
-			"path": null,
-			"metricsEvent": "itemClick",
-			"metricsParent": "navbar",
-			"metricsItem": "link.app-search",
-			"segment": "-[Commercial]",
-			"routerLinkActiveOptions": {
-				"exact": true
-			},
-			"icon": ["fal", "search"],
-			"subitems": []
-		},
-		{
 			"id": "user",
 			"label": "User",
 			"path": "user",
@@ -520,7 +505,7 @@
 		},
 		{
 			"id": "app-search",
-			"label": "",
+			"label": "appSearch.menuName",
 			"beta": false,
 			"path": "search",
 			"metricsEvent": "itemClick",

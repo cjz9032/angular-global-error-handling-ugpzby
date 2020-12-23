@@ -6,7 +6,7 @@
 		</div>
 
 		<!-- user input-->
-		<input type="text" #searchInput class="search-input" [placeholder]="searchTips"
+		<input type="text" #searchInput class="search-input" [placeholder]="searchTips" maxlength="30"
 			(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput" (keydown.enter)="onClickSearch($event)" (click)="onInputClick($event)"/>
 
 		<!-- x button-->

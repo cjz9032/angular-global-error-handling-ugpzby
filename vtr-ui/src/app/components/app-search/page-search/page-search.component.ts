@@ -121,11 +121,12 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		//1. parse query parameter
 		this.paramSubscription = this.activateRoute.queryParams
 			.subscribe(params => {
-				if (params.userInput) {
-					this.userInput = params.userInput;
-					this.updatePageTitle();	// setup page title at initialization
-					this.fireSearch();
+				const userInput = params.userInput?.trim();
+				if (userInput) {
+					this.userInput = userInput;
 				}
+				this.updatePageTitle();
+				this.fireSearch();
 			});
 
 		//2. subscibe to common event
