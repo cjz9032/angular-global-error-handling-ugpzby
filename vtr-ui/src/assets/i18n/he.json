@@ -4376,7 +4376,7 @@
 		"deselect": "ביטול בחירת הכל",
 		"components": {
 			"CdRomDrives": "כוננים אופטיים",
-			"DisplayDevices": "תצוגה",
+			"DisplayDevices": "צג",
 			"HardDrives": "כוננים קשיחים",
 			"Keyboards": "מקלדת",
 			"Memory": "זיכרון",

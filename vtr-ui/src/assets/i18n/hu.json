@@ -4376,7 +4376,7 @@
 		"deselect": "Összes kijelölés megszüntetése",
 		"components": {
 			"CdRomDrives": "Optikai meghajtók",
-			"DisplayDevices": "Megjelenítés",
+			"DisplayDevices": "Kijelző",
 			"HardDrives": "Merevlemezek",
 			"Keyboards": "Billentyűzet",
 			"Memory": "Memória",

@@ -4484,7 +4484,7 @@
 		"deselect": "取消全选",
 		"components": {
 			"CdRomDrives": "光盘驱动器",
-			"DisplayDevices": "显示",
+			"DisplayDevices": "显示器",
 			"HardDrives": "硬盘驱动器",
 			"Keyboards": "键盘",
 			"Memory": "内存",

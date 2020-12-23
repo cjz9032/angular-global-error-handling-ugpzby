@@ -4376,7 +4376,7 @@
 		"deselect": "取消全選",
 		"components": {
 			"CdRomDrives": "光碟機",
-			"DisplayDevices": "顯示",
+			"DisplayDevices": "顯示器",
 			"HardDrives": "硬碟",
 			"Keyboards": "鍵盤",
 			"Memory": "記憶體",
