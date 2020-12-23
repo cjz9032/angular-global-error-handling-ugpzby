@@ -116,9 +116,8 @@
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
-							(pointerenter)="closeAllOtherMatMenu(menuTrigger)"
-							(pointerleave)="clearCloseAllOtherMatMenu()"
-							(focus)="closeAllOtherMatMenu(menuTrigger)">
+							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
+							(pointerleave)="clearCloseAllOtherMatMenu()">
 							<fa-icon class="align-middle" [icon]="item.icon"></fa-icon>
 						</button>
 						<vtr-material-menu-dropdown
@@ -152,9 +151,8 @@
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
-							(pointerenter)="closeAllOtherMatMenu(menuTrigger)"
-							(pointerleave)="clearCloseAllOtherMatMenu()"
-							(focus)="closeAllOtherMatMenu(menuTrigger)">
+							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
+							(pointerleave)="clearCloseAllOtherMatMenu()">
 							<span [innerHTML]="item.label | translate"></span>
 							<fa-icon class="px-2 menu-angle-down-icon" [icon]="['fal', 'angle-down']"></fa-icon>
 						</button>
@@ -180,9 +178,8 @@
 							tabindex="1"
 							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
-							(pointerenter)="closeAllOtherMatMenu(menuTrigger)"
-							(pointerleave)="clearCloseAllOtherMatMenu()"
-							(focus)="closeAllOtherMatMenu(menuTrigger)">
+							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
+							(pointerleave)="clearCloseAllOtherMatMenu()">
 							<div class="d-inline-block text-center user-initials rounded-circle"
 								[innerHTML]="deviceService.isArm || userService.starter || !commonService.isOnline || !userService.isLenovoIdSupported() ? 'L' : userService.initials">
 							</div>

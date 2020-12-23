@@ -69,7 +69,7 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 	private _menu: MatMenuPanel;
 	private _pointerEnterTimer: any;
 	private _pointOutsideSubscription = Subscription.EMPTY;
-	private _pointerType: 'touch' | 'mouse' | null = null;
+	private _isMousePointer = false;
 	/** Data to be passed along to any lazily-rendered content. */
 	// tslint:disable-next-line:no-input-rename
 	@Input('matMenuHoverTriggerData') menuData: any;
@@ -216,48 +216,41 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 			return;
 		}
 
-		this._pointerEnterTimer = setTimeout(() => {
-			this._checkMenu();
+		this._checkMenu();
 
-			const overlayRef = this._createOverlay();
-			const overlayConfig = overlayRef.getConfig();
+		const overlayRef = this._createOverlay();
+		const overlayConfig = overlayRef.getConfig();
 
-			this._setPosition(overlayConfig.positionStrategy as FlexibleConnectedPositionStrategy);
-			overlayRef.attach(this._getPortal());
+		this._setPosition(overlayConfig.positionStrategy as FlexibleConnectedPositionStrategy);
+		overlayRef.attach(this._getPortal());
 
-			if (this._pointOutsideSubscription === Subscription.EMPTY) {
-				this._pointOutsideSubscription = overlayRef.outsidePointerEvents().subscribe(($event) => {
-					const element = this._element.nativeElement;
-					const position = {
-						x1: element.offsetLeft,
-						y1: element.offsetTop,
-						x2: element.clientWidth + element.offsetLeft,
-						y2: element.clientHeight + element.offsetTop,
-					};
-					if (!this.isPointerInRectangle({ x: $event.x, y: $event.y }, position)) {
-						this.closeMenu();
-					}
-				});
-			}
+		if (this._pointOutsideSubscription === Subscription.EMPTY) {
+			this._pointOutsideSubscription = overlayRef.outsidePointerEvents().subscribe(($event) => {
+				const element = this._element.nativeElement;
+				const position = {
+					x1: element.offsetLeft,
+					y1: element.offsetTop,
+					x2: element.clientWidth + element.offsetLeft,
+					y2: element.clientHeight + element.offsetTop,
+				};
+				if (!this.isPointerInRectangle({ x: $event.x, y: $event.y }, position)) {
+					this.closeMenu();
+				}
+			});
+		}
 
-			if (this.menu.lazyContent) {
-				this.menu.lazyContent.attach(this.menuData);
-			}
+		if (this.menu.lazyContent) {
+			this.menu.lazyContent.attach(this.menuData);
+		}
 
-			this._closingActionsSubscription = this._menuClosingActions().subscribe(() =>
-				this.closeMenu()
-			);
-			this._initMenu();
+		this._closingActionsSubscription = this._menuClosingActions().subscribe(() =>
+			this.closeMenu()
+		);
+		this._initMenu();
 
-			if (this.menu instanceof MatMenu) {
-				this.menu._startAnimation();
-			}
-			if (this._pointerEnterTimer) {
-				clearTimeout(this._pointerEnterTimer);
-				this._pointerEnterTimer = null;
-			}
-			this._pointerType = null;
-		}, 200);
+		if (this.menu instanceof MatMenu) {
+			this.menu._startAnimation();
+		}
 	}
 
 	isPointerInRectangle(point: any, rectangle: any): boolean {
@@ -540,22 +533,29 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 	}
 
 	_handlePointerEnter(event: any): void {
-		if (event.pointerType) {
-			this._pointerType = event.pointerType;
+		this._isMousePointer = event.pointerType === 'mouse';
+		if (!this._isMousePointer) {
+			this.openMenu();
+		} else {
+			this._pointerEnterTimer = setTimeout(() => {
+				this.openMenu();
+				clearTimeout(this._pointerEnterTimer);
+				this._pointerEnterTimer = null;
+				this._isMousePointer = false;
+			}, 200);
 		}
-		this.openMenu();
 	}
 
 	_handlePointerLeave(event: any): void {
-		if (this._pointerEnterTimer && event.pointerType !== 'touch') {
+		if (this._pointerEnterTimer) {
 			clearTimeout(this._pointerEnterTimer);
 			this._pointerEnterTimer = null;
-			this._pointerType = null;
+			this._isMousePointer = false;
 		}
 	}
 
 	_handleFocus(event: any): void {
-		if (!this._pointerType) {
+		if (!this._isMousePointer) {
 			this.openMenu();
 		}
 	}

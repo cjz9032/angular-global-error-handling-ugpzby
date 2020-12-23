@@ -405,15 +405,26 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	closeAllOtherMatMenu(activeDropdown: MenuHoverDirective) {
-		this.closeAllOtherMatMenuTimer = setTimeout(() => {
-			this.hoverTriggers?.toArray().forEach(elem => {
-				if (activeDropdown !== elem) {
-					elem.closeMenu();
-				}
-			});
+	handlePointerEnter(activeDropdown: MenuHoverDirective, event) {
+		if (this.closeAllOtherMatMenuTimer) {
 			this.clearCloseAllOtherMatMenu();
-		}, 190);
+		}
+		if (event.pointerType === 'mouse') {
+			this.closeAllOtherMatMenuTimer = setTimeout(() => {
+				this.closeAllOtherMatMenu(activeDropdown);
+				this.clearCloseAllOtherMatMenu();
+			}, 190);
+		} else {
+			this.closeAllOtherMatMenu(activeDropdown);
+		}
+	}
+
+	closeAllOtherMatMenu(activeDropdown: MenuHoverDirective) {
+		this.hoverTriggers?.toArray().forEach(elem => {
+			if (activeDropdown !== elem) {
+				elem.closeMenu();
+			}
+		});
 	}
 
 	clearCloseAllOtherMatMenu() {
