@@ -7,8 +7,10 @@ import { AppSearchService } from 'src/app/services/app-search/app-search.service
 import { IFeature } from 'src/app/services/app-search/interface.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
+import { FeatureClick, TaskAction } from 'src/app/services/metric/metrics.model';
 import { SupportService } from 'src/app/services/support/support.service';
-
+import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 @Component({
 	selector: 'vtr-page-search',
 	templateUrl: './page-search.component.html',
@@ -107,6 +109,29 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		metricsItem: 'Quicklinks.AboutLenovoVantageButton',
 		metricsEvent: 'FeatureClick',
 	};
+	public clickSearchIconEvent: FeatureClick = {
+		ItemType: EventName.featureclick,
+		ItemParent: 'Page.Search',
+		ItemName: 'icon.search'
+	}
+	public enterSearchEvent: FeatureClick = {
+		ItemType: EventName.featureclick,
+		ItemParent: 'Page.Search',
+		ItemName: 'input.search'
+	}
+	public clickSearchBtnEvent: FeatureClick = {
+		ItemType: EventName.featureclick,
+		ItemParent: 'Page.Search',
+		ItemName: 'btn.search'
+	}
+	public searchTaskEvent: TaskAction = {
+		ItemType: EventName.taskaction,
+		TaskName: "app-search",
+		TaskCount: 1,
+		TaskParm: 'NA',
+		TaskResult: '0',
+		TaskDuration: 0
+	}
 
 	constructor(
 		private searchService: AppSearchService,
@@ -114,7 +139,8 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private commonService: CommonService,
 		private supportService: SupportService,
-		private localInfoService: LocalInfoService
+		private localInfoService: LocalInfoService,
+		private metricService: MetricService
 	) { }
 
 	ngOnInit(): void {
@@ -124,9 +150,9 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 				const userInput = params.userInput?.trim();
 				if (userInput) {
 					this.userInput = userInput;
+					this.fireSearch(userInput);
 				}
 				this.updatePageTitle();
-				this.fireSearch();
 			});
 
 		//2. subscibe to common event
@@ -144,8 +170,11 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 	onInnerBack() {
 	}
 
-	onClickSearchBtn() {
-		this.fireSearch();
+	onClickSearchBtn(metricEvent) {
+		if (metricEvent) {
+			this.metricService.sendMetrics(metricEvent);
+		}
+		this.fireSearch(this.userInput?.trim());
 	}
 
 	onClickResultItem(feature: IFeature) {
@@ -191,18 +220,27 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		this.notificationSubscription?.unsubscribe();
 	}
 
-	private fireSearch() {
-		var userInput = this.userInput?.trim();
+	private fireSearch(userInput) {
 		if (!userInput) {
 			return;
 		}
 
+		const searchStart = Date.now();
 		this.searchCompleted = false;
 		this.updatePageTitle();
 		this.populateSearchResults(this.searchService.search(this.userInput));
 		this.updatePageArray();
 		this.updateResultView(0);
 		this.searchCompleted = true;
+		this.populateAndSendSearchTaskMetric(userInput, searchStart);
+	}
+
+	private populateAndSendSearchTaskMetric(userInput: string, searchStart: number) {
+		const searchTask = Object.assign({}, this.searchTaskEvent);
+		searchTask.TaskDuration = Date.now() -  searchStart;
+		searchTask.TaskResult = this.resultItems.length.toString();
+		// searchTask.TaskParm = userInput;	should not collect user input untill we got pdd approval
+		this.metricService.sendMetrics(searchTask);
 	}
 
 	private updatePageTitle() {

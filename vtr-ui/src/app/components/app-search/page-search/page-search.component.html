@@ -1,6 +1,6 @@
 <vtr-page-layout [title]="pageTitle" [textId]="'app-search-title'" [pageCssClass]="'page-app-search'"
-	[shiftLeftUp]="true" [shiftRightUp]="true" [back]="'common.ui.back' | translate" [backId]="'app-search-page-btn-back'"
-	[isInnerBack]="isInnerBack" (innerBack)="onInnerBack()">
+	[shiftLeftUp]="true" [shiftRightUp]="true" [back]="'common.ui.back' | translate"
+	[backId]="'app-search-page-btn-back'" [isInnerBack]="isInnerBack" (innerBack)="onInnerBack()">
 
 	<left-content>
 		<div class="container-fluid">
@@ -9,29 +9,21 @@
 			<div class="row">
 				<div class="widget-search-input">
 					<!-- search icon-->
-					<div class="search-icon" (click)="onClickSearchBtn()">
+					<div class="search-icon" (click)="onClickSearchBtn(clickSearchIconEvent)">
 						<fa-icon [icon]="['fal', 'search']"></fa-icon>
 					</div>
 
 					<!-- search input -->
 					<input type="text" #searchInput [placeholder]="searchTips" class="search-input" maxlength="30"
-						(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput"  (keydown.enter)="onClickSearchBtn()"/>
+						(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput"
+						(keydown.enter)="onClickSearchBtn(enterSearchEvent)" />
 
 					<!-- search button -->
 					<div class="search-btn">
-						<vtr-ui-button (onClick)="onClickSearchBtn()"
-						[tabIndex]="100"
-						id="search-btn-in-search-page"
-						aria-label="search-btn-in-search-page"
-						vtrMetrics
-						metricsEvent="FeatureClick"
-						metricsParent="Page.Search"
-						metricsItem="search"
-						[btnHeight]="true"
-						[isFullWidth]="true"
-						[label]="'SEARCH'"
-						[isDisabled]="!isOnline || !userInput"
-						[linkId]="'search-btn-in-search-page'"></vtr-ui-button>
+						<vtr-ui-button [vtrMetricEnabled]="false" (onClick)="onClickSearchBtn(clickSearchBtnEvent)" [tabIndex]="100"
+							id="search-btn-in-search-page" aria-label="search-btn-in-search-page" [btnHeight]="true"
+							[isFullWidth]="true" [label]="'SEARCH'" [isDisabled]="!isOnline || !userInput"
+							[linkId]="'search-btn-in-search-page'"></vtr-ui-button>
 					</div>
 				</div>
 			</div>
@@ -39,7 +31,7 @@
 
 			<!-- offline indicator bannar -->
 			<div *ngIf="!isOnline">
-				<div class="row" >
+				<div class="row">
 					<div class="col col-12 px-0 offline-indicator">
 						<vtr-widget-offline-info [isButtonVisible]="false" [isSubtitleVisible]="false"
 							[title]="'dashboard.offlineInfo.title' | translate"
@@ -50,7 +42,7 @@
 					</div>
 				</div>
 
-				<div class="row flex-all-center offline-tips" >
+				<div class="row flex-all-center offline-tips">
 					App Search is unavailable when network is disconnected at present
 				</div>
 			</div>
@@ -68,8 +60,13 @@
 
 			<!-- results view -->
 			<div class="search-results" *ngIf='isOnline && searchCompleted'>
-				<div class="row result-counter" *ngIf="resultItems.length <= pageSize"> <div class="part1">{{ resultItems.length }}</div>&nbsp;<div class="part2">results</div></div>
-				<div class="row result-counter" *ngIf="resultItems.length > pageSize"> <div class="part1">{{ (startItemOfCurPageIdx + 1) + '-' + (startItemOfNextPageIdx) }}</div>&nbsp;<div class="part2">{{ '/  ' + resultItems.length + '  results' }}</div></div>
+				<div class="row result-counter" *ngIf="resultItems.length <= pageSize">
+					<div class="part1">{{ resultItems.length }}</div>&nbsp;<div class="part2">results</div>
+				</div>
+				<div class="row result-counter" *ngIf="resultItems.length > pageSize">
+					<div class="part1">{{ (startItemOfCurPageIdx + 1) + '-' + (startItemOfNextPageIdx) }}</div>&nbsp;
+					<div class="part2">{{ '/ ' + resultItems.length + ' results' }}</div>
+				</div>
 
 				<!-- no search result tips -->
 				<div class="no-search-result" *ngIf="resultItems.length === 0">
@@ -90,7 +87,9 @@
 
 				<!-- search result item list-->
 				<div class="has-search-result" *ngIf="displayItems.length > 0">
-					<div class="row result-item" tabindex="0" (click)="onClickResultItem(resultItem)" *ngFor="let resultItem of displayItems;">
+					<div class="row result-item" tabindex="0" (click)="onClickResultItem(resultItem)"
+						*ngFor="let resultItem of displayItems;" vtrMetrics metricsEvent="FeatureClick"
+						[metricsItem]="resultItem.id" [metricsParam]="resultItem.categoryId">
 						<!-- result icon-->
 						<div class="feature-icon-part">
 							<fa-icon [icon]="resultItem.icon || ['fal', 'gem']"></fa-icon>
@@ -112,11 +111,18 @@
 
 					<!-- pagination bar-->
 					<div class="row result-pagination-bar" *ngIf="resultItems.length > pageSize">
-						<fa-icon class='chevron-left' [class.deactive-chevron]="currentPageIdx === 0" [icon]="['fal', 'chevron-left']" (click)="onClickBackResultView()"></fa-icon>
-						<div *ngFor="let i of pagesArray; let pageNum = index" (click)="onClickResultView(pageNum)">
-							<span class="pagination-item" [class.high-light]="currentPageIdx === pageNum" > {{ pageNum + 1 }}</span>
+						<fa-icon vtrMetrics metricsEvent="FeatureClick" metricsItem="chevron-left"
+							class='chevron-left' [class.deactive-chevron]="currentPageIdx === 0"
+							[icon]="['fal', 'chevron-left']" (click)="onClickBackResultView()"></fa-icon>
+						<div vtrMetrics metricsEvent="FeatureClick" metricsItem="pagination-item"
+							metricsParam="{{pageNum + 1}}" *ngFor="let i of pagesArray; let pageNum = index"
+							(click)="onClickResultView(pageNum)">
+							<span class="pagination-item" [class.high-light]="currentPageIdx === pageNum"> {{ pageNum +
+								1 }}</span>
 						</div>
-						<fa-icon class='chevron-right' [class.deactive-chevron]="currentPageIdx >= pagesArray.length - 1" [icon]="['fal', 'chevron-right']" (click)="onClickForwardResultView()"></fa-icon>
+						<fa-icon vtrMetrics metricsEvent="FeatureClick" metricsItem="chevron-right"
+							class='chevron-right' [class.deactive-chevron]="currentPageIdx >= pagesArray.length - 1"
+							[icon]="['fal', 'chevron-right']" (click)="onClickForwardResultView()"></fa-icon>
 					</div>
 				</div>
 			</div>

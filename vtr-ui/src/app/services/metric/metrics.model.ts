@@ -147,7 +147,6 @@ export class FeatureClick extends IMetricEvent {
 		this.ItemValue = itemValue;
 		this.ItemParm = itemParm;
 	}
-
 	public ItemName: string;
 	public ItemParent: string;
 	public ItemValue?: any;

@@ -40,8 +40,6 @@ export class AppSearchService {
 		this.featureLoad = true;
 		this.searchEngine = new SearchEngineWraper();
 
-		const featureTranslation = this.translate.instant('appSearch');
-
 		// transfer pages to feature map
 		featureSource.forEach(feature => {
 			feature.featureName = this.translate.instant(feature.featureName || `${feature.id}.featureName`);
