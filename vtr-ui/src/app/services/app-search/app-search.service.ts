@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { CommonService } from 'src/app/services/common/common.service';
-import { featureMap as featureSource } from './features.model';
+import { featureSource } from './features.model';
 import { IFeature, IFeatureAction, INavigationAction, SearchActionType } from './interface.model';
 import { SearchEngineWraper } from './search-engine-wraper';
 
@@ -43,53 +43,16 @@ export class AppSearchService {
 		const featureTranslation = this.translate.instant('appSearch');
 
 		// transfer pages to feature map
-		Object.keys(featureSource.pages).forEach(pageName => {
-			this.featureMap[`appSearch.pages.${pageName}`] = featureSource.pages[pageName];
-		});
-
-		// register pages keywords to search engine
-		Object.keys(featureTranslation.pages).forEach(pageName => {
-			const featureId = `appSearch.pages.${pageName}`;
-			const featureName = featureTranslation.pages[pageName].featureName;
-			this.featureMap[featureId].featureName = featureName;
-			this.featureMap[featureId].category = featureName; // for a page, feature name is also category name
-
-			this.searchContext[featureId] = {
-				id: featureId,
-				featureName: featureTranslation.pages[pageName].featureName,
-				highRelevantKeywords: featureTranslation.pages[pageName].highRelevantKeywords,
-				lowRelevantKeywords: featureTranslation.pages[pageName].lowRelevantKeywords
+		featureSource.forEach(feature => {
+			feature.featureName = this.translate.instant(feature.featureName || `${feature.id}.featureName`);
+			feature.category = this.translate.instant(feature.category || `${feature.categoryId}.category`);
+			this.featureMap[feature.id] = feature;
+			this.searchContext[feature.id] = {
+				id: feature.id,
+				featureName: feature.featureName,
+				highRelevantKeywords: this.translate.instant(`${feature.id}.highRelevantKeywords`),
+				lowRelevantKeywords: this.translate.instant(`${feature.id}.lowRelevantKeywords`)
 			};
-		});
-
-		// transfer features to feature map
-		Object.keys(featureSource.features).forEach(pageName => {
-			const pages = featureSource.features[pageName];
-			Object.keys(pages).forEach(featureKey => {
-				if (featureKey === 'category') {
-					return;
-				}
-
-				const featureId = `appSearch.features.${pageName}.${featureKey}`;
-				this.featureMap[featureId] = pages[featureKey];
-			});
-		});
-
-		// register feature keywords to search engine
-		Object.keys(featureTranslation.features).forEach(pageName => {
-			const pageFeatures = featureSource.features[pageName];
-			Object.keys(pageFeatures).forEach(featureKey => {
-				const featureId = `appSearch.features.${pageName}.${featureKey}`;
-				this.featureMap[featureId].featureName = featureTranslation.features[pageName][featureKey].featureName;
-				this.featureMap[featureId].category = featureTranslation.features[pageName].category;
-
-				this.searchContext[featureId] = {
-					id: featureId,
-					featureName: featureTranslation.features[pageName][featureKey].featureName,
-					highRelevantKeywords: featureTranslation.features[pageName][featureKey].highRelevantKeywords,
-					lowRelevantKeywords: featureTranslation.features[pageName][featureKey].lowRelevantKeywords
-				};
-			});
 		});
 
 		this.searchEngine.updateSearchContext(Object.values(this.searchContext));

@@ -2244,7 +2244,7 @@
 			},
 			"intelligentScreen": {
 				"title": "Intelligent screen",
-            	"description": "Lenovo intelligent sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
+				"description": "Lenovo intelligent sensing combines the various sensors on your computer to detect your activities and adjust settings for power management. For example, it will dim your display if it detects you are walking but will not dim it if it detects you reading.",
 				"autoScreenOff": {
 					"title": "Auto screen off",
 					"caption": "Automatically turn off display when face-down or walking.",
@@ -5476,104 +5476,119 @@
 		"menuName": "Search",
 		"pageTitle": "Results for '{{userInput}}'",
 		"noSearchResultTips": "No results for '{{userInput}}'",
-
-		"pages": {
+		"features": {
 			"dashboard": {
-				"featureName": "Dashboard",
-				"highRelevantKeywords": [
-					"Warranty",
-					"System status",
-					"controlers",
-					"Front",
-					"home",
-					"dashboard",
-					"toggles"
-				]
+				"category": "Dashboard",
+				"page": {
+					"featureName": "Dashboard",
+					"highRelevantKeywords": [
+						"Warranty",
+						"System status",
+						"controlers",
+						"Front",
+						"home",
+						"dashboard",
+						"toggles"
+					]
+				}
 			},
 			"myDevice": {
-				"featureName": "My device",
-				"highRelevantKeywords": [
-					"SN",
-					"serial",
-					"BIOS",
-					"version",
-					"Product",
-					"Device",
-					"Status"
-				]
+				"category": "My device",
+				"page": {
+					"featureName": "My device",
+					"highRelevantKeywords": [
+						"SN",
+						"serial",
+						"BIOS",
+						"version",
+						"Product",
+						"Device",
+						"Status"
+					]
+				}
 			},
 			"systemUpdate": {
-				"featureName": "System update",
-				"highRelevantKeywords": [
-					"Update",
-					"driver",
-					"history",
-					"upgrade",
-					"critical",
-					"recommend",
-					"Check update",
-					"Windows udpate"
-				]
+				"category": "System update",
+				"page": {
+					"featureName": "System update",
+					"highRelevantKeywords": [
+						"Update",
+						"driver",
+						"history",
+						"upgrade",
+						"critical",
+						"recommend",
+						"Check update",
+						"Windows udpate"
+					]
+				}
 			},
 			"mySecurity": {
-				"featureName": "My security",
-				"highRelevantKeywords": [
-					"101",
-					"security",
-					"Anti-virus",
-					"Firewall",
-					"activation",
-					"password",
-					"health",
-					"fingperint",
-					"UAC",
-					"user account control",
-					"WiFi",
-					"Wifi Security",
-					"VPN",
-					"virtual private Network"
-				]
+				"category": "My security",
+				"page": {
+					"featureName": "My security",
+					"highRelevantKeywords": [
+						"101",
+						"security",
+						"Anti-virus",
+						"Firewall",
+						"activation",
+						"password",
+						"health",
+						"fingperint",
+						"UAC",
+						"user account control",
+						"WiFi",
+						"Wifi Security",
+						"VPN",
+						"virtual private Network"
+					]
+				}
 			},
-			"vsp": {
-				"featureName": "Smart performance",
-				"highRelevantKeywords": [
-					"optimize",
-					"boost",
-					"velocity",
-					"speed",
-					"network",
-					"cache",
-					"clean",
-					"malware",
-					"boost",
-					"performance",
-					"proactive",
-					"junk",
-					"registry clean",
-					"scan"
-				]
+			"smartPerformance": {
+				"category": "Smart performance",
+				"page": {
+					"featureName": "Smart performance",
+					"highRelevantKeywords": [
+						"optimize",
+						"boost",
+						"velocity",
+						"speed",
+						"network",
+						"cache",
+						"clean",
+						"malware",
+						"boost",
+						"performance",
+						"proactive",
+						"junk",
+						"registry clean",
+						"scan"
+					]
+				}
 			},
-			"hwScan": {
-				"featureName": "Hardware scan",
-				"highRelevantKeywords": [
-					"HW",
-					"PC",
-					"component",
-					"CPU",
-					"memory",
-					"DDR",
-					"HDD",
-					"hard disk",
-					"Motherboard",
-					"PCI",
-					"Network",
-					"wireless",
-					"storage",
-					"SSD"
-				]
-			}
-		},
-		"features": {
+			"hardwareScan": {
+				"category": "Hardware scan",
+				"page": {
+					"featureName": "Hardware scan",
+					"highRelevantKeywords": [
+						"HW",
+						"PC",
+						"component",
+						"CPU",
+						"memory",
+						"DDR",
+						"HDD",
+						"hard disk",
+						"Motherboard",
+						"PCI",
+						"Network",
+						"wireless",
+						"storage",
+						"SSD"
+					]
+				}
+			},
 			"power": {
 				"category": "Power",
 				"batteryInformation": {
@@ -5748,7 +5763,7 @@
 					]
 				},
 				"smartKeyboardBacklight": {
-					"featureName": "Smart keyboard backlight 2.0 (ALS-based auto-adjust backlight)",
+					"featureName": "Smart keyboard backlight",
 					"highRelevantKeywords": [
 						"atuomatic backlight",
 						"smart backlight"
