@@ -20,7 +20,8 @@
 			metricsItem="HardwareScan.CustomizeScan"
 			[isDisabled]="disableButtonScan"
 			[label]="'hardwareScan.customize.name' | translate"
-			[tooltipText]="'hardwareScan.reminderTimeRetrieveHardwareInformation' | translate"
+			[ngbTooltip]="('hardwareScan.reminderTimeRetrieveHardwareInformation' | translate)"
+			tooltipClass="vtr-system-tooltip"
 			[upperCaseLabel]="true"
 			(hyperlinkClick)="onAnchor()">
 		</vtr-ui-hyperlink-button>

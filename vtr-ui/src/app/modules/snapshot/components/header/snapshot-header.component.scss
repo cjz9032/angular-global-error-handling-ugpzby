@@ -21,6 +21,7 @@
 .button-row {
 	padding: 2.4rem;
 	display: flex;
+	align-items: center;
 
 	::ng-deep .vtr-ui-button {
 		.button-box {
