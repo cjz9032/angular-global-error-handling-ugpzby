@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -18,6 +18,7 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 })
 
 export class PageSearchComponent implements OnInit, OnDestroy {
+	@ViewChild('searchInput', { static: true }) searchInput: ElementRef;
 	paramSubscription: any;
 	notificationSubscription: any;
 	public userInput: string;
@@ -179,6 +180,12 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 
 	onClickResultItem(feature: IFeature) {
 		this.searchService.handleAction(feature.action);
+	}
+
+	onClickInput() {
+		setTimeout(() => {
+			this.searchInput.nativeElement.focus();
+		}, 200);
 	}
 
 	onClickBackResultView() {
