@@ -863,6 +863,7 @@ export class SystemUpdateService {
 				} else if (!this.isDownloadingCancel) {
 					// cancel download will also cause empty UpdateTaskList, no need to get status
 					// VAN-3314, sometimes, the install complete response will contains empty UpdateTaskList
+					// VAN-24119, start install during schedule task, the plugin will direct return success with empty list
 					this.retryTimes = 0;
 					setTimeout(() => {
 						this.getScheduleUpdateStatus(true);

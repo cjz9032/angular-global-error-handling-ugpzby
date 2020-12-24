@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-12 systemupdate-background" [ngClass]="{'no-bottom-radius': isUpdateListVisible}">
-				<div *ngIf="!showProgress && !isUpdateDownloading">
+				<div *ngIf="!showCheckingProgress && !isUpdateDownloading">
 					<div class="row" *ngIf="!isUpdatesAvailable && !isInstallationCompleted">
 						<div class="col title"
 							id="system-update-title"
@@ -54,7 +54,7 @@
 					</div>
 				</div>
 
-				<div *ngIf="!showProgress && !isUpdateDownloading"
+				<div *ngIf="!showCheckingProgress && !isUpdateDownloading"
 					class="row">
 					<div class="button-row" *ngIf="!isUpdatesAvailable || isInstallationCompleted">
 						<vtr-ui-button linkId="su_check_updates"
@@ -93,7 +93,7 @@
 							>{{'systemUpdates.banner.checkAgain' | translate}}</button>
 					</div>
 				</div>
-				<div *ngIf="showProgress"
+				<div *ngIf="showCheckingProgress"
 					class="col row">
 					<div class="col col-12 row progress-div">
 						<div class="col col-9 progress-title"
@@ -128,7 +128,7 @@
 				</div>
 
 				<div class="col row"
-					*ngIf="isUpdateDownloading">
+					*ngIf="!showCheckingProgress && isUpdateDownloading">
 					<div class="col col-12 row progress-div">
 						<div *ngIf="installingPercent === 0"
 							class="col col-9 progress-title"

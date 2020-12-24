@@ -23,7 +23,7 @@ export class WidgetDeviceUpdateComponent implements OnInit {
 	@Input() installationHistory: any[];
 	@Input() percent = 0;
 	@Input() isCheckingStatus = false;
-	@Input() showProgress = false;
+	@Input() showCheckingProgress = false;
 	@Input() isUpdateDownloading = false;
 	@Input() isCheckingPluginStatus = true;
 	@Input() isCancelingStatus = false;
