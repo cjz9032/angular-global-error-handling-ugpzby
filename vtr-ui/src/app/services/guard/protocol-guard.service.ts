@@ -31,7 +31,6 @@ export class ProtocolGuardService implements CanActivate {
 		'wifi-security': 'security/wifi-security',
 		'password-protection': 'security/password-protection',
 		'internet-protection': 'security/internet-protection',
-		'windows-hello': 'security/windows-hello',
 		support: 'support',
 		power: 'device/device-settings/power',
 		'display-camera': 'device/device-settings/display-camera',
