@@ -87,15 +87,19 @@ export class AppSearchService {
 	public handleAction(featureAction: IFeatureAction) {
 		if (featureAction.type === SearchActionType.navigation) {
 			const navAction = featureAction as INavigationAction;
-			let route = '/dashboard';
+			let route = '/';
 
 			if (navAction.menuId && this.menuRouteMap[navAction.menuId]) {
 				route = '/' + this.menuRouteMap[navAction.menuId];
 			} else if (navAction.route) {
-				route = navAction.route;
+				route = navAction.route.startsWith('/') ? navAction.route : '/' + navAction.route;
 			}
 
-			this.router.navigate([route]);
+			if (route.startsWith('/user')) {	// not support user route at present
+				this.router.navigateByUrl('/');
+			} else {
+				this.router.navigateByUrl(route);
+			}
 		}
 	}
 
@@ -125,7 +129,11 @@ export class AppSearchService {
 			let routePath = upperPath
 			if (item.id && item.path) {
 				routePath = upperPath ? upperPath + "/" + item.path : item.path;
-				this.menuRouteMap[item.id] = upperPath ? upperPath + "/" + item.path: item.path;
+				if (item.singleLayerRouting) {
+					this.menuRouteMap[item.id] = item.path;
+				} else {
+					this.menuRouteMap[item.id] = routePath;
+				}
 			}
 
 			if (item.subitems?.length > 0) {

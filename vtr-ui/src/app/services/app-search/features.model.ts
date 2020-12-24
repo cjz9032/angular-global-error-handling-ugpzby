@@ -176,6 +176,17 @@ export const featureSource = [
 		}
 	},
 	{
+		id: `${Category.power}.dynamicThermalControl`,
+		categoryId: Category.power,
+		icon: ['fal', 'gem'],
+		action: {
+			type: 'navigation',
+			menuId: 'power',
+			route: '',
+			params: []
+		}
+	},
+	{
 		id: `${Category.power}.easyResume`,
 		categoryId: Category.power,
 		icon: ['fal', 'gem'],

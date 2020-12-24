@@ -4,17 +4,16 @@
 
 	<left-content>
 		<div class="container-fluid">
-
 			<!-- user input widget-->
 			<div class="row">
 				<div class="widget-search-input">
 					<!-- search icon-->
-					<div class="search-icon" (click)="onClickSearchBtn(clickSearchIconEvent)">
+					<div class="search-icon"  id="search-page-div-search-icon" role="button"  (click)="onClickSearchBtn(clickSearchIconEvent)">
 						<fa-icon [icon]="['fal', 'search']"></fa-icon>
 					</div>
 
 					<!-- search input -->
-					<input type="text" #searchInput [placeholder]="searchTips" class="search-input" maxlength="30"
+					<input type="text" #searchInput [placeholder]="searchTips" id="search-page-div-search-input" class="search-input" maxlength="30"
 						(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput"
 						(keydown.enter)="onClickSearchBtn(enterSearchEvent)" />
 
@@ -42,7 +41,7 @@
 					</div>
 				</div>
 
-				<div class="row flex-all-center offline-tips">
+				<div class="row flex-all-center offline-tips" id="search-page-div-offline-tips" >
 					App Search is unavailable when network is disconnected at present
 				</div>
 			</div>
@@ -60,21 +59,21 @@
 
 			<!-- results view -->
 			<div class="search-results" *ngIf='isOnline && searchCompleted'>
-				<div class="row result-counter" *ngIf="resultItems.length <= pageSize">
+				<div class="row result-counter" *ngIf="resultItems.length <= pageSize" id="search-page-div-result-counter">
 					<div class="part1">{{ resultItems.length }}</div>&nbsp;<div class="part2">results</div>
 				</div>
-				<div class="row result-counter" *ngIf="resultItems.length > pageSize">
+				<div class="row result-counter" *ngIf="resultItems.length > pageSize" id="search-page-div-result-counter">
 					<div class="part1">{{ (startItemOfCurPageIdx + 1) + '-' + (startItemOfNextPageIdx) }}</div>&nbsp;
 					<div class="part2">{{ '/ ' + resultItems.length + ' results' }}</div>
 				</div>
 
 				<!-- no search result tips -->
 				<div class="no-search-result" *ngIf="resultItems.length === 0">
-					<div class="title">
+					<div class="title" id="search-page-no-search-result-title">
 						{{ noSearchResultTips }}
 					</div>
 					<div class="description pt-24">
-						<div class="detail">
+						<div class="detail" id="search-page-no-search-result-description">
 							<div>Your search did not match any items.</div>
 							<ul>
 								<li>Check the spelling of your keyword</li>
@@ -88,39 +87,46 @@
 				<!-- search result item list-->
 				<div class="has-search-result" *ngIf="displayItems.length > 0">
 					<div class="row result-item" tabindex="0" (click)="onClickResultItem(resultItem)"
-						*ngFor="let resultItem of displayItems;" vtrMetrics metricsEvent="FeatureClick"
-						[metricsItem]="resultItem.id" [metricsParam]="'category:' + resultItem.categoryId">
+						*ngFor="let resultItem of displayItems; let itemIdx = index;" vtrMetrics metricsEvent="FeatureClick"
+						[metricsItem]="resultItem.id" [metricsParam]="'category:' + resultItem.categoryId" id="search-page-result-item-{{itemIdx}}" role="button">
 						<!-- result icon-->
 						<div class="feature-icon-part">
 							<fa-icon [icon]="resultItem.icon || ['fal', 'gem']"></fa-icon>
 						</div>
 
-						<!-- feature name-->
-						<div class="feature-name-part">
-							{{resultItem.featureName}}
+						<!-- feature name and category-->
+						<div class="feature-description">
+							<div class="feature-name col col-8 text-two-ellipsis" >
+								{{resultItem.featureName}}
+							</div>
+
+							<div class="feature-category col col-4 text-two-ellipsis"> {{resultItem.category}}</div>
 						</div>
 
-						<!-- category and feature icon -->
-						<div class="navigation-narrow-part">
-							<div class="category"> {{resultItem.category}}</div>
-							<div class="narrow-icon">
-								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-							</div>
+						<!-- feature icon -->
+						<div class="narrow-icon">
+							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 						</div>
 					</div>
 
 					<!-- pagination bar-->
 					<div class="row result-pagination-bar" *ngIf="resultItems.length > pageSize">
-						<fa-icon vtrMetrics metricsEvent="FeatureClick" metricsItem="chevron-left"
+						<fa-icon
+						id="search-page-pagination-bar-chevron-left" role="button"
+						vtrMetrics metricsEvent="FeatureClick" metricsItem="chevron-left"
 							class='chevron-left' [class.deactive-chevron]="currentPageIdx === 0"
 							[icon]="['fal', 'chevron-left']" (click)="onClickBackResultView()"></fa-icon>
-						<div vtrMetrics metricsEvent="FeatureClick" metricsItem="pagination-item"
+						<div
+							id="search-page-pagination-bar-page{{pageNum}}"
+							vtrMetrics metricsEvent="FeatureClick" metricsItem="pagination-item"
 							metricsParam="page:{{pageNum + 1}}" *ngFor="let i of pagesArray; let pageNum = index"
 							(click)="onClickResultView(pageNum)">
 							<span class="pagination-item" [class.high-light]="currentPageIdx === pageNum"> {{ pageNum +
 								1 }}</span>
 						</div>
-						<fa-icon vtrMetrics metricsEvent="FeatureClick" metricsItem="chevron-right"
+						<fa-icon
+							id="search-page-pagination-bar-chevron-right" role="button"
+							vtrMetrics metricsEvent="FeatureClick" metricsItem="chevron-right"
 							class='chevron-right' [class.deactive-chevron]="currentPageIdx >= pagesArray.length - 1"
 							[icon]="['fal', 'chevron-right']" (click)="onClickForwardResultView()"></fa-icon>
 					</div>
