@@ -29,6 +29,13 @@ $line_height: 2rem;
 }
 
 :host ::ng-deep {
+
+	.vtr-page.vtr-page-page-app-search {
+		.vtr-page-columns .vtr-page-column.vtr-page-left-column {
+			padding-bottom: 4rem !important;
+		}
+	}
+
 	.vtr-page-left-column {
 		background: $shade_lightest;
 
@@ -222,7 +229,6 @@ $line_height: 2rem;
 				font-size: 1.8rem;
 				opacity: 0.8;
 				margin-top: 2.4rem;
-				margin-bottom: 2.4rem;
 				cursor: pointer;
 
 				.chevron-left .chevron-right {
