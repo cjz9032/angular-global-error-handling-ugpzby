@@ -5103,7 +5103,7 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Allt fungerar som det ska på din ",
-			"titleScanCanceled": "Klassificeringen är 0 eftersom den senaste genomsökningen avbröts. Klicka på Tillbaka till startsidan och gör en ny genomsökning.",
+			"titleScanCanceled": "Klassificeringen är 0 eftersom den senaste genomsökningen avbröts. Klicka på \"TILLBAKA TILL STARTSIDAN\" och gör en ny genomsökning.",
 			"serialNumber": "Serienummer: ",
 			"subTitle": "Du prenumererar på Lenovo Smart Performance.",
 			"description": "Vi genomsöker och åtgärdar regelbundet din dator för att proaktivt förbättra datorprestanda, Internetprestanda och problem med skadlig kod. Du är tillräckligt skyddad. Du kan också starta prestandakontroller på begäran genom att klicka på Genomsök nu.",

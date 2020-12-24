@@ -5211,7 +5211,7 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "一切正常",
-			"titleScanCanceled": "评分为 0，因为上一次扫描被取消了。请单击“返回首页”，然后再次扫描。",
+			"titleScanCanceled": "评分为 0，因为上一次扫描被取消了。请单击“返回主屏幕”，然后再次扫描。",
 			"serialNumber": "序列号：",
 			"subTitle": "您已订阅 Lenovo Smart Performance Service",
 			"description": "我们经常主动扫描并修复您的电脑的性能、互联网性能和恶意软件问题。您将获得充分的保障。您也可以单击立即扫描按钮按需启动性能检查。",

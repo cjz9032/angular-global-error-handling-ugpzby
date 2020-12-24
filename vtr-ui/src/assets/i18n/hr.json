@@ -5103,7 +5103,7 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Sve je u redu s vašim ",
-			"titleScanCanceled": "Ocjena je bila 0 jer je zadnje skeniranje otkazano. Kliknite \"NATRAG NA POČETNU STRANICU\" i ponovno skenirajte.",
+			"titleScanCanceled": "Ocjena je bila 0 jer je zadnje skeniranje otkazano. Kliknite \"NATRAG POČETNU STRANICU\" i ponovno skenirajte.",
 			"serialNumber": "Serijski broj: ",
 			"subTitle": "Pretplaćeni ste na Lenovo uslugu Smart Performance",
 			"description": "Povremeno proaktivno skeniramo i popravljamo vaše računalo radi učinkovitosti računala i interneta te problema sa zlonamjernim softverom. Vi ste odgovarajuće zaštićeni. Također odmah možete pokrenuti provjeru učinkovitosti na zahtjev klikom na gumb za skeniranje.",

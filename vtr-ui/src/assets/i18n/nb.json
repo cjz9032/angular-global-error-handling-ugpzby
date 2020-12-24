@@ -5103,7 +5103,7 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Alt er bra med ",
-			"titleScanCanceled": "Rangeringen var 0 fordi den siste skanningen ble avbrutt. Klikk på \"GÅ TIL HJEM\", og skann igjen.",
+			"titleScanCanceled": "Rangeringen var 0 fordi den siste skanningen ble avbrutt. Klikk på \"TILBAKE TIL HJEM\", og skann igjen.",
 			"serialNumber": "Serienummer: ",
 			"subTitle": "Du abonnerer på Lenovo Smart Performance Service",
 			"description": "Vi skanner regelmessig etter og reparerer datamaskinen for PC-ytelse, Internettytelse og problemer med skadevare på en proaktiv måte. Du er godt dekket. Du kan også starte ytelseskontroll ved å klikke på skann nå-knappen.",

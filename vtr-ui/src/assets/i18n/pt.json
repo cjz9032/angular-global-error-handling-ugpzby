@@ -5103,7 +5103,7 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Está tudo a funcionar corretamente com o seu ",
-			"titleScanCanceled": "A classificação foi 0 porque a última análise foi cancelada. Por favor clique em \"VOLTAR À PÁGINA INICIAL\" e volte a analisar.",
+			"titleScanCanceled": "A classificação foi 0 porque a última análise foi cancelada. Por favor clique em \"VOLTAR AO INÍCIO\" e volte a analisar.",
 			"serialNumber": "Número de série: ",
 			"subTitle": "Está subscrito no Lenovo Smart Performance Service",
 			"description": "Analisamos e corrigimos frequentemente de forma proativa os problemas de desempenho do PC, desempenho da Internet performance e malware. Possui uma cobertura adequada. Também pode iniciar a verificação do desempenho a pedido ao clicar no botão Analisar agora.",

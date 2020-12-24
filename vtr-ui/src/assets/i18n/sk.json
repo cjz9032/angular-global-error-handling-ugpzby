@@ -5103,7 +5103,7 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Všetko je v poriadku v zariadení ",
-			"titleScanCanceled": "Hodnotenie bolo 0, pretože posledná kontrola bola zrušená. Kliknite na \"SPÄŤ NA ÚVOD\" a skontrolujte znova.",
+			"titleScanCanceled": "Hodnotenie bolo 0, pretože posledná kontrola bola zrušená. Kliknite na \"SPÄŤ DOMOV\" a skontrolujte znova.",
 			"serialNumber": "Sériové číslo: ",
 			"subTitle": "Ste prihlásení na odber služby Lenovo Smart Performance Service",
 			"description": "Často a aktívne kontrolujeme a opravujeme počítač, jeho výkon, optimalizujeme internet a hľadáme malvér. Ste primerane chránení. Kontrolu výkonu môžete spustiť aj na vyžiadanie kliknutím na tlačidlo Spustiť kontrolu.",

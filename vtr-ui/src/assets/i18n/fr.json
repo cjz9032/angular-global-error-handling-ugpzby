@@ -5213,7 +5213,7 @@
 		},
 		"subscriberScanHomePage": {
 			"title": "Tout va bien concernant votre ",
-			"titleScanCanceled": "La note a été de 0 car la dernière analyse a été annulée. Cliquez sur le bouton \"RETOUR À LA PAGE D'ACCUEIL\" et recommencez l'analyse.",
+			"titleScanCanceled": "La note a été de 0 car la dernière analyse a été annulée. Cliquez sur le bouton \"RETOUR À L’ÉCRAN ACCUEIL\" et recommencez l'analyse.",
 			"serialNumber": "Numéro de série : ",
 			"subTitle": "Vous êtes abonné(e) au service Lenovo Smart Performance",
 			"description": "Nous analysons votre PC fréquemment et de manière proactive afin de corriger ses performances, ses performances Internet et tout problème de logiciel malveillant. Votre ordinateur est bien protégé. Vous pouvez également lancer la vérification des performances à la demande en cliquant sur le bouton Analyser maintenant.",
