@@ -47,12 +47,6 @@ export class SearchDropdownComponent implements AfterViewInit {
 		private router: Router,
 		private metricService: MetricService) { }
 
-	ngAfterViewInit() {
-		setTimeout(() => {
-			this.searchInput.nativeElement.focus();
-		}, 0);
-	}
-
 	onCleanClick($event) {
 		this.searchInput.nativeElement.value = '';
 		$event.stopPropagation();
