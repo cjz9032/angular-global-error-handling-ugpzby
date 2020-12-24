@@ -157,6 +157,11 @@ $line_height: 2rem;
 					background: $light 0% 0% no-repeat padding-box;
 					border: 1px solid $grey_light;
 					border-bottom: none;
+					&:focus {
+						border: 1px solid $menu_hover;
+						outline-color: $menu_hover;
+					}
+
 					div {
 						cursor: pointer;
 					}
@@ -177,36 +182,37 @@ $line_height: 2rem;
 						@extend .flex-all-center;
 					}
 
-					.feature-name-part {
+					.feature-description {
 						@extend .mid-text;
 						@extend .flex-all-center;
 						height: calc(#{$item_height} - 2px);
-						font-weight: bold;
-						color: $gray_dark;
-						justify-content: left;
-						// max-width: 10rem;
-					}
 
-					.navigation-narrow-part {
-						height: calc(#{$item_height} - 2px);
-						@extend .flex-all-center;
-						padding-left: 0.4rem;
 
-						.category {
+						width: calc(100% - #{$icon_size} * 2 - 6.2rem);
+						.feature-name {
+							text-align: left;
+							font-weight: bold;
+							color: $gray_dark;
+						}
+
+						.feature-category {
+							text-align: right;
 							line-height: 2rem;
 							font-size: 1.4rem;
 							flex-grow: 1;
 							font-style: italic;
 							color: $gray_dark;
-							margin-right: 1.4rem;
-						}
-
-						.narrow-icon {
-							color: $gray_dark;
-							margin-right: 1.8rem;
 						}
 					}
 
+					.narrow-icon {
+						height: calc(#{$item_height} - 2px);
+						@extend .flex-all-center;
+						width: $icon_size;
+						color: $gray_dark;
+						padding-left: 1.4rem;
+						padding-right: 1.8rem;
+					}
 				}
 			}
 
@@ -243,7 +249,6 @@ $line_height: 2rem;
 				}
 			}
 		}
-
 	}
 
 	.vtr-page-right-column {

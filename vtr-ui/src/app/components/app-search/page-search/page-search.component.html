@@ -95,17 +95,18 @@
 							<fa-icon [icon]="resultItem.icon || ['fal', 'gem']"></fa-icon>
 						</div>
 
-						<!-- feature name-->
-						<div class="feature-name-part">
-							{{resultItem.featureName}}
+						<!-- feature name and category-->
+						<div class="feature-description">
+							<div class="feature-name col col-8 text-two-ellipsis" >
+								{{resultItem.featureName}}
+							</div>
+
+							<div class="feature-category col col-4 text-two-ellipsis"> {{resultItem.category}}</div>
 						</div>
 
-						<!-- category and feature icon -->
-						<div class="navigation-narrow-part">
-							<div class="category"> {{resultItem.category}}</div>
-							<div class="narrow-icon">
-								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-							</div>
+						<!-- feature icon -->
+						<div class="narrow-icon">
+							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 						</div>
 					</div>
 
