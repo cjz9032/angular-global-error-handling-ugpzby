@@ -477,21 +477,18 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			type: '',
 			fixcount: 0,
 			status: '',
-			tune: 0,
 			Tune: 0,
 			tune_accumulatedjunk: 0,
 			tune_usabilityissues: 0,
 			tune_windowssettings: 0,
 			tune_systemerrors: 0,
 			tune_registryerrors: 0,
-			boost: 0,
 			Boost: 0,
 			boost_ejunk: 0,
 			boost_networksettings: 0,
 			boost_browsersettings: 0,
 			boost_browsersecurity: 0,
 			boost_wifiperformance: 0,
-			secure: 0,
 			Secure: 0,
 			secure_malwarescan: 0,
 			secure_zerodayinfections: 0,
@@ -506,7 +503,9 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			scanType: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan',
 		};
 		this.smartPerformanceService.getLastScanResult(requestParam).then((result) => {
-			Object.assign(this.scanResult, result);
+			this.scanResult = cloneDeep(result);
+			this.issueCount = this.scanResult.Tune + this.scanResult.Boost + this.scanResult.Secure;
+			this.isScanAlreadyStarted = false;
 		});
 	}
 
