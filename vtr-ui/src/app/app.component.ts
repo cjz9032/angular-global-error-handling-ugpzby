@@ -10,10 +10,7 @@ import {
 	ElementRef,
 	ViewChild,
 } from '@angular/core';
-import {
-	Router,
-	ActivatedRoute
-} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -621,29 +618,50 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		const navPerf = performance.getEntriesByType(
 			'navigation'
 		)[0] as PerformanceNavigationTiming;
-		const navigationStartTime = (win.VantageStub?.navigationStartingTime ?? 0) - (win.VantageStub?.appStartTime ?? 0);
+		const navigationStartTime =
+			(win.VantageStub?.navigationStartingTime ?? 0) - (win.VantageStub?.appStartTime ?? 0);
 		const performanceTimePoints = {
 			certPingDone: win.VantageStub?.certpinTime ?? 0,
-			source: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? 'local' : 'remote',
-			hostname: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode ? '' : win.location.host,
-			indexPageEstablished: Math.round(navigationStartTime + navPerf.connectEnd - navPerf.startTime),
-			domInteractived: Math.round(navigationStartTime + navPerf.domInteractive - navPerf.startTime),
+			source: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode
+				? 'local'
+				: 'remote',
+			hostname: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode
+				? ''
+				: win.location.host,
+			indexPageEstablished: Math.round(
+				navigationStartTime + navPerf.connectEnd - navPerf.startTime
+			),
+			domInteractived: Math.round(
+				navigationStartTime + navPerf.domInteractive - navPerf.startTime
+			),
 			scriptLoaded: Math.round(navigationStartTime + navPerf.duration),
-			appInitialized: Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app initialized')?.startTime ?? 0) - navPerf.startTime),
-			appEntryLoaded: Math.round(navigationStartTime + (this.commonService.getPerformanceNode('app entry loaded')?.startTime ?? 0) - navPerf.startTime),
-			firstPageLoaded: Math.round(navigationStartTime + (this.commonService.getPerformanceNode(firstPage)?.startTime ?? 0)  - navPerf.startTime)
+			appInitialized: Math.round(
+				navigationStartTime +
+					(this.commonService.getPerformanceNode('app initialized')?.startTime ?? 0) -
+					navPerf.startTime
+			),
+			appEntryLoaded: Math.round(
+				navigationStartTime +
+					(this.commonService.getPerformanceNode('app entry loaded')?.startTime ?? 0) -
+					navPerf.startTime
+			),
+			firstPageLoaded: Math.round(
+				navigationStartTime +
+					(this.commonService.getPerformanceNode(firstPage)?.startTime ?? 0) -
+					navPerf.startTime
+			),
 		};
 		this.metricService.sendAppLoadedMetric(performanceTimePoints);
+		let content = `You are now accessing ${performanceTimePoints.source}, ${performanceTimePoints.hostname} \n \n`;
+		content += `Certpin done: ${performanceTimePoints.certPingDone} ms \n`;
+		content += `Source downloaded: ${performanceTimePoints.indexPageEstablished} ms \n`;
+		content += `Dom interactived: ${performanceTimePoints.domInteractived} ms \n`;
+		content += `Script loaded: ${performanceTimePoints.scriptLoaded} ms \n`;
+		content += `App initialized: ${performanceTimePoints.appInitialized} ms \n`;
+		content += `App entry loaded: ${performanceTimePoints.appEntryLoaded} ms \n`;
+		content += `First page loaded: ${performanceTimePoints.firstPageLoaded} ms`;
+		this.logger.info(content);
 		if (this.environment.debuggingSnackbar) {
-			let content = `You are now accessing ${performanceTimePoints.source}, ${performanceTimePoints.hostname} \n \n`;
-			content += `Certpin done: ${performanceTimePoints.certPingDone} ms \n`;
-			content += `Source downloaded: ${performanceTimePoints.indexPageEstablished} ms \n`;
-			content += `Dom interactived: ${performanceTimePoints.domInteractived} ms \n`;
-			content += `Script loaded: ${performanceTimePoints.scriptLoaded} ms \n`;
-			content += `App initialized: ${performanceTimePoints.appInitialized} ms \n`;
-			content += `App entry loaded: ${performanceTimePoints.appEntryLoaded} ms \n`;
-			content += `First page loaded: ${performanceTimePoints.firstPageLoaded} ms`;
-			console.log(content);
 			this.snackBar.open(content, 'Close', {
 				panelClass: ['snackbar'],
 			});
