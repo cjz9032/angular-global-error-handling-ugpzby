@@ -148,7 +148,7 @@ describe('ContentCacheService', () => {
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
 		const contents = JSON.parse(JSON.stringify(NORMAL_CONTENTS));
 		buildInContentService.getContents.and.returnValue(contents);
-		const ret = await service.getCachedContents('noResponse', contentCards);
+		const ret = await service.getCachedContents('noResponse', contentCards, true);
 		const keys = Object.keys(ret);
 		expect(keys).toBeTruthy();
 		expect(keys.length).toEqual(3);
@@ -168,7 +168,7 @@ describe('ContentCacheService', () => {
 		});
 		const contents = JSON.parse(JSON.stringify(NORMAL_CONTENTS));
 		buildInContentService.getContents.and.returnValue(contents);
-		const ret = await service.getCachedContents('noOnlineContent', null);
+		const ret = await service.getCachedContents('noOnlineContent', null, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -178,7 +178,7 @@ describe('ContentCacheService', () => {
 		expect(keys.includes('welcome-text')).toBeTruthy();
 		expect(keys.includes('positionB')).toBeTruthy();
 
-		const ret2 = await service.getCachedContents('noOnlineContent', null);
+		const ret2 = await service.getCachedContents('noOnlineContent', null, true);
 		expect(ret2).toBeTruthy();
 		expect(ret2).toEqual(ret);
 	});
@@ -186,7 +186,7 @@ describe('ContentCacheService', () => {
 	it('should return normal cache data.', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
-		const ret = await service.getCachedContents('normalContents', null);
+		const ret = await service.getCachedContents('normalContents', null, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -200,7 +200,7 @@ describe('ContentCacheService', () => {
 	it('should not return expired cache data.', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'expiredDateWithPoistionB' });
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
-		const ret = await service.getCachedContents('expiredDateWithPoistionB', null);
+		const ret = await service.getCachedContents('expiredDateWithPoistionB', null, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -219,7 +219,7 @@ describe('ContentCacheService', () => {
 			Page: 'NotReachDisplayDateWithPoistionB',
 		});
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
-		const ret = await service.getCachedContents('NotReachDisplayDateWithPoistionB', null);
+		const ret = await service.getCachedContents('NotReachDisplayDateWithPoistionB', null, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -236,7 +236,7 @@ describe('ContentCacheService', () => {
 	it('should return one item if PositionB has lots of valid items.', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'multi-ItemsInPoistionB' });
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
-		const ret = await service.getCachedContents('multi-ItemsInPoistionB', null);
+		const ret = await service.getCachedContents('multi-ItemsInPoistionB', null, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -253,7 +253,7 @@ describe('ContentCacheService', () => {
 	it('should not change the field DataSource.', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'testDataResource' });
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
-		const ret = await service.getCachedContents('testDataResource', null);
+		const ret = await service.getCachedContents('testDataResource', null, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -335,7 +335,7 @@ describe('ContentCacheService', () => {
 		cmsService.getOneCMSContent.and.returnValue(CMS_CONTENTS);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
-		const ret = await service.getCachedContents('dashboard_only_cms', contentCards);
+		const ret = await service.getCachedContents('dashboard_only_cms', contentCards, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -417,7 +417,7 @@ describe('ContentCacheService', () => {
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard_only_upe' });
-		const ret = await service.getCachedContents('dashboard_only_upe', contentCards);
+		const ret = await service.getCachedContents('dashboard_only_upe', contentCards, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -499,7 +499,7 @@ describe('ContentCacheService', () => {
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard' });
-		const ret = await service.getCachedContents('dashboard', contentCards);
+		const ret = await service.getCachedContents('dashboard', contentCards, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -590,7 +590,7 @@ describe('ContentCacheService', () => {
 			Segment: 'Commercial',
 		};
 		localInfoService.getLocalInfo.and.returnValue(currentLocalInfo);
-		const ret = await service.getCachedContents('dashboard_only_upe', contentCards);
+		const ret = await service.getCachedContents('dashboard_only_upe', contentCards, true);
 
 		expect(ret).toBeTruthy();
 		const keys = Object.keys(ret);
@@ -626,7 +626,7 @@ describe('ContentCacheService', () => {
 		cmsService.fetchContents.and.throwError('upe error');
 		localInfoService.getLocalInfo.and.returnValue(localInfo);
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'dashboard' });
-		await service.getCachedContents('dashboard', contentCards);
+		await service.getCachedContents('dashboard', contentCards, true);
 		expect(logger.error).toHaveBeenCalledTimes(2);
 	});
 
@@ -640,7 +640,7 @@ describe('ContentCacheService', () => {
 
 	it('should return the online article when get article by id', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
-		await service.getCachedContents('normalContents', null);
+		await service.getCachedContents('normalContents', null, true);
 		cmsService.getLocalinfo.and.returnValue(localInfo);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getArticleById(ContentActionType.Internal, '11111');
@@ -656,7 +656,7 @@ describe('ContentCacheService', () => {
 
 	it('should return the online article and save when get article by id', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
-		await service.getCachedContents('normalContents', null);
+		await service.getCachedContents('normalContents', null, true);
 		cmsService.getLocalinfo.and.returnValue(localInfo);
 		cmsService.fetchCMSArticle.and.returnValue(ARTICLE);
 		const ret = await service.getArticleById(
@@ -668,7 +668,7 @@ describe('ContentCacheService', () => {
 
 	it('should send metrics when get cached contents', async () => {
 		cmsService.generateContentQueryParams.and.returnValue({ Page: 'normalContents' });
-		await service.getCachedContents('normalContents', null);
+		await service.getCachedContents('normalContents', null, true);
 		expect(metrics.sendMetrics).toHaveBeenCalledTimes(1);
 		expect(metrics.sendMetrics.calls.allArgs().length).toBe(1, 'one call');
 	});

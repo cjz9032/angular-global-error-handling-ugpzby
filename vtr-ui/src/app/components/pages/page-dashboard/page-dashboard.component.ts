@@ -485,7 +485,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 		this.getTileSource().then(() => {
 			this.contentLocalCache
-				.getCachedContents(this.pageTypeOfdashboard, this.contentCards)
+				.getCachedContents(this.pageTypeOfdashboard, this.contentCards, this.isOnline)
 				.then((result) => {
 					if (!result) {
 						return;
