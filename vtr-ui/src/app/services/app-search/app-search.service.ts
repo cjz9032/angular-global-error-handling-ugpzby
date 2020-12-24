@@ -98,7 +98,7 @@ export class AppSearchService {
 			if (route.startsWith('/user')) {	// not support user route at present
 				this.router.navigateByUrl('/');
 			} else {
-				this.router.navigateByUrl('/');
+				this.router.navigateByUrl(route);
 			}
 		}
 	}
