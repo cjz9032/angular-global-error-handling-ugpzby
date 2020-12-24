@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.38](https://bitbucket.tc.lenovo.com///compare/v1.9.37...v1.9.38) (2020-12-24)
+
+
+### Bug Fixes
+
+* **menu:** fix white block and two menu display issue ([e7f78c4](https://bitbucket.tc.lenovo.com///commit/e7f78c42ad54f0eee1bca97bf31d8c4420fb0637))
+
 ### [1.9.37](https://bitbucket.tc.lenovo.com///compare/v1.9.36...v1.9.37) (2020-12-23)
 
 
