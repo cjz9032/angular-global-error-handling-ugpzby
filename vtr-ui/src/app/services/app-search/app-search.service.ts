@@ -87,7 +87,7 @@ export class AppSearchService {
 	public handleAction(featureAction: IFeatureAction) {
 		if (featureAction.type === SearchActionType.navigation) {
 			const navAction = featureAction as INavigationAction;
-			let route = '/dashboard';
+			let route = '/';
 
 			if (navAction.menuId && this.menuRouteMap[navAction.menuId]) {
 				route = '/' + this.menuRouteMap[navAction.menuId];
@@ -96,9 +96,9 @@ export class AppSearchService {
 			}
 
 			if (route.startsWith('/user')) {	// not support user route at present
-				this.router.navigate(['/dashboard']);
+				this.router.navigateByUrl('/');
 			} else {
-				this.router.navigate([route]);
+				this.router.navigateByUrl('/');
 			}
 		}
 	}
