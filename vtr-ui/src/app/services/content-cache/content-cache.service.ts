@@ -96,7 +96,7 @@ export class ContentCacheService {
 			article = await this.buildInContentService.getArticle(articleId, loclInfo.Lang);
 		} else {
 			article = await this.getCachedArticle(articleId, loclInfo.Lang);
-			if (!article) {
+			if (!article || !article.Results) {
 				itemName = 'Online';
 				article = await this.cmsService.fetchCMSArticle(articleId);
 				this.saveArticleIfNeed(articleId, loclInfo.Lang, article);
