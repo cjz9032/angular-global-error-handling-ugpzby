@@ -48,7 +48,7 @@ export class ContentCacheService {
 		this.contentLocalCacheContract = this.vantageShellService.getContentLocalCache();
 	}
 
-	public async getCachedContents(page: string, contentCards: any) {
+	public async getCachedContents(page: string, contentCards: any, isOnline: boolean) {
 		const startTime = new Date();
 		const cmsOptions = await this.cmsService.generateContentQueryParams({ Page: page });
 		const cacheKey = Md5.hashStr(JSON.stringify(cmsOptions)) + '';
@@ -71,7 +71,7 @@ export class ContentCacheService {
 			this.logger.error('Load contents error ', error);
 		}
 
-		if (!this.ongoingCacheProcesses[cacheKey]) {
+		if (isOnline && !this.ongoingCacheProcesses[cacheKey]) {
 			this.ongoingCacheProcesses[cacheKey] = this.cacheContents(
 				cacheKey,
 				cmsOptions,
