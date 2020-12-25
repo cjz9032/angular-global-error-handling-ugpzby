@@ -1,14 +1,14 @@
 <div class="multi-state-toggle">
 	<div class="inner-toggle" [ngClass]="{ 'optionnull' : currentProfile === null || currentProfile === 0 }"
 		role="radiogroup">
-		<input type="radio" vtrMetrics [metricsItem]="'lighting_profile_off'" metricsEvent="featureClick"
+		<input type="radio" vtrMetrics [metricsItem]="isWidgetContainer?'lighting_customize_off':'lighting_profile_off'" metricsEvent="featureClick"
 			metricsParam="'profileId'" [metricsValue]="0" [metricsParent]="isWidgetContainer?'Gaming.Dashboard':'Gaming.Lighting'" value="0" name="lighting-porfile" id="{{automationId}}off_radio"
 			[attr.aria-label]="'gaming.lightingProfile.lightingnarrator.text1.title' | translate" role="radio"
 			[checked]="currentProfile===0" (change)="setProfile($event)" (click)="setProfile($event)" [tabindex]="isWidgetContainer?1:0">
 		<label class="lighting_off_profile" for="{{automationId}}off_radio" [id]="automationId==='single' ? 'gaming_single_lighting_profile_off': 'gaming_'+labelId+'_lighting_profile0'"
 		[ngClass]="{'toggle-stable':isToggle && currentProfile===0,'select-color':!isToggle && currentProfile===0}">{{'gaming.lightingProfile.profileheading.text1.title' | translate}}</label>
 
-		<input type="radio" vtrMetrics [metricsItem]="'lighting_profile_1'" metricsEvent="featureClick"
+		<input type="radio" vtrMetrics [metricsItem]="isWidgetContainer?'lighting_customize_profile1':'lighting_profile_1'" metricsEvent="featureClick"
 			metricsParam="'profileId'" [metricsValue]="1" [metricsParent]="isWidgetContainer?'Gaming.Dashboard':'Gaming.Lighting'" value="1" name="lighting-porfile" id="{{automationId}}first_radio"
 			[attr.aria-label]="'gaming.lightingProfile.lightingnarrator.text2.title' | translate" role="radio"
 			[checked]="currentProfile===1" (change)="setProfile($event)" (click)="setProfile($event)" [tabindex]="isWidgetContainer?1:0">
@@ -18,7 +18,7 @@
 			<span class="num">1</span>
 		</label>
 
-		<input type="radio" vtrMetrics [metricsItem]="'lighting_profile_2'" metricsEvent="featureClick"
+		<input type="radio" vtrMetrics [metricsItem]="isWidgetContainer?'lighting_customize_profile2':'lighting_profile_2'" metricsEvent="featureClick"
 			metricsParam="'profileId'" [metricsValue]="2" [metricsParent]="isWidgetContainer?'Gaming.Dashboard':'Gaming.Lighting'" value="2" name="lighting-porfile" id="{{automationId}}second_radio"
 			[attr.aria-label]="'gaming.lightingProfile.lightingnarrator.text3.title' | translate" role="radio"
 			[checked]="currentProfile===2" (change)="setProfile($event)" (click)="setProfile($event)" [tabindex]="isWidgetContainer?1:0">
@@ -28,7 +28,7 @@
 			<span class="num">2</span>
 		</label>
 
-		<input type="radio" vtrMetrics [metricsItem]="'lighting_profile_3'" metricsEvent="featureClick"
+		<input type="radio" vtrMetrics [metricsItem]="isWidgetContainer?'lighting_customize_profile3':'lighting_profile_3'" metricsEvent="featureClick"
 			metricsParam="'profileId'" [metricsValue]="3" [metricsParent]="isWidgetContainer?'Gaming.Dashboard':'Gaming.Lighting'" value="3" name="lighting-porfile" id="{{automationId}}third_radio"
 			[attr.aria-label]="'gaming.lightingProfile.lightingnarrator.text4.title' | translate" role="radio"
 			[checked]="currentProfile===3" (change)="setProfile($event)" (click)="setProfile($event)" [tabindex]="isWidgetContainer?1:0">
