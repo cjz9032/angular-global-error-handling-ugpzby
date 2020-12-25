@@ -125,6 +125,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					confirmMetricsItemId: idPrefix + '_ok_button',
 					cancelMetricEnabled: false,
 					cancelMetricsItemId: '',
+					metricsParent: 'Gaming.Macrokey',
 					id: this.modalAutomationId,
 				};
 				this.toggleRecording(true);
@@ -152,6 +153,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					confirmMetricsItemId: idPrefix + '_ok_button',
 					cancelMetricEnabled: false,
 					cancelMetricsItemId: '',
+					metricsParent: 'Gaming.Macrokey',
 					id: this.modalAutomationId,
 				};
 				this.toggleRecording(true);
@@ -179,6 +181,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					confirmMetricsItemId: idPrefix + '_ok_button',
 					cancelMetricEnabled: false,
 					cancelMetricsItemId: '',
+					metricsParent: 'Gaming.Macrokey',
 					id: this.modalAutomationId,
 				};
 				this.toggleRecording();
