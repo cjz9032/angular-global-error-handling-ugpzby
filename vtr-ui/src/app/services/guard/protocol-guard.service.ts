@@ -243,10 +243,14 @@ export class ProtocolGuardService implements CanActivate {
 			);
 		}
 
-		return this.commonService.isFirstPageLoaded()
-			? false
-			: this.router.parseUrl(
-					path.startsWith('?') ? `${dashboardPath}${path}` : dashboardPath
-			  );
+		if (path === '/' || path.startsWith('/?')) {
+			return this.router.parseUrl(
+				path.startsWith('/?')
+					? `${dashboardPath}${path.slice(path.indexOf('?'))}`
+					: dashboardPath
+			);
+		}
+
+		return this.commonService.isFirstPageLoaded() ? false : this.router.parseUrl(dashboardPath);
 	}
 }
