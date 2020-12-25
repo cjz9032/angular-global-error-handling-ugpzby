@@ -333,6 +333,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
 			this.activeModal.close(tutorialData);
 			this.SetVantageToolbar(this.vantageToolbar);
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
 			this.metricService.onWelcomePageDone();
 			this.initializerService.initializeAntivirus();
 		}
@@ -437,7 +438,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		} else {
 			this.progress -= 17;
 		}
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
 	}
 
 	moreInterestClicked() {
