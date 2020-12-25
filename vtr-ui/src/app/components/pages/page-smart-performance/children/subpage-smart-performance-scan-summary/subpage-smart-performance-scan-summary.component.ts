@@ -334,13 +334,11 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				this.customDate = this.displayFromDate + ' - ' + this.displayToDate;
 				this.getHistory(
 					moment
-						.utc(this.fromDate)
-						.subtract(1, 'months')
+						.utc(new Date())
 						.startOf('day')
 						.format('YYYY-MM-DD HH:mm:ss'),
 					moment
-						.utc(this.toDate)
-						.subtract(1, 'months')
+						.utc(new Date())
 						.endOf('day')
 						.format('YYYY-MM-DD HH:mm:ss')
 				);
@@ -513,7 +511,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 
 			if (now < fiveMinutesFromRecentScan) {
 				if (response) {
-					this.isLoading = false;
 					if (isInit && this.smartPerformanceService.isEnterSmartPerformance) {
 						this.smartPerformanceService.isEnterSmartPerformance = false;
 					}
@@ -525,18 +522,17 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	}
 
 	async getHistory(startDate, endDate, isInit = false) {
-		this.isLoading = true;
 		const payload = {
 			filterType: 'C',
 			startDate,
 			endDate,
 		};
 		try {
+			this.isLoading = true;
 			const res: SPHistory = await this.smartPerformanceService.getHistory(payload);
 			this.logger.info('ui-smart-performance-scan-summary.getHistory', res);
 
 			if (res) {
-				this.isLoading = false;
 				this.historyRes = {
 					tuneCount: res.Tunecount,
 					boostCount: res.Boostcount,
@@ -548,11 +544,12 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				this.historyScanResults = res.lastscanresults || [];
 				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
 				this.getScanHistoryWithTime();
-				this.getLastScanResult(isInit);
+				await this.getLastScanResult(isInit);
 			} else {
 				this.historyScanResults = [];
 				this.historyRes = {};
 			}
+			this.isLoading = false;
 		} catch (err) {
 			this.logger.error('Ui-smart-performance-scan-summary.getHistory Error', err);
 		}
