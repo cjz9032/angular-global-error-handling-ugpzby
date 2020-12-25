@@ -240,7 +240,9 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.historyScanResultsDateTime = JSON.parse(JSON.stringify(this.historyScanResults));
 
 		// Deleting unnecessary keys & manupulating date time.
-		for (let i = 0; i < 5; i++) {
+		let historyScanResultsLength = this.historyScanResultsDateTime.length > 5 ? 5 : this.historyScanResultsDateTime.length
+
+		for (let i = 0; i < historyScanResultsLength; i++) {
 			// Adding new key scanRunDate with formating
 			this.historyScanResultsDateTime[i].scanRunDate = this.formatLocaleDate.transform(new Date(this.historyScanResultsDateTime[i].scanruntime));
 
@@ -255,12 +257,13 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			this.historyScanResultsDateTime[i].scanRunTime = this.historyScanResultsDateTime[i].scanRunTime.replace(/ /g, '');
 		}
 
-		return this.historyScanResultsDateTime;
 	}
 
-	getMostecentScanDateTime(scandate) {
+	getMostRecentScanDateTime() {
+		if (this.historyScanResults.length === 0) { return; }
+		const scanDate = this.historyScanResults[0].scanruntime
 		try {
-			const dateObj = new Date(scandate);
+			const dateObj = new Date(scanDate);
 			// const momentObj = moment(dateObj);
 			// const momentString = momentObj.format('YYYY-MM-DD');
 			const spLocalDate = this.formatLocaleDate.transformWithoutYear(dateObj);
@@ -274,7 +277,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				spLocalDate + (this.translate.currentLang === 'en' ? ' at ' : ' ') + now;
 		} catch (err) {
 			this.logger.error(
-				'ui-smart-performance-scan-summary.getMostecentScanDateTime.then',
+				'ui-smart-performance-scan-summary.getMostRecentScanDateTime.then',
 				err
 			);
 		}
@@ -542,17 +545,17 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 				};
 
 				this.historyScanResults = res.lastscanresults || [];
-				this.getMostecentScanDateTime(this.historyScanResults[0].scanruntime);
+				this.getMostRecentScanDateTime();
 				this.getScanHistoryWithTime();
 				await this.getLastScanResult(isInit);
 			} else {
 				this.historyScanResults = [];
 				this.historyRes = {};
 			}
-			this.isLoading = false;
 		} catch (err) {
 			this.logger.error('Ui-smart-performance-scan-summary.getHistory Error', err);
 		}
+		this.isLoading = false;
 	}
 	formatMemorySize(mbytes: number) {
 		const k = 1024;
