@@ -212,5 +212,10 @@
 				opacity: 0.75;
 			}
 		}
+		.select-all {
+			.custom-control-label {
+				color: $light;
+			}
+		}
 	}
 }
