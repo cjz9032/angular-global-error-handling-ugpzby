@@ -1451,6 +1451,15 @@
 						}
 					}
 				}
+				vtr-hardware-scan-export-log{
+					.mat-elevation-z8{
+						vtr-ui-hyperlink-button{
+							.hyperlink{
+								color:$darkText !important;
+							}
+						}
+					}
+				}
 				.vtr-device-information {
 					background: $gaming_bg;
 					.header {
