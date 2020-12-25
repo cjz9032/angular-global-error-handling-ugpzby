@@ -259,6 +259,7 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 			confirmMetricsItemId: 'macrokey_popup_clear',
 			cancelMetricEnabled: true,
 			cancelMetricsItemId: 'macrokey_popup_cancel',
+			metricsParent: 'Gaming.Macrokey',
 			id: this.modalAutomationId,
 		};
 		promptRef.componentInstance.emitService.subscribe((emmitedValue) => {
