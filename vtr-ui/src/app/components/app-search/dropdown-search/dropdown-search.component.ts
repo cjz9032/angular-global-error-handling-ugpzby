@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { FeatureClick } from 'src/app/services/metric/metrics.model';
 import { MetricService } from 'src/app/services/metric/metrics.service';
@@ -8,7 +8,7 @@ import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 	templateUrl: './dropdown-search.component.html',
 	styleUrls: ['./dropdown-search.component.scss'],
 })
-export class SearchDropdownComponent implements AfterViewInit {
+export class SearchDropdownComponent {
 	@ViewChild('searchInput', { static: false }) searchInput: ElementRef;
 	@ViewChild('searchBox', { static: false }) searchBox: ElementRef;
 
@@ -46,12 +46,6 @@ export class SearchDropdownComponent implements AfterViewInit {
 	constructor(
 		private router: Router,
 		private metricService: MetricService) { }
-
-	ngAfterViewInit() {
-		setTimeout(() => {
-			this.searchInput.nativeElement.focus();
-		}, 0);
-	}
 
 	onCleanClick($event) {
 		this.searchInput.nativeElement.value = '';

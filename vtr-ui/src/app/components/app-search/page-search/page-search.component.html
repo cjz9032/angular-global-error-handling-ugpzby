@@ -15,7 +15,7 @@
 					<!-- search input -->
 					<input type="text" #searchInput [placeholder]="searchTips" id="search-page-div-search-input" class="search-input" maxlength="30"
 						(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput"
-						(keydown.enter)="onClickSearchBtn(enterSearchEvent)" />
+						(keydown.enter)="onClickSearchBtn(enterSearchEvent)" (click)="onClickInput()"/>
 
 					<!-- search button -->
 					<div class="search-btn">
