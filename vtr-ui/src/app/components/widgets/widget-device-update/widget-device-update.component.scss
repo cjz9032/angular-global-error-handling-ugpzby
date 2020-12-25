@@ -11,12 +11,10 @@
 		@media #{$white-on-black} {
 			box-shadow: none;
 			@include white-border;
-			border-bottom: none;
 		}
 		@media #{$black-on-white} {
 			box-shadow: none;
 			@include black-border;
-			border-bottom: none;
 		}
 
 		.title {
