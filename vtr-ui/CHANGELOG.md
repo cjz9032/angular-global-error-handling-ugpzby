@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.39](https://bitbucket.tc.lenovo.com///compare/v1.9.38...v1.9.39) (2020-12-25)
+
+
+### Features
+
+* **Overall:** Enable performance log on stage build ([bae99fd](https://bitbucket.tc.lenovo.com///commit/bae99fd2662165d260fb3dab4365eef5212f6e89))
+
+
+### Bug Fixes
+
+* **Content:** VAN-24592 if the Article Cache is incorrect, get it online ([9f4c6cc](https://bitbucket.tc.lenovo.com///commit/9f4c6cc8b6539241285505f44273c18e36fdd62a))
+* **Protocol:** fix non available route navigate to blank issue ([b53f146](https://bitbucket.tc.lenovo.com///commit/b53f146351bef544d26966137b53bb293b74273d))
+* **Protocol :** remove useless protocol ([37f9582](https://bitbucket.tc.lenovo.com///commit/37f9582674b95c2a8f067704735121748a4b0ffd))
+* **SP:** show curernt scan summary at first click custom button ([199d516](https://bitbucket.tc.lenovo.com///commit/199d5163fdd5629f1a3e4c17f6a4c526d9af59ed))
+
 ### [1.9.38](https://bitbucket.tc.lenovo.com///compare/v1.9.37...v1.9.38) (2020-12-24)
 
 
