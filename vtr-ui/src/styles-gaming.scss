@@ -1665,6 +1665,24 @@
 					}
 				}
 			}
+
+			.vtr-ui-snapshot-item-list{
+				.vtr-snapshot-list-item{
+					.title{
+						color: $white100;
+					}
+					.collapse-control{
+						fa-icon{
+							color: $white60;
+						}
+					}
+					.img-icon-disabled{
+						filter: brightness(0%) invert(89%) sepia(16%) saturate(3544%) hue-rotate(187deg) brightness(123%) contrast(112%);
+  						opacity:0.6;
+					}
+					
+				}
+			}
 		}
 
 		.vtr-page-right-column {
