@@ -723,8 +723,8 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		const isVisible =
 			(this.systemUpdateService.isUpdatesAvailable ||
 				this.systemUpdateService.isInstallationCompleted)
-				&& !this.isUpdateCheckInProgress
-				&& ((this.criticalUpdates && this.criticalUpdates.length > 0) ||
+			&& !this.isUpdateCheckInProgress
+			&& ((this.criticalUpdates && this.criticalUpdates.length > 0) ||
 				(this.recommendedUpdates && this.recommendedUpdates.length > 0) ||
 				(this.optionalUpdates && this.optionalUpdates.length > 0) ||
 				(this.ignoredUpdates && this.ignoredUpdates.length > 0));
@@ -757,8 +757,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public onRebootClick($event) {
 		this.systemUpdateService.restartWindows();
 	}
-
-	public onDismissClick($event) {}
 
 	private focusOnElement(element) {
 		if (element && document.getElementById(element)) {
@@ -803,11 +801,6 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			ariaLabelledBy: 'modal_confirm_title',
 			windowClass: 'common-confirmation-modal',
 		});
-		// VAN-16194 touch screen cannot show this modal
-		this.changeCheckboxDisplay('none');
-		setTimeout(() => {
-			this.changeCheckboxDisplay('');
-		}, 0);
 
 		if (!diskSpaceEnough) {
 			this.showDiskSpaceNotEnough(modalRef);
@@ -866,7 +859,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	public onGetSupportClick($event: any) {}
+	public onGetSupportClick($event: any) { }
 
 	private installUpdateBySource(
 		isInstallAll: boolean,
@@ -1390,10 +1383,4 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	private changeCheckboxDisplay(displayValue: string) {
-		const elementCheckboxes = document.querySelectorAll('.custom-control-input');
-		elementCheckboxes.forEach((elementCheckbox: HTMLElement) => {
-			elementCheckbox.style.display = displayValue;
-		});
-	}
 }
