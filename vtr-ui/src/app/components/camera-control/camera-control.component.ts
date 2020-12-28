@@ -291,7 +291,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 				)
 				.then(() => {
 					// this.isCameraInitialized = true;
-					let allProperties = this.oMediaCapture.videoDeviceController.getAvailableMediaStreamProperties(
+					const allProperties = this.oMediaCapture.videoDeviceController.getAvailableMediaStreamProperties(
 						this.Capture.MediaStreamType.videoPreview
 					);
 					return this.startPreviewAsync(

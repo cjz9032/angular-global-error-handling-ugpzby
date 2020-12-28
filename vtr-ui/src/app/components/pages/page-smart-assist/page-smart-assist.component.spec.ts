@@ -75,7 +75,7 @@ describe('Component: PageSmartAssistComponent', () => {
 
 }); */
 	describe(':', () => {
-		function setup() {
+		const setup = () => {
 			const fixture = TestBed.createComponent(PageSmartAssistComponent);
 			const component = fixture.componentInstance;
 			const smartAssistService = fixture.debugElement.injector.get(SmartAssistService);
@@ -95,7 +95,7 @@ describe('Component: PageSmartAssistComponent', () => {
 				logger,
 				localCacheService,
 			};
-		}
+		};
 
 		it('PageSmartAssistComponent :: should create', () => {
 			const { fixture, component, localCacheService } = setup();

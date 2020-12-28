@@ -18,11 +18,11 @@ describe('SmartAssistService', () => {
 	);
 
 	describe(':', () => {
-		function setup() {
+		const setup = () => {
 			const smartAssistService = TestBed.get(SmartAssistService);
 			const shellService = TestBed.get(VantageShellService);
 			return { smartAssistService, shellService };
-		}
+		};
 
 		it('service should create', () => {
 			const { smartAssistService, shellService } = setup();
@@ -325,9 +325,7 @@ describe('SmartAssistService', () => {
 			const jsonData =
 				'{"capacity": true, "capability": true, "sensorType": 1, "presenceLeaveDistanceAutoAdjust": true, "presenceLeaveDistance": 1, "errorCode": 0, "videoAutoPauseResumeVersion": 0 }';
 			smartAssistService.hsaIntelligentSecurity = {
-				getAllSetting() {
-					return jsonData;
-				},
+				getAllSetting: () => jsonData,
 			};
 
 			smartAssistService.getHsaIntelligentSecurityStatus();
@@ -354,9 +352,7 @@ describe('SmartAssistService', () => {
 			).and.callThrough();
 
 			smartAssistService.hsaIntelligentSecurity = {
-				registerCallback() {
-					return 1;
-				},
+				registerCallback: () => 1,
 			};
 
 			smartAssistService.isHPDShellAvailable = true;
@@ -375,9 +371,7 @@ describe('SmartAssistService', () => {
 			).and.callThrough();
 
 			smartAssistService.hsaIntelligentSecurity = {
-				unRegisterCallback() {
-					return 0;
-				},
+				unRegisterCallback: () => 0,
 			};
 
 			smartAssistService.isHPDShellAvailable = true;
@@ -397,9 +391,7 @@ describe('SmartAssistService', () => {
 
 			smartAssistService.isHPDShellAvailable = true;
 			smartAssistService.hsaIntelligentSecurity = {
-				setPresenceLeaveDistanceAutoAdjust() {
-					return 0;
-				},
+				setPresenceLeaveDistanceAutoAdjust: () => 0,
 			};
 
 			smartAssistService.setZeroTouchLockDistanceSensitivityAutoAdjust(true);
@@ -420,9 +412,7 @@ describe('SmartAssistService', () => {
 
 			smartAssistService.isHPDShellAvailable = true;
 			smartAssistService.hsaIntelligentSecurity = {
-				setPresenceLeaveDistance() {
-					return 0;
-				},
+				setPresenceLeaveDistance: () => 0,
 			};
 
 			smartAssistService.setZeroTouchLockDistanceSensitivity(true);
@@ -441,9 +431,7 @@ describe('SmartAssistService', () => {
 
 			smartAssistService.isHPDShellAvailable = true;
 			smartAssistService.hsaIntelligentSecurity = {
-				resetAllSetting() {
-					return 0;
-				},
+				resetAllSetting: () => 0,
 			};
 
 			smartAssistService.resetHSAHPDSetting();
@@ -461,7 +449,7 @@ describe('SmartAssistService', () => {
 			).and.callThrough();
 
 			smartAssistService.isHPDShellAvailable = true;
-			smartAssistService.hsaIntelligentSecurity = { onstatusupdated() {} };
+			smartAssistService.hsaIntelligentSecurity = { onstatusupdated: () => {}, };
 
 			smartAssistService.startMonitorHsaIntelligentSecurityStatus(1);
 			expect(privateSpy).toHaveBeenCalled();
