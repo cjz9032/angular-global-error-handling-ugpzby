@@ -220,9 +220,9 @@
 					"proceed": "PROCEED",
 					"legionAccessory": "Do you want to install Legion Accessory Central?",
 					"accessoryDesc": "Legion Accessory Central is an app to configure your Legion mouse, keyboard, headphones, etc.",
-					"nahimic": "Nahimic",
+					"nahimic": "Do you want to install Nahimic?",
 					"nahimicDesc": "Nahimic is a media software",
-					"xRite": "X-Rite Color Assistant",
+					"xRite": "Do you want to install X-Rite Color Assistant?",
 					"xRiteDesc": "This app enables you to choose and apply factory calibrated color profiles."
 				}
 			}
