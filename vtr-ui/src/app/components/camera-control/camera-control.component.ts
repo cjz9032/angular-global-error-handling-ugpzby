@@ -241,7 +241,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						// Register for a notification when something goes wrong
 						// define the fail handle callback and show error message maybe... there's a chance another app is previewing camera, that's when failed happen.
 						this.oMediaCapture.addEventListener('failed', (error) => {
-							this.logger.error( 
+							this.logger.error(
 								'CameraControlComponent.MediaCaptureFailed event',
 								error
 							);

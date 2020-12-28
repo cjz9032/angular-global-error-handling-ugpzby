@@ -30,11 +30,11 @@ describe('PowerService', () => {
 		})
 	);
 	describe(':', () => {
-		function setup() {
+		const setup = () => {
 			const powerService: any = TestBed.inject(PowerService);
 			const shellService = TestBed.inject(VantageShellService);
 			return { powerService, shellService };
-		}
+		};
 		it('should be created', () => {
 			const { powerService } = setup();
 			expect(powerService).toBeTruthy();
@@ -136,7 +136,7 @@ describe('PowerService', () => {
 		it('should call setAutoTransitionForICIdeapad', () => {
 			const { powerService } = setup();
 			(powerService as any).intelligentCoolingForIdeaPad = {
-				setITSAutoTransitionSettings(value) {},
+				setITSAutoTransitionSettings:(value) => {},
 			};
 
 			const spy = spyOn(
@@ -156,7 +156,7 @@ describe('PowerService', () => {
 		it('should call getAMTCapability', () => {
 			const { powerService } = setup();
 			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = {
-				getAMTCapability() {},
+				getAMTCapability:() => {},
 			};
 
 			const spy = spyOn(
@@ -176,7 +176,7 @@ describe('PowerService', () => {
 		it('should call getAMTSetting', () => {
 			const { powerService } = setup();
 			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = {
-				getAMTSetting() {},
+				getAMTSetting:() => {},
 			};
 
 			const spy = spyOn(
@@ -196,7 +196,7 @@ describe('PowerService', () => {
 		it('should call isMobileWorkStation', () => {
 			const { powerService } = setup();
 			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = {
-				isMobileWorkStation() {},
+				isMobileWorkStation:() => {},
 			};
 
 			const spy = spyOn(
@@ -593,7 +593,7 @@ describe('PowerService', () => {
 		it('should call getIsPresenceDataSufficient', () => {
 			const { powerService } = setup();
 			(powerService as any).devicePowerThinkPad.sectionSmartStandby = {
-				getIsPresenceDataSufficient() {},
+				getIsPresenceDataSufficient:() => {},
 			};
 
 			const spy = spyOn(
@@ -808,7 +808,7 @@ describe('PowerService', () => {
 		it('should call getEMDriverStatus', () => {
 			const { powerService } = setup();
 			(powerService as any).devicePowerItsIntelligentCooling.intelligentCooling = {
-				getEMDriverStatus() {},
+				getEMDriverStatus:() => {},
 			};
 
 			const spy = spyOn(

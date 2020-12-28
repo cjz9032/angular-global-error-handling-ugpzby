@@ -1,9 +1,9 @@
 class AcAdapter {
-	constructor(public wattage: number, public _type: string, public isAttached: boolean) {}
+	constructor(public wattage: number, public adapterType: string, public isAttached: boolean) {}
 
 	get type() {
-		if (this._type) {
-			return this._type.toLocaleLowerCase() === 'legacy' ? 'ac' : 'USB-C';
+		if (this.adapterType) {
+			return this.adapterType.toLocaleLowerCase() === 'legacy' ? 'ac' : 'USB-C';
 		}
 	}
 }

@@ -25,10 +25,10 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 	@Input() isInvalidBattery = false;
 	@Input() isChargeThresholdOn = false;
 
-	public _notes: string[];
+	public notesArr: string[];
 	public canShowAcDetailedNote = false;
 	public acAdapter: AcAdapter;
-	public storeLimitationValue: object;
+	public storeLimitationValue;
 
 	constructor() {}
 
@@ -67,8 +67,8 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 
 	public conditionRephrasing(condition: BatteryCondition): string {
 		const isAcAdapterConnected = this.isConditionStatusAdapter(condition);
-		const isAcAdapterSupported = condition.condition == Conditions.FullACAdapterSupport;
-		const isAcAdapterInfoUnknown = this.acAdapter?.isAttached && this.acAdapter.wattage == 0;
+		const isAcAdapterSupported = condition.condition === Conditions.FullACAdapterSupport;
+		const isAcAdapterInfoUnknown = this.acAdapter?.isAttached && this.acAdapter.wattage === 0;
 		if (
 			(isAcAdapterConnected && isAcAdapterSupported && isAcAdapterInfoUnknown) ||
 			!this.batteryDetected
@@ -102,7 +102,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 	}
 
 	public isStoreLimitated(index: number): boolean {
-		return this.batteryConditions[index].condition == Conditions.StoreLimitation;
+		return this.batteryConditions[index].condition === Conditions.StoreLimitation;
 	}
 
 	public canShowStoreLimitatedNote(index: number): boolean {
@@ -115,23 +115,23 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 	}
 
 	public isAcAdapterNotSupported(index: number): boolean {
-		return this.batteryConditions[index].condition == Conditions.NotSupportACAdapter;
+		return this.batteryConditions[index].condition === Conditions.NotSupportACAdapter;
 	}
 
 	public isAcAdapterInUse(index: number): boolean {
-		return this.batteryConditions[index].condition == Conditions.FullACAdapterSupport;
+		return this.batteryConditions[index].condition === Conditions.FullACAdapterSupport;
 	}
 
 	public isStatusGood(index: number): boolean {
-		return this.batteryConditions[index].conditionStatus == Status.Good;
+		return this.batteryConditions[index].conditionStatus === Status.Good;
 	}
 
 	public isStatusFair(index: number): boolean {
-		return this.batteryConditions[index].conditionStatus == Status.Fair;
+		return this.batteryConditions[index].conditionStatus === Status.Fair;
 	}
 
 	public isStatusPoor(index: number): boolean {
-		return this.batteryConditions[index].conditionStatus == Status.Poor;
+		return this.batteryConditions[index].conditionStatus === Status.Poor;
 	}
 
 	public canShowPoorNote(index: number): boolean {
@@ -139,7 +139,7 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 	}
 
 	public isConditionError(index: number): boolean {
-		return this.batteryConditions[index].condition == Conditions.Error;
+		return this.batteryConditions[index].condition === Conditions.Error;
 	}
 
 	public canShowFullSupportAdapterNote(index: number): boolean {
@@ -163,11 +163,11 @@ export class BatteryConditionNotesComponent implements OnInit, OnChanges {
 	}
 
 	get notes(): string[] {
-		return this._notes;
+		return this.notesArr;
 	}
 
 	set notes(newNotes) {
-		this._notes = newNotes;
+		this.notesArr = newNotes;
 	}
 
 	private setOrUpdateNotes(): void {
