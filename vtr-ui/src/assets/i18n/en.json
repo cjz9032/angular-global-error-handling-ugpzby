@@ -219,7 +219,11 @@
 					"description2": "Advanced Overclocking options are only configuration tools that do not guarantee the performance and stability of the device after the configuration. Please make sure that you understand the relevant technical knowledge and risks before use.",
 					"proceed": "PROCEED",
 					"legionAccessory": "Do you want to install Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central is an app to configure your Legion mouse, keyboard, headphones, etc."
+					"accessoryDesc": "Legion Accessory Central is an app to configure your Legion mouse, keyboard, headphones, etc.",
+					"nahimic": "Nahimic",
+					"nahimicDesc": "Nahimic is a media software",
+					"xRite": "X-Rite Color Assistant",
+					"xRiteDesc": "This app enables you to choose and apply factory calibrated color profiles."
 				}
 			}
 		},

@@ -59,8 +59,8 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 			webLink: 'https://pcsupport.lenovo.com/downloads/legionaccessorycentral'
 		},
 		nahimic: {
-			title: 'Nahimic',
-			description: 'Nahimic is a media software',
+			title: 'gaming.dashboard.device.warningPromptPopup.nahimic',
+			description: 'gaming.dashboard.device.warningPromptPopup.nahimicDesc',
 			comfirmButton: 'gaming.dashboard.device.legionEdge.driverPopup.button',
 			cancelButton: 'gaming.dashboard.device.legionEdge.driverPopup.link',
 			confirmMetricEnabled: false,
@@ -69,8 +69,8 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 			webLink: 'https://www.microsoft.com/store/apps/9N36PPMP8S23'
 		},
 		xRite: {
-			title: 'X-Rite Color Assistant',
-			description: 'This app enables you to choose and apply factory calibrated color profiles.',
+			title: 'gaming.dashboard.device.warningPromptPopup.xRite',
+			description: 'gaming.dashboard.device.warningPromptPopup.xRiteDesc',
 			comfirmButton: 'gaming.dashboard.device.legionEdge.driverPopup.button',
 			cancelButton: 'gaming.dashboard.device.legionEdge.driverPopup.link',
 			confirmMetricEnabled: false,
