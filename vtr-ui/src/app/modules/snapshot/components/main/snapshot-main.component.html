@@ -5,10 +5,18 @@
 		</div>
 	</div>
 
-	<vtr-ui-snapshot-item-list [hostPage]="'SnapshotPage'" [title]="'snapshot.hardwareListTitle' | translate" [snapshotComponents]='hardwareComponents'>
+	<vtr-ui-snapshot-item-list 
+		[hostPage]="'SnapshotPage'"
+		[metricsParent]="'Snapshot.HardwareComponents'"
+		[title]="'snapshot.hardwareListTitle' | translate"
+		[snapshotComponents]='hardwareComponents'>
 	</vtr-ui-snapshot-item-list>
 
-	<vtr-ui-snapshot-item-list [hostPage]="'SnapshotPage'" [title]="'snapshot.softwareListTitle' | translate" [snapshotComponents]='softwareComponents'>
+	<vtr-ui-snapshot-item-list
+		[hostPage]="'SnapshotPage'"
+		[metricsParent]="'Snapshot.SoftwareComponents'"
+		[title]="'snapshot.softwareListTitle' | translate"
+		[snapshotComponents]='softwareComponents'>
 	</vtr-ui-snapshot-item-list>
 
 	<div class="row container">
