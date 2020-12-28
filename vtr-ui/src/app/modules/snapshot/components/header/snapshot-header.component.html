@@ -34,7 +34,8 @@
 				metricsItem="Snapshot.Update"
 				[label]= "'snapshot.snapshotUpdateButton' | translate"
 				[isDisabled]="!isButtonEnabled()"
-				(onClick)="onTakeSnapshot()">
+				(onClick)="onTakeSnapshot()"
+				[tooltipText]="'snapshot.updateSnapshotTooltip' | translate">
 			</vtr-ui-button>
 			<vtr-ui-hyperlink-button
 				linkId="snapshot-header-replace-baseline-btn"
@@ -46,7 +47,8 @@
 				[isDisabled]="!isButtonEnabled()"
 				[label]="'snapshot.replaceBaseline' | translate"
 				[upperCaseLabel]="true"
-				(hyperlinkClick)="onReplaceBaseline()">
+				(hyperlinkClick)="onReplaceBaseline()"
+				[ngbTooltip]="'snapshot.replaceBaselineTooltip' | translate" tooltipClass="vtr-system-tooltip">
 			</vtr-ui-hyperlink-button>
 		</div>
 	</div>
