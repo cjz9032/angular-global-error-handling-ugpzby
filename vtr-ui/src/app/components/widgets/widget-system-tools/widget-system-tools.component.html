@@ -6,7 +6,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
-					<ul class="system-tool-icons d-flex justify-content-around" [ngClass]="{'list-overflow-6': toolLength === 6}">
+					<ul class="system-tool-icons d-flex justify-content-around" 
+						[ngClass]="{'list-overflow-5': toolLength === 5, 'list-overflow-6': toolLength === 6, 'list-overflow-7': toolLength === 7, 'list-overflow-8': toolLength === 8}">
 						<li>
 							<a  aria-label="system update" vtrMetrics
 								[metricsItem]="'systemtools_system_update'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
