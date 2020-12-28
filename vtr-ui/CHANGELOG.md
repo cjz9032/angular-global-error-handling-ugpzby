@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.40](https://bitbucket.tc.lenovo.com///compare/v1.9.39...v1.9.40) (2020-12-28)
+
+
+### Bug Fixes
+
+* **Antivirus UI:** VAN-24636 fixed scrollbar in 3rd page ([2625a5b](https://bitbucket.tc.lenovo.com///commit/2625a5b56ace3d0c22ed9a3373cd73cd2d0e764a))
+* **performance:** Compatibility with shells before 3.5 ([629bd4a](https://bitbucket.tc.lenovo.com///commit/629bd4aa3bee3d45417566ac3fabda0ddce92849))
+* **Protocol:** fix navigate to root url failed issue ([dbda0e6](https://bitbucket.tc.lenovo.com///commit/dbda0e6feed20b56a570a53c8b172e75993fba00))
+* **SP:** VAN-24626 show scan history in sp subscriber page if not have any result ([a61bfaa](https://bitbucket.tc.lenovo.com///commit/a61bfaa5aa3caf51a83ab49fc31954fc7e553f22))
+* **SU:** VAN-24541 fix check box shakes when pop up force reboot dialog ([b4484d1](https://bitbucket.tc.lenovo.com///commit/b4484d160b2916b7e4f97c03e32669b88283b920))
+* **SU:** VAN-24552 modify select all font color in gaming ([c4a2af3](https://bitbucket.tc.lenovo.com///commit/c4a2af350d2028fec13b974d4a7270235991e042))
+* **SU:** VAN-24561 high contrast mode show line in system update page ([8221827](https://bitbucket.tc.lenovo.com///commit/8221827ba1a72f9a6feb3e23168d2a3f92616c06))
+
 ### [1.9.39](https://bitbucket.tc.lenovo.com///compare/v1.9.38...v1.9.39) (2020-12-25)
 
 
