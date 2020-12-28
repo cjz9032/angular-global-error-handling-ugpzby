@@ -232,13 +232,13 @@ export class MetricService {
 			TargePage: this.getPageName(),
 			Source: performanceTimePoints.source,
 			Hostname: performanceTimePoints.hostname,
-			CERTPIN_DONE: performanceTimePoints.certPingDone ?? 0,
+			CERTPIN_DONE: performanceTimePoints.certPingDone,
 			SOURCE_DOWNLOADED: performanceTimePoints.indexPageEstablished,
-			DOM_INTERACTIVED: performanceTimePoints.domInteractived ?? 0,
-			SCRIPT_LOADED: performanceTimePoints.scriptLoaded ?? 0,
-			APP_INITIALIZED: performanceTimePoints.appInitialized ?? 0,
-			APP_ENTRY_LOADED: performanceTimePoints.appEntryLoaded ?? 0,
-			FIRST_PAGE_LOADED: performanceTimePoints.firstPageLoaded ?? 0
+			DOM_INTERACTIVED: performanceTimePoints.domInteractived,
+			SCRIPT_LOADED: performanceTimePoints.scriptLoaded,
+			APP_INITIALIZED: performanceTimePoints.appInitialized,
+			APP_ENTRY_LOADED: performanceTimePoints.appEntryLoaded,
+			FIRST_PAGE_LOADED: performanceTimePoints.firstPageLoaded
 		};
 		this.metricsClient.sendAsync(loadedEvent);
 	}
