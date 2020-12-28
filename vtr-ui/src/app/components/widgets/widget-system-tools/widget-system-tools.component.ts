@@ -24,7 +24,7 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	public showLegionAccessory = false;
 	// Vsrsion 3.5 for nahimic & X-Rite entrance
 	public showNahimic = false;
-	public showXRite = true;
+	public showXRite = false;
 	public toolLength = 3;
 
 	modalAutomationId: any = {
@@ -39,8 +39,13 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 			closeButton: 'nahimic_close_button',
 			cancelButton: 'nahimic_install_popup_cancel_button',
 			okButton: 'nahimic_install_popup_install_button',
+		},
+		xRite: {
+			section: 'xRite_install_popup',
+			closeButton: 'xRite_close_button',
+			cancelButton: 'xRite_install_popup_cancel_button',
+			okButton: 'xRite_install_popup_install_button',
 		}
-
 	};
 	modalInfo = {
 		accessory: {
@@ -55,13 +60,23 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		},
 		nahimic: {
 			title: 'Nahimic',
-			description: 'nahimic is a media software',
+			description: 'Nahimic is a media software',
 			comfirmButton: 'gaming.dashboard.device.legionEdge.driverPopup.button',
 			cancelButton: 'gaming.dashboard.device.legionEdge.driverPopup.link',
 			confirmMetricEnabled: false,
 			cancelMetricEnabled: false,
 			id: this.modalAutomationId.nahimic,
 			webLink: 'https://www.microsoft.com/store/apps/9N36PPMP8S23'
+		},
+		xRite: {
+			title: 'X-Rite Color Assistant',
+			description: 'This app enables you to choose and apply factory calibrated color profiles.',
+			comfirmButton: 'gaming.dashboard.device.legionEdge.driverPopup.button',
+			cancelButton: 'gaming.dashboard.device.legionEdge.driverPopup.link',
+			confirmMetricEnabled: false,
+			cancelMetricEnabled: false,
+			id: this.modalAutomationId.xRite,
+			webLink: 'https://pcsupport.lenovo.com/us/en/downloads/DS543953'
 		}
 	};
 
@@ -90,12 +105,18 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		this.gamingProperties.macroKeyFeature = this.gamingCapabilityService.getCapabilityFromCache(
 			LocalStorageKey.macroKeyFeature
 		);
+		this.showHWScanMenu = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.hardwareScanFeature
+		);
 		// version 3.3 legion accessory cache
 		this.showLegionAccessory = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.accessoryFeature
 		);
-		this.showHWScanMenu = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.hardwareScanFeature
+		this.showNahimic = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.nahimicFeature
+		);
+		this.showXRite = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.xRiteFeature
 		);
 		this.calcToolLength();
 
@@ -130,6 +151,14 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 			if (res !== this.showNahimic && res !== undefined) {
 				this.showNahimic = res;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.nahimicFeature, res);
+				this.calcToolLength();
+			}
+		});
+		// Version 3.5 xRite get reg status
+		this.gamingThirdPartyAppService.isLACSupportUriProtocol('xRite').then((res) => {
+			if (res !== this.showXRite && res !== undefined) {
+				this.showXRite = res;
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.xRiteFeature, res);
 				this.calcToolLength();
 			}
 		});
