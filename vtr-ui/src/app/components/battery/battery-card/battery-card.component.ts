@@ -32,7 +32,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
-declare var Windows;
+declare const Windows;
 
 @Component({
 	selector: 'vtr-battery-card',
@@ -284,6 +284,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Called when power supply status changes
+	 *
 	 * @param info: Updated battery information
 	 */
 	onPowerSupplyStatusEvent(info: any) {
@@ -292,6 +293,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Called when battery percentage changes
+	 *
 	 * @param info: Updated battery information
 	 */
 	onRemainingPercentageEvent(info: any) {
@@ -300,6 +302,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Called battery remaining time changes
+	 *
 	 * @param info: Updated battery information
 	 */
 	onRemainingTimeEvent(info: any) {
@@ -308,6 +311,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Called when battery gauge  reset info is updated
+	 *
 	 * @param info: Updated battery information
 	 */
 	onPowerBatteryGaugeResetEvent(info: BatteryGaugeReset[]) {
@@ -356,6 +360,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Gets called every 30s or on some event triggers to set ba
+	 *
 	 * @param response battery information
 	 * @param methodName name of method it has been called from
 	 */
@@ -393,6 +398,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	/**
 	 * gets changed values at charge threshold section && Airplane Mode section
+	 *
 	 * @param notification: AppNotification for change in chargeThreshold
 	 */
 	onNotification(notification: AppNotification) {
@@ -662,6 +668,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	/**
 	 * shows a battery details modal
+	 *
 	 * @param content: battery Information
 	 */
 	public showDetailModal(content: any): void {
@@ -687,6 +694,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	/**
 	 * maps batteryHealth to a condition status Icon(i.e. good, poor,bad, AcError)
+	 *
 	 * @param conditionStatus: batteryHealth
 	 * @returns BatteryQuality[conditionStatus]: status of battery for condition icon
 	 */

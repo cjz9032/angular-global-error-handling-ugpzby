@@ -185,7 +185,7 @@ describe('BatteryCardComponent', () => {
 	});
 
 	it('should call onPowerBatteryGaugeResetEvent', () => {
-		const info: BatteryGaugeReset[] = [
+		const result: BatteryGaugeReset[] = [
 			{
 				barCode: 'X2XP899J0N0',
 				batteryNum: 1,
@@ -199,8 +199,8 @@ describe('BatteryCardComponent', () => {
 				startTime: '',
 			},
 		];
-		const spy = spyOn(commonService, 'cloneObj').and.returnValue(info);
-		component.onPowerBatteryGaugeResetEvent(info);
+		const spy = spyOn(commonService, 'cloneObj').and.returnValue(result);
+		component.onPowerBatteryGaugeResetEvent(result);
 		expect(spy).toHaveBeenCalled();
 	});
 
