@@ -42,13 +42,13 @@ export class AppLoaded extends IMetricEvent {
 	public TargePage: string;
 	public Source: string;
 	public Hostname: string;
-	public CERTPIN_DONE: number;
+	public CERTPIN_DONE: number | null;
 	public SOURCE_DOWNLOADED: number;
 	public DOM_INTERACTIVED: number;
 	public SCRIPT_LOADED: number;
-	public APP_INITIALIZED: number;
-	public APP_ENTRY_LOADED: number;
-	public FIRST_PAGE_LOADED: number;
+	public APP_INITIALIZED: number | null;
+	public APP_ENTRY_LOADED: number | null;
+	public FIRST_PAGE_LOADED: number | null;
 }
 
 export class ArticleDisplay extends IMetricEvent {
