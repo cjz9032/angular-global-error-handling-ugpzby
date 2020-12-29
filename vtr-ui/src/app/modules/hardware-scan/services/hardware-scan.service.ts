@@ -12,6 +12,7 @@ import {
 	HardwareScanTestResult,
 	HardwareScanFinishedHeaderType,
 	HardwareScanProgress,
+	WatcherStepProcess,
 } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -88,6 +89,8 @@ export class HardwareScanService {
 	private lastFilteredCustomScanRequest = [];
 	private lastFilteredCustomScanResponse = [];
 
+	public watcherProcess: EventEmitter<any> = new EventEmitter();
+
 	// Used to store information related to metrics
 	private currentTaskType: TaskType;
 	private currentTaskStep: TaskStep;
@@ -109,45 +112,6 @@ export class HardwareScanService {
 	// Temporary workarounds for BSOD issue (VAN-21285)
 	private blackListModules = ['motherboard', 'pci_express'];
 	private blackListTests = ['TEST_LINEAR_READ_TEST', 'TEST_CONTROLLER_STATUS_TEST'];
-
-	/**
-	 * This method sends the requests of all information which should be available
-	 * when Hardware Scan starts.
-	 * [NOTICE] You mustn't send more than one request which uses the CLI here, since it doesn't handle
-	 *          concurrent requests.
-	 */
-	private doPriorityRequests() {
-		// Check whether HardwareScan is available in Hypothesis Service or not
-		if (this.hypSettingsPromise === undefined) {
-			this.hypSettingsPromise = this.hypSettings.getFeatureSetting(
-				HardwareScanService.HARDWARE_SCAN_HYPOTHESIS_CONFIG_NAME
-			);
-
-			// If HardwareScan is available, dispatch the priority requests
-			this.isAvailable().then(async (available) => {
-				if (available) {
-					// Validate the type of this machine to load dynamically the icons.
-					this.isDesktopMachine = this.localCacheService.getLocalCacheValue(
-						LocalStorageKey.DesktopMachine
-					);
-
-					// Retrieve the Plugin's version (it does not use the CLI)
-					this.getPluginInfo().then((hwscanPluginInfo: any) => {
-						if (hwscanPluginInfo) {
-							this.pluginVersion = hwscanPluginInfo.PluginVersion;
-						}
-					});
-
-					// Retrieve an updated the last Scan's results (it does not use the CLI)
-					this.previousResultService.updatePreviousResultsResponse();
-
-					// Retrieve the hardware component list (it does use the CLI)
-					this.culture = window.navigator.languages[0];
-					this.reloadItemsToScan(false);
-				}
-			});
-		}
-	}
 
 	public reloadItemsToScan(refreshing: boolean) {
 		this.hardwareModulesLoaded.next(false);
@@ -347,27 +311,21 @@ export class HardwareScanService {
 
 	public deleteScan(payload) {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.deleteScan(payload).then((response) => {
-				return response;
-			});
+			return this.hardwareScanBridge.deleteScan(payload).then((response) => response);
 		}
 		return undefined;
 	}
 
 	public editScheduledScan(payload) {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.editScan(payload).then((response) => {
-				return response;
-			});
+			return this.hardwareScanBridge.editScan(payload).then((response) => response);
 		}
 		return undefined;
 	}
 
 	public getNextScans() {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.getNextScans().then((response) => {
-				return response;
-			});
+			return this.hardwareScanBridge.getNextScans().then((response) => response);
 		}
 
 		return undefined;
@@ -375,18 +333,14 @@ export class HardwareScanService {
 
 	public getScheduleScan(payload) {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.getScheduleScan(payload).then((response) => {
-				return response;
-			});
+			return this.hardwareScanBridge.getScheduleScan(payload).then((response) => response);
 		}
 		return undefined;
 	}
 
 	public getPluginInfo() {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.getPluginInformation().then((response) => {
-				return response;
-			});
+			return this.hardwareScanBridge.getPluginInformation().then((response) => response);
 		}
 		return undefined;
 	}
@@ -397,9 +351,7 @@ export class HardwareScanService {
 				const isMachineAvailable = this.isMachineAvailable();
 				return (result || '').toString() === 'true' && isMachineAvailable;
 			})
-			.catch((error) => {
-				return false;
-			});
+			.catch((error) => false);
 	}
 
 	/**
@@ -428,47 +380,6 @@ export class HardwareScanService {
 		return this.compareVersion(requiredVersion, this.pluginVersion) <= 0;
 	}
 
-	// This is version compare function which takes version numbers of any length and any number size per segment.
-	// Return values:
-	// - negative number if v1 < v2
-	// - positive number if v1 > v2
-	// - zero if v1 = v2
-	private compareVersion(v1: string, v2: string) {
-		const regExStrip0 = '/(.0+)+$/';
-		const segmentsA = v1.replace(regExStrip0, '').split('.');
-		const segmentsB = v2.replace(regExStrip0, '').split('.');
-		const min = Math.min(segmentsA.length, segmentsB.length);
-		for (let i = 0; i < min; i++) {
-			const diff = parseInt(segmentsA[i], 10) - parseInt(segmentsB[i], 10);
-			if (diff) {
-				return diff;
-			}
-		}
-		return segmentsA.length - segmentsB.length;
-	}
-
-	// Filters the response from GetItemsToScan according to blacklist of modules and tests
-	// This is replicated from Plugin, for cases that a user's Plugin isn't up to date
-	private filterItemsResponse(response: any) {
-		response.categoryList = response.categoryList.filter(
-			(value) => !this.blackListModules.includes(value.id)
-		);
-		response.mapContractNameList = response.mapContractNameList.filter(
-			(value) => !this.blackListModules.includes(value.Key)
-		);
-
-		const storageComponents = response.categoryList.filter((value) => value.id === 'storage');
-		if (storageComponents !== undefined) {
-			storageComponents.forEach((component) => {
-				component.groupList.forEach((group) => {
-					group.testList = group.testList.filter(
-						(t) => this.blackListTests.filter((bl) => t.id.includes(bl)).length === 0
-					);
-				});
-			});
-		}
-	}
-
 	public getItemsToScan(scanType: number, culture: string) {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge
@@ -488,9 +399,9 @@ export class HardwareScanService {
 
 	public getPreScanInfo(payload) {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.getPreScanInformation(payload).then((response) => {
-				return response;
-			});
+			return this.hardwareScanBridge
+				.getPreScanInformation(payload)
+				.then((response) => response);
 		}
 		return undefined;
 	}
@@ -514,10 +425,13 @@ export class HardwareScanService {
 			// next times the Main page is shown.
 			this.showComponentList = true;
 
+			this.watcherProcess.emit(WatcherStepProcess.Start);
 			return this.hardwareScanBridge
 				.getDoScan(
 					payload,
 					(response: any) => {
+						this.watcherProcess.emit(WatcherStepProcess.Itermediate);
+
 						// Keeping track of the latest response allows the right render when user
 						// navigates to another page and then come back to the Hardware Scan page
 						this.lastResponse = response;
@@ -528,6 +442,7 @@ export class HardwareScanService {
 					cancelHandler
 				)
 				.then((response) => {
+					this.watcherProcess.emit(WatcherStepProcess.Stop);
 					if (response !== null && response.finalResultCode !== null) {
 						this.commonService.setSessionStorageValue(
 							SessionStorageKey.HwScanHasExportLogData,
@@ -759,6 +674,86 @@ export class HardwareScanService {
 				this.hardwareModulesLoaded.next(true);
 				this.refreshingModules = false;
 			});
+	}
+
+	// This is version compare function which takes version numbers of any length and any number size per segment.
+	// Return values:
+	// - negative number if v1 < v2
+	// - positive number if v1 > v2
+	// - zero if v1 = v2
+	private compareVersion(v1: string, v2: string) {
+		const regExStrip0 = '/(.0+)+$/';
+		const segmentsA = v1.replace(regExStrip0, '').split('.');
+		const segmentsB = v2.replace(regExStrip0, '').split('.');
+		const min = Math.min(segmentsA.length, segmentsB.length);
+		for (let i = 0; i < min; i++) {
+			const diff = parseInt(segmentsA[i], 10) - parseInt(segmentsB[i], 10);
+			if (diff) {
+				return diff;
+			}
+		}
+		return segmentsA.length - segmentsB.length;
+	}
+
+	// Filters the response from GetItemsToScan according to blacklist of modules and tests
+	// This is replicated from Plugin, for cases that a user's Plugin isn't up to date
+	private filterItemsResponse(response: any) {
+		response.categoryList = response.categoryList.filter(
+			(value) => !this.blackListModules.includes(value.id)
+		);
+		response.mapContractNameList = response.mapContractNameList.filter(
+			(value) => !this.blackListModules.includes(value.Key)
+		);
+
+		const storageComponents = response.categoryList.filter((value) => value.id === 'storage');
+		if (storageComponents !== undefined) {
+			storageComponents.forEach((component) => {
+				component.groupList.forEach((group) => {
+					group.testList = group.testList.filter(
+						(t) => this.blackListTests.filter((bl) => t.id.includes(bl)).length === 0
+					);
+				});
+			});
+		}
+	}
+
+	/**
+	 * This method sends the requests of all information which should be available
+	 * when Hardware Scan starts.
+	 * [NOTICE] You mustn't send more than one request which uses the CLI here, since it doesn't handle
+	 *          concurrent requests.
+	 */
+	private doPriorityRequests() {
+		// Check whether HardwareScan is available in Hypothesis Service or not
+		if (this.hypSettingsPromise === undefined) {
+			this.hypSettingsPromise = this.hypSettings.getFeatureSetting(
+				HardwareScanService.HARDWARE_SCAN_HYPOTHESIS_CONFIG_NAME
+			);
+
+			// If HardwareScan is available, dispatch the priority requests
+			this.isAvailable().then(async (available) => {
+				if (available) {
+					// Validate the type of this machine to load dynamically the icons.
+					this.isDesktopMachine = this.localCacheService.getLocalCacheValue(
+						LocalStorageKey.DesktopMachine
+					);
+
+					// Retrieve the Plugin's version (it does not use the CLI)
+					this.getPluginInfo().then((hwscanPluginInfo: any) => {
+						if (hwscanPluginInfo) {
+							this.pluginVersion = hwscanPluginInfo.PluginVersion;
+						}
+					});
+
+					// Retrieve an updated the last Scan's results (it does not use the CLI)
+					this.previousResultService.updatePreviousResultsResponse();
+
+					// Retrieve the hardware component list (it does use the CLI)
+					this.culture = window.navigator.languages[0];
+					this.reloadItemsToScan(false);
+				}
+			});
+		}
 	}
 
 	private async getAllItems(culture) {
