@@ -654,7 +654,10 @@ export class ScanExecutionService {
 					this.hardwareScanService.setScanOrRBSFinished(true);
 					this.cleaningUpScan(undefined);
 					this.refreshModules();
-					callBack();
+
+					if (callBack) {
+						callBack();
+					}
 				}
 			});
 		}, cancelWatcherDelay);
