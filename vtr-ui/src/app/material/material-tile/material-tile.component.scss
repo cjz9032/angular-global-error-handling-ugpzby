@@ -1,0 +1,68 @@
+@import '../../app.theme';
+
+.vtr-material-tile {
+	background: transparent;
+	border-radius: 0.5rem;
+	height: 100%;
+	&:active {
+		box-shadow: none !important;
+	}
+	&.tile-removable {
+		background: $gray_darker;
+	}
+	.remove-icon {
+		color: $menu_hover;
+		cursor: pointer;
+	}
+	.tile-container {
+		::ng-deep {
+			.tile-icon {
+				min-width: 4rem;
+				max-width: 8rem;
+				margin-bottom: 1rem;
+			}
+			.tile-name {
+				font-size: 1.4rem;
+			}
+		}
+		.add-border {
+			width: 4rem;
+			height: 4rem;
+			border: 0.1rem solid $menu_hover;
+			border-radius: 0.5rem;
+			.mat-icon {
+				font-size: 4rem;
+				color: $blue-lighter;
+			}
+		}
+	}
+	.button-container {
+		.tile-button {
+			:focus {
+				&::after {
+					border: none;
+				}
+			}
+			&:not(.mat-button-disabled) {
+				border: 0.1rem solid $blue-lighter;
+			}
+			&.mat-button-disabled {
+				border: 0.1rem solid $light;
+				opacity: 0.4;
+			}
+			::ng-deep {
+				.mat-button-wrapper {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					.check-icon {
+						color: $light;
+					}
+					.add-icon {
+						color: $blue-lighter;
+					}
+				}
+			}
+		}
+	}
+}
