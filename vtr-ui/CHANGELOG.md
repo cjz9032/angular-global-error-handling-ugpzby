@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.42](https://bitbucket.tc.lenovo.com///compare/v1.9.41...v1.9.42) (2020-12-29)
+
+
+### Bug Fixes
+
+* **SP:** VAN-24675 fix some strings and count number error. ([2ad0796](https://bitbucket.tc.lenovo.com///commit/2ad079695dcb642d86e8cf86699cca81d127a083))
+* **WelcomeModal:** VAN-24587 adjust tabindex based isDisabled ([5961869](https://bitbucket.tc.lenovo.com///commit/5961869fb5dcad8424bcb943505faa30d37ce30a))
+
 ### [1.9.41](https://bitbucket.tc.lenovo.com///compare/v1.9.40...v1.9.41) (2020-12-28)
 
 ### [1.9.40](https://bitbucket.tc.lenovo.com///compare/v1.9.39...v1.9.40) (2020-12-28)
