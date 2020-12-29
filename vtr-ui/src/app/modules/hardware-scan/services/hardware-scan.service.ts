@@ -446,7 +446,6 @@ export class HardwareScanService {
 				.then((response) => {
 					// Stop the current timer
 					this.watcherProcess.emit(WatcherStepProcess.Stop);
-
 					if (response !== null && response.finalResultCode !== null) {
 						this.commonService.setSessionStorageValue(
 							SessionStorageKey.HwScanHasExportLogData,
@@ -464,7 +463,7 @@ export class HardwareScanService {
 						this.cancelRequested = true;
 					}
 
-					this.logger.error('[GetDoScan] ' + ex);
+					this.logger.error('[GetDoScan]: ' + JSON.stringify(ex), ex);
 					throw ex;
 				})
 				.finally(() => {
