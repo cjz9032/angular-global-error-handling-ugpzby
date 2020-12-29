@@ -3,8 +3,7 @@
 <section class="vtr-ui-dropdown">
 	<div class="input input-placeholder">
 		<div class="time">
-			<span [title]=""
-			[ngbTooltip]="text" tooltipClass="vtr-system-tooltip" container="body"
+			<span [matTooltip]="text" tooltipClass="vtr-system-tooltip"
 			>{{ text }} </span>
 		</div>
 		<p class="chevron">
@@ -19,8 +18,7 @@
 		(focus)="onDropdownFocus(toggleBtn)" (keydown.enter)="toggle(toggleBtn)" tabindex="0"
 		id="{{dropDownId}}">
 		<div class="time">
-			<span [title]=""
-			[ngbTooltip]="text" tooltipClass="vtr-system-tooltip" container="body"
+			<span [matTooltip]="text" matTooltipClass="vtr-system-tooltip"
 			>{{ text }} </span>
 		</div>
 		<p class="chevron">
@@ -36,8 +34,7 @@
 				(click)="[select(item),toggleByItem(isLast,toggleBtn)]"  (blur)="onItemBlur(isLast)"
 				(keydown.enter)="[select(item),toggleByItem(isLast,toggleBtn)]"
 				role="option" attr.aria-label="{{ item.text }} selected,">
-				<span [title]=""
-				[ngbTooltip]="item.text" tooltipClass="vtr-system-tooltip" container="body"
+				<span [matTooltip]="item.text" matTooltipClass="vtr-system-tooltip"
 				>{{ item.text }}</span>
 			</li>
 		</ul>

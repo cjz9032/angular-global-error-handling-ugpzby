@@ -302,11 +302,10 @@
 													id="smart-performance-scan-summary-tunePC-tooltip"
 													attr.aria-label=""
 													role="tooltip"
-													[ngbTooltip]="'smartPerformance.scanCompletePage.tunePCTooltip' | translate"
-													#tooltip="ngbTooltip"
+													[matTooltip]="'smartPerformance.scanCompletePage.tunePCTooltip' | translate"
+													#tooltip="matTooltip"
 													[icon]="['far', 'question-circle']"
-													container="vtr-root"
-													tooltipClass="vtr-tooltip"
+													matTooltipClass="vtr-tooltip"
 													(click)="toggleTooltip(tooltip)"
 													(keydown.enter)="toggleTooltip(tooltip)">
 												</fa-icon>
@@ -352,11 +351,10 @@
 													id="smart-performance-scan-summary-boost-tooltip"
 													attr.aria-label=""
 													role="tooltip"
-													[ngbTooltip]="'smartPerformance.scanCompletePage.boostTooltip' | translate"
-													#tooltip="ngbTooltip"
+													[matTooltip]="'smartPerformance.scanCompletePage.boostTooltip' | translate"
+													#tooltip="matTooltip"
 													[icon]="['far', 'question-circle']"
-													container="vtr-root"
-													tooltipClass="vtr-tooltip"
+													matTooltipClass="vtr-tooltip"
 													(click)="toggleTooltip(tooltip)"
 													(keydown.enter)="toggleTooltip(tooltip)">
 												</fa-icon>
@@ -402,13 +400,12 @@
 													id="smart-performance-scan-summary-malware-tooltip"
 													attr.aria-label=""
 													role="tooltip"
-													[ngbTooltip]="'smartPerformance.scanCompletePage.malwareTooltip' | translate"
-													#tooltip="ngbTooltip"
+													[matTooltip]="'smartPerformance.scanCompletePage.malwareTooltip' | translate"
+													#tooltip="matTooltip"
 													[icon]="['far', 'question-circle']"
-													container="vtr-root"
-													tooltipClass="vtr-tooltip"
-													(click)="toggleTooltip(tooltip)"
-													(keydown.enter)="toggleTooltip(tooltip)">
+													matTooltipClass="vtr-tooltip"
+													(click)="tooltip.toggle()"
+													(keydown.enter)="tooltip.toggle()">
 												</fa-icon>
 											</p>
 											<!-- <p>{{'smartPerformance.subscriberScanHomePage.scanSummary.secureSummary' |translate }}</p> -->

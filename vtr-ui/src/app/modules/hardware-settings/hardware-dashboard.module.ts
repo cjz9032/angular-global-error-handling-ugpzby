@@ -11,6 +11,7 @@ import {
 
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatIconModule } from '@lenovo/material/icon';
+import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
@@ -83,6 +84,7 @@ import { AppSearchModule } from '../app-search/app-search.module';
 		MatButtonModule,
 		MatIconModule,
 		NgbTooltipModule,
+		MatTooltipModule,
 	],
 	exports: [
 		MetricsModule,

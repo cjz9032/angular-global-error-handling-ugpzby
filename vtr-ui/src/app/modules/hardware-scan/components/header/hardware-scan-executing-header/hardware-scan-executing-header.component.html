@@ -28,7 +28,8 @@
 		<div class="col col-12 row">
 			<div class="col col-12 cancel-check">
 				<vtr-ui-hyperlink-button
-					[ngbTooltip]="disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''" tooltipClass="vtr-system-tooltip" container="body"
+					[matTooltip]="disableCancel ? ('hardwareScan.waitScanStarts' | translate) : ''"
+					matTooltipClass="vtr-system-tooltip"
 					hyperlinkStyle="xs-white"
 					linkId="hwscan-cancel-btn"
 					linkRole="button"

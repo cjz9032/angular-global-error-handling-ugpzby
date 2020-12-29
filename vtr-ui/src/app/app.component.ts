@@ -10,7 +10,14 @@ import {
 	ElementRef,
 	ViewChild,
 } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import {
+	Router,
+	ActivatedRoute
+} from '@angular/router';
+import { Overlay } from '@angular/cdk/overlay';
+
+import { MAT_TOOLTIP_SCROLL_STRATEGY } from '@lenovo/material/tooltip';
+
 import { DisplayService } from './services/display/display.service';
 import { NgbModal, NgbModalRef, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
@@ -46,10 +53,22 @@ import { enumSmartPerformance } from './enums/smart-performance.enum';
 import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
 import { PerformanceNotifications } from './enums/performance-notifications.enum';
+
+
+export const scrollStrategyClose = (overlay: Overlay) => () => overlay.scrollStrategies.close();
+
+const tooltipScrollStrategy = {
+	provide: MAT_TOOLTIP_SCROLL_STRATEGY,
+	useFactory: scrollStrategyClose,
+	deps: [Overlay],
+};
+
+
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
+	providers: [tooltipScrollStrategy]
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	machineInfo: any;
@@ -124,7 +143,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		sessionStorage.clear();
 		this.getMachineInfo();
 
-		window.onresize = () => {}; // this line is necessary, please do not remove.
+		window.onresize = () => { }; // this line is necessary, please do not remove.
 
 		/********* add this for navigation within a page **************/
 		// this.router.events.subscribe((s) => {
@@ -342,7 +361,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				.then((value: any) => {
 					this.onMachineInfoReceived(value);
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -428,7 +447,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					'ms-appx-web://e046963f.lenovocompanionbeta/index.html'
 				);
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	@HostListener('window:load', ['$event'])
@@ -484,8 +503,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				case HardwareScanProgress.ScanResponse:
 				case HardwareScanProgress.RecoverResponse:
 					this.logger.info(
-						`store rating should show in next start marked. ${notification.type}. ${
-							notification.payload ? notification.payload.status : 'null'
+						`store rating should show in next start marked. ${notification.type}. ${notification.payload ? notification.payload.status : 'null'
 						}`
 					);
 					if (notification.payload && notification.payload.status === true) {
@@ -645,11 +663,11 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				Math.round(navigationStartTime + this.commonService.getPerformanceNode('app initialized').startTime - navPerf.startTime) :
 				null,
 			appEntryLoaded: this.commonService.getPerformanceNode('app entry loaded')?.startTime ?
-			Math.round(navigationStartTime + this.commonService.getPerformanceNode('app entry loaded').startTime - navPerf.startTime) :
-			null,
+				Math.round(navigationStartTime + this.commonService.getPerformanceNode('app entry loaded').startTime - navPerf.startTime) :
+				null,
 			firstPageLoaded: this.commonService.getPerformanceNode(firstPage)?.startTime ?
-			Math.round(navigationStartTime + this.commonService.getPerformanceNode(firstPage).startTime - navPerf.startTime) :
-			null,
+				Math.round(navigationStartTime + this.commonService.getPerformanceNode(firstPage).startTime - navPerf.startTime) :
+				null,
 		};
 		this.metricService.sendAppLoadedMetric(performanceTimePoints);
 		let content = `You are now accessing ${performanceTimePoints.source}, ${performanceTimePoints.hostname} \n \n`;

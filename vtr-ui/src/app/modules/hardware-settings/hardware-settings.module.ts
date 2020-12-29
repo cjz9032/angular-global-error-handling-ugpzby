@@ -52,6 +52,10 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { CommonModalModule } from '../common/common-modal.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 
+import { CdkScrollableModule } from '@angular/cdk/scrolling';
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { OverlayModule } from '@angular/cdk/overlay';
+
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
@@ -178,6 +182,9 @@ import { BatteryHealthModule } from '../../components/pages/page-device-settings
 		PageSupportDetailModule,
 		SpinnerModule,
 		BatteryHealthModule,
+		MatTooltipModule,
+		OverlayModule,
+		CdkScrollableModule,
 	],
 	exports: [
 		CommonModule,

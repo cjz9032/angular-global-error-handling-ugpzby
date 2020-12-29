@@ -29,11 +29,10 @@
 						id="smart-performance-scan-setting-tooltip"
 						attr.aria-label=""
 						role="tooltip"
-						[ngbTooltip]="'smartPerformance.scanSettings.tooltipText' |translate"
-						#tooltip="ngbTooltip"
+						[matTooltip]="'smartPerformance.scanSettings.tooltipText' |translate"
+						#tooltip="matTooltip"
 						[icon]="['far', 'question-circle']"
-						container="vtr-root"
-						tooltipClass="vtr-tooltip"
+						matTooltipClass="vtr-tooltip"
 						(click)="toggleTooltip(tooltip)"
 						(keydown.enter)="toggleTooltip(tooltip)">
 					</fa-icon>

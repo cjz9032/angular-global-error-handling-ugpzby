@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { HeaderMainComponent } from './header-main.component';
@@ -8,7 +11,6 @@ import { MenuHeaderComponent } from '../menu-header/menu-header.component';
 import { faSquare } from '@fortawesome/free-solid-svg-icons/faSquare';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
 	declarations: [HeaderMainComponent, UiHeaderSubpageComponent, MenuHeaderComponent],
@@ -19,7 +21,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		TranslationModule.forChild(),
 		RouterModule,
 		FontAwesomeModule,
-		NgbTooltipModule,
+		MatTooltipModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

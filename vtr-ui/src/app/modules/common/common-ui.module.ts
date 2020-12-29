@@ -7,6 +7,9 @@ import {
 	NgbProgressbarModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 import { SharedModule } from '../shared.module';
 import { UiCheckboxComponent } from 'src/app/components/ui/ui-checkbox/ui-checkbox.component';
 import { UiCircleRadioComponent } from 'src/app/components/ui/ui-circle-radio/ui-circle-radio.component';
@@ -50,6 +53,7 @@ import { UiGroupCardComponent } from 'src/app/components/ui/ui-group-card/ui-gro
 import { UiDeviceinfoItemComponent } from 'src/app/components/ui/ui-deviceinfo-item/ui-deviceinfo-item.component';
 import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-point/ui-exclamation-point.component';
+
 
 @NgModule({
 	declarations: [
@@ -129,6 +133,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 		UiRoundedRectangleCustomRadioListModule,
 		UiCircleRadioWithCheckBoxListModule,
 		SafePipeModule,
+		MatTooltipModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -15,7 +15,8 @@ import { faBook } from '@fortawesome/pro-light-svg-icons/faBook';
 import { RouterModule } from '@angular/router';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { UiListSupportComponent } from './ui-list-support.component';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 @NgModule({
 	declarations: [UiListSupportComponent],
@@ -27,7 +28,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		FontAwesomeModule,
 		RouterModule,
 		MetricsModule,
-		NgbTooltipModule,
+		MatTooltipModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

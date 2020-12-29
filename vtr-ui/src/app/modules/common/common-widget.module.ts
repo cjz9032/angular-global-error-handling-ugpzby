@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { CommonUiModule } from './common-ui.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 import { SharedModule } from '../shared.module';
 import { WidgetDeviceComponent } from 'src/app/components/widgets/widget-device/widget-device.component';
 import { WidgetDeviceUpdateComponent } from 'src/app/components/widgets/widget-device-update/widget-device-update.component';
@@ -19,6 +22,7 @@ import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/w
 import { MaterialSvgCircleComponent } from 'src/app/material/material-svg-circle/material-svg-circle.component';
 import { MaterialStatusCircleComponent } from 'src/app/material/material-status-circle/material-status-circle.component';
 import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
+
 
 @NgModule({
 	declarations: [
@@ -56,7 +60,8 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		WidgetSecurityStatusModule,
 		WidgetSupportModule,
 		NgbTooltipModule,
+		MatTooltipModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class CommonWidgetModule {}
+export class CommonWidgetModule { }

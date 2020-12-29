@@ -3,11 +3,14 @@ import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA, Injectable } from '@angular/core';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { WidgetCarouselComponent } from './widget-carousel.component';
-import { NgbCarouselModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslationModule } from 'src/app/modules/translation.module';
 
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import * as Hammer from 'hammerjs';
+
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 @Injectable()
 export class HammerConfig extends HammerGestureConfig {
 	overrides = <any>{
@@ -29,8 +32,8 @@ export class HammerConfig extends HammerGestureConfig {
 		CommonPipeModule,
 		MetricsModule,
 		NgbCarouselModule,
-		NgbTooltipModule,
+		MatTooltipModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class WidgetCarouselModule {}
+export class WidgetCarouselModule { }

@@ -15,9 +15,8 @@
 		  </div>
         </div>
         <div class="col-7 text px-0"
-			    title=""
           [innerHTML]="list.title | translate | characterLimit:28"
-          [ngbTooltip]="list.title | translate" tooltipClass="vtr-system-tooltip" container="body"
+          [matTooltip]="list.title | translate" matTooltipClass="vtr-system-tooltip"
         >
         </div>
         <div class="col-3 text-right px-0 ml-auto">
@@ -25,9 +24,8 @@
 				[ngClass]="{'text-d-color': list.status === 'disabled' || list.status === 'not-installed',
 							'text-gray': list.status === 'loading' || list.status === 'failedLoad'}">
 					<span class="text-uppercase"
-						title=""
             [innerHTML]="list.status | statusText | translate"
-            [ngbTooltip]="list.status | statusText | translate | uppercase" tooltipClass="vtr-system-tooltip" container="body"
+            [matTooltip]="list.status | statusText | translate | uppercase" matTooltipClass="vtr-system-tooltip"
             >
 					</span>
 			</h3>
@@ -47,16 +45,14 @@
           </div>
         </div>
 		<div class="col-7 text px-0 line-through"
-			title=""
       [innerHTML]="list.title | translate | characterLimit:26"
-      [ngbTooltip]="list.title | translate" tooltipClass="vtr-system-tooltip" container="body"
+      [matTooltip]="list.title | translate" matTooltipClass="vtr-system-tooltip"
       >
 		</div>
         <div class="col-3 text-right px-0 ml-auto">
           <h3 class="mb-1 text-ellipsis"><span class="text-uppercase text-color"
-              title=""
               [innerHTML]="'security.antivirus.common.notAvailable' | translate"
-              [ngbTooltip]="'security.antivirus.common.notAvailable' | translate" tooltipClass="vtr-system-tooltip" container="body"
+              [matTooltip]="'security.antivirus.common.notAvailable' | translate" matTooltipClass="vtr-system-tooltip"
               >
           </span></h3>
         </div>

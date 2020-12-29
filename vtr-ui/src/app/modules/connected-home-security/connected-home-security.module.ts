@@ -25,9 +25,10 @@ import { faMapMarkerAlt } from '@fortawesome/pro-light-svg-icons/faMapMarkerAlt'
 import { HomeSecurityAfterSignupComponent } from '../../components/pages/page-connected-home-security/component/home-security-after-signup/home-security-after-signup.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { faMapMarkerAltSlash } from '@fortawesome/pro-light-svg-icons/faMapMarkerAltSlash';
 import { WidgetLocationStatusComponent } from '../../components/widgets/widget-location-status/widget-location-status.component';
+
+import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 @NgModule({
 	declarations: [
@@ -50,7 +51,7 @@ import { WidgetLocationStatusComponent } from '../../components/widgets/widget-l
 		UiListChevronModule,
 		PageLayoutModule,
 		FontAwesomeModule,
-		NgbTooltipModule,
+		MatTooltipModule,
 	],
 	providers: [DialogService],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

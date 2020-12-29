@@ -1,6 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
@@ -23,6 +22,7 @@ import { faTools as falTools } from '@fortawesome/pro-light-svg-icons/faTools';
 
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatCheckboxModule } from '@lenovo/material/checkbox';
+import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 import { LocationNoticeModule } from './../location-notice/location-notice.module';
 import { SecurityAdvisorRoutingModule } from './security-advisor-routing.module';
@@ -74,6 +74,7 @@ import { WidgetMcafeeFeaturesComponent } from '../../components/pages/page-secur
 import { WidgetMcafeeGraphicIntroductionComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-graphic-introduction/widget-mcafee-graphic-introduction.component';
 import { WidgetMcafeePeaceOfMindComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-peace-of-mind/widget-mcafee-peace-of-mind.component';
 import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-content-card/widget-mcafee-content-card.component';
+
 
 @NgModule({
 	declarations: [
@@ -128,10 +129,10 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		CommonModalModule,
 		LocationNoticeModule,
 		PageLayoutModule,
-		NgbTooltipModule,
 		MetricsModule,
 		MatButtonModule,
 		MatCheckboxModule,
+		MatTooltipModule,
 	],
 	providers: [DialogService],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
