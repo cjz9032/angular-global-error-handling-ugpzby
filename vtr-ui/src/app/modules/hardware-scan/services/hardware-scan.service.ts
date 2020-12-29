@@ -463,6 +463,8 @@ export class HardwareScanService {
 					if (ex !== null) {
 						this.cancelRequested = true;
 					}
+
+					this.logger.error('[GetDoScan] ' + ex);
 					throw ex;
 				})
 				.finally(() => {
