@@ -13,8 +13,6 @@ export class SubpageDeviceSettingsPowerDpmGuard implements CanActivate {
 		next: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-		return this.deviceService.getMachineType().then((type) => {
-			return type === 3;
-		});
+		return this.deviceService.getMachineType().then((type) => type === 3);
 	}
 }

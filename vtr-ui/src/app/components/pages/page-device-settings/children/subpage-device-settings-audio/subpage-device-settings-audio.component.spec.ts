@@ -261,17 +261,17 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		expect(spy).toHaveBeenCalled();
 	});
 
-	it('should call onNotification - case LocalStorageKey.WelcomeTutorial', () => {
-		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-		component = fixture.componentInstance;
-		const spy = spyOn<any>(component, 'initFeatures');
-		const notification: AppNotification = {
-			type: LocalStorageKey.WelcomeTutorial,
-			payload: { page: 2 },
-		};
-		component['onNotification'](notification);
-		expect(spy).toHaveBeenCalled();
-	});
+	// it('should call onNotification - case LocalStorageKey.WelcomeTutorial', () => {
+	// 	fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
+	// 	component = fixture.componentInstance;
+	// 	const spy = spyOn<any>(component, 'initFeatures');
+	// 	const notification: AppNotification = {
+	// 		type: LocalStorageKey.WelcomeTutorial,
+	// 		payload: { page: 2 },
+	// 	};
+	// 	component['onNotification'](notification);
+	// 	expect(spy).toHaveBeenCalled();
+	// });
 
 	it('should call onOptimizeModesRadioChange - microOptimizeModeResponse is equal to newVal', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);

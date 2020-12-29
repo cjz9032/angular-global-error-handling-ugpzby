@@ -40,25 +40,25 @@ describe('BatteryRankLifespanComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	it('should getBatteryDetails haveBeenCalled', () => {
-		const battery = {
-			fullChargeCapacity: 23.84,
-			designCapacity: 0,
-			temperature: 32 as BatteryTemperatureStatus,
-			isSupportSmartBatteryV2: true,
-			batteryHealthLevel: 6 as BatteryHealthLevel,
-			batteryHealthTip: 3 as BatteryHealthTip,
-			predictedLifeSpan: 3 as BatteryLifeSpan,
-			lifePercent: 80,
-		} as BatteryHealthResponse;
-		spyOn(component, 'getBatteryDetails');
-		// spyOn(batteryHealthService, 'requestBatteryInfo').and.returnValue(of(battery));
-		component.ngOnInit();
-		// component.getBatteryDetails();
-		// fixture.detectChanges();
-		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-		expect(component.getBatteryDetails).toHaveBeenCalled;
-	});
+	// it('should getBatteryDetails haveBeenCalled', () => {
+	// 	const battery = {
+	// 		fullChargeCapacity: 23.84,
+	// 		designCapacity: 0,
+	// 		temperature: 32 as BatteryTemperatureStatus,
+	// 		isSupportSmartBatteryV2: true,
+	// 		batteryHealthLevel: 6 as BatteryHealthLevel,
+	// 		batteryHealthTip: 3 as BatteryHealthTip,
+	// 		predictedLifeSpan: 3 as BatteryLifeSpan,
+	// 		lifePercent: 80,
+	// 	} as BatteryHealthResponse;
+	// 	spyOn(component, 'getBatteryDetails');
+	// 	// spyOn(batteryHealthService, 'requestBatteryInfo').and.returnValue(of(battery));
+	// 	component.ngOnInit();
+	// 	// component.getBatteryDetails();
+	// 	// fixture.detectChanges();
+	// 	// eslint-disable-next-line @typescript-eslint/no-unused-expressions
+	// 	expect(component.getBatteryDetails).toHaveBeenCalled;
+	// });
 
 	it('should get the battery getLeftSpanStr', () => {
 		let lifSpan = 1;

@@ -433,9 +433,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		])
 			.then((response: any[]) => {
 				this.logger.info('APS Capability ---------------------------------', response);
-				response[0] && response[1] && response[2] > 0
-					? (this.isAPSAvailable = true)
-					: (this.isAPSAvailable = false);
+				this.isAPSAvailable = response[0] && response[1] && response[2] > 0;
 
 				this.smartAssistCache.isAPSAvailable = this.isAPSAvailable;
 				this.setSmartAssistCacheStorageValue();

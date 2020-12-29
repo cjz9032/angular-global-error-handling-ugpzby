@@ -24,7 +24,7 @@ export class UiDpmDropdownComponent implements OnInit {
 	@Output() change: EventEmitter<any> = new EventEmitter<any>();
 	public isDropDownOpen = false;
 	public text: string;
-	public refocus: boolean = true;
+	public refocus = true;
 	public itemBlur: boolean = true;
 	constructor(private translate: TranslateService) {}
 
