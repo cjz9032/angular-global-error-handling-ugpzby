@@ -11,8 +11,8 @@
 		border-radius: $border_radius;
 		box-shadow: $drop_shadow_gaming;
 		padding: 4rem;
-		background: url(^assets/images/gaming/lightingImage@2x.webp) center top no-repeat,
-			url(^assets/images/gaming/lightingImage@2x.png) center top no-repeat $gaming_dark;
+		background: url(^assets/images/gaming/lightingImage@2x.png) center top no-repeat
+			$gaming_dark;
 		background-size: 100% auto;
 		padding-top: 18rem;
 		@media #{$high-contrast} {
@@ -21,10 +21,8 @@
 		}
 	}
 	.widget-container-notebook {
-		background: url(^assets/images/gaming/lighting/lighting-ui-new/bg_note.webp) center top
-				no-repeat,
-			url(^assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top no-repeat
-				$gaming_dark;
+		background: url(^assets/images/gaming/lighting/lighting-ui-new/bg_note.png) center top
+			no-repeat $gaming_dark;
 		background-size: 100% auto;
 	}
 	.lighting-porfile {

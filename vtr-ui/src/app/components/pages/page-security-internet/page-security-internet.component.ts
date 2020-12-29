@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 import { FeatureIntroduction } from '../../ui/ui-feature-introduction/ui-feature-introduction.component';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-security-internet',
@@ -34,8 +33,7 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 		private localCacheService: LocalCacheService,
 		public vantageShellService: VantageShellService,
 		private guard: GuardService,
-		private router: Router,
-		private windowsVerisonService: WindowsVersionService
+		private router: Router
 	) {}
 
 	ngOnInit() {
@@ -153,9 +151,7 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 		if (status === 'installed') {
 			this.featureIntroduction.featureTitle = 'security.vpn.howToUseSufEasy';
 			this.featureIntroduction.featureTitleDesc = 'security.vpn.whatCanSufEasy2';
-			this.featureIntroduction.imgSrc = this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/SurfEasy-Left-img-2.webp'
-				: 'assets/images/SurfEasy-Left-img-2.jpg';
+			this.featureIntroduction.imgSrc = 'assets/images/SurfEasy-Left-img-2.jpg';
 			this.featureIntroduction.featureSubtitle = 'security.vpn.getStarted';
 			this.featureIntroduction.featureIntroList = [
 				{
@@ -174,9 +170,7 @@ export class PageSecurityInternetComponent implements OnInit, OnDestroy {
 		} else if (status === 'not-installed' || status === 'installing') {
 			this.featureIntroduction.featureTitle = 'security.vpn.whySufEasy';
 			this.featureIntroduction.featureTitleDesc = 'security.vpn.whySufEasyDescription';
-			this.featureIntroduction.imgSrc = this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/surfeasy-left-img.webp'
-				: 'assets/images/surfeasy-left-img.jpg';
+			this.featureIntroduction.imgSrc = 'assets/images/surfeasy-left-img.jpg';
 			this.featureIntroduction.featureSubtitle = 'security.vpn.startUseSufEasy';
 			this.featureIntroduction.featureIntroList = [
 				{

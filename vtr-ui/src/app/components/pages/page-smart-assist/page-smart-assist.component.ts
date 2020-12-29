@@ -24,7 +24,6 @@ import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-cust
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
@@ -65,9 +64,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	isSuperResolutionLoading = true;
 	superResolution = new SuperResolutionResponse(false, true, '');
 	hsaIntelligentSecurity = new HsaIntelligentSecurityResponse(false, false);
-	image = this.windowsVerisonService.isNewerThanRS4()
-		? '/assets/images/hardware-settings/smart-assist/intelligent-security/HPD_Img.webp'
-		: '/assets/images/hardware-settings/smart-assist/intelligent-security/HPD_Img.png';
+	image = '/assets/images/hardware-settings/smart-assist/intelligent-security/HPD_Img.png';
 	zeroTouchLoginShowAdvancedSection: boolean;
 	zeroTouchLockShowAdvancedSection: boolean;
 	zeroTouchPresenceLeaveDistanceCapability = false;
@@ -169,8 +166,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		private router: Router,
 		private vantageShellService: VantageShellService,
 		private localCacheService: LocalCacheService,
-		private metrics: CommonMetricsService,
-		private windowsVerisonService: WindowsVersionService
+		private metrics: CommonMetricsService
 	) {
 		this.jumpToSettingsTitle = this.translate.instant('device.smartAssist.jumpTo.title');
 

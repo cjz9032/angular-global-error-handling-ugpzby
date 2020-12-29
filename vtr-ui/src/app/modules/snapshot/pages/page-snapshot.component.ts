@@ -6,7 +6,6 @@ import { ContentActionType } from 'src/app/enums/content.enum';
 import { SnapshotService } from 'src/app/modules/snapshot/services/snapshot.service';
 import { SnapshotStatus } from '../enums/snapshot.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
@@ -23,7 +22,6 @@ export class PageSnapshotComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private snapshotService: SnapshotService,
 		private loggerService: LoggerService,
-		private windowsVerisonService: WindowsVersionService,
 		private deviceService: DeviceService
 	) {}
 
@@ -72,9 +70,7 @@ export class PageSnapshotComponent implements OnInit, OnDestroy {
 		Object.assign(this.snapshotSupportCard, {
 			Id: 'Snapshot.DiagnosticsTools',
 			Title: this.translate.instant('hardwareScan.support.title'),
-			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/support.webp'
-				: 'assets/images/support.jpg',
+			FeatureImage: 'assets/images/support.jpg',
 			Action: 'Read More',
 			ActionType: ContentActionType.External,
 			ActionLink: 'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads',

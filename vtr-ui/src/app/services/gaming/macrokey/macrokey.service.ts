@@ -6,7 +6,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { MacroKeyRecordedChange } from 'src/app/data-models/gaming/macrokey/macrokey-recorded-change.model';
 import { MacroKeyInputChange } from 'src/app/data-models/gaming/macrokey/macrokey-input-change.model';
 import { LocalCacheService } from '../../local-cache/local-cache.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -16,21 +15,16 @@ export class MacrokeyService {
 	public isMacroKeyAvailable = false;
 
 	public cardContentPositionF: any = {
-		FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-			? 'assets/cms-cache/content-card-4x4-support.webp'
-			: 'assets/cms-cache/content-card-4x4-support.jpg',
+		FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg',
 	};
 
 	public cardContentPositionB: any = {
-		FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-			? 'assets/cms-cache/Security4x3-zone2.webp'
-			: 'assets/cms-cache/Security4x3-zone2.jpg',
+		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg',
 	};
 
 	constructor(
 		private shellService: VantageShellService,
-		private localCacheService: LocalCacheService,
-		private windowsVerisonService: WindowsVersionService
+		private localCacheService: LocalCacheService
 	) {
 		this.macroKey = shellService.getGamingMacroKey();
 		if (this.macroKey) {

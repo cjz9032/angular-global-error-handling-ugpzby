@@ -64,14 +64,10 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	showContentB = false;
 
 	cardContentPositionA: any = {
-		FeatureImage: this.windowsVersionService.isNewerThanRS4()
-			? 'assets/images/connected-home-security/card-gamestore.webp'
-			: 'assets/images/connected-home-security/card-gamestore.png',
+		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png',
 	};
 	cardContentPositionB: any = {
-		FeatureImage: this.windowsVersionService.isNewerThanRS4()
-			? 'assets/images/connected-home-security/card-gamestore.webp'
-			: 'assets/images/connected-home-security/card-gamestore.png',
+		FeatureImage: 'assets/images/connected-home-security/card-gamestore.png',
 	};
 	devicePostureEventHandler = (devicePosture: DevicePosture) => {
 		if (devicePosture && Array.isArray(devicePosture.value) && devicePosture.value.length > 0) {

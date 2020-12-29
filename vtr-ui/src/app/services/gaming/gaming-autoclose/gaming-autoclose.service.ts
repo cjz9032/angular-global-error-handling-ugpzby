@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { AutoCloseStatus } from 'src/app/data-models/gaming/autoclose/autoclose-status.model';
 import { LocalCacheService } from '../../local-cache/local-cache.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 
 @Injectable({
@@ -13,21 +12,16 @@ import { GAMING_DATA } from './../../../../testing/gaming-data';
 export class GamingAutoCloseService {
 	public isShellAvailable = false;
 	public cardContentPositionF: any = GAMING_DATA.buildFeatureImage(
-		this.windowsVerisonService.isNewerThanRS4()
-			? 'assets/cms-cache/content-card-4x4-support.webp'
-			: 'assets/cms-cache/content-card-4x4-support.jpg'
+		'assets/cms-cache/content-card-4x4-support.jpg'
 	);
 	public cardContentPositionB: any = GAMING_DATA.buildFeatureImage(
-		this.windowsVerisonService.isNewerThanRS4()
-			? 'assets/cms-cache/Security4x3-zone2.webp'
-			: 'assets/cms-cache/Security4x3-zone2.jpg'
+		'assets/cms-cache/Security4x3-zone2.jpg'
 	);
 	private gamingAutoClose: any;
 
 	constructor(
 		private shellService: VantageShellService,
-		private localCacheService: LocalCacheService,
-		private windowsVerisonService: WindowsVersionService
+		private localCacheService: LocalCacheService
 	) {
 		this.gamingAutoClose = shellService.getGamingAutoClose();
 		if (this.gamingAutoClose) {

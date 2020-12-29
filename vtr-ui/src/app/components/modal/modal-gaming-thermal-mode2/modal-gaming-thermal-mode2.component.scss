@@ -70,21 +70,18 @@ button:focus {
 					height: 3.2rem;
 					margin-bottom: 0rem;
 					.gaming-radio-image-rest {
-						background-image: url(^assets/images/gaming/thermalMode2/white100@2x.webp),
-							url(^assets/images/gaming/thermalMode2/white100@2x.png);
+						background-image: url(^assets/images/gaming/thermalMode2/white100@2x.png);
 						background-size: cover;
 						width: 3.2rem;
 						height: 3.2rem;
 						opacity: 0.2;
 						@media #{$high-contrast} {
-							background-image: url(^assets/images/gaming/thermalMode2/gray@2x.webp),
-								url(^assets/images/gaming/thermalMode2/gray@2x.png);
+							background-image: url(^assets/images/gaming/thermalMode2/gray@2x.png);
 							opacity: 1;
 						}
 					}
 					.gaming-radio-image-selected {
-						background-image: url(^assets/images/gaming/thermalMode2/selected@2x.webp),
-							url(^assets/images/gaming/thermalMode2/selected@2x.png);
+						background-image: url(^assets/images/gaming/thermalMode2/selected@2x.png);
 						background-size: cover;
 						width: 3.2rem;
 						height: 3.2rem;

@@ -36,7 +36,6 @@ import {
 } from 'src/app/services/self-select/self-select.service';
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 declare let Windows;
 
@@ -225,8 +224,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		private antiVirusService: AntivirusService,
 		private selfSelectService: SelfSelectService,
 		private localCacheService: LocalCacheService,
-		private metricService: MetricService,
-		private windowsVerisonService: WindowsVersionService
+		private metricService: MetricService
 	) {
 		this.isOnline = this.commonService.isOnline;
 		this.metrics = shellService.getMetrics();
@@ -314,9 +312,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.supportWebsiteCard = {
 				Id: 'LenovoSupportWebsite',
 				Title: value,
-				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-					? 'assets/images/support.webp'
-					: 'assets/images/support.jpg',
+				FeatureImage: 'assets/images/support.jpg',
 				ActionType: ContentActionType.External,
 				ActionLink: this.supportLink,
 			};
@@ -338,9 +334,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 					this.securityWidgetCard = {
 						Id: 'SecurityWidgetCard',
 						Title: title,
-						FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-							? 'assets/images/security-bg.webp'
-							: 'assets/images/security-bg.jpg',
+						FeatureImage: 'assets/images/security-bg.jpg',
 						ActionType: ContentActionType.Internal,
 						ActionLink: 'lenovo-vantage3:anti-virus',
 						SupportOffline: true,
@@ -722,9 +716,9 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	public isUpdateListVisible() {
 		const isVisible =
 			(this.systemUpdateService.isUpdatesAvailable ||
-				this.systemUpdateService.isInstallationCompleted)
-			&& !this.isUpdateCheckInProgress
-			&& ((this.criticalUpdates && this.criticalUpdates.length > 0) ||
+				this.systemUpdateService.isInstallationCompleted) &&
+			!this.isUpdateCheckInProgress &&
+			((this.criticalUpdates && this.criticalUpdates.length > 0) ||
 				(this.recommendedUpdates && this.recommendedUpdates.length > 0) ||
 				(this.optionalUpdates && this.optionalUpdates.length > 0) ||
 				(this.ignoredUpdates && this.ignoredUpdates.length > 0));
@@ -859,7 +853,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		});
 	}
 
-	public onGetSupportClick($event: any) { }
+	public onGetSupportClick($event: any) {}
 
 	private installUpdateBySource(
 		isInstallAll: boolean,
@@ -1382,5 +1376,4 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			this.neverCheckedText = res;
 		});
 	}
-
 }
