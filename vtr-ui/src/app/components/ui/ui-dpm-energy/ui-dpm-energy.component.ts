@@ -6,15 +6,15 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./ui-dpm-energy.component.scss'],
 })
 export class UiDpmEnergyComponent implements OnInit {
-	private _value: number;
+	private pValue: number;
 	@Input()
 	public get value(): number {
-		return this._value;
+		return this.pValue;
 	}
 	public set value(v: number) {
-		if (v < 0) v = 0;
-		if (v > this.totalCount) v = this.totalCount;
-		this._value = v;
+		if (v < 0) {v = 0;}
+		if (v > this.totalCount) {v = this.totalCount;}
+		this.pValue = v;
 		this.setItems();
 	}
 
@@ -30,8 +30,8 @@ export class UiDpmEnergyComponent implements OnInit {
 	private setItems() {
 		this.items = [];
 		for (let i = 0; i < this.totalCount; i++) {
-			if (i < this.value) this.items.push(true);
-			else this.items.push(false);
+			if (i < this.value) {this.items.push(true);}
+			else {this.items.push(false);}
 		}
 	}
 }

@@ -26,7 +26,7 @@ describe('Component: SmartStandby', () => {
 	});
 
 	describe(':', () => {
-		function setup() {
+		const setup = () => {
 			const fixture = TestBed.createComponent(SmartStandbyComponent);
 			const smartStandbyComponent = fixture.componentInstance;
 			const powerService = fixture.debugElement.injector.get(PowerService);
@@ -45,7 +45,7 @@ describe('Component: SmartStandby', () => {
 				smartStandbyService,
 				translateService,
 			};
-		}
+		};
 
 		it('should create SmartStandby component', () => {
 			const { fixture, smartStandbyComponent } = setup();

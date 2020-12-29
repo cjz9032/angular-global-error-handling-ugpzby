@@ -60,7 +60,7 @@ describe('BatteryConditionNotesComponent', () => {
 		});
 	});
 
-	describe("'see details click' should change to detailed note", () => {
+	describe('see details click should change to detailed note', () => {
 		it('should change ac detailed note', () => {
 			const notSupportedAcAdapterNote =
 				'device.deviceSettings.batteryGauge.condition.NotSupportACAdapter';
@@ -68,7 +68,7 @@ describe('BatteryConditionNotesComponent', () => {
 			spyOnProperty(component, 'notes').and.returnValue([notSupportedAcAdapterNote]);
 			fixture.detectChanges();
 
-			let button = fixture.debugElement.query(
+			const button = fixture.debugElement.query(
 				By.css('#battery-condition-tip-ACAdapterError-seeDetails-link')
 			);
 			button.nativeElement.click();
@@ -85,7 +85,7 @@ describe('BatteryConditionNotesComponent', () => {
 			);
 			component.batteryConditions = [poorAndStoreLimitation];
 			fixture.detectChanges();
-			let h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
+			const h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
 			expect(h6.textContent).toEqual(
 				'device.deviceSettings.batteryGauge.condition.StoreLimitation'
 			);
@@ -98,7 +98,7 @@ describe('BatteryConditionNotesComponent', () => {
 			);
 			component.batteryConditions = [fairAndStoreLimitation];
 			fixture.detectChanges();
-			let h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
+			const h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
 			expect(h6.textContent).toEqual(
 				'device.deviceSettings.batteryGauge.condition.StoreLimitation'
 			);
@@ -112,7 +112,7 @@ describe('BatteryConditionNotesComponent', () => {
 			component.batteryConditions = [goodAndStoreLimitation];
 			fixture.detectChanges();
 
-			let h6 = fixture.debugElement.query(By.css('h6'));
+			const h6 = fixture.debugElement.query(By.css('h6'));
 
 			expect(h6).toBe(null);
 		});
@@ -132,23 +132,23 @@ describe('BatteryConditionNotesComponent', () => {
 				component.batteryConditions = [acConnectedCondition];
 				batteryGauge.isAttached = true;
 			});
-			it("should render generic 'power is connected note' when ac wattage is 0 or adapterType is blank", () => {
+			it('should render generic power is connected note when ac wattage is 0 or adapterType is blank', () => {
 				batteryGauge.acWattage = 0;
 				batteryGauge.acAdapterType = '';
 				fixture.detectChanges();
 
-				let h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
+				const h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
 				expect(h6.innerHTML).toBe(
 					'device.deviceSettings.batteryGauge.condition.AcAdapterConnected'
 				);
 			});
 
-			it("should render note containing the acWattage and adapterType when they're not blank", () => {
+			it('should render note containing the acWattage and adapterType when theyre not blank', () => {
 				batteryGauge.acWattage = 65;
 				batteryGauge.acAdapterType = 'usb';
 				fixture.detectChanges();
 
-				let h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
+				const h6 = fixture.debugElement.query(By.css('h6')).nativeElement;
 				expect(h6.innerHTML).toBe(
 					'device.deviceSettings.batteryGauge.condition.FullACAdapterSupport'
 				);
@@ -158,10 +158,10 @@ describe('BatteryConditionNotesComponent', () => {
 			});
 		});
 		describe('and battery is not detected', () => {
-			it("should render 'battery is not detected' message", () => {
+			it('should render battery is not detected message', () => {
 				component.batteryDetected = false;
 				fixture.detectChanges();
-				let h6 = fixture.debugElement.query(
+				const h6 = fixture.debugElement.query(
 					By.css('#battery-condition-battery-not-detected')
 				).nativeElement;
 				expect(h6.innerHTML).toBe(
@@ -169,11 +169,11 @@ describe('BatteryConditionNotesComponent', () => {
 				);
 			});
 
-			it("should render generic 'power is connected note'", () => {
+			it('should render generic power is connected note', () => {
 				component.batteryDetected = false;
 				component.batteryConditions = goodAndBatteryNotDetectedCondition;
 				fixture.detectChanges();
-				let h6 = fixture.debugElement.query(By.css('[data-battery-condition=notDetected]'))
+				const h6 = fixture.debugElement.query(By.css('[data-battery-condition=notDetected]'))
 					.nativeElement;
 				expect(h6.innerHTML).toBe(
 					'device.deviceSettings.batteryGauge.condition.AcAdapterConnected'
@@ -185,7 +185,7 @@ describe('BatteryConditionNotesComponent', () => {
 				component.isChargeThresholdOn = true;
 				component.isInvalidBattery = false;
 				fixture.detectChanges();
-				let element = fixture.debugElement.query(By.css('#batteryGauge-thresholdNote'))
+				const element = fixture.debugElement.query(By.css('#batteryGauge-thresholdNote'))
 					?.nativeElement;
 				expect(element?.innerHTML).toBe('device.deviceSettings.batteryGauge.thresholdNote');
 			});
@@ -195,7 +195,7 @@ describe('BatteryConditionNotesComponent', () => {
 				component.isGaugeResetRunning = true;
 				component.isInvalidBattery = false;
 				fixture.detectChanges();
-				let element = fixture.debugElement.query(By.css('#batteryGauge-gaugeResetWarning'))
+				const element = fixture.debugElement.query(By.css('#batteryGauge-gaugeResetWarning'))
 					?.nativeElement;
 				expect(element?.innerHTML).toBe(
 					'device.deviceSettings.batteryGauge.gaugeResetWarning'

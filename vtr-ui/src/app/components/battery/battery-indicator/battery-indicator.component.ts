@@ -64,6 +64,7 @@ export class BatteryIndicatorComponent implements OnInit, OnChanges {
 
 	/**
 	 * based on decimal value its fills battery acid level
+	 *
 	 * @param level decimal value ranging from 0.0 to 1.0
 	 */
 	refreshLevel() {

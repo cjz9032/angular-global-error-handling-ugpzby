@@ -308,8 +308,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	}
 
 	startPreviewAsync(mediaCapture, streamType, encodingProperties) {
-		this.ngZone.run(() => {
-			return mediaCapture.videoDeviceController
+		this.ngZone.run(() => mediaCapture.videoDeviceController
 				.setMediaStreamPropertiesAsync(streamType, encodingProperties)
 				.then(() => {
 					const previewUrl = URL.createObjectURL(mediaCapture);
@@ -322,8 +321,8 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 						previewUrl,
 						videoElement: this.videoElement,
 					});
-				});
-		});
+				})
+				);
 	}
 
 	videoPreviewPlaying() {
