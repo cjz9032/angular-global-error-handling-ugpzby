@@ -6,6 +6,7 @@ import {
 	EventEmitter,
 	ViewChild,
 	ElementRef,
+	OnDestroy,
 } from '@angular/core';
 import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -39,7 +40,7 @@ import {
 	templateUrl: './subpage-smart-performance-scan-summary.component.html',
 	styleUrls: ['./subpage-smart-performance-scan-summary.component.scss'],
 })
-export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
+export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDestroy {
 	constructor(
 		private calendar: NgbCalendar,
 		private logger: LoggerService,
@@ -53,6 +54,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 	) { }
 	public sizeExtension: string;
 	public isLoading = true;
+	public isLoadingCanceledSummary = true;
+	private scanSummaryTimer: any;
 	public machineFamilyName: string;
 	public today = new Date();
 	public items: any = [];
@@ -210,8 +213,24 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 		this.scanScheduleDate = this.selectedDate;
 		this.isLoading = false;
 		if (this.smartPerformanceService.isSubscribed || this.smartPerformanceService.isExpired) {
-			// 	this.getLastScanResult();
-			this.scanSummaryTime(0);
+			if (this.smartPerformanceService.scanningState === ScanningState.Canceled) {
+				let getCount = 0;
+				this.scanSummaryTimer = setInterval(() => {
+					if (this.historyScanResults.length === 0 && getCount < 10) {
+						this.scanSummaryTime(0);
+						getCount++;
+						this.logger.info(`Try to get scan summary when canceled scan: ${getCount} time(s)`);
+					} else {
+						this.isLoadingCanceledSummary = false;
+						clearInterval(this.scanSummaryTimer);
+					}
+				}, 1500);
+			} else {
+				this.isLoadingCanceledSummary = false;
+				this.scanSummaryTime(0);
+			}
+		} else {
+			this.isLoadingCanceledSummary = false;
 		}
 
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
@@ -229,6 +248,10 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit {
 			day: this.currentDate.getDate(),
 		};
 
+	}
+
+	ngOnDestroy() {
+		clearInterval(this.scanSummaryTimer);
 	}
 
 	isScanningFinished(state) {

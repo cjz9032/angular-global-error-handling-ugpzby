@@ -53,6 +53,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	private metrics: any;
 	public isOnline = true;
 	public subscriptionInfoStatus = false;
+	private scanTimer: any;
 
 	constructor(
 		private systemEventService: SystemEventService,
@@ -242,6 +243,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		if (this.protocalListener) {
 			this.protocalListener.unsubscribe();
 		}
+
+		clearInterval(this.scanTimer);
 	}
 
 	// Scan Now event from Summary Page
@@ -619,7 +622,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 	scanNow() {
 		this.tryScan();
 		let retry = 0;
-		const scanTimer = setInterval(() => {
+		this.scanTimer = setInterval(() => {
 			const precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
 			// retry 10 times if scan does not launched
 			if ((!precent || precent < 1) && retry < 10) {
@@ -627,7 +630,7 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 				this.tryScan();
 				retry++;
 			} else {
-				clearInterval(scanTimer);
+				clearInterval(this.scanTimer);
 			}
 		}, 3000);
 	}
