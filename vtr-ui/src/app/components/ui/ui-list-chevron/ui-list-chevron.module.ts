@@ -14,7 +14,8 @@ import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { RouterModule } from '@angular/router';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 @NgModule({
 	declarations: [UiListChevronComponent],
@@ -26,7 +27,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 		FontAwesomeModule,
 		RouterModule,
 		MetricsModule,
-		NgbTooltipModule,
+		MatTooltipModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

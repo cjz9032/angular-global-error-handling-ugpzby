@@ -10,12 +10,10 @@
 				<img class="feed disable"
 					*ngIf="disabledAll && !isCameraInErrorState"
 					src="assets/images/hardware-settings/camera-disable.png"
-					title=""
 					id="camera-notAvailable"
 					role="img"
-					[ngbTooltip]="'device.deviceSettings.displayCamera.camera.notAvailable' | translate"
-					tooltipClass="vtr-system-tooltip"
-					container="body" />
+					[matTooltip]="'device.deviceSettings.displayCamera.camera.notAvailable' | translate"
+					matTooltipClass="vtr-system-tooltip" />
 				<div class="error"
 					*ngIf="isCameraInErrorState">
 					<div class="error-title"

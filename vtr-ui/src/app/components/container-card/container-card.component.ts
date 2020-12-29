@@ -8,6 +8,7 @@ import { FeatureContent } from 'src/app/data-models/common/feature-content.model
 import { DeviceService } from 'src/app/services/device/device.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { ContentSource } from 'src/app/enums/content.enum';
+import { MatTooltip } from '@lenovo/material/tooltip';
 
 @Component({
 	selector: 'vtr-container-card',
@@ -41,7 +42,6 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 	isLoading = true;
 	isOnline = true;
 	notificationSubscription: Subscription;
-	closeTipTimer = null;
 
 	private displayDetectionTaskId;
 	private innerItem: FeatureContent;
@@ -93,7 +93,7 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 		private cardService: CardService,
 		public deviceService: DeviceService,
 		private metricsService: MetricService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
@@ -132,6 +132,15 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 		return this.cardService.linkClicked(actionType, actionLink, this.isOfflineArm, title);
 	}
 
+	/**
+	 * Close tooltip after 3sec
+	 */
+	closeTipTimeout(tooltip: MatTooltip) {
+		if (tooltip._isTooltipVisible()) {
+			tooltip.hide(5000);
+		}
+	}
+
 	private onNotification(notification: AppNotification) {
 		if (notification) {
 			switch (notification.type) {
@@ -143,25 +152,5 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 					break;
 			}
 		}
-	}
-
-	/**
-	 * Close tooltip manually
-	 */
-	public closeTip(tooltip: any) {
-		if (!tooltip.isOpen()) {
-			return true;
-		}
-
-		tooltip.close();
-		if (this.closeTipTimer) {
-			clearTimeout(this.closeTipTimer);
-		}
-	}
-	/**
-	 * Close tooltip after 3sec
-	 */
-	public closeTipTimeout(tooltip: any) {
-		this.closeTipTimer = setTimeout(this.closeTip, 5000, tooltip);
 	}
 }

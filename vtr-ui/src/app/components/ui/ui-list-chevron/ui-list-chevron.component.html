@@ -19,11 +19,9 @@
 				[ngClass]="clickable?'':'disabled'"
 				[tabindex]="clickable ? 0 : -1"
 				[attr.role]="clickable?'':'document'"
-				[title]=""
-				[ngbTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				tooltipClass="vtr-system-tooltip"
-				container="body"
-				#ta="ngbTooltip">
+				[matTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
+				matTooltipClass="vtr-system-tooltip"
+				#ta="matTooltip">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center"
@@ -74,23 +72,20 @@
 									role="text"
 									class="title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}"
-									[ngbTooltip]="item.title"
-									tooltipClass="vtr-system-tooltip"
-									container="body"
+									[matTooltip]="item.title"
+									matTooltipClass="vtr-system-tooltip"
 									[attr.aria-label]="item.title"
-									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
+									(mouseenter)="ta.hide()">
 									{{item.title}}
 								</div>
 								<div id="{{linkId}}-{{item.id}}-detail"
 									attr.aria-label="{{item.detail}}"
-									title=""
 									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)"
-									[ngbTooltip]="item.detail"
-									tooltipClass="vtr-system-tooltip"
-									container="body"
-									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
+									[matTooltip]="item.detail"
+									matTooltipClass="vtr-system-tooltip"
+									(mouseenter)="ta.hide()">
 									{{item.detail}}
 								</div>
 								<div id="{{linkId}}-{{item.id}}-subText"
@@ -99,14 +94,13 @@
 									class="sub-text">
 									<span title=""
 										class="{{'dirClass' | translate}}"
-										dir="{{'dir' | translate}}"
-										[ngbTooltip]="item.subText"
-										tooltipClass="vtr-system-tooltip"
-										container="body"
-										(mouseenter)="(ta.isOpen() ? ta.close() : true )">{{item.subText | characterLimit:20}}</span>
+										[dir]="'dir' | translate"
+										[matTooltip]="item.subText"
+										matTooltipClass="vtr-system-tooltip"
+										(mouseenter)="ta.hide()">{{item.subText | characterLimit:20}}</span>
 									<span class="pl-3"
 										class="{{'dirClass' | translate}}"
-										dir="{{'dir' | translate}}">{{item.date}}</span>
+										[dir]="'dir' | translate">{{item.date}}</span>
 								</div>
 							</div>
 						</div>
@@ -171,10 +165,10 @@
 				[tabindex]="clickable ? 0 : -1"
 				[attr.role]="clickable?'':'document'"
 				[title]=""
-				[ngbTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				tooltipClass="vtr-system-tooltip"
+				[matTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
+				matTooltipClass="vtr-system-tooltip"
 				container="body"
-				#ta="ngbTooltip">
+				#ta="matTooltip">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center"
@@ -218,25 +212,21 @@
 							<div class="row no-gutters">
 								<div id="{{linkId}}-{{item.id}}-title"
 									attr.aria-label="{{item.title}}"
-									title=""
 									class="col-5 title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-5': item.detail}"
-									[ngbTooltip]="item.title"
-									tooltipClass="vtr-system-tooltip"
-									container="body"
-									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
+									[matTooltip]="item.title"
+									matTooltipClass="vtr-system-tooltip"
+									(mouseenter)="ta.hide()">
 									{{item.title}}
 								</div>
 								<div id="{{linkId}}-{{item.id}}-detail"
 									attr.aria-label="{{item.detail}}"
-									title=""
 									class="col-7 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)"
-									[ngbTooltip]="item.detail"
-									tooltipClass="vtr-system-tooltip"
-									container="body"
-									(mouseenter)="(ta.isOpen() ? ta.close() : true )">
+									[matTooltip]="item.detail"
+									matTooltipClass="vtr-system-tooltip"
+									(mouseenter)="ta.hide()">
 									{{item.detail}}
 								</div>
 							</div>
@@ -296,11 +286,9 @@
 				[ngClass]="clickable?'':'disabled'"
 				[tabindex]="clickable ? 0 : -1"
 				[attr.role]="clickable?'':'document'"
-				[title]=""
-				[ngbTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
-				tooltipClass="vtr-system-tooltip"
-				container="body"
-				#ta="ngbTooltip">
+				[matTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
+				matTooltipClass="vtr-system-tooltip"
+				#ta="matTooltip">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col col-1 text-center"
@@ -342,24 +330,20 @@
 						<div class="col item-text"
 							[ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility}">
 							<div class="row no-gutters">
-								<div title=""
-									class="col-6 title text-break d-flex align-items-center"
+								<div class="col-6 title text-break d-flex align-items-center"
 									[ngClass]="{'light-title':item.lightTitle, 'col-12':!item.detail, 'col-6': item.detail}"
-									[ngbTooltip]="item.title"
-									tooltipClass="vtr-system-tooltip"
-									container="body"
-									(mouseenter)="(ta.isOpen() ? ta.close() : true )"
+									[matTooltip]="item.title"
+									matTooltipClass="vtr-system-tooltip"
+									(mouseenter)="ta.hide()"
 									id="{{linkId}}-{{item.id}}-title">
 									{{item.title}}
 								</div>
-								<div title=""
-									class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
+								<div class="col-6 detail word-break-all d-flex align-items-center justify-content-end"
 									*ngIf="item.detail"
 									[ngClass]="getItemDetailClasses(item)"
-									[ngbTooltip]="item.detail"
-									tooltipClass="vtr-system-tooltip"
-									container="body"
-									(mouseenter)="(ta.isOpen() ? ta.close() : true )"
+									[matTooltip]="item.detail"
+									matTooltipClass="vtr-system-tooltip"
+									(mouseenter)="ta.hide()"
 									id="{{linkId}}-{{item.id}}-detail">
 									{{item.detail}}
 								</div>

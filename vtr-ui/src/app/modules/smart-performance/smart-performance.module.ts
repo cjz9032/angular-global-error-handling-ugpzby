@@ -1,6 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 import { SmartPerformanceRoutingModule } from './smart-performance-routing.module';
 import { PageSmartPerformanceComponent } from '../../components/pages/page-smart-performance/page-smart-performance.component';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
@@ -19,7 +21,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 
-import { NgbModule, NgbDatepickerModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalSmartPerformanceCancelComponent } from '../../components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
 import { ModalSmartPerformanceSubscribeComponent } from '../../components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -65,7 +67,6 @@ import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-sm
 		FormsModule,
 		ReactiveFormsModule,
 		NgbDatepickerModule,
-		NgbTooltipModule,
 		PageLayoutModule,
 		HeaderMainModule,
 		FontAwesomeModule,
@@ -75,6 +76,7 @@ import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-sm
 		TranslationModule.forChild(),
 		UiButtonModule,
 		SharedModule,
+		MatTooltipModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [

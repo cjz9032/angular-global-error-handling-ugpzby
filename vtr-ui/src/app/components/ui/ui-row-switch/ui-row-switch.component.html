@@ -99,9 +99,8 @@
 						(click)="onResetClick($event)"
 						(keydown.enter)="onResetClick($event)"
 						[attr.aria-disabled]="disabledAll"
-						[ngbTooltip]="resetText"
-						tooltipClass="vtr-system-tooltip"
-						container="html">
+						[matTooltip]="resetText"
+						matTooltipClass="vtr-system-tooltip">
 						<span class="text-ellipsis d-block">{{ resetText }}</span>
 					</button>
 

@@ -15,6 +15,7 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { ContentSource } from 'src/app/enums/content.enum';
+import { MatTooltip } from '@lenovo/material/tooltip';
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -23,9 +24,6 @@ import { ContentSource } from 'src/app/enums/content.enum';
 	providers: [NgbCarouselConfig],
 })
 export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
-	@ViewChild(NgbCarousel) carouselContainer;
-	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
-	carouselModel: CarouselModel[] = [];
 	@Input() cardTitle: string;
 	@Input() source: string;
 	@Input() image: string;
@@ -40,12 +38,15 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 	@Input() order: number;
 	@Input() carouselId: string;
 	@ViewChild('containerSarousel', { static: false }) containerSarousel: ElementRef;
+	@ViewChild(NgbCarousel) carouselContainer;
+	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
+	carouselModel: CarouselModel[] = [];
 
 	public readonly slideIdFormat = 'ngb-slide-';
 
 	currentSlideId = `${this.slideIdFormat}0`;
 	isOnline = true;
-	closeTipTimer = null;
+
 	private displayDetectionTaskId;
 
 	constructor(
@@ -53,7 +54,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 		private commonService: CommonService,
 		private cardService: CardService,
 		private metricsService: MetricService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.config.interval = typeof this.interval !== 'undefined' ? this.interval : 5000;
@@ -136,7 +137,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 		return this.cardService.linkClicked(actionType, actionLink, false, title);
 	}
 
-	public swipe(e) {
+	swipe(e) {
 		if (this.carouselModel && this.carouselModel.length > 1) {
 			if (e.toLowerCase() === 'swiperight') {
 				this.carouselContainer.prev();
@@ -147,26 +148,14 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 			}
 		}
 	}
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case NetworkStatus.Online:
-				case NetworkStatus.Offline:
-					this.isOnline = notification.payload.isOnline;
-					break;
-				default:
-					break;
-			}
-		}
-	}
 
-	public onCarouselSlideChange($event: NgbSlideEvent) {
+	onCarouselSlideChange($event: NgbSlideEvent) {
 		if ($event.current) {
 			this.currentSlideId = $event.current;
 		}
 	}
 
-	public onCarouselKeyUp($event: KeyboardEvent) {
+	onCarouselKeyUp($event: KeyboardEvent) {
 		// enter key pressed
 		if ($event.key.toLowerCase() === 'enter') {
 			$event.preventDefault();
@@ -178,6 +167,19 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 		}
 	}
 
+	/**
+	 * Close tooltip after 3sec
+	 */
+	closeTipTimeout(tooltip: MatTooltip) {
+		if (tooltip._isTooltipVisible()) {
+			tooltip.hide(5000);
+		}
+	}
+
+	ngOnDestroy() {
+		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
+	}
+
 	private getIndexFromId(slideId: string): number {
 		if (slideId && slideId.length > 0) {
 			const index: string = slideId.split('-')[2];
@@ -186,28 +188,17 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 		return -1;
 	}
 
-	/**
-	 * Close tooltip manually
-	 */
-	public closeTip(tooltip: any) {
-		if (!tooltip.isOpen()) {
-			return true;
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					break;
+				default:
+					break;
+			}
 		}
-
-		tooltip.close();
-		if (this.closeTipTimer) {
-			clearTimeout(this.closeTipTimer);
-		}
-	}
-	/**
-	 * Close tooltip after 3sec
-	 */
-	public closeTipTimeout(tooltip: any) {
-		this.closeTipTimer = setTimeout(this.closeTip, 5000, tooltip);
-	}
-
-	public ngOnDestroy() {
-		this.metricsService.contentDisplayDetection.removeTask(this.displayDetectionTaskId);
 	}
 }
 

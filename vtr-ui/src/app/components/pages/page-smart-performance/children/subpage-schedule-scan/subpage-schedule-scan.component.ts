@@ -25,6 +25,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import moment from 'moment';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatTooltip } from '@lenovo/material/tooltip';
 
 @Component({
 	selector: 'vtr-subpage-schedule-scan',
@@ -38,7 +39,7 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private localCacheService: LocalCacheService,
 		private metricService: MetricService
-	) {}
+	) { }
 
 	// scan settings
 	@Output() scanDateValueChange = new EventEmitter();
@@ -730,15 +731,8 @@ export class SubpageScheduleScanComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	toggleTooltip(tooltip: any) {
-		if (tooltip.isOpen()) {
-			tooltip.close();
-			return;
-		}
-		if (!tooltip.isOpen()) {
-			tooltip.open();
-			return;
-		}
+	toggleTooltip(tooltip: MatTooltip) {
+		tooltip.toggle();
 	}
 
 	ngOnDestroy() {

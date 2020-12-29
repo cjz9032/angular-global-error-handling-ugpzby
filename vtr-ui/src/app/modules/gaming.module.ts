@@ -30,6 +30,8 @@ import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-
 import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
 import { WidgetAddedAppListComponent } from '../components/widgets/widget-added-app-list/widget-added-app-list.component';
 
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 // Load Icons for Gaming
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons/faQuestionCircle';
 import { faCog } from '@fortawesome/pro-light-svg-icons/faCog';
@@ -76,6 +78,7 @@ import { FeedbackModule } from './feedback/feedback.module';
 		NgbTooltipModule,
 		FeedbackModule,
 		PageLayoutModule,
+		MatTooltipModule,
 	],
 	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

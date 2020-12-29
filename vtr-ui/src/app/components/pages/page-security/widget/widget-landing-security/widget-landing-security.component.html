@@ -12,14 +12,14 @@
 						[ngClass]="{'status-enabled':item.status === 'enabled' || item.status === 'installed' ,
 						'status-disabled': item.status === 'disabled' || item.status === 'not-installed',
 						'status-loading': item.status === 'loading' || item.status === 'installing' || item.status === 'failedLoad'}"
-						[ngbTooltip]="item.detail" tooltipClass="vtr-system-tooltip" container="body"
+						[matTooltip]="item.detail" matTooltipClass="vtr-system-tooltip"
 						>
 						{{item.detail}}</span>
 					<span [hidden]="!item.showOwn" class="badge text-ellipsis status-haveOwn ml-auto"
 						title=""
 						role="text"
 						id="sa-ov-widget-security-badgeContent-{{i+1}}"
-						[ngbTooltip]="badgeContent | translate" tooltipClass="vtr-system-tooltip" container="body"
+						[matTooltip]="badgeContent | translate" matTooltipClass="vtr-system-tooltip"
 						>
 						{{badgeContent | translate}}</span>
 					<a [hidden]="item.status !== 'failedLoad'"
@@ -38,7 +38,7 @@
 						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
 						[routerLink]="item.buttonLink"
 						routerLinkActive="active"
-						[ngbTooltip]="item.buttonLabel" tooltipClass="vtr-system-tooltip" container="body"
+						[matTooltip]="item.buttonLabel" matTooltipClass="vtr-system-tooltip"
 						vtrMetrics
 						metricsEvent="FeatureClick"
 						[metricsItem]="item.id"
@@ -48,7 +48,7 @@
 						[color]="item.status === 'enabled'?'accent':'primary'"
 						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
 						(click)="goToSettings(item.buttonHref)"
-						[ngbTooltip]="item.buttonLabel" tooltipClass="vtr-system-tooltip" container="body"
+						[matTooltip]="item.buttonLabel" matTooltipClass="vtr-system-tooltip"
 						vtrMetrics
 						metricsEvent="FeatureClick"
 						[metricsItem]="item.id"
@@ -58,7 +58,7 @@
 						[color]="item.status === 'enabled'?'accent':'primary'"
 						class="mw-100 m-0 mb-3 font-weight-semibold uppercase btn-size-sm"
 						(click)="item.launch()"
-						[ngbTooltip]="item.buttonLabel" tooltipClass="vtr-system-tooltip" container="body"
+						[matTooltip]="item.buttonLabel" matTooltipClass="vtr-system-tooltip"
 						vtrMetrics
 						metricsEvent="FeatureClick"
 						[metricsItem]="item.id"

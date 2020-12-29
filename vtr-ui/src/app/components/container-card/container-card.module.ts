@@ -1,6 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { ContainerCardComponent } from './container-card.component';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
@@ -9,8 +11,8 @@ import { SanitizeModule } from 'src/app/modules/sanitize.module';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { ContainerCardOfflineComponent } from './container-card-offline/container-card-offline.component';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+
 
 @NgModule({
 	declarations: [ContainerCardComponent, ContainerCardOfflineComponent],
@@ -21,8 +23,8 @@ import { RouterModule } from '@angular/router';
 		MetricsModule,
 		FontAwesomeModule,
 		SanitizeModule,
-		NgbTooltipModule,
 		RouterModule,
+		MatTooltipModule,
 	],
 	exports: [ContainerCardComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

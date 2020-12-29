@@ -3,9 +3,8 @@
 		<div class="status-text">
 			<span id="{{statusId+'-status-text'}}" role="text" *ngIf="status !== SystemState.Loading"
 				class="text-uppercase text-three-ellipsis"  [innerHTML]="statusText | translate"
-				[ngbTooltip]="statusText| translate"
-				tooltipClass="vtr-system-tooltip"
-				container="body"></span>
+				[matTooltip]="statusText| translate"
+				matTooltipClass="vtr-system-tooltip"></span>
 			<div class="spinner" *ngIf="status === SystemState.Loading">
 				<div class="spinner-border progress-spinner" role="status"></div>
 			</div>

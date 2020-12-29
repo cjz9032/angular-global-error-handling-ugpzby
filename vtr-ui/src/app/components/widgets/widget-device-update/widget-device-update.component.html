@@ -87,9 +87,8 @@
 							class="btn btn-link cancel-check check-again"
 							(click)="onCheckForUpdates()"
 							[disabled]="isCheckingPluginStatus"
-							[ngbTooltip]="'systemUpdates.banner.checkAgain' | translate"
-							tooltipClass="vtr-system-tooltip"
-							container="body"
+							[matTooltip]="'systemUpdates.banner.checkAgain' | translate"
+							matTooltipClass="vtr-system-tooltip"
 							>{{'systemUpdates.banner.checkAgain' | translate}}</button>
 					</div>
 				</div>
@@ -119,8 +118,8 @@
 								metricsParent="Pages.SystemUpdate"
 								metricsItem="'btn.cancel'"
 								class="btn btn-link cancel-check"
-								[ngbTooltip]="'systemUpdates.banner.cancelCheck' | translate"
-								tooltipClass="vtr-system-tooltip"
+								[matTooltip]="'systemUpdates.banner.cancelCheck' | translate"
+								matTooltipClass="vtr-system-tooltip"
 								[disabled]="percent === 0 || isCheckingStatus || isCancelingStatus"
 								(click)="cancelUpdates()">{{'systemUpdates.banner.cancelCheck' | translate}}</button>
 						</div>
@@ -177,9 +176,9 @@
 								class="btn btn-link cancel-check"
 								[disabled]="downloadingPercent === 100 || downloadingPercent === 0"
 								(click)="onCancelUpdateDownload()"
-								[ngbTooltip]="'systemUpdates.banner.cancelUpdates' | translate"
-								tooltipClass="vtr-system-tooltip"
-								container="body">{{'systemUpdates.banner.cancelUpdates' | translate}}</button>
+								[matTooltip]="'systemUpdates.banner.cancelUpdates' | translate"
+								matTooltipClass="vtr-system-tooltip"
+							>{{'systemUpdates.banner.cancelUpdates' | translate}}</button>
 						</div>
 					</div>
 				</div>

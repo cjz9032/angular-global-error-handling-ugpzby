@@ -1,6 +1,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 import { SupportRoutingModule } from './support-routing.module';
 import { PageSupportComponent } from 'src/app/components/pages/page-support/page-support.component';
 
@@ -25,7 +27,7 @@ import { CommonPipeModule } from '../common/common-pipe.module';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
-import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FeedbackModule } from '../feedback/feedback.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
@@ -53,7 +55,7 @@ import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-cl
 		NgbModalModule,
 		FeedbackModule,
 		PageLayoutModule,
-		NgbTooltipModule,
+		MatTooltipModule,
 	],
 	providers: [SupportService, LicensesService],
 	exports: [UIArticleItemComponent, ContainerArticleComponent],

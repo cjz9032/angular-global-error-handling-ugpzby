@@ -20,10 +20,10 @@
 				<div class="d-inline-block pr-0">
 					<h3><span class="badge badge-pill text-uppercase"
 									[ngClass]="list.status | textClass"
-									title=""
 									role="text"
 									[id]="textId+'-install-status'"
-									[ngbTooltip]="list.status | statusText | translate | uppercase" tooltipClass="vtr-system-tooltip" container="body"
+									[matTooltip]="list.status | statusText | translate | uppercase"
+									matTooltipClass="vtr-system-tooltip"
 									>
 					{{ list.status | statusText | translate }}
 					</span></h3>

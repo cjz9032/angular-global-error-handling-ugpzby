@@ -27,6 +27,8 @@ import { RouterModule } from '@angular/router';
 import { faFlask } from '@fortawesome/pro-light-svg-icons/faFlask';
 import { ModalArticleDetailComponent } from '../components/modal/modal-article-detail/modal-article-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { CdkScrollableModule } from '@angular/cdk/scrolling';
 import { MatDialogModule } from '@lenovo/material/dialog';
 import {
 	MatRippleModule,
@@ -34,7 +36,7 @@ import {
 	RippleGlobalOptions,
 } from '@lenovo/material/core';
 import { MatSnackBarModule } from '@lenovo/material/snack-bar';
-import { MatTooltipModule, MatTooltipDefaultOptions, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@lenovo/material/tooltip';
+import { MatTooltipModule, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@lenovo/material/tooltip';
 
 import { faLaptop } from '@fortawesome/pro-light-svg-icons/faLaptop';
 import { faHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
@@ -86,19 +88,9 @@ import { faEllipsisH } from '@fortawesome/pro-light-svg-icons/faEllipsisH';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
 
+
 const globalRippleConfig: RippleGlobalOptions = {
 	disabled: true,
-	animation: {
-		enterDuration: 300,
-		exitDuration: 0,
-	},
-};
-
-const matTooltipDefaultOptions: MatTooltipDefaultOptions = {
-	showDelay: 0,
-	hideDelay: 0,
-	touchendHideDelay: 0,
-	position: 'above'
 };
 
 const initializerFactory = (initializerService: InitializerService) => () =>
@@ -161,6 +153,8 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 		MatRippleModule,
 		MatSnackBarModule,
 		MatTooltipModule,
+		CdkScrollableModule,
+		OverlayModule,
 	],
 	exports: [
 		NavbarModule,
@@ -189,9 +183,10 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 			deps: [InitializerService],
 			multi: true,
 		},
-		{ provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },
+		{ provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: { disabled: true } },
 		{
-			provide: MAT_TOOLTIP_DEFAULT_OPTIONS, useFactory: () => matTooltipDefaultOptions
+			provide: MAT_TOOLTIP_DEFAULT_OPTIONS,
+			useValue: { position: 'above', }
 		},
 	],
 	entryComponents: [

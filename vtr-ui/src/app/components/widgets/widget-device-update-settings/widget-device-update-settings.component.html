@@ -65,8 +65,8 @@
 													[popupTitle]="(item.isPopup && !item.isDriverPopup) ? 'gaming.dashboard.device.legionEdge.popup.text' : 'gaming.dashboard.device.legionEdge.driverPopup.headerText'">
 												</vtr-ui-gaming-driver-popup>
 												<fa-icon class=" question" triggers="click:blur" placement="auto"
-													[ngbTooltip]="item.tooltipText" [icon]="['far', 'question-circle']"
-													container="body" tooltipClass="vtr-tooltip">
+													[matTooltip]="item.tooltipText" [icon]="['far', 'question-circle']"
+													matTooltipClass="vtr-tooltip">
 												</fa-icon>
 											</a>
 											<a tabindex="-1" href="javascript:void();" class="link-text" *ngIf="!item.isSwitchVisible"

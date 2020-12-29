@@ -40,9 +40,9 @@
 						class="title text-two-ellipsis"
 						[title]=""
 						[innerHTML]="item.Title"
-						[ngbTooltip]="item.Title | htmlText"
-						tooltipClass="vtr-system-tooltip"
-						container="body"></div>
+						[matTooltip]="item.Title | htmlText"
+						matTooltipClass="vtr-system-tooltip"
+					></div>
 					<div class="logo-text">
 						<span *ngIf="item.LogoText && !item.Thumbnail">{{item.LogoText}}</span>
 					</div>
@@ -96,9 +96,9 @@
 					<div class="title text-two-ellipsis"
 						[title]=""
 						[innerHTML]="item.Title"
-						[ngbTooltip]="item.Title | htmlText"
-						tooltipClass="vtr-system-tooltip"
-						container="body"></div>
+						[matTooltip]="item.Title | htmlText"
+						matTooltipClass="vtr-system-tooltip"
+					></div>
 					<div class="logo-text">
 						<span *ngIf="item.BrandName && !item.FeatureImage">{{item.BrandName}}</span>
 					</div>

@@ -8,6 +8,8 @@ import {
 	NgbTooltipModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 import { CommonUiModule } from '../common/common-ui.module';
 import { HardwareScanRoutingModule } from './hardware-scan-routing.module';
 import { ModalWaitComponent } from './components/modal/modal-wait/modal-wait.component';
@@ -107,6 +109,7 @@ import { MatCardModule } from '@lenovo/material/card';
 		FontAwesomeModule,
 		SnapshotModule,
 		MatCardModule,
+		MatTooltipModule,
 	],
 	exports: [NgbCollapseModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
