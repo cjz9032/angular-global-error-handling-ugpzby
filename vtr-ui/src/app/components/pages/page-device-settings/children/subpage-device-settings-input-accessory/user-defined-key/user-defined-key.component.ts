@@ -19,7 +19,7 @@ import {
 	UDKActionInfo,
 } from './UDKActionInfo';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-declare var Windows;
+declare const Windows;
 
 @Component({
 	selector: 'vtr-user-defined-key',
