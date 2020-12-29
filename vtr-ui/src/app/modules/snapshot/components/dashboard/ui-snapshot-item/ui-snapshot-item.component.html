@@ -7,6 +7,7 @@
 				<img id="snapshot-item-{{ componentIndex }}-icon" *ngIf="getModuleIcon(name) !== ''"
 					alt="{{ name }}"
 					class="img-icon"
+					[ngClass]="{'img-icon-disabled':getModuleIcon(name).indexOf('disabled')!==-1}"
 					role="img"
 					[src]="getModuleIcon(name) | svgInline | async" />
 			</div>
