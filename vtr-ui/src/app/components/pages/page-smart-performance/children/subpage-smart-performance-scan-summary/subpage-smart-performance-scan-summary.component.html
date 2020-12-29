@@ -248,12 +248,12 @@
 								</div>
 
 							</div>
-							<div *ngIf="!isLoading && (!historyScanResultsDateTime || (historyScanResultsDateTime && historyScanResultsDateTime.length === 0))"
+							<div *ngIf="!isLoadingCanceledSummary && !isLoading && (!historyScanResultsDateTime || (historyScanResultsDateTime && historyScanResultsDateTime.length === 0))"
 								class="row pt-4 d-flex justify-content-between px-0 position-relative">
 								<h4 class="py-5"
 									id="smart-performance-scan-summary-noScanResults">{{'smartPerformance.noScanResults' |translate }}</h4>
 							</div>
-							<div *ngIf="isLoading || (historyScanResultsDateTime && 				       	historyScanResultsDateTime.length > 0)"
+							<div *ngIf="isLoadingCanceledSummary || isLoading || (historyScanResultsDateTime && historyScanResultsDateTime.length > 0)"
 								class="row pt-5 d-flex justify-content-between px-0 position-relative">
 								<div *ngIf="isLoading">
 									<div class="container"
@@ -265,7 +265,7 @@
 										</div>
 									</div>
 								</div>
-								<div *ngIf="!isLoading"
+								<div *ngIf="!isLoading && !isLoadingCanceledSummary"
 									class="tune">
 									<div class="d-flex">
 										<div class="w-100">
@@ -315,7 +315,7 @@
 
 									</div>
 								</div>
-								<div *ngIf="!isLoading"
+								<div *ngIf="!isLoading && !isLoadingCanceledSummary"
 									class="boost">
 									<div class="d-flex">
 										<div class="w-100">
@@ -365,7 +365,7 @@
 
 									</div>
 								</div>
-								<div *ngIf="!isLoading"
+								<div *ngIf="!isLoading && !isLoadingCanceledSummary"
 									class="secure">
 									<div class="d-flex">
 										<div class="w-100">
