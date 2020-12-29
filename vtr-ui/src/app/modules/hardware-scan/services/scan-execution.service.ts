@@ -72,13 +72,17 @@ export class ScanExecutionService {
 		this.hardwareScanService.watcherProcess.subscribe((status) => {
 			switch (status) {
 				case WatcherStepProcess.Start:
-					this.checkCliRunning(10000, () => {
+					const startIntervalTime = 10000;
+
+					this.checkCliRunning(startIntervalTime, () => {
 						this.hardwareScanService.setEnableViewResults(false);
 					});
 					break;
 				case WatcherStepProcess.Intermediate:
+					const intermediateIntervalTime = 4000;
+
 					clearInterval(this.cancelWatcher);
-					this.checkCliRunning(4000, () => {
+					this.checkCliRunning(intermediateIntervalTime, () => {
 						this.hardwareScanService.setEnableViewResults(false);
 					});
 					break;
@@ -607,7 +611,9 @@ export class ScanExecutionService {
 					// If it closes and no response is received (through isWorkDone() subject), the front-end will
 					// be redirected to the HardwareScan home page (forcing an init through a refresh modules call), preventing
 					// that the application gets stuck.
-					this.checkCliRunning(3000, () => {
+					const cancelWaitIntervalTime = 3000;
+
+					this.checkCliRunning(cancelWaitIntervalTime, () => {
 						modalCancel.close();
 						if (this.cancelHandler && this.cancelHandler.cancel) {
 							this.cancelHandler.cancel();
