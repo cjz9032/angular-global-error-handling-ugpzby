@@ -404,7 +404,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
-	scanNow() {
+
+	tryScan() {
 		if (this.isOnline) {
 			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
 			this.localCacheService.setLocalCacheValue(
@@ -610,21 +611,27 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 					this.activatedRoute.snapshot.queryParams.action === 'start'
 				) {
 					this.scanNow();
-					await this.commonService.delay(3000);
-					let precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
-					let retry = 0;
-					// retry 3 times if scan does not launched
-					while ((!precent || precent < 1) && retry < 3) {
-						this.logger.info(`retry to launch scan: ${retry}`);
-						this.scanNow();
-						await this.commonService.delay(3000);
-						precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
-						retry++;
-					}
 				}
 			}
 		);
 	}
+
+	scanNow() {
+		this.tryScan();
+		let retry = 0;
+		const scanTimer = setInterval(() => {
+			const precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
+			// retry 10 times if scan does not launched
+			if ((!precent || precent < 1) && retry < 10) {
+				this.logger.info(`retry to launch scan: ${retry}`);
+				this.tryScan();
+				retry++;
+			} else {
+				clearInterval(scanTimer);
+			}
+		}, 3000);
+	}
+
 	setScanResultsAndStatus(res: any) {
 		this.rating = res.rating;
 		this.leftAnimator = (this.rating * 10 - 0).toString() + '%';
