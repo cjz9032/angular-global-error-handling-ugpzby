@@ -33,8 +33,8 @@
 			<ng-template #updateButton>
 				<vtr-ui-hyperlink-button
 					class="hyperlink-container update-btn"
-					[metricsParent]="'Snapshot'"
-					[metricsItem]="'Snapshot.UpdateSnapshotModule'"
+					[metricsParent]="metricsParent"
+					[metricsItem]="metricsItemName + '.Update'"
 					linkId="snapshot-update-btn"
 					hyperlinkStyle="xs-blue-lighter"
 					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "

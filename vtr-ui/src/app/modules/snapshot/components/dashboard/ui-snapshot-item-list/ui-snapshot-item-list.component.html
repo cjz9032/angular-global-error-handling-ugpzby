@@ -4,6 +4,8 @@
 			<vtr-ui-snapshot-item
 				[name]='item.name'
 				[component]="item.content"
+				[metricsParent]="metricsParent"
+				[metricsItemName]="getMetricsName(item.name)"
 				[componentIndex]="i">
 				[isLastElement]="last"
 			</vtr-ui-snapshot-item>
