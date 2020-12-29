@@ -159,7 +159,7 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: '',
+			menuId: 'power',
 			route: '',
 			params: []
 		}
