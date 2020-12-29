@@ -351,10 +351,6 @@ export class CommonService {
 		return '';
 	}
 
-	public delay(milliseconds: number) {
-		return new Promise(() => setTimeout(() => { }, milliseconds));
-	}
-
 	public markPerformanceNode(name: string) {
 		window.performance.mark(name);
 	}
