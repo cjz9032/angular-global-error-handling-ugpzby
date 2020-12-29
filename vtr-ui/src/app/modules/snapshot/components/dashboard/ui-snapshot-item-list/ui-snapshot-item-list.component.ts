@@ -42,6 +42,6 @@ export class UiSnapshotItemListComponent implements OnInit {
 	ngOnInit(): void {}
 
 	public getMetricsName(itemName: any): string {
-		return this.itemsMetricsName.get(itemName) ? this.itemsMetricsName.get(itemName) : itemName;
+		return this.itemsMetricsName.get(itemName) || itemName;
 	}
 }
