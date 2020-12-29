@@ -153,6 +153,13 @@ button:focus {
 	}
 }
 
+.mat-customize-button,
+.mat-checkbox,
+.mat-tooltip,
+.mat-tooltip-handset {
+	font-family: inherit;
+}
+
 .cdk-overlay-container {
 	z-index: 10002;
 }
