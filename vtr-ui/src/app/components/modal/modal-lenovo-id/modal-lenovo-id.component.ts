@@ -194,7 +194,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 					this.userService
 						.enableSSO(useruad, username, userid, userguid)
 						.then((result) => {
-							if (result.success && result.status === 0) {
+							if (result.success && result.status === 0 && !this.userService.auth) {
 								this.userService.hasFirstName = Boolean(firstname);
 								this.userService.setName(firstname, lastname);
 								this.userService.setAuth(true);
