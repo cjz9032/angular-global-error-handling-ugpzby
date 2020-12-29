@@ -76,7 +76,7 @@ export class ScanExecutionService {
 						this.hardwareScanService.setEnableViewResults(false);
 					});
 					break;
-				case WatcherStepProcess.Itermediate:
+				case WatcherStepProcess.Intermediate:
 					clearInterval(this.cancelWatcher);
 					this.checkCliRunning(4000, () => {
 						this.hardwareScanService.setEnableViewResults(false);

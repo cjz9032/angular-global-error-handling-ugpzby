@@ -88,6 +88,6 @@ export enum ExportLogExtensions {
 
 export enum WatcherStepProcess {
 	Start,
-	Itermediate,
+	Intermediate,
 	Stop,
 }

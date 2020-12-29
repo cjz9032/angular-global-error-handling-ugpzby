@@ -432,7 +432,7 @@ export class HardwareScanService {
 					payload,
 					(response: any) => {
 						// Start an intermediate timer
-						this.watcherProcess.emit(WatcherStepProcess.Itermediate);
+						this.watcherProcess.emit(WatcherStepProcess.Intermediate);
 
 						// Keeping track of the latest response allows the right render when user
 						// navigates to another page and then come back to the Hardware Scan page
