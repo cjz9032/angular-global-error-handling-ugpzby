@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 import { HardwareScanService } from '../services/hardware-scan.service';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 import { ContentActionType } from 'src/app/enums/content.enum';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 import { SnapshotService } from '../../snapshot/services/snapshot.service';
 
 @Component({
@@ -37,7 +36,6 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		private hardwareScanService: HardwareScanService,
 		private translate: TranslateService,
 		private router: Router,
-		private windowsVerisonService: WindowsVersionService,
 		private snapshotService: SnapshotService
 	) {}
 
@@ -67,9 +65,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		Object.assign(this.hardwareScanSupportCard, {
 			Id: 'HardwareScan.DiagnosticsTools',
 			Title: this.translate.instant('hardwareScan.support.title'),
-			FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/support.webp'
-				: 'assets/images/support.jpg',
+			FeatureImage: 'assets/images/support.jpg',
 			Action: 'Read More',
 			ActionType: ContentActionType.External,
 			ActionLink: 'https://pcsupport.lenovo.com/lenovodiagnosticsolutions/downloads',

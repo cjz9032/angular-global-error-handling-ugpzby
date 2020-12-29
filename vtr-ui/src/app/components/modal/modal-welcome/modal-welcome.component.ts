@@ -26,7 +26,6 @@ import { GamingScenario } from 'src/app/enums/gaming-scenario.enum';
 import { InitializerService } from 'src/app/services/initializer/initializer.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { DccService } from 'src/app/services/dcc/dcc.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 import { SettingsService } from 'src/app/services/settings/settings.service';
 
 @Component({
@@ -58,33 +57,25 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			id: 'business-use',
 			value: this.segmentConst.SMB,
 			textKey: 'welcometutorial.segments.smb',
-			image: this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/welcome/business-use.webp'
-				: 'assets/images/welcome/business-use.jpg',
+			image: 'assets/images/welcome/business-use.jpg',
 		},
 		{
 			id: 'personal-use',
 			value: this.segmentConst.ConsumerBase,
 			textKey: 'welcometutorial.segments.consumer',
-			image: this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/welcome/personal-use.webp'
-				: 'assets/images/welcome/personal-use.jpg',
+			image: 'assets/images/welcome/personal-use.jpg',
 		},
 		{
 			id: 'personal-gaming-use',
 			value: this.segmentConst.ConsumerGaming,
 			textKey: 'welcometutorial.segments.consumerGaming',
-			image: this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/welcome/personal-gaming-use.webp'
-				: 'assets/images/welcome/personal-gaming-use.jpg',
+			image: 'assets/images/welcome/personal-gaming-use.jpg',
 		},
 		{
 			id: 'personal-education-use',
 			value: this.segmentConst.ConsumerEducation,
 			textKey: 'welcometutorial.segments.consumerEducation',
-			image: this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/welcome/personal-education-use.webp'
-				: 'assets/images/welcome/personal-education-use.jpg',
+			image: 'assets/images/welcome/personal-education-use.jpg',
 		},
 	];
 	allGamingScenarios = [
@@ -92,25 +83,19 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			id: 'gaming',
 			value: this.gamingScenarios.Gaming,
 			textKey: 'welcometutorial.gaming.gamingOnly',
-			image: this.windowsVerisonService.isNewerThanRS4()
-				? 'gaming-only.webp'
-				: 'gaming-only.jpg',
+			image: 'gaming-only.jpg',
 		},
 		{
 			id: 'gaming-and-work',
 			value: this.gamingScenarios.GamingAndWork,
 			textKey: 'welcometutorial.gaming.gamingAndWork',
-			image: this.windowsVerisonService.isNewerThanRS4()
-				? 'gaming-work.webp'
-				: 'gaming-work.jpg',
+			image: 'gaming-work.jpg',
 		},
 		{
 			id: 'non-gaming',
 			value: this.gamingScenarios.NonGaming,
 			textKey: 'welcometutorial.gaming.nonGaming',
-			image: this.windowsVerisonService.isNewerThanRS4()
-				? 'non-gaming.webp'
-				: 'non-gaming.jpg',
+			image: 'non-gaming.jpg',
 		},
 	];
 	allGamingFeatures = [
@@ -167,8 +152,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		public metricService: MetricService,
 		private localCacheService: LocalCacheService,
 		private initializerService: InitializerService,
-		private dccService: DccService,
-		private windowsVerisonService: WindowsVersionService
+		private dccService: DccService
 	) {
 		this.metrics = shellService.getMetrics();
 
@@ -342,9 +326,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	private updateHeaderImage(segment: SegmentConst) {
 		if (segment === SegmentConst.SMB) {
-			this.dccService.headerBackground = this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/HeaderImageSmb.webp'
-				: 'assets/images/HeaderImageSmb.png';
+			this.dccService.headerBackground = 'assets/images/HeaderImageSmb.png';
 		}
 	}
 

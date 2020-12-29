@@ -44,7 +44,6 @@ import { BacklightService } from '../pages/page-device-settings/children/subpage
 import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-menu-main-legacy',
@@ -100,9 +99,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		M5LjYgCQkiLz4NCgkJPHBvbHlnb24gY2xhc3M9InN0MiIgcG9pbnRzPSIxOTQuOCwxNjIuOSAxMjEuMywxNjIuOSAxMjEuMywzOS42IDg4LjUsMzkuN
 		iA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=
 		`;
-	gamingLogo = this.windowsVerisonService.isNewerThanRS4()
-		? 'assets/images/gaming/gaming-logo-small.webp'
-		: 'assets/images/gaming/gaming-logo-small.png';
+	gamingLogo = 'assets/images/gaming/gaming-logo-small.png';
 	private backlightCapabilitySubscription: Subscription;
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
 	// activeDropdown: NgbDropdown;
@@ -136,8 +133,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		private feedbackService: FeedbackService,
 		private localCacheService: LocalCacheService,
 		private backlightService: BacklightService,
-		private hypService: HypothesisService,
-		private windowsVerisonService: WindowsVersionService
+		private hypService: HypothesisService
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
 	}
@@ -545,7 +541,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		}
 		this.navbarToggler.nativeElement.focus();
 	}
-
 
 	menuItemKeyDown(path, subpath?) {
 		if (path) {

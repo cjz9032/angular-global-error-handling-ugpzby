@@ -5,19 +5,17 @@
 				<video #cameraPreview
 					id="camera-preview"
 					*ngIf="!disabledAll && !isCameraInErrorState"
-					class="feed"></video>
-				<picture>
-					<source srcset="assets/images/hardware-settings/camera-disable.webp" type="image/webp">
-					<img class="feed disable"
-						*ngIf="disabledAll && !isCameraInErrorState"
-						src="assets/images/hardware-settings/camera-disable.png"
-						title=""
-						id="camera-notAvailable"
-						role="img"
-						[ngbTooltip]="'device.deviceSettings.displayCamera.camera.notAvailable' | translate"
-						tooltipClass="vtr-system-tooltip"
-						container="body" />
-				</picture>
+					class="feed">
+				</video>
+				<img class="feed disable"
+					*ngIf="disabledAll && !isCameraInErrorState"
+					src="assets/images/hardware-settings/camera-disable.png"
+					title=""
+					id="camera-notAvailable"
+					role="img"
+					[ngbTooltip]="'device.deviceSettings.displayCamera.camera.notAvailable' | translate"
+					tooltipClass="vtr-system-tooltip"
+					container="body" />
 				<div class="error"
 					*ngIf="isCameraInErrorState">
 					<div class="error-title"

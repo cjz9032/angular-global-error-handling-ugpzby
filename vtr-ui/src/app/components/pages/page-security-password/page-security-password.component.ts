@@ -13,7 +13,6 @@ import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { FeatureIntroduction } from '../../ui/ui-feature-introduction/ui-feature-introduction.component';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -39,8 +38,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		private modalService: NgbModal,
 		public vantageShellService: VantageShellService,
 		private guard: GuardService,
-		private router: Router,
-		private windowsVerisonService: WindowsVersionService
+		private router: Router
 	) {}
 
 	ngOnInit() {
@@ -53,9 +51,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		this.featureIntroduction = {
 			featureTitle: '',
 			featureTitleDesc: '',
-			imgSrc: this.windowsVerisonService.isNewerThanRS4()
-				? 'assets/images/Dashlane-no-left-img.webp'
-				: 'assets/images/Dashlane-no-left-img.png',
+			imgSrc: 'assets/images/Dashlane-no-left-img.png',
 			imgAlt: '',
 			featureSubtitle: '',
 			featureIntroList: [],

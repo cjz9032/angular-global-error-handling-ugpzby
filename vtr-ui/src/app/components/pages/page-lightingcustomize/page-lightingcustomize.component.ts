@@ -13,7 +13,6 @@ import { Gaming } from './../../../enums/gaming.enum';
 import { LocalStorageKey } from './../../../enums/local-storage-key.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-page-lightingcustomize',
@@ -44,8 +43,7 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		public dashboardService: DashboardService,
 		private translate: TranslateService,
 		public deviceService: DeviceService,
-		private router: Router,
-		private windowsVerisonService: WindowsVersionService
+		private router: Router
 	) {
 		this.metrics = this.shellService.getMetrics();
 		this.route.params.subscribe((params) => {
@@ -136,15 +134,11 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 
 		if (!this.isOnline) {
 			this.cardContentPositionC = {
-				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-					? 'assets/cms-cache/GamingPosC.webp'
-					: 'assets/cms-cache/GamingPosC.jpg',
+				FeatureImage: 'assets/cms-cache/GamingPosC.jpg',
 			};
 
 			this.cardContentPositionF = {
-				FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-					? 'assets/cms-cache/lighting_offline.webp'
-					: 'assets/cms-cache/lighting_offline.jpg',
+				FeatureImage: 'assets/cms-cache/lighting_offline.jpg',
 			};
 		}
 	}

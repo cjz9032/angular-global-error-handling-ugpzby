@@ -16,7 +16,6 @@ import {
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ColorWheelStatus } from 'src/app/enums/color-wheel-status.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 import { LightingDataList } from './../../../data-models/gaming/lighting-new-version/lighting-data-list';
 
 @Component({
@@ -72,91 +71,67 @@ export class UiLightingProfileComponent implements OnInit {
 		{
 			panelType: 1,
 			colorRGB: 1,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'C530@2x.webp'
-				: 'C530@2x.png',
+			panelImage: 'C530@2x.png',
 		},
 		{
 			panelType: 2,
 			colorRGB: 255,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'T730Front@2x.webp'
-				: 'T730Front@2x.png',
+			panelImage: 'T730Front@2x.png',
 		},
 		{
 			panelType: 2,
 			colorRGB: 1,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'T530@2x.webp'
-				: 'T530@2x.png',
+			panelImage: 'T530@2x.png',
 		},
 		{
 			panelType: 4,
 			colorRGB: 255,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'renRGBFront@2x.webp'
-				: 'renRGBFront@2x.png',
+			panelImage: 'renRGBFront@2x.png',
 		},
 		{
 			panelType: 4,
 			colorRGB: 1,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'renFront@2x.webp'
-				: 'renFront@2x.png',
+			panelImage: 'renFront@2x.png',
 		},
 		{
 			panelType: 8,
 			colorRGB: 255,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'T730Side@2x.webp'
-				: 'T730Side@2x.png',
+			panelImage: 'T730Side@2x.png',
 		},
 		{
 			panelType: 16,
 			colorRGB: 255,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'T730Side@2x.webp'
-				: 'T730Side@2x.png',
+			panelImage: 'T730Side@2x.png',
 		},
 		{
 			panelType: 32,
 			colorRGB: 255,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'C730Left@2x.webp'
-				: 'C730Left@2x.png',
+			panelImage: 'C730Left@2x.png',
 		},
 		{
 			panelType: 64,
 			colorRGB: 255,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'C730Right@2x.webp'
-				: 'C730Right@2x.png',
+			panelImage: 'C730Right@2x.png',
 		},
 		{
 			panelType: 128,
 			colorRGB: 1,
-			panelImage: this.windowsVerisonService.isNewerThanRS4() ? 'ren@2x.webp' : 'ren@2x.png',
+			panelImage: 'ren@2x.png',
 		},
 		{
 			panelType: 256,
 			colorRGB: 1,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'T530Perspective@2x.webp'
-				: 'T530Perspective@2x.png',
+			panelImage: 'T530Perspective@2x.png',
 		},
 		{
 			panelType: 32,
 			colorRGB: 1,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'C530Left@2x.webp'
-				: 'C530Left@2x.png',
+			panelImage: 'C530Left@2x.png',
 		},
 		{
 			panelType: 64,
 			colorRGB: 1,
-			panelImage: this.windowsVerisonService.isNewerThanRS4()
-				? 'C530Right@2x.webp'
-				: 'C530Right@2x.png',
+			panelImage: 'C530Right@2x.png',
 		},
 	];
 	optionsSingleColor = [
@@ -190,8 +165,7 @@ export class UiLightingProfileComponent implements OnInit {
 		private gamingLightingService: GamingLightingService,
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
-		private deviceService: DeviceService,
-		private windowsVerisonService: WindowsVersionService
+		private deviceService: DeviceService
 	) {}
 
 	ngOnInit() {
@@ -283,7 +257,8 @@ export class UiLightingProfileComponent implements OnInit {
 				if (this.lightingCapabilities.LightPanelType.length > 0) {
 					const ledPanel = this.lightingCapabilities.LightPanelType[0];
 					const resultImg = this.panelImageData.filter(
-						(v) => v.panelType === ledPanel && v.colorRGB === ledRGB);
+						(v) => v.panelType === ledPanel && v.colorRGB === ledRGB
+					);
 					if (resultImg.length > 0) {
 						this.panelImage1 = this.imagePath + '/' + resultImg[0].panelImage;
 					}
@@ -291,7 +266,8 @@ export class UiLightingProfileComponent implements OnInit {
 					if (this.lightingCapabilities.LightPanelType.length > 1) {
 						const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
 						const resultImg2 = this.panelImageData.filter(
-							(v) => v.panelType === ledPanel2 && v.colorRGB === ledRGB);
+							(v) => v.panelType === ledPanel2 && v.colorRGB === ledRGB
+						);
 						if (resultImg2.length > 0) {
 							this.panelImage2 = this.imagePath + '/' + resultImg2[0].panelImage;
 						}
@@ -449,7 +425,8 @@ export class UiLightingProfileComponent implements OnInit {
 				if (this.lightingCapabilities.LightPanelType.length > 0) {
 					const ledPanel = this.lightingCapabilities.LightPanelType[0];
 					const resultImg = this.panelImageData.filter(
-						(v) => v.panelType === ledPanel && v.colorRGB === ledRGB);
+						(v) => v.panelType === ledPanel && v.colorRGB === ledRGB
+					);
 					if (resultImg.length > 0) {
 						this.panelImage1 = this.imagePath + '/' + resultImg[0].panelImage;
 					}
@@ -457,7 +434,8 @@ export class UiLightingProfileComponent implements OnInit {
 					if (this.lightingCapabilities.LightPanelType.length > 1) {
 						const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
 						const resultImg2 = this.panelImageData.filter(
-							(v) => v.panelType === ledPanel2 && v.colorRGB === ledRGB);
+							(v) => v.panelType === ledPanel2 && v.colorRGB === ledRGB
+						);
 						if (resultImg2.length > 0) {
 							this.panelImage2 = this.imagePath + '/' + resultImg2[0].panelImage;
 						}
@@ -520,14 +498,16 @@ export class UiLightingProfileComponent implements OnInit {
 					if (this.lightingCapabilities.LightPanelType.length > 0) {
 						const ledPanel = this.lightingCapabilities.LightPanelType[0];
 						const resultImg = this.panelImageData.filter(
-							(v) => v.panelType === ledPanel && v.colorRGB === ledRGB);
+							(v) => v.panelType === ledPanel && v.colorRGB === ledRGB
+						);
 						if (resultImg.length > 0) {
 							this.panelImage1 = this.imagePath + '/' + resultImg[0].panelImage;
 						}
 						if (this.lightingCapabilities.LightPanelType.length > 1) {
 							const ledPanel2 = this.lightingCapabilities.LightPanelType[1];
 							const resultImg2 = this.panelImageData.filter(
-								(v) => v.panelType === ledPanel2 && v.colorRGB === ledRGB);
+								(v) => v.panelType === ledPanel2 && v.colorRGB === ledRGB
+							);
 							if (resultImg2.length > 0) {
 								this.panelImage2 = this.imagePath + '/' + resultImg2[0].panelImage;
 							}
@@ -1379,7 +1359,8 @@ export class UiLightingProfileComponent implements OnInit {
 
 	public getLightEffectOptionName(optionValue: any) {
 		const result = this.lightingEffectData.drop[0].dropOptions.filter(
-			(obj) => obj.value === optionValue);
+			(obj) => obj.value === optionValue
+		);
 		return result;
 	}
 

@@ -6,7 +6,6 @@ import { LightingDataList } from 'src/app/data-models/gaming/lighting-new-versio
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from '../../../services/metric/metrics.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
 	selector: 'vtr-widget-lighting-desk',
@@ -42,8 +41,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 		private localCacheService: LocalCacheService,
 		private gamingLightingService: GamingLightingService,
 		private logger: LoggerService,
-		private metrics: MetricService,
-		private windowsVerisonService: WindowsVersionService
+		private metrics: MetricService
 	) {}
 
 	ngOnInit() {
@@ -552,23 +550,20 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 								this.ledlayoutversion === 3 &&
 								lightingCapabilitiesRes.LightPanelType.indexOf(16) > -1
 							) {
-								this.lightingProfileCurrentDetail.panelImage = this.windowsVerisonService.isNewerThanRS4()
-									? 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.webp'
-									: 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
+								this.lightingProfileCurrentDetail.panelImage =
+									'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png';
 							} else if (
 								this.ledlayoutversion === 5 &&
 								lightingCapabilitiesRes.LightPanelType.indexOf(16) > -1
 							) {
-								this.lightingProfileCurrentDetail.panelImage = this.windowsVerisonService.isNewerThanRS4()
-									? 'assets/images/gaming/lighting/lighting-ui-new/T750_water.webp'
-									: 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
+								this.lightingProfileCurrentDetail.panelImage =
+									'assets/images/gaming/lighting/lighting-ui-new/T750_water.png';
 							} else if (
 								this.ledlayoutversion === 4 &&
 								lightingCapabilitiesRes.LightPanelType.indexOf(16) > -1
 							) {
-								this.lightingProfileCurrentDetail.panelImage = this.windowsVerisonService.isNewerThanRS4()
-									? 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.webp'
-									: 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png';
+								this.lightingProfileCurrentDetail.panelImage =
+									'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png';
 								if (this.lightingProfileCurrentDetail.lightPanelType === 128) {
 									this.lightingProfileCurrentDetail.pathUrl =
 										'M112,74.863197 L112.916507,74.8674839 C126.299053,74.9928726 137,77.8531206 137,81.363197 C137,84.9131607 126.054468,87.7984431 112.459257,87.8621223 L112,87.863197 C98.1928813,87.863197 87,' +
@@ -840,71 +835,49 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 			if (this.ledlayoutversion === 3) {
 				this.getCurrentPanelImg(
 					4,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T550_wind_cold.png'
 				);
 				this.getCurrentPanelImg(
 					16,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T550_water_cold.png'
 				);
 				this.getCurrentPanelImg(
 					64,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T550_big_y.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T550_big_y.png'
 				);
 				this.getCurrentPanelImg(
 					128,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T550G_front_line.png'
 				);
 				this.getCurrentPanelImg(
 					256,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T550_front.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T550_front.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T550_front.png'
 				);
 			} else if (this.ledlayoutversion === 5) {
 				this.getCurrentPanelImg(
 					4,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T750_wind.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T750_wind.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T750_wind.png'
 				);
 				this.getCurrentPanelImg(
 					16,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T750_water.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T750_water.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T750_water.png'
 				);
 				this.getCurrentPanelImg(
 					256,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T750_fct.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T750_fct.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T750_fct.png'
 				);
 			} else if (this.ledlayoutversion === 4) {
 				this.getCurrentPanelImg(
 					8,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T550AMD_wind.png'
 				);
 				this.getCurrentPanelImg(
 					16,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T550AMD_water.png'
 				);
 				this.getCurrentPanelImg(
 					256,
-					this.windowsVerisonService.isNewerThanRS4()
-						? 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.webp'
-						: 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.png'
+					'assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.png'
 				);
 			}
 		}

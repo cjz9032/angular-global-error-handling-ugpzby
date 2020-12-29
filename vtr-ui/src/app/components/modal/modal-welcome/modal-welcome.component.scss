@@ -60,8 +60,7 @@
 	}
 
 	.banner-page-1 {
-		background: url('^assets/images/welcome/header-1.webp') no-repeat,
-			url('^assets/images/welcome/header-1.jpg') no-repeat;
+		background: url('^assets/images/welcome/header-1.jpg') no-repeat;
 		background-size: cover;
 		background-position: center;
 		width: 100%;
@@ -97,8 +96,7 @@
 	}
 
 	.banner-page-2 {
-		background: url('^assets/images/welcome/header-2.webp'),
-			url('^assets/images/welcome/header-2.jpg') no-repeat;
+		background: url('^assets/images/welcome/header-2.jpg') no-repeat;
 		background-size: cover;
 		height: 10rem;
 		width: 100%;
@@ -905,15 +903,13 @@
 		}
 
 		.banner-page-1 {
-			background: url('^assets/images/welcome/gaming-header-1.webp'),
-				url('^assets/images/welcome/gaming-header-1.jpg') no-repeat;
+			background: url('^assets/images/welcome/gaming-header-1.jpg') no-repeat;
 			background-size: cover;
 			background-position: center;
 		}
 
 		.banner-page-2 {
-			background: url('^assets/images/welcome/gaming-header-2.webp'),
-				url('^assets/images/welcome/gaming-header-2.jpg') no-repeat;
+			background: url('^assets/images/welcome/gaming-header-2.jpg') no-repeat;
 			background-size: cover;
 			background-position: center;
 		}

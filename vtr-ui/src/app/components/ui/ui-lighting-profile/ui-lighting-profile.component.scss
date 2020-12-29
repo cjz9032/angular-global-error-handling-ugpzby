@@ -26,8 +26,7 @@
 		}
 		::ng-deep {
 			input[type='range']::-webkit-slider-thumb {
-				background-image: url('^assets/gaming-icons/Brightness@2x.webp'),
-					url('^assets/gaming-icons/Brightness@2x.png');
+				background-image: url('^assets/gaming-icons/Brightness@2x.png');
 				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: 100%;
@@ -39,8 +38,7 @@
 					background: none;
 				}
 				&:hover {
-					background-image: url('^assets/gaming-icons/Brightness@2x.webp'),
-						url('^assets/gaming-icons/Brightness@2x.png');
+					background-image: url('^assets/gaming-icons/Brightness@2x.png');
 					background-position: center center;
 					background-repeat: no-repeat;
 					background-size: 100%;
@@ -59,25 +57,20 @@
 		margin-top: 2.2rem;
 		background: $gaming_lighting_profile_bg;
 		border-radius: 0.5rem;
-		background: url(^assets/images/gaming/lighting/blueBG.webp) left center no-repeat,
-			url(^assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_bg;
+		background: url(^assets/images/gaming/lighting/blueBG.png) left center no-repeat $gaming_bg;
 		background-size: contain;
 		padding: 2rem;
 		@media #{$small-screen} {
-			background: url(^assets/images/gaming/lighting/blueBG-horizontal.webp) center top
-					no-repeat,
-				url(^assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat
-					$gaming_bg;
+			background: url(^assets/images/gaming/lighting/blueBG-horizontal.png) center top
+				no-repeat $gaming_bg;
 			background-size: 100% auto;
 			.d-flex {
 				flex-direction: column;
 			}
 		}
 		@media #{$below-large-screen} {
-			background: url(^assets/images/gaming/lighting/blueBG-horizontal.webp) center top
-					no-repeat,
-				url(^assets/images/gaming/lighting/blueBG-horizontal.png) center top no-repeat
-					$gaming_lighting_profile_bg;
+			background: url(^assets/images/gaming/lighting/blueBG-horizontal.png) center top
+				no-repeat $gaming_lighting_profile_bg;
 			background-size: 100% auto;
 			.d-flex {
 				flex-direction: column;

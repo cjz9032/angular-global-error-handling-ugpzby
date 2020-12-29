@@ -53,8 +53,4 @@ export class WindowsVersionService {
 	public isRS4(): boolean {
 		return this.currentBuildVersion <= this.VERSION_REDSTONE_4;
 	}
-
-	public isNewerThanRS4(): boolean {
-		return this.currentBuildVersion > this.VERSION_REDSTONE_4;
-	}
 }

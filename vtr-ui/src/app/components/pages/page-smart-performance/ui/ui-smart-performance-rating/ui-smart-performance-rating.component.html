@@ -5,21 +5,15 @@
 		#sliderContainer>
 		<div class="vertical-lines-bg"
 			*ngIf="!isLight">
-			<picture>
-				<source srcset="assets/images/smart-performance/sp-rating-bar-bg.webp" type="image/webp">
-				<img [style.width.px]="sliderContainer.clientWidth"
-					src="assets/images/smart-performance/sp-rating-bar-bg.png"
-					alt="">
-			</picture>
+			<img [style.width.px]="sliderContainer.clientWidth"
+				src="assets/images/smart-performance/sp-rating-bar-bg.png"
+				alt="">
 		</div>
 		<div class="vertical-lines"
 			[ngStyle]="{'width': leftAnimator}">
-			<picture>
-				<source srcset="assets/images/smart-performance/sp-rating-bar.webp" type="image/webp">
-				<img [style.width.px]="sliderContainer.clientWidth"
-					src="assets/images/smart-performance/sp-rating-bar.png"
-					alt="">
-			</picture>
+			<img [style.width.px]="sliderContainer.clientWidth"
+				src="assets/images/smart-performance/sp-rating-bar.png"
+				alt="">
 		</div>
 		<div class="rating-value"
 			*ngIf="!hidePointer">

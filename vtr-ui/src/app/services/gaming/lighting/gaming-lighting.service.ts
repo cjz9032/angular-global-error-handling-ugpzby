@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -10,20 +9,13 @@ export class GamingLightingService {
 	public isShellAvailable = false;
 
 	public cardContentPositionF: any = {
-		FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-			? 'assets/cms-cache/content-card-4x4-support.webp'
-			: 'assets/cms-cache/content-card-4x4-support.jpg',
+		FeatureImage: 'assets/cms-cache/content-card-4x4-support.jpg',
 	};
 	public cardContentPositionB: any = {
-		FeatureImage: this.windowsVerisonService.isNewerThanRS4()
-			? 'assets/cms-cache/Security4x3-zone2.webp'
-			: 'assets/cms-cache/Security4x3-zone2.jpg',
+		FeatureImage: 'assets/cms-cache/Security4x3-zone2.jpg',
 	};
 
-	constructor(
-		shellService: VantageShellService,
-		private windowsVerisonService: WindowsVersionService
-	) {
+	constructor(shellService: VantageShellService) {
 		this.getGamingLighting = shellService.getGamingLighting();
 		if (this.getGamingLighting) {
 			this.isShellAvailable = true;

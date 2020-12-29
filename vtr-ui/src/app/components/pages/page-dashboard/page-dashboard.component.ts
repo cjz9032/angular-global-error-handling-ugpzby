@@ -51,7 +51,6 @@ import {
 	securityStatus,
 	getSecurityLevel,
 } from 'src/app/data-models/security-advisor/security-status';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 import { PerformanceNotifications } from 'src/app/enums/performance-notifications.enum';
 
 interface IConfigItem {
@@ -302,8 +301,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private localCacheService: LocalCacheService,
 		private metricsService: MetricService,
 		private contentLocalCache: ContentCacheService,
-		private windowsHelloService: WindowsHelloService,
-		private windowsVerisonService: WindowsVersionService
+		private windowsHelloService: WindowsHelloService
 	) {}
 
 	ngOnInit() {
@@ -531,9 +529,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				id: '',
 				source: 'VANTAGE',
 				title: 'Lenovo exclusive offer of Adobe designer suite',
-				url: this.windowsVerisonService.isNewerThanRS4()
-					? 'assets/images/dcc/hero-banner-dcc.webp'
-					: 'assets/images/dcc/hero-banner-dcc.jpg',
+				url: 'assets/images/dcc/hero-banner-dcc.jpg',
 				ActionLink: 'dcc-demo',
 				ActionType: ContentActionType.Internal,
 				DataSource: ContentSource.Local,
@@ -880,7 +876,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 	ngAfterViewInit() {
 		this.commonService.markPerformanceNode('dashboard');
-		this.commonService.sendNotification(PerformanceNotifications.firstPageInitialized, 'dashboard');
+		this.commonService.sendNotification(
+			PerformanceNotifications.firstPageInitialized,
+			'dashboard'
+		);
 		this.metricsService.activateScrollCounter(PageName.Dashboard);
 	}
 
