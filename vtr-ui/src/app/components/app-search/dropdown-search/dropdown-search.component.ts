@@ -57,7 +57,9 @@ export class SearchDropdownComponent {
 	}
 
 	onClickSearch($event, metricEvent) {
-		var userInput = this.searchInput.nativeElement.value.trim();
+		const userInput = this.mergeAndTrimSpace(this.searchInput.nativeElement.value);
+		this.searchInput.nativeElement.value = userInput;
+
 		if (!userInput) {
 			$event.stopPropagation();
 			return;
@@ -79,5 +81,9 @@ export class SearchDropdownComponent {
 		this.router.navigate(['search'], {
 			queryParams: { userInput },
 		});
+	}
+
+	private mergeAndTrimSpace(source) {
+		return source?.trim().replace(/ +(?= )/g,'') || '';
 	}
 }
