@@ -85,3 +85,9 @@ export enum ExportLogExtensions {
 	pdf = 'pdf',
 	html = 'html',
 }
+
+export enum WatcherStepProcess {
+	Start,
+	Itermediate,
+	Stop,
+}
