@@ -425,11 +425,13 @@ export class HardwareScanService {
 			// next times the Main page is shown.
 			this.showComponentList = true;
 
+			// Start the initial timer
 			this.watcherProcess.emit(WatcherStepProcess.Start);
 			return this.hardwareScanBridge
 				.getDoScan(
 					payload,
 					(response: any) => {
+						// Start an intermediate timer
 						this.watcherProcess.emit(WatcherStepProcess.Itermediate);
 
 						// Keeping track of the latest response allows the right render when user
@@ -442,7 +444,9 @@ export class HardwareScanService {
 					cancelHandler
 				)
 				.then((response) => {
+					// Stop the current timer
 					this.watcherProcess.emit(WatcherStepProcess.Stop);
+
 					if (response !== null && response.finalResultCode !== null) {
 						this.commonService.setSessionStorageValue(
 							SessionStorageKey.HwScanHasExportLogData,

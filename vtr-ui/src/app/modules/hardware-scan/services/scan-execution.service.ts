@@ -64,6 +64,11 @@ export class ScanExecutionService {
 		this.culture = this.hardwareScanService.getCulture();
 		this.metrics = this.shellService.getMetrics();
 
+		// Used to manage a watcher from scan process.
+		// If front-end receive a response after checkCliRunning timer is over,
+		// the timer resets and the workflow starts again.
+		// If front-end doesn't receive a response from checkCliRunning, it get reloaded
+		// to prevent an incorrect scan execution view.
 		this.hardwareScanService.watcherProcess.subscribe((status) => {
 			switch (status) {
 				case WatcherStepProcess.Start:
