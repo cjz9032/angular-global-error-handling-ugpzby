@@ -6,6 +6,7 @@ import {
 	TaskType,
 	HardwareScanTestResult,
 	HardwareScanProtocolModule,
+	WatcherStepProcess,
 } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ModalPreScanInfoComponent } from '../components/modal/modal-pre-scan-info/modal-pre-scan-info.component';
@@ -42,6 +43,7 @@ export class ScanExecutionService {
 	private modulesStored: any;
 	private batteryMessage: string;
 	private lastModules: HardwareScanProtocolModule;
+	private cancelWatcher;
 
 	private cancelHandler = {
 		cancel: undefined,
@@ -61,6 +63,37 @@ export class ScanExecutionService {
 	) {
 		this.culture = this.hardwareScanService.getCulture();
 		this.metrics = this.shellService.getMetrics();
+
+		// Used to manage a watcher from scan process.
+		// If front-end receive a response after checkCliRunning timer is over,
+		// the timer resets and the workflow starts again.
+		// If front-end doesn't receive a response from checkCliRunning, it get reloaded
+		// to prevent an incorrect scan execution view.
+		this.hardwareScanService.watcherProcess.subscribe((status) => {
+			switch (status) {
+				case WatcherStepProcess.Start:
+					const startIntervalTime = 10000;
+
+					this.checkCliRunning(startIntervalTime, () => {
+						this.hardwareScanService.setEnableViewResults(false);
+					});
+					break;
+				case WatcherStepProcess.Intermediate:
+					const intermediateIntervalTime = 4000;
+
+					clearInterval(this.cancelWatcher);
+					this.checkCliRunning(intermediateIntervalTime, () => {
+						this.hardwareScanService.setEnableViewResults(false);
+					});
+					break;
+				case WatcherStepProcess.Stop:
+					clearInterval(this.cancelWatcher);
+					break;
+				default:
+					clearInterval(this.cancelWatcher);
+					break;
+			}
+		});
 	}
 
 	// Getters and Setters
@@ -364,125 +397,6 @@ export class ScanExecutionService {
 		this.validateBatteryModal(preScanInformationRequest, taskType, requests);
 	}
 
-	private validateBatteryModal(preScanInfo: any, taskType: TaskType, requests: any) {
-		this.batteryMessage = '';
-
-		this.hardwareScanService.getPreScanInfo(preScanInfo).then((response) => {
-			for (const message of response.MessageList) {
-				if (message.id === 'connect-power') {
-					this.batteryMessage = message.description;
-				}
-			}
-
-			if (this.batteryMessage !== '') {
-				const modal: NgbModalRef = this.modalService.open(ModalPreScanInfoComponent, {
-					backdrop: 'static',
-					size: 'lg',
-					centered: true,
-					windowClass: 'hardware-scan-modal-size',
-					ariaLabelledBy: 'hwscan-pre-scan-info-modal-title',
-				});
-
-				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
-
-				(modal.componentInstance as ModalPreScanInfoComponent).error = this.translate.instant(
-					'hardwareScan.warning'
-				);
-				(modal.componentInstance as ModalPreScanInfoComponent).description = this.batteryMessage;
-				(modal.componentInstance as ModalPreScanInfoComponent).ItemParent = this.getMetricsParentValue();
-				(modal.componentInstance as ModalPreScanInfoComponent).CancelItemName = this.getMetricsItemNameClose();
-				(modal.componentInstance as ModalPreScanInfoComponent).ConfirmItemName = this.getMetricsItemNameConfirm();
-
-				modal.result.then(
-					(result) => {
-						this.getDoScan(requests);
-						// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
-						this.startScanClicked = false;
-					},
-					() => {
-						this.hardwareScanService.cleanCustomTests();
-						// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
-						this.startScanClicked = false;
-					}
-				);
-			} else {
-				this.getDoScan(requests);
-			}
-		});
-	}
-
-	/*
-	 * Used to start a scan, 0 is a quick scan, and 1 is a custom scan
-	 */
-	private getDoScan(requests: any): any {
-		this.progress = 0;
-
-		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
-
-		const payload = {
-			requests,
-			categories: [],
-			localizedItems: [],
-		};
-
-		if (this.hardwareScanService) {
-			this.timerService.start();
-
-			this.itemParentCancelScan = this.getMetricsParentValue();
-			this.itemNameCancelScan = this.getMetricsItemNameCancel();
-
-			this.hardwareScanService.setFinalResponse(null);
-			this.hardwareScanService
-				.getDoScan(payload, this.modules, this.cancelHandler)
-				.then((response) => {
-					this.cleaningUpScan(response);
-					this.showSupportPopupIfNeeded();
-				})
-				.catch((ex: any) => {
-					// Clean up the scan variables when occurs a power event (CLI stopped brusquely)
-					this.hardwareScanService.setIsScanDone(false);
-					this.hardwareScanService.setScanExecutionStatus(false);
-					this.hardwareScanService.setRecoverExecutionStatus(false);
-
-					return undefined;
-				})
-				.finally(() => {
-					this.cleaningUpScan(undefined);
-
-					const metricsResult = this.getMetricsTaskResult();
-					this.sendTaskActionMetrics(
-						this.hardwareScanService.getCurrentTaskType(),
-						metricsResult.countSuccesses,
-						'',
-						metricsResult.scanResultJson,
-						this.timerService.stop()
-					);
-
-					// Defines information about module details
-					this.onViewResults();
-					this.modules.forEach((module) => {
-						module.expanded = true;
-					});
-				});
-		}
-
-		return false;
-	}
-
-	private cleaningUpScan(response: any): boolean {
-		if (response) {
-			this.hardwareScanService.setFinalResponse(response);
-		}
-
-		this.startScanClicked = false;
-		if (!this.hardwareScanService.isCancelRequested()) {
-			this.hardwareScanService.setEnableViewResults(true);
-		} else {
-			return true;
-		}
-		return false;
-	}
-
 	public async showSupportPopupIfNeeded() {
 		const finalResponse = this.hardwareScanService.getFinalResponse();
 		if (finalResponse) {
@@ -690,43 +604,27 @@ export class ScanExecutionService {
 			scanFinished.unsubscribe();
 
 			if (this.hardwareScanService) {
-				let cancelWatcher;
-
 				if (!isCancelingRBS) {
-					const cancelWatcherDelay = 3000;
-					const self = this;
-					const checkCliRunning = () => {
-						// Workaround for RTC changing date/time problem!
-						// NOTICE: Remove this code piece as soon as this problem is fixed
-						cancelWatcher = setInterval(function watch() {
-							self.hardwareScanService.getStatus().then((result: any) => {
-								if (!result.isScanInProgress) {
-									clearInterval(cancelWatcher);
-									self.hardwareScanService.setIsScanDone(true);
-									self.hardwareScanService.setScanExecutionStatus(false);
-									self.hardwareScanService.setScanOrRBSFinished(true);
-									self.cleaningUpScan(undefined);
-									self.refreshModules();
-									modalCancel.close();
-									if (self.cancelHandler && self.cancelHandler.cancel) {
-										self.cancelHandler.cancel();
-									}
-								}
-							});
-						}, cancelWatcherDelay);
-					};
+					clearInterval(this.cancelWatcher);
 
 					// Let's start monitoring the CLI during the cancelation process.
 					// If it closes and no response is received (through isWorkDone() subject), the front-end will
 					// be redirected to the HardwareScan home page (forcing an init through a refresh modules call), preventing
 					// that the application gets stuck.
-					checkCliRunning();
+					const cancelWaitIntervalTime = 3000;
+
+					this.checkCliRunning(cancelWaitIntervalTime, () => {
+						modalCancel.close();
+						if (this.cancelHandler && this.cancelHandler.cancel) {
+							this.cancelHandler.cancel();
+						}
+					});
 				}
 				this.hardwareScanService.cancelScanExecution();
 
 				this.hardwareScanService.isWorkDone().subscribe((done) => {
 					if (!isCancelingRBS) {
-						clearInterval(cancelWatcher);
+						clearInterval(this.cancelWatcher);
 					}
 					if (done) {
 						// When the cancelation is done, close the cancelation dialog.
@@ -740,6 +638,29 @@ export class ScanExecutionService {
 				});
 			}
 		});
+	}
+
+	public checkCliRunning(time, callBack = undefined) {
+		const cancelWatcherDelay = time;
+
+		// Workaround for RTC changing date/time problem!
+		// NOTICE: Remove this code piece as soon as this problem is fixed
+		this.cancelWatcher = setInterval(() => {
+			this.hardwareScanService.getStatus().then((result: any) => {
+				if (!result.isScanInProgress) {
+					clearInterval(this.cancelWatcher);
+					this.hardwareScanService.setIsScanDone(true);
+					this.hardwareScanService.setScanExecutionStatus(false);
+					this.hardwareScanService.setScanOrRBSFinished(true);
+					this.cleaningUpScan(undefined);
+					this.refreshModules();
+
+					if (callBack) {
+						callBack();
+					}
+				}
+			});
+		}, cancelWatcherDelay);
 	}
 
 	public refreshModules() {
@@ -764,6 +685,125 @@ export class ScanExecutionService {
 				);
 			}
 		});
+	}
+
+	private validateBatteryModal(preScanInfo: any, taskType: TaskType, requests: any) {
+		this.batteryMessage = '';
+
+		this.hardwareScanService.getPreScanInfo(preScanInfo).then((response) => {
+			for (const message of response.MessageList) {
+				if (message.id === 'connect-power') {
+					this.batteryMessage = message.description;
+				}
+			}
+
+			if (this.batteryMessage !== '') {
+				const modal: NgbModalRef = this.modalService.open(ModalPreScanInfoComponent, {
+					backdrop: 'static',
+					size: 'lg',
+					centered: true,
+					windowClass: 'hardware-scan-modal-size',
+					ariaLabelledBy: 'hwscan-pre-scan-info-modal-title',
+				});
+
+				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
+
+				(modal.componentInstance as ModalPreScanInfoComponent).error = this.translate.instant(
+					'hardwareScan.warning'
+				);
+				(modal.componentInstance as ModalPreScanInfoComponent).description = this.batteryMessage;
+				(modal.componentInstance as ModalPreScanInfoComponent).ItemParent = this.getMetricsParentValue();
+				(modal.componentInstance as ModalPreScanInfoComponent).CancelItemName = this.getMetricsItemNameClose();
+				(modal.componentInstance as ModalPreScanInfoComponent).ConfirmItemName = this.getMetricsItemNameConfirm();
+
+				modal.result.then(
+					(result) => {
+						this.getDoScan(requests);
+						// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
+						this.startScanClicked = false;
+					},
+					() => {
+						this.hardwareScanService.cleanCustomTests();
+						// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
+						this.startScanClicked = false;
+					}
+				);
+			} else {
+				this.getDoScan(requests);
+			}
+		});
+	}
+
+	/*
+	 * Used to start a scan, 0 is a quick scan, and 1 is a custom scan
+	 */
+	private getDoScan(requests: any): any {
+		this.progress = 0;
+
+		this.hardwareScanService.setCurrentTaskStep(TaskStep.Run);
+
+		const payload = {
+			requests,
+			categories: [],
+			localizedItems: [],
+		};
+
+		if (this.hardwareScanService) {
+			this.timerService.start();
+
+			this.itemParentCancelScan = this.getMetricsParentValue();
+			this.itemNameCancelScan = this.getMetricsItemNameCancel();
+
+			this.hardwareScanService.setFinalResponse(null);
+			this.hardwareScanService
+				.getDoScan(payload, this.modules, this.cancelHandler)
+				.then((response) => {
+					this.cleaningUpScan(response);
+					this.showSupportPopupIfNeeded();
+				})
+				.catch((ex: any) => {
+					// Clean up the scan variables when occurs a power event (CLI stopped brusquely)
+					this.hardwareScanService.setIsScanDone(false);
+					this.hardwareScanService.setScanExecutionStatus(false);
+					this.hardwareScanService.setRecoverExecutionStatus(false);
+
+					return undefined;
+				})
+				.finally(() => {
+					this.cleaningUpScan(undefined);
+
+					const metricsResult = this.getMetricsTaskResult();
+					this.sendTaskActionMetrics(
+						this.hardwareScanService.getCurrentTaskType(),
+						metricsResult.countSuccesses,
+						'',
+						metricsResult.scanResultJson,
+						this.timerService.stop()
+					);
+
+					// Defines information about module details
+					this.onViewResults();
+					this.modules.forEach((module) => {
+						module.expanded = true;
+					});
+				});
+		}
+
+		return false;
+	}
+
+	private cleaningUpScan(response: any): boolean {
+		if (response) {
+			this.hardwareScanService.setFinalResponse(response);
+		}
+
+		this.startScanClicked = false;
+		if (!this.hardwareScanService.isCancelRequested()) {
+			this.hardwareScanService.setEnableViewResults(true);
+		} else {
+			return true;
+		}
+		return false;
 	}
 
 	// Metrics purposes
