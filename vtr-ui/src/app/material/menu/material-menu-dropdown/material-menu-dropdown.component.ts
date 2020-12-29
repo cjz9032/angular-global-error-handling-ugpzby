@@ -34,6 +34,11 @@ export class MaterialMenuDropdownComponent implements OnInit {
 		}
 	}
 
+	public onSearchItemFocus($event) {
+		// pass focus to search box
+		$event.currentTarget.querySelector('#dropdown-div-search-input')?.focus();
+	}
+
 	public openExternalLink(link) {
 		if (link) {
 			window.open(link);

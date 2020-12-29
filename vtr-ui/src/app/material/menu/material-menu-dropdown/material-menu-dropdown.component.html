@@ -5,7 +5,9 @@
 	attr.aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{dropdownMenu.id}}"
 	xPosition="before">
 	<section *ngIf="dropdownMenu.id==='app-search'">
-		<vtr-search-dropdown></vtr-search-dropdown>
+		<div mat-menu-item (focus)="onSearchItemFocus($event)">
+			<vtr-search-dropdown ></vtr-search-dropdown>
+		</div>
 	</section>
 	<section *ngIf="!hasSecondaryMenu && dropdownMenu.id!=='user'">
 		<ng-container *ngFor="let subitem of dropdownMenu.subitems; let i=index">
