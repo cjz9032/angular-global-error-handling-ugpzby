@@ -32,6 +32,7 @@ export class CameraControlComponent implements OnInit, OnDestroy {
 	@Input() cameraFeatureAccess: CameraFeatureAccess;
 	@Input() manualRefresh: any;
 	@Input() disabledAll = false;
+	@Input() cameraPermission = true;
 	@Output() brightnessChange: EventEmitter<number> = new EventEmitter();
 	@Output() contrastChange: EventEmitter<number> = new EventEmitter();
 	@Output() exposureChange: EventEmitter<number> = new EventEmitter();

@@ -87,7 +87,7 @@
 								[componentId]="'cameraSettings-autoExposure'"></vtr-ui-custom-switch>
 						</div>
 					</div>
-					<div *ngIf="!cameraFeatureAccess.exposureAutoValue">
+					<div *ngIf="!cameraFeatureAccess.exposureAutoValue && cameraPermission">
 						<vtr-ui-custom-slider [hidden]="!cameraFeatureAccess.showAutoExposureSlider"
 							[step]="cameraSettings.exposure.step"
 							[min]="cameraSettings.exposure.min"
