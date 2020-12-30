@@ -6,7 +6,8 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
-					<ul class="system-tool-icons d-flex justify-content-around" [ngClass]="{'list-overflow-6': toolLength === 6}">
+					<ul class="system-tool-icons d-flex justify-content-around" 
+						[ngClass]="{'list-overflow-5': toolLength === 5, 'list-overflow-6': toolLength === 6, 'list-overflow-7': toolLength === 7, 'list-overflow-8': toolLength === 8}">
 						<li>
 							<a  aria-label="system update" vtrMetrics
 								[metricsItem]="'systemtools_system_update'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard"
@@ -84,16 +85,50 @@
 						</li>
 
 						<li *ngIf="showLegionAccessory">
-							<button class="button-container" (click)="launchAccessory()"
-							 tabindex="1"  id="systemtools_legion_accessory_central_icon" aria-label="legion accessory central" role="button"
-							 vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
+							<button class="button-container" (click)="launchThirdPartyApp('accessory')"
+								tabindex="1"  id="systemtools_legion_accessory_central_icon" aria-label="legion accessory central" role="button"
+								vtrMetrics [metricsItem]="'systemtools_legion_accessory'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
 								<a tabindex="-1">
 									<figure>
 										<div class="system-icon" title="">
-											<img class="image"/>
+											<img class="image accessoryImg"/>
 										</div>
 										<figcaption class="system-tool-title" title="{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}">
 											{{'gaming.dashboard.device.systemTools.legionAccessory' | translate}}
+										</figcaption>
+									</figure>
+								</a>
+							</button>
+						</li>
+
+						<li *ngIf="showNahimic">
+							<button class="button-container" (click)="launchThirdPartyApp('nahimic')"
+								tabindex="1"  id="systemtools_nahimic_icon" aria-label="nahimic" role="button"
+								vtrMetrics [metricsItem]="'systemtools_nahimic'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
+								<a tabindex="-1">
+									<figure>
+										<div class="system-icon" title="">
+											<img class="image nahimicImg"/>
+										</div>
+										<figcaption class="system-tool-title" title="Nahimic">
+											Nahimic
+										</figcaption>
+									</figure>
+								</a>
+							</button>
+						</li>
+
+						<li *ngIf="showXRite">
+							<button class="button-container" (click)="launchThirdPartyApp('xRite')"
+								tabindex="1"  id="systemtools_x_rite_icon" aria-label="X-Rite Color Assistant" role="button"
+								vtrMetrics [metricsItem]="'systemtools_x_rite'" metricsEvent="featureClick" metricsParent="Gaming.Dashboard">
+								<a tabindex="-1">
+									<figure>
+										<div class="system-icon" title="">
+											<img class="image xRiteImg"/>
+										</div>
+										<figcaption class="system-tool-title" title="X-Rite Color Assistant">
+											X-Rite Color Assistant
 										</figcaption>
 									</figure>
 								</a>

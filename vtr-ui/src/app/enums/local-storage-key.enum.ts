@@ -185,9 +185,13 @@ export enum LocalStorageKey {
 	overDriveFeature = '[LocalStorageKey] OverDriveFeature',
 	overDriveStatus = '[LocalStorageKey] OverDriveStatus',
 	accessoryFeature = '[LocalStorageKey] AccessoryFeature',
+
 	hardwareScanFeature = '[LocalStorageKey] HardwareScanFeature',
 	// Version 3.5 auto adjust in thermal mode 3
 	autoAdjustSettings = '[LocalStorageKey] AutoAdjustSettings',
+	// Version 3.5 third party app in system tool
+	nahimicFeature = '[LocalStorageKey] Nahicim',
+	xRiteFeature = '[LocalStorageKey] XRite',
 
 	// this enum is for macrokey local storage key
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',
