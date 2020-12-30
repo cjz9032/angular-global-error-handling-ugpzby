@@ -59,7 +59,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		public shellServices: VantageShellService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.percent = 0;
@@ -111,7 +111,9 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		}
 		this.responseData = response;
 		this.scanData = response.payload;
-		this.percent = this.scanData.percentage;
+		if (!(this.percent === 0 && this.scanData.percentage === 100)) {
+			this.percent = this.scanData.percentage;
+		}
 		const catVal = this.scanData.status.category;
 		const subCatVal = this.scanData.status.subcategory;
 
