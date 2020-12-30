@@ -341,7 +341,8 @@
 												(exposureToggle)="onCameraAutoExposureToggle($event)"
 												(cameraAvailable)="onCameraAvailable($event)"
 												[disabledAll]="shouldCameraSectionDisabled"
-												(cameraDisable)="cameraDisabled($event)">
+												(cameraDisable)="cameraDisabled($event)"
+												[cameraPermission]="cameraPrivacyModeStatus.permission">
 											</vtr-camera-control>
 										</div>
 									</div>
