@@ -1671,6 +1671,13 @@
 					.title{
 						color: $white100;
 					}
+					&.modified-module{
+						.collapse-control{
+							fa-icon{
+								color: $dark40;
+							}
+						}
+					}
 					.collapse-control{
 						fa-icon{
 							color: $white60;
