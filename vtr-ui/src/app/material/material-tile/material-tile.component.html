@@ -3,24 +3,28 @@
 	[ngClass]="{'tile-removable': removable}"
 	[removable]="removable"
 	(removed)="remove(tileItem)">
-	<mat-icon *ngIf="removable" matChipRemove class="remove-icon mb-2 align-self-end">close</mat-icon>
-	<div class="d-flex tile-container px-3 pb-3 align-items-center justify-content-center"
-		[ngClass]="{'flex-column': !isHorizontal}">
-		<img class="tile-icon" src="{{tileItem.iconSrc}}" alt="" srcset="">
-		<span class="tile-name" [innerHTML]="tileItem.name"></span>
+	<mat-icon *ngIf="removable" matChipRemove class="remove-icon text-center position-absolute m-2 align-self-end">close</mat-icon>
+	<div class="d-flex tile-container px-3 pb-3 mt-5 align-items-center justify-content-center"
+		[ngClass]="{'flex-column h-100': !isHorizontal,
+					'mt-5': removable}">
+		<div class="row align-items-center tile"
+			[ngClass]="{'flex-column h-100': !isHorizontal}">
+			<img *ngIf="tileItem?.iconSrc" class="tile-icon" src="{{tileItem.iconSrc}}" alt="" srcset="">
+			<mat-icon *ngIf="tileItem?.matIcon" [svgIcon]="tileItem.matIcon"></mat-icon>
+			<span class="tile-name text-two-ellipsis" [innerHTML]="tileItem?.name"></span>
+		</div>
 		<div *ngIf="addible"
 			class="button-container">
 			<button mat-customize-button
-				[color]="tileItem.buttonType === 'selected'?'primary':'accent'"
+				[color]="tileItem?.buttonType === 'selected'?'primary':'accent'"
 				class="tile-button"
 				(click)="add(tileItem)"
-				[disabled]="tileItem.buttonType === 'disabled'">
-				<mat-icon *ngIf="tileItem.buttonType === 'selected'; else addTemp"
+				[disabled]="tileItem?.buttonType === 'disabled'">
+				<mat-icon *ngIf="tileItem?.buttonType === 'selected'; else addTemp"
 					class="check-icon">check</mat-icon>
 				<ng-template #addTemp>
 					<mat-icon class="add-icon">add</mat-icon>
 				</ng-template>
-
 			</button>
 		</div>
 	</div>

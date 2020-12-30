@@ -1,0 +1,35 @@
+@import '../../app.theme';
+
+.vtr-material-tile {
+	background: transparent;
+	border-radius: 0.5rem;
+	flex: 0 0 20%;
+	max-width: 20%;
+	min-width: 13rem;
+	padding: 0 1.5rem 1.5rem;
+
+	.tile-container {
+		min-width: 10rem;
+		max-width: 15rem;
+		::ng-deep {
+			.tile-icon {
+				min-width: 5rem;
+				max-width: 10rem;
+				margin-bottom: 1rem;
+			}
+			.tile-name {
+				font-size: 1.4rem;
+			}
+		}
+		.add-border {
+			width: 5rem;
+			height: 5rem;
+			border: 0.1rem solid $menu_hover;
+			border-radius: 0.5rem;
+			.mat-icon {
+				font-size: 5rem;
+				color: $blue-lighter;
+			}
+		}
+	}
+}
