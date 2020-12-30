@@ -148,7 +148,13 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		//1. parse query parameter
 		this.paramSubscription = this.activateRoute.queryParams
 			.subscribe(params => {
-				const userInput = params.userInput?.trim();
+
+				/*
+				 * should not set this.userInput directly here, subscription will be triggered
+				 * with empty param when you click search button on the page at the first time
+				 * you enter search page.
+				 */
+				const userInput = this.mergeAndTrimSpace(params.userInput);
 				if (userInput) {
 					this.userInput = userInput;
 					this.fireSearch(userInput);
@@ -175,7 +181,9 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		if (metricEvent) {
 			this.metricService.sendMetrics(metricEvent);
 		}
-		this.fireSearch(this.userInput?.trim());
+
+		this.userInput =  this.mergeAndTrimSpace(this.userInput);
+		this.fireSearch(this.userInput);
 	}
 
 	onClickResultItem(feature: IFeature) {
@@ -235,7 +243,7 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		const searchStart = Date.now();
 		this.searchCompleted = false;
 		this.updatePageTitle();
-		this.populateSearchResults(this.searchService.search(this.userInput));
+		this.populateSearchResults(this.searchService.search(userInput));
 		this.updatePageArray();
 		this.updateResultView(0);
 		this.searchCompleted = true;
@@ -319,5 +327,9 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		});
 
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
+	}
+
+	private mergeAndTrimSpace(source) {
+		return source?.trim().replace(/ +(?= )/g,'') || '';
 	}
 }
