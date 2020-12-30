@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.43](https://bitbucket.tc.lenovo.com///compare/v1.9.42...v1.9.43) (2020-12-30)
+
+
+### Bug Fixes
+
+* use material tooltip ([7807b93](https://bitbucket.tc.lenovo.com///commit/7807b93a55308acb00f640511e857f2b790b26f6))
+* **SP:** VAN-24674 cancel scan show summary ([c93ddc8](https://bitbucket.tc.lenovo.com///commit/c93ddc84ebad7080ff0a82d66d6e04618abb9553))
+
 ### [1.9.42](https://bitbucket.tc.lenovo.com///compare/v1.9.41...v1.9.42) (2020-12-29)
 
 
