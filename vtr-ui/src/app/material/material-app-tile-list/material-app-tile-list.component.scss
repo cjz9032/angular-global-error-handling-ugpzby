@@ -11,15 +11,13 @@
 	.tile-container {
 		min-width: 10rem;
 		max-width: 15rem;
-		::ng-deep {
-			.tile-icon {
-				min-width: 5rem;
-				max-width: 10rem;
-				margin-bottom: 1rem;
-			}
-			.tile-name {
-				font-size: 1.4rem;
-			}
+		.tile-icon {
+			min-width: 5rem;
+			max-width: 10rem;
+			margin-bottom: 1rem;
+		}
+		.tile-name {
+			font-size: 1.4rem;
 		}
 		.add-border {
 			width: 5rem;
