@@ -11,10 +11,13 @@
 		background: $gray_darker;
 	}
 	.remove-icon {
+		font-size: 2.5rem;
 		color: $menu_hover;
 		cursor: pointer;
 	}
 	.tile-container {
+		min-width: 10rem;
+		max-width: 15rem;
 		::ng-deep {
 			.tile-icon {
 				min-width: 4rem;
@@ -23,6 +26,7 @@
 			}
 			.tile-name {
 				font-size: 1.4rem;
+				text-align: center;
 			}
 		}
 		.add-border {

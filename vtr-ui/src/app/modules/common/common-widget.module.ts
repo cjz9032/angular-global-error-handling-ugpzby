@@ -4,6 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatIconModule } from '@lenovo/material/icon';
 
 import { SharedModule } from '../shared.module';
 import { WidgetDeviceComponent } from 'src/app/components/widgets/widget-device/widget-device.component';
@@ -22,6 +23,7 @@ import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/w
 import { MaterialSvgCircleComponent } from 'src/app/material/material-svg-circle/material-svg-circle.component';
 import { MaterialStatusCircleComponent } from 'src/app/material/material-status-circle/material-status-circle.component';
 import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
+import { MaterialAppTileListComponent } from 'src/app/material/material-app-tile-list/material-app-tile-list.component';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		MaterialSvgCircleComponent,
 		MaterialStatusCircleComponent,
 		WidgetRoundStatusComponent,
+		MaterialAppTileListComponent,
 	],
 	exports: [
 		WidgetDeviceComponent,
@@ -51,6 +54,7 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		MaterialSvgCircleComponent,
 		MaterialStatusCircleComponent,
 		WidgetRoundStatusComponent,
+		MaterialAppTileListComponent,
 	],
 	imports: [
 		CommonModule,
@@ -61,6 +65,7 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		WidgetSupportModule,
 		NgbTooltipModule,
 		MatTooltipModule,
+		MatIconModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
