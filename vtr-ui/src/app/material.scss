@@ -32,6 +32,15 @@ $mat-van-theme-background: (
 	tooltips: (
 		bg-tooltip: $light,
 	),
+	toggle: (
+		bg-on: linear-gradient(135deg, $green_darker 0%, $green-light 100%),
+		bg-on-thumb: $light,
+		bg-on-pressed: $green-light,
+		bg-on-hover: $green_darker,
+		bg-off: $grey_light,
+		bg-off-thumb: $shade_blue,
+		bg-disabled: $shade_blue,
+	),
 );
 
 $mat-van-theme-foreground: (
@@ -82,6 +91,21 @@ $mat-van-theme-foreground: (
 		color-tooltip-text: $grey_darker,
 		style-tooltip-border: 0.1rem solid $grey_darker,
 	),
+	toggle: (
+		color-border-off: $grey_dark,
+		style-shadow: (
+			0px -0.15px 0px 2px $shade_extralight,
+			-0.15px 0px 0px 3.7px $menu_hover,
+		),
+		style-shadow-high-contrast-white: (
+			0px -0.15px 0px 2px $light,
+			-0.15px 0px 0px 3.7px $dark,
+		),
+		style-shadow-high-contrast-black: (
+			0px -0.15px 0px 2px $dark,
+			-0.15px 0px 0px 3.7px $light,
+		),
+	),
 );
 $van-theme: (
 	100: $button_gradient_start,
@@ -127,6 +151,16 @@ $van-ui-layout: (
 		layout-checkbox-size: 2rem,
 		layout-checkbox-stroke-size: 0.2rem,
 		layout-checkbox-inner-margin: 0.3rem,
+	),
+	toggle: (
+		layout-toggle-height: 2.4rem,
+		layout-bar-border-radius: 2rem,
+		layout-bar-width: 4.6rem,
+		layout-bar-height: 2rem,
+		layout-thumb-size: 1.4rem,
+		layout-spacing: 0.8rem,
+		layout-border-width: 0.1rem,
+		layout-ripple-radius: 0,
 	),
 );
 @include angular-material-layout($van-ui-layout);

@@ -5862,5 +5862,20 @@
 				}
 			}
 		}
+	},
+	"intelligentBoost": {
+		"title": "Intelligent gaming boost",
+		"appsContainerTitle": "Apps added to list",
+		"edit": "Edit",
+		"done": "Done",
+		"add": "Add",
+		"appsDialog": "Running apps list",
+		"appsDialogDesc": "Only apps currently running will be show in the list below",
+		"appsDialogWarn": "No running apps",
+		"appsDialogWarnDesc": "Only currently running apps can be show. You could launch a app that you want to add then you will see it here.",
+		"networkBoost": "Network boost",
+		"networkBoostDesc": "This feature will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, we suggest you adding them below so they will also received priority on your network.",
+		"performanceBoost": "Performance boost",
+		"performanceBoostDesc": "This feature will automatically close the apps that you added below when launch a game. It could free up unused resources to maximize performance. Be aware that apps added in the list will be close completely, please always make sure you've saved your work."
 	}
 }
