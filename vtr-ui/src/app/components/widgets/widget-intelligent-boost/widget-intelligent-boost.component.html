@@ -27,23 +27,13 @@
 				</div>
 				<div class="apps-container-operation d-flex justify-content-end col-1 pl-0 pr-3 uppercase font-size-sm font-weight-bold">
 					<button
-						*ngIf="isDone; else doneButton"
 						mat-customize-button
 						class="link-button font-size-md font-weight-semibold"
 						[disabled]="isEmpty"
 						(click)="clickEdit()"
 					>
-						{{ 'intelligentBoost.edit' | translate }}
+						{{ isDone ? editLabel : doneLabel }}
 					</button>
-					<ng-template #doneButton>
-						<button
-							mat-customize-button
-							class="link-button font-size-md font-weight-semibold"
-							(click)="clickEdit()"
-						>
-							{{ 'intelligentBoost.done' | translate }}
-						</button>
-					</ng-template>
 				</div>
 			</div>
 			<div class="apps-container-list row w-100 ml-4">

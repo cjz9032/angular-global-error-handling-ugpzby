@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'vtr-widget-intelligent-boost',
@@ -8,16 +9,25 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class WidgetIntelligentBoostComponent implements OnInit {
 	@Input() featureToggle: boolean;
 	@Input() isEmpty: boolean;
-	@Input() isDone = true;
 
 	@Output() editButtonClick = new EventEmitter();
 
-	constructor() { }
+	isDone = true;
+	editLabel: string;
+	doneLabel: string;
+
+	constructor(
+		private translate: TranslateService
+	) {
+		this.editLabel = this.translate.instant('intelligentBoost.edit');
+		this.doneLabel = this.translate.instant('intelligentBoost.done');
+	}
 
 	ngOnInit(): void {
 	}
 
 	clickEdit(): void {
-		this.editButtonClick.emit(!this.isDone);
+		this.isDone = !this.isDone;
+		this.editButtonClick.emit(this.isDone);
 	}
 }
