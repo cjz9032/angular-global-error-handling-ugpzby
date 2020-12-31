@@ -30,6 +30,7 @@
 						*ngIf="isDone; else doneButton"
 						mat-customize-button
 						class="link-button font-size-md font-weight-semibold"
+						[disabled]="isEmpty"
 						(click)="clickEdit()"
 					>
 						{{ 'intelligentBoost.edit' | translate }}

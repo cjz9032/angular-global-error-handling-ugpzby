@@ -7,7 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class WidgetIntelligentBoostComponent implements OnInit {
 	@Input() featureToggle: boolean;
-	@Input() isDone: boolean;
+	@Input() isEmpty: boolean;
+	@Input() isDone = true;
 
 	@Output() editButtonClick = new EventEmitter();
 
