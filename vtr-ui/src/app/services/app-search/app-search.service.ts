@@ -10,9 +10,8 @@ import { IFeature, IFeatureAction, INavigationAction, SearchActionType } from '.
 import { SearchEngineWraper } from './search-engine-wraper';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
-
 export class AppSearchService {
 	private featureLoad = false;
 	private featureMap = {};
@@ -24,12 +23,13 @@ export class AppSearchService {
 	constructor(
 		private translate: TranslateService,
 		private router: Router,
-		private commonService: CommonService) {
-			this.subscription = this.commonService.notification.subscribe(
-				(notification: AppNotification) => {
-					this.onNotification(notification);
-				}
-			);
+		private commonService: CommonService
+	) {
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
 
 	public load() {
@@ -41,15 +41,19 @@ export class AppSearchService {
 		this.searchEngine = new SearchEngineWraper();
 
 		// transfer pages to feature map
-		featureSource.forEach(feature => {
-			feature.featureName = this.translate.instant(feature.featureName || `${feature.id}.featureName`);
-			feature.category = this.translate.instant(feature.category || `${feature.categoryId}.category`);
+		featureSource.forEach((feature) => {
+			feature.featureName = this.translate.instant(
+				feature.featureName || `${feature.id}.featureName`
+			);
+			feature.category = this.translate.instant(
+				feature.category || `${feature.categoryId}.category`
+			);
 			this.featureMap[feature.id] = feature;
 			this.searchContext[feature.id] = {
 				id: feature.id,
 				featureName: feature.featureName,
 				highRelevantKeywords: this.translate.instant(`${feature.id}.highRelevantKeywords`),
-				lowRelevantKeywords: this.translate.instant(`${feature.id}.lowRelevantKeywords`)
+				lowRelevantKeywords: this.translate.instant(`${feature.id}.lowRelevantKeywords`),
 			};
 		});
 
@@ -61,7 +65,7 @@ export class AppSearchService {
 
 		const returnList = [];
 		if (featureIdList && featureIdList.length > 0) {
-			featureIdList.forEach(feature => {
+			featureIdList.forEach((feature) => {
 				if (feature?.item?.id) {
 					returnList.push(Object.assign({}, this.featureMap[feature.item.id]));
 				}
@@ -77,7 +81,6 @@ export class AppSearchService {
 		const translation = this.translate.instant('appSearch');
 		feature.featureName = translation[feature.id];
 		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
-
 	}
 
 	public unRegister(featureId: string) {
@@ -95,7 +98,8 @@ export class AppSearchService {
 				route = navAction.route.startsWith('/') ? navAction.route : '/' + navAction.route;
 			}
 
-			if (route.startsWith('/user')) {	// not support user route at present
+			if (route.startsWith('/user')) {
+				// not support user route at present
 				this.router.navigateByUrl('/');
 			} else {
 				this.router.navigateByUrl(route);
@@ -120,26 +124,59 @@ export class AppSearchService {
 		this.extractRouteMap(payload);
 	}
 
-	private extractRouteMap(menuItems: any, upperPath: string = null) {
-		menuItems.forEach(item => {
+	private extractRouteMap(menuItems: any, parentPath: string = null) {
+		menuItems.forEach((item) => {
 			if (!this.isMenuAvailble(item)) {
-				return;
-			}
-
-			let routePath = upperPath
-			if (item.id && item.path) {
-				routePath = upperPath ? upperPath + "/" + item.path : item.path;
-				if (item.singleLayerRouting) {
-					this.menuRouteMap[item.id] = item.path;
-				} else {
-					this.menuRouteMap[item.id] = routePath;
-				}
-			}
-
-			if (item.subitems?.length > 0) {
-				this.extractRouteMap(item.subitems, routePath);
+				this.mapItemsToSpecifiedPath(item, parentPath);
+			} else {
+				this.mapItemIdToPath(item, parentPath);
 			}
 		});
+	}
+	// map all item and its descendant items to its parent path if the menu node is hidden
+	private mapItemsToSpecifiedPath(item, parentPath) {
+		if (item.id) {
+			const routePath = this.trimAndCombinePath(parentPath, null);
+			if (routePath) {
+				this.menuRouteMap[item.id] = parentPath || '';
+			}
+		}
+
+		if (item.subitems?.length > 0) {
+			item.subitems.forEach((subItem) => {
+				this.mapItemsToSpecifiedPath(subItem, parentPath);
+			});
+		}
+	}
+
+	private mapItemIdToPath(item, parentPath) {
+		let itemPath = parentPath;
+		if (item.id) {
+			if (item.singleLayerRouting) {
+				itemPath = this.trimAndCombinePath(null, item.path);
+			} else {
+				itemPath = this.trimAndCombinePath(parentPath, item.path);
+			}
+
+			if (itemPath) {
+				this.menuRouteMap[item.id] = itemPath;
+			}
+		}
+
+		if (item.subitems?.length > 0) {
+			this.extractRouteMap(item.subitems, itemPath);
+		}
+	}
+
+	private trimAndCombinePath(parentPath, itemPath) {
+		const parent = parentPath?.trim();
+		const item = itemPath?.trim();
+
+		if (parent && item) {
+			return parent + '/' + item;
+		}
+
+		return parent || item || '';
 	}
 
 	private isMenuAvailble(menuItem): boolean {
