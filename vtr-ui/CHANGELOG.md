@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://bitbucket.tc.lenovo.com///compare/v1.9.43...v1.10.0) (2020-12-31)
+
+
+### Features
+
+* **Tile control:** VAN-24040 implement tile control for auto close ([f7b389d](https://bitbucket.tc.lenovo.com///commit/f7b389da819b8be37125ecb718bbc0c3eba6241c))
+* **Tile list Component:** VAN-24308 implement app list component ([3850ade](https://bitbucket.tc.lenovo.com///commit/3850ade73b467376e315892f8b70eb58edbed4ae))
+
 ### [1.9.43](https://bitbucket.tc.lenovo.com///compare/v1.9.42...v1.9.43) (2020-12-30)
 
 
