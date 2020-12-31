@@ -4,7 +4,7 @@ import packageFile from '../../package.json';
 export const environment: IEnvironment = {
 	production: true,
 	debuggingSnackbar: true,
-	cmsApiRoot: 'https://vantage.csw-qa.lenovo.com',
+	cmsApiRoot: 'https://vantage-2.csw-qa.lenovo.com',
 	upeApiRoot: 'https://api.naea1.uds-dev.lenovo.com',
 	appVersion: packageFile.version,
 	// Refer https://lnvusconf.lenovonet.lenovo.local/display/UPE3/Agent+id+for+App
