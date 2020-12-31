@@ -425,10 +425,12 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			clearInterval(this.screenshotInterval);
 			if (document.activeElement.className.includes('screenshot-img')) {
 				const focusClassName = document.activeElement.className.toLowerCase();
-				const positionClassName = focusClassName.replace('screenshot-img', '').trim();
-				const position = Number(positionClassName.match(/\d+$/)[0]);
-				if (position >= 3) {
-					this.startScreenshotAutoSwipe();
+				const matches = focusClassName.match(/position-(\d+)/);
+				if (matches && matches.length >= 2) {
+					const position = Number(matches[1]);
+					if (!isNaN(position) && position >= 3) {
+						this.startScreenshotAutoSwipe();
+					}
 				}
 			}
 		}
