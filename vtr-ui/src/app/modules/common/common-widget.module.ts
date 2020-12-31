@@ -3,8 +3,10 @@ import { CommonUiModule } from './common-ui.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { MatButtonModule } from '@lenovo/material/button';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { MatIconModule } from '@lenovo/material/icon';
+import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
 
 import { SharedModule } from '../shared.module';
 import { WidgetDeviceComponent } from 'src/app/components/widgets/widget-device/widget-device.component';
@@ -24,6 +26,7 @@ import { MaterialSvgCircleComponent } from 'src/app/material/material-svg-circle
 import { MaterialStatusCircleComponent } from 'src/app/material/material-status-circle/material-status-circle.component';
 import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
 import { MaterialAppTileListComponent } from 'src/app/material/material-app-tile-list/material-app-tile-list.component';
+import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widget-intelligent-boost/widget-intelligent-boost.component';
 
 
 @NgModule({
@@ -40,6 +43,7 @@ import { MaterialAppTileListComponent } from 'src/app/material/material-app-tile
 		MaterialStatusCircleComponent,
 		WidgetRoundStatusComponent,
 		MaterialAppTileListComponent,
+		WidgetIntelligentBoostComponent,
 	],
 	exports: [
 		WidgetDeviceComponent,
@@ -55,6 +59,7 @@ import { MaterialAppTileListComponent } from 'src/app/material/material-app-tile
 		MaterialStatusCircleComponent,
 		WidgetRoundStatusComponent,
 		MaterialAppTileListComponent,
+		WidgetIntelligentBoostComponent,
 	],
 	imports: [
 		CommonModule,
@@ -66,6 +71,8 @@ import { MaterialAppTileListComponent } from 'src/app/material/material-app-tile
 		NgbTooltipModule,
 		MatTooltipModule,
 		MatIconModule,
+		MatSlideToggleModule,
+		MatButtonModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
