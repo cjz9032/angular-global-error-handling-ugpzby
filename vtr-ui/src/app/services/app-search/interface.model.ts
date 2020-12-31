@@ -4,7 +4,7 @@ export interface IFeatureAction {
 
 export interface INavigationAction {
 	type: string;
-	menuId: string;
+	menuId: any;
 	route: string;
 	params: string [];
 }

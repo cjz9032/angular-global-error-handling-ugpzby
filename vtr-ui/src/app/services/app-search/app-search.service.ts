@@ -8,7 +8,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { featureSource } from './features.model';
 import { IFeature, IFeatureAction, INavigationAction, SearchActionType } from './interface.model';
 import { SearchEngineWraper } from './search-engine-wraper';
-
+import { find } from 'lodash';
 @Injectable({
 	providedIn: 'root',
 })
@@ -48,6 +48,7 @@ export class AppSearchService {
 			feature.category = this.translate.instant(
 				feature.category || `${feature.categoryId}.category`
 			);
+
 			this.featureMap[feature.id] = feature;
 			this.searchContext[feature.id] = {
 				id: feature.id,
@@ -84,19 +85,13 @@ export class AppSearchService {
 	}
 
 	public unRegister(featureId: string) {
-		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
+		// todo
 	}
 
 	public handleAction(featureAction: IFeatureAction) {
 		if (featureAction.type === SearchActionType.navigation) {
 			const navAction = featureAction as INavigationAction;
-			let route = '/';
-
-			if (navAction.menuId && this.menuRouteMap[navAction.menuId]) {
-				route = '/' + this.menuRouteMap[navAction.menuId];
-			} else if (navAction.route) {
-				route = navAction.route.startsWith('/') ? navAction.route : '/' + navAction.route;
-			}
+			let route = '/' + this.actionToRoutePath(navAction)
 
 			if (route.startsWith('/user')) {
 				// not support user route at present
@@ -105,6 +100,24 @@ export class AppSearchService {
 				this.router.navigateByUrl(route);
 			}
 		}
+	}
+
+	private actionToRoutePath(navAction: INavigationAction) {
+		let route = '';
+		if (navAction.menuId) {
+			if (typeof navAction.menuId === 'string') {
+				route = this.menuRouteMap[navAction.menuId] || '';
+			} else if (navAction.menuId.length > 0) {
+				const menuId = find(navAction.menuId, id => this.menuRouteMap[id]);
+				route = this.menuRouteMap[menuId] || '';
+			}
+		}
+
+		if (!route && navAction.route) {
+			route = navAction.route.trim();
+		}
+
+		return route;
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -126,41 +139,22 @@ export class AppSearchService {
 
 	private extractRouteMap(menuItems: any, parentPath: string = null) {
 		menuItems.forEach((item) => {
-			if (!this.isMenuAvailble(item)) {
-				this.mapItemsToSpecifiedPath(item, parentPath);
-			} else {
+			if (this.isMenuAvailble(item)) {
 				this.mapItemIdToPath(item, parentPath);
 			}
 		});
 	}
 	// map all item and its descendant items to its parent path if the menu node is hidden
-	private mapItemsToSpecifiedPath(item, parentPath) {
-		if (item.id) {
-			const routePath = this.trimAndCombinePath(parentPath, null);
-			if (routePath) {
-				this.menuRouteMap[item.id] = parentPath || '';
-			}
-		}
-
-		if (item.subitems?.length > 0) {
-			item.subitems.forEach((subItem) => {
-				this.mapItemsToSpecifiedPath(subItem, parentPath);
-			});
-		}
-	}
-
 	private mapItemIdToPath(item, parentPath) {
 		let itemPath = parentPath;
-		if (item.id) {
-			if (item.singleLayerRouting) {
-				itemPath = this.trimAndCombinePath(null, item.path);
-			} else {
-				itemPath = this.trimAndCombinePath(parentPath, item.path);
-			}
+		if (item.singleLayerRouting) {
+			itemPath =  item.path?.trim() || '';
+		} else {
+			itemPath = this.trimAndCombinePath(parentPath, item.path);
+		}
 
-			if (itemPath) {
-				this.menuRouteMap[item.id] = itemPath;
-			}
+		if (item.id && itemPath) {
+			this.menuRouteMap[item.id] = itemPath;
 		}
 
 		if (item.subitems?.length > 0) {
