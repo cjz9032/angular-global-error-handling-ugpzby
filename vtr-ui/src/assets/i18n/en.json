@@ -225,6 +225,17 @@
 					"xRite": "Do you want to install X-Rite Color Assistant?",
 					"xRiteDesc": "This app enables you to choose and apply factory calibrated color profiles."
 				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Modal",
+					"frequency": "Frequency",
+					"usage": "Usage",
+					"overclock": {
+						"on": "Overclocking",
+						"off": "NonOverclock"
+					}
+				}
 			}
 		},
 		"common": {

@@ -15,9 +15,7 @@
 						<div class="col-xl-8 col-lg-12 col-md-8 col-sm-12 monitor-col left">
 							<div class="monitor-section">
 								<div class="monitor-inner gpu" id="system_status_driver_gpu_tooltip" role="text" attr.aria-label="system_status_driver_gpu">
-									<div class="gaming-tooltip">
-										<p>{{gpuOver}}</p>
-									</div>
+									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='1' [info]="gpuInfo" [tooltip]="gpuOver"></vtr-ui-gaming-monitor-tooltip>
 									<div class="monitor-stack">
 										<div class="stack-container">
 											<div class="stack-border">
@@ -37,9 +35,7 @@
 								</div>
 
 								<div class="monitor-cpu" id="system_status_driver_cpu_tooltip" role="text" attr.aria-label="system_status_driver_cpu">
-									<div class="gaming-tooltip">
-										<p>{{cpuover}}</p>
-									</div>
+									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='0' [info]="cpuInfo" [tooltip]="cpuover"></vtr-ui-gaming-monitor-tooltip>
 									<div class="cpu-ring"></div>
 									<div class="cpu-mask left">
 										<div class="mask-obj"
@@ -68,9 +64,7 @@
 								</div>
 
 								<div class="monitor-inner ram" id="system_status_driver_ram_tooltip" role="text" attr.aria-label="system_status_driver_ram">
-									<div class="gaming-tooltip">
-										<p>{{ramOver}}</p>
-									</div>
+									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='2' [info]="ramInfo" [tooltip]="ramOver"></vtr-ui-gaming-monitor-tooltip>
 									<div class="monitor-stack">
 										<div class="stack-container">
 											<div class="stack-border">
@@ -99,9 +93,7 @@
 									<div class="hd-list" [ngClass]="{'single':hds.length===1}">
 										<div class="hd-item" [ngClass]="{'danger':hd.diskUsage/100>.75}"
 											*ngFor="let hd of hds; let i=index;" [hidden]="i>=2 && !showAllHDs">
-											<div class="gaming-tooltip">
-												<p>{{hd.hddName}}</p>
-											</div>
+											<vtr-ui-gaming-monitor-tooltip [ver]="0" [pos]='0' [tooltip]="hd.hddName"></vtr-ui-gaming-monitor-tooltip>
 											<div class="monitor-hd" id="system_status_hard_disk{{i}}" attr.aria-label="system_status_hard_disk{{i}}">
 												<div class="hd-ring"></div>
 												<div class="hd-mask left">
@@ -143,13 +135,13 @@
 									</div>
 									<div class="expand-icon" *ngIf="hds.length > 1" tabindex="1">
 											<fa-icon [icon]="['fas', 'chevron-down']"  id="gaming_system_hard disk_icon_expand" role="img"
-											aria-label="expand" [hidden]="showAllHDs || hds.length<=2">
+												aria-label="expand" [hidden]="showAllHDs || hds.length<=2">
 											</fa-icon>
-											<fa-icon
-											aria-label="collapse" [icon]="['fas', 'chevron-up']" [hidden]="!showAllHDs || hds.length<=2" id="gaming_system_hard disk_icon_collapse" role="img">
+											<fa-icon [icon]="['fas', 'chevron-up']" id="gaming_system_hard disk_icon_collapse" role="img"
+												aria-label="collapse" [hidden]="!showAllHDs || hds.length<=2">
 											</fa-icon>
 									</div>
-									</div>
+								</div>
 							</div>
 						</div>
 					</div>
