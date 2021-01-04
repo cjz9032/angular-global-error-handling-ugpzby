@@ -9,6 +9,8 @@ import { featureSource } from './features.model';
 import { IFeature, IFeatureAction, INavigationAction, SearchActionType } from './interface.model';
 import { SearchEngineWraper } from './search-engine-wraper';
 import find from 'lodash/find';
+import { Observable } from 'rxjs/internal/Observable';
+import { first } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root',
@@ -33,7 +35,14 @@ export class AppSearchService {
 		);
 	}
 
-	public load() {
+	public async load() {
+		if (this.featureLoad) {
+			return;
+		}
+
+		// ensure that the translation resources has been loaded
+		await this.translate.stream('appSearch').pipe(first()).toPromise();
+
 		if (this.featureLoad) {
 			return;
 		}
