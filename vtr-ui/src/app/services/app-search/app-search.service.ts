@@ -9,7 +9,6 @@ import { featureSource } from './features.model';
 import { IFeature, IFeatureAction, INavigationAction, SearchActionType } from './interface.model';
 import { SearchEngineWraper } from './search-engine-wraper';
 import find from 'lodash/find';
-import { Observable } from 'rxjs/internal/Observable';
 import { first } from 'rxjs/operators';
 
 @Injectable({
