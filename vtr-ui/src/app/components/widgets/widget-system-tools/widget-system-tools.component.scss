@@ -28,7 +28,7 @@
 			flex-wrap: wrap;
 			li {
 				//width: calc(100% / 5);
-				width: 25%;
+				width: 33.3%;
 				min-width: 8rem;
 				a {
 					text-decoration: none;
@@ -184,6 +184,15 @@
 						@media #{$high-contrast} {
 							@include solid-button-outline(highlight);
 						}
+					}
+				}
+			}
+			&.list-overflow-4 {
+				justify-content: flex-start !important;
+				li {
+					width: 25%;
+					@media #{$breakpoint_sm} {
+						width: 50%;
 					}
 				}
 			}
