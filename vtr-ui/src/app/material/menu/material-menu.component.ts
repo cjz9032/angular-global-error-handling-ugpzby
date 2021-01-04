@@ -15,7 +15,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { throttle } from 'lodash';
+import { cloneDeep, throttle } from 'lodash';
 import { DOCUMENT } from '@angular/common';
 
 import { MatMenuTrigger } from '@lenovo/material/menu';
@@ -165,7 +165,7 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 
 	public updateMenu(menu) {
 		if (menu && menu.length > 0) {
-			this.items = menu;
+			this.items = cloneDeep(menu);
 			this.preloadImages = this.collectPreloadAssets(menu);
 		}
 	}
