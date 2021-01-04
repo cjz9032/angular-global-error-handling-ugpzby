@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://bitbucket.tc.lenovo.com///compare/v1.10.0...v1.10.1) (2021-01-04)
+
+
+### Features
+
+* add disabled status on edit button ([af369c3](https://bitbucket.tc.lenovo.com///commit/af369c3f2d16ef1831b4bc582c7a8ebc405eb655))
+* remove useless input value and button ([fe790eb](https://bitbucket.tc.lenovo.com///commit/fe790eb76f0d262b1150d3ff12e86045f51e5a7d))
+* **auto close:** implement auto close widget ui container ([699e765](https://bitbucket.tc.lenovo.com///commit/699e7655820c7c8b4d0cfa6729e99457b91e029b))
+
 ## [1.10.0](https://bitbucket.tc.lenovo.com///compare/v1.9.43...v1.10.0) (2020-12-31)
 
 
