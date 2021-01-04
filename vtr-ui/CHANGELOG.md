@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.45](https://bitbucket.tc.lenovo.com///compare/v1.9.44...v1.9.45) (2021-01-04)
+
+
+### Bug Fixes
+
+* **menu:** fix items didn't update in hambuger menu ([4e8613a](https://bitbucket.tc.lenovo.com///commit/4e8613ac23d70e1803b0f357e9349f27618f6ffb))
+
 ### [1.9.44](https://bitbucket.tc.lenovo.com///compare/v1.9.43...v1.9.44) (2020-12-31)
 
 ### [1.9.43](https://bitbucket.tc.lenovo.com///compare/v1.9.42...v1.9.43) (2020-12-30)
