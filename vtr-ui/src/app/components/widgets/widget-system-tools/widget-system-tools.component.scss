@@ -191,42 +191,61 @@
 				justify-content: flex-start !important;
 				li {
 					width: 20%;
-					@media #{$breakpoint_sm} {
-						min-width: 33.3%;
+					@media #{$breakpoint_xl} {
+						width: 33.3%;
+					}
+					@media #{$breakpoint_lg} {
+						width: 20%;
+					}
+					@media #{$breakpoint_md} {
+						width: 33.3%;
 					}
 				}
 			}
 			&.list-overflow-6 {
 				li {
-					width: 16.6%;
+					width: 33.3%;
+					@media #{$breakpoint_lg} {
+						width: 16.6%;
+					}
 					@media #{$breakpoint_md} {
-						min-width: 33.3%;
+						width: 33.3%;
 					}
 				}
 			}
 			&.list-overflow-7 {
 				justify-content: flex-start !important;
 				li {
-					width: 14.2%;
-					@media #{$breakpoint_xl} {
-						min-width: 25%;
+					width: 25%;
+					@media #{$breakpoint_sm} {
+						width: 33.3%;
 					}
 				}
 			}
 			&.list-overflow-8 {
+				justify-content: flex-start !important;
 				li {
-					width: 12.5%;
-					@media #{$breakpoint_xl} {
-						min-width: 25%;
+					width: 25%;
+					@media #{$breakpoint_sm} {
+						width: 33.3%;
 					}
 				}
 			}
 			&.list-overflow-9 {
 				justify-content: flex-start !important;
 				li {
-					width: 11.1%;
+					width: 20%;
 					@media #{$breakpoint_xl} {
-						min-width: 20%;
+						width: 25%;
+					}
+					@media #{$breakpoint_lg} {
+						width: 20%;
+					}
+					@media #{$breakpoint_md} {
+						width: 25%;
+					}
+					@media #{$breakpoint_sm} {
+						width: 33.3%;
 					}
 				}
 			}
