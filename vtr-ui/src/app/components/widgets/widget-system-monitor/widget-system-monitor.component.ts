@@ -20,6 +20,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	@Input() ramCurrent = 0;
 	@Input() ramMax = 0;
 
+	public ver = 0;
+	public cpuInfo: any;
+	public gpuInfo: any;
+	public ramInfo: any;
+
 	public cpuUseFrequency: string;
 	public cpuBaseFrequence: string;
 	public gpuMemorySize: string;
@@ -47,7 +52,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public loop: any;
 	public gamingCapabilities: any = new GamingAllCapabilities();
 	public systemStatusObj: any = new SystemStatus();
-
 	public hds: any = [
 		{
 			capacity: 476,
@@ -335,6 +339,27 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				this.ramOver = this.memoryModuleName;
 				this.systemStatusObj.ramOver = this.ramOver;
 				this.localCacheService.setLocalCacheValue(LocalStorageKey.ramOver, this.ramOver);
+				// if (this.cpuModuleName === 'x60') {
+				// 	this.ver = 1;
+				// }
+				// this.cpuInfo = {
+				// 	isOverClocking: true,
+				// 	modal: this.cpuModuleName,
+				// 	frequency: '2.4/4.3Ghz',
+				// 	usage: '63%',
+				// };
+				// this.gpuInfo = {
+				// 	isOverClocking: true,
+				// 	modal: this.gpuModuleName,
+				// 	frequency: '2.4/4.3Ghz',
+				// 	usage: '',
+				// };
+				// this.ramInfo = {
+				// 	isOverClocking: false,
+				// 	modal: this.memoryModuleName,
+				// 	frequency: '2.4/4.3Ghz',
+				// 	usage: '',
+				// };
 			});
 		} catch (error) {}
 	}

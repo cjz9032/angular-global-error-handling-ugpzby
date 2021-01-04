@@ -1,0 +1,158 @@
+@import '../../../../app.theme.scss';
+
+.vtr-ui-gaming-monitor-tooltip {
+	border-radius: 0.8rem;
+	position: absolute;
+	z-index: 99;
+	display: none;
+	text-align: center;
+	transition: all 0.5s ease-in-out;
+	white-space: pre-wrap;
+	word-break: keep-all;
+	pointer-events: none;
+	left: 50%;
+	transform: translate(-50%);
+	&.ver0 {
+		background: $gaming_lightest;
+		color: $main_dark;
+		top: -6rem;
+		min-width: 30rem;
+		padding: 2.4rem;
+		.title {
+			font-size: 1.6rem;
+			line-height: 2.2rem;
+			padding: 0px;
+			margin: auto;
+			text-align: center;
+			vertical-align: middle;
+		}
+		@media #{$high-contrast} {
+			background-color: window;
+			border: 1px solid windowText;
+		}
+		&.center {
+			@media #{$breakpoint_sm} {
+				min-width: 20rem;
+			}
+		}
+		&.left {
+			min-width: 20rem;
+			@media #{$breakpoint_lg} {
+				top: 50%;
+				transform: translateY(-50%) translateX(0);
+				left: 7rem;
+				padding: 2rem;
+				min-width: 15rem;
+				&::after {
+					left: -0.5rem;
+					bottom: calc(50% - 0.6rem);
+					transform: rotate(-45deg);
+				}
+			}
+		}
+		&.right {
+			min-width: 20rem;
+			@media #{$breakpoint_lg} {
+				top: 50%;
+				transform: translateY(-50%) translateX(-100%);
+				left: -0.5rem;
+				padding: 2rem;
+				min-width: 15rem;
+				&::after {
+					left: calc(100% - 0.7rem);
+					bottom: calc(50% - 0.6rem);
+					transform: rotate(135deg);
+				}
+			}
+		}
+	}
+	&.ver1 {
+		background: $light;
+		color: $darkCell;
+		top: 10rem;
+		width: 30rem;
+		left: 50%;
+		transform: translate(-50%);
+		transition: all 0.5s ease-in-out;
+		white-space: pre-wrap;
+		word-break: keep-all;
+		pointer-events: none;
+		padding: 0.7rem;
+		box-shadow: 0 0.4rem 0.8rem 0 $screen_dark_50;
+		font-size: 1.2rem;
+		&.left {
+			left: 50%;
+			transform: translate(-6rem);
+			&::after {
+				left: 5.4rem;
+			}
+		}
+		&.right {
+			left: 50%;
+			transform: translate(-24rem);
+			&::after {
+				left: 23.4rem;
+			}
+		}
+		.detail {
+			padding: 0;
+			.btn-overclock {
+				background: $light;
+				color: #d0d0d0;
+				height: 2rem;
+				margin-bottom: 1rem;
+				border-radius: 1rem;
+				border: solid 1px #d0cfd0;
+				display: flex;
+				align-items: center;
+				&.overclock {
+					background-image: linear-gradient(to top, #ff7052, #ffa252);
+					color: $light;
+				}
+				span {
+					margin: 0 0.3rem 0 0.3rem;
+				}
+			}
+			.frequency {
+				.overclock {
+					color: #ff7852;
+				}
+			}
+			.detail-content {
+				border-bottom: 0.1rem solid rgba(20, 29, 49, 0.05);
+				padding: 0.3rem;
+				vertical-align: middle;
+				display: flex;
+				justify-content: space-between;
+				.content-left {
+					white-space: nowrap;
+				}
+				.content-right {
+					margin-left: 0.5rem;
+					text-align: right;
+				}
+			}
+			div:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-top: 1.2rem solid $gaming_lightest;
+		border-right: 1.2rem solid transparent;
+		border-bottom: none;
+		border-left: none;
+		left: calc(50% - 0.5rem);
+		bottom: -0.5rem;
+		transform: rotate(-135deg);
+		z-index: -1;
+		@media #{$high-contrast} {
+			border-bottom-color: windowText;
+			border-left-color: transparent;
+		}
+	}
+}
