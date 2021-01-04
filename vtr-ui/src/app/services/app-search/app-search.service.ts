@@ -8,7 +8,8 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { featureSource } from './features.model';
 import { IFeature, IFeatureAction, INavigationAction, SearchActionType } from './interface.model';
 import { SearchEngineWraper } from './search-engine-wraper';
-import { find } from 'lodash';
+import find from 'lodash/find';
+
 @Injectable({
 	providedIn: 'root',
 })
@@ -91,7 +92,7 @@ export class AppSearchService {
 	public handleAction(featureAction: IFeatureAction) {
 		if (featureAction.type === SearchActionType.navigation) {
 			const navAction = featureAction as INavigationAction;
-			let route = '/' + this.actionToRoutePath(navAction)
+			let route = '/' + this.actionToRoutePath(navAction);
 
 			if (route.startsWith('/user')) {
 				// not support user route at present
@@ -108,7 +109,7 @@ export class AppSearchService {
 			if (typeof navAction.menuId === 'string') {
 				route = this.menuRouteMap[navAction.menuId] || '';
 			} else if (navAction.menuId.length > 0) {
-				const menuId = find(navAction.menuId, id => this.menuRouteMap[id]);
+				const menuId = find(navAction.menuId, (id) => Boolean(this.menuRouteMap[id]));
 				route = this.menuRouteMap[menuId] || '';
 			}
 		}
@@ -148,7 +149,7 @@ export class AppSearchService {
 	private mapItemIdToPath(item, parentPath) {
 		let itemPath = parentPath;
 		if (item.singleLayerRouting) {
-			itemPath =  item.path?.trim() || '';
+			itemPath = item.path?.trim() || '';
 		} else {
 			itemPath = this.trimAndCombinePath(parentPath, item.path);
 		}
