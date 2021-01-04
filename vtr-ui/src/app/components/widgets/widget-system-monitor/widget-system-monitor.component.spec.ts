@@ -35,29 +35,29 @@ describe('WidgetSystemMonitorComponent', () => {
 	const localCacheServiceSpy = {
 		getLocalCacheValue: (key, defaultValue) => {
 			switch (key) {
-				case LocalStorageKey.cpuBaseFrequency:
+				case LocalStorageKey.cpuCurrentFrequency:
 					return '2.9GHz';
-				case LocalStorageKey.cpuCapacity:
+				case LocalStorageKey.cpuBaseFrequency:
 					return '2.9GHz';
 				case LocalStorageKey.cpuUsage:
 					return '10';
-				case LocalStorageKey.cpuOver:
+				case LocalStorageKey.cpuModuleName:
 					return '10';
-				case LocalStorageKey.gpuCapacity:
+				case LocalStorageKey.gpuUsedMemory:
 					return '2.9GHz';
-				case LocalStorageKey.gpuMaxFrequency:
+				case LocalStorageKey.gpuMemorySize:
 					return '2.9GHz';
 				case LocalStorageKey.gpuUsage:
 					return '10';
-				case LocalStorageKey.gpuModulename:
+				case LocalStorageKey.gpuModuleName:
 					return 'NVIDIA GeForce GTX 3090';
-				case LocalStorageKey.memorySize:
+				case LocalStorageKey.ramSize:
 					return '64.0GB';
-				case LocalStorageKey.ramCapacity:
+				case LocalStorageKey.ramUsed:
 					return '2.9GHz';
 				case LocalStorageKey.ramUsage:
 					return '10';
-				case LocalStorageKey.ramOver:
+				case LocalStorageKey.ramModuleName:
 					return '10';
 				case LocalStorageKey.hddName:
 					return 'LENSE30512GMSP34MEAT3TA';
@@ -162,7 +162,7 @@ describe('WidgetSystemMonitorComponent', () => {
 		gamingHwinfoMock.getMachineInfomation().then((hwInfoRes: any) => {
 			JSON.stringify(hwInfoRes);
 			hwInfo = hwInfoRes;
-			component.getMachineInfoService();
+			component.getMachineInfo();
 			// expect(hwInfoRes.cpuBaseFrequency).toEqual('2.9');
 			expect(hwInfoRes.cpuModuleName).toEqual('Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz');
 			expect(hwInfoRes.gpuMemorySize).toEqual('8GB');
@@ -213,8 +213,8 @@ describe('WidgetSystemMonitorComponent', () => {
 		gamingHwinfoMock.getDynamicInformation().then((dynamicInfoRes: any) => {
 			JSON.stringify(dynamicInfoRes);
 			dynamicInfov = dynamicInfoRes;
-			component.formDynamicInformation(dynamicInfoRes);
-			component.setFormDynamicInformationCache(dynamicInfoRes);
+			// component.formDynamicInformation(dynamicInfoRes);
+			// component.setFormDynamicInformationCache(dynamicInfoRes);
 			expect(dynamicInfov.gpuUsage).toEqual(2);
 			expect(dynamicInfov.cpuUsage).toEqual(18);
 			expect(dynamicInfov.memoryUsage).toEqual(31);
@@ -277,21 +277,6 @@ describe('WidgetSystemMonitorComponent', () => {
 		expect(result).toBe(0);
 		result = component.getRightDeg(0.1);
 		expect(result).toBe(36);
-
-		result = component.getStackHeight(109);
-		expect(result).toBe(0);
-		result = component.getStackHeight(-1);
-		expect(result).toBe(100);
-		result = component.getStackHeight(10);
-		expect(result).toBe(90);
-
-		result = component.getFloorPct(10, 100);
-		expect(result).toBe(10);
-
-		expect(component.convertToBoolean('aaa')).toBeUndefined();
-
-		component.getIsSystemDiskCache();
-
 		let size = component.getHDSize(100);
 		expect(size).toBe('100GB');
 		size = component.getHDSize(2000);

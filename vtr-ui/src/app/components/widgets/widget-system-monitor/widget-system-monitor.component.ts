@@ -1,9 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.service';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
-import { SystemStatus } from 'src/app/data-models/gaming/system-status.model';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
@@ -13,332 +10,186 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 	styleUrls: ['./widget-system-monitor.component.scss'],
 })
 export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
-	@Input() cpuCurrent = 0.22;
-	@Input() cpuMax = 2.2;
-	@Input() gpuCurrent = 0.33;
-	@Input() gpuMax = 3.3;
-	@Input() ramCurrent = 0;
-	@Input() ramMax = 0;
-
 	public ver = 0;
-	public cpuInfo: any;
-	public gpuInfo: any;
-	public ramInfo: any;
-
-	public cpuUseFrequency: string;
-	public cpuBaseFrequence: string;
-	public gpuMemorySize: string;
-	public memorySize: string;
-	public gpuUsedMemory: string;
-	public type: string;
-	public isSystemDisk: boolean;
-	public capacity: number;
-	public hddName: string;
-	public usedDisk: number;
-	public cpuModuleName: string;
-	public cpuover: string;
-	public gpuModuleName: string;
-	public gpuOver: string;
-	public memoryModuleName: string;
-	public ramOver: string;
-	public ramUsage: number;
-	public memoryUsage = 30;
-	public showIcon = false;
-	public showAllHDs = false;
-	public gpuUsage: number;
+	public cpuModuleName = 'N/A';
+	public cpuBaseFrequency = '2.0GHz';
+	public cpuCurrentFrequency = 2;
 	public cpuUsage = 1;
-	public diskUsage: number;
-	public memoryUsed: string;
-	public loop: any;
-	public gamingCapabilities: any = new GamingAllCapabilities();
-	public systemStatusObj: any = new SystemStatus();
+	public gpuModuleName = 'N/A';
+	public gpuMemorySize = '8GB';
+	public gpuUsedMemory = 4;
+	public gpuUsage = 0;
+	public ramModuleName = 'N/A';
+	public ramSize = '16GB';
+	public ramUsed = 4;
+	public ramUsage = 0;
 	public hds: any = [
 		{
 			capacity: 476,
 			diskUsage: '14',
 			hddName: 'LENSE30512GMSP34MEAT3TA',
-			isSystemDisk: 'true',
+			isSystemDisk: true,
 			type: 'SSD',
 			usedDisk: 71,
-		},
+		}
 	];
-	public defaultHds = [
-		{
-			capacity: 476,
-			diskUsage: '14',
-			hddName: 'LENSE30512GMSP34MEAT3TA',
-			isSystemDisk: 'true',
-			type: 'SSD',
-			usedDisk: 71,
-		},
-	];
+	public showAllHDs = false;
+	public loop: any;
+
+	// TODO version 3.6 new tips
+	public cpuInfo: any;
+	public gpuInfo: any;
+	public ramInfo: any;
 
 	constructor(
 		private hwInfoService: HwInfoService,
 		private localCacheService: LocalCacheService,
-		private gamingCapabilityService: GamingAllCapabilitiesService,
 		private logger: LoggerService
-	) {
-		this.hds = this.defaultHds;
+	) {}
+
+	ngOnInit() {
+		//////////////////////////////////////////////////////////////////////
+		// Get machine info from cache                                      //
+		// Feature 0: CPU module name, base & current frequece, usage       //
+		// Feature 1: GPU module name, memory size & used, usage            //
+		// Feature 2: RAM module name, memory size & used, usage            //
+		//////////////////////////////////////////////////////////////////////
+		this.cpuModuleName = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuModuleName, 'N/A');
+		this.cpuCurrentFrequency = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuCurrentFrequency, 0.22);
+		this.cpuBaseFrequency = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuBaseFrequency, '2.2GHz');
+		this.cpuUsage = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage) / 100;
+		this.gpuModuleName = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuModuleName, 'N/A');
+		this.gpuUsedMemory = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuUsedMemory, 4);
+		this.gpuMemorySize = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMemorySize, '8GB');
+		this.gpuUsage = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuUsage, 0);
+		this.ramModuleName = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramModuleName, 'N/A');
+		this.ramUsed = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramUsed, 0);
+		this.ramSize = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramSize, '16GB');
+		this.ramUsage = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramUsage, 0);
+		this.hds = this.localCacheService.getLocalCacheValue(LocalStorageKey.disksList, this.hds);
+		
+		//////////////////////////////////////////////////////////////////////
+		// Get machine info from JSBridge                                   //
+		// Feature 0: Get CPU & GPU & Ram info                              //
+		// Feature 1: GPU module name, memory size & used, usage            //
+		// Feature 2: RAM module name, memory size & used, usage            //
+		//////////////////////////////////////////////////////////////////////
+		this.getMachineInfo();
+		this.getRealTimeUsageInfo();
+		this.loop = setInterval(() => {
+			this.getRealTimeUsageInfo();
+		}, 5000);
 	}
 
-	// CPU Panel Data
-	getCPUBaseFrequencyCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuBaseFrequency);
-	}
-	getCPUCapacityCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuCapacity);
-	}
-	getCPUUsageCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage);
-	}
-	getCPUOverCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuOver);
+	ngOnDestroy() {
+		clearInterval(this.loop);
+		this.loop = null;
 	}
 
-	// GPU Panel Data
-	getGPUCapacityCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuCapacity);
-	}
-	getGPUMaxFrequencyCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMaxFrequency);
-	}
-	getGPUUsageCache(): any {
-		return this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.gpuUsage,
-			(this.gpuCurrent * 100) / this.gpuMax
-		);
-	}
-	getGPUModulenameCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuModulename);
-	}
-
-	// Ram Panel Data
-	getMemorySizeCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.memorySize);
-	}
-	getRamCapacityCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.ramCapacity);
-	}
-	getRamUsageCache(): any {
-		return this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.ramUsage,
-			this.memoryUsage
-		);
-	}
-	getRamOverCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.ramOver);
-	}
-
-	// SSD & HDD Panel
-	getTypeCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.type);
-	}
-	setTypeCache(type) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.type, type);
-	}
-	getCapacityCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.capacity);
-	}
-	setCapacityCache(capacity) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.capacity, capacity);
-	}
-	getDiskUsageCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.diskUsage);
-	}
-	setDiskUsageCache(diskUsage) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.diskUsage, diskUsage);
-	}
-	getHDDNameCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.hddName);
-	}
-	setHDDNameCache(hddName) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.hddName, hddName);
-	}
-
-	getUsedDiskCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.usedDisk);
-	}
-	setUsedDiskCache(usedDisk) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.usedDisk, usedDisk);
-	}
-	getIsSystemDiskCache(): any {
-		return this.localCacheService.getLocalCacheValue(LocalStorageKey.isSystemDisk);
-	}
-	setIsSystemDiskCache(isSystemDisk) {
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.isSystemDisk, isSystemDisk);
-	}
-
-	public getLocalSystemCache() {
-		if (this.getCPUBaseFrequencyCache() !== undefined) {
-			this.cpuCurrent = this.getCPUBaseFrequencyCache();
-		}
-		if (this.getCPUCapacityCache() !== undefined) {
-			this.cpuMax = this.getCPUCapacityCache();
-		}
-		if (this.getCPUUsageCache() !== undefined) {
-			this.cpuUsage = this.getCPUUsageCache() / 100;
-		}
-		if (this.getCPUOverCache() !== undefined) {
-			this.cpuover = this.getCPUOverCache();
-		}
-		if (this.getGPUCapacityCache() !== undefined) {
-			this.gpuCurrent = this.getGPUCapacityCache();
-		}
-		if (this.getGPUMaxFrequencyCache() !== undefined) {
-			this.gpuMax = this.getGPUMaxFrequencyCache();
-		}
-		if (this.getGPUUsageCache() !== undefined) {
-			this.gpuUsage = this.getStackHeight(this.getGPUUsageCache() || 1);
-		}
-		if (this.getGPUModulenameCache() !== undefined) {
-			this.gpuModuleName = this.getGPUModulenameCache();
-		}
-		if (this.getMemorySizeCache() !== undefined) {
-			this.ramCurrent = this.getMemorySizeCache();
-		}
-		if (this.getRamCapacityCache() !== undefined) {
-			this.ramMax = this.getRamCapacityCache();
-		}
-		if (this.getRamUsageCache() !== undefined) {
-			// this.ramUsage = this.GetramUsageCache();
-			this.memoryUsage = this.getStackHeight(this.getRamUsageCache());
-		}
-		if (this.getRamOverCache() !== undefined) {
-			this.ramOver = this.getRamOverCache();
-		}
-		if (this.getTypeCache() !== undefined) {
-			this.type = this.getTypeCache();
-		}
-		if (this.getCapacityCache() !== undefined) {
-			this.capacity = this.getCapacityCache();
-		}
-		if (this.getHDDNameCache() !== undefined) {
-			this.hddName = this.getHDDNameCache();
-		}
-		if (this.getUsedDiskCache() !== undefined) {
-			this.usedDisk = this.getUsedDiskCache();
-		}
-		if (this.getDiskUsageCache() !== undefined) {
-			this.diskUsage = this.getDiskUsageCache();
-		}
-		if (this.getHDDNameCache() !== undefined) {
-			this.hddName = this.getHDDNameCache();
-		}
-	}
-	public async getDynamicInfoService() {
-		try {
-			const hwInfo = await this.hwInfoService.getDynamicInformation();
-			this.formDynamicInformation(hwInfo);
-		} catch (err) {}
-	}
-
-	public formDynamicInformation(hwInfo: any) {
-		try {
-			if (hwInfo.gpuUsage !== null) {
-				this.gpuUsage = this.getStackHeight(hwInfo.gpuUsage);
-			}
-			if (hwInfo.cpuUsage !== null) {
-				this.cpuUsage = hwInfo.cpuUsage / 100;
-			}
-			if (hwInfo.memoryUsage !== null) {
-				this.memoryUsage = this.getStackHeight(hwInfo.memoryUsage);
-			}
-			if (hwInfo.cpuUseFrequency !== '') {
-				this.cpuCurrent = hwInfo.cpuUseFrequency.split('GHz')[0];
-			}
-
-			this.systemStatusObj.cpuBaseFrequency = this.cpuCurrent;
-			this.systemStatusObj.cpuUsage = hwInfo.cpuUsage;
-			if (hwInfo.gpuUsedMemory !== '') {
-				this.gpuCurrent = hwInfo.gpuUsedMemory.split('GB')[0];
-			}
-
-			this.systemStatusObj.gpuCapacity = this.gpuCurrent;
-			this.systemStatusObj.gpuUsage = hwInfo.gpuUsage;
-			if (hwInfo.memoryUsed !== '') {
-				this.ramCurrent = hwInfo.memoryUsed.split('GB')[0];
-			}
-			this.systemStatusObj.memorySize = this.ramCurrent;
-			this.systemStatusObj.ramUsage = hwInfo.memoryUsage;
-			this.initialiseDisksList(hwInfo.diskList);
-			this.setFormDynamicInformationCache(hwInfo);
-		} catch (err) {}
-	}
-
-	public initialiseDisksList(diskList: any[] = []) {
-		this.hds = diskList;
-		this.hds.forEach((hd: any) => {
-			this.setIsSystemDiskCache(hd.isSystemDisk);
-			this.setCapacityCache(hd.capacity);
-			this.setTypeCache(hd.type);
-			this.setHDDNameCache(hd.hddName);
-			this.setUsedDiskCache(hd.usedDisk);
-			this.setDiskUsageCache(hd.diskUsage);
-			if (this.convertToBoolean(hd.isSystemDisk) === true) {
-				this.showIcon = true;
-			}
-		});
-		for (let i = 0; i < diskList.length; i++) {
-			const hd = JSON.stringify(diskList[i]);
-			if (i === 0 && this.showIcon === true) {
-				diskList[0].isSystemDisk = true;
-			} else {
-				diskList[i].isSystemDisk = false;
-			}
-		}
-	}
-
-	public setFormDynamicInformationCache(hwInfo: any) {
-		this.localCacheService.setLocalCacheValue(
-			LocalStorageKey.cpuBaseFrequency,
-			this.cpuCurrent
-		);
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage);
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuCapacity, this.gpuCurrent);
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuUsage, hwInfo.gpuUsage);
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.memorySize, this.ramCurrent);
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.ramUsage, hwInfo.memoryUsage);
-		this.localCacheService.setLocalCacheValue(LocalStorageKey.disksList, hwInfo.diskList);
-	}
-
-	public getMachineInfoService() {
+	//////////////////////////////////////////////////////////////////////
+	// Get Machine Info                                                 //
+	// 1. CPU module name, base frequence                               //
+	// 2. GPU module name, memory size                                  //
+	// 3. RAM module name, memory size                                  //
+	//////////////////////////////////////////////////////////////////////
+	public getMachineInfo() {
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
-				this.logger.info('getMachineInfo Service: ', hwInfo);
-				if (hwInfo.cpuBaseFrequence !== '') {
-					this.cpuMax = hwInfo.cpuBaseFrequence;
+				this.logger.info('Widget-SystemMonitor-GetMachineInfo: ', hwInfo);
+				// Get CPU info
+				if (this.cpuModuleName !== hwInfo.cpuModuleName && hwInfo.cpuModuleName !== '') {
+					this.cpuModuleName = hwInfo.cpuModuleName;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.cpuModuleName,
+						this.cpuModuleName
+					);
 				}
-				this.systemStatusObj.cpuCapacity = this.cpuMax;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuCapacity, this.cpuMax);
-				if (hwInfo.gpuMemorySize !== '') {
-					this.gpuMax = hwInfo.gpuMemorySize;
+				if (this.cpuBaseFrequency !== hwInfo.cpuBaseFrequence && hwInfo.cpuBaseFrequence !== '') {
+					this.cpuBaseFrequency = hwInfo.cpuBaseFrequence;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.cpuBaseFrequency, 
+						this.cpuBaseFrequency
+					);
 				}
-				this.systemStatusObj.gpuMaxFrequency = this.gpuMax;
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.gpuMaxFrequency,
-					this.gpuMax
-				);
-				if (hwInfo.memorySize) {
-					this.ramMax = hwInfo.memorySize;
+
+				// Get GPU Info
+				if (this.gpuModuleName !== hwInfo.gpuModuleName && hwInfo.gpuModuleName !== '') {
+					this.gpuModuleName = hwInfo.gpuModuleName;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.gpuModuleName, 
+						this.gpuModuleName
+					);
 				}
-				this.systemStatusObj.ramCapacity = this.ramMax;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.ramCapacity, this.ramMax);
-				this.cpuModuleName = hwInfo.cpuModuleName;
-				this.cpuover = this.cpuModuleName;
-				this.systemStatusObj.cpuOver = this.cpuModuleName;
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.cpuOver,
-					this.cpuModuleName
-				);
-				this.gpuModuleName = hwInfo.gpuModuleName;
-				this.gpuOver = this.gpuModuleName;
-				this.systemStatusObj.gpuOver = this.gpuModuleName;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuOver, this.gpuOver);
-				this.memoryModuleName = hwInfo.memoryModuleName;
-				this.ramOver = this.memoryModuleName;
-				this.systemStatusObj.ramOver = this.ramOver;
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.ramOver, this.ramOver);
+				if (this.gpuMemorySize !== hwInfo.gpuMemorySize && hwInfo.gpuMemorySize !== '') {
+					this.gpuMemorySize = hwInfo.gpuMemorySize;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.gpuMemorySize,
+						this.gpuMemorySize
+					);
+				}
+
+				// Get Memory info
+				if (this.ramModuleName !== hwInfo.memoryModuleName && hwInfo.memoryModuleName !== '') {
+					this.ramModuleName = hwInfo.memoryModuleName;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.ramModuleName, 
+						this.ramModuleName
+					);
+				}
+				if (this.ramSize !== hwInfo.memorySize && hwInfo.memorySize !== '') {
+					this.ramSize = hwInfo.memorySize;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.ramSize,
+						this.ramSize
+					);
+				}
+			});
+		} catch (err) {
+			this.logger.error('Widget-SystemMonitor-GetMachineInfo error: ', err.message);
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// Get real time Info & set local cache                             //
+	// 1. CPU current frequence & usage                                 //
+	// 2. GPU used memory & usage                                       //
+	// 3. RAM used memory & usage                                       //
+	// 4. Disk list(name, type, isSystemDisk, capacity, used, usage)    //
+	//////////////////////////////////////////////////////////////////////
+	public getRealTimeUsageInfo() {
+		try {
+			this.hwInfoService.getDynamicInformation().then( hwInfo => {
+				this.logger.info('Widget-SystemMonitor-getReamTimeUsageInfo: ', hwInfo);
+				if (hwInfo.cpuUseFrequency !== null) {
+					this.cpuCurrentFrequency = hwInfo.cpuUseFrequency.split('GHz')[0];
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuCurrentFrequency, this.cpuCurrentFrequency);
+				}
+				if(hwInfo.cpuUsage !== null) {
+					this.cpuUsage = hwInfo.cpuUsage / 100;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage)
+				}
+				if (hwInfo.gpuUsedMemory !== null) {
+					this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuUsedMemory, this.gpuUsedMemory);
+				}
+				if (hwInfo.gpuUsage !== null) {
+					this.gpuUsage = hwInfo.gpuUsage;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuUsage, this.gpuUsage);
+				}
+				if (hwInfo.memoryUsed !== null) {
+					this.ramUsed = hwInfo.memoryUsed.split('GB')[0];
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.ramUsed, this.ramUsed);
+				}
+				if (hwInfo.memoryUsage !== null) {
+					this.ramUsage = hwInfo.memoryUsage;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.ramUsage, this.ramUsage);
+				}
+				if(hwInfo.diskList !== null) {
+					this.hds = hwInfo.diskList;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.disksList, this.hds);
+				}
+
+				// TODO version 3.6 new tips
 				// if (this.cpuModuleName === 'x60') {
 				// 	this.ver = 1;
 				// }
@@ -361,54 +212,17 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				// 	usage: '',
 				// };
 			});
-		} catch (error) {}
-	}
-
-	convertToBoolean(input: string): boolean | undefined {
-		try {
-			return JSON.parse(input);
-		} catch (e) {
-			return undefined;
+		} catch (err) {
+			this.logger.error('Widget-SystemMonitor-GetMachineInfo error: ', err.message);
 		}
 	}
 
-	ngOnInit() {
-		this.gamingCapabilities.cpuInfoFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.cpuInfoFeature
-		);
-		this.gamingCapabilities.gpuInfoFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.gpuInfoFeature
-		);
-		this.gamingCapabilities.memoryInfoFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.memoryInfoFeature
-		);
-		this.gamingCapabilities.hddInfoFeature = this.gamingCapabilityService.getCapabilityFromCache(
-			LocalStorageKey.hddInfoFeature
-		);
-		this.hds = this.defaultHds;
-		this.initialiseDisksList(
-			this.localCacheService.getLocalCacheValue(LocalStorageKey.disksList, this.defaultHds)
-		);
-		this.getLocalSystemCache();
-		this.getDynamicInfoService();
-		this.getMachineInfoService();
-		this.loop = setInterval(() => {
-			this.getDynamicInfoService();
-		}, 5000);
-	}
-
-	ngOnDestroy() {
-		clearInterval(this.loop);
-	}
-
-	toggleHDs(canClose = false) {
-		if (canClose) {
-			this.showAllHDs = false;
-		} else if (this.hds.length > 2) {
-			this.showAllHDs = !this.showAllHDs;
-		}
-	}
-
+	//////////////////////////////////////////////////////////////////////
+	// Other functions                                                  //
+	// 1. Calculate deg for cpu & diss ring                             //
+	// 2. Fromate disk size & used size                                 //
+	// 3. Show or hide disk list                                        //
+	//////////////////////////////////////////////////////////////////////
 	getLeftDeg(pct) {
 		if (pct > 1) {
 			pct = 1;
@@ -432,17 +246,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		return deg;
 	}
 
-	getStackHeight(pct) {
-		if (pct > 100) {
-			pct = 100;
-		}
-		if (pct < 0) {
-			pct = 0;
-		}
-		const height = 100 - pct;
-		return height;
-	}
-
 	getHDSize(int) {
 		if (int < 1000) {
 			return int + 'GB';
@@ -452,8 +255,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	getFloorPct(current, max) {
-		const pct = Math.floor((current / max) * 100);
-		return pct;
+	toggleHDs(canClose = false) {
+		if (canClose) {
+			this.showAllHDs = false;
+		} else if (this.hds.length > 2) {
+			this.showAllHDs = !this.showAllHDs;
+		}
 	}
 }
