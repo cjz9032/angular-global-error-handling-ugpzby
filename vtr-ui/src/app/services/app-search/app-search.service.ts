@@ -40,7 +40,7 @@ export class AppSearchService {
 		}
 
 		// ensure that the translation resources has been loaded
-		await this.translate.stream('appSearch').pipe(first()).toPromise();
+		await this.translate.get('appSearch').toPromise();
 
 		if (this.featureLoad) {
 			return;
