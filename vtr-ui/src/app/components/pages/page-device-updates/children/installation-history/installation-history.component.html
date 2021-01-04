@@ -64,11 +64,9 @@
 														<span id="{{'su_history_'+item.packageID}}"
 															role="listitem"><b>{{item.packageDesc}}</b> - {{item.version}}</span>
 														<div class="row">
-															<div class="col">
-																<span class="installation-details">
-																	{{item.message}}
-																</span>
-															</div>
+															<span class="installation-details">
+																{{item.message}}
+															</span>
 														</div>
 														<div *ngIf="expandedRecordId===item.packageID">
 															<div class="row">
