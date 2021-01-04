@@ -460,6 +460,8 @@ export class HardwareScanService {
 				})
 				.catch((ex: any) => {
 					if (ex !== null) {
+						// Stop the current timer (when sleeping/hibernating, we don't need to keep watching anymore)
+						this.watcherProcess.emit(WatcherStepProcess.Stop);
 						this.cancelRequested = true;
 					}
 
