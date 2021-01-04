@@ -15,12 +15,12 @@
 						<div class="col-xl-8 col-lg-12 col-md-8 col-sm-12 monitor-col left">
 							<div class="monitor-section">
 								<div class="monitor-inner gpu" id="system_status_driver_gpu_tooltip" role="text" attr.aria-label="system_status_driver_gpu">
-									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='1' [info]="gpuInfo" [tooltip]="gpuOver"></vtr-ui-gaming-monitor-tooltip>
+									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='1' [info]="gpuInfo" [tooltip]="gpuModuleName"></vtr-ui-gaming-monitor-tooltip>
 									<div class="monitor-stack">
 										<div class="stack-container">
 											<div class="stack-border">
 												<div class="stack-content gpu"></div>
-												<div class="stack-mask" [ngStyle]="{'height':gpuUsage+'%'}"></div>
+												<div class="stack-mask" [ngStyle]="{'height': (100 - gpuUsage) + '%'}"></div>
 											</div>
 										</div>
 										<div class="stack-label">
@@ -28,14 +28,14 @@
 												GPU
 											</div>
 											<div class="stack-status">
-												{{gpuCurrent}}/{{gpuMax}}
+												{{gpuUsedMemory}}/{{gpuMemorySize}}
 											</div>
 										</div>
 									</div>
 								</div>
 
 								<div class="monitor-cpu" id="system_status_driver_cpu_tooltip" role="text" attr.aria-label="system_status_driver_cpu">
-									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='0' [info]="cpuInfo" [tooltip]="cpuover"></vtr-ui-gaming-monitor-tooltip>
+									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='0' [info]="cpuInfo" [tooltip]="cpuModuleName"></vtr-ui-gaming-monitor-tooltip>
 									<div class="cpu-ring"></div>
 									<div class="cpu-mask left">
 										<div class="mask-obj"
@@ -56,7 +56,7 @@
 													CPU
 												</div>
 												<div class="cpu-status">
-													{{cpuCurrent}}/{{cpuMax}}
+													{{cpuCurrentFrequency}}/{{cpuBaseFrequency}}
 												</div>
 											</div>
 										</div>
@@ -64,12 +64,12 @@
 								</div>
 
 								<div class="monitor-inner ram" id="system_status_driver_ram_tooltip" role="text" attr.aria-label="system_status_driver_ram">
-									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='2' [info]="ramInfo" [tooltip]="ramOver"></vtr-ui-gaming-monitor-tooltip>
+									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='2' [info]="ramInfo" [tooltip]="ramModuleName"></vtr-ui-gaming-monitor-tooltip>
 									<div class="monitor-stack">
 										<div class="stack-container">
 											<div class="stack-border">
 												<div class="stack-content ram"></div>
-												<div class="stack-mask" [ngStyle]="{'height':memoryUsage+'%'}"></div>
+												<div class="stack-mask" [ngStyle]="{'height': (100 - ramUsage) + '%'}"></div>
 											</div>
 										</div>
 										<div class="stack-label">
@@ -77,7 +77,7 @@
 												RAM
 											</div>
 											<div class="stack-status">
-												{{ramCurrent}}/{{ramMax}}
+												{{ramUsed}}/{{ramSize}}
 											</div>
 										</div>
 									</div>
@@ -124,7 +124,6 @@
 													<span *ngIf="hd.isSystemDisk">
 														<fa-icon [icon]="['fab', 'windows']"></fa-icon>
 													</span>
-
 													{{hd.type}}
 												</div>
 												<div class="hd-status">
