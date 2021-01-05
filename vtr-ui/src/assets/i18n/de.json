@@ -2212,9 +2212,9 @@
 					},
 					"readMore": "Es sind drei Optionen verfügbar. Der Bildschirm wird aktiviert, wenn im entsprechenden Bereich die Bewegungen einer Person erkannt werden.",
 					"readMoreForSensor1": {
-						"line1": "• Nah: 0–0,4 m",
-						"line2": "• Mittel: 0–0,6 m",
-						"line3": "• Weit: 0–1,2 m"
+						"line1": "• Nah: 0,2–0,4 m",
+						"line2": "• Mittel: 0,2–0,6 m",
+						"line3": "• Weit: 0,2–1,2 m"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Nah: 0,2–0,55 m",

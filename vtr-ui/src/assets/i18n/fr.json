@@ -2212,9 +2212,9 @@
 					},
 					"readMore": "Trois options sont disponibles. Pour chaque portée, votre écran sortira de veille lorsque des mouvements humains sont détectés en conséquence.",
 					"readMoreForSensor1": {
-						"line1": "• Distance proche : 0 à 0,4 mètre",
-						"line2": "• Distance moyenne : 0 à 0,6 mètre",
-						"line3": "• Distance éloignée : 0 à 1,2 mètre"
+						"line1": "• Distance proche : 0,2 à 0,4 mètre",
+						"line2": "• Distance moyenne : 0,2 à 0,6 mètre",
+						"line3": "• Distance éloignée : 0,2 à 1,2 mètre"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Distance proche : 0,2 à 0,55 mètre",

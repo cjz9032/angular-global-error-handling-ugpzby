@@ -2212,9 +2212,9 @@
 					},
 					"readMore": "Hay tres opciones. En cada rango, cuando se detecten movimientos humanos, la pantalla se activará en consecuencia.",
 					"readMoreForSensor1": {
-						"line1": "• Cerca: 0 a 0,4 metros",
-						"line2": "• Medio: 0 a 0,6 metros",
-						"line3": "• Lejos: 0 a 1,2 metros"
+						"line1": "• Cerca: 0,2 a 0,4 metros",
+						"line2": "• Medio: 0,2 a 0,6 metros",
+						"line3": "• Lejos: 0,2 a 1,2 metros"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Cerca: 0,2 a 0,55 metros",

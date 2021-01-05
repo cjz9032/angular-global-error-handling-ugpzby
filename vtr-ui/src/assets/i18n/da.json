@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Der er tre muligheder. Skærmen aktiveres, når der registreres menneskelige bevægelser inden for det af de tre områder, der er valgt.",
 					"readMoreForSensor1": {
-						"line1": "• Tæt på: 0-0,4 meter",
-						"line2": "• Mellem: 0-0,6 meter",
-						"line3": "• Langt: 0-1,2 meter"
+						"line1": "• Tæt på: 0,2-0,4 meter",
+						"line2": "• Mellem: 0,2-0,6 meter",
+						"line3": "• Langt: 0,2-1,2 meter"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Tæt på: 0,2-0,55 meter",

@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Sono disponibili tre opzioni. In ogni intervallo, quando vengono rilevati movimenti, lo schermo verrà riattivato di conseguenza.",
 					"readMoreForSensor1": {
-						"line1": "• Vicino: 0-0,4 metri",
-						"line2": "• Medio: 0-0,6 metri",
-						"line3": "• Distante: 0-1,2 metri"
+						"line1": "• Vicino: 0,2-0,4 metri",
+						"line2": "• Medio: 0,2-0,6 metri",
+						"line3": "• Distante: 0,2-1,2 metri"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Vicino: 0,2-0,55 metri",
