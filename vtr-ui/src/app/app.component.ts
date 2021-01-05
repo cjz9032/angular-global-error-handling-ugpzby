@@ -652,8 +652,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			hostname: win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode
 				? ''
 				: win.location.host,
+			navigationStarts: Math.round(navigationStartTime),
 			indexPageEstablished: Math.round(
-				navigationStartTime + navPerf.connectEnd - navPerf.startTime
+				navigationStartTime + navPerf.responseEnd - navPerf.startTime
 			),
 			domInteractived: Math.round(
 				navigationStartTime + navPerf.domInteractive - navPerf.startTime
@@ -672,6 +673,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.metricService.sendAppLoadedMetric(performanceTimePoints);
 		let content = `You are now accessing ${performanceTimePoints.source}, ${performanceTimePoints.hostname} \n \n`;
 		content += `Certpin done: ${performanceTimePoints.certPingDone} ms \n`;
+		content += `Navigation starts: ${performanceTimePoints.navigationStarts} ms \n`;
 		content += `Source downloaded: ${performanceTimePoints.indexPageEstablished} ms \n`;
 		content += `Dom interactived: ${performanceTimePoints.domInteractived} ms \n`;
 		content += `Script loaded: ${performanceTimePoints.scriptLoaded} ms \n`;
