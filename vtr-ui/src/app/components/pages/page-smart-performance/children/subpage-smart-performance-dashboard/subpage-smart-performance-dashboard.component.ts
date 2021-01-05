@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -27,7 +26,6 @@ export class SubpageSmartPerformanceDashboardComponent implements OnInit, OnDest
 		private commonService: CommonService,
 		public smartPerformanceService: SmartPerformanceService,
 		public shellServices: VantageShellService,
-		public metricsTranslateService: MetricsTranslateService,
 		public metricsService: MetricService
 	) {}
 

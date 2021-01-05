@@ -53,7 +53,6 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { ChunkLoadErrorHandler } from '../services/error-handler/global.service';
 import { HttpClient } from '@angular/common/http';
-import { MetricsTranslateService } from '../services/mertics-traslate/metrics-translate.service';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ModalAppUpdateAvailableComponent } from '../components/modal/modal-app-update-available/modal-app-update-available.component';
@@ -167,7 +166,6 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 	],
 	providers: [
 		CommonService,
-		MetricsTranslateService,
 		DevService,
 		DisplayService,
 		CookieService,

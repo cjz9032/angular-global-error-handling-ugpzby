@@ -5,7 +5,6 @@ import { MetricHelper } from 'src/app/services/metric/metrics.helper';
 import { metricsMap } from 'src/app/services/metric/metrics.map';
 import * as MetricEvents from 'src/app/services/metric/metrics.model';
 import { DevService } from '../dev/dev.service';
-import { MetricsTranslateService } from '../mertics-traslate/metrics-translate.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { VieworderService } from '../view-order/vieworder.service';
 
@@ -26,8 +25,7 @@ export class MetricsDirective {
 		shellService: VantageShellService,
 		private activatedRoute: ActivatedRoute,
 		private viewOrderService: VieworderService,
-		private devService: DevService,
-		private metricsTranslateService: MetricsTranslateService
+		private devService: DevService
 	) {
 		this.metrics = shellService.getMetrics();
 	}
@@ -64,7 +62,7 @@ export class MetricsDirective {
 	composeFeatureClickEvent(): MetricEvents.FeatureClick {
 		return {
 			ItemType: EventName.featureclick,
-			ItemName: this.metricsTranslateService.translate(this.metricsItem),
+			ItemName: this.metricsItem,
 			ItemParent: this.getItemParent(),
 			ItemValue: this.metricsValue,
 			ItemParm: this.metricsParam,
@@ -77,7 +75,7 @@ export class MetricsDirective {
 
 		return {
 			ItemType: EventName.articleclick,
-			ItemName: this.metricsTranslateService.translate(this.metricsItem),
+			ItemName: this.metricsItem,
 			ItemParent: this.getItemParent(),
 			ItemParm: this.metricsParam,
 			viewOrder: ++this.viewOrderService[this.getItemParent()],
@@ -99,7 +97,7 @@ export class MetricsDirective {
 	composeUnknownEvent(): any {
 		return {
 			ItemType: EventName.unknown,
-			ItemName: this.metricsTranslateService.translate(this.metricsItem),
+			ItemName: this.metricsItem,
 			ItemParent: this.getItemParent(),
 			ItemValue: this.metricsValue,
 			ItemParm: this.metricsParam,

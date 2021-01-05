@@ -3,7 +3,6 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { MetricService } from 'src/app/services/metric/metrics.service';
-import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 
 @Component({
 	selector: 'vtr-modal-wifi-security-invitation',
@@ -33,8 +32,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	constructor(
 		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
-		public metrics: MetricService,
-		public metricsTranslateService: MetricsTranslateService
+		public metrics: MetricService
 	) {}
 
 	ngOnInit() {
@@ -63,7 +61,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		this.joinFailed = false;
 		const metricsData = {
 			ItemParent: this.metricsParent,
-			ItemName: this.metricsTranslateService.translate('CHSInvitationConnectFailed'),
+			ItemName: 'CHSInvitationConnectFailed',
 			ItemType: 'FeatureClick',
 		};
 		if (this.chs) {
@@ -73,9 +71,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 					this.startJoin = false;
 					if (response.result === 'Success') {
 						this.joinSuccess = true;
-						metricsData.ItemName = this.metricsTranslateService.translate(
-							'CHSInvitationConnectSuccess'
-						);
+						metricsData.ItemName = 'CHSInvitationConnectSuccess';
 						setTimeout(() => {
 							this.successMsg.nativeElement.focus();
 						}, 0);

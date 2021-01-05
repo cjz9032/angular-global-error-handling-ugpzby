@@ -6,7 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { SupportService } from 'src/app/services/support/support.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -64,7 +63,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		public smartPerformanceDialogService: SmartPerformanceDialogService,
 		private logger: LoggerService,
 		public shellServices: VantageShellService,
-		public metricsTranslateService: MetricsTranslateService,
 		public metricsService: MetricService,
 		private localCacheService: LocalCacheService,
 		private supportService: SupportService,

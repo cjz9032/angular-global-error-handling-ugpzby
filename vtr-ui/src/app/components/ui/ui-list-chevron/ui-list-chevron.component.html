@@ -11,7 +11,7 @@
 				id="{{linkId}}-{{item.id}}"
 				[queryParams]="item.pathParams"
 				vtrMetrics
-				[metricsItem]="item.metricsItemName ? item.metricsItemName : item.title"
+				[metricsItem]="item.metricsItemName"
 				[metricsEvent]="metricsEvent"
 				[metricsItemID]="item.id"
 				[metricsItemCategory]="item.category"
@@ -19,7 +19,7 @@
 				[ngClass]="clickable?'':'disabled'"
 				[tabindex]="clickable ? 0 : -1"
 				[attr.role]="clickable?'':'document'"
-				[matTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
+				[matTooltip]="(item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subText? ' - '+item.subText:'' )"
 				matTooltipClass="vtr-system-tooltip"
 				#ta="matTooltip">
 				<div class="container-fluid">

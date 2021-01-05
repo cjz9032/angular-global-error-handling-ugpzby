@@ -11,7 +11,6 @@ import { UICustomRadio } from '../ui-custom-radio/ui-custom-radio';
 export class UiCircleRadioWithCheckboxComponent
 	extends UICustomRadio
 	implements OnInit, AfterViewInit {
-	@Input() radioId: string;
 	@Input() tooltip: string;
 	@Input() disabled = false;
 	@Input() theme: string;
@@ -40,7 +39,7 @@ export class UiCircleRadioWithCheckboxComponent
 			const metricsData = {
 				ItemParent: this.metricsParent,
 				ItemType: 'FeatureClick',
-				ItemName: this.radioLabel + this.label,
+				ItemName: this.radioLabel + this.radioId,
 				ItemValue: !this.checked,
 			};
 			this.metrics.sendMetrics(metricsData);

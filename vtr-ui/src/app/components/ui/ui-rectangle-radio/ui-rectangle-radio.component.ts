@@ -21,7 +21,6 @@ import { AppEvent } from './../../../enums/app-event.enum';
 export class UiRectangleRadioComponent
 	extends UICustomRadio
 	implements OnInit, AfterViewInit, OnChanges {
-	@Input() radioId: string;
 	@Input() tooltip: string;
 	@Input() disabled: boolean;
 	@Input() iconName: string;
