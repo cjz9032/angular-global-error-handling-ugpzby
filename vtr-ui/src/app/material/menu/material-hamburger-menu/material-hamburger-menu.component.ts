@@ -26,6 +26,7 @@ import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { MatMenu } from '@lenovo/material/menu';
+import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 
 @Component({
 	selector: 'vtr-material-hamburger-menu',
@@ -82,6 +83,9 @@ export class MaterialHamburgerMenuComponent implements OnInit, OnDestroy {
 					break;
 				case LenovoIdStatus.LoggingOut:
 					this.isLoggingOut = notification.payload;
+					break;
+				case MenuItemEvent.MenuItemChange:
+					this.menuItems = notification.payload;
 					break;
 				default:
 					break;
