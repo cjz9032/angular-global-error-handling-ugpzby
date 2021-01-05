@@ -233,6 +233,7 @@ export class MetricService {
 			Source: performanceTimePoints.source,
 			Hostname: performanceTimePoints.hostname,
 			CERTPIN_DONE: performanceTimePoints.certPingDone,
+			NAVIGATION_STARTS: performanceTimePoints.navigationStarts,
 			SOURCE_DOWNLOADED: performanceTimePoints.indexPageEstablished,
 			DOM_INTERACTIVED: performanceTimePoints.domInteractived,
 			SCRIPT_LOADED: performanceTimePoints.scriptLoaded,

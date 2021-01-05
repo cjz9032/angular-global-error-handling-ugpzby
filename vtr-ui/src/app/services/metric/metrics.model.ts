@@ -43,6 +43,7 @@ export class AppLoaded extends IMetricEvent {
 	public Source: string;
 	public Hostname: string;
 	public CERTPIN_DONE: number | null;
+	public NAVIGATION_STARTS: number | null;
 	public SOURCE_DOWNLOADED: number;
 	public DOM_INTERACTIVED: number;
 	public SCRIPT_LOADED: number;
