@@ -759,7 +759,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 /* replace system tooltip with custom */
 ngb-tooltip-window.vtr-system-tooltip.tooltip {
-	z-index: 10002; // need higher than modal z-index: 10001
+	z-index: 10005;
 
 	.tooltip-inner {
 		padding: 0.8rem;
