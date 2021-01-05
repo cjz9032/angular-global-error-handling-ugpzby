@@ -683,6 +683,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			this.snackBar.open(content, 'Close', {
 				panelClass: ['snackbar'],
 			});
+			const snackbar = document.getElementsByClassName('snackbar')[0];
+			snackbar.querySelector('button').id = 'snackbar-close-btn';
 		}
 	}
 }
