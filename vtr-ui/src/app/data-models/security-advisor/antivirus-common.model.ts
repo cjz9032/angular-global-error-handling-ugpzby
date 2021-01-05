@@ -5,7 +5,6 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
-import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
@@ -58,7 +57,6 @@ export class AntivirusCommon {
 		private localCacheService: LocalCacheService,
 		public translate: TranslateService,
 		public metrics: MetricService,
-		public metricsTranslateService: MetricsTranslateService,
 		public hypSettings: HypothesisService
 	) {
 		this.hypSettings.getFeatureSetting('AntivirusLaunchMcAfeeBuy').then((result) => {
@@ -106,7 +104,7 @@ export class AntivirusCommon {
 	openMcAfeePurchase(type?: string) {
 		const metricsData = {
 			ItemParent: this.metricsParent,
-			ItemName: this.metricsTranslateService.translate('launchMcAfeeBuy.noAPIRequested'),
+			ItemName: 'launchMcAfeeBuy.noAPIRequested',
 			ItemType: 'FeatureClick',
 		};
 		if (type === 'button') {
@@ -125,21 +123,15 @@ export class AntivirusCommon {
 				.then((response) => {
 					this.purchaseBtnIsLoading = false;
 					if (response?.result) {
-						metricsData.ItemName = this.metricsTranslateService.translate(
-							'launchMcAfeeBuy.success'
-						);
+						metricsData.ItemName = 'launchMcAfeeBuy.success';
 					} else {
-						metricsData.ItemName = this.metricsTranslateService.translate(
-							'launchMcAfeeBuy.failed'
-						);
+						metricsData.ItemName = 'launchMcAfeeBuy.failed';
 						WinRT.launchUri(this.urlGetMcAfee);
 					}
 				})
 				.catch(() => {
 					this.purchaseBtnIsLoading = false;
-					metricsData.ItemName = this.metricsTranslateService.translate(
-						'launchMcAfeeBuy.exception'
-					);
+					metricsData.ItemName = 'launchMcAfeeBuy.exception';
 					WinRT.launchUri(this.urlGetMcAfee);
 				})
 				.finally(() => {

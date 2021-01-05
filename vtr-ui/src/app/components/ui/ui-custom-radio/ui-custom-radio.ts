@@ -31,6 +31,7 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 			this.setRadioButtons();
 		}
 	}
+	@Input() radioId: string;
 	@Input() group: string;
 	@Input() label: string;
 	@Input() value: string;
@@ -83,7 +84,7 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 			const metricsData = {
 				itemParent: this.metricsParent,
 				ItemType: 'FeatureClick',
-				itemName: this.radioLabel + this.label,
+				itemName: this.radioLabel + this.radioId,
 				value: !this.checked,
 			};
 			this.metrics.sendMetrics(metricsData);

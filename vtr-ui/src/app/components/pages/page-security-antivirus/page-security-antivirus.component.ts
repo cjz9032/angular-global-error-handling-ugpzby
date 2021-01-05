@@ -16,7 +16,6 @@ import { LocalInfoService } from 'src/app/services/local-info/local-info.service
 import { TranslateService } from '@ngx-translate/core';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
-import { MetricsTranslateService } from 'src/app/services/mertics-traslate/metrics-translate.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
@@ -62,7 +61,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		private localInfoService: LocalInfoService,
 		public translate: TranslateService,
 		public metrics: MetricService,
-		public metricsTranslateService: MetricsTranslateService,
 		public hypSettings: HypothesisService,
 		private antivirusService: AntivirusService
 	) {}
@@ -84,7 +82,6 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 			this.localCacheService,
 			this.translate,
 			this.metrics,
-			this.metricsTranslateService,
 			this.hypSettings
 		);
 		this.viewModel = new AntiVirusViewModel(
