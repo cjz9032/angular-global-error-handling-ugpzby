@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.46](https://bitbucket.tc.lenovo.com///compare/v1.9.45...v1.9.46) (2021-01-05)
+
+
+### Features
+
+* **Snackbar automation ID:** VAN-24828 add automation ID for snackbar ([494f796](https://bitbucket.tc.lenovo.com///commit/494f79614395a7f9f10d4dac7cbfca73284a3906))
+
+
+### Bug Fixes
+
+* **menu:** fix smart assist link not show ([d610e7e](https://bitbucket.tc.lenovo.com///commit/d610e7e171f50e2631ea04d8f9794d3e202025db))
+* **SU:** VAN-24753 title and question align horizontal center ([3bdb1e8](https://bitbucket.tc.lenovo.com///commit/3bdb1e8db83643610aa568ee8398f1ca2f8ae10b))
+* change modal backdarop z-index ([764dcb4](https://bitbucket.tc.lenovo.com///commit/764dcb48735ea77f26f9e45e623b2a02ec703adc))
+* fix mat-dialog backdrop top position ([f29afbc](https://bitbucket.tc.lenovo.com///commit/f29afbc3ba84ea50519d36a1618b01a9f79c66b9))
+* remove useless comment ([6a07431](https://bitbucket.tc.lenovo.com///commit/6a07431e9d36279a37add2ff9474ecef8cc0350b))
+* set bootstrap modal backdrop z-index ([813fe18](https://bitbucket.tc.lenovo.com///commit/813fe1836b741d5640bbdc484059dedb761e83da))
+* **performance:** add navigationStarts and update Source downloaded ([94aed01](https://bitbucket.tc.lenovo.com///commit/94aed01d90df0a62df3c13ee7760379456f88ee9))
+
 ### [1.9.45](https://bitbucket.tc.lenovo.com///compare/v1.9.44...v1.9.45) (2021-01-04)
 
 
