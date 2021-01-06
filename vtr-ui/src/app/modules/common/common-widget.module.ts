@@ -3,12 +3,14 @@ import { CommonUiModule } from './common-ui.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { MatButtonModule } from '@lenovo/material/button';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
-import { MatIconModule } from '@lenovo/material/icon';
-import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
 
 import { SharedModule } from '../shared.module';
+import { MaterialModule } from './material.module';
+import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
+import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
+
 import { WidgetDeviceComponent } from 'src/app/components/widgets/widget-device/widget-device.component';
 import { WidgetDeviceUpdateComponent } from 'src/app/components/widgets/widget-device-update/widget-device-update.component';
 import { WidgetDeviceUpdateSettingsComponent } from 'src/app/components/widgets/widget-device-update-settings/widget-device-update-settings.component';
@@ -17,16 +19,9 @@ import { WidgetPermissionNoteComponent } from 'src/app/components/widgets/widget
 import { WidgetRebootComponent } from 'src/app/components/widgets/widget-reboot/widget-reboot.component';
 import { WidgetSupportComponent } from 'src/app/components/widgets/widget-support/widget-support.component';
 import { WidgetWarrantyComponent } from 'src/app/components/widgets/widget-warranty/widget-warranty.component';
-import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { WidgetPoweredByInfoComponent } from 'src/app/components/widgets/widget-powered-by-info/widget-powered-by-info.component';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-home-security/widget-home-security.component';
-import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
-import { MaterialSvgCircleComponent } from 'src/app/material/material-svg-circle/material-svg-circle.component';
-import { MaterialStatusCircleComponent } from 'src/app/material/material-status-circle/material-status-circle.component';
 import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
-import { MaterialAppTileListComponent } from 'src/app/material/material-app-tile-list/material-app-tile-list.component';
-import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widget-intelligent-boost/widget-intelligent-boost.component';
 
 
 @NgModule({
@@ -39,11 +34,7 @@ import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widg
 		WidgetWarrantyComponent,
 		WidgetPoweredByInfoComponent,
 		WidgetHomeSecurityComponent,
-		MaterialSvgCircleComponent,
-		MaterialStatusCircleComponent,
 		WidgetRoundStatusComponent,
-		MaterialAppTileListComponent,
-		WidgetIntelligentBoostComponent,
 	],
 	exports: [
 		WidgetDeviceComponent,
@@ -55,11 +46,7 @@ import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widg
 		WidgetWarrantyComponent,
 		WidgetPoweredByInfoComponent,
 		WidgetHomeSecurityComponent,
-		MaterialSvgCircleComponent,
-		MaterialStatusCircleComponent,
 		WidgetRoundStatusComponent,
-		MaterialAppTileListComponent,
-		WidgetIntelligentBoostComponent,
 	],
 	imports: [
 		CommonModule,
@@ -70,9 +57,7 @@ import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widg
 		WidgetSupportModule,
 		NgbTooltipModule,
 		MatTooltipModule,
-		MatIconModule,
-		MatSlideToggleModule,
-		MatButtonModule,
+		MaterialModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

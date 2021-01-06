@@ -18,10 +18,13 @@ export class MaterialAppTileListComponent implements OnInit, AfterViewInit {
 	@Input() removable: boolean;
 	@Input() addible: boolean;
 	@Input() maxSelected: MaxSelected;
+	@Input() isShowAddBtn = true;
 
 	@ViewChild('appTileContainer') appTileContainer: ElementRef;
 
 	@Output() addButtonClick = new EventEmitter();
+	@Output() removeTile = new EventEmitter();
+	@Output() selectTile = new EventEmitter();
 
 	constructor(
 		public elementRef: ElementRef,
@@ -52,18 +55,21 @@ export class MaterialAppTileListComponent implements OnInit, AfterViewInit {
 		if (index >= 0) {
 			this.tileItems.splice(index, 1);
 		}
+		this.removeTile.emit(item);
 	}
 
-	tileAdd(item: TileItem): void {
+	select(item: TileItem): void {
 		const index = this.tileItems.indexOf(item);
 		if (index >= 0) {
 			this.tileItems[index].buttonType = item.buttonType;
+			this.selectTile.emit(item);
 		}
 		if (this.maxSelected) {
 			this.tileItems.forEach(tile => {
 				if (tile.buttonType !== 'selected') {
 					if (this.isDisabledAddButton(this.tileItems)) {
 						tile.buttonType = 'disabled';
+						tile.tooltip = this.maxSelected.tooltips;
 					} else {
 						tile.buttonType = 'clickable';
 					}

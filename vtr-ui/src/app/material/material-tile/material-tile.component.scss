@@ -4,6 +4,7 @@
 	background: transparent;
 	border-radius: 0.5rem;
 	height: 100%;
+	padding: 0 1.5rem;
 	&:active {
 		box-shadow: none !important;
 	}
@@ -20,23 +21,12 @@
 		max-width: 15rem;
 		::ng-deep {
 			.tile-icon {
-				min-width: 4rem;
-				max-width: 8rem;
+				width: 5rem;
 				margin-bottom: 1rem;
 			}
 			.tile-name {
 				font-size: 1.4rem;
 				text-align: center;
-			}
-		}
-		.add-border {
-			width: 4rem;
-			height: 4rem;
-			border: 0.1rem solid $menu_hover;
-			border-radius: 0.5rem;
-			.mat-icon {
-				font-size: 4rem;
-				color: $blue-lighter;
 			}
 		}
 	}
@@ -48,9 +38,13 @@
 				}
 			}
 			&:not(.mat-button-disabled) {
-				border: 0.1rem solid $blue-lighter;
+				&:not(.mat-primary) {
+					background: transparent;
+					border: 0.1rem solid $blue-lighter;
+				}
 			}
 			&.mat-button-disabled {
+				background: transparent;
 				border: 0.1rem solid $light;
 				opacity: 0.4;
 			}

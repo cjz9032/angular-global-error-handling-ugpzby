@@ -5882,6 +5882,7 @@
 		"add": "Add",
 		"appsDialog": "Running apps list",
 		"appsDialogDesc": "Only apps currently running will be show in the list below",
+		"appsDialogDisabledTooltip": "Please uncheck on app first",
 		"appsDialogWarn": "No running apps",
 		"appsDialogWarnDesc": "Only currently running apps can be show. You could launch a app that you want to add then you will see it here.",
 		"networkBoost": "Network boost",

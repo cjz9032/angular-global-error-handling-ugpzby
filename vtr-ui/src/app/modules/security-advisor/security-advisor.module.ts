@@ -38,6 +38,7 @@ import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-li
 import { CommonModalModule } from '../common/common-modal.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
+import { MaterialModule } from '../common/material.module';
 
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 
@@ -133,6 +134,7 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		MatButtonModule,
 		MatCheckboxModule,
 		MatTooltipModule,
+		MaterialModule,
 	],
 	providers: [DialogService],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
