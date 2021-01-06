@@ -147,7 +147,7 @@ export class ContentDisplayDetection {
 		) {
 			if (Array.isArray(taskContext.item)) {
 				taskContext.item.forEach((item) => {
-					this.metricsService.sendContentDisplay(item.Id, item.DataSource, position);
+					this.metricsService.sendContentDisplay(item.Id || item.id, item.DataSource, position);
 				});
 			} else {
 				this.metricsService.sendContentDisplay(
