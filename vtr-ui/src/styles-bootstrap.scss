@@ -1,4 +1,4 @@
-@import "app/app.theme";
+@import 'app/app.theme';
 
 .navbar,
 .container-fluid,
@@ -8,7 +8,7 @@
 	padding: 0;
 }
 
-.dropdown:hover>.dropdown-menu {
+.dropdown:hover > .dropdown-menu {
 	display: block;
 }
 
@@ -194,7 +194,6 @@
 	-webkit-box-orient: vertical;
 }
 
-
 // override for bootstrap modal size
 .battery-modal-size .modal-dialog {
 	max-width: 150rem;
@@ -228,7 +227,6 @@
 
 		// 	}
 		// }
-
 	}
 
 	.border {
@@ -237,11 +235,11 @@
 }
 
 .modal {
-	z-index: 10001;
+	z-index: 10004;
 }
 
 // .modal-content {
-	// user-select: none;
+// user-select: none;
 // }
 
 .battery-detail-modal-title {

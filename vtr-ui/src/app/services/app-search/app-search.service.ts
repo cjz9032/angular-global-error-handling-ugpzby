@@ -8,11 +8,11 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { featureSource } from './features.model';
 import { IFeature, IFeatureAction, INavigationAction, SearchActionType } from './interface.model';
 import { SearchEngineWraper } from './search-engine-wraper';
+import find from 'lodash/find';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
-
 export class AppSearchService {
 	private featureLoad = false;
 	private featureMap = {};
@@ -24,15 +24,23 @@ export class AppSearchService {
 	constructor(
 		private translate: TranslateService,
 		private router: Router,
-		private commonService: CommonService) {
-			this.subscription = this.commonService.notification.subscribe(
-				(notification: AppNotification) => {
-					this.onNotification(notification);
-				}
-			);
+		private commonService: CommonService
+	) {
+		this.subscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
 	}
 
-	public load() {
+	public async load() {
+		if (this.featureLoad) {
+			return;
+		}
+
+		// ensure that the translation resources has been loaded
+		await this.translate.get('appSearch').toPromise();
+
 		if (this.featureLoad) {
 			return;
 		}
@@ -41,15 +49,20 @@ export class AppSearchService {
 		this.searchEngine = new SearchEngineWraper();
 
 		// transfer pages to feature map
-		featureSource.forEach(feature => {
-			feature.featureName = this.translate.instant(feature.featureName || `${feature.id}.featureName`);
-			feature.category = this.translate.instant(feature.category || `${feature.categoryId}.category`);
+		featureSource.forEach((feature) => {
+			feature.featureName = this.translate.instant(
+				feature.featureName || `${feature.id}.featureName`
+			);
+			feature.category = this.translate.instant(
+				feature.category || `${feature.categoryId}.category`
+			);
+
 			this.featureMap[feature.id] = feature;
 			this.searchContext[feature.id] = {
 				id: feature.id,
 				featureName: feature.featureName,
 				highRelevantKeywords: this.translate.instant(`${feature.id}.highRelevantKeywords`),
-				lowRelevantKeywords: this.translate.instant(`${feature.id}.lowRelevantKeywords`)
+				lowRelevantKeywords: this.translate.instant(`${feature.id}.lowRelevantKeywords`),
 			};
 		});
 
@@ -61,7 +74,7 @@ export class AppSearchService {
 
 		const returnList = [];
 		if (featureIdList && featureIdList.length > 0) {
-			featureIdList.forEach(feature => {
+			featureIdList.forEach((feature) => {
 				if (feature?.item?.id) {
 					returnList.push(Object.assign({}, this.featureMap[feature.item.id]));
 				}
@@ -77,30 +90,42 @@ export class AppSearchService {
 		const translation = this.translate.instant('appSearch');
 		feature.featureName = translation[feature.id];
 		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
-
 	}
 
 	public unRegister(featureId: string) {
-		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
+		// todo
 	}
 
 	public handleAction(featureAction: IFeatureAction) {
 		if (featureAction.type === SearchActionType.navigation) {
 			const navAction = featureAction as INavigationAction;
-			let route = '/';
+			let route = '/' + this.actionToRoutePath(navAction);
 
-			if (navAction.menuId && this.menuRouteMap[navAction.menuId]) {
-				route = '/' + this.menuRouteMap[navAction.menuId];
-			} else if (navAction.route) {
-				route = navAction.route.startsWith('/') ? navAction.route : '/' + navAction.route;
-			}
-
-			if (route.startsWith('/user')) {	// not support user route at present
+			if (route.startsWith('/user')) {
+				// not support user route at present
 				this.router.navigateByUrl('/');
 			} else {
 				this.router.navigateByUrl(route);
 			}
 		}
+	}
+
+	private actionToRoutePath(navAction: INavigationAction) {
+		let route = '';
+		if (navAction.menuId) {
+			if (typeof navAction.menuId === 'string') {
+				route = this.menuRouteMap[navAction.menuId] || '';
+			} else if (navAction.menuId.length > 0) {
+				const menuId = find(navAction.menuId, (id) => Boolean(this.menuRouteMap[id]));
+				route = this.menuRouteMap[menuId] || '';
+			}
+		}
+
+		if (!route && navAction.route) {
+			route = navAction.route.trim();
+		}
+
+		return route;
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -120,26 +145,40 @@ export class AppSearchService {
 		this.extractRouteMap(payload);
 	}
 
-	private extractRouteMap(menuItems: any, upperPath: string = null) {
-		menuItems.forEach(item => {
-			if (!this.isMenuAvailble(item)) {
-				return;
-			}
-
-			let routePath = upperPath
-			if (item.id && item.path) {
-				routePath = upperPath ? upperPath + "/" + item.path : item.path;
-				if (item.singleLayerRouting) {
-					this.menuRouteMap[item.id] = item.path;
-				} else {
-					this.menuRouteMap[item.id] = routePath;
-				}
-			}
-
-			if (item.subitems?.length > 0) {
-				this.extractRouteMap(item.subitems, routePath);
+	private extractRouteMap(menuItems: any, parentPath: string = null) {
+		menuItems.forEach((item) => {
+			if (this.isMenuAvailble(item)) {
+				this.mapItemIdToPath(item, parentPath);
 			}
 		});
+	}
+	// map all item and its descendant items to its parent path if the menu node is hidden
+	private mapItemIdToPath(item, parentPath) {
+		let itemPath = parentPath;
+		if (item.singleLayerRouting) {
+			itemPath = item.path?.trim() || '';
+		} else {
+			itemPath = this.trimAndCombinePath(parentPath, item.path);
+		}
+
+		if (item.id && itemPath) {
+			this.menuRouteMap[item.id] = itemPath;
+		}
+
+		if (item.subitems?.length > 0) {
+			this.extractRouteMap(item.subitems, itemPath);
+		}
+	}
+
+	private trimAndCombinePath(parentPath, itemPath) {
+		const parent = parentPath?.trim();
+		const item = itemPath?.trim();
+
+		if (parent && item) {
+			return parent + '/' + item;
+		}
+
+		return parent || item || '';
 	}
 
 	private isMenuAvailble(menuItem): boolean {

@@ -1,4 +1,3 @@
-
 enum Category {
 	dashboard = 'appSearch.features.dashboard',
 	myDevice = 'appSearch.features.myDevice',
@@ -11,7 +10,22 @@ enum Category {
 	audio = 'appSearch.features.audio',
 	input = 'appSearch.features.input',
 	smartAssist = 'appSearch.features.smartAssist',
-}
+};
+
+enum MenuID {
+	dashboard = 'dashboard',
+	device = 'device',
+	systemUpdates = 'system-updates',
+	security = 'security',
+	smartPerformance = 'smart-performance',
+	hardwareScan = 'hardware-scan',
+	deviceSettings = 'device-settings',
+	power = 'power',
+	displayCamera = 'display-camera',
+	audio = 'audio',
+	inputAccessories = 'input-accessories',
+	smartAssist = 'smart-assist',
+};
 
 export const featureSource = [
 	/***
@@ -20,15 +34,15 @@ export const featureSource = [
 	{
 		id: `${Category.dashboard}.page`,
 		categoryId: Category.dashboard,
-		featureName: `${Category.dashboard}.page.featureName`,	// if the featureName and category is omited, we will fill it with the according id
-		category:  `${Category.dashboard}.category`,
+		featureName: `${Category.dashboard}.page.featureName`, // if the featureName and category is omited, we will fill it with the according id
+		category: `${Category.dashboard}.category`,
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'dashboard',
+			menuId: MenuID.dashboard,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -40,10 +54,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'device',
+			menuId: MenuID.device,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -55,10 +69,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'system-updates',
+			menuId: MenuID.systemUpdates,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -70,10 +84,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'security',
+			menuId: MenuID.security,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -85,10 +99,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'smart-performance',
+			menuId: MenuID.smartPerformance,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -100,10 +114,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'hardware-scan',
+			menuId: MenuID.hardwareScan,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -115,10 +129,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.power}.batteryDetails`,
@@ -126,10 +140,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.power}.smartStandby`,
@@ -137,10 +151,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.power}.alwaysOnUSB`,
@@ -148,10 +162,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.power}.batteryChargeThreshold`,
@@ -159,10 +173,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.power}.intelligentCooling`,
@@ -170,10 +184,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.power}.dynamicThermalControl`,
@@ -181,10 +195,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.power}.easyResume`,
@@ -192,10 +206,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.power}.rapidCharge`,
@@ -203,10 +217,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.power}.vantageToolbar`,
@@ -214,10 +228,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'power',
+			menuId: [MenuID.power, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -229,10 +243,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'display-camera',
+			menuId: [MenuID.displayCamera, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.cameraAndDisplay}.privacyGuard`,
@@ -240,10 +254,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'display-camera',
+			menuId: [MenuID.displayCamera, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.cameraAndDisplay}.eyeCareMode`,
@@ -251,10 +265,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'display-camera',
+			menuId: [MenuID.displayCamera, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.cameraAndDisplay}.cameraSettings`,
@@ -262,10 +276,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'display-camera',
+			menuId: [MenuID.displayCamera, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.cameraAndDisplay}.cameraBackgroundBlur`,
@@ -273,10 +287,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'display-camera',
+			menuId: [MenuID.displayCamera, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -288,10 +302,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'audio',
+			menuId: [MenuID.audio, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.audio}.microphoneSettings`,
@@ -299,10 +313,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'audio',
+			menuId: [MenuID.audio, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.audio}.automaticOptimizationForECourse`,
@@ -310,10 +324,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'audio',
+			menuId: [MenuID.audio, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -325,10 +339,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'input-accessories',
+			menuId:  [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.input}.trackPointSettings`,
@@ -336,10 +350,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'input-accessories',
+			menuId: [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.input}.keyboardBacklight`,
@@ -347,10 +361,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'input-accessories',
+			menuId: [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.input}.smartKeyboardBacklight`,
@@ -358,10 +372,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'input-accessories',
+			menuId: [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.input}.hiddenKeyboardFunctions`,
@@ -369,10 +383,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'input-accessories',
+			menuId: [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.input}.voIPHotkeyFunction`,
@@ -380,10 +394,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'input-accessories',
+			menuId: [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.input}.topRowKeyFunctions`,
@@ -391,10 +405,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'input-accessories',
+			menuId: [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.input}.userDefinedKey`,
@@ -402,10 +416,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'input-accessories',
+			menuId: [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.input}.fnAndCtrlKeySwap`,
@@ -413,10 +427,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'input-accessories',
+			menuId: [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 
 	/***
@@ -428,10 +442,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'smart-assist',
+			menuId: MenuID.smartAssist,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.smartAssist}.intelligentSensing`,
@@ -439,10 +453,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'smart-assist',
+			menuId: MenuID.smartAssist,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.smartAssist}.zeroTouchLogin`,
@@ -450,10 +464,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'smart-assist',
+			menuId: MenuID.smartAssist,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.smartAssist}.zeroTouchLock`,
@@ -461,10 +475,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'smart-assist',
+			menuId: MenuID.smartAssist,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.smartAssist}.zeroTouchVideoPlayback`,
@@ -472,10 +486,10 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'smart-assist',
+			menuId: MenuID.smartAssist,
 			route: '',
-			params: []
-		}
+			params: [],
+		},
 	},
 	{
 		id: `${Category.smartAssist}.videoResolutionUpscalingSR`,
@@ -483,9 +497,9 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId: 'smart-assist',
+			menuId: MenuID.smartAssist,
 			route: '',
-			params: []
-		}
-	}
+			params: [],
+		},
+	},
 ];

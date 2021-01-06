@@ -623,7 +623,8 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		this.scanTimer = setInterval(() => {
 			const precent = this.smartPerformanceService.scheduleScanObj?.payload?.percentage;
 			// retry 10 times if scan does not launched
-			if ((!precent || precent < 1) && retry < 10) {
+			if ((!precent || precent < 1) && retry < 10
+				&& this.smartPerformanceService.scanningState !== ScanningState.Canceled) {
 				this.logger.info(`retry to launch scan: ${retry}`);
 				this.tryScan();
 				retry++;

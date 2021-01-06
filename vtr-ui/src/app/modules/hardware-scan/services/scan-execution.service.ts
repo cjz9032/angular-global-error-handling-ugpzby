@@ -75,7 +75,10 @@ export class ScanExecutionService {
 					const startIntervalTime = 10000;
 
 					this.checkCliRunning(startIntervalTime, () => {
+						// Prevent that the "View Details" button is shown
+						// Enable the back button to work as expected when visiting the "Previous Results" page
 						this.hardwareScanService.setEnableViewResults(false);
+						this.hardwareScanService.setIsScanDone(false);
 					});
 					break;
 				case WatcherStepProcess.Intermediate:
@@ -83,7 +86,10 @@ export class ScanExecutionService {
 
 					clearInterval(this.cancelWatcher);
 					this.checkCliRunning(intermediateIntervalTime, () => {
+						// Prevent that the "View Details" button is shown
+						// Enable the back button to work as expected when visiting the "Previous Results" page
 						this.hardwareScanService.setEnableViewResults(false);
+						this.hardwareScanService.setIsScanDone(false);
 					});
 					break;
 				case WatcherStepProcess.Stop:
