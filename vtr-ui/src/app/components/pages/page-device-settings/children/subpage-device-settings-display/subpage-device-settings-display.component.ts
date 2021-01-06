@@ -292,8 +292,18 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 	}
 
 	async ngAfterViewInit() {
-		this.inWhiteList().then((isSupport) => {
-			if (isSupport) {
+		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
+		//apiCapability
+		Promise.all([
+			this.inWhiteList(),
+			this.displayService.initEyecaremodeSettings(true)
+		]).then(([isSupport, apiCapability]) => {
+			this.logger.info(`isSupport: ${isSupport};
+				Upstream apiCapability: ${apiCapability};
+				machineType: ${machineType};
+				isGaming: ${this.deviceService.isGaming};
+			`);
+			if (isSupport || (machineType !== 1 && !this.deviceService.isGaming && apiCapability)) {
 				this.initDisplayColorTempFromCache();
 				this.initEyeCareModeFromCache();
 				this.statusChangedLocationPermission();
@@ -762,7 +772,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		try {
 			if (this.displayService.isShellAvailable) {
 				this.displayService
-					.initEyecaremodeSettings()
+					.initEyecaremodeSettings(false)
 					.then<boolean>((result) => {
 						this.logger.debug('initEyecaremodeSettings.then', result);
 						if (!result) {
