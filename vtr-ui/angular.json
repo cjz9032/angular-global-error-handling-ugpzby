@@ -224,9 +224,6 @@
 				"serve": {
 					"builder": "@angular-builders/custom-webpack:dev-server",
 					"options": {
-						"customWebpackConfig": {
-							"path": "./custom-webpack.config.js"
-						},
 						"browserTarget": "vtr-ui:build"
 					},
 					"configurations": {
