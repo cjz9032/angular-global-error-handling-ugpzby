@@ -759,7 +759,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 
 /* replace system tooltip with custom */
 ngb-tooltip-window.vtr-system-tooltip.tooltip {
-	z-index: 10005;
+	z-index: 10002; // need higher than modal z-index: 10001
 
 	.tooltip-inner {
 		padding: 0.8rem;
@@ -2600,12 +2600,12 @@ ngb-tooltip-window.schedule-scan.tooltip {
 }
 
 .dialogBackdropExcludeMenu {
-	top: calc(#{$material_menu_height} - 0.1rem);
+	top: $menu_height;
 	background: rgba(0, 0, 0, 0.32);
 }
 
 .dialogBackdropExcludeGamingMenu {
-	top: $menu_height;
+	top: $material_menu_height;
 	background: rgba(0, 0, 0, 0.32);
 }
 
