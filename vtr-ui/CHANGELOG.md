@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.3](https://bitbucket.tc.lenovo.com///compare/v1.9.46...v1.10.3) (2021-01-06)
+
+
+### Features
+
+* **Snackbar Automation ID:** VAN-24828 add automation id for snackbar ([708f638](https://bitbucket.tc.lenovo.com///commit/708f638bd9c846bf0ee43657aa98ca090710a66e))
+
+### [1.10.2](https://bitbucket.tc.lenovo.com///compare/v1.10.1...v1.10.2) (2021-01-05)
+
+### [1.10.1](https://bitbucket.tc.lenovo.com///compare/v1.9.45...v1.10.1) (2021-01-04)
+
+
+### Features
+
+* add disabled status on edit button ([af369c3](https://bitbucket.tc.lenovo.com///commit/af369c3f2d16ef1831b4bc582c7a8ebc405eb655))
+* remove useless input value and button ([fe790eb](https://bitbucket.tc.lenovo.com///commit/fe790eb76f0d262b1150d3ff12e86045f51e5a7d))
+* **auto close:** implement auto close widget ui container ([699e765](https://bitbucket.tc.lenovo.com///commit/699e7655820c7c8b4d0cfa6729e99457b91e029b))
+
+## [1.10.0](https://bitbucket.tc.lenovo.com///compare/v1.9.44...v1.10.0) (2020-12-31)
+
+
+### Features
+
+* **Tile control:** VAN-24040 implement tile control for auto close ([f7b389d](https://bitbucket.tc.lenovo.com///commit/f7b389da819b8be37125ecb718bbc0c3eba6241c))
+* **Tile list Component:** VAN-24308 implement app list component ([3850ade](https://bitbucket.tc.lenovo.com///commit/3850ade73b467376e315892f8b70eb58edbed4ae))
+
 ### [1.10.2](https://bitbucket.tc.lenovo.com///compare/v1.10.1...v1.10.2) (2021-01-05)
 
 ### [1.10.1](https://bitbucket.tc.lenovo.com///compare/v1.10.0...v1.10.1) (2021-01-04)
