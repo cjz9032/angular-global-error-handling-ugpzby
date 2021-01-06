@@ -40,7 +40,7 @@
 						"accessibility": "explicit"
 					}
 				],
-				"@typescript-eslint/member-ordering": ["warn"],
+				"@typescript-eslint/member-ordering": ["off"],
 				"@typescript-eslint/naming-convention": [
 					"warn",
 					{ "selector": "typeLike", "format": ["PascalCase"] }
