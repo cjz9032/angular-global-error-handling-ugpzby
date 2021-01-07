@@ -263,7 +263,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		this.historyScanResultsDateTime = JSON.parse(JSON.stringify(this.historyScanResults));
 
 		// Deleting unnecessary keys & manupulating date time.
-		let historyScanResultsLength = this.historyScanResultsDateTime.length > 5 ? 5 : this.historyScanResultsDateTime.length
+		const historyScanResultsLength = this.historyScanResultsDateTime.length > 5 ? 5 : this.historyScanResultsDateTime.length;
 
 		for (let i = 0; i < historyScanResultsLength; i++) {
 			// Adding new key scanRunDate with formating
@@ -284,7 +284,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 
 	getMostRecentScanDateTime() {
 		if (this.historyScanResults.length === 0) { return; }
-		const scanDate = this.historyScanResults[0].scanruntime
+		const scanDate = this.historyScanResults[0].scanruntime;
 		try {
 			const dateObj = new Date(scanDate);
 			// const momentObj = moment(dateObj);
