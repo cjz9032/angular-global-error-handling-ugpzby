@@ -392,8 +392,8 @@ $fontsize_xs: 1.4rem;
 }
 
 .intelligent-security-image {
-	margin: -1.5rem -2.4rem 0rem -0.9rem;
-	min-height: 17.7rem;
+	// margin: -1.5rem -2.4rem 0rem -0.9rem;
+	min-height: 16rem;
 	position: relative;
 	& > img {
 		width: 100%;
@@ -410,7 +410,7 @@ $fontsize_xs: 1.4rem;
 		left: 3rem;
 		top: 50%;
 		color: #34495e;
-		transform: translateY(-45%);
+		transform: translateY(-50%);
 		// @include high-contrast-adjust;
 		.intelligent-security-image-word-title {
 			font-size: 2.4rem;
