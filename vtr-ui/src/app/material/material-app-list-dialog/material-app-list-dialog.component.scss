@@ -15,4 +15,9 @@
 }
 .empty-container {
 	min-height: 40rem;
+	.image-content {
+		img {
+			width: 35rem;
+		}
+	}
 }
