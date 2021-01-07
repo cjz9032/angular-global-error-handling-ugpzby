@@ -7,10 +7,6 @@ import {
 	NgbProgressbarModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
-import { MatButtonModule } from '@lenovo/material/button';
-import { MatChipsModule } from '@lenovo/material/chips';
-import { MatIconModule } from '@lenovo/material/icon';
-import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { SharedModule } from '../shared.module';
 import { UiCheckboxComponent } from 'src/app/components/ui/ui-checkbox/ui-checkbox.component';
 import { UiCircleRadioComponent } from 'src/app/components/ui/ui-circle-radio/ui-circle-radio.component';
@@ -55,7 +51,8 @@ import { UiGroupCardComponent } from 'src/app/components/ui/ui-group-card/ui-gro
 import { UiDeviceinfoItemComponent } from 'src/app/components/ui/ui-deviceinfo-item/ui-deviceinfo-item.component';
 import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-point/ui-exclamation-point.component';
-import { MaterialTileComponent } from 'src/app/material/material-tile/material-tile.component';
+import { MaterialModule } from './material.module';
+import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 
 @NgModule({
@@ -88,7 +85,6 @@ import { MaterialTileComponent } from 'src/app/material/material-tile/material-t
 		UiGamingMonitorTooltipComponent,
 		UiExclamationPointComponent,
 		UiLightingProfileToggleComponent,
-		MaterialTileComponent,
 	],
 	exports: [
 		UiCheckboxComponent,
@@ -124,7 +120,6 @@ import { MaterialTileComponent } from 'src/app/material/material-tile/material-t
 		UiGamingMonitorTooltipComponent,
 		UiExclamationPointComponent,
 		UiLightingProfileToggleComponent,
-		MaterialTileComponent,
 	],
 	imports: [
 		CommonModule,
@@ -140,10 +135,8 @@ import { MaterialTileComponent } from 'src/app/material/material-tile/material-t
 		UiRoundedRectangleCustomRadioListModule,
 		UiCircleRadioWithCheckBoxListModule,
 		SafePipeModule,
-		MatIconModule,
-		MatButtonModule,
-		MatChipsModule,
-		MatTooltipModule
+		MatTooltipModule,
+		MaterialModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

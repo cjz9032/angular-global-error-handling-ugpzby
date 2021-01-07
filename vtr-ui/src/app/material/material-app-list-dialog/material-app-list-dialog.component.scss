@@ -1,0 +1,23 @@
+@import '../../app.theme';
+
+.close-icon {
+	color: $menu_hover;
+}
+.font-color-main {
+	color: $shade_blue;
+}
+.app-container {
+	border-radius: 0.5rem;
+	padding: 0 1.5rem 1.5rem;
+	background-color: $gray_darker;
+	max-height: 50rem;
+	overflow-y: scroll;
+}
+.empty-container {
+	min-height: 40rem;
+	.image-content {
+		img {
+			width: 35rem;
+		}
+	}
+}

@@ -7,6 +7,7 @@ export interface TileItem {
 	matIcon?: string;
 	name: string;
 	buttonType?: AddibleType;
+	tooltip?: string;
 }
 
 @Component({
@@ -21,7 +22,7 @@ export class MaterialTileComponent implements OnInit {
 	@Input() addible: boolean;
 
 	@Output() tileRemove = new EventEmitter();
-	@Output() tileAdd = new EventEmitter();
+	@Output() tileSelect = new EventEmitter();
 
 	ngOnInit(): void {
 		if (this.addible) {
@@ -35,10 +36,10 @@ export class MaterialTileComponent implements OnInit {
 		this.tileRemove.emit(item);
 	}
 
-	add(item: TileItem): void {
+	select(item: TileItem): void {
 		const itemButtonType = item.buttonType;
 		this.tileItem.buttonType = itemButtonType === 'selected' ? 'clickable' : 'selected';
-		this.tileAdd.emit();
+		this.tileSelect.emit();
 	}
 
 }

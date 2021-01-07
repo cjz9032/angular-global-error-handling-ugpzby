@@ -1,10 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-
-import { MatButtonModule } from '@lenovo/material/button';
-import { MatIconModule } from '@lenovo/material/icon';
-import { MatDialogModule } from '@lenovo/material/dialog';
-import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { DownloadFailedModalComponent } from 'src/app/components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
@@ -18,12 +14,11 @@ import { ModalWifiSecurityInvitationComponent } from 'src/app/components/modal/m
 // import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { SharedModule } from '../shared.module';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
-import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-welcome-container/modal-chs-welcome-container.component';
 import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
 import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
-import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
-
+import { MaterialModule } from './material.module';
+import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 @NgModule({
 	declarations: [
@@ -41,7 +36,6 @@ import { MaterialDialogComponent } from 'src/app/material/material-dialog/materi
 		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent,
 		ModalSmartStandByComponent,
-		MaterialDialogComponent,
 	],
 	imports: [
 		CommonModule,
@@ -49,10 +43,8 @@ import { MaterialDialogComponent } from 'src/app/material/material-dialog/materi
 		MetricsModule,
 		NgbModalModule,
 		NgbTooltipModule,
-		MatButtonModule,
-		MatIconModule,
-		MatDialogModule,
-		MatTooltipModule
+		MatTooltipModule,
+		MaterialModule,
 	],
 	exports: [SharedModule, MetricsModule, NgbModalModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -71,7 +63,6 @@ import { MaterialDialogComponent } from 'src/app/material/material-dialog/materi
 		ModalChsStartTrialContainerComponent,
 		ModalRebootConfirmComponent,
 		ModalSmartStandByComponent,
-		MaterialDialogComponent,
 	],
 })
 export class CommonModalModule { }

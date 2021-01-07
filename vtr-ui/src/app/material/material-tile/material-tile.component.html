@@ -1,12 +1,11 @@
 <mat-chip
-	class="vtr-material-tile d-flex flex-column"
+	class="vtr-material-tile d-flex flex-column m-0"
 	[ngClass]="{'tile-removable': removable}"
 	[removable]="removable"
 	(removed)="remove(tileItem)">
 	<mat-icon *ngIf="removable" matChipRemove class="remove-icon text-center position-absolute m-2 align-self-end">close</mat-icon>
 	<div class="d-flex tile-container px-3 pb-3 mt-5 align-items-center justify-content-center"
-		[ngClass]="{'flex-column h-100': !isHorizontal,
-					'mt-5': removable}">
+		[ngClass]="{'flex-column h-100': !isHorizontal}">
 		<div class="row align-items-center tile"
 			[ngClass]="{'flex-column h-100': !isHorizontal}">
 			<img *ngIf="tileItem?.iconSrc" class="tile-icon" src="{{tileItem.iconSrc}}" alt="" srcset="">
@@ -18,7 +17,7 @@
 			<button mat-customize-button
 				[color]="tileItem?.buttonType === 'selected'?'primary':'accent'"
 				class="tile-button"
-				(click)="add(tileItem)"
+				(click)="select(tileItem)"
 				[disabled]="tileItem?.buttonType === 'disabled'">
 				<mat-icon *ngIf="tileItem?.buttonType === 'selected'; else addTemp"
 					class="check-icon">check</mat-icon>

@@ -1,0 +1,25 @@
+<button mat-dialog-close="close"
+	class="position-relative float-right closeButton"
+	id="btn-app-list-dialog-close">
+	<mat-icon class="icon close-icon">close</mat-icon>
+</button>
+<section *ngIf="data.length > 0; else empty" class="font-color-main">
+	<h1 mat-dialog-title class="mb-3 font-size-xl font-weight-semibold"
+		[innerHTML]="'intelligentBoost.appsDialog' | translate"></h1>
+	<h2 mat-dialog-title class="mb-3 font-size-xs" [innerHTML]="'intelligentBoost.appsDialogDesc' | translate"></h2>
+	<section class="app-container">
+		<vtr-material-app-tile-list
+			[tileItems]="data"
+			[addible]="true"
+			(selectTile)="select($event)"></vtr-material-app-tile-list>
+	</section>
+</section>
+<ng-template #empty>
+	<section class="w-100 d-flex flex-column justify-content-center align-items-center empty-container font-color-main py-20">
+		<div class="image-content mb-5">
+			<img [src]="'assets/images/auto-close-empty.svg' | svgInline | async" alt="">
+		</div>
+		<h3 class="font-weight-semibold mb-4" [innerHTML]="'intelligentBoost.appsDialogWarn' | translate"></h3>
+		<p class="font-size-xs font-weight-light mb-5" [innerHTML]="'intelligentBoost.appsDialogWarnDesc' | translate"></p>
+	</section>
+</ng-template>

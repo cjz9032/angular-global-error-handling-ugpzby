@@ -28,6 +28,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faMapMarkerAltSlash } from '@fortawesome/pro-light-svg-icons/faMapMarkerAltSlash';
 import { WidgetLocationStatusComponent } from '../../components/widgets/widget-location-status/widget-location-status.component';
 
+import { MaterialModule } from '../common/material.module';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 @NgModule({
@@ -52,6 +53,10 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 		PageLayoutModule,
 		FontAwesomeModule,
 		MatTooltipModule,
+		MaterialModule,
+	],
+	exports: [
+		MaterialModule,
 	],
 	providers: [DialogService],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

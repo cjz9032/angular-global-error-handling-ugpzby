@@ -1,19 +1,18 @@
-<mat-chip-list class="row" #appTileContainer>
+<mat-chip-list class="row mat-chip-list-container" #appTileContainer>
 	<vtr-material-tile *ngFor="let item of tileItems"
 		class="vtr-material-tile align-items-center"
 		[tileItem]="item"
 		[removable]="removable"
 		[addible]="addible"
 		(tileRemove)="remove(item)"
-		(tileAdd)="tileAdd(item)">
+		(tileSelect)="select(item)">
 
 	</vtr-material-tile>
-	<mat-chip *ngIf="tileItems?.length < 5 && !removable"
+	<mat-chip *ngIf="isShowAddBtn && !removable && !addible"
 		(click)="clickAdd()"
-		class="vtr-material-tile d-flex flex-column">
-		<div class="d-flex tile-container px-3 pb-3 align-items-center justify-content-center"
-			[ngClass]="{'flex-column': !isHorizontal,
-						'mt-5': removable}">
+		class="vtr-material-tile d-flex flex-column m-0">
+		<div class="d-flex tile-container px-3 pb-3 align-items-center justify-content-center mt-5"
+			[ngClass]="{'flex-column': !isHorizontal}">
 			<span class="add-border tile-icon">
 				<mat-icon>add</mat-icon>
 			</span>

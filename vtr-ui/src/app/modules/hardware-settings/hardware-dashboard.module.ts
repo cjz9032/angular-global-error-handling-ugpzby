@@ -31,6 +31,8 @@ import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-se
 import { FeedbackModule } from '../feedback/feedback.module';
 import { WidgetSupportModule } from 'src/app/components/widgets/widget-support/widget-support.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
+import { AppSearchModule } from '../app-search/app-search.module';
+import { MaterialModule } from '../common/material.module';
 
 import { MockService } from 'src/app/services/mock/mock.service';
 
@@ -40,12 +42,10 @@ import { WidgetSwitchIconComponent } from 'src/app/components/widgets/widget-swi
 import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/widget-dashboard-warranty/widget-dashboard-warranty.component';
 import { WidgetSystemUpdateComponent } from 'src/app/components/widgets/widget-system-update/widget-system-update.component';
 import { WidgetEnergyStarComponent } from 'src/app/components/widgets/widget-energy-star/widget-energy-star.component';
-import { MaterialStateCardContainerComponent } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
 import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
 import { WidgetQuicksettingsNoteComponent } from 'src/app/components/widgets/widget-quicksettings/widget-quicksettings-note/widget-quicksettings-note.component';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
-import { AppSearchModule } from '../app-search/app-search.module';
 
 @NgModule({
 	declarations: [
@@ -56,7 +56,6 @@ import { AppSearchModule } from '../app-search/app-search.module';
 		WidgetSystemUpdateComponent,
 		WidgetEnergyStarComponent,
 		WidgetDashboardWarrantyComponent,
-		MaterialStateCardContainerComponent,
 	],
 	imports: [
 		CommonModule,
@@ -85,6 +84,7 @@ import { AppSearchModule } from '../app-search/app-search.module';
 		MatIconModule,
 		NgbTooltipModule,
 		MatTooltipModule,
+		MaterialModule,
 	],
 	exports: [
 		MetricsModule,
@@ -98,6 +98,8 @@ import { AppSearchModule } from '../app-search/app-search.module';
 		PageLayoutModule,
 		WidgetDashboardWarrantyComponent,
 		NgbTooltipModule,
+		MatTooltipModule,
+		MaterialModule,
 	],
 	providers: [MockService],
 	entryComponents: [],

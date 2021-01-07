@@ -109,6 +109,7 @@ import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module'
 import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
 import { UiListSystemUpdateCheckboxComponent } from 'src/app/components/pages/page-device-updates/children/ui-list-system-update-checkbox/ui-list-system-update-checkbox.component';
 import { BatteryHealthModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-power/battery-health/battery-health.module';
+import { MaterialModule } from '../common/material.module';
 
 @NgModule({
 	declarations: [
@@ -185,6 +186,7 @@ import { BatteryHealthModule } from '../../components/pages/page-device-settings
 		MatTooltipModule,
 		OverlayModule,
 		CdkScrollableModule,
+		MaterialModule,
 	],
 	exports: [
 		CommonModule,
