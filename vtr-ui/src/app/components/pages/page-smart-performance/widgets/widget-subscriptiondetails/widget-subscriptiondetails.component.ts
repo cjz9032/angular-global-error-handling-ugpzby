@@ -51,7 +51,7 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 		private supportService: SupportService,
 		private localCacheService: LocalCacheService,
 		private logger: LoggerService
-	) {}
+	) { }
 	public localSubscriptionDetails = {
 		UUID: uuid(),
 		startDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
@@ -183,8 +183,7 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 	}
 
 	async getSubscriptionDetails() {
-		let machineInfo;
-		machineInfo = await this.supportService.getMachineInfo();
+		const machineInfo = await this.supportService.getMachineInfo();
 		this.isLoading = true;
 		let subscriptionData = [];
 		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(
@@ -281,11 +280,9 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 	}
 
 	getExpiredStatus(releaseDate, lastItem) {
-		let expiredDate;
-		let expiryRemainDays: number;
 		const nextText = this.translate.instant('smartPerformance.subscriptionDetails.next');
 		const currentDate: any = new Date(lastItem.currentTime);
-		expiredDate = new Date(releaseDate);
+		const expiredDate: any = new Date(releaseDate);
 		this.subscriptionDetails = {
 			startDate: this.formatLocaleDate.transform(lastItem.releaseDate),
 			endDate: this.formatLocaleDate.transform(releaseDate),
@@ -293,7 +290,7 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 			status: 'smartPerformance.subscriptionDetails.activeStatus',
 		};
 		const oneDay = 24 * 60 * 60 * 1000;
-		expiryRemainDays = (expiredDate - currentDate) / oneDay;
+		const expiryRemainDays = (expiredDate - currentDate) / oneDay;
 		const monthDeff = expiredDate.getMonth() - currentDate.getMonth();
 		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.SmartPerformanceSubscriptionDetails,

@@ -113,9 +113,11 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 		}
 
 		this.smartPerformanceService.getSubscriptionDataDetail((isSubscribed) => {
-			isSubscribed
-				? this.writeSmartPerformanceActivity('True', 'True', 'Active')
-				: this.writeSmartPerformanceActivity('True', 'True', 'Expired');
+			if (isSubscribed) {
+				this.writeSmartPerformanceActivity('True', 'True', 'Active');
+			} else {
+				this.writeSmartPerformanceActivity('True', 'True', 'Expired');
+			}
 		});
 
 		if (this.smartPerformanceService.isShellAvailable) {

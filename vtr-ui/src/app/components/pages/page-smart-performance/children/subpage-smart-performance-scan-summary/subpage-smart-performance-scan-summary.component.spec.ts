@@ -252,7 +252,8 @@ describe('SubpageSmartPerformanceScanSummaryComponent', () => {
 
 	it('should call openDropDown - if case', () => {
 		component.isDropDownOpen = true;
-		(component.oldDisplayFromDate = '01/10/2020'), (component.oldDisplayToDate = '03/10/2020');
+		component.oldDisplayFromDate = '01/10/2020';
+		component.oldDisplayToDate = '03/10/2020';
 		component.openDropDown();
 		expect(component.isDropDownOpen).toBe(false);
 	});
