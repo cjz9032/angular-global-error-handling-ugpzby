@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Existem três opções. Em cada intervalo, quando forem detetados movimentos humanos, o seu ecrã será reativado em conformidade.",
 					"readMoreForSensor1": {
-						"line1": "• Perto: 0-0,4 metros",
-						"line2": "• Intermédio: 0-0,6 metros",
-						"line3": "• Longe: 0-1,2 metros"
+						"line1": "• Perto: 0,2-0,4 metros",
+						"line2": "• Intermédio: 0,2-0,6 metros",
+						"line3": "• Longe: 0,2-1,2 metros"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Perto: 0,2-0,55 metros",

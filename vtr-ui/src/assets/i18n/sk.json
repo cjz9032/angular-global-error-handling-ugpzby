@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "K dispozícii sú tri možnosti. Obrazovka sa pri každom z rozsahov prebudí pri rozpoznaní pohybov človeka.",
 					"readMoreForSensor1": {
-						"line1": "• Blízko: 0 – 0,4 metra",
-						"line2": "• Stredne: 0 – 0,6 metra",
-						"line3": "• Ďaleko: 0 – 1,2 metra"
+						"line1": "• Blízko: 0,2 – 0,4 metra",
+						"line2": "• Stredne: 0,2 – 0,6 metra",
+						"line3": "• Ďaleko: 0,2 – 1,2 metra"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Blízko: 0,2 – 0,55 metra",

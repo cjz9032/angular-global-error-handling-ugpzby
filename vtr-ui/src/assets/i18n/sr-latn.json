@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Postoje tri opcije. U svakom opsegu, kada se detektuju ljudski pokreti, ekran će istog trenutka probuditi.",
 					"readMoreForSensor1": {
-						"line1": "• Blizu: 0–0,4 metara",
-						"line2": "• Srednje: 0–0,6 metara",
-						"line3": "• Daleko: 0–1,2 metara"
+						"line1": "• Blizu: 0,2–0,4 metara",
+						"line2": "• Srednje: 0,2–0,6 metara",
+						"line3": "• Daleko: 0,2–1,2 metara"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Blizu: 0,2–0,55 metara",

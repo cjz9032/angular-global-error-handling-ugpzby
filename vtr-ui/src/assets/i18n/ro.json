@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Sunt disponibile trei opțiuni. Pentru fiecare interval, atunci când este detectată mișcarea umană, ecranul se va activa în mod corespunzător.",
 					"readMoreForSensor1": {
-						"line1": "• În apropiere: 0 – 0,4 metri",
-						"line2": "• Mediu: 0 – 0,6 metri",
-						"line3": "• La distanță: 0 – 1,2 metri"
+						"line1": "• În apropiere: 0,2 – 0,4 metri",
+						"line2": "• Mediu: 0,2 – 0,6 metri",
+						"line3": "• La distanță: 0,2 – 1,2 metri"
 					},
 					"readMoreForSensor2": {
 						"line1": "• În apropiere: 0,2 – 0,55 metri",

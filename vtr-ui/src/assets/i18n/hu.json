@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Három lehetőség közül választhat. A kiválasztott tartomány határozza meg, hogy milyen közelről észlelt emberi mozgások esetén ébredjen fel a képernyő.",
 					"readMoreForSensor1": {
-						"line1": "• Közel: 0–0,4 méter",
-						"line2": "• Közepes: 0–0,6 méter",
-						"line3": "• Távol: 0–1,2 méter"
+						"line1": "• Közel: 0,2–0,4 méter",
+						"line2": "• Közepes: 0,2–0,6 méter",
+						"line3": "• Távol: 0,2–1,2 méter"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Közel: 0,2–0,55 méter",

@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Valittavissa on kolme vaihtoehtoa. Kun ihmisten havaitaan liikkuvan näillä alueilla, näyttösi herätetään.",
 					"readMoreForSensor1": {
-						"line1": "• Lähellä: 0–0,4 metriä",
-						"line2": "• Keskitaso: 0–0,6 metriä",
-						"line3": "• Kaukana: 0–1,2 metriä"
+						"line1": "• Lähellä: 0,2–0,4 metriä",
+						"line2": "• Keskitaso: 0,2–0,6 metriä",
+						"line3": "• Kaukana: 0,2–1,2 metriä"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Lähellä: 0,2–0,55 metriä",

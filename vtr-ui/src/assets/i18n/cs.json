@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "K dispozici jsou tři možnosti. V každém rozsahu bude při rozpoznání lidských pohybů obrazovka probuzena odpovídajícím způsobem.",
 					"readMoreForSensor1": {
-						"line1": "• Blízko: 0–0,4 metru",
-						"line2": "• Středně: 0–0,6 metru",
-						"line3": "• Daleko: 0–1,2 metru"
+						"line1": "• Blízko: 0,2–0,4 metru",
+						"line2": "• Středně: 0,2–0,6 metru",
+						"line3": "• Daleko: 0,2–1,2 metru"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Blízko: 0.2–0,55 metru",

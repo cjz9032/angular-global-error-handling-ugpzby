@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Üç seçenek vardır. Her bir aralıkta, insan hareketleri algılandığında ekranınız buna göre uyandırılır.",
 					"readMoreForSensor1": {
-						"line1": "• Yakın: 0-0,4 metre",
-						"line2": "• Orta: 0-0,6 metre",
-						"line3": "• Uzak: 0-1,2 metre"
+						"line1": "• Yakın: 0,2-0,4 metre",
+						"line2": "• Orta: 0,2-0,6 metre",
+						"line3": "• Uzak: 0,2-1,2 metre"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Yakın: 0,2-0,55 metre",

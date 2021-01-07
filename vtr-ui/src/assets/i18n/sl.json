@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Na voljo so tri možnosti. Ko sistem zazna človeško gibanje, se zaslon prebudi glede na posamezen obseg.",
 					"readMoreForSensor1": {
-						"line1": "• Blizu: 0–0,4 metra",
-						"line2": "• Srednje: 0–0,6 metra",
-						"line3": "• Daleč: 0–1,2 metra"
+						"line1": "• Blizu: 0,2–0,4 metra",
+						"line2": "• Srednje: 0,2–0,6 metra",
+						"line3": "• Daleč: 0,2–1,2 metra"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Blizu: 0,2–0,55 metra",

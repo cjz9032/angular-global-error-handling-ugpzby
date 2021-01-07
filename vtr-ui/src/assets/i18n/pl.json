@@ -2102,9 +2102,9 @@
 					},
 					"readMore": "Dostępne są trzy opcje: W każdym zakresie ekran zostanie odpowiednio wybudzony po wykryciu ruchów człowieka.",
 					"readMoreForSensor1": {
-						"line1": "• Blisko: 0–0,4 metra",
-						"line2": "• Średnio: 0–0,6 metra",
-						"line3": "• Daleko: 0–1,2 metra"
+						"line1": "• Blisko: 0,2–0,4 metra",
+						"line2": "• Średnio: 0,2–0,6 metra",
+						"line3": "• Daleko: 0,2–1,2 metra"
 					},
 					"readMoreForSensor2": {
 						"line1": "• Blisko: 0,2–0,55 metra",
