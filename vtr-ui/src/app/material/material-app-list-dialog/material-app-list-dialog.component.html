@@ -17,7 +17,7 @@
 <ng-template #empty>
 	<section class="w-100 d-flex flex-column justify-content-center align-items-center empty-container font-color-main py-20">
 		<div class="image-content mb-5">
-			<img src="assets/images/auto-close-empty.svg" alt="">
+			<img [src]="'assets/images/auto-close-empty.svg' | svgInline | async" alt="">
 		</div>
 		<h3 class="font-weight-semibold mb-4" [innerHTML]="'intelligentBoost.appsDialogWarn' | translate"></h3>
 		<p class="font-size-xs font-weight-light mb-5" [innerHTML]="'intelligentBoost.appsDialogWarnDesc' | translate"></p>
