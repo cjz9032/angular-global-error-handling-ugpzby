@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.4](https://bitbucket.tc.lenovo.com///compare/v1.10.3...v1.10.4) (2021-01-07)
+
+
+### Features
+
+* **Auto close:** VAN-24039 modify app list container's selector ([fbdb556](https://bitbucket.tc.lenovo.com///commit/fbdb556b02463bdf2596eafed68fff3f53a92882))
+* **Auto close dialog:** VAN-24039 add applist dialog and material module ([8fc7b6c](https://bitbucket.tc.lenovo.com///commit/8fc7b6c19b7f8050c5b3566026ad1bb879bd76f9))
+
+
+### Bug Fixes
+
+* **auto close:** VAN-24039 add  svgInline async pipe for empty img ([d6b1fee](https://bitbucket.tc.lenovo.com///commit/d6b1fee62eafe336062187c8e2588d744444a3e9))
+* **auto close dialog:** VAN-24039 update auto close empty image file ([df45a58](https://bitbucket.tc.lenovo.com///commit/df45a586ddde4266c8096c61a35da0d5d8ac1782))
+
 ### [1.10.3](https://bitbucket.tc.lenovo.com///compare/v1.9.46...v1.10.3) (2021-01-06)
 
 
