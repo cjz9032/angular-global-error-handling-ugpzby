@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.5](https://bitbucket.tc.lenovo.com///compare/v1.10.4...v1.10.5) (2021-01-08)
+
+
+### Bug Fixes
+
+* **SP:** VAN-24970 fix eslint errors ([78fe094](https://bitbucket.tc.lenovo.com///commit/78fe094927bb2dd8adeb66e0fd6a6563b86d045a))
+
 ### [1.10.4](https://bitbucket.tc.lenovo.com///compare/v1.10.3...v1.10.4) (2021-01-07)
 
 
