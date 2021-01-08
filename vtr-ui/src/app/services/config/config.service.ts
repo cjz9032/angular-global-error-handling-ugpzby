@@ -152,6 +152,16 @@ export class ConfigService {
 			if (machineInfo?.isGaming) {
 				resultMenu = cloneDeep(this.menuItemsGaming);
 				this.initializeWiFiItem(resultMenu);
+
+				const assistCapability: SmartAssistCapability = new SmartAssistCapability();
+				assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.IsSmartAssistSupported,
+					assistCapability.isSuperResolutionSupported.available);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SmartAssistCapability,
+					assistCapability);
+
 				this.menu = await this.updateHide(resultMenu, SegmentConst.Gaming, this.isBetaUser);
 
 				this.notifyMenuChange(this.menu);

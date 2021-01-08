@@ -15,9 +15,9 @@
 		margin-top: 1.5rem;
 		margin-left: 4.5rem !important;
 		margin-bottom: 1.5rem !important;
+		color: $shade_blue;
 		label {
 			font-size: $fontsize_xs;
-			color: $shade_blue;
 			font-weight: 300;
 			margin-bottom: 0.2rem !important;
 			margin-top: 0.2rem !important;
@@ -29,7 +29,6 @@
 				list-style-type: disc;
 				span {
 					font-size: $fontsize_xs;
-					color: $shade_blue;
 					font-weight: 300;
 				}
 			}
