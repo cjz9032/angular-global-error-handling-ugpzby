@@ -348,9 +348,9 @@ export class DisplayService {
 			this.displayEyeCareMode.openPrivacyLocation();
 		}
 	}
-	public initEyecaremodeSettings(): Promise<boolean> {
+	public initEyecaremodeSettings(apiCapability): Promise<boolean> {
 		if (this.displayEyeCareMode) {
-			return this.displayEyeCareMode.initEyecaremodeSettings();
+			return this.displayEyeCareMode.initEyecaremodeSettings(apiCapability);
 		}
 		return undefined;
 	}
