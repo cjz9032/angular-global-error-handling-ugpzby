@@ -19,20 +19,20 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	public isDisabledlef: any = [true, true, true];
 	public isDisabledrig: any = [false, false, false];
 	public isProfileOff = false;
-	public lightingProfileCurrentDetail: any = new LightingDataList().lightingCurrentDetailDesk;
+	public lightingProfileCurrentDetail: any = LightingDataList.lightingCurrentDetailDesk;
 	public lightingEffectList: any;
 	public isColorPicker = false;
 	public isShow = true;
 	public supportSpeed = true;
 	public supportBrightness = true;
 	public supportColor = true;
-	public lightingCapabilities: any = new LightingDataList().lightingCapality;
+	public lightingCapabilities: any = LightingDataList.lightingCapality;
 	public lightingProfileById: any;
-	public lightingPanelImage: any = new LightingDataList().lightingPanelImage;
-	public lightingPanelImageT750: any = new LightingDataList().lightingPanelImageT750;
-	public lightingPanelImageT550AMD: any = new LightingDataList().lightingPanelImageT550AMD;
-	public lightingEffectRgbData: any = new LightingDataList().lightingEffectRgbData;
-	public lightingEffectSingleData: any = new LightingDataList().lightingEffectSingleData;
+	public lightingPanelImage: any = LightingDataList.lightingPanelImage;
+	public lightingPanelImageT750: any = LightingDataList.lightingPanelImageT750;
+	public lightingPanelImageT550AMD: any = LightingDataList.lightingPanelImageT550AMD;
+	public lightingEffectRgbData: any = LightingDataList.lightingEffectRgbData;
+	public lightingEffectSingleData: any = LightingDataList.lightingEffectSingleData;
 	public isEffectChange: boolean;
 	public isValChange = true;
 
@@ -632,7 +632,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 						) > -1
 					) {
 						// memory light
-						const memoryEffect = new LightingDataList().lightingEffectRgbData;
+						const memoryEffect = LightingDataList.lightingEffectRgbData;
 						memoryEffect.dropOptions = memoryEffect.dropOptions.filter((i) =>
 							lightingCapabilitiesRes.MemoryEffect.includes(i.value)
 						);

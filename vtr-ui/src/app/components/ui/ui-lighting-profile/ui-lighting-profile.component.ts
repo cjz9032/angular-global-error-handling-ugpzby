@@ -65,7 +65,7 @@ export class UiLightingProfileComponent implements OnInit {
 	public lightEffectRGBOptionNameSide: string;
 	public simpleOrComplex: number;
 	public showHideDescription = false;
-	public lightingEffectData = new LightingDataList().lightingEffectData;
+	public lightingEffectData = LightingDataList.lightingEffectData;
 
 	public panelImageData = [
 		{

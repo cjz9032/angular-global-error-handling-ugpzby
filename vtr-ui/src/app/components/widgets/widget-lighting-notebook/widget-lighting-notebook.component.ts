@@ -19,11 +19,11 @@ export class WidgetLightingNotebookComponent implements OnInit {
 	public color: string;
 	public isDefault: boolean;
 	public isDisabled = false;
-	public lightingCapabilities: any = new LightingDataList().lightingCapality;
+	public lightingCapabilities: any = LightingDataList.lightingCapality;
 	public lightingProfileById: any;
-	public lightingEffectData: any = new LightingDataList().lightingEffectNoteData;
+	public lightingEffectData: any = LightingDataList.lightingEffectNoteData;
 	public lightingEffectList: any;
-	public lightingCurrentDetail: any = new LightingDataList().lightingCurrentDetailNote;
+	public lightingCurrentDetail: any = LightingDataList.lightingCurrentDetailNote;
 	public isProfileOff = true;
 	public isColorPicker = false;
 	public isShow = true;
