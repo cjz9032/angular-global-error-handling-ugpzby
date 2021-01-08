@@ -1,5 +1,5 @@
-export class LightingDataList {
-	public lightingEffectRgbData: any = {
+export const LightingDataList = {
+	lightingEffectRgbData: {
 		curSelected: 1,
 		modeType: 1,
 		dropOptions: [
@@ -85,8 +85,8 @@ export class LightingDataList {
 				value: 16384,
 			},
 		],
-	};
-	public lightingEffectSingleData: any = {
+	},
+	lightingEffectSingleData: {
 		curSelected: 1,
 		modeType: 1,
 		dropOptions: [
@@ -134,8 +134,8 @@ export class LightingDataList {
 				value: 4,
 			},
 		],
-	};
-	public lightingPanelImage: any = [
+	},
+	lightingPanelImage: [
 		{
 			value: 1,
 			pathUrl:
@@ -231,8 +231,8 @@ export class LightingDataList {
 			panelImage: 'assets/images/gaming/lighting/lighting-ui-new/T550_front.png',
 			panelImageType: false,
 		},
-	];
-	public lightingPanelImageT750: any = [
+	],
+	lightingPanelImageT750: [
 		{
 			value: 1,
 			pathUrl:
@@ -378,8 +378,8 @@ export class LightingDataList {
 			panelImage: 'assets/images/gaming/lighting/lighting-ui-new/T750_memory.png',
 			panelImageType: true,
 		},
-	];
-	public lightingPanelImageT550AMD: any = [
+	],
+	lightingPanelImageT550AMD: [
 		{
 			value: 1,
 			pathUrl:
@@ -470,8 +470,8 @@ export class LightingDataList {
 			panelImage: 'assets/images/gaming/lighting/lighting-ui-new/T550AMD_fct.png',
 			panelImageType: false,
 		},
-	];
-	public presetColorListData: any = [
+	],
+	presetColorListData: [
 		{ color: 'FFB3B3', isChecked: false },
 		{ color: 'FFA788', isChecked: false },
 		{ color: 'FFFBB2', isChecked: false },
@@ -502,8 +502,8 @@ export class LightingDataList {
 		{ color: '4400C0', isChecked: false },
 		{ color: '4B1B7F', isChecked: false },
 		{ color: '7F1E4D', isChecked: false },
-	];
-	public lightingEffectNoteData: any = {
+	],
+	lightingEffectNoteData: {
 		curSelected: 1,
 		modeType: 1,
 		dropOptions: [
@@ -567,8 +567,8 @@ export class LightingDataList {
 				show_tool_tip: true,
 			},
 		],
-	};
-	public lightingCapality: any = {
+	},
+	lightingCapality: {
 		LightPanelType: [],
 		LedType_Complex: [],
 		LedType_simple: [],
@@ -584,8 +584,8 @@ export class LightingDataList {
 		MemoryBrightLevel: 0,
 		MemoryPanelType: [0],
 		MemoryUnifySetList: [0],
-	};
-	public lightingCurrentDetailDesk: any = {
+	},
+	lightingCurrentDetailDesk: {
 		lightPanelType: 1,
 		lightEffectType: 1,
 		lightBrightness: 1,
@@ -599,16 +599,16 @@ export class LightingDataList {
 		pathUrl: '',
 		lightBrightnessMax: 1,
 		lightSpeedMax: 1,
-	};
-	public lightingCurrentDetailNote: any = {
+	},
+	lightingCurrentDetailNote: {
 		lightPanelType: 1,
 		lightEffectType: 1,
 		lightBrightness: 1,
 		lightSpeed: 1,
 		lightColor: '',
 		lightingEffectName: '',
-	};
-	public lightingEffectData = {
+	},
+	lightingEffectData: {
 		drop: [
 			{
 				curSelected: 1,
@@ -771,5 +771,6 @@ export class LightingDataList {
 				applied: 'gaming.lightingProfile.effect.applied.title ',
 			},
 		],
-	};
+	},
 }
+ 
