@@ -79,7 +79,7 @@ $mat-van-theme-foreground: (
 		color-checkbox-border: $grey_dark,
 		color-checkbox-border-hover: $menu_hover,
 		color-checkbox-border-disabled: $shade_blue,
-		style-checkbox-focus-outline: 0.1rem solid $light,
+		style-checkbox-focus-outline: 0.1rem solid $menu_hover,
 		color-checkmark: $light,
 		color-checkmark-active: $light,
 		color-checkmark-disabled: $light,
@@ -196,6 +196,13 @@ button:focus {
 
 .cdk-overlay-container {
 	z-index: 10002;
+}
+
+.mat-checkbox .mat-checkbox-input {
+	width: 2rem;
+	height: 2rem;
+	left: 0.1rem;
+	bottom: 0.1rem;
 }
 
 .mat-tooltip.vtr-tooltip,
