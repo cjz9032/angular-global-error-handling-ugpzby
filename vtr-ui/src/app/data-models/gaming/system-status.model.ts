@@ -1,24 +1,20 @@
-export class SystemStatus {
-	public cpuUseFrequency: string;
-	public gpuUseFrequency: string;
-	public memoryUsed: string;
-	public cpuUsage: number;
-	public gpuUsage: number;
-	public memoryUsage: number;
-	public cpuBaseFrequency: string;
-	public gpuModulename: string;
-	public gpuMaxFrequency: string;
-	public memorySize: string;
-	public memoryModuleName: string;
-	public ramOver: string;
-	public diskList: [
-		{
-			isSystemDisk: boolean;
-			capacity: number;
-			type: string;
-			hddName: string;
-			usedDisk: number;
-			diskUsage: number;
+import { LocalStorageKey } from '../../enums/local-storage-key.enum';
+export default {
+    hwOverClockInfo: {
+		cpuOverClockInfo: {
+			localCache: LocalStorageKey.cpuOCFeature,
+			isSupportOCFeature: false,
+			isOverClocking: false
+		},
+		gpuOverClockInfo: {
+			localCache: LocalStorageKey.gpuOCFeature,
+			isSupportOCFeature: false,
+			isOverClocking: false
+		},
+		vramOverClockInfo: {
+			localCache: LocalStorageKey.gpuOCFeature,
+			isSupportOCFeature: false,
+			isOverClocking: false
 		}
-	];
-}
+	},
+};

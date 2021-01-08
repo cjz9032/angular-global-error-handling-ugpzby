@@ -36,4 +36,48 @@ export class HwInfoService {
 			throw new Error(error.message);
 		}
 	}
+
+	getMachineHwCapability(): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingHwInfo.getMachineHwCapability();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	getHwOverClockState(): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingHwInfo.getHwOverClockState();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	getMachineInfomationForGpuVram(): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingHwInfo.getMachineInfomationForGpuVram();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
+
+	getDynamicInformationForGpuVram(): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingHwInfo.getDynamicInformationForGpuVram();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }
