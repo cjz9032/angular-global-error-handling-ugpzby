@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EMPTY } from 'rxjs';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartAssistService } from 'src/app/services/smart-assist/smart-assist.service';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
 	selector: 'vtr-intelligent-media',
@@ -19,12 +20,21 @@ export class IntelligentMediaComponent implements OnInit {
 	@Input() superResolutionAvailable = false;
 	@Input() superResolutionTip: string;
 	@Output() superResolutionToggle: EventEmitter<any> = new EventEmitter();
-	public image =
-		'/assets/images/hardware-settings/smart-assist/intelligent-media/VideoResolutionUpscaling.png';
+	public image = '';
 
 	@Input() videoPlaybackSupportHSA = false;
 
-	constructor(private smartAssist: SmartAssistService, private logger: LoggerService) {}
+	constructor(
+		private smartAssist: SmartAssistService, 
+		private logger: LoggerService,
+		public deviceService: DeviceService) {
+			if (deviceService.isGaming === true) {
+				this.image = '/assets/images/hardware-settings/smart-assist/intelligent-media/VideoResolutionUpscalingReskin.png';
+			}
+			else {
+				this.image = '/assets/images/hardware-settings/smart-assist/intelligent-media/VideoResolutionUpscaling.png';
+			}
+		}
 
 	ngOnInit() {}
 
