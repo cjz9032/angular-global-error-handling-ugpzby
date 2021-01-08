@@ -4291,7 +4291,9 @@
 			"POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
+			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+			"CURRENT_8S_LABEL": "Current 8S Label",
+			"NETWORK_NAMES": "Name"
 		},
 		"warningMessage": "קחו בחשבון שהבדיקות יבוטלו אם המערכת במצב שינה או המתנה",
 		"refreshMessage": "הרענון עשוי לארוך זמן מה מכיוון שהמחשב צריך לטעון את כל הרכיבים מחדש",

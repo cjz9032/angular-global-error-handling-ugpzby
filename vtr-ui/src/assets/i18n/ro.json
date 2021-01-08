@@ -4291,7 +4291,9 @@
 			"POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
+			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+			"CURRENT_8S_LABEL": "Current 8S Label",
+			"NETWORK_NAMES": "Name"
 		},
 		"warningMessage": "Rețineți că testele vor fi anulate dacă sistemul intră în repaus sau hibernează",
 		"refreshMessage": "Actualizarea poate dura un timp, deoarece este necesar să se încarce din nou toate componentele",

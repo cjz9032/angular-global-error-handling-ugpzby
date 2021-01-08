@@ -4401,7 +4401,9 @@
 			"POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
+			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+			"CURRENT_8S_LABEL": "Current 8S Label",
+			"NETWORK_NAMES": "Name"
 		},
 		"warningMessage": "Имейте в виду, что тесты будут отменены при переходе системы в спящий режим или режим гибернации",
 		"refreshMessage": "Обновление может занять некоторое время, так как необходимо снова загрузить все компоненты",
