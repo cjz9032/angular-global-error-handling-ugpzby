@@ -174,7 +174,8 @@
 								*ngIf="conservationModeStatus?.available">
 								<vtr-ui-row-switch
 									[title]="'device.deviceSettings.power.batterySettings.conservationMode.title' | translate"
-									[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate"
+									[caption]="'device.deviceSettings.power.batterySettings.conservationMode.description' | translate
+									 : {storageScope: conservationModeStatus.storageToEight ?  conservationModeStorageScope.toEighty : conservationModeStorageScope.toSixty}"
 									[isSwitchVisible]=true
 									[isLastChild]=true
 									[leftIcon]="['fal', 'battery-quarter']"
