@@ -52,12 +52,7 @@ export enum LocalStorageKey {
 	LidHasCreateStarterAccount = '[LocalStorageKey] LidHasCreateStarterAccount',
 	LidUserFirstName = '[LocalStorageKey] LidUserFirstName',
 	LidSsoDevMode = '[LocalStorageKey] LidSsoDevMode',
-	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
-	GpuOCStatus = '[LocalStorageKey] GpuOCStatus',
-	RealThermalModeStatus = '[LocalStorageKey] RealThermalModeStatus',
-	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
-	CurrentThermalModeFeature = '[LocalStorageKey] CurrentThermalModeFeature',
-	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
+
 	IsSmartAssistSupported = '[LocalStorageKey] IsSmartAssistSupported',
 	ConnectedHomeSecurityShowWelcome = '[LocalStorageKey] ConnectedHomeSecurityShowWelcome',
 	ConnectedHomeSecurityAllDevices = '[LocalStorageKey] ConnectedHomeSecurityAllDevices',
@@ -66,10 +61,6 @@ export enum LocalStorageKey {
 	ConnectedHomeSecurityNotifications = '[LocalStorageKey] ConnectedHomeSecurityNotifications',
 	ConnectedHomeSecurityDevicePosture = '[LocalStorageKey] ConnectedHomeSecurityDevicePosture',
 	ConnectedHomeSecurityLocation = '[LocalStorageKey] ConnectedHomeSecurityLocation',
-	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
-	NetworkBoostList = '[LocalStorageKey] NetworkBoostList',
-	NetworkBoosNeedToAskPopup = '[LocalStorageKey] NetworkBoosNeedToAskPopup',
-
 	ConnectedHomeSecurityWelcomeComplete = '[LocalStorageKey] ConnectedHomeSecurityWelcomeComplete',
 	/**
 	 * 0  means "ideaPad",
@@ -79,52 +70,7 @@ export enum LocalStorageKey {
 	 */
 	MachineType = '[LocalStorageKey] MachineType',
 	MachineFamilyName = '[LocalStorageKey] MachineFamilyName',
-	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
 	DolbyModeCache = '[LocalStorageKey] DolbyModeCache',
-	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
-	WifiSecurityCache = '[LocalStorageKey] WifiSecurityCache',
-	LightingProfileById = '[LocalStorageKey] LightingProfileById',
-	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
-	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
-	LightingProfileEffectColorTop = '[LocalStorageKey] LightingProfileEffectColorTop',
-	LightingProfileEffectColorSide = '[LocalStorageKey] LightingProfileEffectColorSide',
-	LedDriver = '[LocalStorageKey] LedDriver',
-	ProfileBrightness = '[LocalStorageKey] ProfileBrightness',
-	LightingCapabilities = '[LocalStorageKey] LightingCapabilities',
-	ProfileId = '[LocalStorageKey] ProfileId',
-	LightingRGBTop = '[LocalStorageKey] LightingRGBTop',
-	LightingRGBSide = '[LocalStorageKey] LightingRGBSide',
-	LightingSetDefaultProfile = '[LocalStorageKey] LightingSetDefaultProfile',
-
-	// DTX50 lighting page
-	LightingCapabilitiesNewversionDesk = '[LocalStorageKey] LightingCapabilitiesNewversionDesk',
-	ledLayoutVersion = '[LocalStorageKey] ledLayoutVersion',
-
-	LightingProfileByIdDesk1 = '[LocalStorageKey] LightingProfileByIdDesk1',
-	LightingProfileByIdDesk2 = '[LocalStorageKey] LightingProfileByIdDesk2',
-	LightingProfileByIdDesk3 = '[LocalStorageKey] LightingProfileByIdDesk3',
-
-	LightingProfileDeskDefault1 = '[LocalStorageKey] LightingProfileDeskDefault1',
-	LightingProfileDeskDefault2 = '[LocalStorageKey] LightingProfileDeskDefault2',
-	LightingProfileDeskDefault3 = '[LocalStorageKey] LightingProfileDeskDefault3',
-
-	// LNBX50 lighting page
-	KeyboardToggleStatusLNBx50 = '[LocalStorageKey] KeyboardToggleStatusLNBx50',
-	LightingCapabilitiesNewversionNote = '[LocalStorageKey] LightingCapabilitiesNewversionNote',
-	LightingProfileByIdNewversionNote = '[LocalStorageKey] LightingProfileByIdNewversionNote',
-	LedSwitchButtonFeature = '[LocalStorageKey] LedSwitchButtonFeature',
-
-	LightingProfileByIdNoteOff1 = '[LocalStorageKey] LightingProfileByIdNoteOff1',
-	LightingProfileByIdNoteOn1 = '[LocalStorageKey] LightingProfileByIdNoteOn1',
-	LightingProfileByIdNoteOff2 = '[LocalStorageKey] LightingProfileByIdNoteOff2',
-	LightingProfileByIdNoteOn2 = '[LocalStorageKey] LightingProfileByIdNoteOn2',
-	LightingProfileByIdNoteOff3 = '[LocalStorageKey] LightingProfileByIdNoteOff3',
-	LightingProfileByIdNoteOn3 = '[LocalStorageKey] LightingProfileByIdNoteOn3',
-
-	LightingProfileByIdDefault1 = '[LocalStorageKey] LightingProfileByIdDefault1',
-	LightingProfileByIdDefault2 = '[LocalStorageKey] LightingProfileByIdDefault2',
-	LightingProfileByIdDefault3 = '[LocalStorageKey] LightingProfileByIdDefault3',
-
 	SystemUpdateCriticalUpdateStatus = '[LocalStorageKey] SystemUpdateCriticalUpdateStatus',
 	SystemUpdateRecommendUpdateStatus = '[LocalStorageKey] SystemUpdateRecommendUpdateStatus',
 	SystemUpdateLastScanTime = '[LocalStorageKey] SystemUpdateLastScanTime',
@@ -133,94 +79,14 @@ export enum LocalStorageKey {
 	SystemUpdateInstallationHistoryList = '[LocalStorageKey] SystemUpdateInstallationHistoryList',
 
 	// this enum is for local storage keys. new keys can be added here. Please give meaningful names to key
-	desktopType = '[LocalStorageKey] DesktopType',
-	liteGaming = '[LocalStorageKey] LiteGaming',
-	cpuInfoFeature = '[LocalStorageKey] CpuInfoFeature',
-	gpuInfoFeature = '[LocalStorageKey] GpuInfoFeature',
-	memoryInfoFeature = '[LocalStorageKey] MemoryInfoFeature',
-	hddInfoFeature = '[LocalStorage] HddInfoFeature',
-	touchpadLockFeature = '[LocalStorageKey] TouchpadLockFeature',
-	winKeyLockfeature = '[LocalStorageKey] WinKeyLockFeature',
-	networkBoostFeature = '[LocalStorageKey] NetworkBoostFeature',
-	cpuOCFeature = '[LocalStorageKey] CpuOCFeature',
-	gpuOCFeature = '[LocalStorageKey] GpuOCFeature',
-	advanceCPUOCFeature = '[LocalStorageKey] AdvanceCPUOCFeature',
-	advanceGPUOCFeature = '[LocalStorageKey] AdvanceGPUOCFeature',
-	ledSetFeature = '[LocalStorageKey] LedSetFeature',
-	memOCFeature = '[LocalStorageKey] MemOCFeature',
-	macroKeyFeature = '[LocalStorageKey] MacroKeyFeature',
-	hybridModeFeature = '[LocalStorageKey] HybridModeFeature',
-	optimizationFeature = '[LocalStorageKey] OptimizationFeature',
-	smartFanFeature = '[LocalStorageKey] SmartFanFeature',
-	thermalModeVersion = '[LocalStorageKey] ThermalModeVersion',
-	supporttedThermalMode = '[LocalStorageKey] SupporttedThermalMode',
-	xtuService = '[LocalStorageKey] XtuService',
-	nvDriver = '[LocalStorageKey] NvDriver',
-	fbNetFilter = '[LocalStorageKey] FbNetFilter',
-	ledDriver = '[LocalStorageKey] LedDriver',
-	winKeyLockFeature = '[LocalStorageKey] WinKeyLockFeature',
-	cpuBaseFrequency = '[LocalStorageKey] cpuBaseFrequency',
-	cpuCurrentFrequency = '[LocalStorageKey] cpuCurrentFrequency',
-	cpuUsage = '[LocalStorageKey] cpuUsage',
-	gpuUsage = '[LocalStorageKey] gpuUsage',
-	gpuUsedMemory = '[LocalStorageKey] gpuUsedMemory',
-	ramUsage = '[LocalStorageKey] ramUsage',
-	ramUsed = '[LocalStorageKey] ramUsed',
-
-	cpuInfoVersion = '[LocalStorageKey] cpuInfoVersion',
-	gpuInfoVersion = '[LocalStorageKey] gpuInfoVersion',
-	diskInfoVersion = '[LocalStorageKey] diskInfoVersion',
-	disksList = '[LocalStorageKey] disksList',
-	gpuMemorySize = '[LocalStorageKey] gpuMemorySize',
-	ramSize = '[LocalStorageKey] ramMemorySize',
-	hddList = '[LocalStorageKey] hddList',
-	ramModuleName = '[LocalStorageKey] ramModuleName',
-	gpuModuleName = '[LocalStorageKey] gpuModuleName ',
-	cpuModuleName = '[LocalStorageKey] cpuModuleName',
-	type = '[LocalStorageKey] type',
-	capacity = '[LocalStorageKey] capacity',
-	diskUsage = '[LocalStorageKey] diskUsage',
-	hddName = '[LocalStorageKey] hddName',
-	isSystemDisk = '[LocalStorageKey] isSystemDisk',
-	usedDisk = '[LocalStorageKey] usedDisk',
-	autoSwitchStatus = '[LocalStorageKey] AutoSwitchStatus',
-	// Version 3.3: over drive
-	overDriveFeature = '[LocalStorageKey] OverDriveFeature',
-	overDriveStatus = '[LocalStorageKey] OverDriveStatus',
-	accessoryFeature = '[LocalStorageKey] AccessoryFeature',
-
 	hardwareScanFeature = '[LocalStorageKey] HardwareScanFeature',
-	// Version 3.5 auto adjust in thermal mode 3
-	autoAdjustSettings = '[LocalStorageKey] AutoAdjustSettings',
-	// Version 3.5 third party app in system tool
-	nahimicFeature = '[LocalStorageKey] Nahicim',
-	xRiteFeature = '[LocalStorageKey] XRite',
-
-	// this enum is for macrokey local storage key
-	MacroKeyType = '[LocalStorageKey] MacroKeyType',
-	MacroKeyStatus = '[LocalStorageKey] MacroKeyStatus',
-	MacroKey = '[LocalStorageKey] MacroKey',
-	MacroKeyRecordedStatus = '[LocalStorageKey] MacroKeyRecordedStatus',
-	MacroKeyChangeStatus = '[LocalStorageKey] MacroKeyChangeStatus',
-	PrevMacroKeyStatus = '[LocalStorageKey] PrevMacroKeyStatus',
-	PrevMacroKey = '[LocalStorageKey] PrevMacroKey',
-	PrevMacroKeyRepeat = '[LocalStorageKey] PrevMacroKeyRepeat',
-	PrevMacroKeyInterval = '[LocalStorageKey] PrevMacroKeyInterval',
-	InitialKeyMacroKeyData = '[LocalStorageKey] InitialKeyMacroKeyData',
-	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
-	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
 	SubBrand = '[LocalStorageKey] SubBrand',
-
 	UserDeterminePrivacy = '[LocalStorageKey] UserDeterminePrivacy',
-
 	SmartAssistCapability = '[LocalStorageKey] SmartAssistCapability',
 
 	AntiTheftCache = '[LocalStorageKey] AntiTheftCache',
 	// server switch strorage key
 	ServerSwitchKey = '[LocalStorageKey] ServerSwitch',
-	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',
-	hybridModeFeatureStatus = '[LocalStorageKey] HybridModeFeatureStatus',
-	allGamingCapabilities = '[LocalStorageKey] AllGamingCapabilities',
 
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
 	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
@@ -229,14 +95,6 @@ export enum LocalStorageKey {
 	DashboardCameraPrivacy = '[LocalStorageKey] DashboardCameraPrivacy',
 	// DashboardMicrophoneStatus = '[LocalStorageKey] DashboardMicrophoneStatus',
 	// DashboardEyeCareMode = '[LocalStorageKey] DashboardEyeCareMode',
-
-	// Auto close storage key
-	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
-	AutoCloseList = '[LocalStorageKey] AutoCloseList',
-	NeedToAsk = '[LocalStorageKey] NeedToAsk',
-
-	// Gaming 3.2 advanced OC
-	AdvancedOCInfo = '[LocalStorageKey] AdvancedOCInfo',
 
 	BetaUser = '[LocalStorageKey] BetaUser',
 	BetaTag = '[LocalStorageKey] BetaTag',
@@ -324,4 +182,149 @@ export enum LocalStorageKey {
 
 	ExternalMetricsSettings = '[LocalStorageKey] ExternalMetricsSettings',
 	DeviceCondition = '[LocalStorageKey] DeviceCondition',
+
+	// Local storage key for gaming
+	// All capabilities
+	desktopType = '[LocalStorageKey] DesktopType',
+	liteGaming = '[LocalStorageKey] LiteGaming',
+	cpuInfoFeature = '[LocalStorageKey] CpuInfoFeature',
+	gpuInfoFeature = '[LocalStorageKey] GpuInfoFeature',
+	memoryInfoFeature = '[LocalStorageKey] MemoryInfoFeature',
+	hddInfoFeature = '[LocalStorage] HddInfoFeature',
+	macroKeyFeature = '[LocalStorageKey] MacroKeyFeature',
+	smartFanFeature = '[LocalStorageKey] SmartFanFeature',
+	thermalModeVersion = '[LocalStorageKey] ThermalModeVersion',
+	supporttedThermalMode = '[LocalStorageKey] SupporttedThermalMode',
+	cpuOCFeature = '[LocalStorageKey] CpuOCFeature',
+	gpuOCFeature = '[LocalStorageKey] GpuOCFeature',
+	advanceCPUOCFeature = '[LocalStorageKey] AdvanceCPUOCFeature',
+	advanceGPUOCFeature = '[LocalStorageKey] AdvanceGPUOCFeature',
+	xtuService = '[LocalStorageKey] XtuService',
+	nvDriver = '[LocalStorageKey] NvDriver',
+	memOCFeature = '[LocalStorageKey] MemOCFeature',
+	networkBoostFeature = '[LocalStorageKey] NetworkBoostFeature',
+	fbNetFilter = '[LocalStorageKey] FbNetFilter',
+	optimizationFeature = '[LocalStorageKey] OptimizationFeature',
+	hybridModeFeature = '[LocalStorageKey] HybridModeFeature',
+	overDriveFeature = '[LocalStorageKey] OverDriveFeature',
+	winKeyLockfeature = '[LocalStorageKey] WinKeyLockFeature',
+	touchpadLockFeature = '[LocalStorageKey] TouchpadLockFeature',
+	ledSetFeature = '[LocalStorageKey] LedSetFeature',
+	ledLayoutVersion = '[LocalStorageKey] ledLayoutVersion',
+	LedSwitchButtonFeature = '[LocalStorageKey] LedSwitchButtonFeature',
+	LedDriver = '[LocalStorageKey] LedDriver',
+
+	// Hardware info
+	cpuModuleName = '[LocalStorageKey] cpuModuleName',
+	cpuBaseFrequency = '[LocalStorageKey] cpuBaseFrequency',
+	cpuCurrentFrequency = '[LocalStorageKey] cpuCurrentFrequency',
+	cpuUsage = '[LocalStorageKey] cpuUsage',
+	cpuInfoVersion = '[LocalStorageKey] cpuInfoVersion', // Version 3.6
+	gpuModuleName = '[LocalStorageKey] gpuModuleName ',
+	gpuMemorySize = '[LocalStorageKey] gpuMemorySize',
+	gpuUsedMemory = '[LocalStorageKey] gpuUsedMemory',
+	gpuUsage = '[LocalStorageKey] gpuUsage',
+	gpuInfoVersion = '[LocalStorageKey] gpuInfoVersion', // Version 3.6
+	ramModuleName = '[LocalStorageKey] ramModuleName',
+	ramSize = '[LocalStorageKey] ramMemorySize',
+	ramUsed = '[LocalStorageKey] ramUsed',
+	ramUsage = '[LocalStorageKey] ramUsage',
+	disksList = '[LocalStorageKey] disksList',
+	diskInfoVersion = '[LocalStorageKey] diskInfoVersion', // Version 3.6
+
+	// Macrokey
+	MacroKeyType = '[LocalStorageKey] MacroKeyType',
+	MacroKeyStatus = '[LocalStorageKey] MacroKeyStatus',
+	MacroKey = '[LocalStorageKey] MacroKey',
+	MacroKeyRecordedStatus = '[LocalStorageKey] MacroKeyRecordedStatus',
+	MacroKeyChangeStatus = '[LocalStorageKey] MacroKeyChangeStatus',
+	PrevMacroKeyStatus = '[LocalStorageKey] PrevMacroKeyStatus',
+	PrevMacroKey = '[LocalStorageKey] PrevMacroKey',
+	PrevMacroKeyRepeat = '[LocalStorageKey] PrevMacroKeyRepeat',
+	PrevMacroKeyInterval = '[LocalStorageKey] PrevMacroKeyInterval',
+	InitialKeyMacroKeyData = '[LocalStorageKey] InitialKeyMacroKeyData',
+	CurrentMacroKeyRepeat = '[LocalStorageKey] CurrentMacroKeyRepeat',
+	CurrentMacroKeyInterval = '[LocalStorageKey] CurrentMacroKeyInterval',
+
+	// Third party app
+	accessoryFeature = '[LocalStorageKey] AccessoryFeature', // Version 3.2
+	nahimicFeature = '[LocalStorageKey] Nahicim', 
+	xRiteFeature = '[LocalStorageKey] XRite', // Version 3.5 
+
+	// Thermal mode
+	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
+	PrevThermalModeStatus = '[LocalStorageKey] PrevThermalModeStatus',
+	RealThermalModeStatus = '[LocalStorageKey] RealThermalModeStatus', // Version 3.2 thermal mode 2
+	autoAdjustSettings = '[LocalStorageKey] AutoAdjustSettings', // Version 3.5 auto adjust in thermal mode 3
+
+	// Over clock
+	CpuOCStatus = '[LocalStorageKey] CpuOCStatus',
+	GpuOCStatus = '[LocalStorageKey] GpuOCStatus',
+	autoSwitchStatus = '[LocalStorageKey] AutoSwitchStatus',
+	AdvancedOCInfo = '[LocalStorageKey] AdvancedOCInfo', // Version 3.2 advanced OC
+	memOCFeatureStatus = '[LocalStorageKey] MemOCFeatureStatus',
+
+	// Network boost
+	NetworkBoostStatus = '[LocalStorageKey] NetworkBoostStatus',
+	NetworkBoostList = '[LocalStorageKey] NetworkBoostList',
+	NetworkBoosNeedToAskPopup = '[LocalStorageKey] NetworkBoosNeedToAskPopup',
+
+	// Auto close
+	AutoCloseStatus = '[LocalStorageKey] AutoCloseStatus',
+	AutoCloseList = '[LocalStorageKey] AutoCloseList',
+	NeedToAsk = '[LocalStorageKey] NeedToAsk',
+
+	// Hybrid mode
+	hybridModeFeatureStatus = '[LocalStorageKey] HybridModeFeatureStatus',
+
+	// Version 3.3 Over drive
+	overDriveStatus = '[LocalStorageKey] OverDriveStatus',
+
+	// Touchpad lock
+	TouchpadLockStatus = '[LocalStorageKey] TouchpadLockStatus',
+
+	// Quick Settings
+	RapidChargeCache = '[LocalStorageKey] RapidChargeCache',
+	WifiSecurityCache = '[LocalStorageKey] WifiSecurityCache',
+
+	// Lighting
+	LightingProfileById = '[LocalStorageKey] LightingProfileById',
+	LightingProfileBrightness = '[LocalStorageKey] LightingProfileBrightness',
+	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
+	LightingProfileEffectColorTop = '[LocalStorageKey] LightingProfileEffectColorTop',
+	LightingProfileEffectColorSide = '[LocalStorageKey] LightingProfileEffectColorSide',
+	
+	ProfileBrightness = '[LocalStorageKey] ProfileBrightness',
+	LightingCapabilities = '[LocalStorageKey] LightingCapabilities',
+	ProfileId = '[LocalStorageKey] ProfileId',
+	LightingRGBTop = '[LocalStorageKey] LightingRGBTop',
+	LightingRGBSide = '[LocalStorageKey] LightingRGBSide',
+	LightingSetDefaultProfile = '[LocalStorageKey] LightingSetDefaultProfile',
+
+	// DTX50 lighting page
+	LightingCapabilitiesNewversionDesk = '[LocalStorageKey] LightingCapabilitiesNewversionDesk',
+
+	LightingProfileByIdDesk1 = '[LocalStorageKey] LightingProfileByIdDesk1',
+	LightingProfileByIdDesk2 = '[LocalStorageKey] LightingProfileByIdDesk2',
+	LightingProfileByIdDesk3 = '[LocalStorageKey] LightingProfileByIdDesk3',
+
+	LightingProfileDeskDefault1 = '[LocalStorageKey] LightingProfileDeskDefault1',
+	LightingProfileDeskDefault2 = '[LocalStorageKey] LightingProfileDeskDefault2',
+	LightingProfileDeskDefault3 = '[LocalStorageKey] LightingProfileDeskDefault3',
+
+	// LNBX50 lighting page
+	KeyboardToggleStatusLNBx50 = '[LocalStorageKey] KeyboardToggleStatusLNBx50',
+	LightingCapabilitiesNewversionNote = '[LocalStorageKey] LightingCapabilitiesNewversionNote',
+	LightingProfileByIdNewversionNote = '[LocalStorageKey] LightingProfileByIdNewversionNote',
+
+	LightingProfileByIdNoteOff1 = '[LocalStorageKey] LightingProfileByIdNoteOff1',
+	LightingProfileByIdNoteOn1 = '[LocalStorageKey] LightingProfileByIdNoteOn1',
+	LightingProfileByIdNoteOff2 = '[LocalStorageKey] LightingProfileByIdNoteOff2',
+	LightingProfileByIdNoteOn2 = '[LocalStorageKey] LightingProfileByIdNoteOn2',
+	LightingProfileByIdNoteOff3 = '[LocalStorageKey] LightingProfileByIdNoteOff3',
+	LightingProfileByIdNoteOn3 = '[LocalStorageKey] LightingProfileByIdNoteOn3',
+
+	LightingProfileByIdDefault1 = '[LocalStorageKey] LightingProfileByIdDefault1',
+	LightingProfileByIdDefault2 = '[LocalStorageKey] LightingProfileByIdDefault2',
+	LightingProfileByIdDefault3 = '[LocalStorageKey] LightingProfileByIdDefault3',
 }

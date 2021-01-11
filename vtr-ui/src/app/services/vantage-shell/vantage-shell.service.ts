@@ -524,56 +524,7 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-
-	public getCPUOCStatus(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
-		}
-		return undefined;
-	}
-
-	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
-		}
-		return undefined;
-	}
-
-	public getGamingAllCapabilities(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingAllCapabilities;
-		}
-		return undefined;
-	}
-
-	public getGamingLighting(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingLighting;
-		}
-		return undefined;
-	}
-	public getGamingOverClock(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingOverclock;
-		}
-		return undefined;
-	}
-
+	
 	public getIntelligentSensing(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentSensing;
@@ -585,36 +536,6 @@ export class VantageShellService {
 		if (this.phoenix) {
 			return this.phoenix.genericMetricsPreference;
 		}
-	}
-
-	public getGamingKeyLock() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingKeyLock;
-		}
-		return undefined;
-	}
-
-	public getGamingHybridMode() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingHybridMode;
-		}
-		return undefined;
-	}
-
-	public getGamingHwInfo() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingHwInfo;
-		}
-		return undefined;
 	}
 
 	public getIntelligentMedia(): any {
@@ -662,178 +583,10 @@ export class VantageShellService {
 			return this.phoenix.preferenceSettings;
 		}
 	}
-	public getNetworkBoost() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingNetworkBoost;
-		}
-		return undefined;
-	}
-
-	public getGamingAutoClose() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingAutoClose;
-		}
-		return undefined;
-	}
-	public getGamingAdvancedOC() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingAdvancedOC;
-		}
-		return undefined;
-	}
-	/***
-	 * returns macroKeyClearInfo object from VantageShellService of JS Bridge
-	 ***/
-	public setMacroKeyClear(macroKey: string): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
-		}
-		return undefined;
-	}
-
-	public getGamingMacroKey(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey;
-		}
-	}
 
 	public getIntelligentCoolingForIdeaPad(): any {
 		if (this.getPowerIdeaNoteBook()) {
 			return this.getPowerIdeaNoteBook().its;
-		}
-		return undefined;
-	}
-
-	public macroKeyInitializeEvent(): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
-		}
-		return undefined;
-	}
-
-	public macroKeySetApplyStatus(key): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
-		}
-		return undefined;
-	}
-
-	public macroKeySetStartRecording(key): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
-		}
-		return undefined;
-	}
-
-	public macroKeySetStopRecording(key, isSuccess, message): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
-		}
-		return undefined;
-	}
-
-	public macroKeySetKey(key): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.setKey(key);
-		}
-		return undefined;
-	}
-
-	public macroKeyClearKey(key): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.setClear(key);
-		}
-		return undefined;
-	}
-
-	public macroKeySetRepeat(key, repeat): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
-		}
-		return undefined;
-	}
-
-	public macroKeySetInterval(key, interval): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
-		}
-		return undefined;
-	}
-
-	public macroKeySetMacroKey(key, inputs): any {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
-		}
-		return undefined;
-	}
-
-	public getGamingThermalMode() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingThermalmode;
-		}
-	}
-	// Version 3.3: over drive
-	public getGamingOverDrive() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingOverDrive;
-		}
-		return undefined;
-	}
-
-	public getGamingAccessory() {
-		if (this.phoenix) {
-			if (!this.phoenix.gaming) {
-				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
-			}
-			return this.phoenix.gaming.gamingAccessory;
 		}
 		return undefined;
 	}
@@ -1010,6 +763,257 @@ export class VantageShellService {
 		return undefined;
 	}
 
+	// ==================== Start vantage gaming
+	public getGamingAllCapabilities(): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingAllCapabilities;
+		}
+		return undefined;
+	}
+
+	// Hardware Info for system-monitor
+	public getGamingHwInfo() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingHwInfo;
+		}
+		return undefined;
+	}
+
+	// System tool
+	/***
+	 * returns macroKeyClearInfo object from VantageShellService of JS Bridge
+	 ***/
+
+	public getGamingMacroKey(): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey;
+		}
+	}
+
+	public setMacroKeyClear(macroKey: string): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.setClear(macroKey);
+		}
+		return undefined;
+	}
+
+	public macroKeyInitializeEvent(): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.initMacroKey();
+		}
+		return undefined;
+	}
+
+	public macroKeySetApplyStatus(key): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.setApplyStatus(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetStartRecording(key): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.setStartRecording(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetStopRecording(key, isSuccess, message): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.setStopRecording(key, isSuccess, message);
+		}
+		return undefined;
+	}
+
+	public macroKeySetKey(key): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.setKey(key);
+		}
+		return undefined;
+	}
+
+	public macroKeyClearKey(key): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.setClear(key);
+		}
+		return undefined;
+	}
+
+	public macroKeySetRepeat(key, repeat): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.setRepeat(key, repeat);
+		}
+		return undefined;
+	}
+
+	public macroKeySetInterval(key, interval): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.setInterval(key, interval);
+		}
+		return undefined;
+	}
+
+	public macroKeySetMacroKey(key, inputs): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingMacroKey.setMacroKey(key, inputs);
+		}
+		return undefined;
+	}
+
+	// Version 3.3 legion accessory central
+	public getGamingAccessory() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingAccessory;
+		}
+		return undefined;
+	}
+
+	// Legion Edge Container
+	// Thermal mode
+	public getGamingThermalMode() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingThermalmode;
+		}
+	}
+
+	// Version 3.2 Performance OC
+	public getGamingOverClock(): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingOverclock;
+		}
+		return undefined;
+	}
+
+	// Version 3.2 Advance OC
+	public getGamingAdvancedOC() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingAdvancedOC;
+		}
+		return undefined;
+	}
+
+	public getCPUOCStatus(): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingOverclock.getCpuOCStatus();
+		}
+		return undefined;
+	}
+
+	public setCPUOCStatus(CpuOCStatus: CPUOCStatus): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingOverclock.setCpuOCStatus(CpuOCStatus.cpuOCStatus);
+		}
+		return undefined;
+	}
+
+	public getNetworkBoost() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingNetworkBoost;
+		}
+		return undefined;
+	}
+
+	public getGamingAutoClose() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingAutoClose;
+		}
+		return undefined;
+	}
+
+	public getGamingHybridMode() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingHybridMode;
+		}
+		return undefined;
+	}
+
+	// Version 3.3
+	public getGamingOverDrive() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingOverDrive;
+		}
+		return undefined;
+	}
+
+	public getGamingKeyLock() {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingKeyLock;
+		}
+		return undefined;
+	}
+
 	// 3.3.2 quick setting toolbar toast
 	public getQuickSettingToolbar() {
 		if (this.phoenix) {
@@ -1020,4 +1024,16 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
+
+	// Lighting
+	public getGamingLighting(): any {
+		if (this.phoenix) {
+			if (!this.phoenix.gaming) {
+				this.phoenix.loadFeatures([Phoenix.Features.Gaming]);
+			}
+			return this.phoenix.gaming.gamingLighting;
+		}
+		return undefined;
+	}
+	// ==================== End vantage gaming
 }
