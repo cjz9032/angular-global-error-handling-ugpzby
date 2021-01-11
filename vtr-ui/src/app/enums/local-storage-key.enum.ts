@@ -207,12 +207,12 @@ export enum LocalStorageKey {
 	optimizationFeature = '[LocalStorageKey] OptimizationFeature',
 	hybridModeFeature = '[LocalStorageKey] HybridModeFeature',
 	overDriveFeature = '[LocalStorageKey] OverDriveFeature',
-	winKeyLockfeature = '[LocalStorageKey] WinKeyLockFeature',
+	winKeyLockFeature = '[LocalStorageKey] WinKeyLockFeature',
 	touchpadLockFeature = '[LocalStorageKey] TouchpadLockFeature',
 	ledSetFeature = '[LocalStorageKey] LedSetFeature',
 	ledLayoutVersion = '[LocalStorageKey] ledLayoutVersion',
 	LedSwitchButtonFeature = '[LocalStorageKey] LedSwitchButtonFeature',
-	LedDriver = '[LocalStorageKey] LedDriver',
+	ledDriver = '[LocalStorageKey] LedDriver',
 
 	// Hardware info
 	cpuModuleName = '[LocalStorageKey] cpuModuleName',
