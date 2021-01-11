@@ -1,8 +1,6 @@
 import { SettingsPageLayoutModule } from './../../components/settings-page-layout/settings-page-layout.module';
 import { ActiveProtectionSystemAdvancedComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system-advanced/active-protection-system-advanced.component';
 import { ActiveProtectionSystemComponent } from 'src/app/components/pages/page-smart-assist/active-protection-system/active-protection-system.component';
-import { AutoupdateSettingsComponent } from 'src/app/components/pages/page-device-updates/children/autoupdate-settings/autoupdate-settings.component';
-import { AvailableUpdatesComponent } from 'src/app/components/pages/page-device-updates/children/available-updates/available-updates.component';
 import { BaseCameraDetail } from 'src/app/services/camera/camera-detail/base-camera-detail.service';
 import { BatteryCardComponent } from 'src/app/components/battery/battery-card/battery-card.component';
 import { BatteryConditionNotesComponent } from 'src/app/components/battery/battery-card/battery-condition-notes/battery-condition-notes.component';
@@ -24,14 +22,12 @@ import { EyeCareModeComponent } from 'src/app/components/display/eye-care-mode/e
 
 import { HardwareSettingRoutingModule } from './hardware-settings-routing.module';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
-import { InstallationHistoryComponent } from 'src/app/components/pages/page-device-updates/children/installation-history/installation-history.component';
 import { IntelligentMediaComponent } from 'src/app/components/pages/page-smart-assist/intelligent-media/intelligent-media.component';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { NgbDropdownModule, NgbTooltipModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { OledPowerSettingsComponent } from 'src/app/components/display/oled-power-settings/oled-power-settings.component';
 import { PageDeviceComponent } from 'src/app/components/pages/page-device/page-device.component';
 import { PageDeviceSettingsComponent } from 'src/app/components/pages/page-device-settings/page-device-settings.component';
-import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device-updates/page-device-updates.component';
 import { PageQuestionsComponent } from 'src/app/components/pages/page-questions/page-questions.component';
 import { PageSmartAssistComponent } from 'src/app/components/pages/page-smart-assist/page-smart-assist.component';
 import { PageSupportDetailModule } from 'src/app/components/pages/page-support-detail/page-support-detail.module';
@@ -107,16 +103,14 @@ import { UiCustomSliderModule } from 'src/app/components/ui/ui-custom-slider/ui-
 import { AntiTheftComponent } from 'src/app/components/pages/page-smart-assist/anti-theft/anti-theft.component';
 import { SpinnerModule } from 'src/app/components/common/spinner/spinner.module';
 import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
-import { UiListSystemUpdateCheckboxComponent } from 'src/app/components/pages/page-device-updates/children/ui-list-system-update-checkbox/ui-list-system-update-checkbox.component';
 import { BatteryHealthModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-power/battery-health/battery-health.module';
 import { MaterialModule } from '../common/material.module';
+import { SystemUpdateModule } from '../system-update/system-update.module';
 
 @NgModule({
 	declarations: [
 		ActiveProtectionSystemAdvancedComponent,
 		ActiveProtectionSystemComponent,
-		AutoupdateSettingsComponent,
-		AvailableUpdatesComponent,
 		BatteryCardComponent,
 		BatteryConditionNotesComponent,
 		BatteryChargeThresholdSettingsComponent,
@@ -124,17 +118,14 @@ import { MaterialModule } from '../common/material.module';
 		BatteryIndicatorComponent,
 		CameraBackgroundBlurComponent,
 		CameraControlComponent,
-		UiListSystemUpdateCheckboxComponent,
 		ClockComponent,
 		DisplayColorTempComponent,
 		DolbyModesTranslationPipe,
 		EyeCareModeComponent,
-		InstallationHistoryComponent,
 		IntelligentMediaComponent,
 		OledPowerSettingsComponent,
 		PageDeviceComponent,
 		PageDeviceSettingsComponent,
-		PageDeviceUpdatesComponent,
 		PageQuestionsComponent,
 		PageSmartAssistComponent,
 		PowerSmartSettingsComponent,
@@ -187,6 +178,7 @@ import { MaterialModule } from '../common/material.module';
 		OverlayModule,
 		CdkScrollableModule,
 		MaterialModule,
+		SystemUpdateModule,
 	],
 	exports: [
 		CommonModule,
