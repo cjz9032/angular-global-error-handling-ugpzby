@@ -1,32 +1,37 @@
 export class GamingAllCapabilities {
-	public ledLayoutVersion = 1;
-	public ledSwitchButtonFeature = false;
 	public desktopType = false;
 	public liteGaming = false;
-	public thermalModeVersion = 1;
-	public supporttedThermalMode: number[] = [1, 2, 3];
+	// Hardware Info
 	public cpuInfoFeature = false;
 	public gpuInfoFeature = false;
 	public memoryInfoFeature = false;
 	public hddInfoFeature = false;
-	public winKeyLockFeature = false;
-	public touchpadLockFeature = true;
-	public networkBoostFeature = false;
+	// Macrokey
+	public macroKeyFeature = false;
+	// Thermal mode
+	public smartFanFeature = false;
+	public thermalModeVersion = 1;
+	public supporttedThermalMode: number[] = [1, 2, 3];
+	// Over clock
 	public cpuOCFeature = false;
 	public gpuOCFeature = false;
 	public advanceCPUOCFeature = false;
 	public advanceGPUOCFeature = false;
-	public ledSetFeature = false;
-	public memOCFeature = false;
-	public macroKeyFeature = false;
-	public hybridModeFeature = false;
-	public optimizationFeature = false;
-	public smartFanFeature = false;
 	public xtuService = false;
 	public nvDriver = false;
-	public fbnetFilter = false;
-	public ledDriver = false;
+	// Legion edge
+	public memOCFeature = false;
+	public networkBoostFeature = false;
+	public fbnetFilter = false; // Network boost
+	public optimizationFeature = false; // Auto close
+	public hybridModeFeature = false;
+	public overDriveFeature = false; // Version 3.3 over drive
+	public winKeyLockFeature = false;
+	public touchpadLockFeature = true;
 	public touchpadLockStatus = false;
-	// Version 3.3 over drive
-	public overDriveFeature = false;
+	// Lighting
+	public ledSetFeature = false;
+	public ledLayoutVersion = 1;
+	public ledSwitchButtonFeature = false;
+	public ledDriver = false;
 }
