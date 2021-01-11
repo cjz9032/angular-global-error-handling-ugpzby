@@ -1,8 +1,14 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import SystemStatus from 'src/app/data-models/gaming/system-status.model';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+// import { Subscription } from 'rxjs/internal/Subscription';
+// import { CommonService } from 'src/app/services/common/common.service';
+// import { Gaming } from 'src/app/enums/gaming.enum';
 
 @Component({
 	selector: 'vtr-widget-system-monitor',
@@ -40,11 +46,18 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public cpuInfo: any;
 	public gpuInfo: any;
 	public ramInfo: any;
+	public hwNewVersionInfo = false;
+	public hwOverClockInfo = SystemStatus.hwOverClockInfo;
+	public ocStateEvent: any;
+	// private notifcationSubscription: Subscription;
 
 	constructor(
 		private hwInfoService: HwInfoService,
 		private localCacheService: LocalCacheService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private shellServices: VantageShellService,
+		// private commonService: CommonService,
+		private ngZone: NgZone,
 	) {}
 
 	ngOnInit() {
@@ -67,7 +80,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.ramSize = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramSize, '16GB');
 		this.ramUsage = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramUsage, 0);
 		this.hds = this.localCacheService.getLocalCacheValue(LocalStorageKey.disksList, this.hds);
-		
+
 		//////////////////////////////////////////////////////////////////////
 		// Get machine info from JSBridge                                   //
 		// Feature 0: Get CPU & GPU & Ram info                              //
@@ -107,7 +120,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				if (this.cpuBaseFrequency !== hwInfo.cpuBaseFrequence && hwInfo.cpuBaseFrequence !== '') {
 					this.cpuBaseFrequency = hwInfo.cpuBaseFrequence;
 					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.cpuBaseFrequency, 
+						LocalStorageKey.cpuBaseFrequency,
 						this.cpuBaseFrequency
 					);
 				}
@@ -116,7 +129,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				if (this.gpuModuleName !== hwInfo.gpuModuleName && hwInfo.gpuModuleName !== '') {
 					this.gpuModuleName = hwInfo.gpuModuleName;
 					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.gpuModuleName, 
+						LocalStorageKey.gpuModuleName,
 						this.gpuModuleName
 					);
 				}
@@ -132,7 +145,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				if (this.ramModuleName !== hwInfo.memoryModuleName && hwInfo.memoryModuleName !== '') {
 					this.ramModuleName = hwInfo.memoryModuleName;
 					this.localCacheService.setLocalCacheValue(
-						LocalStorageKey.ramModuleName, 
+						LocalStorageKey.ramModuleName,
 						this.ramModuleName
 					);
 				}
@@ -166,7 +179,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				}
 				if(hwInfo.cpuUsage !== null) {
 					this.cpuUsage = hwInfo.cpuUsage / 100;
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage)
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, hwInfo.cpuUsage);
 				}
 				if (hwInfo.gpuUsedMemory !== null) {
 					this.gpuUsedMemory = hwInfo.gpuUsedMemory.split('GB')[0];
@@ -261,5 +274,62 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		} else if (this.hds.length > 2) {
 			this.showAllHDs = !this.showAllHDs;
 		}
+	}
+
+	getMachineHwCapability() {
+		this.hwInfoService.getMachineHwCapability().then((response) => {
+			if (response) {
+				this.hwNewVersionInfo = (response.cpuInfoVersion === 1) && (response.gpuInfoVersion === 1);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuInfoVersion, response.cpuInfoVersion);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuInfoVersion, response.gpuInfoVersion);
+				this.localCacheService.setLocalCacheValue(LocalStorageKey.diskInfoVersion, response.diskInfoVersion);
+			}
+		}).catch(() => {});
+	}
+
+	getHwOverClockState() {
+		this.hwInfoService.getHwOverClockState().then((response) => {
+			if (response) {
+				Object.keys(this.hwOverClockInfo).forEach(
+					(key) => {
+						if (response[key]) {
+							this.hwOverClockInfo[key].isOverClocking = response[key];
+						}
+					}
+				);
+			}
+		}).catch(() => {});
+	}
+
+	registerOverClockStateChangeEvent() {
+		this.ocStateEvent = this.onRegisterOverClockStateChangeEvent.bind(this);
+		this.shellServices.registerEvent(
+			EventTypes.gamingOCStatusChangeEvent,
+			this.ocStateEvent
+		);
+	}
+
+	unRegisterOverClockStateChangeEvent() {
+		this.shellServices.unRegisterEvent(
+			EventTypes.gamingOCStatusChangeEvent,
+			this.ocStateEvent
+		);
+	}
+
+	onRegisterOverClockStateChangeEvent(state) {
+		this.ngZone.run(() => {
+			this.logger.info(
+				`Widget-system-onRegisterOverClockStateChangeEvent: call back state: ${state}`
+			);
+			if (state) {
+				this.hwOverClockInfo.cpuOverClockInfo.isOverClocking = state.cpuOCState;
+				this.hwOverClockInfo.gpuOverClockInfo.isOverClocking = state.gpuOCState;
+				this.hwOverClockInfo.vramOverClockInfo.isOverClocking = state.vramOCState;
+
+				if (this.hwNewVersionInfo) {
+					// this.getMachineInfoForGpuVram();
+				}
+			}
+		});
 	}
 }
