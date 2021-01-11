@@ -89,7 +89,7 @@ const routes: Routes = [
 				path: 'smart-assist',
 				component: PageSmartAssistComponent,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService, NonGamingGuard, NonArmGuard],
+				canActivate: [GuardService, NonArmGuard],
 
 				data: {
 					pageName: 'Device.SmartAssist',
