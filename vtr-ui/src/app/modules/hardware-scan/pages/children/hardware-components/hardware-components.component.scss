@@ -19,6 +19,8 @@
 			color: $menu_hover;
 			font-size: $fontsize_xl;
 			font-weight: $weight_light;
+			width: 100%; // Width and word-wrap to break long words on some languages as German
+			word-wrap: break-word;
 			&::first-letter {
 				text-transform: uppercase;
 			}
@@ -68,6 +70,16 @@
 			font-size: 6.5rem;
 			color: $main;
 		}
+	}
+
+	.export-log-btn {
+		width: 100%;
+	}
+
+	.refresh-button {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
 	}
 
 	.refresh-message {
