@@ -10,7 +10,7 @@ enum Category {
 	audio = 'appSearch.features.audio',
 	input = 'appSearch.features.input',
 	smartAssist = 'appSearch.features.smartAssist',
-};
+}
 
 enum MenuID {
 	dashboard = 'dashboard',
@@ -25,7 +25,7 @@ enum MenuID {
 	audio = 'audio',
 	inputAccessories = 'input-accessories',
 	smartAssist = 'smart-assist',
-};
+}
 
 export const featureSource = [
 	/***
@@ -339,7 +339,7 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			type: 'navigation',
-			menuId:  [MenuID.inputAccessories, MenuID.deviceSettings],
+			menuId: [MenuID.inputAccessories, MenuID.deviceSettings],
 			route: '',
 			params: [],
 		},

@@ -11,16 +11,23 @@ import { FeatureClick, TaskAction } from 'src/app/services/metric/metrics.model'
 import { SupportService } from 'src/app/services/support/support.service';
 import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
+
+interface IDisplayPage {
+	pageIdx: number;
+	startItemIdx: number;
+	startItemIdxOfNextPage: number;
+	items: IFeature[];
+}
+
 @Component({
 	selector: 'vtr-page-search',
 	templateUrl: './page-search.component.html',
-	styleUrls: ['./page-search.component.scss']
+	styleUrls: ['./page-search.component.scss'],
 })
-
 export class PageSearchComponent implements OnInit, OnDestroy {
 	@ViewChild('searchInput', { static: true }) searchInput: ElementRef;
-	paramSubscription: any;
-	notificationSubscription: any;
+	private paramSubscription: any;
+	private notificationSubscription: any;
 	public userInput: string;
 	public pageTitle: string;
 	public noSearchResultTips: string;
@@ -28,16 +35,18 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 	public searchTips = 'Search Query';
 	public loadedCompleted = true;
 	public searchCompleted = false;
-	public currentPageIdx = 0;
-	public startItemOfCurPageIdx = 0;
-	public startItemOfNextPageIdx = 0;
-	public readonly pageSize = 10;
 	public isOnline = true;
-	public offlineConnection = '';
-	public loadingGif = false;
-	public resultItems: IFeature[] = [];
-	public displayItems: IFeature[] = [];
-	public pagesArray = [];
+
+	public readonly pageSize = 10;
+	public allResultItems: IFeature[] = [];
+	public pageArray = [];
+	public displayPage: IDisplayPage = {
+		pageIdx: 0,
+		startItemIdx: 0,
+		startItemIdxOfNextPage: 0,
+		items: [],
+	};
+
 	public supportDatas = {
 		documentation: [
 			{
@@ -113,26 +122,26 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 	public clickSearchIconEvent: FeatureClick = {
 		ItemType: EventName.featureclick,
 		ItemParent: 'Page.Search',
-		ItemName: 'icon.search'
-	}
+		ItemName: 'icon.search',
+	};
 	public enterSearchEvent: FeatureClick = {
 		ItemType: EventName.featureclick,
 		ItemParent: 'Page.Search',
-		ItemName: 'input.search'
-	}
+		ItemName: 'input.search',
+	};
 	public clickSearchBtnEvent: FeatureClick = {
 		ItemType: EventName.featureclick,
 		ItemParent: 'Page.Search',
-		ItemName: 'btn.search'
-	}
+		ItemName: 'btn.search',
+	};
 	public searchTaskEvent: TaskAction = {
 		ItemType: EventName.taskaction,
-		TaskName: "app-search",
+		TaskName: 'app-search',
 		TaskCount: 1,
 		TaskParm: 'NA',
 		TaskResult: '0',
-		TaskDuration: 0
-	}
+		TaskDuration: 0,
+	};
 
 	constructor(
 		private searchService: AppSearchService,
@@ -142,25 +151,23 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		private supportService: SupportService,
 		private localInfoService: LocalInfoService,
 		private metricService: MetricService
-	) { }
+	) {}
 
 	ngOnInit(): void {
 		//1. parse query parameter
-		this.paramSubscription = this.activateRoute.queryParams
-			.subscribe(params => {
-
-				/*
-				 * should not set this.userInput directly here, subscription will be triggered
-				 * with empty param when you click search button on the page at the first time
-				 * you enter search page.
-				 */
-				const userInput = this.mergeAndTrimSpace(params.userInput);
-				if (userInput) {
-					this.userInput = userInput;
-					this.fireSearch(userInput);
-				}
-				this.updatePageTitle();
-			});
+		this.paramSubscription = this.activateRoute.queryParams.subscribe((params) => {
+			/*
+			 * should not set this.userInput directly here, subscription will be triggered
+			 * with empty param when you click search button on the page at the first time
+			 * you enter search page.
+			 */
+			const userInput = this.mergeAndTrimSpace(params.userInput);
+			if (userInput) {
+				this.userInput = userInput;
+				this.fireSearch(userInput);
+			}
+			this.updatePageTitle();
+		});
 
 		//2. subscibe to common event
 		this.isOnline = this.commonService.isOnline;
@@ -171,18 +178,14 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		);
 
 		//3. populate right panel
-		this.setShowList();
+		this.setupRightPanels();
 	}
 
-	onInnerBack() {
-	}
+	onInnerBack() {}
 
 	onClickSearchBtn(metricEvent) {
-		if (metricEvent) {
-			this.metricService.sendMetrics(metricEvent);
-		}
-
-		this.userInput =  this.mergeAndTrimSpace(this.userInput);
+		this.metricService.sendMetrics(metricEvent);
+		this.userInput = this.mergeAndTrimSpace(this.userInput);
 		this.fireSearch(this.userInput);
 	}
 
@@ -196,8 +199,8 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		}, 200);
 	}
 
-	onClickBackResultView() {
-		const nextIdx = this.currentPageIdx - 1;
+	onClickPreResultPage() {
+		const nextIdx = this.displayPage.pageIdx - 1;
 		if (nextIdx < 0) {
 			return;
 		}
@@ -205,17 +208,17 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		this.updateResultView(nextIdx);
 	}
 
-	onClickResultView(pageIdx: number) {
-		if (pageIdx === this.currentPageIdx) {
+	onClickSpecifiedResultPage(pageIdx: number) {
+		if (pageIdx === this.displayPage.pageIdx) {
 			return;
 		}
 
 		this.updateResultView(pageIdx);
 	}
 
-	onClickForwardResultView() {
-		const nextIdx = this.currentPageIdx + 1;
-		if (nextIdx >= this.pagesArray.length) {
+	onClickNextResultPage() {
+		const nextIdx = this.displayPage.pageIdx + 1;
+		if (nextIdx >= this.pageArray.length) {
 			return;
 		}
 
@@ -247,13 +250,15 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		this.updatePageArray();
 		this.updateResultView(0);
 		this.searchCompleted = true;
-		this.populateAndSendSearchTaskMetric(userInput, searchStart);
+		this.sendSearchTaskMetric(userInput, searchStart);
 	}
 
-	private populateAndSendSearchTaskMetric(userInput: string, searchStart: number) {
-		const searchTask = Object.assign({}, this.searchTaskEvent);
-		searchTask.TaskDuration = Date.now() -  searchStart;
-		searchTask.TaskResult = this.resultItems.length.toString();
+	private sendSearchTaskMetric(userInput: string, searchStart: number) {
+		const searchTask = Object.assign(this.searchTaskEvent, {
+			TaskDuration: Date.now() - searchStart,
+			TaskResult: this.allResultItems.length.toString(),
+		});
+
 		// searchTask.TaskParm = userInput;	should not collect user input untill we got pdd approval
 		this.metricService.sendMetrics(searchTask);
 	}
@@ -262,8 +267,12 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		if (!this.userInput) {
 			this.pageTitle = this.translate.instant('appSearch.menuName');
 		} else {
-			this.pageTitle = this.translate.instant('appSearch.pageTitle', { userInput: this.userInput });
-			this.noSearchResultTips = this.translate.instant('appSearch.noSearchResultTips', { userInput: this.userInput });
+			this.pageTitle = this.translate.instant('appSearch.pageTitle', {
+				userInput: this.userInput,
+			});
+			this.noSearchResultTips = this.translate.instant('appSearch.noSearchResultTips', {
+				userInput: this.userInput,
+			});
 		}
 	}
 
@@ -282,36 +291,32 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 
 	private populateSearchResults(resultList: any) {
 		if (resultList && resultList.length > 0) {
-			this.resultItems = resultList;
+			this.allResultItems = resultList;
 		} else {
-			this.resultItems = [];
+			this.allResultItems = [];
 		}
 	}
 
 	private updatePageArray() {
-		this.pagesArray = [].constructor(Math.ceil(this.resultItems.length / this.pageSize));
-	}
-
-	private updatePageStartIdx() {
-		this.startItemOfCurPageIdx = this.currentPageIdx * this.pageSize;
-	}
-
-	private updatePageEndIdx() {
-		const startItemOfNextPageIdx = (this.currentPageIdx + 1) * this.pageSize;
-		this.startItemOfNextPageIdx = Math.min(startItemOfNextPageIdx, this.resultItems.length);
+		this.pageArray = [].constructor(Math.ceil(this.allResultItems.length / this.pageSize));
 	}
 
 	private updateResultView(pageIdx: number) {
-		this.currentPageIdx = pageIdx;
-		this.updatePageStartIdx();
-		this.updatePageEndIdx();
-
-		this.displayItems = this.resultItems.filter((item, idx) => {
-			return idx >= this.startItemOfCurPageIdx && idx < this.startItemOfNextPageIdx;
+		this.displayPage.pageIdx = pageIdx;
+		this.displayPage.startItemIdx = pageIdx * this.pageSize;
+		this.displayPage.startItemIdxOfNextPage = Math.min(
+			(pageIdx + 1) * this.pageSize,
+			this.allResultItems.length
+		);
+		this.displayPage.items = this.allResultItems.filter((item, idx) => {
+			return (
+				idx >= this.displayPage.startItemIdx &&
+				idx < this.displayPage.startItemIdxOfNextPage
+			);
 		});
 	}
 
-	private setShowList() {
+	private setupRightPanels() {
 		if (this.supportService.supportDatas) {
 			this.supportDatas = this.supportService.supportDatas;
 			return;
@@ -330,6 +335,6 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 	}
 
 	private mergeAndTrimSpace(source) {
-		return source?.trim().replace(/ +(?= )/g,'') || '';
+		return source?.trim().replace(/ +(?= )/g, '') || '';
 	}
 }
