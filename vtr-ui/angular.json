@@ -86,7 +86,6 @@
 								}
 							],
 							"optimization": false,
-							"outputHashing": "all",
 							"sourceMap": true,
 							"namedChunks": true,
 							"aot": true,
