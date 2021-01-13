@@ -125,10 +125,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	batterySettingsGroup = [];
 	batteryHealthAvailable = false;
-	conservationModeStorageScope = {
-		toSixty: '55-60%',
-		toEighty: '75-80%'
-	}
+	conservationModeDescriptionOption = '1';
 	constructor(
 		public powerService: PowerService,
 		public batteryService: BatteryDetailService,
@@ -354,6 +351,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			if (this.conservationModeCache !== undefined) {
 				this.conservationModeStatus = this.conservationModeCache;
 				this.conservationModeLock = this.conservationModeCache.isLoading;
+				this.conservationModeDescriptionOption = this.conservationModeStatus.storageToEighty ? '2' : '1';
 			} else {
 				this.conservationModeCache = new ConservationModeStatus(false, false, true, false);
 			}
@@ -1134,6 +1132,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.then((featureStatus) => {
 					this.logger.info('getConservationModeStatusIdeaNoteBook.then', featureStatus);
 					this.conservationModeStatus = featureStatus;
+					this.conservationModeDescriptionOption = this.conservationModeStatus.storageToEighty ? '2' : '1';
 					this.updateBatteryLinkStatus(
 						this.conservationModeStatus.available,
 						'ConservationMode'
