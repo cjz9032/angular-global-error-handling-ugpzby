@@ -1456,7 +1456,8 @@
 					},
 					"conservationMode": {
 						"title": "Erhaltungsmodus",
-						"description": "Diese Funktion ist nützlich, um die Lebensdauer des Akkus zu verlängern, wenn er angeschlossen ist. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. Dies verkürzt jedoch die Nutzungsdauer Ihres Computers, nachdem er von der Stromquelle getrennt wurde.",
+						"description1": "Diese Funktion ist nützlich, um die Lebensdauer des Akkus zu verlängern, wenn er angeschlossen ist. <br>When this mode is enabled, the battery will only be charged to 55-60% of capacity and the battery lifespan can be maximized. Dies verkürzt jedoch die Nutzungsdauer Ihres Computers, nachdem er von der Stromquelle getrennt wurde.",
+						"description2": "Diese Funktion ist nützlich, um die Lebensdauer des Akkus zu verlängern, wenn er angeschlossen ist. <br>When this mode is enabled, the battery will only be charged to 75-80% of capacity and the battery lifespan can be maximized. Dies verkürzt jedoch die Nutzungsdauer Ihres Computers, nachdem er von der Stromquelle getrennt wurde.",
 						"tooltip": {
 							"line1": "Diese Funktion ist nützlich, um die Lebensdauer des Akkus zu verlängern, wenn er angeschlossen ist.",
 							"line2": "Wenn dieser Modus aktiviert ist, wird der Akku nur auf 55–60 % der Kapazität geladen und die Lebensdauer des Akkus kann maximiert werden. Dies verkürzt jedoch die Nutzungsdauer Ihres Computers, nachdem er von der Stromquelle getrennt wurde.",

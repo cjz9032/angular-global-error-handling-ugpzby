@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Mod economisire",
-						"description": "Caracteristica este utilă pentru a prelungi durata de viață a bateriei, atunci când este conectată. <br>Când acest mod este activat, bateria va fi încărcată doar până la 55-60% din capacitate și durata de viață a acesteia poate fi maximizată. Cu toate acestea, acest lucru va duce la reducerea timpului utilizării computerului, după ce va fi deconectat de la sursa de alimentare c.a.",
+						"description1": "Caracteristica este utilă pentru a prelungi durata de viață a bateriei, atunci când este conectată. <br>Când acest mod este activat, bateria va fi încărcată doar până la 55-60% din capacitate și durata de viață a acesteia poate fi maximizată. Cu toate acestea, acest lucru va duce la reducerea timpului utilizării computerului, după ce va fi deconectat de la sursa de alimentare c.a.",
+						"description2": "Caracteristica este utilă pentru a prelungi durata de viață a bateriei, atunci când este conectată. <br>Când acest mod este activat, bateria va fi încărcată doar până la 75-80% din capacitate și durata de viață a acesteia poate fi maximizată. Cu toate acestea, acest lucru va duce la reducerea timpului utilizării computerului, după ce va fi deconectat de la sursa de alimentare c.a.",
 						"tooltip": {
 							"line1": "Caracteristica este utilă pentru a prelungi durata de viață a bateriei, atunci când este conectată.",
 							"line2": "Când acest mod este activat, bateria va fi încărcată doar până la 55-60% din capacitate și durata de viață a acesteia poate fi maximizată. Cu toate acestea, acest lucru va duce la reducerea timpului utilizării computerului, după ce va fi deconectat de la sursa de alimentare c.a.",

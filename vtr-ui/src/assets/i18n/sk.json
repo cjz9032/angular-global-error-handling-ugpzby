@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Režim úspory",
-						"description": "Táto funkcia je užitočná na predĺženie životnosti batérie pri pripojení k napájaciemu adaptéru. <br>Keď je tento režim zapnutý, batéria sa nabije iba na 55 až 60 % jej kapacity, aby sa čo najviac predĺžila jej životnosť. Skráti sa tým však čas používania počítača po jeho odpojení od zdroja napájania.",
+						"description1": "Táto funkcia je užitočná na predĺženie životnosti batérie pri pripojení k napájaciemu adaptéru. <br>Keď je tento režim zapnutý, batéria sa nabije iba na 55 až 60 % jej kapacity, aby sa čo najviac predĺžila jej životnosť. Skráti sa tým však čas používania počítača po jeho odpojení od zdroja napájania.",
+						"description2": "Táto funkcia je užitočná na predĺženie životnosti batérie pri pripojení k napájaciemu adaptéru. <br>Keď je tento režim zapnutý, batéria sa nabije iba na 75 až 80 % jej kapacity, aby sa čo najviac predĺžila jej životnosť. Skráti sa tým však čas používania počítača po jeho odpojení od zdroja napájania.",
 						"tooltip": {
 							"line1": "Táto funkcia je užitočná na predĺženie životnosti batérie pri pripojení k napájaciemu adaptéru.",
 							"line2": "Keď je tento režim zapnutý, batéria sa nabije iba na 55 až 60 % jej kapacity, aby sa čo najviac predĺžila jej životnosť. Skráti sa tým však čas používania počítača po jeho odpojení od zdroja napájania.",

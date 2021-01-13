@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Režim uštede",
-						"description": "Ova funkcija je korisna za produžavanje trajanja baterije kada je priključena na struju. <br>Kada je ovaj režim omogućen, baterija će se puniti samo do kapaciteta od 55-60% a životni vek baterije se može maksimalno povećati. Međutim, time će se skratiti vreme korišćenja računara nakon što ga isključite iz izvora napajanja naizmeničnom strujom.",
+						"description1": "Ova funkcija je korisna za produžavanje trajanja baterije kada je priključena na struju. <br>Kada je ovaj režim omogućen, baterija će se puniti samo do kapaciteta od 55-60% a životni vek baterije se može maksimalno povećati. Međutim, time će se skratiti vreme korišćenja računara nakon što ga isključite iz izvora napajanja naizmeničnom strujom.",
+						"description2": "Ova funkcija je korisna za produžavanje trajanja baterije kada je priključena na struju. <br>Kada je ovaj režim omogućen, baterija će se puniti samo do kapaciteta od 75-80% a životni vek baterije se može maksimalno povećati. Međutim, time će se skratiti vreme korišćenja računara nakon što ga isključite iz izvora napajanja naizmeničnom strujom.",
 						"tooltip": {
 							"line1": "Ova funkcija je korisna za produžavanje trajanja baterije kada je priključena na struju.",
 							"line2": "Kada je ovaj režim omogućen, baterija će se puniti samo do kapaciteta od 55-60% a životni vek baterije se može maksimalno povećati. Međutim, time će se skratiti vreme korišćenja računara nakon što ga isključite iz izvora napajanja naizmeničnom strujom.",

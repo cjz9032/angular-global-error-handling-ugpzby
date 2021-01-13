@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Modalità conservazione",
-						"description": "Questa funzione è utile per estendere la durata della batteria in caso di collegamento. <br>Quando questa modalità è abilitata, la batteria viene caricata solo al 55-60% della capacità e la sua durata può essere massimizzata. Tuttavia, in questo modo si ridurrà il tempo di utilizzo del computer dopo che sarà stato scollegato dalla fonte di alimentazione CA.",
+						"description1": "Questa funzione è utile per estendere la durata della batteria in caso di collegamento. <br>Quando questa modalità è abilitata, la batteria viene caricata solo al 55-60% della capacità e la sua durata può essere massimizzata. Tuttavia, in questo modo si ridurrà il tempo di utilizzo del computer dopo che sarà stato scollegato dalla fonte di alimentazione CA.",
+						"description2": "Questa funzione è utile per estendere la durata della batteria in caso di collegamento. <br>Quando questa modalità è abilitata, la batteria viene caricata solo al 75-80% della capacità e la sua durata può essere massimizzata. Tuttavia, in questo modo si ridurrà il tempo di utilizzo del computer dopo che sarà stato scollegato dalla fonte di alimentazione CA.",
 						"tooltip": {
 							"line1": "Questa funzione è utile per estendere la durata della batteria in caso di collegamento.",
 							"line2": "Quando questa modalità è abilitata, la batteria viene caricata solo al 55-60% della capacità e la sua durata può essere massimizzata. Tuttavia, in questo modo si ridurrà il tempo di utilizzo del computer dopo che sarà stato scollegato dalla fonte di alimentazione CA.",

@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Säästötila",
-						"description": "Tämä toiminto on hyödyllinen akun käyttöiän pidentämiseen, kun tietokone on verkkovirrassa. <br>Kun tämä tila on käytössä, akku ladataan vain 55 - 60 %:iin kapasiteetista, ja akun käyttöikää voidaan pidentää. Tämä lyhentää kuitenkin tietokoneen käyttöikää sen jälkeen, kun se on irrotettu verkkovirtalähteestä.",
+						"description1": "Tämä toiminto on hyödyllinen akun käyttöiän pidentämiseen, kun tietokone on verkkovirrassa. <br>Kun tämä tila on käytössä, akku ladataan vain 55 - 60 %:iin kapasiteetista, ja akun käyttöikää voidaan pidentää. Tämä lyhentää kuitenkin tietokoneen käyttöikää sen jälkeen, kun se on irrotettu verkkovirtalähteestä.",
+						"description2": "Tämä toiminto on hyödyllinen akun käyttöiän pidentämiseen, kun tietokone on verkkovirrassa. <br>Kun tämä tila on käytössä, akku ladataan vain 75 - 80 %:iin kapasiteetista, ja akun käyttöikää voidaan pidentää. Tämä lyhentää kuitenkin tietokoneen käyttöikää sen jälkeen, kun se on irrotettu verkkovirtalähteestä.",
 						"tooltip": {
 							"line1": "Tämä toiminto on hyödyllinen akun käyttöiän pidentämiseen, kun tietokone on verkkovirrassa.",
 							"line2": "Kun tämä tila on käytössä, akku ladataan vain 55 - 60 %:iin kapasiteetista, ja akun käyttöikää voidaan pidentää. Tämä lyhentää kuitenkin tietokoneen käyttöikää sen jälkeen, kun se on irrotettu verkkovirtalähteestä.",

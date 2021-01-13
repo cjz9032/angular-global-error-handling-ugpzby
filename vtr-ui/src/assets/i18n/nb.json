@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Sparemodus",
-						"description": "Denne funksjonen er nyttig for å forlenge batteriets levetid når enheten koblet til strøm. <br>Når denne modusen er aktivert, blir batteriet bare ladet til 55–60 % kapasitet, og batterilevetiden kan maksimeres. Dette vil imidlertid forkorte tiden du bruker datamaskinen etter at den har blitt koblet fra strømkilden.",
+						"description1": "Denne funksjonen er nyttig for å forlenge batteriets levetid når enheten koblet til strøm. <br>Når denne modusen er aktivert, blir batteriet bare ladet til 55–60 % kapasitet, og batterilevetiden kan maksimeres. Dette vil imidlertid forkorte tiden du bruker datamaskinen etter at den har blitt koblet fra strømkilden.",
+						"description2": "Denne funksjonen er nyttig for å forlenge batteriets levetid når enheten koblet til strøm. <br>Når denne modusen er aktivert, blir batteriet bare ladet til 75–80 % kapasitet, og batterilevetiden kan maksimeres. Dette vil imidlertid forkorte tiden du bruker datamaskinen etter at den har blitt koblet fra strømkilden.",
 						"tooltip": {
 							"line1": "Denne funksjonen er nyttig for å forlenge batteriets levetid når enheten koblet til strøm.",
 							"line2": "Når denne modusen er aktivert, blir batteriet bare ladet til 55–60 % kapasitet, og batterilevetiden kan maksimeres. Dette vil imidlertid forkorte tiden du bruker datamaskinen etter at den har blitt koblet fra strømkilden.",

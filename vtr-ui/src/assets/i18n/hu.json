@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Tárolási mód",
-						"description": "A funkcióval megnövelhető az akkumulátor élettartama, ha csatlakozik a hálózathoz. <br>Ha engedélyezi ezt az üzemmódot, az akkumulátor csak a kapacitása 55-60%-áig töltődik, és az akkumulátor élettartama maximális lesz. Ebben az esetben azonban a számítógép rövidebb ideig használható az elektromos hálózatról való leválasztás után.",
+						"description1": "A funkcióval megnövelhető az akkumulátor élettartama, ha csatlakozik a hálózathoz. <br>Ha engedélyezi ezt az üzemmódot, az akkumulátor csak a kapacitása 55-60%-áig töltődik, és az akkumulátor élettartama maximális lesz. Ebben az esetben azonban a számítógép rövidebb ideig használható az elektromos hálózatról való leválasztás után.",
+						"description2": "A funkcióval megnövelhető az akkumulátor élettartama, ha csatlakozik a hálózathoz. <br>Ha engedélyezi ezt az üzemmódot, az akkumulátor csak a kapacitása 75-80%-áig töltődik, és az akkumulátor élettartama maximális lesz. Ebben az esetben azonban a számítógép rövidebb ideig használható az elektromos hálózatról való leválasztás után.",
 						"tooltip": {
 							"line1": "A funkcióval megnövelhető az akkumulátor élettartama, ha csatlakozik a hálózathoz.",
 							"line2": "Ha engedélyezi ezt az üzemmódot, az akkumulátor csak a kapacitása 55-60%-áig töltődik, és az akkumulátor élettartama maximális lesz. Ebben az esetben azonban a számítógép rövidebb ideig használható az elektromos hálózatról való leválasztás után.",

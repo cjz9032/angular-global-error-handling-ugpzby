@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Behoudmodus",
-						"description": "Deze functie is handig om de levensduur van de batterij te verlengen bij aansluiting. <br>Als u deze modus inschakelt, wordt de batterij slechts opgeladen tot 55-60% van de capaciteit en kan de levensduur van de batterij worden gemaximaliseerd. Hiermee verkort u echter de tijd dat de computer kan worden gebruikt, nadat deze is losgekoppeld van de netvoeding.",
+						"description1": "Deze functie is handig om de levensduur van de batterij te verlengen bij aansluiting. <br>Als u deze modus inschakelt, wordt de batterij slechts opgeladen tot 55-60% van de capaciteit en kan de levensduur van de batterij worden gemaximaliseerd. Hiermee verkort u echter de tijd dat de computer kan worden gebruikt, nadat deze is losgekoppeld van de netvoeding.",
+						"description2": "Deze functie is handig om de levensduur van de batterij te verlengen bij aansluiting. <br>Als u deze modus inschakelt, wordt de batterij slechts opgeladen tot 75-80% van de capaciteit en kan de levensduur van de batterij worden gemaximaliseerd. Hiermee verkort u echter de tijd dat de computer kan worden gebruikt, nadat deze is losgekoppeld van de netvoeding.",
 						"tooltip": {
 							"line1": "Deze functie is handig om de levensduur van de batterij te verlengen bij aansluiting.",
 							"line2": "Als u deze modus inschakelt, wordt de batterij slechts opgeladen tot 55-60% van de capaciteit en kan de levensduur van de batterij worden gemaximaliseerd. Hiermee verkort u echter de tijd dat de computer kan worden gebruikt, nadat deze is losgekoppeld van de netvoeding.",

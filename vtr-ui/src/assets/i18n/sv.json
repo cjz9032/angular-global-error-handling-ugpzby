@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Sparläge",
-						"description": "Funktionen är användbar för att förlänga batteriets livslängd när datorn är ansluten. <br>När detta läge är aktiverat laddas batteriet endast till 55–60 % och batteriets livslängd kan förlängas. Detta medför dock att datorn kan användas under kortare tid när den är bortkopplad från strömkällan.",
+						"description1": "Funktionen är användbar för att förlänga batteriets livslängd när datorn är ansluten. <br>När detta läge är aktiverat laddas batteriet endast till 55–60 % och batteriets livslängd kan förlängas. Detta medför dock att datorn kan användas under kortare tid när den är bortkopplad från strömkällan.",
+						"description2": "Funktionen är användbar för att förlänga batteriets livslängd när datorn är ansluten. <br>När detta läge är aktiverat laddas batteriet endast till 75–80 % och batteriets livslängd kan förlängas. Detta medför dock att datorn kan användas under kortare tid när den är bortkopplad från strömkällan.",
 						"tooltip": {
 							"line1": "Funktionen är användbar för att förlänga batteriets livslängd när datorn är ansluten.",
 							"line2": "När detta läge är aktiverat laddas batteriet endast till 55–60 % och batteriets livslängd kan förlängas. Detta medför dock att datorn kan användas under kortare tid när den är bortkopplad från strömkällan.",
