@@ -118,15 +118,12 @@
 					position: absolute;
 					&:hover {
 						vtr-ui-gaming-monitor-tooltip ::ng-deep .vtr-ui-gaming-monitor-tooltip {
-							top: -4rem;
+							top: -8rem !important;
 							display: inline-block;
-							@media #{$breakpoint_lg} {
-								top: -6rem;
-							}
 						}
 						.is-ver0 ::ng-deep .vtr-ui-gaming-monitor-tooltip {
 							@media #{$breakpoint_lg} {
-								top: 50%;
+								top: 50% !important;
 							}
 						}
 					}
@@ -230,10 +227,10 @@
 					}
 					&:hover {
 						vtr-ui-gaming-monitor-tooltip ::ng-deep .vtr-ui-gaming-monitor-tooltip {
-							top: -2rem;
+							top: -1rem !important;
 							display: inline-block;
-							@media #{$breakpoint_lg} {
-								top: 3rem;
+							@media #{$breakpoint_xl3} {
+								top: -3.8rem !important;
 							}
 						}
 						.is-ver0 ::ng-deep .vtr-ui-gaming-monitor-tooltip {
