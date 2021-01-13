@@ -12,6 +12,9 @@
 	pointer-events: none;
 	left: 50%;
 	transform: translate(-50%);
+	@media #{$high-contrast} {
+		border: 0.1rem solid windowText;
+	}
 	&.ver0 {
 		background: $gaming_lightest;
 		color: $main_dark;
@@ -38,13 +41,13 @@
 		&.left {
 			min-width: 20rem;
 			@media #{$breakpoint_lg} {
-				top: 50%;
+				top: 50% !important;
 				transform: translateY(-50%) translateX(0);
 				left: 7rem;
 				padding: 2rem;
 				min-width: 15rem;
 				&::after {
-					left: -0.5rem;
+					left: -0.6rem;
 					bottom: calc(50% - 0.6rem);
 					transform: rotate(-45deg);
 				}
@@ -53,15 +56,18 @@
 		&.right {
 			min-width: 20rem;
 			@media #{$breakpoint_lg} {
-				top: 50%;
+				top: 50% !important;
 				transform: translateY(-50%) translateX(-100%);
-				left: -0.5rem;
+				left: -0.6rem;
 				padding: 2rem;
 				min-width: 15rem;
 				&::after {
 					left: calc(100% - 0.7rem);
 					bottom: calc(50% - 0.6rem);
 					transform: rotate(135deg);
+					@media #{$high-contrast} {
+						left: calc(100% - 0.5rem);
+					}
 				}
 			}
 		}
@@ -146,13 +152,18 @@
 		border-right: 1.2rem solid transparent;
 		border-bottom: none;
 		border-left: none;
-		left: calc(50% - 0.5rem);
+		left: calc(50% - 0.6rem);
 		bottom: -0.5rem;
 		transform: rotate(-135deg);
 		z-index: -1;
 		@media #{$high-contrast} {
 			border-bottom-color: windowText;
 			border-left-color: transparent;
+			border-top: 1.2rem solid windowText;
+			border-right: 1.2rem solid transparent;
+			border-bottom: none;
+			border-left: none;
+			bottom: -0.6rem;
 		}
 	}
 }
