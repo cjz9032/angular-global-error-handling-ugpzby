@@ -31,7 +31,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 	public lightingPanelImage: any = LightingDataList.lightingPanelImage;
 	public lightingPanelImageT750: any = LightingDataList.lightingPanelImageT750;
 	public lightingPanelImageT550AMD: any = LightingDataList.lightingPanelImageT550AMD;
-	public lightingEffectRgbData: any = LightingDataList.lightingEffectRgbData;
+	public lightingEffectRgbData: any = JSON.parse(JSON.stringify(LightingDataList.lightingEffectRgbData));
 	public lightingEffectSingleData: any = LightingDataList.lightingEffectSingleData;
 	public isEffectChange: boolean;
 	public isValChange = true;
@@ -600,12 +600,14 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 							) > -1
 						) {
 							//Rgb effect list
-							this.lightingEffectRgbData.dropOptions = this.lightingEffectRgbData.dropOptions.filter(
+
+							const tempRgbData = JSON.parse(JSON.stringify(LightingDataList.lightingEffectRgbData));
+							this.lightingEffectRgbData.dropOptions = tempRgbData.dropOptions.filter(
 								(i) => lightingCapabilitiesRes.LedType_Complex.includes(i.value)
 							);
 							this.lightingEffectList = this.lightingEffectRgbData;
 							currentEffectName = this.getCurrentName(
-								this.lightingEffectRgbData.dropOptions,
+								tempRgbData.dropOptions,
 								this.lightingProfileCurrentDetail.lightEffectType
 							);
 						} else {
@@ -632,7 +634,7 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 						) > -1
 					) {
 						// memory light
-						const memoryEffect = LightingDataList.lightingEffectRgbData;
+						const memoryEffect = JSON.parse(JSON.stringify(LightingDataList.lightingEffectRgbData));
 						memoryEffect.dropOptions = memoryEffect.dropOptions.filter((i) =>
 							lightingCapabilitiesRes.MemoryEffect.includes(i.value)
 						);
