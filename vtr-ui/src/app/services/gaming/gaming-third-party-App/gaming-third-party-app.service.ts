@@ -4,23 +4,22 @@ import { LoggerService } from '../../logger/logger.service';
 import { WinRT } from '@lenovo/tan-client-bridge'
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class GamingThirdPartyAppService {
 	public isShellAvailable = false;
 	// protocol
 	private regUtil: any;
-  
-  private regPath = {
-    accessory: 'HKEY_LOCAL_MACHINE\\Software\\WOW6432Node\\Lenovo\\Legion Accessory Central',
-    nahimic: `HKEY_CURRENT_USER\\Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\CurrentVersion\\AppContainer\\Storage\\a-volute.nahimic_w2gh52qy24etm`,
-    xRite: `HKEY_CURRENT_USER\\Software\\X-Rite, Inc\\X-Rite Color Assistant`
-  };
-  private protocolUrl = {
-    accessory: 'legion-accessory-central:',
-    nahimic: `nh3-msi:`,
-    xRite: `xrite-color-assistant:`
-  } 
+	private regPath = {
+		accessory: 'HKEY_LOCAL_MACHINE\\Software\\WOW6432Node\\Lenovo\\Legion Accessory Central',
+		nahimic: `HKEY_CURRENT_USER\\Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\CurrentVersion\\AppContainer\\Storage\\a-volute.nahimic_w2gh52qy24etm`,
+		xRite: `HKEY_CURRENT_USER\\Software\\X-Rite, Inc\\X-Rite Color Assistant`
+	};
+	private protocolUrl = {
+		accessory: 'legion-accessory-central:',
+		nahimic: `nh3-msi:`,
+		xRite: `xrite-color-assistant:`
+	} 
 
 	constructor(
 		private shellService: VantageShellService, 
