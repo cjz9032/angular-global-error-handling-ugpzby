@@ -4292,8 +4292,8 @@
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
 			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"CURRENT_8S_LABEL": "Current 8S Label",
-			"NETWORK_NAMES": "Name"
+			"CURRENT_8S_LABEL": "Trenutačna 8S oznaka",
+			"NETWORK_NAMES": "Naziv"
 		},
 		"warningMessage": "Napominjemo da će se testovi otkazati ako je sustav u stanju mirovanja ili hibernacije",
 		"refreshMessage": "Osvježavanje može potrajati neko vrijeme jer je potrebno ponovno učitati sve komponente",

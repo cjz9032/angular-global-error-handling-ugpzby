@@ -4292,8 +4292,8 @@
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
 			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"CURRENT_8S_LABEL": "Current 8S Label",
-			"NETWORK_NAMES": "Name"
+			"CURRENT_8S_LABEL": "현재 8S 레이블",
+			"NETWORK_NAMES": "이름"
 		},
 		"warningMessage": "시스템이 절전 또는 최대 절전 모드 상태인 경우 테스트가 취소됩니다",
 		"refreshMessage": "모든 구성 요소를 다시 로드해야 하므로 새로 고침이 오래 걸릴 수 있습니다",

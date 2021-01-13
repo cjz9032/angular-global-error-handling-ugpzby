@@ -4292,8 +4292,8 @@
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
 			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"CURRENT_8S_LABEL": "Current 8S Label",
-			"NETWORK_NAMES": "Name"
+			"CURRENT_8S_LABEL": "Jelenlegi 8S-címke",
+			"NETWORK_NAMES": "Név"
 		},
 		"warningMessage": "Ne feledje, hogy a tesztek megszakadnak, ha a rendszer alvó vagy hibernált állapotba kerül",
 		"refreshMessage": "A frissítés eltarthat egy ideig, mivel minden összetevőt újra be kell töltenie",

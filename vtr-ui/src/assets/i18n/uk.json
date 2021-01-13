@@ -4292,8 +4292,8 @@
 			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
 			"CONVEYANCE_SELF_TEST": "SMART Conveyance Self Test",
 			"CONVEYANCE_SELF_TEST_DESCRIPTION": "Checks the device's integrity through the status returned by SMART Conveyance test",
-			"CURRENT_8S_LABEL": "Current 8S Label",
-			"NETWORK_NAMES": "Name"
+			"CURRENT_8S_LABEL": "Поточна етикетка 8S",
+			"NETWORK_NAMES": "Назва"
 		},
 		"warningMessage": "Зауважте: тести буде скасовано, якщо система перейде до режиму сну або глибокого сну",
 		"refreshMessage": "Оновлення може зайняти деякий час – потрібно знову завантажити всі компоненти",

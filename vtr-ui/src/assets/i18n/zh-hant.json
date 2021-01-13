@@ -4292,8 +4292,8 @@
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
 			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"CURRENT_8S_LABEL": "Current 8S Label",
-			"NETWORK_NAMES": "Name"
+			"CURRENT_8S_LABEL": "目前的 8S 標籤",
+			"NETWORK_NAMES": "名稱"
 		},
 		"warningMessage": "請記住，如果系統進入睡眠或休眠狀態，將會取消測試",
 		"refreshMessage": "重新整理可能需要一些時間，因為此時需要再度載入所有元件",
