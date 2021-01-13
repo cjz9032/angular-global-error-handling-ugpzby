@@ -3,6 +3,20 @@
 .vtr-intelligent-boost {
 	padding: 1.25rem 4rem;
 
+	.description-col {
+		@media #{$breakpoint_xl} {
+			flex: 0 0 83.333333%;
+			max-width: 83.33%;
+		}
+	}
+
+	.toggle-col {
+		@media #{$breakpoint_xl} {
+			flex: 0 0 16.666667%;
+			max-width: 16.66%;
+		}
+	}
+
 	.apps-container {
 		padding-left: 2.3rem;
 

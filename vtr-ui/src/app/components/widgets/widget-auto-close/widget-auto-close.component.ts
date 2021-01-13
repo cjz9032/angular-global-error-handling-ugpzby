@@ -139,10 +139,6 @@ export class WidgetAutoCloseComponent implements OnInit, OnDestroy {
 		// });
 	}
 
-	edit(isDone: boolean): void {
-		this.removable = !isDone;
-	}
-
 	remove(item: TileItem): void {
 		const index = this.savedApps.indexOf(item);
 		if (index >= 0) {

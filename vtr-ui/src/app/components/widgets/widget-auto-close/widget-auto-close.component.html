@@ -8,9 +8,7 @@
 	[theme]="'white'"
 	[collapseLinkId]="'smartAssist-autoClose-collapse'">
 	<vtr-widget-intelligent-boost
-		[featureToggle]="autoCloseChecked"
-		[isEmpty]="savedApps.length === 0"
-		(editButtonClick)="edit($event)">
+		[featureToggle]="autoCloseChecked">
 		<img src="assets/icons/Icon_Windows_Update_20px.svg" alt="" class="boost-feature-icon">
 		<span class="boost-feature-heading" [innerHTML]="'intelligentBoost.performanceBoost' | translate"></span>
 		<span class="boost-feature-content" [innerHTML]="'intelligentBoost.performanceBoostDesc' | translate"></span>
