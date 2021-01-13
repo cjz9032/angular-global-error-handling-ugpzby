@@ -3,12 +3,12 @@
 		class="vtr-material-tile align-items-center"
 		[tileItem]="item"
 		[removable]="removable"
-		[addible]="addible"
+		[addable]="addable"
 		(tileRemove)="remove(item)"
 		(tileSelect)="select(item)">
 
 	</vtr-material-tile>
-	<mat-chip *ngIf="isShowAddBtn && !removable && !addible"
+	<mat-chip *ngIf="isShowAddBtn && !removable && !addable"
 		(click)="clickAdd()"
 		class="vtr-material-tile d-flex flex-column m-0">
 		<div class="d-flex tile-container px-3 pb-3 align-items-center justify-content-center mt-5"

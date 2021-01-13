@@ -11,7 +11,8 @@
 	<section class="app-container">
 		<vtr-material-app-tile-list
 			[tileItems]="data"
-			[addible]="true"
+			[addable]="true"
+			[maxSelected]="maxSelected"
 			(selectTile)="select($event)"></vtr-material-app-tile-list>
 	</section>
 </section>

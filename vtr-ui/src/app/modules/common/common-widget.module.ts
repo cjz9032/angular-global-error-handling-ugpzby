@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
 
 import { SharedModule } from '../shared.module';
 import { MaterialModule } from './material.module';
@@ -22,6 +23,7 @@ import { WidgetWarrantyComponent } from 'src/app/components/widgets/widget-warra
 import { WidgetPoweredByInfoComponent } from 'src/app/components/widgets/widget-powered-by-info/widget-powered-by-info.component';
 import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-home-security/widget-home-security.component';
 import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
+import { WidgetAutoCloseComponent } from 'src/app/components/widgets/widget-auto-close/widget-auto-close.component';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		WidgetPoweredByInfoComponent,
 		WidgetHomeSecurityComponent,
 		WidgetRoundStatusComponent,
+		WidgetAutoCloseComponent,
 	],
 	exports: [
 		WidgetDeviceComponent,
@@ -47,6 +50,7 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		WidgetPoweredByInfoComponent,
 		WidgetHomeSecurityComponent,
 		WidgetRoundStatusComponent,
+		WidgetAutoCloseComponent,
 	],
 	imports: [
 		CommonModule,
@@ -58,6 +62,7 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		NgbTooltipModule,
 		MatTooltipModule,
 		MaterialModule,
+		MatSlideToggleModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -16,7 +16,7 @@ export class MaterialAppTileListComponent implements OnInit, AfterViewInit {
 	@Input() tileItems: TileItem[];
 	@Input() isHorizontal: boolean;
 	@Input() removable: boolean;
-	@Input() addible: boolean;
+	@Input() addable: boolean;
 	@Input() maxSelected: MaxSelected;
 	@Input() isShowAddBtn = true;
 
@@ -32,7 +32,7 @@ export class MaterialAppTileListComponent implements OnInit, AfterViewInit {
 	) { }
 
 	ngOnInit(): void {
-		if (this.addible) {
+		if (this.addable) {
 			this.tileItems.forEach(item => {
 				if (!item.buttonType) {
 					item.buttonType = 'clickable';
@@ -43,7 +43,7 @@ export class MaterialAppTileListComponent implements OnInit, AfterViewInit {
 
 	ngAfterViewInit(): void {
 		const hasClass = this.elementRef.nativeElement.hasAttribute('class');
-		this.renderer2.addClass(
+		this.renderer2.addClass( // ng class
 			this.appTileContainer.nativeElement,
 			hasClass ? this.elementRef.nativeElement.getAttribute('class') : ''
 		);
@@ -64,7 +64,7 @@ export class MaterialAppTileListComponent implements OnInit, AfterViewInit {
 			this.tileItems[index].buttonType = item.buttonType;
 			this.selectTile.emit(item);
 		}
-		if (this.maxSelected) {
+		if (this.maxSelected?.maxLength >= 0) {
 			this.tileItems.forEach(tile => {
 				if (tile.buttonType !== 'selected') {
 					if (this.isDisabledAddButton(this.tileItems)) {

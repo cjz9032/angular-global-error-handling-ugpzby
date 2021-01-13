@@ -52,6 +52,7 @@ import { CdkScrollableModule } from '@angular/cdk/scrolling';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatIconModule } from '@lenovo/material/icon';
+import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
@@ -113,7 +114,6 @@ import { DOLBY_FUSION_CLIENT } from '../../components/pages/page-device-settings
 import { FORTE_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/forte-client';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { DeviceService } from '../../services/device/device.service';
-
 
 @NgModule({
 	declarations: [
@@ -188,11 +188,11 @@ import { DeviceService } from '../../services/device/device.service';
 		MaterialModule,
 		SystemUpdateModule,
 		MatIconModule,
+		MatSlideToggleModule,
 	],
 	exports: [
 		CommonModule,
 		CommonUiModule,
-		CommonWidgetModule,
 		CommonModalModule,
 		PageLayoutModule,
 		SettingsPageLayoutModule,
@@ -205,8 +205,8 @@ import { DeviceService } from '../../services/device/device.service';
 		{
 			provide: AudioVendorService,
 			useFactory: AudioVendorFactory,
-			deps: [FORTE_CLIENT, DOLBY_FUSION_CLIENT, VantageShellService, DeviceService]
-		}
+			deps: [FORTE_CLIENT, DOLBY_FUSION_CLIENT, VantageShellService, DeviceService],
+		},
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

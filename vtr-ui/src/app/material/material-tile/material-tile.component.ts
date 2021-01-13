@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-export type AddibleType = 'clickable' | 'selected' | 'disabled';
+export type AddableType = 'clickable' | 'selected' | 'disabled';
 
 export interface TileItem {
+	path: string;
+	name: string;
 	iconSrc?: string;
 	matIcon?: string;
-	name: string;
-	buttonType?: AddibleType;
+	buttonType?: AddableType;
 	tooltip?: string;
 }
 
@@ -19,13 +20,13 @@ export class MaterialTileComponent implements OnInit {
 	@Input() tileItem: TileItem;
 	@Input() isHorizontal: boolean;
 	@Input() removable: boolean;
-	@Input() addible: boolean;
+	@Input() addable: boolean;
 
 	@Output() tileRemove = new EventEmitter();
 	@Output() tileSelect = new EventEmitter();
 
 	ngOnInit(): void {
-		if (this.addible) {
+		if (this.addable) {
 			if (!this.tileItem.buttonType) {
 				this.tileItem.buttonType = 'clickable';
 			}
