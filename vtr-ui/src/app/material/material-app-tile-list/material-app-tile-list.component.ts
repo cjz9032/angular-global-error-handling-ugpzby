@@ -1,17 +1,12 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
-import { TileItem } from '../material-tile/material-tile.component';
-
-export interface MaxSelected {
-	maxLength: number;
-	tooltips?: string;
-}
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
+import { TileItem, MaxSelected } from 'src/app/feature/types/auto-close';
 
 @Component({
 	selector: 'vtr-material-app-tile-list',
 	templateUrl: './material-app-tile-list.component.html',
 	styleUrls: ['./material-app-tile-list.component.scss']
 })
-export class MaterialAppTileListComponent implements OnInit, AfterViewInit {
+export class MaterialAppTileListComponent implements OnInit {
 
 	@Input() tileItems: TileItem[];
 	@Input() isHorizontal: boolean;
@@ -23,8 +18,8 @@ export class MaterialAppTileListComponent implements OnInit, AfterViewInit {
 	@ViewChild('appTileContainer') appTileContainer: ElementRef;
 
 	@Output() addButtonClick = new EventEmitter();
-	@Output() removeTile = new EventEmitter();
-	@Output() selectTile = new EventEmitter();
+	@Output() removed = new EventEmitter();
+	@Output() selected = new EventEmitter();
 
 	constructor(
 		public elementRef: ElementRef,
@@ -41,28 +36,20 @@ export class MaterialAppTileListComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	ngAfterViewInit(): void {
-		const hasClass = this.elementRef.nativeElement.hasAttribute('class');
-		this.renderer2.addClass( // ng class
-			this.appTileContainer.nativeElement,
-			hasClass ? this.elementRef.nativeElement.getAttribute('class') : ''
-		);
-	}
-
 	remove(item: TileItem): void {
 		const index = this.tileItems.indexOf(item);
 
 		if (index >= 0) {
 			this.tileItems.splice(index, 1);
 		}
-		this.removeTile.emit(item);
+		this.removed.emit(item);
 	}
 
 	select(item: TileItem): void {
 		const index = this.tileItems.indexOf(item);
 		if (index >= 0) {
 			this.tileItems[index].buttonType = item.buttonType;
-			this.selectTile.emit(item);
+			this.selected.emit(item);
 		}
 		if (this.maxSelected?.maxLength >= 0) {
 			this.tileItems.forEach(tile => {

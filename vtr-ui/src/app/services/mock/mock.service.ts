@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TileItem } from 'src/app/material/material-tile/material-tile.component';
+import { TileItem } from 'src/app/feature/types/auto-close';
 
 
 @Injectable({
@@ -488,27 +488,28 @@ export class MockService {
 		return Promise.resolve(this.runningApps);
 	}
 
-	getSavedApps(): Promise<TileItem[]> {
+	getAutoCloseApps(): Promise<TileItem[]> {
 		return Promise.resolve(this.savedApps);
 	}
 
-	removeSavedApp(apps: TileItem[]): Promise<boolean> {
+	deleteAutoCloseApps(apps: TileItem[]): Promise<boolean> {
 		apps.forEach((app: TileItem) => {
 			this.savedApps.filter((savedApp: TileItem) => savedApp.path !== app.path);
 		});
 		return Promise.resolve(true);
 	}
 
-	addSavedApp(apps: TileItem[]): Promise<boolean> {
+	addAutoCloseApps(apps: TileItem[]): Promise<boolean> {
 		this.savedApps.concat(apps);
 		return Promise.resolve(true);
 	}
 
-	set State(state: boolean) {
+	setState(state: boolean): Promise<boolean> {
 		this.featureState = state;
+		return Promise.resolve(true);
 	}
 
-	get State() {
-		return this.featureState;
+	getState(): Promise<boolean> {
+		return Promise.resolve(this.featureState);
 	}
 }

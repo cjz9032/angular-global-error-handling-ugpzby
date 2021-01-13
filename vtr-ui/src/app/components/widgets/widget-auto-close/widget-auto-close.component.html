@@ -17,10 +17,9 @@
 		</div>
 		<vtr-material-app-tile-list
 			class="boost-feature-apps-container"
-			[ngClass]="{'align-items-center': savedApps.length === 0}"
 			[tileItems]="savedApps"
 			[removable]="removable"
-			(removeTile)="remove($event)"
+			(removed)="remove($event)"
 			(addButtonClick)="openRunningAppsDialog()"
 		></vtr-material-app-tile-list>
 	</vtr-widget-intelligent-boost>

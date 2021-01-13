@@ -12,6 +12,11 @@
 	background-color: $gray_darker;
 	max-height: 50rem;
 	overflow-y: scroll;
+	::ng-deep {
+		.vtr-material-tile {
+			min-width: 13rem;
+		}
+	}
 }
 .empty-container {
 	min-height: 40rem;

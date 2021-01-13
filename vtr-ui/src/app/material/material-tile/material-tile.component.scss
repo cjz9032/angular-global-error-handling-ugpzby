@@ -4,17 +4,25 @@
 	background: transparent;
 	border-radius: 0.5rem;
 	height: 100%;
-	padding: 0 1.5rem;
 	&:active {
 		box-shadow: none !important;
 	}
 	&.tile-removable {
-		background: $gray_darker;
+		&:hover {
+			background: $gray_darker;
+			.remove-icon {
+				display: block;
+			}
+		}
 	}
 	.remove-icon {
+		display: none;
+		cursor: pointer;
 		font-size: 2.5rem;
 		color: $menu_hover;
-		cursor: pointer;
+		width: 2.5rem;
+		height: 2.5rem;
+		right: 0;
 	}
 	.tile-container {
 		min-width: 10rem;

@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@lenovo/material/dialog';
-import { MaxSelected } from '../material-app-tile-list/material-app-tile-list.component';
-import { TileItem } from '../material-tile/material-tile.component';
+import { TileItem, MaxSelected } from 'src/app/feature/types/auto-close';
 
 @Component({
 	selector: 'vtr-material-app-list-dialog',
@@ -10,7 +9,7 @@ import { TileItem } from '../material-tile/material-tile.component';
 })
 export class MaterialAppListDialogComponent {
 
-	@Output() selectEmit = new EventEmitter();
+	@Output() selectedEmit = new EventEmitter();
 
 	constructor(
 		@Inject(MAT_DIALOG_DATA) public data: TileItem[],
@@ -18,7 +17,7 @@ export class MaterialAppListDialogComponent {
 	) { }
 
 	select(item: TileItem) {
-		this.selectEmit.emit(item);
+		this.selectedEmit.emit(item);
 	}
 
 }

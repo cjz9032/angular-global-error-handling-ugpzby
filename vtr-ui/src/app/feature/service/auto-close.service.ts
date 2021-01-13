@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { ShellExtensionService } from './shell-extension.service';
-import { TileItem } from 'src/app/material/material-tile/material-tile.component';
-import { App, Profile } from '../types/auto-close';
+import { App, Profile, TileItem } from '../types/auto-close';
 
 
 @Injectable({
@@ -27,23 +26,23 @@ export class AutoCloseService {
 		this.shellExtension.sendContract(contract);
 	}
 
-	set State(state: boolean) {
+	setState(state: boolean): Promise<boolean> {
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Set-State',
 			payload: state,
 		};
-		this.shellExtension.sendContract(contract);
+		return this.shellExtension.sendContract(contract);
 	}
 
-	get State() {
+	getState(): Promise<boolean> {
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Get-State',
 		};
 
 		this.shellExtension.sendContract(contract).then((res) => this.status = res);
-		return this.status;
+		return Promise.resolve(this.status);
 	}
 
 	getRunningApps(): Promise<TileItem[]> {

@@ -1,11 +1,12 @@
-<mat-chip-list class="row mat-chip-list-container" #appTileContainer>
+<mat-chip-list class="row mat-chip-list-container"
+	[ngClass]="{'align-items-center': tileItems.length === 0}" #appTileContainer>
 	<vtr-material-tile *ngFor="let item of tileItems"
 		class="vtr-material-tile align-items-center"
 		[tileItem]="item"
 		[removable]="removable"
 		[addable]="addable"
-		(tileRemove)="remove(item)"
-		(tileSelect)="select(item)">
+		(removed)="remove(item)"
+		(selected)="select(item)">
 
 	</vtr-material-tile>
 	<mat-chip *ngIf="isShowAddBtn && !removable && !addable"
