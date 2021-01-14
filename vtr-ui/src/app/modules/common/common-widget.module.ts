@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
-import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
 
 import { SharedModule } from '../shared.module';
 import { MaterialModule } from './material.module';
@@ -59,7 +58,6 @@ import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-ro
 		NgbTooltipModule,
 		MatTooltipModule,
 		MaterialModule,
-		MatSlideToggleModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

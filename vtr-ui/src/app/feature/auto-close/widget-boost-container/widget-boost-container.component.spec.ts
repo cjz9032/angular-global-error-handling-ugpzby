@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WidgetAutoCloseComponent } from './widget-auto-close.component';
+import { WidgetBoostContainerComponent } from './widget-boost-container.component';
 
 describe('WidgetIntelligentBoostComponent', () => {
-	let component: WidgetAutoCloseComponent;
-	let fixture: ComponentFixture<WidgetAutoCloseComponent>;
+	let component: WidgetBoostContainerComponent;
+	let fixture: ComponentFixture<WidgetBoostContainerComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [WidgetAutoCloseComponent]
+			declarations: [WidgetBoostContainerComponent]
 		})
 			.compileComponents();
 	});
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(WidgetAutoCloseComponent);
+		fixture = TestBed.createComponent(WidgetBoostContainerComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

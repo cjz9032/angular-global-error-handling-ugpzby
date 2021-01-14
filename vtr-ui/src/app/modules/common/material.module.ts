@@ -7,7 +7,6 @@ import { MatButtonModule } from '@lenovo/material/button';
 import { MatDialogModule } from '@lenovo/material/dialog';
 import { MatIconModule } from '@lenovo/material/icon';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
-import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
 import { MatChipsModule } from '@lenovo/material/chips';
 import { MatSnackBarModule } from '@lenovo/material/snack-bar';
 
@@ -51,7 +50,6 @@ import { MaterialStateCardContainerComponent } from 'src/app/components/pages/pa
 		MatIconModule,
 		MatDialogModule,
 		MatTooltipModule,
-		MatSlideToggleModule,
 		MatChipsModule,
 	]
 })

@@ -22,7 +22,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private dialogService: DialogService,
-		private autoCloseService: MockService,
+		private autoCloseService: AutoCloseService,
 	) { }
 
 	ngOnInit(): void {
