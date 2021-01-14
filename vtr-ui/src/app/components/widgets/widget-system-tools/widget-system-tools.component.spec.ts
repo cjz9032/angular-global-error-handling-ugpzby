@@ -13,7 +13,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
-import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-third-party-app/gaming-third-party-app.service';
+import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-thirdparty-app/gaming-third-party-app.service';
 import { GAMING_DATA } from 'src/testing/gaming-data';
 
 
