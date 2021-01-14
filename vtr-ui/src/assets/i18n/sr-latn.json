@@ -4291,7 +4291,9 @@
 			"POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
+			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+			"CURRENT_8S_LABEL": "Trenutna 8S oznaka",
+			"NETWORK_NAMES": "Ime"
 		},
 		"warningMessage": "Imajte na umu da će testovi biti otkazani ako sistem bude u stanju spavanja ili hibernacije",
 		"refreshMessage": "Osvežavanje može da potraje jer treba da se ponovo učitaju sve komponente",

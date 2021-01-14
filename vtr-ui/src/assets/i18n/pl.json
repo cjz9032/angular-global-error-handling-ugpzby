@@ -4291,7 +4291,9 @@
 			"POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
+			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+			"CURRENT_8S_LABEL": "Bieżąca etykieta 8S",
+			"NETWORK_NAMES": "Nazwa"
 		},
 		"warningMessage": "Należy pamiętać, że testy zostaną anulowane, jeśli system będzie w trybie uśpienia lub hibernacji",
 		"refreshMessage": "Odświeżanie może zająć trochę czasu, ponieważ wymaga ponownego załadowania wszystkich komponentów",

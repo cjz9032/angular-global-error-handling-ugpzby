@@ -5270,7 +5270,9 @@
 			"CONVEYANCE_SELF_TEST": "SMART Conveyance Self Test",
 			"CONVEYANCE_SELF_TEST_DESCRIPTION": "Checks the device's integrity through the status returned by SMART Conveyance test",
 			"FINAL_RESULT_CODE_FAIL": "This final result code indicates that problems were found with this scan. Follow onscreen directions, located at the bottom of your hardware scan results, to contact Lenovo Support. Be prepared to provide this final result code when requested.",
-			"FINAL_RESULT_CODE_SUCCESS": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support."
+			"FINAL_RESULT_CODE_SUCCESS": "This final result code indicates that no problems were found with this scan. If any test displays a warning or not applicable message, it does not mean that a problem was found. If a Lenovo support agent asked you to run this test, use this code as proof; otherwise, no action on your part is necessary at this time. If you feel that you are still experiencing problems, contact Lenovo Support.",
+			"CURRENT_8S_LABEL": "Current 8S Label",
+			"NETWORK_NAMES": "Name"
 		},
 		"scanFinishedHeader": {
 			"titleSuccess": "Scan completed. Your device passed all the tests.",

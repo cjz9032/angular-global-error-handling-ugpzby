@@ -4291,7 +4291,9 @@
 			"POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
+			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+			"CURRENT_8S_LABEL": "Τρέχουσα ετικέτα 8S",
+			"NETWORK_NAMES": "Όνομα"
 		},
 		"warningMessage": "Λάβετε υπόψη ότι οι δοκιμές θα ακυρωθούν εάν το σύστημα είναι σε κατάσταση αναστολής λειτουργίας ή αδρανοποίησης",
 		"refreshMessage": "Η ανανέωση ενδέχεται να διαρκέσει αρκετή ώρα, επειδή απαιτείται επαναφόρτωση όλων των στοιχείων",

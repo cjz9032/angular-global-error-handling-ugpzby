@@ -4400,7 +4400,9 @@
 			"POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
+			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+			"CURRENT_8S_LABEL": "現在の 8S ラベル",
+			"NETWORK_NAMES": "名前"
 		},
 		"warningMessage": "システムがスリープ状態または休止状態になると、テストがキャンセルされることに注意してください",
 		"refreshMessage": "すべてのコンポーネントを再度読み込む必要があるため、更新に時間がかかる場合があります",

@@ -4291,7 +4291,9 @@
 			"POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
+			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+			"CURRENT_8S_LABEL": "Mevcut 8S Etiketi",
+			"NETWORK_NAMES": "Ad"
 		},
 		"warningMessage": "Sistem uyku veya hazırda bekleme kipine geçerse testlerin iptal edileceğini unutmayın",
 		"refreshMessage": "Tüm bileşenlerin tekrar yüklenmesi gerektiğinden yenileme işlemi biraz zaman alabilir",

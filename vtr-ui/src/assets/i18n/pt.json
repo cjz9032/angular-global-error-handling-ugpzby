@@ -4291,7 +4291,9 @@
 			"POINTING_DEVICES_QUICK_DIAGNOSTIC_DESCRIPTION": "Pointing Devices",
 			"TOUCHSCREEN": "Touchscreen",
 			"TOUCHSCREEN_EXTENDED_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
-			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen"
+			"TOUCHSCREEN_QUICK_DIAGNOSTIC_DESCRIPTION": "Touchscreen",
+			"CURRENT_8S_LABEL": "Etiqueta 8S atual",
+			"NETWORK_NAMES": "Nome"
 		},
 		"warningMessage": "Tenha em atenção que os testes serão cancelados se o sistema entrar em modo de suspensão ou hibernação",
 		"refreshMessage": "A atualização pode demorar algum tempo por precisar de voltar a carregar todos os componentes",
