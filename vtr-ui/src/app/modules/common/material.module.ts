@@ -20,8 +20,6 @@ import { MaterialStatusCircleComponent } from 'src/app/material/material-status-
 import { MaterialSvgCircleComponent } from 'src/app/material/material-svg-circle/material-svg-circle.component';
 import { MaterialTileComponent } from 'src/app/material/material-tile/material-tile.component';
 import { MaterialStateCardContainerComponent } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
-import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widget-intelligent-boost/widget-intelligent-boost.component';
-
 
 
 @NgModule({
@@ -33,7 +31,6 @@ import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widg
 		MaterialAppListDialogComponent,
 		MaterialTileComponent,
 		MaterialAppTileListComponent,
-		WidgetIntelligentBoostComponent,
 	],
 	exports: [
 		MaterialStateCardContainerComponent,
@@ -43,7 +40,6 @@ import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widg
 		MaterialAppListDialogComponent,
 		MaterialTileComponent,
 		MaterialAppTileListComponent,
-		WidgetIntelligentBoostComponent,
 	],
 	imports: [
 		CommonModule,

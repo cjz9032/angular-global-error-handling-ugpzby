@@ -7,7 +7,7 @@
 	[allowCollapse]="true"
 	[theme]="'white'"
 	[collapseLinkId]="'smartAssist-autoClose-collapse'">
-	<vtr-widget-intelligent-boost
+	<vtr-widget-auto-close
 		[featureToggle]="autoCloseChecked">
 		<img src="assets/icons/Icon_Windows_Update_20px.svg" alt="" class="boost-feature-icon">
 		<span class="boost-feature-heading" [innerHTML]="'intelligentBoost.performanceBoost' | translate"></span>
@@ -22,5 +22,5 @@
 			(removed)="remove($event)"
 			(addButtonClick)="openRunningAppsDialog()"
 		></vtr-material-app-tile-list>
-	</vtr-widget-intelligent-boost>
+	</vtr-widget-auto-close>
 </vtr-container-collapsible>

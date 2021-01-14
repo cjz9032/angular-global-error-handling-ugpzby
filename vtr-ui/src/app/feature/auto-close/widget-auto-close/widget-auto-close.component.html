@@ -2,15 +2,15 @@
 	<div class="container row">
 		<div class="row w-100 col-auto mb-2">
 			<div class="description-col row col-11">
-				<div class="col-auto pl-0 pr-1">
+				<div class="col-auto pl-0 pr-1 mat-display-1">
 					<ng-content select=".boost-feature-icon"></ng-content>
 				</div>
 
 				<div class="col-11">
-					<div class="font-size-md mb-2">
+					<div class="mat-headline mb-2">
 						<ng-content select=".boost-feature-heading"></ng-content>
 					</div>
-					<div class="font-size-xs mb-2">
+					<div class="mat-body-1 mb-2">
 						<ng-content select=".boost-feature-content"></ng-content>
 					</div>
 				</div>
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="apps-container row w-100" *ngIf="featureToggle">
-			<div class="apps-container-title row w-100 mb-2 ml-4 p-0 uppercase font-size-sm font-weight-bold">
+			<div class="apps-container-title row w-100 mb-2 ml-4 p-0 uppercase mat-body-2 font-weight-bold">
 				{{ 'intelligentBoost.appsContainerTitle' | translate }}
 			</div>
 			<div class="apps-container-list row w-100 ml-4">

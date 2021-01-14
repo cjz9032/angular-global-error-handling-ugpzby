@@ -12,15 +12,18 @@ import { CommonUiModule } from 'src/app/modules/common/common-ui.module';
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 
 import { AutoCloseComponent } from './auto-close.component';
+import { WidgetAutoCloseComponent } from './widget-auto-close/widget-auto-close.component';
 
 
 
 @NgModule({
 	declarations: [
 		AutoCloseComponent,
+		WidgetAutoCloseComponent,
 	],
 	exports: [
 		AutoCloseComponent,
+		WidgetAutoCloseComponent,
 	],
 	imports: [
 		CommonModule,

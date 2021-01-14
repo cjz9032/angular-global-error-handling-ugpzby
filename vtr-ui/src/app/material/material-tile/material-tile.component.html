@@ -10,7 +10,7 @@
 			[ngClass]="{'flex-column h-100': !isHorizontal}">
 			<img *ngIf="tileItem?.iconSrc" class="tile-icon" src="{{tileItem.iconSrc}}" alt="" srcset="">
 			<mat-icon *ngIf="tileItem?.matIcon" [svgIcon]="tileItem.matIcon"></mat-icon>
-			<span class="tile-name text-two-ellipsis" [innerHTML]="tileItem?.name"></span>
+			<span class="tile-name mat-body-1 text-two-ellipsis" [innerHTML]="tileItem?.name"></span>
 		</div>
 		<div *ngIf="addable"
 			class="button-container">
