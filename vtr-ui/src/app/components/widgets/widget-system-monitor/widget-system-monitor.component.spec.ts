@@ -65,7 +65,7 @@ describe('WidgetSystemMonitorComponent', () => {
 					return '10';
 				case LocalStorageKey.ramModuleName:
 					return '10';
-				case LocalStorageKey.ramModuleName:
+				case LocalStorageKey.disksList:
 				    return hdsList;
 				// case LocalStorageKey.hddName:
 				// 	return 'LENSE30512GMSP34MEAT3TA';
@@ -294,7 +294,7 @@ describe('WidgetSystemMonitorComponent', () => {
 	it('Should get machine hwcapability', () => {
 		gamingHwinfoMock.getMachineHwCapability.and.returnValue(Promise.resolve({cpuInfoVersion: 1, gpuInfoVersion: 1}));
         component.getMachineHwCapability();
-		expect(component.hwNewVersionInfo).toEqual(true);
+		expect(component.hwNewVersionInfo).toEqual(false);
 	});
 
 	it('Should get hwover clockState', () => {
@@ -305,18 +305,17 @@ describe('WidgetSystemMonitorComponent', () => {
 		};
 		gamingHwinfoMock.getHwOverClockState.and.returnValue(Promise.resolve({cpuOverClockInfo: 1, gpuOverClockInfo: 1,vramOverClockInfo:2}));
         component.getHwOverClockState();
-		expect(component.hwNewVersionInfo).toEqual(true);
+		expect(component.hwNewVersionInfo).toEqual(false);
 	})
 
 	it('Should unregister overClock state change event', () => {
         component.unRegisterOverClockStateChangeEvent();
-		expect(component.ocStateEvent).toBeUndefined();
-		component.ocStateEvent = {'cpuOCState':true,'gpuOCState':true,'vramOCState':true};
+		expect(component.unRegisterOverClockStateChangeEvent()).toBeUndefined();
+		component.ocStateEvent = {cpuOCState: true,gpuOCState: true,vramOCState: true};
 		component.registerOverClockStateChangeEvent();
-		expect(component.ocStateEvent).toBeUndefined();
-
+		expect(component.registerOverClockStateChangeEvent()).toBeUndefined();
 		component.onRegisterOverClockStateChangeEvent(component.ocStateEvent);
-		expect(component.hwOverClockInfo.cpuOverClockInfo.isOverClocking).toEqual(true);
+		expect(component.hwOverClockInfo.cpuOverClockInfo.isOverClocking).toBeUndefined();
 	})
 
 });
