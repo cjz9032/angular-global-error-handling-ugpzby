@@ -23,7 +23,14 @@ const gamingHwinfoMock = jasmine.createSpyObj('HwInfoService', [
 	'isShellAvailable',
 	'getDynamicInformation',
 	'getMachineInfomation',
+	'getMachineHwCapability',
+	'getHwOverClockState'
 ]);
+
+const hdsList = [
+	{capacity: 119, diskUsage: 72, hddName: "HFM128GDHTNG-8310A", isSystemDisk: true,type: "SSD", usedDisk: 86},
+	{capacity: 931, diskUsage: 7, hddName: "ST1000LM035-1RK172", isSystemDisk: true,type: "HDD", usedDisk: 63}
+]
 
 describe('WidgetSystemMonitorComponent', () => {
 	let component: WidgetSystemMonitorComponent;
@@ -31,7 +38,6 @@ describe('WidgetSystemMonitorComponent', () => {
 	let timerCallback;
 
 	const getTextContent = (element, filter) => element.querySelector(filter).textContent;
-
 	const localCacheServiceSpy = {
 		getLocalCacheValue: (key, defaultValue) => {
 			switch (key) {
@@ -59,18 +65,20 @@ describe('WidgetSystemMonitorComponent', () => {
 					return '10';
 				case LocalStorageKey.ramModuleName:
 					return '10';
-				case LocalStorageKey.hddName:
-					return 'LENSE30512GMSP34MEAT3TA';
-				case LocalStorageKey.type:
-					return 'SSD';
-				case LocalStorageKey.capacity:
-					return 500;
-				case LocalStorageKey.usedDisk:
-					return 100;
-				case LocalStorageKey.diskUsage:
-					return '20';
-				case LocalStorageKey.isSystemDisk:
-					return 'true';
+				case LocalStorageKey.ramModuleName:
+				    return hdsList;
+				// case LocalStorageKey.hddName:
+				// 	return 'LENSE30512GMSP34MEAT3TA';
+				// case LocalStorageKey.type:
+				// 	return 'SSD';
+				// case LocalStorageKey.capacity:
+				// 	return 500;
+				// case LocalStorageKey.usedDisk:
+				// 	return 100;
+				// case LocalStorageKey.diskUsage:
+				// 	return '20';
+				// case LocalStorageKey.isSystemDisk:
+				// 	return 'true';
 			}
 		},
 		setLocalCacheValue: (key, vaule) => {
@@ -282,4 +290,33 @@ describe('WidgetSystemMonitorComponent', () => {
 		size = component.getHDSize(2000);
 		expect(size).toBe('2.00TB');
 	});
+
+	it('Should get machine hwcapability', () => {
+		gamingHwinfoMock.getMachineHwCapability.and.returnValue(Promise.resolve({cpuInfoVersion: 1, gpuInfoVersion: 1}));
+        component.getMachineHwCapability();
+		expect(component.hwNewVersionInfo).toEqual(true);
+	});
+
+	it('Should get hwover clockState', () => {
+		component.hwOverClockInfo = {
+			'cpuOverClockInfo': {'isOverClocking': true,isSupportOCFeature: true, localCache: LocalStorageKey.cpuModuleName},
+			'gpuOverClockInfo': {'isOverClocking': true,isSupportOCFeature: true, localCache: LocalStorageKey.cpuModuleName},
+			'vramOverClockInfo': {'isOverClocking': true,isSupportOCFeature: true, localCache: LocalStorageKey.cpuModuleName}
+		};
+		gamingHwinfoMock.getHwOverClockState.and.returnValue(Promise.resolve({cpuOverClockInfo: 1, gpuOverClockInfo: 1,vramOverClockInfo:2}));
+        component.getHwOverClockState();
+		expect(component.hwNewVersionInfo).toEqual(true);
+	})
+
+	it('Should unregister overClock state change event', () => {
+        component.unRegisterOverClockStateChangeEvent();
+		expect(component.ocStateEvent).toBeUndefined();
+		component.ocStateEvent = {'cpuOCState':true,'gpuOCState':true,'vramOCState':true};
+		component.registerOverClockStateChangeEvent();
+		expect(component.ocStateEvent).toBeUndefined();
+
+		component.onRegisterOverClockStateChangeEvent(component.ocStateEvent);
+		expect(component.hwOverClockInfo.cpuOverClockInfo.isOverClocking).toEqual(true);
+	})
+
 });
