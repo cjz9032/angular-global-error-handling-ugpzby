@@ -7,15 +7,15 @@ import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
-
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { WidgetSystemToolsComponent } from './widget-system-tools.component';
-
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-third-party-app/gaming-third-party-app.service';
+import { GAMING_DATA } from 'src/testing/gaming-data';
+
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptStubComponent {
@@ -98,7 +98,7 @@ describe('WidgetSystemToolsComponent', () => {
 		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				imports: [RouterTestingModule.withRoutes([])],
-				declarations: [WidgetSystemToolsComponent, mockPipe({ name: 'translate' })],
+				declarations: [WidgetSystemToolsComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
@@ -154,9 +154,7 @@ describe('WidgetSystemToolsComponent', () => {
 			component.ngOnInit();
 			fixture.detectChanges();
 			const macrokey = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const macrokeyValue = macrokey.findIndex((mc) => {
-				return mc.properties.href === '/gaming/macrokey';
-			});
+			const macrokeyValue = macrokey.findIndex((mc) => mc.properties.href === '/gaming/macrokey');
 			expect(macrokeyValue).toBe(1);
 		});
 	});
@@ -165,7 +163,7 @@ describe('WidgetSystemToolsComponent', () => {
 		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				imports: [RouterTestingModule.withRoutes([])],
-				declarations: [WidgetSystemToolsComponent, mockPipe({ name: 'translate' })],
+				declarations: [WidgetSystemToolsComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
@@ -224,9 +222,7 @@ describe('WidgetSystemToolsComponent', () => {
 			component.ngOnInit();
 			fixture.detectChanges();
 			const hardwareScan = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const hardwareScanValue = hardwareScan.findIndex((res) => {
-				return res.properties.href === '/hardware-scan';
-			});
+			const hardwareScanValue = hardwareScan.findIndex((res) => res.properties.href === '/hardware-scan');
 			expect(hardwareScanValue).toBe(3);
 		});
 	});
@@ -334,9 +330,7 @@ describe('WidgetSystemToolsComponent', () => {
 		it('openWaringModal', () => {
 			const modalRef = new ModalGamingPromptStubComponent();
 			spyOn(modalService, 'open').and.returnValue(modalRef);
-			spyOn(window, 'open').and.callFake(() => {
-				return null;
-			});
+			spyOn(window, 'open').and.callFake(() => null);
 			expect(modalService.open).toHaveBeenCalledTimes(0);
 			expect(window.open).toHaveBeenCalledTimes(0);
 
@@ -356,7 +350,7 @@ describe('WidgetSystemToolsComponent', () => {
 		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				imports: [RouterTestingModule.withRoutes([])],
-				declarations: [WidgetSystemToolsComponent, mockPipe({ name: 'translate' })],
+				declarations: [WidgetSystemToolsComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
@@ -379,9 +373,7 @@ describe('WidgetSystemToolsComponent', () => {
 		// Checking path for system update title link.
 		it('should have path /device/system-updates for System Update title link', async () => {
 			const systemUpdate = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const systemUpdateValue = systemUpdate.findIndex((su) => {
-				return su.properties.href === '/device/system-updates';
-			});
+			const systemUpdateValue = systemUpdate.findIndex((su) => su.properties.href === '/device/system-updates');
 			expect(systemUpdateValue).toBeGreaterThan(-1);
 		});
 
@@ -396,9 +388,7 @@ describe('WidgetSystemToolsComponent', () => {
 		// Checking path for Power title link.
 		it('should have path /device/device-settings/power for Power title link', async () => {
 			const power = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const powerValue = power.findIndex((p) => {
-				return p.properties.href === '/device/device-settings/power';
-			});
+			const powerValue = power.findIndex((p) => p.properties.href === '/device/device-settings/power');
 			expect(powerValue).toBeGreaterThan(-1);
 		});
 
@@ -413,9 +403,7 @@ describe('WidgetSystemToolsComponent', () => {
 		// Checking path for Media title link.
 		it('should have path /device/device-settings/display-camera for Media title link', async () => {
 			const camera = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const cameraValue = camera.findIndex((c) => {
-				return c.properties.href === '/device/device-settings/display-camera';
-			});
+			const cameraValue = camera.findIndex((c) => c.properties.href === '/device/device-settings/display-camera');
 			expect(cameraValue).toBeGreaterThan(-1);
 		});
 
@@ -429,20 +417,4 @@ describe('WidgetSystemToolsComponent', () => {
 	});
 });
 
-/**
- * @param options pipeName which has to be mock
- * @description To mock the pipe.
- * @summary This has to move to one utils file.
- */
-export function mockPipe(options: Pipe): Pipe {
-	const metadata: Pipe = {
-		name: options.name,
-	};
-	return Pipe(metadata)(
-		class MockPipe {
-			public transform(query: string, ...args: any[]): any {
-				return query;
-			}
-		}
-	);
-}
+

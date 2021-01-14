@@ -188,7 +188,7 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 			originalLength++;
 		}
 		if(this.showXRite) {
-			originalLength++
+			originalLength++;
 		}
 
 		this.toolLength = originalLength;
