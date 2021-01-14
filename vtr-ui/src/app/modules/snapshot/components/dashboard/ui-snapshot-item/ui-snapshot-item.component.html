@@ -40,9 +40,7 @@
 					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
 					[isDisabled]="!isUpdateEnabled()"
 					(hyperlinkClick)="updateSnapshot()"
-					[matTooltip]="'snapshot.startComponentSnapshot' | translate: {'component':('snapshot.components.'+ name) | translate}"
-					matTooltipClass="vtr-system-tooltip"
-				>
+					[tooltipText]="'snapshot.startComponentSnapshot' | translate: {'component':('snapshot.components.'+ name) | translate}">
 				</vtr-ui-hyperlink-button>
 			</ng-template>
 
