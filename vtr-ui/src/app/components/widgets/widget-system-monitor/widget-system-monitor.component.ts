@@ -19,15 +19,15 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public ver = 0;
 	public cpuModuleName = 'N/A';
 	public cpuBaseFrequency = '2.0GHz';
-	public cpuCurrentFrequency = 2;
+	public cpuCurrentFrequency = '2';
 	public cpuUsage = 1;
 	public gpuModuleName = 'N/A';
 	public gpuMemorySize = '8GB';
-	public gpuUsedMemory = 4;
+	public gpuUsedMemory = '4';
 	public gpuUsage = 0;
 	public ramModuleName = 'N/A';
 	public ramSize = '16GB';
-	public ramUsed = 4;
+	public ramUsed = '4';
 	public ramUsage = 0;
 	public hds: any = [
 		{

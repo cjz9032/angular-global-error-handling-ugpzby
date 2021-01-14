@@ -1,321 +1,340 @@
 import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 import { WidgetSystemMonitorComponent } from './widget-system-monitor.component';
-import { Pipe, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { HwInfoService } from 'src/app/services/gaming/gaming-hwinfo/hw-info.service';
-import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
-import { RouterLinkWithHref } from '@angular/router';
-import { By } from '@angular/platform-browser';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 
-const gamingAllCapabilitiesServiceMock = jasmine.createSpyObj('GamingAllCapabilitiesService', [
-	'isShellAvailable',
-	'getCapabilities',
-	'setCapabilityValuesGlobally',
-	'getCapabilityFromCache',
-]);
-
-const gamingHwinfoMock = jasmine.createSpyObj('HwInfoService', [
-	'isShellAvailable',
-	'getDynamicInformation',
-	'getMachineInfomation',
-	'getMachineHwCapability',
-	'getHwOverClockState'
-]);
-
-const hdsList = [
-	{capacity: 119, diskUsage: 72, hddName: 'HFM128GDHTNG-8310A', isSystemDisk: true,type: 'SSD', usedDisk: 86},
-	{capacity: 931, diskUsage: 7, hddName: 'ST1000LM035-1RK172', isSystemDisk: true,type: 'HDD', usedDisk: 63}
-];
-
 describe('WidgetSystemMonitorComponent', () => {
 	let component: WidgetSystemMonitorComponent;
 	let fixture: ComponentFixture<WidgetSystemMonitorComponent>;
-	let timerCallback;
 
-	const getTextContent = (element, filter) => element.querySelector(filter).textContent;
-	const localCacheServiceSpy = {
+	let cpuModuleNameCache = 'CPU Test 1';
+	let cpuBaseFrequencyCache = '1.0GHz';
+	let cpuCurrentFrequencyCache = '2';
+	let cpuUsageCache = 3;
+	let gpuModuleNameCache = 'GPU Test 1';
+	let gpuMemorySizeCache = '4GB';
+	let gpuUsedMemoryCache = '5';
+	let gpuUsageCache = 6;
+	let ramModuleNameCache = 'RAM Test 1';
+	let ramSizeCache = '7GB';
+	let ramUsedCache = '8';
+	let ramUsageCache = 9;
+	let hdsCache: any = [
+		{
+			capacity: 10,
+			diskUsage: '11',
+			hddName: 'Hdd Test 1',
+			isSystemDisk: true,
+			type: 'SSD',
+			usedDisk: 12,
+		}
+	];
+
+	const localCacheServiceMock = {
 		getLocalCacheValue: (key, defaultValue) => {
 			switch (key) {
-				case LocalStorageKey.cpuCurrentFrequency:
-					return '2.9GHz';
-				case LocalStorageKey.cpuBaseFrequency:
-					return '2.9GHz';
-				case LocalStorageKey.cpuUsage:
-					return '10';
 				case LocalStorageKey.cpuModuleName:
-					return '10';
-				case LocalStorageKey.gpuUsedMemory:
-					return '2.9GHz';
-				case LocalStorageKey.gpuMemorySize:
-					return '2.9GHz';
-				case LocalStorageKey.gpuUsage:
-					return '10';
+					return cpuModuleNameCache;
+				case LocalStorageKey.cpuBaseFrequency:
+					return cpuBaseFrequencyCache;
+				case LocalStorageKey.cpuCurrentFrequency:
+					return cpuCurrentFrequencyCache;
+				case LocalStorageKey.cpuUsage:
+					return cpuUsageCache;
 				case LocalStorageKey.gpuModuleName:
-					return 'NVIDIA GeForce GTX 3090';
-				case LocalStorageKey.ramSize:
-					return '64.0GB';
-				case LocalStorageKey.ramUsed:
-					return '2.9GHz';
-				case LocalStorageKey.ramUsage:
-					return '10';
+					return gpuModuleNameCache;
+				case LocalStorageKey.gpuMemorySize:
+					return gpuMemorySizeCache;
+				case LocalStorageKey.gpuUsedMemory:
+					return gpuUsedMemoryCache;
+				case LocalStorageKey.gpuUsage:
+					return gpuUsageCache;
 				case LocalStorageKey.ramModuleName:
-					return '10';
+					return ramModuleNameCache;
+				case LocalStorageKey.ramSize:
+					return ramSizeCache;
+				case LocalStorageKey.ramUsed:
+					return ramUsedCache;
+				case LocalStorageKey.ramUsage:
+					return ramUsageCache;
 				case LocalStorageKey.disksList:
-				    return hdsList;
-				// case LocalStorageKey.hddName:
-				// 	return 'LENSE30512GMSP34MEAT3TA';
-				// case LocalStorageKey.type:
-				// 	return 'SSD';
-				// case LocalStorageKey.capacity:
-				// 	return 500;
-				// case LocalStorageKey.usedDisk:
-				// 	return 100;
-				// case LocalStorageKey.diskUsage:
-				// 	return '20';
-				// case LocalStorageKey.isSystemDisk:
-				// 	return 'true';
+					return hdsCache
 			}
 		},
-		setLocalCacheValue: (key, vaule) => {
-			Promise.resolve();
+		setLocalCacheValue: (key: any, value: any) => {
+			switch (key) {
+				case LocalStorageKey.cpuModuleName:
+					cpuModuleNameCache = value;
+					break;
+				case LocalStorageKey.cpuBaseFrequency:
+					cpuBaseFrequencyCache = value;
+					break;
+				case LocalStorageKey.cpuCurrentFrequency:
+					cpuCurrentFrequencyCache = value;
+					break;
+				case LocalStorageKey.cpuUsage:
+					cpuUsageCache = value;
+					break;
+				case LocalStorageKey.gpuModuleName:
+					gpuModuleNameCache = value;
+					break;
+				case LocalStorageKey.gpuMemorySize:
+					gpuMemorySizeCache = value;
+					break;
+				case LocalStorageKey.gpuUsedMemory:
+					gpuUsedMemoryCache = value;
+					break;
+				case LocalStorageKey.gpuUsage:
+					gpuUsageCache = value;
+					break;
+				case LocalStorageKey.ramModuleName:
+					ramModuleNameCache = value;
+					break;
+				case LocalStorageKey.ramSize:
+					ramSizeCache = value;
+					break;
+				case LocalStorageKey.ramUsed:
+					ramUsedCache = value;
+					break;
+				case LocalStorageKey.ramUsage:
+					ramUsageCache = value;
+					break;
+				case LocalStorageKey.disksList:
+					hdsCache = value;
+					break
+			}
 		},
 	};
 
-	beforeEach(() => {
-		timerCallback = jasmine.createSpy('timerCallback');
-		jasmine.clock().install();
-		TestBed.configureTestingModule({
-			declarations: [
-				WidgetSystemMonitorComponent,
-				GAMING_DATA.mockPipe({ name: 'translate' }),
-			],
-			schemas: [NO_ERRORS_SCHEMA],
-			providers: [
-				{ provide: HttpClient },
-				{ provide: VantageShellService },
-				{ provide: LoggerService },
-				{ provide: HttpHandler },
-				{
-					provide: GamingAllCapabilitiesService,
-					useValue: gamingAllCapabilitiesServiceMock,
-				},
-				{ provide: HwInfoService, useValue: gamingHwinfoMock },
-				{ provide: LocalCacheService, useValue: localCacheServiceSpy },
-			],
-		}).compileComponents();
-		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
-		component = fixture.componentInstance;
-		fixture.detectChanges();
-	});
+	const gamingHwInfoSpy = jasmine.createSpyObj('HwInfoService', [
+		'getMachineInfomation',
+		'getDynamicInformation'
+	]);
 
-	afterEach(() => {
-		jasmine.clock().uninstall();
-	});
-
-	it('should render "INFO" as a link', () => {
-		setTimeout(() => {
-			timerCallback();
-		}, 100);
-		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
-		fixture.detectChanges();
-		const compiled = fixture.debugElement.nativeElement;
-		expect(compiled.querySelector('div.link-container>a')).toBeTruthy();
-		expect(timerCallback).not.toHaveBeenCalled();
-		jasmine.clock().tick(101);
-	});
-
-	it('should have path /device for "INFO" link', () => {
-		const infoLinkRef = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-		const infoLink = infoLinkRef.findIndex((c) => c.properties.href === '/device');
-		expect(infoLink).toEqual(-1);
-	});
-
-	it('Should have title GPU, CPU, RAM', () => {
-		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
-		fixture.detectChanges();
-		const element = fixture.debugElement.nativeElement;
-		expect(getTextContent(element, 'div.stack-title')).toEqual(' GPU ');
-		expect(getTextContent(element, 'div.cpu-title')).toEqual(' CPU ');
-		expect(
-			getTextContent(element, 'div.ram>div.monitor-stack>div.stack-label>div.stack-title')
-		).toEqual(' RAM ');
-	});
-
-	it('Should mock the Hwinfoservice to get cpuMax, cpuModuleName, gpuMax, gpuModuleName, ramMax & ramOver using getMachineInfomation function', () => {
-		let hwInfo = {
-			cpuBaseFrequence: '2.9GHz',
-			cpuModuleName: 'Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz',
-			gpuMemorySize: '8GB',
-			gpuModuleName: 'NVIDIA GeForce GTX 3090',
-			memorySize: '64.0GB',
-			memoryModuleName: 'Samsung',
-		};
-		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
-		component = fixture.debugElement.componentInstance;
-		gamingHwinfoMock.getMachineInfomation.and.returnValue(
-			Promise.resolve({
-				cpuBaseFrequence: '2.9GHz',
-				cpuModuleName: 'Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz',
-				gpuMemorySize: '8GB',
-				gpuModuleName: 'NVIDIA GeForce GTX 3090',
-				memorySize: '64.0GB',
-				memoryModuleName: 'Samsung',
-			})
-		);
-		gamingHwinfoMock.getMachineInfomation().then((hwInfoRes: any) => {
-			JSON.stringify(hwInfoRes);
-			hwInfo = hwInfoRes;
-			component.getMachineInfo();
-			// expect(hwInfoRes.cpuBaseFrequency).toEqual('2.9');
-			expect(hwInfoRes.cpuModuleName).toEqual('Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz');
-			expect(hwInfoRes.gpuMemorySize).toEqual('8GB');
-			expect(hwInfoRes.gpuModuleName).toEqual('NVIDIA GeForce GTX 3090');
-			expect(hwInfoRes.memorySize).toEqual('64.0GB');
-			expect(hwInfoRes.memoryModuleName).toEqual('Samsung');
-		});
-		expect(hwInfo.cpuBaseFrequence).toEqual('2.9GHz');
-		expect(hwInfo.cpuModuleName).toEqual('Intel(R) Core(TM) i7-7820HK CPU @ 2.90GHz');
-		expect(hwInfo.gpuMemorySize).toEqual('8GB');
-		expect(hwInfo.gpuModuleName).toEqual('NVIDIA GeForce GTX 3090');
-		expect(hwInfo.memorySize).toEqual('64.0GB');
-		expect(hwInfo.memoryModuleName).toEqual('Samsung');
-	});
-
-	it('Should mock the Hwinfoservice to get cpuUsage, gpuUsage, memoryUsage, cpuCurrent, gpuCurrent & ramCurrent using getDynamicInformation function', () => {
-		let dynamicInfov;
-		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
-		component = fixture.debugElement.componentInstance;
-		gamingHwinfoMock.getDynamicInformation.and.returnValue(
-			Promise.resolve({
-				diskList: [
-					{
-						isSystemDisk: false,
-						capacity: 1863,
-						type: 'HDD',
-						hddName: 'ST2000LM007-1R8174',
-						usedDisk: 186,
-						diskUsage: 10,
-					},
-					{
-						isSystemDisk: true,
-						capacity: 1907,
-						type: 'SSD',
-						hddName: 'Intel Raid 0 Volume',
-						usedDisk: 380,
-						diskUsage: 20,
-					},
+	describe('machine info', () => {
+		beforeEach(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					WidgetSystemMonitorComponent, 
+					GAMING_DATA.mockPipe({ name: 'translate' })
 				],
-				cpuUseFrequency: '1.2',
-				gpuUsedMemory: '2.68GB',
-				memoryUsed: '20.2GB',
-				cpuUsage: 18,
-				gpuUsage: 2,
-				memoryUsage: 31,
-			})
-		);
-		gamingHwinfoMock.getDynamicInformation().then((dynamicInfoRes: any) => {
-			JSON.stringify(dynamicInfoRes);
-			dynamicInfov = dynamicInfoRes;
-			// component.formDynamicInformation(dynamicInfoRes);
-			// component.setFormDynamicInformationCache(dynamicInfoRes);
-			expect(dynamicInfov.gpuUsage).toEqual(2);
-			expect(dynamicInfov.cpuUsage).toEqual(18);
-			expect(dynamicInfov.memoryUsage).toEqual(31);
-			expect(dynamicInfov.cpuUseFrequency).toEqual('1.2');
-			expect(dynamicInfov.memoryUsed).toEqual('20.2GB');
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient },
+					{ provide: VantageShellService },
+					{ provide: LoggerService },
+					{ provide: HttpHandler },
+					{ provide: HwInfoService, useValue: gamingHwInfoSpy },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
+				]
+			}).compileComponents();
+			fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
+			component = fixture.componentInstance;
+			fixture.detectChanges();
 		});
-		expect(dynamicInfov).toEqual(undefined);
-	});
 
-	it('Should call toggleHDs', () => {
-		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
-		component = fixture.debugElement.componentInstance;
-		component.hds = [
-			{
-				isSystemDisk: false,
-				capacity: 1863,
-				type: 'HDD',
-				hddName: 'ST2000LM007-1R8174',
-				usedDisk: 186,
-				diskUsage: 10,
-			},
-			{
+		afterEach(() => {
+			cpuModuleNameCache = 'CPU Test 1';
+			cpuBaseFrequencyCache = '1.0GHz';
+			cpuCurrentFrequencyCache = '2';
+			cpuUsageCache = 3;
+			gpuModuleNameCache = 'GPU Test 1';
+			gpuMemorySizeCache = '4GB';
+			gpuUsedMemoryCache = '5';
+			gpuUsageCache = 6;
+			ramModuleNameCache = 'RAM Test 1';
+			ramSizeCache = '7GB';
+			ramUsedCache = '8';
+			ramUsageCache = 9;
+			hdsCache = [{
+				capacity: 10,
+				diskUsage: '11',
+				hddName: 'Hdd Test 1',
 				isSystemDisk: true,
-				capacity: 1907,
 				type: 'SSD',
-				hddName: 'Intel Raid 0 Volume',
-				usedDisk: 380,
-				diskUsage: 20,
-			},
-			{
-				isSystemDisk: false,
-				capacity: 1907,
+				usedDisk: 12,
+			}];
+		});
+
+		it('ngOnInit', () => {
+			spyOn(component, 'getMachineInfo').and.callThrough();
+			spyOn(component, 'getRealTimeUsageInfo').and.callThrough();
+			expect(component).toBeDefined();
+			expect(component.cpuModuleName).toBe('CPU Test 1', 'cpuModuleName shoulde be CPU Test 1');
+			expect(component.cpuBaseFrequency).toBe('1.0GHz', 'cpuBaseFrequency shoulde be 1.0GHz');
+			expect(component.gpuModuleName).toBe('GPU Test 1', 'GpuModuleName shoulde be GPU Test 1');
+			expect(component.gpuMemorySize).toBe('4GB', 'gpuMemorySize shoulde be 4GB');
+			expect(component.ramModuleName).toBe('RAM Test 1', 'ramModuleName shoulde be RAM Test 1');
+			expect(component.ramSize).toBe('7GB', 'ramSize shoulde be 7GB');
+		});
+		it('getMachineInfo', fakeAsync(() => {
+			const machineInfo = {
+				cpuModuleName: 'CPU Test 2',
+				cpuBaseFrequence: '2.0GHz',
+				gpuModuleName: 'GPU Test 2',
+				gpuMemorySize: '8GB',
+				memoryModuleName: 'RAM Test 2',
+				memorySize: '14GB',
+			}
+			gamingHwInfoSpy.getMachineInfomation.and.resolveTo(machineInfo);
+			component.getMachineInfo();
+			tick();
+			expect(component.cpuModuleName).toBe('CPU Test 2', 'cpuModuleName shoulde be CPU Test 2');
+			expect(cpuModuleNameCache).toBe('CPU Test 2', 'cpuModuleNameCache shoulde be CPU Test 2');
+			expect(component.cpuBaseFrequency).toBe('2.0GHz', 'cpuBaseFrequency shoulde be 2.0GHz');
+			expect(cpuBaseFrequencyCache).toBe('2.0GHz', 'cpuBaseFrequencyCache shoulde be 2.0GHz');
+			expect(component.gpuModuleName).toBe('GPU Test 2', 'GpuModuleName shoulde be GPU Test 2');
+			expect(gpuModuleNameCache).toBe('GPU Test 2', 'gpuModuleNameCache shoulde be GPU Test 2');
+			expect(component.gpuMemorySize).toBe('8GB', 'gpuMemorySize shoulde be 8GB');
+			expect(gpuMemorySizeCache).toBe('8GB', 'gpuMemorySizeCache shoulde be 8GB');
+			expect(component.ramModuleName).toBe('RAM Test 2', 'ramModuleName shoulde be RAM Test 2');
+			expect(ramModuleNameCache).toBe('RAM Test 2', 'ramModuleNameCache shoulde be RAM Test 2');
+			expect(component.ramSize).toBe('14GB', 'ramSize shoulde be 14GB');
+			expect(ramSizeCache).toBe('14GB', 'ramSizeCache shoulde be 14GB');
+		}));
+	})
+	describe('dynamic info', () => {
+		beforeEach(() => {
+			TestBed.configureTestingModule({
+				declarations: [
+					WidgetSystemMonitorComponent, 
+					GAMING_DATA.mockPipe({ name: 'translate' })
+				],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient },
+					{ provide: VantageShellService },
+					{ provide: LoggerService },
+					{ provide: HttpHandler },
+					{ provide: HwInfoService, useValue: gamingHwInfoSpy },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
+				]
+			}).compileComponents();
+			fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
+			component = fixture.componentInstance;
+			fixture.detectChanges();
+		});
+
+		afterEach(() => {
+			cpuModuleNameCache = 'CPU Test 1';
+			cpuBaseFrequencyCache = '1.0GHz';
+			cpuCurrentFrequencyCache = '2';
+			cpuUsageCache = 3;
+			gpuModuleNameCache = 'GPU Test 1';
+			gpuMemorySizeCache = '4GB';
+			gpuUsedMemoryCache = '5';
+			gpuUsageCache = 6;
+			ramModuleNameCache = 'RAM Test 1';
+			ramSizeCache = '7GB';
+			ramUsedCache = '8';
+			ramUsageCache = 9;
+			hdsCache = [{
+				capacity: 10,
+				diskUsage: '11',
+				hddName: 'Hdd Test 1',
+				isSystemDisk: true,
 				type: 'SSD',
-				hddName: 'Intel Raid 1 Volume',
-				usedDisk: 380,
-				diskUsage: 20,
-			},
-		];
-		component.toggleHDs(true);
-		expect(component.showAllHDs).toBeFalse();
+				usedDisk: 12,
+			}];
+		});
 
-		component.toggleHDs(false);
-		expect(component.showAllHDs).toBeTrue();
-	});
+		it('ngOnInit', () => {
+			spyOn(component, 'getMachineInfo').and.callThrough();
+			spyOn(component, 'getRealTimeUsageInfo').and.callThrough();
+			expect(component).toBeDefined();
+			expect(component.cpuCurrentFrequency).toBe('2', 'cpuCurrentFrequency shoulde be 2');
+			expect(component.cpuUsage).toBe(0.03, 'cpuUsage shoulde be 0.03');
+			expect(component.gpuUsedMemory).toBe('5', 'gpuUsedMemory shoulde be 5');
+			expect(component.gpuUsage).toBe(6, 'gpuUsage shoulde be 6');
+			expect(component.ramUsed).toBe('8', 'ramUsed shoulde be 8');
+			expect(component.ramUsage).toBe(9, 'ramUsage shoulde be 9');
+			expect(component.hds.length).toBe(1, 'hds.length shoulde be 1');
+			expect(component.hds[0].capacity).toBe(10, 'hds.capacity shoulde be 10');
+			expect(component.hds[0].diskUsage).toBe('11', 'hds.diskUsage shoulde be 11');
+			expect(component.hds[0].hddName).toBe('Hdd Test 1', 'hds.hddName shoulde be Hdd Test 1');
+			expect(component.hds[0].isSystemDisk).toBe(true, 'hds.isSystemDisk shoulde be true');
+			expect(component.hds[0].type).toBe('SSD', 'hds.type shoulde be SSD');
+			expect(component.hds[0].usedDisk).toBe(12, 'hds.usedDisk shoulde be 12');
+		});
 
-	it('Should call getLeftDeg, getRightDeg, getStackHeight &  getFloorPct', () => {
-		fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
-		component = fixture.debugElement.componentInstance;
+		it('getRealTimeUsageInfo', fakeAsync(() => {
+			let dynamicInfo = {
+				cpuUseFrequency: null,
+				cpuUsage: null,
+				gpuUsedMemory: null,
+				gpuUsage: null,
+				memoryUsed: null,
+				memoryUsage: null,
+				diskList: null
+			}
+			gamingHwInfoSpy.getDynamicInformation.and.resolveTo(dynamicInfo);
+			component.getRealTimeUsageInfo();
+			tick();
+			expect(component.cpuCurrentFrequency).toBe('2', 'cpuCurrentFrequency shoulde be 2');
+			expect(component.cpuUsage).toBe(0.03, 'cpuUsage shoulde be 0.03');
+			expect(component.gpuUsedMemory).toBe('5', 'gpuUsedMemory shoulde be 5');
+			expect(component.gpuUsage).toBe(6, 'gpuUsage shoulde be 6');
+			expect(component.ramUsed).toBe('8', 'ramUsed shoulde be 8');
+			expect(component.ramUsage).toBe(9, 'ramUsage shoulde be 9');
+			expect(component.hds.length).toBe(1, 'hds.length shoulde be 1');
+			expect(component.hds[0].capacity).toBe(10, 'hds.capacity shoulde be 10');
+			expect(component.hds[0].diskUsage).toBe('11', 'hds.diskUsage shoulde be 11');
+			expect(component.hds[0].hddName).toBe('Hdd Test 1', 'hds.hddName shoulde be Hdd Test 1');
+			expect(component.hds[0].isSystemDisk).toBe(true, 'hds.isSystemDisk shoulde be true');
+			expect(component.hds[0].type).toBe('SSD', 'hds.type shoulde be SSD');
+			expect(component.hds[0].usedDisk).toBe(12, 'hds.usedDisk shoulde be 12');
 
-		let result = component.getLeftDeg(1.1);
-		expect(result).toBe(180);
-		result = component.getLeftDeg(0.6);
-		expect(result).toBe(36);
-		result = component.getLeftDeg(0.1);
-		expect(result).toBe(0);
-
-		result = component.getRightDeg(1.1);
-		expect(result).toBe(360);
-		result = component.getRightDeg(-0.6);
-		expect(result).toBe(0);
-		result = component.getRightDeg(0.1);
-		expect(result).toBe(36);
-		let size = component.getHDSize(100);
-		expect(size).toBe('100GB');
-		size = component.getHDSize(2000);
-		expect(size).toBe('2.00TB');
-	});
-
-	it('Should get machine hwcapability', () => {
-		gamingHwinfoMock.getMachineHwCapability.and.returnValue(Promise.resolve({cpuInfoVersion: 1, gpuInfoVersion: 1}));
-        component.getMachineHwCapability();
-		expect(component.hwNewVersionInfo).toEqual(false);
-	});
-
-	it('Should get hwover clockState', () => {
-		component.hwOverClockInfo = {
-			'cpuOverClockInfo': {'isOverClocking': true,isSupportOCFeature: true, localCache: LocalStorageKey.cpuModuleName},
-			'gpuOverClockInfo': {'isOverClocking': true,isSupportOCFeature: true, localCache: LocalStorageKey.cpuModuleName},
-			'vramOverClockInfo': {'isOverClocking': true,isSupportOCFeature: true, localCache: LocalStorageKey.cpuModuleName}
-		};
-		gamingHwinfoMock.getHwOverClockState.and.returnValue(Promise.resolve({cpuOverClockInfo: 1, gpuOverClockInfo: 1,vramOverClockInfo:2}));
-        component.getHwOverClockState();
-		expect(component.hwNewVersionInfo).toEqual(false);
-	});
-
-	it('Should unregister overClock state change event', () => {
-        component.unRegisterOverClockStateChangeEvent();
-		expect(component.unRegisterOverClockStateChangeEvent()).toBeUndefined();
-		component.ocStateEvent = {cpuOCState: true,gpuOCState: true,vramOCState: true};
-		component.registerOverClockStateChangeEvent();
-		expect(component.registerOverClockStateChangeEvent()).toBeUndefined();
-		component.onRegisterOverClockStateChangeEvent(component.ocStateEvent);
-		expect(component.hwOverClockInfo.cpuOverClockInfo.isOverClocking).toBeUndefined();
-	});
-
+			dynamicInfo = {
+				cpuUseFrequency: '4GHz',
+				cpuUsage: 6,
+				gpuUsedMemory: '10GB',
+				gpuUsage: 12,
+				memoryUsed: '16GB',
+				memoryUsage: 18,
+				diskList: [{
+					capacity: 20,
+					diskUsage: 22,
+					hddName: 'Hdd Test 2',
+					isSystemDisk: false,
+					type: 'HDD',
+					usedDisk: 24,
+				},{
+					capacity: 26,
+					diskUsage: 28,
+					hddName: 'Hdd Test 3',
+					isSystemDisk: true,
+					type: 'SSD',
+					usedDisk: 30,
+				}],
+			}
+			gamingHwInfoSpy.getDynamicInformation.and.resolveTo(dynamicInfo);
+			component.getRealTimeUsageInfo();
+			tick();
+			expect(component.cpuCurrentFrequency).toBe('4', 'cpuCurrentFrequency shoulde be 4');
+			expect(component.cpuUsage).toBe(0.06, 'cpuUsage shoulde be 0.06');
+			expect(component.gpuUsedMemory).toBe('10', 'gpuUsedMemory shoulde be 10');
+			expect(component.gpuUsage).toBe(12, 'gpuUsage shoulde be 12');
+			expect(component.ramUsed).toBe('16', 'ramUsed shoulde be 16');
+			expect(component.ramUsage).toBe(18, 'ramUsage shoulde be 18');
+			expect(component.hds.length).toBe(2, 'hds.length shoulde be 2');
+			expect(component.hds[0].capacity).toBe(20, 'hds[0].capacity shoulde be 10');
+			expect(component.hds[0].diskUsage).toBe(22, 'hds[0].diskUsage shoulde be 22');
+			expect(component.hds[0].hddName).toBe('Hdd Test 2', 'hds[0].hddName shoulde be Hdd Test 2');
+			expect(component.hds[0].isSystemDisk).toBe(false, 'hds[0].isSystemDisk shoulde be false');
+			expect(component.hds[0].type).toBe('HDD', 'hds[0].type shoulde be HDD');
+			expect(component.hds[0].usedDisk).toBe(24, 'hds[0].usedDisk shoulde be 24');
+			expect(component.hds[1].capacity).toBe(26, 'hds[1].capacity shoulde be 26');
+			expect(component.hds[1].diskUsage).toBe(28, 'hds[1].diskUsage shoulde be 28');
+			expect(component.hds[1].hddName).toBe('Hdd Test 3', 'hds[1].hddName shoulde be Hdd Test 3');
+			expect(component.hds[1].isSystemDisk).toBe(true, 'hds[1].isSystemDisk shoulde be true');
+			expect(component.hds[1].type).toBe('SSD', 'hds[1].type shoulde be SSD');
+			expect(component.hds[1].usedDisk).toBe(30, 'hds[1].usedDisk shoulde be 30');
+		}));
+	})
 });
