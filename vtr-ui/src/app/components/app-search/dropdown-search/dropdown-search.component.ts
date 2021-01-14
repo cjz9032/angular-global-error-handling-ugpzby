@@ -10,7 +10,6 @@ import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 })
 export class SearchDropdownComponent {
 	@ViewChild('searchInput', { static: false }) searchInput: ElementRef;
-	@ViewChild('searchBox', { static: false }) searchBox: ElementRef;
 
 	public searchTips = 'Search Query';
 	public userInput = '';

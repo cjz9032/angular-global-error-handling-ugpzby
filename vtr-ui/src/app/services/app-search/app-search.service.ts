@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -9,22 +9,23 @@ import { featureSource } from './features.model';
 import { IFeature, IFeatureAction, INavigationAction, SearchActionType } from './interface.model';
 import { SearchEngineWraper } from './search-engine-wraper';
 import find from 'lodash/find';
+import { LoggerService } from '../logger/logger.service';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class AppSearchService {
+export class AppSearchService implements OnDestroy {
 	private featureLoad = false;
 	private featureMap = {};
 	private searchContext = {};
-	private searchEngine: SearchEngineWraper;
-	private subscription: Subscription;
 	private menuRouteMap = {};
-
+	private subscription: Subscription;
+	private searchEngine: SearchEngineWraper;
 	constructor(
 		private translate: TranslateService,
 		private router: Router,
-		private commonService: CommonService
+		private commonService: CommonService,
+		private logger: LoggerService
 	) {
 		this.subscription = this.commonService.notification.subscribe(
 			(notification: AppNotification) => {
@@ -33,29 +34,42 @@ export class AppSearchService {
 		);
 	}
 
+	public ngOnDestroy() {
+		this.subscription?.unsubscribe();
+	}
+
 	public async load() {
 		if (this.featureLoad) {
+			this.logger.info(`waringing: duplicate feature loading-1`);
 			return;
 		}
 
 		// ensure that the translation resources has been loaded
 		await this.translate.get('appSearch').toPromise();
-
 		if (this.featureLoad) {
+			this.logger.info(`waringing: duplicate feature loading-2`);
 			return;
 		}
 
 		this.featureLoad = true;
 		this.searchEngine = new SearchEngineWraper();
 
-		// transfer pages to feature map
-		featureSource.forEach((feature) => {
-			feature.featureName = this.translate.instant(
-				feature.featureName || `${feature.id}.featureName`
-			);
-			feature.category = this.translate.instant(
-				feature.category || `${feature.categoryId}.category`
-			);
+		const featureList = featureSource.map((feature) => {
+			const nameKey = feature.featureName || `${feature.id}.featureName`;
+			const categoryKey = feature.category || `${feature.categoryId}.category`;
+			feature.featureName = this.translate.instant(nameKey);
+			feature.category = this.translate.instant(categoryKey);
+			return feature;
+		});
+
+		// transfer feature list to feature map
+		featureList.forEach((feature) => {
+			if (!feature.id || !feature.categoryId) {
+				this.logger.error(
+					`invalid feature definition, feature.id:${feature.id} || categoryId: ${feature.categoryId}`
+				);
+				return;
+			}
 
 			this.featureMap[feature.id] = feature;
 			this.searchContext[feature.id] = {
@@ -70,23 +84,15 @@ export class AppSearchService {
 	}
 
 	public search(userInput: string): Array<IFeature> {
-		const featureIdList = this.searchEngine.search(userInput);
-
-		const returnList = [];
-		if (featureIdList && featureIdList.length > 0) {
-			featureIdList.forEach((feature) => {
-				if (feature?.item?.id) {
-					returnList.push(Object.assign({}, this.featureMap[feature.item.id]));
-				}
-			});
-		}
-
-		return returnList;
+		const searchedList = this.searchEngine.search(userInput);
+		return (
+			searchedList?.map((feature) => Object.assign({}, this.featureMap[feature.item.id])) ||
+			[]
+		);
 	}
 
 	public register(feature: IFeature, keywords: string[]) {
 		this.featureMap[feature.id] = feature;
-
 		const translation = this.translate.instant('appSearch');
 		feature.featureName = translation[feature.id];
 		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
@@ -98,8 +104,7 @@ export class AppSearchService {
 
 	public handleAction(featureAction: IFeatureAction) {
 		if (featureAction.type === SearchActionType.navigation) {
-			const navAction = featureAction as INavigationAction;
-			let route = '/' + this.actionToRoutePath(navAction);
+			let route = '/' + this.actionToRoutePath(featureAction as INavigationAction);
 
 			if (route.startsWith('/user')) {
 				// not support user route at present
@@ -116,7 +121,9 @@ export class AppSearchService {
 			if (typeof navAction.menuId === 'string') {
 				route = this.menuRouteMap[navAction.menuId] || '';
 			} else if (navAction.menuId.length > 0) {
-				const menuId = find(navAction.menuId, (id) => Boolean(this.menuRouteMap[id]));
+				const menuId = find(navAction.menuId, (menuId) =>
+					Boolean(this.menuRouteMap[menuId])
+				);
 				route = this.menuRouteMap[menuId] || '';
 			}
 		}
@@ -139,6 +146,7 @@ export class AppSearchService {
 	private updateRouteMap(payload) {
 		this.menuRouteMap = {};
 		if (!payload) {
+			this.logger.info(`invalid menu payload`);
 			return;
 		}
 
