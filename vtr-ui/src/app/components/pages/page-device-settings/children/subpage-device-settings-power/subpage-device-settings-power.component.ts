@@ -29,6 +29,7 @@ import { FlipToStartSetStatus } from '../../../../../services/power/flip-to-star
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { BatteryHealthService } from './battery-health/battery-health.service';
+import { ConservationModeStatus } from 'src/app/data-models/battery/conservation-mode-response.model';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -58,7 +59,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public alwaysOnUSBStatus = new FeatureStatus(false, true);
 	public usbChargingStatus = new FeatureStatus(false, true);
 	public easyResumeStatus = new FeatureStatus(false, true);
-	public conservationModeStatus = new FeatureStatus(false, true);
+	public conservationModeStatus = new ConservationModeStatus(false, false, true);
 	public expressChargingStatus = new FeatureStatus(false, true);
 	public conservationModeLock = false;
 	public expressChargingLock = false;
@@ -94,7 +95,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	airplanePowerCache: AlwaysOnUSBCapability = undefined;
 	easyResumeCache: FeatureStatus;
 	expressChargingCache: FeatureStatus = undefined;
-	conservationModeCache: FeatureStatus = undefined;
+	conservationModeCache: ConservationModeStatus = undefined;
 
 	smartStandbyCapability: boolean;
 	showPowerSmartSettings = true;
@@ -124,7 +125,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	batterySettingsGroup = [];
 	batteryHealthAvailable = false;
-
+	conservationModeDescriptionOption = '1';
 	constructor(
 		public powerService: PowerService,
 		public batteryService: BatteryDetailService,
@@ -350,8 +351,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			if (this.conservationModeCache !== undefined) {
 				this.conservationModeStatus = this.conservationModeCache;
 				this.conservationModeLock = this.conservationModeCache.isLoading;
+				this.conservationModeDescriptionOption = this.conservationModeStatus.storageToEighty ? '2' : '1';
 			} else {
-				this.conservationModeCache = new FeatureStatus(false, true, true, false);
+				this.conservationModeCache = new ConservationModeStatus(false, false, true, false);
 			}
 		} catch (error) {
 			this.logger.info('initConservationModeFromCache', error);
@@ -1130,6 +1132,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.then((featureStatus) => {
 					this.logger.info('getConservationModeStatusIdeaNoteBook.then', featureStatus);
 					this.conservationModeStatus = featureStatus;
+					this.conservationModeDescriptionOption = this.conservationModeStatus.storageToEighty ? '2' : '1';
 					this.updateBatteryLinkStatus(
 						this.conservationModeStatus.available,
 						'ConservationMode'

@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Bevaringstilstand",
-						"description": "Denne funktion kan bruges til at forlænge batteriets levetid, når den er tilsluttet.<br>Når denne tilstand er aktiveret, oplades batteriet kun med en kapacitet på 55-60 %, og batteriets levetid kan maksimeres.Det reducerer dog den tid, du kan bruge computeren, efter at den er koblet fra vekselstrømskilden.",
+						"description1": "Denne funktion kan bruges til at forlænge batteriets levetid, når den er tilsluttet.<br>Når denne tilstand er aktiveret, oplades batteriet kun med en kapacitet på 55-60 %, og batteriets levetid kan maksimeres.Det reducerer dog den tid, du kan bruge computeren, efter at den er koblet fra vekselstrømskilden.",
+						"description2": "Denne funktion kan bruges til at forlænge batteriets levetid, når den er tilsluttet.<br>Når denne tilstand er aktiveret, oplades batteriet kun med en kapacitet på 75-80 %, og batteriets levetid kan maksimeres.Det reducerer dog den tid, du kan bruge computeren, efter at den er koblet fra vekselstrømskilden.",
 						"tooltip": {
 							"line1": "Denne funktion kan bruges til at forlænge batteriets levetid, når den er tilsluttet.",
 							"line2": "Når denne tilstand er aktiveret, oplades batteriet kun med en kapacitet på 55-60 %, og batteriets levetid kan maksimeres.Det reducerer dog den tid, du kan bruge computeren, efter at den er koblet fra vekselstrømskilden.",

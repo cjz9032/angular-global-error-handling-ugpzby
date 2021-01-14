@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Varčevalni način",
-						"description": "Ta funkcija je uporabna za podaljšanje življenjske dobe baterije, ko je priključena. <br>Ko je omogočen ta način, se bo baterija napolnila samo do 55–60 % zmogljivosti, kar podaljša njeno življenjsko dobo. Vendar pa se s tem skrajša čas uporabe računalnika, potem ko ga odklopite iz napajanja.",
+						"description1": "Ta funkcija je uporabna za podaljšanje življenjske dobe baterije, ko je priključena. <br>Ko je omogočen ta način, se bo baterija napolnila samo do 55–60 % zmogljivosti, kar podaljša njeno življenjsko dobo. Vendar pa se s tem skrajša čas uporabe računalnika, potem ko ga odklopite iz napajanja.",
+						"description2": "Ta funkcija je uporabna za podaljšanje življenjske dobe baterije, ko je priključena. <br>Ko je omogočen ta način, se bo baterija napolnila samo do 75–80 % zmogljivosti, kar podaljša njeno življenjsko dobo. Vendar pa se s tem skrajša čas uporabe računalnika, potem ko ga odklopite iz napajanja.",
 						"tooltip": {
 							"line1": "Ta funkcija je uporabna za podaljšanje življenjske dobe baterije, ko je priključena.",
 							"line2": "Ko je omogočen ta način, se bo baterija napolnila samo do 55–60 % zmogljivosti, kar podaljša njeno življenjsko dobo. Vendar pa se s tem skrajša čas uporabe računalnika, potem ko ga odklopite iz napajanja.",

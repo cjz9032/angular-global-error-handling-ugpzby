@@ -52,7 +52,12 @@ const airplanePowerCache = {
 	toggleState: featureStatus,
 	checkbox: featureStatus,
 };
-
+const conservationModeStatus = {
+	available: true,
+ 	storageToEighty: true,
+    status: true,
+    isLoading: true
+}
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
 describe('SubpageDeviceSettingsPowerComponent', () => {
@@ -409,7 +414,7 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 			const { fixture, component, powerService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));
 			spyOn(powerService, 'getConservationModeStatusIdeaNoteBook').and.returnValue(
-				Promise.resolve(featureStatus)
+				Promise.resolve(conservationModeStatus)
 			);
 			const myPrivateSpy = spyOn<any>(
 				component,

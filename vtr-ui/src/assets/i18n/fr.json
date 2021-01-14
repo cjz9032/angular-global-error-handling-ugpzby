@@ -1456,7 +1456,8 @@
 					},
 					"conservationMode": {
 						"title": "Mode conservation",
-						"description": "Cette fonction est utile pour prolonger la durée de vie de la batterie lorsque vous êtes connecté. <br>Lorsque ce mode est activé, la batterie sera uniquement chargée à 55-60 % de sa capacité et la durée de vie de la batterie sera maximisée. Cependant, cela réduira la durée d'utilisation de votre ordinateur après la déconnexion de la source d'alimentation secteur.",
+						"description1": "Cette fonction est utile pour prolonger la durée de vie de la batterie lorsque vous êtes connecté. <br>Lorsque ce mode est activé, la batterie sera uniquement chargée à 55-60 % de sa capacité et la durée de vie de la batterie sera maximisée. Cependant, cela réduira la durée d'utilisation de votre ordinateur après la déconnexion de la source d'alimentation secteur.",
+						"description2": "Cette fonction est utile pour prolonger la durée de vie de la batterie lorsque vous êtes connecté. <br>Lorsque ce mode est activé, la batterie sera uniquement chargée à 75-80 % de sa capacité et la durée de vie de la batterie sera maximisée. Cependant, cela réduira la durée d'utilisation de votre ordinateur après la déconnexion de la source d'alimentation secteur.",
 						"tooltip": {
 							"line1": "Cette fonction est utile pour prolonger la durée de vie de la batterie lorsque vous êtes connecté.",
 							"line2": "Lorsque ce mode est activé, la batterie sera uniquement chargée à 55-60 % de sa capacité et la durée de vie de la batterie sera maximisée. Cependant, cela réduira la durée d'utilisation de votre ordinateur après la déconnexion de la source d'alimentation secteur.",

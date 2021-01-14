@@ -1456,7 +1456,8 @@
 					},
 					"conservationMode": {
 						"title": "Modo de conservação",
-						"description": "Essa função é útil para estender a vida útil da bateria quando conectada. <br>Quando esse modo é ativado, a bateria será carregada apenas até 55-60% da capacidade e a duração da bateria poderá ser maximizada. No entanto, isso reduzirá o tempo de uso do computador depois que ele for desconectado da fonte CA.",
+						"description1": "Essa função é útil para estender a vida útil da bateria quando conectada. <br>Quando esse modo é ativado, a bateria será carregada apenas até 55-60% da capacidade e a duração da bateria poderá ser maximizada. No entanto, isso reduzirá o tempo de uso do computador depois que ele for desconectado da fonte CA.",
+						"description2": "Essa função é útil para estender a vida útil da bateria quando conectada. <br>Quando esse modo é ativado, a bateria será carregada apenas até 75-80% da capacidade e a duração da bateria poderá ser maximizada. No entanto, isso reduzirá o tempo de uso do computador depois que ele for desconectado da fonte CA.",
 						"tooltip": {
 							"line1": "Essa função é útil para estender a vida útil da bateria quando conectada.",
 							"line2": "Quando esse modo é ativado, a bateria será carregada apenas até 55-60% da capacidade e a duração da bateria poderá ser maximizada. No entanto, isso reduzirá o tempo de uso do computador depois que ele for desconectado da fonte CA.",

@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Tryb oszczędzania energii",
-						"description": "Ta funkcja jest przydatna do przedłużenia żywotności akumulatora, gdy komputer jest podłączony do źródła zasilania. <br>Gdy ten tryb jest włączony, akumulator będzie ładowany tylko do 55–60% pojemności, co może wydłużyć jego żywotność. Skróci to jednak czas korzystania z komputera po odłączeniu go od źródła zasilania.",
+						"description1": "Ta funkcja jest przydatna do przedłużenia żywotności akumulatora, gdy komputer jest podłączony do źródła zasilania. <br>Gdy ten tryb jest włączony, akumulator będzie ładowany tylko do 55–60% pojemności, co może wydłużyć jego żywotność. Skróci to jednak czas korzystania z komputera po odłączeniu go od źródła zasilania.",
+						"description2": "Ta funkcja jest przydatna do przedłużenia żywotności akumulatora, gdy komputer jest podłączony do źródła zasilania. <br>Gdy ten tryb jest włączony, akumulator będzie ładowany tylko do 75–80% pojemności, co może wydłużyć jego żywotność. Skróci to jednak czas korzystania z komputera po odłączeniu go od źródła zasilania.",
 						"tooltip": {
 							"line1": "Ta funkcja jest przydatna do przedłużenia żywotności akumulatora, gdy komputer jest podłączony do źródła zasilania.",
 							"line2": "Gdy ten tryb jest włączony, akumulator będzie ładowany tylko do 55–60% pojemności, co może wydłużyć jego żywotność. Skróci to jednak czas korzystania z komputera po odłączeniu go od źródła zasilania.",

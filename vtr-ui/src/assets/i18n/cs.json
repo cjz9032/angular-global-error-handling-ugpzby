@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Režim ochrany baterie",
-						"description": "Tato funkce je užitečná pro prodloužení životnosti baterie při zapojení.<br>V tomto režimu se baterie bude nabíjet pouze na 55–60 % své kapacity, což může prodloužit její životnost.Zkrátí se však doba, po kterou budete moci počítač používat, je-li odpojen od zdroje napájení.",
+						"description1": "Tato funkce je užitečná pro prodloužení životnosti baterie při zapojení.<br>V tomto režimu se baterie bude nabíjet pouze na 55–60 % své kapacity, což může prodloužit její životnost.Zkrátí se však doba, po kterou budete moci počítač používat, je-li odpojen od zdroje napájení.",
+						"description2": "Tato funkce je užitečná pro prodloužení životnosti baterie při zapojení.<br>V tomto režimu se baterie bude nabíjet pouze na 75–80 % své kapacity, což může prodloužit její životnost.Zkrátí se však doba, po kterou budete moci počítač používat, je-li odpojen od zdroje napájení.",
 						"tooltip": {
 							"line1": "Tato funkce je užitečná pro prodloužení životnosti baterie při zapojení.",
 							"line2": "V tomto režimu se baterie bude nabíjet pouze na 55–60 % své kapacity, což může prodloužit její životnost.Zkrátí se však doba, po kterou budete moci počítač používat, je-li odpojen od zdroje napájení.",

@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Način uštede napajanja",
-						"description": "Ova je funkcija korisna za produljenje vijeka trajanja baterije kada je priključena. <br>Kada je omogućen ovaj način rada, baterija će se napuniti samo do 55 - 60 % kapaciteta, a vijek trajanja baterije može se maksimalno povećati. Međutim, to će skratiti vrijeme upotrebe računala nakon što se isključi iz izvora napajanja izmjeničnom strujom.",
+						"description1": "Ova je funkcija korisna za produljenje vijeka trajanja baterije kada je priključena. <br>Kada je omogućen ovaj način rada, baterija će se napuniti samo do 55 - 60 % kapaciteta, a vijek trajanja baterije može se maksimalno povećati. Međutim, to će skratiti vrijeme upotrebe računala nakon što se isključi iz izvora napajanja izmjeničnom strujom.",
+						"description2": "Ova je funkcija korisna za produljenje vijeka trajanja baterije kada je priključena. <br>Kada je omogućen ovaj način rada, baterija će se napuniti samo do 75 - 80 % kapaciteta, a vijek trajanja baterije može se maksimalno povećati. Međutim, to će skratiti vrijeme upotrebe računala nakon što se isključi iz izvora napajanja izmjeničnom strujom.",
 						"tooltip": {
 							"line1": "Ova je funkcija korisna za produljenje vijeka trajanja baterije kada je priključena.",
 							"line2": "Kada je omogućen ovaj način rada, baterija će se napuniti samo do 55 - 60 % kapaciteta, a vijek trajanja baterije može se maksimalno povećati. Međutim, to će skratiti vrijeme upotrebe računala nakon što se isključi iz izvora napajanja izmjeničnom strujom.",

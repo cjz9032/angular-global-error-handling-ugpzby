@@ -1456,7 +1456,8 @@
 					},
 					"conservationMode": {
 						"title": "Modalidad de conservación",
-						"description": "Esta función es útil para extender la duración de la batería cuando está enchufada. <br>Cuando esta modalidad está habilitada, la batería solo se cargará al 55-60 % de la capacidad y la duración de la batería se puede maximizar. Sin embargo, esto reducirá el tiempo que podrá utilizar el sistema después de haberlo desconectado de la fuente de alimentación de CA.",
+						"description1": "Esta función es útil para extender la duración de la batería cuando está enchufada. <br>Cuando esta modalidad está habilitada, la batería solo se cargará al 55-60 % de la capacidad y la duración de la batería se puede maximizar. Sin embargo, esto reducirá el tiempo que podrá utilizar el sistema después de haberlo desconectado de la fuente de alimentación de CA.",
+						"description2": "Esta función es útil para extender la duración de la batería cuando está enchufada. <br>Cuando esta modalidad está habilitada, la batería solo se cargará al 75-80 % de la capacidad y la duración de la batería se puede maximizar. Sin embargo, esto reducirá el tiempo que podrá utilizar el sistema después de haberlo desconectado de la fuente de alimentación de CA.",
 						"tooltip": {
 							"line1": "Esta función es útil para extender la duración de la batería cuando está enchufada.",
 							"line2": "Cuando esta modalidad está habilitada, la batería solo se cargará al 55-60 % de la capacidad y la duración de la batería se puede maximizar. Sin embargo, esto reducirá el tiempo que podrá utilizar el sistema después de haberlo desconectado de la fuente de alimentación de CA.",

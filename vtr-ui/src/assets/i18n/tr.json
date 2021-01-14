@@ -1346,7 +1346,8 @@
 					},
 					"conservationMode": {
 						"title": "Tasarruf Kipi",
-						"description": "Bu işlev, cihazınız fişe takılıyken pilinizin ömrünü uzatmak için yararlıdır. <br>Bu kip etkinleştirildiğinde, pil yalnızca kapasitesinin %55-60'ı kadar doldurulur ve pil ömrü en üst düzeye çıkarılabilir. Ancak, bu işlem AC güç kaynağı ile bağlantısını kesmenizden sonra bilgisayarınızı kullanma sürenizi kısaltacaktır.",
+						"description1": "Bu işlev, cihazınız fişe takılıyken pilinizin ömrünü uzatmak için yararlıdır. <br>Bu kip etkinleştirildiğinde, pil yalnızca kapasitesinin %55-60'ı kadar doldurulur ve pil ömrü en üst düzeye çıkarılabilir. Ancak, bu işlem AC güç kaynağı ile bağlantısını kesmenizden sonra bilgisayarınızı kullanma sürenizi kısaltacaktır.",
+						"description2": "Bu işlev, cihazınız fişe takılıyken pilinizin ömrünü uzatmak için yararlıdır. <br>Bu kip etkinleştirildiğinde, pil yalnızca kapasitesinin %75-80'ı kadar doldurulur ve pil ömrü en üst düzeye çıkarılabilir. Ancak, bu işlem AC güç kaynağı ile bağlantısını kesmenizden sonra bilgisayarınızı kullanma sürenizi kısaltacaktır.",
 						"tooltip": {
 							"line1": "Bu işlev, cihazınız fişe takılıyken pilinizin ömrünü uzatmak için yararlıdır.",
 							"line2": "Bu kip etkinleştirildiğinde, pil yalnızca kapasitesinin %55-60'ı kadar doldurulur ve pil ömrü en üst düzeye çıkarılabilir. Ancak, bu işlem AC güç kaynağı ile bağlantısını kesmenizden sonra bilgisayarınızı kullanma sürenizi kısaltacaktır.",

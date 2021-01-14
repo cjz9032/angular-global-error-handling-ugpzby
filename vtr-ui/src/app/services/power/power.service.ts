@@ -7,6 +7,7 @@ import {
 	FlipToStartInterface,
 	FlipToStartSetStatus,
 } from './flip-to-start.interface';
+import { ConservationModeStatus } from 'src/app/data-models/battery/conservation-mode-response.model';
 @Injectable({
 	providedIn: 'root',
 })
@@ -108,7 +109,7 @@ export class PowerService {
 	}
 	// End AlwaysOn USB IdeaNoteBook
 	// Conservation mode for IdeaNotebook
-	getConservationModeStatusIdeaNoteBook(): Promise<FeatureStatus> {
+	getConservationModeStatusIdeaNoteBook(): Promise<ConservationModeStatus> {
 		if (this.devicePowerIdeaNoteBook) {
 			return this.devicePowerIdeaNoteBook.conservationMode.getConservationModeStatus();
 		}
