@@ -28,9 +28,9 @@ const gamingHwinfoMock = jasmine.createSpyObj('HwInfoService', [
 ]);
 
 const hdsList = [
-	{capacity: 119, diskUsage: 72, hddName: "HFM128GDHTNG-8310A", isSystemDisk: true,type: "SSD", usedDisk: 86},
-	{capacity: 931, diskUsage: 7, hddName: "ST1000LM035-1RK172", isSystemDisk: true,type: "HDD", usedDisk: 63}
-]
+	{capacity: 119, diskUsage: 72, hddName: 'HFM128GDHTNG-8310A', isSystemDisk: true,type: 'SSD', usedDisk: 86},
+	{capacity: 931, diskUsage: 7, hddName: 'ST1000LM035-1RK172', isSystemDisk: true,type: 'HDD', usedDisk: 63}
+];
 
 describe('WidgetSystemMonitorComponent', () => {
 	let component: WidgetSystemMonitorComponent;
@@ -306,7 +306,7 @@ describe('WidgetSystemMonitorComponent', () => {
 		gamingHwinfoMock.getHwOverClockState.and.returnValue(Promise.resolve({cpuOverClockInfo: 1, gpuOverClockInfo: 1,vramOverClockInfo:2}));
         component.getHwOverClockState();
 		expect(component.hwNewVersionInfo).toEqual(false);
-	})
+	});
 
 	it('Should unregister overClock state change event', () => {
         component.unRegisterOverClockStateChangeEvent();
@@ -316,6 +316,6 @@ describe('WidgetSystemMonitorComponent', () => {
 		expect(component.registerOverClockStateChangeEvent()).toBeUndefined();
 		component.onRegisterOverClockStateChangeEvent(component.ocStateEvent);
 		expect(component.hwOverClockInfo.cpuOverClockInfo.isOverClocking).toBeUndefined();
-	})
+	});
 
 });
