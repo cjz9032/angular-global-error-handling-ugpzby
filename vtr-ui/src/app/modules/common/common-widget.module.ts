@@ -23,7 +23,6 @@ import { WidgetWarrantyComponent } from 'src/app/components/widgets/widget-warra
 import { WidgetPoweredByInfoComponent } from 'src/app/components/widgets/widget-powered-by-info/widget-powered-by-info.component';
 import { WidgetHomeSecurityComponent } from 'src/app/components/widgets/widget-home-security/widget-home-security.component';
 import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
-import { WidgetAutoCloseComponent } from 'src/app/components/widgets/widget-auto-close/widget-auto-close.component';
 
 
 @NgModule({
@@ -37,7 +36,6 @@ import { WidgetAutoCloseComponent } from 'src/app/components/widgets/widget-auto
 		WidgetPoweredByInfoComponent,
 		WidgetHomeSecurityComponent,
 		WidgetRoundStatusComponent,
-		WidgetAutoCloseComponent,
 	],
 	exports: [
 		WidgetDeviceComponent,
@@ -50,7 +48,6 @@ import { WidgetAutoCloseComponent } from 'src/app/components/widgets/widget-auto
 		WidgetPoweredByInfoComponent,
 		WidgetHomeSecurityComponent,
 		WidgetRoundStatusComponent,
-		WidgetAutoCloseComponent,
 	],
 	imports: [
 		CommonModule,

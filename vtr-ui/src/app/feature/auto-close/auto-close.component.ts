@@ -7,11 +7,11 @@ import { AutoCloseService } from 'src/app/feature/service/auto-close.service';
 import { MockService } from 'src/app/services/mock/mock.service';
 
 @Component({
-	selector: 'vtr-widget-auto-close',
-	templateUrl: './widget-auto-close.component.html',
-	styleUrls: ['./widget-auto-close.component.scss']
+	selector: 'vtr-auto-close',
+	templateUrl: './auto-close.component.html',
+	styleUrls: ['./auto-close.component.scss']
 })
-export class WidgetAutoCloseComponent implements OnInit, OnDestroy {
+export class AutoCloseComponent implements OnInit, OnDestroy {
 	someItem = [];
 	savedApps: TileItem[];
 	runningApps: TileItem[];
