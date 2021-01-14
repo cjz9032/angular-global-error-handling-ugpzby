@@ -285,7 +285,7 @@ describe('WidgetSystemToolsComponent', () => {
 			tick();
 			expect(component.showLegionAccessory).toBe(true, `showLegionAccessory should be true`);
 			expect(component.showNahimic).toBe(true, `showNahimic should be true`);
-			expect(component.toolLength).toBe(5, `appList length shoulde be 5`);
+			expect(component.toolLength).toBe(6, `appList length shoulde be 6`);
 			expect(accessoryFeatureCache).toBe(true, `accessory cache should be true`);
 			expect(nahimicFeatureCache).toBe(true, `nahimic cache should be true`);
 		}));
