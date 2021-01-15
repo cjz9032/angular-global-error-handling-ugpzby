@@ -135,6 +135,20 @@ export class GamingAllCapabilitiesService {
 			LocalStorageKey.overDriveFeature,
 			capabilities.overDriveFeature
 		);
+		// Version 3.6: cpu-gpu-vram over clock versioin info
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.cpuInfoVersion,
+			capabilities.cpuInfoVersion
+		);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.gpuInfoVersion,
+			capabilities.gpuInfoVersion
+		);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.diskInfoVersion,
+			capabilities.diskInfoVersion
+		);
+
 		this.commonService.sendGamingCapabilitiesNotification(
 			Gaming.GamingCapabilities,
 			capabilities
