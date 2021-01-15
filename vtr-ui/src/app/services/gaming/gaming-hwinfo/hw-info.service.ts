@@ -37,17 +37,6 @@ export class HwInfoService {
 		}
 	}
 
-	getMachineHwCapability(): Promise<any> {
-		try {
-			if (this.isShellAvailable) {
-				return this.gamingHwInfo.getMachineHwCapability();
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
 	getHwOverClockState(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {

@@ -9,6 +9,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 // import { Subscription } from 'rxjs/internal/Subscription';
 // import { CommonService } from 'src/app/services/common/common.service';
 // import { Gaming } from 'src/app/enums/gaming.enum';
+import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
 
 @Component({
 	selector: 'vtr-widget-system-monitor',
@@ -47,9 +48,10 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public gpuInfo: any;
 	public ramInfo: any;
 	public hwNewVersionInfo = false;
-	public hwOverClockInfo = SystemStatus.hwOverClockInfo;
+	public hwOverClockInfo = JSON.parse(JSON.stringify(SystemStatus.hwOverClockInfo));
 	public ocStateEvent: any;
 	// private notifcationSubscription: Subscription;
+	private isOCEventBind = false;
 
 	constructor(
 		private hwInfoService: HwInfoService,
@@ -58,7 +60,10 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		private shellServices: VantageShellService,
 		// private commonService: CommonService,
 		private ngZone: NgZone,
-	) {}
+		private gamingOCService: GamingOCService,
+	) {
+		this.ocStateEvent = this.onRegisterOverClockStateChangeEvent.bind(this);
+	}
 
 	ngOnInit() {
 		//////////////////////////////////////////////////////////////////////
@@ -276,17 +281,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	getMachineHwCapability() {
-		this.hwInfoService.getMachineHwCapability().then((response) => {
-			if (response) {
-				this.hwNewVersionInfo = (response.cpuInfoVersion === 1) && (response.gpuInfoVersion === 1);
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuInfoVersion, response.cpuInfoVersion);
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuInfoVersion, response.gpuInfoVersion);
-				this.localCacheService.setLocalCacheValue(LocalStorageKey.diskInfoVersion, response.diskInfoVersion);
-			}
-		}).catch(() => {});
-	}
-
 	getHwOverClockState() {
 		this.hwInfoService.getHwOverClockState().then((response) => {
 			if (response) {
@@ -302,11 +296,20 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	registerOverClockStateChangeEvent() {
-		this.ocStateEvent = this.onRegisterOverClockStateChangeEvent.bind(this);
-		this.shellServices.registerEvent(
+		try {
+			this.isOCEventBind = true;
+			this.gamingOCService.regOCRealStatusChangeEvent();
+			this.shellServices.registerEvent(
 			EventTypes.gamingOCStatusChangeEvent,
-			this.ocStateEvent
-		);
+				this.ocStateEvent
+			);
+			this.logger.info('system-monitor-registerOverClockStateChangeEvent: register success');
+		} catch (error) {
+			this.logger.error(
+				'system-monitor-registerOverClockStateChangeEvent: register fail; Error message: ',
+				error.message
+			);
+		}
 	}
 
 	unRegisterOverClockStateChangeEvent() {
@@ -314,6 +317,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			EventTypes.gamingOCStatusChangeEvent,
 			this.ocStateEvent
 		);
+		this.isOCEventBind = false;
 	}
 
 	onRegisterOverClockStateChangeEvent(state) {
