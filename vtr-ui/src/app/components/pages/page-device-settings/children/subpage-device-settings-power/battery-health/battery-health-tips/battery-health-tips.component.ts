@@ -1,7 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
-import { BatteryCapacityCircleStyle } from '../battery-health.enum';
 import { BatteryHealthService } from '../battery-health.service';
+import { BatteryHealthTip } from '../battery-health.enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { Subscription } from 'rxjs';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
   selector: 'vtr-battery-health-tips',
@@ -9,10 +12,47 @@ import { BatteryHealthService } from '../battery-health.service';
   styleUrls: ['./battery-health-tips.component.scss']
 })
 export class BatteryHealthTipsComponent implements OnInit {
-
-  constructor() { }
+  capability = false;
+  condition = "t0";
+  tipLevel = 0;
+  tipsMap = new Map([
+	[BatteryHealthTip.TIPS_0, 't0'],
+	[BatteryHealthTip.TIPS_1, 't1'],
+	[BatteryHealthTip.TIPS_2, 't2'],
+	[BatteryHealthTip.TIPS_3, 't3'],
+	[BatteryHealthTip.TIPS_4, 't4'],
+	[BatteryHealthTip.TIPS_5, 't5'],
+	[BatteryHealthTip.TIPS_6, 't6'],
+	[BatteryHealthTip.TIPS_7, 't7'],
+	[BatteryHealthTip.TIPS_8, 't8'],
+	[BatteryHealthTip.ERROR, 'error']
+]);
+  constructor(
+	private batteryHealthService: BatteryHealthService,
+	public shellServices: VantageShellService,
+	private logger: LoggerService
+  ) { }
 
   ngOnInit(): void {
+	  this.getBatteryDetails();
   }
+
+  getBatteryDetails() {
+	this.logger.info('BatteryTips: getBatteryDetails ==> start');
+	this.batteryHealthService.batteryInfo.subscribe((batteryInfo) => {
+		this.capability = batteryInfo.isSupportSmartBatteryV2;
+		this.tipLevel = batteryInfo.batteryHealthTip;
+		this.condition =  this.getTipsStr(this.tipLevel);
+		this.logger.info(
+			`BatteryLifespan: getBatteryHealth-lifespan  ==> currenttipLevel ${this.tipLevel}`
+		);
+	});
+  }
+
+  getTipsStr(index: number): string {
+	const val = "device.deviceSettings.power.batterySettings.batteryHealth.batteryTips.description." + this.tipsMap.get(index);
+	this.logger.info(`getTipsStr: ==> res ${val}`);
+	return val ? val : '';
+}
 
 }

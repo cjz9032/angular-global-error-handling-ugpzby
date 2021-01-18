@@ -1639,6 +1639,21 @@
 							"fine": "Recommended battery temperature.",
 							"high": "High temperature. Please cool it to extend the battery lifespan.",
 							"extreme": "The battery temperature is too high. Please stop charging."
+						},
+						"batteryTips": {
+							"title": "Maintaining tips:",
+							"description": {
+								"t0": "Your battery is in perfect health status!",
+								"t1": "Your battery is in good health status.",
+								"t2": "Your battery is in good health status.<br/>Your battery is in light usage. “Battery optimized lifespan mode” is enabled to extend battery longevity.",
+								"t3": "Your battery is in good health status.<br/>As you use ac power most of the time, “Plug-in maintenance mode” is enabled to extend battery longevity.",
+								"t4": "Your battery is in normal health status.<br/>Battery calibration is on now. The accurate battery capacity will be displayed once this process is completed.",
+								"t5": "Your battery is in normal health status.<br/>The battery temperature is high. We suggest enabling “Battery saving” mode in Power Smart settings to extend battery lifespan.",
+								"t6": "Battery degradation is detected. Battery life and peak power performance will be impacted. We suggest replacing the battery.",
+								"t7": "Your battery is aging. “Old weak battery safety protection mode” is enabled. Please replace with a Lenovo genuine battery or contact Lenovo authorized service provider to replace with a new one.",
+								"t8": "Your battery is damaged. “Battery safety protection mode” is enabled. Please replace with a Lenovo genuine battery or contact Lenovo authorized service provider to replace with a new one.",
+								"error": ""
+							}
 						}
 					}
 				},
