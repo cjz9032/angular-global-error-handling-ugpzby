@@ -17,6 +17,8 @@ import { LoggerService } from '../logger/logger.service';
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
+import { AdPolicyService } from '../ad-policy/ad-policy.service';
+import { DeviceService } from '../device/device.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -28,6 +30,8 @@ export class SystemUpdateService {
 		private commonService: CommonService,
 		private loggerService: LoggerService,
 		private metricService: MetricService,
+		private adPolicyService: AdPolicyService,
+		private deviceService: DeviceService,
 		private localCacheService: LocalCacheService
 	) {
 		this.systemUpdateBridge = shellService.getSystemUpdate();
@@ -63,6 +67,15 @@ export class SystemUpdateService {
 	public retryTimes = 0;
 	private capabilityList = [];
 	private timeStartGetStatus: Date;
+
+	public isSystemUpdateEnabled(): boolean {
+		return (
+			this.adPolicyService.IsSystemUpdateEnabled &&
+			!this.deviceService.isSMode &&
+			!this.deviceService.isArm
+		);
+	}
+
 	/**
 	 * gets data about last scan, install & schedule scan date-time for Check for Update section
 	 */

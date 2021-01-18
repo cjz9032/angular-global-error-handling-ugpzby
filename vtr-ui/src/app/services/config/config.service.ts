@@ -701,14 +701,6 @@ export class ConfigService {
 		this.supportFilter(this.menu, 'system-updates', showSystemUpdate);
 	}
 
-	public isSystemUpdateEnabled(): boolean {
-		return (
-			this.adPolicyService.IsSystemUpdateEnabled &&
-			!this.deviceService.isSMode &&
-			!this.deviceService.isArm
-		);
-	}
-
 	showNewFeatureTipsWithMenuItems() {
 		const welcomeTutorial = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.WelcomeTutorial
