@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {
 	ModernPreloadService,
 	AppItem,
@@ -15,6 +14,7 @@ import {
 } from 'src/app/enums/modern-preload.enum';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-modern-preload',
@@ -60,7 +60,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 		==`;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalModernPreloadComponent>,
 		private commonService: CommonService,
 		public modernPreloadService: ModernPreloadService,
 	) { }
@@ -313,7 +313,7 @@ export class ModalModernPreloadComponent implements OnInit, OnDestroy, AfterView
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('document:keydown', ['$event'])

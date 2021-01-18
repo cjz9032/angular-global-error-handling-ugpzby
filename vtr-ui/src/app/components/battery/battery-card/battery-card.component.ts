@@ -9,7 +9,9 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { EventTypes } from '@lenovo/tan-client-bridge';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+
 import { EMPTY, Subscription } from 'rxjs';
 import { BatteryConditionModel } from 'src/app/data-models/battery/battery-conditions.model';
 import BatteryDetail from 'src/app/data-models/battery/battery-detail.model';
@@ -31,6 +33,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+
 
 declare const Windows;
 
@@ -74,11 +77,13 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 
 	activatedRouteSubscription: Subscription;
 
+	dialogRef: MatDialogRef<any>;
+
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	public readonly metricsType = CommonMetricsModel.ItemType;
 
 	constructor(
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		public batteryService: BatteryDetailService,
 		public shellServices: VantageShellService,
 		private commonService: CommonService,
@@ -86,7 +91,7 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private localCacheService: LocalCacheService,
 		private activatedRoute: ActivatedRoute
-	) {}
+	) { }
 
 	getMainBatteryInfo() {
 		if (typeof Windows !== 'undefined') {
@@ -675,21 +680,24 @@ export class BatteryCardComponent implements OnInit, OnDestroy {
 		this.batteryService.currentOpenModal = 'battery-details';
 		if (!this.batteryService.isBatteryModalShown) {
 			this.batteryService.isBatteryModalShown = true;
-			this.modalService
+			this.dialogRef = this.dialog
 				.open(content, {
-					backdrop: 'static',
-					size: 'lg',
-					windowClass: 'battery-modal-size',
-				})
-				.result.then(
-					(result) => {
-						// on open
-					},
-					(reason) => {
-						this.batteryService.isBatteryModalShown = false;
-					}
-				);
+					maxWidth: '50rem',
+					autoFocus: true,
+					hasBackdrop: true,
+					disableClose: true,
+					panelClass: 'battery-modal-size',
+				});
+			this.dialogRef.afterClosed().subscribe(
+				() => {
+					this.batteryService.isBatteryModalShown = false;
+				}
+			);
 		}
+	}
+
+	closeModal() {
+		this.dialogRef.close('Cross click');
 	}
 
 	/**

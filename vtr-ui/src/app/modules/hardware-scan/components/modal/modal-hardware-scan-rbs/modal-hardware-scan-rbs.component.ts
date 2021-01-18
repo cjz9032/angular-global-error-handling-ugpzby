@@ -1,9 +1,9 @@
 import { Component, Output, EventEmitter, OnDestroy, OnInit, HostListener } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { ModalRecoverConfirmComponent } from '../modal-recover-confirm/modal-recover-confirm.component';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-hardware-scan-rbs',
@@ -11,8 +11,8 @@ import { ModalRecoverConfirmComponent } from '../modal-recover-confirm/modal-rec
 	styleUrls: ['./modal-hardware-scan-rbs.component.scss'],
 })
 export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
-	public devices: any[];
-	private failedDevicesList = [];
+	devices: any[];
+	failedDevicesList = [];
 	private isSuccessful = false;
 
 	// Used to signalize to a subscriber that the rbs will start.
@@ -25,11 +25,11 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 	@Output() modalClosing: EventEmitter<boolean> = new EventEmitter();
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalHardwareScanRbsComponent>,
 		private translate: TranslateService,
 		private hardwareScanService: HardwareScanService,
-		private modalService: NgbModal
-	) {}
+		private dialog: MatDialog
+	) { }
 
 	// Used to close modal when press 'ESC' key
 	@HostListener('document:keydown', ['$event'])
@@ -48,7 +48,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 	}
 
 	public closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	public onClickRun() {
@@ -60,13 +60,15 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 
 		this.closeModal();
 
-		const modalRef = this.modalService.open(ModalRecoverConfirmComponent, {
-			size: '500px',
-			centered: true,
-			windowClass: 'hardware-scan-modal-size',
+		const modal = this.dialog.open(ModalRecoverConfirmComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
 			ariaLabelledBy: 'hwscan-recover-title',
+			panelClass: 'hardware-scan-modal-size',
 		});
-		modalRef.componentInstance.confirmClicked.subscribe(() => {
+		modal.componentInstance.confirmClicked.subscribe(() => {
 			this.onConfirmClick(selectedDevices);
 		});
 	}

@@ -1,4 +1,19 @@
 @import '../../../app.theme.scss';
+.close {
+	color: $white60;
+	opacity: 1;
+	font-size: 1.8rem;
+	position: relative;
+	top: 1rem;
+	right: 1rem;
+	z-index: 1;
+	&:hover {
+		color: $white100;
+	}
+	@media #{$high-contrast} {
+		color: buttonText;
+	}
+}
 .gaming-help-popup {
 	position: relative;
 	background: $darkCell;
@@ -16,20 +31,6 @@
 				@media #{$high-contrast} {
 					background-color: $darkCell;
 				}
-			}
-		}
-		.close {
-			color: $white60;
-			opacity: 1;
-			font-size: 1.8rem;
-			position: relative;
-			top: -2rem;
-			right: -3rem;
-			&:hover {
-				color: $white100;
-			}
-			@media #{$high-contrast} {
-				color: buttonText;
 			}
 		}
 	}

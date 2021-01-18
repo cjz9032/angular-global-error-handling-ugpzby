@@ -11,11 +11,11 @@ import {
 	QueryList,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {
 	disableBackgroundNavigation,
 	reEnableBackgroundNavigation,
 } from '../../../services/utils/ModalBackgroundNavigationUtils';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-cancel',
@@ -40,7 +40,10 @@ export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	@ViewChildren('cancel_modal_ok') cancelModalOkListener: QueryList<ElementRef>;
 
-	constructor(private translate: TranslateService, public activeModal: NgbActiveModal) {}
+	constructor(
+		private translate: TranslateService,
+		private dialogRef: MatDialogRef<ModalCancelComponent>,
+	) { }
 
 	ngOnInit() {
 		this.loading = false;
@@ -74,7 +77,7 @@ export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy {
 			this.stopCountdown();
 		}
 
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	onAgree() {

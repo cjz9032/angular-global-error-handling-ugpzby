@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { Subscription } from 'rxjs';
 import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
@@ -45,11 +45,11 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	});
 	constructor(
 		private logger: LoggerService,
-		public modalService: NgbModal,
+		public dialog: MatDialog,
 		public powerService: PowerService,
 		public batteryService: BatteryDetailService,
 		private commonService: CommonService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.logger.info('Init Gauge Reset Feature', this.batteryService.gaugeResetInfo);
@@ -92,11 +92,12 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 				$event.stopPropagation();
 				this.onBatteryGaugeReset(index, $event);
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	/**
 	 * Callled on click of Reset/Stop Button
+	 *
 	 * @param index number, index of gauge reset info section on UI (0/1)
 	 * @param $event event object
 	 */
@@ -104,12 +105,11 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 		if ($event.type === 'click') {
 			this.autoFocusButton = false; // flag to hide focus outline when clicked.
 		}
-		let modalRef;
-		// Open gauge reset popup
-		modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
-			backdrop: 'static',
-			centered: true,
-			windowClass: 'Battery-Charge-Threshold-Modal',
+		const modalRef = this.dialog.open(ModalBatteryChargeThresholdComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Battery-Charge-Threshold-Modal',
 		});
 		// initialize input properties of modal component
 		modalRef.componentInstance.id = 'guageReset';
@@ -135,7 +135,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 				'device.deviceSettings.power.batterySettings.gaugeReset.popup.continue';
 		}
 		const activeElement = document.activeElement as HTMLElement;
-		modalRef.result.then(
+		modalRef.afterClosed().subscribe(
 			(result) => {
 				if (result === 'positive') {
 					if (!this.batteryService.gaugeResetInfo[index].isResetRunning) {
@@ -143,19 +143,20 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 					} else {
 						this.stopBatteryGaugeReset(index);
 					}
-					this.modalService.dismissAll();
+					this.dialog.closeAll();
 				} else {
 					if (this.autoFocusButton) {
 						activeElement.focus();
 					}
 				}
 			},
-			(reason) => {}
+			(reason) => { }
 		);
 	}
 
 	/**
 	 * Starts Battery Gauge Reset of given index
+	 *
 	 * @param index number, index of gauge reset info section on UI (0/1)
 	 */
 	async startBatteryGaugeReset(index) {
@@ -174,6 +175,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Stops Battery Gauge Reset, of given index
+	 *
 	 * @param index number, index of gauge reset info section on UI (0/1)
 	 */
 	async stopBatteryGaugeReset(index) {
@@ -220,6 +222,7 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 
 	/**
 	 * Updates gauge reset info, based on response received
+	 *
 	 * @param value gauge reset info for a single battery
 	 */
 	updateGaugeResetInfo(value: BatteryGaugeReset) {

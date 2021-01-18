@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 import { BaseComponent } from '../../../../base/base.component';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -36,7 +35,6 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	networkLevel = ['neutral network', 'abnormal network', 'highly suspicious network'];
 
 	constructor(
-		public modalService: NgbModal,
 		private commonService: CommonService,
 		public deviceService: DeviceService,
 		private configService: ConfigService,

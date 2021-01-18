@@ -86,7 +86,7 @@ export class ContentCacheService {
 		return cachedContents;
 	}
 
-	public async getArticleById(actionType: ContentActionType, articleId: any) {
+	public async getArticleById(actionType: string, articleId: any) {
 		const startTime = new Date();
 		const loclInfo = await this.cmsService.getLocalinfo();
 		let article;

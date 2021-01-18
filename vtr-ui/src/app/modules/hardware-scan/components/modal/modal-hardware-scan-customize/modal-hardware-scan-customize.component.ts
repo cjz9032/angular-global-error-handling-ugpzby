@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -19,14 +19,17 @@ export class ModalHardwareScanCustomizeComponent implements OnDestroy {
 	// e.g. user clicked in the OK button or false otherwise.
 	@Output() modalClosing: EventEmitter<boolean> = new EventEmitter();
 
-	constructor(public activeModal: NgbActiveModal, private translate: TranslateService) {}
+	constructor(
+		private dialogRef: MatDialogRef<ModalHardwareScanCustomizeComponent>,
+		private translate: TranslateService
+	) { }
 
 	public ngOnDestroy() {
 		this.modalClosing.emit(this.isSuccessful);
 	}
 
 	public closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	public onClickRun() {

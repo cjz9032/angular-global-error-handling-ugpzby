@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from '../common/common.service';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { ModalWifiSecurityLocationNoticeComponent } from 'src/app/components/modal/modal-wifi-security-location-notice/modal-wifi-security-location-notice.component';
 import { ModalHomeProtectionLocationNoticeComponent } from 'src/app/components/modal/modal-home-protection-location-notice/modal-home-protection-location-notice.component';
@@ -21,12 +21,14 @@ import { DeviceLocationPermission } from 'src/app/data-models/home-security/devi
 import { UserService } from '../user/user.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { MaterialDialogComponent } from 'src/app/material/material-dialog/material-dialog.component';
-import { MatDialog } from '@lenovo/material/dialog';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { DialogData } from 'src/app/material/material-dialog/material-dialog.interface';
 import { WifiSecurityService } from 'src/app/services/security/wifi-security.service';
 import { MaterialAppListDialogComponent } from 'src/app/material/material-app-list-dialog/material-app-list-dialog.component';
 import { TileItem } from 'src/app/material/material-tile/material-tile.component';
 import { MaxSelected } from 'src/app/material/material-app-tile-list/material-app-tile-list.component';
+import { of } from 'rxjs';
+
 
 @Injectable({
 	providedIn: 'root',
@@ -34,13 +36,12 @@ import { MaxSelected } from 'src/app/material/material-app-tile-list/material-ap
 export class DialogService {
 	constructor(
 		private commonService: CommonService,
-		public modalService: NgbModal,
 		private router: Router,
 		private userService: UserService,
 		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService,
 		private wifiSecurityService: WifiSecurityService,
-		private dialog: MatDialog
+		private dialog: MatDialog,
 	) { }
 
 	openInvitationCodeDialog() {
@@ -48,10 +49,12 @@ export class DialogService {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			const modal = this.modalService.open(ModalWifiSecurityInvitationComponent, {
-				backdrop: 'static',
-				windowClass: 'wifi-security-invitation-modal',
-				centered: true,
+			this.dialog.open(ModalWifiSecurityInvitationComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'wifi-security-invitation-modal',
 			});
 		}
 	}
@@ -72,10 +75,14 @@ export class DialogService {
 				SessionStorageKey.SecurityWifiSecurityLocationFlag,
 				'no'
 			);
-			const modal = this.modalService.open(ModalWifiSecurityLocationNoticeComponent, {
-				backdrop: 'static',
-				windowClass: 'wifi-security-location-modal',
+			const modal = this.dialog.open(ModalWifiSecurityLocationNoticeComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'wifi-security-location-modal',
 			});
+
 			modal.componentInstance.header = 'security.wifisecurity.locationmodal.title';
 			modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe1';
 			modal.componentInstance.url = 'ms-settings:privacy-location';
@@ -88,8 +95,8 @@ export class DialogService {
 					modal.close(true);
 				}
 			});
-			modal.result.then((res) => {
-				if (res === 'cancelClick' && wifiSecurity && wifiSecurity.state === 'enabled') {
+			modal.afterClosed().subscribe((result) => {
+				if (result === 'cancelClick' && wifiSecurity && wifiSecurity.state === 'enabled') {
 					wifiSecurity.disableWifiSecurity();
 				}
 			});
@@ -114,10 +121,12 @@ export class DialogService {
 					SessionStorageKey.SecurityWifiSecurityShowPluginMissingDialog,
 					false
 				);
-				const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
-					backdrop: 'static',
-					size: 'lg',
-					windowClass: 'wifi-security-error-modal',
+				const errorMessageModal = this.dialog.open(ModalErrorMessageComponent, {
+					maxWidth: '50rem',
+					autoFocus: true,
+					hasBackdrop: true,
+					disableClose: true,
+					panelClass: 'wifi-security-error-modal',
 				});
 				errorMessageModal.componentInstance.header =
 					'security.wifisecurity.errorMessage.headerText';
@@ -140,17 +149,17 @@ export class DialogService {
 				SessionStorageKey.SecurityWifiSecurityInWifiPage
 			)
 		) {
-			const modal = this.modalService.open(ModalHomeProtectionLocationNoticeComponent, {
-				backdrop: 'static',
-				windowClass: 'wifi-security-location-modal',
+			const modal = this.dialog.open(ModalHomeProtectionLocationNoticeComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'wifi-security-location-modal',
 			});
 			modal.componentInstance.header = 'security.wifisecurity.locationmodal.title';
 			modal.componentInstance.description = 'security.wifisecurity.locationmodal.describe2';
 			modal.componentInstance.url = 'ms-settings:privacy-location';
 			modal.componentInstance.wifiSecurity = wifiSecurity;
-			// modal.componentInstance.closeButtonId = 'sa-ws-btn-locationclose';
-			// modal.componentInstance.agreeButtonId = 'sa-ws-btn-locationagree';
-			// modal.componentInstance.cancelButtonId = 'sa-ws-btn-locationcancel';
 			wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (para) => {
 				if (para) {
 					modal.close();
@@ -164,10 +173,12 @@ export class DialogService {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'home-security-plugin-missing-modal',
+			const errorMessageModal = this.dialog.open(ModalErrorMessageComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'home-security-plugin-missing-modal',
 			});
 			errorMessageModal.componentInstance.header =
 				'security.wifisecurity.errorMessage.headerText';
@@ -175,7 +186,7 @@ export class DialogService {
 				'security.wifisecurity.errorMessage.bodyText';
 			errorMessageModal.componentInstance.closeButtonId = 'chs-btn-errorMessageDialogClose';
 			errorMessageModal.componentInstance.cancelButtonId = 'chs-btn-errorMessageDialogCancle';
-			errorMessageModal.result.then(() => {
+			errorMessageModal.afterClosed().subscribe((result) => {
 				this.commonService.setSessionStorageValue(
 					SessionStorageKey.HomeSecurityShowPluginMissingDialog,
 					'finish'
@@ -189,10 +200,12 @@ export class DialogService {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'home-security-offline-modal',
+			const errorMessageModal = this.dialog.open(ModalErrorMessageComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'home-security-offline-modal',
 			});
 			errorMessageModal.componentInstance.header =
 				'security.wifisecurity.errorMessage.headerText';
@@ -208,10 +221,12 @@ export class DialogService {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			const errorMessageModal = this.modalService.open(ModalErrorMessageComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				windowClass: 'home-security-error-modal',
+			const errorMessageModal = this.dialog.open(ModalErrorMessageComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'home-security-error-modal',
 			});
 			errorMessageModal.componentInstance.header =
 				'security.wifisecurity.errorMessage.headerText';
@@ -222,7 +237,7 @@ export class DialogService {
 		}
 	}
 
-	openCHSPermissionModal(locationPermission: DeviceLocationPermission): NgbModalRef {
+	openCHSPermissionModal(locationPermission: DeviceLocationPermission): MatDialogRef<ModalChsWelcomeContainerComponent> {
 		if (this.hasOpenDialog()) {
 			return;
 		}
@@ -236,10 +251,12 @@ export class DialogService {
 				SessionStorageKey.ChsLocationDialogNextShowFlag,
 				false
 			);
-			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'Welcome-container-Modal',
+			const welcomeModal = this.dialog.open(ModalChsWelcomeContainerComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'Welcome-container-Modal',
 			});
 			welcomeModal.componentInstance.locationPermission = locationPermission;
 			welcomeModal.componentInstance.switchPage = 2;
@@ -250,7 +267,7 @@ export class DialogService {
 	openWelcomeModal(
 		showWelcome: number,
 		locationPermission: DeviceLocationPermission
-	): NgbModalRef {
+	): MatDialogRef<ModalChsWelcomeContainerComponent> {
 		if (this.hasOpenDialog()) {
 			return;
 		}
@@ -266,26 +283,28 @@ export class DialogService {
 					true
 				);
 			}
-
-			const welcomeModal = this.modalService.open(ModalChsWelcomeContainerComponent, {
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'Welcome-container-Modal',
+			const welcomeModal = this.dialog.open(ModalChsWelcomeContainerComponent, {
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'Welcome-container-Modal',
 			});
 			welcomeModal.componentInstance.locationPermission = locationPermission;
 			return welcomeModal;
 		}
 	}
 
-	homeSecurityTrialModal(showWhichPage: CHSTrialModalPage): NgbModalRef {
+	homeSecurityTrialModal(showWhichPage: CHSTrialModalPage): MatDialogRef<ModalChsStartTrialContainerComponent> {
 		if (this.hasOpenDialog()) {
 			return;
 		}
 		if (this.commonService.getSessionStorageValue(SessionStorageKey.HomeProtectionInCHSPage)) {
-			const trialModal = this.modalService.open(ModalChsStartTrialContainerComponent, {
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'trial-container-Modal',
+			const trialModal = this.dialog.open(ModalChsStartTrialContainerComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'trial-container-Modal',
 			});
 			trialModal.componentInstance.showWhichPage = showWhichPage;
 			return trialModal;
@@ -293,7 +312,7 @@ export class DialogService {
 	}
 
 	openLenovoIdDialog(appFeature = null) {
-		if (this.modalService.hasOpenModals()) {
+		if (this.hasOpenDialog()) {
 			return;
 		}
 		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
@@ -301,31 +320,34 @@ export class DialogService {
 		);
 		if (segment && segment !== SegmentConst.Commercial) {
 			if (!navigator.onLine) {
-				const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
-					backdrop: 'static',
-					size: 'lg',
-					centered: true,
-					windowClass: 'common-confirmation-modal',
+				const modalRef = this.dialog.open(ModalCommonConfirmationComponent, {
+					maxWidth: '50rem',
+					autoFocus: true,
+					hasBackdrop: true,
+					disableClose: true,
+					panelClass: 'common-confirmation-modal',
 				});
 
 				const header = 'lenovoId.ssoErrorTitle';
 				modalRef.componentInstance.CancelText = '';
 				modalRef.componentInstance.header = header;
 				modalRef.componentInstance.description = 'lenovoId.ssoErrorNetworkDisconnected';
-				return modalRef.result;
+				return modalRef;
 			} else {
-				const modalRef: NgbModalRef = this.modalService.open(ModalLenovoIdComponent, {
-					backdrop: 'static',
-					centered: true,
-					windowClass: 'lenovo-id-modal-size',
+				const modalRef = this.dialog.open(ModalLenovoIdComponent, {
+					maxWidth: '50rem',
+					autoFocus: true,
+					hasBackdrop: true,
+					disableClose: true,
+					panelClass: 'lenovo-id-modal-size',
 				});
 				modalRef.componentInstance.appFeature = appFeature;
-				modalRef.result.catch((reason) => {
-					if (typeof reason === 'number') {
-						this.userService.popupErrorMessage(reason);
+				modalRef.afterClosed().subscribe((error: any) => {
+					if (typeof error === 'number') {
+						this.userService.popupErrorMessage(error);
 					}
 				});
-				return modalRef.result;
+				return modalRef;
 			}
 		} else {
 			this.router.parseUrl(this.deviceService.isGaming ? '/device-gaming' : '/dashboard');
@@ -336,22 +358,13 @@ export class DialogService {
 		if (this.hasOpenDialog()) {
 			return;
 		}
-		const modernPreloadModal: NgbModalRef = this.modalService.open(
-			ModalModernPreloadComponent,
-			{
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'modern-preload-modal',
-				keyboard: false,
-				beforeDismiss: () => {
-					if (modernPreloadModal.componentInstance.onBeforeDismiss) {
-						modernPreloadModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
-			}
-		);
+		this.dialog.open(ModalModernPreloadComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'modern-preload-modal',
+		});
 	}
 
 	openWifiSecurityExpirePromptDialog(dialogData: DialogData, hadExpired: boolean) {
@@ -374,9 +387,13 @@ export class DialogService {
 			panelClass: [this.deviceService.isGaming ? 'is-gaming' : '', 'm-5', 'h-auto'],
 			id: 'wifi-security-expire-prompt-dialog',
 		});
+		dialogRef.afterOpened().subscribe(() => {
+			document.querySelector('.vtr-menu-main').classList.add('legacy-menu-level');
+		});
 		dialogRef.afterClosed().subscribe((result) => {
+			document.querySelector('.vtr-menu-main').classList.remove('legacy-menu-level');
 			if (result === 'action') {
-				this.openLenovoIdDialog().then((res) => {
+				this.openLenovoIdDialog().afterClosed().subscribe((res) => {
 					if (res === 'User close' && hadExpired) {
 						if (
 							this.wifiSecurityService.isLWSEnabled &&
@@ -392,7 +409,7 @@ export class DialogService {
 	}
 
 	hasOpenDialog() {
-		return this.dialog.openDialogs.length || this.modalService.hasOpenModals();
+		return this.dialog.openDialogs.length;
 	}
 
 	closeDialog(id: string) {

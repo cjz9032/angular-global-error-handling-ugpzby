@@ -4,8 +4,8 @@ import { MacrokeyService } from 'src/app/services/gaming/macrokey/macrokey.servi
 import { MacroKeyRepeat } from 'src/app/enums/macrokey-repeat.enum';
 import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
 import { TranslateService } from '@ngx-translate/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
@@ -201,10 +201,10 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 		private macrokeyService: MacrokeyService,
 		private loggerService: LoggerService,
 		private translate: TranslateService,
-		private modalService: NgbModal
-	) {}
+		private dialog: MatDialog
+	) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	async recordDelete(record, i) {
 		try {
@@ -239,13 +239,15 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 						}
 					});
 			}
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	clearRecords() {
-		const promptRef = this.modalService.open(ModalGamingPromptComponent, {
-			backdrop: 'static',
-			windowClass: 'modal-prompt',
+		const promptRef = this.dialog.open(ModalGamingPromptComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'modal-prompt',
 			backdropClass: 'backdrop-level',
 		});
 		promptRef.componentInstance.info = {

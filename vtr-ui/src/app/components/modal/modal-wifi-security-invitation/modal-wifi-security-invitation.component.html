@@ -45,7 +45,7 @@
 					metricsItem="CHSInvitationCancelButton"
 					metricsEvent="featureClick"
 					metricsParent="{{metricsParent}}"
-					(click)="onCancelClick(code.value)"
+					mat-dialog-close
 					*ngIf="!joinSuccess"
 					[innerHTML]="'security.homeprotection.invitationcode.cancel' | translate">
 				</button>
@@ -58,9 +58,16 @@
 	</div>
 
 	<div class="btn-modal-close">
-		<vtr-ui-close-button linkId="chs-btn-inviatation-close"
+		<button
+			mat-dialog-close
+			class="position-relative float-right closeButton"
+			id="chs-btn-inviatation-close"
+			vtrMetrics
 			metricsItem="CHSInvitationCloseButton"
-			metricsParent="{{metricsParent}}"
-			(clickClose)="onCancelClick($event)"></vtr-ui-close-button>
+			metricsEvent="FeatureClick"
+			[metricsParent]="metricsParent"
+		>
+			<mat-icon class="icon close-icon">close</mat-icon>
+		</button>
 	</div>
 </div>

@@ -1,3 +1,15 @@
+<button
+	class="position-relative float-right closeButton"
+	id="ds-{{id}}-popup-close-button"
+	aria-label="close modal"
+	(click)="closeModal()"
+	vtrMetrics
+	metricsItem="ThresholdCloseButton"
+	metricsEvent="FeatureClick"
+	metricsParent="Page.DeviceSettings.Power"
+>
+	<mat-icon class="icon close-icon">close</mat-icon>
+</button>
 <div class="vtr-modal-battery-charge-threshold"
 	id="modal-battery-charge-threshold"
 	role="dialog"
@@ -31,6 +43,7 @@
 		<hr aria-hidden="true">
 		<div class="row">
 			<button id="battery-{{id}}-popup-{{buttonId | lowercase}}"
+				cdkFocusInitial 
 				attr.aria-label="battery-threshold-popup-enable"
 				tabindex="0"
 				class="btn enable-button"
@@ -46,19 +59,4 @@
 				class="cancel-link active">{{negativeResponseText | translate}}</a>
 		</div>
 	</div>
-	<a role="link"
-		href="javascript:void();"
-		class="close-btn"
-		vtrMetrics
-		metricsItem="ThresholdCloseButton"
-		metricsEvent="FeatureClick"
-		metricsParent="Page.DeviceSettings.Power"
-		tabindex="0"
-		id="ds-{{id}}-popup-close-button"
-		aria-label="close modal"
-		(click)="closeModal()">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-			alt=""
-			srcset="">
-	</a>
 </div>

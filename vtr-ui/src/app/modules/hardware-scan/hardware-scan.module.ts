@@ -1,7 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-	NgbModalModule,
 	NgbDropdownModule,
 	NgbDatepickerModule,
 	NgbCollapseModule,
@@ -9,6 +8,8 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatCardModule } from '@lenovo/material/card';
+import { MatDialogModule } from '@lenovo/material/dialog';
 
 import { CommonUiModule } from '../common/common-ui.module';
 import { HardwareScanRoutingModule } from './hardware-scan-routing.module';
@@ -59,7 +60,7 @@ import { UiHardwareScanTestResultComponent } from './components/dashboard/ui-har
 import { UiTestResultIconComponent } from './components/dashboard/ui-test-result-icon/ui-test-result-icon.component';
 import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
 import { HardwareScanExportLogComponent } from './components/header/hardware-scan-export-log/hardware-scan-export-log.component';
-import { MatCardModule } from '@lenovo/material/card';
+
 
 @NgModule({
 	declarations: [
@@ -98,7 +99,6 @@ import { MatCardModule } from '@lenovo/material/card';
 		HardwareScanRoutingModule,
 		NgbDatepickerModule,
 		NgbDropdownModule,
-		NgbModalModule,
 		HeaderMainModule,
 		SharedModule,
 		NgbCollapseModule,
@@ -110,6 +110,7 @@ import { MatCardModule } from '@lenovo/material/card';
 		SnapshotModule,
 		MatCardModule,
 		MatTooltipModule,
+		MatDialogModule,
 	],
 	exports: [NgbCollapseModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

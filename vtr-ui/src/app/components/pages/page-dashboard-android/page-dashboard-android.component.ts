@@ -2,7 +2,6 @@ import { Component, OnInit, SecurityContext, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { ContentActionType } from 'src/app/enums/content.enum';
@@ -21,6 +20,7 @@ import { UserService } from 'src/app/services/user/user.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FeedbackFormComponent } from '../../feedback-form/feedback-form/feedback-form.component';
 import { Subscription } from 'rxjs';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-page-dashboard-android',
@@ -54,8 +54,7 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 		public dashboardService: DashboardService,
 		public mockService: MockService,
 		public qaService: QaService,
-		private modalService: NgbModal,
-		config: NgbModalConfig,
+		private dialog: MatDialog,
 		private commonService: CommonService,
 		private configService: ConfigService,
 		public deviceService: DeviceService,
@@ -68,8 +67,6 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 		private sanitizer: DomSanitizer,
 		private logger: LoggerService
 	) {
-		config.backdrop = 'static';
-		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		deviceService.isAndroid = true;
 		// this.setDefaultSystemStatus();
@@ -185,15 +182,15 @@ export class PageDashboardAndroidComponent implements OnInit, OnDestroy {
 	}
 
 	onFeedbackModal() {
-		this.modalService.open(FeedbackFormComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'feedback-modal',
+		this.dialog.open(FeedbackFormComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'feedback-modal',
 		});
 	}
 
-	public onConnectivityClick($event: any) {}
+	public onConnectivityClick($event: any) { }
 
 	private setDefaultCMSContent() {
 		this.heroBannerItems = [

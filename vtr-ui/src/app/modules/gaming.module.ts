@@ -24,13 +24,14 @@ import { GamingRoutingModule } from '../modules/gaming-routing.module';
 import { ContainerCardModule } from '../components/container-card/container-card.module';
 import { MetricsModule } from '../services/metric/metrics.module';
 import { WidgetOfflineModule } from '../components/widgets/widget-offline-info/widget-offline.module';
-import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { PageAutocloseComponent } from '../components/pages/page-autoclose/page-autoclose.component';
 import { PageNetworkboostComponent } from './../components/pages/page-networkboost/page-networkboost.component';
 import { WidgetAddedAppListComponent } from '../components/widgets/widget-added-app-list/widget-added-app-list.component';
 
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatDialogModule } from '@lenovo/material/dialog';
 
 // Load Icons for Gaming
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons/faQuestionCircle';
@@ -41,6 +42,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import { faArrowAltToTop } from '@fortawesome/pro-light-svg-icons/faArrowAltToTop';
 import { faChevronDown } from '@fortawesome/pro-light-svg-icons/faChevronDown';
 import { FeedbackModule } from './feedback/feedback.module';
+
 
 @NgModule({
 	declarations: [
@@ -74,11 +76,11 @@ import { FeedbackModule } from './feedback/feedback.module';
 		ContainerCardModule,
 		MetricsModule,
 		WidgetOfflineModule,
-		NgbModalModule,
 		NgbTooltipModule,
 		FeedbackModule,
 		PageLayoutModule,
 		MatTooltipModule,
+		MatDialogModule,
 	],
 	exports: [ContainerCardModule, MetricsModule, WidgetOfflineModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

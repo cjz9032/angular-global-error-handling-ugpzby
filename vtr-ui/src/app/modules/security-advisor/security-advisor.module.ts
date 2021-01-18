@@ -23,6 +23,7 @@ import { faTools as falTools } from '@fortawesome/pro-light-svg-icons/faTools';
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatCheckboxModule } from '@lenovo/material/checkbox';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatIconModule } from '@lenovo/material/icon';
 
 import { LocationNoticeModule } from './../location-notice/location-notice.module';
 import { SecurityAdvisorRoutingModule } from './security-advisor-routing.module';
@@ -135,6 +136,7 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		MatCheckboxModule,
 		MatTooltipModule,
 		MaterialModule,
+		MatIconModule,
 	],
 	providers: [DialogService],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

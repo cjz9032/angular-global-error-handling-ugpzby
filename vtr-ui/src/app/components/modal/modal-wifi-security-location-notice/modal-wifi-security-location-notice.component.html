@@ -29,7 +29,14 @@
 		</div>
 	</div>
 	<div class="btn-modal-close">
-		<vtr-ui-close-button [linkId]="closeButtonId"
-			(clickClose)="onCancelClick()"></vtr-ui-close-button>
+		<button
+			class="position-relative float-right closeButton"
+			[id]="closeButtonId"
+			(click)="onCancelClick()"
+			vtrMetrics
+			metricsEvent="FeatureClick"
+		>
+			<mat-icon class="icon close-icon">close</mat-icon>
+		</button>
 	</div>
 </div>

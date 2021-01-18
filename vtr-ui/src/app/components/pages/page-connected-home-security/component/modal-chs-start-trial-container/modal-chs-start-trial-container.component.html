@@ -65,9 +65,16 @@
 	</div>
 	<!-- end of page3-->
 	<div class="btn-modal-close">
-		<vtr-ui-close-button linkId="chs-trialModal-btn-close"
+		<button
+			mat-dialog-close
+			class="position-relative float-right closeButton"
+			id="chs-trialModal-btn-close"
+			vtrMetrics
 			metricsItem="closeCHSTrialModal"
+			metricsEvent="FeatureClick"
 			metricsParent="{{metricsParent}}"
-			(clickClose)="closeModal()"></vtr-ui-close-button>
+		>
+			<mat-icon class="icon close-icon">close</mat-icon>
+		</button>
 	</div>
 </div>

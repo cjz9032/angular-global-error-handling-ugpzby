@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import * as Phoenix from '@lenovo/tan-client-bridge';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { interval, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { CHSTrialModalPage } from 'src/app/enums/home-security-modal-trial-page.enum';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-chs-start-trial-container',
@@ -25,9 +25,9 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	@ViewChild('loadingCHSMsg') loadingCHSMsg: ElementRef;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalChsStartTrialContainerComponent>,
 		private vantageShellService: VantageShellService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
@@ -49,7 +49,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 	}
 
 	closeModal() {
-		this.activeModal.close();
+		this.dialogRef.close();
 	}
 
 	disconnect() {
@@ -65,7 +65,7 @@ export class ModalChsStartTrialContainerComponent implements OnInit, OnDestroy {
 					this.closeModal();
 				}
 			})
-			.catch((err) => {});
+			.catch((err) => { });
 	}
 
 	ngOnDestroy() {

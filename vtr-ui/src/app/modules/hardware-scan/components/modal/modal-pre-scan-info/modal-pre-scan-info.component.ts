@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import {
 	disableBackgroundNavigation,
 	reEnableBackgroundNavigation,
 } from '../../../services/utils/ModalBackgroundNavigationUtils';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-pre-scan-info',
@@ -23,7 +23,10 @@ export class ModalPreScanInfoComponent implements OnInit, OnDestroy {
 	@Input() CancelItemName: string;
 	@Input() ConfirmItemName: string;
 
-	constructor(private translate: TranslateService, public activeModal: NgbActiveModal) {}
+	constructor(
+		private translate: TranslateService,
+		public dialogRef: MatDialogRef<ModalPreScanInfoComponent>,
+	) { }
 
 	ngOnInit() {
 		disableBackgroundNavigation(document);
@@ -34,6 +37,6 @@ export class ModalPreScanInfoComponent implements OnInit, OnDestroy {
 	}
 
 	onClosing() {
-		this.activeModal.close();
+		this.dialogRef.close();
 	}
 }

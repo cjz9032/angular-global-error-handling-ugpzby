@@ -1,10 +1,11 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { PasswordManager, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { MatDialog } from '@lenovo/material/dialog';
+
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
 import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
-import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -13,6 +14,7 @@ import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { FeatureIntroduction } from '../../ui/ui-feature-introduction/ui-feature-introduction.component';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -35,11 +37,11 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
 		private cmsService: CMSService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		public vantageShellService: VantageShellService,
 		private guard: GuardService,
 		private router: Router
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
@@ -135,7 +137,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			(error) => {}
+			(error) => { }
 		);
 
 		this.cmsService
@@ -150,22 +152,15 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 	}
 
 	openDashLaneArticle(): void {
-		const articleDetailModal: NgbModalRef = this.modalService.open(
-			ModalArticleDetailComponent,
-			{
-				backdrop: true,
-				size: 'lg',
-				centered: true,
-				windowClass: 'Article-Detail-Modal',
-				keyboard: false,
-				beforeDismiss: () => {
-					if (articleDetailModal.componentInstance.onBeforeDismiss) {
-						articleDetailModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
-			}
-		);
+		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Article-Detail-Modal',
+		});
+		articleDetailModal.beforeClosed().subscribe(() => {
+			articleDetailModal.componentInstance.onBeforeDismiss();
+		});
 		articleDetailModal.componentInstance.articleId = this.dashlaneArticleId;
 	}
 

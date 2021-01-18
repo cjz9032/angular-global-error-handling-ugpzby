@@ -1,11 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LenovoSurveyEnum } from 'src/app/enums/lenovo-survey.enum';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-survey-form',
@@ -20,12 +20,12 @@ export class SurveyFormComponent implements OnInit {
 	progress = 0;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<SurveyFormComponent>,
 		private translate: TranslateService,
 		private localCacheService: LocalCacheService,
 		private metricsService: MetricService,
 		private appForYouService: AppsForYouService
-	) {}
+	) { }
 
 	private initSurveyQuestions() {
 		this.pages = [];
@@ -112,7 +112,7 @@ export class SurveyFormComponent implements OnInit {
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	exclusiveAgainstLastOption(page: any, qa: any, value: number) {
@@ -186,7 +186,7 @@ export class SurveyFormComponent implements OnInit {
 		const leftTimeInterval = setInterval(() => {
 			this.closingleftTime--;
 			if (this.closingleftTime <= 0) {
-				this.activeModal.close();
+				this.dialogRef.close();
 				clearInterval(leftTimeInterval);
 			}
 		}, 1000);

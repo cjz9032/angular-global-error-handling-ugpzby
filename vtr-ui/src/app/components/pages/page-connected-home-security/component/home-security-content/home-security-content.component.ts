@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
-import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-home-security-content',
@@ -19,9 +19,9 @@ export class HomeSecurityContentComponent implements OnInit {
 
 	constructor(
 		public dialogService: DialogService,
-		public modalService: NgbModal,
+		public dialog: MatDialog,
 		private cmsService: CMSService
-	) {}
+	) { }
 
 	ngOnInit(): void {
 		this.fetchCMSArticles();
@@ -40,23 +40,15 @@ export class HomeSecurityContentComponent implements OnInit {
 	}
 
 	openPeaceOfMindArticle(): void {
-		const articleDetailModal: NgbModalRef = this.modalService.open(
-			ModalArticleDetailComponent,
-			{
-				backdrop: true,
-				size: 'lg',
-				centered: true,
-				windowClass: 'Article-Detail-Modal',
-				keyboard: false,
-				beforeDismiss: () => {
-					if (articleDetailModal.componentInstance.onBeforeDismiss) {
-						articleDetailModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
-			}
-		);
-
+		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Article-Detail-Modal',
+		});
+		articleDetailModal.beforeClosed().subscribe(() => {
+			articleDetailModal.componentInstance.onBeforeDismiss();
+		});
 		articleDetailModal.componentInstance.articleId = this.peaceOfMindArticleId;
 	}
 }

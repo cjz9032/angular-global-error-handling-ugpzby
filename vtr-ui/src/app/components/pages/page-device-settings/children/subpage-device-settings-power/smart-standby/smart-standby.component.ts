@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -61,7 +61,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	];
 
 	constructor(
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		public powerService: PowerService,
 		private logger: LoggerService,
 		public commonService: CommonService,
@@ -417,11 +417,11 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 	}
 	public showUsageGraph() {
 		if (this.smartStandby.isEnabled) {
-			const modalRef = this.modalService.open(ModalSmartStandByComponent, {
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'smart-standBy-modal',
-				size: 'lg',
+			const modalRef = this.dialog.open(ModalSmartStandByComponent, {
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'smart-standBy-modal',
 			});
 			modalRef.componentInstance.isAutomatic = this.checkbox;
 		}

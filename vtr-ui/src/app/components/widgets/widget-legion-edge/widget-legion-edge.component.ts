@@ -2,8 +2,8 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
 import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventTypes } from '@lenovo/tan-client-bridge';
+import { MatDialog } from '@lenovo/material/dialog';
 // model & enum
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { Gaming } from 'src/app/enums/gaming.enum';
@@ -28,6 +28,7 @@ import { TranslateService } from '@ngx-translate/core';
 // component
 import { ModalGamingThermalMode2Component } from '../../modal/modal-gaming-thermal-mode2/modal-gaming-thermal-mode2.component';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+
 
 @Component({
 	selector: 'vtr-widget-legion-edge',
@@ -261,7 +262,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	private ocSettingsSubscription: Subscription;
 
 	constructor(
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private ngZone: NgZone,
 		private shellServices: VantageShellService,
 		private gamingSystemUpdateService: GamingSystemUpdateService,
@@ -279,7 +280,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		private translateService: TranslateService,
 		private router: Router,
 		private logger: LoggerService
-	) {}
+	) { }
 
 	ngOnInit() {
 		//////////////////////////////////////////////////////////////////////
@@ -378,9 +379,9 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
 					this.performanceOCSettings =
 						this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) ===
-							1 &&
+						1 &&
 						this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) ===
-							1;
+						1;
 				}
 			} else if (
 				this.gamingCapabilities.cpuOCFeature &&
@@ -808,9 +809,11 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		}
 	}
 	openThermalMode2Modal() {
-		const modalRef = this.modalService.open(ModalGamingThermalMode2Component, {
-			backdrop: 'static',
-			windowClass: 'modal-fun',
+		const modalRef = this.dialog.open(ModalGamingThermalMode2Component, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'modal-fun',
 			backdropClass: 'backdrop-level'
 		});
 		this.ocSettingsSubscription = modalRef.componentInstance.ocSettingsMsg.subscribe((res) => {
@@ -927,10 +930,11 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	// Open popup of legion edge help                                   //
 	//////////////////////////////////////////////////////////////////////
 	openModal() {
-		this.modalService.open(ModalGamingLegionedgeComponent, {
-			backdrop: true,
-			windowClass: 'gaming-help-modal',
-			backdropClass: 'backdrop-level'
+		this.dialog.open(ModalGamingLegionedgeComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'gaming-help-modal',
 		});
 	}
 
@@ -1015,14 +1019,13 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			try {
 				this.gamingSystemUpdateService.getRamOCStatus().then((ramOcStatus) => {
 					this.logger.info(
-						`Widget-LegionEdge-renderRamOverClockStatus: get value from ${
-							this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked
+						`Widget-LegionEdge-renderRamOverClockStatus: get value from ${this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked
 						} to ${ramOcStatus}`
 					);
 					if (
 						ramOcStatus !== undefined &&
 						ramOcStatus !==
-							this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked
+						this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked
 					) {
 						this.legionUpdate[this.legionItemIndex.ramOverlock].isChecked = ramOcStatus;
 						this.localCacheService.setLocalCacheValue(
@@ -1066,14 +1069,13 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				.getNetworkBoostStatus()
 				.then((networkBoostModeStatus) => {
 					this.logger.info(
-						`Widget-LegionEdge-renderNetworkBoostStatus: get value from ${
-							this.legionUpdate[this.legionItemIndex.networkBoost].isChecked
+						`Widget-LegionEdge-renderNetworkBoostStatus: get value from ${this.legionUpdate[this.legionItemIndex.networkBoost].isChecked
 						} to ${networkBoostModeStatus}`
 					);
 					if (
 						networkBoostModeStatus !== undefined &&
 						networkBoostModeStatus !==
-							this.legionUpdate[this.legionItemIndex.networkBoost].isChecked
+						this.legionUpdate[this.legionItemIndex.networkBoost].isChecked
 					) {
 						this.legionUpdate[
 							this.legionItemIndex.networkBoost
@@ -1137,14 +1139,13 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		try {
 			this.gamingAutoCloseService.getAutoCloseStatus().then((autoCloseModeStatus) => {
 				this.logger.info(
-					`Widget-LegionEdge-renderAutoCloseStatus: get value from ${
-						this.legionUpdate[this.legionItemIndex.autoClose].isChecked
+					`Widget-LegionEdge-renderAutoCloseStatus: get value from ${this.legionUpdate[this.legionItemIndex.autoClose].isChecked
 					} to ${autoCloseModeStatus}`
 				);
 				if (
 					autoCloseModeStatus !== undefined &&
 					autoCloseModeStatus !==
-						this.legionUpdate[this.legionItemIndex.autoClose].isChecked
+					this.legionUpdate[this.legionItemIndex.autoClose].isChecked
 				) {
 					this.legionUpdate[
 						this.legionItemIndex.autoClose
@@ -1196,14 +1197,13 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		try {
 			this.gamingHybridModeService.getHybridModeStatus().then((hybridModeStatus) => {
 				this.logger.info(
-					`Widget-LegionEdge-renderHybridModeStatus: get value from ${
-						this.legionUpdate[this.legionItemIndex.hybridMode].isChecked
+					`Widget-LegionEdge-renderHybridModeStatus: get value from ${this.legionUpdate[this.legionItemIndex.hybridMode].isChecked
 					} to ${hybridModeStatus}`
 				);
 				if (
 					hybridModeStatus !== undefined &&
 					hybridModeStatus !==
-						this.legionUpdate[this.legionItemIndex.hybridMode].isChecked
+					this.legionUpdate[this.legionItemIndex.hybridMode].isChecked
 				) {
 					this.legionUpdate[this.legionItemIndex.hybridMode].isChecked = hybridModeStatus;
 					this.localCacheService.setLocalCacheValue(
@@ -1244,8 +1244,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		try {
 			this.gamingOverDriveService.getOverDriveStatus().then((res) => {
 				this.logger.info(
-					`Widget-LegionEdge-renderOverDriveStatus: get value from ${
-						this.legionUpdate[this.legionItemIndex.overDrive].isChecked
+					`Widget-LegionEdge-renderOverDriveStatus: get value from ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked
 					} to ${res}`
 				);
 				if (
@@ -1268,8 +1267,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.gamingOverDriveService.setOverDriveStatus(status).then((res) => {
 				if (res) {
 					this.logger.info(
-						`Widget-LegionEdge-setOverDriveStatus: set overDrive return value: ${res}, overDrive status from ${
-							this.legionUpdate[this.legionItemIndex.overDrive].isChecked
+						`Widget-LegionEdge-setOverDriveStatus: set overDrive return value: ${res}, overDrive status from ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked
 						} to ${status}`
 					);
 					this.legionUpdate[this.legionItemIndex.overDrive].isChecked = status;
@@ -1280,8 +1278,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				} else {
 					this.legionUpdate[this.legionItemIndex.overDrive].isChecked = !status;
 					this.logger.error(
-						`Widget-LegionEdge-setOverDriveStatus: set overDrive return false, overDrive status keep ${
-							this.legionUpdate[this.legionItemIndex.overDrive].isChecked
+						`Widget-LegionEdge-setOverDriveStatus: set overDrive return false, overDrive status keep ${this.legionUpdate[this.legionItemIndex.overDrive].isChecked
 						}`
 					);
 				}
@@ -1304,14 +1301,13 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		try {
 			this.gamingKeyLockService.getKeyLockStatus().then((touchpadLockStatus) => {
 				this.logger.info(
-					`Widget-LegionEdge-renderTouchpadLockStatus: get value from ${
-						this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked
+					`Widget-LegionEdge-renderTouchpadLockStatus: get value from ${this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked
 					} to ${touchpadLockStatus}`
 				);
 				if (
 					touchpadLockStatus !== undefined &&
 					touchpadLockStatus !==
-						this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked
+					this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked
 				) {
 					this.legionUpdate[
 						this.legionItemIndex.touchpadLock
@@ -1344,8 +1340,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				} else {
 					this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked = !status;
 					this.logger.error(
-						`Widget-LegionEdge-setTouchpadLockStatus: set touchpadLock Status return false, touchpadLock status keep ${
-							this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked
+						`Widget-LegionEdge-setTouchpadLockStatus: set touchpadLock Status return false, touchpadLock status keep ${this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked
 						}`
 					);
 				}
@@ -1353,8 +1348,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked = !status;
 			this.logger.error(
-				`Widget-LegionEdge-setTouchpadLockStatus: set touchpadLock Status error, touchpadLock status keep ${
-					this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked
+				`Widget-LegionEdge-setTouchpadLockStatus: set touchpadLock Status error, touchpadLock status keep ${this.legionUpdate[this.legionItemIndex.touchpadLock].isChecked
 				}`
 			);
 		}
@@ -1446,8 +1440,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	quickSettingToolbarevent(status, type, localStorage) {
 		status = status === 1 ? true : false;
 		this.logger.info(
-			`Widget-LegionEdge-onGamingQuickSettingsChangedEvent--${type}: call back from ${
-				this.legionUpdate[this.legionItemIndex[type]].isChecked
+			`Widget-LegionEdge-onGamingQuickSettingsChangedEvent--${type}: call back from ${this.legionUpdate[this.legionItemIndex[type]].isChecked
 			} to ${status}`
 		);
 		if (

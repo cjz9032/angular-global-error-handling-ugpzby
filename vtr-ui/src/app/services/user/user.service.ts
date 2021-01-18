@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+
+import { MatDialog } from '@lenovo/material/dialog';
+
 import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
 import { CommonService } from '../common/common.service';
@@ -12,7 +15,6 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { SegmentConst } from 'src/app/services/self-select/self-select.service';
 import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal-common-confirmation/modal-common-confirmation.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -21,7 +23,8 @@ import enc_utf8 from 'crypto-js/enc-utf8';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
-declare var Windows;
+
+declare let Windows;
 
 interface IUserService {
 	isLenovoIdSupported(): boolean;
@@ -89,7 +92,7 @@ export class UserService implements IUserService {
 		private translate: TranslateService,
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private hypSettings: HypothesisService
 	) {
 		this.translate.stream('lenovoId.user').subscribe((firstName) => {
@@ -102,7 +105,7 @@ export class UserService implements IUserService {
 		if (!this.metrics) {
 			this.devService.writeLog('UserService constructor: metrics object is undefined');
 			this.metrics = {
-				sendAsync() {},
+				sendAsync() { },
 			};
 		}
 
@@ -129,11 +132,12 @@ export class UserService implements IUserService {
 
 	// error is come from response status of LID contact request
 	popupErrorMessage(error: number) {
-		const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'common-confirmation-modal',
+		const modalRef = this.dialog.open(ModalCommonConfirmationComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'common-confirmation-modal',
 		});
 		const header = 'lenovoId.ssoErrorTitle';
 		let description = 'lenovoId.ssoErrorCommonEx';
@@ -485,8 +489,8 @@ export class UserService implements IUserService {
 			this.initials = this.firstName
 				? this.firstName[0]
 				: '' + this.lastName
-				? this.lastName[0]
-				: '';
+					? this.lastName[0]
+					: '';
 		}
 		this.commonService.sendNotification(LenovoIdKey.FirstName, firstName ? firstName : '');
 	}

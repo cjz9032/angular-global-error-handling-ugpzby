@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes, ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
-import { CommonService } from 'src/app/services/common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { DeviceLocationPermission } from 'src/app/data-models/home-security/device-location-permission.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-chs-welcome-container',
@@ -35,10 +34,10 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	@ViewChild('allowButton') allowButton: ElementRef;
 
 	constructor(
-		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
-		private localCacheService: LocalCacheService
-	) {}
+		private localCacheService: LocalCacheService,
+		private dialogRef: MatDialogRef<ModalChsWelcomeContainerComponent>
+	) { }
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
@@ -80,7 +79,7 @@ export class ModalChsWelcomeContainerComponent implements OnInit {
 	}
 
 	closeModal() {
-		this.activeModal.close();
+		this.dialogRef.close();
 	}
 
 	next() {

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoggerService } from './../../../services/logger/logger.service';
 import { NetworkBoostService } from './../../../services/gaming/gaming-networkboost/networkboost.service';
 import { GamingAutoCloseService } from 'src/app/services/gaming/gaming-autoclose/gaming-autoclose.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-gaming-running-app-list',
@@ -37,10 +37,10 @@ export class ModalGamingRunningAppListComponent implements OnInit, OnChanges {
 		private networkBoostService: NetworkBoostService,
 		private autoCloseService: GamingAutoCloseService,
 		private loggerService: LoggerService,
-		public activeModal: NgbActiveModal
-	) {}
+		public dialogRef: MatDialogRef<ModalGamingRunningAppListComponent>
+	) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	ngOnChanges(changes: any) {
 		this.runningList.push({ iconName: '', processDescription: '', processPath: '' });
@@ -154,7 +154,7 @@ export class ModalGamingRunningAppListComponent implements OnInit, OnChanges {
 				}
 				item.isChecked = false;
 			}
-		} catch (error) {}
+		} catch (error) { }
 		this.emitService.next(this.addedApps);
 	}
 
@@ -172,7 +172,7 @@ export class ModalGamingRunningAppListComponent implements OnInit, OnChanges {
 				}
 				item.isChecked = true;
 			}
-		} catch (err) {}
+		} catch (err) { }
 		this.emitService.next(this.addedApps);
 	}
 
@@ -208,6 +208,6 @@ export class ModalGamingRunningAppListComponent implements OnInit, OnChanges {
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 }

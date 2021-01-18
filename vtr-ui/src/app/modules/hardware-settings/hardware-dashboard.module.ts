@@ -5,13 +5,13 @@ import { RouterModule } from '@angular/router';
 import {
 	NgbCarouselModule,
 	NgbDropdownModule,
-	NgbModalModule,
 	NgbTooltipModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatIconModule } from '@lenovo/material/icon';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatDialogModule } from '@lenovo/material/dialog';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
@@ -47,6 +47,7 @@ import { WidgetQuicksettingsNoteComponent } from 'src/app/components/widgets/wid
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 
+
 @NgModule({
 	declarations: [
 		PageDashboardComponent,
@@ -75,7 +76,6 @@ import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 		RouterModule,
 		FormsModule,
 		ReactiveFormsModule,
-		NgbModalModule,
 		CommonPipeModule,
 		PageLayoutModule,
 		AppSearchModule,
@@ -85,6 +85,7 @@ import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 		NgbTooltipModule,
 		MatTooltipModule,
 		MaterialModule,
+		MatDialogModule,
 	],
 	exports: [
 		MetricsModule,

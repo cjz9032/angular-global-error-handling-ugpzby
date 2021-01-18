@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
@@ -35,9 +35,9 @@ export class HardwareScanExportLogComponent implements OnInit {
 		private timerService: TimerService,
 		private hardwareScanMetricsService: HardwareScanMetricsService,
 		private logger: LoggerService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private hardwareScanService: HardwareScanService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.isPdfAvailable();
@@ -117,9 +117,9 @@ export class HardwareScanExportLogComponent implements OnInit {
 
 			if (
 				this.hardwareScanService.getScanFinishedHeaderType() ===
-					HardwareScanFinishedHeaderType.Scan ||
+				HardwareScanFinishedHeaderType.Scan ||
 				this.hardwareScanService.getScanFinishedHeaderType() ===
-					HardwareScanFinishedHeaderType.ViewResults
+				HardwareScanFinishedHeaderType.ViewResults
 			) {
 				exportLogType = this.exportService.exportScanResults();
 			} else if (
@@ -153,11 +153,12 @@ export class HardwareScanExportLogComponent implements OnInit {
 		}
 	}
 
-	private openExportLogComponentsModal(): NgbModalRef {
-		const modal: NgbModalRef = this.modalService.open(ModalExportLogComponent, {
-			size: 'lg',
-			centered: true,
-			windowClass: 'hardware-scan-modal-size',
+	private openExportLogComponentsModal(): MatDialogRef<ModalExportLogComponent> {
+		const modal = this.dialog.open(ModalExportLogComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'hardware-scan-modal-size',
 		});
 
 		this.updateExportLogComponentsModal(modal);
@@ -166,7 +167,7 @@ export class HardwareScanExportLogComponent implements OnInit {
 	}
 
 	private updateExportLogComponentsModal(
-		modal: NgbModalRef,
+		modal: MatDialogRef<ModalExportLogComponent>,
 		error: ExportLogErrorStatus = ExportLogErrorStatus.LoadingExport,
 		logPath: string = ''
 	) {

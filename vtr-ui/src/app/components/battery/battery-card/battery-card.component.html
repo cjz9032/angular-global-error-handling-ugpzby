@@ -15,6 +15,20 @@
 	<ng-template #batteryDetail
 		let-modal
 		aria-describedby="heading">
+		<button
+			mat-dialog-close
+			class="position-relative float-right closeButton"
+			id="myDevice-settings-battery-details-card-close-icon"
+			aria-label="battery details card close"
+			(click)="closeModal()"
+			(keydown.esc)="closeModal()"
+			vtrMetrics
+			metricsItem="btn.close"
+			metricsEvent="FeatureClick"
+			metricsParent="Dialog.BatteryDetail"
+		>
+			<mat-icon class="icon close-icon">close</mat-icon>
+		</button>
 		<div class="modal-header"
 			role="modal"
 			aria-describedby="heading">
@@ -22,19 +36,19 @@
 				id="heading">
 				{{'device.deviceSettings.batteryGauge.details.title' | translate }}
 			</h4>
-			<button type="button"
+			<!-- <button type="button"
 				class="close-button bg-white"
 				id="myDevice-settings-battery-details-card-close-icon"
 				aria-label="battery details card close"
 				role="button"
 				tabindex="0"
-				(click)="modal.dismiss('Cross click')"
-				(keydown.esc)="modal.dismiss('Cross click')">
+				(click)="closeModal()"
+				(keydown.esc)="closeModal()">
 				<fa-icon [icon]="['fal', 'times']"></fa-icon>
 
-			</button>
+			</button> -->
 		</div>
-		<div class="modal-body">
+		<div class="modal-body p-0">
 			<vtr-battery-detail [dataInfo]="batteryInfo"
 				[dataIndicator]="batteryIndicator"
 				[dataConditions]="batteryConditions"> </vtr-battery-detail>

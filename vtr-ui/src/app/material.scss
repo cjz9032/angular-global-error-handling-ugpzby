@@ -194,15 +194,32 @@ button:focus {
 	font-family: inherit;
 }
 
-.cdk-overlay-container {
-	z-index: 10002;
-}
-
 .mat-checkbox .mat-checkbox-input {
 	width: 2rem;
 	height: 2rem;
 	left: 0.1rem;
 	bottom: 0.1rem;
+}
+
+.cdk-overlay-pane .mat-dialog-container {
+	padding-top: 2rem;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+
+	.closeButton {
+		top: -1rem;
+		right: 0rem;
+		height: 2.4rem;
+		width: 2.4rem;
+		color: $grey_darker;
+		z-index: 2;
+
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+		}
+		&:hover {
+			color: $menu_hover;
+		}
+	}
 }
 
 .mat-tooltip.vtr-tooltip,
@@ -231,125 +248,6 @@ button:focus {
 	}
 	@media #{$breakpoint_xl} {
 		max-width: 24.2rem !important;
-	}
-	&.arrow-top {
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: calc(-0.6rem + 50%);
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0.1rem 0 0 0.1rem;
-			background: $light;
-			filter: drop-shadow(-0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: calc(-0.6rem + 50%);
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0.1rem 0 0 0.1rem;
-			background: $light;
-			filter: drop-shadow(-0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-	}
-
-	&.arrow-bottom {
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: calc(-0.6rem + 50%);
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0 0.1rem 0.1rem 0;
-			background: $light;
-			filter: drop-shadow(0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: calc(-0.6rem + 50%);
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0 0.1rem 0.1rem 0;
-			background: $light;
-			filter: drop-shadow(0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-	}
-
-	&.arrow-left {
-		&::after {
-			content: '';
-			position: absolute;
-			top: calc(-0.6rem + 50%);
-			left: 0;
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0 0 0.1rem 0.1rem;
-			background: $light;
-			filter: drop-shadow(-0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: calc(-0.6rem + 50%);
-			left: 0;
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0 0 0.1rem 0.1rem;
-			background: $light;
-			filter: drop-shadow(-0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-	}
-
-	&.arrow-right {
-		&::after {
-			content: '';
-			position: absolute;
-			top: calc(-0.6rem + 50%);
-			right: 0;
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0.1rem 0.1rem 0 0;
-			background: $light;
-			filter: drop-shadow(0.1rem -0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: calc(-0.6rem + 50%);
-			right: 0rem;
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0.1rem 0.1rem 0 0;
-			background: $light;
-			filter: drop-shadow(0.1rem -0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
 	}
 	.vtr-ui-hyperlink-button {
 		display: block;
@@ -504,126 +402,6 @@ button:focus {
 
 		li {
 			list-style: none;
-		}
-	}
-
-	&.arrow-top {
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: calc(-0.6rem + 50%);
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0.1rem 0 0 0.1rem;
-			background: $light;
-			filter: drop-shadow(-0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: calc(-0.6rem + 50%);
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0.1rem 0 0 0.1rem;
-			background: $light;
-			filter: drop-shadow(-0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-	}
-
-	&.arrow-bottom {
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: calc(-0.6rem + 50%);
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0 0.1rem 0.1rem 0;
-			background: $light;
-			filter: drop-shadow(0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: calc(-0.6rem + 50%);
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0 0.1rem 0.1rem 0;
-			background: $light;
-			filter: drop-shadow(0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-	}
-
-	&.arrow-left {
-		&::after {
-			content: '';
-			position: absolute;
-			top: calc(-0.6rem + 50%);
-			left: 0;
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0 0 0.1rem 0.1rem;
-			background: $light;
-			filter: drop-shadow(-0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: calc(-0.6rem + 50%);
-			left: 0;
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0 0 0.1rem 0.1rem;
-			background: $light;
-			filter: drop-shadow(-0.1rem 0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-	}
-
-	&.arrow-right {
-		&::after {
-			content: '';
-			position: absolute;
-			top: calc(-0.6rem + 50%);
-			right: 0;
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0.1rem 0.1rem 0 0;
-			background: $light;
-			filter: drop-shadow(0.1rem -0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: calc(-0.6rem + 50%);
-			right: 0rem;
-			width: 1rem;
-			height: 1rem;
-			transform: rotate(45deg);
-			border-width: 0.1rem 0.1rem 0 0;
-			background: $light;
-			filter: drop-shadow(0.1rem -0.1rem rgba(0, 0, 0, 0.05));
-			z-index: 1000;
 		}
 	}
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
@@ -11,21 +11,19 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 export class ModalGamingLegionedgeComponent implements OnInit {
 	liteGaming = false;
 	desktopMachine = false;
-	constructor(public activeModal: NgbActiveModal, private localCacheService: LocalCacheService) {
+	constructor(
+		public dialogRef: MatDialogRef<ModalGamingLegionedgeComponent>,
+		private localCacheService: LocalCacheService
+	) {
 		this.desktopMachine = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.desktopType
 		);
 		this.liteGaming = this.localCacheService.getLocalCacheValue(LocalStorageKey.liteGaming);
 	}
 
-	@HostListener('window: focus') onFocus(): void {
-		const modal = document.querySelector('.gaming-help-modal') as HTMLElement;
-		modal.focus();
-	}
-
-	ngOnInit() {}
+	ngOnInit() { }
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 }

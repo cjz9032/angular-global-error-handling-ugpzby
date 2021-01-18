@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, Input, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-apps-for-you-screenshot',
@@ -11,16 +11,18 @@ export class ModalAppsForYouScreenshotComponent implements OnInit, OnDestroy, Af
 
 	public metricsParent = 'AppsForYou';
 
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(
+		public dialogRef: MatDialogRef<ModalAppsForYouScreenshotComponent>
+	) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
-	ngAfterViewInit() {}
+	ngAfterViewInit() { }
 
-	ngOnDestroy() {}
+	ngOnDestroy() { }
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('document:keydown.escape', ['$event'])

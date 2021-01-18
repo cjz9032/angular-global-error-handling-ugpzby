@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { ModalCommonConfirmationComponent } from '../../modal/modal-common-confirmation/modal-common-confirmation.component';
 
 @Component({
@@ -11,9 +11,9 @@ export class WidgetRebootComponent implements OnInit {
 	@Output() rebootClick = new EventEmitter<any>();
 	@Output() dismissClick = new EventEmitter<any>();
 
-	constructor(public modalService: NgbModal) {}
+	constructor(public dialog: MatDialog) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	onRebootClick($event) {
 		this.rebootClick.emit($event);
@@ -24,9 +24,11 @@ export class WidgetRebootComponent implements OnInit {
 	}
 
 	openConfirmationModal() {
-		const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
-			size: 'lg',
-			windowClass: 'common-confirmation-modal',
+		const modalRef = this.dialog.open(ModalCommonConfirmationComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'common-confirmation-modal',
 		});
 		// modalRef.componentInstance.title = 'Hello';
 		// modalRef.componentInstance.body = `Protect the airplane AC power outlet by controlling

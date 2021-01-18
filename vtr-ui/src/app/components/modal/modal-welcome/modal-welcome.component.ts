@@ -7,7 +7,6 @@ import {
 	Input,
 	HostListener,
 } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WelcomeTutorial } from 'src/app/data-models/common/welcome-tutorial.model';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -27,6 +26,7 @@ import { InitializerService } from 'src/app/services/initializer/initializer.ser
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { DccService } from 'src/app/services/dcc/dcc.service';
 import { SettingsService } from 'src/app/services/settings/settings.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-welcome',
@@ -142,7 +142,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		public deviceService: DeviceService,
 		public powerService: PowerService,
 		private logger: LoggerService,
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalWelcomeComponent>,
 		shellService: VantageShellService,
 		public commonService: CommonService,
 		public selfSelectService: SelfSelectService,
@@ -226,7 +226,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 				LocalStorageKey.WelcomeTutorial,
 				tutorialData
 			);
-			this.focusOnModal();
 		} else {
 			const buttonClickData = {
 				ItemType: 'FeatureClick',
@@ -315,7 +314,7 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			);
 			// this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardOOBBEStatus, true);
 			// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
-			this.activeModal.close(tutorialData);
+			this.dialogRef.close(tutorialData);
 			this.SetVantageToolbar(this.vantageToolbar);
 			this.localCacheService.setLocalCacheValue(LocalStorageKey.UserDeterminePrivacy, true);
 			this.metricService.onWelcomePageDone();
@@ -436,15 +435,6 @@ export class ModalWelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	ngOnDestroy() {
 		// this.localCacheService.setLocalCacheValue(LocalStorageKey.DashboardOOBBEStatus, true);
 		// this.commonService.sendNotification(DeviceMonitorStatus.OOBEStatus, true); // never use this notification
-	}
-
-	focusOnModal() {
-		(document.querySelector('.welcome-modal-size') as HTMLElement).focus();
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.focusOnModal();
 	}
 
 	privacyPolicyClick(event) {

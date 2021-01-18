@@ -2,10 +2,10 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import * as d3 from 'd3-selection';
 import SmartStandbyActivityModel from 'src/app/data-models/smart-standby-graph/smart-standby-activity.model';
 import { PowerService } from 'src/app/services/power/power.service';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivitiesData } from './activities-data.mock';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-smart-stand-by',
@@ -38,10 +38,10 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 
 	constructor(
 		private powerService: PowerService,
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalSmartStandByComponent>,
 		private translate: TranslateService,
 		private loggerService: LoggerService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.activities = ActivitiesData;
@@ -239,6 +239,6 @@ export class ModalSmartStandByComponent implements OnInit, AfterViewInit {
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 }

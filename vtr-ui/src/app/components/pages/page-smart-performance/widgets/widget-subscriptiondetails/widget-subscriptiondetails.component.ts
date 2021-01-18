@@ -1,7 +1,8 @@
 import { formatDate } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
+import { MatDialog } from '@lenovo/material/dialog';
+
 import moment from 'moment';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { enumSmartPerformance, PaymentPage } from 'src/app/enums/smart-performance.enum';
@@ -12,6 +13,7 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 import { SupportService } from 'src/app/services/support/support.service';
 import { v4 as uuid } from 'uuid';
 import { ModalSmartPerformanceSubscribeComponent } from 'src/app/components/modal/modal-smart-performance-subscribe/modal-smart-performance-subscribe.component';
+
 @Component({
 	selector: 'vtr-widget-subscriptiondetails',
 	templateUrl: './widget-subscriptiondetails.component.html',
@@ -45,7 +47,7 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 	public expiredDaysCount: any;
 	constructor(
 		private translate: TranslateService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private formatLocaleDate: FormatLocaleDatePipe,
 		public smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
@@ -167,11 +169,11 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 		this.intervalTime = moment(currentTime)
 			.add(PaymentPage.ORDERWAITINGTIME, 'm')
 			.format('YYYY-MM-DD HH:mm:ss');
-		const modalCancel = this.modalService.open(ModalSmartPerformanceSubscribeComponent, {
-			backdrop: 'static',
-			size: 'md',
-			centered: true,
-			windowClass: 'subscribe-modal',
+		const modalCancel = this.dialog.open(ModalSmartPerformanceSubscribeComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'subscribe-modal',
 		});
 		this.spFrstRunStatus = false;
 		modalCancel.componentInstance.cancelPaymentRequest.subscribe(() => {

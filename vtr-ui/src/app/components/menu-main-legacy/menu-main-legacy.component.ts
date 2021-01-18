@@ -11,7 +11,7 @@ import {
 	ViewContainerRef,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { NgbDropdown, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -44,6 +44,7 @@ import { BacklightService } from '../pages/page-device-settings/children/subpage
 import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-menu-main-legacy',
@@ -100,6 +101,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		iA4OC41LDE5Mi42IDE5NC44LDE5Mi42IAkJIi8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=
 		`;
 	gamingLogo = 'assets/images/gaming/gaming-logo-small.png';
+	upMenuLevel: boolean;
 	private backlightCapabilitySubscription: Subscription;
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
 	// activeDropdown: NgbDropdown;
@@ -119,7 +121,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private dialogService: DialogService,
 		private keyboardService: InputAccessoriesService,
-		public modalService: NgbModal,
+		private dialog: MatDialog,
 		public modernPreloadService: ModernPreloadService,
 		private adPolicyService: AdPolicyService,
 		private hardwareScanService: HardwareScanService,
@@ -285,7 +287,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			// const anchors = Array.from(menuElement.querySelectorAll('.dropdown-item.link'));
 			const currentIndex = anchors.indexOf(sourceElement);
 			const tabElements = Array.from(
-				document.querySelectorAll("[tabindex]:not([tabindex='-1']")
+				document.querySelectorAll('[tabindex]:not([tabindex=\'-1\']')
 			);
 			/// const tabElements = Array.from(document.querySelectorAll('[tabIndex = \'1\']'));
 			const curElementTabIndex = tabElements.indexOf(sourceElement);
@@ -368,7 +370,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 						})
 					)
 					.subscribe();
-			} catch (error) {}
+			} catch (error) { }
 		}
 
 		const machineFamily = this.localCacheService.getLocalCacheValue(
@@ -510,7 +512,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		}
 		this.focusMenuDropDownTimer = setTimeout(() => {
 			this.closeAllOtherDD(menuDropDown);
-			if (!this.modalService.hasOpenModals()) {
+			if (!this.dialog.openDialogs.length) {
 				menuDropDown.open();
 			}
 		}, 30);
@@ -617,12 +619,12 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 				}
 				inputAccessoriesCapability.isUdkAvailable =
 					responses[0] != null &&
-					Object.keys(responses[0]).indexOf('uDKCapability') !== -1
+						Object.keys(responses[0]).indexOf('uDKCapability') !== -1
 						? responses[0].uDKCapability
 						: false;
 				inputAccessoriesCapability.isKeyboardMapAvailable =
 					responses[0] != null &&
-					Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
+						Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
 						? responses[0].keyboardMapCapability
 						: false;
 				inputAccessoriesCapability.keyboardVersion =

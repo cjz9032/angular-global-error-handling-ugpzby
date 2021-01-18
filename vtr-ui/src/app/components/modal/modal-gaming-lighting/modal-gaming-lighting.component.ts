@@ -1,5 +1,5 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-gaming-lighting',
@@ -7,17 +7,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 	styleUrls: ['./modal-gaming-lighting.component.scss'],
 })
 export class ModalGamingLightingComponent implements OnInit {
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(public dialogRef: MatDialogRef<ModalGamingLightingComponent>) { }
 
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.gaming-help-modal') as HTMLElement;
-		modal.focus();
-	}
-
-	ngOnInit() {}
+	ngOnInit() { }
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 }

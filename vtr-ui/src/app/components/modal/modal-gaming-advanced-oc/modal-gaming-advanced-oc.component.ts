@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { GamingAdvancedOCService } from 'src/app/services/gaming/gaming-advanced-oc/gaming-advanced-oc.service';
@@ -9,6 +8,7 @@ import { AdvancedOCItemUnit } from 'src/app/data-models/gaming/advanced-overcloc
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-gaming-advanced-oc',
@@ -80,15 +80,15 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	};
 
 	constructor(
-		private modalService: NgbModal,
-		public activeModal: NgbActiveModal,
+		private dialog: MatDialog,
+		public dialogRef: MatDialogRef<ModalGamingAdvancedOCComponent>,
 		public commonService: CommonService,
 		public gamingCapabilityService: GamingAllCapabilitiesService,
 		private gamingAdvancedOCService: GamingAdvancedOCService,
 		private logger: LoggerService,
 		private metrics: MetricService,
 		private timer: TimerService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.advanceGPUOCFeature = this.gamingCapabilityService.getCapabilityFromCache(
@@ -99,10 +99,10 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		);
 		this.logger.info(
 			'advanceCPUOCFeature init cache:' +
-				this.advanceCPUOCFeature +
-				';  advanceGPUOCFeature init cache:' +
-				this.advanceGPUOCFeature +
-				' ;'
+			this.advanceCPUOCFeature +
+			';  advanceGPUOCFeature init cache:' +
+			this.advanceGPUOCFeature +
+			' ;'
 		);
 		this.getAdvancedOCInfo();
 		this.timer.start();
@@ -111,7 +111,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 		if (this.isChange) {
 			this.openSaveChangeModal();
 		} else {
-			this.activeModal.close('close');
+			this.dialogRef.close('close');
 
 			this.sendPageViewMetricsData();
 		}
@@ -230,10 +230,15 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	}
 
 	public openSaveChangeModal() {
-		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
-			backdrop: 'static',
-			windowClass: 'modal-prompt',
+		if (this.dialog.openDialogs.length) {
+			return;
+		}
+		const waringModalRef = this.dialog.open(ModalGamingPromptComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
 			backdropClass: 'backdrop-level',
+			panelClass: 'modal-prompt',
 		});
 		waringModalRef.componentInstance.info = {
 			title: 'gaming.dashboard.device.savePromptPopup.title',
@@ -243,7 +248,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			comfirmButton: 'gaming.dashboard.device.savePromptPopup.save',
 			cancelButton: 'gaming.dashboard.device.savePromptPopup.notSave',
 			comfirmButtonAriaLabel: 'SAVE',
-			cancelButtonAriaLabel: "DON'T SAVE",
+			cancelButtonAriaLabel: 'DON\'T SAVE',
 			confirmMetricEnabled: false,
 			confirmMetricsItemId: '',
 			cancelMetricEnabled: false,
@@ -254,12 +259,12 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			this.logger.info('openSaveChangeModal emmitedValue', emmitedValue);
 			if (emmitedValue === 1) {
 				this.isChange = false;
-				this.activeModal.close('close');
+				this.dialogRef.close('close');
 				this.setAdvancedOCInfo(this.advancedOCInfo);
 			} else if (emmitedValue === 2) {
 				this.advancedOCInfo = this.gamingAdvancedOCService.getAdvancedOCInfoCache();
 				this.isChange = false;
-				this.activeModal.close('close');
+				this.dialogRef.close('close');
 			}
 
 			this.sendOCChangedMetricsData(emmitedValue);
@@ -294,10 +299,15 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	}
 
 	public openSetToDefaultModal() {
-		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
-			backdrop: 'static',
-			windowClass: 'modal-prompt',
+		if (this.dialog.openDialogs.length) {
+			return;
+		}
+		const waringModalRef = this.dialog.open(ModalGamingPromptComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
 			backdropClass: 'backdrop-level',
+			panelClass: 'modal-prompt',
 		});
 		waringModalRef.componentInstance.info = {
 			title: 'gaming.dashboard.device.defaultPromptPopup.title',
@@ -361,7 +371,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			if (this.metrics && this.metrics.sendMetrics) {
 				this.metrics.sendMetrics(metricData);
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 	/**
 	 * metrics collection of OC parameter changed
@@ -375,7 +385,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 					for (const item of this.advancedOCInfo.cpuParameterList) {
 						parameterValue[
 							this.itemUnit.cpuOCNames[
-								'cpuOCName' + item.tuneId
+							'cpuOCName' + item.tuneId
 							]
 						] = item.OCValue;
 					}
@@ -384,7 +394,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 					for (const item of this.advancedOCInfo.gpuParameterList) {
 						parameterValue[
 							this.itemUnit.gpuOCNames[
-								'gpuOCName' + item.tuneId
+							'gpuOCName' + item.tuneId
 							]
 						] = item.OCValue;
 					}
@@ -406,7 +416,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			if (occhangedinfo === 1 || occhangedinfo === 2) {
 				this.sendPageViewMetricsData();
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 	/**
 	 * page view metrics collection for advanced oc feature
@@ -422,7 +432,7 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 			if (this.metrics && this.metrics.sendMetrics) {
 				this.metrics.sendMetrics(pageViewMetrics);
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	public removeSpaces(str: any) {

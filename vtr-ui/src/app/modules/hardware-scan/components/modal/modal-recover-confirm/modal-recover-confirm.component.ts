@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 import {
 	disableBackgroundNavigation,
 	reEnableBackgroundNavigation,
@@ -13,7 +13,7 @@ import {
 export class ModalRecoverConfirmComponent implements OnInit, OnDestroy {
 	@Output() confirmClicked: EventEmitter<any> = new EventEmitter();
 
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(private dialogRef: MatDialogRef<ModalRecoverConfirmComponent>) { }
 
 	ngOnInit() {
 		disableBackgroundNavigation(document);
@@ -24,7 +24,7 @@ export class ModalRecoverConfirmComponent implements OnInit, OnDestroy {
 	}
 
 	public onClosing() {
-		this.activeModal.close();
+		this.dialogRef.close();
 	}
 
 	public confirmClick() {

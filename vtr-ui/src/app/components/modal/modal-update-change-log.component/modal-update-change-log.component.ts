@@ -8,9 +8,9 @@ import {
 	ViewChild,
 } from '@angular/core';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 declare let Windows: any;
 
@@ -26,11 +26,10 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 	iframeInterval: any;
 	articleBody: SafeHtml = '';
 
-	@ViewChild('logModal') logModal: ElementRef;
 	@ViewChild('logContent') logContent: ElementRef;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalUpdateChangeLogComponent>,
 		private sanitizer: DomSanitizer,
 		private shellService: VantageShellService,
 		private commonService: CommonService
@@ -53,12 +52,9 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 					this.articleBody = this.sanitizer.sanitize(SecurityContext.HTML, result);
 				} else {
 				}
-			} catch (e) {}
+			} catch (e) { }
 			httpClient.close();
 		})();
-		setTimeout(() => {
-			this.logModal.nativeElement.focus();
-		}, 0);
 	}
 
 	ngOnDestroy() {
@@ -80,13 +76,7 @@ export class ModalUpdateChangeLogComponent implements OnInit, OnDestroy {
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.update-read-more-modal-size') as HTMLElement;
-		modal.focus();
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('document:keydown.pageup')

@@ -13,7 +13,6 @@ import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService } from '@ngx-translate/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, NavigationExtras } from '@angular/router';
 import { throttleTime } from 'rxjs/operators';
 import { EMPTY, fromEvent, Subscription } from 'rxjs';
@@ -162,7 +161,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private translate: TranslateService,
-		public modalService: NgbModal,
 		private router: Router,
 		private vantageShellService: VantageShellService,
 		private localCacheService: LocalCacheService,
@@ -1017,7 +1015,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.logger.error('initHPDSensorType error', error);
 					});
 			}
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	public getSuperResolutionStatus() {

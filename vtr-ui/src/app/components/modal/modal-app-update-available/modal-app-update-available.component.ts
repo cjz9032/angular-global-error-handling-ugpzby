@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-app-update-available',
@@ -7,16 +7,18 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 	styleUrls: ['./modal-app-update-available.component.scss'],
 })
 export class ModalAppUpdateAvailableComponent implements OnInit {
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(
+		public dialogRef: MatDialogRef<ModalAppUpdateAvailableComponent>
+	) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	public onUpdateClick() {
-		this.activeModal.close(true);
+		this.dialogRef.close(true);
 	}
 
 	public onCancelClick() {
-		this.activeModal.close(false);
+		this.dialogRef.close(false);
 	}
 
 	@HostListener('window: focus')

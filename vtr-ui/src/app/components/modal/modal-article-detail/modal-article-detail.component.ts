@@ -6,7 +6,6 @@ import {
 	SecurityContext,
 	ViewChild,
 } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { DurationCounterService } from 'src/app/services/timer/timer-service-ex.service';
@@ -16,8 +15,8 @@ import { WinRT } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { MetricEventName } from 'src/app/enums/metrics.enum';
 import { ContentCacheService } from 'src/app/services/content-cache/content-cache.service';
-import { ContentActionType } from 'src/app/enums/content.enum';
 import { ArticleSegment } from 'src/app/data-models/article/article-segment.modal';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-article-detail',
@@ -44,13 +43,13 @@ export class ModalArticleDetailComponent implements OnInit {
 		Content: 3,
 	};
 	contentStatus = this.AllContentStatus.Loading;
-	actionType: ContentActionType;
+	actionType: string;
 
 	@ViewChild('articleDetailModal') articleDetailModal: ElementRef;
 	@ViewChild('articleDialogContent') articleDialogContent: ElementRef;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalArticleDetailComponent>,
 		private contentCacheService: ContentCacheService,
 		private commonService: CommonService,
 		private activatedRoute: ActivatedRoute,
@@ -97,39 +96,39 @@ export class ModalArticleDetailComponent implements OnInit {
 								this.articleSegments[
 									index
 								].center = segment.segmentType.toLowerCase().includes('-center')
-									? true
-									: false;
+										? true
+										: false;
 								this.articleSegments[
 									index
 								].wrap = segment.segmentType.toLowerCase().includes('-wrap-')
-									? true
-									: false;
+										? true
+										: false;
 								if (!segment.segmentType.toLowerCase().includes('-wrap')) {
 									this.articleSegments[
 										index
 									].noWrapLeft = segment.segmentType
 										.toLowerCase()
 										.includes('-left')
-										? true
-										: false;
+											? true
+											: false;
 									this.articleSegments[
 										index
 									].noWrapRight = segment.segmentType
 										.toLowerCase()
 										.includes('-right')
-										? true
-										: false;
+											? true
+											: false;
 								}
 								this.articleSegments[
 									index
 								].quoteType = segment.segmentType.toLowerCase().startsWith('quote')
-									? true
-									: false;
+										? true
+										: false;
 								this.articleSegments[
 									index
 								].imageType = segment.segmentType.toLowerCase().startsWith('image')
-									? true
-									: false;
+										? true
+										: false;
 							}
 							index++;
 						}
@@ -158,17 +157,17 @@ export class ModalArticleDetailComponent implements OnInit {
 	private getPageName(activatedRoute: ActivatedRoute) {
 		try {
 			return activatedRoute.children[0].firstChild.routeConfig.data.pageName;
-		} catch (ex) {}
+		} catch (ex) { }
 
 		try {
 			return activatedRoute.firstChild.snapshot.data.pageName;
-		} catch (ex) {}
+		} catch (ex) { }
 
 		return undefined;
 	}
 
 	enableBatteryChargeThreshold() {
-		this.activeModal.close('enable');
+		this.dialogRef.close('enable');
 	}
 
 	// this function would only be fired when the modal backdrop was clicked,
@@ -208,7 +207,7 @@ export class ModalArticleDetailComponent implements OnInit {
 
 	closeModal() {
 		this.sendArticleViewMetric();
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('document:keydown.pageup')
@@ -230,12 +229,6 @@ export class ModalArticleDetailComponent implements OnInit {
 	@HostListener('document:keydown.escape', ['$event'])
 	onClickEscape($event) {
 		this.closeModal();
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.Article-Detail-Modal') as HTMLElement;
-		modal.focus();
 	}
 
 	openProtocol(url: string): boolean {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input, OnDestroy } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -17,7 +17,9 @@ export class ModalWaitComponent implements OnInit, OnDestroy {
 	@Input() ItemParent: string;
 	@Input() CancelItemName: string;
 
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(
+		private dialogRef: MatDialogRef<ModalWaitComponent>,
+	) { }
 
 	ngOnInit() {
 		this.shouldCloseModalSubscription = this.shouldCloseModal.subscribe((result) => {
@@ -34,10 +36,6 @@ export class ModalWaitComponent implements OnInit, OnDestroy {
 	}
 
 	public closeModal() {
-		this.activeModal.close();
-	}
-
-	public closeButtonClick() {
-		this.activeModal.dismiss();
+		this.dialogRef.close();
 	}
 }

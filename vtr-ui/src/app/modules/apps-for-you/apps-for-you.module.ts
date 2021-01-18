@@ -1,6 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatDialogModule } from '@lenovo/material/dialog';
+
 import { AppsForYouRoutingModule } from './apps-for-you-routing.module';
 import { PageAppsForYouComponent } from 'src/app/components/pages/page-apps-for-you/page-apps-for-you.component';
 
@@ -11,14 +14,12 @@ import { CommonWidgetModule } from '../common/common-widget.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 
 import { CommonPipeModule } from '../common/common-pipe.module';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { ModalAppsForYouScreenshotComponent } from 'src/app/components/modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
-import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 @NgModule({
 	declarations: [PageAppsForYouComponent, ModalAppsForYouScreenshotComponent],
@@ -31,9 +32,9 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 		SharedModule,
 		WidgetOfflineModule,
 		PageLayoutModule,
-		NgbModalModule,
 		FontAwesomeModule,
 		MatTooltipModule,
+		MatDialogModule
 	],
 	providers: [SystemUpdateService],
 	entryComponents: [ModalAppsForYouScreenshotComponent],

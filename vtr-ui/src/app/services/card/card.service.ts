@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { WinRT } from '@lenovo/tan-client-bridge';
+
+import { MatDialog } from '@lenovo/material/dialog';
+
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 import { ModalDccDetailComponent } from 'src/app/components/modal/modal-dcc-detail/modal-dcc-detail.component';
 import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { DeviceService } from '../device/device.service';
 import { ContentActionType } from 'src/app/enums/content.enum';
 
+
 @Injectable({
 	providedIn: 'root',
 })
 export class CardService {
 	constructor(
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private appsForYouService: AppsForYouService,
 		public deviceService: DeviceService
-	) {}
+	) { }
 
 	linkClicked(
 		actionType: string,
@@ -50,26 +53,21 @@ export class CardService {
 
 	openArticleModal(actionType: string, articleId: string, articleTitle: string = '') {
 		const articleClass = this.deviceService.isGaming
-			? 'Article-Detail-Modal content-gaming'
+			? ['Article-Detail-Modal', 'content-gaming']
 			: 'Article-Detail-Modal';
-		const articleDetailModal: NgbModalRef = this.modalService.open(
+		const articleDetailModal = this.dialog.open(
 			ModalArticleDetailComponent,
 			{
-				backdrop: true /*'static',*/,
-				size: 'lg',
-				centered: true,
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: articleClass,
 				ariaLabelledBy: 'article-dialog-basic-title',
-				windowClass: articleClass,
-				keyboard: false,
-				beforeDismiss: () => {
-					if (articleDetailModal.componentInstance.onBeforeDismiss) {
-						articleDetailModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
 			}
 		);
-
+		articleDetailModal.beforeClosed().subscribe(() => {
+			articleDetailModal.componentInstance.onBeforeDismiss();
+		});
 		articleDetailModal.componentInstance.articleId = articleId;
 		if (articleTitle !== '') {
 			articleDetailModal.componentInstance.articleLinkTitle = articleTitle;
@@ -78,18 +76,15 @@ export class CardService {
 	}
 
 	openDccDetailModal() {
-		const articleDetailModal: NgbModalRef = this.modalService.open(ModalDccDetailComponent, {
-			backdrop: true /*'static',*/,
-			size: 'lg',
-			centered: true,
-			windowClass: 'Dcc-Detail-Modal',
-			keyboard: false,
-			beforeDismiss: () => {
-				if (articleDetailModal.componentInstance.onBeforeDismiss) {
-					articleDetailModal.componentInstance.onBeforeDismiss();
-				}
-				return true;
-			},
+		const articleDetailModal = this.dialog.open(ModalDccDetailComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Dcc-Detail-Modal',
+		});
+		articleDetailModal.beforeClosed().subscribe(() => {
+			articleDetailModal.componentInstance.onBeforeDismiss();
 		});
 	}
 }

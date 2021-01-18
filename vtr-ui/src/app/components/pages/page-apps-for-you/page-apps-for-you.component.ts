@@ -8,10 +8,10 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { AppsForYouEnum } from 'src/app/enums/apps-for-you.enum';
 import { AppsForYouService, AppDetails } from 'src/app/services/apps-for-you/apps-for-you.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAppsForYouScreenshotComponent } from '../../modal/modal-apps-for-you-screenshot/modal-apps-for-you-screenshot.component';
 import { TranslateService } from '@ngx-translate/core';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-page-apps-for-you',
@@ -68,7 +68,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private loggerService: LoggerService,
 		private vantageShellService: VantageShellService,
-		public modalService: NgbModal,
+		public dialog: MatDialog,
 		private appsForYouService: AppsForYouService,
 		private translateService: TranslateService
 	) {
@@ -202,7 +202,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					if (
 						this.appDetails &&
 						this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !==
-							-1
+						-1
 					) {
 						if (notification.payload < 85) {
 							this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
@@ -217,7 +217,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					if (
 						this.appDetails &&
 						this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !==
-							-1
+						-1
 					) {
 						if (
 							notification.payload === 'InstallDone' ||
@@ -381,27 +381,20 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 	}
 
 	openScreenshotModal(imgUrl: string) {
-		const screenshotModal: NgbModalRef = this.modalService.open(
-			ModalAppsForYouScreenshotComponent,
-			{
-				backdrop: true,
-				size: 'lg',
-				centered: true,
-				windowClass: 'apps-for-you-dialog',
-				keyboard: false,
-				beforeDismiss: () => {
-					if (screenshotModal.componentInstance.onBeforeDismiss) {
-						screenshotModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
-			}
-		);
+		if (this.dialog.openDialogs.length) {
+			return;
+		}
+		const screenshotModal = this.dialog.open(ModalAppsForYouScreenshotComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'apps-for-you-dialog',
+		});
 		screenshotModal.componentInstance.metricsParent = this.metricsParent;
 		screenshotModal.componentInstance.image = imgUrl;
-		setTimeout(() => {
-			(document.querySelector('.apps-for-you-dialog') as HTMLElement).focus();
-		}, 0);
+		// setTimeout(() => {
+		// 	(document.querySelector('.apps-for-you-dialog') as HTMLElement).focus();
+		// }, 0);
 	}
 
 	copyObjectArray(obj: any) {

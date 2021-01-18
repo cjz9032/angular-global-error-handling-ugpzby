@@ -1,13 +1,19 @@
+<button
+	mat-dialog-close
+	class="position-relative float-right closeButton"
+	id="smart-performance-subscribe-dialog-close-button"
+	(click)="closeModal()"
+	vtrMetrics
+	metricsItem="btn.close"
+	metricsEvent="FeatureClick"
+	metricsParent="Dialog.SmartPerformance.Subscribe"
+>
+	<mat-icon class="icon close-icon">close</mat-icon>
+</button>
 <div class="modal-smart-performance-subscribe">
 	<div class="container-fluid">
 		<div class="payment-options">
 			<iframe id="smart-performance-payment-iframe" [src]="paymentUrl | sanitize : 'resourceUrl'" sandbox="allow-forms allow-scripts allow-same-origin" frameborder="0" ></iframe>
 		</div>
-	</div>
-	<div class="btn-modal-close">
-		<vtr-ui-close-button linkId="smart-performance-subscribe-dialog-close-button"
-			metricsItem="btn.close"
-			metricsParent="Dialog.SmartPerformance.Subscribe"
-			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>
