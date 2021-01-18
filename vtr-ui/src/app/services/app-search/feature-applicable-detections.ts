@@ -16,7 +16,7 @@ export class FeatureApplicableDetections {
 			featureId: AppSearch.FeatureIds.Dashboard.pageId,
 			isApplicable: async () => this.isDashboardApplicable(),
 		},
-		// dashboard
+		// system update
 		{
 			featureId: AppSearch.FeatureIds.SystemUpdate.pageId,
 			isApplicable: async () => this.isSystemUpdateApplicable(),
