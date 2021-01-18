@@ -104,8 +104,10 @@
 				border: 1px solid $background;
 				height: 24rem;
 				position: relative;
-				display: flex;
-				align-items: center;
+				&.monitor-section-align {
+					display: flex;
+					align-items: center;
+				}
 				@media #{$breakpoint_xl3} {
 					height: 22rem;
 				}

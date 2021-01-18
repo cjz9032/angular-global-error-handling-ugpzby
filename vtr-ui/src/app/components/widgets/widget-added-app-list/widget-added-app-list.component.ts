@@ -132,6 +132,6 @@ export class WidgetAddedAppListComponent implements OnInit, OnChanges {
 			if (focusElement) {
 				focusElement.focus();
 			}
-		}, 30);
+		}, 100);
 	}
 }
