@@ -5496,7 +5496,7 @@
 		"noSearchResultTips": "No results for '{{userInput}}'",
 		"features": {
 			"dashboard": {
-				"category": "Dashboard",
+				"categoryName": "Dashboard",
 				"page": {
 					"featureName": "Dashboard",
 					"highRelevantKeywords": [
@@ -5511,7 +5511,7 @@
 				}
 			},
 			"myDevice": {
-				"category": "My device",
+				"categoryName": "My device",
 				"page": {
 					"featureName": "My device",
 					"highRelevantKeywords": [
@@ -5526,7 +5526,7 @@
 				}
 			},
 			"systemUpdate": {
-				"category": "System update",
+				"categoryName": "System update",
 				"page": {
 					"featureName": "System update",
 					"highRelevantKeywords": [
@@ -5542,7 +5542,7 @@
 				}
 			},
 			"mySecurity": {
-				"category": "My security",
+				"categoryName": "My security",
 				"page": {
 					"featureName": "My security",
 					"highRelevantKeywords": [
@@ -5564,7 +5564,7 @@
 				}
 			},
 			"smartPerformance": {
-				"category": "Smart performance",
+				"categoryName": "Smart performance",
 				"page": {
 					"featureName": "Smart performance",
 					"highRelevantKeywords": [
@@ -5586,7 +5586,7 @@
 				}
 			},
 			"hardwareScan": {
-				"category": "Hardware scan",
+				"categoryName": "Hardware scan",
 				"page": {
 					"featureName": "Hardware scan",
 					"highRelevantKeywords": [
@@ -5608,7 +5608,7 @@
 				}
 			},
 			"power": {
-				"category": "Power",
+				"categoryName": "Power",
 				"batteryInformation": {
 					"featureName": "Battery information",
 					"highRelevantKeywords": [
@@ -5699,7 +5699,7 @@
 				}
 			},
 			"cameraAndDisplay": {
-				"category": "Camera and display",
+				"categoryName": "Camera and display",
 				"cameraPrivacyMode": {
 					"featureName": "Camera privacy mode",
 					"highRelevantKeywords": [
@@ -5738,7 +5738,7 @@
 				}
 			},
 			"audio": {
-				"category": "Audio",
+				"categoryName": "Audio",
 				"dolbyAudio": {
 					"featureName": "Dolby audio",
 					"highRelevantKeywords": [
@@ -5767,7 +5767,7 @@
 				}
 			},
 			"input": {
-				"category": "Input and accessories",
+				"categoryName": "Input and accessories",
 				"touchPadSettings": {
 					"featureName": "TouchPad settings",
 					"highRelevantKeywords": [
@@ -5832,7 +5832,7 @@
 				}
 			},
 			"smartAssist": {
-				"category": "Smart assist",
+				"categoryName": "Smart assist",
 				"activeProtectionSystem": {
 					"featureName": "Active protection system",
 					"highRelevantKeywords": [

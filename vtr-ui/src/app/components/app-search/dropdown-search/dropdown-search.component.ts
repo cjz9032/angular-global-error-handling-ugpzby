@@ -24,23 +24,6 @@ export class SearchDropdownComponent {
 		ItemParent: 'Dropdown.Search',
 		ItemName: 'input.search'
 	}
-	// public recommandedItems = [ {
-	// 	id: 'item1',
-	// 	icon: faGem,
-	// 	name: 'item1'
-	// }, {
-	// 	id: 'item2',
-	// 	icon: faGem,
-	// 	name: 'item2'
-	// }, {
-	// 	id: 'item3',
-	// 	icon: faGem,
-	// 	name: 'item3'
-	// }, {
-	// 	id: 'item4',
-	// 	icon: faGem,
-	// 	name: 'item4'
-	// } ];
 
 	constructor(
 		private router: Router,
@@ -66,14 +49,6 @@ export class SearchDropdownComponent {
 
 		this.metricService.sendMetrics(metricEvent);
 		this.navigateToSearchPage(userInput);
-	}
-
-	onClickRecommandationItem(userInput) {
-		this.navigateToSearchPage(userInput);
-	}
-
-	onSearchInputChange() {
-		// to do, show input recommandation
 	}
 
 	private navigateToSearchPage(userInput: string) {

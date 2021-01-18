@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { AppSearchService } from 'src/app/services/app-search/app-search.service';
-import { IFeature } from 'src/app/services/app-search/interface.model';
+import { IFeature } from 'src/app/services/app-search/model/interface.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 import { FeatureClick, TaskAction } from 'src/app/services/metric/metrics.model';
@@ -190,7 +190,7 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 	}
 
 	onClickResultItem(feature: IFeature) {
-		this.searchService.handleAction(feature.action);
+		this.searchService.handleAction(feature);
 	}
 
 	onClickInput() {
@@ -223,14 +223,6 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		}
 
 		this.updateResultView(nextIdx);
-	}
-
-	onClickRecommandationItem(item) {
-		// to do, navigate search page and search the recommanded item
-	}
-
-	onSearchInputChange() {
-		// to do, update recommandation items
 	}
 
 	ngOnDestroy() {

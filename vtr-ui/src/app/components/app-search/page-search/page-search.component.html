@@ -14,7 +14,7 @@
 
 					<!-- search input -->
 					<input type="text" #searchInput [placeholder]="searchTips" id="search-page-div-search-input" class="search-input" maxlength="30"
-						(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput"
+						[(ngModel)]="userInput"
 						(keydown.enter)="onClickSearchBtn(enterSearchEvent)" (click)="onClickInput()"/>
 
 					<!-- search button -->
@@ -42,17 +42,6 @@
 
 				<div class="row flex-all-center offline-tips" id="search-page-div-offline-tips" >
 					App Search is unavailable when network is disconnected at present
-				</div>
-			</div>
-
-
-			<!--loading indicator-->
-			<div class="loading-indicator" *ngIf="!loadedCompleted">
-				<div class="row flex-all-center loading-animation">
-					<div class="cycle"></div>
-				</div>
-				<div class="row flex-all-center loading-tips">
-					Please wait while we check your device for available settings
 				</div>
 			</div>
 
@@ -99,7 +88,7 @@
 								{{resultItem.featureName}}
 							</div>
 
-							<div class="feature-category col col-4 text-two-ellipsis"> {{resultItem.category}}</div>
+							<div class="feature-category col col-4 text-two-ellipsis"> {{resultItem.categoryName}}</div>
 						</div>
 
 						<!-- feature icon -->

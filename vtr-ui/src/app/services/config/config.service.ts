@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import cloneDeep from 'lodash/cloneDeep';
-import { menuItemsGaming, menuItemsArm, menuItems, betaItem } from 'src/assets/menu/menu.json';
+import { menuConfig } from 'src/assets/menu/menu';
 import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { BetaService, BetaStatus } from '../beta/beta.service';
@@ -53,12 +53,12 @@ interface SecurityMenuCondition {
 export class ConfigService {
 	appBrand = 'Lenovo';
 	appName = 'Vantage';
-	menuItemsGaming: MenuItem[] = menuItemsGaming;
-	menuItemsArm: MenuItem[] = menuItemsArm;
-	menuItems: MenuItem[] = menuItems;
+	menuItemsGaming: MenuItem[] = menuConfig.menuItemsGaming;
+	menuItemsArm: MenuItem[] = menuConfig.menuItemsArm;
+	menuItems: MenuItem[] = menuConfig.menuItems;
 	menu: MenuItem[] = [];
 	activeSegment: string;
-	betaItem = betaItem;
+	betaItem = menuConfig.betaItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
 	wifiSecurity: WifiSecurity;
@@ -102,6 +102,7 @@ export class ConfigService {
 					this.onNotification(notification);
 				}
 			);
+
 			this.showNewFeatureTipsWithMenuItems();
 		});
 	}
@@ -214,15 +215,11 @@ export class ConfigService {
 				item.hide = false;
 			}
 		});
+
 	}
 
 	private async canShowSearch() {
-		try {
-			const result = await this.hypSettings.getFeatureSetting('AppSearch');
-			return result?.toString().toLowerCase() === 'true';
-		} catch { }
-
-		return false;
+		return await this.appSearchService.isAvailabe();
 	}
 
 	private async initializeAppSearchItem(menu: any) {
