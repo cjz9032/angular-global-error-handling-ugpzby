@@ -13,7 +13,7 @@ export class FeatureApplicableDetections {
 		// dashboard
 		{
 			featureId: FeatureIds.Dashboard.pageId,
-			isApplicable: () => {
+			isApplicable: async () => {
 				return this.isDashboardApplicable();
 			}
 		}
@@ -23,8 +23,8 @@ export class FeatureApplicableDetections {
 		this.detectionFuncMap = mapValues(keyBy(this.detectionFuncList, 'featureId'), 'isApplicable');
 	}
 
-	public isFeatureApplicable(featureId: string) {
-		return this.detectionFuncMap[featureId]?.();
+	public async isFeatureApplicable(featureId: string) {
+		return await this.detectionFuncMap[featureId]?.();
 	}
 
 	private isDashboardApplicable() {

@@ -9,8 +9,7 @@ import { featureSource } from './model/features.model';
 import {
 	IFeature,
 	INavigationAction,
-	IProtocolAction,
-	IApplicableDetector,
+	IProtocolAction
 } from './model/interface.model';
 import { SearchEngineWraper } from './search-engine/search-engine-wraper';
 import { LoggerService } from '../logger/logger.service';
@@ -77,103 +76,6 @@ export class AppSearchService implements OnDestroy {
 			.search(userInput)
 			?.map((feature) => Object.assign({}, this.searchContext[feature.item.id]));
 		return resultList || [];
-	}
-
-	public async registerByFeatureId(registerParamList: IApplicableDetector[]) {
-		if (!(registerParamList?.length > 0) || !this.isAvailabe()) {
-			return;
-		}
-
-		await this.loadAsync();
-
-		registerParamList.forEach((registerParam) => {
-			var feature = this.candidateFeatureMap[registerParam.featureId];
-			if (!feature) {
-				this.logger.info(
-					`provided invalid featureId when registering a feature: ${JSON.stringify(
-						registerParam
-					)}`
-				);
-				return;
-			}
-
-			if (registerParam.isApplicable && typeof registerParam.isApplicable != 'function') {
-				this.logger.info(
-					`provided invalid detection function when registering a feature: ${JSON.stringify(
-						registerParam
-					)}`
-				);
-				return;
-			}
-
-			if (!registerParam.isApplicable || registerParam.isApplicable()) {
-				this.searchContext[feature.id] = feature;
-			}
-		});
-
-		if (!this.searchEngine) {
-			this.searchEngine = new SearchEngineWraper();
-		}
-
-		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
-	}
-
-	public async registerByFeatures(featureList: IFeature[]) {
-		if (!(featureList?.length > 0) || !this.available()) {
-			return;
-		}
-
-		await this.loadAsync();
-
-		featureList.forEach((feature) => {
-			if (feature.isApplicable && typeof feature.isApplicable != 'function') {
-				this.logger.info(
-					`provided invalid detection function when registering a feature: ${JSON.stringify(
-						feature
-					)}`
-				);
-				return;
-			}
-
-			if (!feature.isApplicable || feature.isApplicable()) {
-				this.searchContext[feature.id] = feature;
-			}
-
-			feature.isApplicable = null;
-		});
-
-		this.addFeaturesToSearchContext(featureList);
-	}
-
-	public unRegisterByFeatureId(featureIds: string | string[]) {
-		let featureIdList;
-		if (featureIds as string) {
-			featureIdList = [featureIds];
-		} else {
-			featureIdList = featureIds as string[];
-		}
-
-		featureIdList.forEach((featureId) => {
-			delete this.searchContext[featureId];
-		});
-
-		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
-	}
-
-	public unRegisterByCategoryId(categoryId: string) {
-		const featureList = Object.values(this.searchContext).filter(
-			(feature) => (feature as IFeature).categoryId === categoryId
-		);
-
-		if (featureList.length == 0) {
-			return;
-		}
-
-		featureList.forEach((item) => {
-			const feature = item as IFeature;
-			delete this.searchContext[feature.id];
-		});
-		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
 	}
 
 	public handleAction(feature: IFeature) {
@@ -295,56 +197,44 @@ export class AppSearchService implements OnDestroy {
 			this.logger.info(`waringing: duplicate feature loading-1`);
 			return;
 		}
-
 		this.featureLoad = true;
 
 		featureSource.forEach((sourceItem) => {
-			const nameKey = sourceItem.featureName || `${sourceItem.id}.featureName`;
-			const categoryKey = sourceItem.categoryName || `${sourceItem.categoryId}.categoryName`;
-			const highRelevantKeywordsKey =
-				sourceItem.highRelevantKeywords || `${sourceItem.id}.highRelevantKeywords`;
-			const lowRelevantKeywordsKey =
-				sourceItem.lowRelevantKeywords || `${sourceItem.id}.lowRelevantKeywords`;
-
-			const feature: IFeature = Object.assign(sourceItem, {
-				featureName: this.translate.instant(nameKey),
-				categoryName: this.translate.instant(categoryKey),
-				highRelevantKeywords: this.translate.instant(highRelevantKeywordsKey),
-				lowRelevantKeywords: this.translate.instant(lowRelevantKeywordsKey),
-			});
-
+			const feature = this.mapFeatureSourceToFeature(sourceItem as IFeature);
 			if (!feature.id || !feature.categoryId) {
-				this.logger.error(
-					`invalid feature definition, feature.id:${feature.id} || categoryId: ${feature.categoryId}`
-				);
+				this.logger.error(`invalid feature source ${JSON.stringify(sourceItem)}`);
 				return;
 			}
 
 			this.candidateFeatureMap[feature.id] = feature;
-			if (this.applicableDetections.isFeatureApplicable(feature.id)) {
+		});
+
+		for (let item of Object.values(this.candidateFeatureMap)) {
+			const feature = item as IFeature;
+			const available = await this.applicableDetections.isFeatureApplicable(feature.id);
+			if (available) {
 				this.searchContext[feature.id] = feature;
 			}
-
-			this.searchEngine.updateSearchContext(Object.values(this.searchContext));
-		});
-	}
-
-	private addFeaturesToSearchContext(featureList: IFeature[]) {
-		featureList.forEach((feature) => {
-			if (!feature.id || !feature.categoryId) {
-				this.logger.error(
-					`invalid feature definition, feature.id:${feature.id} || categoryId: ${feature.categoryId}`
-				);
-				return;
-			}
-
-			this.searchContext[feature.id] = feature;
-		});
-
-		if (!this.searchEngine) {
-			this.searchEngine = new SearchEngineWraper();
 		}
 
 		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
+	}
+
+	private mapFeatureSourceToFeature(sourceItem: IFeature): IFeature {
+		const nameKey = sourceItem.featureName || `${sourceItem.id}.featureName`;
+		const categoryKey = sourceItem.categoryName || `${sourceItem.categoryId}.categoryName`;
+		const highRelevantKeywordsKey =
+			sourceItem.highRelevantKeywords || `${sourceItem.id}.highRelevantKeywords`;
+		const lowRelevantKeywordsKey =
+			sourceItem.lowRelevantKeywords || `${sourceItem.id}.lowRelevantKeywords`;
+
+		const feature: IFeature = Object.assign(sourceItem, {
+			featureName: this.translate.instant(nameKey),
+			categoryName: this.translate.instant(categoryKey),
+			highRelevantKeywords: this.translate.instant(highRelevantKeywordsKey),
+			lowRelevantKeywords: this.translate.instant(lowRelevantKeywordsKey),
+		});
+
+		return feature;
 	}
 }

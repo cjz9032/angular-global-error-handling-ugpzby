@@ -14,7 +14,7 @@ export interface ICustomAction {
 
 export interface IApplicableDetector {
 	featureId: string;
-	isApplicable: () => boolean;
+	isApplicable: () => Promise<boolean>;
 }
 
 export interface IFeature {
@@ -26,5 +26,5 @@ export interface IFeature {
 	lowRelevantKeywords: string;
 	icon: any; // should be string array like ['fal', 'gem']
 	action: INavigationAction | IProtocolAction | ICustomAction;
-	isApplicable?: () => boolean;
+	isApplicable?: () => Promise<boolean>;
 }
