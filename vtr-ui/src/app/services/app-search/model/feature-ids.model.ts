@@ -1,94 +1,100 @@
-export namespace AppSearch {
-	export namespace FeatureIds {
-		export class Dashboard {
+export class AppSearch {
+	static FeatureIds = class {
+		static Dashboard = class {
 			static readonly categoryId = 'appSearch.features.dashboard';
-			static readonly pageId = `${Dashboard.categoryId}.page`;
-		}
-		export class MyDevice {
+			static readonly pageId = `${AppSearch.FeatureIds.Audio.categoryId}.page`;
+		};
+
+		static MyDevice = class {
 			static readonly categoryId = 'appSearch.features.myDevice';
-			static readonly pageId = `${MyDevice.categoryId}.page`;
-		}
-		export class SystemUpdate {
+			static readonly pageId = `${AppSearch.FeatureIds.MyDevice.categoryId}.page`;
+		};
+
+		static SystemUpdate = class {
 			static readonly categoryId = 'appSearch.features.systemUpdate';
-			static readonly pageId = `${SystemUpdate.categoryId}.page`;
-		}
-		export class MySecurity {
+			static readonly pageId = `${AppSearch.FeatureIds.SystemUpdate.categoryId}.page`;
+		};
+
+		static MySecurity = class {
 			static readonly categoryId = 'appSearch.features.mySecurity';
-			static readonly pageId = `${MySecurity.categoryId}.page`;
-		}
-		export class SmartPerformance {
+			static readonly pageId = `${AppSearch.FeatureIds.MySecurity.categoryId}.page`;
+		};
+
+		static SmartPerformance = class {
 			static readonly categoryId = 'appSearch.features.smartPerformance';
-			static readonly pageId = `${SmartPerformance.categoryId}.page`;
-		}
-		export class HardwareScan {
+			static readonly pageId = `${AppSearch.FeatureIds.SmartPerformance.categoryId}.page`;
+		};
+
+		static HardwareScan = class {
 			static readonly categoryId = 'appSearch.features.hardwareScan';
-			static readonly pageId = `${HardwareScan.categoryId}.page`;
-		}
-		export class Power {
+			static readonly pageId = `${AppSearch.FeatureIds.HardwareScan.categoryId}.page`;
+		};
+
+		static Power = class {
 			static readonly categoryId = 'appSearch.features.power';
-			static readonly batteryInformationId = `${Power.categoryId}.batteryInformation`;
-			static readonly batteryDetailsId = `${Power.categoryId}.batteryDetails`;
-			static readonly smartStandbyId = `${Power.categoryId}.smartStandby`;
-			static readonly alwaysOnUSBId = `${Power.categoryId}.alwaysOnUSB`;
-			static readonly batteryChargeThresholdId = `${Power.categoryId}.batteryChargeThreshold`;
-			static readonly intelligentCoolingId = `${Power.categoryId}.intelligentCooling`;
-			static readonly dynamicThermalControlId = `${Power.categoryId}.dynamicThermalControl`;
-			static readonly easyResumeId = `${Power.categoryId}.easyResume`;
-			static readonly rapidChargeId = `${Power.categoryId}.rapidCharge`;
-			static readonly vantageToolbarId = `${Power.categoryId}.vantageToolbar`;
-		}
+			static readonly batteryInformationId = `${AppSearch.FeatureIds.Power.categoryId}.batteryInformation`;
+			static readonly batteryDetailsId = `${AppSearch.FeatureIds.Power.categoryId}.batteryDetails`;
+			static readonly smartStandbyId = `${AppSearch.FeatureIds.Power.categoryId}.smartStandby`;
+			static readonly alwaysOnUSBId = `${AppSearch.FeatureIds.Power.categoryId}.alwaysOnUSB`;
+			static readonly batteryChargeThresholdId = `${AppSearch.FeatureIds.Power.categoryId}.batteryChargeThreshold`;
+			static readonly intelligentCoolingId = `${AppSearch.FeatureIds.Power.categoryId}.intelligentCooling`;
+			static readonly dynamicThermalControlId = `${AppSearch.FeatureIds.Power.categoryId}.dynamicThermalControl`;
+			static readonly easyResumeId = `${AppSearch.FeatureIds.Power.categoryId}.easyResume`;
+			static readonly rapidChargeId = `${AppSearch.FeatureIds.Power.categoryId}.rapidCharge`;
+			static readonly vantageToolbarId = `${AppSearch.FeatureIds.Power.categoryId}.vantageToolbar`;
+		};
 
-		export class CameraAndDisplay {
+		static CameraAndDisplay = class {
 			static readonly categoryId = 'appSearch.features.cameraAndDisplay';
-			static readonly cameraPrivacyModeId = `${CameraAndDisplay.categoryId}.cameraPrivacyMode`;
-			static readonly privacyGuardId = `${CameraAndDisplay.categoryId}.privacyGuard`;
-			static readonly eyeCareModeId = `${CameraAndDisplay.categoryId}.eyeCareMode`;
-			static readonly cameraSettingsId = `${CameraAndDisplay.categoryId}.cameraSettings`;
-			static readonly cameraBackgroundBlurId = `${CameraAndDisplay.categoryId}.cameraBackgroundBlur`;
-		}
+			static readonly cameraPrivacyModeId = `${AppSearch.FeatureIds.CameraAndDisplay.categoryId}.cameraPrivacyMode`;
+			static readonly privacyGuardId = `${AppSearch.FeatureIds.CameraAndDisplay.categoryId}.privacyGuard`;
+			static readonly eyeCareModeId = `${AppSearch.FeatureIds.CameraAndDisplay.categoryId}.eyeCareMode`;
+			static readonly cameraSettingsId = `${AppSearch.FeatureIds.CameraAndDisplay.categoryId}.cameraSettings`;
+			static readonly cameraBackgroundBlurId = `${AppSearch.FeatureIds.CameraAndDisplay.categoryId}.cameraBackgroundBlur`;
+		};
 
-		export class Audio {
+		static Audio = class {
 			static readonly categoryId = 'appSearch.features.audio';
-			static readonly dolbyAudioId = `${Audio.categoryId}.dolbyAudio`;
-			static readonly microphoneSettingsId = `${Audio.categoryId}.microphoneSettings`;
-			static readonly automaticOptimizationForECourseId = `${Audio.categoryId}.automaticOptimizationForECourse`;
-		}
+			static readonly dolbyAudioId = `${AppSearch.FeatureIds.Audio.categoryId}.dolbyAudio`;
+			static readonly microphoneSettingsId = `${AppSearch.FeatureIds.Audio.categoryId}.microphoneSettings`;
+			static readonly automaticOptimizationForECourseId = `${AppSearch.FeatureIds.Audio.categoryId}.automaticOptimizationForECourse`;
+		};
 
-		export class InputAccessories {
+		static InputAccessories = class {
 			static readonly categoryId = 'appSearch.features.inputAccessories';
-			static readonly touchPadSettingsId = `${InputAccessories.categoryId}.touchPadSettings`;
-			static readonly trackPointSettingsId = `${InputAccessories.categoryId}.trackPointSettings`;
-			static readonly keyboardBacklightId = `${InputAccessories.categoryId}.keyboardBacklight`;
-			static readonly smartKeyboardBacklightId = `${InputAccessories.categoryId}.smartKeyboardBacklight`;
-			static readonly hiddenKeyboardFunctionsId = `${InputAccessories.categoryId}.hiddenKeyboardFunctions`;
-			static readonly voIPHotkeyFunctionId = `${InputAccessories.categoryId}.voIPHotkeyFunction`;
-			static readonly topRowKeyFunctionsId = `${InputAccessories.categoryId}.topRowKeyFunctions`;
-			static readonly userDefinedKeyId = `${InputAccessories.categoryId}.userDefinedKey`;
-			static readonly fnAndCtrlKeySwapId = `${InputAccessories.categoryId}.fnAndCtrlKeySwap`;
-		}
+			static readonly touchPadSettingsId = `${AppSearch.FeatureIds.InputAccessories.categoryId}.touchPadSettings`;
+			static readonly trackPointSettingsId = `${AppSearch.FeatureIds.InputAccessories.categoryId}.trackPointSettings`;
+			static readonly keyboardBacklightId = `${AppSearch.FeatureIds.InputAccessories.categoryId}.keyboardBacklight`;
+			static readonly smartKeyboardBacklightId = `${AppSearch.FeatureIds.InputAccessories.categoryId}.smartKeyboardBacklight`;
+			static readonly hiddenKeyboardFunctionsId = `${AppSearch.FeatureIds.InputAccessories.categoryId}.hiddenKeyboardFunctions`;
+			static readonly voIPHotkeyFunctionId = `${AppSearch.FeatureIds.InputAccessories.categoryId}.voIPHotkeyFunction`;
+			static readonly topRowKeyFunctionsId = `${AppSearch.FeatureIds.InputAccessories.categoryId}.topRowKeyFunctions`;
+			static readonly userDefinedKeyId = `${AppSearch.FeatureIds.InputAccessories.categoryId}.userDefinedKey`;
+			static readonly fnAndCtrlKeySwapId = `${AppSearch.FeatureIds.InputAccessories.categoryId}.fnAndCtrlKeySwap`;
+		};
 
-		export class SmartAssist {
+		static SmartAssist = class {
 			static readonly categoryId = 'appSearch.features.smartAssist';
-			static readonly activeProtectionSystemId = `${SmartAssist}.activeProtectionSystem`;
-			static readonly intelligentSensingId = `${SmartAssist}.intelligentSensing`;
-			static readonly zeroTouchLoginId = `${SmartAssist}.zeroTouchLogin`;
-			static readonly zeroTouchLockId = `${SmartAssist}.zeroTouchLock`;
-			static readonly zeroTouchVideoPlaybackId = `${SmartAssist}.zeroTouchVideoPlayback`;
-			static readonly videoResolutionUpscalingSRId = `${SmartAssist}.videoResolutionUpscalingSR`;
-		}
-	}
+			static readonly activeProtectionSystemId = `${AppSearch.FeatureIds.SmartAssist.categoryId}.activeProtectionSystem`;
+			static readonly intelligentSensingId = `${AppSearch.FeatureIds.SmartAssist.categoryId}.intelligentSensing`;
+			static readonly zeroTouchLoginId = `${AppSearch.FeatureIds.SmartAssist.categoryId}.zeroTouchLogin`;
+			static readonly zeroTouchLockId = `${AppSearch.FeatureIds.SmartAssist.categoryId}.zeroTouchLock`;
+			static readonly zeroTouchVideoPlaybackId = `${AppSearch.FeatureIds.SmartAssist.categoryId}.zeroTouchVideoPlayback`;
+			static readonly videoResolutionUpscalingSRId = `${AppSearch.FeatureIds.SmartAssist.categoryId}.videoResolutionUpscalingSR`;
+		};
+	};
 
-	export class LocaleResourcePath {
-		static readonly dashboard = FeatureIds.Dashboard.categoryId;
-		static readonly myDevice = FeatureIds.MyDevice.categoryId;
-		static readonly systemUpdate = FeatureIds.SystemUpdate.categoryId;
-		static readonly mySecurity = FeatureIds.MySecurity.categoryId;
-		static readonly smartPerformance = FeatureIds.SmartPerformance.categoryId;
-		static readonly hardwareScan = FeatureIds.HardwareScan.categoryId;
-		static readonly power = FeatureIds.Power.categoryId;
-		static readonly cameraAndDisplay = FeatureIds.CameraAndDisplay.categoryId;
-		static readonly audio = FeatureIds.Audio.categoryId;
-		static readonly inputAccessories = FeatureIds.InputAccessories.categoryId;
-		static readonly smartAssist = FeatureIds.SmartAssist.categoryId;
-	}
+	static LocaleResourcePath = class {
+		static readonly dashboard = AppSearch.FeatureIds.Dashboard.categoryId;
+		static readonly myDevice = AppSearch.FeatureIds.MyDevice.categoryId;
+		static readonly systemUpdate = AppSearch.FeatureIds.SystemUpdate.categoryId;
+		static readonly mySecurity = AppSearch.FeatureIds.MySecurity.categoryId;
+		static readonly smartPerformance = AppSearch.FeatureIds.SmartPerformance.categoryId;
+		static readonly hardwareScan = AppSearch.FeatureIds.HardwareScan.categoryId;
+		static readonly power = AppSearch.FeatureIds.Power.categoryId;
+		static readonly cameraAndDisplay = AppSearch.FeatureIds.CameraAndDisplay.categoryId;
+		static readonly audio = AppSearch.FeatureIds.Audio.categoryId;
+		static readonly inputAccessories = AppSearch.FeatureIds.InputAccessories.categoryId;
+		static readonly smartAssist = AppSearch.FeatureIds.SmartAssist.categoryId;
+	};
 }
