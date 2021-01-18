@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
-import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
 import { faTimes } from '@fortawesome/pro-light-svg-icons/faTimes';
@@ -29,7 +28,6 @@ import { faGem } from '@fortawesome/pro-light-svg-icons/faGem';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { SearchDropdownComponent } from 'src/app/components/app-search/dropdown-search/dropdown-search.component';
-import { SearchTipsComponent } from 'src/app/components/app-search/search-tips/search-tips.component';
 import { PageSearchComponent } from 'src/app/components/app-search/page-search/page-search.component';
 import { CommonUiModule } from '../common/common-ui.module';
 import { CommonWidgetModule } from '../common/common-widget.module';
@@ -39,7 +37,7 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 import { AppSearchRoutingModule } from './app-search-routing.module';
 
 @NgModule({
-	declarations: [SearchDropdownComponent, SearchTipsComponent, PageSearchComponent],
+	declarations: [SearchDropdownComponent, PageSearchComponent],
 	imports: [
 		MetricsModule,
 		AppSearchRoutingModule,
@@ -53,7 +51,7 @@ import { AppSearchRoutingModule } from './app-search-routing.module';
 		PageLayoutModule,
 		FontAwesomeModule,
 	],
-	exports: [SearchDropdownComponent, SearchTipsComponent, PageSearchComponent],
+	exports: [SearchDropdownComponent, PageSearchComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class AppSearchModule {

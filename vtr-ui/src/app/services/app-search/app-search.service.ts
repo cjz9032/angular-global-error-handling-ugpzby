@@ -5,131 +5,217 @@ import { Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { CommonService } from 'src/app/services/common/common.service';
-import { featureSource } from './features.model';
-import { IFeature, IFeatureAction, INavigationAction, SearchActionType } from './interface.model';
-import { SearchEngineWraper } from './search-engine-wraper';
-import find from 'lodash/find';
+import { featureSource } from './model/features.model';
+import {
+	IFeature,
+	INavigationAction,
+	IProtocolAction,
+	IAvailableDetection,
+} from './model/interface.model';
+import { SearchEngineWraper } from './search-engine/search-engine-wraper';
 import { LoggerService } from '../logger/logger.service';
+import { DeviceService } from '../device/device.service';
+import { HypothesisService } from '../hypothesis/hypothesis.service';
+import { FeatureApplicableDetections } from './feature-applicable-detections';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class AppSearchService implements OnDestroy {
 	private featureLoad = false;
-	private featureMap = {};
+	private candidateFeatureMap = {};
 	private searchContext = {};
 	private menuRouteMap = {};
 	private subscription: Subscription;
 	private searchEngine: SearchEngineWraper;
+	private available;
 	constructor(
 		private translate: TranslateService,
 		private router: Router,
 		private commonService: CommonService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private deviceService: DeviceService,
+		private hypService: HypothesisService,
+		private applicableDetections: FeatureApplicableDetections
 	) {
-		this.subscription = this.commonService.notification.subscribe(
-			(notification: AppNotification) => {
-				this.onNotification(notification);
+		(async () => {
+			const available = await this.isAvailabe();
+			if (available) {
+				this.subscription = this.commonService.notification.subscribe(
+					(notification: AppNotification) => {
+						this.onNotification(notification);
+					}
+				);
+
+				this.searchEngine = new SearchEngineWraper();
+				this.loadAsync();
 			}
-		);
+		})();
+	}
+
+	public async isAvailabe() {
+		if (this.available != null) {
+			return this.available;
+		}
+
+		try {
+			const result = await this.hypService.getFeatureSetting('AppSearch');
+			this.available = result?.toString().toLowerCase() === 'true';
+		} catch {
+			this.available = false;
+		}
+
+		return this.available;
 	}
 
 	public ngOnDestroy() {
 		this.subscription?.unsubscribe();
 	}
 
-	public async load() {
-		if (this.featureLoad) {
-			this.logger.info(`waringing: duplicate feature loading-1`);
+	public search(userInput: string): Array<IFeature> {
+		const resultList = this.searchEngine
+			.search(userInput)
+			?.map((feature) => Object.assign({}, this.searchContext[feature.item.id]));
+		return resultList || [];
+	}
+
+	public async registerByFeatureId(registerParamList: IAvailableDetection[]) {
+		if (!(registerParamList?.length > 0) || !this.isAvailabe()) {
 			return;
 		}
 
-		// ensure that the translation resources has been loaded
-		await this.translate.get('appSearch').toPromise();
-		if (this.featureLoad) {
-			this.logger.info(`waringing: duplicate feature loading-2`);
-			return;
-		}
+		await this.loadAsync();
 
-		this.featureLoad = true;
-		this.searchEngine = new SearchEngineWraper();
-
-		const featureList = featureSource.map((feature) => {
-			const nameKey = feature.featureName || `${feature.id}.featureName`;
-			const categoryKey = feature.category || `${feature.categoryId}.category`;
-			feature.featureName = this.translate.instant(nameKey);
-			feature.category = this.translate.instant(categoryKey);
-			return feature;
-		});
-
-		// transfer feature list to feature map
-		featureList.forEach((feature) => {
-			if (!feature.id || !feature.categoryId) {
-				this.logger.error(
-					`invalid feature definition, feature.id:${feature.id} || categoryId: ${feature.categoryId}`
+		registerParamList.forEach((registerParam) => {
+			var feature = this.candidateFeatureMap[registerParam.featureId];
+			if (!feature) {
+				this.logger.info(
+					`provided invalid featureId when registering a feature: ${JSON.stringify(
+						registerParam
+					)}`
 				);
 				return;
 			}
 
-			this.featureMap[feature.id] = feature;
-			this.searchContext[feature.id] = {
-				id: feature.id,
-				featureName: feature.featureName,
-				highRelevantKeywords: this.translate.instant(`${feature.id}.highRelevantKeywords`),
-				lowRelevantKeywords: this.translate.instant(`${feature.id}.lowRelevantKeywords`),
-			};
+			if (registerParam.isAvailable && typeof registerParam.isAvailable != 'function') {
+				this.logger.info(
+					`provided invalid detection function when registering a feature: ${JSON.stringify(
+						registerParam
+					)}`
+				);
+				return;
+			}
+
+			if (!registerParam.isAvailable || registerParam.isAvailable()) {
+				this.searchContext[feature.id] = feature;
+			}
+		});
+
+		if (!this.searchEngine) {
+			this.searchEngine = new SearchEngineWraper();
+		}
+
+		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
+	}
+
+	public async registerByFeatures(featureList: IFeature[]) {
+		if (!(featureList?.length > 0) || !this.available()) {
+			return;
+		}
+
+		await this.loadAsync();
+
+		featureList.forEach((feature) => {
+			if (feature.isAvailable && typeof feature.isAvailable != 'function') {
+				this.logger.info(
+					`provided invalid detection function when registering a feature: ${JSON.stringify(
+						feature
+					)}`
+				);
+				return;
+			}
+
+			if (!feature.isAvailable || feature.isAvailable()) {
+				this.searchContext[feature.id] = feature;
+			}
+
+			feature.isAvailable = null;
+		});
+
+		this.addFeaturesToSearchContext(featureList);
+	}
+
+	public unRegisterByFeatureId(featureIds: string | string[]) {
+		let featureIdList;
+		if (featureIds as string) {
+			featureIdList = [featureIds];
+		} else {
+			featureIdList = featureIds as string[];
+		}
+
+		featureIdList.forEach((featureId) => {
+			delete this.searchContext[featureId];
 		});
 
 		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
 	}
 
-	public search(userInput: string): Array<IFeature> {
-		const searchedList = this.searchEngine.search(userInput);
-		return (
-			searchedList?.map((feature) => Object.assign({}, this.featureMap[feature.item.id])) ||
-			[]
+	public unRegisterByCategoryId(categoryId: string) {
+		const featureList = Object.values(this.searchContext).filter(
+			(feature) => (feature as IFeature).categoryId === categoryId
 		);
-	}
 
-	public register(feature: IFeature, keywords: string[]) {
-		this.featureMap[feature.id] = feature;
-		const translation = this.translate.instant('appSearch');
-		feature.featureName = translation[feature.id];
+		if (featureList.length == 0) {
+			return;
+		}
+
+		featureList.forEach((item) => {
+			const feature = item as IFeature;
+			delete this.searchContext[feature.id];
+		});
 		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
 	}
 
-	public unRegister(featureId: string) {
-		// todo
+	public handleAction(feature: IFeature) {
+		const action: any = feature.action;
+		if (action?.route || action?.menuId) {
+			this.handleNavigateAction(feature.action as INavigationAction);
+		} else if (action?.url) {
+			this.handleProtocolAction(feature.action as IProtocolAction);
+		} else if (typeof feature.action === 'function') {
+			feature.action(feature);
+		} else {
+			this.logger.info(`invalid protocol action: ${JSON.stringify(feature)}`);
+		}
 	}
 
-	public handleAction(featureAction: IFeatureAction) {
-		if (featureAction.type === SearchActionType.navigation) {
-			let route = '/' + this.actionToRoutePath(featureAction as INavigationAction);
-
-			if (route.startsWith('/user')) {
-				// not support user route at present
-				this.router.navigateByUrl('/');
-			} else {
-				this.router.navigateByUrl(route);
-			}
+	private handleNavigateAction(featureAction: INavigationAction) {
+		let route = '/' + this.actionToRoutePath(featureAction);
+		if (route.startsWith('/user')) {
+			// not support user route at present
+			this.router.navigateByUrl('/');
+		} else {
+			this.router.navigateByUrl(route);
 		}
+	}
+
+	private handleProtocolAction(featureAction: IProtocolAction) {
+		const uri = featureAction.url;
+		if (!uri) {
+			this.logger.info(`invalid protocol action: ${JSON.stringify(featureAction)}`);
+			return;
+		}
+		this.deviceService.launchUri(uri);
 	}
 
 	private actionToRoutePath(navAction: INavigationAction) {
-		let route = '';
-		if (navAction.menuId) {
-			if (typeof navAction.menuId === 'string') {
-				route = this.menuRouteMap[navAction.menuId] || '';
-			} else if (navAction.menuId.length > 0) {
-				const menuId = find(navAction.menuId, (menuId) =>
-					Boolean(this.menuRouteMap[menuId])
-				);
-				route = this.menuRouteMap[menuId] || '';
-			}
+		let route = navAction.route?.trim() || '';
+		if (route) {
+			return route;
 		}
 
-		if (!route && navAction.route) {
-			route = navAction.route.trim();
+		if (navAction.menuId) {
+			route = this.menuRouteMap[navAction.menuId] || '';
 		}
 
 		return route;
@@ -138,7 +224,6 @@ export class AppSearchService implements OnDestroy {
 	private onNotification(notification: AppNotification) {
 		if (notification.type === MenuItemEvent.MenuItemChange) {
 			// if notification.payLoad contains app-search and is available and is not hide
-			this.load();
 			this.updateRouteMap(notification.payload);
 		}
 	}
@@ -196,5 +281,70 @@ export class AppSearchService implements OnDestroy {
 
 		// For features in user menu, need seperate logic to adjudge the feature availability.
 		return true;
+	}
+
+	private async loadAsync() {
+		if (!this.featureLoad) {
+			await this.translate.get('appSearch').toPromise();
+			this.load();
+		}
+	}
+
+	private async load() {
+		if (this.featureLoad) {
+			this.logger.info(`waringing: duplicate feature loading-1`);
+			return;
+		}
+
+		this.featureLoad = true;
+
+		featureSource.forEach((sourceItem) => {
+			const nameKey = sourceItem.featureName || `${sourceItem.id}.featureName`;
+			const categoryKey = sourceItem.categoryName || `${sourceItem.categoryId}.categoryName`;
+			const highRelevantKeywordsKey =
+				sourceItem.highRelevantKeywords || `${sourceItem.id}.highRelevantKeywords`;
+			const lowRelevantKeywordsKey =
+				sourceItem.lowRelevantKeywords || `${sourceItem.id}.lowRelevantKeywords`;
+
+			const feature: IFeature = Object.assign(sourceItem, {
+				featureName: this.translate.instant(nameKey),
+				categoryName: this.translate.instant(categoryKey),
+				highRelevantKeywords: this.translate.instant(highRelevantKeywordsKey),
+				lowRelevantKeywords: this.translate.instant(lowRelevantKeywordsKey),
+			});
+
+			if (!feature.id || !feature.categoryId) {
+				this.logger.error(
+					`invalid feature definition, feature.id:${feature.id} || categoryId: ${feature.categoryId}`
+				);
+				return;
+			}
+
+			this.candidateFeatureMap[feature.id] = feature;
+			if (this.applicableDetections.isFeatureApplicable(feature.id)) {
+				this.searchContext[feature.id] = feature;
+			}
+
+			this.searchEngine.updateSearchContext(Object.values(this.searchContext));
+		});
+	}
+
+	private addFeaturesToSearchContext(featureList: IFeature[]) {
+		featureList.forEach((feature) => {
+			if (!feature.id || !feature.categoryId) {
+				this.logger.error(
+					`invalid feature definition, feature.id:${feature.id} || categoryId: ${feature.categoryId}`
+				);
+				return;
+			}
+
+			this.searchContext[feature.id] = feature;
+		});
+
+		if (!this.searchEngine) {
+			this.searchEngine = new SearchEngineWraper();
+		}
+
+		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
 	}
 }

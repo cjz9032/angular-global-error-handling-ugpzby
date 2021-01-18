@@ -7,27 +7,11 @@
 
 		<!-- user input-->
 		<input type="text" id="dropdown-div-search-input" #searchInput class="search-input" [placeholder]="searchTips" maxlength="30"
-			(ngModelChange)="onSearchInputChange()" [(ngModel)]="userInput" (keydown.enter)="onClickSearch($event, enterSearchEvent)" (click)="onInputClick($event)"/>
+		 [(ngModel)]="userInput" (keydown.enter)="onClickSearch($event, enterSearchEvent)" (click)="onInputClick($event)"/>
 
 		<!-- x button-->
 		<div class="clean-button" id="dropdown-div-clean-button" role="button" [class.active]="userInput" vtrMetrics metricsEvent="FeatureClick"
 			metricsParent="Dropdown.Search" metricsItem="cleanSearch" (click)="onCleanClick($event)">
 		</div>
-	</div>
-
-	<div class="dropdown-block mt-1" *ngIf="recommandedItems.length > 0">
-		<ul>
-			<li *ngFor="let recItem of recommandedItems" (click)="onClickRecommandationItem(recItem.name)" vtrMetrics
-				metricsEvent="FeatureClick" metricsParent="Dropdown.Search" [metricsItem]="recItem.id">
-				<!--recommandation item-->
-				<a href="javascript:;" class="item-block">
-					<div class="item-icon">
-						<fa-icon *ngIf="recItem.icon" [icon]="recItem.icon"></fa-icon>
-						<fa-icon *ngIf="!recItem.icon" [icon]="['fal', 'gem']"></fa-icon>
-					</div>
-					<span class="item-text">{{recItem.name}}</span>
-				</a>
-			</li>
-		</ul>
 	</div>
 </div>
