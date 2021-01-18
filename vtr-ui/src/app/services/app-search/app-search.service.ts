@@ -10,7 +10,7 @@ import {
 	IFeature,
 	INavigationAction,
 	IProtocolAction,
-	IAvailableDetection,
+	IApplicableDetector,
 } from './model/interface.model';
 import { SearchEngineWraper } from './search-engine/search-engine-wraper';
 import { LoggerService } from '../logger/logger.service';
@@ -79,7 +79,7 @@ export class AppSearchService implements OnDestroy {
 		return resultList || [];
 	}
 
-	public async registerByFeatureId(registerParamList: IAvailableDetection[]) {
+	public async registerByFeatureId(registerParamList: IApplicableDetector[]) {
 		if (!(registerParamList?.length > 0) || !this.isAvailabe()) {
 			return;
 		}
@@ -97,7 +97,7 @@ export class AppSearchService implements OnDestroy {
 				return;
 			}
 
-			if (registerParam.isAvailable && typeof registerParam.isAvailable != 'function') {
+			if (registerParam.isApplicable && typeof registerParam.isApplicable != 'function') {
 				this.logger.info(
 					`provided invalid detection function when registering a feature: ${JSON.stringify(
 						registerParam
@@ -106,7 +106,7 @@ export class AppSearchService implements OnDestroy {
 				return;
 			}
 
-			if (!registerParam.isAvailable || registerParam.isAvailable()) {
+			if (!registerParam.isApplicable || registerParam.isApplicable()) {
 				this.searchContext[feature.id] = feature;
 			}
 		});
@@ -126,7 +126,7 @@ export class AppSearchService implements OnDestroy {
 		await this.loadAsync();
 
 		featureList.forEach((feature) => {
-			if (feature.isAvailable && typeof feature.isAvailable != 'function') {
+			if (feature.isApplicable && typeof feature.isApplicable != 'function') {
 				this.logger.info(
 					`provided invalid detection function when registering a feature: ${JSON.stringify(
 						feature
@@ -135,11 +135,11 @@ export class AppSearchService implements OnDestroy {
 				return;
 			}
 
-			if (!feature.isAvailable || feature.isAvailable()) {
+			if (!feature.isApplicable || feature.isApplicable()) {
 				this.searchContext[feature.id] = feature;
 			}
 
-			feature.isAvailable = null;
+			feature.isApplicable = null;
 		});
 
 		this.addFeaturesToSearchContext(featureList);

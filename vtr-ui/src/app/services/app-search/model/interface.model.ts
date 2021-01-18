@@ -12,9 +12,9 @@ export interface ICustomAction {
 	(feature: IFeature): void;
 }
 
-export interface IAvailableDetection {
+export interface IApplicableDetector {
 	featureId: string;
-	isAvailable: () => boolean;
+	isApplicable: () => boolean;
 }
 
 export interface IFeature {
@@ -26,5 +26,5 @@ export interface IFeature {
 	lowRelevantKeywords: string;
 	icon: any; // should be string array like ['fal', 'gem']
 	action: INavigationAction | IProtocolAction | ICustomAction;
-	isAvailable?: () => boolean;
+	isApplicable?: () => boolean;
 }

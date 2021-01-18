@@ -24,8 +24,6 @@ import { NewFeatureTipService } from '../new-feature-tip/new-feature-tip.service
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { AppSearchService } from '../app-search/app-search.service';
-import { IFeature, IAvailableDetection } from '../app-search/model/interface.model';
-import { featureSource } from '../app-search/model/features.model';
 
 export interface MenuItem {
 	id: string;
