@@ -542,7 +542,7 @@ export class DashboardService {
 	}
 
 	public async isSUNeedPromote(): Promise<boolean> {
-		if (!this.configService.isSystemUpdateEnabled()) {
+		if (!this.systemUpdateService.isSystemUpdateEnabled()) {
 			return false;
 		}
 

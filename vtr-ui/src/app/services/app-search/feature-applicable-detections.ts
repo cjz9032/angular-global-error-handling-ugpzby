@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { keyBy, mapValues } from 'lodash';
 import { DeviceService } from '../device/device.service';
+import { SystemUpdateService } from '../system-update/system-update.service';
 import { AppSearch } from './model/feature-ids.model';
 import { IApplicableDetector as IApplicableDetector } from './model/interface.model';
 
@@ -15,9 +16,17 @@ export class FeatureApplicableDetections {
 			featureId: AppSearch.FeatureIds.Dashboard.pageId,
 			isApplicable: async () => this.isDashboardApplicable(),
 		},
+		// system update
+		{
+			featureId: AppSearch.FeatureIds.SystemUpdate.pageId,
+			isApplicable: async () => this.isSystemUpdateApplicable(),
+		},
 	];
 
-	constructor(private deviceService: DeviceService) {
+	constructor(
+		private deviceService: DeviceService,
+		private systemUpdateService: SystemUpdateService
+	) {
 		this.detectionFuncMap = mapValues(
 			keyBy(this.detectionFuncList, 'featureId'),
 			'isApplicable'
@@ -30,5 +39,9 @@ export class FeatureApplicableDetections {
 
 	private isDashboardApplicable() {
 		return !this.deviceService.isGaming;
+	}
+
+	private isSystemUpdateApplicable() {
+		return this.systemUpdateService.isSystemUpdateEnabled();
 	}
 }

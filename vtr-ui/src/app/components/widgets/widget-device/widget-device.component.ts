@@ -156,7 +156,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 		this.hwStatus[2] = disk;
 		this.updateDiskInfo();
 		let index = 0;
-		if (this.configService.isSystemUpdateEnabled()) {
+		if (this.systemUpdateService.isSystemUpdateEnabled()) {
 			const systemUpdate = new DeviceStatus();
 			systemUpdate.id = 'systemUpdate';
 			systemUpdate.title = this.translate.instant('device.myDevice.systemUpdate.title');
