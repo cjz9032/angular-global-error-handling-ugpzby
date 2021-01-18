@@ -86,7 +86,7 @@
 							</div>
 						</div>
 						<div class="col-xl-4 col-lg-12 col-md-4 col-sm-12 monitor-col right" vtrOutsideClick (clickOutside)="toggleHDs(true)">
-							<div class="monitor-section">
+							<div class="monitor-section" [ngClass]="{'monitor-section-align':hds.length<=2}">
 								<div class=" hds"
 									[ngClass]="{'expanded':showAllHDs,'onlyOne':hds.length===1}" (click)="toggleHDs()" (keydown.enter)="toggleHDs()" id="gaming_system_status_drivers_list"
 									[tabindex]="-1"  name="dropdown" role="combobox" [attr.aria-expanded]="showAllHDs" aria-haspopup="true">
@@ -132,7 +132,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="expand-icon" *ngIf="hds.length > 1" tabindex="1">
+									<div class="expand-icon" *ngIf="hds.length > 2" tabindex="1">
 											<fa-icon [icon]="['fas', 'chevron-down']"  id="gaming_system_hard disk_icon_expand" role="img"
 												aria-label="expand" [hidden]="showAllHDs || hds.length<=2">
 											</fa-icon>
