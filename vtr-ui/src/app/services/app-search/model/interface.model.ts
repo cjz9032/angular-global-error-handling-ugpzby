@@ -1,17 +1,12 @@
 export interface INavigationAction {
 	menuId?: string;
 	route?: string;
-	params?: object;
+	params?: Record<string, string>;
 }
 export class IProtocolAction {
 	url: string;
-	params?: object;
+	params?: Record<string, string>;
 }
-
-export interface ICustomAction {
-	(feature: IFeature): void;
-}
-
 export interface IApplicableDetector {
 	featureId: string;
 	isApplicable: () => Promise<boolean>;
@@ -25,6 +20,6 @@ export interface IFeature {
 	highRelevantKeywords: string;
 	lowRelevantKeywords: string;
 	icon: any; // should be string array like ['fal', 'gem']
-	action: INavigationAction | IProtocolAction | ICustomAction;
+	action: INavigationAction | IProtocolAction | ((feature: IFeature) => void);
 	isApplicable?: () => Promise<boolean>;
 }

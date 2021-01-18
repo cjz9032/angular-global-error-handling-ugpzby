@@ -6,11 +6,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { featureSource } from './model/features.model';
-import {
-	IFeature,
-	INavigationAction,
-	IProtocolAction
-} from './model/interface.model';
+import { IFeature, INavigationAction, IProtocolAction } from './model/interface.model';
 import { SearchEngineWraper } from './search-engine/search-engine-wraper';
 import { LoggerService } from '../logger/logger.service';
 import { DeviceService } from '../device/device.service';
@@ -92,7 +88,7 @@ export class AppSearchService implements OnDestroy {
 	}
 
 	private handleNavigateAction(featureAction: INavigationAction) {
-		let route = '/' + this.actionToRoutePath(featureAction);
+		const route = '/' + this.actionToRoutePath(featureAction);
 		if (route.startsWith('/user')) {
 			// not support user route at present
 			this.router.navigateByUrl('/');
@@ -209,7 +205,7 @@ export class AppSearchService implements OnDestroy {
 			this.candidateFeatureMap[feature.id] = feature;
 		});
 
-		for (let item of Object.values(this.candidateFeatureMap)) {
+		for (const item of Object.values(this.candidateFeatureMap)) {
 			const feature = item as IFeature;
 			const available = await this.applicableDetections.isFeatureApplicable(feature.id);
 			if (available) {
