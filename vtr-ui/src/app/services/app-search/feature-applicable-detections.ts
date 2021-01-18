@@ -13,14 +13,15 @@ export class FeatureApplicableDetections {
 		// dashboard
 		{
 			featureId: FeatureIds.Dashboard.pageId,
-			isApplicable: async () => {
-				return this.isDashboardApplicable();
-			}
-		}
+			isApplicable: async () => this.isDashboardApplicable(),
+		},
 	];
 
 	constructor(private deviceService: DeviceService) {
-		this.detectionFuncMap = mapValues(keyBy(this.detectionFuncList, 'featureId'), 'isApplicable');
+		this.detectionFuncMap = mapValues(
+			keyBy(this.detectionFuncList, 'featureId'),
+			'isApplicable'
+		);
 	}
 
 	public async isFeatureApplicable(featureId: string) {
