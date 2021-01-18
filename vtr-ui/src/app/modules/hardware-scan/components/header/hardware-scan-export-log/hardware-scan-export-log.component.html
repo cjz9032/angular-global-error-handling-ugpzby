@@ -1,5 +1,5 @@
-<mat-card 
-	class="export-options-card" 
+<mat-card
+	class="export-options-card"
 	[class.mat-elevation-z0]="!isOnExportLog"
 	[class.mat-elevation-z8]="isOnExportLog"
 	(mouseenter)="exportButtonSelected()"
@@ -16,7 +16,7 @@
 		imgIconSrc="assets/icons/hardware-scan/icon_hardware_export-log.svg"
 		metricsEvent="FeatureClick"
 		metricsParent="{{ metricsParent }}"
-		metricsItem="{{ metricsParent }}.ExportLog"		
+		metricsItem="{{ metricsParent }}.ExportLog"
 		(hyperlinkClick)="onExportClick()"
 		[label]="'hardwareScan.exportLog' | translate">
 	</vtr-ui-hyperlink-button>
@@ -38,5 +38,5 @@
 			{{ extension.toUpperCase() }}
 		</button>
 	</div>
-	
+
 </mat-card>
