@@ -16,6 +16,7 @@ import { HtmlTextPipe } from 'src/app/pipe/html-text/html-text.pipe';
 import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
 import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
 import { TranslateTokenByTokenPipe } from 'src/app/pipe/translate-token-by-token/translate-token-by-token.pipe';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
 	declarations: [
@@ -57,8 +58,8 @@ import { TranslateTokenByTokenPipe } from 'src/app/pipe/translate-token-by-token
 		TranslateTokenByTokenPipe,
 	],
 	imports: [SanitizeModule],
-	providers: [FormatLocaleDatePipe, FormatLocaleDateTimePipe, TranslateTokenByTokenPipe],
+	providers: [FormatLocaleDatePipe, FormatLocaleDateTimePipe, TranslateTokenByTokenPipe, CurrencyPipe],
 	entryComponents: [],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class CommonPipeModule {}
+export class CommonPipeModule { }

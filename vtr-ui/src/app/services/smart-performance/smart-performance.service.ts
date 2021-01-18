@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -34,13 +35,16 @@ export class SmartPerformanceService {
 	localPriceData: SPLocalPriceData;
 	isLocalPriceOnlineChecked = false;
 
+	ZeroDecimalPlaceCurrencyGEO = ['jp', 'kr', 'tw'];
+
 	constructor(
 		shellService: VantageShellService,
 		private deviceService: DeviceService,
 		private httpClient: HttpClient,
 		private localInfoService: LocalInfoService,
 		private localCacheService: LocalCacheService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private currencyPipe: CurrencyPipe
 	) {
 		this.shellSmartPerformance = shellService.getSmartPerformance();
 		if (this.shellSmartPerformance) {
@@ -247,12 +251,23 @@ export class SmartPerformanceService {
 
 	setLocalPriceData(yearlyPriceData: SPYearPrice, GEO: string) {
 		if (yearlyPriceData && yearlyPriceData.price !== 0) {
-			const mp = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
 			const yearlyPrice = yearlyPriceData.formatPrice;
 			const symbol = yearlyPriceData.symbol;
-			const monthlyPrice = isNaN(parseFloat(yearlyPrice.substr(0, 1)))
-				? symbol + mp
-				: mp + symbol;
+			const isPreSymbol = yearlyPrice.indexOf(symbol) === 0;
+			let monthlyPrice;
+			if (this.ZeroDecimalPlaceCurrencyGEO.includes(GEO)) {
+				const price = Math.ceil(yearlyPriceData.price / 12);
+				if (GEO === 'tw') {
+					monthlyPrice = isPreSymbol ? (symbol + price) : (price + symbol);
+				} else {
+					monthlyPrice = this.currencyPipe.transform(price, yearlyPriceData.isoCode);
+				}
+			}
+			else {
+				const mp = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
+				monthlyPrice = isPreSymbol ? (symbol + mp) : (mp + symbol);
+			}
+
 			this.localPriceData = { geo: GEO, yearlyPrice, monthlyPrice };
 			this.isShowPrice = true;
 			let localPrices: SPLocalPriceData[] = [];
@@ -273,9 +288,8 @@ export class SmartPerformanceService {
 	}
 
 	async getSubscriptionDataDetail(onSubscribed) {
-		let machineInfo;
 		let subscriptionData = [];
-		machineInfo = await this.deviceService.getMachineInfo();
+		const machineInfo = await this.deviceService.getMachineInfo();
 		const subscriptionDetails = await this.getPaymentDetails(machineInfo.serialnumber);
 		this.logger.info(
 			'smart-performance.service.getSubscriptionDataDetail',
@@ -300,9 +314,8 @@ export class SmartPerformanceService {
 	}
 
 	getExpiredStatus(releaseDate, lastItem, onSubscribed) {
-		let expiredDate;
 		const currentDate: any = new Date(lastItem.currentTime);
-		expiredDate = new Date(releaseDate);
+		const expiredDate = new Date(releaseDate);
 		if (expiredDate < currentDate) {
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.IsFreeFullFeatureEnabled,
