@@ -43,6 +43,13 @@ const routes: Routes = [
 			),
 	},
 	{
+		path: 'smb',
+		loadChildren: () =>
+			import('./smb/smb.module').then(
+				(m) => m.SmbModule
+			),
+	},
+	{
 		path: 'settings',
 		component: PageSettingsComponent,
 		data: {

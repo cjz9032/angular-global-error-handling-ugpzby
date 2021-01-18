@@ -801,6 +801,15 @@
 				"sub6": "Device Settings Details",
 				"sub7": "Device Settings"
 			},
+			"SMB":{
+				"title": "Productivity",
+				"sub1": "Meeting Experience",
+				"sub2": "Creator Centre",
+				"sub3": "Meeting manager",
+				"sub4": "Creator settings",
+				"sub5": "Easy rendering",
+				"sub6": "Color calibration"
+			},
 			"security": {
 				"title": "Security",
 				"sub1": "My security",
