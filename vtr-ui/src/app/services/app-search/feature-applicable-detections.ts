@@ -3,7 +3,7 @@ import { keyBy, mapValues } from 'lodash';
 import { DeviceService } from '../device/device.service';
 import { AppSearch } from './model/feature-ids.model';
 import { IApplicableDetector as IApplicableDetector } from './model/interface.model';
-import FeatureIds = AppSearch.FeatureIds;
+
 @Injectable({
 	providedIn: 'root',
 })
@@ -12,7 +12,7 @@ export class FeatureApplicableDetections {
 	private detectionFuncList: IApplicableDetector[] = [
 		// dashboard
 		{
-			featureId: FeatureIds.Dashboard.pageId,
+			featureId: AppSearch.FeatureIds.Dashboard.pageId,
 			isApplicable: async () => this.isDashboardApplicable(),
 		},
 	];
