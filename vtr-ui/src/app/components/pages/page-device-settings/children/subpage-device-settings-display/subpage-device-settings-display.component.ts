@@ -228,6 +228,7 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 		this.dataSource = new CameraDetail();
 		this.cameraFeatureAccess = new CameraFeatureAccess();
 		this.eyeCareDataSource = new EyeCareMode();
+		this.initDisplayColorTempFromCache();
 		this.initEyeCareModeFromCache();
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
@@ -293,32 +294,46 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 
 	async ngAfterViewInit() {
 		const machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
-		//apiCapability
-		Promise.all([
-			this.inWhiteList(),
-			this.displayService.initEyecaremodeSettings(true)
-		]).then(([isSupport, apiCapability]) => {
-			this.logger.info(`isSupport: ${isSupport};
-				Upstream apiCapability: ${apiCapability};
-				machineType: ${machineType};
-				isGaming: ${this.deviceService.isGaming};
-			`);
-			if (isSupport || (machineType !== 1 && !this.deviceService.isGaming && apiCapability)) {
-				this.initDisplayColorTempFromCache();
-				this.initEyeCareModeFromCache();
-				this.statusChangedLocationPermission();
-				this.initEyecaremodeSettings();
-				this.startEyeCareMonitor();
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.EyeCareModeResetStatus,
-					'false'
-				);
-				this.showECMReset = false;
-			} else {
-				this.showECMReset = true;
-				this.resetEyecaremodeAllSettings();
-			}
-		});
+
+		this.inWhiteList()
+			.then((isSupport) => {
+				if (isSupport) {
+					this.initDisplayColorTempFromCache();
+					this.initEyeCareModeFromCache();
+					this.statusChangedLocationPermission();
+					this.initEyecaremodeSettings();
+					this.startEyeCareMonitor();
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.EyeCareModeResetStatus,
+						'false'
+					);
+					this.showECMReset = false;
+				} else {
+					if (machineType === 1 || this.deviceService.isGaming) {
+						this.showECMReset = true;
+						this.resetEyecaremodeAllSettings();
+					} else {
+						this.displayService.initEyecaremodeSettings(true)
+							.then((apiCapability) => {
+								if (apiCapability) {
+									this.initDisplayColorTempFromCache();
+									this.initEyeCareModeFromCache();
+									this.statusChangedLocationPermission();
+									this.initEyecaremodeSettings();
+									this.startEyeCareMonitor();
+									this.localCacheService.setLocalCacheValue(
+										LocalStorageKey.EyeCareModeResetStatus,
+										'false'
+									);
+									this.showECMReset = false;
+								} else {
+									this.showECMReset = true;
+									this.resetEyecaremodeAllSettings();
+								}
+							});
+					}
+				}
+			});
 
 		this.initFeatures();
 	}
@@ -1389,6 +1404,18 @@ export class SubpageDeviceSettingsDisplayComponent implements OnInit, OnDestroy,
 			this.disableEyeCareMode = false;
 			this.disableEyeCareModeReset = false;
 			this.missingGraphicDriver = false;
+		}
+		// Disable eye care mode from toolbar will set daytimeColorTemperature to 6500k
+
+		if (this.isSet.isSetDaytimeColorTemperatureValue) {
+			this.isSet.isSetDaytimeColorTemperatureValue = false;
+		} else {
+			this.displayColorTempDataSource.current = +resetData.daytimeColorTemperature;
+			this.displayColorTempCache.current = +resetData.daytimeColorTemperature;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.DisplayColorTempCapability,
+				this.displayColorTempCache
+			);
 		}
 
 		this.eyeCareModeCache.sunsetToSunriseStatus = this.sunsetToSunriseModeStatus;
