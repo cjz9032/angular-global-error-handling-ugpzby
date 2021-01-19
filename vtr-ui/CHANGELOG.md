@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.11](https://bitbucket.tc.lenovo.com///compare/v1.10.10...v1.10.11) (2021-01-19)
+
+
+### Features
+
+* add SA and CHS config for appsearch ([881cd30](https://bitbucket.tc.lenovo.com///commit/881cd302bb6931c52477122fd4f2bf24e25f9372))
+* remove comments code ([fe43c38](https://bitbucket.tc.lenovo.com///commit/fe43c38cba21ce552c66ff0f33c0d27baff9d0c6))
+* use mat-dialog instead of ngb-modal ([1ef56b3](https://bitbucket.tc.lenovo.com///commit/1ef56b313d9a48af23509607d31633829699023f))
+* **Search:** VAN-25256 add applicable method for system update ([52f706b](https://bitbucket.tc.lenovo.com///commit/52f706b2c458cb1282762674ab18f9f4b2055921))
+* **Search:** VAN-25256 update comment ([61ee188](https://bitbucket.tc.lenovo.com///commit/61ee18894dc9f34fea59e7bde18e4e3d90230533))
+
+### [1.9.49](https://bitbucket.tc.lenovo.com///compare/v1.10.4...v1.9.49) (2021-01-07)
+
+### [1.9.48](https://bitbucket.tc.lenovo.com///compare/v1.9.47...v1.9.48) (2021-01-06)
+
+
+### Bug Fixes
+
+* **Overall:** remove internal url from prod code ([b194033](https://bitbucket.tc.lenovo.com///commit/b19403317abbfa953ba657a8df877abd8f233af9))
+* **performance:** update source loaded time ([4a6ca0e](https://bitbucket.tc.lenovo.com///commit/4a6ca0e013dfb125e65f740940c8fa4f7b25aa75))
+
+### [1.9.47](https://bitbucket.tc.lenovo.com///compare/v1.10.3...v1.9.47) (2021-01-06)
+
 ### [1.10.10](https://bitbucket.tc.lenovo.com///compare/v1.10.9...v1.10.10) (2021-01-18)
 
 ### [1.10.9](https://bitbucket.tc.lenovo.com///compare/v1.10.8...v1.10.9) (2021-01-15)
