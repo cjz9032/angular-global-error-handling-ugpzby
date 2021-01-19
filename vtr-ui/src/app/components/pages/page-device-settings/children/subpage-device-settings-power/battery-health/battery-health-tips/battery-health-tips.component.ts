@@ -40,19 +40,23 @@ export class BatteryHealthTipsComponent implements OnInit {
   getBatteryDetails() {
 	this.logger.info('BatteryTips: getBatteryDetails ==> start');
 	this.batteryHealthService.batteryInfo.subscribe((batteryInfo) => {
-		this.capability = batteryInfo.isSupportSmartBatteryV2;
 		this.tipLevel = batteryInfo.batteryHealthTip;
 		this.condition =  this.getTipsStr(this.tipLevel);
+		this.capability = batteryInfo.isSupportSmartBatteryV2 && this.condition !== ''
 		this.logger.info(
-			`BatteryLifespan: getBatteryHealth-lifespan  ==> currenttipLevel ${this.tipLevel}`
+			`BatteryLifespan: getBatteryHealth-lifespan  ==> currenttipLevel ${this.tipLevel}, condition ${this.condition }, capability ${this.capability }`
 		);
 	});
   }
 
   getTipsStr(index: number): string {
-	const val = "device.deviceSettings.power.batterySettings.batteryHealth.batteryTips.description." + this.tipsMap.get(index);
-	this.logger.info(`getTipsStr: ==> res ${val}`);
-	return val ? val : '';
-}
-
+	const mapVal = this.tipsMap.get(index);
+	if(mapVal === 'error') {
+		return '';
+	} else {
+		const val = "device.deviceSettings.power.batterySettings.batteryHealth.batteryTips.description." + mapVal;
+		this.logger.info(`getTipsStr: ==> res ${val}`);
+		return val ? val : '';
+	}
+  }
 }

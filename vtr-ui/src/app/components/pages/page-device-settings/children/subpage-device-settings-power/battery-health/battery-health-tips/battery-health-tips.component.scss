@@ -20,3 +20,10 @@
 	color: $grey_darker;
 	font-size: 14px;
 }
+:host-context(.is-gaming) {
+	$color: map-get($smart-battery-gaming-theme, color);
+	.battery-health-tips-title,
+	.battery-health-tips-desc {
+		color: map-get($color, default);
+	}
+}
