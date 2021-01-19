@@ -108,7 +108,23 @@ export const featureSource = [
 		},
 	},
 	{
+		id: AppSearch.FeatureIds.Power.acAdapterId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
+		},
+	},
+	{
 		id: AppSearch.FeatureIds.Power.alwaysOnUSBId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.Power.airplanePowerModeId,
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
@@ -124,7 +140,63 @@ export const featureSource = [
 		},
 	},
 	{
+		id: AppSearch.FeatureIds.Power.batteryGaugeResetId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
+		},
+	},
+	{
 		id: AppSearch.FeatureIds.Power.intelligentCoolingId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.Power.EnergyStarId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.Power.performanceModeId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.Power.conservationModeId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.Power.desktopPowerPlanId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.Power.oLEDPowerSettingsId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.Power.smartFliptoBootId,
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
@@ -356,6 +428,14 @@ export const featureSource = [
 		},
 	},
 	{
+		id: AppSearch.FeatureIds.SmartAssist.smartMotionAlarmId,
+		categoryId: AppSearch.FeatureIds.SmartAssist.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.smartAssist,
+		},
+	},
+	{
 		id: AppSearch.FeatureIds.SmartAssist.videoResolutionUpscalingSRId,
 		categoryId: AppSearch.FeatureIds.SmartAssist.categoryId,
 		icon: ['fal', 'gem'],
@@ -363,7 +443,6 @@ export const featureSource = [
 			menuId: MenuID.smartAssist,
 		},
 	},
-
 	/***
 	 * appSearch.features.homeSecurity
 	 */
