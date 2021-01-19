@@ -70,7 +70,6 @@ export class FeatureApplicableDetections {
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private localCacheService: LocalCacheService,
-		private localInfoService: LocalInfoService,
 		private systemUpdateService: SystemUpdateService,
 		private hardwareScanService: HardwareScanService,
 		private logger: LoggerService
@@ -127,18 +126,12 @@ export class FeatureApplicableDetections {
 	}
 
 	private isPasswordHealthAndVpnSecurityApplicable() {
-		let isCN: boolean;
-		this.localInfoService.getLocalInfo().then((result) => {
-			if (result.GEO === 'cn') {
-				isCN = true;
-			}
-			isCN = false;
-		});
+		const locale = this.deviceService.machineInfo.locale;
 		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.LocalInfoSegment
 		);
 		if (
-			!isCN &&
+			locale.toLowerCase() !== 'cn' &&
 			!this.deviceService.isArm &&
 			!this.deviceService.isSMode &&
 			!this.deviceService.isGaming &&
