@@ -22,4 +22,20 @@ export interface IFeature {
 	icon: any; // should be string array like ['fal', 'gem']
 	action: INavigationAction | IProtocolAction | ((feature: IFeature) => void);
 	isApplicable?: () => Promise<boolean>;
+	applicable: boolean;
+}
+
+export enum SearchResultType {
+	complete = 'complete',
+	timeout = 'timeout',
+}
+
+export class SearchResult {
+	constructor(result: SearchResultType, payload: IFeature[]) {
+		this.result = result;
+		this.payload = payload;
+	}
+
+	public result: SearchResultType;
+	public payload: IFeature[];
 }

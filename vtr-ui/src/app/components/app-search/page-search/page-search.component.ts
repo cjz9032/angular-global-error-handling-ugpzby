@@ -238,11 +238,15 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		const searchStart = Date.now();
 		this.searchCompleted = false;
 		this.updatePageTitle();
-		this.populateSearchResults(this.searchService.search(userInput));
-		this.updatePageArray();
-		this.updateResultView(0);
-		this.searchCompleted = true;
-		this.sendSearchTaskMetric(userInput, searchStart);
+
+		(async () => {
+			const result = await this.searchService.search(userInput).toPromise();
+			this.populateSearchResults(result.payload);
+			this.updatePageArray();
+			this.updateResultView(0);
+			this.searchCompleted = true;
+			this.sendSearchTaskMetric(userInput, searchStart);
+		})();
 	}
 
 	private sendSearchTaskMetric(userInput: string, searchStart: number) {
@@ -300,12 +304,11 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 			(pageIdx + 1) * this.pageSize,
 			this.allResultItems.length
 		);
-		this.displayPage.items = this.allResultItems.filter((item, idx) => {
-			return (
+		this.displayPage.items = this.allResultItems.filter(
+			(item, idx) =>
 				idx >= this.displayPage.startItemIdx &&
 				idx < this.displayPage.startItemIdxOfNextPage
-			);
-		});
+		);
 	}
 
 	private setupRightPanels() {

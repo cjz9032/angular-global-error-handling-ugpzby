@@ -7,6 +7,7 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.service';
+import { LoggerService } from '../logger/logger.service';
 import { SystemUpdateService } from '../system-update/system-update.service';
 import { AppSearch } from './model/feature-ids.model';
 import { IApplicableDetector as IApplicableDetector } from './model/interface.model';
@@ -71,7 +72,8 @@ export class FeatureApplicableDetections {
 		private localCacheService: LocalCacheService,
 		private localInfoService: LocalInfoService,
 		private systemUpdateService: SystemUpdateService,
-		private hardwareScanService: HardwareScanService
+		private hardwareScanService: HardwareScanService,
+		private logger: LoggerService
 	) {
 		this.detectionFuncMap = mapValues(
 			keyBy(this.detectionFuncList, 'featureId'),
@@ -80,7 +82,12 @@ export class FeatureApplicableDetections {
 	}
 
 	public async isFeatureApplicable(featureId: string) {
-		return await this.detectionFuncMap[featureId]?.();
+		try {
+			return await this.detectionFuncMap[featureId]?.();
+		} catch (ex) {
+			this.logger.error(`check applicable error:${JSON.stringify(featureId)}: ${ex.message}`);
+			return false;
+		}
 	}
 
 	private isDashboardApplicable() {

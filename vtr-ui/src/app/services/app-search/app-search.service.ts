@@ -1,12 +1,18 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, ɵɵInheritDefinitionFeature } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { featureSource } from './model/features.model';
-import { IFeature, INavigationAction, IProtocolAction } from './model/interface.model';
+import {
+	IFeature,
+	INavigationAction,
+	IProtocolAction,
+	SearchResult,
+	SearchResultType,
+} from './model/interface.model';
 import { SearchEngineWraper } from './search-engine/search-engine-wraper';
 import { LoggerService } from '../logger/logger.service';
 import { DeviceService } from '../device/device.service';
@@ -67,11 +73,12 @@ export class AppSearchService implements OnDestroy {
 		this.subscription?.unsubscribe();
 	}
 
-	public search(userInput: string): Array<IFeature> {
-		const resultList = this.searchEngine
+	public search(userInput: string): Observable<SearchResult> {
+		const featureList = this.searchEngine
 			.search(userInput)
 			?.map((feature) => Object.assign({}, this.searchContext[feature.item.id]));
-		return resultList || [];
+
+		return this.checkFeatureApplicable(featureList, 10, 20000);
 	}
 
 	public handleAction(feature: IFeature) {
@@ -232,5 +239,45 @@ export class AppSearchService implements OnDestroy {
 		});
 
 		return feature;
+	}
+
+	private checkFeatureApplicable(
+		features: IFeature[],
+		maxParallel: number,
+		timeout: number
+	): Observable<SearchResult> {
+		return new Observable((subscriber) => {
+			let maxParallelThread = Math.min(maxParallel, features.length);
+			const taskStack = Array.from(features);
+
+			let timeoutHandler = setTimeout(() => {
+				subscriber.next(new SearchResult(SearchResultType.timeout, features));
+				subscriber.complete();
+				timeoutHandler = null;
+			}, timeout);
+
+			Array.from(Array(maxParallelThread)).forEach(async () => {
+				while (true) {
+					const feature = taskStack.length > 0 && taskStack.pop();
+					if (!feature) {
+						break;
+					}
+
+					feature.applicable = await this.applicableDetections.isFeatureApplicable(
+						feature.id
+					);
+				}
+
+				maxParallelThread--;
+				if (maxParallelThread <= 0) {
+					if (timeoutHandler) {
+						clearTimeout(timeoutHandler);
+					}
+
+					subscriber.next(new SearchResult(SearchResultType.complete, features));
+					subscriber.complete();
+				}
+			});
+		});
 	}
 }
