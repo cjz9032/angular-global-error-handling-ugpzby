@@ -31,11 +31,11 @@ export enum SearchResultType {
 }
 
 export class SearchResult {
-	constructor(result: SearchResultType, payload: IFeature[]) {
+	constructor(result: SearchResultType, features: IFeature[]) {
 		this.result = result;
-		this.payload = payload;
+		this.features = features;
 	}
 
 	public result: SearchResultType;
-	public payload: IFeature[];
+	public features: IFeature[];
 }

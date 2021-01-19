@@ -11,7 +11,7 @@ import {
 	INavigationAction,
 	IProtocolAction,
 	SearchResult,
-	SearchResultType,
+	SearchResultType as ResultType,
 } from './model/interface.model';
 import { SearchEngineWraper } from './search-engine/search-engine-wraper';
 import { LoggerService } from '../logger/logger.service';
@@ -24,8 +24,7 @@ import { FeatureApplicableDetections } from './feature-applicable-detections';
 })
 export class AppSearchService implements OnDestroy {
 	private featureLoad = false;
-	private candidateFeatureMap = {};
-	private searchContext = {};
+	private featureMap = {};
 	private menuRouteMap = {};
 	private subscription: Subscription;
 	private searchEngine: SearchEngineWraper;
@@ -76,7 +75,7 @@ export class AppSearchService implements OnDestroy {
 	public search(userInput: string): Observable<SearchResult> {
 		const featureList = this.searchEngine
 			.search(userInput)
-			?.map((feature) => Object.assign({}, this.searchContext[feature.item.id]));
+			?.map((feature) => Object.assign({}, this.featureMap[feature.item.id]));
 
 		return this.checkFeatureApplicable(featureList, 10, 20000);
 	}
@@ -209,18 +208,10 @@ export class AppSearchService implements OnDestroy {
 				return;
 			}
 
-			this.candidateFeatureMap[feature.id] = feature;
+			this.featureMap[feature.id] = feature;
 		});
 
-		for (const item of Object.values(this.candidateFeatureMap)) {
-			const feature = item as IFeature;
-			const available = await this.applicableDetections.isFeatureApplicable(feature.id);
-			if (available) {
-				this.searchContext[feature.id] = feature;
-			}
-		}
-
-		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
+		this.searchEngine.updateSearchContext(Object.values(this.featureMap));
 	}
 
 	private mapFeatureSourceToFeature(sourceItem: IFeature): IFeature {
@@ -247,37 +238,53 @@ export class AppSearchService implements OnDestroy {
 		timeout: number
 	): Observable<SearchResult> {
 		return new Observable((subscriber) => {
-			let maxParallelThread = Math.min(maxParallel, features.length);
+			let parallelThread = Math.min(maxParallel, features.length);
 			const taskStack = Array.from(features);
 
 			let timeoutHandler = setTimeout(() => {
-				subscriber.next(new SearchResult(SearchResultType.timeout, features));
-				subscriber.complete();
 				timeoutHandler = null;
+				this.searchComplete(subscriber, null, ResultType.timeout, features);
 			}, timeout);
 
-			Array.from(Array(maxParallelThread)).forEach(async () => {
-				while (true) {
-					const feature = taskStack.length > 0 && taskStack.pop();
-					if (!feature) {
-						break;
-					}
-
-					feature.applicable = await this.applicableDetections.isFeatureApplicable(
-						feature.id
-					);
-				}
-
-				maxParallelThread--;
-				if (maxParallelThread <= 0) {
-					if (timeoutHandler) {
-						clearTimeout(timeoutHandler);
-					}
-
-					subscriber.next(new SearchResult(SearchResultType.complete, features));
-					subscriber.complete();
+			let counter = 0;
+			Array.from(Array(parallelThread)).forEach(async () => {
+				const mockThreadId = counter++;
+				await this.mockDetectionThread(taskStack, mockThreadId);
+				if (parallelThread-- <= 0) {
+					this.searchComplete(subscriber, timeoutHandler, ResultType.complete, features);
 				}
 			});
+
+			if (parallelThread <= 0) {
+				this.searchComplete(subscriber, timeoutHandler, ResultType.complete, features);
+			}
 		});
+	}
+
+	private searchComplete(
+		subscriber,
+		timeoutHandler,
+		resultType: ResultType,
+		features: IFeature[]
+	) {
+		if (timeoutHandler) {
+			clearTimeout(timeoutHandler);
+		}
+
+		subscriber.next(new SearchResult(resultType, features));
+		subscriber.complete();
+	}
+
+	private async mockDetectionThread(taskStack, mockThreadId) {
+		while (true) {
+			const feature = taskStack.pop();
+			if (!feature) {
+				break;
+			}
+
+			this.logger.info(`start detection for ${mockThreadId} - ${feature.id}`);
+			feature.applicable = await this.applicableDetections.isFeatureApplicable(feature.id);
+			this.logger.info(`end detection for ${mockThreadId} - ${feature.id}`);
+		}
 	}
 }

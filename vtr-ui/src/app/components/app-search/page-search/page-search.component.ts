@@ -34,7 +34,7 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 	public isInnerBack = false;
 	public searchTips = 'Search Query';
 	public loadedCompleted = true;
-	public searchCompleted = false;
+	public searchCompleted = true;
 	public isOnline = true;
 
 	public readonly pageSize = 10;
@@ -241,7 +241,7 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 
 		(async () => {
 			const result = await this.searchService.search(userInput).toPromise();
-			this.populateSearchResults(result.payload);
+			this.populateSearchResults(result.features);
 			this.updatePageArray();
 			this.updateResultView(0);
 			this.searchCompleted = true;

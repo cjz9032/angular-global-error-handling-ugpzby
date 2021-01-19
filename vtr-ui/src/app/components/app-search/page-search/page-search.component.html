@@ -21,7 +21,7 @@
 					<div class="search-btn">
 						<vtr-ui-button [vtrMetricEnabled]="false" (onClick)="onClickSearchBtn(clickSearchBtnEvent)"
 							id="search-btn-in-search-page" aria-label="search-btn-in-search-page" [btnHeight]="true"
-							[isFullWidth]="true" [label]="'SEARCH'" [isDisabled]="!isOnline || !userInput"
+							[isFullWidth]="true" [label]="'SEARCH'" [isDisabled]="!isOnline || !userInput || !searchCompleted"
 							[linkId]="'search-btn-in-search-page'"></vtr-ui-button>
 					</div>
 				</div>
