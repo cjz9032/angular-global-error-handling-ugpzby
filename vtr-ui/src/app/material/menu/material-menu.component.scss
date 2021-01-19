@@ -235,12 +235,15 @@
 					text-decoration: underline;
 				}
 			}
-			&:focus {
-				color: $blue-light;
-				@include menu-color-focus-high-contrast;
-				.user-menu-item-text {
-					@include border-blue-high-contrast;
-					text-decoration: none;
+			&.mat-menu-item.cdk-program-focused,
+			&.mat-menu-item.cdk-keyboard-focused {
+				&:not([disabled]) {
+					color: $blue-light;
+					@include menu-color-focus-high-contrast;
+					.user-menu-item-text {
+						@include border-blue-high-contrast;
+						text-decoration: none;
+					}
 				}
 			}
 			&.active {

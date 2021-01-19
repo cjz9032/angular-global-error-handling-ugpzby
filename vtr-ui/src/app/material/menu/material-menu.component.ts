@@ -84,6 +84,7 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	private topRowFnSubscription: Subscription;
 	private routerEventSubscription: Subscription;
 	private closeAllOtherMatMenuTimer: any;
+	private firstTab = true;
 	constructor(
 		public dashboardService: DashboardService,
 		public configService: ConfigService,
@@ -140,6 +141,14 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 				this.currentRoutePath = ev.url;
 			}
 		});
+	}
+
+	@HostListener('document:keydown.tab')
+	onTabHandler() {
+		if (this.firstTab) {
+			this.closeAllMatMenu();
+			this.firstTab = false;
+		}
 	}
 
 	ngOnDestroy(): void {

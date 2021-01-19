@@ -85,7 +85,6 @@
 							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
-							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]">
 							{{item.label | translate}}
@@ -113,7 +112,6 @@
 							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
-							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
 							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
@@ -148,7 +146,6 @@
 							[metricsItem]="item.metricsItem"
 							routerLink="/{{item.path}}"
 							routerLinkActive="active"
-							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
 							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
@@ -176,7 +173,6 @@
 							aria-expanded="false"
 							role="menu"
 							tabindex="1"
-							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
 							(pointerleave)="clearCloseAllOtherMatMenu()">
@@ -215,10 +211,8 @@
 								metricsItem="LenovoMigrationAssistantButton"
 								[routerLink]="['/apps-for-you/'+ appsForYouEnum.AppGuidLenovoMigrationAssistant]"
 								routerLinkActive="active"
-								href="javascript:void(0)"
 								(click)="onMenuItemClick(item, $event)"
-								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)]"
-								href="javascript:void(0)">
+								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)]">
 								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'appsForYou.menuText.lenovoMigrationAssistant' | translate">
 								</span>
@@ -239,10 +233,8 @@
 								metricsItem="AdobecRedemptionButton"
 								[routerLink]="['/apps-for-you/'+ appsForYouEnum.AppGuidAdobeCreativeCloud]"
 								routerLinkActive="active"
-								href="javascript:void(0)"
 								(click)="onMenuItemClick(item, $event)"
-								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)]"
-								href="javascript:void(0)">
+								(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)]">
 								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'appsForYou.menuText.adobeRedemption' | translate">
 								</span>
@@ -261,8 +253,7 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="DccRedemptionButton"
-								(click)="onMenuItemClick(item, $event)"
-								href="javascript:void(0)">
+								(click)="onMenuItemClick(item, $event)">
 								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'dcc.menuText.lenovoDigitalOffer' | translate">
 								</span>
@@ -281,7 +272,6 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="ModernPreloadButton"
-								href="javascript:void(0)"
 								(click)="openModernPreloadModal()">
 								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'modernPreload.title' | translate">
@@ -295,7 +285,6 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="SettingsButton"
-								href="javascript:void(0)"
 								routerLink="settings"
 								routerLinkActive="active"
 								(click)="onMenuItemClick(item)"
@@ -313,7 +302,6 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="GiveFeedbackButton"
-								href="javascript:void(0)"
 								(click)="openFeedbackModal()">
 								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'dashboard.feedback.title' | translate">
@@ -328,7 +316,6 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoSurvey"
-								href="javascript:void(0)"
 								(click)="openSurveyModal(appsForYouService.lenovoSurvey.id)">
 								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'dashboard.survey.title' | translate">
@@ -348,7 +335,6 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoIdSignInButton"
-								href="javascript:void(0)"
 								(click)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">
 								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'lenovoId.login' | translate">
@@ -363,7 +349,6 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoIdStarterIdButton"
-								href="javascript:void(0)"
 								(click)="[OpenLenovoId('NavigationLenovoAccount.Submenu'), onMenuItemClick(item)]">
 								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"
 									[innerHTML]="'lenovoId.unlockExclusives' | translate">
@@ -378,7 +363,6 @@
 								[metricsEvent]="item.metricsEvent"
 								[metricsParent]="item.metricsParent"
 								metricsItem="LenovoIdSignOutButton"
-								href="javascript:void(0)"
 								(click)="[onLogout(), onMenuItemClick(item)]"
 								[class.disabled]="isLoggingOut">
 								<span class="d-inline-block overflow-hidden w-auto user-menu-item-text"

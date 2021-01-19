@@ -24,7 +24,6 @@
 				[metricsItem]="subitem.metricsItem"
 				target="_blank"
 				rel="noopener"
-				href="javascript:void(0)"
 				(click)="openExternalLink(subitem.path)">
 				<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
@@ -40,7 +39,6 @@
 				[metricsParent]="subitem.metricsParent"
 				[metricsItem]="subitem.metricsItem"
 				routerLink="/{{parentPath}}/{{subitem.path}}"
-				href="javascript:void(0)"
 				role="menuitem"
 				(keydown.enter)="menuItemKeyDown(parentPath, subitem.path)">
 				<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
@@ -57,7 +55,6 @@
 				[metricsParent]="subitem.metricsParent"
 				[metricsItem]="subitem.metricsItem"
 				routerLink="/{{subitem.path}}"
-				href="javascript:void(0)"
 				role="menuitem"
 				(keydown.enter)="menuItemKeyDown(subitem.path)">
 				<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
@@ -74,8 +71,7 @@
 				disabled
 				attr.aria-label="{{subitem.label | translate }}"
 				target="_blank"
-				rel="noopener"
-				href="javascript:void(0)">
+				rel="noopener">
 				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
 			<button mat-menu-item
@@ -85,7 +81,6 @@
 				disabled
 				attr.aria-label="{{subitem.label| translate}}"
 				target="_blank"
-				href="javascript:void(0)"
 				role="menuitem">
 				<span class="d-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
 			</button>
@@ -105,7 +100,6 @@
 						[metricsItem]="secondarySubitem.metricsItem"
 						target="_blank"
 						rel="noopener"
-						href="javascript:void(0)"
 						(click)="openExternalLink(secondarySubitem.path)">
 						<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
 					</button>
@@ -122,7 +116,6 @@
 						[metricsParent]="secondarySubitem.metricsParent"
 						[metricsItem]="secondarySubitem.metricsItem"
 						routerLink="/{{parentPath}}/{{subitem.path}}/{{secondarySubitem.path}}"
-						href="javascript:void(0)"
 						role="menuitem"
 						(keydown.enter)="menuItemKeyDown(parentPath, subitem.path, secondarySubitem.path)">
 						<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
@@ -140,7 +133,6 @@
 						[metricsParent]="secondarySubitem.metricsParent"
 						[metricsItem]="secondarySubitem.metricsItem"
 						routerLink="/{{secondarySubitem.path}}"
-						href="javascript:void(0)"
 						role="menuitem"
 						(keydown.enter)="menuItemKeyDown(secondarySubitem.path)">
 						<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="secondarySubitem.label | translate"></span>
