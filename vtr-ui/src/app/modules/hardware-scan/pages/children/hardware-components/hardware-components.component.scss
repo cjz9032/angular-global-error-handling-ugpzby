@@ -19,8 +19,9 @@
 			color: $menu_hover;
 			font-size: $fontsize_xl;
 			font-weight: $weight_light;
-			width: 100%; // Width and word-wrap to break long words on some languages as German
-			word-wrap: break-word;
+			width: 100%; // Width, overflow and text-overflow to break long words on some languages as German
+			overflow: hidden;
+			text-overflow: ellipsis;
 			&::first-letter {
 				text-transform: uppercase;
 			}
