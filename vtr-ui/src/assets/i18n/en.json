@@ -801,7 +801,7 @@
 				"sub6": "Device Settings Details",
 				"sub7": "Device Settings"
 			},
-			"SMB":{
+			"smb":{
 				"title": "Productivity",
 				"sub1": "Meeting Experience",
 				"sub2": "Creator Centre",
