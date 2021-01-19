@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, AfterViewInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
 import { IntelligentCoolingCapability } from 'src/app/data-models/device/intelligent-cooling-capability.model';
@@ -19,6 +18,7 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 import { UiCircleRadioWithCheckBoxListModel } from '../../ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatDialog } from '@lenovo/material/dialog';
 
 const thinkpad = 1;
 const ideapad = 0;
@@ -72,7 +72,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private logger: LoggerService,
 		public commonService: CommonService,
-		public modalService: NgbModal,
+		public dialog: MatDialog,
 		private localCacheService: LocalCacheService,
 		private metricService: MetricService
 	) {
@@ -337,7 +337,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			if (this.powerService.isShellAvailable) {
 				this.powerService
 					.startMonitorForICIdeapad(this.callbackForStartMonitorICIdeapad.bind(this))
-					.then((value: boolean) => {})
+					.then((value: boolean) => { })
 					.catch((error) => {
 						this.logger.error('startMonitorForICIdeapad', error.message);
 						return EMPTY;
@@ -354,7 +354,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			if (this.powerService.isShellAvailable) {
 				this.powerService
 					.stopMonitorForICIdeapad()
-					.then((value: boolean) => {})
+					.then((value: boolean) => { })
 					.catch((error) => {
 						this.logger.error('stopMonitorForICIdeapad', error.message);
 						return EMPTY;
@@ -443,9 +443,9 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 					this.tIOCapability = await this.getTIOCapability();
 					this.logger.info(
 						'PowerSmartSettingsComponent:initPowerSmartSettingsForThinkPad:: cQLCapability: ' +
-							this.cQLCapability +
-							', tIOCapability: ' +
-							this.tIOCapability
+						this.cQLCapability +
+						', tIOCapability: ' +
+						this.tIOCapability
 					);
 					const status = await this.getManualModeSetting();
 					const mode = IntelligentCoolingModes.getMode(status);
@@ -711,7 +711,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			} else if (this.powerService.isShellAvailable) {
 				this.powerService
 					.setAutoModeSetting(event.switchValue)
-					.then((value: boolean) => {})
+					.then((value: boolean) => { })
 					.catch((error) => {
 						this.logger.error('setAutoModeSetting', error.message);
 						return EMPTY;
@@ -896,24 +896,22 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	// =================== End Power Smart Settings for ThinkPad
 
 	coolingModesPopUp() {
-		this.modalService
-			.open(ModalIntelligentCoolingModesComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				keyboard: false,
-				centered: true,
-				windowClass: 'Intelligent-Cooling-Modes-Modal',
-			})
-			.result.then(
-				(result) => {
-					if (result === 'enable') {
-						// this.toggleOnOff.emit($event);
-					} else if (result === 'close') {
-						// this.isSwitchChecked = !this.isSwitchChecked;
-					}
-				},
-				(reason) => {}
-			);
+		const modalRef = this.dialog.open(ModalIntelligentCoolingModesComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Intelligent-Cooling-Modes-Modal',
+		});
+		modalRef.afterClosed().subscribe(
+			(result) => {
+				if (result === 'enable') {
+					// this.toggleOnOff.emit($event);
+				} else if (result === 'close') {
+					// this.isSwitchChecked = !this.isSwitchChecked;
+				}
+			},
+			(reason) => { }
+		);
 	}
 
 	readMore(readMoreDiv: HTMLElement, $event: Event) {

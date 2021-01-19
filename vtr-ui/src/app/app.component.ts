@@ -17,9 +17,10 @@ import {
 import { Overlay } from '@angular/cdk/overlay';
 
 import { MAT_TOOLTIP_SCROLL_STRATEGY } from '@lenovo/material/tooltip';
+import { MatDialog } from '@lenovo/material/dialog';
 
 import { DisplayService } from './services/display/display.service';
-import { NgbModal, NgbModalRef, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ModalWelcomeComponent } from './components/modal/modal-welcome/modal-welcome.component';
 import { DeviceService } from './services/device/device.service';
 import { CommonService } from './services/common/common.service';
@@ -88,7 +89,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	constructor(
 		private displayService: DisplayService,
 		private router: Router,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		public deviceService: DeviceService,
 		private commonService: CommonService,
 		private translate: TranslateService,
@@ -110,7 +111,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private snackBar: MatSnackBar
 	) {
 		this.ngbTooltipConfig.triggers = 'hover';
-		this.patchNgbModalOpen();
+		// this.patchNgbModalOpen();
 		// to check web and js bridge version in browser console
 		const win: any = window;
 		this.shellVersion = this.commonService.getShellVersion();
@@ -196,22 +197,22 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 	}
 
-	private patchNgbModalOpen() {
-		const original = NgbModal.prototype.open;
-		// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-		NgbModal.prototype.open = function (): NgbModalRef {
-			if (arguments.length > 1 && 'container' in arguments[1] === false) {
-				Object.assign(arguments[1], { container: 'vtr-root div' });
-			}
-			setTimeout(() => {
-				const modal: HTMLElement = document.querySelector('.modal');
-				if (modal) {
-					modal.focus();
-				}
-			}, 0);
-			return original.apply(this, arguments);
-		};
-	}
+	// private patchNgbModalOpen() {
+	// 	const original = NgbModal.prototype.open;
+	// 	// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+	// 	NgbModal.prototype.open = function (): NgbModalRef {
+	// 		if (arguments.length > 1 && 'container' in arguments[1] === false) {
+	// 			Object.assign(arguments[1], { container: 'vtr-root div' });
+	// 		}
+	// 		setTimeout(() => {
+	// 			const modal: HTMLElement = document.querySelector('.modal');
+	// 			if (modal) {
+	// 				modal.focus();
+	// 			}
+	// 		}, 0);
+	// 		return original.apply(this, arguments);
+	// 	};
+	// }
 
 	private addInternetListener() {
 		const win: any = window;
@@ -314,15 +315,17 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	openWelcomeModal(page: number, tutorialVersion: string) {
-		const modalRef = this.modalService.open(ModalWelcomeComponent, {
-			backdrop: 'static',
-			centered: true,
+		const modalRef = this.dialog.open(ModalWelcomeComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'welcome-modal-size',
 			ariaLabelledBy: 'welcome-tutorial-page-basic-title',
-			windowClass: 'welcome-modal-size',
 		});
 		modalRef.componentInstance.page = page;
 		modalRef.componentInstance.tutorialVersion = tutorialVersion;
-		modalRef.result.then(
+		modalRef.afterClosed().subscribe(
 			(result: WelcomeTutorial) => {
 				// on open
 				if (this.deviceService.isGaming) {
@@ -349,9 +352,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				}
 			}
 		);
-		setTimeout(() => {
-			(document.querySelector('.welcome-modal-size') as HTMLElement).focus();
-		}, 0);
 	}
 
 	private async getMachineInfo() {

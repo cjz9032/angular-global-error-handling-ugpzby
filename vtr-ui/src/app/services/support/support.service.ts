@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+
+import { MatDialog } from '@lenovo/material/dialog';
+
 import { ModalFindUsComponent } from '../../components/modal/modal-find-us/modal-find-us.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { CommonService } from '../common/common.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
-// import { window } from 'rxjs/operators';
+
 
 @Injectable({
 	providedIn: 'root',
@@ -29,7 +31,7 @@ export class SupportService {
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private deviceService: DeviceService
 	) {
 		this.sysinfo = shellService.getSysinfo();
@@ -105,19 +107,23 @@ export class SupportService {
 	}
 
 	showFindUsPop() {
-		const findUsModal: NgbModalRef = this.modalService.open(ModalFindUsComponent, {
-			backdrop: true,
-			centered: true,
+		const findUsModal = this.dialog.open(ModalFindUsComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Find-Us-Modal',
 			ariaLabelledBy: 'find-us-modal-basic-title',
-			windowClass: 'Find-Us-Modal',
 		});
 	}
 	showAboutPop() {
-		const aboutModal: NgbModalRef = this.modalService.open(ModalAboutComponent, {
-			backdrop: true,
-			centered: true,
+		const aboutModal = this.dialog.open(ModalAboutComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'About-Modal',
 			ariaLabelledBy: 'about-modal-basic-title',
-			windowClass: 'About-Modal',
 		});
 	}
 

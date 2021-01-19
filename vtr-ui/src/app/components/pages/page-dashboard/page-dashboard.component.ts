@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import map from 'lodash/map';
 import sample from 'lodash/sample';
@@ -279,7 +278,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private router: Router,
 		public dashboardService: DashboardService,
 		public qaService: QaService,
-		private config: NgbModalConfig,
 		public commonService: CommonService,
 		private formatLocaleDate: FormatLocaleDatePipe,
 		public deviceService: DeviceService,
@@ -302,13 +300,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private metricsService: MetricService,
 		private contentLocalCache: ContentCacheService,
 		private windowsHelloService: WindowsHelloService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.refreshSA();
-		this.config.backdrop = 'static';
-		this.config.keyboard = false;
 		this.isOnline = this.commonService.isOnline;
 		this.deviceService.getMachineInfo().then(() => {
 			this.setDefaultSystemStatus();
@@ -986,8 +982,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.securityInfo.statusText =
 			this.securityInfo.status !== undefined
 				? this.dashboardService.translateString[
-						this.positionCData[this.securityInfo.status + 1].statusText
-				  ]
+				this.positionCData[this.securityInfo.status + 1].statusText
+				]
 				: '--';
 	}
 }

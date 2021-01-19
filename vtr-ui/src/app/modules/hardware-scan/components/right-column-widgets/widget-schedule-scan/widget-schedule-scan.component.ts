@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter, NgZone, OnDestroy } from '@angular/core';
-import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
 import { HardwareScheduleScanType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalScheduleNewScanComponent } from '../../modal/modal-schedule-new-scan/modal-schedule-new-scan.component';
 import { ModalPreScanInfoComponent } from '../../modal/modal-pre-scan-info/modal-pre-scan-info.component';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-widget-schedule-scan',
@@ -22,9 +22,9 @@ export class WidgetScheduleScanComponent implements OnInit {
 	constructor(
 		public deviceService: DeviceService,
 		private hardwareScanService: HardwareScanService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private translate: TranslateService
-	) {}
+	) { }
 
 	ngOnInit() {
 		if (
@@ -74,22 +74,23 @@ export class WidgetScheduleScanComponent implements OnInit {
 	}
 
 	onScheduleScanModal(edit: boolean) {
-		const modal: NgbModalRef = this.modalService.open(ModalScheduleNewScanComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'hardware-scan-modal-size',
+		const modal = this.dialog.open(ModalScheduleNewScanComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'hardware-scan-modal-size',
 		});
 
-		(<ModalScheduleNewScanComponent>modal.componentInstance).editMode = edit;
+		modal.componentInstance.editMode = edit;
 
 		if (edit) {
-			(<ModalScheduleNewScanComponent>modal.componentInstance).editScan = this.editing;
+			modal.componentInstance.editScan = this.editing;
 		} else {
-			(<ModalScheduleNewScanComponent>modal.componentInstance).editScan = undefined;
+			modal.componentInstance.editScan = undefined;
 		}
 
-		modal.result.then(
+		modal.afterClosed().subscribe(
 			(result) => {
 				if (result) {
 					switch (result.mode) {
@@ -109,7 +110,7 @@ export class WidgetScheduleScanComponent implements OnInit {
 				} else {
 				}
 			},
-			(reason) => {}
+			(reason) => { }
 		);
 	}
 
@@ -179,20 +180,21 @@ export class WidgetScheduleScanComponent implements OnInit {
 	async OnCollisionModal(error = null, description = null, size: string = 'lg') {
 		let modal;
 		if (size === 'sm') {
-			modal = this.modalService.open(ModalPreScanInfoComponent, {
-				// Component name renamed for PreScanInfo modal. Do it right here when implementing Schedule Scan correctly
-				backdrop: 'static',
-				size: 'sm',
-				centered: true,
-				windowClass: 'hardware-scan-modal-size',
+			modal = this.dialog.open(ModalPreScanInfoComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'hardware-scan-modal-size',
 			});
 		} else {
-			modal = this.modalService.open(ModalPreScanInfoComponent, {
+			modal = this.dialog.open(ModalPreScanInfoComponent, {
 				// Component name renamed for PreScanInfo modal. Do it right here when implementing Schedule Scan correctly
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
-				windowClass: 'hardware-scan-modal-size',
+				maxWidth: '80rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'hardware-scan-modal-size',
 			});
 		}
 
@@ -209,7 +211,7 @@ export class WidgetScheduleScanComponent implements OnInit {
 				} else {
 				}
 			},
-			(reason) => {}
+			(reason) => { }
 		);
 	}
 

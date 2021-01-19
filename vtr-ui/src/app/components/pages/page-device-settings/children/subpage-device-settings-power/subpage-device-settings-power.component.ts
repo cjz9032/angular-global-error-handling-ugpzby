@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BehaviorSubject, combineLatest, EMPTY, from, of, pipe, range, timer, zip } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { debounce, finalize, map, mergeMap, retryWhen, switchMap, tap } from 'rxjs/operators';
@@ -30,6 +29,7 @@ import { EventTypes } from '@lenovo/tan-client-bridge';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { BatteryHealthService } from './battery-health/battery-health.service';
 import { ConservationModeStatus } from 'src/app/data-models/battery/conservation-mode-response.model';
+import { MatDialog } from '@lenovo/material/dialog';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -131,13 +131,13 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		public batteryService: BatteryDetailService,
 		private commonService: CommonService,
 		private logger: LoggerService,
-		public modalService: NgbModal,
+		public dialog: MatDialog,
 		public shellServices: VantageShellService,
 		private metrics: CommonMetricsService,
 		private localCacheService: LocalCacheService,
 		private activatedRoute: ActivatedRoute,
 		private batteryHealthService: BatteryHealthService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.logger.info('Init Subpage Power');
@@ -1421,9 +1421,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				) {
 					this.showBCTWarningNote =
 						this.batteryService.remainingPercentages[0] >
-							this.thresholdInfo[0].stopValue ||
+						this.thresholdInfo[0].stopValue ||
 						this.batteryService.remainingPercentages[1] >
-							this.thresholdInfo[1].stopValue;
+						this.thresholdInfo[1].stopValue;
 				}
 			}
 		}
@@ -1470,10 +1470,11 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	onToggleBCTSwitch(event: any) {
 		if (event.switchValue) {
-			const modalRef = this.modalService.open(ModalBatteryChargeThresholdComponent, {
-				backdrop: 'static',
-				centered: true,
-				windowClass: 'Battery-Charge-Threshold-Modal',
+			const modalRef = this.dialog.open(ModalBatteryChargeThresholdComponent, {
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'Battery-Charge-Threshold-Modal',
 			});
 			modalRef.componentInstance.id = 'threshold';
 			modalRef.componentInstance.title =
@@ -1487,7 +1488,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			modalRef.componentInstance.negativeResponseText =
 				'device.deviceSettings.power.batterySettings.batteryThreshold.popup.cancel';
 
-			modalRef.result.then(
+			modalRef.afterClosed().subscribe(
 				(result) => {
 					if (result === 'positive') {
 						this.toggleBCTSwitch(event.switchValue);
@@ -1496,7 +1497,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 						UiCustomSwitchComponent.switchChange.next(this.chargeThresholdStatus);
 					}
 				},
-				(reason) => {}
+				(reason) => { }
 			);
 		} else {
 			this.toggleBCTSwitch(event.switchValue);

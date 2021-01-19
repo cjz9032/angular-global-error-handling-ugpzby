@@ -1,5 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { UserService } from '../../../services/user/user.service';
 import { SupportService } from '../../../services/support/support.service';
 import { DevService } from '../../../services/dev/dev.service';
@@ -12,6 +11,7 @@ import { ssoErroType } from 'src/app/enums/lenovo-id-key.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import AES from 'crypto-js/aes';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-lenovo-id',
@@ -33,14 +33,13 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 	readonly KEYCODE_RETURN = 13;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalLenovoIdComponent>,
 		private userService: UserService,
 		private supportService: SupportService,
 		private devService: DevService,
 		private vantageShellService: VantageShellService,
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
-		private modalService: NgbModal
 	) {
 		this.isBroswerVisible = false;
 		this.isOnline = this.commonService.isOnline;
@@ -61,7 +60,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 				'ModalLenovoIdComponent constructor: metrics object is undefined'
 			);
 			this.metrics = {
-				sendAsync() {},
+				sendAsync() { },
 			};
 		}
 	}
@@ -83,7 +82,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 			this.devService.writeLog(
 				'ModalLenovoIdComponent constructor: webView object is undefined, critical error exit!'
 			);
-			this.activeModal.close('Null webView object');
+			this.dialogRef.close('Null webView object');
 			return;
 		}
 
@@ -108,7 +107,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 					this.everSignIn,
 					this.appFeature
 				);
-				this.activeModal.close('User close');
+				this.dialogRef.close('User close');
 			}
 		}
 	}
@@ -199,7 +198,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 								this.userService.setName(firstname, lastname);
 								this.userService.setAuth(true);
 								// Close logon dialog
-								this.activeModal.close('Login success');
+								this.dialogRef.close('Login success');
 								this.devService.writeLog('onNavigationCompleted: Login success!');
 								// The metrics need to be sent after enabling sso, some data like user guid would be available after that.
 								this.userService.sendSigninMetrics(
@@ -223,7 +222,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 				this.everSignIn,
 				this.appFeature
 			);
-			this.activeModal.dismiss(ssoErroType.SSO_ErrorType_UnknownCrashed);
+			this.dialogRef.close(ssoErroType.SSO_ErrorType_UnknownCrashed);
 		}
 	}
 
@@ -339,7 +338,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 					if (loginUrl.indexOf('sso.lenovo.com') === -1) {
 						self.devService.writeLog('User has already logged in');
 						setTimeout(() => {
-							self.activeModal.close('User has already logged in');
+							self.dialogRef.close('User has already logged in');
 						}, 1000);
 						return;
 					} else {
@@ -366,9 +365,9 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 							async (error) => {
 								self.devService.writeLog(
 									'getMachineInfo() failed ' +
-										error +
-										', loading default login page ' +
-										loginUrl
+									error +
+									', loading default login page ' +
+									loginUrl
 								);
 								await self.webView.navigate(loginUrl);
 							}
@@ -377,7 +376,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 				} else {
 					self.devService.writeLog('getLoginUrl() failed, ' + result.status);
 					setTimeout(() => {
-						self.activeModal.dismiss(result.status);
+						self.dialogRef.close(result.status);
 					}, 500);
 				}
 			})
@@ -385,11 +384,11 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 				self.devService.writeLog('getLoginUrl() exception happen');
 				setTimeout(() => {
 					if (error && error.errorcode === 513) {
-						self.activeModal.dismiss(
+						self.dialogRef.close(
 							ssoErroType.SSO_ErrorType_AccountPluginDoesnotExist
 						);
 					} else {
-						self.activeModal.dismiss(ssoErroType.SSO_ErrorType_UnknownCrashed);
+						self.dialogRef.close(ssoErroType.SSO_ErrorType_UnknownCrashed);
 					}
 				}, 500);
 			});
@@ -405,7 +404,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 					);
 					const currentIsOnline = notification.payload.isOnline;
 					if (!currentIsOnline && this.isOnline !== currentIsOnline) {
-						this.activeModal.dismiss(ssoErroType.SSO_ErrorType_DisConnect);
+						this.dialogRef.close(ssoErroType.SSO_ErrorType_DisConnect);
 					}
 					this.isOnline = currentIsOnline;
 					break;

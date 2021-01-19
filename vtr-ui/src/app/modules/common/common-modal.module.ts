@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatDialogModule } from '@lenovo/material/dialog';
+import { MatIconModule } from '@lenovo/material/icon';
 
 import { DownloadFailedModalComponent } from 'src/app/components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
@@ -18,7 +22,7 @@ import { ModalChsWelcomeContainerComponent } from 'src/app/components/pages/page
 import { ModalChsStartTrialContainerComponent } from 'src/app/components/pages/page-connected-home-security/component/modal-chs-start-trial-container/modal-chs-start-trial-container.component';
 import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
 import { MaterialModule } from './material.module';
-import { MatTooltipModule } from '@lenovo/material/tooltip';
+
 
 @NgModule({
 	declarations: [
@@ -41,12 +45,13 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 		CommonModule,
 		SharedModule,
 		MetricsModule,
-		NgbModalModule,
 		NgbTooltipModule,
 		MatTooltipModule,
+		MatDialogModule,
+		MatIconModule,
 		MaterialModule,
 	],
-	exports: [SharedModule, MetricsModule, NgbModalModule],
+	exports: [SharedModule, MetricsModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	entryComponents: [
 		/*ModalServerSwitchComponent,*/

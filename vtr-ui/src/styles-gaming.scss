@@ -688,7 +688,6 @@
 							}
 						}
 					}
-
 				}
 				&.vtr-page-right-column {
 					.vtr-battery-card {
@@ -2190,6 +2189,10 @@
 	}
 }
 
+.vtr-menu-main.legacy-menu-level {
+	z-index: 1001 !important;
+}
+
 body.focus-enable {
 	.is-gaming {
 		.navbar-brand.logo-y a {
@@ -2331,49 +2334,47 @@ body.focus-enable {
 }
 
 .gaming-help-modal {
-	.modal-dialog {
-		width: 80rem;
-		max-width: 100%;
+	width: 80rem;
+	max-width: 100%;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	.mat-dialog-container {
+		background: $darkCell;
+	}
+	@media #{$medium-screen} {
+		max-width: 70rem;
+		position: relative;
+	}
+	@media #{$small-screen} {
+		max-width: 50rem;
+		position: relative;
 		margin: auto;
-		@media #{$medium-screen} {
-			max-width: 70rem;
-			position: relative;
-		}
-		@media #{$small-screen} {
-			max-width: 50rem;
-			position: relative;
-			margin: auto;
-			width: 90%;
-		}
-		.modal-content {
-			justify-content: center;
-			align-items: center;
-			background: transparent;
-			margin-top: 18vh;
-		}
+		width: 90%;
 	}
 }
 
 .gaming-lighting-cms-content-help {
-	.modal-dialog {
-		top: 5rem;
-		width: 80rem;
-		max-width: 100%;
-		border-radius: 0.8rem;
-		overflow: hidden;
-		@media #{$medium-screen} {
-			max-width: 70rem;
-			position: relative;
-		}
+	top: 5rem;
+	width: 80rem;
+	max-width: 100%;
+	border-radius: 0.8rem;
+	overflow: hidden;
+	.mat-dialog-container {
+		background: $darkCell;
+	}
+	@media #{$medium-screen} {
+		max-width: 70rem;
+		position: relative;
+	}
 
-		@media #{$small-screen} {
-			max-width: 50rem;
-			position: relative;
-		}
+	@media #{$small-screen} {
+		max-width: 50rem;
+		position: relative;
+	}
 
-		@media #{$mediaquery_12} {
-			left: 9rem;
-		}
+	@media #{$mediaquery_12} {
+		left: 9rem;
 	}
 }
 
@@ -2393,34 +2394,29 @@ vtr-container-card {
 	}
 }
 .Article-Detail-Modal {
+	max-height: calc(100vh - 3.5rem);
+	width: 70%;
+	margin-top: 0;
+
 	&.content-gaming {
 		*:focus {
 			outline: none;
 		}
 		overflow: hidden !important;
-		.modal-dialog {
-			height: 100%;
-			margin-top: 0;
-		}
-		.modal-content {
-			padding: 3rem 0 3rem;
-			.modal-body {
-				max-height: 80vh;
-			}
-			.vtr-modal-article-detail {
-				height: auto;
-				.article-content {
-					.article-body {
-						padding: 0;
-						margin: 0;
-						.spinner-content {
-							height: auto;
-							.spinner-border {
-								width: 2rem !important;
-								height: 2rem !important;
-								padding: 2rem;
-								margin-top: -2.4rem;
-							}
+		max-height: 80vh;
+		.vtr-modal-article-detail {
+			height: auto;
+			.article-content {
+				.article-body {
+					padding: 0;
+					margin: 0;
+					.spinner-content {
+						height: auto;
+						.spinner-border {
+							width: 2rem !important;
+							height: 2rem !important;
+							padding: 2rem;
+							margin-top: -2rem;
 						}
 					}
 				}
@@ -2550,25 +2546,17 @@ button {
 	}
 }
 
-.backdrop-level {
-	z-index: 6666 !important;
-}
 .modal-prompt {
-	z-index: 19999;
 	overflow: hidden !important;
 	display: flex !important;
 	align-items: center;
 	justify-content: center;
-	.modal-dialog {
-		width: 35% !important;
-		min-width: 340px !important;
-		max-width: 560px !important;
-		margin: 0;
-		transition: none !important;
-		.modal-content {
-			border-radius: 0.6rem;
-		}
-	}
+	width: 35% !important;
+	min-width: 340px !important;
+	max-width: 560px !important;
+	margin: 0;
+	transition: none !important;
+	border-radius: 0.6rem;
 }
 
 .gaming-help-popup,

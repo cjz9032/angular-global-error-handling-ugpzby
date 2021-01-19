@@ -78,8 +78,8 @@ $stop: #ea5545;
 $stop_light: #f97264;
 $stop_dark: #d94839;
 
-$alert_border: #D34503;
-$alert_bg: linear-gradient(122deg, #EB4B00, #EB7200);
+$alert_border: #d34503;
+$alert_bg: linear-gradient(122deg, #eb4b00, #eb7200);
 
 $shade_extradark: #1b1b1b;
 $shade_darkest: #333;
@@ -396,7 +396,7 @@ $good_dark: #2fd07e;
 $good_light: #34e1ad;
 
 // for sp core
-$tab_gray: #8C97A4;
+$tab_gray: #8c97a4;
 
 $percent_0_dark: $danger_dark;
 $percent_0_light: $danger_light;
@@ -968,7 +968,6 @@ $high-contrast-sky-blue: #81bbf5;
 	left: 3.8rem;
 	top: 1.2rem;
 }
-
 
 %hyperlink-text {
 	font-size: $fontsize_xs;

@@ -8,8 +8,8 @@ import {
 	HostListener,
 } from '@angular/core';
 import { MacroKeyMessageData } from 'src/app/enums/macrokey-message-data.enum';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-ui-macrokey-details',
@@ -49,7 +49,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	public recording = false;
 	public recordsList: any = [];
 
-	constructor(private modalService: NgbModal) {}
+	constructor(private dialog: MatDialog) { }
 
 	@HostListener('document: visibilitychange') toggleOnPageMinimized() {
 		if (document.hidden) {
@@ -59,7 +59,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 		}
 	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	onStartClicked(event) {
 		if (event instanceof PointerEvent) {
@@ -93,7 +93,7 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 
 	recordsDelete(records) {
 		records = records || [];
-		records.forEach((record: any, ri: number) => {});
+		records.forEach((record: any, ri: number) => { });
 	}
 
 	recordClear() {
@@ -111,9 +111,11 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					closeButton: idPrefix + '_close_button',
 					okButton: idPrefix + 'ob_btn',
 				};
-				const promptRef = this.modalService.open(ModalGamingPromptComponent, {
-					backdrop: 'static',
-					windowClass: 'modal-prompt',
+				const promptRef = this.dialog.open(ModalGamingPromptComponent, {
+					autoFocus: true,
+					hasBackdrop: true,
+					disableClose: true,
+					panelClass: 'modal-prompt',
 					backdropClass: 'backdrop-level',
 				});
 				promptRef.componentInstance.info = {
@@ -139,9 +141,11 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					closeButton: idPrefix + '_close_button',
 					okButton: idPrefix + 'ob_btn',
 				};
-				const promptRef = this.modalService.open(ModalGamingPromptComponent, {
-					backdrop: 'static',
-					windowClass: 'modal-prompt',
+				const promptRef = this.dialog.open(ModalGamingPromptComponent, {
+					autoFocus: true,
+					hasBackdrop: true,
+					disableClose: true,
+					panelClass: 'modal-prompt',
 					backdropClass: 'backdrop-level',
 				});
 				promptRef.componentInstance.info = {
@@ -167,9 +171,11 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					closeButton: idPrefix + '_close_button',
 					okButton: idPrefix + 'ob_btn',
 				};
-				const promptRef = this.modalService.open(ModalGamingPromptComponent, {
-					backdrop: 'static',
-					windowClass: 'modal-prompt',
+				const promptRef = this.dialog.open(ModalGamingPromptComponent, {
+					autoFocus: true,
+					hasBackdrop: true,
+					disableClose: true,
+					panelClass: 'modal-prompt',
 					backdropClass: 'backdrop-level',
 				});
 				promptRef.componentInstance.info = {

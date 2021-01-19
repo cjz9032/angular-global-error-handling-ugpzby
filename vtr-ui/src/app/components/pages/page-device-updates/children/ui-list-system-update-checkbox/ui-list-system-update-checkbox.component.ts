@@ -7,7 +7,7 @@ import {
 	HostListener,
 	OnDestroy,
 } from '@angular/core';
-import { NgbTooltip, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 
@@ -16,6 +16,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { ModalUpdateChangeLogComponent } from 'src/app/components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { Subscription } from 'rxjs';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-ui-list-system-update-checkbox',
@@ -57,13 +58,13 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private commonService: CommonService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private translate: TranslateService
 	) {
 		this.translateString();
 	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	onCheckClick($event: any) {
 		this.checkChange.emit($event);
@@ -152,11 +153,11 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 			pageContext: 'Read More',
 			closeButton: 'ReadMoreCloseButton',
 		};
-		const modalRef = this.modalService.open(ModalUpdateChangeLogComponent, {
-			backdrop: true,
-			size: 'lg',
-			windowClass: 'update-read-more-modal-size',
-			centered: true,
+		const modalRef = this.dialog.open(ModalUpdateChangeLogComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'update-read-more-modal-size',
 		});
 		modalRef.componentInstance.url = this.readMeUrl;
 		modalRef.componentInstance.updateModalMetrics = updateModalMetrics;

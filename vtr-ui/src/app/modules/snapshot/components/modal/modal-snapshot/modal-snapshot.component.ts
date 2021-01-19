@@ -7,7 +7,7 @@ import {
 	HostListener,
 	OnDestroy,
 } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 import {
 	SnapshotComponentsListByType,
 	ModalSnapshotComponentItem,
@@ -28,7 +28,9 @@ export class ModalSnapshotComponent implements OnInit {
 	public errorMessage = false;
 	private isSuccessful = false;
 
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(
+		private dialogRef: MatDialogRef<ModalSnapshotComponent>,
+	) { }
 
 	// Used to close modal when press 'ESC' key
 	@HostListener('document:keydown', ['$event'])
@@ -56,7 +58,7 @@ export class ModalSnapshotComponent implements OnInit {
 	}
 
 	public closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	public onClickRun() {

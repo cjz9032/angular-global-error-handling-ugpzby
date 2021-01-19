@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { ModalArticleDetailComponent } from '../../../../modal/modal-article-detail/modal-article-detail.component';
 
 @Component({
@@ -10,28 +10,20 @@ import { ModalArticleDetailComponent } from '../../../../modal/modal-article-det
 export class WidgetMcafeeContentCardComponent implements OnInit {
 	@Input() articleId: string;
 	@Input() isOnline: boolean;
-	constructor(public modalService: NgbModal) {}
+	constructor(public dialog: MatDialog) { }
 
-	ngOnInit(): void {}
+	ngOnInit(): void { }
 
 	openArticle() {
-		const articleDetailModal: NgbModalRef = this.modalService.open(
-			ModalArticleDetailComponent,
-			{
-				backdrop: true,
-				size: 'lg',
-				centered: true,
-				windowClass: 'Article-Detail-Modal',
-				keyboard: false,
-				beforeDismiss: () => {
-					if (articleDetailModal.componentInstance.onBeforeDismiss) {
-						articleDetailModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
-			}
-		);
-
+		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Article-Detail-Modal',
+		});
+		articleDetailModal.beforeClosed().subscribe(() => {
+			articleDetailModal.componentInstance.onBeforeDismiss();
+		});
 		articleDetailModal.componentInstance.articleId = this.articleId;
 	}
 }

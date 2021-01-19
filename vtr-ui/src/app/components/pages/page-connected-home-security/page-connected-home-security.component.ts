@@ -12,7 +12,6 @@ import {
 import { HomeSecurityAccount } from 'src/app/data-models/home-security/home-security-account.model';
 import { HomeSecurityPageStatus } from 'src/app/data-models/home-security/home-security-page-status.model';
 import { TranslateService } from '@ngx-translate/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -32,6 +31,7 @@ import { WindowsVersionService } from 'src/app/services/windows-version/windows-
 import { isEqual, pick, cloneDeep, findIndex } from 'lodash';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-page-connected-home-security',
@@ -200,13 +200,13 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		public vantageShellService: VantageShellService,
 		public dialogService: DialogService,
 		private translateService: TranslateService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
 		private cmsService: CMSService,
 		private windowsVersionService: WindowsVersionService,
 		private deviceService: DeviceService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService);
@@ -468,7 +468,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			} else {
 				this.dialogService
 					.openWelcomeModal(showWelcome, this.locationPermission)
-					.result.then(() => {
+					.afterOpened().subscribe(() => {
 						this.commonService.setSessionStorageValue(
 							SessionStorageKey.HomeSecurityShowWelcomeDialog,
 							'finish'
@@ -526,23 +526,15 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 	}
 
 	openDevicePostureArticle(): void {
-		const articleDetailModal: NgbModalRef = this.modalService.open(
-			ModalArticleDetailComponent,
-			{
-				size: 'lg',
-				centered: true,
-				windowClass: 'Article-Detail-Modal',
-				keyboard: false,
-				backdrop: true,
-				beforeDismiss: () => {
-					if (articleDetailModal.componentInstance.onBeforeDismiss) {
-						articleDetailModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
-			}
-		);
-
+		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Article-Detail-Modal',
+		});
+		articleDetailModal.beforeClosed().subscribe(() => {
+			articleDetailModal.componentInstance.onBeforeDismiss();
+		});
 		articleDetailModal.componentInstance.articleId = this.devicePostureArticleId;
 	}
 

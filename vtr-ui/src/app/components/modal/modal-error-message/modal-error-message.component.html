@@ -8,14 +8,20 @@
 				[linkId]="cancelButtonId"
 				metricsEvent="featureClick"
 				metricsItem="closeErrorMessage"
-				(onClick)="onCloseClick($event)"
+				mat-dialog-close
 				[label]="closeText | translate"></vtr-ui-button>
 		</div>
 	</div>
 	<div class="btn-modal-close">
-		<vtr-ui-close-button linkId="{{closeButtonId}}"
+		<button
+			mat-dialog-close
+			class="position-relative float-right closeButton"
+			id="{{closeButtonId}}"
+			vtrMetrics
 			metricsItem="closeErrorMessageModal"
-			(clickClose)="onCloseClick($event)">
-		</vtr-ui-close-button>
+			metricsEvent="FeatureClick"
+		>
+			<mat-icon class="icon close-icon">close</mat-icon>
+		</button>
 	</div>
 </div>

@@ -2,7 +2,6 @@ import { Component, OnInit, NgZone, OnDestroy, DoCheck } from '@angular/core';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -36,6 +35,7 @@ import {
 } from 'src/app/services/self-select/self-select.service';
 import { UpdateInstallTitleId } from 'src/app/enums/update-install-id.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 
 declare let Windows;
 
@@ -212,7 +212,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		public systemUpdateService: SystemUpdateService,
 		private commonService: CommonService,
 		private ngZone: NgZone,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private cmsService: CMSService,
 		private activatedRoute: ActivatedRoute,
 		private translate: TranslateService,
@@ -788,12 +788,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		);
 		const diskSpaceEnough = await this.checkDiskSpaceEnough(this.updatesToInstall);
 
-		const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
+		const modalRef = this.dialog.open(ModalCommonConfirmationComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
 			ariaLabelledBy: 'modal_confirm_title',
-			windowClass: 'common-confirmation-modal',
+			panelClass: 'common-confirmation-modal',
 		});
 
 		if (!diskSpaceEnough) {
@@ -806,7 +806,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			} else if (rebootType === UpdateRebootType.PowerOffForced) {
 				this.showPowerOffForceModal(modalRef);
 			} else {
-				modalRef.dismiss();
+				modalRef.close();
 				// its normal update type installation which doesn't require rebooting/power-off
 				document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
 				this.focusOnElement(this.backButton);
@@ -820,7 +820,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			modalRef.componentInstance.packages = packages;
 			modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
 			modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';
-			modalRef.result.then((result) => {
+			modalRef.afterClosed().subscribe((result) => {
 				// on open
 				if (result) {
 					document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
@@ -840,7 +840,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		}
 	}
 
-	private showDiskSpaceNotEnough(modalRef: NgbModalRef) {
+	private showDiskSpaceNotEnough(modalRef: MatDialogRef<ModalCommonConfirmationComponent>) {
 		const header = 'systemUpdates.popup.diskSpaceNeeded';
 		const description = 'systemUpdates.popup.diskSpaceNotEnoughMsg';
 		modalRef.componentInstance.header = header;
@@ -848,12 +848,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
 		modalRef.componentInstance.CancelText = '';
 		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.DiskSpaceNeeded';
-		modalRef.result.then((result) => {
+		modalRef.afterClosed().subscribe((result) => {
 			modalRef.close();
 		});
 	}
 
-	public onGetSupportClick($event: any) {}
+	public onGetSupportClick($event: any) { }
 
 	private installUpdateBySource(
 		isInstallAll: boolean,
@@ -865,7 +865,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		this.installUpdates(removeDelayedUpdates, updateList, isInstallAll);
 	}
 
-	private showRebootForceModal(modalRef: NgbModalRef) {
+	private showRebootForceModal(modalRef: MatDialogRef<ModalCommonConfirmationComponent>) {
 		const header = 'systemUpdates.popup.reboot';
 		const description = 'systemUpdates.popup.rebootForceMsg';
 		modalRef.componentInstance.header = header;
@@ -873,7 +873,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootForceMsgControl';
 	}
 
-	private showPowerOffForceModal(modalRef: NgbModalRef) {
+	private showPowerOffForceModal(modalRef: MatDialogRef<ModalCommonConfirmationComponent>) {
 		const header = 'systemUpdates.popup.shutdown';
 		const description = 'systemUpdates.popup.shutdownForceMsg';
 		modalRef.componentInstance.header = header;
@@ -881,7 +881,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.ShutdownForceMsgControl';
 	}
 
-	private showRebootDelayedModal(modalRef: NgbModalRef) {
+	private showRebootDelayedModal(modalRef: MatDialogRef<ModalCommonConfirmationComponent>) {
 		const header = 'systemUpdates.popup.reboot';
 		const description = 'systemUpdates.popup.rebootDelayedMsg';
 		modalRef.componentInstance.header = header;
@@ -1246,12 +1246,12 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 	private checkRebootRequested() {
 		this.isRebootRequested = this.systemUpdateService.isRebootRequested();
 		if (this.isRebootRequested) {
-			const modalRef = this.modalService.open(ModalCommonConfirmationComponent, {
-				backdrop: 'static',
-				size: 'lg',
-				centered: true,
+			const modalRef = this.dialog.open(ModalCommonConfirmationComponent, {
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
 				ariaLabelledBy: 'modal_confirm_title',
-				windowClass: 'common-confirmation-modal',
+				panelClass: 'common-confirmation-modal',
 			});
 
 			const header = 'systemUpdates.popup.rebootPending';
@@ -1261,7 +1261,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 			modalRef.componentInstance.OkText = 'systemUpdates.popup.rebootButton';
 			modalRef.componentInstance.CancelText = 'systemUpdates.popup.dismissButton';
 			modalRef.componentInstance.metricsParent = 'Pages.SystemUpdate.RebootRequiredControl';
-			modalRef.result.then((result) => {
+			modalRef.afterClosed().subscribe((result) => {
 				if (result) {
 					this.systemUpdateService.restartWindows();
 				} else {

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { ExportLogErrorStatus } from '../../../enums/hardware-scan.enum';
 import {
@@ -18,7 +18,10 @@ export class ModalExportLogComponent implements OnInit, OnDestroy {
 
 	public enumExportLogErrorStatus = ExportLogErrorStatus;
 
-	constructor(public activeModal: NgbActiveModal, private deviceService: DeviceService) {}
+	constructor(
+		public dialogRef: MatDialogRef<ModalExportLogComponent>,
+		private deviceService: DeviceService
+	) { }
 
 	ngOnInit() {
 		disableBackgroundNavigation(document);
@@ -29,7 +32,7 @@ export class ModalExportLogComponent implements OnInit, OnDestroy {
 	}
 
 	onClosing() {
-		this.activeModal.close();
+		this.dialogRef.close();
 	}
 
 	openWindowsSettings() {

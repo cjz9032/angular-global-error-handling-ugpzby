@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { QA } from 'src/app/data-models/qa/qa.model';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
@@ -28,13 +28,13 @@ export class PageHighDensityBatteryComponent implements OnInit {
 	];
 	constructor(
 		private translate: TranslateService,
-		public modalService: NgbModal,
+		public dialog: MatDialog,
 		public router: Router,
 		public batteryService: BatteryDetailService
-	) {}
+	) { }
 
 	ngOnInit(): void {
-		this.modalService.dismissAll();
+		this.dialog.closeAll();
 	}
 
 	gotoBatteryDetails() {

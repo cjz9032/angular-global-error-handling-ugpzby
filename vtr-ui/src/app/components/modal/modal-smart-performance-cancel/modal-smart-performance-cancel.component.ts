@@ -5,15 +5,13 @@ import {
 	EventEmitter,
 	Output,
 	Input,
-	ViewChild,
-	ElementRef,
 } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { Router } from '@angular/router';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-smart-performance-cancel',
@@ -25,12 +23,12 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 	@Output() cancelRequested: EventEmitter<any> = new EventEmitter();
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalSmartPerformanceCancelComponent>,
 		public smartPerformanceService: SmartPerformanceService,
 		private router: Router,
 		private localCacheService: LocalCacheService,
 		private logger: LoggerService
-	) {}
+	) { }
 	private timerRef: any;
 	public secondsCountdown = 9;
 	public isLoading = false;
@@ -51,7 +49,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 		if (this.timerRef) {
 			this.stopCountdown();
 		}
-		this.activeModal.close(false);
+		this.dialogRef.close(false);
 	}
 
 	onAgree() {
@@ -86,7 +84,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 				//  emiting cancel in smart performance scanning component.
 				this.cancelRequested.emit();
 				//  de-activates the pop-up,
-				this.activeModal.close(true);
+				this.dialogRef.close(true);
 			}
 		} catch (err) {
 			this.logger.error('Error while leaving page', err.message);

@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 
 import { LandingView } from 'src/app/data-models/security-advisor/widegt-security-landing/landing-view.model';
 import { Gradient } from 'src/app/data-models/security-advisor/gradient-color.model';
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
+
 
 @Component({
 	selector: 'vtr-widget-security',
@@ -49,7 +50,7 @@ export class WidgetSecurityComponent implements OnInit {
 	];
 	levelText: string;
 
-	constructor(public modalService: NgbModal, private cmsService: CMSService) {}
+	constructor(public dialog: MatDialog, private cmsService: CMSService) { }
 
 	ngOnInit(): void {
 		this.fetchCMSArticleCategory();
@@ -66,23 +67,15 @@ export class WidgetSecurityComponent implements OnInit {
 	}
 
 	buttonClick() {
-		const articleDetailModal: NgbModalRef = this.modalService.open(
-			ModalArticleDetailComponent,
-			{
-				size: 'lg',
-				centered: true,
-				windowClass: 'Article-Detail-Modal',
-				keyboard: false,
-				backdrop: true,
-				beforeDismiss: () => {
-					if (articleDetailModal.componentInstance.onBeforeDismiss) {
-						articleDetailModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
-			}
-		);
-
+		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Article-Detail-Modal',
+		});
+		articleDetailModal.beforeClosed().subscribe(() => {
+			articleDetailModal.componentInstance.onBeforeDismiss();
+		});
 		articleDetailModal.componentInstance.articleId = this.articleId;
 	}
 }

@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WinRT, WifiSecurity } from '@lenovo/tan-client-bridge';
 
 @Component({
@@ -19,22 +18,11 @@ export class ModalHomeProtectionLocationNoticeComponent implements OnInit {
 	@Output() OkClick = new EventEmitter<any>();
 	@Output() CancelClick = new EventEmitter<any>();
 
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor() { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	public onOkClick($event: any) {
-		this.activeModal.close(true);
 		WinRT.launchUri(this.url);
-	}
-
-	public onCancelClick($event: any) {
-		this.activeModal.close(false);
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.wifi-security-location-modal') as HTMLElement;
-		modal.focus();
 	}
 }

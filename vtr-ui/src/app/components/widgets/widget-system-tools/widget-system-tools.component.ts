@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GamingAllCapabilities } from './../../../data-models/gaming/gaming-all-capabilities';
 import { Gaming } from 'src/app/enums/gaming.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -10,7 +9,10 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-thirdparty-app/gaming-third-party-app.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
+import { GamingAccessoryService } from 'src/app/services/gaming/gaming-accessory/gaming-accessory.service';
+import { MatDialog } from '@lenovo/material/dialog';
+import { ModalGamingPromptComponent } from '../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
+
 @Component({
 	selector: 'vtr-widget-system-tools',
 	templateUrl: './widget-system-tools.component.html',
@@ -83,7 +85,7 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	private notificationSubscription: Subscription;
 	private eventEmitSubscription: Subscription;
 	constructor(
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
@@ -91,7 +93,7 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		// version 3.3 show entrance & launch accessory
 		private gamingThirdPartyAppService: GamingThirdPartyAppService,
 		private logger: LoggerService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.notificationSubscription = this.commonService
@@ -184,10 +186,10 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 		if (this.showLegionAccessory) {
 			originalLength++;
 		}
-		if(this.showNahimic) {
+		if (this.showNahimic) {
 			originalLength++;
 		}
-		if(this.showXRite) {
+		if (this.showXRite) {
 			originalLength++;
 		}
 
@@ -215,9 +217,11 @@ export class WidgetSystemToolsComponent implements OnInit, OnDestroy {
 	}
 
 	openWaringModal(key: string) {
-		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
-			backdrop: 'static',
-			windowClass: 'modal-prompt',
+		const waringModalRef = this.dialog.open(ModalGamingPromptComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'modal-prompt',
 		});
 		waringModalRef.componentInstance.info = {
 			title: this.modalInfo[key].title,

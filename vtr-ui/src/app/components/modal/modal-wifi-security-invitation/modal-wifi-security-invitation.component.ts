@@ -1,8 +1,8 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { MetricService } from 'src/app/services/metric/metrics.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-wifi-security-invitation',
@@ -10,6 +10,10 @@ import { MetricService } from 'src/app/services/metric/metrics.service';
 	styleUrls: ['./modal-wifi-security-invitation.component.scss'],
 })
 export class ModalWifiSecurityInvitationComponent implements OnInit {
+	@ViewChild('domInput') domInput: ElementRef;
+	@ViewChild('connectingMsg') connectingMsg: ElementRef;
+	@ViewChild('successMsg') successMsg: ElementRef;
+
 	chs: ConnectedHomeSecurity;
 
 	header = 'security.homeprotection.invitationcode.joinFamilyAccount';
@@ -25,22 +29,20 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	joinFailed = false;
 	isFocusIn = false;
 
-	@ViewChild('domInput') domInput: ElementRef;
-	@ViewChild('connectingMsg') connectingMsg: ElementRef;
-	@ViewChild('successMsg') successMsg: ElementRef;
-
 	constructor(
-		public activeModal: NgbActiveModal,
 		private vantageShellService: VantageShellService,
-		public metrics: MetricService
-	) {}
+		public metrics: MetricService,
+		public dialogRef: MatDialogRef<ModalWifiSecurityInvitationComponent>,
+	) { }
+
+	@HostListener('window: focus')
+	onFocus(): void {
+		const modal = document.querySelector('.wifi-security-location-modal') as HTMLElement;
+		modal.focus();
+	}
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
-	}
-
-	closeModal() {
-		this.activeModal.close('close');
 	}
 
 	KeyPress(e) {
@@ -76,7 +78,7 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 							this.successMsg.nativeElement.focus();
 						}, 0);
 						setTimeout(() => {
-							this.closeModal();
+							this.dialogRef.close();
 						}, 3000);
 					} else {
 						this.joinFailed = true;
@@ -102,10 +104,6 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 		}
 	}
 
-	onCancelClick($event: any) {
-		this.activeModal.close(false);
-	}
-
 	show() {
 		const show: HTMLElement = document.querySelector('.activation');
 		show.style.visibility = 'visible';
@@ -119,11 +117,5 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 
 	focusOut() {
 		this.isFocusIn = false;
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.wifi-security-location-modal') as HTMLElement;
-		modal.focus();
 	}
 }

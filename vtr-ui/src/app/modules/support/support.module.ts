@@ -2,6 +2,9 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 import { CommonModule } from '@angular/common';
 
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatDialogModule } from '@lenovo/material/dialog';
+import { MatIconModule } from '@lenovo/material/icon';
+import { MatButtonModule } from '@lenovo/material/button';
 
 import { SupportRoutingModule } from './support-routing.module';
 import { PageSupportComponent } from 'src/app/components/pages/page-support/page-support.component';
@@ -27,11 +30,11 @@ import { CommonPipeModule } from '../common/common-pipe.module';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { ModalAboutComponent } from 'src/app/components/modal/modal-about/modal-about.component';
 import { ModalFindUsComponent } from 'src/app/components/modal/modal-find-us/modal-find-us.component';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FeedbackModule } from '../feedback/feedback.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
 import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
+
 
 @NgModule({
 	declarations: [
@@ -52,10 +55,12 @@ import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-cl
 		CommonWidgetModule,
 		SharedModule,
 		WidgetOfflineModule,
-		NgbModalModule,
 		FeedbackModule,
 		PageLayoutModule,
 		MatTooltipModule,
+		MatDialogModule,
+		MatIconModule,
+		MatButtonModule,
 	],
 	providers: [SupportService, LicensesService],
 	exports: [UIArticleItemComponent, ContainerArticleComponent],

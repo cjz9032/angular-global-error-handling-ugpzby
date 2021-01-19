@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WinRT, WifiSecurity } from '@lenovo/tan-client-bridge';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-wifi-security-location-notice',
@@ -24,12 +24,15 @@ export class ModalWifiSecurityLocationNoticeComponent implements OnInit {
 	@Output() OkClick = new EventEmitter<any>();
 	@Output() CancelClick = new EventEmitter<any>();
 
-	constructor(public activeModal: NgbActiveModal, private commonService: CommonService) {}
+	constructor(
+		private commonService: CommonService,
+		private dialogRef: MatDialogRef<ModalWifiSecurityLocationNoticeComponent>,
+	) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	public onOkClick() {
-		this.activeModal.close(true);
+		this.dialogRef.close();
 		this.commonService.setSessionStorageValue(
 			SessionStorageKey.SecurityWifiSecurityLocationFlag,
 			'yes'
@@ -42,7 +45,7 @@ export class ModalWifiSecurityLocationNoticeComponent implements OnInit {
 			SessionStorageKey.SecurityWifiSecurityLocationFlag,
 			'no'
 		);
-		this.activeModal.close('cancelClick');
+		this.dialogRef.close('cancelClick');
 		document.getElementById('main-wrapper').focus();
 	}
 

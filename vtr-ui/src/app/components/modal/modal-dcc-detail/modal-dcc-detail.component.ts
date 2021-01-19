@@ -1,16 +1,14 @@
 import {
 	Component,
 	OnInit,
-	ElementRef,
 	HostListener,
-	SecurityContext,
 	AfterViewInit,
 } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from 'src/app/services/common/common.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-dcc-detail',
@@ -26,7 +24,7 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 	dccTitle = this.translateService.instant('dcc.heroBanner.description').toUpperCase();
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalDccDetailComponent>,
 		vantageShellService: VantageShellService,
 		private timerService: TimerService,
 		private translateService: TranslateService,
@@ -48,7 +46,7 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 	}
 
 	enableBatteryChargeThreshold() {
-		this.activeModal.close('enable');
+		this.dialogRef.close('enable');
 	}
 
 	// this function would only be fired when the modal backdrop was clicked,
@@ -82,7 +80,7 @@ export class ModalDccDetailComponent implements OnInit, AfterViewInit {
 
 	closeModal() {
 		this.sendDccDetailsViewMetric();
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('document:keydown.escape', ['$event'])

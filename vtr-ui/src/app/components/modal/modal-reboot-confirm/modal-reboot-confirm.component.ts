@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-reboot-confirm',
@@ -16,18 +16,18 @@ export class ModalRebootConfirmComponent implements OnInit {
 		}
 	}
 
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(public dialogRef: MatDialogRef<ModalRebootConfirmComponent>) { }
 
 	ngOnInit() {
 		this.btnClose.nativeElement.focus();
 	}
 
 	proceedToReboot() {
-		this.activeModal.close('enable');
+		this.dialogRef.close('enable');
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {

@@ -8,7 +8,7 @@ import {
 	EventEmitter,
 	ElementRef,
 } from '@angular/core';
-import { NgbAccordion, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -17,6 +17,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { SPCategory, SPHeaderImageType, SPSubCategory } from 'src/app/enums/smart-performance.enum';
 import { SecureMath } from '@lenovo/tan-client-bridge';
 import { ModalSmartPerformanceCancelComponent } from 'src/app/components/modal/modal-smart-performance-cancel/modal-smart-performance-cancel.component';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-subpage-scanning',
@@ -55,7 +56,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	SPHeaderImageType = SPHeaderImageType;
 	headerTitle = '';
 	constructor(
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		public shellServices: VantageShellService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
@@ -263,13 +264,13 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 	}
 
 	async openCancelScanModel() {
-		const modalCancel = this.modalService.open(ModalSmartPerformanceCancelComponent, {
-			backdrop: 'static',
-			centered: true,
-			windowClass: 'cancel-modal',
+		const modalCancel = this.dialog.open(ModalSmartPerformanceCancelComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'cancel-modal',
 		});
-
-		const response = await modalCancel.result;
+		const response = await modalCancel.afterOpened();
 		if (response) {
 			this.sendModelStatus.emit();
 		}

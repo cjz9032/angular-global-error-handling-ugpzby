@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from 'src/app/services/common/common.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -29,7 +28,6 @@ import { PerformanceNotifications } from 'src/app/enums/performance-notification
 	selector: 'vtr-page-device-gaming',
 	templateUrl: './page-device-gaming.component.html',
 	styleUrls: ['./page-device-gaming.component.scss'],
-	providers: [NgbModalConfig, NgbModal],
 })
 export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit, OnDestroy {
 	public static allCapablitiyFlag = false;
@@ -52,8 +50,6 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		public dashboardService: DashboardService,
 		public mockService: MockService,
 		public qaService: QaService,
-		private modalService: NgbModal,
-		config: NgbModalConfig,
 		private commonService: CommonService,
 		private localCacheService: LocalCacheService,
 		private configService: ConfigService,
@@ -69,8 +65,6 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		vantageShellService: VantageShellService,
 		private titleService: Title
 	) {
-		config.backdrop = 'static';
-		config.keyboard = false;
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		// TODO Lite Gaming
 		this.desktopType = this.localCacheService.getLocalCacheValue(LocalStorageKey.desktopType);
@@ -94,7 +88,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					// this.desktopType = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.desktopType);
 					// this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 				})
-				.catch((err) => {});
+				.catch((err) => { });
 		}
 		this.translateSubscription = this.translate
 			.stream([
@@ -181,11 +175,11 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					this.fetchCmsContents('en');
 				}
 			},
-			(error) => {}
+			(error) => { }
 		);
 	}
 
-	onConnectivityClick($event: any) {}
+	onConnectivityClick($event: any) { }
 
 	getPreviousContent() {
 		this.cardContentPositionD = this.dashboardService.offlineCardContent.positionD;

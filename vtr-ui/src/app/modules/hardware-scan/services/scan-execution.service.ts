@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import {
 	TaskStep,
@@ -19,8 +18,7 @@ import { PreviousResultService } from './previous-result.service';
 import { ModalCancelComponent } from '../components/modal/modal-cancel/modal-cancel.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
-import { ModalWaitComponent } from '../components/modal/modal-wait/modal-wait.component';
-import { SnapshotService } from 'src/app/modules/snapshot/services/snapshot.service';
+import { MatDialog } from '@lenovo/material/dialog';
 
 const RootParent = 'HardwareScan';
 const CancelButton = 'Cancel';
@@ -54,7 +52,7 @@ export class ScanExecutionService {
 		private timerService: TimerService,
 		private hardwareScanResultService: HardwareScanResultService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private translate: TranslateService,
 		private lenovoSupportService: LenovoSupportService,
 		private previousResultService: PreviousResultService,
@@ -474,11 +472,12 @@ export class ScanExecutionService {
 					finalResultCode
 				);
 				const rbsDevices = this.hardwareScanService.getDevicesToRecoverBadSectors();
-				const modalRef = this.modalService.open(ModalScanFailureComponent, {
-					backdrop: 'static',
-					size: 'lg',
-					centered: true,
-					windowClass: 'support-modal-hwscan',
+				const modalRef = this.dialog.open(ModalScanFailureComponent, {
+					maxWidth: '50rem',
+					autoFocus: true,
+					hasBackdrop: true,
+					disableClose: true,
+					panelClass: 'support-modal-hwscan',
 					ariaLabelledBy: 'hwscan-scan-failure-title',
 				});
 				modalRef.componentInstance.supportUrl = supportUrl;
@@ -587,11 +586,12 @@ export class ScanExecutionService {
 
 		this.hardwareScanService.setCurrentTaskStep(TaskStep.Cancel);
 
-		const modalCancel = this.modalService.open(ModalCancelComponent, {
-			backdrop: 'static',
-			size: 'lg',
-			centered: true,
-			windowClass: 'cancel-modal-hwscan',
+		const modalCancel = this.dialog.open(ModalCancelComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'cancel-modal-hwscan',
 			ariaLabelledBy: 'hwscan-cancel-modal-title',
 		});
 
@@ -704,25 +704,26 @@ export class ScanExecutionService {
 			}
 
 			if (this.batteryMessage !== '') {
-				const modal: NgbModalRef = this.modalService.open(ModalPreScanInfoComponent, {
-					backdrop: 'static',
-					size: 'lg',
-					centered: true,
-					windowClass: 'hardware-scan-modal-size',
+				const modal = this.dialog.open(ModalPreScanInfoComponent, {
+					maxWidth: '50rem',
+					autoFocus: true,
+					hasBackdrop: true,
+					disableClose: true,
+					panelClass: 'hardware-scan-modal-size',
 					ariaLabelledBy: 'hwscan-pre-scan-info-modal-title',
 				});
 
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
 
-				(modal.componentInstance as ModalPreScanInfoComponent).error = this.translate.instant(
+				modal.componentInstance.error = this.translate.instant(
 					'hardwareScan.warning'
 				);
-				(modal.componentInstance as ModalPreScanInfoComponent).description = this.batteryMessage;
-				(modal.componentInstance as ModalPreScanInfoComponent).ItemParent = this.getMetricsParentValue();
-				(modal.componentInstance as ModalPreScanInfoComponent).CancelItemName = this.getMetricsItemNameClose();
-				(modal.componentInstance as ModalPreScanInfoComponent).ConfirmItemName = this.getMetricsItemNameConfirm();
+				modal.componentInstance.description = this.batteryMessage;
+				modal.componentInstance.ItemParent = this.getMetricsParentValue();
+				modal.componentInstance.CancelItemName = this.getMetricsItemNameClose();
+				modal.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
 
-				modal.result.then(
+				modal.afterClosed().subscribe(
 					(result) => {
 						this.getDoScan(requests);
 						// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here

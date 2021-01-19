@@ -1,11 +1,11 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { TaskAction, ItemView } from 'src/app/services/metric/metrics.model';
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-store-rating',
@@ -53,7 +53,7 @@ export class ModalStoreRatingComponent implements OnInit {
 	public normalIconVisible = true;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalStoreRatingComponent>,
 		private logger: LoggerService,
 		private metrics: MetricService,
 		private shellService: VantageShellService
@@ -66,11 +66,11 @@ export class ModalStoreRatingComponent implements OnInit {
 	}
 
 	public onBtnCloseClicked($event) {
-		this.activeModal.dismiss(false);
+		this.dialogRef.close(false);
 	}
 
 	public async onBtnLikeClicked($event) {
-		this.activeModal.close(true);
+		this.dialogRef.close(true);
 		if (this.msStoreUtil) {
 			if (this.msStoreUtil.isMSStoreRatingSupported()) {
 				this.logger.info('Launch MS rating without leaving Vantage.');
@@ -88,7 +88,7 @@ export class ModalStoreRatingComponent implements OnInit {
 	}
 
 	public async onBtnDislikeClicked($event) {
-		this.activeModal.close(false);
+		this.dialogRef.close(false);
 		if (this.msStoreUtil) {
 			if (this.msStoreUtil.isFeedbackHubSupported()) {
 				const ret = await this.msStoreUtil.launchMSFeedback();

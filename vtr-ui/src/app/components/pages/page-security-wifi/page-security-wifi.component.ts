@@ -1,9 +1,9 @@
 import { Component, OnInit, HostListener, AfterViewInit, OnDestroy, NgZone } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 import * as phoenix from '@lenovo/tan-client-bridge';
+import { MatDialog } from '@lenovo/material/dialog';
 
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from 'src/app/services/cms/cms.service';
@@ -24,6 +24,7 @@ import { DialogData } from 'src/app/material/material-dialog/material-dialog.int
 import { UserService } from 'src/app/services/user/user.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LenovoIdStatus } from 'src/app/enums/lenovo-id-key.enum';
+
 
 interface WifiSecurityState {
 	state: string; // enabled,disabled,never-used
@@ -58,7 +59,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 		public activeRouter: ActivatedRoute,
 		private commonService: CommonService,
 		private dialogService: DialogService,
-		public modalService: NgbModal,
+		public dialog: MatDialog,
 		public shellService: VantageShellService,
 		private cmsService: CMSService,
 		public translate: TranslateService,
@@ -180,6 +181,7 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	ngAfterViewInit() {
+		this.dialogService.wifiSecurityErrorMessageDialog();
 		const fragment = this.activeRouter.snapshot.queryParams.fragment;
 		if (fragment) {
 			document.getElementById(fragment).scrollIntoView();
@@ -266,23 +268,15 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 	}
 
 	openSecurityHealthArticle(): void {
-		const articleDetailModal: NgbModalRef = this.modalService.open(
-			ModalArticleDetailComponent,
-			{
-				size: 'lg',
-				centered: true,
-				windowClass: 'Article-Detail-Modal',
-				keyboard: false,
-				backdrop: true,
-				beforeDismiss: () => {
-					if (articleDetailModal.componentInstance.onBeforeDismiss) {
-						articleDetailModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
-			}
-		);
-
+		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Article-Detail-Modal',
+		});
+		articleDetailModal.beforeClosed().subscribe(() => {
+			articleDetailModal.componentInstance.onBeforeDismiss();
+		});
 		articleDetailModal.componentInstance.articleId = this.securityHealthArticleId;
 	}
 

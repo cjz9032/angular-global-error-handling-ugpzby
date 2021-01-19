@@ -3,7 +3,6 @@ import { VantageShellService } from '../../../services/vantage-shell/vantage-she
 import { AntiVirusViewModel } from '../../../data-models/security-advisor/antivirus.model';
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
-import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -18,6 +17,7 @@ import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-page-security-antivirus',
@@ -55,7 +55,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		public cmsService: CMSService,
 		public commonService: CommonService,
 		public localCacheService: LocalCacheService,
-		public modalService: NgbModal,
+		public dialog: MatDialog,
 		private guard: GuardService,
 		private router: Router,
 		private localInfoService: LocalInfoService,
@@ -63,7 +63,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		public metrics: MetricService,
 		public hypSettings: HypothesisService,
 		private antivirusService: AntivirusService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
@@ -135,28 +135,20 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 					});
 				}
 			},
-			(error) => {}
+			(error) => { }
 		);
 	}
 
 	openArticle() {
-		const articleDetailModal: NgbModalRef = this.modalService.open(
-			ModalArticleDetailComponent,
-			{
-				backdrop: true,
-				size: 'lg',
-				centered: true,
-				windowClass: 'Article-Detail-Modal',
-				keyboard: false,
-				beforeDismiss: () => {
-					if (articleDetailModal.componentInstance.onBeforeDismiss) {
-						articleDetailModal.componentInstance.onBeforeDismiss();
-					}
-					return true;
-				},
-			}
-		);
-
+		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Article-Detail-Modal',
+		});
+		articleDetailModal.beforeClosed().subscribe(() => {
+			articleDetailModal.componentInstance.onBeforeDismiss();
+		});
 		articleDetailModal.componentInstance.articleId = this.mcafeeArticleId;
 	}
 

@@ -4,13 +4,10 @@ import {
 	HostListener,
 	Output,
 	EventEmitter,
-	ViewChild,
-	ElementRef,
 } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
+
 import { CommonService } from 'src/app/services/common/common.service';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { Router } from '@angular/router';
 import { v4 as uuid } from 'uuid';
 import { formatDate } from '@angular/common';
 import { SupportService } from 'src/app/services/support/support.service';
@@ -19,6 +16,8 @@ import { PaymentPage } from 'src/app/enums/smart-performance.enum';
 import { environment } from 'src/environments/environment';
 import moment from 'moment';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
+
+
 @Component({
 	selector: 'vtr-modal-smart-performance-subscribe',
 	templateUrl: './modal-smart-performance-subscribe.component.html',
@@ -41,12 +40,12 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		},
 	];
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalSmartPerformanceSubscribeComponent>,
 		private commonService: CommonService,
 		private smartPerformanceService: SmartPerformanceService,
 		private supportService: SupportService,
 		private loggerService: LoggerService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.supportService.getMachineInfo().then(async (machineInfo) => {
@@ -71,7 +70,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 		this.smartPerformanceService.modalStatus.initiatedTime = intervalTime;
 		this.smartPerformanceService.modalStatus.isGettingStatus = true;
 		this.cancelPaymentRequest.emit();
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('document:keydown.tab', ['$event'])

@@ -1,9 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { DeviceService } from 'src/app/services/device/device.service';
-import { KeyCode } from 'src/app/enums/key-code.enum';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 interface IQuestion {
 	likelyValues?: number[];
@@ -54,7 +53,7 @@ export class FeedbackFormComponent implements OnInit {
 	showEmailField = true;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<FeedbackFormComponent>,
 		private shellService: VantageShellService,
 		private deviceService: DeviceService
 	) {
@@ -116,7 +115,7 @@ export class FeedbackFormComponent implements OnInit {
 		const leftTimeInterval = setInterval(() => {
 			this.leftTime--;
 			if (this.leftTime <= 0) {
-				this.activeModal.close();
+				this.dialogRef.close();
 				clearInterval(leftTimeInterval);
 			}
 		}, 1000);
@@ -141,13 +140,7 @@ export class FeedbackFormComponent implements OnInit {
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.feedback-modal') as HTMLElement;
-		modal.focus();
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('keydown', ['$event'])

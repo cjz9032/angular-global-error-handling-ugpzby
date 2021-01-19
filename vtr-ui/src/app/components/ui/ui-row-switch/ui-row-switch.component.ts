@@ -12,7 +12,8 @@ import {
 	ViewChild,
 	ViewChildren,
 } from '@angular/core';
-import { NgbModal, NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -84,7 +85,7 @@ export class UiRowSwitchComponent
 	subscriptionList = [];
 
 	constructor(
-		public modalService: NgbModal,
+		public dialog: MatDialog,
 		private deviceService: DeviceService,
 		private translate: TranslateService,
 		private ngZone: NgZone
@@ -100,7 +101,7 @@ export class UiRowSwitchComponent
 					element.setAttribute('class', 'modern-standby');
 				}
 			);
-		} catch (error) {}
+		} catch (error) { }
 	}
 
 	ngOnInit() {
@@ -117,17 +118,17 @@ export class UiRowSwitchComponent
 		const activeElement = document.activeElement as HTMLElement;
 		if (
 			this.title ===
-				this.translate.instant(
-					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title'
-				) ||
+			this.translate.instant(
+				'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title'
+			) ||
 			this.isRebootRequired
 		) {
 			this.isSwitchChecked = !this.isSwitchChecked;
-			const modalRef = this.modalService.open(ModalRebootConfirmComponent, {
-				backdrop: 'static',
-				size: 'sm',
-				centered: true,
-				windowClass: 'Battery-Charge-Threshold-Modal',
+			const modalRef = this.dialog.open(ModalRebootConfirmComponent, {
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'Battery-Charge-Threshold-Modal',
 			});
 			if (this.isRebootRequired) {
 				modalRef.componentInstance.description =
@@ -136,7 +137,7 @@ export class UiRowSwitchComponent
 				modalRef.componentInstance.description =
 					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.popup.description';
 			}
-			modalRef.result.then(
+			modalRef.afterClosed().subscribe(
 				(result) => {
 					if (result === 'enable') {
 						this.rebootToggleOnOff.emit($event);
@@ -145,7 +146,7 @@ export class UiRowSwitchComponent
 					}
 					activeElement.focus();
 				},
-				(reason) => {}
+				(reason) => { }
 			);
 		} else {
 			this.rebootToggleOnOff.emit($event);
@@ -207,18 +208,18 @@ export class UiRowSwitchComponent
 		}
 	}
 	voicePopUp() {
-		const modalRef = this.modalService.open(ModalVoiceComponent, {
-			backdrop: 'static',
-			size: 'sm',
-			centered: true,
-			windowClass: 'Voice-Modal',
+		const modalRef = this.dialog.open(ModalVoiceComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Voice-Modal',
 		});
 		modalRef.componentInstance.value = this.voiceValue;
 		modalRef.componentInstance.metricsParent = this.metricsParent;
 	}
 
 	ngOnDestroy() {
-		window.removeEventListener('scroll', () => {});
+		window.removeEventListener('scroll', () => { });
 		this.subscriptionList.forEach((s: Subscription) => s.unsubscribe());
 	}
 

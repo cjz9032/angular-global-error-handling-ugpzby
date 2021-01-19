@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
 
@@ -18,24 +18,22 @@ export class ModalBatteryChargeThresholdComponent implements OnInit {
 	buttonId: string;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalBatteryChargeThresholdComponent>,
 		public translate: TranslateService,
 		public batteryService: BatteryDetailService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.batteryService.currentOpenModal = this.id;
 		this.buttonId = this.translate.instant(this.positiveResponseText);
-		const modal = document.querySelector('.close-btn') as HTMLElement;
-		modal.focus();
 	}
 
 	onPositiveButtonClick() {
-		this.activeModal.close('positive');
+		this.dialogRef.close('positive');
 	}
 
 	closeModal() {
-		this.activeModal.close('negative');
+		this.dialogRef.close('negative');
 	}
 
 	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {

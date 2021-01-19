@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
 import { LocalInfoService } from '../local-info/local-info.service';
 
@@ -7,10 +7,13 @@ import { LocalInfoService } from '../local-info/local-info.service';
 	providedIn: 'root',
 })
 export class LicensesService {
-	constructor(public modalService: NgbModal, public localInfoService: LocalInfoService) {}
+	constructor(
+		public dialog: MatDialog,
+		public localInfoService: LocalInfoService
+	) { }
 
 	openLicensesAgreement(isCalledbyAbout?: boolean) {
-		if (!isCalledbyAbout && this.modalService.hasOpenModals()) {
+		if (!isCalledbyAbout && this.dialog.openDialogs.length) {
 			return;
 		}
 		this.localInfoService.getLocalInfo().then((localInfo) => {
@@ -24,12 +27,13 @@ export class LicensesService {
 				pageContext: 'License agreement',
 				closeButton: 'LicenseAgreementCloseButton',
 			};
-			const licenseModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
-				backdrop: true,
-				size: 'lg',
-				centered: true,
+			const licenseModal = this.dialog.open(ModalLicenseComponent, {
+				maxWidth: '50rem',
+				autoFocus: true,
+				hasBackdrop: true,
+				disableClose: true,
+				panelClass: 'license-Modal',
 				ariaLabelledBy: 'license-agreement-dialog-basic-title',
-				windowClass: 'license-Modal',
 			});
 			licenseModal.componentInstance.url = agreementUrl;
 			licenseModal.componentInstance.type = 'html';
@@ -38,7 +42,7 @@ export class LicensesService {
 	}
 
 	openOpenSource(isCalledbyAbout?: boolean) {
-		if (!isCalledbyAbout && this.modalService.hasOpenModals()) {
+		if (!isCalledbyAbout && this.dialog.openDialogs.length) {
 			return;
 		}
 		const openSourceUrl = `assets/licenses/OpenSource/OpenSourceLicenses.txt`;
@@ -47,12 +51,13 @@ export class LicensesService {
 			pageContext: 'Other Software Licenses',
 			closeButton: 'OtherSoftwareLicensesCloseButton',
 		};
-		const licenseModal: NgbModalRef = this.modalService.open(ModalLicenseComponent, {
-			backdrop: true,
-			size: 'lg',
-			centered: true,
+		const licenseModal = this.dialog.open(ModalLicenseComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'license-Modal',
 			ariaLabelledBy: 'other-software-licenses-dialog-basic-title',
-			windowClass: 'license-Modal',
 		});
 		licenseModal.componentInstance.url = openSourceUrl;
 		licenseModal.componentInstance.type = 'txt';

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { ModalHardwareScanRbsComponent } from 'src/app/modules/hardware-scan/components/modal/modal-hardware-scan-rbs/modal-hardware-scan-rbs.component';
 import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { HardwareScanService } from './hardware-scan.service';
@@ -13,9 +13,9 @@ export class RecoverBadSectorsService {
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
-		private modalService: NgbModal,
+		private dialog: MatDialog,
 		private router: Router
-	) {}
+	) { }
 
 	public getLastRecoverResultTitle() {
 		return HardwareScanTestResult[this.recoverBadSectorsLastResult.resultModule];
@@ -30,10 +30,11 @@ export class RecoverBadSectorsService {
 	}
 
 	public openRecoverBadSectorsModal(failedDevices = null) {
-		const modalRef = this.modalService.open(ModalHardwareScanRbsComponent, {
-			size: 'lg',
-			centered: true,
-			backdrop: true,
+		const modalRef = this.dialog.open(ModalHardwareScanRbsComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
 			ariaLabelledBy: 'hwscan-rbs-modal-title',
 		});
 

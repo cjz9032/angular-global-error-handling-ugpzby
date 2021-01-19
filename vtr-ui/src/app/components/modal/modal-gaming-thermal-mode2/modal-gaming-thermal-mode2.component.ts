@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, HostListener, OnDestroy } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-capabilities/gaming-all-capabilities.service';
 import { GamingAllCapabilities } from 'src/app/data-models/gaming/gaming-all-capabilities';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -14,6 +13,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-gaming-thermal-mode2',
@@ -45,8 +45,8 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 		okButton: 'thermal_mode_warning_dialog_proceed_button',
 	};
 	constructor(
-		private modalService: NgbModal,
-		private activeModalService: NgbActiveModal,
+		private dialog: MatDialog,
+		private dialogRef: MatDialogRef<ModalGamingThermalMode2Component>,
 		private shellServices: VantageShellService,
 		private localCacheService: LocalCacheService,
 		private gamingCapabilityService: GamingAllCapabilitiesService,
@@ -172,7 +172,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 	}
 
 	closeThermalMode2Modal() {
-		this.activeModalService.close();
+		this.dialogRef.close();
 
 		const pageViewMetrics = {
 			ItemType: 'PageView',
@@ -254,7 +254,8 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 				const metricsData = {
 					ItemName: 'thermalmode_mode_change',
 					ItemValue: value === 1 ? 'Quiet Mode' : value === 2 ? 'Balance Mode'
-						: 'Performance Mode'};
+						: 'Performance Mode'
+				};
 				this.sendFeatureClickMetrics(metricsData);
 			} catch (error) {
 				this.thermalModeSettingStatus = prevThermalModeStatus;
@@ -545,10 +546,12 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 	// fengxu start
 	openWaringModal() {
 		this.closeThermalMode2Modal();
-		const waringModalRef = this.modalService.open(ModalGamingPromptComponent, {
-			backdrop: 'static',
-			windowClass: 'modal-prompt',
-			backdropClass: 'backdrop-level'
+		const waringModalRef = this.dialog.open(ModalGamingPromptComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			backdropClass: 'backdrop-level',
+			panelClass: 'modal-prompt',
 		});
 		waringModalRef.componentInstance.info = {
 			title: 'gaming.dashboard.device.warningPromptPopup.title',
@@ -582,10 +585,15 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 		this.sendFeatureClickMetrics(metricsData);
 	}
 	openAdvancedOCModal() {
-		this.modalService.open(ModalGamingAdvancedOCComponent, {
-			backdrop: 'static',
-			windowClass: 'modal-fun',
-			backdropClass: 'backdrop-level'
+		if (this.dialog.openDialogs.length) {
+			return;
+		}
+		this.dialog.open(ModalGamingAdvancedOCComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			backdropClass: 'backdrop-level',
+			panelClass: 'modal-prompt',
 		});
 	}
 	// fengxu end

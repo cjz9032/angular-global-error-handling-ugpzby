@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -50,7 +50,7 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 	public intervalOption: number;
 	public disable: boolean;
 
-	constructor(public activeModal: NgbActiveModal, private translate: TranslateService) {
+	constructor(public dialogRef: MatDialogRef<ModalScheduleNewScanComponent>, private translate: TranslateService) {
 		this.optionsAMPM = [
 			{ name: this.translate.instant('hardwareScan.am'), id: 1 },
 			{ name: this.translate.instant('hardwareScan.pm'), id: 2 },
@@ -313,7 +313,7 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 			deleteRequest: this.editScan.deleteReq,
 		};
 
-		this.activeModal.close(scheduleResult);
+		this.dialogRef.close(scheduleResult);
 	}
 
 	public onNewScanScheduling(): void {
@@ -334,6 +334,6 @@ export class ModalScheduleNewScanComponent implements OnInit, OnChanges {
 			scheduleResult.oldScan = this.editScanOptions;
 		}
 
-		this.activeModal.close(scheduleResult);
+		this.dialogRef.close(scheduleResult);
 	}
 }

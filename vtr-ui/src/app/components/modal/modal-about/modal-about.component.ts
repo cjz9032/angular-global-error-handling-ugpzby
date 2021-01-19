@@ -1,11 +1,11 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
-declare var window;
+declare let window;
 
 @Component({
 	selector: 'vtr-modal-about',
@@ -18,7 +18,7 @@ export class ModalAboutComponent implements OnInit {
 	bridgeVersion: string;
 	userGuide: any;
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalAboutComponent>,
 		private licensesService: LicensesService,
 		private shellService: VantageShellService,
 		private commonService: CommonService
@@ -64,15 +64,6 @@ export class ModalAboutComponent implements OnInit {
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
-	}
-
-	initModalFocus() {
-		(document.querySelector('.About-Modal') as HTMLElement).focus();
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		this.initModalFocus();
+		this.dialogRef.close('close');
 	}
 }

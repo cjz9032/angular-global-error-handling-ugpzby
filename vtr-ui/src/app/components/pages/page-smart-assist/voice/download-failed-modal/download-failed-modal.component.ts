@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-download-failed-modal',
@@ -7,10 +7,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 	styleUrls: ['./download-failed-modal.component.scss'],
 })
 export class DownloadFailedModalComponent implements OnInit {
-	constructor(public activeModal: NgbActiveModal) {}
-	ngOnInit() {}
+	constructor(
+		public dialogRef: MatDialogRef<DownloadFailedModalComponent>
+	) { }
+	ngOnInit() { }
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 }

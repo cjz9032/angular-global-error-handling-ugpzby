@@ -4,8 +4,7 @@
 	background: $white100;
 	background-size: cover;
 	color: $darkText;
-	box-shadow: $drop_shadow;
-	padding: 4rem;
+	padding: 2rem;
 	position: relative;
 	outline: none;
 	@media #{$high-contrast} {
@@ -25,6 +24,20 @@
 		padding-bottom: 1.5rem;
 		margin-bottom: 2rem;
 		border-bottom: 0.1rem solid $main_lightest;
+	}
+	.closeButton {
+		top: -1.5rem;
+		right: -1.5rem;
+		height: 2.4rem;
+		width: 2.4rem;
+		color: $grey_darker;
+
+		&:focus {
+			outline: 0.1rem solid $menu_hover;
+		}
+		&:hover {
+			color: $menu_hover;
+		}
 	}
 	.close-btn {
 		position: absolute;

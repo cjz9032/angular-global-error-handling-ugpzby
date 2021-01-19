@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { MatDialogRef } from '@lenovo/material/dialog';
+
 
 @Component({
 	selector: 'vtr-modal-common-confirmation',
@@ -22,18 +23,16 @@ export class ModalCommonConfirmationComponent implements OnInit {
 	@Output() CancelClick = new EventEmitter<any>();
 	okButtonId: string;
 
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(
+		public dialogRef: MatDialogRef<ModalCommonConfirmationComponent>
+	) { }
 
 	ngOnInit() {
 		this.okButtonId = this.OkText.replace(/\./g, '_');
 	}
 
-	// closeModal() {
-	// 	this.activeModal.close('close');
-	// }
-
 	public onOkClick($event: any) {
-		this.activeModal.close(true);
+		this.dialogRef.close(true);
 		if (this.url && this.url.trim().length > 0) {
 			WinRT.launchUri(this.url);
 		}
@@ -41,12 +40,6 @@ export class ModalCommonConfirmationComponent implements OnInit {
 	}
 
 	public onCancelClick($event: any) {
-		this.activeModal.close(false);
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.common-confirmation-modal') as HTMLElement;
-		modal.focus();
+		this.dialogRef.close(false);
 	}
 }

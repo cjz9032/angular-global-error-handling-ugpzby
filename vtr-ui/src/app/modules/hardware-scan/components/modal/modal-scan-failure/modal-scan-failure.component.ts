@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import {
 	disableBackgroundNavigation,
@@ -7,6 +6,7 @@ import {
 } from '../../../services/utils/ModalBackgroundNavigationUtils';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { RecoverBadSectorsService } from 'src/app/modules/hardware-scan/services/recover-bad-sectors.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-scan-failure',
@@ -23,7 +23,7 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 	public testResultEnum = HardwareScanTestResult;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalScanFailureComponent>,
 		private hardwareScanService: HardwareScanService,
 		private rbsService: RecoverBadSectorsService
 	) {
@@ -40,7 +40,7 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 
 	// closes modal
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	// Opens Lenovo's support page and closes the modal

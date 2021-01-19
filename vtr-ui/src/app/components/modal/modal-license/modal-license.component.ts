@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy, SecurityContext, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-license',
@@ -23,7 +23,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	iframeInterval: any;
 
 	constructor(
-		public activeModal: NgbActiveModal,
+		public dialogRef: MatDialogRef<ModalLicenseComponent>,
 		private http: HttpClient,
 		private sanitizer: DomSanitizer,
 		private shellService: VantageShellService,
@@ -49,9 +49,6 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 			}
 		});
 		this.timerService.start();
-		setTimeout(() => {
-			this.initModalFocus();
-		}, 0);
 	}
 
 	ngOnDestroy() {
@@ -92,22 +89,7 @@ export class ModalLicenseComponent implements OnInit, OnDestroy {
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
-	}
-
-	initModalFocus() {
-		(document.querySelector('.license-Modal') as HTMLElement).focus();
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		if (
-			!this.licenseModalMetrics ||
-			!this.licenseModalMetrics.closeButton ||
-			document.activeElement.id !== `btn-${this.licenseModalMetrics.closeButton}`
-		) {
-			this.initModalFocus();
-		}
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('keydown', ['$event'])

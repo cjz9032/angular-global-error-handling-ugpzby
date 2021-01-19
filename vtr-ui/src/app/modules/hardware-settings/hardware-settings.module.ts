@@ -51,6 +51,7 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 import { CdkScrollableModule } from '@angular/cdk/scrolling';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { MatIconModule } from '@lenovo/material/icon';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
@@ -106,6 +107,7 @@ import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-h
 import { BatteryHealthModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-power/battery-health/battery-health.module';
 import { MaterialModule } from '../common/material.module';
 import { SystemUpdateModule } from '../system-update/system-update.module';
+
 
 @NgModule({
 	declarations: [
@@ -179,6 +181,7 @@ import { SystemUpdateModule } from '../system-update/system-update.module';
 		CdkScrollableModule,
 		MaterialModule,
 		SystemUpdateModule,
+		MatIconModule,
 	],
 	exports: [
 		CommonModule,

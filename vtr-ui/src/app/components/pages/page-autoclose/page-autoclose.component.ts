@@ -13,10 +13,10 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { GamingQuickSettingToolbarService } from 'src/app/services/gaming/gaming-quick-setting-toolbar/gaming-quick-setting-toolbar.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { ModalGamingRunningAppListComponent } from './../../modal/modal-gaming-running-app-list/modal-gaming-running-app-list.component';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
+import { MatDialog } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-page-autoclose',
@@ -65,7 +65,7 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 		private shellServices: VantageShellService,
 		private gamingQuickSettingToolbarService: GamingQuickSettingToolbarService,
 		private ngZone: NgZone,
-		private modalService: NgbModal
+		private dialog: MatDialog
 	) {
 		this.fetchCMSArticles();
 		this.isOnline = this.commonService.isOnline;
@@ -119,9 +119,11 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 	}
 
 	showTurnOn() {
-		const promptRef = this.modalService.open(ModalGamingPromptComponent, {
-			backdrop: 'static',
-			windowClass: 'modal-prompt',
+		const promptRef = this.dialog.open(ModalGamingPromptComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'modal-prompt',
 			backdropClass: 'backdrop-level',
 		});
 		promptRef.componentInstance.info = {
@@ -148,22 +150,25 @@ export class PageAutocloseComponent implements OnInit, OnDestroy {
 				this.setAutoCloseStatus(true);
 			}
 		});
-		promptRef.result.then(() => {
+		promptRef.afterClosed().subscribe(() => {
 			// Finally, open Add App Model
 			this.showAddApps();
 		});
 	}
 
 	showAddApps() {
-		const appListRef = this.modalService.open(ModalGamingRunningAppListComponent, {
-			backdrop: 'static',
+		const appListRef = this.dialog.open(ModalGamingRunningAppListComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'modal-prompt',
 			backdropClass: 'backdrop-level',
 		});
 		appListRef.componentInstance.setAppList(false, 0);
 		appListRef.componentInstance.emitService.subscribe((val) => {
 			this.refreshTrigger += 1;
 		});
-		appListRef.result.then(() => {
+		appListRef.afterClosed().subscribe(() => {
 			this.refreshTrigger = -1;
 			this.isModalShowing = false;
 		});

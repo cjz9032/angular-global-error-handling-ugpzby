@@ -1,3 +1,15 @@
+<button
+	mat-dialog-close
+	class="position-relative float-right closeButton"
+	id="feedback-modal-btn-close"
+	(click)="closeModal()"
+	vtrMetrics
+	metricsItem="btn.close"
+	metricsEvent="FeatureClick"
+	metricsParent="Dialog.Feedback"
+>
+	<mat-icon class="icon close-icon">close</mat-icon>
+</button>
 <div class="vtr-feedback-form"
 	id="feedback-form-dialog">
 	<div class="content">
@@ -161,12 +173,5 @@
 				role="text">{{ 'dashboard.feedback.form.messages.feedbackSuccess' | translate }}</div>
 			<div class="left-time">{{ leftTime }}</div>
 		</div>
-	</div>
-
-	<div class="btn-modal-close">
-		<vtr-ui-close-button linkId="feedback-modal-btn-close"
-			metricsItem="btn.close"
-			metricsParent="Dialog.Feedback"
-			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>

@@ -1,8 +1,15 @@
 <div class="home-protection-location-modal">
 	<h1>{{ header | translate }} </h1>
-	<div role="button" class="close-btn" (click)="onCancelClick($event)">
-		<img [src]=" 'assets/icons/Close.svg' | svgInline | async" alt="" srcset="">
-	</div>
+	<button
+		mat-dialog-close
+		class="position-relative float-right closeButton"
+		id="btn-home-protection-location-close"
+		vtrMetrics
+		metricsItem="closeHomeProtectionLocationModal"
+		metricsEvent="FeatureClick"
+	>
+		<mat-icon class="icon close-icon">close</mat-icon>
+	</button>
 	<p class="description">
 		{{ description | translate }}
 	</p>
@@ -13,14 +20,15 @@
 		<div class="ml-0 mr-4 pl-0">
 			<button type="button"
 				class="btn btn-default modal-button"
-				(click)="onOkClick($event)">
+				(click)="onOkClick($event)"
+				mat-dialog-close>
 				{{OkText | translate}}
 			</button>
 		</div>
 		<div class="ml-0 mr-4 pl-0">
 			<div role="button"
 				class="btn btn-default modal-button-cancel"
-				(click)="onCancelClick($event)">
+				mat-dialog-close>
 				{{CancelText | translate}}
 			</div>
 		</div>

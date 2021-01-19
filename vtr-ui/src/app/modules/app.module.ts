@@ -8,7 +8,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkScrollableModule } from '@angular/cdk/scrolling';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
-import { NgbModalModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -45,10 +45,11 @@ import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
-import { MatRippleModule, MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@lenovo/material/core';
-import { MatDialogModule } from '@lenovo/material/dialog';
-import { MatSnackBarModule } from '@lenovo/material/snack-bar';
+import { MatButtonModule } from '@lenovo/material/button';
+import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@lenovo/material/core';
 import { MatTooltipModule, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@lenovo/material/tooltip';
+import { MatDialogModule } from '@lenovo/material/dialog';
+import { MatIconModule } from '@lenovo/material/icon';
 
 import { environment } from 'src/environments/environment';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
@@ -89,10 +90,6 @@ import { ModalNewFeatureTipComponent } from '../components/modal/modal-new-featu
 import { ModalStoreRatingComponent } from '../components/modal/modal-store-rating/modal-store-rating.component';
 
 
-const globalRippleConfig: RippleGlobalOptions = {
-	disabled: true,
-};
-
 const initializerFactory = (initializerService: InitializerService) => () =>
 	initializerService.initialize()
 		.finally(() => {
@@ -131,7 +128,6 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 			isolate: false,
 		}),
 		NavbarModule,
-		NgbModalModule,
 		NgbTooltipModule,
 		UiButtonModule,
 		UiCloseButtonModule,
@@ -152,6 +148,9 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 		CdkScrollableModule,
 		OverlayModule,
 		MatTooltipModule,
+		MatDialogModule,
+		MatIconModule,
+		MatButtonModule,
 		MaterialModule,
 	],
 	exports: [

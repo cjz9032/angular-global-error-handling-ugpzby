@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-intelligent-cooling-modes',
@@ -7,12 +7,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 	styleUrls: ['./modal-intelligent-cooling-modes.component.scss'],
 })
 export class ModalIntelligentCoolingModesComponent implements OnInit {
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(public dialogRef: MatDialogRef<ModalIntelligentCoolingModesComponent>) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
 		this.closeModal();
@@ -22,11 +22,5 @@ export class ModalIntelligentCoolingModesComponent implements OnInit {
 		event: KeyboardEvent
 	) {
 		this.closeModal();
-	}
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.Intelligent-Cooling-Modes-Modal') as HTMLElement;
-		modal.focus();
 	}
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@lenovo/material/dialog';
 import { SnapshotStatus } from 'src/app/modules/snapshot/enums/snapshot.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SnapshotComponentsListByType } from '../../models/snapshot.interface';
@@ -28,7 +28,7 @@ export class SnapshotHeaderComponent implements OnInit {
 	constructor(
 		private snapshotService: SnapshotService,
 		private loggerService: LoggerService,
-		private modalService: NgbModal
+		private dialog: MatDialog
 	) {
 		this.snapshotComponentsByType = {
 			hardwareList: this.snapshotService.getHardwareComponentsList(),
@@ -36,7 +36,7 @@ export class SnapshotHeaderComponent implements OnInit {
 		};
 	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	onTakeSnapshot() {
 		this.snapshotService.snapshotStatus = SnapshotStatus.fullSnapshotInProgress;
@@ -59,11 +59,12 @@ export class SnapshotHeaderComponent implements OnInit {
 	}
 
 	onReplaceBaseline() {
-		const modalRef = this.modalService.open(ModalSnapshotComponent, {
-			size: 'lg',
-			centered: true,
-			backdrop: true,
-			windowClass: 'custom-modal-size',
+		const modalRef = this.dialog.open(ModalSnapshotComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'custom-modal-size',
 		});
 		modalRef.componentInstance.snapshotComponentsByType = this.snapshotComponentsByType;
 		modalRef.componentInstance.passEntry.subscribe((modalResponse: Array<string>) => {

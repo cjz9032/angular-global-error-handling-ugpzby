@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-voice',
@@ -7,7 +7,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 	styleUrls: ['./modal-voice.component.scss'],
 })
 export class ModalVoiceComponent implements OnInit {
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(public dialogRef: MatDialogRef<ModalVoiceComponent>) { }
 	value: any;
 	lowerCaseValue;
 	metricsParent: any;
@@ -16,7 +16,7 @@ export class ModalVoiceComponent implements OnInit {
 	}
 
 	closeModal() {
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {

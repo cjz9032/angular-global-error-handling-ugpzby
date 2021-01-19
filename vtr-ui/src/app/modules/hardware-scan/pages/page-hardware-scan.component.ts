@@ -3,7 +3,6 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
 import { HardwareScanProgress } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -17,7 +16,6 @@ import { SnapshotService } from '../../snapshot/services/snapshot.service';
 	selector: 'vtr-page-hardware-scan',
 	templateUrl: './page-hardware-scan.component.html',
 	styleUrls: ['./page-hardware-scan.component.scss'],
-	providers: [NgbModalConfig, NgbModal],
 })
 export class PageHardwareScanComponent implements OnInit, OnDestroy {
 	backarrow = '< ';
@@ -37,7 +35,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		private translate: TranslateService,
 		private router: Router,
 		private snapshotService: SnapshotService
-	) {}
+	) { }
 
 	async ngOnInit() {
 		this.notificationSubscription = this.commonService.notification.subscribe(
@@ -89,7 +87,7 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public onGetSupportClick($event: any) {}
+	public onGetSupportClick($event: any) { }
 
 	public isLoadingDone() {
 		if (this.hardwareScanService) {

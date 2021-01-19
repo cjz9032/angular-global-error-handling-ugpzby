@@ -2,7 +2,6 @@ import { Component, OnInit, NgZone, OnDestroy, HostListener } from '@angular/cor
 import { CommonService } from 'src/app/services/common/common.service';
 import { Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { NgbModal, NgbModalRef, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -24,6 +23,7 @@ import { HardwareScanFeaturesService } from '../../../services/hardware-scan-fea
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ExportResultsService } from '../../../services/export-results.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { MatDialog } from '@lenovo/material/dialog';
 
 const RootParent = 'HardwareScan';
 const ViewResultsButton = 'ViewResults';
@@ -103,8 +103,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
 		private ngZone: NgZone,
-		private modalService: NgbModal,
-		config: NgbModalConfig,
+		private dialog: MatDialog,
 		private translate: TranslateService,
 		private shellService: VantageShellService,
 		private scanExecutionService: ScanExecutionService,
@@ -156,14 +155,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			) {
 				// Validate loading module
 				if (!this.hardwareScanService.isLoadingDone()) {
-					this.openWaitHardwareComponentsModal().result.then(() => {
+					this.openWaitHardwareComponentsModal().afterClosed().subscribe(() => {
 						// Close all modals to avoid a scan to be started from HardwareScanPage
-						this.modalService.dismissAll();
+						this.dialog.closeAll();
 						this.protocolExecutionService.protocolExecution(params.scan, params.module);
 					});
 				} else {
 					// Close all modals to avoid a scan to be started from HardwareScanPage
-					this.modalService.dismissAll();
+					this.dialog.closeAll();
 					this.protocolExecutionService.protocolExecution(params.scan, params.module);
 				}
 				// Back button doesn't work properly when using protocol, due to additional URL params.
@@ -330,10 +329,12 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	private onCustomizeScan() {
-		const modalRef = this.modalService.open(this.customizeModal, {
-			size: 'lg',
-			centered: true,
-			windowClass: 'custom-modal-size',
+		const modalRef = this.dialog.open(this.customizeModal, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'custom-modal-size',
 		});
 		modalRef.componentInstance.items = this.hardwareScanService.getCustomScanModules();
 		modalRef.componentInstance.passEntry.subscribe(() => {
@@ -351,22 +352,23 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	}
 
 	private openWaitHardwareComponentsModal() {
-		const modal: NgbModalRef = this.modalService.open(ModalWaitComponent, {
-			size: 'lg',
-			centered: true,
-			windowClass: 'hardware-scan-modal-size',
+		const modal = this.dialog.open(ModalWaitComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'hardware-scan-modal-size',
 		});
 
-		(modal.componentInstance as ModalWaitComponent).modalTitle = this.translate.instant(
+		modal.componentInstance.modalTitle = this.translate.instant(
 			'hardwareScan.loadingComponents'
 		);
-		(modal.componentInstance as ModalWaitComponent).modalDescription = this.translate.instant(
+		modal.componentInstance.modalDescription = this.translate.instant(
 			'hardwareScan.retrievingHardwareInformation'
 		);
-		(modal.componentInstance as ModalWaitComponent).shouldCloseModal = this.hardwareScanService.isHardwareModulesLoaded();
-		(modal.componentInstance as ModalWaitComponent).ItemParent =
-			'HardwareScan.LoadingComponents';
-		(modal.componentInstance as ModalWaitComponent).CancelItemName = 'LoadingComponents.Close';
+		modal.componentInstance.shouldCloseModal = this.hardwareScanService.isHardwareModulesLoaded();
+		modal.componentInstance.ItemParent = 'HardwareScan.LoadingComponents';
+		modal.componentInstance.CancelItemName = 'LoadingComponents.Close';
 
 		return modal;
 	}
@@ -378,8 +380,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		if (!this.hardwareScanService.isLoadingDone()) {
 			const modalWait = this.openWaitHardwareComponentsModal();
-			modalWait.result.then(
-				(result) => {
+			modalWait.afterClosed().subscribe(
+				() => {
 					// Hardware modules have been retrieved, so let's continue with the Scan process
 					if (taskType === TaskType.QuickScan) {
 						this.scanExecutionService.checkPreScanInfo(taskType);
@@ -387,7 +389,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 						this.onCustomizeScan();
 					}
 				},
-				(reason) => {
+				(error) => {
 					// User has clicked in the 'X' button, so we need to re-enable the Quick/Custom scan button here.
 					this.scanExecutionService.scanClicked = false;
 				}

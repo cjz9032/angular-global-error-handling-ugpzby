@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
 	selector: 'vtr-modal-gaming-prompt',
@@ -21,7 +21,7 @@ export class ModalGamingPromptComponent implements OnInit {
 	};
 	public isChecked: any;
 
-	constructor(public activeModal: NgbActiveModal) {}
+	constructor(public dialogRef: MatDialogRef<ModalGamingPromptComponent>) { }
 
 	ngOnInit() {
 		setTimeout(() => {
@@ -35,17 +35,17 @@ export class ModalGamingPromptComponent implements OnInit {
 
 	closeModal() {
 		this.emitFn(0);
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	confirmFn() {
 		this.emitFn(1);
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	cancelFn() {
 		this.emitFn(2);
-		this.activeModal.close('close');
+		this.dialogRef.close('close');
 	}
 
 	setNotAskAgain() {
