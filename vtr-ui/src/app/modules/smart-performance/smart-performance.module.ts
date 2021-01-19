@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatIconModule } from '@lenovo/material/icon';
 
 import { SmartPerformanceRoutingModule } from './smart-performance-routing.module';
 import { PageSmartPerformanceComponent } from '../../components/pages/page-smart-performance/page-smart-performance.component';
@@ -77,6 +78,7 @@ import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-sm
 		UiButtonModule,
 		SharedModule,
 		MatTooltipModule,
+		MatIconModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [

@@ -222,6 +222,16 @@ button:focus {
 			color: $menu_hover;
 		}
 	}
+
+	@media #{$black-on-white} {
+		outline: none !important;
+		@include black-border;
+	}
+
+	@media #{$white-on-black} {
+		outline: none !important;
+		@include white-border;
+	}
 }
 
 .mat-tooltip.vtr-tooltip,

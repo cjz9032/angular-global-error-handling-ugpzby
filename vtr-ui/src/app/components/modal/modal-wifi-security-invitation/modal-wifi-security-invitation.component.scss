@@ -1,13 +1,5 @@
 @import '../../../app.theme.scss';
 .wifi-security-invitation-modal {
-	@media #{$black-on-white} {
-		@include black-border;
-	}
-	@media #{$white-on-black} {
-		@include white-border;
-	}
-
-	border-radius: $border_radius;
 	background: $light;
 	background-size: cover;
 	color: $main_dark;

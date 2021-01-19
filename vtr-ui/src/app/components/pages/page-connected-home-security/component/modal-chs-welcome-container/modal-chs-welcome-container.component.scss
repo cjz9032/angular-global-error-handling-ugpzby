@@ -1,13 +1,6 @@
 @import '../../../../../app.theme.scss';
 
 .vtr-modal-chs-welcome-container {
-	@media #{$black-on-white} {
-		@include black-border;
-	}
-	@media #{$white-on-black} {
-		@include white-border;
-	}
-
 	.page {
 		margin: 0 4rem;
 		.page-img {

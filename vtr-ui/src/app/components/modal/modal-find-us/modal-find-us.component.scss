@@ -8,7 +8,6 @@
 }
 
 .find-us-modal {
-	border-radius: $border_radius;
 	background: $light;
 	background-size: cover;
 	color: $main_dark;
@@ -16,16 +15,6 @@
 	padding: 4rem;
 	position: relative;
 	width: 100%;
-
-	@media #{$black-on-white} {
-		background: $light !important;
-		border: 0.1rem solid $dark;
-	}
-
-	@media #{$white-on-black} {
-		background: $dark !important;
-		border: 0.1rem solid $light;
-	}
 
 	.img-con {
 		height: 30.5rem;
