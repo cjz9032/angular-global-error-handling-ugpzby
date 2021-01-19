@@ -1,3 +1,5 @@
+import { Router } from "@angular/router";
+
 export enum MenuID {
 	smartPerformance = 'smart-performance',
 	facebook = 'facebook',
@@ -23,6 +25,12 @@ export enum MenuID {
 	internetProtection = 'internet-protection',
 	support = 'support',
 	hardwareScan = 'hardware-scan',
+	smb = 'smb',
+	meetingExperience = 'meeting-experience',
+	meetingManager = 'meeting-manager',
+	creatorCentre = 'creator-centre',
+	creatorSettings = 'creator-settings',
+	easyRendering = 'easy-rendering',
 }
 
 export enum RoutePath {
@@ -52,6 +60,12 @@ export enum RoutePath {
 	internetProtection = 'internet-protection',
 	hardwareScan = 'hardware-scan',
 	support = 'support',
+	smb = 'smb',
+	meetingExperience = 'meeting-experience',
+	meetingManager = 'meeting-manager',
+	creatorCentre = 'creator-centre',
+	creatorSettings = 'creator-settings',
+	easyRendering = 'easy-rendering',
 }
 
 export const menuConfig = {
@@ -368,6 +382,105 @@ export const menuConfig = {
 					],
 				},
 			],
+		},
+		{
+			id: MenuID.smb,
+			label: 'common.menu.smb.title',
+			path: RoutePath.smb,
+			icon: ['fal', 'laptop'],	
+			metricsEvent: 'itemClick',
+			metricsParent: 'navbar',
+			metricsItem: 'link.smb',		
+			sMode: false,
+			subitems: [
+				{
+					id: MenuID.meetingExperience,
+					label: 'common.menu.smb.sub1',
+					path: RoutePath.meetingExperience,
+					icon: null,		
+					metricsEvent: 'itemClick',
+					metricsParent: 'smb.navbar',
+					metricsItem: 'link.meeting-experience',			
+					routerLinkActiveOptions: {
+						exact: true
+					},
+					sMode: true,
+					subitems: [
+						{
+							id: MenuID.meetingManager,
+							label: 'common.menu.smb.sub3',
+							path: RoutePath.meetingManager,
+							icon: null,	
+							metricsEvent: 'itemClick',
+							metricsParent: 'smb.smb.navbar',
+							metricsItem: 'link.meeting-manager',						
+							routerLinkActiveOptions: {
+								exact: true
+							},
+							sMode: false,
+							subitems: []
+						}
+					]
+				},
+				{
+					id: MenuID.creatorCentre,
+					label: 'common.menu.smb.sub2',
+					path: RoutePath.creatorCentre,
+					icon: null,		
+					metricsEvent: 'itemClick',
+					metricsParent: 'smb.navbar',
+					metricsItem: 'link.creator-centre',			
+					routerLinkActiveOptions: {
+						exact: true
+					},
+					sMode: false,
+					subitems: [
+						{
+							id: MenuID.creatorSettings,
+							label: 'common.menu.smb.sub4',
+							path: RoutePath.creatorSettings,
+							icon: null,
+							metricsEvent: 'itemClick',
+							metricsParent: 'smb.creator-centre.navbar',
+							metricsItem: 'link.creator-settings',	
+							hide: false,					
+							routerLinkActiveOptions: {
+								exact: false
+							},
+							sMode: false,
+							subitems: []
+						},
+						{
+							id: MenuID.easyRendering,
+							label: 'common.menu.smb.sub5',
+							path: RoutePath.easyRendering,
+							icon: null,		
+							metricsEvent: 'itemClick',
+							metricsParent: 'smb.creator-centre.navbar',
+							metricsItem: 'link.easy-rendering',						
+							routerLinkActiveOptions: {
+								exact: false
+							},
+							sMode: false,
+							subitems: []
+						},
+						{
+							id: 'color-calibration',
+							label: 'common.menu.smb.sub6',
+							path: 'color-calibration',
+							icon: null,	
+							metricsEvent: 'itemClick',
+							metricsParent: 'smb.creator-centre.navbar',
+							metricsItem: 'link.color-calibration',								
+							routerLinkActiveOptions: {
+								exact: false
+							},
+							sMode: false,
+							subitems: []
+						}
+					]
+				}
+			]
 		},
 		{
 			id: MenuID.security,
