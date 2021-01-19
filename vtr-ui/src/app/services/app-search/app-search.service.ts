@@ -250,7 +250,7 @@ export class AppSearchService implements OnDestroy {
 			Array.from(Array(parallelThread)).forEach(async () => {
 				const mockThreadId = counter++;
 				await this.mockDetectionThread(taskStack, mockThreadId);
-				if (parallelThread-- <= 0) {
+				if (--parallelThread <= 0) {
 					this.searchComplete(subscriber, timeoutHandler, ResultType.complete, features);
 				}
 			});
@@ -271,7 +271,12 @@ export class AppSearchService implements OnDestroy {
 			clearTimeout(timeoutHandler);
 		}
 
-		subscriber.next(new SearchResult(resultType, features));
+		subscriber.next(
+			new SearchResult(
+				resultType,
+				features.filter((feature) => feature.applicable)
+			)
+		);
 		subscriber.complete();
 	}
 
