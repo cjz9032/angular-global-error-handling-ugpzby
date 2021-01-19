@@ -14,6 +14,7 @@ export class MaterialAppTileListComponent implements OnInit {
 	@Input() addable: boolean;
 	@Input() maxSelected: MaxSelected;
 	@Input() isShowAddBtn = true;
+	@Input() metricsParent: string;
 
 	@ViewChild('appTileContainer') appTileContainer: ElementRef;
 

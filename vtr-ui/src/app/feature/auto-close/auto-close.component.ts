@@ -19,6 +19,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 	removable: boolean;
 	autoCloseChecked = true;
 	selectedEmitSubscribe: Subscription;
+	metricsParent = 'AutoClose';
 
 	constructor(
 		private dialogService: DialogService,

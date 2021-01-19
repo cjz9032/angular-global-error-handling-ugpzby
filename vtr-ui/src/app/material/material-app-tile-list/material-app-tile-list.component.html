@@ -6,12 +6,17 @@
 		[removable]="removable"
 		[addable]="addable"
 		(removed)="remove(item)"
-		(selected)="select(item)">
+		(selected)="select(item)"
+		[metricsParent]="metricsParent">
 
 	</vtr-material-tile>
 	<mat-chip *ngIf="isShowAddBtn && !removable && !addable"
 		(click)="clickAdd()"
-		class="vtr-material-tile d-flex flex-column m-0">
+		class="vtr-material-tile d-flex flex-column m-0"
+		vtrMetrics
+		metricsItem="app list add icon"
+		metricsEvent="FeatureClick"
+		[metricsParent]="metricsParent">
 		<div class="d-flex tile-container px-3 pb-3 align-items-center justify-content-center mt-5"
 			[ngClass]="{'flex-column': !isHorizontal}">
 			<span class="add-border tile-icon">
