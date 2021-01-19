@@ -820,25 +820,6 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	color: $button_red_start !important;
 }
 
-/*intelligent-cooling-read-more-pop-up-style*/
-
-.read-more {
-	border-radius: 1rem;
-	background: $light;
-	padding: 2rem;
-	p {
-		font-size: 1.6rem;
-		font-weight: normal;
-		color: $light-grey;
-
-		span {
-			font-size: 2rem;
-			font-weight: bold;
-			color: $blue-dark;
-		}
-	}
-}
-
 /*common-confirmation-modal-styles*/
 
 .common-confirmation-modal {
