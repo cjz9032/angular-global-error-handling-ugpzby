@@ -82,6 +82,31 @@ export class AppSearch {
 			static readonly zeroTouchVideoPlaybackId = `appSearch.features.smartAssist.zeroTouchVideoPlayback`;
 			static readonly videoResolutionUpscalingSRId = `appSearch.features.smartAssist.videoResolutionUpscalingSR`;
 		};
+
+		static HomeSecurity = class {
+			static readonly categoryId = 'appSearch.features.homeSecurity';
+			static readonly pageId = 'appSearch.features.homeSecurity.page';
+		};
+
+		static WifiSecurity = class {
+			static readonly categoryId = 'appSearch.features.wifiSecurity';
+			static readonly pageId = 'appSearch.features.wifiSecurity.page';
+		};
+
+		static AntiVirus = class {
+			static readonly categoryId = 'appSearch.features.antiVirus';
+			static readonly pageId = 'appSearch.features.antiVirus.page';
+		};
+
+		static PasswordHealth = class {
+			static readonly categoryId = 'appSearch.features.passwordHealth';
+			static readonly pageId = 'appSearch.features.passwordHealth.page';
+		};
+
+		static VpnSecurity = class {
+			static readonly categoryId = 'appSearch.features.vpnSecurity';
+			static readonly pageId = 'appSearch.features.vpnSecurity.page';
+		};
 	};
 
 	static LocaleResourcePath = class {
@@ -96,5 +121,10 @@ export class AppSearch {
 		static readonly audio = AppSearch.FeatureIds.Audio.categoryId;
 		static readonly inputAccessories = AppSearch.FeatureIds.InputAccessories.categoryId;
 		static readonly smartAssist = AppSearch.FeatureIds.SmartAssist.categoryId;
+		static readonly homeSecurity = AppSearch.FeatureIds.HomeSecurity.categoryId;
+		static readonly wifiSecurity = AppSearch.FeatureIds.WifiSecurity.categoryId;
+		static readonly vpnSecurity = AppSearch.FeatureIds.VpnSecurity.categoryId;
+		static readonly antiVirus = AppSearch.FeatureIds.AntiVirus.categoryId;
+		static readonly passwordHealth = AppSearch.FeatureIds.PasswordHealth.categoryId;
 	};
 }

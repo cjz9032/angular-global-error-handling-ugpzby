@@ -363,4 +363,64 @@ export const featureSource = [
 			menuId: MenuID.smartAssist,
 		},
 	},
+
+	/***
+	 * appSearch.features.homeSecurity
+	 */
+	{
+		id: AppSearch.FeatureIds.HomeSecurity.pageId,
+		categoryId: AppSearch.FeatureIds.HomeSecurity.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.homeSecurity}`,
+		},
+	},
+
+	/***
+	 * appSearch.features.wifiSecurity
+	 */
+	{
+		id: AppSearch.FeatureIds.WifiSecurity.pageId,
+		categoryId: AppSearch.FeatureIds.WifiSecurity.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.security}/${RoutePath.wifiSecurity}`,
+		},
+	},
+
+	/***
+	 * appSearch.features.antiVirus
+	 */
+	{
+		id: AppSearch.FeatureIds.AntiVirus.pageId,
+		categoryId: AppSearch.FeatureIds.AntiVirus.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.security}/${RoutePath.antiVirus}`,
+		},
+	},
+
+	/***
+	 * appSearch.features.passwordSecurity
+	 */
+	{
+		id: AppSearch.FeatureIds.PasswordHealth.pageId,
+		categoryId: AppSearch.FeatureIds.PasswordHealth.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.security}/${RoutePath.passwordProtection}`,
+		},
+	},
+
+	/***
+	 * appSearch.features.vpnSecurity
+	 */
+	{
+		id: AppSearch.FeatureIds.VpnSecurity.pageId,
+		categoryId: AppSearch.FeatureIds.VpnSecurity.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.security}/${RoutePath.internetProtection}`,
+		},
+	},
 ];
