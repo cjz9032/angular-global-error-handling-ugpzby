@@ -10,6 +10,7 @@ import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.ser
 import { SystemUpdateService } from '../system-update/system-update.service';
 import { AppSearch } from './model/feature-ids.model';
 import { IApplicableDetector as IApplicableDetector } from './model/interface.model';
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -57,6 +58,11 @@ export class FeatureApplicableDetections {
 			featureId: AppSearch.FeatureIds.HomeSecurity.pageId,
 			isApplicable: async () => this.isHomeSecurityApplicable(),
 		},
+		// Hardware Scan
+		{
+			featureId: AppSearch.FeatureIds.HardwareScan.pageId,
+			isApplicable: async () => this.isHardwareScanApplicable(),
+		},
 	];
 
 	constructor(
@@ -64,7 +70,8 @@ export class FeatureApplicableDetections {
 		private hypSettings: HypothesisService,
 		private localCacheService: LocalCacheService,
 		private localInfoService: LocalInfoService,
-		private systemUpdateService: SystemUpdateService
+		private systemUpdateService: SystemUpdateService,
+		private hardwareScanService: HardwareScanService
 	) {
 		this.detectionFuncMap = mapValues(
 			keyBy(this.detectionFuncList, 'featureId'),
@@ -166,5 +173,9 @@ export class FeatureApplicableDetections {
 			return true;
 		}
 		return false;
+	}
+
+	private isHardwareScanApplicable() {
+		return this.hardwareScanService.isAvailable();
 	}
 }
