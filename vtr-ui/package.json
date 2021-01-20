@@ -27,7 +27,7 @@
 		"fix-no-console": "node prebuild/no-console.js",
 		"update-nuspec": "node postbuild/nuget.js",
 		"e2e": "ng e2e",
-		"remove-console": "npx jscodeshift -t prebuild/removeConsole.js --extensions=ts --parser=ts src --ignore-config=./prebuild/jscodeshiftIgnore",
+		"remove-console": "npx jscodeshift -t prebuild/removeConsole.js --extensions=ts src --ignore-config=./prebuild/jscodeshiftIgnore",
 		"detect-console": "node prebuild/detectConsole.js",
 		"diff": "node tools/code-diff.js",
 		"get-https": "node tools/collect-https.js"
