@@ -58,6 +58,11 @@ export class FeatureApplicableDetections {
 			featureId: AppSearch.FeatureIds.HomeSecurity.pageId,
 			isApplicable: async () => this.isHomeSecurityApplicable(),
 		},
+		// Smart Performance
+		{
+			featureId: AppSearch.FeatureIds.SmartPerformance.pageId,
+			isApplicable: async () => this.isSmartPerformanceApplicable(),
+		},
 		// Hardware Scan
 		{
 			featureId: AppSearch.FeatureIds.HardwareScan.pageId,
@@ -170,6 +175,16 @@ export class FeatureApplicableDetections {
 			segment !== SegmentConst.Commercial
 		) {
 			return true;
+		}
+		return false;
+	}
+
+	private async isSmartPerformanceApplicable() {
+		if (this.hypSettings) {
+			return this.hypSettings.getFeatureSetting('SmartPerformance').then(
+				(result) => (result || '').toString().toLowerCase() === 'true',
+				() => false,
+			);
 		}
 		return false;
 	}
