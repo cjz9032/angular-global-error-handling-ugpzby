@@ -11,6 +11,8 @@ import { SystemUpdateService } from '../system-update/system-update.service';
 import { AppSearch } from './model/feature-ids.model';
 import { IApplicableDetector as IApplicableDetector } from './model/interface.model';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { DisplayService } from 'src/app/services/display/display.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -68,7 +70,13 @@ export class FeatureApplicableDetections {
 			featureId: AppSearch.FeatureIds.HardwareScan.pageId,
 			isApplicable: async () => this.isHardwareScanApplicable(),
 		},
+		// Camera Settings
+		{
+			featureId: AppSearch.FeatureIds.CameraAndDisplay.cameraSettingsId,
+			isApplicable: async () => this.isCameraSettingsApplicable()
+		},
 	];
+	Windows: any;
 
 	constructor(
 		private deviceService: DeviceService,
@@ -76,12 +84,15 @@ export class FeatureApplicableDetections {
 		private localCacheService: LocalCacheService,
 		private systemUpdateService: SystemUpdateService,
 		private hardwareScanService: HardwareScanService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private vantageShellService: VantageShellService,
+		private displayService: DisplayService,
 	) {
 		this.detectionFuncMap = mapValues(
 			keyBy(this.detectionFuncList, 'featureId'),
 			'isApplicable'
 		);
+		this.Windows = this.vantageShellService.getWindows();
 	}
 
 	public async isFeatureApplicable(featureId: string) {
@@ -191,5 +202,31 @@ export class FeatureApplicableDetections {
 
 	private isHardwareScanApplicable() {
 		return this.hardwareScanService.isAvailable();
+	}
+
+	private async isCameraSettingsApplicable() {
+		const deviceInformation = this.Windows?.Devices.Enumeration.DeviceInformation;
+		const deviceClass = this.Windows?.Devices.Enumeration.DeviceClass;
+		let frontCameraCount = 0;
+		const panel = this.Windows.Devices.Enumeration.Panel.front;
+			const devices = await deviceInformation.findAllAsync(
+				deviceClass.videoCapture
+			);
+			devices.forEach((cameraDeviceInfo) => {
+				if (
+					cameraDeviceInfo.enclosureLocation !== null &&
+					cameraDeviceInfo.enclosureLocation.panel === panel
+				) {
+					frontCameraCount = frontCameraCount + 1;
+				}
+			});
+		if (frontCameraCount <= 0) {
+			return false;
+		}
+		const cameraSettingsRes = await this.displayService.getCameraSettingsInfo();
+		if(!cameraSettingsRes) {
+			return false;
+		}
+		return true;
 	}
 }
