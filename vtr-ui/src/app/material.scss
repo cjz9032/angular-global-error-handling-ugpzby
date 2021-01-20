@@ -144,6 +144,7 @@ $van-ui-layout: (
 		layout-margin: 0.5rem,
 		layout-line-height: 1.5,
 		layout-border-radius: 3rem,
+		layout-outline-offset: 0.5rem,
 	),
 	checkbox: (
 		layout-checkbox-border-radius: 0.2rem,
@@ -151,6 +152,7 @@ $van-ui-layout: (
 		layout-checkbox-size: 2rem,
 		layout-checkbox-stroke-size: 0.2rem,
 		layout-checkbox-inner-margin: 0.3rem,
+		layout-checkbox-outline-offset: 0.2rem,
 	),
 	toggle: (
 		layout-toggle-height: 2.4rem,
