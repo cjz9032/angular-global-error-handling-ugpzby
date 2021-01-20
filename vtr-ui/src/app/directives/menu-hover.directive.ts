@@ -29,7 +29,7 @@ import { TemplatePortal } from '@angular/cdk/portal';
 import { normalizePassiveListenerOptions } from '@angular/cdk/platform';
 import { asapScheduler, merge, of as observableOf, Subscription } from 'rxjs';
 import { delay, filter, take, takeUntil } from 'rxjs/operators';
-import { MatMenu, MatMenuItem, MatMenuPanel, MAT_MENU_SCROLL_STRATEGY, MenuPositionX, MenuPositionY } from '@lenovo/material/menu';
+import { _MatMenuBase, MatMenuItem, MatMenuPanel, MAT_MENU_PANEL, MAT_MENU_SCROLL_STRATEGY, MenuPositionX, MenuPositionY } from '@lenovo/material/menu';
 /** Default top padding of the menu panel. */
 export const MENU_PANEL_TOP_PADDING = 8;
 
@@ -55,6 +55,7 @@ export class MenuRecursiveError extends Error {
 		'(pointerenter)': '_handlePointerEnter($event)',
 		'(pointerleave)': '_handlePointerLeave($event)',
 		'(focus)': '_handleFocus($event)',
+		'(click)': '_handleClick($event)',
 	},
 	exportAs: 'menuHoverDirective',
 })
@@ -66,9 +67,13 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 	private _hoverSubscription = Subscription.EMPTY;
 	private _menuCloseSubscription = Subscription.EMPTY;
 	private _scrollStrategy: () => ScrollStrategy;
+	/**
+	 * We're specifically looking for a `MatMenu` here since the generic `MatMenuPanel`
+	 * interface lacks some functionality around nested menus and animations.
+	 */
+	private _parentMaterialMenu: _MatMenuBase | undefined;
 	private _menu: MatMenuPanel;
 	private _pointerEnterTimer: any;
-	private _pointOutsideSubscription = Subscription.EMPTY;
 	private _isMousePointer = false;
 	/** Data to be passed along to any lazily-rendered content. */
 	// tslint:disable-next-line:no-input-rename
@@ -114,6 +119,16 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 	 */
 	private _handleTouchStart = () => (this._openedBy = 'touch');
 
+	 /**
+   * @deprecated
+   * @breaking-change 8.0.0
+   */
+	@Input('mat-menu-trigger-for')
+	get _deprecatedMatMenuTriggerFor(): MatMenuPanel { return this.menu; }
+	set _deprecatedMatMenuTriggerFor(v: MatMenuPanel) {
+		this.menu = v;
+	}
+
 	/** References the menu instance that the trigger is associated with. */
 	@Input('menuHoverTriggerFor')
 	get menu() {
@@ -128,7 +143,7 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		this._menuCloseSubscription.unsubscribe();
 
 		if (menu) {
-			if (menu === this._parentMenu) {
+			if (menu === this._parentMaterialMenu) {
 				throw new MenuRecursiveError();
 			}
 			this._menuCloseSubscription = menu.close.subscribe(
@@ -136,8 +151,8 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 					this._destroyMenu();
 
 					// If a click closed the menu, we should close the entire chain of nested menus.
-					if ((reason === 'click' || reason === 'tab') && this._parentMenu) {
-						this._parentMenu.closed.emit(reason);
+					if ((reason === 'click' || reason === 'tab') && this._parentMaterialMenu) {
+						this._parentMaterialMenu.closed.emit(reason);
 					}
 				}
 			);
@@ -149,11 +164,13 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		private _element: ElementRef<HTMLElement>,
 		private _viewContainerRef: ViewContainerRef,
 		@Inject(MAT_MENU_SCROLL_STRATEGY) scrollStrategy: any,
-		@Optional() private _parentMenu: MatMenu,
+		@Inject(MAT_MENU_PANEL) @Optional() parentMenu: MatMenuPanel,
 		@Optional() @Self() private _menuItemInstance: MatMenuItem,
 		@Optional() private _dir: Directionality,
 		private _focusMonitor?: FocusMonitor
 	) {
+		this._scrollStrategy = scrollStrategy;
+		this._parentMaterialMenu = parentMenu instanceof _MatMenuBase ? parentMenu : undefined;
 		_element.nativeElement.addEventListener(
 			'touchstart',
 			this._handleTouchStart,
@@ -163,8 +180,6 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		if (_menuItemInstance) {
 			_menuItemInstance._triggersSubmenu = this.triggersSubmenu();
 		}
-
-		this._scrollStrategy = scrollStrategy;
 	}
 
 	ngAfterContentInit() {
@@ -187,7 +202,6 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		this._menuCloseSubscription.unsubscribe();
 		this._closingActionsSubscription.unsubscribe();
 		this._hoverSubscription.unsubscribe();
-		this._pointOutsideSubscription.unsubscribe();
 	}
 
 	/** Whether the menu is open. */
@@ -202,7 +216,7 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 
 	/** Whether the menu triggers a sub-menu or a top-level one. */
 	triggersSubmenu(): boolean {
-		return !!(this._menuItemInstance && this._parentMenu);
+		return !!(this._menuItemInstance && this._parentMaterialMenu);
 	}
 
 	/** Toggles the menu between the open and closed states. */
@@ -222,22 +236,9 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		const overlayConfig = overlayRef.getConfig();
 
 		this._setPosition(overlayConfig.positionStrategy as FlexibleConnectedPositionStrategy);
+		overlayConfig.hasBackdrop = this.menu.hasBackdrop == null ? !this.triggersSubmenu() :
+		this.menu.hasBackdrop;
 		overlayRef.attach(this._getPortal());
-
-		if (this._pointOutsideSubscription === Subscription.EMPTY) {
-			this._pointOutsideSubscription = overlayRef.outsidePointerEvents().subscribe(($event) => {
-				const element = this._element.nativeElement;
-				const position = {
-					x1: element.offsetLeft,
-					y1: element.offsetTop,
-					x2: element.clientWidth + element.offsetLeft,
-					y2: element.clientHeight + element.offsetTop,
-				};
-				if (!this.isPointerInRectangle({ x: $event.x, y: $event.y }, position)) {
-					this.closeMenu();
-				}
-			});
-		}
 
 		if (this.menu.lazyContent) {
 			this.menu.lazyContent.attach(this.menuData);
@@ -248,7 +249,7 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		);
 		this._initMenu();
 
-		if (this.menu instanceof MatMenu) {
+		if (this.menu instanceof _MatMenuBase) {
 			this.menu._startAnimation();
 		}
 	}
@@ -290,14 +291,14 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		this._overlayRef.detach();
 		this._restoreFocus();
 
-		if (menu instanceof MatMenu) {
+		if (menu instanceof _MatMenuBase) {
 			menu._resetAnimation();
 
 			if (menu.lazyContent) {
 				// Wait for the exit animation to finish before detaching the content.
 				menu._animationDone
 					.pipe(
-						filter((event) => event.toState === 'void'),
+						filter(event => event.toState === 'void'),
 						take(1),
 						// Interrupt if the content got re-attached.
 						takeUntil(menu.lazyContent._attached)
@@ -305,7 +306,7 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 					.subscribe({
 						next: () => menu.lazyContent?.detach(),
 						// No matter whether the content got re-attached, reset the menu.
-						complete: () => this._setIsMenuOpen(false),
+						complete: () => this._setIsMenuOpen(false)
 					});
 			} else {
 				this._setIsMenuOpen(false);
@@ -324,7 +325,7 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 	 * the menu was opened via the keyboard.
 	 */
 	private _initMenu(): void {
-		this.menu.parentMenu = this.triggersSubmenu() ? this._parentMenu : undefined;
+		this.menu.parentMenu = this.triggersSubmenu() ? this._parentMaterialMenu : undefined;
 		this.menu.direction = this.dir;
 		this._setMenuElevation();
 		this._setIsMenuOpen(true);
@@ -492,15 +493,25 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 	private _menuClosingActions() {
 		const backdrop = this._overlayRef?.backdropClick();
 		const detachments = this._overlayRef?.detachments();
-		const parentClose = this._parentMenu ? this._parentMenu.closed : observableOf();
-		const hover = this._parentMenu
-			? this._parentMenu._hovered().pipe(
-				filter((active) => active !== this._menuItemInstance),
+		const parentClose = this._parentMaterialMenu ? this._parentMaterialMenu.closed : observableOf();
+		const hover = this._parentMaterialMenu
+			? this._parentMaterialMenu._hovered().pipe(
+				filter(active => active !== this._menuItemInstance),
 				filter(() => this._menuOpen)
 			)
 			: observableOf();
+		const pointOutside = this._overlayRef.outsidePointerEvents().pipe(filter(($event) => {
+			const element = this._element.nativeElement;
+			const position = {
+				x1: element.offsetLeft,
+				y1: element.offsetTop,
+				x2: element.clientWidth + element.offsetLeft,
+				y2: element.clientHeight + element.offsetTop,
+			};
+			return !this.isPointerInRectangle({ x: $event.x, y: $event.y }, position);
+		}));
 
-		return merge(backdrop, parentClose, hover, detachments);
+		return merge(backdrop, parentClose, hover, detachments, pointOutside);
 	}
 
 	/** Handles mouse presses on the trigger. */
@@ -533,8 +544,17 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 	}
 
 	_handlePointerEnter(event: any): void {
+		// we shouldn't consider the menu as opened by mouse in those cases.
+		this._openedBy = (event.pointerType === 'mouse' || event.pointerType === 'touch') ? event.pointerType : null;
 		this._isMousePointer = event.pointerType === 'mouse';
-		if (!this._isMousePointer) {
+
+		// Since clicking on the trigger won't close the menu if it opens a sub-menu,
+		// we should prevent focus from moving onto it via click to avoid the
+		// highlight from lingering on the menu item.
+		if (this.triggersSubmenu()) {
+			event.preventDefault();
+		}
+		if (this._openedBy !== 'mouse') {
 			this.openMenu();
 		} else {
 			this._pointerEnterTimer = setTimeout(() => {
@@ -560,14 +580,20 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 		}
 	}
 
+	_handleClick(event: any): void {
+		if (this._menuOpen) {
+			this.menu.focusFirstItem(this._openedBy || 'program');
+		}
+	}
+
 	/** Handles the cases where the user hovers over the trigger. */
 	private _handleHover() {
 		// Subscribe to changes in the hovered item in order to toggle the panel.
-		if (!this.triggersSubmenu()) {
+		if (!this.triggersSubmenu() || !this._parentMaterialMenu) {
 			return;
 		}
 
-		this._hoverSubscription = this._parentMenu
+		this._hoverSubscription = this._parentMaterialMenu
 			._hovered()
 			// Since we might have multiple competing triggers for the same menu (e.g. a sub-menu
 			// with different data and triggers), we have to delay it by a tick to ensure that
@@ -582,14 +608,14 @@ export class MenuHoverDirective implements AfterContentInit, OnDestroy {
 				// If the same menu is used between multiple triggers, it might still be animating
 				// while the new trigger tries to re-open it. Wait for the animation to finish
 				// before doing so. Also interrupt if the user moves to another item.
-				if (this.menu instanceof MatMenu && this.menu._isAnimating) {
+				if (this.menu instanceof _MatMenuBase && this.menu._isAnimating) {
 					// We need the `delay(0)` here in order to avoid
 					// 'changed after checked' errors in some cases. See #12194.
 					this.menu._animationDone
 						.pipe(
 							take(1),
 							delay(0, asapScheduler),
-							takeUntil(this._parentMenu._hovered())
+							takeUntil(this._parentMaterialMenu._hovered())
 						)
 						.subscribe(() => this.openMenu());
 				} else {

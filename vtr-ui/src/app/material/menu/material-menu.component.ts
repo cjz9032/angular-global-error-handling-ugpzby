@@ -84,6 +84,7 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	private topRowFnSubscription: Subscription;
 	private routerEventSubscription: Subscription;
 	private closeAllOtherMatMenuTimer: any;
+	private firstTab = true;
 	constructor(
 		public dashboardService: DashboardService,
 		public configService: ConfigService,
@@ -140,6 +141,21 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 				this.currentRoutePath = ev.url;
 			}
 		});
+	}
+
+	/**
+	 * This is a temporary solution for an issue.
+	 * Issue is: Open vanatge then hover on menu item, the dropdown menu will show.
+	 * Then press the tab key, the two sub menus will show at the same time.
+	 * The issue is caused by when first press the tab key,
+	 * focus will be lost from the current element, and appear on the body element
+	 */
+	@HostListener('document:keydown.tab')
+	onTabHandler() {
+		if (this.firstTab) {
+			this.closeAllMatMenu();
+			this.firstTab = false;
+		}
 	}
 
 	ngOnDestroy(): void {

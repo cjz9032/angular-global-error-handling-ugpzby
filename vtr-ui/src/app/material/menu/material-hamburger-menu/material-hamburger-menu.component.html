@@ -21,7 +21,6 @@
 						[metricsItem]="item.metricsItem"
 						routerLink="/{{item.path}}"
 						routerLinkActive="active"
-						href="javascript:void(0)"
 						(click)="onMenuItemClick(item)"
 						(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]">
 						<span class="menu-item-text">
@@ -46,7 +45,6 @@
 						[metricsItem]="item.metricsItem"
 						routerLink="/{{item.path}}"
 						routerLinkActive="active"
-						href="javascript:void(0)"
 						(click)="onMenuItemClick(item)"
 						(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]">
 						<span class="menu-item-text" [innerHTML]="item.label | translate"></span>
@@ -66,7 +64,6 @@
 							[ngClass]="item.hasSecondaryMenu ? 'font-weight-bold text-uppercase high-contrast-color-reversal disable' : 'text-lowercase'"
 							target="_blank"
 							rel="noopener"
-							href="javascript:void(0)"
 							(click)="openExternalLink(subitem.path)"
 							[disabled]="item.hasSecondaryMenu">
 							<span class="d-block overflow-hidden w-auto menu-item-text" [innerHTML]="subitem.label | translate"></span>
@@ -84,7 +81,6 @@
 							[metricsItem]="subitem.metricsItem"
 							[ngClass]="item.hasSecondaryMenu ? 'font-weight-bold text-uppercase high-contrast-color-reversal disable' : 'text-lowercase'"
 							routerLink="/{{item.path}}/{{subitem.path}}"
-							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path, subitem.path)]"
 							[disabled]="item.hasSecondaryMenu">
@@ -103,7 +99,6 @@
 							[metricsItem]="subitem.metricsItem"
 							[ngClass]="item.hasSecondaryMenu ? 'font-weight-bold text-uppercase high-contrast-color-reversal disable' : 'text-lowercase'"
 							routerLink="/{{subitem.path}}"
-							href="javascript:void(0)"
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(subitem.path)]"
 							[disabled]="item.hasSecondaryMenu">
@@ -125,7 +120,6 @@
 									[metricsItem]="secondarySubitem.metricsItem"
 									target="_blank"
 									rel="noopener"
-									href="javascript:void(0)"
 									(click)="[onMenuItemClick(item), openExternalLink(secondarySubitem.path)]">
 									<span class="d-block overflow-hidden w-auto menu-item-text" [innerHTML]="secondarySubitem.label | translate"></span>
 								</button>
@@ -142,7 +136,6 @@
 									[metricsParent]="secondarySubitem.metricsParent"
 									[metricsItem]="secondarySubitem.metricsItem"
 									routerLink="/{{item.path}}/{{subitem.path}}/{{secondarySubitem.path}}"
-									href="javascript:void(0)"
 									role="menuitem"
 									(click)="onMenuItemClick(item)"
 									(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path, subitem.path, secondarySubitem.path)]">
@@ -161,7 +154,6 @@
 									[metricsParent]="secondarySubitem.metricsParent"
 									[metricsItem]="secondarySubitem.metricsItem"
 									routerLink="/{{secondarySubitem.path}}"
-									href="javascript:void(0)"
 									role="menuitem"
 									(click)="onMenuItemClick(item)"
 									(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(secondarySubitem.path)]">
@@ -191,7 +183,6 @@
 						metricsItem="LenovoMigrationAssistantButton"
 						[routerLink]="['/apps-for-you/'+appsForYouEnum.AppGuidLenovoMigrationAssistant]"
 						routerLinkActive="active"
-						href="javascript:void(0)"
 						(click)="onMenuItemClick(item, $event)"
 						(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('apps-for-you', appsForYouEnum.AppGuidLenovoMigrationAssistant)]">
 						<span class="d-block overflow-hidden w-auto menu-item-text"
@@ -214,7 +205,6 @@
 						metricsItem="AdobecRedemptionButton"
 						[routerLink]="['/apps-for-you/'+ appsForYouEnum.AppGuidAdobeCreativeCloud]"
 						routerLinkActive="active"
-						href="javascript:void(0)"
 						(click)="onMenuItemClick(item, $event)"
 						(keydown.enter)="[onMenuItemClick(item, $event), menuItemKeyDown('/apps-for-you/', appsForYouEnum.AppGuidAdobeCreativeCloud)]">
 						<span class="d-block overflow-hidden w-auto menu-item-text"
@@ -235,8 +225,7 @@
 						[metricsEvent]="item.metricsEvent"
 						[metricsParent]="item.metricsParent"
 						metricsItem="DccRedemptionButton"
-						(click)="onMenuItemClick(item, $event)"
-						href="javascript:void(0)">
+						(click)="onMenuItemClick(item, $event)">
 						<span class="d-block overflow-hidden w-auto menu-item-text"
 							[innerHTML]="'dcc.menuText.lenovoDigitalOffer' | translate">
 						</span>
@@ -255,7 +244,6 @@
 						[metricsEvent]="item.metricsEvent"
 						[metricsParent]="item.metricsParent"
 						metricsItem="ModernPreloadButton"
-						href="javascript:void(0)"
 						(click)="openModernPreloadModal()">
 						<span class="d-block overflow-hidden w-auto menu-item-text"
 							[innerHTML]="'modernPreload.title' | translate">
@@ -269,7 +257,6 @@
 						[metricsEvent]="item.metricsEvent"
 						[metricsParent]="item.metricsParent"
 						metricsItem="SettingsButton"
-						href="javascript:void(0)"
 						routerLink="settings"
 						routerLinkActive="active"
 						(click)="onMenuItemClick(item)"
@@ -287,7 +274,6 @@
 						[metricsEvent]="item.metricsEvent"
 						[metricsParent]="item.metricsParent"
 						metricsItem="GiveFeedbackButton"
-						href="javascript:void(0)"
 						(click)="openFeedbackModal()">
 						<span class="d-block overflow-hidden w-auto menu-item-text"
 							[innerHTML]="'dashboard.feedback.title' | translate">
@@ -302,7 +288,6 @@
 						[metricsEvent]="item.metricsEvent"
 						[metricsParent]="item.metricsParent"
 						metricsItem="LenovoSurvey"
-						href="javascript:void(0)"
 						(click)="openSurveyModal(appsForYouService.lenovoSurvey.id)">
 						<span class="d-block overflow-hidden w-auto menu-item-text"
 							[innerHTML]="'dashboard.survey.title' | translate">
@@ -322,7 +307,6 @@
 						[metricsEvent]="item.metricsEvent"
 						[metricsParent]="item.metricsParent"
 						metricsItem="LenovoIdSignInButton"
-						href="javascript:void(0)"
 						(click)="openLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">
 						<span class="d-block overflow-hidden w-auto menu-item-text"
 							[innerHTML]="'lenovoId.login' | translate">
@@ -337,7 +321,6 @@
 						[metricsEvent]="item.metricsEvent"
 						[metricsParent]="item.metricsParent"
 						metricsItem="LenovoIdStarterIdButton"
-						href="javascript:void(0)"
 						(click)="openLenovoId('NavigationLenovoAccount.Submenu'); onMenuItemClick(item)">
 						<span class="d-block overflow-hidden w-auto menu-item-text"
 							[innerHTML]="'lenovoId.unlockExclusives' | translate">
@@ -352,7 +335,6 @@
 						[metricsEvent]="item.metricsEvent"
 						[metricsParent]="item.metricsParent"
 						metricsItem="LenovoIdSignOutButton"
-						href="javascript:void(0)"
 						(click)="onLogout(); onMenuItemClick(item)"
 						[class.disabled]="isLoggingOut">
 						<span class="d-block overflow-hidden w-auto menu-item-text"
