@@ -5661,6 +5661,10 @@
 						"Cycle count"
 					]
 				},
+				"acAdapter": {
+					"featureName": "AC adapter",
+					"highRelevantKeywords": []
+				},
 				"smartStandby": {
 					"featureName": "Smart standby",
 					"highRelevantKeywords": [
@@ -5673,6 +5677,10 @@
 						"Power settings"
 					]
 				},
+				"airplanePowerMode": {
+					"featureName": "Air plane power mode",
+					"highRelevantKeywords": []
+				},
 				"batteryChargeThreshold": {
 					"featureName": "Battery charge threshold",
 					"highRelevantKeywords": [
@@ -5680,6 +5688,10 @@
 						"conservation mode",
 						"increase battery lifespan"
 					]
+				},
+				"batteryGaugeReset": {
+					"featureName": "Battery gauge reset",
+					"highRelevantKeywords": []
 				},
 				"intelligentCooling": {
 					"featureName": "Intelligent cooling",
@@ -5692,6 +5704,30 @@
 						"Battery Saving mode",
 						"Balanced mode"
 					]
+				},
+				"energyStar": {
+					"featureName": "Energy star",
+					"highRelevantKeywords": []
+				},
+				"performanceMode": {
+					"featureName": "Performance mode & Cool & Quiet mode",
+					"highRelevantKeywords": []
+				},
+				"conservationMode": {
+					"featureName": "conservation Mode",
+					"highRelevantKeywords": []
+				},
+				"desktopPowerPlan": {
+					"featureName": "desktop Power Plan",
+					"highRelevantKeywords": []
+				},
+				"oLEDPowerSettings": {
+					"featureName": "OLED power settings",
+					"highRelevantKeywords": []
+				},
+				"smartFliptoBoot": {
+					"featureName": "Smart flip to boot",
+					"highRelevantKeywords": []
 				},
 				"dynamicThermalControl": {
 					"featureName": "Dynamic thermal control solution",
@@ -5885,6 +5921,13 @@
 				},
 				"zeroTouchVideoPlayback": {
 					"featureName": "Zero touch video playback",
+					"highRelevantKeywords": [
+						"Smart pause",
+						"zero touch video playback"
+					]
+				},
+				"smartMotionAlarm": {
+					"featureName": "Smart motion alarm",
 					"highRelevantKeywords": [
 						"Smart pause",
 						"zero touch video playback"

@@ -34,12 +34,21 @@ export class AppSearch {
 			static readonly categoryId = 'appSearch.features.power';
 			static readonly batteryInformationId = `appSearch.features.power.batteryInformation`;
 			static readonly batteryDetailsId = `appSearch.features.power.batteryDetails`;
+			static readonly acAdapterId = `appSearch.features.power.acAdapter`;
 			static readonly smartStandbyId = `appSearch.features.power.smartStandby`;
 			static readonly alwaysOnUSBId = `appSearch.features.power.alwaysOnUSB`;
+			static readonly airplanePowerModeId = `appSearch.features.power.airplanePowerMode`;
 			static readonly batteryChargeThresholdId = `appSearch.features.power.batteryChargeThreshold`;
+			static readonly batteryGaugeResetId = `appSearch.features.power.batteryGaugeReset`;
 			static readonly intelligentCoolingId = `appSearch.features.power.intelligentCooling`;
-			static readonly dynamicThermalControlId = `appSearch.features.power.dynamicThermalControl`;
+			static readonly energyStarId = `appSearch.features.power.energyStar`;
 			static readonly easyResumeId = `appSearch.features.power.easyResume`;
+			static readonly performanceModeId = `appSearch.features.power.performanceMode`;
+			static readonly conservationModeId = `appSearch.features.power.conservationMode`;
+			static readonly desktopPowerPlanId = `appSearch.features.power.desktopPowerPlan`;
+			static readonly oLEDPowerSettingsId = `appSearch.features.power.oLEDPowerSettings`;
+			static readonly smartFliptoBootId = `appSearch.features.power.smartFliptoBoot`;
+			static readonly dynamicThermalControlId = `appSearch.features.power.dynamicThermalControl`;
 			static readonly rapidChargeId = `appSearch.features.power.rapidCharge`;
 			static readonly vantageToolbarId = `appSearch.features.power.vantageToolbar`;
 		};
@@ -80,6 +89,7 @@ export class AppSearch {
 			static readonly zeroTouchLoginId = `appSearch.features.smartAssist.zeroTouchLogin`;
 			static readonly zeroTouchLockId = `appSearch.features.smartAssist.zeroTouchLock`;
 			static readonly zeroTouchVideoPlaybackId = `appSearch.features.smartAssist.zeroTouchVideoPlayback`;
+			static readonly smartMotionAlarmId = `appSearch.features.smartAssist.smartMotionAlarm`;
 			static readonly videoResolutionUpscalingSRId = `appSearch.features.smartAssist.videoResolutionUpscalingSR`;
 		};
 
