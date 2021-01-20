@@ -14,7 +14,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
 
 import { MAT_TOOLTIP_SCROLL_STRATEGY } from '@lenovo/material/tooltip';
-import { MatDialog } from '@lenovo/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@lenovo/material/dialog';
 
 import { DisplayService } from './services/display/display.service';
 import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -106,7 +106,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private snackBar: MatSnackBar
 	) {
 		this.ngbTooltipConfig.triggers = 'hover';
-		// this.patchNgbModalOpen();
 		// to check web and js bridge version in browser console
 		const win: any = window;
 		this.shellVersion = this.commonService.getShellVersion();
@@ -131,6 +130,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	}
 
 	ngOnInit() {
+		this.patchMatDialogOpen();
 		if (this.deviceService.isAndroid) {
 			return;
 		}
@@ -192,22 +192,26 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		}
 	}
 
-	// private patchNgbModalOpen() {
-	// 	const original = NgbModal.prototype.open;
-	// 	// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-	// 	NgbModal.prototype.open = function (): NgbModalRef {
-	// 		if (arguments.length > 1 && 'container' in arguments[1] === false) {
-	// 			Object.assign(arguments[1], { container: 'vtr-root div' });
-	// 		}
-	// 		setTimeout(() => {
-	// 			const modal: HTMLElement = document.querySelector('.modal');
-	// 			if (modal) {
-	// 				modal.focus();
-	// 			}
-	// 		}, 0);
-	// 		return original.apply(this, arguments);
-	// 	};
-	// }
+	private patchMatDialogOpen() {
+		const original = MatDialog.prototype.open;
+		let self = this;
+		// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+		MatDialog.prototype.open = function (template: any, config?: MatDialogConfig<any>): MatDialogRef<any, any> {
+			if (self.deviceService.isGaming) {
+				if (config?.panelClass) {
+					if (Array.isArray(config.panelClass) && !config.panelClass.includes('is-gaming')) {
+						config.panelClass.push('is-gaming');
+					} else if (!Array.isArray(config.panelClass) && config.panelClass !== 'is-gaming') {
+						config.panelClass = config.panelClass.split(' ');
+						config.panelClass.push('is-gaming');
+					}
+				} else {
+					config = Object.assign(config ?? {}, {panelClass: 'is-gaming'});
+				}
+			}
+			return original.call(this, template, config);
+		};
+	}
 
 	private addInternetListener() {
 		const win: any = window;
