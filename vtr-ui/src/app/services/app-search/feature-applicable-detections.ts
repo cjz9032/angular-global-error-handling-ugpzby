@@ -10,7 +10,7 @@ import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.ser
 import { SystemUpdateService } from '../system-update/system-update.service';
 import { AppSearch } from './model/feature-ids.model';
 import { IApplicableDetector as IApplicableDetector } from './model/interface.model';
-
+import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -31,32 +31,37 @@ export class FeatureApplicableDetections {
 		// MySecurity
 		{
 			featureId: AppSearch.FeatureIds.MySecurity.pageId,
-			isApplicable: async () => this.isMySecurityApplicable()
+			isApplicable: async () => this.isMySecurityApplicable(),
 		},
 		// AntiVirus
 		{
 			featureId: AppSearch.FeatureIds.AntiVirus.pageId,
-			isApplicable: async () => this.isAntiVirusApplicable()
+			isApplicable: async () => this.isAntiVirusApplicable(),
 		},
 		// PasswordHealth
 		{
 			featureId: AppSearch.FeatureIds.PasswordHealth.pageId,
-			isApplicable: async () => this.isPasswordHealthAndVpnSecurityApplicable()
+			isApplicable: async () => this.isPasswordHealthAndVpnSecurityApplicable(),
 		},
 		// WifiSecurity
 		{
 			featureId: AppSearch.FeatureIds.WifiSecurity.pageId,
-			isApplicable: async () => this.isWifiSecurityApplicable()
+			isApplicable: async () => this.isWifiSecurityApplicable(),
 		},
 		// VPNSecurity
 		{
 			featureId: AppSearch.FeatureIds.VpnSecurity.pageId,
-			isApplicable: async () => this.isPasswordHealthAndVpnSecurityApplicable()
+			isApplicable: async () => this.isPasswordHealthAndVpnSecurityApplicable(),
 		},
 		// HomeSecurity
 		{
 			featureId: AppSearch.FeatureIds.HomeSecurity.pageId,
-			isApplicable: async () => this.isHomeSecurityApplicable()
+			isApplicable: async () => this.isHomeSecurityApplicable(),
+		},
+		// Hardware Scan
+		{
+			featureId: AppSearch.FeatureIds.HardwareScan.pageId,
+			isApplicable: async () => this.isHardwareScanApplicable(),
 		},
 	];
 
@@ -66,6 +71,7 @@ export class FeatureApplicableDetections {
 		private localCacheService: LocalCacheService,
 		private localInfoService: LocalInfoService,
 		private systemUpdateService: SystemUpdateService,
+		private hardwareScanService: HardwareScanService
 	) {
 		this.detectionFuncMap = mapValues(
 			keyBy(this.detectionFuncList, 'featureId'),
@@ -87,15 +93,27 @@ export class FeatureApplicableDetections {
 
 	private isMySecurityApplicable() {
 		const segment = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
-		if ((SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB) && !this.deviceService.isArm && !this.deviceService.isSMode) {
+		if (
+			(SegmentConstHelper.includedInCommonConsumer(segment) ||
+				segment === SegmentConst.SMB) &&
+			!this.deviceService.isArm &&
+			!this.deviceService.isSMode
+		) {
 			return true;
 		}
 		return false;
 	}
 
 	private isAntiVirusApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
-		if (!this.deviceService.isArm && !this.deviceService.isSMode && !this.deviceService.isGaming && segment !== SegmentConst.Commercial) {
+		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LocalInfoSegment
+		);
+		if (
+			!this.deviceService.isArm &&
+			!this.deviceService.isSMode &&
+			!this.deviceService.isGaming &&
+			segment !== SegmentConst.Commercial
+		) {
 			return true;
 		}
 		return false;
@@ -103,23 +121,31 @@ export class FeatureApplicableDetections {
 
 	private isPasswordHealthAndVpnSecurityApplicable() {
 		let isCN: boolean;
-		this.localInfoService
-			.getLocalInfo()
-			.then((result) => {
-				if (result.GEO === 'cn') {
-					isCN = true;
-				}
-				isCN = false;
-			});
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
-		if (!isCN && !this.deviceService.isArm && !this.deviceService.isSMode && !this.deviceService.isGaming && segment !== SegmentConst.Commercial) {
+		this.localInfoService.getLocalInfo().then((result) => {
+			if (result.GEO === 'cn') {
+				isCN = true;
+			}
+			isCN = false;
+		});
+		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LocalInfoSegment
+		);
+		if (
+			!isCN &&
+			!this.deviceService.isArm &&
+			!this.deviceService.isSMode &&
+			!this.deviceService.isGaming &&
+			segment !== SegmentConst.Commercial
+		) {
 			return true;
 		}
 		return false;
 	}
 
 	private isWifiSecurityApplicable() {
-		const wsCacheState = this.localCacheService.getLocalCacheValue(LocalStorageKey.SecurityShowWifiSecurity);
+		const wsCacheState = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SecurityShowWifiSecurity
+		);
 		if (!this.deviceService.isArm && !this.deviceService.isSMode && wsCacheState) {
 			return true;
 		}
@@ -129,17 +155,27 @@ export class FeatureApplicableDetections {
 	private async isHomeSecurityApplicable() {
 		const locale = this.deviceService.machineInfo.locale;
 		const country = this.deviceService.machineInfo.country;
-		const chsHypsis = await this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then(
-			(result) => (result || '').toString() === 'true'
-		);
+		const chsHypsis = await this.hypSettings
+			.getFeatureSetting('ConnectedHomeSecurity')
+			.then((result) => (result || '').toString() === 'true');
 		const chsAvailability =
-			country.toLowerCase() === 'us' &&
-			locale.startsWith('en') &&
-			chsHypsis;
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(LocalStorageKey.LocalInfoSegment);
-		if (chsAvailability && !this.deviceService.isArm && !this.deviceService.isSMode && !this.deviceService.isGaming && segment !== SegmentConst.Commercial) {
+			country.toLowerCase() === 'us' && locale.startsWith('en') && chsHypsis;
+		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.LocalInfoSegment
+		);
+		if (
+			chsAvailability &&
+			!this.deviceService.isArm &&
+			!this.deviceService.isSMode &&
+			!this.deviceService.isGaming &&
+			segment !== SegmentConst.Commercial
+		) {
 			return true;
 		}
 		return false;
+	}
+
+	private isHardwareScanApplicable() {
+		return this.hardwareScanService.isAvailable();
 	}
 }
