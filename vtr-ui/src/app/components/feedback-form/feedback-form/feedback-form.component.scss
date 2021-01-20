@@ -9,7 +9,6 @@
 $normalPadding: 2.4rem;
 
 .vtr-feedback-form {
-	border-radius: $border_radius;
 	background: $light;
 	background-size: cover;
 	color: $shade_blue;
@@ -344,15 +343,5 @@ $normalPadding: 2.4rem;
 			letter-spacing: 0.1rem;
 			opacity: 0.5;
 		}
-	}
-
-	@media #{$black-on-white} {
-		border: 1px solid $dark !important;
-		border-radius: 1rem;
-	}
-
-	@media #{$white-on-black} {
-		border: 1px solid $light !important;
-		border-radius: 1rem;
 	}
 }

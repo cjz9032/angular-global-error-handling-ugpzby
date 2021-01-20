@@ -1,19 +1,12 @@
 @import '../../../app.theme.scss';
 
 .common-confirmation-modal {
-	border-radius: $border_radius;
 	background: $light;
 	background-size: cover;
 	color: $main_dark;
 	box-shadow: $drop_shadow;
 	padding: 2rem;
 	position: relative;
-	@media #{$white-on-black} {
-		@include white-border;
-	}
-	@media #{$black-on-white} {
-		@include black-border;
-	}
 
 	h1 {
 		font-size: $fontsize_xl;
