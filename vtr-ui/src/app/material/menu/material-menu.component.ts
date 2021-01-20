@@ -143,11 +143,13 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	/* This is a temporary solution for an issue.
-	Issue is: open vanatge then hover on menu item, the dropdown menu will show.
-	Then click the tab key, the two sub menus will show at the same time.
-	The issue is caused by when first click the tab key,
-	focus will be lost from the current element, and appear on the body element*/
+	/**
+	 * This is a temporary solution for an issue.
+	 * Issue is: Open vanatge then hover on menu item, the dropdown menu will show.
+	 * Then press the tab key, the two sub menus will show at the same time.
+	 * The issue is caused by when first press the tab key,
+	 * focus will be lost from the current element, and appear on the body element
+	 */
 	@HostListener('document:keydown.tab')
 	onTabHandler() {
 		if (this.firstTab) {
