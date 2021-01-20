@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.12](https://bitbucket.tc.lenovo.com///compare/v1.10.11...v1.10.12) (2021-01-20)
+
+
+### Features
+
+* **Dashboard:** VAN-24704 new UI for position B circle ([b80df8a](https://bitbucket.tc.lenovo.com///commit/b80df8a4029d8e929f41335b094863ce1165af84))
+* **menu:** update the style of floating menu ([6443433](https://bitbucket.tc.lenovo.com///commit/6443433a0bc79352f518765b1010d0e3cb3f9d75))
+* update to vcl-11.0.4 ([25d440c](https://bitbucket.tc.lenovo.com///commit/25d440c528c46031993e8ef8888579dbdb69209d))
+
+
+### Bug Fixes
+
+* **menu:** Add description field ([64caa79](https://bitbucket.tc.lenovo.com///commit/64caa7947c9b7805a227b08f2ea65c754b5a8d51))
+* **menu:** update description ([3e21545](https://bitbucket.tc.lenovo.com///commit/3e21545f16cd46e43404ca6e309933b8ff368afe))
+* **menu:** update the description field ([c0adec0](https://bitbucket.tc.lenovo.com///commit/c0adec01b8cd3631380104c112d4dcc7061e04fe))
+* update lid dialog backdrop height ([1528c19](https://bitbucket.tc.lenovo.com///commit/1528c195e55a32d44b1eb447d850b86acd068c99))
+
 ### [1.10.11](https://bitbucket.tc.lenovo.com///compare/v1.10.10...v1.10.11) (2021-01-19)
 
 
