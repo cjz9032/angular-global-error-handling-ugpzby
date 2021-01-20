@@ -27,6 +27,7 @@ import { httpInterceptorProviders } from 'src/app/providers/net/http-interceptor
 import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
 import { UiHyperlinkButtonComponent } from '../components/ui/ui-hyperlink-button/ui-hyperlink-button.component';
 import { UiQuestionMarkButtonComponent } from './hardware-scan/components/dashboard/ui-question-mark-button/ui-question-mark-button.component';
+import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 @NgModule({
 	declarations: [
@@ -39,9 +40,10 @@ import { UiQuestionMarkButtonComponent } from './hardware-scan/components/dashbo
 		ModalLenovoIdComponent,
 		PageUserComponent,
 		UiHyperlinkButtonComponent,
-		UiQuestionMarkButtonComponent
+		UiQuestionMarkButtonComponent,
 	],
 	imports: [
+		MatTooltipModule,
 		AngularSvgIconModule,
 		CommonDirectiveModule,
 		CommonModule,
@@ -56,7 +58,7 @@ import { UiQuestionMarkButtonComponent } from './hardware-scan/components/dashbo
 		UiButtonModule,
 		UiCloseButtonModule,
 		MetricsModule,
-		HeaderMainModule
+		HeaderMainModule,
 	],
 	exports: [
 		AngularSvgIconModule,
@@ -81,7 +83,7 @@ import { UiQuestionMarkButtonComponent } from './hardware-scan/components/dashbo
 		MetricsModule,
 		HeaderMainModule,
 		UiHyperlinkButtonComponent,
-		UiQuestionMarkButtonComponent
+		UiQuestionMarkButtonComponent,
 	],
 	providers: [
 		CommsService,

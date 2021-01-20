@@ -16,8 +16,8 @@
 			[metricsItemCategory]="metricsItemCategory"
 			[metricsPageNumber]="metricsPageNumber"
 			[attr.aria-label]="ariaLabel"
-			[matTooltip]="tooltipText" matTooltipClass="vtr-system-tooltip"
-			[matTooltipDisabled]="disableTooltip">
+			[matTooltip]=" disableTooltip ? '' : tooltipText "
+			matTooltipClass="vtr-system-tooltip">
 			<div class="hyperlink-text-container">
 				<span
 				class="hyperlink {{hyperlinkStyle}}"
