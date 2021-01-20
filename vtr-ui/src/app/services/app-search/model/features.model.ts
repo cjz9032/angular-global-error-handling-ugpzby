@@ -156,7 +156,7 @@ export const featureSource = [
 		},
 	},
 	{
-		id: AppSearch.FeatureIds.Power.EnergyStarId,
+		id: AppSearch.FeatureIds.Power.energyStarId,
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
