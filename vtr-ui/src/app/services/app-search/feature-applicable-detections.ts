@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { keyBy, mapValues } from 'lodash';
+import { keyBy, mapValues, toLower } from 'lodash';
 
 import { DeviceService } from '../device/device.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
-import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.service';
 import { LoggerService } from '../logger/logger.service';
@@ -70,7 +69,6 @@ export class FeatureApplicableDetections {
 		private deviceService: DeviceService,
 		private hypSettings: HypothesisService,
 		private localCacheService: LocalCacheService,
-		private localInfoService: LocalInfoService,
 		private systemUpdateService: SystemUpdateService,
 		private hardwareScanService: HardwareScanService,
 		private logger: LoggerService
@@ -127,18 +125,12 @@ export class FeatureApplicableDetections {
 	}
 
 	private isPasswordHealthAndVpnSecurityApplicable() {
-		let isCN: boolean;
-		this.localInfoService.getLocalInfo().then((result) => {
-			if (result.GEO === 'cn') {
-				isCN = true;
-			}
-			isCN = false;
-		});
+		const locale = this.deviceService.machineInfo.locale;
 		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.LocalInfoSegment
 		);
 		if (
-			!isCN &&
+			toLower(locale) !== 'cn' &&
 			!this.deviceService.isArm &&
 			!this.deviceService.isSMode &&
 			!this.deviceService.isGaming &&
