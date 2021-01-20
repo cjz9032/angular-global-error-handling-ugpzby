@@ -2348,12 +2348,12 @@ ngb-tooltip-window.schedule-scan.tooltip {
 }
 
 .dialogBackdropExcludeMenu {
-	top: $menu_height;
+	top: calc(#{$material_menu_height} - 0.1rem);
 	background: rgba(0, 0, 0, 0.32);
 }
 
 .dialogBackdropExcludeGamingMenu {
-	top: $material_menu_height;
+	top: $menu_height;
 	background: rgba(0, 0, 0, 0.32);
 }
 
