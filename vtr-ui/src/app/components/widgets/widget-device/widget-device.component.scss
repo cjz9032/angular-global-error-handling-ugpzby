@@ -62,16 +62,16 @@ $size500px-sw-show1col: 'only screen and (min-width: 500px) and (max-width: 1200
 		}
 
 		.device-overall-status {
-			height: 14.2rem;
-			width: 14.2rem;
+			flex-shrink: 0;
+			width: 15.4rem;
+			transform: scale(0.9);
 			margin-left: auto;
 			align-self: center;
-			margin-right: 5.6rem;
+			margin-right: 4rem;
 			border-radius: 50%;
-			@media #{$size500px-hw-show1col} {
-				margin-right: 0.6rem;
-				min-height: 14.2rem;
-				min-width: 14.2rem;
+			@media #{$mediaquery_sm} {
+				transform: scale(0.8);
+				width: 13.6rem;
 			}
 		}
 	}

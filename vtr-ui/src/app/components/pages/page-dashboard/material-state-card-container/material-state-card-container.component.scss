@@ -92,7 +92,7 @@
 				position: initial;
 				margin-bottom: 0;
 			}
-			@media #{$mediaquery_md} {
+			@media #{$breakpoint_md} {
 				position: absolute;
 				margin: 2rem 0;
 			}

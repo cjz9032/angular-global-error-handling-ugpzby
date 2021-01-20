@@ -3,11 +3,10 @@
 .link-box {
 	.round-box {
 		border-radius: 50%;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		height: 17rem;
+		width: 17rem;
+		padding: 0.4rem;
+		background: $main_darker 0% 0% no-repeat padding-box;
 
 		@media #{$black-on-white} {
 			border: 0.1rem solid $dark;
@@ -17,34 +16,129 @@
 			border: 0.1rem solid $light;
 		}
 
-		.status-text {
-			color: white;
-			font-size: 1.4rem;
-			font-weight: bold;
-			font-style: normal;
-			padding: 1rem;
-			text-align: center;
+		.color-circle {
+			padding: 0.4rem;
+			border-radius: 50%;
 
 			@media #{$black-on-white} {
-				color: $dark;
+				background: $dark !important;
 			}
 
 			@media #{$white-on-black} {
-				color: $light;
+				background: $light !important;
 			}
 
-			.loading {
-				font-size: 2.8rem;
-				color: linear-gradient(31deg, #2ecc71, #35e6b9 100%);
-
-				@media #{$black-on-white} {
-					color: $dark;
+			.status-circle {
+				padding: 0.4rem;
+				border-radius: 50%;
+				background: $main_darker;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				// display: none;
+				.bad,
+				.good {
+					width: 2.7rem;
+					height: 2.7rem;
+					position: relative;
+					margin: 0 auto;
+					&::before,
+					&::after {
+						position: absolute;
+						left: -0.5rem;
+						top: 1.2rem;
+						content: '';
+						width: 3.7rem;
+						height: 0.4rem;
+						border-radius: 0.2rem;
+						transform: rotate(45deg);
+						background: $light;
+					}
+					&::after {
+						transform: rotate(-45deg);
+					}
+					@media #{$black-on-white} {
+						&::before,
+						&::after {
+							background: $dark;
+						}
+					}
+					@media #{$white-on-black} {
+						&::before,
+						&::after {
+							background: $light;
+						}
+					}
+				}
+				.good {
+					display: none;
+					&::before {
+						left: -0.5rem;
+						top: 1.7rem;
+						width: 1.7rem;
+					}
+					&::after {
+						left: 0.3rem;
+						top: 1.2rem;
+						width: 3.2rem;
+					}
 				}
 
-				@media #{$white-on-black} {
+				.status-text {
 					color: $light;
+					font-size: 1.4rem;
+					font-weight: bold;
+					font-style: normal;
+					padding: 0 1.6rem;
+					text-align: center;
+
+					@media #{$black-on-white} {
+						color: $dark;
+					}
+
+					@media #{$white-on-black} {
+						color: $light;
+					}
 				}
 			}
+		}
+
+		&.round-box-good-condition {
+			cursor: default !important;
+			.color-circle {
+				background: linear-gradient(31deg, #2ecc71 0%, #35e6b9 100%);
+				box-shadow: 0px 0px 2rem #2ecc7166;
+				.status-circle {
+					box-shadow: 0px 0px 2rem #2ecc7166 inset;
+					.bad {
+						display: none;
+					}
+					.good {
+						display: block;
+					}
+				}
+			}
+		}
+
+		&.round-box-need-maintenance {
+			cursor: pointer !important;
+			* {
+				cursor: pointer !important;
+			}
+			.color-circle {
+				background: linear-gradient(31deg, #db591f 0%, #eb7200 100%);
+				box-shadow: 0px 0px 2rem #db221f66;
+				.status-circle {
+					box-shadow: 0px 0px 2rem #db221f66 inset;
+				}
+			}
+		}
+
+		&.round-box-loading {
+			cursor: default !important;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
 			.spinner {
 				display: flex;
@@ -55,7 +149,8 @@
 				.spinner-border {
 					width: 3.2rem !important;
 					height: 3.2rem !important;
-					padding: 1.6rem;
+					padding: 1rem;
+					border-width: 0.38rem;
 					color: #2e62d9;
 
 					@media #{$black-on-white} {
@@ -72,34 +167,5 @@
 
 	&:hover {
 		text-decoration: none !important;
-	}
-}
-
-.round-box-good-condition {
-	background: linear-gradient(31deg, #2ecc71, #35e6b9 100%);
-	box-shadow: 0px 0px 16px #2ecc7166;
-	cursor: default !important;
-
-	.status-text {
-		cursor: default;
-	}
-}
-
-.round-box-need-maintenance {
-	background: linear-gradient(31deg, #db591f 0%, #eb7200 100%);
-	box-shadow: 0px 0px 16px #db221f66;
-	cursor: pointer !important;
-
-	.status-text {
-		cursor: pointer;
-	}
-}
-
-.round-box-loading {
-	background: #2f3447;
-	cursor: default !important;
-
-	.status-text {
-		cursor: default;
 	}
 }
