@@ -1,12 +1,18 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, ɵɵInheritDefinitionFeature } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { featureSource } from './model/features.model';
-import { IFeature, INavigationAction, IProtocolAction } from './model/interface.model';
+import {
+	IFeature,
+	INavigationAction,
+	IProtocolAction,
+	SearchResult,
+	SearchResultType as ResultType,
+} from './model/interface.model';
 import { SearchEngineWraper } from './search-engine/search-engine-wraper';
 import { LoggerService } from '../logger/logger.service';
 import { DeviceService } from '../device/device.service';
@@ -18,8 +24,7 @@ import { FeatureApplicableDetections } from './feature-applicable-detections';
 })
 export class AppSearchService implements OnDestroy {
 	private featureLoad = false;
-	private candidateFeatureMap = {};
-	private searchContext = {};
+	private featureMap = {};
 	private menuRouteMap = {};
 	private subscription: Subscription;
 	private searchEngine: SearchEngineWraper;
@@ -67,11 +72,12 @@ export class AppSearchService implements OnDestroy {
 		this.subscription?.unsubscribe();
 	}
 
-	public search(userInput: string): Array<IFeature> {
-		const resultList = this.searchEngine
+	public search(userInput: string): Observable<SearchResult> {
+		const featureList = this.searchEngine
 			.search(userInput)
-			?.map((feature) => Object.assign({}, this.searchContext[feature.item.id]));
-		return resultList || [];
+			?.map((feature) => Object.assign({}, this.featureMap[feature.item.id]));
+
+		return this.checkFeatureApplicable(featureList, 10, 20000);
 	}
 
 	public handleAction(feature: IFeature) {
@@ -202,18 +208,10 @@ export class AppSearchService implements OnDestroy {
 				return;
 			}
 
-			this.candidateFeatureMap[feature.id] = feature;
+			this.featureMap[feature.id] = feature;
 		});
 
-		for (const item of Object.values(this.candidateFeatureMap)) {
-			const feature = item as IFeature;
-			const available = await this.applicableDetections.isFeatureApplicable(feature.id);
-			if (available) {
-				this.searchContext[feature.id] = feature;
-			}
-		}
-
-		this.searchEngine.updateSearchContext(Object.values(this.searchContext));
+		this.searchEngine.updateSearchContext(Object.values(this.featureMap));
 	}
 
 	private mapFeatureSourceToFeature(sourceItem: IFeature): IFeature {
@@ -232,5 +230,66 @@ export class AppSearchService implements OnDestroy {
 		});
 
 		return feature;
+	}
+
+	private checkFeatureApplicable(
+		features: IFeature[],
+		maxParallel: number,
+		timeout: number
+	): Observable<SearchResult> {
+		return new Observable((subscriber) => {
+			let parallelThread = Math.min(maxParallel, features.length);
+			const taskStack = Array.from(features);
+
+			let timeoutHandler = setTimeout(() => {
+				timeoutHandler = null;
+				this.searchComplete(subscriber, null, ResultType.timeout, features);
+			}, timeout);
+
+			let counter = 0;
+			Array.from(Array(parallelThread)).forEach(async () => {
+				const mockThreadId = counter++;
+				await this.mockDetectionThread(taskStack, mockThreadId);
+				if (--parallelThread <= 0) {
+					this.searchComplete(subscriber, timeoutHandler, ResultType.complete, features);
+				}
+			});
+
+			if (parallelThread <= 0) {
+				this.searchComplete(subscriber, timeoutHandler, ResultType.complete, features);
+			}
+		});
+	}
+
+	private searchComplete(
+		subscriber,
+		timeoutHandler,
+		resultType: ResultType,
+		features: IFeature[]
+	) {
+		if (timeoutHandler) {
+			clearTimeout(timeoutHandler);
+		}
+
+		subscriber.next(
+			new SearchResult(
+				resultType,
+				features.filter((feature) => feature.applicable)
+			)
+		);
+		subscriber.complete();
+	}
+
+	private async mockDetectionThread(taskStack, mockThreadId) {
+		while (true) {
+			const feature = taskStack.pop();
+			if (!feature) {
+				break;
+			}
+
+			this.logger.info(`start detection for ${mockThreadId} - ${feature.id}`);
+			feature.applicable = await this.applicableDetections.isFeatureApplicable(feature.id);
+			this.logger.info(`end detection for ${mockThreadId} - ${feature.id}`);
+		}
 	}
 }
