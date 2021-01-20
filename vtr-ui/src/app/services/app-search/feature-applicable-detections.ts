@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { keyBy, mapValues } from 'lodash';
+import { keyBy, mapValues, toLower } from 'lodash';
 
 import { DeviceService } from '../device/device.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
-import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.service';
 import { LoggerService } from '../logger/logger.service';
@@ -131,7 +130,7 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 		if (
-			locale.toLowerCase() !== 'cn' &&
+			toLower(locale) !== 'cn' &&
 			!this.deviceService.isArm &&
 			!this.deviceService.isSMode &&
 			!this.deviceService.isGaming &&
