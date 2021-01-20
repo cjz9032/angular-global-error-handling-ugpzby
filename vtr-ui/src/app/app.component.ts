@@ -10,10 +10,7 @@ import {
 	ElementRef,
 	ViewChild,
 } from '@angular/core';
-import {
-	Router,
-	ActivatedRoute
-} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
 
 import { MAT_TOOLTIP_SCROLL_STRATEGY } from '@lenovo/material/tooltip';
@@ -55,7 +52,6 @@ import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
 import { PerformanceNotifications } from './enums/performance-notifications.enum';
 
-
 export const scrollStrategyClose = (overlay: Overlay) => () => overlay.scrollStrategies.close();
 
 const tooltipScrollStrategy = {
@@ -64,12 +60,11 @@ const tooltipScrollStrategy = {
 	deps: [Overlay],
 };
 
-
 @Component({
 	selector: 'vtr-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss'],
-	providers: [tooltipScrollStrategy]
+	providers: [tooltipScrollStrategy],
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	machineInfo: any;
@@ -144,7 +139,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		sessionStorage.clear();
 		this.getMachineInfo();
 
-		window.onresize = () => { }; // this line is necessary, please do not remove.
+		window.onresize = () => {}; // this line is necessary, please do not remove.
 
 		/********* add this for navigation within a page **************/
 		// this.router.events.subscribe((s) => {
@@ -361,7 +356,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				.then((value: any) => {
 					this.onMachineInfoReceived(value);
 				})
-				.catch((error) => { });
+				.catch((error) => {});
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -430,26 +425,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		);
 	}
 
-	@HostListener('window:keyup', ['$event'])
-	onKeyUp(event: KeyboardEvent) {
-		try {
-			if (this.deviceService.isShellAvailable) {
-				const response = new KeyPress(
-					event.key,
-					event.keyCode,
-					event.location,
-					event.ctrlKey,
-					event.altKey,
-					event.shiftKey
-				);
-				window.parent.postMessage(
-					response,
-					'ms-appx-web://e046963f.lenovocompanionbeta/index.html'
-				);
-			}
-		} catch (error) { }
-	}
-
 	@HostListener('window:load', ['$event'])
 	onLoad(event) {
 		const scale = 1 / (window.devicePixelRatio || 1);
@@ -503,7 +478,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				case HardwareScanProgress.ScanResponse:
 				case HardwareScanProgress.RecoverResponse:
 					this.logger.info(
-						`store rating should show in next start marked. ${notification.type}. ${notification.payload ? notification.payload.status : 'null'
+						`store rating should show in next start marked. ${notification.type}. ${
+							notification.payload ? notification.payload.status : 'null'
 						}`
 					);
 					if (notification.payload && notification.payload.status === true) {
@@ -639,7 +615,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		let navigationStartTime = 0; // for browser
 		if (win.VantageStub?.navigationStartingTime && win.VantageStub?.appStartTime) {
 			// for vantage3.5 shell
-			navigationStartTime = win.VantageStub.navigationStartingTime - win.VantageStub.appStartTime;
+			navigationStartTime =
+				win.VantageStub.navigationStartingTime - win.VantageStub.appStartTime;
 		} else if (win.VantageStub?.navigateTime && win.VantageStub?.appStartTime) {
 			// for shell before vantage3.5
 			navigationStartTime = win.VantageStub.navigateTime - win.VantageStub.appStartTime;
@@ -653,23 +630,39 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				? ''
 				: win.location.host,
 			navigationStarts: Math.round(navigationStartTime),
-			indexPageEstablished: Math.round(navigationStartTime + navPerf.responseEnd - navPerf.startTime),
+			indexPageEstablished: Math.round(
+				navigationStartTime + navPerf.responseEnd - navPerf.startTime
+			),
 			domInteractived: Math.round(
 				navigationStartTime + navPerf.domInteractive - navPerf.startTime
 			),
 			scriptLoaded: Math.round(navigationStartTime + navPerf.duration),
-			appInitialized: this.commonService.getPerformanceNode('app initialized')?.startTime ?
-				Math.round(navigationStartTime + this.commonService.getPerformanceNode('app initialized').startTime - navPerf.startTime) :
-				null,
-			appEntryLoaded: this.commonService.getPerformanceNode('app entry loaded')?.startTime ?
-				Math.round(navigationStartTime + this.commonService.getPerformanceNode('app entry loaded').startTime - navPerf.startTime) :
-				null,
-			firstPageLoaded: this.commonService.getPerformanceNode(firstPage)?.startTime ?
-				Math.round(navigationStartTime + this.commonService.getPerformanceNode(firstPage).startTime - navPerf.startTime) :
-				null,
+			appInitialized: this.commonService.getPerformanceNode('app initialized')?.startTime
+				? Math.round(
+						navigationStartTime +
+							this.commonService.getPerformanceNode('app initialized').startTime -
+							navPerf.startTime
+				  )
+				: null,
+			appEntryLoaded: this.commonService.getPerformanceNode('app entry loaded')?.startTime
+				? Math.round(
+						navigationStartTime +
+							this.commonService.getPerformanceNode('app entry loaded').startTime -
+							navPerf.startTime
+				  )
+				: null,
+			firstPageLoaded: this.commonService.getPerformanceNode(firstPage)?.startTime
+				? Math.round(
+						navigationStartTime +
+							this.commonService.getPerformanceNode(firstPage).startTime -
+							navPerf.startTime
+				  )
+				: null,
 		};
-		performanceTimePoints.indexPageEstablished = (performanceTimePoints.indexPageEstablished > performanceTimePoints.domInteractived) ?
-			performanceTimePoints.domInteractived : performanceTimePoints.indexPageEstablished;
+		performanceTimePoints.indexPageEstablished =
+			performanceTimePoints.indexPageEstablished > performanceTimePoints.domInteractived
+				? performanceTimePoints.domInteractived
+				: performanceTimePoints.indexPageEstablished;
 		this.metricService.sendAppLoadedMetric(performanceTimePoints);
 		let content = `You are now accessing ${performanceTimePoints.source}, ${performanceTimePoints.hostname} \n \n`;
 		content += `Certpin done: ${performanceTimePoints.certPingDone} ms \n`;
