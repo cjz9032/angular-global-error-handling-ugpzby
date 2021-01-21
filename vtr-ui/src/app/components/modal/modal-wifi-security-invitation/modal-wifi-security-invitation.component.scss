@@ -1,5 +1,5 @@
 @import '../../../app.theme.scss';
-.wifi-security-invitation-modal {
+.wifi-security-invitation-dialog {
 	background: $light;
 	background-size: cover;
 	color: $main_dark;
@@ -85,7 +85,6 @@
 		.form-control {
 			border: 0px;
 			font-size: 1.6rem;
-			padding: 1.5rem 3rem 1.5rem 0;
 			letter-spacing: 0.2rem;
 			text-transform: uppercase;
 			margin-bottom: 0.1rem;

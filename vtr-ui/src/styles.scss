@@ -830,6 +830,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .wifi-security-invitation-modal,
 .wifi-security-location-modal,
 .home-protection-location-dialog {
+	width: 45rem;
 	@media #{$breakpoint_sm} {
 		max-width: 90% !important;
 	}

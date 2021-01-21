@@ -8,7 +8,7 @@
 			[innerHTML]="description | translate" role="text">
 		</p>
 		<div class="form-group code-input-group p-3" [ngClass]="{'d-none': joinSuccess, 'joinfailed': joinFailed, 'input-focus': isFocusIn}">
-			<input type="text" id="chs-btn-inviatation-input" class="form-control"
+			<input type="text" id="chs-btn-inviatation-input" class="form-control pl-0"
 				placeholder="{{'security.homeprotection.invitationcode.invitationCode' | translate}}" #code
 				(keyup)="KeyPress($event)"
 				(keyup.enter)="joinGroupBy(code.value)"
