@@ -5958,5 +5958,34 @@
 		"networkBoostDesc": "This feature will automatically set the priority of games to the highest level within your network, maximizing speeds. If you use any apps while gaming, we suggest you adding them below so they will also received priority on your network.",
 		"performanceBoost": "Performance boost",
 		"performanceBoostDesc": "This feature will automatically close the apps that you added below when launch a game. It could free up unused resources to maximize performance. Be aware that apps added in the list will be close completely, please always make sure you've saved your work."
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"colorSettings": {
+					"title": "Windows HD color settings",
+					"desc": "Windows HD color displays high dynamic range (HDR) and wide color gamut (WCG) content, such as photos, videos, and games on your device if supported.",
+					"clickHere": "To change Windows HD color settings, click here."
+				}
+
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+
+		}
+
 	}
 }

@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { GuardService } from 'src/app/services/guard/guardService.service';
+import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 
 @Component({
   selector: 'vtr-page-creator-centre',
@@ -7,9 +12,62 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageCreatorCentreComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('hsRouterOutlet', { static: false }) hsRouterOutlet: ElementRef;
+
+  constructor(private translate: TranslateService
+  ) {this.menuItems.forEach((m) => {
+			m.label = this.translate.instant(m.label);
+		});
+  }
+
+  routerSubscription: Subscription;
+  activeElement: HTMLElement;
+  title = 'Creator Centre';
+  back = 'BACK';
+  backarrow = '< ';
+  parentPath = 'smb/creator-centre';
+  private router: Router;
+  menuItems = [
+		{
+			id: 'creator-settings',
+			label: 'smb.creatorCentre.creatorSettings.title',
+			path: 'creator-settings',
+			subitems: [],
+			active: true,
+		},
+		{
+			id: 'easy-rendering',
+			label: 'smb.creatorCentre.easyRendering.title',
+			path: 'easy-rendering',
+			subitems: [],
+			active: false,
+		},
+		{
+			id: 'color-calibration',
+			label: 'smb.creatorCentre.colorCalibration.title',
+			path: 'color-calibration',
+			subitems: [],
+			active: false,
+		},
+	];
 
   ngOnInit(): void {
+    this.routerSubscription = this.router.events.subscribe((evt) => {
+			if (!(evt instanceof NavigationEnd)) {
+				return;
+			}
+			// focus same active link element after route change , content loaded.
+			/* if ((evt instanceof NavigationEnd)) {
+				if (this.activeElement) {
+					this.activeElement.focus();
+				}
+			} */
+		});
   }
+
+  onRouteActivate($event, hsRouterOutlet: HTMLElement) {
+		// On route change , change foucs to immediate next below first tabindex on route change response
+		this.activeElement = document.activeElement as HTMLElement;
+	}
 
 }
