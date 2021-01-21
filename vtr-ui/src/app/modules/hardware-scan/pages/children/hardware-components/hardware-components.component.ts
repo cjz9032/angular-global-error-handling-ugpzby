@@ -7,22 +7,18 @@ import { TranslateService } from '@ngx-translate/core';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { ModalHardwareScanCustomizeComponent } from '../../../components/modal/modal-hardware-scan-customize/modal-hardware-scan-customize.component';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
-import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { ModalWaitComponent } from '../../../components/modal/modal-wait/modal-wait.component';
 import {
 	TaskType,
 	TaskStep,
 	HardwareScanProgress,
 	HardwareScanFinishedHeaderType,
+	HardwareScanTestResult,
 } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { ScanExecutionService } from '../../../services/scan-execution.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProtocolExecutionService } from '../../../services/protocol-execution.service';
-import { HardwareScanMetricsService } from 'src/app/modules/hardware-scan/services/hardware-scan-metrics.service';
 import { HardwareScanFeaturesService } from '../../../services/hardware-scan-features.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { ExportResultsService } from '../../../services/export-results.service';
-import { TimerService } from 'src/app/services/timer/timer.service';
 import { MatDialog } from '@lenovo/material/dialog';
 
 const RootParent = 'HardwareScan';
@@ -54,12 +50,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private notificationSubscription: Subscription;
 	private customizeModal = ModalHardwareScanCustomizeComponent;
 	public itemsNextScan: any = [];
-	private cancelHandler = {
-		cancel: undefined,
-	};
-	private batteryMessage: string;
 	private culture: any;
-	private metrics: any;
 
 	public isOnline = true;
 
@@ -76,8 +67,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			}
 			return (
 				this.hwscanFeaturesService.isExportLogAvailable &&
-				this.hardwareScanService.getFinalResultCode()
-			); // Uses this validation to avoid cases that CLI doesn't send final result code (Abort CLI error)
+				this.hardwareScanService.isFinalResultCodeValid() &&
+				this.hardwareScanService.getScanResult() !==
+					HardwareScanTestResult[HardwareScanTestResult.Cancelled]
+			); // Uses this validation to avoid cases that CLI doesn't send final result code, it is invalid(Abort CLI error) or result Cancelled
 		}
 
 		return false;
@@ -105,20 +98,14 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private ngZone: NgZone,
 		private dialog: MatDialog,
 		private translate: TranslateService,
-		private shellService: VantageShellService,
 		private scanExecutionService: ScanExecutionService,
 		private protocolExecutionService: ProtocolExecutionService,
 		private activatedRoute: ActivatedRoute,
 		private router: Router,
-		private hwscanFeaturesService: HardwareScanFeaturesService,
-		private exportService: ExportResultsService,
-		private logger: LoggerService,
-		private hardwareScanMetricsService: HardwareScanMetricsService,
-		private timerService: TimerService
+		private hwscanFeaturesService: HardwareScanFeaturesService
 	) {
 		this.viewResultsPath = '/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
-		this.metrics = this.shellService.getMetrics();
 	}
 
 	@HostListener('document: visibilitychange')
@@ -431,7 +418,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			switch (type) {
 				case HardwareScanProgress.ScanProgress:
 					this.ngZone.run(() => {
-						if (!this.hardwareScanService.isCancelRequested()) {
+						if (!this.hardwareScanService.isCancelRequestByUser()) {
 							this.scanExecutionService.executionProgress = payload;
 						}
 					});

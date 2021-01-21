@@ -91,3 +91,8 @@ export enum WatcherStepProcess {
 	Intermediate,
 	Stop,
 }
+
+export enum ResultCodeStatus {
+	Invalid,
+	Valid,
+}

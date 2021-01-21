@@ -1,5 +1,4 @@
-import { Injectable, NgZone, EventEmitter } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { PreviousResultService } from 'src/app/modules/hardware-scan/services/previous-result.service';
 import { HardwareScanResultService } from 'src/app/modules/hardware-scan/services/hardware-scan-result.service';
@@ -13,12 +12,20 @@ import {
 	HardwareScanFinishedHeaderType,
 	HardwareScanProgress,
 	WatcherStepProcess,
+	ResultCodeStatus,
 } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from '../../../services/logger/logger.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import {
+	DoScanResponse,
+	GroupResult,
+	HardwareScanPluginGetPreviousResultResponse,
+	HardwareScanPluginScanResponse,
+} from '../models/hardware-scan.interface';
+import { ScanLogService } from './scan-log.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -27,13 +34,12 @@ export class HardwareScanService {
 	constructor(
 		shellService: VantageShellService,
 		private commonService: CommonService,
-		private ngZone: NgZone,
-		private translate: TranslateService,
 		private hypSettings: HypothesisService,
 		private hardwareScanResultService: HardwareScanResultService,
 		private previousResultService: PreviousResultService,
 		private localCacheService: LocalCacheService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private scanLogService: ScanLogService
 	) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 
@@ -70,11 +76,10 @@ export class HardwareScanService {
 	private categoryInformationList: any = []; // List of categoryInformation
 	private filteredCustomScanRequest = [];
 	private filteredCustomScanResponse = [];
-	private cancelRequested: boolean;
 	private disableCancel = false;
 	private finalResponse: any;
 	private enableViewResults = false;
-	private lastResponse: any;
+	private lastResponse: HardwareScanPluginScanResponse | any;
 	private workDone = new Subject<boolean>();
 	private culture: any;
 	private itemsToScanResponse: any = undefined;
@@ -88,6 +93,10 @@ export class HardwareScanService {
 	private lastTaskType: TaskType;
 	private lastFilteredCustomScanRequest = [];
 	private lastFilteredCustomScanResponse = [];
+
+	// Use to control whether if a cancel is request by user or if it happened abruptly.
+	private cancelRequested: boolean;
+	private cancelRequestByUser: boolean;
 
 	public watcherProcess: EventEmitter<any> = new EventEmitter();
 
@@ -181,10 +190,12 @@ export class HardwareScanService {
 	}
 
 	public setScanOrRBSFinished(value: boolean) {
+		this.logger.error(`scanOrRBSFinished = ${value}`);
 		this.scanOrRBSFinished = value;
 	}
 
 	public setScanFinishedHeaderType(value: any) {
+		this.logger.error(`setScanFinishedHeaderType = ${value}`);
 		this.scanHeaderTypeFinished = value;
 	}
 
@@ -205,6 +216,7 @@ export class HardwareScanService {
 	}
 
 	public setScanExecutionStatus(status: boolean) {
+		this.logger.error(`setScanExecutionStatus = ${status}`);
 		this.scanExecution = status;
 	}
 
@@ -213,10 +225,12 @@ export class HardwareScanService {
 	}
 
 	public setLoadingStatus(status: boolean) {
+		this.logger.error(`setLoadingStatus = ${status}`);
 		this.isLoadingModulesDone = status;
 	}
 
 	public setIsScanDone(status: boolean) {
+		this.logger.error(`setIsScanDone = ${status}`);
 		this.isScanDone = status;
 	}
 
@@ -237,6 +251,7 @@ export class HardwareScanService {
 	}
 
 	public setRecoverExecutionStatus(status: boolean) {
+		this.logger.error(`setRecoverExecutionStatus = ${status}`);
 		this.recoverExecution = status;
 	}
 
@@ -245,6 +260,7 @@ export class HardwareScanService {
 	}
 
 	public setRecoverInit(status: boolean) {
+		this.logger.error(`setRecoverInit = ${status}`);
 		this.recoverInit = status;
 	}
 
@@ -294,6 +310,7 @@ export class HardwareScanService {
 	}
 
 	public setEnableViewResults(status: boolean) {
+		this.logger.error(`setEnableViewResults = ${status}`);
 		this.enableViewResults = status;
 	}
 
@@ -305,7 +322,12 @@ export class HardwareScanService {
 		return this.cancelRequested;
 	}
 
+	public isCancelRequestByUser() {
+		return this.cancelRequestByUser;
+	}
+
 	public setHasDevicesToRecover(status: boolean) {
+		this.logger.error(`setHasDevicesToRecover = ${status}`);
 		this.hasDevicesToRecover = status;
 	}
 
@@ -351,7 +373,7 @@ export class HardwareScanService {
 				const isMachineAvailable = this.isMachineAvailable();
 				return (result || '').toString() === 'true' && isMachineAvailable;
 			})
-			.catch((error) => false);
+			.catch(() => false);
 	}
 
 	/**
@@ -409,6 +431,7 @@ export class HardwareScanService {
 	public getDoScan(payload, modules, cancelHandler) {
 		if (this.hardwareScanBridge) {
 			this.cancelRequested = false;
+			this.cancelRequestByUser = false;
 			this.modules = modules;
 			this.executingModule = modules[0].module;
 			this.hardwareScanResultService.clearFailedTests();
@@ -427,6 +450,9 @@ export class HardwareScanService {
 
 			// Start the initial timer
 			this.watcherProcess.emit(WatcherStepProcess.Start);
+			// Indicates that previous results should be updated
+			this.previousResultService.shouldUpdatePreviousResult = true;
+
 			return this.hardwareScanBridge
 				.getDoScan(
 					payload,
@@ -443,9 +469,10 @@ export class HardwareScanService {
 					},
 					cancelHandler
 				)
-				.then((response) => {
+				.then((response: HardwareScanPluginScanResponse) => {
 					// Stop the current timer
 					this.watcherProcess.emit(WatcherStepProcess.Stop);
+
 					if (response !== null && response.finalResultCode !== null) {
 						this.commonService.setSessionStorageValue(
 							SessionStorageKey.HwScanHasExportLogData,
@@ -453,41 +480,95 @@ export class HardwareScanService {
 						);
 						this.executingModule = undefined;
 						this.lastResponse = response;
+						this.previousResultService.updatePreviousResultsResponse();
 						return response;
-					} else {
-						throw new Error('Scan incomplete!');
-					}
-				})
-				.catch((ex: any) => {
-					if (ex !== null) {
-						// Stop the current timer (when sleeping/hibernating, we don't need to keep watching anymore)
-						this.watcherProcess.emit(WatcherStepProcess.Stop);
-						this.cancelRequested = true;
 					}
 
-					this.logger.error('[GetDoScan]: ' + JSON.stringify(ex), ex);
-					throw ex;
+					// When Cli stops abruptly it will resolve the promise and we need to throw an error to enter the cancelled flow
+					throw new Error('Scan Incompleted!');
+				})
+				.catch(async (ex: any) => {
+					// Stop the current timer (when sleeping/hibernating, we don't need to keep watching anymore)
+					this.watcherProcess.emit(WatcherStepProcess.Stop);
+					this.cancelRequested = true;
+
+					this.logger.error('[HardwareScanService] getDoScan', ex);
+
+					await this.onScanResponseError();
 				})
 				.finally(() => {
-					this.setIsScanDone(true);
-					this.cleanUp();
+					this.doScanRequestReset();
+					// this.setIsScanDone(true);
+					// this.cleanUp();
 
-					if (this.cancelRequested === true) {
-						this.scanExecution = false;
-					}
+					// // This line check if a cancel is made by the user and change the header to the initial state
+					// if (this.cancelRequestByUser === true) {
+					// 	this.scanExecution = false;
+					// }
 
-					this.workDone.next(true);
-					this.setScanOrRBSFinished(true);
-					this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.Scan);
+					// this.workDone.next(true);
+					// this.setScanOrRBSFinished(true);
+					// this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.Scan);
 
-					// Retrieve an updated version of Scan's last results
-					this.previousResultService.updatePreviousResultsResponse();
-
-					// Scan is finished, so we'll show its result instead of the running state
-					this.clearLastResponse();
+					// // Scan is finished, so we'll show its result instead of the running state
+					// this.clearLastResponse();
 				});
 		}
 		return undefined;
+	}
+
+	public doScanRequestReset() {
+		this.setIsScanDone(true);
+		this.cleanUp();
+
+		// This line check if a cancel is made by the user and change the header to the initial state
+		if (this.cancelRequestByUser === true) {
+			this.scanExecution = false;
+		}
+
+		this.workDone.next(true);
+		this.setScanOrRBSFinished(true);
+		this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.Scan);
+
+		// Scan is finished, so we'll show its result instead of the running state
+		this.clearLastResponse();
+	}
+
+	/**
+	 * Fallback mechanism to get scan response
+	 * It ensure that a cancelled result will be displayed on if a cli event or power event happens
+	 * It will try to retrieve a previous result response and if it returns null it will use
+	 * the last response received
+	 */
+	public onScanResponseError() {
+		return this.previousResultService
+			.getLastResults()
+			.then(
+				(
+					previousResultResponse: HardwareScanPluginGetPreviousResultResponse
+				): HardwareScanPluginScanResponse => {
+					if (previousResultResponse.hasPreviousResults) {
+						const scanResponse = this.convertPreviousResultToScanResponse(
+							previousResultResponse
+						);
+						return scanResponse;
+					}
+
+					throw new Error('No previous result found');
+				}
+			)
+			.catch(
+				(exception: any): HardwareScanPluginScanResponse => {
+					this.logger.error('[HardwareScanService] getScanLog', exception);
+
+					return this.lastResponse;
+				}
+			)
+			.then((response) => {
+				this.createFakeFinalResponse(response);
+				this.executingModule = undefined;
+				this.finalResponse = response;
+			});
 	}
 
 	public hasLastResponse() {
@@ -527,12 +608,15 @@ export class HardwareScanService {
 		return this.workDone.pipe(first());
 	}
 
+	/**
+	 * This funcion will be called when a user request a cancel
+	 */
 	public cancelScanExecution() {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge
-				.cancelScan((response: any) => {})
-				.then((response) => {
-					this.cancelRequested = true;
+				.cancelScan(() => {})
+				.then(() => {
+					this.cancelRequestByUser = true;
 					this.clearLastResponse();
 				})
 				.finally(() => {
@@ -547,6 +631,7 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			this.clearLastResponse();
 			this.cancelRequested = false;
+			this.cancelRequestByUser = false;
 			this.setScanOrRBSFinished(false);
 			this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.None);
 			this.workDone.next(false);
@@ -972,9 +1057,93 @@ export class HardwareScanService {
 		this.commonService.sendNotification(HardwareScanProgress.ScanProgress, this.progress);
 	}
 
-	private updateScanResponse(response: any) {
+	public isFinalResultCodeValid() {
+		if (this.finalResponse !== null && this.finalResponse !== undefined) {
+			return (
+				this.finalResponse.finalResultCode !== ResultCodeStatus[ResultCodeStatus.Invalid] &&
+				this.finalResponse.finalResultCode !== null
+			);
+		}
+		return false;
+	}
+
+	public convertPreviousResultToScanResponse(
+		response: HardwareScanPluginGetPreviousResultResponse
+	) {
+		try {
+			const scanResponse: HardwareScanPluginScanResponse = {};
+
+			scanResponse.finalResultCode = response.scanSummary.finalResultCode;
+			scanResponse.startDate = response.scanSummary.ScanDate;
+			scanResponse.responses = [];
+
+			for (const doScanResponse of response.modulesResults) {
+				scanResponse.responses.push(doScanResponse.response);
+			}
+
+			return scanResponse;
+		} catch {
+			throw new Error('Error converting previous result response to scan response');
+		}
+	}
+
+	public createFakeFinalResponse(response: HardwareScanPluginScanResponse): void {
+		const doScanResponses: Array<DoScanResponse> = response.responses;
+		const groupResults: Array<GroupResult> = [];
+
+		// Set final result code to invalid if undefined
+		if (!response.finalResultCode) {
+			response.finalResultCode = ResultCodeStatus[ResultCodeStatus.Invalid];
+		}
+
+		for (const scanResponse of doScanResponses) {
+			for (const groupResult of scanResponse.groupResults) {
+				groupResults.push(groupResult);
+			}
+		}
+
+		for (const module of this.modules) {
+			const currentGroup = groupResults.find(
+				(x) => x.id === module.groupId && x.moduleName === module.id
+			);
+			module.resultCode = currentGroup.resultCode;
+			module.description = currentGroup.resultDescription;
+			module.information = currentGroup.resultDescription;
+			for (let i = 0; i < module.listTest.length; i++) {
+				module.listTest[i].statusTest = currentGroup.testResultList[i].result;
+
+				if (
+					module.listTest[i].statusTest === HardwareScanTestResult.NotStarted ||
+					module.listTest[i].statusTest === HardwareScanTestResult.InProgress
+				) {
+					module.listTest[i].statusTest = HardwareScanTestResult.Cancelled;
+				}
+
+				module.listTest[i].percent = 100;
+			}
+			module.resultModule = this.hardwareScanResultService.consolidateResults(
+				module.listTest.map((item) => item.statusTest)
+			);
+
+			if (!module.resultCode) {
+				module.resultCode = ResultCodeStatus[ResultCodeStatus.Invalid];
+			}
+		}
+
+		this.completedStatus = true;
+
+		this.scanResult =
+			HardwareScanTestResult[
+				this.hardwareScanResultService.consolidateResults(
+					this.modules.map((module) => module.resultModule)
+				)
+			];
+		this.commonService.sendNotification(HardwareScanProgress.ScanResponse, this.modules);
+	}
+
+	private updateScanResponse(response: HardwareScanPluginScanResponse) {
 		const doScanResponse = response.responses;
-		const groupResults = [];
+		const groupResults: Array<GroupResult> = [];
 
 		this.modules.status = true;
 
@@ -1020,6 +1189,7 @@ export class HardwareScanService {
 				) {
 					this.modules.status = false;
 				}
+
 				module.listTest[i].percent = currentGroup.testResultList[i].percentageComplete;
 			}
 			module.resultModule = this.hardwareScanResultService.consolidateResults(
@@ -1253,6 +1423,10 @@ export class HardwareScanService {
 
 	public getLastTaskType() {
 		return this.lastTaskType;
+	}
+
+	public getLastResponse() {
+		return this.lastResponse;
 	}
 
 	public setLastTaskType(taskType: TaskType) {

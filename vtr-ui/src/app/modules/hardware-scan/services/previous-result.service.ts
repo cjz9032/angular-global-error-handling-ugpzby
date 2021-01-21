@@ -7,6 +7,8 @@ import {
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { HardwareScanResultService } from 'src/app/modules/hardware-scan/services/hardware-scan-result.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { HardwareScanPluginGetPreviousResultResponse } from '../models/hardware-scan.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -16,14 +18,17 @@ export class PreviousResultService {
 	private viewResultItems: any;
 
 	private hasLastResults = false;
-	private previousResults = {};
+	private previousResults: HardwareScanPluginGetPreviousResultResponse = {};
 	private previousItemsWidget = {};
 	private previousResultsResponse: any = undefined;
+
+	public shouldUpdatePreviousResult = false;
 
 	constructor(
 		shellService: VantageShellService,
 		private localCacheService: LocalCacheService,
-		private hardwareScanResultService: HardwareScanResultService
+		private hardwareScanResultService: HardwareScanResultService,
+		private loggerService: LoggerService
 	) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 	}
@@ -44,26 +49,36 @@ export class PreviousResultService {
 
 	private buildPreviousResultsWidget(previousResults: any) {
 		const previousItems: any = {};
-		previousItems.date = previousResults.date;
-		previousItems.modules = [];
-		for (const item of previousResults.items) {
-			const module: any = {};
-			module.name = item.module;
-			module.subname = item.name;
-			module.resultModule = this.hardwareScanResultService.consolidateResults(
-				item.listTest.map((itemTest) => itemTest.statusTest)
-			);
 
-			previousItems.modules.push(module);
+		try {
+			previousItems.date = previousResults.date;
+			previousItems.modules = [];
+			for (const item of previousResults.items) {
+				const module: any = {};
+				module.name = item.module;
+				module.subname = item.name;
+				module.resultModule = this.hardwareScanResultService.consolidateResults(
+					item.listTest.map((itemTest) => itemTest.statusTest)
+				);
+
+				previousItems.modules.push(module);
+			}
+		} catch (ex) {
+			this.loggerService.error(
+				'[PreviousResultService] buildPreviousResultsWidget - Failed to build previous results widget',
+				ex
+			);
 		}
+
 		this.previousItemsWidget = previousItems;
 	}
 
 	public buildPreviousResults(response: any) {
 		const previousResults: any = {};
 		let moduleId = 0;
+		this.hasLastResults = false;
 
-		if (response.hasPreviousResults) {
+		if (response) {
 			this.hasLastResults = response.hasPreviousResults;
 			previousResults.finalResultCode = response.scanSummary.finalResultCode;
 			previousResults.resultTestsTitle = HardwareScanTestResult.Pass;
@@ -139,10 +154,11 @@ export class PreviousResultService {
 			previousResults.resultTestsTitle = this.hardwareScanResultService.consolidateResults(
 				previousResults.items.map((item) => item.resultModule)
 			);
-
-			this.previousResults = previousResults;
-			this.buildPreviousResultsWidget(this.previousResults);
 		}
+
+		// This will clean the previous result widget and previous result when a null response is received
+		this.previousResults = previousResults;
+		this.buildPreviousResultsWidget(this.previousResults);
 	}
 
 	public buildDetails(module: any) {
@@ -160,9 +176,21 @@ export class PreviousResultService {
 
 	public getLastResults() {
 		if (this.hardwareScanBridge) {
-			return this.previousResultsResponse.then((response) => {
-				this.buildPreviousResults(response);
-			});
+			if (this.shouldUpdatePreviousResult) {
+				this.updatePreviousResultsResponse();
+			}
+			return this.previousResultsResponse
+				.then((response) => {
+					this.buildPreviousResults(response);
+					this.loggerService.info('[getLastResults]', response);
+					return response;
+				})
+				.catch((ex) => {
+					this.loggerService.error(
+						'[getLastResults] -> buildPreviousResults error: ',
+						ex
+					);
+				});
 		}
 		return undefined;
 	}
@@ -182,7 +210,15 @@ export class PreviousResultService {
 	}
 
 	public updatePreviousResultsResponse() {
-		this.previousResultsResponse = this.hardwareScanBridge.getPreviousResults();
+		this.previousResultsResponse = this.hardwareScanBridge
+			.getPreviousResults()
+			.then((response) => {
+				this.shouldUpdatePreviousResult = false;
+				return response;
+			})
+			.catch((ex) => {
+				this.loggerService.error('[updatePreviousResultsResponse]', ex);
+			});
 	}
 
 	public getPreviousResultsWidget() {
@@ -193,7 +229,7 @@ export class PreviousResultService {
 		return this.hasLastResults;
 	}
 
-	public getPreviousResults() {
+	public getPreviousResults(): HardwareScanPluginGetPreviousResultResponse {
 		return this.previousResults;
 	}
 

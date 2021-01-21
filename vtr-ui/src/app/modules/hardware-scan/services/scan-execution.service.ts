@@ -17,8 +17,8 @@ import { ModalScanFailureComponent } from '../components/modal/modal-scan-failur
 import { PreviousResultService } from './previous-result.service';
 import { ModalCancelComponent } from '../components/modal/modal-cancel/modal-cancel.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { FormatLocaleDateTimePipe } from 'src/app/pipe/format-locale-datetime/format-locale-datetime.pipe';
 import { MatDialog } from '@lenovo/material/dialog';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 const RootParent = 'HardwareScan';
 const CancelButton = 'Cancel';
@@ -57,43 +57,45 @@ export class ScanExecutionService {
 		private lenovoSupportService: LenovoSupportService,
 		private previousResultService: PreviousResultService,
 		private shellService: VantageShellService,
-		private formatDateTime: FormatLocaleDateTimePipe
+		private logger: LoggerService
 	) {
 		this.culture = this.hardwareScanService.getCulture();
 		this.metrics = this.shellService.getMetrics();
 
-		// Used to manage a watcher from scan process.
-		// If front-end receive a response after checkCliRunning timer is over,
-		// the timer resets and the workflow starts again.
-		// If front-end doesn't receive a response from checkCliRunning, it get reloaded
-		// to prevent an incorrect scan execution view.
+		/** Used to manage a watcher from scan process.
+		 * If front-end receive a response after checkCliRunning timer is over, * the timer resets and the workflow starts again.
+		 * If front-end doesn't receive a response from checkCliRunning, it will stay at the view results page with cancelled status
+		 */
 		this.hardwareScanService.watcherProcess.subscribe((status) => {
 			switch (status) {
 				case WatcherStepProcess.Start:
+					this.logger.info('[WatcherStepProcess] Start');
+
 					const startIntervalTime = 10000;
 
 					this.checkCliRunning(startIntervalTime, () => {
-						// Prevent that the "View Details" button is shown
-						// Enable the back button to work as expected when visiting the "Previous Results" page
-						this.hardwareScanService.setEnableViewResults(false);
-						this.hardwareScanService.setIsScanDone(false);
+						this.logger.info('[WatcherStepProcess] Start Callback');
 					});
 					break;
 				case WatcherStepProcess.Intermediate:
+					this.logger.info('[WatcherStepProcess] Intermediate');
 					const intermediateIntervalTime = 4000;
 
 					clearInterval(this.cancelWatcher);
-					this.checkCliRunning(intermediateIntervalTime, () => {
-						// Prevent that the "View Details" button is shown
-						// Enable the back button to work as expected when visiting the "Previous Results" page
-						this.hardwareScanService.setEnableViewResults(false);
-						this.hardwareScanService.setIsScanDone(false);
+					this.checkCliRunning(intermediateIntervalTime, async () => {
+						this.logger.info('[WatcherStepProcess] Intermediate Callback');
+
+						await this.hardwareScanService.onScanResponseError();
+						this.hardwareScanService.doScanRequestReset();
+						this.doScanExecutionReset();
 					});
 					break;
 				case WatcherStepProcess.Stop:
+					this.logger.info('[WatcherStepProcess] Stop');
 					clearInterval(this.cancelWatcher);
 					break;
 				default:
+					this.logger.info('[WatcherStepProcess] Default');
 					clearInterval(this.cancelWatcher);
 					break;
 			}
@@ -540,7 +542,7 @@ export class ScanExecutionService {
 		// the home screen (this.getItemToDisplay()) the modules name and description
 		// If the scan finished without cancellation, then the scan result will be display.
 		// In this case, the module list is updated with the scan results and modules details (results.items)
-		if (!this.hardwareScanService.isCancelRequested()) {
+		if (!this.hardwareScanService.isCancelRequestByUser()) {
 			this.modules = results.items;
 		} else {
 			this.modules = this.getItemToDisplay();
@@ -620,6 +622,12 @@ export class ScanExecutionService {
 					const cancelWaitIntervalTime = 3000;
 
 					this.checkCliRunning(cancelWaitIntervalTime, () => {
+						this.hardwareScanService.setIsScanDone(true);
+						this.hardwareScanService.setScanExecutionStatus(false);
+						this.hardwareScanService.setScanOrRBSFinished(true);
+						this.cleaningUpScan(undefined);
+						this.refreshModules();
+
 						modalCancel.close();
 						if (this.cancelHandler && this.cancelHandler.cancel) {
 							this.cancelHandler.cancel();
@@ -652,14 +660,9 @@ export class ScanExecutionService {
 		// Workaround for RTC changing date/time problem!
 		// NOTICE: Remove this code piece as soon as this problem is fixed
 		this.cancelWatcher = setInterval(() => {
-			this.hardwareScanService.getStatus().then((result: any) => {
+			this.hardwareScanService.getStatus().then(async (result: any) => {
 				if (!result.isScanInProgress) {
 					clearInterval(this.cancelWatcher);
-					this.hardwareScanService.setIsScanDone(true);
-					this.hardwareScanService.setScanExecutionStatus(false);
-					this.hardwareScanService.setScanOrRBSFinished(true);
-					this.cleaningUpScan(undefined);
-					this.refreshModules();
 
 					if (callBack) {
 						callBack();
@@ -667,6 +670,25 @@ export class ScanExecutionService {
 				}
 			});
 		}, cancelWatcherDelay);
+	}
+
+	private doScanExecutionReset() {
+		this.cleaningUpScan(undefined);
+
+		const metricsResult = this.getMetricsTaskResult();
+		this.sendTaskActionMetrics(
+			this.hardwareScanService.getCurrentTaskType(),
+			metricsResult.countSuccesses,
+			'',
+			metricsResult.scanResultJson,
+			this.timerService.stop()
+		);
+
+		// Defines information about module details
+		this.onViewResults();
+		this.modules.forEach((module) => {
+			module.expanded = true;
+		});
 	}
 
 	public refreshModules() {
@@ -715,9 +737,7 @@ export class ScanExecutionService {
 
 				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
 
-				modal.componentInstance.error = this.translate.instant(
-					'hardwareScan.warning'
-				);
+				modal.componentInstance.error = this.translate.instant('hardwareScan.warning');
 				modal.componentInstance.description = this.batteryMessage;
 				modal.componentInstance.ItemParent = this.getMetricsParentValue();
 				modal.componentInstance.CancelItemName = this.getMetricsItemNameClose();
@@ -769,30 +789,10 @@ export class ScanExecutionService {
 					this.showSupportPopupIfNeeded();
 				})
 				.catch((ex: any) => {
-					// Clean up the scan variables when occurs a power event (CLI stopped brusquely)
-					this.hardwareScanService.setIsScanDone(false);
-					this.hardwareScanService.setScanExecutionStatus(false);
-					this.hardwareScanService.setRecoverExecutionStatus(false);
-
-					return undefined;
+					this.logger.error(`[ScanExecutionService] getDoScan`, ex);
 				})
 				.finally(() => {
-					this.cleaningUpScan(undefined);
-
-					const metricsResult = this.getMetricsTaskResult();
-					this.sendTaskActionMetrics(
-						this.hardwareScanService.getCurrentTaskType(),
-						metricsResult.countSuccesses,
-						'',
-						metricsResult.scanResultJson,
-						this.timerService.stop()
-					);
-
-					// Defines information about module details
-					this.onViewResults();
-					this.modules.forEach((module) => {
-						module.expanded = true;
-					});
+					this.doScanExecutionReset();
 				});
 		}
 
@@ -805,7 +805,7 @@ export class ScanExecutionService {
 		}
 
 		this.startScanClicked = false;
-		if (!this.hardwareScanService.isCancelRequested()) {
+		if (!this.hardwareScanService.isCancelRequestByUser()) {
 			this.hardwareScanService.setEnableViewResults(true);
 		} else {
 			return true;
