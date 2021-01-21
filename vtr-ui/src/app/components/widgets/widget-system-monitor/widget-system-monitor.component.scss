@@ -106,7 +106,9 @@
 				&.monitor-section-align {
 					display: flex;
 					align-items: center;
-					border: 1px solid $background;
+				}
+				@media #{$high-contrast} {
+					border: 1px solid windowText;
 				}
 				.arrow-padding {
 					padding-bottom: 1.5rem;
@@ -463,9 +465,7 @@
 					width: 100%;
 					border-radius: $border_radius_sm;
 					@media #{$breakpoint_xl2} {
-						float: left;
 						padding-bottom: 1rem;
-						position: relative;
 						&.arrow-padding {
 							padding-bottom: 3rem;
 						}
