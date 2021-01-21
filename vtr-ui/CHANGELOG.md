@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.13](https://bitbucket.tc.lenovo.com///compare/v1.10.12...v1.10.13) (2021-01-21)
+
+
+### Features
+
+* **Overall:** remove useless code to fix ssrb finding ([1bb75d0](https://bitbucket.tc.lenovo.com///commit/1bb75d02c2571879057c03589714aa39c1ce4e4e))
+* **Search:** VAN-25257 app search feature smart performance ([782d765](https://bitbucket.tc.lenovo.com///commit/782d76534bb0ae2469dee7d57128592f90167f9c))
+
+
+### Bug Fixes
+
+* **gaming:** fix gaming dialog style is wrong ([195a1af](https://bitbucket.tc.lenovo.com///commit/195a1af8d2cfb1ed48fab46e74e84ac699405be0))
+* fix the way to get country code ([2e7354c](https://bitbucket.tc.lenovo.com///commit/2e7354c389b12ea3f7d10f3aeb504223874ae37c))
+* use lodash toLower func ([38deb10](https://bitbucket.tc.lenovo.com///commit/38deb10fad000e64286d3fa0c58e71b9d3edfc85))
+
 ### [1.10.12](https://bitbucket.tc.lenovo.com///compare/v1.10.11...v1.10.12) (2021-01-20)
 
 
