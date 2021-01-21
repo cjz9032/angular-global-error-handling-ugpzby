@@ -462,28 +462,22 @@
 					position: absolute;
 					width: 100%;
 					border-radius: $border_radius_sm;
-
-					@media #{$breakpoint_md} {
+					@media #{$breakpoint_xl2} {
 						float: left;
-						padding-bottom: 2rem;
+						padding-bottom: 1rem;
 						position: relative;
-						@media #{$black-on-white} {
-							padding-bottom: 0rem !important;
-						}
-						@media #{$white-on-black} {
-							padding-bottom: 0rem !important;
+						&.arrow-padding {
+							padding-bottom: 3rem;
 						}
 					}
-					@media screen and (min-width: 992px) and (max-width: 1199.9px) {
-						float: left;
+					@media #{$breakpoint_xl} {
 						padding-bottom: 2rem;
-						position: relative;
-						@media #{$black-on-white} {
-							padding-bottom: 0rem !important;
-						}
-						@media #{$white-on-black} {
-							padding-bottom: 0rem !important;
-						}
+					}
+					@media #{$breakpoint_lg} {
+						padding-bottom: 1rem;
+					}
+					@media #{$breakpoint_md} {
+						padding-bottom: 2rem;
 					}
 					.expanded {
 						height: auto;
