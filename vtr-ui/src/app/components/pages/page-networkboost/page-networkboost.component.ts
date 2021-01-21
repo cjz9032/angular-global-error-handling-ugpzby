@@ -191,7 +191,6 @@ export class PageNetworkboostComponent implements OnInit, OnDestroy {
 			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: true,
-			panelClass: 'modal-prompt',
 			backdropClass: 'backdrop-level',
 		});
 		appListRef.componentInstance.setAppList(true, this.appsCount);

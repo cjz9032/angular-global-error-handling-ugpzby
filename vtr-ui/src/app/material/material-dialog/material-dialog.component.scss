@@ -16,4 +16,9 @@
 			color: $menu_hover;
 		}
 	}
+	.wifi-expire-dialog {
+		.mat-dialog-container {
+			padding: 2.4rem;
+		}
+	}
 }
