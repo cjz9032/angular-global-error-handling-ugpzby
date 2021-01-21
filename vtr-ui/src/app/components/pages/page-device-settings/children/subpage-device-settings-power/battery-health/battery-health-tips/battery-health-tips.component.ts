@@ -1,9 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { BatteryHealthService } from '../battery-health.service';
 import { BatteryHealthTip } from '../battery-health.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { Subscription } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
@@ -13,7 +12,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 })
 export class BatteryHealthTipsComponent implements OnInit {
   capability = false;
-  condition = "";
+  condition = '';
   tipLevel = 0;
   constructor(
 	private batteryHealthService: BatteryHealthService,
@@ -38,7 +37,7 @@ export class BatteryHealthTipsComponent implements OnInit {
   }
 
   getTipsStr(index: number): string {
-	  if(index === -1) {
+	  if(index === BatteryHealthTip.ERROR) {
 		return '';
 	  } else {
 		const val = "device.deviceSettings.power.batterySettings.batteryHealth.batteryTips.description.t" + index;
