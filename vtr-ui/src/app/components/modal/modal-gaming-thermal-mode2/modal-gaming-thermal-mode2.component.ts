@@ -555,7 +555,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 			hasBackdrop: true,
 			disableClose: true,
 			backdropClass: 'backdrop-level',
-			panelClass: 'modal-fun',
+			panelClass: 'modal-prompt',
 		});
 		waringModalRef.componentInstance.info = {
 			title: 'gaming.dashboard.device.warningPromptPopup.title',
@@ -597,7 +597,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 			hasBackdrop: true,
 			disableClose: true,
 			backdropClass: 'backdrop-level',
-			panelClass: 'modal-prompt',
+			panelClass: 'modal-fun',
 		});
 	}
 	// fengxu end
