@@ -34,18 +34,18 @@ export class ModalGamingPromptComponent implements OnInit {
 	}
 
 	closeModal() {
-		this.emitFn(0);
 		this.dialogRef.close('close');
+		this.dialogClosedHandler(0);
 	}
 
 	confirmFn() {
-		this.emitFn(1);
 		this.dialogRef.close('close');
+		this.dialogClosedHandler(1);
 	}
 
 	cancelFn() {
-		this.emitFn(2);
 		this.dialogRef.close('close');
+		this.dialogClosedHandler(2);
 	}
 
 	setNotAskAgain() {
@@ -58,5 +58,12 @@ export class ModalGamingPromptComponent implements OnInit {
 		if (elem) {
 			elem.focus();
 		}
+	}
+
+	dialogClosedHandler(info: number) {
+		let afterClosedSubscription = this.dialogRef.afterClosed().subscribe(() => {
+			this.emitFn(info);
+			afterClosedSubscription.unsubscribe();
+		})
 	}
 }
