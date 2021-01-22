@@ -11,10 +11,6 @@ import {
 	QueryList,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import {
-	disableBackgroundNavigation,
-	reEnableBackgroundNavigation,
-} from '../../../services/utils/ModalBackgroundNavigationUtils';
 import { MatDialogRef } from '@lenovo/material/dialog';
 
 @Component({
@@ -22,7 +18,7 @@ import { MatDialogRef } from '@lenovo/material/dialog';
 	templateUrl: './modal-cancel.component.html',
 	styleUrls: ['./modal-cancel.component.scss'],
 })
-export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ModalCancelComponent implements OnInit, AfterViewInit {
 	description: string = this.translate.instant('hardwareScan.cancelMayTakeSomeTime');
 	isInCountdown = true;
 
@@ -42,8 +38,8 @@ export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	constructor(
 		private translate: TranslateService,
-		private dialogRef: MatDialogRef<ModalCancelComponent>,
-	) { }
+		private dialogRef: MatDialogRef<ModalCancelComponent>
+	) {}
 
 	ngOnInit() {
 		this.loading = false;
@@ -53,11 +49,6 @@ export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy {
 				this.onAgree();
 			}
 		}, this.MS_INTERVAL);
-		disableBackgroundNavigation(document);
-	}
-
-	ngOnDestroy() {
-		reEnableBackgroundNavigation(document);
 	}
 
 	ngAfterViewInit() {

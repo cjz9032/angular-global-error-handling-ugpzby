@@ -1,7 +1,6 @@
 @import '../../../../../app.theme';
 
 .vtr-modal-export-log {
-	position: inherit;
 	padding: 2.4rem;
 	@include high-contrast-border;
 
@@ -23,5 +22,10 @@
 	.loading {
 		font-size: 3rem;
 		color: $main;
+	}
+
+	.btn-modal-close {
+		right: 0rem;
+		top: 0rem;
 	}
 }

@@ -60,7 +60,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		public shellServices: VantageShellService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.percent = 0;
@@ -270,14 +270,11 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 			disableClose: true,
 			panelClass: 'cancel-modal',
 		});
-		const response = await modalCancel.afterOpened();
-		if (response) {
-			this.sendModelStatus.emit();
-		}
-		// modalCancel.componentInstance.cancelRequested.subscribe(() => {
-		// 	this.sendModelStatus.emit();
-		// 	modalCancel.close();
-		// });
+		modalCancel.afterClosed().subscribe((res) => {
+			if (res) {
+				this.sendModelStatus.emit();
+			}
+		});
 	}
 
 	toggle(id: string): void {

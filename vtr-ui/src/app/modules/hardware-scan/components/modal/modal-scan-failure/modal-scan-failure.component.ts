@@ -1,9 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { HardwareScanTestResult } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
-import {
-	disableBackgroundNavigation,
-	reEnableBackgroundNavigation,
-} from '../../../services/utils/ModalBackgroundNavigationUtils';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { RecoverBadSectorsService } from 'src/app/modules/hardware-scan/services/recover-bad-sectors.service';
 import { MatDialogRef } from '@lenovo/material/dialog';
@@ -13,7 +9,7 @@ import { MatDialogRef } from '@lenovo/material/dialog';
 	templateUrl: './modal-scan-failure.component.html',
 	styleUrls: ['./modal-scan-failure.component.scss'],
 })
-export class ModalScanFailureComponent implements OnInit, OnDestroy {
+export class ModalScanFailureComponent {
 	@Input() supportUrl: string;
 	@Input() hasFailedRbsDevice: boolean;
 
@@ -28,14 +24,6 @@ export class ModalScanFailureComponent implements OnInit, OnDestroy {
 		private rbsService: RecoverBadSectorsService
 	) {
 		this.failedRbsDevices = [];
-	}
-
-	ngOnInit() {
-		disableBackgroundNavigation(document);
-	}
-
-	ngOnDestroy() {
-		reEnableBackgroundNavigation(document);
 	}
 
 	// closes modal

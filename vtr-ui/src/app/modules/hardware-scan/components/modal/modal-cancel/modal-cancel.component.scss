@@ -1,7 +1,6 @@
 @import '../../../../../app.theme';
 
 .vtr-modal-cancel {
-	position: inherit;
 	padding: 2.4rem;
 	@include high-contrast-border;
 
@@ -29,5 +28,10 @@
 		border-radius: 5rem;
 		font-weight: $weight_bold;
 		text-transform: uppercase;
+	}
+
+	.btn-modal-close {
+		right: 0rem;
+		top: 0rem;
 	}
 }
