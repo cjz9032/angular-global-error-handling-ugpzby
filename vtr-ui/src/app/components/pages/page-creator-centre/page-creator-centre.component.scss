@@ -1,0 +1,103 @@
+@import '../../../app.theme';
+
+:host ::ng-deep {
+	.vtr-page-creator-centre {
+		.vtr-page-columns {
+			.vtr-page-column {
+				padding: 0 $padding_side 4rem !important;
+				@media #{$breakpoint_xl} {
+					padding: 0 $padding_side_sm 4rem !important;
+				}
+				&.vtr-page-left-column {
+					flex: 0 0 100%;
+                    max-width: 100%;
+                    &.vtr-subpage-left-column {
+				padding-right: 2.4rem;
+				background-color: $shade_extralight;
+				@media #{$breakpoint_xl} {
+					padding-left: $padding_side;
+				}
+				@media #{$breakpoint_lg} {
+					padding-left: $padding_side;
+					padding-right: $padding_side;
+					padding-bottom: 0rem;
+				}
+				@media #{$breakpoint_sm} {
+					padding-bottom: 0rem;
+				}
+				@media #{$breakpoint_md} {
+					padding-bottom: 0rem;
+				}
+				@media #{$white-on-black} {
+					border-left: 0.1rem solid $light;
+					@media #{$breakpoint_lg} {
+						border-right: 0.1rem solid $light;
+					}
+				}
+				@media #{$black-on-white} {
+					border-left: 0.1rem solid $dark;
+					@media #{$breakpoint_lg} {
+						border-right: 0.1rem solid $dark;
+					}
+				}
+			}
+			&.vtr-subpage-right-column {
+				padding-right: $padding_side;
+				padding-left: 2.4rem;
+				background-color: $light;
+				@media #{$breakpoint_xl} {
+					padding-right: $padding_side;
+				}
+				@media #{$breakpoint_lg} {
+					padding-left: $padding_side;
+					padding-right: $padding_side;
+					padding-bottom: $padding_side_sm;
+					padding-top: 4rem;
+				}
+				@media #{$breakpoint_lg} {
+					// padding-top: 2rem;
+				}
+				@media #{$breakpoint_lg} {
+					background-color: $shade_extralight;
+				}
+				@media #{$breakpoint_md} {
+					background-color: $shade_extralight;
+				}
+				@media #{$breakpoint_sm} {
+					background-color: $shade_extralight;
+				}
+				.vtr-page-column-shift-up {
+					@media #{$breakpoint_sm} {
+						margin-top: -4rem;
+					}
+					@media #{$breakpoint_md} {
+						margin-top: -4rem;
+					}
+					@media #{$breakpoint_lg} {
+						margin-top: -4rem;
+					}
+				}
+				@media #{$white-on-black} {
+					border-right: 0.1rem solid $light;
+					@media #{$breakpoint_lg} {
+						border-left: 0.1rem solid $light;
+					}
+				}
+				@media #{$black-on-white} {
+					border-right: 0.1rem solid $dark;
+					@media #{$breakpoint_lg} {
+						border-left: 0.1rem solid $dark;
+					}
+				}
+			}
+				}
+				&.vtr-page-right-column {
+					display: none;
+				}
+			}
+		}
+	}
+}
+.vtr-page-creator-centre{
+
+}

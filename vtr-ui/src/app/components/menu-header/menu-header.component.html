@@ -1,6 +1,6 @@
 <div class="vtr-menu-header d-flex">
 	<ng-container *ngFor="let tab of menuItems; let i=index;">
-		<div class="menu-header-tab {{tab.prop}}"
+		<div *ngIf="tab.icon" class="menu-header-tab {{tab.prop}}"
 			tabindex="1"
 			[routerLink]="'/'+tab.path"
 			[routerLinkActive]="['active']"
@@ -17,6 +17,27 @@
 				<span class="text text-ellipsis"
 					id="myDevice-settings-header-menu-{{tab.icon}}-title"
 					attr.aria-label="myDevice-settings-header-menu-{{tab.label}}"
+					aria-hidden="true">{{tab.label}}</span>
+			</div>
+			<fa-icon [icon]="['fas', 'square']"
+				class="menu-pointer"></fa-icon>
+		</div>
+		<div *ngIf="!tab.icon" class="menu-header-tab {{tab.prop}}"
+			tabindex="1"
+			[routerLink]="'/'+tab.path"
+			[routerLinkActive]="['active']"
+			[routerLinkActiveOptions]="{exact: false}"
+			[queryParams]="tab.params"
+			(keydown.enter)="changeRoute(tab.path,tab.params)"
+			role="link"
+			id="smb-creator-centre-header-header-menu-{{tab.label}}"
+			attr.aria-labelledby="smb-creator-centre-header-menu-{{tab.label}}-title">
+			<div class="tab-label"
+				[matTooltip]="tab.label"
+				matTooltipClass="vtr-system-tooltip">
+				<span class="text-ellipsis"
+					id="smb-creator-centre-header-menu-{{tab.label}}-title"
+					attr.aria-label="smb-creator-centre-header-menu-{{tab.label}}"
 					aria-hidden="true">{{tab.label}}</span>
 			</div>
 			<fa-icon [icon]="['fas', 'square']"

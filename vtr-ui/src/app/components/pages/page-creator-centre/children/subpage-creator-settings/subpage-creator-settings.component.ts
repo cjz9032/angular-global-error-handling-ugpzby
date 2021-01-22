@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './subpage-creator-settings.component.html',
   styleUrls: ['./subpage-creator-settings.component.scss']
 })
-export class SubpageCreatorSettingsComponent implements OnInit {
+export class SubpageCreatorSettingsComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
