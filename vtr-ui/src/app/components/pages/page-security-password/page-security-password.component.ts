@@ -15,7 +15,6 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { FeatureIntroduction } from '../../ui/ui-feature-introduction/ui-feature-introduction.component';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
-
 @Component({
 	selector: 'vtr-page-security-password',
 	templateUrl: './page-security-password.component.html',
@@ -41,7 +40,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		public vantageShellService: VantageShellService,
 		private guard: GuardService,
 		private router: Router
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
@@ -137,7 +136,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			(error) => { }
+			(error) => {}
 		);
 
 		this.cmsService
@@ -153,9 +152,8 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 
 	openDashLaneArticle(): void {
 		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Article-Detail-Modal',
 		});
 		articleDetailModal.beforeClosed().subscribe(() => {

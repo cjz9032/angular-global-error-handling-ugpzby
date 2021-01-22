@@ -6,7 +6,6 @@ import { Gradient } from 'src/app/data-models/security-advisor/gradient-color.mo
 import { CMSService } from 'src/app/services/cms/cms.service';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 
-
 @Component({
 	selector: 'vtr-widget-security',
 	templateUrl: './widget-security.component.html',
@@ -50,7 +49,7 @@ export class WidgetSecurityComponent implements OnInit {
 	];
 	levelText: string;
 
-	constructor(public dialog: MatDialog, private cmsService: CMSService) { }
+	constructor(public dialog: MatDialog, private cmsService: CMSService) {}
 
 	ngOnInit(): void {
 		this.fetchCMSArticleCategory();
@@ -68,9 +67,8 @@ export class WidgetSecurityComponent implements OnInit {
 
 	buttonClick() {
 		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Article-Detail-Modal',
 		});
 		articleDetailModal.beforeClosed().subscribe(() => {

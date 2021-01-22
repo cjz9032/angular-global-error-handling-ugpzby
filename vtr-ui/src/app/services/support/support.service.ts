@@ -9,7 +9,6 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DeviceService } from '../device/device.service';
 
-
 @Injectable({
 	providedIn: 'root',
 })
@@ -109,9 +108,8 @@ export class SupportService {
 	showFindUsPop() {
 		const findUsModal = this.dialog.open(ModalFindUsComponent, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Find-Us-Modal',
 			ariaLabelledBy: 'find-us-modal-basic-title',
 		});
@@ -119,9 +117,8 @@ export class SupportService {
 	showAboutPop() {
 		const aboutModal = this.dialog.open(ModalAboutComponent, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'About-Modal',
 			ariaLabelledBy: 'about-modal-basic-title',
 		});

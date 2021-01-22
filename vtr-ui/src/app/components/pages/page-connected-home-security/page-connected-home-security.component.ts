@@ -206,7 +206,7 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 		private cmsService: CMSService,
 		private windowsVersionService: WindowsVersionService,
 		private deviceService: DeviceService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.homeSecurityDevicePosture = new HomeSecurityDevicePosture(this.windowsVersionService);
@@ -468,7 +468,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 			} else {
 				this.dialogService
 					.openWelcomeModal(showWelcome, this.locationPermission)
-					.afterOpened().subscribe(() => {
+					.afterOpened()
+					.subscribe(() => {
 						this.commonService.setSessionStorageValue(
 							SessionStorageKey.HomeSecurityShowWelcomeDialog,
 							'finish'
@@ -527,9 +528,8 @@ export class PageConnectedHomeSecurityComponent implements OnInit, OnDestroy, Af
 
 	openDevicePostureArticle(): void {
 		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Article-Detail-Modal',
 		});
 		articleDetailModal.beforeClosed().subscribe(() => {

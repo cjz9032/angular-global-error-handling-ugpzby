@@ -4,14 +4,11 @@ import { MatDialog } from '@lenovo/material/dialog';
 import { FeedbackFormComponent } from 'src/app/components/feedback-form/feedback-form/feedback-form.component';
 import { SurveyFormComponent } from 'src/app/components/feedback-form/survey-form/survey-form.component';
 
-
 @Injectable({
 	providedIn: 'root',
 })
 export class FeedbackService {
-	constructor(
-		private dialog: MatDialog,
-	) { }
+	constructor(private dialog: MatDialog) {}
 
 	openFeedbackModal() {
 		if (this.dialog.openDialogs.length) {
@@ -19,7 +16,7 @@ export class FeedbackService {
 		}
 		this.dialog.open(FeedbackFormComponent, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'feedback-modal',
@@ -34,7 +31,7 @@ export class FeedbackService {
 
 		const modalRef = this.dialog.open(SurveyFormComponent, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'survey-modal',

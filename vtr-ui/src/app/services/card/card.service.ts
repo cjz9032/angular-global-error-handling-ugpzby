@@ -9,7 +9,6 @@ import { AppsForYouService } from 'src/app/services/apps-for-you/apps-for-you.se
 import { DeviceService } from '../device/device.service';
 import { ContentActionType } from 'src/app/enums/content.enum';
 
-
 @Injectable({
 	providedIn: 'root',
 })
@@ -18,7 +17,7 @@ export class CardService {
 		private dialog: MatDialog,
 		private appsForYouService: AppsForYouService,
 		public deviceService: DeviceService
-	) { }
+	) {}
 
 	linkClicked(
 		actionType: string,
@@ -55,16 +54,12 @@ export class CardService {
 		const articleClass = this.deviceService.isGaming
 			? ['Article-Detail-Modal', 'content-gaming']
 			: 'Article-Detail-Modal';
-		const articleDetailModal = this.dialog.open(
-			ModalArticleDetailComponent,
-			{
-				autoFocus: true,
-				hasBackdrop: true,
-				disableClose: true,
-				panelClass: articleClass,
-				ariaLabelledBy: 'article-dialog-basic-title',
-			}
-		);
+		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
+			autoFocus: false,
+			hasBackdrop: true,
+			panelClass: articleClass,
+			ariaLabelledBy: 'article-dialog-basic-title',
+		});
 		articleDetailModal.beforeClosed().subscribe(() => {
 			articleDetailModal.componentInstance.onBeforeDismiss();
 		});
@@ -80,7 +75,6 @@ export class CardService {
 			maxWidth: '50rem',
 			autoFocus: true,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Dcc-Detail-Modal',
 		});
 		articleDetailModal.beforeClosed().subscribe(() => {

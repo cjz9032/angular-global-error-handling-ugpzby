@@ -1,15 +1,3 @@
-<button
-	mat-dialog-close
-	class="position-relative float-right closeButton"
-	id="article-close-button"
-	(click)="closeModal()"
-	vtrMetrics
-	metricsItem="ArticleCloseButton"
-	metricsEvent="FeatureClick"
-	[metricsParent]="metricsParent"
->
-	<mat-icon class="icon close-icon">close</mat-icon>
-</button>
 <div class="article-main-body"
 	tabindex="-1"
 	#articleDetailModal
@@ -127,6 +115,13 @@
 			</div>
 		</article>
 
+	</div>
+
+	<div class="btn-modal-close">
+		<vtr-ui-close-button linkId="article-close-button"
+			metricsItem="ArticleCloseButton"
+			[metricsParent]="metricsParent"
+			(clickClose)="closeModal()"></vtr-ui-close-button>
 	</div>
 </div>
 

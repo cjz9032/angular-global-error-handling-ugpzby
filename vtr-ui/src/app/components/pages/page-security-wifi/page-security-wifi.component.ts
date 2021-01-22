@@ -273,9 +273,8 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 
 	openSecurityHealthArticle(): void {
 		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Article-Detail-Modal',
 		});
 		articleDetailModal.beforeClosed().subscribe(() => {
