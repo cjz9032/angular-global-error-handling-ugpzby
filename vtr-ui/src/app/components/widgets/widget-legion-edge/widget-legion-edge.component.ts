@@ -933,7 +933,6 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		this.dialog.open(ModalGamingLegionedgeComponent, {
 			autoFocus: true,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'gaming-help-modal',
 		});
 	}
