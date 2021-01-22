@@ -19,6 +19,7 @@ import {
 	UDKActionInfo,
 } from './UDKActionInfo';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import URLValidator from '../../../../../../services/validators/url-validator';
 declare const Windows;
 
 @Component({
@@ -47,7 +48,6 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	public applicationType: string;
 	public counter = 0;
 	public keyboardMappedValues: any;
-	private regExForUrlWithParam = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
 	public metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
@@ -489,10 +489,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	}
 
 	private isURLValidate(url: string): boolean {
-		if (url && url.length > 0) {
-			return this.regExForUrlWithParam.test(url);
-		}
-		return false;
+		return new URLValidator().isValid(url);
 	}
 
 	async checkSpecialKeyFileExistAndDelete() {
