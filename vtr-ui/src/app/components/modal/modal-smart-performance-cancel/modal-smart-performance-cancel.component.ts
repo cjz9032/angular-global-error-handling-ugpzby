@@ -1,11 +1,4 @@
-import {
-	Component,
-	OnInit,
-	HostListener,
-	EventEmitter,
-	Output,
-	Input,
-} from '@angular/core';
+import { Component, OnInit, HostListener, EventEmitter, Output, Input } from '@angular/core';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { Router } from '@angular/router';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -28,7 +21,7 @@ export class ModalSmartPerformanceCancelComponent implements OnInit {
 		private router: Router,
 		private localCacheService: LocalCacheService,
 		private logger: LoggerService
-	) { }
+	) {}
 	private timerRef: any;
 	public secondsCountdown = 9;
 	public isLoading = false;
