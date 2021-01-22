@@ -1,7 +1,6 @@
 @import '../../../../../app.theme';
 
 .vtr-modal-hardware-scan-customize {
-	position: inherit;
 	padding: 2.4rem;
 	@include high-contrast-border;
 
@@ -43,7 +42,7 @@
 	}
 
 	.btn-modal-close {
-		right: 2.3rem;
-		top: 2.4rem;
+		right: 0rem;
+		top: 0rem;
 	}
 }

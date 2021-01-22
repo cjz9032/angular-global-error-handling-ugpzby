@@ -1,7 +1,6 @@
 @import '../../../../../app.theme';
 
 .vtr-modal-recover-confirm {
-	position: inherit;
 	padding: 2.4rem;
 	@include high-contrast-border;
 
@@ -21,5 +20,10 @@
 	.info-divisor {
 		margin-top: 3.6rem;
 		margin-bottom: 1.2rem;
+	}
+
+	.btn-modal-close {
+		right: 0rem;
+		top: 0rem;
 	}
 }

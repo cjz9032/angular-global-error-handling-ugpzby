@@ -15,7 +15,7 @@ export class RecoverBadSectorsService {
 		private hardwareScanService: HardwareScanService,
 		private dialog: MatDialog,
 		private router: Router
-	) { }
+	) {}
 
 	public getLastRecoverResultTitle() {
 		return HardwareScanTestResult[this.recoverBadSectorsLastResult.resultModule];
@@ -35,6 +35,7 @@ export class RecoverBadSectorsService {
 			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: true,
+			panelClass: 'custom-modal-size',
 			ariaLabelledBy: 'hwscan-rbs-modal-title',
 		});
 
