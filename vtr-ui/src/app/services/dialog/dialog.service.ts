@@ -29,7 +29,6 @@ import { TileItem } from 'src/app/material/material-tile/material-tile.component
 import { MaxSelected } from 'src/app/material/material-app-tile-list/material-app-tile-list.component';
 import { of } from 'rxjs';
 
-
 @Injectable({
 	providedIn: 'root',
 })
@@ -41,8 +40,8 @@ export class DialogService {
 		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService,
 		private wifiSecurityService: WifiSecurityService,
-		private dialog: MatDialog,
-	) { }
+		private dialog: MatDialog
+	) {}
 
 	openInvitationCodeDialog() {
 		if (this.hasOpenDialog()) {
@@ -237,7 +236,9 @@ export class DialogService {
 		}
 	}
 
-	openCHSPermissionModal(locationPermission: DeviceLocationPermission): MatDialogRef<ModalChsWelcomeContainerComponent> {
+	openCHSPermissionModal(
+		locationPermission: DeviceLocationPermission
+	): MatDialogRef<ModalChsWelcomeContainerComponent> {
 		if (this.hasOpenDialog()) {
 			return;
 		}
@@ -294,7 +295,9 @@ export class DialogService {
 		}
 	}
 
-	homeSecurityTrialModal(showWhichPage: CHSTrialModalPage): MatDialogRef<ModalChsStartTrialContainerComponent> {
+	homeSecurityTrialModal(
+		showWhichPage: CHSTrialModalPage
+	): MatDialogRef<ModalChsStartTrialContainerComponent> {
 		if (this.hasOpenDialog()) {
 			return;
 		}
@@ -383,8 +386,17 @@ export class DialogService {
 			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: true,
-			backdropClass: [this.deviceService.isGaming ? 'dialogBackdropExcludeGamingMenu' : 'dialogBackdropExcludeMenu'],
-			panelClass: [this.deviceService.isGaming ? 'is-gaming' : '', 'm-5', 'h-auto'],
+			backdropClass: [
+				this.deviceService.isGaming
+					? 'dialogBackdropExcludeGamingMenu'
+					: 'dialogBackdropExcludeMenu',
+			],
+			panelClass: [
+				this.deviceService.isGaming ? 'is-gaming' : '',
+				'm-5',
+				'h-auto',
+				'wifi-expire-dialog',
+			],
 			id: 'wifi-security-expire-prompt-dialog',
 		});
 		dialogRef.afterOpened().subscribe(() => {
@@ -393,17 +405,19 @@ export class DialogService {
 		dialogRef.afterClosed().subscribe((result) => {
 			document.querySelector('.vtr-menu-main').classList.remove('legacy-menu-level');
 			if (result === 'action') {
-				this.openLenovoIdDialog().afterClosed().subscribe((res) => {
-					if (res === 'User close' && hadExpired) {
-						if (
-							this.wifiSecurityService.isLWSEnabled &&
-							!this.userService.auth &&
-							this.userService.isLenovoIdSupported()
-						) {
-							this.openWifiSecurityExpirePromptDialog(dialogData, hadExpired);
+				this.openLenovoIdDialog()
+					.afterClosed()
+					.subscribe((res) => {
+						if (res === 'User close' && hadExpired) {
+							if (
+								this.wifiSecurityService.isLWSEnabled &&
+								!this.userService.auth &&
+								this.userService.isLenovoIdSupported()
+							) {
+								this.openWifiSecurityExpirePromptDialog(dialogData, hadExpired);
+							}
 						}
-					}
-				});
+					});
 			}
 		});
 	}

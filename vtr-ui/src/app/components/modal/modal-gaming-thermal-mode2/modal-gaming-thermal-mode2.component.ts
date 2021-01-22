@@ -253,8 +253,12 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 
 				const metricsData = {
 					ItemName: 'thermalmode_mode_change',
-					ItemValue: value === 1 ? 'Quiet Mode' : value === 2 ? 'Balance Mode'
-						: 'Performance Mode'
+					ItemValue:
+						value === 1
+							? 'Quiet Mode'
+							: value === 2
+							? 'Balance Mode'
+							: 'Performance Mode',
 				};
 				this.sendFeatureClickMetrics(metricsData);
 			} catch (error) {
@@ -370,7 +374,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 
 		const metricsData = {
 			ItemName: 'thermalmode_enableOC',
-			ItemValue: this.ocSettings ? 'checked' : 'unchecked'
+			ItemValue: this.ocSettings ? 'checked' : 'unchecked',
 		};
 		this.sendFeatureClickMetrics(metricsData);
 	}
@@ -538,7 +542,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 		}
 		const metricsData = {
 			ItemName: 'thermalmode_enableAutoAdjust',
-			ItemValue: this.autoAdjustSettings ? 'checked' : 'unchecked'
+			ItemValue: this.autoAdjustSettings ? 'checked' : 'unchecked',
 		};
 		this.sendFeatureClickMetrics(metricsData);
 	}
@@ -574,13 +578,13 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 			const metricsData = {
 				ItemParent: 'Gaming.OCWarningModal',
 				ItemName: 'ocwarningmodal_btn',
-				ItemValue: emmitedValue === 1 ? 'proceed' : emmitedValue === 2 ? 'cancle' : 'close'
+				ItemValue: emmitedValue === 1 ? 'proceed' : emmitedValue === 2 ? 'cancle' : 'close',
 			};
 			this.sendFeatureClickMetrics(metricsData);
 		});
 
 		const metricsData = {
-			ItemName: 'thermalmode_advacedoc_warningmodal'
+			ItemName: 'thermalmode_advacedoc_warningmodal',
 		};
 		this.sendFeatureClickMetrics(metricsData);
 	}
@@ -593,7 +597,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 			hasBackdrop: true,
 			disableClose: true,
 			backdropClass: 'backdrop-level',
-			panelClass: 'modal-prompt',
+			panelClass: 'modal-fun',
 		});
 	}
 	// fengxu end
@@ -607,7 +611,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 		try {
 			const metricData = {
 				ItemType: metricsdata.ItemType ? metricsdata.ItemType : 'FeatureClick',
-				ItemParent: metricsdata.ItemParent ? metricsdata.ItemParent : 'Gaming.ThermalMode'
+				ItemParent: metricsdata.ItemParent ? metricsdata.ItemParent : 'Gaming.ThermalMode',
 			};
 			Object.keys(metricsdata).forEach((key) => {
 				if (metricsdata[key]) {
