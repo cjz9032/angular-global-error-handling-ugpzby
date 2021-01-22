@@ -230,9 +230,6 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	}
 
 	public openSaveChangeModal() {
-		if (this.dialog.openDialogs.length) {
-			return;
-		}
 		const waringModalRef = this.dialog.open(ModalGamingPromptComponent, {
 			autoFocus: true,
 			hasBackdrop: true,
@@ -299,9 +296,6 @@ export class ModalGamingAdvancedOCComponent implements OnInit {
 	}
 
 	public openSetToDefaultModal() {
-		if (this.dialog.openDialogs.length) {
-			return;
-		}
 		const waringModalRef = this.dialog.open(ModalGamingPromptComponent, {
 			autoFocus: true,
 			hasBackdrop: true,
