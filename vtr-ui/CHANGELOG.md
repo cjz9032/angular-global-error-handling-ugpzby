@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.14](https://bitbucket.tc.lenovo.com///compare/v1.10.13...v1.10.14) (2021-01-22)
+
+
+### Bug Fixes
+
+* **gaming-dialog:** fix help dialog can't  closed by click backdrop. ([dd471da](https://bitbucket.tc.lenovo.com///commit/dd471da1413895e2d02e42467a2e79eecc427054))
+* fix hardwarescan modal x button and function ([20b67ce](https://bitbucket.tc.lenovo.com///commit/20b67ce54da9356e6a91c38b525ef8a816a08611))
+* fix hws dialogs close button position ([9186d7e](https://bitbucket.tc.lenovo.com///commit/9186d7e8e88114895c2bc2d45fa1d1b32aed0803))
+* **gaming-dialog:** fix some dialog can't pop up ([f0b6b73](https://bitbucket.tc.lenovo.com///commit/f0b6b7305ae21f42af997650ce97da8dd87c5cd3))
+* **gaming-dialog:** update dialog style in gaming ([f30e65a](https://bitbucket.tc.lenovo.com///commit/f30e65aea66f3ba8f31b2f6c3875775bc479f081))
+* **gaming-dialog:** update wrong code ([5809c51](https://bitbucket.tc.lenovo.com///commit/5809c513d40d8ac04c69b297894a48faf5b9b458))
+* change input box padding-y style ([1d5996e](https://bitbucket.tc.lenovo.com///commit/1d5996ed84285855467f2a9a0ae480bbd8078f63))
+* fix error dialog always popup ([b2befb9](https://bitbucket.tc.lenovo.com///commit/b2befb9f2c34cb4ab6700bd60b31a6a72a1ff735))
+
 ### [1.10.13](https://bitbucket.tc.lenovo.com///compare/v1.10.12...v1.10.13) (2021-01-21)
 
 
