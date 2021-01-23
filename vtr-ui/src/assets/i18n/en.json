@@ -5714,11 +5714,11 @@
 					"highRelevantKeywords": []
 				},
 				"conservationMode": {
-					"featureName": "conservation Mode",
+					"featureName": "Conservation mode",
 					"highRelevantKeywords": []
 				},
-				"desktopPowerPlan": {
-					"featureName": "desktop Power Plan",
+				"desktopPowerPlanManagement": {
+					"featureName": "Desktop power plan management",
 					"highRelevantKeywords": []
 				},
 				"oLEDPowerSettings": {

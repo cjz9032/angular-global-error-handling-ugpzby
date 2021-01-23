@@ -18,6 +18,7 @@ import { LoggerService } from '../logger/logger.service';
 import { DeviceService } from '../device/device.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { FeatureApplicableDetections } from './feature-applicable-detections';
+import { startCase } from 'lodash';
 
 @Injectable({
 	providedIn: 'root',
@@ -247,12 +248,20 @@ export class AppSearchService implements OnDestroy {
 			}, timeout);
 
 			let counter = 0;
+			this.logger.info(`Detection thread start , Feature Counts:${features.length}`);
 			Array.from(Array(parallelThread)).forEach(async () => {
 				const mockThreadId = counter++;
+				const startTime = Date.now();
 				await this.mockDetectionThread(taskStack, mockThreadId);
 				if (--parallelThread <= 0) {
 					this.searchComplete(subscriber, timeoutHandler, ResultType.complete, features);
 				}
+
+				this.logger.info(
+					`Detection thread end: ThreadId:${mockThreadId}, Duriation: ${
+						Date.now() - startTime
+					}`
+				);
 			});
 
 			if (parallelThread <= 0) {
@@ -287,9 +296,16 @@ export class AppSearchService implements OnDestroy {
 				break;
 			}
 
-			this.logger.info(`start detection for ${mockThreadId} - ${feature.id}`);
+			this.logger.info(
+				`Single featue detection start, ThreadId:${mockThreadId} - FeatureId:${feature.id}`
+			);
+			const startTime = Date.now();
 			feature.applicable = await this.applicableDetections.isFeatureApplicable(feature.id);
-			this.logger.info(`end detection for ${mockThreadId} - ${feature.id}`);
+			this.logger.info(
+				`Single featue detection end, ThreadId:${mockThreadId} - Duration:${
+					Date.now() - startTime
+				} -result: ${feature.applicable} - FeatureId:${feature.id}`
+			);
 		}
 	}
 }
