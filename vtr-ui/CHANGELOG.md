@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.15](https://bitbucket.tc.lenovo.com///compare/v1.10.14...v1.10.15) (2021-01-25)
+
+
+### Bug Fixes
+
+* some dialogs can be closed by click rest space ([685c09e](https://bitbucket.tc.lenovo.com///commit/685c09e5d79559aabc9a53fe6142da90af9c0ffd))
+
 ### [1.10.14](https://bitbucket.tc.lenovo.com///compare/v1.10.13...v1.10.14) (2021-01-22)
 
 
