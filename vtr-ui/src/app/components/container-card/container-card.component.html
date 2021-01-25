@@ -266,7 +266,7 @@
 				[class.default-cursor]="isOfflineArm"
 				attr.aria-label="{{ item.Title | htmlText }}"
 				role="link"
-				[tabindex]="isOnline ? 0 : -1"
+				[tabindex]="isOnline || item.SupportOffline ? 0 : -1"
 				(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 				metricsItemCategory="article"
@@ -333,7 +333,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col col-12 content">
-					<a [tabindex]="isOnline ? 0 : -1"
+					<a [tabindex]="isOnline || item.SupportOffline ? 0 : -1"
 						role="link"
 						(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 						(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
@@ -394,7 +394,7 @@
 		#containerCardSidebarPartnerCorner>
 		<div class="container-fluid">
 			<div class="row">
-				<a [tabindex]="isOnline ? 0 : -1"
+				<a [tabindex]="isOnline || item.SupportOffline ? 0 : -1"
 					role="link"
 					(keydown.enter)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
 					(click)="linkClicked(item.ActionType, item.ActionLink, item.Title)"
