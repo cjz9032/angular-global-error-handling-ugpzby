@@ -202,7 +202,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					if (
 						this.appDetails &&
 						this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !==
-						-1
+							-1
 					) {
 						if (notification.payload < 85) {
 							this.appDetails.showStatus = this.statusEnum.DOWNLOADING;
@@ -217,7 +217,7 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 					if (
 						this.appDetails &&
 						this.appDetails.installtype.id.indexOf(AppsForYouEnum.AppTypeNativeId) !==
-						-1
+							-1
 					) {
 						if (
 							notification.payload === 'InstallDone' ||
@@ -385,9 +385,8 @@ export class PageAppsForYouComponent implements OnInit, OnDestroy {
 			return;
 		}
 		const screenshotModal = this.dialog.open(ModalAppsForYouScreenshotComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'apps-for-you-dialog',
 		});
 		screenshotModal.componentInstance.metricsParent = this.metricsParent;

@@ -21,7 +21,7 @@ export class HomeSecurityContentComponent implements OnInit {
 		public dialogService: DialogService,
 		public dialog: MatDialog,
 		private cmsService: CMSService
-	) { }
+	) {}
 
 	ngOnInit(): void {
 		this.fetchCMSArticles();
@@ -41,9 +41,8 @@ export class HomeSecurityContentComponent implements OnInit {
 
 	openPeaceOfMindArticle(): void {
 		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Article-Detail-Modal',
 		});
 		articleDetailModal.beforeClosed().subscribe(() => {

@@ -63,7 +63,7 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 		public metrics: MetricService,
 		public hypSettings: HypothesisService,
 		private antivirusService: AntivirusService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShell.getSecurityAdvisor();
@@ -135,15 +135,14 @@ export class PageSecurityAntivirusComponent implements OnInit, OnDestroy {
 					});
 				}
 			},
-			(error) => { }
+			(error) => {}
 		);
 	}
 
 	openArticle() {
 		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Article-Detail-Modal',
 		});
 		articleDetailModal.beforeClosed().subscribe(() => {

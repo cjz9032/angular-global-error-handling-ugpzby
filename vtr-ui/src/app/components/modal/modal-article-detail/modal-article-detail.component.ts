@@ -96,39 +96,39 @@ export class ModalArticleDetailComponent implements OnInit {
 								this.articleSegments[
 									index
 								].center = segment.segmentType.toLowerCase().includes('-center')
-										? true
-										: false;
+									? true
+									: false;
 								this.articleSegments[
 									index
 								].wrap = segment.segmentType.toLowerCase().includes('-wrap-')
-										? true
-										: false;
+									? true
+									: false;
 								if (!segment.segmentType.toLowerCase().includes('-wrap')) {
 									this.articleSegments[
 										index
 									].noWrapLeft = segment.segmentType
 										.toLowerCase()
 										.includes('-left')
-											? true
-											: false;
+										? true
+										: false;
 									this.articleSegments[
 										index
 									].noWrapRight = segment.segmentType
 										.toLowerCase()
 										.includes('-right')
-											? true
-											: false;
+										? true
+										: false;
 								}
 								this.articleSegments[
 									index
 								].quoteType = segment.segmentType.toLowerCase().startsWith('quote')
-										? true
-										: false;
+									? true
+									: false;
 								this.articleSegments[
 									index
 								].imageType = segment.segmentType.toLowerCase().startsWith('image')
-										? true
-										: false;
+									? true
+									: false;
 							}
 							index++;
 						}
@@ -157,11 +157,11 @@ export class ModalArticleDetailComponent implements OnInit {
 	private getPageName(activatedRoute: ActivatedRoute) {
 		try {
 			return activatedRoute.children[0].firstChild.routeConfig.data.pageName;
-		} catch (ex) { }
+		} catch (ex) {}
 
 		try {
 			return activatedRoute.firstChild.snapshot.data.pageName;
-		} catch (ex) { }
+		} catch (ex) {}
 
 		return undefined;
 	}
@@ -224,11 +224,6 @@ export class ModalArticleDetailComponent implements OnInit {
 			this.articleDialogContent.nativeElement,
 			this.articleDialogContent.nativeElement.clientHeight - 40
 		);
-	}
-
-	@HostListener('document:keydown.escape', ['$event'])
-	onClickEscape($event) {
-		this.closeModal();
 	}
 
 	openProtocol(url: string): boolean {

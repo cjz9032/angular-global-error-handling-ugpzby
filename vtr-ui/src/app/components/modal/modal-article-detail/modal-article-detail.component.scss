@@ -1,12 +1,13 @@
 @import '../../../app.theme.scss';
 
-:host {
-	position: relative;
-}
-
 .article-main-body {
+	position: relative;
 	&:focus {
 		outline: 0rem;
+	}
+
+	.btn-modal-close {
+		top: -2rem;
 	}
 }
 
@@ -26,6 +27,7 @@
 		padding: 0 4rem;
 		overflow-x: hidden;
 		overflow-y: auto;
+		max-height: (90vh);
 
 		&:focus {
 			outline-offset: -0.2rem;
@@ -509,16 +511,7 @@
 	top: 0rem;
 }
 
-.spinner-content {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	.spinner-border {
-		width: 5rem !important;
-		height: 5rem !important;
-		padding: 2rem;
-	}
-}
+.spinner-content,
 .empty-content {
 	width: 100%;
 	height: calc(100vh - 13.5rem);
@@ -528,5 +521,12 @@
 
 	img {
 		width: 75%;
+	}
+
+	.spinner-border {
+		width: 5rem !important;
+		height: 5rem !important;
+		padding: 5rem;
+		margin-bottom: 6rem;
 	}
 }

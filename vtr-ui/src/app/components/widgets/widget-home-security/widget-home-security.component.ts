@@ -5,7 +5,6 @@ import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { ModalArticleDetailComponent } from 'src/app/components/modal/modal-article-detail/modal-article-detail.component';
 import { CMSService } from 'src/app/services/cms/cms.service';
 
-
 @Component({
 	selector: 'vtr-widget-home-security',
 	templateUrl: './widget-home-security.component.html',
@@ -43,9 +42,8 @@ export class WidgetHomeSecurityComponent {
 
 	openPeaceOfMindArticle(): void {
 		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Article-Detail-Modal',
 		});
 		articleDetailModal.beforeClosed().subscribe(() => {

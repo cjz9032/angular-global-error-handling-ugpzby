@@ -10,15 +10,14 @@ import { ModalArticleDetailComponent } from '../../../../modal/modal-article-det
 export class WidgetMcafeeContentCardComponent implements OnInit {
 	@Input() articleId: string;
 	@Input() isOnline: boolean;
-	constructor(public dialog: MatDialog) { }
+	constructor(public dialog: MatDialog) {}
 
-	ngOnInit(): void { }
+	ngOnInit(): void {}
 
 	openArticle() {
 		const articleDetailModal = this.dialog.open(ModalArticleDetailComponent, {
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'Article-Detail-Modal',
 		});
 		articleDetailModal.beforeClosed().subscribe(() => {

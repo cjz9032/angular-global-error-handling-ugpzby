@@ -967,14 +967,16 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 
 .Article-Detail-Modal {
 	max-width: 70% !important;
-	max-height: calc(100vh - 3.5rem);
+	min-height: calc(100vh - 3.5rem);
 	width: 70%;
-	overflow-y: initial !important;
 	border-radius: 1rem;
 	background: $light;
-	overflow: hidden;
 	font-size: 1.8rem;
 	color: $light-grey;
+	.mat-dialog-container {
+		padding: 3rem 0 0 0;
+		overflow: hidden;
+	}
 	h1,
 	h2,
 	h3,
@@ -1080,14 +1082,13 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .license-Modal {
 	max-width: 70% !important;
 	width: 70%;
-	overflow-y: initial !important;
 	height: calc(100vh - 3.5rem);
 	min-height: calc(100vh - 3.5rem);
 	border-radius: 1rem;
 	background: $light;
-	overflow: hidden;
 	.mat-dialog-container {
-		padding: 5rem 0 0 0;
+		padding: 3rem 0 0 0;
+		overflow: hidden;
 	}
 }
 
@@ -2049,6 +2050,7 @@ vtr-ui-smart-performance-scanning {
 	top: 1rem;
 	width: 3rem;
 	height: 3rem;
+	z-index: 1;
 }
 
 a,

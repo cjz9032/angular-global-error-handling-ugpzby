@@ -7,10 +7,7 @@ import { LocalInfoService } from '../local-info/local-info.service';
 	providedIn: 'root',
 })
 export class LicensesService {
-	constructor(
-		public dialog: MatDialog,
-		public localInfoService: LocalInfoService
-	) { }
+	constructor(public dialog: MatDialog, public localInfoService: LocalInfoService) {}
 
 	openLicensesAgreement(isCalledbyAbout?: boolean) {
 		if (!isCalledbyAbout && this.dialog.openDialogs.length) {
@@ -29,9 +26,8 @@ export class LicensesService {
 			};
 			const licenseModal = this.dialog.open(ModalLicenseComponent, {
 				maxWidth: '50rem',
-				autoFocus: true,
+				autoFocus: false,
 				hasBackdrop: true,
-				disableClose: true,
 				panelClass: 'license-Modal',
 				ariaLabelledBy: 'license-agreement-dialog-basic-title',
 			});
@@ -53,9 +49,8 @@ export class LicensesService {
 		};
 		const licenseModal = this.dialog.open(ModalLicenseComponent, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
-			disableClose: true,
 			panelClass: 'license-Modal',
 			ariaLabelledBy: 'other-software-licenses-dialog-basic-title',
 		});

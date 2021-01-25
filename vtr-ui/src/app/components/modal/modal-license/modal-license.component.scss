@@ -1,11 +1,11 @@
 @import '../../../app.theme.scss';
 
 .vtr-modal-license {
-	padding: 1rem 0 0;
 	display: flex;
 	flex-flow: column;
-	height: calc(100vh - 5.5rem);
 	box-sizing: border-box;
+	padding: 1rem 0 0;
+	height: 100%;
 
 	.empty {
 		position: absolute;
@@ -49,8 +49,8 @@
 }
 
 .btn-modal-close {
-	right: 3rem;
-	top: -3rem;
+	right: 2rem;
+	top: -2rem;
 }
 
 :host ::ng-deep {
