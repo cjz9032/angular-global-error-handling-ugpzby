@@ -6,7 +6,7 @@
         <div class="modal-header" role="text" id="gpu_overclock_section">
             <h2 role="text" id="overclock_advanced_settings_header">{{ 'gaming.dashboard.device.advancedOC.title' | translate }}</h2>
             <p tabindex="-1" role="text" id="overclock_advanced_settings_header_description">{{ 'gaming.dashboard.device.advancedOC.description' | translate }}</p>
-            <button type="button" tabindex="0" class="close" id="overclock_advanced_settings_close_button" aria-label="close" role="button" (click)="closeModal()">
+            <button type="button" class="close" id="overclock_advanced_settings_close_button" aria-label="close" role="button" (click)="closeModal()">
                 ×
             </button>
         </div>
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button class="under-line-button" (click)="openSetToDefaultModal()" id="overclock_advanced_settings_set_to_default_button" tabindex="0" aria-label="set to default" role="button">
+            <button class="under-line-button" (click)="openSetToDefaultModal()" id="overclock_advanced_settings_set_to_default_button" aria-label="set to default" role="button">
                 {{'gaming.lightingProfile.button.default.title' | translate}}
             </button>
         </div>

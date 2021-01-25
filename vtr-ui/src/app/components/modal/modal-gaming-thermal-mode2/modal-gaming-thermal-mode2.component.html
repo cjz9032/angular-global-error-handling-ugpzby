@@ -12,7 +12,7 @@
                 </p>
             </div>
             <button type="button" role="button" id="thermal_mode_setting_popup_close" class="close"
-            tabindex="0" (click)="closeThermalMode2Modal()" aria-label="close"
+            (click)="closeThermalMode2Modal()" aria-label="close"
             vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_close" metricsParent="Gaming.ThermalMode">
                 ×
             </button>
@@ -41,7 +41,7 @@
                         <ng-container *ngIf="ocSupportted === driverStatus || driverStatus === thermalMode2Enum.cpu_gpu">
                             <div class="item-oc-left">
                                 <button class="oc-checkbox" [ngClass]="{'checked':ocSettings}" role="checkbox" id="{{!ocSettings? 'enable_OC_checkbox_unchecked':'enable_OC_checkbox_checked'}}"  (click)="setPerformanceOCSetting($event)"
-                                tabindex="0" [attr.aria-label]="ocSupportted === thermalMode2Enum.cpu_gpu ? 'Enable CPU and GPU Overclocking in Performance Mode' :
+                                [attr.aria-label]="ocSupportted === thermalMode2Enum.cpu_gpu ? 'Enable CPU and GPU Overclocking in Performance Mode' :
                                 ocSupportted === thermalMode2Enum.cpu ? 'Enable CPU Overclocking in Performance Mode' : 'Enable GPU Overclocking in Performance Mode'"
                                 [attr.aria-checked]="ocSettings">
                                     <label class="checkedIcon"></label>
@@ -56,7 +56,7 @@
                                         &nbsp;
                                     </a>
                                     <a class="oc-advance-button" *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature"
-                                    tabindex="0" role="button" id="advanced_button" (click)="openWaringModal()" (keyup.enter)="openWaringModal()">
+                                    role="button" id="advanced_button" (click)="openWaringModal()" (keyup.enter)="openWaringModal()">
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.advance' | translate }}
                                     </a>
                                 </p>
@@ -67,7 +67,7 @@
                                 <p *ngIf="ocSupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.none" role="text" id="thermal_mode_CPU/GPU_driver_description">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
-                                    tabindex="0" aria-label="Install CPU and GPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
+                                    aria-label="Install CPU and GPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
                                     vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
                                     </a>
@@ -75,7 +75,7 @@
                                 <p *ngIf="(ocSupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.gpu) || (ocSupportted === thermalMode2Enum.cpu)" role="text" id="thermal_mode_CPU_driver_description">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
-                                    tabindex="0" aria-label="Install CPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
+                                    aria-label="Install CPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
                                     vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
                                     </a>
@@ -83,7 +83,7 @@
                                 <p *ngIf="(ocSupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.cpu) || (ocSupportted === thermalMode2Enum.gpu)"  role="text" id="thermal_mode_GPU_driver_description">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuDriverLack' | translate }} &nbsp;
                                     <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
-                                    tabindex="0" aria-label="Install GPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
+                                    aria-label="Install GPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
                                     vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
                                     </a>
@@ -111,7 +111,7 @@
                     <div class="item-oc" *ngIf="gamingCapabilities.thermalModeVersion === 4">
                         <div class="item-oc-left">
                             <button class="oc-checkbox" [ngClass]="{'checked':autoAdjustSettings}" role="checkbox" id="{{!autoAdjustSettings? 'enable_autoAdjustSettings_checkbox_unchecked':'enable_autoAdjustSettings_checkbox_checked'}}"  (click)="setAutoAdjustSetting($event)"
-                            tabindex="0" aria-label="Automatically detect the current game and tune CPU&GPU performance" [attr.aria-checked]="autoAdjustSettings">
+                            aria-label="Automatically detect the current game and tune CPU&GPU performance" [attr.aria-checked]="autoAdjustSettings">
                                 <label class="checkedIcon"></label>
                             </button>
                         </div>
