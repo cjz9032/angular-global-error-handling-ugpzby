@@ -5366,5 +5366,35 @@
 		"title": "Gi oss din mening",
 		"likeUs": "Lik oss",
 		"feedback": "Gi tilbakemelding"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "Windows HD Color-innstillinger",
+					"description": "Hvis det støttes på enheten, viser Windows HD Color innhold i HIGH Dynamic Range (HDR) og bred fargeskala (WCG), for eksempel bilder, videoer og spill.",
+					"link": {
+						"launcher": "Hvis du vil endre innstillingene for Windows HD Color, klikker du på ",
+						"here": "her",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }

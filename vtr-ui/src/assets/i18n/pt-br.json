@@ -5476,5 +5476,35 @@
 		"title": "Expresse suas ideias",
 		"likeUs": "Curtir",
 		"feedback": "Deixar comentário"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "Configurações de cores HD do Windows",
+					"description": "As cores HD do Windows exibem conteúdo de alta faixa dinâmica (HDR) e ampla gama de cores (WCG), como fotos, vídeos e jogos em seu dispositivo, se houver suporte.",
+					"link": {
+						"launcher": "Para alterar as configurações de cores HD do Windows, clique ",
+						"here": "aqui",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }

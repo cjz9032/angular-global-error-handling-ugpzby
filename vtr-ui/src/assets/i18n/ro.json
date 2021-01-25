@@ -5366,5 +5366,35 @@
 		"title": "Trimiteți-ne vocea dumneavoastră",
 		"likeUs": "Trimiteți-ne aprecieri",
 		"feedback": "Introducere feedback"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "Setări pentru Windows HD Color",
+					"description": "Windows HD Color afișează conținut cu interval dinamic ridicat (HDR, High Dynamic Range) și gamă largă de culori (WCG, Wide Color Gamut), cum ar fi fotografiile, videoclipurile și jocurile acceptate de dispozitivul dvs.",
+					"link": {
+						"launcher": "Pentru a modifica setările pentru Windows HD Color, faceți clic ",
+						"here": "aici",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }

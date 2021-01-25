@@ -5366,5 +5366,35 @@
 		"title": "Pošaljite nam svoj glas",
 		"likeUs": "Kliknite na Sviđa mi se",
 		"feedback": "Ostavi povratnu informaciju"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "Postavke HD boja sustava Windows",
+					"description": "Ako vaš uređaj podržava tu značajku, HD boje sustava Windows prikazuju sadržaj, poput fotografija, videozapisa i igara, u širokom dinamičkom rasponu (HDR) i širokom spektru boja (WCG).",
+					"link": {
+						"launcher": "Da biste promijenili postavke značajke HD boja sustava Windows, kliknite ",
+						"here": "ovdje",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }

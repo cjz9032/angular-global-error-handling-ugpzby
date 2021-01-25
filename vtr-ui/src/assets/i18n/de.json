@@ -5476,5 +5476,35 @@
 		"title": "Senden Sie uns Ihre Stimme",
 		"likeUs": "Folgen",
 		"feedback": "Feedback zu geben"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "Windows HD Color-Einstellungen",
+					"description": "Windows HD Color zeigt Inhalte mit hohem Kontrast (HDR) und breiter Farbskala (WCG) an, z. B. Bilder, Videos und Spiele, wenn dies von Ihrer Einheit unterstützt wird.",
+					"link": {
+						"launcher": "Um die Windows HD Color-Einstellungen zu ändern, klicken Sie ",
+						"here": "hier",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }

@@ -5366,5 +5366,35 @@
 		"title": "Czy podobają Ci się nasze rozwiązania?",
 		"likeUs": "Polub nas",
 		"feedback": "Przekaż opinię"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "Ustawienia funkcji Windows HD Color",
+					"description": "Funkcja Windows HD Color pozwala odtwarzać na zgodnym urządzeniu zawartość o wysokim zakresie dynamiki (HDR) i szerokiej gamie kolorów (WCG), taką jak zdjęcia, filmy i gry.",
+					"link": {
+						"launcher": "Aby zmienić ustawienia funkcji Windows HD Color, kliknij ",
+						"here": "tutaj",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }

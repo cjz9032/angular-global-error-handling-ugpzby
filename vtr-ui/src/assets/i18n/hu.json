@@ -5366,5 +5366,35 @@
 		"title": "Ossza meg velünk a véleményét!",
 		"likeUs": "Kedvelés",
 		"feedback": "Visszajelzés küldése"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "A Windows HD Color beállításai",
+					"description": "A Windows HD Color nagy dinamikatartományú (HDR) és széles színtartományú (WCG) tartalmat jelenít meg az Ön eszközén, így például fényképeket, videókat és játékokat – amennyiben eszköze támogatja ezt.",
+					"link": {
+						"launcher": "A Windows HD Color beállításainak módosításához kattintson ",
+						"here": "ide",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }

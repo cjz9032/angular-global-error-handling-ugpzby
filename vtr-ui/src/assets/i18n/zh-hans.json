@@ -5474,5 +5474,35 @@
 		"title": "让我们听到您的声音",
 		"likeUs": "为我们点赞",
 		"feedback": "留下反馈"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "Windows 高清色彩设置",
+					"description": "Windows 高清色彩可显示高动态范围（HDR）和广色域（WCG）内容，例如设备上的照片、视频和游戏（如支持）。",
+					"link": {
+						"launcher": "要更改 Windows 高清色彩设置，请单击",
+						"here": "此处",
+						"punctuation": "。"
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }

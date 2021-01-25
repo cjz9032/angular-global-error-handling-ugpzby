@@ -5366,5 +5366,35 @@
 		"title": "הצביעו עבורינו",
 		"likeUs": "סמנו לנו לייק",
 		"feedback": "השאירו משוב"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "הגדרות צבע HD ב-Windows",
+					"description": "'צבע HD ב-Windows' מציג תוכן בטווח דינמי גבוה (HDR) ובתצוגת צבע איכותית (WCG), כגון תמונות, קטעי וידאו ומשחקים במכשיר שלכם, אם הם נתמכים.",
+					"link": {
+						"launcher": "כדי לשנות את ההגדרות של 'צבע HD ב-Windows' יש ללחוץ ",
+						"here": "כאן",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }

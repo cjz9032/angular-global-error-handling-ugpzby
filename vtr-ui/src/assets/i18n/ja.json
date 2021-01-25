@@ -5475,5 +5475,35 @@
 		"title": "ご意見をお聞かせください",
 		"likeUs": "支持する",
 		"feedback": "フィードバックを送付する"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "Creator settings",
+				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"windowsHdColor": {
+					"title": "Windows HD Color 設定",
+					"description": "Windows HD Color では、ご使用のデバイスが対応している場合、写真、ビデオ、ゲームなどのハイ・ダイナミック・レンジ (HDR) およびワイド色域 (WCG) コンテンツを表示します。",
+					"link": {
+						"launcher": "Windows HD Color の設定を変更するには、",
+						"here": "ここ",
+						"punctuation": "。"
+					}
+				}
+			},
+			"easyRendering": {
+				"title": "Easy rendering"
+
+			},
+			"colorCalibration": {
+				"title": "Color calibration"
+
+			}
+		}
 	}
 }
