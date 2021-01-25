@@ -436,15 +436,7 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isSmartStandByApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (segment === SegmentConst.Commercial) {
-			return await this.powerService.getSmartStandbyCapability();
-		}
-
-		return false;
+		return await this.powerService.getSmartStandbyCapability();
 	}
 
 	private async isAlwaysOnUsbApplicable() {
@@ -460,101 +452,37 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isAirplanePowerModeIdApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (segment === SegmentConst.Commercial) {
-			return await this.powerService.getAirplaneModeCapabilityThinkPad();
-		}
-
-		return false;
+		return await this.powerService.getAirplaneModeCapabilityThinkPad();
 	}
 
 	private async isGaugeResetApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (segment === SegmentConst.Commercial) {
-			return await this.powerService.getGaugeResetCapability();
-		}
-
-		return false;
+		return await this.powerService.getGaugeResetCapability();
 	}
 
 	private async isITSSettingsApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
-			const capability = await this.powerService.getITSModeForICIdeapad();
-			return capability?.available;
-		}
-
-		return false;
+		const capability = await this.powerService.getITSModeForICIdeapad();
+		return capability?.available;
 	}
 
 	private async isPMDriverStatusApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (segment === SegmentConst.Commercial) {
-			return await this.powerService.getPMDriverStatus();
-		}
-
-		return false;
+		return await this.powerService.getPMDriverStatus();
 	}
 
 	private async isEasyResumeApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (segment === SegmentConst.Commercial) {
-			return await this.powerService.getEasyResumeCapabilityThinkPad();
-		}
-
-		return false;
+		return await this.powerService.getEasyResumeCapabilityThinkPad();
 	}
 
 	private async isEnergyStarApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (segment === SegmentConst.Commercial) {
-			return await this.powerService.getEnergyStarCapability();
-		}
-
-		return false;
+		return await this.powerService.getEnergyStarCapability();
 	}
 
 	private async isConservationModeStatusApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB) {
-			return await this.powerService.getConservationModeStatusIdeaNoteBook();
-		}
-
-		return false;
+		return await this.powerService.getConservationModeStatusIdeaNoteBook();
 	}
 
 	private async isRapidChargeModeStatusApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB) {
-			const capability = await this.powerService.getRapidChargeModeStatusIdeaNoteBook();
-			return capability?.available;
-		}
-
-		return false;
+		const capability = await this.powerService.getRapidChargeModeStatusIdeaNoteBook();
+		return capability?.available;
 	}
 
 	private async isPowerPlanManagementApplicable() {
@@ -565,29 +493,16 @@ export class FeatureApplicableDetections {
 			(brand === 'think' || brand === 'lenovo') &&
 			(subBrand === 'thinkcentre' || subBrand === 'thinkcenter')
 		) {
-			const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-				LocalStorageKey.LocalInfoSegment
-			);
-			if (segment === SegmentConst.Commercial) {
-				const capability = await this.powerDpmService.getAllPowerPlansObs();
-				return Boolean(capability);
-			}
+			const capability = await this.powerDpmService.getAllPowerPlansObs();
+			return Boolean(capability);
 		}
 
 		return false;
 	}
 
 	private async isFlipToBootCapabilityApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
-			const capability = await this.powerService.getFlipToStartCapability();
-			return capability.Supported;
-		}
-
-		return false;
+		const capability = await this.powerService.getFlipToStartCapability();
+		return capability.Supported;
 	}
 
 	private async isVantageToolBarStatusApplicable() {
@@ -596,63 +511,28 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isPrivacyGuardApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (segment === SegmentConst.Commercial) {
-			return (await this.displayService.getCameraPrivacyModeState())?.available;
-		}
-
-		return false;
+		return (await this.displayService.getCameraPrivacyModeState())?.available;
 	}
 
 	private async isTrackPointSettingsApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (segment === SegmentConst.Commercial) {
-			return await this.inputAccessoriesService.getMouseCapability();
-		}
-
-		return false;
+		return await this.inputAccessoriesService.getMouseCapability();
 	}
 
 	private async isSmartKeyboardBacklightApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB) {
-			return await this.inputAccessoriesService.getAutoKBDBacklightCapability();
-		}
-
-		return false;
+		return await this.inputAccessoriesService.getAutoKBDBacklightCapability();
 	}
 	private async isHiddenKeyboardFunctionApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-		const brand = this.deviceService.machineInfo.brand?.toLowerCase();
-
-		if (segment === SegmentConst.Commercial) {
-			const capability = await this.inputAccessoriesService.GetAllCapability();
-			if (capability?.uDKCapability || capability?.keyboardMapCapability) {
-				return true;
-			}
+		const capability = await this.inputAccessoriesService.GetAllCapability();
+		if (capability?.uDKCapability || capability?.keyboardMapCapability) {
+			return true;
 		}
 
 		return false;
 	}
 
 	private async isVoIPHotkeyFunctionApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
 		const brand = this.deviceService.machineInfo.brand?.toLowerCase();
-
-		if (segment === SegmentConst.Commercial && brand !== 'idea') {
+		if (brand !== 'idea') {
 			const capability = await this.inputAccessoriesService.getVoipHotkeysSettings();
 			return capability?.capability;
 		}
@@ -661,16 +541,7 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isTopRowKeyFunctionsApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-		const brand = this.deviceService.machineInfo.brand?.toLowerCase();
-
-		if (segment === SegmentConst.Commercial) {
-			return await this.inputAccessoriesService.getTopRowFnLockCapability();
-		}
-
-		return false;
+		return await this.inputAccessoriesService.getTopRowFnLockCapability();
 	}
 
 	private async isUserDefinedKeyApplicable() {
@@ -678,12 +549,8 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isFnAndCtrlkeySwapApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
 		const brand = this.deviceService.machineInfo.brand?.toLowerCase();
-
-		if (segment === SegmentConst.Commercial && brand !== 'idea') {
+		if (brand !== 'idea') {
 			return await this.inputAccessoriesService.GetFnCtrlSwapCapability();
 		}
 
@@ -705,82 +572,29 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isIntelligentSensingApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-		if (segment === SegmentConst.Commercial) {
-			const penCapablity = await this.smartAssistService.getIntelligentScreenVisibility();
-		}
-
-		return false;
+		return await this.smartAssistService.getIntelligentScreenVisibility();
 	}
 
 	private async isZeroTouchLoginApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (
-			SegmentConstHelper.includedInCommonConsumer(segment) ||
-			segment === SegmentConst.Commercial
-		) {
-			return await this.smartAssistService.getZeroTouchLoginVisibility();
-		}
-
-		return false;
+		return await this.smartAssistService.getZeroTouchLoginVisibility();
 	}
 
 	private async isZeroTouchLockApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (
-			SegmentConstHelper.includedInCommonConsumer(segment) ||
-			segment === SegmentConst.Commercial
-		) {
-			return await this.smartAssistService.getZeroTouchLockVisibility();
-		}
-
-		return false;
+		return await this.smartAssistService.getZeroTouchLockVisibility();
 	}
 
 	private async isZeroTouchVideoPlaybackApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
-			const capability = await this.smartAssistService.getVideoPauseResumeStatus();
-			return capability.available;
-		}
-
-		return false;
+		const capability = await this.smartAssistService.getVideoPauseResumeStatus();
+		return capability.available;
 	}
 
 	private async isSmartMotionAlarmApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
-			const capability = await this.smartAssistService.getAntiTheftStatus();
-			return capability.available;
-		}
-
-		return false;
+		const capability = await this.smartAssistService.getAntiTheftStatus();
+		return capability.available;
 	}
 
 	private async isVideoResolutionUpscalingSRApplicable() {
-		const segment: SegmentConst = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.LocalInfoSegment
-		);
-
-		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
-			const capability = await this.smartAssistService.getSuperResolutionStatus();
-			return capability.available;
-		}
-
-		return false;
+		const capability = await this.smartAssistService.getSuperResolutionStatus();
+		return capability.available;
 	}
 }
