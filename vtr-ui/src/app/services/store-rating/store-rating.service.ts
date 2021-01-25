@@ -7,7 +7,6 @@ import { LoggerService } from '../logger/logger.service';
 import { ModalStoreRatingComponent } from 'src/app/components/modal/modal-store-rating/modal-store-rating.component';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
-
 @Injectable({
 	providedIn: 'root',
 })
@@ -21,15 +20,15 @@ export class StoreRatingService {
 		private hypothesis: HypothesisService,
 		private logger: LoggerService,
 		private dialog: MatDialog
-	) { }
+	) {}
 
 	public async showRatingAsync() {
 		if (await this.canPromptRating()) {
 			this.dialog.open(ModalStoreRatingComponent, {
-				maxWidth: '50rem',
 				autoFocus: true,
 				hasBackdrop: true,
 				disableClose: true,
+				panelClass: 'ms-rating-modal',
 			});
 
 			this.localCacheService.setLocalCacheValue(
@@ -57,7 +56,9 @@ export class StoreRatingService {
 
 	private addRatingPromptCount(): void {
 		let currentPromptCount = this.getRatingPromptCount();
-		if (isNaN(currentPromptCount)) { currentPromptCount = 0; }
+		if (isNaN(currentPromptCount)) {
+			currentPromptCount = 0;
+		}
 		currentPromptCount += 1;
 		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.RatingPromptCount,

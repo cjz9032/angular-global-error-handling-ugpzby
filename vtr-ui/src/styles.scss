@@ -834,6 +834,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
+.ms-rating-modal {
+	width: 50rem;
+	max-width: 95% !important;
+	.mat-dialog-container {
+		overflow: hidden;
+	}
+}
+
 /*common-confirmation-modal-styles*/
 
 .common-confirmation-modal {
