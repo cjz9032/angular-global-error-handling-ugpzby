@@ -110,8 +110,16 @@
 				@media #{$high-contrast} {
 					border: 1px solid windowText;
 				}
+				&.monitor-section-border {
+					@media #{$high-contrast} {
+						border: none;
+					}
+				}
 				.arrow-padding {
 					padding-bottom: 1.5rem;
+					@media #{$high-contrast} {
+						border: 1px solid windowText;
+					}
 				}
 				@media #{$breakpoint_xl3} {
 					height: 22rem;
