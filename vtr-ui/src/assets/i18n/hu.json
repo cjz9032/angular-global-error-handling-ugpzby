@@ -5375,8 +5375,8 @@
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "Creator settings",
-				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"title": "",
+				"desc": "",
 				"windowsHdColor": {
 					"title": "A Windows HD Color beállításai",
 					"description": "A Windows HD Color nagy dinamikatartományú (HDR) és széles színtartományú (WCG) tartalmat jelenít meg az Ön eszközén, így például fényképeket, videókat és játékokat – amennyiben eszköze támogatja ezt.",
@@ -5388,11 +5388,11 @@
 				}
 			},
 			"easyRendering": {
-				"title": "Easy rendering"
+				"title": ""
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
+				"title": ""
 
 			}
 		}

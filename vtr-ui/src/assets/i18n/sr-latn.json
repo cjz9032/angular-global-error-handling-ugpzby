@@ -5375,8 +5375,8 @@
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "Creator settings",
-				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"title": "",
+				"desc": "",
 				"windowsHdColor": {
 					"title": "Postavke Windows HD boja",
 					"description": "Windows HD boje prikazuju sadržaj visokog dinamičkog opsega (HDR) i širokog opsega boja (WCG), kao što su fotografije, video zapisi i igre na uređaju, ako je podržano.",
@@ -5388,11 +5388,11 @@
 				}
 			},
 			"easyRendering": {
-				"title": "Easy rendering"
+				"title": ""
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
+				"title": ""
 
 			}
 		}

@@ -5375,8 +5375,8 @@
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "Creator settings",
-				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"title": "",
+				"desc": "",
 				"windowsHdColor": {
 					"title": "הגדרות צבע HD ב-Windows",
 					"description": "'צבע HD ב-Windows' מציג תוכן בטווח דינמי גבוה (HDR) ובתצוגת צבע איכותית (WCG), כגון תמונות, קטעי וידאו ומשחקים במכשיר שלכם, אם הם נתמכים.",
@@ -5388,11 +5388,11 @@
 				}
 			},
 			"easyRendering": {
-				"title": "Easy rendering"
+				"title": ""
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
+				"title": ""
 
 			}
 		}

@@ -5485,8 +5485,8 @@
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "Creator settings",
-				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"title": "",
+				"desc": "",
 				"windowsHdColor": {
 					"title": "Configurações de cores HD do Windows",
 					"description": "As cores HD do Windows exibem conteúdo de alta faixa dinâmica (HDR) e ampla gama de cores (WCG), como fotos, vídeos e jogos em seu dispositivo, se houver suporte.",
@@ -5498,11 +5498,11 @@
 				}
 			},
 			"easyRendering": {
-				"title": "Easy rendering"
+				"title": ""
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
+				"title": ""
 
 			}
 		}

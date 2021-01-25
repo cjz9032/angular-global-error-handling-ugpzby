@@ -5485,8 +5485,8 @@
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "Creator settings",
-				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"title": "",
+				"desc": "",
 				"windowsHdColor": {
 					"title": "Configuración de color HD de Windows",
 					"description": "El color HD de Windows muestra contenido de alto rango dinámico (HDR) y gama de colores amplios (WCG), como por ejemplo fotos, videos y juegos en su dispositivo, si se admite.",
@@ -5498,11 +5498,11 @@
 				}
 			},
 			"easyRendering": {
-				"title": "Easy rendering"
+				"title": ""
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
+				"title": ""
 
 			}
 		}

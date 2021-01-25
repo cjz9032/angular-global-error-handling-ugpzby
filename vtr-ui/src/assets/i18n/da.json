@@ -5375,8 +5375,8 @@
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "Creator settings",
-				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"title": "",
+				"desc": "",
 				"windowsHdColor": {
 					"title": "Indstillinger for Windows HD Color",
 					"description": "Windows HD Color viser indhold med et højt dynamisk område (HDR) og et bredt farveområde (WCG), f.eks. billeder, videoer og spil på din enhed, hvis det understøttes.",
@@ -5388,11 +5388,11 @@
 				}
 			},
 			"easyRendering": {
-				"title": "Easy rendering"
+				"title": ""
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
+				"title": ""
 
 			}
 		}

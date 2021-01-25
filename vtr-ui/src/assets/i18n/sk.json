@@ -5375,8 +5375,8 @@
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "Creator settings",
-				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"title": "",
+				"desc": "",
 				"windowsHdColor": {
 					"title": "Nastavenia farieb Windows HD",
 					"description": "Farebné rozlíšenie Windows HD zobrazuje v zariadení obsah (ak je podporovaný) s vysokým dynamickým rozsahom (HDR) a širokým rozsahom farieb (WCG), ako sú fotografie, videá a hry.",
@@ -5388,11 +5388,11 @@
 				}
 			},
 			"easyRendering": {
-				"title": "Easy rendering"
+				"title": ""
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
+				"title": ""
 
 			}
 		}

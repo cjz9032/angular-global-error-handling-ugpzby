@@ -5484,8 +5484,8 @@
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "Creator settings",
-				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"title": "",
+				"desc": "",
 				"windowsHdColor": {
 					"title": "Windows HD Color 設定",
 					"description": "Windows HD Color では、ご使用のデバイスが対応している場合、写真、ビデオ、ゲームなどのハイ・ダイナミック・レンジ (HDR) およびワイド色域 (WCG) コンテンツを表示します。",
@@ -5497,11 +5497,11 @@
 				}
 			},
 			"easyRendering": {
-				"title": "Easy rendering"
+				"title": ""
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
+				"title": ""
 
 			}
 		}

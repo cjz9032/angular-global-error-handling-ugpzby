@@ -5485,8 +5485,8 @@
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "Creator settings",
-				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
+				"title": "",
+				"desc": "",
 				"windowsHdColor": {
 					"title": "Параметры цвета высокого разрешения в Windows",
 					"description": "Если в Windows настроен цвет высокого разрешения и такая возможность поддерживается, на устройстве отображается содержимое в формате расширенного динамического диапазона (HDR) и с широкой палитрой (WCG), такое как фото, видео и игры.",
@@ -5498,11 +5498,11 @@
 				}
 			},
 			"easyRendering": {
-				"title": "Easy rendering"
+				"title": ""
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
+				"title": ""
 
 			}
 		}
