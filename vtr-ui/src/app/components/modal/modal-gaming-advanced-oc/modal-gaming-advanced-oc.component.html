@@ -6,7 +6,7 @@
         <div class="modal-header" role="text" id="gpu_overclock_section">
             <h2 role="text" id="overclock_advanced_settings_header">{{ 'gaming.dashboard.device.advancedOC.title' | translate }}</h2>
             <p tabindex="-1" role="text" id="overclock_advanced_settings_header_description">{{ 'gaming.dashboard.device.advancedOC.description' | translate }}</p>
-            <button type="button" tabindex="1" class="close" id="overclock_advanced_settings_close_button" aria-label="close" role="button" (click)="closeModal()">
+            <button type="button" tabindex="0" class="close" id="overclock_advanced_settings_close_button" aria-label="close" role="button" (click)="closeModal()">
                 ×
             </button>
         </div>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="right-range">
                                 <vtr-ui-add-reduce-button [automationId]="removeSpaces(itemUnit.gpuOCNames['gpuOCName'+item.tuneId])" [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['gpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'gpuParameterList',0,true)"
-                                    [tabIndexNum]="1" [ariaLabelValue]="itemUnit.gpuOCNames['gpuOCName'+item.tuneId]"></vtr-ui-add-reduce-button>
+                                    [tabIndexNum]="0" [ariaLabelValue]="itemUnit.gpuOCNames['gpuOCName'+item.tuneId]"></vtr-ui-add-reduce-button>
                             </div>
                         </div>
                     </li>
@@ -35,7 +35,7 @@
                 <h3 role="text" id="cpu_overclock_section_item">{{ 'gaming.dashboard.device.legionEdge.title' | translate }}</h3>
                 <ul class="clearfix">
                     <li *ngFor="let item of advancedOCInfo.cpuParameterList; let idx = index">
-                        <p class="overclock-name" role="text" [id]="removeSpaces(itemUnit.cpuOCNames['cpuOCName'+item.tuneId]) + '_item'" [title]="((item.tuneId>=116 && item.tuneId<=125) || (item.tuneId>=29 && item.tuneId<=32) || 
+                        <p class="overclock-name" role="text" [id]="removeSpaces(itemUnit.cpuOCNames['cpuOCName'+item.tuneId]) + '_item'" [title]="((item.tuneId>=116 && item.tuneId<=125) || (item.tuneId>=29 && item.tuneId<=32) ||
                             item.tuneId==42 || item.tuneId==43 || item.tuneId==96 || item.tuneId==97 || item.tuneId==107 || item.tuneId==108) ? ('gaming.dashboard.device.advancedOC.cpuOCTips.cpuOCTip' | translate) : ('gaming.dashboard.device.advancedOC.cpuOCTips.cpuOCTip'+item.tuneId | translate)">
                             {{ 'gaming.dashboard.device.advancedOC.cpuOCNames.cpuOCName'+item.tuneId | translate }}
                         </p>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="right-range">
                                 <vtr-ui-add-reduce-button [automationId]="removeSpaces(itemUnit.cpuOCNames['cpuOCName'+item.tuneId])" [btnWidth]="'26.3%'" [value]="item.OCValue" [minData]="item.minValue" [maxData]="item.maxValue" [step]="item.stepValue" [unit]="itemUnit['cpuAdvancedOC'+item.tuneId]" (setVal)="setRangeValue($event,idx,'cpuParameterList',item.tuneId,true)"
-                                    [tabIndexNum]="1" [ariaLabelValue]="itemUnit.cpuOCNames['cpuOCName'+item.tuneId]"></vtr-ui-add-reduce-button>
+                                    [tabIndexNum]="0" [ariaLabelValue]="itemUnit.cpuOCNames['cpuOCName'+item.tuneId]"></vtr-ui-add-reduce-button>
                             </div>
                         </div>
                     </li>
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button class="under-line-button" (click)="openSetToDefaultModal()" id="overclock_advanced_settings_set_to_default_button" tabindex="1" aria-label="set to default" role="button">
+            <button class="under-line-button" (click)="openSetToDefaultModal()" id="overclock_advanced_settings_set_to_default_button" tabindex="0" aria-label="set to default" role="button">
                 {{'gaming.lightingProfile.button.default.title' | translate}}
             </button>
         </div>

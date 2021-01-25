@@ -8,7 +8,7 @@
             <p role="text" [id]="info.id.description" *ngIf="!emptyAppList">
                 {{info.description | translate}}<span *ngIf="isNetworkBoost"> ({{addedApps}} {{info.description2 | translate}} {{maxAppsCount}} {{info.description3 | translate}} )</span>
             </p>
-            <button type="button" role="button" tabindex="1" class="close modal-gaming-running-app-list-close" aria-label="close"
+            <button type="button" role="button" tabindex="0" class="close modal-gaming-running-app-list-close" aria-label="close"
             [id]="info.id.closeButton" (click)="closeModal()">
             <fa-icon [icon]="['fal', 'times']"></fa-icon>
             </button>
@@ -27,7 +27,7 @@
                                 [ngClass]="{'checked': item.isChecked, 'disabled':addedApps>=5 && !item.isChecked}"
                                 (click)="onValueChange($event, i, item)"
                                 vtrMetrics [metricsItem]="item.processDescription"
-                                metricsEvent="featureClick" tabindex="1"
+                                metricsEvent="featureClick" tabindex="0"
                                 (keydown)="runappKeyup($event,i)" role="checkbox"
                                 [attr.aria-checked]="item.isChecked"
                                 [attr.aria-label]="'Add '+item.processDescription"

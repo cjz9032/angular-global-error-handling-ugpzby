@@ -574,6 +574,11 @@ $high-contrast-sky-blue: #81bbf5;
 	outline: 0.1rem solid $color;
 }
 
+@mixin solid-dialog-legionedge-outline($color: $blueFill) {
+	outline-offset: -0.3rem;
+	outline: 0.1rem solid $color;
+}
+
 @mixin link-button-outline($color: $blueFill) {
 	outline-offset: 0.2rem;
 	outline: 0.1rem solid $color;
