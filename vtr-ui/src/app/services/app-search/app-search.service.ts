@@ -56,7 +56,7 @@ export class AppSearchService implements OnDestroy {
 				setTimeout(() => {
 					this.logger.info(`start to run  run initial detection process`);
 					this.runInitialDetectionProcess();
-				}, 3000);
+				}, 5000);
 			}
 		})();
 	}
@@ -223,23 +223,16 @@ export class AppSearchService implements OnDestroy {
 	}
 
 	private loadFeatureStatusFromCache() {
-		const applicableStatusStr = this.localCacheService.getLocalCacheValue(
-			localStorage.FeaturesApplicableStatus
+		const applicableStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.FeaturesApplicableStatus
 		);
-		if (applicableStatusStr) {
-			let applicableStatus;
-			try {
-				applicableStatus = JSON.parse(applicableStatusStr);
-			} catch {}
-
-			if (applicableStatus) {
-				const featureIds = Object.keys(applicableStatus);
-				featureIds.forEach((featureId) => {
-					if (this.featureMap[featureId]) {
-						this.featureMap[featureId].applicable = applicableStatus[featureId];
-					}
-				});
-			}
+		if (applicableStatus) {
+			const featureIds = Object.keys(applicableStatus);
+			featureIds.forEach((featureId) => {
+				if (this.featureMap[featureId]) {
+					this.featureMap[featureId].applicable = applicableStatus[featureId];
+				}
+			});
 		}
 	}
 
@@ -343,7 +336,9 @@ export class AppSearchService implements OnDestroy {
 				`Single featue detection start, ThreadId:${mockThreadId} - FeatureId:${feature.id}`
 			);
 			const startTime = Date.now();
-			feature.applicable = await this.applicableDetections.isFeatureApplicable(feature.id);
+			feature.applicable = Boolean(
+				await this.applicableDetections.isFeatureApplicable(feature.id)
+			);
 			this.logger.info(
 				`Single featue detection end, ThreadId:${mockThreadId} - Duration:${
 					Date.now() - startTime
