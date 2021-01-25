@@ -196,17 +196,45 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		const original = MatDialog.prototype.open;
 		let self = this;
 		// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-		MatDialog.prototype.open = function (template: any, config?: MatDialogConfig<any>): MatDialogRef<any, any> {
+		MatDialog.prototype.open = function (
+			template: any,
+			config?: MatDialogConfig<any>
+		): MatDialogRef<any, any> {
 			if (self.deviceService.isGaming) {
 				if (config?.panelClass) {
-					if (Array.isArray(config.panelClass) && !config.panelClass.includes('is-gaming')) {
+					if (
+						Array.isArray(config.panelClass) &&
+						!config.panelClass.includes('is-gaming')
+					) {
 						config.panelClass.push('is-gaming');
-					} else if (!Array.isArray(config.panelClass) && config.panelClass !== 'is-gaming') {
+					} else if (
+						!Array.isArray(config.panelClass) &&
+						config.panelClass !== 'is-gaming'
+					) {
 						config.panelClass = config.panelClass.split(' ');
 						config.panelClass.push('is-gaming');
 					}
 				} else {
-					config = Object.assign(config ?? {}, {panelClass: 'is-gaming'});
+					config = Object.assign(config ?? {}, { panelClass: 'is-gaming' });
+				}
+				if (!config?.hasBackdrop) {
+					return original.call(this, template, config);
+				}
+				if (config?.backdropClass) {
+					if (
+						Array.isArray(config.backdropClass) &&
+						!config.backdropClass.includes('gaming-backdrop')
+					) {
+						config.backdropClass.push('gaming-backdrop');
+					} else if (
+						!Array.isArray(config.backdropClass) &&
+						config.backdropClass !== 'gaming-backdrop'
+					) {
+						config.backdropClass = config.backdropClass.split(' ');
+						config.backdropClass.push('gaming-backdrop');
+					}
+				} else {
+					config = Object.assign(config ?? {}, { backdropClass: 'gaming-backdrop' });
 				}
 			}
 			return original.call(this, template, config);
