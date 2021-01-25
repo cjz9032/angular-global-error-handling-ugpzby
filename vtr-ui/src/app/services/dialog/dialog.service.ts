@@ -338,7 +338,6 @@ export class DialogService {
 				return modalRef;
 			} else {
 				const modalRef = this.dialog.open(ModalLenovoIdComponent, {
-					maxWidth: '50rem',
 					autoFocus: true,
 					hasBackdrop: true,
 					disableClose: true,

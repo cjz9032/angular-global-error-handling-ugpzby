@@ -275,7 +275,6 @@
 
 // override for modal size
 .lenovo-id-modal-size {
-	max-width: 300px !important;
-	overflow: hidden;
-	min-height: 200px !important;
+	width: 0px;
+	height: 0px;
 }
