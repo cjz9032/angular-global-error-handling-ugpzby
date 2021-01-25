@@ -122,6 +122,7 @@ export enum LocalStorageKey {
 	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',
 	// App Search
 	FeaturesApplicableStatus = '[LocalStorageKey] FeaturesApplicableStatus',
+	LastFullFeaturesDetectionTime = '[LocalStorageKey] LastFullFeaturesDetectionTime',
 
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	BacklightCapability = '[LocalStorageKey] BacklightCapability',

@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { featureSource } from './model/features.model';
 import {
@@ -32,6 +31,8 @@ export class AppSearchService implements OnDestroy {
 	private subscription: Subscription;
 	private searchEngine: SearchEngineWraper;
 	private available;
+	private lastFullFeaturesDetectionTime: number;
+	private featureStatusUpdate: boolean;
 	constructor(
 		private translate: TranslateService,
 		private router: Router,
@@ -45,18 +46,17 @@ export class AppSearchService implements OnDestroy {
 		(async () => {
 			const available = await this.isAvailabe();
 			if (available) {
+				this.searchEngine = new SearchEngineWraper();
+				this.lastFullFeaturesDetectionTime = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.LastFullFeaturesDetectionTime
+				);
 				this.subscription = this.commonService.notification.subscribe(
 					(notification: AppNotification) => {
 						this.onNotification(notification);
 					}
 				);
 
-				this.searchEngine = new SearchEngineWraper();
-				await this.loadFeatureListAsync();
-				setTimeout(() => {
-					this.logger.info(`start to run  run initial detection process`);
-					this.runInitialDetectionProcess();
-				}, 5000);
+				this.loadFeatureListAsync();
 			}
 		})();
 	}
@@ -85,7 +85,7 @@ export class AppSearchService implements OnDestroy {
 			.search(userInput)
 			?.map((feature) => Object.assign({}, this.featureMap[feature.item.id]));
 
-		return this.checkFeatureApplicable(featureList, 10, 3000);
+		return this.verifyFeatureApplicability(featureList, 10, 3000);
 	}
 
 	public handleAction(feature: IFeature) {
@@ -97,8 +97,15 @@ export class AppSearchService implements OnDestroy {
 		} else if (typeof feature.action === 'function') {
 			feature.action(feature);
 		} else {
-			this.logger.info(`invalid protocol action: ${JSON.stringify(feature)}`);
+			this.logger.error(`[AppSearch]invalid action: ${JSON.stringify(feature)}`);
 		}
+
+		this.verifySingleFeatureApplicability(feature);
+	}
+
+	public async verifySingleFeatureApplicability(feature: IFeature): Promise<SearchResult> {
+		await this.mockDetectionThread([feature], 'SingleFeature');
+		return new SearchResult(ResultType.complete, [feature]);
 	}
 
 	private handleNavigateAction(featureAction: INavigationAction) {
@@ -114,7 +121,7 @@ export class AppSearchService implements OnDestroy {
 	private handleProtocolAction(featureAction: IProtocolAction) {
 		const uri = featureAction.url;
 		if (!uri) {
-			this.logger.info(`invalid protocol action: ${JSON.stringify(featureAction)}`);
+			this.logger.error(`[AppSearch] invalid protocol ${JSON.stringify(featureAction)}`);
 			return;
 		}
 		this.deviceService.launchUri(uri);
@@ -134,16 +141,19 @@ export class AppSearchService implements OnDestroy {
 	}
 
 	private onNotification(notification: AppNotification) {
-		if (notification.type === MenuItemEvent.MenuItemChange) {
-			// if notification.payLoad contains app-search and is available and is not hide
-			this.updateRouteMap(notification.payload);
+		switch (notification.type) {
+			case 'MenuItemEvent.MenuItemChange':
+				this.updateRouteMap(notification.payload);
+				break;
+			default:
+				break;
 		}
 	}
 
 	private updateRouteMap(payload) {
 		this.menuRouteMap = {};
 		if (!payload) {
-			this.logger.info(`invalid menu payload`);
+			this.logger.info(`[AppSearch]invalid menu payload`);
 			return;
 		}
 
@@ -202,7 +212,7 @@ export class AppSearchService implements OnDestroy {
 
 		await this.translate.get('appSearch').toPromise();
 		if (this.featureLoad) {
-			this.logger.info(`waringing: duplicate feature loading-1`);
+			this.logger.info(`[AppSearch]waringing: duplicate feature loading-1`);
 			return;
 		}
 		this.featureLoad = true;
@@ -210,7 +220,9 @@ export class AppSearchService implements OnDestroy {
 		featureSource.forEach((sourceItem) => {
 			const feature = this.mapFeatureSourceToFeature(sourceItem as IFeature);
 			if (!feature.id || !feature.categoryId) {
-				this.logger.error(`invalid feature source ${JSON.stringify(sourceItem)}`);
+				this.logger.error(
+					`[AppSearch]invalid feature source ${JSON.stringify(sourceItem)}`
+				);
 				return;
 			}
 
@@ -236,15 +248,36 @@ export class AppSearchService implements OnDestroy {
 		}
 	}
 
-	private runInitialDetectionProcess() {
+	private async runFullFeaturesDetections() {
 		const taskStack = Object.values(this.featureMap).filter(
 			(feature) => !(feature as IFeature).applicable
 		);
 
-		// launch 3 detecton thread at initialization
-		for (let i = 0; i < 3; i++) {
-			this.mockDetectionThread(taskStack as IFeature[], `initial detection ${i}`);
+		let counter = 0;
+		let parallelThread = Math.min(5, taskStack.length);
+		if (parallelThread === 0) {
+			return;
 		}
+
+		this.logger.info(`[AppSearch]Full feature detections start`);
+		Array.from(Array(parallelThread)).forEach(async () => {
+			const mockThreadId = `Full feature ${counter++}`;
+			const startTime = Date.now();
+			await this.mockDetectionThread(taskStack as IFeature[], mockThreadId);
+			if (--parallelThread <= 0) {
+				this.logger.info(`[AppSearch]Full features detections end`);
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.LastFullFeaturesDetectionTime,
+					Date.now()
+				);
+			}
+
+			this.logger.info(
+				`[AppSearch]Detection thread(${mockThreadId}) end, Duriation: ${
+					Date.now() - startTime
+				}`
+			);
+		});
 	}
 
 	private mapFeatureSourceToFeature(sourceItem: IFeature): IFeature {
@@ -265,22 +298,31 @@ export class AppSearchService implements OnDestroy {
 		return feature;
 	}
 
-	private checkFeatureApplicable(
+	private verifyFeatureApplicability(
 		features: IFeature[],
 		maxParallel: number,
 		timeout: number
 	): Observable<SearchResult> {
 		return new Observable((subscriber) => {
-			let parallelThread = Math.min(maxParallel, features.length);
-			const taskStack = Array.from(features);
+			const taskStack = Array.from(
+				features.filter((feaure) => feaure.applicable === undefined)
+			);
+
+			let parallelThread = Math.min(maxParallel, taskStack.length);
+			if (parallelThread <= 0) {
+				this.searchComplete(subscriber, null, ResultType.complete, features);
+			}
 
 			let timeoutHandler = setTimeout(() => {
 				timeoutHandler = null;
 				this.searchComplete(subscriber, null, ResultType.timeout, features);
 			}, timeout);
 
+			this.logger.info(
+				`[AppSearch]Detection threads start, Feature Counts:${taskStack.length}`
+			);
+
 			let counter = 0;
-			this.logger.info(`Detection thread start , Feature Counts:${features.length}`);
 			Array.from(Array(parallelThread)).forEach(async () => {
 				const mockThreadId = counter++;
 				const startTime = Date.now();
@@ -290,15 +332,11 @@ export class AppSearchService implements OnDestroy {
 				}
 
 				this.logger.info(
-					`Detection thread end: ThreadId:${mockThreadId}, Duriation: ${
+					`[AppSearch]Detection thread(${mockThreadId}) end, Duriation: ${
 						Date.now() - startTime
 					}`
 				);
 			});
-
-			if (parallelThread <= 0) {
-				this.searchComplete(subscriber, timeoutHandler, ResultType.complete, features);
-			}
 		});
 	}
 
@@ -319,6 +357,14 @@ export class AppSearchService implements OnDestroy {
 			)
 		);
 		subscriber.complete();
+
+		if (
+			!this.lastFullFeaturesDetectionTime ||
+			Math.abs(Date.now() - this.lastFullFeaturesDetectionTime) > 24 * 60 * 1000 // 8 hours
+		) {
+			this.lastFullFeaturesDetectionTime = Date.now();
+			this.runFullFeaturesDetections();
+		}
 	}
 
 	private async mockDetectionThread(taskStack: IFeature[], mockThreadId: any) {
@@ -332,24 +378,47 @@ export class AppSearchService implements OnDestroy {
 				return;
 			}
 
+			const applicable = feature.applicable;
+
 			this.logger.info(
-				`Single featue detection start, ThreadId:${mockThreadId} - FeatureId:${feature.id}`
+				`[AppSearch]Single featue detection start, ThreadId:${mockThreadId} - FeatureId:${feature.id}`
 			);
 			const startTime = Date.now();
 			feature.applicable = Boolean(
 				await this.applicableDetections.isFeatureApplicable(feature.id)
 			);
 			this.logger.info(
-				`Single featue detection end, ThreadId:${mockThreadId} - Duration:${
+				`[AppSearch]Single featue detection end, ThreadId:${mockThreadId} - Duration:${
 					Date.now() - startTime
 				} -result: ${feature.applicable} - FeatureId:${feature.id}`
 			);
 
 			this.featureStatusMap[feature.id] = feature.applicable;
+			if (applicable !== feature.applicable) {
+				this.persistFeatureStatus();
+			}
+		}
+	}
+
+	public persistFeatureStatus() {
+		if (this.featureStatusUpdate) {
+			return;
+		}
+		this.featureStatusUpdate = true;
+		setTimeout(() => {
+			if (!this.featureStatusUpdate) {
+				return;
+			}
+
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.FeaturesApplicableStatus,
 				this.featureStatusMap
 			);
-		}
+
+			this.logger.info(
+				`[AppSearch]Persist feature status, ${JSON.stringify(this.featureStatusMap)}`
+			);
+			this.featureStatusUpdate = false;
+		}, 2000);
 	}
 }
