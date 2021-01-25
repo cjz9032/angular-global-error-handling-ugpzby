@@ -19,9 +19,7 @@ export class VantageShellService {
 	public readonly isShellAvailable: boolean;
 	private phoenix: any;
 	private shell: any;
-	constructor(
-		private commonService: CommonService
-	) {
+	constructor(private commonService: CommonService) {
 		this.shell = this.getVantageShell();
 		if (this.shell) {
 			this.isShellAvailable = true;
@@ -98,31 +96,24 @@ export class VantageShellService {
 	}
 
 	private setConsoleLogProxy() {
-		const consoleProxy = Object.assign({}, console);
 		const logger = this.getLogger();
 		console.log = (msg, ...args) => {
 			const message = this.getMessage(msg);
-			consoleProxy.log(message, args);
 			if (logger) {
-				// msg = JSON.stringify(msg);
 				logger.info(message);
 			}
 		};
 
 		console.error = (msg, ...args) => {
 			const message = this.getMessage(msg);
-			consoleProxy.error(message, args);
 			if (logger) {
-				// msg = JSON.stringify(msg);
 				logger.error(message);
 			}
 		};
 
 		console.warn = (msg, ...args) => {
 			const message = this.getMessage(msg);
-			consoleProxy.warn(message, args);
 			if (logger) {
-				// msg = JSON.stringify(msg);
 				logger.warn(message);
 			}
 		};
@@ -524,7 +515,7 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-	
+
 	public getIntelligentSensing(): any {
 		if (this.phoenix) {
 			return this.phoenix.hwsettings.lis.intelligentSensing;
