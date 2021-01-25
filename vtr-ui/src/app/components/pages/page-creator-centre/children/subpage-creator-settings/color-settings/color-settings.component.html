@@ -1,32 +1,26 @@
 <div class="color-settings">
-    <div class="row">
-        <div class="col-auto left-icon">
-            <span [ngClass]="'icomoon icomoon-HDR'"
-                role="img"
-                attr.aria-label="{{'device.deviceSettings.power.powerSmartSettings.intelligentCooling.title' | translate}}"></span>
-        </div>
-        <div class="col text-wrap subtitle">
-            <h4 id="powerSmartSettings.intelligentCooling.title"
-                attr.aria-label="powerSmartSettings.intelligentCooling.title">
-                <!-- color settings  -->
-                {{'smb.creatorCentre.creatorSettings.colorSettings.title' | translate}}
-            </h4>
-            <p
-                aria-hidden="false">
-                <span class="select-title"
-                    id="powerSmartSettings-dytc5-description"
-                    role="text">
-                    {{'smb.creatorCentre.creatorSettings.colorSettings.desc' | translate}}
-                </span>
-            </p>
-            <p
-                aria-hidden="false">
-                <span class="select-title"
-                    id="powerSmartSettings-dytc5-description"
-                    role="text">
-                    {{'smb.creatorCentre.creatorSettings.colorSettings.clickHere' | translate}}
-                </span>
-            </p>
-        </div>
-    </div>
+    <vtr-ui-row-switch
+        [title]="'smb.creatorCentre.creatorSettings.windowsHdColor.title' | translate"
+        componentName="windows hd color"
+        [caption]="'smb.creatorCentre.creatorSettings.windowsHdColor.description' | translate"
+        [isSwitchVisible]="false"
+        [leftIcon]="['icomoon', 'icomoon-HDR']"
+        [isLastChild]="true"
+        [showChildContent]="true"
+        [theme]="'white'"
+        [switchId]="'windows-hd-color'">
+        <p class="windowsHDColorLink">
+            <span role="text"
+                id="smbHdr-link-launcher">{{'smb.creatorCentre.creatorSettings.windowsHdColor.link.launcher' | translate}}</span>
+            <a id="smbHdr-link-here"
+                href="javascript:void()"
+                role="link"
+                attr.aria-label="smbHdr-link-here"
+                (click)="launchProtocol('ms-settings:display')"
+                (keydown.enter)="launchProtocol('ms-settings:display')"
+                class="">{{'smb.creatorCentre.creatorSettings.windowsHdColor.link.here' | translate}}</a>
+            <span role="text"
+                id="smbHdr-link-punctuation">{{'smb.creatorCentre.creatorSettings.windowsHdColor.link.punctuation' | translate}}</span>
+        </p>
+    </vtr-ui-row-switch>
 </div>

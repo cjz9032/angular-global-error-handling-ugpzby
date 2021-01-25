@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
   selector: 'vtr-color-settings',
@@ -7,5 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorSettingsComponent{
 
-  constructor() { }
+  constructor(
+    private deviceService: DeviceService
+  ) { }
+
+  launchProtocol(protocol: string) {
+		this.deviceService.launchUri(protocol);
+	}
 }

@@ -16,9 +16,10 @@
 						<li class="common-li-padding">
 							Here is Auto Close.
 						</li>
-						<li class="common-li-padding">
+                        <li class="common-li-padding"
+                            *ngIf="windowsOSVersion > 17763">
 							<vtr-color-settings></vtr-color-settings>
-						</li>
+                        </li>
 					</ul>
 				</vtr-container-collapsible>
 			</div>
