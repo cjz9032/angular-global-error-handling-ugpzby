@@ -5366,5 +5366,35 @@
 		"title": "Send os din stemme",
 		"likeUs": "Synes godt om os",
 		"feedback": "Give feedback"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Indstillinger for Windows HD Color",
+					"description": "Windows HD Color viser indhold med et højt dynamisk område (HDR) og et bredt farveområde (WCG), f.eks. billeder, videoer og spil på din enhed, hvis det understøttes.",
+					"link": {
+						"launcher": "Hvis du vil ændre indstillingerne for Windows HD Color, skal du klikke ",
+						"here": "her",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

@@ -5366,5 +5366,35 @@
 		"title": "Pošlite nám svoj hlas",
 		"likeUs": "Označiť, že sa vám páčime",
 		"feedback": "Poskytnúť spätnú väzbu"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Nastavenia farieb Windows HD",
+					"description": "Farebné rozlíšenie Windows HD zobrazuje v zariadení obsah (ak je podporovaný) s vysokým dynamickým rozsahom (HDR) a širokým rozsahom farieb (WCG), ako sú fotografie, videá a hry.",
+					"link": {
+						"launcher": "Ak chcete zmeniť nastavenia farieb Windows HD, kliknite ",
+						"here": "sem",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

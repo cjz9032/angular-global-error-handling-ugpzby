@@ -5366,5 +5366,35 @@
 		"title": "Поділіться думкою",
 		"likeUs": "Вподобайте нас",
 		"feedback": "Залишіть відгук"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Настройки Windows HD color",
+					"description": "У режимі Windows HD color (підтримується не на всіх пристроях) вміст, наприклад фотографії, відео та ігри, відображається з високим динамічним діапазоном (HDR) і широкою кольоровою гамою (WCG).",
+					"link": {
+						"launcher": "Щоб змінити настройки Windows HD color, натисніть ",
+						"here": "тут",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

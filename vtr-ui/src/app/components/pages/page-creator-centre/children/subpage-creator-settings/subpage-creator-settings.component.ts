@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
 
 @Component({
   selector: 'vtr-subpage-creator-settings',
@@ -7,5 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubpageCreatorSettingsComponent {
 
-  constructor() { }
+  public windowsOSVersion: number = undefined;
+
+  constructor(
+    private windowsVersionService: WindowsVersionService
+  ) {
+    this.windowsOSVersion = windowsVersionService.currentBuildVersion;
+   }
 }

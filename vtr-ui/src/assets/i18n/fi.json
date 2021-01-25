@@ -5366,5 +5366,35 @@
 		"title": "Anna äänesi kuulua",
 		"likeUs": "Tykkää meistä",
 		"feedback": "Antaa palautetta"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Windows HD Color -asetukset",
+					"description": "Windows HD Color näyttää HDR (High Dynamic Range)- ja WCG (Wide Color Gamut) -sisältöä, kuten valokuvia, videoita ja pelejä tuetuilla laitteilla.",
+					"link": {
+						"launcher": "Voit muuttaa Windows HD Color -asetuksia napsauttamalla ",
+						"here": "tätä",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

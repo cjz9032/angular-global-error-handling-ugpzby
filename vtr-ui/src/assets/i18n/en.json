@@ -5969,12 +5969,15 @@
 			"creatorSettings": {
 				"title": "Creator settings",
 				"desc": "Customize your hardware settings to configure your system performance for a better experience.",
-				"colorSettings": {
+				"windowsHdColor": {
 					"title": "Windows HD color settings",
-					"desc": "Windows HD color displays high dynamic range (HDR) and wide color gamut (WCG) content, such as photos, videos, and games on your device if supported.",
-					"clickHere": "To change Windows HD color settings, click here."
+					"description": "Windows HD color displays high dynamic range (HDR) and wide color gamut (WCG) content, such as photos, videos, and games on your device if supported.",
+					"link": {
+						"launcher": "To change Windows HD color settings, click ",
+						"here": "here",
+						"punctuation": "."
+					}
 				}
-
 			},
 			"easyRendering": {
 				"title": "Easy rendering"
@@ -5984,8 +5987,6 @@
 				"title": "Color calibration"
 
 			}
-
 		}
-
 	}
 }

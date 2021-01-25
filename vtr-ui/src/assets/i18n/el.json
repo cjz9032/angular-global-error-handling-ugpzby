@@ -5366,5 +5366,35 @@
 		"title": "Στείλτε μας τη φωνή σας",
 		"likeUs": "Βάλτε \"Μου αρέσει\"",
 		"feedback": "Αφήστε σχόλια"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Ρυθμίσεις Windows HD Color",
+					"description": "Το Windows HD Color εμφανίζει περιεχόμενο υψηλού δυναμικού εύρους (HDR) και ευρεία γκάμα χρωμάτων (WCG), όπως φωτογραφίες, βίντεο και παιχνίδια στη συσκευή σας, εάν υποστηρίζονται.",
+					"link": {
+						"launcher": "Για να αλλάξετε τις ρυθμίσεις Windows HD Color, κάντε κλικ ",
+						"here": "εδώ",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

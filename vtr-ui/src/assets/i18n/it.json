@@ -5366,5 +5366,35 @@
 		"title": "Inviaci la tua opinione",
 		"likeUs": "Metti Mi piace",
 		"feedback": "Lascia feedback"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Impostazioni colore HD di Windows",
+					"description": "Il colore HD di Windows visualizza i contenuti HDR (High Dynamic Range) e WCG (Wide Color Gamut), come foto, video e giochi sul dispositivo, se supportati.",
+					"link": {
+						"launcher": "Per modificare le impostazioni dei colori HD di Windows, fare clic ",
+						"here": "qui",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

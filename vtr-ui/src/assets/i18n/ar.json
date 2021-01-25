@@ -5366,5 +5366,35 @@
 		"title": "أرسل لنا صوتك",
 		"likeUs": "‏‫سجل إعجابك بنا",
 		"feedback": "تقديم ملاحظات"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "إعدادات ألوان Windows HD",
+					"description": "يعرض لون Windows HD النطاق الديناميكي المرتفع (HDR) وسلسلة الألوان العريضة (WCG)، مثل الصور والفيديوهات والألعاب على جهازك في حالة دعمه.",
+					"link": {
+						"launcher": "لتغيير إعدادات ألوان Windows HD، انقر ",
+						"here": "هنا",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

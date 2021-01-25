@@ -5366,5 +5366,35 @@
 		"title": "Pošlete nám svůj hlas",
 		"likeUs": "Olajkujte nás",
 		"feedback": "Zanechat zpětnou vazbu"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Nastavení funkce Windows HD color",
+					"description": "Pokud je funkce Windows HD color podporována, zobrazuje ve vašem zařízení obsah s vysokým dynamickým rozsahem (HDR) a širokým barevným gamutem (WCG), jako jsou fotografie, videa a hry.",
+					"link": {
+						"launcher": "Chcete-li změnit nastavení funkce Windows HD color, klikněte na ",
+						"here": "sem",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

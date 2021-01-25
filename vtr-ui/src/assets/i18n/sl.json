@@ -5366,5 +5366,35 @@
 		"title": "Pošljite nam svoj glas",
 		"likeUs": "Všečkajte nas",
 		"feedback": "Povratne informacije"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Nastavitve funkcij Windows HD Color",
+					"description": "Funkcije Windows HD Color prikazujejo vsebino z visokim dinamičnim razponom (HDR) in široko barvno paleto (WCG), kot so fotografije, videoposnetki in igre v vaši napravi, če so podprte.",
+					"link": {
+						"launcher": "Če želite spremeniti nastavitve funkcij Windows HD Color, kliknite ",
+						"here": "tukaj",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

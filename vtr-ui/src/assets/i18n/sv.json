@@ -5366,5 +5366,35 @@
 		"title": "Ge oss din röst",
 		"likeUs": "Gilla oss",
 		"feedback": "Ge feedback"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Windows HD-färginställningar",
+					"description": "Windows HD-färg visar innehåll med HDR (High Dynamic Range) och WCG (Wide Color Gamut), som foton, videor och spel, om detta stöds på enheten.",
+					"link": {
+						"launcher": "Du kan ändra Windows HD-färginställningarna genom att klicka ",
+						"here": "här",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

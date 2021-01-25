@@ -5366,5 +5366,35 @@
 		"title": "의견을 보내주세요",
 		"likeUs": "좋아요",
 		"feedback": "피드백 남기기"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Windows HD Color 설정",
+					"description": "Windows HD Color는 장치에서 사진, 비디오 및 게임과 같은 HDR(High Dynamic Range) 및 WCG(Wide Color Gamut) 컨텐츠를 표시합니다(지원되는 경우).",
+					"link": {
+						"launcher": "Windows HD Color 설정을 변경하려면 다음을 클릭하십시오. ",
+						"here": "여기",
+						"punctuation": "."
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }

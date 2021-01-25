@@ -5366,5 +5366,35 @@
 		"title": "讓我們聽到您的聲音",
 		"likeUs": "為我們按讚",
 		"feedback": "留下意見"
+	},
+	"smb": {
+		"meetingExperience": {
+			"meetingManager": {
+
+			}
+		},
+		"creatorCentre": {
+			"creatorSettings": {
+				"title": "",
+				"desc": "",
+				"windowsHdColor": {
+					"title": "Windows HD 色彩設定",
+					"description": "Windows HD 色彩在您的裝置上（若支援）顯示高動態範圍 (HDR) 和廣色域 (WCG) 內容，例如相片、影片和遊戲。",
+					"link": {
+						"launcher": "若要變更 Windows HD 色彩設定，請按一下",
+						"here": "這裡",
+						"punctuation": "。"
+					}
+				}
+			},
+			"easyRendering": {
+				"title": ""
+
+			},
+			"colorCalibration": {
+				"title": ""
+
+			}
+		}
 	}
 }
