@@ -488,11 +488,7 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (
-			segment === SegmentConst.ConsumerBase ||
-			segment === SegmentConst.ConsumerGaming ||
-			segment === SegmentConst.ConsumerEducation
-		) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
 			const capability = await this.powerService.getITSModeForICIdeapad();
 			return capability?.available;
 		}
@@ -541,12 +537,7 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (
-			segment === SegmentConst.ConsumerBase ||
-			segment === SegmentConst.ConsumerGaming ||
-			segment === SegmentConst.ConsumerEducation ||
-			segment === SegmentConst.SMB
-		) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB) {
 			return await this.powerService.getConservationModeStatusIdeaNoteBook();
 		}
 
@@ -558,12 +549,7 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (
-			segment === SegmentConst.ConsumerBase ||
-			segment === SegmentConst.ConsumerGaming ||
-			segment === SegmentConst.ConsumerEducation ||
-			segment === SegmentConst.SMB
-		) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB) {
 			const capability = await this.powerService.getRapidChargeModeStatusIdeaNoteBook();
 			return capability?.available;
 		}
@@ -596,11 +582,7 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (
-			segment === SegmentConst.ConsumerBase ||
-			segment === SegmentConst.ConsumerGaming ||
-			segment === SegmentConst.ConsumerEducation
-		) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
 			const capability = await this.powerService.getFlipToStartCapability();
 			return capability.Supported;
 		}
@@ -642,12 +624,7 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (
-			segment === SegmentConst.ConsumerBase ||
-			segment === SegmentConst.ConsumerGaming ||
-			segment === SegmentConst.ConsumerEducation ||
-			segment === SegmentConst.SMB
-		) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment) || segment === SegmentConst.SMB) {
 			return await this.inputAccessoriesService.getAutoKBDBacklightCapability();
 		}
 
@@ -743,7 +720,10 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (segment !== SegmentConst.SMB) {
+		if (
+			SegmentConstHelper.includedInCommonConsumer(segment) ||
+			segment === SegmentConst.Commercial
+		) {
 			return await this.smartAssistService.getZeroTouchLoginVisibility();
 		}
 
@@ -755,7 +735,10 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (segment !== SegmentConst.SMB) {
+		if (
+			SegmentConstHelper.includedInCommonConsumer(segment) ||
+			segment === SegmentConst.Commercial
+		) {
 			return await this.smartAssistService.getZeroTouchLockVisibility();
 		}
 
@@ -767,11 +750,7 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (
-			segment === SegmentConst.ConsumerBase ||
-			segment === SegmentConst.ConsumerGaming ||
-			segment === SegmentConst.ConsumerEducation
-		) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
 			const capability = await this.smartAssistService.getVideoPauseResumeStatus();
 			return capability.available;
 		}
@@ -784,11 +763,7 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (
-			segment === SegmentConst.ConsumerBase ||
-			segment === SegmentConst.ConsumerGaming ||
-			segment === SegmentConst.ConsumerEducation
-		) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
 			const capability = await this.smartAssistService.getAntiTheftStatus();
 			return capability.available;
 		}
@@ -801,11 +776,7 @@ export class FeatureApplicableDetections {
 			LocalStorageKey.LocalInfoSegment
 		);
 
-		if (
-			segment === SegmentConst.ConsumerBase ||
-			segment === SegmentConst.ConsumerGaming ||
-			segment === SegmentConst.ConsumerEducation
-		) {
+		if (SegmentConstHelper.includedInCommonConsumer(segment)) {
 			const capability = await this.smartAssistService.getSuperResolutionStatus();
 			return capability.available;
 		}

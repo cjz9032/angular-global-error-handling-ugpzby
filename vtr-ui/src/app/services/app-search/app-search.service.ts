@@ -18,7 +18,6 @@ import { LoggerService } from '../logger/logger.service';
 import { DeviceService } from '../device/device.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { FeatureApplicableDetections } from './feature-applicable-detections';
-import { startCase } from 'lodash';
 
 @Injectable({
 	providedIn: 'root',
@@ -78,7 +77,7 @@ export class AppSearchService implements OnDestroy {
 			.search(userInput)
 			?.map((feature) => Object.assign({}, this.featureMap[feature.item.id]));
 
-		return this.checkFeatureApplicable(featureList, 10, 20000);
+		return this.checkFeatureApplicable(featureList, 10, 3000);
 	}
 
 	public handleAction(feature: IFeature) {
@@ -294,6 +293,10 @@ export class AppSearchService implements OnDestroy {
 			const feature = taskStack.pop();
 			if (!feature) {
 				break;
+			}
+
+			if (feature.applicable) {
+				return;
 			}
 
 			this.logger.info(
