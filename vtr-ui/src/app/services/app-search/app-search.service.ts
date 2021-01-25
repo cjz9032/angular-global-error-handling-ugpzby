@@ -18,6 +18,8 @@ import { LoggerService } from '../logger/logger.service';
 import { DeviceService } from '../device/device.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { FeatureApplicableDetections } from './feature-applicable-detections';
+import { LocalCacheService } from '../local-cache/local-cache.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root',
@@ -25,6 +27,7 @@ import { FeatureApplicableDetections } from './feature-applicable-detections';
 export class AppSearchService implements OnDestroy {
 	private featureLoad = false;
 	private featureMap = {};
+	private featureStatusMap = {};
 	private menuRouteMap = {};
 	private subscription: Subscription;
 	private searchEngine: SearchEngineWraper;
@@ -36,7 +39,8 @@ export class AppSearchService implements OnDestroy {
 		private logger: LoggerService,
 		private deviceService: DeviceService,
 		private hypService: HypothesisService,
-		private applicableDetections: FeatureApplicableDetections
+		private applicableDetections: FeatureApplicableDetections,
+		private localCacheService: LocalCacheService
 	) {
 		(async () => {
 			const available = await this.isAvailabe();
@@ -48,7 +52,11 @@ export class AppSearchService implements OnDestroy {
 				);
 
 				this.searchEngine = new SearchEngineWraper();
-				this.loadAsync();
+				await this.loadFeatureListAsync();
+				setTimeout(() => {
+					this.logger.info(`start to run  run initial detection process`);
+					this.runInitialDetectionProcess();
+				}, 3000);
 			}
 		})();
 	}
@@ -187,14 +195,12 @@ export class AppSearchService implements OnDestroy {
 		return true;
 	}
 
-	private async loadAsync() {
-		if (!this.featureLoad) {
-			await this.translate.get('appSearch').toPromise();
-			this.load();
+	private async loadFeatureListAsync() {
+		if (this.featureLoad) {
+			return;
 		}
-	}
 
-	private async load() {
+		await this.translate.get('appSearch').toPromise();
 		if (this.featureLoad) {
 			this.logger.info(`waringing: duplicate feature loading-1`);
 			return;
@@ -211,7 +217,41 @@ export class AppSearchService implements OnDestroy {
 			this.featureMap[feature.id] = feature;
 		});
 
+		this.loadFeatureStatusFromCache();
+
 		this.searchEngine.updateSearchContext(Object.values(this.featureMap));
+	}
+
+	private loadFeatureStatusFromCache() {
+		const applicableStatusStr = this.localCacheService.getLocalCacheValue(
+			localStorage.FeaturesApplicableStatus
+		);
+		if (applicableStatusStr) {
+			let applicableStatus;
+			try {
+				applicableStatus = JSON.parse(applicableStatusStr);
+			} catch {}
+
+			if (applicableStatus) {
+				const featureIds = Object.keys(applicableStatus);
+				featureIds.forEach((featureId) => {
+					if (this.featureMap[featureId]) {
+						this.featureMap[featureId].applicable = applicableStatus[featureId];
+					}
+				});
+			}
+		}
+	}
+
+	private runInitialDetectionProcess() {
+		const taskStack = Object.values(this.featureMap).filter(
+			(feature) => !(feature as IFeature).applicable
+		);
+
+		// launch 3 detecton thread at initialization
+		for (let i = 0; i < 3; i++) {
+			this.mockDetectionThread(taskStack as IFeature[], `initial detection ${i}`);
+		}
 	}
 
 	private mapFeatureSourceToFeature(sourceItem: IFeature): IFeature {
@@ -288,7 +328,7 @@ export class AppSearchService implements OnDestroy {
 		subscriber.complete();
 	}
 
-	private async mockDetectionThread(taskStack, mockThreadId) {
+	private async mockDetectionThread(taskStack: IFeature[], mockThreadId: any) {
 		while (true) {
 			const feature = taskStack.pop();
 			if (!feature) {
@@ -308,6 +348,12 @@ export class AppSearchService implements OnDestroy {
 				`Single featue detection end, ThreadId:${mockThreadId} - Duration:${
 					Date.now() - startTime
 				} -result: ${feature.applicable} - FeatureId:${feature.id}`
+			);
+
+			this.featureStatusMap[feature.id] = feature.applicable;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.FeaturesApplicableStatus,
+				this.featureStatusMap
 			);
 		}
 	}

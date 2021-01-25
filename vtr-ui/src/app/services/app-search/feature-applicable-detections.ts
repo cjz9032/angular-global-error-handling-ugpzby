@@ -20,12 +20,14 @@ import { CameraFeedService } from '../camera/camera-feed/camera-feed.service';
 import { AudioService } from '../audio/audio.service';
 import { InputAccessoriesService } from '../input-accessories/input-accessories.service';
 import { SmartAssistService } from '../smart-assist/smart-assist.service';
+import { finalize } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class FeatureApplicableDetections {
 	private detectionFuncMap = {};
+	private invokeCache = {};
 	private detectionFuncList: IApplicableDetector[] = [
 		// dashboard
 		{
@@ -293,12 +295,19 @@ export class FeatureApplicableDetections {
 	}
 
 	public async isFeatureApplicable(featureId: string) {
-		try {
-			return await this.detectionFuncMap[featureId]?.();
-		} catch (ex) {
-			this.logger.error(`check applicable error:${JSON.stringify(featureId)}: ${ex.message}`);
+		if (!this.detectionFuncMap[featureId]) {
 			return false;
 		}
+
+		try {
+			return this.mergeDuplicateInvocation(featureId, () =>
+				this.detectionFuncMap[featureId]()
+			);
+		} catch (ex) {
+			this.logger.error(`check applicable error:${JSON.stringify(featureId)}: ${ex.message}`);
+		}
+
+		return false;
 	}
 
 	private isDashboardApplicable() {
@@ -425,7 +434,29 @@ export class FeatureApplicableDetections {
 		return true;
 	}
 
+	private async mergeDuplicateInvocation(funcId: string, func: () => Promise<any>) {
+		const invokeCache: any = this.invokeCache;
+		if (!invokeCache[funcId]) {
+			invokeCache[funcId] = func();
+		}
+
+		let applicable;
+		try {
+			applicable = await invokeCache[funcId];
+		} finally {
+			invokeCache[funcId] = null;
+		}
+
+		return applicable;
+	}
+
 	private async isBatteryFeatureApplicable() {
+		return this.mergeDuplicateInvocation('isBatteryFeatureApplicable', () =>
+			this.checkBatteryFeatureApplicable()
+		);
+	}
+
+	private async checkBatteryFeatureApplicable() {
 		const machineType = await this.deviceService.getMachineType();
 		if (machineType === 0 || machineType === 1) {
 			const result = await this.batteryService.getBatteryDetail();
@@ -465,7 +496,9 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isPMDriverStatusApplicable() {
-		return await this.powerService.getPMDriverStatus();
+		return this.mergeDuplicateInvocation('isPMDriverStatusApplicable', () =>
+			this.powerService.getPMDriverStatus()
+		);
 	}
 
 	private async isEasyResumeApplicable() {
@@ -521,7 +554,14 @@ export class FeatureApplicableDetections {
 	private async isSmartKeyboardBacklightApplicable() {
 		return await this.inputAccessoriesService.getAutoKBDBacklightCapability();
 	}
+
 	private async isHiddenKeyboardFunctionApplicable() {
+		return this.mergeDuplicateInvocation('checkUdkAndkeyboardMapCapability', () =>
+			this.checkUdkAndkeyboardMapCapability()
+		);
+	}
+
+	private async checkUdkAndkeyboardMapCapability() {
 		const capability = await this.inputAccessoriesService.GetAllCapability();
 		if (capability?.uDKCapability || capability?.keyboardMapCapability) {
 			return true;
@@ -545,7 +585,9 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isUserDefinedKeyApplicable() {
-		return this.isHiddenKeyboardFunctionApplicable();
+		return this.mergeDuplicateInvocation('checkUdkAndkeyboardMapCapability', () =>
+			this.checkUdkAndkeyboardMapCapability()
+		);
 	}
 
 	private async isFnAndCtrlkeySwapApplicable() {
