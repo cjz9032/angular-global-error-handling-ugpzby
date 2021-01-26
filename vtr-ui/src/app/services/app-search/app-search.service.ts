@@ -18,6 +18,8 @@ import { LoggerService } from '../logger/logger.service';
 import { DeviceService } from '../device/device.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { FeatureApplicableDetections } from './feature-applicable-detections';
+import { LocalCacheService } from '../local-cache/local-cache.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 
 @Injectable({
 	providedIn: 'root',
@@ -25,6 +27,7 @@ import { FeatureApplicableDetections } from './feature-applicable-detections';
 export class AppSearchService implements OnDestroy {
 	private featureLoad = false;
 	private featureMap = {};
+	private featureStatusMap = {};
 	private menuRouteMap = {};
 	private subscription: Subscription;
 	private searchEngine: SearchEngineWraper;
@@ -36,7 +39,8 @@ export class AppSearchService implements OnDestroy {
 		private logger: LoggerService,
 		private deviceService: DeviceService,
 		private hypService: HypothesisService,
-		private applicableDetections: FeatureApplicableDetections
+		private applicableDetections: FeatureApplicableDetections,
+		private localCacheService: LocalCacheService
 	) {
 		(async () => {
 			const available = await this.isAvailabe();
@@ -48,7 +52,11 @@ export class AppSearchService implements OnDestroy {
 				);
 
 				this.searchEngine = new SearchEngineWraper();
-				this.loadAsync();
+				await this.loadFeatureListAsync();
+				setTimeout(() => {
+					this.logger.info(`start to run  run initial detection process`);
+					this.runInitialDetectionProcess();
+				}, 5000);
 			}
 		})();
 	}
@@ -77,7 +85,7 @@ export class AppSearchService implements OnDestroy {
 			.search(userInput)
 			?.map((feature) => Object.assign({}, this.featureMap[feature.item.id]));
 
-		return this.checkFeatureApplicable(featureList, 10, 20000);
+		return this.checkFeatureApplicable(featureList, 10, 3000);
 	}
 
 	public handleAction(feature: IFeature) {
@@ -187,14 +195,12 @@ export class AppSearchService implements OnDestroy {
 		return true;
 	}
 
-	private async loadAsync() {
-		if (!this.featureLoad) {
-			await this.translate.get('appSearch').toPromise();
-			this.load();
+	private async loadFeatureListAsync() {
+		if (this.featureLoad) {
+			return;
 		}
-	}
 
-	private async load() {
+		await this.translate.get('appSearch').toPromise();
 		if (this.featureLoad) {
 			this.logger.info(`waringing: duplicate feature loading-1`);
 			return;
@@ -211,7 +217,34 @@ export class AppSearchService implements OnDestroy {
 			this.featureMap[feature.id] = feature;
 		});
 
+		this.loadFeatureStatusFromCache();
+
 		this.searchEngine.updateSearchContext(Object.values(this.featureMap));
+	}
+
+	private loadFeatureStatusFromCache() {
+		const applicableStatus = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.FeaturesApplicableStatus
+		);
+		if (applicableStatus) {
+			const featureIds = Object.keys(applicableStatus);
+			featureIds.forEach((featureId) => {
+				if (this.featureMap[featureId]) {
+					this.featureMap[featureId].applicable = applicableStatus[featureId];
+				}
+			});
+		}
+	}
+
+	private runInitialDetectionProcess() {
+		const taskStack = Object.values(this.featureMap).filter(
+			(feature) => !(feature as IFeature).applicable
+		);
+
+		// launch 3 detecton thread at initialization
+		for (let i = 0; i < 3; i++) {
+			this.mockDetectionThread(taskStack as IFeature[], `initial detection ${i}`);
+		}
 	}
 
 	private mapFeatureSourceToFeature(sourceItem: IFeature): IFeature {
@@ -247,12 +280,20 @@ export class AppSearchService implements OnDestroy {
 			}, timeout);
 
 			let counter = 0;
+			this.logger.info(`Detection thread start , Feature Counts:${features.length}`);
 			Array.from(Array(parallelThread)).forEach(async () => {
 				const mockThreadId = counter++;
+				const startTime = Date.now();
 				await this.mockDetectionThread(taskStack, mockThreadId);
 				if (--parallelThread <= 0) {
 					this.searchComplete(subscriber, timeoutHandler, ResultType.complete, features);
 				}
+
+				this.logger.info(
+					`Detection thread end: ThreadId:${mockThreadId}, Duriation: ${
+						Date.now() - startTime
+					}`
+				);
 			});
 
 			if (parallelThread <= 0) {
@@ -280,16 +321,35 @@ export class AppSearchService implements OnDestroy {
 		subscriber.complete();
 	}
 
-	private async mockDetectionThread(taskStack, mockThreadId) {
+	private async mockDetectionThread(taskStack: IFeature[], mockThreadId: any) {
 		while (true) {
 			const feature = taskStack.pop();
 			if (!feature) {
 				break;
 			}
 
-			this.logger.info(`start detection for ${mockThreadId} - ${feature.id}`);
-			feature.applicable = await this.applicableDetections.isFeatureApplicable(feature.id);
-			this.logger.info(`end detection for ${mockThreadId} - ${feature.id}`);
+			if (feature.applicable) {
+				return;
+			}
+
+			this.logger.info(
+				`Single featue detection start, ThreadId:${mockThreadId} - FeatureId:${feature.id}`
+			);
+			const startTime = Date.now();
+			feature.applicable = Boolean(
+				await this.applicableDetections.isFeatureApplicable(feature.id)
+			);
+			this.logger.info(
+				`Single featue detection end, ThreadId:${mockThreadId} - Duration:${
+					Date.now() - startTime
+				} -result: ${feature.applicable} - FeatureId:${feature.id}`
+			);
+
+			this.featureStatusMap[feature.id] = feature.applicable;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.FeaturesApplicableStatus,
+				this.featureStatusMap
+			);
 		}
 	}
 }

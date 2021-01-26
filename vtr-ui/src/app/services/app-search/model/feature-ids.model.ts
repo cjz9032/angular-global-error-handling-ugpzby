@@ -41,15 +41,14 @@ export class AppSearch {
 			static readonly batteryChargeThresholdId = `appSearch.features.power.batteryChargeThreshold`;
 			static readonly batteryGaugeResetId = `appSearch.features.power.batteryGaugeReset`;
 			static readonly intelligentCoolingId = `appSearch.features.power.intelligentCooling`;
-			static readonly energyStarId = `appSearch.features.power.energyStar`;
-			static readonly easyResumeId = `appSearch.features.power.easyResume`;
-			static readonly performanceModeId = `appSearch.features.power.performanceMode`;
-			static readonly conservationModeId = `appSearch.features.power.conservationMode`;
-			static readonly desktopPowerPlanId = `appSearch.features.power.desktopPowerPlan`;
-			static readonly oLEDPowerSettingsId = `appSearch.features.power.oLEDPowerSettings`;
-			static readonly smartFliptoBootId = `appSearch.features.power.smartFliptoBoot`;
 			static readonly dynamicThermalControlId = `appSearch.features.power.dynamicThermalControl`;
+			static readonly performanceModeId = `appSearch.features.power.performanceMode`;
+			static readonly easyResumeId = `appSearch.features.power.easyResume`;
+			static readonly energyStarId = `appSearch.features.power.energyStar`;
+			static readonly conservationModeId = `appSearch.features.power.conservationMode`;
 			static readonly rapidChargeId = `appSearch.features.power.rapidCharge`;
+			static readonly desktopPowerPlanManagementId = `appSearch.features.power.desktopPowerPlanManagement`;
+			static readonly smartFliptoBootId = `appSearch.features.power.smartFliptoBoot`;
 			static readonly vantageToolbarId = `appSearch.features.power.vantageToolbar`;
 		};
 
@@ -60,6 +59,7 @@ export class AppSearch {
 			static readonly eyeCareModeId = `appSearch.features.cameraAndDisplay.eyeCareMode`;
 			static readonly cameraSettingsId = `appSearch.features.cameraAndDisplay.cameraSettings`;
 			static readonly cameraBackgroundBlurId = `appSearch.features.cameraAndDisplay.cameraBackgroundBlur`;
+			static readonly oLEDPowerSettingsId = `appSearch.features.cameraAndDisplay.oLEDPowerSettings`;
 		};
 
 		static Audio = class {

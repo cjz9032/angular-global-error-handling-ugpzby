@@ -11,6 +11,7 @@ import { FeatureClick, TaskAction } from 'src/app/services/metric/metrics.model'
 import { SupportService } from 'src/app/services/support/support.service';
 import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 interface IDisplayPage {
 	pageIdx: number;
@@ -150,7 +151,8 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		private commonService: CommonService,
 		private supportService: SupportService,
 		private localInfoService: LocalInfoService,
-		private metricService: MetricService
+		private metricService: MetricService,
+		private logger: LoggerService
 	) {}
 
 	ngOnInit(): void {
@@ -240,7 +242,11 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		this.updatePageTitle();
 
 		(async () => {
+			const startTime = Date.now();
+			this.logger.info(`Searching for ${userInput} start`);
 			const result = await this.searchService.search(userInput).toPromise();
+			this.logger.info(`Searching for ${userInput} end: Duration:${Date.now() - startTime}`);
+
 			this.populateSearchResults(result.features);
 			this.updatePageArray();
 			this.updateResultView(0);

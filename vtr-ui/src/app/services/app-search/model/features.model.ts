@@ -180,15 +180,7 @@ export const featureSource = [
 		},
 	},
 	{
-		id: AppSearch.FeatureIds.Power.desktopPowerPlanId,
-		categoryId: AppSearch.FeatureIds.Power.categoryId,
-		icon: ['fal', 'gem'],
-		action: {
-			menuId: MenuID.power,
-		},
-	},
-	{
-		id: AppSearch.FeatureIds.Power.oLEDPowerSettingsId,
+		id: AppSearch.FeatureIds.Power.desktopPowerPlanManagementId,
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
@@ -277,6 +269,14 @@ export const featureSource = [
 		icon: ['fal', 'gem'],
 		action: {
 			menuId: MenuID.displayCamera,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.CameraAndDisplay.oLEDPowerSettingsId,
+		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			menuId: MenuID.power,
 		},
 	},
 

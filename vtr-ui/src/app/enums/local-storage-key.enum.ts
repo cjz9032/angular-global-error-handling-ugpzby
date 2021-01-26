@@ -120,7 +120,8 @@ export enum LocalStorageKey {
 	// Ad policy local storage key
 	AdPolicyCache = '[LocalStorageKey] AdPolicyCache',
 	// App Search
-	UnSupportFeatures = '[LocalStorageKey] UnSupportFeatures',
+	FeaturesApplicableStatus = '[LocalStorageKey] FeaturesApplicableStatus',
+
 	TopRowFunctionsCapability = '[LocalStorageKey] TopRowFunctionsCapability',
 	BacklightCapability = '[LocalStorageKey] BacklightCapability',
 	GaugeResetInformation = '[LocalStorageKey] GaugeResetInformation',
@@ -248,8 +249,8 @@ export enum LocalStorageKey {
 
 	// Third party app
 	accessoryFeature = '[LocalStorageKey] AccessoryFeature', // Version 3.2
-	nahimicFeature = '[LocalStorageKey] Nahicim', 
-	xRiteFeature = '[LocalStorageKey] XRite', // Version 3.5 
+	nahimicFeature = '[LocalStorageKey] Nahicim',
+	xRiteFeature = '[LocalStorageKey] XRite', // Version 3.5
 
 	// Thermal mode
 	CurrentThermalModeStatus = '[LocalStorageKey] CurrentThermalModeStatus',
@@ -293,7 +294,7 @@ export enum LocalStorageKey {
 	LightingProfileEffectColor = '[LocalStorageKey] LightingProfileEffectColor',
 	LightingProfileEffectColorTop = '[LocalStorageKey] LightingProfileEffectColorTop',
 	LightingProfileEffectColorSide = '[LocalStorageKey] LightingProfileEffectColorSide',
-	
+
 	ProfileBrightness = '[LocalStorageKey] ProfileBrightness',
 	LightingCapabilities = '[LocalStorageKey] LightingCapabilities',
 	ProfileId = '[LocalStorageKey] ProfileId',

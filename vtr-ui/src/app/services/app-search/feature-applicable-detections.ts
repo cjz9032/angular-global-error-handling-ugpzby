@@ -13,12 +13,21 @@ import { IApplicableDetector as IApplicableDetector } from './model/interface.mo
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { DisplayService } from 'src/app/services/display/display.service';
+import { BatteryDetailService } from '../battery-detail/battery-detail.service';
+import { PowerService } from '../power/power.service';
+import { PowerDpmService } from '../power-dpm/power-dpm.service';
+import { CameraFeedService } from '../camera/camera-feed/camera-feed.service';
+import { AudioService } from '../audio/audio.service';
+import { InputAccessoriesService } from '../input-accessories/input-accessories.service';
+import { SmartAssistService } from '../smart-assist/smart-assist.service';
+import { finalize } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class FeatureApplicableDetections {
 	private detectionFuncMap = {};
+	private invokeCache = {};
 	private detectionFuncList: IApplicableDetector[] = [
 		// dashboard
 		{
@@ -73,7 +82,190 @@ export class FeatureApplicableDetections {
 		// Camera Settings
 		{
 			featureId: AppSearch.FeatureIds.CameraAndDisplay.cameraSettingsId,
-			isApplicable: async () => this.isCameraSettingsApplicable()
+			isApplicable: async () => this.isCameraSettingsApplicable(),
+		},
+		// device settings - display & camera
+		{
+			featureId: AppSearch.FeatureIds.Power.batteryInformationId,
+			isApplicable: async () => this.isBatteryFeatureApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.batteryDetailsId,
+			isApplicable: async () => this.isBatteryFeatureApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.acAdapterId,
+			isApplicable: async () => this.isBatteryFeatureApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.smartStandbyId,
+			isApplicable: async () => this.isSmartStandByApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.alwaysOnUSBId,
+			isApplicable: async () => this.isAlwaysOnUsbApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.airplanePowerModeId,
+			isApplicable: async () => this.isAirplanePowerModeIdApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.batteryChargeThresholdId,
+			isApplicable: async () => this.isGaugeResetApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.batteryGaugeResetId,
+			isApplicable: async () => this.isITSSettingsApplicable(),
+		},
+
+		{
+			featureId: AppSearch.FeatureIds.Power.intelligentCoolingId,
+			isApplicable: async () => this.isPMDriverStatusApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.dynamicThermalControlId,
+			isApplicable: async () => this.isPMDriverStatusApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.performanceModeId,
+			isApplicable: async () => this.isPMDriverStatusApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.easyResumeId,
+			isApplicable: async () => this.isEasyResumeApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.energyStarId,
+			isApplicable: async () => this.isEnergyStarApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.conservationModeId,
+			isApplicable: async () => this.isConservationModeStatusApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.rapidChargeId,
+			isApplicable: async () => this.isRapidChargeModeStatusApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.desktopPowerPlanManagementId,
+			isApplicable: async () => this.isPowerPlanManagementApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.smartFliptoBootId,
+			isApplicable: async () => this.isFlipToBootCapabilityApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Power.vantageToolbarId,
+			isApplicable: async () => this.isVantageToolBarStatusApplicable(),
+		},
+
+		// Cammera & Display
+		{
+			featureId: AppSearch.FeatureIds.CameraAndDisplay.cameraPrivacyModeId,
+			isApplicable: async () =>
+				(await this.displayService.getCameraPrivacyModeState())?.available,
+		},
+		{
+			featureId: AppSearch.FeatureIds.CameraAndDisplay.privacyGuardId,
+			isApplicable: async () => this.isPrivacyGuardApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.CameraAndDisplay.eyeCareModeId,
+			isApplicable: async () => true,
+		},
+		{
+			featureId: AppSearch.FeatureIds.CameraAndDisplay.cameraSettingsId,
+			isApplicable: async () => false,
+		},
+		{
+			featureId: AppSearch.FeatureIds.CameraAndDisplay.cameraBackgroundBlurId,
+			isApplicable: async () => this.cameraFeedService.getCameraBlurSettings(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.CameraAndDisplay.oLEDPowerSettingsId,
+			isApplicable: async () => this.displayService.getOLEDPowerControlCapability(),
+		},
+
+		// audio features
+		{
+			featureId: AppSearch.FeatureIds.Audio.dolbyAudioId,
+			isApplicable: async () => this.audioService.getDolbyMode(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Audio.microphoneSettingsId,
+			isApplicable: async () => this.audioService.getMicrophoneSettingsAsync(null),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Audio.automaticOptimizationForECourseId,
+			isApplicable: async () => this.audioService.getDolbyMode(),
+		},
+
+		// InputAccessories features
+		{
+			featureId: AppSearch.FeatureIds.InputAccessories.touchPadSettingsId,
+			isApplicable: async () => this.inputAccessoriesService.getTouchPadCapability(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.InputAccessories.trackPointSettingsId,
+			isApplicable: async () => this.isTrackPointSettingsApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.InputAccessories.keyboardBacklightId,
+			isApplicable: async () => this.inputAccessoriesService.getKBDBacklightCapability(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.InputAccessories.smartKeyboardBacklightId,
+			isApplicable: async () => this.isSmartKeyboardBacklightApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.InputAccessories.hiddenKeyboardFunctionsId,
+			isApplicable: async () => this.isHiddenKeyboardFunctionApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.InputAccessories.voIPHotkeyFunctionId,
+			isApplicable: async () => this.isVoIPHotkeyFunctionApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.InputAccessories.topRowKeyFunctionsId,
+			isApplicable: async () => this.isTopRowKeyFunctionsApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.InputAccessories.userDefinedKeyId,
+			isApplicable: async () => this.isUserDefinedKeyApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.InputAccessories.fnAndCtrlKeySwapId,
+			isApplicable: async () => this.isFnAndCtrlkeySwapApplicable(),
+		},
+
+		// smart assist features
+		{
+			featureId: AppSearch.FeatureIds.SmartAssist.activeProtectionSystemId,
+			isApplicable: async () => this.isActiveProtectionSystemApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.SmartAssist.intelligentSensingId,
+			isApplicable: async () => this.isIntelligentSensingApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.SmartAssist.zeroTouchLoginId,
+			isApplicable: async () => this.isZeroTouchLoginApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.SmartAssist.zeroTouchLockId,
+			isApplicable: async () => this.isZeroTouchLockApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.SmartAssist.zeroTouchVideoPlaybackId,
+			isApplicable: async () => this.isZeroTouchVideoPlaybackApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.SmartAssist.smartMotionAlarmId,
+			isApplicable: async () => this.isSmartMotionAlarmApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.SmartAssist.videoResolutionUpscalingSRId,
+			isApplicable: async () => this.isVideoResolutionUpscalingSRApplicable(),
 		},
 	];
 	Windows: any;
@@ -87,6 +279,13 @@ export class FeatureApplicableDetections {
 		private logger: LoggerService,
 		private vantageShellService: VantageShellService,
 		private displayService: DisplayService,
+		private batteryService: BatteryDetailService,
+		private powerService: PowerService,
+		private powerDpmService: PowerDpmService,
+		private cameraFeedService: CameraFeedService,
+		private audioService: AudioService,
+		private inputAccessoriesService: InputAccessoriesService,
+		private smartAssistService: SmartAssistService
 	) {
 		this.detectionFuncMap = mapValues(
 			keyBy(this.detectionFuncList, 'featureId'),
@@ -96,12 +295,19 @@ export class FeatureApplicableDetections {
 	}
 
 	public async isFeatureApplicable(featureId: string) {
-		try {
-			return await this.detectionFuncMap[featureId]?.();
-		} catch (ex) {
-			this.logger.error(`check applicable error:${JSON.stringify(featureId)}: ${ex.message}`);
+		if (!this.detectionFuncMap[featureId]) {
 			return false;
 		}
+
+		try {
+			return this.mergeDuplicateInvocation(featureId, () =>
+				this.detectionFuncMap[featureId]()
+			);
+		} catch (ex) {
+			this.logger.error(`check applicable error:${JSON.stringify(featureId)}: ${ex.message}`);
+		}
+
+		return false;
 	}
 
 	private isDashboardApplicable() {
@@ -194,7 +400,7 @@ export class FeatureApplicableDetections {
 		if (this.hypSettings) {
 			return this.hypSettings.getFeatureSetting('SmartPerformance').then(
 				(result) => (result || '').toString().toLowerCase() === 'true',
-				() => false,
+				() => false
 			);
 		}
 		return false;
@@ -209,24 +415,228 @@ export class FeatureApplicableDetections {
 		const deviceClass = this.Windows?.Devices.Enumeration.DeviceClass;
 		let frontCameraCount = 0;
 		const panel = this.Windows.Devices.Enumeration.Panel.front;
-			const devices = await deviceInformation.findAllAsync(
-				deviceClass.videoCapture
-			);
-			devices.forEach((cameraDeviceInfo) => {
-				if (
-					cameraDeviceInfo.enclosureLocation !== null &&
-					cameraDeviceInfo.enclosureLocation.panel === panel
-				) {
-					frontCameraCount = frontCameraCount + 1;
-				}
-			});
+		const devices = await deviceInformation.findAllAsync(deviceClass.videoCapture);
+		devices.forEach((cameraDeviceInfo) => {
+			if (
+				cameraDeviceInfo.enclosureLocation !== null &&
+				cameraDeviceInfo.enclosureLocation.panel === panel
+			) {
+				frontCameraCount = frontCameraCount + 1;
+			}
+		});
 		if (frontCameraCount <= 0) {
 			return false;
 		}
 		const cameraSettingsRes = await this.displayService.getCameraSettingsInfo();
-		if(!cameraSettingsRes) {
+		if (!cameraSettingsRes) {
 			return false;
 		}
 		return true;
+	}
+
+	private async mergeDuplicateInvocation(funcId: string, func: () => Promise<any>) {
+		const invokeCache: any = this.invokeCache;
+		if (!invokeCache[funcId]) {
+			invokeCache[funcId] = func();
+		}
+
+		let applicable;
+		try {
+			applicable = await invokeCache[funcId];
+		} finally {
+			invokeCache[funcId] = null;
+		}
+
+		return applicable;
+	}
+
+	private async isBatteryFeatureApplicable() {
+		return this.mergeDuplicateInvocation('isBatteryFeatureApplicable', () =>
+			this.checkBatteryFeatureApplicable()
+		);
+	}
+
+	private async checkBatteryFeatureApplicable() {
+		const machineType = await this.deviceService.getMachineType();
+		if (machineType === 0 || machineType === 1) {
+			const result = await this.batteryService.getBatteryDetail();
+			return result?.length > 0;
+		}
+
+		return false;
+	}
+
+	private async isSmartStandByApplicable() {
+		return await this.powerService.getSmartStandbyCapability();
+	}
+
+	private async isAlwaysOnUsbApplicable() {
+		const machineType = await this.deviceService.getMachineType();
+		if (machineType === 0) {
+			const resultForIdea = await this.powerService.getAlwaysOnUSBStatusIdeaNoteBook();
+			return resultForIdea?.available;
+		} else if (machineType === 1) {
+			return await this.powerService.getAlwaysOnUSBStatusThinkPad();
+		}
+
+		return false;
+	}
+
+	private async isAirplanePowerModeIdApplicable() {
+		return await this.powerService.getAirplaneModeCapabilityThinkPad();
+	}
+
+	private async isGaugeResetApplicable() {
+		return await this.powerService.getGaugeResetCapability();
+	}
+
+	private async isITSSettingsApplicable() {
+		const capability = await this.powerService.getITSModeForICIdeapad();
+		return capability?.available;
+	}
+
+	private async isPMDriverStatusApplicable() {
+		return this.mergeDuplicateInvocation('isPMDriverStatusApplicable', () =>
+			this.powerService.getPMDriverStatus()
+		);
+	}
+
+	private async isEasyResumeApplicable() {
+		return await this.powerService.getEasyResumeCapabilityThinkPad();
+	}
+
+	private async isEnergyStarApplicable() {
+		return await this.powerService.getEnergyStarCapability();
+	}
+
+	private async isConservationModeStatusApplicable() {
+		return await this.powerService.getConservationModeStatusIdeaNoteBook();
+	}
+
+	private async isRapidChargeModeStatusApplicable() {
+		const capability = await this.powerService.getRapidChargeModeStatusIdeaNoteBook();
+		return capability?.available;
+	}
+
+	private async isPowerPlanManagementApplicable() {
+		const brand = this.deviceService.machineInfo.brand?.toLowerCase();
+		const subBrand = this.deviceService.machineInfo.subBrand?.toLowerCase();
+
+		if (
+			(brand === 'think' || brand === 'lenovo') &&
+			(subBrand === 'thinkcentre' || subBrand === 'thinkcenter')
+		) {
+			const capability = await this.powerDpmService.getAllPowerPlansObs();
+			return Boolean(capability);
+		}
+
+		return false;
+	}
+
+	private async isFlipToBootCapabilityApplicable() {
+		const capability = await this.powerService.getFlipToStartCapability();
+		return capability.Supported;
+	}
+
+	private async isVantageToolBarStatusApplicable() {
+		const capability = await this.powerService.getVantageToolBarStatus();
+		return capability?.available;
+	}
+
+	private async isPrivacyGuardApplicable() {
+		return (await this.displayService.getCameraPrivacyModeState())?.available;
+	}
+
+	private async isTrackPointSettingsApplicable() {
+		return await this.inputAccessoriesService.getMouseCapability();
+	}
+
+	private async isSmartKeyboardBacklightApplicable() {
+		return await this.inputAccessoriesService.getAutoKBDBacklightCapability();
+	}
+
+	private async isHiddenKeyboardFunctionApplicable() {
+		return this.mergeDuplicateInvocation('checkUdkAndkeyboardMapCapability', () =>
+			this.checkUdkAndkeyboardMapCapability()
+		);
+	}
+
+	private async checkUdkAndkeyboardMapCapability() {
+		const capability = await this.inputAccessoriesService.GetAllCapability();
+		if (capability?.uDKCapability || capability?.keyboardMapCapability) {
+			return true;
+		}
+
+		return false;
+	}
+
+	private async isVoIPHotkeyFunctionApplicable() {
+		const brand = this.deviceService.machineInfo.brand?.toLowerCase();
+		if (brand !== 'idea') {
+			const capability = await this.inputAccessoriesService.getVoipHotkeysSettings();
+			return capability?.capability;
+		}
+
+		return false;
+	}
+
+	private async isTopRowKeyFunctionsApplicable() {
+		return await this.inputAccessoriesService.getTopRowFnLockCapability();
+	}
+
+	private async isUserDefinedKeyApplicable() {
+		return this.mergeDuplicateInvocation('checkUdkAndkeyboardMapCapability', () =>
+			this.checkUdkAndkeyboardMapCapability()
+		);
+	}
+
+	private async isFnAndCtrlkeySwapApplicable() {
+		const brand = this.deviceService.machineInfo.brand?.toLowerCase();
+		if (brand !== 'idea') {
+			return await this.inputAccessoriesService.GetFnCtrlSwapCapability();
+		}
+
+		return false;
+	}
+
+	private async isActiveProtectionSystemApplicable() {
+		const apsCapability = await this.smartAssistService.getAPSCapability();
+		if (!apsCapability) {
+			return false;
+		}
+
+		const hddStatus = await this.smartAssistService.getHDDStatus();
+		if (hddStatus < 1) {
+			return false;
+		}
+
+		return await this.smartAssistService.getSensorStatus();
+	}
+
+	private async isIntelligentSensingApplicable() {
+		return await this.smartAssistService.getIntelligentScreenVisibility();
+	}
+
+	private async isZeroTouchLoginApplicable() {
+		return await this.smartAssistService.getZeroTouchLoginVisibility();
+	}
+
+	private async isZeroTouchLockApplicable() {
+		return await this.smartAssistService.getZeroTouchLockVisibility();
+	}
+
+	private async isZeroTouchVideoPlaybackApplicable() {
+		const capability = await this.smartAssistService.getVideoPauseResumeStatus();
+		return capability.available;
+	}
+
+	private async isSmartMotionAlarmApplicable() {
+		const capability = await this.smartAssistService.getAntiTheftStatus();
+		return capability.available;
+	}
+
+	private async isVideoResolutionUpscalingSRApplicable() {
+		const capability = await this.smartAssistService.getSuperResolutionStatus();
+		return capability.available;
 	}
 }
