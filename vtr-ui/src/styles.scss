@@ -862,6 +862,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 }
 
 .trial-container-Modal {
+	width: 50rem;
 	@media #{$breakpoint_sm} {
 		max-width: 90% !important;
 	}
