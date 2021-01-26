@@ -2458,7 +2458,9 @@ button {
 	display: flex !important;
 	align-items: center;
 	justify-content: center;
+	min-width: 460px !important;
 	.mat-dialog-container {
+		width: 66.7vw !important;
 		min-width: 460px !important;
 		max-width: 1065px !important;
 		margin: 0;
