@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.16](https://bitbucket.tc.lenovo.com///compare/v1.10.15...v1.10.16) (2021-01-26)
+
+
+### Features
+
+* **Overall:** remove console log to fix ssrb finding ([5d5f107](https://bitbucket.tc.lenovo.com///commit/5d5f1070bb3fe09f89caa9034b197aeddabdf71b))
+
+
+### Bug Fixes
+
+* **gaming-dialog:** delete unnessary tabindex ([bec00f4](https://bitbucket.tc.lenovo.com///commit/bec00f41e79a6a232222c183294e458adfcfb2e2))
+* **gaming-dialog:** fix dialog can't focus by keybord ([4dbfa32](https://bitbucket.tc.lenovo.com///commit/4dbfa320f7b9e057808e67ab1b48121468ca161d))
+* **gaming-dialog:** fix gaming dialog background color is wrong ([24ecb48](https://bitbucket.tc.lenovo.com///commit/24ecb48d10e90841ac8baa06895a63cb9669b897))
+* fix chs join modal style and trail modal size ([7755a43](https://bitbucket.tc.lenovo.com///commit/7755a4372505250745dfe0b472b303e7b5fb475f))
+* fix lid confirmation dialog size ([5d1445d](https://bitbucket.tc.lenovo.com///commit/5d1445d9bc23104a32c08e77d56c764c6215c869))
+* fix ms rating modal size ([37719b3](https://bitbucket.tc.lenovo.com///commit/37719b367e60852aa2a5b60094d2e31276f8d159))
+
 ### [1.10.15](https://bitbucket.tc.lenovo.com///compare/v1.10.14...v1.10.15) (2021-01-25)
 
 
