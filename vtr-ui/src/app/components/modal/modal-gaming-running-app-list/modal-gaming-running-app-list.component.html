@@ -3,7 +3,7 @@
         <fa-icon [icon]="['fal', 'circle-notch']" class="spinner" [spin]="true"></fa-icon>
     </div>
     <div class="modal-gaming-running-app-list-loaded" *ngIf="!loading" attr.aria-label="{{ariaLabel | translate}}" [id]="info.id.section">
-        <div class="modal-header">
+        <div class="modal-header" [ngClass]="{'empty': emptyAppList}">
             <div [id]="info.id.headerText" *ngIf="!emptyAppList">{{info.title | translate}}</div>
             <p role="text" [id]="info.id.description" *ngIf="!emptyAppList">
                 {{info.description | translate}}<span *ngIf="isNetworkBoost"> ({{addedApps}} {{info.description2 | translate}} {{maxAppsCount}} {{info.description3 | translate}} )</span>

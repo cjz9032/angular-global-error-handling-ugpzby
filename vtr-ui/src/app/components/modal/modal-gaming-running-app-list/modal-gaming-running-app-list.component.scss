@@ -43,7 +43,7 @@
 	}
 	.modal-header {
 		display: block;
-		padding: 2rem;
+		padding: 2rem 2rem 0 2rem;
 		border-bottom: none;
 		div {
 			font-size: 3rem;
@@ -79,6 +79,9 @@
 				color: $gaming_lightest;
 				transform: scale(0.96);
 			}
+		}
+		&.empty {
+			padding: 2rem;
 		}
 	}
 	.modal-body {
