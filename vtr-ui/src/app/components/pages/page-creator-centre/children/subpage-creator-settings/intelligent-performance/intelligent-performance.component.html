@@ -1,0 +1,27 @@
+<div class="itpf-layout" *ngIf="isIntelligentPerformanceVisible">
+    <vtr-ui-row-switch 
+        [leftIcon]="['icomoon','icomoon-ic']"
+        [title]="'device.deviceSettings.power.powerSmartSettings.subtitleSMB' | translate | titlecase"
+        [caption]="'device.deviceSettings.power.powerSmartSettings.description14' | translate"
+        [showChildContent]="true"
+        [theme]="'white'"
+        [switchId]="'ds-power-powerSmartSettings'"
+        [isLastChild]='false'>
+        <div class="alignment px-5">
+            <div class="row no-gutters ml-2 cooling-mode-list-block">
+                <vtr-ui-circle-radio-with-checkbox-list
+                    [sendMetrics]=true [metricsParent]="metricsParent"
+                    [groupName]="'intelligent-cooling-radio-group'"
+                    (optionChange)="onIntelligentCoolingModeChange($event)"
+                    [radioDetails]="intelligentCoolingUIModel">
+                </vtr-ui-circle-radio-with-checkbox-list>
+            </div>
+            <div class="well ml-2" role="text" id="powerSmartSettings-maximum-system-protection-note"
+                attr.aria-label="powerSmartSettings-maximum-system-protection-note" *ngIf="true">
+                <div class="selectModeDesc" role="text" id="IntelligentCooling-selectedModeText">
+                    {{ 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.'+selectModeTextFlag | translate }}
+                </div>
+            </div>
+        </div>
+    </vtr-ui-row-switch>
+</div>
