@@ -5963,6 +5963,7 @@
 		"meetingExperience": {
 			"meetingManager": {
 				"title":"Meeting Manager",
+				"desc": "description",
 				"aiMeetingManager":{
 					"title":"AI Meeting Manager"
 				},
