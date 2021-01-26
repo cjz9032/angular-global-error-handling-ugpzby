@@ -128,11 +128,9 @@ export class CMSService implements OnDestroy {
 			promises.push(this.deviceFilter(content.Filters));
 		});
 
-		return Promise.all(promises).then((deviceFilterValues) => {
-			return contents.filter((content, index) => {
-				return deviceFilterValues[index];
-			});
-		});
+		return Promise.all(promises).then((deviceFilterValues) =>
+			contents.filter((content, index) => deviceFilterValues[index])
+		);
 	}
 
 	public async getLocalinfo(): Promise<any> {
@@ -161,14 +159,13 @@ export class CMSService implements OnDestroy {
 		dataSource = ContentSource.CMS
 	): FeatureContent[] {
 		return results
-			.filter((record) => {
-				return (
+			.filter(
+				(record) =>
 					record.Template === template &&
 					record.Position === position &&
 					(!record.DisplayStartDate ||
 						this.getDateTime(record.DisplayStartDate) <= new Date().getTime())
-				);
-			})
+			)
 			.filter((record) => {
 				try {
 					record.Title = this.sanitizer.sanitize(SecurityContext.HTML, record.Title);
@@ -197,19 +194,19 @@ export class CMSService implements OnDestroy {
 						subscriber.error(ex);
 					});
 			} else {
-				this.onlineTaskMap[JSON.stringify(queryParams)] = this.commonService.notification.subscribe(
-					(notification: AppNotification) => {
-						if (notification && notification.type === NetworkStatus.Online) {
-							this.getCMSContent(queryParams)
-								.then((response) => {
-									subscriber.next(response);
-								})
-								.catch((ex) => {
-									subscriber.error(ex);
-								});
-						}
+				this.onlineTaskMap[
+					JSON.stringify(queryParams)
+				] = this.commonService.notification.subscribe((notification: AppNotification) => {
+					if (notification && notification.type === NetworkStatus.Online) {
+						this.getCMSContent(queryParams)
+							.then((response) => {
+								subscriber.next(response);
+							})
+							.catch((ex) => {
+								subscriber.error(ex);
+							});
 					}
-				);
+				});
 			}
 		});
 	}
