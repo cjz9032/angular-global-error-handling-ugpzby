@@ -1,11 +1,7 @@
 import URLValidator from './url-validator';
 
 describe('URL Validator', () => {
-	let urlValidator;
-
-	beforeEach(() => {
-		urlValidator = new URLValidator();
-	});
+	const urlValidator = new URLValidator();
 
 	it('should not validate an url without the preceding protocol', () => {
 		const url = 'lenovo.com';
