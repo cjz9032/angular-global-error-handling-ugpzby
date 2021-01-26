@@ -1,4 +1,4 @@
-<div class="subpage-device-settings-power vtr-subpage">
+<div class="subpage-meeting-manager vtr-subpage">
     <div class="row">
         <div class="col">
             <vtr-ui-header-subpage
@@ -10,9 +10,39 @@
     </div>  
     <div class="row">
 		<div class="col">  
-            <div>Here is Meeting Manager</div>
-            <div>Here is microphont</div>
-            <div>Here is smart appearance</div>
+            <div class="pt-5">
+                <vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
+                [cardTitle]="'smb.meetingExperience.meetingManager.aiMeetingManager.title' | translate" componentName="Creator Settings"
+                [isCollapsed]="false" [allowCollapse]="true" [theme]="'white'" [tabIndex]="0">
+                <ul class="list-group list-group-flush">
+                    <li class="common-li-padding">
+                        Here is Meeting Manager
+                    </li>
+                </ul>
+            </vtr-container-collapsible>
+            </div>
+            <div class="pt-5">
+                <vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
+                [cardTitle]="'smb.meetingExperience.meetingManager.microPhone.title' | translate" componentName="Creator Settings"
+                [isCollapsed]="false" [allowCollapse]="true" [theme]="'white'" [tabIndex]="0">
+                <ul class="list-group list-group-flush">
+                    <li class="common-li-padding">
+                        Here is microphong
+                    </li>
+                </ul>
+            </vtr-container-collapsible>
+            </div>
+            <div class="pt-5">
+                <vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
+                [cardTitle]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate" componentName="Creator Settings"
+                [isCollapsed]="false" [allowCollapse]="true" [theme]="'white'" [tabIndex]="0">
+                <ul class="list-group list-group-flush">
+                    <li class="common-li-padding">
+                        Here is smart appearance
+                    </li>
+                </ul>
+            </vtr-container-collapsible>
+            </div>
         </div>
     </div>
 </div>
