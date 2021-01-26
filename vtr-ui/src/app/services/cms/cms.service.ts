@@ -47,7 +47,7 @@ export class CMSService implements OnDestroy {
 		Brand: 'Lenovo',
 	};
 	fetchRequestMap = {};
-	commonNotificationSubscription: Subscription;
+	onlineTaskMap = {};
 
 	constructor(
 		private commsService: CommsService,
@@ -197,21 +197,19 @@ export class CMSService implements OnDestroy {
 						subscriber.error(ex);
 					});
 			} else {
-				if (!this.commonNotificationSubscription) {
-					this.commonNotificationSubscription = this.commonService.notification.subscribe(
-						(notification: AppNotification) => {
-							if (notification && notification.type === NetworkStatus.Online) {
-								this.getCMSContent(queryParams)
-									.then((response) => {
-										subscriber.next(response);
-									})
-									.catch((ex) => {
-										subscriber.error(ex);
-									});
-							}
+				this.onlineTaskMap[JSON.stringify(queryParams)] = this.commonService.notification.subscribe(
+					(notification: AppNotification) => {
+						if (notification && notification.type === NetworkStatus.Online) {
+							this.getCMSContent(queryParams)
+								.then((response) => {
+									subscriber.next(response);
+								})
+								.catch((ex) => {
+									subscriber.error(ex);
+								});
 						}
-					);
-				}
+					}
+				);
 			}
 		});
 	}
@@ -398,8 +396,10 @@ export class CMSService implements OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.commonNotificationSubscription) {
-			this.commonNotificationSubscription.unsubscribe();
+		for (const prop in this.onlineTaskMap) {
+			if (this.onlineTaskMap.hasOwnProperty(prop)) {
+				this.onlineTaskMap[prop].unsubscribe();
+			}
 		}
 	}
 }
