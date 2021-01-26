@@ -11,6 +11,7 @@ import { SubpageEasyRenderingComponent } from 'src/app/components/pages/page-cre
 import { SubpageColorCalibrationComponent } from 'src/app/components/pages/page-creator-centre/children/subpage-color-calibration/subpage-color-calibration.component';
 import { CommonUiModule } from '../common/common-ui.module';
 import { ColorSettingsComponent } from 'src/app/components/pages/page-creator-centre/children/subpage-creator-settings/color-settings/color-settings.component';
+import { IntelligentPerformanceComponent } from 'src/app/components/pages/page-creator-centre/children/subpage-creator-settings/intelligent-performance/intelligent-performance.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ColorSettingsComponent } from 'src/app/components/pages/page-creator-ce
     SubpageCreatorSettingsComponent,
     SubpageEasyRenderingComponent,
     SubpageColorCalibrationComponent,
-    ColorSettingsComponent
+    ColorSettingsComponent,
+    IntelligentPerformanceComponent
   ],
   imports: [
     CommonModule,

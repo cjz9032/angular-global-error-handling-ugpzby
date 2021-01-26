@@ -10,8 +10,10 @@
 					[cardTitle]="'smb.creatorCentre.creatorSettings.title' | translate" componentName="Creator Settings"
 					[isCollapsed]="false" [allowCollapse]="true" [theme]="'white'" [tabIndex]="0">
 					<ul class="list-group list-group-flush">
-						<li class="common-li-padding">
-							Here is ITS.
+						<li class="common-li-padding" *ngIf="intelligentPerformanceVisible">
+							<vtr-intelligent-performance
+							(intelligentPerformanceCapability)="updateIntelligentPerformanceCapability($event)"
+							></vtr-intelligent-performance>
 						</li>
 						<li class="common-li-padding">
 							Here is Auto Close.

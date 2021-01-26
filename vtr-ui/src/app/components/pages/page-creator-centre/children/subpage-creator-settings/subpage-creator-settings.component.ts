@@ -9,10 +9,16 @@ import { WindowsVersionService } from 'src/app/services/windows-version/windows-
 export class SubpageCreatorSettingsComponent {
 
   public windowsOSVersion: number = undefined;
+  intelligentPerformanceVisible = true;
 
   constructor(
     private windowsVersionService: WindowsVersionService
   ) {
     this.windowsOSVersion = windowsVersionService.currentBuildVersion;
    }
+
+  updateIntelligentPerformanceCapability(value: boolean) {
+    this.intelligentPerformanceVisible = value;
+  }
+   
 }
