@@ -4,9 +4,10 @@
 	opacity: 1;
 	font-size: 1.8rem;
 	position: relative;
-	top: 1rem;
-	right: 1rem;
+	top: 0.3rem;
+	right: 0.4rem;
 	z-index: 1;
+	padding: 1rem;
 	&:hover {
 		color: $white100;
 	}
@@ -56,19 +57,21 @@
 ::ng-deep {
 	body.focus-enable {
 		.is-gaming {
-			.gaming-help-popup {
-				&:focus {
-					@include solid-button-outline;
-					@media #{$high-contrast} {
-						@include solid-button-outline(highlight);
-					}
-				}
+			vtr-modal-gaming-legionedge {
 				button.close,
 				.innerContent {
 					&:focus {
 						@include solid-button-outline;
 						@media #{$high-contrast} {
 							@include solid-button-outline(highlight);
+						}
+					}
+				}
+				.gaming-help-popup {
+					&:focus {
+						@include solid-dialog-legionedge-outline;
+						@media #{$high-contrast} {
+							@include solid-dialog-legionedge-outline(highlight);
 						}
 					}
 				}

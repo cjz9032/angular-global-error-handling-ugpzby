@@ -1,7 +1,7 @@
 <button type="button" class="close" (click)="closeModal()" aria-label="close" id="legion_edge_help_close">
 	<fa-icon [icon]="['fas', 'times']"></fa-icon>
 </button>
-<div class="gaming-help-popup gaming-popup-window" attr.aria-label="{{ 'gaming.dashboard.device.legionEdge.helpPopup.title' | translate }} window">
+<div class="gaming-help-popup gaming-popup-window" tabindex="0" attr.aria-label="{{ 'gaming.dashboard.device.legionEdge.helpPopup.title' | translate }} window">
 	<div class="modal-header">
 		<div class="modal-title" tabindex="-1">
 			<img id="help_popup_legion_edge" role="img" class="gaming-header-image" src="assets/images/gaming/legionEdge.png" _ngcontent-c6="" *ngIf="!liteGaming">
@@ -10,7 +10,7 @@
 		</div>
 	</div>
 	<div class="modal-body">
-		<div class="innerContent" aria-describedby="help_dialog"
+		<div class="innerContent" tabindex="0" aria-describedby="help_dialog"
 			aria-labelledby="help_dialog" aria-modal="true" id="help_dialog">
 			<p [innerHTML]="'gaming.dashboard.device.legionEdgeModal.line1' | translate"></p>
 			<p [innerHTML]="'gaming.dashboard.device.legionEdgeModal.line2' | translate"></p>
