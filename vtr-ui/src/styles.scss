@@ -834,11 +834,22 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
+.ms-rating-modal {
+	width: 50rem;
+	max-width: 95% !important;
+	.mat-dialog-container {
+		overflow: hidden;
+	}
+}
+
 /*common-confirmation-modal-styles*/
 
 .common-confirmation-modal {
-	max-width: 50rem;
+	width: 50rem;
 	border-radius: $border_radius;
+	@media #{$breakpoint_sm} {
+		width: 95%;
+	}
 }
 
 .wifi-security-invitation-modal,

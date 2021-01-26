@@ -1,10 +1,8 @@
 @import '../../../app.theme.scss';
 
-.common-confirmation-modal {
+.common-confirmation-dialog {
 	background: $light;
-	background-size: cover;
 	color: $main_dark;
-	box-shadow: $drop_shadow;
 	padding: 2rem;
 	position: relative;
 
@@ -77,5 +75,10 @@
 
 	.underline {
 		border-bottom: 0.2rem solid $main;
+	}
+
+	.btn-modal-close {
+		top: 0;
+		right: 0;
 	}
 }
