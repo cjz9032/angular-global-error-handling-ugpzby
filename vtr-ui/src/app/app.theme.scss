@@ -901,6 +901,15 @@ $high-contrast-sky-blue: #81bbf5;
 	}
 }
 
+@mixin high-contrast-gaming-dialog-background {
+	@media #{$black-on-white} {
+		background: $dark;
+	}
+	@media #{$white-on-black} {
+		background: $dark;
+	}
+}
+
 @mixin high-contrast-background-color {
 	@media #{$black-on-white} {
 		background-color: $light !important;

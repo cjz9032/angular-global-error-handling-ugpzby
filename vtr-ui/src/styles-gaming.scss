@@ -2590,3 +2590,9 @@ button {
 		}
 	}
 }
+
+.gaming-backdrop {
+	background: black;
+	opacity: 0.5 !important;
+	@include high-contrast-gaming-dialog-background;
+}
