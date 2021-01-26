@@ -5962,6 +5962,17 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title":"Meeting Manager",
+				"desc": "description",
+				"aiMeetingManager":{
+					"title":"AI Meeting Manager"
+				},
+				"microPhone":{
+					"title":"Microphone"
+				},
+				"smartAppearance":{
+					"title":"Smart appearance application"
+				}
 
 			}
 		},
