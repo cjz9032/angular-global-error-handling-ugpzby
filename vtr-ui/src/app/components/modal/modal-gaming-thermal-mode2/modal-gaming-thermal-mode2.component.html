@@ -56,7 +56,7 @@
                                         &nbsp;
                                     </a>
                                     <a class="oc-advance-button" *ngIf="gamingCapabilities.advanceCPUOCFeature || gamingCapabilities.advanceGPUOCFeature"
-                                    role="button" id="advanced_button" (click)="openWaringModal()" (keyup.enter)="openWaringModal()">
+                                    href="javascript:void(0)" role="button" id="advanced_button" (click)="openWaringModal()" (keyup.enter)="openWaringModal()">
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.advance' | translate }}
                                     </a>
                                 </p>
@@ -66,7 +66,7 @@
                             <div class="item-oc-right">
                                 <p *ngIf="ocSupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.none" role="text" id="thermal_mode_CPU/GPU_driver_description">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpu_gpuDriverLack' | translate }} &nbsp;
-                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
+                                    <a class="oc-driver-link" href="javascript:void(0)" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
                                     aria-label="Install CPU and GPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
                                     vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
@@ -74,7 +74,7 @@
                                 </p>
                                 <p *ngIf="(ocSupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.gpu) || (ocSupportted === thermalMode2Enum.cpu)" role="text" id="thermal_mode_CPU_driver_description">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.cpuDriverLack' | translate }} &nbsp;
-                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
+                                    <a class="oc-driver-link" href="javascript:void(0)" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
                                     aria-label="Install CPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
                                     vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
@@ -82,7 +82,7 @@
                                 </p>
                                 <p *ngIf="(ocSupportted === thermalMode2Enum.cpu_gpu && driverStatus === thermalMode2Enum.cpu) || (ocSupportted === thermalMode2Enum.gpu)"  role="text" id="thermal_mode_GPU_driver_description">
                                     {{ 'gaming.dashboard.device.thermalMode2Popup.OC.gpuDriverLack' | translate }} &nbsp;
-                                    <a class="oc-driver-link" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
+                                    <a class="oc-driver-link" href="javascript:void(0)" routerLink="/device/system-updates" (click)="closeThermalMode2Modal()"
                                     aria-label="Install GPU driver to use the Overclocking function" role="button" id="thermal_mode_go_Install_button"
                                     vtrMetrics metricsEvent="featureClick" metricsItem="thermalmode_goinstalldriver" metricsParent="Gaming.ThermalMode">
                                         {{ 'gaming.dashboard.device.thermalMode2Popup.OC.goInstall' | translate }}
@@ -146,7 +146,7 @@
                 <div class="auto-switch-left">
                     <div class="auto-switch-toggle">
                         <vtr-ui-toggle (toggleStatus)="setAutoSwitchStatus($event)" [value]="autoSwitchStatus" [toggleId]="'auto switch'"
-                        [onOffSwitchId]="'thermalmode_autoPerformanceSwitch'" [parentId]="'Gaming.ThermalMode'">
+                        [tabIndexNum]="0" [onOffSwitchId]="'thermalmode_autoPerformanceSwitch'" [parentId]="'Gaming.ThermalMode'">
                         </vtr-ui-toggle>
                     </div>
                 </div>
