@@ -2595,6 +2595,9 @@ button {
 
 .gaming-backdrop {
 	background: black;
-	opacity: 0.5 !important;
+	opacity: 0 !important;
 	@include high-contrast-gaming-dialog-background;
+	&.cdk-overlay-backdrop-showing {
+		opacity: 0.5 !important;
+	}
 }
