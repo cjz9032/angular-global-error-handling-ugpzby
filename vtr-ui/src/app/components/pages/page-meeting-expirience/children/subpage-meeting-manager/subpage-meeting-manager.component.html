@@ -1,4 +1,5 @@
-<div class="subpage-meeting-manager vtr-subpage">
+<div class="subpage-meeting-manager vtr-subpage row vtr-page-columns">
+	<div class="col-lg-7 col-xl-8 vtr-page-column vtr-subpage-left-column">
 	<div class="row">
 		<div class="col">
 			<vtr-ui-header-subpage
@@ -10,10 +11,10 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<div class="pt-5">
+			<div class="pt-5 content-card" id="meetingManager">
 				<vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
 										   [cardTitle]="'smb.meetingExperience.meetingManager.aiMeetingManager.title' | translate"
-										   componentName="Creator Settings"
+										   componentName="Meeting Manager"
 										   [isCollapsed]="false" [allowCollapse]="true"
 										   [theme]="'white'" [tabIndex]="0">
 					<ul class="list-group list-group-flush">
@@ -23,10 +24,10 @@
 					</ul>
 				</vtr-container-collapsible>
 			</div>
-			<div class="pt-5" *ngIf="microphoneProperties.available">
+			<div class="pt-5 content-card" *ngIf="microphoneProperties.available" id="microphone">
 				<vtr-container-collapsible [collapseLinkId]="'creatorSettings-microphone'" [headerLevel]="3"
 										   [cardTitle]="'smb.meetingExperience.meetingManager.microPhone.title' | translate"
-										   componentName="Creator Settings"
+										   componentName="Microphone"
 										   [isCollapsed]="false" [allowCollapse]="true"
 										   [theme]="'white'" [tabIndex]="0">
 					<vtr-widget-permission-note
@@ -198,10 +199,10 @@
 					</ul>
 				</vtr-container-collapsible>
 			</div>
-			<div class="pt-5">
+			<div class="pt-5 content-card" id="smartAppearance">
 				<vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
 										   [cardTitle]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
-										   componentName="Creator Settings"
+										   componentName="Smart Appearance"
 										   [isCollapsed]="false" [allowCollapse]="true"
 										   [theme]="'white'" [tabIndex]="0">
 					<ul class="list-group list-group-flush">
@@ -211,6 +212,13 @@
 					</ul>
 				</vtr-container-collapsible>
 			</div>
+		</div>
+	</div>
+	</div>
+	<div class="col-lg-5 col-xl-4 vtr-page-column vtr-subpage-right-column">
+		<div class="col mt-40">
+			<div>banner</div>
+			<div>banner</div>
 		</div>
 	</div>
 </div>

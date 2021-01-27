@@ -5972,7 +5972,7 @@
 		"meetingExperience": {
 			"meetingManager": {
 				"title":"Meeting Manager",
-				"desc": "description",
+				"desc": "This section enables you to automatically optimize or manually configure your AI meeting settings.",
 				"aiMeetingManager":{
 					"title":"AI Meeting Manager"
 				},
