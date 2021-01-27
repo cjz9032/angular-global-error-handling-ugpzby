@@ -21,7 +21,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import sha256 from 'crypto-js/sha256';
 import { DeviceService } from '../../../../../services/device/device.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { ForteClientService } from './forte-client.service';
+import { AudioVendorService } from './audio-vendor.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -87,7 +87,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	canShowMicrophoneOptimization = false;
 
-	newForteDriver = false;
+	isAudioVendorSupported = false;
+	isAudioVendorPanelAvailable = false;
 
 	readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	readonly helpIcon = ['far', 'question-circle'];
@@ -106,7 +107,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private batteryService: BatteryDetailService,
 		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService,
-		private forteClientService: ForteClientService
+		private audioVendorService: AudioVendorService
 	) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
@@ -123,6 +124,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.isAudioVendorSupported = this.audioVendorService.isVendorSupported;
+		if (this.isAudioVendorSupported) {
+			this.audioVendorService.isPanelInstalled().then((isInstalled) => {
+				this.logger.info('audio isPanelInstalled: ' + isInstalled);
+				this.isAudioVendorPanelAvailable = isInstalled;
+			});
+		}
+
 		this.notificationSubscription = this.commonService.notification.subscribe(
 			(response: AppNotification) => {
 				this.onNotification(response);
@@ -158,10 +167,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				this.microphnePermissionHandler,
 				false
 			);
-			this.newForteDriver = this.forteClientService.forteClient.isForteHSASupport
-				&& typeof this.forteClientService.forteClient.isClassicLayout !== 'undefined'
-				&& !this.forteClientService.forteClient.isClassicLayout;
-			this.logger.info(`Forte driver is new?`, this.newForteDriver);
 		}
 		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
 		this.isInMicrophoneOptimizationBlockList().then((blocked) => {
@@ -218,6 +223,14 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		} catch (error) {
 			this.logger.exception('initDolbyAudioFromCache', error);
 		}
+	}
+
+	launchPanel() {
+		this.audioVendorService.launchPanel();
+	}
+
+	launchDownloadLink() {
+		this.audioVendorService.launchDownloadLink();
 	}
 
 	private onNotification(notification: AppNotification) {

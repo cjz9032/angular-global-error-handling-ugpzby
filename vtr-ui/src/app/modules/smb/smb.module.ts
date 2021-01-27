@@ -12,29 +12,47 @@ import { SubpageColorCalibrationComponent } from 'src/app/components/pages/page-
 import { CommonUiModule } from '../common/common-ui.module';
 import { ColorSettingsComponent } from 'src/app/components/pages/page-creator-centre/children/subpage-creator-settings/color-settings/color-settings.component';
 import { IntelligentPerformanceComponent } from 'src/app/components/pages/page-creator-centre/children/subpage-creator-settings/intelligent-performance/intelligent-performance.component';
+import { CommonWidgetModule } from '../common/common-widget.module';
+import { UiCustomSliderModule } from '../../components/ui/ui-custom-slider/ui-custom-slider.module';
+import { AudioVendorService } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/audio-vendor.service';
+import { AudioVendorFactory } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/audio-vendor.factory';
+import { FORTE_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/forte-client';
+import { DOLBY_FUSION_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/dolby-fusion-client';
+import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
+import { DeviceService } from '../../services/device/device.service';
 
 
 @NgModule({
-  declarations: [
-    PageMeetingExpirienceComponent,
-    SubpageMeetingManagerComponent,
-    PageCreatorCentreComponent,
-    SubpageCreatorSettingsComponent,
-    SubpageEasyRenderingComponent,
-    SubpageColorCalibrationComponent,
-    ColorSettingsComponent,
-    IntelligentPerformanceComponent
-  ],
-  imports: [
-    CommonModule,
-    CommonUiModule,
-    SmbRoutingModule,
-    PageLayoutModule,
-    TranslationModule.forChild()
-  ],
-  exports: [
-    PageLayoutModule
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	declarations: [
+		PageMeetingExpirienceComponent,
+		SubpageMeetingManagerComponent,
+		PageCreatorCentreComponent,
+		SubpageCreatorSettingsComponent,
+		SubpageEasyRenderingComponent,
+		SubpageColorCalibrationComponent,
+		ColorSettingsComponent,
+		IntelligentPerformanceComponent
+	],
+	imports: [
+		CommonModule,
+		CommonUiModule,
+		SmbRoutingModule,
+		PageLayoutModule,
+		TranslationModule.forChild(),
+		CommonWidgetModule,
+		UiCustomSliderModule
+	],
+	exports: [
+		PageLayoutModule
+	],
+	providers: [
+		{
+			provide: AudioVendorService,
+			useFactory: AudioVendorFactory,
+			deps: [FORTE_CLIENT, DOLBY_FUSION_CLIENT, VantageShellService, DeviceService]
+		}
+	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
-export class SmbModule { }
+export class SmbModule {
+}
