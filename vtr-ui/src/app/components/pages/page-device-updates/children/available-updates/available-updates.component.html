@@ -1,31 +1,26 @@
 <div class="vtr-available-updates">
-	<div class="row select-all" *ngIf="!isUpdateDownloading && !isInstallationCompleted">
-		<div class="custom-checkbox custom-control">
-			<input type="checkbox"
-				class="custom-control-input"
-				id="select-all-checkbox"
-				vtrMetrics
-				metricsParent="Page.SystemUpdate"
-				metricsItem="AvailableUpdates.SelectAll"
-				[metricsValue]="isSelectAll"
-				metricsEvent="FeatureClick"
-				[disabled]="disableSelectAll"
-				[checked]="isSelectAll"
-				(click)="onSelectAllClick($event)"
-				(keypress)="onKeyPress($event)"/>
-			<label class="custom-control-label"
-				id="select-all-text"
-				for="select-all-checkbox"
-				role="text">{{'systemUpdates.banner.selectAll' | translate}}</label>
-		</div>
+	<div class="row select-all"
+		*ngIf="!isUpdateDownloading && !isInstallationCompleted">
+		<mat-checkbox [id]="'select-all-checkbox'"
+			class="font-size-xs"
+			[ariaLabel]="'defaultUnchecked'"
+			[checked]="isSelectAll"
+			(change)="onSelectAllClick($event)"
+			vtrMetrics
+			metricsEvent="featureClick"
+			metricsParent="device"
+			[metricsItem]="'AvailableUpdates.SelectAll'">{{'systemUpdates.banner.selectAll' | translate}}</mat-checkbox>
+
 	</div>
-	<div class="row-seperator" *ngIf="!isUpdateDownloading && !isInstallationCompleted"></div>
+	<div class="row-seperator"
+		*ngIf="!isUpdateDownloading && !isInstallationCompleted"></div>
 	<div class="row">
 		<div class="col">
 			<div class="updates-lists-container">
 				<div class="row"
 					*ngIf="(!isUpdateDownloading && criticalUpdates && criticalUpdates.length > 0) || (isUpdateDownloading && criticalUpdatesToInstall && criticalUpdatesToInstall.length > 0)">
-					<img class="icon" [src]="criticalUpdatesIcon | svgInline | async"/>
+					<img class="icon"
+						[src]="criticalUpdatesIcon | svgInline | async" />
 					<div class="col">
 						<div class="header">
 							<div class="heading"
@@ -46,8 +41,10 @@
 				</div>
 				<div class="row"
 					*ngIf="(!isUpdateDownloading && recommendedUpdates && recommendedUpdates.length > 0) || (isUpdateDownloading && recommendedUpdatesToInstall && recommendedUpdatesToInstall.length > 0)">
-					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0"></div>
-					<img class="icon" [src]="recommendedUpdatesIcon | svgInline | async"/>
+					<div class="row-seperator"
+						*ngIf="criticalUpdates && criticalUpdates.length > 0"></div>
+					<img class="icon"
+						[src]="recommendedUpdatesIcon | svgInline | async" />
 					<div class="col">
 						<div class="header">
 							<div class="heading"
@@ -69,8 +66,10 @@
 				</div>
 				<div class="row"
 					*ngIf="(!isUpdateDownloading && optionalUpdates && optionalUpdates.length > 0) || (isUpdateDownloading && optionalUpdatesToInstall && optionalUpdatesToInstall.length > 0)">
-					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0"></div>
-					<img class="icon" [src]="optionalUpdateIcon | svgInline | async"/>
+					<div class="row-seperator"
+						*ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0"></div>
+					<img class="icon"
+						[src]="optionalUpdateIcon | svgInline | async" />
 					<div class="col">
 						<div class="header">
 							<div class="heading"
@@ -92,8 +91,10 @@
 				</div>
 				<div class="row"
 					*ngIf="(!isUpdateDownloading && ignoredUpdates && ignoredUpdates.length > 0) || (isUpdateDownloading && ignoredUpdatesToInstall && ignoredUpdatesToInstall.length > 0)">
-					<div class="row-seperator" *ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0 || optionalUpdates && optionalUpdates.length > 0"></div>
-					<img class="icon slash-icon" [src]="ignoredUpdateIcon | svgInline | async"/>
+					<div class="row-seperator"
+						*ngIf="criticalUpdates && criticalUpdates.length > 0 || recommendedUpdates && recommendedUpdates.length > 0 || optionalUpdates && optionalUpdates.length > 0"></div>
+					<img class="icon slash-icon"
+						[src]="ignoredUpdateIcon | svgInline | async" />
 					<div class="col">
 						<div class="header mb-20">
 							<div class="row d-flex justify-content-between w-100">

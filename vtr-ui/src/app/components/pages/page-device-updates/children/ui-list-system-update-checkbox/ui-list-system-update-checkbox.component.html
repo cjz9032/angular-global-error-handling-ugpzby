@@ -2,55 +2,63 @@
 	<!-- update list with checkbox section -->
 	<ul class="list-group"
 		*ngIf="!isInstallationCompleted && !isUpdateDownloading">
-		<li class="list-group-item" id="su_item_candidate"
+		<li class="list-group-item"
+			id="su_item_candidate"
 			[ngClass]="item.isSelected ? 'selected-background' : 'unselected-background'"
 			*ngFor="let item of items; let i = index">
 			<div class="media pl-3 align-items-center">
 				<div class="media-body pb-0 mb-0 small">
-					<div class="d-flex justify-content-between align-items-start w-100">
+					<div class="d-flex justify-content-between align-items-center w-100">
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox"
-								id="{{ 'updateCheckbox_'  + item.packageID }}"
-								[disabled]="item.isDependency"
-								class="custom-control-input"
-								[checked]="item.isSelected"
+							<mat-checkbox [id]="'updateCheckbox_'  + item.packageID"
+								[ariaLabel]="item.packageDesc"
 								[name]="item.packageName"
-								(click)="onCheckClick($event)"
-								(keypress)="onKeyPress($event)"/>
-							<label class="custom-control-label "
-								for="{{ 'updateCheckbox_'  + item.packageID }}"
-								id="{{'su_item_' + item.packageID}}" role="text">
-								<span class="update-title">
-									{{item.packageDesc}}</span>
-							</label>
+								[checked]="item.isSelected"
+								(change)="onCheckClick($event)"
+								vtrMetrics
+								metricsEvent="featureClick"
+								metricsParent="device"
+								[metricsItem]="(item.isSelected ? 'checked' :'notChecked') + ':' +item.packageName"><span class="update-title">{{item.packageDesc}}</span>
+							</mat-checkbox>
 
 							<div class="button-box"
 								*ngIf="item.packageRebootType === 'RebootForced'">
-								<div class="btn-round-sm" id="{{'su_rebootForced_'+item.packageID}}" role="text">
+								<div class="btn-round-sm"
+									id="{{'su_rebootForced_'+item.packageID}}"
+									role="text">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootRequiredTag' | translate}}
 								</div>
 							</div>
 							<div class="button-box"
 								*ngIf="item.packageRebootType === 'RebootDelayed'">
-								<div class="btn-round-sm" id="{{'su_rebootDelayed_'+item.packageID}}" role="text">
+								<div class="btn-round-sm"
+									id="{{'su_rebootDelayed_'+item.packageID}}"
+									role="text">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.rebootDelayTag' | translate}}
 								</div>
 							</div>
 							<div class="button-box"
 								*ngIf="item.packageRebootType === 'PowerOffForced'">
-								<div class="btn-round-sm" id="{{'su_powerOffForced_'+item.packageID}}" role="text">
+								<div class="btn-round-sm"
+									id="{{'su_powerOffForced_'+item.packageID}}"
+									role="text">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.shutdownRequiredTag' | translate}}
 								</div>
 							</div>
 							<div class="button-box"
 								*ngIf="item.isDependency">
-								<div class="btn-round-sm" id="{{'su_depended_'+item.packageID}}" role="text">
+								<div class="btn-round-sm"
+									id="{{'su_depended_'+item.packageID}}"
+									role="text">
 									<fa-icon [icon]="['fas', 'exclamation-circle']"></fa-icon> {{'systemUpdates.updateCheckbox.dependedPackage' | translate}}
 								</div>
 							</div>
-							<div class="download-size" id="{{'su_downloadSize_'+item.packageID}}" role="text">
-								{{'systemUpdates.updateCheckbox.downloadSize' | translate}}<span >{{ item.downloadSize }}</span>
+							<div class="download-size"
+								id="{{'su_downloadSize_'+item.packageID}}"
+								role="text">
+								{{'systemUpdates.updateCheckbox.downloadSize' | translate}}<span>{{ item.downloadSize }}</span>
 							</div>
+
 						</div>
 
 						<fa-icon class="question"
@@ -75,59 +83,69 @@
 	<!-- Installation completed section -->
 	<ul class="list-group"
 		*ngIf="isInstallationCompleted || isUpdateDownloading">
-		<li class="list-group-item" id="{{'su_item_installed_' + item.packageID}}"
+		<li class="list-group-item"
+			id="{{'su_item_installed_' + item.packageID}}"
 			*ngFor="let item of items">
 			<div class="media pl-3 align-items-center">
 				<div *ngIf="isInstallationCompleted">
 					<div *ngIf="item.installationStatus.toLocaleLowerCase() === 'success'; else elseBlock">
 						<div class="icon-check">
 							<div class="icon-bg text-center">
-								<fa-icon id="{{'su_item_installed_icon_success_' + item.packageID}}" role="text" [icon]="['fas', 'check']"></fa-icon>
+								<fa-icon id="{{'su_item_installed_icon_success_' + item.packageID}}"
+									role="text"
+									[icon]="['fas', 'check']"></fa-icon>
 							</div>
 						</div>
 					</div>
 					<ng-template #elseBlock>
 						<div class="icon-times">
 							<div class="icon-bg text-center">
-								<fa-icon id="{{'su_item_installed_icon_failure_' + item.packageID}}" role="text" [icon]="['fas', 'times']"></fa-icon>
+								<fa-icon id="{{'su_item_installed_icon_failure_' + item.packageID}}"
+									role="text"
+									[icon]="['fas', 'times']"></fa-icon>
 							</div>
 						</div>
 					</ng-template>
 				</div>
-					<div class="media-body pb-0 mb-0 small pl-3">
-							<!---div class="d-flex justify-content-between align-items-center w-100"-->
-						<div class="row align-items-center">
-							<div class="col col-11 item-text">
-								<div class="row" id="{{'su_item_installed_description_' + item.packageID}}" role="text">
-									<div class="d-flex justify-content-between align-items-center w-100">
-										<div class="update-title">{{item.packageDesc}}</div>
-									</div>
+				<div class="media-body pb-0 mb-0 small pl-3">
+					<!---div class="d-flex justify-content-between align-items-center w-100"-->
+					<div class="row align-items-center">
+						<div class="col col-11 item-text">
+							<div class="row"
+								id="{{'su_item_installed_description_' + item.packageID}}"
+								role="text">
+								<div class="d-flex justify-content-between align-items-center w-100">
+									<div class="update-title">{{item.packageDesc}}</div>
 								</div>
-								<div class="row" id="{{'su_item_installed_failReason_' + item.packageID}}" role="text">
-									<div class="col">
-										<div class="d-flex justify-content-between align-items-center w-100">
-											<div class="fail-reason" *ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' && !item.isACAttached && item.packageRebootType.toLocaleLowerCase() === 'rebootdelayed'">{{'systemUpdates.updateCheckbox.failReason' | translate}}</div>
-										</div>
+							</div>
+							<div class="row"
+								id="{{'su_item_installed_failReason_' + item.packageID}}"
+								role="text">
+								<div class="col">
+									<div class="d-flex justify-content-between align-items-center w-100">
+										<div class="fail-reason"
+											*ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' && !item.isACAttached && item.packageRebootType.toLocaleLowerCase() === 'rebootdelayed'">{{'systemUpdates.updateCheckbox.failReason' | translate}}</div>
 									</div>
 								</div>
 							</div>
-
-							<fa-icon class="question m-0"
-								tabindex="0"
-								triggers="manual"
-								placement="left"
-								id="{{'su_item_installed_question_mark_' + item.packageID}}"
-								role="tooltip"
-								[ngbTooltip]="systemUpdateTooltip"
-								#tooltip="ngbTooltip"
-								[icon]="['far', 'question-circle']"
-								container="vtr-root"
-								tooltipClass="tooltip-click"
-								(click)="onTooltipClick(item, tooltip)"
-								(keydown.enter)="onTooltipClick(item, tooltip)">
-							</fa-icon>
 						</div>
+
+						<fa-icon class="question m-0"
+							tabindex="0"
+							triggers="manual"
+							placement="left"
+							id="{{'su_item_installed_question_mark_' + item.packageID}}"
+							role="tooltip"
+							[ngbTooltip]="systemUpdateTooltip"
+							#tooltip="ngbTooltip"
+							[icon]="['far', 'question-circle']"
+							container="vtr-root"
+							tooltipClass="tooltip-click"
+							(click)="onTooltipClick(item, tooltip)"
+							(keydown.enter)="onTooltipClick(item, tooltip)">
+						</fa-icon>
 					</div>
+				</div>
 			</div>
 		</li>
 	</ul>
@@ -140,21 +158,21 @@
 			<li *ngIf="!isInstallationCompleted && !isUpdateDownloading && installedVersionStatus === 0">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ installedVersion }}</span></li>
 			<li *ngIf="!isInstallationCompleted && !isUpdateDownloading && installedVersionStatus === 1">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notInstalledText }}</span></li>
 			<li *ngIf="!isInstallationCompleted && !isUpdateDownloading && installedVersionStatus === 2">{{'systemUpdates.updateCheckbox.installVersion' | translate}}<span>{{ notAvailableText }}</span></li>
-			<li *ngIf="diskSpaceNeeded  && manufacturer !== undefined">{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span >{{ diskSpaceNeeded }}</span></li>
+			<li *ngIf="diskSpaceNeeded  && manufacturer !== undefined">{{'systemUpdates.updateCheckbox.diskSpaceNeeded' | translate}}<span>{{ diskSpaceNeeded }}</span></li>
 		</ul>
 		<div class="row"
 			*ngIf="isReadMeAvailable || severity !== UpdateInstallSeverity.Critical">
 			<div class="pl-0 pr-3 text-left"
-			*ngIf="isReadMeAvailable">
+				*ngIf="isReadMeAvailable">
 				<a href="javascript:void(0)"
-				   tabindex="0"
-				   class="read"
-				   vtrMetrics
-				   id="{{'su-package-readme-'+ packageID}}"
-				   metricsItem="readme"
-				   metricsEvent="featureClick"
-				   (click)="onReadMoreClick($event)"
-				   (keyup.enter)="onReadMoreClick($event)">{{'systemUpdates.readMore' | translate}}</a>
+					tabindex="0"
+					class="read"
+					vtrMetrics
+					id="{{'su-package-readme-'+ packageID}}"
+					metricsItem="readme"
+					metricsEvent="featureClick"
+					(click)="onReadMoreClick($event)"
+					(keyup.enter)="onReadMoreClick($event)">{{'systemUpdates.readMore' | translate}}</a>
 			</div>
 			<!-- required in MVP 2 -->
 			<div class="pl-0 pr-0 text-left"
@@ -164,12 +182,11 @@
 					tabindex="0"
 					vtrMetrics
 					id="{{'su-ignore-update-'+ packageID}}"
-				    metricsItem="ignore"
+					metricsItem="ignore"
 					metricsEvent="featureClick"
 					metricsParam="{{ 'packageID=' + packageID }}"
 					(click)="onIgnoreUpdateClick(packageName, true, severity)"
-					(keyup.enter)="onIgnoreUpdateClick(packageName, true, severity)"
-					>{{'systemUpdates.updateCheckbox.ignore' | translate}}</a>
+					(keyup.enter)="onIgnoreUpdateClick(packageName, true, severity)">{{'systemUpdates.updateCheckbox.ignore' | translate}}</a>
 			</div>
 			<div class="pl-0 pr-0 text-left"
 				*ngIf="severity !== UpdateInstallSeverity.Critical && isIgnored === true && !isInstallationCompleted && !isUpdateDownloading">
@@ -178,12 +195,11 @@
 					tabindex="0"
 					vtrMetrics
 					id="{{'su-unignore-update-'+ packageID}}"
-				    metricsItem="attend"
+					metricsItem="attend"
 					metricsEvent="featureClick"
 					metricsParam="{{ 'packageID=' + packageID }}"
 					(click)="onIgnoreUpdateClick(packageName, false, severity)"
-					(keyup.enter)="onIgnoreUpdateClick(packageName, false, severity)"
-					>{{'systemUpdates.updateCheckbox.attend' | translate}}</a>
+					(keyup.enter)="onIgnoreUpdateClick(packageName, false, severity)">{{'systemUpdates.updateCheckbox.attend' | translate}}</a>
 			</div>
 		</div>
 	</div>
