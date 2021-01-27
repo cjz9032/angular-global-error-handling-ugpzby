@@ -243,8 +243,8 @@
 									</div>
 								</vtr-ui-row-switch>
 							</li>
-							<div
-								*ngIf="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine && !newForteDriver">
+							<ng-template
+								[ngIf]="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported">
 								<li class="common-li-padding"
 									*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 									<vtr-ui-row-switch
@@ -310,7 +310,37 @@
 										</div>
 									</vtr-ui-row-switch>
 								</li>
-							</div>
+							</ng-template>
+							<li class="microphone-on-off" *ngIf="isAudioVendorSupported">
+								<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone-link.title' | translate"
+												   componentName="Microphone"
+												   [caption]="'device.deviceSettings.audio.microphone-link.description' | translate"
+												   [isSwitchVisible]="false"
+												   [leftIcon]="['fal', 'microphone']"
+												   [readMoreText]="''"
+												   [showChildContent]="true"
+												   [isLastChild]="true"
+												   [switchId]="'audio-microphone-link'">
+									<p *ngIf="isAudioVendorPanelAvailable" class="audioVendorLink">
+										<span id="audioVendorLink-panel-des" role="text">{{'device.deviceSettings.audio.microphone-link.download' | translate}}</span>&nbsp;<a href="javascript:void(0);"
+										   id="audioVendorLink-panel-link"
+										   role="link"
+										   class="audioVendor-here"
+										   (click)="launchPanel()"
+										   (keydown.enter)="launchPanel()">{{'device.deviceSettings.audio.microphone-link.here' | translate}}</a>
+										<span id="audioVendorLink-panel-punctuation" role="text">{{'device.deviceSettings.audio.microphone-link.punctuation' | translate}}</span>
+									</p>
+									<p *ngIf="!isAudioVendorPanelAvailable" class="audioVendorLink">
+										<span id="audioVendorLink-download-des" role="text">{{'device.deviceSettings.audio.microphone-link.launcher' | translate}}</span>&nbsp;<a href="javascript:void(0);"
+										  id="audioVendorLink-download-link"
+										  role="link"
+										  class="audioVendor-here"
+										  (click)="launchDownloadLink()"
+										  (keydown.enter)="launchDownloadLink()">{{'device.deviceSettings.audio.microphone-link.here' | translate}}</a>
+										<span id="audioVendorLink-download-punctuation" role="text">{{'device.deviceSettings.audio.microphone-link.punctuation' | translate}}</span>
+									</p>
+								</vtr-ui-row-switch>
+							</li>
 						</ul>
 					</vtr-container-collapsible>
 				</div>

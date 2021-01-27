@@ -107,6 +107,12 @@ import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-h
 import { BatteryHealthModule } from '../../components/pages/page-device-settings/children/subpage-device-settings-power/battery-health/battery-health.module';
 import { MaterialModule } from '../common/material.module';
 import { SystemUpdateModule } from '../system-update/system-update.module';
+import { AudioVendorService } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/audio-vendor.service';
+import { AudioVendorFactory } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/audio-vendor.factory';
+import { DOLBY_FUSION_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/dolby-fusion-client';
+import { FORTE_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/forte-client';
+import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
+import { DeviceService } from '../../services/device/device.service';
 
 
 @NgModule({
@@ -194,7 +200,14 @@ import { SystemUpdateModule } from '../system-update/system-update.module';
 		HeaderMainModule,
 		UiCustomSliderModule,
 	],
-	providers: [{ provide: BaseCameraDetail, useClass: CameraDetailMockService }],
+	providers: [
+		{ provide: BaseCameraDetail, useClass: CameraDetailMockService },
+		{
+			provide: AudioVendorService,
+			useFactory: AudioVendorFactory,
+			deps: [FORTE_CLIENT, DOLBY_FUSION_CLIENT, VantageShellService, DeviceService]
+		}
+	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class HardwareSettingsModule {
