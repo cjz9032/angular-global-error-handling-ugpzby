@@ -1,14 +1,17 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
-import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
-import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
-import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { TranslateService } from '@ngx-translate/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+
+import { keyboardMap } from './keyboardKeysMapping';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
-import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { keyboardMap } from './keyboardKeysMapping';
+import URLValidator from 'src/app/services/validators/url-validator';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import {
 	INPUT_TEXT,
 	INVOKE_KEY_SEQUENCE,
@@ -18,8 +21,6 @@ import {
 	OPEN_WEB,
 	UDKActionInfo,
 } from './UDKActionInfo';
-import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import URLValidator from '../../../../../../services/validators/url-validator';
 declare const Windows;
 
 @Component({
