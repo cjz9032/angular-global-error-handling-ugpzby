@@ -273,7 +273,7 @@ export const featureSource = [
 	},
 	{
 		id: AppSearch.FeatureIds.CameraAndDisplay.oLEDPowerSettingsId,
-		categoryId: AppSearch.FeatureIds.Power.categoryId,
+		categoryId: AppSearch.FeatureIds.CameraAndDisplay.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
 			menuId: MenuID.power,
