@@ -35,7 +35,7 @@
 					class="hyperlink-container update-btn"
 					[metricsParent]="metricsParent"
 					[metricsItem]="metricsItemName + '.Update'"
-					linkId="snapshot-{{componentType}}-update-btn"
+					linkId="snapshot-{{componentType}}-{{componentIndex}}-update-btn"
 					hyperlinkStyle="xs-blue-lighter"
 					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
 					[isDisabled]="!isUpdateEnabled()"
