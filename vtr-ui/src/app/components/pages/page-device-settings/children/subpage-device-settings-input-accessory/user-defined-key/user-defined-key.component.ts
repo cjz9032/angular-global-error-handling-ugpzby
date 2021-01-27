@@ -1,14 +1,17 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
-import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
-import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
-import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { TranslateService } from '@ngx-translate/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+
+import { keyboardMap } from './keyboardKeysMapping';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { CommonService } from 'src/app/services/common/common.service';
-import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { keyboardMap } from './keyboardKeysMapping';
+import URLValidator from 'src/app/services/validators/url-validator';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { DropDownInterval } from 'src/app/data-models/common/drop-down-interval.model';
+import { InputAccessoriesCapability } from 'src/app/data-models/input-accessories/input-accessories-capability.model';
+import { InputAccessoriesService } from 'src/app/services/input-accessories/input-accessories.service';
 import {
 	INPUT_TEXT,
 	INVOKE_KEY_SEQUENCE,
@@ -18,7 +21,6 @@ import {
 	OPEN_WEB,
 	UDKActionInfo,
 } from './UDKActionInfo';
-import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 declare const Windows;
 
 @Component({
@@ -47,7 +49,6 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	public applicationType: string;
 	public counter = 0;
 	public keyboardMappedValues: any;
-	private regExForUrlWithParam = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
 	public metricsParent = CommonMetricsModel.ParentDeviceSettings;
 
 	constructor(
@@ -489,10 +490,7 @@ export class UserDefinedKeyComponent implements OnInit, OnDestroy {
 	}
 
 	private isURLValidate(url: string): boolean {
-		if (url && url.length > 0) {
-			return this.regExForUrlWithParam.test(url);
-		}
-		return false;
+		return new URLValidator().isValid(url);
 	}
 
 	async checkSpecialKeyFileExistAndDelete() {
