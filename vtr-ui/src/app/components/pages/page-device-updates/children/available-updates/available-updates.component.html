@@ -5,6 +5,7 @@
 			class="font-size-xs"
 			[ariaLabel]="'defaultUnchecked'"
 			[checked]="isSelectAll"
+			[disabled]="disableSelectAll"
 			(change)="onSelectAllClick($event)"
 			vtrMetrics
 			metricsEvent="featureClick"
