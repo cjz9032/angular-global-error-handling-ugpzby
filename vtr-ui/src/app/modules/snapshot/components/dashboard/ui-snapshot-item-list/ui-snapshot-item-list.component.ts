@@ -14,6 +14,7 @@ export class UiSnapshotItemListComponent implements OnInit {
 	@Input() title: string;
 	@Input() snapshotComponents: Array<any>;
 	@Input() metricsParent: string;
+	@Input() componentType: string;
 
 	private itemsMetricsName = new Map<any, string>([
 		[SnapshotHardwareComponents[SnapshotHardwareComponents.DisplayDevices], 'Display'],
