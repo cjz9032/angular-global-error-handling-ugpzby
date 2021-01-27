@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.17](https://bitbucket.tc.lenovo.com///compare/v1.10.16...v1.10.17) (2021-01-27)
+
+
+### Bug Fixes
+
+* **gaming-dialog:** fix <a> without href does't has default tabindex ([21d400a](https://bitbucket.tc.lenovo.com///commit/21d400add51547d03ee9df90163b64d0788b7fa3))
+* **gaming-dialog:** fix advance oc dialog too small ([2e550a7](https://bitbucket.tc.lenovo.com///commit/2e550a73911b9b285ab1d4dbe5c48501764437b4))
+* **gaming-dialog:** fix dialog close delay ([0af3142](https://bitbucket.tc.lenovo.com///commit/0af31429ef743ee9b3695229bb8195e194415b9e))
+* **gaming-dialog:** optimizited code ([dc5d2cd](https://bitbucket.tc.lenovo.com///commit/dc5d2cd53f612632e3a5a8c0069fcaa469a4749b))
+
 ### [1.10.16](https://bitbucket.tc.lenovo.com///compare/v1.10.15...v1.10.16) (2021-01-26)
 
 
