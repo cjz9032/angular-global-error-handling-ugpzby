@@ -168,6 +168,10 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				false
 			);
 		}
+		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
+		this.isInMicrophoneOptimizationBlockList().then((blocked) => {
+			this.canShowMicrophoneOptimization = !blocked;
+		});
 	}
 
 	ngOnDestroy() {
@@ -1123,4 +1127,45 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	private isInMicrophoneOptimizationBlockList() {
+		// noinspection SpellCheckingInspection
+		const microphoneOptimizationBlockList = [
+			'7da89d20abf717b0b691aa96dac96c4db06f8166e1bb94d88572f1b73d074e6a',
+			'95b8d5578d63884142a73dcdeb5fd655415df9dad00db132e798d6e35451033c',
+			'dfc2f52c836c5c1fe5f4a50694c4086dc986f04971f61a6a282eccce6b8dd720',
+			'a9cd87714fedf41f028d48a089cb534f5a19410b4cd58620d39339eb135d01ff',
+			'ed7963f9132c133a3f1c5b21a057c4dd01f1b9990fafce2f3653f928fed2e768',
+			'f6c0706d75b35a92860319a48d206dba10b65f23f7db9c43ef7c3ecd727909b0',
+			'2b3fb8e006afef2576886d52fa6c34916071d3198c192f8ea8b0851404ff4d7d',
+			'7222993c2c7db94f4923f7dcb619ba6181d3653323ae5be9345878f920f600c3',
+			'c4d8cfc00eff2d046b67e595ef90c66e30def7213541d9f868a38599350564a9',
+			'260fb0097ace3d608b6449409553dcf3eed35a4473e869cffcf179566b699859',
+			'03c2c350f85bbe7f1e01e2fa1a306f48ccfcd241862881be14ff5af2886c1f7c',
+			'a8d98a3da8b2d3bba4d51042f1cd68ae818412a6a22ae8c2a69aca2703bd4166',
+			'092b6df94db39667dd45fa2ce1047cb95476af3cf3603d50c6fbac844e72e19a',
+			'cb313ad3661271dc1fa1b4e31413fcb2288c189944e09f067197f2ab5dc9d2aa',
+			'3bac0ab1106009b1e566df7de9b5d1ce0e28505e6f52b579ff0482e990f30776',
+			'e5a06cb70398b672f739cdb45d4267ef62c56b84fb463f4e0f00171495d77283',
+			'da58c3d251e720a7eac85e5a7e982d94b520e41dd12fbe3351583b3cdb4f1ece',
+			'6aff308a882ac48f4675bc6e941dc79f3cb783263d14701fad5b06800e1e1334',
+			'3c4b4fd7b64b1cd9101bbf5eef654170dd875e1178a2996fb4244434e6f165de',
+			'56d9bc8c7ab64d6eb20c6517269b9b19975652fbc7be2da175683b285e578244',
+			'750b9f0de71bfb59d4ae96320c04c5151ec0d58ce1b970ab651f161b7684d2eb',
+			'd6aed28417c8c1cd30d91e5ea000dfeb4ed9bdcd36ff91d803f5334152266267',
+			'defb397f9d1bcba8d03064f99fcc5747a0ace30f19386fd3509ad6fcbf7ce974',
+			'72b493aa3cf24878b8bf900fdc3a070f1576d5eef457e90032f62ef13b191e99',
+			'08d216335a67479a76fd36bffcba77b75dd75ad9d4959b92475d60c8ed0c0fad',
+			'71eb84d8e66bfea45a68dfa9516e3b81ec74883f9d7941cc960f6ef3bdf023cb',
+			'1fb2e73decff47160deefe871d52f49e2c881bea8708ff6ee70f56d57e0571cb',
+		];
+		return this.deviceService
+			.getMachineInfo()
+			.then(
+				(res) =>
+					res.hasOwnProperty('mt') &&
+					typeof res.mt === 'string' &&
+					res.mt.length >= 4 &&
+					microphoneOptimizationBlockList.includes(sha256(res.mt.substr(0, 4)).toString())
+			);
+	}
 }
