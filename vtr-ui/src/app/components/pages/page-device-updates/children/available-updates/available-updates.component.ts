@@ -59,7 +59,7 @@ export class AvailableUpdatesComponent implements OnInit {
 	constructor(
 		private systemUpdateService: SystemUpdateService,
 		private commonService: CommonService,
-		) {
+	) {
 		this.notificationSubscription = this.commonService.notification.subscribe(
 			(response: AppNotification) => {
 				this.onNotification(response);
@@ -74,19 +74,13 @@ export class AvailableUpdatesComponent implements OnInit {
 
 	ngOnInit() {
 		if (!this.isInstallingAllUpdates) {
-			this.criticalUpdates = this.criticalUpdates.filter((item: AvailableUpdateDetail) => {
-				return item.isSelected;
-			});
+			this.criticalUpdates = this.criticalUpdates.filter((item: AvailableUpdateDetail) => item.isSelected);
 
 			this.recommendedUpdates = this.recommendedUpdates.filter(
-				(item: AvailableUpdateDetail) => {
-					return item.isSelected;
-				}
+				(item: AvailableUpdateDetail) => item.isSelected
 			);
 
-			this.optionalUpdates = this.optionalUpdates.filter((item: AvailableUpdateDetail) => {
-				return item.isSelected;
-			});
+			this.optionalUpdates = this.optionalUpdates.filter((item: AvailableUpdateDetail) => item.isSelected);
 		}
 		this.checkSelectedUpdateStatus();
 		this.checkSelectAllStatus();
@@ -101,20 +95,13 @@ export class AvailableUpdatesComponent implements OnInit {
 	}
 
 	public onSelectAllClick($event: any) {
-		this.isSelectAll = $event.target.checked;
+		this.isSelectAll = $event.checked;
 		this.systemUpdateService.toggleSelectAllUpdates(this.isSelectAll);
 		this.checkSelectedUpdateStatus();
 	}
 
-	public onKeyPress($event: any) {
-		if ($event.keyCode === 13) {
-			$event.target.click();
-		}
-	}
-
 	public onCheckChange($event: any) {
-		const item = $event.target;
-		this.systemUpdateService.toggleUpdateSelection(item.name, item.checked);
+		this.systemUpdateService.toggleUpdateSelection($event.source.name, $event.checked);
 		// set the value twice to trigger the ui refresh, Some times the ui get some strange problems
 		document.body.style.zoom = '1.1';
 		document.body.style.zoom = '1.0';

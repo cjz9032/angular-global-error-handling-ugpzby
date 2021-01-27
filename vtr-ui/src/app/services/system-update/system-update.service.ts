@@ -120,6 +120,7 @@ export class SystemUpdateService {
 
 	/**
 	 * set option for Auto update settings section
+	 *
 	 * @param criticalUpdate boolean value, true = on, false = off
 	 * @param recommendedUpdate  boolean value, true = on, false = off
 	 */
@@ -584,20 +585,18 @@ export class SystemUpdateService {
 
 	public toggleUpdateSelection(packageName: string, isSelected: boolean) {
 		if (this.updateInfo.updateList && this.updateInfo.updateList.length > 0) {
-			const update = this.updateInfo.updateList.find((value) => {
-				return value.packageName === packageName;
-			});
-			if (update.packageName === packageName) {
+			const update = this.updateInfo.updateList.find((value) => value.packageName === packageName);
+			if (update) {
 				update.isSelected = isSelected;
-			}
-			if (update.dependedPackageID) {
-				const dependedPackages = update.dependedPackageID.split(',');
-				this.selectDependedUpdate(
-					this.updateInfo.updateList,
-					dependedPackages,
-					isSelected,
-					update.packageID
-				);
+				if (update.dependedPackageID) {
+					const dependedPackages = update.dependedPackageID.split(',');
+					this.selectDependedUpdate(
+						this.updateInfo.updateList,
+						dependedPackages,
+						isSelected,
+						update.packageID
+					);
+				}
 			}
 		}
 	}
@@ -658,9 +657,7 @@ export class SystemUpdateService {
 		dependedByPackage: string
 	) {
 		coreqPackages.forEach((coreqPackage) => {
-			const coreqUpdate = updateList.find((value) => {
-				return value.packageID === coreqPackage;
-			});
+			const coreqUpdate = updateList.find((value) => value.packageID === coreqPackage);
 			if (coreqUpdate) {
 				if (!coreqUpdate.dependedByPackages.includes(dependedByPackage)) {
 					coreqUpdate.dependedByPackages =
@@ -673,9 +670,7 @@ export class SystemUpdateService {
 					const dependedPacks = coreqUpdate.dependedByPackages.split(',');
 					coreqUpdate.isDependency = false;
 					dependedPacks.forEach((packID) => {
-						const dependPack = updateList.find((value) => {
-							return value.packageID === packID;
-						});
+						const dependPack = updateList.find((value) => value.packageID === packID);
 						if (dependPack && dependPack.isSelected) {
 							coreqUpdate.isSelected = true;
 							coreqUpdate.isDependency = true;
@@ -710,25 +705,19 @@ export class SystemUpdateService {
 
 	public isRebootRequested(): boolean {
 		if (this.installedUpdates) {
-			const forcedRebootPackages = this.installedUpdates.filter((pkg) => {
-				return pkg.packageRebootType.toLowerCase() === 'rebootforced' && pkg.isInstalled;
-			});
+			const forcedRebootPackages = this.installedUpdates.filter((pkg) => pkg.packageRebootType.toLowerCase() === 'rebootforced' && pkg.isInstalled);
 			// if forced reboot packages are there then don't show reboot requested dialog/modal
 			if (forcedRebootPackages.length > 0) {
 				return false;
 			}
 
-			const forcedPowerOffPackages = this.installedUpdates.filter((pkg) => {
-				return pkg.packageRebootType.toLowerCase() === 'poweroffforced' && pkg.isInstalled;
-			});
+			const forcedPowerOffPackages = this.installedUpdates.filter((pkg) => pkg.packageRebootType.toLowerCase() === 'poweroffforced' && pkg.isInstalled);
 			// if forced power off packages are there then don't show reboot requested dialog/modal
 			if (forcedPowerOffPackages.length > 0) {
 				return false;
 			}
 
-			const delayedPackages = this.installedUpdates.filter((pkg) => {
-				return pkg.packageRebootType.toLowerCase() === 'rebootdelayed' && pkg.isInstalled;
-			});
+			const delayedPackages = this.installedUpdates.filter((pkg) => pkg.packageRebootType.toLowerCase() === 'rebootdelayed' && pkg.isInstalled);
 			// if reboot delayed packages are there then don't show reboot requested dialog/modal
 			if (delayedPackages.length > 0) {
 				return false;
@@ -769,9 +758,7 @@ export class SystemUpdateService {
 		// Priority #1 RebootDelayed : return details of it, no need to check other.
 		if (rebootDelayedUpdates && rebootDelayedUpdates.length > 0) {
 			rebootType = UpdateRebootType.RebootDelayed;
-			const updates = rebootDelayedUpdates.map<string>((value) => {
-				return value.packageDesc;
-			});
+			const updates = rebootDelayedUpdates.map<string>((value) => value.packageDesc);
 			packages.push(...updates);
 		}
 		// Priority #2 RebootForced : return details of it, no need to check other.
@@ -779,9 +766,7 @@ export class SystemUpdateService {
 			if (rebootType === UpdateRebootType.Unknown) {
 				rebootType = UpdateRebootType.RebootForced;
 			}
-			const updates = rebootForcedUpdates.map((value) => {
-				return value.packageDesc;
-			});
+			const updates = rebootForcedUpdates.map((value) => value.packageDesc);
 			packages.push(...updates);
 		}
 		// Priority #3 PowerOffForced : return details of it, no need to check other.
@@ -789,9 +774,7 @@ export class SystemUpdateService {
 			if (rebootType === UpdateRebootType.Unknown) {
 				rebootType = UpdateRebootType.PowerOffForced;
 			}
-			const updates = powerOffForcedUpdates.map((value) => {
-				return value.packageDesc;
-			});
+			const updates = powerOffForcedUpdates.map((value) => value.packageDesc);
 			packages.push(...updates);
 		}
 		return { rebootType, packages };
@@ -801,9 +784,7 @@ export class SystemUpdateService {
 		updateList: Array<AvailableUpdateDetail>,
 		rebootType: UpdateRebootType
 	): Array<AvailableUpdateDetail> {
-		const updates = updateList.filter((value: AvailableUpdateDetail) => {
-			return value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase();
-		});
+		const updates = updateList.filter((value: AvailableUpdateDetail) => value.packageRebootType.toLowerCase() === rebootType.toLocaleLowerCase());
 		return updates;
 	}
 
@@ -1014,9 +995,7 @@ export class SystemUpdateService {
 		this.installedUpdates = [];
 		updates.forEach((update: AvailableUpdateDetail) => {
 			if (isInstallingAllUpdates || update.isSelected) {
-				const pkg = updateInstallationList.find((uil) => {
-					return update.packageID === uil.packageID;
-				});
+				const pkg = updateInstallationList.find((uil) => update.packageID === uil.packageID);
 				if (pkg) {
 					update.installationStatus = pkg.actionResult;
 					update.isInstalled = update.installationStatus === UpdateActionResult.Success;
@@ -1065,9 +1044,7 @@ export class SystemUpdateService {
 		updateList: Array<AvailableUpdateDetail>
 	): Array<AvailableUpdateDetail> {
 		if (updateList && updateList.length > 0) {
-			const updates = updateList.filter((value) => {
-				return value.isSelected;
-			});
+			const updates = updateList.filter((value) => value.isSelected);
 			return updates;
 		}
 		return undefined;
