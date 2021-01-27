@@ -1,3 +1,5 @@
+import { DeviceStatusCardType } from 'src/app/enums/system-state.enum';
+
 /**
  * model for status widgets
  */
@@ -20,7 +22,7 @@ export class Status {
 }
 
 export class DeviceStatus {
-	constructor() {}
+	constructor() { }
 	public id: string;
 	public icon: string;
 	public title: string;
@@ -33,10 +35,25 @@ export class DeviceStatus {
 	public showSepline: boolean;
 }
 
-export enum DeviceCondition {
-	Loading = 0,
-	Good = 1,
-	NeedRunSU = 2,
-	NeedRunSMPScan = 3,
-	NeedRunHWScan = 4,
+
+export class DeviceStatusCardDate {
+	constructor(
+	) {
+		this[DeviceStatusCardType.su] = {
+			date: '',
+			needPromote: false,
+		};
+		this[DeviceStatusCardType.hw] = {
+			date: '',
+			needPromote: false,
+		};
+	}
+	public [DeviceStatusCardType.su]: {
+		date: string;
+		needPromote: boolean;
+	};
+	public [DeviceStatusCardType.hw]: {
+		date: string;
+		needPromote: boolean;
+	};
 }

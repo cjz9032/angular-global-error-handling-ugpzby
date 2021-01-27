@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DeviceService } from '../../../services/device/device.service';
 import { MyDevice } from 'src/app/data-models/device/my-device.model';
-import { DeviceStatus, DeviceCondition } from 'src/app/data-models/widgets/status.model';
+import { DeviceStatus } from 'src/app/data-models/widgets/status.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SystemUpdateService } from 'src/app/services/system-update/system-update.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -19,7 +19,7 @@ import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hard
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { FeatureClick } from 'src/app/services/metric/metrics.model';
-import { SystemHealthDates } from 'src/app/enums/system-state.enum';
+import { DeviceCondition, SystemHealthDates } from 'src/app/enums/system-state.enum';
 
 @Component({
 	selector: 'vtr-widget-device',
@@ -124,7 +124,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 			case DeviceCondition.NeedRunHWScan:
 				this.deviceService.launchUri(this.quickScanProtocol);
 				break;
-			case DeviceCondition.NeedRunSMPScan:
+			case DeviceCondition.NeedRunSPScan:
 				this.deviceService.launchUri(this.smartPerformanceProtocol);
 				break;
 			case DeviceCondition.NeedRunSU:
@@ -309,7 +309,7 @@ export class WidgetDeviceComponent implements OnInit, OnDestroy {
 	private async updateSmartPerformanceStatus(smartPerform: DeviceStatus) {
 		try {
 			if (this.commonService.isOnline) {
-				if (await this.dashboardService.isSmartPerformanceSuscripted()) {
+				if (await this.dashboardService.isSmartPerformanceSubscripted()) {
 					smartPerform.subtitle = this.translate.instant('device.myDevice.entitled');
 				} else {
 					smartPerform.subtitle = this.translate.instant('device.myDevice.subscribeNow');

@@ -118,7 +118,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	heroBannerDemoItems = [];
 	canShowDccDemo$: Promise<boolean>;
 
-	private pageTypeOfdashboard = 'dashboard';
+	private pageTypeOfDashboard = 'dashboard';
 	private positionOfWelcomeText = 'welcome-text';
 
 	contentCards = {
@@ -258,7 +258,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		statusText: 'GOOD CONDITION',
 		isActionLink: false,
 	};
-	getPbSubscrpition: Subscription;
+	getPbSubscription: Subscription;
+	showDeviceAndSecurityTimer: any;
 
 	securityAdvisorHandler = () => {
 		clearTimeout(this.getSecurityInfoTimeout);
@@ -324,32 +325,12 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			}
 		);
 
-		this.translateSubscription = this.translate
-			.stream([
-				'dashboard.offlineInfo.welcomeToVantage',
-				'common.menu.support',
-				'common.menu.device.sub2',
-				'dashboard.offlineInfo.systemHealth',
-				'settings.preferenceSettings',
-				'systemUpdates.title',
-				'systemUpdates.readMore',
-				'security.landing.noProtection',
-				'security.landing.basic',
-				'security.landing.intermediate',
-				'security.landing.advanced',
-			])
-			.subscribe((result) => {
-				this.dashboardService.translateString = result;
-				this.dashboardService.setDefaultCMSContent();
-				this.getOfflineContent();
-				this.getCachedContent();
-			});
+		this.dashboardService.setDefaultCMSContent();
+		this.getOfflineContent();
+		this.getDeviceCardInfo().finally(() => {
+			this.getCachedContent();
+		});
 
-		this.langChangeSubscription = this.translate.onLangChange.subscribe(
-			(event: LangChangeEvent) => {
-				this.getCachedContent();
-			}
-		);
 		this.getSecurityCardInfo();
 		this.getSelfSelectStatus();
 		this.canShowDccDemo$ = this.dccService.canShowDccDemo();
@@ -402,6 +383,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.metricsService.deactivateScrollCounter(PageName.Dashboard);
 
 		this.dashboardService.isDashboardDisplayed = false;
+		this.dashboardService.canShowDeviceAndSecurityCard = false;
+		if (this.showDeviceAndSecurityTimer) {
+			clearTimeout(this.showDeviceAndSecurityTimer);
+		}
 		this.commonService.setSessionStorageValue(
 			SessionStorageKey.DashboardInDashboardPage,
 			false
@@ -466,20 +451,23 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			this.actionSubscription.unsubscribe();
 		}
 
-		this.getPbSubscrpition?.unsubscribe();
+		this.getPbSubscription?.unsubscribe();
 	}
 
-	private async getCachedContent(lang?: string) {
-		this.isShowStateCard = await this.dashboardService.isPositionBShowDeviceState();
+	private async getDeviceCardInfo() {
+		this.isShowStateCard = this.dashboardService.canShowDeviceAndSecurityCard && await this.dashboardService.isPositionBShowDeviceState();
 		if (this.isShowStateCard) {
-			this.getPbSubscrpition = this.dashboardService.getPositionBData().subscribe((data) => {
+			this.getPbSubscription = this.dashboardService.getPositionBData().subscribe((data) => {
 				this.positionBData = data;
 			});
+			this.checkDeviceAndSecurityTimer();
 		}
+	}
 
+	private async getCachedContent() {
 		this.getTileSource().then(() => {
 			this.contentLocalCache
-				.getCachedContents(this.pageTypeOfdashboard, this.contentCards, this.isOnline)
+				.getCachedContents(this.pageTypeOfDashboard, this.contentCards, this.isOnline)
 				.then((result) => {
 					if (!result) {
 						return;
@@ -842,6 +830,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 						this.getCachedContent();
 						this.getWarrantyInfo();
 					}
+					if (this.showDeviceAndSecurityTimer) {
+						clearTimeout(this.showDeviceAndSecurityTimer);
+					}
 					break;
 				case LocalStorageKey.LastWarrantyStatus:
 					if (notification.payload) {
@@ -879,11 +870,21 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.metricsService.activateScrollCounter(PageName.Dashboard);
 	}
 
+	checkDeviceAndSecurityTimer() {
+		if (!this.showDeviceAndSecurityTimer && this.dashboardService.canShowDeviceAndSecurityCard && this.isOnline) {
+			this.showDeviceAndSecurityTimer = setTimeout(() => {
+				this.isShowStateCard = false;
+				this.showSecurityStatusCard = false;
+			}, 5 * 60 * 1000);
+		}
+	}
+
 	private async getSecurityCardInfo(): Promise<void> {
-		this.showSecurityStatusCard = await this.dashboardService.isPositionCShowSecurityCard();
+		this.showSecurityStatusCard = this.dashboardService.canShowDeviceAndSecurityCard && await this.dashboardService.isPositionCShowSecurityCard();
 		if (!this.showSecurityStatusCard) {
 			return;
 		}
+		this.checkDeviceAndSecurityTimer();
 		const cacheSaStatus: LandingView = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.SecurityLandingLevel
 		);
@@ -981,9 +982,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		);
 		this.securityInfo.statusText =
 			this.securityInfo.status !== undefined
-				? this.dashboardService.translateString[
-				this.positionCData[this.securityInfo.status + 1].statusText
-				]
+				? this.translate.instant(
+					this.positionCData[this.securityInfo.status + 1].statusText
+				)
 				: '--';
 	}
 }

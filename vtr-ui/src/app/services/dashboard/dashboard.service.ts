@@ -22,11 +22,11 @@ import { MetricService } from '../metric/metrics.service';
 import { AdPolicyService } from '../ad-policy/ad-policy.service';
 import { HardwareScanService } from '../../modules/hardware-scan/services/hardware-scan.service';
 import { ConfigService } from '../config/config.service';
-import { SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum';
-import { DeviceCondition, DeviceStatus } from 'src/app/data-models/widgets/status.model';
+import { DeviceCondition, DeviceStatusCardType, SystemHealthDates, SystemState } from 'src/app/enums/system-state.enum';
+import { DeviceStatusCardDate } from 'src/app/data-models/widgets/status.model';
 import { DashboardStateCardData } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
 import { map, startWith } from 'rxjs/operators';
-import { WindowsVersionService } from 'src/app/services/windows-version/windows-version.service';
+import { TranslateService } from '@ngx-translate/core';
 
 interface IContentGroup {
 	positionA: any[];
@@ -66,7 +66,6 @@ export class DashboardService {
 		positionE: null,
 		positionF: null,
 	};
-	translateString: any;
 
 	welcomeText = '';
 
@@ -127,6 +126,7 @@ export class DashboardService {
 
 	positionBResponseReceived: boolean;
 	positionBLoadingTimer: any;
+	canShowDeviceAndSecurityCard = true;
 
 	constructor(
 		shellService: VantageShellService,
@@ -142,7 +142,7 @@ export class DashboardService {
 		private configService: ConfigService,
 		private spService: SmartPerformanceService,
 		private selfselectService: SelfSelectService,
-		private windowsVerisonService: WindowsVersionService
+		private translate: TranslateService,
 	) {
 		this.dashboard = shellService.getDashboard();
 		this.eyeCareMode = shellService.getEyeCareMode();
@@ -325,15 +325,12 @@ export class DashboardService {
 	}
 
 	setDefaultCMSContent() {
-		if (!this.translateString) {
-			return;
-		}
 		this.offlineCardContent.positionA = [
 			{
 				albumId: 1,
 				id: 1,
 				source: 'Vantage',
-				title: this.translateString['dashboard.offlineInfo.welcomeToVantage'],
+				title: this.translate.instant('dashboard.offlineInfo.welcomeToVantage'),
 				url: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null,
 				DataSource: ContentSource.Local,
@@ -341,7 +338,7 @@ export class DashboardService {
 			},
 		];
 		this.offlineCardContent.positionB = {
-			Title: this.translateString['common.menu.support'],
+			Title: this.translate.instant('common.menu.support'),
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-SMB-Support.jpg',
@@ -361,7 +358,7 @@ export class DashboardService {
 		};
 
 		this.offlineCardContent.positionC = {
-			Title: this.translateString['common.menu.device.sub2'],
+			Title: this.translate.instant('common.menu.device.sub2'),
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-SMB-Device-Settings.jpg',
@@ -381,7 +378,7 @@ export class DashboardService {
 		};
 
 		this.offlineCardContent.positionD = {
-			Title: this.translateString['dashboard.offlineInfo.systemHealth'],
+			Title: this.translate.instant('dashboard.offlineInfo.systemHealth'),
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-SMB-My-Device.jpg',
@@ -401,11 +398,11 @@ export class DashboardService {
 		};
 
 		this.offlineCardContent.positionE = {
-			Title: this.translateString['settings.preferenceSettings'],
+			Title: this.translate.instant('settings.preferenceSettings'),
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-Preference-Settings.jpg',
-			Action: this.translateString['systemUpdates.readMore'],
+			Action: this.translate.instant('systemUpdates.readMore'),
 			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:preference',
 			BrandName: '',
@@ -421,11 +418,11 @@ export class DashboardService {
 		};
 
 		this.offlineCardContent.positionF = {
-			Title: this.translateString['systemUpdates.title'],
+			Title: this.translate.instant('systemUpdates.title'),
 			ShortTitle: '',
 			Description: '',
 			FeatureImage: 'assets/cms-cache/offline/Default-SMB-System-Update.jpg',
-			Action: this.translateString['systemUpdates.readMore'],
+			Action: this.translate.instant('systemUpdates.readMore'),
 			ActionType: ContentActionType.Internal,
 			ActionLink: 'lenovo-vantage3:system-updates',
 			BrandName: '',
@@ -456,7 +453,7 @@ export class DashboardService {
 
 	public getPositionBData(): Observable<any> {
 		return this.getDeviceStatusWithTimeOut(10000)
-			.pipe(map((conditon) => this.getStateCardData(conditon)))
+			.pipe(map((condition) => this.getStateCardData(condition)))
 			.pipe(startWith(this.positionBLoadingData));
 	}
 
@@ -474,14 +471,14 @@ export class DashboardService {
 				subscriber.next(DeviceCondition.Good);
 			}, timeout);
 
-			this.getDeviceStatus().then((dvsconditon) => {
+			this.getDeviceStatus().then((dvsCondition) => {
 				clearTimeout(loadingTimer);
-				if (dvsconditon) {
+				if (dvsCondition) {
 					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.DeviceCondition,
-						dvsconditon
+						dvsCondition
 					);
-					subscriber.next(dvsconditon);
+					subscriber.next(dvsCondition);
 				}
 				subscriber.complete();
 			});
@@ -496,7 +493,7 @@ export class DashboardService {
 					return this.goodConditionData;
 				case DeviceCondition.NeedRunSU:
 					return this.needMaintainSU;
-				case DeviceCondition.NeedRunSMPScan:
+				case DeviceCondition.NeedRunSPScan:
 					return this.needMaintainSP;
 				case DeviceCondition.NeedRunHWScan:
 					return this.needMaintainHWS;
@@ -526,18 +523,42 @@ export class DashboardService {
 			return DeviceCondition.Good;
 		}
 
+		let cacheDates: DeviceStatusCardDate = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.DashboardDeviceStatusCardDate
+		);
+		if (!cacheDates) {
+			cacheDates = new DeviceStatusCardDate();
+		}
+
+		let needRunSu = false;
 		if (await this.isSUNeedPromote()) {
-			return DeviceCondition.NeedRunSU;
+			needRunSu = this.checkIfNeedPromote(cacheDates, DeviceStatusCardType.su);
+		} else {
+			cacheDates[DeviceStatusCardType.su].needPromote = false;
+			cacheDates[DeviceStatusCardType.su].date = '';
 		}
 
-		if (await this.isSMPNeedPromote()) {
-			return DeviceCondition.NeedRunSMPScan;
+		let needRunSp = false;
+		if (!needRunSu && await this.isSPNeedPromote()) {
+			needRunSp = true;
 		}
 
+		let needRunHw = false;
 		if (await this.isHWScanNeedPromote()) {
-			return DeviceCondition.NeedRunHWScan;
+			needRunHw = this.checkIfNeedPromote(cacheDates, DeviceStatusCardType.hw);
+		} else {
+			cacheDates[DeviceStatusCardType.hw].needPromote = false;
+			cacheDates[DeviceStatusCardType.hw].date = '';
 		}
 
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.DashboardDeviceStatusCardDate,
+			cacheDates
+		);
+
+		if (needRunSu) { return DeviceCondition.NeedRunSU; }
+		if (needRunSp) { return DeviceCondition.NeedRunSPScan; }
+		if (needRunHw) { return DeviceCondition.NeedRunHWScan; }
 		return DeviceCondition.Good;
 	}
 
@@ -546,25 +567,25 @@ export class DashboardService {
 			return false;
 		}
 
-		const suinfo = await this.systemUpdateService.getMostRecentUpdateInfo();
-		if (!suinfo?.lastScanTime) {
+		const suInfo = await this.systemUpdateService.getMostRecentUpdateInfo();
+		if (!suInfo?.lastScanTime) {
 			return true;
 		}
-		const days = this.systemUpdateService.dateDiffInDays(suinfo.lastScanTime);
+		const days = this.systemUpdateService.dateDiffInDays(suInfo.lastScanTime);
 		if (days > SystemHealthDates.SystemUpdate) {
 			return true;
 		}
 		return false;
 	}
 
-	public async isSMPNeedPromote(): Promise<boolean> {
+	public async isSPNeedPromote(): Promise<boolean> {
 		if (!(await this.configService.showSmartPerformance()) || !this.commonService.isOnline) {
 			return false;
 		}
-		return !(await this.isSmartPerformanceSuscripted());
+		return !(await this.isSmartPerformanceSubscripted());
 	}
 
-	public async isSmartPerformanceSuscripted(): Promise<boolean> {
+	public async isSmartPerformanceSubscripted(): Promise<boolean> {
 		await this.spService.getSubscriptionDataDetail(null);
 		return this.spService.isSubscribed;
 	}
@@ -578,7 +599,7 @@ export class DashboardService {
 		if (
 			lastSacnInfo.date &&
 			this.systemUpdateService.dateDiffInDays(lastSacnInfo.date) >
-				SystemHealthDates.HardwareScan
+			SystemHealthDates.HardwareScan
 		) {
 			return true;
 		}
@@ -593,6 +614,37 @@ export class DashboardService {
 		}
 
 		return false;
+	}
+
+	checkIfNeedPromote(cacheDates: DeviceStatusCardDate, statusType: DeviceStatusCardType) {
+		const longDays = statusType === DeviceStatusCardType.su
+			? SystemHealthDates.SystemUpdate
+			: SystemHealthDates.HardwareScan;
+		let needPromote = false;
+		let needUpdateDate = false;
+		if (cacheDates[statusType].date === '') {
+			needUpdateDate = true;
+			needPromote = true;
+		} else {
+			const dayDiff = this.systemUpdateService.dateDiffInDays(cacheDates[statusType].date);
+			if (cacheDates[statusType].needPromote) {
+				if (dayDiff > SystemHealthDates.KeepShow && dayDiff <= longDays + SystemHealthDates.KeepShow) {
+					needPromote = false;
+					needUpdateDate = true;
+				} else {
+					needPromote = true;
+					if (dayDiff > longDays + SystemHealthDates.KeepShow) {
+						needUpdateDate = true;
+					}
+				}
+			} else if (dayDiff > longDays) {
+				needUpdateDate = true;
+				needPromote = true;
+			}
+		}
+		cacheDates[statusType].needPromote = needPromote;
+		if (needUpdateDate) { cacheDates[statusType].date = new Date().toDateString(); }
+		return needPromote;
 	}
 
 	public async isPositionCShowSecurityCard(): Promise<boolean> {
