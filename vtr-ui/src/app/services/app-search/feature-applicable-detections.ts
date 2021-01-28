@@ -79,11 +79,6 @@ export class FeatureApplicableDetections {
 			featureId: AppSearch.FeatureIds.HardwareScan.pageId,
 			isApplicable: async () => this.isHardwareScanApplicable(),
 		},
-		// Camera Settings
-		{
-			featureId: AppSearch.FeatureIds.CameraAndDisplay.cameraSettingsId,
-			isApplicable: async () => this.isCameraSettingsApplicable(),
-		},
 		// device settings - powers feature
 		{
 			featureId: AppSearch.FeatureIds.Power.batteryInformationId,
@@ -175,7 +170,7 @@ export class FeatureApplicableDetections {
 		},
 		{
 			featureId: AppSearch.FeatureIds.CameraAndDisplay.cameraSettingsId,
-			isApplicable: async () => false,
+			isApplicable: async () => this.isCameraSettingsApplicable(),
 		},
 		{
 			featureId: AppSearch.FeatureIds.CameraAndDisplay.cameraBackgroundBlurId,
