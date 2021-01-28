@@ -8,17 +8,18 @@ import { WindowsVersionService } from 'src/app/services/windows-version/windows-
 })
 export class SubpageCreatorSettingsComponent {
 
-  public windowsOSVersion: number = undefined;
+  private windowsOSVersion: number = undefined;
+  public hdrCapability: boolean = undefined;
   intelligentPerformanceVisible = true;
 
   constructor(
     private windowsVersionService: WindowsVersionService
   ) {
-    this.windowsOSVersion = windowsVersionService.currentBuildVersion;
-   }
+    this.windowsOSVersion = this.windowsVersionService.currentBuildVersion;
+    this.hdrCapability = this.windowsOSVersion > 17763;
+  }
 
   updateIntelligentPerformanceCapability(value: boolean) {
     this.intelligentPerformanceVisible = value;
   }
-   
 }
