@@ -35,7 +35,7 @@
 					class="hyperlink-container update-btn"
 					[metricsParent]="metricsParent"
 					[metricsItem]="metricsItemName + '.Update'"
-					linkId="snapshot-update-btn"
+					linkId="snapshot-{{ componentType }}-{{ componentIndex }}-update-btn"
 					hyperlinkStyle="xs-blue-lighter"
 					[label]=" ('snapshot.snapshotUpdateButton' | translate).toUpperCase() "
 					[isDisabled]="!isUpdateEnabled()"
@@ -46,7 +46,7 @@
 
 			<!-- Icon to expand and collapse module information -->
 			<div *ngIf="component.status !== snapshotStatus.noData; else hideDetailsInfo">
-				<div id="snapshot-item-{{ componentIndex }}-details-btn"
+				<div id="snapshot-item-{{ componentType }}-{{ componentIndex }}-details-btn"
 					class="collapse-control"
 					[attr.aria-label]="!detailsExpanded ? name + 'expand-module-details': name + 'collapse-module-details'"
 					[attr.aria-expanded]="detailsExpanded"

@@ -19,6 +19,7 @@ export class UiSnapshotItemComponent implements OnInit {
 	@Input() isLastElement: boolean;
 	@Input() metricsParent: string;
 	@Input() metricsItemName: string;
+	@Input() componentType: string;
 
 	public detailsExpanded: boolean;
 
