@@ -50,25 +50,25 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	isNewplugin = true;
 	microphoneModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 
-		headerMenuItems = [
+	headerMenuItems = [
 		{
-					title: 'smb.meetingExperience.meetingManager.aiMeetingManager.title',
-					path: 'meetingManager',
-					metricsItem: 'AIMeetingManager',
-					order: 1,
-				},
-		{
-					title: 'smb.meetingExperience.meetingManager.microPhone.title',
-					path: 'microphone',
-					metricsItem: 'MicroPhone',
-					order: 2,
+			title: 'smb.meetingExperience.meetingManager.aiMeetingManager.title',
+			path: 'meetingManager',
+			metricsItem: 'AIMeetingManager',
+			order: 1,
 		},
 		{
-					title: 'smb.meetingExperience.meetingManager.smartAppearance.title',
-					path: 'smartAppearance',
-					metricsItem: 'SmartAppearance',
-					order: 3,
-				},
+			title: 'smb.meetingExperience.meetingManager.microPhone.title',
+			path: 'microphone',
+			metricsItem: 'MicroPhone',
+			order: 2,
+		},
+		{
+			title: 'smb.meetingExperience.meetingManager.smartAppearance.title',
+			path: 'smartAppearance',
+			metricsItem: 'SmartAppearance',
+			order: 3,
+		},
 	];
 
 	// when initialize page, cacheFlag need change to false if user make changes before getting response back,
