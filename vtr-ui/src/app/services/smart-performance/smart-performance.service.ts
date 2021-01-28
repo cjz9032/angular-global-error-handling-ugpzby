@@ -35,7 +35,19 @@ export class SmartPerformanceService {
 	localPriceData: SPLocalPriceData;
 	isLocalPriceOnlineChecked = false;
 
-	ZeroDecimalPlaceCurrencyGEO = ['jp', 'kr', 'tw'];
+	readonly ZeroDecimalPlaceCurrencyGEO = ['jp', 'kr', 'tw'];
+
+	readonly CommaCurrencyGEO = [
+		{ GEO: 'fr', locale: 'fr-FR' }, { GEO: 'de', locale: 'de-DE' },
+		{ GEO: 'at', locale: 'de-AT' }, { GEO: 'cl', locale: 'es-CL' },
+		{ GEO: 'be', locale: 'fr-BE' }, { GEO: 'it', locale: 'de-AT' },
+		{ GEO: 'nl', locale: 'nl-NL' }, { GEO: 'es', locale: 'es-ES' },
+		{ GEO: 'fi', locale: 'fi-FI' }, { GEO: 'ar', locale: 'es-AR' },
+		{ GEO: 'dk', locale: 'da-DK', isoCode: 'DKK' },
+		{ GEO: 'no', locale: 'nb-NO', isoCode: 'NOK' },
+		{ GEO: 'se', locale: 'sv-SE', isoCode: 'SEK' },
+		{ GEO: 'in', locale: 'en-IN' }, { GEO: 'co', locale: 'es-CO' },
+	];
 
 	constructor(
 		shellService: VantageShellService,
@@ -237,6 +249,7 @@ export class SmartPerformanceService {
 				this.isShowPrice = true;
 			}
 		}
+
 		if (!this.isLocalPriceOnlineChecked) {
 			const url = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getPrice?country=${localInfo.GEO}`;
 			const priceData = (await this.httpClient.get(url).toPromise()) as any;
@@ -255,6 +268,7 @@ export class SmartPerformanceService {
 			const symbol = yearlyPriceData.symbol;
 			const isPreSymbol = yearlyPrice.indexOf(symbol) === 0;
 			let monthlyPrice;
+
 			if (this.ZeroDecimalPlaceCurrencyGEO.includes(GEO)) {
 				const price = Math.ceil(yearlyPriceData.price / 12);
 				if (GEO === 'tw') {
@@ -265,7 +279,14 @@ export class SmartPerformanceService {
 			}
 			else {
 				const mp = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
-				monthlyPrice = isPreSymbol ? (symbol + mp) : (mp + symbol);
+				const locale = this.CommaCurrencyGEO.find((item) => item.GEO === GEO);
+				if (locale) {
+					const isoCode = locale.isoCode ? locale.isoCode : yearlyPriceData.isoCode;
+					monthlyPrice = new Intl.NumberFormat(locale.locale, { style: 'currency', currency: isoCode }).format(mp);
+				}
+				else {
+					monthlyPrice = isPreSymbol ? (symbol + mp) : (mp + symbol);
+				}
 			}
 
 			this.localPriceData = { geo: GEO, yearlyPrice, monthlyPrice };
