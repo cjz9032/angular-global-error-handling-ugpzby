@@ -164,7 +164,7 @@ export const featureSource = [
 		},
 	},
 	{
-		id: AppSearch.FeatureIds.Power.performanceModeId,
+		id: AppSearch.FeatureIds.Power.extraPowerModeSettingId,
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {

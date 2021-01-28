@@ -5718,8 +5718,8 @@
 					"featureName": "Energy star",
 					"highRelevantKeywords": ["certification", "energy", "star", "power"]
 				},
-				"performanceMode": {
-					"featureName": "Performance mode & Cool & Quiet mode",
+				"extraPowerModeSetting": {
+					"featureName": "Performance & Cool & Quiet mode",
 					"highRelevantKeywords": ["Power settings", "Quiet", "Mode", "performance"]
 				},
 				"conservationMode": {
