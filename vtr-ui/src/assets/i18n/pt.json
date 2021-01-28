@@ -1420,6 +1420,20 @@
 							"fine": "Temperatura recomendada da bateria.",
 							"high": "Temperaturas altas. Arrefeça-a para prolongar a vida útil da bateria.",
 							"extreme": "A temperatura da bateria está demasiado alta. Pare o carregamento."
+						},
+						"batteryTips": {
+							"title": "Dicas de manutenção:",
+							"description": {
+								"t0": "A sua bateria encontra-se em perfeito estado de saúde!",
+								"t1": "A sua bateria encontra-se em bom estado de saúde.",
+								"t2": "A sua bateria encontra-se em bom estado de saúde.<br/>A sua bateria encontra-se em modo de utilização leve. O “Modo de otimização da duração da bateria” está ativado para prolongar a duração da bateria.",
+								"t3": "A sua bateria encontra-se em bom estado de saúde.<br/>Uma vez que utiliza a alimentação CA a maior parte do tempo, o “Modo de manutenção quando ligado à tomada” está ativado para prolongar a duração da bateria.",
+								"t4": "A sua bateria encontra-se em estado de saúde normal.<br/>Atualizamos a calibração da bateria periodicamente e a capacidade exata da bateria será apresentada em breve.",
+								"t5": "A sua bateria encontra-se em estado de saúde normal.<br/>A temperatura da bateria está elevada. Coloque o seu portátil numa mesa ou num suporte de computador com grelhas de ventilação e ventoinhas de arrefecimento para aumentar a circulação do ar. Sugerimos que desligue temporariamente o seu dispositivo ou que ative o modo de “Economia de bateria” nas definições de energia Smart.<br/>Nota: se a bateria sobreaquecer, deixará de carregar, mesmo que o transformador CA esteja ligado à corrente.",
+								"t6": "Degradação da bateria detetada. A duração da bateria e seu o pico de desempenho energético serão afetados. Sugerimos que substitua a bateria.",
+								"t7": "A sua bateria está a envelhecer. O “Modo de proteção de segurança de bateria antiga fraca” está ativado. Substitua-a por uma bateria genuína Lenovo ou contacte um revendedor Lenovo autorizado para a substituir por uma bateria nova.",
+								"t8": "A sua bateria está danificada. O “Modo de proteção de segurança de bateria” está ativado. Substitua-a por uma bateria genuína Lenovo ou contacte um revendedor Lenovo autorizado para a substituir por uma bateria nova."
+							}
 						}
 					}
 				},

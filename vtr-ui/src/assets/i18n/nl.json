@@ -1420,6 +1420,20 @@
 							"fine": "Aanbevolen batterijtemperatuur.",
 							"high": "Hoge temperatuur. Laat de batterij afkoelen om de levensduur ervan te verlengen.",
 							"extreme": "De batterijtemperatuur is te hoog. Onderbreek het opladen."
+						},
+						"batteryTips": {
+							"title": "Onderhoudstips:",
+							"description": {
+								"t0": "De batterij is in perfecte staat!",
+								"t1": "De batterij is in goede staat.",
+								"t2": "De batterij is in goede staat.<br/>De batterij wordt weinig gebruikt. De stand 'Geoptimaliseerde levensduur van batterij' is ingeschakeld om de levensduur van de batterij te verlengen.",
+								"t3": "De batterij is in goede staat.<br/>Als u meestal op netstroom werkt, wordt de stand 'Onderhoudsmodus indien aangesloten' ingeschakeld, zodat de batterij nog langer meegaat.",
+								"t4": "De batterij is in normale staat.<br/>We vernieuwen de batterijkalibratie regelmatig en weldra wordt de juiste batterijcapaciteit weergegeven.",
+								"t5": "De batterij is in normale staat.<br/>De batterijtemperatuur is hoog. Leg uw laptop op een computertafel of -standaard met ventilatieroosters en ventilatoren om de luchtcirculatie te verbeteren. We raden u aan uw apparaat tijdelijk uit te schakelen of de stand 'Batterij besparen' in te schakelen via Slimme energiebeheerinstellingen.<br/>Opmerking: Als de batterij oververhit is, stopt het opladen, zelfs als de netvoedingsadapter is aangesloten.",
+								"t6": "De batterijkwaliteit gaat achteruit. Dit is van invloed op de gebruiksduur van de batterij en de prestaties bij piekverbruik. We raden u aan de batterij te vervangen.",
+								"t7": "De batterij wordt ouder. De beveiligingsstand voor oude, zwakke batterijen is ingeschakeld. Vervang de batterij door een originele Lenovo-batterij of neem contact op met een geautoriseerde serviceprovider van Lenovo om de batterij te laten vervangen door een nieuwe.",
+								"t8": "De batterij is beschadigd. De beveiligingsstand voor batterijbescherming is ingeschakeld. Vervang de batterij door een originele Lenovo-batterij of neem contact op met een geautoriseerde serviceprovider van Lenovo om de batterij te laten vervangen door een nieuwe."
+							}
 						}
 					}
 				},

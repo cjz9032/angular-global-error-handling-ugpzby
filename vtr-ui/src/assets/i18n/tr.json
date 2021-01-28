@@ -1420,6 +1420,20 @@
 							"fine": "Önerilen pil sıcaklığı.",
 							"high": "Yüksek sıcaklık. Pil ömrünü uzatmak için lütfen pili soğutun.",
 							"extreme": "Pil sıcaklığı çok yüksek. Lütfen şarjı durdurun."
+						},
+						"batteryTips": {
+							"title": "Bakım ipuçları:",
+							"description": {
+								"t0": "Pil mükemmel durumda!",
+								"t1": "Pil iyi durumda.",
+								"t2": "Pil iyi durumda.<br/>Pilinizin nadiren kullanılıyor. Pil ömrünü uzatmak üzere “Pil için iyileştirilmiş ömür kipi” etkinleştirildi.",
+								"t3": "Pil iyi durumda.<br/>Çoğunlukla AC gücünü kullandığınızdan pil ömrünü uzatmak için “Eklenti bakım kipi” etkinleştirildi.",
+								"t4": "Pilin durumu normal.<br/>Pil kalibrasyonunu periyodik olarak yeniliyoruz, doğru pil kapasitesini yakında görüntüleyeceksiniz.",
+								"t5": "Pilin durumu normal.<br/>Pil sıcaklığı yüksek. Lütfen hava dolaşımını artırmak için dizüstü bilgisayarınızı bir bilgisayar masasına veya havalandırma ızgaraları ve soğutma fanları olan bir standa yerleştirin. Cihazınızı geçici olarak kapatmanızı veya Güç Akıllı Ayarları altından “Pil tasarrufu” kipini etkinleştirmenizi öneririz.<br/>Not: AC güç bağdaştırıcısı takılı olsa bile pil aşırı ısındığında şarj durur.",
+								"t6": "Pilde performans düşüşü algılandı. Pil ömrü ve maksimum güç performansı bu durumdan etkilenecektir. Pili değiştirmenizi öneririz.",
+								"t7": "Piliniz eski. “Eski ve zayıf pil güvenliği koruma kipi” etkinleştirildi. Lütfen pili orijinal bir Lenovo pil ile değiştirin veya yeni pille değiştirmek için yetkili Lenovo hizmet sağlayıcısına başvurun.",
+								"t8": "Piliniz arızalı. “Pil güvenliği koruma kipi” etkinleştirildi. Lütfen pili orijinal bir Lenovo pil ile değiştirin veya yeni pille değiştirmek için yetkili Lenovo hizmet sağlayıcısına başvurun."
+							}
 						}
 					}
 				},

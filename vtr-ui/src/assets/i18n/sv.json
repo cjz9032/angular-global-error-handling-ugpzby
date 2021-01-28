@@ -1420,6 +1420,20 @@
 							"fine": "Rekommenderad batteritemperatur.",
 							"high": "Hög temperatur. Låt batteriet svalna för att förlänga batteriets livslängd.",
 							"extreme": "Batteritemperaturen är för hög. Avbryt laddningen."
+						},
+						"batteryTips": {
+							"title": "Underhållstips:",
+							"description": {
+								"t0": "Batteriet är i perfekt skick!",
+								"t1": "Batteriet är i gott skick.",
+								"t2": "Batteriet är i gott skick.<br/>Batteriet används i låg grad. Läget Optimera för batteriets livslängd är aktiverat för att förlänga batteriets livslängd.",
+								"t3": "Batteriet är i gott skick.<br/>Eftersom du oftast använder nätström är läget Nätanslutet underhåll aktiverat för att förlänga batteriets livslängd.",
+								"t4": "Batteriet är i normalt skick.<br/>Kalibreringen av batteriet uppdateras regelbundet och korrekt batterikapacitet visas snart.",
+								"t5": "Batteriet är i normalt skick.<br/>Batteritemperaturen är hög. Placera datorn på ett datorbord eller ställ med ventilationsgaller och fläktar för att öka luftcirkulationen. Vi rekommenderar att du stänger av enheten tillfälligt eller aktiverar Batterisparläge i Smarta energiinställningar.<br/>Obs! Batteriladdningen stoppas vid överhettning även om nätadaptern är ansluten.",
+								"t6": "Batteriförsämring har påträffats. Batteriets livslängd och maximala kapacitet påverkas. Vi rekommenderar att du byter ut batteriet.",
+								"t7": "Batteriet börjar bli utslitet. Läget Säkerhetsskydd för gammalt och uttjänt batteri har aktiverats. Byt ut batteriet mot ett äkta Lenovo-batteri, eller kontakta Lenovos auktoriserade serviceleverantör för att byta ut det mot ett nytt.",
+								"t8": "Batteriet är skadat. Läget Säkerhetsskydd för batteri har aktiverats. Byt ut batteriet mot ett äkta Lenovo-batteri, eller kontakta Lenovos auktoriserade serviceleverantör för att byta ut det mot ett nytt."
+							}
 						}
 					}
 				},

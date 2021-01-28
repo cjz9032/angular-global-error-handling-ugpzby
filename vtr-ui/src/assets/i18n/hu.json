@@ -1420,6 +1420,20 @@
 							"fine": "Az akkumulátor ajánlott hőmérséklete.",
 							"high": "Magas hőmérséklet. Hűtse le az akkumulátort az élettartamának meghosszabbításához.",
 							"extreme": "Az akkumulátor hőmérséklete túl magas. Kérjük, állítsa le."
+						},
+						"batteryTips": {
+							"title": "Karbantartási tippek:",
+							"description": {
+								"t0": "Az akkumulátora tökéletes állapotban van!",
+								"t1": "Az akkumulátora jó állapotban van.",
+								"t2": "Az akkumulátora jó állapotban van.<br/>Az akkumulátora kevéssé van használatba véve. Az „akkumulátor optimalizált élettartam mód” engedélyezve van, hogy meghosszabbítsa az akkumulátor élettartamát.",
+								"t3": "Az akkumulátora jó állapotban van.<br/>Mivel a legtöbbször hálózati tápellátást használ, így a „Csatlakoztatott karbantartási mód” engedélyezve van, hogy meghosszabbítsa az akkumulátor élettartamát.",
+								"t4": "Az akkumulátora normál állapotban van.<br/>Rendszeresen frissítjük az akkumulátor kalibrálását, és hamarosan megjelenik a pontos akkumulátorkapacitás.",
+								"t5": "Az akkumulátora normál állapotban van.<br/>Az akkumulátor hőmérséklete magas. Kérjük, helyezze laptopját olyan számítógépes asztalra vagy állványra, amely rendelkezik szellőzőrácsokkal és hűtőventilátorokkal annak érdekében, hogy növelje a levegő keringését. Azt javasoljuk, hogy ideiglenesen kapcsolja ki a készüléket, vagy engedélyezze az „Akkumulátorkímélő” módot a Power Smart beállításban.<br/>Megjegyzés: Az akkumulátor leáll, ha túlmelegszik, még akkor is, ha a hálózati adapter csatlakoztatva van.",
+								"t6": "Az akkumulátor állapotának romlása észlelhető. Ez befolyásolja az akkumulátor élettartamát és a maximális teljesítményét. Az akkumulátor cseréjét javasoljuk.",
+								"t7": "Az akkumulátora öregszik. A „Régi, gyenge akkumulátor biztonságát védő mód” engedélyezve van. Kérjük, cserélje eredeti Lenovo akkumulátorra, vagy keresse fel a Lenovo hivatalos szervizszolgáltatóját, hogy cserélje ki Önnek.",
+								"t8": "Az akkumulátora sérült. Az „Akkumulátor biztonságát védő mód” engedélyezve van. Kérjük, cserélje eredeti Lenovo akkumulátorra, vagy keresse fel a Lenovo hivatalos szervizszolgáltatóját, hogy cserélje ki Önnek."
+							}
 						}
 					}
 				},

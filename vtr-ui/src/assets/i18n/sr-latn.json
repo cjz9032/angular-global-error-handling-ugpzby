@@ -1420,6 +1420,20 @@
 							"fine": "Preporučena temperatura baterije.",
 							"high": "Visoka temperatura. Ohladite je da biste produžili radni vek baterije.",
 							"extreme": "Temperatura baterije je previsoka. Prekinite punjenje."
+						},
+						"batteryTips": {
+							"title": "Saveti za održavanje:",
+							"description": {
+								"t0": "Vaša baterija je u odličnom stanju!",
+								"t1": "Vaša baterija je u dobrom stanju.",
+								"t2": "Vaša baterija je u dobrom stanju.<br/>Vaša baterija radi pod smanjenim opterećenjem. Omogućen je „Optimalan režim za vek trajanja baterije“ kako bi se produžio vek trajanja.",
+								"t3": "Vaša baterija je u dobrom stanju.<br/>Pošto većinu vremena koristite naizmeničnu struju, omogućeno je „Održavanje baterije dok je uređaj priključen“ kako bi se produžio vek trajanja baterije.",
+								"t4": "Vaša baterija je u normalnom stanju.<br/>Povremeno osvežavamo kalibraciju baterije i uskoro će se prikazati precizan kapacitet baterije.",
+								"t5": "Vaša baterija je u normalnom stanju.<br/>Temperatura baterije je visoka. Stavite laptop računar na radni sto ili stalak sa rešetkama za ventilaciju i ventilatorima radi bolje cirkulacije vazduha. Predlažemo da privremeno isključite uređaj ili omogućite režim „Ušteda baterije“ u postavci pametnog napajanja.<br/>Napomena: baterija će prestati da se puni kad se pregreje, čak i ako je priključen adapter za naizmeničnu struju.",
+								"t6": "Otkriven je slabiji rad baterije. To će uticati na vek trajanja baterije i maksimalne performanse. Predlažemo da zamenite bateriju.",
+								"t7": "Vaša baterija stari. Omogućen je „Režim sigurnosne zaštite od stare i slabe baterije“. Zamenite je originalnom baterijom kompanije Lenovo ili se obratite ovlašćenom serviseru kompanije Lenovo kako biste je zamenili novom.",
+								"t8": "Vaša baterija je oštećena. Omogućen je „Režim sigurnosne zaštite od baterije“. Zamenite je originalnom baterijom kompanije Lenovo ili se obratite ovlašćenom serviseru kompanije Lenovo kako biste je zamenili novom."
+							}
 						}
 					}
 				},

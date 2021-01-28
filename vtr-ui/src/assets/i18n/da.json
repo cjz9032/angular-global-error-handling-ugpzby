@@ -1420,6 +1420,20 @@
 							"fine": "Anbefalet batteritemperatur.",
 							"high": "Høj temperatur. Lad batteriet køle af for at forlænge batterilevetiden.",
 							"extreme": "Batteritemperaturen er for høj. Stop opladningen."
+						},
+						"batteryTips": {
+							"title": "Vedligeholdelsestips:",
+							"description": {
+								"t0": "Dit batteri er i perfekt tilstand!",
+								"t1": "Dit batteri er i god tilstand.",
+								"t2": "Dit batteri er i god tilstand.<br/>Dit batteri kan anvendes til let brug. \"Batterioptimerende tilstand\" er aktiveret for at forlænge batteriets levetid.",
+								"t3": "Dit batteri er i god tilstand.<br/>Når du bruger vekselstrøm det meste af tiden, er \"tilsluttet vedligeholdelsestilstand\" aktiveret for at forlænge batteriets levetid.",
+								"t4": "Dit batteri er i normal tilstand.<br/>Vi opdaterer batteriets kalibrering jævnligt, og den nøjagtige batterikapacitet vil snart blive vist.",
+								"t5": "Dit batteri er i normal tilstand.<br/>Batteriets temperatur er høj. Sæt din bærbare computer på et computerbord eller -holder med ventilationshuller og blæsere for at øge luftcirkulationen. Vi anbefaler, at du slukker din enhed midlertidigt eller aktiverer tilstanden \"Batteribesparelse\" i Smarte strømindstillinger.<br/>Bemærk: Batteriet stopper opladningen, når det er overopvarmet, selv om vekselstrømsadapteren er tilsluttet.",
+								"t6": "Der er registreret en forringelse af batteriet. Batteriets levetid og den maksimale ydeevne vil blive påvirket. Vi anbefaler, at du udskifter batteriet.",
+								"t7": "Batteriet er ældre. \"Beskyttelsestilstand til ældre batteri\" er aktiveret. Udskift batteriet med et originalt Lenovo-batteri, eller kontakt Lenovo-forhandleren for at udskifte batteriet med et nyt.",
+								"t8": "Batteriet er beskadiget. \"Beskyttelsestilstand til batterisikkerhed\" er aktiveret. Udskift batteriet med et originalt Lenovo-batteri, eller kontakt Lenovo-forhandleren for at udskifte batteriet med et nyt."
+							}
 						}
 					}
 				},

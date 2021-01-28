@@ -1420,6 +1420,20 @@
 							"fine": "Zalecana temperatura akumulatora.",
 							"high": "Wysoka temperatura. Obniż temperaturę, aby zwiększyć żywotność akumulatora.",
 							"extreme": "Temperatura akumulatora jest za wysoka. Przerwij ładowanie."
+						},
+						"batteryTips": {
+							"title": "Wskazówki dotyczące konserwacji:",
+							"description": {
+								"t0": "Akumulator jest w doskonałej kondycji!",
+								"t1": "Akumulator jest w dobrej kondycji.",
+								"t2": "Akumulator jest w dobrej kondycji.<br/>Użycie akumulatora utrzymuje się na niskim poziomie. Włączono „Tryb optymalizacji pod kątem czasu eksploatacji akumulatora”, aby wydłużyć czas działania akumulatora.",
+								"t3": "Akumulator jest w dobrej kondycji.<br/>Przez większość czasu korzystasz z zasilania sieciowego, dlatego włączono „Tryb konserwacji akumulatora podłączonego do zasilania”; tryb ten ma na celu przedłużenie czasu eksploatacji akumulatora.",
+								"t4": "Akumulator jest w normalnej kondycji.<br/>Okresowo odświeżamy kalibrację akumulatora. Dokładna pojemność akumulatora zostanie wkrótce wyświetlona.",
+								"t5": "Akumulator jest w normalnej kondycji.<br/>Akumulator ma wysoką temperaturę. Umieść laptopa na biurku lub podstawce z otworami wentylacyjnymi i wentylatorem, aby zwiększyć cyrkulację powietrza. Sugerujemy tymczasowe wyłączenie urządzenia lub włączenie trybu „Oszczędzanie baterii” w menu Inteligentne ustawienia zasilania.<br/>Uwaga: w przypadku przegrzania akumulator przestaje się ładować, nawet jeśli do komputera w dalszym ciągu jest podłączony zasilacz.",
+								"t6": "Wykryto obniżenie wydajności akumulatora. Wpłynie to na żywotność akumulatora i szczytową wydajność zasilania. Sugerujemy wymianę akumulatora.",
+								"t7": "Twój akumulator się starzeje. Włączono „Tryb ochrony bezpieczeństwa starego słabego akumulatora”. Wymień akumulator na oryginalny akumulator Lenovo lub skontaktuj się z autoryzowanym dostawcą usług Lenovo w celu wymiany akumulatora na nowy.",
+								"t8": "Akumulator uległ uszkodzeniu. Włączono „Tryb ochrony bezpieczeństwa akumulatora”. Wymień akumulator na oryginalny akumulator Lenovo lub skontaktuj się z autoryzowanym dostawcą usług Lenovo w celu wymiany akumulatora na nowy."
+							}
 						}
 					}
 				},

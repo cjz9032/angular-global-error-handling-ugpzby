@@ -1420,6 +1420,20 @@
 							"fine": "Temperatura recomandată a bateriei.",
 							"high": "Temperatură ridicată. Răciți-o pentru a extinde durata de viață a bateriei.",
 							"extreme": "Temperatura bateriei este prea mare. Opriți încărcarea acesteia."
+						},
+						"batteryTips": {
+							"title": "Sfaturi pentru întreținere:",
+							"description": {
+								"t0": "Bateria se află în stare perfectă de funcționare!",
+								"t1": "Bateria se află în stare bună de funcționare.",
+								"t2": "Bateria se află în stare bună de funcționare.<br/>Nivelul de utilizare al bateriei este redus. „Modul de optimizare a duratei de viață a bateriei” este activat pentru a extinde perioada de funcționare a bateriei.",
+								"t3": "Bateria se află în stare bună de funcționare.<br/>Deoarece utilizați alimentare c.a. în majoritatea timpului, „Modul de întreținere conectare” este activat pentru a extinde perioada de funcționare a bateriei.",
+								"t4": "Bateria se află în stare normală de funcționare.<br/>Reîmprospătăm periodic calibrarea bateriei, iar capacitatea exactă a bateriei va fi afișată în curând.",
+								"t5": "Bateria se află în stare normală de funcționare.<br/>Temperatura bateriei este ridicată. Pentru a crește circulația aerului, așezați laptopul pe o masă pentru computer sau pe un suport cu grile de ventilare și ventilatoare de răcire. Vă sugerăm să opriți temporar dispozitivul sau să activați modul „Economisire baterie” în setarea de alimentare inteligentă.<br/>Notă: încărcarea bateriei se va opri atunci când aceasta este supraîncălzită, chiar dacă adaptorul de alimentare c.a. este conectat.",
+								"t6": "Este detectată degradarea bateriei. Vor fi afectate durata de viață a bateriei și performanța alimentării maxime. Vă sugerăm să înlocuiți bateria.",
+								"t7": "Bateria s-a învechit. Este activat „Modul de protecție de siguranță a bateriei vechi necorespunzătoare”. Înlocuiți cu o baterie originală Lenovo sau contactați furnizorul de servicii autorizat Lenovo pentru a înlocui cu una nouă.",
+								"t8": "Bateria este deteriorată. Este activat „Modul de protecție de siguranță a bateriei”. Înlocuiți cu o baterie originală Lenovo sau contactați furnizorul de servicii autorizat Lenovo pentru a înlocui cu una nouă."
+							}
 						}
 					}
 				},

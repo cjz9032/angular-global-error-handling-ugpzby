@@ -1530,6 +1530,20 @@
 							"fine": "Empfohlene Akkutemperatur.",
 							"high": "Hohe Temperatur. Kühlen Sie den Akku ab, um seine Lebensdauer zu verlängern.",
 							"extreme": "Die Akkutemperatur ist zu hoch. Beenden Sie den Ladevorgang."
+						},
+						"batteryTips": {
+							"title": "Wartungstipps:",
+							"description": {
+								"t0": "Ihr Akku befindet sich in einwandfreiem Zustand!",
+								"t1": "Ihr Akku befindet sich in gutem Zustand.",
+								"t2": "Ihr Akku befindet sich in gutem Zustand.<br/>Ihr Akku wird geringfügig genutzt. \"Akku-optimierter Lebensdauermodus\" ist zur Verlängerung der Akkulebensdauer aktiviert.",
+								"t3": "Ihr Akku befindet sich in gutem Zustand.<br/>Da Sie die meiste Zeit mit Netzteil arbeiten, wird der \"Plug-in-Wartungsmodus\" aktiviert, um die Akkulebensdauer zu verlängern.",
+								"t4": "Ihr Akku befindet sich in normalem Zustand.<br/>Wir aktualisieren in regelmäßigen Abständen die Akkukalibrierung, und die genaue Akkukapazität wird bald angezeigt.",
+								"t5": "Ihr Akku befindet sich in normalem Zustand.<br/>Die Akkutemperatur ist zu hoch. Platzieren Sie Ihren Laptop auf einem Computertisch oder auf einem Ständer mit Lüftungsschlitzen und Kühlventilatoren, um die Luftzirkulation zu verbessern. Wir empfehlen, das Gerät zeitweilig ausgeschaltet zu lassen oder bei Power Smart-Einstellung den \"Akkusparmodus\" zu aktivieren.<br/>Anmerkung: Der Akku stoppt das Laden, wenn er überhitzt, selbst wenn das Netzteil angeschlossen ist.",
+								"t6": "Akkudegradation wird erkannt. Die Akkulebensdauer und die Akkuspitzenleistung werden dabei beeinträchtigen. Wir empfehlen, den Akku auszutauschen.",
+								"t7": "Ihr Akku altert. \"Sicherheitsschutzmodus für alten schwachen Akku\" ist aktiviert. Ersetzen Sie einen Lenovo Original-Akku oder wenden Sie sich an einen von Lenovo autorisierten Service-Provider, um einen neuen Akku zu ersetzen.",
+								"t8": "Ihr Akku ist beschädigt. \"Akku-Sicherheitsschutzmodus\" ist aktiviert. Ersetzen Sie einen Lenovo Original-Akku oder wenden Sie sich an einen von Lenovo autorisierten Service-Provider, um einen neuen Akku zu ersetzen."
+							}
 						}
 					}
 				},

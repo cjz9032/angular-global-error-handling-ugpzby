@@ -1420,6 +1420,20 @@
 							"fine": "Temperatura batteria consigliata.",
 							"high": "Temperatura alta. Raffreddare la batteria per estenderne la durata.",
 							"extreme": "La temperatura della batteria è troppo alta. Interrompere la carica."
+						},
+						"batteryTips": {
+							"title": "Suggerimenti per la manutenzione:",
+							"description": {
+								"t0": "La batteria è in perfetto stato di integrità!",
+								"t1": "La batteria è in buono stato di integrità.",
+								"t2": "La batteria è in buono stato di integrità.<br/>La batteria è in modalità di utilizzo leggero. È abilitata la modalità di durata ottimizzata della batteria per estendere l'autonomia della batteria.",
+								"t3": "La batteria è in buono stato di integrità.<br/>Poiché usi l'alimentazione CA per la maggior parte del tempo, è abilitata la modalità di manutenzione con collegamento per estendere l'autonomia della batteria.",
+								"t4": "La batteria è in stato di integrità normale.<br/>Aggiorniamo periodicamente le informazioni sulla calibrazione della batteria e a breve verrà visualizzato un valore di capacità della batteria accurato.",
+								"t5": "La batteria è in stato di integrità normale.<br/>La temperatura della batteria è elevata. Colloca il notebook su un piano o un supporto per computer dotato di griglie di ventilazione e ventole di raffreddamento per migliorare la circolazione dell'aria. Consigliamo di spegnere temporaneamente il dispositivo o di abilitare la modalità di risparmio della batteria in Impostazioni energetiche intelligenti.<br/>Nota: la ricarica della batteria viene arrestata in caso di surriscaldamento, anche se è collegato un adattatore di alimentazione CA.",
+								"t6": "È stata rilevata una riduzione delle prestazioni della batteria. Il problema influirà sulla durata della batteria e sulle prestazioni durante i picchi di potenza. Consigliamo di sostituire la batteria.",
+								"t7": "La batteria si sta esaurendo. È abilitata la modalità di protezione per la sicurezza delle batterie obsolete. Sostituisci la batteria con una batteria originale Lenovo o contatta un fornitore di servizi autorizzato da Lenovo per sostituirla con una nuova.",
+								"t8": "La batteria è danneggiata. È abilitata la modalità di protezione per la sicurezza delle batterie. Sostituisci la batteria con una batteria originale Lenovo o contatta un fornitore di servizi autorizzato da Lenovo per sostituirla con una nuova."
+							}
 						}
 					}
 				},

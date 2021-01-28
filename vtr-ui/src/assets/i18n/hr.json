@@ -1420,6 +1420,20 @@
 							"fine": "Preporučena temperatura baterije.",
 							"high": "Visoka temperatura. Kako biste produljili vijek trajanja baterije, ohladite je.",
 							"extreme": "Temperatura baterije je previsoka. Prekinite punjenje."
+						},
+						"batteryTips": {
+							"title": "Savjeti za održavanje:",
+							"description": {
+								"t0": "Vaša baterija je u odličnom stanju!",
+								"t1": "Vaša baterija je u dobrom stanju.",
+								"t2": "Vaša baterija je u dobrom stanju.<br/>Vaša baterija radi pod smanjenim opterećenjem. Omogućen je \"Optimalan način rada za vijek trajanja baterije\" kako bi se produljio vijek trajanja.",
+								"t3": "Vaša baterija je u dobrom stanju.<br/>Kako većinu vremena upotrebljavate izmjeničnu struju, omogućeno je \"Održavanje baterije dok je uređaj priključen\" kako bi se produljio vijek trajanja baterije.",
+								"t4": "Vaša baterija je u normalnom stanju.<br/>Povremeno osvježavamo kalibraciju baterije i precizan kapacitet baterije prikazat će se uskoro.",
+								"t5": "Vaša baterija je u normalnom stanju.<br/>Temperatura baterije je visoka. Molimo vas da svoje prijenosno računalo stavite na radni stol ili stalak s ventilacijskim rešetkama i ventilatorima radi bolje cirkulacije zraka. Predlažemo da privremeno isključite uređaj ili omogućite način \"Ušteda baterije\" u postavci pametnog napajanja.<br/>Napomena: baterija će se prestati puniti kad se pregrije, čak i ako je priključen prilagodnik izmjeničnog napona.",
+								"t6": "Otkriven je slabiji rad baterije. To će utjecati na vijek trajanja baterije i vršne performanse. Predlažemo zamjenu baterije.",
+								"t7": "Vaša baterija stari. Omogućen je \"Način sigurnosne zaštite od stare i slabe baterije\". Zamijenite je originalnom baterijom tvrtke Lenovo ili se obratite ovlaštenom davatelju usluga tvrtke Lenovo kako biste je zamijenili novom.",
+								"t8": "Vaša baterija je oštećena. Omogućen je \"Način sigurnosne zaštite od baterije\". Zamijenite je originalnom baterijom tvrtke Lenovo ili se obratite ovlaštenom davatelju usluga tvrtke Lenovo kako biste je zamijenili novom."
+							}
 						}
 					}
 				},

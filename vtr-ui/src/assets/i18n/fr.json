@@ -1530,6 +1530,20 @@
 							"fine": "Température de batterie recommandée.",
 							"high": "Température élevée. Veuillez la refroidir pour prolonger la durée de vie de la batterie.",
 							"extreme": "La température de la batterie est trop élevée. Arrêtez le chargement."
+						},
+						"batteryTips": {
+							"title": "Conseils de maintenance :",
+							"description": {
+								"t0": "Votre batterie est en parfait état d'intégrité !",
+								"t1": "Votre batterie est en bon état d'intégrité.",
+								"t2": "Votre batterie est en bon état d'intégrité.<br/>Le niveau de la batterie est en faible utilisation. Le \"Mode d'autonomie optimisé pour la batterie\" est activé pour prolonger la durée de vie de la batterie.",
+								"t3": "Votre batterie est en bon état d'intégrité.<br/>Lorsque vous utilisez l'alimentation secteur, la plupart du temps, le \"mode de maintenance de module\" est activé pour prolonger la durée de vie de la batterie.",
+								"t4": "Votre batterie est dans un état d'intégrité normal.<br/>Nous actualisons le calibrage de la batterie régulièrement et la capacité exacte de la batterie sera bientôt affichée.",
+								"t5": "Votre batterie est dans un état d'intégrité normal.<br/>La température de la batterie est élevée. Placez votre ordinateur portable sur une table ou sur un support avec des grilles de ventilation et des ventilateurs de refroidissement pour améliorer la circulation de l'air. Nous vous suggérons de mettre votre périphérique hors tension temporairement ou d'activer le mode \"Économiseur de batterie\" dans les paramètres d'alimentation intelligents.<br/>Remarque : la batterie arrêtera le chargement en cas de surchauffe, même si le bloc d'alimentation est connecté.",
+								"t6": "Une dégradation de la batterie est détectée. La durée de vie de la batterie et les performances d'alimentation maximales seront impactées. Nous vous suggérons de remplacer la batterie.",
+								"t7": "Votre batterie est usagée. Le \"Mode protection de sécurité de batterie usagée faible\" est activé. Remplacez la batterie par une batterie agréée Lenovo ou prenez contact avec un fournisseur de services agréé Lenovo pour la remplacer.",
+								"t8": "Votre batterie est endommagée. Le \"Mode protection de sécurité de batterie\" est activé. Remplacez la batterie par une batterie agréée Lenovo ou prenez contact avec un fournisseur de services agréé Lenovo pour la remplacer."
+							}
 						}
 					}
 				},
