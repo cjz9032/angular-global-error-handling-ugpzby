@@ -61,7 +61,7 @@
 			</button>
 		</ng-container>
 	</section>
-	<section *ngIf="hasSecondaryMenu && dropdownMenu.id!=='user'" class="d-flex p-3 secondary-menu-container">
+	<section *ngIf="hasSecondaryMenu && !singleColumnSecondaryMenu && dropdownMenu.id!=='user'" class="d-flex p-3 secondary-menu-container">
 		<section *ngFor="let subitem of dropdownMenu.subitems; let i=index"
 			class="d-inline-block column-container">
 			<button mat-menu-item
@@ -140,5 +140,58 @@
 				</ng-container>
 			</section>
 		</section>
+	</section>
+
+	<section *ngIf="hasSecondaryMenu && singleColumnSecondaryMenu && dropdownMenu.id!=='user'">
+		<ng-container *ngFor="let subitem of singleColumnSecondaryMenuItems; let i=index">
+			<button mat-menu-item
+				*ngIf="subitem && !subitem.hide && subitem.externallink"
+				id="menu-main-nav-lnk-dropdown-menu-external-{{parentId}}-{{i}}"
+				class="mt-0 py-2 border-radius-0 text-lowercase outline-none h-auto dropdown-menu-item"
+				attr.aria-label="{{subitem.label | translate }}"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+				vtrMetrics
+				[metricsEvent]="subitem.metricsEvent"
+				[metricsParent]="subitem.metricsParent"
+				[metricsItem]="subitem.metricsItem"
+				target="_blank"
+				rel="noopener"
+				(click)="openExternalLink(subitem.path)">
+				<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
+			</button>
+			<button mat-menu-item
+				*ngIf="subitem && !subitem.hide && !subitem.externallink && !subitem.singleLayerRouting"
+				id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{i}}"
+				class="mt-0 py-2 border-radius-0 text-lowercase outline-none h-auto dropdown-menu-item"
+				attr.aria-label="{{subitem.label| translate}}"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+				vtrMetrics
+				[metricsEvent]="subitem.metricsEvent"
+				[metricsParent]="subitem.metricsParent"
+				[metricsItem]="subitem.metricsItem"
+				routerLink="/{{parentPath}}/{{siggleColumnSecondaryMenuItemCategoryPath}}/{{subitem.path}}"
+				role="menuitem"
+				(keydown.enter)="menuItemKeyDown(parentPath, siggleColumnSecondaryMenuItemCategoryPath,subitem.path)">
+				<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
+			</button>
+			<button mat-menu-item
+				*ngIf="subitem && !subitem.hide && !subitem.externallink && subitem.singleLayerRouting"
+				id="menu-main-nav-lnk-dropdown-menu-{{parentId}}-{{i}}"
+				class="mt-0 py-2 border-radius-0 text-lowercase outline-none h-auto dropdown-menu-item"
+				attr.aria-label="{{subitem.label| translate}}"
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="subitem.routerLinkActiveOptions"
+				vtrMetrics
+				[metricsEvent]="subitem.metricsEvent"
+				[metricsParent]="subitem.metricsParent"
+				[metricsItem]="subitem.metricsItem"
+				routerLink="/{{subitem.path}}"
+				role="menuitem"
+				(keydown.enter)="menuItemKeyDown(subitem.path)">
+				<span class="d-inline-block overflow-hidden w-auto" [innerHTML]="subitem.label | translate"></span>
+			</button>
+		</ng-container>
 	</section>
 </mat-menu>
