@@ -243,9 +243,11 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 
 		(async () => {
 			const startTime = Date.now();
-			this.logger.info(`Searching for ${userInput} start`);
+			this.logger.info(`[appSearch]Searching for ${userInput} start`);
 			const result = await this.searchService.search(userInput).toPromise();
-			this.logger.info(`Searching for ${userInput} end: Duration:${Date.now() - startTime}`);
+			this.logger.info(
+				`[appSearch]Searching for ${userInput} end: Duration:${Date.now() - startTime}`
+			);
 
 			this.populateSearchResults(result.features);
 			this.updatePageArray();

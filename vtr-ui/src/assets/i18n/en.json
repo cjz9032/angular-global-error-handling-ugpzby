@@ -5672,7 +5672,7 @@
 				},
 				"acAdapter": {
 					"featureName": "AC adapter",
-					"highRelevantKeywords": []
+					"highRelevantKeywords": ["AC", "Adapter", "power", "battery"]
 				},
 				"smartStandby": {
 					"featureName": "Smart standby",
@@ -5688,7 +5688,7 @@
 				},
 				"airplanePowerMode": {
 					"featureName": "Air plane power mode",
-					"highRelevantKeywords": []
+					"highRelevantKeywords": ["Air",  "network", "Power", "power setting", "mode", "Flight", "Travel"]
 				},
 				"batteryChargeThreshold": {
 					"featureName": "Battery charge threshold",
@@ -5700,7 +5700,7 @@
 				},
 				"batteryGaugeReset": {
 					"featureName": "Battery gauge reset",
-					"highRelevantKeywords": []
+					"highRelevantKeywords": ["Battery settings", "conservation mode", "increase battery lifespan", "gauge", "power", "battery"]
 				},
 				"intelligentCooling": {
 					"featureName": "Intelligent cooling",
@@ -5716,27 +5716,23 @@
 				},
 				"energyStar": {
 					"featureName": "Energy star",
-					"highRelevantKeywords": []
+					"highRelevantKeywords": ["certification", "energy", "star", "power"]
 				},
-				"performanceMode": {
-					"featureName": "Performance mode & Cool & Quiet mode",
-					"highRelevantKeywords": []
+				"extraPowerModeSetting": {
+					"featureName": "Performance & Cool & Quiet mode",
+					"highRelevantKeywords": ["Power settings", "Quiet", "Mode", "performance"]
 				},
 				"conservationMode": {
 					"featureName": "Conservation mode",
-					"highRelevantKeywords": []
+					"highRelevantKeywords": ["Power", "setting", "battery", "energy", "charge"]
 				},
 				"desktopPowerPlanManagement": {
 					"featureName": "Desktop power plan management",
-					"highRelevantKeywords": []
-				},
-				"oLEDPowerSettings": {
-					"featureName": "OLED power settings",
-					"highRelevantKeywords": []
+					"highRelevantKeywords": ["Desktop", "power", "setting", "energy"]
 				},
 				"smartFliptoBoot": {
 					"featureName": "Smart flip to boot",
-					"highRelevantKeywords": []
+					"highRelevantKeywords": ["resume", "hibernate", "Smart", "Boot", "start"]
 				},
 				"dynamicThermalControl": {
 					"featureName": "Dynamic thermal control solution",
@@ -5803,6 +5799,10 @@
 						"camera blur",
 						"camera background blur"
 					]
+				},
+				"oLEDPowerSettings": {
+					"featureName": "OLED power settings",
+					"highRelevantKeywords": ["Camera", "Display", "OLED", "setting"]
 				}
 			},
 			"audio": {
@@ -5938,8 +5938,8 @@
 				"smartMotionAlarm": {
 					"featureName": "Smart motion alarm",
 					"highRelevantKeywords": [
-						"Smart pause",
-						"zero touch video playback"
+						"Alarm",
+						"warning"
 					]
 				},
 				"videoResolutionUpscalingSR": {

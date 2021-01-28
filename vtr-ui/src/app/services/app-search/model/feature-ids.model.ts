@@ -42,7 +42,7 @@ export class AppSearch {
 			static readonly batteryGaugeResetId = `appSearch.features.power.batteryGaugeReset`;
 			static readonly intelligentCoolingId = `appSearch.features.power.intelligentCooling`;
 			static readonly dynamicThermalControlId = `appSearch.features.power.dynamicThermalControl`;
-			static readonly performanceModeId = `appSearch.features.power.performanceMode`;
+			static readonly extraPowerModeSettingId = `appSearch.features.power.extraPowerModeSetting`;
 			static readonly easyResumeId = `appSearch.features.power.easyResume`;
 			static readonly energyStarId = `appSearch.features.power.energyStar`;
 			static readonly conservationModeId = `appSearch.features.power.conservationMode`;
