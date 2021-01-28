@@ -1,7 +1,6 @@
 @import '../../../../../app.theme';
 
 .vtr-modal-snapshot {
-	position: inherit;
 	padding: 2.4rem;
 	@include high-contrast-border;
 
@@ -41,7 +40,7 @@
 	}
 
 	.btn-modal-close {
-		right: 2.3rem;
-		top: 2.4rem;
+		right: 0;
+		top: 0;
 	}
 }

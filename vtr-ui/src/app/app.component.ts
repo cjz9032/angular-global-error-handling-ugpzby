@@ -194,12 +194,28 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	private patchMatDialogOpen() {
 		const original = MatDialog.prototype.open;
-		let self = this;
+		const self = this;
 		// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 		MatDialog.prototype.open = function (
 			template: any,
 			config?: MatDialogConfig<any>
 		): MatDialogRef<any, any> {
+			if (config?.panelClass) {
+				if (
+					Array.isArray(config.panelClass) &&
+					!config.panelClass.includes('modal-common-responsive')
+				) {
+					config.panelClass.push('modal-common-responsive');
+				} else if (
+					!Array.isArray(config.panelClass) &&
+					config.panelClass !== 'modal-common-responsive'
+				) {
+					config.panelClass = config.panelClass.split(' ');
+					config.panelClass.push('modal-common-responsive');
+				}
+			} else {
+				config = Object.assign(config ?? {}, { panelClass: 'modal-common-responsive' });
+			}
 			if (self.deviceService.isGaming) {
 				if (config?.panelClass) {
 					if (

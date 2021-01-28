@@ -1,10 +1,6 @@
 @import '../../../app.theme.scss';
 
 .vtr-modal-apps-for-you-screenshot {
-	padding: 2rem 0 0;
-	display: flex;
-	margin: 0 auto;
-	flex-flow: column;
 	box-sizing: border-box;
 	background: $light;
 
@@ -14,7 +10,7 @@
 
 	.content {
 		width: 100%;
-		padding-right: 4rem;
+		padding: 0 4rem;
 		overflow-x: hidden;
 		overflow-y: auto;
 		max-height: calc(100vh - 10rem);
@@ -32,7 +28,7 @@
 
 .btn-modal-close {
 	right: 1rem;
-	top: 0;
+	top: -1rem;
 }
 
 .image-content {
