@@ -1,5 +1,5 @@
 @import '../../../app.theme.scss';
-.wifi-security-location-modal {
+.wifi-security-location-container {
 	background: $white100;
 	background-size: cover;
 	color: $darkText;
@@ -109,15 +109,5 @@
 				}
 			}
 		}
-	}
-}
-::ng-deep {
-	.wifi-security-location-modal .modal-dialog {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		margin-top: 0;
 	}
 }

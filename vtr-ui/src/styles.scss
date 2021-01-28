@@ -838,7 +838,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	width: 50rem;
 	max-width: 95% !important;
 	.mat-dialog-container {
-		overflow: hidden;
+		overflow: initial;
 	}
 }
 
@@ -872,7 +872,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .home-security-plugin-missing-modal,
 .home-security-offline-modal,
 .home-security-error-modal {
-	max-width: 50rem;
+	max-width: 50rem !important;
 	border-radius: $border_radius;
 }
 
@@ -893,7 +893,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 
 /*modal-intelligent-cooling-modes-styles*/
 .Intelligent-Cooling-Modes-Modal {
-	max-width: 49rem !important;
+	width: 49rem;
 	border-radius: 1rem;
 	background: $light;
 	padding: 4rem;
@@ -908,10 +908,9 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 
 /*-----Voice-Modal------------*/
 .Voice-Modal {
-	max-width: 35% !important;
+	width: 60rem;
 	border-radius: 1rem;
 	background: $light;
-	padding: 4rem;
 
 	@media #{$breakpoint_xl} {
 		max-width: 45%;
@@ -964,6 +963,10 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	background: $light;
 	overflow: hidden;
 
+	.mat-dialog-container {
+		padding: 2rem 0 0 0;
+	}
+
 	@media #{$mediaquery_15} {
 		max-width: 90%;
 	}
@@ -975,6 +978,10 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	overflow-y: initial !important;
 	border-radius: 1rem;
 	border: none;
+	.mat-dialog-container {
+		padding: 0;
+		overflow: hidden;
+	}
 }
 
 .Article-Detail-Modal {
@@ -1131,7 +1138,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .smart-performance-feedback-Modal {
 	width: 50rem;
 	max-width: 90% !important;
-	height: 80%;
+	max-height: calc(100vh - 2rem);
 	min-height: auto;
 	padding: 2rem 0 0 0;
 	border-radius: 1rem;
@@ -2404,5 +2411,25 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	&:before {
 		content: $icomoon-LE-Smart-Assist2x;
 		color: #fff;
+	}
+}
+
+.modal-common-responsive {
+	max-height: calc(100vh - 2rem);
+	padding: 0 !important;
+	@media #{$breakpoint_xl2} {
+		max-width: 50% !important;
+	}
+	@media #{$breakpoint_xl} {
+		max-width: 50% !important;
+	}
+	@media #{$breakpoint_lg} {
+		max-width: 60% !important;
+	}
+	@media #{$breakpoint_md} {
+		max-width: 80% !important;
+	}
+	@media #{$breakpoint_sm} {
+		max-width: 95% !important;
 	}
 }
