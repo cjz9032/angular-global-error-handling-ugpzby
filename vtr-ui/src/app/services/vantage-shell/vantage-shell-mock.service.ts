@@ -589,7 +589,6 @@ export class VantageShellService {
 				isDashLaneEdgeVersion: false,
 				download() {
 					this.status = 'installed';
-					return Promise.resolve(true);
 				},
 				launch() {
 					return Promise.resolve(true);

@@ -201,7 +201,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 					detail: 'security.passwordManager.allowsYou4',
 				},
 			];
-		} else if (status === 'not-installed' || status === 'installing') {
+		} else if (status === 'not-installed') {
 			this.featureIntroduction.featureTitle = 'security.passwordManager.neverForget';
 			this.featureIntroduction.featureTitleDesc = 'security.passwordManager.whatIsDashLane';
 			this.featureIntroduction.featureSubtitle = 'security.passwordManager.helpYou';
