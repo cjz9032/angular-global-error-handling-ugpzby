@@ -1420,6 +1420,20 @@
 							"fine": "Priporočena temperatura baterije.",
 							"high": "Visoka temperatura. Ohladite baterijo, da podaljšate njeno življenjsko dobo.",
 							"extreme": "Temperatura baterije je previsoka. Prekinite polnjenje."
+						},
+						"batteryTips": {
+							"title": "Nasveti za vzdrževanje:",
+							"description": {
+								"t0": "Baterija je v odličnem stanju.",
+								"t1": "Baterija je v dobrem stanju.",
+								"t2": "Baterija je v dobrem stanju.<br/>Baterija se malo uporablja. Omogočen je »Način za optimizirano življenjsko dobo baterije«, ki podaljša življenjsko dobo baterije.",
+								"t3": "Baterija je v dobrem stanju.<br/>Ker večino časa uporabljate napajanje iz električnega omrežja, je omogočen »Način vzdrževanja pri priključenem računalniku«, ki podaljša življenjsko dobo baterije.",
+								"t4": "Baterija je v običajnem stanju.<br/>Umerjenost baterije redno osvežujemo in njena natančna zmogljivost bo prikazana kmalu.",
+								"t5": "Baterija je v običajnem stanju.<br/>Temperatura baterije je visoka. Prenosni računalnik postavite na računalniško mizo ali stojalo s prezračevalnimi režami in hladilnimi ventilatorji, da povečate kroženje zraka. Predlagamo, da napravo začasno izklopite ali pa v pametnih nastavitvah napajanja omogočite način »Varčevanje z energijo baterije«.<br/>Opomba: baterija se bo prenehala polniti, ko se pregreje, tudi če je priključen napajalnik.",
+								"t6": "Zaznano je poslabšanje baterije. To bo vplivalo na življenjsko dobo in največjo moč baterije. Predlagamo zamenjavo baterije.",
+								"t7": "Baterija se stara. Omogočen je »Način varnostne zaščite stare šibke baterije«. Zamenjajte jo z originalno baterijo Lenovo ali se obrnite na pooblaščenega ponudnika storitev Lenovo, da jo zamenja z novo.",
+								"t8": "Baterija je poškodovana. Omogočen je »Način varnostne zaščite baterije«. Zamenjajte jo z originalno baterijo Lenovo ali se obrnite na pooblaščenega ponudnika storitev Lenovo, da jo zamenja z novo."
+							}
 						}
 					}
 				},

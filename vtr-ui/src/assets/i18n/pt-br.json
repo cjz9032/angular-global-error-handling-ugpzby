@@ -1530,6 +1530,20 @@
 							"fine": "Temperatura da bateria recomendada.",
 							"high": "Temperatura alta. Esfrie a bateria para ampliar sua vida útil.",
 							"extreme": "A temperatura da bateria está muito alta. Pare o carregamento."
+						},
+						"batteryTips": {
+							"title": "Dicas de manutenção:",
+							"description": {
+								"t0": "Sua bateria está em perfeito estado de integridade!",
+								"t1": "Sua bateria está em bom estado de integridade.",
+								"t2": "Sua bateria está em bom estado de integridade.<br/>A bateria está com uso leve. O \"Modo de vida útil otimizado da bateria\" está habilitado para estender a duração da bateria.",
+								"t3": "Sua bateria está em bom estado de integridade.<br/>Como você usa alimentação CA na maior parte do tempo, o \"Modo de manutenção do plug-in\" está habilitado para estender a duração da bateria.",
+								"t4": "Sua bateria está com estado de integridade normal.<br/>Atualizamos a calibração da bateria periodicamente, e a capacidade precisa da bateria será exibida em breve.",
+								"t5": "Sua bateria está com estado de integridade normal.<br/>A temperatura da bateria está elevada. Coloque seu laptop em uma mesa de computador ou suporte com grades de ventilação e ventiladores para aumentar a circulação de ar. Sugerimos desligar o dispositivo temporariamente ou habilitar o modo \"Economia de bateria\" na configuração Inteligente de Energia.<br/>Observação: a bateria para de carregar quando superaquecida, mesmo que o adaptador de energia CA esteja conectado.",
+								"t6": "Degradação da bateria detectada. A vida útil da bateria e o desempenho de energia de pico serão afetados. Sugerimos substituir a bateria.",
+								"t7": "Sua bateria está envelhecendo. O \"Modo de proteção de segurança de bateria fraca antiga\" está habilitado. Substitua por uma bateria original da Lenovo ou entre em contato com o provedor de serviços autorizado Lenovo para substituir por uma nova.",
+								"t8": "Sua bateria está danificada. O \"Modo de proteção de segurança de bateria\" está habilitado. Substitua por uma bateria original da Lenovo ou entre em contato com o provedor de serviços autorizado Lenovo para substituir por uma nova."
+							}
 						}
 					}
 				},

@@ -1420,6 +1420,20 @@
 							"fine": "Akun suositeltu lämpötila.",
 							"high": "Korkea lämpötila. Viilennä akkua pidentääksesi sen käyttöikää.",
 							"extreme": "Akun lämpötila on liian korkea. Lopeta lataaminen."
+						},
+						"batteryTips": {
+							"title": "Ylläpitovinkit:",
+							"description": {
+								"t0": "Akku on täydellisessä kunnossa!",
+								"t1": "Akku on hyvässä kunnossa.",
+								"t2": "Akku on hyvässä kunnossa.<br/>Akku on kevyessä käytössä. Akun käyttöiän optimointi on käytössä akun keston pidentämiseksi.",
+								"t3": "Akku on hyvässä kunnossa.<br/>Koska käytät verkkovirtaa suurimman osan ajasta, verkkovirran ylläpito on käytössä akun keston pidentämiseksi.",
+								"t4": "Akku on normaalissa kunnossa.<br/>Päivitämme akun kalibroinnin säännöllisesti, ja akun tarkka kapasiteetti tulee näkyviin pian.",
+								"t5": "Akku on normaalissa kunnossa.<br/>Akun lämpötila on korkea. Aseta kannettava tietokone tietokonepöydälle tai -jalustalle, jossa on tuuletusritilät ja jäähdytystuulettimet, lisätäksesi ilman kiertoa. Suosittelemme katkaisemaan laitteesta virran väliaikaisesti tai ottamaan virransäästötilan käyttöön virrankulutuksen älykkäissä asetuksissa.<br/>Huomautus: Akun lataus lopetetaan, kun se ylikuumenee, vaikka verkkolaite on kytkettynä.",
+								"t6": "Havaittiin akun heikentymistä. Tämä vaikuttaa akun käyttöikään ja huipputehoon. Suosittelemme vaihtamaan akun.",
+								"t7": "Akkusi on vanhentumassa. Vanhan heikon akun suojaustila on käytössä. Vaihda aitoon Lenovon akkuun tai ota yhteyttä Lenovon valtuuttamaan palveluntarjoajaan vaihtaaksesi akun uuteen.",
+								"t8": "Akkusi on vahingoittunut. Akun suojaustila on käytössä. Vaihda aitoon Lenovon akkuun tai ota yhteyttä Lenovon valtuuttamaan palveluntarjoajaan vaihtaaksesi akun uuteen."
+							}
 						}
 					}
 				},

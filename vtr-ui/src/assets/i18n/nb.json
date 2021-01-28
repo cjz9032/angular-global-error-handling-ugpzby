@@ -1420,6 +1420,20 @@
 							"fine": "Anbefalt batteritemperatur.",
 							"high": "Høy temperatur. La det avkjøle for å forlenge batterilevetiden.",
 							"extreme": "Batteritemperaturen er for høy. Stopp ladingen."
+						},
+						"batteryTips": {
+							"title": "Vedlikeholdstips:",
+							"description": {
+								"t0": "Batteriet er i perfekt tilstand!",
+								"t1": "Batteriet er i god tilstand!",
+								"t2": "Batteriet er i god tilstand!<br/>Batteriet brukes lett. \"Optimalisert batterilevetid-modus\" er aktivert for å forlenge batteriets levetid.",
+								"t3": "Batteriet er i god tilstand!<br/>Når du bruker vekselstrøm mesteparten av tiden, er \"Koble-til vedlikeholdsmodus\" aktivert for å forlenge batteriets levetid.",
+								"t4": "Batteriet er i normal tilstand.<br/>Vi oppdaterer batterikalibreringen med jevne mellomrom, og den nøyaktige batterikapasiteten vises snart.",
+								"t5": "Batteriet er i normal tilstand.<br/>Høy batteritemperatur. Legg den bærbare datamaskinen på et maskinbord eller et stativ med ventilasjonsgriller og kjølevifter for å øke luftsirkulasjonen. Vi anbefaler at du slår av enheten midlertidig eller aktiverer \"Batterisparing\"-modus i innstillingene for smart strømforbruk<br/>Merk: Batteriet stopper ladingen når det er overopphetet, selv når strømadapteren er tilkoblet.",
+								"t6": "Reduksjon av batteriytelse er valgt. Batteriets levetid og topp strømytelse blir berørt. Vi anbefaler utskifting av batteriet.",
+								"t7": "Batteriet ditt eldes. \"Sikkerhetsmodus for gammelt, svakt batteri\" er aktivert. Bytt det ut med et originalt Lenovo-batteri, eller kontakt den autoriserte Lenovo-tjenesteleverandøren for å bytte det ut med et nytt.",
+								"t8": "Batteriet ditt er skadet. «Sikkerhetsbeskyttelsesmodus for batteri» er aktivert. Bytt det ut med et originalt Lenovo-batteri, eller kontakt den autoriserte Lenovo-tjenesteleverandøren for å bytte det ut med et nytt."
+							}
 						}
 					}
 				},

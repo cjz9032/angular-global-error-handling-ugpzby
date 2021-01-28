@@ -1420,6 +1420,20 @@
 							"fine": "Doporučená teplota baterie.",
 							"high": "Vysoká teplota. Ochlaďte ji, abyste prodloužili životnost baterie.",
 							"extreme": "Teplota baterie je příliš vysoká. Ukončete prosím nabíjení."
+						},
+						"batteryTips": {
+							"title": "Tipy pro údržbu:",
+							"description": {
+								"t0": "Baterie je v dokonalém technickém stavu.",
+								"t1": "Baterie je ve velmi dobrém technickém stavu.",
+								"t2": "Baterie je ve velmi dobrém technickém stavu.<br/>Baterie se příliš nepoužívá. Pro prodloužení životnosti baterie je povolen režim optimalizovaný pro životnost baterie.",
+								"t3": "Baterie je ve velmi dobrém technickém stavu.<br/>Protože většinu času používáte síťové napájení, prodlouží se životnost baterie povolením režimu údržby při napájení ze sítě.",
+								"t4": "Baterie je v běžném technickém stavu.<br/>Kalibraci baterie pravidelně obnovujeme, brzy se zobrazí přesná kapacita baterie.",
+								"t5": "Baterie je v běžném technickém stavu.<br/>Teplota baterie je vysoká. Položte notebook na počítačový stolek nebo stojan s ventilačními mřížkami a chladicími ventilátory, aby se zvýšilo proudění vzduchu. Doporučujeme zařízení dočasně vypnout nebo v inteligentním nastavení napájení povolit režim úspory energie.<br/>Poznámka: Baterie se přestane nabíjet, když je přehřátá, i když je připojený napájecí adaptér.",
+								"t6": "Bylo zjištěno snížení výkonu baterie. Bude ovlivněna celková výdrž a špičkový výkon baterie. Doporučujeme baterii vyměnit.",
+								"t7": "Baterie stárne. Je povolen režim ochrany bezpečnosti staré slabé baterie. Vyměňte ji za originální baterii Lenovo nebo se obraťte na autorizovaného poskytovatele služeb Lenovo, aby ji vyměnil za novou.",
+								"t8": "Baterie je poškozená. Je povolen režim ochrany bezpečnosti baterie. Vyměňte ji za originální baterii Lenovo nebo se obraťte na autorizovaného poskytovatele služeb Lenovo, aby ji vyměnil za novou."
+							}
 						}
 					}
 				},
