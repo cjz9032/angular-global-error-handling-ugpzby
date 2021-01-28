@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "MEERDERE STEMMEN"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Geavanceerde microfooneffecten",
+					"description": "Hier vindt u functies en instellingen om Microfooneffect te configureren en zo het geluid te verbeteren in verschillende scenario's en omgevingen.",
+					"download": "Als u toegang wilt tot de toepassing die het meest geschikt is voor uw microfoon, klikt u op",
+					"launcher": "Als u de toepassing wilt toevoegen die het meest geschikt is voor uw hardware, klikt u op",
+					"here": "hier",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

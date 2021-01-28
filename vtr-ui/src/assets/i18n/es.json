@@ -1754,6 +1754,14 @@
 							"MultipleVoices": "VARIAS VOCES"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Efectos avanzados del micrófono",
+					"description": "Encuentre las características y los valores para configurar el efecto de micrófono para mejorar su experiencia de audio en diferentes escenarios y entornos.",
+					"download": "Para tener acceso a la aplicación más idónea para su micrófono, haga clic en",
+					"launcher": "Para agregar la aplicación idónea para su hardware, haga clic en",
+					"here": "aquí",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

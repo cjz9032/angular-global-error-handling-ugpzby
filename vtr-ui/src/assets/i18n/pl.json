@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "WIELE GŁOSÓW"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Zaawansowane efekty mikrofonu",
+					"description": "Wyszukaj funkcje i ustawienia umożliwiające skonfigurowanie efektu mikrofonu w celu poprawienia wrażeń dźwiękowych w różnych scenariuszach i środowiskach.",
+					"download": "Aby uzyskać dostęp do najodpowiedniejszej aplikacji dla Twojego mikrofonu, kliknij",
+					"launcher": "Aby dodać aplikację odpowiednią dla Twojego sprzętu, kliknij",
+					"here": "tutaj",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

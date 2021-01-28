@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "VEČ GLASOV"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Napredni učinki mikrofona",
+					"description": "Poiščite funkcije in nastavitve, da boste lahko konfigurirali učinek mikrofona in s tem izboljšali zvok v različnih načinih in okoljih.",
+					"download": "Za dostop do aplikacije, ki je najprimernejša za vaš mikrofon, kliknite",
+					"launcher": "Za dodajanje aplikacije, ki je najprimernejša za vašo strojno opremo, kliknite",
+					"here": "tukaj",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "MAI MULTE VOCI"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Efecte avansate pentru microfon",
+					"description": "Găsiți caracteristici și setări pentru a configura efectul microfonului pentru a vă îmbunătăți experiența audio în diferite scenarii și medii.",
+					"download": "Pentru a accesa aplicația cea mai potrivită pentru microfonul dvs., faceți clic pe",
+					"launcher": "Pentru a adăuga aplicația potrivită pentru echipamentul dvs., faceți clic pe",
+					"here": "aici",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "BİRDEN ÇOK SES"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Gelişmiş mikrofon efektleri",
+					"description": "Ses deneyiminizi farklı senaryolar ve ortamlarda geliştirmek için mikrofon efektini yapılandırmak için özellikler ve ayarlar bulun.",
+					"download": "Mikrofonunuza en uygun uygulamaya erişmek için",
+					"launcher": "Donanımınıza uygun uygulamayı eklemek için",
+					"here": "burayı",
+					"punctuation": " tıklayın."
 				}
 			},
 			"displayCamera": {

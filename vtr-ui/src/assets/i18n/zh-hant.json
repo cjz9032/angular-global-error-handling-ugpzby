@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "多人聲音"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "進階麥克風效果",
+					"description": "尋找功能及設定，配置麥克風效果以依據不同的情境和環境強化您的音訊體驗。",
+					"download": "若要存取最適合您的麥克風的應用程式，請按一下",
+					"launcher": "若要新增適合您的硬體的應用程式，請按一下",
+					"here": "這裡",
+					"punctuation": "。"
 				}
 			},
 			"displayCamera": {
