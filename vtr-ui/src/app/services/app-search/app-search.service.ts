@@ -19,6 +19,7 @@ import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { FeatureApplicableDetections } from './feature-applicable-detections';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 
 @Injectable({
 	providedIn: 'root',
@@ -85,6 +86,8 @@ export class AppSearchService implements OnDestroy {
 			.search(userInput)
 			?.map((feature) => Object.assign({}, this.featureMap[feature.item.id]));
 
+		this.logger.info(`search for ${userInput}, match feature: ${JSON.stringify(featureList)}`);
+
 		return this.verifyFeatureApplicability(featureList, 10, 3000);
 	}
 
@@ -142,7 +145,7 @@ export class AppSearchService implements OnDestroy {
 
 	private onNotification(notification: AppNotification) {
 		switch (notification.type) {
-			case 'MenuItemEvent.MenuItemChange':
+			case MenuItemEvent.MenuItemChange:
 				this.updateRouteMap(notification.payload);
 				break;
 			default:
@@ -238,6 +241,11 @@ export class AppSearchService implements OnDestroy {
 		const applicableStatus = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.FeaturesApplicableStatus
 		);
+
+		this.logger.info(
+			`[AppSearch]Load Feature status from cache: ${JSON.stringify(applicableStatus)}`
+		);
+
 		if (applicableStatus) {
 			const featureIds = Object.keys(applicableStatus);
 			featureIds.forEach((featureId) => {
@@ -265,7 +273,11 @@ export class AppSearchService implements OnDestroy {
 			const startTime = Date.now();
 			await this.mockDetectionThread(taskStack as IFeature[], mockThreadId);
 			if (--parallelThread <= 0) {
-				this.logger.info(`[AppSearch]Full features detections end`);
+				this.logger.info(
+					`[AppSearch]Full features detections end ${JSON.stringify(
+						this.featureStatusMap
+					)}`
+				);
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.LastFullFeaturesDetectionTime,
 					Date.now()
