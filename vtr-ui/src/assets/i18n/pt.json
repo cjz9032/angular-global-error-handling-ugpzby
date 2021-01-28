@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "MÚLTIPLAS VOZES"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Efeitos de microfone avançados",
+					"description": "Encontre funcionalidades e definições para configurar os efeitos do microfone para melhorar a sua experiência de áudio em diferentes cenários e ambientes.",
+					"download": "Para aceder à aplicação mais adequada para o seu microfone, clique",
+					"launcher": "Para adicionar a aplicação mais adequada para o seu hardware, clique",
+					"here": "aqui",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

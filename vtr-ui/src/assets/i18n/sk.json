@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "PRE VIAC HLASOV"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Rozšírené efekty mikrofónu",
+					"description": "Nájdete funkcie a nastavenia pre nakonfigurovanie efektu mikrofónu, aby ste vylepšili svoj zvukový zážitok v rôznych situáciách a prostrediach.",
+					"download": "Pre prístup k najvhodnejšej aplikácii pre váš mikrofón kliknite na",
+					"launcher": "Pre pridanie aplikácie vhodnej pre váš hardvér kliknite na",
+					"here": "sem",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

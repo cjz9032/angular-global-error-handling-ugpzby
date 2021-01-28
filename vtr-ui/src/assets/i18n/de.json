@@ -1754,6 +1754,14 @@
 							"MultipleVoices": "MEHRERE STIMMEN"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Erweiterte Mikrofoneffekte",
+					"description": "Finden Sie Funktionen und Einstellungen für die Konfiguration des Mikrofoneffekts, um Ihr Klangerlebnis in verschiedenen Szenarien und Umgebungen zu verbessern.",
+					"download": "Um auf die Anwendung zuzugreifen, die am besten für Ihr Mikrofon geeignet ist, klicken Sie",
+					"launcher": "Um die Anwendung hinzuzufügen, die für Ihre Hardware geeignet ist, klicken Sie",
+					"here": "hier",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

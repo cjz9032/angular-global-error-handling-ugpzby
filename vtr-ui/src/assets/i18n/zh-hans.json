@@ -1753,6 +1753,14 @@
 							"MultipleVoices": "多个语音"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "高级麦克风效果",
+					"description": "查找相关功能和设置来配置麦克风效果，以增强不同场景和环境下的音频体验。",
+					"download": "要访问最适合您的麦克风的应用程序，请单击",
+					"launcher": "要添加最适合您的硬件的应用程序，请单击",
+					"here": "此处",
+					"punctuation": "。"
 				}
 			},
 			"displayCamera": {

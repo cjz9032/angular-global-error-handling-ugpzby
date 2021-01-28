@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "FLERE STEMMER"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Avanserte mikrofoneffekter",
+					"description": "Finn funksjoner og innstillinger til å konfigurere mikrofoneffekter for å skreddersy lyden i ulike scenarioer og omgivelser.",
+					"download": "For å få tilgang til programmet som passer best til mikrofonen din, klikker du på",
+					"launcher": "For å legge til programmet som passer best til maskinvaren din, klikker du på",
+					"here": "her",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

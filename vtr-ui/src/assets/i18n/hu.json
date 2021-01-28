@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "TÖBB HANG"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Speciális mikrofoneffektusok",
+					"description": "Ismerje meg a funkciókat és beállításokat, amelyekkel beállíthatja a mikrofoneffektust, és javíthatja a hangzást különböző körülmények között, valamint különböző környezetekben.",
+					"download": "A mikrofonjához legmegfelelőbb alkalmazás eléréséhez kattintson",
+					"launcher": "A hardveréhez legmegfelelőbb alkalmazás hozzáadásához kattintson",
+					"here": "ide",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

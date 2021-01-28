@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "FLERA RÖSTER"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Avancerade mikrofoneffekter",
+					"description": "Funktioner och inställningar för att ställa in mikrofoneffekten och förbättra ljudupplevelsen i olika scenarier och miljöer.",
+					"download": "För att komma åt den app som är lämpligast för din mikrofon, klicka",
+					"launcher": "För att lägga till den app som är lämpligast för din maskinvara, klicka",
+					"here": "här",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

@@ -116,6 +116,21 @@
 				}
 			}
 		}
+
+		.audioVendorLink {
+			margin-top: 1rem;
+			padding-left: 3.5rem;
+			font-size: 1.4rem;
+			font-weight: 300;
+			color: $grey_dark;
+			// TODO: check this if it is necessary.
+		}
+
+		.audioVendor-here {
+			&:focus {
+				outline-offset: 0;
+			}
+		}
 	}
 
 	ul.list-group {

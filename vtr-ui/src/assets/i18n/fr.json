@@ -1754,6 +1754,14 @@
 							"MultipleVoices": "PLUSIEURS VOIX"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Effets de microphone avancés",
+					"description": "Trouvez des fonctionnalités et des paramètres pour configurer l'effet micro et améliorer votre expérience audio dans des scénarios et des environnements différents.",
+					"download": "Pour accéder à l'application qui convient le mieux à votre micro, cliquez sur",
+					"launcher": "Pour ajouter l'application qui convient le mieux à votre matériel, cliquez sur",
+					"here": "ici",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

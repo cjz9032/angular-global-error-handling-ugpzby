@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "VÍCE HLASŮ"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Pokročilé efekty mikrofonu",
+					"description": "Najděte funkce a nastavení pro konfiguraci mikrofonového efektu, kterým lze vylepšit zvukový zážitek různými scénáři a prostředími.",
+					"download": "Aplikaci, která je pro váš mikrofon nejvhodnější, otevřete kliknutím",
+					"launcher": "Aplikaci, která je pro váš hardware nejvhodnější, přidejte kliknutím",
+					"here": "sem",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {

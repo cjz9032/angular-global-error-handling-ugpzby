@@ -1644,6 +1644,14 @@
 							"MultipleVoices": "USEITA ÄÄNIÄ"
 						}
 					}
+				},
+				"microphone-link": {
+					"title": "Edistyneet mikrofonin äänitehosteet",
+					"description": "Tutustu ominaisuuksiin ja asetuksiin, joilla voit määrittää mikrofonin äänitehosteen parantaaksesi äänikokemustasi eri skenaarioissa ja ympäristöissä.",
+					"download": "Voit avata mikrofonillesi sopivan sovelluksen napsauttamalla",
+					"launcher": "Voit lisätä laitteistollesi sopivan sovelluksen napsauttamalla",
+					"here": "tätä",
+					"punctuation": "."
 				}
 			},
 			"displayCamera": {
