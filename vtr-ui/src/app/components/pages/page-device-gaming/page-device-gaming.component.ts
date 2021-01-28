@@ -90,22 +90,10 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				})
 				.catch((err) => { });
 		}
-		this.translateSubscription = this.translate
-			.stream([
-				'dashboard.offlineInfo.welcomeToVantage',
-				'common.menu.support',
-				'settings.settings',
-				'dashboard.offlineInfo.systemHealth',
-				'common.securityAdvisor.wifi',
-				'systemUpdates.title',
-				'systemUpdates.readMore',
-			])
-			.subscribe((result) => {
-				this.dashboardService.translateString = result;
-				this.dashboardService.setDefaultCMSContent();
-				this.getPreviousContent();
-				this.fetchCmsContents();
-			});
+
+		this.dashboardService.setDefaultCMSContent();
+		this.getPreviousContent();
+		this.fetchCmsContents();
 
 		this.notificationSubscription = this.commonService.notification.subscribe(
 			(notification: AppNotification) => {
