@@ -195,9 +195,8 @@ export class ConfigService {
 		});
 	}
 
-	private initializeSMB(menu: MenuItem[]){
-		if(this.deviceService.machineInfo)
-		{
+	private initializeSMB(menu: MenuItem[]) {
+		if(this.deviceService.machineInfo) {
 			this.supportFilter(menu, MenuID.smb, this.deviceService.isSMB);
 			this.supportFilter(menu, MenuID.creatorCentre, this.deviceService.supportCreatorSettings);
 			this.supportFilter(menu, MenuID.easyRendering, this.deviceService.supportEasyRendering);
