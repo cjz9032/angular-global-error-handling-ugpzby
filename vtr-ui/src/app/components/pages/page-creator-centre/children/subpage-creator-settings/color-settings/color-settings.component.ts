@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import { DeviceService } from 'src/app/services/device/device.service';
 
 @Component({
@@ -9,10 +10,12 @@ import { DeviceService } from 'src/app/services/device/device.service';
 export class ColorSettingsComponent{
 
   constructor(
-    private deviceService: DeviceService
+    private deviceService: DeviceService,
+    private metrics: CommonMetricsService
   ) { }
 
   launchProtocol(protocol: string) {
-		this.deviceService.launchUri(protocol);
+    this.deviceService.launchUri(protocol);
+    this.metrics.sendMetrics('hdr.click', 'hdColorSettings', 'Smb.CreatorSettings');
 	}
 }
