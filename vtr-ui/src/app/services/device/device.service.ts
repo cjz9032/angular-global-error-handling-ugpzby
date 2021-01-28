@@ -12,6 +12,7 @@ import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { resolve } from 'url';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { smbMachines } from 'src/assets/smb-machine/smb-machines';
 
 @Injectable({
 	providedIn: 'root',
@@ -28,6 +29,10 @@ export class DeviceService {
 	public isGaming = false;
 	public isLiteGaming = false;
 	public isSMode = false;
+	public isSMB = false;
+	public supportCreatorSettings = false;
+	public supportColorCalibration = false;
+	public supportEasyRendering = false;
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
@@ -86,6 +91,24 @@ export class DeviceService {
 		return undefined;
 	}
 
+	private identifySMBMachine(machineFamilyName){
+		if(machineFamilyName.match(/^(thinkbook)/) || machineFamilyName.match(/^(thinkpad e)/)){
+			this.isSMB = true;
+			if(smbMachines.creatorSettings.includes(machineFamilyName)){
+				this.supportCreatorSettings = true;
+			}
+
+			if(smbMachines.easyRendering.includes(machineFamilyName)){
+				this.supportEasyRendering = true;
+			}
+
+			if(smbMachines.colorCalibration.includes(machineFamilyName))
+			{
+				this.supportColorCalibration = true;
+			}
+		}
+	}
+
 	// this API doesn't have performance issue, can be always called at any time.
 	getMachineInfo(): Promise<any> {
 		this.logger.debug('DeviceService.getMachineInfo: pre API call');
@@ -103,6 +126,11 @@ export class DeviceService {
 				this.machineInfo = info;
 				this.isSMode = info.isSMode;
 				this.isGaming = info.isGaming;
+				if(info.family){
+					this.identifySMBMachine(info.family.toLowerCase());
+				}
+				
+
 				if (
 					!this.showWarranty &&
 					(!info.mtm || (info.mtm && !info.mtm.toLocaleLowerCase().endsWith('cd')))

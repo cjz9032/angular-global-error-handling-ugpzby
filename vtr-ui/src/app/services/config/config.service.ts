@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import cloneDeep from 'lodash/cloneDeep';
-import { menuConfig } from 'src/assets/menu/menu';
+import { MenuID, menuConfig } from 'src/assets/menu/menu';
 import { privacyPolicyLinks } from 'src/assets/privacy-policy-links/policylinks.json';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { BetaService, BetaStatus } from '../beta/beta.service';
@@ -178,6 +178,7 @@ export class ConfigService {
 					this.updateMenuForDeviceSetting(resultMenu);
 				}
 				this.initializeSecurityItem(this.country, resultMenu);
+				this.initializeSMB(resultMenu);
 				await this.initializeHardwareScan(resultMenu);
 				if (this.hypSettings) {
 					resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
@@ -192,6 +193,16 @@ export class ConfigService {
 
 			return resolve(this.menu);
 		});
+	}
+
+	private initializeSMB(menu: MenuItem[]){
+		if(this.deviceService.machineInfo)
+		{
+			this.supportFilter(menu, MenuID.smb, this.deviceService.isSMB);
+			this.supportFilter(menu, MenuID.creatorCentre, this.deviceService.supportCreatorSettings);
+			this.supportFilter(menu, MenuID.easyRendering, this.deviceService.supportEasyRendering);
+			this.supportFilter(menu, MenuID.colorCalibration, this.deviceService.supportColorCalibration);
+		}
 	}
 
 	private updateMenuForDeviceSetting(menu: MenuItem[]) {

@@ -6,11 +6,29 @@ import { PageCreatorCentreComponent } from "src/app/components/pages/page-creato
 import { SubpageCreatorSettingsComponent } from "src/app/components/pages/page-creator-centre/children/subpage-creator-settings/subpage-creator-settings.component";
 import { SubpageEasyRenderingComponent } from "src/app/components/pages/page-creator-centre/children/subpage-easy-rendering/subpage-easy-rendering.component";
 import { SubpageColorCalibrationComponent } from "src/app/components/pages/page-creator-centre/children/subpage-color-calibration/subpage-color-calibration.component";
+import { GuardService } from 'src/app/services/guard/guardService.service';
+import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 
 const routes: Routes = [
-  {
+	{
+		path: '',
+		component: PageMeetingExpirienceComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonArmGuard],
+		data: {
+			pageName: 'smb.meeting-experience',
+			pageContent: 'meeting-experience Status',
+		},
+	},
+  	{
 		path: 'meeting-experience',
 		component: PageMeetingExpirienceComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonArmGuard],
+		data: {
+			pageName: 'smb.meeting-experience',
+			pageContent: 'meeting-experience Status',
+		},
 		children: [
 			{
 				path: '',
@@ -20,12 +38,23 @@ const routes: Routes = [
 			{
 				path: 'meeting-manager',
 				component: SubpageMeetingManagerComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, NonArmGuard],
+				data: {
+					pageName: 'smb.meeting-experience',
+					pageContent: 'meeting-experience Status',
+				},
 			}			
 		],
-  },
-  {
+  	},
+  	{
 		path: 'creator-centre',
 		component: PageCreatorCentreComponent,
+		canDeactivate: [GuardService],
+		canActivate: [GuardService, NonArmGuard],
+		data: {
+			pageName: 'smb.creator-centre',					
+		},
 		children: [
 			{
 				path: '',
@@ -35,14 +64,29 @@ const routes: Routes = [
 			{
 				path: 'creator-settings',
 				component: SubpageCreatorSettingsComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, NonArmGuard],
+				data: {
+					pageName: 'smb.creator-centre',					
+				},
 			},
 			{
 				path: 'easy-rendering',
 				component: SubpageEasyRenderingComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, NonArmGuard],
+				data: {
+					pageName: 'smb.creator-centre',					
+				},
 			},
 			{
 				path: 'color-calibration',
 				component: SubpageColorCalibrationComponent,
+				canDeactivate: [GuardService],
+				canActivate: [GuardService, NonArmGuard],
+				data: {
+					pageName: 'smb.creator-centre',					
+				},
 			
 			}				
 		],

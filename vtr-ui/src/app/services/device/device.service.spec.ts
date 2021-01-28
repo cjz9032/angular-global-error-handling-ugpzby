@@ -72,4 +72,10 @@ describe('DeviceService', () => {
 		expect(desktopMachineCache).toHaveBeenCalled();
 		expect(machineTypeCache).toHaveBeenCalled();
 	}));
+
+	it('#identifySMBMachine should identify smb machine', fakeAsync(() => {
+		(deviceService as any).identifySMBMachine('thinkbook 16p gen2');
+		expect(deviceService.isSMB).toBe(true);
+		expect(deviceService.isSMB).toBe(true);
+	}));
 });
