@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.18](https://bitbucket.tc.lenovo.com///compare/v1.10.17...v1.10.18) (2021-01-28)
+
+
+### Features
+
+* **Dashboard:** VAN-24705 dashboard position B and C show content ([12b117f](https://bitbucket.tc.lenovo.com///commit/12b117f23221160ea3baa8c8bb21eb99d714b97d))
+
+
+### Bug Fixes
+
+* fix dialog responsive width ([563dcca](https://bitbucket.tc.lenovo.com///commit/563dccaae54db4d4fa937860c724dfe235a8c00b))
+* **gaming-dialog:** fix thermal mode settings dialog bg color wrong ([d61a3d2](https://bitbucket.tc.lenovo.com///commit/d61a3d21132c030f770cc17f3cdb3f0abb8ef0ce))
+
 ### [1.10.17](https://bitbucket.tc.lenovo.com///compare/v1.10.16...v1.10.17) (2021-01-27)
 
 
