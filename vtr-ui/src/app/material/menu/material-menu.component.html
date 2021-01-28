@@ -92,7 +92,7 @@
 								class="beta">Beta</span>
 						</button>
 					</li>
-					<li class='h-100' *ngIf="item && !item.hide && item.id == 'app-search'">
+					<li class='h-100' *ngIf="item && !item.hide && item.id === 'app-search'">
 						<button mat-button
 							vtrMenuHover
 							#menuTrigger="menuHoverDirective"
@@ -120,6 +120,7 @@
 						</button>
 						<vtr-material-menu-dropdown
 							#materialMenuDropdown="materialMenuDropdownComponent"
+							[currentIsSearchPage]="currentIsSearchPage"
 							[dropdownMenu]="item"
 							[parentPath]="item.path"
 							[parentId]="item.id"

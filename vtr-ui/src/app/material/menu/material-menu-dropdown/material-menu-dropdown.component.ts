@@ -1,8 +1,6 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { MatMenu } from '@lenovo/material/menu';
-
 import { MenuItem } from 'src/app/services/config/config.service';
 
 @Component({
@@ -16,9 +14,10 @@ export class MaterialMenuDropdownComponent implements OnInit {
 	@Input() dropdownMenu: MenuItem;
 	@Input() parentPath: string;
 	@Input() parentId: string;
+	@Input() currentIsSearchPage: boolean;
 	hasSecondaryMenu = false;
 
-	constructor(private router: Router) {}
+	constructor(private router: Router) { }
 
 	ngOnInit(): void {
 		if (Array.isArray(this.dropdownMenu?.subitems)) {
@@ -49,9 +48,9 @@ export class MaterialMenuDropdownComponent implements OnInit {
 		secondaryPath
 			? this.router.navigateByUrl(`/${path}/${subpath}/${secondaryPath}`)
 			: subpath
-			? this.router.navigateByUrl(`/${path}/${subpath}`)
-			: path
-			? this.router.navigateByUrl(`/${path}`)
-			: this.router.navigateByUrl(`/`);
+				? this.router.navigateByUrl(`/${path}/${subpath}`)
+				: path
+					? this.router.navigateByUrl(`/${path}`)
+					: this.router.navigateByUrl(`/`);
 	}
 }
