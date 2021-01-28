@@ -4,6 +4,7 @@ import { filter } from 'rxjs/operators';
 import { PageRoute } from 'src/app/data-models/history-manager/page-route-model';
 import { Subscription } from 'rxjs';
 import { GuardConstants } from '../guard/guard-constants';
+import { RoutePath } from 'src/assets/menu/menu';
 
 @Injectable({
 	providedIn: 'root',
@@ -44,9 +45,14 @@ export class HistoryManager {
 							currentNavigation.extras &&
 							currentNavigation.extras.replaceUrl;
 
-						let newPage = new PageRoute(event.url, event.urlAfterRedirects);
+						const newPage = new PageRoute(event.url, event.urlAfterRedirects);
 
-						if (this.currentRoute && !skipPreviousUrl && !replaceUrl) {
+						if (
+							this.currentRoute &&
+							!skipPreviousUrl &&
+							!replaceUrl &&
+							!this.isSearchRouteDuplicated(newPage)
+						) {
 							this.history.push(this.currentRoute);
 						}
 
@@ -65,9 +71,21 @@ export class HistoryManager {
 	goBack() {
 		this.backRoute = this.history.pop();
 		if (this.backRoute) {
-			this.router.navigateByUrl(this.backRoute.finalPath.split('?')[0]);
+			const uri = this.backRoute.finalPath.split('?')[0];
+			if (uri.endsWith(`/${RoutePath.search}`)) {
+				this.router.navigateByUrl(this.backRoute.finalPath);
+			} else {
+				this.router.navigateByUrl(uri);
+			}
 		} else {
 			this.router.navigateByUrl('/');
 		}
+	}
+
+	isSearchRouteDuplicated(newPage: PageRoute) {
+		return (
+			newPage?.finalPath?.indexOf(`/${RoutePath.search}`) !== -1 &&
+			this.currentRoute?.finalPath?.indexOf(`/${RoutePath.search}`) !== -1
+		);
 	}
 }

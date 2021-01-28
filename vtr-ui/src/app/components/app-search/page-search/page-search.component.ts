@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
@@ -12,6 +12,8 @@ import { SupportService } from 'src/app/services/support/support.service';
 import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { RoutePath } from 'src/assets/menu/menu';
+import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
 
 interface IDisplayPage {
 	pageIdx: number;
@@ -152,7 +154,8 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		private supportService: SupportService,
 		private localInfoService: LocalInfoService,
 		private metricService: MetricService,
-		private logger: LoggerService
+		private logger: LoggerService,
+		private router: Router
 	) {}
 
 	ngOnInit(): void {
@@ -186,9 +189,13 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 	onInnerBack() {}
 
 	onClickSearchBtn(metricEvent) {
-		this.metricService.sendMetrics(metricEvent);
 		this.userInput = this.mergeAndTrimSpace(this.userInput);
-		this.fireSearch(this.userInput);
+		if (this.userInput) {
+			this.metricService.sendMetrics(metricEvent);
+			this.router.navigate([RoutePath.search], {
+				queryParams: { userInput: this.userInput },
+			});
+		}
 	}
 
 	onClickResultItem(feature: IFeature) {
