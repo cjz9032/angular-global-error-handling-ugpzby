@@ -89,6 +89,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 
 	isAudioVendorSupported = false;
 	isAudioVendorPanelAvailable = false;
+	isSMB = false;
 
 	readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	readonly helpIcon = ['far', 'question-circle'];
@@ -121,6 +122,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.entertainmentTooltip = JSON.parse(
 			JSON.stringify(entertainmentTooltipText).replace(/<\/?.+?\/?>/g, '')
 		);
+		this.isSMB = this.deviceService.isSMB;
 	}
 
 	ngOnInit() {
