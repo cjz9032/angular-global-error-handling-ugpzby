@@ -10,6 +10,7 @@ import {
 import { MacroKeyMessageData } from 'src/app/enums/macrokey-message-data.enum';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { MatDialog } from '@lenovo/material/dialog';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 
 @Component({
 	selector: 'vtr-ui-macrokey-details',
@@ -49,7 +50,9 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 	public recording = false;
 	public recordsList: any = [];
 
-	constructor(private dialog: MatDialog) { }
+	constructor(
+		private dialog: MatDialog,
+		private metrics: MetricService) { }
 
 	@HostListener('document: visibilitychange') toggleOnPageMinimized() {
 		if (document.hidden) {
@@ -130,6 +133,14 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					metricsParent: 'Gaming.Macrokey',
 					id: this.modalAutomationId,
 				};
+				promptRef.componentInstance.emitService.subscribe((emmitedValue) => {
+					if (emmitedValue === 0) {
+						const metricsData = {
+							ItemName: 'macrokey_tiomeout10_modal_close_button'
+						};
+						this.sendFeatureClickMetrics(metricsData);
+					}
+				});
 				this.toggleRecording(true);
 			}
 			if (changes.messageData.currentValue === MacroKeyMessageData.timeout20) {
@@ -160,6 +171,14 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					metricsParent: 'Gaming.Macrokey',
 					id: this.modalAutomationId,
 				};
+				promptRef.componentInstance.emitService.subscribe((emmitedValue) => {
+					if (emmitedValue === 0) {
+						const metricsData = {
+							ItemName: 'macrokey_tiomeout20_modal_close_button'
+						};
+						this.sendFeatureClickMetrics(metricsData);
+					}
+				});
 				this.toggleRecording(true);
 			}
 			if (changes.messageData.currentValue === MacroKeyMessageData.maximumInput) {
@@ -190,8 +209,38 @@ export class UiMacrokeyDetailsComponent implements OnInit, OnChanges {
 					metricsParent: 'Gaming.Macrokey',
 					id: this.modalAutomationId,
 				};
+				promptRef.componentInstance.emitService.subscribe((emmitedValue) => {
+					if (emmitedValue === 0) {
+						const metricsData = {
+							ItemName: 'macrokey_maximumInput_modal_close_button'
+						};
+						this.sendFeatureClickMetrics(metricsData);
+					}
+				});
 				this.toggleRecording();
 			}
 		}
+	}
+
+	
+	/**
+	 * metrics collection for advancedoc feature
+	 * param metricsdata
+	 */
+	public sendFeatureClickMetrics(metricsdata: any) {
+		try {
+			const metricData = {
+				ItemType: metricsdata.ItemType ? metricsdata.ItemType : 'FeatureClick',
+				ItemParent: metricsdata.ItemParent ? metricsdata.ItemParent : 'Gaming.Macrokey'
+			};
+			Object.keys(metricsdata).forEach((key) => {
+				if (metricsdata[key]) {
+					metricData[key] = metricsdata[key];
+				}
+			});
+			if (this.metrics && this.metrics.sendMetrics) {
+				this.metrics.sendMetrics(metricData);
+			}
+		} catch (error) { }
 	}
 }
