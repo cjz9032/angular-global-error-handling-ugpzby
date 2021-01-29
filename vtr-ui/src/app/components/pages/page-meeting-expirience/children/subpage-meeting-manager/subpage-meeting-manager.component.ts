@@ -193,7 +193,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
-			const {type, payload} = notification;
+			const { type, payload } = notification;
 			switch (type) {
 				case LocalStorageKey.WelcomeTutorial:
 					if (payload.page === 2) {
@@ -270,7 +270,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				this.audioService
 					.setMicrophoneVolume(volume)
 					.then((response) => {
-						this.logger.info('onMicrophoneVolumeChange', {response, volume});
+						this.logger.info('onMicrophoneVolumeChange', { response, volume });
 					})
 					.catch((error) => {
 						this.logger.error('onMicrophoneVolumeChange', error.message);
@@ -399,7 +399,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 
 	startMonitorHandler(microphone: Microphone) {
 		// because microphone object only contains the changed properies
-		this.microphoneProperties = {...this.microphoneProperties, ...microphone};
+		this.microphoneProperties = { ...this.microphoneProperties, ...microphone };
 		// this.microphoneProperties = microphone;
 		// update microphone mode
 		if (this.microphoneProperties.currentMode !== '') {
@@ -568,4 +568,30 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 			);
 		}
 	}
+
+	// private defaultAudioCaptureDeviceChanged(args: any) {
+	// 	this.getMicrophoneSettingsAsync();
+	// }
+
+	initVisibility() {
+		try {
+			if (!this.dolbyModeResponse.available) {
+				this.headerMenuItems = this.commonService.removeObjFrom(
+					this.headerMenuItems,
+					'audio'
+				);
+				this.checkMenuItemsLength();
+			}
+		} catch (error) {
+			this.logger.exception('initVisibility', error.message);
+		}
+	}
+
+	checkMenuItemsLength() {
+		if (this.headerMenuItems.length === 1) {
+			this.headerMenuItems = [];
+		}
+	}
+
+	smartAppearanceButtonClick() {}
 }
