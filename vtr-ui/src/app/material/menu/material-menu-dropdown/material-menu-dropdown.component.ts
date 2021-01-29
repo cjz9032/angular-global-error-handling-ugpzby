@@ -12,14 +12,14 @@ import { MenuItem } from 'src/app/services/config/config.service';
 })
 export class MaterialMenuDropdownComponent implements OnInit {
 	@ViewChild(MatMenu, { static: true }) matMenu: MatMenu;
-	@ViewChild('searchDropdown', { static: true }) searchDropdown: SearchDropdownComponent;
+	@ViewChild('searchDropdown', { static: false }) searchDropdown: SearchDropdownComponent;
 	@Input() dropdownMenu: MenuItem;
 	@Input() parentPath: string;
 	@Input() parentId: string;
 	@Input() currentIsSearchPage: boolean;
 	hasSecondaryMenu = false;
 
-	constructor(private router: Router) { }
+	constructor(private router: Router) {}
 
 	ngOnInit(): void {
 		if (Array.isArray(this.dropdownMenu?.subitems)) {
@@ -50,9 +50,9 @@ export class MaterialMenuDropdownComponent implements OnInit {
 		secondaryPath
 			? this.router.navigateByUrl(`/${path}/${subpath}/${secondaryPath}`)
 			: subpath
-				? this.router.navigateByUrl(`/${path}/${subpath}`)
-				: path
-					? this.router.navigateByUrl(`/${path}`)
-					: this.router.navigateByUrl(`/`);
+			? this.router.navigateByUrl(`/${path}/${subpath}`)
+			: path
+			? this.router.navigateByUrl(`/${path}`)
+			: this.router.navigateByUrl(`/`);
 	}
 }
