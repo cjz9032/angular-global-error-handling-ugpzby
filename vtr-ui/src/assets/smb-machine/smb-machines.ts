@@ -2,7 +2,7 @@
 
 export const smbMachines = {
     colorCalibration:[
-        'thinkbook 14p gen 2'
+        'thinkbook 16p gen 2'
     ],
     creatorSettings:[
         'thinkbook 16p gen 2',
