@@ -18,7 +18,6 @@ import { EventEmitter } from '@angular/core';
 	styleUrls: ['./intelligent-performance.component.scss']
 })
 export class IntelligentPerformanceComponent implements OnInit, OnDestroy {
-	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	public intelligentCoolingUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 	private readonly batterySavingModeId = 'quiteBatterySaving';
 	private readonly performanceModeId = 'radioICPerformance';
@@ -29,6 +28,7 @@ export class IntelligentPerformanceComponent implements OnInit, OnDestroy {
 	selectModeTextFlag = '';
 	isIntelligentPerformanceVisible = false;
 	cache: IntelligentPerformanceSettings;
+	public readonly metricsParent = 'Smb.CreatorSettings'
 
 	@Output() intelligentPerformanceCapability = new EventEmitter<boolean>();
 
@@ -169,7 +169,7 @@ export class IntelligentPerformanceComponent implements OnInit, OnDestroy {
 			customIcon: '',
 			hideIcon: false,
 			processLabel: true,
-			metricsItem: 'radio.power-smart-settings.performance'
+			metricsItem: 'radio.smb.intelligent-performance.performance'
 		});
 
 		this.intelligentCoolingUIModel.push({
@@ -182,7 +182,7 @@ export class IntelligentPerformanceComponent implements OnInit, OnDestroy {
 			customIcon: 'LE-IntelligentCooling2x',
 			hideIcon: true,
 			processLabel: true,
-			metricsItem: 'radio.power-smart-settings.intelligent-cooling'
+			metricsItem: 'radio.smb.intelligent-performance.intelligent-cooling'
 		});
 
 		this.intelligentCoolingUIModel.push({
@@ -195,7 +195,7 @@ export class IntelligentPerformanceComponent implements OnInit, OnDestroy {
 			customIcon: 'LE-Battery-Life-mode2x',
 			hideIcon: true,
 			processLabel: true,
-			metricsItem: 'radio.power-smart-settings.battery-saving'
+			metricsItem: 'radio.smb.intelligent-performance.battery-saving'
 		});
 	}
 
