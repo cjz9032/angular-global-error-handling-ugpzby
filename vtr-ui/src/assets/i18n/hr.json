@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Pametne postavke napajanja",
 					"subtitle": "PAMETNO HLAĐENJE",
+					"subtitleSMB": "Pametan način rada",
 					"subtitle1": "Baterija i tišina",
 					"description1": "Kad je značajka aktivna, dinamički prilagođava termičke postavke vašim potrebama. Prilagođava postavke da bi uređaj ostao hladan i tih dok ga se drži ili je neaktivan.\nOptimizira performanse dok je uređaj na stabilnoj površini. Kad je isključena, prioritet termičkih performansi možete postaviti ručno.",
 					"description2": "Pametno hlađenje podešava brzinu ventilatora, maksimalnu temperaturu površine i performanse.Ta značajka ima načine rada navedene u nastavku i sada je dostupna u klizaču za performanse napajanja sustava Windows.",

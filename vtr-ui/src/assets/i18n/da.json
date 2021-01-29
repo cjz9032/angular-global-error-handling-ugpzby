@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Smarte strømindstillinger",
 					"subtitle": "INTELLIGENT KØLING",
+					"subtitleSMB": "Intelligent ydeevne",
 					"subtitle1": "Batteri og stille",
 					"description1": "Når denne funktion er slået til, justerer den dynamisk termoindstillingerne efter dine behov. Den justerer indstillingerne, så enheden er kølig og stille, mens den holdes eller er inaktiv. Når enheden står på en stabil flade, optimerer den ydeevnen. Når den er slået fra, kan du angive den termiske prioritet manuelt.",
 					"description2": "Intelligent køling justerer blæserens hastighed, den maksimale temperatur på overfladen og ydeevnen.Denne funktion har undertilstande og er nu tilgængelig via skyderen til ydeevnebaseret strømstyring i Windows.",

@@ -30,6 +30,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 import { BatteryHealthService } from './battery-health/battery-health.service';
 import { ConservationModeStatus } from 'src/app/data-models/battery/conservation-mode-response.model';
 import { MatDialog } from '@lenovo/material/dialog';
+import { DeviceService } from 'src/app/services/device/device.service';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -136,7 +137,8 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		private metrics: CommonMetricsService,
 		private localCacheService: LocalCacheService,
 		private activatedRoute: ActivatedRoute,
-		private batteryHealthService: BatteryHealthService
+		private batteryHealthService: BatteryHealthService,
+		public deviceService: DeviceService,
 	) { }
 
 	ngOnInit() {
@@ -262,7 +264,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			LocalStorageKey.IntelligentCoolingCapability,
 			undefined
 		);
-		if (capability && capability.showIC && +capability.showIC !== 0) {
+		if (capability && capability.showIC && +capability.showIC !== 0 && !this.deviceService.isSMB) {
 			this.updateSmartSettingsLinkStatus(true);
 		} else {
 			this.updateSmartSettingsLinkStatus(false);

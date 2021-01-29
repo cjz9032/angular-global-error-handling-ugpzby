@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Smarta energiinställningar",
 					"subtitle": "INTELLIGENT NEDKYLNING",
+					"subtitleSMB": "Intelligent prestanda",
 					"subtitle1": "Batteri och tyst",
 					"description1": "När funktionen är aktiverad justeras temperaturinställningarna dynamiskt utifrån dina behov. Inställningarna justeras så att enheten är sval och tyst när den hålls eller är inaktiv. Prestandan optimeras när enheten är placerad på ett stabilt underlag. När funktionen är inaktiverad kan du ställa in temperaturprioriteten manuellt.",
 					"description2": "Intelligent nedkylning anpassar fläkthastighet, maximal yttemperatur och prestanda.Funktionen inkluderar lägena nedan och är nu tillgänglig via energireglaget i Windows.",

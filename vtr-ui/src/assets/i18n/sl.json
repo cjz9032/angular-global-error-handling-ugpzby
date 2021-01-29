@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Pametne nastavitve napajanja",
 					"subtitle": "PAMETNO HLAJENJE",
+					"subtitleSMB": "Inteligentna zmogljivost",
 					"subtitle1": "Baterija in tišina",
 					"description1": "Ko je ta funkcija vklopljena, dinamično prilagaja toplotne nastavitve vašim potrebam. Nastavitve prilagodi tako, da napravo ohrani hladno in tiho, ko jo držite v rokah ali je nedejavna. Ko je naprava na stabilni površini, optimizira učinkovitost delovanja. Ko je izklopljena, lahko ročno nastavite toplotno prednost.",
 					"description2": "Pametno hlajenje prilagodi hitrost ventilatorja, najvišjo površinsko temperaturo in učinkovitost delovanja.Ta funkcija ima načine, navedene spodaj, do katerih lahko zdaj dostopate prek drsnika za učinkovitosti delovanja/porabo sistema Windows.",

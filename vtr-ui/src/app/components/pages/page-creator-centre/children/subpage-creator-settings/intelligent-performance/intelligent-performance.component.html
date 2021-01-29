@@ -8,7 +8,7 @@
         [switchId]="'ds-power-powerSmartSettings'"
         [isLastChild]='false'>
         <div class="alignment px-5">
-            <div class="row no-gutters ml-2 cooling-mode-list-block">
+            <div class="row no-gutters cooling-mode-list-block">
                 <vtr-ui-circle-radio-with-checkbox-list
                     [sendMetrics]=true [metricsParent]="metricsParent"
                     [groupName]="'intelligent-cooling-radio-group'"
@@ -16,7 +16,7 @@
                     [radioDetails]="intelligentCoolingUIModel">
                 </vtr-ui-circle-radio-with-checkbox-list>
             </div>
-            <div class="well ml-2" role="text" id="powerSmartSettings-maximum-system-protection-note"
+            <div class="well" role="text" id="powerSmartSettings-maximum-system-protection-note"
                 attr.aria-label="powerSmartSettings-maximum-system-protection-note" *ngIf="true">
                 <div class="selectModeDesc" role="text" id="IntelligentCooling-selectedModeText">
                     {{ 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.'+selectModeTextFlag | translate }}

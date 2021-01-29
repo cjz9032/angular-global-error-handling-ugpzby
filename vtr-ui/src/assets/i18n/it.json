@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Impostazioni energetiche intelligenti",
 					"subtitle": "RAFFREDDAMENTO INTELLIGENTE",
+					"subtitleSMB": "Prestazioni intelligenti",
 					"subtitle1": "Batteria e silenzio",
 					"description1": "Quando attiva, questa funzione regola dinamicamente le impostazioni termiche in base alle esigenze. Regola le impostazioni per mantenere il dispositivo più fresco o silenzioso, se è in mano all'utente o in caso di inattività. Se il dispositivo si trova su una superficie stabile, questa funzione ne ottimizza le prestazioni. Se disattivata, è possibile impostare manualmente la priorità termica.",
 					"description2": "Raffreddamento intelligente regola la velocità della ventola, la temperatura massima della superficie e le prestazioni.Questa funzione presenta le modalità elencate di seguito ed è ora accessibile tramite il dispositivo di scorrimento che regola le prestazioni della Modalità risparmio energia di Windows.",

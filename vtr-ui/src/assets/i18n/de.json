@@ -1286,6 +1286,7 @@
 				"powerSmartSettings": {
 					"title": "Power Smart-Einstellungen",
 					"subtitle": "INTELLIGENTE KÜHLUNG",
+					"subtitleSMB": "Intelligente Leistung",
 					"subtitle1": "Akku und leise",
 					"description1": "Wenn diese Funktion aktiviert ist, werden die Temperatureinstellungen dynamisch Ihren Bedürfnissen angepasst. Sie passt sie die Einstellungen so an, dass die Einheit bei mobiler Nutzung oder im Leerlauf kühl und leise bleibt. Wenn sich die Einheit auf einer stabilen Oberfläche befindet, wird die Leistung optimiert. Wenn die Funktion deaktiviert ist, können Sie die Temperaturpriorität manuell festlegen.",
 					"description2": "Die intelligente Kühlung passt die Lüftergeschwindigkeit, maximale Oberflächentemperatur und Leistung an.Diese Funktion hat folgende Modi und ist nun über den Windows-Leistungsregler zugänglich.",

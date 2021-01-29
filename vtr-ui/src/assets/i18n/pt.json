@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Definições de energia Smart",
 					"subtitle": "ARREFECIMENTO INTELIGENTE",
+					"subtitleSMB": "Desempenho inteligente",
 					"subtitle1": "Bateria e Silêncio",
 					"description1": "Quando ativada, esta funcionalidade ajusta dinamicamente as definições térmicas às suas necessidades. Ajusta as definições para manter o dispositivo fresco e silencioso, enquanto está a ser segurado ou inativo. Quando o dispositivo está numa superfície estável, otimiza o respetivo desempenho. Quando está desativada, o utilizador pode definir manualmente a prioridade térmica.",
 					"description2": "O Arrefecimento Inteligente ajusta a velocidade da ventoinha, a temperatura superficial máxima do computador e o desempenho.Este recurso tem os modos abaixo e agora está acessível pelo controlo de deslize de energia de desempenho do Windows.",

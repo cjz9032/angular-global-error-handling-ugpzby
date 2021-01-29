@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Setări inteligente de alimentare",
 					"subtitle": "RĂCIRE INTELIGENTĂ",
+					"subtitleSMB": "Performanță inteligentă",
 					"subtitle1": "Modul baterie și silențios",
 					"description1": "Când este activată, această caracteristică adaptează într-un mod dinamic setările termice nevoilor dvs. Ajustează setările pentru a menţine dispozitivul rece şi silențios, când acesta este ţinut în mână sau inactiv. Optimizează performanţa atunci când dispozitivul se află pe o suprafaţă stabilă. Când caracteristica este oprită, puteţi seta manual priorităţile termice.",
 					"description2": "Răcirea inteligentă ajustează viteza ventilatorului, temperatura maximă a suprafeței și performanța.Această caracteristică are modurile de mai jos și poate fi accesată acum prin glisorul pentru performanța de alimentare Windows.",

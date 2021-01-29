@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Virrankulutuksen älykkäät asetukset",
 					"subtitle": "ÄLYKÄS JÄÄHDYTYS",
+					"subtitleSMB": "Älykäs suorituskyky",
 					"subtitle1": "Akku ja hiljainen",
 					"description1": "Kun ominaisuus on käytössä, se muuttaa lämpöasetuksia dynaamisesti käyttäjän tarpeisiin sopiviksi. Ominaisuus muuttaa asetuksia siten, että laite pysyy viileänä ja on hiljainen, kun käyttäjä pitelee laitetta tai laite on joutoajalla. Kun laite on vakaalla alustalla, ominaisuus optimoi laitteen suorituskyvyn. Kun ominaisuus ei ole käytössä, käyttäjä voi määrittää lämpöprioriteetin itse.",
 					"description2": "Älykäs jäähdytys säätää tuulettimen kierrosnopeutta, tietokoneen pinnan enimmäislämpötilaa ja suorituskykyä.Tämän ominaisuuden kolme toimintatilaa on lueteltu jäljempänä. Sitä käytetään Windowsissa näkyvällä liukusäätimellä, jolla ohjataan suorituskykyä.",
