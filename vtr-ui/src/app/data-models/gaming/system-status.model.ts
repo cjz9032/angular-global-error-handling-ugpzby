@@ -2,20 +2,23 @@ import { LocalStorageKey } from '../../enums/local-storage-key.enum';
 export default {
     hwOverClockInfo: {
 		cpuOverClockInfo: {
-			featureName: 'isCpuOverClocking',
-			localCache: LocalStorageKey.cpuOCFeature,
+			featureName: 'cpuOCState',
+			featureLocalCache: LocalStorageKey.cpuOCFeature,
+			driverLocalCache: LocalStorageKey.xtuService,
 			isSupportOCFeature: false,
 			isOverClocking: false
 		},
 		gpuOverClockInfo: {
-			featureName: 'isGpuOverClocking',
-			localCache: LocalStorageKey.gpuOCFeature,
+			featureName: 'gpuOCState',
+			featureLocalCache: LocalStorageKey.gpuCoreOCFeature,
+			driverLocalCache: LocalStorageKey.nvDriver,
 			isSupportOCFeature: false,
 			isOverClocking: false
 		},
 		vramOverClockInfo: {
-			featureName: 'isVramOverClocking',
-			localCache: LocalStorageKey.gpuOCFeature,
+			featureName: 'gpuOCState',
+			featureLocalCache: LocalStorageKey.gpuVramOCFeature,
+			driverLocalCache: LocalStorageKey.nvDriver,
 			isSupportOCFeature: false,
 			isOverClocking: false
 		}

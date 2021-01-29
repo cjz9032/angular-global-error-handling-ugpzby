@@ -87,15 +87,16 @@
 		box-shadow: 0 0.4rem 0.8rem 0 $screen_dark_50;
 		font-size: 1.2rem;
 		&.left {
-			left: 50%;
-			transform: translate(-6rem);
+			left: 0%;
+			transform: translate(-2.5rem);
 			&::after {
 				left: 5.4rem;
 			}
 		}
 		&.right {
-			left: 50%;
-			transform: translate(-24rem);
+			left: auto;
+			right: -2.5rem;
+			transform: translate(0);
 			&::after {
 				left: 23.4rem;
 			}

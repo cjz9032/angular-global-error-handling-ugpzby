@@ -14,20 +14,25 @@
 						</div>
 						<div class="col-xl-8 col-lg-12 col-md-8 col-sm-12 monitor-col left">
 							<div class="monitor-section">
-								<div class="monitor-inner gpu" id="system_status_driver_gpu_tooltip" role="text" attr.aria-label="system_status_driver_gpu">
-									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='1' [info]="gpuInfo" [tooltip]="gpuModuleName"></vtr-ui-gaming-monitor-tooltip>
-									<div class="monitor-stack">
-										<div class="stack-container">
-											<div class="stack-border">
-												<div class="stack-content gpu"></div>
-												<div class="stack-mask" [ngStyle]="{'height': (100 - gpuUsage) + '%'}"></div>
+								<div class="monitor-inner" [ngClass]="{'monitor-inner-newversion': hwVersionInfo === 1}" id="system_status_driver_gpu_tooltip" role="text" attr.aria-label="system_status_driver_gpu">
+									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': hwVersionInfo === 0}" [ver]="hwVersionInfo" [pos]='1' [info]="gpuInfo" [tooltip]="gpuModuleName"></vtr-ui-gaming-monitor-tooltip>
+									<div class="monitor-stack" [ngClass]="{'monitor-stack-newversion': hwVersionInfo === 1}">
+										<div class="stack-container" [ngClass]="{'stack-container-gpu-newversion': hwVersionInfo === 1}">
+											<div class="stack-border" [ngClass]="{'oc-border-shadow': hwVersionInfo === 1 && hwOCInfo.gpuOverClockInfo.isOverClocking}">
+												<div class="stack-content"
+												[ngClass]="[hwVersionInfo === 0 ? 'gpu' : hwOCInfo.gpuOverClockInfo.isOverClocking ? 'state-oc' : 'gpu-common']"></div>
+												<div class="stack-mask" [ngClass]="{'stack-mask-newversion': hwVersionInfo === 1}" [ngStyle]="{'height': (100 - gpuUsage) + '%'}"></div>
 											</div>
 										</div>
-										<div class="stack-label">
+										<div class="stack-label" [ngClass]="{'stack-label-gpu-newversion': hwVersionInfo === 1}">
 											<div class="stack-title">
 												GPU
 											</div>
 											<div class="stack-status">
+												<svg class="oc-flash" *ngIf="hwVersionInfo === 1 && hwOCInfo.gpuOverClockInfo.isOverClocking"
+												 width="14px" height="20px" viewBox="0 0 16 16" fill="#ffa252" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+												</svg>
 												{{gpuUsedMemory}}/{{gpuMemorySize}}
 											</div>
 										</div>
@@ -35,27 +40,47 @@
 								</div>
 
 								<div class="monitor-cpu" id="system_status_driver_cpu_tooltip" role="text" attr.aria-label="system_status_driver_cpu">
-									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='0' [info]="cpuInfo" [tooltip]="cpuModuleName"></vtr-ui-gaming-monitor-tooltip>
-									<div class="cpu-ring"></div>
-									<div class="cpu-mask left">
+									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': hwVersionInfo === 0}" [ver]="hwVersionInfo" [pos]='0' [info]="cpuInfo" [tooltip]="cpuModuleName"></vtr-ui-gaming-monitor-tooltip>
+									<div class="cpu-ring"
+									[ngClass]="[hwVersionInfo === 0 ? 'cpu' : hwOCInfo.cpuOverClockInfo.isOverClocking ? 'cpu-ring-oc' : 'cpu-ring-common']">
+										<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1" *ngIf="hwVersionInfo === 1">
+											<defs>
+												<linearGradient id="blueGradient">
+													<stop offset="0" stop-color="#7dd5ff"/>
+													<stop offset="100%" stop-color="#008bff"/>
+												</linearGradient>
+												<linearGradient id="orangeGradient">
+													<stop offset="0" stop-color="#ffa252"/>
+													<stop offset="100%" stop-color="#ff7052"/>
+												</linearGradient>
+											</defs>
+											<circle class="cpu-svgcircle"
+											[ngClass]="[hwVersionInfo === 1 && hwOCInfo.cpuOverClockInfo.isOverClocking ? 'cpu-svgcircle-oc' : 'cpu-svgcircle-common']" cx="50%" cy="50%" r="44%"/>
+										</svg>
+									</div>
+									<div class="cpu-mask left" [ngClass]="{'cpu-mask-left-x60': hwVersionInfo === 1}">
 										<div class="mask-obj"
 											[ngStyle]="{'transform':'rotate('+getLeftDeg(cpuUsage)+'deg)'}">
 											<div class="mask-ring"></div>
 										</div>
 									</div>
-									<div class="cpu-mask right" [ngClass]="{'hidden':cpuUsage>.5}">
+									<div class="cpu-mask" [ngClass]="{'hidden': cpuUsage > 0.5, 'cpu-mask-right-x60': hwVersionInfo === 1, 'right': hwVersionInfo === 0}">
 										<div class="mask-obj"
 											[ngStyle]="{'transform':'rotate('+getRightDeg(cpuUsage)+'deg)'}">
 											<div class="mask-ring"></div>
 										</div>
 									</div>
-									<div class="cpu-inner-ring">
-										<div class="cpu-inner-circle">
+									<div class="cpu-inner-ring" [ngClass]="{'oc-border-shadow-inside': hwVersionInfo === 1 && hwOCInfo.cpuOverClockInfo.isOverClocking, 'cpu-inner-ring-hwVersion': hwVersionInfo === 1}">
+										<div class="cpu-inner-circle" [ngClass]="{'cpu-oc-border-shadow': hwVersionInfo === 1 && hwOCInfo.cpuOverClockInfo.isOverClocking}">
 											<div class="cpu-label">
 												<div class="cpu-title">
 													CPU
 												</div>
 												<div class="cpu-status">
+													<svg class="oc-flash" *ngIf="hwVersionInfo === 1 && hwOCInfo.cpuOverClockInfo.isOverClocking"
+													 width="14px" height="20px" viewBox="0 0 16 16" fill="#ffa252" xmlns="http://www.w3.org/2000/svg">
+														<path fill-rule="evenodd" d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+													</svg>
 													{{cpuCurrentFrequency}}/{{cpuBaseFrequency}}
 												</div>
 											</div>
@@ -63,20 +88,25 @@
 									</div>
 								</div>
 
-								<div class="monitor-inner ram" id="system_status_driver_ram_tooltip" role="text" attr.aria-label="system_status_driver_ram">
-									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': ver === 0}" [ver]="ver" [pos]='2' [info]="ramInfo" [tooltip]="ramModuleName"></vtr-ui-gaming-monitor-tooltip>
-									<div class="monitor-stack">
-										<div class="stack-container">
-											<div class="stack-border">
-												<div class="stack-content ram"></div>
-												<div class="stack-mask" [ngStyle]="{'height': (100 - ramUsage) + '%'}"></div>
+								<div class="monitor-inner ram" [ngClass]="{'monitor-inner-newversion': hwVersionInfo === 1}" id="system_status_driver_ram_tooltip" role="text" attr.aria-label="system_status_driver_ram">
+									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': hwVersionInfo === 0}" [ver]="hwVersionInfo" [pos]='2' [info]="vramInfo" [tooltip]="ramModuleName"></vtr-ui-gaming-monitor-tooltip>
+									<div class="monitor-stack" [ngClass]="{'monitor-stack-newversion': hwVersionInfo === 1}">
+										<div class="stack-container" [ngClass]="{'stack-container-ram-newversion': hwVersionInfo === 1}">
+											<div class="stack-border" [ngClass]="{'oc-border-shadow': hwVersionInfo === 1 && hwOCInfo.vramOverClockInfo.isOverClocking}">
+												<div class="stack-content"
+												[ngClass]="[hwVersionInfo === 0 ? 'ram' : hwOCInfo.vramOverClockInfo.isOverClocking ? 'state-oc' : 'ram-common']"></div>
+												<div class="stack-mask" [ngClass]="{'stack-mask-newversion': hwVersionInfo === 1}" [ngStyle]="{'height': (100 - ramUsage) + '%'}"></div>
 											</div>
 										</div>
-										<div class="stack-label">
+										<div class="stack-label" [ngClass]="{'stack-label-ram-newversion': hwVersionInfo === 1}">
 											<div class="stack-title">
-												RAM
+												{{stringRamOrVram}}
 											</div>
 											<div class="stack-status">
+												<svg class="oc-flash" *ngIf="hwVersionInfo === 1 && hwOCInfo.vramOverClockInfo.isOverClocking"
+												 width="14px" height="20px" viewBox="0 0 16 16" fill="#ffa252" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+												</svg>
 												{{ramUsed}}/{{ramSize}}
 											</div>
 										</div>

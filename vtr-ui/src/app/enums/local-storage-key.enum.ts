@@ -201,6 +201,8 @@ export enum LocalStorageKey {
 	supporttedThermalMode = '[LocalStorageKey] SupporttedThermalMode',
 	cpuOCFeature = '[LocalStorageKey] CpuOCFeature',
 	gpuOCFeature = '[LocalStorageKey] GpuOCFeature',
+	gpuCoreOCFeature = '[LocalStorageKey] GpuCoreOCFeature', // Version 3.6
+	gpuVramOCFeature = '[LocalStorageKey] GpuVramOCFeature', // Version 3.6
 	advanceCPUOCFeature = '[LocalStorageKey] AdvanceCPUOCFeature',
 	advanceGPUOCFeature = '[LocalStorageKey] AdvanceGPUOCFeature',
 	xtuService = '[LocalStorageKey] XtuService',
@@ -235,6 +237,7 @@ export enum LocalStorageKey {
 	ramUsage = '[LocalStorageKey] ramUsage',
 	disksList = '[LocalStorageKey] disksList',
 	diskInfoVersion = '[LocalStorageKey] diskInfoVersion', // Version 3.6
+	cpuUtilization = '[LocalStorageKey] cpuUtilization', // Version 3.6
 
 	// Macrokey
 	MacroKeyType = '[LocalStorageKey] MacroKeyType',

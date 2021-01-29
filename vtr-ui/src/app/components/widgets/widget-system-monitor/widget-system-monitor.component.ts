@@ -6,9 +6,9 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 import SystemStatus from 'src/app/data-models/gaming/system-status.model';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { EventTypes } from '@lenovo/tan-client-bridge';
-// import { Subscription } from 'rxjs/internal/Subscription';
-// import { CommonService } from 'src/app/services/common/common.service';
-// import { Gaming } from 'src/app/enums/gaming.enum';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { CommonService } from 'src/app/services/common/common.service';
+import { Gaming } from 'src/app/enums/gaming.enum';
 import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.service';
 
 @Component({
@@ -44,21 +44,41 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	public loop: any;
 
 	// TODO version 3.6 new tips
-	public cpuInfo: any;
-	public gpuInfo: any;
-	public ramInfo: any;
-	public hwNewVersionInfo = false;
-	public hwOverClockInfo = JSON.parse(JSON.stringify(SystemStatus.hwOverClockInfo));
+	public cpuInfo = {
+		isOverClocking: false,
+		modal: 'cpuModuleName',
+		frequency: '1/1Ghz',
+		usage: '0%',
+	};
+	public gpuInfo = {
+		isOverClocking: false,
+		modal: 'gpuModuleName',
+		frequency: '1/1Ghz',
+		usage: '',
+	};
+	public vramInfo = {
+		isOverClocking: false,
+		modal: 'memoryModuleName',
+		frequency: '1/1Ghz',
+		usage: '',
+	};
+	// TODO version 3.6 new design for cpu/gpu/vram
+	public hwVersionInfo = 0; // (cpuInfoVersion === 1 && gpuInfoVersion === 1) ===> 1
+	public hwOCInfo = JSON.parse(JSON.stringify(SystemStatus.hwOverClockInfo));
+	private hwMachineInfo: any;
 	public ocStateEvent: any;
-	// private notifcationSubscription: Subscription;
+	private notifcationSubscription: Subscription;
+	public stringRamOrVram = 'RAM';
 	private isOCEventBind = false;
+	private gamingCapabilities: any;
+	private cpuUtilization = '10%';
 
 	constructor(
 		private hwInfoService: HwInfoService,
 		private localCacheService: LocalCacheService,
 		private logger: LoggerService,
 		private shellServices: VantageShellService,
-		// private commonService: CommonService,
+		private commonService: CommonService,
 		private ngZone: NgZone,
 		private gamingOCService: GamingOCService,
 	) {
@@ -78,21 +98,47 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		this.cpuUsage = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage) / 100;
 		this.gpuModuleName = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuModuleName, 'N/A');
 		this.gpuUsedMemory = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuUsedMemory, 4);
-		this.gpuMemorySize = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMemorySize, '8GB');
 		this.gpuUsage = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuUsage, 0);
 		this.ramModuleName = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramModuleName, 'N/A');
 		this.ramUsed = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramUsed, 0);
-		this.ramSize = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramSize, '16GB');
 		this.ramUsage = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramUsage, 0);
 		this.hds = this.localCacheService.getLocalCacheValue(LocalStorageKey.disksList, this.hds);
+		// Get hard ware version info from cache, cpuInfoVersion === 1 && gpuInfoVersion === 1
+		this.hwVersionInfo = (this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuInfoVersion, 0) === 1
+			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuInfoVersion, 0) === 1) ? 1 : 0;
+		// Get hard ware overclock feature support from cache
+		Object.keys(this.hwOCInfo).forEach(
+			(key) => this.hwOCInfo[key].isSupportOCFeature = this.localCacheService.getLocalCacheValue(this.hwOCInfo[key].featureLocalCache, false)
+			&& this.localCacheService.getLocalCacheValue(this.hwOCInfo[key].driverLocalCache, false)
+		);
+		this.gpuMemorySize = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMemorySize, this.hwVersionInfo === 1 ? '8GHz' : '8GB');
+		this.ramSize = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramSize, this.hwVersionInfo === 1 ? '16GHz' : '16GB');
+		this.cpuUtilization = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuUtilization, '10%');
 
+		this.updateTooltips();
+		this.notifcationSubscription = this.commonService
+			.getCapabalitiesNotification()
+			.subscribe((response) => {
+				if (response.type === Gaming.GamingCapabilities && response.payload) {
+					this.gamingCapabilities = response.payload;
+					this.hwOCInfo.cpuOverClockInfo.isSupportOCFeature = this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.xtuService;
+					this.hwOCInfo.gpuOverClockInfo.isSupportOCFeature = this.gamingCapabilities.gpuCoreOCFeature && this.gamingCapabilities.nvDriver;
+					this.hwOCInfo.vramOverClockInfo.isSupportOCFeature = this.gamingCapabilities.gpuVramOCFeature && this.gamingCapabilities.nvDriver;
+					this.hwVersionInfo = (this.gamingCapabilities.cpuInfoVersion === 1 && this.gamingCapabilities.gpuInfoVersion === 1) ? 1 : 0;
+					this.initHWOverClockInfo();
+					if (this.hwVersionInfo === 1 && (this.hwOCInfo.cpuOverClockInfo.isSupportOCFeature
+						|| this.hwOCInfo.gpuOverClockInfo.isSupportOCFeature || this.hwOCInfo.vramOverClockInfo.isSupportOCFeature)) {
+						this.gamingOCService.regOCRealStatusChangeEvent();
+					} // ensure event registration
+				}
+			});
+		this.initHWOverClockInfo();
 		//////////////////////////////////////////////////////////////////////
 		// Get machine info from JSBridge                                   //
 		// Feature 0: Get CPU & GPU & Ram info                              //
 		// Feature 1: GPU module name, memory size & used, usage            //
 		// Feature 2: RAM module name, memory size & used, usage            //
 		//////////////////////////////////////////////////////////////////////
-		this.getMachineInfo();
 		this.getRealTimeUsageInfo();
 		this.loop = setInterval(() => {
 			this.getRealTimeUsageInfo();
@@ -102,6 +148,31 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	ngOnDestroy() {
 		clearInterval(this.loop);
 		this.loop = null;
+		if (this.notifcationSubscription) {
+			this.notifcationSubscription.unsubscribe();
+		}
+		if (this.hwVersionInfo === 1 && (this.hwOCInfo.cpuOverClockInfo.isSupportOCFeature || this.hwOCInfo.gpuOverClockInfo.isSupportOCFeature
+			|| this.hwOCInfo.vramOverClockInfo.isSupportOCFeature) && this.isOCEventBind) {
+				this.unRegisterOverClockStateChangeEvent();
+			}
+	}
+
+	//////////////////////////////////////////////////////////////////////
+	// get machine hardware version info                                //
+	// get hardware oc state info                                       //
+	// register state event                                             //
+	//////////////////////////////////////////////////////////////////////
+	public initHWOverClockInfo() {
+		this.stringRamOrVram = this.hwVersionInfo === 1 ? 'VRAM' : 'RAM';
+		const registerEventFlag = this.hwVersionInfo === 1 && (this.hwOCInfo.cpuOverClockInfo.isSupportOCFeature
+			|| this.hwOCInfo.gpuOverClockInfo.isSupportOCFeature || this.hwOCInfo.vramOverClockInfo.isSupportOCFeature);
+		if (registerEventFlag && !this.isOCEventBind) {
+			this.registerOverClockStateChangeEvent();
+			this.getHwOverClockState();
+		} else if (!registerEventFlag && this.isOCEventBind) {
+			this.unRegisterOverClockStateChangeEvent();
+		}
+		this.getMachineInfo();
 	}
 
 	//////////////////////////////////////////////////////////////////////
@@ -111,6 +182,10 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	// 3. RAM module name, memory size                                  //
 	//////////////////////////////////////////////////////////////////////
 	public getMachineInfo() {
+		if (this.hwVersionInfo === 1) {
+			this.getHardwareInformation();
+			return;
+		}
 		try {
 			this.hwInfoService.getMachineInfomation().then((hwInfo: any) => {
 				this.logger.info('Widget-SystemMonitor-GetMachineInfo: ', hwInfo);
@@ -167,6 +242,47 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	// hwInfo:
+	// {cpuModuleName: 'AMD Ryzen', gpuModuleName: 'NVDIA GeForce', cpuMaxFrequency: 3.2, gpuCoreMaxFrequency: 3.2, gpuVramMaxFrequency: 3.2}
+    // cpuMaxFrequency/gpuCoreMaxFrequency/gpuVramMaxFrequency: unit is GHz
+	public getHardwareInformation() {
+		try {
+			this.hwInfoService.getHardwareInformation().then((hwInfo: any) => {
+				this.logger.info('Widget-SystemMonitor-getHardwareInformation: ', hwInfo);
+				if (!hwInfo) { return; }
+				this.hwMachineInfo = hwInfo;
+				// Get CPU info
+				if (this.isAvailiableValue(hwInfo.cpuModuleName) && this.cpuModuleName !== hwInfo.cpuModuleName) {
+					this.cpuModuleName = hwInfo.cpuModuleName;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuModuleName,this.cpuModuleName);
+				}
+				if (this.isAvailiableNumber(hwInfo.cpuMaxFrequency)) {
+					this.cpuBaseFrequency = this.stringForNumber(hwInfo.cpuMaxFrequency) + 'GHz';
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuBaseFrequency,this.cpuBaseFrequency);
+				}
+
+				// Get GPU/Memory Info
+				if (this.isAvailiableValue(hwInfo.cpuModuleName) && this.gpuModuleName !== hwInfo.gpuModuleName) {
+					this.gpuModuleName = hwInfo.gpuModuleName;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuModuleName,this.gpuModuleName);
+					this.ramModuleName = hwInfo.gpuModuleName;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.ramModuleName,this.ramModuleName);
+				}
+				if (this.isAvailiableNumber(hwInfo.gpuCoreMaxFrequency)) {
+					this.gpuMemorySize = this.stringForNumber(hwInfo.gpuCoreMaxFrequency) + 'GHz';
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuMemorySize,this.gpuMemorySize);
+				}
+				if (this.isAvailiableNumber(hwInfo.gpuVramMaxFrequency)) {
+					this.ramSize = this.stringForNumber(hwInfo.gpuVramMaxFrequency) + 'GHz';
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.ramSize,this.ramSize);
+				}
+				this.updateTooltips();
+			});
+		} catch (err) {
+			this.logger.error('Widget-SystemMonitor-GetMachineInfo error: ', err.message);
+		}
+	}
+
 	//////////////////////////////////////////////////////////////////////
 	// Get real time Info & set local cache                             //
 	// 1. CPU current frequence & usage                                 //
@@ -175,6 +291,10 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	// 4. Disk list(name, type, isSystemDisk, capacity, used, usage)    //
 	//////////////////////////////////////////////////////////////////////
 	public getRealTimeUsageInfo() {
+		if (this.hwVersionInfo === 1) {
+			this.getDynamicHardwareUsageInfo();
+			return;
+		}
 		try {
 			this.hwInfoService.getDynamicInformation().then( hwInfo => {
 				this.logger.info('Widget-SystemMonitor-getReamTimeUsageInfo: ', hwInfo);
@@ -235,6 +355,59 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	// hwInfo:
+	// {cpuCurrentFrequency: 3.2, gpuCoreCurrentFrequency: 3.2, gpuVramCurrentFrequency: 3.2, cpuUtilization: 31, diskList: Array}
+    // cpuCurrentFrequency/gpuCoreCurrentFrequency/gpuVramCurrentFrequency: unit is GHz
+	public getDynamicHardwareUsageInfo() {
+		try {
+			this.hwInfoService.getDynamicHardwareUsageInfo().then( hwInfo => {
+				this.logger.info('Widget-SystemMonitor-getDynamicInformationForGpuVram: ', hwInfo);
+				if (!hwInfo) { return; }
+				if (this.isAvailiableNumber(hwInfo.cpuCurrentFrequency)) {
+					this.cpuCurrentFrequency = this.stringForNumber(hwInfo.cpuCurrentFrequency);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuCurrentFrequency, this.cpuCurrentFrequency);
+
+					if (this.hwMachineInfo && this.isAvailiableNumber(this.hwMachineInfo.cpuMaxFrequency)
+					&& this.hwMachineInfo.cpuMaxFrequency !== 0) {
+						this.cpuUsage = parseFloat((hwInfo.cpuCurrentFrequency / this.hwMachineInfo.cpuMaxFrequency).toFixed(2));
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage);
+					}
+				}
+				if (this.isAvailiableNumber(hwInfo.gpuCoreCurrentFrequency)) {
+					this.gpuUsedMemory = this.stringForNumber(hwInfo.gpuCoreCurrentFrequency);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuUsedMemory, this.gpuUsedMemory);
+
+					if (this.hwMachineInfo && this.isAvailiableNumber(this.hwMachineInfo.gpuCoreMaxFrequency)
+					&& this.hwMachineInfo.gpuCoreMaxFrequency !== 0) {
+						this.gpuUsage = parseFloat((100 * hwInfo.gpuCoreCurrentFrequency / this.hwMachineInfo.gpuCoreMaxFrequency).toFixed(2));
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuUsage, this.gpuUsage);
+					}
+				}
+				if (this.isAvailiableNumber(hwInfo.gpuVramCurrentFrequency)) {
+					this.ramUsed = this.stringForNumber(hwInfo.gpuVramCurrentFrequency);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.ramUsed, this.ramUsed);
+
+					if (this.hwMachineInfo && this.isAvailiableNumber(this.hwMachineInfo.gpuVramMaxFrequency)
+					&& this.hwMachineInfo.gpuVramMaxFrequency !== 0) {
+						this.ramUsage = parseFloat((100 * hwInfo.gpuVramCurrentFrequency / this.hwMachineInfo.gpuVramMaxFrequency).toFixed(2));
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.ramUsage, this.ramUsage);
+					}
+				}
+				if(hwInfo.diskList) {
+					this.hds = hwInfo.diskList;
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.disksList, this.hds);
+				}
+				if (this.isAvailiableValue(hwInfo.cpuUtilization)) {
+					this.cpuUtilization = hwInfo.cpuUtilization + '%';
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUtilization, this.cpuUtilization);
+				}
+				this.updateTooltips();
+			});
+		} catch (err) {
+			this.logger.error('Widget-SystemMonitor-GetMachineInfo error: ', err.message);
+		}
+	}
+
 	//////////////////////////////////////////////////////////////////////
 	// Other functions                                                  //
 	// 1. Calculate deg for cpu & diss ring                             //
@@ -281,13 +454,38 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		}
 	}
 
+	// #region 3.6
+	//////////////////////////////////////////////////////////////////////
+	// 1. get over clock state from plugin                              //
+	// 2. register oc change event                                      //
+	//////////////////////////////////////////////////////////////////////
+	private isAvailiableNumber(value) {
+		return (value !== null && value !== undefined && !Number.isNaN(value));
+	}
+
+	private isAvailiableValue(value) {
+		return (value !== null && value !== undefined && value !== '');
+	}
+
+	private stringForNumber(value) {
+		if (String(value).indexOf('.') !== -1 && (String(value).length - (String(value).indexOf('.') + 1) >= 2)) {
+			return value.toFixed(2);
+		}
+		return value.toFixed(1);
+	}
+
+	/**
+	 * hwOCInfo.cpuOverClockInfo.isOverClocking: true/false
+	 * hwOCInfo.gpuOverClockInfo.isOverClocking: true/false
+	 * hwOCInfo.vramOverClockInfo.isOverClocking: true/false
+	 */
 	getHwOverClockState() {
-		this.hwInfoService.getHwOverClockState().then((response) => {
+		this.gamingOCService.getHwOverClockState().then((response) => {
 			if (response) {
-				Object.keys(this.hwOverClockInfo).forEach(
+				Object.keys(this.hwOCInfo).forEach(
 					(key) => {
-						if (response[key]) {
-							this.hwOverClockInfo[key].isOverClocking = response[key];
+						if (this.isAvailiableValue(response[this.hwOCInfo[key].featureName])) {
+							this.hwOCInfo[key].isOverClocking = this.hwVersionInfo === 1 && response[this.hwOCInfo[key].featureName] && this.hwOCInfo[key].isSupportOCFeature;
 						}
 					}
 				);
@@ -298,11 +496,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	registerOverClockStateChangeEvent() {
 		try {
 			this.isOCEventBind = true;
-			this.gamingOCService.regOCRealStatusChangeEvent();
-			this.shellServices.registerEvent(
-			EventTypes.gamingOCStatusChangeEvent,
-				this.ocStateEvent
-			);
+			this.shellServices.registerEvent(EventTypes.gamingOCStatusChangeEvent,this.ocStateEvent);
 			this.logger.info('system-monitor-registerOverClockStateChangeEvent: register success');
 		} catch (error) {
 			this.logger.error(
@@ -313,27 +507,51 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	unRegisterOverClockStateChangeEvent() {
+		this.isOCEventBind = false;
 		this.shellServices.unRegisterEvent(
 			EventTypes.gamingOCStatusChangeEvent,
 			this.ocStateEvent
 		);
-		this.isOCEventBind = false;
 	}
 
-	onRegisterOverClockStateChangeEvent(state) {
+	/**
+	 * hwOCInfo.cpuOverClockInfo.isOverClocking: true/false
+	 * hwOCInfo.gpuOverClockInfo.isOverClocking: true/false
+	 * hwOCInfo.vramOverClockInfo.isOverClocking: true/false
+	 */
+	onRegisterOverClockStateChangeEvent(response) {
 		this.ngZone.run(() => {
 			this.logger.info(
-				`Widget-system-onRegisterOverClockStateChangeEvent: call back state: ${state}`
+				`Widget-system-onRegisterOverClockStateChangeEvent: call back state: ${response}`
 			);
-			if (state) {
-				this.hwOverClockInfo.cpuOverClockInfo.isOverClocking = state.cpuOCState;
-				this.hwOverClockInfo.gpuOverClockInfo.isOverClocking = state.gpuOCState;
-				this.hwOverClockInfo.vramOverClockInfo.isOverClocking = state.vramOCState;
-
-				if (this.hwNewVersionInfo) {
-					// this.getMachineInfoForGpuVram();
+			if (response) {
+				Object.keys(this.hwOCInfo).forEach(
+					(key) => {
+						if (this.isAvailiableValue(response[this.hwOCInfo[key].featureName])) {
+							this.hwOCInfo[key].isOverClocking = this.hwVersionInfo === 1 && response[this.hwOCInfo[key].featureName] && this.hwOCInfo[key].isSupportOCFeature;
+						}
+					}
+				);
+				if (this.hwVersionInfo === 1) {
+					this.getHardwareInformation();
+					this.cpuInfo.isOverClocking = this.hwOCInfo.cpuOverClockInfo.isOverClocking;
+					this.gpuInfo.isOverClocking = this.hwOCInfo.gpuOverClockInfo.isOverClocking;
+					this.vramInfo.isOverClocking = this.hwOCInfo.vramOverClockInfo.isOverClocking;
 				}
 			}
 		});
 	}
+
+	updateTooltips() {
+		if (this.hwVersionInfo === 1) {
+			this.cpuInfo.modal = this.cpuModuleName;
+			this.cpuInfo.frequency = this.cpuCurrentFrequency + ' / ' + this.cpuBaseFrequency;
+			this.cpuInfo.usage = this.cpuUtilization;
+			this.gpuInfo.modal = this.gpuModuleName;
+			this.gpuInfo.frequency = this.gpuUsedMemory + ' / ' + this.gpuMemorySize;
+			this.vramInfo.modal = this.ramModuleName;
+			this.vramInfo.frequency = this.ramUsed + ' / ' + this.ramSize;
+		}
+	}
+	//#endregion
 }
