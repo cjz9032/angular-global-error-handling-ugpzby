@@ -92,11 +92,12 @@
 								class="beta">Beta</span>
 						</button>
 					</li>
-					<li class='h-100' *ngIf="item && !item.hide && item.id == 'app-search'">
+					<li class='h-100' *ngIf="item && !item.hide && item.id === 'app-search'">
 						<button mat-button
 							vtrMenuHover
 							#menuTrigger="menuHoverDirective"
 							[menuHoverTriggerFor]="materialMenuDropdown?.matMenu"
+							(menuClosed)="onSearchMenuClosed(materialMenuDropdown)"
 							class="h-100 d-flex align-items-center m-0 px-3 color-light border-radius-0 min-width-0 menu-item {{item.id}}"
 							[ngClass]="{'beta-item': item.beta, 'actived': updateActiveItem(item.id)}"
 							role="menu"
@@ -115,11 +116,12 @@
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
 							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
-							(pointerleave)="clearCloseAllOtherMatMenu()">
+							(pointerleave)="[clearCloseAllOtherMatMenu()]">
 							<fa-icon class="align-middle" [icon]="item.icon"></fa-icon>
 						</button>
 						<vtr-material-menu-dropdown
 							#materialMenuDropdown="materialMenuDropdownComponent"
+							[currentIsSearchPage]="currentIsSearchPage"
 							[dropdownMenu]="item"
 							[parentPath]="item.path"
 							[parentId]="item.id"

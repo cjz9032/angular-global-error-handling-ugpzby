@@ -33,6 +33,10 @@ export class SearchDropdownComponent {
 		$event.stopPropagation();
 	}
 
+	onDropdownClosed() {
+		this.searchInput.nativeElement.value = '';
+	}
+
 	onInputClick($event) {
 		$event.stopPropagation();
 	}

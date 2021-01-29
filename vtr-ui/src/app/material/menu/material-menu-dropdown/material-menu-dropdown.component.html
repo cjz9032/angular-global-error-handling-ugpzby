@@ -4,9 +4,9 @@
 	class="vtr-material-menu-dropdown mt-0 overflow-wrap-normal max-width-none min-height-0 menu-dropdown-container {{dropdownMenu.id==='app-search' ? 'app-search' : ''}}"
 	attr.aria-labelledby="menu-main-nav-lnk-dropdown-toggle-{{dropdownMenu.id}}"
 	xPosition="before">
-	<section *ngIf="dropdownMenu.id==='app-search'">
+	<section *ngIf="dropdownMenu.id==='app-search' && !currentIsSearchPage">
 		<div mat-menu-item (focus)="onSearchItemFocus($event)">
-			<vtr-search-dropdown ></vtr-search-dropdown>
+			<vtr-search-dropdown #searchDropdown ></vtr-search-dropdown>
 		</div>
 	</section>
 	<section *ngIf="!hasSecondaryMenu && dropdownMenu.id!=='user'">

@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { MatMenu } from '@lenovo/material/menu';
-
+import { SearchDropdownComponent } from 'src/app/components/app-search/dropdown-search/dropdown-search.component';
 import { MenuItem } from 'src/app/services/config/config.service';
 
 @Component({
@@ -13,9 +12,11 @@ import { MenuItem } from 'src/app/services/config/config.service';
 })
 export class MaterialMenuDropdownComponent implements OnInit {
 	@ViewChild(MatMenu, { static: true }) matMenu: MatMenu;
+	@ViewChild('searchDropdown', { static: false }) searchDropdown: SearchDropdownComponent;
 	@Input() dropdownMenu: MenuItem;
 	@Input() parentPath: string;
 	@Input() parentId: string;
+	@Input() currentIsSearchPage: boolean;
 	hasSecondaryMenu = false;
 
 	constructor(private router: Router) {}

@@ -46,6 +46,8 @@ import { BacklightService } from 'src/app/components/pages/page-device-settings/
 import { TopRowFunctionsIdeapadService } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
 import { BacklightLevelEnum } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/backlight/backlight.enum';
 import { MenuHoverDirective } from 'src/app/directives/menu-hover.directive';
+import { RoutePath } from 'src/assets/menu/menu';
+import { MaterialMenuDropdownComponent } from './material-menu-dropdown/material-menu-dropdown.component';
 
 @Component({
 	selector: 'vtr-material-menu',
@@ -74,6 +76,7 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	isLoggingOut = false;
 	appsForYouEnum = AppsForYouEnum;
 	showSearchMenu = false;
+	currentIsSearchPage = false;
 	translateSubscription: Subscription;
 	activeItemId: string;
 	currentRoutePath: string;
@@ -139,8 +142,13 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		this.routerEventSubscription = this.router.events.subscribe((ev) => {
 			if (ev instanceof NavigationEnd) {
 				this.currentRoutePath = ev.url;
+				this.currentIsSearchPage = ev.url.indexOf(`/${RoutePath.search}`) > -1;
 			}
 		});
+	}
+
+	onSearchMenuClosed(materialMenuDropdown: MaterialMenuDropdownComponent) {
+		materialMenuDropdown?.searchDropdown?.onDropdownClosed();
 	}
 
 	/**
@@ -395,7 +403,6 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		}
 	}
 
-
 	menuItemKeyDown(path, subpath?) {
 		subpath
 			? this.router.navigateByUrl(`/${path}/${subpath}`)
@@ -436,7 +443,7 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 	}
 
 	closeAllOtherMatMenu(activeDropdown: MenuHoverDirective) {
-		this.hoverTriggers?.toArray().forEach(elem => {
+		this.hoverTriggers?.toArray().forEach((elem) => {
 			if (activeDropdown !== elem) {
 				elem.closeMenu();
 			}
