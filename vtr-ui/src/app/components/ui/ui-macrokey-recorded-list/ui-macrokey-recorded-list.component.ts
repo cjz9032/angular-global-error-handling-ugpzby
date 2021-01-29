@@ -6,6 +6,7 @@ import { MacroKeyInterval } from 'src/app/enums/macrokey-interval.enum.1';
 import { TranslateService } from '@ngx-translate/core';
 import { ModalGamingPromptComponent } from './../../modal/modal-gaming-prompt/modal-gaming-prompt.component';
 import { MatDialog } from '@lenovo/material/dialog';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 
 @Component({
 	selector: 'vtr-ui-macrokey-recorded-list',
@@ -201,7 +202,8 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 		private macrokeyService: MacrokeyService,
 		private loggerService: LoggerService,
 		private translate: TranslateService,
-		private dialog: MatDialog
+		private dialog: MatDialog,
+		private metrics: MetricService
 	) { }
 
 	ngOnInit() { }
@@ -267,6 +269,11 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 		promptRef.componentInstance.emitService.subscribe((emmitedValue) => {
 			if (emmitedValue === 1) {
 				this.deleteAllMacros(true);
+			}else if (emmitedValue === 0) {
+				const metricsData = {
+					ItemName: 'macrokey_clear_modal_close_button'
+				};
+				this.sendFeatureClickMetrics(metricsData);
 			}
 		});
 	}
@@ -373,5 +380,26 @@ export class UiMacrokeyRecordedListComponent implements OnInit, OnChanges {
 			this.pairCounter[key] = 0;
 		}
 		return 'pair-' + key + '-' + this.pairCounter[key];
+	}
+
+	/**
+	 * metrics collection for advancedoc feature
+	 * param metricsdata
+	 */
+	public sendFeatureClickMetrics(metricsdata: any) {
+		try {
+			const metricData = {
+				ItemType: metricsdata.ItemType ? metricsdata.ItemType : 'FeatureClick',
+				ItemParent: metricsdata.ItemParent ? metricsdata.ItemParent : 'Gaming.Macrokey'
+			};
+			Object.keys(metricsdata).forEach((key) => {
+				if (metricsdata[key]) {
+					metricData[key] = metricsdata[key];
+				}
+			});
+			if (this.metrics && this.metrics.sendMetrics) {
+				this.metrics.sendMetrics(metricData);
+			}
+		} catch (error) { }
 	}
 }
