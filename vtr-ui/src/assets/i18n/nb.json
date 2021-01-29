@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Innstillinger for smart strømforbruk",
 					"subtitle": "INTELLIGENT KJØLING",
+					"subtitleSMB": "Intelligent ytelse",
 					"subtitle1": "Batteri og stillegående",
 					"description1": "Når denne funksjonen er aktivert, endres de termiske innstillingene etter behov. Den justerer innstillingene for å holde enheten kjølig og stillegående når den holdes eller er inaktiv. Når enheten er på en stabil overflate optimaliserer den ytelsen. Når funksjonen er av, kan du angi termisk prioritet manuelt.",
 					"description2": "Intelligent kjøling justerer viftehastighet, maksimal overflatetemperatur og ytelse.Denne funksjonen har modusene nedenfor og er nå tilgjengelig via strømglidebryteren for Windows-ytelse.",

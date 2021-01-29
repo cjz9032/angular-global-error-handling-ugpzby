@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Güç Akıllı Ayarları",
 					"subtitle": "AKILLI SOĞUTMA",
+					"subtitleSMB": "Akıllı performans",
 					"subtitle1": "Pil ve Sessiz",
 					"description1": "Bu özellik açık olduğunda termal ayarları ihtiyaçlarınıza göre dinamik olarak belirler. Elde tutulurken veya boşta çalışırken cihazın soğuk veya sessiz olmasını sağlayacak şekilde ayarları düzenler. Cihaz sabit bir yüzeydeyken performansı en iyi duruma getirir. Bu seçenek kapalı olduğunda, termal önceliği manuel olarak ayarlayabilirsiniz.",
 					"description2": "Akıllı Soğutma fan hızını, maksimum yüzey sıcaklığını ve performansı ayarlar.Bu özellik aşağıdaki kiplere sahiptir ve bu özelliğe artık Windows performans güç kaydırıcısından erişilebilmektedir.",

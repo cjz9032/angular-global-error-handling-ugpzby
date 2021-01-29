@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Slimme energiebeheerinstellingen",
 					"subtitle": "INTELLIGENT KOELEN",
+					"subtitleSMB": "Intelligente prestaties",
 					"subtitle1": "Batterij en stille modus",
 					"description1": "Wanneer deze functie is ingeschakeld, past hij de thermische instellingen dynamisch aan uw behoeften aan. De instellingen worden aangepast zodat het apparaat koel en stil blijft, als u het in de hand houdt of als het inactief is. Wanneer het apparaat op een stabiel oppervlak staat, worden de prestaties geoptimaliseerd. U kunt de thermische prioriteit ook handmatig instellen als de functie is uitgeschakeld.",
 					"description2": "Intelligent koelen regelt de ventilatorsnelheid, maximale temperatuur van de buitenkant van de computer en de prestaties.Deze functie biedt onderstaande modi en is nu toegankelijk via de prestatieschuif in Windows.",

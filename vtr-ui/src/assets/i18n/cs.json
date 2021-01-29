@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Inteligentní nastavení napájení",
 					"subtitle": "INTELIGENTNÍ CHLAZENÍ",
+					"subtitleSMB": "Inteligentní výkon",
 					"subtitle1": "Baterie a ticho",
 					"description1": "Když je tato funkce zapnutá, tepelná nastavení se dynamicky přizpůsobují vaši potřebám. Zařízení tak při držení v rukou nebo při nečinnosti zůstává chladné a tiché. Je-li zařízení na stabilním povrchu, optimalizuje svůj výkon. Když je funkce vypnutá, tepelnou prioritu můžete nastavit ručně.",
 					"description2": "Funkce Inteligentní chlazení upravuje rychlost ventilátoru, maximální teplotu povrchu a výkon.Tato funkce má následující režimy a nyní je přístupná pomocí posuvníku výkonu systému Windows.",

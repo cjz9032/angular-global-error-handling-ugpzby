@@ -1286,6 +1286,7 @@
 				"powerSmartSettings": {
 					"title": "Paramètres d'alimentation intelligents",
 					"subtitle": "REFROIDISSEMENT INTELLIGENT",
+					"subtitleSMB": "Performances intelligentes",
 					"subtitle1": "Batterie et silence",
 					"description1": "Lorsque cette fonction est activée, elle ajuste de façon dynamique les paramètres thermiques en fonction de vos besoins. Elle ajuste les paramètres pour que le périphérique se refroidisse et reste silencieux lorsqu'il est porté ou en veille. Lorsque le périphérique est sur une surface stable, elle optimise les performances. Lorsque cette fonction est désactivée, vous pouvez définir manuellement la priorité du mode thermique.",
 					"description2": "Le refroidissement intelligent Lenovo règle la vitesse du ventilateur, la température maximum de la surface et les performances.Cette fonction a des sous-modes et se règle maintenant avec le curseur de l'alimentation de performances Windows.",

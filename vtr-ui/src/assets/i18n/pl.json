@@ -1176,6 +1176,7 @@
 				"powerSmartSettings": {
 					"title": "Inteligentne ustawienia zasilania",
 					"subtitle": "INTELIGENTNE CHŁODZENIE",
+					"subtitleSMB": "Inteligentna wydajność",
 					"subtitle1": "Akumulator i cicha praca",
 					"description1": "Po włączeniu ta funkcja dynamicznie dostosowuje ustawienia temperatury do Twoich potrzeb. Dostosowuje ustawienia, aby urządzenie było chłodne i pracowało cicho, gdy jest trzymane na kolanach lub bezczynne. Gdy urządzenie znajduje się na stabilnej powierzchni, jego wydajność jest optymalizowana. Gdy jest wyłączona, można ręcznie ustawić priorytet chłodzenia.",
 					"description2": "Funkcja Inteligentne chłodzenie dostosowuje szybkość wentylatora, maksymalną temperaturę powierzchni komputera oraz jego wydajność.Ta funkcja ma poniższe tryby i jest teraz dostępna za pomocą suwaka wydajności systemu Windows.",

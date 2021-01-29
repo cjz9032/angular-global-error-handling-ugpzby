@@ -1286,6 +1286,7 @@
 				"powerSmartSettings": {
 					"title": "Valores de energía inteligente",
 					"subtitle": "ENFRIADO INTELIGENTE",
+					"subtitleSMB": "Rendimiento inteligente",
 					"subtitle1": "Batería y silenciosa",
 					"description1": "Cuando está activada, esta característica ajusta en forma dinámica los valores térmicos a sus necesidades. Ajusta los valores para mantener el dispositivo fresco y silencioso mientras está en espera o en reposo. Mientras el dispositivo se encuentra en una superficie estable, optimiza el rendimiento. Cuando está desactivada, puede configurar la prioridad térmica manualmente.",
 					"description2": "El Enfriado inteligente ajusta la velocidad del ventilador, la máxima temperatura de la superficie y el rendimiento.Esta característica tiene los siguientes modos y ahora está accesible mediante el control de rendimiento de Windows.",

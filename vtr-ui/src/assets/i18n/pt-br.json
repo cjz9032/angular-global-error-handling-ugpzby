@@ -1286,6 +1286,7 @@
 				"powerSmartSettings": {
 					"title": "Configurações inteligentes de energia",
 					"subtitle": "RESFRIAMENTO INTELIGENTE",
+					"subtitleSMB": "Desempenho inteligente",
 					"subtitle1": "Bateria e silêncio",
 					"description1": "Quando ligado, este recurso ajusta dinamicamente as configurações térmicas aos seus requisitos. Ele ajusta as configurações para manter o dispositivo refrigerado e silencioso, quando estiver seguro nas mãos ou inativo. Quando o dispositivo estiver em uma superfície estável, ele otimiza o desempenho. Quando desligado, você pode ajustar manualmente a prioridade térmica.",
 					"description2": "O Resfriamento inteligente ajusta a velocidade do ventilador, a temperatura máxima da superfície e o desempenho.Esse recurso tem os modos listados abaixo e agora é acessível pelo controle deslizante de energia de desempenho do Windows.",
