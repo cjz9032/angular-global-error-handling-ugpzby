@@ -30,7 +30,7 @@ export class SearchDropdownComponent {
 
 	onCleanClick($event) {
 		this.searchInput.nativeElement.value = '';
-		$event.stopPropagation();
+		$event?.stopPropagation();
 	}
 
 	onInputClick($event) {

@@ -115,7 +115,7 @@
 							(click)="onMenuItemClick(item)"
 							(keydown.enter)="[onMenuItemClick(item), menuItemKeyDown(item.path)]"
 							(pointerenter)="handlePointerEnter(menuTrigger, $event)"
-							(pointerleave)="clearCloseAllOtherMatMenu()">
+							(pointerleave)="[clearCloseAllOtherMatMenu(), clean(materialMenuDropdown)]">
 							<fa-icon class="align-middle" [icon]="item.icon"></fa-icon>
 						</button>
 						<vtr-material-menu-dropdown

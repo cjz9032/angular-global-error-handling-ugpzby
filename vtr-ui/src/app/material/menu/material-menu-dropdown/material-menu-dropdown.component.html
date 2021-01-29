@@ -6,7 +6,7 @@
 	xPosition="before">
 	<section *ngIf="dropdownMenu.id==='app-search' && !currentIsSearchPage">
 		<div mat-menu-item (focus)="onSearchItemFocus($event)">
-			<vtr-search-dropdown ></vtr-search-dropdown>
+			<vtr-search-dropdown #searchDropdown ></vtr-search-dropdown>
 		</div>
 	</section>
 	<section *ngIf="!hasSecondaryMenu && dropdownMenu.id!=='user'">

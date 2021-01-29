@@ -442,8 +442,17 @@ export class MaterialMenuComponent implements OnInit, OnDestroy {
 		this.hoverTriggers?.toArray().forEach(elem => {
 			if (activeDropdown !== elem) {
 				elem.closeMenu();
+				if ((activeDropdown as any).searchDropdown) {
+					console.log('close search');
+				}
 			}
 		});
+	}
+
+	clean(element) {
+		if ((element as any).searchDropdown) {
+			console.log('close search');
+		}
 	}
 
 	clearCloseAllOtherMatMenu() {
