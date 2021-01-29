@@ -1,5 +1,5 @@
 <div class="subpage-creator-settings vtr-subpage row vtr-page-columns">
-	<div class="col-lg-7 col-xl-8 vtr-page-column vtr-subpage-left-column">
+	<div class="col-lg-7 col-xl-8 vtr-subpage-left-column">
 		<vtr-ui-header-subpage [title]="'smb.creatorCentre.creatorSettings.title' | translate"
 			[caption]="'smb.creatorCentre.creatorSettings.desc' | translate" [textId]="'smb-creator-settings'">
 		</vtr-ui-header-subpage>
@@ -15,9 +15,6 @@
 							(intelligentPerformanceCapability)="updateIntelligentPerformanceCapability($event)"
 							></vtr-intelligent-performance>
 						</li>
-						<li class="common-li-padding">
-							Here is Auto Close.
-						</li>
                         <li class="common-li-padding"
                             *ngIf="hdrCapability">
 							<vtr-color-settings></vtr-color-settings>
@@ -28,7 +25,7 @@
 		</div>
 	</div>
 
-	<div class="col-lg-5 col-xl-4 vtr-page-column vtr-subpage-right-column">
+	<div class="col-lg-5 col-xl-4 vtr-subpage-right-column">
 		<div class="col mt-40">
 			<div>auto close banner</div>
 			<div>ITS banner</div>
