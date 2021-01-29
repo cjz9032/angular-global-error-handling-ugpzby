@@ -29,7 +29,6 @@ $line_height: 2rem;
 }
 
 :host ::ng-deep {
-
 	.vtr-page.vtr-page-page-app-search {
 		.vtr-page-columns .vtr-page-column.vtr-page-left-column {
 			padding-bottom: 4rem !important;
@@ -108,22 +107,18 @@ $line_height: 2rem;
 			margin-top: 6rem;
 			color: $grey_dark;
 			opacity: 0.8;
-			font-size: 2.0rem;
+			font-size: 2rem;
 		}
 
 		.loading-indicator {
 			margin-top: 11.3rem;
 			width: 100%;
-			.cycle {
-				width: 4.8rem;
-				height: 4.8rem;
-				background: transparent linear-gradient(135deg, #2955BC 0%, var(--bluehyperlink) 100%) 0% 0% no-repeat padding-box;
-				background: transparent linear-gradient(135deg, #2955BC 0%, #346CEF 100%) 0% 0% no-repeat padding-box;
-				opacity: 1;
-			}
 
 			.loading-tips {
 				margin-top: 3.2rem;
+				color: $grey_dark;
+				opacity: 0.8;
+				font-size: 1.8rem;
 			}
 		}
 
@@ -147,7 +142,7 @@ $line_height: 2rem;
 				.title {
 					@extend .flex-all-center;
 					margin-top: 4.96rem;
-					font-size: 2.0rem;
+					font-size: 2rem;
 				}
 
 				.description {
@@ -195,7 +190,6 @@ $line_height: 2rem;
 						@extend .flex-all-center;
 						height: calc(#{$item_height} - 2px);
 
-
 						width: calc(100% - #{$icon_size} * 2 - 6.2rem);
 						.feature-name {
 							text-align: left;
@@ -234,7 +228,7 @@ $line_height: 2rem;
 
 				.chevron-left .chevron-right {
 					padding: 1.6rem;
-					font-size: 2.0rem;
+					font-size: 2rem;
 					opacity: 1;
 				}
 

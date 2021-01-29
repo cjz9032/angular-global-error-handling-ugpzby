@@ -45,6 +45,15 @@
 				</div>
 			</div>
 
+			<div class="loading-indicator" *ngIf="isOnline && !searchCompleted">
+				<div class="row flex-all-center">
+					<mat-spinner diameter="70"></mat-spinner>
+				</div>
+				<div class="row flex-all-center loading-tips">
+					Please wait while we check your device for available settings
+				</div>
+			</div>
+
 			<!-- results view -->
 			<div class="search-results" *ngIf='isOnline && searchCompleted'>
 				<div class="row result-counter" *ngIf="allResultItems.length <= pageSize" id="search-page-div-result-counter">

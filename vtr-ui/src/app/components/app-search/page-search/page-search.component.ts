@@ -36,7 +36,6 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 	public noSearchResultTips: string;
 	public isInnerBack = false;
 	public searchTips = 'Search Query';
-	public loadedCompleted = true;
 	public searchCompleted = true;
 	public isOnline = true;
 
