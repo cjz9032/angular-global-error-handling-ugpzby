@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.19](https://bitbucket.tc.lenovo.com///compare/v1.10.18...v1.10.19) (2021-01-29)
+
+
+### Features
+
+* **dashlane:** update dashlane status ([6747584](https://bitbucket.tc.lenovo.com///commit/674758476282424a05b4b7a9918762b0cb6dc83c))
+
+
+### Bug Fixes
+
+* **dashlane:** update download mock ([73fe452](https://bitbucket.tc.lenovo.com///commit/73fe45261fe4d05e175b136d9790ea840f022ecf))
+* input box has a x icon ([155eed5](https://bitbucket.tc.lenovo.com///commit/155eed5deeb25af968510417f88a8440425732be))
+
 ### [1.10.18](https://bitbucket.tc.lenovo.com///compare/v1.10.17...v1.10.18) (2021-01-28)
 
 
