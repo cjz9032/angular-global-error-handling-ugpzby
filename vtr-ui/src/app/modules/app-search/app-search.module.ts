@@ -35,6 +35,7 @@ import { SharedModule } from '../shared.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { AppSearchRoutingModule } from './app-search-routing.module';
+import { MatProgressSpinnerModule } from '@lenovo/material/progress-spinner';
 
 @NgModule({
 	declarations: [SearchDropdownComponent, PageSearchComponent],
@@ -50,6 +51,7 @@ import { AppSearchRoutingModule } from './app-search-routing.module';
 		WidgetOfflineModule,
 		PageLayoutModule,
 		FontAwesomeModule,
+		MatProgressSpinnerModule,
 	],
 	exports: [SearchDropdownComponent, PageSearchComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

@@ -391,28 +391,56 @@ export class AppSearchService implements OnDestroy {
 			}
 
 			const applicable = feature.applicable;
-
 			this.logger.info(
 				`[AppSearch]Single featue detection start, ThreadId:${mockThreadId} - FeatureId:${feature.id}`
 			);
-			const startTime = Date.now();
-			feature.applicable = Boolean(
-				await this.applicableDetections.isFeatureApplicable(feature.id)
-			);
-			this.logger.info(
-				`[AppSearch]Single featue detection end, ThreadId:${mockThreadId} - Duration:${
-					Date.now() - startTime
-				} -result: ${feature.applicable} - FeatureId:${feature.id}`
-			);
 
-			this.featureStatusMap[feature.id] = feature.applicable;
-			if (applicable !== feature.applicable) {
-				this.persistFeatureStatus();
-			}
+			const startTime = Date.now();
+			const actionCallback = (result: boolean, isTimeout: boolean) => {
+				feature.applicable = Boolean(result);
+				this.logger.info(
+					`[AppSearch]Single featue detection end, ThreadId:${mockThreadId} - Duration:${
+						Date.now() - startTime
+					} -result: ${feature.applicable} timeout: ${isTimeout}- FeatureId:${feature.id}`
+				);
+
+				this.featureStatusMap[feature.id] = feature.applicable;
+				if (applicable !== feature.applicable) {
+					this.persistFeatureStatus();
+				}
+			};
+			await this.wrapActionWithTimeout(
+				async () => this.applicableDetections.isFeatureApplicable(feature.id),
+				actionCallback,
+				3000
+			);
 		}
 	}
 
-	public persistFeatureStatus() {
+	private async wrapActionWithTimeout(
+		action: () => Promise<any>,
+		callback: (result: boolean, isTimeout: boolean) => void,
+		timeout: number
+	) {
+		return new Promise<void>((resolve) => {
+			let detectionTimeout = setTimeout(() => {
+				callback?.(null, true);
+				detectionTimeout = null;
+				resolve();
+			}, 30 * 1000);
+
+			(async () => {
+				const result = await action();
+				callback?.(result, false);
+				if (detectionTimeout) {
+					clearTimeout(detectionTimeout);
+				}
+				resolve();
+			})();
+		});
+	}
+
+	private persistFeatureStatus() {
 		if (this.featureStatusUpdate) {
 			return;
 		}
