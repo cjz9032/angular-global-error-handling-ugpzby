@@ -1,4 +1,4 @@
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 export enum MenuID {
 	smartPerformance = 'smart-performance',
@@ -31,6 +31,7 @@ export enum MenuID {
 	creatorCentre = 'creator-centre',
 	creatorSettings = 'creator-settings',
 	easyRendering = 'easy-rendering',
+	colorCalibration = 'color-calibration',
 }
 
 export enum RoutePath {
@@ -66,6 +67,7 @@ export enum RoutePath {
 	creatorCentre = 'creator-centre',
 	creatorSettings = 'creator-settings',
 	easyRendering = 'easy-rendering',
+	colorCalibration = 'color-calibration',
 }
 
 export const menuConfig = {
@@ -387,20 +389,21 @@ export const menuConfig = {
 			id: MenuID.smb,
 			label: 'common.menu.smb.title',
 			path: RoutePath.smb,
-			icon: ['fal', 'laptop'],	
+			icon: ['fal', 'laptop'],
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
-			metricsItem: 'link.smb',		
+			metricsItem: 'link.smb',
+			hide: true,	
 			sMode: false,
 			subitems: [
 				{
 					id: MenuID.meetingExperience,
 					label: 'common.menu.smb.sub1',
 					path: RoutePath.meetingExperience,
-					icon: null,		
+					icon: null,
 					metricsEvent: 'itemClick',
 					metricsParent: 'smb.navbar',
-					metricsItem: 'link.meeting-experience',			
+					metricsItem: 'link.meeting-experience',
 					routerLinkActiveOptions: {
 						exact: true
 					},
@@ -410,10 +413,10 @@ export const menuConfig = {
 							id: MenuID.meetingManager,
 							label: 'common.menu.smb.sub3',
 							path: RoutePath.meetingManager,
-							icon: null,	
+							icon: null,
 							metricsEvent: 'itemClick',
 							metricsParent: 'smb.smb.navbar',
-							metricsItem: 'link.meeting-manager',						
+							metricsItem: 'link.meeting-manager',
 							routerLinkActiveOptions: {
 								exact: true
 							},
@@ -426,10 +429,10 @@ export const menuConfig = {
 					id: MenuID.creatorCentre,
 					label: 'common.menu.smb.sub2',
 					path: RoutePath.creatorCentre,
-					icon: null,		
+					icon: null,
 					metricsEvent: 'itemClick',
 					metricsParent: 'smb.navbar',
-					metricsItem: 'link.creator-centre',			
+					metricsItem: 'link.creator-centre',
 					routerLinkActiveOptions: {
 						exact: true
 					},
@@ -442,10 +445,10 @@ export const menuConfig = {
 							icon: null,
 							metricsEvent: 'itemClick',
 							metricsParent: 'smb.creator-centre.navbar',
-							metricsItem: 'link.creator-settings',	
-							hide: false,					
+							metricsItem: 'link.creator-settings',
+							hide: false,
 							routerLinkActiveOptions: {
-								exact: false
+								exact: true
 							},
 							sMode: false,
 							subitems: []
@@ -454,12 +457,12 @@ export const menuConfig = {
 							id: MenuID.easyRendering,
 							label: 'common.menu.smb.sub5',
 							path: RoutePath.easyRendering,
-							icon: null,		
+							icon: null,
 							metricsEvent: 'itemClick',
 							metricsParent: 'smb.creator-centre.navbar',
-							metricsItem: 'link.easy-rendering',						
+							metricsItem: 'link.easy-rendering',
 							routerLinkActiveOptions: {
-								exact: false
+								exact: true
 							},
 							sMode: false,
 							subitems: []
@@ -468,12 +471,12 @@ export const menuConfig = {
 							id: 'color-calibration',
 							label: 'common.menu.smb.sub6',
 							path: 'color-calibration',
-							icon: null,	
+							icon: null,
 							metricsEvent: 'itemClick',
 							metricsParent: 'smb.creator-centre.navbar',
-							metricsItem: 'link.color-calibration',								
+							metricsItem: 'link.color-calibration',
 							routerLinkActiveOptions: {
-								exact: false
+								exact: true
 							},
 							sMode: false,
 							subitems: []
