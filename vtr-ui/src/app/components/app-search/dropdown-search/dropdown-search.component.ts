@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FeatureClick } from 'src/app/services/metric/metrics.model';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
+import { RoutePath } from 'src/assets/menu/menu';
 @Component({
 	selector: 'vtr-search-dropdown',
 	templateUrl: './dropdown-search.component.html',
@@ -17,17 +18,15 @@ export class SearchDropdownComponent {
 	public clickSearchIconEvent: FeatureClick = {
 		ItemType: EventName.featureclick,
 		ItemParent: 'Dropdown.Search',
-		ItemName: 'icon.search'
-	}
+		ItemName: 'icon.search',
+	};
 	public enterSearchEvent: FeatureClick = {
 		ItemType: EventName.featureclick,
 		ItemParent: 'Dropdown.Search',
-		ItemName: 'input.search'
-	}
+		ItemName: 'input.search',
+	};
 
-	constructor(
-		private router: Router,
-		private metricService: MetricService) { }
+	constructor(private router: Router, private metricService: MetricService) {}
 
 	onCleanClick($event) {
 		this.searchInput.nativeElement.value = '';
@@ -52,12 +51,12 @@ export class SearchDropdownComponent {
 	}
 
 	private navigateToSearchPage(userInput: string) {
-		this.router.navigate(['search'], {
+		this.router.navigate([RoutePath.search], {
 			queryParams: { userInput },
 		});
 	}
 
 	private mergeAndTrimSpace(source) {
-		return source?.trim().replace(/ +(?= )/g,'') || '';
+		return source?.trim().replace(/ +(?= )/g, '') || '';
 	}
 }
