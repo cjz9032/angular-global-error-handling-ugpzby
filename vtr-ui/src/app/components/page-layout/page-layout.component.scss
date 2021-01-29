@@ -131,3 +131,24 @@
 		}
 	}
 }
+
+:host-context(.smb){
+	.vtr-page{
+		.vtr-page-columns {
+			.vtr-page-column {
+				// @media #{$breakpoint_xl} {
+				// 	padding: 0 $padding_side_sm 4rem !important;
+				// }
+				&.vtr-page-left-column {
+					flex: 0 0 100%;
+                    max-width: 100%;
+                    padding: 0;
+				}
+				&.vtr-page-right-column {
+					display: none;
+				}
+				
+			}
+		}
+	}
+}

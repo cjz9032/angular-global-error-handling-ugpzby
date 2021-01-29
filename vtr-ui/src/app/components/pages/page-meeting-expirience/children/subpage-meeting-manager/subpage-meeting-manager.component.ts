@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { EMPTY, Subscription } from 'rxjs';
 import { FeatureStatus } from '../../../../../data-models/common/feature-status.model';
 import { SessionStorageKey } from '../../../../../enums/session-storage-key-enum';
@@ -26,7 +26,7 @@ import { AudioVendorService } from '../../../page-device-settings/children/subpa
 	templateUrl: './subpage-meeting-manager.component.html',
 	styleUrls: ['./subpage-meeting-manager.component.scss']
 })
-export class SubpageMeetingManagerComponent implements OnInit {
+export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	@Output() tooltipClick = new EventEmitter<boolean>();
 
 	@Input() dolbyModeDisabled = false;
@@ -54,19 +54,19 @@ export class SubpageMeetingManagerComponent implements OnInit {
 		{
 			title: 'smb.meetingExperience.meetingManager.aiMeetingManager.title',
 			path: 'meetingManager',
-			metricsItem: 'PowerSmartSettings',
+			metricsItem: 'AIMeetingManager',
 			order: 1,
 		},
 		{
 			title: 'smb.meetingExperience.meetingManager.microPhone.title',
 			path: 'microphone',
-			metricsItem: 'PowerSmartSettings',
+			metricsItem: 'MicroPhone',
 			order: 2,
 		},
 		{
 			title: 'smb.meetingExperience.meetingManager.smartAppearance.title',
 			path: 'smartAppearance',
-			metricsItem: 'PowerSmartSettings',
+			metricsItem: 'SmartAppearance',
 			order: 3,
 		},
 	];

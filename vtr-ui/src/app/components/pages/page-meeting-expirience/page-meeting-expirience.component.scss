@@ -1,17 +1,8 @@
 @import '../../../app.theme';
 
 :host ::ng-deep {
-	.vtr-page-creator-centre {
-		.vtr-page-columns {
-			.vtr-page-column {
-				padding: 0 $padding_side 4rem !important;
-				@media #{$breakpoint_xl} {
-					padding: 0 $padding_side_sm 4rem !important;
-				}
-				&.vtr-page-left-column {
-					flex: 0 0 100%;
-                    max-width: 100%;
-                    &.vtr-subpage-left-column {
+	.vtr-subpage-left-column {
+				padding-left: $padding_side;;
 				padding-right: 2.4rem;
 				background-color: $shade_extralight;
 				@media #{$breakpoint_xl} {
@@ -40,8 +31,8 @@
 						border-right: 0.1rem solid $dark;
 					}
 				}
-			}
-			&.vtr-subpage-right-column {
+            }
+    .vtr-subpage-right-column {
 				padding-right: $padding_side;
 				padding-left: 2.4rem;
 				background-color: $light;
@@ -90,14 +81,4 @@
 					}
 				}
 			}
-				}
-				&.vtr-page-right-column {
-					display: none;
-				}
-			}
-		}
-	}
-}
-.vtr-page-creator-centre{
-
 }
