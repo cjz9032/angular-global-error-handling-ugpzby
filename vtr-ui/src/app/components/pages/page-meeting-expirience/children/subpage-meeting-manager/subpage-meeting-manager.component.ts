@@ -568,28 +568,4 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 			);
 		}
 	}
-
-	// private defaultAudioCaptureDeviceChanged(args: any) {
-	// 	this.getMicrophoneSettingsAsync();
-	// }
-
-	initVisibility() {
-		try {
-			if (!this.dolbyModeResponse.available) {
-				this.headerMenuItems = this.commonService.removeObjFrom(
-					this.headerMenuItems,
-					'audio'
-				);
-				this.checkMenuItemsLength();
-			}
-		} catch (error) {
-			this.logger.exception('initVisibility', error.message);
-		}
-	}
-
-	checkMenuItemsLength() {
-		if (this.headerMenuItems.length === 1) {
-			this.headerMenuItems = [];
-		}
-	}
 }
