@@ -13,8 +13,8 @@ export class IdleService {
   }
 
   public start() {
-	this.ngZone.onMicrotaskEmpty.subscribe(() => {
-		this.trigger();
+	this.ngZone.onStable.subscribe(() => {
+		this.execute();
 	});
   }
 
