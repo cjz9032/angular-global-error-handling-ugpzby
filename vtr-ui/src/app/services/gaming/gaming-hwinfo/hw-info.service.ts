@@ -37,10 +37,10 @@ export class HwInfoService {
 		}
 	}
 
-	getHwOverClockState(): Promise<any> {
+	getHardwareInformation(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.gamingHwInfo.getHwOverClockState();
+				return this.gamingHwInfo.getHardwareInformation();
 			}
 			return undefined;
 		} catch (error) {
@@ -48,21 +48,10 @@ export class HwInfoService {
 		}
 	}
 
-	getMachineInfomationForGpuVram(): Promise<any> {
+	getDynamicHardwareUsageInfo(): Promise<any> {
 		try {
 			if (this.isShellAvailable) {
-				return this.gamingHwInfo.getMachineInfomationForGpuVram();
-			}
-			return undefined;
-		} catch (error) {
-			throw new Error(error.message);
-		}
-	}
-
-	getDynamicInformationForGpuVram(): Promise<any> {
-		try {
-			if (this.isShellAvailable) {
-				return this.gamingHwInfo.getDynamicInformationForGpuVram();
+				return this.gamingHwInfo.getDynamicHardwareUsageInfo();
 			}
 			return undefined;
 		} catch (error) {

@@ -78,4 +78,16 @@ export class GamingOCService {
 			throw new Error(error.message);
 		}
 	}
+
+	// Version 3.6
+	getHwOverClockState(): Promise<any> {
+		try {
+			if (this.isShellAvailable) {
+				return this.gamingOverClock.getHwOverClockState();
+			}
+			return undefined;
+		} catch (error) {
+			throw new Error(error.message);
+		}
+	}
 }

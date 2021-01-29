@@ -148,6 +148,14 @@ export class GamingAllCapabilitiesService {
 			LocalStorageKey.diskInfoVersion,
 			capabilities.diskInfoVersion
 		);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.gpuCoreOCFeature,
+			capabilities.gpuCoreOCFeature
+		);
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.gpuVramOCFeature,
+			capabilities.gpuVramOCFeature
+		);
 
 		this.commonService.sendGamingCapabilitiesNotification(
 			Gaming.GamingCapabilities,
