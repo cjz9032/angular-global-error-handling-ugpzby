@@ -219,6 +219,17 @@
 				"popup": {
 					"closeBtn": "close"
 				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "型号 :",
+					"frequency": "频率 :",
+					"usage": "当前使用率 :",
+					"overclock": {
+						"on": "已超频",
+						"off": "未超频"
+					}
+				}
 			}
 		},
 		"common": {

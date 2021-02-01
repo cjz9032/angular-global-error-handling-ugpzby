@@ -228,9 +228,9 @@
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "Model",
-					"frequency": "Frequency",
-					"usage": "Used",
+					"modal": "Model :",
+					"frequency": "Frequency :",
+					"usage": "Used :",
 					"overclock": {
 						"on": "Overclocked",
 						"off": "Unoverclocked"
