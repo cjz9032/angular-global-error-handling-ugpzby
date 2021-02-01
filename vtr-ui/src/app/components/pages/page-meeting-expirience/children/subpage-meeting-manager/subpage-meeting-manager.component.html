@@ -236,7 +236,7 @@
 					(click)="smartAppearanceBannerButtonClick()"
 					[matTooltip]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate"
 					matTooltipClass="vtr-system-tooltip">
-					<span class="text-ellipsis d-block">{{(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate | uppercase}}</span>
+					{{(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate | uppercase}}
 				</button>
 			</div>
 		</div>

@@ -85,7 +85,9 @@
 			<div class="vtr-row-switch"
 				[ngClass]="{'flex-grow-0 d-flex justify-content-end': (isSwitchVisible && !resetTextAsButton),
 				'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible && !showCustomButton),
-				'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}">
+				'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible),
+				'mw-50': showCustomButton}"
+				>
 				<div class="p-0"
 					[ngClass]="{'ml-auto': type!=='Camera'}"
 					*ngIf="resetText.length > 0">
@@ -105,10 +107,11 @@
 					</button>
 
 				</div>
-				<div *ngIf="showCustomButton">
+				<div *ngIf="showCustomButton" class="mw-100">
 					<button id="{{switchId+ '-custom-btn'}}"
 						mat-customize-button
 						color="primary"
+						class="w-100"
 						tabindex="0"
 						type="button"
 						[disabled]="disabledAll"
@@ -117,7 +120,7 @@
 						[attr.aria-disabled]="disabledAll"
 						[matTooltip]="customButtonText"
 						matTooltipClass="vtr-system-tooltip">
-						<span class="text-ellipsis d-block">{{ customButtonText | uppercase }}</span>
+						{{ customButtonText | uppercase }}
 					</button>
 				</div>
 
