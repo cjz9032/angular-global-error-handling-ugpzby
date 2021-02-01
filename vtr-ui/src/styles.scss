@@ -2076,7 +2076,7 @@ vtr-ui-smart-performance-scanning {
 }
 
 a,
-input,
+input:not(.mat-input-element),
 label {
 	&:focus {
 		@include outline-blue;

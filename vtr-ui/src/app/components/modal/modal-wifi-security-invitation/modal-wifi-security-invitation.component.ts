@@ -27,19 +27,12 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	startJoin = false;
 	joinSuccess = false;
 	joinFailed = false;
-	isFocusIn = false;
 
 	constructor(
 		private vantageShellService: VantageShellService,
 		public metrics: MetricService,
-		public dialogRef: MatDialogRef<ModalWifiSecurityInvitationComponent>,
-	) { }
-
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal = document.querySelector('.wifi-security-location-modal') as HTMLElement;
-		modal.focus();
-	}
+		public dialogRef: MatDialogRef<ModalWifiSecurityInvitationComponent>
+	) {}
 
 	ngOnInit() {
 		this.chs = this.vantageShellService.getConnectedHomeSecurity();
@@ -102,20 +95,5 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 				this.domInput.nativeElement.focus();
 			}, 0);
 		}
-	}
-
-	show() {
-		const show: HTMLElement = document.querySelector('.activation');
-		show.style.visibility = 'visible';
-	}
-
-	focusIn() {
-		if (!this.joinFailed) {
-			this.isFocusIn = true;
-		}
-	}
-
-	focusOut() {
-		this.isFocusIn = false;
 	}
 }

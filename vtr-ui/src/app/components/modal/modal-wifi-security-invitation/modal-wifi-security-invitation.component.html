@@ -7,17 +7,16 @@
 		<p *ngIf="!joinSuccess" class="description mt-5 mb-3"
 			[innerHTML]="description | translate" role="text">
 		</p>
-		<div class="form-group code-input-group p-3" [ngClass]="{'d-none': joinSuccess, 'joinfailed': joinFailed, 'input-focus': isFocusIn}">
-			<input type="text" id="chs-btn-inviatation-input" class="form-control pl-0"
-				placeholder="{{'security.homeprotection.invitationcode.invitationCode' | translate}}" #code
+		<mat-form-field class="w-100" appearance="fill-customize" floatLabel="always">
+			<input matInput #code #domInput
+				class="invitation-input-box uppercase font-weight-bold"
+				maxLength="6"
 				(keyup)="KeyPress($event)"
 				(keyup.enter)="joinGroupBy(code.value)"
-				(focusin)="focusIn()"
-				(focusout)="focusOut()" maxlength="6"
 				aria-label="Input box, enter a maximum of six letters"
 				aria-labelledby="ws-invitation-modal-errorMsg"
-				#domInput>
-		</div>
+				placeholder="{{'security.homeprotection.invitationcode.invitationCode' | translate}}">
+		</mat-form-field>
 		<div class="join-info">
 			<div class="d-flex flex-column" [ngClass]="{'joinGroupSuccess':joinSuccess}">
 				<div *ngIf="joinSuccess" class="successIcon pb-5">
