@@ -228,12 +228,12 @@
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "Modal",
-					"frequency": "Frequency",
-					"usage": "Usage",
+					"modal": "Model :",
+					"frequency": "Frequency :",
+					"usage": "Used :",
 					"overclock": {
-						"on": "Overclocking",
-						"off": "NonOverclock"
+						"on": "Overclocked",
+						"off": "Unoverclocked"
 					}
 				}
 			}

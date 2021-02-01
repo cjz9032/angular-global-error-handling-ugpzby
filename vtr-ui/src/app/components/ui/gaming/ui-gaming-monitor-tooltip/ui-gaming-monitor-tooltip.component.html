@@ -11,15 +11,15 @@
 			</button>
 		</div>
 		<div class="detail-content">
-			<div class="content-left">{{'gaming.dashboard.monitor.tooltip.modal' | translate}} :</div>
+			<div class="content-left">{{'gaming.dashboard.monitor.tooltip.modal' | translate}}</div>
 			<div class="content-right">{{info.modal}}</div>
 		</div>
 		<div class="detail-content frequency" *ngIf="info.frequency !== ''">
-			<div class="content-left">{{'gaming.dashboard.monitor.tooltip.frequency' | translate}} :</div>
+			<div class="content-left">{{'gaming.dashboard.monitor.tooltip.frequency' | translate}}</div>
 			<div class="content-right" [ngClass]="{'overclock': info.isOverClocking === true}">{{info.frequency}}</div>
 		</div>
 		<div class="detail-content" *ngIf="info.usage !== ''">
-			<div class="content-left">{{'gaming.dashboard.monitor.tooltip.usage' | translate}} :</div>
+			<div class="content-left">{{'gaming.dashboard.monitor.tooltip.usage' | translate}}</div>
 			<div class="content-right">{{info.usage}}</div>
 		</div>
 	</div>
