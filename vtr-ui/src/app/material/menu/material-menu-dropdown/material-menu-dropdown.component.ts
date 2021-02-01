@@ -37,33 +37,27 @@ export class MaterialMenuDropdownComponent implements OnInit {
 			});
 		}
 		
-		if(this.hasSecondaryMenu)
-		{
+		if (this.hasSecondaryMenu) {
 			let visibleColumnCount = 0;
 			let items;
 			let parentPath;
 			this.dropdownMenu.subitems.forEach((element) => {
-				if (
-					Array.isArray(element?.subitems) &&
-					!element.hide				
-				) {
-					let item = element.subitems.find((item) => !item.hide)
-					if(item)
-					{
-						visibleColumnCount ++;
+				if (Array.isArray(element?.subitems) && !element.hide) {
+					let item = element.subitems.find((item) => !item.hide);
+					if (item) {
+						visibleColumnCount++;
 						items = element.subitems;
 						parentPath = element.path;
-					}else{
+					} else {
 						element.hide = true;
 					}
 				}
 			});
 
-			if(visibleColumnCount === 1)
-			{
+			if (visibleColumnCount === 1) {
 				this.singleColumnSecondaryMenu = true;
 				this.singleColumnSecondaryMenuItems = items;
-				this.siggleColumnSecondaryMenuItemCategoryPath = parentPath;	
+				this.siggleColumnSecondaryMenuItemCategoryPath = parentPath;
 			}
 		}
 	}
