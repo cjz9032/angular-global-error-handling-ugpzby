@@ -18,6 +18,7 @@ export class UiGamingMonitorTooltipComponent implements OnInit {
 		// modal: 'Genuine Intel(R) CPU 0000 @ 2.40Ghz',
 		// frequency: '2.4/4.3Ghz',
 		// usage: '63%',
+		// isSupportOCFeature: true
 	};
 
 	ngOnInit() {}
