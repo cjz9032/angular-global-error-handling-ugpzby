@@ -7,22 +7,55 @@
 	padding: 2.4rem;
 	@include high-contrast-border;
 
-	.information {
-		display: inline-block;
+	.title-box {
+		display: flex;
+		flex-wrap: nowrap;
 
 		.title {
 			color: $light;
 			font-size: $fontsize_xl;
 			font-weight: $weight_light;
+			padding-right: 2.4rem;
+			margin-bottom: 0.4rem;
+			width: 100%; // Width and word-wrap to break long words on some languages as German
 			word-wrap: break-word;
 			text-transform: capitalize;
 		}
+
+		.title-question-mark {
+			padding: 0.2rem;
+		}
+	}
+
+
+	.information {
+		display: inline-block;
 
 		.description {
 			color: $light;
 			font-size: $fontsize_xs;
 			font-weight: $weight_light;
 			word-wrap: break-word;
+		}
+	}
+}
+
+::ng-deep ngb-tooltip-window.vtr-tooltip.tooltip {
+	&.bs-tooltip-auto[x-placement^='left-top'],
+	&.tooltip.bs-tooltip-left-top {
+		margin-top: -6rem;
+		.arrow {
+			&::before {
+				top: calc(5.5rem + 50%);
+			}
+
+			// Used to fix arrow top when is in high contrast
+			@media #{$white-on-black} {
+				top: calc(0% + 7rem);
+			}
+			@media #{$black-on-white} {
+				top: calc(0% + 7rem);
+			}
 		}
 	}
 }

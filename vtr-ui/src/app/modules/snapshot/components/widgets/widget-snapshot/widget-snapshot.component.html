@@ -2,8 +2,26 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<div class="row information">
-					<h2 id="snapshot-widget-title" role="heading" class="title">{{'snapshot.title' | translate}}</h2>
+				<div class="information">
+					<div class="row title-box">
+						<h2 id="snapshot-widget-title" role="heading" class="title">{{'snapshot.title' | translate}}</h2>
+						<vtr-ui-question-mark-button
+							[componentId]="'snapshot-header-tooltip-information'"
+							[componentRole]="'link'"
+							[ariaLabel]="'snapshot-header-information tooltip, which reads: ' + ('snapshot.informationTooltipDescription' | translate)"
+							triggers="manual"
+							#tooltip="ngbTooltip"
+							(blurEvent)="tooltip.close()"
+							(clickEvent)="tooltip.toggle()"
+							[placement]="['left-top', 'right-top']"
+							[ngbTooltip]="tooltipSnapshotInformation"
+							container="vtr-root"
+							tooltipClass="vtr-tooltip"
+							[tabIndex]="1"
+							class="question-mark-container"
+						></vtr-ui-question-mark-button>
+					</div>
+
 					<p id="snapshot-widget-description" role="text" class="description">{{'snapshot.snapshotInformation' | translate}}</p>
 				</div>
 			</div>
@@ -23,4 +41,11 @@
 			</div>
 		</div>
 	</div>
+
+	<ng-template #tooltipSnapshotInformation>
+		<div
+			id="snapshot-header-information-tooltip" role="text"
+			[innerHTML]="'snapshot.informationTooltipDescription' | translate">
+		</div>
+	</ng-template>
 </div>
