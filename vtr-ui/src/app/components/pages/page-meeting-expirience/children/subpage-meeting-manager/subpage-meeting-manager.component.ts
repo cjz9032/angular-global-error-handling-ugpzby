@@ -20,11 +20,12 @@ import { UiCircleRadioWithCheckBoxListModel } from '../../../../ui/ui-circle-rad
 import { DolbyAudioToggleCapability } from '../../../../../data-models/device/dolby-audio-toggle-capability';
 import CommonMetricsModel from '../../../../../data-models/common/common-metrics.model';
 import { AudioVendorService } from '../../../page-device-settings/children/subpage-device-settings-audio/audio-vendor.service';
+import { WinRT } from '@lenovo/tan-client-bridge';
 
 @Component({
 	selector: 'vtr-subpage-meeting-manager',
 	templateUrl: './subpage-meeting-manager.component.html',
-	styleUrls: ['./subpage-meeting-manager.component.scss']
+	styleUrls: ['./subpage-meeting-manager.component.scss'],
 })
 export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	@Output() tooltipClick = new EventEmitter<boolean>();
@@ -49,6 +50,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	eCourseLoader = true;
 	isNewplugin = true;
 	microphoneModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	isLSAInstalled = false; // Smart appearance
 
 	headerMenuItems = [
 		{
@@ -175,7 +177,6 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		// this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 	}
 
-
 	launchPanel() {
 		this.audioVendorService.launchPanel();
 	}
@@ -189,6 +190,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		this.initMicrophoneFromCache();
 		this.getMicrophoneSettingsAsync();
 		this.startMicrophoneMonitor();
+		this.initLSA();
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -593,5 +595,32 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	smartAppearanceButtonClick() {}
+	initLSA() {
+		this.isLSAInstalled = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SmartAppearanceInstalled,
+			false
+		);
+		WinRT.queryUriSupport(
+			'lenovo-smartappearance:',
+			'E0469640.SmartAppearance_5grkq8ppsgwt4'
+		).then((result) => {
+			switch (result) {
+				case 0:
+				case 3:
+					this.isLSAInstalled = true;
+					break;
+				default:
+					this.isLSAInstalled = false;
+					break;
+			}
+		});
+	}
+
+	smartAppearanceButtonClick() {
+		if(this.isLSAInstalled){
+			WinRT.launchUri('lenovo-smartappearance:');
+		}else{
+			WinRT.launchUri('ms-windows-store://pdp/?productid=9NRLFDZ54PZB');
+		}
+	}
 }

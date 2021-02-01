@@ -20,7 +20,8 @@ import { FORTE_CLIENT } from '../../components/pages/page-device-settings/childr
 import { DOLBY_FUSION_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/dolby-fusion-client';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { DeviceService } from '../../services/device/device.service';
-
+import { MatButtonModule } from '@lenovo/material/button';
+import { MatTooltipModule } from '@lenovo/material/tooltip';
 
 @NgModule({
 	declarations: [
@@ -40,7 +41,9 @@ import { DeviceService } from '../../services/device/device.service';
 		PageLayoutModule,
 		TranslationModule.forChild(),
 		CommonWidgetModule,
-		UiCustomSliderModule
+		UiCustomSliderModule,
+		MatButtonModule,
+		MatTooltipModule,
 	],
 	exports: [
 		PageLayoutModule

@@ -53,6 +53,7 @@ import { faRedo } from '@fortawesome/free-solid-svg-icons/faRedo';
 import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-point/ui-exclamation-point.component';
 import { MaterialModule } from './material.module';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatButtonModule } from '@lenovo/material/button';
 
 
 @NgModule({
@@ -137,6 +138,7 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 		SafePipeModule,
 		MatTooltipModule,
 		MaterialModule,
+		MatButtonModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

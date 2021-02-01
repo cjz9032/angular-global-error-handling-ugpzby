@@ -32,4 +32,28 @@
 			outline-offset: 0;
 		}
 	}
+
+	.right-banner {
+		padding: 24px;
+		border-radius: 10px;
+		background: no-repeat 0 0 url(^assets/images/smb/meeting-manager-banner-bg.png);
+		background-size: 100%;
+		box-shadow: 0 0 15px $smb_banner_shadow;
+		&.banner-smart-appearance {
+			background-color: $smb_second_banner;
+		}
+		.title {
+			font-size: 2.4rem;
+			line-height: 2.8rem;
+			font-weight: $weight_600;
+			color: $light;
+		}
+		.description {
+			font-size: 1.4rem;
+			line-height: 2rem;
+			font-weight: $weight_bold;
+			color: $light;
+			margin: 12px 0;
+		}
+	}
 }
