@@ -230,10 +230,10 @@
 			<div class="right-banner banner-smart-appearance">
 				<h3 class="title">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.title' | translate}}</h3>
 				<p class="description">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.description' | translate}}</p>
-				<button mat-customize-button color="accent"
+				<button id="productivity-meeting-appearance-banner-button"
+					mat-customize-button color="accent"
 					class="m-0 w-100"
-					id="productivity-meeting-appearance-banner-button"
-					(click)="smartAppearanceButtonClick()"
+					(click)="smartAppearanceBannerButtonClick()"
 					[matTooltip]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate"
 					matTooltipClass="vtr-system-tooltip">
 					<span class="text-ellipsis d-block">{{(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate | uppercase}}</span>

@@ -21,6 +21,7 @@ import { DolbyAudioToggleCapability } from '../../../../../data-models/device/do
 import CommonMetricsModel from '../../../../../data-models/common/common-metrics.model';
 import { AudioVendorService } from '../../../page-device-settings/children/subpage-device-settings-audio/audio-vendor.service';
 import { WinRT } from '@lenovo/tan-client-bridge';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 
 @Component({
 	selector: 'vtr-subpage-meeting-manager',
@@ -104,7 +105,8 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		private batteryService: BatteryDetailService,
 		private localCacheService: LocalCacheService,
 		private deviceService: DeviceService,
-		private audioVendorService: AudioVendorService
+		private audioVendorService: AudioVendorService,
+		private metricsService: MetricService,
 	) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
@@ -617,6 +619,26 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	}
 
 	smartAppearanceButtonClick() {
+		this.launchOrDownloadSmartAppearance();
+		const metricsData = {
+			ItemParent: 'Page.MeetingManager',
+			metricsEvent: 'FeatureClick',
+			ItemName: this.isLSAInstalled ? 'SmartAppearanceLaunchClick' : 'SmartAppearanceDownloadClick',
+		};
+		this.metricsService.sendMetrics(metricsData);
+	}
+
+	smartAppearanceBannerButtonClick() {
+		this.launchOrDownloadSmartAppearance();
+		const metricsData = {
+			ItemParent: 'Page.MeetingManager',
+			metricsEvent: 'FeatureClick',
+			ItemName: this.isLSAInstalled ? 'SmartAppearanceBannerLaunchClick' : 'SmartAppearanceBannerDownloadClick',
+		};
+		this.metricsService.sendMetrics(metricsData);
+	}
+
+	launchOrDownloadSmartAppearance() {
 		if(this.isLSAInstalled){
 			WinRT.launchUri('lenovo-smartappearance:');
 		}else{
