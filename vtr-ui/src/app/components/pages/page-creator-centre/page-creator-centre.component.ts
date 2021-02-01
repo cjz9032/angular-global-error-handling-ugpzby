@@ -20,10 +20,7 @@ export class PageCreatorCentreComponent implements OnInit {
 	  private translate: TranslateService,
 	  private commonService: CommonService,
 	  private deviceService: DeviceService
-  ) {this.menuItems.forEach((m) => {
-			m.label = this.translate.instant(m.label);
-		});
-  }
+  ) {}
 
   routerSubscription: Subscription;
   activeElement: HTMLElement;
@@ -32,29 +29,7 @@ export class PageCreatorCentreComponent implements OnInit {
   backarrow = '< ';
   parentPath = 'smb/creator-centre';
   private router: Router;
-  menuItems = [
-		{
-			id: 'creator-settings',
-			label: 'smb.creatorCentre.creatorSettings.title',
-			path: 'creator-settings',
-			subitems: [],
-			active: true,
-		},
-		{
-			id: 'easy-rendering',
-			label: 'smb.creatorCentre.easyRendering.title',
-			path: 'easy-rendering',
-			subitems: [],
-			active: false,
-		},
-		{
-			id: 'color-calibration',
-			label: 'smb.creatorCentre.colorCalibration.title',
-			path: 'color-calibration',
-			subitems: [],
-			active: false,
-		},
-	];
+  menuItems = [];
 
   ngOnInit(): void {
 	this.getMachineInfo();
@@ -62,30 +37,48 @@ export class PageCreatorCentreComponent implements OnInit {
 			if (!(evt instanceof NavigationEnd)) {
 				return;
 			}
-			// focus same active link element after route change , content loaded.
-			/* if ((evt instanceof NavigationEnd)) {
-				if (this.activeElement) {
-					this.activeElement.focus();
-				}
-			} */
 		});
   }
 
-  async getMachineInfo(){
-	  await this.deviceService.getMachineInfo().then(()=>{
-		  	if(!this.deviceService.supportCreatorSettings){
-				this.menuItems = this.commonService.removeObjFrom(this.menuItems,'creator-settings');
-			}
-			if(!this.deviceService.supportEasyRendering){
-			  this.menuItems = this.commonService.removeObjFrom(this.menuItems,'easy-rendering');
-			}
-			if(!this.deviceService.supportColorCalibration){
-				this.menuItems = this.commonService.removeObjFrom(this.menuItems,'color-calibration');
-			}
-			if(this.menuItems){
-				this.menuItems[0].active=true;
-			}
-	  });
+  getMachineInfo(){
+	  this.deviceService.getMachineInfo().then(()=>{
+		if(this.deviceService.supportCreatorSettings){
+			this.menuItems = this.commonService.addToObjectsList(this.menuItems,
+				{
+					id: 'creator-settings',
+					label: 'smb.creatorCentre.creatorSettings.title',
+					path: 'creator-settings',
+					subitems: [],
+					active: false,
+					}
+				);
+		}
+		if(this.deviceService.supportEasyRendering){
+			this.menuItems = this.commonService.addToObjectsList(this.menuItems,
+				{
+					id: 'easy-rendering',
+					label: 'smb.creatorCentre.easyRendering.title',
+					path: 'easy-rendering',
+					subitems: [],
+					active: false,
+				}
+			);
+		}
+		if(this.deviceService.supportColorCalibration){
+			this.menuItems = this.commonService.addToObjectsList(this.menuItems,
+				{
+					id: 'color-calibration',
+					label: 'smb.creatorCentre.colorCalibration.title',
+					path: 'color-calibration',
+					subitems: [],
+					active: false,
+				}
+			);
+		}
+		this.menuItems.forEach((m) => {
+			m.label = this.translate.instant(m.label);
+		});
+	});
   }
 
   onRouteActivate($event, hsRouterOutlet: HTMLElement) {
