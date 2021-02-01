@@ -155,11 +155,16 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			) {
 				// Validate loading module
 				if (!this.hardwareScanService.isLoadingDone()) {
-					this.openWaitHardwareComponentsModal().afterClosed().subscribe(() => {
-						// Close all modals to avoid a scan to be started from HardwareScanPage
-						this.dialog.closeAll();
-						this.protocolExecutionService.protocolExecution(params.scan, params.module);
-					});
+					this.openWaitHardwareComponentsModal()
+						.afterClosed()
+						.subscribe(() => {
+							// Close all modals to avoid a scan to be started from HardwareScanPage
+							this.dialog.closeAll();
+							this.protocolExecutionService.protocolExecution(
+								params.scan,
+								params.module
+							);
+						});
 				} else {
 					// Close all modals to avoid a scan to be started from HardwareScanPage
 					this.dialog.closeAll();
@@ -380,20 +385,21 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 
 		if (!this.hardwareScanService.isLoadingDone()) {
 			const modalWait = this.openWaitHardwareComponentsModal();
-			modalWait.afterClosed().subscribe(
-				() => {
+			modalWait.afterClosed().subscribe((info: string) => {
+				if (info === 'done') {
 					// Hardware modules have been retrieved, so let's continue with the Scan process
 					if (taskType === TaskType.QuickScan) {
 						this.scanExecutionService.checkPreScanInfo(taskType);
 					} else if (taskType === TaskType.CustomScan) {
 						this.onCustomizeScan();
 					}
-				},
-				(error) => {
+				}
+
+				if (info === 'cancel') {
 					// User has clicked in the 'X' button, so we need to re-enable the Quick/Custom scan button here.
 					this.scanExecutionService.scanClicked = false;
 				}
-			);
+			});
 		} else {
 			// Hardware modules is already retrieved, so let's continue with the Scan process
 			if (taskType === TaskType.QuickScan) {

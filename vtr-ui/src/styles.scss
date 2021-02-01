@@ -859,6 +859,9 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	@media #{$breakpoint_sm} {
 		max-width: 90% !important;
 	}
+	&.is-gaming .mat-dialog-container {
+		padding: 1rem;
+	}
 }
 
 .trial-container-Modal {
