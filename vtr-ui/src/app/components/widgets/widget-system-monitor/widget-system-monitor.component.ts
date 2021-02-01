@@ -17,7 +17,6 @@ import { GamingOCService } from 'src/app/services/gaming/gaming-OC/gaming-oc.ser
 	styleUrls: ['./widget-system-monitor.component.scss'],
 })
 export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
-	public ver = 0;
 	public cpuModuleName = 'N/A';
 	public cpuBaseFrequency = '2.0GHz';
 	public cpuCurrentFrequency = '2';
@@ -49,19 +48,23 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		modal: 'cpuModuleName',
 		frequency: '1/1Ghz',
 		usage: '0%',
+		isSupportOCFeature: true,
 	};
 	public gpuInfo = {
 		isOverClocking: false,
 		modal: 'gpuModuleName',
 		frequency: '1/1Ghz',
 		usage: '',
+		isSupportOCFeature: true
 	};
 	public vramInfo = {
 		isOverClocking: false,
 		modal: 'memoryModuleName',
 		frequency: '1/1Ghz',
 		usage: '',
+		isSupportOCFeature: true,
 	};
+
 	// TODO version 3.6 new design for cpu/gpu/vram
 	public hwVersionInfo = 0; // (cpuInfoVersion === 1 && gpuInfoVersion === 1) ===> 1
 	public hwOCInfo = JSON.parse(JSON.stringify(SystemStatus.hwOverClockInfo));
@@ -130,6 +133,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 						|| this.hwOCInfo.gpuOverClockInfo.isSupportOCFeature || this.hwOCInfo.vramOverClockInfo.isSupportOCFeature)) {
 						this.gamingOCService.regOCRealStatusChangeEvent();
 					} // ensure event registration
+					if (this.hwVersionInfo === 1) {
+						this.cpuInfo.isSupportOCFeature = this.hwOCInfo.cpuOverClockInfo.isSupportOCFeature;
+						this.gpuInfo.isSupportOCFeature = this.hwOCInfo.gpuOverClockInfo.isSupportOCFeature;
+						this.vramInfo.isSupportOCFeature = this.hwOCInfo.vramOverClockInfo.isSupportOCFeature;
+					}
 				}
 			});
 		this.initHWOverClockInfo();

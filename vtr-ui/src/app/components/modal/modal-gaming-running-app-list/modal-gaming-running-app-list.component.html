@@ -9,8 +9,8 @@
                 {{info.description | translate}}<span *ngIf="isNetworkBoost"> ({{addedApps}} {{info.description2 | translate}} {{maxAppsCount}} {{info.description3 | translate}} )</span>
             </p>
             <button type="button" role="button" class="close modal-gaming-running-app-list-close" aria-label="close"
-            [id]="info.id.closeButton" (click)="closeModal()">
-            <fa-icon [icon]="['fal', 'times']"></fa-icon>
+                [id]="info.id.closeButton" (click)="closeModal()">
+                <fa-icon [icon]="['fal', 'times']"></fa-icon>
             </button>
         </div>
         <div class="modal-body" tabindex="-1">
