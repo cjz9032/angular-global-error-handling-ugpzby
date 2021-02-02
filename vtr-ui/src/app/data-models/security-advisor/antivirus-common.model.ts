@@ -50,6 +50,7 @@ export class AntivirusCommon {
 	urlGetMcAfee: string;
 	country: string;
 	pluginSupport: boolean;
+	japanUrlGetMcAfee = 'https://home.mcafee.com/root/campaign.aspx?cid=246096';
 	constructor(
 		antivirus: Antivirus,
 		isOnline: boolean,
@@ -93,12 +94,12 @@ export class AntivirusCommon {
 			.getLocalInfo()
 			.then((result) => {
 				this.country = result.GEO;
-				this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
+				this.getMcafeeUrl();
 			})
 			.catch((e) => {
 				this.country = 'us';
 			});
-		this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
+		this.getMcafeeUrl();
 	}
 
 	openMcAfeePurchase(type?: string) {
@@ -197,7 +198,7 @@ export class AntivirusCommon {
 		}
 	}
 
-	getLanguageIdentifier() {
+	getLanguageIdentifier(): string | boolean {
 		const language =
 			typeof this.translate.currentLang === 'string'
 				? this.translate.currentLang.substring(0, 2)
@@ -207,6 +208,9 @@ export class AntivirusCommon {
 		}
 		if (language === 'pt' && this.country === 'br') {
 			return this.nls.get('br');
+		}
+		if (language === 'ja') {
+			return false;
 		}
 		if (this.nls.has(language)) {
 			return this.nls.get(language);
@@ -228,6 +232,14 @@ export class AntivirusCommon {
 				LocalStorageKey.SecurityMcAfeeStatisticDownload,
 				currentDate
 			);
+		}
+	}
+
+	getMcafeeUrl() {
+		if (this.getLanguageIdentifier()) {
+			this.urlGetMcAfee = `https://home.mcafee.com/root/campaign.aspx?cid=233426&affid=714&culture=${this.getLanguageIdentifier()}`;
+		} else {
+			this.urlGetMcAfee = this.japanUrlGetMcAfee;
 		}
 	}
 }
