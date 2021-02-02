@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.21](https://bitbucket.tc.lenovo.com///compare/v1.10.20...v1.10.21) (2021-02-02)
+
+
+### Bug Fixes
+
+* fix afterclosed function and justify modal size ([212be6a](https://bitbucket.tc.lenovo.com///commit/212be6a78972f62d191a6a35ca98b2ef7f03d1e0))
+* wifi history border bottom color error ([1e0f43b](https://bitbucket.tc.lenovo.com///commit/1e0f43bab1a60f3864aaa3e7543b09c9e6f6fc7b))
+
 ### [1.10.20](https://bitbucket.tc.lenovo.com///compare/v1.10.19...v1.10.20) (2021-02-01)
 
 ### [1.10.19](https://bitbucket.tc.lenovo.com///compare/v1.10.18...v1.10.19) (2021-01-29)
