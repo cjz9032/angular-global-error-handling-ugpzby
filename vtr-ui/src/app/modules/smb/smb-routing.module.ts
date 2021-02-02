@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageMeetingExpirienceComponent } from "src/app/components/pages/page-meeting-expirience/page-meeting-expirience.component";
-import { SubpageMeetingManagerComponent } from "src/app/components/pages/page-meeting-expirience/children/subpage-meeting-manager/subpage-meeting-manager.component";
-import { PageCreatorCentreComponent } from "src/app/components/pages/page-creator-centre/page-creator-centre.component";
-import { SubpageCreatorSettingsComponent } from "src/app/components/pages/page-creator-centre/children/subpage-creator-settings/subpage-creator-settings.component";
-import { SubpageEasyRenderingComponent } from "src/app/components/pages/page-creator-centre/children/subpage-easy-rendering/subpage-easy-rendering.component";
-import { SubpageColorCalibrationComponent } from "src/app/components/pages/page-creator-centre/children/subpage-color-calibration/subpage-color-calibration.component";
+import { PageMeetingExpirienceComponent } from 'src/app/components/pages/page-meeting-expirience/page-meeting-expirience.component';
+import { SubpageMeetingManagerComponent } from 'src/app/components/pages/page-meeting-expirience/children/subpage-meeting-manager/subpage-meeting-manager.component';
+import { PageCreatorCentreComponent } from 'src/app/components/pages/page-creator-centre/page-creator-centre.component';
+import { SubpageCreatorSettingsComponent } from 'src/app/components/pages/page-creator-centre/children/subpage-creator-settings/subpage-creator-settings.component';
+import { SubpageEasyRenderingComponent } from 'src/app/components/pages/page-creator-centre/children/subpage-easy-rendering/subpage-easy-rendering.component';
+import { SubpageColorCalibrationComponent } from 'src/app/components/pages/page-creator-centre/children/subpage-color-calibration/subpage-color-calibration.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 
@@ -15,20 +15,12 @@ const routes: Routes = [
 		component: PageMeetingExpirienceComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, NonArmGuard],
-		data: {
-			pageName: 'smb.meeting-experience',
-			pageContent: 'meeting-experience Status',
-		},
 	},
-  	{
+	{
 		path: 'meeting-experience',
 		component: PageMeetingExpirienceComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, NonArmGuard],
-		data: {
-			pageName: 'smb.meeting-experience',
-			pageContent: 'meeting-experience Status',
-		},
 		children: [
 			{
 				path: '',
@@ -41,20 +33,16 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService, NonArmGuard],
 				data: {
-					pageName: 'smb.meeting-experience',
-					pageContent: 'meeting-experience Status',
+					pageName: 'smb.meeting-manager',
 				},
-			}			
+			},
 		],
-  	},
-  	{
+	},
+	{
 		path: 'creator-centre',
 		component: PageCreatorCentreComponent,
 		canDeactivate: [GuardService],
 		canActivate: [GuardService, NonArmGuard],
-		data: {
-			pageName: 'smb.creator-centre',					
-		},
 		children: [
 			{
 				path: '',
@@ -67,7 +55,7 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService, NonArmGuard],
 				data: {
-					pageName: 'smb.creator-centre',					
+					pageName: 'smb.creator-settings',
 				},
 			},
 			{
@@ -76,7 +64,7 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService, NonArmGuard],
 				data: {
-					pageName: 'smb.creator-centre',					
+					pageName: 'smb.easy-rendering',
 				},
 			},
 			{
@@ -85,17 +73,15 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService, NonArmGuard],
 				data: {
-					pageName: 'smb.creator-centre',					
+					pageName: 'smb.color-calibration',
 				},
-			
-			}				
+			},
 		],
-	}
-  
+	},
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
-export class SmbRoutingModule { }
+export class SmbRoutingModule {}
