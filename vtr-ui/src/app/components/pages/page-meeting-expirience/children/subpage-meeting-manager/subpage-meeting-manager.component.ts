@@ -106,7 +106,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		private localCacheService: LocalCacheService,
 		public deviceService: DeviceService,
 		private audioVendorService: AudioVendorService,
-		private metricsService: MetricService,
+		private metricsService: MetricService
 	) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
@@ -623,7 +623,9 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		const metricsData = {
 			ItemParent: 'Page.MeetingManager',
 			metricsEvent: 'FeatureClick',
-			ItemName: this.isLSAInstalled ? 'SmartAppearanceLaunchClick' : 'SmartAppearanceDownloadClick',
+			ItemName: this.isLSAInstalled
+				? 'SmartAppearanceLaunchClick'
+				: 'SmartAppearanceDownloadClick',
 		};
 		this.metricsService.sendMetrics(metricsData);
 	}
@@ -633,15 +635,17 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		const metricsData = {
 			ItemParent: 'Page.MeetingManager',
 			metricsEvent: 'FeatureClick',
-			ItemName: this.isLSAInstalled ? 'SmartAppearanceBannerLaunchClick' : 'SmartAppearanceBannerDownloadClick',
+			ItemName: this.isLSAInstalled
+				? 'SmartAppearanceBannerLaunchClick'
+				: 'SmartAppearanceBannerDownloadClick',
 		};
 		this.metricsService.sendMetrics(metricsData);
 	}
 
 	launchOrDownloadSmartAppearance() {
-		if(this.isLSAInstalled){
+		if (this.isLSAInstalled) {
 			WinRT.launchUri('lenovo-smartappearance:');
-		}else{
+		} else {
 			WinRT.launchUri('ms-windows-store://pdp/?productid=9NRLFDZ54PZB');
 		}
 	}
