@@ -45,7 +45,7 @@ export class ModalSnapshotComponent implements OnInit {
 			const environment: ModalSnapshotComponentItem = {
 				name: key,
 				components:
-					name === 'hardwareListTitle'
+					key === 'hardwareListTitle'
 						? this.getHardwareListItems(value)
 						: this.getSoftwareListItems(value),
 				collapsed: false,

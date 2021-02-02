@@ -380,7 +380,7 @@ export class ContentCacheService {
 		if (!contents || contents.length === 0) {
 			return;
 		}
-		return new Promise(async (resolve, reject) => {
+		return new Promise<void>(async (resolve, reject) => {
 			const downLoadImages = [];
 			const localInfo = await this.getLocalInfo();
 			const cacheArticleResults = [];

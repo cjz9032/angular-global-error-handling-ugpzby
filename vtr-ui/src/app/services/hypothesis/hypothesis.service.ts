@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { DevService } from '../dev/dev.service';
 
-declare var window;
+declare let window;
 
 @Injectable({
 	providedIn: 'root',
@@ -15,11 +15,11 @@ export class HypothesisService {
 	}
 
 	private getHypothesis() {
-		return new Promise((resolve, reject) => {
+		return new Promise<void>((resolve, reject) => {
 			if (
 				window.Windows &&
 				window.Windows.ApplicationModel.Package.current.id.familyName ===
-					'E046963F.LenovoCompanionBeta_k1h2ywk1493x8'
+				'E046963F.LenovoCompanionBeta_k1h2ywk1493x8'
 			) {
 				// beta may not support the hypothesis config filter key, and it would block here, if not return immediately, we can treat it as not supported.
 				setTimeout(() => reject(new Error('not support in beta')), 2000);
@@ -51,7 +51,7 @@ export class HypothesisService {
 							resolve(this.hypSettings[feature]);
 							this.devService.writeLog(
 								'get hypothesis  getFeatureSetting: ' +
-									JSON.stringify(this.hypSettings[feature])
+								JSON.stringify(this.hypSettings[feature])
 							);
 						} else {
 							this.devService.writeLog(
