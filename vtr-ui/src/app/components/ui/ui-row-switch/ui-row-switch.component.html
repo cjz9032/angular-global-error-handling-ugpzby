@@ -118,6 +118,7 @@
 						(click)="onCustomButtonClick($event)"
 						(keydown.enter)="onCustomButtonClick($event)"
 						[attr.aria-disabled]="disabledAll"
+						[attr.aria-label]="title"
 						[matTooltip]="customButtonText"
 						matTooltipClass="vtr-system-tooltip">
 						{{ customButtonText | uppercase }}

@@ -212,7 +212,7 @@
 						[caption]="'smb.meetingExperience.meetingManager.smartAppearance.caption' | translate"
 						[showCustomButton]="true"
 						[customButtonText]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate"
-						[type]="'Camera'"
+						[type]="'SmartAppearance'"
 						[isSwitchVisible]="false"
 						[isLastChild]="true"
 						[leftIcon]="['icomoon', 'icomoon-smart-face']"
@@ -228,14 +228,15 @@
 		<div class="col mt-40">
 			<div>banner</div>
 			<div class="right-banner banner-smart-appearance">
-				<h3 class="title">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.title' | translate}}</h3>
-				<p class="description">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.description' | translate}}</p>
+				<h3 id="productivity-meeting-appearance-banner-title" class="title">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.title' | translate}}</h3>
+				<p id="productivity-meeting-appearance-banner-description" role="text" class="description">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.description' | translate}}</p>
 				<button id="productivity-meeting-appearance-banner-button"
 					mat-customize-button color="accent"
 					class="m-0 w-100"
 					(click)="smartAppearanceBannerButtonClick()"
 					[matTooltip]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate"
-					matTooltipClass="vtr-system-tooltip">
+					matTooltipClass="vtr-system-tooltip"
+					aria-labelledby="productivity-meeting-appearance-banner-title">
 					{{(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate | uppercase}}
 				</button>
 			</div>
