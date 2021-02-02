@@ -114,7 +114,7 @@
 							class='chevron-left' [class.deactive-chevron]="displayPage.pageIdx === 0"
 							[icon]="['fal', 'chevron-left']" (click)="onClickPreResultPage()"></fa-icon>
 						<div
-							id="search-page-pagination-bar-page{{pageNum}}"
+							id="search-page-pagination-bar-page{{pageNum}}" role="button"
 							vtrMetrics metricsEvent="FeatureClick" metricsItem="pagination-item"
 							metricsParam="page:{{pageNum + 1}}" *ngFor="let i of pageArray; let pageNum = index"
 							(click)="onClickSpecifiedResultPage(pageNum)">

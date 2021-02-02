@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy, ɵɵInheritDefinitionFeature } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription } from 'rxjs';
@@ -44,8 +44,7 @@ export class AppSearchService implements OnDestroy {
 		private applicableDetections: FeatureApplicableDetections,
 		private localCacheService: LocalCacheService
 	) {
-		(async () => {
-			const available = await this.isAvailabe();
+		this.isAvailabe().then((available) => {
 			if (available) {
 				this.searchEngine = new SearchEngineWraper();
 				this.lastFullFeaturesDetectionTime = this.localCacheService.getLocalCacheValue(
@@ -59,7 +58,7 @@ export class AppSearchService implements OnDestroy {
 
 				this.loadFeatureListAsync();
 			}
-		})();
+		});
 	}
 
 	public async isAvailabe() {
@@ -69,7 +68,8 @@ export class AppSearchService implements OnDestroy {
 
 		try {
 			const result = await this.hypService.getFeatureSetting('AppSearch');
-			this.available = result?.toString().toLowerCase() === 'true';
+			this.available =
+				result?.toString().toLowerCase() === 'true' && this.translate.currentLang === 'en';
 		} catch {
 			this.available = false;
 		}
@@ -429,14 +429,13 @@ export class AppSearchService implements OnDestroy {
 				resolve();
 			}, 30 * 1000);
 
-			(async () => {
-				const result = await action();
+			action().then((result) => {
 				callback?.(result, false);
 				if (detectionTimeout) {
 					clearTimeout(detectionTimeout);
 				}
 				resolve();
-			})();
+			});
 		});
 	}
 

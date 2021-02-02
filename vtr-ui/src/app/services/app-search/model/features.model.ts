@@ -1,4 +1,4 @@
-import { MenuID, RoutePath } from 'src/assets/menu/menu';
+import { RoutePath } from 'src/assets/menu/menu';
 import { AppSearch } from './feature-ids.model';
 
 export const featureSource = [
@@ -76,7 +76,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.HardwareScan.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.hardwareScan,
+			route: RoutePath.hardwareScan,
 		},
 	},
 
@@ -88,7 +88,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -96,7 +96,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -104,7 +104,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -112,7 +112,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -120,7 +120,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -128,7 +128,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -136,7 +136,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -144,7 +144,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -152,7 +152,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -160,7 +160,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -168,7 +168,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -176,7 +176,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -184,7 +184,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -192,7 +192,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -200,7 +200,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -208,7 +208,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -216,7 +216,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 	{
@@ -224,7 +224,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Power.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.powerFullPath,
 		},
 	},
 
@@ -236,7 +236,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.CameraAndDisplay.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.displayCamera,
+			route: RoutePath.displayCameraFullPath,
 		},
 	},
 	{
@@ -244,7 +244,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.CameraAndDisplay.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.displayCamera,
+			route: RoutePath.displayCameraFullPath,
 		},
 	},
 	{
@@ -252,7 +252,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.CameraAndDisplay.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.displayCamera,
+			route: RoutePath.displayCameraFullPath,
 		},
 	},
 	{
@@ -260,7 +260,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.CameraAndDisplay.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.displayCamera,
+			route: RoutePath.displayCameraFullPath,
 		},
 	},
 	{
@@ -268,7 +268,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.CameraAndDisplay.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.displayCamera,
+			route: RoutePath.displayCameraFullPath,
 		},
 	},
 	{
@@ -276,7 +276,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.CameraAndDisplay.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.power,
+			route: RoutePath.displayCameraFullPath,
 		},
 	},
 
@@ -288,7 +288,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Audio.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.audio,
+			route: RoutePath.audioFullPath,
 		},
 	},
 	{
@@ -296,7 +296,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Audio.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.audio,
+			route: RoutePath.audioFullPath,
 		},
 	},
 	{
@@ -304,7 +304,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.Audio.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.audio,
+			route: RoutePath.audioFullPath,
 		},
 	},
 
@@ -316,7 +316,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.InputAccessories.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.inputAccessories,
+			route: RoutePath.inputAccessoriesFullPath,
 		},
 	},
 	{
@@ -324,7 +324,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.InputAccessories.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.inputAccessories,
+			route: RoutePath.inputAccessoriesFullPath,
 		},
 	},
 	{
@@ -332,7 +332,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.InputAccessories.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.inputAccessories,
+			route: RoutePath.inputAccessoriesFullPath,
 		},
 	},
 	{
@@ -340,7 +340,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.InputAccessories.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.inputAccessories,
+			route: RoutePath.inputAccessoriesFullPath,
 		},
 	},
 	{
@@ -348,7 +348,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.InputAccessories.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.inputAccessories,
+			route: RoutePath.inputAccessoriesFullPath,
 		},
 	},
 	{
@@ -356,7 +356,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.InputAccessories.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.inputAccessories,
+			route: RoutePath.inputAccessoriesFullPath,
 		},
 	},
 	{
@@ -364,7 +364,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.InputAccessories.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.inputAccessories,
+			route: RoutePath.inputAccessoriesFullPath,
 		},
 	},
 	{
@@ -372,7 +372,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.InputAccessories.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.inputAccessories,
+			route: RoutePath.inputAccessoriesFullPath,
 		},
 	},
 	{
@@ -380,7 +380,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.InputAccessories.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.inputAccessories,
+			route: RoutePath.inputAccessoriesFullPath,
 		},
 	},
 
@@ -392,7 +392,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.SmartAssist.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.smartAssist,
+			route: RoutePath.smartAssistFullPath,
 		},
 	},
 	{
@@ -400,7 +400,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.SmartAssist.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.smartAssist,
+			route: RoutePath.smartAssistFullPath,
 		},
 	},
 	{
@@ -408,7 +408,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.SmartAssist.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.smartAssist,
+			route: RoutePath.smartAssistFullPath,
 		},
 	},
 	{
@@ -416,7 +416,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.SmartAssist.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.smartAssist,
+			route: RoutePath.smartAssistFullPath,
 		},
 	},
 	{
@@ -424,7 +424,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.SmartAssist.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.smartAssist,
+			route: RoutePath.smartAssistFullPath,
 		},
 	},
 	{
@@ -432,7 +432,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.SmartAssist.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.smartAssist,
+			route: RoutePath.smartAssistFullPath,
 		},
 	},
 	{
@@ -440,7 +440,7 @@ export const featureSource = [
 		categoryId: AppSearch.FeatureIds.SmartAssist.categoryId,
 		icon: ['fal', 'gem'],
 		action: {
-			menuId: MenuID.smartAssist,
+			route: RoutePath.smartAssistFullPath,
 		},
 	},
 	/***
