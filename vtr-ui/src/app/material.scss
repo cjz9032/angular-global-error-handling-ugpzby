@@ -197,7 +197,7 @@ $van-ui-layout: (
 		layout-form-line-height: 1.5,
 		layout-form-text-padding: 0.5rem,
 		layout-form-label-font-size: 1.2rem,
-		layout-form-laybel-line-height: 1.125,
+		layout-form-label-line-height: 1.125,
 	),
 );
 @include angular-material-layout($van-ui-layout);
