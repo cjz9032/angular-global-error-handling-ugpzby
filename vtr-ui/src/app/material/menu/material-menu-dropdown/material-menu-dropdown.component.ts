@@ -18,6 +18,9 @@ export class MaterialMenuDropdownComponent implements OnInit {
 	@Input() parentId: string;
 	@Input() currentIsSearchPage: boolean;
 	hasSecondaryMenu = false;
+	singleColumnSecondaryMenu = false;
+	singleColumnSecondaryMenuItems: Array<any>;
+	siggleColumnSecondaryMenuItemCategoryPath;
 
 	constructor(private router: Router) {}
 
@@ -32,6 +35,30 @@ export class MaterialMenuDropdownComponent implements OnInit {
 					this.hasSecondaryMenu = true;
 				}
 			});
+		}
+		
+		if (this.hasSecondaryMenu) {
+			let visibleColumnCount = 0;
+			let items;
+			let parentPath;
+			this.dropdownMenu.subitems.forEach((element) => {
+				if (Array.isArray(element?.subitems) && !element.hide) {
+					let item = element.subitems.find((item) => !item.hide);
+					if (item) {
+						visibleColumnCount++;
+						items = element.subitems;
+						parentPath = element.path;
+					} else {
+						element.hide = true;
+					}
+				}
+			});
+
+			if (visibleColumnCount === 1) {
+				this.singleColumnSecondaryMenu = true;
+				this.singleColumnSecondaryMenuItems = items;
+				this.siggleColumnSecondaryMenuItemCategoryPath = parentPath;
+			}
 		}
 	}
 
