@@ -17,14 +17,12 @@ export class ModalWaitComponent implements OnInit, OnDestroy {
 	@Input() ItemParent: string;
 	@Input() CancelItemName: string;
 
-	constructor(
-		private dialogRef: MatDialogRef<ModalWaitComponent>,
-	) { }
+	constructor(private dialogRef: MatDialogRef<ModalWaitComponent>) {}
 
 	ngOnInit() {
 		this.shouldCloseModalSubscription = this.shouldCloseModal.subscribe((result) => {
 			if (result) {
-				this.closeModal();
+				this.closeModal('done');
 			}
 		});
 	}
@@ -35,7 +33,7 @@ export class ModalWaitComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	public closeModal() {
-		this.dialogRef.close();
+	public closeModal(info: string) {
+		this.dialogRef.close(info);
 	}
 }
