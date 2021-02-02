@@ -200,7 +200,7 @@
 					</ul>
 				</vtr-container-collapsible>
 			</div>
-			<div class="pt-5 content-card" id="smartAppearance">
+			<div *ngIf="deviceService.supportSmartAppearance" class="pt-5 content-card" id="smartAppearance">
 				<vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
 					[cardTitle]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
 					componentName="Smart Appearance"
@@ -227,7 +227,8 @@
 	<div class="col-lg-5 col-xl-4 vtr-page-column vtr-subpage-right-column">
 		<div class="col mt-40">
 			<div>banner</div>
-			<div class="right-banner banner-smart-appearance">
+			<div *ngIf="deviceService.supportSmartAppearance" 
+				class="right-banner banner-smart-appearance">
 				<h3 id="productivity-meeting-appearance-banner-title" class="title">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.title' | translate}}</h3>
 				<p id="productivity-meeting-appearance-banner-description" role="text" class="description">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.description' | translate}}</p>
 				<button id="productivity-meeting-appearance-banner-button"

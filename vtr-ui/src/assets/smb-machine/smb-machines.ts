@@ -1,15 +1,19 @@
-
-
 export const smbMachines = {
     colorCalibration:[
-        'thinkbook 16p gen 2'
+        'thinkbook16pgen2'
     ],
     creatorSettings:[
-        'thinkbook 16p gen 2',
-        'thinkbook 14p gen 2'
+        'thinkbook16pgen2',
+        'thinkbook14pgen2'
     ],
     easyRendering:[
-        'thinkbook 16p gen 2',
-        'thinkbook 14p gen 2'
-    ]
+        'thinkbook16pgen2',
+        'thinkbook14pgen2'
+	],
+	smartAppearance:[
+		'thinkbookplusgen2',
+		'thinkbook13x',
+		'thinkbook14pgen2',
+		'thinkbook16pgen2'
+	]
 };

@@ -33,6 +33,7 @@ export class DeviceService {
 	public supportCreatorSettings = false;
 	public supportColorCalibration = false;
 	public supportEasyRendering = false;
+	public supportSmartAppearance = false;
 	public showWarranty = false;
 	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
@@ -91,20 +92,24 @@ export class DeviceService {
 		return undefined;
 	}
 
-	private identifySMBMachine(machineFamilyName){
-		if(machineFamilyName.match(/^(thinkbook)/) || machineFamilyName.match(/^(thinkpad e)/)){
+	private identifySMBMachine(machineFamilyName) {
+		if (machineFamilyName.match(/^(thinkbook)/) || machineFamilyName.match(/^(thinkpad e)/)) {
 			this.isSMB = true;
-			if(smbMachines.creatorSettings.includes(machineFamilyName)){
+			let trimedFamilyName = machineFamilyName.trim().toLowerCase();
+			if (smbMachines.creatorSettings.includes(trimedFamilyName)) {
 				this.supportCreatorSettings = true;
 			}
 
-			if(smbMachines.easyRendering.includes(machineFamilyName)){
+			if (smbMachines.easyRendering.includes(trimedFamilyName)) {
 				this.supportEasyRendering = true;
 			}
 
-			if(smbMachines.colorCalibration.includes(machineFamilyName))
-			{
+			if (smbMachines.colorCalibration.includes(trimedFamilyName)) {
 				this.supportColorCalibration = true;
+			}
+
+			if (smbMachines.smartAppearance.includes(trimedFamilyName)) {
+				this.supportSmartAppearance = true;
 			}
 		}
 	}
@@ -126,10 +131,9 @@ export class DeviceService {
 				this.machineInfo = info;
 				this.isSMode = info.isSMode;
 				this.isGaming = info.isGaming;
-				if(info.family){
+				if (info.family) {
 					this.identifySMBMachine(info.family.toLowerCase());
 				}
-				
 
 				if (
 					!this.showWarranty &&

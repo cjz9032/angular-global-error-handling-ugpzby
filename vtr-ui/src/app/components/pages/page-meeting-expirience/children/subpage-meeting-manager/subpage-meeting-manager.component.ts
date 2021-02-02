@@ -104,7 +104,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private batteryService: BatteryDetailService,
 		private localCacheService: LocalCacheService,
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		private audioVendorService: AudioVendorService,
 		private metricsService: MetricService,
 	) {
