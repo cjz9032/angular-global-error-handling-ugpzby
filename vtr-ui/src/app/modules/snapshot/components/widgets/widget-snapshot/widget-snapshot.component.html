@@ -6,9 +6,9 @@
 					<div class="row title-box">
 						<h2 id="snapshot-widget-title" role="heading" class="title">{{'snapshot.title' | translate}}</h2>
 						<vtr-ui-question-mark-button
-							[componentId]="'snapshot-header-tooltip-information'"
+							[componentId]="'snapshot-widget-tooltip-information'"
 							[componentRole]="'link'"
-							[ariaLabel]="'snapshot-header-information tooltip, which reads: ' + ('snapshot.informationTooltipDescription' | translate)"
+							[ariaLabel]="'snapshot-widget-information tooltip, which reads: ' + ('snapshot.informationTooltipDescription' | translate)"
 							triggers="manual"
 							#tooltip="ngbTooltip"
 							(blurEvent)="tooltip.close()"
@@ -44,7 +44,7 @@
 
 	<ng-template #tooltipSnapshotInformation>
 		<div
-			id="snapshot-header-information-tooltip" role="text"
+			id="snapshot-widget-information-tooltip" role="text"
 			[innerHTML]="'snapshot.informationTooltipDescription' | translate">
 		</div>
 	</ng-template>
