@@ -50,6 +50,11 @@ export class AppLoaded extends IMetricEvent {
 	public APP_INITIALIZED: number | null;
 	public APP_ENTRY_LOADED: number | null;
 	public FIRST_PAGE_LOADED: number | null;
+	public DNS_LOOKUP: number;
+	public INIT_TCP: number;
+	public INIT_SSL: number;
+	public REQUEST: number;
+	public RESPONSE: number;
 }
 
 export class ArticleDisplay extends IMetricEvent {

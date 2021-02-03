@@ -24,7 +24,7 @@ import { DevService } from '../dev/dev.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalInfoService } from 'src/app/services/local-info/local-info.service';
 
-declare var Windows;
+declare let Windows;
 
 @Injectable({
 	providedIn: 'root',
@@ -45,7 +45,7 @@ export class MetricService {
 	public pageContainer: ElementRef;
 	public readonly contentDisplayDetection: ContentDisplayDetection;
 	public externalAppMetricsState = false;
-	private pageScollEvent = (arg: any) => {};
+	private pageScollEvent = (arg: any) => { };
 
 	constructor(
 		private http: HttpClient,
@@ -212,12 +212,10 @@ export class MetricService {
 				imcVersion,
 				srvVersion: hsaSrvInfo.vantageSvcVersion,
 				shellVersion,
-				windowSize: `${Math.floor(window.outerWidth / 100) * 100}x${
-					Math.floor(window.outerHeight / 100) * 100
-				}`,
-				displaySize: `${Math.floor((displayWidth * scale) / 100) * 100}x${
-					Math.floor((displayHeight * scale) / 100) * 100
-				}`,
+				windowSize: `${Math.floor(window.outerWidth / 100) * 100}x${Math.floor(window.outerHeight / 100) * 100
+					}`,
+				displaySize: `${Math.floor((displayWidth * scale) / 100) * 100}x${Math.floor((displayHeight * scale) / 100) * 100
+					}`,
 				scalingSize: scale, // this value would is accurate in edge
 				isFirstLaunch: this.isFirstLaunch,
 			})
@@ -239,7 +237,12 @@ export class MetricService {
 			SCRIPT_LOADED: performanceTimePoints.scriptLoaded,
 			APP_INITIALIZED: performanceTimePoints.appInitialized,
 			APP_ENTRY_LOADED: performanceTimePoints.appEntryLoaded,
-			FIRST_PAGE_LOADED: performanceTimePoints.firstPageLoaded
+			FIRST_PAGE_LOADED: performanceTimePoints.firstPageLoaded,
+			DNS_LOOKUP: performanceTimePoints.dnsLookup,
+			INIT_TCP: performanceTimePoints.initTcp,
+			INIT_SSL: performanceTimePoints.initSsl,
+			REQUEST: performanceTimePoints.request,
+			RESPONSE: performanceTimePoints.response
 		};
 		this.metricsClient.sendAsync(loadedEvent);
 	}
@@ -474,7 +477,7 @@ export class MetricService {
 	}
 
 	public deactivateScrollCounter(pageName: any = null) {
-		this.pageScollEvent = () => {};
+		this.pageScollEvent = () => { };
 	}
 
 	public notifyPageScollEvent(htmlElm: any = null) {
@@ -504,9 +507,7 @@ export class MetricService {
 					}
 					return false;
 				})
-				.catch((error) => {
-					return false;
-				});
+				.catch((error) => false);
 		}
 
 		return Promise.resolve(false);
