@@ -22,6 +22,7 @@ import { VantageShellService } from '../../services/vantage-shell/vantage-shell.
 import { DeviceService } from '../../services/device/device.service';
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { PromotionBannerComponent } from 'src/app/components/pages/page-creator-centre/children/promotion-banner/promotion-banner.component';
 
 @NgModule({
 	declarations: [
@@ -32,7 +33,8 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 		SubpageEasyRenderingComponent,
 		SubpageColorCalibrationComponent,
 		ColorSettingsComponent,
-		IntelligentPerformanceComponent
+		IntelligentPerformanceComponent,
+		PromotionBannerComponent,
 	],
 	imports: [
 		CommonModule,
@@ -45,17 +47,14 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 		MatButtonModule,
 		MatTooltipModule,
 	],
-	exports: [
-		PageLayoutModule
-	],
+	exports: [PageLayoutModule],
 	providers: [
 		{
 			provide: AudioVendorService,
 			useFactory: AudioVendorFactory,
-			deps: [FORTE_CLIENT, DOLBY_FUSION_CLIENT, VantageShellService, DeviceService]
-		}
+			deps: [FORTE_CLIENT, DOLBY_FUSION_CLIENT, VantageShellService, DeviceService],
+		},
 	],
-	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class SmbModule {
-}
+export class SmbModule {}

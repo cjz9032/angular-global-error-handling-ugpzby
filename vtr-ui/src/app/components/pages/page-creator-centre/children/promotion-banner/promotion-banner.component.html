@@ -1,0 +1,19 @@
+<div class="vtr-promotion-banner">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+                <div class="banner"  [style.background-image]="'url(' + imgSrc + ')'">
+                    <div class="title"
+					id="banner-title-{{title}}"
+					attr.aria-label="{{title}}"
+					role="text">{{title}}</div>
+				<div class="description"
+					id="banner-description-{{title}}"
+					attr.aria-label="{{description}}"
+					[dir]="'dir' | translate"
+					[innerHTML]="description"></div>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
