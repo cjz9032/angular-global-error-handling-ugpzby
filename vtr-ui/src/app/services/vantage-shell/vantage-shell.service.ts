@@ -554,6 +554,17 @@ export class VantageShellService {
 		}
 	}
 
+	public gpuOverclocking(): any {
+		try {
+			const win: any = window;
+			if (win.VantageShellExtension && win.VantageShellExtension.GpuOverClockRpcClient) {
+				return new win.VantageShellExtension.GpuOverClockRpcClient();
+			}
+		} catch (error) {
+			return undefined;
+		}
+	}
+
 	public getHsaIntelligentSecurity(): any {
 		try {
 			const win: any = window;

@@ -1230,6 +1230,11 @@
 								"list2": "Viene visualizzata la modalità Risparmio energia di Windows, utilizzare il dispositivo di scorrimento per scegliere tra tempo o prestazioni ottimali."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Abilita l'overclock della GPU in modalità Prestazioni estreme.",
+							"description1":"Seleziona per eseguire l'overclock della memoria della GPU di 140 MHz, incremento ritenuto \"stabile\". Le prestazioni dei giochi e la frequenza dei fotogrammi possono aumentare del 10%-30%.",
+					        "description2":"Nota: i miglioramenti nelle prestazioni e nella velocità della frequenza dei fotogrammi possono variare a seconda dei diversi giochi/app e di altri fattori. Di conseguenza, anche il consumo energetico, la temperatura della superficie del computer e il rumore della ventola potrebbero aumentare. Lenovo non garantisce il miglioramento di stabilità e prestazioni quando l'overclock è abilitato."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Abilita transizione automatica alla modalità \"Prestazioni estreme\". Quando è abilitata, è possibile che il computer entri in modalità \"Prestazioni estreme\", a seconda del carico di sistema e dello scenario utente.",

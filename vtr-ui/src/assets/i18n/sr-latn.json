@@ -1230,6 +1230,11 @@
 								"list2": "Pojaviće se režim za uštedu energije sistema Windows, povucite klizač da izaberete između optimalnog vremena ili optimalnih performansi."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Omogućite GPU overkloking u režimu „Ekstremne performanse“.",
+							"description1":"Izaberite da overklokujete svoj GPU memorijski sat za 140 MHz, što se smatra „stabilnom“ dobrom prilikom. Performanse igara i brzina frejma mogu da se povećaju za 10%-30%.",
+					        "description2":"Napomena: Poboljšanja performansi i brzine frejma mogu da se razlikuju u zavisnosti od različitih igara/aplikacija i drugih faktora. Potrošnja struje, temperatura površine računara i buka ventilatora takođe bi mogli da se povećaju u skladu sa tim. Lenovo ne garantuje poboljšanje stabilnosti i performansi kada je omogućen overkloking."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Omogućite automatsko prelaz na režim „Ekstremne performanse“. Kada je omogućen, računar može ući u režim „Ekstremne performanse“, u zavisnosti od opterećenja sistema i scenarija korisnika.",

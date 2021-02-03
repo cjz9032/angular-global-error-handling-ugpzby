@@ -1230,6 +1230,11 @@
 								"list2": "Zobrazí sa režim výkonu systému Windows, posunutím jazdca vyberte optimálny čas alebo optimálny výkon."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Povoliť pretaktovanie GPU v režime najvyššieho výkonu",
+							"description1":"Vyberte, ak chcete pretaktovať frekvenciu pamäte GPU o 140 MHz, čo sa považuje za „stabilnú“ ideálnu hodnotu. Herný výkon a snímková frekvencia sa môžu zvýšiť o 10 až 30 %.",
+					        "description2":"Poznámka: Zlepšenia výkonu a snímkovej frekvencie sa môžu líšiť v závislosti od rôznych hier alebo aplikácií a ďalších faktorov. Zodpovedajúcim spôsobom sa tiež môže zvýšiť spotreba energie, teplota povrchu počítača a hluk ventilátora. Po povolení pretaktovania spoločnosť Lenovo nezaručuje stabilitu a zlepšenie výkonu."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Povoliť automatický prechod do režimu Najvyšší výkon. Ak je táto možnosť povolená, v závislosti od zaťaženia systému a používateľského scenára môže počítač prejsť do režimu Najvyšší výkon.",

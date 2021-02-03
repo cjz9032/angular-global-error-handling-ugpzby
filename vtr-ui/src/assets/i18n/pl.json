@@ -1230,6 +1230,11 @@
 								"list2": "Pojawi się wskaźnik trybu zasilania systemu Windows, przesuń suwak, aby wybrać optymalny czas lub optymalną wydajność."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Włącz funkcję Przetaktowywanie GPU w trybie ekstremalnej wydajności.",
+							"description1":"Wybierz, aby przetaktować zegar pamięci GPU o 140 MHz – uważa się, że taki poziom pozwala uzyskać optymalną wydajność przy jednoczesnym zachowaniu stabilności. Wydajność oraz liczba klatek na sekundę podczas grania mogą wzrosnąć o 10–30%.",
+					        "description2":"Uwaga: stopień, w jakim zwiększy się wydajność oraz liczba klatek na sekundę, może się różnić w zależności od gry / aplikacji oraz innych czynników. Zużycie energii, temperatura powierzchni komputera i hałas wentylatora także mogą wzrosnąć. Firma Lenovo nie gwarantuje poprawy stabilności ani wydajności po włączeniu przetaktowywania."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Włącz automatyczne przejście do trybu „Ekstremalna wydajność”. Gdy ta funkcja jest włączona, komputer może przejść w tryb „Ekstremalna wydajność” w oparciu o obciążenie systemu i działania użytkownika.",

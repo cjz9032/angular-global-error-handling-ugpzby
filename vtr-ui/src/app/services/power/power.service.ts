@@ -19,6 +19,7 @@ export class PowerService {
 	private devicePowerThinkPad: any;
 	private imcHelper: any;
 	private devicePowerItsIntelligentCooling: any;
+	private gpuOverclocking: any;
 
 	constructor(shellService: VantageShellService) {
 		this.devicePower = shellService.getVantageToolBar();
@@ -41,6 +42,7 @@ export class PowerService {
 		if (this.intelligentCoolingForIdeaPad) {
 			this.isShellAvailable = true;
 		}
+		this.gpuOverclocking = shellService.gpuOverclocking();
 
 		this.imcHelper = shellService.getImcHelper();
 	}
@@ -552,6 +554,52 @@ export class PowerService {
 		}
 	}
 	// ------------- End DYTC 6.0 -------------------
+
+		// ------------- Start ITS Gpu Overclocking -------------------
+
+		getGpuOverclockingState(): Promise<any> {
+			try {
+				if (this.isShellAvailable && this.gpuOverclocking !== undefined) {
+					return Promise.resolve(this.gpuOverclocking.getGpuOverClockSetting());
+				}
+				return undefined;
+			} catch (error) {
+				throw new Error(error.message);
+			}
+		}
+	
+		setGpuOverclockingState(value: boolean):Promise<number> {
+			try {
+				if (this.isShellAvailable && this.gpuOverclocking !== undefined) {
+					return Promise.resolve(this.gpuOverclocking.gpuOverClockEnabled(value));
+				}
+				return undefined;
+			} catch (error) {
+				throw new Error(error.message);
+			}
+		}
+
+		public startMonitorGpuOverclockingStatus(callback: any): Promise<number> {
+			if (this.isShellAvailable && this.gpuOverclocking !== undefined) {
+				const ret = this.gpuOverclocking.registerCallback();
+				this.gpuOverclocking.onstatusupdated = (data: any) => {
+					callback(data);
+				};
+				return Promise.resolve(ret);
+			}
+			return undefined;
+		}
+	
+		public stopMonitorGpuOverclockingStatus(): Promise<number> {
+			if (this.isShellAvailable && this.gpuOverclocking !== undefined) {
+				const ret = this.gpuOverclocking.unRegisterCallback();
+				return Promise.resolve(ret);
+			}
+			return undefined;
+		}
+	
+		// ------------- End ITS Gpu Overclocking -------------------
+	
 
 	// End Power smart settings
 

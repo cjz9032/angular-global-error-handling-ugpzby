@@ -1230,6 +1230,11 @@
 								"list2": "Pojavit će se način napajanja sustava Windows - pomaknite klizač i odaberite optimalno trajanje baterije ili optimalne performanse."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Omogući funkciju overclockinga GPU-a u načinu rada Izuzetne performanse.",
+							"description1":"Odaberite opciju izvršiti overclocking takta memorije GPU-a za 140 MHz, što se smatra \"stabilnom\" optimalnom postavkom. Performanse u igri i broj slika u sekundi mogu se povećati za 10 % – 30 %.",
+					        "description2":"Napomena: poboljšanja performansi u igri i broju slika u sekundi mogu se razlikovati ovisno o različitim igrama/aplikacijama i drugim čimbenicima. U skladu s tim može se povećati i potrošnja energije, temperatura površine računala i buka ventilatora. Lenovo ne jamči stabilnost i poboljšanje performansi kad je omogućen overclocking."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Omogućite automatski prelazak u način \"Izuzetne performanse\". Kad je omogućeno, vaše računalo može ući u način rada \"Izuzetne performanse\", ovisno o opterećenju sustava i korisničkom scenariju.",

@@ -1230,6 +1230,11 @@
 								"list2": "Strømmodus for Windows vises. Skyv glidebryteren for å velge mellom optimal tid eller optimal ytelse."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Aktiver GPU-overklokking i Ekstrem ytelse-modus.",
+							"description1":"Velg for å overklokke GPU-minneklokken med 140 MHz, som er et \"stabilt\" punkt. Spillytelsen og bildefrekvensen kan øke med 10 %–30 %.",
+					        "description2":"Merk: Forbedringene i ytelse og bildefrekvens kan variere avhengig av spill/apper og andre faktorer. Strømforbruket, datamaskinens overflatetemperatur og viftestøy kan også øke i henhold til dette. Lenovo garanterer ikke at stabiliteten og ytelsesforbedringer når overklokking er aktivert."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Aktiver automatisk overgang til \"Ekstrem ytelse\"-modus. Når denne funksjonen er aktivert, kan datamaskinen gå inn i \"Ekstrem ytelse\"-modus, avhengig av systembelastning og brukerscenario.",

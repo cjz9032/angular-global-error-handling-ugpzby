@@ -1340,6 +1340,11 @@
 								"list2": "La mode d'alimentation de Windows s'affiche, faites glisser le curseur pour choisir une durée optimale ou des performances optimales."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Activer l’overclocking du GPU en mode de performance extrême.",
+							"description1":"Sélectionnez pour activer l'overclocking de l'horloge mémoire de votre processeur graphique de 140 MH, un point idéal considéré \"stable\". Les performances de jeu et la fréquence d'image peuvent augmenter de 10 % à 30 %.",
+					        "description2":"Remarque : les améliorations de performances et de fréquence d'image peuvent varier selon les jeux/applications et d'autres variables. La consommation d'énergie, la température de surface de l'ordinateur et le bruit du ventilateur peuvent également augmenter. Lenovo ne garantit pas la stabilité et l'amélioration des performances lorsque l'overclocking est activé."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Activer la transition automatique vers le mode \"Performances extrêmes\". Lorsque cette option est activée, votre ordinateur peut passer en mode \"Performances extrêmes\", selon la charge système et le scénario utilisateur.",

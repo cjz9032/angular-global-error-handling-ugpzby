@@ -1230,6 +1230,11 @@
 								"list2": "Windows Strømstyringsplan vises. Skub skyderen for at vælge mellem optimal tid eller optimal ydeevne."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Aktiver GPU-overclocking i tilstanden Ekstrem ydeevne.",
+							"description1":"Vælg at overclocke clockfrekvensen for din GPU-hukommelse med 140 MHz, som er et \"stabilt\" og godt punkt. Ydeevnen og rammehastigheden for spil kan øges med 10-30 %.",
+					        "description2":"Bemærk: Forbedringerne i ydeevne og rammehastighed kan variere afhængigt af forskellige spil/apps og andre faktorer. Strømforbruget, computerens overfladetemperatur og blæserstøj kan også øges tilsvarende. Lenovo garanterer ikke stabilitet og bedre ydeevne, når overclocking er aktiveret."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Aktiver automatisk skift til tilstanden \"Ekstrem ydeevne\". Når den er aktiveret, kan computeren skifte til tilstanden \"Ekstrem ydeevne\" afhængigt af systembelastningen og brugerscenariet.",

@@ -56,6 +56,22 @@
 											id="IntelligentCooling-selectedModeText">
 											{{ selectedModeText }}
 										</div>
+										<div *ngIf="gpuOverclocking.available && isIntelligentCoolingPerformance" id="gpu-overclocking-checkbox" class="gpu-overclocking-checkbox">
+											<vtr-ui-checkbox [componentId]="'gpu-overclocking-checkbox'"
+												[isMetricsEnabled]=true
+												[metricsParent]='metricsParent'
+												[metricsItem]="'cb.ITS.gpu-overclocking'"
+												[value]="gpuOverclocking.status"
+												[checked]="gpuOverclocking.status"
+												[disabled]='false'
+												[label]="'device.deviceSettings.power.powerSmartSettings.intelligentCooling.gpuOverclocking.checkboxtext' | translate"
+												(toggle)='onGpuOverclockingStateChange($event)'>
+											</vtr-ui-checkbox>
+											<div class="gpu-overclocking-description">
+												<p class="description" id="descriptionOne" role="text">{{ 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.gpuOverclocking.description1' | translate }}</p>
+												<p class="description" id="descriptionTwo" role="text">{{ 'device.deviceSettings.power.powerSmartSettings.intelligentCooling.gpuOverclocking.description2' | translate }}</p>
+											</div>
+										</div>
 										<div class="transition"
 											*ngIf="showIC>=15 && radioQuietCool">
 											<vtr-ui-checkbox [componentId]="'IntelligentCooling-5.0-AutoTransition'"
