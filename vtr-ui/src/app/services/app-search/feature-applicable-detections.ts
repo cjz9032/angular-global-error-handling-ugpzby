@@ -34,6 +34,11 @@ export class FeatureApplicableDetections {
 			featureId: AppSearch.FeatureIds.Dashboard.pageId,
 			isApplicable: async () => this.isDashboardApplicable(),
 		},
+		// my device
+		{
+			featureId: AppSearch.FeatureIds.MyDevice.pageId,
+			isApplicable: async () => true,
+		},
 		// system update
 		{
 			featureId: AppSearch.FeatureIds.SystemUpdate.pageId,
