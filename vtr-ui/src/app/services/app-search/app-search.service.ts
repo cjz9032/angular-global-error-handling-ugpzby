@@ -44,7 +44,7 @@ export class AppSearchService implements OnDestroy {
 		private applicableDetections: FeatureApplicableDetections,
 		private localCacheService: LocalCacheService
 	) {
-		this.isAvailabe().then((available) => {
+		this.isAvailable().then((available) => {
 			if (available) {
 				this.searchEngine = new SearchEngineWraper();
 				this.lastFullFeaturesDetectionTime = this.localCacheService.getLocalCacheValue(
@@ -61,7 +61,7 @@ export class AppSearchService implements OnDestroy {
 		});
 	}
 
-	public async isAvailabe() {
+	public async isAvailable() {
 		if (this.available != null) {
 			return this.available;
 		}
