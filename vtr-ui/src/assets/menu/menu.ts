@@ -34,40 +34,45 @@ export enum MenuID {
 	colorCalibration = 'color-calibration',
 }
 
-export enum RoutePath {
-	deviceGaming = 'device-gaming',
-	smartPerfomance = 'smart-performance',
-	smartPerformanceBaseArm = 'support/smart-performance',
-	facebook = 'https://www.facebook.com/LenovoLegion/',
-	instagram = 'https://www.instagram.com/lenovolegion/',
-	search = 'search',
-	user = 'user',
-	dashboard = 'dashboard',
-	systemUpdates = 'system-updates',
-	device = 'device',
-	deviceSettings = 'device-settings',
-	power = 'power',
-	audio = 'audio',
-	displayCamera = 'display-camera',
-	inputAccessories = 'input-accessories',
-	smartAssist = 'smart-assist',
-	security = 'security',
-	mySecurity = 'mysecurity',
-	homeSecurity = 'home-security',
-	wifiSecurity = 'wifi-security',
-	wifiSecurityFullPath = 'security/wifi-security',
-	antiVirus = 'anti-virus',
-	passwordProtection = 'password-protection',
-	internetProtection = 'internet-protection',
-	hardwareScan = 'hardware-scan',
-	support = 'support',
-	smb = 'smb',
-	meetingExperience = 'meeting-experience',
-	meetingManager = 'meeting-manager',
-	creatorCentre = 'creator-centre',
-	creatorSettings = 'creator-settings',
-	easyRendering = 'easy-rendering',
-	colorCalibration = 'color-calibration',
+export class RoutePath {
+	static readonly deviceGaming = 'device-gaming';
+	static readonly smartPerfomance = 'smart-performance';
+	static readonly smartPerformanceBaseArm = 'support/smart-performance';
+	static readonly facebook = 'https://www.facebook.com/LenovoLegion/';
+	static readonly instagram = 'https://www.instagram.com/lenovolegion/';
+	static readonly search = 'search';
+	static readonly user = 'user';
+	static readonly dashboard = 'dashboard';
+	static readonly systemUpdates = 'system-updates';
+	static readonly device = 'device';
+	static readonly deviceSettings = 'device-settings';
+	static readonly power = 'power';
+	static readonly powerFullPath = `${RoutePath.device}/${RoutePath.deviceSettings}/${RoutePath.power}`;
+	static readonly audio = 'audio';
+	static readonly audioFullPath = `${RoutePath.device}/${RoutePath.deviceSettings}/${RoutePath.audio}`;
+	static readonly displayCamera = 'display-camera';
+	static readonly displayCameraFullPath = `${RoutePath.device}/${RoutePath.deviceSettings}/${RoutePath.displayCamera}`;
+	static readonly inputAccessories = 'input-accessories';
+	static readonly inputAccessoriesFullPath = `${RoutePath.device}/${RoutePath.deviceSettings}/${RoutePath.inputAccessories}`;
+	static readonly smartAssist = 'smart-assist';
+	static readonly smartAssistFullPath = `${RoutePath.device}/${RoutePath.deviceSettings}/${RoutePath.smartAssist}`;
+	static readonly security = 'security';
+	static readonly mySecurity = 'mysecurity';
+	static readonly homeSecurity = 'home-security';
+	static readonly wifiSecurity = 'wifi-security';
+	static readonly wifiSecurityFullPath = 'security/wifi-security';
+	static readonly antiVirus = 'anti-virus';
+	static readonly passwordProtection = 'password-protection';
+	static readonly internetProtection = 'internet-protection';
+	static readonly hardwareScan = 'hardware-scan';
+	static readonly support = 'support';
+	static readonly smb = 'smb';
+	static readonly meetingExperience = 'meeting-experience';
+	static readonly meetingManager = 'meeting-manager';
+	static readonly creatorCentre = 'creator-centre';
+	static readonly creatorSettings = 'creator-settings';
+	static readonly easyRendering = 'easy-rendering';
+	static readonly colorCalibration = 'color-calibration';
 }
 
 export const menuConfig = {
@@ -393,7 +398,7 @@ export const menuConfig = {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.smb',
-			hide: true,	
+			hide: true,
 			sMode: false,
 			subitems: [
 				{
@@ -405,7 +410,7 @@ export const menuConfig = {
 					metricsParent: 'smb.navbar',
 					metricsItem: 'link.meeting-experience',
 					routerLinkActiveOptions: {
-						exact: true
+						exact: true,
 					},
 					sMode: true,
 					subitems: [
@@ -418,12 +423,12 @@ export const menuConfig = {
 							metricsParent: 'smb.smb.navbar',
 							metricsItem: 'link.meeting-manager',
 							routerLinkActiveOptions: {
-								exact: true
+								exact: true,
 							},
 							sMode: false,
-							subitems: []
-						}
-					]
+							subitems: [],
+						},
+					],
 				},
 				{
 					id: MenuID.creatorCentre,
@@ -434,7 +439,7 @@ export const menuConfig = {
 					metricsParent: 'smb.navbar',
 					metricsItem: 'link.creator-centre',
 					routerLinkActiveOptions: {
-						exact: true
+						exact: true,
 					},
 					sMode: false,
 					subitems: [
@@ -448,10 +453,10 @@ export const menuConfig = {
 							metricsItem: 'link.creator-settings',
 							hide: false,
 							routerLinkActiveOptions: {
-								exact: true
+								exact: true,
 							},
 							sMode: false,
-							subitems: []
+							subitems: [],
 						},
 						{
 							id: MenuID.easyRendering,
@@ -462,10 +467,10 @@ export const menuConfig = {
 							metricsParent: 'smb.creator-centre.navbar',
 							metricsItem: 'link.easy-rendering',
 							routerLinkActiveOptions: {
-								exact: true
+								exact: true,
 							},
 							sMode: false,
-							subitems: []
+							subitems: [],
 						},
 						{
 							id: 'color-calibration',
@@ -476,14 +481,14 @@ export const menuConfig = {
 							metricsParent: 'smb.creator-centre.navbar',
 							metricsItem: 'link.color-calibration',
 							routerLinkActiveOptions: {
-								exact: true
+								exact: true,
 							},
 							sMode: false,
-							subitems: []
-						}
-					]
-				}
-			]
+							subitems: [],
+						},
+					],
+				},
+			],
 		},
 		{
 			id: MenuID.security,

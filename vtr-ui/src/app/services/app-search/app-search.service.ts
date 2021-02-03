@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy, ɵɵInheritDefinitionFeature } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription } from 'rxjs';
@@ -20,6 +20,7 @@ import { FeatureApplicableDetections } from './feature-applicable-detections';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
+import mapValues from 'lodash/mapValues';
 
 @Injectable({
 	providedIn: 'root',
@@ -27,7 +28,6 @@ import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 export class AppSearchService implements OnDestroy {
 	private featureLoad = false;
 	private featureMap = {};
-	private featureStatusMap = {};
 	private menuRouteMap = {};
 	private subscription: Subscription;
 	private searchEngine: SearchEngineWraper;
@@ -44,8 +44,7 @@ export class AppSearchService implements OnDestroy {
 		private applicableDetections: FeatureApplicableDetections,
 		private localCacheService: LocalCacheService
 	) {
-		(async () => {
-			const available = await this.isAvailabe();
+		this.isAvailable().then((available) => {
 			if (available) {
 				this.searchEngine = new SearchEngineWraper();
 				this.lastFullFeaturesDetectionTime = this.localCacheService.getLocalCacheValue(
@@ -59,17 +58,18 @@ export class AppSearchService implements OnDestroy {
 
 				this.loadFeatureListAsync();
 			}
-		})();
+		});
 	}
 
-	public async isAvailabe() {
+	public async isAvailable() {
 		if (this.available != null) {
 			return this.available;
 		}
 
 		try {
 			const result = await this.hypService.getFeatureSetting('AppSearch');
-			this.available = result?.toString().toLowerCase() === 'true';
+			this.available =
+				result?.toString().toLowerCase() === 'true' && this.translate.currentLang === 'en';
 		} catch {
 			this.available = false;
 		}
@@ -275,7 +275,7 @@ export class AppSearchService implements OnDestroy {
 			if (--parallelThread <= 0) {
 				this.logger.info(
 					`[AppSearch]Full features detections end ${JSON.stringify(
-						this.featureStatusMap
+						this.getFeatureStatusMap()
 					)}`
 				);
 				this.localCacheService.setLocalCacheValue(
@@ -404,7 +404,6 @@ export class AppSearchService implements OnDestroy {
 					} -result: ${feature.applicable} timeout: ${isTimeout}- FeatureId:${feature.id}`
 				);
 
-				this.featureStatusMap[feature.id] = feature.applicable;
 				if (applicable !== feature.applicable) {
 					this.persistFeatureStatus();
 				}
@@ -427,16 +426,15 @@ export class AppSearchService implements OnDestroy {
 				callback?.(null, true);
 				detectionTimeout = null;
 				resolve();
-			}, 30 * 1000);
+			}, 60 * 1000);
 
-			(async () => {
-				const result = await action();
+			action().then((result) => {
 				callback?.(result, false);
 				if (detectionTimeout) {
 					clearTimeout(detectionTimeout);
 				}
 				resolve();
-			})();
+			});
 		});
 	}
 
@@ -452,13 +450,17 @@ export class AppSearchService implements OnDestroy {
 
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.FeaturesApplicableStatus,
-				this.featureStatusMap
+				this.getFeatureStatusMap()
 			);
 
 			this.logger.info(
-				`[AppSearch]Persist feature status, ${JSON.stringify(this.featureStatusMap)}`
+				`[AppSearch]Persist feature status, ${JSON.stringify(this.getFeatureStatusMap())}`
 			);
 			this.featureStatusUpdate = false;
 		}, 2000);
+	}
+
+	private getFeatureStatusMap() {
+		return mapValues(this.featureMap, (feature) => (feature as IFeature).applicable);
 	}
 }

@@ -238,7 +238,7 @@ export class ConfigService {
 	}
 
 	private async canShowSearch() {
-		return await this.appSearchService.isAvailabe();
+		return await this.appSearchService.isAvailable();
 	}
 
 	private async initializeAppSearchItem(menu: any) {
