@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.22](https://bitbucket.tc.lenovo.com///compare/v1.10.21...v1.10.22) (2021-02-03)
+
+
+### Features
+
+* **ai meeting:** add icon for smart appearance ([a5bfb2a](https://bitbucket.tc.lenovo.com///commit/a5bfb2a5160dd4374073cfc9acaa2ffcd61ec138))
+* **SMB:** add metrics for smart appearance ([c9ce049](https://bitbucket.tc.lenovo.com///commit/c9ce0499837cd03acb391745f37bebcfb6d3938a))
+* **SMB:** basic function for smart appearance ([153f898](https://bitbucket.tc.lenovo.com///commit/153f898a126195154d954915f4d13a0328682a0c))
+* **SMB:** create a basic UI for smart appearance ([c13034e](https://bitbucket.tc.lenovo.com///commit/c13034e9e6b44e6f3809af061f2420b187ddf99b))
+* **SMB:** machine judgement for smart appearance ([c4271a6](https://bitbucket.tc.lenovo.com///commit/c4271a69c48417f70c51403bcc102c0008f3e9fc))
+* **SMB:** narrator for smart appearance ([49b90a2](https://bitbucket.tc.lenovo.com///commit/49b90a2704a7be21cc50fd3c650487571b3614b4))
+* **SMB:** responsive ui for smart appearance ([c3296ed](https://bitbucket.tc.lenovo.com///commit/c3296ed41d0e4904b02cb78f173116ba06e42ab5))
+
+
+### Bug Fixes
+
+* update material variable spelling by using 11.1.1 ([42364c9](https://bitbucket.tc.lenovo.com///commit/42364c9a2387306cd67cb32f0807abc7cfb96d22))
+* use material input to replace the origin input box ([10c06d4](https://bitbucket.tc.lenovo.com///commit/10c06d4d8af40816a9426e310019855a4f7ce443))
+
 ### [1.10.21](https://bitbucket.tc.lenovo.com///compare/v1.10.20...v1.10.21) (2021-02-02)
 
 
