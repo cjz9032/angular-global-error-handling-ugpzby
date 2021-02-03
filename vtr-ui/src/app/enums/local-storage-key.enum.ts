@@ -334,4 +334,7 @@ export enum LocalStorageKey {
 	LightingProfileByIdDefault1 = '[LocalStorageKey] LightingProfileByIdDefault1',
 	LightingProfileByIdDefault2 = '[LocalStorageKey] LightingProfileByIdDefault2',
 	LightingProfileByIdDefault3 = '[LocalStorageKey] LightingProfileByIdDefault3',
+
+	//SMB
+	SmartAppearanceInstalled = '[LocalStorageKey] SmartAppearanceInstalled',
 }

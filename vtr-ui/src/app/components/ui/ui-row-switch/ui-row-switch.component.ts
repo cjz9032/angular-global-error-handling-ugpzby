@@ -62,6 +62,7 @@ export class UiRowSwitchComponent
 	@Output() readMoreClick = new EventEmitter<boolean>();
 	@Output() tooltipClick = new EventEmitter<boolean>();
 	@Output() resetClick = new EventEmitter<Event>();
+	@Output() customButtonClick = new EventEmitter<Event>();
 	@Input() toolTipStatus = false;
 	@Input() isDisabled = false;
 	@Input() metricsParent = '';
@@ -71,6 +72,8 @@ export class UiRowSwitchComponent
 	@Input() fnCtrltoolTip = false;
 	@Input() tooltipContent = [];
 	@Input() headingLevel: number;
+	@Input() showCustomButton = false;
+	@Input() customButtonText = '';
 
 	public contentExpand = false;
 	@Input() isMetricsEnabled = true;
@@ -200,6 +203,10 @@ export class UiRowSwitchComponent
 
 	public onResetClick($event: Event) {
 		this.resetClick.emit($event);
+	}
+
+	public onCustomButtonClick($event: Event) {
+		this.customButtonClick.emit($event);
 	}
 
 	public onLinkClick(linkPath) {

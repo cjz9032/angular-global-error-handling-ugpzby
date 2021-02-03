@@ -20,11 +20,13 @@ import { UiCircleRadioWithCheckBoxListModel } from '../../../../ui/ui-circle-rad
 import { DolbyAudioToggleCapability } from '../../../../../data-models/device/dolby-audio-toggle-capability';
 import CommonMetricsModel from '../../../../../data-models/common/common-metrics.model';
 import { AudioVendorService } from '../../../page-device-settings/children/subpage-device-settings-audio/audio-vendor.service';
+import { WinRT } from '@lenovo/tan-client-bridge';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 
 @Component({
 	selector: 'vtr-subpage-meeting-manager',
 	templateUrl: './subpage-meeting-manager.component.html',
-	styleUrls: ['./subpage-meeting-manager.component.scss']
+	styleUrls: ['./subpage-meeting-manager.component.scss'],
 })
 export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	@Output() tooltipClick = new EventEmitter<boolean>();
@@ -49,6 +51,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	eCourseLoader = true;
 	isNewplugin = true;
 	microphoneModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	isLSAInstalled = false; // Smart appearance
 
 	headerMenuItems = [
 		{
@@ -101,8 +104,9 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private batteryService: BatteryDetailService,
 		private localCacheService: LocalCacheService,
-		private deviceService: DeviceService,
-		private audioVendorService: AudioVendorService
+		public deviceService: DeviceService,
+		private audioVendorService: AudioVendorService,
+		private metricsService: MetricService
 	) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
@@ -175,7 +179,6 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		// this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 	}
 
-
 	launchPanel() {
 		this.audioVendorService.launchPanel();
 	}
@@ -189,11 +192,12 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		this.initMicrophoneFromCache();
 		this.getMicrophoneSettingsAsync();
 		this.startMicrophoneMonitor();
+		this.initLSA();
 	}
 
 	private onNotification(notification: AppNotification) {
 		if (notification) {
-			const {type, payload} = notification;
+			const { type, payload } = notification;
 			switch (type) {
 				case LocalStorageKey.WelcomeTutorial:
 					if (payload.page === 2) {
@@ -270,7 +274,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				this.audioService
 					.setMicrophoneVolume(volume)
 					.then((response) => {
-						this.logger.info('onMicrophoneVolumeChange', {response, volume});
+						this.logger.info('onMicrophoneVolumeChange', { response, volume });
 					})
 					.catch((error) => {
 						this.logger.error('onMicrophoneVolumeChange', error.message);
@@ -399,7 +403,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 
 	startMonitorHandler(microphone: Microphone) {
 		// because microphone object only contains the changed properies
-		this.microphoneProperties = {...this.microphoneProperties, ...microphone};
+		this.microphoneProperties = { ...this.microphoneProperties, ...microphone };
 		// this.microphoneProperties = microphone;
 		// update microphone mode
 		if (this.microphoneProperties.currentMode !== '') {
@@ -566,6 +570,83 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				this.headerMenuItems,
 				'microphone'
 			);
+		}
+	}
+
+	// private defaultAudioCaptureDeviceChanged(args: any) {
+	// 	this.getMicrophoneSettingsAsync();
+	// }
+
+	initVisibility() {
+		try {
+			if (!this.dolbyModeResponse.available) {
+				this.headerMenuItems = this.commonService.removeObjFrom(
+					this.headerMenuItems,
+					'audio'
+				);
+				this.checkMenuItemsLength();
+			}
+		} catch (error) {
+			this.logger.exception('initVisibility', error.message);
+		}
+	}
+
+	checkMenuItemsLength() {
+		if (this.headerMenuItems.length === 1) {
+			this.headerMenuItems = [];
+		}
+	}
+
+	initLSA() {
+		this.isLSAInstalled = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SmartAppearanceInstalled,
+			false
+		);
+		WinRT.queryUriSupport(
+			'lenovo-smartappearance:',
+			'E0469640.SmartAppearance_5grkq8ppsgwt4'
+		).then((result) => {
+			switch (result) {
+				case 0:
+				case 3:
+					this.isLSAInstalled = true;
+					break;
+				default:
+					this.isLSAInstalled = false;
+					break;
+			}
+		});
+	}
+
+	smartAppearanceButtonClick() {
+		this.launchOrDownloadSmartAppearance();
+		const metricsData = {
+			ItemParent: 'Page.MeetingManager',
+			metricsEvent: 'FeatureClick',
+			ItemName: this.isLSAInstalled
+				? 'SmartAppearanceLaunchClick'
+				: 'SmartAppearanceDownloadClick',
+		};
+		this.metricsService.sendMetrics(metricsData);
+	}
+
+	smartAppearanceBannerButtonClick() {
+		this.launchOrDownloadSmartAppearance();
+		const metricsData = {
+			ItemParent: 'Page.MeetingManager',
+			metricsEvent: 'FeatureClick',
+			ItemName: this.isLSAInstalled
+				? 'SmartAppearanceBannerLaunchClick'
+				: 'SmartAppearanceBannerDownloadClick',
+		};
+		this.metricsService.sendMetrics(metricsData);
+	}
+
+	launchOrDownloadSmartAppearance() {
+		if (this.isLSAInstalled) {
+			WinRT.launchUri('lenovo-smartappearance:');
+		} else {
+			WinRT.launchUri('ms-windows-store://pdp/?productid=9NRLFDZ54PZB');
 		}
 	}
 }

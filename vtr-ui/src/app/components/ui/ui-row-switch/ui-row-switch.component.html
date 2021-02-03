@@ -8,8 +8,8 @@
 		[ngClass]="{'vtr-disabled': disabled}">
 		<div class="row m-0 d-flex justify-content-between position-relative">
 			<div class="vtr-col-pad"
-				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton),
-					'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible),
+				[ngClass]="{'flex-grow-1': (isSwitchVisible && !resetTextAsButton || showCustomButton),
+					'col-md-11 col-11':(!resetTextAsButton && !isSwitchVisible && !showCustomButton),
 					'col-md-7': (resetTextAsButton && !isSwitchVisible),
 					'col-md-10':type===undefined }">
 				<div class="container-fluid p-0">
@@ -84,8 +84,10 @@
 
 			<div class="vtr-row-switch"
 				[ngClass]="{'flex-grow-0 d-flex justify-content-end': (isSwitchVisible && !resetTextAsButton),
-				'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible),
-				'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible)}">
+				'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible && !showCustomButton),
+				'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible),
+				'mw-50': showCustomButton}"
+				>
 				<div class="p-0"
 					[ngClass]="{'ml-auto': type!=='Camera'}"
 					*ngIf="resetText.length > 0">
@@ -105,6 +107,24 @@
 					</button>
 
 				</div>
+				<div *ngIf="showCustomButton" class="mw-100">
+					<button id="{{switchId+ '-custom-btn'}}"
+						mat-customize-button
+						color="primary"
+						class="w-100"
+						tabindex="0"
+						type="button"
+						[disabled]="disabledAll"
+						(click)="onCustomButtonClick($event)"
+						(keydown.enter)="onCustomButtonClick($event)"
+						[attr.aria-disabled]="disabledAll"
+						[attr.aria-label]="title"
+						[matTooltip]="customButtonText"
+						matTooltipClass="vtr-system-tooltip">
+						{{ customButtonText | uppercase }}
+					</button>
+				</div>
+
 				<div class=""
 					*ngIf="isSwitchVisible">
 					<vtr-ui-custom-switch [componentId]="switchId"

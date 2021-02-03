@@ -200,17 +200,25 @@
 					</ul>
 				</vtr-container-collapsible>
 			</div>
-			<div class="pt-5 content-card" id="smartAppearance">
+			<div *ngIf="deviceService.supportSmartAppearance" class="pt-5 content-card" id="smartAppearance">
 				<vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
-										   [cardTitle]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
-										   componentName="Smart Appearance"
-										   [isCollapsed]="false" [allowCollapse]="true"
-										   [theme]="'white'" [tabIndex]="0">
-					<ul class="list-group list-group-flush">
-						<li class="common-li-padding">
-							Here is smart appearance
-						</li>
-					</ul>
+					[cardTitle]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
+					componentName="Smart Appearance"
+					[isCollapsed]="false" [allowCollapse]="true"
+					[theme]="'white'" [tabIndex]="0">
+					<vtr-ui-row-switch
+						[title]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
+						componentName="smart appearance"
+						[caption]="'smb.meetingExperience.meetingManager.smartAppearance.caption' | translate"
+						[showCustomButton]="true"
+						[customButtonText]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate"
+						[type]="'SmartAppearance'"
+						[isSwitchVisible]="false"
+						[isLastChild]="true"
+						[leftIcon]="['icomoon', 'icomoon-smart-face']"
+						[switchId]="'productivity-meeting-appearance'"
+						(customButtonClick)="smartAppearanceButtonClick()">
+					</vtr-ui-row-switch>
 				</vtr-container-collapsible>
 			</div>
 		</div>
@@ -219,7 +227,20 @@
 	<div class="col-lg-5 col-xl-4 vtr-page-column vtr-subpage-right-column">
 		<div class="col mt-40">
 			<div>banner</div>
-			<div>banner</div>
+			<div *ngIf="deviceService.supportSmartAppearance" 
+				class="right-banner banner-smart-appearance">
+				<h3 id="productivity-meeting-appearance-banner-title" class="title">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.title' | translate}}</h3>
+				<p id="productivity-meeting-appearance-banner-description" role="text" class="description">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.description' | translate}}</p>
+				<button id="productivity-meeting-appearance-banner-button"
+					mat-customize-button color="accent"
+					class="m-0 w-100"
+					(click)="smartAppearanceBannerButtonClick()"
+					[matTooltip]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate"
+					matTooltipClass="vtr-system-tooltip"
+					aria-labelledby="productivity-meeting-appearance-banner-title">
+					{{(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate | uppercase}}
+				</button>
+			</div>
 		</div>
 	</div>
 </div>
