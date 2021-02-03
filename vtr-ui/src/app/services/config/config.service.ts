@@ -790,4 +790,12 @@ export class ConfigService {
 			?.subitems?.filter((m) => !m.hide);
 		return menuCreatorCentre;
 	}
+
+	getMenuForMeetingManager() {
+		const menuCreatorCentre = cloneDeep(this.menu)
+			?.find((m) => m.id === MenuID.smb)
+			?.subitems.find((m) => m.id === MenuID.meetingExperience)
+			?.subitems?.filter((m) => !m.hide);
+		return menuCreatorCentre;
+	}
 }
