@@ -114,6 +114,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			(key) => this.hwOCInfo[key].isSupportOCFeature = this.localCacheService.getLocalCacheValue(this.hwOCInfo[key].featureLocalCache, false)
 			&& this.localCacheService.getLocalCacheValue(this.hwOCInfo[key].driverLocalCache, false)
 		);
+		if (this.hwVersionInfo === 1) {
+			this.cpuInfo.isSupportOCFeature = this.hwOCInfo.cpuOverClockInfo.isSupportOCFeature;
+			this.gpuInfo.isSupportOCFeature = this.hwOCInfo.gpuOverClockInfo.isSupportOCFeature;
+			this.vramInfo.isSupportOCFeature = this.hwOCInfo.vramOverClockInfo.isSupportOCFeature;
+		}
 		this.gpuMemorySize = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMemorySize, this.hwVersionInfo === 1 ? '8GHz' : '8GB');
 		this.ramSize = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramSize, this.hwVersionInfo === 1 ? '16GHz' : '16GB');
 		this.cpuUtilization = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuUtilization, '10%');
@@ -334,29 +339,6 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 					this.hds = hwInfo.diskList;
 					this.localCacheService.setLocalCacheValue(LocalStorageKey.disksList, this.hds);
 				}
-
-				// TODO version 3.6 new tips
-				// if (this.cpuModuleName === 'x60') {
-				// 	this.ver = 1;
-				// }
-				// this.cpuInfo = {
-				// 	isOverClocking: true,
-				// 	modal: this.cpuModuleName,
-				// 	frequency: '2.4/4.3Ghz',
-				// 	usage: '63%',
-				// };
-				// this.gpuInfo = {
-				// 	isOverClocking: true,
-				// 	modal: this.gpuModuleName,
-				// 	frequency: '2.4/4.3Ghz',
-				// 	usage: '',
-				// };
-				// this.ramInfo = {
-				// 	isOverClocking: false,
-				// 	modal: this.memoryModuleName,
-				// 	frequency: '2.4/4.3Ghz',
-				// 	usage: '',
-				// };
 			});
 		} catch (err) {
 			this.logger.error('Widget-SystemMonitor-GetMachineInfo error: ', err.message);
