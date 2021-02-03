@@ -3,4 +3,9 @@
     ul.list-group {
 		list-style-type: none;
 	}
+	.vtr-subpage-left-column{
+		::ng-deep .left-border{
+			border-left: 0.7rem solid $smb_navy;
+		}
+	}
 }

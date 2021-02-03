@@ -2,72 +2,71 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { GuardService } from 'src/app/services/guard/guardService.service';
-import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
+import { CommonService } from 'src/app/services/common/common.service';
+import { ConfigService } from 'src/app/services/config/config.service';
+import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 
 @Component({
-  selector: 'vtr-page-creator-centre',
-  templateUrl: './page-creator-centre.component.html',
-  styleUrls: ['./page-creator-centre.component.scss']
+	selector: 'vtr-page-creator-centre',
+	templateUrl: './page-creator-centre.component.html',
+	styleUrls: ['./page-creator-centre.component.scss'],
 })
 export class PageCreatorCentreComponent implements OnInit {
+	@ViewChild('hsRouterOutlet', { static: false }) hsRouterOutlet: ElementRef;
 
-  @ViewChild('hsRouterOutlet', { static: false }) hsRouterOutlet: ElementRef;
+	constructor(
+		private translate: TranslateService,
+		private commonService: CommonService,
+		private configService: ConfigService
+	) {}
 
-  constructor(private translate: TranslateService
-  ) {this.menuItems.forEach((m) => {
-			m.label = this.translate.instant(m.label);
-		});
-  }
+	routerSubscription: Subscription;
+	activeElement: HTMLElement;
+	title = 'Creator Centre';
+	back = 'BACK';
+	backarrow = '< ';
+	parentPath = 'smb/creator-centre';
+	private router: Router;
+	menuItems = [];
+	menuItemSubscription: Subscription;
 
-  routerSubscription: Subscription;
-  activeElement: HTMLElement;
-  title = 'Creator Centre';
-  back = 'BACK';
-  backarrow = '< ';
-  parentPath = 'smb/creator-centre';
-  private router: Router;
-  menuItems = [
-		{
-			id: 'creator-settings',
-			label: 'smb.creatorCentre.creatorSettings.title',
-			path: 'creator-settings',
-			subitems: [],
-			active: true,
-		},
-		{
-			id: 'easy-rendering',
-			label: 'smb.creatorCentre.easyRendering.title',
-			path: 'easy-rendering',
-			subitems: [],
-			active: false,
-		},
-		{
-			id: 'color-calibration',
-			label: 'smb.creatorCentre.colorCalibration.title',
-			path: 'color-calibration',
-			subitems: [],
-			active: false,
-		},
-	];
-
-  ngOnInit(): void {
-    this.routerSubscription = this.router.events.subscribe((evt) => {
+	ngOnInit(): void {
+		this.getMenuItems();
+		this.menuItemSubscription = this.commonService.notification.subscribe(
+			(notification: AppNotification) => {
+				this.onNotification(notification);
+			}
+		);
+		this.routerSubscription = this.router.events.subscribe((evt) => {
 			if (!(evt instanceof NavigationEnd)) {
 				return;
 			}
-			// focus same active link element after route change , content loaded.
-			/* if ((evt instanceof NavigationEnd)) {
-				if (this.activeElement) {
-					this.activeElement.focus();
-				}
-			} */
 		});
-  }
+	}
 
-  onRouteActivate($event, hsRouterOutlet: HTMLElement) {
+	onRouteActivate($event, hsRouterOutlet: HTMLElement) {
 		// On route change , change foucs to immediate next below first tabindex on route change response
 		this.activeElement = document.activeElement as HTMLElement;
 	}
 
+	private onNotification(notification: AppNotification) {
+		if (notification) {
+			switch (notification.type) {
+				case MenuItemEvent.MenuItemChange:
+					this.getMenuItems();
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+	private getMenuItems() {
+		this.menuItems = this.configService.getMenuForCreatorCentre();
+		this.menuItems.forEach((m) => {
+			m.label = this.translate.instant(m.label);
+			m.path = m.path.split('/')[m.path.split('/').length - 1];
+		});
+	}
 }

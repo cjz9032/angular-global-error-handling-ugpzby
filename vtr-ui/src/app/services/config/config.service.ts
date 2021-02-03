@@ -158,10 +158,12 @@ export class ConfigService {
 				assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.IsSmartAssistSupported,
-					assistCapability.isSuperResolutionSupported.available);
+					assistCapability.isSuperResolutionSupported.available
+				);
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.SmartAssistCapability,
-					assistCapability);
+					assistCapability
+				);
 
 				this.menu = await this.updateHide(resultMenu, SegmentConst.Gaming, this.isBetaUser);
 
@@ -196,11 +198,19 @@ export class ConfigService {
 	}
 
 	private initializeSMB(menu: MenuItem[]) {
-		if(this.deviceService.machineInfo) {
+		if (this.deviceService.machineInfo) {
 			this.supportFilter(menu, MenuID.smb, this.deviceService.isSMB);
-			this.supportFilter(menu, MenuID.creatorCentre, this.deviceService.supportCreatorSettings);
+			this.supportFilter(
+				menu,
+				MenuID.creatorCentre,
+				this.deviceService.supportCreatorSettings
+			);
 			this.supportFilter(menu, MenuID.easyRendering, this.deviceService.supportEasyRendering);
-			this.supportFilter(menu, MenuID.colorCalibration, this.deviceService.supportColorCalibration);
+			this.supportFilter(
+				menu,
+				MenuID.colorCalibration,
+				this.deviceService.supportColorCalibration
+			);
 		}
 	}
 
@@ -225,7 +235,6 @@ export class ConfigService {
 				item.hide = false;
 			}
 		});
-
 	}
 
 	private async canShowSearch() {
@@ -233,7 +242,7 @@ export class ConfigService {
 	}
 
 	private async initializeAppSearchItem(menu: any) {
-		let showSearch = await this.canShowSearch();
+		const showSearch = await this.canShowSearch();
 		return this.supportFilter(menu, 'app-search', showSearch);
 	}
 
@@ -244,9 +253,7 @@ export class ConfigService {
 	): Promise<MenuItem[]> {
 		const locale: string = machineInfo && machineInfo.locale ? machineInfo.locale : 'en';
 		const chsHypsis = await this.hypSettings.getFeatureSetting('ConnectedHomeSecurity').then(
-			(result) => {
-				return (result || '').toString() === 'true';
-			},
+			(result) => (result || '').toString() === 'true',
 			(error) => {
 				this.logger.error('ConfigService.initShowCHSMenu: promise rejected ', error);
 			}
@@ -335,8 +342,8 @@ export class ConfigService {
 			securityMenu.subitems,
 			'wifi-security',
 			!securityMenuCondition.isSmode &&
-			!securityMenuCondition.isArm &&
-			securityMenuCondition.wifiIsSupport
+				!securityMenuCondition.isArm &&
+				securityMenuCondition.wifiIsSupport
 		);
 	}
 
@@ -705,8 +712,8 @@ export class ConfigService {
 	updateSystemUpdatesMenu() {
 		const showSystemUpdate = Boolean(
 			this.adPolicyService.IsSystemUpdateEnabled &&
-			!this.deviceService.isSMode &&
-			!this.deviceService.isGaming
+				!this.deviceService.isSMode &&
+				!this.deviceService.isGaming
 		);
 		this.supportFilter(this.menu, 'system-updates', showSystemUpdate);
 	}
@@ -776,4 +783,11 @@ export class ConfigService {
 		}
 	}
 
+	getMenuForCreatorCentre() {
+		const menuCreatorCentre = cloneDeep(this.menu)
+			?.find((m) => m.id === MenuID.smb)
+			?.subitems.find((m) => m.id === MenuID.creatorCentre)
+			?.subitems?.filter((m) => !m.hide);
+		return menuCreatorCentre;
+	}
 }
