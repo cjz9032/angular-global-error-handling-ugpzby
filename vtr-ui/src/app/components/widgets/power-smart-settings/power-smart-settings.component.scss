@@ -62,6 +62,25 @@
 		margin-right: 0rem;
 		max-width: 100%;
 		min-height: 2.8rem;
+		.gpu-overclocking-checkbox {
+			margin-top: 17.5px;
+			::ng-deep .auto-set-checkbox {
+				margin-top: 0px !important;
+			}
+			.gpu-overclocking-description {
+				margin-top: 17.5px;
+				margin-bottom: 8.5px;
+				.description {
+					font-size: 14px;
+					color: #34495E;
+					font-weight: 400;
+					opacity: 0.8;
+				}
+				::ng-deep p {
+					margin-bottom: 0px;
+				}
+			}
+		}
 	}
 
 	.alignment {
@@ -235,7 +254,6 @@
 		color: #34495e;
 		margin-right: 0rem;
 		max-width: 100%;
-		min-height: 2.8rem;
 	}
 	.img-fluid {
 		@media #{$white-on-black} {

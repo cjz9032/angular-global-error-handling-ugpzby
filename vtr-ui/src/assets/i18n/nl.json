@@ -1230,6 +1230,11 @@
 								"list2": "De modus Energiebeheer van Windows wordt weergegeven. Schuif de schuifregelaar om te kiezen tussen optimale tijd of optimale prestaties."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"GPU overklokken inschakelen in de stand Extreme prestaties.",
+							"description1":"Selecteer deze optie om het GPU-geheugen te overklokken met 140 MHz, dat wordt beschouwd als een optimale 'stabiele' instelling. De prestaties van games en de beeldsnelheid kunnen hiermee met 10%-30% toenemen.",
+					        "description2":"Opmerking: De verbeteringen in prestaties en beeldsnelheid kunnen variëren en hangen af van de verschillende games/apps en andere factoren. Ook het energieverbruik, de oppervlaktemperatuur van de computer en het ventilatorgeluid kunnen hierdoor toenemen. Wanneer overklokken is ingeschakeld, kan Lenovo de stabiliteit en snelheidsverbetering niet garanderen."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Schakel de automatische overgang in naar de werkstand \"Extreme prestaties\". Als de computer is ingeschakeld, kan de \"Extreme prestaties\"-modus worden ingevoerd, afhankelijk van de systeembelasting en het gebruikersscenario.",

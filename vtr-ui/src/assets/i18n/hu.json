@@ -1230,6 +1230,11 @@
 								"list2": "Megjelenik a Windows Energiaséma módja; a csúszka mozgatásával válthat az optimális idő és az optimális teljesítmény között."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"A GPU-túlpörgetés engedélyezése „Különleges Teljesítmény” üzemmódban.",
+							"description1":"Válassza ki a GPU memóriaórájának 140 MHz-cel való túlpörgetéséhez, ez ideális, „stabil” értéknek számít. A játékteljesítmény és a képkockasebesség 10-30%-kal növekedhet.",
+					        "description2":"Megjegyzés: A teljesítmény és a képkockasebesség javulása a különböző játékoktól/alkalmazásoktól és egyéb tényezőktől függően változhat. Ennek megfelelően nőhet az energiafogyasztás, a számítógép felületi hőmérséklete és a ventilátor zaja is. A túlpörgetés engedélyezése esetén a Lenovo nem garantálja a stabilitás és a teljesítmény javulását."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "A \"Különleges Teljesítmény\" mód automatikus bekapcsolásának engedélyezése. Ha engedélyezve van, a rendszer terhelésétől és a használat típusától függően előfordulhat, hogy a számítógép belép a \"Különleges Teljesítmény\" módba.",

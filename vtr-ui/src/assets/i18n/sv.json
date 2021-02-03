@@ -1230,6 +1230,11 @@
 								"list2": "Läget Energialternativ i Windows visas. Dra reglaget för att välja mellan optimal tid och optimal prestanda."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Aktivera GPU-överklockning i läget Extrem kapacitet.",
+							"description1":"Du kan välja att överklocka grafikprocessorns minnesklocka med 140 MHz, vilket räknas som en stabil frekvens. Spelprestandan och bildfrekvensen kan öka med 10–30 %.",
+					        "description2":"Obs! Förbättringen av prestanda och bildfrekvens kan variera beroende på spel/appar och andra faktorer. Också strömförbrukning, datorns utvändiga temperatur och fläktljud kan öka på motsvarande sätt. Lenovo kan inte garantera stabiliteten och förbättringen av datorns prestanda när överklockning är aktiverad."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Aktivera automatisk övergång till läget Extrem prestanda. När detta är aktiverat kan datorn sättas i läget Extrem prestanda beroende på systembelastning och användarscenario.",

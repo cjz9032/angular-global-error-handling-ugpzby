@@ -1340,6 +1340,11 @@
 								"list2": "Aparecerá el modo de energía de Windows, deslice el control deslizante para elegir entre duración óptima o rendimiento óptimo."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Habilitar la aceleración de GPU en la modalidad de rendimiento extremo.",
+							"description1":"Seleccione para activar la aceleración del reloj de memoria de la GPU a 140 MHz, una configuración considerada “estable”. El rendimiento de los juegos y la velocidad de cuadros pueden aumentar entre un 10 % y un 30 %.",
+					        "description2":"Nota: las mejoras en el rendimiento y la velocidad de imagen pueden variar según diferentes juegos/aplicaciones y otros factores. El consumo de energía, la temperatura de la superficie del sistema y el ruido del ventilador también pueden aumentar en consecuencia. Lenovo no garantiza la estabilidad ni la mejora en el rendimiento cuando la aceleración está habilitada."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Active la transición automática a la modalidad \"Rendimiento extremo\". Cuando está habilitada, el sistema puede entrar en modalidad \"Rendimiento extremo\", según la carga del sistema y el escenario del usuario.",

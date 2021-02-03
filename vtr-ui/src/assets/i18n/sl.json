@@ -1230,6 +1230,11 @@
 								"list2": "Pojavil se bo način porabe energije za Windows; z drsnikom izberite med optimalnim časom in optimalno zmogljivostjo."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Omogočite zvišanje takta GPE v načinu izjemne zmogljivosti.",
+							"description1":"Izberite, če želite takt pomnilnika GPE zvišati za 140 MHz, kar velja za »stabilno« optimalno točko. Učinkovitost delovanja iger in hitrost sličic se lahko povečata za 10–30 %.",
+					        "description2":"Opomba: izboljšave učinkovitosti delovanja in hitrosti sličic se lahko razlikujejo glede na različne igre/aplikacije in druge dejavnike. Temu primerno se lahko povečajo tudi poraba energije, temperatura računalnika in šum ventilatorja. Lenovo ne zagotavlja stabilnosti in izboljšanja učinkovitosti delovanja, ko je omogočeno zvišanje takta procesorja."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Omogočite samodejni prehod v način »Izjemna zmogljivost«. Ko je omogočen, računalnik lahko preklopi v način »Izjemna zmogljivost«, odvisno od obremenitve sistema in scenarija uporabe.",

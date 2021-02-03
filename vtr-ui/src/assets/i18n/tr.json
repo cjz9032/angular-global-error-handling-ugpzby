@@ -1230,6 +1230,11 @@
 								"list2": "Windows Güç Kipi göründüğünde en iyi süre veya en iyi performans arasında seçim yapmak için kaydırıcıyı kullanın."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Yüksek performans kipinde GPU hız aşırtmayı etkinleştir.",
+							"description1":"GPU bellek saatinizin hız aşırtması için “kararlı” etkili nokta olarak kabul edilen 140 MHz değerini seçin. Oyun performansı ve kare hızı %10-%30 arasında artabilir.",
+					        "description2":"Not: Performans ve kare hızındaki iyileşmeler, farklı oyunlara/uygulamalara ve diğer faktörlere göre değişiklik gösterebilir. Güç tüketimi, bilgisayarın yüzey sıcaklığı ve fan gürültüsü de buna göre artabilir. Lenovo, hız aşırtma etkinleştirildiğinde kararlılık ve performansta iyileşme olacağını garanti etmez."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "\"Yüksek performans\" kipine otomatik geçişi etkinleştirin. Etkinleştirildiğinde, bilgisayarınız sistem yüküne ve kullanıcı senaryosuna bağlı olarak “Yüksek performans” kipine girebilir.",

@@ -1230,6 +1230,11 @@
 								"list2": "Va apărea modul de alimentare Windows. Mutaţi glisorul pentru a alege între durata optimă sau performanţa optimă."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Activați suprasolicitarea GPU în modul Performanță extremă.",
+							"description1":"Selectați pentru a face overclock ceasului memoriei GPU cu 140 MHz, la un nivel considerat „stabil”. Performanța de joc și frecvența cadrelor pot crește cu 10 % – 30 %.",
+					        "description2":"Notă: îmbunătățirile în materie de performanță și de frecvență a cadrelor pot varia în funcție de diferitele jocuri sau aplicații și de alți factori. De asemenea, în consecință, consumul de energie, temperatura suprafeței computerului și zgomotul ventilatorului pot să crească. Lenovo nu garantează stabilitatea și îmbunătățirea performanței atunci când overclockingul este activat."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Activați trecerea automată la modul „Performanță extremă”. Când este activat, computerul dvs. poate intra în modul „Performanță extremă”, în funcție de încărcarea sistemului și de scenariul utilizatorului.",

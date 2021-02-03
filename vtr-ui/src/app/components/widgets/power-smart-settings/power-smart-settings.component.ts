@@ -19,6 +19,7 @@ import { UiCircleRadioWithCheckBoxListModel } from '../../ui/ui-circle-radio-wit
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { MatDialog } from '@lenovo/material/dialog';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 
 const thinkpad = 1;
 const ideapad = 0;
@@ -57,6 +58,8 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 	public smartSettingsCapability = false;
 	public showMoreLessDytc6Clicked = false;
 	private isMobileWorkstation = false;
+	public gpuOverclocking = new FeatureStatus(false, false);
+	public isIntelligentCoolingPerformance = true;
 
 	private readonly batterySavingModeId = 'quiteBatterySaving';
 	private readonly performanceModeId = 'radioICPerformance';
@@ -88,6 +91,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 		} else if (ideapad === this.machineType) {
 			this.add = 10; // Ideapad
 			this.initPowerSmartSettingsForIdeaPad();
+			this.getGpuOverclockingState();
 		} else {
 			this.showPowerSmartSettings(false);
 		}
@@ -386,6 +390,12 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 						'device.deviceSettings.power.powerSmartSettings.intelligentCooling.selectedModeText.batterySaving15';
 				}
 				break;
+		}
+		if (mode === IntelligentCoolingModes.Performance) {
+			this.isIntelligentCoolingPerformance = true;
+		}
+		else {
+			this.isIntelligentCoolingPerformance = false;
 		}
 		this.selectedModeText = this.translate.instant(text);
 		this.cache.selectedModeText = text;
@@ -930,6 +940,7 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		this.stopMonitorForICIdeapad();
+		this.stopMonitorGpuOverclockingStatus();
 		clearInterval(this.amtCapabilityInterval);
 	}
 
@@ -1067,4 +1078,83 @@ export class PowerSmartSettingsComponent implements OnInit, OnDestroy {
 			}
 		}
 	}
+
+	public getGpuOverclockingState() {
+		try {
+			this.powerService.getGpuOverclockingState().then((response: any) => {
+				const obj = JSON.parse(response);
+				    if (obj && obj.errorCode === 0) {
+					    this.gpuOverclocking.available = (obj.available === 7);
+					    this.gpuOverclocking.status = obj.enabled;
+					}
+					if (this.gpuOverclocking.available) {
+						this.startMonitorGpuOverclockingStatus();
+					}
+					this.logger.info(`getGpuOverclockingState return data:`, response);
+				}).catch((error) => {
+					this.logger.error('getGpuOverclockingState error', error.message);
+				});
+			} catch (error) {
+				this.logger.error('getGpuOverclockingState error' + error.message);
+			}
+		}
+		
+		public	onGpuOverclockingStateChange(value: boolean) {
+			try {
+				this.gpuOverclocking.status = value;
+				this.powerService.setGpuOverclockingState(value).then((response: number) => {
+					this.logger.info(`onGpuOverclockingStateChange return data:`, response);
+				}).catch((error) => {
+					this.logger.error('onGpuOverclockingStateChange error', error.message);
+				});
+			} catch (error) {
+				this.logger.error('onGpuOverclockingStateChange error' + error.message);
+			}
+		}
+
+		public startMonitorGpuOverclockingStatus() {
+			try {
+				this.powerService
+				.startMonitorGpuOverclockingStatus(this.gpuOverclockingStatusChange.bind(this))
+				.then((value: number) => {
+					this.logger.info('startMonitorGpuOverclockingStatus.then', value);
+				})
+				.catch((error) => {
+					this.logger.error('startMonitorGpuOverclockingStatus error', error.message);
+				});
+			} catch (error) {
+				this.logger.error('startMonitorGpuOverclockingStatus error', error.message);
+			}
+		}
+		
+		public gpuOverclockingStatusChange(data: any) {
+			try {
+				const obj = JSON.parse(data);
+				if (obj && obj.errorCode === 0) {
+					this.gpuOverclocking.available = obj.available;
+					this.gpuOverclocking.status = obj.enabled;
+				}
+				this.logger.info(`gpuOverclockingStatusChange return data:`, data);
+			} catch (error) {
+				this.logger.error('gpuOverclockingStatusChange error', error.message);
+			}
+		}
+
+		public stopMonitorGpuOverclockingStatus() {
+			try {
+				if (this.powerService.isShellAvailable) {
+					this.powerService
+					.stopMonitorGpuOverclockingStatus()
+					.then((value: number) => {
+						this.logger.info('stopMonitorGpuOverclockingStatus.then', value);
+					})
+					.catch((error) => {
+						this.logger.error('stopMonitorGpuOverclockingStatus', error.message);
+					});
+				}
+			} catch (error) {
+				this.logger.error('stopMonitorGpuOverclockingStatus error', error.message);
+			}
+		}
+
 }

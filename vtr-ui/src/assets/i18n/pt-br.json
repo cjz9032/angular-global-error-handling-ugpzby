@@ -1340,6 +1340,11 @@
 								"list2": "O modo de Energia do Windows será exibido, deslize o controle deslizante para escolher entre o tempo ideal ou o desempenho ideal."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Ative o overclocking da GPU no modo Desempenho extremo.",
+							"description1":"Selecione para fazer o overclock da sua memória GPU em 140 MHz, um ponto ideal considerado \"estável\". O desempenho do jogo e a taxa de quadros podem aumentar em 10% a 30%.",
+					        "description2":"Nota: as melhorias no desempenho e na taxa de quadros podem variar de acordo com diferentes jogos/aplicativos e outros fatores. O consumo de energia, a temperatura da superfície do computador e o ruído do ventilador também podem aumentar de acordo. A Lenovo não garante a estabilidade e melhoria de desempenho quando o overclocking está habilitado."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Ative a transição automática para o modo \"Desempenho extremo\". Quando ativado, o computador pode entrar no modo \"Desempenho extremo\", dependendo da carga do sistema e do cenário do usuário.",

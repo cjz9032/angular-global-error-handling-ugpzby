@@ -1230,6 +1230,11 @@
 								"list2": "Windowsin virtatila tulee näkyviin, ja voit valita optimaalisen ajankohdan tai optimaalisen suorituskyvyn liukusäätimen avulla."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Ota GPU:n ylikellotus käyttöön Erinomainen suorituskyky -tilassa.",
+							"description1":"Valitsemalla tämän vaihtoehdon voit ylikellottaa näytönohjaimen muistikelloa 140 MHz:llä, jota pidetään \"vakaana\" optimaalisena pisteenä. Pelien suorituskyky ja kuvataajuus voivat nousta jopa 10–30 %.",
+					        "description2":"Huomautus: Suorituskyvyn ja kuvataajuuden parannukset saattavat vaihdella pelien/sovellusten ja muiden tekijöiden mukaan. Myös virrankulutus, tietokoneen pintalämpötila ja tuulettimen äänet saattavat nousta. Lenovo ei takaa vakautta tai parempaa suorituskykyä, kun ylikellotus on käytössä."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Ota käyttöön automaattinen siirtyminen \"Erinomainen suorituskyky\" -tilaan. Kun tämä asetus on käytössä, tietokoneesi saattaa siirtyä \"Erinomainen suorituskyky\" -tilaan järjestelmän kuormituksen ja käyttäjäskenaarion mukaan.",

@@ -1367,6 +1367,11 @@
 								"list2": "The windows battery gauge will appear, slide the slider to choose between optimal time or optimal performance."
 							}
 						},
+						"gpuOverclocking": {
+							"checkboxtext":"Enable GPU overclocking in Extreme performance mode.",
+							"description1":"Select to overclock your GPU memory clock by 140 MHz, a deemed “stable” sweet spot. The gaming performance and frame rate may increase by 10%-30%.",
+							"description2":"Note: The improvements in performance and frame rate may vary according to different games/apps and other factors. The power consumption, computer surface temperature, and fan noise might also increase accordingly. Lenovo does not guarantee the stability and performance improvement when overclocking is enabled."
+						},
 						"autoTransition": {
 							"description": {
 								"line1": "Enable auto-transition to \"Extreme performance\" mode. When enabled, your computer might enter \"Extreme performance\" mode, depending on the system load and user scenario.",
