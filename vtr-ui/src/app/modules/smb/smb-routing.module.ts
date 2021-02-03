@@ -12,9 +12,8 @@ import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 const routes: Routes = [
 	{
 		path: '',
-		component: PageMeetingExpirienceComponent,
-		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonArmGuard],
+		redirectTo: 'meeting-experience/meeting-manager',
+		pathMatch: 'full',
 	},
 	{
 		path: 'meeting-experience',
