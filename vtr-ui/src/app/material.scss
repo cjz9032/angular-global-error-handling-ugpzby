@@ -41,6 +41,12 @@ $mat-van-theme-background: (
 		bg-off-thumb: $shade_blue,
 		bg-disabled: $shade_blue,
 	),
+	form-field: (
+		bg-form-invalid: $text_light,
+		bg-form-disabled: $grey_lighter,
+		bg-select-panel: $light,
+		bg-select-option: rgba($dark, 0.04),
+	),
 );
 
 $mat-van-theme-foreground: (
@@ -106,6 +112,21 @@ $mat-van-theme-foreground: (
 			-0.15px 0px 0px 3.7px $light,
 		),
 	),
+	form-field: (
+		color-select-text: $grey_darker,
+		color-select-disabled-text: $grey_darker,
+		color-select-option-text: $grey_darker,
+		color-select-arrow: $grey_dark,
+		style-select-panel-border: 0.1rem solid $dim_gray,
+		color-form-border-rest: $grey_light,
+		style-form-shadow: 0 0 15px $screen_dark_15,
+		color-form-header: $shade_blue,
+		color-form-border-hover: $grey_dark,
+		color-form-border-focus: $menu_hover,
+		color-form-invalid: $button_red_start,
+		color-form-input: $grey_dark,
+		opacity-form-header: 0.5,
+	),
 );
 $van-theme: (
 	100: $button_gradient_start,
@@ -163,6 +184,20 @@ $van-ui-layout: (
 		layout-spacing: 0.8rem,
 		layout-border-width: 0.1rem,
 		layout-ripple-radius: 0,
+	),
+	form-field: (
+		layout-select-panel-max-height: 25.6rem,
+		layout-select-item-height: 2.5rem,
+		layout-select-panel-padding: 1.5rem,
+		layout-select-arrow-size: 0.5rem,
+		layout-select-arrow-length: 1.2rem,
+		layout-select-arrow-margin: 0.4rem,
+		layout-form-title-font-weight: 600,
+		layout-form-font-size: 1.4rem,
+		layout-form-line-height: 1.5,
+		layout-form-text-padding: 0.5rem,
+		layout-form-label-font-size: 1.2rem,
+		layout-form-label-line-height: 1.125,
 	),
 );
 @include angular-material-layout($van-ui-layout);
