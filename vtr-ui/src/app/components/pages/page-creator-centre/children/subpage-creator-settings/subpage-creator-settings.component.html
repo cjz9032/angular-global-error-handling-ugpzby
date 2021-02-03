@@ -27,8 +27,11 @@
 
 	<div class="col-lg-5 col-xl-4 vtr-subpage-right-column">
 		<div class="col mt-40">
-			<div>auto close banner</div>
-			<div>ITS banner</div>
+			<vtr-promotion-banner *ngIf="intelligentPerformanceVisible"
+				[title]="'smb.creatorCentre.creatorSettings.bannerITS.title' | translate"
+				[description]="'smb.creatorCentre.creatorSettings.bannerITS.desc' | translate"
+				[imgSrc]="'assets/icons/Icon_ITS.png'"
+			></vtr-promotion-banner>
 		</div>
 	</div>
 </div>
