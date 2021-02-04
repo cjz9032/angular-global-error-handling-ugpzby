@@ -23,6 +23,7 @@ import { DeviceService } from '../../services/device/device.service';
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { PromotionBannerComponent } from 'src/app/components/pages/page-creator-centre/children/promotion-banner/promotion-banner.component';
+import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 
 @NgModule({
 	declarations: [
@@ -46,6 +47,7 @@ import { PromotionBannerComponent } from 'src/app/components/pages/page-creator-
 		UiCustomSliderModule,
 		MatButtonModule,
 		MatTooltipModule,
+		UiButtonModule,
 	],
 	exports: [PageLayoutModule],
 	providers: [

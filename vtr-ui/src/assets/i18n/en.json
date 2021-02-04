@@ -5979,7 +5979,37 @@
 				"title":"Meeting Manager",
 				"desc": "This section enables you to automatically optimize or manually configure your AI meeting settings.",
 				"aiMeetingManager":{
-					"title":"AI Meeting Manager"
+					"title":"AI Meeting Manager",
+					"description": "AI meeting manager can perform real-time translation, interpretation, and voice dictation. It can also generate subtitles for videos.",
+					"downloadNow": "DOWNLOAD NOW",
+					"download": "DOWNLOAD",
+					"launch": "LAUNCH",
+					"translation": {
+						"title": "Translation",
+						"description": "Translate speech in online meeting from any meeting software in realtime. You can browse meeting notes during the meeting and save them later. There is also a Subtitle experience."
+					},
+					"voiceToText": {
+						"title": "Voice to Text",
+						"description": "Speak naturally and Voice to Text will do the typing. Write e-mails or documents, or chat in your favorite app. Voice to Text translates as you speak and takes notes for you."
+					},
+					"modalPopUp": {
+						"heading": "Getting started:",
+						"translation": {
+							"point1": "Make sure the AI meeting manager icon is displayed in Windows notification area.​",
+							"point2": "Click the icon and select Translator or Subtitles.​",
+							"point3": "Select your source language and target language.",
+							"point4": "Depending on your need, set the voice input from Speaker or from Microphone,.",
+							"point5": "Click the start button to start translation."
+						},
+						"voiceToText": {
+							"point1": "Make sure the AI meeting manager icon is displayed in Windows notification area.​",
+							"point2": "Open the application where you want to type in text.",
+							"point3": "Click the AI meeting manager icon and select Voice to Text.",
+							"point4": "Select the languages by your need and then click the microphone button to start.",
+							"point5": "Put the cursor in the application you opened and begin to speak."
+						},
+						"closeText": "close"
+					}
 				},
 				"microPhone":{
 					"title":"Microphone"

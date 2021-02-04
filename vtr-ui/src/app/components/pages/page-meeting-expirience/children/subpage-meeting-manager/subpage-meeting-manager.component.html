@@ -18,10 +18,48 @@
 										   componentName="Meeting Manager"
 										   [isCollapsed]="false" [allowCollapse]="true"
 										   [theme]="'white'" [tabIndex]="0">
+                    <div class="row">
+                        <div class="d-flex justify-content-between">
+                            <p class="context">{{'smb.meetingExperience.meetingManager.aiMeetingManager.description' | translate}}</p>
+                            <vtr-ui-button class="install-or-launch-btn"
+								linkId="ai-meeting-manager-install-or-launch-btn"
+								metricsEvent="FeatureClick"
+								[metricsItem]="isAMMInstalled ? 'AiMeetingManagerLaunchButton' : 'AiMeetingManagerDownloadButton'"
+								metricsParent="Productivity.MeetingManager"
+								[isDisabled]="!commonService.isOnline && !isAMMInstalled"
+								[btnHeight]="true"
+								[label]="(isAMMInstalled ?
+									'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
+									'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
+								(onClick)="launchOrDownloadAiMeetingManager()">
+							</vtr-ui-button>
+                        </div>
+                    </div>
 					<ul class="list-group list-group-flush">
 						<li class="common-li-padding">
-							Here is Meeting Manager
-						</li>
+							<vtr-ui-row-switch [switchId]="'ai-metting-manager-translation'"
+                                [isLastChild]="false"
+                                [title]="'smb.meetingExperience.meetingManager.aiMeetingManager.translation.title' | translate"
+                                [caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.translation.description' | translate"
+                                [leftIcon]="['icomoon', 'icomoon-translation']"
+                                [rightIcon]="['far', 'question-circle']"
+                                [aiMeetingManager]="true"
+                                [aiMeetingManagerValue]="translation"
+								[metricsParent]="'Translation'">
+                            </vtr-ui-row-switch>
+                        </li>
+                        <li class="common-li-padding">
+                            <vtr-ui-row-switch [switchId]="'ai-metting-manager-voice-to-text'"
+                                [isLastChild]="true"
+                                [title]="'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.title' | translate"
+                                [caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.description' | translate"
+                                [leftIcon]="['icomoon', 'icomoon-voice-to-text']"
+                                [rightIcon]="['far', 'question-circle']"
+                                [aiMeetingManager]="true"
+                                [aiMeetingManagerValue]="voiceToText"
+                                [metricsParent]="'VoiceToText'">
+                            </vtr-ui-row-switch>
+                        </li>
 					</ul>
 				</vtr-container-collapsible>
 			</div>
