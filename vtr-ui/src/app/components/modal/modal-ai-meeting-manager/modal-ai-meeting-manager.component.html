@@ -1,22 +1,4 @@
 <div class="modal-body vtr-modal-ai-meeting-manager">
-	<div class="row justify-content-end">
-		<a role="button"
-			type="button"
-			href="javascript:;"
-			class="close-btn"
-			vtrMetrics
-			metricsEvent="FeatureClick"
-			metricsParent="Productivity.MeetingManager.{{metricsParent}}"
-			metricsItem="{{metricsParent}}ModalCloseIcon"
-			(click)="closeModal()"
-			(keydown.enter)="closeModal()"
-			attr.aria-label="productivity-meetingManager-aiMettingManager-modal-close"
-			id="productivity-meetingManager-aiMettingManager-modal-close">
-			<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
-				alt=""
-				srcset="">
-		</a>
-	</div>
 	<h1 class="mb-3" *ngIf="value=='translation'">
 		{{'smb.meetingExperience.meetingManager.aiMeetingManager.translation.title' | translate}}</h1>
 	<h1 class="mb-3" *ngIf="value=='voiceToText'">
@@ -43,15 +25,22 @@
 	</div>
 	<div class="line"></div>
 	<div class="row">
-		<button class="btn close-button"
-			role="button"
-			(click)="closeModal()"
-			(keydown.enter)="closeModal()"
-			attr.aria-label="productivity-meetingManager-aiMettingManager-modal-close-button"
-			id="productivity-meetingManager-aiMettingManager-modal-close-button"
-			vtrMetrics
+		<vtr-ui-button class="install-or-launch-btn"
+			linkId="productivity-meetingManager-aiMettingManager-modal-close-button"
 			metricsEvent="FeatureClick"
+			metricsItem="{{metricsParent}}ModalCloseButton"
 			metricsParent="Productivity.MeetingManager.{{metricsParent}}"
-			metricsItem="{{metricsParent}}ModalCloseButton">{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.closeText' | translate}}</button>
+			[btnHeight]="true"
+			[label]="'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.closeText' | translate"
+			(onClick)="closeModal()">
+		</vtr-ui-button>
+	</div>
+	<div class="btn-modal-close">
+		<vtr-ui-close-button
+			linkId="productivity-meetingManager-aiMettingManager-modal-close"
+			metricsItem="MeetingManager{{metricsParent}}ModalCloseIcon"
+			metricsParent="Productivity.MeetingManager.{{metricsParent}}"
+			(clickClose)="closeModal()">
+		</vtr-ui-close-button>
 	</div>
 </div>

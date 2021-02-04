@@ -47,7 +47,7 @@ describe('ModalAiMeetingManagerComponent', () => {
 	});
 	it('should call onFocus when calling modal focus', () => {
 		const modal = document.createElement('div');
-		modal.setAttribute('class', 'Ai-Meeting-Manager-Modal');
+		modal.setAttribute('class', 'ai-meeting-manager-modal');
 		fixture.debugElement.nativeElement.append(modal);
 		component.onFocus();
 		expect(modal).toBeTruthy();

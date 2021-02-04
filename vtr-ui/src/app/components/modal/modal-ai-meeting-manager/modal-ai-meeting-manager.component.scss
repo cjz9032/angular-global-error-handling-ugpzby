@@ -1,35 +1,6 @@
 @import '../../../app.theme.scss';
 
 .vtr-modal-ai-meeting-manager {
-	.close-btn {
-		position: absolute;
-		width: 2rem;
-		height: 2rem;
-		cursor: pointer;
-
-		&:hover {
-			opacity: 0.7;
-		}
-		&:focus {
-			@media #{$white-on-black} {
-				filter: brightness(0) invert(1);
-			}
-			@media #{$black-on-white} {
-				filter: brightness(0);
-			}
-		}
-
-		img {
-			width: 100%;
-			height: 100%;
-			@media #{$white-on-black} {
-				filter: brightness(0) invert(1);
-			}
-			@media #{$black-on-white} {
-				filter: brightness(0);
-			}
-		}
-	}
 	.line {
 		width: 100%;
 		height: 1px;
@@ -39,11 +10,6 @@
 	}
 	&.modal-body {
 		padding: 0;
-	}
-
-	fa-icon {
-		font-size: 3rem;
-		color: $main;
 	}
 
 	h1 {
@@ -57,45 +23,6 @@
 		font-size: $fontsize_xs;
 		color: $shade_blue;
 		line-height: 2rem;
-	}
-
-	.close-button {
-		background: transparent $gradient_blue 0% 0% no-repeat padding-box;
-		border-radius: 3rem;
-		color: $light;
-		font-size: $fontsize_xs;
-		padding: 0.85rem 4rem;
-		letter-spacing: 0.49px;
-		line-height: 2rem;
-		font-weight: $weight_bold;
-		text-transform: uppercase;
-		position: relative;
-
-		&:hover {
-			background: $blue_gradient;
-		}
-
-		&:focus {
-			outline: 0;
-			box-shadow: none;
-			&::after {
-				@include button-outline-blue;
-			}
-			@media #{$black-on-white} {
-				&::after {
-					@include button-outline-blue($dark);
-				}
-			}
-
-			@media #{$white-on-black} {
-				&::after {
-					@include button-outline-blue($light);
-				}
-			}
-		}
-		@include ui-button-high-contrast-black;
-		@include ui-button-high-contrast-white;
-		@include high-contrast-adjust;
 	}
 
 	.number-list {
@@ -116,5 +43,10 @@
 			margin-right: 0.5rem;
 		}
 		
+	}
+
+	.btn-modal-close {
+		top: 0;
+		right: 0;
 	}
 }

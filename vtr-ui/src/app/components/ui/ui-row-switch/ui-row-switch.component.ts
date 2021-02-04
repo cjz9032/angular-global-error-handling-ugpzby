@@ -233,7 +233,7 @@ export class UiRowSwitchComponent
 			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: true,
-			panelClass: 'Ai-Meeting-Manager-Modal',
+			panelClass: 'ai-meeting-manager-modal',
 		});
 		modalRef.componentInstance.value = this.aiMeetingManagerValue;
 		modalRef.componentInstance.metricsParent = this.metricsParent;

@@ -23,7 +23,7 @@ export class ModalAiMeetingManagerComponent implements OnInit {
 
 	@HostListener('window: focus')
 	onFocus(): void {
-		const modal = document.querySelector('.Ai-Meeting-Manager-Modal') as HTMLElement;
+		const modal = document.querySelector('.ai-meeting-manager-modal') as HTMLElement;
 		modal.focus();
 	}
 }
