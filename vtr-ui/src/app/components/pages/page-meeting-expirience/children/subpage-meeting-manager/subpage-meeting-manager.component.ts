@@ -52,6 +52,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	isNewplugin = true;
 	microphoneModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
 	isLSAInstalled = false; // Smart appearance
+	isSupportSmartAppearance = true;
 
 	headerMenuItems = [
 		{
@@ -160,6 +161,13 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				this.microphnePermissionHandler,
 				false
 			);
+
+			if (!this.isSupportSmartAppearance) {
+				this.headerMenuItems = this.commonService.removeObjFrom(
+					this.headerMenuItems,
+					'smartAppearance'
+				);
+			}
 		}
 	}
 
@@ -598,6 +606,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	}
 
 	initLSA() {
+		this.isSupportSmartAppearance = this.deviceService.supportSmartAppearance;
 		this.isLSAInstalled = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.SmartAppearanceInstalled,
 			false

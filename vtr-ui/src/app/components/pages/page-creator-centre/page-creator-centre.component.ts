@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -12,7 +12,7 @@ import { AppNotification } from 'src/app/data-models/common/app-notification.mod
 	templateUrl: './page-creator-centre.component.html',
 	styleUrls: ['./page-creator-centre.component.scss'],
 })
-export class PageCreatorCentreComponent implements OnInit {
+export class PageCreatorCentreComponent implements OnInit, OnDestroy {
 	@ViewChild('hsRouterOutlet', { static: false }) hsRouterOutlet: ElementRef;
 
 	constructor(
@@ -43,6 +43,15 @@ export class PageCreatorCentreComponent implements OnInit {
 				return;
 			}
 		});
+	}
+
+	ngOnDestroy(): void {
+		if (this.menuItemSubscription) {
+			this.menuItemSubscription.unsubscribe();
+		}
+		if (this.routerSubscription) {
+			this.routerSubscription.unsubscribe();
+		}
 	}
 
 	onRouteActivate($event, hsRouterOutlet: HTMLElement) {
