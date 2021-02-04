@@ -31,6 +31,9 @@
 								[label]="(isAMMInstalled ?
 									'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
 									'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
+								[tooltipText]="(isAMMInstalled ?
+									'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
+									'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
 								(onClick)="launchOrDownloadAiMeetingManager()">
 							</vtr-ui-button>
                         </div>

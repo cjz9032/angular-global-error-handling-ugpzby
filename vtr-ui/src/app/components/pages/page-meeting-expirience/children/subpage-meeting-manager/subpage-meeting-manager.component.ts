@@ -210,7 +210,6 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				case 0:
 				case 3:
 					this.isAMMInstalled = true;
-					
 					clearInterval(this.isAMMInstalledInterval);
 					break;
 				default:
