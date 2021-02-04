@@ -231,10 +231,8 @@ describe('WidgetSystemMonitorComponent', () => {
 			jasmine.clock().uninstall();
 		});
 		it('component should create', (done) => {
-			// expect(setInterval).not.toHaveBeenCalled;
 			jasmine.clock().tick(5500);
 			done();
-			// expect(setInterval).toHaveBeenCalled;
 			expect(component.loop).toBeDefined();
 
 			expect(component).toBeTruthy();
