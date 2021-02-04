@@ -1,0 +1,57 @@
+<div class="modal-body vtr-modal-ai-meeting-manager">
+	<div class="row justify-content-end">
+		<a role="button"
+			type="button"
+			href="javascript:;"
+			class="close-btn"
+			vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsParent="Productivity.MeetingManager.{{metricsParent}}"
+			metricsItem="{{metricsParent}}ModalCloseIcon"
+			(click)="closeModal()"
+			(keydown.enter)="closeModal()"
+			attr.aria-label="productivity-meetingManager-aiMettingManager-modal-close"
+			id="productivity-meetingManager-aiMettingManager-modal-close">
+			<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
+				alt=""
+				srcset="">
+		</a>
+	</div>
+	<h1 class="mb-3" *ngIf="value=='translation'">
+		{{'smb.meetingExperience.meetingManager.aiMeetingManager.translation.title' | translate}}</h1>
+	<h1 class="mb-3" *ngIf="value=='voiceToText'">
+		{{'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.title' | translate}}</h1>
+	<p class="mb-3 sub-heading">{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.heading' | translate}}</p>
+	<div class="row">
+		<div class="col">
+			<div class="number-list">
+				<li *ngFor="let serialNumber of serialNumbers">
+					<div class="d-flex justify-content-start">
+						<div>
+							<p class="serial">{{serialNumber}}.</p>
+						</div>
+						<span class="text-regular" *ngIf="value=='translation'" id="aiMettingManager-modal-{{value}}-point-{{serialNumber}}">
+							{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.translation.point' + serialNumber | translate}}
+						</span>
+						<span class="text-regular" *ngIf="value=='voiceToText'" id="aiMettingManager-modal-{{value}}-point-{{serialNumber}}">
+							{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.voiceToText.point' + serialNumber | translate}}
+						</span>
+					</div>
+				</li>
+			</div>
+		</div>
+	</div>
+	<div class="line"></div>
+	<div class="row">
+		<button class="btn close-button"
+			role="button"
+			(click)="closeModal()"
+			(keydown.enter)="closeModal()"
+			attr.aria-label="productivity-meetingManager-aiMettingManager-modal-close-button"
+			id="productivity-meetingManager-aiMettingManager-modal-close-button"
+			vtrMetrics
+			metricsEvent="FeatureClick"
+			metricsParent="Productivity.MeetingManager.{{metricsParent}}"
+			metricsItem="{{metricsParent}}ModalCloseButton">{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.closeText' | translate}}</button>
+	</div>
+</div>

@@ -22,6 +22,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { BaseComponent } from '../../base/base.component';
 import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/modal-reboot-confirm.component';
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
+import { ModalAiMeetingManagerComponent } from '../../modal/modal-ai-meeting-manager/modal-ai-meeting-manager.component';
 
 @Component({
 	selector: 'vtr-ui-row-switch',
@@ -57,6 +58,8 @@ export class UiRowSwitchComponent
 	@Input() showLoaderState = false;
 	@Input() voice = false;
 	@Input() voiceValue = '';
+	@Input() aiMeetingManager = false;
+	@Input() aiMeetingManagerValue = '';
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() rebootToggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
@@ -222,6 +225,17 @@ export class UiRowSwitchComponent
 			panelClass: 'Voice-Modal',
 		});
 		modalRef.componentInstance.value = this.voiceValue;
+		modalRef.componentInstance.metricsParent = this.metricsParent;
+	}
+
+	aiMeetingManagerPopUp() {
+		const modalRef = this.dialog.open(ModalAiMeetingManagerComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'Ai-Meeting-Manager-Modal',
+		});
+		modalRef.componentInstance.value = this.aiMeetingManagerValue;
 		modalRef.componentInstance.metricsParent = this.metricsParent;
 	}
 
