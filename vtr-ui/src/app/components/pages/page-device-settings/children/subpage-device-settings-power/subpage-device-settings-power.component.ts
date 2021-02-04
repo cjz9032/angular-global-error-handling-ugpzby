@@ -264,7 +264,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			LocalStorageKey.IntelligentCoolingCapability,
 			undefined
 		);
-		if (capability && capability.showIC && +capability.showIC !== 0 && !this.deviceService.isSMB) {
+		if (capability && capability.showIC && +capability.showIC !== 0 && !this.deviceService.supportCreatorSettings) {
 			this.updateSmartSettingsLinkStatus(true);
 		} else {
 			this.updateSmartSettingsLinkStatus(false);
