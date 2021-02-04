@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.52](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.9.51...v1.9.52) (2021-02-04)
+
+
+### Features
+
+* **Dashboard:** use hypothesis to configure position B C ([70b6da1](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/70b6da140ff35c31819c3fc0d4eeefcdf3a14bcb))
+
 ### [1.9.51](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.9.50...v1.9.51) (2021-01-28)
 
 ### [1.9.50](https://bitbucket.tc.lenovo.com///compare/v1.9.49...v1.9.50) (2021-01-19)
