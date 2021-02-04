@@ -450,7 +450,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	// 2. register oc change event                                      //
 	//////////////////////////////////////////////////////////////////////
 	private isAvailiableNumber(value) {
-		return (value !== null && value !== undefined && !Number.isNaN(value));
+		return (value !== null && value !== undefined && !Number.isNaN(parseFloat(value)));
 	}
 
 	private isAvailiableValue(value) {
@@ -470,17 +470,19 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	 * hwOCInfo.vramOverClockInfo.isOverClocking: true/false
 	 */
 	getHwOverClockState() {
-		this.gamingOCService.getHwOverClockState().then((response) => {
-			if (response) {
-				Object.keys(this.hwOCInfo).forEach(
-					(key) => {
-						if (this.isAvailiableValue(response[this.hwOCInfo[key].featureName])) {
-							this.hwOCInfo[key].isOverClocking = this.hwVersionInfo === 1 && response[this.hwOCInfo[key].featureName] && this.hwOCInfo[key].isSupportOCFeature;
+		try {
+			this.gamingOCService.getHwOverClockState().then((response) => {
+				if (response) {
+					Object.keys(this.hwOCInfo).forEach(
+						(key) => {
+							if (this.isAvailiableValue(response[this.hwOCInfo[key].featureName])) {
+								this.hwOCInfo[key].isOverClocking = this.hwVersionInfo === 1 && response[this.hwOCInfo[key].featureName] && this.hwOCInfo[key].isSupportOCFeature;
+							}
 						}
-					}
-				);
-			}
-		}).catch(() => {});
+					);
+				}
+			}).catch(() => {});
+		} catch(error) {}
 	}
 
 	registerOverClockStateChangeEvent() {
