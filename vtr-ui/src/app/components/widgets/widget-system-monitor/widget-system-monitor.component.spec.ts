@@ -41,7 +41,7 @@ describe('WidgetSystemMonitorComponent', () => {
 			usedDisk: 12,
 		}
 	];
-	let payloadInfo = {
+	const payloadInfo = {
 		accessoryFeature: true,
 		advanceCPUOCFeature: false,
 		advanceGPUOCFeature: true,
@@ -77,11 +77,11 @@ describe('WidgetSystemMonitorComponent', () => {
 		winKeyLockFeature: true,
 		xtuService: true,
 	};
-	let hardwareInformation = {
+	const hardwareInformation = {
 		cpuMaxFrequency: 4.45,
-		cpuModuleName: "AMD Ryzen 7 5800H with Radeon Graphics ",
+		cpuModuleName: 'AMD Ryzen 7 5800H with Radeon Graphics',
 		gpuCoreMaxFrequency: 2.145,
-		gpuModuleName: "NVDIA GeForce RTX 3070 Laptop GPU",
+		gpuModuleName: 'NVDIA GeForce RTX 3070 Laptop GPU',
 		gpuVramMaxFrequency: 7.201,
 	};
 	const commonServiceMock = {
@@ -120,7 +120,7 @@ describe('WidgetSystemMonitorComponent', () => {
 				case LocalStorageKey.cpuInfoVersion:
 					return cpuInfoVersion;
 				case LocalStorageKey.gpuInfoVersion:
-					return gpuInfoVersion
+					return gpuInfoVersion;
 			}
 		},
 		setLocalCacheValue: (key: any, value: any) => {
@@ -166,7 +166,7 @@ describe('WidgetSystemMonitorComponent', () => {
 					break;
 				case LocalStorageKey.cpuInfoVersion:
 					cpuInfoVersion = value;
-					break;  
+					break;
 				case LocalStorageKey.gpuInfoVersion:
 					gpuInfoVersion = value;
 					break;
@@ -186,19 +186,76 @@ describe('WidgetSystemMonitorComponent', () => {
 		'regOCRealStatusChangeEvent'
 	]);
 
-	describe('machine info', () => {
+	const vantageShellServiceMock = jasmine.createSpyObj('VantageShellService', [
+		'registerEvent',
+		'getLogger',
+		'unRegisterEvent'
+	]);
+
+	const loggerServiceMock = jasmine.createSpyObj('LoggerService', [
+		'error',
+		'info'
+	]);
+	let timerCallback;
+
+	describe('setInterval', () => {
 		beforeEach(() => {
-			gamingOCServiceMock.getHwOverClockState.and.returnValue(Promise.resolve({cpuOCState: false, gpuOCState: false}));
+			timerCallback = jasmine. createSpy('setInterval');
+			jasmine.clock().install();
+
+			vantageShellServiceMock.getLogger.and.returnValue(Promise.resolve());
+			loggerServiceMock.error.and.returnValue(Promise.resolve());
+			loggerServiceMock.info.and.returnValue(Promise.resolve());
 			TestBed.configureTestingModule({
 				declarations: [
-					WidgetSystemMonitorComponent, 
+					WidgetSystemMonitorComponent,
 					GAMING_DATA.mockPipe({ name: 'translate' })
 				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
-					{ provide: VantageShellService },
-					{ provide: LoggerService },
+					{ provide: VantageShellService , useValue: vantageShellServiceMock},
+					{ provide: LoggerService, useValue: loggerServiceMock },
+					{ provide: HttpHandler },
+					{ provide: HwInfoService, useValue: gamingHwInfoSpy },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: GamingOCService, useValue: gamingOCServiceMock }
+				]
+			}).compileComponents();
+			fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
+			component = fixture.componentInstance;
+			fixture.detectChanges();
+		});
+		afterEach(() => {
+			jasmine.clock().uninstall();
+		});
+		it('component should create', (done) => {
+			// expect(setInterval).not.toHaveBeenCalled;
+			jasmine.clock().tick(5500);
+			done();
+			// expect(setInterval).toHaveBeenCalled;
+			expect(component.loop).toBeDefined();
+
+			expect(component).toBeTruthy();
+		});
+	});
+
+	describe('machine info', () => {
+		beforeEach(() => {
+			vantageShellServiceMock.getLogger.and.returnValue(Promise.resolve());
+			loggerServiceMock.error.and.returnValue(Promise.resolve());
+			loggerServiceMock.info.and.returnValue(Promise.resolve());
+			TestBed.configureTestingModule({
+				declarations: [
+					WidgetSystemMonitorComponent,
+					GAMING_DATA.mockPipe({ name: 'translate' })
+				],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient },
+					{ provide: VantageShellService , useValue: vantageShellServiceMock},
+					{ provide: LoggerService, useValue: loggerServiceMock },
 					{ provide: HttpHandler },
 					{ provide: HwInfoService, useValue: gamingHwInfoSpy },
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
@@ -245,7 +302,7 @@ describe('WidgetSystemMonitorComponent', () => {
 				gpuMemorySize: '8GB',
 				memoryModuleName: 'RAM Test 2',
 				memorySize: '14GB',
-			}
+			};
 			gamingHwInfoSpy.getMachineInfomation.and.resolveTo(machineInfo);
 			component.getMachineInfo();
 			tick();
@@ -261,9 +318,14 @@ describe('WidgetSystemMonitorComponent', () => {
 			expect(ramModuleNameCache).toBe('RAM Test 2', 'ramModuleNameCache shoulde be RAM Test 2');
 			expect(component.ramSize).toBe('14GB', 'ramSize shoulde be 14GB');
 			expect(ramSizeCache).toBe('14GB', 'ramSizeCache shoulde be 14GB');
+
+			component.getMachineInfo();
+
+			gamingHwInfoSpy.getMachineInfomation.and.returnValue(null);
+			component.getMachineInfo();
 		}));
 		it('onRegisterOverClockStateChangeEvent', fakeAsync(() => {
-			let res = {"cpuOCState":false,"gpuOCState":true};
+			const res = { cpuOCState: false, gpuOCState: true };
 			component.hwVersionInfo = 1;
 			gamingHwInfoSpy.getHardwareInformation.and.returnValue(Promise.resolve(hardwareInformation));
 			component.onRegisterOverClockStateChangeEvent(res);
@@ -271,43 +333,112 @@ describe('WidgetSystemMonitorComponent', () => {
 			gamingHwInfoSpy.getHardwareInformation.and.returnValue(Promise.resolve(null));
 			component.onRegisterOverClockStateChangeEvent(res);
 			expect(component.onRegisterOverClockStateChangeEvent(res)).toBeUndefined();
+
+			const ocState = {cpuOCStateValue: true, gpuOCStateValue: false};
+			component.hwVersionInfo = 0;
+			component.onRegisterOverClockStateChangeEvent(ocState);
+			tick(100);
+			expect(component.hwOCInfo.cpuOverClockInfo.isOverClocking).toBe(false);
+			expect(component.hwOCInfo.gpuOverClockInfo.isOverClocking).toBe(true);
+			expect(component.hwOCInfo.vramOverClockInfo.isOverClocking).toBe(true);
+
+			component.hwVersionInfo = 1;
+			component.onRegisterOverClockStateChangeEvent('');
+			tick(100);
+			expect(component.hwOCInfo.cpuOverClockInfo.isOverClocking).toBe(false);
+
+			component.onRegisterOverClockStateChangeEvent(null);
+			tick(100);
+			expect(component.hwOCInfo.cpuOverClockInfo.isOverClocking).toBe(false);
+
+			vantageShellServiceMock.registerEvent = null;
+			component.registerOverClockStateChangeEvent();
 		}));
         it('initHWOverClockInfo ', fakeAsync(() => {
 			component.hwVersionInfo = 0;
 			component.initHWOverClockInfo();
 			expect(component.initHWOverClockInfo()).toBeUndefined();
-		}))
+		}));
 		it('getDynamicHardwareUsageInfo', fakeAsync(() => {
 			// component.hwVersionInfo = 0;
-			let hwInfo = {
+			const hwInfo = {
 				cpuCurrentFrequency: 2.068,
 				cpuUtilization: 20,
 				diskList: [
 					{
 						capacity: 476,
 						diskUsage: 20,
-						hddName: "SAMSUNG MZVLB512HBJQ-000L2",
+						hddName: 'SAMSUNG MZVLB512HBJQ-000L2',
 						isSystemDisk: true,
-						type: "SSD",
+						type: 'SSD',
 						usedDisk: 95
 					},
 					{
 						capacity: 476,
 						diskUsage: 1,
-						hddName: "SAMSUNG MZVLB512HBJQ-000L2",
+						hddName: 'SAMSUNG MZVLB512HBJQ-000L2',
 						isSystemDisk: false,
-						type: "SSD",
+						type: 'SSD',
 						usedDisk: 6
 					}
 				],
 				gpuCoreCurrentFrequency: 1.56,
 				gpuVramCurrentFrequency: 7.2
 			};
-			gamingHwInfoSpy.getHardwareInformation.and.returnValue(Promise.resolve(hardwareInformation));
 			gamingHwInfoSpy.getDynamicHardwareUsageInfo.and.returnValue(Promise.resolve(hwInfo));
 			component.getDynamicHardwareUsageInfo();
-			expect(component.getDynamicHardwareUsageInfo()).toBeUndefined();
-		}))
+			tick(100);
+			expect(component.cpuUsage).toBe(0.03);
+			gamingHwInfoSpy.getHardwareInformation.and.returnValue(Promise.resolve(hardwareInformation));
+			component.getHardwareInformation();
+			component.getDynamicHardwareUsageInfo();
+			tick(100);
+			expect(component.cpuUsage).toBe(0.46);
+			tick(200);
+
+			gamingHwInfoSpy.getHardwareInformation.and.returnValue(Promise.resolve(null));
+			component.getHardwareInformation();
+			component.getDynamicHardwareUsageInfo();
+			expect(component.cpuUsage).toBe(0.46);
+			tick(200);
+
+			gamingHwInfoSpy.getDynamicHardwareUsageInfo.and.returnValue(Promise.resolve(null));
+			component.getDynamicHardwareUsageInfo();
+			tick(100);
+			expect(component.cpuCurrentFrequency).toBe('2.07');
+			expect(component.hds[0].type).toBe('SSD');
+		}));
+		it('getDynamicHardwareUsageInfo error', fakeAsync(() => {
+			const hwInfo = {
+				cpuCurrentFrequency: '',
+				cpuUtilization: '',
+				diskList: null,
+				gpuCoreCurrentFrequency: '',
+				gpuVramCurrentFrequency: ''
+			};
+			gamingHwInfoSpy.getHardwareInformation.and.returnValue(Promise.resolve(hardwareInformation));
+			gamingHwInfoSpy.getDynamicHardwareUsageInfo.and.returnValue(Promise.resolve(hwInfo));
+			component.getHardwareInformation();
+			component.getDynamicHardwareUsageInfo();
+			tick(100);
+			expect(component.cpuCurrentFrequency).toBe('2');
+			expect(component.gpuUsedMemory).toBe('5');
+			expect(component.ramUsed).toBe('8');
+
+			const hardwareInformationempty = {
+				cpuMaxFrequency: '',
+				cpuModuleName: 'AMD Ryzen 7 5800H with Radeon Graphics',
+				gpuCoreMaxFrequency: '',
+				gpuModuleName: 'NVDIA GeForce RTX 3070 Laptop GPU',
+				gpuVramMaxFrequency: '',
+			};
+			gamingHwInfoSpy.getHardwareInformation.and.returnValue(Promise.resolve(hardwareInformationempty));
+			component.getHardwareInformation();
+			tick(100);
+			expect(component.cpuBaseFrequency ).toBe('4.45GHz');
+			expect(component.gpuMemorySize ).toBe('2.15GHz');
+			expect(component.ramSize ).toBe('7.20GHz');
+		}));
 		it('toggleHDs', fakeAsync(() => {
 			component.toggleHDs(true);
 			expect(component.showAllHDs).toBe(false);
@@ -315,36 +446,72 @@ describe('WidgetSystemMonitorComponent', () => {
 			component.showAllHDs = true;
 			component.toggleHDs(false);
 			expect(component.showAllHDs ).toBe(false);
-		}))
+
+			component.hds = [1];
+			component.toggleHDs(false);
+			expect(component.showAllHDs ).toBe(false);
+		}));
 		it('getHDSize', fakeAsync(() => {
 			component.getHDSize(1200);
 			expect(component.getHDSize(1200)).toBe('1.20TB');
-		}))
+		}));
 		it('getRightDeg', fakeAsync(() => {
 			component.getRightDeg(2);
 			expect(component.getRightDeg(2)).toBe(360);
 			component.getRightDeg(-2);
 			expect(component.getRightDeg(-2)).toBe(0);
-		}))
+		}));
 		it('getLeftDeg', fakeAsync(() => {
 			component.getLeftDeg(1.5);
 			expect(component.getLeftDeg(1.5)).toBe(180);
 			component.getLeftDeg(0);
 			expect(component.getLeftDeg(0)).toBe(0);
-		}))
-	})
+		}));
+
+		it('getHwOverClockState', fakeAsync(() => {
+			gamingOCServiceMock.getHwOverClockState.and.returnValue(Promise.resolve({cpuOCState: true, gpuOCState: false}));
+			component.getHwOverClockState();
+			tick(100);
+			expect(component.hwOCInfo.cpuOverClockInfo.isOverClocking).toBe(true);
+			expect(component.hwOCInfo.gpuOverClockInfo.isOverClocking).toBe(false);
+			expect(component.hwOCInfo.vramOverClockInfo.isOverClocking).toBe(false);
+
+			const ocState = {cpuOCStateValue: true, gpuOCStateValue: false};
+			gamingOCServiceMock.getHwOverClockState.and.returnValue(Promise.resolve(ocState));
+			component.getHwOverClockState();
+			tick(100);
+			expect(component.hwOCInfo.cpuOverClockInfo.isOverClocking).toBe(true);
+			expect(component.hwOCInfo.gpuOverClockInfo.isOverClocking).toBe(false);
+			expect(component.hwOCInfo.vramOverClockInfo.isOverClocking).toBe(false);
+
+			gamingOCServiceMock.getHwOverClockState.and.returnValue(Promise.resolve(''));
+			component.getHwOverClockState();
+			tick(100);
+			expect(component.hwOCInfo.cpuOverClockInfo.isOverClocking).toBe(true);
+
+			gamingOCServiceMock.getHwOverClockState.and.returnValue(Promise.resolve(null));
+			component.getHwOverClockState();
+			tick(100);
+			expect(component.hwOCInfo.cpuOverClockInfo.isOverClocking).toBe(true);
+
+			gamingOCServiceMock.getHwOverClockState.and.returnValue(Promise.reject('getHwOverClockState error'));
+			component.getHwOverClockState();
+			tick(100);
+			expect(component.hwOCInfo.cpuOverClockInfo.isOverClocking).toBe(true);
+		}));
+	});
 	describe('dynamic info', () => {
 		beforeEach(() => {
 			TestBed.configureTestingModule({
 				declarations: [
-					WidgetSystemMonitorComponent, 
+					WidgetSystemMonitorComponent,
 					GAMING_DATA.mockPipe({ name: 'translate' })
 				],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
 					{ provide: HttpClient },
 					{ provide: VantageShellService },
-					{ provide: LoggerService },
+					{ provide: LoggerService, useValue: loggerServiceMock },
 					{ provide: HttpHandler },
 					{ provide: HwInfoService, useValue: gamingHwInfoSpy },
 					{ provide: LocalCacheService, useValue: localCacheServiceMock },
@@ -401,7 +568,7 @@ describe('WidgetSystemMonitorComponent', () => {
 					type: 'SSD',
 					usedDisk: 30,
 				}],
-			}
+			};
 			gamingHwInfoSpy.getDynamicInformation.and.resolveTo(dynamicInfo);
 			component.getRealTimeUsageInfo();
 			tick();
@@ -432,7 +599,7 @@ describe('WidgetSystemMonitorComponent', () => {
 				memoryUsed: null,
 				memoryUsage: null,
 				diskList: null
-			}
+			};
 			gamingHwInfoSpy.getDynamicInformation.and.resolveTo(dynamicInfo);
 			component.getRealTimeUsageInfo();
 			tick();
@@ -449,6 +616,14 @@ describe('WidgetSystemMonitorComponent', () => {
 			expect(component.hds[0].isSystemDisk).toBe(false, 'hds.isSystemDisk shoulde be false');
 			expect(component.hds[0].type).toBe('HDD', 'hds.type shoulde be HDD');
 			expect(component.hds[0].usedDisk).toBe(24, 'hds.usedDisk shoulde be 24');
+
+			gamingHwInfoSpy.getDynamicInformation.and.returnValue(null);
+			component.getRealTimeUsageInfo();
+			tick();
+			expect(component.cpuCurrentFrequency).toBe('4', 'cpuCurrentFrequency shoulde be 4');
+			expect(component.cpuUsage).toBe(0.06, 'cpuUsage shoulde be 0.06');
+			expect(component.gpuUsedMemory).toBe('10', 'gpuUsedMemory shoulde be 10');
+			expect(component.gpuUsage).toBe(12, 'gpuUsage shoulde be 12');
 		}));
-	})
+	});
 });
