@@ -22,6 +22,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { BaseComponent } from '../../base/base.component';
 import { ModalRebootConfirmComponent } from '../../modal/modal-reboot-confirm/modal-reboot-confirm.component';
 import { ModalVoiceComponent } from '../../modal/modal-voice/modal-voice.component';
+import { ModalAiMeetingManagerComponent } from '../../modal/modal-ai-meeting-manager/modal-ai-meeting-manager.component';
 
 @Component({
 	selector: 'vtr-ui-row-switch',
@@ -57,6 +58,8 @@ export class UiRowSwitchComponent
 	@Input() showLoaderState = false;
 	@Input() voice = false;
 	@Input() voiceValue = '';
+	@Input() aiMeetingManager = false;
+	@Input() aiMeetingManagerValue = '';
 	@Output() toggleOnOff = new EventEmitter<boolean>();
 	@Output() rebootToggleOnOff = new EventEmitter<boolean>();
 	@Output() readMoreClick = new EventEmitter<boolean>();
@@ -104,7 +107,7 @@ export class UiRowSwitchComponent
 					element.setAttribute('class', 'modern-standby');
 				}
 			);
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	ngOnInit() {
@@ -121,9 +124,9 @@ export class UiRowSwitchComponent
 		const activeElement = document.activeElement as HTMLElement;
 		if (
 			this.title ===
-			this.translate.instant(
-				'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title'
-			) ||
+				this.translate.instant(
+					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title'
+				) ||
 			this.isRebootRequired
 		) {
 			this.isSwitchChecked = !this.isSwitchChecked;
@@ -149,7 +152,7 @@ export class UiRowSwitchComponent
 					}
 					activeElement.focus();
 				},
-				(reason) => { }
+				(reason) => {}
 			);
 		} else {
 			this.rebootToggleOnOff.emit($event);
@@ -225,8 +228,19 @@ export class UiRowSwitchComponent
 		modalRef.componentInstance.metricsParent = this.metricsParent;
 	}
 
+	aiMeetingManagerPopUp() {
+		const modalRef = this.dialog.open(ModalAiMeetingManagerComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'ai-meeting-manager-modal',
+		});
+		modalRef.componentInstance.value = this.aiMeetingManagerValue;
+		modalRef.componentInstance.metricsParent = this.metricsParent;
+	}
+
 	ngOnDestroy() {
-		window.removeEventListener('scroll', () => { });
+		window.removeEventListener('scroll', () => {});
 		this.subscriptionList.forEach((s: Subscription) => s.unsubscribe());
 	}
 

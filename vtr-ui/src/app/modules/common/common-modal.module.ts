@@ -16,6 +16,7 @@ import { ModalHomeProtectionLocationNoticeComponent } from 'src/app/components/m
 import { ModalIntelligentCoolingModesComponent } from 'src/app/components/modal/modal-intelligent-cooling-modes/modal-intelligent-cooling-modes.component';
 import { ModalUpdateChangeLogComponent } from 'src/app/components/modal/modal-update-change-log.component/modal-update-change-log.component';
 import { ModalVoiceComponent } from 'src/app/components/modal/modal-voice/modal-voice.component';
+import { ModalAiMeetingManagerComponent } from 'src/app/components/modal/modal-ai-meeting-manager/modal-ai-meeting-manager.component';
 import { ModalWifiSecurityInvitationComponent } from 'src/app/components/modal/modal-wifi-security-invitation/modal-wifi-security-invitation.component';
 // import { ModalServerSwitchComponent } from 'src/app/components/modal/modal-server-switch/modal-server-switch.component'; // VAN-5872, server switch feature
 import { SharedModule } from '../shared.module';
@@ -35,7 +36,7 @@ import { MaterialModule } from './material.module';
 		ModalIntelligentCoolingModesComponent,
 		ModalUpdateChangeLogComponent,
 		ModalVoiceComponent,
-		ModalVoiceComponent,
+		ModalAiMeetingManagerComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalChsStartTrialContainerComponent,
@@ -65,7 +66,7 @@ import { MaterialModule } from './material.module';
 		ModalIntelligentCoolingModesComponent,
 		ModalUpdateChangeLogComponent,
 		ModalVoiceComponent,
-		ModalVoiceComponent,
+		ModalAiMeetingManagerComponent,
 		ModalWifiSecurityInvitationComponent,
 		ModalChsWelcomeContainerComponent,
 		ModalChsStartTrialContainerComponent,

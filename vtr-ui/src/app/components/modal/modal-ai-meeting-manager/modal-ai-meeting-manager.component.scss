@@ -1,0 +1,50 @@
+@import '../../../app.theme.scss';
+
+.vtr-modal-ai-meeting-manager {
+	.line {
+		width: 100%;
+		height: 1px;
+		background-color: $grey_light;
+		margin-bottom: 2.4rem;
+		margin-top: 2.45rem;
+	}
+	&.modal-body {
+		padding: 0;
+	}
+
+	h1 {
+		font-size: $fontsize_xl;
+		font-weight: $weight_semibold;
+		color: $shade_blue;
+		line-height: 2.8rem;
+	}
+
+	.sub-heading {
+		font-size: $fontsize_xs;
+		color: $shade_blue;
+		line-height: 2rem;
+	}
+
+	.number-list {
+		margin-top: 1rem;
+		list-style: none;
+		.serial {
+			font-size: $fontsize_xl2;
+			line-height: 4rem;
+			color: $shade_blue;
+			margin: 0.8rem 1.55rem 0.8rem 1.6rem;
+		}
+		.text-regular {
+			font-size: $fontsize_xs;
+			line-height: 2rem;
+			color: $grey_dark;
+			margin: auto 0;
+			margin-right: 0.5rem;
+		}
+	}
+
+	.btn-modal-close {
+		top: 0;
+		right: 0;
+	}
+}

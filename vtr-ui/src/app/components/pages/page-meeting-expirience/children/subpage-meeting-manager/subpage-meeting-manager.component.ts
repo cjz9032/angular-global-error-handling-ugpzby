@@ -51,6 +51,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	eCourseLoader = true;
 	isNewplugin = true;
 	microphoneModesUIModel: Array<UiCircleRadioWithCheckBoxListModel> = [];
+	isAMMInstalled = false; // Ai meeting manager
 	isLSAInstalled = false; // Smart appearance
 	isSupportSmartAppearance = true;
 
@@ -96,11 +97,15 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	private microphnePermissionHandler: any;
 	private readonly Windows: any;
 
+	public voiceToText = 'voiceToText';
+	public translation = 'translation';
+	private isAMMInstalledInterval: any;
+
 	constructor(
 		private audioService: AudioService,
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
-		private commonService: CommonService,
+		public commonService: CommonService,
 		private translate: TranslateService,
 		private vantageShellService: VantageShellService,
 		private batteryService: BatteryDetailService,
@@ -172,6 +177,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
+		clearInterval(this.isAMMInstalledInterval);
 		if (this.notificationSubscription) {
 			this.notificationSubscription.unsubscribe();
 		}
@@ -187,6 +193,58 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		// this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 	}
 
+	private initAMM() {
+		this.isLSAInstalled = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.AiMeetingManagerInstalled,
+			false
+		);
+		this.checkAMMInstallationStatus();
+	}
+
+	private checkAMMInstallationStatus() {
+		WinRT.queryUriSupport(
+			'ai-meeting-mamager:',
+			'E046963F.AIMeetingManager_k1h2ywk1493x8'
+		).then((result) => {
+			switch (result) {
+				case 0:
+				case 3:
+					this.isAMMInstalled = true;
+					clearInterval(this.isAMMInstalledInterval);
+					break;
+				default:
+					this.isAMMInstalled = false;
+					break;
+			}
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.AiMeetingManagerInstalled,
+				this.isAMMInstalled
+			);
+		});
+	}
+
+	public launchOrDownloadAiMeetingManager() {
+		if (this.isAMMInstalled) {
+			try {
+				WinRT.launchUri('ai-meeting-mamager:');
+			} catch (error) {
+				this.logger.error('launchAiMeetingManager' + error.message);
+			}
+		} else {
+			try {
+				WinRT.launchUri('ms-windows-store://pdp/?productid=9NJ7W58DLL4N');
+				this.isAMMInstalledInterval = setInterval(() => {
+					this.logger.debug(
+						'Trying after 30 seconds for getting isAiMeetingManagerInstalled status'
+					);
+					this.checkAMMInstallationStatus();
+				}, 30000);
+			} catch (error) {
+				this.logger.error('downloadAiMeetingManager' + error.message);
+			}
+		}
+	}
+
 	launchPanel() {
 		this.audioVendorService.launchPanel();
 	}
@@ -196,6 +254,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	}
 
 	private initFeatures() {
+		this.initAMM();
 		this.initMockData();
 		this.initMicrophoneFromCache();
 		this.getMicrophoneSettingsAsync();

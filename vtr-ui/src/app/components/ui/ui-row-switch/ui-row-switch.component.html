@@ -84,7 +84,7 @@
 
 			<div class="vtr-row-switch"
 				[ngClass]="{'flex-grow-0 d-flex justify-content-end': (isSwitchVisible && !resetTextAsButton),
-				'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible && !showCustomButton),
+				'col-md-1 col-1 d-flex justify-content-end':(!resetTextAsButton && !isSwitchVisible && !showCustomButton && !aiMeetingManager),
 				'col-md-5 d-flex justify-content-end': (resetTextAsButton && !isSwitchVisible),
 				'mw-50': showCustomButton}"
 				>
@@ -158,7 +158,7 @@
 					</ng-template>
 				</div>
 				<div class="tool-tip-icon float-right"
-					*ngIf="rightIcon.length > 0 && !voice && !toolTipStatus && !fnCtrltoolTip"
+					*ngIf="rightIcon.length > 0 && !voice && !aiMeetingManager && !toolTipStatus && !fnCtrltoolTip"
 					[ngClass]="{'auto-screen-lock-help-icon': !isSwitchVisible}">
 					<fa-icon id="{{switchId}}-tooltip_right_icon"
 						[attr.aria-label]="title +' tooltip, which reads: '+ removeHTMLFormatting(tooltipText)"
@@ -235,6 +235,21 @@
 						[icon]="rightIcon"
 						(click)="voicePopUp()"
 						(keydown.enter)="voicePopUp()"></fa-icon>
+				</div>
+
+				<div class="tool-tip-icon float-right"
+					*ngIf="rightIcon.length > 0 && aiMeetingManager">
+					<fa-icon vtrMetrics
+						metricsEvent="FeatureClick"
+						metricsParent="Productivity.MeetingManager"
+						metricsItem="{{metricsParent}}HelpIcon"
+						id="{{switchId+ '_voice_right_icon'}}"
+						[attr.aria-label]="title +' tooltip, which reads: '+ removeHTMLFormatting(tooltipText)"
+						class="right-icon"
+						[tabindex]="disabled || isDisabled? -1: 0"
+						[icon]="rightIcon"
+						(click)="aiMeetingManagerPopUp()"
+						(keydown.enter)="aiMeetingManagerPopUp()"></fa-icon>
 				</div>
 			</div>
 		</div>
