@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.53](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.9.52...v1.9.53) (2021-02-04)
+
+
+### Bug Fixes
+
+* **Tutorial:** format code ([c1379c8](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/c1379c8322f8fe9abab1caa0f99e5b3fc6590d32))
+* **Tutorial:** write tutorial done information ([ed02216](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/commit/ed022167ff3ea764a93eface74ea827d56d2a189))
+
 ### [1.9.52](http://bitbucket.tc.lenovo.com/tan/tan-client-experience/compare/v1.9.51...v1.9.52) (2021-02-04)
 
 
