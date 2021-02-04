@@ -13,24 +13,26 @@ describe('ModalAiMeetingManagerComponent', () => {
 	let component: ModalAiMeetingManagerComponent;
 	let fixture: ComponentFixture<ModalAiMeetingManagerComponent>;
 	let activaModal: NgbActiveModal;
-	beforeEach(waitForAsync(() => {
-		TestBed.configureTestingModule({
-			schemas: [NO_ERRORS_SCHEMA],
-			imports: [
-				TranslateModule.forRoot({
-					loader: {
-						provide: TranslateLoader,
-						useFactory: HttpLoaderFactory,
-						deps: [HttpClient],
-					},
-				}),
-				HttpClientTestingModule,
-				RouterTestingModule,
-			],
-			declarations: [ModalAiMeetingManagerComponent, SvgInlinePipe],
-			providers: [NgbActiveModal],
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				schemas: [NO_ERRORS_SCHEMA],
+				imports: [
+					TranslateModule.forRoot({
+						loader: {
+							provide: TranslateLoader,
+							useFactory: HttpLoaderFactory,
+							deps: [HttpClient],
+						},
+					}),
+					HttpClientTestingModule,
+					RouterTestingModule,
+				],
+				declarations: [ModalAiMeetingManagerComponent, SvgInlinePipe],
+				providers: [NgbActiveModal],
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalAiMeetingManagerComponent);

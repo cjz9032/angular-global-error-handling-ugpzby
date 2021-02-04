@@ -107,7 +107,7 @@ export class UiRowSwitchComponent
 					element.setAttribute('class', 'modern-standby');
 				}
 			);
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	ngOnInit() {
@@ -124,9 +124,9 @@ export class UiRowSwitchComponent
 		const activeElement = document.activeElement as HTMLElement;
 		if (
 			this.title ===
-			this.translate.instant(
-				'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title'
-			) ||
+				this.translate.instant(
+					'device.deviceSettings.inputAccessories.inputAccessory.topRowFunctions.subSectionTwo.title'
+				) ||
 			this.isRebootRequired
 		) {
 			this.isSwitchChecked = !this.isSwitchChecked;
@@ -152,7 +152,7 @@ export class UiRowSwitchComponent
 					}
 					activeElement.focus();
 				},
-				(reason) => { }
+				(reason) => {}
 			);
 		} else {
 			this.rebootToggleOnOff.emit($event);
@@ -240,7 +240,7 @@ export class UiRowSwitchComponent
 	}
 
 	ngOnDestroy() {
-		window.removeEventListener('scroll', () => { });
+		window.removeEventListener('scroll', () => {});
 		this.subscriptionList.forEach((s: Subscription) => s.unsubscribe());
 	}
 

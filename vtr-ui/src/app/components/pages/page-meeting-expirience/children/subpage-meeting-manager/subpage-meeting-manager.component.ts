@@ -234,7 +234,9 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 			try {
 				WinRT.launchUri('ms-windows-store://pdp/?productid=9NJ7W58DLL4N');
 				this.isAMMInstalledInterval = setInterval(() => {
-					this.logger.debug('Trying after 30 seconds for getting isAiMeetingManagerInstalled status');
+					this.logger.debug(
+						'Trying after 30 seconds for getting isAiMeetingManagerInstalled status'
+					);
 					this.checkAMMInstallationStatus();
 				}, 30000);
 			} catch (error) {
@@ -252,7 +254,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	}
 
 	private initFeatures() {
-		this.initAMM()
+		this.initAMM();
 		this.initMockData();
 		this.initMicrophoneFromCache();
 		this.getMicrophoneSettingsAsync();

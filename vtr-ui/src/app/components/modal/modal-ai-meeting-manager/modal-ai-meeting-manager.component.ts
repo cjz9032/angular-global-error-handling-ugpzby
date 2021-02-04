@@ -7,11 +7,11 @@ import { MatDialogRef } from '@lenovo/material/dialog';
 	styleUrls: ['./modal-ai-meeting-manager.component.scss'],
 })
 export class ModalAiMeetingManagerComponent implements OnInit {
-	constructor(public dialogRef: MatDialogRef<ModalAiMeetingManagerComponent>) { }
+	constructor(public dialogRef: MatDialogRef<ModalAiMeetingManagerComponent>) {}
 	value: any;
 	metricsParent: any;
 	serialNumbers: number[] = [1, 2, 3, 4, 5];
-	ngOnInit() { }
+	ngOnInit() {}
 
 	closeModal() {
 		this.dialogRef.close('close');
