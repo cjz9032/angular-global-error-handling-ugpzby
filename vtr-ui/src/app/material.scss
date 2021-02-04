@@ -241,6 +241,7 @@ button:focus {
 .mat-form-field-appearance-fill-customize.mat-form-field-invalid {
 	.mat-form-field-flex {
 		border-color: $button_red_start !important;
+		box-shadow: none !important;
 	}
 	.mat-input-element {
 		color: $button_red_start !important;
