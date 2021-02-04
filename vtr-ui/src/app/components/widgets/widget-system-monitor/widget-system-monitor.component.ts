@@ -450,7 +450,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	// 2. register oc change event                                      //
 	//////////////////////////////////////////////////////////////////////
 	private isAvailiableNumber(value) {
-		return (value !== null && value !== undefined && !Number.isNaN(parseInt(value, 10)));
+		return (value !== null && value !== undefined && !Number.isNaN(parseFloat(value)));
 	}
 
 	private isAvailiableValue(value) {
