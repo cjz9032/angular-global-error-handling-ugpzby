@@ -302,7 +302,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private metricsService: MetricService,
 		private contentLocalCache: ContentCacheService,
 		private windowsHelloService: WindowsHelloService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
@@ -474,7 +474,12 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private async getCachedContent(lang?: string) {
-		this.isShowStateCard = await this.dashboardService.isPositionBShowDeviceState();
+		const hypHidePosBStateCard = await this.hypService.getFeatureSetting('HideSpecialCardOnPositionB')
+			.then((result) => result === 'true')
+			.catch(() => false);
+		if (!hypHidePosBStateCard) {
+			this.isShowStateCard = await this.dashboardService.isPositionBShowDeviceState();
+		}
 		if (this.isShowStateCard) {
 			this.getPbSubscrpition = this.dashboardService.getPositionBData().subscribe((data) => {
 				this.positionBData = data;
@@ -884,6 +889,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private async getSecurityCardInfo(): Promise<void> {
+		const hypHidePosCStatusCard = await this.hypService.getFeatureSetting('HideSpecialCardOnPositionC')
+			.then((result) => result === 'true')
+			.catch(() => false);
+		if (hypHidePosCStatusCard) { return; }
 		this.showSecurityStatusCard = await this.dashboardService.isPositionCShowSecurityCard();
 		if (!this.showSecurityStatusCard) {
 			return;
@@ -986,8 +995,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.securityInfo.statusText =
 			this.securityInfo.status !== undefined
 				? this.dashboardService.translateString[
-						this.positionCData[this.securityInfo.status + 1].statusText
-				  ]
+				this.positionCData[this.securityInfo.status + 1].statusText
+				]
 				: '--';
 	}
 }
