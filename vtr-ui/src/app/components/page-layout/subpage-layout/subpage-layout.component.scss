@@ -1,0 +1,109 @@
+@import '../../../app.theme';
+
+.vtr-subpage {
+	.vtr-subpage-columns {
+		max-width: $max_page_width;
+		margin: 0 auto;
+
+		@media #{$white-on-black} {
+			border-bottom: 0.1rem solid $light;
+		}
+
+		@media #{$black-on-white} {
+			border-bottom: 0.1rem solid $dark;
+		}
+
+		.vtr-subpage-column {
+			padding-top: 0;
+			padding-bottom: 0;
+
+			&.vtr-subpage-left-column {
+				padding-left: $padding_side;
+				padding-right: 2.4rem;
+				background-color: $shade_extralight;
+
+				@media #{$breakpoint_xl} {
+					padding-left: $padding_side;
+				}
+
+				@media #{$breakpoint_lg} {
+					padding-left: $padding_side;
+					padding-right: $padding_side;
+					padding-bottom: 0rem;
+				}
+
+				@media #{$breakpoint_sm} {
+					padding-bottom: 0rem;
+				}
+
+				@media #{$breakpoint_md} {
+					padding-bottom: 0rem;
+				}
+
+				@media #{$white-on-black} {
+					border-left: 0.1rem solid $light;
+
+					@media #{$breakpoint_lg} {
+						border-right: 0.1rem solid $light;
+					}
+				}
+
+				@media #{$black-on-white} {
+					border-left: 0.1rem solid $dark;
+
+					@media #{$breakpoint_lg} {
+						border-right: 0.1rem solid $dark;
+					}
+				}
+			}
+
+			&.vtr-subpage-right-column {
+				padding-right: $padding_side;
+				padding-left: 2.4rem;
+				background-color: $shade_extralight;
+				padding-top: 4rem;
+
+				@media #{$breakpoint_xl} {
+					padding-right: $padding_side;
+				}
+
+				@media #{$breakpoint_lg} {
+					padding-left: $padding_side;
+					padding-right: $padding_side;
+					padding-bottom: $padding_side_sm;
+
+				}
+
+				@media #{$breakpoint_lg} {
+					background-color: $shade_extralight;
+					padding-top: 1rem;
+				}
+
+				@media #{$breakpoint_md} {
+					background-color: $shade_extralight;
+
+				}
+
+				@media #{$breakpoint_sm} {
+					background-color: $shade_extralight;
+				}
+
+				@media #{$white-on-black} {
+					border-right: 0.1rem solid $light;
+
+					@media #{$breakpoint_lg} {
+						border-left: 0.1rem solid $light;
+					}
+				}
+
+				@media #{$black-on-white} {
+					border-right: 0.1rem solid $dark;
+
+					@media #{$breakpoint_lg} {
+						border-left: 0.1rem solid $dark;
+					}
+				}
+			}
+		}
+	}
+}

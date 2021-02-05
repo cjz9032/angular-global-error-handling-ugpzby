@@ -23,7 +23,8 @@ import { DeviceService } from '../../services/device/device.service';
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { PromotionBannerComponent } from 'src/app/components/pages/page-creator-centre/children/promotion-banner/promotion-banner.component';
-import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
+import { SharedModule } from '../shared.module';
+
 
 @NgModule({
 	declarations: [
@@ -40,6 +41,7 @@ import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module
 	imports: [
 		CommonModule,
 		CommonUiModule,
+		SharedModule,
 		SmbRoutingModule,
 		PageLayoutModule,
 		TranslationModule.forChild(),
@@ -47,9 +49,7 @@ import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module
 		UiCustomSliderModule,
 		MatButtonModule,
 		MatTooltipModule,
-		UiButtonModule,
 	],
-	exports: [PageLayoutModule],
 	providers: [
 		{
 			provide: AudioVendorService,
@@ -59,4 +59,4 @@ import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class SmbModule {}
+export class SmbModule { }
