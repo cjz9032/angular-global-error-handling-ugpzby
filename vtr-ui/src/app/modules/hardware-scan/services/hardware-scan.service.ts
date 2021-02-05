@@ -190,12 +190,10 @@ export class HardwareScanService {
 	}
 
 	public setScanOrRBSFinished(value: boolean) {
-		this.logger.error(`scanOrRBSFinished = ${value}`);
 		this.scanOrRBSFinished = value;
 	}
 
 	public setScanFinishedHeaderType(value: any) {
-		this.logger.error(`setScanFinishedHeaderType = ${value}`);
 		this.scanHeaderTypeFinished = value;
 	}
 
@@ -216,7 +214,6 @@ export class HardwareScanService {
 	}
 
 	public setScanExecutionStatus(status: boolean) {
-		this.logger.error(`setScanExecutionStatus = ${status}`);
 		this.scanExecution = status;
 	}
 
@@ -225,12 +222,10 @@ export class HardwareScanService {
 	}
 
 	public setLoadingStatus(status: boolean) {
-		this.logger.error(`setLoadingStatus = ${status}`);
 		this.isLoadingModulesDone = status;
 	}
 
 	public setIsScanDone(status: boolean) {
-		this.logger.error(`setIsScanDone = ${status}`);
 		this.isScanDone = status;
 	}
 
@@ -251,7 +246,6 @@ export class HardwareScanService {
 	}
 
 	public setRecoverExecutionStatus(status: boolean) {
-		this.logger.error(`setRecoverExecutionStatus = ${status}`);
 		this.recoverExecution = status;
 	}
 
@@ -260,7 +254,6 @@ export class HardwareScanService {
 	}
 
 	public setRecoverInit(status: boolean) {
-		this.logger.error(`setRecoverInit = ${status}`);
 		this.recoverInit = status;
 	}
 
@@ -310,7 +303,6 @@ export class HardwareScanService {
 	}
 
 	public setEnableViewResults(status: boolean) {
-		this.logger.error(`setEnableViewResults = ${status}`);
 		this.enableViewResults = status;
 	}
 
@@ -327,7 +319,6 @@ export class HardwareScanService {
 	}
 
 	public setHasDevicesToRecover(status: boolean) {
-		this.logger.error(`setHasDevicesToRecover = ${status}`);
 		this.hasDevicesToRecover = status;
 	}
 
@@ -498,20 +489,6 @@ export class HardwareScanService {
 				})
 				.finally(() => {
 					this.doScanRequestReset();
-					// this.setIsScanDone(true);
-					// this.cleanUp();
-
-					// // This line check if a cancel is made by the user and change the header to the initial state
-					// if (this.cancelRequestByUser === true) {
-					// 	this.scanExecution = false;
-					// }
-
-					// this.workDone.next(true);
-					// this.setScanOrRBSFinished(true);
-					// this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.Scan);
-
-					// // Scan is finished, so we'll show its result instead of the running state
-					// this.clearLastResponse();
 				});
 		}
 		return undefined;

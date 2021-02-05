@@ -69,33 +69,24 @@ export class ScanExecutionService {
 		this.hardwareScanService.watcherProcess.subscribe((status) => {
 			switch (status) {
 				case WatcherStepProcess.Start:
-					this.logger.info('[WatcherStepProcess] Start');
-
 					const startIntervalTime = 10000;
 
-					this.checkCliRunning(startIntervalTime, () => {
-						this.logger.info('[WatcherStepProcess] Start Callback');
-					});
+					this.checkCliRunning(startIntervalTime);
 					break;
 				case WatcherStepProcess.Intermediate:
-					this.logger.info('[WatcherStepProcess] Intermediate');
 					const intermediateIntervalTime = 4000;
 
 					clearInterval(this.cancelWatcher);
 					this.checkCliRunning(intermediateIntervalTime, async () => {
-						this.logger.info('[WatcherStepProcess] Intermediate Callback');
-
 						await this.hardwareScanService.onScanResponseError();
 						this.hardwareScanService.doScanRequestReset();
 						this.doScanExecutionReset();
 					});
 					break;
 				case WatcherStepProcess.Stop:
-					this.logger.info('[WatcherStepProcess] Stop');
 					clearInterval(this.cancelWatcher);
 					break;
 				default:
-					this.logger.info('[WatcherStepProcess] Default');
 					clearInterval(this.cancelWatcher);
 					break;
 			}
