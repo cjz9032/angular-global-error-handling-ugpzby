@@ -78,7 +78,7 @@ export class PreviousResultService {
 		let moduleId = 0;
 		this.hasLastResults = false;
 
-		if (response) {
+		if (response?.hasPreviousResults) {
 			this.hasLastResults = response.hasPreviousResults;
 			previousResults.finalResultCode = response.scanSummary.finalResultCode;
 			previousResults.resultTestsTitle = HardwareScanTestResult.Pass;

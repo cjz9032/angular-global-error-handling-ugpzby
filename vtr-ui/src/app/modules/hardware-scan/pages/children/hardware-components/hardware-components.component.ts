@@ -63,10 +63,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 				this.hardwareScanService.getScanFinishedHeaderType() ===
 				HardwareScanFinishedHeaderType.RecoverBadSectors
 			) {
-				return this.hwscanFeaturesService.isExportLogAvailable;
+				return this.hardwareScanFeaturesService.isExportLogAvailable;
 			}
 			return (
-				this.hwscanFeaturesService.isExportLogAvailable &&
+				this.hardwareScanFeaturesService.isExportLogAvailable &&
 				this.hardwareScanService.isFinalResultCodeValid() &&
 				this.hardwareScanService.getScanResult() !==
 					HardwareScanTestResult[HardwareScanTestResult.Cancelled]
@@ -102,7 +102,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private protocolExecutionService: ProtocolExecutionService,
 		private activatedRoute: ActivatedRoute,
 		private router: Router,
-		private hwscanFeaturesService: HardwareScanFeaturesService
+		private hardwareScanFeaturesService: HardwareScanFeaturesService
 	) {
 		this.viewResultsPath = '/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;

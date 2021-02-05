@@ -483,7 +483,7 @@ export class HardwareScanService {
 					this.watcherProcess.emit(WatcherStepProcess.Stop);
 					this.cancelRequested = true;
 
-					this.logger.error('[HardwareScanService] getDoScan', ex);
+					this.logger.exception('[HardwareScanService] getDoScan', ex);
 
 					await this.onScanResponseError();
 				})
@@ -536,7 +536,7 @@ export class HardwareScanService {
 			)
 			.catch(
 				(exception: any): HardwareScanPluginScanResponse => {
-					this.logger.error('[HardwareScanService] getScanLog', exception);
+					this.logger.exception('[HardwareScanService] getScanLog', exception);
 
 					return this.lastResponse;
 				}

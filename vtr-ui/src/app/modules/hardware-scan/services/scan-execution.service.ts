@@ -651,7 +651,7 @@ export class ScanExecutionService {
 		// Workaround for RTC changing date/time problem!
 		// NOTICE: Remove this code piece as soon as this problem is fixed
 		this.cancelWatcher = setInterval(() => {
-			this.hardwareScanService.getStatus().then(async (result: any) => {
+			this.hardwareScanService.getStatus().then((result: any) => {
 				if (!result.isScanInProgress) {
 					clearInterval(this.cancelWatcher);
 
@@ -780,7 +780,7 @@ export class ScanExecutionService {
 					this.showSupportPopupIfNeeded();
 				})
 				.catch((ex: any) => {
-					this.logger.error(`[ScanExecutionService] getDoScan`, ex);
+					this.logger.exception(`[ScanExecutionService] getDoScan`, ex);
 				})
 				.finally(() => {
 					this.doScanExecutionReset();

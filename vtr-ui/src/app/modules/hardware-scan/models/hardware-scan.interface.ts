@@ -45,7 +45,7 @@ export interface ScanSummary {
 }
 
 export interface ModuleResult {
-	id: string; // Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz
+	id: string;
 	localizedItems: string;
 	response: Array<DoScanResponse>;
 	scanDate: string;
