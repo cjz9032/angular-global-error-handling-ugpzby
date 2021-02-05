@@ -39,39 +39,46 @@ li {
 	cursor: default;
 }
 
-body a > *,
-.no-pointer > *,
-.no-pointer > div,
-a > div {
+body a>*,
+.no-pointer>*,
+.no-pointer>div,
+a>div {
 	cursor: pointer;
 }
+
 a.disabled {
 	pointer-events: none;
 }
 
 .default-theme {
 	&:not(.is-gaming) {
+
 		a,
 		.a {
 			@media #{$black-on-white} {
 				@include hyperlink-blue-white;
+
 				&:hover {
 					@include hyperlink-blue-white;
 				}
 			}
+
 			@media #{$white-on-black} {
 				@include hyperlink-yellow-black;
+
 				&:hover {
 					@include hyperlink-yellow-black;
 				}
 			}
 		}
+
 		a.disabled,
 		.offline-a {
 			@media #{$black-on-white} {
 				@include high-contrast-white-text-color-disabled;
 				text-decoration: none;
 			}
+
 			@media #{$white-on-black} {
 				@include high-contrast-black-text-color-disabled;
 				text-decoration: none;
@@ -89,6 +96,7 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 */
 .font-weight-light {
+
 	span,
 	p,
 	div,
@@ -102,7 +110,9 @@ $font-weight-bolder:          bolder !default;
 		font-weight: $weight_light !important;
 	}
 }
+
 .font-weight-normal {
+
 	span,
 	p,
 	div,
@@ -116,7 +126,9 @@ $font-weight-bolder:          bolder !default;
 		font-weight: $weight_regular !important;
 	}
 }
+
 .font-weight-medium {
+
 	&,
 	span,
 	p,
@@ -131,7 +143,9 @@ $font-weight-bolder:          bolder !default;
 		font-weight: $weight_medium !important;
 	}
 }
+
 .font-weight-semibold {
+
 	&,
 	span,
 	p,
@@ -146,7 +160,9 @@ $font-weight-bolder:          bolder !default;
 		font-weight: $weight_600 !important;
 	}
 }
+
 .font-weight-bold {
+
 	span,
 	p,
 	div,
@@ -160,7 +176,9 @@ $font-weight-bolder:          bolder !default;
 		font-weight: $weight_bold !important;
 	}
 }
+
 .font-weight-black {
+
 	&,
 	span,
 	p,
@@ -188,6 +206,7 @@ $font-size-xs: 1.4rem;
 $font-size-xs2: 1.2rem;
 */
 .font-size-xl4 {
+
 	&,
 	span,
 	p,
@@ -202,7 +221,9 @@ $font-size-xs2: 1.2rem;
 		font-size: $fontsize_xl4 !important;
 	}
 }
+
 .font-size-xl3 {
+
 	&,
 	span,
 	p,
@@ -217,7 +238,9 @@ $font-size-xs2: 1.2rem;
 		font-size: $fontsize_xl3 !important;
 	}
 }
+
 .font-size-xl2 {
+
 	&,
 	span,
 	p,
@@ -232,7 +255,9 @@ $font-size-xs2: 1.2rem;
 		font-size: $fontsize_xl2 !important;
 	}
 }
+
 .font-size-xl {
+
 	&,
 	span,
 	p,
@@ -247,7 +272,9 @@ $font-size-xs2: 1.2rem;
 		font-size: $fontsize_xl !important;
 	}
 }
+
 .font-size-lg5 {
+
 	&,
 	span,
 	p,
@@ -262,7 +289,9 @@ $font-size-xs2: 1.2rem;
 		font-size: $fontsize_lg !important;
 	}
 }
+
 .font-size-md {
+
 	&,
 	span,
 	p,
@@ -277,7 +306,9 @@ $font-size-xs2: 1.2rem;
 		font-size: $fontsize_md !important;
 	}
 }
+
 .font-size-sm2 {
+
 	&,
 	span,
 	p,
@@ -292,7 +323,9 @@ $font-size-xs2: 1.2rem;
 		font-size: $fontsize_sm !important;
 	}
 }
+
 .font-size-xs {
+
 	&,
 	span,
 	p,
@@ -307,7 +340,9 @@ $font-size-xs2: 1.2rem;
 		font-size: $fontsize_xs !important;
 	}
 }
+
 .font-size-xs2 {
+
 	&,
 	span,
 	p,
@@ -337,13 +372,16 @@ $font-size-xs2: 1.2rem;
 
 .border-grey-light {
 	border-color: $grey_light;
+
 	@media #{$black-on-white} {
 		border-color: $dark !important;
 	}
+
 	@media #{$white-on-black} {
 		border-color: $light !important;
 	}
 }
+
 // @media #{$dpiquery_0} {
 // }
 
@@ -594,10 +632,12 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	// z-index: 1;
 	background-color: $light;
 	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.15));
+
 	@media #{$black-on-white} {
 		border: 0.1rem solid;
 		filter: drop-shadow(0 0 0 $light);
 	}
+
 	@media #{$white-on-black} {
 		border: 0.1rem solid;
 	}
@@ -610,38 +650,47 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 		font-size: 1.4rem;
 		text-align: left;
 		max-width: 24.2rem;
+
 		@media #{$breakpoint_xl6} {
 			max-width: 44.2rem !important;
 		}
+
 		@media #{$breakpoint_xl3} {
 			max-width: 32.5rem !important;
 		}
+
 		@media #{$breakpoint_xl} {
 			max-width: 24.2rem !important;
 		}
 	}
+
 	&.bs-tooltip-auto[x-placement^='top'],
 	&.bs-tooltip-top {
 		margin-bottom: 0.5rem;
+
 		.arrow {
 			&::before {
 				border-width: 1rem 1rem 0;
 				border-top-color: $light;
 				left: calc(-1rem + 50%);
 				top: 0.3rem;
+
 				@media #{$white-on-black} {
 					display: none;
 				}
+
 				@media #{$black-on-white} {
 					display: none;
 				}
 			}
+
 			&::after {
 				@media #{$white-on-black} {
 					@include high-contrast-tooltip-arrow;
 					top: -0.2rem;
 					transform: rotate(-45deg);
 				}
+
 				@media #{$black-on-white} {
 					@include high-contrast-tooltip-arrow;
 					background: $light;
@@ -653,28 +702,34 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			}
 		}
 	}
+
 	&.bs-tooltip-auto[x-placement^='bottom'],
 	&.tooltip.bs-tooltip-bottom {
 		margin-top: 0.5rem;
+
 		.arrow {
 			&::before {
 				border-width: 0 1rem 1rem;
 				border-bottom-color: $light;
 				left: calc(-1rem + 50%);
 				bottom: 0.3rem;
+
 				@media #{$white-on-black} {
 					display: none;
 				}
+
 				@media #{$black-on-white} {
 					display: none;
 				}
 			}
+
 			&::after {
 				@media #{$white-on-black} {
 					@include high-contrast-tooltip-arrow;
 					top: -0.8rem;
 					transform: rotate(135deg);
 				}
+
 				@media #{$black-on-white} {
 					@include high-contrast-tooltip-arrow;
 					background: $light;
@@ -686,26 +741,32 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 			}
 		}
 	}
+
 	&.bs-tooltip-auto[x-placement^='left'],
 	&.tooltip.bs-tooltip-left {
 		margin-right: 0.8rem;
+
 		.arrow {
 			&::before {
 				border-width: 1rem 0 1rem 1rem;
 				border-left-color: $light;
 				top: calc(-1rem + 50%);
 				left: 0.3rem;
+
 				@media #{$white-on-black} {
 					display: none;
 				}
+
 				@media #{$black-on-white} {
 					display: none;
 				}
 			}
+
 			&::after {
 				@media #{$white-on-black} {
 					@include high-contrast-tooltip-arrow;
 				}
+
 				@media #{$black-on-white} {
 					@include high-contrast-tooltip-arrow;
 					background: $light;
@@ -719,19 +780,23 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 	&.bs-tooltip-auto[x-placement^='right'],
 	&.tooltip.bs-tooltip-right {
 		margin-left: 0.8rem;
+
 		.arrow {
 			&::before {
 				border-width: 1rem 1rem 1rem 0;
 				border-right-color: $light;
 				top: calc(-1rem + 50%);
 				right: 0.3rem;
+
 				@media #{$white-on-black} {
 					display: none;
 				}
+
 				@media #{$black-on-white} {
 					display: none;
 				}
 			}
+
 			&::after {
 				@media #{$white-on-black} {
 					@include high-contrast-tooltip-arrow;
@@ -739,6 +804,7 @@ ngb-tooltip-window.vtr-tooltip.tooltip {
 					top: -0.2rem;
 					transform: rotate(45deg);
 				}
+
 				@media #{$black-on-white} {
 					@include high-contrast-tooltip-arrow;
 					background: $light;
@@ -779,6 +845,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	&.show {
 		opacity: 1 !important;
 	}
+
 	&.text-capitalize {
 		.tooltip-inner {
 			text-transform: capitalize;
@@ -794,6 +861,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	.tooltip-inner {
 		width: 20rem !important;
 	}
+
 	a {
 		&:focus {
 			@include outline-border-blue;
@@ -803,6 +871,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 
 .fnctrl-tooltip.tooltip {
 	width: 30rem !important;
+
 	.tooltip-inner {
 		padding: 0.5rem !important;
 	}
@@ -823,12 +892,15 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .custom-modal-size {
 	width: 45%;
 	max-width: 95% !important;
+
 	@media #{$breakpoint_xl} {
 		width: 70%;
 	}
+
 	@media #{$breakpoint_md} {
 		width: 85%;
 	}
+
 	@media #{$breakpoint_sm} {
 		width: 95%;
 	}
@@ -837,6 +909,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .ms-rating-modal {
 	width: 50rem;
 	max-width: 95% !important;
+
 	.mat-dialog-container {
 		overflow: initial;
 	}
@@ -847,6 +920,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .common-confirmation-modal {
 	width: 50rem;
 	border-radius: $border_radius;
+
 	@media #{$breakpoint_sm} {
 		width: 95%;
 	}
@@ -856,9 +930,11 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .wifi-security-location-modal,
 .home-protection-location-dialog {
 	width: 45rem;
+
 	@media #{$breakpoint_sm} {
 		max-width: 90% !important;
 	}
+
 	&.is-gaming .mat-dialog-container {
 		padding: 1rem;
 	}
@@ -866,6 +942,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 
 .trial-container-Modal {
 	width: 50rem;
+
 	@media #{$breakpoint_sm} {
 		max-width: 90% !important;
 	}
@@ -918,12 +995,15 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	@media #{$breakpoint_xl} {
 		max-width: 45%;
 	}
+
 	@media #{$breakpoint_lg} {
 		max-width: 60%;
 	}
+
 	@media #{$breakpoint_md} {
 		max-width: 80%;
 	}
+
 	@media #{$breakpoint_sm} {
 		max-width: 90%;
 		margin: 0.5rem auto 0;
@@ -1005,6 +1085,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	overflow-y: initial !important;
 	border-radius: 1rem;
 	border: none;
+
 	.mat-dialog-container {
 		padding: 0;
 		overflow: hidden;
@@ -1019,10 +1100,12 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	background: $light;
 	font-size: 1.8rem;
 	color: $light-grey;
+
 	.mat-dialog-container {
 		padding: 3rem 0 0 0;
 		overflow: hidden;
 	}
+
 	h1,
 	h2,
 	h3,
@@ -1064,14 +1147,17 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 
 	.article-content {
+
 		div,
 		span {
 			margin-bottom: 1rem;
 			word-wrap: break-word;
+
 			a {
 				color: $blue-lighter;
 				text-decoration: underline;
 				padding: 0.2rem;
+
 				&:focus {
 					outline: none;
 					padding: 0.1rem;
@@ -1088,6 +1174,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 			margin-bottom: 1rem;
 			word-wrap: break-word;
 		}
+
 		&:focus {
 			@include outline-blue;
 		}
@@ -1104,6 +1191,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		margin-bottom: 3rem;
 		border: none;
 	}
+
 	.close-btn {
 		&:focus {
 			@include outline-blue;
@@ -1119,6 +1207,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	border-radius: 1rem;
 	background: $light;
 	overflow: hidden;
+
 	@media #{$mediaquery_15} {
 		max-width: 90% !important;
 		margin: 1rem auto !important;
@@ -1132,6 +1221,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	min-height: calc(100vh - 3.5rem);
 	border-radius: 1rem;
 	background: $light;
+
 	.mat-dialog-container {
 		padding: 3rem 0 0 0;
 		overflow: hidden;
@@ -1144,6 +1234,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	border-radius: 1rem;
 	background: none;
 	border: none;
+
 	.mat-dialog-container {
 		padding: 0;
 	}
@@ -1155,6 +1246,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	border-radius: 1rem;
 	background: none;
 	border: none;
+
 	.mat-dialog-container {
 		padding: 0;
 	}
@@ -1171,8 +1263,10 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	border-radius: 1rem;
 	background: none;
 	border: none;
+
 	.mat-dialog-container {
 		padding: 0;
+
 		.closeButton {
 			top: 1rem;
 			right: 1rem;
@@ -1184,18 +1278,22 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	border-radius: 1rem;
 	background: $light;
 }
+
 /*----- onclick-tooltip-style------*/
 .tooltip-click {
 	// box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	background: $light;
 	filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.15));
 	margin-right: 1rem;
+
 	@media #{$white-on-black} {
 		@include white-border;
 	}
+
 	@media #{$black-on-white} {
 		@include black-border;
 	}
+
 	&.show {
 		opacity: 1;
 	}
@@ -1246,22 +1344,28 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 			text-decoration: underline;
 			padding: 0.2rem;
 			border: 0.1rem solid transparent;
+
 			&:focus {
 				outline: none;
 				border: 0.1rem solid $menu_hover;
+
 				@media #{$high-contrast} {
 					border: 0.1rem solid $high-contrast-black-textselected !important;
 				}
+
 				@media #{$white-on-black} {
 					border: 0.1rem solid $light !important;
 				}
+
 				@media #{$black-on-white} {
 					border: 0.1rem solid $dark !important;
 				}
 			}
+
 			@media #{$white-on-black} {
 				@include black-border;
 			}
+
 			@media #{$black-on-white} {
 				@include white-border;
 			}
@@ -1272,22 +1376,28 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 			text-decoration: underline;
 			padding: 0.2rem;
 			border: 0.1rem solid transparent;
+
 			&:focus {
 				outline: none;
 				border: 0.1rem solid $menu_hover;
+
 				@media #{$high-contrast} {
 					border: 0.1rem solid $high-contrast-black-textselected !important;
 				}
+
 				@media #{$white-on-black} {
 					border: 0.1rem solid $light !important;
 				}
+
 				@media #{$black-on-white} {
 					border: 0.1rem solid $dark !important;
 				}
 			}
+
 			@media #{$white-on-black} {
 				@include black-border;
 			}
+
 			@media #{$black-on-white} {
 				@include white-border;
 			}
@@ -1297,22 +1407,27 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	.arrow {
 		top: calc(-0.9rem + 50%) !important;
 		@include high-contrast-adjust;
+
 		&::before {
 			border-left-color: $light;
 			border-width: 1rem 0 1rem 1rem;
 			left: 0.3rem;
+
 			@media #{$white-on-black} {
 				display: none;
 			}
+
 			@media #{$black-on-white} {
 				display: none;
 			}
 		}
+
 		&::after {
 			@media #{$white-on-black} {
 				@include high-contrast-tooltip-arrow;
 				top: 0.2rem;
 			}
+
 			@media #{$black-on-white} {
 				@include high-contrast-tooltip-arrow;
 				background: $light;
@@ -1339,11 +1454,9 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		.button-box {
 			.button {
 				min-height: 5rem !important;
-				background: linear-gradient(
-					135deg,
-					$shade_lighter 0%,
-					$shade_lightest 100%
-				) !important;
+				background: linear-gradient(135deg,
+						$shade_lighter 0%,
+						$shade_lightest 100%) !important;
 				color: $blue-dark !important;
 				border: 0.1rem solid $shade_light !important;
 				width: 100%;
@@ -1408,10 +1521,12 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 
 .focus-blue-outline {
 	position: relative;
+
 	&:focus {
 		outline: 0;
 		box-shadow: none;
 	}
+
 	&:focus::after {
 		content: '';
 		display: block;
@@ -1433,10 +1548,12 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	border-color: none !important;
 	padding-bottom: 2px;
 }
+
 .tabset1 .nav-tabs .nav-link {
 	border: none !important;
 	border-right: 1px solid #ffffff !important;
 }
+
 .tabset1 .nav-link {
 	//margin-bottom: 25px !important;
 	color: $shade_darkest !important;
@@ -1444,12 +1561,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	padding: 2rem !important;
 	font-size: 1.5rem;
 }
+
 .tabset1 .nav-tabs {
 	border-color: 0 !important;
 	border-bottom: 0 !important;
 	background: $shade_lighter !important;
 }
-.tabset1 .tab-content > .tab-pane {
+
+.tabset1 .tab-content>.tab-pane {
 	padding: 2rem !important;
 	background: $shade_lightest !important;
 }
@@ -1519,90 +1638,119 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .icon-computer-scan-756353:before {
 	content: '\61';
 }
+
 .icon-easy-resume:before {
 	content: '\63';
 }
+
 .icon-error-1582584:before {
 	content: '\64';
 }
+
 .icon-internet-performance:before {
 	content: '\66';
 }
+
 .icon-malware-security:before {
 	content: '\67';
 }
+
 .icon-microsoft-windows-22:before {
 	content: '\68';
 }
+
 .icon-noun-registery-key-1581151:before {
 	content: '\69';
 }
+
 .icon-noun-touch-200038:before {
 	content: '\6a';
 }
+
 .icon-performance:before {
 	content: '\6b';
 }
+
 .icon-power-agenda:before {
 	content: '\6c';
 }
+
 .icon-question-circle:before {
 	content: '\6d';
 }
+
 .icon-recycling-2025397:before {
 	content: '\6e';
 }
+
 .icon-multitasking:before {
 	content: '\6f';
 }
+
 .icon-virus:before {
 	content: '\70';
 }
+
 .icon-wifi:before {
 	content: '\62';
 }
+
 .icon-visible-to-online-trackers:before {
 	content: '\71';
 }
+
 .icon-uninstall-375971-2:before {
 	content: '\72';
 }
+
 .icon-uninstall-375971:before {
 	content: '\73';
 }
+
 .icon-uninstall:before {
 	content: '\74';
 }
+
 .icon-thumbsup:before {
 	content: '\75';
 }
+
 .icon-router:before {
 	content: '\76';
 }
+
 .icon-responsive:before {
 	content: '\77';
 }
+
 .icon-icon-247-protection:before {
 	content: '\65';
 }
+
 .icon-icon-automated-resolution:before {
 	content: '\78';
 }
+
 .icon-icon-browser-security:before {
 	content: '\79';
 }
+
 .icon-icon-browser-settings:before {
 	content: '\7a';
 }
+
 .icon-icon-e-junk:before {
 	content: '\41';
 }
+
 .icon-icon-schedule-scan:before {
 	content: '\42';
 }
+
 .icon-icon-security-settings:before {
 	content: '\43';
 }
+
 .icon-icon-zero-day:before {
 	content: '\44';
 }
@@ -1613,41 +1761,52 @@ vtr-subpage-smart-performance-scan-summary {
 		display: none;
 	}
 }
+
 vtr-ui-smart-performance-scanning {
 	.vtr-page-header {
 		display: none;
 	}
 }
+
 .vtr-ui-smart-performance-scan-summary {
 	.date-picker {
 		ngb-datepicker {
 			width: 100%;
 			border: none;
 			border-radius: 0;
+
 			.ngb-dp-header {
 				background: transparent;
 			}
+
 			.ngb-dp-month {
 				width: 100%;
+
 				.ngb-dp-week {
 					display: flex;
 					justify-content: space-around;
+
 					&.ngb-dp-weekdays {
 						border: none;
 					}
+
 					&.bg-light {
 						background: transparent !important;
 					}
+
 					.ngb-dp-weekday {
 						font-style: normal;
 					}
 				}
 			}
+
 			.btn-light {
 				cursor: pointer;
 			}
+
 			.bg-primary {
 				background: transparent !important;
+
 				&.text-white {
 					color: $go_dark !important;
 					font-weight: $weight_bold;
@@ -1662,10 +1821,12 @@ vtr-ui-smart-performance-scanning {
 		box-shadow: none;
 		@include white-border;
 	}
+
 	@media #{$black-on-white} {
 		box-shadow: none;
 		@include black-border;
 	}
+
 	.change-scan-schedule {
 		.day-dropdown {
 			&.date-picker {
@@ -1673,30 +1834,39 @@ vtr-ui-smart-performance-scanning {
 					width: 20rem;
 					border: none;
 					border-radius: 0;
+
 					.ngb-dp-header {
 						background: transparent;
 					}
+
 					.ngb-dp-month {
 						width: 100%;
+
 						.ngb-dp-week {
 							display: flex;
 							justify-content: space-around;
+
 							&.ngb-dp-weekdays {
 								border: none;
 							}
+
 							&.bg-light {
 								background: transparent !important;
 							}
+
 							.ngb-dp-weekday {
 								font-style: normal;
 							}
+
 							.btn-light:hover {
 								cursor: pointer;
 							}
 						}
 					}
+
 					.bg-primary {
 						background: transparent !important;
+
 						&.text-white {
 							color: $go_dark !important;
 							font-weight: $weight_bold;
@@ -1714,80 +1884,96 @@ vtr-ui-smart-performance-scanning {
 	@media #{$white-on-black} {
 		background-color: $dark;
 	}
+
 	@media #{$black-on-white} {
 		background-color: $light;
 	}
 }
+
 // checked
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
 	@media #{$white-on-black} {
 		background-color: $high-contrast-black-textselected;
 		border-color: $high-contrast-black-textselected;
 		border-radius: 0rem !important;
 	}
+
 	@media #{$black-on-white} {
 		background-color: $high-contrast-white-textselected;
 		border-color: $high-contrast-white-textselected;
 		border-radius: 0rem !important;
 	}
 }
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
 	@media #{$white-on-black} {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>");
 	}
 }
+
 // disabled
-.custom-checkbox .custom-control-input:disabled:not(:checked) ~ .custom-control-label::before {
+.custom-checkbox .custom-control-input:disabled:not(:checked)~.custom-control-label::before {
 	@media #{$white-on-black} {
 		border-color: $high-contrast-black-disabled !important;
 	}
+
 	@media #{$black-on-white} {
 		border-color: $high-contrast-white-disabled !important;
 	}
 }
-.custom-control-input:checked:disabled:checked ~ .custom-control-label::before {
+
+.custom-control-input:checked:disabled:checked~.custom-control-label::before {
 	@media #{$white-on-black} {
 		border-color: $high-contrast-black-disabled !important;
 		background-color: $dark;
 	}
+
 	@media #{$black-on-white} {
 		border-color: $high-contrast-white-disabled !important;
 		background-color: $light;
 	}
 }
-.custom-control-input:checked:disabled:checked ~ .custom-control-label::after {
+
+.custom-control-input:checked:disabled:checked~.custom-control-label::after {
 	@media #{$white-on-black} {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='#3be23b' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
 	}
+
 	@media #{$black-on-white} {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='#AF7E7E' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
 	}
 }
+
 // hover
-.custom-checkbox .custom-control-input:not(:checked):hover ~ .custom-control-label::before {
+.custom-checkbox .custom-control-input:not(:checked):hover~.custom-control-label::before {
 	@media #{$white-on-black} {
 		border: 0.2rem solid $high-contrast-black-textselected;
 		border-radius: 0rem !important;
 	}
+
 	@media #{$black-on-white} {
 		border: 0.2rem solid $high-contrast-white-textselected;
 		border-radius: 0rem !important;
 	}
 }
-.custom-control-input:checked:hover ~ .custom-control-label::before {
+
+.custom-control-input:checked:hover~.custom-control-label::before {
 	@media #{$white-on-black} {
 		border-color: $high-contrast-black-textselected;
 		background-color: $dark;
 	}
+
 	@media #{$black-on-white} {
 		border-color: $high-contrast-white-textselected;
 		background-color: $light;
 	}
 }
-.custom-control-input:checked:hover ~ .custom-control-label::after {
+
+.custom-control-input:checked:hover~.custom-control-label::after {
 	@media #{$white-on-black} {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
 	}
+
 	@media #{$black-on-white} {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
 	}
@@ -1801,28 +1987,35 @@ vtr-ui-smart-performance-scanning {
 	max-width: 80% !important;
 	max-height: calc(100% - 3.5rem);
 	border-radius: 1rem;
+
 	&.cdk-overlay-pane {
 		.mat-dialog-container {
 			padding: 0;
+
 			.closeButton {
 				right: 1rem;
 				top: 1rem;
 			}
 		}
 	}
+
 	@media #{$breakpoint_xl} {
 		width: 92rem;
 	}
+
 	@media #{$breakpoint_lg} {
 		width: 70rem;
 	}
+
 	@media #{$breakpoint_md} {
 		width: 54rem;
 	}
+
 	@media #{$breakpoint_sm} {
 		width: 40rem;
 		margin: auto;
 	}
+
 	.vtr-battery-indicator {
 		.cell {
 			@media #{$breakpoint_md} {
@@ -1830,6 +2023,7 @@ vtr-ui-smart-performance-scanning {
 			}
 		}
 	}
+
 	.close-button {
 		&:focus {
 			outline: 0.1rem solid $menu_hover !important;
@@ -1844,12 +2038,15 @@ vtr-ui-smart-performance-scanning {
 	height: calc(100vh - 3.5rem);
 	min-height: calc(100vh - 3.5rem);
 	background: none;
+
 	@media #{$breakpoint_lg} {
 		max-width: 80%;
 	}
+
 	@media #{$breakpoint_md} {
 		max-width: 85%;
 	}
+
 	@media #{$breakpoint_sm} {
 		max-width: 90%;
 	}
@@ -1860,6 +2057,7 @@ vtr-ui-smart-performance-scanning {
 	max-width: 55% !important;
 	margin: 0 auto;
 	border-radius: 1rem;
+
 	.description {
 		.question {
 			font-weight: $weight_bold;
@@ -1877,9 +2075,11 @@ vtr-ui-smart-performance-scanning {
 	@media #{$breakpoint_lg} {
 		max-width: 70% !important;
 	}
+
 	@media #{$breakpoint_md} {
 		max-width: 75% !important;
 	}
+
 	@media #{$breakpoint_sm} {
 		max-width: 80% !important;
 	}
@@ -1889,17 +2089,21 @@ vtr-ui-smart-performance-scanning {
 	max-width: 35% !important;
 	margin: 0 auto;
 	border-radius: 1rem;
+
 	.description {
 		.question {
 			font-weight: $weight_bold;
 		}
 	}
+
 	@media #{$breakpoint_lg} {
 		max-width: 70%;
 	}
+
 	@media #{$breakpoint_md} {
 		max-width: 75%;
 	}
+
 	@media #{$breakpoint_sm} {
 		max-width: 80%;
 	}
@@ -1910,21 +2114,26 @@ vtr-ui-smart-performance-scanning {
 	max-width: 55% !important;
 	margin: 0 auto;
 	border-radius: 1rem;
+
 	@media #{$breakpoint_lg} {
 		max-width: 60% !important;
 	}
+
 	@media #{$breakpoint_md} {
 		max-width: 65% !important;
 	}
+
 	@media #{$breakpoint_sm} {
 		max-width: 80% !important;
 	}
 }
+
 .installation-history-container {
 	.vtr-container-collapsible.white-theme {
 		border-radius: 1rem !important;
 		box-shadow: 0 0.7rem 1.5rem 0 rgba(0, 0, 0, 0.15) !important;
 		margin-top: 2.4rem;
+
 		.card-header {
 			border-bottom: none;
 		}
@@ -1940,13 +2149,16 @@ vtr-ui-smart-performance-scanning {
 .slider-note {
 	margin-right: 0.8rem;
 	padding-left: 1.5rem;
+
 	.vtr-ui-rounded-rectangle-radio {
 		width: 13rem !important;
 		height: 5rem !important;
+
 		.label {
 			font-size: $fontsize_xs !important;
 			left: 4.5rem !important;
 		}
+
 		.icon-circle {
 			font-size: 2rem !important;
 			top: 1.4rem !important;
@@ -1957,16 +2169,20 @@ vtr-ui-smart-performance-scanning {
 .np-l {
 	padding-left: 0rem !important;
 }
+
 .auto-screen-lock-help-icon {
 	ngb-tooltip-window.vtr-tooltip.tooltip {
 		.tooltip-inner {
 			width: 24.2rem;
+
 			@media #{$breakpoint_xl6} {
 				width: 44.2rem;
 			}
+
 			@media #{$breakpoint_xl3} {
 				width: 32.5rem;
 			}
+
 			@media #{$breakpoint_xl} {
 				width: 24.2rem;
 			}
@@ -1980,6 +2196,7 @@ vtr-ui-smart-performance-scanning {
 			padding: 1rem $padding_side 6rem $padding_side !important;
 		}
 	}
+
 	.container-card {
 		&.card-corner {
 			height: 100% !important;
@@ -1988,18 +2205,22 @@ vtr-ui-smart-performance-scanning {
 				.card-image {
 					height: 100% !important;
 					min-height: 28.5rem;
+
 					@media #{$breakpoint_xl} {
 						min-height: 20rem;
 					}
+
 					@media #{$breakpoint_lg} {
 						min-height: 28.5rem;
 					}
+
 					@media #{$breakpoint_sm} {
 						min-height: 20rem;
 					}
 				}
 			}
 		}
+
 		&.card-highlight {
 			height: 100% !important;
 
@@ -2020,6 +2241,7 @@ vtr-ui-smart-performance-scanning {
 			margin-left: 2rem;
 		}
 	}
+
 	.vtr-ui-circle-radio-with-checkbox.white-theme {
 		.icomoon {
 			font-size: 4.5rem !important;
@@ -2031,6 +2253,7 @@ vtr-ui-smart-performance-scanning {
 	.vtr-ui-switch-row.white-theme {
 		padding: 0 0.7rem 1.5rem !important;
 	}
+
 	.inputSection {
 		.ui-dropdown {
 			.ui-menu-dropdown {
@@ -2046,34 +2269,41 @@ vtr-ui-smart-performance-scanning {
 .subpage-device-settings-display,
 .subpage-device-settings-input-accessories,
 .vtr-page-smart-assist {
+
 	.vtr-container-collapsible.blue-theme,
 	.vtr-container-collapsible.white-theme {
 		.card-header {
 			padding: 0.75rem 0.7rem;
+
 			.header {
 				padding: 0 2rem;
 			}
 		}
+
 		.card-body {
 			padding-left: 0.7rem !important;
 			padding-right: 2.4rem !important;
 			padding-top: 2rem !important;
+
 			.vtr-ui-switch-row {
 				.vtr-col-pad {
 					padding: 0 2rem;
 				}
 			}
 		}
+
 		.collapse-header {
 			&:focus {
 				outline: none;
 			}
 		}
 	}
+
 	.vtr-ui-switch-row.blue-theme,
 	.vtr-ui-switch-row.white-theme {
 		padding: 0 0 1.5rem !important;
 	}
+
 	.intelligent-security-block,
 	.power-settings-block,
 	.battery-settings-block,
@@ -2110,6 +2340,7 @@ label {
 .focus-with-border-radius {
 	&:focus {
 		outline: none !important;
+
 		&:before {
 			content: '';
 			position: absolute;
@@ -2139,6 +2370,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	background-color: $light;
 	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	padding-bottom: 0;
+
 	.tooltip-inner {
 		padding: 0.8rem;
 		color: $main_dark;
@@ -2155,6 +2387,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 		@media #{$white-on-black} {
 			border-bottom: none !important;
 		}
+
 		@media #{$black-on-white} {
 			border-bottom: none !important;
 		}
@@ -2322,6 +2555,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 }
 
 .uppercase {
+
 	&,
 	span,
 	p,
@@ -2361,29 +2595,35 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	letter-spacing: 0.49px;
 	padding-bottom: 0.2rem;
 	border-bottom: 0.2rem solid $blue-lighter;
+
 	&:hover {
 		text-decoration: none;
 		color: $blue-light;
 		border-color: $blue-light;
 	}
+
 	&:focus {
 		color: $blue-light;
 		outline: 0.1rem solid $menu_hover !important;
 		outline-offset: 0.1rem;
 		border-color: $blue-light;
 	}
+
 	&:active {
 		color: $menu_hover;
 		border-color: $menu_hover;
 	}
+
 	&:disabled {
 		color: $grey_darker !important;
 		border-color: $grey_darker !important;
 		outline: none !important;
 	}
+
 	@media #{$black-on-white} {
 		@include hyperlink-blue-white;
 	}
+
 	@media #{$white-on-black} {
 		@include hyperlink-yellow-black;
 	}
@@ -2401,6 +2641,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	background-color: $alert_border;
 	border-radius: 100%;
 	padding: 2px;
+
 	.path1 {
 		background-image: $alert_bg;
 		border-radius: 100%;
@@ -2410,17 +2651,20 @@ ngb-tooltip-window.schedule-scan.tooltip {
 			background-color: transparent;
 			color: $dark;
 		}
+
 		@media #{$white-on-black} {
 			background-color: transparent;
 			color: $light;
 		}
 	}
+
 	.path2 {
 		color: $light;
 
 		@media #{$black-on-white} {
 			color: $light;
 		}
+
 		@media #{$white-on-black} {
 			color: $dark;
 		}
@@ -2429,6 +2673,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	@media #{$black-on-white} {
 		background-color: $dark;
 	}
+
 	@media #{$white-on-black} {
 		background-color: $light;
 	}
@@ -2444,19 +2689,114 @@ ngb-tooltip-window.schedule-scan.tooltip {
 .modal-common-responsive {
 	max-height: calc(100vh - 2rem);
 	padding: 0 !important;
+
 	@media #{$breakpoint_xl2} {
 		max-width: 50% !important;
 	}
+
 	@media #{$breakpoint_xl} {
 		max-width: 50% !important;
 	}
+
 	@media #{$breakpoint_lg} {
 		max-width: 60% !important;
 	}
+
 	@media #{$breakpoint_md} {
 		max-width: 80% !important;
 	}
+
 	@media #{$breakpoint_sm} {
 		max-width: 95% !important;
 	}
+}
+
+.cdk-overlay-container {
+	.mat-dialog-container {
+		.restore-profile-dialog {
+			width: 48rem;
+			height: 30rem;
+
+			@media #{$breakpoint_md} {
+				width: 40rem;
+				height: 30rem;
+			}
+
+			.close-btn {
+				height: 2rem;
+				width: 2rem;
+
+				img {
+					height: 2rem;
+					width: 2rem;
+				}
+			}
+
+			.description {
+				font-size: 1.4rem;
+				color: #34495E
+			}
+
+			.steps {
+				list-style-type: decimal;
+				margin-left: 2rem;
+				font-size: 1.4rem;
+			}
+		}
+
+		.color-calibration-screenshot-dialog {
+			box-sizing: border-box;
+			background: $light;
+
+			&.page-app {
+				max-width: 120rem;
+			}
+
+			.content {
+				width: 100%;
+				padding: 0 4rem;
+				overflow-x: hidden;
+				overflow-y: auto;
+				max-height: calc(100vh - 10rem);
+				background: $light;
+			}
+
+			h1 {
+				font-size: 3.1rem;
+				font-weight: normal;
+				color: $blue-dark;
+				margin-bottom: 2rem;
+				padding-right: 6.4rem;
+			}
+		}
+
+		.btn-modal-close {
+			right: 1rem;
+			top: -1rem;
+		}
+
+		.image-content {
+			width: 100%;
+			margin-bottom: 4rem;
+			border: 1px solid #ddd;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.spinner-content {
+			padding-top: 4rem;
+			margin-bottom: 4rem;
+
+			.spinner-border {
+				width: 5rem !important;
+				height: 5rem !important;
+				padding: 4rem;
+			}
+		}
+	}
+
 }

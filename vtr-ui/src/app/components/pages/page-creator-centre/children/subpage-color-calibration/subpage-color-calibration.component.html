@@ -1,19 +1,195 @@
-<div class="subpage-colorCalibration vtr-subpage row vtr-page-columns">
-	<div class="col-lg-7 col-xl-8 vtr-subpage-left-column">
-			<vtr-ui-header-subpage [title]="'smb.creatorCentre.colorCalibration.title' | translate"
-				[caption]="'smb.creatorCentre.colorCalibration.desc' | translate"
-				[textId]="'smb-color-calibration'">
-			</vtr-ui-header-subpage>
-			<div class="row py-5"
-				id="Input & Accessories">
-				<div class="col-12 px-0">
-                    color calibration
-				</div>
+<!-- <div class="subpage-colorCalibration vtr-subpage row vtr-page-columns">
+	<div class="col-lg-7 col-xl-8 vtr-page-column vtr-subpage-left-column">
+		<vtr-ui-header-subpage [title]="'smb.creatorCentre.colorCalibration.title' | translate"
+			[caption]="'smb.creatorCentre.colorCalibration.desc' | translate"
+			[textId]="'smb-color-calibration'">
+		</vtr-ui-header-subpage>
+		<div class="row py-5"
+			id="Input & Accessories">
+			<div class="col-12 px-0">
+				color calibration
 			</div>
-	</div>
-	<div class="col-lg-5 col-xl-4 vtr-subpage-right-column">
-		<div class="col mt-40">
-			<div>banner</div>
 		</div>
 	</div>
-</div>
+</div> -->
+
+<vtr-subpage-layout [pageCssClass]="'colorCalibration'">
+	<left-content>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col apps-header">
+					<vtr-ui-header-subpage [title]="'smb.creatorCentre.colorCalibration.title' | translate"
+						[caption]="'smb.creatorCentre.colorCalibration.desc' | translate"
+						[textId]="'smb-color-calibration'">
+					</vtr-ui-header-subpage>
+				</div>
+			</div>
+			<div class="row btn-content no-gutters justify-content-between ng-star-inserted">
+				<div class="col-6 logo-con"
+					*ngIf="true">
+					<img class="img-logo"
+						role="img"
+						id="apps-for-you-app-icon"
+						[src]="'assets/images/smb/colorcalibration/logo.svg'"
+						alt="App logo" />
+					<div class="app-name">
+						<div class="app-title"
+							role="text"
+							id="apps-for-you-text-app-title">{{ 'X-rite application' }}</div>
+					</div>
+				</div>
+				<div class="col-6 d-flex align-items-center justify-content-end">
+					<div class="spinner-content app-spinner"
+						*ngIf="downloadStatus == DownloadState.DOWNLOADING || downloadStatus == DownloadState.INSTALLING">
+						<div class="spinner-border text-primary progress-spinner"
+							role="status"></div>
+					</div>
+					<div class="btn-box">
+						<vtr-ui-button [isDisabled]="!isOnline"
+							(onClick)="clickInstallButton()"
+							metricsEvent="FeatureClick"
+							metricsParent="CreatorCentre"
+							metricsItem="{{getMetricsItem(installStatus)}}"
+							[isFullWidth]="true"
+							linkId="{{getLinkID(installStatus)}}"
+							[label]="getInstallButtonLabel(installStatus)"></vtr-ui-button>
+					</div>
+					<div class="error-message text-ellipsis"
+						role="text"
+						id="apps-for-you-launch-button-error-message"
+						*ngIf="errorMessage"
+						[title]=""
+						[matTooltip]="errorMessage"
+						matTooltipClass="vtr-system-tooltip">{{ errorMessage }}</div>
+				</div>
+			</div>
+			<div class="row"
+				id="X-rite application">
+				<div class="col-12 px-0 app-content">
+					<vtr-container-collapsible [collapseLinkId]="'colorCalibration'"
+						[headerLevel]="3"
+						[cardTitle]="'smb.creatorCentre.colorCalibration.title' | translate"
+						componentName="colorCalibration"
+						[isCollapsed]="false"
+						[allowCollapse]="true"
+						[theme]="'white'"
+						[tabIndex]="0">
+						<div class="summary-box">
+							<p [innerHTML]="'smb.creatorCentre.colorCalibration.summary' | translate"></p>
+						</div>
+						<div class="screenshot-box">
+							<div class="screenshot-title">
+								<span>{{'smb.creatorCentre.colorCalibration.screenshotTitle' | translate}} </span>
+							</div>
+							<div class="screenshot d-flex justify-content-between"
+								#screenshotImageContent
+								[style.height.px]="screenshotImageContent.clientWidth / 5">
+								<!-- <a class="images"
+									(click)="openScreenshotDialog('assets/images/smb/colorcalibration/screenshot1.png')"> -->
+								<img class="images"
+									role="img"
+									[src]="'assets/images/smb/colorcalibration/screenshot1.png'">
+								<!-- </a> -->
+								<img class="images"
+									role="img"
+									[src]="'assets/images/smb/colorcalibration/screenshot2.png'">
+								<img class="images"
+									role="img"
+									[src]="'assets/images/smb/colorcalibration/screenshot3.png'">
+							</div>
+						</div>
+					</vtr-container-collapsible>
+				</div>
+			</div>
+		</div>
+	</left-content>
+	<right-content>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col col-sm-12 col-md-12 pb-20 px-0 card-content">
+					<!-- <vtr-creator-center-card>
+						<card-content>
+							<div class="card-title"><span>{{'smb.creatorCentre.colorCalibration.cardTitle' | translate}}</span></div>
+							<div class="card-summary">
+								<span>{{'smb.creatorCentre.colorCalibration.cardSummary' | translate}}</span>
+							</div>
+							<div class="learn-more"><a>{{'smb.creatorCentre.colorCalibration.learnMore' | translate}}</a></div>
+						</card-content>
+					</vtr-creator-center-card> -->
+					<vtr-promotion-banner [title]="'smb.creatorCentre.colorCalibration.cardTitle' | translate"
+						[description]="('smb.creatorCentre.colorCalibration.cardSummary' | translate)"
+						[imgSrc]="'assets/images/smb/colorcalibration/card-background.png'">
+						<div>
+							<a class="learn-more"
+								role="button"
+								(click)="onRestoreProfileClick()">{{'smb.creatorCentre.colorCalibration.learnMore' | translate}}</a>
+						</div>
+					</vtr-promotion-banner>
+				</div>
+			</div>
+		</div>
+	</right-content>
+</vtr-subpage-layout>
+<ng-template #storeProfileDlg
+	let-data>
+	<div class="restore-profile-dialog">
+		<div class="row d-flex justify-content-between">
+			<h1 class="mb-3 mt-10">
+				{{'smb.creatorCentre.colorCalibration.cardTitle' | translate}}</h1>
+			<a role="button"
+				type="button"
+				href="javascript:;"
+				class="close-btn "
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsParent="Productivity.CreatorCentre.ColorCalibration"
+				metricsItem="ColorCalibrationModalCloseIcon"
+				(click)="closeRestoreProfileModal()"
+				(keydown.enter)="closeRestoreProfileModal()"
+				attr.aria-label="productivity-CreatorCentre-ColorCalibration-modal-close"
+				id="productivity-CreatorCentre-ColorCalibration-modal-close">
+				<!-- <fa-icon  [icon]="['fal', 'times']"></fa-icon> -->
+				<img [src]=" 'assets/icons/Close.svg' | svgInline | async"
+					alt=""
+					srcset="">
+			</a>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div>
+					<p class="description">{{'smb.creatorCentre.colorCalibration.restoreProfileDesc'|translate}}</p>
+				</div>
+				<div>
+					<ul class="steps">
+						<li>
+							{{'smb.creatorCentre.colorCalibration.restoreProfileStep1' | translate}}
+						</li>
+						<li>
+							{{'smb.creatorCentre.colorCalibration.restoreProfileStep2' | translate}}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>
+
+<ng-template #screenshotDlg
+	let-data>
+	<div class="color-calibration-screenshot-dialog d-flex flex-column position-relative pt-5"
+		id="color-calibration-screenshot-dialog">
+		<div class="content">
+			<div class="image-content"
+				#loadingImg
+				[style.height.px]="loadingImg.clientWidth * 875 / 1400">
+				<img [src]="'assets/images/smb/colorcalibration/screenshot1.png'" />
+			</div>
+		</div>
+		<div class="btn-modal-close">
+			<vtr-ui-close-button linkId="color-calibration-screenshot-dialog-close"
+				metricsItem="ColorCalibrationScreenshotCloseButton"
+				[metricsParent]="'CreatorCentre'"
+				(clickClose)="closeScreenshotDialog()"></vtr-ui-close-button>
+		</div>
+	</div>
+</ng-template>

@@ -6052,8 +6052,16 @@
 
 			},
 			"colorCalibration": {
-				"title": "Color calibration"
-
+				"title": "Color calibration",
+				"appName" : "X-rite application",
+				"summary": "The display panel of your computer is calibrated on the factory line with premium professional caliber Minolta colorimeters. Calibration data is stored in the cloud and can be downloaded to reset the panel to factory settings. X-Rite is pre-installed to manage color spaces.​<br>- Default (native Gamut, native brightness but calibrated gray ramp and display characterization stored in profile). <br>- Default profile is installed by default on the machine. This profile is loaded by Windows on startup. <br>- Not Calibrated (Color management off. This means using the default Lenovo Profile.) <br>- sRGB (computer monitors) - Adobe RGB (for graphic designers planning to print in CYMK) <br>- BT.709 (HD video) <br>- DCI P3 (commonly used in digital movie projection in the US)",
+				"screenshotTitle":"Screenshots",
+				"cardTitle":"How to restore profiles?",
+				"cardSummary":"If you reinstall your system or color profiles are lost, you can restore profiles from here:",
+				"learnMore":"Learn more",
+				"restoreProfileDesc": "Lenovo provides backup color profiles in Lenovo Cloud. To ensure the color calibration feature works on your computer, you might need to restore or install color profiles in the following situations: If the color profiles are lost or damaged, a window will be displayed to remind you to restore the color profiles. Click Yes in the prompted window, and the color profiles will be restored from Lenovo Cloud automatically. If your computer display is replaced by Lenovo authorized service provider, do the following:",
+				"restoreProfileStep1": "Click the triangular icon in the Windows notification area to show hidden icons. Then, click the icon of X-rite app to open it.​",
+				"restoreProfileStep2": "Click Settings > Restore profiles."
 			}
 		}
 	}
