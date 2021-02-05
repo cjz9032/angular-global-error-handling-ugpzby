@@ -264,8 +264,7 @@
 				&:hover {
 					background-color: $blueHover !important;
 					@media #{$high-contrast} {
-						background: none !important;
-						background-color: none !important;
+						background-color: window !important;
 					}
 				}
 
