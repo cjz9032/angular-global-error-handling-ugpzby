@@ -153,6 +153,7 @@ export class ConfigService {
 			if (machineInfo?.isGaming) {
 				resultMenu = cloneDeep(this.menuItemsGaming);
 				this.initializeWiFiItem(resultMenu);
+				await this.initializeContentLibrary(resultMenu);
 
 				const assistCapability: SmartAssistCapability = new SmartAssistCapability();
 				assistCapability.isSuperResolutionSupported = await this.smartAssist.getSuperResolutionStatus();
@@ -182,6 +183,7 @@ export class ConfigService {
 				this.initializeSecurityItem(this.country, resultMenu);
 				this.initializeSMB(resultMenu);
 				await this.initializeHardwareScan(resultMenu);
+				await this.initializeContentLibrary(resultMenu);
 				if (this.hypSettings) {
 					resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
 					resultMenu = await this.initializeAppSearchItem(resultMenu);
@@ -244,6 +246,11 @@ export class ConfigService {
 	private async initializeAppSearchItem(menu: any) {
 		const showSearch = await this.canShowSearch();
 		return this.supportFilter(menu, 'app-search', showSearch);
+	}
+
+	private async initializeContentLibrary(menu: any) {
+		const hideContentLibrary = await this.deviceService.isCdDevice();
+		this.supportFilter(menu, MenuID.contentLibrary, !hideContentLibrary);
 	}
 
 	private async initShowCHSMenu(

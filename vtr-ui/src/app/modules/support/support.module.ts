@@ -34,11 +34,13 @@ import { FeedbackModule } from '../feedback/feedback.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
 import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
+import { PageContentLibraryComponent } from 'src/app/components/pages/page-content-library/page-content-library.component';
 
 
 @NgModule({
 	declarations: [
 		PageSupportComponent,
+		PageContentLibraryComponent,
 		UIArticleItemComponent,
 		ContainerArticleComponent,
 		ModalLicenseComponent,

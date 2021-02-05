@@ -95,7 +95,7 @@ export class DeviceService {
 	private identifySMBMachine(machineFamilyName) {
 		if (machineFamilyName.match(/^(thinkbook)/) || machineFamilyName.match(/^(thinkpad e)/)) {
 			this.isSMB = true;
-			let trimedFamilyName = machineFamilyName.trim().toLowerCase();
+			const trimedFamilyName = machineFamilyName.trim().toLowerCase();
 			if (smbMachines.creatorSettings.includes(trimedFamilyName)) {
 				this.supportCreatorSettings = true;
 			}
@@ -158,6 +158,17 @@ export class DeviceService {
 
 	getMachineInfoSync(): any {
 		return this.machineInfo;
+	}
+
+	isCdDevice(): Promise<any> {
+		return this.getMachineInfo()
+			.then((info) => {
+				if (info && info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd')) {
+					return true;
+				}
+				return false;
+			})
+			.catch(() => false);
 	}
 
 	getHardwareInfo(): Promise<any> {

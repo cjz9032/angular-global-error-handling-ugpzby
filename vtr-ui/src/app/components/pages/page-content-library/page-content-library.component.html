@@ -1,0 +1,115 @@
+<vtr-page-layout [title]="title | translate"
+	[textId]="'content-library'"
+	[pageCssClass]="'support'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="backId"
+	[isInnerBack]="isCategoryArticlesShow"
+	(innerBack)="onInnerBack()">
+
+	<left-content>
+		<div class="container-fluid">
+			<div class="row"
+				*ngIf="!isOnline">
+				<div class="col col-12 px-0 pt-0 pb-24">
+					<vtr-widget-offline-info [isButtonVisible]="false"
+						[isSubtitleVisible]="false"
+						[title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+						[offlineConnection]="offlineConnection">
+					</vtr-widget-offline-info>
+				</div>
+			</div>
+			<div class="row no-gutters"
+				*ngIf="!isOnline">
+				<div class="col-12 col-sm-6 pb-24 offline-article"
+					*ngFor="let offlineImage of offlineImages">
+					<div class="offline-article-item">
+						<img class="w-100"
+							[src]="offlineImage" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row"
+				*ngIf="articleCategories.length > 0 && isOnline">
+				<div class="col col-12 px-0 pt-0 pb-24">
+					<div class="card quick-access">
+						<div id="support-category-title"
+							role="text"
+							class="quick-access-title">
+							{{ 'support.quickAccess.categories' | translate }}</div>
+						<div id="support-category-description"
+							role="text"
+							class="quick-access-desc">
+							{{ 'support.quickAccess.categoriesDesc' | translate }}</div>
+						<div class="quick-assess-categories row no-gutters">
+							<div role="button"
+								class="quick-assess-item focus-with-border-radius"
+								*ngFor="let category of articleCategories, let i = index"
+								[tabindex]="selectedCategoryId === category.Id ? -1 : 1"
+								id="{{'support-category-'+category.Id}}"
+								[attr.aria-label]="category.Title + 'support.quickAccess.seeArticles' | translate"
+								vtrMetrics
+								metricsItem="Support.CategoryClicked"
+								metricsEvent="featureClick"
+								metricsParam="CategoryId: {{ category.Id }}"
+								(keyup.enter)="clickCategory(category.Id)"
+								(click)="clickCategory(category.Id)">
+								<div class="item-con"
+									[class.selected]="selectedCategoryId === category.Id">
+									<div class="item-icon">
+										<img *ngIf="category.Image"
+											[src]="category.Image" />
+										<img *ngIf="!category.Image"
+											[src]="localCateIcons[i] | svgInline | async" />
+									</div>
+									<div class="item-title">{{ category.Title }}</div>
+
+									<div class="item-button"
+										[matTooltip]="'support.quickAccess.seeArticles' | translate"
+										matTooltipClass="vtr-system-tooltip">
+										{{ 'support.quickAccess.seeArticles' | translate }}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row"
+				*ngIf="articlesType !== 'loading'">
+				<div class="col-md-6 pb-24 card-left"
+					*ngIf="articles.left.length > 0">
+					<vtr-container-article [items]="articles.left"
+						*ngIf="isOnline"
+						[startIndex]="1"
+						[indexTimes]="2"
+						[type]="articlesType">
+					</vtr-container-article>
+				</div>
+				<div class="col-md-6 pb-24 card-right"
+					*ngIf="articles.right.length > 0">
+					<vtr-container-article [items]="articles.right"
+						*ngIf="isOnline"
+						[startIndex]="2"
+						[indexTimes]="2"
+						[type]="articlesType">
+					</vtr-container-article>
+				</div>
+			</div>
+			<div class="spinner-content w-100 text-center"
+				*ngIf="articlesType === 'loading' && isOnline">
+				<div class="spinner-border text-primary progress-spinner"
+					role="status"></div>
+			</div>
+			<div class="spinner-content w-100 text-center"
+				*ngIf="articlesType === SupportContentStatus.Empty && isOnline">
+				<img src="assets/images/support/empty.png" />
+			</div>
+		</div>
+	</left-content>
+
+</vtr-page-layout>

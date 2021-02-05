@@ -1,0 +1,400 @@
+@import '../../../app.theme';
+
+:host ::ng-deep {
+	.vtr-page-left-column {
+		background: $shade_lightest;
+		flex: 0 0 100%;
+		max-width: 100%;
+		padding: 0;
+
+		.offline-article {
+			&:nth-child(even) {
+				padding-left: 2rem;
+			}
+
+			&:nth-child(odd) {
+				padding-right: 2rem;
+			}
+
+			@media #{$mediaquery_sm} {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+
+			.offline-article-item {
+				box-shadow: $drop_shadow;
+				border-radius: $border_radius;
+				background-color: $light;
+				position: relative;
+				overflow: hidden;
+			}
+		}
+
+		.quick-access {
+			border-radius: $border_radius;
+			box-shadow: $drop_shadow;
+			border: none;
+			padding: 2.4rem 0 1.2rem;
+
+			@media #{$black-on-white} {
+				border: 0.1rem solid $dark;
+			}
+
+			@media #{$white-on-black} {
+				border: 0.1rem solid $light;
+			}
+
+			.quick-access-title {
+				font-size: $fontsize_xl;
+				padding: 0 2.4rem;
+				color: $main_dark;
+				font-weight: $weight_600;
+			}
+
+			.quick-access-desc {
+				font-size: 1.6rem;
+				padding: 0 2.4rem;
+				margin-bottom: 1.2rem;
+				color: #667481;
+			}
+
+			.quick-assess-categories {
+				display: flex;
+				justify-content: space-around;
+				padding: 0 1.2rem;
+
+				.quick-assess-item {
+					width: 25%;
+					padding: 1.2rem;
+					text-decoration: none;
+					position: relative;
+
+					@media #{$high-contrast} {
+						-ms-high-contrast-adjust: none;
+					}
+
+					&:focus {
+						&:before {
+							width: calc(100% - 1.4rem);
+							height: calc(100% - 1.4rem);
+							left: 0.7rem;
+							top: 0.7rem;
+							border-radius: 0.8rem;
+
+							@media #{$black-on-white} {
+								border-color: $dark;
+							}
+
+							@media #{$white-on-black} {
+								border-color: $light;
+							}
+						}
+					}
+
+					@media #{$breakpoint_xl} {
+						width: 50%;
+					}
+
+					@media #{$breakpoint_lg} {
+						width: 25%;
+					}
+
+					@media #{$breakpoint_md} {
+						width: 100%;
+					}
+
+					.item-con {
+						padding: 1.2rem 1rem 2.4rem;
+						width: 100%;
+						// border: 1px solid #ecf0f1;
+						border-radius: 0.5rem;
+						background: linear-gradient(180deg, #fbfcfc 0%, #f5f7f8 100%);
+						box-shadow: 0 0 0 0.1rem #e9ecec, 0 0 2rem 0 rgba(0, 0, 0, 0.01);
+						display: flex;
+						flex-flow: column;
+						justify-content: center;
+						text-align: center;
+						cursor: pointer;
+
+						@media #{$black-on-white} {
+							border: 0.1rem solid $dark;
+							@include high-contrast-background-transparent;
+						}
+
+						@media #{$white-on-black} {
+							border: 0.1rem solid $light;
+							@include high-contrast-background-transparent;
+						}
+
+						.item-icon {
+							height: 5rem;
+							color: $main;
+							margin-bottom: 0;
+							cursor: pointer;
+							padding-top: 1rem;
+							overflow: hidden;
+
+							.item-img {
+								background-color: red;
+							}
+
+							img {
+								position: relative;
+								top: 0;
+								height: 3.6rem;
+							}
+
+							@media #{$black-on-white} {
+								filter: grayscale(100%) contrast(2000%);
+							}
+
+							@media #{$white-on-black} {
+								filter: grayscale(100%) invert(100%) contrast(2000%);
+							}
+						}
+
+						.item-title {
+							color: $shade_blue;
+							margin-bottom: 0.6rem;
+							font-size: 1.6rem;
+							font-weight: $weight_600;
+							width: 100%;
+							height: 4.8rem;
+							line-height: 1.6rem;
+							overflow: hidden;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							letter-spacing: 0;
+							cursor: pointer;
+
+							@media #{$black-on-white} {
+								color: $dark;
+							}
+
+							@media #{$white-on-black} {
+								color: $light;
+							}
+						}
+
+						.item-button {
+							text-transform: uppercase;
+							width: 86%;
+							padding: 0 2rem;
+							margin-left: 7%;
+							height: 3.6rem;
+							line-height: 3.6rem;
+							border-radius: 10rem;
+							background: $gradient_main;
+							color: $light;
+							font-size: 1.4rem;
+							letter-spacing: 0.1rem;
+							font-weight: $weight_600;
+							text-align: center;
+							overflow: hidden;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+							cursor: pointer;
+
+							@media #{$black-on-white} {
+								background: $high-contrast-white-textselected;
+								color: $light;
+							}
+
+							@media #{$white-on-black} {
+								background: $high-contrast-black-textselected;
+								color: $dark;
+							}
+						}
+
+						&:hover,
+						&.selected {
+							background: linear-gradient(90deg, #3968d4 0%, #4a81fd 100%);
+							box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.22);
+
+							@media #{$black-on-white} {
+								@include high-contrast-background-transparent;
+							}
+
+							@media #{$white-on-black} {
+								@include high-contrast-background-transparent;
+							}
+
+							fa-icon {
+								color: white;
+							}
+
+							.item-title {
+								color: white;
+
+								@media #{$black-on-white} {
+									color: $dark;
+								}
+
+								@media #{$white-on-black} {
+									color: $light;
+								}
+							}
+
+							.item-button {
+								background: linear-gradient(270deg, #fbfcfc 0%, #f5f7f8 100%);
+								box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+								// border: 1px solid #ECF0F1;
+								color: $main_dark;
+								cursor: pointer;
+
+								@media #{$black-on-white} {
+									color: $light;
+									@include high-contrast-white-background;
+								}
+
+								@media #{$white-on-black} {
+									color: $dark;
+									@include high-contrast-black-background;
+								}
+							}
+
+							.item-icon {
+								filter: grayscale(100%) invert(100%) contrast(2000%);
+
+								@media #{$black-on-white} {
+									filter: grayscale(100%) contrast(2000%);
+								}
+
+								@media #{$white-on-black} {
+									filter: grayscale(100%) invert(100%) contrast(2000%);
+								}
+							}
+						}
+
+						&.selected,
+						&.selected * {
+							cursor: default !important;
+
+							@media #{$black-on-white} {
+								background: $dark;
+							}
+
+							@media #{$white-on-black} {
+								background: $light;
+							}
+
+							.item-title {
+								@media #{$black-on-white} {
+									color: $light;
+								}
+
+								@media #{$white-on-black} {
+									color: $dark;
+								}
+							}
+
+							.item-button {
+								@media #{$black-on-white} {
+									color: $dark;
+									background: $light;
+								}
+
+								@media #{$white-on-black} {
+									color: $light;
+									background: $dark;
+								}
+							}
+
+							.item-icon {
+								@media #{$black-on-white} {
+									img {
+										background: $light;
+										filter: grayscale(100%) contrast(2000%) invert(1);
+									}
+								}
+
+								@media #{$white-on-black} {
+									filter: grayscale(100%) contrast(2000%);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.card-left {
+			padding-left: 0;
+			padding-right: 1.2rem;
+
+			@media #{$breakpoint_md} {
+				padding-right: 0;
+			}
+		}
+
+		.card-right {
+			padding-left: 1.2rem;
+			padding-right: 0;
+
+			@media #{$breakpoint_md} {
+				padding-left: 0;
+			}
+		}
+	}
+
+	.spinner-content {
+		padding-top: 6.5rem;
+		margin-bottom: 6.5rem;
+
+		img {
+			width: 50%;
+			margin-top: -3rem;
+		}
+
+		.spinner-border {
+			width: 5rem !important;
+			height: 5rem !important;
+			padding: 4rem;
+		}
+
+		.mn-6 {
+			margin-top: $shift_up_small;
+		}
+	}
+
+	.vtr-page-right-column {
+		display: none;
+	}
+}
+
+:host-context(.is-gaming) {
+	::ng-deep {
+		.vtr-page-left-column {
+			.card {
+				background: $gaming_darkest;
+
+				&.quick-access {
+					background: $gaming_darkest;
+
+					.quick-access-title {
+						color: $gaming_lightest;
+					}
+
+					.quick-assess-categories {
+						.quick-assess-item {
+							.item-con {
+								background: $gaming_bg;
+								border: none;
+								box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.01);
+
+								&:hover {
+									background: $gaming;
+								}
+
+								.item-title {
+									color: $gaming_lightest !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
