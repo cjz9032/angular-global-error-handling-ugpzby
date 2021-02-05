@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.24](https://bitbucket.tc.lenovo.com///compare/v1.10.23...v1.10.24) (2021-02-05)
+
+
+### Features
+
+* **support:** VAN-25037 new page content library en ([670d346](https://bitbucket.tc.lenovo.com///commit/670d3468572c082872b91106e9305e7a09287adb))
+
+
+### Bug Fixes
+
+* add id for input box ([f7dea0e](https://bitbucket.tc.lenovo.com///commit/f7dea0e74109073191bf1ad27966e189c9180b1b))
+* add invitation code validator and fix style ([b72bc73](https://bitbucket.tc.lenovo.com///commit/b72bc731de9f374858e88d048ed49e46cf7b3b3e))
+* remove box shadow when in invalid style ([224aea6](https://bitbucket.tc.lenovo.com///commit/224aea6befeb3bfcb0165cdedb6d6b19267eb4d7))
+
 ### [1.10.23](https://bitbucket.tc.lenovo.com///compare/v1.10.22...v1.10.23) (2021-02-04)
 
 ### [1.10.22](https://bitbucket.tc.lenovo.com///compare/v1.10.21...v1.10.22) (2021-02-03)
