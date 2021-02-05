@@ -823,6 +823,8 @@
 				"sub9": "Device security"
 			},
 			"support": "Support",
+			"warrantySupport": "Warranty & Support",
+			"contentLibrary": "Content Library",
 			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"

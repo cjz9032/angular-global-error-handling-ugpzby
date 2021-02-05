@@ -24,6 +24,7 @@ export enum MenuID {
 	passwordProtection = 'password-protection',
 	internetProtection = 'internet-protection',
 	support = 'support',
+	contentLibrary = 'content-library',
 	hardwareScan = 'hardware-scan',
 	smb = 'smb',
 	meetingExperience = 'meeting-experience',
@@ -66,6 +67,7 @@ export class RoutePath {
 	static readonly internetProtection = 'internet-protection';
 	static readonly hardwareScan = 'hardware-scan';
 	static readonly support = 'support';
+	static readonly contentLibrary = 'content-library';
 	static readonly smb = 'smb';
 	static readonly meetingExperience = 'meeting-experience';
 	static readonly meetingManager = 'meeting-manager';
@@ -143,6 +145,20 @@ export const menuConfig = {
 					routerLinkActiveOptions: {
 						exact: true,
 					},
+					subitems: [],
+				},
+				{
+					id: MenuID.contentLibrary,
+					label: 'common.menu.contentLibrary',
+					path: RoutePath.contentLibrary,
+					icon: null,
+					metricsEvent: 'itemClick',
+					metricsParent: 'navbar',
+					metricsItem: 'link.contentLibrary',
+					routerLinkActiveOptions: {
+						exact: true,
+					},
+					sMode: true,
 					subitems: [],
 				},
 				{
@@ -655,6 +671,20 @@ export const menuConfig = {
 					metricsEvent: 'itemClick',
 					metricsParent: 'navbar',
 					metricsItem: 'link.support',
+					routerLinkActiveOptions: {
+						exact: true,
+					},
+					sMode: true,
+					subitems: [],
+				},
+				{
+					id: MenuID.contentLibrary,
+					label: 'common.menu.contentLibrary',
+					path: RoutePath.contentLibrary,
+					icon: null,
+					metricsEvent: 'itemClick',
+					metricsParent: 'navbar',
+					metricsItem: 'link.contentLibrary',
 					routerLinkActiveOptions: {
 						exact: true,
 					},
