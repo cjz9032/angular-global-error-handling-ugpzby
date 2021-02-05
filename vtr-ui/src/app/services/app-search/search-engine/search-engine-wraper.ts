@@ -6,7 +6,7 @@ export class SearchEngineWraper {
 
 	public updateSearchContext(context: any[]) {
 		this.searchEngineImpl = new Fuse(context, {
-			threshold: 0.4,
+			threshold: 0.2,
 			keys: [
 				{
 					name: 'featureName',
