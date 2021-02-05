@@ -162,12 +162,7 @@ export class DeviceService {
 
 	isCdDevice(): Promise<any> {
 		return this.getMachineInfo()
-			.then((info) => {
-				if (info && info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd')) {
-					return true;
-				}
-				return false;
-			})
+			.then((info) => info && info.mtm && info.mtm.toLocaleLowerCase().endsWith('cd'))
 			.catch(() => false);
 	}
 

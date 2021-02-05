@@ -61,11 +61,10 @@ export class PageContentLibraryComponent implements OnInit, OnDestroy {
     private cmsService: CMSService,
     private commonService: CommonService,
     private loggerService: LoggerService,
-  ) {
-    this.isOnline = this.commonService.isOnline;
-  }
+  ) { }
 
   ngOnInit() {
+    this.isOnline = this.commonService.isOnline;
     this.notificationSubscription = this.commonService.notification.subscribe(
       (response: AppNotification) => {
         this.onNotification(response);
