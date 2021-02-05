@@ -94,8 +94,7 @@ export class HardwareScanService {
 	private lastFilteredCustomScanRequest = [];
 	private lastFilteredCustomScanResponse = [];
 
-	// Use to control whether if a cancel is request by user or if it happened abruptly.
-	private cancelRequested: boolean;
+	// Use to control whether if a cancel is request by user.
 	private cancelRequestByUser: boolean;
 
 	public watcherProcess: EventEmitter<any> = new EventEmitter();
@@ -310,10 +309,6 @@ export class HardwareScanService {
 		return this.enableViewResults;
 	}
 
-	public isCancelRequested() {
-		return this.cancelRequested;
-	}
-
 	public isCancelRequestByUser() {
 		return this.cancelRequestByUser;
 	}
@@ -421,7 +416,6 @@ export class HardwareScanService {
 
 	public getDoScan(payload, modules, cancelHandler) {
 		if (this.hardwareScanBridge) {
-			this.cancelRequested = false;
 			this.cancelRequestByUser = false;
 			this.modules = modules;
 			this.executingModule = modules[0].module;
@@ -481,7 +475,6 @@ export class HardwareScanService {
 				.catch(async (ex: any) => {
 					// Stop the current timer (when sleeping/hibernating, we don't need to keep watching anymore)
 					this.watcherProcess.emit(WatcherStepProcess.Stop);
-					this.cancelRequested = true;
 
 					this.logger.exception('[HardwareScanService] getDoScan', ex);
 
@@ -607,7 +600,6 @@ export class HardwareScanService {
 		this.disableCancel = true;
 		if (this.hardwareScanBridge) {
 			this.clearLastResponse();
-			this.cancelRequested = false;
 			this.cancelRequestByUser = false;
 			this.setScanOrRBSFinished(false);
 			this.setScanFinishedHeaderType(HardwareScanFinishedHeaderType.None);
