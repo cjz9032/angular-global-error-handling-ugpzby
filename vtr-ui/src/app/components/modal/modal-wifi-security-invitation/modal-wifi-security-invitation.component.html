@@ -7,15 +7,19 @@
 		<p *ngIf="!joinSuccess" class="description mt-5 mb-3"
 			[innerHTML]="description | translate" role="text">
 		</p>
-		<mat-form-field class="w-100" appearance="fill-customize" floatLabel="always">
-			<input matInput #code #domInput
+		<mat-form-field class="w-100" appearance="fill-customize" floatLabel="always" *ngIf="!joinSuccess">
+			<input matInput #domInput
+				id="chs-btn-inviatation-input"
 				class="invitation-input-box uppercase font-weight-bold"
 				maxLength="6"
+				[formControl]="invitationForm"
+				[(ngModel)]="invitationCode"
 				(keyup)="KeyPress($event)"
-				(keyup.enter)="joinGroupBy(code.value)"
+				(keyup.enter)="joinGroupBy(invitationCode)"
 				aria-label="Input box, enter a maximum of six letters"
 				aria-labelledby="ws-invitation-modal-errorMsg"
 				placeholder="{{'security.homeprotection.invitationcode.invitationCode' | translate}}">
+			<mat-error *ngIf="invitationForm.invalid" id="ws-invitation-modal-errorMsg" [innerHTML]="'security.homeprotection.invitationcode.fail' | translate"></mat-error>
 		</mat-form-field>
 		<div class="join-info">
 			<div class="d-flex flex-column" [ngClass]="{'joinGroupSuccess':joinSuccess}">
@@ -24,7 +28,6 @@
 				</div>
 				<div class="success pl-3" *ngIf="joinSuccess" role="text" tabindex="-1" #successMsg [innerHTML]="'security.homeprotection.invitationcode.success' | translate"></div>
 			</div>
-			<div id="ws-invitation-modal-errorMsg" class="failed" *ngIf="joinFailed" [innerHTML]="'security.homeprotection.invitationcode.fail' | translate"></div>
 		</div>
 		<div class="divider mt-5" *ngIf="!joinSuccess"></div>
 		<div class="d-flex flex-row">
@@ -32,10 +35,10 @@
 				<vtr-ui-button *ngIf="!joinSuccess"
 					metricsEvent="featureClick"
 					metricsItem="connect"
-					(onClick)="joinGroupBy(code.value)"
+					(onClick)="joinGroupBy(invitationCode)"
 					[title]="'security.homeprotection.invitationcode.connect' | translate"
 					[label]="'security.homeprotection.invitationcode.connect' | translate"
-					[isDisabled]="!(code.value.length === 6)"
+					[isDisabled]="invitationCode.length !== 6"
 					[btnHeight]=true
 					linkId="chs-btn-inviatation-connect">
 				</vtr-ui-button>

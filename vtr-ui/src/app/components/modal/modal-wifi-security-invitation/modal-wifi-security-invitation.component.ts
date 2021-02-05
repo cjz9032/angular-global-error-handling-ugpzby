@@ -3,6 +3,7 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { ConnectedHomeSecurity } from '@lenovo/tan-client-bridge';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { MatDialogRef } from '@lenovo/material/dialog';
+import { FormControl, ValidatorFn } from '@angular/forms';
 
 @Component({
 	selector: 'vtr-modal-wifi-security-invitation',
@@ -27,6 +28,10 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 	startJoin = false;
 	joinSuccess = false;
 	joinFailed = false;
+
+	failedInfo = 'security.homeprotection.invitationcode.fail';
+	invitationCode = '';
+	invitationForm = new FormControl('', this.validateCode());
 
 	constructor(
 		private vantageShellService: VantageShellService,
@@ -95,5 +100,16 @@ export class ModalWifiSecurityInvitationComponent implements OnInit {
 				this.domInput.nativeElement.focus();
 			}, 0);
 		}
+	}
+
+	validateCode(): ValidatorFn {
+		return (): { [key: string]: boolean } | null => {
+			if (!this.joinFailed) {
+				return null;
+			}
+			return {
+				invalidateCode: true,
+			};
+		};
 	}
 }
