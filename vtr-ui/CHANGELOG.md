@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.25](https://bitbucket.tc.lenovo.com///compare/v1.10.24...v1.10.25) (2021-02-07)
+
+
+### Features
+
+* **McAfee:** VAN-25308 integrate getmcafee url for japanese ([55d4924](https://bitbucket.tc.lenovo.com///commit/55d49249d6103669610764aa4631c82b133bd428))
+
+
+### Bug Fixes
+
+* remove useless case in UT ([b346d49](https://bitbucket.tc.lenovo.com///commit/b346d49c58cd726723987c401649af6fa53c97bc))
+
 ### [1.10.24](https://bitbucket.tc.lenovo.com///compare/v1.10.23...v1.10.24) (2021-02-05)
 
 
