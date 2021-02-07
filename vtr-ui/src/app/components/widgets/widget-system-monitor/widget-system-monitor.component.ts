@@ -119,8 +119,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			this.gpuInfo.isSupportOCFeature = this.hwOCInfo.gpuOverClockInfo.isSupportOCFeature;
 			this.vramInfo.isSupportOCFeature = this.hwOCInfo.vramOverClockInfo.isSupportOCFeature;
 		}
-		this.gpuMemorySize = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMemorySize, this.hwVersionInfo === 1 ? '8GHz' : '8GB');
-		this.ramSize = this.localCacheService.getLocalCacheValue(LocalStorageKey.ramSize, this.hwVersionInfo === 1 ? '16GHz' : '16GB');
+		this.gpuMemorySize = this.updateUnitOfValue(this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuMemorySize, '8'));
+		this.ramSize = this.updateUnitOfValue(this.localCacheService.getLocalCacheValue(LocalStorageKey.ramSize, '16'));
 		this.cpuUtilization = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuUtilization, '10%');
 
 		this.updateTooltips();
@@ -143,6 +143,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 						this.gpuInfo.isSupportOCFeature = this.hwOCInfo.gpuOverClockInfo.isSupportOCFeature;
 						this.vramInfo.isSupportOCFeature = this.hwOCInfo.vramOverClockInfo.isSupportOCFeature;
 					}
+					this.gpuMemorySize = this.updateUnitOfValue(this.gpuMemorySize);
+					this.ramSize = this.updateUnitOfValue(this.ramSize);
 				}
 			});
 		this.initHWOverClockInfo();
@@ -267,27 +269,27 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				// Get CPU info
 				if (this.isAvailiableValue(hwInfo.cpuModuleName) && this.cpuModuleName !== hwInfo.cpuModuleName) {
 					this.cpuModuleName = hwInfo.cpuModuleName;
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuModuleName,this.cpuModuleName);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuModuleName, this.cpuModuleName);
 				}
 				if (this.isAvailiableNumber(hwInfo.cpuMaxFrequency)) {
 					this.cpuBaseFrequency = this.stringForNumber(hwInfo.cpuMaxFrequency) + 'GHz';
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuBaseFrequency,this.cpuBaseFrequency);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuBaseFrequency, this.cpuBaseFrequency);
 				}
 
 				// Get GPU/Memory Info
 				if (this.isAvailiableValue(hwInfo.cpuModuleName) && this.gpuModuleName !== hwInfo.gpuModuleName) {
 					this.gpuModuleName = hwInfo.gpuModuleName;
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuModuleName,this.gpuModuleName);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuModuleName, this.gpuModuleName);
 					this.ramModuleName = hwInfo.gpuModuleName;
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.ramModuleName,this.ramModuleName);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.ramModuleName, this.ramModuleName);
 				}
 				if (this.isAvailiableNumber(hwInfo.gpuCoreMaxFrequency)) {
 					this.gpuMemorySize = this.stringForNumber(hwInfo.gpuCoreMaxFrequency) + 'GHz';
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuMemorySize,this.gpuMemorySize);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuMemorySize, this.gpuMemorySize);
 				}
 				if (this.isAvailiableNumber(hwInfo.gpuVramMaxFrequency)) {
 					this.ramSize = this.stringForNumber(hwInfo.gpuVramMaxFrequency) + 'GHz';
-					this.localCacheService.setLocalCacheValue(LocalStorageKey.ramSize,this.ramSize);
+					this.localCacheService.setLocalCacheValue(LocalStorageKey.ramSize, this.ramSize);
 				}
 				this.updateTooltips();
 			});
@@ -360,7 +362,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 					if (this.hwMachineInfo && this.isAvailiableNumber(this.hwMachineInfo.cpuMaxFrequency)
 					&& this.hwMachineInfo.cpuMaxFrequency !== 0) {
 						this.cpuUsage = parseFloat((hwInfo.cpuCurrentFrequency / this.hwMachineInfo.cpuMaxFrequency).toFixed(2));
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage * 100);
 					}
 				}
 				if (this.isAvailiableNumber(hwInfo.gpuCoreCurrentFrequency)) {
@@ -462,6 +464,15 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 			return value.toFixed(2);
 		}
 		return value.toFixed(1);
+	}
+
+	private updateUnitOfValue(value) {
+		if (value) {
+			const unit = value.indexOf('GHz') !== -1 ? 'GHz' : 'GB';
+			const numberValue =  (unit && value.indexOf(unit) !== -1) ? value.substr(0, value.indexOf(unit)) : value;
+			return this.hwVersionInfo === 1 ? numberValue + 'GHz' : numberValue + 'GB';
+		}
+		return this.hwVersionInfo === 1 ? '0GHz' : '0GB';
 	}
 
 	/**

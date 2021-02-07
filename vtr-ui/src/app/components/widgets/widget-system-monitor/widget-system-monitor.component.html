@@ -39,7 +39,7 @@
 									</div>
 								</div>
 
-								<div class="monitor-cpu" id="system_status_driver_cpu_tooltip" role="text" attr.aria-label="system_status_driver_cpu">
+								<div class="monitor-cpu" [ngClass]="{'monitor-cpu-hwVersion': hwVersionInfo === 1}" id="system_status_driver_cpu_tooltip" role="text" attr.aria-label="system_status_driver_cpu">
 									<vtr-ui-gaming-monitor-tooltip [ngClass]="{'is-ver0': hwVersionInfo === 0}" [ver]="hwVersionInfo" [pos]='0' [info]="cpuInfo" [tooltip]="cpuModuleName"></vtr-ui-gaming-monitor-tooltip>
 									<div class="cpu-ring"
 									[ngClass]="[hwVersionInfo === 0 ? 'cpu' : hwOCInfo.cpuOverClockInfo.isOverClocking ? 'cpu-ring-oc' : 'cpu-ring-common']">
@@ -55,7 +55,7 @@
 												</linearGradient>
 											</defs>
 											<circle class="cpu-svgcircle"
-											[ngClass]="[hwVersionInfo === 1 && hwOCInfo.cpuOverClockInfo.isOverClocking ? 'cpu-svgcircle-oc' : 'cpu-svgcircle-common']" cx="50%" cy="50%" r="44%"/>
+											[ngClass]="[hwVersionInfo === 1 && hwOCInfo.cpuOverClockInfo.isOverClocking ? 'cpu-svgcircle-oc' : 'cpu-svgcircle-common']" cx="50%" cy="50%" r="43%"/>
 										</svg>
 									</div>
 									<div class="cpu-mask left" [ngClass]="{'cpu-mask-left-x60': hwVersionInfo === 1}">
