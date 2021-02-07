@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Toplotni način",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Napredne možnosti zvišanja takta so samo konfiguracijska orodja, ki po konfiguraciji ne zagotavljajo učinkovitosti in stabilnosti naprave. Pred uporabo se morate zavedati, katero ustrezno tehnično znanje potrebujete in katera tveganja so prisotna.",
 					"proceed": "NADALJUJ",
 					"legionAccessory": "Ali želite namestiti Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central je aplikacija za konfiguriranje miške, tipkovnice, slušalk in drugih izdelkov Legion."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central je aplikacija za konfiguriranje miške, tipkovnice, slušalk in drugih izdelkov Legion.",
+					"nahimic": "Ali želite namestiti Nahimic?",
+					"nahimicDesc": "Nahimic bistveno izboljša vašo izkušnjo igranja z zagotavljanjem izjemnega 3D-zvoka in privlačnih funkcij za igralce. Nahimic je nov način igranja.",
+					"xRite": "Želite namestiti X-Rite Color Assistant?",
+					"xRiteDesc": "Ta aplikacija vam omogoča izbiro in uporabo tovarniško umerjenih barvnih profilov."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Model:",
+					"frequency": "Pogostost:",
+					"usage": "Uporabljeno:",
+					"overclock": {
+						"on": "Zvišan takt",
+						"off": "Znižan takt"
+					}
 				}
 			}
 		},

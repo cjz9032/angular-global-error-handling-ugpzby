@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "サーマル・モード",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "高度なクロックアップ・オプションは、構成後にデバイスのパフォーマンスと安定性が保証されない唯一の構成ツールです。関連する技術的な知識とリスクを十分に理解してから使用してください。",
 					"proceed": "続行",
 					"legionAccessory": "Legion Accessory Central をインストールしますか?",
-					"accessoryDesc": "Legion Accessory Central は、Legion マウス、キーボード、ヘッドフォンなどを構成するアプリです。"
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central は、Legion マウス、キーボード、ヘッドフォンなどを構成するアプリです。",
+					"nahimic": "Nahimic をインストールしますか?",
+					"nahimicDesc": "Nahimic は、これまでにない没入型 3D オーディオと魅力的な機能をゲーマーに提供することで、ゲーム体験を大幅に向上させます。Nahimic は新しい遊び方です。",
+					"xRite": "X-Rite Color Assistant をインストールしますか？",
+					"xRiteDesc": "このアプリを使用すると、工場で調整されたカラープロファイルを選択して適用できます。"
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "モデル:",
+					"frequency": "周波数:",
+					"usage": "使用済:",
+					"overclock": {
+						"on": "オーバークロック",
+						"off": "アンダークロック"
+					}
 				}
 			}
 		},

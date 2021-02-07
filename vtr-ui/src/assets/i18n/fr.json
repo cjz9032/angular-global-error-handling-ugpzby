@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Mode thermique",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Les options de surcadençage avancées ne sont que des outils de configuration qui ne garantissent pas les performances et la stabilité du périphérique après la configuration. Assurez-vous que vous comprenez les risques et possédez les connaissances techniques nécessaires avant de les utiliser.",
 					"proceed": "CONTINUER",
 					"legionAccessory": "Voulez-vous installer Legion Accessory Central ?",
-					"accessoryDesc": "Legion Accessory Central est une application permettant de configurer votre souris, votre clavier, vos écouteurs Legion, etc."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central est une application permettant de configurer votre souris, votre clavier, vos écouteurs Legion, etc.",
+					"nahimic": "Souhaitez-vous installer Nahimic ?",
+					"nahimicDesc": "Grâce à un son 3D immersif sans précédent et ses fonctions conçues pour les joueurs, Nahimic améliore grandement votre expérience de jeu. Nahimic est une nouvelle façon de jouer.",
+					"xRite": "Installer X-Rite Color Assistant ?",
+					"xRiteDesc": "Cette application vous permet de choisir et d'appliquer des profils de couleurs calibrés en usine."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Modèle :",
+					"frequency": "Fréquence :",
+					"usage": "Utilisé :",
+					"overclock": {
+						"on": "Surfréquencé",
+						"off": "Non surfréquencé"
+					}
 				}
 			}
 		},

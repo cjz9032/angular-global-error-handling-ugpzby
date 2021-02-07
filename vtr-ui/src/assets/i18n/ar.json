@@ -4,6 +4,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "الوضع الحراري",
 					"status": {
@@ -216,10 +219,22 @@
 					"description2": "تمثل خيارات رفع تردد التشغيل المتقدمة فقط أدوات تكوين لا تضمن أداء واستقرار الجهاز بعد التهيئة. يرجى التأكد من فهمك للمعرفة والمخاطر التقنية ذات الصلة قبل الاستخدام.",
 					"proceed": "المتابعة",
 					"legionAccessory": "هل تريد تثبيت Legion Accessory Central؟",
-					"accessoryDesc": "إن Legion Accessory Central عبارة عن تطبيق لتكوين الماوس ولوحة المفاتيح وسماعات الرأس وغيرها من Legion."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "إن Legion Accessory Central عبارة عن تطبيق لتكوين الماوس ولوحة المفاتيح وسماعات الرأس وغيرها من Legion.",
+					"nahimic": "هل تريد تثبيت Nahimic؟",
+					"nahimicDesc": "يحسّن Nahimic تجربة الألعاب بشكل كبير من خلال توفير صوت ثلاثي الأبعاد غير مسبوق وميزات جذابة للاعبين. يُمثل Nahimic طريقة جديدة للعب.",
+					"xRite": "هل تريد تثبيت X-Rite Color Assistant؟",
+					"xRiteDesc": "يتيح لك هذا التطبيق اختيار ملفات تعريف الألوان التي تمت معايرتها في المصنع وتطبيقها."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "الطراز:",
+					"frequency": "التردد:",
+					"usage": "المستخدَّم:",
+					"overclock": {
+						"on": "مرفوع تردد التشغيل",
+						"off": "تردد تشغيل بلا رفع"
+					}
 				}
 			}
 		},

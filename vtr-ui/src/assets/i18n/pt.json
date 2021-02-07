@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Modo Térmico",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "As opções de Overclocking Avançado são apenas ferramentas de configuração que não garantem o desempenho e a estabilidade do dispositivo após a configuração. Certifique-se de que compreende os conhecimentos técnicos e os riscos relevantes antes de utilizá-las.",
 					"proceed": "CONTINUAR",
 					"legionAccessory": "Pretende instalar o Legion Accessory Central?",
-					"accessoryDesc": "O Legion Accessory Central é uma aplicação para configurar os seus acessórios Legion, como o rato, o teclado, os auscultadores, etc."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "O Legion Accessory Central é uma aplicação para configurar os seus acessórios Legion, como o rato, o teclado, os auscultadores, etc.",
+					"nahimic": "Pretende instalar o Nahimic?",
+					"nahimicDesc": "O Nahimic melhora drasticamente a sua experiência de jogo ao proporcionar som 3D envolvente sem precedentes e funcionalidades cativantes para os gamers. O Nahimic é uma nova forma de jogar.",
+					"xRite": "Instalar o X-Rite Color Assistant?",
+					"xRiteDesc": "Esta aplicação permite escolher e aplicar perfis de cores calibrados em fábrica."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Modelo:",
+					"frequency": "Frequência:",
+					"usage": "Utilizado:",
+					"overclock": {
+						"on": "Com overclock",
+						"off": "Sem overclock"
+					}
 				}
 			}
 		},

@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Tryb term",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Zaawansowane opcje przetaktowywania to jedynie narzędzia konfiguracyjne, które nie gwarantują prawidłowego działania ani stabilności urządzenia po przeprowadzeniu konfiguracji. Przed użyciem upewnij się, że posiadasz odpowiednią wiedzę techniczną i rozumiesz zagrożenie.",
 					"proceed": "WYKONAJ",
 					"legionAccessory": "Czy chcesz zainstalować aplikację Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central to aplikacja służąca do konfiguracji myszy, klawiatury, słuchawek itp. z serii Legion."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central to aplikacja służąca do konfiguracji myszy, klawiatury, słuchawek itp. z serii Legion.",
+					"nahimic": "Zainstalować oprogramowanie Nahimic?",
+					"nahimicDesc": "Oprogramowanie Nahimic zdecydowanie poprawia wrażenia z gry, zapewniając niesamowicie immersywny dźwięk 3D i ciekawe funkcje dla graczy. Nahimic zapewnia nowy sposób grania.",
+					"xRite": "Zainstalować X-Rite Color Assistant?",
+					"xRiteDesc": "Ta aplikacja umożliwia wybór i zastosowanie fabrycznie skalibrowanych profili kolorów."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Model:",
+					"frequency": "Częstotliwość:",
+					"usage": "W użyciu:",
+					"overclock": {
+						"on": "Przetaktowano",
+						"off": "Nie przetaktowano"
+					}
 				}
 			}
 		},

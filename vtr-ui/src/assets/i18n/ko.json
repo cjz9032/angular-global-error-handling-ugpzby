@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "열 모드",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "고급 오버클러킹 옵션은 구성 도구이며, 구성 후 장치의 성능과 안정성은 보장하지 않습니다. 이를 사용하기 전에 관련 기술 지식과 위험을 알고 있어야 합니다.",
 					"proceed": "계속",
 					"legionAccessory": "Legion Accessory Central을 설치하시겠습니까?",
-					"accessoryDesc": "Legion Accessory Central은 Legion 마우스, 키보드, 헤드폰 등을 구성하는 응용 프로그램입니다."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central은 Legion 마우스, 키보드, 헤드폰 등을 구성하는 응용 프로그램입니다.",
+					"nahimic": "Nahimic을 설치하시겠습니까?",
+					"nahimicDesc": "Nahimic은 게이머에게 전례 없는 몰입형 3D 오디오와 매력적인 기능을 제공하여 게이밍 환경을 크게 향상시킵니다. Nahimic은 새로운 방식의 플레이입니다.",
+					"xRite": "X-Rite Color Assistant를 설치하시겠습니까?",
+					"xRiteDesc": "이 앱을 사용하면 공장 보정된 색상 프로파일을 선택하고 적용할 수 있습니다."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "모델:",
+					"frequency": "주파수:",
+					"usage": "사용:",
+					"overclock": {
+						"on": "오버클럭됨",
+						"off": "오버클럭되지 않음"
+					}
 				}
 			}
 		},

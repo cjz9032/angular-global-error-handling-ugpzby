@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Varmetilstand",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Avancerede overclockingsindstillinger er kun konfigurationsværktøjer, der ikke garanterer enhedens ydeevne og stabilitet efter konfigurationen. Sørg for, at du har den nødvendige tekniske viden og forstår risiciene før anvendelse.",
 					"proceed": "FORTSÆT",
 					"legionAccessory": "Vil du installere Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central er en app til konfiguration af Legion-mus, Legion-tastatur, Legion-hovedtelefoner osv."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central er en app til konfiguration af Legion-mus, Legion-tastatur, Legion-hovedtelefoner osv.",
+					"nahimic": "Vil du installere Nahimic?",
+					"nahimicDesc": "Nahimic giver dig en markant bedre spiloplevelse med uovertruffen og medrivende 3D-lyd og spændende funktioner til gamere. Nahimic er en ny måde at spille på.",
+					"xRite": "Skal X-Rite Color Assistant installeres?",
+					"xRiteDesc": "Med denne app kan du vælge og anvende fabrikskalibrerede farveprofiler."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Model:",
+					"frequency": "Hyppighed:",
+					"usage": "Brugt:",
+					"overclock": {
+						"on": "Overclocket",
+						"off": "Ikke-overclocket"
+					}
 				}
 			}
 		},

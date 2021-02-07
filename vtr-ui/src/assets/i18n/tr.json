@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Isı Kipi",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Gelişmiş Hız Aşırtma seçenekleri sadece yapılandırmadan sonra cihazın performansını ve kararlılığını garanti etmeyen yapılandırma araçlarıdır. Kullanmadan önce lütfen ilgili teknik bilgileri ve riskleri anladığınızdan emin olun.",
 					"proceed": "DEVAM ET",
 					"legionAccessory": "Legion Accessory Central'ı yüklemek istiyor musunuz?",
-					"accessoryDesc": "Legion Accessory Central, Legion fareniz, klavyeniz, kulaklığınız gibi donatıları yapılandırmak için tasarlanmış bir uygulamadır."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central, Legion fareniz, klavyeniz, kulaklığınız gibi donatıları yapılandırmak için tasarlanmış bir uygulamadır.",
+					"nahimic": "Nahimic'i yüklemek istiyor musunuz?",
+					"nahimicDesc": "Nahimic, oyuncular için benzeri görülmemiş gerçekçi bir 3B ses ve ilgi çekici özellikler sağlayarak oyun deneyiminizi büyük ölçüde iyileştirir. Nahimic yeni bir oyun oynama şeklidir.",
+					"xRite": "X-Rite Color Assistant yüklensin mi?",
+					"xRiteDesc": "Bu uygulama, fabrikada kalibre edilmiş renk profillerini seçmenizi ve uygulamanızı sağlar."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Model:",
+					"frequency": "Frekans:",
+					"usage": "Kullanılan:",
+					"overclock": {
+						"on": "Hız Aşırtma",
+						"off": "Hız Aşırtma Olmadan"
+					}
 				}
 			}
 		},
