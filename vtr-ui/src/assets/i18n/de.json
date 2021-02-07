@@ -218,20 +218,20 @@
 					"proceed": "FORTFAHREN",
 					"legionAccessory": "Möchten Sie Legion Accessory Central installieren?",
 					"accessoryDesc": "Legion Accessory Central ist eine App zur Konfiguration Ihrer Legion Maus, Tastatur, Kopfhörer, etc.",
-					"nahimic": "Vil du installere Nahimic?",
-					"nahimicDesc": "Nahimic giver dig en markant bedre spiloplevelse med uovertruffen og medrivende 3D-lyd og spændende funktioner til gamere. Nahimic er en ny måde at spille på.",
-					"xRite": "Skal X-Rite Color Assistant installeres?",
-					"xRiteDesc": "Med denne app kan du vælge og anvende fabrikskalibrerede farveprofiler."
+					"nahimic": "Möchten Sie Nahimic installieren?",
+					"nahimicDesc": "Nahimic verbessert Ihr Gaming-Erlebnis erheblich mit unglaublich packendem 3D-Audio und ansprechenden Funktionen für Gamer. Nahimic bietet eine neue Spielerfahrung.",
+					"xRite": "X-Rite Color Assistant installieren?",
+					"xRiteDesc": "Mit dieser App können Sie werkseitig kalibrierte Farbprofile auswählen und übernehmen."
 				}
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "Model:",
-					"frequency": "Hyppighed:",
-					"usage": "Brugt:",
+					"modal": "Modell:",
+					"frequency": "Frequenz:",
+					"usage": "Verwendet:",
 					"overclock": {
-						"on": "Overclocket",
-						"off": "Ikke-overclocket"
+						"on": "Übertaktet",
+						"off": "Nicht übertaktet"
 					}
 				}
 			}
