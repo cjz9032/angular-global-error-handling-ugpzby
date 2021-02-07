@@ -489,8 +489,8 @@
 								height: 26.38rem;
 							}
 							@media #{$breakpoint_xl2} {
-								top: 0.85rem;
-								left: 0.85rem;
+								top: 0.87rem;
+								left: 0.87rem;
 								width: 10.35rem;
 								height: 20.7rem;
 							}
@@ -498,6 +498,7 @@
 								width: 16.9rem;
 								height: 33.8rem;
 								border-radius: 16.9rem 0 0 16.9rem;
+								background-color: $background;
 								@media #{$breakpoint_xl3} {
 									width: 13.19rem;
 									height: 26.38rem;
@@ -512,23 +513,7 @@
 									background-color: $high-contrast-grey;
 								}
 								.mask-ring {
-									width: 33.8rem;
-									height: 33.8rem;
-									position: absolute;
-									left: 0;
-									border-radius: 50%;
-									background-color: $background;
-									@media #{$breakpoint_xl3} {
-										width: 26.38rem;
-										height: 26.38rem;
-									}
-									@media #{$breakpoint_xl2} {
-										width: 20.7rem;
-										height: 20.7rem;
-									}
-									@media #{$high-contrast} {
-										background-color: $high-contrast-grey;
-									}
+									display: none;
 								}
 							}
 						}
@@ -625,8 +610,8 @@
 								height: 26.38rem;
 							}
 							@media #{$breakpoint_xl2} {
-								top: 0.85rem;
-								left: 11.15rem;
+								top: 0.87rem;
+								left: 11.17rem;
 								width: 10.35rem;
 								height: 20.7rem;
 							}
@@ -637,7 +622,7 @@
 								height: 33.8rem;
 								border-radius: 0 16.9rem 16.9rem 0;
 								transform-origin: left center;
-								background-color: $darkCell;
+								background-color: $background;
 								@media #{$breakpoint_xl3} {
 									width: 13.19rem;
 									height: 26.38rem;
@@ -652,20 +637,7 @@
 									background-color: $high-contrast-grey;
 								}
 								.mask-ring {
-									left: -16.85rem;
-									@media #{$breakpoint_xl3} {
-										left: -13.05rem;
-										width: 26.38rem;
-										height: 26.38rem;
-									}
-									@media #{$breakpoint_xl2} {
-										left: -10.35rem;
-										width: 20.7rem;
-										height: 20.7rem;
-									}
-									@media #{$high-contrast} {
-										background-color: $high-contrast-grey;
-									}
+									display: none;
 								}
 							}
 						}

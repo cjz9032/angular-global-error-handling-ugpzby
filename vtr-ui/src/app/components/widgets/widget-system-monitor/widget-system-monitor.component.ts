@@ -362,7 +362,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 					if (this.hwMachineInfo && this.isAvailiableNumber(this.hwMachineInfo.cpuMaxFrequency)
 					&& this.hwMachineInfo.cpuMaxFrequency !== 0) {
 						this.cpuUsage = parseFloat((hwInfo.cpuCurrentFrequency / this.hwMachineInfo.cpuMaxFrequency).toFixed(2));
-						this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage);
+						this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuUsage, this.cpuUsage * 100);
 					}
 				}
 				if (this.isAvailiableNumber(hwInfo.gpuCoreCurrentFrequency)) {
