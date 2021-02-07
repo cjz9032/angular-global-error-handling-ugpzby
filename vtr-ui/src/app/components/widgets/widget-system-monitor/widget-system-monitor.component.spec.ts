@@ -87,6 +87,7 @@ describe('WidgetSystemMonitorComponent', () => {
 	const commonServiceMock = {
 		getCapabalitiesNotification: () => of({ type: Gaming.GamingCapabilities, payload: payloadInfo}),
 	};
+	let cacheFlag = true;
 
 	const localCacheServiceMock = {
 		getLocalCacheValue: (key, defaultValue) => {
@@ -110,7 +111,7 @@ describe('WidgetSystemMonitorComponent', () => {
 				case LocalStorageKey.ramModuleName:
 					return ramModuleNameCache;
 				case LocalStorageKey.ramSize:
-					return ramSizeCache;
+					return cacheFlag ? ramSizeCache : null;
 				case LocalStorageKey.ramUsed:
 					return ramUsedCache;
 				case LocalStorageKey.ramUsage:
@@ -224,6 +225,7 @@ describe('WidgetSystemMonitorComponent', () => {
 				]
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
+			cacheFlag = false;
 			component = fixture.componentInstance;
 			fixture.detectChanges();
 		});
@@ -262,6 +264,7 @@ describe('WidgetSystemMonitorComponent', () => {
 				]
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
+			cacheFlag = true;
 			component = fixture.componentInstance;
 			fixture.detectChanges();
 		});
@@ -516,6 +519,7 @@ describe('WidgetSystemMonitorComponent', () => {
 				]
 			}).compileComponents();
 			fixture = TestBed.createComponent(WidgetSystemMonitorComponent);
+			cacheFlag = true;
 			component = fixture.componentInstance;
 			fixture.detectChanges();
 		});
