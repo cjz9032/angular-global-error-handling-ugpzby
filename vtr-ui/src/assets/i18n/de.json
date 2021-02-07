@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Wärmemodus",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Erweiterte Übertaktungsoptionen sind nur Konfigurationstools, die keine Garantie für Leistung und Stabilität der Einheit nach der Konfiguration bieten. Stellen Sie sicher, dass Sie vor der Verwendung das entsprechende technische Wissen haben und die Risiken kennen.",
 					"proceed": "FORTFAHREN",
 					"legionAccessory": "Möchten Sie Legion Accessory Central installieren?",
-					"accessoryDesc": "Legion Accessory Central ist eine App zur Konfiguration Ihrer Legion Maus, Tastatur, Kopfhörer, etc."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central ist eine App zur Konfiguration Ihrer Legion Maus, Tastatur, Kopfhörer, etc.",
+					"nahimic": "Vil du installere Nahimic?",
+					"nahimicDesc": "Nahimic giver dig en markant bedre spiloplevelse med uovertruffen og medrivende 3D-lyd og spændende funktioner til gamere. Nahimic er en ny måde at spille på.",
+					"xRite": "Skal X-Rite Color Assistant installeres?",
+					"xRiteDesc": "Med denne app kan du vælge og anvende fabrikskalibrerede farveprofiler."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Model:",
+					"frequency": "Hyppighed:",
+					"usage": "Brugt:",
+					"overclock": {
+						"on": "Overclocket",
+						"off": "Ikke-overclocket"
+					}
 				}
 			}
 		},

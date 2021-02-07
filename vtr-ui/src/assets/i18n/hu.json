@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Termál mód",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "A speciális túlpörgetési beállítások konfigurációs eszközök, amelyek használata esetén nem áll módunkban garantálni a készülék teljesítményét és stabilitását. Használat előtt ismerje meg a vonatkozó technikai információkat és a kockázatokat.",
 					"proceed": "FOLYTATÁS",
 					"legionAccessory": "Szeretné telepíteni a Legion Accessory Central szoftvert?",
-					"accessoryDesc": "A Legion Accessory Central alkalmazás a Legion egér, billentyűzet, fejhallgató és más eszközök konfigurálására szolgál."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "A Legion Accessory Central alkalmazás a Legion egér, billentyűzet, fejhallgató és más eszközök konfigurálására szolgál.",
+					"nahimic": "Telepíti a Nahimicet?",
+					"nahimicDesc": "A Nahimic eddig soha nem látott, magával ragadó 3D-s audiót és vonzó funkciókat kínál a játékosok számára a játékélmény drasztikus javítása érdekében. A Nahimic-kel új dimenzió nyílik meg a játék világában.",
+					"xRite": "Telepíti az X-Rite Color Assistantot?",
+					"xRiteDesc": "Ez az alkalmazás lehetővé teszi a gyárilag kalibrált színprofilok kiválasztását és alkalmazását."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Modell:",
+					"frequency": "Gyakoriság:",
+					"usage": "Használt:",
+					"overclock": {
+						"on": "Túlpörgetve",
+						"off": "Nincs túlpörgetve"
+					}
 				}
 			}
 		},

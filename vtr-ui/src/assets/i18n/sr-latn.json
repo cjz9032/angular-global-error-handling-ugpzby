@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Toplotni režim",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Napredne opcije overklokinga su samo alatke za konfiguraciju koje ne garantuju performanse i stabilnost uređaja nakon konfiguracije. Uverite se da ste pre korišćenja razumeli relevantno tehničko znanje i rizike.",
 					"proceed": "NASTAVI",
 					"legionAccessory": "Želite li da instalirate Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central je aplikacija za konfigurisanje Legion miša, tastature, slušalica itd."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central je aplikacija za konfigurisanje Legion miša, tastature, slušalica itd.",
+					"nahimic": "Želite li da instalirate Nahimic?",
+					"nahimicDesc": "Nahimic drastično poboljšava vaš doživljaj igranja igara tako što obezbeđuje neverovatno sveobuhvatan 3D zvuk i zanimljive funkcije za igrače. Nahimic predstavlja novi način igranja igara.",
+					"xRite": "Instaliraćete X-Rite Color Assistant?",
+					"xRiteDesc": "Ova aplikacija vam omogućava da odaberete i primenite fabrički kalibrisane profile boja."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Model:",
+					"frequency": "Učestalost:",
+					"usage": "Korišćeno:",
+					"overclock": {
+						"on": "Overklok",
+						"off": "Nije overklok"
+					}
 				}
 			}
 		},

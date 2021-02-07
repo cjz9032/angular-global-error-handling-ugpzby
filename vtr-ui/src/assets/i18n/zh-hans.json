@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "散热模式",
 					"status": {
@@ -214,17 +217,18 @@
 					"description2": "高级超频选项只提供设置工具，但无法保证超频后设备的性能和稳定性。使用前请确保您了解相关专业知识及风险。",
 					"proceed": "继续",
 					"legionAccessory": "是否要安装 Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central 是用于配置 Legion 鼠标、键盘、耳机等的应用程序。"
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central 是用于配置 Legion 鼠标、键盘、耳机等的应用程序。",
+					"nahimic": "是否要安装 Nahimic？",
+					"nahimicDesc": "Nahimic 采用前所未有的沉浸式 3D 音频技术，并具备各种诱人的功能，能够极大地改善玩家的游戏体验，堪称新潮玩法的代表。",
+					"xRite": "是否要安装 X-Rite Color Assistant？",
+					"xRiteDesc": "此应用程序支持选择和应用各种出厂校准的颜色配置文件。"
 				}
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "型号 :",
-					"frequency": "频率 :",
-					"usage": "当前使用率 :",
+					"modal": "型号:",
+					"frequency": "频率:",
+					"usage": "已使用:",
 					"overclock": {
 						"on": "已超频",
 						"off": "未超频"

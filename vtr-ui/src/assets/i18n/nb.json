@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Termisk modus",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Avanserte innstillinger for overklokking er bare konfigurasjonsverktøy som ikke garanterer ytelsen og stabiliteten til enheten etter konfigurasjonen. Sørg for at du har den relevante tekniske kunnskapen og forstår risikoen før du bruker den.",
 					"proceed": "FORTSETT",
 					"legionAccessory": "Vil du installere Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central er en app for å konfigurere Legion-musen, Legion-tastaturet, Legion-hodetelefoner osv."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central er en app for å konfigurere Legion-musen, Legion-tastaturet, Legion-hodetelefoner osv.",
+					"nahimic": "Vil du installere Nahimic?",
+					"nahimicDesc": "Nahimic forbedrer spillopplevelsen drastisk ved å gi enestående altoppslukende 3D-lyd og spennende funksjoner for spillere. Nahimic er en ny måte å spille på.",
+					"xRite": "Vil du installere X-Rite Color Assistant?",
+					"xRiteDesc": "Med denne appen kan du velge og ta i bruk fabrikkkalibrerte fargeprofiler."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Modell:",
+					"frequency": "Frekvens:",
+					"usage": "Brukt:",
+					"overclock": {
+						"on": "Overklokking",
+						"off": "Ikke overklokking"
+					}
 				}
 			}
 		},

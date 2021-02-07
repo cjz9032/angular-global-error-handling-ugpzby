@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Modalità termica",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Le opzioni avanzate di overclock sono solo strumenti di configurazione che non garantiscono le prestazioni e la stabilità del dispositivo, una volta configurati. Prima di utilizzare queste opzioni, verificare di aver compreso le conoscenze tecniche e i rischi associati.",
 					"proceed": "CONTINUA",
 					"legionAccessory": "Installare Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central è un'app per configurare i dispositivi Legion, come mouse, tastiera, cuffie e così via."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central è un'app per configurare i dispositivi Legion, come mouse, tastiera, cuffie e così via.",
+					"nahimic": "Installare Nahimic?",
+					"nahimicDesc": "Nahimic migliora notevolmente la tua esperienza di gioco fornendo un audio 3D coinvolgente senza precedenti e funzioni straordinarie per i videogamer. Nahimic è un modo nuovo di giocare.",
+					"xRite": "Installare X-Rite Color Assistant?",
+					"xRiteDesc": "Questa app consente di scegliere e applicare profili di colore precalibrati."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Modello:",
+					"frequency": "Frequenza:",
+					"usage": "Utilizzato:",
+					"overclock": {
+						"on": "Con overclock",
+						"off": "Senza overclock"
+					}
 				}
 			}
 		},

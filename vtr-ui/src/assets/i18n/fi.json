@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Lämpö-tila",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Ylikellotuksen lisäasetukset ovat vain määritystyökaluja, jotka eivät takaa laitteen suorituskykyä ja vakautta kokoonpanon jälkeen. Varmista, että sinulla on asianmukainen tekninen omaisuuden ja että ymmärrät riskit ennen käyttöä.",
 					"proceed": "JATKA",
 					"legionAccessory": "Haluatko asentaa Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central on sovellus, jolla voit hallita Legion-hiirtäsi, Legion-näppäimistöäsi, Legion-kuulokkeitasi jne."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central on sovellus, jolla voit hallita Legion-hiirtäsi, Legion-näppäimistöäsi, Legion-kuulokkeitasi jne.",
+					"nahimic": "Haluatko asentaa Nahimic-sovelluksen?",
+					"nahimicDesc": "Nahimic parantaa pelikokemustasi merkittävästi tarjoamalla ainutlaatuisen 3D-äänikokemuksen ja mukaansatempaavia ominaisuuksia pelaajille. Nahimic on uusi tapa pelata.",
+					"xRite": "Asennetaanko X-Rite Color Assistant?",
+					"xRiteDesc": "Tämä sovellus sallii sinun valita ja käyttää tehtaalla kalibroituja väriprofiileja."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Malli:",
+					"frequency": "Toistotiheys:",
+					"usage": "Käytetty:",
+					"overclock": {
+						"on": "Ylikellotettu",
+						"off": "Ylikellotus kumottu"
+					}
 				}
 			}
 		},

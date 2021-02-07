@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Temperaturläge",
 					"status": {
@@ -117,6 +120,31 @@
 				"quickSettingstitle": {
 					"title": "Snabbinställningar"
 				},
+				"thermalMode2Popup": {
+					"thermalMode2SettingTitle": "Inst. för temperaturläge",
+					"thermalMode2SettingDesc": "Välj det läge du vill använda.",
+					"fnQDesc": "Du kan växla läge med kortkommandot Fn+Q.",
+					"performanceTitle": "Prestandaläge",
+					"performanceDesc": "Öka datorns prestanda med högre fläkthastighet och effektförbrukning. ",
+					"OCDesc": "Du kan välja att slå på överklockningsfunktionen.",
+					"ac_dcDesc": "Prestandaläget går bara att använda när nätadaptern är inkopplad.",
+					"balanceTitle": "Balansläge",
+					"balanceDesc": "Justera automatiskt prestanda och fläkthastighet automatiskt utifrån systemkrav.",
+					"quietTitle": "Tyst läge",
+					"quietDesc": "Gör datorn tystare genom att minska datorns prestanda och fläkthastighet med låg effektförbrukning när det är möjligt.",
+					"OC": {
+						"cpu_gpuOC": "Aktivera CPU-/GPU-överklockning i prestandaläge.",
+						"cpuOC": "Aktivera CPU-överklockning i prestandaläge.",
+						"gpuOC": "Aktivera GPU-överklockning i prestandaläge.",
+						"advance": "AVANCERAT",
+						"cpu_gpuDriverLack": "Installera CPU-/GPU-drivrutiner om du vill använda överklockningsfunktionen.",
+						"cpuDriverLack": "Installera CPU-drivrutinen om du vill använda överklockningsfunktionen.",
+						"gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockningsfunktionen.",
+						"goInstall": "INSTALLERA"
+					},
+					"autoAdjustDesc": "Identifiera automatiskt aktuellt spel och finjustera CPU-/GPU-prestanda.",
+					"autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."
+				},
 				"advancedOC": {
 					"title": "Avancerade överklockn.inst.",
 					"description": "Ställ in avancerade anpassade parametrar för aktiverad överklockning. Kan medföra risk.",
@@ -189,35 +217,22 @@
 					"description2": "Avancerade överklockningsalternativ är endast konfigureringsverktyg och garanterar inte enhetens prestanda och stabilitet efter konfigureringen. Försäkra dig om att du har relevanta tekniska kunskaper och förstår eventuella risker innan du använder dem.",
 					"proceed": "FORTSÄTT",
 					"legionAccessory": "Vill du installera Legion Accessory Central?",
-					"accessoryDesc": "Med appen Legion Accessory Central kan du konfigurera mus, tangentbord, hörlurar och annat i Legion-serien."
-				},
-				"thermalMode2Popup": {
-					"thermalMode2SettingTitle": "Inst. för temperaturläge",
-					"thermalMode2SettingDesc": "Välj det läge du vill använda.",
-					"fnQDesc": "Du kan växla läge med kortkommandot Fn+Q.",
-					"performanceTitle": "Prestandaläge",
-					"performanceDesc": "Öka datorns prestanda med högre fläkthastighet och effektförbrukning. ",
-					"OCDesc": "Du kan välja att slå på överklockningsfunktionen.",
-					"ac_dcDesc": "Prestandaläget går bara att använda när nätadaptern är inkopplad.",
-					"balanceTitle": "Balansläge",
-					"balanceDesc": "Justera automatiskt prestanda och fläkthastighet automatiskt utifrån systemkrav.",
-					"quietTitle": "Tyst läge",
-					"quietDesc": "Gör datorn tystare genom att minska datorns prestanda och fläkthastighet med låg effektförbrukning när det är möjligt.",
-					"OC": {
-						"cpu_gpuOC": "Aktivera CPU-/GPU-överklockning i prestandaläge.",
-						"cpuOC": "Aktivera CPU-överklockning i prestandaläge.",
-						"gpuOC": "Aktivera GPU-överklockning i prestandaläge.",
-						"advance": "AVANCERAT",
-						"cpu_gpuDriverLack": "Installera CPU-/GPU-drivrutiner om du vill använda överklockningsfunktionen.",
-						"cpuDriverLack": "Installera CPU-drivrutinen om du vill använda överklockningsfunktionen.",
-						"gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockningsfunktionen.",
-						"goInstall": "INSTALLERA"
-					},
-					"autoAdjustDesc": "Identifiera automatiskt aktuellt spel och finjustera CPU-/GPU-prestanda.",
-					"autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Med appen Legion Accessory Central kan du konfigurera mus, tangentbord, hörlurar och annat i Legion-serien.",
+					"nahimic": "Vill du installera Nahimic?",
+					"nahimicDesc": "Nahimic förbättrar upplevelsen drastiskt med oöverträffat, uppslukande 3D-ljud och inlevelserika funktioner för alla spelare. Nahimic är ett nytt sätt att spela.",
+					"xRite": "Installera X-Rite Color Assistant?",
+					"xRiteDesc": "Välj och använd fabrikskalibrerade färgprofiler med denna app."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Modell:",
+					"frequency": "Frekvens:",
+					"usage": "Använt:",
+					"overclock": {
+						"on": "Överklockad",
+						"off": "Inte överklockad"
+					}
 				}
 			}
 		},

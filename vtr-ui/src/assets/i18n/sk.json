@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Tepelný režim",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Rozšírené možnosti pretaktovania sú len konfiguračné nástroje, ktoré nezaručujú výkon a stabilitu zariadenia po vykonaní konfigurácie. Pred použitím sa uistite, že máte požadované technické znalosti a poznáte príslušné riziká.",
 					"proceed": "POKRAČOVAŤ",
 					"legionAccessory": "Chcete nainštalovať aplikáciu Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central je aplikácia na konfiguráciu myši, klávesnice, slúchadiel atď."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central je aplikácia na konfiguráciu myši, klávesnice, slúchadiel atď.",
+					"nahimic": "Chcete nainštalovať aplikáciu Nahimic?",
+					"nahimicDesc": "Aplikácia Nahimic výrazne zlepšuje herný zážitok tým, že poskytuje jedinečný pohlcujúci 3D zvuk a zaujímavé funkcie. Nahimic predstavuje nový spôsob hrania.",
+					"xRite": "Nainštalovať X-Rite Color Assistant?",
+					"xRiteDesc": "Táto aplikácia umožňuje výber a použitie farebných profilov kalibrovaných z výroby."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Model:",
+					"frequency": "Frekvencia:",
+					"usage": "Použité:",
+					"overclock": {
+						"on": "Pretaktované",
+						"off": "Podtaktované"
+					}
 				}
 			}
 		},

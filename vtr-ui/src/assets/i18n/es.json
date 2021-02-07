@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Modo térmico",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Las opciones de aceleración avanzadas son solo herramientas de configuración que no garantizan el rendimiento y la estabilidad del dispositivo después de la configuración. Asegúrese de comprender el conocimiento técnico y los riesgos pertinentes antes de utilizarlas.",
 					"proceed": "PROCEDER",
 					"legionAccessory": "¿Desea instalar Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central es una aplicación que configura su mouse, teclado, auriculares, etc. de Legion."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central es una aplicación que configura su mouse, teclado, auriculares, etc. de Legion.",
+					"nahimic": "¿Desea instalar Nahimic?",
+					"nahimicDesc": "Nahimic mejora drásticamente su experiencia de juego al proporcionar un audio 3D inmersivo sin precedentes y características atractivas para los jugadores. Nahimic es una nueva forma de jugar.",
+					"xRite": "¿Desea instalar X-Rite Color Assistant?",
+					"xRiteDesc": "Esta aplicación le permite elegir y aplicar perfiles de color calibrados de fábrica."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Modelo:",
+					"frequency": "Frecuencia:",
+					"usage": "Usado:",
+					"overclock": {
+						"on": "Acelerado",
+						"off": "Desacelerado"
+					}
 				}
 			}
 		},

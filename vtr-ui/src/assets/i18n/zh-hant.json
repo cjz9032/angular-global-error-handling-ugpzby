@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "熱模式",
 					"status": {
@@ -117,6 +120,31 @@
 				"quickSettingstitle": {
 					"title": "快速設定"
 				},
+				"thermalMode2Popup": {
+					"thermalMode2SettingTitle": "熱模式設定",
+					"thermalMode2SettingDesc": "選擇您要使用的模式。",
+					"fnQDesc": "您可以使用快捷鍵 Fn+Q 切換模式。",
+					"performanceTitle": "效能模式",
+					"performanceDesc": "以更高的風扇速度和耗電量提高電腦效能。",
+					"OCDesc": "您可以選擇開啟超頻功能。",
+					"ac_dcDesc": "只有在已插入 AC 電源整流器時，才適用效能模式。",
+					"balanceTitle": "平衡模式",
+					"balanceDesc": "根據系統需求自動調整效能和風扇速度。",
+					"quietTitle": "安靜模式",
+					"quietDesc": "盡可能降低電腦效能和風扇速度以保持安靜，耗電量低。",
+					"OC": {
+						"cpu_gpuOC": "在效能模式下啟用 CPU/GPU 超頻。",
+						"cpuOC": "在效能模式下啟用 CPU 超頻。",
+						"gpuOC": "在效能模式下啟用 GPU 超頻。",
+						"advance": "進階",
+						"cpu_gpuDriverLack": "安裝 CPU/GPU 驅動程式以使用超頻功能。",
+						"cpuDriverLack": "安裝 CPU 驅動程式以使用超頻功能。",
+						"gpuDriverLack": "安裝 GPU 驅動程式以使用超頻功能。",
+						"goInstall": "執行安裝"
+					},
+					"autoAdjustDesc": "自動偵測目前遊戲並調整 CPU/GPU 效能。",
+					"autoSwitch": "啟動遊戲時自動切換到效能模式，結束遊戲之後再切換回來。"
+				},
 				"advancedOC": {
 					"title": "超頻進階設定",
 					"description": "在超頻開啟時設定進階自訂參數。這可能會有風險。",
@@ -189,35 +217,22 @@
 					"description2": "進階超頻選配產品只是配置工具，無法保證配置之後的裝置效能和穩定性。使用前，請確保您了解相關的技術知識和風險。",
 					"proceed": "繼續",
 					"legionAccessory": "您要安裝 Legion Accessory Central 嗎？",
-					"accessoryDesc": "Legion Accessory Central 是一款用於配置 Legion 滑鼠、鍵盤、耳機等的應用程式。"
-				},
-				"thermalMode2Popup": {
-					"thermalMode2SettingTitle": "熱模式設定",
-					"thermalMode2SettingDesc": "選擇您要使用的模式。",
-					"fnQDesc": "您可以使用快捷鍵 Fn+Q 切換模式。",
-					"performanceTitle": "效能模式",
-					"performanceDesc": "以更高的風扇速度和耗電量提高電腦效能。",
-					"OCDesc": "您可以選擇開啟超頻功能。",
-					"ac_dcDesc": "只有在已插入 AC 電源整流器時，才適用效能模式。",
-					"balanceTitle": "平衡模式",
-					"balanceDesc": "根據系統需求自動調整效能和風扇速度。",
-					"quietTitle": "安靜模式",
-					"quietDesc": "盡可能降低電腦效能和風扇速度以保持安靜，耗電量低。",
-					"OC": {
-						"cpu_gpuOC": "在效能模式下啟用 CPU/GPU 超頻。",
-						"cpuOC": "在效能模式下啟用 CPU 超頻。",
-						"gpuOC": "在效能模式下啟用 GPU 超頻。",
-						"advance": "進階",
-						"cpu_gpuDriverLack": "安裝 CPU/GPU 驅動程式以使用超頻功能。",
-						"cpuDriverLack": "安裝 CPU 驅動程式以使用超頻功能。",
-						"gpuDriverLack": "安裝 GPU 驅動程式以使用超頻功能。",
-						"goInstall": "執行安裝"
-					},
-					"autoAdjustDesc": "自動偵測目前遊戲並調整 CPU/GPU 效能。",
-					"autoSwitch": "啟動遊戲時自動切換到效能模式，結束遊戲之後再切換回來。"
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central 是一款用於配置 Legion 滑鼠、鍵盤、耳機等的應用程式。",
+					"nahimic": "您要安裝 Nahimic 嗎？",
+					"nahimicDesc": "Nahimic 為遊戲玩家提供前所未有的沉浸式 3D 音效以及參與互動的功能，大幅提升您的遊戲體驗。Nahimic 是一種全新的遊戲方式。",
+					"xRite": "您要安裝 X-Rite Color Assistant 嗎？",
+					"xRiteDesc": "此應用程式可讓您選擇並套用出廠校準的色彩設定檔。"
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "型號:",
+					"frequency": "頻率：",
+					"usage": "已用：",
+					"overclock": {
+						"on": "已超頻",
+						"off": "未超頻"
+					}
 				}
 			}
 		},

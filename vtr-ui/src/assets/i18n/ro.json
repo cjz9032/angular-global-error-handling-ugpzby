@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Mod termic",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Opțiunile avansate de suprasolicitare sunt doar instrumente de configurare care nu garantează performanța și stabilitatea dispozitivului după configurare. Vă rugăm să vă asigurați că înțelegeți informațiile tehnice relevante și riscurile înainte de utilizare.",
 					"proceed": "CONTINUAȚI",
 					"legionAccessory": "Doriți să instalați Legion Accessory Central?",
-					"accessoryDesc": "Legion Accessory Central este o aplicație pentru configurarea mouse-ului, tastaturii, căștilor Legion etc."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central este o aplicație pentru configurarea mouse-ului, tastaturii, căștilor Legion etc.",
+					"nahimic": "Instalați Nahimic?",
+					"nahimicDesc": "Nahimic vă îmbunătățește semnificativ experiența de joc oferind un sunet 3D imersiv fără precedent și caracteristici atractive pentru jucători. Nahimic este un nou mod de a juca.",
+					"xRite": "Instalați X-Rite Color Assistant?",
+					"xRiteDesc": "Această aplicație vă permite să alegeți și să aplicați profiluri de culoare calibrate din fabrică."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Model :",
+					"frequency": "Frecvență :",
+					"usage": "Utilizat :",
+					"overclock": {
+						"on": "Cu overclocking",
+						"off": "Fără overclocking"
+					}
 				}
 			}
 		},

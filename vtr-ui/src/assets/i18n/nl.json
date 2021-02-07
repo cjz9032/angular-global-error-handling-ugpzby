@@ -2,6 +2,9 @@
 	"gaming": {
 		"dashboard": {
 			"device": {
+				"popup": {
+					"closeBtn": "close"
+				},
 				"quickSettings": {
 					"title": "Thermische modus",
 					"status": {
@@ -214,10 +217,22 @@
 					"description2": "Geavanceerde opties voor overklokken zijn configuratiehulpmiddelen waarbij de prestaties en stabiliteit van het apparaat na de configuratie niet worden gegarandeerd. Zorg ervoor dat u over de benodigde technische kennis beschikt en de risico's begrijpt voordat u dit gebruikt.",
 					"proceed": "DOORGAAN",
 					"legionAccessory": "Wil je Legion Accessory Central installeren?",
-					"accessoryDesc": "Legion Accessory Central is een app waarmee je je Legion-muis, -toetsenbord, -hoofdtelefoons en dergelijke configureert."
-				},
-				"popup": {
-					"closeBtn": "close"
+					"accessoryDesc": "Legion Accessory Central is een app waarmee je je Legion-muis, -toetsenbord, -hoofdtelefoons en dergelijke configureert.",
+					"nahimic": "Wilt u Nahimic installeren?",
+					"nahimicDesc": "Nahimic verbetert de manier waarop u games beleeft doordat het een ongeëvenaard meeslepend 3D-geluid en boeiende functies voor gamers biedt. Nahimic is een nieuwe manier van gamen.",
+					"xRite": "X-Rite Color Assistant installeren?",
+					"xRiteDesc": "Met deze app kunt u in de fabriek gekalibreerde kleurprofielen kiezen en toepassen."
+				}
+			},
+			"monitor": {
+				"tooltip": {
+					"modal": "Model:",
+					"frequency": "Frequentie:",
+					"usage": "Gebruikt:",
+					"overclock": {
+						"on": "Overgeklokt",
+						"off": "Niet-overgeklokt"
+					}
 				}
 			}
 		},
