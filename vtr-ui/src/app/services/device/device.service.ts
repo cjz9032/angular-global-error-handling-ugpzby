@@ -92,24 +92,29 @@ export class DeviceService {
 		return undefined;
 	}
 
-	private identifySMBMachine(machineFamilyName) {
-		const trimedFamilyName = machineFamilyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
-		if (machineFamilyName.match(/^(thinkbook)/) || machineFamilyName.match(/^(thinkpade)/)) {
-			this.isSMB = true;
-			if (smbMachines.creatorSettings.includes(trimedFamilyName)) {
-				this.supportCreatorSettings = true;
-			}
+	private identifySMBMachine(machineFamilyName: string) {
+		if (machineFamilyName) {
+			const trimedFamilyName = machineFamilyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
+			if (
+				machineFamilyName.match(/^(thinkbook)/) ||
+				machineFamilyName.match(/^(thinkpade)/)
+			) {
+				this.isSMB = true;
+				if (smbMachines.creatorSettings.includes(trimedFamilyName)) {
+					this.supportCreatorSettings = true;
+				}
 
-			if (smbMachines.easyRendering.includes(trimedFamilyName)) {
-				this.supportEasyRendering = true;
-			}
+				if (smbMachines.easyRendering.includes(trimedFamilyName)) {
+					this.supportEasyRendering = true;
+				}
 
-			if (smbMachines.colorCalibration.includes(trimedFamilyName)) {
-				this.supportColorCalibration = true;
-			}
+				if (smbMachines.colorCalibration.includes(trimedFamilyName)) {
+					this.supportColorCalibration = true;
+				}
 
-			if (smbMachines.smartAppearance.includes(trimedFamilyName)) {
-				this.supportSmartAppearance = true;
+				if (smbMachines.smartAppearance.includes(trimedFamilyName)) {
+					this.supportSmartAppearance = true;
+				}
 			}
 		}
 	}
