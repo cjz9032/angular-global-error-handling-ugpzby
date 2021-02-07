@@ -93,9 +93,9 @@ export class DeviceService {
 	}
 
 	private identifySMBMachine(machineFamilyName) {
-		if (machineFamilyName.match(/^(thinkbook)/) || machineFamilyName.match(/^(thinkpad e)/)) {
+		const trimedFamilyName = machineFamilyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
+		if (machineFamilyName.match(/^(thinkbook)/) || machineFamilyName.match(/^(thinkpade)/)) {
 			this.isSMB = true;
-			const trimedFamilyName = machineFamilyName.trim().toLowerCase();
 			if (smbMachines.creatorSettings.includes(trimedFamilyName)) {
 				this.supportCreatorSettings = true;
 			}
@@ -132,7 +132,7 @@ export class DeviceService {
 				this.isSMode = info.isSMode;
 				this.isGaming = info.isGaming;
 				if (info.family) {
-					this.identifySMBMachine(info.family.toLowerCase());
+					this.identifySMBMachine(info.family);
 				}
 
 				if (
