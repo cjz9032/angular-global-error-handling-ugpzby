@@ -1,5 +1,5 @@
 <div id="hwscan-item-{{ i }}" class="vtr-widget-hardware-scan-item" *ngFor="let item of items; let i = index">
-	<div class="container-fluid">
+	<div class="container-fluid separator">
 		<div class="row">
 			<div class="module-information">
 				<div class="module-icon" *ngIf="item.icon !== undefined">
@@ -116,7 +116,6 @@
 				</vtr-ui-question-mark-button>
 			</div>
 		</div>
-		<hr aria-hidden="true">
 	</div>
 </div>
 <ng-template #tooltipRefModule>
