@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.26](https://bitbucket.tc.lenovo.com///compare/v1.10.25...v1.10.26) (2021-02-08)
+
+
+### Features
+
+* **SMB:** update machine judgement method ([88354d2](https://bitbucket.tc.lenovo.com///commit/88354d2a3652bf66bb7d677d64406d69746a6aae))
+
+
+### Bug Fixes
+
+* **SMB:** add validation for arg in identifySMBMachine ([2f532f1](https://bitbucket.tc.lenovo.com///commit/2f532f110283d6d67f2aca1e994170fefb999d4c))
+
 ### [1.10.25](https://bitbucket.tc.lenovo.com///compare/v1.10.24...v1.10.25) (2021-02-07)
 
 
