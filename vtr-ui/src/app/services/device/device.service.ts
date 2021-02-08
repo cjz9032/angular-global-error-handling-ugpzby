@@ -94,25 +94,25 @@ export class DeviceService {
 
 	private identifySMBMachine(machineFamilyName: string) {
 		if (machineFamilyName) {
-			const trimedFamilyName = machineFamilyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
+			machineFamilyName = machineFamilyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
 			if (
 				machineFamilyName.match(/^(thinkbook)/) ||
 				machineFamilyName.match(/^(thinkpade)/)
 			) {
 				this.isSMB = true;
-				if (smbMachines.creatorSettings.includes(trimedFamilyName)) {
+				if (smbMachines.creatorSettings.includes(machineFamilyName)) {
 					this.supportCreatorSettings = true;
 				}
 
-				if (smbMachines.easyRendering.includes(trimedFamilyName)) {
+				if (smbMachines.easyRendering.includes(machineFamilyName)) {
 					this.supportEasyRendering = true;
 				}
 
-				if (smbMachines.colorCalibration.includes(trimedFamilyName)) {
+				if (smbMachines.colorCalibration.includes(machineFamilyName)) {
 					this.supportColorCalibration = true;
 				}
 
-				if (smbMachines.smartAppearance.includes(trimedFamilyName)) {
+				if (smbMachines.smartAppearance.includes(machineFamilyName)) {
 					this.supportSmartAppearance = true;
 				}
 			}
