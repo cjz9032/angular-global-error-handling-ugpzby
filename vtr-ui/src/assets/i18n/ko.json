@@ -226,9 +226,9 @@
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "모델:",
-					"frequency": "주파수:",
-					"usage": "사용:",
+					"modal": "모델 :",
+					"frequency": "주파수 :",
+					"usage": "사용 :",
 					"overclock": {
 						"on": "오버클럭됨",
 						"off": "오버클럭되지 않음"

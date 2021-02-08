@@ -226,9 +226,9 @@
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "Modell:",
-					"frequency": "Gyakoriság:",
-					"usage": "Használt:",
+					"modal": "Modell :",
+					"frequency": "Gyakoriság :",
+					"usage": "Használt :",
 					"overclock": {
 						"on": "Túlpörgetve",
 						"off": "Nincs túlpörgetve"

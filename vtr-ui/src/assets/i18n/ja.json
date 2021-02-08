@@ -226,9 +226,9 @@
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "モデル:",
-					"frequency": "周波数:",
-					"usage": "使用済:",
+					"modal": "モデル :",
+					"frequency": "周波数 :",
+					"usage": "使用済 :",
 					"overclock": {
 						"on": "オーバークロック",
 						"off": "アンダークロック"
