@@ -226,9 +226,9 @@
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "Model:",
-					"frequency": "Częstotliwość:",
-					"usage": "W użyciu:",
+					"modal": "Model :",
+					"frequency": "Częstotliwość :",
+					"usage": "W użyciu :",
 					"overclock": {
 						"on": "Przetaktowano",
 						"off": "Nie przetaktowano"

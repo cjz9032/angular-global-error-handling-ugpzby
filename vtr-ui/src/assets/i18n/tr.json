@@ -226,9 +226,9 @@
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "Model:",
-					"frequency": "Frekans:",
-					"usage": "Kullanılan:",
+					"modal": "Model :",
+					"frequency": "Frekans :",
+					"usage": "Kullanılan :",
 					"overclock": {
 						"on": "Hız Aşırtma",
 						"off": "Hız Aşırtma Olmadan"

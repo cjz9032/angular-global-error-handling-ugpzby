@@ -226,9 +226,9 @@
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "Model:",
-					"frequency": "Učestalost:",
-					"usage": "Korišćeno:",
+					"modal": "Model :",
+					"frequency": "Učestalost :",
+					"usage": "Korišćeno :",
 					"overclock": {
 						"on": "Overklok",
 						"off": "Nije overklok"

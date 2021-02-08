@@ -226,9 +226,9 @@
 			},
 			"monitor": {
 				"tooltip": {
-					"modal": "Modell:",
-					"frequency": "Frekvens:",
-					"usage": "Använt:",
+					"modal": "Modell :",
+					"frequency": "Frekvens :",
+					"usage": "Använt :",
 					"overclock": {
 						"on": "Överklockad",
 						"off": "Inte överklockad"
