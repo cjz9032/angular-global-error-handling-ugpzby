@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { ScanLogService } from './scan-log.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -14,7 +15,11 @@ export class HardwareScanFeaturesService {
 	}
 	public featuresChecked: EventEmitter<void> = new EventEmitter();
 
-	constructor(private scanLogService: ScanLogService, private commonService: CommonService) {
+	constructor(
+		private scanLogService: ScanLogService,
+		private commonService: CommonService,
+		private logger: LoggerService
+	) {
 		this.startCheckFeatures();
 	}
 
@@ -45,7 +50,8 @@ export class HardwareScanFeaturesService {
 					}
 					resolve(true);
 				})
-				.catch(() => {
+				.catch((error) => {
+					this.logger.exception('[ExportResultService] getModelData', error);
 					resolve(false);
 				})
 				.finally(() => {

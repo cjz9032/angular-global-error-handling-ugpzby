@@ -14,6 +14,7 @@ import { HardwareScanResultService } from '../../../services/hardware-scan-resul
 import { RecoverBadSectorsService } from '../../../services/recover-bad-sectors.service';
 import { LenovoSupportService } from 'src/app/modules/hardware-scan/services/lenovo-support.service';
 import { HardwareScanFinishedHeaderType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-hardware-scan-finished-header',
@@ -44,7 +45,8 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 		private previousResultService: PreviousResultService,
 		private hardwareScanResultService: HardwareScanResultService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
-		private lenovoSupportService: LenovoSupportService
+		private lenovoSupportService: LenovoSupportService,
+		private logger: LoggerService
 	) {}
 
 	ngOnInit() {
@@ -75,13 +77,21 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 			.getETicketUrl(scanDate, finalResultCode)
 			.then((response) => {
 				this.supportUrl = response;
+			})
+			.catch((error) => {
+				this.logger.exception('[ExportLogComponent] isPdfAvailable', error);
 			});
 	}
 
 	private async configureContactusUrl() {
-		await this.lenovoSupportService.getContactusUrl().then((response) => {
-			this.contactusUrl = response;
-		});
+		await this.lenovoSupportService
+			.getContactusUrl()
+			.then((response) => {
+				this.contactusUrl = response;
+			})
+			.catch((error) => {
+				this.logger.exception('[ExportLogComponent] configureContactusUrl', error);
+			});
 	}
 
 	public setupFailedTests() {

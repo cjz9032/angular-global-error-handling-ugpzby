@@ -205,6 +205,9 @@ export class ScanExecutionService {
 						this.timerService.stop()
 					);
 				})
+				.catch((error) =>
+					this.logger.exception('[ScanExecutionService] getRecoverBadSectors', error)
+				)
 				.finally(() => {
 					this.onViewResultsRecover();
 				});

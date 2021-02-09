@@ -349,7 +349,12 @@ export class HardwareScanService {
 
 	public getPluginInfo() {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.getPluginInformation().then((response) => response);
+			return this.hardwareScanBridge
+				.getPluginInformation()
+				.then((response) => response)
+				.catch((error) =>
+					this.logger.exception('[HardwareScanService] getPluginInfo', error)
+				);
 		}
 		return undefined;
 	}
@@ -360,7 +365,10 @@ export class HardwareScanService {
 				const isMachineAvailable = this.isMachineAvailable();
 				return (result || '').toString() === 'true' && isMachineAvailable;
 			})
-			.catch(() => false);
+			.catch((error) => {
+				this.logger.exception('[HardwareScanService] isAvailable', error);
+				return false;
+			});
 	}
 
 	/**
@@ -410,7 +418,10 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge
 				.getPreScanInformation(payload)
-				.then((response) => response);
+				.then((response) => response)
+				.catch((error) =>
+					this.logger.exception('[HardwareScanService] getPreScanInformation', error)
+				);
 		}
 		return undefined;
 	}
@@ -697,12 +708,19 @@ export class HardwareScanService {
 
 	public getItemsToRecoverBadSectors() {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge.getItemsToRecoverBadSectors().then((response) => {
-				if (response) {
-					return response;
-				} else {
-				}
-			});
+			return this.hardwareScanBridge
+				.getItemsToRecoverBadSectors()
+				.then((response) => {
+					if (response) {
+						return response;
+					}
+				})
+				.catch((error) =>
+					this.logger.exception(
+						'[HardwareScanService] getItemsToRecoverBadSectors',
+						error
+					)
+				);
 		}
 	}
 
