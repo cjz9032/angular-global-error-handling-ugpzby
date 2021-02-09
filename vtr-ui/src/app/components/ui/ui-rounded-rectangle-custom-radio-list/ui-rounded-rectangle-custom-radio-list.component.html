@@ -6,6 +6,7 @@
 		(keydown)="onKeyDown($event)"
 		(blur)="onRadioGroupBlur($event)"
 		(focus)="onRadioGroupFocus($event)"
+		[vtrDisabled]="isDisabled"
 		tabIndex="0"
 		[id]="groupName">
 		<ng-template ngFor
