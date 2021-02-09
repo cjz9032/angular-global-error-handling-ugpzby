@@ -3,6 +3,7 @@ import {
 	Directive,
 	ElementRef,
 	Input,
+	OnChanges,
 	OnInit,
 	Renderer2,
 } from '@angular/core';
@@ -12,7 +13,7 @@ import toLower from 'lodash/toLower';
 @Directive({
 	selector: '[vtrDisabled]',
 })
-export class DisabledDirective implements OnInit, AfterViewInit {
+export class DisabledDirective implements OnInit, AfterViewInit, OnChanges {
 
 	// https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled
 	private readonly SUPPORTED_TAGS: readonly string[] = Object.freeze([
@@ -38,6 +39,11 @@ export class DisabledDirective implements OnInit, AfterViewInit {
 
 	ngOnInit() {
 		this.originalTabindex = this.eleRef.nativeElement.getAttribute('tabindex');
+	}
+
+	ngOnChanges() {
+		this.disableTabindex(this.eleRef.nativeElement);
+		this.disableElement(this.eleRef.nativeElement);
 	}
 
 	ngAfterViewInit() {
