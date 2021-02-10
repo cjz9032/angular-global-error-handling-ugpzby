@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.27](https://bitbucket.tc.lenovo.com///compare/v1.10.26...v1.10.27) (2021-02-10)
+
+
+### Bug Fixes
+
+* **SMB:** correct variable in identifySMBMachine ([8233203](https://bitbucket.tc.lenovo.com///commit/8233203bd0a6579739cce2f72528cccdb5935aec))
+
 ### [1.10.26](https://bitbucket.tc.lenovo.com///compare/v1.10.25...v1.10.26) (2021-02-08)
 
 
