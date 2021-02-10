@@ -13,7 +13,7 @@ import toLower from 'lodash/toLower';
 @Directive({
 	selector: '[vtrDisabled]',
 })
-export class DisabledDirective implements OnInit, AfterViewInit, OnChanges {
+export class DisabledDirective implements OnInit, AfterViewInit {
 
 	// https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled
 	private readonly SUPPORTED_TAGS: readonly string[] = Object.freeze([
@@ -28,7 +28,15 @@ export class DisabledDirective implements OnInit, AfterViewInit, OnChanges {
 		'input',
 	]);
 
-	@Input() vtrDisabled = true;
+	@Input()
+	get vtrDisabled(): boolean { return this.internalVtrDisabled; }
+	set vtrDisabled(value: boolean) {
+		this.internalVtrDisabled = value;
+
+		this.ngAfterViewInit();
+	}
+	private internalVtrDisabled = true;
+
 	private originalTabindex: number | null;
 
 	constructor(
@@ -41,18 +49,13 @@ export class DisabledDirective implements OnInit, AfterViewInit, OnChanges {
 		this.originalTabindex = this.eleRef.nativeElement.getAttribute('tabindex');
 	}
 
-	ngOnChanges() {
-		this.disableTabindex(this.eleRef.nativeElement);
-		this.disableElement(this.eleRef.nativeElement);
-	}
-
 	ngAfterViewInit() {
 		this.disableTabindex(this.eleRef.nativeElement);
 		this.disableElement(this.eleRef.nativeElement);
 	}
 
 	private disableTabindex(element: any) {
-		if (toLower(element.tagName) in ['div']) {
+		if (['div'].includes(toLower(element.tagName))) {
 			if (element.hasAttribute('tabindex')) {
 				if (this.vtrDisabled) {
 					this.renderer.setAttribute(element, 'tabindex', '-1');
