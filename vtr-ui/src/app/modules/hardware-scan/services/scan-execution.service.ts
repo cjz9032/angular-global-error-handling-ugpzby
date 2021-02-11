@@ -206,7 +206,7 @@ export class ScanExecutionService {
 					);
 				})
 				.catch((error) =>
-					this.logger.exception('[ScanExecutionService] getRecoverBadSectors', error)
+					this.logger.exception('[ScanExecutionService] doRecoverBadSectors', error)
 				)
 				.finally(() => {
 					this.onViewResultsRecover();

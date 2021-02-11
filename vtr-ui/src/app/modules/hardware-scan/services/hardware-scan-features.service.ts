@@ -51,7 +51,10 @@ export class HardwareScanFeaturesService {
 					resolve(true);
 				})
 				.catch((error) => {
-					this.logger.exception('[ExportResultService] getModelData', error);
+					this.logger.exception(
+						'[HardwareScanFeatureService] checkExportLogAvailable',
+						error
+					);
 					resolve(false);
 				})
 				.finally(() => {

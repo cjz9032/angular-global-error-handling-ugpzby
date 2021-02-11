@@ -79,7 +79,10 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 				this.supportUrl = response;
 			})
 			.catch((error) => {
-				this.logger.exception('[ExportLogComponent] isPdfAvailable', error);
+				this.logger.exception(
+					'[HardwareScanFinishHeaderComponent] configureSupportUrl',
+					error
+				);
 			});
 	}
 
@@ -90,7 +93,10 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 				this.contactusUrl = response;
 			})
 			.catch((error) => {
-				this.logger.exception('[ExportLogComponent] configureContactusUrl', error);
+				this.logger.exception(
+					'[HardwareScanFinishHeaderComponent] configureContactusUrl',
+					error
+				);
 			});
 	}
 

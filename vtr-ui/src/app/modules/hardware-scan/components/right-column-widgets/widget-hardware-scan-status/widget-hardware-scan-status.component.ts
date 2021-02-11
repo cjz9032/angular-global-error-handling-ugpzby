@@ -36,7 +36,7 @@ export class WidgetHardwareScanStatusComponent implements OnInit {
 					}
 				})
 				.catch((error) => {
-					this.logger.exception('[WidgetHWScanStatusComponent] Get Last Result', error);
+					this.logger.exception('[WidgetHWScanStatusComponent] ngOnInit', error);
 				});
 		}
 	}
