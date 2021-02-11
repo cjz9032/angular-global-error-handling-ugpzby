@@ -186,7 +186,6 @@ export class PreviousResultService {
 			return this.previousResultsResponse
 				.then((response) => {
 					this.buildPreviousResults(response);
-					this.loggerService.debug('[getLastResults]', response);
 					return response;
 				})
 				.catch((ex) => {

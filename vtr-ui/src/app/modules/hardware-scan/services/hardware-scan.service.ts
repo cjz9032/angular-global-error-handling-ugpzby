@@ -1074,14 +1074,25 @@ export class HardwareScanService {
 				}
 
 				for (const group of module.response.groupResults) {
-					// pegando o module id igual ao id do objeto do this.modules e retornando o objeto que contem o udi
+					// Getting the module id equals to the object id of this.modules and returning the objecting containing the udi
 					const groupUdi = responseModuleUdi.find(
 						(m) => m.categoryInformationId === group.id
 					).udi;
-					// vamos alterar o groupId
-					group.id = storedUdiList.find(
+
+					// Updating the id of the group object with this.module id
+					const replaceId = storedUdiList.find(
 						(udiItem) => udiItem.udi.value === groupUdi.value
-					).id;
+					);
+
+					if (replaceId) {
+						group.id = replaceId.id;
+					} else {
+						this.logger.error(
+							`Could not set ${JSON.stringify(group)} to value ${JSON.stringify(
+								replaceId
+							)}`
+						);
+					}
 				}
 			}
 
