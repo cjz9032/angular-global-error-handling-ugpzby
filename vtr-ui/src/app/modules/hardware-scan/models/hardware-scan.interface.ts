@@ -47,7 +47,27 @@ export interface ScanSummary {
 export interface ModuleResult {
 	id: string;
 	localizedItems: string;
-	response: Array<DoScanResponse>;
+	response: DoScanResponse;
 	scanDate: string;
-	categoryInformation: Array<any>;
+	categoryInformation: CategoryInformation;
+}
+
+export interface CategoryInformation {
+	name: string;
+	id: string;
+	groupList: Array<Group>;
+}
+
+export interface Group {
+	id: string;
+	name: string;
+	testList: Array<any>;
+	udi: string;
+	metaInformation: Array<MetaInformation>;
+}
+
+export interface MetaInformation {
+	name: string;
+	index: string;
+	value: string;
 }

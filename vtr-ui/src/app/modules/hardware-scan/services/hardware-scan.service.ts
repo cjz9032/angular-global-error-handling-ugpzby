@@ -24,6 +24,7 @@ import {
 	GroupResult,
 	HardwareScanPluginGetPreviousResultResponse,
 	HardwareScanPluginScanResponse,
+	MetaInformation,
 } from '../models/hardware-scan.interface';
 import { ScanLogService } from './scan-log.service';
 
@@ -517,7 +518,7 @@ export class HardwareScanService {
 				(
 					previousResultResponse: HardwareScanPluginGetPreviousResultResponse
 				): HardwareScanPluginScanResponse => {
-					if (previousResultResponse.hasPreviousResults) {
+					if (previousResultResponse?.hasPreviousResults) {
 						const scanResponse = this.convertPreviousResultToScanResponse(
 							previousResultResponse
 						);
@@ -1046,13 +1047,54 @@ export class HardwareScanService {
 			scanResponse.startDate = response.scanSummary.ScanDate;
 			scanResponse.responses = [];
 
+			// Stores the current udi and id from this.modules
+			const storedUdiList: Array<{ id: string; udi: MetaInformation }> = [];
+
+			this.modules.map((module) => {
+				const Udi = {
+					id: module.groupId,
+					udi: module.metaInformation.find(
+						(metaInformation: MetaInformation) => metaInformation.name === 'UDI'
+					),
+				};
+				storedUdiList.push(Udi);
+			});
+
+			for (const module of response.modulesResults) {
+				const responseModuleUdi: Array<any> = [];
+
+				//Category information id and udi mining
+				for (const group of module.categoryInformation.groupList) {
+					responseModuleUdi.push({
+						categoryInformationId: group.id,
+						udi: group.metaInformation.find(
+							(infoSummary) => infoSummary.name === 'UDI'
+						),
+					});
+				}
+
+				for (const group of module.response.groupResults) {
+					// pegando o module id igual ao id do objeto do this.modules e retornando o objeto que contem o udi
+					const groupUdi = responseModuleUdi.find(
+						(m) => m.categoryInformationId === group.id
+					).udi;
+					// vamos alterar o groupId
+					group.id = storedUdiList.find(
+						(udiItem) => udiItem.udi.value === groupUdi.value
+					).id;
+				}
+			}
+
 			for (const doScanResponse of response.modulesResults) {
 				scanResponse.responses.push(doScanResponse.response);
 			}
 
 			return scanResponse;
-		} catch {
-			throw new Error('Error converting previous result response to scan response');
+		} catch (ex) {
+			this.logger.exception('[convertPreviousResultToScanResponse]', ex);
+			throw new Error(
+				`Error converting previous result response to scan response: ${JSON.stringify(ex)}`
+			);
 		}
 	}
 

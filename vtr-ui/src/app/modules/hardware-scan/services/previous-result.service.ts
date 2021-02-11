@@ -64,7 +64,7 @@ export class PreviousResultService {
 				previousItems.modules.push(module);
 			}
 		} catch (ex) {
-			this.loggerService.error(
+			this.loggerService.exception(
 				'[PreviousResultService] buildPreviousResultsWidget - Failed to build previous results widget',
 				ex
 			);
@@ -166,9 +166,13 @@ export class PreviousResultService {
 
 		for (const item of module.metaInformation) {
 			const detail = { key: '', value: '' };
-			detail.key = item.name;
-			detail.value = item.value;
-			result.push(detail);
+
+			// Preventing UDI to be displayed on details
+			if (item.name !== 'UDI') {
+				detail.key = item.name;
+				detail.value = item.value;
+				result.push(detail);
+			}
 		}
 
 		return result;
@@ -182,12 +186,12 @@ export class PreviousResultService {
 			return this.previousResultsResponse
 				.then((response) => {
 					this.buildPreviousResults(response);
-					this.loggerService.info('[getLastResults]', response);
+					this.loggerService.debug('[getLastResults]', response);
 					return response;
 				})
 				.catch((ex) => {
-					this.loggerService.error(
-						'[getLastResults] -> buildPreviousResults error: ',
+					this.loggerService.exception(
+						'[getLastResults] -> buildPreviousResults error',
 						ex
 					);
 				});
@@ -217,7 +221,7 @@ export class PreviousResultService {
 				return response;
 			})
 			.catch((ex) => {
-				this.loggerService.error('[updatePreviousResultsResponse]', ex);
+				this.loggerService.exception('[updatePreviousResultsResponse]', ex);
 			});
 	}
 
