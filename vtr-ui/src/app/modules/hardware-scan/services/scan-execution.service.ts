@@ -712,47 +712,54 @@ export class ScanExecutionService {
 	private validateBatteryModal(preScanInfo: any, taskType: TaskType, requests: any) {
 		this.batteryMessage = '';
 
-		this.hardwareScanService.getPreScanInfo(preScanInfo).then((response) => {
-			for (const message of response.MessageList) {
-				if (message.id === 'connect-power') {
-					this.batteryMessage = message.description;
-				}
-			}
-
-			if (this.batteryMessage !== '') {
-				const modal = this.dialog.open(ModalPreScanInfoComponent, {
-					maxWidth: '50rem',
-					autoFocus: true,
-					hasBackdrop: true,
-					disableClose: true,
-					panelClass: 'hardware-scan-modal-size',
-					ariaLabelledBy: 'hwscan-pre-scan-info-modal-title',
-				});
-
-				this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
-
-				modal.componentInstance.error = this.translate.instant('hardwareScan.warning');
-				modal.componentInstance.description = this.batteryMessage;
-				modal.componentInstance.ItemParent = this.getMetricsParentValue();
-				modal.componentInstance.CancelItemName = this.getMetricsItemNameClose();
-				modal.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
-
-				modal.afterClosed().subscribe(
-					(result) => {
-						this.getDoScan(requests);
-						// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
-						this.startScanClicked = false;
-					},
-					() => {
-						this.hardwareScanService.cleanCustomTests();
-						// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
-						this.startScanClicked = false;
+		this.hardwareScanService
+			.getPreScanInfo(preScanInfo)
+			.then((response) => {
+				if (response && response.MessageList) {
+					for (const message of response.MessageList) {
+						if (message.id === 'connect-power') {
+							this.batteryMessage = message.description;
+						}
 					}
-				);
-			} else {
-				this.getDoScan(requests);
-			}
-		});
+				}
+
+				if (this.batteryMessage !== '') {
+					const modal = this.dialog.open(ModalPreScanInfoComponent, {
+						maxWidth: '50rem',
+						autoFocus: true,
+						hasBackdrop: true,
+						disableClose: true,
+						panelClass: 'hardware-scan-modal-size',
+						ariaLabelledBy: 'hwscan-pre-scan-info-modal-title',
+					});
+
+					this.hardwareScanService.setCurrentTaskStep(TaskStep.Confirm);
+
+					modal.componentInstance.error = this.translate.instant('hardwareScan.warning');
+					modal.componentInstance.description = this.batteryMessage;
+					modal.componentInstance.ItemParent = this.getMetricsParentValue();
+					modal.componentInstance.CancelItemName = this.getMetricsItemNameClose();
+					modal.componentInstance.ConfirmItemName = this.getMetricsItemNameConfirm();
+
+					modal.afterClosed().subscribe(
+						(result) => {
+							this.getDoScan(requests);
+							// User has clicked in the OK button, so we need to re-enable the Quick/Custom scan button here
+							this.startScanClicked = false;
+						},
+						() => {
+							this.hardwareScanService.cleanCustomTests();
+							// User has clicked in the 'X' button, so we also need to re-enable the Quick/Custom scan button here.
+							this.startScanClicked = false;
+						}
+					);
+				} else {
+					this.getDoScan(requests);
+				}
+			})
+			.catch((error) =>
+				this.logger.exception('[ScanExecutionService] validateBatteryModal', error)
+			);
 	}
 
 	/*

@@ -418,10 +418,7 @@ export class HardwareScanService {
 		if (this.hardwareScanBridge) {
 			return this.hardwareScanBridge
 				.getPreScanInformation(payload)
-				.then((response) => response)
-				.catch((error) =>
-					this.logger.exception('[HardwareScanService] getPreScanInformation', error)
-				);
+				.then((response) => response);
 		}
 		return undefined;
 	}
@@ -708,19 +705,11 @@ export class HardwareScanService {
 
 	public getItemsToRecoverBadSectors() {
 		if (this.hardwareScanBridge) {
-			return this.hardwareScanBridge
-				.getItemsToRecoverBadSectors()
-				.then((response) => {
-					if (response) {
-						return response;
-					}
-				})
-				.catch((error) =>
-					this.logger.exception(
-						'[HardwareScanService] getItemsToRecoverBadSectors',
-						error
-					)
-				);
+			return this.hardwareScanBridge.getItemsToRecoverBadSectors().then((response) => {
+				if (response) {
+					return response;
+				}
+			});
 		}
 	}
 
