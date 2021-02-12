@@ -13788,11 +13788,14 @@ export class ExportResultsService {
 		const result = [];
 
 		for (const item of module.metaInformation) {
-			const detail = { index: '', key: '', value: '' };
-			detail.index = item.index;
-			detail.key = item.name;
-			detail.value = item.value;
-			result.push(detail);
+			// Preventing UDI to be displayed on details
+			if (item.name !== 'UDI') {
+				const detail = { index: '', key: '', value: '' };
+				detail.index = item.index;
+				detail.key = item.name;
+				detail.value = item.value;
+				result.push(detail);
+			}
 		}
 
 		return result;
