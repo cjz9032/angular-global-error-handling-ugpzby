@@ -4625,8 +4625,8 @@
 			"UpdatedDate": "更新日期"
 		},
 		"startComponentSnapshot": "开始生成{{component}}快照",
-		"updateSnapshotTooltip": "使用所有硬件和软件组件的最新信息更新其快照",
-		"replaceBaselineTooltip": "使用所选组件的当前快照信息更新其基线"
+		"updateSnapshotTooltip": "更新所有硬件和软件的信息并保存为最新快照",
+		"replaceBaselineTooltip": "使用所选组件的当前快照信息替换其基线值"
 	},
 	"smartPerformance": {
 		"title": "Smart Performance",
