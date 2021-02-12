@@ -11,7 +11,7 @@
 		<fa-icon id="{{ componentId }}-warning" [attr.aria-label]="'Warning-icon'" role="img" class="warning" [icon]="['fas', 'exclamation']"></fa-icon>
 	</div>
 	<div class="test-status-icon not-applicable" *ngSwitchCase="testResultEnum.Cancelled">
-		<fa-icon id="{{ componentId }}-not-applicable" [attr.aria-label]="'Not-Applicable-icon'" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
+		<fa-icon id="{{ componentId }}-cancelled" [attr.aria-label]="'Cancelled-icon'" role="img" class="not-applicable" [icon]="['fas', 'ban']"></fa-icon>
 	</div>
 	<div class="test-status-icon not-applicable" *ngSwitchDefault>
 		<fa-icon id="{{ componentId }}-not-applicable" [attr.aria-label]="'Not-Applicable-icon'" role="img" class="not-applicable" [icon]="['fas', 'ban']" *ngSwitchDefault></fa-icon>
