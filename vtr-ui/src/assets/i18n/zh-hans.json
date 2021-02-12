@@ -4522,7 +4522,7 @@
 		"replaceBaseline": "更换基线",
 		"snapshotInformation": "开始生成新的软件和硬件清单快照",
 		"informationTooltipDescription": "快照是计算机系统硬件和软件的一份保存的清单。此快照功能可显示系统当前硬件和软件配置与快照配置的并列比较情况。系统将突出显示当前配置的差异，方便您发现更改之处。如果您的计算机出现问题，可以通过比较上次快照或基线配置与当前配置来帮助确定问题是由哪些更改引发的。",
-		"baselineSnapshot": "基准快照",
+		"baselineSnapshot": "基线快照",
 		"lastSnapshot": "上次快照",
 		"replaceBaselineDescription": "请选择要更换基线的组件",
 		"errorResult": "请选择要运行的组件。",
