@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
 import { PreviousResultService } from '../../../services/previous-result.service';
 
@@ -16,7 +17,8 @@ export class WidgetHardwareScanStatusComponent implements OnInit {
 
 	constructor(
 		private hardwareScanService: HardwareScanService,
-		private previousResultService: PreviousResultService
+		private previousResultService: PreviousResultService,
+		private logger: LoggerService
 	) {}
 
 	ngOnInit() {
@@ -24,13 +26,18 @@ export class WidgetHardwareScanStatusComponent implements OnInit {
 			!this.hardwareScanService.isScanExecuting() &&
 			!this.hardwareScanService.isRecoverExecuting()
 		) {
-			this.previousResultService.getLastResults().then(() => {
-				const previousResultsWidget: any = this.previousResultService.getPreviousResultsWidget();
-				if (previousResultsWidget) {
-					this.previousResultsModules = previousResultsWidget.modules;
-					this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
-				}
-			});
+			this.previousResultService
+				.getLastResults()
+				.then(() => {
+					const previousResultsWidget: any = this.previousResultService.getPreviousResultsWidget();
+					if (previousResultsWidget) {
+						this.previousResultsModules = previousResultsWidget.modules;
+						this.lastScanResultCompletionInfo = this.previousResultService.getLastPreviousResultCompletionInfo();
+					}
+				})
+				.catch((error) => {
+					this.logger.exception('[WidgetHWScanStatusComponent] ngOnInit', error);
+				});
 		}
 	}
 

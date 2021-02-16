@@ -13817,6 +13817,7 @@ export class ExportResultsService {
 					resolve(this.document.documentElement.outerHTML);
 				})
 				.catch((error) => {
+					this.logger.exception('[ExportResultService] generateScanReport', error);
 					reject(error);
 				});
 		});
@@ -13857,6 +13858,7 @@ export class ExportResultsService {
 					resolve(modelData);
 				})
 				.catch((error) => {
+					this.logger.exception('[ExportResultService] getModelData', error);
 					reject(error);
 				});
 		});
@@ -14753,6 +14755,7 @@ export class ExportResultsService {
 					resolve(this.document.documentElement.outerHTML);
 				})
 				.catch((error) => {
+					this.logger.exception('[ExportResultService] generateHtmlReport', error);
 					reject(error);
 				});
 		});

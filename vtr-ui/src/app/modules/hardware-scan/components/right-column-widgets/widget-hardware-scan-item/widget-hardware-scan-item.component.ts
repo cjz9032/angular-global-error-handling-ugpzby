@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LenovoSupportService } from 'src/app/modules/hardware-scan/services/lenovo-support.service';
 import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 
 @Component({
 	selector: 'vtr-widget-hardware-scan-item',
@@ -21,8 +22,9 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 
 	constructor(
 		private lenovoSupportService: LenovoSupportService,
-		private breakPointObserver: BreakpointObserver
-	) { }
+		private breakPointObserver: BreakpointObserver,
+		private logger: LoggerService
+	) {}
 
 	ngOnInit() {
 		this.configureContactusUrl();
@@ -41,9 +43,14 @@ export class WidgetHardwareScanItemComponent implements OnInit {
 	}
 
 	private async configureContactusUrl(): Promise<void> {
-		await this.lenovoSupportService.getContactusUrl().then((response) => {
-			this.contactusUrl = response;
-		});
+		await this.lenovoSupportService
+			.getContactusUrl()
+			.then((response) => {
+				this.contactusUrl = response;
+			})
+			.catch((error) => {
+				this.logger.exception('[WidgetHWScanItemComponent] configureContactusUrl', error);
+			});
 	}
 
 	public openContactusPage(): void {

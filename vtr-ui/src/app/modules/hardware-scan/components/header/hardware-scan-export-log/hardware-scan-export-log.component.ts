@@ -37,7 +37,7 @@ export class HardwareScanExportLogComponent implements OnInit {
 		private logger: LoggerService,
 		private dialog: MatDialog,
 		private hardwareScanService: HardwareScanService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.isPdfAvailable();
@@ -98,14 +98,19 @@ export class HardwareScanExportLogComponent implements OnInit {
 	private isPdfAvailable() {
 		const supportedLanguage = 'en';
 
-		this.deviceService.getMachineInfo().then((value: any) => {
-			if (value.locale !== supportedLanguage) {
-				this.exportExtensions.splice(
-					this.exportExtensions.indexOf(ExportLogExtensions.pdf),
-					1
-				);
-			}
-		});
+		this.deviceService
+			.getMachineInfo()
+			.then((value: any) => {
+				if (value.locale !== supportedLanguage) {
+					this.exportExtensions.splice(
+						this.exportExtensions.indexOf(ExportLogExtensions.pdf),
+						1
+					);
+				}
+			})
+			.catch((error) => {
+				this.logger.exception('[ExportLogComponent] isPdfAvailable', error);
+			});
 	}
 
 	private exportResults() {
@@ -117,9 +122,9 @@ export class HardwareScanExportLogComponent implements OnInit {
 
 			if (
 				this.hardwareScanService.getScanFinishedHeaderType() ===
-				HardwareScanFinishedHeaderType.Scan ||
+					HardwareScanFinishedHeaderType.Scan ||
 				this.hardwareScanService.getScanFinishedHeaderType() ===
-				HardwareScanFinishedHeaderType.ViewResults
+					HardwareScanFinishedHeaderType.ViewResults
 			) {
 				exportLogType = this.exportService.exportScanResults();
 			} else if (
@@ -137,7 +142,10 @@ export class HardwareScanExportLogComponent implements OnInit {
 					[statusExport, filePath] = status;
 				})
 				.catch((error) => {
-					this.logger.error('Export Scan Results rejected');
+					this.logger.exception(
+						'[ExportLogComponent] Export Scan Results rejected',
+						error
+					);
 					statusExport = error;
 				})
 				.finally(() => {
