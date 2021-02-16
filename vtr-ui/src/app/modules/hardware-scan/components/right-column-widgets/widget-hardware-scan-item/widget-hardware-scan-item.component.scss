@@ -90,6 +90,10 @@
 			font-size: $fontsize_xs;
 			font-weight: $weight_regular;
 		}
+
+		.details-title {
+			min-width: 8rem; // This property is defined to avoid small text break vertically with low resolution.
+		}
 	}
 
 	.button-box {
