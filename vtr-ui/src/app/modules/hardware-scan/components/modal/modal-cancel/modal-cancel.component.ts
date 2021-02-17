@@ -18,7 +18,7 @@ import { MatDialogRef } from '@lenovo/material/dialog';
 	templateUrl: './modal-cancel.component.html',
 	styleUrls: ['./modal-cancel.component.scss'],
 })
-export class ModalCancelComponent implements OnInit, AfterViewInit {
+export class ModalCancelComponent implements OnInit, AfterViewInit, OnDestroy {
 	description: string = this.translate.instant('hardwareScan.cancelMayTakeSomeTime');
 	isInCountdown = true;
 
@@ -63,11 +63,13 @@ export class ModalCancelComponent implements OnInit, AfterViewInit {
 		});
 	}
 
-	public closeModal() {
+	ngOnDestroy() {
 		if (this.timerRef) {
 			this.stopCountdown();
 		}
+	}
 
+	public closeModal() {
 		this.dialogRef.close('close');
 	}
 
