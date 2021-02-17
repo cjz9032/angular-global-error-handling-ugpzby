@@ -20,6 +20,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProtocolExecutionService } from '../../../services/protocol-execution.service';
 import { HardwareScanFeaturesService } from '../../../services/hardware-scan-features.service';
 import { MatDialog } from '@lenovo/material/dialog';
+import { RecoverBadSectorsService } from '../../../services/recover-bad-sectors.service';
 
 const RootParent = 'HardwareScan';
 const ViewResultsButton = 'ViewResults';
@@ -61,7 +62,9 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		) {
 			if (
 				this.hardwareScanService.getScanFinishedHeaderType() ===
-				HardwareScanFinishedHeaderType.RecoverBadSectors
+				HardwareScanFinishedHeaderType.RecoverBadSectors &&
+				this.recoverBadSectorsService.getLastRecoverResultTitle() !==
+					HardwareScanTestResult[HardwareScanTestResult.Cancelled]
 			) {
 				return this.hardwareScanFeaturesService.isExportLogAvailable;
 			}
@@ -102,7 +105,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		private protocolExecutionService: ProtocolExecutionService,
 		private activatedRoute: ActivatedRoute,
 		private router: Router,
-		private hardwareScanFeaturesService: HardwareScanFeaturesService
+		private hardwareScanFeaturesService: HardwareScanFeaturesService,
+		private recoverBadSectorsService: RecoverBadSectorsService
 	) {
 		this.viewResultsPath = '/hardware-scan/view-results';
 		this.isOnline = this.commonService.isOnline;
