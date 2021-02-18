@@ -21,6 +21,10 @@ export class RecoverBadSectorsService {
 		return HardwareScanTestResult[this.recoverBadSectorsLastResult.resultModule];
 	}
 
+	public getLastRecoverResultStatus() {
+		return this.recoverBadSectorsLastResult.resultModule;
+	}
+
 	public getRecoverResultItems() {
 		return this.recoverBadSectorsLastResult;
 	}

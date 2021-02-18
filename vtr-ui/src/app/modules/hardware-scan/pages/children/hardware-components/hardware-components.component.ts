@@ -63,9 +63,8 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 			if (
 				this.hardwareScanService.getScanFinishedHeaderType() ===
 				HardwareScanFinishedHeaderType.RecoverBadSectors &&
-				this.recoverBadSectorsService.getLastRecoverResultTitle() !==
-					HardwareScanTestResult[HardwareScanTestResult.Cancelled]
-			) {
+				this.recoverBadSectorsService.getLastRecoverResultStatus() !==
+				HardwareScanTestResult.Cancelled) {
 				return this.hardwareScanFeaturesService.isExportLogAvailable;
 			}
 			return (
