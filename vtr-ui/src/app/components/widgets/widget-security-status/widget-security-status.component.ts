@@ -39,7 +39,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		private windowsHelloService: WindowsHelloService,
 		private hypSettings: HypothesisService,
 		private antivirusService: AntivirusService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.items = [
@@ -48,12 +48,6 @@ export class WidgetSecurityStatusComponent implements OnInit {
 				this.commonService,
 				this.translateService,
 				this.antivirusService
-			),
-			new PassWordManagerWidgetItem(
-				this.securityAdvisor.passwordManager,
-				this.commonService,
-				this.localCacheService,
-				this.translateService
 			),
 			new UACWidgetItemViewModel(
 				this.securityAdvisor.uac,
@@ -66,12 +60,10 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			.then((result) => {
 				this.region = (result.country ? result.country : 'US').toLowerCase();
 				this.showVpn();
-				this.showDashlane();
 			})
 			.catch(() => {
 				this.region = 'us';
 				this.showVpn();
-				this.showDashlane();
 			});
 
 		this.hypSettings
@@ -272,7 +264,6 @@ export class WidgetSecurityStatusComponent implements OnInit {
 			}
 			this.securityAdvisor.refresh();
 			this.showVpn();
-			this.showDashlane();
 		}, 100);
 	}
 }

@@ -7,6 +7,7 @@ export class IconClassPipe implements PipeTransform {
 			case 'enabled':
 				return 'icon-check';
 			case 'installed':
+			case '':
 				return 'icon-dot';
 			case 'disabled':
 				return 'icon-times';
