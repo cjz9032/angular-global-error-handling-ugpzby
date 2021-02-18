@@ -240,27 +240,15 @@
 									left: 0px;
 									right: 0px;
 									bottom: 0px;
-									background: repeating-linear-gradient(
-										transparent,
-										transparent 3%,
-										$darkCell 3%,
-										$darkCell 5%
-									);
-									@media #{$breakpoint_xl3} {
-										background: repeating-linear-gradient(
-										transparent,
-										transparent 3%,
-										$darkCell 3%,
-										$darkCell 5%
-									);
+									background: repeating-linear-gradient(transparent, transparent 3%, $darkCell 3%, $darkCell 5%);
+									@media #{$high-contrast} {
+										background: repeating-linear-gradient(transparent, transparent 3%, window 3%, window 5%);
 									}
 									@media #{$breakpoint_xl2} {
-										background: repeating-linear-gradient(
-										transparent,
-										transparent 4%,
-										$darkCell 4%,
-										$darkCell 6%
-									);
+										background: repeating-linear-gradient(transparent, transparent 4%, $darkCell 4%, $darkCell 6%);
+										@media #{$high-contrast} {
+											background: repeating-linear-gradient(transparent, transparent 4%, window 4%, window 6%);
+										}
 									}
 								}							
 							}
