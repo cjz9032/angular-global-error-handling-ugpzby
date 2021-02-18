@@ -40,14 +40,14 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		public vantageShellService: VantageShellService,
 		private guard: GuardService,
 		private router: Router
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		this.passwordManager = this.securityAdvisor.passwordManager;
 		this.statusItem = {
 			title: 'security.passwordManager.statusTitle',
-			status: 'loading',
+			status: '',
 		};
 		this.featureIntroduction = {
 			featureTitle: '',
@@ -57,29 +57,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 			featureSubtitle: '',
 			featureIntroList: [],
 		};
-		const cacheStatus = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.SecurityPasswordManagerStatus
-		);
-		if (cacheStatus) {
-			this.statusItem.status = cacheStatus;
-			this.getFeatureIntro(this.statusItem.status);
-		}
-		if (this.passwordManager && this.passwordManager.status) {
-			this.statusItem.status = this.passwordManager.status;
-			this.getFeatureIntro(this.statusItem.status);
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.SecurityPasswordManagerStatus,
-				this.statusItem.status
-			);
-		}
-		this.passwordManager.on(EventTypes.pmStatusEvent, (status: string) => {
-			this.statusItem.status = status;
-			this.getFeatureIntro(this.statusItem.status);
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.SecurityPasswordManagerStatus,
-				this.statusItem.status
-			);
-		});
+		this.getFeatureIntro();
 		this.fetchCMSArticles();
 
 		this.isOnline = this.commonService.isOnline;
@@ -136,7 +114,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			(error) => {}
+			(error) => { }
 		);
 
 		this.cmsService
@@ -175,54 +153,27 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	private getFeatureIntro(status: string) {
-		if (status === 'installed') {
-			this.reverseContent = true;
-			this.featureIntroduction.featureTitle = 'security.passwordManager.getStarted';
-			this.featureIntroduction.featureTitleDesc =
-				'security.passwordManager.checkOutThisGuide';
-			this.featureIntroduction.descHasLink = true;
-			this.featureIntroduction.featureSubtitle = 'security.passwordManager.allowsYou';
-			this.featureIntroduction.featureIntroList = [
-				{
-					iconName: 'check',
-					detail: 'security.passwordManager.allowsYou1',
-				},
-				{
-					iconName: 'check',
-					detail: 'security.passwordManager.allowsYou2',
-				},
-				{
-					iconName: 'check',
-					detail: 'security.passwordManager.allowsYou3',
-				},
-				{
-					iconName: 'check',
-					detail: 'security.passwordManager.allowsYou4',
-				},
-			];
-		} else if (status === 'not-installed') {
-			this.featureIntroduction.featureTitle = 'security.passwordManager.neverForget';
-			this.featureIntroduction.featureTitleDesc = 'security.passwordManager.whatIsDashLane';
-			this.featureIntroduction.featureSubtitle = 'security.passwordManager.helpYou';
-			this.featureIntroduction.featureIntroList = [
-				{
-					iconName: 'check',
-					detail: 'security.passwordManager.helpYou1',
-				},
-				{
-					iconName: 'check',
-					detail: 'security.passwordManager.helpYou2',
-				},
-				{
-					iconName: 'check',
-					detail: 'security.passwordManager.helpYou3',
-				},
-				{
-					iconName: 'check',
-					detail: 'security.passwordManager.helpYou4',
-				},
-			];
-		}
+	private getFeatureIntro() {
+		this.featureIntroduction.featureTitle = 'security.passwordManager.neverForget';
+		this.featureIntroduction.featureTitleDesc = 'security.passwordManager.whatIsDashLane';
+		this.featureIntroduction.featureSubtitle = 'security.passwordManager.helpYou';
+		this.featureIntroduction.featureIntroList = [
+			{
+				iconName: 'check',
+				detail: 'security.passwordManager.helpYou1',
+			},
+			{
+				iconName: 'check',
+				detail: 'security.passwordManager.helpYou2',
+			},
+			{
+				iconName: 'check',
+				detail: 'security.passwordManager.helpYou3',
+			},
+			{
+				iconName: 'check',
+				detail: 'security.passwordManager.helpYou4',
+			},
+		];
 	}
 }
