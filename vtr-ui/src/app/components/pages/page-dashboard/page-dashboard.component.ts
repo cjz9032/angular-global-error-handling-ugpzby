@@ -4,7 +4,7 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import map from 'lodash/map';
 import sample from 'lodash/sample';
 import trim from 'lodash/trim';
-import { toLower } from 'lodash';
+import { isEmpty, toLower } from 'lodash';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { SecurityAdvisor } from '@lenovo/tan-client-bridge';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -474,7 +474,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					}
 					if (this.isOnline) {
 						Object.keys(this.contentCards).forEach((cardId) => {
-							if (result[cardId]) {
+							if (result[cardId]
+								&& !isEmpty(result[cardId])) {
 								this.contentCards[cardId].displayContent = result[cardId];
 							}
 						});
