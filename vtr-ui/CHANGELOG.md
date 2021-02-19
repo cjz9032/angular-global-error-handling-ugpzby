@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.30](https://bitbucket.tc.lenovo.com///compare/v1.10.29...v1.10.30) (2021-02-19)
+
+
+### Bug Fixes
+
+* **ui:** hide Dashlane status in page and in widget ([bde1c53](https://bitbucket.tc.lenovo.com///commit/bde1c53fc2dae04cb1bac769422a25d61b99433c))
+
 ### [1.10.29](https://bitbucket.tc.lenovo.com///compare/v1.10.28...v1.10.29) (2021-02-18)
 
 ### [1.10.28](https://bitbucket.tc.lenovo.com///compare/v1.10.27...v1.10.28) (2021-02-15)
