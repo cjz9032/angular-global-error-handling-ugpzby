@@ -230,8 +230,8 @@
 								}
 								&.ram-common, &.gpu-common, &.state-oc {
 									width: calc(100% - 1rem);
-									height: calc(100% - 0.5rem);
-									margin: 0.2rem 0.5rem 0.5rem 0.5rem;
+									height: calc(100% - 1rem);
+									margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 								}
 								&.ram-common::after, &.state-oc::after, &.gpu-common::after{
 									position: absolute;
@@ -240,9 +240,9 @@
 									left: 0px;
 									right: 0px;
 									bottom: 0px;
-									background: repeating-linear-gradient(transparent, transparent 3%, $darkCell 3%, $darkCell 5%);
+									background: repeating-linear-gradient(0deg, transparent, transparent 2.8%, $darkCell 3%, $darkCell 4.8%);
 									@media #{$high-contrast} {
-										background: repeating-linear-gradient(transparent, transparent 3%, window 3%, window 5%);
+										background: repeating-linear-gradient(0deg, transparent, transparent 2.8%, window 3%, window 4.8%);
 									}
 									@media #{$breakpoint_xl2} {
 										background: repeating-linear-gradient(transparent, transparent 4%, $darkCell 4%, $darkCell 6%);
@@ -261,10 +261,20 @@
 								@media #{$high-contrast} {
 									background-color: $high-contrast-grey;
 								}
-								&.stack-mask-newversion{
-									width: calc(100% - 1rem);
-									margin: 0rem 0.5rem 0.5rem 0.5rem;
-									padding-top: 0.1rem;
+							}
+							.stack-mask-newversion {
+								position: absolute;
+								top: 0;
+								left: 0;
+								background-color: transparent;
+								width: calc(100% - 1rem);
+								height: calc(100% - 1rem);
+								margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+								.mask {
+									background-color: $darkCell;
+									@media #{$high-contrast} {
+										background-color: $high-contrast-grey;
+									}
 								}
 							}
 							&.stack-container-gpu-newversion {

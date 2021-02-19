@@ -459,11 +459,9 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 		return (value !== null && value !== undefined && value !== '');
 	}
 
-	private stringForNumber(value) {
-		if (String(value).indexOf('.') !== -1 && (String(value).length - (String(value).indexOf('.') + 1) >= 2)) {
-			return value.toFixed(2);
-		}
-		return value.toFixed(1);
+	private stringForNumber(value, n = 2) {
+		const dotValue = Math.round(value * Math.pow(10, n)) / Math.pow(10, n);
+		return dotValue.toFixed(2);
 	}
 
 	private updateUnitOfValue(value) {
@@ -488,6 +486,11 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 						(key) => {
 							if (this.isAvailiableValue(response[this.hwOCInfo[key].featureName])) {
 								this.hwOCInfo[key].isOverClocking = this.hwVersionInfo === 1 && response[this.hwOCInfo[key].featureName] && this.hwOCInfo[key].isSupportOCFeature;
+							}
+							if (this.hwVersionInfo === 1) {
+								this.cpuInfo.isOverClocking = this.hwOCInfo.cpuOverClockInfo.isOverClocking;
+								this.gpuInfo.isOverClocking = this.hwOCInfo.gpuOverClockInfo.isOverClocking;
+								this.vramInfo.isOverClocking = this.hwOCInfo.vramOverClockInfo.isOverClocking;
 							}
 						}
 					);
