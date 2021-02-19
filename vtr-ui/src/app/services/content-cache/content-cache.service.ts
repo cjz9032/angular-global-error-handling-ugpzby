@@ -9,6 +9,7 @@ import { ContentActionType, ContentSource } from 'src/app/enums/content.enum';
 import { BuildInContentService } from '../build-in-content/build-in-content.service';
 import { SegmentConst, SegmentConstHelper } from '../self-select/self-select.service';
 import { MetricService } from '../metric/metrics.service';
+import { isEmpty } from 'lodash';
 
 interface IConfigItem {
 	cardId: string;
@@ -153,9 +154,8 @@ export class ContentCacheService {
 	private getPositionsWithoutContents(cachedContents) {
 		const postionsWihtoutContents = [];
 		Object.keys(cachedContents).forEach((cardId) => {
-			if (!cachedContents[cardId]) {
-				postionsWihtoutContents.push(cardId);
-			} else if (cardId === 'positionA' && cachedContents[cardId].length === 0) {
+			if (!cachedContents[cardId]
+				|| isEmpty(cachedContents[cardId])) {
 				postionsWihtoutContents.push(cardId);
 			}
 		});
