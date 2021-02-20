@@ -460,8 +460,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 	}
 
 	private stringForNumber(value, n = 2) {
-		const dotValue = Math.round(value * Math.pow(10, n)) / Math.pow(10, n);
-		return dotValue.toFixed(n);
+		const parseValue = Math.round(value * Math.pow(10, n)) / Math.pow(10, n);
+		return parseValue.toFixed(n);
 	}
 
 	private updateUnitOfValue(value) {
