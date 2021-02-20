@@ -19,9 +19,11 @@
 									<div class="monitor-stack" [ngClass]="{'monitor-stack-newversion': hwVersionInfo === 1}">
 										<div class="stack-container" [ngClass]="{'stack-container-gpu-newversion': hwVersionInfo === 1}">
 											<div class="stack-border" [ngClass]="{'oc-border-shadow': hwVersionInfo === 1 && hwOCInfo.gpuOverClockInfo.isOverClocking}">
-												<div class="stack-content"
-												[ngClass]="[hwVersionInfo === 0 ? 'gpu' : hwOCInfo.gpuOverClockInfo.isOverClocking ? 'state-oc' : 'gpu-common']"></div>
-												<div class="stack-mask" [ngClass]="{'stack-mask-newversion': hwVersionInfo === 1}" [ngStyle]="{'height': (100 - gpuUsage) + '%'}"></div>
+												<div class="stack-content" [ngClass]="[hwVersionInfo === 0 ? 'gpu' : hwOCInfo.gpuOverClockInfo.isOverClocking ? 'state-oc' : 'gpu-common']"></div>
+												<div class="stack-mask" *ngIf="hwVersionInfo === 0" [ngStyle]="{'height': (100 - gpuUsage) + '%'}"></div>
+												<div class="stack-mask-newversion" *ngIf="hwVersionInfo === 1">
+													<div class="mask" [ngStyle]="{'height': (100 - gpuUsage) + '%'}"></div>
+												</div>
 											</div>
 										</div>
 										<div class="stack-label" [ngClass]="{'stack-label-gpu-newversion': hwVersionInfo === 1}">
@@ -93,9 +95,11 @@
 									<div class="monitor-stack" [ngClass]="{'monitor-stack-newversion': hwVersionInfo === 1}">
 										<div class="stack-container" [ngClass]="{'stack-container-ram-newversion': hwVersionInfo === 1}">
 											<div class="stack-border" [ngClass]="{'oc-border-shadow': hwVersionInfo === 1 && hwOCInfo.vramOverClockInfo.isOverClocking}">
-												<div class="stack-content"
-												[ngClass]="[hwVersionInfo === 0 ? 'ram' : hwOCInfo.vramOverClockInfo.isOverClocking ? 'state-oc' : 'ram-common']"></div>
-												<div class="stack-mask" [ngClass]="{'stack-mask-newversion': hwVersionInfo === 1}" [ngStyle]="{'height': (100 - ramUsage) + '%'}"></div>
+												<div class="stack-content" [ngClass]="[hwVersionInfo === 0 ? 'ram' : hwOCInfo.vramOverClockInfo.isOverClocking ? 'state-oc' : 'ram-common']"></div>
+												<div class="stack-mask" *ngIf="hwVersionInfo === 0" [ngStyle]="{'height': (100 - ramUsage) + '%'}"></div>
+												<div class="stack-mask-newversion" *ngIf="hwVersionInfo === 1">
+													<div class="mask" [ngStyle]="{'height': (100 - ramUsage) + '%'}"></div>
+												</div>
 											</div>
 										</div>
 										<div class="stack-label" [ngClass]="{'stack-label-ram-newversion': hwVersionInfo === 1}">
