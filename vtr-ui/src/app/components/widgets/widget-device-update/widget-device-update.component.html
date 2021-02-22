@@ -129,7 +129,7 @@
 				<div class="col row"
 					*ngIf="!showCheckingProgress && isUpdateDownloading">
 					<div class="col col-12 row progress-div">
-						<div *ngIf="installingPercent === 0"
+						<div *ngIf="installingPercent == 0"
 							class="col col-9 progress-title"
 							id="su-progress-download-title"
 							role="heading">
@@ -146,7 +146,7 @@
 							role="text">{{installingTitleText}}</div>
 						<div class="col col-3 progress-percent-text">
 							<div class="row progress-right">
-								<span *ngIf="installingPercent === 0"
+								<span *ngIf="installingPercent == 0"
 									class="progress-value-text"
 									id="su-progress-download-value"
 									role="text">{{downloadingPercent}}</span>
@@ -158,7 +158,7 @@
 							</div>
 						</div>
 					</div>
-					<vtr-ui-progress-bar *ngIf="installingPercent === 0"
+					<vtr-ui-progress-bar *ngIf="installingPercent == 0"
 						progressId="su_download_progress"
 						[value]="downloadingPercent"></vtr-ui-progress-bar>
 					<vtr-ui-progress-bar *ngIf="installingPercent > 0"
