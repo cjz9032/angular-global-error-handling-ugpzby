@@ -369,12 +369,12 @@ export class MetricService {
 	}
 
 	public getPageName() {
-		return (
-			this.activeRouter.snapshot.data.pageName ||
-			this.activeRouter.snapshot.root.firstChild.data.pageName ||
-			this.activeRouter.snapshot.root.firstChild.firstChild.data.pageName ||
-			MetricConst.Unknown
-		);
+		  let route = this.activeRouter.snapshot.root?.firstChild;
+		  while (route?.firstChild) {
+			  route = route.firstChild;
+		  }
+
+		  return route?.data?.pageName || MetricConst.Unknown;
 	}
 
 	public sendContentDisplay(itemID: string, dataSource: string, position: string) {
