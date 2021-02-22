@@ -9,7 +9,7 @@ import { MockService } from 'src/app/services/mock/mock.service';
 @Component({
 	selector: 'vtr-auto-close',
 	templateUrl: './auto-close.component.html',
-	styleUrls: ['./auto-close.component.scss']
+	styleUrls: ['./auto-close.component.scss'],
 })
 export class AutoCloseComponent implements OnInit, OnDestroy {
 	someItem = [];
@@ -21,10 +21,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 	selectedEmitSubscribe: Subscription;
 	metricsParent = 'AutoClose';
 
-	constructor(
-		private dialogService: DialogService,
-		private autoCloseService: AutoCloseService,
-	) { }
+	constructor(private dialogService: DialogService, private autoCloseService: MockService) {}
 
 	ngOnInit(): void {
 		this.initAutoClose();
@@ -57,26 +54,31 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 	openRunningAppsDialog(): void {
 		this.autoCloseService.getRunningApps().then((apps: TileItem[]) => {
 			this.runningApps = apps;
-			const appListDialog = this.dialogService.openAppListDialog(this.runningApps, this.maxSelected);
-			this.selectedEmitSubscribe = appListDialog.componentInstance.selectedEmit.subscribe((selectItem: TileItem) => {
-				appListDialog.afterClosed().subscribe(() => {
-					const index = this.runningApps.indexOf(selectItem);
-					if (index >= 0 && this.runningApps[index].buttonType === 'selected') {
-						this.runningApps.splice(index, 1);
-					}
-					this.selectedEmitSubscribe.unsubscribe();
-				});
-				const selectItemIndex = this.savedApps.indexOf(selectItem);
-				if (selectItemIndex >= 0) {
-					this.savedApps.splice(selectItemIndex, 1);
-				} else {
-					this.autoCloseService.addAutoCloseApps([selectItem]).then((res) => {
-						if (res) {
-							this.savedApps.push(selectItem);
+			const appListDialog = this.dialogService.openAppListDialog(
+				this.runningApps,
+				this.maxSelected
+			);
+			this.selectedEmitSubscribe = appListDialog.componentInstance.selectedEmit.subscribe(
+				(selectItem: TileItem) => {
+					appListDialog.afterClosed().subscribe(() => {
+						const index = this.runningApps.indexOf(selectItem);
+						if (index >= 0 && this.runningApps[index].buttonType === 'selected') {
+							this.runningApps.splice(index, 1);
 						}
+						this.selectedEmitSubscribe.unsubscribe();
 					});
+					const selectItemIndex = this.savedApps.indexOf(selectItem);
+					if (selectItemIndex >= 0) {
+						this.savedApps.splice(selectItemIndex, 1);
+					} else {
+						this.autoCloseService.addAutoCloseApps([selectItem]).then((res) => {
+							if (res) {
+								this.savedApps.push(selectItem);
+							}
+						});
+					}
 				}
-			});
+			);
 		});
 	}
 

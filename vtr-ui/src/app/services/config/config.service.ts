@@ -58,7 +58,7 @@ export class ConfigService {
 	menuItemsArm: MenuItem[] = menuConfig.menuItemsArm;
 	menuItems: MenuItem[] = menuConfig.menuItems;
 	menu: MenuItem[] = [];
-	activeSegment: string;
+	activeSegment: SegmentConst;
 	betaItem = menuConfig.betaItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
