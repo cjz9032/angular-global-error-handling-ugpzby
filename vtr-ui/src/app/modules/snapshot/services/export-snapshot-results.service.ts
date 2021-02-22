@@ -249,13 +249,13 @@ export class ExportSnapshotResultsService {
 		const machineModel = this.document.getElementById('machine_model');
 		const machineInfoItems = this.document.getElementById('machine_info_items');
 
-		spanModel.innerHTML = this.translate.transform('hardwareScan.report.modelTitle');
+		spanModel.innerHTML = this.translate.transform('snapshot.report.modelTitle');
 		machineModel.innerHTML = data.model.machineModel;
 
 		for (const key of modelItemsOrder) {
 			const value = data.model[key];
 			const div = this.createItemDiv(
-				this.translate.transform('hardwareScan.report.model.' + key),
+				this.translate.transform('snapshot.report.model.' + key),
 				value,
 				grayItem
 			);
@@ -273,13 +273,13 @@ export class ExportSnapshotResultsService {
 		const environmentSectionTitle = this.document.getElementById('environment_title');
 		const environmentInfoSectionItems = this.document.getElementById('environment_info_items');
 		environmentSectionTitle.innerHTML = this.translate.transform(
-			'hardwareScan.report.environmentTitle'
+			'snapshot.report.environmentTitle'
 		);
 
 		for (const key of environmentItemsOrder) {
 			const value = data.environment[key];
 			const div = this.createItemDiv(
-				this.translate.transform('hardwareScan.report.environment.' + key, key),
+				this.translate.transform('snapshot.report.environment.' + key, key),
 				value,
 				grayItem
 			);
