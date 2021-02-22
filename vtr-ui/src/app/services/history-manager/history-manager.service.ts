@@ -25,10 +25,7 @@ export class HistoryManager {
 			)
 			.subscribe((event: NavigationEnd | NavigationCancel) => {
 				if (event instanceof NavigationEnd) {
-					if (
-						this.backRoute &&
-						this.backRoute.finalPath.split('?')[0] === event.urlAfterRedirects
-					) {
+					if (this.isBack(event.urlAfterRedirects)) {
 						this.currentRoute = this.backRoute;
 						this.backRoute = null;
 					} else {
@@ -72,7 +69,7 @@ export class HistoryManager {
 		this.backRoute = this.history.pop();
 		if (this.backRoute) {
 			const uri = this.backRoute.finalPath.split('?')[0];
-			if (uri.endsWith(`/${RoutePath.search}`)) {
+			if (this.isSearchPath(uri)) {
 				this.router.navigateByUrl(this.backRoute.finalPath);
 			} else {
 				this.router.navigateByUrl(uri);
@@ -82,10 +79,26 @@ export class HistoryManager {
 		}
 	}
 
-	isSearchRouteDuplicated(newPage: PageRoute) {
+	isSearchPath(url: string): boolean {
+		return url.startsWith(`/${RoutePath.search}`);
+	}
+
+	isSearchRouteDuplicated(newPage: PageRoute): boolean {
 		return (
 			newPage?.finalPath?.indexOf(`/${RoutePath.search}`) !== -1 &&
 			this.currentRoute?.finalPath?.indexOf(`/${RoutePath.search}`) !== -1
 		);
+	}
+
+	isBack(url: string): boolean {
+		if (!this.backRoute) {
+			return false;
+		}
+
+		if (this.isSearchPath(url)) {
+			return this.backRoute.finalPath === url;
+		} else {
+			return this.backRoute.finalPath.split('?')[0] === url;
+		}
 	}
 }
