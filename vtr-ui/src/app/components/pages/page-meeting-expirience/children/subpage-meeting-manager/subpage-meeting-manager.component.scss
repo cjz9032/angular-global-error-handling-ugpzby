@@ -1,20 +1,20 @@
 @import '../../../../../app.theme';
-.subpage-meeting-manager{
+.subpage-meeting-manager {
 	.content-card {
-		&:last-child{
+		&:last-child {
 			padding-bottom: 3rem;
 		}
 	}
 
-    ul.list-group {
+	ul.list-group {
 		list-style-type: none;
-    }
-	.vtr-subpage-left-column{
-		::ng-deep .left-border{
+	}
+	.vtr-subpage-left-column {
+		::ng-deep .left-border {
 			border-left: 0.7rem solid $smb_navy;
 		}
 	}
-	::ng-deep .collapse-header{
+	::ng-deep .collapse-header {
 		outline: none;
 	}
 
@@ -34,11 +34,16 @@
 	}
 
 	.right-banner {
+		margin-top: 2.8rem;
 		padding: 24px;
 		border-radius: 10px;
 		background: no-repeat 0 0 url(^assets/images/smb/meeting-manager-banner-bg.png);
 		background-size: 100%;
 		box-shadow: 0 0 15px $smb_banner_shadow;
+		&.banner-ai-meeting-manager {
+			background-image: url(^assets/images/smb/meeting-manager-banner-bg.png),
+				$smb_first_banner;
+		}
 		&.banner-smart-appearance {
 			background-color: $smb_second_banner;
 		}
@@ -57,7 +62,6 @@
 		}
 	}
 }
-
 
 .context {
 	font-size: $fontsize_xs;

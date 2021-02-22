@@ -34,7 +34,7 @@
 								[tooltipText]="(isAMMInstalled ?
 									'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
 									'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
-								(onClick)="launchOrDownloadAiMeetingManager()">
+								(onClick)="AMMButtonClick()">
 							</vtr-ui-button>
                         </div>
                     </div>
@@ -267,7 +267,20 @@
 	</div>
 	<div class="col-lg-5 col-xl-4 vtr-page-column vtr-subpage-right-column">
 		<div class="col mt-40">
-			<div>banner</div>
+			<div class="right-banner banner-ai-meeting-manager">
+				<h3 id="productivity-ai-meeting-manager-banner-title" class="title">{{'smb.meetingExperience.meetingManager.aiMeetingManager.banner.title' | translate}}</h3>
+				<p id="productivity-ai-meeting-manager-banner-description" role="text" class="description">{{'smb.meetingExperience.meetingManager.aiMeetingManager.banner.description' | translate}}</p>
+				<button [disabled]="!commonService.isOnline && !isAMMInstalled"
+					id="productivity-ai-meeting-manager-banner-button"
+					mat-customize-button color="accent"
+					class="m-0 w-100"
+					(click)="AMMBannerButtonClick()"
+					[matTooltip]="(isAMMInstalled ? 'smb.meetingExperience.meetingManager.aiMeetingManager.launch' : 'smb.meetingExperience.meetingManager.aiMeetingManager.downloadNow') | translate"
+					matTooltipClass="vtr-system-tooltip"
+					aria-labelledby="productivity-ai-meeting-manager-banner-title">
+					{{(isAMMInstalled ? 'smb.meetingExperience.meetingManager.aiMeetingManager.launch' : 'smb.meetingExperience.meetingManager.aiMeetingManager.downloadNow') | translate}}
+				</button>
+			</div>
 			<div *ngIf="isSupportSmartAppearance" 
 				class="right-banner banner-smart-appearance">
 				<h3 id="productivity-meeting-appearance-banner-title" class="title">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.title' | translate}}</h3>
