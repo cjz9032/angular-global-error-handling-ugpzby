@@ -7,6 +7,7 @@ import { MatDialogModule } from '@lenovo/material/dialog';
 import { MatIconModule } from '@lenovo/material/icon';
 import { MatInputModule } from '@lenovo/material/input';
 import { MatFormFieldModule } from '@lenovo/material/form-field';
+import { MatButtonModule } from '@lenovo/material/button';
 
 import { DownloadFailedModalComponent } from 'src/app/components/pages/page-smart-assist/voice/download-failed-modal/download-failed-modal.component';
 import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
@@ -54,6 +55,7 @@ import { MaterialModule } from './material.module';
 		MaterialModule,
 		MatInputModule,
 		MatFormFieldModule,
+		MatButtonModule,
 	],
 	exports: [SharedModule, MetricsModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

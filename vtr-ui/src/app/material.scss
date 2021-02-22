@@ -68,7 +68,7 @@ $mat-van-theme-foreground: (
 		style-link-button-hover-underline: 0.1rem solid $blue-light,
 		style-link-button-active-underline: 0.1rem solid $menu_hover,
 		style-link-button-disabled-underline: 0.1rem solid rgba($grey_darker, 0.4),
-		style-link-button-outline: none,
+		style-link-button-outline: 0.1rem solid $menu_hover,
 		color-link-button-text: $blueHyperLink,
 		color-link-button-hover-text: $blue-light,
 		color-link-button-active-text: $menu_hover,
@@ -232,6 +232,10 @@ button:focus {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+	}
+
+	&.link-button {
+		letter-spacing: 0.5px;
 	}
 }
 

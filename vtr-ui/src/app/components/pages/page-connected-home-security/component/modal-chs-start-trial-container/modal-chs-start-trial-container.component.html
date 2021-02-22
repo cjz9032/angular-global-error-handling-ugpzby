@@ -16,7 +16,7 @@
 				[btnHeight]=true
 				(onClick)="openCoronet()"
 				[label]="'homeSecurity.modal.goNow' | translate"></vtr-ui-button>
-			<button class="cancel-button"
+			<button mat-customize-button class="link-button ml-5"
 				id="chs-trialModal-btn-countdownCancel"
 				vtrMetrics
 				metricsEvent="FeatureClick"
@@ -24,10 +24,10 @@
 				metricsParent="{{metricsParent}}"
 				(click)="closeModal()"
 				[title]=""
-				[innerHTML]="'security.wifisecurity.locationmodal.cancel' | translate"
 				[matTooltip]="'security.wifisecurity.locationmodal.cancel' | translate"
 				matTooltipClass="vtr-system-tooltip"
 				>
+				{{'security.wifisecurity.locationmodal.cancel' | translate}}
 			</button>
 		</div>
 	</div>
@@ -46,13 +46,13 @@
 				buttonColor="red"
 				(onClick)="disconnect()"
 				[label]="'homeSecurity.overview.disconnect' | translate"></vtr-ui-button>
-			<button id="chs-modal-btn-cancel" class="cancel-button"
+			<button mat-customize-button id="chs-modal-btn-cancel" class="link-button ml-5"
 				vtrMetrics
 				metricsItem="CHSDisconnectCancelButton"
 				metricsEvent="featureClick"
 				metricsParent="{{metricsParent}}"
-				(click)="closeModal()"
-				[innerHTML]="'security.wifisecurity.locationmodal.cancel' | translate">
+				(click)="closeModal()">
+				{{'security.wifisecurity.locationmodal.cancel' | translate}}
 			</button>
 		</div>
 	</div>
