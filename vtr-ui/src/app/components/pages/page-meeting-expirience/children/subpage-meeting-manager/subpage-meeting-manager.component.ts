@@ -223,7 +223,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	public launchOrDownloadAiMeetingManager() {
+	private launchOrDownloadAiMeetingManager() {
 		if (this.isAMMInstalled) {
 			try {
 				WinRT.launchUri('ai-meeting-mamager:');
@@ -243,6 +243,30 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				this.logger.error('downloadAiMeetingManager' + error.message);
 			}
 		}
+	}
+
+	public AMMButtonClick() {
+		this.launchOrDownloadAiMeetingManager();
+		const metricsData = {
+			ItemParent: 'Page.MeetingManager',
+			metricsEvent: 'FeatureClick',
+			ItemName: this.isLSAInstalled
+				? 'AiMeetingManagerLaunchClick'
+				: 'AiMeetingManagerDownloadClick',
+		};
+		this.metricsService.sendMetrics(metricsData);
+	}
+
+	public AMMBannerButtonClick() {
+		this.launchOrDownloadAiMeetingManager();
+		const metricsData = {
+			ItemParent: 'Page.MeetingManager',
+			metricsEvent: 'FeatureClick',
+			ItemName: this.isLSAInstalled
+				? 'AiMeetingManagerBannerLaunchClick'
+				: 'AiMeetingManagerBannerDownloadClick',
+		};
+		this.metricsService.sendMetrics(metricsData);
 	}
 
 	launchPanel() {

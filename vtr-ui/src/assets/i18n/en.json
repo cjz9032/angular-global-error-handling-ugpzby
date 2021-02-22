@@ -6011,6 +6011,10 @@
 							"point5": "Put the cursor in the application you opened and begin to speak."
 						},
 						"closeText": "close"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "Make online meeting more productive and effective."
 					}
 				},
 				"microPhone":{
