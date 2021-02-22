@@ -16,7 +16,7 @@ export class SubpageCreatorSettingsComponent {
     private windowsVersionService: WindowsVersionService
   ) {
     this.windowsOSVersion = this.windowsVersionService.currentBuildVersion;
-    this.hdrCapability = this.windowsOSVersion > 17763;
+    this.hdrCapability = this.windowsOSVersion >= 17763;
   }
 
   updateIntelligentPerformanceCapability(value: boolean) {
