@@ -25,6 +25,13 @@ export class ExportSnapshotResultsService {
 	private productName: string;
 
 	private exportExtensionSelected = ExportLogExtensions.html;
+	private optionsToConvertDate = {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	};
+
 	private document: HTMLDocument;
 
 	constructor(
@@ -455,6 +462,8 @@ export class ExportSnapshotResultsService {
 	 */
 	private createModuleDiv(item: any, moduleCount: number): Element {
 		let grayItem = true;
+		const baselineDate = new Date(item.content.info.BaselineDate + ' UTC');
+		const lastSnapshotDate = new Date(item.content.info.LastSnapshotDate + ' UTC');
 
 		// Module Section Title and icon
 		const spanModuleTitle = this.createElement({
@@ -492,8 +501,8 @@ export class ExportSnapshotResultsService {
 		// Create update line module information
 		const updateDateModule = this.createItemDivDetails(
 			this.translate.transform('snapshot.properties.UpdatedDate'),
-			(item.content.info.BaselineDate + 'UTC').toLocaleString(),
-			(item.content.info.LastSnapshotDate + 'UTC').toLocaleString(),
+			baselineDate.toLocaleString(undefined, this.optionsToConvertDate),
+			lastSnapshotDate.toLocaleString(undefined, this.optionsToConvertDate),
 			grayItem
 		);
 
