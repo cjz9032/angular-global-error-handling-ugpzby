@@ -1,13 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+import { ExportLogExtensions, ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import {
-	ExportLogErrorStatus,
-	ExportLogExtensions,
-	HardwareScanFinishedHeaderType,
-} from '../../../enums/hardware-scan.enum';
+import { HardwareScanFinishedHeaderType } from '../../../enums/hardware-scan.enum';
 import { ExportResultsService } from '../../../services/export-results.service';
 import { HardwareScanMetricsService } from '../../../services/hardware-scan-metrics.service';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
