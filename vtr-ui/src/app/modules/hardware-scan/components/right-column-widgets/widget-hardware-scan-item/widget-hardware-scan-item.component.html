@@ -71,7 +71,7 @@
 			<table id="hwscan-item-{{ i }}-details" class="table table-details table-active table-borderless">
 				<tbody>
 					<tr *ngFor="let detail of item.details; let j = index">
-						<th id="hwscan-item-{{ i }}-detail-{{ j }}-name">{{ ('hardwareScan.' + (isRecoverExecute ? 'recoverBadSectors.' : 'pluginTokens.') + detail.key) | translateDefault:detail.key }}</th>
+						<th class="details-title" id="hwscan-item-{{ i }}-detail-{{ j }}-name">{{ ('hardwareScan.' + (isRecoverExecute ? 'recoverBadSectors.' : 'pluginTokens.') + detail.key) | translateDefault:detail.key }}</th>
 						<td id="hwscan-item-{{ i }}-detail-{{ j }}-value">{{ ('hardwareScan.pluginTokens.' + detail.value) | translateDefault:detail.value }}</td>
 					</tr>
 				</tbody>
