@@ -55,11 +55,7 @@ export class HistoryManager {
 
 						this.currentRoute = newPage;
 					}
-				} else if (
-					event instanceof NavigationCancel &&
-					this.backRoute &&
-					event.url === this.backRoute.finalPath.split('?')[0]
-				) {
+				} else if (event instanceof NavigationCancel && this.isBack(event.url)) {
 					this.goBack();
 				}
 			});
@@ -68,19 +64,10 @@ export class HistoryManager {
 	goBack() {
 		this.backRoute = this.history.pop();
 		if (this.backRoute) {
-			const uri = this.backRoute.finalPath.split('?')[0];
-			if (this.isSearchPath(uri)) {
-				this.router.navigateByUrl(this.backRoute.finalPath);
-			} else {
-				this.router.navigateByUrl(uri);
-			}
+			this.router.navigateByUrl(this.backRoute.finalPath);
 		} else {
 			this.router.navigateByUrl('/');
 		}
-	}
-
-	isSearchPath(url: string): boolean {
-		return url.startsWith(`/${RoutePath.search}`);
 	}
 
 	isSearchRouteDuplicated(newPage: PageRoute): boolean {
@@ -94,11 +81,6 @@ export class HistoryManager {
 		if (!this.backRoute) {
 			return false;
 		}
-
-		if (this.isSearchPath(url)) {
-			return this.backRoute.finalPath === url;
-		} else {
-			return this.backRoute.finalPath.split('?')[0] === url;
-		}
+		return this.backRoute.finalPath === url;
 	}
 }
