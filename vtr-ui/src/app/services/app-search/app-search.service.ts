@@ -91,7 +91,8 @@ export class AppSearchService implements OnDestroy {
 		return this.verifyFeatureApplicability(featureList, 10, 3000);
 	}
 
-	public handleAction(feature: IFeature) {
+	public handleAction(featureId: string) {
+		const feature = this.featureMap[featureId];
 		const action: any = feature.action;
 		if (action?.route || action?.menuId) {
 			this.handleNavigateAction(feature.action as INavigationAction);
@@ -384,10 +385,6 @@ export class AppSearchService implements OnDestroy {
 			const feature = taskStack.pop();
 			if (!feature) {
 				break;
-			}
-
-			if (feature.applicable) {
-				return;
 			}
 
 			const applicable = feature.applicable;

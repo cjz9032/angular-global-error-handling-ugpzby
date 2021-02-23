@@ -198,7 +198,7 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 	}
 
 	onClickResultItem(feature: IFeature) {
-		this.searchService.handleAction(feature);
+		this.searchService.handleAction(feature.id);
 	}
 
 	onClickInput() {
