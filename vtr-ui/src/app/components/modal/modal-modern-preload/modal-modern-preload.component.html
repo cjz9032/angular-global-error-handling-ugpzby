@@ -1,6 +1,7 @@
 <div class="modal-body vtr-modal-modern-preload"
 	[class.page-app]="page != PageNames.LOADING"
 	[ngSwitch]="page">
+	<div class="action-control row"></div>
 	<div class="content"
 		*ngSwitchCase="PageNames.LOADING">
 		<div class="loading-page">

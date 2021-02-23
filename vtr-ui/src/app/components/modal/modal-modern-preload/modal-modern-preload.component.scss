@@ -12,6 +12,11 @@
 		max-width: 120rem;
 	}
 
+	.action-control {
+		height: 3rem;
+		opacity: 0;
+	}
+
 	.content {
 		border-radius: 1rem;
 		width: 100%;
@@ -31,8 +36,8 @@
 
 .close-btn {
 	position: absolute;
-	right: 0;
-	top: -3.2rem;
+	right: 0.5rem;
+	top: 0.2rem;
 	width: 2.2rem;
 	height: 2.2rem;
 	cursor: pointer;

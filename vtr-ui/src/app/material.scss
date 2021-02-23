@@ -211,6 +211,17 @@ $van-ui-layout: (
 	padding: 2.4rem;
 }
 
+@media (min-width: 768px) {
+	.modal-sm {
+		max-width: 300px !important;
+	}
+}
+@media (min-width: 992px) {
+	.modal-lg {
+		max-width: 800px !important;
+	}
+}
+
 button:focus {
 	outline: none;
 }

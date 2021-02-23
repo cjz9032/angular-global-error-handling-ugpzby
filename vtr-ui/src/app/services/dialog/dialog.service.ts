@@ -361,11 +361,10 @@ export class DialogService {
 			return;
 		}
 		this.dialog.open(ModalModernPreloadComponent, {
-			maxWidth: '50rem',
 			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: true,
-			panelClass: 'modern-preload-modal',
+			panelClass: ['modern-preload-modal', 'modal-lg'],
 		});
 	}
 

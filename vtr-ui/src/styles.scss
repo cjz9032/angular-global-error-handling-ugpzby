@@ -39,10 +39,10 @@ li {
 	cursor: default;
 }
 
-body a>*,
-.no-pointer>*,
-.no-pointer>div,
-a>div {
+body a > *,
+.no-pointer > *,
+.no-pointer > div,
+a > div {
 	cursor: pointer;
 }
 
@@ -52,7 +52,6 @@ a.disabled {
 
 .default-theme {
 	&:not(.is-gaming) {
-
 		a,
 		.a {
 			@media #{$black-on-white} {
@@ -96,7 +95,6 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 */
 .font-weight-light {
-
 	span,
 	p,
 	div,
@@ -112,7 +110,6 @@ $font-weight-bolder:          bolder !default;
 }
 
 .font-weight-normal {
-
 	span,
 	p,
 	div,
@@ -128,7 +125,6 @@ $font-weight-bolder:          bolder !default;
 }
 
 .font-weight-medium {
-
 	&,
 	span,
 	p,
@@ -145,7 +141,6 @@ $font-weight-bolder:          bolder !default;
 }
 
 .font-weight-semibold {
-
 	&,
 	span,
 	p,
@@ -162,7 +157,6 @@ $font-weight-bolder:          bolder !default;
 }
 
 .font-weight-bold {
-
 	span,
 	p,
 	div,
@@ -178,7 +172,6 @@ $font-weight-bolder:          bolder !default;
 }
 
 .font-weight-black {
-
 	&,
 	span,
 	p,
@@ -206,7 +199,6 @@ $font-size-xs: 1.4rem;
 $font-size-xs2: 1.2rem;
 */
 .font-size-xl4 {
-
 	&,
 	span,
 	p,
@@ -223,7 +215,6 @@ $font-size-xs2: 1.2rem;
 }
 
 .font-size-xl3 {
-
 	&,
 	span,
 	p,
@@ -240,7 +231,6 @@ $font-size-xs2: 1.2rem;
 }
 
 .font-size-xl2 {
-
 	&,
 	span,
 	p,
@@ -257,7 +247,6 @@ $font-size-xs2: 1.2rem;
 }
 
 .font-size-xl {
-
 	&,
 	span,
 	p,
@@ -274,7 +263,6 @@ $font-size-xs2: 1.2rem;
 }
 
 .font-size-lg5 {
-
 	&,
 	span,
 	p,
@@ -291,7 +279,6 @@ $font-size-xs2: 1.2rem;
 }
 
 .font-size-md {
-
 	&,
 	span,
 	p,
@@ -308,7 +295,6 @@ $font-size-xs2: 1.2rem;
 }
 
 .font-size-sm2 {
-
 	&,
 	span,
 	p,
@@ -325,7 +311,6 @@ $font-size-xs2: 1.2rem;
 }
 
 .font-size-xs {
-
 	&,
 	span,
 	p,
@@ -342,7 +327,6 @@ $font-size-xs2: 1.2rem;
 }
 
 .font-size-xs2 {
-
 	&,
 	span,
 	p,
@@ -1061,8 +1045,14 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 .modern-preload-modal {
 	max-width: 85% !important;
 	width: auto;
-	min-height: calc(100vh - 2rem);
+	max-height: calc(100vh - 2rem);
 	overflow-y: initial !important;
+
+	.mat-dialog-container {
+		padding: 0;
+		box-shadow: none;
+		background: none;
+	}
 }
 
 .apps-for-you-dialog {
@@ -1082,8 +1072,6 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		max-width: 90%;
 	}
 }
-
-
 
 .update-read-more-modal-size {
 	max-width: 60% !important;
@@ -1153,7 +1141,6 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 
 	.article-content {
-
 		div,
 		span {
 			margin-bottom: 1rem;
@@ -1460,9 +1447,11 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 		.button-box {
 			.button {
 				min-height: 5rem !important;
-				background: linear-gradient(135deg,
-						$shade_lighter 0%,
-						$shade_lightest 100%) !important;
+				background: linear-gradient(
+					135deg,
+					$shade_lighter 0%,
+					$shade_lightest 100%
+				) !important;
 				color: $blue-dark !important;
 				border: 0.1rem solid $shade_light !important;
 				width: 100%;
@@ -1574,7 +1563,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	background: $shade_lighter !important;
 }
 
-.tabset1 .tab-content>.tab-pane {
+.tabset1 .tab-content > .tab-pane {
 	padding: 2rem !important;
 	background: $shade_lightest !important;
 }
@@ -1897,7 +1886,7 @@ vtr-ui-smart-performance-scanning {
 }
 
 // checked
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
 	@media #{$white-on-black} {
 		background-color: $high-contrast-black-textselected;
 		border-color: $high-contrast-black-textselected;
@@ -1911,14 +1900,14 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
 	@media #{$white-on-black} {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>");
 	}
 }
 
 // disabled
-.custom-checkbox .custom-control-input:disabled:not(:checked)~.custom-control-label::before {
+.custom-checkbox .custom-control-input:disabled:not(:checked) ~ .custom-control-label::before {
 	@media #{$white-on-black} {
 		border-color: $high-contrast-black-disabled !important;
 	}
@@ -1928,7 +1917,7 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.custom-control-input:checked:disabled:checked~.custom-control-label::before {
+.custom-control-input:checked:disabled:checked ~ .custom-control-label::before {
 	@media #{$white-on-black} {
 		border-color: $high-contrast-black-disabled !important;
 		background-color: $dark;
@@ -1940,7 +1929,7 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.custom-control-input:checked:disabled:checked~.custom-control-label::after {
+.custom-control-input:checked:disabled:checked ~ .custom-control-label::after {
 	@media #{$white-on-black} {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='#3be23b' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
 	}
@@ -1951,7 +1940,7 @@ vtr-ui-smart-performance-scanning {
 }
 
 // hover
-.custom-checkbox .custom-control-input:not(:checked):hover~.custom-control-label::before {
+.custom-checkbox .custom-control-input:not(:checked):hover ~ .custom-control-label::before {
 	@media #{$white-on-black} {
 		border: 0.2rem solid $high-contrast-black-textselected;
 		border-radius: 0rem !important;
@@ -1963,7 +1952,7 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.custom-control-input:checked:hover~.custom-control-label::before {
+.custom-control-input:checked:hover ~ .custom-control-label::before {
 	@media #{$white-on-black} {
 		border-color: $high-contrast-black-textselected;
 		background-color: $dark;
@@ -1975,7 +1964,7 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.custom-control-input:checked:hover~.custom-control-label::after {
+.custom-control-input:checked:hover ~ .custom-control-label::after {
 	@media #{$white-on-black} {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>") !important;
 	}
@@ -2275,7 +2264,6 @@ vtr-ui-smart-performance-scanning {
 .subpage-device-settings-display,
 .subpage-device-settings-input-accessories,
 .vtr-page-smart-assist {
-
 	.vtr-container-collapsible.blue-theme,
 	.vtr-container-collapsible.white-theme {
 		.card-header {
@@ -2561,7 +2549,6 @@ ngb-tooltip-window.schedule-scan.tooltip {
 }
 
 .uppercase {
-
 	&,
 	span,
 	p,
@@ -2717,7 +2704,6 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	}
 }
 
-
 .restore-profile-dialog {
 	width: 50rem;
 	max-height: calc(100vh - 4rem);
@@ -2733,7 +2719,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 
 		.card-title {
 			font-weight: 600;
-			color: $grey_darker
+			color: $grey_darker;
 		}
 
 		.text-content {
@@ -2743,7 +2729,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 			.description {
 				font-weight: 400;
 				font-size: 1.4rem;
-				color: $grey_darker
+				color: $grey_darker;
 			}
 
 			.steps {
