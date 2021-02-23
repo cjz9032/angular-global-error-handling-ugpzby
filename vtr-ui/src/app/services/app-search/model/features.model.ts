@@ -55,7 +55,46 @@ export const featureSource = [
 			route: `${RoutePath.security}/${RoutePath.mySecurity}`,
 		},
 	},
-
+	{
+		id: AppSearch.FeatureIds.AntiVirus.pageId,
+		categoryId: AppSearch.FeatureIds.AntiVirus.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.security}/${RoutePath.antiVirus}`,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.PasswordHealth.pageId,
+		categoryId: AppSearch.FeatureIds.PasswordHealth.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.security}/${RoutePath.passwordProtection}`,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.WifiSecurity.pageId,
+		categoryId: AppSearch.FeatureIds.WifiSecurity.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.security}/${RoutePath.wifiSecurity}`,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.VpnSecurity.pageId,
+		categoryId: AppSearch.FeatureIds.VpnSecurity.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.security}/${RoutePath.internetProtection}`,
+		},
+	},
+	{
+		id: AppSearch.FeatureIds.HomeSecurity.pageId,
+		categoryId: AppSearch.FeatureIds.HomeSecurity.categoryId,
+		icon: ['fal', 'gem'],
+		action: {
+			route: `${RoutePath.security}/${RoutePath.homeSecurity}`,
+		},
+	},
 	/***
 	 * appSearch.pages.smartPerformance
 	 */

@@ -5602,6 +5602,52 @@
 					]
 				}
 			},
+			"homeSecurity": {
+				"categoryName": "Connected home security",
+				"page": {
+					"featureName": "Connected home security",
+					"highRelevantKeywords": [
+						"security"
+					]
+				}
+			},
+			"antiVirus": {
+				"categoryName": "Anti-virus",
+				"page": {
+					"featureName": "Anti-virus",
+					"highRelevantKeywords": [
+						"security"
+					]
+				}
+			},
+			"passwordHealth": {
+				"categoryName": "Password health",
+				"page": {
+					"featureName": "Password health",
+					"highRelevantKeywords": [
+						"security"
+					]
+				}
+			},
+			"wifiSecurity": {
+				"categoryName": "Wifi security",
+				"page": {
+					"featureName": "Wifi security",
+					"highRelevantKeywords": [
+						"security"
+					]
+				}
+			},
+			"vpnSecurity": {
+				"categoryName": "Vpn security",
+				"page": {
+					"featureName": "Vpn security",
+					"highRelevantKeywords": [
+						"virtual private Network",
+						"security"
+					]
+				}
+			},
 			"smartPerformance": {
 				"categoryName": "Smart performance",
 				"page": {
