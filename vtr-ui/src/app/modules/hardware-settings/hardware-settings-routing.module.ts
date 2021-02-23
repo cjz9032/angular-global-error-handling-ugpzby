@@ -55,7 +55,7 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
-					pageName: 'Device.MyDeviceSettings',
+					pageName: 'Device.MyDeviceSettings.power',
 				},
 			},
 			{
@@ -64,7 +64,7 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
-					pageName: 'Device.MyDeviceSettings',
+					pageName: 'Device.MyDeviceSettings.audio',
 				},
 			},
 			{
@@ -73,7 +73,7 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
-					pageName: 'Device.MyDeviceSettings',
+					pageName: 'Device.MyDeviceSettings.display-camera',
 				},
 			},
 			{
@@ -82,7 +82,7 @@ const routes: Routes = [
 				canDeactivate: [GuardService],
 				canActivate: [GuardService],
 				data: {
-					pageName: 'Device.MyDeviceSettings',
+					pageName: 'Device.MyDeviceSettings.input-accessories',
 				},
 			},
 			{
@@ -92,7 +92,7 @@ const routes: Routes = [
 				canActivate: [GuardService, NonArmGuard],
 
 				data: {
-					pageName: 'Device.SmartAssist',
+					pageName: 'Device.SmartAssist.smart-assist',
 					pageContent: 'My Device Status',
 				},
 			},
