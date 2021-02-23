@@ -73,20 +73,16 @@
 							<div class="screenshot d-flex justify-content-between"
 								#screenshotImageContent
 								[style.height.px]="screenshotImageContent.clientWidth / 5">
-								<a (click)="openScreenshotDialog('assets/images/smb/colorcalibration/screenshot1.png')">
+								<a *ngFor="let item of screenshotData" tabindex="0"
+									role="img"
+									vtrMetrics
+									metricsItem="{{item.metricsItem}}"
+									metricsEvent="FeatureClick"
+									[metricsParent]="'CreatorCentre'"
+									href="javascript:void(0)"
+									(click)="openScreenshotDialog(item.url)">
 									<img class="images"
-										role="img"
-										[src]="'assets/images/smb/colorcalibration/screenshot1.png'">
-								</a>
-								<a (click)="openScreenshotDialog('assets/images/smb/colorcalibration/screenshot2.png')">
-									<img class="images"
-										role="img"
-										[src]="'assets/images/smb/colorcalibration/screenshot2.png'">
-								</a>
-								<a (click)="openScreenshotDialog('assets/images/smb/colorcalibration/screenshot3.png')">
-									<img class="images"
-										role="img"
-										[src]="'assets/images/smb/colorcalibration/screenshot3.png'">
+										[src]="item.url">
 								</a>
 							</div>
 						</div>

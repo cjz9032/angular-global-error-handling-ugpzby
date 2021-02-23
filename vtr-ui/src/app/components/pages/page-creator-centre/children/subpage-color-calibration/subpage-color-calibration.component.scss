@@ -136,12 +136,17 @@
 
 				.screenshot {
 					display: block;
-					overflow: hidden;
 					margin-top: 1rem;
 
-					.images {
-						width: 98%;
-						height: 100%;
+					a {
+						.images {
+							width: 100%;
+							height: 100%;
+						}
+					}
+
+					a:not(:last-child) {
+						margin-right: 0.5rem;
 					}
 				}
 			}

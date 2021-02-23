@@ -35,6 +35,19 @@ export class SubpageColorCalibrationComponent implements OnInit {
 	errorMessage = undefined;
 	clickedScreenshot: string;
 
+	screenshotData = [{
+		url: 'assets/images/smb/colorcalibration/screenshot1.png',
+		metricsItem: 'ColorCalibrationScreenshot1',
+	}, {
+		url: 'assets/images/smb/colorcalibration/screenshot2.png',
+		metricsItem: 'ColorCalibrationScreenshot2',
+	},
+	{
+		url: 'assets/images/smb/colorcalibration/screenshot3.png',
+		metricsItem: 'ColorCalibrationScreenshot3',
+	}
+	];
+
 
 	@ViewChild('storeProfileDlg', { static: true }) storeProfileDlgView: TemplateRef<any>;
 	@ViewChild('screenshotDlg', { static: true }) screenshotDlgView: TemplateRef<any>;
