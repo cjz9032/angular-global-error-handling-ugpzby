@@ -3,19 +3,26 @@
 		{{'smb.meetingExperience.meetingManager.aiMeetingManager.translation.title' | translate}}</h1>
 	<h1 class="mb-3" *ngIf="value=='voiceToText'">
 		{{'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.title' | translate}}</h1>
-	<p class="mb-3 sub-heading">{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.heading' | translate}}</p>
+	<p class="mb-3 sub-heading" role="text">
+		{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.heading' | translate}}</p>
 	<div class="row">
 		<div class="col">
 			<div class="number-list">
 				<li *ngFor="let serialNumber of serialNumbers">
 					<div class="d-flex justify-content-start">
 						<div>
-							<p class="serial">{{serialNumber}}.</p>
+							<p class="serial" role="text">{{serialNumber}}.</p>
 						</div>
-						<span class="text-regular" *ngIf="value=='translation'" id="aiMettingManager-modal-{{value}}-point-{{serialNumber}}">
+						<span class="text-regular"
+							*ngIf="value=='translation'"
+							id="aiMettingManager-modal-{{value}}-point-{{serialNumber}}"
+							role="text">
 							{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.translation.point' + serialNumber | translate}}
 						</span>
-						<span class="text-regular" *ngIf="value=='voiceToText'" id="aiMettingManager-modal-{{value}}-point-{{serialNumber}}">
+						<span class="text-regular"
+							*ngIf="value=='voiceToText'"
+							id="aiMettingManager-modal-{{value}}-point-{{serialNumber}}"
+							role="text">
 							{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.voiceToText.point' + serialNumber | translate}}
 						</span>
 					</div>
@@ -25,8 +32,7 @@
 	</div>
 	<div class="line"></div>
 	<div class="row">
-		<vtr-ui-button class="install-or-launch-btn"
-			linkId="productivity-meetingManager-aiMettingManager-modal-close-button"
+		<vtr-ui-button linkId="productivity-meetingManager-aiMettingManager-modal-close-button"
 			metricsEvent="FeatureClick"
 			metricsItem="{{metricsParent}}ModalCloseButton"
 			metricsParent="Productivity.MeetingManager.{{metricsParent}}"

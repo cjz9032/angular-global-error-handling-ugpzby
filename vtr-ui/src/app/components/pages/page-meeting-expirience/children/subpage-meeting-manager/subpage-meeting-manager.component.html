@@ -34,7 +34,7 @@
 								[tooltipText]="(isAMMInstalled ?
 									'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
 									'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
-								(onClick)="AMMButtonClick()">
+								(onClick)="launchOrDownloadAiMeetingManager()">
 							</vtr-ui-button>
                         </div>
                     </div>
@@ -274,10 +274,14 @@
 					id="productivity-ai-meeting-manager-banner-button"
 					mat-customize-button color="accent"
 					class="m-0 w-100"
-					(click)="AMMBannerButtonClick()"
+					(click)="launchOrDownloadAiMeetingManager()"
 					[matTooltip]="(isAMMInstalled ? 'smb.meetingExperience.meetingManager.aiMeetingManager.launch' : 'smb.meetingExperience.meetingManager.aiMeetingManager.downloadNow') | translate"
 					matTooltipClass="vtr-system-tooltip"
-					aria-labelledby="productivity-ai-meeting-manager-banner-title">
+					[attr.aria-label]="AMMBannerAriaLabel"
+					vtrMetrics
+					metricsEvent="FeatureClick"
+					[metricsItem]="isAMMInstalled ? 'AiMeetingManagerBannerLaunchClick' : 'AiMeetingManagerBannerDownloadButton'"
+					metricsParent="Productivity.MeetingManager">
 					{{(isAMMInstalled ? 'smb.meetingExperience.meetingManager.aiMeetingManager.launch' : 'smb.meetingExperience.meetingManager.aiMeetingManager.downloadNow') | translate}}
 				</button>
 			</div>
