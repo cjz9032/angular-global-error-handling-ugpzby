@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.33](https://bitbucket.tc.lenovo.com///compare/v1.10.32...v1.10.33) (2021-02-23)
+
+
+### Bug Fixes
+
+* remove hover style of disabled button ([f31197f](https://bitbucket.tc.lenovo.com///commit/f31197fb47fbfa375ca51af82bf1697d4f3dd049))
+* remove with of card body ([7aad685](https://bitbucket.tc.lenovo.com///commit/7aad685bf7b3be1512b53b45cfff27ef2c9348d8))
+* **Route:** code review action ([f49e9df](https://bitbucket.tc.lenovo.com///commit/f49e9df797ae7f569fb457178d0cd23489be74e8))
+* **Route:** fix navigate back issue ([e921d62](https://bitbucket.tc.lenovo.com///commit/e921d625462f603f5aff345a296c43e8d7fd5f05))
+
 ### [1.10.32](https://bitbucket.tc.lenovo.com///compare/v1.10.31...v1.10.32) (2021-02-22)
 
 ### [1.10.31](https://bitbucket.tc.lenovo.com///compare/v1.10.30...v1.10.31) (2021-02-20)
