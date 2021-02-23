@@ -78,15 +78,6 @@
 			color: $shade_blue !important;
 			border: none !important;
 			cursor: default;
-			&:hover {
-				background: $grey_light !important;
-				@media #{$white-on-black} {
-					background: transparent !important;
-				}
-				@media #{$black-on-white} {
-					background: transparent !important;
-				}
-			}
 			.text {
 				cursor: default;
 				opacity: 0.5;
