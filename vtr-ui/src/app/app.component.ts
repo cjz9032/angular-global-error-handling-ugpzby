@@ -139,7 +139,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		sessionStorage.clear();
 		this.getMachineInfo();
 
-		window.onresize = () => { }; // this line is necessary, please do not remove.
+		window.onresize = () => {}; // this line is necessary, please do not remove.
 
 		/********* add this for navigation within a page **************/
 		// this.router.events.subscribe((s) => {
@@ -200,7 +200,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			template: any,
 			config?: MatDialogConfig<any>
 		): MatDialogRef<any, any> {
-			if (config?.panelClass) {
+			if (config?.panelClass && !config.panelClass.includes('modern-preload-modal')) {
 				if (
 					Array.isArray(config.panelClass) &&
 					!config.panelClass.includes('modal-common-responsive')
@@ -213,7 +213,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					config.panelClass = config.panelClass.split(' ');
 					config.panelClass.push('modal-common-responsive');
 				}
-			} else {
+			} else if (!config?.panelClass && !config.panelClass.includes('modern-preload-modal')) {
 				config = Object.assign(config ?? {}, { panelClass: 'modal-common-responsive' });
 			}
 			if (self.deviceService.isGaming) {
@@ -404,7 +404,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				.then((value: any) => {
 					this.onMachineInfoReceived(value);
 				})
-				.catch((error) => { });
+				.catch((error) => {});
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -526,7 +526,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				case HardwareScanProgress.ScanResponse:
 				case HardwareScanProgress.RecoverResponse:
 					this.logger.info(
-						`store rating should show in next start marked. ${notification.type}. ${notification.payload ? notification.payload.status : 'null'
+						`store rating should show in next start marked. ${notification.type}. ${
+							notification.payload ? notification.payload.status : 'null'
 						}`
 					);
 					if (notification.payload && notification.payload.status === true) {
@@ -686,24 +687,24 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			scriptLoaded: Math.round(navigationStartTime + navPerf.duration),
 			appInitialized: this.commonService.getPerformanceNode('app initialized')?.startTime
 				? Math.round(
-					navigationStartTime +
-					this.commonService.getPerformanceNode('app initialized').startTime -
-					navPerf.startTime
-				)
+						navigationStartTime +
+							this.commonService.getPerformanceNode('app initialized').startTime -
+							navPerf.startTime
+				  )
 				: null,
 			appEntryLoaded: this.commonService.getPerformanceNode('app entry loaded')?.startTime
 				? Math.round(
-					navigationStartTime +
-					this.commonService.getPerformanceNode('app entry loaded').startTime -
-					navPerf.startTime
-				)
+						navigationStartTime +
+							this.commonService.getPerformanceNode('app entry loaded').startTime -
+							navPerf.startTime
+				  )
 				: null,
 			firstPageLoaded: this.commonService.getPerformanceNode(firstPage)?.startTime
 				? Math.round(
-					navigationStartTime +
-					this.commonService.getPerformanceNode(firstPage).startTime -
-					navPerf.startTime
-				)
+						navigationStartTime +
+							this.commonService.getPerformanceNode(firstPage).startTime -
+							navPerf.startTime
+				  )
 				: null,
 
 			dnsLookup: Math.round(navPerf.domainLookupEnd - navPerf.domainLookupStart),
