@@ -1,8 +1,7 @@
 import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
-import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
+import { TranslateService } from '@ngx-translate/core';
 import { AppDetails } from 'src/app/services/apps-for-you/apps-for-you.service';
-import { DownloadButtonStatusEnum } from 'src/app/services/modern-preload/modern-preload.service';
 
 @Component({
 	selector: 'vtr-subpage-color-calibration',
@@ -33,9 +32,8 @@ export class SubpageColorCalibrationComponent implements OnInit {
 	downloadStatus = this.DownloadState.NOT_INSTALL;
 	installStatus = this.InstallState.INSTALL;
 	isOnline: boolean;
-	errorMessage = '';
-	showArrows: boolean;
-	//@Input() bigScreenshot: string;
+	errorMessage = undefined;
+	clickedScreenshot: string;
 
 
 	@ViewChild('storeProfileDlg', { static: true }) storeProfileDlgView: TemplateRef<any>;
@@ -43,11 +41,15 @@ export class SubpageColorCalibrationComponent implements OnInit {
 
 
 	constructor(private matDialog: MatDialog,
-		private screenShotDlg: MatDialog) {
+		private screenShotDlg: MatDialog,
+		private translateService: TranslateService) {
 		this.isOnline = true;
 	}
 
 	ngOnInit(): void {
+		this.errorMessage = this.translateService.instant(
+			'appsForYou.common.errorMessage.installationFailed'
+		);
 	}
 
 	clickInstallButton() {
@@ -101,11 +103,12 @@ export class SubpageColorCalibrationComponent implements OnInit {
 			return;
 		}
 		const screenshotModal = this.screenShotDlg.open(this.screenshotDlgView, {
-			autoFocus: false,
-			hasBackdrop: false,
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: false,
 			panelClass: 'color-calibration-screenshot-dialog'
 		});
-		screenshotModal.componentInstance.bigScreenshot = imgUrl;
+		this.clickedScreenshot = imgUrl;
 	}
 
 	closeScreenshotDialog() {
