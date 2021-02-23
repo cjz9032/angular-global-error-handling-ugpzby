@@ -99,6 +99,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 
 	public voiceToText = 'voiceToText';
 	public translation = 'translation';
+	public AMMBannerAriaLabel: string;
 	private isAMMInstalledInterval: any;
 
 	constructor(
@@ -210,10 +211,24 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				case 0:
 				case 3:
 					this.isAMMInstalled = true;
+					this.AMMBannerAriaLabel =
+						this.translate.instant(
+							'smb.meetingExperience.meetingManager.aiMeetingManager.banner.title'
+						) +
+						this.translate.instant(
+							'smb.meetingExperience.meetingManager.aiMeetingManager.launch'
+						);
 					clearInterval(this.isAMMInstalledInterval);
 					break;
 				default:
 					this.isAMMInstalled = false;
+					this.AMMBannerAriaLabel =
+						this.translate.instant(
+							'smb.meetingExperience.meetingManager.aiMeetingManager.banner.title'
+						) +
+						this.translate.instant(
+							'smb.meetingExperience.meetingManager.aiMeetingManager.downloadNow'
+						);
 					break;
 			}
 			this.localCacheService.setLocalCacheValue(
@@ -223,7 +238,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		});
 	}
 
-	private launchOrDownloadAiMeetingManager() {
+	public launchOrDownloadAiMeetingManager() {
 		if (this.isAMMInstalled) {
 			try {
 				WinRT.launchUri('ai-meeting-mamager:');
@@ -243,30 +258,6 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				this.logger.error('downloadAiMeetingManager' + error.message);
 			}
 		}
-	}
-
-	public AMMButtonClick() {
-		this.launchOrDownloadAiMeetingManager();
-		const metricsData = {
-			ItemParent: 'Page.MeetingManager',
-			metricsEvent: 'FeatureClick',
-			ItemName: this.isLSAInstalled
-				? 'AiMeetingManagerLaunchClick'
-				: 'AiMeetingManagerDownloadClick',
-		};
-		this.metricsService.sendMetrics(metricsData);
-	}
-
-	public AMMBannerButtonClick() {
-		this.launchOrDownloadAiMeetingManager();
-		const metricsData = {
-			ItemParent: 'Page.MeetingManager',
-			metricsEvent: 'FeatureClick',
-			ItemName: this.isLSAInstalled
-				? 'AiMeetingManagerBannerLaunchClick'
-				: 'AiMeetingManagerBannerDownloadClick',
-		};
-		this.metricsService.sendMetrics(metricsData);
 	}
 
 	launchPanel() {
