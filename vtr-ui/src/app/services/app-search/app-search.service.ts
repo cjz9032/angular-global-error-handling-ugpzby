@@ -258,22 +258,15 @@ export class AppSearchService implements OnDestroy {
 	}
 
 	private async runFullFeaturesDetections() {
-		const taskStack = Object.values(this.featureMap).filter(
-			(feature) => !(feature as IFeature).applicable
-		);
-
-		let counter = 0;
-		let parallelThread = Math.min(5, taskStack.length);
-		if (parallelThread === 0) {
-			return;
-		}
-
 		this.logger.info(`[AppSearch]Full feature detections start`);
-		Array.from(Array(parallelThread)).forEach(async () => {
-			const mockThreadId = `Full feature ${counter++}`;
+
+		const taskStack = Object.values(this.featureMap);
+		let threadCount = Math.min(5, taskStack.length);
+		Array.from(Array(threadCount)).forEach(async (item, index) => {
+			const mockThreadId = `Full feature ${index}`;
 			const startTime = Date.now();
 			await this.mockDetectionThread(taskStack as IFeature[], mockThreadId);
-			if (--parallelThread <= 0) {
+			if (--threadCount <= 0) {
 				this.logger.info(
 					`[AppSearch]Full features detections end ${JSON.stringify(
 						this.getFeatureStatusMap()
