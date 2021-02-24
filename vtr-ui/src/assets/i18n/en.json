@@ -1313,7 +1313,7 @@
 				"powerSmartSettings": {
 					"title": "Power Smart settings",
 					"subtitle": "Intelligent Cooling",
-					"subtitleSMB": "Intelligent Performance",
+					"subtitleSMB": "Intelligent performance",
 					"subtitle1": "Battery & Quiet",
 					"description1": "When on, this feature dynamically adjusts thermal settings to your needs. It adjusts settings to keep the device cool and quiet while being held or idle. While the device is on a stable surface, it optimizes the performance. When off, you can manually set the thermal priority.",
 					"nocqldesc": "Intelligent Cooling enables you to adjust the system performance and thermal temperature. In \"Performance\" mode, it optimizes the system performance. While it helps to keep the system cooler or quieter in \"Cool & quiet\" mode.",
