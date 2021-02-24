@@ -44,6 +44,8 @@ export class PageHardwareScanComponent implements OnInit, OnDestroy {
 			}
 		);
 		this.routeSubscription = this.router.events.subscribe(() => this.observerURL());
+		// This router validation is used in case of back button clicked to view-results page.
+		this.hidePreviousResult = this.router.url.split('/').pop() === 'view-results';
 		this.showDownloadToolCard = !this.deviceService.isSMode;
 		this.initSupportCard();
 
