@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.34](https://bitbucket.tc.lenovo.com///compare/v1.10.33...v1.10.34) (2021-02-24)
+
+
+### Bug Fixes
+
+* cancel button styles are not same with style guide ([9ffdeec](https://bitbucket.tc.lenovo.com///commit/9ffdeec9939923931a282ee44a6de1a3c0c76b60))
+* fix modern preload modal style ([7e4d83e](https://bitbucket.tc.lenovo.com///commit/7e4d83e88bcbe6cf837ca6ecaec836231a0005bd))
+* remove letter spacing of link button ([48c33e6](https://bitbucket.tc.lenovo.com///commit/48c33e62163c9897a79ce26820656730e9b3a8f4))
+
 ### [1.10.33](https://bitbucket.tc.lenovo.com///compare/v1.10.32...v1.10.33) (2021-02-23)
 
 
