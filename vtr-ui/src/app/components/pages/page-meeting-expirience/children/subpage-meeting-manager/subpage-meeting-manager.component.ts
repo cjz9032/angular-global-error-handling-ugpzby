@@ -90,7 +90,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	isAudioVendorSupported = false;
 	isAudioVendorPanelAvailable = false;
 
-	readonly metricsParent = 'SMB.MeetingManager';
+	readonly metricsParent = 'Smb.MeetingManager';
 	readonly helpIcon = ['far', 'question-circle'];
 	private notificationSubscription: Subscription;
 	private readonly microphoneDevice: any;
