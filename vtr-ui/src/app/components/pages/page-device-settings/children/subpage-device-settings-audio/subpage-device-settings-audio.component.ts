@@ -107,7 +107,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private vantageShellService: VantageShellService,
 		private batteryService: BatteryDetailService,
 		private localCacheService: LocalCacheService,
-		private deviceService: DeviceService,
+		public deviceService: DeviceService,
 		private audioVendorService: AudioVendorService
 	) {
 		this.Windows = vantageShellService.getWindows();
@@ -122,7 +122,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		this.entertainmentTooltip = JSON.parse(
 			JSON.stringify(entertainmentTooltipText).replace(/<\/?.+?\/?>/g, '')
 		);
-		this.isSMB = this.deviceService.isSMB;
 	}
 
 	ngOnInit() {
@@ -170,6 +169,17 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				false
 			);
 		}
+		// this.isSMB = this.deviceService.isSMB;
+		this.deviceService.getMachineInfo()
+			.then(() => {
+				if (this.deviceService.isSMB) {
+					this.headerMenuItems = this.commonService.removeObjFrom(
+						this.headerMenuItems,
+						'microphone'
+					);
+					this.checkMenuItemsLength();
+				}
+			});
 		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
 		this.isInMicrophoneOptimizationBlockList().then((blocked) => {
 			this.canShowMicrophoneOptimization = !blocked;

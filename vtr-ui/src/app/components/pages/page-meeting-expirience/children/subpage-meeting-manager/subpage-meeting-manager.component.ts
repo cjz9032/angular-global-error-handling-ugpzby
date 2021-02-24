@@ -90,7 +90,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	isAudioVendorSupported = false;
 	isAudioVendorPanelAvailable = false;
 
-	readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
+	readonly metricsParent = 'SMB.MeetingManager';
 	readonly helpIcon = ['far', 'question-circle'];
 	private notificationSubscription: Subscription;
 	private readonly microphoneDevice: any;
@@ -633,6 +633,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 			this.cacheFlag.keyboardNoiseSuppression = true;
 		}
 		this.updateMicrophoneHeader();
+		this.checkMenuItemsLength();
 		this.logger.info('updateMicrophoneHandler ' + JSON.stringify(msg));
 	}
 

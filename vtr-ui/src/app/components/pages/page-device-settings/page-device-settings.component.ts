@@ -263,7 +263,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 				init.streamingCaptureMode = 1; // Windows.Media.Capture.StreamingCaptureMode.audio;
 				const microphonePromise = new Promise<boolean>((resolve) => {
 					capture.initializeAsync(init).then(
-						() => true,
+						() => {
+							resolve(true);
+						},
 						(error) => {
 							if (error.number === -2147024891) {
 								// check if audio device exist or not
@@ -292,7 +294,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 							LocalStorageKey.IsDolbyModeAvailable,
 							dolbyModeResponse.available
 						);
-						if (!microphone && !dolbyModeResponse.available) {
+						if ((!microphone || this.deviceService.isSMB)  && !dolbyModeResponse.available) {
 							// Array.filter won't trigger changeDetect automatically, so we do it manually.
 							const tempMenuItems = this.commonService.removeObjById(
 								this.menuItems,
