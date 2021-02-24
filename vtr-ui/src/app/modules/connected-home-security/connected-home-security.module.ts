@@ -30,6 +30,7 @@ import { WidgetLocationStatusComponent } from '../../components/widgets/widget-l
 
 import { MaterialModule } from '../common/material.module';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatButtonModule } from '@lenovo/material/button';
 
 @NgModule({
 	declarations: [
@@ -54,10 +55,9 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 		FontAwesomeModule,
 		MatTooltipModule,
 		MaterialModule,
+		MatButtonModule,
 	],
-	exports: [
-		MaterialModule,
-	],
+	exports: [MaterialModule],
 	providers: [DialogService],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
