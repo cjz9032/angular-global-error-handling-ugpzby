@@ -81,7 +81,7 @@ export class ExportSnapshotResultsService {
 			if (this.exportExtensionSelected === ExportLogExtensions.html) {
 				dataFormatted = await this.generateHtmlReport(dataPrepared);
 			} else {
-				//dataFormatted = this.generatePdfReport(dataPrepared);
+				// Include pdf generate function here
 			}
 			const createdFilePath = await this.exportReportToFile(reportFileName, dataFormatted);
 			return [ExportLogErrorStatus.SuccessExport, createdFilePath];
@@ -152,15 +152,7 @@ export class ExportSnapshotResultsService {
 				this.logger.info('File is null');
 			}
 		} else {
-			// picker.fileTypeChoices.insert('Portable Document Format', ['.pdf']);
-			// const file = await picker.pickSaveFileAsync();
-			// if (file !== null) {
-			// 	const dataArray = new Uint8Array(dataFormatted);
-			// 	await window.Windows.Storage.FileIO.writeBytesAsync(file, dataArray);
-			// 	pathSaved = file.path;
-			// } else {
-			// 	this.logger.info('File is null');
-			// }
+			// Include pdf save file function here
 		}
 
 		if (pathSaved === '') {
