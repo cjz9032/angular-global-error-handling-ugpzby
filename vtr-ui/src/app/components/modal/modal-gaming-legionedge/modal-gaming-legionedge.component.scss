@@ -11,6 +11,10 @@
 	&:hover {
 		color: $white100;
 	}
+	&:focus {
+		opacity: 1 !important;
+		color: $white60;
+	}
 	@media #{$high-contrast} {
 		color: buttonText;
 	}
