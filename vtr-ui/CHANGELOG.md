@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.35](https://bitbucket.tc.lenovo.com///compare/v1.10.34...v1.10.35) (2021-02-25)
+
+
+### Features
+
+* **Overall:** add url change event to history manager ([6ddb53a](https://bitbucket.tc.lenovo.com///commit/6ddb53aa169e6fa2496fc01185aa4fdcee7f07ef))
+* **welcome:** merge welcome hotfix change to develop branch ([d022f12](https://bitbucket.tc.lenovo.com///commit/d022f1261045183322c28b8ccb8eb20a673d8a46))
+
+
+### Bug Fixes
+
+* **smb:** remove deviceService provider from sharedModule ([cf3f3b9](https://bitbucket.tc.lenovo.com///commit/cf3f3b95c2d0caae2d41ddd8293d42e0d1114afc))
+* add aria-label for close button ([8626bb0](https://bitbucket.tc.lenovo.com///commit/8626bb0a230c7f19add3b34416ebe03d4929a8ef))
+* add translate for aria label ([bac5bc0](https://bitbucket.tc.lenovo.com///commit/bac5bc080277898ddb7f8f3051bec734e2ef79bc))
+* dismiss the bootstrap close button style ([aac7054](https://bitbucket.tc.lenovo.com///commit/aac70541635a5e983953ee09f94738fff5e95039))
+* fix close button style in gaming ([9264f63](https://bitbucket.tc.lenovo.com///commit/9264f63ad9bb9fb3959adafeed4ad89ddec6c893))
+* set close button position ([df62e8b](https://bitbucket.tc.lenovo.com///commit/df62e8bf105e2f8cfb6722fb657bc653dee0e4b7))
+
 ### [1.10.34](https://bitbucket.tc.lenovo.com///compare/v1.10.33...v1.10.34) (2021-02-24)
 
 
