@@ -231,8 +231,15 @@ $line_height: 2rem;
 					opacity: 1;
 				}
 
-				.pagination-item {
+				.pagination-item span {
 					padding: 0.6rem;
+				}
+
+				.chevron-left, .chevron-right, .pagination-item {
+					&:focus {
+						border: 1px solid $menu_hover;
+						outline: none;
+					}
 				}
 
 				.high-light {
