@@ -22,6 +22,13 @@ button:focus {
 		.close {
 			text-shadow: none !important;
 			font-weight: normal !important;
+
+			&:focus {
+				@include default-button-border;
+				@media #{$high-contrast} {
+					@include default-button-border(highlight);
+				}
+			}
 		}
 	}
 	.modal-body {
@@ -230,45 +237,28 @@ button:focus {
 				}
 			}
 		}
+		.item-radio-button:focus + label,
+		.oc-checkbox:focus {
+			@include solid-button-outline;
+			@media #{$high-contrast} {
+				@include solid-button-outline(highlight);
+			}
+		}
+		.oc-advance-button:focus,
+		.oc-driver-link:focus {
+			@include link-button-outline;
+			@media #{$high-contrast} {
+				@include link-button-outline(highlight);
+			}
+		}
+		.toggle-button:focus {
+			@include toggle-button-outline;
+			@media #{$high-contrast} {
+				@include toggle-button-outline(highlight);
+			}
+		}
 	}
 	.modal-footer {
 		height: auto !important;
-	}
-}
-
-::ng-deep body.focus-enable {
-	.is-gaming {
-		.gaming-modal-fun {
-			.modal-header {
-				.close:focus {
-					@include default-button-border;
-					@media #{$high-contrast} {
-						@include default-button-border(highlight);
-					}
-				}
-			}
-			.modal-body {
-				.item-radio-button:focus + label,
-				.oc-checkbox:focus {
-					@include solid-button-outline;
-					@media #{$high-contrast} {
-						@include solid-button-outline(highlight);
-					}
-				}
-				.oc-advance-button:focus,
-				.oc-driver-link:focus {
-					@include link-button-outline;
-					@media #{$high-contrast} {
-						@include link-button-outline(highlight);
-					}
-				}
-				.toggle-button:focus {
-					@include toggle-button-outline;
-					@media #{$high-contrast} {
-						@include toggle-button-outline(highlight);
-					}
-				}
-			}
-		}
 	}
 }

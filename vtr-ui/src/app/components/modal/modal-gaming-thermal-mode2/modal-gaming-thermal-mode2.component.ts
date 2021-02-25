@@ -100,17 +100,6 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 		);
 	}
 
-	// Version 3.5 keyboard nevigation to close
-	@HostListener('window: focus')
-	onFocus(): void {
-		const modal: HTMLElement = document.querySelector('.close');
-		let modalTimer = setTimeout(() => {
-			modal.focus();
-			clearTimeout(modalTimer);
-			modalTimer = null;
-		}, 5);
-	}
-
 	ngOnInit() {
 		this.getThermalModeSettingStatus();
 		this.registerThermalModeChangeEvent();

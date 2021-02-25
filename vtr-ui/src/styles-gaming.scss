@@ -2521,11 +2521,16 @@ button {
 						letter-spacing: normal;
 						font-family: 'SegoeUI';
 						outline: none;
+						opacity: 1;
 						&:hover {
 							color: $gaming_lightest;
 						}
 						&:active {
 							transform: scale(0.96);
+						}
+						&:focus {
+							opacity: 1;
+							color: $white60;
 						}
 						@media #{$high-contrast} {
 							opacity: 1;
