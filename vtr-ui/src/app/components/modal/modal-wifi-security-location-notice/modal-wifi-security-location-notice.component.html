@@ -30,8 +30,10 @@
 	</div>
 	<div class="btn-modal-close">
 		<button
+			mat-dialog-close
 			class="position-relative float-right closeButton"
 			[id]="closeButtonId"
+			aria-label="{{'common.ui.close' | translate}}"
 			(click)="onCancelClick()"
 			vtrMetrics
 			metricsEvent="FeatureClick"
