@@ -1,0 +1,21 @@
+@import '../../../app.theme';
+
+.snack-container {
+	align-items: center;
+	width: 40rem;
+	font-size: 1.8rem;
+	color: $light;
+
+	fa-icon {
+		font-size: 3rem;
+		color: $yellow-dark;
+	}
+
+	.feature-inapplicable-message {
+		line-height: 2.1rem;
+
+		.feature-name {
+			font-weight: bold;
+		}
+	}
+}

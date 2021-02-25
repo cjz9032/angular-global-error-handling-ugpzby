@@ -21,6 +21,8 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import mapValues from 'lodash/mapValues';
+import { MatSnackBar } from '@lenovo/material/snack-bar';
+import { CustomSnackBarComponent } from 'src/app/components/app-search/error-tips-snack-bar/custom-snack-bar.component';
 
 @Injectable({
 	providedIn: 'root',
@@ -42,7 +44,8 @@ export class AppSearchService implements OnDestroy {
 		private deviceService: DeviceService,
 		private hypService: HypothesisService,
 		private applicableDetections: FeatureApplicableDetections,
-		private localCacheService: LocalCacheService
+		private localCacheService: LocalCacheService,
+		private snackBar: MatSnackBar
 	) {
 		this.isAvailable().then((available) => {
 			if (available) {
@@ -93,10 +96,15 @@ export class AppSearchService implements OnDestroy {
 
 	public handleAction(featureId: string) {
 		const feature: IFeature = this.featureMap[featureId];
+		this.showFeatureUnavailableTips(feature.featureName);
+
 		const action: any = feature.action;
 		if (action?.route || action?.menuId) {
 			this.handleNavigateAction(feature.action as INavigationAction).then(success => {
-				feature.applicable = success;
+				if (!success) {
+					feature.applicable = success;
+					this.showFeatureUnavailableTips(feature.featureName);
+				}
 			});
 		} else if (action?.url) {
 			this.handleProtocolAction(feature.action as IProtocolAction);
@@ -460,5 +468,21 @@ export class AppSearchService implements OnDestroy {
 
 	private getFeatureStatusMap() {
 		return mapValues(this.featureMap, (feature) => (feature as IFeature).applicable);
+	}
+
+	private showFeatureUnavailableTips(featureName: string) {
+		const message = this.translate.instant('appSearch.featureInapplicable', {
+			featureName,
+		});
+
+		this.snackBar.openFromComponent(CustomSnackBarComponent,  {
+			horizontalPosition: 'center',
+			verticalPosition: 'top',
+			panelClass: ['snackbar-feature-unavailable'],
+			duration: 2000,
+			data: {
+				message
+			}
+		  });
 	}
 }

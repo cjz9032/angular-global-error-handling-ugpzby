@@ -5533,6 +5533,7 @@
 	"appSearch": {
 		"menuName": "Search",
 		"pageTitle": "Results for '{{userInput}}'",
+		"featureInapplicable": "<span class=\"feature-name\">{{featureName}}</span> is not applicable",
 		"noSearchResultTips": "No results for '{{userInput}}'",
 		"features": {
 			"dashboard": {
