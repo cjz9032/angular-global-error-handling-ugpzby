@@ -6,7 +6,6 @@ import { CommonPipeModule } from './common/common-pipe.module';
 import { CommsService } from '../services/comms/comms.service';
 import { CookieService } from 'ngx-cookie-service';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { DeviceService } from '../services/device/device.service';
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -89,7 +88,6 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 		CommsService,
 		CookieService,
 		DevService,
-		DeviceService,
 		DisplayService,
 		MockService,
 		SettingsService,
