@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
@@ -13,7 +13,6 @@ import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RoutePath } from 'src/assets/menu/menu';
-import { HistoryManager } from 'src/app/services/history-manager/history-manager.service';
 
 interface IDisplayPage {
 	pageIdx: number;
@@ -27,7 +26,7 @@ interface IDisplayPage {
 	templateUrl: './page-search.component.html',
 	styleUrls: ['./page-search.component.scss'],
 })
-export class PageSearchComponent implements OnInit, OnDestroy {
+export class PageSearchComponent implements OnInit, OnDestroy, AfterViewInit {
 	@ViewChild('searchInput', { static: true }) searchInput: ElementRef;
 	private paramSubscription: any;
 	private notificationSubscription: any;
@@ -185,9 +184,15 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		this.setupRightPanels();
 	}
 
+	ngAfterViewInit() {
+		setTimeout(() => {
+			this.searchInput.nativeElement.focus();
+		}, 0);
+	}
+
 	onInnerBack() {}
 
-	onClickSearchBtn(metricEvent) {
+	onTriggerSearch(metricEvent) {
 		this.userInput = this.mergeAndTrimSpace(this.userInput);
 		if (this.userInput) {
 			this.metricService.sendMetrics(metricEvent);
@@ -197,7 +202,7 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	onClickResultItem(feature: IFeature) {
+	onTriggerResultItemAction(feature: IFeature) {
 		this.searchService.handleAction(feature.id);
 	}
 
@@ -207,7 +212,7 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		}, 200);
 	}
 
-	onClickPreResultPage() {
+	onGoToPreResultPage() {
 		const nextIdx = this.displayPage.pageIdx - 1;
 		if (nextIdx < 0) {
 			return;
@@ -216,7 +221,7 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		this.updateResultView(nextIdx);
 	}
 
-	onClickSpecifiedResultPage(pageIdx: number) {
+	onGoToResultPage(pageIdx: number) {
 		if (pageIdx === this.displayPage.pageIdx) {
 			return;
 		}
@@ -224,7 +229,7 @@ export class PageSearchComponent implements OnInit, OnDestroy {
 		this.updateResultView(pageIdx);
 	}
 
-	onClickNextResultPage() {
+	onGoToNextResultPage() {
 		const nextIdx = this.displayPage.pageIdx + 1;
 		if (nextIdx >= this.pageArray.length) {
 			return;
