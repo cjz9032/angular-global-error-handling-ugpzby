@@ -93,6 +93,8 @@ export class DeviceService {
 	}
 
 	private identifySMBMachine(machineFamilyName: string) {
+		this.supportEasyRendering = false;
+
 		if (machineFamilyName) {
 			machineFamilyName = machineFamilyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
 			if (
@@ -104,9 +106,9 @@ export class DeviceService {
 					this.supportCreatorSettings = true;
 				}
 
-				if (smbMachines.easyRendering.includes(machineFamilyName)) {
-					this.supportEasyRendering = true;
-				}
+				// if (smbMachines.easyRendering.includes(machineFamilyName)) {
+				// 	this.supportEasyRendering = true;
+				// }
 
 				if (smbMachines.colorCalibration.includes(machineFamilyName)) {
 					this.supportColorCalibration = true;
