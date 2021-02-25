@@ -326,6 +326,11 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					this.openWelcomeModal(pageNumber, newTutorialVersion);
 				} else {
 					welcomeNeeded = false;
+					const emptyTutorialData = new WelcomeTutorial(2, this.newTutorialVersion, true);
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.WelcomeTutorial,
+						emptyTutorialData
+					);
 				}
 			}
 
