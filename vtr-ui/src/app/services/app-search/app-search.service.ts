@@ -96,8 +96,6 @@ export class AppSearchService implements OnDestroy {
 
 	public handleAction(featureId: string) {
 		const feature: IFeature = this.featureMap[featureId];
-		this.showFeatureUnavailableTips(feature.featureName);
-
 		const action: any = feature.action;
 		if (action?.route || action?.menuId) {
 			this.handleNavigateAction(feature.action as INavigationAction).then(success => {
