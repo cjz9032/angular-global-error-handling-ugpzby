@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { CommonService } from 'src/app/services/common/common.service';
+import { MenuID } from 'src/assets/menu/menu';
 
 @Component({
 	selector: 'vtr-modal-new-feature-tip',
@@ -35,24 +36,30 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	tipsVersions = {
 		'v3.2': 3.002,
 		'v3.2.5': 3.002005,
+		'v3.6': 3.006,
 	};
 
 	allNewTips = {
 		security: {
-			tipId: 'security',
+			tipId: MenuID.security,
 			desc: 'notification.menu.security',
 			version: this.tipsVersions['v3.2'],
 		},
 		homeSecurity: {
-			tipId: 'home-security',
+			tipId: MenuID.homeSecurity,
 			desc: 'notification.menu.connectedHomeSecurity',
 			version: this.tipsVersions['v3.2'],
 		},
 		hardwareScan: {
-			tipId: 'hardware-scan',
+			tipId: MenuID.hardwareScan,
 			desc: 'notification.menu.hardwareScan',
 			version: this.tipsVersions['v3.2.5'],
 		},
+		search: {
+			tipId: MenuID.appSearch,
+			desc: 'notification.menu.appSearch',
+			version: this.tipsVersions['v3.6'],
+		}
 	};
 
 	metrics: any;
@@ -100,6 +107,14 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 			if (hardwareScanAction) {
 				return;
 			}
+
+			const searchAction = this.tipItemAction(
+				this.allNewTips.search,
+				positionName
+			);
+			if (searchAction) {
+				return;
+			}
 		}
 		if (this.tipId === this.allNewTips.homeSecurity.tipId) {
 			const hardwareScanAction = this.tipItemAction(
@@ -107,6 +122,24 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 				positionName
 			);
 			if (hardwareScanAction) {
+				return;
+			}
+
+			const searchAction = this.tipItemAction(
+				this.allNewTips.search,
+				positionName
+			);
+			if (searchAction) {
+				return;
+			}
+		}
+
+		if (this.tipId === this.allNewTips.hardwareScan.tipId) {
+			const searchAction = this.tipItemAction(
+				this.allNewTips.search,
+				positionName
+			);
+			if (searchAction) {
 				return;
 			}
 		}
@@ -161,6 +194,7 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		const securityMenu = this.newTipIdSelector(this.allNewTips.security.tipId);
 		const homeSecurityMenu = this.newTipIdSelector(this.allNewTips.homeSecurity.tipId);
 		const hardwareScanMenu = this.newTipIdSelector(this.allNewTips.hardwareScan.tipId);
+		const searchMenu = this.newTipIdSelector(this.allNewTips.search.tipId);
 
 		const lastFeatureVersion = this.commonService.lastFeatureVersion;
 
@@ -187,6 +221,15 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		) {
 			this.setDescAndTipId(this.allNewTips.hardwareScan);
 			this.showItemTip(hardwareScanMenu);
+		} else if (
+			this.isShowMenuTips(
+				searchMenu,
+				this.allNewTips.search.version,
+				lastFeatureVersion
+			)
+		) {
+			this.setDescAndTipId(this.allNewTips.search);
+			this.showItemTip(searchMenu);
 		}
 	}
 
