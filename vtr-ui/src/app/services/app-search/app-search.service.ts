@@ -92,10 +92,12 @@ export class AppSearchService implements OnDestroy {
 	}
 
 	public handleAction(featureId: string) {
-		const feature = this.featureMap[featureId];
+		const feature: IFeature = this.featureMap[featureId];
 		const action: any = feature.action;
 		if (action?.route || action?.menuId) {
-			this.handleNavigateAction(feature.action as INavigationAction);
+			this.handleNavigateAction(feature.action as INavigationAction).then(success => {
+				feature.applicable = success;
+			});
 		} else if (action?.url) {
 			this.handleProtocolAction(feature.action as IProtocolAction);
 		} else if (typeof feature.action === 'function') {
@@ -112,14 +114,20 @@ export class AppSearchService implements OnDestroy {
 		return new SearchResult(ResultType.complete, [feature]);
 	}
 
-	private handleNavigateAction(featureAction: INavigationAction) {
+	private async handleNavigateAction(featureAction: INavigationAction) {
 		const route = '/' + this.actionToRoutePath(featureAction);
 		if (route.startsWith('/user')) {
 			// not support user route at present
 			this.router.navigateByUrl('/');
 		} else {
-			this.router.navigateByUrl(route);
+			const success = await this.router.navigateByUrl(route);
+			if (!success) {
+				this.router.navigateByUrl('/');
+				return false;
+			}
 		}
+
+		return true;
 	}
 
 	private handleProtocolAction(featureAction: IProtocolAction) {
