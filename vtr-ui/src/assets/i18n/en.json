@@ -6029,7 +6029,7 @@
 				"desc": "This section enables you to automatically optimize or manually configure your AI meeting settings.",
 				"aiMeetingManager":{
 					"title":"AI Meeting Manager",
-					"description": "AI meeting manager can perform real-time translation, interpretation, and voice dictation. It can also generate subtitles for videos.",
+					"description": "AI meeting manager supports real-time translation, interpretation, and voice dictation. It can also generate subtitles for videos.",
 					"downloadNow": "DOWNLOAD NOW",
 					"download": "DOWNLOAD",
 					"launch": "LAUNCH",
@@ -6047,7 +6047,7 @@
 							"point1": "Make sure the AI meeting manager icon is displayed in Windows notification area.​",
 							"point2": "Click the icon and select Translator or Subtitles.​",
 							"point3": "Select your source language and target language.",
-							"point4": "Depending on your need, set the voice input from Speaker or from Microphone,.",
+							"point4": "Depending on your need, set the voice input from Speaker or from Microphone.",
 							"point5": "Click the start button to start translation."
 						},
 						"voiceToText": {
