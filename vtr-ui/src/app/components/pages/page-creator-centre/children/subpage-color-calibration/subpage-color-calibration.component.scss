@@ -60,20 +60,25 @@
 				justify-content: center;
 				align-items: center;
 
+				@media #{$mediaquery_15} {
+					width: 4rem;
+				}
+
 				.spinner-border {
-					width: 5rem;
-					height: 5rem;
+					width: 4rem;
+					height: 4rem;
 
 					@media #{$mediaquery_15} {
 						width: 3rem;
 						height: 3rem;
 					}
 				}
+
+
 			}
 
 			.btn-box {
 				display: flex;
-				max-width: 12.4rem;
 				align-items: flex-end;
 
 				@media #{$mediaquery_15} {
@@ -127,7 +132,7 @@
 
 			.screenshot-box {
 				width: 100%;
-				padding: 1rem 1rem 1rem 2rem;
+				padding: 1rem 1.5rem;
 
 				.screenshot-title {
 					text-transform: uppercase;
@@ -163,19 +168,6 @@
 				}
 			}
 		}
-
-		.loading-content {
-			width: 100%;
-			height: 50vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			.spinner-border {
-				width: 10rem;
-				height: 10rem;
-			}
-		}
 	}
 
 	.vtr-subpage-right-column {
@@ -185,27 +177,7 @@
 		.card-content {
 			.creator-center-card {
 				background: transparent linear-gradient(241deg, #0A1D56 0%, #4A81FD 100%) 0% 0% no-repeat padding-box;
-
 				color: white;
-
-				.card-container {
-					background: url(^assets/images/smb/colorcalibration/card-background.png);
-
-					.card-title {
-						font-size: 2.4rem;
-					}
-
-					.card-summary {
-						font-size: 1.4rem;
-					}
-
-					.learn-more {
-						color: #F8E820;
-						font-size: 1.4rem;
-						font-weight: bold;
-						text-decoration: underline;
-					}
-				}
 			}
 
 			.vtr-promotion-banner {
@@ -213,16 +185,36 @@
 				min-height: 18.2rem;
 
 				.banner {
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center center;
+
 					.description {
 						margin-bottom: 0.2rem;
 					}
 				}
 
-				.learn-more {
-					color: #F8E820;
-					font-size: 1.4rem;
-					font-weight: bold;
-					text-decoration: underline;
+				.link-box {
+					margin-bottom: 2.8rem;
+					position: relative;
+
+					.learn-more {
+						position: relative;
+						color: #F8E820;
+						font-size: 1.4rem;
+						font-weight: bold;
+						text-decoration: underline;
+
+						&:focus {
+							outline: 0;
+							box-shadow: none;
+
+							&:after {
+								@include button-outline-blue($light);
+								border-radius: 0;
+							}
+						}
+					}
 				}
 			}
 		}

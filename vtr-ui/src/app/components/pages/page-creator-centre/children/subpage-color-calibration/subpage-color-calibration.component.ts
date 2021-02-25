@@ -1,42 +1,36 @@
-import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@lenovo/material/dialog';
+import { WinRT } from '@lenovo/tan-client-bridge';
 import { TranslateService } from '@ngx-translate/core';
-import { AppDetails } from 'src/app/services/apps-for-you/apps-for-you.service';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { ColorCalibrationEnum, ColorCalibrationInstallState } from 'src/app/enums/color-calibration.enum';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
+import { CommonService } from 'src/app/services/common/common.service';
+import { ColorCalibrationService } from 'src/app/services/smb/creator-centre/color-calibration.service';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 @Component({
 	selector: 'vtr-subpage-color-calibration',
 	templateUrl: './subpage-color-calibration.component.html',
 	styleUrls: ['./subpage-color-calibration.component.scss']
 })
+
 export class SubpageColorCalibrationComponent implements OnInit {
 
-	appDetails: AppDetails;
-	readonly DownloadState = {
-		NOT_INSTALL: 1,
-		INSTALLED: 2,
-		DOWNLOADING: 3,
-		DOWNLOAD_COMPLETE: 4,
-		INSTALLING: 5,
-		FAILED_INSTALL: -1,
-	};
-
-	readonly InstallState = {
-		INSTALL: 1,
-		DOWNLOADING: 2,
-		INSTALLING: 3,
-		LAUNCH: 4,
-		SEEMORE: 5,
-		UNKNOWN: -1,
-	};
-
-	downloadStatus = this.DownloadState.NOT_INSTALL;
-	installStatus = this.InstallState.INSTALL;
+	ColorCalibrationInstallState = ColorCalibrationInstallState;
+	installStatus = ColorCalibrationInstallState.Unknow;
 	isOnline: boolean;
 	errorMessage = undefined;
 	clickedScreenshot: string;
+	isCancelInstall: boolean;
+	buttonLabel: string;
+	buttonDisabled: boolean;
+	installStarted: boolean;
+	buttonMetricsItem: string;
+	buttonLinkId: string;
 
 	screenshotData = [{
-		url: 'assets/images/smb/colorcalibration/screenshot1.png',
+		url: 'assets/images/smb/colorcalibration/screenshot1.jpg',
 		metricsItem: 'ColorCalibrationScreenshot1',
 	}, {
 		url: 'assets/images/smb/colorcalibration/screenshot2.png',
@@ -55,41 +49,173 @@ export class SubpageColorCalibrationComponent implements OnInit {
 
 	constructor(private matDialog: MatDialog,
 		private screenShotDlg: MatDialog,
+		private shellService: VantageShellService,
+		private colorCalibrationService: ColorCalibrationService,
+		private commonService: CommonService,
 		private translateService: TranslateService) {
 		this.isOnline = true;
+		this.installStarted = false;
 	}
 
 	ngOnInit(): void {
-		this.errorMessage = this.translateService.instant(
-			'appsForYou.common.errorMessage.installationFailed'
+		this.installStatus = ColorCalibrationInstallState.Unknow;
+		this.commonService.notification.subscribe(
+			(response: AppNotification) => {
+				this.onNotification(response);
+			}
 		);
+		this.colorCalibrationService.getAppStatus(ColorCalibrationEnum.AppGUID);
 	}
 
-	clickInstallButton() {
+	onNotification(notification: AppNotification) {
+		if (notification) {
+			const { type, payload } = notification;
+			switch (type) {
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					const currentOnline = notification.payload.isOnline;
+					if (this.isOnline !== currentOnline) {
+						this.isOnline = currentOnline;
+						if (!currentOnline) {
+							this.colorCalibrationService.cancelInstall();
+						} else {
+							this.colorCalibrationService.resetCancelInstall();
+						}
+					}
+					break;
+				case ColorCalibrationEnum.ActionInstallAppProgress:
+					if (notification.payload < 85) {
+						this.updateInstallStatus(ColorCalibrationInstallState.Downloading);
+					} else {
+						this.updateInstallStatus(ColorCalibrationInstallState.InstallerRunning);
+					}
+					break;
+				case ColorCalibrationEnum.ActionInstallAppResult:
+					this.updateInstallStatus(notification.payload);
+					break;
+				case ColorCalibrationEnum.ActionInstallationCancelled:
+					this.colorCalibrationService.resetCancelInstall();
+					break;
+				case ColorCalibrationEnum.ActionGetAppStatusResult:
+					this.updateInstallStatus(notification.payload);
+					break;
+				default:
+					break;
+			}
+		}
+	}
 
+	processError(status) {
+		if (status === ColorCalibrationInstallState.Downloading
+			|| status === ColorCalibrationInstallState.InstallBefore
+			|| status === ColorCalibrationInstallState.InstallDone
+			|| status === ColorCalibrationInstallState.InstallerRunning
+		) {
+			this.errorMessage = undefined;
+		} else if (status === ColorCalibrationInstallState.NotFinished) {
+			if (this.installStarted) {
+				this.errorMessage = this.translateService.instant(
+					'appsForYou.common.errorMessage.installationFailed'
+				);
+			}
+			else {
+				this.errorMessage = undefined;
+			}
+		}
+		else {
+			this.errorMessage = this.translateService.instant(
+				'appsForYou.common.errorMessage.installationFailed'
+			);
+		}
+	}
+
+	updateInstallStatus(status) {
+		this.installStatus = status;
+		this.processError(status);
+		this.updateButtonLabel(status);
+		this.checkButtonEnable(status);
+		this.checkInstalling(status);
+	}
+
+	checkInstalling(status) {
+		this.installStarted = (status === ColorCalibrationInstallState.Downloading
+			|| status === ColorCalibrationInstallState.InstallerRunning);
+	}
+
+	async clickInstallButton() {
+		switch (this.installStatus) {
+			case ColorCalibrationInstallState.InstallBefore:
+			case ColorCalibrationInstallState.InstallDone:
+				this.isSupportUriProtocol().then(async (support) => {
+					if (support) {
+						//WinRT.launchUri('lenovo-color-calibration:vantage');
+					} else {
+						// If color calibration does not support launch by URL protocol, try to launch it by GCP
+						const launchPath = await this.shellService.getSystemUpdate().getLaunchPath(
+							ColorCalibrationEnum.AppGUID
+						);
+						if (launchPath) {
+							const paths = launchPath.split('|');
+							for (const path of paths) {
+								const result = await this.shellService.getSystemUpdate().launchApp(path);
+								if (result) {
+									break;
+								}
+							}
+						}
+					}
+				});
+				this.installStarted = false;
+				break;
+			default:
+				if (!this.installStarted) {
+					this.errorMessage = undefined;
+					this.installStarted = true;
+					await this.colorCalibrationService.installApp(ColorCalibrationEnum.AppGUID);
+				}
+				break;
+		}
 
 	}
 
-	getInstallButtonLabel(installStatus) {
-		return 'Install';
+	private isSupportUriProtocol() {
+		return new Promise((resovle) => {
+			resovle(false);
+		});
 	}
 
-
-	getMetricsItem(installStatus) {
-
+	updateButtonLabel(status) {
+		if (status === ColorCalibrationInstallState.InstallBefore
+			|| status === ColorCalibrationInstallState.InstallDone) {
+			this.buttonLabel = this.translateService.instant('appsForYou.appDetails.installButton.launch');
+			this.buttonMetricsItem = 'button.lanuch';
+			this.buttonLinkId = 'color-calibration-button-lanuch';
+		}
+		else if (status === ColorCalibrationInstallState.Downloading) {
+			this.buttonLabel = this.translateService.instant('appsForYou.appDetails.installButton.downloading');
+			this.buttonMetricsItem = 'button.downloading';
+			this.buttonLinkId = 'color-calibration-button-downloading';
+		}
+		else if (status === ColorCalibrationInstallState.InstallerRunning) {
+			this.buttonLabel = this.translateService.instant('appsForYou.appDetails.installButton.installing');
+			this.buttonMetricsItem = 'button.installing';
+			this.buttonLinkId = 'color-calibration-button-installing';
+		}
+		else {
+			this.buttonLabel = this.translateService.instant('appsForYou.appDetails.installButton.install');
+			this.buttonMetricsItem = 'button.install';
+			this.buttonLinkId = 'color-calibration-button-install';
+		}
 	}
 
-	getLinkID(installStatus) {
-
-	}
-
-	openRestoreProfileModal() {
-
+	checkButtonEnable(status) {
+		this.buttonDisabled = !this.isOnline
+			|| status === ColorCalibrationInstallState.Downloading
+			|| status === ColorCalibrationInstallState.InstallerRunning;
 	}
 
 	onRestoreProfileClick() {
 		const modal = this.matDialog.open(this.storeProfileDlgView, {
-
 			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: false,
@@ -106,16 +232,11 @@ export class SubpageColorCalibrationComponent implements OnInit {
 		this.matDialog.closeAll();
 	}
 
-	shouldFocusScreenshot(position: number) {
-		return position >= 1 && position <= 3;
-	}
-
-
 	openScreenshotDialog(imgUrl: string) {
 		if (this.screenShotDlg.openDialogs.length) {
 			return;
 		}
-		const screenshotModal = this.screenShotDlg.open(this.screenshotDlgView, {
+		this.screenShotDlg.open(this.screenshotDlgView, {
 			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: false,
