@@ -346,8 +346,7 @@ export class PageSecurityComponent implements OnInit, OnDestroy {
 			securityStatus.uacStatus.buttonLabel = translationString['security.landing.visitUac'];
 
 			if (!securityStatus.pmStatus.detail) {
-				securityStatus.pmStatus.detail =
-					translationString['common.securityAdvisor.loading'];
+				securityStatus.pmStatus.detail = '';
 			}
 			securityStatus.pmStatus.title = translationString['security.landing.pwdHealth'];
 			securityStatus.pmStatus.content = translationString['security.landing.passwordContent'];
