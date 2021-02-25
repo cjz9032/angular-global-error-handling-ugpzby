@@ -5,6 +5,7 @@ import { PageRoute } from 'src/app/data-models/history-manager/page-route-model'
 import { Subscription } from 'rxjs';
 import { GuardConstants } from '../guard/guard-constants';
 import { RoutePath } from 'src/assets/menu/menu';
+import { Location } from '@angular/common';
 
 @Injectable({
 	providedIn: 'root',
@@ -15,8 +16,23 @@ export class HistoryManager {
 	backRoute: PageRoute;
 	subscription: Subscription;
 
-	constructor(private router: Router, public guardConstants: GuardConstants) {
+	constructor(
+		private router: Router,
+		public guardConstants: GuardConstants,
+		private location: Location
+	) {
 		this.history = [];
+		this.location.onUrlChange((url: string, state: any) => {
+			if (state) {
+				return;
+			}
+
+			const path = url?.substring(url.indexOf('/'));
+
+			if (path && this.currentRoute?.finalPath.startsWith(path)) {
+				this.currentRoute = new PageRoute(path);
+			}
+		});
 		this.subscription = this.router.events
 			.pipe(
 				filter(
