@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.36](https://bitbucket.tc.lenovo.com///compare/v1.10.35...v1.10.36) (2021-02-26)
+
+
+### Features
+
+* **Password Manager:** VAN-26064 remove dashlane status from SA landing ([baa202f](https://bitbucket.tc.lenovo.com///commit/baa202fea373072ab9b4298f37942a424c523a04))
+
+
+### Bug Fixes
+
+* **smb:** add itemType in metrics ([c1c0540](https://bitbucket.tc.lenovo.com///commit/c1c0540010043c3e515f742a18dedc9a5079d6e3))
+* set autoFocus globally ([5dd6720](https://bitbucket.tc.lenovo.com///commit/5dd6720414c6c7fa41dafe1f5f35e0fef57134cd))
+
 ### [1.10.35](https://bitbucket.tc.lenovo.com///compare/v1.10.34...v1.10.35) (2021-02-25)
 
 
