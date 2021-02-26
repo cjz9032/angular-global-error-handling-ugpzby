@@ -168,11 +168,10 @@ export class SnapshotService {
 			if (!snapshotInfoResponse) {
 				throw Error('Could not get response from Addin');
 			}
-			const componentSnapshot = snapshotInfoResponse[componentName];
-			if (componentSnapshot === undefined) {
+			if (snapshotInfoResponse === undefined) {
 				throw Error('Could not find requested component info');
 			}
-			this.pvtSnapshotInfo[componentName].info = componentSnapshot;
+			this.pvtSnapshotInfo[componentName].info = snapshotInfoResponse;
 			if (this.pvtSnapshotInfo[componentName].info.Items.length > 0) {
 				this.pvtSnapshotInfo[componentName].status = SnapshotComponentStatus.hasData;
 			} else {
