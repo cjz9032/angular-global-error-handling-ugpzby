@@ -304,22 +304,19 @@ export const getSecurityLevel = (
 			case 'installed':
 				securityStatus.pmStatus.status = 'installed';
 				if (translationString) {
-					securityStatus.pmStatus.detail =
-						translationString['common.securityAdvisor.installed'];
+					securityStatus.pmStatus.detail = '';
 				}
 				break;
 			case 'installing':
 				securityStatus.pmStatus.status = 'installing';
 				if (translationString) {
-					securityStatus.pmStatus.detail =
-						translationString['common.securityAdvisor.installing'];
+					securityStatus.pmStatus.detail = '';
 				}
 				break;
 			default:
 				securityStatus.pmStatus.status = 'not-installed';
 				if (translationString) {
-					securityStatus.pmStatus.detail =
-						translationString['common.securityAdvisor.notInstalled'];
+					securityStatus.pmStatus.detail = '';
 				}
 		}
 	} else {
@@ -504,7 +501,7 @@ export const getSecurityLevel = (
 	}
 	const landingStatus = new LandingView();
 	const allItems =
-		levelStatus.basicLength + levelStatus.intermediateLength + levelStatus.advancedLength;
+		levelStatus.basicLength + levelStatus.intermediateLength - 1 + levelStatus.advancedLength;
 	if (levelStatus.basicValid > 0) {
 		if (levelStatus.intermediateValid > 0 && levelStatus.basicSuccess) {
 			if (levelStatus.advancedValid > 0 && levelStatus.intermediateSuccess) {
@@ -513,13 +510,14 @@ export const getSecurityLevel = (
 				landingStatus.percent =
 					(levelStatus.advancedValid +
 						levelStatus.basicLength +
-						levelStatus.intermediateLength) /
+						levelStatus.intermediateLength -
+						1) /
 					allItems;
 			} else {
 				landingStatus.status = 2;
 				landingStatus.fullyProtected = false;
 				landingStatus.percent =
-					(levelStatus.intermediateValid + levelStatus.basicLength) / allItems;
+					(levelStatus.intermediateValid - 1 + levelStatus.basicLength) / allItems;
 			}
 		} else {
 			landingStatus.status = 1;

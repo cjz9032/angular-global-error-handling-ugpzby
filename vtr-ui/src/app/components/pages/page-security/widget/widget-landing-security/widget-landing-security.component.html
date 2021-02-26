@@ -5,7 +5,7 @@
 				<span class="col-1 basis-width" [ngClass]="['icomoon', 'icomoon-' + item.icon]"></span>
 				<div class="col-11 pl-3 row align-items-center justify-content-between flex-nowrap">
 					<h3 class="mb-0" id="sa-ov-widget-security-title-{{i+1}}">{{item.title}}</h3>
-					<span [hidden]="item.showOwn" class="badge text-ellipsis ml-auto"
+					<span [hidden]="item.showOwn || !item.detail" class="badge text-ellipsis ml-auto"
 						title=""
 						role="text"
 						id="sa-ov-widget-security-status-{{i+1}}"
