@@ -200,7 +200,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			template: any,
 			config?: MatDialogConfig<any>
 		): MatDialogRef<any, any> {
-			if (config?.panelClass && !config.panelClass.includes('modern-preload-modal')) {
+			if (config?.panelClass && !config?.panelClass.includes('modern-preload-modal')) {
 				if (
 					Array.isArray(config.panelClass) &&
 					!config.panelClass.includes('modal-common-responsive')
@@ -213,7 +213,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					config.panelClass = config.panelClass.split(' ');
 					config.panelClass.push('modal-common-responsive');
 				}
-			} else if (!config?.panelClass && !config.panelClass.includes('modern-preload-modal')) {
+			} else if (!config?.panelClass) {
 				config = Object.assign(config ?? {}, { panelClass: 'modal-common-responsive' });
 			}
 			if (self.deviceService?.isGaming) {
