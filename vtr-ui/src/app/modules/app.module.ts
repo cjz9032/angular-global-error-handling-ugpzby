@@ -48,7 +48,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { MatButtonModule } from '@lenovo/material/button';
 import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@lenovo/material/core';
 import { MatTooltipModule, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@lenovo/material/tooltip';
-import { MatDialogModule } from '@lenovo/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@lenovo/material/dialog';
 import { MatIconModule } from '@lenovo/material/icon';
 
 import { environment } from 'src/environments/environment';
@@ -89,12 +89,10 @@ import { ModalNewFeatureTipComponent } from '../components/modal/modal-new-featu
 // import { ModalErrorMessageComponent } from '../components/modal/modal-error-message/modal-error-message.component';
 import { ModalStoreRatingComponent } from '../components/modal/modal-store-rating/modal-store-rating.component';
 
-
 const initializerFactory = (initializerService: InitializerService) => () =>
-	initializerService.initialize()
-		.finally(() => {
-			window.performance.mark('app initialized');
-		});
+	initializerService.initialize().finally(() => {
+		window.performance.mark('app initialized');
+	});
 
 @NgModule({
 	declarations: [
@@ -183,7 +181,11 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 		{ provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: { disabled: true } },
 		{
 			provide: MAT_TOOLTIP_DEFAULT_OPTIONS,
-			useValue: { position: 'above', }
+			useValue: { position: 'above' },
+		},
+		{
+			provide: MAT_DIALOG_DEFAULT_OPTIONS,
+			useValue: { autoFocus: true },
 		},
 	],
 	entryComponents: [

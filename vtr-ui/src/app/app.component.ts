@@ -216,7 +216,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			} else if (!config?.panelClass && !config.panelClass.includes('modern-preload-modal')) {
 				config = Object.assign(config ?? {}, { panelClass: 'modal-common-responsive' });
 			}
-			if (self.deviceService.isGaming) {
+			if (self.deviceService?.isGaming) {
 				if (config?.panelClass) {
 					if (
 						Array.isArray(config.panelClass) &&
