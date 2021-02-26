@@ -706,7 +706,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		this.launchOrDownloadSmartAppearance();
 		const metricsData = {
 			ItemParent: 'Page.MeetingManager',
-			metricsEvent: 'FeatureClick',
+			ItemType: 'FeatureClick',
 			ItemName: this.isLSAInstalled
 				? 'SmartAppearanceLaunchClick'
 				: 'SmartAppearanceDownloadClick',
@@ -716,14 +716,6 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 
 	smartAppearanceBannerButtonClick() {
 		this.launchOrDownloadSmartAppearance();
-		const metricsData = {
-			ItemParent: 'Page.MeetingManager',
-			metricsEvent: 'FeatureClick',
-			ItemName: this.isLSAInstalled
-				? 'SmartAppearanceBannerLaunchClick'
-				: 'SmartAppearanceBannerDownloadClick',
-		};
-		this.metricsService.sendMetrics(metricsData);
 	}
 
 	launchOrDownloadSmartAppearance() {
