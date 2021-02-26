@@ -13,6 +13,7 @@
 					componentId="view-results"
 					metricsParent="HardwareScan.ViewResults"
 					metricsItem="ViewResults.ExportLog"
+					[isDisabled]="!isExportLogAvailable()"
 					*ngIf="isFeatureExportAvailable">
 				</vtr-hardware-scan-export-log>
 			</div>

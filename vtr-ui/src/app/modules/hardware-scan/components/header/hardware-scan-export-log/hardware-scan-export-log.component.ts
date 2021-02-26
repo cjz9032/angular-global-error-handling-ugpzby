@@ -23,6 +23,7 @@ export class HardwareScanExportLogComponent implements OnInit {
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
 	@Input() metricsParam: string;
+	@Input() isDisabled;
 
 	public exportExtensions = Object.keys(ExportLogExtensions);
 	public isOnExportLog = false;

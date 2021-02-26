@@ -21,11 +21,11 @@ export class ScanLogService {
 		// Uses this validation to avoid cases that IMController was closed unexpectedly
 		const timeoutPromise = new Promise((resolve, reject) => {
 			const timeout = setTimeout(() => {
-				clearTimeout(timeout);
-				reject('Timed out after 10s!');
+				this.hardwareScanBridge.getScanLog();
+				resolve('Timed out after 10s!');
 			}, 10000);
 		});
 
-		return Promise.race([getScanLogPromise, timeoutPromise]);
+		return getScanLogPromise;
 	}
 }

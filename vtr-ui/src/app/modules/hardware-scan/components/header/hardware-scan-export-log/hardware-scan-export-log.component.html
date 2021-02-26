@@ -5,7 +5,8 @@
 	(mouseenter)="exportButtonSelected()"
 	(focus)="exportButtonSelected()"
 	(mouseleave)="exportButtonDismissed()"
-	(focusout)="exportButtonDismissed()">
+	(focusout)="exportButtonDismissed()"
+	>
 
 	<vtr-ui-hyperlink-button
 		class="refresh-button"
@@ -17,11 +18,12 @@
 		metricsEvent="FeatureClick"
 		metricsParent="{{ metricsParent }}"
 		metricsItem="{{ metricsParent }}.ExportLog"
+		[isDisabled]="isDisabled"
 		(hyperlinkClick)="onExportClick()"
 		[label]="'hardwareScan.exportLog' | translate">
 	</vtr-ui-hyperlink-button>
 
-	<div *ngIf="isOnExportLog" class="extension-wrapper">
+	<div *ngIf="isOnExportLog && !isDisabled" class="extension-wrapper">
 		<button
 			class="extension-btn"
 			[attr.aria-label]="extension"
