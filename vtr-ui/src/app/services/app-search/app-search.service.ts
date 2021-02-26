@@ -22,7 +22,7 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import mapValues from 'lodash/mapValues';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
-import { CustomSnackBarComponent } from 'src/app/components/app-search/error-tips-snack-bar/custom-snack-bar.component';
+import { FeatureInapplicableMessageComponent } from 'src/app/components/app-search/feature-inapplicable-message/feature-inapplicable-message.component';
 
 @Injectable({
 	providedIn: 'root',
@@ -473,7 +473,7 @@ export class AppSearchService implements OnDestroy {
 			featureName,
 		});
 
-		this.snackBar.openFromComponent(CustomSnackBarComponent,  {
+		this.snackBar.openFromComponent(FeatureInapplicableMessageComponent,  {
 			horizontalPosition: 'center',
 			verticalPosition: 'top',
 			panelClass: ['snackbar-feature-unavailable'],

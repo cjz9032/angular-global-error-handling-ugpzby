@@ -16,11 +16,11 @@ import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-i
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { AppSearchRoutingModule } from './app-search-routing.module';
 import { MatProgressSpinnerModule } from '@lenovo/material/progress-spinner';
-import { CustomSnackBarComponent } from 'src/app/components/app-search/error-tips-snack-bar/custom-snack-bar.component';
 import { faExclamationCircle } from '@fortawesome/pro-light-svg-icons/faExclamationCircle';
+import { FeatureInapplicableMessageComponent } from 'src/app/components/app-search/feature-inapplicable-message/feature-inapplicable-message.component';
 
 @NgModule({
-	declarations: [SearchDropdownComponent, PageSearchComponent, CustomSnackBarComponent],
+	declarations: [SearchDropdownComponent, PageSearchComponent, FeatureInapplicableMessageComponent],
 	imports: [
 		MetricsModule,
 		AppSearchRoutingModule,
