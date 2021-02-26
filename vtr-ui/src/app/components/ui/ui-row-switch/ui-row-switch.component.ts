@@ -232,7 +232,7 @@ export class UiRowSwitchComponent
 		const modalRef = this.dialog.open(ModalAiMeetingManagerComponent, {
 			autoFocus: true,
 			hasBackdrop: true,
-			disableClose: true,
+			disableClose: false,
 			panelClass: 'ai-meeting-manager-modal',
 		});
 		modalRef.componentInstance.value = this.aiMeetingManagerValue;
