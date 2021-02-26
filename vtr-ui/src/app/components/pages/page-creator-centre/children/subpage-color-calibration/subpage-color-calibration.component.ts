@@ -22,7 +22,6 @@ export class SubpageColorCalibrationComponent implements OnInit {
 	isOnline: boolean;
 	errorMessage = undefined;
 	clickedScreenshot: string;
-	isCancelInstall: boolean;
 	buttonLabel: string;
 	buttonDisabled: boolean;
 	installStarted: boolean;

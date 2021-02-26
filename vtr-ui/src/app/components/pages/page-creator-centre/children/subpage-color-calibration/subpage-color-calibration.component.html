@@ -34,6 +34,7 @@
 							<div class="btn-box">
 								<vtr-ui-button [isDisabled]="buttonDisabled"
 									(onClick)="clickInstallButton()"
+									[tooltipText]="buttonLabel"
 									metricsEvent="FeatureClick"
 									metricsParent="CreatorCentre"
 									metricsItem="{{buttonMetricsItem}}"
