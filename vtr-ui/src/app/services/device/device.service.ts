@@ -138,8 +138,15 @@ export class DeviceService {
 				this.machineInfo = info;
 				this.isSMode = info.isSMode;
 				this.isGaming = info.isGaming;
-				if (info.family) {
+
+				if (info.family && info.locale && info.locale.startsWith('en')) {
 					this.identifySMBMachine(info.family);
+				} else {
+					this.isSMB = false;
+					this.supportCreatorSettings = false;
+					this.supportColorCalibration = false;
+					this.supportEasyRendering = false;
+					this.supportSmartAppearance = false;
 				}
 
 				if (
