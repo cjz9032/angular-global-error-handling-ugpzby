@@ -139,7 +139,7 @@ export class DeviceService {
 				this.isSMode = info.isSMode;
 				this.isGaming = info.isGaming;
 
-				if (info.family && info.locale && info.locale.startsWith('en')) {
+				if (info.family && info.locale && info.locale.toLowerCase().startsWith('en')) {
 					this.identifySMBMachine(info.family);
 				} else {
 					this.isSMB = false;
