@@ -25,21 +25,21 @@
 				</div>
 				<div class="col-6 d-flex align-items-center justify-content-end">
 					<div class="d-block">
-						<div class="d-flex justify-content-end">
+						<div class="d-flex justify-content-end align-items-center">
 							<div class="spinner-content app-spinner"
-								*ngIf="downloadStatus == DownloadState.DOWNLOADING || downloadStatus == DownloadState.INSTALLING">
+								*ngIf="installStatus === ColorCalibrationInstallState.Downloading || installStatus === ColorCalibrationInstallState.InstallerRunning">
 								<div class="spinner-border text-primary progress-spinner"
 									role="status"></div>
 							</div>
 							<div class="btn-box">
-								<vtr-ui-button [isDisabled]="!isOnline"
+								<vtr-ui-button [isDisabled]="buttonDisabled"
 									(onClick)="clickInstallButton()"
 									metricsEvent="FeatureClick"
 									metricsParent="CreatorCentre"
-									metricsItem="{{getMetricsItem(installStatus)}}"
+									metricsItem="{{buttonMetricsItem}}"
 									[isFullWidth]="true"
-									linkId="{{getLinkID(installStatus)}}"
-									[label]="getInstallButtonLabel(installStatus)"></vtr-ui-button>
+									linkId="{{buttonLinkId}}"
+									[label]="buttonLabel"></vtr-ui-button>
 							</div>
 						</div>
 						<div class="error-message text-ellipsis"
@@ -78,7 +78,7 @@
 									vtrMetrics
 									metricsItem="{{item.metricsItem}}"
 									metricsEvent="FeatureClick"
-									[metricsParent]="'CreatorCentre'"
+									metricsParent="CreatorCentre"
 									href="javascript:void(0)"
 									(click)="openScreenshotDialog(item.url)">
 									<img class="images"
@@ -97,9 +97,15 @@
 				<div class="col col-sm-12 col-md-12 pb-20 px-0 card-content">
 					<vtr-promotion-banner [title]="'smb.creatorCentre.colorCalibration.cardTitle' | translate"
 						[description]="('smb.creatorCentre.colorCalibration.cardSummary' | translate)"
-						[imgSrc]="'assets/images/smb/colorcalibration/card-background.png'">
-						<div>
+						[imgSrc]="'assets/images/smb/meeting-manager-banner-bg.png'">
+						<div class="link-box">
 							<a class="learn-more"
+								tabindex="0"
+								vtrMetrics
+								metricsItem="RestoreProfileLearnmore"
+								metricsEvent="FeatureClick"
+								metricsParent="CreatorCentre"
+								href="javascript:void(0)"
 								role="button"
 								(click)="onRestoreProfileClick()">{{'smb.creatorCentre.colorCalibration.learnMore' | translate}}</a>
 						</div>
