@@ -134,8 +134,7 @@
 			.summary-box {
 				padding: 1rem 2rem;
 				color: $grey_darker;
-				font: normal normal 400 14px/20px Segoe UI;
-				letter-spacing: 0px;
+				font-size: $fontsize_xs;
 			}
 
 			.screenshot-box {
@@ -145,8 +144,8 @@
 				.screenshot-title {
 					text-transform: uppercase;
 					color: $grey_darker;
-					font: normal normal bold 14px/20px Segoe UI;
-					letter-spacing: 0.49px;
+					font-size: $fontsize_xs;
+					font-weight: bold;
 				}
 
 				.screenshot {
