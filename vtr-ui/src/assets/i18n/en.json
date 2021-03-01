@@ -6071,11 +6071,12 @@
 				"smartAppearance":{
 					"title": "Smart appearance application",
 					"launch": "Launch",
-					"download": "Download now",
+					"download": "Download",
 					"caption": "An AI-based application to improve video conferencing experience. It works as a virtual driver and can be loaded by multiple conference applications and online teaching or live streaming clients.​",
 					"banner": {
 						"title": "Smart appearance",
-						"description": "Provide multiple camera effects to improve video conferencing experience."
+						"description": "Provide multiple camera effects to improve video conferencing experience.",
+						"download": "Download now"
 					}
 				}
 

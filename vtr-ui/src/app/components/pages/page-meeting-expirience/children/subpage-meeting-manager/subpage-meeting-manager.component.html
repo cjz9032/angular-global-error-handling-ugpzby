@@ -295,14 +295,15 @@
 					mat-customize-button color="accent"
 					class="m-0 w-100"
 					(click)="smartAppearanceBannerButtonClick()"
-					[matTooltip]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate"
+					[matTooltip]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.banner.download') | translate"
 					matTooltipClass="vtr-system-tooltip"
 					aria-labelledby="productivity-meeting-appearance-banner-title"
 					vtrMetrics
                     metricsEvent="FeatureClick"
                     metricsParent="Page.MeetingManager"
-                    [metricsItem]="isLSAInstalled ? 'SmartAppearanceBannerLaunchClick' : 'SmartAppearanceBannerDownloadClick'">
-					{{(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate | uppercase}}
+                    [metricsItem]="isLSAInstalled ? 'SmartAppearanceBannerLaunchClick' : 'SmartAppearanceBannerDownloadClick'"
+					aria-labelledby="productivity-meeting-appearance-banner-title">
+					{{(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.banner.download') | translate | uppercase}}
 				</button>
 			</div>
 		</div>
