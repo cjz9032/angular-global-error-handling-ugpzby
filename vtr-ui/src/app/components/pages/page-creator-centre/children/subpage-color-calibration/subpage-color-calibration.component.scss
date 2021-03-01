@@ -19,6 +19,14 @@
 			min-height: 6rem;
 			margin-bottom: 0rem;
 
+			@media #{$black-on-white} {
+				border: 0.1rem solid $dark;
+			}
+
+			@media #{$white-on-black} {
+				border: 0.1rem solid $light;
+			}
+
 			.logo-con {
 				align-items: center;
 
@@ -110,9 +118,6 @@
 		}
 
 		.app-content {
-			// box-shadow: $drop_shadow;
-			// border-radius: $border_radius;
-			// background-color: $light;
 			padding: 2.4rem;
 			min-height: 20rem;
 			font-size: 1.4rem;
@@ -128,6 +133,8 @@
 
 			.summary-box {
 				padding: 1rem 2rem;
+				color: $grey_darker;
+				font-size: $fontsize_xs;
 			}
 
 			.screenshot-box {
@@ -136,6 +143,8 @@
 
 				.screenshot-title {
 					text-transform: uppercase;
+					color: $grey_darker;
+					font-size: $fontsize_xs;
 					font-weight: bold;
 				}
 
