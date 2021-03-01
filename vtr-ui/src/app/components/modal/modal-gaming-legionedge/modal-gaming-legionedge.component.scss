@@ -9,7 +9,7 @@
 	z-index: 1;
 	padding: 1rem;
 	&:hover {
-		color: $white100;
+		color: $white100 !important;
 	}
 	&:focus {
 		opacity: 1 !important;
