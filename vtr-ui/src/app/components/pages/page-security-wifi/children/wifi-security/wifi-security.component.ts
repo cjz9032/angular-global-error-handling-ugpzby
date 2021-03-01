@@ -21,7 +21,7 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 	showMore = false;
 	hasMore: boolean;
 	locatorButtonDisable = false;
-	@Output() toggleChange = new EventEmitter<void>();
+	@Output() toggleChange = new EventEmitter<any>();
 
 	showMoreText = this.translate.instant('security.wifisecurity.container.showmore');
 	showLessText = this.translate.instant('security.wifisecurity.container.showless');
@@ -52,7 +52,8 @@ export class WifiSecurityComponent extends BaseComponent implements OnInit {
 		}
 	}
 
-	noticeToggleChange() {
+	noticeToggleChange($event: any) {
+		$event.checked = this.data.isLWSEnabled;
 		this.toggleChange.emit();
 	}
 
