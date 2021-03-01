@@ -22,6 +22,7 @@ import sha256 from 'crypto-js/sha256';
 import { DeviceService } from '../../../../../services/device/device.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { AudioVendorService } from './audio-vendor.service';
+import { MetricService } from '../../../../../services/metric/metrics.service';
 
 @Component({
 	selector: 'vtr-subpage-device-settings-audio',
@@ -108,7 +109,8 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		private batteryService: BatteryDetailService,
 		private localCacheService: LocalCacheService,
 		public deviceService: DeviceService,
-		private audioVendorService: AudioVendorService
+		private audioVendorService: AudioVendorService,
+		private metricsService: MetricService
 	) {
 		this.Windows = vantageShellService.getWindows();
 		if (this.Windows) {
@@ -228,10 +230,24 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 	}
 
 	launchPanel() {
+		const metricsData = {
+			ItemParent: this.metricsParent,
+			ItemType: 'FeatureClick',
+			ItemName: 'microphone-link',
+			ItemValue: 'launch',
+		};
+		this.metricsService.sendMetrics(metricsData);
 		this.audioVendorService.launchPanel();
 	}
 
 	launchDownloadLink() {
+		const metricsData = {
+			ItemParent: this.metricsParent,
+			ItemType: 'FeatureClick',
+			ItemName: 'microphone-link',
+			ItemValue: 'download',
+		};
+		this.metricsService.sendMetrics(metricsData);
 		this.audioVendorService.launchDownloadLink();
 	}
 
