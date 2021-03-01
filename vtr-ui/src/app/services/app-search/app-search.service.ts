@@ -21,6 +21,8 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import mapValues from 'lodash/mapValues';
+import { MatSnackBar } from '@lenovo/material/snack-bar';
+import { FeatureInapplicableMessageComponent } from 'src/app/components/app-search/feature-inapplicable-message/feature-inapplicable-message.component';
 
 @Injectable({
 	providedIn: 'root',
@@ -42,7 +44,8 @@ export class AppSearchService implements OnDestroy {
 		private deviceService: DeviceService,
 		private hypService: HypothesisService,
 		private applicableDetections: FeatureApplicableDetections,
-		private localCacheService: LocalCacheService
+		private localCacheService: LocalCacheService,
+		private snackBar: MatSnackBar
 	) {
 		this.isAvailable().then((available) => {
 			if (available) {
@@ -92,10 +95,15 @@ export class AppSearchService implements OnDestroy {
 	}
 
 	public handleAction(featureId: string) {
-		const feature = this.featureMap[featureId];
+		const feature: IFeature = this.featureMap[featureId];
 		const action: any = feature.action;
 		if (action?.route || action?.menuId) {
-			this.handleNavigateAction(feature.action as INavigationAction);
+			this.handleNavigateAction(feature.action as INavigationAction).then(success => {
+				if (!success) {
+					feature.applicable = success;
+					this.showFeatureUnavailableTips(feature.featureName);
+				}
+			});
 		} else if (action?.url) {
 			this.handleProtocolAction(feature.action as IProtocolAction);
 		} else if (typeof feature.action === 'function') {
@@ -112,14 +120,20 @@ export class AppSearchService implements OnDestroy {
 		return new SearchResult(ResultType.complete, [feature]);
 	}
 
-	private handleNavigateAction(featureAction: INavigationAction) {
+	private async handleNavigateAction(featureAction: INavigationAction) {
 		const route = '/' + this.actionToRoutePath(featureAction);
 		if (route.startsWith('/user')) {
 			// not support user route at present
 			this.router.navigateByUrl('/');
 		} else {
-			this.router.navigateByUrl(route);
+			const success = await this.router.navigateByUrl(route);
+			if (!success) {
+				this.router.navigateByUrl('/');
+				return false;
+			}
 		}
+
+		return true;
 	}
 
 	private handleProtocolAction(featureAction: IProtocolAction) {
@@ -452,5 +466,21 @@ export class AppSearchService implements OnDestroy {
 
 	private getFeatureStatusMap() {
 		return mapValues(this.featureMap, (feature) => (feature as IFeature).applicable);
+	}
+
+	private showFeatureUnavailableTips(featureName: string) {
+		const message = this.translate.instant('appSearch.featureInapplicable', {
+			featureName,
+		});
+
+		this.snackBar.openFromComponent(FeatureInapplicableMessageComponent,  {
+			horizontalPosition: 'center',
+			verticalPosition: 'top',
+			panelClass: ['snackbar-feature-unavailable'],
+			duration: 2000,
+			data: {
+				message
+			}
+		  });
 	}
 }
