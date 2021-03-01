@@ -6029,7 +6029,7 @@
 				"title":"Meeting Manager",
 				"desc": "This section enables you to automatically optimize or manually configure your AI meeting settings.",
 				"aiMeetingManager":{
-					"title":"AI Meeting Manager",
+					"title":"AI meeting manager",
 					"description": "AI meeting manager supports real-time translation, interpretation, and voice dictation. It can also generate subtitles for videos.",
 					"downloadNow": "DOWNLOAD NOW",
 					"download": "DOWNLOAD",
