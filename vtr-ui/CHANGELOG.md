@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.37](https://bitbucket.tc.lenovo.com///compare/v1.10.36...v1.10.37) (2021-03-01)
+
+
+### Features
+
+* **smb:** update text on download btn ([bd2c0ec](https://bitbucket.tc.lenovo.com///commit/bd2c0ec393db804487cd732a3ffd1eb259ada9c0))
+
+
+### Bug Fixes
+
+* fix close button hover color ([0a66347](https://bitbucket.tc.lenovo.com///commit/0a66347d0dd1074914b94e39fded19ec96969cab))
+* remove useless condition to add panelClass ([3f1d0b5](https://bitbucket.tc.lenovo.com///commit/3f1d0b5f85131bf22f5e0afa25ea19adf4f9aac5))
+
 ### [1.10.36](https://bitbucket.tc.lenovo.com///compare/v1.10.35...v1.10.36) (2021-02-26)
 
 
