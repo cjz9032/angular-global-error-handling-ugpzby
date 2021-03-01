@@ -171,7 +171,7 @@
 				</div>
 			</div>
 			<div class="row py-5 smart-settings-card"
-				id="microphone" *ngIf="!deviceService.isSMB">
+				id="microphone">
 				<div class="col-12 mx-auto container-card"
 					*ngIf="microphoneProperties.available">
                     <vtr-container-collapsible componentName="Microphone"
@@ -244,7 +244,7 @@
 								</vtr-ui-row-switch>
 							</li>
 							<ng-template
-								[ngIf]="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported">
+								[ngIf]="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported && !deviceService.isSMB">
 								<li class="common-li-padding"
 									*ngIf="microphoneProperties.keyboardNoiseSuppression != undefined">
 									<vtr-ui-row-switch
@@ -311,7 +311,7 @@
 									</vtr-ui-row-switch>
 								</li>
 							</ng-template>
-							<li class="common-li-padding microphone-on-off" *ngIf="isAudioVendorSupported">
+							<li class="common-li-padding microphone-on-off" *ngIf="isAudioVendorSupported && !deviceService.isSMB">
 								<vtr-ui-row-switch [title]="'device.deviceSettings.audio.microphone-link.title' | translate"
 												   componentName="Microphone"
 												   [caption]="'device.deviceSettings.audio.microphone-link.description' | translate"
