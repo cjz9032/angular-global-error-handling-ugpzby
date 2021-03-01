@@ -1,7 +1,7 @@
 <mat-card
 	class="export-options-card"
-	[class.mat-elevation-z0]="!isOnExportLog"
-	[class.mat-elevation-z8]="isOnExportLog"
+	[class.mat-elevation-z0]="!isOnExportLog || isDisabled"
+	[class.mat-elevation-z8]="isOnExportLog && !isDisabled"
 	(mouseenter)="exportButtonSelected()"
 	(focus)="exportButtonSelected()"
 	(mouseleave)="exportButtonDismissed()"
