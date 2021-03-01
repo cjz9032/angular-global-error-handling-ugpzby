@@ -237,28 +237,36 @@ button:focus {
 				}
 			}
 		}
-		.item-radio-button:focus + label,
-		.oc-checkbox:focus {
-			@include solid-button-outline;
-			@media #{$high-contrast} {
-				@include solid-button-outline(highlight);
-			}
-		}
-		.oc-advance-button:focus,
-		.oc-driver-link:focus {
-			@include link-button-outline;
-			@media #{$high-contrast} {
-				@include link-button-outline(highlight);
-			}
-		}
-		.toggle-button:focus {
-			@include toggle-button-outline;
-			@media #{$high-contrast} {
-				@include toggle-button-outline(highlight);
-			}
-		}
 	}
 	.modal-footer {
 		height: auto !important;
+	}
+}
+::ng-deep body.focus-enable {
+	.is-gaming {
+		.gaming-modal-fun {
+			.modal-body {
+				.item-radio-button:focus + label,
+				.oc-checkbox:focus {
+					@include solid-button-outline;
+					@media #{$high-contrast} {
+						@include solid-button-outline(highlight);
+					}
+				}
+				.oc-advance-button:focus,
+				.oc-driver-link:focus {
+					@include link-button-outline;
+					@media #{$high-contrast} {
+						@include link-button-outline(highlight);
+					}
+				}
+				.toggle-button:focus {
+					@include toggle-button-outline;
+					@media #{$high-contrast} {
+						@include toggle-button-outline(highlight);
+					}
+				}
+			}
+		}
 	}
 }

@@ -2523,7 +2523,7 @@ button {
 						outline: none;
 						opacity: 1;
 						&:hover {
-							color: $gaming_lightest;
+							color: $gaming_lightest !important;
 						}
 						&:active {
 							transform: scale(0.96);
