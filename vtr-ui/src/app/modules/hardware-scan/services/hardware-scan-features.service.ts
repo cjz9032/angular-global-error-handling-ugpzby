@@ -56,12 +56,6 @@ export class HardwareScanFeaturesService {
 						error
 					);
 					resolve(false);
-				})
-				.finally(() => {
-					this.commonService.setSessionStorageValue(
-						SessionStorageKey.HwScanHasExportLogData,
-						hasExportLogData
-					);
 				});
 		});
 	}

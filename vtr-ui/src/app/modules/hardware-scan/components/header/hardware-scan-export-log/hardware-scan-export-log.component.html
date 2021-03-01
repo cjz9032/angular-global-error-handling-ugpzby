@@ -1,7 +1,7 @@
 <mat-card
 	class="export-options-card"
-	[class.mat-elevation-z0]="!isOnExportLog"
-	[class.mat-elevation-z8]="isOnExportLog"
+	[class.mat-elevation-z0]="!isOnExportLog || isDisabled"
+	[class.mat-elevation-z8]="isOnExportLog && !isDisabled"
 	(mouseenter)="exportButtonSelected()"
 	(focus)="exportButtonSelected()"
 	(mouseleave)="exportButtonDismissed()"
@@ -13,15 +13,16 @@
 		linkId="{{ componentId }}-export-log-btn"
 		linkRole="button"
 		hyperlinkStyle="xs-300-blue-lighter"
-		imgIconSrc="assets/icons/hardware-scan/icon_hardware_export-log.svg"
+		imgIconSrc="{{ getExportIcon() }}"
 		metricsEvent="FeatureClick"
 		metricsParent="{{ metricsParent }}"
 		metricsItem="{{ metricsParent }}.ExportLog"
+		[isDisabled]="isDisabled"
 		(hyperlinkClick)="onExportClick()"
 		[label]="'hardwareScan.exportLog' | translate">
 	</vtr-ui-hyperlink-button>
 
-	<div *ngIf="isOnExportLog" class="extension-wrapper">
+	<div *ngIf="isOnExportLog && !isDisabled" class="extension-wrapper">
 		<button
 			class="extension-btn"
 			[attr.aria-label]="extension"
