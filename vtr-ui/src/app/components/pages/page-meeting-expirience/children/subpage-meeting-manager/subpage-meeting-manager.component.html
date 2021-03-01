@@ -83,58 +83,6 @@
 					</vtr-widget-permission-note>
 					<ul class="list-group list-group-flush"
 						*ngIf="microphoneProperties.permission">
-						<li class="microphone-on-off">
-							<vtr-ui-row-switch
-								[title]="'device.deviceSettings.audio.microphone.title' | translate"
-								componentName="Microphone"
-								[caption]=""
-								[isSwitchVisible]=true
-								[leftIcon]="['fal', 'microphone']"
-								[readMoreText]="''"
-								[showChildContent]="true"
-								[theme]="'white'"
-								[disabled]="!microphoneProperties.permission"
-								(toggleOnOff)="onToggleOfMicrophone($event)"
-								[isSwitchChecked]="microphoneProperties.muteDisabled"
-								[showLoaderState]="microphoneLoader"
-								[switchId]="'audio-microphone'">
-							</vtr-ui-row-switch>
-						</li>
-						<li class="common-li-padding">
-							<vtr-ui-row-switch
-								[title]="'device.deviceSettings.audio.microphone.volume.title' | translate"
-								componentName="MicrophoneVolume"
-								[isSwitchVisible]=false
-								[leftIcon]="['fal', 'microphone']"
-								[rightIcon]=""
-								[readMoreText]="''"
-								[showChildContent]="true"
-								[disabled]="!microphoneProperties.permission"
-								[theme]="'white'"
-								[switchId]="'audio-microphone-volume'">
-								<div class="row">
-									<div class="microphone-slider-margin"></div>
-									<div class="col-11">
-										<vtr-ui-custom-slider
-											[minLegend]="'device.deviceSettings.audio.microphone.volume.options.silent' | translate"
-											[maxLegend]="'device.deviceSettings.audio.microphone.volume.options.loud' | translate"
-											[min]=0
-											[max]=100
-											[step]=1
-											[value]="microphoneProperties.volume"
-											[isMetricsEnabled]=true
-											[metricsParent]="metricsParent"
-											[metricsItem]="'slider.microphone.volume'"
-											(valueChange)="onMicrophoneVolumeChange($event)"
-											[isDisabled]="!microphoneProperties.permission"
-											[ariaLabel]="'microphone volume'"
-											[sliderId]="'audio-microphone-volume'">
-										</vtr-ui-custom-slider>
-									</div>
-									<div class="col-2"></div>
-								</div>
-							</vtr-ui-row-switch>
-						</li>
 						<ng-template
 							[ngIf]="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported">
 							<li class="common-li-padding"
@@ -287,7 +235,7 @@
 					{{(isAMMInstalled ? 'smb.meetingExperience.meetingManager.aiMeetingManager.launch' : 'smb.meetingExperience.meetingManager.aiMeetingManager.downloadNow') | translate}}
 				</button>
 			</div>
-			<div *ngIf="isSupportSmartAppearance" 
+			<div *ngIf="isSupportSmartAppearance"
 				class="right-banner banner-smart-appearance">
 				<h3 id="productivity-meeting-appearance-banner-title" class="title">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.title' | translate}}</h3>
 				<p id="productivity-meeting-appearance-banner-description" role="text" class="description">{{'smb.meetingExperience.meetingManager.smartAppearance.banner.description' | translate}}</p>

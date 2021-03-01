@@ -294,7 +294,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 							LocalStorageKey.IsDolbyModeAvailable,
 							dolbyModeResponse.available
 						);
-						if ((!microphone || this.deviceService.isSMB)  && !dolbyModeResponse.available) {
+						if (!microphone && !dolbyModeResponse.available) {
 							// Array.filter won't trigger changeDetect automatically, so we do it manually.
 							const tempMenuItems = this.commonService.removeObjById(
 								this.menuItems,

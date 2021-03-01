@@ -169,17 +169,7 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 				false
 			);
 		}
-		// this.isSMB = this.deviceService.isSMB;
-		this.deviceService.getMachineInfo()
-			.then(() => {
-				if (this.deviceService.isSMB) {
-					this.headerMenuItems = this.commonService.removeObjFrom(
-						this.headerMenuItems,
-						'microphone'
-					);
-					this.checkMenuItemsLength();
-				}
-			});
+
 		// this.Windows.Media.Devices.MediaDevice.addEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged.bind(this));
 		this.isInMicrophoneOptimizationBlockList().then((blocked) => {
 			this.canShowMicrophoneOptimization = !blocked;
