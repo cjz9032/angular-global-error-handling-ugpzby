@@ -68,7 +68,7 @@
 					</ul>
 				</vtr-container-collapsible>
 			</div>
-			<div class="pt-5 content-card" *ngIf="microphoneProperties.available" id="microphone">
+			<div class="pt-5 content-card" *ngIf="microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)" id="microphone">
 				<vtr-container-collapsible [collapseLinkId]="'creatorSettings-microphone'" [headerLevel]="3"
 										   [cardTitle]="'smb.meetingExperience.meetingManager.microPhone.title' | translate"
 										   componentName="Microphone"
