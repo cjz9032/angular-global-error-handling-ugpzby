@@ -16,6 +16,7 @@
 	display: flex;
 	flex-flow: column;
 	box-sizing: border-box;
+	height: calc(100vh - 5.5rem);
 
 	fa-icon {
 		font-size: 2rem;

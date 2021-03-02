@@ -2467,6 +2467,7 @@ button {
 		transition: none !important;
 		font-family: 'Segoe UI';
 		background-color: transparent;
+		overflow: hidden;
 		.modal-content {
 			background-color: transparent;
 			border-radius: 0.6rem;
