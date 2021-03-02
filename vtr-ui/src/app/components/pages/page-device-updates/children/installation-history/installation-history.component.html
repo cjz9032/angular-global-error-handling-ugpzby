@@ -42,7 +42,7 @@
 											<div class="row">
 												<div class="col status-icon">
 													<div class="icon-check"
-														*ngIf="item.status.toLocaleLowerCase() === 'installed'">
+														*ngIf="item.status.toLowerCase() === 'installed'">
 														<div class="icon-bg">
 															<fa-icon id="{{'su_history_icon_success_'+item.packageID}}"
 																role="article"
@@ -50,7 +50,7 @@
 														</div>
 													</div>
 													<div class="icon-times"
-														*ngIf="item.status.toLocaleLowerCase() === 'failed'">
+														*ngIf="item.status.toLowerCase() === 'failed'">
 														<div class="icon-bg">
 															<fa-icon id="{{'su_history_icon_failure_'+item.packageID}}"
 																role="article"
