@@ -209,6 +209,24 @@ $van-ui-layout: (
 	box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
 	border-radius: 0.6rem !important;
 	padding: 2.4rem;
+	overflow-x: hidden;
+}
+
+.cdk-global-overlay-wrapper {
+	overflow-y: auto;
+}
+
+.cdk-overlay-pane {
+	.welcome-modal-size .About-Modal .Find-Us-Modal {
+		.mat-dialog-container {
+			padding: 0 !important;
+			background: none !important;
+			box-shadow: none;
+			@media #{$high-contrast} {
+				border: none !important;
+			}
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -259,34 +277,49 @@ button:focus {
 	}
 }
 
-.cdk-overlay-pane .mat-dialog-container {
-	padding-top: 2rem;
-	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+.cdk-overlay-pane {
+	.mat-dialog-container {
+		padding-top: 2rem;
+		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 
-	.closeButton {
-		top: -1rem;
-		right: 0rem;
-		height: 2.4rem;
-		width: 2.4rem;
-		color: $grey_darker;
-		z-index: 2;
+		.closeButton {
+			top: -1rem;
+			right: 0rem;
+			height: 2.4rem;
+			width: 2.4rem;
+			color: $grey_darker;
+			z-index: 2;
 
-		&:focus {
-			outline: 0.1rem solid $menu_hover;
+			&:focus {
+				outline: 0.1rem solid $menu_hover;
+			}
+			&:hover {
+				color: $menu_hover;
+			}
 		}
-		&:hover {
-			color: $menu_hover;
+
+		@media #{$black-on-white} {
+			outline: none !important;
+			@include black-border;
+		}
+
+		@media #{$white-on-black} {
+			outline: none !important;
+			@include white-border;
 		}
 	}
 
-	@media #{$black-on-white} {
-		outline: none !important;
-		@include black-border;
-	}
-
-	@media #{$white-on-black} {
-		outline: none !important;
-		@include white-border;
+	&.welcome-modal-size,
+	&.About-Modal,
+	&.Find-Us-Modal {
+		.mat-dialog-container {
+			padding: 0 !important;
+			background: none !important;
+			box-shadow: none;
+			@media #{$high-contrast} {
+				border: none !important;
+			}
+		}
 	}
 }
 

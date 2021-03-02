@@ -15,6 +15,16 @@
 	padding: 4rem;
 	position: relative;
 	width: 100%;
+	margin: 2rem 0;
+	border-radius: 0.6rem;
+
+	@media #{$black-on-white} {
+		border: 1px solid $dark !important;
+	}
+
+	@media #{$white-on-black} {
+		border: 1px solid $light !important;
+	}
 
 	.img-con {
 		height: 28rem;

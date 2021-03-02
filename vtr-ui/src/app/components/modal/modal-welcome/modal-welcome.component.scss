@@ -16,6 +16,8 @@
 	height: auto;
 	background: $shade_lightest;
 	overflow: hidden;
+	margin: 2rem 0;
+	border-radius: $border_radius;
 
 	@media #{$breakpoint_md} {
 		width: 100%;
