@@ -1,19 +1,16 @@
 import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
-import { PasswordManager, EventTypes, SecurityAdvisor } from '@lenovo/tan-client-bridge';
+import { PasswordManager, SecurityAdvisor, WinRT } from '@lenovo/tan-client-bridge';
 import { MatDialog } from '@lenovo/material/dialog';
 
 import { VantageShellService } from '../../../services/vantage-shell/vantage-shell.service';
 import { CMSService } from '../../../services/cms/cms.service';
 import { CommonService } from '../../../services/common/common.service';
-import { LocalStorageKey } from '../../../enums/local-storage-key.enum';
 import { ModalArticleDetailComponent } from '../../modal/modal-article-detail/modal-article-detail.component';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { NetworkStatus } from 'src/app/enums/network-status.enum';
-import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuardService } from '../../../services/guard/guardService.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { FeatureIntroduction } from '../../ui/ui-feature-introduction/ui-feature-introduction.component';
-import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
 	selector: 'vtr-page-security-password',
@@ -34,13 +31,11 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 
 	constructor(
 		private commonService: CommonService,
-		private localCacheService: LocalCacheService,
 		private cmsService: CMSService,
 		private dialog: MatDialog,
 		public vantageShellService: VantageShellService,
-		private guard: GuardService,
-		private router: Router
-	) { }
+		private guard: GuardService
+	) {}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
@@ -81,7 +76,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 	}
 
 	getDashLane(): void {
-		this.passwordManager.download();
+		WinRT.launchUri(this.passwordManager.downloadUrl);
 	}
 
 	openDashLane(): void {
@@ -114,7 +109,7 @@ export class PageSecurityPasswordComponent implements OnInit, OnDestroy {
 					}
 				}
 			},
-			(error) => { }
+			(error) => {}
 		);
 
 		this.cmsService
