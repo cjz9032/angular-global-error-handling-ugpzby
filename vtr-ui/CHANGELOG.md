@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.38](https://bitbucket.tc.lenovo.com///compare/v1.10.37...v1.10.38) (2021-03-02)
+
+
+### Bug Fixes
+
+* fix three dialog scroll style ([22f40a3](https://bitbucket.tc.lenovo.com///commit/22f40a36cb7c562a8f2c3b17e3dee1581cbce499))
+
 ### [1.10.37](https://bitbucket.tc.lenovo.com///compare/v1.10.36...v1.10.37) (2021-03-01)
 
 
