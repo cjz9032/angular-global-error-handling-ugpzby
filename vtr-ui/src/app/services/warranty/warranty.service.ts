@@ -220,11 +220,11 @@ export class WarrantyService {
 			if (levelItem) {
 				levels.push({
 					id: levelItem.id,
-					isRecommended: levelItem?.isRecommended,
-					levelText: levelItem?.warrantyLevelTitle || levelItem.id,
-					warrantyCode: levelItem?.warrantyLevelCode?.toLowerCase() || 'depot',
-					warrantyCodeText: levelItem?.warrantyLevelCodeText || '',
-					points: levelItem?.describe,
+					isRecommended: levelItem.isRecommended,
+					levelText: levelItem.warrantyLevelTitle || levelItem.id,
+					warrantyCode: levelItem.warrantyLevelCode?.toLowerCase() || 'depot',
+					warrantyCodeText: levelItem.warrantyLevelCodeText || '',
+					points: levelItem.describe,
 				});
 			}
 		});
@@ -244,10 +244,10 @@ export class WarrantyService {
 				const localInfo = await this.localInfoService.getLocalInfo();
 				// machineInfo.serialnumber = 'PF1HVYM5'; // for test 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' 'MP1FCJBF' 'MP1NW0D2' 'PF1HVYM5'
 				const sn = machineInfo.serialnumber;
-				const mtm = machineInfo?.mtm;
+				const mtm = machineInfo.mtm;
 				this.setWarrantyUrl(sn, mtm);
-				const geo = localInfo?.GEO || 'us';
-				const lang = localInfo?.Lang?.substr(0, 2) || 'en';
+				const geo = localInfo.GEO || 'us';
+				const lang = localInfo.Lang?.substr(0, 2) || 'en';
 
 				const warrantyUrl = `${environment.pcsupportApiRoot}/api/v4/upsellAggregation/vantage/warrantySummaryInfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
 
@@ -270,7 +270,7 @@ export class WarrantyService {
 						const result = await response.content.readAsStringAsync();
 						if (result) {
 							const resultJson = JSON.parse(result);
-							if (resultJson.code === 0 && resultJson?.msg?.desc?.toLowerCase() === 'success') {
+							if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
 								this.logger.info('Fetch warranty result: ', resultJson);
 								this.warrantyData = this.convertWarrantyData(resultJson.data);
 								this.localCacheService.setLocalCacheValue(LocalStorageKey.LastWarrantyData, this.warrantyData);
@@ -298,10 +298,10 @@ export class WarrantyService {
 			if (machineInfo && machineInfo.serialnumber) {
 				const localInfo = await this.localInfoService.getLocalInfo();
 				const sn = machineInfo.serialnumber;
-				const mtm = machineInfo?.mtm;
+				const mtm = machineInfo.mtm;
 				this.setWarrantyUrl(sn, mtm);
-				const geo = localInfo?.GEO || 'us';
-				const lang = localInfo?.Lang?.substr(0, 2) || 'en';
+				const geo = localInfo.GEO || 'us';
+				const lang = localInfo.Lang?.substr(0, 2) || 'en';
 
 				const warrantyLevelUrl = `${environment.pcsupportApiRoot}/api/v4/upsellaggregation/vantage/warrantyupgradeinfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
 
@@ -324,7 +324,7 @@ export class WarrantyService {
 						const result = await response.content.readAsStringAsync();
 						if (result) {
 							const resultJson = JSON.parse(result);
-							if (resultJson.code === 0 && resultJson?.msg?.desc?.toLowerCase() === 'success') {
+							if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
 								this.logger.info('Fetch warranty levels result: ', resultJson);
 								this.warrantyLevels = this.convertWarrantyLevels(resultJson.data.recommendation);
 								this.localCacheService.setLocalCacheValue(LocalStorageKey.LastWarrantyLevels, this.warrantyLevels);
