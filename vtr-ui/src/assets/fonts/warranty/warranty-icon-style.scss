@@ -1,0 +1,92 @@
+@import './warranty-icon-variables.scss';
+
+.warranty-font-adp {
+	&:before {
+		content: $warranty-icon-adp;
+	}
+}
+.warranty-font-adpone {
+	&:before {
+		content: $warranty-icon-adpone;
+	}
+}
+.warranty-font-depot {
+	&:before {
+		content: $warranty-icon-depot;
+	}
+}
+.warranty-font-ise {
+	&:before {
+		content: $warranty-icon-ise;
+	}
+}
+.warranty-font-kyd {
+	&:before {
+		content: $warranty-icon-kyd;
+	}
+}
+.warranty-font-carryin {
+	&:before {
+		content: $warranty-icon-carryin;
+	}
+}
+.warranty-font-mailin {
+	&:before {
+		content: $warranty-icon-mailin;
+	}
+}
+.warranty-font-onsite {
+	&:before {
+		content: $warranty-icon-onsite;
+	}
+}
+.warranty-font-premier {
+	&:before {
+		content: $warranty-icon-premier;
+	}
+}
+.warranty-font-premiumcare {
+	&:before {
+		content: $warranty-icon-premiumcare;
+	}
+}
+.warranty-font-sb {
+	&:before {
+		content: $warranty-icon-sb;
+	}
+}
+.warranty-font-sbty {
+	&:before {
+		content: $warranty-icon-sbty;
+	}
+}
+.warranty-font-ticru {
+	&:before {
+		content: $warranty-icon-ticru;
+	}
+}
+.warranty-font-legionultimate {
+	&:before {
+		content: $warranty-icon-legionultimate;
+	}
+}
+.warranty-font-smartperformance {
+	&:before {
+		content: $warranty-icon-smartperformance;
+	}
+}
+.warranty-font-premiumcaredepot {
+	&:before {
+		content: $warranty-icon-premiumcaredepot;
+	}
+}
+.warranty-font-premierdepot {
+	&:before {
+		content: $warranty-icon-premierdepot;
+	}
+}
+.warranty-font-nowarranty {
+	&:before {
+		content: $warranty-icon-nowarranty;
+	}
+}

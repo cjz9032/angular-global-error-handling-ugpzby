@@ -2621,6 +2621,7 @@
 		"manual": "Manual",
 		"performanceandSecurityCheckTitle": "Performance & Security Check",
 		"performanceandSecurityCheckSubTitle": "Let's diagnose and resolve performance and security issues in your computer",
+		"performanceOfflineText": "Scan feature will be available when your computer is connected to the Internet.",
 		"scanButton": "FREE PC SCAN",
 		"section1Heading": "How would you rate your PC Performance?",
 		"section1Description": "PC running slowly? Applications taking too long to respond? Windows errors? Malware concerns? <br>Let's diagnose what's causing the problem and fix it.",
@@ -3491,6 +3492,51 @@
 			"categories": "Categories",
 			"categoriesDesc": "Find helpful information in our articles.",
 			"seeArticles": "SEE ARTICLES"
+		}
+	},
+	"warranty": {
+		"warrantyStatusText": "Warranty Status: ",
+		"inWarranty": "In warranty",
+		"outOfWarranty": "Out of warranty",
+		"viewDetails": "View details",
+		"currentService": "Current Service & Support Status",
+		"monthsRemaining": "{{remainingMonths}} months remaining",
+		"oneMonthRemaining": "1 month remaining",
+		"lessThanOneMonth": "< 1 month remaining",
+		"makeSureNeedCoverage": "Make sure you have the coverage you need",
+		"recommendsUpgradingText": "Lenovo recommends upgrading your service level",
+		"exploreOptions": "Explore options",
+		"start": "Start",
+		"end": "End",
+		"nMos": "{{monthValue}} mos",
+		"today": "Today",
+		"upgradeLevels": {
+			"title": "Lenovo Services Warranty and Upgrades protects you from any hardware failure.",
+			"subTitle": "Accidental Damage Protection protects you from drops, spills, screen cracks and other damages caused by accident.​",
+			"recommended": "Recommended",
+			"learnMore": "Interested in learning more?​",
+			"good": {
+				"warrantyCodeText": "Depot support",
+				"levelText": "good",
+				"point1": "Parts & Labor​",
+				"point2": "Basic Phone Support for hardware issues​",
+				"point3": "Repairs done with shipment to Lenovo Depot​"
+			},
+			"better": {
+				"warrantyCodeText": "Onsite support",
+				"levelText": "better",
+				"point1": "Parts & Labor​",
+				"point2": "Basic Phone Support for hardware issues​",
+				"point3": "<b>Faster</b> - repairs done at your location"
+			},
+			"best": {
+				"warrantyCodeText": "Premier",
+				"levelText": "best",
+				"point1": "<b>Prioritized</b> Parts & Labor",
+				"point2": "<b>Advanced</b> Phone Support from Lenovo Engineers​",
+				"point3": "<b>Faster</b> - repairs done at your location, Next Business Day​",
+				"point4": "<b>Comprehensive Hardware & Software Support</b>"
+			}
 		}
 	},
 	"security": {

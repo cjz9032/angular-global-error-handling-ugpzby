@@ -1,0 +1,24 @@
+@import './warranty-icon-style.scss';
+@font-face {
+	font-family: 'warranty-icon-font';
+	src: url('^assets/fonts/warranty/LenovoMotoSupport.woff');
+	src: url('^assets/fonts/warranty/LenovoMotoSupport.woff') format('woff'),
+		url('^assets/fonts/warranty/LenovoMotoSupport.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.warranty-icon-font {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'warranty-icon-font' !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	font-size: 4.8rem;
+	color: #34495e;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

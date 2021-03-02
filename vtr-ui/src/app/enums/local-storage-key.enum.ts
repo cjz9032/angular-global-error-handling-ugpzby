@@ -90,6 +90,8 @@ export enum LocalStorageKey {
 
 	LastSystemUpdateStatus = '[LocalStorageKey] SystemUpdateStatus',
 	LastWarrantyStatus = '[LocalStorageKey] LastWarrantyStatus',
+	LastWarrantyData = '[LocalStorageKey] LastWarrantyData',
+	LastWarrantyLevels = '[LocalStorageKey] LastWarrantyLevels',
 	InputAccessoriesCapability = '[LocalStorageKey] InputAccessoriesCapability',
 	VOIPCapability = '[LocalStorageKey] VOIPCapability',
 	DashboardDeviceStatusCardDate = '[LocalStorageKey] DashboardDeviceStatusCardDate',

@@ -51,6 +51,7 @@ import { enumSmartPerformance } from './enums/smart-performance.enum';
 import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
 import { PerformanceNotifications } from './enums/performance-notifications.enum';
+import { WarrantyService } from './services/warranty/warranty.service';
 
 export const scrollStrategyClose = (overlay: Overlay) => () => overlay.scrollStrategies.close();
 
@@ -102,6 +103,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private smartPerformanceService: SmartPerformanceService,
 		private selfSelectService: SelfSelectService,
 		private localCacheService: LocalCacheService,
+		private warrantyService: WarrantyService,
 		@Inject(DOCUMENT) public document: Document,
 		private snackBar: MatSnackBar
 	) {
@@ -139,7 +141,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		sessionStorage.clear();
 		this.getMachineInfo();
 
-		window.onresize = () => {}; // this line is necessary, please do not remove.
+		window.onresize = () => { }; // this line is necessary, please do not remove.
 
 		/********* add this for navigation within a page **************/
 		// this.router.events.subscribe((s) => {
@@ -176,6 +178,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.removeOldSmartPerformanceScheduleScans();
 
 		this.storeRating.showRatingAsync();
+
+		this.warrantyService.fetchWarranty();
 	}
 
 	onDragStart(event: DragEvent): boolean {
@@ -195,8 +199,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	private patchMatDialogOpen() {
 		const original = MatDialog.prototype.open;
 		const self = this;
-		// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-		MatDialog.prototype.open = function (
+		MatDialog.prototype.open = function openMatDialog(
 			template: any,
 			config?: MatDialogConfig<any>
 		): MatDialogRef<any, any> {
@@ -409,7 +412,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				.then((value: any) => {
 					this.onMachineInfoReceived(value);
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		} else {
 			this.isMachineInfoLoaded = true;
 			this.machineInfo = { hideMenus: false };
@@ -531,8 +534,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 				case HardwareScanProgress.ScanResponse:
 				case HardwareScanProgress.RecoverResponse:
 					this.logger.info(
-						`store rating should show in next start marked. ${notification.type}. ${
-							notification.payload ? notification.payload.status : 'null'
+						`store rating should show in next start marked. ${notification.type}. ${notification.payload ? notification.payload.status : 'null'
 						}`
 					);
 					if (notification.payload && notification.payload.status === true) {
@@ -543,6 +545,11 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					if (!this.isFirstPageInitialized) {
 						this.isFirstPageInitialized = true;
 						this.analyzePerformance(notification.payload);
+					}
+					break;
+				case NetworkStatus.Online:
+					if (!this.warrantyService.warrantyData.isAvailable) {
+						this.warrantyService.fetchWarranty();
 					}
 					break;
 				default:
@@ -692,24 +699,24 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			scriptLoaded: Math.round(navigationStartTime + navPerf.duration),
 			appInitialized: this.commonService.getPerformanceNode('app initialized')?.startTime
 				? Math.round(
-						navigationStartTime +
-							this.commonService.getPerformanceNode('app initialized').startTime -
-							navPerf.startTime
-				  )
+					navigationStartTime +
+					this.commonService.getPerformanceNode('app initialized').startTime -
+					navPerf.startTime
+				)
 				: null,
 			appEntryLoaded: this.commonService.getPerformanceNode('app entry loaded')?.startTime
 				? Math.round(
-						navigationStartTime +
-							this.commonService.getPerformanceNode('app entry loaded').startTime -
-							navPerf.startTime
-				  )
+					navigationStartTime +
+					this.commonService.getPerformanceNode('app entry loaded').startTime -
+					navPerf.startTime
+				)
 				: null,
 			firstPageLoaded: this.commonService.getPerformanceNode(firstPage)?.startTime
 				? Math.round(
-						navigationStartTime +
-							this.commonService.getPerformanceNode(firstPage).startTime -
-							navPerf.startTime
-				  )
+					navigationStartTime +
+					this.commonService.getPerformanceNode(firstPage).startTime -
+					navPerf.startTime
+				)
 				: null,
 
 			dnsLookup: Math.round(navPerf.domainLookupEnd - navPerf.domainLookupStart),

@@ -42,11 +42,10 @@ import { WidgetSwitchIconComponent } from 'src/app/components/widgets/widget-swi
 import { WidgetDashboardWarrantyComponent } from 'src/app/components/widgets/widget-dashboard-warranty/widget-dashboard-warranty.component';
 import { WidgetSystemUpdateComponent } from 'src/app/components/widgets/widget-system-update/widget-system-update.component';
 import { WidgetEnergyStarComponent } from 'src/app/components/widgets/widget-energy-star/widget-energy-star.component';
-import { WidgetRoundStatusComponent } from 'src/app/components/widgets/widget-round-status/widget-round-status.component';
 import { WidgetQuicksettingsNoteComponent } from 'src/app/components/widgets/widget-quicksettings/widget-quicksettings-note/widget-quicksettings-note.component';
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
-
+import { WidgetWarrantyDetailModule } from 'src/app/components/widgets/widget-warranty-detail/widget-warranty-detail.module';
 
 @NgModule({
 	declarations: [
@@ -78,6 +77,7 @@ import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 		ReactiveFormsModule,
 		CommonPipeModule,
 		PageLayoutModule,
+		WidgetWarrantyDetailModule,
 		AppSearchModule,
 		FeedbackModule,
 		MatButtonModule,
@@ -97,6 +97,7 @@ import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 		FormsModule,
 		ReactiveFormsModule,
 		PageLayoutModule,
+		WidgetWarrantyDetailModule,
 		WidgetDashboardWarrantyComponent,
 		NgbTooltipModule,
 		MatTooltipModule,

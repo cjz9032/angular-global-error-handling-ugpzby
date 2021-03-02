@@ -51,6 +51,7 @@ import {
 	getSecurityLevel,
 } from 'src/app/data-models/security-advisor/security-status';
 import { PerformanceNotifications } from 'src/app/enums/performance-notifications.enum';
+import { WarrantyData, WarrantyStatusEnum } from 'src/app/data-models/warranty/warranty.model';
 
 interface IConfigItem {
 	cardId: string;
@@ -75,10 +76,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	public isOnline = true;
 	public isShowStateCard: boolean;
 	public brand;
-	public warrantyData: {
-		info: { endDate: null; status: 2; startDate: null; url: string };
-		cache: boolean;
-	};
+
 	public isWarrantyVisible = false;
 	public showQuickSettings = true;
 	public hideTitle = false;
@@ -316,7 +314,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		});
 		this.brand = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType, -1);
 		this.qaService.setCurrentLangTranslations();
-		this.isWarrantyVisible = this.deviceService.showWarranty;
 		this.dashboardService.isDashboardDisplayed = true;
 		this.commonService.setSessionStorageValue(SessionStorageKey.DashboardInDashboardPage, true);
 		this.subscription = this.commonService.notification.subscribe(
@@ -772,34 +769,23 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	getWarrantyInfo() {
-		this.translate11Subscription = this.warrantyService.getWarrantyInfo().subscribe((value) => {
-			if (value) {
-				this.setWarrantyInfo(value);
-			}
-		});
+		if (this.warrantyService.warrantyData.isAvailable) {
+			this.setWarrantyInfo(this.warrantyService.warrantyData);
+		}
 	}
 
-	setWarrantyInfo(value: any) {
-		this.warrantyData = {
-			info: {
-				startDate: value.startDate,
-				endDate: value.endDate,
-				status: value.status,
-				url: this.warrantyService.getWarrantyUrl(),
-			},
-			cache: true,
-		};
+	setWarrantyInfo(warrantyData: WarrantyData) {
 		const warranty = this.systemStatus[2];
-		const warrantyDate = this.formatLocaleDate.transform(value.endDate);
+		const warrantyDate = this.formatLocaleDate.transform(warrantyData.endDate);
 		// in warranty
-		if (value.status === 0) {
+		if (warrantyData.warrantyStatus === WarrantyStatusEnum.InWarranty) {
 			this.translate12Subscription = this.translate
 				.stream('dashboard.systemStatus.warranty.detail.until')
 				.subscribe((re) => {
 					warranty.detail = `${re} ${warrantyDate}`; // `Until ${warrantyDate}`;
 				});
 			warranty.status = 0;
-		} else if (value.status === 1) {
+		} else if (warrantyData.warrantyStatus === WarrantyStatusEnum.WarrantyExpired) {
 			this.translate13Subscription = this.translate
 				.stream('dashboard.systemStatus.warranty.detail.expiredOn')
 				.subscribe((re) => {
@@ -815,7 +801,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			warranty.status = 1;
 		}
 		warranty.isHidden = !this.deviceService.showWarranty;
-		this.isWarrantyVisible = this.deviceService.showWarranty;
 		warranty.status = 0;
 	}
 
@@ -829,13 +814,12 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 						this.getOfflineContent();
 					} else {
 						this.getCachedContent();
-						this.getWarrantyInfo();
 					}
 					if (this.showDeviceAndSecurityTimer) {
 						clearTimeout(this.showDeviceAndSecurityTimer);
 					}
 					break;
-				case LocalStorageKey.LastWarrantyStatus:
+				case LocalStorageKey.LastWarrantyData:
 					if (notification.payload) {
 						this.setWarrantyInfo(notification.payload);
 					}

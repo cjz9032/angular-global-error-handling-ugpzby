@@ -58,7 +58,8 @@
 				</div>
 				<div class="col-12 px-0 d-flex custom-card-container row justify-content-between no-gutters">
 					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-left">
-						 <vtr-container-card *ngIf="!isShowStateCard" order=2
+						<vtr-container-card *ngIf="!isShowStateCard"
+							order=2
 							[item]="contentCards.positionB.displayContent"
 							[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionB.displayContent.isLocal)"
 							[type]="'corner'"
@@ -69,19 +70,20 @@
 							aria-label="dashboard-card-b">
 						</vtr-container-card>
 
-						<vtr-material-state-card-container *ngIf="isShowStateCard" order=2
+						<vtr-material-state-card-container *ngIf="isShowStateCard"
+							order=2
 							[cardData]="positionBData"
 							[cardId]="'dashboard-lnk-systemInfo-position-b'">
-							<div *ngIf="positionBData.isActionLink" class="circle-state action-content">
-								<vtr-widget-round-status
-									[status]="positionBData.state"
+							<div *ngIf="positionBData.isActionLink"
+								class="circle-state action-content">
+								<vtr-widget-round-status [status]="positionBData.state"
 									[statusId]="'dashboard-system-info-position-b'"
 									[statusText]="positionBData.statusText">
 								</vtr-widget-round-status>
 							</div>
-							<div *ngIf="!positionBData.isActionLink" class="circle-state link-content">
-								<vtr-widget-round-status
-									[status]="positionBData.state"
+							<div *ngIf="!positionBData.isActionLink"
+								class="circle-state link-content">
+								<vtr-widget-round-status [status]="positionBData.state"
 									[statusId]="'dashboard-system-info-position-b'"
 									[statusText]="positionBData.statusText">
 								</vtr-widget-round-status>
@@ -91,8 +93,7 @@
 					</div>
 					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-right">
 						<ng-container *ngIf="!showSecurityStatusCard else securityCard">
-							<vtr-container-card
-								order=3
+							<vtr-container-card order=3
 								[item]="contentCards.positionC.displayContent"
 								[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionC.displayContent.isLocal)"
 								[type]="'corner'"
@@ -103,12 +104,10 @@
 							</vtr-container-card>
 						</ng-container>
 						<ng-template #securityCard>
-							<vtr-material-state-card-container
-								[cardData]="securityInfo?.status !== undefined ? positionCData[securityInfo.status + 1] : positionCData[0]"
+							<vtr-material-state-card-container [cardData]="securityInfo?.status !== undefined ? positionCData[securityInfo.status + 1] : positionCData[0]"
 								order=3
 								cardId="dashboard-lnk-security-position-c">
-								<vtr-material-status-circle
-								    class="link-content"
+								<vtr-material-status-circle class="link-content"
 									[gradientColor]="securityInfo"
 									[statusText]="securityInfo?.statusText ? securityInfo?.statusText : '--'">
 								</vtr-material-status-circle>
@@ -178,11 +177,12 @@
 				</div>
 			</div>
 			<div class="row"
-				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status !== 2 && isWarrantyVisible">
+				*ngIf="warrantyService.hasFetchWarranty && deviceService.showWarranty && warrantyService.warrantyData?.isAvailable">
 				<div class="col-sm-12 col-md-12 pb-20 px-0">
-					<vtr-widget-dashboard-warranty [item]="warrantyData"
-						[isConnected]="isOnline">
-					</vtr-widget-dashboard-warranty>
+					<vtr-widget-warranty-detail [warrantyData]="warrantyService.warrantyData"
+						[warrantyUrl]="warrantyService.warrantyUrl"
+						[isOnline]="isOnline">
+					</vtr-widget-warranty-detail>
 				</div>
 			</div>
 

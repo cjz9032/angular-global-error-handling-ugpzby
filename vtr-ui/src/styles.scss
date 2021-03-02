@@ -4,6 +4,7 @@
 @import './app/beta/beta-styles.scss';
 
 @import './hw-settings-icomoon/icomoon-base64.scss';
+@import './assets/fonts/warranty/warranty-icon-font.scss';
 
 @import './app/material.scss';
 @import './app/material-gaming.scss';
@@ -2037,7 +2038,8 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.subscribe-modal {
+.subscribe-modal,
+.warranty-cart-modal {
 	max-width: 75% !important;
 	width: 90%;
 	height: calc(100vh - 3.5rem);

@@ -1,0 +1,154 @@
+@import '../../../../../app.theme.scss';
+
+@mixin theme($name, $bg, $width, $borderWidth, $borderColor, $circleWidth) {
+	.ui-warranty-indicator.#{$name} {
+		margin: 0 auto;
+		width: $width;
+		height: $width / 2;
+		background: $bg;
+		overflow: hidden;
+		position: relative;
+		.semicircle-content {
+			.rotate-base {
+				position: absolute;
+				left: 0;
+				top: $width / 2;
+				margin-top: $width / -2;
+				width: $width;
+				height: $width / 2;
+				border: $borderWidth / 2 solid $bg;
+				border-radius: $width $width 0 0;
+				background: linear-gradient(90deg, #008035 0%, #00a886 100%);
+				transform-origin: bottom;
+				transform: rotateZ(-180deg);
+				&.rotate-good {
+					transform: rotateZ(-120deg);
+				}
+				&.rotate-better {
+					transform: rotateZ(-60deg);
+				}
+				&.rotate-best {
+					transform: rotateZ(0deg);
+				}
+			}
+			.outer-circle {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: $width;
+				height: $width / 2;
+				border: $borderWidth solid $borderColor;
+				border-radius: $width $width 0 0;
+			}
+			.inner-circle {
+				position: absolute;
+				left: $circleWidth;
+				top: $circleWidth;
+				width: calc(#{$width} - #{$circleWidth} * 2);
+				height: calc(#{$width} - #{$circleWidth} * 2);
+				border: $borderWidth solid $borderColor;
+				border-radius: 50%;
+				background: $bg;
+			}
+			.line {
+				position: absolute;
+				left: $borderWidth / 4;
+				top: calc((#{$width} / 2 - #{$borderWidth}));
+				width: calc(#{$width} - #{$borderWidth} / 2);
+				height: $borderWidth * 2;
+				background: $borderColor;
+				transform: rotateZ(60deg);
+
+				&.line-2 {
+					transform: rotateZ(120deg);
+				}
+
+				@media #{$white-on-black} {
+					background: $light;
+				}
+
+				@media #{$black-on-white} {
+					background: $dark;
+				}
+			}
+			.indicator-lv {
+				position: absolute;
+				left: $width / 3;
+				top: 0;
+				width: $width / 3;
+				height: $width / 2;
+				transform-origin: bottom;
+				padding-top: $borderWidth * 1.2;
+				color: $grey_darker;
+
+				.text {
+					width: 100%;
+					font-size: $fontsize_xs2;
+					font-family: $font_family_semibold;
+					height: calc(#{$circleWidth} - #{$borderWidth});
+					line-height: calc(#{$circleWidth} - #{$borderWidth});
+				}
+
+				&.indicator-good {
+					transform: rotateZ(-60deg);
+				}
+				&.indicator-better {
+					transform: rotateZ(0);
+				}
+				&.indicator-best {
+					transform: rotateZ(60deg);
+				}
+			}
+		}
+		.level-content {
+			$padding: calc(#{$circleWidth} + #{$borderWidth} * 2.5);
+			position: absolute;
+			left: $padding;
+			bottom: 0;
+			width: calc(#{$width} - #{$padding} * 2);
+			height: calc(#{$width} / 2 - #{$padding});
+			.level-icon {
+				height: 5rem;
+			}
+			.level-name {
+				color: $grey_darker;
+			}
+		}
+		&.warranty-good.in-warranty {
+			.semicircle-content {
+				.indicator-lv {
+					&.indicator-good {
+						color: $light;
+					}
+				}
+			}
+		}
+		&.warranty-better {
+			.semicircle-content {
+				.indicator-lv {
+					&.indicator-good,
+					&.indicator-better {
+						color: $light;
+					}
+				}
+			}
+		}
+		&.warranty-best {
+			.semicircle-content {
+				.indicator-lv {
+					&.indicator-good,
+					&.indicator-better,
+					&.indicator-best {
+						color: $light;
+					}
+				}
+			}
+		}
+	}
+}
+
+$width: 26rem;
+$borderColor: #e2e8e8;
+$borderWidth: 0.6rem;
+$circleWidth: 3rem;
+@include theme(light-theme, $light, $width, $borderWidth, $borderColor, $circleWidth);

@@ -1,0 +1,9 @@
+<div class="ui-warranty-line d-flex align-items-center">
+	<div class="line"
+		[class.line-in-used]="round.isInUsed"
+		[class.line-renew]="round.isRenew"></div>
+	<div class="round-con">
+		<vtr-ui-warranty-round [round]="round"
+			[isLargeWidget]="isLargeWidget"></vtr-ui-warranty-round>
+	</div>
+</div>

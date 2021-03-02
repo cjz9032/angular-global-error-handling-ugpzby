@@ -17,6 +17,10 @@ import { FeedbackService } from 'src/app/services/feedback/feedback.service';
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ContentSource } from 'src/app/enums/content.enum';
+import { TranslateService } from '@ngx-translate/core';
+import { ModalWarrantyCartComponent } from '../../modal/modal-warranty-cart/modal-warranty-cart.component';
+import { MatDialog } from '@lenovo/material/dialog';
+import { WarrantyStatusEnum } from 'src/app/data-models/warranty/warranty.model';
 
 @Component({
 	selector: 'vtr-page-support',
@@ -25,10 +29,12 @@ import { ContentSource } from 'src/app/enums/content.enum';
 })
 export class PageSupportComponent implements OnInit, OnDestroy {
 	SupportContentStatus = SupportContentStatus;
-	title = 'support.common.getSupport';
+	WarrantyStatusEnum = WarrantyStatusEnum;
+	title = '';
 	searchWords = '';
 	searchCount = 1;
 	offlineConnection = 'offline-connection';
+	isCdDevice = false;
 	emptyArticles = {
 		leftTop: [],
 		middleTop: [],
@@ -145,6 +151,8 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		public warrantyService: WarrantyService,
 		public deviceService: DeviceService,
 		public localInfoService: LocalInfoService,
+		public translate: TranslateService,
+		private dialog: MatDialog,
 		private cmsService: CMSService,
 		private commonService: CommonService,
 		private licensesService: LicensesService,
@@ -152,20 +160,29 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		private loggerService: LoggerService,
 		private feedbackService: FeedbackService
 	) {
-		this.isOnline = this.commonService.isOnline;
 	}
 
 	ngOnInit() {
+		this.initSupportPage();
+	}
+
+	async initSupportPage() {
+		this.isOnline = this.commonService.isOnline;
+		this.isCdDevice = await this.deviceService.isCdDevice();
+		if (this.isCdDevice) {
+			this.title = this.translate.instant('support.common.getSupport');
+			this.fetchCMSArticleCategory();
+			this.fetchCMSContents();
+		} else {
+			this.title = this.translate.instant('common.menu.warrantySupport');
+			this.warrantyService.fetchWarrantyLevels();
+		}
 		this.notificationSubscription = this.commonService.notification.subscribe(
 			(response: AppNotification) => {
 				this.onNotification(response);
 			}
 		);
 		this.getProtocalActions();
-		this.getWarrantyInfo();
-
-		this.fetchCMSArticleCategory();
-		this.fetchCMSContents();
 
 		this.setShowList();
 	}
@@ -204,7 +221,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 									this.fetchCMSContents();
 								}
 							}, 2500);
-							this.getWarrantyInfo();
 						}
 					}
 					break;
@@ -231,6 +247,7 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 			}
 		);
 	}
+
 
 	setShowList() {
 		if (this.supportService.supportDatas) {
@@ -260,27 +277,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		});
 
 		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
-	}
-
-	getWarrantyInfo() {
-		const info = this.warrantyService.getWarrantyInfo();
-		if (info) {
-			info.subscribe((value) => {
-				if (value) {
-					this.warrantyData = {
-						info: {
-							startDate: value.startDate,
-							endDate: value.endDate,
-							status: value.status,
-							dayDiff: value.dayDiff,
-							url: this.warrantyService.getWarrantyUrl(),
-						},
-						cache: true,
-					};
-					this.warrantyYear = this.warrantyService.getRoundYear(value.dayDiff);
-				}
-			});
-		}
 	}
 
 	fetchCMSContents(lang?: string) {
@@ -453,6 +449,27 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 
 	openFeedbackModal() {
 		this.feedbackService.openFeedbackModal();
+	}
+
+
+	openWarrantyExploreOptions() {
+		if (!this.isOnline) {
+			return false;
+		}
+		if (this.warrantyService.warrantyData.isAvailable) {
+			this.openCartModal();
+		} else {
+			window.open(this.warrantyService.warrantyUrl, '_blank');
+		}
+	}
+
+	openCartModal() {
+		const modalWarrantyCart = this.dialog.open(ModalWarrantyCartComponent, {
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: ['warranty-cart-modal', 'modal-lg'],
+		});
 	}
 
 	search(value: string) {

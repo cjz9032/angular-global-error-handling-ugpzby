@@ -1,25 +1,25 @@
 <div ngbDropdown
 	#warrantyDrop="ngbDropdown"
 	class="d-inline-block dropdown-content"
-	*ngIf="warrantyData && warrantyData.info && (warrantyData.info.status === 0 || warrantyData.info.status === 1)">
+	*ngIf="warrantyService.hasFetchWarranty && deviceService.showWarranty && warrantyService.warrantyData?.isAvailable">
 	<div class="dropdown-btn"
 		id="header-warranty-icon"
 		tabindex="1"
-		attr.aria-label="lenovo warranty status: {{ warrantyData.info.status == 0 ? 'in warranty' : 'warranty expired'}}"
+		attr.aria-label="lenovo warranty status: {{ warrantyService.warrantyData?.warrantyStatus == WarrantyStatusEnum.InWarranty ? 'in warranty' : 'warranty expired'}}"
 		(keyup.enter)="$event.stopPropagation(); warrantyDrop.open();"
 		ngbDropdownToggle>
 		<div class="icon-con in-warranty"
-			*ngIf="warrantyData.info.status === 0">
+			*ngIf="warrantyService.warrantyData?.warrantyStatus == WarrantyStatusEnum.InWarranty">
 			<fa-icon [icon]="['fas', 'check']"></fa-icon>
 		</div>
 		<div class="icon-con"
-			*ngIf="warrantyData.info.status === 1">
+			*ngIf="warrantyService.warrantyData?.warrantyStatus == WarrantyStatusEnum.WarrantyExpired">
 			<fa-icon [icon]="['fas', 'exclamation']"></fa-icon>
 		</div>
 	</div>
 	<div class="header-warranty-dropdown"
-		[class.in-warranty]="warrantyData.info.status === 0"
-		[class.expired]="warrantyData.info.status === 1"
+		[class.in-warranty]="warrantyService.warrantyData?.warrantyStatus == WarrantyStatusEnum.InWarranty"
+		[class.expired]="warrantyService.warrantyData?.warrantyStatus == WarrantyStatusEnum.WarrantyExpired"
 		ngbDropdownMenu
 		aria-labelledby="header-warranty-icon">
 		<div class="position-top"></div>
@@ -27,13 +27,13 @@
 		<div class="dropdown-item"
 			ngbDropdownItem>
 			<div class="title pb-3"
-				*ngIf="warrantyData.info.status === 0"
+				*ngIf="warrantyService.warrantyData?.warrantyStatus == WarrantyStatusEnum.InWarranty"
 				id="header-in-warranty-title"
 				role="heading">
 				{{'support.warranty.titleInWarranty' | translate}}
 			</div>
 			<div class="title pb-3"
-				*ngIf="warrantyData.info.status === 1"
+				*ngIf="warrantyService.warrantyData?.warrantyStatus == WarrantyStatusEnum.WarrantyExpired"
 				id="header-expired-warranty-title"
 				role="heading">
 				{{'support.warranty.titleWarrantyExpired' | translate}}
@@ -44,13 +44,13 @@
 					<span id="header-warranty-start-date-name"
 						role="text">{{'support.warranty.startDate' | translate}}</span>
 					<b id="header-warranty-start-date-value"
-						role="text">{{ warrantyData.info.startDate | formatLocaleDate }}</b>
+						role="text">{{ warrantyService.warrantyData?.startDate | formatLocaleDate }}</b>
 				</div>
 				<div>
 					<span id="header-warranty-end-date-name"
 						role="text">{{'support.warranty.endDate' | translate}}</span>
 					<b id="header-warranty-end-date-value"
-						role="text">{{ warrantyData.info.endDate | formatLocaleDate }}</b>
+						role="text">{{ warrantyService.warrantyData?.endDate | formatLocaleDate }}</b>
 				</div>
 			</div>
 
@@ -63,9 +63,9 @@
 					buttonColor="gray"
 					[isFullWidth]="true"
 					[btnHeight]="true"
-					[inRedBackground]="warrantyData.info.status==1"
+					[inRedBackground]="warrantyService.warrantyData?.warrantyStatus == WarrantyStatusEnum.WarrantyExpired"
 					[label]="'support.warranty.viewWarrantyOptions' | translate"
-					[href]="warrantyData.info.url"></vtr-ui-button>
+					[href]="warrantyService.warrantyUrl"></vtr-ui-button>
 			</div>
 		</div>
 	</div>

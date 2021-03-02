@@ -25,6 +25,7 @@ import { faShareAlt } from '@fortawesome/pro-light-svg-icons/faShareAlt';
 import { faTicketAlt } from '@fortawesome/pro-light-svg-icons/faTicketAlt';
 import { faBriefcase } from '@fortawesome/pro-light-svg-icons/faBriefcase';
 import { faRobot } from '@fortawesome/pro-light-svg-icons/faRobot';
+import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
 import { faHeart as falHeart } from '@fortawesome/pro-light-svg-icons/faHeart';
 import { CommonPipeModule } from '../common/common-pipe.module';
 import { ModalLicenseComponent } from 'src/app/components/modal/modal-license/modal-license.component';
@@ -35,6 +36,8 @@ import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.mod
 import { LicensesService } from 'src/app/services/licenses/licenses.service';
 import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-close-button.module';
 import { PageContentLibraryComponent } from 'src/app/components/pages/page-content-library/page-content-library.component';
+import { WidgetWarrantyDetailModule } from 'src/app/components/widgets/widget-warranty-detail/widget-warranty-detail.module';
+import { ModalWarrantyCartComponent } from 'src/app/components/modal/modal-warranty-cart/modal-warranty-cart.component';
 
 
 @NgModule({
@@ -46,6 +49,7 @@ import { PageContentLibraryComponent } from 'src/app/components/pages/page-conte
 		ModalLicenseComponent,
 		ModalAboutComponent,
 		ModalFindUsComponent,
+		ModalWarrantyCartComponent,
 	],
 	imports: [
 		CommonModule,
@@ -57,6 +61,7 @@ import { PageContentLibraryComponent } from 'src/app/components/pages/page-conte
 		CommonWidgetModule,
 		SharedModule,
 		WidgetOfflineModule,
+		WidgetWarrantyDetailModule,
 		FeedbackModule,
 		PageLayoutModule,
 		MatTooltipModule,
@@ -65,8 +70,16 @@ import { PageContentLibraryComponent } from 'src/app/components/pages/page-conte
 		MatButtonModule,
 	],
 	providers: [SupportService, LicensesService],
-	exports: [UIArticleItemComponent, ContainerArticleComponent],
-	entryComponents: [ModalLicenseComponent, ModalAboutComponent, ModalFindUsComponent],
+	exports: [
+		UIArticleItemComponent,
+		ContainerArticleComponent,
+	],
+	entryComponents: [
+		ModalLicenseComponent,
+		ModalAboutComponent,
+		ModalFindUsComponent,
+		ModalWarrantyCartComponent,
+	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class SupportModule {
@@ -78,7 +91,8 @@ export class SupportModule {
 			faTicketAlt,
 			faBriefcase,
 			falHeart,
-			faRobot
+			faRobot,
+			faCheckCircle,
 		);
 	}
 }

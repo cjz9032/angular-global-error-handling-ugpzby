@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { WarrantyStatusEnum } from 'src/app/data-models/warranty/warranty.model';
+import { DeviceService } from 'src/app/services/device/device.service';
 import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 
 @Component({
@@ -6,30 +8,13 @@ import { WarrantyService } from 'src/app/services/warranty/warranty.service';
 	templateUrl: './ui-header-warranty.component.html',
 	styleUrls: ['./ui-header-warranty.component.scss'],
 })
-export class UiHeaderWarrantyComponent implements OnInit {
+export class UiHeaderWarrantyComponent {
 	@Input() pageParent: string;
-	warrantyData: any;
+	WarrantyStatusEnum = WarrantyStatusEnum;
 
-	constructor(private warrantyService: WarrantyService) {}
+	constructor(
+		public deviceService: DeviceService,
+		public warrantyService: WarrantyService,
+	) { }
 
-	ngOnInit() {
-		this.getWarrantyInfo();
-	}
-
-	getWarrantyInfo() {
-		this.warrantyService.getWarrantyInfo().subscribe((value) => {
-			if (value) {
-				this.warrantyData = {
-					info: {
-						startDate: value.startDate,
-						endDate: value.endDate,
-						status: value.status,
-						dayDiff: value.dayDiff,
-						url: this.warrantyService.getWarrantyUrl(),
-					},
-					cache: true,
-				};
-			}
-		});
-	}
 }

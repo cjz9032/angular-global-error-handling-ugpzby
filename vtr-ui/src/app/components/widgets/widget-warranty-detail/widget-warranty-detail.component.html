@@ -1,0 +1,63 @@
+<div class="vtr-widget-warranty w-100"
+	[class.is-large]="isLargeWidget">
+	<div class="status-content pb-24">
+		<div class="title text-capitalize"
+			id="warranty-card-title"
+			role="heading">
+			<span class="warranty-status-text">{{'warranty.warrantyStatusText' | translate}}</span>
+			<span *ngIf="warrantyData.warrantyStatus === WarrantyStatusEnum.InWarranty"
+				class="warranty-status mr-3 in-warranty">{{('warranty.inWarranty' | translate) + ' '}}</span>
+			<span *ngIf="warrantyData.warrantyStatus === WarrantyStatusEnum.WarrantyExpired"
+				class="warranty-status mr-3 out-of-warranty">{{('warranty.outOfWarranty' | translate) + ' '}}</span>
+			<a tabindex="1"
+				*ngIf="isLargeWidget"
+				class="view-details text-uppercase"
+				vtrMetrics
+				metricsItem="WarrantyViewDetails"
+				metricsEvent="FeatureClick"
+				[href]="warrantyUrl"
+				target="_blank">
+				<span class="label mr-3">{{'warranty.viewDetails' | translate}}</span>
+				<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+			</a>
+		</div>
+		<div class="font-size-xs pb-24 current-service"
+			id="warranty-card-current-service"
+			role="text">
+			<span class="current-service-text">{{'warranty.currentService' | translate}}</span>
+			<span *ngIf="!(warrantyData.remainingDays > 0 && warrantyData.remainingMonths === 0)"
+				class="pl-2 remain-status font-weight-bold">{{'warranty.monthsRemaining' | translate:{remainingMonths: warrantyData.remainingMonths} }}</span>
+			<span *ngIf="warrantyData.remainingDays > 0 && warrantyData.remainingMonths === 0"
+				class="pl-2 remain-status font-weight-bold">{{'warranty.lessThanOneMonth' | translate}}</span>
+		</div>
+		<div class="line-content d-flex"
+			*ngIf="warrantyData.firstRound">
+			<vtr-ui-warranty-round [round]="warrantyData.firstRound">
+			</vtr-ui-warranty-round>
+			<ul class="w-100 row">
+				<li class="li-item col"
+					*ngFor="let round of warrantyData.rounds">
+					<vtr-ui-warranty-line [round]="round"
+						[isLargeWidget]="isLargeWidget">
+					</vtr-ui-warranty-line>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="indicator-content pb-20 pt-4">
+		<vtr-ui-warranty-indicator [warrantyData]="warrantyData"></vtr-ui-warranty-indicator>
+		<div *ngIf="warrantyData.warrantyCode === 'depot' || warrantyData.warrantyCode === 'nowarranty'"
+			class="alert-recommends text-center text-uppercase font-size-xs2 font-weight-bold"
+			id="warranty-recommends-upgrading-text"
+			role="text">{{ 'warranty.recommendsUpgradingText' | translate}}</div>
+	</div>
+	<div *ngIf="!isLargeWidget"
+		class="button-box">
+		<vtr-ui-button linkId="warranty-explore-options"
+			metricsEvent="FeatureClick"
+			metricsItem="WarrantyExploreOptionsButton"
+			[isFullWidth]="true"
+			[label]="'warranty.exploreOptions' | translate"
+			[routerPath]="'/support'"></vtr-ui-button>
+	</div>
+</div>
