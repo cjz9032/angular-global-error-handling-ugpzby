@@ -6,9 +6,9 @@
 	}">
 	<div class="semicircle-content">
 		<div class="rotate-base"
-			[class.rotate-good]="warrantyData?.currentWarrantyLevel === 'good' && warrantyData.warrantyStatus === WarrantyStatusEnum.InWarranty"
-			[class.rotate-better]="warrantyData?.currentWarrantyLevel === 'better'"
-			[class.rotate-best]="warrantyData?.currentWarrantyLevel === 'best'"></div>
+			[class.rotate-good]="warrantyData.currentWarrantyLevel === 'good' && warrantyData.warrantyStatus === WarrantyStatusEnum.InWarranty"
+			[class.rotate-better]="warrantyData.currentWarrantyLevel === 'better'"
+			[class.rotate-best]="warrantyData.currentWarrantyLevel === 'best'"></div>
 		<div class="outer-circle"></div>
 		<div class="line line-1"></div>
 		<div class="line line-2"></div>
@@ -16,17 +16,17 @@
 		<div class="indicator-lv indicator-good"
 			id="warranty-indicator-level-good"
 			role="text">
-			<div class="text text-ellipsis text-center">{{warrantyData?.warrantyLevels[0]?.levelText || 'GOOD'}}</div>
+			<div class="text text-ellipsis text-center">{{warrantyData.warrantyLevels[0]?.levelText || 'GOOD'}}</div>
 		</div>
 		<div class="indicator-lv indicator-better"
 			id="warranty-indicator-level-beter"
 			role="text">
-			<div class="text text-ellipsis text-center">{{warrantyData?.warrantyLevels[1]?.levelText || 'BETTER'}}</div>
+			<div class="text text-ellipsis text-center">{{warrantyData.warrantyLevels[1]?.levelText || 'BETTER'}}</div>
 		</div>
 		<div class="indicator-lv indicator-best"
 			id="warranty-indicator-level-best"
 			role="text">
-			<div class="text text-ellipsis text-center">{{warrantyData?.warrantyLevels[2]?.levelText || 'BEST'}}</div>
+			<div class="text text-ellipsis text-center">{{warrantyData.warrantyLevels[2]?.levelText || 'BEST'}}</div>
 		</div>
 	</div>
 	<div class="level-content d-flex flex-column justify-content-between">

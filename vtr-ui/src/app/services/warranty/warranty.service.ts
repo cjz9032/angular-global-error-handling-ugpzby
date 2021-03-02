@@ -28,7 +28,33 @@ export class WarrantyService {
 
 	warrantyUrl = 'https://pcsupport.lenovo.com/warrantylookup';
 
-	warrantyData: WarrantyData;
+	warrantyData: WarrantyData = {
+		isAvailable: false,
+		warrantyStatus: WarrantyStatusEnum.WarrantyNotFound,
+		startDate: '',
+		endDate: '',
+		warrantyLevels: [
+			{
+				level: 'GOOD',
+				levelText: 'GOOD',
+			},
+			{
+				level: 'GOOD',
+				levelText: 'GOOD',
+			},
+			{
+				level: 'GOOD',
+				levelText: 'GOOD',
+			}
+		],
+		currentWarrantyLevel: '',
+		warrantyCode: '',
+		warrantyCodeText: '',
+		image: '',
+		remainingDays: 0,
+		remainingMonths: 0,
+		maxDuration: 0,
+	};
 
 	hasFetchWarranty = false;
 	isOnlineWarrantyLevelsAvailable = false;
@@ -226,11 +252,11 @@ export class WarrantyService {
 				const warrantyUrl = `${environment.pcsupportApiRoot}/api/v4/upsellAggregation/vantage/warrantySummaryInfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
 
 				const warrantyDataCache: WarrantyData = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyData);
-				if (warrantyDataCache && warrantyDataCache.isAvailable) {
-					this.warrantyData = warrantyDataCache;
-					this.commonService.sendNotification(LocalStorageKey.LastWarrantyData, this.warrantyData);
-					this.hasFetchWarranty = true;
-				}
+				// if (warrantyDataCache && warrantyDataCache.isAvailable) {
+				// 	this.warrantyData = warrantyDataCache;
+				// 	this.commonService.sendNotification(LocalStorageKey.LastWarrantyData, this.warrantyData);
+				// 	this.hasFetchWarranty = true;
+				// }
 
 				const uri = new Windows.Foundation.Uri(warrantyUrl);
 				const request = new Windows.Web.Http.HttpRequestMessage(

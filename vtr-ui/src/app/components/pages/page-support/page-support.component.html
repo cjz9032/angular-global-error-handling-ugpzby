@@ -25,14 +25,14 @@
 
 			<div class="row">
 				<div class="col col-12 px-0 pt-0 pb-24"
-					*ngIf="warrantyService.hasFetchWarranty && deviceService.showWarranty && warrantyService.warrantyData?.isAvailable">
+					*ngIf="warrantyService.hasFetchWarranty && deviceService.showWarranty && warrantyService.warrantyData.isAvailable">
 					<vtr-widget-warranty-detail [warrantyData]="warrantyService.warrantyData"
 						[warrantyUrl]="warrantyService.warrantyUrl"
 						[isOnline]="isOnline"
 						[isLargeWidget]="true"></vtr-widget-warranty-detail>
 				</div>
 				<div class="col col-12 px-0 pt-0 pb-24"
-					*ngIf="deviceService.showWarranty && warrantyService.warrantyData?.warrantyStatus === WarrantyStatusEnum.WarrantyNotFound">
+					*ngIf="deviceService.showWarranty && warrantyService.warrantyData.warrantyStatus === WarrantyStatusEnum.WarrantyNotFound">
 					<a tabindex="1"
 						[href]="warrantyService.warrantyUrl"
 						target="_blank"
@@ -98,7 +98,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="interested-text text-center mb-3 font-size-xs font-weight-bold">Interested in learning more?</div>
+						<div class="interested-text text-center mb-3 font-size-xs font-weight-bold">{{ 'warranty.learnMore' | translate }}</div>
 						<div class="explore-options text-center">
 							<a [tabindex]="isOnline ? 1 : -1"
 								class="text-uppercase font-size-xs2 font-weight-bold"
@@ -109,7 +109,7 @@
 								metricsItem="Support.WarrantyExploreOptions"
 								metricsEvent="FeatureClick"
 								(click)="openWarrantyExploreOptions()">
-								<span class="label mr-3">EXPLORE OPTIONS</span>
+								<span class="label mr-3 text-uppercase">{{ 'warranty.exploreOptions' | translate }}</span>
 								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 							</a>
 						</div>

@@ -177,7 +177,7 @@
 				</div>
 			</div>
 			<div class="row"
-				*ngIf="warrantyService.hasFetchWarranty && deviceService.showWarranty && warrantyService.warrantyData?.isAvailable">
+				*ngIf="warrantyService.hasFetchWarranty && deviceService.showWarranty && warrantyService.warrantyData.isAvailable">
 				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-warranty-detail [warrantyData]="warrantyService.warrantyData"
 						[warrantyUrl]="warrantyService.warrantyUrl"
