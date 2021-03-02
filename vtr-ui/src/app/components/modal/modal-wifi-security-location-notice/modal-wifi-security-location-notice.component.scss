@@ -6,9 +6,7 @@
 	padding: 2rem;
 	position: relative;
 	outline: none;
-	@media #{$high-contrast} {
-		border: 1px solid windowText;
-	}
+
 	h1 {
 		font-size: 2.6rem;
 		font-weight: $weight_regular;

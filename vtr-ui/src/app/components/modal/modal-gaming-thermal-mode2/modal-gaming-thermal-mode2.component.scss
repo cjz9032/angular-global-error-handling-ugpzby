@@ -22,13 +22,6 @@ button:focus {
 		.close {
 			text-shadow: none !important;
 			font-weight: normal !important;
-
-			&:focus {
-				@include default-button-border;
-				@media #{$high-contrast} {
-					@include default-button-border(highlight);
-				}
-			}
 		}
 	}
 	.modal-body {
@@ -245,6 +238,14 @@ button:focus {
 ::ng-deep body.focus-enable {
 	.is-gaming {
 		.gaming-modal-fun {
+			.modal-header {
+				.close:focus {
+					@include default-button-border;
+					@media #{$high-contrast} {
+						@include default-button-border(highlight);
+					}
+				}
+			}
 			.modal-body {
 				.item-radio-button:focus + label,
 				.oc-checkbox:focus {

@@ -468,10 +468,6 @@ export class HardwareScanService {
 					this.watcherProcess.emit(WatcherStepProcess.Stop);
 
 					if (response !== null && response.finalResultCode !== null) {
-						this.commonService.setSessionStorageValue(
-							SessionStorageKey.HwScanHasExportLogData,
-							true
-						);
 						this.executingModule = undefined;
 						this.lastResponse = response;
 						this.previousResultService.updatePreviousResultsResponse();

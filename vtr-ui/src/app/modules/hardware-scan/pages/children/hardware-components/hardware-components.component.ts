@@ -62,13 +62,13 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		) {
 			if (
 				this.hardwareScanService.getScanFinishedHeaderType() ===
-				HardwareScanFinishedHeaderType.RecoverBadSectors &&
+					HardwareScanFinishedHeaderType.RecoverBadSectors &&
 				this.recoverBadSectorsService.getLastRecoverResultStatus() !==
-				HardwareScanTestResult.Cancelled) {
+					HardwareScanTestResult.Cancelled
+			) {
 				return this.hardwareScanFeaturesService.isExportLogAvailable;
 			}
 			return (
-				this.hardwareScanFeaturesService.isExportLogAvailable &&
 				this.hardwareScanService.isFinalResultCodeValid() &&
 				this.hardwareScanService.getScanResult() !==
 					HardwareScanTestResult[HardwareScanTestResult.Cancelled]
@@ -76,6 +76,10 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 		}
 
 		return false;
+	}
+
+	public isExportLogAvailable(): boolean {
+		return this.hardwareScanFeaturesService.isExportLogAvailable;
 	}
 
 	// "Wrapper" value to be accessed from the HTML

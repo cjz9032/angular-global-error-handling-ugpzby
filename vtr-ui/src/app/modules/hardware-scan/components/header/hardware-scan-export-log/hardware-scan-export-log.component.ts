@@ -23,6 +23,7 @@ export class HardwareScanExportLogComponent implements OnInit {
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
 	@Input() metricsParam: string;
+	@Input() isDisabled = false;
 
 	public exportExtensions = Object.keys(ExportLogExtensions);
 	public isOnExportLog = false;
@@ -111,6 +112,14 @@ export class HardwareScanExportLogComponent implements OnInit {
 			.catch((error) => {
 				this.logger.exception('[ExportLogComponent] isPdfAvailable', error);
 			});
+	}
+
+	public getExportIcon(): string {
+		if (this.isDisabled) {
+			return 'assets/icons/hardware-scan/icon_hardware_export-log_disabled.svg';
+		} else {
+			return 'assets/icons/hardware-scan/icon_hardware_export-log.svg';
+		}
 	}
 
 	private exportResults() {

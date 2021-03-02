@@ -1,10 +1,18 @@
 @import './../../../app.theme.scss';
 
+@mixin modal-close-button($color) {
+	padding-top: 0.1rem;
+	&:focus {
+		padding-top: 0;
+		border-top: 0.1rem solid $color;
+	}
+}
+
 .close-button {
 	color: #496afd;
 	font-weight: 400;
 	font-size: 2.4rem;
-	line-height: 1;
+
 	border: none;
 	&:hover {
 		opacity: 0.7;
@@ -147,14 +155,21 @@
 		border-radius: 1rem;
 	}
 }
+
 .modal-header {
 	@media #{$black-on-white} {
-		border: 0.1rem solid $dark;
+		width: 100%;
 		border-top-right-radius: 1rem;
 		border-top-left-radius: 1rem;
+		.closeButton{
+			@include modal-close-button($dark);
+		}
 	}
 	@media #{$white-on-black} {
-		border: 0.1rem solid $light;
+		.closeButton{
+			@include modal-close-button($light);
+		}
+		width: 100%;
 		border-top-right-radius: 1rem;
 		border-top-left-radius: 1rem;
 	}
@@ -162,12 +177,10 @@
 
 .modal-body {
 	@media #{$black-on-white} {
-		border: 0.1rem solid $dark;
 		border-bottom-right-radius: 1rem;
 		border-bottom-left-radius: 1rem;
 	}
 	@media #{$white-on-black} {
-		border: 0.1rem solid $light;
 		border-bottom-right-radius: 1rem;
 		border-bottom-left-radius: 1rem;
 	}

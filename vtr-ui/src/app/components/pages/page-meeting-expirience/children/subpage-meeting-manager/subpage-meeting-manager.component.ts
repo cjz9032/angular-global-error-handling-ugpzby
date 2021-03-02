@@ -261,10 +261,24 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	}
 
 	launchPanel() {
+		const metricsData = {
+			ItemParent: this.metricsParent,
+			ItemType: 'FeatureClick',
+			ItemName: 'microphone-link',
+			ItemValue: 'launch',
+		};
+		this.metricsService.sendMetrics(metricsData);
 		this.audioVendorService.launchPanel();
 	}
 
 	launchDownloadLink() {
+		const metricsData = {
+			ItemParent: this.metricsParent,
+			ItemType: 'FeatureClick',
+			ItemName: 'microphone-link',
+			ItemValue: 'download',
+		};
+		this.metricsService.sendMetrics(metricsData);
 		this.audioVendorService.launchDownloadLink();
 	}
 

@@ -1,5 +1,6 @@
 <div class="article-main-body"
 	tabindex="-1"
+	aria-labelledby="article-title article-body-content"
 	#articleDetailModal
 	role="document">
 	<h1 id="article-dialog-basic-title"
@@ -35,7 +36,7 @@
 			<img [hidden]="!articleImage"
 				src="{{articleImage}}"
 				alt="">
-			<div class="article-body"
+			<div class="article-body" id="article-body-content"
 				[innerHTML]="articleBody ? articleBody : 'common.ui.loading' | translate"></div>
 			<div>
 				<ul>

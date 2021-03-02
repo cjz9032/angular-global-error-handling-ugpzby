@@ -15,17 +15,6 @@ export class ScanLogService {
 	}
 
 	public getScanLog(): Promise<any> {
-		const getScanLogPromise = this.hardwareScanBridge.getScanLog();
-
-		// Created a timeout function to return reject if IMController not send any update in 10s
-		// Uses this validation to avoid cases that IMController was closed unexpectedly
-		const timeoutPromise = new Promise((resolve, reject) => {
-			const timeout = setTimeout(() => {
-				clearTimeout(timeout);
-				reject('Timed out after 10s!');
-			}, 10000);
-		});
-
-		return Promise.race([getScanLogPromise, timeoutPromise]);
+		return this.hardwareScanBridge.getScanLog();
 	}
 }
