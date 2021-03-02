@@ -125,6 +125,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	headerMenuItems = [];
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	batterySettingsGroup = [];
+	powerSettingsGroup = []
 	batteryHealthAvailable = false;
 	conservationModeDescriptionOption = '1';
 	constructor(
@@ -143,6 +144,18 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		this.logger.info('Init Subpage Power');
+		this.machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
+		switch (this.machineType) {
+			case 1:
+				this.batterySettingsGroup = ['BatteryChargeThreshold', 'BatteryGaugeReset'];
+				this.powerSettingsGroup = ['AirplanePowerMode', 'AlwaysOnUSB', 'FlipToBoot', 'EasyResume'];
+				break;
+			case 0:
+				this.batterySettingsGroup = ['ConservationMode', 'RapidChargeMode', 'BatteryHealth'];
+				this.powerSettingsGroup = ['AlwaysOnUSB', 'FlipToBoot'];
+			default:
+				break;
+		}
 		this.initDataFromCache();
 		this.isDesktopMachine = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.DesktopMachine
@@ -154,7 +167,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			this.checkIsPowerPageAvailable(false, 'smartStandby');
 			this.checkIsPowerPageAvailable(false, 'battery');
 		}
-		this.machineType = this.localCacheService.getLocalCacheValue(LocalStorageKey.MachineType);
 		if (this.machineType === 1) {
 			// it is triggered if battery count changes (i.e. if battery is inserted/removed)
 			this.powerBatteryStatusEventRef = this.onPowerBatteryStatusEvent.bind(this);
@@ -644,8 +656,20 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	 *
 	 * @param addLink boolean (true: adds link, false: removes link if exists)
 	 */
-	updatePowerLinkStatus(addLink: boolean) {
-		this.isPowerSectionAvailable = this.isPowerSectionAvailable || addLink;
+	updatePowerLinkStatus(addLink: boolean, feature: string) {
+		if (addLink) {
+			this.powerSettingsGroup = this.addFeatureNameToList(
+				this.powerSettingsGroup,
+				feature
+			);
+		} else {
+			this.powerSettingsGroup = this.removeFeatureNameFromList(
+				this.powerSettingsGroup,
+				feature
+			);
+		}
+		this.isPowerSectionAvailable = this.powerSettingsGroup.length > 0;
+		// this.isPowerSectionAvailable = this.isPowerSectionAvailable || addLink;
 		this.checkIsPowerPageAvailable(this.isPowerSectionAvailable, 'power');
 		if (this.isPowerSectionAvailable) {
 			const powerObj = {
@@ -828,7 +852,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.then((value) => {
 					this.logger.info('getAlwaysOnUSBCapabilityThinkPad.then', value);
 					this.alwaysOnUSBStatus.available = value;
-					this.updatePowerLinkStatus(value);
+					this.updatePowerLinkStatus(value, 'AlwaysOnUSB');
 					if (value) {
 						this.getAlwaysOnUSBStatusThinkPad();
 					}
@@ -874,7 +898,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.getEasyResumeCapabilityThinkPad()
 				.then((value) => {
 					this.logger.info('getEasyResumeCapabilityThinkPad.then', value);
-					this.updatePowerLinkStatus(value);
+					this.updatePowerLinkStatus(value, 'EasyResume');
 					this.showEasyResumeSection = value;
 					if (value === true) {
 						this.getEasyResumeStatusThinkPad();
@@ -951,7 +975,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 
 	setAirplaneModeUI(airplaneMode: FeatureStatus) {
 		this.showAirplanePowerModeSection = airplaneMode.available;
-		this.updatePowerLinkStatus(this.showAirplanePowerModeSection);
+		this.updatePowerLinkStatus(this.showAirplanePowerModeSection, 'AirplanePowerMode');
 		this.toggleAirplanePowerModeFlag = airplaneMode.status;
 		if (this.airplanePowerCache === undefined) {
 			this.airplanePowerCache = new AlwaysOnUSBCapability();
@@ -1043,7 +1067,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				.then((featureStatus) => {
 					this.logger.info('getAlwaysOnUSBStatusIdeaNoteBook.then', featureStatus);
 					this.alwaysOnUSBStatus = featureStatus;
-					this.updatePowerLinkStatus(this.alwaysOnUSBStatus.available);
+					this.updatePowerLinkStatus(this.alwaysOnUSBStatus.available, 'AlwaysOnUSB');
 					this.toggleAlwaysOnUsbFlag = this.alwaysOnUSBStatus.status;
 					this.alwaysOnUSBCache.toggleState.status = this.toggleAlwaysOnUsbFlag;
 					this.localCacheService.setLocalCacheValue(
@@ -1155,6 +1179,9 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	}
 
 	setExpressChargingUI(expressCharging: FeatureStatus) {
+		if (!expressCharging) {
+			return;
+		}
 		this.expressChargingStatus.available = expressCharging.available;
 		this.expressChargingStatus.status = expressCharging.status;
 		this.updateBatteryLinkStatus(this.expressChargingStatus.available, 'RapidChargeMode');
@@ -1620,12 +1647,12 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 					+res.ErrorCode === FlipToStartErrorCodeEnum.Succeed &&
 					+res.Supported === FlipToStartSupportedEnum.Succeed
 				) {
-					this.updatePowerLinkStatus(true);
+					this.updatePowerLinkStatus(true, 'FlipToBoot');
 					this.showFlipToStartSection$.next(true);
 					this.toggleFlipToStartStatus =
 						+res.CurrentMode === FlipToStartCurrentModeEnum.SucceedEnable;
 				} else {
-					this.updatePowerLinkStatus(false);
+					this.updatePowerLinkStatus(false, 'FlipToBoot');
 				}
 			})
 			.catch((error) => {

@@ -27,7 +27,7 @@ export class BatteryDetailService {
 	currentOpenModal: string;
 	chargeThresholdInfo = new BehaviorSubject([new ChargeThreshold()]);
 	airplaneModeSubject = new BehaviorSubject(new FeatureStatus(false, false));
-	expressChargingSubject = new BehaviorSubject(new FeatureStatus(false, false));
+	expressChargingSubject = new BehaviorSubject(null);
 	setGaugeResetSectionSubject = new BehaviorSubject(false);
 	isShellAvailable = false;
 	private readonly battery: any;
