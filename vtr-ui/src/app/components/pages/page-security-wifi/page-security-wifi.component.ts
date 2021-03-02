@@ -296,6 +296,15 @@ export class PageSecurityWifiComponent implements OnInit, OnDestroy, AfterViewIn
 					this.dialogService.wifiSecurityLocationDialog(this.wifiSecurity);
 				});
 			}
+			setTimeout(() => {
+				if (
+					this.wifiSecurityService.isLWSEnabled !== undefined &&
+					!this.wifiSecurityService.wifiSecurity?.changeWifiSecurity
+				) {
+					const toggle = document.querySelector('#sa-ws-switch-input') as HTMLElement;
+					toggle.focus();
+				}
+			}, 500);
 		}
 	}
 

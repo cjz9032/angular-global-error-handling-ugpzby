@@ -24,6 +24,7 @@ import { MatButtonModule } from '@lenovo/material/button';
 import { MatCheckboxModule } from '@lenovo/material/checkbox';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { MatIconModule } from '@lenovo/material/icon';
+import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
 
 import { LocationNoticeModule } from './../location-notice/location-notice.module';
 import { SecurityAdvisorRoutingModule } from './security-advisor-routing.module';
@@ -76,7 +77,6 @@ import { WidgetMcafeeFeaturesComponent } from '../../components/pages/page-secur
 import { WidgetMcafeeGraphicIntroductionComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-graphic-introduction/widget-mcafee-graphic-introduction.component';
 import { WidgetMcafeePeaceOfMindComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-peace-of-mind/widget-mcafee-peace-of-mind.component';
 import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-content-card/widget-mcafee-content-card.component';
-
 
 @NgModule({
 	declarations: [
@@ -137,6 +137,7 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		MatTooltipModule,
 		MaterialModule,
 		MatIconModule,
+		MatSlideToggleModule,
 	],
 	providers: [DialogService],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],

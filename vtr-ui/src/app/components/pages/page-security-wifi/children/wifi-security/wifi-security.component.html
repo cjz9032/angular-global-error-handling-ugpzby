@@ -49,14 +49,17 @@
 								</div>
 								<div
 									class="col-5 align-items-center text-right sm-device-responsive row flex-wrap-reverse justify-content-end">
-									<vtr-ui-switch-onoff
-										[ngClass]="{'switch-disable': data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity}"
-										[value]="data.isLWSEnabled"
-										[ariaLabel]="data.isLWSEnabled ? wsEnabledLabel : wsDisabledLabel"
-										[onOffSwitchId]="'sa-ws-switch'"
+									<mat-slide-toggle #toggle
+										id="sa-ws-switch"
+										[aria-label]="data.isLWSEnabled ? wsEnabledLabel : wsDisabledLabel"
+										[checked]="data.isLWSEnabled"
 										[disabled]="data.isLWSEnabled === undefined || data.wifiSecurity?.changeWifiSecurity"
-										(toggle)="noticeToggleChange()">
-									</vtr-ui-switch-onoff>
+										(change)="noticeToggleChange(toggle)"
+										vtrMetrics
+										metricsEvent="featureClick"
+										metricsItem="sa-ws-switch"
+										[metricsValue]="!data.isLWSEnabled"
+									></mat-slide-toggle>
 								</div>
 							</div>
 						</div>
