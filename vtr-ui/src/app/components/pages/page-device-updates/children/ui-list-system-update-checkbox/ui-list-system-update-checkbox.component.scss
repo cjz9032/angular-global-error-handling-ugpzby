@@ -82,6 +82,14 @@
 					outline-offset: 0.2rem;
 				}
 			}
+
+			.item-title {
+				line-height: 2rem;
+				font-size: $fontsize_xs;
+				font-weight: $weight_600;
+				padding-top: 0rem;
+				color: $shade_blue;
+			}
 		}
 
 		.icon-check {
