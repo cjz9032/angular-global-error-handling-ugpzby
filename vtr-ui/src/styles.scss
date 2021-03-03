@@ -2705,6 +2705,12 @@ ngb-tooltip-window.schedule-scan.tooltip {
 	}
 	padding: 0 !important;
 
+	&.battery-modal-size {
+		@media #{$mediaquery_X44} {
+			max-width: 80% !important;
+		}
+	}
+
 	@media #{$breakpoint_xl2} {
 		max-width: 50% !important;
 	}
