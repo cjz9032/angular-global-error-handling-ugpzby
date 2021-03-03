@@ -164,7 +164,9 @@ export class WarrantyService {
 				const round: WarrantyDataRound = { index: i, mos: (i + 1) * 12 };
 				if (i === data.todayCircleIndex) {
 					round.isToday = true;
-					if (data.remainingMonths < 6) {
+					if (data.remainingMonths < 6 ||
+						data.warrantyCode === 'depot' ||
+						data.warrantyCode === 'nowarranty') {
 						round.isAlert = true;
 					}
 				}
