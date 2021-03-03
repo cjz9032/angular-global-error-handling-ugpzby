@@ -2,9 +2,6 @@ import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/co
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
-import { CommonService } from 'src/app/services/common/common.service';
 import { ConfigService } from 'src/app/services/config/config.service';
 @Component({
 	selector: 'vtr-page-meeting-expirience',
@@ -14,15 +11,7 @@ import { ConfigService } from 'src/app/services/config/config.service';
 export class PageMeetingExpirienceComponent implements OnInit, OnDestroy {
 	@ViewChild('hsRouterOutlet', { static: false }) hsRouterOutlet: ElementRef;
 
-	constructor(
-		private translate: TranslateService,
-		private configService: ConfigService,
-		private commonService: CommonService
-	) {
-		this.menuItems.forEach((m) => {
-			m.label = this.translate.instant(m.label);
-		});
-	}
+	constructor(private translate: TranslateService, private configService: ConfigService) {}
 
 	routerSubscription: Subscription;
 	activeElement: HTMLElement;
@@ -32,15 +21,9 @@ export class PageMeetingExpirienceComponent implements OnInit, OnDestroy {
 	parentPath = 'smb/meeting-experience';
 	private router: Router;
 	menuItems = [];
-	menuItemSubscription: Subscription;
 
 	ngOnInit(): void {
 		this.getMenuItems();
-		this.menuItemSubscription = this.commonService.notification.subscribe(
-			(notification: AppNotification) => {
-				this.onNotification(notification);
-			}
-		);
 		this.routerSubscription = this.router.events.subscribe((evt) => {
 			if (!(evt instanceof NavigationEnd)) {
 				return;
@@ -49,9 +32,6 @@ export class PageMeetingExpirienceComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		if (this.menuItemSubscription) {
-			this.menuItemSubscription.unsubscribe();
-		}
 		if (this.routerSubscription) {
 			this.routerSubscription.unsubscribe();
 		}
@@ -68,17 +48,5 @@ export class PageMeetingExpirienceComponent implements OnInit, OnDestroy {
 			m.label = this.translate.instant(m.label);
 			m.path = m.path.split('/')[m.path.split('/').length - 1];
 		});
-	}
-
-	private onNotification(notification: AppNotification) {
-		if (notification) {
-			switch (notification.type) {
-				case MenuItemEvent.MenuItemChange:
-					this.getMenuItems();
-					break;
-				default:
-					break;
-			}
-		}
 	}
 }
