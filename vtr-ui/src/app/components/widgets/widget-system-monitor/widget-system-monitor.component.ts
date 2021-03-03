@@ -277,7 +277,8 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				}
 
 				// Get GPU/Memory Info
-				if (this.isAvailiableValue(hwInfo.cpuModuleName) && this.gpuModuleName !== hwInfo.gpuModuleName) {
+				if (this.isAvailiableValue(hwInfo.cpuModuleName) && (this.gpuModuleName !== hwInfo.gpuModuleName
+					|| this.ramModuleName !== hwInfo.gpuModuleName)) {
 					this.gpuModuleName = hwInfo.gpuModuleName;
 					this.localCacheService.setLocalCacheValue(LocalStorageKey.gpuModuleName, this.gpuModuleName);
 					this.ramModuleName = hwInfo.gpuModuleName;
