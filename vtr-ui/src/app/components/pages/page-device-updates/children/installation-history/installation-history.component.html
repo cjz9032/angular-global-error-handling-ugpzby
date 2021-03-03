@@ -11,12 +11,13 @@
 							[dir]="'dir' | translate">
 							<li class="list-heading">
 								<div class="container-fluid">
-									<div class="row align-items-center">
-										<div class="col col-9">
-											<div class="item-text">{{'systemUpdates.installationHistory.name' | translate}}</div>
+									<div class="row flex-nowrap align-items-center">
+										<div class="col-auto mr-auto">
+											<div class="header-text">{{'systemUpdates.installationHistory.name' | translate}}</div>
 										</div>
-										<div class="col col-3 sort-order">
-											<a id="su_installation_update_sort_order"
+										<div class="col-auto sort-order">
+											<div id="su_installation_update_sort_order"
+												class="sort-link"
 												role="link"
 												tabindex="0"
 												(keydown.enter)="toggleSortOrder()"
@@ -28,7 +29,7 @@
 													<fa-icon *ngIf="sortAsc"
 														[icon]="['fas', 'caret-down']"></fa-icon>
 												</div>
-											</a>
+											</div>
 										</div>
 									</div>
 								</div>
