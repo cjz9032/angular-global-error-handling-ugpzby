@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.40](https://bitbucket.tc.lenovo.com///compare/v1.10.39...v1.10.40) (2021-03-03)
+
+
+### Features
+
+* **warranty:** VAN-25036 VAN-25038 new warranty UI ([f7430b6](https://bitbucket.tc.lenovo.com///commit/f7430b62a03d1070460f8b953a85eac07cb600e1))
+
+
+### Bug Fixes
+
+* **Dashlane:** VAN-26477 fixed no response if click download btn ([d33149a](https://bitbucket.tc.lenovo.com///commit/d33149a714d347a4f863269642d293a606ccae02))
+* replace slide toggle with mat-slide-toggle ([053a3b5](https://bitbucket.tc.lenovo.com///commit/053a3b508383f9db67d7f19fb23aa153e18a5f78))
+
 ### [1.10.39](https://bitbucket.tc.lenovo.com///compare/v1.10.38...v1.10.39) (2021-03-02)
 
 ### [1.10.38](https://bitbucket.tc.lenovo.com///compare/v1.10.37...v1.10.38) (2021-03-02)
