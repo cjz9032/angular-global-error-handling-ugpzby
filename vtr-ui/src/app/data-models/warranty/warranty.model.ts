@@ -4,6 +4,13 @@ export enum WarrantyStatusEnum {
 	WarrantyNotFound = 'warranty not found',
 }
 
+export enum WarrantyCodeEnum {
+	Depot = 'depot',
+	NoWarranty = 'nowarranty',
+	Onsite = 'onsite',
+	Premier = 'premier',
+}
+
 export enum WarrantyLevelEnum {
 	Good = 'good',
 	Better = 'better',
@@ -53,7 +60,7 @@ export interface WarrantyData {
 		}
 	];
 	currentWarrantyLevel: string;
-	warrantyCode: string;
+	warrantyCode: string | WarrantyCodeEnum;
 	warrantyCodeText: string;
 	image: string;
 	remainingDays: number;
@@ -72,7 +79,7 @@ export interface WarrantyLevel {
 	id: string;
 	isRecommended: boolean;
 	levelText: string;
-	warrantyCode: string;
+	warrantyCode: string | WarrantyCodeEnum;
 	warrantyCodeText: string;
 	points: string[];
 }
