@@ -27,6 +27,212 @@
 			}
 		}
 
+		.warranty-not-found-card {
+			display: block;
+			border-radius: $border_radius;
+			box-shadow: $drop_shadow;
+			width: 100%;
+			height: 20rem;
+			background-image: url('^assets/images/support/Warranty-Image-Banner.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			color: $light;
+			.label {
+				padding: $padding_content;
+				text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
+				font-size: $fontsize_xl2;
+				font-weight: $weight_regular;
+			}
+			&:hover {
+				color: $light;
+			}
+		}
+
+		.warranty-levels-content {
+			border-radius: $border_radius;
+			color: $dark;
+			background-color: $light;
+			box-shadow: $drop_shadow;
+			padding: 2.4rem 2.4rem 3rem 2.4rem;
+			letter-spacing: 0;
+
+			@media #{$white-on-black} {
+				border: 0.1rem solid $light;
+				background: $dark;
+			}
+
+			@media #{$black-on-white} {
+				border: 0.1rem solid $dark;
+				background: $light;
+			}
+
+			.title {
+				font-size: $fontsize_xl;
+				font-family: $font_family_semibold;
+				max-width: 60rem;
+				color: $grey_darker;
+			}
+			.sub-title {
+				font-size: $fontsize_xs;
+				font-family: $font_family_semilight;
+				color: $grey_darker;
+			}
+			.level-card-container {
+				width: calc(100% + 2.4rem);
+				margin-left: -1.2rem;
+				.level-card-content {
+					position: relative;
+					padding-top: 3rem;
+					padding: 3rem 1.2rem 0;
+					width: 33.3333%;
+					.recommended {
+						position: absolute;
+						left: 1.2rem;
+						top: 0.25rem;
+						z-index: 1;
+						width: calc(100% - 2.4rem);
+						height: 4rem;
+						background: $menu_hover;
+						border-radius: 0.5rem;
+						line-height: 2.75rem;
+						text-align: center;
+						color: $light;
+						font-size: $fontsize_xs;
+						font-weight: $weight_bold;
+
+						@media #{$white-on-black} {
+							border: 0.1rem solid $light;
+						}
+
+						@media #{$black-on-white} {
+							border: 0.1rem solid $dark;
+						}
+					}
+					.level-card {
+						padding: 2rem;
+						border: 0.1rem solid $note_border;
+						border-radius: 0.5rem;
+						position: relative;
+						z-index: 2;
+						width: 100%;
+						height: 100%;
+						background-image: linear-gradient(180deg, $solitude 0%, $grey_lighter 100%);
+						background-color: $solitude;
+
+						@media #{$white-on-black} {
+							background: $dark;
+						}
+
+						@media #{$black-on-white} {
+							background: $light;
+						}
+
+						.level-icon {
+							height: 7rem;
+							line-height: 7rem;
+							margin-bottom: 1rem;
+							i {
+								font-size: 6.8rem;
+								color: $menu_hover;
+							}
+						}
+
+						.level-name {
+							font-size: $fontsize_xs;
+							min-height: 4rem;
+							color: $grey_darker;
+							font-weight: $weight_bold;
+							margin-bottom: 1em;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+						}
+
+						.level-detail {
+							padding-top: 1rem;
+							.level-detail-item {
+								padding-top: 0.8rem;
+								&:not(:last-child) {
+									.level-detail-label {
+										border-bottom: 0.1rem solid $shade_lighter;
+									}
+								}
+								.icon-bkg {
+									flex-shrink: 0;
+									border-radius: 50%;
+									height: 2rem;
+									width: 2rem;
+									margin-right: 1rem;
+									border: 0.1rem solid $green_darker;
+									text-align: center;
+									background-color: $green_dark;
+									@include high-contrast-status-icon-and-badge;
+									fa-icon {
+										font-size: 1.2rem;
+										line-height: 1.8rem;
+										color: $light;
+										@include high-contrast-color;
+									}
+									@include high-contrast-status-icon-and-badge;
+								}
+								.level-detail-label {
+									font-size: $fontsize_xs;
+									color: $grey_darker;
+									width: 100%;
+									padding-bottom: 0.8rem;
+									span {
+										font-weight: bold;
+									}
+								}
+							}
+						}
+					}
+					&:nth-child(2) {
+						@media #{$breakpoint_xl} {
+							margin-top: -1.4rem;
+							margin-bottom: 1.6rem;
+						}
+						@media #{$breakpoint_lg} {
+							margin-bottom: 0;
+						}
+						@media #{$breakpoint_md} {
+							margin-top: -1.4rem;
+							margin-bottom: 1.6rem;
+						}
+					}
+				}
+			}
+			.explore-options {
+				a {
+					color: $menu_hover;
+					.label {
+						text-decoration: underline;
+					}
+					&:hover {
+						color: $main;
+						text-decoration: none;
+						.label {
+							text-decoration: none;
+						}
+					}
+					&.is-disabled,
+					&.is-disabled:hover {
+						color: $main_shade;
+						cursor: default !important;
+						* {
+							cursor: default !important;
+						}
+						.label {
+							text-decoration: none;
+						}
+						&:focus {
+							outline: none;
+						}
+					}
+				}
+			}
+		}
+
 		.quick-access {
 			border-radius: $border_radius;
 			box-shadow: $drop_shadow;

@@ -1,4 +1,4 @@
-<vtr-page-layout [title]="'support.common.getSupport' | translate"
+<vtr-page-layout [title]="title"
 	[textId]="'support'"
 	[pageCssClass]="'support'"
 	[shiftLeftUp]="true"
@@ -8,7 +8,118 @@
 	[isInnerBack]="isCategoryArticlesShow"
 	(innerBack)="onInnerBack()">
 
-	<left-content>
+	<left-content *ngIf="!isCdDevice">
+		<div class="container-fluid">
+			<div class="row"
+				*ngIf="!isOnline">
+				<div class="col col-12 px-0 pt-0 pb-24">
+					<vtr-widget-offline-info [isButtonVisible]="false"
+						[isSubtitleVisible]="false"
+						[title]="'dashboard.offlineInfo.title' | translate"
+						[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+						[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+						[offlineConnection]="offlineConnection">
+					</vtr-widget-offline-info>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-12 px-0 pt-0 pb-24"
+					*ngIf="warrantyService.hasFetchWarranty && deviceService.showWarranty && warrantyService.warrantyData.isAvailable">
+					<vtr-widget-warranty-detail [warrantyData]="warrantyService.warrantyData"
+						[warrantyUrl]="warrantyService.warrantyUrl"
+						[isOnline]="isOnline"
+						[isLargeWidget]="true"></vtr-widget-warranty-detail>
+				</div>
+				<div class="col col-12 px-0 pt-0 pb-24"
+					*ngIf="deviceService.showWarranty && warrantyService.warrantyData.warrantyStatus === WarrantyStatusEnum.WarrantyNotFound">
+					<a tabindex="1"
+						[href]="warrantyService.warrantyUrl"
+						target="_blank"
+						role="link"
+						class="warranty-not-found-card">
+						<div class="label text-ellipsis">{{'warranty.makeSureNeedCoverage' | translate}}</div>
+					</a>
+				</div>
+				<div class="col col-12 px-0 pt-0 pb-24"
+					*ngIf="warrantyService.hasFetchWarrantyLevels">
+					<div class="warranty-levels-content">
+						<h3 class="title mb-3"
+							id="warranty-upgrade-levels-title">
+							{{'warranty.upgradeLevels.title' | translate}}
+						</h3>
+						<div class="sub-title mb-0 mb-md-4 mb-lg-0 mb-xl-4"
+							id="warranty-upgrade-levels-sub-title"
+							role="text">
+							{{'warranty.upgradeLevels.subTitle' | translate}}
+						</div>
+						<div class="row level-card-container no-gutters mb-24">
+							<div class="level-card-content level-card-content-{{i}} col-12 col-md-4 col-lg-12 col-xl-4"
+								*ngFor="let levelItem of warrantyService.warrantyLevels; let i = index">
+								<div *ngIf="levelItem.isRecommended"
+									id="warranty-upgrade-recommended-text"
+									role="text"
+									class="recommended">{{'warranty.upgradeLevels.recommended' | translate}}</div>
+								<div class="row no-gutters level-card text-center">
+									<div class="col-6 col-md-12 col-lg-6 col-xl-12 pr-4 pr-md-0 pr-lg-4 pr-xl-0">
+										<div class="level-icon">
+											<i class="warranty-icon-font warranty-font-{{levelItem.warrantyCode}}"></i>
+										</div>
+										<div class="level-name"
+											id="warranty-upgrade-level-{{levelItem.id}}-level-name"
+											role="text">{{levelItem.warrantyCodeText}}</div>
+										<div class="level-button w-100">
+											<button mat-customize-button
+												id="warranty-level-button-{{levelItem.id}}"
+												color="primary"
+												tabindex="1"
+												[disabled]="!isOnline"
+												class="w-100 uppercase btn-size-md m-0"
+												(click)="openWarrantyExploreOptions()"
+												[matTooltip]="levelItem.levelText"
+												matTooltipClass="vtr-system-tooltip"
+												vtrMetrics
+												metricsEvent="FeatureClick"
+												[metricsItem]="'WarrantyLevelButton.' + levelItem.id">{{levelItem.levelText}}</button>
+										</div>
+									</div>
+									<div class="col-6 col-md-12 col-lg-6 col-xl-12 level-detail text-left">
+										<div class="level-detail-item d-flex"
+											*ngFor="let point of levelItem.points; let pointIndex = index">
+											<div class="icon-bkg">
+												<fa-icon [icon]="['fas', 'check']"></fa-icon>
+											</div>
+											<div class="level-detail-label"
+												id="warranty-upgrade-level-{{levelItem.id}}-level-detail-{{pointIndex}}"
+												role="text"
+												[innerHtml]="point"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="interested-text text-center mb-3 font-size-xs font-weight-bold">{{ 'warranty.upgradeLevels.learnMore' | translate }}</div>
+						<div class="explore-options text-center">
+							<a [tabindex]="isOnline ? 1 : -1"
+								class="text-uppercase font-size-xs2 font-weight-bold"
+								[class.is-disabled]="!isOnline"
+								id="warranty-upgrade-explore-options"
+								role="link"
+								vtrMetrics
+								metricsItem="Support.WarrantyExploreOptions"
+								metricsEvent="FeatureClick"
+								(click)="openWarrantyExploreOptions()">
+								<span class="label mr-3 text-uppercase">{{ 'warranty.exploreOptions' | translate }}</span>
+								<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</left-content>
+	<left-content *ngIf="isCdDevice">
 		<div class="container-fluid">
 			<div class="row"
 				*ngIf="!isOnline">
@@ -71,8 +182,7 @@
 
 									<div class="item-button"
 										[matTooltip]="'support.quickAccess.seeArticles' | translate"
-										matTooltipClass="vtr-system-tooltip"
-									>
+										matTooltipClass="vtr-system-tooltip">
 										{{ 'support.quickAccess.seeArticles' | translate }}</div>
 								</div>
 							</div>
@@ -144,15 +254,6 @@
 
 	<right-content>
 		<div class="container-fluid">
-			<div class="row"
-				*ngIf="warrantyData && warrantyData.info && warrantyData.info.status >= 0 && deviceService.showWarranty">
-				<div class="col col-12 px-0 pt-0 pb-24">
-					<vtr-widget-warranty [item]="warrantyData"
-						[year]="warrantyYear"
-						[isConnected]="isOnline"></vtr-widget-warranty>
-				</div>
-			</div>
-
 			<div class="row">
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-widget-feedback [title]="'dashboard.feedback.title' | translate"
@@ -197,7 +298,7 @@
 				</div>
 			</div>
 			<div class="row d-none d-lg-block"
-				*ngIf="articlesType !== 'loading' && articles.right.length > 0">
+				*ngIf="isCdDevice && articlesType !== 'loading' && articles.right.length > 0">
 				<div class="col col-12 px-0 pt-0 pb-24">
 					<vtr-container-article [items]="articles.right"
 						*ngIf="isOnline"

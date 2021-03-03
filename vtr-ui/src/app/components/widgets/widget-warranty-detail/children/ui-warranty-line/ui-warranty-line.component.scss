@@ -1,0 +1,32 @@
+@import '../../../../../app.theme.scss';
+
+.ui-warranty-line {
+	display: flex;
+	width: 100%;
+	.line {
+		width: 100%;
+		height: 0.2rem;
+		background-color: $green_darker;
+		&.line-in-used {
+			opacity: 0.5;
+		}
+
+		&.line-renew {
+			height: 0.1rem;
+			background-color: $main_darker;
+		}
+
+		@media #{$white-on-black} {
+			background: $light;
+		}
+
+		@media #{$black-on-white} {
+			background: $dark;
+		}
+	}
+	.round-con {
+		flex-shrink: 0;
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+}

@@ -76,12 +76,6 @@ export class SupportService {
 		return this.sn;
 	}
 
-	public getWarranty(serialnumber: string): Promise<any> {
-		if (this.warranty) {
-			return this.warranty.getWarrantyInformation(serialnumber);
-		}
-	}
-
 	sendMetricsAsync(data: any) {
 		if (this.metrics && this.metrics.sendAsync) {
 			this.metrics.sendAsync(data);

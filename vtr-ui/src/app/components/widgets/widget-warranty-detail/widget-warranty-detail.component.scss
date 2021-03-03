@@ -1,0 +1,115 @@
+@import '../../../app.theme.scss';
+
+.vtr-widget-warranty {
+	border-radius: $border_radius;
+	background-size: cover;
+	color: $dark;
+	background-color: $light;
+	box-shadow: $drop_shadow;
+	padding: 2.4rem;
+	letter-spacing: 0;
+
+	@media #{$white-on-black} {
+		border: 0.1rem solid $light;
+		background: $dark;
+	}
+
+	@media #{$black-on-white} {
+		border: 0.1rem solid $dark;
+		background: $light;
+	}
+
+	.title {
+		color: $grey_darker;
+		font-size: $fontsize_xl;
+		.warranty-status-text,
+		.warranty-status {
+			font-family: $font_family_semibold;
+		}
+
+		.warranty-status {
+			&.in-warranty {
+				color: $green_darker;
+			}
+		}
+		.view-details {
+			font-size: $fontsize_xs2;
+			font-weight: $weight_bold;
+			color: $grey_darker;
+			white-space: nowrap;
+			.label {
+				text-decoration: underline;
+			}
+			&:hover {
+				color: $main;
+				text-decoration: none;
+				.label {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.current-service {
+		color: $grey_darker;
+		padding-top: 0.5rem;
+		.current-service-text {
+			font-family: $font_family_semilight;
+		}
+	}
+
+	.remain-status {
+		color: $green_darker;
+	}
+
+	.line-content {
+		padding-top: 5rem;
+		ul {
+			list-style: none;
+		}
+	}
+
+	.alert-recommends {
+		padding-top: 2rem;
+		color: $alert_border;
+	}
+
+	&.is-large {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.status-content {
+			width: 100%;
+			padding-right: 4rem;
+		}
+		.indicator-content {
+			min-width: 36rem;
+		}
+		@media #{$breakpoint_xl2} {
+			.status-content {
+				padding-right: 2rem;
+			}
+			.indicator-content {
+				min-width: 28rem;
+			}
+		}
+		@media #{$breakpoint_xl} {
+			display: block;
+			.status-content {
+				padding-right: 0;
+			}
+		}
+		@media #{$breakpoint_lg} {
+			display: flex;
+			.status-content {
+				padding-right: 3rem;
+			}
+		}
+		@media #{$breakpoint_md} {
+			display: block;
+			.status-content {
+				padding-right: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+<button mat-dialog-close
+	class="position-relative float-right closeButton"
+	id="warranty-cart-dialog-close-button"
+	attr.aria-label="{{'common.ui.close' | translate}}"
+	(click)="closeModal()"
+	vtrMetrics
+	metricsItem="btn.close"
+	metricsEvent="FeatureClick"
+	metricsParent="Dialog.Warranty.Cart">
+	<mat-icon class="icon close-icon">close</mat-icon>
+</button>
+<div class="modal-warranty-cart">
+	<div class="container-fluid">
+		<div class="payment-options">
+			<iframe id="warranty-cart-payment-iframe"
+				[src]="paymentUrl | sanitize : 'resourceUrl'"
+				sandbox="allow-forms allow-scripts allow-same-origin"
+				frameborder="0"></iframe>
+		</div>
+	</div>
+</div>

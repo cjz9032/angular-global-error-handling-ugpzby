@@ -1,0 +1,134 @@
+@import '../../../../../app.theme.scss';
+
+.ui-warranty-round {
+	width: 2.4rem;
+	position: relative;
+	.round {
+		width: 2.4rem;
+		height: 2.4rem;
+		border-radius: 50%;
+		border: 0.1rem solid $green_darker;
+		background-color: $green_darker;
+		&.round-in-used {
+			opacity: 0.5;
+		}
+
+		&.round-renew {
+			border: 0.1rem solid $grey_darker;
+			background-color: transparent;
+		}
+		@media #{$white-on-black} {
+			border: 0.1rem solid $light;
+			background-color: $light;
+			&.round-renew {
+				background-color: transparent;
+			}
+		}
+
+		@media #{$black-on-white} {
+			border: 0.1rem solid $dark;
+			background-color: $dark;
+			&.round-renew {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.text {
+		color: $grey_darker;
+	}
+
+	.text-top {
+		position: absolute;
+		left: 0;
+		top: -5rem;
+		width: 100%;
+		.start,
+		.end {
+			position: absolute;
+		}
+		.end.is-last {
+			right: 0;
+			text-align: right;
+		}
+	}
+
+	.text-bottom-content {
+		width: 100%;
+		text-align: center;
+		position: relative;
+		height: 1.5rem;
+		.text-bottom {
+			position: absolute;
+			left: 50%;
+			top: 1rem;
+			width: 6rem;
+			margin-left: -3rem;
+			.icon-con {
+				margin-left: 0.3rem;
+				@media #{$white-on-black} {
+					filter: grayscale(100%);
+				}
+
+				@media #{$black-on-white} {
+					filter: grayscale(100%);
+				}
+			}
+			@media #{$breakpoint_xl2} {
+				width: 5rem;
+				margin-left: -2.5rem;
+				.icon-con {
+					margin-left: 0;
+				}
+			}
+			@media #{$breakpoint_lg} {
+				width: 6rem;
+				margin-left: -3rem;
+				.icon-con {
+					margin-left: 0.3rem;
+				}
+			}
+			@media #{$breakpoint_sm} {
+				width: 5rem;
+				margin-left: -2.5rem;
+				.icon-con {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+	&.out-is-large {
+		.text-bottom-content {
+			.text-bottom {
+				@media #{$breakpoint_xl2} {
+					width: 6rem;
+					margin-left: -3rem;
+					.icon-con {
+						margin-left: 0.3rem;
+					}
+				}
+				@media #{$breakpoint_lg} {
+					width: 5rem;
+					margin-left: -2.5rem;
+					.icon-con {
+						margin-left: 0;
+					}
+				}
+				@media #{$breakpoint_md} {
+					width: 6rem;
+					margin-left: -3rem;
+					.icon-con {
+						margin-left: 0.3rem;
+					}
+				}
+				@media #{$breakpoint_sm} {
+					width: 5rem;
+					margin-left: -2.5rem;
+					.icon-con {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+<div class="ui-warranty-round"
+	[class.out-is-large]="isLargeWidget">
+	<div class="text text-top font-size-xs2">
+		<div *ngIf="round.isStart && round.startDate"
+			class="start">
+			<div class="font-weight-bold"
+				id="warranty-card-start-date-title"
+				role="text">{{'warranty.start' | translate}}</div>
+			<div id="warranty-card-start-date-status"
+				role="text">{{ round.startDate | formatLocaleDate }}</div>
+		</div>
+		<div *ngIf="round.isEnd && round.endDate"
+			class="end"
+			[class.is-last]="round.isLast">
+			<div class="font-weight-bold"
+				id="warranty-card-end-date-title"
+				role="text">{{'warranty.end' | translate}}</div>
+			<div id="warranty-card-end-date-status"
+				role="text">{{ round.endDate | formatLocaleDate }}</div>
+		</div>
+	</div>
+	<div class="round"
+		[class.round-in-used]="round.isInUsed"
+		[class.round-renew]="round.isRenew"></div>
+	<div class="text-bottom-content font-size-xs2 font-weight-bold pt-2">
+		<div *ngIf="!round.isToday && round.mos > 0"
+			class="text text-bottom"
+			id="warranty-card-line-mos-{{round.index}}"
+			role="text">{{'warranty.nMos' | translate: {monthValue: round.mos} }}</div>
+		<div *ngIf="round.isToday"
+			class="text text-bottom">
+			<span id="warranty-card-line-today"
+				role="text">{{'warranty.today' | translate}}</span>
+			<span *ngIf="round.isAlert"
+				class="icon-con">
+				<img [src]=" 'assets/icons/icon-alert.svg' | svgInline | async" />
+			</span>
+		</div>
+	</div>
+</div>
