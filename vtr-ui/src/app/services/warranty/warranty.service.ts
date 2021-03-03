@@ -244,7 +244,7 @@ export class WarrantyService {
 		this.deviceService.getMachineInfo().then(async (machineInfo) => {
 			if (machineInfo && machineInfo.serialnumber) {
 				const localInfo = await this.localInfoService.getLocalInfo();
-				machineInfo.serialnumber = 'PF1HVYM5'; // for test 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' 'MP1FCJBF' 'MP1NW0D2' 'PF1HVYM5'
+				// machineInfo.serialnumber = 'PF1HVYM5'; // for test 'PC0G9X77' 'R9T6M3E' 'R90HTPEU' 'MP1FCJBF' 'MP1NW0D2' 'PF1HVYM5'
 				const sn = machineInfo.serialnumber;
 				const mtm = machineInfo.mtm;
 				this.setWarrantyUrl(sn, mtm);
@@ -254,11 +254,11 @@ export class WarrantyService {
 				const warrantyUrl = `${environment.pcsupportApiRoot}/api/v4/upsellAggregation/vantage/warrantySummaryInfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
 
 				const warrantyDataCache: WarrantyData = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyData);
-				// if (warrantyDataCache && warrantyDataCache.isAvailable) {
-				// 	this.warrantyData = warrantyDataCache;
-				// 	this.commonService.sendNotification(LocalStorageKey.LastWarrantyData, this.warrantyData);
-				// 	this.hasFetchWarranty = true;
-				// }
+				if (warrantyDataCache && warrantyDataCache.isAvailable) {
+					this.warrantyData = warrantyDataCache;
+					this.commonService.sendNotification(LocalStorageKey.LastWarrantyData, this.warrantyData);
+					this.hasFetchWarranty = true;
+				}
 
 				const uri = new Windows.Foundation.Uri(warrantyUrl);
 				const request = new Windows.Web.Http.HttpRequestMessage(
