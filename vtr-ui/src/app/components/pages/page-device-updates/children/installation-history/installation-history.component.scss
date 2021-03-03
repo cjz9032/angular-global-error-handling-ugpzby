@@ -189,8 +189,7 @@
 				}
 
 				&.list-heading {
-					.item-text {
-						padding-left: 1.6rem;
+					.header-text {
 						font-size: $fontsize_xs;
 						font-weight: $weight_600;
 						float: left;
@@ -198,10 +197,10 @@
 
 					.sort-order {
 						text-align: right;
+						padding: 0;
 
-						a {
+						.sort-link {
 							text-decoration: underline;
-							cursor: pointer;
 
 							&:hover {
 								text-decoration: none;
@@ -214,6 +213,7 @@
 								font-weight: $weight_light;
 								padding-top: 0.7rem;
 								padding-bottom: 0.2rem;
+								cursor: pointer;
 							}
 
 							.sort-icon {
@@ -221,10 +221,18 @@
 								color: $main;
 								line-height: 2.8rem;
 								font-size: 2rem;
+								cursor: pointer;
+							}
+
+							@media #{$white-on-black} {
+								@include hyperlink-yellow-black;
+							}
+							@media #{$black-on-white} {
+								@include hyperlink-blue-white;
 							}
 
 							&:focus {
-								outline-offset: 0;
+								@include outline-blue;
 							}
 						}
 					}
