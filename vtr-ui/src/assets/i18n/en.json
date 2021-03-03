@@ -6072,7 +6072,7 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-				"title":"Meeting Manager",
+				"title":"Meeting manager",
 				"desc": "This section enables you to automatically optimize or manually configure your AI meeting settings.",
 				"aiMeetingManager":{
 					"title":"AI meeting manager",
