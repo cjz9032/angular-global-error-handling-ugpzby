@@ -267,7 +267,7 @@ export class WidgetSystemMonitorComponent implements OnInit, OnDestroy {
 				if (!hwInfo) { return; }
 				this.hwMachineInfo = hwInfo;
 				// Get CPU info
-				if (this.isAvailiableValue(hwInfo.cpuModuleName)) {
+				if (this.isAvailiableValue(hwInfo.cpuModuleName) && this.cpuModuleName !== hwInfo.cpuModuleName) {
 					this.cpuModuleName = hwInfo.cpuModuleName;
 					this.localCacheService.setLocalCacheValue(LocalStorageKey.cpuModuleName, this.cpuModuleName);
 				}
