@@ -68,12 +68,13 @@
 					</ul>
 				</vtr-container-collapsible>
 			</div>
-			<div class="pt-5 content-card" *ngIf="microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)" id="microphone">
+			<div class="pt-5 content-card microphone-block" *ngIf="microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)" id="smb-microphone">
 				<vtr-container-collapsible [collapseLinkId]="'creatorSettings-microphone'" [headerLevel]="3"
 										   [cardTitle]="'smb.meetingExperience.meetingManager.microPhone.title' | translate"
 										   componentName="Microphone"
 										   [isCollapsed]="false" [allowCollapse]="true"
 										   [theme]="'white'" [tabIndex]="0">
+					<div class="common-li-padding">
 					<vtr-widget-permission-note
 						[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
 						[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
@@ -81,6 +82,7 @@
 						[linkId]="'audio-microphone-permission'"
 						*ngIf="!microphoneProperties.permission">
 					</vtr-widget-permission-note>
+					</div>
 					<ul class="list-group list-group-flush"
 						*ngIf="microphoneProperties.permission">
 						<ng-template
