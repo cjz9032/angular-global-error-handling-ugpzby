@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.41](https://bitbucket.tc.lenovo.com///compare/v1.10.40...v1.10.41) (2021-03-04)
+
+
+### Features
+
+* **Dashboard:** use hypothesis to configure position B C ([35dc1bd](https://bitbucket.tc.lenovo.com///commit/35dc1bd1ea5781abcc651850742c2dba74f0cfaa))
+* **warranty:** VAN-25561 new warranty NLS ([2ac7421](https://bitbucket.tc.lenovo.com///commit/2ac7421e893f23c0a03f743bfc2baade4bdb3cff))
+
+
+### Bug Fixes
+
+* **warranty:** VAN-26566 fix warranty display bugs ([f47ed96](https://bitbucket.tc.lenovo.com///commit/f47ed969cc340bb1e27c72a9287fa21c6f17fd81))
+* increase battery detail dialog max-with ([7595106](https://bitbucket.tc.lenovo.com///commit/759510620fef1b6c60c19d215e5f8745a826b0b4))
+
+### [1.9.53](https://bitbucket.tc.lenovo.com///compare/v1.9.52...v1.9.53) (2021-02-04)
+
+
+### Bug Fixes
+
+* **Tutorial:** format code ([c1379c8](https://bitbucket.tc.lenovo.com///commit/c1379c8322f8fe9abab1caa0f99e5b3fc6590d32))
+* **Tutorial:** write tutorial done information ([ed02216](https://bitbucket.tc.lenovo.com///commit/ed022167ff3ea764a93eface74ea827d56d2a189))
+
+### [1.9.52](https://bitbucket.tc.lenovo.com///compare/v1.10.23...v1.9.52) (2021-02-04)
+
+
+### Features
+
+* **Dashboard:** use hypothesis to configure position B C ([70b6da1](https://bitbucket.tc.lenovo.com///commit/70b6da140ff35c31819c3fc0d4eeefcdf3a14bcb))
+
+### [1.9.51](https://bitbucket.tc.lenovo.com///compare/v1.10.18...v1.9.51) (2021-01-28)
+
+### [1.9.50](https://bitbucket.tc.lenovo.com///compare/v1.10.10...v1.9.50) (2021-01-19)
+
 ### [1.10.40](https://bitbucket.tc.lenovo.com///compare/v1.10.39...v1.10.40) (2021-03-03)
 
 
