@@ -3,7 +3,7 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { HardwareScanFeaturesService } from './hardware-scan-features.service';
 import { ScanLogService } from './scan-log.service';
 
-fdescribe('HardwareScanFeaturesService', () => {
+describe('HardwareScanFeaturesService', () => {
 	const loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['exception']);
 	const scanLogServiceSpy = jasmine.createSpyObj('ScanLogService', ['getScanLog']);
 	let service: HardwareScanFeaturesService;
@@ -20,12 +20,12 @@ fdescribe('HardwareScanFeaturesService', () => {
 		service = TestBed.inject(HardwareScanFeaturesService);
 	});
 
-	fit('should be created', () => {
+	it('should be created', () => {
 		expect(service).toBeTruthy();
 	});
 
 	// Happy path test
-	fit('should set variable exportLogAvailable is true when correct response is received', async () => {
+	it('should set variable exportLogAvailable is true when correct response is received', async () => {
 		scanLogServiceSpy.getScanLog.and.returnValue(
 			Promise.resolve({
 				modulesResults: [1, 2],
@@ -70,7 +70,7 @@ fdescribe('HardwareScanFeaturesService', () => {
 			result: false,
 		},
 	].forEach((testCase) => {
-		fit(testCase.description, async () => {
+		it(testCase.description, async () => {
 			scanLogServiceSpy.getScanLog.and.returnValue(Promise.resolve(testCase.input));
 
 			await service.startCheckFeatures();
@@ -82,7 +82,7 @@ fdescribe('HardwareScanFeaturesService', () => {
 	});
 
 	// Error when a rejection occurs
-	fit('should set variable exportLogAvailable as false when promise gets rejected ', async () => {
+	it('should set variable exportLogAvailable as false when promise gets rejected ', async () => {
 		scanLogServiceSpy.getScanLog.and.returnValue(
 			Promise.reject('A terrible exception has occurred')
 		);
