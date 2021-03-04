@@ -452,7 +452,12 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private async getDeviceCardInfo() {
-		this.isShowStateCard = this.dashboardService.canShowDeviceAndSecurityCard && await this.dashboardService.isPositionBShowDeviceState();
+		const hypHidePosBStateCard = await this.hypService.getFeatureSetting('HideSpecialCardOnPositionB')
+			.then((result) => result === 'true')
+			.catch(() => false);
+		if (!hypHidePosBStateCard) {
+			this.isShowStateCard = this.dashboardService.canShowDeviceAndSecurityCard && await this.dashboardService.isPositionBShowDeviceState();
+		}
 		if (this.isShowStateCard) {
 			this.getPbSubscription = this.dashboardService.getPositionBData().subscribe((data) => {
 				this.positionBData = data;
@@ -865,6 +870,10 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private async getSecurityCardInfo(): Promise<void> {
+		const hypHidePosCStatusCard = await this.hypService.getFeatureSetting('HideSpecialCardOnPositionC')
+			.then((result) => result === 'true')
+			.catch(() => false);
+		if (hypHidePosCStatusCard) { return; }
 		this.showSecurityStatusCard = this.dashboardService.canShowDeviceAndSecurityCard && await this.dashboardService.isPositionCShowSecurityCard();
 		if (!this.showSecurityStatusCard) {
 			return;
