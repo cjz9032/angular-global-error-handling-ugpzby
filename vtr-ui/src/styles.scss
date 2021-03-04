@@ -2279,7 +2279,9 @@ vtr-ui-smart-performance-scanning {
 .subpage-device-settings-audio,
 .subpage-device-settings-display,
 .subpage-device-settings-input-accessories,
-.vtr-page-smart-assist {
+.vtr-page-smart-assist,
+.subpage-meeting-manager,
+.subpage-creator-settings {
 	.vtr-container-collapsible.blue-theme,
 	.vtr-container-collapsible.white-theme {
 		.card-header {
@@ -2317,7 +2319,9 @@ vtr-ui-smart-performance-scanning {
 	.intelligent-security-block,
 	.power-settings-block,
 	.battery-settings-block,
-	.intelligent-keyboard-block {
+	.intelligent-keyboard-block,
+	.creator-settings-block,
+	.microphone-block {
 		.vtr-container-collapsible.white-theme {
 			.card-body {
 				padding-top: 0 !important;
