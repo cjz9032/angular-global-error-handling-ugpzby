@@ -812,10 +812,12 @@
 				"sub9": "Einheitensicherheit"
 			},
 			"support": "Unterstützung",
+			"warrantySupport": "Garantie und Support",
+			"contentLibrary": "Inhaltsbibliothek",
+			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"
-			},
-			"homeSecurity": "Connected Home"
+			}
 		},
 		"securityAdvisor": {
 			"title": "Sicherheitsratgeber",
@@ -1356,9 +1358,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"GPU‑Übertaktung im Modus \"Höchstleistung\" aktivieren.",
-							"description1":"Übertakten Sie Ihren GPU-Speichertakt um 140 MHz, ein \"stabiler\" Optimalwert. Spieleleistung und Bildfrequenz können um 10 bis 30 % steigen.",
-					        "description2":"Hinweis: Die Leistungs‑ und Bildfrequenzverbesserung kann abhängig von den Spielen/Apps und anderen Umständen variieren. Stromverbrauch, Temperatur der Computeroberfläche und Lüftergeräusche können ebenfalls entsprechend steigen. Lenovo übernimmt keine Garantie für die Stabilität und Leistungsverbesserung bei aktivierter Übertaktung."
+							"checkboxtext": "GPU‑Übertaktung im Modus \"Höchstleistung\" aktivieren.",
+							"description1": "Übertakten Sie Ihren GPU-Speichertakt um 140 MHz, ein \"stabiler\" Optimalwert. Spieleleistung und Bildfrequenz können um 10 bis 30 % steigen.",
+							"description2": "Hinweis: Die Leistungs‑ und Bildfrequenzverbesserung kann abhängig von den Spielen/Apps und anderen Umständen variieren. Stromverbrauch, Temperatur der Computeroberfläche und Lüftergeräusche können ebenfalls entsprechend steigen. Lenovo übernimmt keine Garantie für die Stabilität und Leistungsverbesserung bei aktivierter Übertaktung."
 						},
 						"autoTransition": {
 							"description": {
@@ -2660,6 +2662,873 @@
 			"categories": "Kategorien",
 			"categoriesDesc": "Nützliche Informationen finden Sie in unseren Artikeln.",
 			"seeArticles": "ARTIKEL ANSEHEN"
+		}
+	},
+	"smartPerformance": {
+		"title": "Smart Performance",
+		"back": "ZURÜCK",
+		"performanceandSecurityCheckTitle": "Leistungs‑ und Sicherheitsüberprüfung",
+		"performanceandSecurityCheckSubTitle": "Ermitteln und beheben Sie Leistungs‑ und Sicherheitsprobleme auf Ihrem Computer",
+		"auto": "Automatisch",
+		"manual": "Manuell",
+		"performanceOfflineText": "Die Scanfunktion ist verfügbar, wenn Ihr Computer mit dem Internet verbunden ist.",
+		"scanButton": "KOSTENLOSER PC-SCAN",
+		"section1Heading": "Wie beurteilen Sie die Leistung Ihres PCs?",
+		"section1Description": "PC läuft langsam? Anwendungen reagieren zu langsam? Windows-Fehler? Malware-Bedenken? Wir können die Ursache des Problems ermitteln und beheben.",
+		"critical": "KRITISCH",
+		"allisWell": "ALLES IN ORDNUNG",
+		"zero": 0,
+		"one": 1,
+		"two": 2,
+		"three": 3,
+		"four": 4,
+		"five": 5,
+		"six": 6,
+		"seven": 7,
+		"eight": 8,
+		"nine": 9,
+		"ten": 10,
+		"tuneUP": "Ihr PC muss optimiert werden",
+		"runningWell": "PC läuft gut",
+		"section2Heading": "Erstklassige PC-Leistung. Immer",
+		"section2Description": "Mit unserer Software können Sie Ihren PC rund um die Uhr proaktiv scannen und Probleme rasch finden und beheben, sodass Ihr PC immer eine erstklassige Leistung bietet.",
+		"am": "vormittags",
+		"pm": "nachmittags",
+		"scanNow": "Jetzt scannen",
+		"signUpAndFix": "Registrieren & reparieren",
+		"cancel": "Abbrechen",
+		"scanning": "Scanvorgang wird durchgeführt",
+		"fixIt": "Jetzt reparieren",
+		"optimizeIt": "Optimieren",
+		"maintainIt": "Warten",
+		"noteFindings": "Wir sind durch eine detaillierte Analyse Ihres Computers zu diesem Ergebnis gekommen.",
+		"noteNavigateTab": "Öffnen Sie die Registerkarten, um mehr zu erfahren:",
+		"scannedAreas": "Gescannte Bereiche",
+		"lastFix": "Letzte Korrektur",
+		"fixResult": "Korrekturergebnis",
+		"checkPreviousResults": "Vorherige Ergebnisse prüfen",
+		"tunePCPerformance": {
+			"title": "PC-leistung Optimieren",
+			"heading": "Kümmern Sie sich um Ihren Computer",
+			"description": "Selbst der beste Computer profitiert von regelmäßiger Optimierung. Optimieren Sie den PC mit unserer leistungsfähigen App.",
+			"tabSet1": {
+				"tab1": "Angesammelte Junk-Daten",
+				"tab2": "Nutzungsprobleme",
+				"tab3": "Windows-Einstellungen",
+				"tab4": "Systemfehler",
+				"tab5": "Registrierungsfehler"
+			},
+			"tabSet2": {
+				"tab1Heading": "EINFACH",
+				"tab1Description": "Wir verwenden keine komplizierten technischen Begriffe",
+				"tab2Heading": "SCHNELL",
+				"tab2Description": "Machen Sie einen 100-Punkte-Check in unter 5 Minuten",
+				"tab3Heading": "SICHER",
+				"tab3Description": "Keine Scareware, sondern bewährte Verfahren"
+			},
+			"summaryTitle": "PC-Leistung optimieren"
+		},
+		"boostInternetPerformance": {
+			"title": "INTERNET-LEISTUNG STEIGERN",
+			"extraTitle": "Internetleistung",
+			"heading": "Steigern Sie Ihre Internetleistung",
+			"description": "Langsames oder gar kein Wi-Fi ist für viele Menschen unvorstellbar. Wir konfigurieren Ihre Internet‑, Wi-Fi‑ und Browsereinstellungen für optimale Leistung.",
+			"tabSet1": {
+				"tab1": "E-Junk",
+				"tab2": "Netzeinstellungen",
+				"tab3": "Browsereinstellungen",
+				"tab4": "Browsersicherheit",
+				"tab5": "Wi-Fi-Leistung"
+			},
+			"tabSet2": {
+				"tab1Heading": "BROWSERPROBLEME",
+				"tab1Description": "Wir konfigurieren und optimieren alle bekannten Webbrowser.",
+				"tab2Heading": "VERBINDUNGSFEHLER",
+				"tab2Description": "Wir können Ihre Verbindungsprobleme diagnostizieren und reparieren.",
+				"tab3Heading": "LANGSAMES INTERNET",
+				"tab3Description": "Wir helfen Ihnen dabei, die maximale Leistung zu erzielen."
+			},
+			"summaryTitle": "Internetleistung"
+		},
+		"malwareSecurity": {
+			"title": "Malware Und Sicherheit",
+			"heading": "Geben Sie Ihrem Computer die zusätzliche Pflege, die er braucht",
+			"description": "Malware kann zu Abstürzen, beschädigten Daten und Leistungseinbußen führen. Entfernen Sie Malware, um sicherer und schneller zu arbeiten.",
+			"tabSet1": {
+				"tab1": "Malware-Scan",
+				"tab2": "Neuartige Viren",
+				"tab3": "Unerwünschte Programme",
+				"tab4": "Lästige Adware",
+				"tab5": "Sicherheitseinstellungen"
+			},
+			"tabSet2": {
+				"tab1Heading": "ZERO-DAY-VIREN",
+				"tab1Description": "Wir entfernen sogar die neueste Malware",
+				"tab2Heading": "SPYWARE-ENTFERNUNG",
+				"tab2Description": "Wir entfernen alle potenziell unerwünschten Programme",
+				"tab3Heading": "SCHNELL ERLEDIGT",
+				"tab3Description": "Scan dauert normalerweise 5 bis 10 Minuten"
+			},
+			"summaryTitle": "Malware und Sicherheit"
+		},
+		"proactiveAutomated": {
+			"title": "PROAKTIV UND AUTOMATISIERT",
+			"heading": "Beheben Sie Probleme, bevor Sie von ihnen beeinträchtigt werden!",
+			"description": "Smart Performance sucht konstant nach Hunderten von Problemen, die die PC-Leistung beeinträchtigen. Wir beheben sie proaktiv, damit Sie entspannt arbeiten können.",
+			"tabSet1": {
+				"tab1": "Scan planen",
+				"tab2": "Scan bei Bedarf",
+				"tab3": "Automatische Problemlösung",
+				"tab4": "Besonders effektiv",
+				"tab5": "Schutz rund um die Uhr"
+			},
+			"tabSet2": {
+				"tab1Heading": "EINFACH",
+				"tab1Description": "Wir verwenden keine komplizierten technischen Begriffe",
+				"tab2Heading": "SCHNELL",
+				"tab2Description": "Machen Sie einen 100-Punkte-Check in unter 5 Minuten",
+				"tab3Heading": "SICHER",
+				"tab3Description": "Keine Scareware, sondern bewährte Verfahren"
+			}
+		},
+		"noScanResults": "Klicken Sie auf \"SCANNEN UND REPARIEREN\", um den Scan zu starten.",
+		"startScan": "<b>Sind Sie bereit für den Scan?</b> Wir ermitteln Leistungs‑ und Sicherheitsprobleme auf Ihrem Computer.",
+		"subscriptionDetails": {
+			"title": "Abonnementdetails",
+			"description": "Sie haben den Lenovo Smart Performance Service abonniert. Sie haben aktuell Zugriff auf alle Funktionen, mit denen Ihr PC durchgängig geschützt wird und reibungslos funktioniert.",
+			"learnMore": "Weitere Informationen",
+			"startDate": "Startdatum",
+			"endDate": "Enddatum",
+			"status": "Status",
+			"activeStatus": "AKTIV",
+			"inactiveStatus": "INAKTIV",
+			"manageSubscription": "ABONNEMENT VERWALTEN",
+			"titlebeta": "Lenovo Beta-Programm",
+			"manageSubscriptionBeta": "ALLE FUNKTIONEN AKTIVIEREN",
+			"descriptionbeta": "Lenovo bietet ein Pilotprogramm zum Testen der Smart Performance-Funktionen bis Juli 2020.",
+			"descriptionbeta1": "Melden Sie sich gern an, um alle Funktionen auszuprobieren.",
+			"descriptionNonSubscriber": "Sie haben den Lenovo Smart Performance Service nicht abonniert. Sie können nur Ihren PC scannen. Abonnieren Sie jetzt für Zugriff auf alle Funktionen, mit denen Ihr PC durchgängig geschützt wird und reibungslos funktioniert.",
+			"processStatus": "LÄUFT",
+			"descriptionExpired": "Ihr Abonnement ist abgelaufen und Sie können die Scan-Funktion derzeit nur in Smart Performance verwenden. Klicken Sie auf den Link \"Abonnement verwalten\", um Ihr Abonnement zu erneuern und Ihre Einheit wieder umfassend zu schützen.",
+			"expiredStatus": "ABGELAUFEN",
+			"expiredNote": "Ihr Abonnement läuft ab in",
+			"day": "Tag",
+			"days": "Tage",
+			"weeks": "Wochen",
+			"week": "einer Woche",
+			"month": "Monat",
+			"today": "heute",
+			"next": "nächste"
+		},
+		"scanSettings": {
+			"title": "Scanzeitplan festlegen",
+			"description": "Scan aktivieren oder deaktivieren und Scanzeitplan festlegen",
+			"enableScan": "Scan aktivieren",
+			"changeScanTitle": "Scanzeitplan ändern",
+			"changeScanDescription": "Passen Sie den Scanzeitplan an Ihre Anforderungen an.",
+			"frequency": "Häufigkeit",
+			"txtDate": "Datum",
+			"txtDay": "Tag",
+			"txtTime": "Zeit",
+			"txtSave": "gespeichert",
+			"txtCancel": "abbrechen",
+			"scanFrequencyWeek": "Einmal pro Woche",
+			"scanFrequencyEveryWeek": "Jede zweite Woche",
+			"scanFrequencyMonth": "Einmal pro Monat",
+			"mon": "Montag",
+			"tue": "Dienstag",
+			"wed": "Mittwoch",
+			"thu": "Donnerstag",
+			"fri": "Freitag",
+			"sat": "Samstag",
+			"sun": "Sonntag",
+			"am": "AM",
+			"pm": "PM",
+			"tooltipText": "Wenn diese Option aktiviert ist, wird der Systemleistungs‑ und Sicherheitsscan automatisch zum von Ihnen festgelegten Datum und zur bestimmten Uhrzeit gestartet."
+		},
+		"scanningPage": {
+			"title": "Leistungs‑ und Sicherheitsüberprüfung",
+			"description": "Warten Sie, während das System auf mögliche Probleme und Bedrohungen überprüft wird.",
+			"scanningSystem": "System wird gescannt",
+			"complete": "abgeschlossen",
+			"cancelScan": {
+				"button": "SCAN ABBRECHEN",
+				"title": "Scan abbrechen?",
+				"description": "Wenn Sie den aktuellen Bildschirm verlassen, wird der Scan abgebrochen und Sie kehren zur Startseite zurück. Sie können den Scan jederzeit erneut ausführen.",
+				"yesButton": "JA, ABBRECHEN",
+				"noButton": "NEIN, SCAN FORTSETZEN",
+				"cancelMayTakeSomeTime": "Bitte warten Sie einen Moment, je nach System kann der Abbruch einige Zeit in Anspruch nehmen.",
+				"cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?"
+			},
+			"waiting": "warten auf scanbeginn",
+			"completed": "fertig",
+			"nowScanningDetail": {
+				"cardTitle": "DETAILS WERDEN GESCANNT",
+				"current": "AKTUELL: ",
+				"upNext": "DANACH: ",
+				"tunePCDesc": "Wir helfen Ihnen dabei, die PC-Leistung zu optimieren. Dies geschieht auf sichere Weise mit branchenbewährten Verfahren. Abonnenten profitieren von kürzerer PC-Startzeit, verbesserter Leistung, höherer Stabilität und schnellerem Start von Anwendungen.",
+				"boostDesc": "Wir helfen Ihnen dabei, Ihre Browsererfahrung zu verbessern. Wir beheben Netzwerk‑ und Zugriffsprobleme. Abonnenten profitieren von einer optimierten Internetverbindung, höheren Upload‑/Download-Geschwindigkeiten und mehr Sicherheit im Internet.",
+				"malwareDesc": "Wir helfen Ihnen dabei, Ihren PC schnell und bedarfsgerecht zu schützen. Das passiert, indem wir Spyware, Malware und Adware entfernen. Wir entfernen auch noch unbekannte Infektionen. Abonnenten profitieren von Schutz für ihre Daten und optimaler Systemleistung.",
+				"proactiveDesc": "Wir optimieren Ihren Computer regelmäßig und beheben proaktiv und automatisiert Probleme, damit Ihr PC reibungslos läuft und geschützt ist. Immer",
+				"tunePCScanningItems": {
+					"accumulatedJunk": {
+						"itema1": "An 85 Orten nach Junk-Daten suchen",
+						"itema2": "Nicht benötigte Systemprotokolldateien",
+						"itema3": "Unnötige, übrig gebliebene Anwendungsdateien",
+						"itema4": "Temporäre Dateien, die Festplattenspeicher blockieren",
+						"itema5": "Dateien, die Sie vor langer Zeit gelöscht haben",
+						"itema6": "Überholte Fehler und Warnungen"
+					},
+					"usabilityIssues": {
+						"itemb1": "Zahlreiche Nutzungsprobleme beheben",
+						"itemb2": "Verbindung externer Einheiten prüfen",
+						"itemb3": "Windows-Updates immer aktuell halten",
+						"itemb4": "Apps optimal darstellen",
+						"itemb5": "Nutzung der Prozessorleistung analysieren",
+						"itemb6": "Hilfe beim einfachen Finden von Dateien"
+					},
+					"windowsSettings": {
+						"itemc1": "Zahlreiche Windows OS-Einstellungen prüfen",
+						"itemc2": "Sicherstellen, dass Windows fehlerfrei läuft",
+						"itemc3": "Sicherstellen, dass wichtige Dienste ausgeführt werden",
+						"itemc4": "Zustand von Verbindungseinstellungen prüfen",
+						"itemc5": "Möglichkeit der Dateifreigabe im Netzwerk prüfen",
+						"itemc6": "Biometrische und Zugriffseinstellungen prüfen"
+					},
+					"systemErrors": {
+						"itemd1": "Sicherstellen, dass wichtige Dienste ausgeführt werden",
+						"itemd2": "Dienste für höhere Leistung auswählen",
+						"itemd3": "Nach Softwarekonfliktfehlern suchen",
+						"itemd4": "Windows-Fehlerverwaltung optimieren",
+						"itemd5": "Fehler beim Starten von Apps prüfen und beheben",
+						"itemd6": "Systemfehlerberichte konfigurieren"
+					},
+					"registryErrors": {
+						"iteme1": "Windows-Registrierung detailliert prüfen",
+						"iteme2": "Auf ungültige Windows-Dienste scannen",
+						"iteme3": "Fehlerhafte Registrierungseinträge finden",
+						"iteme4": "Nach überflüssigen Dateierweiterungen suchen",
+						"iteme5": "Fehlerhafte Einträge von installierten Apps suchen",
+						"iteme6": "Nach überflüssigen Einträgen suchen"
+					}
+				},
+				"boostScanningItems": {
+					"networkSettings": {
+						"itema1": "Netzwerk‑ und Interneteinstellungen prüfen",
+						"itema2": "Netzwerkkonfigurationseinstellungen überprüfen",
+						"itema3": "Verfügbare Netzwerkeinstellungen überprüfen",
+						"itema4": "Schnelleres Laden von Websites konfigurieren",
+						"itema5": "Nach Fehlern beim Rendern von Seiten suchen",
+						"itema6": "Ordnungsgemäße Funktion von Verbindungsdienst(en) prüfen"
+					},
+					"browserSettings": {
+						"itemb1": "Bessere Browsererfahrung ermöglichen",
+						"itemb2": "Einstellungen schnelleres Website-Rendering konfigurieren",
+						"itemb3": "Sicherstellen, dass die Browsersicherheitsdienste ordnungsgemäß funktionieren",
+						"itemb4": "Sicherstellen, dass Webseiten ordnungsgemäß gerendert werden",
+						"itemb5": "Einstellungen für schnellere Downloads prüfen",
+						"itemb6": "Berechtigungen und Zugriffssteuerung prüfen"
+					},
+					"browserSecurity": {
+						"itemc1": "Sicherstellen, dass Sicherheitsdienste ausgeführt werden",
+						"itemc2": "Browsersicherheitsfunktionen konfigurieren",
+						"itemc3": "Ordnungsgemäße Funktion von Netzwerkdiensten prüfen",
+						"itemc4": "Protokolleinstellungen konfigurieren",
+						"itemc5": "Überprüfen, ob Browserinhaltseinstellungen ordnungsgemäß funktionieren",
+						"itemc6": "Browser-Plugins und ‑Erweiterungen prüfen"
+					},
+					"wifiPerformance": {
+						"itemd1": "Einstellungen für Wi-Fi-Erfahrung optimieren",
+						"itemd2": "Sicherstellen, dass Ihr Heimnetzwerk sicher ist",
+						"itemd3": "Einstellungen für Wi-Fi-Dienste prüfen",
+						"itemd4": "Einstellungen für sichere Netzwerkfreigabe",
+						"itemd5": "Wi-Fi-Sicherheitsstandards prüfen",
+						"itemd6": "Sicherstellen, dass Wi-Fi-Kanäle nicht überlappen"
+					},
+					"eJunk": {
+						"iteme1": "Unnötige Browserdateien löschen",
+						"iteme2": "Nach übrig gebliebenem E-Junk suchen",
+						"iteme3": "Nach veralteten Internetdateien suchen",
+						"iteme4": "Unerwünschten Web-Cache löschen",
+						"iteme5": "Cookies löschen",
+						"iteme6": "Übrig gebliebene Browserdateien entfernen"
+					}
+				},
+				"malwareScanningItems": {
+					"malwareScan": {
+						"itema1": "Häufige Ladepunkte scannen",
+						"itema2": "Kritische Orte auf Bedrohungen prüfen",
+						"itema3": "Nach Viren, Spyware und Malware suchen",
+						"itema4": "Nach 50+ Dateitypen suchen",
+						"itema5": "Nach Malware-Resten suchen",
+						"itema6": "Nutzung der Cloud-Wiederherstellungskomponente"
+					},
+					"zerodayInfections": {
+						"itemb1": "Nach Zero-Day-Viren suchen",
+						"itemb2": "Nach neuer, nicht diagnostizierter Malware suchen",
+						"itemb3": "Mit Cloud-basierter Wiederherstellung scannen",
+						"itemb4": "Verhaltensüberwachung durchführen",
+						"itemb5": "Dateien mit zusammengefasster Komponente scannen",
+						"itemb6": "Entsprechend aktueller Definitionen scannen"
+					},
+					"securitySettings": {
+						"itemc1": "Windows-Updates immer aktuell halten",
+						"itemc2": "Sicherstellen, dass der Windows-Firewalldienst ordnungsgemäß funktioniert",
+						"itemc3": "Browsereinstellungen schützen",
+						"itemc4": "Wesentliche Sicherheitsdienste prüfen",
+						"itemc5": "Benutzerzugriffseinstellungen konfigurieren",
+						"itemc6": "Authentifizierungsdienste überprüfen"
+					},
+					"errantPrograms": {
+						"itemd1": "Nach unerwünschten Apps suchen",
+						"itemd2": "Nach potenziell unerwünschten Apps suchen",
+						"itemd3": "Inaktive und versteckte Apps ermitteln",
+						"itemd4": "Apps auf schädliches Verhalten überprüfen",
+						"itemd5": "Apps anhand des Zuverlässigkeitsfaktors prüfen",
+						"itemd6": "Registrierung auf unerwünschte Programme prüfen"
+					},
+					"annoyingAdware": {
+						"iteme1": "Nach Adware in Browser(n) suchen",
+						"iteme2": "Popup-Einstellungen von Browser(n) überprüfen",
+						"iteme3": "Bedrohungen durch Umleitungen im Browser beseitigen",
+						"iteme4": "Nach übrig gebliebenen Adware-Dateien suchen",
+						"iteme5": "Einstellungen für Browsererfahrung optimieren",
+						"iteme6": "In Cloud-Wiederherstellungskomponente überprüfen"
+					}
+				}
+			},
+			"confirmationTitle": "Lenovo Zahlungsvorgang",
+			"confirmationNote": "Sie werden zur Lenovo Zahlungswebsite weitergeleitet, um die Zahlung abzuschließen. Wenn die Zahlung abgeschlossen ist, klicken Sie auf \"Aktualisieren\" in \"Abonnementdetails\", um das Zahlungsergebnis zu erhalten.",
+			"confirmationBtn": "Fortfahren",
+			"refreshButton": "Status aktualisieren"
+		},
+		"scanCompletePage": {
+			"title": "Systemscan ist abgeschlossen",
+			"description": "Gefunden auf Ihrem {{machineFamilyName}}",
+			"scanRates": "Unser Scan stuft Ihren PC ein als: ",
+			"summary": "Zusammenfassung",
+			"foundIssues": "Der Scan hat {{issueCount}} Probleme gefunden",
+			"summaryDetails": "Registrieren Sie sich jetzt, damit diese Probleme behoben werden und Ihr System reibungslos läuft. Mit unserer Software können diese Bereiche auf Ihrem System rund um die Uhr proaktiv gescannt und Probleme rasch gefunden und behoben werden, sodass Ihr PC immer eine erstklassige Leistung bietet.",
+			"expiredSummaryDetails": "Ihr Abonnement ist abgelaufen und Sie können die Scan-Funktion derzeit nur in Smart Performance verwenden. Wenn Sie die Funktion \"Scannen und reparieren\" verwenden möchten, klicken Sie auf die unten angezeigte Schaltfläche \"Erneuern und reparieren\", um Ihr Abonnement zu erneuern.",
+			"signupRepairButton": "JETZT REGISTRIEREN UND REPARIEREN",
+			"renewAndFix": "Erneuern und reparieren",
+			"backToHome": "Zurück zur Startseite",
+			"monthlyPricing": "<b>Weniger als {{monthlyPrice}} im Monat.</b> Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche <a  href=\"#\">Mehr erfahren</a>",
+			"issueCount": "{{individualIssueCount}} PROBLEME",
+			"issues": "Problem(e)",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
+			"scannedAreas": "GESCANNTE BEREICHE",
+			"summaryPurchaseTip": "Kaufen Sie jetzt das Jahresabonnement und diese Probleme werden jede Woche automatisch behoben.",
+			"tunePCTooltip": "Optimierte Gesamtsystemleistung, verkürzte PC-Startzeit und verbesserte Anwendungsladezeiten.",
+			"boostTooltip": "Bessere Netzwerkleistung, Browsererfahrung und Konnektivität.",
+			"malwareTooltip": "Höhere Sicherheit, Entfernen von Malware und Viren und Wiederherstellen der Systemstabilität.",
+			"recommendedAction": {
+				"title": "Empfohlene Aktion",
+				"description": "Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche",
+				"yearlyPricing": "{{yearlyPrice}}/Jahr",
+				"monthlyPricing": "WENIGER ALS {{monthlyPrice}} IM MONAT.",
+				"longerTerm": "Langfristiger planen? Noch mehr sparen?",
+				"newDescription": "Nach der Anmeldung werden wir diese Probleme jede Woche automatisch für Sie beheben.",
+				"signupButton": "REGISTRIEREN"
+			},
+			"tunepc": {
+				"accumulatedjunkscannedareas": {
+					"area1": "85 Orte wurden auf Junk-Daten gescannt",
+					"area2": "Nicht benötigte Systemprotokolldateien",
+					"area3": "Unnötige, übrig gebliebene Anwendungsdateien",
+					"area4": "Temporäre Dateien, die Festplattenspeicher blockieren",
+					"area5": "Dateien, die Sie vor langer Zeit gelöscht haben",
+					"area6": "Überholte Fehler und Warnungen"
+				},
+				"registryerrorsscannedareas": {
+					"area1": "Detaillierte Prüfung der Windows-Registrierung wurde abgeschlossen",
+					"area2": "Scan auf ungültige Windows-Dienste wurde durchgeführt",
+					"area3": "Suche nach fehlerhaften Registrierungseinträgen wurde durchgeführt",
+					"area4": "Scan auf überflüssige Dateierweiterungen wurde durchgeführt",
+					"area5": "Fehlerhafte Einträge von installierten Apps wurden gesucht",
+					"area6": "Suche nach überflüssigen Einträgen wurde durchgeführt"
+				},
+				"windowssettingsscannedareas": {
+					"area1": "Prüfung von zahlreichen Windows OS-Einstellungen wurde durchgeführt",
+					"area2": "Fehlerfreie Ausführung von Windows wurde geprüft",
+					"area3": "Ausführung wichtiger Dienste wurde sichergestellt",
+					"area4": "Zustand von Verbindungseinstellungen wurde geprüft",
+					"area5": "Möglichkeit der Dateifreigabe im Netzwerk wurde geprüft",
+					"area6": "Biometrische und Zugriffseinstellungen wurden geprüft"
+				},
+				"usabilityissuesscannedareas": {
+					"area1": "Suche nach Nutzungsproblemen wurde durchgeführt",
+					"area2": "Verbindung externer Einheiten wurde geprüft",
+					"area3": "Status von Windows-Updates wurde geprüft",
+					"area4": "Einstellung für App-Rendering wurde überprüft",
+					"area5": "Nutzung der Prozessorleistung wurde analysiert",
+					"area6": "Hilfe beim einfachen Finden von Dateien"
+				},
+				"systemerrorsscannedareas": {
+					"area1": "Ausführung wichtiger Dienste wurde geprüft",
+					"area2": "Nach Diensten für höhere Leistung suchen",
+					"area3": "Nach Softwarekonfliktfehlern suchen",
+					"area4": "Windows-Fehlerverwaltung wurde analysiert",
+					"area5": "Scan auf Fehler beim Starten von Apps wurde durchgeführt",
+					"area6": "Konfiguration der Systemfehlerberichte wurde geprüft"
+				}
+			},
+			"internetperformance": {
+				"ejunkscannedareas": {
+					"area1": "Unnötige Browserdateien wurden identifiziert",
+					"area2": "Übrig gebliebener E-Junk wurde gesucht",
+					"area3": "Scan auf veraltete Internetdateien wurde durchgeführt",
+					"area4": "Unerwünschter Web-Cache wurde gesucht",
+					"area5": "Zu löschende Cookies wurden gesucht",
+					"area6": "Scan auf übrig gebliebene Browserdateien wurde durchgeführt"
+				},
+				"browsersecurityscannedareas": {
+					"area1": "Ausführung von Sicherheitsdienstes wurde geprüft",
+					"area2": "Browsersicherheitsfunktionen wurden geprüft",
+					"area3": "Netzwerkdienste wurden überprüft",
+					"area4": "Protokolleinstellungen konfigurieren",
+					"area5": "Browserinhaltseinstellungen wurden geprüft",
+					"area6": "Browser-Plugins und ‑Erweiterungen wurden gescannt"
+				},
+				"networksettingsscannedareas": {
+					"area1": "Netzwerk‑ und Interneteinstellungen wurden geprüft",
+					"area2": "Netzwerkkonfigurationseinstellungen wurden geprüft",
+					"area3": "Einstellungen für verbundene Netzwerke wurden überprüft",
+					"area4": "Einstellungen für schnelleres Website-Rendering wurden geprüft",
+					"area5": "Scan auf Fehler beim Rendern von Seiten wurde durchgeführt",
+					"area6": "Alle Verbindungsdienste wurden gescannt"
+				},
+				"browsersettingsscannedareas": {
+					"area1": "Bessere Browsererfahrung ermöglichen",
+					"area2": "Einstellungen für schnelleres Website-Rendering wurden geprüft",
+					"area3": "Browsersicherheitsdienste wurden überprüft",
+					"area4": "Ordnungsgemäßes Rendering von Webseiten wurde geprüft",
+					"area5": "Einstellungen für schnellere Downloads wurden gescannt",
+					"area6": "Berechtigungen und Zugriffssteuerung wurden analysiert"
+				},
+				"wifiperformancescannedareas": {
+					"area1": "Einstellungen für Wi-Fi-Erfahrung wurden überprüft",
+					"area2": "Sicheres Heimnetzwerk wurde überprüft",
+					"area3": "Einstellungen für Wi-Fi-Dienste wurden gescannt",
+					"area4": "Einstellungen für sichere Netzwerkfreigabe wurden überprüft",
+					"area5": "Wi-Fi-Sicherheitsstandards wurden überprüft",
+					"area6": "Analyse auf sich überlappende Wi-Fi-Kanäle wurde durchgeführt"
+				}
+			},
+			"malwaresecurity": {
+				"malwarescanscannedareas": {
+					"area1": "Häufige Ladepunkte wurden gescannt",
+					"area2": "Kritische Orte wurden auf Bedrohungen gescannt",
+					"area3": "Scan auf Viren, Spyware und Malware wurde durchgeführt",
+					"area4": "50+ Dateitypen wurden auf Bedrohungen gescannt",
+					"area5": "Suche nach Malware-Resten wurde durchgeführt",
+					"area6": "Überprüfung in Cloud-Wiederherstellungskomponente wurde durchgeführt"
+				},
+				"errantprogramsscannedareas": {
+					"area1": "Nach unerwünschten Apps suchen",
+					"area2": "Suche nach potenziell unerwünschten Apps wurde durchgeführt",
+					"area3": "Suche nach inaktiven und versteckten Apps wurde durchgeführt",
+					"area4": "Scan auf schädliche Apps wurde durchgeführt",
+					"area5": "Prüfung von Apps anhand des Zuverlässigkeitsfaktors wurde durchgeführt",
+					"area6": "Prüfung der Registrierung auf unerwünschte Programme wurde durchgeführt"
+				},
+				"zerodayinfectionsscannedareas": {
+					"area1": "Scan auf Zero-Day-Viren wurde durchgeführt",
+					"area2": "Suche nach neuer, nicht diagnostizierter Malware wurde durchgeführt",
+					"area3": "Überprüfung mit Cloud-basierter Wiederherstellung wurde durchgeführt",
+					"area4": "Verhaltensüberwachung wurde durchgeführt",
+					"area5": "Dateien wurden mit zusammengefasster Komponente überprüft",
+					"area6": "Scan auf aktualisierte Definitionen wurde durchgeführt"
+				},
+				"securitysettingsscannedareas": {
+					"area1": "Prüfung auf aktuelle Windows-Updates wurde durchgeführt",
+					"area2": "Windows-Firewalldienst wurde überprüft",
+					"area3": "Prüfung von sicheren Browsereinstellungen wurde durchgeführt",
+					"area4": "Wesentliche Sicherheitsdienste wurden geprüft",
+					"area5": "Benutzerzugriffseinstellungen wurden überprüft",
+					"area6": "Authentifizierungsdienste wurden überprüft"
+				},
+				"annoyingadwarescannedareas": {
+					"area1": "Scan auf Adware in Browser(n) wurde durchgeführt",
+					"area2": "Popup-Einstellungen in Browser(n) wurden überprüft",
+					"area3": "Scan auf Bedrohungen durch Umleitungen im Browser wurde durchgeführt",
+					"area4": "Suche nach übrig gebliebenen Adware-Dateien wurde durchgeführt",
+					"area5": "Einstellungen für Browsererfahrung wurden überprüft",
+					"area6": "Überprüfung mit Cloud-Wiederherstellungskomponente wurde durchgeführt"
+				}
+			},
+			"subscriber": {
+				"tunepc": {
+					"accumulatedjunkscannedareas": {
+						"area1": "Junk-Dateien an 85 Orten wurden gelöscht",
+						"area2": "Nicht benötigte Systemprotokolldateien wurden gelöscht",
+						"area3": "Übrig gebliebene Anwendungsdateien wurden gelöscht",
+						"area4": "Temporäre Dateien wurden gelöscht, um Festplattenspeicher freizugeben",
+						"area5": "Vor langer Zeit gelöschte Dateien wurden gelöscht",
+						"area6": "Fehler und Warnungen wurden gelöscht"
+					},
+					"registryerrorsscannedareas": {
+						"area1": "Detaillierte Prüfung der Windows-Registrierung wurde abgeschlossen",
+						"area2": "Ungültige Windows-Dienste wurden repariert",
+						"area3": "Fehlerhafte Registrierungseinträge wurden gelöscht",
+						"area4": "Überflüssige Dateierweiterungen wurden gelöscht",
+						"area5": "Fehlerhafte Einträge von installierten Apps wurden gelöscht",
+						"area6": "Überflüssige Einträge wurden gelöscht"
+					},
+					"windowssettingsscannedareas": {
+						"area1": "Windows-Einstellungen wurden überprüft",
+						"area2": "Alle Windows-Dienste wurden optimiert",
+						"area3": "Wesentliche Windows-Dienste wurden geändert",
+						"area4": "Wesentliche Windows-Dienste wurden geändert",
+						"area5": "Möglichkeit der Dateifreigabe im Netzwerk wurde überprüft",
+						"area6": "Biometrische und Zugriffseinstellungen wurden überprüft"
+					},
+					"usabilityissuesscannedareas": {
+						"area1": "Nutzungsprobleme wurden behoben",
+						"area2": "Verbindung externer Einheiten wurde überprüft",
+						"area3": "Aktualität von Windows-Updates wurde sichergestellt",
+						"area4": "Optimale Darstellung von Apps wurde bestätigt",
+						"area5": "Einstellungen für Nutzung der Prozessorleistung wurden geändert",
+						"area6": "Einstellungen für Hilfe beim einfachen Finden von Dateien wurden geändert"
+					},
+					"systemerrorsscannedareas": {
+						"area1": "Ausführung wichtiger Dienste wurde geprüft",
+						"area2": "Dienste für höhere Leistung wurden geändert",
+						"area3": "Softwarekonfliktfehler wurden behoben",
+						"area4": "Windows-Fehlerverwaltung wurde optimiert",
+						"area5": "Fehler beim Starten von Apps wurden geprüft und behoben",
+						"area6": "Systemfehlerberichte wurden konfiguriert"
+					}
+				},
+				"internetperformance": {
+					"ejunkscannedareas": {
+						"area1": "Unnötige Dateien von 4 Browser(n) wurden gelöscht",
+						"area2": "Übrig gebliebener E-Junk wurde gelöscht",
+						"area3": "Veraltete Internetdateien wurden gelöscht",
+						"area4": "Unerwünschter Web-Cache wurde gelöscht",
+						"area5": "Cookies wurden gelöscht",
+						"area6": "Übrig gebliebene Browserdateien wurden gelöscht"
+					},
+					"browsersecurityscannedareas": {
+						"area1": "Ausführung von Sicherheitsdiensten wurde sichergestellt",
+						"area2": "Browsersicherheitsfunktionen wurden konfiguriert",
+						"area3": "Netzwerkdienste wurden überprüft und repariert",
+						"area4": "Protokolleinstellungen wurden konfiguriert",
+						"area5": "Ordnungsgemäße Funktion von Browserinhaltseinstellungen wurde überprüft",
+						"area6": "Browser-Plugins und ‑Erweiterungen wurden gescannt"
+					},
+					"networksettingsscannedareas": {
+						"area1": "Netzwerk‑ und Interneteinstellungen wurden repariert",
+						"area2": "Netzwerkkonfigurationseinstellungen wurden überprüft",
+						"area3": "Einstellungen für verbundene Netzwerke wurden geändert",
+						"area4": "Einstellungen für schnelleres Website-Rendering wurden geprüft",
+						"area5": "Fehler beim Rendern von Seiten wurden behoben",
+						"area6": "Alle Verbindungsdienste wurden gescannt"
+					},
+					"browsersettingsscannedareas": {
+						"area1": "Einstellungen für bessere Browsererfahrung wurden geändert",
+						"area2": "Einstellungen für schnelleres Website-Rendering wurden überprüft",
+						"area3": "Ordnungsgemäße Funktion von Browsersicherheitsdiensten wurde sichergestellt",
+						"area4": "Einstellungen für ordnungsgemäßes Laden von Webseiten wurden geändert",
+						"area5": "Einstellungen für schnellere Downloads wurden repariert",
+						"area6": "Berechtigungen und Zugriffssteuerungseinstellungen wurden repariert"
+					},
+					"wifiperformancescannedareas": {
+						"area1": "Einstellungen für Wi-Fi-Erfahrung wurden geändert",
+						"area2": "Einstellungen für sichere Heimnetzwerkfreigabe wurden überprüft",
+						"area3": "Einstellungen für Wi-Fi-Dienste wurden repariert",
+						"area4": "Einstellungen für sichere Netzwerkfreigabe wurden geändert",
+						"area5": "Wi-Fi-Sicherheitsstandards wurden überprüft",
+						"area6": "Wi-Fi-Kanäle wurden überprüft"
+					}
+				},
+				"malwaresecurity": {
+					"malwarescanscannedareas": {
+						"area1": "Bedrohungen an häufigen Ladepunkten wurden geprüft und entfernt",
+						"area2": "Bedrohungen an kritischen Orten wurden geprüft und entfernt",
+						"area3": "Alle Bedrohungen wurden vom PC entfernt",
+						"area4": "50+ Dateitypen wurden auf Bedrohungen überprüft",
+						"area5": "Malware-Reste wurden gelöscht",
+						"area6": "Überprüfung in Cloud-Wiederherstellungskomponente wurde durchgeführt"
+					},
+					"errantprogramsscannedareas": {
+						"area1": "Alle installierten Apps wurden überprüft",
+						"area2": "Potenziell unerwünschte Apps wurden überprüft",
+						"area3": "Inaktive und versteckte Apps wurden gelöscht",
+						"area4": "Schädliche und unerwünschte Apps wurden gelöscht",
+						"area5": "Überprüfung von Apps anhand des Zuverlässigkeitsfaktors wurde durchgeführt",
+						"area6": "Prüfung der Registrierung auf unerwünschte Programme wurde abgeschlossen"
+					},
+					"zerodayinfectionsscannedareas": {
+						"area1": "Analyse auf Zero-Day-Viren wurde durchgeführt",
+						"area2": "Alle Malware wurde vom PC entfernt",
+						"area3": "Überprüfung in Cloud-Wiederherstellungskomponente wurde durchgeführt",
+						"area4": "Verhaltensüberwachung von Apps wurde abgeschlossen",
+						"area5": "Überprüfung mithilfe zusammengefasster Komponente wurde durchgeführt",
+						"area6": "Überprüfung entsprechend aktueller Definitionen wurde durchgeführt"
+					},
+					"securitysettingsscannedareas": {
+						"area1": "Einstellungen für Windows-Update wurden optimiert",
+						"area2": "Windows-Firewalldienst wurde optimiert",
+						"area3": "Einstellungen von Browser(n) wurden geschützt",
+						"area4": "Wesentliche Sicherheitsdienste wurden geprüft",
+						"area5": "Benutzerzugriffseinstellungen wurden optimiert",
+						"area6": "Authentifizierungsdienste wurden geändert"
+					},
+					"annoyingadwarescannedareas": {
+						"area1": "Adware in Browser(n) wurde entfernt",
+						"area2": "Popup-Einstellungen in Browser(n) wurden optimiert",
+						"area3": "Bedrohungen durch Umleitungen im Browser wurden diagnostiziert",
+						"area4": "Übrig gebliebene Adware-Dateien wurden gelöscht",
+						"area5": "Einstellungen für Browsererfahrung wurden optimiert",
+						"area6": "Überprüfung in Cloud-Wiederherstellungskomponente wurde durchgeführt"
+					}
+				}
+			},
+			"Diskspace": "Gewonnener Speicherplatz:",
+			"Performanceimprovements": "Leistungsverbesserungen:",
+			"Securityimprovements": "Sicherheitsverbesserungen:",
+			"Onceaweek": "Einmal pro Woche"
+		},
+		"subscriberScanHomePage": {
+			"title": "Ordnungsgemäße Funktion sichergestellt für Ihr ",
+			"titleScanCanceled": "Die Bewertung war 0, da der letzte Scan abgebrochen wurde. Klicken Sie auf \"ZURÜCK ZUR STARTSEITE\" und wiederholen Sie den Scan.",
+			"serialNumber": "Seriennummer: ",
+			"subTitle": "Sie haben Lenovo Smart Performance Service abonniert",
+			"description": "Wir scannen Ihren Computer regelmäßig proaktiv auf PC-Leistung, Internetleistung und Malware-Probleme und beheben gefundene Fehler. Sie sind ausreichend geschützt. Sie können die Leistungsprüfung bei Bedarf auch durch einen Klick auf die Schaltfläche \"Jetzt scannen\" starten.",
+			"scanNow": "SCANNEN UND REPARIEREN",
+			"backToHome": "Zurück zur Startseite",
+			"returnto": "ZURÜCK ZUM DASHBOARD",
+			"mostRecent": "LETZTER SCAN:",
+			"nextScheduled": "NÄCHSTER GEPLANTER SCAN:",
+			"successTitle": "Ihr PC ist optimiert!",
+			"successDescription": "Smart Performance hat <b>{{issueCount}} Problem(e)</b> behoben, damit Ihr PC reibungslos läuft. Eine Zusammenfassung des Scans und Berichte finden Sie unten.",
+			"scanSummary": {
+				"title": "Zusammenfassung des Scans:",
+				"description": "Wir optimieren Ihren Computer fortlaufend",
+				"tune": "Optimieren",
+				"tuneSummary": "Gewonnener Speicherplatz",
+				"boost": "Steigerung",
+				"boostSummary": "Korrekturen für höhere Leistung",
+				"secure": "Schützen",
+				"secureSummary": "Korrekturen für höhere Sicherheit",
+				"annual": "Jährlich",
+				"quarterly": "Vierteljährlich",
+				"custom": "Angepasst",
+				"txtFrom": "Von",
+				"txtTo": "Bis",
+				"txtGo": "Start",
+				"summaryCaption": "gewonnener Speicherplatz",
+				"fixes": "Korrektur(en)",
+				"txtClr": "Löschen"
+			},
+			"lastScanResults": {
+				"title": "Letzte 5 Scan-Ergebnisse:",
+				"scanDate": "Scan-Datum",
+				"results": "Ergebnisse",
+				"status": "Status"
+			}
+		},
+		"feedbackContainer": {
+			"title": "Geben Sie uns Feedback",
+			"subtitle": "Sagen Sie uns, was Sie von Smart Performance halten",
+			"buttonText": "Feedback senden",
+			"questions": {
+				"q1": "1. Wie schwierig oder einfach war es, die Scan-Funktion zu verwenden?",
+				"q2": "2. Wie schwierig oder einfach war es, die Scan-Ergebnisse zu verstehen?",
+				"q3": "3. Wie wahrscheinlich ist es, dass Sie für ein Smart Performance-Abonnement zahlen, um die Leistung Ihres Systems zu verbessern?",
+				"q4": "4. Wie zufrieden sind Sie insgesamt mit der Smart Performance-Funktion?",
+				"q5": "1. Wie schwierig oder einfach war es, die Korrekturen zu verstehen, die Smart Performance an Ihrem System durchgeführt hat?",
+				"q6": "2. Haben wir Malware auf Ihrem System gefunden?",
+				"q7": "3. Wie wahrscheinlich ist es, dass Sie weiterhin für die Smart Performance-Funktion bezahlen?",
+				"q8": "4. Wie zufrieden sind Sie insgesamt mit der Smart Performance-Funktion?"
+			},
+			"rating": {
+				"r1": "Sehr schwierig",
+				"r2": "Sehr einfach",
+				"r3": "Sehr schwierig",
+				"r4": "Sehr einfach",
+				"r5": "Gar nicht wahrscheinlich",
+				"r6": "Sehr wahrscheinlich",
+				"r7": "Gar nicht zufrieden",
+				"r8": "Sehr zufrieden",
+				"r9": "Sehr schwierig",
+				"r10": "Sehr einfach",
+				"r11": "Ja",
+				"r12": "Nein",
+				"r13": "Gar nicht wahrscheinlich",
+				"r14": "Sehr wahrscheinlich",
+				"r15": "Gar nicht zufrieden",
+				"r16": "Sehr zufrieden"
+			},
+			"commentTip": "Kommentare oder zusätzliches Feedback können Sie unten hinterlassen:",
+			"comments": "Geben Sie hier Kommentare ein …"
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial",
+			"trialTitle": "Trial subscription",
+			"subscriptionTitle": "Paid subscription",
+			"inTrialDetail": "You are currently in your trial period.",
+			"trialExpiredDetail": "Your trial period has expired.",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
+			"discountPrice": "For only $29.99 for one year",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId": "Lenovo ID:",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
+		},
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your own Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join your family's Connected Home Security",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+			"goNow": "Go now",
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
+		}
+	},
+	"dir": "ltr",
+	"dirClass": "ltr",
+	"warranty": {
+		"warrantyStatusText": "Gewährleistungsstatus: ",
+		"inWarranty": "In Garantie",
+		"outOfWarranty": "Garantie abgelaufen",
+		"viewDetails": "Details anzeigen",
+		"currentService": "Aktueller Service‑ und Supportstatus",
+		"monthsRemaining": "noch {{remainingMonths}} Monate",
+		"oneMonthRemaining": "noch 1 Monat",
+		"lessThanOneMonth": "noch < 1 Monat",
+		"makeSureNeedCoverage": "Stellen Sie sicher, dass Sie den benötigten Schutz haben",
+		"recommendsUpgradingText": "Lenovo empfiehlt ein Upgrade Ihrer Servicestufe",
+		"exploreOptions": "Optionen erkunden",
+		"start": "Start",
+		"end": "Ende",
+		"nMos": "{{monthValue}} Mon.",
+		"today": "Heute",
+		"upgradeLevels": {
+			"title": "Mit Lenovo Garantie, Services und Aktualisierungen sind Sie vor Hardwarefehlern geschützt.",
+			"subTitle": "Der Schutz vor Schäden durch Unfälle deckt unvorhergesehene Schäden durch Stürze, ausgelaufene Flüssigkeiten, Bildschirmrisse uvm.",
+			"recommended": "Empfohlen",
+			"learnMore": "Möchten Sie mehr erfahren?",
+			"good": {
+				"warrantyCodeText": "Depot-Support",
+				"levelText": "gut",
+				"point1": "Teile und Arbeitsleistung",
+				"point2": "Grundlegender Telefon-Support bei Hardwarefragen",
+				"point3": "Reparaturen erfolgen bei Versand an das Lenovo Depot"
+			},
+			"better": {
+				"warrantyCodeText": "Vor-Ort-Support",
+				"levelText": "besser",
+				"point1": "Teile und Arbeitsleistung",
+				"point2": "Grundlegender Telefon-Support bei Hardwarefragen",
+				"point3": "<b>Schneller</b> – Reparaturen werden an Ihrem Standort durchgeführt"
+			},
+			"best": {
+				"warrantyCodeText": "Premier",
+				"levelText": "am besten",
+				"point1": "<b>Priorisierte</b> Teile und Arbeitsleistung",
+				"point2": "<b>Erweiterter</b> Telefon-Support durch Lenovo Techniker",
+				"point3": "<b>Schneller</b> – Reparaturen erfolgen an Ihrem Standort am nächsten Werktag",
+				"point4": "<b>Umfassender Hardware‑ und Software-Support</b>"
+			}
 		}
 	},
 	"security": {
@@ -4630,832 +5499,12 @@
 		"updateSnapshotTooltip": "Momentaufnahme aller Hardware‑ und Softwarekomponenten mit den neuesten Informationen aktualisieren",
 		"replaceBaselineTooltip": "Basis für die ausgewählten Komponenten mit den Informationen der aktuellen Momentaufnahme aktualisieren"
 	},
-	"smartPerformance": {
-		"title": "Smart Performance",
-		"back": "ZURÜCK",
-		"performanceandSecurityCheckTitle": "Leistungs‑ und Sicherheitsüberprüfung",
-		"performanceandSecurityCheckSubTitle": "Ermitteln und beheben Sie Leistungs‑ und Sicherheitsprobleme auf Ihrem Computer",
-		"scanButton": "KOSTENLOSER PC-SCAN",
-		"section1Heading": "Wie beurteilen Sie die Leistung Ihres PCs?",
-		"section1Description": "PC läuft langsam? Anwendungen reagieren zu langsam? Windows-Fehler? Malware-Bedenken? Wir können die Ursache des Problems ermitteln und beheben.",
-		"critical": "KRITISCH",
-		"allisWell": "ALLES IN ORDNUNG",
-		"zero": 0,
-		"one": 1,
-		"two": 2,
-		"three": 3,
-		"four": 4,
-		"five": 5,
-		"six": 6,
-		"seven": 7,
-		"eight": 8,
-		"nine": 9,
-		"ten": 10,
-		"tuneUP": "Ihr PC muss optimiert werden",
-		"section2Heading": "Erstklassige PC-Leistung. Immer",
-		"section2Description": "Mit unserer Software können Sie Ihren PC rund um die Uhr proaktiv scannen und Probleme rasch finden und beheben, sodass Ihr PC immer eine erstklassige Leistung bietet.",
-		"runningWell": "PC läuft gut",
-		"auto": "Automatisch",
-		"manual": "Manuell",
-		"am": "vormittags",
-		"pm": "nachmittags",
-		"scanNow": "Jetzt scannen",
-		"signUpAndFix": "Registrieren & reparieren",
-		"cancel": "Abbrechen",
-		"scanning": "Scanvorgang wird durchgeführt",
-		"fixIt": "Jetzt reparieren",
-		"optimizeIt": "Optimieren",
-		"maintainIt": "Warten",
-		"noteFindings": "Wir sind durch eine detaillierte Analyse Ihres Computers zu diesem Ergebnis gekommen.",
-		"noteNavigateTab": "Öffnen Sie die Registerkarten, um mehr zu erfahren:",
-		"scannedAreas": "Gescannte Bereiche",
-		"lastFix": "Letzte Korrektur",
-		"fixResult": "Korrekturergebnis",
-		"checkPreviousResults": "Vorherige Ergebnisse prüfen",
-		"tunePCPerformance": {
-			"title": "PC-leistung Optimieren",
-			"heading": "Kümmern Sie sich um Ihren Computer",
-			"description": "Selbst der beste Computer profitiert von regelmäßiger Optimierung. Optimieren Sie den PC mit unserer leistungsfähigen App.",
-			"tabSet1": {
-				"tab1": "Angesammelte Junk-Daten",
-				"tab2": "Nutzungsprobleme",
-				"tab3": "Windows-Einstellungen",
-				"tab4": "Systemfehler",
-				"tab5": "Registrierungsfehler"
-			},
-			"tabSet2": {
-				"tab1Heading": "EINFACH",
-				"tab1Description": "Wir verwenden keine komplizierten technischen Begriffe",
-				"tab2Heading": "SCHNELL",
-				"tab2Description": "Machen Sie einen 100-Punkte-Check in unter 5 Minuten",
-				"tab3Heading": "SICHER",
-				"tab3Description": "Keine Scareware, sondern bewährte Verfahren"
-			},
-			"summaryTitle": "PC-Leistung optimieren"
-		},
-		"boostInternetPerformance": {
-			"title": "INTERNET-LEISTUNG STEIGERN",
-			"extraTitle": "Internetleistung",
-			"heading": "Steigern Sie Ihre Internetleistung",
-			"description": "Langsames oder gar kein Wi-Fi ist für viele Menschen unvorstellbar. Wir konfigurieren Ihre Internet‑, Wi-Fi‑ und Browsereinstellungen für optimale Leistung.",
-			"tabSet1": {
-				"tab1": "E-Junk",
-				"tab2": "Netzeinstellungen",
-				"tab3": "Browsereinstellungen",
-				"tab4": "Browsersicherheit",
-				"tab5": "Wi-Fi-Leistung"
-			},
-			"tabSet2": {
-				"tab1Heading": "BROWSERPROBLEME",
-				"tab1Description": "Wir konfigurieren und optimieren alle bekannten Webbrowser.",
-				"tab2Heading": "VERBINDUNGSFEHLER",
-				"tab2Description": "Wir können Ihre Verbindungsprobleme diagnostizieren und reparieren.",
-				"tab3Heading": "LANGSAMES INTERNET",
-				"tab3Description": "Wir helfen Ihnen dabei, die maximale Leistung zu erzielen."
-			},
-			"summaryTitle": "Internetleistung"
-		},
-		"malwareSecurity": {
-			"title": "Malware Und Sicherheit",
-			"heading": "Geben Sie Ihrem Computer die zusätzliche Pflege, die er braucht",
-			"description": "Malware kann zu Abstürzen, beschädigten Daten und Leistungseinbußen führen. Entfernen Sie Malware, um sicherer und schneller zu arbeiten.",
-			"tabSet1": {
-				"tab1": "Malware-Scan",
-				"tab2": "Neuartige Viren",
-				"tab3": "Unerwünschte Programme",
-				"tab4": "Lästige Adware",
-				"tab5": "Sicherheitseinstellungen"
-			},
-			"tabSet2": {
-				"tab1Heading": "ZERO-DAY-VIREN",
-				"tab1Description": "Wir entfernen sogar die neueste Malware",
-				"tab2Heading": "SPYWARE-ENTFERNUNG",
-				"tab2Description": "Wir entfernen alle potenziell unerwünschten Programme",
-				"tab3Heading": "SCHNELL ERLEDIGT",
-				"tab3Description": "Scan dauert normalerweise 5 bis 10 Minuten"
-			},
-			"summaryTitle": "Malware und Sicherheit"
-		},
-		"proactiveAutomated": {
-			"title": "PROAKTIV UND AUTOMATISIERT",
-			"heading": "Beheben Sie Probleme, bevor Sie von ihnen beeinträchtigt werden!",
-			"description": "Smart Performance sucht konstant nach Hunderten von Problemen, die die PC-Leistung beeinträchtigen. Wir beheben sie proaktiv, damit Sie entspannt arbeiten können.",
-			"tabSet1": {
-				"tab1": "Scan planen",
-				"tab2": "Scan bei Bedarf",
-				"tab3": "Automatische Problemlösung",
-				"tab4": "Besonders effektiv",
-				"tab5": "Schutz rund um die Uhr"
-			},
-			"tabSet2": {
-				"tab1Heading": "EINFACH",
-				"tab1Description": "Wir verwenden keine komplizierten technischen Begriffe",
-				"tab2Heading": "SCHNELL",
-				"tab2Description": "Machen Sie einen 100-Punkte-Check in unter 5 Minuten",
-				"tab3Heading": "SICHER",
-				"tab3Description": "Keine Scareware, sondern bewährte Verfahren"
-			}
-		},
-		"noScanResults": "Klicken Sie auf \"SCANNEN UND REPARIEREN\", um den Scan zu starten.",
-		"startScan": "<b>Sind Sie bereit für den Scan?</b> Wir ermitteln Leistungs‑ und Sicherheitsprobleme auf Ihrem Computer.",
-		"subscriptionDetails": {
-			"title": "Abonnementdetails",
-			"description": "Sie haben den Lenovo Smart Performance Service abonniert. Sie haben aktuell Zugriff auf alle Funktionen, mit denen Ihr PC durchgängig geschützt wird und reibungslos funktioniert.",
-			"learnMore": "Weitere Informationen",
-			"startDate": "Startdatum",
-			"endDate": "Enddatum",
-			"status": "Status",
-			"activeStatus": "AKTIV",
-			"inactiveStatus": "INAKTIV",
-			"manageSubscription": "ABONNEMENT VERWALTEN",
-			"titlebeta": "Lenovo Beta-Programm",
-			"manageSubscriptionBeta": "ALLE FUNKTIONEN AKTIVIEREN",
-			"descriptionbeta": "Lenovo bietet ein Pilotprogramm zum Testen der Smart Performance-Funktionen bis Juli 2020.",
-			"descriptionbeta1": "Melden Sie sich gern an, um alle Funktionen auszuprobieren.",
-			"descriptionNonSubscriber": "Sie haben den Lenovo Smart Performance Service nicht abonniert. Sie können nur Ihren PC scannen. Abonnieren Sie jetzt für Zugriff auf alle Funktionen, mit denen Ihr PC durchgängig geschützt wird und reibungslos funktioniert.",
-			"processStatus": "LÄUFT",
-			"descriptionExpired": "Ihr Abonnement ist abgelaufen und Sie können die Scan-Funktion derzeit nur in Smart Performance verwenden. Klicken Sie auf den Link \"Abonnement verwalten\", um Ihr Abonnement zu erneuern und Ihre Einheit wieder umfassend zu schützen.",
-			"expiredStatus": "ABGELAUFEN",
-			"expiredNote": "Ihr Abonnement läuft ab in",
-			"day": "Tag",
-			"days": "Tage",
-			"weeks": "Wochen",
-			"week": "einer Woche",
-			"month": "Monat",
-			"today": "heute",
-			"next": "nächste"
-		},
-		"scanSettings": {
-			"title": "Scanzeitplan festlegen",
-			"description": "Scan aktivieren oder deaktivieren und Scanzeitplan festlegen",
-			"enableScan": "Scan aktivieren",
-			"changeScanTitle": "Scanzeitplan ändern",
-			"changeScanDescription": "Passen Sie den Scanzeitplan an Ihre Anforderungen an.",
-			"frequency": "Häufigkeit",
-			"txtDate": "Datum",
-			"txtDay": "Tag",
-			"txtTime": "Zeit",
-			"txtSave": "gespeichert",
-			"txtCancel": "abbrechen",
-			"scanFrequencyWeek": "Einmal pro Woche",
-			"scanFrequencyEveryWeek": "Jede zweite Woche",
-			"scanFrequencyMonth": "Einmal pro Monat",
-			"mon": "Montag",
-			"tue": "Dienstag",
-			"wed": "Mittwoch",
-			"thu": "Donnerstag",
-			"fri": "Freitag",
-			"sat": "Samstag",
-			"sun": "Sonntag",
-			"am": "AM",
-			"pm": "PM",
-			"tooltipText": "Wenn diese Option aktiviert ist, wird der Systemleistungs‑ und Sicherheitsscan automatisch zum von Ihnen festgelegten Datum und zur bestimmten Uhrzeit gestartet."
-		},
-		"scanningPage": {
-			"title": "Leistungs‑ und Sicherheitsüberprüfung",
-			"description": "Warten Sie, während das System auf mögliche Probleme und Bedrohungen überprüft wird.",
-			"scanningSystem": "System wird gescannt",
-			"complete": "abgeschlossen",
-			"cancelScan": {
-				"button": "SCAN ABBRECHEN",
-				"title": "Scan abbrechen?",
-				"description": "Wenn Sie den aktuellen Bildschirm verlassen, wird der Scan abgebrochen und Sie kehren zur Startseite zurück. Sie können den Scan jederzeit erneut ausführen.",
-				"yesButton": "JA, ABBRECHEN",
-				"noButton": "NEIN, SCAN FORTSETZEN",
-				"cancelMayTakeSomeTime": "Bitte warten Sie einen Moment, je nach System kann der Abbruch einige Zeit in Anspruch nehmen.",
-				"cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?"
-			},
-			"waiting": "warten auf scanbeginn",
-			"completed": "fertig",
-			"nowScanningDetail": {
-				"cardTitle": "DETAILS WERDEN GESCANNT",
-				"current": "AKTUELL: ",
-				"upNext": "DANACH: ",
-				"tunePCDesc": "Wir helfen Ihnen dabei, die PC-Leistung zu optimieren. Dies geschieht auf sichere Weise mit branchenbewährten Verfahren. Abonnenten profitieren von kürzerer PC-Startzeit, verbesserter Leistung, höherer Stabilität und schnellerem Start von Anwendungen.",
-				"boostDesc": "Wir helfen Ihnen dabei, Ihre Browsererfahrung zu verbessern. Wir beheben Netzwerk‑ und Zugriffsprobleme. Abonnenten profitieren von einer optimierten Internetverbindung, höheren Upload‑/Download-Geschwindigkeiten und mehr Sicherheit im Internet.",
-				"malwareDesc": "Wir helfen Ihnen dabei, Ihren PC schnell und bedarfsgerecht zu schützen. Das passiert, indem wir Spyware, Malware und Adware entfernen. Wir entfernen auch noch unbekannte Infektionen. Abonnenten profitieren von Schutz für ihre Daten und optimaler Systemleistung.",
-				"proactiveDesc": "Wir optimieren Ihren Computer regelmäßig und beheben proaktiv und automatisiert Probleme, damit Ihr PC reibungslos läuft und geschützt ist. Immer",
-				"tunePCScanningItems": {
-					"accumulatedJunk": {
-						"itema1": "An 85 Orten nach Junk-Daten suchen",
-						"itema2": "Nicht benötigte Systemprotokolldateien",
-						"itema3": "Unnötige, übrig gebliebene Anwendungsdateien",
-						"itema4": "Temporäre Dateien, die Festplattenspeicher blockieren",
-						"itema5": "Dateien, die Sie vor langer Zeit gelöscht haben",
-						"itema6": "Überholte Fehler und Warnungen"
-					},
-					"usabilityIssues": {
-						"itemb1": "Zahlreiche Nutzungsprobleme beheben",
-						"itemb2": "Verbindung externer Einheiten prüfen",
-						"itemb3": "Windows-Updates immer aktuell halten",
-						"itemb4": "Apps optimal darstellen",
-						"itemb5": "Nutzung der Prozessorleistung analysieren",
-						"itemb6": "Hilfe beim einfachen Finden von Dateien"
-					},
-					"windowsSettings": {
-						"itemc1": "Zahlreiche Windows OS-Einstellungen prüfen",
-						"itemc2": "Sicherstellen, dass Windows fehlerfrei läuft",
-						"itemc3": "Sicherstellen, dass wichtige Dienste ausgeführt werden",
-						"itemc4": "Zustand von Verbindungseinstellungen prüfen",
-						"itemc5": "Möglichkeit der Dateifreigabe im Netzwerk prüfen",
-						"itemc6": "Biometrische und Zugriffseinstellungen prüfen"
-					},
-					"systemErrors": {
-						"itemd1": "Sicherstellen, dass wichtige Dienste ausgeführt werden",
-						"itemd2": "Dienste für höhere Leistung auswählen",
-						"itemd3": "Nach Softwarekonfliktfehlern suchen",
-						"itemd4": "Windows-Fehlerverwaltung optimieren",
-						"itemd5": "Fehler beim Starten von Apps prüfen und beheben",
-						"itemd6": "Systemfehlerberichte konfigurieren"
-					},
-					"registryErrors": {
-						"iteme1": "Windows-Registrierung detailliert prüfen",
-						"iteme2": "Auf ungültige Windows-Dienste scannen",
-						"iteme3": "Fehlerhafte Registrierungseinträge finden",
-						"iteme4": "Nach überflüssigen Dateierweiterungen suchen",
-						"iteme5": "Fehlerhafte Einträge von installierten Apps suchen",
-						"iteme6": "Nach überflüssigen Einträgen suchen"
-					}
-				},
-				"boostScanningItems": {
-					"networkSettings": {
-						"itema1": "Netzwerk‑ und Interneteinstellungen prüfen",
-						"itema2": "Netzwerkkonfigurationseinstellungen überprüfen",
-						"itema3": "Verfügbare Netzwerkeinstellungen überprüfen",
-						"itema4": "Schnelleres Laden von Websites konfigurieren",
-						"itema5": "Nach Fehlern beim Rendern von Seiten suchen",
-						"itema6": "Ordnungsgemäße Funktion von Verbindungsdienst(en) prüfen"
-					},
-					"browserSettings": {
-						"itemb1": "Bessere Browsererfahrung ermöglichen",
-						"itemb2": "Einstellungen schnelleres Website-Rendering konfigurieren",
-						"itemb3": "Sicherstellen, dass die Browsersicherheitsdienste ordnungsgemäß funktionieren",
-						"itemb4": "Sicherstellen, dass Webseiten ordnungsgemäß gerendert werden",
-						"itemb5": "Einstellungen für schnellere Downloads prüfen",
-						"itemb6": "Berechtigungen und Zugriffssteuerung prüfen"
-					},
-					"browserSecurity": {
-						"itemc1": "Sicherstellen, dass Sicherheitsdienste ausgeführt werden",
-						"itemc2": "Browsersicherheitsfunktionen konfigurieren",
-						"itemc3": "Ordnungsgemäße Funktion von Netzwerkdiensten prüfen",
-						"itemc4": "Protokolleinstellungen konfigurieren",
-						"itemc5": "Überprüfen, ob Browserinhaltseinstellungen ordnungsgemäß funktionieren",
-						"itemc6": "Browser-Plugins und ‑Erweiterungen prüfen"
-					},
-					"wifiPerformance": {
-						"itemd1": "Einstellungen für Wi-Fi-Erfahrung optimieren",
-						"itemd2": "Sicherstellen, dass Ihr Heimnetzwerk sicher ist",
-						"itemd3": "Einstellungen für Wi-Fi-Dienste prüfen",
-						"itemd4": "Einstellungen für sichere Netzwerkfreigabe",
-						"itemd5": "Wi-Fi-Sicherheitsstandards prüfen",
-						"itemd6": "Sicherstellen, dass Wi-Fi-Kanäle nicht überlappen"
-					},
-					"eJunk": {
-						"iteme1": "Unnötige Browserdateien löschen",
-						"iteme2": "Nach übrig gebliebenem E-Junk suchen",
-						"iteme3": "Nach veralteten Internetdateien suchen",
-						"iteme4": "Unerwünschten Web-Cache löschen",
-						"iteme5": "Cookies löschen",
-						"iteme6": "Übrig gebliebene Browserdateien entfernen"
-					}
-				},
-				"malwareScanningItems": {
-					"malwareScan": {
-						"itema1": "Häufige Ladepunkte scannen",
-						"itema2": "Kritische Orte auf Bedrohungen prüfen",
-						"itema3": "Nach Viren, Spyware und Malware suchen",
-						"itema4": "Nach 50+ Dateitypen suchen",
-						"itema5": "Nach Malware-Resten suchen",
-						"itema6": "Nutzung der Cloud-Wiederherstellungskomponente"
-					},
-					"zerodayInfections": {
-						"itemb1": "Nach Zero-Day-Viren suchen",
-						"itemb2": "Nach neuer, nicht diagnostizierter Malware suchen",
-						"itemb3": "Mit Cloud-basierter Wiederherstellung scannen",
-						"itemb4": "Verhaltensüberwachung durchführen",
-						"itemb5": "Dateien mit zusammengefasster Komponente scannen",
-						"itemb6": "Entsprechend aktueller Definitionen scannen"
-					},
-					"securitySettings": {
-						"itemc1": "Windows-Updates immer aktuell halten",
-						"itemc2": "Sicherstellen, dass der Windows-Firewalldienst ordnungsgemäß funktioniert",
-						"itemc3": "Browsereinstellungen schützen",
-						"itemc4": "Wesentliche Sicherheitsdienste prüfen",
-						"itemc5": "Benutzerzugriffseinstellungen konfigurieren",
-						"itemc6": "Authentifizierungsdienste überprüfen"
-					},
-					"errantPrograms": {
-						"itemd1": "Nach unerwünschten Apps suchen",
-						"itemd2": "Nach potenziell unerwünschten Apps suchen",
-						"itemd3": "Inaktive und versteckte Apps ermitteln",
-						"itemd4": "Apps auf schädliches Verhalten überprüfen",
-						"itemd5": "Apps anhand des Zuverlässigkeitsfaktors prüfen",
-						"itemd6": "Registrierung auf unerwünschte Programme prüfen"
-					},
-					"annoyingAdware": {
-						"iteme1": "Nach Adware in Browser(n) suchen",
-						"iteme2": "Popup-Einstellungen von Browser(n) überprüfen",
-						"iteme3": "Bedrohungen durch Umleitungen im Browser beseitigen",
-						"iteme4": "Nach übrig gebliebenen Adware-Dateien suchen",
-						"iteme5": "Einstellungen für Browsererfahrung optimieren",
-						"iteme6": "In Cloud-Wiederherstellungskomponente überprüfen"
-					}
-				}
-			},
-			"confirmationTitle": "Lenovo Zahlungsvorgang",
-			"confirmationNote": "Sie werden zur Lenovo Zahlungswebsite weitergeleitet, um die Zahlung abzuschließen. Wenn die Zahlung abgeschlossen ist, klicken Sie auf \"Aktualisieren\" in \"Abonnementdetails\", um das Zahlungsergebnis zu erhalten.",
-			"confirmationBtn": "Fortfahren",
-			"refreshButton": "Status aktualisieren"
-		},
-		"scanCompletePage": {
-			"title": "Systemscan ist abgeschlossen",
-			"description": "Gefunden auf Ihrem {{machineFamilyName}}",
-			"scanRates": "Unser Scan stuft Ihren PC ein als: ",
-			"summary": "Zusammenfassung",
-			"foundIssues": "Der Scan hat {{issueCount}} Probleme gefunden",
-			"summaryDetails": "Registrieren Sie sich jetzt, damit diese Probleme behoben werden und Ihr System reibungslos läuft. Mit unserer Software können diese Bereiche auf Ihrem System rund um die Uhr proaktiv gescannt und Probleme rasch gefunden und behoben werden, sodass Ihr PC immer eine erstklassige Leistung bietet.",
-			"expiredSummaryDetails": "Ihr Abonnement ist abgelaufen und Sie können die Scan-Funktion derzeit nur in Smart Performance verwenden. Wenn Sie die Funktion \"Scannen und reparieren\" verwenden möchten, klicken Sie auf die unten angezeigte Schaltfläche \"Erneuern und reparieren\", um Ihr Abonnement zu erneuern.",
-			"signupRepairButton": "JETZT REGISTRIEREN UND REPARIEREN",
-			"renewAndFix": "Erneuern und reparieren",
-			"backToHome": "Zurück zur Startseite",
-			"monthlyPricing": "<b>Weniger als {{monthlyPrice}} im Monat.</b> Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche <a  href=\"#\">Mehr erfahren</a>",
-			"issueCount": "{{individualIssueCount}} PROBLEME",
-			"issues": "Problem(e)",
-			"tuneIssueCount": "{{tune}}",
-			"boostIssueCount": "{{boost}}",
-			"secureIssueCount": "{{secure}}",
-			"scannedAreas": "GESCANNTE BEREICHE",
-			"summaryPurchaseTip": "Kaufen Sie jetzt das Jahresabonnement und diese Probleme werden jede Woche automatisch behoben.",
-			"tunePCTooltip": "Optimierte Gesamtsystemleistung, verkürzte PC-Startzeit und verbesserte Anwendungsladezeiten.",
-			"boostTooltip": "Bessere Netzwerkleistung, Browsererfahrung und Konnektivität.",
-			"malwareTooltip": "Höhere Sicherheit, Entfernen von Malware und Viren und Wiederherstellen der Systemstabilität.",
-			"recommendedAction": {
-				"title": "Empfohlene Aktion",
-				"description": "Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche",
-				"yearlyPricing": "{{yearlyPrice}}/Jahr",
-				"monthlyPricing": "WENIGER ALS {{monthlyPrice}} IM MONAT.",
-				"longerTerm": "Langfristiger planen? Noch mehr sparen?",
-				"newDescription": "Nach der Anmeldung werden wir diese Probleme jede Woche automatisch für Sie beheben.",
-				"signupButton": "REGISTRIEREN"
-			},
-			"tunepc": {
-				"accumulatedjunkscannedareas": {
-					"area1": "85 Orte wurden auf Junk-Daten gescannt",
-					"area2": "Nicht benötigte Systemprotokolldateien",
-					"area3": "Unnötige, übrig gebliebene Anwendungsdateien",
-					"area4": "Temporäre Dateien, die Festplattenspeicher blockieren",
-					"area5": "Dateien, die Sie vor langer Zeit gelöscht haben",
-					"area6": "Überholte Fehler und Warnungen"
-				},
-				"registryerrorsscannedareas": {
-					"area1": "Detaillierte Prüfung der Windows-Registrierung wurde abgeschlossen",
-					"area2": "Scan auf ungültige Windows-Dienste wurde durchgeführt",
-					"area3": "Suche nach fehlerhaften Registrierungseinträgen wurde durchgeführt",
-					"area4": "Scan auf überflüssige Dateierweiterungen wurde durchgeführt",
-					"area5": "Fehlerhafte Einträge von installierten Apps wurden gesucht",
-					"area6": "Suche nach überflüssigen Einträgen wurde durchgeführt"
-				},
-				"windowssettingsscannedareas": {
-					"area1": "Prüfung von zahlreichen Windows OS-Einstellungen wurde durchgeführt",
-					"area2": "Fehlerfreie Ausführung von Windows wurde geprüft",
-					"area3": "Ausführung wichtiger Dienste wurde sichergestellt",
-					"area4": "Zustand von Verbindungseinstellungen wurde geprüft",
-					"area5": "Möglichkeit der Dateifreigabe im Netzwerk wurde geprüft",
-					"area6": "Biometrische und Zugriffseinstellungen wurden geprüft"
-				},
-				"usabilityissuesscannedareas": {
-					"area1": "Suche nach Nutzungsproblemen wurde durchgeführt",
-					"area2": "Verbindung externer Einheiten wurde geprüft",
-					"area3": "Status von Windows-Updates wurde geprüft",
-					"area4": "Einstellung für App-Rendering wurde überprüft",
-					"area5": "Nutzung der Prozessorleistung wurde analysiert",
-					"area6": "Hilfe beim einfachen Finden von Dateien"
-				},
-				"systemerrorsscannedareas": {
-					"area1": "Ausführung wichtiger Dienste wurde geprüft",
-					"area2": "Nach Diensten für höhere Leistung suchen",
-					"area3": "Nach Softwarekonfliktfehlern suchen",
-					"area4": "Windows-Fehlerverwaltung wurde analysiert",
-					"area5": "Scan auf Fehler beim Starten von Apps wurde durchgeführt",
-					"area6": "Konfiguration der Systemfehlerberichte wurde geprüft"
-				}
-			},
-			"internetperformance": {
-				"ejunkscannedareas": {
-					"area1": "Unnötige Browserdateien wurden identifiziert",
-					"area2": "Übrig gebliebener E-Junk wurde gesucht",
-					"area3": "Scan auf veraltete Internetdateien wurde durchgeführt",
-					"area4": "Unerwünschter Web-Cache wurde gesucht",
-					"area5": "Zu löschende Cookies wurden gesucht",
-					"area6": "Scan auf übrig gebliebene Browserdateien wurde durchgeführt"
-				},
-				"browsersecurityscannedareas": {
-					"area1": "Ausführung von Sicherheitsdienstes wurde geprüft",
-					"area2": "Browsersicherheitsfunktionen wurden geprüft",
-					"area3": "Netzwerkdienste wurden überprüft",
-					"area4": "Protokolleinstellungen konfigurieren",
-					"area5": "Browserinhaltseinstellungen wurden geprüft",
-					"area6": "Browser-Plugins und ‑Erweiterungen wurden gescannt"
-				},
-				"networksettingsscannedareas": {
-					"area1": "Netzwerk‑ und Interneteinstellungen wurden geprüft",
-					"area2": "Netzwerkkonfigurationseinstellungen wurden geprüft",
-					"area3": "Einstellungen für verbundene Netzwerke wurden überprüft",
-					"area4": "Einstellungen für schnelleres Website-Rendering wurden geprüft",
-					"area5": "Scan auf Fehler beim Rendern von Seiten wurde durchgeführt",
-					"area6": "Alle Verbindungsdienste wurden gescannt"
-				},
-				"browsersettingsscannedareas": {
-					"area1": "Bessere Browsererfahrung ermöglichen",
-					"area2": "Einstellungen für schnelleres Website-Rendering wurden geprüft",
-					"area3": "Browsersicherheitsdienste wurden überprüft",
-					"area4": "Ordnungsgemäßes Rendering von Webseiten wurde geprüft",
-					"area5": "Einstellungen für schnellere Downloads wurden gescannt",
-					"area6": "Berechtigungen und Zugriffssteuerung wurden analysiert"
-				},
-				"wifiperformancescannedareas": {
-					"area1": "Einstellungen für Wi-Fi-Erfahrung wurden überprüft",
-					"area2": "Sicheres Heimnetzwerk wurde überprüft",
-					"area3": "Einstellungen für Wi-Fi-Dienste wurden gescannt",
-					"area4": "Einstellungen für sichere Netzwerkfreigabe wurden überprüft",
-					"area5": "Wi-Fi-Sicherheitsstandards wurden überprüft",
-					"area6": "Analyse auf sich überlappende Wi-Fi-Kanäle wurde durchgeführt"
-				}
-			},
-			"malwaresecurity": {
-				"malwarescanscannedareas": {
-					"area1": "Häufige Ladepunkte wurden gescannt",
-					"area2": "Kritische Orte wurden auf Bedrohungen gescannt",
-					"area3": "Scan auf Viren, Spyware und Malware wurde durchgeführt",
-					"area4": "50+ Dateitypen wurden auf Bedrohungen gescannt",
-					"area5": "Suche nach Malware-Resten wurde durchgeführt",
-					"area6": "Überprüfung in Cloud-Wiederherstellungskomponente wurde durchgeführt"
-				},
-				"errantprogramsscannedareas": {
-					"area1": "Nach unerwünschten Apps suchen",
-					"area2": "Suche nach potenziell unerwünschten Apps wurde durchgeführt",
-					"area3": "Suche nach inaktiven und versteckten Apps wurde durchgeführt",
-					"area4": "Scan auf schädliche Apps wurde durchgeführt",
-					"area5": "Prüfung von Apps anhand des Zuverlässigkeitsfaktors wurde durchgeführt",
-					"area6": "Prüfung der Registrierung auf unerwünschte Programme wurde durchgeführt"
-				},
-				"zerodayinfectionsscannedareas": {
-					"area1": "Scan auf Zero-Day-Viren wurde durchgeführt",
-					"area2": "Suche nach neuer, nicht diagnostizierter Malware wurde durchgeführt",
-					"area3": "Überprüfung mit Cloud-basierter Wiederherstellung wurde durchgeführt",
-					"area4": "Verhaltensüberwachung wurde durchgeführt",
-					"area5": "Dateien wurden mit zusammengefasster Komponente überprüft",
-					"area6": "Scan auf aktualisierte Definitionen wurde durchgeführt"
-				},
-				"securitysettingsscannedareas": {
-					"area1": "Prüfung auf aktuelle Windows-Updates wurde durchgeführt",
-					"area2": "Windows-Firewalldienst wurde überprüft",
-					"area3": "Prüfung von sicheren Browsereinstellungen wurde durchgeführt",
-					"area4": "Wesentliche Sicherheitsdienste wurden geprüft",
-					"area5": "Benutzerzugriffseinstellungen wurden überprüft",
-					"area6": "Authentifizierungsdienste wurden überprüft"
-				},
-				"annoyingadwarescannedareas": {
-					"area1": "Scan auf Adware in Browser(n) wurde durchgeführt",
-					"area2": "Popup-Einstellungen in Browser(n) wurden überprüft",
-					"area3": "Scan auf Bedrohungen durch Umleitungen im Browser wurde durchgeführt",
-					"area4": "Suche nach übrig gebliebenen Adware-Dateien wurde durchgeführt",
-					"area5": "Einstellungen für Browsererfahrung wurden überprüft",
-					"area6": "Überprüfung mit Cloud-Wiederherstellungskomponente wurde durchgeführt"
-				}
-			},
-			"subscriber": {
-				"tunepc": {
-					"accumulatedjunkscannedareas": {
-						"area1": "Junk-Dateien an 85 Orten wurden gelöscht",
-						"area2": "Nicht benötigte Systemprotokolldateien wurden gelöscht",
-						"area3": "Übrig gebliebene Anwendungsdateien wurden gelöscht",
-						"area4": "Temporäre Dateien wurden gelöscht, um Festplattenspeicher freizugeben",
-						"area5": "Vor langer Zeit gelöschte Dateien wurden gelöscht",
-						"area6": "Fehler und Warnungen wurden gelöscht"
-					},
-					"registryerrorsscannedareas": {
-						"area1": "Detaillierte Prüfung der Windows-Registrierung wurde abgeschlossen",
-						"area2": "Ungültige Windows-Dienste wurden repariert",
-						"area3": "Fehlerhafte Registrierungseinträge wurden gelöscht",
-						"area4": "Überflüssige Dateierweiterungen wurden gelöscht",
-						"area5": "Fehlerhafte Einträge von installierten Apps wurden gelöscht",
-						"area6": "Überflüssige Einträge wurden gelöscht"
-					},
-					"windowssettingsscannedareas": {
-						"area1": "Windows-Einstellungen wurden überprüft",
-						"area2": "Alle Windows-Dienste wurden optimiert",
-						"area3": "Wesentliche Windows-Dienste wurden geändert",
-						"area4": "Wesentliche Windows-Dienste wurden geändert",
-						"area5": "Möglichkeit der Dateifreigabe im Netzwerk wurde überprüft",
-						"area6": "Biometrische und Zugriffseinstellungen wurden überprüft"
-					},
-					"usabilityissuesscannedareas": {
-						"area1": "Nutzungsprobleme wurden behoben",
-						"area2": "Verbindung externer Einheiten wurde überprüft",
-						"area3": "Aktualität von Windows-Updates wurde sichergestellt",
-						"area4": "Optimale Darstellung von Apps wurde bestätigt",
-						"area5": "Einstellungen für Nutzung der Prozessorleistung wurden geändert",
-						"area6": "Einstellungen für Hilfe beim einfachen Finden von Dateien wurden geändert"
-					},
-					"systemerrorsscannedareas": {
-						"area1": "Ausführung wichtiger Dienste wurde geprüft",
-						"area2": "Dienste für höhere Leistung wurden geändert",
-						"area3": "Softwarekonfliktfehler wurden behoben",
-						"area4": "Windows-Fehlerverwaltung wurde optimiert",
-						"area5": "Fehler beim Starten von Apps wurden geprüft und behoben",
-						"area6": "Systemfehlerberichte wurden konfiguriert"
-					}
-				},
-				"internetperformance": {
-					"ejunkscannedareas": {
-						"area1": "Unnötige Dateien von 4 Browser(n) wurden gelöscht",
-						"area2": "Übrig gebliebener E-Junk wurde gelöscht",
-						"area3": "Veraltete Internetdateien wurden gelöscht",
-						"area4": "Unerwünschter Web-Cache wurde gelöscht",
-						"area5": "Cookies wurden gelöscht",
-						"area6": "Übrig gebliebene Browserdateien wurden gelöscht"
-					},
-					"browsersecurityscannedareas": {
-						"area1": "Ausführung von Sicherheitsdiensten wurde sichergestellt",
-						"area2": "Browsersicherheitsfunktionen wurden konfiguriert",
-						"area3": "Netzwerkdienste wurden überprüft und repariert",
-						"area4": "Protokolleinstellungen wurden konfiguriert",
-						"area5": "Ordnungsgemäße Funktion von Browserinhaltseinstellungen wurde überprüft",
-						"area6": "Browser-Plugins und ‑Erweiterungen wurden gescannt"
-					},
-					"networksettingsscannedareas": {
-						"area1": "Netzwerk‑ und Interneteinstellungen wurden repariert",
-						"area2": "Netzwerkkonfigurationseinstellungen wurden überprüft",
-						"area3": "Einstellungen für verbundene Netzwerke wurden geändert",
-						"area4": "Einstellungen für schnelleres Website-Rendering wurden geprüft",
-						"area5": "Fehler beim Rendern von Seiten wurden behoben",
-						"area6": "Alle Verbindungsdienste wurden gescannt"
-					},
-					"browsersettingsscannedareas": {
-						"area1": "Einstellungen für bessere Browsererfahrung wurden geändert",
-						"area2": "Einstellungen für schnelleres Website-Rendering wurden überprüft",
-						"area3": "Ordnungsgemäße Funktion von Browsersicherheitsdiensten wurde sichergestellt",
-						"area4": "Einstellungen für ordnungsgemäßes Laden von Webseiten wurden geändert",
-						"area5": "Einstellungen für schnellere Downloads wurden repariert",
-						"area6": "Berechtigungen und Zugriffssteuerungseinstellungen wurden repariert"
-					},
-					"wifiperformancescannedareas": {
-						"area1": "Einstellungen für Wi-Fi-Erfahrung wurden geändert",
-						"area2": "Einstellungen für sichere Heimnetzwerkfreigabe wurden überprüft",
-						"area3": "Einstellungen für Wi-Fi-Dienste wurden repariert",
-						"area4": "Einstellungen für sichere Netzwerkfreigabe wurden geändert",
-						"area5": "Wi-Fi-Sicherheitsstandards wurden überprüft",
-						"area6": "Wi-Fi-Kanäle wurden überprüft"
-					}
-				},
-				"malwaresecurity": {
-					"malwarescanscannedareas": {
-						"area1": "Bedrohungen an häufigen Ladepunkten wurden geprüft und entfernt",
-						"area2": "Bedrohungen an kritischen Orten wurden geprüft und entfernt",
-						"area3": "Alle Bedrohungen wurden vom PC entfernt",
-						"area4": "50+ Dateitypen wurden auf Bedrohungen überprüft",
-						"area5": "Malware-Reste wurden gelöscht",
-						"area6": "Überprüfung in Cloud-Wiederherstellungskomponente wurde durchgeführt"
-					},
-					"errantprogramsscannedareas": {
-						"area1": "Alle installierten Apps wurden überprüft",
-						"area2": "Potenziell unerwünschte Apps wurden überprüft",
-						"area3": "Inaktive und versteckte Apps wurden gelöscht",
-						"area4": "Schädliche und unerwünschte Apps wurden gelöscht",
-						"area5": "Überprüfung von Apps anhand des Zuverlässigkeitsfaktors wurde durchgeführt",
-						"area6": "Prüfung der Registrierung auf unerwünschte Programme wurde abgeschlossen"
-					},
-					"zerodayinfectionsscannedareas": {
-						"area1": "Analyse auf Zero-Day-Viren wurde durchgeführt",
-						"area2": "Alle Malware wurde vom PC entfernt",
-						"area3": "Überprüfung in Cloud-Wiederherstellungskomponente wurde durchgeführt",
-						"area4": "Verhaltensüberwachung von Apps wurde abgeschlossen",
-						"area5": "Überprüfung mithilfe zusammengefasster Komponente wurde durchgeführt",
-						"area6": "Überprüfung entsprechend aktueller Definitionen wurde durchgeführt"
-					},
-					"securitysettingsscannedareas": {
-						"area1": "Einstellungen für Windows-Update wurden optimiert",
-						"area2": "Windows-Firewalldienst wurde optimiert",
-						"area3": "Einstellungen von Browser(n) wurden geschützt",
-						"area4": "Wesentliche Sicherheitsdienste wurden geprüft",
-						"area5": "Benutzerzugriffseinstellungen wurden optimiert",
-						"area6": "Authentifizierungsdienste wurden geändert"
-					},
-					"annoyingadwarescannedareas": {
-						"area1": "Adware in Browser(n) wurde entfernt",
-						"area2": "Popup-Einstellungen in Browser(n) wurden optimiert",
-						"area3": "Bedrohungen durch Umleitungen im Browser wurden diagnostiziert",
-						"area4": "Übrig gebliebene Adware-Dateien wurden gelöscht",
-						"area5": "Einstellungen für Browsererfahrung wurden optimiert",
-						"area6": "Überprüfung in Cloud-Wiederherstellungskomponente wurde durchgeführt"
-					}
-				}
-			},
-			"Diskspace": "Gewonnener Speicherplatz:",
-			"Performanceimprovements": "Leistungsverbesserungen:",
-			"Securityimprovements": "Sicherheitsverbesserungen:",
-			"Onceaweek": "Einmal pro Woche"
-		},
-		"subscriberScanHomePage": {
-			"title": "Ordnungsgemäße Funktion sichergestellt für Ihr ",
-			"titleScanCanceled": "Die Bewertung war 0, da der letzte Scan abgebrochen wurde. Klicken Sie auf \"ZURÜCK ZUR STARTSEITE\" und wiederholen Sie den Scan.",
-			"serialNumber": "Seriennummer: ",
-			"subTitle": "Sie haben Lenovo Smart Performance Service abonniert",
-			"description": "Wir scannen Ihren Computer regelmäßig proaktiv auf PC-Leistung, Internetleistung und Malware-Probleme und beheben gefundene Fehler. Sie sind ausreichend geschützt. Sie können die Leistungsprüfung bei Bedarf auch durch einen Klick auf die Schaltfläche \"Jetzt scannen\" starten.",
-			"scanNow": "SCANNEN UND REPARIEREN",
-			"backToHome": "Zurück zur Startseite",
-			"returnto": "ZURÜCK ZUM DASHBOARD",
-			"mostRecent": "LETZTER SCAN:",
-			"nextScheduled": "NÄCHSTER GEPLANTER SCAN:",
-			"successTitle": "Ihr PC ist optimiert!",
-			"successDescription": "Smart Performance hat <b>{{issueCount}} Problem(e)</b> behoben, damit Ihr PC reibungslos läuft. Eine Zusammenfassung des Scans und Berichte finden Sie unten.",
-			"scanSummary": {
-				"title": "Zusammenfassung des Scans:",
-				"description": "Wir optimieren Ihren Computer fortlaufend",
-				"tune": "Optimieren",
-				"tuneSummary": "Gewonnener Speicherplatz",
-				"boost": "Steigerung",
-				"boostSummary": "Korrekturen für höhere Leistung",
-				"secure": "Schützen",
-				"secureSummary": "Korrekturen für höhere Sicherheit",
-				"annual": "Jährlich",
-				"quarterly": "Vierteljährlich",
-				"custom": "Angepasst",
-				"txtFrom": "Von",
-				"txtTo": "Bis",
-				"txtGo": "Start",
-				"summaryCaption": "gewonnener Speicherplatz",
-				"fixes": "Korrektur(en)",
-				"txtClr": "Löschen"
-			},
-			"lastScanResults": {
-				"title": "Letzte 5 Scan-Ergebnisse:",
-				"scanDate": "Scan-Datum",
-				"results": "Ergebnisse",
-				"status": "Status"
-			}
-		},
-		"feedbackContainer": {
-			"title": "Geben Sie uns Feedback",
-			"subtitle": "Sagen Sie uns, was Sie von Smart Performance halten",
-			"buttonText": "Feedback senden",
-			"questions": {
-				"q1": "1. Wie schwierig oder einfach war es, die Scan-Funktion zu verwenden?",
-				"q2": "2. Wie schwierig oder einfach war es, die Scan-Ergebnisse zu verstehen?",
-				"q3": "3. Wie wahrscheinlich ist es, dass Sie für ein Smart Performance-Abonnement zahlen, um die Leistung Ihres Systems zu verbessern?",
-				"q4": "4. Wie zufrieden sind Sie insgesamt mit der Smart Performance-Funktion?",
-				"q5": "1. Wie schwierig oder einfach war es, die Korrekturen zu verstehen, die Smart Performance an Ihrem System durchgeführt hat?",
-				"q6": "2. Haben wir Malware auf Ihrem System gefunden?",
-				"q7": "3. Wie wahrscheinlich ist es, dass Sie weiterhin für die Smart Performance-Funktion bezahlen?",
-				"q8": "4. Wie zufrieden sind Sie insgesamt mit der Smart Performance-Funktion?"
-			},
-			"rating": {
-				"r1": "Sehr schwierig",
-				"r2": "Sehr einfach",
-				"r3": "Sehr schwierig",
-				"r4": "Sehr einfach",
-				"r5": "Gar nicht wahrscheinlich",
-				"r6": "Sehr wahrscheinlich",
-				"r7": "Gar nicht zufrieden",
-				"r8": "Sehr zufrieden",
-				"r9": "Sehr schwierig",
-				"r10": "Sehr einfach",
-				"r11": "Ja",
-				"r12": "Nein",
-				"r13": "Gar nicht wahrscheinlich",
-				"r14": "Sehr wahrscheinlich",
-				"r15": "Gar nicht zufrieden",
-				"r16": "Sehr zufrieden"
-			},
-			"commentTip": "Kommentare oder zusätzliches Feedback können Sie unten hinterlassen:",
-			"comments": "Geben Sie hier Kommentare ein …"
-		}
-	},
-	"homeSecurity": {
-		"title": "Connected Home Security",
-		"notification": {
-			"recent": "Recent security notifications",
-			"notifications": "Notifications",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
-		},
-		"ecosystem": {
-			"ecosystemBlockTitle": "Protect your device ecosystem",
-			"thisDevice": "This device",
-			"allDevices": "All Devices",
-			"protected": "Protected",
-			"notProtected": "Not Protected",
-			"trialExpired": "Trial expired",
-			"upgrade": "upgrade",
-			"inEcosystem": "In Ecosystem",
-			"ecosystemEnable": "Ecosystem Enabled",
-			"inTrial": "In trial",
-			"addEcosystem": "Add to Ecosystem",
-			"enableEcosystem": "Enable Ecosystem",
-			"startTrial": "Start Trial",
-			"fullAccess": "Full Access",
-			"renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Your Ecosystem Security Overview",
-			"allDevices": "All Devices",
-			"myDevice": "My Device",
-			"thisComputer": "This computer",
-			"secure": "SECURE",
-			"needAttention": "NEEDS ATTENTION",
-			"manageAccount": "Manage account",
-			"devices": "Devices",
-			"seeProtectedDevices": "See protected devices",
-			"addDevice": "add device",
-			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-			"upgrade": "upgrade",
-			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
-			"inTrialDetail": "You are currently in your trial period.",
-			"trialExpiredDetail": "Your trial period has expired.",
-			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
-			"discountPrice": "For only $29.99 for one year",
-			"overviewTitle": "Overview",
-			"trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId": "Lenovo ID:",
-			"overviewTitleAdmin": "Overview of your Connected Home Security",
-			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-			"familyMembers": "Family members",
-			"places": "Places",
-			"personalDevices": "Personal devices",
-			"wifiNetworks": "Wi-fi networks",
-			"homeDevices": "Home devices",
-			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
-			"buyNow": "Buy Now",
-			"extendNow": "extend now",
-			"renewNow": "Renew Now",
-			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "Leia a <tag>Política de privacidade</tag> e os <tag>Termos de serviço</tag> para obter mais informações"
-		},
-		"tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcomeTitle": "welcome to connected home security",
-			"welcomeSubTitle": "30 days of protection for free",
-			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-			"locationTitle": "Enable location permissions",
-			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
-			"allow": "Allow",
-			"notNow": "Not now"
-		},
-		"accountStatus": {
-			"title": "My Connected Home Security",
-			"startTrial": "Start Trial",
-			"manageAccount": "Manage Account",
-			"upgradeAccount": "Upgrade Account",
-			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-			"trialExpiredDetail1": "Your trial has expired.",
-			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"upgradedDetail1": "You account is active until {{expiredDate}}.",
-			"upgradedDetail2": "Your device ecosystem is currently being protected.",
-			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
-			"alreadyHaveAccount": "Already have an activation code?"
-		},
-		"card": {
-			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your own Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
-			"joinTitle": "Join your family's Connected Home Security",
-			"joinDescription": "Become a part of your family security group."
-		},
-		"modal": {
-			"countdownTitle": "Launching web browser",
-			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-			"goNow": "Go now",
-			"disconnectedTitle": "Disconnect from protection?",
-			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-			"disconnecting": "Disconnecting..."
-		}
-	},
-	"dir": "ltr",
-	"dirClass": "ltr",
 	"notification": {
 		"menu": {
 			"security": "Schon gewusst? Auch wenn Sie keine Antivirensoftware installiert haben, bieten wir einen grundlegenden Sicherheitsschutz für Ihre Einheit.",
 			"connectedHomeSecurity": "Mit uns erhalten Sie Echtzeit-Überwachung und ‑Benachrichtigungen über Ihre Netzwerksicherheit zu Hause. Sie erfahren umgehend, ob eine Ihrer intelligenten Einheiten einem Sicherheitsangriff ausgesetzt ist.",
-			"hardwareScan": "Nun können Sie den Integritätsstatus Ihrer Systemhardwarekomponenten abrufen."
+			"hardwareScan": "Nun können Sie den Integritätsstatus Ihrer Systemhardwarekomponenten abrufen.",
+			"appSearch": "Schon gewusst? Hier können Sie nach Funktionen für Ihre Einheit suchen."
 		}
 	},
 	"appsForYou": {
@@ -5523,7 +5572,43 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
+					"description": "Der AI meeting manager unterstützt Übersetzung, Dolmetschen und Diktate in Echtzeit. Er kann zudem Untertitel für Videos erzeugen.",
+					"downloadNow": "JETZT HERUNTERLADEN",
+					"download": "DOWNLOAD",
+					"launch": "STARTEN",
+					"translation": {
+						"title": "Übersetzung",
+						"description": "Lassen Sie Sprache in Online-Konferenzen aus jeder beliebigen Konferenzsoftware in Echtzeit übersetzen. Sie können während der Konferenz die Gesprächsnotizen durchsuchen und später speichern. Außerdem können Untertitel gezeigt werden."
+					},
+					"voiceToText": {
+						"title": "Sprache zu Text",
+						"description": "Sprechen Sie frei – die Sprache-zu-Text-Funktion übernimmt das Tippen für Sie. Verfassen Sie E‑Mails und Dokumente oder chatten Sie in Ihrer Lieblings-App. \"Sprache zu Text\" übersetzt, während Sie sprechen und macht Notizen für Sie."
+					},
+					"modalPopUp": {
+						"heading": "Erste Schritte:",
+						"translation": {
+							"point1": "Stellen Sie sicher, dass das Symbol für den AI meeting manager im Windows-Infobereich angezeigt wird.",
+							"point2": "Klicken Sie auf das Symbol und wählen Sie \"Übersetzer\" oder \"Untertitel\" aus.",
+							"point3": "Wählen Sie die Ausgangs‑ und Zielsprache aus.",
+							"point4": "Stellen Sie abhängig von Ihren Anforderungen ein, ob die Spracheingabe vom Lautsprecher oder vom Mikrofon stammt.",
+							"point5": "Klicken Sie auf die Start-Schaltfläche, um die Übersetzung zu starten."
+						},
+						"voiceToText": {
+							"point1": "Stellen Sie sicher, dass das Symbol für den AI meeting manager im Windows-Infobereich angezeigt wird.",
+							"point2": "Öffnen Sie die Anwendung, in der Sie Text eingeben möchten.",
+							"point3": "Klicken Sie auf das Symbol für den AI meeting manager und wählen Sie \"Sprache zu Text\" aus.",
+							"point4": "Wählen Sie die gewünschten Sprachen aus und klicken Sie dann zum Beginnen auf die Mikrofon-Schaltfläche.",
+							"point5": "Setzen Sie den Cursor an die gewünschte Stelle in der geöffneten Anwendung und beginnen Sie zu sprechen."
+						},
+						"closeText": "schließen"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "Macht Online-Konferenzen produktiver und effektiver."
+					}
+				}
 			}
 		},
 		"creatorCentre": {
@@ -5542,11 +5627,18 @@
 			},
 			"easyRendering": {
 				"title": ""
-
 			},
 			"colorCalibration": {
-				"title": ""
-
+				"title": "Farbkalibrierung",
+				"appName": "X-rite-Anwendung",
+				"summary": "Die Anzeige Ihres Computers wird werkseitig mithilfe von Premium-Farbmessgeräten von Minolta kalibriert. Die Kalibrierungsdaten werden in der Cloud gespeichert und können heruntergeladen werden, um die Anzeige auf die Werkseinstellungen zurückzusetzen. X-rite ist zur Verwaltung von Farbbereichen vorinstalliert.<br>– Standard (nativer Gamut, native Helligkeit, aber kalibrierter Graukeil und Display-Charakterisierung im Profil gespeichert) <br>– Standardprofil ist standardmäßig im Computer installiert, dieses Profil wird beim Windows-Systemstart geladen <br>– Nicht kalibriert (Farbverwaltung ausgeschaltet, d. h. Verwendung des Lenovo Standardprofils) <br>– sRGB (Computerbildschirme) – Adobe RGB (für Grafikdesigner, die in CMYK drucken möchten)<br>– BT.709 (HD-Video)<br>– DCI P3 (wird in den USA häufig in der digitalen Filmprojektion verwendet)",
+				"screenshotTitle": "Screenshots",
+				"cardTitle": "So stellen sie Profile wieder her",
+				"cardSummary": "Wenn Sie das System neu installieren oder Farbprofile verloren gehen, können Sie Profile von hier aus wiederherstellen:",
+				"learnMore": "Mehr Infos",
+				"restoreProfileDesc": "Lenovo stellt Sicherungsfarbprofile in Lenovo Cloud bereit. Um sicherzustellen, dass die Farbkalibrierung auf Ihrem Computer funktioniert, müssen Sie möglicherweise Farbprofile in den folgenden Situationen wiederherstellen oder installieren: Wenn die Farbprofile verloren gehen oder beschädigt sind, wird ein Fenster angezeigt, das Sie an die Wiederherstellungsoption für Farbprofile erinnert. Klicken Sie im Fenster mit der Aufforderung auf \"Ja\" und die Farbprofile werden automatisch von Lenovo Cloud wiederhergestellt. Gehen Sie wie folgt vor, wenn Ihr Computerbildschirm durch einen von Lenovo autorisierten Service-Provider ersetzt wird:",
+				"restoreProfileStep1": "Klicken Sie im Windows-Infobereich auf das Dreieck-Symbol, um ausgeblendete Symbole anzuzeigen. Klicken Sie dann auf das Symbol der X-rite-App, um sie zu öffnen.",
+				"restoreProfileStep2": "Klicken Sie auf \"Einstellungen > Profile wiederherstellen\"."
 			}
 		}
 	}

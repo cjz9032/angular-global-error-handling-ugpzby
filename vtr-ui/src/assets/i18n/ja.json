@@ -812,10 +812,12 @@
 				"sub9": "デバイスのセキュリティー"
 			},
 			"support": "サポート",
+			"warrantySupport": "保証とサポート",
+			"contentLibrary": "コンテンツ・ライブラリ",
+			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"
-			},
-			"homeSecurity": "Connected Home"
+			}
 		},
 		"securityAdvisor": {
 			"title": "セキュリティー・アドバイザー",
@@ -1355,9 +1357,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"エクストリーム・パフォーマンス・モードで GPU クロックアップを有効にします。",
-							"description1":"選択すると、GPU メモリー・クロックが 140 MHz オーバークロックされます。これは「安定した」スイート・スポットと考えられる値です。ゲームのパフォーマンスとフレーム・レートが 10% 〜 30% 向上する可能性があります。",
-					        "description2":"注: パフォーマンスとフレーム・レートが向上する度合いは、ゲームやアプリの種類またはその他の要因によって異なる場合があります。この設定によって、消費電力、コンピューターの表面温度、およびファンのノイズも上昇する可能性があります。Lenovo では、オーバークロックを有効にした場合の安定性やパフォーマンスの向上を保証していません。"
+							"checkboxtext": "エクストリーム・パフォーマンス・モードで GPU クロックアップを有効にします。",
+							"description1": "選択すると、GPU メモリー・クロックが 140 MHz オーバークロックされます。これは「安定した」スイート・スポットと考えられる値です。ゲームのパフォーマンスとフレーム・レートが 10% 〜 30% 向上する可能性があります。",
+							"description2": "注: パフォーマンスとフレーム・レートが向上する度合いは、ゲームやアプリの種類またはその他の要因によって異なる場合があります。この設定によって、消費電力、コンピューターの表面温度、およびファンのノイズも上昇する可能性があります。Lenovo では、オーバークロックを有効にした場合の安定性やパフォーマンスの向上を保証していません。"
 						},
 						"autoTransition": {
 							"description": {
@@ -2659,6 +2661,873 @@
 			"categories": "カテゴリー",
 			"categoriesDesc": "記事から役に立つ情報を検索。",
 			"seeArticles": "記事を確認"
+		}
+	},
+	"smartPerformance": {
+		"title": "Smart Performance",
+		"back": "戻る",
+		"performanceandSecurityCheckTitle": "パフォーマンスとセキュリティーのチェック",
+		"performanceandSecurityCheckSubTitle": "コンピューターのパフォーマンスとセキュリティーの問題を診断して解決しましょう",
+		"auto": "自動",
+		"manual": "手動",
+		"performanceOfflineText": "スキャン機能は、コンピューターがインターネットに接続されているときに使用できます。",
+		"scanButton": "無料 PC スキャン",
+		"section1Heading": "PC パフォーマンスをどのように評価しますか?",
+		"section1Description": "PC の動作が遅いですか?アプリケーションの応答に時間がかかりますか?Windows のエラーがありますか?マルウェアが心配ですか?<br>問題の原因を診断して修正しましょう。",
+		"critical": "脅威",
+		"allisWell": "安全",
+		"zero": 0,
+		"one": 1,
+		"two": 2,
+		"three": 3,
+		"four": 4,
+		"five": 5,
+		"six": 6,
+		"seven": 7,
+		"eight": 8,
+		"nine": 9,
+		"ten": 10,
+		"tuneUP": "お客様の PC はチューンアップが必要です",
+		"runningWell": "PC は正常に動作しています",
+		"section2Heading": "常に最高のパフォーマンスのPCへ",
+		"section2Description": "Smart Performanceは、24 時間 365 日システムを積極的にスキャンして、問題を検出して修正し、PCを常に最高のパフォーマンスに保ちます。",
+		"am": "午前",
+		"pm": "午後",
+		"scanNow": "今すぐスキャン",
+		"signUpAndFix": "登録と修正",
+		"cancel": "キャンセル",
+		"scanning": "スキャン中です",
+		"fixIt": "今すぐ修正",
+		"optimizeIt": "最適化",
+		"maintainIt": "維持",
+		"noteFindings": "お使いのコンピューターを詳細に分析した結果をご報告いたします。",
+		"noteNavigateTab": "詳しい内容については、それぞれのタブをご覧ください。",
+		"scannedAreas": "スキャン対象領域",
+		"lastFix": "直近の修正",
+		"fixResult": "修正結果",
+		"checkPreviousResults": "前の結果を確認",
+		"tunePCPerformance": {
+			"title": "PC パフォーマンスの調整",
+			"heading": "コンピューターをもっと大切に",
+			"description": "世界最高のコンピューターでも、定期的なチューンアップによりパフォーマンスが改善します。レノボの強力なアプリでお客様のPCをチューンアップしましょう。",
+			"tabSet1": {
+				"tab1": "蓄積した不要ファイル",
+				"tab2": "使いやすさの問題",
+				"tab3": "Windows の設定",
+				"tab4": "システム・エラー",
+				"tab5": "レジストリ・エラー"
+			},
+			"tabSet2": {
+				"tab1Heading": "簡単",
+				"tab1Description": "技術的な用語で混乱させません。",
+				"tab2Heading": "高速",
+				"tab2Description": "5 分以内に 100 個のチェックを実施します。",
+				"tab3Heading": "安全",
+				"tab3Description": "スケアウェアではないベスト・プラクティスで構築されています。"
+			},
+			"summaryTitle": "PC パフォーマンスの調整"
+		},
+		"boostInternetPerformance": {
+			"title": "インターネット・パフォーマンスの向上",
+			"extraTitle": "インターネット・パフォーマンス",
+			"heading": "インターネットの機能を高めよう",
+			"description": "Wi-Fi が多い、遅い、または使えない生活は不便です。最適なパフォーマンスを得るために、インターネット、Wi-Fi、ブラウザーの設定を構成しましょう。",
+			"tabSet1": {
+				"tab1": "不要ファイル",
+				"tab2": "ネットワーク設定",
+				"tab3": "ブラウザー設定",
+				"tab4": "ブラウザー・セキュリティー",
+				"tab5": "Wi-Fi パフォーマンス"
+			},
+			"tabSet2": {
+				"tab1Heading": "ブラウザーの問題",
+				"tab1Description": "すべての一般的な Web ブラウザーを構成して修正します。",
+				"tab2Heading": "接続エラー",
+				"tab2Description": "接続の問題を診断して修復できます。",
+				"tab3Heading": "低速インターネット",
+				"tab3Description": "最大のパフォーマンスを発揮できるようサポートします。"
+			},
+			"summaryTitle": "インターネット・パフォーマンス"
+		},
+		"malwareSecurity": {
+			"title": "マルウェアとセキュリティー",
+			"heading": "コンピューターに必要なさらなるケア",
+			"description": "マルウェアは、コンピューターのクラッシュ、データの侵害、パフォーマンスの低下につながる可能性があります。マルウェア削除などもっと対策しましょう。",
+			"tabSet1": {
+				"tab1": "マルウェア・スキャン",
+				"tab2": "ゼロデイ感染",
+				"tab3": "不正プログラム",
+				"tab4": "迷惑なアドウェア",
+				"tab5": "セキュリティー設定"
+			},
+			"tabSet2": {
+				"tab1Heading": "ゼロデイ・ウイルス",
+				"tab1Description": "最新のマルウェア感染も削除します。",
+				"tab2Heading": "スパイウェアの削除",
+				"tab2Description": "不要と思われるプログラムをすべて削除します。",
+				"tab3Heading": "軽い動作で高速",
+				"tab3Description": "通常 5~10 分でスキャンを終了します。"
+			},
+			"summaryTitle": "マルウェアとセキュリティー"
+		},
+		"proactiveAutomated": {
+			"title": "プロアクティブかつ自動的",
+			"heading": "影響を受ける前に、問題を解決する機能を手に入れましょう!",
+			"description": "Smart Performance は、PC パフォーマンスに影響を与える数多くの問題を常に検索します。積極的に修正するため安心です。",
+			"tabSet1": {
+				"tab1": "スキャンのスケジュール",
+				"tab2": "オンデマンド・スキャン",
+				"tab3": "自動解決",
+				"tab4": "効果的",
+				"tab5": "24 時間 365 日の保護"
+			},
+			"tabSet2": {
+				"tab1Heading": "簡単",
+				"tab1Description": "技術的な用語で混乱させません。",
+				"tab2Heading": "高速",
+				"tab2Description": "5 分以内に 100 個のチェックを実施します。",
+				"tab3Heading": "安全",
+				"tab3Description": "スケアウェアではなく、ベスト・プラクティスに基づいて構成されています。"
+			}
+		},
+		"noScanResults": "「スキャンして修正」ボタンをクリックしてスキャン・プロセスを起動してください。",
+		"startScan": "<b>スキャンを開始する準備はできましたか?</b>コンピューターのパフォーマンスとセキュリティーの問題を診断しましょう。",
+		"subscriptionDetails": {
+			"title": "サブスクリプションの詳細",
+			"description": "Lenovo Smart Performance Service に登録されています。期間中、すべての機能を最大限に利用し、PC を保護して円滑な稼働を維持できます。",
+			"learnMore": "詳細はこちら",
+			"startDate": "開始日",
+			"endDate": "終了日",
+			"status": "ステータス",
+			"activeStatus": "アクティブ",
+			"inactiveStatus": "非アクティブ",
+			"manageSubscription": "サブスクリプションの管理",
+			"titlebeta": "Lenovo ベータ版プログラム",
+			"manageSubscriptionBeta": "全機能の有効化",
+			"descriptionbeta": "Lenovo は、2020 年 7 月まで Smart Performance 機能をお試しいただけるパイロット・プログラムを提供しています。",
+			"descriptionbeta1": "参加して全機能を試すことができます。",
+			"descriptionNonSubscriber": "Lenovo Smart Performance Service に登録されていません。PC のみをスキャンできます。今すぐ登録して、PC 保護とスムーズな動作のメリットを最大限に活用しましょう。",
+			"processStatus": "処理中です",
+			"descriptionExpired": "サブスクリプションの有効期限が切れており、現在は Smart Performance のスキャン機能のみを使用できます。「サブスクリプションの管理」リンクをクリックしてサブスクリプションを更新することで、デバイスのすべての保護機能を再開できます。",
+			"expiredStatus": "期限切れです",
+			"expiredNote": "サブスクリプションの有効期限まで、あと",
+			"day": "日",
+			"days": "日後",
+			"weeks": "週間",
+			"week": "1 週間",
+			"month": "カ月間",
+			"today": "今日",
+			"next": "次へ"
+		},
+		"scanSettings": {
+			"title": "スキャン設定のスケジュール",
+			"description": "スキャンを有効または無効にして、スキャン・スケジュールを設定します",
+			"enableScan": "スキャンの有効化",
+			"changeScanTitle": "スキャン・スケジュールの変更",
+			"changeScanDescription": "スキャン・スケジュールを編集して、必要なときに実行します。",
+			"frequency": "頻度",
+			"txtDate": "日付",
+			"txtDay": "日",
+			"txtTime": "時刻",
+			"txtSave": "保存する",
+			"txtCancel": "キャンセル",
+			"scanFrequencyWeek": "1 週間に 1 回",
+			"scanFrequencyEveryWeek": "隔週",
+			"scanFrequencyMonth": "毎月",
+			"mon": "月曜日",
+			"tue": "火曜日",
+			"wed": "水曜日",
+			"thu": "木曜日",
+			"fri": "金曜日",
+			"sat": "土曜日",
+			"sun": "日曜日",
+			"am": "午前",
+			"pm": "午後",
+			"tooltipText": "このトグルを有効にしておくことにより、設定された日時にシステム・パフォーマンスとセキュリティー・スキャンが自動的に開始されます。"
+		},
+		"scanningPage": {
+			"title": "パフォーマンスとセキュリティーのチェック",
+			"description": "しばらくお待ちください。潜在的な問題や脅威がないかシステムをスキャンしています。",
+			"scanningSystem": "システムをスキャン中",
+			"complete": "完了",
+			"cancelScan": {
+				"button": "スキャンをキャンセル",
+				"title": "スキャンをキャンセルしますか?",
+				"description": "現在の画面を離れると、スキャンがキャンセルされ、ホームに戻ります。ただし、スキャンはいつでも再実行できます。",
+				"yesButton": "はい、キャンセルします",
+				"noButton": "いいえ、スキャンを再開します",
+				"cancelMayTakeSomeTime": "お使いのシステムによってはキャンセルに時間がかかる場合がございます。",
+				"cancelTextPrompt": "本当にキャンセルしてよろしいですか?"
+			},
+			"waiting": "スキャン待機中",
+			"completed": "完了",
+			"nowScanningDetail": {
+				"cardTitle": "現在のスキャン詳細",
+				"current": "現在:",
+				"upNext": "次:",
+				"tunePCDesc": "PC パフォーマンスを向上させましょう。業界のベスト・プラクティスで安全に実行します。加入者には、PC の起動時間の短縮、パフォーマンスの向上、安定性の向上、アプリケーション起動の高速化のメリットがあります。",
+				"boostDesc": "ブラウザー利用を強化しましょう。ネットワークとアクセスの問題を修正しましょう。加入者には、インターネット接続の改善、アップロード/ダウンロード速度の向上、インターネットの安全性の向上のメリットがあります。",
+				"malwareDesc": "PC をオンデマンドですばやく保護しましょう。スパイウェア、マルウェア、アドウェアを削除することで実現します。また、ほぼゼロデイでの感染を防ぎます。加入者には、データのセキュリティーと最適なシステム・パフォーマンスのメリットがあります。",
+				"proactiveDesc": "コンピューターを定期的に調整して問題を修正しましょう。プロアクティブかつ自動的に PC を調整して保護します。常時行う",
+				"tunePCScanningItems": {
+					"accumulatedJunk": {
+						"itema1": "85 か所で不要ファイルを探す",
+						"itema2": "不要なシステム・ログ・ファイル",
+						"itema3": "不要なアプリケーション",
+						"itema4": "不要な一時ファイル",
+						"itema5": "以前削除したファイル",
+						"itema6": "古いエラーとアラート"
+					},
+					"usabilityIssues": {
+						"itemb1": "使いやすさに関する多くの課題に対応",
+						"itemb2": "外部デバイスの接続を確認",
+						"itemb3": "Windows Update を常に最新に保つ",
+						"itemb4": "アプリを最高の状態でレンダリングおよび表示",
+						"itemb5": "処理電源使用率の分析",
+						"itemb6": "ファイルを見つけやすくする"
+					},
+					"windowsSettings": {
+						"itemc1": "多くの Windows OS 設定の診断",
+						"itemc2": "Windows 全体に問題がないことを確認",
+						"itemc3": "重要なサービスが実行されていることを確認",
+						"itemc4": "接続設定の状態を確認",
+						"itemc5": "ネットワークでファイルを共有する機能を確認",
+						"itemc6": "生体認証とアクセス設定を確認"
+					},
+					"systemErrors": {
+						"itemd1": "重要なサービスが実行されていることを確認",
+						"itemd2": "パフォーマンスを向上させるサービスを選択",
+						"itemd3": "ソフトウェアの競合エラーを探す",
+						"itemd4": "Windows エラー管理を最適化",
+						"itemd5": "アプリの起動エラーを確認して修正",
+						"itemd6": "システム・エラー・レポートを構成"
+					},
+					"registryErrors": {
+						"iteme1": "Windows レジストリの詳細チェック",
+						"iteme2": "無効な Windows サービスのスキャン",
+						"iteme3": "破損したレジストリ項目の検索",
+						"iteme4": "不要なファイル拡張子を探す",
+						"iteme5": "インストール済みアプリの破損した項目を検索",
+						"iteme6": "不要な残留項目を探す"
+					}
+				},
+				"boostScanningItems": {
+					"networkSettings": {
+						"itema1": "ネットワークとインターネットの設定を診断",
+						"itema2": "ネットワーク構成設定を検証",
+						"itema3": "使用可能なネットワーク設定を検証",
+						"itema4": "Web サイトの読み込み高速化を設定",
+						"itema5": "ページ・レンダリング・エラーを探す",
+						"itema6": "接続サービスが正常に動作しているか"
+					},
+					"browserSettings": {
+						"itemb1": "ブラウザー利用の向上を有効化",
+						"itemb2": "Web サイトのレンダリング高速化を設定",
+						"itemb3": "ブラウザーのセキュリティー・サービスに問題がないことを確認",
+						"itemb4": "Web ページが適切にレンダリングされていることを確認",
+						"itemb5": "高速ダウンロードの設定を確認",
+						"itemb6": "アクセス権とアクセス制御を確認"
+					},
+					"browserSecurity": {
+						"itemc1": "セキュリティー・サービスが実行されていることを確認",
+						"itemc2": "ブラウザーのセキュリティー機能を構成",
+						"itemc3": "ネットワーク・サービスが正常に動作していることを確認",
+						"itemc4": "プロトコル設定を構成",
+						"itemc5": "ブラウザーのコンテンツ設定に問題がないことを検証",
+						"itemc6": "ブラウザーのプラグインと拡張機能を検証"
+					},
+					"wifiPerformance": {
+						"itemd1": "Wi-Fi 利用設定を最適化",
+						"itemd2": "ホーム・ネットワークが安全であることを確認",
+						"itemd3": "Wi-Fi サービスの設定を確認",
+						"itemd4": "安全なネットワーク共有設定",
+						"itemd5": "Wi-Fi セキュリティー規格を確認",
+						"itemd6": "Wi-Fi チャネルが重複していないことを確認"
+					},
+					"eJunk": {
+						"iteme1": "ブラウザーからの不要なデータを排除",
+						"iteme2": "残留している不要なデータを探す",
+						"iteme3": "古いインターネット・ファイルを探す",
+						"iteme4": "不要な Web キャッシュをクリア",
+						"iteme5": "Cookie をクリア",
+						"iteme6": "ブラウザーの不要なデータを削除"
+					}
+				},
+				"malwareScanningItems": {
+					"malwareScan": {
+						"itema1": "一般的な読み込みポイントをスキャン",
+						"itema2": "脅威に関わる重要な場所を確認",
+						"itema3": "ウイルス、スパイウェア、マルウェアを確認",
+						"itema4": "50 種類以上のファイル・タイプをスキャン",
+						"itema5": "マルウェアの残骸をスキャン",
+						"itema6": "クラウド修復エンジンを活用"
+					},
+					"zerodayInfections": {
+						"itemb1": "ゼロデイ・ウイルスを探す",
+						"itemb2": "最近診断されていないマルウェアを探す",
+						"itemb3": "クラウドベース修復でスキャン",
+						"itemb4": "動作監視の実行",
+						"itemb5": "集約エンジンでファイルをスキャン",
+						"itemb6": "最新の定義に対してスキャン"
+					},
+					"securitySettings": {
+						"itemc1": "Windows Update を常に最新に保つ",
+						"itemc2": "Windows ファイアウォール・サービスに問題がないことを確認",
+						"itemc3": "ブラウザー設定を安全に保つ",
+						"itemc4": "重要なセキュリティー・サービスを確認",
+						"itemc5": "ユーザー・アクセス設定を構成",
+						"itemc6": "認証サービスの検証"
+					},
+					"errantPrograms": {
+						"itemd1": "不正アプリを探す",
+						"itemd2": "不要と思われるアプリを探す",
+						"itemd3": "非アクティブなアプリと非表示のアプリを検出",
+						"itemd4": "アプリの悪意のある動作を検証",
+						"itemd5": "評価要因に基づいてアプリを確認",
+						"itemd6": "レジストリ内の不正プログラムを確認"
+					},
+					"annoyingAdware": {
+						"iteme1": "ブラウザーのアドウェアを探す",
+						"iteme2": "ブラウザーのポップアップ設定を修正",
+						"iteme3": "ブラウザーのリダイレクトの脅威を排除",
+						"iteme4": "アドウェアの残骸を確認",
+						"iteme5": "ブラウザー利用設定を最適化",
+						"iteme6": "クラウド修復エンジンで検証"
+					}
+				}
+			},
+			"confirmationTitle": "Lenovo 支払いプロセス",
+			"confirmationNote": "支払いを完了するには、Lenovo 支払い Web サイトに移動します。支払いが完了したら、「サブスクリプションの詳細」の「更新」ボタンを押すと、支払い結果を取得できます。",
+			"confirmationBtn": "続行",
+			"refreshButton": "ステータスを更新"
+		},
+		"scanCompletePage": {
+			"title": "システムのスキャンが完了しました",
+			"description": "こちらが {{machineFamilyName}} のスキャン結果です。",
+			"scanRates": "スキャンの評価(10 段階): ",
+			"summary": "要約",
+			"foundIssues": "スキャンで {{issueCount}} 個の問題が見つかりました",
+			"summaryDetails": "今すぐ登録してこれらの問題を修正し、システムの円滑な稼働を維持しましょう。当社のソフトウェアは、24 時間 365 日システムのこれらの領域を積極的にスキャンして、問題が発生したときに検出して修正できるため、PC は常に最高のパフォーマンスを発揮します。",
+			"expiredSummaryDetails": "サブスクリプションの有効期限が切れており、現在は Smart Performance のスキャン機能のみを使用できます。「スキャンして修正」機能を再開するには、下の「更新して修正」ボタンをクリックしてサブスクリプションを更新してください。",
+			"signupRepairButton": "今すぐサインアップして修復",
+			"renewAndFix": "更新して修正",
+			"backToHome": "ホームに戻る",
+			"monthlyPricing": "<b>1 か月約 {{monthlyPrice}} です。</b>これらの問題を自動的に修正します。今日以降毎週 1 回 <a  href=\"#\">詳細を表示</a>",
+			"issueCount": "{{individualIssueCount}} 件の問題",
+			"issues": "問題",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
+			"scannedAreas": "スキャン対象領域",
+			"summaryPurchaseTip": "今すぐ年間プランを購入すると、このような問題が毎週自動的に修正されます。",
+			"tunePCTooltip": "システム全体のパフォーマンスを向上させ、PCの起動時間を短縮し、アプリケーションの読み込み時間を改善します。",
+			"boostTooltip": "ネットワーク・パフォーマンス、ブラウザーの使いやすさ、および接続性を向上させます。",
+			"malwareTooltip": "セキュリティを向上させ、マルウェアやウィルス感染を除去し、システムの安定性を回復します。",
+			"recommendedAction": {
+				"title": "推奨する対策",
+				"description": "これらの問題を自動的に修正します。今日以降毎週 1 回",
+				"yearlyPricing": "{{yearlyPrice}} / 年",
+				"monthlyPricing": "1 か月約 {{monthlyPrice}} です。",
+				"longerTerm": "更にお得な長期サービスをお考えですか？",
+				"newDescription": "サインアップした後、これらの問題が毎週自動的に修正できます。",
+				"signupButton": "サインアップ"
+			},
+			"tunepc": {
+				"accumulatedjunkscannedareas": {
+					"area1": "85 か所で不要ファイルをスキャン",
+					"area2": "不要なシステム・ログ・ファイル",
+					"area3": "不要なアプリケーション",
+					"area4": "不要な一時ファイル",
+					"area5": "以前削除したファイル",
+					"area6": "古いエラーとアラート"
+				},
+				"registryerrorsscannedareas": {
+					"area1": "Windows レジストリの詳細チェックを完了しました",
+					"area2": "無効な Windows サービスをスキャンしました",
+					"area3": "破損したレジストリ項目を確認しました",
+					"area4": "不要なファイル拡張子をスキャンしました",
+					"area5": "インストール済みアプリの破損した項目を検索しました",
+					"area6": "不要な残留項目を確認しました"
+				},
+				"windowssettingsscannedareas": {
+					"area1": "多くの Windows OS 設定を診断しました",
+					"area2": "Windows 全体に問題がないことを確認しました",
+					"area3": "重要なサービスが実行されていることを確認しました",
+					"area4": "接続設定の状態を確認しました",
+					"area5": "ネットワークでファイルを共有する機能を確認しました",
+					"area6": "生体認証とアクセス設定を確認しました"
+				},
+				"usabilityissuesscannedareas": {
+					"area1": "使いやすさに関する課題を確認しました",
+					"area2": "外部デバイスの接続を確認しました",
+					"area3": "Windows Update のステータスを確認しました",
+					"area4": "アプリのレンダリング設定を検証しました",
+					"area5": "処理電源使用率を分析しました",
+					"area6": "ファイルを見つけやすくする"
+				},
+				"systemerrorsscannedareas": {
+					"area1": "重要なサービスが実行されているかどうか確認しました",
+					"area2": "パフォーマンスを向上させるサービスを探す",
+					"area3": "ソフトウェアの競合エラーを探す",
+					"area4": "Windows エラー管理を分析しました",
+					"area5": "アプリの起動エラーをスキャンしました",
+					"area6": "システム・エラー・レポートの構成を確認した"
+				}
+			},
+			"internetperformance": {
+				"ejunkscannedareas": {
+					"area1": "ブラウザーから不要なデータを特定しました",
+					"area2": "残留している不要なデータを検索しました",
+					"area3": "古いインターネット・ファイルをスキャンしました",
+					"area4": "不要な Web キャッシュを検索しました",
+					"area5": "整理のために Cookie を確認しました",
+					"area6": "ブラウザーの不要なデータをスキャンしました"
+				},
+				"browsersecurityscannedareas": {
+					"area1": "セキュリティー・サービスが実行されていることを確認しました",
+					"area2": "ブラウザーのセキュリティー機能を確認しました",
+					"area3": "ネットワーク・サービスを検証しました",
+					"area4": "プロトコル設定を構成",
+					"area5": "ブラウザーのコンテンツ設定を確認しました",
+					"area6": "ブラウザーのプラグインと拡張機能をスキャンしました"
+				},
+				"networksettingsscannedareas": {
+					"area1": "ネットワークとインターネットの設定を診断しました",
+					"area2": "ネットワーク構成設定を診断しました",
+					"area3": "接続ネットワーク設定を検証しました",
+					"area4": "Web サイトのレンダリングを高速化するための設定を診断しました",
+					"area5": "ページ・レンダリング・エラーをスキャンしました",
+					"area6": "すべての接続サービスをスキャンしました"
+				},
+				"browsersettingsscannedareas": {
+					"area1": "ブラウザー利用の向上を有効化",
+					"area2": "Web サイトのレンダリングを高速化するための設定を診断しました",
+					"area3": "ブラウザーのセキュリティー・サービスを検証しました",
+					"area4": "Web ページが適切にレンダリングされているか確認しました",
+					"area5": "高速ダウンロードの設定をスキャンしました",
+					"area6": "アクセス権とアクセス制御を分析しました"
+				},
+				"wifiperformancescannedareas": {
+					"area1": "Wi-Fi 利用設定を検証しました",
+					"area2": "安全なホーム・ネットワークを検証しました",
+					"area3": "Wi-Fi サービスの設定をスキャンしました",
+					"area4": "安全なネットワーク共有設定を検証しました",
+					"area5": "Wi-Fi セキュリティー規格を検証しました",
+					"area6": "Wi-Fi チャネルが重複していないことを分析しました"
+				}
+			},
+			"malwaresecurity": {
+				"malwarescanscannedareas": {
+					"area1": "一般的な読み込みポイントをスキャンしました",
+					"area2": "脅威に関わる重要な場所をスキャンしました",
+					"area3": "ウイルス、スパイウェア、マルウェアをスキャンしました",
+					"area4": "50 種類以上のファイル・タイプの脅威をスキャンしました",
+					"area5": "マルウェアの残骸を確認しました",
+					"area6": "クラウド修復エンジンで検証しました"
+				},
+				"errantprogramsscannedareas": {
+					"area1": "不正アプリを探す",
+					"area2": "不要と思われるアプリを検査しました",
+					"area3": "非アクティブなアプリと非表示のアプリを検索しました",
+					"area4": "悪意のあるアプリをスキャンしました",
+					"area5": "評価要因に基づいてアプリを確認しました",
+					"area6": "レジストリ内の不正プログラムを確認しました"
+				},
+				"zerodayinfectionsscannedareas": {
+					"area1": "ゼロデイ・ウイルスをスキャンしました",
+					"area2": "最近診断されていないマルウェアを検索しました",
+					"area3": "クラウドベース修復で検証しました",
+					"area4": "動作監視を実行しました",
+					"area5": "集約エンジンでファイルを検証しました",
+					"area6": "更新された定義に対してスキャンしました"
+				},
+				"securitysettingsscannedareas": {
+					"area1": "Windows Update が最新であることを検証しました",
+					"area2": "Windows ファイアウォール・サービスを検証しました",
+					"area3": "安全なブラウザー設定を確認しました",
+					"area4": "重要なセキュリティー・サービスを診断しました",
+					"area5": "ユーザー・アクセス設定を検証しました",
+					"area6": "認証サービスを検証しました"
+				},
+				"annoyingadwarescannedareas": {
+					"area1": "ブラウザーのアドウェアをスキャンしました",
+					"area2": "ブラウザーのポップアップ設定を検証",
+					"area3": "ブラウザーのリダイレクトの脅威をスキャンしました",
+					"area4": "アドウェアの残骸を確認しました",
+					"area5": "ブラウザー利用設定を検証しました",
+					"area6": "クラウド修復エンジンで検証しました"
+				}
+			},
+			"subscriber": {
+				"tunepc": {
+					"accumulatedjunkscannedareas": {
+						"area1": "85 か所の不要ファイルを削除しました",
+						"area2": "不要なシステム・ログ・ファイルをクリアしました",
+						"area3": "アプリケーションの残骸を削除しました",
+						"area4": "ディスク空き容量を解放するために一時ファイルを削除しました",
+						"area5": "以前削除したファイルを除去しました",
+						"area6": "古いエラーとアラートをクリアしました"
+					},
+					"registryerrorsscannedareas": {
+						"area1": "Windows レジストリの詳細チェックを完了しました",
+						"area2": "無効な Windows サービスを修正しました",
+						"area3": "破損したレジストリ項目を削除しました",
+						"area4": "古いファイル拡張子を削除しました",
+						"area5": "インストール済みアプリの破損した項目を削除しました",
+						"area6": "不要な残留項目をクリアしました"
+					},
+					"windowssettingsscannedareas": {
+						"area1": "Windows 設定を検証しました",
+						"area2": "すべての Windows サービスを最適化しました",
+						"area3": "重要な Windows サービスを変更しました",
+						"area4": "重要な Windows サービスを変更しました",
+						"area5": "ネットワークでファイルを共有する機能を検証しました",
+						"area6": "生体認証とアクセス設定を検証しました"
+					},
+					"usabilityissuesscannedareas": {
+						"area1": "使いやすさに関する課題を修正しました",
+						"area2": "外部デバイスの接続を検証しました",
+						"area3": "Windows Update が常に最新であることを確認しました",
+						"area4": "アプリが最高の状態でレンダリングおよび表示していることを確認しました",
+						"area5": "処理電源使用率の設定を変更しました",
+						"area6": "ファイルを見つけやすくするために設定を変更しました"
+					},
+					"systemerrorsscannedareas": {
+						"area1": "重要なサービスが実行されているかどうか確認しました",
+						"area2": "パフォーマンスを向上させるサービスを変更しました",
+						"area3": "ソフトウェアの競合エラーを修正しました",
+						"area4": "Windows エラー管理を最適化しました",
+						"area5": "アプリの起動エラーを確認して修正しました",
+						"area6": "システム・エラー・レポートを構成しました"
+					}
+				},
+				"internetperformance": {
+					"ejunkscannedareas": {
+						"area1": "4 つのブラウザーから不要なデータを削除しました",
+						"area2": "残留している不要なデータを削除しました",
+						"area3": "古いインターネット・ファイルを削除しました",
+						"area4": "不要な Web キャッシュをクリアしました",
+						"area5": "Cookie をクリアしました",
+						"area6": "ブラウザーの不要なデータをすべて削除しました"
+					},
+					"browsersecurityscannedareas": {
+						"area1": "セキュリティー・サービスが実行されていることを確認しました",
+						"area2": "ブラウザーのセキュリティー機能を構成しました",
+						"area3": "ネットワーク・サービスを確認して修正しました",
+						"area4": "プロトコル設定を構成しました",
+						"area5": "ブラウザーのコンテンツ設定に問題がないことを検証しました",
+						"area6": "ブラウザーのプラグインと拡張機能をスキャンしました"
+					},
+					"networksettingsscannedareas": {
+						"area1": "ネットワークとインターネットの設定を修正しました",
+						"area2": "ネットワーク構成設定を確認しました",
+						"area3": "接続ネットワーク設定を変更しました",
+						"area4": "Web サイトのレンダリングを高速化するための設定を診断しました",
+						"area5": "ページ・レンダリング・エラーを修正しました",
+						"area6": "すべての接続サービスをスキャンしました"
+					},
+					"browsersettingsscannedareas": {
+						"area1": "ブラウザー利用の向上に関する設定を変更しました",
+						"area2": "Web サイトのレンダリングを高速化するための設定を検証しました",
+						"area3": "ブラウザーのセキュリティー・サービスに問題がないことを確認しました",
+						"area4": "Web ページを適切に読み込むための設定を変更しました",
+						"area5": "高速ダウンロードの設定を修正しました",
+						"area6": "アクセス権とアクセス制御の設定を修正しました"
+					},
+					"wifiperformancescannedareas": {
+						"area1": "Wi-Fi 利用設定を変更しました",
+						"area2": "安全なホーム・ネットワーク設定を検証しました",
+						"area3": "Wi-Fi サービスの設定を修正しました",
+						"area4": "安全なネットワーク共有設定を変更しました",
+						"area5": "Wi-Fi セキュリティー規格を検証しました",
+						"area6": "Wi-Fi チャネルを検証しました"
+					}
+				},
+				"malwaresecurity": {
+					"malwarescanscannedareas": {
+						"area1": "一般的な読み込みポイントの脅威を確認して削除しました",
+						"area2": "重要な場所の脅威を確認して削除しました",
+						"area3": "PC から脅威を削除しました",
+						"area4": "50 種類以上のファイル・タイプの脅威を検証しました",
+						"area5": "マルウェアの残骸を削除しました",
+						"area6": "クラウド修復エンジンで検証しました"
+					},
+					"errantprogramsscannedareas": {
+						"area1": "インストール済みのアプリをすべて検証しました",
+						"area2": "不要と思われるアプリを検証しました",
+						"area3": "非アクティブなアプリと非表示のアプリを削除しました",
+						"area4": "悪意のあるアプリと不正アプリを削除しました",
+						"area5": "評価要因に基づいてアプリを検証しました",
+						"area6": "不正プログラムのレジストリ・チェックを完了しました"
+					},
+					"zerodayinfectionsscannedareas": {
+						"area1": "ゼロデイ・ウイルスを分析しました",
+						"area2": "PC からマルウェアを削除しました",
+						"area3": "クラウド修復エンジンで検証しました",
+						"area4": "アプリの動作監視を完了しました",
+						"area5": "集約エンジンに対して検証しました",
+						"area6": "最新の定義に対して検証しました"
+					},
+					"securitysettingsscannedareas": {
+						"area1": "Windows Update 設定を最適化しました",
+						"area2": "Windows ファイアウォール・サービスを調整しました",
+						"area3": "ブラウザー設定をセキュリティー保護しました",
+						"area4": "重要なセキュリティー・サービスを診断しました",
+						"area5": "ユーザー・アクセス設定を最適化しました",
+						"area6": "認証サービスを変更しました"
+					},
+					"annoyingadwarescannedareas": {
+						"area1": "ブラウザのアドウェアを削除しました",
+						"area2": "ブラウザーのポップアップ設定を調整しました",
+						"area3": "ブラウザーのリダイレクトの脅威を診断しました",
+						"area4": "アドウェアの残骸をクリアしました",
+						"area5": "ブラウザー利用設定を最適化しました",
+						"area6": "クラウド修復エンジンで検証しました"
+					}
+				}
+			},
+			"Diskspace": "解放されるディスク容量:",
+			"Performanceimprovements": "パフォーマンスの改善:",
+			"Securityimprovements": "セキュリティーの改善:",
+			"Onceaweek": "1 週間に 1 回"
+		},
+		"subscriberScanHomePage": {
+			"title": "問題なし",
+			"titleScanCanceled": "最後のスキャンがキャンセルされたため、評価は 0 でした。「ホームに戻る」をクリックして、もう一度スキャンしてください。",
+			"serialNumber": "シリアル番号:",
+			"subTitle": "Lenovo Smart Performance Service に登録されています",
+			"description": "頻繁にお使いのコンピューターの PC パフォーマンス、インターネット・パフォーマンス、マルウェアの問題をスキャンして積極的に修正しています。十分にカバーされています。「今すぐスキャン」ボタンをクリックして、オンデマンドでパフォーマンス・チェックを開始することもできます。",
+			"scanNow": "スキャンして修正",
+			"backToHome": "ホームに戻る",
+			"returnto": "ダッシュボードに戻る",
+			"mostRecent": "最近のスキャン:",
+			"nextScheduled": "次回のスケジュール済みスキャン:",
+			"successTitle": "PC がチューンアップされました!",
+			"successDescription": "PC の円滑な稼働を維持するために、Smart Performance で <b>{{issueCount}} 件の問題</b>を解決しました。スキャンの概要とレポートは以下で確認できます。",
+			"scanSummary": {
+				"title": "スキャンの概要:",
+				"description": "常にコンピューターを調整しています",
+				"tune": "調整",
+				"tuneSummary": "解放されるディスク容量",
+				"boost": "ブースト",
+				"boostSummary": "パフォーマンスを向上させる修正",
+				"secure": "保護",
+				"secureSummary": "セキュリティーを向上させる修正",
+				"annual": "年次",
+				"quarterly": "3 カ月ごと",
+				"custom": "カスタム",
+				"txtFrom": "何日から",
+				"txtTo": "何日まで",
+				"txtGo": "移動",
+				"summaryCaption": "解放される容量",
+				"fixes": "修正",
+				"txtClr": "クリア"
+			},
+			"lastScanResults": {
+				"title": "直近 5 件のスキャン結果:",
+				"scanDate": "スキャン日",
+				"results": "結果",
+				"status": "ステータス"
+			}
+		},
+		"feedbackContainer": {
+			"title": "フィードバックをお寄せください",
+			"subtitle": "Smart Performance の感想をお聞かせください",
+			"buttonText": "フィードバックを送る",
+			"questions": {
+				"q1": "1.スキャン機能の使いやすさはどのくらいでしたか?",
+				"q2": "2.スキャン結果のわかりやすさはどのくらいでしたか?",
+				"q3": "3.システムのパフォーマンスを向上させるために、Smart Performance サブスクリプション料金を支払う可能性はどのくらいありますか?",
+				"q4": "4.全体的に、Smart Performance 機能にどのくらい満足していますか?",
+				"q5": "1.Smart Performance が施した修正のわかりやすさはどのくらいでしたか?",
+				"q6": "2.システムでマルウェアは見つかりましたか?",
+				"q7": "3.Smart Performance 機能の支払いを継続する可能性はどのくらいありますか?",
+				"q8": "4.全体的に、Smart Performance 機能にどのくらい満足していますか?"
+			},
+			"rating": {
+				"r1": "非常に難しい",
+				"r2": "非常に簡単",
+				"r3": "非常に難しい",
+				"r4": "非常に簡単",
+				"r5": "まったくない",
+				"r6": "非常に可能性が高い",
+				"r7": "まったく満足していない",
+				"r8": "非常に満足",
+				"r9": "非常に難しい",
+				"r10": "非常に簡単",
+				"r11": "はい",
+				"r12": "いいえ",
+				"r13": "まったくない",
+				"r14": "非常に可能性が高い",
+				"r15": "まったく満足していない",
+				"r16": "非常に満足"
+			},
+			"commentTip": "コメントや追加のフィードバックを以下に残してください。",
+			"comments": "ここにコメントを残してください..."
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial",
+			"trialTitle": "Trial subscription",
+			"subscriptionTitle": "Paid subscription",
+			"inTrialDetail": "You are currently in your trial period.",
+			"trialExpiredDetail": "Your trial period has expired.",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
+			"discountPrice": "For only $29.99 for one year",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId": "Lenovo ID:",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your own Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join your family's Connected Home Security",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+			"goNow": "Go now",
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
+		}
+	},
+	"dir": "ltr",
+	"dirClass": "ltr",
+	"warranty": {
+		"warrantyStatusText": "保証状況:",
+		"inWarranty": "保証期間内",
+		"outOfWarranty": "保証期間切れ",
+		"viewDetails": "詳細の表示",
+		"currentService": "現在のサービスとサポートの状況",
+		"monthsRemaining": "残り {{remainingMonths}} か月",
+		"oneMonthRemaining": "残り 1 か月",
+		"lessThanOneMonth": "残り 1 か月未満",
+		"makeSureNeedCoverage": "サービスが自分に必要なものをカバーしていることを確認してください",
+		"recommendsUpgradingText": "Lenovo では、サービス・レベルをアップグレードすることをお勧めします",
+		"exploreOptions": "オプションの確認",
+		"start": "開始",
+		"end": "終了",
+		"nMos": "{{monthValue}} か月",
+		"today": "今日",
+		"upgradeLevels": {
+			"title": "Lenovo サービスの保証とアップグレードは、お客様をハードウェア障害から守ります。",
+			"subTitle": "偶発損害保護は、事故による落下、液体こぼし、画面割れ、その他の損傷から保護します。",
+			"recommended": "推奨",
+			"learnMore": "さらに詳細をご希望ですか?",
+			"good": {
+				"warrantyCodeText": "デポ・サポート",
+				"levelText": "良い",
+				"point1": "部品および保守サービス",
+				"point2": "ハードウェアの問題に対する電話サポート - 基本的な内容",
+				"point3": "Lenovo デポへ送付して修理"
+			},
+			"better": {
+				"warrantyCodeText": "オンサイト・サポート",
+				"levelText": "より良い",
+				"point1": "部品および保守サービス",
+				"point2": "ハードウェアの問題に対する電話サポート - 基本的な内容",
+				"point3": "<b>より迅速に</b> - お客様の所在地に出向いて修理"
+			},
+			"best": {
+				"warrantyCodeText": "プレミア",
+				"levelText": "最高",
+				"point1": "<b>優先的な</b>部品および保守サービス",
+				"point2": "Lenovo 技術者による電話サポート - <b>より高度な内容</b>",
+				"point3": "<b>より迅速に</b> - 翌営業日にお客様の所在地に出向いて修理",
+				"point4": "<b>あらゆるニーズを網羅するハードウェアおよびソフトウェア・サポート</b>"
+			}
 		}
 	},
 	"security": {
@@ -4629,832 +5498,12 @@
 		"updateSnapshotTooltip": "すべてのハードウェアおよびソフトウェア・コンポーネントのスナップショットを最新の情報で更新します",
 		"replaceBaselineTooltip": "選択したコンポーネントのベースラインを現在のスナップショット情報で更新します"
 	},
-	"smartPerformance": {
-		"title": "Smart Performance",
-		"back": "戻る",
-		"performanceandSecurityCheckTitle": "パフォーマンスとセキュリティーのチェック",
-		"performanceandSecurityCheckSubTitle": "コンピューターのパフォーマンスとセキュリティーの問題を診断して解決しましょう",
-		"scanButton": "無料 PC スキャン",
-		"section1Heading": "PC パフォーマンスをどのように評価しますか?",
-		"section1Description": "PC の動作が遅いですか?アプリケーションの応答に時間がかかりますか?Windows のエラーがありますか?マルウェアが心配ですか?<br>問題の原因を診断して修正しましょう。",
-		"critical": "脅威",
-		"allisWell": "安全",
-		"zero": 0,
-		"one": 1,
-		"two": 2,
-		"three": 3,
-		"four": 4,
-		"five": 5,
-		"six": 6,
-		"seven": 7,
-		"eight": 8,
-		"nine": 9,
-		"ten": 10,
-		"tuneUP": "お客様の PC はチューンアップが必要です",
-		"section2Heading": "常に最高のパフォーマンスのPCへ",
-		"section2Description": "Smart Performanceは、24 時間 365 日システムを積極的にスキャンして、問題を検出して修正し、PCを常に最高のパフォーマンスに保ちます。",
-		"runningWell": "PC は正常に動作しています",
-		"auto": "自動",
-		"manual": "手動",
-		"am": "午前",
-		"pm": "午後",
-		"scanNow": "今すぐスキャン",
-		"signUpAndFix": "登録と修正",
-		"cancel": "キャンセル",
-		"scanning": "スキャン中です",
-		"fixIt": "今すぐ修正",
-		"optimizeIt": "最適化",
-		"maintainIt": "維持",
-		"noteFindings": "お使いのコンピューターを詳細に分析した結果をご報告いたします。",
-		"noteNavigateTab": "詳しい内容については、それぞれのタブをご覧ください。",
-		"scannedAreas": "スキャン対象領域",
-		"lastFix": "直近の修正",
-		"fixResult": "修正結果",
-		"checkPreviousResults": "前の結果を確認",
-		"tunePCPerformance": {
-			"title": "PC パフォーマンスの調整",
-			"heading": "コンピューターをもっと大切に",
-			"description": "世界最高のコンピューターでも、定期的なチューンアップによりパフォーマンスが改善します。レノボの強力なアプリでお客様のPCをチューンアップしましょう。",
-			"tabSet1": {
-				"tab1": "蓄積した不要ファイル",
-				"tab2": "使いやすさの問題",
-				"tab3": "Windows の設定",
-				"tab4": "システム・エラー",
-				"tab5": "レジストリ・エラー"
-			},
-			"tabSet2": {
-				"tab1Heading": "簡単",
-				"tab1Description": "技術的な用語で混乱させません。",
-				"tab2Heading": "高速",
-				"tab2Description": "5 分以内に 100 個のチェックを実施します。",
-				"tab3Heading": "安全",
-				"tab3Description": "スケアウェアではないベスト・プラクティスで構築されています。"
-			},
-			"summaryTitle": "PC パフォーマンスの調整"
-		},
-		"boostInternetPerformance": {
-			"title": "インターネット・パフォーマンスの向上",
-			"extraTitle": "インターネット・パフォーマンス",
-			"heading": "インターネットの機能を高めよう",
-			"description": "Wi-Fi が多い、遅い、または使えない生活は不便です。最適なパフォーマンスを得るために、インターネット、Wi-Fi、ブラウザーの設定を構成しましょう。",
-			"tabSet1": {
-				"tab1": "不要ファイル",
-				"tab2": "ネットワーク設定",
-				"tab3": "ブラウザー設定",
-				"tab4": "ブラウザー・セキュリティー",
-				"tab5": "Wi-Fi パフォーマンス"
-			},
-			"tabSet2": {
-				"tab1Heading": "ブラウザーの問題",
-				"tab1Description": "すべての一般的な Web ブラウザーを構成して修正します。",
-				"tab2Heading": "接続エラー",
-				"tab2Description": "接続の問題を診断して修復できます。",
-				"tab3Heading": "低速インターネット",
-				"tab3Description": "最大のパフォーマンスを発揮できるようサポートします。"
-			},
-			"summaryTitle": "インターネット・パフォーマンス"
-		},
-		"malwareSecurity": {
-			"title": "マルウェアとセキュリティー",
-			"heading": "コンピューターに必要なさらなるケア",
-			"description": "マルウェアは、コンピューターのクラッシュ、データの侵害、パフォーマンスの低下につながる可能性があります。マルウェア削除などもっと対策しましょう。",
-			"tabSet1": {
-				"tab1": "マルウェア・スキャン",
-				"tab2": "ゼロデイ感染",
-				"tab3": "不正プログラム",
-				"tab4": "迷惑なアドウェア",
-				"tab5": "セキュリティー設定"
-			},
-			"tabSet2": {
-				"tab1Heading": "ゼロデイ・ウイルス",
-				"tab1Description": "最新のマルウェア感染も削除します。",
-				"tab2Heading": "スパイウェアの削除",
-				"tab2Description": "不要と思われるプログラムをすべて削除します。",
-				"tab3Heading": "軽い動作で高速",
-				"tab3Description": "通常 5~10 分でスキャンを終了します。"
-			},
-			"summaryTitle": "マルウェアとセキュリティー"
-		},
-		"proactiveAutomated": {
-			"title": "プロアクティブかつ自動的",
-			"heading": "影響を受ける前に、問題を解決する機能を手に入れましょう!",
-			"description": "Smart Performance は、PC パフォーマンスに影響を与える数多くの問題を常に検索します。積極的に修正するため安心です。",
-			"tabSet1": {
-				"tab1": "スキャンのスケジュール",
-				"tab2": "オンデマンド・スキャン",
-				"tab3": "自動解決",
-				"tab4": "効果的",
-				"tab5": "24 時間 365 日の保護"
-			},
-			"tabSet2": {
-				"tab1Heading": "簡単",
-				"tab1Description": "技術的な用語で混乱させません。",
-				"tab2Heading": "高速",
-				"tab2Description": "5 分以内に 100 個のチェックを実施します。",
-				"tab3Heading": "安全",
-				"tab3Description": "スケアウェアではなく、ベスト・プラクティスに基づいて構成されています。"
-			}
-		},
-		"noScanResults": "「スキャンして修正」ボタンをクリックしてスキャン・プロセスを起動してください。",
-		"startScan": "<b>スキャンを開始する準備はできましたか?</b>コンピューターのパフォーマンスとセキュリティーの問題を診断しましょう。",
-		"subscriptionDetails": {
-			"title": "サブスクリプションの詳細",
-			"description": "Lenovo Smart Performance Service に登録されています。期間中、すべての機能を最大限に利用し、PC を保護して円滑な稼働を維持できます。",
-			"learnMore": "詳細はこちら",
-			"startDate": "開始日",
-			"endDate": "終了日",
-			"status": "ステータス",
-			"activeStatus": "アクティブ",
-			"inactiveStatus": "非アクティブ",
-			"manageSubscription": "サブスクリプションの管理",
-			"titlebeta": "Lenovo ベータ版プログラム",
-			"manageSubscriptionBeta": "全機能の有効化",
-			"descriptionbeta": "Lenovo は、2020 年 7 月まで Smart Performance 機能をお試しいただけるパイロット・プログラムを提供しています。",
-			"descriptionbeta1": "参加して全機能を試すことができます。",
-			"descriptionNonSubscriber": "Lenovo Smart Performance Service に登録されていません。PC のみをスキャンできます。今すぐ登録して、PC 保護とスムーズな動作のメリットを最大限に活用しましょう。",
-			"processStatus": "処理中です",
-			"descriptionExpired": "サブスクリプションの有効期限が切れており、現在は Smart Performance のスキャン機能のみを使用できます。「サブスクリプションの管理」リンクをクリックしてサブスクリプションを更新することで、デバイスのすべての保護機能を再開できます。",
-			"expiredStatus": "期限切れです",
-			"expiredNote": "サブスクリプションの有効期限まで、あと",
-			"day": "日",
-			"days": "日後",
-			"weeks": "週間",
-			"week": "1 週間",
-			"month": "カ月間",
-			"today": "今日",
-			"next": "次へ"
-		},
-		"scanSettings": {
-			"title": "スキャン設定のスケジュール",
-			"description": "スキャンを有効または無効にして、スキャン・スケジュールを設定します",
-			"enableScan": "スキャンの有効化",
-			"changeScanTitle": "スキャン・スケジュールの変更",
-			"changeScanDescription": "スキャン・スケジュールを編集して、必要なときに実行します。",
-			"frequency": "頻度",
-			"txtDate": "日付",
-			"txtDay": "日",
-			"txtTime": "時刻",
-			"txtSave": "保存する",
-			"txtCancel": "キャンセル",
-			"scanFrequencyWeek": "1 週間に 1 回",
-			"scanFrequencyEveryWeek": "隔週",
-			"scanFrequencyMonth": "毎月",
-			"mon": "月曜日",
-			"tue": "火曜日",
-			"wed": "水曜日",
-			"thu": "木曜日",
-			"fri": "金曜日",
-			"sat": "土曜日",
-			"sun": "日曜日",
-			"am": "午前",
-			"pm": "午後",
-			"tooltipText": "このトグルを有効にしておくことにより、設定された日時にシステム・パフォーマンスとセキュリティー・スキャンが自動的に開始されます。"
-		},
-		"scanningPage": {
-			"title": "パフォーマンスとセキュリティーのチェック",
-			"description": "しばらくお待ちください。潜在的な問題や脅威がないかシステムをスキャンしています。",
-			"scanningSystem": "システムをスキャン中",
-			"complete": "完了",
-			"cancelScan": {
-				"button": "スキャンをキャンセル",
-				"title": "スキャンをキャンセルしますか?",
-				"description": "現在の画面を離れると、スキャンがキャンセルされ、ホームに戻ります。ただし、スキャンはいつでも再実行できます。",
-				"yesButton": "はい、キャンセルします",
-				"noButton": "いいえ、スキャンを再開します",
-				"cancelMayTakeSomeTime": "お使いのシステムによってはキャンセルに時間がかかる場合がございます。",
-				"cancelTextPrompt": "本当にキャンセルしてよろしいですか?"
-			},
-			"waiting": "スキャン待機中",
-			"completed": "完了",
-			"nowScanningDetail": {
-				"cardTitle": "現在のスキャン詳細",
-				"current": "現在:",
-				"upNext": "次:",
-				"tunePCDesc": "PC パフォーマンスを向上させましょう。業界のベスト・プラクティスで安全に実行します。加入者には、PC の起動時間の短縮、パフォーマンスの向上、安定性の向上、アプリケーション起動の高速化のメリットがあります。",
-				"boostDesc": "ブラウザー利用を強化しましょう。ネットワークとアクセスの問題を修正しましょう。加入者には、インターネット接続の改善、アップロード/ダウンロード速度の向上、インターネットの安全性の向上のメリットがあります。",
-				"malwareDesc": "PC をオンデマンドですばやく保護しましょう。スパイウェア、マルウェア、アドウェアを削除することで実現します。また、ほぼゼロデイでの感染を防ぎます。加入者には、データのセキュリティーと最適なシステム・パフォーマンスのメリットがあります。",
-				"proactiveDesc": "コンピューターを定期的に調整して問題を修正しましょう。プロアクティブかつ自動的に PC を調整して保護します。常時行う",
-				"tunePCScanningItems": {
-					"accumulatedJunk": {
-						"itema1": "85 か所で不要ファイルを探す",
-						"itema2": "不要なシステム・ログ・ファイル",
-						"itema3": "不要なアプリケーション",
-						"itema4": "不要な一時ファイル",
-						"itema5": "以前削除したファイル",
-						"itema6": "古いエラーとアラート"
-					},
-					"usabilityIssues": {
-						"itemb1": "使いやすさに関する多くの課題に対応",
-						"itemb2": "外部デバイスの接続を確認",
-						"itemb3": "Windows Update を常に最新に保つ",
-						"itemb4": "アプリを最高の状態でレンダリングおよび表示",
-						"itemb5": "処理電源使用率の分析",
-						"itemb6": "ファイルを見つけやすくする"
-					},
-					"windowsSettings": {
-						"itemc1": "多くの Windows OS 設定の診断",
-						"itemc2": "Windows 全体に問題がないことを確認",
-						"itemc3": "重要なサービスが実行されていることを確認",
-						"itemc4": "接続設定の状態を確認",
-						"itemc5": "ネットワークでファイルを共有する機能を確認",
-						"itemc6": "生体認証とアクセス設定を確認"
-					},
-					"systemErrors": {
-						"itemd1": "重要なサービスが実行されていることを確認",
-						"itemd2": "パフォーマンスを向上させるサービスを選択",
-						"itemd3": "ソフトウェアの競合エラーを探す",
-						"itemd4": "Windows エラー管理を最適化",
-						"itemd5": "アプリの起動エラーを確認して修正",
-						"itemd6": "システム・エラー・レポートを構成"
-					},
-					"registryErrors": {
-						"iteme1": "Windows レジストリの詳細チェック",
-						"iteme2": "無効な Windows サービスのスキャン",
-						"iteme3": "破損したレジストリ項目の検索",
-						"iteme4": "不要なファイル拡張子を探す",
-						"iteme5": "インストール済みアプリの破損した項目を検索",
-						"iteme6": "不要な残留項目を探す"
-					}
-				},
-				"boostScanningItems": {
-					"networkSettings": {
-						"itema1": "ネットワークとインターネットの設定を診断",
-						"itema2": "ネットワーク構成設定を検証",
-						"itema3": "使用可能なネットワーク設定を検証",
-						"itema4": "Web サイトの読み込み高速化を設定",
-						"itema5": "ページ・レンダリング・エラーを探す",
-						"itema6": "接続サービスが正常に動作しているか"
-					},
-					"browserSettings": {
-						"itemb1": "ブラウザー利用の向上を有効化",
-						"itemb2": "Web サイトのレンダリング高速化を設定",
-						"itemb3": "ブラウザーのセキュリティー・サービスに問題がないことを確認",
-						"itemb4": "Web ページが適切にレンダリングされていることを確認",
-						"itemb5": "高速ダウンロードの設定を確認",
-						"itemb6": "アクセス権とアクセス制御を確認"
-					},
-					"browserSecurity": {
-						"itemc1": "セキュリティー・サービスが実行されていることを確認",
-						"itemc2": "ブラウザーのセキュリティー機能を構成",
-						"itemc3": "ネットワーク・サービスが正常に動作していることを確認",
-						"itemc4": "プロトコル設定を構成",
-						"itemc5": "ブラウザーのコンテンツ設定に問題がないことを検証",
-						"itemc6": "ブラウザーのプラグインと拡張機能を検証"
-					},
-					"wifiPerformance": {
-						"itemd1": "Wi-Fi 利用設定を最適化",
-						"itemd2": "ホーム・ネットワークが安全であることを確認",
-						"itemd3": "Wi-Fi サービスの設定を確認",
-						"itemd4": "安全なネットワーク共有設定",
-						"itemd5": "Wi-Fi セキュリティー規格を確認",
-						"itemd6": "Wi-Fi チャネルが重複していないことを確認"
-					},
-					"eJunk": {
-						"iteme1": "ブラウザーからの不要なデータを排除",
-						"iteme2": "残留している不要なデータを探す",
-						"iteme3": "古いインターネット・ファイルを探す",
-						"iteme4": "不要な Web キャッシュをクリア",
-						"iteme5": "Cookie をクリア",
-						"iteme6": "ブラウザーの不要なデータを削除"
-					}
-				},
-				"malwareScanningItems": {
-					"malwareScan": {
-						"itema1": "一般的な読み込みポイントをスキャン",
-						"itema2": "脅威に関わる重要な場所を確認",
-						"itema3": "ウイルス、スパイウェア、マルウェアを確認",
-						"itema4": "50 種類以上のファイル・タイプをスキャン",
-						"itema5": "マルウェアの残骸をスキャン",
-						"itema6": "クラウド修復エンジンを活用"
-					},
-					"zerodayInfections": {
-						"itemb1": "ゼロデイ・ウイルスを探す",
-						"itemb2": "最近診断されていないマルウェアを探す",
-						"itemb3": "クラウドベース修復でスキャン",
-						"itemb4": "動作監視の実行",
-						"itemb5": "集約エンジンでファイルをスキャン",
-						"itemb6": "最新の定義に対してスキャン"
-					},
-					"securitySettings": {
-						"itemc1": "Windows Update を常に最新に保つ",
-						"itemc2": "Windows ファイアウォール・サービスに問題がないことを確認",
-						"itemc3": "ブラウザー設定を安全に保つ",
-						"itemc4": "重要なセキュリティー・サービスを確認",
-						"itemc5": "ユーザー・アクセス設定を構成",
-						"itemc6": "認証サービスの検証"
-					},
-					"errantPrograms": {
-						"itemd1": "不正アプリを探す",
-						"itemd2": "不要と思われるアプリを探す",
-						"itemd3": "非アクティブなアプリと非表示のアプリを検出",
-						"itemd4": "アプリの悪意のある動作を検証",
-						"itemd5": "評価要因に基づいてアプリを確認",
-						"itemd6": "レジストリ内の不正プログラムを確認"
-					},
-					"annoyingAdware": {
-						"iteme1": "ブラウザーのアドウェアを探す",
-						"iteme2": "ブラウザーのポップアップ設定を修正",
-						"iteme3": "ブラウザーのリダイレクトの脅威を排除",
-						"iteme4": "アドウェアの残骸を確認",
-						"iteme5": "ブラウザー利用設定を最適化",
-						"iteme6": "クラウド修復エンジンで検証"
-					}
-				}
-			},
-			"confirmationTitle": "Lenovo 支払いプロセス",
-			"confirmationNote": "支払いを完了するには、Lenovo 支払い Web サイトに移動します。支払いが完了したら、「サブスクリプションの詳細」の「更新」ボタンを押すと、支払い結果を取得できます。",
-			"confirmationBtn": "続行",
-			"refreshButton": "ステータスを更新"
-		},
-		"scanCompletePage": {
-			"title": "システムのスキャンが完了しました",
-			"description": "こちらが {{machineFamilyName}} のスキャン結果です。",
-			"scanRates": "スキャンの評価(10 段階): ",
-			"summary": "要約",
-			"foundIssues": "スキャンで {{issueCount}} 個の問題が見つかりました",
-			"summaryDetails": "今すぐ登録してこれらの問題を修正し、システムの円滑な稼働を維持しましょう。当社のソフトウェアは、24 時間 365 日システムのこれらの領域を積極的にスキャンして、問題が発生したときに検出して修正できるため、PC は常に最高のパフォーマンスを発揮します。",
-			"expiredSummaryDetails": "サブスクリプションの有効期限が切れており、現在は Smart Performance のスキャン機能のみを使用できます。「スキャンして修正」機能を再開するには、下の「更新して修正」ボタンをクリックしてサブスクリプションを更新してください。",
-			"signupRepairButton": "今すぐサインアップして修復",
-			"renewAndFix": "更新して修正",
-			"backToHome": "ホームに戻る",
-			"monthlyPricing": "<b>1 か月約 {{monthlyPrice}} です。</b>これらの問題を自動的に修正します。今日以降毎週 1 回 <a  href=\"#\">詳細を表示</a>",
-			"issueCount": "{{individualIssueCount}} 件の問題",
-			"issues": "問題",
-			"tuneIssueCount": "{{tune}}",
-			"boostIssueCount": "{{boost}}",
-			"secureIssueCount": "{{secure}}",
-			"scannedAreas": "スキャン対象領域",
-			"summaryPurchaseTip": "今すぐ年間プランを購入すると、このような問題が毎週自動的に修正されます。",
-			"tunePCTooltip": "システム全体のパフォーマンスを向上させ、PCの起動時間を短縮し、アプリケーションの読み込み時間を改善します。",
-			"boostTooltip": "ネットワーク・パフォーマンス、ブラウザーの使いやすさ、および接続性を向上させます。",
-			"malwareTooltip": "セキュリティを向上させ、マルウェアやウィルス感染を除去し、システムの安定性を回復します。",
-			"recommendedAction": {
-				"title": "推奨する対策",
-				"description": "これらの問題を自動的に修正します。今日以降毎週 1 回",
-				"yearlyPricing": "{{yearlyPrice}} / 年",
-				"monthlyPricing": "1 か月約 {{monthlyPrice}} です。",
-				"longerTerm": "更にお得な長期サービスをお考えですか？",
-				"newDescription": "サインアップした後、これらの問題が毎週自動的に修正できます。",
-				"signupButton": "サインアップ"
-			},
-			"tunepc": {
-				"accumulatedjunkscannedareas": {
-					"area1": "85 か所で不要ファイルをスキャン",
-					"area2": "不要なシステム・ログ・ファイル",
-					"area3": "不要なアプリケーション",
-					"area4": "不要な一時ファイル",
-					"area5": "以前削除したファイル",
-					"area6": "古いエラーとアラート"
-				},
-				"registryerrorsscannedareas": {
-					"area1": "Windows レジストリの詳細チェックを完了しました",
-					"area2": "無効な Windows サービスをスキャンしました",
-					"area3": "破損したレジストリ項目を確認しました",
-					"area4": "不要なファイル拡張子をスキャンしました",
-					"area5": "インストール済みアプリの破損した項目を検索しました",
-					"area6": "不要な残留項目を確認しました"
-				},
-				"windowssettingsscannedareas": {
-					"area1": "多くの Windows OS 設定を診断しました",
-					"area2": "Windows 全体に問題がないことを確認しました",
-					"area3": "重要なサービスが実行されていることを確認しました",
-					"area4": "接続設定の状態を確認しました",
-					"area5": "ネットワークでファイルを共有する機能を確認しました",
-					"area6": "生体認証とアクセス設定を確認しました"
-				},
-				"usabilityissuesscannedareas": {
-					"area1": "使いやすさに関する課題を確認しました",
-					"area2": "外部デバイスの接続を確認しました",
-					"area3": "Windows Update のステータスを確認しました",
-					"area4": "アプリのレンダリング設定を検証しました",
-					"area5": "処理電源使用率を分析しました",
-					"area6": "ファイルを見つけやすくする"
-				},
-				"systemerrorsscannedareas": {
-					"area1": "重要なサービスが実行されているかどうか確認しました",
-					"area2": "パフォーマンスを向上させるサービスを探す",
-					"area3": "ソフトウェアの競合エラーを探す",
-					"area4": "Windows エラー管理を分析しました",
-					"area5": "アプリの起動エラーをスキャンしました",
-					"area6": "システム・エラー・レポートの構成を確認した"
-				}
-			},
-			"internetperformance": {
-				"ejunkscannedareas": {
-					"area1": "ブラウザーから不要なデータを特定しました",
-					"area2": "残留している不要なデータを検索しました",
-					"area3": "古いインターネット・ファイルをスキャンしました",
-					"area4": "不要な Web キャッシュを検索しました",
-					"area5": "整理のために Cookie を確認しました",
-					"area6": "ブラウザーの不要なデータをスキャンしました"
-				},
-				"browsersecurityscannedareas": {
-					"area1": "セキュリティー・サービスが実行されていることを確認しました",
-					"area2": "ブラウザーのセキュリティー機能を確認しました",
-					"area3": "ネットワーク・サービスを検証しました",
-					"area4": "プロトコル設定を構成",
-					"area5": "ブラウザーのコンテンツ設定を確認しました",
-					"area6": "ブラウザーのプラグインと拡張機能をスキャンしました"
-				},
-				"networksettingsscannedareas": {
-					"area1": "ネットワークとインターネットの設定を診断しました",
-					"area2": "ネットワーク構成設定を診断しました",
-					"area3": "接続ネットワーク設定を検証しました",
-					"area4": "Web サイトのレンダリングを高速化するための設定を診断しました",
-					"area5": "ページ・レンダリング・エラーをスキャンしました",
-					"area6": "すべての接続サービスをスキャンしました"
-				},
-				"browsersettingsscannedareas": {
-					"area1": "ブラウザー利用の向上を有効化",
-					"area2": "Web サイトのレンダリングを高速化するための設定を診断しました",
-					"area3": "ブラウザーのセキュリティー・サービスを検証しました",
-					"area4": "Web ページが適切にレンダリングされているか確認しました",
-					"area5": "高速ダウンロードの設定をスキャンしました",
-					"area6": "アクセス権とアクセス制御を分析しました"
-				},
-				"wifiperformancescannedareas": {
-					"area1": "Wi-Fi 利用設定を検証しました",
-					"area2": "安全なホーム・ネットワークを検証しました",
-					"area3": "Wi-Fi サービスの設定をスキャンしました",
-					"area4": "安全なネットワーク共有設定を検証しました",
-					"area5": "Wi-Fi セキュリティー規格を検証しました",
-					"area6": "Wi-Fi チャネルが重複していないことを分析しました"
-				}
-			},
-			"malwaresecurity": {
-				"malwarescanscannedareas": {
-					"area1": "一般的な読み込みポイントをスキャンしました",
-					"area2": "脅威に関わる重要な場所をスキャンしました",
-					"area3": "ウイルス、スパイウェア、マルウェアをスキャンしました",
-					"area4": "50 種類以上のファイル・タイプの脅威をスキャンしました",
-					"area5": "マルウェアの残骸を確認しました",
-					"area6": "クラウド修復エンジンで検証しました"
-				},
-				"errantprogramsscannedareas": {
-					"area1": "不正アプリを探す",
-					"area2": "不要と思われるアプリを検査しました",
-					"area3": "非アクティブなアプリと非表示のアプリを検索しました",
-					"area4": "悪意のあるアプリをスキャンしました",
-					"area5": "評価要因に基づいてアプリを確認しました",
-					"area6": "レジストリ内の不正プログラムを確認しました"
-				},
-				"zerodayinfectionsscannedareas": {
-					"area1": "ゼロデイ・ウイルスをスキャンしました",
-					"area2": "最近診断されていないマルウェアを検索しました",
-					"area3": "クラウドベース修復で検証しました",
-					"area4": "動作監視を実行しました",
-					"area5": "集約エンジンでファイルを検証しました",
-					"area6": "更新された定義に対してスキャンしました"
-				},
-				"securitysettingsscannedareas": {
-					"area1": "Windows Update が最新であることを検証しました",
-					"area2": "Windows ファイアウォール・サービスを検証しました",
-					"area3": "安全なブラウザー設定を確認しました",
-					"area4": "重要なセキュリティー・サービスを診断しました",
-					"area5": "ユーザー・アクセス設定を検証しました",
-					"area6": "認証サービスを検証しました"
-				},
-				"annoyingadwarescannedareas": {
-					"area1": "ブラウザーのアドウェアをスキャンしました",
-					"area2": "ブラウザーのポップアップ設定を検証",
-					"area3": "ブラウザーのリダイレクトの脅威をスキャンしました",
-					"area4": "アドウェアの残骸を確認しました",
-					"area5": "ブラウザー利用設定を検証しました",
-					"area6": "クラウド修復エンジンで検証しました"
-				}
-			},
-			"subscriber": {
-				"tunepc": {
-					"accumulatedjunkscannedareas": {
-						"area1": "85 か所の不要ファイルを削除しました",
-						"area2": "不要なシステム・ログ・ファイルをクリアしました",
-						"area3": "アプリケーションの残骸を削除しました",
-						"area4": "ディスク空き容量を解放するために一時ファイルを削除しました",
-						"area5": "以前削除したファイルを除去しました",
-						"area6": "古いエラーとアラートをクリアしました"
-					},
-					"registryerrorsscannedareas": {
-						"area1": "Windows レジストリの詳細チェックを完了しました",
-						"area2": "無効な Windows サービスを修正しました",
-						"area3": "破損したレジストリ項目を削除しました",
-						"area4": "古いファイル拡張子を削除しました",
-						"area5": "インストール済みアプリの破損した項目を削除しました",
-						"area6": "不要な残留項目をクリアしました"
-					},
-					"windowssettingsscannedareas": {
-						"area1": "Windows 設定を検証しました",
-						"area2": "すべての Windows サービスを最適化しました",
-						"area3": "重要な Windows サービスを変更しました",
-						"area4": "重要な Windows サービスを変更しました",
-						"area5": "ネットワークでファイルを共有する機能を検証しました",
-						"area6": "生体認証とアクセス設定を検証しました"
-					},
-					"usabilityissuesscannedareas": {
-						"area1": "使いやすさに関する課題を修正しました",
-						"area2": "外部デバイスの接続を検証しました",
-						"area3": "Windows Update が常に最新であることを確認しました",
-						"area4": "アプリが最高の状態でレンダリングおよび表示していることを確認しました",
-						"area5": "処理電源使用率の設定を変更しました",
-						"area6": "ファイルを見つけやすくするために設定を変更しました"
-					},
-					"systemerrorsscannedareas": {
-						"area1": "重要なサービスが実行されているかどうか確認しました",
-						"area2": "パフォーマンスを向上させるサービスを変更しました",
-						"area3": "ソフトウェアの競合エラーを修正しました",
-						"area4": "Windows エラー管理を最適化しました",
-						"area5": "アプリの起動エラーを確認して修正しました",
-						"area6": "システム・エラー・レポートを構成しました"
-					}
-				},
-				"internetperformance": {
-					"ejunkscannedareas": {
-						"area1": "4 つのブラウザーから不要なデータを削除しました",
-						"area2": "残留している不要なデータを削除しました",
-						"area3": "古いインターネット・ファイルを削除しました",
-						"area4": "不要な Web キャッシュをクリアしました",
-						"area5": "Cookie をクリアしました",
-						"area6": "ブラウザーの不要なデータをすべて削除しました"
-					},
-					"browsersecurityscannedareas": {
-						"area1": "セキュリティー・サービスが実行されていることを確認しました",
-						"area2": "ブラウザーのセキュリティー機能を構成しました",
-						"area3": "ネットワーク・サービスを確認して修正しました",
-						"area4": "プロトコル設定を構成しました",
-						"area5": "ブラウザーのコンテンツ設定に問題がないことを検証しました",
-						"area6": "ブラウザーのプラグインと拡張機能をスキャンしました"
-					},
-					"networksettingsscannedareas": {
-						"area1": "ネットワークとインターネットの設定を修正しました",
-						"area2": "ネットワーク構成設定を確認しました",
-						"area3": "接続ネットワーク設定を変更しました",
-						"area4": "Web サイトのレンダリングを高速化するための設定を診断しました",
-						"area5": "ページ・レンダリング・エラーを修正しました",
-						"area6": "すべての接続サービスをスキャンしました"
-					},
-					"browsersettingsscannedareas": {
-						"area1": "ブラウザー利用の向上に関する設定を変更しました",
-						"area2": "Web サイトのレンダリングを高速化するための設定を検証しました",
-						"area3": "ブラウザーのセキュリティー・サービスに問題がないことを確認しました",
-						"area4": "Web ページを適切に読み込むための設定を変更しました",
-						"area5": "高速ダウンロードの設定を修正しました",
-						"area6": "アクセス権とアクセス制御の設定を修正しました"
-					},
-					"wifiperformancescannedareas": {
-						"area1": "Wi-Fi 利用設定を変更しました",
-						"area2": "安全なホーム・ネットワーク設定を検証しました",
-						"area3": "Wi-Fi サービスの設定を修正しました",
-						"area4": "安全なネットワーク共有設定を変更しました",
-						"area5": "Wi-Fi セキュリティー規格を検証しました",
-						"area6": "Wi-Fi チャネルを検証しました"
-					}
-				},
-				"malwaresecurity": {
-					"malwarescanscannedareas": {
-						"area1": "一般的な読み込みポイントの脅威を確認して削除しました",
-						"area2": "重要な場所の脅威を確認して削除しました",
-						"area3": "PC から脅威を削除しました",
-						"area4": "50 種類以上のファイル・タイプの脅威を検証しました",
-						"area5": "マルウェアの残骸を削除しました",
-						"area6": "クラウド修復エンジンで検証しました"
-					},
-					"errantprogramsscannedareas": {
-						"area1": "インストール済みのアプリをすべて検証しました",
-						"area2": "不要と思われるアプリを検証しました",
-						"area3": "非アクティブなアプリと非表示のアプリを削除しました",
-						"area4": "悪意のあるアプリと不正アプリを削除しました",
-						"area5": "評価要因に基づいてアプリを検証しました",
-						"area6": "不正プログラムのレジストリ・チェックを完了しました"
-					},
-					"zerodayinfectionsscannedareas": {
-						"area1": "ゼロデイ・ウイルスを分析しました",
-						"area2": "PC からマルウェアを削除しました",
-						"area3": "クラウド修復エンジンで検証しました",
-						"area4": "アプリの動作監視を完了しました",
-						"area5": "集約エンジンに対して検証しました",
-						"area6": "最新の定義に対して検証しました"
-					},
-					"securitysettingsscannedareas": {
-						"area1": "Windows Update 設定を最適化しました",
-						"area2": "Windows ファイアウォール・サービスを調整しました",
-						"area3": "ブラウザー設定をセキュリティー保護しました",
-						"area4": "重要なセキュリティー・サービスを診断しました",
-						"area5": "ユーザー・アクセス設定を最適化しました",
-						"area6": "認証サービスを変更しました"
-					},
-					"annoyingadwarescannedareas": {
-						"area1": "ブラウザのアドウェアを削除しました",
-						"area2": "ブラウザーのポップアップ設定を調整しました",
-						"area3": "ブラウザーのリダイレクトの脅威を診断しました",
-						"area4": "アドウェアの残骸をクリアしました",
-						"area5": "ブラウザー利用設定を最適化しました",
-						"area6": "クラウド修復エンジンで検証しました"
-					}
-				}
-			},
-			"Diskspace": "解放されるディスク容量:",
-			"Performanceimprovements": "パフォーマンスの改善:",
-			"Securityimprovements": "セキュリティーの改善:",
-			"Onceaweek": "1 週間に 1 回"
-		},
-		"subscriberScanHomePage": {
-			"title": "問題なし",
-			"titleScanCanceled": "最後のスキャンがキャンセルされたため、評価は 0 でした。「ホームに戻る」をクリックして、もう一度スキャンしてください。",
-			"serialNumber": "シリアル番号:",
-			"subTitle": "Lenovo Smart Performance Service に登録されています",
-			"description": "頻繁にお使いのコンピューターの PC パフォーマンス、インターネット・パフォーマンス、マルウェアの問題をスキャンして積極的に修正しています。十分にカバーされています。「今すぐスキャン」ボタンをクリックして、オンデマンドでパフォーマンス・チェックを開始することもできます。",
-			"scanNow": "スキャンして修正",
-			"backToHome": "ホームに戻る",
-			"returnto": "ダッシュボードに戻る",
-			"mostRecent": "最近のスキャン:",
-			"nextScheduled": "次回のスケジュール済みスキャン:",
-			"successTitle": "PC がチューンアップされました!",
-			"successDescription": "PC の円滑な稼働を維持するために、Smart Performance で <b>{{issueCount}} 件の問題</b>を解決しました。スキャンの概要とレポートは以下で確認できます。",
-			"scanSummary": {
-				"title": "スキャンの概要:",
-				"description": "常にコンピューターを調整しています",
-				"tune": "調整",
-				"tuneSummary": "解放されるディスク容量",
-				"boost": "ブースト",
-				"boostSummary": "パフォーマンスを向上させる修正",
-				"secure": "保護",
-				"secureSummary": "セキュリティーを向上させる修正",
-				"annual": "年次",
-				"quarterly": "3 カ月ごと",
-				"custom": "カスタム",
-				"txtFrom": "何日から",
-				"txtTo": "何日まで",
-				"txtGo": "移動",
-				"summaryCaption": "解放される容量",
-				"fixes": "修正",
-				"txtClr": "クリア"
-			},
-			"lastScanResults": {
-				"title": "直近 5 件のスキャン結果:",
-				"scanDate": "スキャン日",
-				"results": "結果",
-				"status": "ステータス"
-			}
-		},
-		"feedbackContainer": {
-			"title": "フィードバックをお寄せください",
-			"subtitle": "Smart Performance の感想をお聞かせください",
-			"buttonText": "フィードバックを送る",
-			"questions": {
-				"q1": "1.スキャン機能の使いやすさはどのくらいでしたか?",
-				"q2": "2.スキャン結果のわかりやすさはどのくらいでしたか?",
-				"q3": "3.システムのパフォーマンスを向上させるために、Smart Performance サブスクリプション料金を支払う可能性はどのくらいありますか?",
-				"q4": "4.全体的に、Smart Performance 機能にどのくらい満足していますか?",
-				"q5": "1.Smart Performance が施した修正のわかりやすさはどのくらいでしたか?",
-				"q6": "2.システムでマルウェアは見つかりましたか?",
-				"q7": "3.Smart Performance 機能の支払いを継続する可能性はどのくらいありますか?",
-				"q8": "4.全体的に、Smart Performance 機能にどのくらい満足していますか?"
-			},
-			"rating": {
-				"r1": "非常に難しい",
-				"r2": "非常に簡単",
-				"r3": "非常に難しい",
-				"r4": "非常に簡単",
-				"r5": "まったくない",
-				"r6": "非常に可能性が高い",
-				"r7": "まったく満足していない",
-				"r8": "非常に満足",
-				"r9": "非常に難しい",
-				"r10": "非常に簡単",
-				"r11": "はい",
-				"r12": "いいえ",
-				"r13": "まったくない",
-				"r14": "非常に可能性が高い",
-				"r15": "まったく満足していない",
-				"r16": "非常に満足"
-			},
-			"commentTip": "コメントや追加のフィードバックを以下に残してください。",
-			"comments": "ここにコメントを残してください..."
-		}
-	},
-	"homeSecurity": {
-		"title": "Connected Home Security",
-		"notification": {
-			"recent": "Recent security notifications",
-			"notifications": "Notifications",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
-		},
-		"ecosystem": {
-			"ecosystemBlockTitle": "Protect your device ecosystem",
-			"thisDevice": "This device",
-			"allDevices": "All Devices",
-			"protected": "Protected",
-			"notProtected": "Not Protected",
-			"trialExpired": "Trial expired",
-			"upgrade": "upgrade",
-			"inEcosystem": "In Ecosystem",
-			"ecosystemEnable": "Ecosystem Enabled",
-			"inTrial": "In trial",
-			"addEcosystem": "Add to Ecosystem",
-			"enableEcosystem": "Enable Ecosystem",
-			"startTrial": "Start Trial",
-			"fullAccess": "Full Access",
-			"renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Your Ecosystem Security Overview",
-			"allDevices": "All Devices",
-			"myDevice": "My Device",
-			"thisComputer": "This computer",
-			"secure": "SECURE",
-			"needAttention": "NEEDS ATTENTION",
-			"manageAccount": "Manage account",
-			"devices": "Devices",
-			"seeProtectedDevices": "See protected devices",
-			"addDevice": "add device",
-			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-			"upgrade": "upgrade",
-			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
-			"inTrialDetail": "You are currently in your trial period.",
-			"trialExpiredDetail": "Your trial period has expired.",
-			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
-			"discountPrice": "For only $29.99 for one year",
-			"overviewTitle": "Overview",
-			"trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId": "Lenovo ID:",
-			"overviewTitleAdmin": "Overview of your Connected Home Security",
-			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-			"familyMembers": "Family members",
-			"places": "Places",
-			"personalDevices": "Personal devices",
-			"wifiNetworks": "Wi-fi networks",
-			"homeDevices": "Home devices",
-			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
-			"buyNow": "Buy Now",
-			"extendNow": "extend now",
-			"renewNow": "Renew Now",
-			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
-		},
-		"tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcomeTitle": "welcome to connected home security",
-			"welcomeSubTitle": "30 days of protection for free",
-			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-			"locationTitle": "Enable location permissions",
-			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
-			"allow": "Allow",
-			"notNow": "Not now"
-		},
-		"accountStatus": {
-			"title": "My Connected Home Security",
-			"startTrial": "Start Trial",
-			"manageAccount": "Manage Account",
-			"upgradeAccount": "Upgrade Account",
-			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-			"trialExpiredDetail1": "Your trial has expired.",
-			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"upgradedDetail1": "You account is active until {{expiredDate}}.",
-			"upgradedDetail2": "Your device ecosystem is currently being protected.",
-			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
-			"alreadyHaveAccount": "Already have an activation code?"
-		},
-		"card": {
-			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your own Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
-			"joinTitle": "Join your family's Connected Home Security",
-			"joinDescription": "Become a part of your family security group."
-		},
-		"modal": {
-			"countdownTitle": "Launching web browser",
-			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-			"goNow": "Go now",
-			"disconnectedTitle": "Disconnect from protection?",
-			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-			"disconnecting": "Disconnecting..."
-		}
-	},
-	"dir": "ltr",
-	"dirClass": "ltr",
 	"notification": {
 		"menu": {
 			"security": "ご存知ですか。ウイルス対策ソフトウェアをインストールしていない場合でも、デバイスの基本的なセキュリティ保護を提供します。",
 			"connectedHomeSecurity": "自宅でネットワーク・セキュリティに関するリアルタイムの監視とアラートを実現します。スマート・デバイスのいずれかがセキュリティ攻撃に直面しているかどうかを知る最初の人物になります。",
-			"hardwareScan": "これで、システム・ハードウェア・コンポーネントの正常性状態を取得できます。"
+			"hardwareScan": "これで、システム・ハードウェア・コンポーネントの正常性状態を取得できます。",
+			"appSearch": "ご存知ですか。ご使用のデバイスに適用される機能をここで検索できます。"
 		}
 	},
 	"appsForYou": {
@@ -5522,7 +5571,43 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
+					"description": "AI meeting manager は、リアルタイムの翻訳、通訳、音声ディクテーションをサポートしています。また、ビデオの字幕を生成することもできます。",
+					"downloadNow": "今すぐダウンロード",
+					"download": "ダウンロード",
+					"launch": "起動",
+					"translation": {
+						"title": "翻訳",
+						"description": "オンライン会議のスピーチを任意の会議ソフトウェアからリアルタイムで翻訳します。会議中に会議メモを参照して、後で保存することができます。字幕エクスペリエンスもあります。"
+					},
+					"voiceToText": {
+						"title": "音声テキスト変換",
+						"description": "自然に話しかけると、音声テキスト変換により入力されます。メールやドキュメントを作成したり、お気に入りのアプリでチャットすると、音声テキスト変換があなたが話すときに翻訳し、メモを取ります。"
+					},
+					"modalPopUp": {
+						"heading": "はじめに:",
+						"translation": {
+							"point1": "AI meeting manager のアイコンが Windows の通知領域に表示されていることを確認します。",
+							"point2": "アイコンをクリックして、「トランスレーター」または「字幕」を選択します。",
+							"point3": "原文言語と訳文言語を選択します。",
+							"point4": "必要に応じて、スピーカーまたはマイクからの音声入力を設定します。",
+							"point5": "翻訳を開始するには「スタート」ボタンをクリックします。"
+						},
+						"voiceToText": {
+							"point1": "AI meeting manager のアイコンが Windows の通知領域に表示されていることを確認します。",
+							"point2": "テキストを入力するアプリケーションを開きます。",
+							"point3": "AI meeting manager アイコンをクリックし、「音声テキスト変換」を選択します。",
+							"point4": "必要な言語を選択し、マイクのボタンをクリックして開始します。",
+							"point5": "開いたアプリケーションにカーソルを置き、話し始めます。"
+						},
+						"closeText": "閉じる"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "オンライン会議をより生産的かつ効果的にします。"
+					}
+				}
 			}
 		},
 		"creatorCentre": {
@@ -5541,11 +5626,18 @@
 			},
 			"easyRendering": {
 				"title": ""
-
 			},
 			"colorCalibration": {
-				"title": ""
-
+				"title": "色調整",
+				"appName": "X-rite アプリケーション",
+				"summary": "コンピューターのディスプレイ・パネルは、プレミアム・プロフェッショナル Minolta 分光測色計により工場ラインで調整されます。調整データはクラウドに保存され、ダウンロードしてパネルを工場出荷時の状態にリセットできます。X-rite は、色空間を管理するためにプリインストールされています。<br>- デフォルト (ネイティブの色域、ネイティブの明るさですが、調整されたグレー・ランプとディスプレイの特性がプロファイルに保存されています)。<br>- デフォルトのプロファイルは、デフォルトでマシンにインストールされます。このプロファイルは、起動時に Windows によってロードされます。<br>- 未調整 (色の管理がオフ。これは、デフォルトの Lenovo プロファイルを使用することを意味します。）<br>- sRGB (コンピューターのモニター) - Adobe RGB (CYMK での印刷を計画しているグラフィック・デザイナー向け) <br>- BT.709 (HD ビデオ) <br>- DCI P3 (米国のデジタル映写で一般的に使用されています)",
+				"screenshotTitle": "スクリーンショット",
+				"cardTitle": "プロファイルを復元する方法",
+				"cardSummary": "システムを再インストールした場合、またはカラー・プロファイルが失われた場合は、ここからプロファイルを復元できます。",
+				"learnMore": "詳細を見る",
+				"restoreProfileDesc": "Lenovo は、Lenovo Cloud でバックアップ・カラー・プロファイルを提供します。コンピューターで色調整機能を確実に機能させるには、次の状況でカラー・プロファイルを復元またはインストールする必要がある場合があります。カラー・プロファイルが紛失または破損した場合、カラー・プロファイルを復元するように通知するウィンドウが表示されます。表示されたウィンドウで「はい」をクリックすると、カラー・プロファイルが Lenovo Cloud から自動的に復元されます。コンピューターのディスプレイを Lenovo 認定サービス提供者が交換する場合は、以下の操作を実行してください:",
+				"restoreProfileStep1": "Windows の通知領域にある三角形のアイコンをクリックして、非表示のアイコンを表示します。次に、X-rite アプリのアイコンをクリックして開きます。",
+				"restoreProfileStep2": "「設定」 > 「プロファイルを復元」をクリックします。"
 			}
 		}
 	}

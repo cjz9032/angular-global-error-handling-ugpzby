@@ -812,10 +812,12 @@
 				"sub9": "Securitate dispozitiv"
 			},
 			"support": "Asistenţă",
+			"warrantySupport": "Garanție și asistență",
+			"contentLibrary": "Biblioteca de conținut",
+			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"
-			},
-			"homeSecurity": "Connected Home"
+			}
 		},
 		"securityAdvisor": {
 			"title": "Asistenţă securitate",
@@ -1246,9 +1248,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"Activați suprasolicitarea GPU în modul Performanță extremă.",
-							"description1":"Selectați pentru a face overclock ceasului memoriei GPU cu 140 MHz, la un nivel considerat „stabil”. Performanța de joc și frecvența cadrelor pot crește cu 10 % – 30 %.",
-					        "description2":"Notă: îmbunătățirile în materie de performanță și de frecvență a cadrelor pot varia în funcție de diferitele jocuri sau aplicații și de alți factori. De asemenea, în consecință, consumul de energie, temperatura suprafeței computerului și zgomotul ventilatorului pot să crească. Lenovo nu garantează stabilitatea și îmbunătățirea performanței atunci când overclockingul este activat."
+							"checkboxtext": "Activați suprasolicitarea GPU în modul Performanță extremă.",
+							"description1": "Selectați pentru a face overclock ceasului memoriei GPU cu 140 MHz, la un nivel considerat „stabil”. Performanța de joc și frecvența cadrelor pot crește cu 10 % – 30 %.",
+							"description2": "Notă: îmbunătățirile în materie de performanță și de frecvență a cadrelor pot varia în funcție de diferitele jocuri sau aplicații și de alți factori. De asemenea, în consecință, consumul de energie, temperatura suprafeței computerului și zgomotul ventilatorului pot să crească. Lenovo nu garantează stabilitatea și îmbunătățirea performanței atunci când overclockingul este activat."
 						},
 						"autoTransition": {
 							"description": {
@@ -2550,6 +2552,873 @@
 			"categories": "Categorii",
 			"categoriesDesc": "Găsiți informații utile în articolele noastre.",
 			"seeArticles": "CONSULTAȚI ARTICOLELE"
+		}
+	},
+	"smartPerformance": {
+		"title": "Smart Performance",
+		"back": "ÎNAPOI",
+		"performanceandSecurityCheckTitle": "Verificări ale performanței și securității",
+		"performanceandSecurityCheckSubTitle": "Vom diagnostica și vom rezolva problemele privind performanța și securitatea computerului dumneavoastră",
+		"auto": "Auto",
+		"manual": "Manual",
+		"performanceOfflineText": "Funcția de scanare va fi disponibilă atunci când computerul dvs. este conectat la internet.",
+		"scanButton": "SCANARE GRATUITĂ A PC-ULUI",
+		"section1Heading": "Cum ați evalua performanțele PC-ului dumneavoastră?",
+		"section1Description": "PC-ul rulează lent? Aplicațiile răspund prea lent? Întâmpinați erori în Windows? Vă îngrijorează malware-urile? Vom efectua o diagnosticare pentru a identifica problemele și pentru a le remedia.",
+		"critical": "CRITIC",
+		"allisWell": "TOTUL ESTE BINE",
+		"zero": 0,
+		"one": 1,
+		"two": 2,
+		"three": 3,
+		"four": 4,
+		"five": 5,
+		"six": 6,
+		"seven": 7,
+		"eight": 8,
+		"nine": 9,
+		"ten": 10,
+		"tuneUP": "PC-ul trebuie reglat",
+		"runningWell": "PC-ul funcționează corect",
+		"section2Heading": "Performanțele PC-ului sunt excelente. Întotdeauna",
+		"section2Description": "Software-ul nostru vă poate scana în mod proactiv PC-ul, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
+		"am": "AM",
+		"pm": "PM",
+		"scanNow": "Scanare acum",
+		"signUpAndFix": "Înregistrare și remediere",
+		"cancel": "Anulare",
+		"scanning": "Se scanează",
+		"fixIt": "Reparați acum",
+		"optimizeIt": "Optimizare",
+		"maintainIt": "Întreținere",
+		"noteFindings": "Am ajuns la concluziile noastre în baza analizei detaliate a computerului dvs.",
+		"noteNavigateTab": "Navigați în file pentru a afla mai multe:",
+		"scannedAreas": "Zone scanate",
+		"lastFix": "Ultima remediere",
+		"fixResult": "Rezultatul remedierii",
+		"checkPreviousResults": "Verificați rezultatele anterioare",
+		"tunePCPerformance": {
+			"title": "Reglare Performanţe",
+			"heading": "Oferiți computerului dumneavoastră mai multă atenție",
+			"description": "Chiar și cele mai performante computere pot beneficia de reglări periodice. Efectuați o reglare și obțineți mai multe rezultate cu ajutorul aplicației noastre.",
+			"tabSet1": {
+				"tab1": "Fișiere nedorite acumulate",
+				"tab2": "Probleme privind utilizarea",
+				"tab3": "Setări Windows",
+				"tab4": "Erori de sistem",
+				"tab5": "Erori în fișierele registry"
+			},
+			"tabSet2": {
+				"tab1Heading": "ESTE UȘOR DE UTILIZAT",
+				"tab1Description": "Nu vă inducem în eroare cu informații tehnice eronate",
+				"tab2Heading": "ESTE RAPIDĂ",
+				"tab2Description": "Efectuați o verificare completă în 100 de puncte în mai puțin de 5 minute",
+				"tab3Heading": "ESTE SIGURĂ",
+				"tab3Description": "Nu este un scareware și este concepută cu cele mai bune practici"
+			},
+			"summaryTitle": "Reglarea performanțelor PC-ului"
+		},
+		"boostInternetPerformance": {
+			"title": "ACCELERARE INTERNET",
+			"extraTitle": "Performanțele Pe Internet",
+			"heading": "Creșteți performanțele pe internet",
+			"description": "Pentru mulți, o rețea Wi-Fi lentă sau absența acesteia reprezintă o izolare completă. Vă vom configura setările internetului, rețelei Wi-Fi și ale browserului, pentru performanțe optime.",
+			"tabSet1": {
+				"tab1": "Fișiere nedorite din e-mail",
+				"tab2": "Setări de rețea",
+				"tab3": "Setări pentru browser",
+				"tab4": "Securitatea browserului",
+				"tab5": "Performanțele rețelei Wi-Fi"
+			},
+			"tabSet2": {
+				"tab1Heading": "PROBLEME PRIVIND BROWSERTUL",
+				"tab1Description": "Vom configura și vom remedia toate browserele dumneavoastră web populare.",
+				"tab2Heading": "ERORI DE CONECTARE",
+				"tab2Description": "Vom efectua o diagnosticare și vom remedia problemele de conectare.",
+				"tab3Heading": "CONEXIUNE LENTĂ LA INTERNET",
+				"tab3Description": "Vă vom ajuta să obțineți performanțe maxime."
+			},
+			"summaryTitle": "Performanțele pe internet"
+		},
+		"malwareSecurity": {
+			"title": "Malware-uri Și Securitate",
+			"heading": "Oferiți computerului dumneavoastră atenția de care are nevoie",
+			"description": "Malware-urile pot provoca blocarea computerului, compromiterea datelor și scăderea performanțelor. Utilizați caracteristica Eliminare malware-uri și veți obține mult mai multe rezultate.",
+			"tabSet1": {
+				"tab1": "Scanare pentru malware-uri",
+				"tab2": "Infectări de tip zero-day",
+				"tab3": "Programe care nu rulează corespunzător",
+				"tab4": "Adware enervant",
+				"tab5": "Setări securitate"
+			},
+			"tabSet2": {
+				"tab1Heading": "VIRUȘI DE TIP ZERO-DAY",
+				"tab1Description": "Eliminăm chiar și cele mai recente infectări cu malware-uri",
+				"tab2Heading": "ELIMINAREA SPYWARE-URILOR",
+				"tab2Description": "Eliminați toate programele potențial nedorite",
+				"tab3Heading": "UȘOR DE UTILIZAT ȘI RAPIDĂ",
+				"tab3Description": "De obicei, scanarea durează 5 – 10 minute"
+			},
+			"summaryTitle": "Malware-uri și securitate"
+		},
+		"proactiveAutomated": {
+			"title": "PROACTIVĂ ȘI AUTOMATIZATĂ",
+			"heading": "Beneficiați de posibilitatea de a rezolva problemele, înainte ca acestea să vă afecteze!",
+			"description": "Caracteristica Smart Performance caută în permanență sute de probleme care vă pot afecta performanțele PC-ului. Le remediem în mod proactiv, oferindu-vă siguranță.",
+			"tabSet1": {
+				"tab1": "Programare scanare",
+				"tab2": "Scanare la cerere",
+				"tab3": "Rezolvare automată",
+				"tab4": "Este eficientă",
+				"tab5": "Protecție non-stop"
+			},
+			"tabSet2": {
+				"tab1Heading": "ESTE UȘOR DE UTILIZAT",
+				"tab1Description": "Nu vă inducem în eroare cu informații tehnice eronate",
+				"tab2Heading": "ESTE RAPIDĂ",
+				"tab2Description": "Efectuați o verificare completă în 100 de puncte în mai puțin de 5 minute",
+				"tab3Heading": "ESTE SIGURĂ",
+				"tab3Description": "Nu este un scareware și este concepută cu cele mai bune practici"
+			}
+		},
+		"noScanResults": "Pentru a începe procesul de scanare, faceți clic pe butonul SCANARE ȘI REMEDIERE.",
+		"startScan": "<b>Sunteți pregătit să începeți scanarea?</b> Vom diagnostica problemele privind performanța și securitatea computerului dumneavoastră.",
+		"subscriptionDetails": {
+			"title": "Detaliile abonamentului",
+			"description": "Sunteți abonat la serviciul Lenovo Smart Performance. În această perioadă, toate caracteristicile vă sunt complet disponibile, pentru a vă menține computerul protejat, funcționând fără probleme.",
+			"learnMore": "Aflați mai multe",
+			"startDate": "Dată de început",
+			"endDate": "Dată de sfârșit",
+			"status": "Stare",
+			"activeStatus": "ACTIV",
+			"inactiveStatus": "INACTIV",
+			"manageSubscription": "GESTIONARE ABONAMENT",
+			"titlebeta": "Programul Lenovo Beta",
+			"manageSubscriptionBeta": "ACTIVARE CARACTERISTICĂ COMPLETĂ",
+			"descriptionbeta": "Lenovo vă oferă un program pilot, pentru a încerca gratuit caracteristica Smart Performance până în iulie 2020.",
+			"descriptionbeta1": "Sunteți binevenit să vă alăturați nouă și să încercați gratuit caracteristica completă.",
+			"descriptionNonSubscriber": "Nu sunteți abonat la serviciul Lenovo Smart Performance. Veți putea scana doar PC-ul dumneavoastră. Abonați-vă acum pentru a beneficia de avantajele complete oferite de un computer protejat, care funcționează fără probleme.",
+			"processStatus": "SE PROCESEAZĂ",
+			"descriptionExpired": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Puteți să vă reînnoiți abonamentul făcând clic pe linkul „Gestionare abonament”, pentru a relua protecția completă pentru dispozitivul dumneavoastră.",
+			"expiredStatus": "EXPIRAT",
+			"expiredNote": "Abonamentul dumneavoastră va expira",
+			"day": "zi",
+			"days": "zile",
+			"weeks": "săptămâni",
+			"week": "o săptămână",
+			"month": "o lună",
+			"today": "astăzi",
+			"next": "înainte"
+		},
+		"scanSettings": {
+			"title": "Setări pentru programarea scanării",
+			"description": "Activați sau dezactivați scanarea și setați programarea scanării",
+			"enableScan": "Activare scanare",
+			"changeScanTitle": "Modificare programare scanare",
+			"changeScanDescription": "Editați programarea scanării pentru a o rula atunci când aveți nevoie.",
+			"frequency": "Frecvență",
+			"txtDate": "Dată",
+			"txtDay": "Zi",
+			"txtTime": "Oră",
+			"txtSave": "salvare",
+			"txtCancel": "anulare",
+			"scanFrequencyWeek": "O dată pe săptămână",
+			"scanFrequencyEveryWeek": "O dată la două săptămâni",
+			"scanFrequencyMonth": "În fiecare lună",
+			"mon": "Luni",
+			"tue": "Marți",
+			"wed": "Miercuri",
+			"thu": "Joi",
+			"fri": "Vineri",
+			"sat": "Sâmbătă",
+			"sun": "Duminică",
+			"am": "AM",
+			"pm": "PM",
+			"tooltipText": "Activând această opțiune, scanarea performanțelor și a securității sistemului va fi inițiată la ora și data setate."
+		},
+		"scanningPage": {
+			"title": "Verificări ale performanței și securității",
+			"description": "Așteptați până când vom scana sistemul pentru probleme și amenințări potențiale.",
+			"scanningSystem": "Se scanează sistemul",
+			"complete": "finalizată",
+			"cancelScan": {
+				"button": "ANULARE SCANARE",
+				"title": "Anulați scanarea?",
+				"description": "Dacă ieșiți din ecranul curent, scanarea va fi anulată și veți fi redirecționat către pagina de pornire. Cu toate acestea, puteți rula oricând din nou scanarea.",
+				"yesButton": "DA, ANULAȚI",
+				"noButton": "NU, RELUAȚI SCANAREA",
+				"cancelMayTakeSomeTime": "Așteptați, anularea poate dura un anumit timp, în funcție de sistemul dumneavoastră.",
+				"cancelTextPrompt": "Sigur anulați?"
+			},
+			"waiting": "se așteaptă scanarea",
+			"completed": "finalizată",
+			"nowScanningDetail": {
+				"cardTitle": "ACUM SE SCANEAZĂ DETALIILE",
+				"current": "ACUM: ",
+				"upNext": "URMEAZĂ: ",
+				"tunePCDesc": "Vă vom ajuta să îmbunătățiți performanțele PC-ului. Vom face acest lucru în mod securizat, utilizând cele mai bune practici din domeniu. Avantajele oferite abonaților includ un timp de pornire mai scurt al PC-ului, stabilitate și performanțe îmbunătățite și lansarea mai rapidă a aplicațiilor.",
+				"boostDesc": "Vă vom ajuta să îmbunătățiți experiența de navigare. Vom remedia problemele privind rețeaua și accesul. Avantajele oferite abonaților includ îmbunătățirea conexiunii la internet, a vitezelor de încărcare/descărcare și a securității acesteia.",
+				"malwareDesc": "Vă vom ajuta să securizați rapid PC-ul, la cerere. Vom face acest lucru eliminând spyware-urile, malware-urile și adware-urile. De asemenea, vom elimina infectările de tip zero-day. Avantajele oferite abonaților includ securitatea datelor și performanțe optime ale sistemului.",
+				"proactiveDesc": "Vă vom ajusta periodic computerul și vom remedia erorile în mod proactiv și automatizat, pentru a-l menține reglat și în siguranță. Întotdeauna",
+				"tunePCScanningItems": {
+					"accumulatedJunk": {
+						"itema1": "Căutare pentru fișiere nedorite în 85 de locații",
+						"itema2": "Fișiere jurnal de sistem care nu sunt necesare",
+						"itema3": "Fragmente rămase de aplicații inutile",
+						"itema4": "Fișiere temporare care ocupă spațiul de pe disc",
+						"itema5": "Fișiere pe care le-ați șters cu mult timp în urmă",
+						"itema6": "Erori și alerte depășite"
+					},
+					"usabilityIssues": {
+						"itemb1": "Rezolvați zeci de probleme privind utilizarea",
+						"itemb2": "Verifică dacă există probleme de conectivitate cu dispozitivele externe",
+						"itemb3": "Păstrarea actualizărilor Windows la zi",
+						"itemb4": "Faceți ca aplicațiile să fie redate și să fie afișate în mod optim",
+						"itemb5": "Analiza utilizării puterii de procesare",
+						"itemb6": "Vă ajută să localizați cu ușurință fișierele"
+					},
+					"windowsSettings": {
+						"itemc1": "Diagnostichează zeci de setări ale sistemului de operare Windows",
+						"itemc2": "Vă asigură că sistemul de operare Windows funcționează corect",
+						"itemc3": "Vă asigură că serviciile esențiale funcționează",
+						"itemc4": "Verifică setările de funcționalitate și de conectivitate",
+						"itemc5": "Verifică posibilitatea de partajare a fișierelor în rețea",
+						"itemc6": "Verifică setările biometrice și de acces"
+					},
+					"systemErrors": {
+						"itemd1": "Vă asigură că serviciile esențiale funcționează",
+						"itemd2": "Selectează serviciile pentru performanțe mai mari",
+						"itemd3": "Caută erorile legate de conflictele software",
+						"itemd4": "Optimizează sistemul de gestionare a erorilor din Windows",
+						"itemd5": "Verifică și remediază erorile de lansare a aplicațiilor",
+						"itemd6": "Configurează rapoartele erorilor de sistem"
+					},
+					"registryErrors": {
+						"iteme1": "Verifică în profunzime fișierele registry din Windows",
+						"iteme2": "Se scanează pentru servicii Windows nevalide",
+						"iteme3": "Se caută înregistrările deteriorate din fișierele registry",
+						"iteme4": "Caută extensii de fișiere inutile",
+						"iteme5": "Caută înregistrările deteriorate ale aplicațiilor instalate",
+						"iteme6": "Caută înregistrările inutile rămase"
+					}
+				},
+				"boostScanningItems": {
+					"networkSettings": {
+						"itema1": "Diagnostichează setările de rețea și internet",
+						"itema2": "Verifică setările de configurare a rețelei",
+						"itema3": "Verifică setările rețelei disponibile",
+						"itema4": "Configurează încărcarea mai rapidă a site-urilor web",
+						"itema5": "Caută erorile de redare a paginilor",
+						"itema6": "Serviciile de conectare funcționează corect"
+					},
+					"browserSettings": {
+						"itemb1": "Oferă o experiență îmbunătățită de navigare",
+						"itemb2": "Configurează setările pentru redarea mai rapidă a site-urilor web",
+						"itemb3": "Vă asigură că serviciile de securitate a browserului funcționează corespunzător",
+						"itemb4": "Vă asigură că paginile web sunt redate corect",
+						"itemb5": "Verifică setările pentru descărcări mai rapide",
+						"itemb6": "Verifică permisiunile și controlul accesului"
+					},
+					"browserSecurity": {
+						"itemc1": "Vă asigură că serviciile de securitate funcționează",
+						"itemc2": "Configurează caracteristicile de securitate a browserului",
+						"itemc3": "Verifică dacă serviciile de rețea funcționează corect",
+						"itemc4": "Configurează setările protocoalelor",
+						"itemc5": "Verifică dacă setările conținutului din broswer sunt corecte",
+						"itemc6": "Verifică pluginurile și extensiile browserului"
+					},
+					"wifiPerformance": {
+						"itemd1": "Optimizează setările pentru experiența Wi-Fi",
+						"itemd2": "Vă asigură că rețeaua de acasă este securizată",
+						"itemd3": "Verifică setările serviciilor Wi-Fi",
+						"itemd4": "Setări de partajare securizată în rețea",
+						"itemd5": "Verifică standardele de securitate Wi-Fi",
+						"itemd6": "Vă asigură că nu se suprapun canalele Wi-Fi"
+					},
+					"eJunk": {
+						"iteme1": "Elimină aglomerația din browser",
+						"iteme2": "Caută fișierele nedorite rămase din e-mail",
+						"iteme3": "Caută fișierele internet depășite",
+						"iteme4": "Golește memoria cache web nedorită",
+						"iteme5": "Șterge cookie-urile",
+						"iteme6": "Elimină fragmentele rămase de browser"
+					}
+				},
+				"malwareScanningItems": {
+					"malwareScan": {
+						"itema1": "Scanează punctele obișnuite de încărcare",
+						"itema2": "Verifică dacă în locațiile esențiale există amenințări",
+						"itema3": "Verifică dacă există viruși, spyware-uri și malware-uri",
+						"itema4": "Scanează pentru peste 50 de tipuri de fișiere",
+						"itema5": "Scanează pentru fragmente rămase de malware",
+						"itema6": "Utilizează motorul pentru remediere din cloud"
+					},
+					"zerodayInfections": {
+						"itemb1": "Caută viruși de tip zero-day",
+						"itemb2": "Caută malware-uri recente care nu au fost diagnosticate",
+						"itemb3": "Scanează utilizând remedierea bazată pe cloud",
+						"itemb4": "Efectuează monitorizarea comportamentală",
+						"itemb5": "Scanează fișierele cu un motor agregat",
+						"itemb6": "Scanează conform celor mai recente definiții"
+					},
+					"securitySettings": {
+						"itemc1": "Păstrează actualizările Windows la zi",
+						"itemc2": "Vă asigură că serviciul firewall din Windows funcționează corect",
+						"itemc3": "Menține în mod securizat setările browserului",
+						"itemc4": "Verifică serviciile esențiale de securitate",
+						"itemc5": "Configurează setările de acces al utilizatorilor",
+						"itemc6": "Verifică serviciile de autentificare"
+					},
+					"errantPrograms": {
+						"itemd1": "Caută aplicațiile care nu rulează corespunzător",
+						"itemd2": "Caută aplicațiile potențial nedorite",
+						"itemd3": "Detectează aplicațiile inactive și ascunse",
+						"itemd4": "Verifică dacă aplicațiile au un comportament rău intenționat",
+						"itemd5": "Verifică aplicațiile în funcție de reputația acestora",
+						"itemd6": "Verifică programele care nu rulează corespunzător în fișierele registry"
+					},
+					"annoyingAdware": {
+						"iteme1": "Caută dacă există adware-uri în browsere",
+						"iteme2": "Analizează setările ferestrelor pop-up din browser",
+						"iteme3": "Elimină amenințările care constau în redirecționarea browserului",
+						"iteme4": "Verifică dacă există fragmente rămase de adware-uri",
+						"iteme5": "Optimizează setările pentru experiența de navigare",
+						"iteme6": "verifică motorul pentru remediere din cloud"
+					}
+				}
+			},
+			"confirmationTitle": "Procesul de plată Lenovo",
+			"confirmationNote": "Veți fi redirecționat către site-ul web Lenovo Payment pentru a finaliza plata. După efectuarea plății, puteți apăsa butonul „Actualizare” din meniul „Detalii abonament” pentru a obține rezultatul plății.",
+			"confirmationBtn": "Continuare",
+			"refreshButton": "Actualizare stare"
+		},
+		"scanCompletePage": {
+			"title": "Scanarea sistemului este finalizată",
+			"description": "Iată rezultatele găsite pe {{machineFamilyName}}",
+			"scanRates": "Scanarea noastră evaluează PC-ul dumneavoastră ca: ",
+			"summary": "Rezumat",
+			"foundIssues": "Scanarea noastră a găsită {{issueCount}} probleme",
+			"summaryDetails": "Înregistrați-vă acum pentru a remedia aceste probleme și pentru ca sistemul dumneavoastră să funcționeze corespunzător. Software-ul nostru poate scana în mod proactiv aceste zone ale sistemului dumneavoastră, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
+			"expiredSummaryDetails": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Dacă doriți să reluați caracteristica „Scanare și remediere”, apăsați butonul „Reînnoire și remediere” din partea de jos pentru a reînnoi abonamentul.",
+			"signupRepairButton": "ÎNREGISTRAȚI-VĂ ȘI REMEDIAȚI ACUM",
+			"renewAndFix": "Reînnoire și remediere",
+			"backToHome": "Înapoi la pagina de pornire",
+			"monthlyPricing": "<b>Mai puțin de {{monthlyPrice}} pe lună.</b> Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână <a  href=\"#\">Aflați mai multe</a>",
+			"issueCount": "{{individualIssueCount}} PROBLEME",
+			"issues": "Probleme",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
+			"scannedAreas": "ZONE SCANATE",
+			"summaryPurchaseTip": "Cumpărați acum planul anual și vom remedia automat astfel de probleme în fiecare săptămână.",
+			"tunePCTooltip": "Îmbunătățiți performanța generală a sistemului, reduceți timpul de pornire a PC-ului și îmbunătățiți timpul de încărcare a aplicațiilor.",
+			"boostTooltip": "Îmbunătățiți performanța comunicării în rețea, experiența de navigare și conectivitatea.",
+			"malwareTooltip": "Îmbunătățiți securitatea, eliminați programele malware și infecțiile și restaurați stabilitatea sistemului.",
+			"recommendedAction": {
+				"title": "Acțiuni Recomandate",
+				"description": "Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână",
+				"yearlyPricing": "{{yearlyPrice}}/an",
+				"monthlyPricing": "MAI PUȚIN DE {{monthlyPrice}} PE LUNĂ.",
+				"longerTerm": "Doriți o perioadă mai mare? Să faceți economii și mai mari?",
+				"newDescription": "După înscriere, vom remedia automat aceste probleme pentru dvs. în fiecare săptămână.",
+				"signupButton": "ÎNREGISTRAȚI-VĂ"
+			},
+			"tunepc": {
+				"accumulatedjunkscannedareas": {
+					"area1": "Scanat pentru fișiere nedorite în 85 de locații",
+					"area2": "Fișiere jurnal de sistem care nu sunt necesare",
+					"area3": "Fragmente rămase de aplicații inutile",
+					"area4": "Fișiere temporare care ocupă spațiul de pe disc",
+					"area5": "Fișiere pe care le-ați șters cu mult timp în urmă",
+					"area6": "Erori și alerte depășite"
+				},
+				"registryerrorsscannedareas": {
+					"area1": "S-a finalizat verificarea în profunzime a fișierelor registry din Windows",
+					"area2": "S-a scanat pentru servicii Windows nevalide",
+					"area3": "S-a verificat pentru înregistrările deteriorate din fișierele registry",
+					"area4": "S-a scanat pentru extensii de fișiere inutile",
+					"area5": "S-au căutat înregistrările deteriorate ale aplicațiilor instalate",
+					"area6": "S-au căutat înregistrările inutile rămase"
+				},
+				"windowssettingsscannedareas": {
+					"area1": "Au fost diagnosticate zeci de setări ale sistemului de operare Windows",
+					"area2": "S-a verificat că sistemul de operare Windows funcționează corect",
+					"area3": "S-a confirmat că serviciile esențiale funcționează",
+					"area4": "S-au verificat setările de funcționalitate și de conectivitate",
+					"area5": "S-a verificat posibilitatea de partajare a fișierelor în rețea",
+					"area6": "S-au verificat setările biometrice și de acces"
+				},
+				"usabilityissuesscannedareas": {
+					"area1": "S-au verificat problemele privind utilizarea",
+					"area2": "S-a verificat conectivitatea cu dispozitivele externe",
+					"area3": "S-a verificat starea actualizărilor Windows",
+					"area4": "S-au verificat setările de redare a aplicațiilor",
+					"area5": "S-a analizat utilizarea puterii de procesare",
+					"area6": "Vă ajută să localizați cu ușurință fișierele"
+				},
+				"systemerrorsscannedareas": {
+					"area1": "S-a verificat dacă serviciile esențiale funcționează",
+					"area2": "Caută serviciile pentru performanțe mai mari",
+					"area3": "Caută erorile legate de conflictele software",
+					"area4": "Analizează sistemul de gestionare a erorilor din Windows",
+					"area5": "S-a scanat pentru erorile de lansare a aplicațiilor",
+					"area6": "S-a verificat configurația rapoartele erorilor de sistem"
+				}
+			},
+			"internetperformance": {
+				"ejunkscannedareas": {
+					"area1": "S-a identificat aglomerația din browser",
+					"area2": "S-au căutat fișierele nedorite rămase din e-mail",
+					"area3": "S-au scanat fișierele internet depășite",
+					"area4": "S-a căutat memoria cache web nedorită",
+					"area5": "S-au căutat cookie-urile pentru ștergere",
+					"area6": "S-au scanat fragmentele rămase de browser"
+				},
+				"browsersecurityscannedareas": {
+					"area1": "S-a verificat că serviciile de securitate funcționează",
+					"area2": "S-au verificat caracteristicile de securitate a browserului",
+					"area3": "S-au verificat serviciile de rețea",
+					"area4": "Configurează setările protocoalelor",
+					"area5": "S-au verificat setările conținutului din broswer",
+					"area6": "S-au scanat pluginurile și extensiile browserului"
+				},
+				"networksettingsscannedareas": {
+					"area1": "S-au diagnosticat setările de rețea și internet",
+					"area2": "S-au diagnosticat setările de configurare a rețelei",
+					"area3": "S-au verificat setările rețelei conectate",
+					"area4": "S-au diagnosticat setările pentru redarea mai rapidă a site-urilor web",
+					"area5": "S-au scanat erorile de redare a paginilor",
+					"area6": "S-au scanat toate serviciile de conectare"
+				},
+				"browsersettingsscannedareas": {
+					"area1": "Oferă o experiență îmbunătățită de navigare",
+					"area2": "S-au diagnosticat setările pentru redarea mai rapidă a site-urilor web",
+					"area3": "S-au verificat serviciile de securitate a browserului",
+					"area4": "S-a verificat dacă paginile web sunt redate corect",
+					"area5": "S-au scanat setările pentru descărcări mai rapide",
+					"area6": "S-au analizat permisiunile și controlul accesului"
+				},
+				"wifiperformancescannedareas": {
+					"area1": "S-au verificat setările pentru experiența Wi-Fi",
+					"area2": "S-a verificat rețeaua securizată de acasă",
+					"area3": "S-au scanat setările serviciilor Wi-Fi",
+					"area4": "S-au verificat setările de partajare securizată în rețea",
+					"area5": "S-au verificat standardele de securitate Wi-Fi",
+					"area6": "S-au analizat canalele Wi-Fi pentru a nu se suprapune"
+				}
+			},
+			"malwaresecurity": {
+				"malwarescanscannedareas": {
+					"area1": "S-au scanat punctele obișnuite de încărcare",
+					"area2": "S-au scanat locațiile esențiale pentru existența unor amenințări",
+					"area3": "S-au căutat viruși, spyware-uri și malware-uri",
+					"area4": "S-au scanat peste 50 de tipuri de fișiere pentru amenințări",
+					"area5": "S-a verificat pentru fragmente rămase de malware",
+					"area6": "S-a verificat în motorul pentru remediere din cloud"
+				},
+				"errantprogramsscannedareas": {
+					"area1": "Caută aplicațiile care nu rulează corespunzător",
+					"area2": "S-au căutat aplicațiile potențial nedorite",
+					"area3": "S-au căutat aplicațiile inactive și ascunse",
+					"area4": "S-a scanat pentru aplicațiile rău intenționate",
+					"area5": "S-au verificat aplicațiile în funcție de reputația acestora",
+					"area6": "S-au verificat programele care nu rulează corespunzător în fișierele registry"
+				},
+				"zerodayinfectionsscannedareas": {
+					"area1": "S-a scanat pentru viruși de tip zero-day",
+					"area2": "S-au căutat malware-uri recente care nu au fost diagnosticate",
+					"area3": "S-a verificat utilizând remedierea bazată pe cloud",
+					"area4": "S-a efectuat monitorizarea comportamentală",
+					"area5": "S-au verificat fișierele cu un motor agregat",
+					"area6": "S-a scanat conform definițiilor actualizate"
+				},
+				"securitysettingsscannedareas": {
+					"area1": "S-a verificat dacă actualizările Windows sunt la zi",
+					"area2": "S-a verificat serviciul firewall din Windows",
+					"area3": "S-au verificat setările browserului securizat",
+					"area4": "S-au diagnosticat serviciile esențiale de securitate",
+					"area5": "S-au verificat setările de acces al utilizatorilor",
+					"area6": "S-au verificat serviciile de autentificare"
+				},
+				"annoyingadwarescannedareas": {
+					"area1": "S-a căutat dacă există adware-uri în browsere",
+					"area2": "S-au verificat setările ferestrelor pop-up din browser",
+					"area3": "S-au scanat amenințările care constau în redirecționarea browserului",
+					"area4": "S-a verificat dacă există fragmente rămase de adware-uri",
+					"area5": "S-au verificat setările pentru experiența de navigare",
+					"area6": "S-a verificat cu motorul pentru remediere din cloud"
+				}
+			},
+			"subscriber": {
+				"tunepc": {
+					"accumulatedjunkscannedareas": {
+						"area1": "S-au șters fișiere nedorite în 85 de locații",
+						"area2": "S-au șters fișierele jurnal de sistem care nu sunt necesare",
+						"area3": "S-au șters fragmentele rămase de aplicații inutile",
+						"area4": "S-au șters fișierele temporare pentru eliberarea spațiului de pe disc",
+						"area5": "S-au eliminat fișiere pe care le-ați șters cu mult timp în urmă",
+						"area6": "S-au șters erorile și alertele depășite"
+					},
+					"registryerrorsscannedareas": {
+						"area1": "S-a finalizat verificarea în profunzime a fișierelor registry din Windows",
+						"area2": "S-au remediat toate serviciile Windows nevalide",
+						"area3": "S-au eliminat toate înregistrările deteriorate din fișierele registry",
+						"area4": "S-au șters toate extensiile învechite de fișiere",
+						"area5": "S-au șters înregistrările deteriorate ale aplicațiilor instalate",
+						"area6": "S-au șters înregistrările nedorite rămase"
+					},
+					"windowssettingsscannedareas": {
+						"area1": "S-au validat setările din Windows",
+						"area2": "S-au optimizat toate serviciile Windows",
+						"area3": "S-au modificat serviciile esențiale din Windows",
+						"area4": "S-au modificat serviciile esențiale din Windows",
+						"area5": "S-a verificat posibilitatea de partajare a fișierelor în rețea",
+						"area6": "S-au verificat setările biometrice și de acces"
+					},
+					"usabilityissuesscannedareas": {
+						"area1": "S-au remediat toate problemele privind utilizarea",
+						"area2": "S-a verificat conectivitatea cu dispozitivele externe",
+						"area3": "Ne-am asigurat că actualizările Windows sunt la zi",
+						"area4": "S-a confirmat că aplicațiile sunt redate și afișate în mod optim",
+						"area5": "S-au modificat setările de utilizare a puterii de procesare",
+						"area6": "S-au modificat setările pentru a vă ajuta să localizați cu ușurință fișierele"
+					},
+					"systemerrorsscannedareas": {
+						"area1": "S-a verificat dacă serviciile esențiale funcționează",
+						"area2": "S-au modificat serviciile pentru performanțe mai mari",
+						"area3": "S-au remediat toate erorile legate de conflictele software",
+						"area4": "S-a optimizat sistemul de gestionare a erorilor din Windows",
+						"area5": "S-au verificat și remediat toate erorile de lansare a aplicațiilor",
+						"area6": "S-au configurat rapoartele erorilor de sistem"
+					}
+				},
+				"internetperformance": {
+					"ejunkscannedareas": {
+						"area1": "S-a eliminat aglomerația din 4 browsere",
+						"area2": "S-au șters fișierele nedorite rămase din e-mail",
+						"area3": "S-au șters fișierele internet depășite",
+						"area4": "S-a golit memoria cache web nedorită",
+						"area5": "S-au șters cookie-urile",
+						"area6": "S-au șters toate fragmentele rămase de browser"
+					},
+					"browsersecurityscannedareas": {
+						"area1": "Ne-am asigurat că serviciile de securitate funcționează",
+						"area2": "S-au configurat caracteristicile de securitate a browserului",
+						"area3": "S-au verificat și remediat serviciile de rețea",
+						"area4": "S-au configurat setările protocoalelor",
+						"area5": "S-a verificat dacă setările conținutului din broswer sunt corecte",
+						"area6": "S-au scanat pluginurile și extensiile browserului"
+					},
+					"networksettingsscannedareas": {
+						"area1": "S-au remediat setările de rețea și internet",
+						"area2": "S-au verificat setările de configurare a rețelei",
+						"area3": "S-au modificat setările rețelei conectate",
+						"area4": "S-au diagnosticat setările pentru redarea mai rapidă a site-urilor web",
+						"area5": "S-au remediat toate erorile de redare a paginilor",
+						"area6": "S-au scanat toate serviciile de conectare"
+					},
+					"browsersettingsscannedareas": {
+						"area1": "S-au modificat setările pentru îmbunătățirea experienței de navigare",
+						"area2": "S-au verificat setările pentru redarea mai rapidă a site-urilor web",
+						"area3": "Ne-am asigurat că serviciile de securitate a browserului funcționează corespunzător",
+						"area4": "S-au modificat setările pentru încărcarea corespunzătoare a paginilor web",
+						"area5": "S-au remediat setările pentru descărcări mai rapide",
+						"area6": "S-au remediat setările pentru permisiuni și controlul accesului"
+					},
+					"wifiperformancescannedareas": {
+						"area1": "S-au modificat setările pentru experiența Wi-Fi",
+						"area2": "S-au validat setările rețelei securizate de acasă",
+						"area3": "S-au remediat setările serviciilor Wi-Fi",
+						"area4": "S-au modificat setările de partajare securizată în rețea",
+						"area5": "S-au verificat standardele de securitate Wi-Fi",
+						"area6": "S-au validat canalele Wi-Fi"
+					}
+				},
+				"malwaresecurity": {
+					"malwarescanscannedareas": {
+						"area1": "S-au verificat și eliminat amenințările din punctele obișnuite de încărcare",
+						"area2": "S-au verificat și eliminat amenințările din locațiile esențiale",
+						"area3": "S-au eliminat toate amenințările din PC",
+						"area4": "S-au validat peste 50 de tipuri de fișiere pentru amenințări",
+						"area5": "S-au șters toate fragmentele rămase de malware",
+						"area6": "S-a verificat în motorul pentru remediere din cloud"
+					},
+					"errantprogramsscannedareas": {
+						"area1": "S-au validat toate aplicațiile instalate",
+						"area2": "S-au validat aplicațiile potențial nedorite",
+						"area3": "S-au curățat toate aplicațiile inactive și ascunse",
+						"area4": "S-au eliminat toate aplicațiile rău intenționate sau care nu rulează corespunzător",
+						"area5": "S-au validat aplicațiile în funcție de reputația acestora",
+						"area6": "S-a finalizat verificarea programelor care nu rulează corespunzător în fișierele registry"
+					},
+					"zerodayinfectionsscannedareas": {
+						"area1": "S-a analizat pentru viruși de tip zero-day",
+						"area2": "S-au eliminat toate malware-urile din PC",
+						"area3": "S-a validat în motorul pentru remediere din cloud",
+						"area4": "S-a finalizat monitorizarea comportamentală a aplicațiilor",
+						"area5": "S-a validat conform unui motor agregat",
+						"area6": "S-a validat conform celor mai recente definiții"
+					},
+					"securitysettingsscannedareas": {
+						"area1": "S-au optimizat setările actualizărilor din Windows",
+						"area2": "S-a reglat serviciul firewall din Windows",
+						"area3": "S-au securizat setările browserului",
+						"area4": "S-au diagnosticat serviciile esențiale de securitate",
+						"area5": "S-au optimizat setările de acces al utilizatorilor",
+						"area6": "S-au modificat serviciile de autentificare"
+					},
+					"annoyingadwarescannedareas": {
+						"area1": "S-au eliminat adware-urile din browsere",
+						"area2": "S-au reglat setările ferestrelor pop-up din browser",
+						"area3": "S-au diagnosticat amenințările care constau în redirecționarea browserului",
+						"area4": "S-au șters fragmentele rămase de adware-uri",
+						"area5": "S-au optimizat setările pentru experiența de navigare",
+						"area6": "S-a validat în motorul pentru remediere din cloud"
+					}
+				}
+			},
+			"Diskspace": "Spațiu pe disc câștigat:",
+			"Performanceimprovements": "Îmbunătățiri ale performanței:",
+			"Securityimprovements": "Îmbunătățiri ale securității:",
+			"Onceaweek": "O dată pe săptămână"
+		},
+		"subscriberScanHomePage": {
+			"title": "Totul funcționează corect privind ",
+			"titleScanCanceled": "Evaluarea a fost 0, deoarece ultima scanare a fost anulată. Faceți clic pe „ÎNAPOI LA PAGINA DE PORNIRE” și scanați din nou.",
+			"serialNumber": "Număr de serie: ",
+			"subTitle": "Sunteți abonat la serviciul Lenovo Smart Performance",
+			"description": "Scanăm și remediem frecvent computerul dumneavoastră pentru a oferi performanță PC-ului, performanță pe internet și pentru a gestiona în mod proactiv problemele privind malware-urile. Sunteți asigurat în mod corespunzător. De asemenea, puteți efectua la cerere verificări ale performanțelor, făcând clic pe butonul de scanare imediată.",
+			"scanNow": "SCANARE ȘI REMEDIERE",
+			"backToHome": "Înapoi la pagina de pornire",
+			"returnto": "REVENIRE LA TABLOUL DE BORD",
+			"mostRecent": "CEA MAI RECENTĂ SCANARE:",
+			"nextScheduled": "URMĂTOARE SCANARE PROGRAMATĂ:",
+			"successTitle": "PC-ul dumneavoastră este reglat!",
+			"successDescription": "Smart Performance a rezolvat <b>{{issueCount}} probleme</b>, pentru ca PC-ul dumneavoastră să funcționeze fără probleme. Mai jos, puteți găsi rezumatul și raportul scanării.",
+			"scanSummary": {
+				"title": "Rezumatul scanării:",
+				"description": "Vă reglăm în permanență computerul",
+				"tune": "Reglare",
+				"tuneSummary": "Spațiu pe disc câștigat",
+				"boost": "Creștere",
+				"boostSummary": "Remedieri pentru îmbunătățirea performanței",
+				"secure": "Securitate",
+				"secureSummary": "Remedieri pentru îmbunătățirea securității",
+				"annual": "Anual",
+				"quarterly": "Trimestrial",
+				"custom": "Personalizat",
+				"txtFrom": "De la",
+				"txtTo": "Către",
+				"txtGo": "Accesare",
+				"summaryCaption": "spațiu câștigat",
+				"fixes": "Remedieri",
+				"txtClr": "Ștergere"
+			},
+			"lastScanResults": {
+				"title": "Rezultatele ultimelor 5 scanări:",
+				"scanDate": "Data scanării",
+				"results": "Rezultate",
+				"status": "Stare"
+			}
+		},
+		"feedbackContainer": {
+			"title": "Oferiți-ne feedback",
+			"subtitle": "Împărtășiți-ne opinia dumneavoastră despre Smart Performance",
+			"buttonText": "trimiteți feedback",
+			"questions": {
+				"q1": "1. Cât de dificil sau de ușor a fost să utilizați caracteristica de scanare?",
+				"q2": "2. Cât de dificil sau de ușor a fost să înțelegeți rezultatele scanării?",
+				"q3": "3. Cât de probabil este să plătiți pentru un abonament Smart Performance pentru a vă îmbunătăți performanțele sistemului?",
+				"q4": "4. În general, cât de mulțumit sunteți de caracteristica Smart Performance?",
+				"q5": "1. Cât de dificil sau de ușor a fost să înțelegeți remedierile efectuate de Smart Performance în sistemul dumneavoastră?",
+				"q6": "2. Am detectat vreun malware în sistemul dumneavoastră?",
+				"q7": "3. Cât de probabil este să plătiți în continuare pentru caracteristica Smart Performance?",
+				"q8": "4. În general, cât de mulțumit sunteți de caracteristica Smart Performance?"
+			},
+			"rating": {
+				"r1": "Foarte dificil",
+				"r2": "Foarte ușor",
+				"r3": "Foarte dificil",
+				"r4": "Foarte ușor",
+				"r5": "Deloc probabil",
+				"r6": "Foarte probabil",
+				"r7": "Complet nemulțumit",
+				"r8": "Foarte mulțumit",
+				"r9": "Foarte dificil",
+				"r10": "Foarte ușor",
+				"r11": "Da",
+				"r12": "Nu",
+				"r13": "Deloc probabil",
+				"r14": "Foarte probabil",
+				"r15": "Complet nemulțumit",
+				"r16": "Foarte mulțumit"
+			},
+			"commentTip": "Lăsați orice comentariu sau feedback suplimentar mai jos:",
+			"comments": "Lăsați comentariile dumneavoastră aici..."
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial",
+			"trialTitle": "Trial subscription",
+			"subscriptionTitle": "Paid subscription",
+			"inTrialDetail": "You are currently in your trial period.",
+			"trialExpiredDetail": "Your trial period has expired.",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
+			"discountPrice": "For only $29.99 for one year",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId": "Lenovo ID:",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your own Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join your family's Connected Home Security",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+			"goNow": "Go now",
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
+		}
+	},
+	"dir": "ltr",
+	"dirClass": "ltr",
+	"warranty": {
+		"warrantyStatusText": "Starea garanției: ",
+		"inWarranty": "În garanție",
+		"outOfWarranty": "În afara garanției",
+		"viewDetails": "Vizualizare detalii",
+		"currentService": "Starea curentă a serviciului și asistenței",
+		"monthsRemaining": "{{remainingMonths}} luni rămase",
+		"oneMonthRemaining": "1 lună rămasă",
+		"lessThanOneMonth": "< 1 lună rămasă",
+		"makeSureNeedCoverage": "Asigurați-vă că beneficiați de acoperirea de care aveți nevoie",
+		"recommendsUpgradingText": "Lenovo recomandă actualizarea nivelului de serviciu",
+		"exploreOptions": "Explorați opțiuni",
+		"start": "Pornire",
+		"end": "Oprire",
+		"nMos": "{{monthValue}} luni",
+		"today": "Astăzi",
+		"upgradeLevels": {
+			"title": "Serviciile Lenovo pentru garanție și actualizări vă protejează împotriva defecțiunilor hardware.",
+			"subTitle": "Protecția împotriva deteriorărilor accidentale vă protejează împotriva picăturilor, vărsării de lichide, fisurilor ecranului și a altor deteriorări accidentale.",
+			"recommended": "Recomandat",
+			"learnMore": "Doriți să aflați mai multe?",
+			"good": {
+				"warrantyCodeText": "Asistență Depozit",
+				"levelText": "bun",
+				"point1": "Componente și manoperă",
+				"point2": "Asistență telefonică de bază pentru probleme de hardware",
+				"point3": "Reparații efectuate cu expediere către Lenovo Depozit"
+			},
+			"better": {
+				"warrantyCodeText": "Asistență la fața locului",
+				"levelText": "mai bun",
+				"point1": "Componente și manoperă",
+				"point2": "Asistență telefonică de bază pentru probleme de hardware",
+				"point3": "<b>Mai rapide</b> - reparații efectuate la locația dvs."
+			},
+			"best": {
+				"warrantyCodeText": "Premier",
+				"levelText": "cel mai bun",
+				"point1": "Componente și manoperă <b>prioritare</b>",
+				"point2": "Asistență telefonică <b>avansată</b> asigurată de ingineri Lenovo",
+				"point3": "<b>Mai rapid</b> - reparații efectuate la locația dvs. în următoarea zi lucrătoare",
+				"point4": "<b>Asistență software și hardware cuprinzătoare</b>"
+			}
 		}
 	},
 	"security": {
@@ -4520,832 +5389,12 @@
 		"updateSnapshotTooltip": "Actualizați instantaneul tuturor componentelor hardware și software cu cele mai recente informații ale acestora",
 		"replaceBaselineTooltip": "Actualizați referința pentru componentele selectate cu informațiile curente ale instantaneului"
 	},
-	"smartPerformance": {
-		"title": "Smart Performance",
-		"back": "ÎNAPOI",
-		"performanceandSecurityCheckTitle": "Verificări ale performanței și securității",
-		"performanceandSecurityCheckSubTitle": "Vom diagnostica și vom rezolva problemele privind performanța și securitatea computerului dumneavoastră",
-		"scanButton": "SCANARE GRATUITĂ A PC-ULUI",
-		"section1Heading": "Cum ați evalua performanțele PC-ului dumneavoastră?",
-		"section1Description": "PC-ul rulează lent? Aplicațiile răspund prea lent? Întâmpinați erori în Windows? Vă îngrijorează malware-urile? Vom efectua o diagnosticare pentru a identifica problemele și pentru a le remedia.",
-		"critical": "CRITIC",
-		"allisWell": "TOTUL ESTE BINE",
-		"zero": 0,
-		"one": 1,
-		"two": 2,
-		"three": 3,
-		"four": 4,
-		"five": 5,
-		"six": 6,
-		"seven": 7,
-		"eight": 8,
-		"nine": 9,
-		"ten": 10,
-		"tuneUP": "PC-ul trebuie reglat",
-		"section2Heading": "Performanțele PC-ului sunt excelente. Întotdeauna",
-		"section2Description": "Software-ul nostru vă poate scana în mod proactiv PC-ul, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
-		"runningWell": "PC-ul funcționează corect",
-		"auto": "Auto",
-		"manual": "Manual",
-		"am": "AM",
-		"pm": "PM",
-		"scanNow": "Scanare acum",
-		"signUpAndFix": "Înregistrare și remediere",
-		"cancel": "Anulare",
-		"scanning": "Se scanează",
-		"fixIt": "Reparați acum",
-		"optimizeIt": "Optimizare",
-		"maintainIt": "Întreținere",
-		"noteFindings": "Am ajuns la concluziile noastre în baza analizei detaliate a computerului dvs.",
-		"noteNavigateTab": "Navigați în file pentru a afla mai multe:",
-		"scannedAreas": "Zone scanate",
-		"lastFix": "Ultima remediere",
-		"fixResult": "Rezultatul remedierii",
-		"checkPreviousResults": "Verificați rezultatele anterioare",
-		"tunePCPerformance": {
-			"title": "Reglare Performanţe",
-			"heading": "Oferiți computerului dumneavoastră mai multă atenție",
-			"description": "Chiar și cele mai performante computere pot beneficia de reglări periodice. Efectuați o reglare și obțineți mai multe rezultate cu ajutorul aplicației noastre.",
-			"tabSet1": {
-				"tab1": "Fișiere nedorite acumulate",
-				"tab2": "Probleme privind utilizarea",
-				"tab3": "Setări Windows",
-				"tab4": "Erori de sistem",
-				"tab5": "Erori în fișierele registry"
-			},
-			"tabSet2": {
-				"tab1Heading": "ESTE UȘOR DE UTILIZAT",
-				"tab1Description": "Nu vă inducem în eroare cu informații tehnice eronate",
-				"tab2Heading": "ESTE RAPIDĂ",
-				"tab2Description": "Efectuați o verificare completă în 100 de puncte în mai puțin de 5 minute",
-				"tab3Heading": "ESTE SIGURĂ",
-				"tab3Description": "Nu este un scareware și este concepută cu cele mai bune practici"
-			},
-			"summaryTitle": "Reglarea performanțelor PC-ului"
-		},
-		"boostInternetPerformance": {
-			"title": "ACCELERARE INTERNET",
-			"extraTitle": "Performanțele Pe Internet",
-			"heading": "Creșteți performanțele pe internet",
-			"description": "Pentru mulți, o rețea Wi-Fi lentă sau absența acesteia reprezintă o izolare completă. Vă vom configura setările internetului, rețelei Wi-Fi și ale browserului, pentru performanțe optime.",
-			"tabSet1": {
-				"tab1": "Fișiere nedorite din e-mail",
-				"tab2": "Setări de rețea",
-				"tab3": "Setări pentru browser",
-				"tab4": "Securitatea browserului",
-				"tab5": "Performanțele rețelei Wi-Fi"
-			},
-			"tabSet2": {
-				"tab1Heading": "PROBLEME PRIVIND BROWSERTUL",
-				"tab1Description": "Vom configura și vom remedia toate browserele dumneavoastră web populare.",
-				"tab2Heading": "ERORI DE CONECTARE",
-				"tab2Description": "Vom efectua o diagnosticare și vom remedia problemele de conectare.",
-				"tab3Heading": "CONEXIUNE LENTĂ LA INTERNET",
-				"tab3Description": "Vă vom ajuta să obțineți performanțe maxime."
-			},
-			"summaryTitle": "Performanțele pe internet"
-		},
-		"malwareSecurity": {
-			"title": "Malware-uri Și Securitate",
-			"heading": "Oferiți computerului dumneavoastră atenția de care are nevoie",
-			"description": "Malware-urile pot provoca blocarea computerului, compromiterea datelor și scăderea performanțelor. Utilizați caracteristica Eliminare malware-uri și veți obține mult mai multe rezultate.",
-			"tabSet1": {
-				"tab1": "Scanare pentru malware-uri",
-				"tab2": "Infectări de tip zero-day",
-				"tab3": "Programe care nu rulează corespunzător",
-				"tab4": "Adware enervant",
-				"tab5": "Setări securitate"
-			},
-			"tabSet2": {
-				"tab1Heading": "VIRUȘI DE TIP ZERO-DAY",
-				"tab1Description": "Eliminăm chiar și cele mai recente infectări cu malware-uri",
-				"tab2Heading": "ELIMINAREA SPYWARE-URILOR",
-				"tab2Description": "Eliminați toate programele potențial nedorite",
-				"tab3Heading": "UȘOR DE UTILIZAT ȘI RAPIDĂ",
-				"tab3Description": "De obicei, scanarea durează 5 – 10 minute"
-			},
-			"summaryTitle": "Malware-uri și securitate"
-		},
-		"proactiveAutomated": {
-			"title": "PROACTIVĂ ȘI AUTOMATIZATĂ",
-			"heading": "Beneficiați de posibilitatea de a rezolva problemele, înainte ca acestea să vă afecteze!",
-			"description": "Caracteristica Smart Performance caută în permanență sute de probleme care vă pot afecta performanțele PC-ului. Le remediem în mod proactiv, oferindu-vă siguranță.",
-			"tabSet1": {
-				"tab1": "Programare scanare",
-				"tab2": "Scanare la cerere",
-				"tab3": "Rezolvare automată",
-				"tab4": "Este eficientă",
-				"tab5": "Protecție non-stop"
-			},
-			"tabSet2": {
-				"tab1Heading": "ESTE UȘOR DE UTILIZAT",
-				"tab1Description": "Nu vă inducem în eroare cu informații tehnice eronate",
-				"tab2Heading": "ESTE RAPIDĂ",
-				"tab2Description": "Efectuați o verificare completă în 100 de puncte în mai puțin de 5 minute",
-				"tab3Heading": "ESTE SIGURĂ",
-				"tab3Description": "Nu este un scareware și este concepută cu cele mai bune practici"
-			}
-		},
-		"noScanResults": "Pentru a începe procesul de scanare, faceți clic pe butonul SCANARE ȘI REMEDIERE.",
-		"startScan": "<b>Sunteți pregătit să începeți scanarea?</b> Vom diagnostica problemele privind performanța și securitatea computerului dumneavoastră.",
-		"subscriptionDetails": {
-			"title": "Detaliile abonamentului",
-			"description": "Sunteți abonat la serviciul Lenovo Smart Performance. În această perioadă, toate caracteristicile vă sunt complet disponibile, pentru a vă menține computerul protejat, funcționând fără probleme.",
-			"learnMore": "Aflați mai multe",
-			"startDate": "Dată de început",
-			"endDate": "Dată de sfârșit",
-			"status": "Stare",
-			"activeStatus": "ACTIV",
-			"inactiveStatus": "INACTIV",
-			"manageSubscription": "GESTIONARE ABONAMENT",
-			"titlebeta": "Programul Lenovo Beta",
-			"manageSubscriptionBeta": "ACTIVARE CARACTERISTICĂ COMPLETĂ",
-			"descriptionbeta": "Lenovo vă oferă un program pilot, pentru a încerca gratuit caracteristica Smart Performance până în iulie 2020.",
-			"descriptionbeta1": "Sunteți binevenit să vă alăturați nouă și să încercați gratuit caracteristica completă.",
-			"descriptionNonSubscriber": "Nu sunteți abonat la serviciul Lenovo Smart Performance. Veți putea scana doar PC-ul dumneavoastră. Abonați-vă acum pentru a beneficia de avantajele complete oferite de un computer protejat, care funcționează fără probleme.",
-			"processStatus": "SE PROCESEAZĂ",
-			"descriptionExpired": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Puteți să vă reînnoiți abonamentul făcând clic pe linkul „Gestionare abonament”, pentru a relua protecția completă pentru dispozitivul dumneavoastră.",
-			"expiredStatus": "EXPIRAT",
-			"expiredNote": "Abonamentul dumneavoastră va expira",
-			"day": "zi",
-			"days": "zile",
-			"weeks": "săptămâni",
-			"week": "o săptămână",
-			"month": "o lună",
-			"today": "astăzi",
-			"next": "înainte"
-		},
-		"scanSettings": {
-			"title": "Setări pentru programarea scanării",
-			"description": "Activați sau dezactivați scanarea și setați programarea scanării",
-			"enableScan": "Activare scanare",
-			"changeScanTitle": "Modificare programare scanare",
-			"changeScanDescription": "Editați programarea scanării pentru a o rula atunci când aveți nevoie.",
-			"frequency": "Frecvență",
-			"txtDate": "Dată",
-			"txtDay": "Zi",
-			"txtTime": "Oră",
-			"txtSave": "salvare",
-			"txtCancel": "anulare",
-			"scanFrequencyWeek": "O dată pe săptămână",
-			"scanFrequencyEveryWeek": "O dată la două săptămâni",
-			"scanFrequencyMonth": "În fiecare lună",
-			"mon": "Luni",
-			"tue": "Marți",
-			"wed": "Miercuri",
-			"thu": "Joi",
-			"fri": "Vineri",
-			"sat": "Sâmbătă",
-			"sun": "Duminică",
-			"am": "AM",
-			"pm": "PM",
-			"tooltipText": "Activând această opțiune, scanarea performanțelor și a securității sistemului va fi inițiată la ora și data setate."
-		},
-		"scanningPage": {
-			"title": "Verificări ale performanței și securității",
-			"description": "Așteptați până când vom scana sistemul pentru probleme și amenințări potențiale.",
-			"scanningSystem": "Se scanează sistemul",
-			"complete": "finalizată",
-			"cancelScan": {
-				"button": "ANULARE SCANARE",
-				"title": "Anulați scanarea?",
-				"description": "Dacă ieșiți din ecranul curent, scanarea va fi anulată și veți fi redirecționat către pagina de pornire. Cu toate acestea, puteți rula oricând din nou scanarea.",
-				"yesButton": "DA, ANULAȚI",
-				"noButton": "NU, RELUAȚI SCANAREA",
-				"cancelMayTakeSomeTime": "Așteptați, anularea poate dura un anumit timp, în funcție de sistemul dumneavoastră.",
-				"cancelTextPrompt": "Sigur anulați?"
-			},
-			"waiting": "se așteaptă scanarea",
-			"completed": "finalizată",
-			"nowScanningDetail": {
-				"cardTitle": "ACUM SE SCANEAZĂ DETALIILE",
-				"current": "ACUM: ",
-				"upNext": "URMEAZĂ: ",
-				"tunePCDesc": "Vă vom ajuta să îmbunătățiți performanțele PC-ului. Vom face acest lucru în mod securizat, utilizând cele mai bune practici din domeniu. Avantajele oferite abonaților includ un timp de pornire mai scurt al PC-ului, stabilitate și performanțe îmbunătățite și lansarea mai rapidă a aplicațiilor.",
-				"boostDesc": "Vă vom ajuta să îmbunătățiți experiența de navigare. Vom remedia problemele privind rețeaua și accesul. Avantajele oferite abonaților includ îmbunătățirea conexiunii la internet, a vitezelor de încărcare/descărcare și a securității acesteia.",
-				"malwareDesc": "Vă vom ajuta să securizați rapid PC-ul, la cerere. Vom face acest lucru eliminând spyware-urile, malware-urile și adware-urile. De asemenea, vom elimina infectările de tip zero-day. Avantajele oferite abonaților includ securitatea datelor și performanțe optime ale sistemului.",
-				"proactiveDesc": "Vă vom ajusta periodic computerul și vom remedia erorile în mod proactiv și automatizat, pentru a-l menține reglat și în siguranță. Întotdeauna",
-				"tunePCScanningItems": {
-					"accumulatedJunk": {
-						"itema1": "Căutare pentru fișiere nedorite în 85 de locații",
-						"itema2": "Fișiere jurnal de sistem care nu sunt necesare",
-						"itema3": "Fragmente rămase de aplicații inutile",
-						"itema4": "Fișiere temporare care ocupă spațiul de pe disc",
-						"itema5": "Fișiere pe care le-ați șters cu mult timp în urmă",
-						"itema6": "Erori și alerte depășite"
-					},
-					"usabilityIssues": {
-						"itemb1": "Rezolvați zeci de probleme privind utilizarea",
-						"itemb2": "Verifică dacă există probleme de conectivitate cu dispozitivele externe",
-						"itemb3": "Păstrarea actualizărilor Windows la zi",
-						"itemb4": "Faceți ca aplicațiile să fie redate și să fie afișate în mod optim",
-						"itemb5": "Analiza utilizării puterii de procesare",
-						"itemb6": "Vă ajută să localizați cu ușurință fișierele"
-					},
-					"windowsSettings": {
-						"itemc1": "Diagnostichează zeci de setări ale sistemului de operare Windows",
-						"itemc2": "Vă asigură că sistemul de operare Windows funcționează corect",
-						"itemc3": "Vă asigură că serviciile esențiale funcționează",
-						"itemc4": "Verifică setările de funcționalitate și de conectivitate",
-						"itemc5": "Verifică posibilitatea de partajare a fișierelor în rețea",
-						"itemc6": "Verifică setările biometrice și de acces"
-					},
-					"systemErrors": {
-						"itemd1": "Vă asigură că serviciile esențiale funcționează",
-						"itemd2": "Selectează serviciile pentru performanțe mai mari",
-						"itemd3": "Caută erorile legate de conflictele software",
-						"itemd4": "Optimizează sistemul de gestionare a erorilor din Windows",
-						"itemd5": "Verifică și remediază erorile de lansare a aplicațiilor",
-						"itemd6": "Configurează rapoartele erorilor de sistem"
-					},
-					"registryErrors": {
-						"iteme1": "Verifică în profunzime fișierele registry din Windows",
-						"iteme2": "Se scanează pentru servicii Windows nevalide",
-						"iteme3": "Se caută înregistrările deteriorate din fișierele registry",
-						"iteme4": "Caută extensii de fișiere inutile",
-						"iteme5": "Caută înregistrările deteriorate ale aplicațiilor instalate",
-						"iteme6": "Caută înregistrările inutile rămase"
-					}
-				},
-				"boostScanningItems": {
-					"networkSettings": {
-						"itema1": "Diagnostichează setările de rețea și internet",
-						"itema2": "Verifică setările de configurare a rețelei",
-						"itema3": "Verifică setările rețelei disponibile",
-						"itema4": "Configurează încărcarea mai rapidă a site-urilor web",
-						"itema5": "Caută erorile de redare a paginilor",
-						"itema6": "Serviciile de conectare funcționează corect"
-					},
-					"browserSettings": {
-						"itemb1": "Oferă o experiență îmbunătățită de navigare",
-						"itemb2": "Configurează setările pentru redarea mai rapidă a site-urilor web",
-						"itemb3": "Vă asigură că serviciile de securitate a browserului funcționează corespunzător",
-						"itemb4": "Vă asigură că paginile web sunt redate corect",
-						"itemb5": "Verifică setările pentru descărcări mai rapide",
-						"itemb6": "Verifică permisiunile și controlul accesului"
-					},
-					"browserSecurity": {
-						"itemc1": "Vă asigură că serviciile de securitate funcționează",
-						"itemc2": "Configurează caracteristicile de securitate a browserului",
-						"itemc3": "Verifică dacă serviciile de rețea funcționează corect",
-						"itemc4": "Configurează setările protocoalelor",
-						"itemc5": "Verifică dacă setările conținutului din broswer sunt corecte",
-						"itemc6": "Verifică pluginurile și extensiile browserului"
-					},
-					"wifiPerformance": {
-						"itemd1": "Optimizează setările pentru experiența Wi-Fi",
-						"itemd2": "Vă asigură că rețeaua de acasă este securizată",
-						"itemd3": "Verifică setările serviciilor Wi-Fi",
-						"itemd4": "Setări de partajare securizată în rețea",
-						"itemd5": "Verifică standardele de securitate Wi-Fi",
-						"itemd6": "Vă asigură că nu se suprapun canalele Wi-Fi"
-					},
-					"eJunk": {
-						"iteme1": "Elimină aglomerația din browser",
-						"iteme2": "Caută fișierele nedorite rămase din e-mail",
-						"iteme3": "Caută fișierele internet depășite",
-						"iteme4": "Golește memoria cache web nedorită",
-						"iteme5": "Șterge cookie-urile",
-						"iteme6": "Elimină fragmentele rămase de browser"
-					}
-				},
-				"malwareScanningItems": {
-					"malwareScan": {
-						"itema1": "Scanează punctele obișnuite de încărcare",
-						"itema2": "Verifică dacă în locațiile esențiale există amenințări",
-						"itema3": "Verifică dacă există viruși, spyware-uri și malware-uri",
-						"itema4": "Scanează pentru peste 50 de tipuri de fișiere",
-						"itema5": "Scanează pentru fragmente rămase de malware",
-						"itema6": "Utilizează motorul pentru remediere din cloud"
-					},
-					"zerodayInfections": {
-						"itemb1": "Caută viruși de tip zero-day",
-						"itemb2": "Caută malware-uri recente care nu au fost diagnosticate",
-						"itemb3": "Scanează utilizând remedierea bazată pe cloud",
-						"itemb4": "Efectuează monitorizarea comportamentală",
-						"itemb5": "Scanează fișierele cu un motor agregat",
-						"itemb6": "Scanează conform celor mai recente definiții"
-					},
-					"securitySettings": {
-						"itemc1": "Păstrează actualizările Windows la zi",
-						"itemc2": "Vă asigură că serviciul firewall din Windows funcționează corect",
-						"itemc3": "Menține în mod securizat setările browserului",
-						"itemc4": "Verifică serviciile esențiale de securitate",
-						"itemc5": "Configurează setările de acces al utilizatorilor",
-						"itemc6": "Verifică serviciile de autentificare"
-					},
-					"errantPrograms": {
-						"itemd1": "Caută aplicațiile care nu rulează corespunzător",
-						"itemd2": "Caută aplicațiile potențial nedorite",
-						"itemd3": "Detectează aplicațiile inactive și ascunse",
-						"itemd4": "Verifică dacă aplicațiile au un comportament rău intenționat",
-						"itemd5": "Verifică aplicațiile în funcție de reputația acestora",
-						"itemd6": "Verifică programele care nu rulează corespunzător în fișierele registry"
-					},
-					"annoyingAdware": {
-						"iteme1": "Caută dacă există adware-uri în browsere",
-						"iteme2": "Analizează setările ferestrelor pop-up din browser",
-						"iteme3": "Elimină amenințările care constau în redirecționarea browserului",
-						"iteme4": "Verifică dacă există fragmente rămase de adware-uri",
-						"iteme5": "Optimizează setările pentru experiența de navigare",
-						"iteme6": "verifică motorul pentru remediere din cloud"
-					}
-				}
-			},
-			"confirmationTitle": "Procesul de plată Lenovo",
-			"confirmationNote": "Veți fi redirecționat către site-ul web Lenovo Payment pentru a finaliza plata. După efectuarea plății, puteți apăsa butonul „Actualizare” din meniul „Detalii abonament” pentru a obține rezultatul plății.",
-			"confirmationBtn": "Continuare",
-			"refreshButton": "Actualizare stare"
-		},
-		"scanCompletePage": {
-			"title": "Scanarea sistemului este finalizată",
-			"description": "Iată rezultatele găsite pe {{machineFamilyName}}",
-			"scanRates": "Scanarea noastră evaluează PC-ul dumneavoastră ca: ",
-			"summary": "Rezumat",
-			"foundIssues": "Scanarea noastră a găsită {{issueCount}} probleme",
-			"summaryDetails": "Înregistrați-vă acum pentru a remedia aceste probleme și pentru ca sistemul dumneavoastră să funcționeze corespunzător. Software-ul nostru poate scana în mod proactiv aceste zone ale sistemului dumneavoastră, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
-			"expiredSummaryDetails": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Dacă doriți să reluați caracteristica „Scanare și remediere”, apăsați butonul „Reînnoire și remediere” din partea de jos pentru a reînnoi abonamentul.",
-			"signupRepairButton": "ÎNREGISTRAȚI-VĂ ȘI REMEDIAȚI ACUM",
-			"renewAndFix": "Reînnoire și remediere",
-			"backToHome": "Înapoi la pagina de pornire",
-			"monthlyPricing": "<b>Mai puțin de {{monthlyPrice}} pe lună.</b> Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână <a  href=\"#\">Aflați mai multe</a>",
-			"issueCount": "{{individualIssueCount}} PROBLEME",
-			"issues": "Probleme",
-			"tuneIssueCount": "{{tune}}",
-			"boostIssueCount": "{{boost}}",
-			"secureIssueCount": "{{secure}}",
-			"scannedAreas": "ZONE SCANATE",
-			"summaryPurchaseTip": "Cumpărați acum planul anual și vom remedia automat astfel de probleme în fiecare săptămână.",
-			"tunePCTooltip": "Îmbunătățiți performanța generală a sistemului, reduceți timpul de pornire a PC-ului și îmbunătățiți timpul de încărcare a aplicațiilor.",
-			"boostTooltip": "Îmbunătățiți performanța comunicării în rețea, experiența de navigare și conectivitatea.",
-			"malwareTooltip": "Îmbunătățiți securitatea, eliminați programele malware și infecțiile și restaurați stabilitatea sistemului.",
-			"recommendedAction": {
-				"title": "Acțiuni Recomandate",
-				"description": "Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână",
-				"yearlyPricing": "{{yearlyPrice}}/an",
-				"monthlyPricing": "MAI PUȚIN DE {{monthlyPrice}} PE LUNĂ.",
-				"longerTerm": "Doriți o perioadă mai mare? Să faceți economii și mai mari?",
-				"newDescription": "După înscriere, vom remedia automat aceste probleme pentru dvs. în fiecare săptămână.",
-				"signupButton": "ÎNREGISTRAȚI-VĂ"
-			},
-			"tunepc": {
-				"accumulatedjunkscannedareas": {
-					"area1": "Scanat pentru fișiere nedorite în 85 de locații",
-					"area2": "Fișiere jurnal de sistem care nu sunt necesare",
-					"area3": "Fragmente rămase de aplicații inutile",
-					"area4": "Fișiere temporare care ocupă spațiul de pe disc",
-					"area5": "Fișiere pe care le-ați șters cu mult timp în urmă",
-					"area6": "Erori și alerte depășite"
-				},
-				"registryerrorsscannedareas": {
-					"area1": "S-a finalizat verificarea în profunzime a fișierelor registry din Windows",
-					"area2": "S-a scanat pentru servicii Windows nevalide",
-					"area3": "S-a verificat pentru înregistrările deteriorate din fișierele registry",
-					"area4": "S-a scanat pentru extensii de fișiere inutile",
-					"area5": "S-au căutat înregistrările deteriorate ale aplicațiilor instalate",
-					"area6": "S-au căutat înregistrările inutile rămase"
-				},
-				"windowssettingsscannedareas": {
-					"area1": "Au fost diagnosticate zeci de setări ale sistemului de operare Windows",
-					"area2": "S-a verificat că sistemul de operare Windows funcționează corect",
-					"area3": "S-a confirmat că serviciile esențiale funcționează",
-					"area4": "S-au verificat setările de funcționalitate și de conectivitate",
-					"area5": "S-a verificat posibilitatea de partajare a fișierelor în rețea",
-					"area6": "S-au verificat setările biometrice și de acces"
-				},
-				"usabilityissuesscannedareas": {
-					"area1": "S-au verificat problemele privind utilizarea",
-					"area2": "S-a verificat conectivitatea cu dispozitivele externe",
-					"area3": "S-a verificat starea actualizărilor Windows",
-					"area4": "S-au verificat setările de redare a aplicațiilor",
-					"area5": "S-a analizat utilizarea puterii de procesare",
-					"area6": "Vă ajută să localizați cu ușurință fișierele"
-				},
-				"systemerrorsscannedareas": {
-					"area1": "S-a verificat dacă serviciile esențiale funcționează",
-					"area2": "Caută serviciile pentru performanțe mai mari",
-					"area3": "Caută erorile legate de conflictele software",
-					"area4": "Analizează sistemul de gestionare a erorilor din Windows",
-					"area5": "S-a scanat pentru erorile de lansare a aplicațiilor",
-					"area6": "S-a verificat configurația rapoartele erorilor de sistem"
-				}
-			},
-			"internetperformance": {
-				"ejunkscannedareas": {
-					"area1": "S-a identificat aglomerația din browser",
-					"area2": "S-au căutat fișierele nedorite rămase din e-mail",
-					"area3": "S-au scanat fișierele internet depășite",
-					"area4": "S-a căutat memoria cache web nedorită",
-					"area5": "S-au căutat cookie-urile pentru ștergere",
-					"area6": "S-au scanat fragmentele rămase de browser"
-				},
-				"browsersecurityscannedareas": {
-					"area1": "S-a verificat că serviciile de securitate funcționează",
-					"area2": "S-au verificat caracteristicile de securitate a browserului",
-					"area3": "S-au verificat serviciile de rețea",
-					"area4": "Configurează setările protocoalelor",
-					"area5": "S-au verificat setările conținutului din broswer",
-					"area6": "S-au scanat pluginurile și extensiile browserului"
-				},
-				"networksettingsscannedareas": {
-					"area1": "S-au diagnosticat setările de rețea și internet",
-					"area2": "S-au diagnosticat setările de configurare a rețelei",
-					"area3": "S-au verificat setările rețelei conectate",
-					"area4": "S-au diagnosticat setările pentru redarea mai rapidă a site-urilor web",
-					"area5": "S-au scanat erorile de redare a paginilor",
-					"area6": "S-au scanat toate serviciile de conectare"
-				},
-				"browsersettingsscannedareas": {
-					"area1": "Oferă o experiență îmbunătățită de navigare",
-					"area2": "S-au diagnosticat setările pentru redarea mai rapidă a site-urilor web",
-					"area3": "S-au verificat serviciile de securitate a browserului",
-					"area4": "S-a verificat dacă paginile web sunt redate corect",
-					"area5": "S-au scanat setările pentru descărcări mai rapide",
-					"area6": "S-au analizat permisiunile și controlul accesului"
-				},
-				"wifiperformancescannedareas": {
-					"area1": "S-au verificat setările pentru experiența Wi-Fi",
-					"area2": "S-a verificat rețeaua securizată de acasă",
-					"area3": "S-au scanat setările serviciilor Wi-Fi",
-					"area4": "S-au verificat setările de partajare securizată în rețea",
-					"area5": "S-au verificat standardele de securitate Wi-Fi",
-					"area6": "S-au analizat canalele Wi-Fi pentru a nu se suprapune"
-				}
-			},
-			"malwaresecurity": {
-				"malwarescanscannedareas": {
-					"area1": "S-au scanat punctele obișnuite de încărcare",
-					"area2": "S-au scanat locațiile esențiale pentru existența unor amenințări",
-					"area3": "S-au căutat viruși, spyware-uri și malware-uri",
-					"area4": "S-au scanat peste 50 de tipuri de fișiere pentru amenințări",
-					"area5": "S-a verificat pentru fragmente rămase de malware",
-					"area6": "S-a verificat în motorul pentru remediere din cloud"
-				},
-				"errantprogramsscannedareas": {
-					"area1": "Caută aplicațiile care nu rulează corespunzător",
-					"area2": "S-au căutat aplicațiile potențial nedorite",
-					"area3": "S-au căutat aplicațiile inactive și ascunse",
-					"area4": "S-a scanat pentru aplicațiile rău intenționate",
-					"area5": "S-au verificat aplicațiile în funcție de reputația acestora",
-					"area6": "S-au verificat programele care nu rulează corespunzător în fișierele registry"
-				},
-				"zerodayinfectionsscannedareas": {
-					"area1": "S-a scanat pentru viruși de tip zero-day",
-					"area2": "S-au căutat malware-uri recente care nu au fost diagnosticate",
-					"area3": "S-a verificat utilizând remedierea bazată pe cloud",
-					"area4": "S-a efectuat monitorizarea comportamentală",
-					"area5": "S-au verificat fișierele cu un motor agregat",
-					"area6": "S-a scanat conform definițiilor actualizate"
-				},
-				"securitysettingsscannedareas": {
-					"area1": "S-a verificat dacă actualizările Windows sunt la zi",
-					"area2": "S-a verificat serviciul firewall din Windows",
-					"area3": "S-au verificat setările browserului securizat",
-					"area4": "S-au diagnosticat serviciile esențiale de securitate",
-					"area5": "S-au verificat setările de acces al utilizatorilor",
-					"area6": "S-au verificat serviciile de autentificare"
-				},
-				"annoyingadwarescannedareas": {
-					"area1": "S-a căutat dacă există adware-uri în browsere",
-					"area2": "S-au verificat setările ferestrelor pop-up din browser",
-					"area3": "S-au scanat amenințările care constau în redirecționarea browserului",
-					"area4": "S-a verificat dacă există fragmente rămase de adware-uri",
-					"area5": "S-au verificat setările pentru experiența de navigare",
-					"area6": "S-a verificat cu motorul pentru remediere din cloud"
-				}
-			},
-			"subscriber": {
-				"tunepc": {
-					"accumulatedjunkscannedareas": {
-						"area1": "S-au șters fișiere nedorite în 85 de locații",
-						"area2": "S-au șters fișierele jurnal de sistem care nu sunt necesare",
-						"area3": "S-au șters fragmentele rămase de aplicații inutile",
-						"area4": "S-au șters fișierele temporare pentru eliberarea spațiului de pe disc",
-						"area5": "S-au eliminat fișiere pe care le-ați șters cu mult timp în urmă",
-						"area6": "S-au șters erorile și alertele depășite"
-					},
-					"registryerrorsscannedareas": {
-						"area1": "S-a finalizat verificarea în profunzime a fișierelor registry din Windows",
-						"area2": "S-au remediat toate serviciile Windows nevalide",
-						"area3": "S-au eliminat toate înregistrările deteriorate din fișierele registry",
-						"area4": "S-au șters toate extensiile învechite de fișiere",
-						"area5": "S-au șters înregistrările deteriorate ale aplicațiilor instalate",
-						"area6": "S-au șters înregistrările nedorite rămase"
-					},
-					"windowssettingsscannedareas": {
-						"area1": "S-au validat setările din Windows",
-						"area2": "S-au optimizat toate serviciile Windows",
-						"area3": "S-au modificat serviciile esențiale din Windows",
-						"area4": "S-au modificat serviciile esențiale din Windows",
-						"area5": "S-a verificat posibilitatea de partajare a fișierelor în rețea",
-						"area6": "S-au verificat setările biometrice și de acces"
-					},
-					"usabilityissuesscannedareas": {
-						"area1": "S-au remediat toate problemele privind utilizarea",
-						"area2": "S-a verificat conectivitatea cu dispozitivele externe",
-						"area3": "Ne-am asigurat că actualizările Windows sunt la zi",
-						"area4": "S-a confirmat că aplicațiile sunt redate și afișate în mod optim",
-						"area5": "S-au modificat setările de utilizare a puterii de procesare",
-						"area6": "S-au modificat setările pentru a vă ajuta să localizați cu ușurință fișierele"
-					},
-					"systemerrorsscannedareas": {
-						"area1": "S-a verificat dacă serviciile esențiale funcționează",
-						"area2": "S-au modificat serviciile pentru performanțe mai mari",
-						"area3": "S-au remediat toate erorile legate de conflictele software",
-						"area4": "S-a optimizat sistemul de gestionare a erorilor din Windows",
-						"area5": "S-au verificat și remediat toate erorile de lansare a aplicațiilor",
-						"area6": "S-au configurat rapoartele erorilor de sistem"
-					}
-				},
-				"internetperformance": {
-					"ejunkscannedareas": {
-						"area1": "S-a eliminat aglomerația din 4 browsere",
-						"area2": "S-au șters fișierele nedorite rămase din e-mail",
-						"area3": "S-au șters fișierele internet depășite",
-						"area4": "S-a golit memoria cache web nedorită",
-						"area5": "S-au șters cookie-urile",
-						"area6": "S-au șters toate fragmentele rămase de browser"
-					},
-					"browsersecurityscannedareas": {
-						"area1": "Ne-am asigurat că serviciile de securitate funcționează",
-						"area2": "S-au configurat caracteristicile de securitate a browserului",
-						"area3": "S-au verificat și remediat serviciile de rețea",
-						"area4": "S-au configurat setările protocoalelor",
-						"area5": "S-a verificat dacă setările conținutului din broswer sunt corecte",
-						"area6": "S-au scanat pluginurile și extensiile browserului"
-					},
-					"networksettingsscannedareas": {
-						"area1": "S-au remediat setările de rețea și internet",
-						"area2": "S-au verificat setările de configurare a rețelei",
-						"area3": "S-au modificat setările rețelei conectate",
-						"area4": "S-au diagnosticat setările pentru redarea mai rapidă a site-urilor web",
-						"area5": "S-au remediat toate erorile de redare a paginilor",
-						"area6": "S-au scanat toate serviciile de conectare"
-					},
-					"browsersettingsscannedareas": {
-						"area1": "S-au modificat setările pentru îmbunătățirea experienței de navigare",
-						"area2": "S-au verificat setările pentru redarea mai rapidă a site-urilor web",
-						"area3": "Ne-am asigurat că serviciile de securitate a browserului funcționează corespunzător",
-						"area4": "S-au modificat setările pentru încărcarea corespunzătoare a paginilor web",
-						"area5": "S-au remediat setările pentru descărcări mai rapide",
-						"area6": "S-au remediat setările pentru permisiuni și controlul accesului"
-					},
-					"wifiperformancescannedareas": {
-						"area1": "S-au modificat setările pentru experiența Wi-Fi",
-						"area2": "S-au validat setările rețelei securizate de acasă",
-						"area3": "S-au remediat setările serviciilor Wi-Fi",
-						"area4": "S-au modificat setările de partajare securizată în rețea",
-						"area5": "S-au verificat standardele de securitate Wi-Fi",
-						"area6": "S-au validat canalele Wi-Fi"
-					}
-				},
-				"malwaresecurity": {
-					"malwarescanscannedareas": {
-						"area1": "S-au verificat și eliminat amenințările din punctele obișnuite de încărcare",
-						"area2": "S-au verificat și eliminat amenințările din locațiile esențiale",
-						"area3": "S-au eliminat toate amenințările din PC",
-						"area4": "S-au validat peste 50 de tipuri de fișiere pentru amenințări",
-						"area5": "S-au șters toate fragmentele rămase de malware",
-						"area6": "S-a verificat în motorul pentru remediere din cloud"
-					},
-					"errantprogramsscannedareas": {
-						"area1": "S-au validat toate aplicațiile instalate",
-						"area2": "S-au validat aplicațiile potențial nedorite",
-						"area3": "S-au curățat toate aplicațiile inactive și ascunse",
-						"area4": "S-au eliminat toate aplicațiile rău intenționate sau care nu rulează corespunzător",
-						"area5": "S-au validat aplicațiile în funcție de reputația acestora",
-						"area6": "S-a finalizat verificarea programelor care nu rulează corespunzător în fișierele registry"
-					},
-					"zerodayinfectionsscannedareas": {
-						"area1": "S-a analizat pentru viruși de tip zero-day",
-						"area2": "S-au eliminat toate malware-urile din PC",
-						"area3": "S-a validat în motorul pentru remediere din cloud",
-						"area4": "S-a finalizat monitorizarea comportamentală a aplicațiilor",
-						"area5": "S-a validat conform unui motor agregat",
-						"area6": "S-a validat conform celor mai recente definiții"
-					},
-					"securitysettingsscannedareas": {
-						"area1": "S-au optimizat setările actualizărilor din Windows",
-						"area2": "S-a reglat serviciul firewall din Windows",
-						"area3": "S-au securizat setările browserului",
-						"area4": "S-au diagnosticat serviciile esențiale de securitate",
-						"area5": "S-au optimizat setările de acces al utilizatorilor",
-						"area6": "S-au modificat serviciile de autentificare"
-					},
-					"annoyingadwarescannedareas": {
-						"area1": "S-au eliminat adware-urile din browsere",
-						"area2": "S-au reglat setările ferestrelor pop-up din browser",
-						"area3": "S-au diagnosticat amenințările care constau în redirecționarea browserului",
-						"area4": "S-au șters fragmentele rămase de adware-uri",
-						"area5": "S-au optimizat setările pentru experiența de navigare",
-						"area6": "S-a validat în motorul pentru remediere din cloud"
-					}
-				}
-			},
-			"Diskspace": "Spațiu pe disc câștigat:",
-			"Performanceimprovements": "Îmbunătățiri ale performanței:",
-			"Securityimprovements": "Îmbunătățiri ale securității:",
-			"Onceaweek": "O dată pe săptămână"
-		},
-		"subscriberScanHomePage": {
-			"title": "Totul funcționează corect privind ",
-			"titleScanCanceled": "Evaluarea a fost 0, deoarece ultima scanare a fost anulată. Faceți clic pe „ÎNAPOI LA PAGINA DE PORNIRE” și scanați din nou.",
-			"serialNumber": "Număr de serie: ",
-			"subTitle": "Sunteți abonat la serviciul Lenovo Smart Performance",
-			"description": "Scanăm și remediem frecvent computerul dumneavoastră pentru a oferi performanță PC-ului, performanță pe internet și pentru a gestiona în mod proactiv problemele privind malware-urile. Sunteți asigurat în mod corespunzător. De asemenea, puteți efectua la cerere verificări ale performanțelor, făcând clic pe butonul de scanare imediată.",
-			"scanNow": "SCANARE ȘI REMEDIERE",
-			"backToHome": "Înapoi la pagina de pornire",
-			"returnto": "REVENIRE LA TABLOUL DE BORD",
-			"mostRecent": "CEA MAI RECENTĂ SCANARE:",
-			"nextScheduled": "URMĂTOARE SCANARE PROGRAMATĂ:",
-			"successTitle": "PC-ul dumneavoastră este reglat!",
-			"successDescription": "Smart Performance a rezolvat <b>{{issueCount}} probleme</b>, pentru ca PC-ul dumneavoastră să funcționeze fără probleme. Mai jos, puteți găsi rezumatul și raportul scanării.",
-			"scanSummary": {
-				"title": "Rezumatul scanării:",
-				"description": "Vă reglăm în permanență computerul",
-				"tune": "Reglare",
-				"tuneSummary": "Spațiu pe disc câștigat",
-				"boost": "Creștere",
-				"boostSummary": "Remedieri pentru îmbunătățirea performanței",
-				"secure": "Securitate",
-				"secureSummary": "Remedieri pentru îmbunătățirea securității",
-				"annual": "Anual",
-				"quarterly": "Trimestrial",
-				"custom": "Personalizat",
-				"txtFrom": "De la",
-				"txtTo": "Către",
-				"txtGo": "Accesare",
-				"summaryCaption": "spațiu câștigat",
-				"fixes": "Remedieri",
-				"txtClr": "Ștergere"
-			},
-			"lastScanResults": {
-				"title": "Rezultatele ultimelor 5 scanări:",
-				"scanDate": "Data scanării",
-				"results": "Rezultate",
-				"status": "Stare"
-			}
-		},
-		"feedbackContainer": {
-			"title": "Oferiți-ne feedback",
-			"subtitle": "Împărtășiți-ne opinia dumneavoastră despre Smart Performance",
-			"buttonText": "trimiteți feedback",
-			"questions": {
-				"q1": "1. Cât de dificil sau de ușor a fost să utilizați caracteristica de scanare?",
-				"q2": "2. Cât de dificil sau de ușor a fost să înțelegeți rezultatele scanării?",
-				"q3": "3. Cât de probabil este să plătiți pentru un abonament Smart Performance pentru a vă îmbunătăți performanțele sistemului?",
-				"q4": "4. În general, cât de mulțumit sunteți de caracteristica Smart Performance?",
-				"q5": "1. Cât de dificil sau de ușor a fost să înțelegeți remedierile efectuate de Smart Performance în sistemul dumneavoastră?",
-				"q6": "2. Am detectat vreun malware în sistemul dumneavoastră?",
-				"q7": "3. Cât de probabil este să plătiți în continuare pentru caracteristica Smart Performance?",
-				"q8": "4. În general, cât de mulțumit sunteți de caracteristica Smart Performance?"
-			},
-			"rating": {
-				"r1": "Foarte dificil",
-				"r2": "Foarte ușor",
-				"r3": "Foarte dificil",
-				"r4": "Foarte ușor",
-				"r5": "Deloc probabil",
-				"r6": "Foarte probabil",
-				"r7": "Complet nemulțumit",
-				"r8": "Foarte mulțumit",
-				"r9": "Foarte dificil",
-				"r10": "Foarte ușor",
-				"r11": "Da",
-				"r12": "Nu",
-				"r13": "Deloc probabil",
-				"r14": "Foarte probabil",
-				"r15": "Complet nemulțumit",
-				"r16": "Foarte mulțumit"
-			},
-			"commentTip": "Lăsați orice comentariu sau feedback suplimentar mai jos:",
-			"comments": "Lăsați comentariile dumneavoastră aici..."
-		}
-	},
-	"homeSecurity": {
-		"title": "Connected Home Security",
-		"notification": {
-			"recent": "Recent security notifications",
-			"notifications": "Notifications",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
-		},
-		"ecosystem": {
-			"ecosystemBlockTitle": "Protect your device ecosystem",
-			"thisDevice": "This device",
-			"allDevices": "All Devices",
-			"protected": "Protected",
-			"notProtected": "Not Protected",
-			"trialExpired": "Trial expired",
-			"upgrade": "upgrade",
-			"inEcosystem": "In Ecosystem",
-			"ecosystemEnable": "Ecosystem Enabled",
-			"inTrial": "In trial",
-			"addEcosystem": "Add to Ecosystem",
-			"enableEcosystem": "Enable Ecosystem",
-			"startTrial": "Start Trial",
-			"fullAccess": "Full Access",
-			"renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Your Ecosystem Security Overview",
-			"allDevices": "All Devices",
-			"myDevice": "My Device",
-			"thisComputer": "This computer",
-			"secure": "SECURE",
-			"needAttention": "NEEDS ATTENTION",
-			"manageAccount": "Manage account",
-			"devices": "Devices",
-			"seeProtectedDevices": "See protected devices",
-			"addDevice": "add device",
-			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-			"upgrade": "upgrade",
-			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
-			"inTrialDetail": "You are currently in your trial period.",
-			"trialExpiredDetail": "Your trial period has expired.",
-			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
-			"discountPrice": "For only $29.99 for one year",
-			"overviewTitle": "Overview",
-			"trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId": "Lenovo ID:",
-			"overviewTitleAdmin": "Overview of your Connected Home Security",
-			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-			"familyMembers": "Family members",
-			"places": "Places",
-			"personalDevices": "Personal devices",
-			"wifiNetworks": "Wi-fi networks",
-			"homeDevices": "Home devices",
-			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
-			"buyNow": "Buy Now",
-			"extendNow": "extend now",
-			"renewNow": "Renew Now",
-			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
-		},
-		"tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcomeTitle": "welcome to connected home security",
-			"welcomeSubTitle": "30 days of protection for free",
-			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-			"locationTitle": "Enable location permissions",
-			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
-			"allow": "Allow",
-			"notNow": "Not now"
-		},
-		"accountStatus": {
-			"title": "My Connected Home Security",
-			"startTrial": "Start Trial",
-			"manageAccount": "Manage Account",
-			"upgradeAccount": "Upgrade Account",
-			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-			"trialExpiredDetail1": "Your trial has expired.",
-			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"upgradedDetail1": "You account is active until {{expiredDate}}.",
-			"upgradedDetail2": "Your device ecosystem is currently being protected.",
-			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
-			"alreadyHaveAccount": "Already have an activation code?"
-		},
-		"card": {
-			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your own Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
-			"joinTitle": "Join your family's Connected Home Security",
-			"joinDescription": "Become a part of your family security group."
-		},
-		"modal": {
-			"countdownTitle": "Launching web browser",
-			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-			"goNow": "Go now",
-			"disconnectedTitle": "Disconnect from protection?",
-			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-			"disconnecting": "Disconnecting..."
-		}
-	},
-	"dir": "ltr",
-	"dirClass": "ltr",
 	"notification": {
 		"menu": {
 			"security": "Ştiaţi că? Chiar dacă nu aveţi instalat software antivirus, vă oferim în continuare protecţie de bază de securitate pentru dispozitivul dvs.",
 			"connectedHomeSecurity": "Obţineţi monitorizare şi alerte în timp real despre securitatea reţelei dvs. de acasă. Veţi fi primul care va şti dacă vreunul dintre dispozitivele dvs. inteligente se confruntă cu un atac de securitate.",
-			"hardwareScan": "Acum puteți obține informații despre starea de sănătate a componentei hardware a sistemului dvs."
+			"hardwareScan": "Acum puteți obține informații despre starea de sănătate a componentei hardware a sistemului dvs.",
+			"appSearch": "Știați că? Aici puteți căuta caracteristici aplicabile dispozitivului dvs."
 		}
 	},
 	"appsForYou": {
@@ -5413,7 +5462,43 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
+					"description": "AI meeting manager acceptă traducerea, interpretarea și dictarea vocală în timp real. De asemenea, poate genera subtitrări pentru videoclipuri.",
+					"downloadNow": "DESCĂRCAȚI ACUM",
+					"download": "DESCĂRCARE",
+					"launch": "LANSARE",
+					"translation": {
+						"title": "Traducere",
+						"description": "Traduceți vorbirea în întâlniri online din orice software pentru întâlniri, în timp real. Puteți răsfoi notele întâlnirii în timpul întâlnirii și le puteți salva ulterior. Există, de asemenea, o experiență de subtitrare."
+					},
+					"voiceToText": {
+						"title": "Voce în text",
+						"description": "Vorbiți natural și funcția Voce în text va realiza tastarea. Scrieți e-mailuri sau documente sau discutați prin chat în aplicația dvs. preferată. Funcția Voce în text traduce în timp ce vorbiți și ia notițe pentru dvs."
+					},
+					"modalPopUp": {
+						"heading": "Ghid introductiv:",
+						"translation": {
+							"point1": "Asigurați-vă că pictograma AI meeting manager este afișată în zona de notificare Windows.",
+							"point2": "Faceți clic pe pictogramă și selectați Traducător sau Subtitrări.",
+							"point3": "Selectați limba sursă și limba țintă.",
+							"point4": "În funcție de cerințele dumneavoastră, setați intrarea vocală de la Difuzor sau de la Microfon.",
+							"point5": "Pentru a porni traducerea, faceți clic pe butonul de pornire."
+						},
+						"voiceToText": {
+							"point1": "Asigurați-vă că pictograma AI meeting manager este afișată în zona de notificare Windows.",
+							"point2": "Deschideți aplicația în care doriți să introduceți text.",
+							"point3": "Faceți clic pe pictograma AI meeting manager și selectați Voce în text.",
+							"point4": "Pentru a începe, selectați limba dorită, apoi faceți clic pe butonul microfon.",
+							"point5": "Puneți cursorul în aplicația deschisă și începeți să vorbiți."
+						},
+						"closeText": "închidere"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "Organizați întâlniri online mai productive și mai eficiente."
+					}
+				}
 			}
 		},
 		"creatorCentre": {
@@ -5432,11 +5517,18 @@
 			},
 			"easyRendering": {
 				"title": ""
-
 			},
 			"colorCalibration": {
-				"title": ""
-
+				"title": "Calibrarea culorii",
+				"appName": "Aplicația X-rite",
+				"summary": "Panoul ecranului computerului dvs. este calibrat din fabrică cu colorimetre premium Minolta de calibru profesional. Datele de calibrare sunt stocate în cloud și pot fi descărcate pentru a reseta panoul la setările din fabrică. X-rite este preinstalat pentru a gestiona spațiile de culoare.<br>- Implicit (gamă nativă, luminozitate nativă, dar rampă gri calibrată și caracterizarea ecranului stocată în profil). <br>- Profilul implicit este instalat în mod implicit pe unitate. Acest profil este încărcat de Windows la pornire. <br>- Nu este calibrat (Gestionarea culorii este dezactivată. Aceasta înseamnă utilizarea profilului Lenovo implicit.) <br>- sRGB (monitoare de computer) - Adobe RGB (pentru graficienii care intenționează să imprime în CYMK) <br>- BT.709 (video HD) <br>- DCI P3 (utilizat în mod obișnuit în proiecția de filme digitale în SUA)",
+				"screenshotTitle": "Capturi de ecran",
+				"cardTitle": "Cum se restaurează profilurile?",
+				"cardSummary": "Dacă reinstalați sistemul sau dacă sunt pierdute profilurile de culoare, puteți restaura profilurile de aici:",
+				"learnMore": "Mai multe",
+				"restoreProfileDesc": "Lenovo vă salvează copii de siguranță ale profilurilor de culoare în Lenovo Cloud. Pentru a vă asigura că funcția de calibrare a culorilor funcționează pe computerul dvs., poate fi necesar să restaurați sau să instalați profilurile de culoare în următoarele situații: Dacă profilurile de culoare sunt pierdute sau deteriorate, se va afișa o fereastră pentru a vă reaminti să restaurați profilurile de culoare. Faceți clic pe Da în fereastra afișată și profilurile de culoare vor fi restaurate automat din Lenovo Cloud. Dacă afișajul computerului dvs. este înlocuit de furnizorul de servicii autorizat Lenovo, procedați în felul următor:",
+				"restoreProfileStep1": "Faceți clic pe pictograma triunghi din bara de notificare Windows pentru a afișa pictogramele ascunse. Apoi, faceți clic pe pictograma aplicației X-rite pentru a o deschide.",
+				"restoreProfileStep2": "Faceți clic pe Setări> Restaurare profiluri."
 			}
 		}
 	}

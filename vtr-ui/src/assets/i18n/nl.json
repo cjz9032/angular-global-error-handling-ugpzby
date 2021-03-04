@@ -812,10 +812,12 @@
 				"sub9": "Apparaatbeveiliging"
 			},
 			"support": "Ondersteuning",
+			"warrantySupport": "Garantie en ondersteuning",
+			"contentLibrary": "Contentbibliotheek",
+			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"
-			},
-			"homeSecurity": "Connected Home"
+			}
 		},
 		"securityAdvisor": {
 			"title": "Beveiligingsadviseur",
@@ -1246,9 +1248,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"GPU overklokken inschakelen in de stand Extreme prestaties.",
-							"description1":"Selecteer deze optie om het GPU-geheugen te overklokken met 140 MHz, dat wordt beschouwd als een optimale 'stabiele' instelling. De prestaties van games en de beeldsnelheid kunnen hiermee met 10%-30% toenemen.",
-					        "description2":"Opmerking: De verbeteringen in prestaties en beeldsnelheid kunnen variëren en hangen af van de verschillende games/apps en andere factoren. Ook het energieverbruik, de oppervlaktemperatuur van de computer en het ventilatorgeluid kunnen hierdoor toenemen. Wanneer overklokken is ingeschakeld, kan Lenovo de stabiliteit en snelheidsverbetering niet garanderen."
+							"checkboxtext": "GPU overklokken inschakelen in de stand Extreme prestaties.",
+							"description1": "Selecteer deze optie om het GPU-geheugen te overklokken met 140 MHz, dat wordt beschouwd als een optimale 'stabiele' instelling. De prestaties van games en de beeldsnelheid kunnen hiermee met 10%-30% toenemen.",
+							"description2": "Opmerking: De verbeteringen in prestaties en beeldsnelheid kunnen variëren en hangen af van de verschillende games/apps en andere factoren. Ook het energieverbruik, de oppervlaktemperatuur van de computer en het ventilatorgeluid kunnen hierdoor toenemen. Wanneer overklokken is ingeschakeld, kan Lenovo de stabiliteit en snelheidsverbetering niet garanderen."
 						},
 						"autoTransition": {
 							"description": {
@@ -2550,6 +2552,873 @@
 			"categories": "Categorieën",
 			"categoriesDesc": "Nuttige informatie zoeken in onze artikelen.",
 			"seeArticles": "ARTIKELEN BEKIJKEN"
+		}
+	},
+	"smartPerformance": {
+		"title": "Smart Performance",
+		"back": "TERUG",
+		"performanceandSecurityCheckTitle": "Prestatie- en beveiligingscontrole",
+		"performanceandSecurityCheckSubTitle": "Een diagnose stellen van de prestatie- en beveiligingsproblemen met uw computer en deze oplossen",
+		"auto": "Automatisch",
+		"manual": "Handmatig",
+		"performanceOfflineText": "De scanfunctie is pas beschikbaar als de computer verbinding heeft met internet.",
+		"scanButton": "GRATIS PC-SCAN",
+		"section1Heading": "Hoe zou u de prestaties van uw pc beoordelen?",
+		"section1Description": "Is de pc traag? Duurt het te lang voordat applicaties reageren? Windows-fouten? Problemen met malware? Laten we de oorzaak van het probleem achterhalen en corrigeren.",
+		"critical": "KRITIEK",
+		"allisWell": "ALLES IS IN ORDE",
+		"zero": 0,
+		"one": 1,
+		"two": 2,
+		"three": 3,
+		"four": 4,
+		"five": 5,
+		"six": 6,
+		"seven": 7,
+		"eight": 8,
+		"nine": 9,
+		"ten": 10,
+		"tuneUP": "Uw pc moet worden geoptimaliseerd",
+		"runningWell": "De pc functioneert prima",
+		"section2Heading": "Uitstekende pc-prestaties. Altijd",
+		"section2Description": "Onze software kan uw pc 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties biedt.",
+		"am": "AM",
+		"pm": "PM",
+		"scanNow": "Nu scannen",
+		"signUpAndFix": "Aanmelden en oplossen",
+		"cancel": "Annuleren",
+		"scanning": "Bezig met scannen...",
+		"fixIt": "Nu oplossen",
+		"optimizeIt": "Optimaliseren",
+		"maintainIt": "Onderhouden",
+		"noteFindings": "We zijn tot deze resultaten gekomen op basis van een gedetailleerde analyse van uw computer.",
+		"noteNavigateTab": "Ga naar de tabbladen voor meer informatie:",
+		"scannedAreas": "Gescande gebieden",
+		"lastFix": "Laatste oplossing",
+		"fixResult": "Oplossingsresultaat",
+		"checkPreviousResults": "Controleer voorgaande resultaten",
+		"tunePCPerformance": {
+			"title": "PC-prestaties Optimaliseren",
+			"heading": "Geef uw computer wat extra aandacht",
+			"description": "Zelfs de beste computer profiteert van periodieke optimalisatie. Optimaliseer uw pc en doe meer met onze krachtige app.",
+			"tabSet1": {
+				"tab1": "Ongewenste bestanden",
+				"tab2": "Bruikbaarheidskwesties",
+				"tab3": "Windows-instellingen",
+				"tab4": "Systeemfouten",
+				"tab5": "Registerfouten"
+			},
+			"tabSet2": {
+				"tab1Heading": "HET IS MAKKELIJK",
+				"tab1Description": "We verwarren u niet met technische prietpraat",
+				"tab2Heading": "HET IS SNEL",
+				"tab2Description": "Een controle van 100 punten vindt binnen 5 minuten plaats",
+				"tab3Heading": "HET IS VEILIG",
+				"tab3Description": "Geen scareware en gemaakt met best practices"
+			},
+			"summaryTitle": "Pc-prestaties optimaliseren"
+		},
+		"boostInternetPerformance": {
+			"title": "INTERNET VERBETEREN",
+			"extraTitle": "Internetprestaties",
+			"heading": "Verbeter uw internetsnelheid",
+			"description": "Voor veel mensen betekent een trage of geen Wi-Fi-verbinding alsof u niet bestaat. We gaan uw internet-, Wi-Fi- en browserinstellingen configureren voor optimale prestaties.",
+			"tabSet1": {
+				"tab1": "Ongewenste e-mail",
+				"tab2": "Netwerkinstellingen",
+				"tab3": "Browserinstellingen",
+				"tab4": "Browserbeveiliging",
+				"tab5": "Wi-Fi-prestaties"
+			},
+			"tabSet2": {
+				"tab1Heading": "BROWSERPROBLEMEN",
+				"tab1Description": "We configureren en corrigeren alle populaire webbrowsers.",
+				"tab2Heading": "VERBINDINGSFOUTEN",
+				"tab2Description": "We kunnen een diagnose van uw verbindingsproblemen maken en deze herstellen.",
+				"tab3Heading": "LANGZAAM INTERNET",
+				"tab3Description": "Wij helpen u een maximale snelheid te bereiken."
+			},
+			"summaryTitle": "Internetprestaties"
+		},
+		"malwareSecurity": {
+			"title": "Malware En Beveiliging",
+			"heading": "Geef uw computer de extra zorg die het nodig heeft",
+			"description": "Malware kan leiden tot een vastgelopen computer, inbreuk op gegevens en verminderde prestaties. Zorg dat malware wordt verwijderd en nog veel meer.",
+			"tabSet1": {
+				"tab1": "Malwarescan",
+				"tab2": "Zero-day-infecties",
+				"tab3": "Foutieve programma's",
+				"tab4": "Irritante adware",
+				"tab5": "Beveiligingsinstellingen"
+			},
+			"tabSet2": {
+				"tab1Heading": "ZERO-DAY-VIRUS",
+				"tab1Description": "We verwijderen zelfs de nieuwste malware-infecties",
+				"tab2Heading": "SPYWARE VERWIJDEREN",
+				"tab2Description": "We verwijderen alle mogelijk ongewenste programma's",
+				"tab3Heading": "LICHT EN SNEL",
+				"tab3Description": "Een scan duurt doorgaans 5-10 minuten"
+			},
+			"summaryTitle": "Malware en beveiliging"
+		},
+		"proactiveAutomated": {
+			"title": "PROACTIEF EN AUTOMATISCH",
+			"heading": "Los bepaalde problemen op voordat u er last van krijgt!",
+			"description": "Smart Performance is voortdurend op zoek naar honderden problemen die de prestaties van uw pc beïnvloeden. Wij corrigeren ze proactief, zodat u zich geen zorgen hoeft te maken.",
+			"tabSet1": {
+				"tab1": "Scan plannen",
+				"tab2": "Scannen op aanvraag",
+				"tab3": "Automatisch oplossen",
+				"tab4": "Het is effectief",
+				"tab5": "Bescherming 24/7"
+			},
+			"tabSet2": {
+				"tab1Heading": "HET IS MAKKELIJK",
+				"tab1Description": "We verwarren u niet met technische prietpraat",
+				"tab2Heading": "HET IS SNEL",
+				"tab2Description": "Een controle van 100 punten vindt binnen 5 minuten plaats",
+				"tab3Heading": "HET IS VEILIG",
+				"tab3Description": "Geen scareware en gemaakt met best practices"
+			}
+		},
+		"noScanResults": "Klik op de knop SCANNEN EN HERSTELLEN om het scanproces te starten.",
+		"startScan": "<b>Wilt u de scan starten?</b> Laten we een diagnose van de prestatie- en beveiligingsproblemen in uw computer maken.",
+		"subscriptionDetails": {
+			"title": "Abonnementsgegevens",
+			"description": "U bent geabonneerd op Lenovo Smart Performance Service. Tijdens deze periode zijn alle functies volledig beschikbaar om uw pc te beschermen en goed te laten werken.",
+			"learnMore": "Meer informatie",
+			"startDate": "Begindatum",
+			"endDate": "Einddatum",
+			"status": "Status",
+			"activeStatus": "ACTIEF",
+			"inactiveStatus": "INACTIEF",
+			"manageSubscription": "ABONNEMENT BEHEREN",
+			"titlebeta": "Lenovo-bètaprogramma",
+			"manageSubscriptionBeta": "VOLLEDIGE FUNCTIE INSCHAKELEN",
+			"descriptionbeta": "Lenovo biedt een pilotprogramma aan om de Smart Performance-functie tot en met juli 2020 uit te proberen.",
+			"descriptionbeta1": "U wordt uitgenodigd om de volledige functie uit te proberen.",
+			"descriptionNonSubscriber": "U bent niet geabonneerd op Lenovo Smart Performance Service. U kunt alleen uw pc scannen. Abonneer u nu en profiteer optimaal van de voordelen om uw pc te beschermen en goed te laten werken.",
+			"processStatus": "BEZIG",
+			"descriptionExpired": "Uw abonnement is verlopen en u kunt momenteel alleen de scanfunctie van Smart Performance gebruiken. U kunt het abonnement verlengen door te klikken op de koppeling \"Abonnement beheren\" en ervoor te zorgen dat uw apparaat weer volledig is beveiligd.",
+			"expiredStatus": "VERLOPEN",
+			"expiredNote": "Uw abonnement verloopt over",
+			"day": "dag",
+			"days": "dagen",
+			"weeks": "weken",
+			"week": "een week",
+			"month": "maand",
+			"today": "vandaag",
+			"next": "volgende"
+		},
+		"scanSettings": {
+			"title": "Scaninstellingen plannen",
+			"description": "De scan in- of uitschakelen en het scanschema instellen",
+			"enableScan": "Scan inschakelen",
+			"changeScanTitle": "Scanschema wijzigen",
+			"changeScanDescription": "Bewerk het scanschema om het uit te voeren wanneer u het nodig hebt.",
+			"frequency": "Frequentie",
+			"txtDate": "Datum",
+			"txtDay": "Dag",
+			"txtTime": "Tijd",
+			"txtSave": "opslaan",
+			"txtCancel": "annuleren",
+			"scanFrequencyWeek": "Eén keer per week",
+			"scanFrequencyEveryWeek": "Om de week",
+			"scanFrequencyMonth": "Elke maand",
+			"mon": "Maandag",
+			"tue": "Dinsdag",
+			"wed": "Woensdag",
+			"thu": "Donderdag",
+			"fri": "Vrijdag",
+			"sat": "Zaterdag",
+			"sun": "Zondag",
+			"am": "VM",
+			"pm": "NM",
+			"tooltipText": "Als deze schakeloptie is ingeschakeld, worden de controle van de systeemprestaties en de beveiligingsscan automatisch op de door u ingestelde datum en tijd gestart."
+		},
+		"scanningPage": {
+			"title": "Prestatie- en beveiligingscontrole",
+			"description": "Wacht tot we uw systeem hebben gescand op mogelijke problemen en dreigingen.",
+			"scanningSystem": "Systeem wordt gescand",
+			"complete": "voltooid",
+			"cancelScan": {
+				"button": "SCAN ANNULEREN",
+				"title": "De scan annuleren?",
+				"description": "Als u het huidige scherm verlaat, wordt de scan geannuleerd en gaat u terug naar de startpagina. U kunt de scan echter op elk gewenst moment opnieuw uitvoeren.",
+				"yesButton": "JA, ANNULEREN",
+				"noButton": "NEE, DOORGAAN MET SCANNEN",
+				"cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem.",
+				"cancelTextPrompt": "Weet u zeker dat u wilt annuleren?"
+			},
+			"waiting": "wachten op scan",
+			"completed": "voltooid",
+			"nowScanningDetail": {
+				"cardTitle": "DETAILS VAN HUIDIGE SCAN",
+				"current": "HUIDIGE: ",
+				"upNext": "VOLGENDE: ",
+				"tunePCDesc": "Laten we de prestaties van uw PC verbeteren. We kunnen dit veilig doen doordat we best practices uit de branche gebruiken. Voordelen voor abonnees zijn onder meer een kortere opstarttijd van de pc, betere prestaties, verbeterde stabiliteit en sneller opstartende applicaties.",
+				"boostDesc": "Laten we de manier waarop u surft verbeteren. Laten we problemen met netwerk en toegang oplossen. Voordelen voor abonnees bestaan uit een verbetering van de internetverbinding, verbetering van de upload-/downloadsnelheid en een verbetering van de beveiliging van internet.",
+				"malwareDesc": "Laten we uw pc snel op aanvraag beveiligen. Wij doen dit door spyware, malware en adware te verwijderen. Wij verwijderen ook Zero-day-infecties. Voordelen voor abonnees zijn gegevensbeveiliging en optimale systeemprestaties.",
+				"proactiveDesc": "We gaan uw computer periodiek optimaliseren en problemen verhelpen op een proactieve en geautomatiseerde manier om zo uw pc in topvorm te houden. Altijd",
+				"tunePCScanningItems": {
+					"accumulatedJunk": {
+						"itema1": "Zoeken naar ongewenste bestanden op 85 locaties",
+						"itema2": "Systeemlogboekbestanden die niet nodig zijn",
+						"itema3": "Onnodige applicatierestanten",
+						"itema4": "Tijdelijke bestanden die schijfruimte innemen",
+						"itema5": "Bestanden die u lang geleden hebt gewist",
+						"itema6": "Verouderde fouten en waarschuwingen"
+					},
+					"usabilityIssues": {
+						"itemb1": "Tientallen bruikbaarheidsuitdagingen aanpakken",
+						"itemb2": "Verbinding met externe apparaten controleren",
+						"itemb3": "Windows altijd up-to-date houden",
+						"itemb4": "Apps optimaal weergeven",
+						"itemb5": "Gebruik van verwerkingscapaciteit analyseren",
+						"itemb6": "Snel bestanden zoeken"
+					},
+					"windowsSettings": {
+						"itemc1": "Een diagnose maken van tientallen instellingen van het Windows-besturingssysteem",
+						"itemc2": "Zorgen dat alles goed werkt met Windows",
+						"itemc3": "Zorgen dat essentiële services worden uitgevoerd",
+						"itemc4": "De status van verbindingsinstellingen controleren",
+						"itemc5": "De mogelijkheid om bestanden in een netwerk te delen controleren",
+						"itemc6": "Biometrische en toegangsinstellingen controleren"
+					},
+					"systemErrors": {
+						"itemd1": "Zorgen dat essentiële services worden uitgevoerd",
+						"itemd2": "Services voor betere prestaties selecteren",
+						"itemd3": "Fouten door softwareconflicten zoeken",
+						"itemd4": "Windows-foutbeheer optimaliseren",
+						"itemd5": "Fouten bij het starten van apps controleren en herstellen",
+						"itemd6": "Rapporten over systeemfouten configureren"
+					},
+					"registryErrors": {
+						"iteme1": "Het Windows-register grondig controleren",
+						"iteme2": "Scannen op ongeldige Windows-services",
+						"iteme3": "Beschadigde registervermeldingen zoeken",
+						"iteme4": "Naar overbodige bestandsextensies zoeken",
+						"iteme5": "Beschadigde vermeldingen van geïnstalleerde apps zoeken",
+						"iteme6": "Naar overbodige, overgebleven vermeldingen zoeken"
+					}
+				},
+				"boostScanningItems": {
+					"networkSettings": {
+						"itema1": "Een diagnose van netwerk- en internetinstellingen maken",
+						"itema2": "Instellingen voor de netwerkconfiguratie controleren",
+						"itema3": "Beschikbare netwerkinstellingen verifiëren",
+						"itema4": "Instellingen wijzigen zodat websites sneller laden",
+						"itema5": "Paginaweergavefouten zoeken",
+						"itema6": "Controleren of verbindingsservices goed werken"
+					},
+					"browserSettings": {
+						"itemb1": "Een betere browserervaring mogelijk maken",
+						"itemb2": "Instellingen voor het sneller weergeven van websites configureren",
+						"itemb3": "Zorgen dat de beveiligingsservices van de browser in orde zijn",
+						"itemb4": "Zorgen dat webpagina's correct worden weergegeven",
+						"itemb5": "Instellingen controleren voor snellere downloads",
+						"itemb6": "Machtigingen en toegangsbeheer controleren"
+					},
+					"browserSecurity": {
+						"itemc1": "Zorgen dat beveiligingsservices worden uitgevoerd",
+						"itemc2": "Beveiligingsfuncties voor de browser configureren",
+						"itemc3": "Controleren of netwerkservices goed werken",
+						"itemc4": "Protocolinstellingen configureren",
+						"itemc5": "Controleren of de inhoudsinstellingen van de browser in orde zijn",
+						"itemc6": "Invoegtoepassingen en extensies voor browser controleren"
+					},
+					"wifiPerformance": {
+						"itemd1": "Instellingen van Wi-Fi-ervaring optimaliseren",
+						"itemd2": "Zorgen dat uw thuisnetwerk veilig is",
+						"itemd3": "Instellingen van Wi-Fi-services controleren",
+						"itemd4": "Instellingen voor veilig delen van netwerk",
+						"itemd5": "Wi-Fi-beveiligingsnormen controleren",
+						"itemd6": "Zorgen dat Wi-Fi-kanalen elkaar niet overlappen"
+					},
+					"eJunk": {
+						"iteme1": "Rommel van browsers elimineren",
+						"iteme2": "Zoeken naar overgebleven ongewenste e-mail",
+						"iteme3": "Zoeken naar verouderde internetbestanden",
+						"iteme4": "Ongewenste webcache wissen",
+						"iteme5": "Cookies wissen",
+						"iteme6": "Browserrestanten verwijderen"
+					}
+				},
+				"malwareScanningItems": {
+					"malwareScan": {
+						"itema1": "Gemeenschappelijke laadpunten scannen",
+						"itema2": "Kritieke locaties op dreigingen controleren",
+						"itema3": "Controleren op virussen, spyware en malware",
+						"itema4": "Scannen op meer dan 50 bestandstypen",
+						"itema5": "Scannen op resten van malware",
+						"itema6": "Gebruik van de engine voor cloudherstel"
+					},
+					"zerodayInfections": {
+						"itemb1": "Zoeken naar Zero-day-virus",
+						"itemb2": "Zoeken naar recente, niet-diagnosticeerde malware",
+						"itemb3": "Scannen met cloudherstel",
+						"itemb4": "Gedragscontrole uitvoeren",
+						"itemb5": "Bestanden met een geaggregeerde engine scannen",
+						"itemb6": "Scannen op basis van de meest recente definities"
+					},
+					"securitySettings": {
+						"itemc1": "Windows-updates altijd up-to-date houden",
+						"itemc2": "Zorgen dat de Windows Firewall-service in orde is",
+						"itemc3": "De browserinstellingen veilig houden",
+						"itemc4": "Essentiële beveiligingsservices controleren",
+						"itemc5": "Instellingen voor gebruikerstoegang configureren",
+						"itemc6": "Verificatieservices verifiëren"
+					},
+					"errantPrograms": {
+						"itemd1": "Zoeken naar foutieve apps",
+						"itemd2": "Zoeken naar mogelijk ongewilde apps",
+						"itemd3": "Inactieve en verborgen apps opsporen",
+						"itemd4": "Apps controleren op schadelijk gedrag",
+						"itemd5": "Apps controleren op basis van reputatiefactor",
+						"itemd6": "Foutieve programma's in register controleren"
+					},
+					"annoyingAdware": {
+						"iteme1": "Zoeken naar browser-adware",
+						"iteme2": "Pop-upinstellingen van browser(s) herzien",
+						"iteme3": "Dreigingen met browserverwijzingen elimineren",
+						"iteme4": "Controleren op achtergebleven adware",
+						"iteme5": "Instellingen van browserervaring optimaliseren",
+						"iteme6": "verifiëren in engine voor cloudherstel"
+					}
+				}
+			},
+			"confirmationTitle": "Betalingsproces van Lenovo",
+			"confirmationNote": "U wordt doorverwezen naar de betaalwebsite van Lenovo om de betaling af te ronden. Zodra de betaling is uitgevoerd, kunt u klikken op de knop \"Vernieuwen\" bij \"Abonnementsgegevens\" om het resultaat van de betaling te zien.",
+			"confirmationBtn": "Doorgaan",
+			"refreshButton": "Status vernieuwen"
+		},
+		"scanCompletePage": {
+			"title": "Systeemscan is voltooid",
+			"description": "Dit is wat we hebben gevonden op uw {{machineFamilyName}}",
+			"scanRates": "Onze scan beoordeelt uw pc met: ",
+			"summary": "Overzicht",
+			"foundIssues": "Onze scan heeft {{issueCount}} problemen aangetroffen",
+			"summaryDetails": "Meld u nu aan om deze problemen te verhelpen en uw systeem goed te laten werken. Onze software kan deze gebieden van uw systeem 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties levert.",
+			"expiredSummaryDetails": "Uw abonnement is verlopen en u kunt momenteel alleen de scanfunctie van Smart Performance gebruiken. Als u de functie \"Scannen en herstellen\" weer wilt gebruiken, klikt u op de knop \"Verlengen en herstellen\" hieronder om uw abonnement te verlengen.",
+			"signupRepairButton": "NU AANMELDEN EN HERSTELLEN",
+			"renewAndFix": "Verlengen en herstellen",
+			"backToHome": "Terug naar startpagina",
+			"monthlyPricing": "<b>Minder dan {{monthlyPrice}} per maand.</b> Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week <a  href=\"#\">Meer informatie</a>",
+			"issueCount": "{{individualIssueCount}} PROBLEMEN",
+			"issues": "Problemen",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
+			"scannedAreas": "GESCANDE GEBIEDEN",
+			"summaryPurchaseTip": "Koop nu een jaarabonnement, dan zullen we deze problemen elke week automatisch verhelpen.",
+			"tunePCTooltip": "Verbeter de algehele systeemprestaties, verkort de opstarttijd van de pc en verbeter de laadtijd van toepassingen.",
+			"boostTooltip": "Verbeter netwerkprestaties, surfen en connectiviteit.",
+			"malwareTooltip": "Verbeter de beveiliging, verwijder malware en infecties en herstel de stabiliteit van het systeem.",
+			"recommendedAction": {
+				"title": "Aanbevolen Handeling",
+				"description": "Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week",
+				"yearlyPricing": "{{yearlyPrice}}/jaar",
+				"monthlyPricing": "MINDER DAN {{monthlyPrice}} PER MAAND.",
+				"longerTerm": "Langere termijn? Nog meer besparingen?",
+				"newDescription": "Nadat u zich hebt aangemeld, worden deze problemen automatisch elke week voor u opgelost.",
+				"signupButton": "AANMELDEN"
+			},
+			"tunepc": {
+				"accumulatedjunkscannedareas": {
+					"area1": "Gescand op ongewenste bestanden op 85 locaties",
+					"area2": "Systeemlogboekbestanden die niet nodig zijn",
+					"area3": "Onnodige applicatierestanten",
+					"area4": "Tijdelijke bestanden die schijfruimte innemen",
+					"area5": "Bestanden die u lang geleden hebt gewist",
+					"area6": "Verouderde fouten en waarschuwingen"
+				},
+				"registryerrorsscannedareas": {
+					"area1": "Grondige controle van het Windows-register voltooid",
+					"area2": "Gescand op ongeldige Windows-services",
+					"area3": "Gecontroleerd op beschadigde registervermeldingen",
+					"area4": "Gescand op overbodige bestandsextensies",
+					"area5": "Beschadigde vermeldingen van geïnstalleerde apps gezocht",
+					"area6": "Gecontroleerd op overbodige, overgebleven vermeldingen"
+				},
+				"windowssettingsscannedareas": {
+					"area1": "Een diagnose gemaakt van tientallen instellingen van het Windows-besturingssysteem",
+					"area2": "Gecontroleerd of alles goed werkt met Windows",
+					"area3": "Bevestigd dat essentiële services worden uitgevoerd",
+					"area4": "De status van verbindingsinstellingen gecontroleerd",
+					"area5": "De mogelijkheid om bestanden in een netwerk te delen gecontroleerd",
+					"area6": "Biometrische en toegangsinstellingen gecontroleerd"
+				},
+				"usabilityissuesscannedareas": {
+					"area1": "Gecontroleerd op bruikbaarheidsuitdagingen",
+					"area2": "Verbinding met externe apparaten gecontroleerd",
+					"area3": "Status van Windows-updates gecontroleerd",
+					"area4": "Weergave-instelling apps gecontroleerd",
+					"area5": "Gebruik van verwerkingscapaciteit geanalyseerd",
+					"area6": "Snel bestanden zoeken"
+				},
+				"systemerrorsscannedareas": {
+					"area1": "Gecontroleerd dat essentiële services worden uitgevoerd",
+					"area2": "Services voor betere prestaties zoeken",
+					"area3": "Fouten door softwareconflicten zoeken",
+					"area4": "Windows-foutbeheer geanalyseerd",
+					"area5": "Gescand op fouten bij het starten van apps",
+					"area6": "Configuratie rapporten van systeemfouten gecontroleerd"
+				}
+			},
+			"internetperformance": {
+				"ejunkscannedareas": {
+					"area1": "Rommel van browsers geïdentificeerd",
+					"area2": "Overgebleven ongewenste e-mail gezocht",
+					"area3": "Verouderde internetbestanden gescand",
+					"area4": "Ongewenste webcache gezocht",
+					"area5": "Cookies voor vrije ruimte gecontroleerd",
+					"area6": "Browserrestanten gescand"
+				},
+				"browsersecurityscannedareas": {
+					"area1": "Gecontroleerd dat beveiligingsservices worden uitgevoerd",
+					"area2": "Beveiligingsfuncties voor de browser gecontroleerd",
+					"area3": "Netwerkservices geverifieerd",
+					"area4": "Protocolinstellingen configureren",
+					"area5": "Inhoudsinstellingen van de browser gecontroleerd",
+					"area6": "Invoegtoepassingen en extensies voor browser gescand"
+				},
+				"networksettingsscannedareas": {
+					"area1": "Een diagnose van netwerk- en internetinstellingen gemaakt",
+					"area2": "Een diagnose van netwerkconfiguratie-instellingen gemaakt",
+					"area3": "Verbonden netwerkinstellingen geverifieerd",
+					"area4": "Een diagnose van instellingen voor het sneller weergeven van websites gemaakt",
+					"area5": "Gescand op paginaweergavefouten",
+					"area6": "Alle verbindingsservices gescand"
+				},
+				"browsersettingsscannedareas": {
+					"area1": "Een betere browserervaring mogelijk maken",
+					"area2": "Een diagnose van instellingen voor het sneller weergeven van websites gemaakt",
+					"area3": "Beveiligingsservices van de browser geverifieerd",
+					"area4": "Gecontroleerd of webpagina's correct worden weergegeven",
+					"area5": "Instellingen voor snellere downloads gescand",
+					"area6": "Machtigingen en toegangsbeheer geanalyseerd"
+				},
+				"wifiperformancescannedareas": {
+					"area1": "Instellingen van Wi-Fi-ervaring geverifieerd",
+					"area2": "Beveiligd thuisnetwerk geverifieerd",
+					"area3": "Instellingen van Wi-Fi-services gescand",
+					"area4": "Instellingen voor veilig delen van netwerk geverifieerd",
+					"area5": "Wi-Fi-beveiligingsnormen geverifieerd",
+					"area6": "Geanalyseerd dat Wi-Fi-kanalen elkaar niet overlappen"
+				}
+			},
+			"malwaresecurity": {
+				"malwarescanscannedareas": {
+					"area1": "Gemeenschappelijke laadpunten gescand",
+					"area2": "Kritieke locaties op dreigingen gescand",
+					"area3": "Gescand op virussen, spyware en malware",
+					"area4": "Meer dan 50 bestandstypen op bedreigingen gescand",
+					"area5": "Gecontroleerd op resten van malware",
+					"area6": "Geverifieerd in engine voor cloudherstel"
+				},
+				"errantprogramsscannedareas": {
+					"area1": "Zoeken naar foutieve apps",
+					"area2": "Geïnspecteerd op mogelijk ongewilde apps",
+					"area3": "Gezocht naar inactieve en verborgen apps",
+					"area4": "Gescand op schadelijke apps",
+					"area5": "Apps gecontroleerd op basis van reputatiefactor",
+					"area6": "Foutieve programma's in register gecontroleerd"
+				},
+				"zerodayinfectionsscannedareas": {
+					"area1": "Gescand op Zero-day-virus",
+					"area2": "Gezocht naar recente, niet-diagnosticeerde malware",
+					"area3": "Geverifieerd met cloudherstel",
+					"area4": "Gedragscontrole uitgevoerd",
+					"area5": "Bestanden met een geaggregeerde engine geverifieerd",
+					"area6": "Gescand op basis van bijgewerkte definities"
+				},
+				"securitysettingsscannedareas": {
+					"area1": "Geverifieerd dat de Windows-updates actueel zijn",
+					"area2": "Windows Firewall-service geverifieerd",
+					"area3": "Gecontroleerd op beveiligde browserinstellingen",
+					"area4": "Een diagnose van essentiële beveiligingsservices gemaakt",
+					"area5": "Instellingen voor gebruikerstoegang geverifieerd",
+					"area6": "Verificatieservices geverifieerd"
+				},
+				"annoyingadwarescannedareas": {
+					"area1": "Gescand op browser-adware",
+					"area2": "Pop-upinstellingen van browser(s) gecontroleerd",
+					"area3": "Dreigingen met browserverwijzingen gescand",
+					"area4": "Gecontroleerd op achtergebleven adware",
+					"area5": "Instellingen van browserervaring geverifieerd",
+					"area6": "Geverifieerd met engine voor cloudherstel"
+				}
+			},
+			"subscriber": {
+				"tunepc": {
+					"accumulatedjunkscannedareas": {
+						"area1": "Ongewenste berichten in 85 locaties opgeschoond",
+						"area2": "Systeemlogboekbestanden gewist die niet nodig zijn",
+						"area3": "Applicatierestanten verwijderd",
+						"area4": "Tijdelijke bestanden verwijderd om schijfruimte vrij te maken",
+						"area5": "Bestanden geëlimineerd die u lang geleden hebt gewist",
+						"area6": "Fouten en waarschuwingen gewist"
+					},
+					"registryerrorsscannedareas": {
+						"area1": "Grondige controle van het Windows-register voltooid",
+						"area2": "Ongeldige Windows-services hersteld",
+						"area3": "Beschadigde registervermeldingen verwijderd",
+						"area4": "Verouderde bestandsextensies verwijderd",
+						"area5": "Beschadigde vermeldingen van geïnstalleerde apps opgeschoond",
+						"area6": "Ongewenste overgebleven vermeldingen gewist"
+					},
+					"windowssettingsscannedareas": {
+						"area1": "Windows-instellingen gevalideerd",
+						"area2": "Alle Windows-Services geoptimaliseerd",
+						"area3": "Essentiële Windows-services gewijzigd",
+						"area4": "Essentiële Windows-services gewijzigd",
+						"area5": "De mogelijkheid om bestanden in een netwerk te delen geverifieerd",
+						"area6": "Biometrische en toegangsinstellingen geverifieerd"
+					},
+					"usabilityissuesscannedareas": {
+						"area1": "Bruikbaarheidsuitdagingen hersteld",
+						"area2": "Verbinding met externe apparaten geverifieerd",
+						"area3": "Gezorgd dat Windows-updates altijd up-to-date zijn",
+						"area4": "Bevestigd dat apps optimaal worden weergegeven",
+						"area5": "Instellingen voor gebruik van verwerkingscapaciteit gewijzigd",
+						"area6": "Instellingen om bestanden eenvoudig te vinden gewijzigd"
+					},
+					"systemerrorsscannedareas": {
+						"area1": "Gecontroleerd dat essentiële services worden uitgevoerd",
+						"area2": "Services voor betere prestaties gewijzigd",
+						"area3": "Softwareconflictfouten hersteld",
+						"area4": "Windows-foutbeheer geoptimaliseerd",
+						"area5": "Fouten bij het starten van apps gecontroleerd en hersteld",
+						"area6": "Rapporten van systeemfouten geconfigureerd"
+					}
+				},
+				"internetperformance": {
+					"ejunkscannedareas": {
+						"area1": "Rommel van vier browsers verwijderd",
+						"area2": "Overgebleven ongewenste e-mail opgeschoond",
+						"area3": "Verouderde internetbestanden verwijderd",
+						"area4": "Ongewenste webcache gewist",
+						"area5": "Cookies gewist",
+						"area6": "Browserrestanten opgeschoond"
+					},
+					"browsersecurityscannedareas": {
+						"area1": "Gezorgd dat beveiligingsservices worden uitgevoerd",
+						"area2": "Beveiligingsfuncties voor de browser geconfigureerd",
+						"area3": "Netwerkservices gecontroleerd en hersteld",
+						"area4": "Protocolinstellingen geconfigureerd",
+						"area5": "Gecontroleerd of de inhoudsinstellingen van de browser in orde zijn",
+						"area6": "Invoegtoepassingen en extensies voor browser gescand"
+					},
+					"networksettingsscannedareas": {
+						"area1": "Netwerk- en internetinstellingen hersteld",
+						"area2": "Netwerkconfiguratie-instellingen gecontroleerd",
+						"area3": "Verbonden netwerkinstellingen gewijzigd",
+						"area4": "Een diagnose van instellingen voor het sneller weergeven van websites gemaakt",
+						"area5": "Paginaweergavefouten hersteld",
+						"area6": "Alle verbindingsservices gescand"
+					},
+					"browsersettingsscannedareas": {
+						"area1": "Instellingen voor een betere browserervaring gewijzigd",
+						"area2": "Instellingen voor het sneller weergeven van websites geverifieerd",
+						"area3": "Gezorgd dat de beveiligingsservices van de browser in orde zijn",
+						"area4": "Instellingen om webpagina's correct te laden gewijzigd",
+						"area5": "Instellingen voor snellere downloads hersteld",
+						"area6": "Instellingen voor machtigingen en toegangsbeheer hersteld"
+					},
+					"wifiperformancescannedareas": {
+						"area1": "Instellingen van Wi-Fi-ervaring gewijzigd",
+						"area2": "Instellingen beveiligd thuisnetwerk gevalideerd",
+						"area3": "Instellingen van Wi-Fi-services hersteld",
+						"area4": "Instellingen voor veilig delen van netwerk gewijzigd",
+						"area5": "Wi-Fi-beveiligingsnormen geverifieerd",
+						"area6": "Wi-Fi-kanalen gevalideerd"
+					}
+				},
+				"malwaresecurity": {
+					"malwarescanscannedareas": {
+						"area1": "Bedreigingen in gemeenschappelijke laadpunten gecontroleerd en verwijderd",
+						"area2": "Dreigingen op kritieke locaties gecontroleerd en verwijderd",
+						"area3": "Alle dreigingen van de pc verwijderd",
+						"area4": "Meer dan 50 bestandstypen op bedreigingen gevalideerd",
+						"area5": "Alle restanten van malware opgeschoond",
+						"area6": "Geverifieerd in engine voor cloudherstel"
+					},
+					"errantprogramsscannedareas": {
+						"area1": "Alle geïnstalleerde apps gevalideerd",
+						"area2": "Mogelijk ongewilde apps gevalideerd",
+						"area3": "Alle inactieve en verborgen apps opgeschoond",
+						"area4": "Alle schadelijke en foutieve apps verwijderd",
+						"area5": "Apps gevalideerd op basis van reputatiefactor",
+						"area6": "Registercontrole voor foutieve programma's voltooid"
+					},
+					"zerodayinfectionsscannedareas": {
+						"area1": "Geanalyseerd op Zero-day-virus",
+						"area2": "Malware van pc verwijderd",
+						"area3": "Gevalideerd in engine voor cloudherstel",
+						"area4": "Gedragscontrole van apps voltooid",
+						"area5": "Gevalideerd op basis van een geaggregeerde engine",
+						"area6": "Gevalideerd op basis van de meest recente definities"
+					},
+					"securitysettingsscannedareas": {
+						"area1": "Windows Update-instellingen geoptimaliseerd",
+						"area2": "Windows Firewall-service geoptimaliseerd",
+						"area3": "Browserinstellingen beveiligd",
+						"area4": "Een diagnose van essentiële beveiligingsservices gemaakt",
+						"area5": "Instellingen voor gebruikerstoegang geoptimaliseerd",
+						"area6": "Verificatieservices gewijzigd"
+					},
+					"annoyingadwarescannedareas": {
+						"area1": "Browser-adware verwijderd",
+						"area2": "Pop-upinstellingen van browser(s) geoptimaliseerd",
+						"area3": "Een diagnose van dreigingen met browserverwijzingen gemaakt",
+						"area4": "Achtergebleven adware gewist",
+						"area5": "Instellingen van browserervaring geoptimaliseerd",
+						"area6": "Gevalideerd in engine voor cloudherstel"
+					}
+				}
+			},
+			"Diskspace": "Teruggehaalde schijfruimte:",
+			"Performanceimprovements": "Prestatieverbeteringen:",
+			"Securityimprovements": "Beveiligingsverbeteringen:",
+			"Onceaweek": "Eén keer per week"
+		},
+		"subscriberScanHomePage": {
+			"title": "Alles werkt goed met uw ",
+			"titleScanCanceled": "De score is 0 omdat de laatste scan is geannuleerd. Klik op 'TERUG NAAR STARTPAGINA' scan opnieuw.",
+			"serialNumber": "Serienummer: ",
+			"subTitle": "U bent geabonneerd op Lenovo Smart Performance Service",
+			"description": "We scannen en herstellen uw computer regelmatig en proactief voor pc-prestaties, internetprestaties en malwareproblemen. U bent adequaat gedekt. U kunt de prestatiecontrole ook op aanvraag starten door op de knop Nu scannen te klikken.",
+			"scanNow": "SCANNEN EN HERSTELLEN",
+			"backToHome": "Terug naar startpagina",
+			"returnto": "TERUG NAAR DASHBOARD",
+			"mostRecent": "MEEST RECENTE SCAN:",
+			"nextScheduled": "VOLGENDE GEPLANDE SCAN:",
+			"successTitle": "Uw pc is geoptimaliseerd!",
+			"successDescription": "Smart Performance heeft <b>{{issueCount}} problemen</b> opgelost om uw pc goed te laten werken. Hieronder vindt u een scanoverzicht en een rapport.",
+			"scanSummary": {
+				"title": "Scanoverzicht:",
+				"description": "We zijn uw computer voortdurend aan het optimaliseren",
+				"tune": "Optimaliseren",
+				"tuneSummary": "Teruggehaalde schijfruimte",
+				"boost": "Verbeteren",
+				"boostSummary": "Oplossingen voor betere prestaties",
+				"secure": "Veilig",
+				"secureSummary": "Oplossingen voor betere beveiliging",
+				"annual": "Jaarlijks",
+				"quarterly": "Per kwartaal",
+				"custom": "Aangepast",
+				"txtFrom": "Van",
+				"txtTo": "Naar",
+				"txtGo": "Ga",
+				"summaryCaption": "teruggehaalde ruimte",
+				"fixes": "Opgeloste problemen",
+				"txtClr": "Leegmaken"
+			},
+			"lastScanResults": {
+				"title": "Laatste 5 scanresultaten:",
+				"scanDate": "Scandatum",
+				"results": "Resultaten",
+				"status": "Status"
+			}
+		},
+		"feedbackContainer": {
+			"title": "Geef ons uw feedback",
+			"subtitle": "Vertel ons wat u van Smart Performance vindt",
+			"buttonText": "feedback verzenden",
+			"questions": {
+				"q1": "1. Hoe moeilijk of makkelijk was het om de scanfunctie te gebruiken?",
+				"q2": "2. Hoe moeilijk of makkelijk was het om de scanresultaten te begrijpen?",
+				"q3": "3. Hoe waarschijnlijk is het dat u voor een Smart Performance-abonnement betaalt om de prestaties van uw systeem te verbeteren?",
+				"q4": "4. Hoe tevreden bent u in het algemeen met de functie Smart Performance?",
+				"q5": "1. Hoe moeilijk of makkelijk was het om de oplossingen te begrijpen die Smart Performance aan uw systeem heeft aangebracht?",
+				"q6": "2. Hebben we malware op uw systeem gevonden?",
+				"q7": "3. Hoe waarschijnlijk is het dat u voor de functie Smart Performance blijft betalen?",
+				"q8": "4. Hoe tevreden bent u in het algemeen met de functie Smart Performance?"
+			},
+			"rating": {
+				"r1": "Erg moeilijk",
+				"r2": "Erg makkelijk",
+				"r3": "Erg moeilijk",
+				"r4": "Erg makkelijk",
+				"r5": "Zeker niet",
+				"r6": "Zeer waarschijnlijk",
+				"r7": "Helemaal niet tevreden",
+				"r8": "Erg tevreden",
+				"r9": "Erg moeilijk",
+				"r10": "Erg makkelijk",
+				"r11": "Ja",
+				"r12": "Nee",
+				"r13": "Zeker niet",
+				"r14": "Zeer waarschijnlijk",
+				"r15": "Helemaal niet tevreden",
+				"r16": "Erg tevreden"
+			},
+			"commentTip": "Laat hieronder eventuele opmerkingen of aanvullende feedback achter:",
+			"comments": "Laat hier uw opmerkingen achter..."
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial",
+			"trialTitle": "Trial subscription",
+			"subscriptionTitle": "Paid subscription",
+			"inTrialDetail": "You are currently in your trial period.",
+			"trialExpiredDetail": "Your trial period has expired.",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
+			"discountPrice": "For only $29.99 for one year",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId": "Lenovo ID:",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your own Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join your family's Connected Home Security",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+			"goNow": "Go now",
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
+		}
+	},
+	"dir": "ltr",
+	"dirClass": "ltr",
+	"warranty": {
+		"warrantyStatusText": "Garantiestatus: ",
+		"inWarranty": "Valt binnen garantie",
+		"outOfWarranty": "Valt buiten de garantie",
+		"viewDetails": "Details bekijken",
+		"currentService": "Huidige status van service en ondersteuning",
+		"monthsRemaining": "{{remainingMonths}} maanden resterend",
+		"oneMonthRemaining": "1 maand resterend",
+		"lessThanOneMonth": "<1 maand resterend",
+		"makeSureNeedCoverage": "Zorg ervoor dat u de bescherming houdt die u nodig hebt",
+		"recommendsUpgradingText": "Lenovo raadt u aan het serviceniveau te upgraden",
+		"exploreOptions": "Bekijk de mogelijkheden",
+		"start": "Starten",
+		"end": "Eind",
+		"nMos": "{{monthValue}} Mnd",
+		"today": "Vandaag",
+		"upgradeLevels": {
+			"title": "Garantie en upgrades van Lenovo Services beschermen je tegen de kosten van hardwaredefecten.",
+			"subTitle": "Dekking van ongevalschade beschermt tegen schade door vallen of morsen, barsten in het scherm en andere schade door ongelukken.",
+			"recommended": "Aanbevolen",
+			"learnMore": "Wilt u meer weten?",
+			"good": {
+				"warrantyCodeText": "Depotondersteuning",
+				"levelText": "goed",
+				"point1": "Onderdelen en arbeid",
+				"point2": "Telefonische basisondersteuning bij hardwareproblemen",
+				"point3": "Reparaties met verzending naar Lenovo Depot"
+			},
+			"better": {
+				"warrantyCodeText": "Ondersteuning op locatie",
+				"levelText": "beter",
+				"point1": "Onderdelen en arbeid",
+				"point2": "Telefonische basisondersteuning bij hardwareproblemen",
+				"point3": "<b>Sneller</b>: reparaties uitgevoerd op jouw locatie"
+			},
+			"best": {
+				"warrantyCodeText": "Premier",
+				"levelText": "best",
+				"point1": "Onderdelen en arbeid <b>met hoge prioriteit</b>",
+				"point2": "<b>Geavanceerde</b> telefonische ondersteuning door Lenovo-technici",
+				"point3": "<b>Sneller</b> - reparaties op locatie, eerstvolgende werkdag",
+				"point4": "<b>Uitgebreide ondersteuning voor hard- en software</b>"
+			}
 		}
 	},
 	"security": {
@@ -4520,832 +5389,12 @@
 		"updateSnapshotTooltip": "De momentopname van alle hardware- en softwareonderdelen bijwerken met de meest recente informatie",
 		"replaceBaselineTooltip": "De basisconfiguratie voor de geselecteerde onderdelen bijwerken met hun gegevens uit de huidige momentopname"
 	},
-	"smartPerformance": {
-		"title": "Smart Performance",
-		"back": "TERUG",
-		"performanceandSecurityCheckTitle": "Prestatie- en beveiligingscontrole",
-		"performanceandSecurityCheckSubTitle": "Een diagnose stellen van de prestatie- en beveiligingsproblemen met uw computer en deze oplossen",
-		"scanButton": "GRATIS PC-SCAN",
-		"section1Heading": "Hoe zou u de prestaties van uw pc beoordelen?",
-		"section1Description": "Is de pc traag? Duurt het te lang voordat applicaties reageren? Windows-fouten? Problemen met malware? Laten we de oorzaak van het probleem achterhalen en corrigeren.",
-		"critical": "KRITIEK",
-		"allisWell": "ALLES IS IN ORDE",
-		"zero": 0,
-		"one": 1,
-		"two": 2,
-		"three": 3,
-		"four": 4,
-		"five": 5,
-		"six": 6,
-		"seven": 7,
-		"eight": 8,
-		"nine": 9,
-		"ten": 10,
-		"tuneUP": "Uw pc moet worden geoptimaliseerd",
-		"section2Heading": "Uitstekende pc-prestaties. Altijd",
-		"section2Description": "Onze software kan uw pc 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties biedt.",
-		"runningWell": "De pc functioneert prima",
-		"auto": "Automatisch",
-		"manual": "Handmatig",
-		"am": "AM",
-		"pm": "PM",
-		"scanNow": "Nu scannen",
-		"signUpAndFix": "Aanmelden en oplossen",
-		"cancel": "Annuleren",
-		"scanning": "Bezig met scannen...",
-		"fixIt": "Nu oplossen",
-		"optimizeIt": "Optimaliseren",
-		"maintainIt": "Onderhouden",
-		"noteFindings": "We zijn tot deze resultaten gekomen op basis van een gedetailleerde analyse van uw computer.",
-		"noteNavigateTab": "Ga naar de tabbladen voor meer informatie:",
-		"scannedAreas": "Gescande gebieden",
-		"lastFix": "Laatste oplossing",
-		"fixResult": "Oplossingsresultaat",
-		"checkPreviousResults": "Controleer voorgaande resultaten",
-		"tunePCPerformance": {
-			"title": "PC-prestaties Optimaliseren",
-			"heading": "Geef uw computer wat extra aandacht",
-			"description": "Zelfs de beste computer profiteert van periodieke optimalisatie. Optimaliseer uw pc en doe meer met onze krachtige app.",
-			"tabSet1": {
-				"tab1": "Ongewenste bestanden",
-				"tab2": "Bruikbaarheidskwesties",
-				"tab3": "Windows-instellingen",
-				"tab4": "Systeemfouten",
-				"tab5": "Registerfouten"
-			},
-			"tabSet2": {
-				"tab1Heading": "HET IS MAKKELIJK",
-				"tab1Description": "We verwarren u niet met technische prietpraat",
-				"tab2Heading": "HET IS SNEL",
-				"tab2Description": "Een controle van 100 punten vindt binnen 5 minuten plaats",
-				"tab3Heading": "HET IS VEILIG",
-				"tab3Description": "Geen scareware en gemaakt met best practices"
-			},
-			"summaryTitle": "Pc-prestaties optimaliseren"
-		},
-		"boostInternetPerformance": {
-			"title": "INTERNET VERBETEREN",
-			"extraTitle": "Internetprestaties",
-			"heading": "Verbeter uw internetsnelheid",
-			"description": "Voor veel mensen betekent een trage of geen Wi-Fi-verbinding alsof u niet bestaat. We gaan uw internet-, Wi-Fi- en browserinstellingen configureren voor optimale prestaties.",
-			"tabSet1": {
-				"tab1": "Ongewenste e-mail",
-				"tab2": "Netwerkinstellingen",
-				"tab3": "Browserinstellingen",
-				"tab4": "Browserbeveiliging",
-				"tab5": "Wi-Fi-prestaties"
-			},
-			"tabSet2": {
-				"tab1Heading": "BROWSERPROBLEMEN",
-				"tab1Description": "We configureren en corrigeren alle populaire webbrowsers.",
-				"tab2Heading": "VERBINDINGSFOUTEN",
-				"tab2Description": "We kunnen een diagnose van uw verbindingsproblemen maken en deze herstellen.",
-				"tab3Heading": "LANGZAAM INTERNET",
-				"tab3Description": "Wij helpen u een maximale snelheid te bereiken."
-			},
-			"summaryTitle": "Internetprestaties"
-		},
-		"malwareSecurity": {
-			"title": "Malware En Beveiliging",
-			"heading": "Geef uw computer de extra zorg die het nodig heeft",
-			"description": "Malware kan leiden tot een vastgelopen computer, inbreuk op gegevens en verminderde prestaties. Zorg dat malware wordt verwijderd en nog veel meer.",
-			"tabSet1": {
-				"tab1": "Malwarescan",
-				"tab2": "Zero-day-infecties",
-				"tab3": "Foutieve programma's",
-				"tab4": "Irritante adware",
-				"tab5": "Beveiligingsinstellingen"
-			},
-			"tabSet2": {
-				"tab1Heading": "ZERO-DAY-VIRUS",
-				"tab1Description": "We verwijderen zelfs de nieuwste malware-infecties",
-				"tab2Heading": "SPYWARE VERWIJDEREN",
-				"tab2Description": "We verwijderen alle mogelijk ongewenste programma's",
-				"tab3Heading": "LICHT EN SNEL",
-				"tab3Description": "Een scan duurt doorgaans 5-10 minuten"
-			},
-			"summaryTitle": "Malware en beveiliging"
-		},
-		"proactiveAutomated": {
-			"title": "PROACTIEF EN AUTOMATISCH",
-			"heading": "Los bepaalde problemen op voordat u er last van krijgt!",
-			"description": "Smart Performance is voortdurend op zoek naar honderden problemen die de prestaties van uw pc beïnvloeden. Wij corrigeren ze proactief, zodat u zich geen zorgen hoeft te maken.",
-			"tabSet1": {
-				"tab1": "Scan plannen",
-				"tab2": "Scannen op aanvraag",
-				"tab3": "Automatisch oplossen",
-				"tab4": "Het is effectief",
-				"tab5": "Bescherming 24/7"
-			},
-			"tabSet2": {
-				"tab1Heading": "HET IS MAKKELIJK",
-				"tab1Description": "We verwarren u niet met technische prietpraat",
-				"tab2Heading": "HET IS SNEL",
-				"tab2Description": "Een controle van 100 punten vindt binnen 5 minuten plaats",
-				"tab3Heading": "HET IS VEILIG",
-				"tab3Description": "Geen scareware en gemaakt met best practices"
-			}
-		},
-		"noScanResults": "Klik op de knop SCANNEN EN HERSTELLEN om het scanproces te starten.",
-		"startScan": "<b>Wilt u de scan starten?</b> Laten we een diagnose van de prestatie- en beveiligingsproblemen in uw computer maken.",
-		"subscriptionDetails": {
-			"title": "Abonnementsgegevens",
-			"description": "U bent geabonneerd op Lenovo Smart Performance Service. Tijdens deze periode zijn alle functies volledig beschikbaar om uw pc te beschermen en goed te laten werken.",
-			"learnMore": "Meer informatie",
-			"startDate": "Begindatum",
-			"endDate": "Einddatum",
-			"status": "Status",
-			"activeStatus": "ACTIEF",
-			"inactiveStatus": "INACTIEF",
-			"manageSubscription": "ABONNEMENT BEHEREN",
-			"titlebeta": "Lenovo-bètaprogramma",
-			"manageSubscriptionBeta": "VOLLEDIGE FUNCTIE INSCHAKELEN",
-			"descriptionbeta": "Lenovo biedt een pilotprogramma aan om de Smart Performance-functie tot en met juli 2020 uit te proberen.",
-			"descriptionbeta1": "U wordt uitgenodigd om de volledige functie uit te proberen.",
-			"descriptionNonSubscriber": "U bent niet geabonneerd op Lenovo Smart Performance Service. U kunt alleen uw pc scannen. Abonneer u nu en profiteer optimaal van de voordelen om uw pc te beschermen en goed te laten werken.",
-			"processStatus": "BEZIG",
-			"descriptionExpired": "Uw abonnement is verlopen en u kunt momenteel alleen de scanfunctie van Smart Performance gebruiken. U kunt het abonnement verlengen door te klikken op de koppeling \"Abonnement beheren\" en ervoor te zorgen dat uw apparaat weer volledig is beveiligd.",
-			"expiredStatus": "VERLOPEN",
-			"expiredNote": "Uw abonnement verloopt over",
-			"day": "dag",
-			"days": "dagen",
-			"weeks": "weken",
-			"week": "een week",
-			"month": "maand",
-			"today": "vandaag",
-			"next": "volgende"
-		},
-		"scanSettings": {
-			"title": "Scaninstellingen plannen",
-			"description": "De scan in- of uitschakelen en het scanschema instellen",
-			"enableScan": "Scan inschakelen",
-			"changeScanTitle": "Scanschema wijzigen",
-			"changeScanDescription": "Bewerk het scanschema om het uit te voeren wanneer u het nodig hebt.",
-			"frequency": "Frequentie",
-			"txtDate": "Datum",
-			"txtDay": "Dag",
-			"txtTime": "Tijd",
-			"txtSave": "opslaan",
-			"txtCancel": "annuleren",
-			"scanFrequencyWeek": "Eén keer per week",
-			"scanFrequencyEveryWeek": "Om de week",
-			"scanFrequencyMonth": "Elke maand",
-			"mon": "Maandag",
-			"tue": "Dinsdag",
-			"wed": "Woensdag",
-			"thu": "Donderdag",
-			"fri": "Vrijdag",
-			"sat": "Zaterdag",
-			"sun": "Zondag",
-			"am": "VM",
-			"pm": "NM",
-			"tooltipText": "Als deze schakeloptie is ingeschakeld, worden de controle van de systeemprestaties en de beveiligingsscan automatisch op de door u ingestelde datum en tijd gestart."
-		},
-		"scanningPage": {
-			"title": "Prestatie- en beveiligingscontrole",
-			"description": "Wacht tot we uw systeem hebben gescand op mogelijke problemen en dreigingen.",
-			"scanningSystem": "Systeem wordt gescand",
-			"complete": "voltooid",
-			"cancelScan": {
-				"button": "SCAN ANNULEREN",
-				"title": "De scan annuleren?",
-				"description": "Als u het huidige scherm verlaat, wordt de scan geannuleerd en gaat u terug naar de startpagina. U kunt de scan echter op elk gewenst moment opnieuw uitvoeren.",
-				"yesButton": "JA, ANNULEREN",
-				"noButton": "NEE, DOORGAAN MET SCANNEN",
-				"cancelMayTakeSomeTime": "Een ogenblik geduld, het annuleren kan even duren, afhankelijk van uw systeem.",
-				"cancelTextPrompt": "Weet u zeker dat u wilt annuleren?"
-			},
-			"waiting": "wachten op scan",
-			"completed": "voltooid",
-			"nowScanningDetail": {
-				"cardTitle": "DETAILS VAN HUIDIGE SCAN",
-				"current": "HUIDIGE: ",
-				"upNext": "VOLGENDE: ",
-				"tunePCDesc": "Laten we de prestaties van uw PC verbeteren. We kunnen dit veilig doen doordat we best practices uit de branche gebruiken. Voordelen voor abonnees zijn onder meer een kortere opstarttijd van de pc, betere prestaties, verbeterde stabiliteit en sneller opstartende applicaties.",
-				"boostDesc": "Laten we de manier waarop u surft verbeteren. Laten we problemen met netwerk en toegang oplossen. Voordelen voor abonnees bestaan uit een verbetering van de internetverbinding, verbetering van de upload-/downloadsnelheid en een verbetering van de beveiliging van internet.",
-				"malwareDesc": "Laten we uw pc snel op aanvraag beveiligen. Wij doen dit door spyware, malware en adware te verwijderen. Wij verwijderen ook Zero-day-infecties. Voordelen voor abonnees zijn gegevensbeveiliging en optimale systeemprestaties.",
-				"proactiveDesc": "We gaan uw computer periodiek optimaliseren en problemen verhelpen op een proactieve en geautomatiseerde manier om zo uw pc in topvorm te houden. Altijd",
-				"tunePCScanningItems": {
-					"accumulatedJunk": {
-						"itema1": "Zoeken naar ongewenste bestanden op 85 locaties",
-						"itema2": "Systeemlogboekbestanden die niet nodig zijn",
-						"itema3": "Onnodige applicatierestanten",
-						"itema4": "Tijdelijke bestanden die schijfruimte innemen",
-						"itema5": "Bestanden die u lang geleden hebt gewist",
-						"itema6": "Verouderde fouten en waarschuwingen"
-					},
-					"usabilityIssues": {
-						"itemb1": "Tientallen bruikbaarheidsuitdagingen aanpakken",
-						"itemb2": "Verbinding met externe apparaten controleren",
-						"itemb3": "Windows altijd up-to-date houden",
-						"itemb4": "Apps optimaal weergeven",
-						"itemb5": "Gebruik van verwerkingscapaciteit analyseren",
-						"itemb6": "Snel bestanden zoeken"
-					},
-					"windowsSettings": {
-						"itemc1": "Een diagnose maken van tientallen instellingen van het Windows-besturingssysteem",
-						"itemc2": "Zorgen dat alles goed werkt met Windows",
-						"itemc3": "Zorgen dat essentiële services worden uitgevoerd",
-						"itemc4": "De status van verbindingsinstellingen controleren",
-						"itemc5": "De mogelijkheid om bestanden in een netwerk te delen controleren",
-						"itemc6": "Biometrische en toegangsinstellingen controleren"
-					},
-					"systemErrors": {
-						"itemd1": "Zorgen dat essentiële services worden uitgevoerd",
-						"itemd2": "Services voor betere prestaties selecteren",
-						"itemd3": "Fouten door softwareconflicten zoeken",
-						"itemd4": "Windows-foutbeheer optimaliseren",
-						"itemd5": "Fouten bij het starten van apps controleren en herstellen",
-						"itemd6": "Rapporten over systeemfouten configureren"
-					},
-					"registryErrors": {
-						"iteme1": "Het Windows-register grondig controleren",
-						"iteme2": "Scannen op ongeldige Windows-services",
-						"iteme3": "Beschadigde registervermeldingen zoeken",
-						"iteme4": "Naar overbodige bestandsextensies zoeken",
-						"iteme5": "Beschadigde vermeldingen van geïnstalleerde apps zoeken",
-						"iteme6": "Naar overbodige, overgebleven vermeldingen zoeken"
-					}
-				},
-				"boostScanningItems": {
-					"networkSettings": {
-						"itema1": "Een diagnose van netwerk- en internetinstellingen maken",
-						"itema2": "Instellingen voor de netwerkconfiguratie controleren",
-						"itema3": "Beschikbare netwerkinstellingen verifiëren",
-						"itema4": "Instellingen wijzigen zodat websites sneller laden",
-						"itema5": "Paginaweergavefouten zoeken",
-						"itema6": "Controleren of verbindingsservices goed werken"
-					},
-					"browserSettings": {
-						"itemb1": "Een betere browserervaring mogelijk maken",
-						"itemb2": "Instellingen voor het sneller weergeven van websites configureren",
-						"itemb3": "Zorgen dat de beveiligingsservices van de browser in orde zijn",
-						"itemb4": "Zorgen dat webpagina's correct worden weergegeven",
-						"itemb5": "Instellingen controleren voor snellere downloads",
-						"itemb6": "Machtigingen en toegangsbeheer controleren"
-					},
-					"browserSecurity": {
-						"itemc1": "Zorgen dat beveiligingsservices worden uitgevoerd",
-						"itemc2": "Beveiligingsfuncties voor de browser configureren",
-						"itemc3": "Controleren of netwerkservices goed werken",
-						"itemc4": "Protocolinstellingen configureren",
-						"itemc5": "Controleren of de inhoudsinstellingen van de browser in orde zijn",
-						"itemc6": "Invoegtoepassingen en extensies voor browser controleren"
-					},
-					"wifiPerformance": {
-						"itemd1": "Instellingen van Wi-Fi-ervaring optimaliseren",
-						"itemd2": "Zorgen dat uw thuisnetwerk veilig is",
-						"itemd3": "Instellingen van Wi-Fi-services controleren",
-						"itemd4": "Instellingen voor veilig delen van netwerk",
-						"itemd5": "Wi-Fi-beveiligingsnormen controleren",
-						"itemd6": "Zorgen dat Wi-Fi-kanalen elkaar niet overlappen"
-					},
-					"eJunk": {
-						"iteme1": "Rommel van browsers elimineren",
-						"iteme2": "Zoeken naar overgebleven ongewenste e-mail",
-						"iteme3": "Zoeken naar verouderde internetbestanden",
-						"iteme4": "Ongewenste webcache wissen",
-						"iteme5": "Cookies wissen",
-						"iteme6": "Browserrestanten verwijderen"
-					}
-				},
-				"malwareScanningItems": {
-					"malwareScan": {
-						"itema1": "Gemeenschappelijke laadpunten scannen",
-						"itema2": "Kritieke locaties op dreigingen controleren",
-						"itema3": "Controleren op virussen, spyware en malware",
-						"itema4": "Scannen op meer dan 50 bestandstypen",
-						"itema5": "Scannen op resten van malware",
-						"itema6": "Gebruik van de engine voor cloudherstel"
-					},
-					"zerodayInfections": {
-						"itemb1": "Zoeken naar Zero-day-virus",
-						"itemb2": "Zoeken naar recente, niet-diagnosticeerde malware",
-						"itemb3": "Scannen met cloudherstel",
-						"itemb4": "Gedragscontrole uitvoeren",
-						"itemb5": "Bestanden met een geaggregeerde engine scannen",
-						"itemb6": "Scannen op basis van de meest recente definities"
-					},
-					"securitySettings": {
-						"itemc1": "Windows-updates altijd up-to-date houden",
-						"itemc2": "Zorgen dat de Windows Firewall-service in orde is",
-						"itemc3": "De browserinstellingen veilig houden",
-						"itemc4": "Essentiële beveiligingsservices controleren",
-						"itemc5": "Instellingen voor gebruikerstoegang configureren",
-						"itemc6": "Verificatieservices verifiëren"
-					},
-					"errantPrograms": {
-						"itemd1": "Zoeken naar foutieve apps",
-						"itemd2": "Zoeken naar mogelijk ongewilde apps",
-						"itemd3": "Inactieve en verborgen apps opsporen",
-						"itemd4": "Apps controleren op schadelijk gedrag",
-						"itemd5": "Apps controleren op basis van reputatiefactor",
-						"itemd6": "Foutieve programma's in register controleren"
-					},
-					"annoyingAdware": {
-						"iteme1": "Zoeken naar browser-adware",
-						"iteme2": "Pop-upinstellingen van browser(s) herzien",
-						"iteme3": "Dreigingen met browserverwijzingen elimineren",
-						"iteme4": "Controleren op achtergebleven adware",
-						"iteme5": "Instellingen van browserervaring optimaliseren",
-						"iteme6": "verifiëren in engine voor cloudherstel"
-					}
-				}
-			},
-			"confirmationTitle": "Betalingsproces van Lenovo",
-			"confirmationNote": "U wordt doorverwezen naar de betaalwebsite van Lenovo om de betaling af te ronden. Zodra de betaling is uitgevoerd, kunt u klikken op de knop \"Vernieuwen\" bij \"Abonnementsgegevens\" om het resultaat van de betaling te zien.",
-			"confirmationBtn": "Doorgaan",
-			"refreshButton": "Status vernieuwen"
-		},
-		"scanCompletePage": {
-			"title": "Systeemscan is voltooid",
-			"description": "Dit is wat we hebben gevonden op uw {{machineFamilyName}}",
-			"scanRates": "Onze scan beoordeelt uw pc met: ",
-			"summary": "Overzicht",
-			"foundIssues": "Onze scan heeft {{issueCount}} problemen aangetroffen",
-			"summaryDetails": "Meld u nu aan om deze problemen te verhelpen en uw systeem goed te laten werken. Onze software kan deze gebieden van uw systeem 24x7 proactief scannen om problemen op te sporen en te verhelpen, zodat uw pc altijd de beste prestaties levert.",
-			"expiredSummaryDetails": "Uw abonnement is verlopen en u kunt momenteel alleen de scanfunctie van Smart Performance gebruiken. Als u de functie \"Scannen en herstellen\" weer wilt gebruiken, klikt u op de knop \"Verlengen en herstellen\" hieronder om uw abonnement te verlengen.",
-			"signupRepairButton": "NU AANMELDEN EN HERSTELLEN",
-			"renewAndFix": "Verlengen en herstellen",
-			"backToHome": "Terug naar startpagina",
-			"monthlyPricing": "<b>Minder dan {{monthlyPrice}} per maand.</b> Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week <a  href=\"#\">Meer informatie</a>",
-			"issueCount": "{{individualIssueCount}} PROBLEMEN",
-			"issues": "Problemen",
-			"tuneIssueCount": "{{tune}}",
-			"boostIssueCount": "{{boost}}",
-			"secureIssueCount": "{{secure}}",
-			"scannedAreas": "GESCANDE GEBIEDEN",
-			"summaryPurchaseTip": "Koop nu een jaarabonnement, dan zullen we deze problemen elke week automatisch verhelpen.",
-			"tunePCTooltip": "Verbeter de algehele systeemprestaties, verkort de opstarttijd van de pc en verbeter de laadtijd van toepassingen.",
-			"boostTooltip": "Verbeter netwerkprestaties, surfen en connectiviteit.",
-			"malwareTooltip": "Verbeter de beveiliging, verwijder malware en infecties en herstel de stabiliteit van het systeem.",
-			"recommendedAction": {
-				"title": "Aanbevolen Handeling",
-				"description": "Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week",
-				"yearlyPricing": "{{yearlyPrice}}/jaar",
-				"monthlyPricing": "MINDER DAN {{monthlyPrice}} PER MAAND.",
-				"longerTerm": "Langere termijn? Nog meer besparingen?",
-				"newDescription": "Nadat u zich hebt aangemeld, worden deze problemen automatisch elke week voor u opgelost.",
-				"signupButton": "AANMELDEN"
-			},
-			"tunepc": {
-				"accumulatedjunkscannedareas": {
-					"area1": "Gescand op ongewenste bestanden op 85 locaties",
-					"area2": "Systeemlogboekbestanden die niet nodig zijn",
-					"area3": "Onnodige applicatierestanten",
-					"area4": "Tijdelijke bestanden die schijfruimte innemen",
-					"area5": "Bestanden die u lang geleden hebt gewist",
-					"area6": "Verouderde fouten en waarschuwingen"
-				},
-				"registryerrorsscannedareas": {
-					"area1": "Grondige controle van het Windows-register voltooid",
-					"area2": "Gescand op ongeldige Windows-services",
-					"area3": "Gecontroleerd op beschadigde registervermeldingen",
-					"area4": "Gescand op overbodige bestandsextensies",
-					"area5": "Beschadigde vermeldingen van geïnstalleerde apps gezocht",
-					"area6": "Gecontroleerd op overbodige, overgebleven vermeldingen"
-				},
-				"windowssettingsscannedareas": {
-					"area1": "Een diagnose gemaakt van tientallen instellingen van het Windows-besturingssysteem",
-					"area2": "Gecontroleerd of alles goed werkt met Windows",
-					"area3": "Bevestigd dat essentiële services worden uitgevoerd",
-					"area4": "De status van verbindingsinstellingen gecontroleerd",
-					"area5": "De mogelijkheid om bestanden in een netwerk te delen gecontroleerd",
-					"area6": "Biometrische en toegangsinstellingen gecontroleerd"
-				},
-				"usabilityissuesscannedareas": {
-					"area1": "Gecontroleerd op bruikbaarheidsuitdagingen",
-					"area2": "Verbinding met externe apparaten gecontroleerd",
-					"area3": "Status van Windows-updates gecontroleerd",
-					"area4": "Weergave-instelling apps gecontroleerd",
-					"area5": "Gebruik van verwerkingscapaciteit geanalyseerd",
-					"area6": "Snel bestanden zoeken"
-				},
-				"systemerrorsscannedareas": {
-					"area1": "Gecontroleerd dat essentiële services worden uitgevoerd",
-					"area2": "Services voor betere prestaties zoeken",
-					"area3": "Fouten door softwareconflicten zoeken",
-					"area4": "Windows-foutbeheer geanalyseerd",
-					"area5": "Gescand op fouten bij het starten van apps",
-					"area6": "Configuratie rapporten van systeemfouten gecontroleerd"
-				}
-			},
-			"internetperformance": {
-				"ejunkscannedareas": {
-					"area1": "Rommel van browsers geïdentificeerd",
-					"area2": "Overgebleven ongewenste e-mail gezocht",
-					"area3": "Verouderde internetbestanden gescand",
-					"area4": "Ongewenste webcache gezocht",
-					"area5": "Cookies voor vrije ruimte gecontroleerd",
-					"area6": "Browserrestanten gescand"
-				},
-				"browsersecurityscannedareas": {
-					"area1": "Gecontroleerd dat beveiligingsservices worden uitgevoerd",
-					"area2": "Beveiligingsfuncties voor de browser gecontroleerd",
-					"area3": "Netwerkservices geverifieerd",
-					"area4": "Protocolinstellingen configureren",
-					"area5": "Inhoudsinstellingen van de browser gecontroleerd",
-					"area6": "Invoegtoepassingen en extensies voor browser gescand"
-				},
-				"networksettingsscannedareas": {
-					"area1": "Een diagnose van netwerk- en internetinstellingen gemaakt",
-					"area2": "Een diagnose van netwerkconfiguratie-instellingen gemaakt",
-					"area3": "Verbonden netwerkinstellingen geverifieerd",
-					"area4": "Een diagnose van instellingen voor het sneller weergeven van websites gemaakt",
-					"area5": "Gescand op paginaweergavefouten",
-					"area6": "Alle verbindingsservices gescand"
-				},
-				"browsersettingsscannedareas": {
-					"area1": "Een betere browserervaring mogelijk maken",
-					"area2": "Een diagnose van instellingen voor het sneller weergeven van websites gemaakt",
-					"area3": "Beveiligingsservices van de browser geverifieerd",
-					"area4": "Gecontroleerd of webpagina's correct worden weergegeven",
-					"area5": "Instellingen voor snellere downloads gescand",
-					"area6": "Machtigingen en toegangsbeheer geanalyseerd"
-				},
-				"wifiperformancescannedareas": {
-					"area1": "Instellingen van Wi-Fi-ervaring geverifieerd",
-					"area2": "Beveiligd thuisnetwerk geverifieerd",
-					"area3": "Instellingen van Wi-Fi-services gescand",
-					"area4": "Instellingen voor veilig delen van netwerk geverifieerd",
-					"area5": "Wi-Fi-beveiligingsnormen geverifieerd",
-					"area6": "Geanalyseerd dat Wi-Fi-kanalen elkaar niet overlappen"
-				}
-			},
-			"malwaresecurity": {
-				"malwarescanscannedareas": {
-					"area1": "Gemeenschappelijke laadpunten gescand",
-					"area2": "Kritieke locaties op dreigingen gescand",
-					"area3": "Gescand op virussen, spyware en malware",
-					"area4": "Meer dan 50 bestandstypen op bedreigingen gescand",
-					"area5": "Gecontroleerd op resten van malware",
-					"area6": "Geverifieerd in engine voor cloudherstel"
-				},
-				"errantprogramsscannedareas": {
-					"area1": "Zoeken naar foutieve apps",
-					"area2": "Geïnspecteerd op mogelijk ongewilde apps",
-					"area3": "Gezocht naar inactieve en verborgen apps",
-					"area4": "Gescand op schadelijke apps",
-					"area5": "Apps gecontroleerd op basis van reputatiefactor",
-					"area6": "Foutieve programma's in register gecontroleerd"
-				},
-				"zerodayinfectionsscannedareas": {
-					"area1": "Gescand op Zero-day-virus",
-					"area2": "Gezocht naar recente, niet-diagnosticeerde malware",
-					"area3": "Geverifieerd met cloudherstel",
-					"area4": "Gedragscontrole uitgevoerd",
-					"area5": "Bestanden met een geaggregeerde engine geverifieerd",
-					"area6": "Gescand op basis van bijgewerkte definities"
-				},
-				"securitysettingsscannedareas": {
-					"area1": "Geverifieerd dat de Windows-updates actueel zijn",
-					"area2": "Windows Firewall-service geverifieerd",
-					"area3": "Gecontroleerd op beveiligde browserinstellingen",
-					"area4": "Een diagnose van essentiële beveiligingsservices gemaakt",
-					"area5": "Instellingen voor gebruikerstoegang geverifieerd",
-					"area6": "Verificatieservices geverifieerd"
-				},
-				"annoyingadwarescannedareas": {
-					"area1": "Gescand op browser-adware",
-					"area2": "Pop-upinstellingen van browser(s) gecontroleerd",
-					"area3": "Dreigingen met browserverwijzingen gescand",
-					"area4": "Gecontroleerd op achtergebleven adware",
-					"area5": "Instellingen van browserervaring geverifieerd",
-					"area6": "Geverifieerd met engine voor cloudherstel"
-				}
-			},
-			"subscriber": {
-				"tunepc": {
-					"accumulatedjunkscannedareas": {
-						"area1": "Ongewenste berichten in 85 locaties opgeschoond",
-						"area2": "Systeemlogboekbestanden gewist die niet nodig zijn",
-						"area3": "Applicatierestanten verwijderd",
-						"area4": "Tijdelijke bestanden verwijderd om schijfruimte vrij te maken",
-						"area5": "Bestanden geëlimineerd die u lang geleden hebt gewist",
-						"area6": "Fouten en waarschuwingen gewist"
-					},
-					"registryerrorsscannedareas": {
-						"area1": "Grondige controle van het Windows-register voltooid",
-						"area2": "Ongeldige Windows-services hersteld",
-						"area3": "Beschadigde registervermeldingen verwijderd",
-						"area4": "Verouderde bestandsextensies verwijderd",
-						"area5": "Beschadigde vermeldingen van geïnstalleerde apps opgeschoond",
-						"area6": "Ongewenste overgebleven vermeldingen gewist"
-					},
-					"windowssettingsscannedareas": {
-						"area1": "Windows-instellingen gevalideerd",
-						"area2": "Alle Windows-Services geoptimaliseerd",
-						"area3": "Essentiële Windows-services gewijzigd",
-						"area4": "Essentiële Windows-services gewijzigd",
-						"area5": "De mogelijkheid om bestanden in een netwerk te delen geverifieerd",
-						"area6": "Biometrische en toegangsinstellingen geverifieerd"
-					},
-					"usabilityissuesscannedareas": {
-						"area1": "Bruikbaarheidsuitdagingen hersteld",
-						"area2": "Verbinding met externe apparaten geverifieerd",
-						"area3": "Gezorgd dat Windows-updates altijd up-to-date zijn",
-						"area4": "Bevestigd dat apps optimaal worden weergegeven",
-						"area5": "Instellingen voor gebruik van verwerkingscapaciteit gewijzigd",
-						"area6": "Instellingen om bestanden eenvoudig te vinden gewijzigd"
-					},
-					"systemerrorsscannedareas": {
-						"area1": "Gecontroleerd dat essentiële services worden uitgevoerd",
-						"area2": "Services voor betere prestaties gewijzigd",
-						"area3": "Softwareconflictfouten hersteld",
-						"area4": "Windows-foutbeheer geoptimaliseerd",
-						"area5": "Fouten bij het starten van apps gecontroleerd en hersteld",
-						"area6": "Rapporten van systeemfouten geconfigureerd"
-					}
-				},
-				"internetperformance": {
-					"ejunkscannedareas": {
-						"area1": "Rommel van vier browsers verwijderd",
-						"area2": "Overgebleven ongewenste e-mail opgeschoond",
-						"area3": "Verouderde internetbestanden verwijderd",
-						"area4": "Ongewenste webcache gewist",
-						"area5": "Cookies gewist",
-						"area6": "Browserrestanten opgeschoond"
-					},
-					"browsersecurityscannedareas": {
-						"area1": "Gezorgd dat beveiligingsservices worden uitgevoerd",
-						"area2": "Beveiligingsfuncties voor de browser geconfigureerd",
-						"area3": "Netwerkservices gecontroleerd en hersteld",
-						"area4": "Protocolinstellingen geconfigureerd",
-						"area5": "Gecontroleerd of de inhoudsinstellingen van de browser in orde zijn",
-						"area6": "Invoegtoepassingen en extensies voor browser gescand"
-					},
-					"networksettingsscannedareas": {
-						"area1": "Netwerk- en internetinstellingen hersteld",
-						"area2": "Netwerkconfiguratie-instellingen gecontroleerd",
-						"area3": "Verbonden netwerkinstellingen gewijzigd",
-						"area4": "Een diagnose van instellingen voor het sneller weergeven van websites gemaakt",
-						"area5": "Paginaweergavefouten hersteld",
-						"area6": "Alle verbindingsservices gescand"
-					},
-					"browsersettingsscannedareas": {
-						"area1": "Instellingen voor een betere browserervaring gewijzigd",
-						"area2": "Instellingen voor het sneller weergeven van websites geverifieerd",
-						"area3": "Gezorgd dat de beveiligingsservices van de browser in orde zijn",
-						"area4": "Instellingen om webpagina's correct te laden gewijzigd",
-						"area5": "Instellingen voor snellere downloads hersteld",
-						"area6": "Instellingen voor machtigingen en toegangsbeheer hersteld"
-					},
-					"wifiperformancescannedareas": {
-						"area1": "Instellingen van Wi-Fi-ervaring gewijzigd",
-						"area2": "Instellingen beveiligd thuisnetwerk gevalideerd",
-						"area3": "Instellingen van Wi-Fi-services hersteld",
-						"area4": "Instellingen voor veilig delen van netwerk gewijzigd",
-						"area5": "Wi-Fi-beveiligingsnormen geverifieerd",
-						"area6": "Wi-Fi-kanalen gevalideerd"
-					}
-				},
-				"malwaresecurity": {
-					"malwarescanscannedareas": {
-						"area1": "Bedreigingen in gemeenschappelijke laadpunten gecontroleerd en verwijderd",
-						"area2": "Dreigingen op kritieke locaties gecontroleerd en verwijderd",
-						"area3": "Alle dreigingen van de pc verwijderd",
-						"area4": "Meer dan 50 bestandstypen op bedreigingen gevalideerd",
-						"area5": "Alle restanten van malware opgeschoond",
-						"area6": "Geverifieerd in engine voor cloudherstel"
-					},
-					"errantprogramsscannedareas": {
-						"area1": "Alle geïnstalleerde apps gevalideerd",
-						"area2": "Mogelijk ongewilde apps gevalideerd",
-						"area3": "Alle inactieve en verborgen apps opgeschoond",
-						"area4": "Alle schadelijke en foutieve apps verwijderd",
-						"area5": "Apps gevalideerd op basis van reputatiefactor",
-						"area6": "Registercontrole voor foutieve programma's voltooid"
-					},
-					"zerodayinfectionsscannedareas": {
-						"area1": "Geanalyseerd op Zero-day-virus",
-						"area2": "Malware van pc verwijderd",
-						"area3": "Gevalideerd in engine voor cloudherstel",
-						"area4": "Gedragscontrole van apps voltooid",
-						"area5": "Gevalideerd op basis van een geaggregeerde engine",
-						"area6": "Gevalideerd op basis van de meest recente definities"
-					},
-					"securitysettingsscannedareas": {
-						"area1": "Windows Update-instellingen geoptimaliseerd",
-						"area2": "Windows Firewall-service geoptimaliseerd",
-						"area3": "Browserinstellingen beveiligd",
-						"area4": "Een diagnose van essentiële beveiligingsservices gemaakt",
-						"area5": "Instellingen voor gebruikerstoegang geoptimaliseerd",
-						"area6": "Verificatieservices gewijzigd"
-					},
-					"annoyingadwarescannedareas": {
-						"area1": "Browser-adware verwijderd",
-						"area2": "Pop-upinstellingen van browser(s) geoptimaliseerd",
-						"area3": "Een diagnose van dreigingen met browserverwijzingen gemaakt",
-						"area4": "Achtergebleven adware gewist",
-						"area5": "Instellingen van browserervaring geoptimaliseerd",
-						"area6": "Gevalideerd in engine voor cloudherstel"
-					}
-				}
-			},
-			"Diskspace": "Teruggehaalde schijfruimte:",
-			"Performanceimprovements": "Prestatieverbeteringen:",
-			"Securityimprovements": "Beveiligingsverbeteringen:",
-			"Onceaweek": "Eén keer per week"
-		},
-		"subscriberScanHomePage": {
-			"title": "Alles werkt goed met uw ",
-			"titleScanCanceled": "De score is 0 omdat de laatste scan is geannuleerd. Klik op 'TERUG NAAR STARTPAGINA' scan opnieuw.",
-			"serialNumber": "Serienummer: ",
-			"subTitle": "U bent geabonneerd op Lenovo Smart Performance Service",
-			"description": "We scannen en herstellen uw computer regelmatig en proactief voor pc-prestaties, internetprestaties en malwareproblemen. U bent adequaat gedekt. U kunt de prestatiecontrole ook op aanvraag starten door op de knop Nu scannen te klikken.",
-			"scanNow": "SCANNEN EN HERSTELLEN",
-			"backToHome": "Terug naar startpagina",
-			"returnto": "TERUG NAAR DASHBOARD",
-			"mostRecent": "MEEST RECENTE SCAN:",
-			"nextScheduled": "VOLGENDE GEPLANDE SCAN:",
-			"successTitle": "Uw pc is geoptimaliseerd!",
-			"successDescription": "Smart Performance heeft <b>{{issueCount}} problemen</b> opgelost om uw pc goed te laten werken. Hieronder vindt u een scanoverzicht en een rapport.",
-			"scanSummary": {
-				"title": "Scanoverzicht:",
-				"description": "We zijn uw computer voortdurend aan het optimaliseren",
-				"tune": "Optimaliseren",
-				"tuneSummary": "Teruggehaalde schijfruimte",
-				"boost": "Verbeteren",
-				"boostSummary": "Oplossingen voor betere prestaties",
-				"secure": "Veilig",
-				"secureSummary": "Oplossingen voor betere beveiliging",
-				"annual": "Jaarlijks",
-				"quarterly": "Per kwartaal",
-				"custom": "Aangepast",
-				"txtFrom": "Van",
-				"txtTo": "Naar",
-				"txtGo": "Ga",
-				"summaryCaption": "teruggehaalde ruimte",
-				"fixes": "Opgeloste problemen",
-				"txtClr": "Leegmaken"
-			},
-			"lastScanResults": {
-				"title": "Laatste 5 scanresultaten:",
-				"scanDate": "Scandatum",
-				"results": "Resultaten",
-				"status": "Status"
-			}
-		},
-		"feedbackContainer": {
-			"title": "Geef ons uw feedback",
-			"subtitle": "Vertel ons wat u van Smart Performance vindt",
-			"buttonText": "feedback verzenden",
-			"questions": {
-				"q1": "1. Hoe moeilijk of makkelijk was het om de scanfunctie te gebruiken?",
-				"q2": "2. Hoe moeilijk of makkelijk was het om de scanresultaten te begrijpen?",
-				"q3": "3. Hoe waarschijnlijk is het dat u voor een Smart Performance-abonnement betaalt om de prestaties van uw systeem te verbeteren?",
-				"q4": "4. Hoe tevreden bent u in het algemeen met de functie Smart Performance?",
-				"q5": "1. Hoe moeilijk of makkelijk was het om de oplossingen te begrijpen die Smart Performance aan uw systeem heeft aangebracht?",
-				"q6": "2. Hebben we malware op uw systeem gevonden?",
-				"q7": "3. Hoe waarschijnlijk is het dat u voor de functie Smart Performance blijft betalen?",
-				"q8": "4. Hoe tevreden bent u in het algemeen met de functie Smart Performance?"
-			},
-			"rating": {
-				"r1": "Erg moeilijk",
-				"r2": "Erg makkelijk",
-				"r3": "Erg moeilijk",
-				"r4": "Erg makkelijk",
-				"r5": "Zeker niet",
-				"r6": "Zeer waarschijnlijk",
-				"r7": "Helemaal niet tevreden",
-				"r8": "Erg tevreden",
-				"r9": "Erg moeilijk",
-				"r10": "Erg makkelijk",
-				"r11": "Ja",
-				"r12": "Nee",
-				"r13": "Zeker niet",
-				"r14": "Zeer waarschijnlijk",
-				"r15": "Helemaal niet tevreden",
-				"r16": "Erg tevreden"
-			},
-			"commentTip": "Laat hieronder eventuele opmerkingen of aanvullende feedback achter:",
-			"comments": "Laat hier uw opmerkingen achter..."
-		}
-	},
-	"homeSecurity": {
-		"title": "Connected Home Security",
-		"notification": {
-			"recent": "Recent security notifications",
-			"notifications": "Notifications",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
-		},
-		"ecosystem": {
-			"ecosystemBlockTitle": "Protect your device ecosystem",
-			"thisDevice": "This device",
-			"allDevices": "All Devices",
-			"protected": "Protected",
-			"notProtected": "Not Protected",
-			"trialExpired": "Trial expired",
-			"upgrade": "upgrade",
-			"inEcosystem": "In Ecosystem",
-			"ecosystemEnable": "Ecosystem Enabled",
-			"inTrial": "In trial",
-			"addEcosystem": "Add to Ecosystem",
-			"enableEcosystem": "Enable Ecosystem",
-			"startTrial": "Start Trial",
-			"fullAccess": "Full Access",
-			"renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Your Ecosystem Security Overview",
-			"allDevices": "All Devices",
-			"myDevice": "My Device",
-			"thisComputer": "This computer",
-			"secure": "SECURE",
-			"needAttention": "NEEDS ATTENTION",
-			"manageAccount": "Manage account",
-			"devices": "Devices",
-			"seeProtectedDevices": "See protected devices",
-			"addDevice": "add device",
-			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-			"upgrade": "upgrade",
-			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
-			"inTrialDetail": "You are currently in your trial period.",
-			"trialExpiredDetail": "Your trial period has expired.",
-			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
-			"discountPrice": "For only $29.99 for one year",
-			"overviewTitle": "Overview",
-			"trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId": "Lenovo ID:",
-			"overviewTitleAdmin": "Overview of your Connected Home Security",
-			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-			"familyMembers": "Family members",
-			"places": "Places",
-			"personalDevices": "Personal devices",
-			"wifiNetworks": "Wi-fi networks",
-			"homeDevices": "Home devices",
-			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
-			"buyNow": "Buy Now",
-			"extendNow": "extend now",
-			"renewNow": "Renew Now",
-			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
-		},
-		"tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcomeTitle": "welcome to connected home security",
-			"welcomeSubTitle": "30 days of protection for free",
-			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-			"locationTitle": "Enable location permissions",
-			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
-			"allow": "Allow",
-			"notNow": "Not now"
-		},
-		"accountStatus": {
-			"title": "My Connected Home Security",
-			"startTrial": "Start Trial",
-			"manageAccount": "Manage Account",
-			"upgradeAccount": "Upgrade Account",
-			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-			"trialExpiredDetail1": "Your trial has expired.",
-			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"upgradedDetail1": "You account is active until {{expiredDate}}.",
-			"upgradedDetail2": "Your device ecosystem is currently being protected.",
-			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
-			"alreadyHaveAccount": "Already have an activation code?"
-		},
-		"card": {
-			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your own Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
-			"joinTitle": "Join your family's Connected Home Security",
-			"joinDescription": "Become a part of your family security group."
-		},
-		"modal": {
-			"countdownTitle": "Launching web browser",
-			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-			"goNow": "Go now",
-			"disconnectedTitle": "Disconnect from protection?",
-			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-			"disconnecting": "Disconnecting..."
-		}
-	},
-	"dir": "ltr",
-	"dirClass": "ltr",
 	"notification": {
 		"menu": {
 			"security": "Wist u dat? Zelfs als er geen antivirussoftware op uw computer is geïnstalleerd, bieden wij nog steeds basisbescherming voor uw apparaat.",
 			"connectedHomeSecurity": "Ontvang realtime controle en meldingen over de beveiliging van uw thuisnetwerk. U hoort het als eerste als een van uw slimme apparaten met een beveiligingsaanval wordt geconfronteerd.",
-			"hardwareScan": "U kunt nu de conditie van het onderdeel van uw systeemhardware opvragen."
+			"hardwareScan": "U kunt nu de conditie van het onderdeel van uw systeemhardware opvragen.",
+			"appSearch": "Wist u dat? Hierin vindt u de functies voor uw apparaat."
 		}
 	},
 	"appsForYou": {
@@ -5413,7 +5462,43 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
+					"description": "AI meeting manager ondersteunt vertalen, interpreteren en dicteren in real-time. Het kan ook video's ondertitelen.",
+					"downloadNow": "NU DOWNLOADEN",
+					"download": "DOWNLOADEN",
+					"launch": "STARTEN",
+					"translation": {
+						"title": "Vertaling",
+						"description": "Vertaalt bij elke vergadersoftware real-time wat er wordt gezegd tijdens onlinevergaderingen. Tijdens de meeting kunt u door de notulen bladeren en deze later opslaan. Ondertiteling is ook mogelijk."
+					},
+					"voiceToText": {
+						"title": "Spraak naar tekst",
+						"description": "Praat gewoon door en Spraak naar tekst typt het voor u uit. Schrijf aan e-mails of documenten of chat via uw favoriete app. Spraak naar tekst vertaalt terwijl u spreekt en maakt ook aantekeningen."
+					},
+					"modalPopUp": {
+						"heading": "Aan de slag:",
+						"translation": {
+							"point1": "Zorg dat het pictogram van de AI meeting manager wordt weergegeven in het Windows-systeemvak.",
+							"point2": "Klik op het pictogram en kies voor Vertalen of Ondertitelen.",
+							"point3": "Selecteer de gewenste taal voor brontekst en vertaling.",
+							"point4": "Stel naar behoefte de spraakinvoer in op Microphone of Speaker.",
+							"point5": "Klik op de knop Start om met vertalen te beginnen."
+						},
+						"voiceToText": {
+							"point1": "Zorg dat het pictogram van de AI meeting manager wordt weergegeven in het Windows-systeemvak.",
+							"point2": "Open de toepassing waarin u tekst wilt typen.",
+							"point3": "Klik op het pictogram van AI meeting manager en selecteer Spraak naar tekst.",
+							"point4": "Selecteer de gewenste talen en klik vervolgens op het microfoon-pictogram om te beginnen.",
+							"point5": "Plaats de cursor in de geopende toepassing en begin met spreken."
+						},
+						"closeText": "sluiten"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "Productiever en efficiënter online vergaderen."
+					}
+				}
 			}
 		},
 		"creatorCentre": {
@@ -5432,11 +5517,18 @@
 			},
 			"easyRendering": {
 				"title": ""
-
 			},
 			"colorCalibration": {
-				"title": ""
-
+				"title": "Beeldschermkleuren kalibreren",
+				"appName": "X-rite",
+				"summary": "Uw computerbeeldscherm is in de fabriek gekalibreerd met professionele Minolta-colorimeters van topklasse. De kalibratiegegevens worden opgeslagen in de cloud en kunnen worden gedownload om de fabrieksinstellingen van het scherm terug te zetten. X-rite is vooraf geïnstalleerd om kleurruimtes te beheren.<br>- Standaard (systeemeigen gamma, systeemeigen helderheid, maar met in het profiel opgeslagen grijswaarde kalibratie en schermkarakteristieken). <br>- Het standaardprofiel is standaard geïnstalleerd op de machine. Dit profiel wordt door Windows geladen als u opstart. <br>- Niet-gekalibreerd (kleurbeheer uit. Dit betekent dat u het standaard Lenovo-profiel gebruikt.) <br>- sRGB (computermonitors) - Adobe RGB (voor grafisch ontwerpers die in CYMK willen afdrukken) <br> - BT.709 (HD-video) <br> - DCI P3 (meestal in de VS toegepast voor het vertonen van digitale films)",
+				"screenshotTitle": "Schermopnames",
+				"cardTitle": "Een profiel herstellen",
+				"cardSummary": "Als het systeem opnieuw wordt geïnstalleerd of wanneer kleurprofielen zijn zoekgeraakt, kunt u vanaf hier profielen herstellen:",
+				"learnMore": "Meer info",
+				"restoreProfileDesc": "Lenovo heeft in Lenovo Cloud back-ups van kleurprofielen beschikbaar. Om er zeker van te zijn dat de functie voor het kalibreren van de beeldschermkleuren op uw computer werkt, kan het in de volgende situaties nodig zijn om kleurprofielen te herstellen of te installeren: als de kleurprofielen zoek of beschadigd zijn, ziet u een venster dat u eraan herinnert de kleurprofielen te herstellen. Klik in het venster op Ja en de kleurprofielen worden automatisch hersteld vanuit Lenovo Cloud. Als het beeldscherm van de computer wordt vervangen door een erkende serviceprovider van Lenovo, doet u het volgende:",
+				"restoreProfileStep1": "Klik op het driehoekige pictogram in het systeemvak van Windows om verborgen pictogrammen weer te geven. Klik daarna op het pictogram van de X-rite-app om die te openen.",
+				"restoreProfileStep2": "Klik op Instellingen > Profielen herstellen."
 			}
 		}
 	}

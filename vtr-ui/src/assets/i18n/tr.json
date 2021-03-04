@@ -812,10 +812,12 @@
 				"sub9": "Cihaz güvenliği"
 			},
 			"support": "Destek",
+			"warrantySupport": "Garanti ve Destek",
+			"contentLibrary": "İçerik Kitaplığı",
+			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"
-			},
-			"homeSecurity": "Connected Home"
+			}
 		},
 		"securityAdvisor": {
 			"title": "Güvenlik Danışmanı",
@@ -1246,9 +1248,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"Yüksek performans kipinde GPU hız aşırtmayı etkinleştir.",
-							"description1":"GPU bellek saatinizin hız aşırtması için “kararlı” etkili nokta olarak kabul edilen 140 MHz değerini seçin. Oyun performansı ve kare hızı %10-%30 arasında artabilir.",
-					        "description2":"Not: Performans ve kare hızındaki iyileşmeler, farklı oyunlara/uygulamalara ve diğer faktörlere göre değişiklik gösterebilir. Güç tüketimi, bilgisayarın yüzey sıcaklığı ve fan gürültüsü de buna göre artabilir. Lenovo, hız aşırtma etkinleştirildiğinde kararlılık ve performansta iyileşme olacağını garanti etmez."
+							"checkboxtext": "Yüksek performans kipinde GPU hız aşırtmayı etkinleştir.",
+							"description1": "GPU bellek saatinizin hız aşırtması için “kararlı” etkili nokta olarak kabul edilen 140 MHz değerini seçin. Oyun performansı ve kare hızı %10-%30 arasında artabilir.",
+							"description2": "Not: Performans ve kare hızındaki iyileşmeler, farklı oyunlara/uygulamalara ve diğer faktörlere göre değişiklik gösterebilir. Güç tüketimi, bilgisayarın yüzey sıcaklığı ve fan gürültüsü de buna göre artabilir. Lenovo, hız aşırtma etkinleştirildiğinde kararlılık ve performansta iyileşme olacağını garanti etmez."
 						},
 						"autoTransition": {
 							"description": {
@@ -2550,6 +2552,873 @@
 			"categories": "Kategoriler",
 			"categoriesDesc": "Makalelerimizde faydalı bilgiler bulun.",
 			"seeArticles": "MAKALELERİ GÖSTER"
+		}
+	},
+	"smartPerformance": {
+		"title": "Smart Performance",
+		"back": "GERİ",
+		"performanceandSecurityCheckTitle": "Performans ve Güvenlik Kontrolü",
+		"performanceandSecurityCheckSubTitle": "Bilgisayarınızdaki performans ve güvenlik sorunlarını teşhis edip çözelim",
+		"auto": "Otomatik",
+		"manual": "El ile",
+		"performanceOfflineText": "Tarama özelliği, bilgisayarınız internete bağlandığında kullanılabilir olacaktır.",
+		"scanButton": "ÜCRETSİZ BİLGİSAYAR TARAMASI",
+		"section1Heading": "Bilgisayar performansınızı nasıl değerlendirirsiniz?",
+		"section1Description": "Bilgisayarınız yavaş mı çalışıyor? Uygulamaların yanıt vermesi çok mu uzun sürüyor? Windows hataları mı var? Kötü amaçlı yazılımdan mı endişeleniyorsunuz? Soruna neyin neden olduğunu teşhis edelim ve düzeltelim.",
+		"critical": "KRİTİK",
+		"allisWell": "HER ŞEY YOLUNDA",
+		"zero": 0,
+		"one": 1,
+		"two": 2,
+		"three": 3,
+		"four": 4,
+		"five": 5,
+		"six": 6,
+		"seven": 7,
+		"eight": 8,
+		"nine": 9,
+		"ten": 10,
+		"tuneUP": "Bilgisayarınıza ayarlama yapılması gerekiyor",
+		"runningWell": "Bilgisayar iyi çalışıyor",
+		"section2Heading": "Birinci Sınıf Bilgisayar Performansı. Her zaman",
+		"section2Description": "Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak bilgisayarınızı 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
+		"am": "AM",
+		"pm": "PM",
+		"scanNow": "ŞİMDİ TARA",
+		"signUpAndFix": "Kaydol ve düzelt",
+		"cancel": "İptal",
+		"scanning": "Taranıyor",
+		"fixIt": "Şimdi düzelt",
+		"optimizeIt": "İyileştir",
+		"maintainIt": "Bakımını yap",
+		"noteFindings": "Bilgisayarınızın ayrıntılı analizine dayalı olarak bulgularımıza ulaştık.",
+		"noteNavigateTab": "Daha fazla bilgi edinmek için sekmelerde gezinin:",
+		"scannedAreas": "Taranan alanlar",
+		"lastFix": "Son düzeltme",
+		"fixResult": "Düzeltme sonucu",
+		"checkPreviousResults": "Önceki sonuçları denetle",
+		"tunePCPerformance": {
+			"title": "Bi̇lgi̇sayar Performansini Ayarlayin",
+			"heading": "Bilgisayarınıza biraz daha ilgi gösterin",
+			"description": "En iyi bilgisayara bile düzenli aralıklarla ayarlama yapılması gerekir. Güçlü uygulamamızla bir ayar yapılmasını sağlayın ve daha fazlasını yapın.",
+			"tabSet1": {
+				"tab1": "Birikmiş İstenmeyen Dosyalar",
+				"tab2": "Kullanılabilirlik Sorunları",
+				"tab3": "Windows Ayarları",
+				"tab4": "Sistem Hataları",
+				"tab5": "Kayıt Defteri Hataları"
+			},
+			"tabSet2": {
+				"tab1Heading": "KOLAY",
+				"tab1Description": "Teknolojiyle ilgili gereksiz bilgilerle kafanızı karıştırmıyoruz",
+				"tab2Heading": "HIZLI",
+				"tab2Description": "5 dakikadan kısa bir sürede 100 puanlık bir kontrol yapın",
+				"tab3Heading": "GÜVENLİ",
+				"tab3Description": "Scareware yazılımı olmadan, en iyi uygulamalar oluşturulmuştur"
+			},
+			"summaryTitle": "Bilgisayar Performansını Ayarlayın"
+		},
+		"boostInternetPerformance": {
+			"title": "İNTERNET PERFORMANSINI ARTIRIN",
+			"extraTitle": "İnternet Performansi",
+			"heading": "İnternetinizi hızlandırın",
+			"description": "Birçok kişi için yavaş Wi-Fi veya Wi-Fi olmaması şebekenin dışında yaşamak gibidir. En iyi performans için internet, Wi-Fi ve tarayıcı ayarlarınızı yapılandıralım.",
+			"tabSet1": {
+				"tab1": "İstenmeyen elektronik dosyalar",
+				"tab2": "Ağ Ayarları",
+				"tab3": "Tarayıcı Ayarları",
+				"tab4": "Tarayıcı Güvenliği",
+				"tab5": "Wi-Fi Performansı"
+			},
+			"tabSet2": {
+				"tab1Heading": "TARAYICI SORUNLARI",
+				"tab1Description": "Tüm popüler web tarayıcılarınızı yapılandırır ve düzeltiriz.",
+				"tab2Heading": "BAĞLANTI HATALARI",
+				"tab2Description": "Bağlantı sorunlarınızı teşhis edebilir ve onarabiliriz.",
+				"tab3Heading": "YAVAŞ İNTERNET",
+				"tab3Description": "Maksimum performans elde etmenize yardımcı olacağız."
+			},
+			"summaryTitle": "İnternet Performansı"
+		},
+		"malwareSecurity": {
+			"title": "KÖTÜ AMAÇLI YAZILIM VE GÜVENLİK",
+			"heading": "Bilgisayarınıza ihtiyaç duyduğu ekstra bakımı sağlayın",
+			"description": "Kötü amaçlı yazılımlar bilgisayarın çökmesine, verilerin bozulmasına ve performansın düşmesine neden olabilir. Kötü amaçlı yazılımları kaldırın ve daha fazlasını yapın.",
+			"tabSet1": {
+				"tab1": "Kötü amaçlı yazılım taraması",
+				"tab2": "Sıfır gün bulaşmaları",
+				"tab3": "Hatalı programlar",
+				"tab4": "Can sıkıcı reklam yazılımı",
+				"tab5": "Güvenlik ayarları"
+			},
+			"tabSet2": {
+				"tab1Heading": "SIFIR GÜN VİRÜSÜ",
+				"tab1Description": "En yeni kötü amaçlı yazılım bulaşmalarını bile kaldırıyoruz",
+				"tab2Heading": "CASUS YAZILIMI KALDIRMA",
+				"tab2Description": "İstenmeyen türden olabilecek tüm programları kaldırıyoruz",
+				"tab3Heading": "HAFİF VE HIZLI",
+				"tab3Description": "Tarama genellikle 5-10 dakika sürer"
+			},
+			"summaryTitle": "Kötü Amaçlı Yazılım ve Güvenlik"
+		},
+		"proactiveAutomated": {
+			"title": "PROAKTİF VE OTOMATİK",
+			"heading": "Sorunları, sizi etkilemeden önce çözme gücüne sahip olun!",
+			"description": "Smart Performance, sürekli olarak bilgisayar performansını etkileyen yüzlerce sorunu arar. Sorunları proaktif şekilde düzelterek size gönül rahatlığı sağlarız.",
+			"tabSet1": {
+				"tab1": "Tarama Planla",
+				"tab2": "İsteğe bağlı tarama",
+				"tab3": "Otomatik çözünürlük",
+				"tab4": "Etkili",
+				"tab5": "7/24 Koruma"
+			},
+			"tabSet2": {
+				"tab1Heading": "KOLAY",
+				"tab1Description": "Teknolojiyle ilgili gereksiz bilgilerle kafanızı karıştırmıyoruz",
+				"tab2Heading": "HIZLI",
+				"tab2Description": "5 dakikadan kısa bir sürede 100 puanlık bir kontrol yapın",
+				"tab3Heading": "GÜVENLİ",
+				"tab3Description": "Scareware yazılımı olmadan, en iyi uygulamalar oluşturulmuştur"
+			}
+		},
+		"noScanResults": "Tarama işlemini başlatmak için lütfen TARA VE DÜZELT düğmesine tıklayın.",
+		"startScan": "<b>Taramayı başlatmaya hazır mısınız?</b> Bilgisayarınızdaki performans ve güvenlik sorunlarını teşhis edelim.",
+		"subscriptionDetails": {
+			"title": "Abonelik Ayrıntıları",
+			"description": "Lenovo Smart Performance Hizmetine abonesiniz. Bu süre boyunca, bilgisayarınızın korunmasını ve sorunsuz çalışmasını sağlamak için tüm özellikler tamamen kullanılabilir.",
+			"learnMore": "Ek bilgi",
+			"startDate": "Başlangıç tarihi",
+			"endDate": "Bitiş tarihi",
+			"status": "Durum",
+			"activeStatus": "ETKİN",
+			"inactiveStatus": "ETKİN DEĞİL",
+			"manageSubscription": "ABONELİĞİ YÖNET",
+			"titlebeta": "Lenovo Beta Programı",
+			"manageSubscriptionBeta": "TAM ÖZELLİĞİ ETKİNLEŞTİR",
+			"descriptionbeta": "Lenovo, Temmuz 2020'ye kadar Smart Performance özelliğini denemek için pilot program sunuyor.",
+			"descriptionbeta1": "İsterseniz katılıp tam özelliği deneyebilirsiniz.",
+			"descriptionNonSubscriber": "Lenovo Smart Performance Hizmetine abone değilsiniz. Yalnızca bilgisayarınızı tarayabilirsiniz. Bilgisayarınızı korumanın ve sorunsuz çalışmanın tüm avantajlarından yararlanmak için şimdi abone olun.",
+			"processStatus": "İŞLENİYOR",
+			"descriptionExpired": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. Cihazınızın tam olarak korunmasına devam etmek için “Aboneliği Yönet” bağlantısını tıklayarak aboneliğinizi yenileyebilirsiniz.",
+			"expiredStatus": "SÜRESİ DOLDU",
+			"expiredNote": "Aboneliğinizin sona ermesine kalan süre:",
+			"day": "gün",
+			"days": "gün",
+			"weeks": "hafta",
+			"week": "bir hafta",
+			"month": "ay",
+			"today": "bugün",
+			"next": "gelecek"
+		},
+		"scanSettings": {
+			"title": "Tarama ayarları planlayın",
+			"description": "Taramayı etkinleştirin veya devre dışı bırakın ve tarama planlamasını ayarlayın",
+			"enableScan": "Taramayı Etkinleştir",
+			"changeScanTitle": "Tarama planını değiştirin",
+			"changeScanDescription": "İhtiyacınız olduğunda çalıştırmak için tarama planlamasını düzenleyin.",
+			"frequency": "Hız",
+			"txtDate": "Tarih",
+			"txtDay": "Gün",
+			"txtTime": "Saat",
+			"txtSave": "kaydet",
+			"txtCancel": "iptal",
+			"scanFrequencyWeek": "Haftada bir",
+			"scanFrequencyEveryWeek": "Her iki haftada bir",
+			"scanFrequencyMonth": "Her ay",
+			"mon": "Pazartesi",
+			"tue": "Salı",
+			"wed": "Çarşamba",
+			"thu": "Perşembe",
+			"fri": "Cuma",
+			"sat": "Cumartesi",
+			"sun": "Pazar",
+			"am": "AM",
+			"pm": "PM",
+			"tooltipText": "Bu geçiş etkinleştirildiğinde, sistem performansı ve güvenlik taraması ayarlanan tarih ve saatte otomatik olarak başlatılır."
+		},
+		"scanningPage": {
+			"title": "Performans ve güvenlik kontrolü",
+			"description": "Sisteminizi olası sorunlar ve tehditler için tararken lütfen bekleyin.",
+			"scanningSystem": "Tarama sistemi",
+			"complete": "tamamla",
+			"cancelScan": {
+				"button": "TARAMAYI İPTAL ET",
+				"title": "Tarama iptal edilsin mi?",
+				"description": "Geçerli ekrandan çıkarsanız tarama iptal edilir ve Ana Sayfaya geri dönersiniz. Ancak, taramayı istediğiniz zaman tekrar çalıştırabilirsiniz.",
+				"yesButton": "EVET, İPTAL EDİN",
+				"noButton": "HAYIR, TARAMAYA DEVAM ET",
+				"cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
+				"cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?"
+			},
+			"waiting": "tarama bekleni̇yor",
+			"completed": "tamamlandi",
+			"nowScanningDetail": {
+				"cardTitle": "ŞİMDİ AYRINTILI OLARAK TARANIYOR",
+				"current": "MEVCUT: ",
+				"upNext": "SONRAKİ: ",
+				"tunePCDesc": "Bilgisayar performansınızı artıralım. Sektördeki en iyi uygulamaları kullanarak güvenle yapıyoruz. Aboneler için avantajlar arasında daha düşük bilgisayar başlatma süresi, gelişmiş performans, gelişmiş kararlılık ve uygulamaların daha hızlı başlatılması yer alır.",
+				"boostDesc": "Tarama deneyiminizi geliştirmeye yardımcı olalım. Ağ ve erişim sorunlarını düzeltelim. Aboneler için avantajlar arasında internet bağlantısını iyileştirme, yükleme / indirme hızlarında artış ve interneti daha güvenli hale getirme sayılabilir.",
+				"malwareDesc": "Bilgisayarınızı, isteğe bağlı olarak hızlı bir şekilde güven altına almaya yardımcı olalım. Bunu casus yazılım, kötü amaçlı yazılım ve reklam yazılımlarını kaldırarak yaparız. Ayrıca sıfır güne yakın bulaşmaları da gideririz. Aboneler için avantajlar arasında veri güvenliği ve optimum sistem performansı yer alır.",
+				"proactiveDesc": "Periyodik olarak bilgisayarınızın ayarlarını yapalım ve sorunlarını giderelim. Bilgisayarınızı ayarlı ve kapsam dahilinde tutmak için proaktif ve otomatik koruma sağlarız. Her zaman",
+				"tunePCScanningItems": {
+					"accumulatedJunk": {
+						"itema1": "85 konumda istenmeyen dosyaları arayın",
+						"itema2": "Gerekli olmayan sistem günlük dosyaları",
+						"itema3": "Gereksiz uygulama kalıntıları",
+						"itema4": "Disk alanını tıkayan geçici dosyalar",
+						"itema5": "Çok uzun zaman önce sildiğiniz dosyalar",
+						"itema6": "Eski hatalar ve uyarılar"
+					},
+					"usabilityIssues": {
+						"itemb1": "Düzinelerce kullanılabilirlik sorununu ele alın",
+						"itemb2": "Harici cihazların bağlantısını kontrol edin",
+						"itemb3": "Windows güncellemelerini her zaman güncel tutma",
+						"itemb4": "Uygulamalar en iyi şekilde oluşturuluyor ve görünüyor mu?",
+						"itemb5": "İşlem gücü kullanımını analiz etme",
+						"itemb6": "Dosyaların kolayca bulunmasına yardımcı olun"
+					},
+					"windowsSettings": {
+						"itemc1": "Düzinelerce Windows işletim sistemi ayarını teşhis edin",
+						"itemc2": "Windows'unuzda her şeyin yolunda olduğundan emin olun",
+						"itemc3": "Temel hizmetlerin çalıştığından emin olun",
+						"itemc4": "Bağlantı ayarlarının durumunu kontrol edin",
+						"itemc5": "Ağda dosya paylaşma yeteneğini kontrol etme",
+						"itemc6": "Biyometrik ve erişim ayarlarını kontrol edin"
+					},
+					"systemErrors": {
+						"itemd1": "Temel hizmetlerin çalıştığından emin olun",
+						"itemd2": "Daha yüksek performans için hizmetler seçin",
+						"itemd3": "Yazılım çakışması hatalarını arayın",
+						"itemd4": "Windows hata yönetimini optimize edin",
+						"itemd5": "Uygulama başlatma hatalarını kontrol edin ve düzeltin",
+						"itemd6": "Sistem hata raporlarını yapılandırın"
+					},
+					"registryErrors": {
+						"iteme1": "Windows kayıt defterini derinlemesine kontrol edin",
+						"iteme2": "Geçersiz Windows hizmetlerini tarama",
+						"iteme3": "Bozuk kayıt defteri girdilerini bulma",
+						"iteme4": "Yararsız dosya uzantılarını arayın",
+						"iteme5": "Yüklü uygulamaların bozuk girişlerini arayın",
+						"iteme6": "Gereksiz, kalan girişleri arayın"
+					}
+				},
+				"boostScanningItems": {
+					"networkSettings": {
+						"itema1": "Ağ ve internet ayarlarını teşhis edin",
+						"itema2": "Ağ yapılandırma ayarlarını doğrulayın",
+						"itema3": "Kullanılabilir ağ ayarlarını doğrulayın",
+						"itema4": "Web sitelerini daha hızlı yüklenecek şekilde yapılandırın",
+						"itema5": "Sayfa oluşturma hatalarını arayın",
+						"itema6": "Bağlantı hizmetleri iyi çalışıyor mu?"
+					},
+					"browserSettings": {
+						"itemb1": "Daha iyi tarama deneyimini etkinleştirin",
+						"itemb2": "Daha hızlı web sitesi oluşturmak için ayarları yapılandırın",
+						"itemb3": "Tarayıcı güvenlik hizmetlerinin iyi olduğundan emin olun",
+						"itemb4": "Web sayfalarının düzgün bir şekilde oluşturulduğundan emin olun",
+						"itemb5": "Daha hızlı indirme işlemleri için ayarları kontrol edin",
+						"itemb6": "İzinleri ve erişim kontrolünü kontrol edin"
+					},
+					"browserSecurity": {
+						"itemc1": "Güvenlik hizmetlerinin çalıştığından emin olun",
+						"itemc2": "Tarayıcı güvenlik özelliklerini yapılandırın",
+						"itemc3": "Ağ hizmetlerinin iyi çalışıp çalışmadığını kontrol edin",
+						"itemc4": "Protokol ayarlarını yapılandırın",
+						"itemc5": "Tarayıcı içerik ayarlarının doğru olduğunu onaylayın",
+						"itemc6": "Tarayıcı eklentilerini ve uzantılarını doğrulayın"
+					},
+					"wifiPerformance": {
+						"itemd1": "Wi-Fi deneyimi ayarlarını optimize edin",
+						"itemd2": "Ev ağınızın güvenli olduğundan emin olun",
+						"itemd3": "Wi-Fi hizmet ayarlarını kontrol edin",
+						"itemd4": "Güvenli ağ paylaşım ayarları",
+						"itemd5": "Wi-Fi güvenlik standartlarını kontrol edin",
+						"itemd6": "Wi-Fi kanallarının çakışmamasını sağlayın"
+					},
+					"eJunk": {
+						"iteme1": "Tarayıcılardan gelen dağınıklığı ortadan kaldırın",
+						"iteme2": "Kalan istenmeyen elektronik dosyaları arayın",
+						"iteme3": "Eski internet dosyalarını arayın",
+						"iteme4": "İstenmeyen web önbelleğini temizleyin",
+						"iteme5": "Tanımlama bilgilerini temizleyin",
+						"iteme6": "Tarayıcı kalıntılarını kaldırın"
+					}
+				},
+				"malwareScanningItems": {
+					"malwareScan": {
+						"itema1": "Ortak yükleme noktalarını tarayın",
+						"itema2": "Kritik konumlarda tehdit olup olmadığını kontrol edin",
+						"itema3": "Virüs, casus yazılım ve kötü amaçlı yazılım olup olmadığını kontrol edin",
+						"itema4": "50'den fazla dosya türünü tarayın",
+						"itema5": "Kötü amaçlı yazılım kalıntılarını tarayın",
+						"itema6": "Bulut iyileştirme motorundan yararlanın"
+					},
+					"zerodayInfections": {
+						"itemb1": "Sıfır gün virüsü arayın",
+						"itemb2": "En yeni, teşhis edilmemiş kötü amaçlı yazılımları arayın",
+						"itemb3": "Bulut tabanlı iyileştirme ile tarama",
+						"itemb4": "Davranışsal izleme yapın",
+						"itemb5": "Birleştirilmiş motorla dosya tarayın",
+						"itemb6": "En son tanımlara karşı tarayın"
+					},
+					"securitySettings": {
+						"itemc1": "Windows güncellemelerini her zaman güncel tutun",
+						"itemc2": "Windows güvenlik duvarı hizmetinin iyi olduğundan emin olun",
+						"itemc3": "Tarayıcı ayarlarını güvende tutun",
+						"itemc4": "Temel güvenlik hizmetlerini kontrol edin",
+						"itemc5": "Kullanıcı erişim ayarlarını yapılandırın",
+						"itemc6": "Kimlik doğrulama hizmetlerini doğrulayın"
+					},
+					"errantPrograms": {
+						"itemd1": "Hatalı uygulamaları arayın",
+						"itemd2": "İstenmeyen türden olabilecek uygulamaları arayın",
+						"itemd3": "Etkin olmayan ve gizli uygulamaları algılayın",
+						"itemd4": "Uygulamaları kötü niyetli davranışlar açısından doğrulayın",
+						"itemd5": "Saygınlık faktörüne göre uygulamaları kontrol edin",
+						"itemd6": "Kayıt defterindeki hatalı programları kontrol edin"
+					},
+					"annoyingAdware": {
+						"iteme1": "Tarayıcı reklam yazılımlarını arayın",
+						"iteme2": "Tarayıcı açılır ayarlarını gözden geçirin",
+						"iteme3": "Tarayıcı yeniden yönlendirme tehditlerini ortadan kaldırın",
+						"iteme4": "Reklam yazılımı kalıntılarını kontrol edin",
+						"iteme5": "Tarayıcı deneyimi ayarlarını optimize edin",
+						"iteme6": "bulut iyileştirme motorunda doğrulama"
+					}
+				}
+			},
+			"confirmationTitle": "Lenovo Ödeme İşleme",
+			"confirmationNote": "Ödemeyi tamamlamak için Lenovo Ödeme Web Sitesine yönlendirileceksiniz. Ödeme yapıldıktan sonra, ödeme sonucunu almak için “Abonelik Ayrıntısı” altındaki “yenile” düğmesine basabilirsiniz.",
+			"confirmationBtn": "İlerle",
+			"refreshButton": "Durumu Yenile"
+		},
+		"scanCompletePage": {
+			"title": "Sistem taraması tamamlandı",
+			"description": "İşte bulduklarımız: {{machineFamilyName}}",
+			"scanRates": "Taramamıza göre bilgisayarınızın değerlendirmesi: ",
+			"summary": "Özet",
+			"foundIssues": "Tarama sonucunda {{issueCount}} sorun buldu",
+			"summaryDetails": "Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
+			"expiredSummaryDetails": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. “Tara ve Düzelt” özelliğini sürdürmek istiyorsanız lütfen aboneliğinizi yenilemek için aşağıdaki “yenile ve düzelt” düğmesine basın.",
+			"signupRepairButton": "KAYDOLUN ve HEMEN ONARIN",
+			"renewAndFix": "Yenile ve Düzelt",
+			"backToHome": "Ana Sayfaya Dön",
+			"monthlyPricing": "<b>Ayda {{monthlyPrice}}'dan az.</b> Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez <a  href=\"#\">Daha fazla bilgi edinin</a>",
+			"issueCount": "{{individualIssueCount}} SORUNLAR",
+			"issues": "Sorunlar",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
+			"scannedAreas": "TARANAN ALANLAR",
+			"summaryPurchaseTip": "Yıllık planı hemen satın alın ve bu sorunların her hafta otomatik olarak düzeltilmesini sağlayın.",
+			"tunePCTooltip": "Genel sistem performansını artırın, bilgisayar başlatma süresini kısaltın ve uygulama yükleme sürelerini iyileştirin.",
+			"boostTooltip": "Ağ performansını, tarama deneyimini ve bağlantıyı iyileştirin.",
+			"malwareTooltip": "Güvenliği artırın, kötü amaçlı yazılımları ve bulaşmaları kaldırın ve sistem kararlılığını sağlayın.",
+			"recommendedAction": {
+				"title": "Öneri̇len Eylem",
+				"description": "Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez",
+				"yearlyPricing": "{{yearlyPrice}} / Yıl",
+				"monthlyPricing": "AYDA {{monthlyPrice}}'DAN AZ.",
+				"longerTerm": "Daha uzun vadede mi? Daha fazla tasarruf mu?",
+				"newDescription": "Kaydolduktan sonra bu sorunları sizin için her hafta otomatik olarak düzeltiriz.",
+				"signupButton": "KAYDOL"
+			},
+			"tunepc": {
+				"accumulatedjunkscannedareas": {
+					"area1": "85 konumda istenmeyen dosyalar tarandı",
+					"area2": "Gerekli olmayan sistem günlük dosyaları",
+					"area3": "Gereksiz uygulama kalıntıları",
+					"area4": "Disk alanını tıkayan geçici dosyalar",
+					"area5": "Çok uzun zaman önce sildiğiniz dosyalar",
+					"area6": "Eski hatalar ve uyarılar"
+				},
+				"registryerrorsscannedareas": {
+					"area1": "Windows kayıt defterinin derinlemesine denetimi tamamlandı",
+					"area2": "Geçersiz Windows hizmetleri tarandı",
+					"area3": "Bozuk kayıt defteri girdileri denetlendi",
+					"area4": "Yararsız dosya uzantıları tarandı",
+					"area5": "Yüklü uygulamaların bozuk girişleri arandı",
+					"area6": "Gereksiz, kalan girişler denetlendi"
+				},
+				"windowssettingsscannedareas": {
+					"area1": "Düzinelerce Windows işletim sistemi ayarı teşhis edildi",
+					"area2": "Windows'unuzda her şeyin yolunda olduğu denetlendi",
+					"area3": "Temel hizmetlerin çalıştığı onaylandı",
+					"area4": "Bağlantı ayarlarının durumu kontrol edildi",
+					"area5": "Ağda dosya paylaşma yeteneği kontrol edildi",
+					"area6": "Biyometrik ve erişim ayarları kontrol edildi"
+				},
+				"usabilityissuesscannedareas": {
+					"area1": "Kullanılabilirlik sorunları kontrol edildi",
+					"area2": "Harici cihazların bağlantısı kontrol edildi",
+					"area3": "Windows güncellemeleri durumu kontrol edildi",
+					"area4": "Uygulama oluşturma ayarı doğrulandı",
+					"area5": "İşlem gücü kullanımı analiz edildi",
+					"area6": "Dosyaların kolayca bulunmasına yardımcı olun"
+				},
+				"systemerrorsscannedareas": {
+					"area1": "Temel hizmetlerin çalıştığı denetlendi",
+					"area2": "Daha yüksek performans için hizmetleri arayın",
+					"area3": "Yazılım çakışması hatalarını arayın",
+					"area4": "Windows hata yönetimi analiz edildi",
+					"area5": "Uygulama başlatma hataları tarandı",
+					"area6": "Sistem hata raporları yapılandırması denetlendi"
+				}
+			},
+			"internetperformance": {
+				"ejunkscannedareas": {
+					"area1": "Tarayıcılardan gelen dağınıklık belirlendi",
+					"area2": "Kalan istenmeyen elektronik dosyalar arandı",
+					"area3": "Eski internet dosyaları tarandı",
+					"area4": "İstenmeyen web önbelleği arandı",
+					"area5": "Temizleme için tanımlama bilgileri denetlendi",
+					"area6": "Tarayıcı kalıntıları tarandı"
+				},
+				"browsersecurityscannedareas": {
+					"area1": "Güvenlik hizmetlerinin çalıştığı denetlendi",
+					"area2": "Tarayıcı güvenlik özellikleri denetlendi",
+					"area3": "Ağ hizmetleri doğrulandı",
+					"area4": "Protokol ayarlarını yapılandırın",
+					"area5": "Tarayıcı içerik ayarları denetlendi",
+					"area6": "Tarayıcı eklentileri ve uzantıları tarandı"
+				},
+				"networksettingsscannedareas": {
+					"area1": "Ağ ve internet ayarlarını teşhis edildi",
+					"area2": "Ağ yapılandırma ayarları teşhis edildi",
+					"area3": "Bağlı ağ ayarları doğrulandı",
+					"area4": "Daha hızlı web sitesi oluşturma ayarları teşhis edildi",
+					"area5": "Sayfa oluşturma hataları tarandı",
+					"area6": "Tüm bağlantı hizmetleri tarandı"
+				},
+				"browsersettingsscannedareas": {
+					"area1": "Daha iyi tarama deneyimini etkinleştirin",
+					"area2": "Daha hızlı web sitesi oluşturma ayarları teşhis edildi",
+					"area3": "Tarayıcı güvenlik hizmetleri doğrulandı",
+					"area4": "Web sayfalarının düzgün bir şekilde oluşturulduğu denetlendi",
+					"area5": "Daha hızlı indirme işlemleri için ayarlar tarandı",
+					"area6": "İzinler ve erişim kontrolü analiz edildi"
+				},
+				"wifiperformancescannedareas": {
+					"area1": "Wi-Fi deneyimi ayarları doğrulandı",
+					"area2": "Güvenli ev ağı doğrulandı",
+					"area3": "Wi-Fi hizmet ayarları tarandı",
+					"area4": "Güvenli ağ paylaşım ayarları doğrulandı",
+					"area5": "Wi-Fi güvenlik standartları doğrulandı",
+					"area6": "Wi-Fi kanallarının çakışmadığı analiz edildi"
+				}
+			},
+			"malwaresecurity": {
+				"malwarescanscannedareas": {
+					"area1": "Ortak yükleme noktaları tarandı",
+					"area2": "Kritik konumlarda tehdit olup olmadığı tarandı",
+					"area3": "Virüs, casus yazılım ve kötü amaçlı yazılım olup olmadığı tarandı",
+					"area4": "Tehditler için 50'den fazla dosya türü tarandı",
+					"area5": "Kötü amaçlı yazılım kalıntıları denetlendi",
+					"area6": "Bulut iyileştirme motoru doğrulandı"
+				},
+				"errantprogramsscannedareas": {
+					"area1": "Hatalı uygulamaları arayın",
+					"area2": "İstenmeyen türden olabilecek uygulamalar incelendi",
+					"area3": "Etkin olmayan ve gizli uygulamalar arandı",
+					"area4": "Kötü amaçlı uygulamalar için tarandı",
+					"area5": "Saygınlık faktörüne göre uygulamalar kontrol edildi",
+					"area6": "Kayıt defterindeki hatalı programlar kontrol edildi"
+				},
+				"zerodayinfectionsscannedareas": {
+					"area1": "Sıfır gün virüsü için tarandı",
+					"area2": "En yeni, teşhis edilmemiş kötü amaçlı yazılımlar arandı",
+					"area3": "Bulut tabanlı iyileştirme ile doğrulandı",
+					"area4": "Davranışsal izleme gerçekleştirildi",
+					"area5": "Birleştirilmiş motorla dosyalar doğrulandı",
+					"area6": "Güncellenen tanımlar tarandı"
+				},
+				"securitysettingsscannedareas": {
+					"area1": "Windows güncellemelerinin güncel olduğu doğrulandı",
+					"area2": "Windows güvenlik duvarı hizmeti doğrulandı",
+					"area3": "Güvenli tarayıcı ayarları kontrol edildi",
+					"area4": "Temel güvenlik hizmetleri teşhis edildi",
+					"area5": "Kullanıcı erişim ayarları doğrulandı",
+					"area6": "Kimlik doğrulama hizmetleri doğrulandı"
+				},
+				"annoyingadwarescannedareas": {
+					"area1": "Tarayıcı reklam yazılımları tarandı",
+					"area2": "Tarayıcı açılır ayarlarını doğrulayın",
+					"area3": "Tarayıcı yeniden yönlendirme tehditleri tarandı",
+					"area4": "Reklam yazılımı kalıntıları kontrol edildi",
+					"area5": "Tarayıcı deneyimi ayarları doğrulandı",
+					"area6": "Bulut iyileştirme motoruyla doğrulandı"
+				}
+			},
+			"subscriber": {
+				"tunepc": {
+					"accumulatedjunkscannedareas": {
+						"area1": "85 konumda istenmeyen dosyalar temizlendi",
+						"area2": "Gerekli olmayan sistem günlük dosyaları temizlendi",
+						"area3": "Uygulama kalıntıları silindi",
+						"area4": "Disk alanını boşaltmak için geçici dosyalar kaldırıldı",
+						"area5": "Çok uzun zaman önce sildiğiniz dosyalar kaldırıldı",
+						"area6": "Hatalar ve uyarılar silindi"
+					},
+					"registryerrorsscannedareas": {
+						"area1": "Windows kayıt defterinin derinlemesine denetimi tamamlandı",
+						"area2": "Geçersiz Windows hizmetleri düzeltildi",
+						"area3": "Bozuk kayıt defteri girdileri kaldırıldı",
+						"area4": "Eski dosya uzantılarını silindi",
+						"area5": "Yüklü uygulamaların bozuk girişleri temizlendi",
+						"area6": "İstenmeyen kalan girişler temizlendi"
+					},
+					"windowssettingsscannedareas": {
+						"area1": "Windows ayarları doğrulandı",
+						"area2": "Tüm Windows hizmetleri optimize edildi",
+						"area3": "Temel Windows hizmetleri değiştirildi",
+						"area4": "Temel Windows hizmetleri değiştirildi",
+						"area5": "Ağda dosya paylaşma yeteneği doğrulandı",
+						"area6": "Biyometrik ve erişim ayarları doğrulandı"
+					},
+					"usabilityissuesscannedareas": {
+						"area1": "Kullanılabilirlik sorunları düzeltildi",
+						"area2": "Harici cihazların bağlantısı doğrulandı",
+						"area3": "Windows güncellemelerinin her zaman güncel olduğu doğrulandı",
+						"area4": "Uygulamaların en iyi şekilde oluşturulduğu ve göründüğü onaylandı",
+						"area5": "Güç kullanımını işlemek için ayarlar değiştirildi",
+						"area6": "Dosyaları kolayca bulmaya yardımcı olmak için ayarlar değiştirildi"
+					},
+					"systemerrorsscannedareas": {
+						"area1": "Temel hizmetlerin çalıştığı denetlendi",
+						"area2": "Daha yüksek performans için hizmetler değiştirildi",
+						"area3": "Yazılım çakışması hataları düzeltildi",
+						"area4": "Windows hata yönetimini optimize edildi",
+						"area5": "Uygulama başlatma hatalarını kontrol edildi ve düzeltildi",
+						"area6": "Sistem hata raporları yapılandırıldı"
+					}
+				},
+				"internetperformance": {
+					"ejunkscannedareas": {
+						"area1": "4 tarayıcıdan karmaşa kaldırıldı",
+						"area2": "Kalan istenmeyen elektronik dosyalar temizlendi",
+						"area3": "Eski internet dosyaları silindi",
+						"area4": "İstenmeyen web önbelleğini temizlendi",
+						"area5": "Tanımlama Bilgileri Temizlendi",
+						"area6": "Tüm tarayıcı kalıntıları temizlendi"
+					},
+					"browsersecurityscannedareas": {
+						"area1": "Güvenlik hizmetlerinin çalıştığından emin olundu",
+						"area2": "Tarayıcı güvenlik özellikleri yapılandırıldı",
+						"area3": "Ağ hizmetleri kontrol edildi ve sabitlendi",
+						"area4": "Protokol ayarları yapılandırıldı",
+						"area5": "Tarayıcı içerik ayarlarının doğru olduğu onaylandı",
+						"area6": "Tarayıcı eklentileri ve uzantıları tarandı"
+					},
+					"networksettingsscannedareas": {
+						"area1": "Ağ ve internet ayarları düzeltildi",
+						"area2": "Ağ yapılandırma ayarları kontrol edildi",
+						"area3": "Bağlı ağ ayarları değiştirildi",
+						"area4": "Daha hızlı web sitesi oluşturma ayarları teşhis edildi",
+						"area5": "Sayfa oluşturma hataları düzeltildi",
+						"area6": "Tüm bağlantı hizmetleri tarandı"
+					},
+					"browsersettingsscannedareas": {
+						"area1": "Daha iyi tarama deneyimi için ayarlar değiştirildi",
+						"area2": "Daha hızlı web sitesi oluşturma ayarları doğrulandı",
+						"area3": "Tarayıcı güvenlik hizmetlerinin iyi olduğundan emin olundu",
+						"area4": "Web sayfalarının düzgün yüklenmesi için ayarlar değiştirildi",
+						"area5": "Daha hızlı indirme işlemleri için ayarlar düzeltildi",
+						"area6": "İzinler ve erişim kontrolü ayarları düzeltildi"
+					},
+					"wifiperformancescannedareas": {
+						"area1": "Wi-Fi deneyimi ayarları değiştirildi",
+						"area2": "Güvenli ev ağı ayarları doğrulandı",
+						"area3": "Wi-Fi hizmet ayarları düzeltildi",
+						"area4": "Güvenli ağ paylaşım ayarları değiştirildi",
+						"area5": "Wi-Fi güvenlik standartları doğrulandı",
+						"area6": "Wi-Fi kanalları doğrulandı"
+					}
+				},
+				"malwaresecurity": {
+					"malwarescanscannedareas": {
+						"area1": "Yaygın yükleme noktalarında tehditler kontrol edildi ve ortadan kaldırıldı",
+						"area2": "Kritik konumlardaki tehditler kontrol edildi ve ortadan kaldırıldı",
+						"area3": "Bilgisayardaki tehditler kaldırıldı",
+						"area4": "Tehditler için 50'den fazla dosya türü doğrulandı",
+						"area5": "Kötü amaçlı yazılım kalıntıları temizlendi",
+						"area6": "Bulut iyileştirme motoru doğrulandı"
+					},
+					"errantprogramsscannedareas": {
+						"area1": "Yüklü tüm uygulamalar doğrulandı",
+						"area2": "İstenmeyen türden olabilecek uygulamalar doğrulandı",
+						"area3": "Etkin olmayan ve gizli uygulamalar temizlendi",
+						"area4": "Kötü amaçlı ve hatalı uygulamalar kaldırıldı",
+						"area5": "Saygınlık faktörüne göre uygulamalar doğrulandı",
+						"area6": "Hatalı programlar için kayıt defteri denetimi tamamlandı"
+					},
+					"zerodayinfectionsscannedareas": {
+						"area1": "Sıfır gün virüsü için analiz edildi",
+						"area2": "Bilgisayardaki kötü amaçlı yazılımlar kaldırıldı",
+						"area3": "Bulut iyileştirme motoru doğrulandı",
+						"area4": "Uygulamaların davranışsal izlemesi tamamlandı",
+						"area5": "Birleştirilmiş motora göre onaylandı",
+						"area6": "En son tanımlara göre doğrulandı"
+					},
+					"securitysettingsscannedareas": {
+						"area1": "Windows güncelleme ayarları optimize edildi",
+						"area2": "Windows güvenlik duvarı hizmeti ayarlandı",
+						"area3": "Tarayıcı ayarlarının güvenliği sağlandı",
+						"area4": "Temel güvenlik hizmetleri teşhis edildi",
+						"area5": "Kullanıcı erişim ayarları optimize edildi",
+						"area6": "Kimlik doğrulama hizmetleri değiştirildi"
+					},
+					"annoyingadwarescannedareas": {
+						"area1": "Tarayıcı reklam yazılımı kaldırıldı",
+						"area2": "Tarayıcı açılır ayarları yapıldı",
+						"area3": "Tarayıcı yeniden yönlendirme tehditleri teşhis edildi",
+						"area4": "Reklam yazılımı kalıntıları temizlendi",
+						"area5": "Tarayıcı deneyimi ayarlarını optimize edildi",
+						"area6": "Bulut iyileştirme motoru doğrulandı"
+					}
+				}
+			},
+			"Diskspace": "Kurtarılan Disk Alanı:",
+			"Performanceimprovements": "Performans İyileştirmeleri:",
+			"Securityimprovements": "Güvenlik İyileştirmeleri:",
+			"Onceaweek": "Haftada bir"
+		},
+		"subscriberScanHomePage": {
+			"title": "Her şey yolunda: ",
+			"titleScanCanceled": "Son tarama iptal edildiği için değerlendirme 0 oldu. Lütfen \"ANA SAYFAYA DÖN\" öğesini tıklatıp yeniden tarayın.",
+			"serialNumber": "Seri numarası: ",
+			"subTitle": "Lenovo Smart Performance Hizmetine abonesiniz",
+			"description": "Bilgisayarınızı sık sık bilgisayar performansı, internet performansı ve kötü amaçlı yazılım sorunları için proaktif olarak tarayıp sorunları düzeltiriz. Yeterince koruma altındasınız. Şimdi tara düğmesine tıklayarak istek üzerine performans kontrolü de başlatabilirsiniz.",
+			"scanNow": "TARA VE DÜZELT",
+			"backToHome": "Ana Sayfaya Dön",
+			"returnto": "PANOYA GERİ DÖN",
+			"mostRecent": "EN SON TARAMA:",
+			"nextScheduled": "SONRAKİ PLANLANMIŞ TARAMA:",
+			"successTitle": "Bilgisayarınız ayarlandı!",
+			"successDescription": "Smart Performance, bilgisayarınızın sorunsuz çalışması için <b>{{issueCount}} sorun</b> çözdü. Tarama özetine ve raporuna aşağıdan ulaşabilirsiniz.",
+			"scanSummary": {
+				"title": "Tarama özeti:",
+				"description": "Bilgisayarınızı sürekli olarak ayarlıyoruz",
+				"tune": "Ayarla",
+				"tuneSummary": "Kurtarılan disk alanı",
+				"boost": "Artır",
+				"boostSummary": "Performansı iyileştirmek için düzeltmeler",
+				"secure": "Güvenli",
+				"secureSummary": "Güvenliği iyileştirmek için düzeltmeler",
+				"annual": "Yıllık",
+				"quarterly": "Üç aylık",
+				"custom": "Özel",
+				"txtFrom": "Gönderen",
+				"txtTo": "Kime",
+				"txtGo": "Git",
+				"summaryCaption": "kurtarılan alan",
+				"fixes": "Düzeltmeler",
+				"txtClr": "Temizle"
+			},
+			"lastScanResults": {
+				"title": "Son 5 tarama sonucu:",
+				"scanDate": "Tarama tarihi",
+				"results": "Sonuçlar",
+				"status": "Durum"
+			}
+		},
+		"feedbackContainer": {
+			"title": "Bize geri bildirimde bulunun",
+			"subtitle": "Smart Performance hakkındaki düşüncelerinizi bizimle paylaşın",
+			"buttonText": "geri bildirim gönder",
+			"questions": {
+				"q1": "1. Tarama özelliğini kullanmak ne kadar zor veya kolaydı?",
+				"q2": "2. Tarama sonuçlarını anlamak ne kadar zor veya kolaydı?",
+				"q3": "3. Sisteminizin performansını artırmak amacıyla Smart Performance aboneliği için ödeme yapma olasılığınız nedir?",
+				"q4": "4. Genel olarak Smart Performance özelliğinden ne kadar memnunsunuz?",
+				"q5": "1. Smart Performance'ın sisteminize yaptığı düzeltmeleri anlamak ne kadar zor veya kolaydı?",
+				"q6": "2. Sisteminizde herhangi bir kötü amaçlı yazılım buldunuz mu?",
+				"q7": "3. Smart Performance özelliği için ödeme yapmaya devam etme olasılığınız nedir?",
+				"q8": "4. Genel olarak Smart Performance özelliğinden ne kadar memnunsunuz?"
+			},
+			"rating": {
+				"r1": "Çok zor",
+				"r2": "Çok kolay",
+				"r3": "Çok zor",
+				"r4": "Çok kolay",
+				"r5": "Hiç olası değil",
+				"r6": "Büyük ihtimalle",
+				"r7": "Hiç memnun değilim",
+				"r8": "Oldukça memnunum",
+				"r9": "Çok zor",
+				"r10": "Çok kolay",
+				"r11": "Evt",
+				"r12": "Hayır",
+				"r13": "Hiç olası değil",
+				"r14": "Büyük ihtimalle",
+				"r15": "Hiç memnun değilim",
+				"r16": "Oldukça memnunum"
+			},
+			"commentTip": "Lütfen yorumlarınızı veya ek geri bildiriminizi aşağıya bırakın:",
+			"comments": "Lütfen yorumlarınızı buraya bırakın..."
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial",
+			"trialTitle": "Trial subscription",
+			"subscriptionTitle": "Paid subscription",
+			"inTrialDetail": "You are currently in your trial period.",
+			"trialExpiredDetail": "Your trial period has expired.",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
+			"discountPrice": "For only $29.99 for one year",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId": "Lenovo ID:",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
+		},
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your own Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join your family's Connected Home Security",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+			"goNow": "Go now",
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
+		}
+	},
+	"dir": "ltr",
+	"dirClass": "ltr",
+	"warranty": {
+		"warrantyStatusText": "Garanti durumu: ",
+		"inWarranty": "Garanti kapsamında",
+		"outOfWarranty": "Garanti dışı",
+		"viewDetails": "Ayrıntıları görüntüle",
+		"currentService": "Mevcut hizmet ve destek durumu",
+		"monthsRemaining": "{{remainingMonths}} ay kaldı",
+		"oneMonthRemaining": "1 ay kaldı",
+		"lessThanOneMonth": "< 1 ay kaldı",
+		"makeSureNeedCoverage": "İhtiyacınız olan kapsama sahip olduğunuzdan emin olun",
+		"recommendsUpgradingText": "Lenovo, hizmet düzeyinizi yükseltmenizi öneriyor",
+		"exploreOptions": "Seçenekleri keşfedin",
+		"start": "Başlat",
+		"end": "Son",
+		"nMos": "{{monthValue}} ay",
+		"today": "Bugün",
+		"upgradeLevels": {
+			"title": "Lenovo Hizmet Garantisi ve Yükseltmeler her türlü donanım arızasına karşı koruma sağlar.",
+			"subTitle": "Kaza Hasar Koruması düşürme, dökme, ekran çatlakları ve kaza sonucu oluşan diğer hasarlara karşı koruma sağlar.",
+			"recommended": "Önerilen",
+			"learnMore": "Daha fazlasını öğrenmek ister misiniz?",
+			"good": {
+				"warrantyCodeText": "Depo desteği",
+				"levelText": "iyi",
+				"point1": "Parça ve İşçilik",
+				"point2": "Donanım sorunları için Temel Telefon Desteği",
+				"point3": "Onarımlar Lenovo Depo'ya gönderilerek yapılır"
+			},
+			"better": {
+				"warrantyCodeText": "Yerinde destek",
+				"levelText": "daha iyi",
+				"point1": "Parça ve İşçilik",
+				"point2": "Donanım sorunları için Temel Telefon Desteği",
+				"point3": "<b>Daha hızlı</b>: onarımlar bulunduğunuz yerde yapılır"
+			},
+			"best": {
+				"warrantyCodeText": "Premium",
+				"levelText": "en iyi",
+				"point1": "<b>Öncelikli</b> Parça ve İşçilik",
+				"point2": "Lenovo Mühendislerinden <b>Gelişmiş</b> Telefon Desteği",
+				"point3": "<b>Daha hızlı</b>: Onarımlar bulunduğunuz yerde yapılır, Sonraki İş Günü",
+				"point4": "<b>Kapsamlı Donanım ve Yazılım Desteği</b>"
+			}
 		}
 	},
 	"security": {
@@ -4520,832 +5389,12 @@
 		"updateSnapshotTooltip": "Tüm donanım ve yazılım bileşenlerinin anlık görüntüsünü en son bilgilerle güncelleyin",
 		"replaceBaselineTooltip": "Seçili bileşenlerin temel sürümünü mevcut anlık görüntü bilgileriyle güncelleyin"
 	},
-	"smartPerformance": {
-		"title": "Smart Performance",
-		"back": "GERİ",
-		"performanceandSecurityCheckTitle": "Performans ve Güvenlik Kontrolü",
-		"performanceandSecurityCheckSubTitle": "Bilgisayarınızdaki performans ve güvenlik sorunlarını teşhis edip çözelim",
-		"scanButton": "ÜCRETSİZ BİLGİSAYAR TARAMASI",
-		"section1Heading": "Bilgisayar performansınızı nasıl değerlendirirsiniz?",
-		"section1Description": "Bilgisayarınız yavaş mı çalışıyor? Uygulamaların yanıt vermesi çok mu uzun sürüyor? Windows hataları mı var? Kötü amaçlı yazılımdan mı endişeleniyorsunuz? Soruna neyin neden olduğunu teşhis edelim ve düzeltelim.",
-		"critical": "KRİTİK",
-		"allisWell": "HER ŞEY YOLUNDA",
-		"zero": 0,
-		"one": 1,
-		"two": 2,
-		"three": 3,
-		"four": 4,
-		"five": 5,
-		"six": 6,
-		"seven": 7,
-		"eight": 8,
-		"nine": 9,
-		"ten": 10,
-		"tuneUP": "Bilgisayarınıza ayarlama yapılması gerekiyor",
-		"section2Heading": "Birinci Sınıf Bilgisayar Performansı. Her zaman",
-		"section2Description": "Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak bilgisayarınızı 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
-		"runningWell": "Bilgisayar iyi çalışıyor",
-		"auto": "Otomatik",
-		"manual": "El ile",
-		"am": "AM",
-		"pm": "PM",
-		"scanNow": "ŞİMDİ TARA",
-		"signUpAndFix": "Kaydol ve düzelt",
-		"cancel": "İptal",
-		"scanning": "Taranıyor",
-		"fixIt": "Şimdi düzelt",
-		"optimizeIt": "İyileştir",
-		"maintainIt": "Bakımını yap",
-		"noteFindings": "Bilgisayarınızın ayrıntılı analizine dayalı olarak bulgularımıza ulaştık.",
-		"noteNavigateTab": "Daha fazla bilgi edinmek için sekmelerde gezinin:",
-		"scannedAreas": "Taranan alanlar",
-		"lastFix": "Son düzeltme",
-		"fixResult": "Düzeltme sonucu",
-		"checkPreviousResults": "Önceki sonuçları denetle",
-		"tunePCPerformance": {
-			"title": "Bi̇lgi̇sayar Performansini Ayarlayin",
-			"heading": "Bilgisayarınıza biraz daha ilgi gösterin",
-			"description": "En iyi bilgisayara bile düzenli aralıklarla ayarlama yapılması gerekir. Güçlü uygulamamızla bir ayar yapılmasını sağlayın ve daha fazlasını yapın.",
-			"tabSet1": {
-				"tab1": "Birikmiş İstenmeyen Dosyalar",
-				"tab2": "Kullanılabilirlik Sorunları",
-				"tab3": "Windows Ayarları",
-				"tab4": "Sistem Hataları",
-				"tab5": "Kayıt Defteri Hataları"
-			},
-			"tabSet2": {
-				"tab1Heading": "KOLAY",
-				"tab1Description": "Teknolojiyle ilgili gereksiz bilgilerle kafanızı karıştırmıyoruz",
-				"tab2Heading": "HIZLI",
-				"tab2Description": "5 dakikadan kısa bir sürede 100 puanlık bir kontrol yapın",
-				"tab3Heading": "GÜVENLİ",
-				"tab3Description": "Scareware yazılımı olmadan, en iyi uygulamalar oluşturulmuştur"
-			},
-			"summaryTitle": "Bilgisayar Performansını Ayarlayın"
-		},
-		"boostInternetPerformance": {
-			"title": "İNTERNET PERFORMANSINI ARTIRIN",
-			"extraTitle": "İnternet Performansi",
-			"heading": "İnternetinizi hızlandırın",
-			"description": "Birçok kişi için yavaş Wi-Fi veya Wi-Fi olmaması şebekenin dışında yaşamak gibidir. En iyi performans için internet, Wi-Fi ve tarayıcı ayarlarınızı yapılandıralım.",
-			"tabSet1": {
-				"tab1": "İstenmeyen elektronik dosyalar",
-				"tab2": "Ağ Ayarları",
-				"tab3": "Tarayıcı Ayarları",
-				"tab4": "Tarayıcı Güvenliği",
-				"tab5": "Wi-Fi Performansı"
-			},
-			"tabSet2": {
-				"tab1Heading": "TARAYICI SORUNLARI",
-				"tab1Description": "Tüm popüler web tarayıcılarınızı yapılandırır ve düzeltiriz.",
-				"tab2Heading": "BAĞLANTI HATALARI",
-				"tab2Description": "Bağlantı sorunlarınızı teşhis edebilir ve onarabiliriz.",
-				"tab3Heading": "YAVAŞ İNTERNET",
-				"tab3Description": "Maksimum performans elde etmenize yardımcı olacağız."
-			},
-			"summaryTitle": "İnternet Performansı"
-		},
-		"malwareSecurity": {
-			"title": "KÖTÜ AMAÇLI YAZILIM VE GÜVENLİK",
-			"heading": "Bilgisayarınıza ihtiyaç duyduğu ekstra bakımı sağlayın",
-			"description": "Kötü amaçlı yazılımlar bilgisayarın çökmesine, verilerin bozulmasına ve performansın düşmesine neden olabilir. Kötü amaçlı yazılımları kaldırın ve daha fazlasını yapın.",
-			"tabSet1": {
-				"tab1": "Kötü amaçlı yazılım taraması",
-				"tab2": "Sıfır gün bulaşmaları",
-				"tab3": "Hatalı programlar",
-				"tab4": "Can sıkıcı reklam yazılımı",
-				"tab5": "Güvenlik ayarları"
-			},
-			"tabSet2": {
-				"tab1Heading": "SIFIR GÜN VİRÜSÜ",
-				"tab1Description": "En yeni kötü amaçlı yazılım bulaşmalarını bile kaldırıyoruz",
-				"tab2Heading": "CASUS YAZILIMI KALDIRMA",
-				"tab2Description": "İstenmeyen türden olabilecek tüm programları kaldırıyoruz",
-				"tab3Heading": "HAFİF VE HIZLI",
-				"tab3Description": "Tarama genellikle 5-10 dakika sürer"
-			},
-			"summaryTitle": "Kötü Amaçlı Yazılım ve Güvenlik"
-		},
-		"proactiveAutomated": {
-			"title": "PROAKTİF VE OTOMATİK",
-			"heading": "Sorunları, sizi etkilemeden önce çözme gücüne sahip olun!",
-			"description": "Smart Performance, sürekli olarak bilgisayar performansını etkileyen yüzlerce sorunu arar. Sorunları proaktif şekilde düzelterek size gönül rahatlığı sağlarız.",
-			"tabSet1": {
-				"tab1": "Tarama Planla",
-				"tab2": "İsteğe bağlı tarama",
-				"tab3": "Otomatik çözünürlük",
-				"tab4": "Etkili",
-				"tab5": "7/24 Koruma"
-			},
-			"tabSet2": {
-				"tab1Heading": "KOLAY",
-				"tab1Description": "Teknolojiyle ilgili gereksiz bilgilerle kafanızı karıştırmıyoruz",
-				"tab2Heading": "HIZLI",
-				"tab2Description": "5 dakikadan kısa bir sürede 100 puanlık bir kontrol yapın",
-				"tab3Heading": "GÜVENLİ",
-				"tab3Description": "Scareware yazılımı olmadan, en iyi uygulamalar oluşturulmuştur"
-			}
-		},
-		"noScanResults": "Tarama işlemini başlatmak için lütfen TARA VE DÜZELT düğmesine tıklayın.",
-		"startScan": "<b>Taramayı başlatmaya hazır mısınız?</b> Bilgisayarınızdaki performans ve güvenlik sorunlarını teşhis edelim.",
-		"subscriptionDetails": {
-			"title": "Abonelik Ayrıntıları",
-			"description": "Lenovo Smart Performance Hizmetine abonesiniz. Bu süre boyunca, bilgisayarınızın korunmasını ve sorunsuz çalışmasını sağlamak için tüm özellikler tamamen kullanılabilir.",
-			"learnMore": "Ek bilgi",
-			"startDate": "Başlangıç tarihi",
-			"endDate": "Bitiş tarihi",
-			"status": "Durum",
-			"activeStatus": "ETKİN",
-			"inactiveStatus": "ETKİN DEĞİL",
-			"manageSubscription": "ABONELİĞİ YÖNET",
-			"titlebeta": "Lenovo Beta Programı",
-			"manageSubscriptionBeta": "TAM ÖZELLİĞİ ETKİNLEŞTİR",
-			"descriptionbeta": "Lenovo, Temmuz 2020'ye kadar Smart Performance özelliğini denemek için pilot program sunuyor.",
-			"descriptionbeta1": "İsterseniz katılıp tam özelliği deneyebilirsiniz.",
-			"descriptionNonSubscriber": "Lenovo Smart Performance Hizmetine abone değilsiniz. Yalnızca bilgisayarınızı tarayabilirsiniz. Bilgisayarınızı korumanın ve sorunsuz çalışmanın tüm avantajlarından yararlanmak için şimdi abone olun.",
-			"processStatus": "İŞLENİYOR",
-			"descriptionExpired": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. Cihazınızın tam olarak korunmasına devam etmek için “Aboneliği Yönet” bağlantısını tıklayarak aboneliğinizi yenileyebilirsiniz.",
-			"expiredStatus": "SÜRESİ DOLDU",
-			"expiredNote": "Aboneliğinizin sona ermesine kalan süre:",
-			"day": "gün",
-			"days": "gün",
-			"weeks": "hafta",
-			"week": "bir hafta",
-			"month": "ay",
-			"today": "bugün",
-			"next": "gelecek"
-		},
-		"scanSettings": {
-			"title": "Tarama ayarları planlayın",
-			"description": "Taramayı etkinleştirin veya devre dışı bırakın ve tarama planlamasını ayarlayın",
-			"enableScan": "Taramayı Etkinleştir",
-			"changeScanTitle": "Tarama planını değiştirin",
-			"changeScanDescription": "İhtiyacınız olduğunda çalıştırmak için tarama planlamasını düzenleyin.",
-			"frequency": "Hız",
-			"txtDate": "Tarih",
-			"txtDay": "Gün",
-			"txtTime": "Saat",
-			"txtSave": "kaydet",
-			"txtCancel": "iptal",
-			"scanFrequencyWeek": "Haftada bir",
-			"scanFrequencyEveryWeek": "Her iki haftada bir",
-			"scanFrequencyMonth": "Her ay",
-			"mon": "Pazartesi",
-			"tue": "Salı",
-			"wed": "Çarşamba",
-			"thu": "Perşembe",
-			"fri": "Cuma",
-			"sat": "Cumartesi",
-			"sun": "Pazar",
-			"am": "AM",
-			"pm": "PM",
-			"tooltipText": "Bu geçiş etkinleştirildiğinde, sistem performansı ve güvenlik taraması ayarlanan tarih ve saatte otomatik olarak başlatılır."
-		},
-		"scanningPage": {
-			"title": "Performans ve güvenlik kontrolü",
-			"description": "Sisteminizi olası sorunlar ve tehditler için tararken lütfen bekleyin.",
-			"scanningSystem": "Tarama sistemi",
-			"complete": "tamamla",
-			"cancelScan": {
-				"button": "TARAMAYI İPTAL ET",
-				"title": "Tarama iptal edilsin mi?",
-				"description": "Geçerli ekrandan çıkarsanız tarama iptal edilir ve Ana Sayfaya geri dönersiniz. Ancak, taramayı istediğiniz zaman tekrar çalıştırabilirsiniz.",
-				"yesButton": "EVET, İPTAL EDİN",
-				"noButton": "HAYIR, TARAMAYA DEVAM ET",
-				"cancelMayTakeSomeTime": "Lütfen bekleyin, sisteminize bağlı olarak iptal işlemi biraz zaman alabilir.",
-				"cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?"
-			},
-			"waiting": "tarama bekleni̇yor",
-			"completed": "tamamlandi",
-			"nowScanningDetail": {
-				"cardTitle": "ŞİMDİ AYRINTILI OLARAK TARANIYOR",
-				"current": "MEVCUT: ",
-				"upNext": "SONRAKİ: ",
-				"tunePCDesc": "Bilgisayar performansınızı artıralım. Sektördeki en iyi uygulamaları kullanarak güvenle yapıyoruz. Aboneler için avantajlar arasında daha düşük bilgisayar başlatma süresi, gelişmiş performans, gelişmiş kararlılık ve uygulamaların daha hızlı başlatılması yer alır.",
-				"boostDesc": "Tarama deneyiminizi geliştirmeye yardımcı olalım. Ağ ve erişim sorunlarını düzeltelim. Aboneler için avantajlar arasında internet bağlantısını iyileştirme, yükleme / indirme hızlarında artış ve interneti daha güvenli hale getirme sayılabilir.",
-				"malwareDesc": "Bilgisayarınızı, isteğe bağlı olarak hızlı bir şekilde güven altına almaya yardımcı olalım. Bunu casus yazılım, kötü amaçlı yazılım ve reklam yazılımlarını kaldırarak yaparız. Ayrıca sıfır güne yakın bulaşmaları da gideririz. Aboneler için avantajlar arasında veri güvenliği ve optimum sistem performansı yer alır.",
-				"proactiveDesc": "Periyodik olarak bilgisayarınızın ayarlarını yapalım ve sorunlarını giderelim. Bilgisayarınızı ayarlı ve kapsam dahilinde tutmak için proaktif ve otomatik koruma sağlarız. Her zaman",
-				"tunePCScanningItems": {
-					"accumulatedJunk": {
-						"itema1": "85 konumda istenmeyen dosyaları arayın",
-						"itema2": "Gerekli olmayan sistem günlük dosyaları",
-						"itema3": "Gereksiz uygulama kalıntıları",
-						"itema4": "Disk alanını tıkayan geçici dosyalar",
-						"itema5": "Çok uzun zaman önce sildiğiniz dosyalar",
-						"itema6": "Eski hatalar ve uyarılar"
-					},
-					"usabilityIssues": {
-						"itemb1": "Düzinelerce kullanılabilirlik sorununu ele alın",
-						"itemb2": "Harici cihazların bağlantısını kontrol edin",
-						"itemb3": "Windows güncellemelerini her zaman güncel tutma",
-						"itemb4": "Uygulamalar en iyi şekilde oluşturuluyor ve görünüyor mu?",
-						"itemb5": "İşlem gücü kullanımını analiz etme",
-						"itemb6": "Dosyaların kolayca bulunmasına yardımcı olun"
-					},
-					"windowsSettings": {
-						"itemc1": "Düzinelerce Windows işletim sistemi ayarını teşhis edin",
-						"itemc2": "Windows'unuzda her şeyin yolunda olduğundan emin olun",
-						"itemc3": "Temel hizmetlerin çalıştığından emin olun",
-						"itemc4": "Bağlantı ayarlarının durumunu kontrol edin",
-						"itemc5": "Ağda dosya paylaşma yeteneğini kontrol etme",
-						"itemc6": "Biyometrik ve erişim ayarlarını kontrol edin"
-					},
-					"systemErrors": {
-						"itemd1": "Temel hizmetlerin çalıştığından emin olun",
-						"itemd2": "Daha yüksek performans için hizmetler seçin",
-						"itemd3": "Yazılım çakışması hatalarını arayın",
-						"itemd4": "Windows hata yönetimini optimize edin",
-						"itemd5": "Uygulama başlatma hatalarını kontrol edin ve düzeltin",
-						"itemd6": "Sistem hata raporlarını yapılandırın"
-					},
-					"registryErrors": {
-						"iteme1": "Windows kayıt defterini derinlemesine kontrol edin",
-						"iteme2": "Geçersiz Windows hizmetlerini tarama",
-						"iteme3": "Bozuk kayıt defteri girdilerini bulma",
-						"iteme4": "Yararsız dosya uzantılarını arayın",
-						"iteme5": "Yüklü uygulamaların bozuk girişlerini arayın",
-						"iteme6": "Gereksiz, kalan girişleri arayın"
-					}
-				},
-				"boostScanningItems": {
-					"networkSettings": {
-						"itema1": "Ağ ve internet ayarlarını teşhis edin",
-						"itema2": "Ağ yapılandırma ayarlarını doğrulayın",
-						"itema3": "Kullanılabilir ağ ayarlarını doğrulayın",
-						"itema4": "Web sitelerini daha hızlı yüklenecek şekilde yapılandırın",
-						"itema5": "Sayfa oluşturma hatalarını arayın",
-						"itema6": "Bağlantı hizmetleri iyi çalışıyor mu?"
-					},
-					"browserSettings": {
-						"itemb1": "Daha iyi tarama deneyimini etkinleştirin",
-						"itemb2": "Daha hızlı web sitesi oluşturmak için ayarları yapılandırın",
-						"itemb3": "Tarayıcı güvenlik hizmetlerinin iyi olduğundan emin olun",
-						"itemb4": "Web sayfalarının düzgün bir şekilde oluşturulduğundan emin olun",
-						"itemb5": "Daha hızlı indirme işlemleri için ayarları kontrol edin",
-						"itemb6": "İzinleri ve erişim kontrolünü kontrol edin"
-					},
-					"browserSecurity": {
-						"itemc1": "Güvenlik hizmetlerinin çalıştığından emin olun",
-						"itemc2": "Tarayıcı güvenlik özelliklerini yapılandırın",
-						"itemc3": "Ağ hizmetlerinin iyi çalışıp çalışmadığını kontrol edin",
-						"itemc4": "Protokol ayarlarını yapılandırın",
-						"itemc5": "Tarayıcı içerik ayarlarının doğru olduğunu onaylayın",
-						"itemc6": "Tarayıcı eklentilerini ve uzantılarını doğrulayın"
-					},
-					"wifiPerformance": {
-						"itemd1": "Wi-Fi deneyimi ayarlarını optimize edin",
-						"itemd2": "Ev ağınızın güvenli olduğundan emin olun",
-						"itemd3": "Wi-Fi hizmet ayarlarını kontrol edin",
-						"itemd4": "Güvenli ağ paylaşım ayarları",
-						"itemd5": "Wi-Fi güvenlik standartlarını kontrol edin",
-						"itemd6": "Wi-Fi kanallarının çakışmamasını sağlayın"
-					},
-					"eJunk": {
-						"iteme1": "Tarayıcılardan gelen dağınıklığı ortadan kaldırın",
-						"iteme2": "Kalan istenmeyen elektronik dosyaları arayın",
-						"iteme3": "Eski internet dosyalarını arayın",
-						"iteme4": "İstenmeyen web önbelleğini temizleyin",
-						"iteme5": "Tanımlama bilgilerini temizleyin",
-						"iteme6": "Tarayıcı kalıntılarını kaldırın"
-					}
-				},
-				"malwareScanningItems": {
-					"malwareScan": {
-						"itema1": "Ortak yükleme noktalarını tarayın",
-						"itema2": "Kritik konumlarda tehdit olup olmadığını kontrol edin",
-						"itema3": "Virüs, casus yazılım ve kötü amaçlı yazılım olup olmadığını kontrol edin",
-						"itema4": "50'den fazla dosya türünü tarayın",
-						"itema5": "Kötü amaçlı yazılım kalıntılarını tarayın",
-						"itema6": "Bulut iyileştirme motorundan yararlanın"
-					},
-					"zerodayInfections": {
-						"itemb1": "Sıfır gün virüsü arayın",
-						"itemb2": "En yeni, teşhis edilmemiş kötü amaçlı yazılımları arayın",
-						"itemb3": "Bulut tabanlı iyileştirme ile tarama",
-						"itemb4": "Davranışsal izleme yapın",
-						"itemb5": "Birleştirilmiş motorla dosya tarayın",
-						"itemb6": "En son tanımlara karşı tarayın"
-					},
-					"securitySettings": {
-						"itemc1": "Windows güncellemelerini her zaman güncel tutun",
-						"itemc2": "Windows güvenlik duvarı hizmetinin iyi olduğundan emin olun",
-						"itemc3": "Tarayıcı ayarlarını güvende tutun",
-						"itemc4": "Temel güvenlik hizmetlerini kontrol edin",
-						"itemc5": "Kullanıcı erişim ayarlarını yapılandırın",
-						"itemc6": "Kimlik doğrulama hizmetlerini doğrulayın"
-					},
-					"errantPrograms": {
-						"itemd1": "Hatalı uygulamaları arayın",
-						"itemd2": "İstenmeyen türden olabilecek uygulamaları arayın",
-						"itemd3": "Etkin olmayan ve gizli uygulamaları algılayın",
-						"itemd4": "Uygulamaları kötü niyetli davranışlar açısından doğrulayın",
-						"itemd5": "Saygınlık faktörüne göre uygulamaları kontrol edin",
-						"itemd6": "Kayıt defterindeki hatalı programları kontrol edin"
-					},
-					"annoyingAdware": {
-						"iteme1": "Tarayıcı reklam yazılımlarını arayın",
-						"iteme2": "Tarayıcı açılır ayarlarını gözden geçirin",
-						"iteme3": "Tarayıcı yeniden yönlendirme tehditlerini ortadan kaldırın",
-						"iteme4": "Reklam yazılımı kalıntılarını kontrol edin",
-						"iteme5": "Tarayıcı deneyimi ayarlarını optimize edin",
-						"iteme6": "bulut iyileştirme motorunda doğrulama"
-					}
-				}
-			},
-			"confirmationTitle": "Lenovo Ödeme İşleme",
-			"confirmationNote": "Ödemeyi tamamlamak için Lenovo Ödeme Web Sitesine yönlendirileceksiniz. Ödeme yapıldıktan sonra, ödeme sonucunu almak için “Abonelik Ayrıntısı” altındaki “yenile” düğmesine basabilirsiniz.",
-			"confirmationBtn": "İlerle",
-			"refreshButton": "Durumu Yenile"
-		},
-		"scanCompletePage": {
-			"title": "Sistem taraması tamamlandı",
-			"description": "İşte bulduklarımız: {{machineFamilyName}}",
-			"scanRates": "Taramamıza göre bilgisayarınızın değerlendirmesi: ",
-			"summary": "Özet",
-			"foundIssues": "Tarama sonucunda {{issueCount}} sorun buldu",
-			"summaryDetails": "Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
-			"expiredSummaryDetails": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. “Tara ve Düzelt” özelliğini sürdürmek istiyorsanız lütfen aboneliğinizi yenilemek için aşağıdaki “yenile ve düzelt” düğmesine basın.",
-			"signupRepairButton": "KAYDOLUN ve HEMEN ONARIN",
-			"renewAndFix": "Yenile ve Düzelt",
-			"backToHome": "Ana Sayfaya Dön",
-			"monthlyPricing": "<b>Ayda {{monthlyPrice}}'dan az.</b> Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez <a  href=\"#\">Daha fazla bilgi edinin</a>",
-			"issueCount": "{{individualIssueCount}} SORUNLAR",
-			"issues": "Sorunlar",
-			"tuneIssueCount": "{{tune}}",
-			"boostIssueCount": "{{boost}}",
-			"secureIssueCount": "{{secure}}",
-			"scannedAreas": "TARANAN ALANLAR",
-			"summaryPurchaseTip": "Yıllık planı hemen satın alın ve bu sorunların her hafta otomatik olarak düzeltilmesini sağlayın.",
-			"tunePCTooltip": "Genel sistem performansını artırın, bilgisayar başlatma süresini kısaltın ve uygulama yükleme sürelerini iyileştirin.",
-			"boostTooltip": "Ağ performansını, tarama deneyimini ve bağlantıyı iyileştirin.",
-			"malwareTooltip": "Güvenliği artırın, kötü amaçlı yazılımları ve bulaşmaları kaldırın ve sistem kararlılığını sağlayın.",
-			"recommendedAction": {
-				"title": "Öneri̇len Eylem",
-				"description": "Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez",
-				"yearlyPricing": "{{yearlyPrice}} / Yıl",
-				"monthlyPricing": "AYDA {{monthlyPrice}}'DAN AZ.",
-				"longerTerm": "Daha uzun vadede mi? Daha fazla tasarruf mu?",
-				"newDescription": "Kaydolduktan sonra bu sorunları sizin için her hafta otomatik olarak düzeltiriz.",
-				"signupButton": "KAYDOL"
-			},
-			"tunepc": {
-				"accumulatedjunkscannedareas": {
-					"area1": "85 konumda istenmeyen dosyalar tarandı",
-					"area2": "Gerekli olmayan sistem günlük dosyaları",
-					"area3": "Gereksiz uygulama kalıntıları",
-					"area4": "Disk alanını tıkayan geçici dosyalar",
-					"area5": "Çok uzun zaman önce sildiğiniz dosyalar",
-					"area6": "Eski hatalar ve uyarılar"
-				},
-				"registryerrorsscannedareas": {
-					"area1": "Windows kayıt defterinin derinlemesine denetimi tamamlandı",
-					"area2": "Geçersiz Windows hizmetleri tarandı",
-					"area3": "Bozuk kayıt defteri girdileri denetlendi",
-					"area4": "Yararsız dosya uzantıları tarandı",
-					"area5": "Yüklü uygulamaların bozuk girişleri arandı",
-					"area6": "Gereksiz, kalan girişler denetlendi"
-				},
-				"windowssettingsscannedareas": {
-					"area1": "Düzinelerce Windows işletim sistemi ayarı teşhis edildi",
-					"area2": "Windows'unuzda her şeyin yolunda olduğu denetlendi",
-					"area3": "Temel hizmetlerin çalıştığı onaylandı",
-					"area4": "Bağlantı ayarlarının durumu kontrol edildi",
-					"area5": "Ağda dosya paylaşma yeteneği kontrol edildi",
-					"area6": "Biyometrik ve erişim ayarları kontrol edildi"
-				},
-				"usabilityissuesscannedareas": {
-					"area1": "Kullanılabilirlik sorunları kontrol edildi",
-					"area2": "Harici cihazların bağlantısı kontrol edildi",
-					"area3": "Windows güncellemeleri durumu kontrol edildi",
-					"area4": "Uygulama oluşturma ayarı doğrulandı",
-					"area5": "İşlem gücü kullanımı analiz edildi",
-					"area6": "Dosyaların kolayca bulunmasına yardımcı olun"
-				},
-				"systemerrorsscannedareas": {
-					"area1": "Temel hizmetlerin çalıştığı denetlendi",
-					"area2": "Daha yüksek performans için hizmetleri arayın",
-					"area3": "Yazılım çakışması hatalarını arayın",
-					"area4": "Windows hata yönetimi analiz edildi",
-					"area5": "Uygulama başlatma hataları tarandı",
-					"area6": "Sistem hata raporları yapılandırması denetlendi"
-				}
-			},
-			"internetperformance": {
-				"ejunkscannedareas": {
-					"area1": "Tarayıcılardan gelen dağınıklık belirlendi",
-					"area2": "Kalan istenmeyen elektronik dosyalar arandı",
-					"area3": "Eski internet dosyaları tarandı",
-					"area4": "İstenmeyen web önbelleği arandı",
-					"area5": "Temizleme için tanımlama bilgileri denetlendi",
-					"area6": "Tarayıcı kalıntıları tarandı"
-				},
-				"browsersecurityscannedareas": {
-					"area1": "Güvenlik hizmetlerinin çalıştığı denetlendi",
-					"area2": "Tarayıcı güvenlik özellikleri denetlendi",
-					"area3": "Ağ hizmetleri doğrulandı",
-					"area4": "Protokol ayarlarını yapılandırın",
-					"area5": "Tarayıcı içerik ayarları denetlendi",
-					"area6": "Tarayıcı eklentileri ve uzantıları tarandı"
-				},
-				"networksettingsscannedareas": {
-					"area1": "Ağ ve internet ayarlarını teşhis edildi",
-					"area2": "Ağ yapılandırma ayarları teşhis edildi",
-					"area3": "Bağlı ağ ayarları doğrulandı",
-					"area4": "Daha hızlı web sitesi oluşturma ayarları teşhis edildi",
-					"area5": "Sayfa oluşturma hataları tarandı",
-					"area6": "Tüm bağlantı hizmetleri tarandı"
-				},
-				"browsersettingsscannedareas": {
-					"area1": "Daha iyi tarama deneyimini etkinleştirin",
-					"area2": "Daha hızlı web sitesi oluşturma ayarları teşhis edildi",
-					"area3": "Tarayıcı güvenlik hizmetleri doğrulandı",
-					"area4": "Web sayfalarının düzgün bir şekilde oluşturulduğu denetlendi",
-					"area5": "Daha hızlı indirme işlemleri için ayarlar tarandı",
-					"area6": "İzinler ve erişim kontrolü analiz edildi"
-				},
-				"wifiperformancescannedareas": {
-					"area1": "Wi-Fi deneyimi ayarları doğrulandı",
-					"area2": "Güvenli ev ağı doğrulandı",
-					"area3": "Wi-Fi hizmet ayarları tarandı",
-					"area4": "Güvenli ağ paylaşım ayarları doğrulandı",
-					"area5": "Wi-Fi güvenlik standartları doğrulandı",
-					"area6": "Wi-Fi kanallarının çakışmadığı analiz edildi"
-				}
-			},
-			"malwaresecurity": {
-				"malwarescanscannedareas": {
-					"area1": "Ortak yükleme noktaları tarandı",
-					"area2": "Kritik konumlarda tehdit olup olmadığı tarandı",
-					"area3": "Virüs, casus yazılım ve kötü amaçlı yazılım olup olmadığı tarandı",
-					"area4": "Tehditler için 50'den fazla dosya türü tarandı",
-					"area5": "Kötü amaçlı yazılım kalıntıları denetlendi",
-					"area6": "Bulut iyileştirme motoru doğrulandı"
-				},
-				"errantprogramsscannedareas": {
-					"area1": "Hatalı uygulamaları arayın",
-					"area2": "İstenmeyen türden olabilecek uygulamalar incelendi",
-					"area3": "Etkin olmayan ve gizli uygulamalar arandı",
-					"area4": "Kötü amaçlı uygulamalar için tarandı",
-					"area5": "Saygınlık faktörüne göre uygulamalar kontrol edildi",
-					"area6": "Kayıt defterindeki hatalı programlar kontrol edildi"
-				},
-				"zerodayinfectionsscannedareas": {
-					"area1": "Sıfır gün virüsü için tarandı",
-					"area2": "En yeni, teşhis edilmemiş kötü amaçlı yazılımlar arandı",
-					"area3": "Bulut tabanlı iyileştirme ile doğrulandı",
-					"area4": "Davranışsal izleme gerçekleştirildi",
-					"area5": "Birleştirilmiş motorla dosyalar doğrulandı",
-					"area6": "Güncellenen tanımlar tarandı"
-				},
-				"securitysettingsscannedareas": {
-					"area1": "Windows güncellemelerinin güncel olduğu doğrulandı",
-					"area2": "Windows güvenlik duvarı hizmeti doğrulandı",
-					"area3": "Güvenli tarayıcı ayarları kontrol edildi",
-					"area4": "Temel güvenlik hizmetleri teşhis edildi",
-					"area5": "Kullanıcı erişim ayarları doğrulandı",
-					"area6": "Kimlik doğrulama hizmetleri doğrulandı"
-				},
-				"annoyingadwarescannedareas": {
-					"area1": "Tarayıcı reklam yazılımları tarandı",
-					"area2": "Tarayıcı açılır ayarlarını doğrulayın",
-					"area3": "Tarayıcı yeniden yönlendirme tehditleri tarandı",
-					"area4": "Reklam yazılımı kalıntıları kontrol edildi",
-					"area5": "Tarayıcı deneyimi ayarları doğrulandı",
-					"area6": "Bulut iyileştirme motoruyla doğrulandı"
-				}
-			},
-			"subscriber": {
-				"tunepc": {
-					"accumulatedjunkscannedareas": {
-						"area1": "85 konumda istenmeyen dosyalar temizlendi",
-						"area2": "Gerekli olmayan sistem günlük dosyaları temizlendi",
-						"area3": "Uygulama kalıntıları silindi",
-						"area4": "Disk alanını boşaltmak için geçici dosyalar kaldırıldı",
-						"area5": "Çok uzun zaman önce sildiğiniz dosyalar kaldırıldı",
-						"area6": "Hatalar ve uyarılar silindi"
-					},
-					"registryerrorsscannedareas": {
-						"area1": "Windows kayıt defterinin derinlemesine denetimi tamamlandı",
-						"area2": "Geçersiz Windows hizmetleri düzeltildi",
-						"area3": "Bozuk kayıt defteri girdileri kaldırıldı",
-						"area4": "Eski dosya uzantılarını silindi",
-						"area5": "Yüklü uygulamaların bozuk girişleri temizlendi",
-						"area6": "İstenmeyen kalan girişler temizlendi"
-					},
-					"windowssettingsscannedareas": {
-						"area1": "Windows ayarları doğrulandı",
-						"area2": "Tüm Windows hizmetleri optimize edildi",
-						"area3": "Temel Windows hizmetleri değiştirildi",
-						"area4": "Temel Windows hizmetleri değiştirildi",
-						"area5": "Ağda dosya paylaşma yeteneği doğrulandı",
-						"area6": "Biyometrik ve erişim ayarları doğrulandı"
-					},
-					"usabilityissuesscannedareas": {
-						"area1": "Kullanılabilirlik sorunları düzeltildi",
-						"area2": "Harici cihazların bağlantısı doğrulandı",
-						"area3": "Windows güncellemelerinin her zaman güncel olduğu doğrulandı",
-						"area4": "Uygulamaların en iyi şekilde oluşturulduğu ve göründüğü onaylandı",
-						"area5": "Güç kullanımını işlemek için ayarlar değiştirildi",
-						"area6": "Dosyaları kolayca bulmaya yardımcı olmak için ayarlar değiştirildi"
-					},
-					"systemerrorsscannedareas": {
-						"area1": "Temel hizmetlerin çalıştığı denetlendi",
-						"area2": "Daha yüksek performans için hizmetler değiştirildi",
-						"area3": "Yazılım çakışması hataları düzeltildi",
-						"area4": "Windows hata yönetimini optimize edildi",
-						"area5": "Uygulama başlatma hatalarını kontrol edildi ve düzeltildi",
-						"area6": "Sistem hata raporları yapılandırıldı"
-					}
-				},
-				"internetperformance": {
-					"ejunkscannedareas": {
-						"area1": "4 tarayıcıdan karmaşa kaldırıldı",
-						"area2": "Kalan istenmeyen elektronik dosyalar temizlendi",
-						"area3": "Eski internet dosyaları silindi",
-						"area4": "İstenmeyen web önbelleğini temizlendi",
-						"area5": "Tanımlama Bilgileri Temizlendi",
-						"area6": "Tüm tarayıcı kalıntıları temizlendi"
-					},
-					"browsersecurityscannedareas": {
-						"area1": "Güvenlik hizmetlerinin çalıştığından emin olundu",
-						"area2": "Tarayıcı güvenlik özellikleri yapılandırıldı",
-						"area3": "Ağ hizmetleri kontrol edildi ve sabitlendi",
-						"area4": "Protokol ayarları yapılandırıldı",
-						"area5": "Tarayıcı içerik ayarlarının doğru olduğu onaylandı",
-						"area6": "Tarayıcı eklentileri ve uzantıları tarandı"
-					},
-					"networksettingsscannedareas": {
-						"area1": "Ağ ve internet ayarları düzeltildi",
-						"area2": "Ağ yapılandırma ayarları kontrol edildi",
-						"area3": "Bağlı ağ ayarları değiştirildi",
-						"area4": "Daha hızlı web sitesi oluşturma ayarları teşhis edildi",
-						"area5": "Sayfa oluşturma hataları düzeltildi",
-						"area6": "Tüm bağlantı hizmetleri tarandı"
-					},
-					"browsersettingsscannedareas": {
-						"area1": "Daha iyi tarama deneyimi için ayarlar değiştirildi",
-						"area2": "Daha hızlı web sitesi oluşturma ayarları doğrulandı",
-						"area3": "Tarayıcı güvenlik hizmetlerinin iyi olduğundan emin olundu",
-						"area4": "Web sayfalarının düzgün yüklenmesi için ayarlar değiştirildi",
-						"area5": "Daha hızlı indirme işlemleri için ayarlar düzeltildi",
-						"area6": "İzinler ve erişim kontrolü ayarları düzeltildi"
-					},
-					"wifiperformancescannedareas": {
-						"area1": "Wi-Fi deneyimi ayarları değiştirildi",
-						"area2": "Güvenli ev ağı ayarları doğrulandı",
-						"area3": "Wi-Fi hizmet ayarları düzeltildi",
-						"area4": "Güvenli ağ paylaşım ayarları değiştirildi",
-						"area5": "Wi-Fi güvenlik standartları doğrulandı",
-						"area6": "Wi-Fi kanalları doğrulandı"
-					}
-				},
-				"malwaresecurity": {
-					"malwarescanscannedareas": {
-						"area1": "Yaygın yükleme noktalarında tehditler kontrol edildi ve ortadan kaldırıldı",
-						"area2": "Kritik konumlardaki tehditler kontrol edildi ve ortadan kaldırıldı",
-						"area3": "Bilgisayardaki tehditler kaldırıldı",
-						"area4": "Tehditler için 50'den fazla dosya türü doğrulandı",
-						"area5": "Kötü amaçlı yazılım kalıntıları temizlendi",
-						"area6": "Bulut iyileştirme motoru doğrulandı"
-					},
-					"errantprogramsscannedareas": {
-						"area1": "Yüklü tüm uygulamalar doğrulandı",
-						"area2": "İstenmeyen türden olabilecek uygulamalar doğrulandı",
-						"area3": "Etkin olmayan ve gizli uygulamalar temizlendi",
-						"area4": "Kötü amaçlı ve hatalı uygulamalar kaldırıldı",
-						"area5": "Saygınlık faktörüne göre uygulamalar doğrulandı",
-						"area6": "Hatalı programlar için kayıt defteri denetimi tamamlandı"
-					},
-					"zerodayinfectionsscannedareas": {
-						"area1": "Sıfır gün virüsü için analiz edildi",
-						"area2": "Bilgisayardaki kötü amaçlı yazılımlar kaldırıldı",
-						"area3": "Bulut iyileştirme motoru doğrulandı",
-						"area4": "Uygulamaların davranışsal izlemesi tamamlandı",
-						"area5": "Birleştirilmiş motora göre onaylandı",
-						"area6": "En son tanımlara göre doğrulandı"
-					},
-					"securitysettingsscannedareas": {
-						"area1": "Windows güncelleme ayarları optimize edildi",
-						"area2": "Windows güvenlik duvarı hizmeti ayarlandı",
-						"area3": "Tarayıcı ayarlarının güvenliği sağlandı",
-						"area4": "Temel güvenlik hizmetleri teşhis edildi",
-						"area5": "Kullanıcı erişim ayarları optimize edildi",
-						"area6": "Kimlik doğrulama hizmetleri değiştirildi"
-					},
-					"annoyingadwarescannedareas": {
-						"area1": "Tarayıcı reklam yazılımı kaldırıldı",
-						"area2": "Tarayıcı açılır ayarları yapıldı",
-						"area3": "Tarayıcı yeniden yönlendirme tehditleri teşhis edildi",
-						"area4": "Reklam yazılımı kalıntıları temizlendi",
-						"area5": "Tarayıcı deneyimi ayarlarını optimize edildi",
-						"area6": "Bulut iyileştirme motoru doğrulandı"
-					}
-				}
-			},
-			"Diskspace": "Kurtarılan Disk Alanı:",
-			"Performanceimprovements": "Performans İyileştirmeleri:",
-			"Securityimprovements": "Güvenlik İyileştirmeleri:",
-			"Onceaweek": "Haftada bir"
-		},
-		"subscriberScanHomePage": {
-			"title": "Her şey yolunda: ",
-			"titleScanCanceled": "Son tarama iptal edildiği için değerlendirme 0 oldu. Lütfen \"ANA SAYFAYA DÖN\" öğesini tıklatıp yeniden tarayın.",
-			"serialNumber": "Seri numarası: ",
-			"subTitle": "Lenovo Smart Performance Hizmetine abonesiniz",
-			"description": "Bilgisayarınızı sık sık bilgisayar performansı, internet performansı ve kötü amaçlı yazılım sorunları için proaktif olarak tarayıp sorunları düzeltiriz. Yeterince koruma altındasınız. Şimdi tara düğmesine tıklayarak istek üzerine performans kontrolü de başlatabilirsiniz.",
-			"scanNow": "TARA VE DÜZELT",
-			"backToHome": "Ana Sayfaya Dön",
-			"returnto": "PANOYA GERİ DÖN",
-			"mostRecent": "EN SON TARAMA:",
-			"nextScheduled": "SONRAKİ PLANLANMIŞ TARAMA:",
-			"successTitle": "Bilgisayarınız ayarlandı!",
-			"successDescription": "Smart Performance, bilgisayarınızın sorunsuz çalışması için <b>{{issueCount}} sorun</b> çözdü. Tarama özetine ve raporuna aşağıdan ulaşabilirsiniz.",
-			"scanSummary": {
-				"title": "Tarama özeti:",
-				"description": "Bilgisayarınızı sürekli olarak ayarlıyoruz",
-				"tune": "Ayarla",
-				"tuneSummary": "Kurtarılan disk alanı",
-				"boost": "Artır",
-				"boostSummary": "Performansı iyileştirmek için düzeltmeler",
-				"secure": "Güvenli",
-				"secureSummary": "Güvenliği iyileştirmek için düzeltmeler",
-				"annual": "Yıllık",
-				"quarterly": "Üç aylık",
-				"custom": "Özel",
-				"txtFrom": "Gönderen",
-				"txtTo": "Kime",
-				"txtGo": "Git",
-				"summaryCaption": "kurtarılan alan",
-				"fixes": "Düzeltmeler",
-				"txtClr": "Temizle"
-			},
-			"lastScanResults": {
-				"title": "Son 5 tarama sonucu:",
-				"scanDate": "Tarama tarihi",
-				"results": "Sonuçlar",
-				"status": "Durum"
-			}
-		},
-		"feedbackContainer": {
-			"title": "Bize geri bildirimde bulunun",
-			"subtitle": "Smart Performance hakkındaki düşüncelerinizi bizimle paylaşın",
-			"buttonText": "geri bildirim gönder",
-			"questions": {
-				"q1": "1. Tarama özelliğini kullanmak ne kadar zor veya kolaydı?",
-				"q2": "2. Tarama sonuçlarını anlamak ne kadar zor veya kolaydı?",
-				"q3": "3. Sisteminizin performansını artırmak amacıyla Smart Performance aboneliği için ödeme yapma olasılığınız nedir?",
-				"q4": "4. Genel olarak Smart Performance özelliğinden ne kadar memnunsunuz?",
-				"q5": "1. Smart Performance'ın sisteminize yaptığı düzeltmeleri anlamak ne kadar zor veya kolaydı?",
-				"q6": "2. Sisteminizde herhangi bir kötü amaçlı yazılım buldunuz mu?",
-				"q7": "3. Smart Performance özelliği için ödeme yapmaya devam etme olasılığınız nedir?",
-				"q8": "4. Genel olarak Smart Performance özelliğinden ne kadar memnunsunuz?"
-			},
-			"rating": {
-				"r1": "Çok zor",
-				"r2": "Çok kolay",
-				"r3": "Çok zor",
-				"r4": "Çok kolay",
-				"r5": "Hiç olası değil",
-				"r6": "Büyük ihtimalle",
-				"r7": "Hiç memnun değilim",
-				"r8": "Oldukça memnunum",
-				"r9": "Çok zor",
-				"r10": "Çok kolay",
-				"r11": "Evt",
-				"r12": "Hayır",
-				"r13": "Hiç olası değil",
-				"r14": "Büyük ihtimalle",
-				"r15": "Hiç memnun değilim",
-				"r16": "Oldukça memnunum"
-			},
-			"commentTip": "Lütfen yorumlarınızı veya ek geri bildiriminizi aşağıya bırakın:",
-			"comments": "Lütfen yorumlarınızı buraya bırakın..."
-		}
-	},
-	"homeSecurity": {
-		"title": "Connected Home Security",
-		"notification": {
-			"recent": "Recent security notifications",
-			"notifications": "Notifications",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
-		},
-		"ecosystem": {
-			"ecosystemBlockTitle": "Protect your device ecosystem",
-			"thisDevice": "This device",
-			"allDevices": "All Devices",
-			"protected": "Protected",
-			"notProtected": "Not Protected",
-			"trialExpired": "Trial expired",
-			"upgrade": "upgrade",
-			"inEcosystem": "In Ecosystem",
-			"ecosystemEnable": "Ecosystem Enabled",
-			"inTrial": "In trial",
-			"addEcosystem": "Add to Ecosystem",
-			"enableEcosystem": "Enable Ecosystem",
-			"startTrial": "Start Trial",
-			"fullAccess": "Full Access",
-			"renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Your Ecosystem Security Overview",
-			"allDevices": "All Devices",
-			"myDevice": "My Device",
-			"thisComputer": "This computer",
-			"secure": "SECURE",
-			"needAttention": "NEEDS ATTENTION",
-			"manageAccount": "Manage account",
-			"devices": "Devices",
-			"seeProtectedDevices": "See protected devices",
-			"addDevice": "add device",
-			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-			"upgrade": "upgrade",
-			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
-			"inTrialDetail": "You are currently in your trial period.",
-			"trialExpiredDetail": "Your trial period has expired.",
-			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
-			"discountPrice": "For only $29.99 for one year",
-			"overviewTitle": "Overview",
-			"trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId": "Lenovo ID:",
-			"overviewTitleAdmin": "Overview of your Connected Home Security",
-			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-			"familyMembers": "Family members",
-			"places": "Places",
-			"personalDevices": "Personal devices",
-			"wifiNetworks": "Wi-fi networks",
-			"homeDevices": "Home devices",
-			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
-			"buyNow": "Buy Now",
-			"extendNow": "extend now",
-			"renewNow": "Renew Now",
-			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "<tag>Gizlilik Politikası</tag> ve <tag>Hizmet Koşulları</tag> hakkında daha fazla bilgi edinin"
-		},
-		"tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcomeTitle": "welcome to connected home security",
-			"welcomeSubTitle": "30 days of protection for free",
-			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-			"locationTitle": "Enable location permissions",
-			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
-			"allow": "Allow",
-			"notNow": "Not now"
-		},
-		"accountStatus": {
-			"title": "My Connected Home Security",
-			"startTrial": "Start Trial",
-			"manageAccount": "Manage Account",
-			"upgradeAccount": "Upgrade Account",
-			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-			"trialExpiredDetail1": "Your trial has expired.",
-			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"upgradedDetail1": "You account is active until {{expiredDate}}.",
-			"upgradedDetail2": "Your device ecosystem is currently being protected.",
-			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
-			"alreadyHaveAccount": "Already have an activation code?"
-		},
-		"card": {
-			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your own Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
-			"joinTitle": "Join your family's Connected Home Security",
-			"joinDescription": "Become a part of your family security group."
-		},
-		"modal": {
-			"countdownTitle": "Launching web browser",
-			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-			"goNow": "Go now",
-			"disconnectedTitle": "Disconnect from protection?",
-			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-			"disconnecting": "Disconnecting..."
-		}
-	},
-	"dir": "ltr",
-	"dirClass": "ltr",
 	"notification": {
 		"menu": {
 			"security": "Bunu biliyor muydunuz? Kurulu bir antivirüs yazılımınız olmasa bile, cihazınız için temel güvenlik koruması sağlamaya devam ediyoruz.",
 			"connectedHomeSecurity": "Evde ağ güvenliğinizle ilgili gerçek zamanlı izleme olanağı elde edin ve uyarılar alın. Akıllı cihazlarınızdan herhangi birinin güvenlik saldırısı ile karşı karşıya olup olmadığını bilen ilk kişi siz olursunuz.",
-			"hardwareScan": "Artık sistem donanımı bileşeninizin sağlık durumunu öğrenebilirsiniz."
+			"hardwareScan": "Artık sistem donanımı bileşeninizin sağlık durumunu öğrenebilirsiniz.",
+			"appSearch": "Bunu biliyor muydunuz? Burada cihazınız için geçerli özellikleri arayabilirsiniz."
 		}
 	},
 	"appsForYou": {
@@ -5413,7 +5462,43 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
+					"description": "AI meeting manager gerçek zamanlı çeviriyi, sözlü çeviriyi ve sesli dikteyi destekler. Ayrıca, videolar için altyazı oluşturabilir.",
+					"downloadNow": "ŞİMDİ İNDİR",
+					"download": "İNDİR",
+					"launch": "BAŞLAT",
+					"translation": {
+						"title": "Çeviri",
+						"description": "Herhangi bir toplantı yazılımından gerçekleştirilen çevrimiçi toplantıda konuşmaları gerçek zamanlı çevirin. Toplantı sırasında toplantı notlarına göz atabilir ve bunları daha sonra kaydedebilirsiniz. Ayrıca, Altyazı deneyimi de bulunur."
+					},
+					"voiceToText": {
+						"title": "Sesten Metne",
+						"description": "Doğal bir şekilde konuşun. Sesten Metne işlevi yazımı gerçekleştirecektir. E-posta veya belgeler yazın ya da en sevdiğiniz uygulamada sohbet edin. Sesten Metne siz konuşurken çeviri yapar ve sizin için notlar alır."
+					},
+					"modalPopUp": {
+						"heading": "Başlarken:",
+						"translation": {
+							"point1": "Windows bildirim alanında AI meeting manager simgesinin görüntülendiğinden emin olun.",
+							"point2": "Simgeye tıklayın ve Çevirmen ya da Altyazılar'ı seçin.",
+							"point3": "Kaynak dilinizi ve hedef dili seçin.",
+							"point4": "Gereksiniminize bağlı olarak ses girişini Hoparlör veya Mikrofon olacak şekilde ayarlayın.",
+							"point5": "Çeviriyi başlatmak için başlat düğmesine tıklayın."
+						},
+						"voiceToText": {
+							"point1": "Windows bildirim alanında AI meeting manager simgesinin görüntülendiğinden emin olun.",
+							"point2": "Metin yazmak istediğiniz uygulamayı açın.",
+							"point3": "AI meeting manager simgesine tıklayın ve Sesten Metne'yi seçin.",
+							"point4": "Gereksiniminize bağlı olarak dilleri seçin ve başlamak için mikrofon düğmesine tıklayın.",
+							"point5": "İmleci açtığınız uygulamaya yerleştirin ve konuşmaya başlayın."
+						},
+						"closeText": "kapat"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "Çevrimiçi toplantıyı daha verimli ve etkili hale getirin."
+					}
+				}
 			}
 		},
 		"creatorCentre": {
@@ -5432,11 +5517,18 @@
 			},
 			"easyRendering": {
 				"title": ""
-
 			},
 			"colorCalibration": {
-				"title": ""
-
+				"title": "Renk ayarı",
+				"appName": "X-rite uygulaması",
+				"summary": "Bilgisayarınızın ekran paneli, premium profesyonel özellikli Minolta kolorimetreler kullanılarak fabrikada ayarlanmıştır. Ayar verileri bulutta saklanır ve paneli fabrika ayarlarına sıfırlamak için indirilebilir. X-rite, renk uzaylarını yönetmek için önceden yüklenmiştir.<br>- Varsayılan (profilde depolanan yerel Gam, doğal parlaklık ancak ayarlanmış gri rampa ve ekran karakterizasyonu). <br>- Varsayılan profil, makineye varsayılan olarak yüklenir. Bu profil, başlangıçta Windows tarafından yüklenir. <br>- Ayarlanmadı (Renk yönetimi kapalı. Bu, varsayılan Lenovo Profilini kullanmak anlamına gelir.) <br>- sRGB (bilgisayar monitörleri) - Adobe RGB (CYMK olarak yazdırmayı planlayan grafik tasarımcıları için) <br>- BT.709 (HD video) <br>- DCI P3 (ABD'de yaygın olarak dijital film projeksiyonunda kullanılır)",
+				"screenshotTitle": "Ekran görüntüleri",
+				"cardTitle": "Profiller nasıl geri yüklenir?",
+				"cardSummary": "Sisteminizi yeniden yüklerseniz veya renk profilleriniz kaybolursa, profilleri buradan geri yükleyebilirsiniz:",
+				"learnMore": "Ek bilgi",
+				"restoreProfileDesc": "Lenovo, Lenovo Cloud'da yedek renk profilleri sağlar. Renk ayarı özelliğinin bilgisayarınızda çalıştığından emin olmak için şu durumlarda renk profillerini geri yüklemeniz veya yüklemeniz gerekebilir: Renk profillerinin kaybolması veya hasar görmesi durumunda renk profillerini geri yüklemenizi hatırlatan bir pencere görüntülenir. Görüntülenen pencerede Evet'e tıklayın. Renk profilleri otomatik olarak Lenovo Cloud'dan geri yüklenir. Bilgisayar ekranınız Lenovo yetkili garanti hizmet çözüm ortağı tarafından değiştirilirse, aşağıdakileri yapın:",
+				"restoreProfileStep1": "Gizli simgeleri göstermek için Windows bildirim alanındaki üçgen simgesine tıklayın. Ardından, açmak için X-rite uygulamasının simgesine tıklayın.",
+				"restoreProfileStep2": "Ayarlar> Profilleri geri yükle'ye tıklayın."
 			}
 		}
 	}

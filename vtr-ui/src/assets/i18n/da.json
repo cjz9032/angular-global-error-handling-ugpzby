@@ -812,10 +812,12 @@
 				"sub9": "Enhedssikkerhed"
 			},
 			"support": "Support",
+			"warrantySupport": "Garanti og support",
+			"contentLibrary": "Indholdsbibliotek",
+			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"
-			},
-			"homeSecurity": "Connected Home"
+			}
 		},
 		"securityAdvisor": {
 			"title": "Sikkerhedsvejledning",
@@ -1246,9 +1248,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"Aktiver GPU-overclocking i tilstanden Ekstrem ydeevne.",
-							"description1":"Vælg at overclocke clockfrekvensen for din GPU-hukommelse med 140 MHz, som er et \"stabilt\" og godt punkt. Ydeevnen og rammehastigheden for spil kan øges med 10-30 %.",
-					        "description2":"Bemærk: Forbedringerne i ydeevne og rammehastighed kan variere afhængigt af forskellige spil/apps og andre faktorer. Strømforbruget, computerens overfladetemperatur og blæserstøj kan også øges tilsvarende. Lenovo garanterer ikke stabilitet og bedre ydeevne, når overclocking er aktiveret."
+							"checkboxtext": "Aktiver GPU-overclocking i tilstanden Ekstrem ydeevne.",
+							"description1": "Vælg at overclocke clockfrekvensen for din GPU-hukommelse med 140 MHz, som er et \"stabilt\" og godt punkt. Ydeevnen og rammehastigheden for spil kan øges med 10-30 %.",
+							"description2": "Bemærk: Forbedringerne i ydeevne og rammehastighed kan variere afhængigt af forskellige spil/apps og andre faktorer. Strømforbruget, computerens overfladetemperatur og blæserstøj kan også øges tilsvarende. Lenovo garanterer ikke stabilitet og bedre ydeevne, når overclocking er aktiveret."
 						},
 						"autoTransition": {
 							"description": {
@@ -2550,6 +2552,873 @@
 			"categories": "Kategorier",
 			"categoriesDesc": "Find nyttige oplysninger i vores artikler.",
 			"seeArticles": "SE ARTIKLER"
+		}
+	},
+	"smartPerformance": {
+		"title": "Smart Performance",
+		"back": "TILBAGE",
+		"performanceandSecurityCheckTitle": "Kontrol af ydeevne og sikkerhed",
+		"performanceandSecurityCheckSubTitle": "Lad os identificere og løse problemer i forbindelse med ydeevne og sikkerhed i din computer",
+		"auto": "Auto",
+		"manual": "Manuelt",
+		"performanceOfflineText": "Scanningsfunktionen vil være tilgængelig, når computeren har forbindelse til internettet.",
+		"scanButton": "GRATIS PC-SCANNING",
+		"section1Heading": "Hvordan vil du bedømme din computers ydeevne?",
+		"section1Description": "Arbejder din computer langsomt? Er programmerne for lang tid om at svare? Har du Windows-fejl? Har du problemer med malware? Lad os identificere problemet og løse det.",
+		"critical": "VIGTIGT",
+		"allisWell": "ALT ER GODT",
+		"zero": 0,
+		"one": 1,
+		"two": 2,
+		"three": 3,
+		"four": 4,
+		"five": 5,
+		"six": 6,
+		"seven": 7,
+		"eight": 8,
+		"nine": 9,
+		"ten": 10,
+		"tuneUP": "Din computer skal opdateres",
+		"runningWell": "Computeren kører godt",
+		"section2Heading": "Computerens ydeevne er helt i top. Altid",
+		"section2Description": "Vores software kan proaktivt scanne din computer døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
+		"am": "AM",
+		"pm": "PM",
+		"scanNow": "Scan nu",
+		"signUpAndFix": "Tilmeld dig, og løs det",
+		"cancel": "Annuller",
+		"scanning": "Søger",
+		"fixIt": "Løs problemet nu",
+		"optimizeIt": "Optimer",
+		"maintainIt": "Vedligehold",
+		"noteFindings": "Vores resultater er baseret på en detaljeret analyse af computeren.",
+		"noteNavigateTab": "Naviger til fanerne for at få flere oplysninger:",
+		"scannedAreas": "Scannede områder",
+		"lastFix": "Seneste rettelse",
+		"fixResult": "Resultat af rettelse",
+		"checkPreviousResults": "Tjek tidligere resultater",
+		"tunePCPerformance": {
+			"title": "Optimer Computerens Ydeevne",
+			"heading": "Forkæl din computer lidt mere",
+			"description": "Selv den bedste computer vil kunne drage fordel af periodiske opdateringer. Få din computer optimeret med vores stærke app, og få mere fra hånden.",
+			"tabSet1": {
+				"tab1": "Akkumulerede junkfiler",
+				"tab2": "Problemer med brugbarhed",
+				"tab3": "Windows-indstillinger",
+				"tab4": "Systemfejl",
+				"tab5": "Registreringsfejl"
+			},
+			"tabSet2": {
+				"tab1Heading": "DET ER NEMT",
+				"tab1Description": "Vi ønsker ikke at forvirre dig med mambo jambo-teknologisprog",
+				"tab2Heading": "DET ER HURTIGT",
+				"tab2Description": "Få et 100-punkts tjek på mindre end 5 minutter",
+				"tab3Heading": "DET ER SIKKERT",
+				"tab3Description": "Ingen scareware, alt er oprettet med best practice-løsninger"
+			},
+			"summaryTitle": "Optimer computerens ydeevne"
+		},
+		"boostInternetPerformance": {
+			"title": "ØG YDEEVNEN PÅ INTERNETTET",
+			"extraTitle": "Ydeevnen På Internettet",
+			"heading": "Skub til internettet",
+			"description": "For mange mennesker er et langsomt eller slet intet Wi-Fi det samme som at være totalt isoleret. Lad os konfigurere dine Internet-, Wi-Fi- og browserindstillinger for at opnå optimal ydeevne.",
+			"tabSet1": {
+				"tab1": "E-junk",
+				"tab2": "Netværksindstillinger",
+				"tab3": "Browserindstillinger",
+				"tab4": "Browsersikkerhed",
+				"tab5": "Wi-Fi-ydeevne"
+			},
+			"tabSet2": {
+				"tab1Heading": "PROBLEMER MED BROWSEREN",
+				"tab1Description": "Vi konfigurerer og reparerer alle dine populære webbrowsere.",
+				"tab2Heading": "FORBINDELSESFEJL",
+				"tab2Description": "Vi kan diagnosticere og reparere dine forbindelsesproblemer.",
+				"tab3Heading": "LANGSOMT INTERNET",
+				"tab3Description": "Vi kan hjælpe dig med at få optimal ydeevne."
+			},
+			"summaryTitle": "Ydeevnen på internettet"
+		},
+		"malwareSecurity": {
+			"title": "Malware Og Sikkerhed",
+			"heading": "Giv computeren den ekstra omsorg, den har brug for",
+			"description": "Malware kan føre til et computernedbrud, svækkelse af data og forringet ydeevne. Fjern malware, og få mange andre ting ordnet.",
+			"tabSet1": {
+				"tab1": "Malwarescanning",
+				"tab2": "Zero day-infektioner",
+				"tab3": "Errant-programmer",
+				"tab4": "Irriterende adware",
+				"tab5": "Sikkerhedsindstillinger"
+			},
+			"tabSet2": {
+				"tab1Heading": "ZERO DAY-VIRUS",
+				"tab1Description": "Vi fjerner selv de nyeste malwareinfektioner",
+				"tab2Heading": "FJERNELSE AF SPYWARE",
+				"tab2Description": "Vi fjerner alle potentielt uønskede programmer",
+				"tab3Heading": "LET OG HURTIGT",
+				"tab3Description": "Scanning tager typisk 5-10 minutter"
+			},
+			"summaryTitle": "Malware og sikkerhed"
+		},
+		"proactiveAutomated": {
+			"title": "PROAKTIVT OG AUTOMATISERET",
+			"heading": "Få ordnet problemerne, før de påvirker dig.",
+			"description": "Smart Performance søger konstant efter hundredvis af problemer, der kan påvirke din computers ydeevne. Vi reparerer proaktivt, så du har ro i sindet.",
+			"tabSet1": {
+				"tab1": "Planlæg søgning",
+				"tab2": "On demand-scanning",
+				"tab3": "Automatiseret løsning",
+				"tab4": "Det er effektivt",
+				"tab5": "Beskyttelse døgnet rundt"
+			},
+			"tabSet2": {
+				"tab1Heading": "DET ER NEMT",
+				"tab1Description": "Vi ønsker ikke at forvirre dig med mambo jambo-teknologisprog",
+				"tab2Heading": "DET ER HURTIGT",
+				"tab2Description": "Få et 100-punkts tjek på mindre end 5 minutter",
+				"tab3Heading": "DET ER SIKKERT",
+				"tab3Description": "Ingen scareware, alt er oprettet med best practice-løsninger"
+			}
+		},
+		"noScanResults": "Klik på knappen SCAN & FIX for at aktivere scanningsprocessen.",
+		"startScan": "<b>Er du klar til at starte scanningen?</b> Lad os identificere ydeevne og sikkerhed i din computer.",
+		"subscriptionDetails": {
+			"title": "Oplysninger om abonnement",
+			"description": "Du abonnerer på Lenovo Smart Performance-service. Med abonnement er alle funktioner tilgængelige, så din computer er beskyttet og kan fungerer problemfrit.",
+			"learnMore": "Læs mere her",
+			"startDate": "Startdato",
+			"endDate": "Slutdato",
+			"status": "Status",
+			"activeStatus": "AKTIV",
+			"inactiveStatus": "INAKTIV",
+			"manageSubscription": "ADMINISTRER ABONNEMENT",
+			"titlebeta": "Lenovo Betaprogram",
+			"manageSubscriptionBeta": "AKTIVER FULD FUNKTION",
+			"descriptionbeta": "Lenovo tilbyder et pilotprogram, hvor du kan afprøve Smart Performance-funktionen indtil juli 2020.",
+			"descriptionbeta1": "Du er velkommen til at deltage og teste den komplette funktion.",
+			"descriptionNonSubscriber": "Du abonnerer ikke på Lenovo Smart Performance-service. Du kan kun scanne din computer. Abonner nu for at få alle fordelene ved at holde computeren beskyttet og arbejde problemfrit.",
+			"processStatus": "BEHANDLING",
+			"descriptionExpired": "Dit abonnement er udløbet, og du kan i øjeblikket kun bruge scanningsfunktionen i Smart Performance. Du kan forny abonnementet ved at klikke på linket \"Administrer abonnement\" for at aktivere fuld beskyttelse for din enhed.",
+			"expiredStatus": "UDLØBET",
+			"expiredNote": "Dit abonnement udløber om",
+			"day": "dag",
+			"days": "dage",
+			"weeks": "uger",
+			"week": "en uge",
+			"month": "måned",
+			"today": "i dag",
+			"next": "næste"
+		},
+		"scanSettings": {
+			"title": "Planlæg scanningsindstillinger",
+			"description": "Aktivér eller deaktivér scanningen, og indstil scanningsplanen",
+			"enableScan": "Aktivér scanning",
+			"changeScanTitle": "Skift scanningsplan",
+			"changeScanDescription": "Rediger scanningsplanen, så den kører, når du har brug for det.",
+			"frequency": "Hyppighed",
+			"txtDate": "Dato",
+			"txtDay": "Dag",
+			"txtTime": "Klokkeslæt",
+			"txtSave": "gem",
+			"txtCancel": "annuller",
+			"scanFrequencyWeek": "Én gang om ugen",
+			"scanFrequencyEveryWeek": "Hver anden uge",
+			"scanFrequencyMonth": "Hver måned",
+			"mon": "Mandag",
+			"tue": "Tirsdag",
+			"wed": "Onsdag",
+			"thu": "Torsdag",
+			"fri": "Fredag",
+			"sat": "Lørdag",
+			"sun": "Søndag",
+			"am": "AM",
+			"pm": "PM",
+			"tooltipText": "Når du aktiverer denne funktion, startes systemets scanning af ydeevne og sikkerhed automatisk på angivet dato og klokkeslæt."
+		},
+		"scanningPage": {
+			"title": "Kontrol af ydeevne og sikkerhed",
+			"description": "Vent, mens vi scanner systemet for at finde mulige problemer og trusler.",
+			"scanningSystem": "Scanning af system",
+			"complete": "udført",
+			"cancelScan": {
+				"button": "ANNULLER SCANNING",
+				"title": "Annuller scanning?",
+				"description": "Hvis du forlader den aktuelle skærm, annulleres scanningen, og du vender tilbage til Start. Du kan imidlertid køre scanningen igen på et senere tidspunkt.",
+				"yesButton": "JA, ANNULLER",
+				"noButton": "NEJ, GENOPTAG SCANNING",
+				"cancelMayTakeSomeTime": "Vent venligst. Det kan tage noget tid at annullere afhængigt af dit system.",
+				"cancelTextPrompt": "Er du sikker på, at du vil annullere?"
+			},
+			"waiting": "venter på scanning",
+			"completed": "fuldført",
+			"nowScanningDetail": {
+				"cardTitle": "SCANNER DETALJER NU",
+				"current": "AKTUEL: ",
+				"upNext": "OP TIL NÆSTE: ",
+				"tunePCDesc": "Lad os hjælp med at forbedre computerens ydeevne. Vi gør det sikkert ved at bruge branchens bedste praksis. Fordelene ved abonnementet omfatter reduceret computerstarttid, forbedret ydeevne, forbedret stabilitet og hurtigere start af programmer.",
+				"boostDesc": "Vi hjælper med at forbedre din søgeoplevelse. Lad os løse netværks- og adgangsproblemer. Fordele for abonnenter omfatter forbedret internetforbindelse, forbedret up-/downloadhastigheder og større sikkerhed i forbindelse med internettet.",
+				"malwareDesc": "Lad os hjælpe dig med hurtig on demand-sikring af din computer. Vi fjerner spyware, malware og adware. Vi fjerner også de næsten zero day-infektioner. Fordele for abonnementer omfatter datasikkerhed og optimal systemydeevne.",
+				"proactiveDesc": "Lad os scanne computeren jævnligt og løse eventuelle problemer med proaktiv og automatiseret tilgang for at holde din computer justeret og dækket. Altid",
+				"tunePCScanningItems": {
+					"accumulatedJunk": {
+						"itema1": "Søg efter junk på 85 steder",
+						"itema2": "Unødvendige logfiler til systemet",
+						"itema3": "Unødvendige programrester",
+						"itema4": "Midlertidige filer, der reducerer pladsen på disken",
+						"itema5": "Filer, du har slettet for meget længe siden",
+						"itema6": "Forældede fejl og beskeder"
+					},
+					"usabilityIssues": {
+						"itemb1": "Overvej de mange forskellige udfordringer til brugbarhed",
+						"itemb2": "Kontrollér forbindelse til eksterne enheder",
+						"itemb3": "Holder Windows opdateret hele tiden",
+						"itemb4": "Betyder, at apps agerer og vises optimalt",
+						"itemb5": "Analyse af udnyttelse af processorkraft",
+						"itemb6": "Hjælp til hurtig søgning efter filer"
+					},
+					"windowsSettings": {
+						"itemc1": "Diagnosticer mange Windows OS-indstillinger",
+						"itemc2": "Sørg for, at alt fungerer fint sammen med Windows",
+						"itemc3": "Sørg for, at vigtige tjenester fungerer",
+						"itemc4": "Kontrollér sundhedstilstand for forbindelsesindstillinger",
+						"itemc5": "Kontrollér muligheden for at dele filer i netværk",
+						"itemc6": "Kontrollér biometriske og adgangsindstillinger"
+					},
+					"systemErrors": {
+						"itemd1": "Sørg for, at vigtige tjenester fungerer",
+						"itemd2": "Vælg tjenester for at opnå højere ydeevne",
+						"itemd3": "Søg efter konfliktfejl i software",
+						"itemd4": "Optimer administration af Windows-fejl",
+						"itemd5": "Kontroller, og reparer apps-fejl ved start",
+						"itemd6": "Konfigurer rapporter om systemfejl"
+					},
+					"registryErrors": {
+						"iteme1": "Deep-kontrol af Windows-registreringsdatabase",
+						"iteme2": "Scanning efter ugyldige Windows-tjenester",
+						"iteme3": "Søgning efter ødelagte poster i registreringsdatabasen",
+						"iteme4": "Søg efter unødvendige filtyper",
+						"iteme5": "Søg efter ødelagte poster i installerede apps",
+						"iteme6": "Søg efter tiloversblevne poster, der ikke kan bruges"
+					}
+				},
+				"boostScanningItems": {
+					"networkSettings": {
+						"itema1": "Diagnosticer netværks-og Internetindstillinger",
+						"itema2": "Kontrollér netværkskonfigurationsindstillinger",
+						"itema3": "Kontrollér tilgængelige netværksindstillinger",
+						"itema4": "Konfigurer for at indlæse websteder hurtigere",
+						"itema5": "Søg efter fejl i sidegengivelse",
+						"itema6": "Kører forbindelsestjenesten korrekt"
+					},
+					"browserSettings": {
+						"itemb1": "Aktivér bedre søgeoplevelse",
+						"itemb2": "Konfigurér indstillinger hurtigere til gengivelse af websteder",
+						"itemb3": "Kontrollér, at browserens sikkerhedstjenester er OK",
+						"itemb4": "Kontrollér, at websider bliver gengivet korrekt",
+						"itemb5": "Kontrollér indstillinger for hurtigere downloads",
+						"itemb6": "Kontrollér tilladelser og adgangskontrol"
+					},
+					"browserSecurity": {
+						"itemc1": "Sørg for, at sikkerhedstjenesterne kører",
+						"itemc2": "Konfigurér sikkerhedsfunktionerne i browseren",
+						"itemc3": "Kontrollér, at netværkstjenesterne kører godt",
+						"itemc4": "Konfigurér protokolindstillinger",
+						"itemc5": "Kontrollér, at indstillinger til browserens indhold er OK",
+						"itemc6": "Kontrollér browserens plugins og udvidelser"
+					},
+					"wifiPerformance": {
+						"itemd1": "Optimer indstillingerne til Wi-Fi-oplevelsen",
+						"itemd2": "Sørg for, at hjemmenetværket er sikkert",
+						"itemd3": "Kontrollér Wi-Fi-indstillinger til tjenester",
+						"itemd4": "Indstillinger til sikker netværksdeling",
+						"itemd5": "Kontrollér Wi-Fi-sikkerhedsstandarder",
+						"itemd6": "Kontrollér, at Wi-Fi-kanalerne ikke overlapper"
+					},
+					"eJunk": {
+						"iteme1": "Fjern rod fra browsere",
+						"iteme2": "Søg efter tiloversbleven e-junk",
+						"iteme3": "Søg efter forældede internetfiler",
+						"iteme4": "Slet uønsket web-cache",
+						"iteme5": "Slet cookies",
+						"iteme6": "Fjern programrester fra browser"
+					}
+				},
+				"malwareScanningItems": {
+					"malwareScan": {
+						"itema1": "Scan almindelige indlæsningspunkter",
+						"itema2": "Kontrollér kritiske placeringer for trusler",
+						"itema3": "Undersøg, om der er virus, spyware og malware",
+						"itema4": "Søg efter 50+ filtyper",
+						"itema5": "Scan efter malwarerester",
+						"itema6": "Indflydelse fra skyafhjælpningsprogrammet"
+					},
+					"zerodayInfections": {
+						"itemb1": "Søg efter zero day-virus",
+						"itemb2": "Søg efter nyeste, ikke-diagnosticeret malware",
+						"itemb3": "Scan med skybaseret afhjælpning",
+						"itemb4": "Udfør funktionsovervågning",
+						"itemb5": "Scan filer med samlet program",
+						"itemb6": "Scan i forhold til seneste definitioner"
+					},
+					"securitySettings": {
+						"itemc1": "Hold Windows-opdateringer ajour hele tiden",
+						"itemc2": "Kontrollér, at Windows Firewall-tjenesten er OK",
+						"itemc3": "Hold browserindstillinger sikre",
+						"itemc4": "Kontrollér vigtige sikkerhedstjenester",
+						"itemc5": "Konfigurer brugeradgangsindstillinger",
+						"itemc6": "Kontrollér godkendelsestjenester"
+					},
+					"errantPrograms": {
+						"itemd1": "Søg efter Errant-apps",
+						"itemd2": "Søg efter potentielt uønskede apps",
+						"itemd3": "Registrer inaktive og skjulte apps",
+						"itemd4": "Kontrollér apps for skadelig adfærd",
+						"itemd5": "Kontrollér apps baseret på omdømmefaktor",
+						"itemd6": "Kontrollér Errant-programmer i registreringsdatabasen"
+					},
+					"annoyingAdware": {
+						"iteme1": "Søg efter browser-adware",
+						"iteme2": "Revider pop op-indstillinger i browseren",
+						"iteme3": "Fjern trusler om omdirigering i browser",
+						"iteme4": "Undersøg, om der er adware-rester",
+						"iteme5": "Optimer indstillinger til søgeoplevelsen",
+						"iteme6": "Kontrollér programmet til afhjælpning i skyen"
+					}
+				}
+			},
+			"confirmationTitle": "Lenovo-betalingsproces",
+			"confirmationNote": "Du bliver ført til Lenovos betalingswebsted for at udføre betalingen. Når betalingen er udført, kan du klikke på knappen \"Opdater\" under \"oplysninger om abonnement\" for at få betalingsresultatet.",
+			"confirmationBtn": "Fortsæt",
+			"refreshButton": "Opdater status"
+		},
+		"scanCompletePage": {
+			"title": "Systemscanning er fuldført",
+			"description": "Dette er fundet på din {{machineFamilyName}}",
+			"scanRates": "Vores scanning vurderer din computer til: ",
+			"summary": "Opsummering",
+			"foundIssues": "Vores scanning fandt {{issueCount}} problem(er)",
+			"summaryDetails": "Tilmeld dig nu for at løse problemerne og sørge for, at systemet fungerer problemfrit. Vores software kan proaktivt scanne disse områder i dit system døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
+			"expiredSummaryDetails": "Dit abonnement er udløbet, og du kan i øjeblikket kun bruge scanningsfunktionen i Smart Performance. Hvis du vil aktivere funktionen \"Scan og ret\" igen, skal du trykke på knappen \"Forny og ret\" nedenfor for at forny dit abonnement.",
+			"signupRepairButton": "TILMELD OG REPARER NU",
+			"renewAndFix": "Forny og ret",
+			"backToHome": "Tilbage til start",
+			"monthlyPricing": "<b>Mindre end {{monthlyPrice}} pr. måned.</b> Problemerne løses automatisk. Én gang i dag og hver uge herefter <a  href=\"#\">Få mere at vide</a>",
+			"issueCount": "{{individualIssueCount}} PROBLEMER",
+			"issues": "Problem(er)",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
+			"scannedAreas": "SCANNEDE OMRÅDER",
+			"summaryPurchaseTip": "Køb det årlige abonnement nu, så løses problemerne automatisk hver uge.",
+			"tunePCTooltip": "Optimer den generelle systemydeevne, reducer pc'ens starttid, og optimer indlæsningstider for programmer.",
+			"boostTooltip": "Optimer netværkets ydeevne, browseroplevelse og tilslutningsmuligheder.",
+			"malwareTooltip": "Optimer sikkerheden, fjern malware og infektioner, og gendan systemets stabilitet.",
+			"recommendedAction": {
+				"title": "Anbefalet Handling",
+				"description": "Problemerne løses automatisk. Én gang i dag og hver uge herefter",
+				"yearlyPricing": "{{yearlyPrice}} / år",
+				"monthlyPricing": "MINDRE END {{monthlyPrice}} PR. MÅNED.",
+				"longerTerm": "Længere tidsperiode? Endnu flere besparelser?",
+				"newDescription": "Efter tilmeldingen løser vi automatisk disse problemer for dig hver uge.",
+				"signupButton": "TILMELD"
+			},
+			"tunepc": {
+				"accumulatedjunkscannedareas": {
+					"area1": "Scannede efter junk på 85 placeringer",
+					"area2": "Unødvendige logfiler til systemet",
+					"area3": "Unødvendige programrester",
+					"area4": "Midlertidige filer, der reducerer pladsen på disken",
+					"area5": "Filer, du har slettet for meget længe siden",
+					"area6": "Forældede fejl og beskeder"
+				},
+				"registryerrorsscannedareas": {
+					"area1": "Deep-kontrol af Windows-registreringsdatabasen er fuldført",
+					"area2": "Scannede efter ugyldige Windows-tjenester",
+					"area3": "Kontrollerede, om der er ødelagte poster i registreringsdatabasen",
+					"area4": "Scannede efter filtyper, der ikke kan bruges",
+					"area5": "Søgte efter ødelagte poster i installerede apps",
+					"area6": "Søgte efter tiloversblevne poster, der ikke kan bruges"
+				},
+				"windowssettingsscannedareas": {
+					"area1": "Diagnosticerede mange Windows OS-indstillinger",
+					"area2": "Kontrollerede, at alt fungerer godt med Windows",
+					"area3": "Bekræftede, at vigtige tjenester fungerer",
+					"area4": "Kontrollerede sundhedstilstand for forbindelsesindstillinger",
+					"area5": "Kontrollerede muligheden for at dele filer i netværk",
+					"area6": "Kontrollerede biometriske og adgangsindstillinger"
+				},
+				"usabilityissuesscannedareas": {
+					"area1": "Kontrollerede for udfordringer ved brugbarhed",
+					"area2": "Kontrollerede forbindelse til eksterne enheder",
+					"area3": "Kontrollerede status for Windows-opdateringer",
+					"area4": "Bekræftet indstilling for gengivelse af apps",
+					"area5": "Analyserede udnyttelse af processorkraft",
+					"area6": "Hjælp til hurtig søgning efter filer"
+				},
+				"systemerrorsscannedareas": {
+					"area1": "Kontrollerede, at vigtige tjenester fungerer",
+					"area2": "Søg efter tjenester for at opnå højere ydeevne",
+					"area3": "Søg efter konfliktfejl i software",
+					"area4": "Analyserede administration af Windows-fejl",
+					"area5": "Scannede efter apps, der starter fejl",
+					"area6": "Kontrollerede konfiguration af systemfejlrapporter"
+				}
+			},
+			"internetperformance": {
+				"ejunkscannedareas": {
+					"area1": "Identificerede rod fra browsere",
+					"area2": "Søgte efter tiloversbleven e-junk",
+					"area3": "Scannede efter forældede internetfiler",
+					"area4": "Søgte efter uønsket web-cache",
+					"area5": "Kontrollerede cookies til godkendelse",
+					"area6": "Scannede restprodukter i browser"
+				},
+				"browsersecurityscannedareas": {
+					"area1": "Kontrollerede, at sikkerhedstjenesterne kører",
+					"area2": "Kontrollerede sikkerhedsfunktionerne i browseren",
+					"area3": "Bekræftede netværkstjenester",
+					"area4": "Konfigurér protokolindstillinger",
+					"area5": "Kontrollerede indstillinger for browserindhold",
+					"area6": "Scannede browserens plugins og udvidelser"
+				},
+				"networksettingsscannedareas": {
+					"area1": "Diagnosticerede netværks- og internetindstillinger",
+					"area2": "Diagnosticerede netværkskonfigurationsindstillinger",
+					"area3": "Bekræftede tilsluttede netværksindstillinger",
+					"area4": "Diagnosticerede indstillinger hurtigere til gengivelse af websteder",
+					"area5": "Scannede efter fejl i sidegengivelse",
+					"area6": "Scannede alle forbindelsestjenester"
+				},
+				"browsersettingsscannedareas": {
+					"area1": "Aktivér bedre søgeoplevelse",
+					"area2": "Diagnosticerede indstillinger hurtigere til gengivelse af websteder",
+					"area3": "Bekræftede sikkerhedstjenester i browser",
+					"area4": "Kontrollerede, om websider bliver gengivet korrekt",
+					"area5": "Scannede indstillinger til hurtigere downloads",
+					"area6": "Analyserede tilladelser og adgangskontrol"
+				},
+				"wifiperformancescannedareas": {
+					"area1": "Bekræftede indstillinger til Wi-Fi-oplevelsen",
+					"area2": "Bekræftede sikkert hjemmenetværk",
+					"area3": "Scannede Wi-Fi-indstillinger til tjenester",
+					"area4": "Bekræftede indstillinger til sikker netværksdeling",
+					"area5": "Bekræftede Wi-Fi-sikkerhedsstandarder",
+					"area6": "Analyserede, at Wi-Fi-kanalerne ikke overlapper"
+				}
+			},
+			"malwaresecurity": {
+				"malwarescanscannedareas": {
+					"area1": "Scannede almindelige indlæsningspunkter",
+					"area2": "Scannede kritiske placeringer for trusler",
+					"area3": "Scannede efter virus, spyware og malware",
+					"area4": "Scannede 50+ filtyper for trusler",
+					"area5": "Kontrollerede for malwarerester",
+					"area6": "Bekræftede programmet til skyafhjælpning"
+				},
+				"errantprogramsscannedareas": {
+					"area1": "Søg efter Errant-apps",
+					"area2": "Søgte efter potentielt uønskede apps",
+					"area3": "Søgte efter inaktive og skjulte apps",
+					"area4": "Scannede efter skadelige apps",
+					"area5": "Kontrollerede apps baseret på omdømmefaktor",
+					"area6": "Kontrollerede Errant-programmer i registreringsdatabasen"
+				},
+				"zerodayinfectionsscannedareas": {
+					"area1": "Scannede efter zero day-virus",
+					"area2": "Søgte efter nyeste, ikke-diagnosticeret malware",
+					"area3": "Bekræftet med skybaseret afhjælpning",
+					"area4": "Udførte funktionsovervågning",
+					"area5": "Bekræftede filer med samlet program",
+					"area6": "Scannede i forhold til opdaterede definitioner"
+				},
+				"securitysettingsscannedareas": {
+					"area1": "Bekræftede Windows-opdateringer er aktuelle",
+					"area2": "Bekræftede service til Windows Firewall",
+					"area3": "Kontrollerede for sikre browserindstillinger",
+					"area4": "Diagnosticerede vigtige sikkerhedstjenester",
+					"area5": "Bekræftede brugeradgangsindstillinger",
+					"area6": "Bekræftede godkendelsestjenester"
+				},
+				"annoyingadwarescannedareas": {
+					"area1": "Scannede efter browser-adware",
+					"area2": "Bekræft pop op-indstillinger i browser",
+					"area3": "Scannede trusler om omdirigering i browser",
+					"area4": "Kontrollerede, om der er adware-rester",
+					"area5": "Bekræftede indstillinger til browser-oplevelsen",
+					"area6": "Bekræftede programmet med skyafhjælpning"
+				}
+			},
+			"subscriber": {
+				"tunepc": {
+					"accumulatedjunkscannedareas": {
+						"area1": "Rensede for junk på 85 placeringer",
+						"area2": "Ryddede logfiler til systemet, der ikke er nødvendige",
+						"area3": "Slettede ansøgningsrester",
+						"area4": "Fjernede midlertidige filer for at frigøre diskplads",
+						"area5": "Eliminerede filer, du har slettet for længe siden",
+						"area6": "Ryddede for fejl og beskeder"
+					},
+					"registryerrorsscannedareas": {
+						"area1": "Deep-kontrol af Windows-registreringsdatabasen er fuldført",
+						"area2": "Løste ugyldige Windows-tjenester",
+						"area3": "Fjernede ødelagte poster i registreringsdatabasen",
+						"area4": "Slettede alle forældede filtypenavne",
+						"area5": "Fjernede ødelagte poster i installerede apps",
+						"area6": "Fjernede uønskede tiloversblevne poster"
+					},
+					"windowssettingsscannedareas": {
+						"area1": "Bekræftede Windows-indstillinger",
+						"area2": "Optimerede alle Windows-tjenester",
+						"area3": "Tilpassede grundlæggende Windows-tjenester",
+						"area4": "Tilpassede grundlæggende Windows-tjenester",
+						"area5": "Bekræftede muligheden for at dele filer i netværk",
+						"area6": "Bekræftede biometriske og adgangsindstillinger"
+					},
+					"usabilityissuesscannedareas": {
+						"area1": "Løste brugbare udfordringer",
+						"area2": "Bekræftede forbindelse til eksterne enheder",
+						"area3": "Sørgede for at være ajour med Windows-opdateringer",
+						"area4": "Bekræftede, at apps agerer og vises optimalt",
+						"area5": "Ændrede indstillinger, så du nemt kan finde filer",
+						"area6": "Ændrede indstillinger i Hjælp, så du nemt kan finde filer"
+					},
+					"systemerrorsscannedareas": {
+						"area1": "Kontrollerede, at vigtige tjenester fungerer",
+						"area2": "Tilpassede tjenester for at opnå højere ydeevne",
+						"area3": "Løste alle konfliktfejl i software",
+						"area4": "Optimerede administration af Windows-fejl",
+						"area5": "Kontrollerede, og reparerede apps-fejl ved start",
+						"area6": "Konfigurerede rapporter om systemfejl"
+					}
+				},
+				"internetperformance": {
+					"ejunkscannedareas": {
+						"area1": "Fjernede rod fra 4 browsere",
+						"area2": "Rensede efter tiloversbleven e-junk",
+						"area3": "Slettede forældede internetfiler",
+						"area4": "Slettede uønsket web-cache",
+						"area5": "Slettede cookies",
+						"area6": "Fjernede alle rester i browser"
+					},
+					"browsersecurityscannedareas": {
+						"area1": "Sørgede for, at sikkerhedstjenesterne kører",
+						"area2": "Konfigurerede sikkerhedsfunktionerne i browseren",
+						"area3": "Kontrollerede og løste netværkstjenester",
+						"area4": "Konfigurerede protokolindstillinger",
+						"area5": "Kontrollerede, at indstillinger for browserindhold er OK",
+						"area6": "Scannede browserens plugins og udvidelser"
+					},
+					"networksettingsscannedareas": {
+						"area1": "Løste netværks- og internetindstillinger",
+						"area2": "Kontrollerede netværkskonfigurationsindstillinger",
+						"area3": "Tilpassede tilsluttede netværksindstillinger",
+						"area4": "Diagnosticerede indstillinger hurtigere til gengivelse af websteder",
+						"area5": "Løste eventuelle sidegengivelsesfejl",
+						"area6": "Scannede alle forbindelsestjenester"
+					},
+					"browsersettingsscannedareas": {
+						"area1": "Tilpassede indstillinger til bedre søgeoplevelse",
+						"area2": "Kontrollerede indstillinger hurtigere til gengivelse af websteder",
+						"area3": "Sikrede, at browserens sikkerhedstjenester er OK",
+						"area4": "Ændrede indstillinger til korrekt indlæsning af websider",
+						"area5": "Løste indstillinger til hurtigere downloads",
+						"area6": "Løste indstillinger til tilladelser og adgangskontrol"
+					},
+					"wifiperformancescannedareas": {
+						"area1": "Tilpassede indstillinger til Wi-Fi-oplevelsen",
+						"area2": "Bekræftede indstillinger til sikkert hjemmenetværk",
+						"area3": "Løste Wi-Fi-indstillinger til tjenester",
+						"area4": "Tilpassede indstillinger til sikker netværksdeling",
+						"area5": "Bekræftede Wi-Fi-sikkerhedsstandarder",
+						"area6": "Validerede Wi-Fi-kanaler"
+					}
+				},
+				"malwaresecurity": {
+					"malwarescanscannedareas": {
+						"area1": "Kontrollerede og fjernede trusler på fælles indlæsningspunkter",
+						"area2": "Kontrollerede og fjernede trusler på kritiske placeringer",
+						"area3": "Fjernede trusler fra computeren",
+						"area4": "Validerede 50+ filtyper for trusler",
+						"area5": "Fjernede malwarerester",
+						"area6": "Bekræftede programmet til skyafhjælpning"
+					},
+					"errantprogramsscannedareas": {
+						"area1": "Bekræftede alle installerede apps",
+						"area2": "Bekræftede potentielt uønskede apps",
+						"area3": "Fjernede inaktive og skjulte apps",
+						"area4": "Fjernede alle skadelige og Errant-apps",
+						"area5": "Validerede apps baseret på omdømmefaktor",
+						"area6": "Fuldførte kontrol af registreringsdatabase for Errant-programmer"
+					},
+					"zerodayinfectionsscannedareas": {
+						"area1": "Analyserede efter zero day-virus",
+						"area2": "Fjernede al malware fra computeren",
+						"area3": "Validerede programmet til skyafhjælpning",
+						"area4": "Fuldførte funktionsovervågning af apps",
+						"area5": "Validerede i forhold til aggregeret program",
+						"area6": "Validerede i forhold til seneste definitioner"
+					},
+					"securitysettingsscannedareas": {
+						"area1": "Optimerede Windows Update-indstillinger",
+						"area2": "Opdaterede Windows Firewall-service",
+						"area3": "Sikrede browserindstillinger",
+						"area4": "Diagnosticerede vigtige sikkerhedstjenester",
+						"area5": "Optimerede brugeradgangsindstillinger",
+						"area6": "Tilpassede godkendelsestjenester"
+					},
+					"annoyingadwarescannedareas": {
+						"area1": "Fjernede browser-adware",
+						"area2": "Opdaterede pop op-indstillinger i browser",
+						"area3": "Diagnosticerede trusler om omdirigering i browser",
+						"area4": "Ryddede adware-rester",
+						"area5": "Optimerede indstillinger til browser-oplevelsen",
+						"area6": "Validerede programmet til skyafhjælpning"
+					}
+				}
+			},
+			"Diskspace": "Tilbageført diskplads:",
+			"Performanceimprovements": "Forbedringer af ydeevne:",
+			"Securityimprovements": "Sikkerhedsforbedringer:",
+			"Onceaweek": "Én gang om ugen"
+		},
+		"subscriberScanHomePage": {
+			"title": "Alt fungerer med ",
+			"titleScanCanceled": "Ratingen var 0, fordi den sidste scanning blev annulleret. Klik på \"TILBAGE TIL START\", og scan igen.",
+			"serialNumber": "Serienummer: ",
+			"subTitle": "Du abonnerer på Lenovo Smart Performance-service",
+			"description": "Vi scanner og reparerer ofte computeren proaktivt for computerens ydeevne, internetydeevne og malwareproblemer. Du er dækket i passende omfang. Du kan også starte kontrol af ydeevne efter behov ved at klikke på knappen Scan nu.",
+			"scanNow": "SCAN & FIX",
+			"backToHome": "Tilbage til start",
+			"returnto": "TILBAGE TIL DASHBOARD",
+			"mostRecent": "SENESTE SCANNING:",
+			"nextScheduled": "NÆSTE PLANLAGTE SCANNING:",
+			"successTitle": "Din computer er opdateret!",
+			"successDescription": "Smart Performance løste <b>{{issueCount}} problem(er)</b> for at få computeren til at fungere problemfrit kan du finde en scanningsoversigt og rapporten herunder.",
+			"scanSummary": {
+				"title": "Scanningsoversigt:",
+				"description": "Vi optimerer konstant computeren",
+				"tune": "Opdater",
+				"tuneSummary": "Tilbageført diskplads",
+				"boost": "Styrk",
+				"boostSummary": "Rettelser til forbedring af ydeevnen",
+				"secure": "Sikring",
+				"secureSummary": "Rettelser til forbedring af sikkerheden",
+				"annual": "Årligt",
+				"quarterly": "Kvartalsmæssigt",
+				"custom": "Brugerdefineret",
+				"txtFrom": "Fra",
+				"txtTo": "Til",
+				"txtGo": "Gå",
+				"summaryCaption": "tilbageført plads",
+				"fixes": "rettelse(r)",
+				"txtClr": "Ryd"
+			},
+			"lastScanResults": {
+				"title": "Resultat af seneste 5 scanninger:",
+				"scanDate": "Scanningsdato",
+				"results": "Resultater",
+				"status": "Status"
+			}
+		},
+		"feedbackContainer": {
+			"title": "Giv os feedback",
+			"subtitle": "Fortæl os, hvad du synes om Smart Performance",
+			"buttonText": "Send feedback",
+			"questions": {
+				"q1": "1. Hvor svært eller nemt var det at bruge scanningsfunktionen?",
+				"q2": "2. Hvor svært eller nemt var det at forstå scanningsresultaterne?",
+				"q3": "3. Hvor sandsynligt er det, at du betaler for et Smart Performance-abonnement for at forbedre systemets ydeevne?",
+				"q4": "4. Hvor tilfreds er du overordnet med Smart Performance-funktionen?",
+				"q5": "1. Hvor svært eller nemt var det at forstå de rettelser, Smart Performance har foretaget i dit system?",
+				"q6": "2. Fandt vi malware i dit system?",
+				"q7": "3. Hvor sandsynligt er det, at du vil fortsætte med at betale for Smart Performance-funktionen?",
+				"q8": "4. Hvor tilfreds er du overordnet med Smart Performance-funktionen?"
+			},
+			"rating": {
+				"r1": "Meget svært",
+				"r2": "Meget nemt",
+				"r3": "Meget svært",
+				"r4": "Meget nemt",
+				"r5": "Slet ikke sandsynligt",
+				"r6": "Meget sandsynligt",
+				"r7": "Slet ikke tilfreds",
+				"r8": "Meget tilfreds",
+				"r9": "Meget svært",
+				"r10": "Meget nemt",
+				"r11": "Ja",
+				"r12": "Nej",
+				"r13": "Slet ikke sandsynligt",
+				"r14": "Meget sandsynligt",
+				"r15": "Slet ikke tilfreds",
+				"r16": "Meget tilfreds"
+			},
+			"commentTip": "Angiv eventuelle andre kommentarer eller yderligere feedback nedenfor:",
+			"comments": "Skriv dine kommentarer her..."
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial",
+			"trialTitle": "Trial subscription",
+			"subscriptionTitle": "Paid subscription",
+			"inTrialDetail": "You are currently in your trial period.",
+			"trialExpiredDetail": "Your trial period has expired.",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
+			"discountPrice": "For only $29.99 for one year",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId": "Lenovo ID:",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your own Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join your family's Connected Home Security",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+			"goNow": "Go now",
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
+		}
+	},
+	"dir": "ltr",
+	"dirClass": "ltr",
+	"warranty": {
+		"warrantyStatusText": "Garantistatus: ",
+		"inWarranty": "I garanti",
+		"outOfWarranty": "Uden for garanti",
+		"viewDetails": "Vis oplysninger",
+		"currentService": "Aktuel service- og supportstatus",
+		"monthsRemaining": "{{remainingMonths}} måneder tilbage",
+		"oneMonthRemaining": "1 måned tilbage",
+		"lessThanOneMonth": "< 1 måned tilbage",
+		"makeSureNeedCoverage": "Sørg for, at du har den dækning, du har brug for",
+		"recommendsUpgradingText": "Lenovo anbefaler, at du opgraderer dit serviceniveau",
+		"exploreOptions": "Se dine muligheder",
+		"start": "Start",
+		"end": "Slut",
+		"nMos": "{{monthValue}} md.",
+		"today": "I dag",
+		"upgradeLevels": {
+			"title": "Lenovo Services-garanti og -opgraderinger beskytter dig mod hardwarefejl.",
+			"subTitle": "Dækning i tilfælde af pludselig opstået skade beskytter dig mod tab, spild af væske, revner i skærmen og andre skader på grund af uheld.",
+			"recommended": "Anbefalede",
+			"learnMore": "Er du interesseret i at få mere at vide?",
+			"good": {
+				"warrantyCodeText": "Indleveringssupport",
+				"levelText": "god",
+				"point1": "Dele og arbejdsløn",
+				"point2": "Grundlæggende telefonsupport til hardwareproblemer",
+				"point3": "Reparationer udføres med forsendelse til Lenovo Indlevering"
+			},
+			"better": {
+				"warrantyCodeText": "Support på stedet",
+				"levelText": "bedre",
+				"point1": "Dele og arbejdsløn",
+				"point2": "Grundlæggende telefonsupport til hardwareproblemer",
+				"point3": "<b>Hurtigere</b> - reparationer udføres på din adresse"
+			},
+			"best": {
+				"warrantyCodeText": "Premier",
+				"levelText": "bedst",
+				"point1": "<b>Prioriterede</b> dele og arbejdsløn",
+				"point2": "<b>Avanceret</b> telefonsupport fra Lenovo-teknikere",
+				"point3": "<b>Hurtigere</b> – reparationer udføres på din adresse, næste arbejdsdag",
+				"point4": "<b>Omfattende hardware- og softwaresupport</b>"
+			}
 		}
 	},
 	"security": {
@@ -4520,832 +5389,12 @@
 		"updateSnapshotTooltip": "Opdater øjebliksbilledet af alle hardware- og softwarekomponenter med de nyeste oplysninger",
 		"replaceBaselineTooltip": "Opdater baseline for de valgte komponenter med de aktuelle oplysninger fra øjebliksbilledet"
 	},
-	"smartPerformance": {
-		"title": "Smart Performance",
-		"back": "TILBAGE",
-		"performanceandSecurityCheckTitle": "Kontrol af ydeevne og sikkerhed",
-		"performanceandSecurityCheckSubTitle": "Lad os identificere og løse problemer i forbindelse med ydeevne og sikkerhed i din computer",
-		"scanButton": "GRATIS PC-SCANNING",
-		"section1Heading": "Hvordan vil du bedømme din computers ydeevne?",
-		"section1Description": "Arbejder din computer langsomt? Er programmerne for lang tid om at svare? Har du Windows-fejl? Har du problemer med malware? Lad os identificere problemet og løse det.",
-		"critical": "VIGTIGT",
-		"allisWell": "ALT ER GODT",
-		"zero": 0,
-		"one": 1,
-		"two": 2,
-		"three": 3,
-		"four": 4,
-		"five": 5,
-		"six": 6,
-		"seven": 7,
-		"eight": 8,
-		"nine": 9,
-		"ten": 10,
-		"tuneUP": "Din computer skal opdateres",
-		"section2Heading": "Computerens ydeevne er helt i top. Altid",
-		"section2Description": "Vores software kan proaktivt scanne din computer døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
-		"runningWell": "Computeren kører godt",
-		"auto": "Auto",
-		"manual": "Manuelt",
-		"am": "AM",
-		"pm": "PM",
-		"scanNow": "Scan nu",
-		"signUpAndFix": "Tilmeld dig, og løs det",
-		"cancel": "Annuller",
-		"scanning": "Søger",
-		"fixIt": "Løs problemet nu",
-		"optimizeIt": "Optimer",
-		"maintainIt": "Vedligehold",
-		"noteFindings": "Vores resultater er baseret på en detaljeret analyse af computeren.",
-		"noteNavigateTab": "Naviger til fanerne for at få flere oplysninger:",
-		"scannedAreas": "Scannede områder",
-		"lastFix": "Seneste rettelse",
-		"fixResult": "Resultat af rettelse",
-		"checkPreviousResults": "Tjek tidligere resultater",
-		"tunePCPerformance": {
-			"title": "Optimer Computerens Ydeevne",
-			"heading": "Forkæl din computer lidt mere",
-			"description": "Selv den bedste computer vil kunne drage fordel af periodiske opdateringer. Få din computer optimeret med vores stærke app, og få mere fra hånden.",
-			"tabSet1": {
-				"tab1": "Akkumulerede junkfiler",
-				"tab2": "Problemer med brugbarhed",
-				"tab3": "Windows-indstillinger",
-				"tab4": "Systemfejl",
-				"tab5": "Registreringsfejl"
-			},
-			"tabSet2": {
-				"tab1Heading": "DET ER NEMT",
-				"tab1Description": "Vi ønsker ikke at forvirre dig med mambo jambo-teknologisprog",
-				"tab2Heading": "DET ER HURTIGT",
-				"tab2Description": "Få et 100-punkts tjek på mindre end 5 minutter",
-				"tab3Heading": "DET ER SIKKERT",
-				"tab3Description": "Ingen scareware, alt er oprettet med best practice-løsninger"
-			},
-			"summaryTitle": "Optimer computerens ydeevne"
-		},
-		"boostInternetPerformance": {
-			"title": "ØG YDEEVNEN PÅ INTERNETTET",
-			"extraTitle": "Ydeevnen På Internettet",
-			"heading": "Skub til internettet",
-			"description": "For mange mennesker er et langsomt eller slet intet Wi-Fi det samme som at være totalt isoleret. Lad os konfigurere dine Internet-, Wi-Fi- og browserindstillinger for at opnå optimal ydeevne.",
-			"tabSet1": {
-				"tab1": "E-junk",
-				"tab2": "Netværksindstillinger",
-				"tab3": "Browserindstillinger",
-				"tab4": "Browsersikkerhed",
-				"tab5": "Wi-Fi-ydeevne"
-			},
-			"tabSet2": {
-				"tab1Heading": "PROBLEMER MED BROWSEREN",
-				"tab1Description": "Vi konfigurerer og reparerer alle dine populære webbrowsere.",
-				"tab2Heading": "FORBINDELSESFEJL",
-				"tab2Description": "Vi kan diagnosticere og reparere dine forbindelsesproblemer.",
-				"tab3Heading": "LANGSOMT INTERNET",
-				"tab3Description": "Vi kan hjælpe dig med at få optimal ydeevne."
-			},
-			"summaryTitle": "Ydeevnen på internettet"
-		},
-		"malwareSecurity": {
-			"title": "Malware Og Sikkerhed",
-			"heading": "Giv computeren den ekstra omsorg, den har brug for",
-			"description": "Malware kan føre til et computernedbrud, svækkelse af data og forringet ydeevne. Fjern malware, og få mange andre ting ordnet.",
-			"tabSet1": {
-				"tab1": "Malwarescanning",
-				"tab2": "Zero day-infektioner",
-				"tab3": "Errant-programmer",
-				"tab4": "Irriterende adware",
-				"tab5": "Sikkerhedsindstillinger"
-			},
-			"tabSet2": {
-				"tab1Heading": "ZERO DAY-VIRUS",
-				"tab1Description": "Vi fjerner selv de nyeste malwareinfektioner",
-				"tab2Heading": "FJERNELSE AF SPYWARE",
-				"tab2Description": "Vi fjerner alle potentielt uønskede programmer",
-				"tab3Heading": "LET OG HURTIGT",
-				"tab3Description": "Scanning tager typisk 5-10 minutter"
-			},
-			"summaryTitle": "Malware og sikkerhed"
-		},
-		"proactiveAutomated": {
-			"title": "PROAKTIVT OG AUTOMATISERET",
-			"heading": "Få ordnet problemerne, før de påvirker dig.",
-			"description": "Smart Performance søger konstant efter hundredvis af problemer, der kan påvirke din computers ydeevne. Vi reparerer proaktivt, så du har ro i sindet.",
-			"tabSet1": {
-				"tab1": "Planlæg søgning",
-				"tab2": "On demand-scanning",
-				"tab3": "Automatiseret løsning",
-				"tab4": "Det er effektivt",
-				"tab5": "Beskyttelse døgnet rundt"
-			},
-			"tabSet2": {
-				"tab1Heading": "DET ER NEMT",
-				"tab1Description": "Vi ønsker ikke at forvirre dig med mambo jambo-teknologisprog",
-				"tab2Heading": "DET ER HURTIGT",
-				"tab2Description": "Få et 100-punkts tjek på mindre end 5 minutter",
-				"tab3Heading": "DET ER SIKKERT",
-				"tab3Description": "Ingen scareware, alt er oprettet med best practice-løsninger"
-			}
-		},
-		"noScanResults": "Klik på knappen SCAN & FIX for at aktivere scanningsprocessen.",
-		"startScan": "<b>Er du klar til at starte scanningen?</b> Lad os identificere ydeevne og sikkerhed i din computer.",
-		"subscriptionDetails": {
-			"title": "Oplysninger om abonnement",
-			"description": "Du abonnerer på Lenovo Smart Performance-service. Med abonnement er alle funktioner tilgængelige, så din computer er beskyttet og kan fungerer problemfrit.",
-			"learnMore": "Læs mere her",
-			"startDate": "Startdato",
-			"endDate": "Slutdato",
-			"status": "Status",
-			"activeStatus": "AKTIV",
-			"inactiveStatus": "INAKTIV",
-			"manageSubscription": "ADMINISTRER ABONNEMENT",
-			"titlebeta": "Lenovo Betaprogram",
-			"manageSubscriptionBeta": "AKTIVER FULD FUNKTION",
-			"descriptionbeta": "Lenovo tilbyder et pilotprogram, hvor du kan afprøve Smart Performance-funktionen indtil juli 2020.",
-			"descriptionbeta1": "Du er velkommen til at deltage og teste den komplette funktion.",
-			"descriptionNonSubscriber": "Du abonnerer ikke på Lenovo Smart Performance-service. Du kan kun scanne din computer. Abonner nu for at få alle fordelene ved at holde computeren beskyttet og arbejde problemfrit.",
-			"processStatus": "BEHANDLING",
-			"descriptionExpired": "Dit abonnement er udløbet, og du kan i øjeblikket kun bruge scanningsfunktionen i Smart Performance. Du kan forny abonnementet ved at klikke på linket \"Administrer abonnement\" for at aktivere fuld beskyttelse for din enhed.",
-			"expiredStatus": "UDLØBET",
-			"expiredNote": "Dit abonnement udløber om",
-			"day": "dag",
-			"days": "dage",
-			"weeks": "uger",
-			"week": "en uge",
-			"month": "måned",
-			"today": "i dag",
-			"next": "næste"
-		},
-		"scanSettings": {
-			"title": "Planlæg scanningsindstillinger",
-			"description": "Aktivér eller deaktivér scanningen, og indstil scanningsplanen",
-			"enableScan": "Aktivér scanning",
-			"changeScanTitle": "Skift scanningsplan",
-			"changeScanDescription": "Rediger scanningsplanen, så den kører, når du har brug for det.",
-			"frequency": "Hyppighed",
-			"txtDate": "Dato",
-			"txtDay": "Dag",
-			"txtTime": "Klokkeslæt",
-			"txtSave": "gem",
-			"txtCancel": "annuller",
-			"scanFrequencyWeek": "Én gang om ugen",
-			"scanFrequencyEveryWeek": "Hver anden uge",
-			"scanFrequencyMonth": "Hver måned",
-			"mon": "Mandag",
-			"tue": "Tirsdag",
-			"wed": "Onsdag",
-			"thu": "Torsdag",
-			"fri": "Fredag",
-			"sat": "Lørdag",
-			"sun": "Søndag",
-			"am": "AM",
-			"pm": "PM",
-			"tooltipText": "Når du aktiverer denne funktion, startes systemets scanning af ydeevne og sikkerhed automatisk på angivet dato og klokkeslæt."
-		},
-		"scanningPage": {
-			"title": "Kontrol af ydeevne og sikkerhed",
-			"description": "Vent, mens vi scanner systemet for at finde mulige problemer og trusler.",
-			"scanningSystem": "Scanning af system",
-			"complete": "udført",
-			"cancelScan": {
-				"button": "ANNULLER SCANNING",
-				"title": "Annuller scanning?",
-				"description": "Hvis du forlader den aktuelle skærm, annulleres scanningen, og du vender tilbage til Start. Du kan imidlertid køre scanningen igen på et senere tidspunkt.",
-				"yesButton": "JA, ANNULLER",
-				"noButton": "NEJ, GENOPTAG SCANNING",
-				"cancelMayTakeSomeTime": "Vent venligst. Det kan tage noget tid at annullere afhængigt af dit system.",
-				"cancelTextPrompt": "Er du sikker på, at du vil annullere?"
-			},
-			"waiting": "venter på scanning",
-			"completed": "fuldført",
-			"nowScanningDetail": {
-				"cardTitle": "SCANNER DETALJER NU",
-				"current": "AKTUEL: ",
-				"upNext": "OP TIL NÆSTE: ",
-				"tunePCDesc": "Lad os hjælp med at forbedre computerens ydeevne. Vi gør det sikkert ved at bruge branchens bedste praksis. Fordelene ved abonnementet omfatter reduceret computerstarttid, forbedret ydeevne, forbedret stabilitet og hurtigere start af programmer.",
-				"boostDesc": "Vi hjælper med at forbedre din søgeoplevelse. Lad os løse netværks- og adgangsproblemer. Fordele for abonnenter omfatter forbedret internetforbindelse, forbedret up-/downloadhastigheder og større sikkerhed i forbindelse med internettet.",
-				"malwareDesc": "Lad os hjælpe dig med hurtig on demand-sikring af din computer. Vi fjerner spyware, malware og adware. Vi fjerner også de næsten zero day-infektioner. Fordele for abonnementer omfatter datasikkerhed og optimal systemydeevne.",
-				"proactiveDesc": "Lad os scanne computeren jævnligt og løse eventuelle problemer med proaktiv og automatiseret tilgang for at holde din computer justeret og dækket. Altid",
-				"tunePCScanningItems": {
-					"accumulatedJunk": {
-						"itema1": "Søg efter junk på 85 steder",
-						"itema2": "Unødvendige logfiler til systemet",
-						"itema3": "Unødvendige programrester",
-						"itema4": "Midlertidige filer, der reducerer pladsen på disken",
-						"itema5": "Filer, du har slettet for meget længe siden",
-						"itema6": "Forældede fejl og beskeder"
-					},
-					"usabilityIssues": {
-						"itemb1": "Overvej de mange forskellige udfordringer til brugbarhed",
-						"itemb2": "Kontrollér forbindelse til eksterne enheder",
-						"itemb3": "Holder Windows opdateret hele tiden",
-						"itemb4": "Betyder, at apps agerer og vises optimalt",
-						"itemb5": "Analyse af udnyttelse af processorkraft",
-						"itemb6": "Hjælp til hurtig søgning efter filer"
-					},
-					"windowsSettings": {
-						"itemc1": "Diagnosticer mange Windows OS-indstillinger",
-						"itemc2": "Sørg for, at alt fungerer fint sammen med Windows",
-						"itemc3": "Sørg for, at vigtige tjenester fungerer",
-						"itemc4": "Kontrollér sundhedstilstand for forbindelsesindstillinger",
-						"itemc5": "Kontrollér muligheden for at dele filer i netværk",
-						"itemc6": "Kontrollér biometriske og adgangsindstillinger"
-					},
-					"systemErrors": {
-						"itemd1": "Sørg for, at vigtige tjenester fungerer",
-						"itemd2": "Vælg tjenester for at opnå højere ydeevne",
-						"itemd3": "Søg efter konfliktfejl i software",
-						"itemd4": "Optimer administration af Windows-fejl",
-						"itemd5": "Kontroller, og reparer apps-fejl ved start",
-						"itemd6": "Konfigurer rapporter om systemfejl"
-					},
-					"registryErrors": {
-						"iteme1": "Deep-kontrol af Windows-registreringsdatabase",
-						"iteme2": "Scanning efter ugyldige Windows-tjenester",
-						"iteme3": "Søgning efter ødelagte poster i registreringsdatabasen",
-						"iteme4": "Søg efter unødvendige filtyper",
-						"iteme5": "Søg efter ødelagte poster i installerede apps",
-						"iteme6": "Søg efter tiloversblevne poster, der ikke kan bruges"
-					}
-				},
-				"boostScanningItems": {
-					"networkSettings": {
-						"itema1": "Diagnosticer netværks-og Internetindstillinger",
-						"itema2": "Kontrollér netværkskonfigurationsindstillinger",
-						"itema3": "Kontrollér tilgængelige netværksindstillinger",
-						"itema4": "Konfigurer for at indlæse websteder hurtigere",
-						"itema5": "Søg efter fejl i sidegengivelse",
-						"itema6": "Kører forbindelsestjenesten korrekt"
-					},
-					"browserSettings": {
-						"itemb1": "Aktivér bedre søgeoplevelse",
-						"itemb2": "Konfigurér indstillinger hurtigere til gengivelse af websteder",
-						"itemb3": "Kontrollér, at browserens sikkerhedstjenester er OK",
-						"itemb4": "Kontrollér, at websider bliver gengivet korrekt",
-						"itemb5": "Kontrollér indstillinger for hurtigere downloads",
-						"itemb6": "Kontrollér tilladelser og adgangskontrol"
-					},
-					"browserSecurity": {
-						"itemc1": "Sørg for, at sikkerhedstjenesterne kører",
-						"itemc2": "Konfigurér sikkerhedsfunktionerne i browseren",
-						"itemc3": "Kontrollér, at netværkstjenesterne kører godt",
-						"itemc4": "Konfigurér protokolindstillinger",
-						"itemc5": "Kontrollér, at indstillinger til browserens indhold er OK",
-						"itemc6": "Kontrollér browserens plugins og udvidelser"
-					},
-					"wifiPerformance": {
-						"itemd1": "Optimer indstillingerne til Wi-Fi-oplevelsen",
-						"itemd2": "Sørg for, at hjemmenetværket er sikkert",
-						"itemd3": "Kontrollér Wi-Fi-indstillinger til tjenester",
-						"itemd4": "Indstillinger til sikker netværksdeling",
-						"itemd5": "Kontrollér Wi-Fi-sikkerhedsstandarder",
-						"itemd6": "Kontrollér, at Wi-Fi-kanalerne ikke overlapper"
-					},
-					"eJunk": {
-						"iteme1": "Fjern rod fra browsere",
-						"iteme2": "Søg efter tiloversbleven e-junk",
-						"iteme3": "Søg efter forældede internetfiler",
-						"iteme4": "Slet uønsket web-cache",
-						"iteme5": "Slet cookies",
-						"iteme6": "Fjern programrester fra browser"
-					}
-				},
-				"malwareScanningItems": {
-					"malwareScan": {
-						"itema1": "Scan almindelige indlæsningspunkter",
-						"itema2": "Kontrollér kritiske placeringer for trusler",
-						"itema3": "Undersøg, om der er virus, spyware og malware",
-						"itema4": "Søg efter 50+ filtyper",
-						"itema5": "Scan efter malwarerester",
-						"itema6": "Indflydelse fra skyafhjælpningsprogrammet"
-					},
-					"zerodayInfections": {
-						"itemb1": "Søg efter zero day-virus",
-						"itemb2": "Søg efter nyeste, ikke-diagnosticeret malware",
-						"itemb3": "Scan med skybaseret afhjælpning",
-						"itemb4": "Udfør funktionsovervågning",
-						"itemb5": "Scan filer med samlet program",
-						"itemb6": "Scan i forhold til seneste definitioner"
-					},
-					"securitySettings": {
-						"itemc1": "Hold Windows-opdateringer ajour hele tiden",
-						"itemc2": "Kontrollér, at Windows Firewall-tjenesten er OK",
-						"itemc3": "Hold browserindstillinger sikre",
-						"itemc4": "Kontrollér vigtige sikkerhedstjenester",
-						"itemc5": "Konfigurer brugeradgangsindstillinger",
-						"itemc6": "Kontrollér godkendelsestjenester"
-					},
-					"errantPrograms": {
-						"itemd1": "Søg efter Errant-apps",
-						"itemd2": "Søg efter potentielt uønskede apps",
-						"itemd3": "Registrer inaktive og skjulte apps",
-						"itemd4": "Kontrollér apps for skadelig adfærd",
-						"itemd5": "Kontrollér apps baseret på omdømmefaktor",
-						"itemd6": "Kontrollér Errant-programmer i registreringsdatabasen"
-					},
-					"annoyingAdware": {
-						"iteme1": "Søg efter browser-adware",
-						"iteme2": "Revider pop op-indstillinger i browseren",
-						"iteme3": "Fjern trusler om omdirigering i browser",
-						"iteme4": "Undersøg, om der er adware-rester",
-						"iteme5": "Optimer indstillinger til søgeoplevelsen",
-						"iteme6": "Kontrollér programmet til afhjælpning i skyen"
-					}
-				}
-			},
-			"confirmationTitle": "Lenovo-betalingsproces",
-			"confirmationNote": "Du bliver ført til Lenovos betalingswebsted for at udføre betalingen. Når betalingen er udført, kan du klikke på knappen \"Opdater\" under \"oplysninger om abonnement\" for at få betalingsresultatet.",
-			"confirmationBtn": "Fortsæt",
-			"refreshButton": "Opdater status"
-		},
-		"scanCompletePage": {
-			"title": "Systemscanning er fuldført",
-			"description": "Dette er fundet på din {{machineFamilyName}}",
-			"scanRates": "Vores scanning vurderer din computer til: ",
-			"summary": "Opsummering",
-			"foundIssues": "Vores scanning fandt {{issueCount}} problem(er)",
-			"summaryDetails": "Tilmeld dig nu for at løse problemerne og sørge for, at systemet fungerer problemfrit. Vores software kan proaktivt scanne disse områder i dit system døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
-			"expiredSummaryDetails": "Dit abonnement er udløbet, og du kan i øjeblikket kun bruge scanningsfunktionen i Smart Performance. Hvis du vil aktivere funktionen \"Scan og ret\" igen, skal du trykke på knappen \"Forny og ret\" nedenfor for at forny dit abonnement.",
-			"signupRepairButton": "TILMELD OG REPARER NU",
-			"renewAndFix": "Forny og ret",
-			"backToHome": "Tilbage til start",
-			"monthlyPricing": "<b>Mindre end {{monthlyPrice}} pr. måned.</b> Problemerne løses automatisk. Én gang i dag og hver uge herefter <a  href=\"#\">Få mere at vide</a>",
-			"issueCount": "{{individualIssueCount}} PROBLEMER",
-			"issues": "Problem(er)",
-			"tuneIssueCount": "{{tune}}",
-			"boostIssueCount": "{{boost}}",
-			"secureIssueCount": "{{secure}}",
-			"scannedAreas": "SCANNEDE OMRÅDER",
-			"summaryPurchaseTip": "Køb det årlige abonnement nu, så løses problemerne automatisk hver uge.",
-			"tunePCTooltip": "Optimer den generelle systemydeevne, reducer pc'ens starttid, og optimer indlæsningstider for programmer.",
-			"boostTooltip": "Optimer netværkets ydeevne, browseroplevelse og tilslutningsmuligheder.",
-			"malwareTooltip": "Optimer sikkerheden, fjern malware og infektioner, og gendan systemets stabilitet.",
-			"recommendedAction": {
-				"title": "Anbefalet Handling",
-				"description": "Problemerne løses automatisk. Én gang i dag og hver uge herefter",
-				"yearlyPricing": "{{yearlyPrice}} / år",
-				"monthlyPricing": "MINDRE END {{monthlyPrice}} PR. MÅNED.",
-				"longerTerm": "Længere tidsperiode? Endnu flere besparelser?",
-				"newDescription": "Efter tilmeldingen løser vi automatisk disse problemer for dig hver uge.",
-				"signupButton": "TILMELD"
-			},
-			"tunepc": {
-				"accumulatedjunkscannedareas": {
-					"area1": "Scannede efter junk på 85 placeringer",
-					"area2": "Unødvendige logfiler til systemet",
-					"area3": "Unødvendige programrester",
-					"area4": "Midlertidige filer, der reducerer pladsen på disken",
-					"area5": "Filer, du har slettet for meget længe siden",
-					"area6": "Forældede fejl og beskeder"
-				},
-				"registryerrorsscannedareas": {
-					"area1": "Deep-kontrol af Windows-registreringsdatabasen er fuldført",
-					"area2": "Scannede efter ugyldige Windows-tjenester",
-					"area3": "Kontrollerede, om der er ødelagte poster i registreringsdatabasen",
-					"area4": "Scannede efter filtyper, der ikke kan bruges",
-					"area5": "Søgte efter ødelagte poster i installerede apps",
-					"area6": "Søgte efter tiloversblevne poster, der ikke kan bruges"
-				},
-				"windowssettingsscannedareas": {
-					"area1": "Diagnosticerede mange Windows OS-indstillinger",
-					"area2": "Kontrollerede, at alt fungerer godt med Windows",
-					"area3": "Bekræftede, at vigtige tjenester fungerer",
-					"area4": "Kontrollerede sundhedstilstand for forbindelsesindstillinger",
-					"area5": "Kontrollerede muligheden for at dele filer i netværk",
-					"area6": "Kontrollerede biometriske og adgangsindstillinger"
-				},
-				"usabilityissuesscannedareas": {
-					"area1": "Kontrollerede for udfordringer ved brugbarhed",
-					"area2": "Kontrollerede forbindelse til eksterne enheder",
-					"area3": "Kontrollerede status for Windows-opdateringer",
-					"area4": "Bekræftet indstilling for gengivelse af apps",
-					"area5": "Analyserede udnyttelse af processorkraft",
-					"area6": "Hjælp til hurtig søgning efter filer"
-				},
-				"systemerrorsscannedareas": {
-					"area1": "Kontrollerede, at vigtige tjenester fungerer",
-					"area2": "Søg efter tjenester for at opnå højere ydeevne",
-					"area3": "Søg efter konfliktfejl i software",
-					"area4": "Analyserede administration af Windows-fejl",
-					"area5": "Scannede efter apps, der starter fejl",
-					"area6": "Kontrollerede konfiguration af systemfejlrapporter"
-				}
-			},
-			"internetperformance": {
-				"ejunkscannedareas": {
-					"area1": "Identificerede rod fra browsere",
-					"area2": "Søgte efter tiloversbleven e-junk",
-					"area3": "Scannede efter forældede internetfiler",
-					"area4": "Søgte efter uønsket web-cache",
-					"area5": "Kontrollerede cookies til godkendelse",
-					"area6": "Scannede restprodukter i browser"
-				},
-				"browsersecurityscannedareas": {
-					"area1": "Kontrollerede, at sikkerhedstjenesterne kører",
-					"area2": "Kontrollerede sikkerhedsfunktionerne i browseren",
-					"area3": "Bekræftede netværkstjenester",
-					"area4": "Konfigurér protokolindstillinger",
-					"area5": "Kontrollerede indstillinger for browserindhold",
-					"area6": "Scannede browserens plugins og udvidelser"
-				},
-				"networksettingsscannedareas": {
-					"area1": "Diagnosticerede netværks- og internetindstillinger",
-					"area2": "Diagnosticerede netværkskonfigurationsindstillinger",
-					"area3": "Bekræftede tilsluttede netværksindstillinger",
-					"area4": "Diagnosticerede indstillinger hurtigere til gengivelse af websteder",
-					"area5": "Scannede efter fejl i sidegengivelse",
-					"area6": "Scannede alle forbindelsestjenester"
-				},
-				"browsersettingsscannedareas": {
-					"area1": "Aktivér bedre søgeoplevelse",
-					"area2": "Diagnosticerede indstillinger hurtigere til gengivelse af websteder",
-					"area3": "Bekræftede sikkerhedstjenester i browser",
-					"area4": "Kontrollerede, om websider bliver gengivet korrekt",
-					"area5": "Scannede indstillinger til hurtigere downloads",
-					"area6": "Analyserede tilladelser og adgangskontrol"
-				},
-				"wifiperformancescannedareas": {
-					"area1": "Bekræftede indstillinger til Wi-Fi-oplevelsen",
-					"area2": "Bekræftede sikkert hjemmenetværk",
-					"area3": "Scannede Wi-Fi-indstillinger til tjenester",
-					"area4": "Bekræftede indstillinger til sikker netværksdeling",
-					"area5": "Bekræftede Wi-Fi-sikkerhedsstandarder",
-					"area6": "Analyserede, at Wi-Fi-kanalerne ikke overlapper"
-				}
-			},
-			"malwaresecurity": {
-				"malwarescanscannedareas": {
-					"area1": "Scannede almindelige indlæsningspunkter",
-					"area2": "Scannede kritiske placeringer for trusler",
-					"area3": "Scannede efter virus, spyware og malware",
-					"area4": "Scannede 50+ filtyper for trusler",
-					"area5": "Kontrollerede for malwarerester",
-					"area6": "Bekræftede programmet til skyafhjælpning"
-				},
-				"errantprogramsscannedareas": {
-					"area1": "Søg efter Errant-apps",
-					"area2": "Søgte efter potentielt uønskede apps",
-					"area3": "Søgte efter inaktive og skjulte apps",
-					"area4": "Scannede efter skadelige apps",
-					"area5": "Kontrollerede apps baseret på omdømmefaktor",
-					"area6": "Kontrollerede Errant-programmer i registreringsdatabasen"
-				},
-				"zerodayinfectionsscannedareas": {
-					"area1": "Scannede efter zero day-virus",
-					"area2": "Søgte efter nyeste, ikke-diagnosticeret malware",
-					"area3": "Bekræftet med skybaseret afhjælpning",
-					"area4": "Udførte funktionsovervågning",
-					"area5": "Bekræftede filer med samlet program",
-					"area6": "Scannede i forhold til opdaterede definitioner"
-				},
-				"securitysettingsscannedareas": {
-					"area1": "Bekræftede Windows-opdateringer er aktuelle",
-					"area2": "Bekræftede service til Windows Firewall",
-					"area3": "Kontrollerede for sikre browserindstillinger",
-					"area4": "Diagnosticerede vigtige sikkerhedstjenester",
-					"area5": "Bekræftede brugeradgangsindstillinger",
-					"area6": "Bekræftede godkendelsestjenester"
-				},
-				"annoyingadwarescannedareas": {
-					"area1": "Scannede efter browser-adware",
-					"area2": "Bekræft pop op-indstillinger i browser",
-					"area3": "Scannede trusler om omdirigering i browser",
-					"area4": "Kontrollerede, om der er adware-rester",
-					"area5": "Bekræftede indstillinger til browser-oplevelsen",
-					"area6": "Bekræftede programmet med skyafhjælpning"
-				}
-			},
-			"subscriber": {
-				"tunepc": {
-					"accumulatedjunkscannedareas": {
-						"area1": "Rensede for junk på 85 placeringer",
-						"area2": "Ryddede logfiler til systemet, der ikke er nødvendige",
-						"area3": "Slettede ansøgningsrester",
-						"area4": "Fjernede midlertidige filer for at frigøre diskplads",
-						"area5": "Eliminerede filer, du har slettet for længe siden",
-						"area6": "Ryddede for fejl og beskeder"
-					},
-					"registryerrorsscannedareas": {
-						"area1": "Deep-kontrol af Windows-registreringsdatabasen er fuldført",
-						"area2": "Løste ugyldige Windows-tjenester",
-						"area3": "Fjernede ødelagte poster i registreringsdatabasen",
-						"area4": "Slettede alle forældede filtypenavne",
-						"area5": "Fjernede ødelagte poster i installerede apps",
-						"area6": "Fjernede uønskede tiloversblevne poster"
-					},
-					"windowssettingsscannedareas": {
-						"area1": "Bekræftede Windows-indstillinger",
-						"area2": "Optimerede alle Windows-tjenester",
-						"area3": "Tilpassede grundlæggende Windows-tjenester",
-						"area4": "Tilpassede grundlæggende Windows-tjenester",
-						"area5": "Bekræftede muligheden for at dele filer i netværk",
-						"area6": "Bekræftede biometriske og adgangsindstillinger"
-					},
-					"usabilityissuesscannedareas": {
-						"area1": "Løste brugbare udfordringer",
-						"area2": "Bekræftede forbindelse til eksterne enheder",
-						"area3": "Sørgede for at være ajour med Windows-opdateringer",
-						"area4": "Bekræftede, at apps agerer og vises optimalt",
-						"area5": "Ændrede indstillinger, så du nemt kan finde filer",
-						"area6": "Ændrede indstillinger i Hjælp, så du nemt kan finde filer"
-					},
-					"systemerrorsscannedareas": {
-						"area1": "Kontrollerede, at vigtige tjenester fungerer",
-						"area2": "Tilpassede tjenester for at opnå højere ydeevne",
-						"area3": "Løste alle konfliktfejl i software",
-						"area4": "Optimerede administration af Windows-fejl",
-						"area5": "Kontrollerede, og reparerede apps-fejl ved start",
-						"area6": "Konfigurerede rapporter om systemfejl"
-					}
-				},
-				"internetperformance": {
-					"ejunkscannedareas": {
-						"area1": "Fjernede rod fra 4 browsere",
-						"area2": "Rensede efter tiloversbleven e-junk",
-						"area3": "Slettede forældede internetfiler",
-						"area4": "Slettede uønsket web-cache",
-						"area5": "Slettede cookies",
-						"area6": "Fjernede alle rester i browser"
-					},
-					"browsersecurityscannedareas": {
-						"area1": "Sørgede for, at sikkerhedstjenesterne kører",
-						"area2": "Konfigurerede sikkerhedsfunktionerne i browseren",
-						"area3": "Kontrollerede og løste netværkstjenester",
-						"area4": "Konfigurerede protokolindstillinger",
-						"area5": "Kontrollerede, at indstillinger for browserindhold er OK",
-						"area6": "Scannede browserens plugins og udvidelser"
-					},
-					"networksettingsscannedareas": {
-						"area1": "Løste netværks- og internetindstillinger",
-						"area2": "Kontrollerede netværkskonfigurationsindstillinger",
-						"area3": "Tilpassede tilsluttede netværksindstillinger",
-						"area4": "Diagnosticerede indstillinger hurtigere til gengivelse af websteder",
-						"area5": "Løste eventuelle sidegengivelsesfejl",
-						"area6": "Scannede alle forbindelsestjenester"
-					},
-					"browsersettingsscannedareas": {
-						"area1": "Tilpassede indstillinger til bedre søgeoplevelse",
-						"area2": "Kontrollerede indstillinger hurtigere til gengivelse af websteder",
-						"area3": "Sikrede, at browserens sikkerhedstjenester er OK",
-						"area4": "Ændrede indstillinger til korrekt indlæsning af websider",
-						"area5": "Løste indstillinger til hurtigere downloads",
-						"area6": "Løste indstillinger til tilladelser og adgangskontrol"
-					},
-					"wifiperformancescannedareas": {
-						"area1": "Tilpassede indstillinger til Wi-Fi-oplevelsen",
-						"area2": "Bekræftede indstillinger til sikkert hjemmenetværk",
-						"area3": "Løste Wi-Fi-indstillinger til tjenester",
-						"area4": "Tilpassede indstillinger til sikker netværksdeling",
-						"area5": "Bekræftede Wi-Fi-sikkerhedsstandarder",
-						"area6": "Validerede Wi-Fi-kanaler"
-					}
-				},
-				"malwaresecurity": {
-					"malwarescanscannedareas": {
-						"area1": "Kontrollerede og fjernede trusler på fælles indlæsningspunkter",
-						"area2": "Kontrollerede og fjernede trusler på kritiske placeringer",
-						"area3": "Fjernede trusler fra computeren",
-						"area4": "Validerede 50+ filtyper for trusler",
-						"area5": "Fjernede malwarerester",
-						"area6": "Bekræftede programmet til skyafhjælpning"
-					},
-					"errantprogramsscannedareas": {
-						"area1": "Bekræftede alle installerede apps",
-						"area2": "Bekræftede potentielt uønskede apps",
-						"area3": "Fjernede inaktive og skjulte apps",
-						"area4": "Fjernede alle skadelige og Errant-apps",
-						"area5": "Validerede apps baseret på omdømmefaktor",
-						"area6": "Fuldførte kontrol af registreringsdatabase for Errant-programmer"
-					},
-					"zerodayinfectionsscannedareas": {
-						"area1": "Analyserede efter zero day-virus",
-						"area2": "Fjernede al malware fra computeren",
-						"area3": "Validerede programmet til skyafhjælpning",
-						"area4": "Fuldførte funktionsovervågning af apps",
-						"area5": "Validerede i forhold til aggregeret program",
-						"area6": "Validerede i forhold til seneste definitioner"
-					},
-					"securitysettingsscannedareas": {
-						"area1": "Optimerede Windows Update-indstillinger",
-						"area2": "Opdaterede Windows Firewall-service",
-						"area3": "Sikrede browserindstillinger",
-						"area4": "Diagnosticerede vigtige sikkerhedstjenester",
-						"area5": "Optimerede brugeradgangsindstillinger",
-						"area6": "Tilpassede godkendelsestjenester"
-					},
-					"annoyingadwarescannedareas": {
-						"area1": "Fjernede browser-adware",
-						"area2": "Opdaterede pop op-indstillinger i browser",
-						"area3": "Diagnosticerede trusler om omdirigering i browser",
-						"area4": "Ryddede adware-rester",
-						"area5": "Optimerede indstillinger til browser-oplevelsen",
-						"area6": "Validerede programmet til skyafhjælpning"
-					}
-				}
-			},
-			"Diskspace": "Tilbageført diskplads:",
-			"Performanceimprovements": "Forbedringer af ydeevne:",
-			"Securityimprovements": "Sikkerhedsforbedringer:",
-			"Onceaweek": "Én gang om ugen"
-		},
-		"subscriberScanHomePage": {
-			"title": "Alt fungerer med ",
-			"titleScanCanceled": "Ratingen var 0, fordi den sidste scanning blev annulleret. Klik på \"TILBAGE TIL START\", og scan igen.",
-			"serialNumber": "Serienummer: ",
-			"subTitle": "Du abonnerer på Lenovo Smart Performance-service",
-			"description": "Vi scanner og reparerer ofte computeren proaktivt for computerens ydeevne, internetydeevne og malwareproblemer. Du er dækket i passende omfang. Du kan også starte kontrol af ydeevne efter behov ved at klikke på knappen Scan nu.",
-			"scanNow": "SCAN & FIX",
-			"backToHome": "Tilbage til start",
-			"returnto": "TILBAGE TIL DASHBOARD",
-			"mostRecent": "SENESTE SCANNING:",
-			"nextScheduled": "NÆSTE PLANLAGTE SCANNING:",
-			"successTitle": "Din computer er opdateret!",
-			"successDescription": "Smart Performance løste <b>{{issueCount}} problem(er)</b> for at få computeren til at fungere problemfrit kan du finde en scanningsoversigt og rapporten herunder.",
-			"scanSummary": {
-				"title": "Scanningsoversigt:",
-				"description": "Vi optimerer konstant computeren",
-				"tune": "Opdater",
-				"tuneSummary": "Tilbageført diskplads",
-				"boost": "Styrk",
-				"boostSummary": "Rettelser til forbedring af ydeevnen",
-				"secure": "Sikring",
-				"secureSummary": "Rettelser til forbedring af sikkerheden",
-				"annual": "Årligt",
-				"quarterly": "Kvartalsmæssigt",
-				"custom": "Brugerdefineret",
-				"txtFrom": "Fra",
-				"txtTo": "Til",
-				"txtGo": "Gå",
-				"summaryCaption": "tilbageført plads",
-				"fixes": "rettelse(r)",
-				"txtClr": "Ryd"
-			},
-			"lastScanResults": {
-				"title": "Resultat af seneste 5 scanninger:",
-				"scanDate": "Scanningsdato",
-				"results": "Resultater",
-				"status": "Status"
-			}
-		},
-		"feedbackContainer": {
-			"title": "Giv os feedback",
-			"subtitle": "Fortæl os, hvad du synes om Smart Performance",
-			"buttonText": "Send feedback",
-			"questions": {
-				"q1": "1. Hvor svært eller nemt var det at bruge scanningsfunktionen?",
-				"q2": "2. Hvor svært eller nemt var det at forstå scanningsresultaterne?",
-				"q3": "3. Hvor sandsynligt er det, at du betaler for et Smart Performance-abonnement for at forbedre systemets ydeevne?",
-				"q4": "4. Hvor tilfreds er du overordnet med Smart Performance-funktionen?",
-				"q5": "1. Hvor svært eller nemt var det at forstå de rettelser, Smart Performance har foretaget i dit system?",
-				"q6": "2. Fandt vi malware i dit system?",
-				"q7": "3. Hvor sandsynligt er det, at du vil fortsætte med at betale for Smart Performance-funktionen?",
-				"q8": "4. Hvor tilfreds er du overordnet med Smart Performance-funktionen?"
-			},
-			"rating": {
-				"r1": "Meget svært",
-				"r2": "Meget nemt",
-				"r3": "Meget svært",
-				"r4": "Meget nemt",
-				"r5": "Slet ikke sandsynligt",
-				"r6": "Meget sandsynligt",
-				"r7": "Slet ikke tilfreds",
-				"r8": "Meget tilfreds",
-				"r9": "Meget svært",
-				"r10": "Meget nemt",
-				"r11": "Ja",
-				"r12": "Nej",
-				"r13": "Slet ikke sandsynligt",
-				"r14": "Meget sandsynligt",
-				"r15": "Slet ikke tilfreds",
-				"r16": "Meget tilfreds"
-			},
-			"commentTip": "Angiv eventuelle andre kommentarer eller yderligere feedback nedenfor:",
-			"comments": "Skriv dine kommentarer her..."
-		}
-	},
-	"homeSecurity": {
-		"title": "Connected Home Security",
-		"notification": {
-			"recent": "Recent security notifications",
-			"notifications": "Notifications",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
-		},
-		"ecosystem": {
-			"ecosystemBlockTitle": "Protect your device ecosystem",
-			"thisDevice": "This device",
-			"allDevices": "All Devices",
-			"protected": "Protected",
-			"notProtected": "Not Protected",
-			"trialExpired": "Trial expired",
-			"upgrade": "upgrade",
-			"inEcosystem": "In Ecosystem",
-			"ecosystemEnable": "Ecosystem Enabled",
-			"inTrial": "In trial",
-			"addEcosystem": "Add to Ecosystem",
-			"enableEcosystem": "Enable Ecosystem",
-			"startTrial": "Start Trial",
-			"fullAccess": "Full Access",
-			"renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Your Ecosystem Security Overview",
-			"allDevices": "All Devices",
-			"myDevice": "My Device",
-			"thisComputer": "This computer",
-			"secure": "SECURE",
-			"needAttention": "NEEDS ATTENTION",
-			"manageAccount": "Manage account",
-			"devices": "Devices",
-			"seeProtectedDevices": "See protected devices",
-			"addDevice": "add device",
-			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-			"upgrade": "upgrade",
-			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
-			"inTrialDetail": "You are currently in your trial period.",
-			"trialExpiredDetail": "Your trial period has expired.",
-			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
-			"discountPrice": "For only $29.99 for one year",
-			"overviewTitle": "Overview",
-			"trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId": "Lenovo ID:",
-			"overviewTitleAdmin": "Overview of your Connected Home Security",
-			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-			"familyMembers": "Family members",
-			"places": "Places",
-			"personalDevices": "Personal devices",
-			"wifiNetworks": "Wi-fi networks",
-			"homeDevices": "Home devices",
-			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
-			"buyNow": "Buy Now",
-			"extendNow": "extend now",
-			"renewNow": "Renew Now",
-			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
-		},
-		"tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcomeTitle": "welcome to connected home security",
-			"welcomeSubTitle": "30 days of protection for free",
-			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-			"locationTitle": "Enable location permissions",
-			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
-			"allow": "Allow",
-			"notNow": "Not now"
-		},
-		"accountStatus": {
-			"title": "My Connected Home Security",
-			"startTrial": "Start Trial",
-			"manageAccount": "Manage Account",
-			"upgradeAccount": "Upgrade Account",
-			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-			"trialExpiredDetail1": "Your trial has expired.",
-			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"upgradedDetail1": "You account is active until {{expiredDate}}.",
-			"upgradedDetail2": "Your device ecosystem is currently being protected.",
-			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
-			"alreadyHaveAccount": "Already have an activation code?"
-		},
-		"card": {
-			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your own Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
-			"joinTitle": "Join your family's Connected Home Security",
-			"joinDescription": "Become a part of your family security group."
-		},
-		"modal": {
-			"countdownTitle": "Launching web browser",
-			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-			"goNow": "Go now",
-			"disconnectedTitle": "Disconnect from protection?",
-			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-			"disconnecting": "Disconnecting..."
-		}
-	},
-	"dir": "ltr",
-	"dirClass": "ltr",
 	"notification": {
 		"menu": {
 			"security": "Vidste du det? Selvom du ikke har et antivirusprogram installeret, tilbyder vi stadig en grundlæggende sikkerhedsbeskyttelse til din enhed.",
 			"connectedHomeSecurity": "Få overvågning i realtid og advarsler om din netværkssikkerhed derhjemme. Du er den første, der får det at vide, hvis nogen af dine smart-enheder er udsat for et sikkerhedsangreb.",
-			"hardwareScan": "Nu kan du få vist helbredsstatus for dine systemhardwarekomponenter."
+			"hardwareScan": "Nu kan du få vist helbredsstatus for dine systemhardwarekomponenter.",
+			"appSearch": "Vidste du det? Du kan søge efter funktioner, der gælder for din enhed her."
 		}
 	},
 	"appsForYou": {
@@ -5413,7 +5462,43 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
+					"description": "AI meeting manager understøtter oversættelse, tolkning og stemmediktat i realtid. Det kan også generere undertekster til videoer.",
+					"downloadNow": "DOWNLOAD NU",
+					"download": "DOWNLOAD",
+					"launch": "START",
+					"translation": {
+						"title": "Oversættelse",
+						"description": "Oversæt tale i onlinemøder fra ethvert mødesoftware i realtid. Du kan gennemse mødenoter under mødet og gemme dem senere. Der fås også en oplevelse med undertekster."
+					},
+					"voiceToText": {
+						"title": "Tale til tekst",
+						"description": "Tal naturligt, og Tale til tekst klarer indtastningen. Skriv e-mails eller dokumenter, eller chat i din yndlingsapp. Tale til tekst oversætter, når du taler, og tager noter for dig."
+					},
+					"modalPopUp": {
+						"heading": "Kom godt i gang:",
+						"translation": {
+							"point1": "Sørg for, at ikonet for AI meeting manager vises i Windows-meddelelsesområdet.",
+							"point2": "Klik på ikonet, og vælg Oversætter eller Undertekster.",
+							"point3": "Vælg kildesprog og målsprog.",
+							"point4": "Angiv stemmeinput fra højttaler eller fra mikrofon afhængigt af dit behov.",
+							"point5": "Klik på knappen Start for at starte oversættelsen."
+						},
+						"voiceToText": {
+							"point1": "Sørg for, at ikonet for AI meeting manager vises i Windows-meddelelsesområdet.",
+							"point2": "Åbn det program, du vil skrive tekst i.",
+							"point3": "Klik på ikonet for AI meeting manager, og vælg Tale til tekst.",
+							"point4": "Vælg de ønskede sprog, og klik derefter på mikrofonknappen for at starte.",
+							"point5": "Anbring markøren i det program, du åbnede, og begynd at tale."
+						},
+						"closeText": "luk"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "Gør onlinemøder mere produktive og effektive."
+					}
+				}
 			}
 		},
 		"creatorCentre": {
@@ -5432,11 +5517,18 @@
 			},
 			"easyRendering": {
 				"title": ""
-
 			},
 			"colorCalibration": {
-				"title": ""
-
+				"title": "Farvekalibrering",
+				"appName": "X-rite-program",
+				"summary": "Skærmpanelet på din computer er fabrikskalibreret med førsteklasses professionelle Minolta-farvemålere. Kalibreringsdata gemmes i skyen og kan downloades for at nulstille panelet til fabriksindstillinger. X-rite er forudinstalleret til at styre farverum.<br>- Standard (oprindelig farveskala og oprindelig lysstyrke, men med kalibreret gråskala og skærmkarakteristik gemt i profilen). <br>- Standardprofilen er installeret som standard på computeren. Denne profil indlæses af Windows ved start. <br>- Ikke kalibreret (Farvestyring er slået fra. Det betyder, at du skal bruge Lenovo-standardprofilen.) <br>- sRGB (computerskærme) - Adobe RGB (til grafiske designere, der planlægger at udskrive i CYMK) <br> - BT.709 (HD-video) <br> - DCI-P3 (almindeligt anvendt i digital filmprojektion i USA)",
+				"screenshotTitle": "Skærmbilleder",
+				"cardTitle": "Hvordan gendannes profiler?",
+				"cardSummary": "Hvis du geninstallerer systemet, eller farveprofiler går tabt, kan du gendanne profiler her:",
+				"learnMore": "Læs mere",
+				"restoreProfileDesc": "Lenovo opbevarer sikkerhedskopierede farveprofiler i Lenovo Cloud. Hvis du vil sikre, at farvekalibreringsfunktionen fungerer på computeren, skal du muligvis gendanne eller installere farveprofiler i følgende situationer: Hvis farveprofilerne går tabt eller beskadiges, vises der et vindue, der minder dig om at gendanne farveprofilerne. Klik på Ja i vinduet, når du bliver bedt om det, og farveprofilerne gendannes automatisk fra Lenovo Cloud. Hvis din computerskærm erstattes af en Lenovo-autoriseret serviceudbyder, skal du gøre følgende:",
+				"restoreProfileStep1": "Klik på det trekantede ikon i Windows-meddelelsesområdet for at få vist skjulte ikoner. Klik derefter på ikonet for X-rite-appen for at åbne den.",
+				"restoreProfileStep2": "Klik på Indstillinger > Gendan profiler."
 			}
 		}
 	}

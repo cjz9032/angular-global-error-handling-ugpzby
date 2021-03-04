@@ -812,10 +812,12 @@
 				"sub9": "Varnost naprave"
 			},
 			"support": "Podpora",
+			"warrantySupport": "Garancija in podpora",
+			"contentLibrary": "Knjižnica vsebin",
+			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"
-			},
-			"homeSecurity": "Connected Home"
+			}
 		},
 		"securityAdvisor": {
 			"title": "Varnostni svetovalec",
@@ -1246,9 +1248,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"Omogočite zvišanje takta GPE v načinu izjemne zmogljivosti.",
-							"description1":"Izberite, če želite takt pomnilnika GPE zvišati za 140 MHz, kar velja za »stabilno« optimalno točko. Učinkovitost delovanja iger in hitrost sličic se lahko povečata za 10–30 %.",
-					        "description2":"Opomba: izboljšave učinkovitosti delovanja in hitrosti sličic se lahko razlikujejo glede na različne igre/aplikacije in druge dejavnike. Temu primerno se lahko povečajo tudi poraba energije, temperatura računalnika in šum ventilatorja. Lenovo ne zagotavlja stabilnosti in izboljšanja učinkovitosti delovanja, ko je omogočeno zvišanje takta procesorja."
+							"checkboxtext": "Omogočite zvišanje takta GPE v načinu izjemne zmogljivosti.",
+							"description1": "Izberite, če želite takt pomnilnika GPE zvišati za 140 MHz, kar velja za »stabilno« optimalno točko. Učinkovitost delovanja iger in hitrost sličic se lahko povečata za 10–30 %.",
+							"description2": "Opomba: izboljšave učinkovitosti delovanja in hitrosti sličic se lahko razlikujejo glede na različne igre/aplikacije in druge dejavnike. Temu primerno se lahko povečajo tudi poraba energije, temperatura računalnika in šum ventilatorja. Lenovo ne zagotavlja stabilnosti in izboljšanja učinkovitosti delovanja, ko je omogočeno zvišanje takta procesorja."
 						},
 						"autoTransition": {
 							"description": {
@@ -2550,6 +2552,873 @@
 			"categories": "Kategorije",
 			"categoriesDesc": "Poiščite koristne informacije v naših člankih.",
 			"seeArticles": "OGLED ČLANKOV"
+		}
+	},
+	"smartPerformance": {
+		"title": "Smart Performance",
+		"back": "NAZAJ",
+		"performanceandSecurityCheckTitle": "Pregled učinkovitosti delovanja in varnosti",
+		"performanceandSecurityCheckSubTitle": "Diagnosticiramo in odpravimo težave z učinkovitostjo delovanja in varnostjo računalnika",
+		"auto": "Samodejno",
+		"manual": "Ročno",
+		"performanceOfflineText": "Funkcija iskanja bo na voljo, ko bo v računalniku vzpostavljena internetna povezava.",
+		"scanButton": "BREZPLAČEN PREGLED RAČUNALNIKA",
+		"section1Heading": "Kako bi ocenili učinkovitost delovanja računalnika?",
+		"section1Description": "Ali računalnik deluje počasi? Ali traja predolgo, da se aplikacije odzovejo? Napake v sistemu Windows? Pomisleki glede zlonamerne programske opreme? Ugotovimo, kaj povzroča težavo, in jo odpravimo.",
+		"critical": "NUJNO",
+		"allisWell": "VSE JE V REDU",
+		"zero": 0,
+		"one": 1,
+		"two": 2,
+		"three": 3,
+		"four": 4,
+		"five": 5,
+		"six": 6,
+		"seven": 7,
+		"eight": 8,
+		"nine": 9,
+		"ten": 10,
+		"tuneUP": "Delovanje računalnike je treba optimizirati",
+		"runningWell": "Računalnik deluje dobro",
+		"section2Heading": "Vrhunska učinkovitost delovanja računalnika Vedno",
+		"section2Description": "Naša programska oprema lahko pregleduje vaš računalnik 24 ur dnevno vse dni v tednu in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
+		"am": "AM",
+		"pm": "PM",
+		"scanNow": "Preglej zdaj",
+		"signUpAndFix": "Prijava in odpravljanje težav",
+		"cancel": "Prekliči",
+		"scanning": "Pregledovanje",
+		"fixIt": "Nujni popravek",
+		"optimizeIt": "Optimiziranje",
+		"maintainIt": "Vzdrževanje",
+		"noteFindings": "Do naših ugotovitev smo prišli na podlagi podrobne analize vašega računalnika.",
+		"noteNavigateTab": "Če želite izvedeti več, se pomaknite po zavihkih:",
+		"scannedAreas": "Pregledana področja",
+		"lastFix": "Zadnji popravek",
+		"fixResult": "Rezultat popravka",
+		"checkPreviousResults": "Preveri prejšnje rezultate",
+		"tunePCPerformance": {
+			"title": "Optimalno Delovanje",
+			"heading": "Pokažite računalniku, kako ga cenite",
+			"description": "Tudi najboljšemu računalniku lahko koristijo občasne optimizacije. Z našo zmogljivo aplikacijo izvedite optimizacijo in naredite več.",
+			"tabSet1": {
+				"tab1": "Nakopičena navlaka",
+				"tab2": "Težave z uporabnostjo",
+				"tab3": "Nastavitve sistema Windows",
+				"tab4": "Sistemske napake",
+				"tab5": "Napake v registru"
+			},
+			"tabSet2": {
+				"tab1Heading": "PREPROSTO",
+				"tab1Description": "Ne zmedemo vas s tehničnim žargonom",
+				"tab2Heading": "HITRO",
+				"tab2Description": "100-točkovni pregled v manj kot 5 minutah",
+				"tab3Heading": "VARNO",
+				"tab3Description": "Nobene strašilne programske opreme, zgolj najboljše prakse"
+			},
+			"summaryTitle": "Optimiziranje učinkovitosti delovanja računalnika"
+		},
+		"boostInternetPerformance": {
+			"title": "VEČJA HITROST INTERNETA",
+			"extraTitle": "Hitrost Delovanja Interneta",
+			"heading": "Pospešite internetni dostop",
+			"description": "Za mnoge je počasen Wi-Fi ali celo njegova odsotnost, kot da bi bili odrezani od sveta. Konfigurirajmo vaš internet, Wi-Fi in nastavitve brskalnika za optimalno delovanje.",
+			"tabSet1": {
+				"tab1": "E-smeti",
+				"tab2": "Omrežne nastavitve",
+				"tab3": "Nastavitve brskalnika",
+				"tab4": "Varnost brskalnika",
+				"tab5": "Učinkovitost delovanja Wi-Fi-ja"
+			},
+			"tabSet2": {
+				"tab1Heading": "TEŽAVE Z BRSKALNIKOM",
+				"tab1Description": "Konfiguriramo in popravimo vse priljubljene spletne brskalnike.",
+				"tab2Heading": "NAPAKE POVEZAVE",
+				"tab2Description": "Diagnosticiramo in odpravimo lahko vaše težave s povezljivostjo.",
+				"tab3Heading": "POČASEN INTERNET",
+				"tab3Description": "Pomagali vam bomo doseči največjo učinkovitost delovanja."
+			},
+			"summaryTitle": "Hitrost delovanja interneta"
+		},
+		"malwareSecurity": {
+			"title": "Virusi In Varnost",
+			"heading": "Računalniku zagotovite dodatno skrb, ki jo potrebuje",
+			"description": "Zlonamerna programska oprema lahko povzroči zrušitev računalnika, ogrožanje podatkov in poslabšanje učinkovitosti delovanja. Odstranite zlonamerno programsko opremo in še veliko, veliko več.",
+			"tabSet1": {
+				"tab1": "Iskanje zlonamerne programske opreme",
+				"tab2": "Okužbe z napadi na nulti dan",
+				"tab3": "Programi, ki ne delujejo pravilno",
+				"tab4": "Moteča oglaševalska programska oprema",
+				"tab5": "Varnostne nastavitve"
+			},
+			"tabSet2": {
+				"tab1Heading": "VIRUSI Z NAPADOM NA NULTI DAN",
+				"tab1Description": "Odstranimo tudi najnovejše okužbe z zlonamerno programsko opremo",
+				"tab2Heading": "ODSTRANJEVANJE VOHUNSKE PROGRAMSKE OPREME",
+				"tab2Description": "Odstranimo vse potencialno neželene programe",
+				"tab3Heading": "LAHKO IN HITRO",
+				"tab3Description": "Pregled običajno traja 5–10 minut"
+			},
+			"summaryTitle": "Zlonamerna programska oprema in varnost"
+		},
+		"proactiveAutomated": {
+			"title": "SPROTNO IN SAMODEJNO",
+			"heading": "Zagotovite si zmogljivost, potrebno za reševanje težav, preden vas prizadenejo.",
+			"description": "Smart Performance stalno išče na stotine možnih težav, ki vplivajo na učinkovitost delovanja računalnika. Sproti jih odpravimo tako, da ste lahko brez skrbi.",
+			"tabSet1": {
+				"tab1": "Nastavitev časa pregleda",
+				"tab2": "Pregled na zahtevo",
+				"tab3": "Samodejno reševanje",
+				"tab4": "Učinkovito",
+				"tab5": "Zaščita 24 ur dnevno vse dni v tednu"
+			},
+			"tabSet2": {
+				"tab1Heading": "PREPROSTO",
+				"tab1Description": "Ne zmedemo vas s tehničnim žargonom",
+				"tab2Heading": "HITRO",
+				"tab2Description": "100-točkovni pregled v manj kot 5 minutah",
+				"tab3Heading": "VARNO",
+				"tab3Description": "Nobene strašilne programske opreme, zgolj najboljše prakse"
+			}
+		},
+		"noScanResults": "Postopek pregleda sprožite s klikom gumba PREGLEJ IN POPRAVI.",
+		"startScan": "<b>Ali ste pripravljeni za začetek pregleda?</b> Diagnosticirajmo in odpravimo težave z učinkovitostjo delovanja in varnostjo računalnika.",
+		"subscriptionDetails": {
+			"title": "Podrobnosti o naročnini",
+			"description": "Naročeni ste na storitev Lenovo Smart Performance. V tem času so na voljo vse funkcije, ki zagotavljajo zaščito računalnika in nemoteno delovanje.",
+			"learnMore": "Izvedite več",
+			"startDate": "Datum začetka",
+			"endDate": "Datum konca",
+			"status": "Stanje",
+			"activeStatus": "DEJAVNO",
+			"inactiveStatus": "NEDEJAVNO",
+			"manageSubscription": "UPRAVLJANJE NAROČNINE",
+			"titlebeta": "Program različice beta programske opreme Lenovo",
+			"manageSubscriptionBeta": "OMOGOČANJE VSEH FUNKCIJ",
+			"descriptionbeta": "Lenovo do julija 2020 ponuja pilotni program za preizkušanje funkcije Smart Performance.",
+			"descriptionbeta1": "Vabimo vas, da se pridružite in preizkusite celotno funkcijo.",
+			"descriptionNonSubscriber": "Niste naročeni na storitev Lenovo Smart Performance. Pregledali boste lahko le računalnik. Naročite se in izkoristite vse prednosti zaščitenega računalnika, ki deluje brezhibno.",
+			"processStatus": "OBDELAVA",
+			"descriptionExpired": "Vaša naročnina je potekla, zato trenutno lahko uporabljate samo funkcijo za pregledovanje v storitvi Smart Performance. Naročnino lahko obnovite s klikom na povezavo »Upravljaj naročnino« ter tako ohranite celovito zaščito naprave.",
+			"expiredStatus": "POTEKLO",
+			"expiredNote": "Vaša naročnina poteče čez",
+			"day": "dan",
+			"days": "dni",
+			"weeks": "tednov",
+			"week": "en teden",
+			"month": "mesec",
+			"today": "danes",
+			"next": "naprej"
+		},
+		"scanSettings": {
+			"title": "Nastavite časa načrtovanega pregleda",
+			"description": "Omogočite ali onemogočite pregled in nastavite urnik zanj",
+			"enableScan": "Omogoči pregled",
+			"changeScanTitle": "Sprememba urnika pregleda",
+			"changeScanDescription": "Uredite urnik pregleda, tako da se bo izvedel, ko ga potrebujete.",
+			"frequency": "Pogostost",
+			"txtDate": "Datum",
+			"txtDay": "dan",
+			"txtTime": "Ura",
+			"txtSave": "shrani",
+			"txtCancel": "Prekliči",
+			"scanFrequencyWeek": "Enkrat tedensko",
+			"scanFrequencyEveryWeek": "Vsak drugi teden",
+			"scanFrequencyMonth": "Vsak mesec",
+			"mon": "Ponedeljek",
+			"tue": "Torek",
+			"wed": "Sreda",
+			"thu": "Četrtek",
+			"fri": "Petek",
+			"sat": "Sobota",
+			"sun": "Nedelja",
+			"am": "AM",
+			"pm": "PM",
+			"tooltipText": "Če je to stikalo omogočeno, se bo pregled učinkovitosti delovanja in varnosti sistema samodejno začel na nastavljen datum in uro."
+		},
+		"scanningPage": {
+			"title": "Pregled učinkovitosti delovanja in varnosti",
+			"description": "Počakajte, da pregledamo, ali ima vaš sistem morebitne težave ali je ogrožen.",
+			"scanningSystem": "Pregledovanje sistema",
+			"complete": "končano",
+			"cancelScan": {
+				"button": "PREKLIČI PREGLED",
+				"title": "Ali želite preklicati pregled?",
+				"description": "Če zapustite trenutni zaslon, bo pregled preklican in usmerjeni boste na začetno stran. Seveda lahko pregled kadar koli spet sprožite.",
+				"yesButton": "DA, PREKLIČI",
+				"noButton": "NE, NADALJUJ PREGLED",
+				"cancelMayTakeSomeTime": "Počakajte. Preklic lahko traja nekaj časa, odvisno od sistema.",
+				"cancelTextPrompt": "Ali ste prepričani, da želite preklicati?"
+			},
+			"waiting": "čakanje na pregled",
+			"completed": "končano",
+			"nowScanningDetail": {
+				"cardTitle": "PODROBNOSTI TRENUTNEGA PREGLEDA",
+				"current": "TRENUTNO: ",
+				"upNext": "NASLEDNJE: ",
+				"tunePCDesc": "Pomagajmo izboljšati učinkovitost delovanja računalnika. To storimo varno ob upoštevanju najboljših praks v panogi. Prednosti za naročnike vključujejo skrajšan čas zagona računalnika, izboljšano učinkovitost delovanja, večjo stabilnost in hitrejši zagon aplikacij.",
+				"boostDesc": "Pomagajmo izboljšati vašo izkušnjo pri brskanju. Odpravimo težave z omrežjem in dostopom. Prednosti za naročnike vključujejo izboljšanje internetne povezljivosti, izboljšanje hitrosti nalaganja/prenosa in večjo varnost v internetu.",
+				"malwareDesc": "Pomagajmo na zahtevo hitro zaščititi računalnik. To storimo tako, da odstranimo vohunsko, zlonamerno in oglaševalsko programsko opremo. Odstranimo tudi okužbe z napadi na nulti dan. Prednosti za naročnike vključujejo varnost podatkov in optimalno učinkovitost delovanja sistema.",
+				"proactiveDesc": "Občasno optimizirajmo računalnik in odpravimo težave – sprotno in samodejno, da bo računalnik optimiziran in varen. Vedno",
+				"tunePCScanningItems": {
+					"accumulatedJunk": {
+						"itema1": "Iskanje navlake na 85 mestih",
+						"itema2": "Datoteke sistemskih dnevnikov, ki niso potrebne",
+						"itema3": "Nepotrebni ostanki aplikacij",
+						"itema4": "Začasne datoteke, ki po nepotrebnem zavzemajo prostor na disku",
+						"itema5": "Datoteke, ki ste jih že davno tega izbrisali",
+						"itema6": "Zastarele napake in opozorila"
+					},
+					"usabilityIssues": {
+						"itemb1": "Odpravljanje na desetine ovir za uporabnost",
+						"itemb2": "Preverjanje povezljivosti zunanjih naprav",
+						"itemb3": "Zagotavljanje, da je Windows vedno posodobljen",
+						"itemb4": "Preverjanje, ali se aplikacije upodabljajo in prikazujejo na najboljši možen način",
+						"itemb5": "Analiziranje porabe energije procesorja",
+						"itemb6": "Pomoč za hitro iskanje datotek"
+					},
+					"windowsSettings": {
+						"itemc1": "Diagnosticiranje na desetine nastavitev sistema Windows",
+						"itemc2": "Zagotavljanje, da Windows deluje na najboljši možen način",
+						"itemc3": "Zagotavljanje, da se izvajajo nujne storitve",
+						"itemc4": "Preverjanje pravilnega delovanja nastavitev povezljivosti",
+						"itemc5": "Preverjanje možnosti skupne rabe datotek v omrežju",
+						"itemc6": "Preverjanje biometričnih nastavitev in nastavitev dostopa"
+					},
+					"systemErrors": {
+						"itemd1": "Zagotavljanje, da se izvajajo nujne storitve",
+						"itemd2": "Izbira storitev za večjo učinkovitost delovanja",
+						"itemd3": "Iskanje napak zaradi sporov programske opreme",
+						"itemd4": "Optimiziranje upravljanja napak v sistemu Windows",
+						"itemd5": "Iskanje in odpravljanje napak pri zagonu aplikacij",
+						"itemd6": "Konfiguriranje poročil o sistemskih napakah"
+					},
+					"registryErrors": {
+						"iteme1": "Poglobljeno preverjanje registra sistema Windows",
+						"iteme2": "Iskanje neveljavnih storitev sistema Windows",
+						"iteme3": "Iskanje poškodovanih vnosov v registru",
+						"iteme4": "Iskanje neuporabljenih pripon datotek",
+						"iteme5": "Iskanje napačnih vnosov nameščenih aplikacij",
+						"iteme6": "Iskanje neuporabljenih preostalih vnosov"
+					}
+				},
+				"boostScanningItems": {
+					"networkSettings": {
+						"itema1": "Diagnosticiranje omrežnih in internetnih nastavitev",
+						"itema2": "Preverjanje nastavitev omrežne konfiguracije",
+						"itema3": "Preverjanje razpoložljivih omrežnih nastavitev",
+						"itema4": "Konfiguriranje za hitrejše nalaganje spletnih mest",
+						"itema5": "Iskanje napak pri upodabljanju strani",
+						"itema6": "Ali povezovalne storitve delujejo pravilno"
+					},
+					"browserSettings": {
+						"itemb1": "Omogočanje boljšo izkušnje pri brskanju",
+						"itemb2": "Konfiguriranje nastavitev za hitrejše upodabljanje spletnih mest",
+						"itemb3": "Zagotavljanje, da varnostne storitve brskalnika delujejo pravilno",
+						"itemb4": "Zagotavljanje, da se spletne strani pravilno upodabljajo",
+						"itemb5": "Preverjanje nastavitev za hitrejše prenose",
+						"itemb6": "Preverjanje dovoljenj in nadzora dostopa"
+					},
+					"browserSecurity": {
+						"itemc1": "Zagotavljanje, da se izvajajo varnostne storitve",
+						"itemc2": "Konfiguriranje varnostnih funkcij brskalnika",
+						"itemc3": "Preverjanje, ali omrežne storitve delujejo pravilno",
+						"itemc4": "Konfiguriranje nastavitev protokolov",
+						"itemc5": "Preverjanje, ali so nastavitve vsebine brskalnika pravilne",
+						"itemc6": "Preverjanje vtičnikov in razširitev brskalnika"
+					},
+					"wifiPerformance": {
+						"itemd1": "Optimiziranje nastavitev za uporabo Wi-Fi-ja",
+						"itemd2": "Zagotavljanje, da je domače omrežje varno",
+						"itemd3": "Preverjanje nastavitev storitev za Wi-Fi",
+						"itemd4": "Varne nastavitve za skupno rabo omrežja",
+						"itemd5": "Preverjanje varnostnih standardov za Wi-Fi",
+						"itemd6": "Zagotavljanje, da se kanali za Wi-Fi ne prekrivajo"
+					},
+					"eJunk": {
+						"iteme1": "Odpravljanje navlake iz brskalnikov",
+						"iteme2": "Iskanje preostankov e-smeti",
+						"iteme3": "Iskanje zastarelih internetnih datotek",
+						"iteme4": "Brisanje neželenega spletnega predpomnilnika",
+						"iteme5": "Brisanje piškotkov",
+						"iteme6": "Odstranjevanje preostankov iz brskalnika"
+					}
+				},
+				"malwareScanningItems": {
+					"malwareScan": {
+						"itema1": "Pregled pogostih točke nalaganja",
+						"itema2": "Preverjanje, ali so na kritičnih mestih morebitne grožnje",
+						"itema3": "Iskanje virusov ter vohunske in zlonamerne programske opreme",
+						"itema4": "Iskanje več kot 50 vrst datotek",
+						"itema5": "Iskanje ostankov zlonamerne programske opreme",
+						"itema6": "Uporaba oblačnega mehanizma za odpravljanja težav"
+					},
+					"zerodayInfections": {
+						"itemb1": "Iskanje virusov z napadom na nulti dan",
+						"itemb2": "Iskanje nedavne nediagnosticirane zlonamerne programske opreme",
+						"itemb3": "Pregledovanje z oblačnim odpravljanjem težav",
+						"itemb4": "Izvajanje vedenjskega nadzora",
+						"itemb5": "Pregledovanje datotek z združenim mehanizmom",
+						"itemb6": "Pregledovanje z najnovejšimi definicijami"
+					},
+					"securitySettings": {
+						"itemc1": "Zagotavljanje, da je Windows vedno posodobljen",
+						"itemc2": "Zagotavljanje, da storitev požarnega zidu Windows deluje pravilno",
+						"itemc3": "Zagotavljanje, da so nastavitve brskalnika varne",
+						"itemc4": "Preverjanje nujnih varnostnih storitev",
+						"itemc5": "Konfiguriranje nastavitev uporabniškega dostopa",
+						"itemc6": "Preverjanje storitev za preverjanje pristnosti"
+					},
+					"errantPrograms": {
+						"itemd1": "Iskanje napačnih aplikacij",
+						"itemd2": "Iskanje potencialno neželenih aplikacij",
+						"itemd3": "Iskanje nedejavnih in skritih aplikacij",
+						"itemd4": "Preverjanje, ali imajo aplikacije zlonamerno delovanje",
+						"itemd5": "Preverjanje aplikacij na podlagi dejavnika ugleda",
+						"itemd6": "Preverjanje, ali so v registru vnosi za napačne programe"
+					},
+					"annoyingAdware": {
+						"iteme1": "Iskanje oglaševalske programske opreme v brskalniku",
+						"iteme2": "Spreminjanje nastavitev za pojavna okna v brskalnikih",
+						"iteme3": "Odpravljanje groženj zaradi preusmeritev brskalnika",
+						"iteme4": "Preverjanje, ali so prisotni ostanki oglaševalske programske opreme",
+						"iteme5": "Optimiziranje nastavitev za izkušnjo v brskalniku",
+						"iteme6": "preverjanje oblačnega mehanizma za odpravljanja težav"
+					}
+				}
+			},
+			"confirmationTitle": "Postopek plačila Lenovo",
+			"confirmationNote": "Za dokončanje plačila boste preusmerjeni na spletno mesto družbe Lenovo za plačilo. Ko je plačilo opravljeno, lahko v razdelku »Podrobnosti naročnine« pritisnete gumb »osveži« in si ogledate rezultat plačila.",
+			"confirmationBtn": "Nadaljuj",
+			"refreshButton": "Osveži stanje"
+		},
+		"scanCompletePage": {
+			"title": "Pregled sistema je končan",
+			"description": "Najdeno v vašem {{machineFamilyName}}",
+			"scanRates": "Naš pregled je vaš računalnik ocenil z: ",
+			"summary": "Povzetek",
+			"foundIssues": "Pregled je odkril toliko težav: {{issueCount}}",
+			"summaryDetails": "Če želite odpraviti te težave in si zagotoviti optimalno delovanje sistema, se registrirajte. Naša programska oprema lahko 24 ur dnevno vse dni v tednu pregleduje ta področja sistema in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
+			"expiredSummaryDetails": "Vaša naročnina je potekla, zato trenutno lahko uporabljate samo funkcijo za pregledovanje v storitvi Smart Performance. Če želite obnoviti funkcijo »Preglej in popravi«, pritisnite spodnji gumb »Obnovi in popravi«, da obnovite naročnino.",
+			"signupRepairButton": "REGISTRIRAJTE SE IN POPRAVITE ZDAJ",
+			"renewAndFix": "Obnovi in popravi",
+			"backToHome": "Nazaj na začetno stran",
+			"monthlyPricing": "<b>Manj kot {{monthlyPrice}} na mesec.</b> Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden <a  href=\"#\">Več informacij</a>",
+			"issueCount": "ŠT. TEŽAV: {{individualIssueCount}}",
+			"issues": "Težave",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
+			"scannedAreas": "PREGLEDANA PODROČJA",
+			"summaryPurchaseTip": "Kupite letni paket zdaj, težave pa bomo samodejno odpravljali vsak teden.",
+			"tunePCTooltip": "Izboljšajte splošno zmogljivost sistema, skrajšajte čas zagona računalnika in izboljšajte čas nalaganja aplikacij.",
+			"boostTooltip": "Izboljšajte zmogljivost omrežja, izkušnjo brskanja in povezljivost.",
+			"malwareTooltip": "Izboljšajte varnost, odstranite zlonamerno programsko opremo in okužbe ter obnovite stabilnost sistema.",
+			"recommendedAction": {
+				"title": "Priporočen Ukrep",
+				"description": "Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden",
+				"yearlyPricing": "{{yearlyPrice}}/leto",
+				"monthlyPricing": "MANJ KOT {{monthlyPrice}} MESEČNO.",
+				"longerTerm": "Daljši rok? Še večji prihranek?",
+				"newDescription": "Po prijavi bomo te težave samodejno odpravili vsak teden.",
+				"signupButton": "REGISTRIRAJTE SE"
+			},
+			"tunepc": {
+				"accumulatedjunkscannedareas": {
+					"area1": "Iskanje navlake na 85 mestih",
+					"area2": "Datoteke sistemskih dnevnikov, ki niso potrebne",
+					"area3": "Nepotrebni ostanki aplikacij",
+					"area4": "Začasne datoteke, ki po nepotrebnem zavzemajo prostor na disku",
+					"area5": "Datoteke, ki ste jih že davno tega izbrisali",
+					"area6": "Zastarele napake in opozorila"
+				},
+				"registryerrorsscannedareas": {
+					"area1": "Izvedeno je poglobljeno preverjanje registra sistema Windows",
+					"area2": "Izvedeno je iskanje neveljavnih storitev sistema Windows",
+					"area3": "Izvedeno je iskanje poškodovanih vnosov v registru",
+					"area4": "Izvedeno je iskanje neuporabljenih pripon datotek",
+					"area5": "Izvedeno je iskanje napačnih vnosov nameščenih aplikacij",
+					"area6": "Izvedeno je iskanje neuporabljenih preostalih vnosov"
+				},
+				"windowssettingsscannedareas": {
+					"area1": "Izvedeno je diagnosticiranje na desetine nastavitev sistema Windows",
+					"area2": "Izvedeno je preverjanje, ali Windows deluje na najboljši možen način",
+					"area3": "Potrjeno je, da se izvajajo nujne storitve",
+					"area4": "Izvedeno je preverjanje pravilnega delovanja nastavitev povezljivosti",
+					"area5": "Izvedeno je preverjanje možnosti skupne rabe datotek v omrežju",
+					"area6": "Izvedeno je preverjanje biometričnih nastavitev in nastavitev dostopa"
+				},
+				"usabilityissuesscannedareas": {
+					"area1": "Izvedeno je iskanje ovir za uporabnost",
+					"area2": "Izvedeno je preverjanje povezljivosti zunanjih naprav",
+					"area3": "Preverjeno je stanje posodobitev sistema Windows",
+					"area4": "Preverjene so nastavitve upodabljanja aplikacij",
+					"area5": "Izvedeno je analiziranje porabe energije procesorja",
+					"area6": "Pomoč za hitro iskanje datotek"
+				},
+				"systemerrorsscannedareas": {
+					"area1": "Izvedeno je preverjanje, ali se izvajajo nujne storitve",
+					"area2": "Iskanje storitev za večjo učinkovitost delovanja",
+					"area3": "Iskanje napak zaradi sporov programske opreme",
+					"area4": "Analizirano je upravljanje napak v sistemu Windows",
+					"area5": "Izvedeno je iskanje napak pri zagonu aplikacij",
+					"area6": "Preverjena je konfiguracija poročil o napakah sistema"
+				}
+			},
+			"internetperformance": {
+				"ejunkscannedareas": {
+					"area1": "Poiskana je navlaka iz brskalnikov",
+					"area2": "Izvedeno je iskanje preostankov e-smeti",
+					"area3": "Izvedeno je iskanje zastarelih internetnih datotek",
+					"area4": "Izvedeno je iskanje neželenega spletnega predpomnilnika",
+					"area5": "Preverjeno je, ali je treba izbrisati piškotke",
+					"area6": "Poiskani so ostanki brskalnika"
+				},
+				"browsersecurityscannedareas": {
+					"area1": "Preverjeno je, ali se izvajajo varnostne storitve",
+					"area2": "Preverjene so varnostne funkcije brskalnika",
+					"area3": "Preverjene so omrežne storitve",
+					"area4": "Konfiguriranje nastavitev protokolov",
+					"area5": "Preverjene so nastavitve vsebine brskalnika",
+					"area6": "Izvedeno je iskanje vtičnikov in razširitev brskalnika"
+				},
+				"networksettingsscannedareas": {
+					"area1": "Izvedeno je diagnosticiranje omrežnih in internetnih nastavitev",
+					"area2": "Izvedeno je diagnosticiranje nastavitev omrežne konfiguracije",
+					"area3": "Preverjene so nastavitve povezanega omrežja",
+					"area4": "Izvedeno je diagnosticiranje nastavitev za hitrejše upodabljanje spletnih mest",
+					"area5": "Izvedeno je iskanje napak pri upodabljanju strani",
+					"area6": "Pregledane so vse storitve povezave"
+				},
+				"browsersettingsscannedareas": {
+					"area1": "Omogočanje boljšo izkušnje pri brskanju",
+					"area2": "Izvedeno je diagnosticiranje nastavitev za hitrejše upodabljanje spletnih mest",
+					"area3": "Preverjene so varnostne storitve brskalnika",
+					"area4": "Preverjeno je, ali se spletne strani pravilno upodabljajo",
+					"area5": "Pregledane so nastavitve za hitrejše prenose",
+					"area6": "Analizirana so dovoljenja in nadzor dostopa"
+				},
+				"wifiperformancescannedareas": {
+					"area1": "Preverjene so nastavitve za uporabo Wi-Fi-ja",
+					"area2": "Preverjena je varnost domačega omrežja",
+					"area3": "Pregledane so nastavitve storitev za Wi-Fi",
+					"area4": "Potrjene so varne nastavitve za skupno rabo omrežja",
+					"area5": "Preverjeni so varnostni standardi za Wi-Fi",
+					"area6": "Izvedeno je analiziranje, da se kanali za Wi-Fi ne prekrivajo"
+				}
+			},
+			"malwaresecurity": {
+				"malwarescanscannedareas": {
+					"area1": "Pregledane so pogoste točke nalaganja",
+					"area2": "Preverjeno je, ali so na kritičnih mestih morebitne grožnje",
+					"area3": "Izvedeno je iskanje virusov ter vohunske in zlonamerne programske opreme",
+					"area4": "Pregledano je, ali je ogrožena katera od več kot 50 vrst datotek",
+					"area5": "Izvedeno je iskanje ostankov zlonamerne programske opreme",
+					"area6": "Preverjen je oblačni mehanizem za odpravljanja težav"
+				},
+				"errantprogramsscannedareas": {
+					"area1": "Iskanje napačnih aplikacij",
+					"area2": "Izvedeno je iskanje potencialno neželenih aplikacij",
+					"area3": "Izvedeno je iskanje nedejavnih in skritih aplikacij",
+					"area4": "Izvedeno je iskanje zlonamernih aplikacij",
+					"area5": "Izveden je pregled aplikacij na podlagi dejavnika ugleda",
+					"area6": "Preverjeno je, ali so v registru vnosi za napačne programe"
+				},
+				"zerodayinfectionsscannedareas": {
+					"area1": "Izvedeno je iskanje virusov z napadom na nulti dan",
+					"area2": "Izvedeno je iskanje nedavne nediagnosticirane zlonamerne programske opreme",
+					"area3": "Izveden je pregled z oblačnim odpravljanjem težav",
+					"area4": "Izveden je vedenjski nadzor",
+					"area5": "Izvedeno je pregledovanje datotek z združenim mehanizmom",
+					"area6": "Izvedeno je iskanje s posodobljenimi definicijami"
+				},
+				"securitysettingsscannedareas": {
+					"area1": "Preverjeno je, ali so nameščene najnovejše posodobitve za Windows",
+					"area2": "Preverjena je storitev požarnega zidu Windows",
+					"area3": "Preverjeno je, ali so nastavitve brskalnika varne",
+					"area4": "Izvedeno je diagnosticiranje nujnih varnostnih storitev",
+					"area5": "Preverjene so nastavitve uporabniškega dostopa",
+					"area6": "Preverjene so storitve za preverjanje pristnosti"
+				},
+				"annoyingadwarescannedareas": {
+					"area1": "Izvedeno je iskanje oglaševalske programske opreme v brskalniku",
+					"area2": "Izvedeno je preverjanje nastavitev za pojavna okna v brskalnikih",
+					"area3": "Izvedeno je iskanje groženj zaradi preusmeritev brskalnika",
+					"area4": "Preverjeno je, ali so prisotni ostanki oglaševalske programske opreme",
+					"area5": "Preverjene so nastavitve za izkušnjo v brskalniku",
+					"area6": "Preverjeno z oblačnim mehanizmom za odpravljanja težav"
+				}
+			},
+			"subscriber": {
+				"tunepc": {
+					"accumulatedjunkscannedareas": {
+						"area1": "Očiščena je navlaka na 85 mestih",
+						"area2": "Izbrisane so datoteke sistemskih dnevnikov, ki niso potrebne",
+						"area3": "Izbrisani so ostanki aplikacij",
+						"area4": "Odstranjene so začasne datoteke, da se sprosti prostor na disku",
+						"area5": "Odpravljene so datoteke, ki ste jih že davno tega izbrisali",
+						"area6": "Počiščeni so napake in opozorila"
+					},
+					"registryerrorsscannedareas": {
+						"area1": "Izvedeno je poglobljeno preverjanje registra sistema Windows",
+						"area2": "Popravljene so morebitne neveljavne storitve sistema Windows",
+						"area3": "Odstranjeni so morebitni poškodovani vnosi v registru",
+						"area4": "Izbrisane so vse zastarele pripone datotek",
+						"area5": "Izbrisani so napačni vnosi nameščenih aplikacij",
+						"area6": "Izbrisani so neželeni preostali vnosi"
+					},
+					"windowssettingsscannedareas": {
+						"area1": "Preverjene so nastavitve sistema Windows",
+						"area2": "Optimizirane so vse storitve sistema Windows",
+						"area3": "Spremenjene so nujne storitve sistema Windows",
+						"area4": "Spremenjene so nujne storitve sistema Windows",
+						"area5": "Potrjene so možnosti skupne rabe datotek v omrežju",
+						"area6": "Potrjene so biometrične nastavitve in nastavitve dostopa"
+					},
+					"usabilityissuesscannedareas": {
+						"area1": "Odpravljene so vse ovire za uporabnost",
+						"area2": "Potrjena je povezljivosti zunanjih naprav",
+						"area3": "Poskrbljeno je, da bo Windows vedno posodobljen",
+						"area4": "Potrjeno je, da aplikacije upodabljajo in prikazujejo na najboljši možen način",
+						"area5": "Spremenjene so nastavitve za porabo energije procesorja",
+						"area6": "Spremenjene so nastavitve za lažje iskanje datotek"
+					},
+					"systemerrorsscannedareas": {
+						"area1": "Izvedeno je preverjanje, ali se izvajajo nujne storitve",
+						"area2": "Storitve so spremenjene za večjo učinkovitost delovanja",
+						"area3": "Odpravljene so vse napake zaradi sporov programske opreme",
+						"area4": "Optimizirano je upravljanje napak v sistemu Windows",
+						"area5": "Preverjene in odpravljene so napake pri zagonu aplikacij",
+						"area6": "Konfigurirana so poročila o sistemskih napakah"
+					}
+				},
+				"internetperformance": {
+					"ejunkscannedareas": {
+						"area1": "Navlaka je odstranjena iz 4 brskalnikov",
+						"area2": "Izbrisani so ostanki e-smeti",
+						"area3": "Izbrisane so zastarele internetne datoteke",
+						"area4": "Počiščen je neželeni spletni predpomnilnik",
+						"area5": "Počiščeni so piškotki",
+						"area6": "Počiščeni so vsi ostanki v brskalniku"
+					},
+					"browsersecurityscannedareas": {
+						"area1": "Poskrbljeno je, da se izvajajo varnostne storitve",
+						"area2": "Konfigurirane so varnostne funkcije brskalnika",
+						"area3": "Preverjene in popravljene so omrežne storitve",
+						"area4": "Konfigurirane so nastavitve protokolov",
+						"area5": "Potrjeno je, da so nastavitve vsebine brskalnika pravilne",
+						"area6": "Izvedeno je iskanje vtičnikov in razširitev brskalnika"
+					},
+					"networksettingsscannedareas": {
+						"area1": "Popravljene so omrežne in internetne nastavitve",
+						"area2": "Izvedeno je preverjanje nastavitev omrežne konfiguracije",
+						"area3": "Spremenjene so nastavitve povezanega omrežja",
+						"area4": "Izvedeno je diagnosticiranje nastavitev za hitrejše upodabljanje spletnih mest",
+						"area5": "Odpravljene so vse napake pri upodabljanju strani",
+						"area6": "Pregledane so vse storitve povezave"
+					},
+					"browsersettingsscannedareas": {
+						"area1": "Nastavitve so spremenjene za boljšo izkušnjo brskanja",
+						"area2": "Potrjene so nastavitve za hitrejše upodabljanje spletnih mest",
+						"area3": "Poskrbljeno je, da varnostne storitve brskalnika delujejo pravilno",
+						"area4": "Nastavitve so spremenjene, tako da se spletne strani pravilno nalagajo",
+						"area5": "Popravljene so nastavitve za hitrejše prenose",
+						"area6": "Popravljena so dovoljenja in nastavitve za nadzor dostopa"
+					},
+					"wifiperformancescannedareas": {
+						"area1": "Spremenjene so nastavitve za uporabo Wi-Fi-ja",
+						"area2": "Potrjene so varne nastavitve domačega omrežja",
+						"area3": "Popravljene so nastavitve storitev za Wi-Fi",
+						"area4": "Spremenjene so varne nastavitve za skupno rabo omrežja",
+						"area5": "Preverjeni so varnostni standardi za Wi-Fi",
+						"area6": "Potrjeni so kanali za Wi-Fi"
+					}
+				},
+				"malwaresecurity": {
+					"malwarescanscannedareas": {
+						"area1": "Preverjene in odstranjene so grožnje na skupnih točkah za nalaganje",
+						"area2": "Preverjene in odstranjene so grožnje na kritičnih lokacijah",
+						"area3": "Iz računalnika so odstranjene vse grožnje",
+						"area4": "Potrjeno je, da ni ogrožena nobena od več kot 50 vrst datotek",
+						"area5": "Očiščeni so vsi ostanki zlonamerne programske opreme",
+						"area6": "Preverjen je oblačni mehanizem za odpravljanja težav"
+					},
+					"errantprogramsscannedareas": {
+						"area1": "Potrjeni so vsi nameščeni programi",
+						"area2": "Potrjene so potencialno neželene aplikacije",
+						"area3": "Očiščene so vse nedejavne in skrite aplikacije",
+						"area4": "Odstranjene so vse zlonamerne in napačne aplikacije",
+						"area5": "Aplikacije so potrjene na podlagi dejavnika ugleda",
+						"area6": "Izvedeno je preverjanje, ali so v registru napačni programi"
+					},
+					"zerodayinfectionsscannedareas": {
+						"area1": "Izvedeno je iskanje virusov z napadom na nulti dan",
+						"area2": "Iz računalnika je odstranjena vsa zlonamerna programska oprema",
+						"area3": "Izvedeno je preverjanje z oblačnim mehanizmom za odpravljanja težav",
+						"area4": "Dokončan je vedenjski nadzor aplikacij",
+						"area5": "Izvedena je potrditev z združenim mehanizmom",
+						"area6": "Izvedena je potrditev z najnovejšimi definicijami"
+					},
+					"securitysettingsscannedareas": {
+						"area1": "Nastavitve posodobitev za Windows so optimizirane",
+						"area2": "Optimizirana je storitev požarnega zidu Windows",
+						"area3": "Nastavitve brskalnika so varne",
+						"area4": "Izvedeno je diagnosticiranje nujnih varnostnih storitev",
+						"area5": "Optimizirane so nastavitve uporabniškega dostopa",
+						"area6": "Spremenjene so storitve za preverjanje pristnosti"
+					},
+					"annoyingadwarescannedareas": {
+						"area1": "Iz brskalnikov je odstranjena oglaševalska programska oprema",
+						"area2": "Optimizirane so nastavitve za pojavna okna v brskalnikih",
+						"area3": "Izvedeno je diagnosticiranje groženj zaradi preusmeritev brskalnika",
+						"area4": "Očiščeni so ostanki oglaševalske programske opreme",
+						"area5": "Optimizirane so nastavitve za izkušnjo v brskalniku",
+						"area6": "Izvedeno je preverjanje z oblačnim mehanizmom za odpravljanja težav"
+					}
+				}
+			},
+			"Diskspace": "Znova pridobljen prostor na disku:",
+			"Performanceimprovements": "Izboljšave učinkovitosti delovanja:",
+			"Securityimprovements": "Varnostne izboljšave:",
+			"Onceaweek": "Enkrat tedensko"
+		},
+		"subscriberScanHomePage": {
+			"title": "Vse je v redu z ",
+			"titleScanCanceled": "Ocena je bila 0, ker je bil zadnji pregled preklican. Kliknite »NAZAJ NA ZAČETNO STRAN« in preglejte znova.",
+			"serialNumber": "Serijska številka: ",
+			"subTitle": "Naročeni ste na storitev Lenovo Smart Performance",
+			"description": "Računalnik pogosto pregledujemo in sproti odpravljamo težave z njegovo učinkovitostjo delovanja, delovanjem interneta in zlonamerno programsko opremo. Ustrezno ste zaščiteni. Preverjanje učinkovitosti delovanja lahko sprožite tudi na zahtevo, in sicer s klikom na gumb »Preglej«.",
+			"scanNow": "PREGLED IN POPRAVILO",
+			"backToHome": "Nazaj na začetno stran",
+			"returnto": "NAZAJ NA NADZORNO PLOŠČO",
+			"mostRecent": "ZADNJI PREGLED:",
+			"nextScheduled": "NASLEDNJI NAČRTOVANI PREGLED:",
+			"successTitle": "Vaš računalnik je optimiziran!",
+			"successDescription": "Smart Performance je odpravil <b>{{issueCount}} težav</b>, tako da bo računalnik deloval brezhibno. Povzetek pregleda in poročilo o njem si lahko ogledate spodaj.",
+			"scanSummary": {
+				"title": "Povzetek pregleda:",
+				"description": "Stalno optimiziramo vaš računalnik",
+				"tune": "Optimiziraj",
+				"tuneSummary": "Znova pridobljen prostor na disku",
+				"boost": "Pospešitev",
+				"boostSummary": "Popravki za izboljšanje učinkovitosti delovanja",
+				"secure": "Varno",
+				"secureSummary": "Popravki za izboljšanje varnosti",
+				"annual": "Letno",
+				"quarterly": "Četrtletno",
+				"custom": "Po meri",
+				"txtFrom": "Od",
+				"txtTo": "Do",
+				"txtGo": "Pojdi",
+				"summaryCaption": "znova pridobljen prostor",
+				"fixes": "Popravki",
+				"txtClr": "Izbriši"
+			},
+			"lastScanResults": {
+				"title": "Rezultati zadnjih 5 pregledov:",
+				"scanDate": "Datum pregleda",
+				"results": "Rezultati",
+				"status": "Stanje"
+			}
+		},
+		"feedbackContainer": {
+			"title": "Pošljite nam povratne informacije",
+			"subtitle": "Povejte nam svoje mnenje o storitvi Smart Performance",
+			"buttonText": "pošljite povratne informacije",
+			"questions": {
+				"q1": "1. Kako zahtevna ali preprosta je uporaba funkcije za pregledovanje?",
+				"q2": "2. Kako zahtevno ali preprosto je razumeti rezultate pregleda?",
+				"q3": "3. Kako verjetno je, da bi plačali za naročnino na funkcijo Smart Performance, da bi izboljšali delovanje svojega sistema?",
+				"q4": "4. Kako ste na splošno zadovoljni s funkcijo Smart Performance?",
+				"q5": "1. Kako zahtevno ali preprosto je bilo razumeti popravke, ki jih je funkcija Smart Performance izvedla v vašem sistemu?",
+				"q6": "2. Ali smo v vašem sistemu našli zlonamerno programsko opremo?",
+				"q7": "3. Kako verjetno je, da boste še naprej plačevali za funkcijo Smart Performance?",
+				"q8": "4. Kako ste na splošno zadovoljni s funkcijo Smart Performance?"
+			},
+			"rating": {
+				"r1": "Zelo težko",
+				"r2": "Zelo enostavno",
+				"r3": "Zelo težko",
+				"r4": "Zelo enostavno",
+				"r5": "Nikakor",
+				"r6": "Zelo verjetno",
+				"r7": "Zelo nezadovoljen",
+				"r8": "Zelo zadovoljen",
+				"r9": "Zelo težko",
+				"r10": "Zelo enostavno",
+				"r11": "Da",
+				"r12": "Ne",
+				"r13": "Nikakor",
+				"r14": "Zelo verjetno",
+				"r15": "Zelo nezadovoljen",
+				"r16": "Zelo zadovoljen"
+			},
+			"commentTip": "Spodaj vnesite morebitne komentarje ali dodatne povratne informacije:",
+			"comments": "Komentarje vnesite tukaj ..."
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial",
+			"trialTitle": "Trial subscription",
+			"subscriptionTitle": "Paid subscription",
+			"inTrialDetail": "You are currently in your trial period.",
+			"trialExpiredDetail": "Your trial period has expired.",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
+			"discountPrice": "For only $29.99 for one year",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId": "Lenovo ID:",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your own Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join your family's Connected Home Security",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+			"goNow": "Go now",
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
+		}
+	},
+	"dir": "ltr",
+	"dirClass": "ltr",
+	"warranty": {
+		"warrantyStatusText": "Stanje garancije: ",
+		"inWarranty": "V garanciji",
+		"outOfWarranty": "Garancija je potekla",
+		"viewDetails": "Ogled podrobnosti",
+		"currentService": "Trenutno stanje storitve in podpore",
+		"monthsRemaining": "Preostalo št. mesecev: {{remainingMonths}}",
+		"oneMonthRemaining": "Preostal 1 mesec",
+		"lessThanOneMonth": "Preostalo manj kot 1 mesec",
+		"makeSureNeedCoverage": "Poskrbite, da imate potrebno kritje",
+		"recommendsUpgradingText": "Lenovo priporoča nadgradnjo ravni storitve",
+		"exploreOptions": "Raziščite možnosti",
+		"start": "Začni",
+		"end": "Konec",
+		"nMos": "{{monthValue}} mes.",
+		"today": "Danes",
+		"upgradeLevels": {
+			"title": "Servisna garancija in posodobitve Lenovo nudijo zaščito pred okvarami strojne opreme.",
+			"subTitle": "Zaščita pred nenamernimi poškodbami ščiti v primeru padca, razlitja tekočine, počenega zaslona in drugih nenamerno povzročenih poškodb.",
+			"recommended": "Priporočeno",
+			"learnMore": "Želite izvedeti več?",
+			"good": {
+				"warrantyCodeText": "Podpora v servisnem središču",
+				"levelText": "dobro",
+				"point1": "Deli in delo",
+				"point2": "Osnovna telefonska podpora za težave s strojno opremo",
+				"point3": "Popravila, izvedena s pošiljanjem v pooblaščeno servisno središče Lenovo"
+			},
+			"better": {
+				"warrantyCodeText": "Podpora na kraju uporabe",
+				"levelText": "boljše",
+				"point1": "Deli in delo",
+				"point2": "Osnovna telefonska podpora za težave s strojno opremo",
+				"point3": "<b>Hitrejše</b> – popravila izvedena na vaši lokaciji"
+			},
+			"best": {
+				"warrantyCodeText": "Premier",
+				"levelText": "najboljše",
+				"point1": "<b>Prednostna obravnava</b> za dele in delo",
+				"point2": "<b>Napredna</b> telefonska podpora inženirjev družbe Lenovo",
+				"point3": "<b>Hitro</b> – popravila izvedena na vaši lokaciji naslednji delovni dan",
+				"point4": "<b>Celovita podpora za strojno in programsko opremo</b>"
+			}
 		}
 	},
 	"security": {
@@ -4520,832 +5389,12 @@
 		"updateSnapshotTooltip": "Posnetek vseh komponent strojne in programske opreme posodobite z najnovejšimi podatki zanje",
 		"replaceBaselineTooltip": "Izhodiščno različico za izbrane komponente posodobite s trenutnimi podatki o posnetku zanje"
 	},
-	"smartPerformance": {
-		"title": "Smart Performance",
-		"back": "NAZAJ",
-		"performanceandSecurityCheckTitle": "Pregled učinkovitosti delovanja in varnosti",
-		"performanceandSecurityCheckSubTitle": "Diagnosticiramo in odpravimo težave z učinkovitostjo delovanja in varnostjo računalnika",
-		"scanButton": "BREZPLAČEN PREGLED RAČUNALNIKA",
-		"section1Heading": "Kako bi ocenili učinkovitost delovanja računalnika?",
-		"section1Description": "Ali računalnik deluje počasi? Ali traja predolgo, da se aplikacije odzovejo? Napake v sistemu Windows? Pomisleki glede zlonamerne programske opreme? Ugotovimo, kaj povzroča težavo, in jo odpravimo.",
-		"critical": "NUJNO",
-		"allisWell": "VSE JE V REDU",
-		"zero": 0,
-		"one": 1,
-		"two": 2,
-		"three": 3,
-		"four": 4,
-		"five": 5,
-		"six": 6,
-		"seven": 7,
-		"eight": 8,
-		"nine": 9,
-		"ten": 10,
-		"tuneUP": "Delovanje računalnike je treba optimizirati",
-		"section2Heading": "Vrhunska učinkovitost delovanja računalnika Vedno",
-		"section2Description": "Naša programska oprema lahko pregleduje vaš računalnik 24 ur dnevno vse dni v tednu in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
-		"runningWell": "Računalnik deluje dobro",
-		"auto": "Samodejno",
-		"manual": "Ročno",
-		"am": "AM",
-		"pm": "PM",
-		"scanNow": "Preglej zdaj",
-		"signUpAndFix": "Prijava in odpravljanje težav",
-		"cancel": "Prekliči",
-		"scanning": "Pregledovanje",
-		"fixIt": "Nujni popravek",
-		"optimizeIt": "Optimiziranje",
-		"maintainIt": "Vzdrževanje",
-		"noteFindings": "Do naših ugotovitev smo prišli na podlagi podrobne analize vašega računalnika.",
-		"noteNavigateTab": "Če želite izvedeti več, se pomaknite po zavihkih:",
-		"scannedAreas": "Pregledana področja",
-		"lastFix": "Zadnji popravek",
-		"fixResult": "Rezultat popravka",
-		"checkPreviousResults": "Preveri prejšnje rezultate",
-		"tunePCPerformance": {
-			"title": "Optimalno Delovanje",
-			"heading": "Pokažite računalniku, kako ga cenite",
-			"description": "Tudi najboljšemu računalniku lahko koristijo občasne optimizacije. Z našo zmogljivo aplikacijo izvedite optimizacijo in naredite več.",
-			"tabSet1": {
-				"tab1": "Nakopičena navlaka",
-				"tab2": "Težave z uporabnostjo",
-				"tab3": "Nastavitve sistema Windows",
-				"tab4": "Sistemske napake",
-				"tab5": "Napake v registru"
-			},
-			"tabSet2": {
-				"tab1Heading": "PREPROSTO",
-				"tab1Description": "Ne zmedemo vas s tehničnim žargonom",
-				"tab2Heading": "HITRO",
-				"tab2Description": "100-točkovni pregled v manj kot 5 minutah",
-				"tab3Heading": "VARNO",
-				"tab3Description": "Nobene strašilne programske opreme, zgolj najboljše prakse"
-			},
-			"summaryTitle": "Optimiziranje učinkovitosti delovanja računalnika"
-		},
-		"boostInternetPerformance": {
-			"title": "VEČJA HITROST INTERNETA",
-			"extraTitle": "Hitrost Delovanja Interneta",
-			"heading": "Pospešite internetni dostop",
-			"description": "Za mnoge je počasen Wi-Fi ali celo njegova odsotnost, kot da bi bili odrezani od sveta. Konfigurirajmo vaš internet, Wi-Fi in nastavitve brskalnika za optimalno delovanje.",
-			"tabSet1": {
-				"tab1": "E-smeti",
-				"tab2": "Omrežne nastavitve",
-				"tab3": "Nastavitve brskalnika",
-				"tab4": "Varnost brskalnika",
-				"tab5": "Učinkovitost delovanja Wi-Fi-ja"
-			},
-			"tabSet2": {
-				"tab1Heading": "TEŽAVE Z BRSKALNIKOM",
-				"tab1Description": "Konfiguriramo in popravimo vse priljubljene spletne brskalnike.",
-				"tab2Heading": "NAPAKE POVEZAVE",
-				"tab2Description": "Diagnosticiramo in odpravimo lahko vaše težave s povezljivostjo.",
-				"tab3Heading": "POČASEN INTERNET",
-				"tab3Description": "Pomagali vam bomo doseči največjo učinkovitost delovanja."
-			},
-			"summaryTitle": "Hitrost delovanja interneta"
-		},
-		"malwareSecurity": {
-			"title": "Virusi In Varnost",
-			"heading": "Računalniku zagotovite dodatno skrb, ki jo potrebuje",
-			"description": "Zlonamerna programska oprema lahko povzroči zrušitev računalnika, ogrožanje podatkov in poslabšanje učinkovitosti delovanja. Odstranite zlonamerno programsko opremo in še veliko, veliko več.",
-			"tabSet1": {
-				"tab1": "Iskanje zlonamerne programske opreme",
-				"tab2": "Okužbe z napadi na nulti dan",
-				"tab3": "Programi, ki ne delujejo pravilno",
-				"tab4": "Moteča oglaševalska programska oprema",
-				"tab5": "Varnostne nastavitve"
-			},
-			"tabSet2": {
-				"tab1Heading": "VIRUSI Z NAPADOM NA NULTI DAN",
-				"tab1Description": "Odstranimo tudi najnovejše okužbe z zlonamerno programsko opremo",
-				"tab2Heading": "ODSTRANJEVANJE VOHUNSKE PROGRAMSKE OPREME",
-				"tab2Description": "Odstranimo vse potencialno neželene programe",
-				"tab3Heading": "LAHKO IN HITRO",
-				"tab3Description": "Pregled običajno traja 5–10 minut"
-			},
-			"summaryTitle": "Zlonamerna programska oprema in varnost"
-		},
-		"proactiveAutomated": {
-			"title": "SPROTNO IN SAMODEJNO",
-			"heading": "Zagotovite si zmogljivost, potrebno za reševanje težav, preden vas prizadenejo.",
-			"description": "Smart Performance stalno išče na stotine možnih težav, ki vplivajo na učinkovitost delovanja računalnika. Sproti jih odpravimo tako, da ste lahko brez skrbi.",
-			"tabSet1": {
-				"tab1": "Nastavitev časa pregleda",
-				"tab2": "Pregled na zahtevo",
-				"tab3": "Samodejno reševanje",
-				"tab4": "Učinkovito",
-				"tab5": "Zaščita 24 ur dnevno vse dni v tednu"
-			},
-			"tabSet2": {
-				"tab1Heading": "PREPROSTO",
-				"tab1Description": "Ne zmedemo vas s tehničnim žargonom",
-				"tab2Heading": "HITRO",
-				"tab2Description": "100-točkovni pregled v manj kot 5 minutah",
-				"tab3Heading": "VARNO",
-				"tab3Description": "Nobene strašilne programske opreme, zgolj najboljše prakse"
-			}
-		},
-		"noScanResults": "Postopek pregleda sprožite s klikom gumba PREGLEJ IN POPRAVI.",
-		"startScan": "<b>Ali ste pripravljeni za začetek pregleda?</b> Diagnosticirajmo in odpravimo težave z učinkovitostjo delovanja in varnostjo računalnika.",
-		"subscriptionDetails": {
-			"title": "Podrobnosti o naročnini",
-			"description": "Naročeni ste na storitev Lenovo Smart Performance. V tem času so na voljo vse funkcije, ki zagotavljajo zaščito računalnika in nemoteno delovanje.",
-			"learnMore": "Izvedite več",
-			"startDate": "Datum začetka",
-			"endDate": "Datum konca",
-			"status": "Stanje",
-			"activeStatus": "DEJAVNO",
-			"inactiveStatus": "NEDEJAVNO",
-			"manageSubscription": "UPRAVLJANJE NAROČNINE",
-			"titlebeta": "Program različice beta programske opreme Lenovo",
-			"manageSubscriptionBeta": "OMOGOČANJE VSEH FUNKCIJ",
-			"descriptionbeta": "Lenovo do julija 2020 ponuja pilotni program za preizkušanje funkcije Smart Performance.",
-			"descriptionbeta1": "Vabimo vas, da se pridružite in preizkusite celotno funkcijo.",
-			"descriptionNonSubscriber": "Niste naročeni na storitev Lenovo Smart Performance. Pregledali boste lahko le računalnik. Naročite se in izkoristite vse prednosti zaščitenega računalnika, ki deluje brezhibno.",
-			"processStatus": "OBDELAVA",
-			"descriptionExpired": "Vaša naročnina je potekla, zato trenutno lahko uporabljate samo funkcijo za pregledovanje v storitvi Smart Performance. Naročnino lahko obnovite s klikom na povezavo »Upravljaj naročnino« ter tako ohranite celovito zaščito naprave.",
-			"expiredStatus": "POTEKLO",
-			"expiredNote": "Vaša naročnina poteče čez",
-			"day": "dan",
-			"days": "dni",
-			"weeks": "tednov",
-			"week": "en teden",
-			"month": "mesec",
-			"today": "danes",
-			"next": "naprej"
-		},
-		"scanSettings": {
-			"title": "Nastavite časa načrtovanega pregleda",
-			"description": "Omogočite ali onemogočite pregled in nastavite urnik zanj",
-			"enableScan": "Omogoči pregled",
-			"changeScanTitle": "Sprememba urnika pregleda",
-			"changeScanDescription": "Uredite urnik pregleda, tako da se bo izvedel, ko ga potrebujete.",
-			"frequency": "Pogostost",
-			"txtDate": "Datum",
-			"txtDay": "dan",
-			"txtTime": "Ura",
-			"txtSave": "shrani",
-			"txtCancel": "Prekliči",
-			"scanFrequencyWeek": "Enkrat tedensko",
-			"scanFrequencyEveryWeek": "Vsak drugi teden",
-			"scanFrequencyMonth": "Vsak mesec",
-			"mon": "Ponedeljek",
-			"tue": "Torek",
-			"wed": "Sreda",
-			"thu": "Četrtek",
-			"fri": "Petek",
-			"sat": "Sobota",
-			"sun": "Nedelja",
-			"am": "AM",
-			"pm": "PM",
-			"tooltipText": "Če je to stikalo omogočeno, se bo pregled učinkovitosti delovanja in varnosti sistema samodejno začel na nastavljen datum in uro."
-		},
-		"scanningPage": {
-			"title": "Pregled učinkovitosti delovanja in varnosti",
-			"description": "Počakajte, da pregledamo, ali ima vaš sistem morebitne težave ali je ogrožen.",
-			"scanningSystem": "Pregledovanje sistema",
-			"complete": "končano",
-			"cancelScan": {
-				"button": "PREKLIČI PREGLED",
-				"title": "Ali želite preklicati pregled?",
-				"description": "Če zapustite trenutni zaslon, bo pregled preklican in usmerjeni boste na začetno stran. Seveda lahko pregled kadar koli spet sprožite.",
-				"yesButton": "DA, PREKLIČI",
-				"noButton": "NE, NADALJUJ PREGLED",
-				"cancelMayTakeSomeTime": "Počakajte. Preklic lahko traja nekaj časa, odvisno od sistema.",
-				"cancelTextPrompt": "Ali ste prepričani, da želite preklicati?"
-			},
-			"waiting": "čakanje na pregled",
-			"completed": "končano",
-			"nowScanningDetail": {
-				"cardTitle": "PODROBNOSTI TRENUTNEGA PREGLEDA",
-				"current": "TRENUTNO: ",
-				"upNext": "NASLEDNJE: ",
-				"tunePCDesc": "Pomagajmo izboljšati učinkovitost delovanja računalnika. To storimo varno ob upoštevanju najboljših praks v panogi. Prednosti za naročnike vključujejo skrajšan čas zagona računalnika, izboljšano učinkovitost delovanja, večjo stabilnost in hitrejši zagon aplikacij.",
-				"boostDesc": "Pomagajmo izboljšati vašo izkušnjo pri brskanju. Odpravimo težave z omrežjem in dostopom. Prednosti za naročnike vključujejo izboljšanje internetne povezljivosti, izboljšanje hitrosti nalaganja/prenosa in večjo varnost v internetu.",
-				"malwareDesc": "Pomagajmo na zahtevo hitro zaščititi računalnik. To storimo tako, da odstranimo vohunsko, zlonamerno in oglaševalsko programsko opremo. Odstranimo tudi okužbe z napadi na nulti dan. Prednosti za naročnike vključujejo varnost podatkov in optimalno učinkovitost delovanja sistema.",
-				"proactiveDesc": "Občasno optimizirajmo računalnik in odpravimo težave – sprotno in samodejno, da bo računalnik optimiziran in varen. Vedno",
-				"tunePCScanningItems": {
-					"accumulatedJunk": {
-						"itema1": "Iskanje navlake na 85 mestih",
-						"itema2": "Datoteke sistemskih dnevnikov, ki niso potrebne",
-						"itema3": "Nepotrebni ostanki aplikacij",
-						"itema4": "Začasne datoteke, ki po nepotrebnem zavzemajo prostor na disku",
-						"itema5": "Datoteke, ki ste jih že davno tega izbrisali",
-						"itema6": "Zastarele napake in opozorila"
-					},
-					"usabilityIssues": {
-						"itemb1": "Odpravljanje na desetine ovir za uporabnost",
-						"itemb2": "Preverjanje povezljivosti zunanjih naprav",
-						"itemb3": "Zagotavljanje, da je Windows vedno posodobljen",
-						"itemb4": "Preverjanje, ali se aplikacije upodabljajo in prikazujejo na najboljši možen način",
-						"itemb5": "Analiziranje porabe energije procesorja",
-						"itemb6": "Pomoč za hitro iskanje datotek"
-					},
-					"windowsSettings": {
-						"itemc1": "Diagnosticiranje na desetine nastavitev sistema Windows",
-						"itemc2": "Zagotavljanje, da Windows deluje na najboljši možen način",
-						"itemc3": "Zagotavljanje, da se izvajajo nujne storitve",
-						"itemc4": "Preverjanje pravilnega delovanja nastavitev povezljivosti",
-						"itemc5": "Preverjanje možnosti skupne rabe datotek v omrežju",
-						"itemc6": "Preverjanje biometričnih nastavitev in nastavitev dostopa"
-					},
-					"systemErrors": {
-						"itemd1": "Zagotavljanje, da se izvajajo nujne storitve",
-						"itemd2": "Izbira storitev za večjo učinkovitost delovanja",
-						"itemd3": "Iskanje napak zaradi sporov programske opreme",
-						"itemd4": "Optimiziranje upravljanja napak v sistemu Windows",
-						"itemd5": "Iskanje in odpravljanje napak pri zagonu aplikacij",
-						"itemd6": "Konfiguriranje poročil o sistemskih napakah"
-					},
-					"registryErrors": {
-						"iteme1": "Poglobljeno preverjanje registra sistema Windows",
-						"iteme2": "Iskanje neveljavnih storitev sistema Windows",
-						"iteme3": "Iskanje poškodovanih vnosov v registru",
-						"iteme4": "Iskanje neuporabljenih pripon datotek",
-						"iteme5": "Iskanje napačnih vnosov nameščenih aplikacij",
-						"iteme6": "Iskanje neuporabljenih preostalih vnosov"
-					}
-				},
-				"boostScanningItems": {
-					"networkSettings": {
-						"itema1": "Diagnosticiranje omrežnih in internetnih nastavitev",
-						"itema2": "Preverjanje nastavitev omrežne konfiguracije",
-						"itema3": "Preverjanje razpoložljivih omrežnih nastavitev",
-						"itema4": "Konfiguriranje za hitrejše nalaganje spletnih mest",
-						"itema5": "Iskanje napak pri upodabljanju strani",
-						"itema6": "Ali povezovalne storitve delujejo pravilno"
-					},
-					"browserSettings": {
-						"itemb1": "Omogočanje boljšo izkušnje pri brskanju",
-						"itemb2": "Konfiguriranje nastavitev za hitrejše upodabljanje spletnih mest",
-						"itemb3": "Zagotavljanje, da varnostne storitve brskalnika delujejo pravilno",
-						"itemb4": "Zagotavljanje, da se spletne strani pravilno upodabljajo",
-						"itemb5": "Preverjanje nastavitev za hitrejše prenose",
-						"itemb6": "Preverjanje dovoljenj in nadzora dostopa"
-					},
-					"browserSecurity": {
-						"itemc1": "Zagotavljanje, da se izvajajo varnostne storitve",
-						"itemc2": "Konfiguriranje varnostnih funkcij brskalnika",
-						"itemc3": "Preverjanje, ali omrežne storitve delujejo pravilno",
-						"itemc4": "Konfiguriranje nastavitev protokolov",
-						"itemc5": "Preverjanje, ali so nastavitve vsebine brskalnika pravilne",
-						"itemc6": "Preverjanje vtičnikov in razširitev brskalnika"
-					},
-					"wifiPerformance": {
-						"itemd1": "Optimiziranje nastavitev za uporabo Wi-Fi-ja",
-						"itemd2": "Zagotavljanje, da je domače omrežje varno",
-						"itemd3": "Preverjanje nastavitev storitev za Wi-Fi",
-						"itemd4": "Varne nastavitve za skupno rabo omrežja",
-						"itemd5": "Preverjanje varnostnih standardov za Wi-Fi",
-						"itemd6": "Zagotavljanje, da se kanali za Wi-Fi ne prekrivajo"
-					},
-					"eJunk": {
-						"iteme1": "Odpravljanje navlake iz brskalnikov",
-						"iteme2": "Iskanje preostankov e-smeti",
-						"iteme3": "Iskanje zastarelih internetnih datotek",
-						"iteme4": "Brisanje neželenega spletnega predpomnilnika",
-						"iteme5": "Brisanje piškotkov",
-						"iteme6": "Odstranjevanje preostankov iz brskalnika"
-					}
-				},
-				"malwareScanningItems": {
-					"malwareScan": {
-						"itema1": "Pregled pogostih točke nalaganja",
-						"itema2": "Preverjanje, ali so na kritičnih mestih morebitne grožnje",
-						"itema3": "Iskanje virusov ter vohunske in zlonamerne programske opreme",
-						"itema4": "Iskanje več kot 50 vrst datotek",
-						"itema5": "Iskanje ostankov zlonamerne programske opreme",
-						"itema6": "Uporaba oblačnega mehanizma za odpravljanja težav"
-					},
-					"zerodayInfections": {
-						"itemb1": "Iskanje virusov z napadom na nulti dan",
-						"itemb2": "Iskanje nedavne nediagnosticirane zlonamerne programske opreme",
-						"itemb3": "Pregledovanje z oblačnim odpravljanjem težav",
-						"itemb4": "Izvajanje vedenjskega nadzora",
-						"itemb5": "Pregledovanje datotek z združenim mehanizmom",
-						"itemb6": "Pregledovanje z najnovejšimi definicijami"
-					},
-					"securitySettings": {
-						"itemc1": "Zagotavljanje, da je Windows vedno posodobljen",
-						"itemc2": "Zagotavljanje, da storitev požarnega zidu Windows deluje pravilno",
-						"itemc3": "Zagotavljanje, da so nastavitve brskalnika varne",
-						"itemc4": "Preverjanje nujnih varnostnih storitev",
-						"itemc5": "Konfiguriranje nastavitev uporabniškega dostopa",
-						"itemc6": "Preverjanje storitev za preverjanje pristnosti"
-					},
-					"errantPrograms": {
-						"itemd1": "Iskanje napačnih aplikacij",
-						"itemd2": "Iskanje potencialno neželenih aplikacij",
-						"itemd3": "Iskanje nedejavnih in skritih aplikacij",
-						"itemd4": "Preverjanje, ali imajo aplikacije zlonamerno delovanje",
-						"itemd5": "Preverjanje aplikacij na podlagi dejavnika ugleda",
-						"itemd6": "Preverjanje, ali so v registru vnosi za napačne programe"
-					},
-					"annoyingAdware": {
-						"iteme1": "Iskanje oglaševalske programske opreme v brskalniku",
-						"iteme2": "Spreminjanje nastavitev za pojavna okna v brskalnikih",
-						"iteme3": "Odpravljanje groženj zaradi preusmeritev brskalnika",
-						"iteme4": "Preverjanje, ali so prisotni ostanki oglaševalske programske opreme",
-						"iteme5": "Optimiziranje nastavitev za izkušnjo v brskalniku",
-						"iteme6": "preverjanje oblačnega mehanizma za odpravljanja težav"
-					}
-				}
-			},
-			"confirmationTitle": "Postopek plačila Lenovo",
-			"confirmationNote": "Za dokončanje plačila boste preusmerjeni na spletno mesto družbe Lenovo za plačilo. Ko je plačilo opravljeno, lahko v razdelku »Podrobnosti naročnine« pritisnete gumb »osveži« in si ogledate rezultat plačila.",
-			"confirmationBtn": "Nadaljuj",
-			"refreshButton": "Osveži stanje"
-		},
-		"scanCompletePage": {
-			"title": "Pregled sistema je končan",
-			"description": "Najdeno v vašem {{machineFamilyName}}",
-			"scanRates": "Naš pregled je vaš računalnik ocenil z: ",
-			"summary": "Povzetek",
-			"foundIssues": "Pregled je odkril toliko težav: {{issueCount}}",
-			"summaryDetails": "Če želite odpraviti te težave in si zagotoviti optimalno delovanje sistema, se registrirajte. Naša programska oprema lahko 24 ur dnevno vse dni v tednu pregleduje ta področja sistema in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
-			"expiredSummaryDetails": "Vaša naročnina je potekla, zato trenutno lahko uporabljate samo funkcijo za pregledovanje v storitvi Smart Performance. Če želite obnoviti funkcijo »Preglej in popravi«, pritisnite spodnji gumb »Obnovi in popravi«, da obnovite naročnino.",
-			"signupRepairButton": "REGISTRIRAJTE SE IN POPRAVITE ZDAJ",
-			"renewAndFix": "Obnovi in popravi",
-			"backToHome": "Nazaj na začetno stran",
-			"monthlyPricing": "<b>Manj kot {{monthlyPrice}} na mesec.</b> Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden <a  href=\"#\">Več informacij</a>",
-			"issueCount": "ŠT. TEŽAV: {{individualIssueCount}}",
-			"issues": "Težave",
-			"tuneIssueCount": "{{tune}}",
-			"boostIssueCount": "{{boost}}",
-			"secureIssueCount": "{{secure}}",
-			"scannedAreas": "PREGLEDANA PODROČJA",
-			"summaryPurchaseTip": "Kupite letni paket zdaj, težave pa bomo samodejno odpravljali vsak teden.",
-			"tunePCTooltip": "Izboljšajte splošno zmogljivost sistema, skrajšajte čas zagona računalnika in izboljšajte čas nalaganja aplikacij.",
-			"boostTooltip": "Izboljšajte zmogljivost omrežja, izkušnjo brskanja in povezljivost.",
-			"malwareTooltip": "Izboljšajte varnost, odstranite zlonamerno programsko opremo in okužbe ter obnovite stabilnost sistema.",
-			"recommendedAction": {
-				"title": "Priporočen Ukrep",
-				"description": "Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden",
-				"yearlyPricing": "{{yearlyPrice}}/leto",
-				"monthlyPricing": "MANJ KOT {{monthlyPrice}} MESEČNO.",
-				"longerTerm": "Daljši rok? Še večji prihranek?",
-				"newDescription": "Po prijavi bomo te težave samodejno odpravili vsak teden.",
-				"signupButton": "REGISTRIRAJTE SE"
-			},
-			"tunepc": {
-				"accumulatedjunkscannedareas": {
-					"area1": "Iskanje navlake na 85 mestih",
-					"area2": "Datoteke sistemskih dnevnikov, ki niso potrebne",
-					"area3": "Nepotrebni ostanki aplikacij",
-					"area4": "Začasne datoteke, ki po nepotrebnem zavzemajo prostor na disku",
-					"area5": "Datoteke, ki ste jih že davno tega izbrisali",
-					"area6": "Zastarele napake in opozorila"
-				},
-				"registryerrorsscannedareas": {
-					"area1": "Izvedeno je poglobljeno preverjanje registra sistema Windows",
-					"area2": "Izvedeno je iskanje neveljavnih storitev sistema Windows",
-					"area3": "Izvedeno je iskanje poškodovanih vnosov v registru",
-					"area4": "Izvedeno je iskanje neuporabljenih pripon datotek",
-					"area5": "Izvedeno je iskanje napačnih vnosov nameščenih aplikacij",
-					"area6": "Izvedeno je iskanje neuporabljenih preostalih vnosov"
-				},
-				"windowssettingsscannedareas": {
-					"area1": "Izvedeno je diagnosticiranje na desetine nastavitev sistema Windows",
-					"area2": "Izvedeno je preverjanje, ali Windows deluje na najboljši možen način",
-					"area3": "Potrjeno je, da se izvajajo nujne storitve",
-					"area4": "Izvedeno je preverjanje pravilnega delovanja nastavitev povezljivosti",
-					"area5": "Izvedeno je preverjanje možnosti skupne rabe datotek v omrežju",
-					"area6": "Izvedeno je preverjanje biometričnih nastavitev in nastavitev dostopa"
-				},
-				"usabilityissuesscannedareas": {
-					"area1": "Izvedeno je iskanje ovir za uporabnost",
-					"area2": "Izvedeno je preverjanje povezljivosti zunanjih naprav",
-					"area3": "Preverjeno je stanje posodobitev sistema Windows",
-					"area4": "Preverjene so nastavitve upodabljanja aplikacij",
-					"area5": "Izvedeno je analiziranje porabe energije procesorja",
-					"area6": "Pomoč za hitro iskanje datotek"
-				},
-				"systemerrorsscannedareas": {
-					"area1": "Izvedeno je preverjanje, ali se izvajajo nujne storitve",
-					"area2": "Iskanje storitev za večjo učinkovitost delovanja",
-					"area3": "Iskanje napak zaradi sporov programske opreme",
-					"area4": "Analizirano je upravljanje napak v sistemu Windows",
-					"area5": "Izvedeno je iskanje napak pri zagonu aplikacij",
-					"area6": "Preverjena je konfiguracija poročil o napakah sistema"
-				}
-			},
-			"internetperformance": {
-				"ejunkscannedareas": {
-					"area1": "Poiskana je navlaka iz brskalnikov",
-					"area2": "Izvedeno je iskanje preostankov e-smeti",
-					"area3": "Izvedeno je iskanje zastarelih internetnih datotek",
-					"area4": "Izvedeno je iskanje neželenega spletnega predpomnilnika",
-					"area5": "Preverjeno je, ali je treba izbrisati piškotke",
-					"area6": "Poiskani so ostanki brskalnika"
-				},
-				"browsersecurityscannedareas": {
-					"area1": "Preverjeno je, ali se izvajajo varnostne storitve",
-					"area2": "Preverjene so varnostne funkcije brskalnika",
-					"area3": "Preverjene so omrežne storitve",
-					"area4": "Konfiguriranje nastavitev protokolov",
-					"area5": "Preverjene so nastavitve vsebine brskalnika",
-					"area6": "Izvedeno je iskanje vtičnikov in razširitev brskalnika"
-				},
-				"networksettingsscannedareas": {
-					"area1": "Izvedeno je diagnosticiranje omrežnih in internetnih nastavitev",
-					"area2": "Izvedeno je diagnosticiranje nastavitev omrežne konfiguracije",
-					"area3": "Preverjene so nastavitve povezanega omrežja",
-					"area4": "Izvedeno je diagnosticiranje nastavitev za hitrejše upodabljanje spletnih mest",
-					"area5": "Izvedeno je iskanje napak pri upodabljanju strani",
-					"area6": "Pregledane so vse storitve povezave"
-				},
-				"browsersettingsscannedareas": {
-					"area1": "Omogočanje boljšo izkušnje pri brskanju",
-					"area2": "Izvedeno je diagnosticiranje nastavitev za hitrejše upodabljanje spletnih mest",
-					"area3": "Preverjene so varnostne storitve brskalnika",
-					"area4": "Preverjeno je, ali se spletne strani pravilno upodabljajo",
-					"area5": "Pregledane so nastavitve za hitrejše prenose",
-					"area6": "Analizirana so dovoljenja in nadzor dostopa"
-				},
-				"wifiperformancescannedareas": {
-					"area1": "Preverjene so nastavitve za uporabo Wi-Fi-ja",
-					"area2": "Preverjena je varnost domačega omrežja",
-					"area3": "Pregledane so nastavitve storitev za Wi-Fi",
-					"area4": "Potrjene so varne nastavitve za skupno rabo omrežja",
-					"area5": "Preverjeni so varnostni standardi za Wi-Fi",
-					"area6": "Izvedeno je analiziranje, da se kanali za Wi-Fi ne prekrivajo"
-				}
-			},
-			"malwaresecurity": {
-				"malwarescanscannedareas": {
-					"area1": "Pregledane so pogoste točke nalaganja",
-					"area2": "Preverjeno je, ali so na kritičnih mestih morebitne grožnje",
-					"area3": "Izvedeno je iskanje virusov ter vohunske in zlonamerne programske opreme",
-					"area4": "Pregledano je, ali je ogrožena katera od več kot 50 vrst datotek",
-					"area5": "Izvedeno je iskanje ostankov zlonamerne programske opreme",
-					"area6": "Preverjen je oblačni mehanizem za odpravljanja težav"
-				},
-				"errantprogramsscannedareas": {
-					"area1": "Iskanje napačnih aplikacij",
-					"area2": "Izvedeno je iskanje potencialno neželenih aplikacij",
-					"area3": "Izvedeno je iskanje nedejavnih in skritih aplikacij",
-					"area4": "Izvedeno je iskanje zlonamernih aplikacij",
-					"area5": "Izveden je pregled aplikacij na podlagi dejavnika ugleda",
-					"area6": "Preverjeno je, ali so v registru vnosi za napačne programe"
-				},
-				"zerodayinfectionsscannedareas": {
-					"area1": "Izvedeno je iskanje virusov z napadom na nulti dan",
-					"area2": "Izvedeno je iskanje nedavne nediagnosticirane zlonamerne programske opreme",
-					"area3": "Izveden je pregled z oblačnim odpravljanjem težav",
-					"area4": "Izveden je vedenjski nadzor",
-					"area5": "Izvedeno je pregledovanje datotek z združenim mehanizmom",
-					"area6": "Izvedeno je iskanje s posodobljenimi definicijami"
-				},
-				"securitysettingsscannedareas": {
-					"area1": "Preverjeno je, ali so nameščene najnovejše posodobitve za Windows",
-					"area2": "Preverjena je storitev požarnega zidu Windows",
-					"area3": "Preverjeno je, ali so nastavitve brskalnika varne",
-					"area4": "Izvedeno je diagnosticiranje nujnih varnostnih storitev",
-					"area5": "Preverjene so nastavitve uporabniškega dostopa",
-					"area6": "Preverjene so storitve za preverjanje pristnosti"
-				},
-				"annoyingadwarescannedareas": {
-					"area1": "Izvedeno je iskanje oglaševalske programske opreme v brskalniku",
-					"area2": "Izvedeno je preverjanje nastavitev za pojavna okna v brskalnikih",
-					"area3": "Izvedeno je iskanje groženj zaradi preusmeritev brskalnika",
-					"area4": "Preverjeno je, ali so prisotni ostanki oglaševalske programske opreme",
-					"area5": "Preverjene so nastavitve za izkušnjo v brskalniku",
-					"area6": "Preverjeno z oblačnim mehanizmom za odpravljanja težav"
-				}
-			},
-			"subscriber": {
-				"tunepc": {
-					"accumulatedjunkscannedareas": {
-						"area1": "Očiščena je navlaka na 85 mestih",
-						"area2": "Izbrisane so datoteke sistemskih dnevnikov, ki niso potrebne",
-						"area3": "Izbrisani so ostanki aplikacij",
-						"area4": "Odstranjene so začasne datoteke, da se sprosti prostor na disku",
-						"area5": "Odpravljene so datoteke, ki ste jih že davno tega izbrisali",
-						"area6": "Počiščeni so napake in opozorila"
-					},
-					"registryerrorsscannedareas": {
-						"area1": "Izvedeno je poglobljeno preverjanje registra sistema Windows",
-						"area2": "Popravljene so morebitne neveljavne storitve sistema Windows",
-						"area3": "Odstranjeni so morebitni poškodovani vnosi v registru",
-						"area4": "Izbrisane so vse zastarele pripone datotek",
-						"area5": "Izbrisani so napačni vnosi nameščenih aplikacij",
-						"area6": "Izbrisani so neželeni preostali vnosi"
-					},
-					"windowssettingsscannedareas": {
-						"area1": "Preverjene so nastavitve sistema Windows",
-						"area2": "Optimizirane so vse storitve sistema Windows",
-						"area3": "Spremenjene so nujne storitve sistema Windows",
-						"area4": "Spremenjene so nujne storitve sistema Windows",
-						"area5": "Potrjene so možnosti skupne rabe datotek v omrežju",
-						"area6": "Potrjene so biometrične nastavitve in nastavitve dostopa"
-					},
-					"usabilityissuesscannedareas": {
-						"area1": "Odpravljene so vse ovire za uporabnost",
-						"area2": "Potrjena je povezljivosti zunanjih naprav",
-						"area3": "Poskrbljeno je, da bo Windows vedno posodobljen",
-						"area4": "Potrjeno je, da aplikacije upodabljajo in prikazujejo na najboljši možen način",
-						"area5": "Spremenjene so nastavitve za porabo energije procesorja",
-						"area6": "Spremenjene so nastavitve za lažje iskanje datotek"
-					},
-					"systemerrorsscannedareas": {
-						"area1": "Izvedeno je preverjanje, ali se izvajajo nujne storitve",
-						"area2": "Storitve so spremenjene za večjo učinkovitost delovanja",
-						"area3": "Odpravljene so vse napake zaradi sporov programske opreme",
-						"area4": "Optimizirano je upravljanje napak v sistemu Windows",
-						"area5": "Preverjene in odpravljene so napake pri zagonu aplikacij",
-						"area6": "Konfigurirana so poročila o sistemskih napakah"
-					}
-				},
-				"internetperformance": {
-					"ejunkscannedareas": {
-						"area1": "Navlaka je odstranjena iz 4 brskalnikov",
-						"area2": "Izbrisani so ostanki e-smeti",
-						"area3": "Izbrisane so zastarele internetne datoteke",
-						"area4": "Počiščen je neželeni spletni predpomnilnik",
-						"area5": "Počiščeni so piškotki",
-						"area6": "Počiščeni so vsi ostanki v brskalniku"
-					},
-					"browsersecurityscannedareas": {
-						"area1": "Poskrbljeno je, da se izvajajo varnostne storitve",
-						"area2": "Konfigurirane so varnostne funkcije brskalnika",
-						"area3": "Preverjene in popravljene so omrežne storitve",
-						"area4": "Konfigurirane so nastavitve protokolov",
-						"area5": "Potrjeno je, da so nastavitve vsebine brskalnika pravilne",
-						"area6": "Izvedeno je iskanje vtičnikov in razširitev brskalnika"
-					},
-					"networksettingsscannedareas": {
-						"area1": "Popravljene so omrežne in internetne nastavitve",
-						"area2": "Izvedeno je preverjanje nastavitev omrežne konfiguracije",
-						"area3": "Spremenjene so nastavitve povezanega omrežja",
-						"area4": "Izvedeno je diagnosticiranje nastavitev za hitrejše upodabljanje spletnih mest",
-						"area5": "Odpravljene so vse napake pri upodabljanju strani",
-						"area6": "Pregledane so vse storitve povezave"
-					},
-					"browsersettingsscannedareas": {
-						"area1": "Nastavitve so spremenjene za boljšo izkušnjo brskanja",
-						"area2": "Potrjene so nastavitve za hitrejše upodabljanje spletnih mest",
-						"area3": "Poskrbljeno je, da varnostne storitve brskalnika delujejo pravilno",
-						"area4": "Nastavitve so spremenjene, tako da se spletne strani pravilno nalagajo",
-						"area5": "Popravljene so nastavitve za hitrejše prenose",
-						"area6": "Popravljena so dovoljenja in nastavitve za nadzor dostopa"
-					},
-					"wifiperformancescannedareas": {
-						"area1": "Spremenjene so nastavitve za uporabo Wi-Fi-ja",
-						"area2": "Potrjene so varne nastavitve domačega omrežja",
-						"area3": "Popravljene so nastavitve storitev za Wi-Fi",
-						"area4": "Spremenjene so varne nastavitve za skupno rabo omrežja",
-						"area5": "Preverjeni so varnostni standardi za Wi-Fi",
-						"area6": "Potrjeni so kanali za Wi-Fi"
-					}
-				},
-				"malwaresecurity": {
-					"malwarescanscannedareas": {
-						"area1": "Preverjene in odstranjene so grožnje na skupnih točkah za nalaganje",
-						"area2": "Preverjene in odstranjene so grožnje na kritičnih lokacijah",
-						"area3": "Iz računalnika so odstranjene vse grožnje",
-						"area4": "Potrjeno je, da ni ogrožena nobena od več kot 50 vrst datotek",
-						"area5": "Očiščeni so vsi ostanki zlonamerne programske opreme",
-						"area6": "Preverjen je oblačni mehanizem za odpravljanja težav"
-					},
-					"errantprogramsscannedareas": {
-						"area1": "Potrjeni so vsi nameščeni programi",
-						"area2": "Potrjene so potencialno neželene aplikacije",
-						"area3": "Očiščene so vse nedejavne in skrite aplikacije",
-						"area4": "Odstranjene so vse zlonamerne in napačne aplikacije",
-						"area5": "Aplikacije so potrjene na podlagi dejavnika ugleda",
-						"area6": "Izvedeno je preverjanje, ali so v registru napačni programi"
-					},
-					"zerodayinfectionsscannedareas": {
-						"area1": "Izvedeno je iskanje virusov z napadom na nulti dan",
-						"area2": "Iz računalnika je odstranjena vsa zlonamerna programska oprema",
-						"area3": "Izvedeno je preverjanje z oblačnim mehanizmom za odpravljanja težav",
-						"area4": "Dokončan je vedenjski nadzor aplikacij",
-						"area5": "Izvedena je potrditev z združenim mehanizmom",
-						"area6": "Izvedena je potrditev z najnovejšimi definicijami"
-					},
-					"securitysettingsscannedareas": {
-						"area1": "Nastavitve posodobitev za Windows so optimizirane",
-						"area2": "Optimizirana je storitev požarnega zidu Windows",
-						"area3": "Nastavitve brskalnika so varne",
-						"area4": "Izvedeno je diagnosticiranje nujnih varnostnih storitev",
-						"area5": "Optimizirane so nastavitve uporabniškega dostopa",
-						"area6": "Spremenjene so storitve za preverjanje pristnosti"
-					},
-					"annoyingadwarescannedareas": {
-						"area1": "Iz brskalnikov je odstranjena oglaševalska programska oprema",
-						"area2": "Optimizirane so nastavitve za pojavna okna v brskalnikih",
-						"area3": "Izvedeno je diagnosticiranje groženj zaradi preusmeritev brskalnika",
-						"area4": "Očiščeni so ostanki oglaševalske programske opreme",
-						"area5": "Optimizirane so nastavitve za izkušnjo v brskalniku",
-						"area6": "Izvedeno je preverjanje z oblačnim mehanizmom za odpravljanja težav"
-					}
-				}
-			},
-			"Diskspace": "Znova pridobljen prostor na disku:",
-			"Performanceimprovements": "Izboljšave učinkovitosti delovanja:",
-			"Securityimprovements": "Varnostne izboljšave:",
-			"Onceaweek": "Enkrat tedensko"
-		},
-		"subscriberScanHomePage": {
-			"title": "Vse je v redu z ",
-			"titleScanCanceled": "Ocena je bila 0, ker je bil zadnji pregled preklican. Kliknite »NAZAJ NA ZAČETNO STRAN« in preglejte znova.",
-			"serialNumber": "Serijska številka: ",
-			"subTitle": "Naročeni ste na storitev Lenovo Smart Performance",
-			"description": "Računalnik pogosto pregledujemo in sproti odpravljamo težave z njegovo učinkovitostjo delovanja, delovanjem interneta in zlonamerno programsko opremo. Ustrezno ste zaščiteni. Preverjanje učinkovitosti delovanja lahko sprožite tudi na zahtevo, in sicer s klikom na gumb »Preglej«.",
-			"scanNow": "PREGLED IN POPRAVILO",
-			"backToHome": "Nazaj na začetno stran",
-			"returnto": "NAZAJ NA NADZORNO PLOŠČO",
-			"mostRecent": "ZADNJI PREGLED:",
-			"nextScheduled": "NASLEDNJI NAČRTOVANI PREGLED:",
-			"successTitle": "Vaš računalnik je optimiziran!",
-			"successDescription": "Smart Performance je odpravil <b>{{issueCount}} težav</b>, tako da bo računalnik deloval brezhibno. Povzetek pregleda in poročilo o njem si lahko ogledate spodaj.",
-			"scanSummary": {
-				"title": "Povzetek pregleda:",
-				"description": "Stalno optimiziramo vaš računalnik",
-				"tune": "Optimiziraj",
-				"tuneSummary": "Znova pridobljen prostor na disku",
-				"boost": "Pospešitev",
-				"boostSummary": "Popravki za izboljšanje učinkovitosti delovanja",
-				"secure": "Varno",
-				"secureSummary": "Popravki za izboljšanje varnosti",
-				"annual": "Letno",
-				"quarterly": "Četrtletno",
-				"custom": "Po meri",
-				"txtFrom": "Od",
-				"txtTo": "Do",
-				"txtGo": "Pojdi",
-				"summaryCaption": "znova pridobljen prostor",
-				"fixes": "Popravki",
-				"txtClr": "Izbriši"
-			},
-			"lastScanResults": {
-				"title": "Rezultati zadnjih 5 pregledov:",
-				"scanDate": "Datum pregleda",
-				"results": "Rezultati",
-				"status": "Stanje"
-			}
-		},
-		"feedbackContainer": {
-			"title": "Pošljite nam povratne informacije",
-			"subtitle": "Povejte nam svoje mnenje o storitvi Smart Performance",
-			"buttonText": "pošljite povratne informacije",
-			"questions": {
-				"q1": "1. Kako zahtevna ali preprosta je uporaba funkcije za pregledovanje?",
-				"q2": "2. Kako zahtevno ali preprosto je razumeti rezultate pregleda?",
-				"q3": "3. Kako verjetno je, da bi plačali za naročnino na funkcijo Smart Performance, da bi izboljšali delovanje svojega sistema?",
-				"q4": "4. Kako ste na splošno zadovoljni s funkcijo Smart Performance?",
-				"q5": "1. Kako zahtevno ali preprosto je bilo razumeti popravke, ki jih je funkcija Smart Performance izvedla v vašem sistemu?",
-				"q6": "2. Ali smo v vašem sistemu našli zlonamerno programsko opremo?",
-				"q7": "3. Kako verjetno je, da boste še naprej plačevali za funkcijo Smart Performance?",
-				"q8": "4. Kako ste na splošno zadovoljni s funkcijo Smart Performance?"
-			},
-			"rating": {
-				"r1": "Zelo težko",
-				"r2": "Zelo enostavno",
-				"r3": "Zelo težko",
-				"r4": "Zelo enostavno",
-				"r5": "Nikakor",
-				"r6": "Zelo verjetno",
-				"r7": "Zelo nezadovoljen",
-				"r8": "Zelo zadovoljen",
-				"r9": "Zelo težko",
-				"r10": "Zelo enostavno",
-				"r11": "Da",
-				"r12": "Ne",
-				"r13": "Nikakor",
-				"r14": "Zelo verjetno",
-				"r15": "Zelo nezadovoljen",
-				"r16": "Zelo zadovoljen"
-			},
-			"commentTip": "Spodaj vnesite morebitne komentarje ali dodatne povratne informacije:",
-			"comments": "Komentarje vnesite tukaj ..."
-		}
-	},
-	"homeSecurity": {
-		"title": "Connected Home Security",
-		"notification": {
-			"recent": "Recent security notifications",
-			"notifications": "Notifications",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
-		},
-		"ecosystem": {
-			"ecosystemBlockTitle": "Protect your device ecosystem",
-			"thisDevice": "This device",
-			"allDevices": "All Devices",
-			"protected": "Protected",
-			"notProtected": "Not Protected",
-			"trialExpired": "Trial expired",
-			"upgrade": "upgrade",
-			"inEcosystem": "In Ecosystem",
-			"ecosystemEnable": "Ecosystem Enabled",
-			"inTrial": "In trial",
-			"addEcosystem": "Add to Ecosystem",
-			"enableEcosystem": "Enable Ecosystem",
-			"startTrial": "Start Trial",
-			"fullAccess": "Full Access",
-			"renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Your Ecosystem Security Overview",
-			"allDevices": "All Devices",
-			"myDevice": "My Device",
-			"thisComputer": "This computer",
-			"secure": "SECURE",
-			"needAttention": "NEEDS ATTENTION",
-			"manageAccount": "Manage account",
-			"devices": "Devices",
-			"seeProtectedDevices": "See protected devices",
-			"addDevice": "add device",
-			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-			"upgrade": "upgrade",
-			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
-			"inTrialDetail": "You are currently in your trial period.",
-			"trialExpiredDetail": "Your trial period has expired.",
-			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
-			"discountPrice": "For only $29.99 for one year",
-			"overviewTitle": "Overview",
-			"trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId": "Lenovo ID:",
-			"overviewTitleAdmin": "Overview of your Connected Home Security",
-			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-			"familyMembers": "Family members",
-			"places": "Places",
-			"personalDevices": "Personal devices",
-			"wifiNetworks": "Wi-fi networks",
-			"homeDevices": "Home devices",
-			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
-			"buyNow": "Buy Now",
-			"extendNow": "extend now",
-			"renewNow": "Renew Now",
-			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
-		},
-		"tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcomeTitle": "welcome to connected home security",
-			"welcomeSubTitle": "30 days of protection for free",
-			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-			"locationTitle": "Enable location permissions",
-			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
-			"allow": "Allow",
-			"notNow": "Not now"
-		},
-		"accountStatus": {
-			"title": "My Connected Home Security",
-			"startTrial": "Start Trial",
-			"manageAccount": "Manage Account",
-			"upgradeAccount": "Upgrade Account",
-			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-			"trialExpiredDetail1": "Your trial has expired.",
-			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"upgradedDetail1": "You account is active until {{expiredDate}}.",
-			"upgradedDetail2": "Your device ecosystem is currently being protected.",
-			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
-			"alreadyHaveAccount": "Already have an activation code?"
-		},
-		"card": {
-			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your own Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
-			"joinTitle": "Join your family's Connected Home Security",
-			"joinDescription": "Become a part of your family security group."
-		},
-		"modal": {
-			"countdownTitle": "Launching web browser",
-			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-			"goNow": "Go now",
-			"disconnectedTitle": "Disconnect from protection?",
-			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-			"disconnecting": "Disconnecting..."
-		}
-	},
-	"dir": "ltr",
-	"dirClass": "ltr",
 	"notification": {
 		"menu": {
 			"security": "Ali veste? Čeprav nimate nameščene protivirusne programske opreme, še vedno zagotavljamo osnovno varnostno zaščito za vašo napravo.",
 			"connectedHomeSecurity": "Zagotovite si nadzor v realnem času in prejemajte opozorila o varnosti omrežja doma. Prvi boste vedeli, ali je varnost katere od vaših pametnih naprav napadena.",
-			"hardwareScan": "Zdaj lahko pridobite stanje komponent strojne opreme vašega sistema."
+			"hardwareScan": "Zdaj lahko pridobite stanje komponent strojne opreme vašega sistema.",
+			"appSearch": "Ali veste? Tukaj lahko poiščete funkcije za svojo napravo."
 		}
 	},
 	"appsForYou": {
@@ -5413,7 +5462,43 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
+					"description": "AI meeting manager podpira sprotno prevajanje, tolmačenje in glasovno narekovanje. Prav tako lahko ustvari podnapise za videoposnetke.",
+					"downloadNow": "PRENESITE ZDAJ",
+					"download": "PRENESI",
+					"launch": "ZAŽENI",
+					"translation": {
+						"title": "Prevod",
+						"description": "Sproti prevajajte govor na spletnem sestanku v kateri koli programski opremi. Med sestanki lahko brskate po zapiskih sestanka in jih shranite pozneje. Na voljo je tudi funkcija podnapisov."
+					},
+					"voiceToText": {
+						"title": "Pretvorba glasu v besedilo",
+						"description": "Govorite naravno in funkcija pretvorbe glasu v besedilo bo natipkala izrečeno. V svoji najljubši aplikaciji pišite e-poštna sporočila ali dokumente ter klepetajte. Funkcija pretvorbe glasu v besedilo sproti prevaja vaš govor ter za vas ustvarja zapiske."
+					},
+					"modalPopUp": {
+						"heading": "Začetek:",
+						"translation": {
+							"point1": "Prepričajte se, da je v območju za obvestila sistema Windows prikazana ikona aplikacije AI meeting manager.",
+							"point2": "Kliknite ikono in izberite možnost »Prevajalec« ali »Podnapisi«.",
+							"point3": "Izberite izvorni in ciljni jezik.",
+							"point4": "Zvočni vhod nastavite na zvočnik ali mikrofon (odvisno od vaših potreb).",
+							"point5": "Kliknite gumb Start, da začnete s prevajanjem."
+						},
+						"voiceToText": {
+							"point1": "Prepričajte se, da je v območju za obvestila sistema Windows prikazana ikona aplikacije AI meeting manager.",
+							"point2": "Odprite aplikacijo, v kateri želite vnesti besedilo.",
+							"point3": "Kliknite ikono aplikacije AI meeting manager in izberite možnost »Pretvorba glasu v besedilo«.",
+							"point4": "Izberite želene jezike in nato za začetek kliknite gumb mikrofona.",
+							"point5": "Kazalnik postavite v aplikacijo, ki ste jo odprli, in začnite govoriti."
+						},
+						"closeText": "zapri"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "Naj bo spletni sestanek bolj produktiven in učinkovit."
+					}
+				}
 			}
 		},
 		"creatorCentre": {
@@ -5432,11 +5517,18 @@
 			},
 			"easyRendering": {
 				"title": ""
-
 			},
 			"colorCalibration": {
-				"title": ""
-
+				"title": "Umerjanje barv",
+				"appName": "Aplikacija X-rite",
+				"summary": "Zaslonska plošča vašega računalnika je kalibrirana na tovarniški liniji z vrhunskimi profesionalnimi barvnimi merilniki Minolta. Podatki o umerjanju so shranjeni v oblaku in jih lahko prenesete, da ploščo ponastavite na tovarniške nastavitve. Aplikacija X-rite je vnaprej nameščena za upravljanje barvnih prostorov.<br>– Privzeto (izvorna barvna lestvica, izvorna svetlost s kalibrirano sivo barvno gradacijo ter lastnosti zaslona, shranjene v profilu). <br>– Privzeti profil je privzeto nameščen v napravi. Ta profil sistem Windows naloži ob zagonu. <br>– Ni kalibrirano (Upravljanje barv je izklopljeno. To pomeni, da je uporabljen privzeti profil Lenovo.) <br>– sRGB (računalniški zasloni) – Adobe RGB (za grafične oblikovalce, ki načrtujejo tiskanje v CYMK)<br> – BT.709 (videoposnetki v kakovosti HD)<br> – DCI P3 (pogosto uporabljen pri digitalni filmski projekciji v ZDA)",
+				"screenshotTitle": "Posnetki zaslona",
+				"cardTitle": "Kako je mogoče obnoviti profile?",
+				"cardSummary": "Če znova namestite sistem ali se izgubijo barvni profili, jih lahko obnovite tukaj:",
+				"learnMore": "Več o tem",
+				"restoreProfileDesc": "Lenovo zagotavlja varnostne kopije barvnih profilov v storitvi Lenovo Cloud. Če želite poskrbeti, da bo funkcija umerjanja barv delovala v računalniku, boste morda morali obnoviti ali namestiti barvne profile v naslednjih primerih: Če se barvni profili izgubijo ali poškodujejo, se prikaže okno, ki vas bo opozorilo, da morate obnoviti barvne profile. V pojavnem oknu kliknite »Da« in barvni profili bodo samodejno obnovljeni iz storitve Lenovo Cloud. Če računalniški zaslon zamenja pooblaščeni ponudnik storitev Lenovo, naredite naslednje:",
+				"restoreProfileStep1": "Kliknite trikotno ikono v območju za obvestila sistema Windows, da prikažete skrite ikone. Nato kliknite ikono aplikacije X-rite, da jo odprete.",
+				"restoreProfileStep2": "Kliknite »Nastavitve« > »Obnovi profile«."
 			}
 		}
 	}

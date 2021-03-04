@@ -812,10 +812,12 @@
 				"sub9": "אבטחת מכשיר"
 			},
 			"support": "תמיכה",
+			"warrantySupport": "תמיכה ואחריות",
+			"contentLibrary": "ספריית תוכן",
+			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"
-			},
-			"homeSecurity": "Connected Home"
+			}
 		},
 		"securityAdvisor": {
 			"title": "יועץ האבטחה",
@@ -1246,9 +1248,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"הפעלת אוברקלוקינג של GPU במצב ביצועים מעולים.",
-							"description1":"מומלץ לבצע אוברקלוק של שעון זיכרון ה- GPU ב-140 מגה-הרץ, נקודה שמוגדרת כ\"יציבה\". ביצועים של משחקים וקצב המסגרות עשויים לעלות ב-10% עד 30%.",
-					        "description2":"הערה: השיפורים בביצועים ובקצב המסגרות עשויים להשתנות בהתאם למשחקים/לאפליקציות וגורמים אחרים. צריכת החשמל, טמפרטורת פני המחשב ורעש המאוורר עשויים גם הם לגדול בהתאם. Lenovo אינה מתחייבת לשיפור היציבות והביצועים כאשר מופעל אוברקלוק."
+							"checkboxtext": "הפעלת אוברקלוקינג של GPU במצב ביצועים מעולים.",
+							"description1": "מומלץ לבצע אוברקלוק של שעון זיכרון ה- GPU ב-140 מגה-הרץ, נקודה שמוגדרת כ\"יציבה\". ביצועים של משחקים וקצב המסגרות עשויים לעלות ב-10% עד 30%.",
+							"description2": "הערה: השיפורים בביצועים ובקצב המסגרות עשויים להשתנות בהתאם למשחקים/לאפליקציות וגורמים אחרים. צריכת החשמל, טמפרטורת פני המחשב ורעש המאוורר עשויים גם הם לגדול בהתאם. Lenovo אינה מתחייבת לשיפור היציבות והביצועים כאשר מופעל אוברקלוק."
 						},
 						"autoTransition": {
 							"description": {
@@ -2550,6 +2552,873 @@
 			"categories": "קטגוריות",
 			"categoriesDesc": "מצאו מידע מועיל במאמרים שלנו.",
 			"seeArticles": "צפייה במאמרים"
+		}
+	},
+	"smartPerformance": {
+		"title": "השירות Smart Performance",
+		"back": "חזרה",
+		"performanceandSecurityCheckTitle": "בדיקת ביצועים ואבטחה",
+		"performanceandSecurityCheckSubTitle": "תנו לנו לאבחן ולפתור בעיות הקשורות לביצועים ולאבטחה במחשב שלכם",
+		"auto": "אוטומטי",
+		"manual": "ידני",
+		"performanceOfflineText": "תכונת הסריקה תהיה זמינה כאשר המחשב שלכם מחובר לאינטרנט.",
+		"scanButton": "סריקת מחשב ללא תשלום",
+		"section1Heading": "כיצד הייתם מדרגים את ביצועי המחשב שלכם?",
+		"section1Description": "המחשב איטי? היישומים מגיבים לאט מדי? שגיאות ב-Windows? חששות מפני תוכנה זדונית? אנו נאבחן מה גורם לבעיה ונתקן את זה.",
+		"critical": "קריטי",
+		"allisWell": "הכל בסדר",
+		"zero": 0,
+		"one": 1,
+		"two": 2,
+		"three": 3,
+		"four": 4,
+		"five": 5,
+		"six": 6,
+		"seven": 7,
+		"eight": 8,
+		"nine": 9,
+		"ten": 10,
+		"tuneUP": "מחשבכם זקוק לטיפול",
+		"runningWell": "המחשב פועל כהלכה",
+		"section2Heading": "ביצועי מחשב מעולים. תמיד",
+		"section2Description": "התוכנה שלנו יכולה לסרוק באופן יזום את המחשב שלכם 24x7 כדי למצוא ולתקן בעיות ככל שהן מתעוררות, כך שלמחשב תמיד יהיו ביצועים מעולים.",
+		"am": "AM",
+		"pm": "PM",
+		"scanNow": "סריקה עכשיו",
+		"signUpAndFix": "הרשמה ותיקון",
+		"cancel": "ביטול",
+		"scanning": "סורק",
+		"fixIt": "תקנו עכשיו",
+		"optimizeIt": "מטב",
+		"maintainIt": "תחזוקה",
+		"noteFindings": "הגענו לממצאים שלנו על סמך ניתוח מפורט של המחשב שלכם.",
+		"noteNavigateTab": "נווטו בכרטיסיות למידע נוסף:",
+		"scannedAreas": "אזורים שנסרקו",
+		"lastFix": "תיקון אחרון",
+		"fixResult": "תוצאות התיקון",
+		"checkPreviousResults": "בדיקת תוצאות קודמות",
+		"tunePCPerformance": {
+			"title": "שיפור ביצועי המחשב",
+			"heading": "הפגינו קצת יותר אהבה כלפי מחשבכם",
+			"description": "אפילו המחשב הטוב ביותר יפיק תועלת מטיפולים תקופתיים. עברו את הטיפול ובצעו משימות רבות יותר באמצעות היישום העוצמתי שלנו.",
+			"tabSet1": {
+				"tab1": "זבל מצטבר",
+				"tab2": "בעיות שימושיות",
+				"tab3": "הגדרות Windows",
+				"tab4": "שגיאות מערכת",
+				"tab5": "שגיאות במערכת רישום"
+			},
+			"tabSet2": {
+				"tab1Heading": "זה קל",
+				"tab1Description": "לא נבלבל אתכם בסיבוכים טכנולוגיים",
+				"tab2Heading": "זה מהיר",
+				"tab2Description": "בדיקה של 100 נקודות תבוצע תוך פחות מ-5 דקות",
+				"tab3Heading": "זה בטוח",
+				"tab3Description": "ללא תוכנות הפחדה, נוצר תוך התחשבות בשיטות העבודה המומלצות"
+			},
+			"summaryTitle": "שיפור ביצועי המחשב"
+		},
+		"boostInternetPerformance": {
+			"title": "שיפור ביצועי האינטרנט",
+			"extraTitle": "ביצועי האינטרנט",
+			"heading": "שפרו את ביצועי האינטרנט שלכם",
+			"description": "אנשים רבים שרשת ה-Wi-Fi שלהם איטית או אין להם גישה לרשת Wi-Fi מרגישים מנותקים מהעולם. אנו נקבע את הגדרות האינטרנט, ה-Wi-Fi והדפדפן שלכם להשגת ביצועים מיטביים.",
+			"tabSet1": {
+				"tab1": "זבל אלקטרוני",
+				"tab2": "הגדרות רשת",
+				"tab3": "הגדרות דפדפן",
+				"tab4": "אבטחת דפדפן",
+				"tab5": "ביצועי Wi-Fi"
+			},
+			"tabSet2": {
+				"tab1Heading": "בעיות בדפדפן",
+				"tab1Description": "אנו קובעים תצורה של כל דפדפני האינטרנט הפופולריים ומתקנים בעיות בהם.",
+				"tab2Heading": "שגיאות קישוריות",
+				"tab2Description": "אנו יכולים לאבחן ולתקן את בעיות הקישוריות שלכם.",
+				"tab3Heading": "אינטרנט איטי",
+				"tab3Description": "אנו נעזור לכם להשיג ביצועים מקסימליים."
+			},
+			"summaryTitle": "ביצועי האינטרנט"
+		},
+		"malwareSecurity": {
+			"title": "תוכנה זדונית ואבטחה",
+			"heading": "ספקו למחשבכם את הטיפול הנוסף שהוא זקוק לו",
+			"description": "תוכנה זדונית יכולה לגרום לקריסת המחשב, לפגיעה בנתונים ולירידה ברמת הביצועים. נוכל להסיר תוכנה זדונית ולבצע עוד המון דברים נוספים.",
+			"tabSet1": {
+				"tab1": "סריקה לאיתור תוכנה זדונית",
+				"tab2": "זיהומים חדשים",
+				"tab3": "תוכניות שגויות",
+				"tab4": "תוכנות פרסום מציקות",
+				"tab5": "הגדרות אבטחה"
+			},
+			"tabSet2": {
+				"tab1Heading": "וירוס חדש",
+				"tab1Description": "אנו מסירים אפילו את הזיהומים החדשים ביותר של תוכנות זדוניות",
+				"tab2Heading": "הסרת תוכנות ריגול",
+				"tab2Description": "אנו מסירים את כל התוכניות שנראות כבלתי רצויות",
+				"tab3Heading": "קל ומהיר",
+				"tab3Description": "הסריקה אורכת בדרך כלל 5-10 דקות"
+			},
+			"summaryTitle": "תוכנה זדונית ואבטחה"
+		},
+		"proactiveAutomated": {
+			"title": "יזום ואוטומטי",
+			"heading": "קבלו את הכוח לפתור בעיות לפני שהן משפיעות עליכם!",
+			"description": "השירות Smart Performance מבצע חיפוש מתמיד של מאות בעיות המשפיעות על ביצועי מחשב. אנו מתקנים אותן באופן יזום ומביאים לכם שקט נפשי.",
+			"tabSet1": {
+				"tab1": "תזמון סריקה",
+				"tab2": "סריקה לפי דרישה",
+				"tab3": "פתרון אוטומטי",
+				"tab4": "זה יעיל",
+				"tab5": "הגנה 24/7"
+			},
+			"tabSet2": {
+				"tab1Heading": "זה קל",
+				"tab1Description": "לא נבלבל אתכם בסיבוכים טכנולוגיים",
+				"tab2Heading": "זה מהיר",
+				"tab2Description": "בדיקה של 100 נקודות תבוצע תוך פחות מ-5 דקות",
+				"tab3Heading": "זה בטוח",
+				"tab3Description": "ללא תוכנות הפחדה, נוצר תוך התחשבות בשיטות העבודה המומלצות"
+			}
+		},
+		"noScanResults": "לחצו על הלחצן \"סריקה ותיקון\" כדי להפעיל את תהליך הסריקה.",
+		"startScan": "<b>מוכנים להתחיל את הסריקה?</b> תנו לנו לאבחן בעיות הקשורות לביצועים ולאבטחה במחשב שלכם.",
+		"subscriptionDetails": {
+			"title": "פרטי המנוי",
+			"description": "אתם מנויים לשירות Lenovo Smart Performance. במהלך תקופה זו יש לכם גישה מלאה לכל התכונות שמספקות הגנה למחשבכם ומבטיחות את פעולתו החלקה.",
+			"learnMore": "למדו עוד",
+			"startDate": "תאריך התחלה",
+			"endDate": "תאריך סיום",
+			"status": "מצב",
+			"activeStatus": "פעיל",
+			"inactiveStatus": "לא פעיל",
+			"manageSubscription": "ניהול המנוי",
+			"titlebeta": "תוכנית בטא של Lenovo",
+			"manageSubscriptionBeta": "הפעלת התכונה המלאה",
+			"descriptionbeta": "Lenovo מציעה תוכנית פיילוט להתנסות בתכונה Smart Performance עד יולי 2020.",
+			"descriptionbeta1": "אתם מוזמנים להצטרף ולנסות את התכונה המלאה.",
+			"descriptionNonSubscriber": "אינכם מנויים לשירות Lenovo Smart Performance. תוכלו לבצע סריקה של המחשב בלבד. רכשו מנוי עכשיו כדי לקבל את כל היתרונות שמספקות הגנה למחשבכם ומבטיחות את פעולתו החלקה.",
+			"processStatus": "מעבד",
+			"descriptionExpired": "פג תוקף המנוי שלכם וכרגע אתם יכולים להשתמש רק בתכונת סריקה ב-Smart Performance, אתם יכולים לחדש את המינוי על ידי לחיצה על הקישור \"ניהול מנוי\" כדי לחדש את ההגנה המלאה על המכשיר שלכם.",
+			"expiredStatus": "פג תוקף",
+			"expiredNote": "תוקף המנוי יפוג בעוד",
+			"day": "יום",
+			"days": "ימים",
+			"weeks": "שבועות",
+			"week": "שבוע",
+			"month": "חודש",
+			"today": "היום",
+			"next": "הבא"
+		},
+		"scanSettings": {
+			"title": "הגדרות של תזמון סריקה",
+			"description": "הפעילו או השביתו את הסריקה והגדירו את לוח הזמנים לסריקה",
+			"enableScan": "הפעלת סריקה",
+			"changeScanTitle": "שינוי לוח הזמנים לסריקה",
+			"changeScanDescription": "ערכו את לוח הזמנים לסריקה כדי להפעיל אותה במועד הנדרש.",
+			"frequency": "תדירות",
+			"txtDate": "תאריך",
+			"txtDay": "יום",
+			"txtTime": "זמן",
+			"txtSave": "שמור",
+			"txtCancel": "ביטול",
+			"scanFrequencyWeek": "פעם בשבוע",
+			"scanFrequencyEveryWeek": "כל שבועיים",
+			"scanFrequencyMonth": "כל חודש",
+			"mon": "יום שני",
+			"tue": "יום שלישי",
+			"wed": "יום רביעי",
+			"thu": "יום חמישי",
+			"fri": "יום שישי",
+			"sat": "שבת",
+			"sun": "יום ראשון",
+			"am": "AM",
+			"pm": "PM",
+			"tooltipText": "כל עוד האפשרות תהיה מופעלת, סריקת ביצועי המערכת והאבטחה תופעל אוטומטית בתאריך ובשעה שנקבעו."
+		},
+		"scanningPage": {
+			"title": "בדיקת ביצועים ואבטחה",
+			"description": "אנא המתינו בזמן שאנו סורקים את המערכת שלכם לאיתור בעיות ואיומים פוטנציאליים.",
+			"scanningSystem": "סריקת מערכת",
+			"complete": "הושלמה",
+			"cancelScan": {
+				"button": "ביטול סריקה",
+				"title": "לבטל את הסריקה?",
+				"description": "אם תצאו מהמסך הנוכחי, הסריקה תבוטל ותחזרו למסך הבית. עם זאת, תוכלו להפעיל את הסריקה שוב בכל עת.",
+				"yesButton": "כן, בטלו",
+				"noButton": "לא, המשיכו בסריקה",
+				"cancelMayTakeSomeTime": "אנא המתינו, פעולת הביטול עשויה להימשך זמן מה, בהתאם למערכת.",
+				"cancelTextPrompt": "האם אתם בטוחים שברצונכם לבטל?"
+			},
+			"waiting": "ממתין לסריקה",
+			"completed": "הושלמה",
+			"nowScanningDetail": {
+				"cardTitle": "פרטי הסריקה הנוכחית",
+				"current": "כרגע: ",
+				"upNext": "הבא: ",
+				"tunePCDesc": "תנו לנו לעזור לשפר את ביצועי המחשב שלכם. אנו עושים זאת באופן מאובטח תוך שימוש בשיטות העבודה המומלצות בתעשייה. היתרונות למנויים כוללים הפעלת המחשב תוך זמן קצר יותר, ביצועים משופרים, שיפור היציבות והפעלה מהירה יותר של יישומים.",
+				"boostDesc": "תנו לנו לעזור לשפר את חוויית הגלישה שלכם. נתקן בעיות רשת וגישה. היתרונות למנויים כוללים שיפור בקישוריות האינטרנט, שיפור במהירויות העלאה/הורדה והפיכת האינטרנט למאובטח יותר.",
+				"malwareDesc": "תנו לנו לעזור לאבטח את המחשב שלכם במהירות, לפי דרישה. נעשה זאת על ידי הסרת תוכנות ריגול, תוכנות זדוניות ותוכנות פרסום. אנו מסירים גם כמעט את כל הזיהומים החדשים. היתרונות למנויים כוללים אבטחת נתונים וביצועי מערכת מיטביים.",
+				"proactiveDesc": "נבצע טיפול תקופתי למחשבכם ונתקן בעיות באופן יזום ואוטומטי כדי שמחשבכם יהיו מעודכן ומוגן. תמיד",
+				"tunePCScanningItems": {
+					"accumulatedJunk": {
+						"itema1": "איתור זבל ב-85 מיקומים",
+						"itema2": "קובצי יומן מערכת שאינם נחוצים",
+						"itema3": "רכיבים נותרים מיותרים של יישומים",
+						"itema4": "קבצים זמניים התופסים את שטח הכונן",
+						"itema5": "קבצים שמחקתם לפני זמן רב",
+						"itema6": "שגיאות והתראות מיושנות"
+					},
+					"usabilityIssues": {
+						"itemb1": "התייחסות לעשרות אתגרי שימושיות",
+						"itemb2": "בדיקת קישוריות של התקנים חיצוניים",
+						"itemb3": "הקפדה על קבלת העדכונים החדשים ביותר של Windows",
+						"itemb4": "עיבוד היישומים והצגתם בצורה המיטבית",
+						"itemb5": "ניתוח של ניצול כוח העיבוד",
+						"itemb6": "איתור קבצים בקלות"
+					},
+					"windowsSettings": {
+						"itemc1": "אבחון של עשרות הגדרות של מערכת ההפעלה Windows",
+						"itemc2": "וידוא שמערכת ההפעלה Windows פועלת כהלכה",
+						"itemc3": "וידוא פעולתם של שירותים חיוניים",
+						"itemc4": "בדיקת תקינות של הגדרות הקישוריות",
+						"itemc5": "בדיקת היכולת לשתף קבצים ברשת",
+						"itemc6": "בדיקת הגדרות ביומטריות והגדרות גישה"
+					},
+					"systemErrors": {
+						"itemd1": "וידוא פעולתם של שירותים חיוניים",
+						"itemd2": "בחירת שירותים להשגת ביצועים גבוהים יותר",
+						"itemd3": "חיפוש שגיאות עקב התנגשויות בתוכנה",
+						"itemd4": "מיטוב ניהול השגיאות של Windows",
+						"itemd5": "בדיקה ותיקון של שגיאות בהפעלת יישומים",
+						"itemd6": "הגדרת דוחות של שגיאות מערכת"
+					},
+					"registryErrors": {
+						"iteme1": "בדיקה מעמיקה של מערכת הרישום של Windows",
+						"iteme2": "סריקה לאיתור שירותי Windows לא חוקיים",
+						"iteme3": "איתור ערכים פגומים במערכת הרישום",
+						"iteme4": "איתור סיומות קבצים מיותרות",
+						"iteme5": "איתור ערכים משובשים של יישומים מותקנים",
+						"iteme6": "איתור ערכים נותרים מיותרים"
+					}
+				},
+				"boostScanningItems": {
+					"networkSettings": {
+						"itema1": "אבחון הגדרות רשת ואינטרנט",
+						"itema2": "אימות ההגדרות של תצורת רשת",
+						"itema3": "אימות של הגדרות רשת זמינות",
+						"itema4": "הגדרה לטעינת אתרי אינטרנט במהירות רבה יותר",
+						"itema5": "איתור שגיאות בעיבוד דפים",
+						"itema6": "וידאו ששירותי החיבור פועלים כהלכה"
+					},
+					"browserSettings": {
+						"itemb1": "הבטחת חווית גלישה טובה יותר",
+						"itemb2": "קביעת הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
+						"itemb3": "וידוא ששירותי אבטחת הדפדפן פועלים כהלכה",
+						"itemb4": "וידוא שדפי האינטרנט מעובדים ומוצגים כהלכה",
+						"itemb5": "בדיקת הגדרות להורדות מהירות יותר",
+						"itemb6": "בדיקת הרשאות ובקרת גישה"
+					},
+					"browserSecurity": {
+						"itemc1": "וידוא פעולתם של שירותי אבטחה",
+						"itemc2": "הגדרה של תכונות אבטחת הדפדפן",
+						"itemc3": "וידוא ששירותי הרשת פועלים כהלכה",
+						"itemc4": "קביעת הגדרות הפרוטוקול",
+						"itemc5": "וידוא תקינותן של הגדרות תוכן הדפדפן",
+						"itemc6": "אימות התוספים וההרחבות של הדפדפן"
+					},
+					"wifiPerformance": {
+						"itemd1": "מיטוב של הגדרות חווית ה-Wi-Fi",
+						"itemd2": "וידוא אבטחתה של הרשת הביתית שלכם",
+						"itemd3": "בדיקה של הגדרות שירותי ה-Wi-Fi",
+						"itemd4": "אבטחה של הגדרות שיתוף רשת",
+						"itemd5": "בדיקה של תקני אבטחת Wi-Fi",
+						"itemd6": "וידוא שערוצי ה-Wi-Fi אינם חופפים"
+					},
+					"eJunk": {
+						"iteme1": "נטרול העומס מדפדפנים",
+						"iteme2": "איתור של שאריות דואר זבל",
+						"iteme3": "איתור קובצי אינטרנט מיושנים",
+						"iteme4": "ניקוי של מטמון אינטרנט בלתי רצוי",
+						"iteme5": "ניקוי קובצי Cookie",
+						"iteme6": "הסרת פריטים מיותרים של הדפדפן"
+					}
+				},
+				"malwareScanningItems": {
+					"malwareScan": {
+						"itema1": "סריקת נקודות טעינה נפוצות",
+						"itema2": "בדיקת מיקומים קריטיים לאיתור איומים",
+						"itema3": "בדיקת וירוסים, תוכנות ריגול ותוכנות זדוניות",
+						"itema4": "סריקה של יותר מ-50 סוגי קבצים",
+						"itema5": "סריקה לאיתור שאריות של תוכנות זדוניות",
+						"itema6": "שימוש במנוע תיקון בענן"
+					},
+					"zerodayInfections": {
+						"itemb1": "איתור וירוס חדש",
+						"itemb2": "איתור תוכנות זדוניות אחרונות ולא מאובחנות",
+						"itemb3": "סריקה עם תיקון מבוסס ענן",
+						"itemb4": "ביצוע ניטור התנהגותי",
+						"itemb5": "סריקת קבצים באמצעות מנוע צבור",
+						"itemb6": "סריקה כנגד ההגדרות האחרונות"
+					},
+					"securitySettings": {
+						"itemc1": "הקפדה על קבלת העדכונים החדשים ביותר של Windows",
+						"itemc2": "וידוא ששירות חומת האש של Windows פועל כהלכה",
+						"itemc3": "אבטחת הגדרות הדפדפן",
+						"itemc4": "בדיקה של שירותי אבטחה חיוניים",
+						"itemc5": "קביעת הגדרות של גישת משתמש",
+						"itemc6": "וידוא שירותי אימות"
+					},
+					"errantPrograms": {
+						"itemd1": "איתור יישומים שגויים",
+						"itemd2": "איתור יישומים שעלולים להיות בלתי רצויים",
+						"itemd3": "איתור יישומים מוסתרים ובלתי פעילים",
+						"itemd4": "אימות התנהגות זדונית ביישומים",
+						"itemd5": "בדיקת יישומים לפי גורם המוניטין",
+						"itemd6": "בדיקת תוכניות שגויות במערכת רישום"
+					},
+					"annoyingAdware": {
+						"iteme1": "איתור תוכנות פרסום בדפדפנים",
+						"iteme2": "תיקון ההגדרות של חלונות קופצים בדפדפנים",
+						"iteme3": "נטרול איומי ניתוב מחדש בדפדפן",
+						"iteme4": "בדיקה לאיתור שאריות של רכיבי פרסום",
+						"iteme5": "מיטוב של הגדרות חווית הדפדפן",
+						"iteme6": "אימות מנוע התיקון בענן"
+					}
+				}
+			},
+			"confirmationTitle": "תהליך התשלום של Lenovo",
+			"confirmationNote": "תועברו לאתר התשלומים של Lenovo כדי לבצע את התשלום. לאחר ביצוע התשלום, תוכלו ללחוץ על הלחצן \"רענון\" באזור \"פרטי המנוי\" כדי לצפות בנתוני התשלום.",
+			"confirmationBtn": "המשך",
+			"refreshButton": "רענון מצב"
+		},
+		"scanCompletePage": {
+			"title": "סריקת המערכת הושלמה",
+			"description": "{{machineFamilyName}} הנה מה שמצאנו במחשב ",
+			"scanRates": "הסריקה שלנו מדרגת את מחשבכם ב: ",
+			"summary": "סיכום",
+			"foundIssues": "הסריקה שלנו מצאה {{issueCount}} בעיות",
+			"summaryDetails": "הירשמו כעת כדי לתקן בעיות אלה ולשמור על פעולה חלקה של המערכת שלכם. התוכנה שלנו יכולה לסרוק באופן יזום אזורים אלה במערכת שלכם 24x7 כדי למצוא ולתקן בעיות ככל שהן מתעוררות, כך שלמחשב תמיד יהיו ביצועים מעולים.",
+			"expiredSummaryDetails": "פג תוקף המנוי שלכם וכרגע אתם יכולים להשתמש רק בתכונת סריקה ב-Smart Performance, אם ברצונכם לחדש את התכונה \"סריקה ותיקון\", לחצו על הלחצן \"חידוש ותיקון\" למטה כדי לחדש את המנוי.",
+			"signupRepairButton": "הירשמו ותקנו בעיות עכשיו",
+			"renewAndFix": "חידוש ותיקון",
+			"backToHome": "חזרה למסך הבית",
+			"monthlyPricing": "<b>פחות מ-{{monthlyPrice}} בחודש.</b> נתקן אוטומטית בעיות אלה. פעם אחת היום, ולאחר מכן כל שבוע <a  href=\"#\">מידע נוסף</a>",
+			"issueCount": "{{individualIssueCount}} בעיות",
+			"issues": "בעיות",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
+			"scannedAreas": "אזורים שנסרקו",
+			"summaryPurchaseTip": "רכשו את התוכנית השנתית כעת ואנחנו נפתור את הבעיות האלה באופן אוטומטי מדי שבוע.",
+			"tunePCTooltip": "ניתן לשפר את ביצועי המערכת הכוללים, להפחית את הזמן שלוקח למחשב לעלות ולשפר את זמני טעינת היישומים.",
+			"boostTooltip": "ניתן לשפר את ביצועי הרשת, את חווית הגלישה ואת הקישוריות.",
+			"malwareTooltip": "ניתן לשפר את האבטחה, להסיר תוכנות זדוניות וזיהומים ולהחזיר את יציבות המערכת.",
+			"recommendedAction": {
+				"title": "פעולה מומלצת",
+				"description": "נתקן אוטומטית בעיות אלה. פעם אחת היום, ולאחר מכן כל שבוע",
+				"yearlyPricing": "{{yearlyPrice}} / שנה",
+				"monthlyPricing": "פחות מ-{{monthlyPrice}} בחודש.",
+				"longerTerm": "לתקופה ארוכה יותר? לחסכון רב יותר?",
+				"newDescription": "לאחר ההרשמה, אנו נתקן את הבעיות האלו באופן אוטומטי עבורך מדי שבוע.",
+				"signupButton": "הרשמה"
+			},
+			"tunepc": {
+				"accumulatedjunkscannedareas": {
+					"area1": "ביצע סריקה לאיתור זבל ב-85 מיקומים",
+					"area2": "קובצי יומן מערכת שאינם נחוצים",
+					"area3": "רכיבים נותרים מיותרים של יישומים",
+					"area4": "קבצים זמניים התופסים את שטח הכונן",
+					"area5": "קבצים שמחקתם לפני זמן רב",
+					"area6": "שגיאות והתראות מיושנות"
+				},
+				"registryerrorsscannedareas": {
+					"area1": "השלים בדיקה מעמיקה של מערכת הרישום של Windows",
+					"area2": "ביצע סריקה לאיתור שירותי Windows לא חוקיים",
+					"area3": "ביצע חיפוש של ערכים פגומים במערכת הרישום",
+					"area4": "ביצע סריקה לאיתור סיומות קבצים מיותרות",
+					"area5": "ביצע חיפוש של ערכים משובשים של יישומים מותקנים",
+					"area6": "ביצע חיפוש של ערכים נותרים מיותרים"
+				},
+				"windowssettingsscannedareas": {
+					"area1": "אבחן עשרות הגדרות של מערכת ההפעלה Windows",
+					"area2": "בדק שמערכת ההפעלה Windows פועלת כהלכה",
+					"area3": "אישר פעולתם של שירותים חיוניים",
+					"area4": "בדק תקינות של הגדרות הקישוריות",
+					"area5": "בדק את היכולת לשתף קבצים ברשת",
+					"area6": "בדק הגדרות ביומטריות והגדרות גישה"
+				},
+				"usabilityissuesscannedareas": {
+					"area1": "ביצע חיפוש לאיתור אתגרי שימושיות",
+					"area2": "בדק קישוריות של התקנים חיצוניים",
+					"area3": "בדק את מצב העדכונים של Windows",
+					"area4": "אימת את הגדרת עיבוד היישומים",
+					"area5": "ניתח את ניצול כוח העיבוד",
+					"area6": "איתור קבצים בקלות"
+				},
+				"systemerrorsscannedareas": {
+					"area1": "בדק שהשירותים החיוניים פועלים",
+					"area2": "חיפש שירותים להשגת ביצועים גבוהים יותר",
+					"area3": "חיפוש שגיאות עקב התנגשויות בתוכנה",
+					"area4": "ניתח את ניהול השגיאות של Windows",
+					"area5": "ביצע סריקה לאיתור שגיאות בהפעלת יישומים",
+					"area6": "בדק את תצורת הדוחות של שגיאות מערכת"
+				}
+			},
+			"internetperformance": {
+				"ejunkscannedareas": {
+					"area1": "זיהה עומס מתוך דפדפנים",
+					"area2": "ביצע חיפוש לאיתור של שאריות דואר זבל",
+					"area3": "ביצע סריקה לאיתור קובצי אינטרנט מיושנים",
+					"area4": "ביצע חיפוש לאיתור מטמון אינטרנט בלתי רצוי",
+					"area5": "איתר קובצי Cookie לניקוי",
+					"area6": "ביצע סריקה לאיתור רכיבים נותרים מיותרים של הדפדפן"
+				},
+				"browsersecurityscannedareas": {
+					"area1": "בדק ששירותי האבטחה פועלים",
+					"area2": "בדק את תכונות אבטחת הדפדפן",
+					"area3": "אימת את שירותי הרשת",
+					"area4": "קביעת הגדרות הפרוטוקול",
+					"area5": "בדק את ההגדרות של תוכן הדפדפן",
+					"area6": "ביצע סריקה לאיתור התוספים וההרחבות של הדפדפן"
+				},
+				"networksettingsscannedareas": {
+					"area1": "אבחן הגדרות רשת ואינטרנט",
+					"area2": "אבחן את ההגדרות של תצורת רשת",
+					"area3": "אימת את הגדרות הרשת המחוברת",
+					"area4": "אבחן הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
+					"area5": "ביצע סריקה לאיתור שגיאות בעיבוד דפים",
+					"area6": "סרק את כל שירותי החיבור"
+				},
+				"browsersettingsscannedareas": {
+					"area1": "הבטחת חווית גלישה טובה יותר",
+					"area2": "אבחן הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
+					"area3": "אימת את שירותי אבטחת הדפדפן",
+					"area4": "בדק שדפי האינטרנט מעובדים ומוצגים כהלכה",
+					"area5": "סרק הגדרות להורדות מהירות יותר",
+					"area6": "ניתח הרשאות ובקרת גישה"
+				},
+				"wifiperformancescannedareas": {
+					"area1": "אימת את הגדרות חווית ה-Wi-Fi",
+					"area2": "אימת שהרשת הביתית מאובטחת",
+					"area3": "סרק את הגדרות שירותי ה-Wi-Fi",
+					"area4": "אימת את ההגדרות של שיתוף רשת מאובטח",
+					"area5": "אימת את תקני אבטחת ה-Wi-Fi",
+					"area6": "ביצע ניתוח כדי לוודא שערוצי ה-Wi-Fi אינם חופפים"
+				}
+			},
+			"malwaresecurity": {
+				"malwarescanscannedareas": {
+					"area1": "סרק נקודות טעינה נפוצות",
+					"area2": "סרק מיקומים קריטיים לאיתור איומים",
+					"area3": "ביצע סריקה לאיתור וירוסים, תוכנות ריגול ותוכנות זדוניות",
+					"area4": "סרק יותר מ-50 סוגי קבצים לאיתור איומים",
+					"area5": "ביצע סריקה לאיתור שאריות של תוכנות זדוניות",
+					"area6": "אימת את מנוע התיקון בענן"
+				},
+				"errantprogramsscannedareas": {
+					"area1": "איתור יישומים שגויים",
+					"area2": "ביצע חיפוש לאיתור יישומים שעלולים להיות בלתי רצויים",
+					"area3": "ביצע חיפוש לאיתור יישומים מוסתרים ובלתי פעילים",
+					"area4": "ביצע סריקה לאיתור יישומים זדוניים",
+					"area5": "בדק יישומים לפי גורם המוניטין",
+					"area6": "בדק תוכניות שגויות במערכת רישום"
+				},
+				"zerodayinfectionsscannedareas": {
+					"area1": "ביצע סריקה לאיתור וירוס חדש",
+					"area2": "ביצע חיפוש לאיתור תוכנות זדוניות אחרונות ולא מאובחנות",
+					"area3": "ביצע אימות עם תיקון מבוסס ענן",
+					"area4": "ביצע ניטור התנהגותי",
+					"area5": "אימת קבצים באמצעות מנוע צבור",
+					"area6": "ביצע סריקה כנגד הגדרות מעודכנות"
+				},
+				"securitysettingsscannedareas": {
+					"area1": "אימת שמותקנים עדכוני Windows עדכניים",
+					"area2": "אימת את שירות חומת האש של Windows",
+					"area3": "חיפש הגדרות דפדפן מאובטחות",
+					"area4": "אבחן שירותי אבטחה חיוניים",
+					"area5": "אימת את ההגדרות של גישת משתמש",
+					"area6": "בדק את שירותי האימות"
+				},
+				"annoyingadwarescannedareas": {
+					"area1": "ביצע סריקה לאיתור תוכנות פרסום בדפדפנים",
+					"area2": "אימת את ההגדרות של חלונות קופצים בדפדפנים",
+					"area3": "ביצע סריקה לאיתור איומי ניתוב מחדש בדפדפן",
+					"area4": "ביצע בדיקה לאיתור שאריות של רכיבי פרסום",
+					"area5": "אימת את הגדרות חווית הדפדפן",
+					"area6": "אימת עם מנוע התיקון בענן"
+				}
+			},
+			"subscriber": {
+				"tunepc": {
+					"accumulatedjunkscannedareas": {
+						"area1": "ניקה זבל ב-85 מיקומים",
+						"area2": "ניקה קובצי יומן מערכת שאינם נחוצים",
+						"area3": "מחק רכיבים נותרים מיותרים של יישומים",
+						"area4": "הסיר קבצים זמניים כדי לפנות שטח בכונן",
+						"area5": "נטרל קבצים שמחקתם לפני זמן רב",
+						"area6": "ניקה שגיאות והתראות"
+					},
+					"registryerrorsscannedareas": {
+						"area1": "השלים בדיקה מעמיקה של מערכת הרישום של Windows",
+						"area2": "תיקן את כל השירותים הלא חוקיים של Windows",
+						"area3": "הסיר את כל הערכים הפגומים במערכת הרישום",
+						"area4": "מחק את כל סיומות הקבצים המיושנות",
+						"area5": "ניקה ערכים משובשים של יישומים מותקנים",
+						"area6": "ניקה ערכים נותרים בלתי רצויים"
+					},
+					"windowssettingsscannedareas": {
+						"area1": "אימת את הגדרות Windows",
+						"area2": "מיטב את כל השירותים של Windows",
+						"area3": "ביצע שינוי בשירותי Windows חיוניים",
+						"area4": "ביצע שינוי בשירותי Windows חיוניים",
+						"area5": "אימת את היכולת לשתף קבצים ברשת",
+						"area6": "אימת הגדרות ביומטריות והגדרות גישה"
+					},
+					"usabilityissuesscannedareas": {
+						"area1": "תיקן את כל אתגרי השימושיות",
+						"area2": "אימת את הקישוריות של התקנים חיצוניים",
+						"area3": "וידא שעדכוני Windows תמיד עדכניים",
+						"area4": "אישר שהיישומים מעובדים ומוצגים בצורה המיטבית",
+						"area5": "שינה הגדרות עבור ניצול כוח העיבוד",
+						"area6": "שינה הגדרות כדי לאתר קבצים בקלות"
+					},
+					"systemerrorsscannedareas": {
+						"area1": "בדק שהשירותים החיוניים פועלים",
+						"area2": "ביצע שינוי בשירותים להשגת ביצועים גבוהים יותר",
+						"area3": "תיקן את כל השגיאות שנוצרו עקב התנגשויות בתוכנה",
+						"area4": "מיטב את ניהול השגיאות של Windows",
+						"area5": "בדק ותיקן את כל השגיאות בהפעלת יישומים",
+						"area6": "קבע את הגדרות הדוחות של שגיאות מערכת"
+					}
+				},
+				"internetperformance": {
+					"ejunkscannedareas": {
+						"area1": "הסיר עומס מ-4 דפדפנים",
+						"area2": "ניקה שאריות של דואר זבל",
+						"area3": "מחק קובצי אינטרנט מיושנים",
+						"area4": "ניקה מטמון אינטרנט בלתי רצוי",
+						"area5": "ניקה קובצי Cookie",
+						"area6": "ניקה את כל הרכיבים הנותרים המיותרים של הדפדפן‬"
+					},
+					"browsersecurityscannedareas": {
+						"area1": "וידא ששירותי האבטחה פועלים",
+						"area2": "הגדיר את תכונות אבטחת הדפדפן",
+						"area3": "בדק ותיקן את שירותי הרשת",
+						"area4": "קבע את הגדרות הפרוטוקול",
+						"area5": "וידא שהגדרות תוכן הדפדפן תקינות",
+						"area6": "ביצע סריקה לאיתור התוספים וההרחבות של הדפדפן"
+					},
+					"networksettingsscannedareas": {
+						"area1": "תיקן הגדרות רשת ואינטרנט",
+						"area2": "בדק את ההגדרות של תצורת רשת",
+						"area3": "שינה את הגדרות הרשת המחוברת",
+						"area4": "אבחן הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
+						"area5": "תיקן את כל השגיאות בעיבוד דפים",
+						"area6": "סרק את כל שירותי החיבור"
+					},
+					"browsersettingsscannedareas": {
+						"area1": "שינה הגדרות לחוויית גלישה טובה יותר",
+						"area2": "אימת הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
+						"area3": "וידא ששירותי אבטחת הדפדפן פועלים כהלכה",
+						"area4": "שינה הגדרות כדי שדפי האינטרנט ייטענו כהלכה",
+						"area5": "תיקן הגדרות להורדות מהירות יותר",
+						"area6": "תיקן הרשאות והגדרות בקרת גישה"
+					},
+					"wifiperformancescannedareas": {
+						"area1": "שינה את הגדרות חווית ה-Wi-Fi",
+						"area2": "אימת הגדרות של רשת ביתית מאובטחת",
+						"area3": "תיקן את הגדרות שירותי ה-Wi-Fi",
+						"area4": "שינה את ההגדרות של שיתוף רשת מאובטח",
+						"area5": "אימת את תקני אבטחת ה-Wi-Fi",
+						"area6": "אימת את ערוצי ה-Wi-Fi"
+					}
+				},
+				"malwaresecurity": {
+					"malwarescanscannedareas": {
+						"area1": "בדק והסיר איומים בנקודות טעינה נפוצות",
+						"area2": "בדק והסיר איומים במיקומים קריטיים",
+						"area3": "הסיר את כל האיומים מהמחשב",
+						"area4": "סרק יותר מ-50 סוגי קבצים לאיתור איומים",
+						"area5": "ניקה את כל השאריות של תוכנות זדוניות‬",
+						"area6": "אימת את מנוע התיקון בענן"
+					},
+					"errantprogramsscannedareas": {
+						"area1": "אימת את כל היישומים המותקנים",
+						"area2": "אימת יישומים שעלולים להיות בלתי רצויים",
+						"area3": "‏‫ניקה את כל היישומים המוסתרים והבלתי פעילים‬",
+						"area4": "הסיר את כל היישומים הזדוניים והשגויים",
+						"area5": "אימת יישומים לפי גורם המוניטין",
+						"area6": "ביצע בדיקה של מערכת הרישום לאיתור תוכניות שגויות"
+					},
+					"zerodayinfectionsscannedareas": {
+						"area1": "ביצע ניתוח לאיתור וירוס חדש",
+						"area2": "הסיר את כל התוכנות הזדוניות מהמחשב",
+						"area3": "אימת את מנוע התיקון בענן",
+						"area4": "השלים ניטור התנהגותי של יישומים",
+						"area5": "ביצע אימות כנגד מנוע צבור",
+						"area6": "ביצע אימות כנגד ההגדרות האחרונות"
+					},
+					"securitysettingsscannedareas": {
+						"area1": "מיטב את הגדרות העדכון של Windows",
+						"area2": "שיפר את שירות חומת האש של Windows",
+						"area3": "ביצע אבטחה של הגדרות הדפדפן",
+						"area4": "אבחן שירותי אבטחה חיוניים",
+						"area5": "מיטב הגדרות של גישת משתמש",
+						"area6": "שינה את שירותי האימות"
+					},
+					"annoyingadwarescannedareas": {
+						"area1": "הסיר תוכנות פרסום בדפדפנים",
+						"area2": "שיפר את ההגדרות של חלונות קופצים בדפדפנים",
+						"area3": "אבחן איומי ניתוב מחדש בדפדפן",
+						"area4": "ניקה שאריות של רכיבי פרסום",
+						"area5": "מיטב את הגדרות חווית הדפדפן",
+						"area6": "אימת את מנוע התיקון בענן"
+					}
+				}
+			},
+			"Diskspace": "השטח שהתפנה בכונן:",
+			"Performanceimprovements": "שיפורי ביצועים:",
+			"Securityimprovements": "שיפורי אבטחה:",
+			"Onceaweek": "פעם בשבוע"
+		},
+		"subscriberScanHomePage": {
+			"title": "הכל טוב עם המחשב ",
+			"titleScanCanceled": "הדירוג היה 0 מכיוון שהסריקה האחרונה בוטלה. לחצו על \"חזרה למסך הבית\" וסרקו שוב.",
+			"serialNumber": "מספר סידורי: ",
+			"subTitle": "אתם מנויים לשירות Lenovo Smart Performance",
+			"description": "אנו סורקים ומתקנים את מחשבכם באופן יזום ולעיתים תכופות כדי לשפר את ביצועי המחשב והאינטרנט ולנטרל בעיות הקשורות לתוכנה זדונית. יש לכם הגנה טובה. ניתן גם להפעיל בדיקת ביצועים לפי דרישה על-ידי לחיצה על הלחצן \"סרוק עכשיו\".",
+			"scanNow": "סריקה ותיקון",
+			"backToHome": "חזרה למסך הבית",
+			"returnto": "חזרה ל‏‫לוח מחוונים‬",
+			"mostRecent": "הסריקה האחרונה:",
+			"nextScheduled": "הסריקה המתוזמנת הבאה:",
+			"successTitle": "מחשבכם עבר את הטיפול!",
+			"successDescription": "השירות Smart Performance פתר <b>{{issueCount}} בעיות</b> כדי שמחשבכם ימשיך לפעול בצורה חלקה; תוכלו לצפות בדוח ובסיכום הסריקה למטה.",
+			"scanSummary": {
+				"title": "סיכום סריקה:",
+				"description": "אנו משפרים את מחשבכם באופן מתמיד",
+				"tune": "טיפול",
+				"tuneSummary": "השטח שהתפנה בכונן",
+				"boost": "שיפור",
+				"boostSummary": "תיקונים לשיפור הביצועים",
+				"secure": "אבטחה",
+				"secureSummary": "תיקונים לשיפור האבטחה",
+				"annual": "מדי שנה",
+				"quarterly": "מדי רבעון",
+				"custom": "התאמה אישית",
+				"txtFrom": "מ-",
+				"txtTo": "עד",
+				"txtGo": "אישור",
+				"summaryCaption": "השטח שהתפנה",
+				"fixes": "תיקונים",
+				"txtClr": "ניקוי"
+			},
+			"lastScanResults": {
+				"title": "התוצאות של 5 הסריקות האחרונות:",
+				"scanDate": "תאריך הסריקה",
+				"results": "תוצאות",
+				"status": "מצב"
+			}
+		},
+		"feedbackContainer": {
+			"title": "השאירו לנו משוב",
+			"subtitle": "ספרו לנו מה אתם חושבים על Smart Performance",
+			"buttonText": "שליחת משוב",
+			"questions": {
+				"q1": "1. כמה קשה או קל היה להשתמש בתכונת הסריקה?",
+				"q2": "2. כמה קשה או קל היה להבין את תוצאות הסריקה?",
+				"q3": "3. מה הסבירות שתשלמו עבור מנוי ל-Smart Performance כדי לשפר את ביצועי המערכת שלכם?",
+				"q4": "4. באופן כללי, באיזו מידה אתם מרוצים מהתכונה Smart Performance?",
+				"q5": "1. כמה קשה או קל היה להבין את התיקונים שהתכונה Smart Performance ביצעה במערכת שלכם?",
+				"q6": "2. האם מצאנו תוכנה זדונית כלשהי במערכת שלכם?",
+				"q7": "3. מה הסבירות שתמשיכו לשלם עבור התכונה Smart Performance?",
+				"q8": "4. באופן כללי, באיזו מידה אתם מרוצים מהתכונה Smart Performance?"
+			},
+			"rating": {
+				"r1": "קשה מאוד",
+				"r2": "קל מאוד",
+				"r3": "קשה מאוד",
+				"r4": "קל מאוד",
+				"r5": "בכלל לא סביר",
+				"r6": "סבירות גבוהה",
+				"r7": "לא מרוצה בכלל",
+				"r8": "מאוד מרוצה",
+				"r9": "קשה מאוד",
+				"r10": "קל מאוד",
+				"r11": "כן",
+				"r12": "לא",
+				"r13": "בכלל לא סביר",
+				"r14": "סבירות גבוהה",
+				"r15": "לא מרוצה בכלל",
+				"r16": "מאוד מרוצה"
+			},
+			"commentTip": "השאירו הערות או משוב נוסף למטה:",
+			"comments": "אנא השאירו את ההערות שלכם כאן..."
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial",
+			"trialTitle": "Trial subscription",
+			"subscriptionTitle": "Paid subscription",
+			"inTrialDetail": "You are currently in your trial period.",
+			"trialExpiredDetail": "Your trial period has expired.",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
+			"discountPrice": "For only $29.99 for one year",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId": "Lenovo ID:",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your own Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join your family's Connected Home Security",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+			"goNow": "Go now",
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
+		}
+	},
+	"dir": "rtl",
+	"dirClass": "rtl",
+	"warranty": {
+		"warrantyStatusText": "מצב אחריות: ",
+		"inWarranty": "באחריות‏‎",
+		"outOfWarranty": "ללא אחריות",
+		"viewDetails": "הצגת פרטים",
+		"currentService": "מצב נוכחי של שירות ותמיכה",
+		"monthsRemaining": "{{remainingMonths}} חודשים נותרו",
+		"oneMonthRemaining": "חודש אחד נותר",
+		"lessThanOneMonth": "פחות מחודש אחד נותר",
+		"makeSureNeedCoverage": "כדאי לוודא שיש לכם את הכיסוי הדרוש",
+		"recommendsUpgradingText": "Lenovo ממליצה לשדרג את רמת השירות שלכם",
+		"exploreOptions": "גלו את האפשרויות",
+		"start": "הפעלה",
+		"end": "סוף",
+		"nMos": "{{monthValue}} חו'",
+		"today": "היום",
+		"upgradeLevels": {
+			"title": "האחריות והשדרוגים של ‬שירותי Lenovo מגנים עליכם מפני כל תקלה בחומרה.",
+			"subTitle": "‏‫‏‫הגנה מפני נזק לא מכוון‬ מגנה עליכם במקרים של נפילות, שפיכת נוזלים, סדקים במסך ונזקים לא מכוונים אחרים.",
+			"recommended": "מומלץ",
+			"learnMore": "מעוניינים במידע נוסף?",
+			"good": {
+				"warrantyCodeText": "תמיכה במחסנים",
+				"levelText": "טוב",
+				"point1": "חלקים ועבודה",
+				"point2": "תמיכה בסיסית בטלפון לבעיות חומרה",
+				"point3": "תיקונים מתבצעים במשלוח למחסן Lenovo"
+			},
+			"better": {
+				"warrantyCodeText": "תמיכה באתר הלקוח‬‏‫",
+				"levelText": "טוב יותר",
+				"point1": "חלקים ועבודה",
+				"point2": "תמיכה בסיסית בטלפון לבעיות חומרה",
+				"point3": "תיקונים <b>מהירים יותר</b> המתבצעים במיקום שלכם"
+			},
+			"best": {
+				"warrantyCodeText": "מעולה",
+				"levelText": "הטוב ביותר",
+				"point1": "חלקים ועבודה <b>בעדיפות עליונה</b>",
+				"point2": "תמיכה טלפונית <b>מתקדמת</b> של מהנדסי Lenovo",
+				"point3": "<b>המהיר ביותר</b> - תיקונים המתבצעים במיקום שלכם, ביום העסקים הבא",
+				"point4": "<b>תמיכה מקיפה בחומרה ובתוכנה</b>"
+			}
 		}
 	},
 	"security": {
@@ -4520,832 +5389,12 @@
 		"updateSnapshotTooltip": "עדכנו את תצלום הבזק של כל רכיבי החומרה והתוכנה עם המידע העדכני ביותר שלהם",
 		"replaceBaselineTooltip": "עדכנו את הבסיס של הרכיבים שנבחרו עם המידע של תצלום הבזק הנוכחי שלהם"
 	},
-	"smartPerformance": {
-		"title": "השירות Smart Performance",
-		"back": "חזרה",
-		"performanceandSecurityCheckTitle": "בדיקת ביצועים ואבטחה",
-		"performanceandSecurityCheckSubTitle": "תנו לנו לאבחן ולפתור בעיות הקשורות לביצועים ולאבטחה במחשב שלכם",
-		"scanButton": "סריקת מחשב ללא תשלום",
-		"section1Heading": "כיצד הייתם מדרגים את ביצועי המחשב שלכם?",
-		"section1Description": "המחשב איטי? היישומים מגיבים לאט מדי? שגיאות ב-Windows? חששות מפני תוכנה זדונית? אנו נאבחן מה גורם לבעיה ונתקן את זה.",
-		"critical": "קריטי",
-		"allisWell": "הכל בסדר",
-		"zero": 0,
-		"one": 1,
-		"two": 2,
-		"three": 3,
-		"four": 4,
-		"five": 5,
-		"six": 6,
-		"seven": 7,
-		"eight": 8,
-		"nine": 9,
-		"ten": 10,
-		"tuneUP": "מחשבכם זקוק לטיפול",
-		"section2Heading": "ביצועי מחשב מעולים. תמיד",
-		"section2Description": "התוכנה שלנו יכולה לסרוק באופן יזום את המחשב שלכם 24x7 כדי למצוא ולתקן בעיות ככל שהן מתעוררות, כך שלמחשב תמיד יהיו ביצועים מעולים.",
-		"runningWell": "המחשב פועל כהלכה",
-		"auto": "אוטומטי",
-		"manual": "ידני",
-		"am": "AM",
-		"pm": "PM",
-		"scanNow": "סריקה עכשיו",
-		"signUpAndFix": "הרשמה ותיקון",
-		"cancel": "ביטול",
-		"scanning": "סורק",
-		"fixIt": "תקנו עכשיו",
-		"optimizeIt": "מטב",
-		"maintainIt": "תחזוקה",
-		"noteFindings": "הגענו לממצאים שלנו על סמך ניתוח מפורט של המחשב שלכם.",
-		"noteNavigateTab": "נווטו בכרטיסיות למידע נוסף:",
-		"scannedAreas": "אזורים שנסרקו",
-		"lastFix": "תיקון אחרון",
-		"fixResult": "תוצאות התיקון",
-		"checkPreviousResults": "בדיקת תוצאות קודמות",
-		"tunePCPerformance": {
-			"title": "שיפור ביצועי המחשב",
-			"heading": "הפגינו קצת יותר אהבה כלפי מחשבכם",
-			"description": "אפילו המחשב הטוב ביותר יפיק תועלת מטיפולים תקופתיים. עברו את הטיפול ובצעו משימות רבות יותר באמצעות היישום העוצמתי שלנו.",
-			"tabSet1": {
-				"tab1": "זבל מצטבר",
-				"tab2": "בעיות שימושיות",
-				"tab3": "הגדרות Windows",
-				"tab4": "שגיאות מערכת",
-				"tab5": "שגיאות במערכת רישום"
-			},
-			"tabSet2": {
-				"tab1Heading": "זה קל",
-				"tab1Description": "לא נבלבל אתכם בסיבוכים טכנולוגיים",
-				"tab2Heading": "זה מהיר",
-				"tab2Description": "בדיקה של 100 נקודות תבוצע תוך פחות מ-5 דקות",
-				"tab3Heading": "זה בטוח",
-				"tab3Description": "ללא תוכנות הפחדה, נוצר תוך התחשבות בשיטות העבודה המומלצות"
-			},
-			"summaryTitle": "שיפור ביצועי המחשב"
-		},
-		"boostInternetPerformance": {
-			"title": "שיפור ביצועי האינטרנט",
-			"extraTitle": "ביצועי האינטרנט",
-			"heading": "שפרו את ביצועי האינטרנט שלכם",
-			"description": "אנשים רבים שרשת ה-Wi-Fi שלהם איטית או אין להם גישה לרשת Wi-Fi מרגישים מנותקים מהעולם. אנו נקבע את הגדרות האינטרנט, ה-Wi-Fi והדפדפן שלכם להשגת ביצועים מיטביים.",
-			"tabSet1": {
-				"tab1": "זבל אלקטרוני",
-				"tab2": "הגדרות רשת",
-				"tab3": "הגדרות דפדפן",
-				"tab4": "אבטחת דפדפן",
-				"tab5": "ביצועי Wi-Fi"
-			},
-			"tabSet2": {
-				"tab1Heading": "בעיות בדפדפן",
-				"tab1Description": "אנו קובעים תצורה של כל דפדפני האינטרנט הפופולריים ומתקנים בעיות בהם.",
-				"tab2Heading": "שגיאות קישוריות",
-				"tab2Description": "אנו יכולים לאבחן ולתקן את בעיות הקישוריות שלכם.",
-				"tab3Heading": "אינטרנט איטי",
-				"tab3Description": "אנו נעזור לכם להשיג ביצועים מקסימליים."
-			},
-			"summaryTitle": "ביצועי האינטרנט"
-		},
-		"malwareSecurity": {
-			"title": "תוכנה זדונית ואבטחה",
-			"heading": "ספקו למחשבכם את הטיפול הנוסף שהוא זקוק לו",
-			"description": "תוכנה זדונית יכולה לגרום לקריסת המחשב, לפגיעה בנתונים ולירידה ברמת הביצועים. נוכל להסיר תוכנה זדונית ולבצע עוד המון דברים נוספים.",
-			"tabSet1": {
-				"tab1": "סריקה לאיתור תוכנה זדונית",
-				"tab2": "זיהומים חדשים",
-				"tab3": "תוכניות שגויות",
-				"tab4": "תוכנות פרסום מציקות",
-				"tab5": "הגדרות אבטחה"
-			},
-			"tabSet2": {
-				"tab1Heading": "וירוס חדש",
-				"tab1Description": "אנו מסירים אפילו את הזיהומים החדשים ביותר של תוכנות זדוניות",
-				"tab2Heading": "הסרת תוכנות ריגול",
-				"tab2Description": "אנו מסירים את כל התוכניות שנראות כבלתי רצויות",
-				"tab3Heading": "קל ומהיר",
-				"tab3Description": "הסריקה אורכת בדרך כלל 5-10 דקות"
-			},
-			"summaryTitle": "תוכנה זדונית ואבטחה"
-		},
-		"proactiveAutomated": {
-			"title": "יזום ואוטומטי",
-			"heading": "קבלו את הכוח לפתור בעיות לפני שהן משפיעות עליכם!",
-			"description": "השירות Smart Performance מבצע חיפוש מתמיד של מאות בעיות המשפיעות על ביצועי מחשב. אנו מתקנים אותן באופן יזום ומביאים לכם שקט נפשי.",
-			"tabSet1": {
-				"tab1": "תזמון סריקה",
-				"tab2": "סריקה לפי דרישה",
-				"tab3": "פתרון אוטומטי",
-				"tab4": "זה יעיל",
-				"tab5": "הגנה 24/7"
-			},
-			"tabSet2": {
-				"tab1Heading": "זה קל",
-				"tab1Description": "לא נבלבל אתכם בסיבוכים טכנולוגיים",
-				"tab2Heading": "זה מהיר",
-				"tab2Description": "בדיקה של 100 נקודות תבוצע תוך פחות מ-5 דקות",
-				"tab3Heading": "זה בטוח",
-				"tab3Description": "ללא תוכנות הפחדה, נוצר תוך התחשבות בשיטות העבודה המומלצות"
-			}
-		},
-		"noScanResults": "לחצו על הלחצן \"סריקה ותיקון\" כדי להפעיל את תהליך הסריקה.",
-		"startScan": "<b>מוכנים להתחיל את הסריקה?</b> תנו לנו לאבחן בעיות הקשורות לביצועים ולאבטחה במחשב שלכם.",
-		"subscriptionDetails": {
-			"title": "פרטי המנוי",
-			"description": "אתם מנויים לשירות Lenovo Smart Performance. במהלך תקופה זו יש לכם גישה מלאה לכל התכונות שמספקות הגנה למחשבכם ומבטיחות את פעולתו החלקה.",
-			"learnMore": "למדו עוד",
-			"startDate": "תאריך התחלה",
-			"endDate": "תאריך סיום",
-			"status": "מצב",
-			"activeStatus": "פעיל",
-			"inactiveStatus": "לא פעיל",
-			"manageSubscription": "ניהול המנוי",
-			"titlebeta": "תוכנית בטא של Lenovo",
-			"manageSubscriptionBeta": "הפעלת התכונה המלאה",
-			"descriptionbeta": "Lenovo מציעה תוכנית פיילוט להתנסות בתכונה Smart Performance עד יולי 2020.",
-			"descriptionbeta1": "אתם מוזמנים להצטרף ולנסות את התכונה המלאה.",
-			"descriptionNonSubscriber": "אינכם מנויים לשירות Lenovo Smart Performance. תוכלו לבצע סריקה של המחשב בלבד. רכשו מנוי עכשיו כדי לקבל את כל היתרונות שמספקות הגנה למחשבכם ומבטיחות את פעולתו החלקה.",
-			"processStatus": "מעבד",
-			"descriptionExpired": "פג תוקף המנוי שלכם וכרגע אתם יכולים להשתמש רק בתכונת סריקה ב-Smart Performance, אתם יכולים לחדש את המינוי על ידי לחיצה על הקישור \"ניהול מנוי\" כדי לחדש את ההגנה המלאה על המכשיר שלכם.",
-			"expiredStatus": "פג תוקף",
-			"expiredNote": "תוקף המנוי יפוג בעוד",
-			"day": "יום",
-			"days": "ימים",
-			"weeks": "שבועות",
-			"week": "שבוע",
-			"month": "חודש",
-			"today": "היום",
-			"next": "הבא"
-		},
-		"scanSettings": {
-			"title": "הגדרות של תזמון סריקה",
-			"description": "הפעילו או השביתו את הסריקה והגדירו את לוח הזמנים לסריקה",
-			"enableScan": "הפעלת סריקה",
-			"changeScanTitle": "שינוי לוח הזמנים לסריקה",
-			"changeScanDescription": "ערכו את לוח הזמנים לסריקה כדי להפעיל אותה במועד הנדרש.",
-			"frequency": "תדירות",
-			"txtDate": "תאריך",
-			"txtDay": "יום",
-			"txtTime": "זמן",
-			"txtSave": "שמור",
-			"txtCancel": "ביטול",
-			"scanFrequencyWeek": "פעם בשבוע",
-			"scanFrequencyEveryWeek": "כל שבועיים",
-			"scanFrequencyMonth": "כל חודש",
-			"mon": "יום שני",
-			"tue": "יום שלישי",
-			"wed": "יום רביעי",
-			"thu": "יום חמישי",
-			"fri": "יום שישי",
-			"sat": "שבת",
-			"sun": "יום ראשון",
-			"am": "AM",
-			"pm": "PM",
-			"tooltipText": "כל עוד האפשרות תהיה מופעלת, סריקת ביצועי המערכת והאבטחה תופעל אוטומטית בתאריך ובשעה שנקבעו."
-		},
-		"scanningPage": {
-			"title": "בדיקת ביצועים ואבטחה",
-			"description": "אנא המתינו בזמן שאנו סורקים את המערכת שלכם לאיתור בעיות ואיומים פוטנציאליים.",
-			"scanningSystem": "סריקת מערכת",
-			"complete": "הושלמה",
-			"cancelScan": {
-				"button": "ביטול סריקה",
-				"title": "לבטל את הסריקה?",
-				"description": "אם תצאו מהמסך הנוכחי, הסריקה תבוטל ותחזרו למסך הבית. עם זאת, תוכלו להפעיל את הסריקה שוב בכל עת.",
-				"yesButton": "כן, בטלו",
-				"noButton": "לא, המשיכו בסריקה",
-				"cancelMayTakeSomeTime": "אנא המתינו, פעולת הביטול עשויה להימשך זמן מה, בהתאם למערכת.",
-				"cancelTextPrompt": "האם אתם בטוחים שברצונכם לבטל?"
-			},
-			"waiting": "ממתין לסריקה",
-			"completed": "הושלמה",
-			"nowScanningDetail": {
-				"cardTitle": "פרטי הסריקה הנוכחית",
-				"current": "כרגע: ",
-				"upNext": "הבא: ",
-				"tunePCDesc": "תנו לנו לעזור לשפר את ביצועי המחשב שלכם. אנו עושים זאת באופן מאובטח תוך שימוש בשיטות העבודה המומלצות בתעשייה. היתרונות למנויים כוללים הפעלת המחשב תוך זמן קצר יותר, ביצועים משופרים, שיפור היציבות והפעלה מהירה יותר של יישומים.",
-				"boostDesc": "תנו לנו לעזור לשפר את חוויית הגלישה שלכם. נתקן בעיות רשת וגישה. היתרונות למנויים כוללים שיפור בקישוריות האינטרנט, שיפור במהירויות העלאה/הורדה והפיכת האינטרנט למאובטח יותר.",
-				"malwareDesc": "תנו לנו לעזור לאבטח את המחשב שלכם במהירות, לפי דרישה. נעשה זאת על ידי הסרת תוכנות ריגול, תוכנות זדוניות ותוכנות פרסום. אנו מסירים גם כמעט את כל הזיהומים החדשים. היתרונות למנויים כוללים אבטחת נתונים וביצועי מערכת מיטביים.",
-				"proactiveDesc": "נבצע טיפול תקופתי למחשבכם ונתקן בעיות באופן יזום ואוטומטי כדי שמחשבכם יהיו מעודכן ומוגן. תמיד",
-				"tunePCScanningItems": {
-					"accumulatedJunk": {
-						"itema1": "איתור זבל ב-85 מיקומים",
-						"itema2": "קובצי יומן מערכת שאינם נחוצים",
-						"itema3": "רכיבים נותרים מיותרים של יישומים",
-						"itema4": "קבצים זמניים התופסים את שטח הכונן",
-						"itema5": "קבצים שמחקתם לפני זמן רב",
-						"itema6": "שגיאות והתראות מיושנות"
-					},
-					"usabilityIssues": {
-						"itemb1": "התייחסות לעשרות אתגרי שימושיות",
-						"itemb2": "בדיקת קישוריות של התקנים חיצוניים",
-						"itemb3": "הקפדה על קבלת העדכונים החדשים ביותר של Windows",
-						"itemb4": "עיבוד היישומים והצגתם בצורה המיטבית",
-						"itemb5": "ניתוח של ניצול כוח העיבוד",
-						"itemb6": "איתור קבצים בקלות"
-					},
-					"windowsSettings": {
-						"itemc1": "אבחון של עשרות הגדרות של מערכת ההפעלה Windows",
-						"itemc2": "וידוא שמערכת ההפעלה Windows פועלת כהלכה",
-						"itemc3": "וידוא פעולתם של שירותים חיוניים",
-						"itemc4": "בדיקת תקינות של הגדרות הקישוריות",
-						"itemc5": "בדיקת היכולת לשתף קבצים ברשת",
-						"itemc6": "בדיקת הגדרות ביומטריות והגדרות גישה"
-					},
-					"systemErrors": {
-						"itemd1": "וידוא פעולתם של שירותים חיוניים",
-						"itemd2": "בחירת שירותים להשגת ביצועים גבוהים יותר",
-						"itemd3": "חיפוש שגיאות עקב התנגשויות בתוכנה",
-						"itemd4": "מיטוב ניהול השגיאות של Windows",
-						"itemd5": "בדיקה ותיקון של שגיאות בהפעלת יישומים",
-						"itemd6": "הגדרת דוחות של שגיאות מערכת"
-					},
-					"registryErrors": {
-						"iteme1": "בדיקה מעמיקה של מערכת הרישום של Windows",
-						"iteme2": "סריקה לאיתור שירותי Windows לא חוקיים",
-						"iteme3": "איתור ערכים פגומים במערכת הרישום",
-						"iteme4": "איתור סיומות קבצים מיותרות",
-						"iteme5": "איתור ערכים משובשים של יישומים מותקנים",
-						"iteme6": "איתור ערכים נותרים מיותרים"
-					}
-				},
-				"boostScanningItems": {
-					"networkSettings": {
-						"itema1": "אבחון הגדרות רשת ואינטרנט",
-						"itema2": "אימות ההגדרות של תצורת רשת",
-						"itema3": "אימות של הגדרות רשת זמינות",
-						"itema4": "הגדרה לטעינת אתרי אינטרנט במהירות רבה יותר",
-						"itema5": "איתור שגיאות בעיבוד דפים",
-						"itema6": "וידאו ששירותי החיבור פועלים כהלכה"
-					},
-					"browserSettings": {
-						"itemb1": "הבטחת חווית גלישה טובה יותר",
-						"itemb2": "קביעת הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
-						"itemb3": "וידוא ששירותי אבטחת הדפדפן פועלים כהלכה",
-						"itemb4": "וידוא שדפי האינטרנט מעובדים ומוצגים כהלכה",
-						"itemb5": "בדיקת הגדרות להורדות מהירות יותר",
-						"itemb6": "בדיקת הרשאות ובקרת גישה"
-					},
-					"browserSecurity": {
-						"itemc1": "וידוא פעולתם של שירותי אבטחה",
-						"itemc2": "הגדרה של תכונות אבטחת הדפדפן",
-						"itemc3": "וידוא ששירותי הרשת פועלים כהלכה",
-						"itemc4": "קביעת הגדרות הפרוטוקול",
-						"itemc5": "וידוא תקינותן של הגדרות תוכן הדפדפן",
-						"itemc6": "אימות התוספים וההרחבות של הדפדפן"
-					},
-					"wifiPerformance": {
-						"itemd1": "מיטוב של הגדרות חווית ה-Wi-Fi",
-						"itemd2": "וידוא אבטחתה של הרשת הביתית שלכם",
-						"itemd3": "בדיקה של הגדרות שירותי ה-Wi-Fi",
-						"itemd4": "אבטחה של הגדרות שיתוף רשת",
-						"itemd5": "בדיקה של תקני אבטחת Wi-Fi",
-						"itemd6": "וידוא שערוצי ה-Wi-Fi אינם חופפים"
-					},
-					"eJunk": {
-						"iteme1": "נטרול העומס מדפדפנים",
-						"iteme2": "איתור של שאריות דואר זבל",
-						"iteme3": "איתור קובצי אינטרנט מיושנים",
-						"iteme4": "ניקוי של מטמון אינטרנט בלתי רצוי",
-						"iteme5": "ניקוי קובצי Cookie",
-						"iteme6": "הסרת פריטים מיותרים של הדפדפן"
-					}
-				},
-				"malwareScanningItems": {
-					"malwareScan": {
-						"itema1": "סריקת נקודות טעינה נפוצות",
-						"itema2": "בדיקת מיקומים קריטיים לאיתור איומים",
-						"itema3": "בדיקת וירוסים, תוכנות ריגול ותוכנות זדוניות",
-						"itema4": "סריקה של יותר מ-50 סוגי קבצים",
-						"itema5": "סריקה לאיתור שאריות של תוכנות זדוניות",
-						"itema6": "שימוש במנוע תיקון בענן"
-					},
-					"zerodayInfections": {
-						"itemb1": "איתור וירוס חדש",
-						"itemb2": "איתור תוכנות זדוניות אחרונות ולא מאובחנות",
-						"itemb3": "סריקה עם תיקון מבוסס ענן",
-						"itemb4": "ביצוע ניטור התנהגותי",
-						"itemb5": "סריקת קבצים באמצעות מנוע צבור",
-						"itemb6": "סריקה כנגד ההגדרות האחרונות"
-					},
-					"securitySettings": {
-						"itemc1": "הקפדה על קבלת העדכונים החדשים ביותר של Windows",
-						"itemc2": "וידוא ששירות חומת האש של Windows פועל כהלכה",
-						"itemc3": "אבטחת הגדרות הדפדפן",
-						"itemc4": "בדיקה של שירותי אבטחה חיוניים",
-						"itemc5": "קביעת הגדרות של גישת משתמש",
-						"itemc6": "וידוא שירותי אימות"
-					},
-					"errantPrograms": {
-						"itemd1": "איתור יישומים שגויים",
-						"itemd2": "איתור יישומים שעלולים להיות בלתי רצויים",
-						"itemd3": "איתור יישומים מוסתרים ובלתי פעילים",
-						"itemd4": "אימות התנהגות זדונית ביישומים",
-						"itemd5": "בדיקת יישומים לפי גורם המוניטין",
-						"itemd6": "בדיקת תוכניות שגויות במערכת רישום"
-					},
-					"annoyingAdware": {
-						"iteme1": "איתור תוכנות פרסום בדפדפנים",
-						"iteme2": "תיקון ההגדרות של חלונות קופצים בדפדפנים",
-						"iteme3": "נטרול איומי ניתוב מחדש בדפדפן",
-						"iteme4": "בדיקה לאיתור שאריות של רכיבי פרסום",
-						"iteme5": "מיטוב של הגדרות חווית הדפדפן",
-						"iteme6": "אימות מנוע התיקון בענן"
-					}
-				}
-			},
-			"confirmationTitle": "תהליך התשלום של Lenovo",
-			"confirmationNote": "תועברו לאתר התשלומים של Lenovo כדי לבצע את התשלום. לאחר ביצוע התשלום, תוכלו ללחוץ על הלחצן \"רענון\" באזור \"פרטי המנוי\" כדי לצפות בנתוני התשלום.",
-			"confirmationBtn": "המשך",
-			"refreshButton": "רענון מצב"
-		},
-		"scanCompletePage": {
-			"title": "סריקת המערכת הושלמה",
-			"description": "{{machineFamilyName}} הנה מה שמצאנו במחשב ",
-			"scanRates": "הסריקה שלנו מדרגת את מחשבכם ב: ",
-			"summary": "סיכום",
-			"foundIssues": "הסריקה שלנו מצאה {{issueCount}} בעיות",
-			"summaryDetails": "הירשמו כעת כדי לתקן בעיות אלה ולשמור על פעולה חלקה של המערכת שלכם. התוכנה שלנו יכולה לסרוק באופן יזום אזורים אלה במערכת שלכם 24x7 כדי למצוא ולתקן בעיות ככל שהן מתעוררות, כך שלמחשב תמיד יהיו ביצועים מעולים.",
-			"expiredSummaryDetails": "פג תוקף המנוי שלכם וכרגע אתם יכולים להשתמש רק בתכונת סריקה ב-Smart Performance, אם ברצונכם לחדש את התכונה \"סריקה ותיקון\", לחצו על הלחצן \"חידוש ותיקון\" למטה כדי לחדש את המנוי.",
-			"signupRepairButton": "הירשמו ותקנו בעיות עכשיו",
-			"renewAndFix": "חידוש ותיקון",
-			"backToHome": "חזרה למסך הבית",
-			"monthlyPricing": "<b>פחות מ-{{monthlyPrice}} בחודש.</b> נתקן אוטומטית בעיות אלה. פעם אחת היום, ולאחר מכן כל שבוע <a  href=\"#\">מידע נוסף</a>",
-			"issueCount": "{{individualIssueCount}} בעיות",
-			"issues": "בעיות",
-			"tuneIssueCount": "{{tune}}",
-			"boostIssueCount": "{{boost}}",
-			"secureIssueCount": "{{secure}}",
-			"scannedAreas": "אזורים שנסרקו",
-			"summaryPurchaseTip": "רכשו את התוכנית השנתית כעת ואנחנו נפתור את הבעיות האלה באופן אוטומטי מדי שבוע.",
-			"tunePCTooltip": "ניתן לשפר את ביצועי המערכת הכוללים, להפחית את הזמן שלוקח למחשב לעלות ולשפר את זמני טעינת היישומים.",
-			"boostTooltip": "ניתן לשפר את ביצועי הרשת, את חווית הגלישה ואת הקישוריות.",
-			"malwareTooltip": "ניתן לשפר את האבטחה, להסיר תוכנות זדוניות וזיהומים ולהחזיר את יציבות המערכת.",
-			"recommendedAction": {
-				"title": "פעולה מומלצת",
-				"description": "נתקן אוטומטית בעיות אלה. פעם אחת היום, ולאחר מכן כל שבוע",
-				"yearlyPricing": "{{yearlyPrice}} / שנה",
-				"monthlyPricing": "פחות מ-{{monthlyPrice}} בחודש.",
-				"longerTerm": "לתקופה ארוכה יותר? לחסכון רב יותר?",
-				"newDescription": "לאחר ההרשמה, אנו נתקן את הבעיות האלו באופן אוטומטי עבורך מדי שבוע.",
-				"signupButton": "הרשמה"
-			},
-			"tunepc": {
-				"accumulatedjunkscannedareas": {
-					"area1": "ביצע סריקה לאיתור זבל ב-85 מיקומים",
-					"area2": "קובצי יומן מערכת שאינם נחוצים",
-					"area3": "רכיבים נותרים מיותרים של יישומים",
-					"area4": "קבצים זמניים התופסים את שטח הכונן",
-					"area5": "קבצים שמחקתם לפני זמן רב",
-					"area6": "שגיאות והתראות מיושנות"
-				},
-				"registryerrorsscannedareas": {
-					"area1": "השלים בדיקה מעמיקה של מערכת הרישום של Windows",
-					"area2": "ביצע סריקה לאיתור שירותי Windows לא חוקיים",
-					"area3": "ביצע חיפוש של ערכים פגומים במערכת הרישום",
-					"area4": "ביצע סריקה לאיתור סיומות קבצים מיותרות",
-					"area5": "ביצע חיפוש של ערכים משובשים של יישומים מותקנים",
-					"area6": "ביצע חיפוש של ערכים נותרים מיותרים"
-				},
-				"windowssettingsscannedareas": {
-					"area1": "אבחן עשרות הגדרות של מערכת ההפעלה Windows",
-					"area2": "בדק שמערכת ההפעלה Windows פועלת כהלכה",
-					"area3": "אישר פעולתם של שירותים חיוניים",
-					"area4": "בדק תקינות של הגדרות הקישוריות",
-					"area5": "בדק את היכולת לשתף קבצים ברשת",
-					"area6": "בדק הגדרות ביומטריות והגדרות גישה"
-				},
-				"usabilityissuesscannedareas": {
-					"area1": "ביצע חיפוש לאיתור אתגרי שימושיות",
-					"area2": "בדק קישוריות של התקנים חיצוניים",
-					"area3": "בדק את מצב העדכונים של Windows",
-					"area4": "אימת את הגדרת עיבוד היישומים",
-					"area5": "ניתח את ניצול כוח העיבוד",
-					"area6": "איתור קבצים בקלות"
-				},
-				"systemerrorsscannedareas": {
-					"area1": "בדק שהשירותים החיוניים פועלים",
-					"area2": "חיפש שירותים להשגת ביצועים גבוהים יותר",
-					"area3": "חיפוש שגיאות עקב התנגשויות בתוכנה",
-					"area4": "ניתח את ניהול השגיאות של Windows",
-					"area5": "ביצע סריקה לאיתור שגיאות בהפעלת יישומים",
-					"area6": "בדק את תצורת הדוחות של שגיאות מערכת"
-				}
-			},
-			"internetperformance": {
-				"ejunkscannedareas": {
-					"area1": "זיהה עומס מתוך דפדפנים",
-					"area2": "ביצע חיפוש לאיתור של שאריות דואר זבל",
-					"area3": "ביצע סריקה לאיתור קובצי אינטרנט מיושנים",
-					"area4": "ביצע חיפוש לאיתור מטמון אינטרנט בלתי רצוי",
-					"area5": "איתר קובצי Cookie לניקוי",
-					"area6": "ביצע סריקה לאיתור רכיבים נותרים מיותרים של הדפדפן"
-				},
-				"browsersecurityscannedareas": {
-					"area1": "בדק ששירותי האבטחה פועלים",
-					"area2": "בדק את תכונות אבטחת הדפדפן",
-					"area3": "אימת את שירותי הרשת",
-					"area4": "קביעת הגדרות הפרוטוקול",
-					"area5": "בדק את ההגדרות של תוכן הדפדפן",
-					"area6": "ביצע סריקה לאיתור התוספים וההרחבות של הדפדפן"
-				},
-				"networksettingsscannedareas": {
-					"area1": "אבחן הגדרות רשת ואינטרנט",
-					"area2": "אבחן את ההגדרות של תצורת רשת",
-					"area3": "אימת את הגדרות הרשת המחוברת",
-					"area4": "אבחן הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
-					"area5": "ביצע סריקה לאיתור שגיאות בעיבוד דפים",
-					"area6": "סרק את כל שירותי החיבור"
-				},
-				"browsersettingsscannedareas": {
-					"area1": "הבטחת חווית גלישה טובה יותר",
-					"area2": "אבחן הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
-					"area3": "אימת את שירותי אבטחת הדפדפן",
-					"area4": "בדק שדפי האינטרנט מעובדים ומוצגים כהלכה",
-					"area5": "סרק הגדרות להורדות מהירות יותר",
-					"area6": "ניתח הרשאות ובקרת גישה"
-				},
-				"wifiperformancescannedareas": {
-					"area1": "אימת את הגדרות חווית ה-Wi-Fi",
-					"area2": "אימת שהרשת הביתית מאובטחת",
-					"area3": "סרק את הגדרות שירותי ה-Wi-Fi",
-					"area4": "אימת את ההגדרות של שיתוף רשת מאובטח",
-					"area5": "אימת את תקני אבטחת ה-Wi-Fi",
-					"area6": "ביצע ניתוח כדי לוודא שערוצי ה-Wi-Fi אינם חופפים"
-				}
-			},
-			"malwaresecurity": {
-				"malwarescanscannedareas": {
-					"area1": "סרק נקודות טעינה נפוצות",
-					"area2": "סרק מיקומים קריטיים לאיתור איומים",
-					"area3": "ביצע סריקה לאיתור וירוסים, תוכנות ריגול ותוכנות זדוניות",
-					"area4": "סרק יותר מ-50 סוגי קבצים לאיתור איומים",
-					"area5": "ביצע סריקה לאיתור שאריות של תוכנות זדוניות",
-					"area6": "אימת את מנוע התיקון בענן"
-				},
-				"errantprogramsscannedareas": {
-					"area1": "איתור יישומים שגויים",
-					"area2": "ביצע חיפוש לאיתור יישומים שעלולים להיות בלתי רצויים",
-					"area3": "ביצע חיפוש לאיתור יישומים מוסתרים ובלתי פעילים",
-					"area4": "ביצע סריקה לאיתור יישומים זדוניים",
-					"area5": "בדק יישומים לפי גורם המוניטין",
-					"area6": "בדק תוכניות שגויות במערכת רישום"
-				},
-				"zerodayinfectionsscannedareas": {
-					"area1": "ביצע סריקה לאיתור וירוס חדש",
-					"area2": "ביצע חיפוש לאיתור תוכנות זדוניות אחרונות ולא מאובחנות",
-					"area3": "ביצע אימות עם תיקון מבוסס ענן",
-					"area4": "ביצע ניטור התנהגותי",
-					"area5": "אימת קבצים באמצעות מנוע צבור",
-					"area6": "ביצע סריקה כנגד הגדרות מעודכנות"
-				},
-				"securitysettingsscannedareas": {
-					"area1": "אימת שמותקנים עדכוני Windows עדכניים",
-					"area2": "אימת את שירות חומת האש של Windows",
-					"area3": "חיפש הגדרות דפדפן מאובטחות",
-					"area4": "אבחן שירותי אבטחה חיוניים",
-					"area5": "אימת את ההגדרות של גישת משתמש",
-					"area6": "בדק את שירותי האימות"
-				},
-				"annoyingadwarescannedareas": {
-					"area1": "ביצע סריקה לאיתור תוכנות פרסום בדפדפנים",
-					"area2": "אימת את ההגדרות של חלונות קופצים בדפדפנים",
-					"area3": "ביצע סריקה לאיתור איומי ניתוב מחדש בדפדפן",
-					"area4": "ביצע בדיקה לאיתור שאריות של רכיבי פרסום",
-					"area5": "אימת את הגדרות חווית הדפדפן",
-					"area6": "אימת עם מנוע התיקון בענן"
-				}
-			},
-			"subscriber": {
-				"tunepc": {
-					"accumulatedjunkscannedareas": {
-						"area1": "ניקה זבל ב-85 מיקומים",
-						"area2": "ניקה קובצי יומן מערכת שאינם נחוצים",
-						"area3": "מחק רכיבים נותרים מיותרים של יישומים",
-						"area4": "הסיר קבצים זמניים כדי לפנות שטח בכונן",
-						"area5": "נטרל קבצים שמחקתם לפני זמן רב",
-						"area6": "ניקה שגיאות והתראות"
-					},
-					"registryerrorsscannedareas": {
-						"area1": "השלים בדיקה מעמיקה של מערכת הרישום של Windows",
-						"area2": "תיקן את כל השירותים הלא חוקיים של Windows",
-						"area3": "הסיר את כל הערכים הפגומים במערכת הרישום",
-						"area4": "מחק את כל סיומות הקבצים המיושנות",
-						"area5": "ניקה ערכים משובשים של יישומים מותקנים",
-						"area6": "ניקה ערכים נותרים בלתי רצויים"
-					},
-					"windowssettingsscannedareas": {
-						"area1": "אימת את הגדרות Windows",
-						"area2": "מיטב את כל השירותים של Windows",
-						"area3": "ביצע שינוי בשירותי Windows חיוניים",
-						"area4": "ביצע שינוי בשירותי Windows חיוניים",
-						"area5": "אימת את היכולת לשתף קבצים ברשת",
-						"area6": "אימת הגדרות ביומטריות והגדרות גישה"
-					},
-					"usabilityissuesscannedareas": {
-						"area1": "תיקן את כל אתגרי השימושיות",
-						"area2": "אימת את הקישוריות של התקנים חיצוניים",
-						"area3": "וידא שעדכוני Windows תמיד עדכניים",
-						"area4": "אישר שהיישומים מעובדים ומוצגים בצורה המיטבית",
-						"area5": "שינה הגדרות עבור ניצול כוח העיבוד",
-						"area6": "שינה הגדרות כדי לאתר קבצים בקלות"
-					},
-					"systemerrorsscannedareas": {
-						"area1": "בדק שהשירותים החיוניים פועלים",
-						"area2": "ביצע שינוי בשירותים להשגת ביצועים גבוהים יותר",
-						"area3": "תיקן את כל השגיאות שנוצרו עקב התנגשויות בתוכנה",
-						"area4": "מיטב את ניהול השגיאות של Windows",
-						"area5": "בדק ותיקן את כל השגיאות בהפעלת יישומים",
-						"area6": "קבע את הגדרות הדוחות של שגיאות מערכת"
-					}
-				},
-				"internetperformance": {
-					"ejunkscannedareas": {
-						"area1": "הסיר עומס מ-4 דפדפנים",
-						"area2": "ניקה שאריות של דואר זבל",
-						"area3": "מחק קובצי אינטרנט מיושנים",
-						"area4": "ניקה מטמון אינטרנט בלתי רצוי",
-						"area5": "ניקה קובצי Cookie",
-						"area6": "ניקה את כל הרכיבים הנותרים המיותרים של הדפדפן‬"
-					},
-					"browsersecurityscannedareas": {
-						"area1": "וידא ששירותי האבטחה פועלים",
-						"area2": "הגדיר את תכונות אבטחת הדפדפן",
-						"area3": "בדק ותיקן את שירותי הרשת",
-						"area4": "קבע את הגדרות הפרוטוקול",
-						"area5": "וידא שהגדרות תוכן הדפדפן תקינות",
-						"area6": "ביצע סריקה לאיתור התוספים וההרחבות של הדפדפן"
-					},
-					"networksettingsscannedareas": {
-						"area1": "תיקן הגדרות רשת ואינטרנט",
-						"area2": "בדק את ההגדרות של תצורת רשת",
-						"area3": "שינה את הגדרות הרשת המחוברת",
-						"area4": "אבחן הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
-						"area5": "תיקן את כל השגיאות בעיבוד דפים",
-						"area6": "סרק את כל שירותי החיבור"
-					},
-					"browsersettingsscannedareas": {
-						"area1": "שינה הגדרות לחוויית גלישה טובה יותר",
-						"area2": "אימת הגדרות לעיבוד מהיר יותר של אתרי אינטרנט",
-						"area3": "וידא ששירותי אבטחת הדפדפן פועלים כהלכה",
-						"area4": "שינה הגדרות כדי שדפי האינטרנט ייטענו כהלכה",
-						"area5": "תיקן הגדרות להורדות מהירות יותר",
-						"area6": "תיקן הרשאות והגדרות בקרת גישה"
-					},
-					"wifiperformancescannedareas": {
-						"area1": "שינה את הגדרות חווית ה-Wi-Fi",
-						"area2": "אימת הגדרות של רשת ביתית מאובטחת",
-						"area3": "תיקן את הגדרות שירותי ה-Wi-Fi",
-						"area4": "שינה את ההגדרות של שיתוף רשת מאובטח",
-						"area5": "אימת את תקני אבטחת ה-Wi-Fi",
-						"area6": "אימת את ערוצי ה-Wi-Fi"
-					}
-				},
-				"malwaresecurity": {
-					"malwarescanscannedareas": {
-						"area1": "בדק והסיר איומים בנקודות טעינה נפוצות",
-						"area2": "בדק והסיר איומים במיקומים קריטיים",
-						"area3": "הסיר את כל האיומים מהמחשב",
-						"area4": "סרק יותר מ-50 סוגי קבצים לאיתור איומים",
-						"area5": "ניקה את כל השאריות של תוכנות זדוניות‬",
-						"area6": "אימת את מנוע התיקון בענן"
-					},
-					"errantprogramsscannedareas": {
-						"area1": "אימת את כל היישומים המותקנים",
-						"area2": "אימת יישומים שעלולים להיות בלתי רצויים",
-						"area3": "‏‫ניקה את כל היישומים המוסתרים והבלתי פעילים‬",
-						"area4": "הסיר את כל היישומים הזדוניים והשגויים",
-						"area5": "אימת יישומים לפי גורם המוניטין",
-						"area6": "ביצע בדיקה של מערכת הרישום לאיתור תוכניות שגויות"
-					},
-					"zerodayinfectionsscannedareas": {
-						"area1": "ביצע ניתוח לאיתור וירוס חדש",
-						"area2": "הסיר את כל התוכנות הזדוניות מהמחשב",
-						"area3": "אימת את מנוע התיקון בענן",
-						"area4": "השלים ניטור התנהגותי של יישומים",
-						"area5": "ביצע אימות כנגד מנוע צבור",
-						"area6": "ביצע אימות כנגד ההגדרות האחרונות"
-					},
-					"securitysettingsscannedareas": {
-						"area1": "מיטב את הגדרות העדכון של Windows",
-						"area2": "שיפר את שירות חומת האש של Windows",
-						"area3": "ביצע אבטחה של הגדרות הדפדפן",
-						"area4": "אבחן שירותי אבטחה חיוניים",
-						"area5": "מיטב הגדרות של גישת משתמש",
-						"area6": "שינה את שירותי האימות"
-					},
-					"annoyingadwarescannedareas": {
-						"area1": "הסיר תוכנות פרסום בדפדפנים",
-						"area2": "שיפר את ההגדרות של חלונות קופצים בדפדפנים",
-						"area3": "אבחן איומי ניתוב מחדש בדפדפן",
-						"area4": "ניקה שאריות של רכיבי פרסום",
-						"area5": "מיטב את הגדרות חווית הדפדפן",
-						"area6": "אימת את מנוע התיקון בענן"
-					}
-				}
-			},
-			"Diskspace": "השטח שהתפנה בכונן:",
-			"Performanceimprovements": "שיפורי ביצועים:",
-			"Securityimprovements": "שיפורי אבטחה:",
-			"Onceaweek": "פעם בשבוע"
-		},
-		"subscriberScanHomePage": {
-			"title": "הכל טוב עם המחשב ",
-			"titleScanCanceled": "הדירוג היה 0 מכיוון שהסריקה האחרונה בוטלה. לחצו על \"חזרה למסך הבית\" וסרקו שוב.",
-			"serialNumber": "מספר סידורי: ",
-			"subTitle": "אתם מנויים לשירות Lenovo Smart Performance",
-			"description": "אנו סורקים ומתקנים את מחשבכם באופן יזום ולעיתים תכופות כדי לשפר את ביצועי המחשב והאינטרנט ולנטרל בעיות הקשורות לתוכנה זדונית. יש לכם הגנה טובה. ניתן גם להפעיל בדיקת ביצועים לפי דרישה על-ידי לחיצה על הלחצן \"סרוק עכשיו\".",
-			"scanNow": "סריקה ותיקון",
-			"backToHome": "חזרה למסך הבית",
-			"returnto": "חזרה ל‏‫לוח מחוונים‬",
-			"mostRecent": "הסריקה האחרונה:",
-			"nextScheduled": "הסריקה המתוזמנת הבאה:",
-			"successTitle": "מחשבכם עבר את הטיפול!",
-			"successDescription": "השירות Smart Performance פתר <b>{{issueCount}} בעיות</b> כדי שמחשבכם ימשיך לפעול בצורה חלקה; תוכלו לצפות בדוח ובסיכום הסריקה למטה.",
-			"scanSummary": {
-				"title": "סיכום סריקה:",
-				"description": "אנו משפרים את מחשבכם באופן מתמיד",
-				"tune": "טיפול",
-				"tuneSummary": "השטח שהתפנה בכונן",
-				"boost": "שיפור",
-				"boostSummary": "תיקונים לשיפור הביצועים",
-				"secure": "אבטחה",
-				"secureSummary": "תיקונים לשיפור האבטחה",
-				"annual": "מדי שנה",
-				"quarterly": "מדי רבעון",
-				"custom": "התאמה אישית",
-				"txtFrom": "מ-",
-				"txtTo": "עד",
-				"txtGo": "אישור",
-				"summaryCaption": "השטח שהתפנה",
-				"fixes": "תיקונים",
-				"txtClr": "ניקוי"
-			},
-			"lastScanResults": {
-				"title": "התוצאות של 5 הסריקות האחרונות:",
-				"scanDate": "תאריך הסריקה",
-				"results": "תוצאות",
-				"status": "מצב"
-			}
-		},
-		"feedbackContainer": {
-			"title": "השאירו לנו משוב",
-			"subtitle": "ספרו לנו מה אתם חושבים על Smart Performance",
-			"buttonText": "שליחת משוב",
-			"questions": {
-				"q1": "1. כמה קשה או קל היה להשתמש בתכונת הסריקה?",
-				"q2": "2. כמה קשה או קל היה להבין את תוצאות הסריקה?",
-				"q3": "3. מה הסבירות שתשלמו עבור מנוי ל-Smart Performance כדי לשפר את ביצועי המערכת שלכם?",
-				"q4": "4. באופן כללי, באיזו מידה אתם מרוצים מהתכונה Smart Performance?",
-				"q5": "1. כמה קשה או קל היה להבין את התיקונים שהתכונה Smart Performance ביצעה במערכת שלכם?",
-				"q6": "2. האם מצאנו תוכנה זדונית כלשהי במערכת שלכם?",
-				"q7": "3. מה הסבירות שתמשיכו לשלם עבור התכונה Smart Performance?",
-				"q8": "4. באופן כללי, באיזו מידה אתם מרוצים מהתכונה Smart Performance?"
-			},
-			"rating": {
-				"r1": "קשה מאוד",
-				"r2": "קל מאוד",
-				"r3": "קשה מאוד",
-				"r4": "קל מאוד",
-				"r5": "בכלל לא סביר",
-				"r6": "סבירות גבוהה",
-				"r7": "לא מרוצה בכלל",
-				"r8": "מאוד מרוצה",
-				"r9": "קשה מאוד",
-				"r10": "קל מאוד",
-				"r11": "כן",
-				"r12": "לא",
-				"r13": "בכלל לא סביר",
-				"r14": "סבירות גבוהה",
-				"r15": "לא מרוצה בכלל",
-				"r16": "מאוד מרוצה"
-			},
-			"commentTip": "השאירו הערות או משוב נוסף למטה:",
-			"comments": "אנא השאירו את ההערות שלכם כאן..."
-		}
-	},
-	"homeSecurity": {
-		"title": "Connected Home Security",
-		"notification": {
-			"recent": "Recent security notifications",
-			"notifications": "Notifications",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
-		},
-		"ecosystem": {
-			"ecosystemBlockTitle": "Protect your device ecosystem",
-			"thisDevice": "This device",
-			"allDevices": "All Devices",
-			"protected": "Protected",
-			"notProtected": "Not Protected",
-			"trialExpired": "Trial expired",
-			"upgrade": "upgrade",
-			"inEcosystem": "In Ecosystem",
-			"ecosystemEnable": "Ecosystem Enabled",
-			"inTrial": "In trial",
-			"addEcosystem": "Add to Ecosystem",
-			"enableEcosystem": "Enable Ecosystem",
-			"startTrial": "Start Trial",
-			"fullAccess": "Full Access",
-			"renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Your Ecosystem Security Overview",
-			"allDevices": "All Devices",
-			"myDevice": "My Device",
-			"thisComputer": "This computer",
-			"secure": "SECURE",
-			"needAttention": "NEEDS ATTENTION",
-			"manageAccount": "Manage account",
-			"devices": "Devices",
-			"seeProtectedDevices": "See protected devices",
-			"addDevice": "add device",
-			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-			"upgrade": "upgrade",
-			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
-			"inTrialDetail": "You are currently in your trial period.",
-			"trialExpiredDetail": "Your trial period has expired.",
-			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
-			"discountPrice": "For only $29.99 for one year",
-			"overviewTitle": "Overview",
-			"trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId": "Lenovo ID:",
-			"overviewTitleAdmin": "Overview of your Connected Home Security",
-			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-			"familyMembers": "Family members",
-			"places": "Places",
-			"personalDevices": "Personal devices",
-			"wifiNetworks": "Wi-fi networks",
-			"homeDevices": "Home devices",
-			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
-			"buyNow": "Buy Now",
-			"extendNow": "extend now",
-			"renewNow": "Renew Now",
-			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
-		},
-		"tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcomeTitle": "welcome to connected home security",
-			"welcomeSubTitle": "30 days of protection for free",
-			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-			"locationTitle": "Enable location permissions",
-			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
-			"allow": "Allow",
-			"notNow": "Not now"
-		},
-		"accountStatus": {
-			"title": "My Connected Home Security",
-			"startTrial": "Start Trial",
-			"manageAccount": "Manage Account",
-			"upgradeAccount": "Upgrade Account",
-			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-			"trialExpiredDetail1": "Your trial has expired.",
-			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"upgradedDetail1": "You account is active until {{expiredDate}}.",
-			"upgradedDetail2": "Your device ecosystem is currently being protected.",
-			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
-			"alreadyHaveAccount": "Already have an activation code?"
-		},
-		"card": {
-			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your own Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
-			"joinTitle": "Join your family's Connected Home Security",
-			"joinDescription": "Become a part of your family security group."
-		},
-		"modal": {
-			"countdownTitle": "Launching web browser",
-			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-			"goNow": "Go now",
-			"disconnectedTitle": "Disconnect from protection?",
-			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-			"disconnecting": "Disconnecting..."
-		}
-	},
-	"dir": "rtl",
-	"dirClass": "rtl",
 	"notification": {
 		"menu": {
 			"security": "האם אתם יודעים? גם אם אין לכם תוכנת אנטי-וירוס מותקנת, אנחנו עדיין מספקים הגנת אבטחה בסיסית למכשיר שלכם.",
 			"connectedHomeSecurity": "קבלו ניטור והתראות בזמן אמת לאבטחת הרשת הביתית. תהיו הראשונים לדעת אם אחד מהמכשירים החכמים שלכם מתמודד עם מתקפת אבטחה.",
-			"hardwareScan": "כעת תוכלו לקבל את מצב התקינות של רכיב החומרה של המערכת."
+			"hardwareScan": "כעת תוכלו לקבל את מצב התקינות של רכיב החומרה של המערכת.",
+			"appSearch": "האם אתם יודעים? ניתן לחפש כאן תכונות שמתאימות למכשיר שלכם."
 		}
 	},
 	"appsForYou": {
@@ -5413,7 +5462,43 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
+					"description": "AI meeting manager תומך בזמן אמת בתרגום, בכתב ובעל-פה, ובהכתבה קולית. הוא יכול גם ליצור כתוביות לסרטונים.",
+					"downloadNow": "להורדה עכשיו",
+					"download": "הורדה",
+					"launch": "הפעלה",
+					"translation": {
+						"title": "תרגום",
+						"description": "ניתן לתרגם דיבור בפגישה מקוונת בכל תוכנת פגישות בזמן אמת. ניתן לעיין בסיכום הפגישה במהלך הפגישה ולשמור את הסיכום בהמשך. כמו כן ניתן להיעזר בכתוביות."
+					},
+					"voiceToText": {
+						"title": "המרת דיבור לטקסט",
+						"description": "דברו באופן טבעי, והתכונה של 'קול לטקסט' תקליד בשבילכם. כתבו אימיילים או מסמכים, או שוחחו בצ'אט דרך היישום המועדף עליכם. התכונה 'קול לטקסט' מתרגמת בזמן שאתם מדברים והיא רושמת הערות עבורכם."
+					},
+					"modalPopUp": {
+						"heading": "תחילת העבודה:",
+						"translation": {
+							"point1": "ודאו שהסמל של AI meeting manager מופיע באזור ההודעות של Windows.",
+							"point2": "לחצו על הסמל ובחרו מתרגם או כתוביות.",
+							"point3": "בחרו את שפת המקור ואת שפת היעד.",
+							"point4": "בהתאם לצורך, הגדירו את קלט הקול מרמקול או ממיקרופון.",
+							"point5": "לחצו על לחצן 'התחל' כדי להתחיל את התרגום."
+						},
+						"voiceToText": {
+							"point1": "ודאו שהסמל של AI meeting manager מופיע באזור ההודעות של Windows.",
+							"point2": "פתחו את היישום שבו ברצונכם להקליד טקסט.",
+							"point3": "לחצו על הסמל של AI meeting manager ובחרו 'קול לטקסט'.",
+							"point4": "בחרו את השפות ולחצו על לחצן המיקרופון כדי להתחיל.",
+							"point5": "העבירו את הסמן ליישום שפתחתם והתחילו לדבר."
+						},
+						"closeText": "סגירה"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "הפכו את הפגישות המקוונות לפרודוקטיביות ויעילות יותר."
+					}
+				}
 			}
 		},
 		"creatorCentre": {
@@ -5432,11 +5517,18 @@
 			},
 			"easyRendering": {
 				"title": ""
-
 			},
 			"colorCalibration": {
-				"title": ""
-
+				"title": "כיול צבעים",
+				"appName": "יישום X-rite",
+				"summary": "הצג של המחשב מכויל במפעל באמצעות הקלורימטרים המקצועיים והמעולים של Minolta. נתוני הכיול נשמרים בענן וניתן להוריד אותם כדי לאפס את הלוח להגדרות היצרן. X-rite מותקן מראש לניהול שטחי צבעים.<br>- ברירת מחדל (Gamut מקורי, בהירות מקורית אך עם רמפה אפורה מכוילת ואפיון תצוגה שמאוחסן בפרופיל). <br>- פרופיל ברירת המחדל מותקן כברירת מחדל. פרופיל זה נטען על ידי Windows בעת ההפעלה. <br>- לא מכויל (ניהול צבעים כבוי. משמעות הדבר היא שנעשה שימוש בפרופיל ברירת המחדל של Lenovo.) <br>- ‏sRGB (צגי מחשב) - Adobe RGB (עבור מעצבים גרפיים המתכננים להדפיס ב-CYMK) <br>- ‏BT.709 ‏(HD וידאו) <br>- ‏DCI P3 (נפוץ בהקרנת סרטים דיגיטליים בארצות הברית)",
+				"screenshotTitle": "צילומי מסך",
+				"cardTitle": "איך משחזרים פרופילים?",
+				"cardSummary": "אם תתקינו מחדש את המערכת שלכם או אם תאבדו פרופילי צבעים, תוכלו לשחזר פרופילים מכאן:",
+				"learnMore": "למדו עוד",
+				"restoreProfileDesc": "Lenovo מספקת גיבויים של פרופילי צבעים ב- Lenovo Cloud. כדי להבטיח שתכונת כיול הצבעים פועלת במחשב שלכם, ייתכן שיהיה עליכם לשחזר או להתקין פרופילי צבעים במצבים הבאים: אם פרופילי הצבעים אבדו או ניזוקו, יופיע חלון שמזכיר שעליכם לשחזר את פרופילי הצבעים. לחצו על 'כן' בחלון שיופיע ופרופילי הצבעים ישוחזרו מ- Lenovo Cloud באופן אוטומטי. אם תצוגת המחשב שלכם מוחלפת על ידי ספק שירות מורשה של Lenovo, בצעו את הפעולות הבאות:",
+				"restoreProfileStep1": "לחצו על הסמל המשולש באזור ההודעות של Windows כדי להציג סמלים מוסתרים. לאחר מכן לחצו על הסמל של X-rite כדי לפתוח אותו.",
+				"restoreProfileStep2": "לחצו על 'הגדרות' > 'שחזור פרופילים'."
 			}
 		}
 	}
