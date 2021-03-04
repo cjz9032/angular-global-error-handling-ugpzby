@@ -193,6 +193,7 @@
 							margin-bottom: 1.6rem;
 						}
 						@media #{$breakpoint_lg} {
+							margin-top: 0;
 							margin-bottom: 0;
 						}
 						@media #{$breakpoint_md} {

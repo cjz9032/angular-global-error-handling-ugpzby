@@ -1,6 +1,6 @@
 import { OnInit, Input, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { WarrantyData, WarrantyStatusEnum } from 'src/app/data-models/warranty/warranty.model';
+import { WarrantyCodeEnum, WarrantyData, WarrantyStatusEnum } from 'src/app/data-models/warranty/warranty.model';
 
 @Component({
   selector: 'vtr-widget-warranty-detail',
@@ -15,6 +15,7 @@ export class WidgetWarrantyDetailComponent implements OnInit {
   @Input() warrantyData: WarrantyData;
 
   WarrantyStatusEnum = WarrantyStatusEnum;
+  WarrantyCodeEnum = WarrantyCodeEnum;
 
   warrantyRounds = [];
 

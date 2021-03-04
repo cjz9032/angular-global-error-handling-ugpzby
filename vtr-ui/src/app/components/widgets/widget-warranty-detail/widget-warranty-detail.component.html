@@ -46,7 +46,7 @@
 	</div>
 	<div class="indicator-content pb-20 pt-4">
 		<vtr-ui-warranty-indicator [warrantyData]="warrantyData"></vtr-ui-warranty-indicator>
-		<div *ngIf="warrantyData.warrantyCode === 'depot' || warrantyData.warrantyCode === 'nowarranty'"
+		<div *ngIf="warrantyData.warrantyCode === WarrantyCodeEnum.Depot || warrantyData.warrantyCode === WarrantyCodeEnum.NoWarranty"
 			class="alert-recommends text-center text-uppercase font-size-xs2 font-weight-bold"
 			id="warranty-recommends-upgrading-text"
 			role="text">{{ 'warranty.recommendsUpgradingText' | translate}}</div>

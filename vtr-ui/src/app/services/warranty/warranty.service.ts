@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DeviceService } from '../device/device.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
-import { WarrantyData, WarrantyDataRound, WarrantyLevel, WarrantyStatusEnum } from 'src/app/data-models/warranty/warranty.model';
+import { WarrantyCodeEnum, WarrantyData, WarrantyDataRound, WarrantyLevel, WarrantyStatusEnum } from 'src/app/data-models/warranty/warranty.model';
 import { LoggerService } from '../logger/logger.service';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { environment } from 'src/environments/environment';
@@ -67,7 +67,7 @@ export class WarrantyService {
 			id: 'good',
 			isRecommended: false,
 			levelText: this.translate.instant('warranty.upgradeLevels.good.levelText'),
-			warrantyCode: 'depot',
+			warrantyCode: WarrantyCodeEnum.Depot,
 			warrantyCodeText: this.translate.instant('warranty.upgradeLevels.good.warrantyCodeText'),
 			points: [
 				this.translate.instant('warranty.upgradeLevels.good.point1'),
@@ -79,7 +79,7 @@ export class WarrantyService {
 			id: 'better',
 			isRecommended: false,
 			levelText: this.translate.instant('warranty.upgradeLevels.better.levelText'),
-			warrantyCode: 'onsite',
+			warrantyCode: WarrantyCodeEnum.Onsite,
 			warrantyCodeText: this.translate.instant('warranty.upgradeLevels.better.warrantyCodeText'),
 			points: [
 				this.translate.instant('warranty.upgradeLevels.better.point1'),
@@ -91,7 +91,7 @@ export class WarrantyService {
 			id: 'best',
 			isRecommended: true,
 			levelText: this.translate.instant('warranty.upgradeLevels.best.levelText'),
-			warrantyCode: 'premier',
+			warrantyCode: WarrantyCodeEnum.Premier,
 			warrantyCodeText: this.translate.instant('warranty.upgradeLevels.best.warrantyCodeText'),
 			points: [
 				this.translate.instant('warranty.upgradeLevels.best.point1'),
@@ -140,7 +140,7 @@ export class WarrantyService {
 			data.renewableCircle = maxCircle - inWarrantyCircleCount;
 		}
 		else if (data.warrantyStatus === WarrantyStatusEnum.WarrantyExpired) {
-			data.warrantyCode = 'nowarranty';
+			data.warrantyCode = WarrantyCodeEnum.NoWarranty;
 			data.todayCircleIndex = -1;
 			data.inUseCircle = warrantyYear;
 			data.remainingCircle = 0;
@@ -164,7 +164,9 @@ export class WarrantyService {
 				const round: WarrantyDataRound = { index: i, mos: (i + 1) * 12 };
 				if (i === data.todayCircleIndex) {
 					round.isToday = true;
-					if (data.remainingMonths < 6) {
+					if (data.remainingMonths < 6 ||
+						data.warrantyCode === WarrantyCodeEnum.Depot ||
+						data.warrantyCode === WarrantyCodeEnum.NoWarranty) {
 						round.isAlert = true;
 					}
 				}
@@ -222,7 +224,7 @@ export class WarrantyService {
 					id: levelItem.id,
 					isRecommended: levelItem.isRecommended,
 					levelText: levelItem.warrantyLevelTitle || levelItem.id,
-					warrantyCode: levelItem.warrantyLevelCode?.toLowerCase() || 'depot',
+					warrantyCode: levelItem.warrantyLevelCode?.toLowerCase() || WarrantyCodeEnum.Depot,
 					warrantyCodeText: levelItem.warrantyLevelCodeText || '',
 					points: levelItem.describe,
 				});
@@ -252,11 +254,11 @@ export class WarrantyService {
 				const warrantyUrl = `${environment.pcsupportApiRoot}/api/v4/upsellAggregation/vantage/warrantySummaryInfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
 
 				const warrantyDataCache: WarrantyData = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyData);
-				// if (warrantyDataCache && warrantyDataCache.isAvailable) {
-				// 	this.warrantyData = warrantyDataCache;
-				// 	this.commonService.sendNotification(LocalStorageKey.LastWarrantyData, this.warrantyData);
-				// 	this.hasFetchWarranty = true;
-				// }
+				if (warrantyDataCache && warrantyDataCache.isAvailable) {
+					this.warrantyData = warrantyDataCache;
+					this.commonService.sendNotification(LocalStorageKey.LastWarrantyData, this.warrantyData);
+					this.hasFetchWarranty = true;
+				}
 
 				const uri = new Windows.Foundation.Uri(warrantyUrl);
 				const request = new Windows.Web.Http.HttpRequestMessage(
