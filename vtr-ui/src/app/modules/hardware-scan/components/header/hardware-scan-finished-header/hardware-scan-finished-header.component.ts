@@ -15,6 +15,7 @@ import { RecoverBadSectorsService } from '../../../services/recover-bad-sectors.
 import { LenovoSupportService } from 'src/app/modules/hardware-scan/services/lenovo-support.service';
 import { HardwareScanFinishedHeaderType } from 'src/app/modules/hardware-scan/enums/hardware-scan.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { HardwareScanFeaturesService } from '../../../services/hardware-scan-features.service';
 
 @Component({
 	selector: 'vtr-hardware-scan-finished-header',
@@ -46,6 +47,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 		private hardwareScanResultService: HardwareScanResultService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private lenovoSupportService: LenovoSupportService,
+		private featuresService: HardwareScanFeaturesService,
 		private logger: LoggerService
 	) {}
 
@@ -66,6 +68,8 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 		} else if (this.headerType === HardwareScanFinishedHeaderType.RecoverBadSectors) {
 			this.recoverResult = this.recoverBadSectorsService.getLastRecoverResultTitle();
 		}
+
+		this.featuresService.startCheckFeatures();
 
 		this.configureSupportUrl(scanDate, finalResultCode);
 		this.configureContactusUrl();
