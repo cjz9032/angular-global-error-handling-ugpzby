@@ -812,10 +812,12 @@
 				"sub9": "裝置安全性"
 			},
 			"support": "支援",
+			"warrantySupport": "保固及支援",
+			"contentLibrary": "內容庫",
+			"homeSecurity": "Connected Home",
 			"beta": {
 				"title": "beta"
-			},
-			"homeSecurity": "Connected Home"
+			}
 		},
 		"securityAdvisor": {
 			"title": "安全顧問",
@@ -1246,9 +1248,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"在極致效能模式下啟用 GPU 超頻。",
-							"description1":"選取可讓 GPU 記憶體時鐘超頻 140 MHz，視為「穩定的」最佳狀態。遊戲效能和訊框率可提高 10%-30%。",
-					        "description2":"注意：效能和訊框率的提升可能依不同的遊戲/應用程式和其他因素而有所不同。耗電量、電腦表面溫度和風扇噪音也可能隨之增加。啟用超頻後，Lenovo 不保證穩定性和效能改進。"
+							"checkboxtext": "在極致效能模式下啟用 GPU 超頻。",
+							"description1": "選取可讓 GPU 記憶體時鐘超頻 140 MHz，視為「穩定的」最佳狀態。遊戲效能和訊框率可提高 10%-30%。",
+							"description2": "注意：效能和訊框率的提升可能依不同的遊戲/應用程式和其他因素而有所不同。耗電量、電腦表面溫度和風扇噪音也可能隨之增加。啟用超頻後，Lenovo 不保證穩定性和效能改進。"
 						},
 						"autoTransition": {
 							"description": {
@@ -2550,6 +2552,873 @@
 			"categories": "類別",
 			"categoriesDesc": "在我們的文章中尋找實用的資訊。",
 			"seeArticles": "查看文章"
+		}
+	},
+	"smartPerformance": {
+		"title": "Smart Performance",
+		"back": "上一步",
+		"performanceandSecurityCheckTitle": "效能與安全性檢查",
+		"performanceandSecurityCheckSubTitle": "讓我們來診斷並解決電腦中的效能與安全性問題",
+		"auto": "自動",
+		"manual": "手動",
+		"performanceOfflineText": "當您的電腦連接到網際網路時，即可使用掃描功能。",
+		"scanButton": "免費 PC 掃描",
+		"section1Heading": "您如何評價 PC 效能？",
+		"section1Description": "PC 執行緩慢？應用程式遲遲無法回應？Windows 錯誤？惡意軟體問題？<br>讓我們來診斷造成問題的原因並加以解決。",
+		"critical": "重大",
+		"allisWell": "都沒問題",
+		"zero": 0,
+		"one": 1,
+		"two": 2,
+		"three": 3,
+		"four": 4,
+		"five": 5,
+		"six": 6,
+		"seven": 7,
+		"eight": 8,
+		"nine": 9,
+		"ten": 10,
+		"tuneUP": "您的 PC 需要調整一下",
+		"runningWell": "PC 執行狀況良好",
+		"section2Heading": "PC 效能出眾。永遠",
+		"section2Description": "我們的軟體可以全天候主動掃描 PC，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
+		"am": "上午",
+		"pm": "下午",
+		"scanNow": "立即掃描",
+		"signUpAndFix": "註冊及修正",
+		"cancel": "取消",
+		"scanning": "掃描中",
+		"fixIt": "立即修正",
+		"optimizeIt": "最佳化",
+		"maintainIt": "維護",
+		"noteFindings": "根據對您電腦的詳細分析，我們得到這些發現。",
+		"noteNavigateTab": "導覽不同標籤以進一步了解：",
+		"scannedAreas": "掃描區域",
+		"lastFix": "上次修正",
+		"fixResult": "修正結果",
+		"checkPreviousResults": "檢查先前的結果",
+		"tunePCPerformance": {
+			"title": "調校 PC 效能",
+			"heading": "給您的電腦多一些關愛",
+			"description": "即使最好的電腦也能從定期調整中受益。使用我們強大的應用程式進行調升，達到事半功倍的效果。",
+			"tabSet1": {
+				"tab1": "垃圾檔囤積",
+				"tab2": "可用性問題",
+				"tab3": "Windows 設定",
+				"tab4": "系統錯誤",
+				"tab5": "登錄錯誤"
+			},
+			"tabSet2": {
+				"tab1Heading": "簡單",
+				"tab1Description": "我們不會滿口技術行話，使您困惑",
+				"tab2Heading": "迅速",
+				"tab2Description": "5 分鐘內百分之百完成檢查",
+				"tab3Heading": "安全",
+				"tab3Description": "依循最佳實務所建構，恐嚇軟體絕跡"
+			},
+			"summaryTitle": "調校 PC 效能"
+		},
+		"boostInternetPerformance": {
+			"title": "提升網際網路效能",
+			"extraTitle": "網際網路效能",
+			"heading": "大力加持您的網際網路",
+			"description": "對許多人來說，網速慢、無 Wi-Fi，就跟離群索居、水電自理沒兩樣。讓我們來配置您的網際網路、Wi-Fi 和瀏覽器設定，以獲致最佳效能。",
+			"tabSet1": {
+				"tab1": "電子垃圾",
+				"tab2": "網路設定",
+				"tab3": "瀏覽器設定",
+				"tab4": "瀏覽器安全性",
+				"tab5": "Wi-Fi 效能"
+			},
+			"tabSet2": {
+				"tab1Heading": "瀏覽器問題",
+				"tab1Description": "我們會配置並修正您所有的常用 Web 瀏覽器。",
+				"tab2Heading": "連線錯誤",
+				"tab2Description": "我們可以診斷並修復您的連線問題。",
+				"tab3Heading": "網際網路速度緩慢",
+				"tab3Description": "我們會幫助您獲得最佳效能。"
+			},
+			"summaryTitle": "網際網路效能"
+		},
+		"malwareSecurity": {
+			"title": "惡意軟體和安全性",
+			"heading": "特別照顧您的電腦，進行必要的維護",
+			"description": "惡意軟體可能導致電腦當機、資料洩露和效能降低。不僅根除惡意軟體，還完成許許多多工作。",
+			"tabSet1": {
+				"tab1": "惡意軟體掃描",
+				"tab2": "零時差感染",
+				"tab3": "違規程式",
+				"tab4": "惱人的廣告軟體",
+				"tab5": "安全設定"
+			},
+			"tabSet2": {
+				"tab1Heading": "零時差病毒",
+				"tab1Description": "甚至最新的惡意軟體感染我們都能移除",
+				"tab2Heading": "移除間諜軟體",
+				"tab2Description": "我們會移除所有可能有害的程式",
+				"tab3Heading": "輕巧且快速",
+				"tab3Description": "掃描通常需要 5-10 分鐘"
+			},
+			"summaryTitle": "惡意軟體和安全性"
+		},
+		"proactiveAutomated": {
+			"title": "主動且自動",
+			"heading": "提供強大功能，幫助您在問題造成影響之前杜絕後患！",
+			"description": "Smart Performance 不斷尋找數以百計影響 PC 效能的問題。我們會主動修復這些問題，讓您高枕無憂。",
+			"tabSet1": {
+				"tab1": "排程掃描",
+				"tab2": "隨需掃描",
+				"tab3": "自動化解析",
+				"tab4": "有效",
+				"tab5": "全天候防護"
+			},
+			"tabSet2": {
+				"tab1Heading": "簡單",
+				"tab1Description": "我們不會滿口技術行話，使您困惑",
+				"tab2Heading": "迅速",
+				"tab2Description": "5 分鐘內百分之百完成檢查",
+				"tab3Heading": "安全",
+				"tab3Description": "依循最佳實務所建構，恐嚇軟體絕跡"
+			}
+		},
+		"noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。",
+		"startScan": "<b>準備好開始掃描了嗎？</b>讓我們來診斷電腦中的效能與安全性問題。",
+		"subscriptionDetails": {
+			"title": "訂閱詳細資訊",
+			"description": "您已經訂閱 Lenovo Smart Performance 服務。在此期間、所有功能都完全可以用來讓您的 PC 受到保護且執行順暢。",
+			"learnMore": "進一步瞭解",
+			"startDate": "開始日期",
+			"endDate": "結束日期",
+			"status": "狀態",
+			"activeStatus": "使用中",
+			"inactiveStatus": "非作用中",
+			"manageSubscription": "訂閱管理",
+			"titlebeta": "Lenovo Beta 程式",
+			"manageSubscriptionBeta": "啟用完整功能",
+			"descriptionbeta": "Lenovo 提供試驗計畫，可讓您試用 Smart Performance 功能，至 2020 年 7 月截止。",
+			"descriptionbeta1": "歡迎加入本計畫並試用完整功能。",
+			"descriptionNonSubscriber": "您沒有訂閱 Lenovo Smart Performance 服務。您只能掃描自己的 PC。立即訂閱以獲得可讓 PC 受到保護且執行順暢的完整權益。",
+			"processStatus": "處理中",
+			"descriptionExpired": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，您可以透過按一下「管理訂閱」連結來續訂該訂閱，以回復對裝置的全面保護。",
+			"expiredStatus": "已過期",
+			"expiredNote": "您的訂閱期限尚有：",
+			"day": "天",
+			"days": "天",
+			"weeks": "週",
+			"week": "一週",
+			"month": "月",
+			"today": "今天",
+			"next": "下一步"
+		},
+		"scanSettings": {
+			"title": "排程掃描設定",
+			"description": "啟用或停用掃描並設定掃描排程",
+			"enableScan": "啟用掃描",
+			"changeScanTitle": "變更掃描排程",
+			"changeScanDescription": "編輯掃描排程，以在需要時執行。",
+			"frequency": "頻率",
+			"txtDate": "日期",
+			"txtDay": "天",
+			"txtTime": "時間",
+			"txtSave": "儲存",
+			"txtCancel": "取消",
+			"scanFrequencyWeek": "每週一次",
+			"scanFrequencyEveryWeek": "每隔一週",
+			"scanFrequencyMonth": "每個月",
+			"mon": "星期一",
+			"tue": "星期二",
+			"wed": "星期三",
+			"thu": "星期四",
+			"fri": "星期五",
+			"sat": "星期六",
+			"sun": "星期日",
+			"am": "上午",
+			"pm": "下午",
+			"tooltipText": "保持啟用此切換開關，系統效能與安全性掃描就會自動在您設定的日期和時間開始執行。"
+		},
+		"scanningPage": {
+			"title": "效能與安全性檢查",
+			"description": "請稍候，我們正在掃描您的系統是否有潛在問題和威脅。",
+			"scanningSystem": "正在掃描系統",
+			"complete": "完成",
+			"cancelScan": {
+				"button": "取消掃描",
+				"title": "取消掃描？",
+				"description": "如果您離開目前的畫面，就會取消掃描並返回首頁。不過，您隨時都可以再次執行掃描。",
+				"yesButton": "是，取消",
+				"noButton": "否、繼續掃描",
+				"cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。",
+				"cancelTextPrompt": "您確定要取消嗎？"
+			},
+			"waiting": "正在等待掃描",
+			"completed": "已完成",
+			"nowScanningDetail": {
+				"cardTitle": "立即掃描詳細資料",
+				"current": "目前：",
+				"upNext": "接下來：",
+				"tunePCDesc": "讓我們來協助改善您的電腦效能。我們會採用業界最佳實務，穩妥地完成。訂閱者所獲得的好處包括縮短 PC 啟動時間、提升效能、改善穩定性，以及加快啟動應用程式。",
+				"boostDesc": "讓我們來協助增進您的瀏覽體驗。讓我們來修正網路及存取問題。訂閱者所獲得的好處包括改善網際網路連線能力、提升上傳/下載速度，以及加強網際網路安全。",
+				"malwareDesc": "讓我們來協助您視需要快速保護 PC 安全。我們會透過移除間諜軟體、惡意軟體和廣告軟體來完成。我們還會移除幾近零時差的感染。訂閱者所獲得的好處包括資料安全性和最佳系統效能。",
+				"proactiveDesc": "讓我們來定期調整您的電腦並修正問題、主動且自動地讓電腦維持運作相協調、資源受保護。永遠",
+				"tunePCScanningItems": {
+					"accumulatedJunk": {
+						"itema1": "尋找 85 個位置中的垃圾",
+						"itema2": "不需要的系統日誌檔",
+						"itema3": "沒必要的應用程式殘留項目",
+						"itema4": "塞滿磁碟空間的暫存檔案",
+						"itema5": "很久以前刪除的檔案",
+						"itema6": "過時的錯誤和警示"
+					},
+					"usabilityIssues": {
+						"itemb1": "解決數十種可用性問題",
+						"itemb2": "檢查外部裝置連線",
+						"itemb3": "保持 Windows 更新始終為最新",
+						"itemb4": "應用程式是否在其最佳狀態下呈現並顯示",
+						"itemb5": "分析處理能力使用率",
+						"itemb6": "協助輕鬆尋找檔案"
+					},
+					"windowsSettings": {
+						"itemc1": "診斷幾十個 Windows 作業系統設定",
+						"itemc2": "確保 Windows 一切正常",
+						"itemc3": "確保基本服務正常執行",
+						"itemc4": "檢查連線設定的性能狀況",
+						"itemc5": "檢查在網路上共用檔案的能力",
+						"itemc6": "檢查生物特徵辨識及存取設定"
+					},
+					"systemErrors": {
+						"itemd1": "確保基本服務正常執行",
+						"itemd2": "選擇服務以取得更高效能",
+						"itemd3": "尋找軟體衝突錯誤",
+						"itemd4": "最佳化 Windows 錯誤管理",
+						"itemd5": "檢查並修正應用程式啟動錯誤",
+						"itemd6": "配置系統錯誤報告"
+					},
+					"registryErrors": {
+						"iteme1": "深層檢查 Windows 登錄",
+						"iteme2": "掃描無效的 Windows 服務",
+						"iteme3": "尋找損毀的登錄項目",
+						"iteme4": "尋找無用的副檔名",
+						"iteme5": "搜尋已安裝應用程式的損毀項目",
+						"iteme6": "尋找無用的殘餘項目"
+					}
+				},
+				"boostScanningItems": {
+					"networkSettings": {
+						"itema1": "診斷網路和網際網路設定",
+						"itema2": "驗證網路配置設定",
+						"itema3": "驗證可用網路設定",
+						"itema4": "配置以加快載入網站",
+						"itema5": "尋找頁面轉譯錯誤",
+						"itema6": "連線服務執行狀況是否良好"
+					},
+					"browserSettings": {
+						"itemb1": "啟用更好的瀏覽體驗",
+						"itemb2": "配置設定以加快網站轉譯",
+						"itemb3": "確保瀏覽器安全性服務狀況良好",
+						"itemb4": "確保網頁正確轉譯",
+						"itemb5": "檢查設定以加快下載速度",
+						"itemb6": "檢查權限和存取控制"
+					},
+					"browserSecurity": {
+						"itemc1": "確保安全性服務正常執行",
+						"itemc2": "配置瀏覽器安全性功能",
+						"itemc3": "檢查網路服務執行狀況是否良好",
+						"itemc4": "配置通訊協定設定",
+						"itemc5": "驗證瀏覽器內容設定是否正確",
+						"itemc6": "驗證瀏覽器外掛程式及擴充功能"
+					},
+					"wifiPerformance": {
+						"itemd1": "最佳化 Wi-Fi 體驗設定",
+						"itemd2": "確保您的家用網路安全",
+						"itemd3": "檢查 Wi-Fi 服務設定",
+						"itemd4": "保護網路共用設定安全",
+						"itemd5": "檢查 Wi-Fi 安全性標準",
+						"itemd6": "確保 Wi-Fi 頻道不重疊"
+					},
+					"eJunk": {
+						"iteme1": "讓瀏覽器不再雜亂無章",
+						"iteme2": "尋找殘餘的電子垃圾",
+						"iteme3": "尋找過時的網際網路檔案",
+						"iteme4": "清除不要的 Web 快取",
+						"iteme5": "清除 Cookie",
+						"iteme6": "移除瀏覽器殘留項目"
+					}
+				},
+				"malwareScanningItems": {
+					"malwareScan": {
+						"itema1": "掃描一般載入點",
+						"itema2": "檢查重要位置是否存在威脅",
+						"itema3": "檢查是否有病毒、間諜軟體和惡意軟體",
+						"itema4": "掃描 50 多種檔案類型",
+						"itema5": "掃描惡意軟體殘餘部分",
+						"itema6": "善用雲端修復引擎"
+					},
+					"zerodayInfections": {
+						"itemb1": "尋找零時差病毒",
+						"itemb2": "尋找最新未確診的惡意軟體",
+						"itemb3": "搭配雲端式修復進行掃描",
+						"itemb4": "執行行為監控",
+						"itemb5": "使用聚合引擎掃描檔案",
+						"itemb6": "根據最新病毒定義檔掃描"
+					},
+					"securitySettings": {
+						"itemc1": "保持 Windows 更新始終為最新",
+						"itemc2": "確保 Windows 防火牆服務狀況良好",
+						"itemc3": "確保瀏覽器設定安全",
+						"itemc4": "檢查基本安全性服務",
+						"itemc5": "配置使用者存取設定",
+						"itemc6": "驗證身分鑑別服務"
+					},
+					"errantPrograms": {
+						"itemd1": "尋找違規應用程式",
+						"itemd2": "尋找可能有害的應用程式",
+						"itemd3": "偵測停用和隱藏的應用程式",
+						"itemd4": "確認應用程式是否有惡意行為",
+						"itemd5": "根據信譽因素檢查應用程式",
+						"itemd6": "檢查登錄中的違規程式"
+					},
+					"annoyingAdware": {
+						"iteme1": "尋找瀏覽器廣告軟體",
+						"iteme2": "修訂瀏覽器彈出式視窗設定",
+						"iteme3": "消除瀏覽器重新導向威脅",
+						"iteme4": "檢查是否有廣告軟體殘餘項目",
+						"iteme5": "最佳化瀏覽器體驗設定",
+						"iteme6": "在雲端修復引擎中驗證"
+					}
+				}
+			},
+			"confirmationTitle": "Lenovo 付款處理",
+			"confirmationNote": "您即將導向到 Lenovo 付款網站以完成付款。付款完成後，您可以按下「訂閱詳細資訊」中的「更新」以取得付款結果。",
+			"confirmationBtn": "繼續",
+			"refreshButton": "更新狀態"
+		},
+		"scanCompletePage": {
+			"title": "系統掃描完成",
+			"description": "以下是在您的 {{machineFamilyName}} 電腦中發現的問題",
+			"scanRates": "我們對您的 PC 掃描評分為：",
+			"summary": "摘要",
+			"foundIssues": "我們的掃描找到 {{issueCount}} 個問題",
+			"summaryDetails": "立即註冊，以修正這些問題並保持系統執行順暢。我們的軟體可以全天候主動掃描系統的這些區域，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
+			"expiredSummaryDetails": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，如果您想回復「掃描並修復」功能，請按下下方的「續訂並修復」按鈕來續訂您的訂閱。",
+			"signupRepairButton": "立即註冊並修復",
+			"renewAndFix": "續訂並修復",
+			"backToHome": "返回首頁",
+			"monthlyPricing": "<b>每月不到 {{monthlyPrice}}。</b>我們會自動修正這些問題。今天一次，此後每週一次<a  href=\"#\">瞭解更多</a>",
+			"issueCount": "{{individualIssueCount}} 個問題",
+			"issues": "問題",
+			"tuneIssueCount": "{{tune}}",
+			"boostIssueCount": "{{boost}}",
+			"secureIssueCount": "{{secure}}",
+			"scannedAreas": "掃描區域",
+			"summaryPurchaseTip": "立即購買年度計劃，我們每週都會自動修正這些問題。",
+			"tunePCTooltip": "提升整體系統效能、縮短 PC 啟動時間並改善應用程式載入時間。",
+			"boostTooltip": "提升網路效能、瀏覽體驗和連線能力。",
+			"malwareTooltip": "提升安全性、移除惡意軟體和感染以及恢復系統穩定性。",
+			"recommendedAction": {
+				"title": "建議動作",
+				"description": "我們會自動修正這些問題。今天一次，此後每週一次",
+				"yearlyPricing": "{{yearlyPrice}}/年",
+				"monthlyPricing": "每月不到 {{monthlyPrice}}。",
+				"longerTerm": "更長期限？更加省錢？",
+				"newDescription": "註冊後，我們將每周自動為您解決這些問題。",
+				"signupButton": "註冊"
+			},
+			"tunepc": {
+				"accumulatedjunkscannedareas": {
+					"area1": "掃描 85 個位置中的垃圾",
+					"area2": "不需要的系統日誌檔",
+					"area3": "沒必要的應用程式殘留項目",
+					"area4": "塞滿磁碟空間的暫存檔案",
+					"area5": "很久以前刪除的檔案",
+					"area6": "過時的錯誤和警示"
+				},
+				"registryerrorsscannedareas": {
+					"area1": "已完成 Windows 登錄的深層檢查",
+					"area2": "已掃描無效的 Windows 服務",
+					"area3": "已檢查損毀的登錄項目",
+					"area4": "已掃描無用的副檔名",
+					"area5": "已搜尋已安裝應用程式的損毀項目",
+					"area6": "已檢查無用的殘餘項目"
+				},
+				"windowssettingsscannedareas": {
+					"area1": "已診斷幾十個 Windows 作業系統設定",
+					"area2": "已確認 Windows 一切正常",
+					"area3": "已確認基本服務正常執行",
+					"area4": "已檢查連線設定的性能狀況",
+					"area5": "已檢查在網路上共用檔案的能力",
+					"area6": "已檢查生物特徵辨識及存取設定"
+				},
+				"usabilityissuesscannedareas": {
+					"area1": "已檢查是否有可用性問題",
+					"area2": "已檢查外部裝置連線",
+					"area3": "已檢查 Windows 更新狀態",
+					"area4": "已驗證應用程式轉譯設定",
+					"area5": "已分析處理能力使用率",
+					"area6": "協助輕鬆尋找檔案"
+				},
+				"systemerrorsscannedareas": {
+					"area1": "已檢查基本服務是否正常執行",
+					"area2": "查看服務是否有較高效能",
+					"area3": "尋找軟體衝突錯誤",
+					"area4": "已分析 Windows 錯誤管理",
+					"area5": "已掃描應用程式啟動錯誤",
+					"area6": "已檢查系統錯誤報告配置"
+				}
+			},
+			"internetperformance": {
+				"ejunkscannedareas": {
+					"area1": "已發現瀏覽器中的雜亂情況",
+					"area2": "已搜尋殘餘的電子垃圾",
+					"area3": "已掃描過時的網際網路檔案",
+					"area4": "已搜尋不要的 Web 快取",
+					"area5": "已檢查 Cookie 是否清除",
+					"area6": "已掃描瀏覽器殘留項目"
+				},
+				"browsersecurityscannedareas": {
+					"area1": "已確認安全性服務正常執行",
+					"area2": "已檢查瀏覽器安全性功能",
+					"area3": "已驗證網路服務",
+					"area4": "配置通訊協定設定",
+					"area5": "已檢查瀏覽器內容設定",
+					"area6": "已掃描瀏覽器外掛程式及擴充功能"
+				},
+				"networksettingsscannedareas": {
+					"area1": "已診斷網路和網際網路設定",
+					"area2": "已診斷網路配置設定",
+					"area3": "已驗證連線網路設定",
+					"area4": "已診斷設定以加快網站轉譯",
+					"area5": "已掃描頁面轉譯錯誤",
+					"area6": "已掃描所有連線服務"
+				},
+				"browsersettingsscannedareas": {
+					"area1": "啟用更好的瀏覽體驗",
+					"area2": "已診斷設定以加快網站轉譯",
+					"area3": "已驗證瀏覽器安全性服務",
+					"area4": "已檢查網頁是否正確轉譯",
+					"area5": "已掃描設定以加快下載速度",
+					"area6": "已分析權限和存取控制"
+				},
+				"wifiperformancescannedareas": {
+					"area1": "已驗證 Wi-Fi 體驗設定",
+					"area2": "已驗證安全家用網路",
+					"area3": "已掃描 Wi-Fi 服務設定",
+					"area4": "已驗證安全網路共用設定",
+					"area5": "已驗證 Wi-Fi 安全性標準",
+					"area6": "已分析 Wi-Fi 頻道未重疊"
+				}
+			},
+			"malwaresecurity": {
+				"malwarescanscannedareas": {
+					"area1": "已掃描一般載入點",
+					"area2": "已掃描重要位置是否存在威脅",
+					"area3": "已掃描是否有病毒、間諜軟體和惡意軟體",
+					"area4": "已掃描 50 多種檔案類型是否有威脅",
+					"area5": "已檢查惡意軟體殘餘部分",
+					"area6": "已在雲端修復引擎中驗證"
+				},
+				"errantprogramsscannedareas": {
+					"area1": "尋找違規應用程式",
+					"area2": "已檢查可能有害的應用程式",
+					"area3": "已搜尋停用和隱藏的應用程式",
+					"area4": "已掃描惡意應用程式",
+					"area5": "已根據信譽因素檢查應用程式",
+					"area6": "已檢查登錄中的違規程式"
+				},
+				"zerodayinfectionsscannedareas": {
+					"area1": "已搜尋零時差病毒",
+					"area2": "已搜尋最新未確診的惡意軟體",
+					"area3": "已搭配雲端式修復進行驗證",
+					"area4": "已執行行為監控",
+					"area5": "已使用聚合引擎驗證檔案",
+					"area6": "已根據更新的病毒定義檔進行掃描"
+				},
+				"securitysettingsscannedareas": {
+					"area1": "已驗證 Windows 更新是最新的",
+					"area2": "已驗證 Windows 防火牆服務",
+					"area3": "已檢查安全瀏覽器設定",
+					"area4": "已診斷基本安全性服務",
+					"area5": "已驗證使用者存取設定",
+					"area6": "已驗證身分鑑別服務"
+				},
+				"annoyingadwarescannedareas": {
+					"area1": "已掃描瀏覽器廣告軟體",
+					"area2": "驗證瀏覽器彈出式視窗設定",
+					"area3": "已掃描瀏覽器重新導向威脅",
+					"area4": "已檢查廣告軟體殘餘項目",
+					"area5": "已驗證瀏覽器體驗設定",
+					"area6": "已透過雲端修復引擎進行驗證"
+				}
+			},
+			"subscriber": {
+				"tunepc": {
+					"accumulatedjunkscannedareas": {
+						"area1": "已清除 85 個位置中的垃圾",
+						"area2": "已清除不需要的系統日誌檔",
+						"area3": "已刪除應用程式殘留項目",
+						"area4": "已移除暫存檔案以釋放磁碟空間",
+						"area5": "已排除很久以前刪除的檔案",
+						"area6": "已清除錯誤和警示"
+					},
+					"registryerrorsscannedareas": {
+						"area1": "已完成 Windows 登錄的深層檢查",
+						"area2": "已修正所有無效的 Windows 服務",
+						"area3": "已移除所有損毀的登錄項目",
+						"area4": "已刪除所有過時的副檔名",
+						"area5": "已清除已安裝應用程式的損毀項目",
+						"area6": "已清除不要的殘餘項目"
+					},
+					"windowssettingsscannedareas": {
+						"area1": "已驗證 Windows 設定",
+						"area2": "已最佳化所有 Windows 服務",
+						"area3": "已修改基本 Windows 服務",
+						"area4": "已修改基本 Windows 服務",
+						"area5": "已驗證在網路上共用檔案的能力",
+						"area6": "已驗證生物特徵辨識及存取設定"
+					},
+					"usabilityissuesscannedareas": {
+						"area1": "已修正所有可用性問題",
+						"area2": "已驗證外部裝置連線",
+						"area3": "已確定 Windows 更新始終為最新",
+						"area4": "已確認應用程式是在其最佳狀態下呈現並顯示",
+						"area5": "已修改處理能力使用率的設定",
+						"area6": "已修改協助輕鬆尋找檔案的設定"
+					},
+					"systemerrorsscannedareas": {
+						"area1": "已檢查基本服務是否正常執行",
+						"area2": "已修改服務以取得更高效能",
+						"area3": "已修正所有軟體衝突錯誤",
+						"area4": "已最佳化 Windows 錯誤管理",
+						"area5": "已檢查並修正所有應用程式啟動錯誤",
+						"area6": "已配置系統錯誤報告"
+					}
+				},
+				"internetperformance": {
+					"ejunkscannedareas": {
+						"area1": "已消除 4 個瀏覽器中的雜亂情況",
+						"area2": "已清除殘餘的電子垃圾",
+						"area3": "已刪除過時的網際網路檔案",
+						"area4": "已清除不要的 Web 快取",
+						"area5": "已清除 Cookie",
+						"area6": "已清除所有瀏覽器殘留項目"
+					},
+					"browsersecurityscannedareas": {
+						"area1": "已確定安全性服務在正常執行",
+						"area2": "已配置瀏覽器安全性功能",
+						"area3": "已檢查並修正網路服務",
+						"area4": "已配置通訊協定設定",
+						"area5": "已驗證瀏覽器內容設定是否正確",
+						"area6": "已掃描瀏覽器外掛程式及擴充功能"
+					},
+					"networksettingsscannedareas": {
+						"area1": "已修正網路和網際網路設定",
+						"area2": "已檢查網路配置設定",
+						"area3": "已修改連線網路設定",
+						"area4": "已診斷設定以加快網站轉譯",
+						"area5": "已修正所有頁面轉譯錯誤",
+						"area6": "已掃描所有連線服務"
+					},
+					"browsersettingsscannedareas": {
+						"area1": "已修改設定以獲得更好的瀏覽體驗",
+						"area2": "已驗證設定以加快網站轉譯",
+						"area3": "已確定瀏覽器安全性服務狀況良好",
+						"area4": "已修改設定以正確載入網頁",
+						"area5": "已修正設定以加快下載速度",
+						"area6": "已修正權限和存取控制設定"
+					},
+					"wifiperformancescannedareas": {
+						"area1": "已修改 Wi-Fi 體驗設定",
+						"area2": "已驗證安全家用網路設定",
+						"area3": "已修正 Wi-Fi 服務設定",
+						"area4": "已修改安全網路共用設定",
+						"area5": "已驗證 Wi-Fi 安全性標準",
+						"area6": "已驗證 Wi-Fi 頻道"
+					}
+				},
+				"malwaresecurity": {
+					"malwarescanscannedareas": {
+						"area1": "已檢查並移除一般載入點中的威脅",
+						"area2": "已檢查並移除重要位置中的威脅",
+						"area3": "已移除 PC 中的所有威脅",
+						"area4": "已驗證 50 多種檔案類型是否有威脅",
+						"area5": "已清除所有惡意軟體殘餘部分",
+						"area6": "已在雲端修復引擎中驗證"
+					},
+					"errantprogramsscannedareas": {
+						"area1": "已驗證所有已安裝的應用程式",
+						"area2": "已驗證可能有害的應用程式",
+						"area3": "已清除所有停用和隱藏的應用程式",
+						"area4": "已移除所有惡意和違規應用程式",
+						"area5": "已根據信譽因素驗證應用程式",
+						"area6": "已完成對違規應用程式的登錄檢查"
+					},
+					"zerodayinfectionsscannedareas": {
+						"area1": "已分析零時差病毒",
+						"area2": "已移除 PC 中的所有惡意軟體",
+						"area3": "已在雲端修復引擎中進行驗證",
+						"area4": "已完成對應用程式的行為監控",
+						"area5": "已向聚合引擎驗證",
+						"area6": "已根據最新病毒定義檔進行驗證"
+					},
+					"securitysettingsscannedareas": {
+						"area1": "已最佳化 Windows Update 設定",
+						"area2": "已調校 Windows 防火牆服務",
+						"area3": "已確保瀏覽器設定安全",
+						"area4": "已診斷基本安全性服務",
+						"area5": "已最佳化使用者存取設定",
+						"area6": "已修改身分鑑別服務"
+					},
+					"annoyingadwarescannedareas": {
+						"area1": "已移除瀏覽器廣告軟體",
+						"area2": "已調校瀏覽器彈出式視窗設定",
+						"area3": "已診斷瀏覽器重新導向威脅",
+						"area4": "已清除廣告軟體殘餘項目",
+						"area5": "已最佳化瀏覽器體驗設定",
+						"area6": "已在雲端修復引擎中進行驗證"
+					}
+				}
+			},
+			"Diskspace": "磁碟空間已收回：",
+			"Performanceimprovements": "效能改善：",
+			"Securityimprovements": "安全性改善：",
+			"Onceaweek": "每週一次"
+		},
+		"subscriberScanHomePage": {
+			"title": "您的系統一切正常",
+			"titleScanCanceled": "評分為 0，因為上次的掃描取消了。請按一下「返回首頁」，然後再次掃描。",
+			"serialNumber": "序號：",
+			"subTitle": "您已經訂閱 Lenovo Smart Performance 服務",
+			"description": "我們經常主動針對 PC 效能、網際網路效能和惡意軟體等問題，掃描並修正您的電腦。您享有充分的保護。您還可以視需要按一下「立即掃描」按鈕來啟動效能檢查。",
+			"scanNow": "掃描並修正",
+			"backToHome": "返回首頁",
+			"returnto": "返回儀表板",
+			"mostRecent": "最近的掃描：",
+			"nextScheduled": "下一個排程掃描：",
+			"successTitle": "您的電腦效能已調升！",
+			"successDescription": "Smart Performance 已解決 <b>{{issueCount}} 個問題，</b>以保持電腦順暢執行，您可在下方找到掃描摘要和報告。",
+			"scanSummary": {
+				"title": "掃描摘要：",
+				"description": "我們一直不斷調校您的電腦",
+				"tune": "調校",
+				"tuneSummary": "磁碟空間已收回",
+				"boost": "提升",
+				"boostSummary": "修正以改善效能",
+				"secure": "安全",
+				"secureSummary": "修正以改善安全性",
+				"annual": "每年",
+				"quarterly": "每季",
+				"custom": "自訂",
+				"txtFrom": "從",
+				"txtTo": "至",
+				"txtGo": "執行",
+				"summaryCaption": "空間已收回",
+				"fixes": "修正",
+				"txtClr": "清除"
+			},
+			"lastScanResults": {
+				"title": "最後 5 次掃描結果：",
+				"scanDate": "掃描日期",
+				"results": "結果",
+				"status": "狀態"
+			}
+		},
+		"feedbackContainer": {
+			"title": "給我們一些意見回饋",
+			"subtitle": "告訴我們您對 Smart Performance 的想法",
+			"buttonText": "傳送意見回饋",
+			"questions": {
+				"q1": "1.使用掃描功能的難易程度如何？",
+				"q2": "2.了解掃描結果的難易程度如何？",
+				"q3": "3.為了提高系統效能，您付費訂閱 Smart Performance 的可能性如何？",
+				"q4": "4.您對 Smart Performance 功能的整體滿意度如何？",
+				"q5": "1.了解 Smart Performance 對您的系統所做修正的難易程度如何？",
+				"q6": "2.我們是否在您的系統上找到任何惡意軟體？",
+				"q7": "3.您繼續付費使用 Smart Performance 功能的可能性如何？",
+				"q8": "4.您對 Smart Performance 功能的整體滿意度如何？"
+			},
+			"rating": {
+				"r1": "非常困難",
+				"r2": "非常容易",
+				"r3": "非常困難",
+				"r4": "非常容易",
+				"r5": "完全不可能",
+				"r6": "很有可能",
+				"r7": "完全不滿意",
+				"r8": "非常滿意",
+				"r9": "非常困難",
+				"r10": "非常容易",
+				"r11": "是",
+				"r12": "否",
+				"r13": "完全不可能",
+				"r14": "很有可能",
+				"r15": "完全不滿意",
+				"r16": "非常滿意"
+			},
+			"commentTip": "請在下方留言，或告訴我們任何其他意見：",
+			"comments": "請在這裡留下您的寶貴意見..."
+		}
+	},
+	"homeSecurity": {
+		"title": "Connected Home Security",
+		"notification": {
+			"recent": "Recent security notifications",
+			"notifications": "Notifications",
+			"unsafeNetworkConnection": "Unsafe network connection",
+			"networkUnsafe": "Network unsafe",
+			"deviceDisconnected": "Device disconnected",
+			"newDeviceDetected": "New device detected",
+			"unsafeDeviceDetected": "Unsafe device detected"
+		},
+		"ecosystem": {
+			"ecosystemBlockTitle": "Protect your device ecosystem",
+			"thisDevice": "This device",
+			"allDevices": "All Devices",
+			"protected": "Protected",
+			"notProtected": "Not Protected",
+			"trialExpired": "Trial expired",
+			"upgrade": "upgrade",
+			"inEcosystem": "In Ecosystem",
+			"ecosystemEnable": "Ecosystem Enabled",
+			"inTrial": "In trial",
+			"addEcosystem": "Add to Ecosystem",
+			"enableEcosystem": "Enable Ecosystem",
+			"startTrial": "Start Trial",
+			"fullAccess": "Full Access",
+			"renew": "Renew"
+		},
+		"overview": {
+			"overviewBlockTitle": "Your Ecosystem Security Overview",
+			"allDevices": "All Devices",
+			"myDevice": "My Device",
+			"thisComputer": "This computer",
+			"secure": "SECURE",
+			"needAttention": "NEEDS ATTENTION",
+			"manageAccount": "Manage account",
+			"devices": "Devices",
+			"seeProtectedDevices": "See protected devices",
+			"addDevice": "add device",
+			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
+			"upgrade": "upgrade",
+			"freeTrial": "Protect all of your devices - Free 30 day trial",
+			"startTrial": "Start Trial",
+			"trialTitle": "Trial subscription",
+			"subscriptionTitle": "Paid subscription",
+			"inTrialDetail": "You are currently in your trial period.",
+			"trialExpiredDetail": "Your trial period has expired.",
+			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
+			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
+			"discountPrice": "For only $29.99 for one year",
+			"overviewTitle": "Overview",
+			"trialPeriod": "Trial period:",
+			"subscriptionPeriod": "Subscription period:",
+			"expired": "Expired",
+			"remainingDay": "{{remainingDay}} days remaining",
+			"lenovoId": "Lenovo ID:",
+			"overviewTitleAdmin": "Overview of your Connected Home Security",
+			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
+			"familyMembers": "Family members",
+			"places": "Places",
+			"personalDevices": "Personal devices",
+			"wifiNetworks": "Wi-fi networks",
+			"homeDevices": "Home devices",
+			"disconnectDevice": "Disconnect this device from Connected Home Security",
+			"disconnect": "disconnect",
+			"goDashboard": "go to dashboard",
+			"buyNow": "Buy Now",
+			"extendNow": "extend now",
+			"renewNow": "Renew Now",
+			"poweredBy": "Powered by Coronet",
+			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
+		},
+		"tour": {
+			"back": "Back",
+			"skip": "Skip",
+			"start": "START TOUR",
+			"done": "DONE",
+			"welcomeTitle": "welcome to connected home security",
+			"welcomeSubTitle": "30 days of protection for free",
+			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
+			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
+			"locationTitle": "Enable location permissions",
+			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
+			"allow": "Allow",
+			"notNow": "Not now"
+		},
+		"accountStatus": {
+			"title": "My Connected Home Security",
+			"startTrial": "Start Trial",
+			"manageAccount": "Manage Account",
+			"upgradeAccount": "Upgrade Account",
+			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
+			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
+			"trialExpiredDetail1": "Your trial has expired.",
+			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
+			"upgradedDetail1": "You account is active until {{expiredDate}}.",
+			"upgradedDetail2": "Your device ecosystem is currently being protected.",
+			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
+			"alreadyHaveAccount": "Already have an activation code?"
+		},
+		"card": {
+			"startTrial": "Start Trial",
+			"startTrialTitle": "Create your own Connected Home Security",
+			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
+			"join": "join",
+			"joinTitle": "Join your family's Connected Home Security",
+			"joinDescription": "Become a part of your family security group."
+		},
+		"modal": {
+			"countdownTitle": "Launching web browser",
+			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
+			"goNow": "Go now",
+			"disconnectedTitle": "Disconnect from protection?",
+			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
+			"disconnecting": "Disconnecting..."
+		}
+	},
+	"dir": "ltr",
+	"dirClass": "ltr",
+	"warranty": {
+		"warrantyStatusText": "保固狀態：",
+		"inWarranty": "在保固期內",
+		"outOfWarranty": "保固期限已過",
+		"viewDetails": "檢視詳細資訊",
+		"currentService": "目前的服務及支援狀態",
+		"monthsRemaining": "剩下 {{remainingMonths}} 個月",
+		"oneMonthRemaining": "剩下 1 個月",
+		"lessThanOneMonth": "剩下不到 1 個月",
+		"makeSureNeedCoverage": "確定您擁有所需要的涵蓋範圍",
+		"recommendsUpgradingText": "Lenovo 建議升級您的服務等級",
+		"exploreOptions": "探索選項",
+		"start": "啟動",
+		"end": "結束",
+		"nMos": "{{monthValue}} 個月",
+		"today": "今天",
+		"upgradeLevels": {
+			"title": "Lenovo 服務保固與升級可保護您避免硬體故障。",
+			"subTitle": "意外損壞保護可保護您免於意外造成的掉落、液體潑濺、螢幕破裂和其他損壞。",
+			"recommended": "建議",
+			"learnMore": "想了解更多嗎？",
+			"good": {
+				"warrantyCodeText": "維修站支援",
+				"levelText": "良好",
+				"point1": "零件和人工",
+				"point2": "硬體問題的基本電話支援",
+				"point3": "運送至 Lenovo 維修站進行維修"
+			},
+			"better": {
+				"warrantyCodeText": "到府服務支援",
+				"levelText": "更佳",
+				"point1": "零件和人工",
+				"point2": "硬體問題的基本電話支援",
+				"point3": "<b>更快</b> - 在您所在處進行維修"
+			},
+			"best": {
+				"warrantyCodeText": "頂級",
+				"levelText": "最佳",
+				"point1": "<b>優先</b>零件和人工",
+				"point2": "Lenovo 工程師的<b>進階</b>電話支援",
+				"point3": "<b>更快</b> - 在您所在處進行維修，次營業日",
+				"point4": "<b>硬體和軟體的全面支援</b>"
+			}
 		}
 	},
 	"security": {
@@ -4520,832 +5389,12 @@
 		"updateSnapshotTooltip": "使用所有硬體和軟體元件的最新資訊更新其快照",
 		"replaceBaselineTooltip": "使用所選取元件目前的快照資訊更新基準"
 	},
-	"smartPerformance": {
-		"title": "Smart Performance",
-		"back": "上一步",
-		"performanceandSecurityCheckTitle": "效能與安全性檢查",
-		"performanceandSecurityCheckSubTitle": "讓我們來診斷並解決電腦中的效能與安全性問題",
-		"scanButton": "免費 PC 掃描",
-		"section1Heading": "您如何評價 PC 效能？",
-		"section1Description": "PC 執行緩慢？應用程式遲遲無法回應？Windows 錯誤？惡意軟體問題？<br>讓我們來診斷造成問題的原因並加以解決。",
-		"critical": "重大",
-		"allisWell": "都沒問題",
-		"zero": 0,
-		"one": 1,
-		"two": 2,
-		"three": 3,
-		"four": 4,
-		"five": 5,
-		"six": 6,
-		"seven": 7,
-		"eight": 8,
-		"nine": 9,
-		"ten": 10,
-		"tuneUP": "您的 PC 需要調整一下",
-		"section2Heading": "PC 效能出眾。永遠",
-		"section2Description": "我們的軟體可以全天候主動掃描 PC，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
-		"runningWell": "PC 執行狀況良好",
-		"auto": "自動",
-		"manual": "手動",
-		"am": "上午",
-		"pm": "下午",
-		"scanNow": "立即掃描",
-		"signUpAndFix": "註冊及修正",
-		"cancel": "取消",
-		"scanning": "掃描中",
-		"fixIt": "立即修正",
-		"optimizeIt": "最佳化",
-		"maintainIt": "維護",
-		"noteFindings": "根據對您電腦的詳細分析，我們得到這些發現。",
-		"noteNavigateTab": "導覽不同標籤以進一步了解：",
-		"scannedAreas": "掃描區域",
-		"lastFix": "上次修正",
-		"fixResult": "修正結果",
-		"checkPreviousResults": "檢查先前的結果",
-		"tunePCPerformance": {
-			"title": "調校 PC 效能",
-			"heading": "給您的電腦多一些關愛",
-			"description": "即使最好的電腦也能從定期調整中受益。使用我們強大的應用程式進行調升，達到事半功倍的效果。",
-			"tabSet1": {
-				"tab1": "垃圾檔囤積",
-				"tab2": "可用性問題",
-				"tab3": "Windows 設定",
-				"tab4": "系統錯誤",
-				"tab5": "登錄錯誤"
-			},
-			"tabSet2": {
-				"tab1Heading": "簡單",
-				"tab1Description": "我們不會滿口技術行話，使您困惑",
-				"tab2Heading": "迅速",
-				"tab2Description": "5 分鐘內百分之百完成檢查",
-				"tab3Heading": "安全",
-				"tab3Description": "依循最佳實務所建構，恐嚇軟體絕跡"
-			},
-			"summaryTitle": "調校 PC 效能"
-		},
-		"boostInternetPerformance": {
-			"title": "提升網際網路效能",
-			"extraTitle": "網際網路效能",
-			"heading": "大力加持您的網際網路",
-			"description": "對許多人來說，網速慢、無 Wi-Fi，就跟離群索居、水電自理沒兩樣。讓我們來配置您的網際網路、Wi-Fi 和瀏覽器設定，以獲致最佳效能。",
-			"tabSet1": {
-				"tab1": "電子垃圾",
-				"tab2": "網路設定",
-				"tab3": "瀏覽器設定",
-				"tab4": "瀏覽器安全性",
-				"tab5": "Wi-Fi 效能"
-			},
-			"tabSet2": {
-				"tab1Heading": "瀏覽器問題",
-				"tab1Description": "我們會配置並修正您所有的常用 Web 瀏覽器。",
-				"tab2Heading": "連線錯誤",
-				"tab2Description": "我們可以診斷並修復您的連線問題。",
-				"tab3Heading": "網際網路速度緩慢",
-				"tab3Description": "我們會幫助您獲得最佳效能。"
-			},
-			"summaryTitle": "網際網路效能"
-		},
-		"malwareSecurity": {
-			"title": "惡意軟體和安全性",
-			"heading": "特別照顧您的電腦，進行必要的維護",
-			"description": "惡意軟體可能導致電腦當機、資料洩露和效能降低。不僅根除惡意軟體，還完成許許多多工作。",
-			"tabSet1": {
-				"tab1": "惡意軟體掃描",
-				"tab2": "零時差感染",
-				"tab3": "違規程式",
-				"tab4": "惱人的廣告軟體",
-				"tab5": "安全設定"
-			},
-			"tabSet2": {
-				"tab1Heading": "零時差病毒",
-				"tab1Description": "甚至最新的惡意軟體感染我們都能移除",
-				"tab2Heading": "移除間諜軟體",
-				"tab2Description": "我們會移除所有可能有害的程式",
-				"tab3Heading": "輕巧且快速",
-				"tab3Description": "掃描通常需要 5-10 分鐘"
-			},
-			"summaryTitle": "惡意軟體和安全性"
-		},
-		"proactiveAutomated": {
-			"title": "主動且自動",
-			"heading": "提供強大功能，幫助您在問題造成影響之前杜絕後患！",
-			"description": "Smart Performance 不斷尋找數以百計影響 PC 效能的問題。我們會主動修復這些問題，讓您高枕無憂。",
-			"tabSet1": {
-				"tab1": "排程掃描",
-				"tab2": "隨需掃描",
-				"tab3": "自動化解析",
-				"tab4": "有效",
-				"tab5": "全天候防護"
-			},
-			"tabSet2": {
-				"tab1Heading": "簡單",
-				"tab1Description": "我們不會滿口技術行話，使您困惑",
-				"tab2Heading": "迅速",
-				"tab2Description": "5 分鐘內百分之百完成檢查",
-				"tab3Heading": "安全",
-				"tab3Description": "依循最佳實務所建構，恐嚇軟體絕跡"
-			}
-		},
-		"noScanResults": "請按一下「掃描並修復」按鈕以觸發掃描程序。",
-		"startScan": "<b>準備好開始掃描了嗎？</b>讓我們來診斷電腦中的效能與安全性問題。",
-		"subscriptionDetails": {
-			"title": "訂閱詳細資訊",
-			"description": "您已經訂閱 Lenovo Smart Performance 服務。在此期間、所有功能都完全可以用來讓您的 PC 受到保護且執行順暢。",
-			"learnMore": "進一步瞭解",
-			"startDate": "開始日期",
-			"endDate": "結束日期",
-			"status": "狀態",
-			"activeStatus": "使用中",
-			"inactiveStatus": "非作用中",
-			"manageSubscription": "訂閱管理",
-			"titlebeta": "Lenovo Beta 程式",
-			"manageSubscriptionBeta": "啟用完整功能",
-			"descriptionbeta": "Lenovo 提供試驗計畫，可讓您試用 Smart Performance 功能，至 2020 年 7 月截止。",
-			"descriptionbeta1": "歡迎加入本計畫並試用完整功能。",
-			"descriptionNonSubscriber": "您沒有訂閱 Lenovo Smart Performance 服務。您只能掃描自己的 PC。立即訂閱以獲得可讓 PC 受到保護且執行順暢的完整權益。",
-			"processStatus": "處理中",
-			"descriptionExpired": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，您可以透過按一下「管理訂閱」連結來續訂該訂閱，以回復對裝置的全面保護。",
-			"expiredStatus": "已過期",
-			"expiredNote": "您的訂閱期限尚有：",
-			"day": "天",
-			"days": "天",
-			"weeks": "週",
-			"week": "一週",
-			"month": "月",
-			"today": "今天",
-			"next": "下一步"
-		},
-		"scanSettings": {
-			"title": "排程掃描設定",
-			"description": "啟用或停用掃描並設定掃描排程",
-			"enableScan": "啟用掃描",
-			"changeScanTitle": "變更掃描排程",
-			"changeScanDescription": "編輯掃描排程，以在需要時執行。",
-			"frequency": "頻率",
-			"txtDate": "日期",
-			"txtDay": "天",
-			"txtTime": "時間",
-			"txtSave": "儲存",
-			"txtCancel": "取消",
-			"scanFrequencyWeek": "每週一次",
-			"scanFrequencyEveryWeek": "每隔一週",
-			"scanFrequencyMonth": "每個月",
-			"mon": "星期一",
-			"tue": "星期二",
-			"wed": "星期三",
-			"thu": "星期四",
-			"fri": "星期五",
-			"sat": "星期六",
-			"sun": "星期日",
-			"am": "上午",
-			"pm": "下午",
-			"tooltipText": "保持啟用此切換開關，系統效能與安全性掃描就會自動在您設定的日期和時間開始執行。"
-		},
-		"scanningPage": {
-			"title": "效能與安全性檢查",
-			"description": "請稍候，我們正在掃描您的系統是否有潛在問題和威脅。",
-			"scanningSystem": "正在掃描系統",
-			"complete": "完成",
-			"cancelScan": {
-				"button": "取消掃描",
-				"title": "取消掃描？",
-				"description": "如果您離開目前的畫面，就會取消掃描並返回首頁。不過，您隨時都可以再次執行掃描。",
-				"yesButton": "是，取消",
-				"noButton": "否、繼續掃描",
-				"cancelMayTakeSomeTime": "請稍候，視您的系統而定，取消可能需要一些時間。",
-				"cancelTextPrompt": "您確定要取消嗎？"
-			},
-			"waiting": "正在等待掃描",
-			"completed": "已完成",
-			"nowScanningDetail": {
-				"cardTitle": "立即掃描詳細資料",
-				"current": "目前：",
-				"upNext": "接下來：",
-				"tunePCDesc": "讓我們來協助改善您的電腦效能。我們會採用業界最佳實務，穩妥地完成。訂閱者所獲得的好處包括縮短 PC 啟動時間、提升效能、改善穩定性，以及加快啟動應用程式。",
-				"boostDesc": "讓我們來協助增進您的瀏覽體驗。讓我們來修正網路及存取問題。訂閱者所獲得的好處包括改善網際網路連線能力、提升上傳/下載速度，以及加強網際網路安全。",
-				"malwareDesc": "讓我們來協助您視需要快速保護 PC 安全。我們會透過移除間諜軟體、惡意軟體和廣告軟體來完成。我們還會移除幾近零時差的感染。訂閱者所獲得的好處包括資料安全性和最佳系統效能。",
-				"proactiveDesc": "讓我們來定期調整您的電腦並修正問題、主動且自動地讓電腦維持運作相協調、資源受保護。永遠",
-				"tunePCScanningItems": {
-					"accumulatedJunk": {
-						"itema1": "尋找 85 個位置中的垃圾",
-						"itema2": "不需要的系統日誌檔",
-						"itema3": "沒必要的應用程式殘留項目",
-						"itema4": "塞滿磁碟空間的暫存檔案",
-						"itema5": "很久以前刪除的檔案",
-						"itema6": "過時的錯誤和警示"
-					},
-					"usabilityIssues": {
-						"itemb1": "解決數十種可用性問題",
-						"itemb2": "檢查外部裝置連線",
-						"itemb3": "保持 Windows 更新始終為最新",
-						"itemb4": "應用程式是否在其最佳狀態下呈現並顯示",
-						"itemb5": "分析處理能力使用率",
-						"itemb6": "協助輕鬆尋找檔案"
-					},
-					"windowsSettings": {
-						"itemc1": "診斷幾十個 Windows 作業系統設定",
-						"itemc2": "確保 Windows 一切正常",
-						"itemc3": "確保基本服務正常執行",
-						"itemc4": "檢查連線設定的性能狀況",
-						"itemc5": "檢查在網路上共用檔案的能力",
-						"itemc6": "檢查生物特徵辨識及存取設定"
-					},
-					"systemErrors": {
-						"itemd1": "確保基本服務正常執行",
-						"itemd2": "選擇服務以取得更高效能",
-						"itemd3": "尋找軟體衝突錯誤",
-						"itemd4": "最佳化 Windows 錯誤管理",
-						"itemd5": "檢查並修正應用程式啟動錯誤",
-						"itemd6": "配置系統錯誤報告"
-					},
-					"registryErrors": {
-						"iteme1": "深層檢查 Windows 登錄",
-						"iteme2": "掃描無效的 Windows 服務",
-						"iteme3": "尋找損毀的登錄項目",
-						"iteme4": "尋找無用的副檔名",
-						"iteme5": "搜尋已安裝應用程式的損毀項目",
-						"iteme6": "尋找無用的殘餘項目"
-					}
-				},
-				"boostScanningItems": {
-					"networkSettings": {
-						"itema1": "診斷網路和網際網路設定",
-						"itema2": "驗證網路配置設定",
-						"itema3": "驗證可用網路設定",
-						"itema4": "配置以加快載入網站",
-						"itema5": "尋找頁面轉譯錯誤",
-						"itema6": "連線服務執行狀況是否良好"
-					},
-					"browserSettings": {
-						"itemb1": "啟用更好的瀏覽體驗",
-						"itemb2": "配置設定以加快網站轉譯",
-						"itemb3": "確保瀏覽器安全性服務狀況良好",
-						"itemb4": "確保網頁正確轉譯",
-						"itemb5": "檢查設定以加快下載速度",
-						"itemb6": "檢查權限和存取控制"
-					},
-					"browserSecurity": {
-						"itemc1": "確保安全性服務正常執行",
-						"itemc2": "配置瀏覽器安全性功能",
-						"itemc3": "檢查網路服務執行狀況是否良好",
-						"itemc4": "配置通訊協定設定",
-						"itemc5": "驗證瀏覽器內容設定是否正確",
-						"itemc6": "驗證瀏覽器外掛程式及擴充功能"
-					},
-					"wifiPerformance": {
-						"itemd1": "最佳化 Wi-Fi 體驗設定",
-						"itemd2": "確保您的家用網路安全",
-						"itemd3": "檢查 Wi-Fi 服務設定",
-						"itemd4": "保護網路共用設定安全",
-						"itemd5": "檢查 Wi-Fi 安全性標準",
-						"itemd6": "確保 Wi-Fi 頻道不重疊"
-					},
-					"eJunk": {
-						"iteme1": "讓瀏覽器不再雜亂無章",
-						"iteme2": "尋找殘餘的電子垃圾",
-						"iteme3": "尋找過時的網際網路檔案",
-						"iteme4": "清除不要的 Web 快取",
-						"iteme5": "清除 Cookie",
-						"iteme6": "移除瀏覽器殘留項目"
-					}
-				},
-				"malwareScanningItems": {
-					"malwareScan": {
-						"itema1": "掃描一般載入點",
-						"itema2": "檢查重要位置是否存在威脅",
-						"itema3": "檢查是否有病毒、間諜軟體和惡意軟體",
-						"itema4": "掃描 50 多種檔案類型",
-						"itema5": "掃描惡意軟體殘餘部分",
-						"itema6": "善用雲端修復引擎"
-					},
-					"zerodayInfections": {
-						"itemb1": "尋找零時差病毒",
-						"itemb2": "尋找最新未確診的惡意軟體",
-						"itemb3": "搭配雲端式修復進行掃描",
-						"itemb4": "執行行為監控",
-						"itemb5": "使用聚合引擎掃描檔案",
-						"itemb6": "根據最新病毒定義檔掃描"
-					},
-					"securitySettings": {
-						"itemc1": "保持 Windows 更新始終為最新",
-						"itemc2": "確保 Windows 防火牆服務狀況良好",
-						"itemc3": "確保瀏覽器設定安全",
-						"itemc4": "檢查基本安全性服務",
-						"itemc5": "配置使用者存取設定",
-						"itemc6": "驗證身分鑑別服務"
-					},
-					"errantPrograms": {
-						"itemd1": "尋找違規應用程式",
-						"itemd2": "尋找可能有害的應用程式",
-						"itemd3": "偵測停用和隱藏的應用程式",
-						"itemd4": "確認應用程式是否有惡意行為",
-						"itemd5": "根據信譽因素檢查應用程式",
-						"itemd6": "檢查登錄中的違規程式"
-					},
-					"annoyingAdware": {
-						"iteme1": "尋找瀏覽器廣告軟體",
-						"iteme2": "修訂瀏覽器彈出式視窗設定",
-						"iteme3": "消除瀏覽器重新導向威脅",
-						"iteme4": "檢查是否有廣告軟體殘餘項目",
-						"iteme5": "最佳化瀏覽器體驗設定",
-						"iteme6": "在雲端修復引擎中驗證"
-					}
-				}
-			},
-			"confirmationTitle": "Lenovo 付款處理",
-			"confirmationNote": "您即將導向到 Lenovo 付款網站以完成付款。付款完成後，您可以按下「訂閱詳細資訊」中的「更新」以取得付款結果。",
-			"confirmationBtn": "繼續",
-			"refreshButton": "更新狀態"
-		},
-		"scanCompletePage": {
-			"title": "系統掃描完成",
-			"description": "以下是在您的 {{machineFamilyName}} 電腦中發現的問題",
-			"scanRates": "我們對您的 PC 掃描評分為：",
-			"summary": "摘要",
-			"foundIssues": "我們的掃描找到 {{issueCount}} 個問題",
-			"summaryDetails": "立即註冊，以修正這些問題並保持系統執行順暢。我們的軟體可以全天候主動掃描系統的這些區域，在問題開始出現時及早發現並進行修復，讓您的 PC 始終保持頂尖效能。",
-			"expiredSummaryDetails": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，如果您想回復「掃描並修復」功能，請按下下方的「續訂並修復」按鈕來續訂您的訂閱。",
-			"signupRepairButton": "立即註冊並修復",
-			"renewAndFix": "續訂並修復",
-			"backToHome": "返回首頁",
-			"monthlyPricing": "<b>每月不到 {{monthlyPrice}}。</b>我們會自動修正這些問題。今天一次，此後每週一次<a  href=\"#\">瞭解更多</a>",
-			"issueCount": "{{individualIssueCount}} 個問題",
-			"issues": "問題",
-			"tuneIssueCount": "{{tune}}",
-			"boostIssueCount": "{{boost}}",
-			"secureIssueCount": "{{secure}}",
-			"scannedAreas": "掃描區域",
-			"summaryPurchaseTip": "立即購買年度計劃，我們每週都會自動修正這些問題。",
-			"tunePCTooltip": "提升整體系統效能、縮短 PC 啟動時間並改善應用程式載入時間。",
-			"boostTooltip": "提升網路效能、瀏覽體驗和連線能力。",
-			"malwareTooltip": "提升安全性、移除惡意軟體和感染以及恢復系統穩定性。",
-			"recommendedAction": {
-				"title": "建議動作",
-				"description": "我們會自動修正這些問題。今天一次，此後每週一次",
-				"yearlyPricing": "{{yearlyPrice}}/年",
-				"monthlyPricing": "每月不到 {{monthlyPrice}}。",
-				"longerTerm": "更長期限？更加省錢？",
-				"newDescription": "註冊後，我們將每周自動為您解決這些問題。",
-				"signupButton": "註冊"
-			},
-			"tunepc": {
-				"accumulatedjunkscannedareas": {
-					"area1": "掃描 85 個位置中的垃圾",
-					"area2": "不需要的系統日誌檔",
-					"area3": "沒必要的應用程式殘留項目",
-					"area4": "塞滿磁碟空間的暫存檔案",
-					"area5": "很久以前刪除的檔案",
-					"area6": "過時的錯誤和警示"
-				},
-				"registryerrorsscannedareas": {
-					"area1": "已完成 Windows 登錄的深層檢查",
-					"area2": "已掃描無效的 Windows 服務",
-					"area3": "已檢查損毀的登錄項目",
-					"area4": "已掃描無用的副檔名",
-					"area5": "已搜尋已安裝應用程式的損毀項目",
-					"area6": "已檢查無用的殘餘項目"
-				},
-				"windowssettingsscannedareas": {
-					"area1": "已診斷幾十個 Windows 作業系統設定",
-					"area2": "已確認 Windows 一切正常",
-					"area3": "已確認基本服務正常執行",
-					"area4": "已檢查連線設定的性能狀況",
-					"area5": "已檢查在網路上共用檔案的能力",
-					"area6": "已檢查生物特徵辨識及存取設定"
-				},
-				"usabilityissuesscannedareas": {
-					"area1": "已檢查是否有可用性問題",
-					"area2": "已檢查外部裝置連線",
-					"area3": "已檢查 Windows 更新狀態",
-					"area4": "已驗證應用程式轉譯設定",
-					"area5": "已分析處理能力使用率",
-					"area6": "協助輕鬆尋找檔案"
-				},
-				"systemerrorsscannedareas": {
-					"area1": "已檢查基本服務是否正常執行",
-					"area2": "查看服務是否有較高效能",
-					"area3": "尋找軟體衝突錯誤",
-					"area4": "已分析 Windows 錯誤管理",
-					"area5": "已掃描應用程式啟動錯誤",
-					"area6": "已檢查系統錯誤報告配置"
-				}
-			},
-			"internetperformance": {
-				"ejunkscannedareas": {
-					"area1": "已發現瀏覽器中的雜亂情況",
-					"area2": "已搜尋殘餘的電子垃圾",
-					"area3": "已掃描過時的網際網路檔案",
-					"area4": "已搜尋不要的 Web 快取",
-					"area5": "已檢查 Cookie 是否清除",
-					"area6": "已掃描瀏覽器殘留項目"
-				},
-				"browsersecurityscannedareas": {
-					"area1": "已確認安全性服務正常執行",
-					"area2": "已檢查瀏覽器安全性功能",
-					"area3": "已驗證網路服務",
-					"area4": "配置通訊協定設定",
-					"area5": "已檢查瀏覽器內容設定",
-					"area6": "已掃描瀏覽器外掛程式及擴充功能"
-				},
-				"networksettingsscannedareas": {
-					"area1": "已診斷網路和網際網路設定",
-					"area2": "已診斷網路配置設定",
-					"area3": "已驗證連線網路設定",
-					"area4": "已診斷設定以加快網站轉譯",
-					"area5": "已掃描頁面轉譯錯誤",
-					"area6": "已掃描所有連線服務"
-				},
-				"browsersettingsscannedareas": {
-					"area1": "啟用更好的瀏覽體驗",
-					"area2": "已診斷設定以加快網站轉譯",
-					"area3": "已驗證瀏覽器安全性服務",
-					"area4": "已檢查網頁是否正確轉譯",
-					"area5": "已掃描設定以加快下載速度",
-					"area6": "已分析權限和存取控制"
-				},
-				"wifiperformancescannedareas": {
-					"area1": "已驗證 Wi-Fi 體驗設定",
-					"area2": "已驗證安全家用網路",
-					"area3": "已掃描 Wi-Fi 服務設定",
-					"area4": "已驗證安全網路共用設定",
-					"area5": "已驗證 Wi-Fi 安全性標準",
-					"area6": "已分析 Wi-Fi 頻道未重疊"
-				}
-			},
-			"malwaresecurity": {
-				"malwarescanscannedareas": {
-					"area1": "已掃描一般載入點",
-					"area2": "已掃描重要位置是否存在威脅",
-					"area3": "已掃描是否有病毒、間諜軟體和惡意軟體",
-					"area4": "已掃描 50 多種檔案類型是否有威脅",
-					"area5": "已檢查惡意軟體殘餘部分",
-					"area6": "已在雲端修復引擎中驗證"
-				},
-				"errantprogramsscannedareas": {
-					"area1": "尋找違規應用程式",
-					"area2": "已檢查可能有害的應用程式",
-					"area3": "已搜尋停用和隱藏的應用程式",
-					"area4": "已掃描惡意應用程式",
-					"area5": "已根據信譽因素檢查應用程式",
-					"area6": "已檢查登錄中的違規程式"
-				},
-				"zerodayinfectionsscannedareas": {
-					"area1": "已搜尋零時差病毒",
-					"area2": "已搜尋最新未確診的惡意軟體",
-					"area3": "已搭配雲端式修復進行驗證",
-					"area4": "已執行行為監控",
-					"area5": "已使用聚合引擎驗證檔案",
-					"area6": "已根據更新的病毒定義檔進行掃描"
-				},
-				"securitysettingsscannedareas": {
-					"area1": "已驗證 Windows 更新是最新的",
-					"area2": "已驗證 Windows 防火牆服務",
-					"area3": "已檢查安全瀏覽器設定",
-					"area4": "已診斷基本安全性服務",
-					"area5": "已驗證使用者存取設定",
-					"area6": "已驗證身分鑑別服務"
-				},
-				"annoyingadwarescannedareas": {
-					"area1": "已掃描瀏覽器廣告軟體",
-					"area2": "驗證瀏覽器彈出式視窗設定",
-					"area3": "已掃描瀏覽器重新導向威脅",
-					"area4": "已檢查廣告軟體殘餘項目",
-					"area5": "已驗證瀏覽器體驗設定",
-					"area6": "已透過雲端修復引擎進行驗證"
-				}
-			},
-			"subscriber": {
-				"tunepc": {
-					"accumulatedjunkscannedareas": {
-						"area1": "已清除 85 個位置中的垃圾",
-						"area2": "已清除不需要的系統日誌檔",
-						"area3": "已刪除應用程式殘留項目",
-						"area4": "已移除暫存檔案以釋放磁碟空間",
-						"area5": "已排除很久以前刪除的檔案",
-						"area6": "已清除錯誤和警示"
-					},
-					"registryerrorsscannedareas": {
-						"area1": "已完成 Windows 登錄的深層檢查",
-						"area2": "已修正所有無效的 Windows 服務",
-						"area3": "已移除所有損毀的登錄項目",
-						"area4": "已刪除所有過時的副檔名",
-						"area5": "已清除已安裝應用程式的損毀項目",
-						"area6": "已清除不要的殘餘項目"
-					},
-					"windowssettingsscannedareas": {
-						"area1": "已驗證 Windows 設定",
-						"area2": "已最佳化所有 Windows 服務",
-						"area3": "已修改基本 Windows 服務",
-						"area4": "已修改基本 Windows 服務",
-						"area5": "已驗證在網路上共用檔案的能力",
-						"area6": "已驗證生物特徵辨識及存取設定"
-					},
-					"usabilityissuesscannedareas": {
-						"area1": "已修正所有可用性問題",
-						"area2": "已驗證外部裝置連線",
-						"area3": "已確定 Windows 更新始終為最新",
-						"area4": "已確認應用程式是在其最佳狀態下呈現並顯示",
-						"area5": "已修改處理能力使用率的設定",
-						"area6": "已修改協助輕鬆尋找檔案的設定"
-					},
-					"systemerrorsscannedareas": {
-						"area1": "已檢查基本服務是否正常執行",
-						"area2": "已修改服務以取得更高效能",
-						"area3": "已修正所有軟體衝突錯誤",
-						"area4": "已最佳化 Windows 錯誤管理",
-						"area5": "已檢查並修正所有應用程式啟動錯誤",
-						"area6": "已配置系統錯誤報告"
-					}
-				},
-				"internetperformance": {
-					"ejunkscannedareas": {
-						"area1": "已消除 4 個瀏覽器中的雜亂情況",
-						"area2": "已清除殘餘的電子垃圾",
-						"area3": "已刪除過時的網際網路檔案",
-						"area4": "已清除不要的 Web 快取",
-						"area5": "已清除 Cookie",
-						"area6": "已清除所有瀏覽器殘留項目"
-					},
-					"browsersecurityscannedareas": {
-						"area1": "已確定安全性服務在正常執行",
-						"area2": "已配置瀏覽器安全性功能",
-						"area3": "已檢查並修正網路服務",
-						"area4": "已配置通訊協定設定",
-						"area5": "已驗證瀏覽器內容設定是否正確",
-						"area6": "已掃描瀏覽器外掛程式及擴充功能"
-					},
-					"networksettingsscannedareas": {
-						"area1": "已修正網路和網際網路設定",
-						"area2": "已檢查網路配置設定",
-						"area3": "已修改連線網路設定",
-						"area4": "已診斷設定以加快網站轉譯",
-						"area5": "已修正所有頁面轉譯錯誤",
-						"area6": "已掃描所有連線服務"
-					},
-					"browsersettingsscannedareas": {
-						"area1": "已修改設定以獲得更好的瀏覽體驗",
-						"area2": "已驗證設定以加快網站轉譯",
-						"area3": "已確定瀏覽器安全性服務狀況良好",
-						"area4": "已修改設定以正確載入網頁",
-						"area5": "已修正設定以加快下載速度",
-						"area6": "已修正權限和存取控制設定"
-					},
-					"wifiperformancescannedareas": {
-						"area1": "已修改 Wi-Fi 體驗設定",
-						"area2": "已驗證安全家用網路設定",
-						"area3": "已修正 Wi-Fi 服務設定",
-						"area4": "已修改安全網路共用設定",
-						"area5": "已驗證 Wi-Fi 安全性標準",
-						"area6": "已驗證 Wi-Fi 頻道"
-					}
-				},
-				"malwaresecurity": {
-					"malwarescanscannedareas": {
-						"area1": "已檢查並移除一般載入點中的威脅",
-						"area2": "已檢查並移除重要位置中的威脅",
-						"area3": "已移除 PC 中的所有威脅",
-						"area4": "已驗證 50 多種檔案類型是否有威脅",
-						"area5": "已清除所有惡意軟體殘餘部分",
-						"area6": "已在雲端修復引擎中驗證"
-					},
-					"errantprogramsscannedareas": {
-						"area1": "已驗證所有已安裝的應用程式",
-						"area2": "已驗證可能有害的應用程式",
-						"area3": "已清除所有停用和隱藏的應用程式",
-						"area4": "已移除所有惡意和違規應用程式",
-						"area5": "已根據信譽因素驗證應用程式",
-						"area6": "已完成對違規應用程式的登錄檢查"
-					},
-					"zerodayinfectionsscannedareas": {
-						"area1": "已分析零時差病毒",
-						"area2": "已移除 PC 中的所有惡意軟體",
-						"area3": "已在雲端修復引擎中進行驗證",
-						"area4": "已完成對應用程式的行為監控",
-						"area5": "已向聚合引擎驗證",
-						"area6": "已根據最新病毒定義檔進行驗證"
-					},
-					"securitysettingsscannedareas": {
-						"area1": "已最佳化 Windows Update 設定",
-						"area2": "已調校 Windows 防火牆服務",
-						"area3": "已確保瀏覽器設定安全",
-						"area4": "已診斷基本安全性服務",
-						"area5": "已最佳化使用者存取設定",
-						"area6": "已修改身分鑑別服務"
-					},
-					"annoyingadwarescannedareas": {
-						"area1": "已移除瀏覽器廣告軟體",
-						"area2": "已調校瀏覽器彈出式視窗設定",
-						"area3": "已診斷瀏覽器重新導向威脅",
-						"area4": "已清除廣告軟體殘餘項目",
-						"area5": "已最佳化瀏覽器體驗設定",
-						"area6": "已在雲端修復引擎中進行驗證"
-					}
-				}
-			},
-			"Diskspace": "磁碟空間已收回：",
-			"Performanceimprovements": "效能改善：",
-			"Securityimprovements": "安全性改善：",
-			"Onceaweek": "每週一次"
-		},
-		"subscriberScanHomePage": {
-			"title": "您的系統一切正常",
-			"titleScanCanceled": "評分為 0，因為上次的掃描取消了。請按一下「返回首頁」，然後再次掃描。",
-			"serialNumber": "序號：",
-			"subTitle": "您已經訂閱 Lenovo Smart Performance 服務",
-			"description": "我們經常主動針對 PC 效能、網際網路效能和惡意軟體等問題，掃描並修正您的電腦。您享有充分的保護。您還可以視需要按一下「立即掃描」按鈕來啟動效能檢查。",
-			"scanNow": "掃描並修正",
-			"backToHome": "返回首頁",
-			"returnto": "返回儀表板",
-			"mostRecent": "最近的掃描：",
-			"nextScheduled": "下一個排程掃描：",
-			"successTitle": "您的電腦效能已調升！",
-			"successDescription": "Smart Performance 已解決 <b>{{issueCount}} 個問題，</b>以保持電腦順暢執行，您可在下方找到掃描摘要和報告。",
-			"scanSummary": {
-				"title": "掃描摘要：",
-				"description": "我們一直不斷調校您的電腦",
-				"tune": "調校",
-				"tuneSummary": "磁碟空間已收回",
-				"boost": "提升",
-				"boostSummary": "修正以改善效能",
-				"secure": "安全",
-				"secureSummary": "修正以改善安全性",
-				"annual": "每年",
-				"quarterly": "每季",
-				"custom": "自訂",
-				"txtFrom": "從",
-				"txtTo": "至",
-				"txtGo": "執行",
-				"summaryCaption": "空間已收回",
-				"fixes": "修正",
-				"txtClr": "清除"
-			},
-			"lastScanResults": {
-				"title": "最後 5 次掃描結果：",
-				"scanDate": "掃描日期",
-				"results": "結果",
-				"status": "狀態"
-			}
-		},
-		"feedbackContainer": {
-			"title": "給我們一些意見回饋",
-			"subtitle": "告訴我們您對 Smart Performance 的想法",
-			"buttonText": "傳送意見回饋",
-			"questions": {
-				"q1": "1.使用掃描功能的難易程度如何？",
-				"q2": "2.了解掃描結果的難易程度如何？",
-				"q3": "3.為了提高系統效能，您付費訂閱 Smart Performance 的可能性如何？",
-				"q4": "4.您對 Smart Performance 功能的整體滿意度如何？",
-				"q5": "1.了解 Smart Performance 對您的系統所做修正的難易程度如何？",
-				"q6": "2.我們是否在您的系統上找到任何惡意軟體？",
-				"q7": "3.您繼續付費使用 Smart Performance 功能的可能性如何？",
-				"q8": "4.您對 Smart Performance 功能的整體滿意度如何？"
-			},
-			"rating": {
-				"r1": "非常困難",
-				"r2": "非常容易",
-				"r3": "非常困難",
-				"r4": "非常容易",
-				"r5": "完全不可能",
-				"r6": "很有可能",
-				"r7": "完全不滿意",
-				"r8": "非常滿意",
-				"r9": "非常困難",
-				"r10": "非常容易",
-				"r11": "是",
-				"r12": "否",
-				"r13": "完全不可能",
-				"r14": "很有可能",
-				"r15": "完全不滿意",
-				"r16": "非常滿意"
-			},
-			"commentTip": "請在下方留言，或告訴我們任何其他意見：",
-			"comments": "請在這裡留下您的寶貴意見..."
-		}
-	},
-	"homeSecurity": {
-		"title": "Connected Home Security",
-		"notification": {
-			"recent": "Recent security notifications",
-			"notifications": "Notifications",
-			"unsafeNetworkConnection": "Unsafe network connection",
-			"networkUnsafe": "Network unsafe",
-			"deviceDisconnected": "Device disconnected",
-			"newDeviceDetected": "New device detected",
-			"unsafeDeviceDetected": "Unsafe device detected"
-		},
-		"ecosystem": {
-			"ecosystemBlockTitle": "Protect your device ecosystem",
-			"thisDevice": "This device",
-			"allDevices": "All Devices",
-			"protected": "Protected",
-			"notProtected": "Not Protected",
-			"trialExpired": "Trial expired",
-			"upgrade": "upgrade",
-			"inEcosystem": "In Ecosystem",
-			"ecosystemEnable": "Ecosystem Enabled",
-			"inTrial": "In trial",
-			"addEcosystem": "Add to Ecosystem",
-			"enableEcosystem": "Enable Ecosystem",
-			"startTrial": "Start Trial",
-			"fullAccess": "Full Access",
-			"renew": "Renew"
-		},
-		"overview": {
-			"overviewBlockTitle": "Your Ecosystem Security Overview",
-			"allDevices": "All Devices",
-			"myDevice": "My Device",
-			"thisComputer": "This computer",
-			"secure": "SECURE",
-			"needAttention": "NEEDS ATTENTION",
-			"manageAccount": "Manage account",
-			"devices": "Devices",
-			"seeProtectedDevices": "See protected devices",
-			"addDevice": "add device",
-			"trialExpired": "Trial expired - Upgrade to keep protecting all of your devices",
-			"upgrade": "upgrade",
-			"freeTrial": "Protect all of your devices - Free 30 day trial",
-			"startTrial": "Start Trial",
-			"trialTitle": "Trial subscription",
-			"subscriptionTitle": "Paid subscription",
-			"inTrialDetail": "You are currently in your trial period.",
-			"trialExpiredDetail": "Your trial period has expired.",
-			"inSubscriptionDetail": "You have an active subscription of Connected Home Security.",
-			"subscriptionExpiredDetail": "Your subscription to Connected Home Security has expired.",
-			"discountPrice": "For only $29.99 for one year",
-			"overviewTitle": "Overview",
-			"trialPeriod": "Trial period:",
-			"subscriptionPeriod": "Subscription period:",
-			"expired": "Expired",
-			"remainingDay": "{{remainingDay}} days remaining",
-			"lenovoId": "Lenovo ID:",
-			"overviewTitleAdmin": "Overview of your Connected Home Security",
-			"overviewTitleUser": "You are part of the growing Connected Home Security of your family",
-			"familyMembers": "Family members",
-			"places": "Places",
-			"personalDevices": "Personal devices",
-			"wifiNetworks": "Wi-fi networks",
-			"homeDevices": "Home devices",
-			"disconnectDevice": "Disconnect this device from Connected Home Security",
-			"disconnect": "disconnect",
-			"goDashboard": "go to dashboard",
-			"buyNow": "Buy Now",
-			"extendNow": "extend now",
-			"renewNow": "Renew Now",
-			"poweredBy": "Powered by Coronet",
-			"privacyPolicyAndTermsOfService": "Read more on the <tag>Privacy Policy</tag> and <tag>Terms of Service</tag>"
-		},
-		"tour": {
-			"back": "Back",
-			"skip": "Skip",
-			"start": "START TOUR",
-			"done": "DONE",
-			"welcomeTitle": "welcome to connected home security",
-			"welcomeSubTitle": "30 days of protection for free",
-			"welcomeDesc1": "Keep your family and yourself safe by protecting your PCs, mobile devices, and connected devices.",
-			"welcomeDesc2": "Connected Home Security needs to access your device's location to keep you fully protected.",
-			"locationTitle": "Enable location permissions",
-			"locationPermission": "Allow Lenovo Vantage to access this device's location?",
-			"allow": "Allow",
-			"notNow": "Not now"
-		},
-		"accountStatus": {
-			"title": "My Connected Home Security",
-			"startTrial": "Start Trial",
-			"manageAccount": "Manage Account",
-			"upgradeAccount": "Upgrade Account",
-			"inTrialDetail1": "{{remainingDays}} Days left until trial end.",
-			"inTrialDetail2": "You are currently within the trial period. You have unlimited access to all features.",
-			"trialExpiredDetail1": "Your trial has expired.",
-			"trialExpiredDetail2": "Your trial has expired and your device ecosystem is no longer being protected.",
-			"upgradedDetail1": "You account is active until {{expiredDate}}.",
-			"upgradedDetail2": "Your device ecosystem is currently being protected.",
-			"localAccountDetail2": "Click the button below to start your free 30 day trial.",
-			"alreadyHaveAccount": "Already have an activation code?"
-		},
-		"card": {
-			"startTrial": "Start Trial",
-			"startTrialTitle": "Create your own Connected Home Security",
-			"startTrialDescription": "Activate your own Connected Home Security environment, and start protecting your home and family today.",
-			"join": "join",
-			"joinTitle": "Join your family's Connected Home Security",
-			"joinDescription": "Become a part of your family security group."
-		},
-		"modal": {
-			"countdownTitle": "Launching web browser",
-			"countdownDesc": "You are about to launch the Connected Home Security web console through your browser.",
-			"goNow": "Go now",
-			"disconnectedTitle": "Disconnect from protection?",
-			"disconnectedDesc": "You will no longer be protected by Connected Home Security. Are you sure you want to disconnect?",
-			"disconnecting": "Disconnecting..."
-		}
-	},
-	"dir": "ltr",
-	"dirClass": "ltr",
 	"notification": {
 		"menu": {
 			"security": "您知道嗎？即使您沒有安裝防毒軟體，我們仍會為您的裝置提供基本的安全保護。",
 			"connectedHomeSecurity": "在家中取得有關網路安全的即時監視和警示。您將是最先知道您的智慧型裝置是否面臨安全攻擊的人。",
-			"hardwareScan": "現在，您可以取得系統硬體元件的性能狀態。"
+			"hardwareScan": "現在，您可以取得系統硬體元件的性能狀態。",
+			"appSearch": "您知道嗎？您可以在此處搜尋適用於您裝置的功能。"
 		}
 	},
 	"appsForYou": {
@@ -5413,7 +5462,43 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
+					"description": "AI meeting manager 支援即時翻譯、口譯和語音聽寫。它還可以為視訊產生字幕。",
+					"downloadNow": "立即下載",
+					"download": "下載",
+					"launch": "啟動",
+					"translation": {
+						"title": "翻譯",
+						"description": "即時從任何會議軟體翻譯線上會議中的語音。您可以在會議期間瀏覽會議備忘，之後再加以儲存。還有字幕體驗。"
+					},
+					"voiceToText": {
+						"title": "語音到文字",
+						"description": "自然地說話，然後「語音到文字」會進行打字。編寫電子郵件或文件，或者在您所喜愛的應用程式中聊天。「語音到文字」會在您講話時進行翻譯並為您做筆記。"
+					},
+					"modalPopUp": {
+						"heading": "入門：",
+						"translation": {
+							"point1": "確保 AI meeting manager 圖示顯示在 Windows 通知區域中。",
+							"point2": "按一下圖示並選擇翻譯器或字幕。",
+							"point3": "選擇來源語言和目標語言。",
+							"point4": "根據您的需求，設定從喇叭或麥克風輸入語音。",
+							"point5": "按一下開始按鈕即開始翻譯。"
+						},
+						"voiceToText": {
+							"point1": "確保 AI meeting manager 圖示顯示在 Windows 通知區域中。",
+							"point2": "開啟要輸入文字的應用程式。",
+							"point3": "按一下 AI meeting manager 圖示，然後選擇「語音到文字」。",
+							"point4": "選取所需的語言，然後按一下麥克風按鈕開始。",
+							"point5": "將游標放在您開啟的應用程式上，然後開始說話。"
+						},
+						"closeText": "關閉"
+					},
+					"banner": {
+						"title": "AI meeting manager",
+						"description": "讓線上會議更具生產力和效率。"
+					}
+				}
 			}
 		},
 		"creatorCentre": {
@@ -5432,11 +5517,18 @@
 			},
 			"easyRendering": {
 				"title": ""
-
 			},
 			"colorCalibration": {
-				"title": ""
-
+				"title": "色彩校準",
+				"appName": "X-rite 應用程式",
+				"summary": "您電腦的顯示面板在出廠時已使用 Minolta 專業級色度計進行了校準。校準資料會儲存在雲端中並且可以下載，將面板重設為出廠設定。預先安裝了 X-rite 來管理色彩空間。<br>- 預設值（自然色域、自然亮度，但校準的灰色漸層和顯示特性儲存在設定檔中）。<br>- 預設設定檔根據預設是安裝在電腦上。Windows 在啟動時會載入此設定檔。<br>- 未校準（色彩管理關閉。這表示使用預設的 Lenovo 設定檔。）<br>- sRGB（電腦顯示器）- Adobe RGB（適用於計劃以 CYMK 列印的平面設計師）<br> - BT.709（HD 視訊）<br>- DCI P3（在美國通常用於數位電影放映）",
+				"screenshotTitle": "螢幕擷取畫面",
+				"cardTitle": "如何還原設定檔？",
+				"cardSummary": "如果您重新安裝系統或色彩設定檔遺失，則可以從此處還原設定檔：",
+				"learnMore": "進一步瞭解",
+				"restoreProfileDesc": "Lenovo 在 Lenovo Cloud 中提供備份色彩設定檔。為確保色彩校準功能在您的電腦上正常運作，在以下情況中，您可能需要還原或安裝色彩設定檔：如果色彩設定檔遺失或損壞，則會顯示一個視窗提醒您還原色彩設定檔。在提示視窗中按一下「是」，色彩設定檔將自動從 Lenovo Cloud 還原。如果您的電腦顯示器是由 Lenovo 授權服務供應商進行更換，請執行下列動作：",
+				"restoreProfileStep1": "按一下 Windows 通知區域中的三角形圖示以顯示隱藏的圖示。然後，按一下 X-rite 應用程式圖示予以開啟。",
+				"restoreProfileStep2": "按一下「設定>還原設定檔」。"
 			}
 		}
 	}
