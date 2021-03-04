@@ -10,6 +10,7 @@ import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from '../logger/logger.service';
 import { SPLocalPriceData, SPYearPrice } from 'src/app/components/pages/page-smart-performance/interface/smart-performance.interface';
+import currencyFormater from 'currency-formatter';
 
 @Injectable({
 	providedIn: 'root',
@@ -247,12 +248,26 @@ export class SmartPerformanceService {
 
 	setLocalPriceData(yearlyPriceData: SPYearPrice, GEO: string) {
 		if (yearlyPriceData && yearlyPriceData.price !== 0) {
-			const mp = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
-			const yearlyPrice = yearlyPriceData.formatPrice;
 			const symbol = yearlyPriceData.symbol;
-			const monthlyPrice = isNaN(parseFloat(yearlyPrice.substr(0, 1)))
-				? symbol + mp
-				: mp + symbol;
+			const isoCode = yearlyPriceData.isoCode;
+			let mpVal;
+			let monthlyPrice;
+			let yearlyPrice = yearlyPriceData.formatPrice;
+
+			if (GEO === 'tw') {
+				mpVal = Math.ceil(yearlyPriceData.price / 12);
+				monthlyPrice = symbol + mpVal;
+			}
+			else if (GEO === 'cl') {
+				mpVal = Math.ceil(yearlyPriceData.price / 12);
+				monthlyPrice = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(mpVal);
+			}
+			else {
+				mpVal = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
+				monthlyPrice = currencyFormater.format(mpVal, { code: isoCode });
+				yearlyPrice = currencyFormater.format(yearlyPriceData.price, { code: isoCode });
+			}
+
 			this.localPriceData = { geo: GEO, yearlyPrice, monthlyPrice };
 			this.isShowPrice = true;
 			let localPrices: SPLocalPriceData[] = [];
@@ -273,9 +288,8 @@ export class SmartPerformanceService {
 	}
 
 	async getSubscriptionDataDetail(onSubscribed) {
-		let machineInfo;
 		let subscriptionData = [];
-		machineInfo = await this.deviceService.getMachineInfo();
+		const machineInfo = await this.deviceService.getMachineInfo();
 		const subscriptionDetails = await this.getPaymentDetails(machineInfo.serialnumber);
 		this.logger.info(
 			'smart-performance.service.getSubscriptionDataDetail',
@@ -300,9 +314,8 @@ export class SmartPerformanceService {
 	}
 
 	getExpiredStatus(releaseDate, lastItem, onSubscribed) {
-		let expiredDate;
 		const currentDate: any = new Date(lastItem.currentTime);
-		expiredDate = new Date(releaseDate);
+		const expiredDate = new Date(releaseDate);
 		if (expiredDate < currentDate) {
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.IsFreeFullFeatureEnabled,
