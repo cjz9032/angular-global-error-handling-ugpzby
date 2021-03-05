@@ -13,6 +13,7 @@ import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RoutePath } from 'src/assets/menu/menu';
+import { SecureMath } from '@lenovo/tan-client-bridge';
 
 interface IDisplayPage {
 	pageIdx: number;
@@ -197,7 +198,7 @@ export class PageSearchComponent implements OnInit, OnDestroy, AfterViewInit {
 		if (this.userInput) {
 			this.metricService.sendMetrics(metricEvent);
 			this.router.navigate([RoutePath.search], {
-				queryParams: { userInput: this.userInput },
+				queryParams: { userInput: this.userInput, hash: SecureMath.random() },
 			});
 		}
 	}
