@@ -5493,7 +5493,7 @@
 			"SystemInfoProcessorsType": "Tipo",
 			"SystemInfoWebBrowserBrowserVersion": "Versão do navegador",
 			"SystemInfoWebBrowserIsDefaultBrowser": "É o navegador padrão",
-			"UpdatedDate": "Atualizar data"
+			"UpdatedDate": "Data de atualização"
 		},
 		"startComponentSnapshot": "Começar a captura instantânea do {{component}}",
 		"updateSnapshotTooltip": "Atualizar a captura instantânea de todos os componentes de hardware e software com as informações mais recentes",
