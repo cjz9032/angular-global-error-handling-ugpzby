@@ -14819,6 +14819,8 @@ export class ExportResultsService {
 		return true;
 	}
 
+	// This method is being used as a palliative solution to avoid print non latin characters on generated pdf,
+	// because, for now, we only support english language
 	private containsNonLatinCodepoints(value: string): boolean {
 		return /[^\u0000-\u00ff]/.test(value);
 	}
