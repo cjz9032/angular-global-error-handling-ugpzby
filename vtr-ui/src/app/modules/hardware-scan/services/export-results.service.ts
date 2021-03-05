@@ -14311,10 +14311,12 @@ export class ExportResultsService {
 		const detailsInfo = details.filter((detail) => detail.index === '');
 
 		detailsInfo.forEach((detail) => {
-			detailsList.push([
-				this.translate.transform('hardwareScan.pluginTokens.' + detail.key),
-				detail.value,
-			]);
+			if (!this.containsNonLatinCodepoints(detail.value)) {
+				detailsList.push([
+					this.translate.transform('hardwareScan.pluginTokens.' + detail.key),
+					detail.value,
+				]);
+			}
 		});
 
 		return detailsList;
@@ -14418,10 +14420,16 @@ export class ExportResultsService {
 				currentIndex = resource.index;
 				resourceList.push([indexToken, currentIndex]);
 			}
-			resourceList.push([
-				this.translate.transform('hardwareScan.pluginTokens.' + resource.key),
-				resource.value,
-			]);
+
+			if (!this.containsNonLatinCodepoints(resource.value)) {
+				resourceList.push([
+					this.translate.transform('hardwareScan.pluginTokens.' + resource.key),
+					this.translate.transform(
+						'hardwareScan.pluginTokens.' + resource.value,
+						resource.value
+					),
+				]);
+			}
 		});
 
 		return resourceList;
@@ -14809,5 +14817,9 @@ export class ExportResultsService {
 			}
 		}
 		return true;
+	}
+
+	private containsNonLatinCodepoints(value: string): boolean {
+		return /[^\u0000-\u00ff]/.test(value);
 	}
 }
