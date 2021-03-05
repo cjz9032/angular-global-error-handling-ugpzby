@@ -13174,6 +13174,26 @@ export class ExportResultsService {
 		return HardwareScanTestResult[statusCode].toLowerCase() ?? 'fail';
 	}
 
+	private getStatusColorFromStatusCode(statusCode: HardwareScanTestResult) {
+		let RGB = [];
+		switch(statusCode) {
+			case HardwareScanTestResult.Pass:
+				RGB = [0, 150, 90];
+				break;
+			case HardwareScanTestResult.Fail:
+				RGB = [231, 76, 60];
+				break;
+			case HardwareScanTestResult.Attention:
+				RGB = [255, 126, 62];
+				break;
+			case HardwareScanTestResult.Cancelled:
+			case HardwareScanTestResult.Na:
+				RGB = [102, 116, 129];
+				break;
+		}
+		return RGB;
+	}
+
 	/**
 	 * Retrieve the css class which should be used in the module icon
 	 *
@@ -14617,18 +14637,28 @@ export class ExportResultsService {
 					this.statusIcon.has(data.cell.raw)
 				) {
 					const oldFillColor = doc.getFillColor();
-					doc.setFillColor(data.cell.styles.fillColor);
-					doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height, 'F');
-					doc.setFillColor(oldFillColor);
+                    doc.setFillColor(data.cell.styles.fillColor);
+                    doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height, 'F');
+                    doc.setFillColor(oldFillColor);
 
-					doc.addImage(
-						this.statusIcon.get(data.cell.raw),
-						'PNG',
-						data.cell.x + (data.cell.width - this.statusIconSize) / 2 - 1,
+					const rgb = this.getStatusColorFromStatusCode(data.cell.raw);
+					// Sets the color of text by status ([0] = Red, [1] = Green, [2] = Blue)
+					doc.setTextColor(rgb[0], rgb[1], rgb[2]);
+					const testResultText = this.translate.transform(
+						'hardwareScan.' + this.getStatusFromStatusCode(data.cell.raw)).toUpperCase();
+                    doc.setFontSize(9);
+					doc.text(testResultText,
+						data.cell.x + 2,
+						data.cell.y + 5);
+
+                    doc.addImage(
+                        this.statusIcon.get(data.cell.raw),
+                        'PNG',
+                        data.cell.x + (data.cell.width - this.statusIconSize) - 1,
 						data.cell.y + 1.5,
-						this.statusIconSize,
-						this.statusIconSize
-					);
+                        this.statusIconSize,
+                        this.statusIconSize
+                    );
 				}
 			},
 			body: [
