@@ -15,8 +15,8 @@ export class HardwareScanFeaturesService {
 
 	constructor(private scanLogService: ScanLogService, private logger: LoggerService) {}
 
-	public async startCheckFeatures() {
-		const checkExportFeature = this.checkExportLogAvailable().then((available) => {
+	public async startCheckFeatures(isRecover = false) {
+		const checkExportFeature = this.checkExportLogAvailable(isRecover).then((available) => {
 			this.exportLogAvailable = available;
 		});
 
@@ -26,16 +26,18 @@ export class HardwareScanFeaturesService {
 		});
 	}
 
-	private checkExportLogAvailable() {
+	private checkExportLogAvailable(isRecover: boolean) {
 		return new Promise<boolean>((resolve) => {
 			this.scanLogService
 				.getScanLog()
 				.then((response) => {
 					// Checking if there is actually data to be exported
 					if (
-						Array.isArray(response.modulesResults) &&
-						response.modulesResults.length &&
-						response.scanSummary !== null
+						(!isRecover &&
+							Array.isArray(response.modulesResults) &&
+							response.modulesResults.length &&
+							response.scanSummary !== null) ||
+						isRecover
 					) {
 						resolve(true);
 					}

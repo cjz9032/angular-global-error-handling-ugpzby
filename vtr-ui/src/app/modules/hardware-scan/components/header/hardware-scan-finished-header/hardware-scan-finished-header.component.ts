@@ -69,7 +69,9 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 			this.recoverResult = this.recoverBadSectorsService.getLastRecoverResultTitle();
 		}
 
-		this.featuresService.startCheckFeatures();
+		this.featuresService.startCheckFeatures(
+			this.headerType === HardwareScanFinishedHeaderType.RecoverBadSectors
+		);
 
 		this.configureSupportUrl(scanDate, finalResultCode);
 		this.configureContactusUrl();
