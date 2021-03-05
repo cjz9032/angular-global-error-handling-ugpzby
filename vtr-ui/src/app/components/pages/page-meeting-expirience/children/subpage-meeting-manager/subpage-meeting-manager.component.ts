@@ -662,7 +662,13 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	}
 
 	updateMicrophoneHeader() {
-		if (!this.microphoneProperties.available) {
+		// microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)
+		if (!(this.microphoneProperties.available
+			  && ((this.microphoneProperties?.currentMode
+				&& this.microphoneProperties?.currentMode!='NotSupported'
+				&& !this.isDTmachine
+				&& !this.isAudioVendorSupported)
+			  || this.isAudioVendorSupported))) {
 			this.headerMenuItems = this.commonService.removeObjFrom(
 				this.headerMenuItems,
 				'microphone'
