@@ -81,7 +81,14 @@ export class SystemUpdateService {
 	 */
 	public getMostRecentUpdateInfo() {
 		if (this.systemUpdateBridge) {
-			return this.systemUpdateBridge.getMostRecentUpdateInfo();
+			return this.systemUpdateBridge.getMostRecentUpdateInfo()
+			.then((result)=>{
+				return result;
+			})
+			.catch((error) => {
+				this.loggerService.error('System update getMostRecentUpdateInfo: ', error.message);
+				return undefined;
+			});
 		}
 		return undefined;
 	}
