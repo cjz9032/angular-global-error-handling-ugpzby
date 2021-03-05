@@ -67,11 +67,13 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 			finalResultCode = this.getLastFinalResultCode();
 		} else if (this.headerType === HardwareScanFinishedHeaderType.RecoverBadSectors) {
 			this.recoverResult = this.recoverBadSectorsService.getLastRecoverResultTitle();
+			this.featuresService.setExportLogAsAvailableForRecover();
 		}
 
-		this.featuresService.startCheckFeatures(
-			this.headerType === HardwareScanFinishedHeaderType.RecoverBadSectors
-		);
+		// Avoid override recover's action
+		if (!(this.headerType === HardwareScanFinishedHeaderType.RecoverBadSectors)) {
+			this.featuresService.startCheckFeatures();
+		}
 
 		this.configureSupportUrl(scanDate, finalResultCode);
 		this.configureContactusUrl();
