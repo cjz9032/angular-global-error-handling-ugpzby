@@ -36,7 +36,6 @@
 									(onClick)="clickInstallButton()"
 									[tooltipText]="buttonLabel"
 									metricsEvent="FeatureClick"
-									metricsParent="CreatorCentre"
 									metricsItem="{{buttonMetricsItem}}"
 									[isFullWidth]="true"
 									linkId="{{buttonLinkId}}"
@@ -79,7 +78,6 @@
 									vtrMetrics
 									metricsItem="{{item.metricsItem}}"
 									metricsEvent="FeatureClick"
-									metricsParent="CreatorCentre"
 									href="javascript:void(0)"
 									(click)="openScreenshotDialog(item.url)">
 									<img class="images"
@@ -105,7 +103,6 @@
 								vtrMetrics
 								metricsItem="RestoreProfileLearnmore"
 								metricsEvent="FeatureClick"
-								metricsParent="CreatorCentre"
 								href="javascript:void(0)"
 								role="button"
 								(click)="onRestoreProfileClick()">{{'smb.creatorCentre.colorCalibration.learnMore' | translate}}</a>
@@ -123,7 +120,6 @@
 			<div class="btn-modal-close">
 				<vtr-ui-close-button linkId="productivity-CreatorCentre-ColorCalibration-modal-close"
 					metricsItem="ColorCalibrationModalCloseIcon"
-					[metricsParent]="'Productivity.CreatorCentre.ColorCalibration'"
 					(clickClose)="closeRestoreProfileModal()"></vtr-ui-close-button>
 			</div>
 			<div>
@@ -166,7 +162,6 @@
 		<div class="btn-modal-close">
 			<vtr-ui-close-button linkId="color-calibration-screenshot-dialog-close"
 				metricsItem="ColorCalibrationScreenshotCloseButton"
-				[metricsParent]="'CreatorCentre'"
 				(clickClose)="closeScreenshotDialog()"></vtr-ui-close-button>
 		</div>
 	</div>
