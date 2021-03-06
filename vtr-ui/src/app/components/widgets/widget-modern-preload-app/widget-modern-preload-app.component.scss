@@ -92,6 +92,25 @@
 
 				.progress-box {
 					margin-bottom: 0.5rem;
+
+					::ng-deep .progress {
+												
+						@media #{$high-contrast} {
+							border: 0.1rem solid $light;
+							background: $dark;
+							.progress-bar {
+								background: $light;
+							}
+						}
+			
+						@media #{$black-on-white} {
+							border: 0.1rem solid $dark;
+							background: $light;
+							.progress-bar {
+								background: $dark;
+							}
+						}
+					}
 				}
 			}
 

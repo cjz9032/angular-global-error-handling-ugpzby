@@ -62,6 +62,14 @@
 			outline: 0.1rem solid $light;
 		}
 	}
+
+	@media #{$high-contrast} {
+		background-color: $high-contrast-black-cyan;
+	}
+
+	@media #{$black-on-white} {
+		background-color: $high-contrast-white-dark-magenta;
+	}
 }
 
 .loading-page {
