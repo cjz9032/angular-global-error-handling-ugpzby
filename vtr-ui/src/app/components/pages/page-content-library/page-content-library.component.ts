@@ -23,12 +23,8 @@ export class PageContentLibraryComponent implements OnInit, OnDestroy {
   SupportContentStatus = SupportContentStatus;
   title = 'common.menu.contentLibrary';
   offlineConnection = 'offline-connection';
-  emptyArticles = {
-    left: [],
-    right: [],
-  };
-  backupContentArticles = cloneDeep(this.emptyArticles);
-  articles = cloneDeep(this.emptyArticles);
+  backupContentArticles = [];
+  articles = [];
   articlesType = '';
   articleCategories: any = [];
   isCategoryArticlesShow = false;
@@ -94,7 +90,7 @@ export class PageContentLibraryComponent implements OnInit, OnDestroy {
               const retryInterval = setInterval(() => {
                 if (
                   this.articleCategories.length > 0 &&
-                  this.articles.left.length > 0
+                  this.articles.length > 0
                 ) {
                   clearInterval(retryInterval);
                   return;
@@ -102,7 +98,7 @@ export class PageContentLibraryComponent implements OnInit, OnDestroy {
                 if (this.articleCategories.length === 0) {
                   this.fetchCMSArticleCategory();
                 }
-                if (this.articles.left.length === 0) {
+                if (this.articles.length === 0) {
                   this.fetchCMSContents();
                 }
               }, 2500);
@@ -140,7 +136,7 @@ export class PageContentLibraryComponent implements OnInit, OnDestroy {
                 .replace(')', '%29');
             }
           });
-          this.sliceArticles(response);
+          this.articles = response;
           this.backupContentArticles = cloneDeep(this.articles);
           this.articlesType = SupportContentStatus.Content;
           const msg = `Performance: Content library page get content articles, ${contentUseTime}ms`;
@@ -148,7 +144,7 @@ export class PageContentLibraryComponent implements OnInit, OnDestroy {
         } else {
           const msg = `Performance: Content library page not have this Language content articles, ${contentUseTime}ms`;
           this.loggerService.info(msg);
-          this.sliceArticles([]);
+          this.articles = [];
           this.articlesType = SupportContentStatus.Empty;
         }
       },
@@ -207,7 +203,7 @@ export class PageContentLibraryComponent implements OnInit, OnDestroy {
     clearTimeout(this.getArticlesTimeout);
     this.isCategoryArticlesShow = false;
     this.selectedCategoryId = '';
-    if (this.backupContentArticles.left.length > 0) {
+    if (this.backupContentArticles.length > 0) {
       this.articlesType = SupportContentStatus.Content;
       this.articles = cloneDeep(this.backupContentArticles);
     } else {
@@ -235,10 +231,10 @@ export class PageContentLibraryComponent implements OnInit, OnDestroy {
                 .replace(')', '%29');
             }
           });
-          this.sliceArticles(response);
+          this.articles = response;
           this.articlesType = SupportContentStatus.Articles;
         } else {
-          this.sliceArticles([]);
+          this.articles = [];
           this.articlesType = SupportContentStatus.Empty;
         }
       },
@@ -252,15 +248,5 @@ export class PageContentLibraryComponent implements OnInit, OnDestroy {
     );
   }
 
-  sliceArticles(allArticles: any) {
-    this.articles = cloneDeep(this.emptyArticles);
-    allArticles.forEach((article, index) => {
-      if (index % 2 === 0) {
-        this.articles.left.push(article);
-      } else {
-        this.articles.right.push(article);
-      }
-    });
-  }
 
 }
