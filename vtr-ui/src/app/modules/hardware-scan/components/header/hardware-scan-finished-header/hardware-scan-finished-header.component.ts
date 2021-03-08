@@ -71,7 +71,7 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 		}
 
 		// Avoid override recover's action
-		if (!(this.headerType === HardwareScanFinishedHeaderType.RecoverBadSectors)) {
+		if (this.headerType !== HardwareScanFinishedHeaderType.RecoverBadSectors) {
 			this.featuresService.startCheckFeatures();
 		}
 
