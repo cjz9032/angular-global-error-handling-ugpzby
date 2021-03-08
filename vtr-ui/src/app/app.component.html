@@ -4,6 +4,7 @@
 	attr.aria-label="{{ pageTitle | translate }}"
 	id="main-wrapper"
 	role="document"
+	cdkTrapFocus
 	(dragstart)="onDragStart($event)"
 	(drop)="onDrop($event)">
 	<vtr-menu-main [hidden]="!isMachineInfoLoaded || deviceService.isAndroid"
