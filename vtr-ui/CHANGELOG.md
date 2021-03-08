@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.43](https://bitbucket.tc.lenovo.com///compare/v1.10.42...v1.10.43) (2021-03-08)
+
+
+### Bug Fixes
+
+* fix toggle switch disabled style ([0ad35a4](https://bitbucket.tc.lenovo.com///commit/0ad35a4bf321ad6961935b9dda09f1632101120a))
+* **ModernPreload:** VAN-25453 fix progress bar and close button not show in high contrast ([84bcfe6](https://bitbucket.tc.lenovo.com///commit/84bcfe68cb6299c9111ceaf5a3b5e33b269b61ce))
+* **SystemUpdate:** VAN-26456 remove test code ([0c1779f](https://bitbucket.tc.lenovo.com///commit/0c1779f511f1a5fd8e5bd9c74e8ff80ac38cbd66))
+
 ### [1.10.42](https://bitbucket.tc.lenovo.com///compare/v1.10.41...v1.10.42) (2021-03-05)
 
 ### [1.10.41](https://bitbucket.tc.lenovo.com///compare/v1.10.40...v1.10.41) (2021-03-04)
