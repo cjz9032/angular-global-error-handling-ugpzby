@@ -2,51 +2,51 @@
 
 .is-gaming {
 	$mat-van-gaming-theme-background: (
-		selected-button: $light,
-		button-scale: 0.96,
-		// primary button
-		primary-button: $blueFill,
-		// primary button background color
-		primary-hover-button: $blueHover,
-		// primary button background color
-		primary-active-button: $blueHover,
-		// primary button active background color
-		// primary/secondary/caution button
-		disabled-button: rgba($blueFill, 0.4),
-		// disabled button background
+		high-contrast-white-dark-magenta: #370070,
+		high-contrast-black-cyan: #00ebff,
+		high-contrast-black-yellow: #ffff00,
+		high-contrast-white-blue: #0000a2,
+		high-contrast-black-disabled-green: #30f42c,
+		high-contrast-white-disabled-maroon: #610000,
+		toggle: (
+			bg-on: linear-gradient(135deg, $green_darker 0%, $green-light 100%),
+			bg-on-thumb: $light,
+			bg-on-pressed: $green-light,
+			bg-on-hover: $green_darker,
+			bg-off: $grey_light,
+			bg-off-thumb: $shade_blue,
+			bg-disabled: $shade_blue,
+		),
 	);
 
 	$mat-van-gaming-theme-foreground: (
-		base: black,
-		disabled-button: rgba($blueFill, 0.4),
-		// disabled button background color
-		disabled-text: rgba($gaming_lightest, 0.4),
-		// disabled button text color
-		// button border
-		primary-border: none,
-		// primary button border
-		disabled-border: none,
-		// disabled button border
-		// button other config
-		primary-text: $light,
-		// primary button text color
-		outline-color: $menu_hover,
-		// button and link focus outline color
-		outline-style: '',
-		// button focus outline content: none--no outline, ''--has outline
-		// link button
-		link-button-color: $blueFill,
-		// link button text color
-		link-button-decoration: underline,
-		// link button text decoration style
-		link-button-hover: $blueHover,
-		// link button hover text color
-		link-button-outline: none,
-		// link button outline text color
-		link-button-active: $blueHover,
-		// link button active text color
-		link-button-disable: rgba($blueFill, 0.4),
-		// link disabled text color
+		toggle: (
+			color-border-off: $grey_dark,
+			style-shadow: (
+				0px -0.15px 0px 2px $shade_extralight,
+				-0.15px 0px 0px 3.7px $menu_hover,
+			),
+			style-shadow-high-contrast-white: (
+				0px -0.15px 0px 2px $light,
+				-0.15px 0px 0px 3.7px $dark,
+			),
+			style-shadow-high-contrast-black: (
+				0px -0.15px 0px 2px $dark,
+				-0.15px 0px 0px 3.7px $light,
+			),
+		),
+	);
+	$van-ui-layout: (
+		toggle: (
+			layout-toggle-height: 2.4rem,
+			layout-bar-border-radius: 2rem,
+			layout-bar-width: 4.6rem,
+			layout-bar-height: 2rem,
+			layout-thumb-size: 1.4rem,
+			layout-spacing: 0.8rem,
+			layout-border-width: 0.1rem,
+			layout-ripple-radius: 0,
+		),
 	);
 	$van-theme: (
 		100: $blueHover,
@@ -71,6 +71,7 @@
 	);
 	@include angular-material-typography($van-typography);
 	@include angular-material-color($van-ui-gaming-theme);
+	@include angular-material-layout($van-ui-layout);
 
 	.mat-dialog-container {
 		background-color: $light;
@@ -78,5 +79,13 @@
 		border-radius: 0.6rem !important;
 		padding: 0;
 		overflow-x: hidden;
+	}
+
+	.mat-slide-toggle.mat-disabled .mat-slide-toggle-bar {
+		background-color: $grey_light;
+	}
+
+	.mat-slide-toggle.mat-checked.mat-disabled .mat-slide-toggle-thumb {
+		background-color: $shade_blue;
 	}
 }
