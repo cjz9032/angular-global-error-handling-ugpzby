@@ -8,6 +8,8 @@
 						[subTitle]="'smartPerformance.performanceandSecurityCheckSubTitle' |translate"
 						headerTitleId="smart-performance-check-title"
 						subTitleId="smart-performance-check-sub-title"
+						[canShowOfflineText]="true"
+						[isOnline]="isOnline"
 						[contentWrap]="false">
 						<div class="d-flex">
 							<vtr-ui-button (onClick)="scanNow()"

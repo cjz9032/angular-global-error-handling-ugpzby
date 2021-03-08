@@ -2558,7 +2558,7 @@
 		"title": "Smart Performance",
 		"back": "VISSZA",
 		"performanceandSecurityCheckTitle": "Teljesítmény és biztonsági ellenőrzés",
-		"performanceandSecurityCheckSubTitle": "Diagnosztizáljuk és oldjuk meg a számítógépe teljesítménnyel és biztonsággal kapcsolatos problémáit",
+		"performanceandSecurityCheckSubTitle": "Diagnosztizáljuk és oldjuk meg a számítógépe teljesítménnyel és biztonsággal kapcsolatos problémáit.",
 		"auto": "Automata",
 		"manual": "Kézi",
 		"performanceOfflineText": "A Vizsgálat funkció akkor válik elérhetővé, ha a számítógépen van aktív internetkapcsolat.",

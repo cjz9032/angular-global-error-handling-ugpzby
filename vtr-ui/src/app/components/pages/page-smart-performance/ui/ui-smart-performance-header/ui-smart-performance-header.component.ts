@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SPHeaderImageType } from 'src/app/enums/smart-performance.enum';
 
 @Component({
@@ -6,7 +6,7 @@ import { SPHeaderImageType } from 'src/app/enums/smart-performance.enum';
 	templateUrl: './ui-smart-performance-header.component.html',
 	styleUrls: ['./ui-smart-performance-header.component.scss'],
 })
-export class UiSmartPerformanceHeaderComponent implements OnInit {
+export class UiSmartPerformanceHeaderComponent {
 	@Input() image: SPHeaderImageType = SPHeaderImageType.Normal;
 	@Input() headerTitle = '';
 	@Input() subTitle = '';
@@ -15,6 +15,8 @@ export class UiSmartPerformanceHeaderComponent implements OnInit {
 	@Input() contentWrap = false;
 	@Input() titleWrap = false;
 	@Input() bottomRadius = false;
+	@Input() isOnline = true;
+	@Input() canShowOfflineText = false;
 
 	allImages = {
 		[SPHeaderImageType.Normal]: 'sp-pc-normal.png',
@@ -23,5 +25,4 @@ export class UiSmartPerformanceHeaderComponent implements OnInit {
 		[SPHeaderImageType.Well]: 'sp-pc-well.png',
 	};
 
-	ngOnInit(): void {}
 }

@@ -7,7 +7,10 @@
 	<div class="main-container" [class.is-content-wrap]="contentWrap">
 		<div class="main-header" [class.title-wrap]="titleWrap">
 			<h1 [id]="headerTitleId" [innerHTML]="headerTitle"></h1>
-			<h3 [id]="subTitleId" [innerHTML]="subTitle"></h3>
+			<h3 [id]="subTitleId" *ngIf="!isOnline && canShowOfflineText ; else onlineSubTitle" [innerHTML]="subTitle + ' ' + ('smartPerformance.performanceOfflineText' | translate)"></h3>
+			<ng-template #onlineSubTitle>
+				<h3 [id]="subTitleId" [innerHTML]="subTitle"></h3>
+			</ng-template>
 		</div>
 		<div class="smart-performance-header-content">
 			<ng-content></ng-content>

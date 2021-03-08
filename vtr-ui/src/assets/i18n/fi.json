@@ -2558,7 +2558,7 @@
 		"title": "Smart Performance",
 		"back": "EDELLINEN",
 		"performanceandSecurityCheckTitle": "Suorituskyvyn ja suojauksen tarkistus",
-		"performanceandSecurityCheckSubTitle": "Määritetään ja ratkaistaan tietokoneen suorituskykyyn ja suojaukseen liittyvät ongelmat",
+		"performanceandSecurityCheckSubTitle": "Määritetään ja ratkaistaan tietokoneen suorituskykyyn ja suojaukseen liittyvät ongelmat.",
 		"auto": "Automaattinen",
 		"manual": "Manuaalinen",
 		"performanceOfflineText": "Tarkistustoiminto on käytettävissä, kun tietokoneesi on yhdistetty Internetiin.",
