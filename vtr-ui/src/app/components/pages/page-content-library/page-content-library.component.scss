@@ -328,6 +328,15 @@
 			}
 		}
 
+		.article-item-list {
+			width: calc(100% + 2.4rem);
+			margin-left: -1.2rem;
+
+			.article-item-card {
+				padding: 0 1.2rem;
+			}
+		}
+
 		.card-right {
 			padding-left: 1.2rem;
 			padding-right: 0;

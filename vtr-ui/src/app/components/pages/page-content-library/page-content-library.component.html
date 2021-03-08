@@ -79,25 +79,14 @@
 				</div>
 			</div>
 
-			<div class="row"
+			<div class="row article-item-list"
 				*ngIf="articlesType !== 'loading'">
-				<div class="col-md-6 pb-24 card-left"
-					*ngIf="articles.left.length > 0">
-					<vtr-container-article [items]="articles.left"
-						*ngIf="isOnline"
-						[startIndex]="1"
-						[indexTimes]="2"
-						[type]="articlesType">
-					</vtr-container-article>
-				</div>
-				<div class="col-md-6 pb-24 card-right"
-					*ngIf="articles.right.length > 0">
-					<vtr-container-article [items]="articles.right"
-						*ngIf="isOnline"
-						[startIndex]="2"
-						[indexTimes]="2"
-						[type]="articlesType">
-					</vtr-container-article>
+				<div class="col-12 col-md-6 col-xl-4 article-item-card"
+					*ngFor="let item of articles, let i = index">
+					<vtr-ui-article-item [item]="item"
+						[articleType]="articlesType"
+						[index]="i + 1"
+						[tabIndex]="i + 1"></vtr-ui-article-item>
 				</div>
 			</div>
 			<div class="spinner-content w-100 text-center"
