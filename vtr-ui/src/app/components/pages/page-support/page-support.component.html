@@ -37,8 +37,13 @@
 						[href]="warrantyService.warrantyUrl"
 						target="_blank"
 						role="link"
-						class="warranty-not-found-card">
-						<div class="label text-ellipsis">{{'warranty.makeSureNeedCoverage' | translate}}</div>
+						class="warranty-not-found-card"
+						id="warranty-make-sure-need-coverage"
+						vtrMetrics
+						metricsItem="WarrantyMakeSureNeedCoverageLink"
+						metricsEvent="FeatureClick">
+						<div class="label text-three-ellipsis"
+							[title]="'warranty.makeSureNeedCoverage' | translate">{{'warranty.makeSureNeedCoverage' | translate}}</div>
 					</a>
 				</div>
 				<div class="col col-12 px-0 pt-0 pb-24"
