@@ -774,7 +774,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	getWarrantyInfo() {
-		if (this.warrantyService.warrantyData.isAvailable) {
+		if (this.warrantyService.hasFetchWarranty) {
 			this.setWarrantyInfo(this.warrantyService.warrantyData);
 		}
 	}
