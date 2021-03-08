@@ -170,7 +170,8 @@
 						[isLastChild]="true"
 						[leftIcon]="['icomoon', 'icomoon-smart-face']"
 						[switchId]="'productivity-meeting-appearance'"
-						(customButtonClick)="smartAppearanceButtonClick()">
+						(customButtonClick)="smartAppearanceButtonClick()"
+						[disabledAll]="!commonService.isOnline && !isLSAInstalled">
 					</vtr-ui-row-switch>
 				</vtr-container-collapsible>
 			</div>
@@ -212,7 +213,8 @@
                     metricsEvent="FeatureClick"
                     metricsParent="Page.MeetingManager"
                     [metricsItem]="isLSAInstalled ? 'SmartAppearanceBannerLaunchClick' : 'SmartAppearanceBannerDownloadClick'"
-					aria-labelledby="productivity-meeting-appearance-banner-title">
+					aria-labelledby="productivity-meeting-appearance-banner-title"
+					[disabled]="!commonService.isOnline && !isLSAInstalled">
 					{{(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.banner.download') | translate | uppercase}}
 				</button>
 			</div>
