@@ -14,13 +14,13 @@
 				[label]="OkText | translate"></vtr-ui-button>
 		</div>
 		<div class="ml-0 mr-4 pl-0">
-			<button 
-				id="{{cancelButtonId}}" 
+			<button
+				id="{{cancelButtonId}}"
 				class="btn btn-default modal-button-cancel"
 				(click)="onCancelClick()"
-				vtrMetrics 
+				vtrMetrics
 				metricsParent="Security.WifiSecurity"
-				metricsItem="cancelOpenLocation" 
+				metricsItem="cancelOpenLocation"
 				metricsEvent="featureClick"
 				(keydown)="keydownFn($event)"
 				tabindex="0">
@@ -28,7 +28,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="btn-modal-close top-0">
+	<div class="btn-modal-close">
 		<button
 			mat-dialog-close
 			class="position-relative float-right closeButton"
