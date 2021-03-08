@@ -14607,6 +14607,10 @@ export class ExportResultsService {
 			startY: startY + 3,
 			columnStyles: {
 				0: { cellWidth: this.firstCellWidth },
+				1: { fontStyle: 'bold' },
+				2: { fontStyle: 'bold' },
+				3: { fontStyle: 'bold' },
+				4: { fontStyle: 'bold' },
 			},
 			head: [
 				[
