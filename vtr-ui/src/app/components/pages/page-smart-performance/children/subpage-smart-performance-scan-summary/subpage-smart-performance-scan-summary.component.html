@@ -10,6 +10,7 @@
 							[subTitle]="'smartPerformance.scanCompletePage.summaryDetails' | translate"
 							headerTitleId="smart-performance-scan-summary-title"
 							[bottomRadius]="true"
+							[isOnline]="isOnline"
 							subTitleId="smart-performance-scan-summary-desc"
 							[contentWrap]="true">
 							<vtr-ui-smart-performance-rating [leftAnimator]="leftAnimator"
@@ -42,6 +43,8 @@
 							headerTitleId="smart-performance-scan-summary-title"
 							subTitleId="smart-performance-scan-summary-desc"
 							[bottomRadius]="true"
+							[isOnline]="isOnline"
+							[canShowOfflineText]="smartPerformanceService.scanningState === ScanningState.NotStart"
 							[contentWrap]="true">
 							<vtr-ui-smart-performance-rating [leftAnimator]="isScanningFinished(smartPerformanceService.scanningState) ? leftAnimator : '100%'"
 								[rating]="rating"
