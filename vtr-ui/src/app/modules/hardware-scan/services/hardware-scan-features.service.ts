@@ -15,6 +15,10 @@ export class HardwareScanFeaturesService {
 
 	constructor(private scanLogService: ScanLogService, private logger: LoggerService) {}
 
+	public setExportLogAsAvailableForRecover() {
+		this.exportLogAvailable = true;
+	}
+
 	public async startCheckFeatures() {
 		const checkExportFeature = this.checkExportLogAvailable().then((available) => {
 			this.exportLogAvailable = available;
