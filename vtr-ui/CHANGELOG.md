@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.44](https://bitbucket.tc.lenovo.com///compare/v1.10.43...v1.10.44) (2021-03-09)
+
+
+### Bug Fixes
+
+* **SystemUpdate:** VAN-26456 fix install failed metric not send in tr ([1707ce5](https://bitbucket.tc.lenovo.com///commit/1707ce5035bb6c9157c6321e0edaabd0e613216c))
+* add cdkTrapFocus and dialog restore focus config ([82892e9](https://bitbucket.tc.lenovo.com///commit/82892e9e89669c5b483bd4d2a343f984e4a78f4f))
+* **smb:** diable download smart appearance btn when offline ([485d59b](https://bitbucket.tc.lenovo.com///commit/485d59b9251cd451eb3b57afacc332f41861fe48))
+* **SP:** VAN-25277 sp offline show a text. ([95c961c](https://bitbucket.tc.lenovo.com///commit/95c961c73bc97c66bde36f363261602fe7f699b7))
+* **warranty:** back to dashboard show current warranty info ([43af1a9](https://bitbucket.tc.lenovo.com///commit/43af1a99c0b0b5f72a44a71e88fc2d6e0de07258))
+* **warranty:** VAN-26713 warranty not found card show normally ([6a518de](https://bitbucket.tc.lenovo.com///commit/6a518de6301d02964e9b571dab734216ab5718f5))
+
 ### [1.10.43](https://bitbucket.tc.lenovo.com///compare/v1.10.42...v1.10.43) (2021-03-08)
 
 
