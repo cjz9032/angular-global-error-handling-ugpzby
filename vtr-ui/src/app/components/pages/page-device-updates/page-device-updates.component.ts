@@ -933,7 +933,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		updateList: Array<AvailableUpdateDetail>,
 		updateStatusArray: Array<string>
 	) {
-		const filterArray = updateStatusArray.map((item) => item.toLocaleLowerCase());
+		const filterArray = updateStatusArray.map((item) => item.toLowerCase());
 		const updates = updateList.filter(
 			(value: AvailableUpdateDetail) =>
 				filterArray.indexOf(value.installationStatus.toLowerCase()) > -1
