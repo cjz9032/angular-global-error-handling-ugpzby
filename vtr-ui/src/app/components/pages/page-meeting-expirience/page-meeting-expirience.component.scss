@@ -2,83 +2,85 @@
 
 :host ::ng-deep {
 	.vtr-subpage-left-column {
-				padding-left: $padding_side;;
-				padding-right: 2.4rem;
-				background-color: $shade_extralight;
-				@media #{$breakpoint_xl} {
-					padding-left: $padding_side;
-				}
-				@media #{$breakpoint_lg} {
-					padding-left: $padding_side;
-					padding-right: $padding_side;
-					padding-bottom: 0rem;
-				}
-				@media #{$breakpoint_sm} {
-					padding-bottom: 0rem;
-				}
-				@media #{$breakpoint_md} {
-					padding-bottom: 0rem;
-				}
-				@media #{$white-on-black} {
-					border-left: 0.1rem solid $light;
-					@media #{$breakpoint_lg} {
-						border-right: 0.1rem solid $light;
-					}
-				}
-				@media #{$black-on-white} {
-					border-left: 0.1rem solid $dark;
-					@media #{$breakpoint_lg} {
-						border-right: 0.1rem solid $dark;
-					}
-				}
-            }
-    .vtr-subpage-right-column {
-				padding-right: $padding_side;
-				padding-left: 2.4rem;
-				background-color: $light;
-				@media #{$breakpoint_xl} {
-					padding-right: $padding_side;
-				}
-				@media #{$breakpoint_lg} {
-					padding-left: $padding_side;
-					padding-right: $padding_side;
-					padding-bottom: $padding_side_sm;
-					padding-top: 4rem;
-				}
-				@media #{$breakpoint_lg} {
-					// padding-top: 2rem;
-				}
-				@media #{$breakpoint_lg} {
-					background-color: $shade_extralight;
-				}
-				@media #{$breakpoint_md} {
-					background-color: $shade_extralight;
-				}
-				@media #{$breakpoint_sm} {
-					background-color: $shade_extralight;
-				}
-				.vtr-page-column-shift-up {
-					@media #{$breakpoint_sm} {
-						margin-top: -4rem;
-					}
-					@media #{$breakpoint_md} {
-						margin-top: -4rem;
-					}
-					@media #{$breakpoint_lg} {
-						margin-top: -4rem;
-					}
-				}
-				@media #{$white-on-black} {
-					border-right: 0.1rem solid $light;
-					@media #{$breakpoint_lg} {
-						border-left: 0.1rem solid $light;
-					}
-				}
-				@media #{$black-on-white} {
-					border-right: 0.1rem solid $dark;
-					@media #{$breakpoint_lg} {
-						border-left: 0.1rem solid $dark;
-					}
-				}
+		padding-left: $padding_side;
+		padding-right: 2.4rem;
+		background-color: $shade_extralight;
+		@media #{$breakpoint_xl} {
+			padding-left: $padding_side;
+		}
+		@media #{$breakpoint_lg} {
+			padding-left: $padding_side;
+			padding-right: $padding_side;
+			padding-bottom: 0rem;
+		}
+		@media #{$breakpoint_sm} {
+			padding-bottom: 0rem;
+		}
+		@media #{$breakpoint_md} {
+			padding-bottom: 0rem;
+		}
+		@media #{$white-on-black} {
+			border-left: 0.1rem solid $light;
+			@media #{$breakpoint_lg} {
+				border-right: 0.1rem solid $light;
 			}
+		}
+		@media #{$black-on-white} {
+			border-left: 0.1rem solid $dark;
+			@media #{$breakpoint_lg} {
+				border-right: 0.1rem solid $dark;
+			}
+		}
+	}
+	.vtr-subpage-right-column {
+		padding-right: $padding_side;
+		padding-left: 2.4rem;
+		background-color: $light;
+		@media #{$breakpoint_xl} {
+			padding-right: $padding_side;
+		}
+		@media #{$breakpoint_lg} {
+			padding-left: $padding_side;
+			padding-right: $padding_side;
+			padding-bottom: $padding_side_sm;
+		}
+		@media #{$breakpoint_lg} {
+			// padding-top: 2rem;
+		}
+		@media #{$breakpoint_lg} {
+			background-color: $shade_extralight;
+			margin-top: -2rem;
+		}
+		@media #{$breakpoint_md} {
+			background-color: $shade_extralight;
+			margin-top: -2rem;
+		}
+		@media #{$breakpoint_sm} {
+			background-color: $shade_extralight;
+			margin-top: -2rem;
+		}
+		.vtr-page-column-shift-up {
+			@media #{$breakpoint_sm} {
+				margin-top: -4rem;
+			}
+			@media #{$breakpoint_md} {
+				margin-top: -4rem;
+			}
+			@media #{$breakpoint_lg} {
+				margin-top: -4rem;
+			}
+		}
+		@media #{$white-on-black} {
+			border-right: 0.1rem solid $light;
+			@media #{$breakpoint_lg} {
+				border-left: 0.1rem solid $light;
+			}
+		}
+		@media #{$black-on-white} {
+			border-right: 0.1rem solid $dark;
+			@media #{$breakpoint_lg} {
+				border-left: 0.1rem solid $dark;
+			}
+		}
+	}
 }
