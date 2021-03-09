@@ -6,6 +6,7 @@ import { OutsideclickDirective } from 'src/app/directives/outsideclick.directive
 import { TranslateDirective } from 'src/app/directives/translate.directive';
 import { UiDropdownNavigate } from 'src/app/directives/ui-dropdown-directive/ui-dropdown-navigate.directive';
 import { AutofocusDirective } from '../../directives/ui-autofocus-directive/autofocus.directive';
+import { DisabledDirective } from 'src/app/directives/disabled.directive';
 
 @NgModule({
 	declarations: [
@@ -15,6 +16,7 @@ import { AutofocusDirective } from '../../directives/ui-autofocus-directive/auto
 		LinkStatusDirective,
 		UiDropdownNavigate,
 		AutofocusDirective,
+		DisabledDirective,
 	],
 	exports: [
 		AppEventDirective,
@@ -23,8 +25,9 @@ import { AutofocusDirective } from '../../directives/ui-autofocus-directive/auto
 		LinkStatusDirective,
 		UiDropdownNavigate,
 		AutofocusDirective,
+		DisabledDirective
 	],
 	imports: [CommonModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class CommonDirectiveModule {}
+export class CommonDirectiveModule { }

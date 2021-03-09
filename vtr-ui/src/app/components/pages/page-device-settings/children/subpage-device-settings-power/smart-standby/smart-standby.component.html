@@ -30,6 +30,7 @@
 									</h5>
 
 									<vtr-ui-rounded-rectangle-custom-radio-list
+										[isDisabled]="!smartStandby.isEnabled"
 										[groupName]="'smart-standby-schedule-computer-mode-radio-group'"
 										[radioDetails]="scheduleComputerModesUIModel"
 										(selectionChange)="onCheckboxClicked($event)">

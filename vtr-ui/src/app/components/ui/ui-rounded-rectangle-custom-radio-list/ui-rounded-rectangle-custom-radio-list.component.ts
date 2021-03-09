@@ -27,6 +27,8 @@ import { UiRoundedRectangleRadioModel } from './ui-rounded-rectangle-radio-list.
 	styleUrls: ['./ui-rounded-rectangle-custom-radio-list.component.scss'],
 })
 export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnChanges {
+
+	@Input() isDisabled = false;
 	@Input() groupName: string;
 	@Input() isVertical = false;
 	@Input() sendMetrics = true;
@@ -45,9 +47,9 @@ export class UiRoundedRectangleCustomRadioListComponent implements OnInit, OnCha
 		logger: LoggerService,
 		private metrics: MetricService,
 		private activatedRoute: ActivatedRoute
-	) {}
+	) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	ngOnChanges(changes: SimpleChanges) {
 		if (changes.radioDetails) {
