@@ -155,7 +155,7 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 		const modalRef = this.dialog.open(ModalUpdateChangeLogComponent, {
 			autoFocus: true,
 			hasBackdrop: true,
-			disableClose: true,
+			disableClose: false,
 			panelClass: 'update-read-more-modal-size',
 		});
 		modalRef.componentInstance.url = this.readMeUrl;
