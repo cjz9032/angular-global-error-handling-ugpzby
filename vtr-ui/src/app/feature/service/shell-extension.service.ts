@@ -2,83 +2,101 @@ import { Injectable } from '@angular/core';
 import { attempt } from 'lodash';
 
 import { CancelHandler } from '../types/shell-extension';
-
-
-// tslint:disable-next-line: prefer-const
-let vantageShellExtension: any;
-
 @Injectable({
 	providedIn: 'root',
 })
 export class ShellExtensionService {
-	async sendContract(
+	sendContract(
 		plainObject: any,
 		callback?: (res: any) => void,
 		cancelHandler?: CancelHandler
 	): Promise<any> {
-		const client = new vantageShellExtension.VantageRpcClientEx();
 		if (plainObject.payload && typeof plainObject.payload !== 'string') {
 			plainObject.payload = attempt(JSON.stringify, plainObject.payload);
 		}
-		client.onprogress = (progress: any) => {
-			if (callback) {
-				const responseObject = attempt(JSON.parse, progress);
-				if (responseObject.payload) {
-					responseObject.payload = attempt(JSON.parse, responseObject.payload);
+
+		return new Promise((resolve, reject) => {
+			const client = new (window as any).VantageShellExtension.VantageRpcClientEx();
+			client.onprogress = (progress: any) => {
+				try {
+					if (callback) {
+						const responseObject = this.safeJsonParse(progress);
+						if (responseObject.payload) {
+							responseObject.payload = this.safeJsonParse(responseObject.payload);
+						}
+						callback(responseObject);
+					}
+				} catch (exception) {
+					//do nothing
 				}
-				callback(responseObject);
-			}
-		};
-
-		client.oncomplete = (response: any) => {
-			if (cancelHandler) {
-				cancelHandler.cancel = () => false;
-			}
-
-			const responseObject = attempt(JSON.parse, response);
-			if (responseObject.errorcode !== 0) {
-				return Promise.reject({
-					errorcode: responseObject.errorcode,
-					description: responseObject.errordesc,
-				});
-			}
-			if (responseObject.payload) {
-				responseObject.payload = attempt(JSON.parse, responseObject.payload);
-			}
-			return responseObject.payload;
-		};
-
-		client.onerror = (error: any) => {
-			if (cancelHandler) {
-				cancelHandler.cancel = () => false;
-			}
-			return error;
-		};
-
-		if (cancelHandler) {
-			cancelHandler.cancel = () => {
-				client.cancel();
-				return true;
 			};
-		}
 
-		client.makeRequestAsync(attempt(JSON.stringify, plainObject));
+			client.oncomplete = (response: any) => {
+				try {
+					if (cancelHandler) {
+						cancelHandler.cancel = () => false;
+					}
+
+					const responseObject = this.safeJsonParse(response);
+					if (responseObject.errorcode !== 0) {
+						return reject({
+							errorcode: responseObject.errorcode,
+							description: responseObject.errordesc,
+						});
+					}
+					if (responseObject.payload) {
+						responseObject.payload = this.safeJsonParse(responseObject.payload);
+					}
+					resolve(responseObject.payload);
+				} catch (exception) {
+					//do nothing
+				}
+			};
+
+			client.onerror = (error: any) => {
+				try {
+					if (cancelHandler) {
+						cancelHandler.cancel = () => false;
+					}
+					reject(error);
+				} catch (exception) {
+					//do nothing
+				}
+			};
+
+			if (cancelHandler) {
+				cancelHandler.cancel = () => {
+					client.cancel();
+					return true;
+				};
+			}
+
+			client.makeRequestAsync(attempt(JSON.stringify, plainObject));
+		});
 	}
 
 	sendContractSync(plainObject: any): any {
 		try {
-			const client = new vantageShellExtension.VantageRpcClientEx();
+			const client = new (window as any).VantageShellExtension.VantageRpcClientEx();
 			if (plainObject.payload && typeof plainObject.payload !== 'string') {
 				plainObject.payload = attempt(JSON.stringify, plainObject.payload);
 			}
 			const responseJson = client.makeRequest(attempt(JSON.stringify, plainObject), null);
-			const response = attempt(JSON.parse, responseJson);
+			const response = this.safeJsonParse(responseJson);
 			if (response.payload) {
-				response.payload = attempt(JSON.parse, response.payload);
+				response.payload = this.safeJsonParse(response.payload);
 			}
 			return response.payload;
 		} catch (e) {
 			return null;
+		}
+	}
+
+	private safeJsonParse(item: string): any {
+		try {
+			return JSON.parse(item);
+		} catch (e) {
+			return item;
 		}
 	}
 }

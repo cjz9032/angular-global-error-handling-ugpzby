@@ -43,7 +43,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 	remove(item: TileItem): void {
 		const index = this.savedApps.indexOf(item);
 		if (index >= 0) {
-			this.autoCloseService.deleteAutoCloseApps(item).then((res) => {
+			this.autoCloseService.deleteAutoCloseApp(item).then((res) => {
 				if (res) {
 					this.savedApps.splice(index, 1);
 				}
@@ -71,7 +71,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 					if (selectItemIndex >= 0) {
 						this.savedApps.splice(selectItemIndex, 1);
 					} else {
-						this.autoCloseService.addAutoCloseApps(selectItem).then((res) => {
+						this.autoCloseService.addAutoCloseApp(selectItem).then((res) => {
 							if (res) {
 								this.savedApps.push(selectItem);
 							}
