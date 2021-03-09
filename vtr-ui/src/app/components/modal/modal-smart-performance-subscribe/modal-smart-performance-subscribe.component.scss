@@ -44,10 +44,8 @@ $marginY: 3.5rem;
 	}
 }
 
-.close {
-	&:focus {
-		@include outline-blue;
-	}
+.closeButton {
+	right: 1rem !important;
 }
 
 .container-fluid {

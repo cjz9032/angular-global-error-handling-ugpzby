@@ -1059,7 +1059,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.apps-for-you-dialog {
+.apps-for-you-dialog.modal-common-responsive {
 	max-width: 75% !important;
 	max-height: calc(100vh - 2rem);
 	width: 90%;
@@ -1090,7 +1090,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.Article-Detail-Modal {
+.Article-Detail-Modal.modal-common-responsive {
 	max-width: 70% !important;
 	min-height: calc(100vh - 3.5rem);
 	width: 70%;
@@ -1196,7 +1196,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.Dcc-Detail-Modal {
+.Dcc-Detail-Modal.modal-common-responsive {
 	max-width: 70% !important;
 	overflow-y: initial !important;
 	height: calc(100vh - 3.5rem);
@@ -1211,7 +1211,7 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	}
 }
 
-.license-Modal {
+.license-Modal.modal-common-responsive {
 	max-width: 70% !important;
 	width: 70%;
 	height: calc(100vh - 3.5rem);
@@ -2038,8 +2038,8 @@ vtr-ui-smart-performance-scanning {
 	}
 }
 
-.subscribe-modal,
-.warranty-cart-modal {
+.subscribe-modal.modal-common-responsive,
+.warranty-cart-modal.modal-common-responsive {
 	max-width: 75% !important;
 	width: 90%;
 	height: calc(100vh - 3.5rem);
