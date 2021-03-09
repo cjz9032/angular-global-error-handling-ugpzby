@@ -316,7 +316,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			let isOffline = this.checkIsOfflineMode();
 			if (
 				(tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) &&
-				navigator.onLine
+				!isOffline
 			) {
 				welcomeNeeded = true;
 			} else if (tutorial && tutorial.page === 1 && !isOffline) {
