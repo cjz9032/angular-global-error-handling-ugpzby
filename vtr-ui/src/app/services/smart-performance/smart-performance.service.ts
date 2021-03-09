@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { DeviceService } from '../device/device.service';
-import { ScanningState, SPPriceCode } from 'src/app/enums/smart-performance.enum';
+import { enumSmartPerformance, ScanningState, SPPriceCode } from 'src/app/enums/smart-performance.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -310,6 +310,12 @@ export class SmartPerformanceService {
 				false
 			);
 			this.isSubscribed = false;
+		}
+		if (this.isSubscribed) {
+			this.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
+		}
+		else {
+			this.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
 		}
 	}
 
