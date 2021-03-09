@@ -313,12 +313,13 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			const newTutorialVersion = this.newTutorialVersion;
 			let welcomeNeeded = false;
 			let pageNumber = 1;
+			let isOffline = this.checkIsOfflineMode();
 			if (
 				(tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) &&
 				navigator.onLine
 			) {
 				welcomeNeeded = true;
-			} else if (tutorial && tutorial.page === 1 && navigator.onLine) {
+			} else if (tutorial && tutorial.page === 1 && !isOffline) {
 				welcomeNeeded = true;
 				pageNumber = 2;
 			}
@@ -339,6 +340,12 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 			this.metricService.onCheckedWelcomePageNeeded(welcomeNeeded);
 		}
+	}
+
+	private checkIsOfflineMode() {
+		const win: any = window;
+		let isOffline = win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode;
+		return isOffline;
 	}
 
 	async getWelcomeNeededExternalSettings() {
