@@ -375,6 +375,7 @@
 									<div class="slider-note"
 										[class.blur-1]="!intelligentSecurity.isZeroTouchLockEnabled || (isThinkPad && !intelligentSecurity.isHPDEnabled)">
 										<vtr-ui-rounded-rectangle-custom-radio-list [sendMetrics]=true
+											[isDisabled]="!intelligentSecurity.isZeroTouchLockEnabled"
 											[groupName]="'Zero-Touch-Lock-Timer-radio-group'"
 											[radioDetails]="zeroTouchLockTimersUIModel"
 											(selectionChange)="onZeroTouchLockTimerChange($event)">
