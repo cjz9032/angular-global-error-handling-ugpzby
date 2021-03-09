@@ -64,7 +64,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 		},
 		{
 			title: 'smb.meetingExperience.meetingManager.microPhone.title',
-			path: 'microphone',
+			path: 'smb-microphone',
 			metricsItem: 'MicroPhone',
 			order: 2,
 		},
