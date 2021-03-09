@@ -788,6 +788,20 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 		);
 		const diskSpaceEnough = await this.checkDiskSpaceEnough(this.updatesToInstall);
 
+		if(diskSpaceEnough && rebootType !== UpdateRebootType.RebootDelayed &&
+			rebootType !== UpdateRebootType.RebootForced && rebootType !== UpdateRebootType.PowerOffForced)
+		{
+			// its normal update type installation which doesn't require rebooting/power-off
+			document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
+			this.focusOnElement(this.backButton);
+			this.installUpdateBySource(
+				isInstallAll,
+				removeDelayedUpdates,
+				this.updatesToInstall
+			);
+			return;
+		}
+
 		const modalRef = this.dialog.open(ModalCommonConfirmationComponent, {
 			autoFocus: true,
 			hasBackdrop: true,
@@ -805,18 +819,7 @@ export class PageDeviceUpdatesComponent implements OnInit, DoCheck, OnDestroy {
 				this.showRebootForceModal(modalRef);
 			} else if (rebootType === UpdateRebootType.PowerOffForced) {
 				this.showPowerOffForceModal(modalRef);
-			} else {
-				modalRef.close();
-				// its normal update type installation which doesn't require rebooting/power-off
-				document.querySelector('.vtr-app.container-fluid').scrollTop = 120;
-				this.focusOnElement(this.backButton);
-				this.installUpdateBySource(
-					isInstallAll,
-					removeDelayedUpdates,
-					this.updatesToInstall
-				);
-				return;
-			}
+			} 
 			modalRef.componentInstance.packages = packages;
 			modalRef.componentInstance.OkText = 'systemUpdates.popup.okayButton';
 			modalRef.componentInstance.CancelText = 'systemUpdates.popup.cancelButton';
