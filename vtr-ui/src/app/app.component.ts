@@ -344,7 +344,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	private checkIsOfflineMode() {
 		const win: any = window;
-		let isOffline = win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode;
+		let isOffline = true;
+		if (win.VantageShellExtension?.MsWebviewHelper?.getInstance()?.isInOfflineMode === false) {
+			isOffline = false;
+		}
 		return isOffline;
 	}
 
