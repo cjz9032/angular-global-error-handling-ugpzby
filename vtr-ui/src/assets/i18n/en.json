@@ -5931,7 +5931,7 @@
 					]
 				}
 			},
-			"input": {
+			"inputAccessories": {
 				"categoryName": "Input and accessories",
 				"touchPadSettings": {
 					"featureName": "TouchPad settings",
