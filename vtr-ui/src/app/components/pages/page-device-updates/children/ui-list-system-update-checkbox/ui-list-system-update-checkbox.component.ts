@@ -84,9 +84,8 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 		this.isReadMeAvailable = false;
 		this.manufacturer = update.packageVendor;
 		this.version = update.packageVersion;
-		this.diskSpaceNeeded = this.commonService.formatBytes(
-			parseInt(update.diskSpaceRequired, 10)
-		);
+		this.diskSpaceNeeded =  update.diskSpaceRequired !== undefined ? this.commonService.formatBytes(
+			parseInt(update.diskSpaceRequired, 10)) : '';
 		this.readMeUrl = update.readmeUrl;
 		this.packageRebootType = update.packageRebootType;
 		if (this.readMeUrl && this.readMeUrl.length > 0 && this.readMeUrl.startsWith('http', 0)) {
