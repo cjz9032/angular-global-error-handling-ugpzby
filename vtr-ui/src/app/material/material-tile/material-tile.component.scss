@@ -4,12 +4,19 @@
 	background: transparent;
 	border-radius: 0.5rem;
 	height: 100%;
+	outline: none !important;
 	&:active {
 		box-shadow: none !important;
 	}
 	&.tile-removable {
 		&:hover {
 			background: $gray_darker;
+			@media #{$black-on-white} {
+				@include black-border;
+			}
+			@media #{$white-on-black} {
+				@include white-border;
+			}
 			.remove-icon {
 				display: block;
 			}
@@ -48,6 +55,17 @@
 				&:not(.mat-primary) {
 					background: transparent;
 					border: 0.1rem solid $blue-lighter;
+					@media #{$black-on-white} {
+						@include black-border;
+					}
+					@media #{$white-on-black} {
+						@include white-border;
+					}
+				}
+				&:hover {
+					.check-icon {
+						@include high-contrast-color-reversal;
+					}
 				}
 			}
 			&.mat-button-disabled {
@@ -65,6 +83,7 @@
 					}
 					.add-icon {
 						color: $blue-lighter;
+						@include high-contrast-color-reversal;
 					}
 				}
 			}

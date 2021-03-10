@@ -288,20 +288,17 @@ button:focus {
 		padding-top: 2rem;
 		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 
-		.closeButton {
-			top: -1rem;
-			right: 0rem;
-			height: 2.4rem;
-			width: 2.4rem;
-			color: $grey_darker;
-			z-index: 2;
+	.closeButton {
+		top: -1rem;
+		right: 0rem;
+		height: 2.6rem;
+		width: 2.6rem;
+		color: $grey_darker;
+		z-index: 2;
+		overflow: hidden;
 
-			&:focus {
-				outline: 0.1rem solid $menu_hover;
-			}
-			&:hover {
-				color: $menu_hover;
-			}
+		&:focus {
+			border: 0.1rem solid $menu_hover;
 		}
 
 		@media #{$black-on-white} {
@@ -509,6 +506,16 @@ button:focus {
 
 		li {
 			list-style: none;
+		}
+	}
+}
+.cdk-high-contrast-active {
+	.mat-standard-chip {
+		&.vtr-material-tile {
+			outline: none !important;
+			:focus {
+				outline: none !important;
+			}
 		}
 	}
 }

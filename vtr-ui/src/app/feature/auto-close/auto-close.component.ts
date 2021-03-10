@@ -52,12 +52,15 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 	}
 
 	openRunningAppsDialog(): void {
+		this.runningApps = null;
+		const appListDialog = this.dialogService.openAppListDialog(
+			this.runningApps,
+			this.maxSelected
+		);
 		this.autoCloseService.getRunningApps().then((apps: TileItem[]) => {
-			this.runningApps = apps;
-			const appListDialog = this.dialogService.openAppListDialog(
-				this.runningApps,
-				this.maxSelected
-			);
+			this.runningApps = this.filterDuplicatesApps(this.savedApps, apps);
+			appListDialog.componentInstance.data = this.runningApps;
+
 			this.selectedEmitSubscribe = appListDialog.componentInstance.selectedEmit.subscribe(
 				(selectItem: TileItem) => {
 					appListDialog.afterClosed().subscribe(() => {
@@ -85,5 +88,21 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 	updateAutoCloseToggleState($event: MatSlideToggleChange) {
 		this.autoCloseChecked = $event.checked;
 		this.autoCloseService.setState(this.autoCloseChecked);
+	}
+
+	filterDuplicatesApps(first: TileItem[], second: TileItem[]): TileItem[] | undefined {
+		if (!first || !second) {
+			return;
+		}
+		const res = second;
+		first.map((firstItem) => {
+			const firstPath = firstItem.path;
+			second.map((secondItem, i) => {
+				if (firstPath === secondItem.path) {
+					res.splice(i, 1);
+				}
+			});
+		});
+		return res;
 	}
 }

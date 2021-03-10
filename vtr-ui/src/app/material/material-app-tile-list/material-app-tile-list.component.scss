@@ -1,4 +1,4 @@
-@import '../../app.theme';
+@import '../../app.theme.scss';
 .mat-chip-list-container {
 	::ng-deep {
 		.mat-chip-list-wrapper {
@@ -30,6 +30,7 @@
 			height: 5rem;
 			border: 0.1rem solid $menu_hover;
 			border-radius: 0.5rem;
+			overflow: hidden;
 			cursor: pointer;
 			.mat-icon {
 				font-size: 5rem;

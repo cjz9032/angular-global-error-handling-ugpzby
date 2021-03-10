@@ -16,7 +16,7 @@
 			<mat-slide-toggle [checked]="autoCloseChecked" (change)="updateAutoCloseToggleState($event)"></mat-slide-toggle>
 		</div>
 		<vtr-material-app-tile-list
-			class="boost-feature-apps-container"
+			class="boost-feature-apps-container w-100"
 			[tileItems]="savedApps"
 			[removable]="removable"
 			(removed)="remove($event)"
