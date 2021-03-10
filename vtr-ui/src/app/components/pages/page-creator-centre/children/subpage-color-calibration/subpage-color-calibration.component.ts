@@ -209,11 +209,18 @@ export class SubpageColorCalibrationComponent implements OnInit {
 	}
 
 	checkButtonEnable(status) {
-		this.buttonDisabled = (!this.isOnline
-			|| status === ColorCalibrationInstallState.Downloading
-			|| status === ColorCalibrationInstallState.InstallerRunning)
-			&& status !== ColorCalibrationInstallState.InstallBefore
-			&& status !== ColorCalibrationInstallState.InstallDone;
+		this.buttonDisabled = this.isXRiteInstalling(status)
+			|| (!this.isOnline && !this.isXRiteIntalled(status));
+	}
+
+	isXRiteInstalling(status) {
+		return status === ColorCalibrationInstallState.Downloading
+			|| status === ColorCalibrationInstallState.InstallerRunning;
+	}
+
+	isXRiteIntalled(status) {
+		return status === ColorCalibrationInstallState.InstallBefore
+			|| status === ColorCalibrationInstallState.InstallDone;
 	}
 
 	onRestoreProfileClick() {
