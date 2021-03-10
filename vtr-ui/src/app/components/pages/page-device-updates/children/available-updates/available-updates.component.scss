@@ -143,8 +143,12 @@
 		}
 
 		.select-all {
-			.custom-control-label {
-				color: $light;
+			.select-all-checkbox{
+				.select-all-label{
+					color: $light;
+					font-size: $fontsize_xs;
+					font-weight: $weight_600;
+				}
 			}
 		}
 	}
