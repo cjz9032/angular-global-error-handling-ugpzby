@@ -421,7 +421,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 				autoFocus: true,
 				hasBackdrop: true,
 				disableClose: true,
-				panelClass: 'smart-standBy-modal',
+				panelClass: ['smart-standBy-modal', 'modal-lg'],
 			});
 			modalRef.componentInstance.isAutomatic = this.checkbox;
 		}
