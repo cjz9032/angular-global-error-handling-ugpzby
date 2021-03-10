@@ -185,7 +185,7 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 		},
 		{
 			provide: MAT_DIALOG_DEFAULT_OPTIONS,
-			useValue: { autoFocus: true },
+			useValue: { autoFocus: true, restoreFocus: true },
 		},
 	],
 	entryComponents: [
