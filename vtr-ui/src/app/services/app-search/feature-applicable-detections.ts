@@ -199,8 +199,8 @@ export class FeatureApplicableDetections {
 		{
 			featureId: AppSearch.FeatureIds.Audio.automaticOptimizationForECourseId,
 			isApplicable: async () =>
-				(await this.audioService.getDolbyMode())?.eCourseStatus?.toLowerCase() ===
-				'support',
+				(await this.audioService.getDolbyMode())?.eCourseStatus?.toLowerCase() !==
+				'notsupport',
 		},
 
 		// InputAccessories features
