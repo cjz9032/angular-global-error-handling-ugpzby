@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.45](https://bitbucket.tc.lenovo.com///compare/v1.10.44...v1.10.45) (2021-03-10)
+
+
+### Features
+
+* **common:** add disabled directive ([e22ecfb](https://bitbucket.tc.lenovo.com///commit/e22ecfbf935957766609784e890b1c93ffaeb29c))
+* **common:** disabled directive should change onChanges ([4458b12](https://bitbucket.tc.lenovo.com///commit/4458b12634cdce76f06aadbf8e2f777ebb307ed3))
+
+
+### Bug Fixes
+
+* **dialog:** VAN-26599 fix some dialog size and close button position ([473f0f9](https://bitbucket.tc.lenovo.com///commit/473f0f932237a6e4ec9a6f6df45164bc201588e2))
+* **ui:** add disable directive to RRCRL ([da1c72d](https://bitbucket.tc.lenovo.com///commit/da1c72dbe0fe2493733e2c1f277426259358e424))
+* **ui:** disable ui-circle-radio-with-checkbox-list in tpl ([a1c977b](https://bitbucket.tc.lenovo.com///commit/a1c977bf57b60e2a2394f1a94d01097b73850f40))
+* **ui:** handle if a DIV has tabindex ([d476cf9](https://bitbucket.tc.lenovo.com///commit/d476cf904d03372c2ae8dc94f073b49f68ab0cd1))
+* **ui:** move the directive to the target DIV ([e528928](https://bitbucket.tc.lenovo.com///commit/e528928c48a0b035449277fa58efc9d46f7e6a88))
+* **ui:** use input function to respond to changes ([808e114](https://bitbucket.tc.lenovo.com///commit/808e114af8797da51ca199f11f18f1743060058d))
+* **WelcomeTutorial:** VAN-25461 check is offline mode for launch welcome tutorial ([53c1f0f](https://bitbucket.tc.lenovo.com///commit/53c1f0f9f0a38ee94b83db8dab82f5a10105eedf))
+* **WelcomeTutorial:** VAN-25461 default as offline mode ([b0d3153](https://bitbucket.tc.lenovo.com///commit/b0d31539a26412cfc07453bff2b5caa125801296))
+
 ### [1.10.44](https://bitbucket.tc.lenovo.com///compare/v1.10.43...v1.10.44) (2021-03-09)
 
 
