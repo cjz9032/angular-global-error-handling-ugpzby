@@ -35,7 +35,7 @@ export class AppSearchService implements OnDestroy {
 	private searchEngine: SearchEngineWraper;
 	private available;
 	private lastFullFeaturesDetectionTime: number;
-	private featureStatusUpdate: boolean;
+	private scheduleUpdateTask: boolean;
 	constructor(
 		private translate: TranslateService,
 		private router: Router,
@@ -100,7 +100,8 @@ export class AppSearchService implements OnDestroy {
 		if (action?.route || action?.menuId) {
 			this.handleNavigateAction(feature.action as INavigationAction).then(success => {
 				if (!success) {
-					feature.applicable = success;
+					feature.applicable = false;
+					this.persistFeatureStatus();
 					this.showFeatureUnavailableTips(feature.featureName);
 				}
 			});
@@ -443,12 +444,13 @@ export class AppSearchService implements OnDestroy {
 	}
 
 	private persistFeatureStatus() {
-		if (this.featureStatusUpdate) {
+		if (this.scheduleUpdateTask) {
 			return;
 		}
-		this.featureStatusUpdate = true;
+
+		this.scheduleUpdateTask = true;
 		setTimeout(() => {
-			if (!this.featureStatusUpdate) {
+			if (!this.scheduleUpdateTask) {
 				return;
 			}
 
@@ -460,8 +462,8 @@ export class AppSearchService implements OnDestroy {
 			this.logger.info(
 				`[AppSearch]Persist feature status, ${JSON.stringify(this.getFeatureStatusMap())}`
 			);
-			this.featureStatusUpdate = false;
-		}, 2000);
+			this.scheduleUpdateTask = false;
+		}, 1000);
 	}
 
 	private getFeatureStatusMap() {
