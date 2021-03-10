@@ -168,10 +168,22 @@
 		.list-group {
 			.list-group-item {
 				.custom-control {
+					.update-title{
+						color: $gaming_lightest;
+						font-size: $fontsize_xs;
+						font-weight: $weight_600;
+					}
+
 					.download-size {
 						color: $light;
 						opacity: 0.75;
 					}
+				}
+
+				.item-title {
+					color: $gaming_lightest;
+					font-size: $fontsize_xs;
+					font-weight: $weight_600;
 				}
 			}
 		}

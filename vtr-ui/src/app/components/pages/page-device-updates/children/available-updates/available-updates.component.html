@@ -2,7 +2,7 @@
 	<div class="row select-all"
 		*ngIf="!isUpdateDownloading && !isInstallationCompleted">
 		<mat-checkbox [id]="'select-all-checkbox'"
-			class="font-size-xs"
+			class="font-size-xs select-all-checkbox"
 			[ariaLabel]="'defaultUnchecked'"
 			[checked]="isSelectAll"
 			[disabled]="disableSelectAll"
@@ -10,7 +10,7 @@
 			vtrMetrics
 			metricsEvent="featureClick"
 			metricsParent="device"
-			[metricsItem]="'AvailableUpdates.SelectAll'">{{'systemUpdates.banner.selectAll' | translate}}</mat-checkbox>
+			[metricsItem]="'AvailableUpdates.SelectAll'"><span class="select-all-label">{{'systemUpdates.banner.selectAll' | translate}}</span></mat-checkbox>
 
 	</div>
 	<div class="row-seperator"
