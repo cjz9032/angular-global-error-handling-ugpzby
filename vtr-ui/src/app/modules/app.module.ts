@@ -45,7 +45,6 @@ import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
-import { A11yModule } from '@angular/cdk/a11y';
 import { MatButtonModule } from '@lenovo/material/button';
 import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@lenovo/material/core';
 import { MatTooltipModule, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@lenovo/material/tooltip';
@@ -151,7 +150,6 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 		MatIconModule,
 		MatButtonModule,
 		MaterialModule,
-		A11yModule,
 	],
 	exports: [
 		NavbarModule,
