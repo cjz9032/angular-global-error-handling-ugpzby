@@ -635,9 +635,17 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isTopRowKeyFunctionsApplicable() {
-		const capabilites = await this.topRowFunctionsIdeapadService
-			.requestCapability()
-			.toPromise();
+		const machineType = await this.deviceService.getMachineType();
+		if (machineType === MachineType.IdeaPad) {
+			const capabilityItems = await this.topRowFunctionsIdeapadService
+				.requestCapability()
+				.toPromise();
+
+			const result = capabilityItems.find(
+				(item) => item.key?.toLowerCase() === 'fnlock' && item.key?.toLowerCase() === 'true'
+			);
+			return Boolean(result);
+		}
 
 		return await this.inputAccessoriesService.getTopRowFnLockCapability();
 	}
