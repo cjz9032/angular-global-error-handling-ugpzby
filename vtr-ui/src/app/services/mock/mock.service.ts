@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TileItem } from 'src/app/feature/types/auto-close';
-
+import { App, TileItem } from 'src/app/feature/types/auto-close';
 
 @Injectable({
 	providedIn: 'root',
@@ -464,52 +463,139 @@ export class MockService {
 	];
 
 	/** Auto close: Intelligentboost Service */
-	private savedApps: TileItem[] = [
-		{ path: 'C:/app1.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app2.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app3.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app4.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' }
+	private savedApps: App[] = [
+		{
+			path: 'C:/app1.exe',
+			name: 'xxx xxxxx clickable1',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app2.exe',
+			name: 'xxx xxxxx clickable2',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app3.exe',
+			name: 'xxx xxxxx clickable3',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app4.exe',
+			name: 'xxx xxxxx clickable4',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
 	];
 
-	private runningApps: TileItem[] = [
-		{ path: 'C:/app5.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app6.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app7.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app8.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app9.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app10.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app11.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
-		{ path: 'C:/app12.exe', name: 'xxx xxxxx clickable', iconSrc: 'assets/icons/Icon_Windows_Update_20px.svg' },
+	private runningApps: App[] = [
+		{
+			path: 'C:/app3.exe',
+			name: 'xxx xxxxx clickable3',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app4.exe',
+			name: 'xxx xxxxx clickable4',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app5.exe',
+			name: 'xxx xxxxx clickable5',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app6.exe',
+			name: 'xxx xxxxx clickable6',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app7.exe',
+			name: 'xxx xxxxx clickable7',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app8.exe',
+			name: 'xxx xxxxx clickable8',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app9.exe',
+			name: 'xxx xxxxx clickable9',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app10.exe',
+			name: 'xxx xxxxx clickable10',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app11.exe',
+			name: 'xxx xxxxx clickable11',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app12.exe',
+			name: 'xxx xxxxx clickable12',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
 	];
 
 	private featureState = true;
 
-	getRunningApps(): Promise<TileItem[]> {
-		return Promise.resolve(this.runningApps);
-	}
-
-	getAutoCloseApps(): Promise<TileItem[]> {
-		return Promise.resolve(this.savedApps);
-	}
-
-	deleteAutoCloseApps(apps: TileItem[]): Promise<boolean> {
-		apps.forEach((app: TileItem) => {
-			this.savedApps.filter((savedApp: TileItem) => savedApp.path !== app.path);
+	async getRunningApps(): Promise<TileItem[]> {
+		const savedAppsPath = this.savedApps.map((savedApp: TileItem) => savedApp.path);
+		this.runningApps = this.runningApps.filter(
+			(runningApp: TileItem) => !savedAppsPath.includes(runningApp.path)
+		);
+		const result = [];
+		this.runningApps.forEach((app: App) => {
+			if (!savedAppsPath.includes(app.path)) {
+				result.push({
+					path: app.path,
+					name: this.getAppName(app.path, app.name),
+					iconSrc: app.icon ? app.icon : '',
+				});
+			}
 		});
-		return Promise.resolve(true);
+		return result;
 	}
 
-	addAutoCloseApps(apps: TileItem[]): Promise<boolean> {
-		this.savedApps.concat(apps);
-		return Promise.resolve(true);
+	async getAutoCloseApps(): Promise<TileItem[]> {
+		const result = [];
+		this.savedApps.forEach((app: App) => {
+			result.push({
+				path: app.path,
+				name: app.name,
+				iconSrc: app.icon ? app.icon : '',
+			});
+		});
+		return result;
 	}
 
-	setState(state: boolean): Promise<boolean> {
+	async deleteAutoCloseApps(app: TileItem): Promise<boolean> {
+		this.savedApps = this.savedApps.filter((savedApp: TileItem) => savedApp.path !== app.path);
+		return true;
+	}
+
+	async addAutoCloseApps(app: TileItem): Promise<boolean> {
+		this.savedApps.concat(app);
+		return true;
+	}
+
+	async setState(state: boolean): Promise<boolean> {
 		this.featureState = state;
-		return Promise.resolve(true);
+		return true;
 	}
 
-	getState(): Promise<boolean> {
-		return Promise.resolve(this.featureState);
+	async getState(): Promise<boolean> {
+		return this.featureState;
+	}
+
+	private getAppName(path: string, name: string | undefined) {
+		if (name) {
+			return name;
+		}
+		const pathSplit = path.split('/');
+		const appPathName = pathSplit[pathSplit.length - 1].split('.')[0];
+		return appPathName;
 	}
 }

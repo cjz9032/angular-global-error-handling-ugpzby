@@ -3,30 +3,25 @@ import { Injectable } from '@angular/core';
 import { ShellExtensionService } from './shell-extension.service';
 import { App, Profile, TileItem } from '../types/auto-close';
 
-
 @Injectable({
 	providedIn: 'root',
 })
 export class AutoCloseService {
 	private savedApps: TileItem[];
-	private runningApps: TileItem[];
-	private status: boolean;
 
-	constructor(
-		private shellExtension: ShellExtensionService,
-	) { }
+	constructor(private shellExtension: ShellExtensionService) {}
 
 	initialize(config: Profile): void {
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'initialize',
-			payload: config
+			payload: config,
 		};
 
 		this.shellExtension.sendContract(contract);
 	}
 
-	setState(state: boolean): Promise<boolean> {
+	async setState(state: boolean): Promise<boolean> {
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Set-State',
@@ -35,37 +30,38 @@ export class AutoCloseService {
 		return this.shellExtension.sendContract(contract);
 	}
 
-	getState(): Promise<boolean> {
+	async getState(): Promise<boolean> {
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Get-State',
 		};
 
-		this.shellExtension.sendContract(contract).then((res) => this.status = res);
-		return Promise.resolve(this.status);
+		return this.shellExtension.sendContract(contract);
 	}
 
-	getRunningApps(): Promise<TileItem[]> {
+	async getRunningApps(): Promise<TileItem[]> {
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Get-RunningApps',
 		};
-
-		this.shellExtension.sendContract(contract).then((res: App[]) => {
-			this.runningApps = [];
-			res.forEach((app: App) => {
-				this.runningApps.push({
-					path: app.path,
-					name: app.name ? app.name : this.getAppName(app.path),
-					iconSrc: app.icon ? app.icon : '',
-				});
+		const runningApps: TileItem[] = [];
+		const saveAppsPath = this.savedApps.map((savedApps: TileItem) => savedApps.path);
+		this.shellExtension.sendContract(contract).then((result: App[]) => {
+			result.forEach((app: App) => {
+				if (!saveAppsPath.includes(app.path)) {
+					runningApps.push({
+						path: app.path,
+						name: this.getAppName(app.path, app.name),
+						iconSrc: app.icon ? app.icon : '',
+					});
+				}
 			});
 		});
 
-		return Promise.resolve(this.runningApps);
+		return runningApps;
 	}
 
-	getAutoCloseApps(): Promise<TileItem[]> {
+	async getAutoCloseApps(): Promise<TileItem[]> {
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Get-AutoCloseApps',
@@ -76,20 +72,22 @@ export class AutoCloseService {
 			res.forEach((app: App) => {
 				this.savedApps.push({
 					path: app.path,
-					name: app.name ? app.name : this.getAppName(app.path),
+					name: app.name,
 					iconSrc: app.icon ? app.icon : '',
 				});
 			});
 		});
 
-		return Promise.resolve(this.savedApps);
+		return this.savedApps;
 	}
 
-	deleteAutoCloseApps(apps: TileItem[]): Promise<boolean> {
-		const appsToRemove = [];
-		apps.forEach((app: TileItem) => {
-			appsToRemove.push({ path: app.path });
-		});
+	async deleteAutoCloseApps(app: TileItem): Promise<boolean> {
+		const appsToRemove = {
+			path: app.path,
+			name: app.name,
+			icon: app.iconSrc ? app.iconSrc : '',
+		};
+		this.savedApps = this.savedApps.filter((savedApp: TileItem) => app.path !== savedApp.path);
 
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
@@ -100,16 +98,13 @@ export class AutoCloseService {
 		return this.shellExtension.sendContract(contract);
 	}
 
-	addAutoCloseApps(apps: TileItem[]): Promise<boolean> {
-		const appsToAdd = [];
-		apps.forEach((app: TileItem) => {
-			appsToAdd.push({
-				path: app.path,
-				name: app.name,
-				icon: app.iconSrc ? app.iconSrc : '',
-			});
-		});
-
+	async addAutoCloseApps(app: TileItem): Promise<boolean> {
+		const appsToAdd = {
+			path: app.path,
+			name: app.name,
+			icon: app.iconSrc ? app.iconSrc : '',
+		};
+		this.savedApps.push(appsToAdd);
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Add-AutoCloseApps',
@@ -119,8 +114,12 @@ export class AutoCloseService {
 		return this.shellExtension.sendContract(contract);
 	}
 
-	private getAppName(path: string) {
-		const pathArr = path.split('/');
-		return pathArr[pathArr.length - 1].split('.')[0];
+	private getAppName(path: string, name: string | undefined) {
+		if (name) {
+			return name;
+		}
+		const pathSplit = path.split('/');
+		const appPathName = pathSplit[pathSplit.length - 1].split('.')[0];
+		return appPathName;
 	}
 }
