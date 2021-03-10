@@ -457,7 +457,7 @@ export class FeatureApplicableDetections {
 		const machineType = await this.deviceService.getMachineType();
 		if (machineType === 0 || machineType === 1) {
 			const result = (await this.batteryService.getBatteryDetail()) as any;
-			return result.batteryInformation.length > 0;
+			return result.batteryInformation?.length > 0;
 		}
 
 		return false;
@@ -467,7 +467,7 @@ export class FeatureApplicableDetections {
 		const machineType = await this.deviceService.getMachineType();
 		if (machineType === 0 || machineType === 1) {
 			const result = (await this.batteryService.getBatteryDetail()) as any;
-			return result.batteryIndicatorInfo.acAdapterStatus.toLowerCase() !== 'notsupported';
+			return result.batteryIndicatorInfo?.acAdapterStatus?.toLowerCase() !== 'notsupported';
 		}
 
 		return false;
