@@ -47,7 +47,8 @@ export class AutoCloseService {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Get-RunningApps',
 		};
-
+		const runningApps: TileItem[] = [];
+		const saveAppsPath = this.savedApps.map((savedApps: TileItem) => savedApps.path);
 		return this.shellExtension
 			.sendContract(contract)
 			.then((res: App[]) => {
