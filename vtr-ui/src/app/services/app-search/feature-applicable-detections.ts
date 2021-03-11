@@ -22,13 +22,7 @@ import { InputAccessoriesService } from '../input-accessories/input-accessories.
 import { SmartAssistService } from '../smart-assist/smart-assist.service';
 import { FlipToStartSupportedEnum } from '../power/flip-to-start.enum';
 import { TopRowFunctionsIdeapadService } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
-
-enum MachineType {
-	IdeaPad = 0,
-	ThinkPad = 1,
-	IdeaCenter = 2,
-	ThinkCenter = 3,
-}
+import { MachineType } from '../device/machine-type';
 
 @Injectable({
 	providedIn: 'root',
