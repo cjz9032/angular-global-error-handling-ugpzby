@@ -80,6 +80,7 @@ export class SubpageColorCalibrationComponent implements OnInit {
 						} else {
 							this.colorCalibrationService.resetCancelInstall();
 						}
+						this.checkButtonEnable(this.installStatus);
 					}
 					break;
 				case ColorCalibrationEnum.ActionInstallAppProgress:
@@ -208,9 +209,18 @@ export class SubpageColorCalibrationComponent implements OnInit {
 	}
 
 	checkButtonEnable(status) {
-		this.buttonDisabled = !this.isOnline
-			|| status === ColorCalibrationInstallState.Downloading
+		this.buttonDisabled = this.isXRiteInstalling(status)
+			|| (!this.isOnline && !this.isXRiteIntalled(status));
+	}
+
+	isXRiteInstalling(status) {
+		return status === ColorCalibrationInstallState.Downloading
 			|| status === ColorCalibrationInstallState.InstallerRunning;
+	}
+
+	isXRiteIntalled(status) {
+		return status === ColorCalibrationInstallState.InstallBefore
+			|| status === ColorCalibrationInstallState.InstallDone;
 	}
 
 	onRestoreProfileClick() {
