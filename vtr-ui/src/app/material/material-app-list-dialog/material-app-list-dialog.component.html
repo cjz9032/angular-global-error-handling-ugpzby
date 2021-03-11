@@ -5,7 +5,7 @@
 	metricsItem="app list dialog close button"
 	metricsEvent="FeatureClick"
 	metricsParent="AutoClose">
-	<mat-icon class="icon close-icon">close</mat-icon>
+	<fa-icon class="close-icon" [icon]="['fas', 'times']"></fa-icon>
 </button>
 <section *ngIf="data?.length > 0; else empty" class="font-color-main ">
 	<h1 class="mb-3 mat-display-2 font-weight-semibold"

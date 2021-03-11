@@ -7,13 +7,14 @@
 		vtrMetrics
 		metricsItem="{{tileItem.name}} removed"
 		metricsEvent="FeatureClick"
-		[metricsParent]="metricsParent">close</mat-icon>
+		[metricsParent]="metricsParent">
+		<fa-icon [icon]="['fal', 'times']"></fa-icon>
+	</mat-icon>
 	<div class="d-flex w-100 tile-container px-3 pb-3 mt-5 align-items-center justify-content-center"
 		[ngClass]="{'flex-column h-100': !isHorizontal}">
 		<div class="row align-items-center tile w-100"
 			[ngClass]="{'flex-column h-100': !isHorizontal}">
 			<img *ngIf="tileItem?.iconSrc" class="tile-icon" [src]="tileItem.iconSrc | sanitize : 'resourceUrl'" alt="" srcset="">
-			<mat-icon *ngIf="tileItem?.matIcon" [svgIcon]="tileItem.matIcon"></mat-icon>
 			<span class="tile-name w-100 mat-body-1 text-two-ellipsis" [innerHTML]="tileItem?.name"></span>
 		</div>
 		<div *ngIf="addable"
@@ -27,10 +28,10 @@
 				[metricsItem]="metricsItem"
 				metricsEvent="FeatureClick"
 				[metricsParent]="metricsParent">
-				<mat-icon *ngIf="tileItem?.buttonType === 'selected'; else addTemp"
-					class="check-icon">check</mat-icon>
+				<fa-icon *ngIf="tileItem?.buttonType === 'selected'; else addTemp"
+					class="check-icon" [icon]="['fas', 'check']"></fa-icon>
 				<ng-template #addTemp>
-					<mat-icon class="add-icon">add</mat-icon>
+					<fa-icon class="add-icon" [icon]="['fal', 'plus']"></fa-icon>
 				</ng-template>
 			</button>
 		</div>

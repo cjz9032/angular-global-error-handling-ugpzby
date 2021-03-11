@@ -90,6 +90,8 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { faPlusSquare } from '@fortawesome/pro-light-svg-icons/faPlusSquare';
+import { faPlus } from '@fortawesome/pro-light-svg-icons/faPlus';
+
 import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
 import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
 import { SubpageDeviceSettingsPowerDpmComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-power-dpm/subpage-device-settings-power-dpm.component';
@@ -250,5 +252,6 @@ export class HardwareSettingsModule {
 		library.addIcons(faCalendarAlt);
 		library.addIcons(faBriefcase);
 		library.addIcons(faPlusSquare);
+		library.addIcons(faPlus);
 	}
 }

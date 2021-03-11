@@ -43,6 +43,7 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
+import { faPlus } from '@fortawesome/pro-light-svg-icons/faPlus';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 import { MatButtonModule } from '@lenovo/material/button';
@@ -234,5 +235,6 @@ export class AppModule {
 		library.addIcons(fasHeart);
 		library.addIcons(faQuoteLeft);
 		library.addIcons(faTrashAlt);
+		library.addIcons(faPlus);
 	}
 }

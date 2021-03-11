@@ -25,10 +25,10 @@
 	.remove-icon {
 		display: none;
 		cursor: pointer;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		color: $menu_hover;
-		width: 2.5rem;
-		height: 2.5rem;
+		width: 2rem;
+		height: 2rem;
 		right: 0;
 	}
 	.tile-container {
@@ -80,9 +80,11 @@
 					justify-content: center;
 					.check-icon {
 						color: $light;
+						font-size: 2rem;
 					}
 					.add-icon {
 						color: $blue-lighter;
+						font-size: 2.2rem;
 						@include high-contrast-color-reversal;
 					}
 				}
