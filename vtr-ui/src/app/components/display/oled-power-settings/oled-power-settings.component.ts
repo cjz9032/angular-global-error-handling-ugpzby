@@ -28,7 +28,7 @@ export class OledPowerSettingsComponent implements OnInit {
 		private localCacheService: LocalCacheService,
 		private logger: LoggerService,
 		private translate: TranslateService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.populateIntervals();
@@ -184,27 +184,21 @@ export class OledPowerSettingsComponent implements OnInit {
 	public onTaskBarDimmerChange($event: DropDownInterval) {
 		this.logger.info('OLED-Power-Settings : onTaskBarDimmerChange', String($event.value));
 		if ($event) {
-			this.title = $event.placeholder;
-			this.oledPowerSettings.taskBarDimmerValue = $event.value;
-			this.setTaskbarDimmerSetting($event.value);
+			this.setTaskbarDimmerSetting($event);
 		}
 	}
 
 	public onBackgroundDimmerChange($event: DropDownInterval) {
 		this.logger.info('OLED-Power-Settings : onBackgroundDimmerChange', String($event.value));
 		if ($event) {
-			this.title = $event.placeholder;
-			this.oledPowerSettings.backgroundDimmerValue = $event.value;
-			this.setBackgroundDimmerSetting($event.value);
+			this.setBackgroundDimmerSetting($event);
 		}
 	}
 
 	public onDisplayDimmerChange($event: DropDownInterval) {
 		this.logger.info('OLED-Power-Settings : onDisplayDimmerChange', String($event.value));
 		if ($event) {
-			this.title = $event.placeholder;
-			this.oledPowerSettings.displayDimmerValue = $event.value;
-			this.setDisplayDimmerSetting($event.value);
+			this.setDisplayDimmerSetting($event);
 		}
 	}
 
@@ -286,15 +280,22 @@ export class OledPowerSettingsComponent implements OnInit {
 		}
 	}
 
-	private setTaskbarDimmerSetting(value: number) {
+	private setTaskbarDimmerSetting(taskbarDimmerValue: { value: number; placeholder: string }) {
 		try {
 			this.logger.info(
 				'OLED-Power-Settings : setTaskbarDimmerSetting changed in display',
-				value
+				taskbarDimmerValue
 			);
+
+			this.title = taskbarDimmerValue.placeholder;
+			this.oledPowerSettings.taskBarDimmerValue = taskbarDimmerValue.value;
+			this.oledPowerSettingsCache.taskBarDimmerValue = this.oledPowerSettings.taskBarDimmerValue;
+
+			this.updateCache();
+
 			if (this.displayService.isShellAvailable) {
 				this.displayService
-					.setTaskbarDimmerSetting(String(value))
+					.setTaskbarDimmerSetting(String(this.oledPowerSettings.taskBarDimmerValue))
 					.then((result: boolean) => {
 						this.logger.info(
 							'OLED-Power-Settings : setTaskbarDimmerSetting.then',
@@ -318,16 +319,22 @@ export class OledPowerSettingsComponent implements OnInit {
 		}
 	}
 
-	private setBackgroundDimmerSetting(value: number) {
+	private setBackgroundDimmerSetting(backgroundDimmerValue: { value: number; placeholder: string }) {
 		try {
 			this.logger.info(
 				'OLED-Power-Settings : setBackgroundDimmerSetting changed in display',
-				value
+				backgroundDimmerValue
 			);
+
+			this.title = backgroundDimmerValue.placeholder;
+			this.oledPowerSettings.backgroundDimmerValue = backgroundDimmerValue.value;
+			this.oledPowerSettingsCache.backgroundDimmerValue = this.oledPowerSettings.backgroundDimmerValue;
+
+			this.updateCache();
 
 			if (this.displayService.isShellAvailable) {
 				this.displayService
-					.setBackgroundDimmerSetting(String(value))
+					.setBackgroundDimmerSetting(String(this.oledPowerSettings.backgroundDimmerValue))
 					.then((result: boolean) => {
 						this.logger.info(
 							'OLED-Power-Settings : setBackgroundDimmerSetting.then',
@@ -351,16 +358,22 @@ export class OledPowerSettingsComponent implements OnInit {
 		}
 	}
 
-	private setDisplayDimmerSetting(value: number) {
+	private setDisplayDimmerSetting(displayDimmerValue: { value: number; placeholder: string }) {
 		try {
 			this.logger.info(
 				'OLED-Power-Settings : setDisplayDimmerSetting changed in display',
-				value
+				displayDimmerValue
 			);
+
+			this.title = displayDimmerValue.placeholder;
+			this.oledPowerSettings.displayDimmerValue = displayDimmerValue.value;
+			this.oledPowerSettingsCache.displayDimmerValue = this.oledPowerSettings.displayDimmerValue;
+
+			this.updateCache();
 
 			if (this.displayService.isShellAvailable) {
 				this.displayService
-					.setDisplayDimmerSetting(String(value))
+					.setDisplayDimmerSetting(String(this.oledPowerSettingsCache.displayDimmerValue))
 					.then((result: boolean) => {
 						this.logger.info(
 							'OLED-Power-Settings : setDisplayDimmerSetting.then',
@@ -379,5 +392,9 @@ export class OledPowerSettingsComponent implements OnInit {
 			this.logger.error('OLED-Power-Settings : setDisplayDimmerSetting error', error.message);
 			return EMPTY;
 		}
+	}
+
+	private updateCache() {
+		this.localCacheService.setLocalCacheValue(LocalStorageKey.OledPowerSettings, this.oledPowerSettingsCache);
 	}
 }
