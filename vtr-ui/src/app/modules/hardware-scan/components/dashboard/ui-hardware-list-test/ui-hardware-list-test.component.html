@@ -6,23 +6,20 @@
 			>
 			<div class="module" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 				<div class="custom-control">
-					<vtr-ui-checkbox
+					<mat-checkbox
 						#checkbox
-						[componentId]="componentId + '-item-' + i"
+						[id]="componentId + '-item-' + i"
 						[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
-						(click)="onDeviceSelectionClicked(item,checkbox.checked)"
-						[hasChild]="true"
+						(change)="onDeviceSelectionClicked(item,$event.checked)"
 						[checked]="item.selected"
-						[value]="item.selected"
-						class="custom-control-component"
 					>
 						<p id="{{ componentId }}-item-{{ i }}-name" role="text" class="custom-control-label-text name">
 							{{ 'hardwareScan.pluginTokens.' + item.name | translateDefault:item.name }}
 							<span id="{{ componentId }}-item-{{ i }}-subname" role="text"
 								class="subname">{{ 'hardwareScan.pluginTokens.' + item.subname | translateDefault:item.subname }}</span>
 						</p>
-					</vtr-ui-checkbox>
+					</mat-checkbox>
 				</div>
 
 				<div class="col-auto">
@@ -46,24 +43,20 @@
 					<li *ngFor="let test of item.tests; let j = index"
 						id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
 						class="list-group-item"
-						(change)=onCheckChildren(item)
 						[ngClass]="{'isSelected-item' : test.selected}"
 						>
 						<div class="module">
 							<div class="custom-control custom-checkbox">
-								<vtr-ui-checkbox
-									componentId="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
+								<mat-checkbox
+									id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
 									[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + ('hardwareScan.pluginTokens.' + test.name | translateDefault:test.name) + '-checkbox'"
 									[checked]="test.selected"
-									[hasChild]="true"
-									[value]="test.selected"
-									(toggle)="test.selected = $event"
-									class="custom-control-component"
+									(change)="test.selected = $event.checked;onCheckChildren(item)"
 								>
-									<p class="custom-control-label-text name-test" id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}-name" role="text">
+									<span class="custom-control-label-text name-test" id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}-name" role="text">
 										{{ 'hardwareScan.pluginTokens.' + test.name | translateDefault:test.name }}
-									</p>
-								</vtr-ui-checkbox>
+									</span>
+								</mat-checkbox>
 							</div>
 						</div>
 					</li>
