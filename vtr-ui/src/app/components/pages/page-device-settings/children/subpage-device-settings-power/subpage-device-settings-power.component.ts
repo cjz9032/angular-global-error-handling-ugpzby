@@ -150,7 +150,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.powerSettingsGroup = ['AirplanePowerMode', 'AlwaysOnUSB', 'FlipToBoot', 'EasyResume'];
 				break;
 			case 0:
-				this.batterySettingsGroup = ['ConservationMode', 'RapidChargeMode', 'BatteryHealth'];
+				this.batterySettingsGroup = ['ConservationMode', 'RapidChargeMode'];
 				this.powerSettingsGroup = ['AlwaysOnUSB', 'FlipToBoot'];
 			default:
 				break;
