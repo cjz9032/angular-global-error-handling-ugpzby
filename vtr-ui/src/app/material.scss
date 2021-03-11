@@ -302,6 +302,10 @@ button:focus {
 			&:hover {
 				color: $menu_hover;
 			}
+			fa-icon {
+				font-size: 2.2rem;
+				line-height: 1;
+			}
 		}
 
 		@media #{$black-on-white} {
