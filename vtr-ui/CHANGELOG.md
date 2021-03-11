@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.46](https://bitbucket.tc.lenovo.com///compare/v1.10.45...v1.10.46) (2021-03-11)
+
+
+### Features
+
+* **perf:** add more timing log for network connection ([aaff777](https://bitbucket.tc.lenovo.com///commit/aaff7772eb70657afb14b440b1998bcc367911ff))
+
+
+### Bug Fixes
+
+* **warranty:** warranty level detail align ([4146c25](https://bitbucket.tc.lenovo.com///commit/4146c25123c5517ce0e37ad06a69818a912320df))
+* add modal-lg style for smar-standby modal ([6694edc](https://bitbucket.tc.lenovo.com///commit/6694edcc49626e450b5a61c96a362cb5b55f8e96))
+* fix checkbox style in gaming mode ([0dc25c1](https://bitbucket.tc.lenovo.com///commit/0dc25c11efa34bae5b30c2e48cf9ab690d1c1e6f))
+* set restoreFocus for dialog config ([f8fe5c8](https://bitbucket.tc.lenovo.com///commit/f8fe5c8fb4a018e8b3d50ae16c341f4ff154b89b))
+
 ### [1.10.45](https://bitbucket.tc.lenovo.com///compare/v1.10.44...v1.10.45) (2021-03-10)
 
 
