@@ -2,9 +2,7 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 
 import { BatteryCapacityComponent } from './battery-capacity/battery-capacity.component';
 import { BatteryHealthComponent } from './battery-health.component';
-import { BatteryHealthTipsComponent } from './battery-health-tips/battery-health-tips.component';
 import { BatteryLayoutComponent } from './battery-layout/battery-layout.component';
-import { BatteryRankLifespanComponent } from './battery-rank-lifespan/battery-rank-lifespan.component';
 import { BatteryTemperatureComponent } from './battery-temperature/battery-temperature.component';
 import { CommonModule } from '@angular/common';
 import { CommonUiModule } from '../../../../../../modules/common/common-ui.module';
@@ -16,12 +14,10 @@ import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCir
 @NgModule({
 	declarations: [
 		BatteryHealthComponent,
-		BatteryRankLifespanComponent,
 		BatteryLayoutComponent,
 		BatteryTemperatureComponent,
 		BatteryLayoutComponent,
 		BatteryCapacityComponent,
-		BatteryHealthTipsComponent,
 	],
 	imports: [CommonModule, CommonUiModule, FontAwesomeModule, NgbTooltipModule, TranslationModule],
 	exports: [BatteryHealthComponent],
