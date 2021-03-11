@@ -8,6 +8,7 @@ import { UpdateProgress } from 'src/app/enums/update-progress.enum';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { UpdateHistoryStatus } from 'src/app/enums/update-history-status.enum';
 
 @Component({
 	selector: 'vtr-installation-history',
@@ -26,6 +27,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 	public showAll = false;
 	public enableDelete = false;
 	private needManualSetFocusForDelete = false;
+	public UpdateHistoryStatus = UpdateHistoryStatus;
 
 	constructor(
 		public systemUpdateService: SystemUpdateService,
@@ -112,7 +114,7 @@ export class InstallationHistoryComponent implements OnInit, OnDestroy {
 		historyList.forEach((item: UpdateHistory) => {
 			const date = this.commonService.formatLocalDate(item.utcInstallDate);
 			const time = this.commonService.formatLocalTime(item.utcInstallDate);
-			if (item.status.toLowerCase() === 'installed') {
+			if (item.status === UpdateHistoryStatus.Installed) {
 				item.message =
 					this.translate.instant('systemUpdates.successInstall') + date + ' ' + time;
 			} else {
