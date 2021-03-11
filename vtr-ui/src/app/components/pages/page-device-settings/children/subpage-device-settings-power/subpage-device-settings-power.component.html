@@ -39,7 +39,7 @@
 									<div class="row">
 										<div class="col px-5">
 											<div class="row mt-4 ml-4">
-												<div class="toolbar-img">	
+												<div class="toolbar-img">
 													<img *ngIf="isDesktopMachine"
 														alt="Pin Lenovo Vantage toolbar to Windows taskbar"
 														class="img-fluid mx-auto d-block"
@@ -142,11 +142,6 @@
 							<!-- End Gauge  Reset -->
 
 							<!-- Start Battery Health -->
-							<li class="common-li-padding" *ngIf="batteryHealthAvailable">
-								<vtr-battery-health
-									[hideSeparation] = "!conservationModeStatus.available && !expressChargingStatus.available">
-								</vtr-battery-health>
-							</li>
 							<!-- End battery health -->
 
 							<!-- Start Express Charging -->

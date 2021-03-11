@@ -1,36 +1,36 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { BehaviorSubject, combineLatest, EMPTY, from, of, pipe, range, timer, zip } from 'rxjs';
-import { Subscription } from 'rxjs/internal/Subscription';
-import { debounce, finalize, map, mergeMap, retryWhen, switchMap, tap } from 'rxjs/operators';
-import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
-import { UiCustomSwitchComponent } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.component';
-import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
-import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
-import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
-import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
-import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
-import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
-import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
-import { CommonService } from 'src/app/services/common/common.service';
-import { LoggerService } from 'src/app/services/logger/logger.service';
-import { PowerService } from 'src/app/services/power/power.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { BehaviorSubject, EMPTY, combineLatest, from, of, pipe, range, timer, zip } from 'rxjs';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import {
 	FlipToStartCurrentModeEnum,
 	FlipToStartErrorCodeEnum,
 	FlipToStartSetStatusEnum,
 	FlipToStartSupportedEnum,
 } from '../../../../../services/power/flip-to-start.enum';
-import { FlipToStartSetStatus } from '../../../../../services/power/flip-to-start.interface';
-import { EventTypes } from '@lenovo/tan-client-bridge';
-import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
-import { BatteryHealthService } from './battery-health/battery-health.service';
+import { debounce, finalize, map, mergeMap, retryWhen, switchMap, tap } from 'rxjs/operators';
+
+import { AlwaysOnUSBCapability } from 'src/app/data-models/device/always-on-usb.model';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { BatteryDetailService } from 'src/app/services/battery-detail/battery-detail.service';
+import { ChargeThreshold } from 'src/app/data-models/device/charge-threshold.model';
+import { ChargeThresholdInformation } from 'src/app/enums/battery-information.enum';
+import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
+import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
+import { CommonService } from 'src/app/services/common/common.service';
 import { ConservationModeStatus } from 'src/app/data-models/battery/conservation-mode-response.model';
-import { MatDialog } from '@lenovo/material/dialog';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { EventTypes } from '@lenovo/tan-client-bridge';
+import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
+import { FlipToStartSetStatus } from '../../../../../services/power/flip-to-start.interface';
+import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { MatDialog } from '@lenovo/material/dialog';
+import { ModalBatteryChargeThresholdComponent } from 'src/app/components/modal/modal-battery-charge-threshold/modal-battery-charge-threshold.component';
+import { PowerService } from 'src/app/services/power/power.service';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { UiCustomSwitchComponent } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.component';
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -138,7 +138,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		private metrics: CommonMetricsService,
 		private localCacheService: LocalCacheService,
 		private activatedRoute: ActivatedRoute,
-		private batteryHealthService: BatteryHealthService,
 		public deviceService: DeviceService,
 	) { }
 
@@ -254,7 +253,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			EventTypes.pwrBatteryStatusEvent,
 			this.powerBatteryStatusEventRef
 		);
-		this.batteryHealthService.clearMemoryCache();
 	}
 
 	// ************************** Start Getting Cached Data ****************************
@@ -499,7 +497,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.getConservationModeStatusIdeaPad();
 				this.getAlwaysOnUSBStatusIdeaPad();
 				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
-				this.getBatteryHealthIdeaPad();
 				break;
 		}
 	}
@@ -1703,18 +1700,4 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			});
 	}
 	// Gauge Reset Capability
-
-	getBatteryHealthIdeaPad() {
-		if (this.batteryHealthService) {
-			this.batteryHealthService.batteryInfo.subscribe((batteryInfo) => {
-				if (batteryInfo && batteryInfo.isSupportSmartBatteryV2 !== undefined) {
-					this.batteryHealthAvailable = batteryInfo.isSupportSmartBatteryV2;
-					this.updateBatteryLinkStatus(
-						batteryInfo.isSupportSmartBatteryV2,
-						'BatteryHealth'
-					);
-				}
-			});
-		}
-	}
 }
