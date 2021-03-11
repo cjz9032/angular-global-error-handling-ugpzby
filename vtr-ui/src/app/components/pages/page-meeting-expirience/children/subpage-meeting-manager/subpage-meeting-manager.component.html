@@ -74,14 +74,13 @@
 										   componentName="Microphone"
 										   [isCollapsed]="false" [allowCollapse]="true"
 										   [theme]="'white'" [tabIndex]="0">
-					<div class="common-li-padding">
-					<vtr-widget-permission-note
-						[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
-						[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
-						[path]="'ms-settings:privacy-microphone'"
-						[linkId]="'audio-microphone-permission'"
-						*ngIf="!microphoneProperties.permission">
-					</vtr-widget-permission-note>
+					<div class="common-li-padding" *ngIf="!microphoneProperties.permission">
+						<vtr-widget-permission-note
+							[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
+							[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
+							[path]="'ms-settings:privacy-microphone'"
+							[linkId]="'audio-microphone-permission'">
+						</vtr-widget-permission-note>
 					</div>
 					<ul class="list-group list-group-flush"
 						*ngIf="microphoneProperties.permission">
