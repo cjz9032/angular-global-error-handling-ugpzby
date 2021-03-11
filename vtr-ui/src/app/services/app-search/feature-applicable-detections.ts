@@ -504,22 +504,34 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isDynamicThermalControlApplicable() {
+        const dmDriverStatus = await this.powerService.getPMDriverStatus();
+        if (!dmDriverStatus) {
+            return false;
+        }
+
+        const itsStatus = await this.powerService.getITSServiceStatus();
+        if (!itsStatus) {
+            return true; // DYTC 3.0
+        }
+
+        const dytcVersion = await this.powerService.getDYTCRevision();
+        return (dytcVersion >= 4)
+    }
+
+
+	private async isExtraPowerModeSettingApplicable() {
 		const dmDriverStatus = await this.powerService.getPMDriverStatus();
 		if (!dmDriverStatus) {
 			return false;
 		}
-		const itsStatus = await this.powerService.getITSServiceStatus();
-		return itsStatus;
-	}
 
-	private async isExtraPowerModeSettingApplicable() {
-		const dtcApplicable = await this.isDynamicThermalControlApplicable();
-		if (!dtcApplicable) {
+		const itsStatus = await this.powerService.getITSServiceStatus();
+		if (!itsStatus) {
 			return false;
 		}
 
 		const dytverion = await this.powerService.getDYTCRevision();
-		if (dytverion !== 6) {
+		if (dytverion < 6) {
 			return false;
 		}
 

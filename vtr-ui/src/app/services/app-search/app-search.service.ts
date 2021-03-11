@@ -450,10 +450,6 @@ export class AppSearchService implements OnDestroy {
 
 		this.scheduleUpdateTask = true;
 		setTimeout(() => {
-			if (!this.scheduleUpdateTask) {
-				return;
-			}
-
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.FeaturesApplicableStatus,
 				this.getFeatureStatusMap()
