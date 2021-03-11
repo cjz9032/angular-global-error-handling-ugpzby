@@ -313,7 +313,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			const newTutorialVersion = this.newTutorialVersion;
 			let welcomeNeeded = false;
 			let pageNumber = 1;
-			let isOffline = this.checkIsOfflineMode();
+			const isOffline = this.checkIsOfflineMode();
 			if (
 				(tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) &&
 				!isOffline
@@ -748,7 +748,12 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		content += `Script loaded: ${performanceTimePoints.scriptLoaded} ms \n`;
 		content += `App initialized: ${performanceTimePoints.appInitialized} ms \n`;
 		content += `App entry loaded: ${performanceTimePoints.appEntryLoaded} ms \n`;
-		content += `First page loaded: ${performanceTimePoints.firstPageLoaded} ms`;
+		content += `First page loaded: ${performanceTimePoints.firstPageLoaded} ms \n`;
+		content += `DNS look up: ${performanceTimePoints.dnsLookup} ms \n`;
+		content += `TCP connection initiation: ${performanceTimePoints.initTcp} ms \n`;
+		content += `SSL connection initiation: ${performanceTimePoints.initSsl} ms \n`;
+		content += `HTTP request: ${performanceTimePoints.request} ms \n`;
+		content += `HTTP response: ${performanceTimePoints.response} ms`;
 		this.logger.info(content);
 		if (this.environment.debuggingSnackbar) {
 			this.snackBar.open(content, 'Close', {
