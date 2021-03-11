@@ -201,6 +201,17 @@
 							margin-bottom: 1.6rem;
 						}
 					}
+					&:nth-child(3).not-recommended-content {
+						@media #{$breakpoint_xl} {
+							margin-top: -3rem;
+						}
+						@media #{$breakpoint_lg} {
+							margin-top: 0;
+						}
+						@media #{$breakpoint_md} {
+							margin-top: -3rem;
+						}
+					}
 				}
 			}
 			.explore-options {
