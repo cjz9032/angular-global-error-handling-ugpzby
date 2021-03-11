@@ -436,7 +436,7 @@ export const menuConfig = {
 							path: RoutePath.meetingManager,
 							icon: null,
 							metricsEvent: 'itemClick',
-							metricsParent: 'smb.smb.navbar',
+							metricsParent: 'smb.meeting-experience.navbar',
 							metricsItem: 'link.meeting-manager',
 							routerLinkActiveOptions: {
 								exact: true,
