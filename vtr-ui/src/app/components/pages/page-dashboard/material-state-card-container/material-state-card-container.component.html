@@ -1,5 +1,5 @@
 <div *ngIf="cardData?.linkPath" class="container-card card-corner position-relative">
-	<a	*ngIf="!cardData?.isActionLink"		
+	<a	*ngIf="!cardData?.isActionLink"
 		class="h-100 content d-block"
 		role="link"
 		routerLink="/{{cardData.linkPath}}"
@@ -40,18 +40,18 @@
 					tabindex="-1"
 					class="m-0 a"
 					[disableRipple]="true">
-					<mat-icon>arrow_forward</mat-icon>
+					<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 				</button>
 			</div>
 		</div>
 	</a>
 
-	<a	*ngIf="cardData?.isActionLink"		
+	<a	*ngIf="cardData?.isActionLink"
 		class="h-100 content d-block"
 		role="link"
 		href="javascript:void(0);"
 		(click)="onClick(cardData?.linkPath, cardData?.params)"
-		(keydown.enter)="onClick(cardData?.linkPath, cardData?.params)"		
+		(keydown.enter)="onClick(cardData?.linkPath, cardData?.params)"
 		tabindex="0"
 		vtrMetrics
 		id="{{cardId+'-status-card'}}"
@@ -88,7 +88,7 @@
 					tabindex="-1"
 					class="m-0 a"
 					[disableRipple]="true">
-					<mat-icon>arrow_forward</mat-icon>
+					<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
 				</button>
 			</div>
 		</div>

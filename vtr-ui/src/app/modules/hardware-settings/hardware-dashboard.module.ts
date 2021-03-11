@@ -2,11 +2,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {
-	NgbCarouselModule,
-	NgbDropdownModule,
-	NgbTooltipModule,
-} from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbDropdownModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatButtonModule } from '@lenovo/material/button';
 import { MatIconModule } from '@lenovo/material/icon';
@@ -17,6 +13,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle';
 import { faCheckCircle } from '@fortawesome/pro-light-svg-icons/faCheckCircle';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 
 import { HardwareDashboardRoutingModule } from './hardware-dashboard-routing.module';
 import { TranslationModule } from '../translation.module';
@@ -114,5 +111,6 @@ export class HardwareDashboardModule {
 		library.addIcons(faCheckCircle);
 		library.addIcons(faChevronRight);
 		library.addIcons(faChevronLeft);
+		library.addIcons(faArrowRight);
 	}
 }
