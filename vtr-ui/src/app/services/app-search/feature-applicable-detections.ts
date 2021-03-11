@@ -21,6 +21,8 @@ import { AudioService } from '../audio/audio.service';
 import { InputAccessoriesService } from '../input-accessories/input-accessories.service';
 import { SmartAssistService } from '../smart-assist/smart-assist.service';
 import { FlipToStartSupportedEnum } from '../power/flip-to-start.enum';
+import { TopRowFunctionsIdeapadService } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.service';
+import { MachineType } from '../device/machine-type';
 
 @Injectable({
 	providedIn: 'root',
@@ -184,7 +186,7 @@ export class FeatureApplicableDetections {
 		},
 		{
 			featureId: AppSearch.FeatureIds.CameraAndDisplay.oLEDPowerSettingsId,
-			isApplicable: async () => this.displayService.getOLEDPowerControlCapability(),
+			isApplicable: async () => this.isOLEDPowerSettingsApplicable(),
 		},
 
 		// audio features
@@ -288,7 +290,8 @@ export class FeatureApplicableDetections {
 		private cameraFeedService: CameraFeedService,
 		private audioService: AudioService,
 		private inputAccessoriesService: InputAccessoriesService,
-		private smartAssistService: SmartAssistService
+		private smartAssistService: SmartAssistService,
+		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService
 	) {
 		this.detectionFuncMap = mapValues(
 			keyBy(this.detectionFuncList, 'featureId'),
@@ -455,7 +458,7 @@ export class FeatureApplicableDetections {
 
 	private async isBatteryInformationApplicable() {
 		const machineType = await this.deviceService.getMachineType();
-		if (machineType === 0 || machineType === 1) {
+		if (machineType === MachineType.IdeaPad || machineType === MachineType.ThinkPad) {
 			const result = (await this.batteryService.getBatteryDetail()) as any;
 			return result.batteryInformation?.length > 0;
 		}
@@ -465,12 +468,12 @@ export class FeatureApplicableDetections {
 
 	private async isAcAdapterStatusApplicable() {
 		const machineType = await this.deviceService.getMachineType();
-		if (machineType === 0 || machineType === 1) {
-			const result = (await this.batteryService.getBatteryDetail()) as any;
-			return result.batteryIndicatorInfo?.acAdapterStatus?.toLowerCase() !== 'notsupported';
+		if (machineType === MachineType.IdeaPad) {
+			return false;
 		}
 
-		return false;
+		const result = (await this.batteryService.getBatteryDetail()) as any;
+		return result.batteryIndicatorInfo?.acAdapterStatus?.toLowerCase() !== 'notsupported';
 	}
 
 	private async isSmartStandByApplicable() {
@@ -479,10 +482,10 @@ export class FeatureApplicableDetections {
 
 	private async isAlwaysOnUsbApplicable() {
 		const machineType = await this.deviceService.getMachineType();
-		if (machineType === 0) {
+		if (machineType === MachineType.IdeaPad) {
 			const resultForIdea = await this.powerService.getAlwaysOnUSBStatusIdeaNoteBook();
 			return resultForIdea?.available;
-		} else if (machineType === 1) {
+		} else if (machineType === MachineType.ThinkPad) {
 			return await this.powerService.getAlwaysOnUSBCapabilityThinkPad();
 		}
 
@@ -589,6 +592,11 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isPrivacyGuardApplicable() {
+		const machineType = await this.deviceService.getMachineType();
+		if (machineType === MachineType.IdeaPad) {
+			return false;
+		}
+
 		return await this.displayService.getPrivacyGuardCapability();
 	}
 
@@ -602,7 +610,7 @@ export class FeatureApplicableDetections {
 
 	private async isHiddenKeyboardFunctionApplicable() {
 		const machineType = await this.deviceService.getMachineType();
-		if (machineType === 1) {
+		if (machineType === MachineType.ThinkPad) {
 			const capability = await this.inputAccessoriesService.GetAllCapability();
 			return capability?.keyboardMapCapability;
 		}
@@ -611,17 +619,34 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isVoIPHotkeyFunctionApplicable() {
+		const machineType = await this.deviceService.getMachineType();
+		if (machineType === MachineType.IdeaPad) {
+			return false;
+		}
+
 		const capability = await this.inputAccessoriesService.getVoipHotkeysSettings();
 		return capability?.capability;
 	}
 
 	private async isTopRowKeyFunctionsApplicable() {
+		const machineType = await this.deviceService.getMachineType();
+		if (machineType === MachineType.IdeaPad) {
+			const capabilityItems = await this.topRowFunctionsIdeapadService
+				.requestCapability()
+				.toPromise();
+
+			const result = capabilityItems.find(
+				(item) => item.key?.toLowerCase() === 'fnlock' && item.key?.toLowerCase() === 'true'
+			);
+			return Boolean(result);
+		}
+
 		return await this.inputAccessoriesService.getTopRowFnLockCapability();
 	}
 
 	private async isUserDefinedKeyApplicable() {
 		const machineType = await this.deviceService.getMachineType();
-		if (machineType === 1) {
+		if (machineType === MachineType.ThinkPad) {
 			const capability = await this.inputAccessoriesService.GetAllCapability();
 			return capability?.uDKCapability;
 		}
@@ -631,7 +656,7 @@ export class FeatureApplicableDetections {
 
 	private async isFnAndCtrlkeySwapApplicable() {
 		const machineType = await this.deviceService.getMachineType();
-		if (machineType !== 0) {
+		if (machineType !== MachineType.IdeaPad) {
 			return await this.inputAccessoriesService.GetFnCtrlSwapCapability();
 		}
 
@@ -671,7 +696,7 @@ export class FeatureApplicableDetections {
 
 	private async isSmartMotionAlarmApplicable() {
 		const machineType = await this.deviceService.getMachineType();
-		if (machineType !== 0) {
+		if (machineType !== MachineType.IdeaPad) {
 			return false;
 		}
 
@@ -681,11 +706,20 @@ export class FeatureApplicableDetections {
 
 	private async isVideoResolutionUpscalingSRApplicable() {
 		const machineType = await this.deviceService.getMachineType();
-		if (machineType !== 0) {
+		if (machineType !== MachineType.IdeaPad) {
 			return false;
 		}
 
 		const capability = await this.smartAssistService.getSuperResolutionStatus();
 		return capability?.available;
+	}
+
+	private async isOLEDPowerSettingsApplicable() {
+		const machineType = await this.deviceService.getMachineType();
+		if (machineType === MachineType.IdeaPad) {
+			return false;
+		}
+
+		return this.displayService.getOLEDPowerControlCapability();
 	}
 }
