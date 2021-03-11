@@ -955,8 +955,13 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 /*.smart-standBy-modal-styles*/
 .smart-standBy-modal {
 	border-radius: 1rem;
-	background: $light;
+	background: none;
 	padding: 2rem;
+
+	.mat-dialog-container {
+		background: none;
+		box-shadow: none;
+	}
 }
 
 /*modal-intelligent-cooling-modes-styles*/
@@ -965,13 +970,6 @@ ngb-tooltip-window.vtr-system-tooltip.tooltip {
 	border-radius: 1rem;
 	background: $light;
 	padding: 4rem;
-}
-
-/*.smart-standBy-modal-styles*/
-.smart-standBy-modal {
-	border-radius: 1rem;
-	background: $light;
-	padding: 2rem;
 }
 
 /*-----Voice-Modal------------*/
@@ -2704,7 +2702,7 @@ ngb-tooltip-window.schedule-scan.tooltip {
 }
 
 .modal-common-responsive {
-	&:not(.About-Modal):not(.Find-Us-Modal):not(.welcome-modal-size) {
+	&:not(.About-Modal):not(.Find-Us-Modal):not(.welcome-modal-size):not(.smart-standBy-modal) {
 		max-height: calc(100vh - 2rem);
 	}
 	padding: 0 !important;

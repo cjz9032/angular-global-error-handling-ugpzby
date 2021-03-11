@@ -1,8 +1,10 @@
 @import '../../../app.theme.scss';
 
 .vtr-modal-smart-stand-by {
+	border-radius: 1rem;
+	background: $light;
 	&.modal-body {
-		padding: 0;
+		padding: 2rem;
 	}
 
 	fa-icon {
