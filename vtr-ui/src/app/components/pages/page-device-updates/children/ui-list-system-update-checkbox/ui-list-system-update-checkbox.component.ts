@@ -17,6 +17,7 @@ import { ModalUpdateChangeLogComponent } from 'src/app/components/modal/modal-up
 import { UpdateInstallSeverity } from 'src/app/enums/update-install-severity.enum';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@lenovo/material/dialog';
+import { UpdateActionResult } from 'src/app/enums/update-action-result.enum';
 
 @Component({
 	selector: 'vtr-ui-list-system-update-checkbox',
@@ -44,6 +45,7 @@ export class UiListSystemUpdateCheckboxComponent implements OnInit, OnDestroy {
 	public isIgnored = false;
 	public severity = UpdateInstallSeverity.Optional;
 	public UpdateInstallSeverity = UpdateInstallSeverity;
+	public UpdateActionResult = UpdateActionResult;
 	public packageName: string;
 	public packageID: string;
 	// Random number is used to have unique id of each input field
