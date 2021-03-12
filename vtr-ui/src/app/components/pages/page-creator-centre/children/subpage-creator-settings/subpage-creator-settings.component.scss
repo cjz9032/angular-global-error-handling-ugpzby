@@ -1,11 +1,18 @@
 @import '../../../../../app.theme';
-.subpage-creator-settings{
-    ul.list-group {
+.subpage-creator-settings {
+	ul.list-group {
 		list-style-type: none;
 	}
-	.vtr-subpage-left-column{
-		::ng-deep .left-border{
+	.vtr-subpage-left-column {
+		::ng-deep .left-border {
 			border-left: 0.7rem solid $smb_navy;
+		}
+	}
+
+	.card-content {
+		margin-top: -8.5rem;
+		@media #{$breakpoint_lg} {
+			margin-top: -1rem;
 		}
 	}
 }
