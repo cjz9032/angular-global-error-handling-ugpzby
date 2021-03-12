@@ -294,7 +294,7 @@ export class FeatureApplicableDetections {
 		private inputAccessoriesService: InputAccessoriesService,
 		private smartAssistService: SmartAssistService,
 		private topRowFunctionsIdeapadService: TopRowFunctionsIdeapadService,
-		private backlightService: BacklightService,
+		private backlightService: BacklightService
 	) {
 		this.detectionFuncMap = mapValues(
 			keyBy(this.detectionFuncList, 'featureId'),
@@ -510,20 +510,19 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isDynamicThermalControlApplicable() {
-        const dmDriverStatus = await this.powerService.getPMDriverStatus();
-        if (!dmDriverStatus) {
-            return false;
-        }
+		const dmDriverStatus = await this.powerService.getPMDriverStatus();
+		if (!dmDriverStatus) {
+			return false;
+		}
 
-        const itsStatus = await this.powerService.getITSServiceStatus();
-        if (!itsStatus) {
-            return true; // DYTC 3.0
-        }
+		const itsStatus = await this.powerService.getITSServiceStatus();
+		if (!itsStatus) {
+			return true; // DYTC 3.0
+		}
 
-        const dytcVersion = await this.powerService.getDYTCRevision();
-        return (dytcVersion >= 4)
-    }
-
+		const dytcVersion = await this.powerService.getDYTCRevision();
+		return dytcVersion >= 4;
+	}
 
 	private async isExtraPowerModeSettingApplicable() {
 		const dmDriverStatus = await this.powerService.getPMDriverStatus();
@@ -639,8 +638,9 @@ export class FeatureApplicableDetections {
 				.toPromise();
 
 			const result = capabilityItems.find(
-				(item) => item.key?.toLowerCase() === 'fnlock' && item.key?.toLowerCase() === 'true'
+				(item) => item.key === 'FnLock' && item.value === 'True'
 			);
+
 			return Boolean(result);
 		}
 
@@ -756,7 +756,9 @@ export class FeatureApplicableDetections {
 			}
 
 			const noCapability = backlightStatus.find(
-				(item) => item.key === 'KeyboardBacklightLevel' && item.value === BacklightLevelEnum.NO_CAPABILITY
+				(item) =>
+					item.key === 'KeyboardBacklightLevel' &&
+					item.value === BacklightLevelEnum.NO_CAPABILITY
 			);
 
 			return Boolean(!noCapability);
