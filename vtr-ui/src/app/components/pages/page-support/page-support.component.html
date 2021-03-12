@@ -60,12 +60,13 @@
 						</div>
 						<div class="row level-card-container no-gutters mb-24">
 							<div class="level-card-content level-card-content-{{i}} col-12 col-md-4 col-lg-12 col-xl-4"
+								[class.not-recommended-content]="!levelItem.isRecommended"
 								*ngFor="let levelItem of warrantyService.warrantyLevels; let i = index">
 								<div *ngIf="levelItem.isRecommended"
 									id="warranty-upgrade-recommended-text"
 									role="text"
 									class="recommended">{{'warranty.upgradeLevels.recommended' | translate}}</div>
-								<div class="row no-gutters level-card text-center d-sm-flex d-md-block d-lg-flex d-xl-block">
+								<div class="row no-gutters level-card text-center d-sm-flex d-md-block d-lg-flex d-xl-block justify-content-center">
 									<div class="col-6 col-md-12 col-lg-6 col-xl-12 pr-4 pr-md-0 pr-lg-4 pr-xl-0">
 										<div class="level-icon">
 											<i class="warranty-icon-font warranty-font-{{levelItem.warrantyCode}}"></i>
@@ -88,7 +89,7 @@
 												[metricsItem]="'WarrantyLevelButton.' + levelItem.id">{{levelItem.levelText}}</button>
 										</div>
 									</div>
-									<div class="col-6 col-md-12 col-lg-6 col-xl-12 level-detail text-left">
+									<div class="col-6 col-md-12 col-lg-6 col-xl-12 level-detail text-left" *ngIf="levelItem.points?.length > 0">
 										<div class="level-detail-item d-flex"
 											*ngFor="let point of levelItem.points; let pointIndex = index">
 											<div class="icon-bkg">
