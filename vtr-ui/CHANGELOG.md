@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.48](https://bitbucket.tc.lenovo.com///compare/v1.10.47...v1.10.48) (2021-03-12)
+
+
+### Features
+
+* **MeetingManager:** VAN-27019 show content instead of old card ([40a12ff](https://bitbucket.tc.lenovo.com///commit/40a12ff7a9eda8aba431bb3339866a34a4f5b0ab))
+
 ### [1.10.47](https://bitbucket.tc.lenovo.com///compare/v1.10.46...v1.10.47) (2021-03-12)
 
 
