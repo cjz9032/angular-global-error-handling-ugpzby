@@ -6,21 +6,19 @@
 			>
 			<div class="component" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 				<div class="custom-control">
-					<vtr-ui-checkbox
+					<mat-checkbox
 						#checkbox
 						[componentId]="componentId + '-item-' + i"
 						[ariaLabel]="('snapshot.' + item.name + 'Title' | translateDefault:item.name) + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
-						(click)="onDeviceSelectionClicked(item,checkbox.checked)"
-						[hasChild]="true"
+						(change)="onDeviceSelectionClicked(item,checkbox.checked)"
 						[checked]="item.selected"
-						[value]="item.selected"
 						class="custom-control-component"
 					>
 						<p id="{{ componentId }}-item-{{ i }}-name" role="text" class="custom-control-label-text name">
 							{{ ('snapshot.' + item.name + 'Title') | translateDefault: item.name  }}
 						</p>
-					</vtr-ui-checkbox>
+					</mat-checkbox>
 				</div>
 
 				<div class="col-auto">
@@ -44,24 +42,21 @@
 					<li *ngFor="let component of item.components; let j = index"
 						id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
 						class="list-group-item"
-						(change)=onCheckChildren(item)
 						[ngClass]="{'isSelected-item' : component.selected}"
 						>
 						<div class="component">
 							<div class="custom-control custom-checkbox">
-								<vtr-ui-checkbox
+								<mat-checkbox
 									componentId="{{ componentId }}-item-{{ i }}-subitem-{{ j }}"
 									[ariaLabel]="('snapshot.components.' + component.name | translateDefault:component.name) + ('snapshot.' + component.name | translateDefault:component.name) + '-checkbox'"
 									[checked]="component.selected"
-									[hasChild]="true"
-									[value]="component.selected"
-									(toggle)="component.selected = $event"
+									(change)="component.selected = $event.checked; onCheckChildren(item)"
 									class="custom-control-component"
 								>
 									<p class="custom-control-label-text component-name" id="{{ componentId }}-item-{{ i }}-subitem-{{ j }}-name" role="text">
 										{{ 'snapshot.components.' + component.name | translate }}
 									</p>
-								</vtr-ui-checkbox>
+								</mat-checkbox>
 							</div>
 						</div>
 					</li>
