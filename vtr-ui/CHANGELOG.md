@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.47](https://bitbucket.tc.lenovo.com///compare/v1.10.46...v1.10.47) (2021-03-12)
+
+
+### Bug Fixes
+
+* **SystemUpdate:** VAN-26456 fix installed result not show failed reason ([4285ed3](https://bitbucket.tc.lenovo.com///commit/4285ed3923c1ef9e738af7412714bd0a5e9f350b))
+* **SystemUpdate:** VAN-26456 use enum for status compare ([4898781](https://bitbucket.tc.lenovo.com///commit/489878101e7f257b7f86da670e51d1859a08c788))
+* **warranty:** VAN-26987 if no warranty level detail others center in responsive ui ([5577627](https://bitbucket.tc.lenovo.com///commit/5577627b6a435455d7201ed5429faef53dfdde7d))
+
 ### [1.10.46](https://bitbucket.tc.lenovo.com///compare/v1.10.45...v1.10.46) (2021-03-11)
 
 
