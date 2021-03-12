@@ -22,6 +22,8 @@ import CommonMetricsModel from '../../../../../data-models/common/common-metrics
 import { AudioVendorService } from '../../../page-device-settings/children/subpage-device-settings-audio/audio-vendor.service';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { MetricService } from 'src/app/services/metric/metrics.service';
+import { ContentActionType } from 'src/app/enums/content.enum';
+import { CardOverlayTheme } from 'src/app/services/card/card.service';
 
 @Component({
 	selector: 'vtr-subpage-meeting-manager',
@@ -101,6 +103,41 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	public translation = 'translation';
 	public AMMBannerAriaLabel: string;
 	private isAMMInstalledInterval: any;
+
+	rightCards = [
+		{
+			cardContent: {
+				Id: 'MeetingManagerLenovoPROForSmallBusinessBanner',
+				Title: 'LenovoPRO for small business',
+				Description: 'Join LenovoPRO FREE for exclusive discounts & financing',
+				FeatureImage: 'assets/images/smb/lenovo-pro.jpg',
+				OverlayTheme: CardOverlayTheme.Dark,
+				ActionType: ContentActionType.External,
+				ActionLink: 'https://www.lenovo.com/us/en/business/benefits',
+			},
+			id: 'meeting-manager-lenovo-pro-widget-card-content',
+			ariaLabel: 'meeting-manager-lenovo-pro-widget-card-content',
+			type: 'subpage-corner',
+			order: 1,
+			show: true,
+		},
+		{
+			cardContent: {
+				Id: 'MeetingManagerAIMeetingBanner',
+				Title: 'Al meeting manager',
+				Description: 'A better way to work efficiently',
+				FeatureImage: 'assets/images/smb/ai-meeting.jpg',
+				OverlayTheme: CardOverlayTheme.Dark,
+				ActionType: ContentActionType.Internal,
+				ActionLink: 'c87082abdc8a4f52a9df2c0e6ebd18dd',
+			},
+			id: 'meeting-manager-ai-meeting-widget-card-content',
+			ariaLabel: 'meeting-manager-ai-meeting-widget-card-content',
+			type: 'subpage-corner',
+			order: 2,
+			show: true,
+		}
+	];
 
 	constructor(
 		private audioService: AudioService,
@@ -664,11 +701,11 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	updateMicrophoneHeader() {
 		// microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)
 		if (!(this.microphoneProperties.available
-			  && ((this.microphoneProperties?.currentMode
-				&& this.microphoneProperties?.currentMode!='NotSupported'
+			&& ((this.microphoneProperties?.currentMode
+				&& this.microphoneProperties?.currentMode != 'NotSupported'
 				&& !this.isDTmachine
 				&& !this.isAudioVendorSupported)
-			  || this.isAudioVendorSupported))) {
+				|| this.isAudioVendorSupported))) {
 			this.headerMenuItems = this.commonService.removeObjFrom(
 				this.headerMenuItems,
 				'microphone'

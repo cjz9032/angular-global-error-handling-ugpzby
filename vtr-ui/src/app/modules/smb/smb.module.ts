@@ -24,6 +24,7 @@ import { MatButtonModule } from '@lenovo/material/button';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { PromotionBannerComponent } from 'src/app/components/pages/page-creator-centre/children/promotion-banner/promotion-banner.component';
 import { SharedModule } from '../shared.module';
+import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { SharedModule } from '../shared.module';
 	imports: [
 		CommonModule,
 		CommonUiModule,
+		ContainerCardModule,
 		SharedModule,
 		SmbRoutingModule,
 		PageLayoutModule,
