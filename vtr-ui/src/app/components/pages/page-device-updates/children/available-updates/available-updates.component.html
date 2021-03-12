@@ -112,18 +112,10 @@
 									[attr.aria-expanded]="!isCollapsed"
 									(keydown.enter)="onToggle()"
 									(click)="onToggle()">
-									<div *ngIf="isCollapsed"
-										class="collapse-text">
-										{{'common.ui.expand' | translate}}
+									<div class="collapse-text">
+										{{ isCollapsed ? ('common.ui.expand' | translate) :  ('common.ui.collapse' | translate)}}
 									</div>
-									<div *ngIf="!isCollapsed"
-										class="collapse-text">
-										{{'common.ui.collapse' | translate}}
-									</div>
-									<fa-icon *ngIf="isCollapsed"
-										[icon]="['fal', 'chevron-down']"></fa-icon>
-									<fa-icon *ngIf="!isCollapsed"
-										[icon]="['fal', 'chevron-up']"></fa-icon>
+									<fa-icon [icon]="['fal', isCollapsed ? 'chevron-down' : 'chevron-up']"></fa-icon>
 								</div>
 							</div>
 						</div>
