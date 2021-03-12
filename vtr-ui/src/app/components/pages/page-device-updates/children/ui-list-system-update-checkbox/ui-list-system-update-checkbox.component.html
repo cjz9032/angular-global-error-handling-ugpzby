@@ -89,7 +89,7 @@
 			*ngFor="let item of items">
 			<div class="media pl-3 align-items-center">
 				<div *ngIf="isInstallationCompleted">
-					<div *ngIf="item.installationStatus.toLocaleLowerCase() === 'success'; else elseBlock">
+					<div *ngIf="item.installationStatus === UpdateActionResult.Success; else elseBlock">
 						<div class="icon-check">
 							<div class="icon-bg text-center">
 								<fa-icon id="{{'su_item_installed_icon_success_' + item.packageID}}"
@@ -125,7 +125,7 @@
 								<div class="col">
 									<div class="d-flex justify-content-between align-items-center w-100">
 										<div class="fail-reason"
-											*ngIf="item.installationStatus.toLocaleLowerCase() === 'installfailed' && !item.isACAttached && item.packageRebootType.toLocaleLowerCase() === 'rebootdelayed'">{{'systemUpdates.updateCheckbox.failReason' | translate}}</div>
+											*ngIf="item.installationStatus === UpdateActionResult.InstallFailed && !item.isACAttached && item.packageRebootType.toLowerCase() === 'rebootdelayed'">{{'systemUpdates.updateCheckbox.failReason' | translate}}</div>
 									</div>
 								</div>
 							</div>
