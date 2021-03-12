@@ -116,6 +116,7 @@ export class AvailableUpdatesComponent implements OnInit {
 	}
 
 	public onToggle() {
+		window.getSelection().empty();
 		this.isCollapsed = !this.isCollapsed;
 	}
 
