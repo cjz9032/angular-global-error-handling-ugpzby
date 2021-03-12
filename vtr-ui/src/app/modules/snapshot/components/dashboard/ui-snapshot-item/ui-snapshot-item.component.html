@@ -105,10 +105,10 @@
 									{{ 'snapshot.properties.' + property.PropertyName | translateDefault:property.PropertyName }}
 								</th>
 								<td id="snapshot-item-{{ i }}-detail-{{ j }}-base-value">
-									{{ property.BaseValue }}</td>
+									{{ property.BaseValue | formatIfDateTimeOrTranslateDefault:property.BaseValue }}</td>
 
 								<td id="snapshot-item-{{ i }}-detail-{{ j }}-current-value" [ngClass]="{'modified-item': property.IsDifferent}">
-									{{ property.CurrentValue }}</td>
+									{{ property.CurrentValue | formatIfDateTimeOrTranslateDefault:property.CurrentValue }}</td>
 							</tr>
 							<ng-container *ngIf="array.isArray(values.SubDevices) && values.SubDevices.length > 0">
 								<ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: values.SubDevices }"></ng-container>

@@ -20,24 +20,18 @@ describe('ModalSnapshotComponent', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(ModalSnapshotComponent);
 		component = fixture.componentInstance;
-		component.snapshotComponentsByType = [
-			{
-				hardwareList: [
-					{
-						CdRomDrives: null,
-						DisplayDevices: null,
-						HardDrives: null,
-					},
-				],
-				softwareList: [
-					{
-						Processors: null,
-						OperatingSystems: null,
-						Printers: null,
-					},
-				],
+		component.snapshotComponentsByType = {
+			hardwareList: {
+				CdRomDrives: null,
+				DisplayDevices: null,
+				HardDrives: null,
 			},
-		];
+			softwareList: {
+				Processors: null,
+				OperatingSystems: null,
+				Printers: null,
+			},
+		};
 		fixture.detectChanges();
 	});
 
