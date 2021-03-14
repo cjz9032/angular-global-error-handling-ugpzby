@@ -218,7 +218,7 @@ export class FeatureApplicableDetections {
 		},
 		{
 			featureId: AppSearch.FeatureIds.InputAccessories.keyboardBacklightId,
-			isApplicable: async () => this.inputAccessoriesService.getKBDBacklightCapability(),
+			isApplicable: async () => this.isBacklightApplicable(),
 		},
 		{
 			featureId: AppSearch.FeatureIds.InputAccessories.smartKeyboardBacklightId,
