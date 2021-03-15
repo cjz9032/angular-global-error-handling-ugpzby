@@ -50,7 +50,6 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@lenovo/material/core';
 import { MatTooltipModule, MAT_TOOLTIP_DEFAULT_OPTIONS } from '@lenovo/material/tooltip';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@lenovo/material/dialog';
 import { MatIconModule } from '@lenovo/material/icon';
-import { MatCheckboxModule } from '@lenovo/material/checkbox';
 
 import { environment } from 'src/environments/environment';
 import { MissingTranslationDefaultHandler } from '../i18n/handler/missing-tranlsation-default-handler';
@@ -151,7 +150,6 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 		MatIconModule,
 		MatButtonModule,
 		MaterialModule,
-		MatCheckboxModule,
 	],
 	exports: [
 		NavbarModule,
