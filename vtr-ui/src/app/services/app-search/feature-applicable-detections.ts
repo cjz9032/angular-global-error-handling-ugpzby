@@ -613,7 +613,7 @@ export class FeatureApplicableDetections {
 		}
 
 		if (machineType === MachineType.IdeaPad) {
-			return this.isIdeaKdbBacklightApplicable();
+			return await this.isIdeaKdbBacklightApplicable();
 		}
 
 		return false;
@@ -742,7 +742,7 @@ export class FeatureApplicableDetections {
 		}
 
 		if (machineType === MachineType.IdeaPad) {
-			return this.isIdeaKdbBacklightApplicable();
+			return await this.isIdeaKdbBacklightApplicable();
 		}
 
 		return false;
