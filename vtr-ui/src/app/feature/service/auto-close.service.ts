@@ -48,17 +48,18 @@ export class AutoCloseService {
 			command: 'Get-RunningApps',
 		};
 		const runningApps: TileItem[] = [];
-		const saveAppsPath = this.savedApps.map((savedApps: TileItem) => savedApps.path);
+		const saveAppsPath = this.savedApps?.map((savedApps: TileItem) => savedApps.path);
 		return this.shellExtension
 			.sendContract(contract)
-			.then((res: App[]) => {
-				const runningApps = [];
-				res.forEach((app: App) => {
-					runningApps.push({
-						path: app.path,
-						name: app.name ? app.name : this.getAppName(app.path),
-						iconSrc: app.icon ? app.icon : '',
-					});
+			.then((result: App[]) => {
+				result.forEach((app: App) => {
+					if (!saveAppsPath?.includes(app.path)) {
+						runningApps.push({
+							path: app.path,
+							name: this.getAppName(app.path, app.name),
+							iconSrc: app.icon ? app.icon : '',
+						});
+					}
 				});
 
 				return runningApps;
@@ -82,7 +83,7 @@ export class AutoCloseService {
 				res.forEach((app: App) => {
 					savedApps.push({
 						path: app.path,
-						name: app.name ? app.name : this.getAppName(app.path),
+						name: this.getAppName(app.path, app.name),
 						iconSrc: app.icon ? app.icon : '',
 					});
 				});
@@ -95,7 +96,14 @@ export class AutoCloseService {
 			});
 	}
 
-	deleteAutoCloseApp(app: TileItem): Promise<boolean> {
+	async deleteAutoCloseApp(app: TileItem): Promise<boolean> {
+		const appsToRemove = {
+			path: app.path,
+			name: app.name,
+			icon: app.iconSrc ? app.iconSrc : '',
+		};
+		this.savedApps = this.savedApps.filter((savedApp: TileItem) => app.path !== savedApp.path);
+
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Delete-AutoCloseApp',
@@ -114,14 +122,16 @@ export class AutoCloseService {
 	}
 
 	addAutoCloseApp(app: TileItem): Promise<boolean> {
+		const appsToAdd = {
+			path: app.path,
+			name: app.name,
+			icon: app.iconSrc ? app.iconSrc : '',
+		};
+		this.savedApps.push(appsToAdd);
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Add-AutoCloseApp',
-			payload: {
-				path: app.path,
-				name: app.name,
-				icon: app.iconSrc ? app.iconSrc : '',
-			},
+			payload: appsToAdd,
 		};
 
 		return this.shellExtension

@@ -4,7 +4,6 @@ import { MatSlideToggleChange } from '@lenovo/material/slide-toggle';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
 import { TileItem, MaxSelected } from 'src/app/feature/types/auto-close';
 import { AutoCloseService } from 'src/app/feature/service/auto-close.service';
-import { MockService } from 'src/app/services/mock/mock.service';
 
 @Component({
 	selector: 'vtr-auto-close',
@@ -58,7 +57,7 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 			this.maxSelected
 		);
 		this.autoCloseService.getRunningApps().then((apps: TileItem[]) => {
-			this.runningApps = this.filterDuplicatesApps(this.savedApps, apps);
+			this.runningApps = apps;
 			appListDialog.componentInstance.data = this.runningApps;
 
 			this.selectedEmitSubscribe = appListDialog.componentInstance.selectedEmit.subscribe(
@@ -88,21 +87,5 @@ export class AutoCloseComponent implements OnInit, OnDestroy {
 	updateAutoCloseToggleState($event: MatSlideToggleChange) {
 		this.autoCloseChecked = $event.checked;
 		this.autoCloseService.setState(this.autoCloseChecked);
-	}
-
-	filterDuplicatesApps(first: TileItem[], second: TileItem[]): TileItem[] | undefined {
-		if (!first || !second) {
-			return;
-		}
-		const res = second;
-		first.map((firstItem) => {
-			const firstPath = firstItem.path;
-			second.map((secondItem, i) => {
-				if (firstPath === secondItem.path) {
-					res.splice(i, 1);
-				}
-			});
-		});
-		return res;
 	}
 }
