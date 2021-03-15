@@ -113,7 +113,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				FeatureImage: 'assets/images/smb/lenovo-pro.jpg',
 				OverlayTheme: CardOverlayTheme.Dark,
 				ActionType: ContentActionType.External,
-				ActionLink: 'https://www.lenovo.com/us/en/business/benefits',
+				ActionLink: 'https://www.lenovo.com/us/en/business/smbpro',
 			},
 			id: 'meeting-manager-lenovo-pro-widget-card-content',
 			ariaLabel: 'meeting-manager-lenovo-pro-widget-card-content',
