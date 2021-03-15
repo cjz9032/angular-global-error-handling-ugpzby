@@ -274,6 +274,56 @@ export class FeatureApplicableDetections {
 			featureId: AppSearch.FeatureIds.SmartAssist.videoResolutionUpscalingSRId,
 			isApplicable: async () => this.isVideoResolutionUpscalingSRApplicable(),
 		},
+		// gaming features
+		{
+			featureId: AppSearch.FeatureIds.MacroKey.pageId,
+			isApplicable: async () => this.isMacroKeyApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.ThermalMode.pageId,
+			isApplicable: async () => this.isThermalModeApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.NetworkBoost.pageId,
+			isApplicable: async () => this.isNetworkBoostApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.AutoClose.pageId,
+			isApplicable: async () => this.isAutoCloseApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.HybridMode.pageId,
+			isApplicable: async () => this.isHybridModeApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.OverDrive.pageId,
+			isApplicable: async () => this.isOverDriveApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.TouchpadLock.pageId,
+			isApplicable: async () => this.isTouchpadLockApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.Lighting.pageId,
+			isApplicable: async () => this.isLightingApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.RAMOverClock.pageId,
+			isApplicable: async () => this.isRAMOverClockApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.CPUOverClock.pageId,
+			isApplicable: async () => this.isCPUOverClockApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.GPUOverClock.pageId,
+			isApplicable: async () => this.isGPUOverClockApplicable(),
+		},
+		{
+			featureId: AppSearch.FeatureIds.VRAMOverClock.pageId,
+			isApplicable: async () => this.isVRAMOverClockApplicable(),
+		}
+		// gaming end
 	];
 	Windows: any;
 
@@ -762,4 +812,58 @@ export class FeatureApplicableDetections {
 
 			return Boolean(!noCapability);
 	}
+
+	// Version 3.7 app search for gaming
+	private isMacroKeyApplicable() {
+		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.macroKeyFeature, false);
+	}
+	private isThermalModeApplicable() {
+		const thermalModeVersion = this.localCacheService.getLocalCacheValue(LocalStorageKey.thermalModeVersion, 0);
+		const thermalModeFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.smartFanFeature, false);
+		return this.deviceService.isGaming && (thermalModeVersion === 2 || thermalModeVersion === 4) && thermalModeFeatureInfo;
+	}
+	private isNetworkBoostApplicable() {
+		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.networkBoostFeature, false);
+	}
+	private isAutoCloseApplicable() {
+		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.optimizationFeature, false);
+	}
+	private isHybridModeApplicable() {
+		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.hybridModeFeature, false);
+	}
+	private isOverDriveApplicable() {
+		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.overDriveFeature, false);
+	}
+	private isTouchpadLockApplicable() {
+		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.touchpadLockFeature, false);
+	}
+	private isLightingApplicable() {
+		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.ledSetFeature, false);
+		// && this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver, false);
+	}
+	private isRAMOverClockApplicable() {
+		return this.deviceService.isGaming && this.localCacheService.getLocalCacheValue(LocalStorageKey.memOCFeature, false);
+	}
+	private isCPUOverClockApplicable() {
+		const hwVersionInfo = (this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuInfoVersion, 0) === 1
+			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuInfoVersion, 0) === 1) ? 1 : 0;
+		const cpuOCFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuOCFeature, false)
+			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.xtuService, false);
+		return this.deviceService.isGaming && hwVersionInfo === 1 && cpuOCFeatureInfo;
+	}
+	private isGPUOverClockApplicable() {
+		const hwVersionInfo = (this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuInfoVersion, 0) === 1
+			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuInfoVersion, 0) === 1) ? 1 : 0;
+		const gpuOCFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuCoreOCFeature, false)
+			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.nvDriver, false);
+		return this.deviceService.isGaming && hwVersionInfo === 1 && gpuOCFeatureInfo;
+	}
+	private isVRAMOverClockApplicable() {
+		const hwVersionInfo = (this.localCacheService.getLocalCacheValue(LocalStorageKey.cpuInfoVersion, 0) === 1
+			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuInfoVersion, 0) === 1) ? 1 : 0;
+		const vramOCFeatureInfo = this.localCacheService.getLocalCacheValue(LocalStorageKey.gpuVramOCFeature, false)
+			&& this.localCacheService.getLocalCacheValue(LocalStorageKey.nvDriver, false);
+		return this.deviceService.isGaming && hwVersionInfo === 1 && vramOCFeatureInfo;
+	}
+	// gaming end
 }

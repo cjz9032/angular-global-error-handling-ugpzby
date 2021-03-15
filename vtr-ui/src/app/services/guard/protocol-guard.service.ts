@@ -48,6 +48,7 @@ export class ProtocolGuardService implements CanActivate {
 		'gaming-lighting1': 'gaming/lightingcustomize/1',
 		'gaming-lighting2': 'gaming/lightingcustomize/2',
 		'gaming-lighting3': 'gaming/lightingcustomize/3',
+		'gaming-thermalmode': '?action=thermalmode', // Version 3.7 app search for gaming
 		'hardware-scan': 'hardware-scan',
 		'smart-performance': 'support/smart-performance',
 	};

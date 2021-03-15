@@ -1,5 +1,6 @@
-import { Component, OnInit, DoCheck, OnDestroy, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, DoCheck, OnDestroy, AfterViewInit} from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
 import { MockService } from '../../../services/mock/mock.service';
 import { QaService } from '../../../services/qa/qa.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
@@ -23,6 +24,7 @@ import { Subscription } from 'rxjs';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 import { PerformanceNotifications } from 'src/app/enums/performance-notifications.enum';
+import { Gaming } from 'src/app/enums/gaming.enum';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
@@ -44,6 +46,10 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	private translateSubscription: Subscription;
 	private notificationSubscription: Subscription;
 	private cmsSubscription: Subscription;
+	// Version 3.7 app search for gaming
+	public featureName: string;
+	private thermalModeFlag = false;
+	private actionSubscription: Subscription;
 
 	constructor(
 		private router: Router,
@@ -63,7 +69,8 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		private dialogService: DialogService,
 		private gamingAllCapabilitiesService: GamingAllCapabilitiesService,
 		vantageShellService: VantageShellService,
-		private titleService: Title
+		private titleService: Title,
+		private location: Location
 	) {
 		this.securityAdvisor = vantageShellService.getSecurityAdvisor();
 		// TODO Lite Gaming
@@ -100,6 +107,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				this.onNotification(notification);
 			}
 		);
+		this.launchProtocol();
 	}
 
 	ngAfterViewInit(): void {
@@ -116,6 +124,9 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		}
 		if (this.cmsSubscription) {
 			this.cmsSubscription.unsubscribe();
+		}
+		if (this.actionSubscription) {
+			this.actionSubscription.unsubscribe();
 		}
 	}
 
@@ -188,6 +199,31 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				default:
 					break;
 			}
+		}
+	}
+
+	// Version 3.7 app search for gaming
+	private launchProtocol() {
+		this.actionSubscription = this.activatedRoute.queryParamMap.subscribe(
+			(params: ParamMap) => {
+				if (!params.has('action')) {
+					return;
+				}
+
+				if (this.activatedRoute.snapshot.queryParams.action.toLowerCase() === 'thermalmode') {
+					setTimeout(() => {
+						this.thermalModeFlag = true;
+						this.gamingAllCapabilitiesService.sendGamingThermalModeNotification(Gaming.GamingThermalMode, true);
+					}, 2000);
+				}
+			}
+		);
+	}
+
+	public thermalModeDialogMonitorChange(event) {
+		if (!event && this.thermalModeFlag) {
+			this.location.go('/device-gaming');
+			this.thermalModeFlag = false;
 		}
 	}
 }
