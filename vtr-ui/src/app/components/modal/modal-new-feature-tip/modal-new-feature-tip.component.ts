@@ -28,6 +28,8 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	contentLeft: number;
 	pointerLeft: number;
 
+	isCreating = true;
+
 	positionInterval: any;
 	positionIntervalTime: number;
 
@@ -248,6 +250,9 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		}
 		this.pointerLeft = this.emptyLeft + this.emptyWidth / 2 - this.contentLeft;
 
+		setTimeout(() => {
+		this.isCreating = false;
+		}, 1000);
 		clearInterval(this.positionInterval);
 		this.positionIntervalTime = 0;
 		this.positionInterval = setInterval(() => {
@@ -283,7 +288,9 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 
 	@HostListener('window:resize')
 	onResize() {
-		this.destroyTipsComponent();
+		if (!this.isCreating) {
+			this.destroyTipsComponent();
+		}
 	}
 
 	@HostListener('keydown', ['$event'])
