@@ -313,13 +313,13 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			const newTutorialVersion = this.newTutorialVersion;
 			let welcomeNeeded = false;
 			let pageNumber = 1;
-			const isOffline = this.checkIsOfflineMode();
+			const isOfflineMode = this.checkIsOfflineMode();
 			if (
 				(tutorial === undefined || tutorial.tutorialVersion !== newTutorialVersion) &&
-				!isOffline
+				(navigator.onLine || !isOfflineMode)
 			) {
 				welcomeNeeded = true;
-			} else if (tutorial && tutorial.page === 1 && !isOffline) {
+			} else if (tutorial && tutorial.page === 1 && (navigator.onLine || !isOfflineMode)) {
 				welcomeNeeded = true;
 				pageNumber = 2;
 			}
