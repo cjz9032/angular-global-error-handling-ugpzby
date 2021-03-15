@@ -102,7 +102,7 @@ export class ConfigService {
 					this.onNotification(notification);
 				}
 			);
-
+			
 			this.showNewFeatureTipsWithMenuItems();
 		});
 	}
@@ -349,8 +349,8 @@ export class ConfigService {
 			securityMenu.subitems,
 			'wifi-security',
 			!securityMenuCondition.isSmode &&
-				!securityMenuCondition.isArm &&
-				securityMenuCondition.wifiIsSupport
+			!securityMenuCondition.isArm &&
+			securityMenuCondition.wifiIsSupport
 		);
 	}
 
@@ -719,8 +719,8 @@ export class ConfigService {
 	updateSystemUpdatesMenu() {
 		const showSystemUpdate = Boolean(
 			this.adPolicyService.IsSystemUpdateEnabled &&
-				!this.deviceService.isSMode &&
-				!this.deviceService.isGaming
+			!this.deviceService.isSMode &&
+			!this.deviceService.isGaming
 		);
 		this.supportFilter(this.menu, 'system-updates', showSystemUpdate);
 	}
@@ -729,42 +729,53 @@ export class ConfigService {
 		const welcomeTutorial = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.WelcomeTutorial
 		);
-		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.NewFeatureTipsVersion,
-				this.commonService.newFeatureVersion
-			);
-			return;
-		}
-		this.localInfoService.getLocalInfo().then(async (localInfo) => {
-			if (SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)) {
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.NewFeatureTipsVersion,
-					this.commonService.newFeatureVersion
-				);
-				return;
-			}
-			const lastVersion = this.localCacheService.getLocalCacheValue(
-				LocalStorageKey.NewFeatureTipsVersion
-			);
-			if (
-				(!lastVersion || lastVersion < this.commonService.newFeatureVersion) &&
-				Array.isArray(this.menu)
-			) {
-				const idArr = ['security', 'connected-home-security', 'hardware-scan'];
-				const isIncludesItem = this.menu.find((item) => idArr.includes(item.id));
-				if (isIncludesItem) {
-					if (lastVersion > 0) {
-						this.commonService.lastFeatureVersion = lastVersion;
-					}
-					this.newFeatureTipService.create();
+		let widthCount = 0;
+		const widthTimer = setInterval(() => {
+			widthCount++;
+			const width = window.innerWidth;
+			this.logger.info('Window inner width:', width);
+			if (width > 1) {
+				if (!welcomeTutorial || !welcomeTutorial.isDone || width < 1200) {
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.NewFeatureTipsVersion,
+						this.commonService.newFeatureVersion
+						);
+						return;
 				}
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.NewFeatureTipsVersion,
-					this.commonService.newFeatureVersion
-				);
+				this.localInfoService.getLocalInfo().then((localInfo) => {
+					if (!SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)) {
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.NewFeatureTipsVersion,
+							this.commonService.newFeatureVersion
+						);
+						return;
+					}
+					const lastVersion = this.localCacheService.getLocalCacheValue(
+						LocalStorageKey.NewFeatureTipsVersion
+					);
+					if (
+						(!lastVersion || lastVersion < this.commonService.newFeatureVersion) &&
+						Array.isArray(this.menu)
+					) {
+						const idArr = ['security', 'connected-home-security', 'hardware-scan', 'app-search'];
+						const isIncludesItem = this.menu.find((item) => idArr.includes(item.id));
+						if (isIncludesItem) {
+							if (lastVersion > 0) {
+								this.commonService.lastFeatureVersion = lastVersion;
+							}
+							this.newFeatureTipService.create();
+						}
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.NewFeatureTipsVersion,
+							this.commonService.newFeatureVersion
+						);
+					}
+				});
+				clearInterval(widthTimer);
+			} else if (widthCount > 10) {
+					clearInterval(widthTimer);
 			}
-		});
+		}, 500);
 	}
 
 	private async updateHide(
