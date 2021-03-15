@@ -8,7 +8,7 @@
 	metricsEvent="FeatureClick"
 	metricsParent="Page.DeviceSettings.Power"
 >
-	<mat-icon class="icon close-icon">close</mat-icon>
+	<fa-icon [icon]="['fas', 'times']"></fa-icon>
 </button>
 <div class="vtr-modal-battery-charge-threshold"
 	id="modal-battery-charge-threshold"
@@ -43,7 +43,7 @@
 		<hr aria-hidden="true">
 		<div class="row">
 			<button id="battery-{{id}}-popup-{{buttonId | lowercase}}"
-				cdkFocusInitial 
+				cdkFocusInitial
 				attr.aria-label="battery-threshold-popup-enable"
 				tabindex="0"
 				class="btn enable-button"
