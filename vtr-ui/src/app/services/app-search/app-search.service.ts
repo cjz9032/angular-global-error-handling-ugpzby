@@ -381,7 +381,7 @@ export class AppSearchService implements OnDestroy {
 
 		if (
 			!this.lastFullFeaturesDetectionTime ||
-			Math.abs(Date.now() - this.lastFullFeaturesDetectionTime) > 24 * 60 * 1000 // 8 hours
+			Math.abs(Date.now() - this.lastFullFeaturesDetectionTime) > 24 * 60 * 60 * 1000 // 24 hours
 		) {
 			this.lastFullFeaturesDetectionTime = Date.now();
 			this.runFullFeaturesDetections();

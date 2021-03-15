@@ -471,7 +471,7 @@ export class FeatureApplicableDetections {
 
 	private async isAcAdapterStatusApplicable() {
 		const machineType = await this.deviceService.getMachineType();
-		if (machineType === MachineType.IdeaPad) {
+		if (machineType !== MachineType.ThinkPad) {
 			return false;
 		}
 
@@ -607,7 +607,16 @@ export class FeatureApplicableDetections {
 	}
 
 	private async isSmartKeyboardBacklightApplicable() {
-		return await this.inputAccessoriesService.getAutoKBDBacklightCapability();
+		const machineType = await this.deviceService.getMachineType();
+		if (machineType === MachineType.ThinkPad) {
+			return await this.inputAccessoriesService.getAutoKBDBacklightCapability();
+		}
+
+		if (machineType === MachineType.IdeaPad) {
+			return await this.isIdeaKdbBacklightApplicable();
+		}
+
+		return false;
 	}
 
 	private async isHiddenKeyboardFunctionApplicable() {
@@ -729,28 +738,18 @@ export class FeatureApplicableDetections {
 	private async isBacklightApplicable() {
 		const machineType = await this.deviceService.getMachineType();
 		if (machineType === MachineType.ThinkPad) {
-			let capblity = false;
-
-			try {
-				capblity = await this.inputAccessoriesService.getAutoKBDBacklightCapability();
-				if (capblity) {
-					return true;
-				}
-			} catch (ex) {
-				this.logger.info(`getAutoKBDBacklightCapability error: ${ex.message}`);
-			}
-
-			try {
-				capblity = await this.inputAccessoriesService.getKBDBacklightCapability();
-			} catch (ex) {
-				this.logger.info(`getKBDBacklightCapability error: ${ex.message}`);
-			}
-
-			return capblity;
+			return await this.inputAccessoriesService.getKBDBacklightCapability();
 		}
 
 		if (machineType === MachineType.IdeaPad) {
-			const backlightStatus = await this.backlightService.backlight.toPromise();
+			return await this.isIdeaKdbBacklightApplicable();
+		}
+
+		return false;
+	}
+
+	private async isIdeaKdbBacklightApplicable() {
+		const backlightStatus = await this.backlightService.backlight.toPromise();
 			if (!backlightStatus || backlightStatus.length < 1) {
 				return false;
 			}
@@ -762,8 +761,5 @@ export class FeatureApplicableDetections {
 			);
 
 			return Boolean(!noCapability);
-		}
-
-		return false;
 	}
 }
