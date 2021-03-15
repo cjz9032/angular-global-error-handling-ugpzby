@@ -19,7 +19,7 @@
 					id="ui-days-picker-daysId-label"
 					#combo
 					role="combobox"
-					attr.aria-label="{{ subHeadingText | translate}}, {{ smartStandbyService.scheduleLongForm}}"
+					attr.aria-label="{{ subHeadingText | translate}}, {{ scheduleLongForm}}"
 					[attr.aria-expanded]="showDropDown"
 					tabindex="0"
 					(click)="onToggleDropDown()"
@@ -30,7 +30,7 @@
 					<div class="row align-items-center d-flex justify-content-between pl-5">
 						<h5 id="smartStandby-shedule"
 							attr.aria-label="smartStandby-shedule"
-							>{{smartStandbyService.schedule}}</h5>
+							>{{schedule}}</h5>
 						<div class="toggle-icon"
 							id="smartStandby-days-picker-dropDown">
 							<fa-icon [icon]="['fal', 'chevron-down']" *ngIf="!showDropDown"></fa-icon>
@@ -50,7 +50,7 @@
 									aria-label="days list, select using arrow keys"
 									(keydown)="navigateByKeys($event, -1)"
 									tabindex="0">
-									<div *ngFor="let i of smartStandbyService.allDays; let idx = index;"
+									<div *ngFor="let i of allDays; let idx = index;"
 										id="{{'day' + idx}}"
 										(keydown)="navigateByKeys($event, idx)">
 										<div class="custom-control custom-checkbox mb-3">
@@ -70,7 +70,7 @@
 								</div>
 								<div class="d-flex justify-content-end py-3">
 									<p class="select-close"
-										*ngIf="!smartStandbyService.checkedLength"
+										*ngIf="!checkedLength"
 										id="smartStandby-warningtip"
 										attr.aria-label="{{'device.deviceSettings.power.smartStandby.warningtip' | translate}}"
 										tabindex="0">
@@ -86,7 +86,7 @@
 											tabindex="0"
 											id="daysPickerDone"
 											attr.aria-label="daysPickerDone"
-											*ngIf="smartStandbyService.checkedLength > 0"
+											*ngIf="checkedLength > 0"
 											attr.aria-label="{{ 'systemUpdates.popup.okayButton' | translate}}">
 										</fa-icon>
 										<fa-icon [icon]="['fal', 'times']"
