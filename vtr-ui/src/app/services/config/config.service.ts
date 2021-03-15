@@ -729,42 +729,44 @@ export class ConfigService {
 		const welcomeTutorial = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.WelcomeTutorial
 		);
-		if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.NewFeatureTipsVersion,
-				this.commonService.newFeatureVersion
-			);
-			return;
-		}
-		this.localInfoService.getLocalInfo().then(async (localInfo) => {
-			if (SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)) {
+		setTimeout(() => {
+			if (!welcomeTutorial || !welcomeTutorial.isDone || window.innerWidth < 1200) {
 				this.localCacheService.setLocalCacheValue(
 					LocalStorageKey.NewFeatureTipsVersion,
 					this.commonService.newFeatureVersion
 				);
 				return;
 			}
-			const lastVersion = this.localCacheService.getLocalCacheValue(
-				LocalStorageKey.NewFeatureTipsVersion
-			);
-			if (
-				(!lastVersion || lastVersion < this.commonService.newFeatureVersion) &&
-				Array.isArray(this.menu)
-			) {
-				const idArr = ['security', 'connected-home-security', 'hardware-scan'];
-				const isIncludesItem = this.menu.find((item) => idArr.includes(item.id));
-				if (isIncludesItem) {
-					if (lastVersion > 0) {
-						this.commonService.lastFeatureVersion = lastVersion;
-					}
-					this.newFeatureTipService.create();
+			this.localInfoService.getLocalInfo().then(async (localInfo) => {
+				if (SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)) {
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.NewFeatureTipsVersion,
+						this.commonService.newFeatureVersion
+					);
+					return;
 				}
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.NewFeatureTipsVersion,
-					this.commonService.newFeatureVersion
+				const lastVersion = this.localCacheService.getLocalCacheValue(
+					LocalStorageKey.NewFeatureTipsVersion
 				);
-			}
-		});
+				if (
+					(!lastVersion || lastVersion < this.commonService.newFeatureVersion) &&
+					Array.isArray(this.menu)
+				) {
+					const idArr = ['security', 'connected-home-security', 'hardware-scan', 'app-search'];
+					const isIncludesItem = this.menu.find((item) => idArr.includes(item.id));
+					if (isIncludesItem) {
+						if (lastVersion > 0) {
+							this.commonService.lastFeatureVersion = lastVersion;
+						}
+						this.newFeatureTipService.create();
+					}
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.NewFeatureTipsVersion,
+						this.commonService.newFeatureVersion
+					);
+				}
+			});
+		}, 0);
 	}
 
 	private async updateHide(
