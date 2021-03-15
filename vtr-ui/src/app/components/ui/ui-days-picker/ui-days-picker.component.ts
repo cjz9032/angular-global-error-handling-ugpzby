@@ -8,10 +8,14 @@ import {
 	SimpleChanges,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AppNotification } from 'src/app/data-models/common/app-notification.model';
+import { AllDays } from 'src/app/data-models/device/all-days.model';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 import { CommonService } from 'src/app/services/common/common.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
+
+export const DaysPickerNotificationType = 'standby-days-picker';
 
 @Component({
 	selector: 'vtr-ui-days-picker',
@@ -25,27 +29,45 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	@Input() showDropDown: boolean;
 	@Output() setDays = new EventEmitter<string>();
 
+	public scheduleLongForm: string;
+	public schedule: string;
+	public allDays: AllDays[];
+	public checkedLength: number;
+
 	constructor(
 		public translate: TranslateService,
 		public commonService: CommonService,
 		public smartStandbyService: SmartStandbyService,
 		private logger: LoggerService
-	) { }
+	) {
+		this.commonService.notification.subscribe(this.onNotification.bind(this));
+	}
 
 	ngOnInit() {
-		this.smartStandbyService.splitDays();
+		this.splitDays();
+		this.log('ngOnInit');
+	}
+
+	private log(event: string) {
 		const { schedule, allDays, scheduleLongForm, checkedLength } = this.smartStandbyService;
-		this.logger.info('UiDaysPickerComponent - ngOnInit', { schedule, allDays, scheduleLongForm, checkedLength });
+		this.logger.info(`UiDaysPickerComponent - ${event}`, { schedule, allDays, scheduleLongForm, checkedLength });
+	}
+
+	onNotification(appNotification: AppNotification) {
+		const { type } = appNotification;
+		if (type === DaysPickerNotificationType) {
+			this.splitDays();
+			this.log('onNotification');
+		}
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.smartStandbyService.splitDays();
-		const { schedule, allDays, scheduleLongForm, checkedLength } = this.smartStandbyService;
-		this.logger.info('UiDaysPickerComponent - ngOnChanges', { schedule, allDays, scheduleLongForm, checkedLength });
+		this.splitDays();
+		this.log('ngOnChanges');
 	}
 
 	clearSettings(listbox: HTMLElement) {
-		this.smartStandbyService.splitDays();
+		this.splitDays();
 		this.sendToggleNotification(false);
 		if (listbox) {
 			listbox.focus();
@@ -53,7 +75,7 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	}
 
 	onToggleDropDown() {
-		this.smartStandbyService.splitDays();
+		this.splitDays();
 		const { schedule, allDays, scheduleLongForm, checkedLength } = this.smartStandbyService;
 		this.logger.info('UiDaysPickerComponent - onToggleDropDown', { schedule, allDays, scheduleLongForm, checkedLength });
 		this.sendToggleNotification(!this.showDropDown);
@@ -108,5 +130,13 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 			default:
 				break;
 		}
+	}
+
+	private splitDays() {
+		this.smartStandbyService.splitDays();
+		this.scheduleLongForm = this.smartStandbyService.scheduleLongForm;
+		this.schedule = this.smartStandbyService.schedule;
+		this.allDays = this.smartStandbyService.allDays;
+		this.checkedLength = this.smartStandbyService.checkedLength;
 	}
 }
