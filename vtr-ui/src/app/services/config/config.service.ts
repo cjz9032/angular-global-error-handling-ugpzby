@@ -733,7 +733,7 @@ export class ConfigService {
 		const widthTimer = setInterval(() => {
 			widthCount++;
 			const width = window.innerWidth;
-			this.logger.info('menu menu menu width:', width)
+			this.logger.info('Window inner width:', width);
 			if (width > 1) {
 				if (!welcomeTutorial || !welcomeTutorial.isDone || width < 1200) {
 					this.localCacheService.setLocalCacheValue(
@@ -741,8 +741,8 @@ export class ConfigService {
 						this.commonService.newFeatureVersion
 						);
 						return;
-					}
-					this.localInfoService.getLocalInfo().then(async (localInfo) => {
+				}
+				this.localInfoService.getLocalInfo().then((localInfo) => {
 					if (!SegmentConstHelper.includedInCommonConsumer(localInfo.Segment)) {
 						this.localCacheService.setLocalCacheValue(
 							LocalStorageKey.NewFeatureTipsVersion,
@@ -773,7 +773,7 @@ export class ConfigService {
 				});
 				clearInterval(widthTimer);
 			} else if (widthCount > 10) {
-				clearInterval(widthTimer);
+					clearInterval(widthTimer);
 			}
 		}, 500);
 	}

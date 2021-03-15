@@ -251,7 +251,7 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		this.pointerLeft = this.emptyLeft + this.emptyWidth / 2 - this.contentLeft;
 
 		setTimeout(() => {
-		this.isCreating = false;
+			this.isCreating = false;
 		}, 1000);
 		clearInterval(this.positionInterval);
 		this.positionIntervalTime = 0;
