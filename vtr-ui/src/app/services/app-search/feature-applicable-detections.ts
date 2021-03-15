@@ -541,7 +541,7 @@ export class FeatureApplicableDetections {
 		}
 
 		const amtCapability = await this.powerService.getAMTCapability();
-		if (!amtCapability) {
+		if (amtCapability) {
 			return false;
 		}
 
