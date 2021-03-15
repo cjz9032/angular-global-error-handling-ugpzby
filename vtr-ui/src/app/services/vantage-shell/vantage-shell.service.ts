@@ -10,7 +10,7 @@ import { MetricHelper } from 'src/app/services/metric/metrics.helper';
 import { WifisecurityProxy } from '../security/wifisecurityproxy.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 
-declare var window;
+declare let window;
 
 @Injectable({
 	providedIn: 'root',

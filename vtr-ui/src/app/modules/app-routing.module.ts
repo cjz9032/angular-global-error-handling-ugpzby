@@ -5,6 +5,7 @@ import { PageDashboardComponent } from '../components/pages/page-dashboard/page-
 import { PageDeviceGamingComponent } from '../components/pages/page-device-gaming/page-device-gaming.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { ProtocolGuardService } from '../services/guard/protocol-guard.service';
+import { NonShellGuard } from '../services/guard/non-shell-guard';
 
 @Component({
 	template: 'empty',

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GuardService } from 'src/app/services/guard/guardService.service';
+import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
 import { SnapshotGuard } from 'src/app/services/guard/snapshot-guard';
 import { SnapshotMainComponent } from './components/main/snapshot-main.component';
 import { PageSnapshotComponent } from './pages/page-snapshot.component';
@@ -10,9 +11,9 @@ const routes: Routes = [
 		path: '',
 		component: PageSnapshotComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, SnapshotGuard],
+		canActivate: [NonShellGuard, GuardService, SnapshotGuard],
 		data: {
-			pageName: 'Snapshot'
+			pageName: 'Snapshot',
 		},
 		children: [
 			{
@@ -21,11 +22,11 @@ const routes: Routes = [
 				// canDeactivate: [GuardService],
 				// canActivate: [GuardService],
 				data: {
-					pageName: 'Snapshot'
-				}
-			}
-		]
-	}
+					pageName: 'Snapshot',
+				},
+			},
+		],
+	},
 ];
 
 @NgModule({

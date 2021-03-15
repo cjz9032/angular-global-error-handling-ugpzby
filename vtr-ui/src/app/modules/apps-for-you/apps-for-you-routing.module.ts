@@ -4,13 +4,14 @@ import { PageAppsForYouComponent } from '../../components/pages/page-apps-for-yo
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';
+import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: PageAppsForYouComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonArmGuard, NonSmodeGuard],
+		canActivate: [NonShellGuard, GuardService, NonArmGuard, NonSmodeGuard],
 		data: {
 			pageName: 'AppsForYou',
 		},

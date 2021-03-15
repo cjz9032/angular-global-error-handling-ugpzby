@@ -6,13 +6,14 @@ import { HardwareViewResultsComponent } from './pages/children/hardware-view-res
 
 import { HardwareScanGuard } from '../../services/guard/hardware-scan-guard';
 import { GuardService } from 'src/app/services/guard/guardService.service';
+import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: PageHardwareScanComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, HardwareScanGuard],
+		canActivate: [NonShellGuard, GuardService, HardwareScanGuard],
 		data: {
 			pageName: 'HardwareScan',
 		},

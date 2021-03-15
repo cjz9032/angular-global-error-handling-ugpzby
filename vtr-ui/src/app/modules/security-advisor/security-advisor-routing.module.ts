@@ -15,6 +15,7 @@ import { NonCommercialGuard } from 'src/app/services/guard/non-commercial-guard'
 import { WifiGuardService } from 'src/app/services/guard/wifi-guardService.service';
 import { DashlaneGuardService } from 'src/app/services/guard/dashlane-guardService.service';
 import { SecurityAdvisorGuard } from 'src/app/services/guard/security-advisor-guard';
+import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
 
 const routes: Routes = [
 	{
@@ -26,7 +27,13 @@ const routes: Routes = [
 		path: 'mysecurity',
 		component: PageSecurityComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, SecurityAdvisorGuard, NonSmodeGuard, NonArmGuard],
+		canActivate: [
+			NonShellGuard,
+			GuardService,
+			SecurityAdvisorGuard,
+			NonSmodeGuard,
+			NonArmGuard,
+		],
 		data: {
 			pageName: 'Security',
 		},
@@ -35,7 +42,14 @@ const routes: Routes = [
 		path: 'anti-virus',
 		component: PageSecurityAntivirusComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonCommercialGuard, NonSmodeGuard, NonArmGuard, NonGamingGuard],
+		canActivate: [
+			NonShellGuard,
+			GuardService,
+			NonCommercialGuard,
+			NonSmodeGuard,
+			NonArmGuard,
+			NonGamingGuard,
+		],
 		data: {
 			pageName: 'Security.AntiVirus',
 			pageContent: LocalStorageKey.SecurityCurrentPage,
@@ -46,6 +60,7 @@ const routes: Routes = [
 		component: PageSecurityPasswordComponent,
 		canDeactivate: [GuardService],
 		canActivate: [
+			NonShellGuard,
 			GuardService,
 			DashlaneGuardService,
 			NonCommercialGuard,
@@ -61,7 +76,7 @@ const routes: Routes = [
 		path: 'wifi-security',
 		component: PageSecurityWifiComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, WifiGuardService, NonSmodeGuard, NonArmGuard],
+		canActivate: [NonShellGuard,GuardService, WifiGuardService, NonSmodeGuard, NonArmGuard],
 		data: {
 			pageName: 'Security.WifiSecurity',
 		},
@@ -71,6 +86,7 @@ const routes: Routes = [
 		component: PageSecurityInternetComponent,
 		canDeactivate: [GuardService],
 		canActivate: [
+			NonShellGuard,
 			GuardService,
 			VpnGuardService,
 			NonCommercialGuard,

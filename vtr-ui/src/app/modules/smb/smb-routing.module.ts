@@ -8,6 +8,7 @@ import { SubpageEasyRenderingComponent } from 'src/app/components/pages/page-cre
 import { SubpageColorCalibrationComponent } from 'src/app/components/pages/page-creator-centre/children/subpage-color-calibration/subpage-color-calibration.component';
 import { GuardService } from 'src/app/services/guard/guardService.service';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
+import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
 
 const routes: Routes = [
 	{
@@ -19,7 +20,7 @@ const routes: Routes = [
 		path: 'meeting-experience',
 		component: PageMeetingExpirienceComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonArmGuard],
+		canActivate: [NonShellGuard, GuardService, NonArmGuard],
 		children: [
 			{
 				path: '',
@@ -41,7 +42,7 @@ const routes: Routes = [
 		path: 'creator-centre',
 		component: PageCreatorCentreComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonArmGuard],
+		canActivate: [NonShellGuard, GuardService, NonArmGuard],
 		children: [
 			{
 				path: '',

@@ -40,7 +40,6 @@ export class HardwareScanService {
 		private previousResultService: PreviousResultService,
 		private localCacheService: LocalCacheService,
 		private logger: LoggerService,
-		private scanLogService: ScanLogService
 	) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 

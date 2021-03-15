@@ -12,13 +12,14 @@ import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { SubpageDeviceSettingsPowerContainerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-container/subpage-device-settings-power-container.component';
 import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
+import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: PageDeviceComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonArmGuard],
+		canActivate: [NonShellGuard, GuardService, NonArmGuard],
 		data: {
 			pageName: 'Device.MyDevice',
 			pageContent: 'My Device Status',
@@ -27,7 +28,7 @@ const routes: Routes = [
 	{
 		path: 'device',
 		component: PageDeviceComponent,
-		canDeactivate: [GuardService],
+		canDeactivate: [NonShellGuard, GuardService],
 		canActivate: [GuardService, NonArmGuard],
 		data: {
 			pageName: 'Device.MyDevice',
@@ -38,7 +39,7 @@ const routes: Routes = [
 		path: 'device-settings',
 		component: PageDeviceSettingsComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonArmGuard],
+		canActivate: [NonShellGuard, GuardService, NonArmGuard],
 		data: {
 			pageName: 'Device.MyDeviceSettings',
 			pageContent: 'My Device Status',
@@ -112,7 +113,7 @@ const routes: Routes = [
 		path: 'high-density-battery',
 		component: PageHighDensityBatteryComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService],
+		canActivate: [NonShellGuard, GuardService],
 		data: {
 			pageName: 'Device.HighDensityBattery',
 		},
@@ -123,4 +124,4 @@ const routes: Routes = [
 	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule],
 })
-export class HardwareSettingRoutingModule { }
+export class HardwareSettingRoutingModule {}

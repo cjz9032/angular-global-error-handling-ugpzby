@@ -38,6 +38,7 @@ export interface MenuItem {
 	subitems?: any[];
 	hide?: boolean;
 	availability?: boolean;
+	shellSupport?: boolean;
 }
 
 interface SecurityMenuCondition {
@@ -184,7 +185,7 @@ export class ConfigService {
 				this.initializeSMB(resultMenu);
 				await this.initializeHardwareScan(resultMenu);
 				await this.initializeContentLibrary(resultMenu);
-				if (this.hypSettings) {
+				if (this.hypSettings && this.vantageShellService.isShellAvailable) {
 					resultMenu = await this.initShowCHSMenu(this.country, resultMenu, machineInfo);
 					resultMenu = await this.initializeAppSearchItem(resultMenu);
 				}
@@ -280,7 +281,11 @@ export class ConfigService {
 	}
 
 	private async initializeHardwareScan(menu: MenuItem[]) {
-		if (this.hardwareScanService && this.hardwareScanService.isAvailable) {
+		if (
+			this.hardwareScanService &&
+			this.hardwareScanService.isAvailable &&
+			this.vantageShellService.isShellAvailable
+		) {
 			let showHWScanMenu = false;
 			showHWScanMenu = await this.hardwareScanService.isAvailable();
 			this.supportFilter(menu, 'hardware-scan', Boolean(showHWScanMenu));
@@ -359,6 +364,18 @@ export class ConfigService {
 			LocalStorageKey.SecurityShowWifiSecurity,
 			wifiIsSupport
 		);
+	}
+
+	private shellSupportFilter(menu: MenuItem[]) {
+		menu.forEach((item) => {
+			if (item.shellSupport && !this.vantageShellService.isShellAvailable) {
+				item.hide = true;
+			}
+			if (item.subitems.length > 0) {
+				item.subitems = this.shellSupportFilter(item.subitems);
+			}
+		});
+		return menu;
 	}
 
 	segmentFilter(menu: Array<any>, segment: string) {
@@ -636,7 +653,8 @@ export class ConfigService {
 	async initializeByBeta(menu: MenuItem[], isBeta: boolean) {
 		this.updateBetaMenu(menu, isBeta, true);
 
-		this.isSmartPerformanceAvailable = await this.showSmartPerformance();
+		this.isSmartPerformanceAvailable =
+			this.vantageShellService.isShellAvailable && (await this.showSmartPerformance());
 		this.updateAvailability(menu, 'smart-performance', this.isSmartPerformanceAvailable);
 
 		this.updateBetaService(menu);
@@ -783,6 +801,7 @@ export class ConfigService {
 		segment: string,
 		beta: boolean
 	): Promise<MenuItem[]> {
+		this.shellSupportFilter(menu);
 		this.smodeFilter(menu, this.deviceService.isSMode);
 		if (segment !== SegmentConst.Gaming) {
 			this.segmentFilter(menu, segment);
