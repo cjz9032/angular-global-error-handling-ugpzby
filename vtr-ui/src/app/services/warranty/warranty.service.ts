@@ -109,7 +109,11 @@ export class WarrantyService {
 		data.isAvailable = true;
 		data.warrantyStatus = data.warrantyStatus?.toLowerCase();
 		data.currentWarrantyLevel = data.currentWarrantyLevel?.toLowerCase();
+		if (data.warrantyCode?.includes(',')) {
+			data.warrantyCode = data.warrantyCode.split(',')[0];
+		}
 		data.warrantyCode = data.warrantyCode?.toLowerCase();
+
 		if (data.warrantyLevels.length > 0) {
 			data.warrantyLevels.forEach(w => {
 				w.level = w.level?.toLowerCase();
