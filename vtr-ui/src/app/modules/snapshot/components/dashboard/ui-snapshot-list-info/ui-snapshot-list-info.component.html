@@ -7,11 +7,10 @@
 			<div class="component" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 				<div class="custom-control">
 					<mat-checkbox
-						#checkbox
 						[componentId]="componentId + '-item-' + i"
 						[ariaLabel]="('snapshot.' + item.name + 'Title' | translateDefault:item.name) + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
-						(change)="onDeviceSelectionClicked(item,checkbox.checked)"
+						(change)="onDeviceSelectionClicked(item, $event.checked)"
 						[checked]="item.selected"
 						class="custom-control-component"
 					>

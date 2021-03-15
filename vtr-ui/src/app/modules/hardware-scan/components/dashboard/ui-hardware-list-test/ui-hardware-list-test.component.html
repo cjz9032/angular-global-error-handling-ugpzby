@@ -7,7 +7,6 @@
 			<div class="module" [ngClass]="{'isSelected-item' : item.selected || item.indeterminate}">
 				<div class="custom-control">
 					<mat-checkbox
-						#checkbox
 						[id]="componentId + '-item-' + i"
 						[ariaLabel]="('hardwareScan.pluginTokens.' + item.name | translateDefault:item.name) + '-checkbox'"
 					 	[indeterminate]="item.indeterminate"
