@@ -79,16 +79,16 @@ export class AutoCloseService {
 		return this.shellExtension
 			.sendContract(contract)
 			.then((res: App[]) => {
-				const savedApps = [];
+				this.savedApps = [];
 				res.forEach((app: App) => {
-					savedApps.push({
+					this.savedApps.push({
 						path: app.path,
 						name: this.getAppName(app.path, app.name),
 						iconSrc: app.icon ? app.icon : '',
 					});
 				});
 
-				return savedApps;
+				return this.savedApps;
 			})
 			.catch((error: any) => {
 				this.logger.error(`get auto close apps error: ${error}`);
@@ -121,7 +121,7 @@ export class AutoCloseService {
 			});
 	}
 
-	addAutoCloseApp(app: TileItem): Promise<boolean> {
+	async addAutoCloseApp(app: TileItem): Promise<boolean> {
 		const appsToAdd = {
 			path: app.path,
 			name: app.name,
