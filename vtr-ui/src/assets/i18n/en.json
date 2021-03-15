@@ -6046,6 +6046,163 @@
 						"video resolution upscaling"
 					]
 				}
+			},
+			"gamingFeatures": {
+				"categoryName": "Gaming",
+				"macroKey": {
+					"featureName": "MacroKey",
+					"highRelevantKeywords": [
+						"Macro",
+						"MacroKey",
+						"Macro key",
+						"key",
+						"keyboard",
+						"keystroke"
+					]
+				},
+				"thermalMode": {
+					"featureName": "ThermalMode",
+					"highRelevantKeywords": [
+						"Thermalmode",
+						"Thermal mode",
+						"performance",
+						"balance",
+						"quite",
+						"boost",
+						"Fn",
+						"Q",
+						"device profile",
+						"profile",
+						"fan speed",
+						"speed",
+						"cooling control",
+						"temperature",
+						"silent"
+					]
+				},
+				"networkBoost": {
+					"featureName": "NetworkBoost",
+					"highRelevantKeywords": [
+						"Network",
+						"Network boost",
+						"boost",
+						"Network trrafic",
+						"trrafic",
+						"Network speed",
+						"speed",
+						"bandwidth",
+						"white list",
+						"fast",
+						"prioritize"
+					]
+				},
+				"autoClose": {
+					"featureName": "AutoClose",
+					"highRelevantKeywords": [
+						"Auto close",
+						"Autoclose",
+						"performance",
+						"close",
+						"unused apps",
+						"auto recover",
+						"release",
+						"speed",
+						"free up"
+					]
+				},
+				"hybridMode": {
+					"featureName": "HybridMode",
+					"highRelevantKeywords": [
+						"Hybrid mode",
+						"Hybrid",
+						"Advanced GPU",
+						"boost"
+					]
+				},
+				"overDrive": {
+					"featureName": "OverDrive",
+					"highRelevantKeywords": [
+						"Over drive",
+						"screen",
+						"drive",
+						"fast",
+						"panel"
+					]
+				},
+				"touchpadLock": {
+					"featureName": "TouchpadLock",
+					"highRelevantKeywords": [
+						"Touchpad",
+						"lock",
+						"touch",
+						"mistaken input",
+						"input",
+						"TP"
+					]
+				},
+				"lighting": {
+					"featureName": "Lighting",
+					"highRelevantKeywords": [
+						"Light",
+						"Lighting",
+						"Led",
+						"Led light",
+						"brightness",
+						"color",
+						"effect",
+						"speed",
+						"keyboard",
+						"RGB"
+					]
+				},
+				"ramOverClock": {
+					"featureName": "RAMOverClock",
+					"highRelevantKeywords": [
+						"RAM",
+						"over clock",
+						"overclock",
+						"boost",
+						"maximum speed",
+						"memory",
+						"overclocking"
+					]
+				},
+				"cpuOverClock": {
+					"featureName": "CPUOverClock",
+					"highRelevantKeywords": [
+						"CPU",
+						"over clock",
+						"overclock",
+						"boost",
+						"maximum speed",
+						"processor",
+						"overclocking"
+					]
+				},
+				"gpuOverClock": {
+					"featureName": "GPUOverClock",
+					"highRelevantKeywords": [
+						"GPU",
+						"over clock",
+						"overclock",
+						"boost",
+						"maximum speed",
+						"processor",
+						"overclocking"
+					]
+				},
+				"vramOverClock": {
+					"featureName": "VRAMOverClock",
+					"highRelevantKeywords": [
+						"VRAM",
+						"over clock",
+						"overclock",
+						"boost",
+						"maximum speed",
+						"processor",
+						"overclocking"
+					]
+				}
 			}
 		}
 	},

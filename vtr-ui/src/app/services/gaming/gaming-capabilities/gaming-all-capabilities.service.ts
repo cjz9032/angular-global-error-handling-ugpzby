@@ -4,6 +4,8 @@ import { VantageShellService } from '../../vantage-shell/vantage-shell.service';
 import { CommonService } from '../../common/common.service';
 import { Gaming } from 'src/app/enums/gaming.enum';
 import { LocalCacheService } from '../../local-cache/local-cache.service';
+import { Subject } from 'rxjs/internal/Subject';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
 	providedIn: 'root',
@@ -12,6 +14,7 @@ export class GamingAllCapabilitiesService {
 	public isShellAvailable = false;
 	public macrokey: any;
 	private gamingAllCapabilities: any;
+	public gamingThermalMode: any = new Subject();
 	constructor(
 		shellService: VantageShellService,
 		private localCacheService: LocalCacheService,
@@ -165,5 +168,13 @@ export class GamingAllCapabilitiesService {
 
 	getCapabilityFromCache(storageKey: any) {
 		return this.localCacheService.getLocalCacheValue(storageKey);
+	}
+
+	// Version 3.7 app search for gaming
+	public getGamingThermalModeNotification(): Observable<any> {
+		return this.gamingThermalMode.asObservable();
+	}
+	public sendGamingThermalModeNotification(action, payload) {
+		this.gamingThermalMode.next({ type: action, payload });
 	}
 }

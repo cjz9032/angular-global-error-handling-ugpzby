@@ -22,6 +22,7 @@ import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 })
 export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 	@Output() ocSettingsMsg = new EventEmitter<boolean>();
+	@Output() closeMonitorMsg = new EventEmitter<boolean>(); // Version 3.7 app search for gaming
 	public loading = false;
 	public gamingCapabilities: GamingAllCapabilities = new GamingAllCapabilities();
 	public thermalMode2Enum = GamingThermal2;
@@ -162,6 +163,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 
 	closeThermalMode2Modal() {
 		this.dialogRef.close();
+		this.closeMonitorMsg.emit(true); // Version 3.7 app search for gaming
 
 		const pageViewMetrics = {
 			ItemType: 'PageView',

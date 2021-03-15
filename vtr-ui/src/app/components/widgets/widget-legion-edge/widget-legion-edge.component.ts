@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs/internal/Subscription';
 import { ModalGamingLegionedgeComponent } from './../../modal/modal-gaming-legionedge/modal-gaming-legionedge.component';
-import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventTypes } from '@lenovo/tan-client-bridge';
 import { MatDialog } from '@lenovo/material/dialog';
@@ -35,6 +35,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 	styleUrls: ['./widget-legion-edge.component.scss'],
 })
 export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
+	@Output() thermalModeDialogMonitor = new EventEmitter<boolean>();
 	public gamingCapabilities: GamingAllCapabilities = new GamingAllCapabilities();
 	public disableButtons = false;
 	// Version 3.2: thermal mode 2.0 & performance OC
@@ -259,6 +260,9 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 
 	private notifcationSubscription: Subscription;
 	private ocSettingsSubscription: Subscription;
+	// Version 3.7 app search for gaming
+	private modelMonitorSubcription: Subscription;
+	private thermalModeSubscripiton: Subscription;
 
 	constructor(
 		private dialog: MatDialog,
@@ -491,6 +495,14 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 					this.legionEdgeInit();
 				}
 			});
+		// Version 3.7 app search for gaming
+		this.thermalModeSubscripiton = this.gamingCapabilityService
+			.getGamingThermalModeNotification()
+			.subscribe(() => {
+				if (this.modelMonitorSubcription === undefined) {
+					this.openThermalMode2Modal();
+				}
+			});
 	}
 
 	ngOnDestroy(): void {
@@ -514,6 +526,14 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		// Version 3.5 thermal mode 3.0
 		if (this.gamingCapabilities.thermalModeVersion === 4) {
 			this.unRegisterOCRealStatusChangeEvent();
+		}
+		// Version 3.7 app search for gaming
+		if (this.modelMonitorSubcription) {
+			this.modelMonitorSubcription.unsubscribe();
+			this.modelMonitorSubcription = undefined;
+		}
+		if (this.thermalModeSubscripiton) {
+			this.thermalModeSubscripiton.unsubscribe();
 		}
 	}
 
@@ -817,6 +837,14 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		});
 		this.ocSettingsSubscription = modalRef.componentInstance.ocSettingsMsg.subscribe((res) => {
 			this.performanceOCSettings = res;
+		});
+		// Version 3.7 app search for gaming
+		this.modelMonitorSubcription = modalRef.componentInstance.closeMonitorMsg.subscribe((ret) => {
+			if (ret) {
+				this.modelMonitorSubcription.unsubscribe();
+				this.modelMonitorSubcription = undefined;
+				this.thermalModeDialogMonitor.emit(false);
+			}
 		});
 	}
 

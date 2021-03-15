@@ -75,6 +75,15 @@ export class RoutePath {
 	static readonly creatorSettings = 'creator-settings';
 	static readonly easyRendering = 'easy-rendering';
 	static readonly colorCalibration = 'color-calibration';
+	// gaming features
+	static readonly gaming = 'gaming';
+	static readonly macroKey = `${RoutePath.gaming}/macrokey`;
+	static readonly thermalMode = '?action=thermalmode';
+	static readonly networkBoost = `${RoutePath.gaming}/networkboost`;
+	static readonly autoClose = `${RoutePath.gaming}/autoclose`;
+	static readonly lighting = `${RoutePath.gaming}/lightingcustomize/:0`; // limitation: profile is 0,so the profile id would be reflashed in lighting page
+	static readonly gamingHomePage = `${RoutePath.gaming}/${RoutePath.deviceGaming}`;
+	// gaming end
 }
 
 export const menuConfig = {

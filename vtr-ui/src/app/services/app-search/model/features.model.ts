@@ -541,4 +541,105 @@ export const featureSource = [
 			route: `${RoutePath.security}/${RoutePath.internetProtection}`,
 		},
 	},
+
+	/**
+	 * Version 3.7 app search for gaming
+	 * appSearch.features.gaming
+	 */
+	{
+		id: AppSearch.FeatureIds.MacroKey.pageId,
+		categoryId:AppSearch.FeatureIds.MacroKey.categoryId,
+		icon: ['fal', 'keyboard'],
+		action: {
+			route: RoutePath.macroKey,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.ThermalMode.pageId,
+		categoryId:AppSearch.FeatureIds.ThermalMode.categoryId,
+		icon: ['fal', 'fan'],
+		action: {
+			route: RoutePath.thermalMode,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.AutoClose.pageId,
+		categoryId:AppSearch.FeatureIds.AutoClose.categoryId,
+		icon: ['fal', 'cog'],
+		action: {
+			route: RoutePath.autoClose,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.NetworkBoost.pageId,
+		categoryId:AppSearch.FeatureIds.NetworkBoost.categoryId,
+		icon: ['fal', 'wifi'],
+		action: {
+			route: RoutePath.networkBoost,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.HybridMode.pageId,
+		categoryId:AppSearch.FeatureIds.HybridMode.categoryId,
+		icon: ['fal', 'cog'],
+		action: {
+			route: RoutePath.gamingHomePage,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.OverDrive.pageId,
+		categoryId:AppSearch.FeatureIds.OverDrive.categoryId,
+		icon: ['fal', 'cog'],
+		action: {
+			route: RoutePath.gamingHomePage,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.TouchpadLock.pageId,
+		categoryId:AppSearch.FeatureIds.TouchpadLock.categoryId,
+		icon: ['fal', 'lock'],
+		action: {
+			route: RoutePath.gamingHomePage,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.Lighting.pageId,
+		categoryId:AppSearch.FeatureIds.Lighting.categoryId,
+		icon: ['fal', 'cog'],
+		action: {
+			route: RoutePath.lighting,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.RAMOverClock.pageId,
+		categoryId:AppSearch.FeatureIds.RAMOverClock.categoryId,
+		icon: ['fal', 'bolt'],
+		action: {
+			route: RoutePath.gamingHomePage,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.CPUOverClock.pageId,
+		categoryId:AppSearch.FeatureIds.CPUOverClock.categoryId,
+		icon: ['fal', 'bolt'],
+		action: {
+			route: RoutePath.gamingHomePage,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.GPUOverClock.pageId,
+		categoryId:AppSearch.FeatureIds.GPUOverClock.categoryId,
+		icon: ['fal', 'bolt'],
+		action: {
+			route: RoutePath.gamingHomePage,
+		}
+	},
+	{
+		id: AppSearch.FeatureIds.VRAMOverClock.pageId,
+		categoryId:AppSearch.FeatureIds.VRAMOverClock.categoryId,
+		icon: ['fal', 'bolt'],
+		action: {
+			route: RoutePath.gamingHomePage,
+		}
+	}
 ];

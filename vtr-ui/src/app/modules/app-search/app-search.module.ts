@@ -6,6 +6,12 @@ import { CommonPipeModule } from 'src/app/modules/common/common-pipe.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSearch } from '@fortawesome/pro-light-svg-icons/faSearch';
 import { faGem } from '@fortawesome/pro-light-svg-icons/faGem';
+import { faKeyboard } from '@fortawesome/pro-light-svg-icons/faKeyboard';
+import { faCog } from '@fortawesome/pro-light-svg-icons/faCog';
+import { faLock } from '@fortawesome/pro-light-svg-icons/faLock';
+import { faFan } from '@fortawesome/pro-light-svg-icons/faFan';
+import { faWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
+import { faBolt } from '@fortawesome/pro-light-svg-icons/faBolt';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { SearchDropdownComponent } from 'src/app/components/app-search/dropdown-search/dropdown-search.component';
 import { PageSearchComponent } from 'src/app/components/app-search/page-search/page-search.component';
@@ -43,5 +49,12 @@ export class AppSearchModule {
 		library.addIcons(faSearch);
 		library.addIcons(faGem);
 		library.addIcons(faExclamationCircle);
+		// Version 3.7 app search for gaming
+		library.addIcons(faKeyboard);
+		library.addIcons(faCog);
+		library.addIcons(faFan);
+		library.addIcons(faLock);
+		library.addIcons(faWifi);
+		library.addIcons(faBolt);
 	}
 }
