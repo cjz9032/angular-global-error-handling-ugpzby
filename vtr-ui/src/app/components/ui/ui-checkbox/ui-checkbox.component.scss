@@ -142,7 +142,7 @@
 		/* end of mouse hover state */
 
 		/* pressed state */
-		.custom-control-input:active:not(:checked) ~ .custom-control-label {
+		.custom-control-input:active:not(:checked):not(:disabled) ~ .custom-control-label {
 			&::before {
 				border-color: $shade_blue;
 				background-color: $shade_blue;
@@ -156,7 +156,7 @@
 				}
 			}
 		}
-		.custom-control-input:active:checked ~ .custom-control-label {
+		.custom-control-input:active:checked:not(:disabled) ~ .custom-control-label {
 			&::before {
 				border-color: $shade_blue;
 				background-color: $shade_blue;
@@ -182,6 +182,9 @@
 		/* end of pressed state */
 
 		/* disabled state */
+		.custom-control-input:disabled {
+			user-select: none;
+		}
 
 		.custom-control-input:disabled:not(:checked) ~ .custom-control-label {
 			pointer-events: none;
