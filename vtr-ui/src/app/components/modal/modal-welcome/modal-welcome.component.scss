@@ -860,9 +860,8 @@
 		.content-page-2 .interests input[type='checkbox']:checked + label,
 		.content-page-2 .interests input[type='checkbox']:hover + label {
 			@include high-contrast-white-border;
-			color: $light;
+			color: $dark;
 			@include high-contrast-white-background;
-			@include high-contrast-adjust;
 		}
 
 		.custom-control-label {
@@ -876,13 +875,12 @@
 		.content-page-2 .interests input[type='checkbox'] + label {
 			border: 0.1rem solid rgba($color: $light, $alpha: 0.5);
 		}
-
+		
 		.content-page-2 .interests input[type='checkbox']:checked + label,
 		.content-page-2 .interests input[type='checkbox']:hover + label {
 			@include high-contrast-black-border;
-			color: $dark;
+			color: $light;
 			@include high-contrast-black-background;
-			@include high-contrast-adjust;
 		}
 
 		.custom-control-label {
