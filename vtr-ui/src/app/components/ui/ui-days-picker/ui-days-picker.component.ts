@@ -10,6 +10,7 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { KeyCode } from 'src/app/enums/key-code.enum';
 import { CommonService } from 'src/app/services/common/common.service';
+import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SmartStandbyService } from 'src/app/services/smart-standby/smart-standby.service';
 
 @Component({
@@ -27,15 +28,20 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 	constructor(
 		public translate: TranslateService,
 		public commonService: CommonService,
-		public smartStandbyService: SmartStandbyService
-	) {}
+		public smartStandbyService: SmartStandbyService,
+		private logger: LoggerService
+	) { }
 
 	ngOnInit() {
 		this.smartStandbyService.splitDays();
+		const { schedule, allDays, scheduleLongForm, checkedLength } = this.smartStandbyService;
+		this.logger.info('UiDaysPickerComponent - ngOnInit', { schedule, allDays, scheduleLongForm, checkedLength });
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
 		this.smartStandbyService.splitDays();
+		const { schedule, allDays, scheduleLongForm, checkedLength } = this.smartStandbyService;
+		this.logger.info('UiDaysPickerComponent - ngOnChanges', { schedule, allDays, scheduleLongForm, checkedLength });
 	}
 
 	clearSettings(listbox: HTMLElement) {
@@ -48,6 +54,8 @@ export class UiDaysPickerComponent implements OnInit, OnChanges {
 
 	onToggleDropDown() {
 		this.smartStandbyService.splitDays();
+		const { schedule, allDays, scheduleLongForm, checkedLength } = this.smartStandbyService;
+		this.logger.info('UiDaysPickerComponent - onToggleDropDown', { schedule, allDays, scheduleLongForm, checkedLength });
 		this.sendToggleNotification(!this.showDropDown);
 	}
 
