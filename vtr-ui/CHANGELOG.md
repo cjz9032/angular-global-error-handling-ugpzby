@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.49](https://bitbucket.tc.lenovo.com///compare/v1.10.48...v1.10.49) (2021-03-15)
+
+
+### Features
+
+* **ai meeting:** VAN-27019 update ai meeting banner link ([8ead862](https://bitbucket.tc.lenovo.com///commit/8ead8620c08fa95273326522644e407509328135))
+
+
+### Bug Fixes
+
+* **fa-icon:** van-26763 replace mat-icon with fa-icon ([4813d88](https://bitbucket.tc.lenovo.com///commit/4813d88f687331a985077d29f6bfaa24522a227a))
+* **fa-icon:** van-26763 replace mat-icon with fa-icon ([a0732fc](https://bitbucket.tc.lenovo.com///commit/a0732fcbc83d27246cedd72b5b6f5f6509c6bf6e))
+* **fa-icon:** van-26763 update close icon font ([22f3d00](https://bitbucket.tc.lenovo.com///commit/22f3d00af8e2b2558b78585f8022201cef7c9782))
+* **mat-icon:** VAN-26763 replace mat-icon with fa-icon ([a77bd10](https://bitbucket.tc.lenovo.com///commit/a77bd10c63b7c5bff2682c04aa95d213adde575e))
+* **mat-icon:** VAN-26763 replace mat-icon with fa-icon ([8191be3](https://bitbucket.tc.lenovo.com///commit/8191be37a87ef244bd1ba50108e46c16634001b7))
+* **mat-icon:** VAN-26763 replace mat-icon with fa-icon ([5a9c79f](https://bitbucket.tc.lenovo.com///commit/5a9c79f6c933e04b888e8dbd0e205212bea9cad4))
+* **warranty:** fix some local date overlay ([d7603a3](https://bitbucket.tc.lenovo.com///commit/d7603a39ff8002894f58f1b27a87d3ff890526b5))
+* **warranty:** fix some warranty issue ([7edb4fb](https://bitbucket.tc.lenovo.com///commit/7edb4fb176794ce20aa137ec289dfc8a5936768c))
+* **WelcomeTutorial:** VAN-25461 add navigator online back ([0997820](https://bitbucket.tc.lenovo.com///commit/099782046fc4dac86b7162739c439d65eaf1bc3d))
+
 ### [1.10.48](https://bitbucket.tc.lenovo.com///compare/v1.10.47...v1.10.48) (2021-03-12)
 
 
