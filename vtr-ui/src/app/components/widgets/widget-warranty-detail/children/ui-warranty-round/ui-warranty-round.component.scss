@@ -46,6 +46,11 @@
 		.start,
 		.end {
 			position: absolute;
+			.date {
+				width: 5rem;
+				line-height: 1.2;
+				padding-top: 0.1rem;
+			}
 		}
 		.end.is-last {
 			right: 0;

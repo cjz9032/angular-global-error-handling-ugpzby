@@ -6,7 +6,8 @@
 			<div class="font-weight-bold"
 				id="warranty-card-start-date-title"
 				role="text">{{'warranty.start' | translate}}</div>
-			<div id="warranty-card-start-date-status"
+			<div class="date"
+				id="warranty-card-start-date-status"
 				role="text">{{ round.startDate | formatLocaleDate }}</div>
 		</div>
 		<div *ngIf="round.isEnd && round.endDate"
@@ -15,7 +16,8 @@
 			<div class="font-weight-bold"
 				id="warranty-card-end-date-title"
 				role="text">{{'warranty.end' | translate}}</div>
-			<div id="warranty-card-end-date-status"
+			<div class="date"
+				id="warranty-card-end-date-status"
 				role="text">{{ round.endDate | formatLocaleDate }}</div>
 		</div>
 	</div>
