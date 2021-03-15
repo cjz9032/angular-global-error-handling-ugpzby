@@ -52,7 +52,7 @@ export class SubpageColorCalibrationComponent implements OnInit {
 		private colorCalibrationService: ColorCalibrationService,
 		private commonService: CommonService,
 		private translateService: TranslateService) {
-		this.isOnline = true;
+		this.isOnline = this.commonService.isOnline;
 		this.installStarted = false;
 	}
 
