@@ -190,11 +190,11 @@ $line_height: 2rem;
 						@extend .flex-all-center;
 						height: calc(#{$item_height} - 2px);
 
-						width: calc(100% - #{$icon_size} * 2 - 6.2rem);
 						.feature-name {
 							text-align: left;
 							font-weight: bold;
 							color: $gray_dark;
+							padding-left: 1.8rem;
 						}
 
 						.feature-category {
