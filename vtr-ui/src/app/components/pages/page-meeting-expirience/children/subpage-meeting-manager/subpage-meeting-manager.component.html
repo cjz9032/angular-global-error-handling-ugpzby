@@ -23,21 +23,31 @@
                             <p class="context" role="text" id="ai-meeting-manager-description">
 								{{'smb.meetingExperience.meetingManager.aiMeetingManager.description' | translate}}
 							</p>
-                            <vtr-ui-button class="install-or-launch-btn"
-								linkId="ai-meeting-manager-install-or-launch-btn"
-								metricsEvent="FeatureClick"
-								[metricsItem]="isAMMInstalled ? 'AiMeetingManagerLaunchButton' : 'AiMeetingManagerDownloadButton'"
-								metricsParent="Productivity.MeetingManager"
-								[isDisabled]="!commonService.isOnline && !isAMMInstalled"
-								[btnHeight]="true"
-								[label]="(isAMMInstalled ?
-									'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
-									'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
-								[tooltipText]="(isAMMInstalled ?
-									'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
-									'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
-								(onClick)="launchOrDownloadAiMeetingManager()">
-							</vtr-ui-button>
+                            <div class="mw-100">
+								<button id="ai-meeting-manager-install-or-launch-btn"
+									mat-customize-button
+									vtrMetrics
+									metricsEvent="FeatureClick"
+									[metricsItem]="isAMMInstalled ? 'AiMeetingManagerLaunchButton' : 'AiMeetingManagerDownloadButton'"
+									metricsParent="Productivity.MeetingManager"
+									color="primary"
+									class="w-100"
+									tabindex="0"
+									type="button"
+									[disabled]="!commonService.isOnline && !isAMMInstalled"
+									(click)="launchOrDownloadAiMeetingManager()"
+									(keydown.enter)="launchOrDownloadAiMeetingManager()"
+									[attr.aria-disabled]="!commonService.isOnline && !isAMMInstalled"
+									[attr.aria-label]="'smb.meetingExperience.meetingManager.aiMeetingManager.title' | translate"
+									[matTooltip]="(isAMMInstalled ?
+										'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
+										'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
+									matTooltipClass="vtr-system-tooltip">
+									{{ (isAMMInstalled ?
+										'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
+										'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate }}
+								</button>
+							</div>
                         </div>
                     </div>
 					<ul class="list-group list-group-flush">
