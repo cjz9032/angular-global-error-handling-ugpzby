@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://bitbucket.tc.lenovo.com///compare/v1.10.49...v1.11.0) (2021-03-16)
+
+
+### Features
+
+* **Auto close:** VAN-24037 add auto-close component for smartassist ([cc21257](https://bitbucket.tc.lenovo.com///commit/cc21257189ee36a24a5b9918303369ec9cf83792))
+* **Auto close:** VAN-24037 VAN-24038 update auto close feature ([b44e08a](https://bitbucket.tc.lenovo.com///commit/b44e08a956bd8f9a81d6bc0e58c511664b19fcf6))
+* **Auto close:** VAN-24826 add metrics ([18353ca](https://bitbucket.tc.lenovo.com///commit/18353ca1a98ed697df0dbbe9a86f6c95756fa69e))
+* **Auto Close:** integrate with boost addins ([653d819](https://bitbucket.tc.lenovo.com///commit/653d81983041ef776d4d18696bbe1b9557c10edd))
+* **auto-close:** VAN-24826 modify UI styles of auto close feature ([f2dcfd9](https://bitbucket.tc.lenovo.com///commit/f2dcfd976998f659023604e88a7b27553999fb41))
+* **AutoClose:** adjust auto close service ([57154be](https://bitbucket.tc.lenovo.com///commit/57154bec68e040f4df96e2bb19e8a63077cfd477))
+* **AutoClose:** integrate with addin ([93d0317](https://bitbucket.tc.lenovo.com///commit/93d0317091e76bd74e3c504d768feb9bc8e70c10))
+* add auto close service and mock service ([fc9c9f1](https://bitbucket.tc.lenovo.com///commit/fc9c9f1b7b0d3f880142588fa1d082beddda04b1))
+* add mat typography support ([f5eeef2](https://bitbucket.tc.lenovo.com///commit/f5eeef2bf0a11706232fedbe12f9537edb148c8c))
+* change widget-auto-close name ([5c71932](https://bitbucket.tc.lenovo.com///commit/5c71932b45b716c1ae178e58fbfde231847cd33f))
+* update auto close interface ([fc6e88a](https://bitbucket.tc.lenovo.com///commit/fc6e88a57cd2040a770156df650f09175920ad9e))
+
+
+### Bug Fixes
+
+* **SmartAssist:** fix smart assist errors ([dff28b5](https://bitbucket.tc.lenovo.com///commit/dff28b5bd832be7e36b2b96fabd95810d26d0ba5))
+* **style:** fix style error ([9292fb9](https://bitbucket.tc.lenovo.com///commit/9292fb92ca7bfb34d9abaa3f23b84a7f61420840))
+* add new guard service for shell supported modules ([09c26a3](https://bitbucket.tc.lenovo.com///commit/09c26a3084c2576f545e88b8fe34c3be80b6bbf6))
+* add return to async functions ([c1ca98e](https://bitbucket.tc.lenovo.com///commit/c1ca98e328e48b9004daeaac18fcde291155e74c))
+* **BoostService:** make boost service receive segment change event ([c460677](https://bitbucket.tc.lenovo.com///commit/c4606779eb0dfaf373b46ce9e26a215cc57d5d27))
+* remove useless module import ([9904477](https://bitbucket.tc.lenovo.com///commit/9904477ab35cb84ab7f8680c87a168c3298b449a))
+
 ### [1.10.49](https://bitbucket.tc.lenovo.com///compare/v1.10.48...v1.10.49) (2021-03-15)
 
 
