@@ -70,51 +70,53 @@ export class WifiSecurityService {
 	}
 
 	eventListener(wifiSecurity: phoenix.WifiSecurity) {
-		wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
-			if (value) {
-				const cacheWifiSecurityHistoryNum = this.commonService.getSessionStorageValue(
-					SessionStorageKey.SecurityWifiSecurityShowHistoryNum
-				)
-					? JSON.parse(
-							this.commonService.getSessionStorageValue(
-								SessionStorageKey.SecurityWifiSecurityShowHistoryNum
-							)
-					  )
-					: 4;
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.SecurityWifiSecurityHistorys,
-					value
-				);
-				this.histories = this.mappingHistory(wifiSecurity.wifiHistory);
-				if (!isEqual(this.preHistories, this.histories)) {
-					this.preHistories = cloneDeep(this.histories);
-					this.hasMore = this.histories.length > 4;
-					this.hideHistories(this.histories, cacheWifiSecurityHistoryNum);
-					this.commonService.setSessionStorageValue(
-						SessionStorageKey.SecurityWifiSecurityShowHistoryNum,
-						cacheWifiSecurityHistoryNum
+		if (this.shellService.isShellAvailable) {
+			wifiSecurity.on(EventTypes.wsWifiHistoryEvent, (value) => {
+				if (value) {
+					const cacheWifiSecurityHistoryNum = this.commonService.getSessionStorageValue(
+						SessionStorageKey.SecurityWifiSecurityShowHistoryNum
+					)
+						? JSON.parse(
+								this.commonService.getSessionStorageValue(
+									SessionStorageKey.SecurityWifiSecurityShowHistoryNum
+								)
+						  )
+						: 4;
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.SecurityWifiSecurityHistorys,
+						value
+					);
+					this.histories = this.mappingHistory(wifiSecurity.wifiHistory);
+					if (!isEqual(this.preHistories, this.histories)) {
+						this.preHistories = cloneDeep(this.histories);
+						this.hasMore = this.histories.length > 4;
+						this.hideHistories(this.histories, cacheWifiSecurityHistoryNum);
+						this.commonService.setSessionStorageValue(
+							SessionStorageKey.SecurityWifiSecurityShowHistoryNum,
+							cacheWifiSecurityHistoryNum
+						);
+					}
+				}
+			});
+
+			wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
+				if (value) {
+					if (typeof wifiSecurity.isLocationServiceOn === 'boolean') {
+						this.isLWSEnabled = value === 'enabled' && wifiSecurity.isLocationServiceOn;
+					}
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.SecurityWifiSecurityState,
+						value
 					);
 				}
-			}
-		});
+			});
 
-		wifiSecurity.on(EventTypes.wsStateEvent, (value) => {
-			if (value) {
-				if (typeof wifiSecurity.isLocationServiceOn === 'boolean') {
-					this.isLWSEnabled = value === 'enabled' && wifiSecurity.isLocationServiceOn;
+			wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
+				if (typeof value === 'boolean' && wifiSecurity.state) {
+					this.isLWSEnabled = wifiSecurity.state === 'enabled' && value;
 				}
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.SecurityWifiSecurityState,
-					value
-				);
-			}
-		});
-
-		wifiSecurity.on(EventTypes.wsIsLocationServiceOnEvent, (value) => {
-			if (typeof value === 'boolean' && wifiSecurity.state) {
-				this.isLWSEnabled = wifiSecurity.state === 'enabled' && value;
-			}
-		});
+			});
+		}
 	}
 
 	initializeHistories(wifiHistory: phoenix.WifiDetail[], visibleNum: number) {
@@ -130,7 +132,7 @@ export class WifiSecurityService {
 	mappingHistory(histories: phoenix.WifiDetail[]): WifiHistoryDetail[] {
 		const Histories = [];
 		histories.forEach((item) => {
-			let i = {
+			const i = {
 				ssid: '',
 				info: '',
 				good: null,

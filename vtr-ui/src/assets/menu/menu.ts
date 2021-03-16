@@ -101,6 +101,7 @@ export const menuConfig = {
 			},
 			sMode: true,
 			subitems: [],
+			shellSupport: false,
 		},
 		{
 			id: MenuID.security,
@@ -110,6 +111,7 @@ export const menuConfig = {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.security',
+			shellSupport: true,
 			subitems: [
 				{
 					id: MenuID.wifiSecurity,
@@ -124,6 +126,7 @@ export const menuConfig = {
 					},
 					subitems: [],
 					pre: ['assets/images/coronet-logo-gaming.svg'],
+					shellSupport: true,
 				},
 			],
 		},
@@ -140,6 +143,7 @@ export const menuConfig = {
 			},
 			sMode: true,
 			pre: ['assets/images/support/svg_icon_about_us.svg'],
+			shellSupport: false,
 			subitems: [
 				{
 					id: MenuID.support,
@@ -155,6 +159,7 @@ export const menuConfig = {
 						exact: true,
 					},
 					subitems: [],
+					shellSupport: false,
 				},
 				{
 					id: MenuID.contentLibrary,
@@ -169,6 +174,7 @@ export const menuConfig = {
 					},
 					sMode: true,
 					subitems: [],
+					shellSupport: false,
 				},
 				{
 					id: MenuID.smartPerformance,
@@ -185,6 +191,7 @@ export const menuConfig = {
 						exact: true,
 					},
 					subitems: [],
+					shellSupport: true,
 				},
 				{
 					id: MenuID.facebook,
@@ -199,6 +206,7 @@ export const menuConfig = {
 						exact: false,
 					},
 					subitems: [],
+					shellSupport: false,
 				},
 				{
 					id: MenuID.instagram,
@@ -213,6 +221,7 @@ export const menuConfig = {
 						exact: true,
 					},
 					subitems: [],
+					shellSupport: false,
 				},
 			],
 		},
@@ -229,6 +238,7 @@ export const menuConfig = {
 			},
 			icon: ['fal', 'search'],
 			subitems: [],
+			shellSupport: true,
 		},
 		{
 			id: MenuID.user,
@@ -242,6 +252,7 @@ export const menuConfig = {
 				exact: true,
 			},
 			subitems: [],
+			shellSupport: false,
 		},
 	],
 	menuItems: [
@@ -258,6 +269,7 @@ export const menuConfig = {
 			},
 			sMode: true,
 			subitems: [],
+			shellSupport: false,
 		},
 		{
 			id: MenuID.device,
@@ -268,6 +280,7 @@ export const menuConfig = {
 			metricsParent: 'navbar',
 			metricsItem: 'link.device',
 			sMode: true,
+			shellSupport: true,
 			subitems: [
 				{
 					id: MenuID.device,
@@ -281,6 +294,7 @@ export const menuConfig = {
 						exact: true,
 					},
 					sMode: true,
+					shellSupport: true,
 					subitems: [
 						{
 							id: MenuID.device,
@@ -295,6 +309,7 @@ export const menuConfig = {
 							},
 							sMode: true,
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.systemUpdates,
@@ -309,6 +324,7 @@ export const menuConfig = {
 							},
 							adPolicyId: 'E40B12CE-C5DD-4571-BBC6-7EA5879A8472',
 							subitems: [],
+							shellSupport: true,
 						},
 					],
 				},
@@ -324,6 +340,7 @@ export const menuConfig = {
 						exact: true,
 					},
 					sMode: true,
+					shellSupport: true,
 					subitems: [
 						{
 							id: MenuID.deviceSettings,
@@ -339,6 +356,7 @@ export const menuConfig = {
 							},
 							sMode: true,
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.power,
@@ -353,6 +371,7 @@ export const menuConfig = {
 							},
 							sMode: true,
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.audio,
@@ -367,6 +386,7 @@ export const menuConfig = {
 							},
 							sMode: true,
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.displayCamera,
@@ -381,6 +401,7 @@ export const menuConfig = {
 							},
 							sMode: true,
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.inputAccessories,
@@ -395,6 +416,7 @@ export const menuConfig = {
 							},
 							sMode: true,
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.smartAssist,
@@ -410,6 +432,7 @@ export const menuConfig = {
 							icon: null,
 							sMode: true,
 							subitems: [],
+							shellSupport: true,
 						},
 					],
 				},
@@ -425,6 +448,7 @@ export const menuConfig = {
 			metricsItem: 'link.smb',
 			hide: true,
 			sMode: false,
+			shellSupport: true,
 			subitems: [
 				{
 					id: MenuID.meetingExperience,
@@ -438,6 +462,7 @@ export const menuConfig = {
 						exact: true,
 					},
 					sMode: true,
+					shellSupport: true,
 					subitems: [
 						{
 							id: MenuID.meetingManager,
@@ -452,6 +477,7 @@ export const menuConfig = {
 							},
 							sMode: false,
 							subitems: [],
+							shellSupport: true,
 						},
 					],
 				},
@@ -467,6 +493,7 @@ export const menuConfig = {
 						exact: true,
 					},
 					sMode: false,
+					shellSupport: true,
 					subitems: [
 						{
 							id: MenuID.creatorSettings,
@@ -482,6 +509,7 @@ export const menuConfig = {
 							},
 							sMode: false,
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.easyRendering,
@@ -496,6 +524,7 @@ export const menuConfig = {
 							},
 							sMode: false,
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: 'color-calibration',
@@ -510,6 +539,7 @@ export const menuConfig = {
 							},
 							sMode: false,
 							subitems: [],
+							shellSupport: true,
 						},
 					],
 				},
@@ -524,6 +554,7 @@ export const menuConfig = {
 			metricsEvent: 'itemClick',
 			metricsParent: 'navbar',
 			metricsItem: 'link.security',
+			shellSupport: true,
 			subitems: [
 				{
 					id: MenuID.homeSecurity,
@@ -536,6 +567,7 @@ export const menuConfig = {
 					routerLinkActiveOptions: {
 						exact: true,
 					},
+					shellSupport: true,
 					subitems: [
 						{
 							id: MenuID.security,
@@ -549,6 +581,7 @@ export const menuConfig = {
 								exact: false,
 							},
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.connectedHomeSecurity,
@@ -564,6 +597,7 @@ export const menuConfig = {
 							icon: ['fal', 'house-signal'],
 							subitems: [],
 							pre: ['assets/images/connected-home-security/welcome-slide1@2x.png'],
+							shellSupport: true,
 						},
 					],
 				},
@@ -578,6 +612,7 @@ export const menuConfig = {
 					routerLinkActiveOptions: {
 						exact: true,
 					},
+					shellSupport: true,
 					subitems: [
 						{
 							id: MenuID.antiVirus,
@@ -598,6 +633,7 @@ export const menuConfig = {
 								'assets/images/antivirus/hero_side_blob_white.svg',
 								'assets/images/antivirus/hero_bottom_blob.svg',
 							],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.passwordProtection,
@@ -611,6 +647,7 @@ export const menuConfig = {
 							},
 							icon: null,
 							subitems: [],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.wifiSecurity,
@@ -625,6 +662,7 @@ export const menuConfig = {
 							},
 							subitems: [],
 							pre: ['assets/images/coronet-logo.svg'],
+							shellSupport: true,
 						},
 						{
 							id: MenuID.internetProtection,
@@ -638,6 +676,7 @@ export const menuConfig = {
 							},
 							icon: null,
 							subitems: [],
+							shellSupport: true,
 						},
 					],
 				},
@@ -657,6 +696,7 @@ export const menuConfig = {
 			},
 			subitems: [],
 			pre: ['assets/images/coronet-logo.svg'],
+			shellSupport: true,
 		},
 		{
 			id: MenuID.support,
@@ -671,6 +711,7 @@ export const menuConfig = {
 			},
 			sMode: true,
 			pre: ['assets/images/support/svg_icon_about_us.svg'],
+			shellSupport: false,
 			subitems: [
 				{
 					id: MenuID.support,
@@ -685,6 +726,7 @@ export const menuConfig = {
 					},
 					sMode: true,
 					subitems: [],
+					shellSupport: false,
 				},
 				{
 					id: MenuID.contentLibrary,
@@ -699,6 +741,7 @@ export const menuConfig = {
 					},
 					sMode: true,
 					subitems: [],
+					shellSupport: false,
 				},
 				{
 					id: MenuID.smartPerformance,
@@ -715,6 +758,7 @@ export const menuConfig = {
 						exact: true,
 					},
 					subitems: [],
+					shellSupport: true,
 				},
 				{
 					id: MenuID.hardwareScan,
@@ -730,6 +774,7 @@ export const menuConfig = {
 					},
 					icon: ['fal', 'flask'],
 					subitems: [],
+					shellSupport: true,
 				},
 			],
 		},
@@ -746,6 +791,7 @@ export const menuConfig = {
 			},
 			icon: ['fal', 'search'],
 			subitems: [],
+			shellSupport: true,
 		},
 		{
 			id: MenuID.user,
@@ -760,6 +806,7 @@ export const menuConfig = {
 			},
 			sMode: true,
 			subitems: [],
+			shellSupport: false,
 		},
 	],
 	menuItemsArm: [
@@ -775,6 +822,7 @@ export const menuConfig = {
 				exact: true,
 			},
 			subitems: [],
+			shellSupport: false,
 		},
 		{
 			id: MenuID.smartPerformance,
@@ -788,6 +836,7 @@ export const menuConfig = {
 				exact: false,
 			},
 			subitems: [],
+			shellSupport: true,
 		},
 		{
 			id: MenuID.user,
@@ -801,6 +850,7 @@ export const menuConfig = {
 				exact: true,
 			},
 			subitems: [],
+			shellSupport: false,
 		},
 	],
 	betaItem: [],

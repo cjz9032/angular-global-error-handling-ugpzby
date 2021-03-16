@@ -4,15 +4,14 @@ import { PageDeviceUpdatesComponent } from 'src/app/components/pages/page-device
 import { RouterModule, Routes } from '@angular/router';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';
-
-
+import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
 
 const routes: Routes = [
 	{
 		path: 'system-updates',
 		component: PageDeviceUpdatesComponent,
 		canDeactivate: [GuardService],
-		canActivate: [GuardService, NonArmGuard, NonSmodeGuard],
+		canActivate: [NonShellGuard, GuardService, NonArmGuard, NonSmodeGuard],
 		data: {
 			pageName: 'Device.SystemUpdate',
 			pageContent: 'My Device Status',
@@ -24,4 +23,4 @@ const routes: Routes = [
 	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule],
 })
-export class SystemUpdateRoutingModule { }
+export class SystemUpdateRoutingModule {}

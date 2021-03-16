@@ -7,6 +7,7 @@ import { NonGamingGuard } from 'src/app/services/guard/non-gaming-guard';
 import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { NonSmodeGuard } from 'src/app/services/guard/non-smode-guard';
 import { NonCommercialGuard } from 'src/app/services/guard/non-commercial-guard';
+import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
 
 const routes: Routes = [
 	{
@@ -14,6 +15,7 @@ const routes: Routes = [
 		component: PageConnectedHomeSecurityComponent,
 		canDeactivate: [GuardService],
 		canActivate: [
+			NonShellGuard,
 			GuardService,
 			NonGamingGuard,
 			NonArmGuard,

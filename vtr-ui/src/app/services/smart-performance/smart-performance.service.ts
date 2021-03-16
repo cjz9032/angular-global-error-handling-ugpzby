@@ -4,12 +4,19 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { DeviceService } from '../device/device.service';
-import { enumSmartPerformance, ScanningState, SPPriceCode } from 'src/app/enums/smart-performance.enum';
+import {
+	enumSmartPerformance,
+	ScanningState,
+	SPPriceCode,
+} from 'src/app/enums/smart-performance.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from '../logger/logger.service';
-import { SPLocalPriceData, SPYearPrice } from 'src/app/components/pages/page-smart-performance/interface/smart-performance.interface';
+import {
+	SPLocalPriceData,
+	SPYearPrice,
+} from 'src/app/components/pages/page-smart-performance/interface/smart-performance.interface';
 import currencyFormater from 'currency-formatter';
 
 @Injectable({
@@ -234,11 +241,13 @@ export class SmartPerformanceService {
 				this.isShowPrice = true;
 			}
 		}
-		if (!this.isLocalPriceOnlineChecked) {
+		if (!this.isLocalPriceOnlineChecked && this.isShellAvailable) {
 			const url = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getPrice?country=${localInfo.GEO}`;
 			const priceData = (await this.httpClient.get(url).toPromise()) as any;
 			if (priceData && priceData.data) {
-				const yearlyPrices = priceData.data.filter(item => item.code === SPPriceCode.YEAR);
+				const yearlyPrices = priceData.data.filter(
+					(item) => item.code === SPPriceCode.YEAR
+				);
 				const yearlyPriceData: SPYearPrice = yearlyPrices[0];
 				this.setLocalPriceData(yearlyPriceData, localInfo.GEO);
 				this.isLocalPriceOnlineChecked = true;
@@ -257,12 +266,13 @@ export class SmartPerformanceService {
 			if (GEO === 'tw') {
 				mpVal = Math.ceil(yearlyPriceData.price / 12);
 				monthlyPrice = symbol + mpVal;
-			}
-			else if (GEO === 'cl') {
+			} else if (GEO === 'cl') {
 				mpVal = Math.ceil(yearlyPriceData.price / 12);
-				monthlyPrice = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(mpVal);
-			}
-			else {
+				monthlyPrice = new Intl.NumberFormat('es-CL', {
+					style: 'currency',
+					currency: 'CLP',
+				}).format(mpVal);
+			} else {
 				mpVal = Math.ceil((yearlyPriceData.price * 100) / 12) / 100;
 				monthlyPrice = currencyFormater.format(mpVal, { code: isoCode });
 				yearlyPrice = currencyFormater.format(yearlyPriceData.price, { code: isoCode });
@@ -271,7 +281,10 @@ export class SmartPerformanceService {
 			this.localPriceData = { geo: GEO, yearlyPrice, monthlyPrice };
 			this.isShowPrice = true;
 			let localPrices: SPLocalPriceData[] = [];
-			const localPricesCache = this.localCacheService.getLocalCacheValue(LocalStorageKey.SmartPerformanceLocalPrices, undefined);
+			const localPricesCache = this.localCacheService.getLocalCacheValue(
+				LocalStorageKey.SmartPerformanceLocalPrices,
+				undefined
+			);
 			if (localPricesCache && localPricesCache.length > 0) {
 				localPrices = localPricesCache;
 				const geoInCacheIndex = localPrices.findIndex((lp) => lp.geo === GEO);
@@ -295,7 +308,11 @@ export class SmartPerformanceService {
 			'smart-performance.service.getSubscriptionDataDetail',
 			subscriptionDetails
 		);
-		if (subscriptionDetails && subscriptionDetails.data && subscriptionDetails.data.length > 0) {
+		if (
+			subscriptionDetails &&
+			subscriptionDetails.data &&
+			subscriptionDetails.data.length > 0
+		) {
 			subscriptionData = subscriptionDetails.data;
 			const lastItem = subscriptionData[subscriptionData.length - 1];
 			const releaseDate = new Date(lastItem.releaseDate);
@@ -313,8 +330,7 @@ export class SmartPerformanceService {
 		}
 		if (this.isSubscribed) {
 			this.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
-		}
-		else {
+		} else {
 			this.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
 		}
 	}

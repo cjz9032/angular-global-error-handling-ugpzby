@@ -92,10 +92,10 @@
 
 					</div>
 					<div class="custom-card col-12 col-md-6 col-lg-12 col-xl-6 pb-20 card-right">
-						<ng-container *ngIf="!showSecurityStatusCard else securityCard">
+						<ng-container *ngIf="(!showSecurityStatusCard) else securityCard">
 							<vtr-container-card order=3
 								[item]="contentCards.positionC.displayContent"
-								[isOfflineArm]="(deviceService.isArm && !isOnline) || (deviceService.isArm && contentCards.positionC.displayContent.isLocal)"
+								[isOfflineArm]="(deviceService.isArm && !isOnline && deviceService.isShellAvailable) || (deviceService.isArm && contentCards.positionC.displayContent.isLocal)"
 								[type]="'corner'"
 								[ratio]="2"
 								[containerCardId]="'dashboard-lnk-content-c'"
@@ -105,7 +105,7 @@
 						</ng-container>
 						<ng-template #securityCard>
 							<vtr-material-state-card-container [cardData]="securityInfo?.status !== undefined ? positionCData[securityInfo.status + 1] : positionCData[0]"
-								order=3
+								order=3 *ngIf="deviceService.isShellAvailable"
 								cardId="dashboard-lnk-security-position-c">
 								<vtr-material-status-circle class="link-content"
 									[gradientColor]="securityInfo"
@@ -160,7 +160,7 @@
 	<right-content>
 		<div class="container-fluid">
 			<div class="row"
-				*ngIf="!deviceService.isArm && !deviceService.isSMode">
+				*ngIf="!deviceService.isArm && !deviceService.isSMode && deviceService.isShellAvailable">
 				<div class="col-sm-12 col-md-12 pb-20 px-0">
 					<vtr-widget-system-update></vtr-widget-system-update>
 				</div>
@@ -197,14 +197,14 @@
 			</div>
 
 			<div class="row"
-				*ngIf="!deviceService.isArm && showQuickSettings">
+				*ngIf="!deviceService.isArm && showQuickSettings && deviceService.isShellAvailable">
 				<div class="col-sm-12 px-0 pt-3">
 					<vtr-widget-quicksettings>
 					</vtr-widget-quicksettings>
 				</div>
 			</div>
 			<div class="row"
-				*ngIf="!deviceService.isArm">
+				*ngIf="!deviceService.isArm && deviceService.isShellAvailable">
 				<div class="col-sm-12 px-0 mt-20">
 					<vtr-widget-status componentName="system status"
 						[title]="'dashboard.systemStatus.title' | translate"
