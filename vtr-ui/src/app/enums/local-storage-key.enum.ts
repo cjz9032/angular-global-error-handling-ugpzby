@@ -340,4 +340,9 @@ export enum LocalStorageKey {
 	//SMB
 	AiMeetingManagerInstalled = '[LocalStorageKey] AiMeetingManagerInstalled',
 	SmartAppearanceInstalled = '[LocalStorageKey] SmartAppearanceInstalled',
+
+	// Performance Boost
+	PerformanceBoostAvailable = '[LocalStorageKey] PerformanceBoostAvailable',
+	PerformanceBoostToggle = '[LocalStorageKey] PerformanceBoostToggle',
+	PerformanceBoostList = '[LocalStorageKey] PerformanceBoostList',
 }

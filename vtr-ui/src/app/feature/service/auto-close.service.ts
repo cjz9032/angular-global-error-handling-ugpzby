@@ -27,7 +27,7 @@ export class AutoCloseService {
 			});
 	}
 
-	async getState(): Promise<boolean> {
+	async getState(): Promise<boolean | Error> {
 		const contract = {
 			contract: 'Vantage.BoostAddin.AutoClose',
 			command: 'Get-State',
@@ -38,7 +38,7 @@ export class AutoCloseService {
 			.then((response: string) => response.toLowerCase() === 'true')
 			.catch((error: any) => {
 				this.logger.error(`get auto close state error: ${error}`);
-				return false;
+				throw new Error('Addin no response');
 			});
 	}
 
@@ -97,11 +97,6 @@ export class AutoCloseService {
 	}
 
 	async deleteAutoCloseApp(app: TileItem): Promise<boolean> {
-		const appsToRemove = {
-			path: app.path,
-			name: app.name,
-			icon: app.iconSrc ? app.iconSrc : '',
-		};
 		this.savedApps = this.savedApps.filter((savedApp: TileItem) => app.path !== savedApp.path);
 
 		const contract = {

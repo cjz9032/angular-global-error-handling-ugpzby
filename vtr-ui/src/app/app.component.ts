@@ -52,7 +52,6 @@ import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
 import { PerformanceNotifications } from './enums/performance-notifications.enum';
 import { WarrantyService } from './services/warranty/warranty.service';
-import { BoostService } from './feature/service/boost.service';
 
 export const scrollStrategyClose = (overlay: Overlay) => () => overlay.scrollStrategies.close();
 
@@ -106,8 +105,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private localCacheService: LocalCacheService,
 		private warrantyService: WarrantyService,
 		@Inject(DOCUMENT) public document: Document,
-		private snackBar: MatSnackBar,
-		private boostService: BoostService
+		private snackBar: MatSnackBar
 	) {
 		this.ngbTooltipConfig.triggers = 'hover';
 		// to check web and js bridge version in browser console
