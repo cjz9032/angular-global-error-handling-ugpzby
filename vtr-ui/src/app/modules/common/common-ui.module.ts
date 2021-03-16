@@ -54,6 +54,7 @@ import { UiExclamationPointComponent } from '../../components/ui/ui-exclamation-
 import { MaterialModule } from './material.module';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { MatButtonModule } from '@lenovo/material/button';
+import { MatCheckboxModule } from '@lenovo/material/checkbox';
 
 
 @NgModule({
@@ -139,6 +140,7 @@ import { MatButtonModule } from '@lenovo/material/button';
 		MatTooltipModule,
 		MaterialModule,
 		MatButtonModule,
+		MatCheckboxModule,
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
