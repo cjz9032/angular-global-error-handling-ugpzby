@@ -81,7 +81,7 @@ export class RoutePath {
 	static readonly thermalMode = '?action=thermalmode';
 	static readonly networkBoost = `${RoutePath.gaming}/networkboost`;
 	static readonly autoClose = `${RoutePath.gaming}/autoclose`;
-	static readonly lighting = `${RoutePath.gaming}/lightingcustomize/:0`; // limitation: profile is 0,so the profile id would be reflashed in lighting page
+	static readonly lighting = `${RoutePath.gaming}/lightingcustomize/0`; // limitation: profile is 0,so the profile id would be reflashed in lighting page
 	static readonly gamingHomePage = `${RoutePath.gaming}/${RoutePath.deviceGaming}`;
 	// gaming end
 }
