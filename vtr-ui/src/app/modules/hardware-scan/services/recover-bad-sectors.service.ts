@@ -40,7 +40,6 @@ export class RecoverBadSectorsService {
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'custom-modal-size',
-			ariaLabelledBy: 'hwscan-rbs-modal-title',
 		});
 
 		if (failedDevices !== null) {

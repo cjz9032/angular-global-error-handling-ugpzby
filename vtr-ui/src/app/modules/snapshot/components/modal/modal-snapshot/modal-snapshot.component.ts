@@ -5,7 +5,6 @@ import {
 	Output,
 	EventEmitter,
 	HostListener,
-	OnDestroy,
 } from '@angular/core';
 import { MatDialogRef } from '@lenovo/material/dialog';
 import {
@@ -26,7 +25,6 @@ export class ModalSnapshotComponent implements OnInit {
 
 	public componentItemList: Array<ModalSnapshotComponentItem> = [];
 	public errorMessage = false;
-	private isSuccessful = false;
 
 	constructor(
 		private dialogRef: MatDialogRef<ModalSnapshotComponent>,
@@ -66,7 +64,6 @@ export class ModalSnapshotComponent implements OnInit {
 			(x: ModalSnapshotComponentItem) => x.selected || x.indeterminate
 		);
 		if (leastOneSelected) {
-			this.isSuccessful = true;
 			this.closeModal();
 			const selectedComponents = this.getSelectedItems(this.componentItemList);
 			this.passEntry.emit(selectedComponents);
