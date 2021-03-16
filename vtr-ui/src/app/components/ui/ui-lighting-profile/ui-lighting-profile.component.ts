@@ -181,6 +181,7 @@ export class UiLightingProfileComponent implements OnInit {
 				this.getCacheLightingCapabilities(response);
 			}
 		}
+		this.currentProfileId = this.localCacheService.getLocalCacheValue(LocalStorageKey.ProfileId, 0);
 		if (LocalStorageKey.LightingProfileById !== undefined) {
 			const res = this.localCacheService.getLocalCacheValue(
 				LocalStorageKey.LightingProfileById
@@ -193,6 +194,28 @@ export class UiLightingProfileComponent implements OnInit {
 			this.isProfileOff = true;
 		}
 	}
+	
+	public getLightingProfileId() {
+		try {
+			if (this.gamingLightingService.isShellAvailable) {
+				this.gamingLightingService.getLightingProfileId().then((response: any) => {
+					if (response.didSuccess) {
+						this.currentProfileId = response.profileId;
+						this.localCacheService.setLocalCacheValue(
+							LocalStorageKey.ProfileId,
+							this.currentProfileId
+						);
+					}
+					this.getLightingProfileById(this.currentProfileId);
+				}).catch(() => {
+					this.getLightingProfileById(this.currentProfileId);
+				});
+			}
+		} catch (error) {
+			this.getLightingProfileById(this.currentProfileId);
+		}
+	}
+
 	public getGamingLightingCapabilities() {
 		try {
 			if (this.gamingLightingService.isShellAvailable) {
@@ -442,7 +465,8 @@ export class UiLightingProfileComponent implements OnInit {
 					}
 				}
 
-				this.getLightingProfileById(this.currentProfileId);
+				this.getLightingProfileId();
+				// this.getLightingProfileById(this.currentProfileId);
 				// this.getLightingBrightness();
 			} else {
 				if (LocalStorageKey.LightingCapabilities !== undefined) {
