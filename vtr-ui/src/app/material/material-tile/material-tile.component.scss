@@ -4,17 +4,32 @@
 	background: transparent;
 	border-radius: 0.5rem;
 	height: 100%;
-	padding: 0 1.5rem;
+	outline: none !important;
 	&:active {
 		box-shadow: none !important;
 	}
 	&.tile-removable {
-		background: $gray_darker;
+		&:hover {
+			background: $gray_darker;
+			@media #{$black-on-white} {
+				@include black-border;
+			}
+			@media #{$white-on-black} {
+				@include white-border;
+			}
+			.remove-icon {
+				display: block;
+			}
+		}
 	}
 	.remove-icon {
-		font-size: 2.5rem;
-		color: $menu_hover;
+		display: none;
 		cursor: pointer;
+		font-size: 2rem;
+		color: $menu_hover;
+		width: 2rem;
+		height: 2rem;
+		right: 0;
 	}
 	.tile-container {
 		min-width: 10rem;
@@ -25,7 +40,6 @@
 				margin-bottom: 1rem;
 			}
 			.tile-name {
-				font-size: 1.4rem;
 				text-align: center;
 			}
 		}
@@ -41,6 +55,17 @@
 				&:not(.mat-primary) {
 					background: transparent;
 					border: 0.1rem solid $blue-lighter;
+					@media #{$black-on-white} {
+						@include black-border;
+					}
+					@media #{$white-on-black} {
+						@include white-border;
+					}
+				}
+				&:hover {
+					.check-icon {
+						@include high-contrast-color-reversal;
+					}
 				}
 			}
 			&.mat-button-disabled {
@@ -55,9 +80,12 @@
 					justify-content: center;
 					.check-icon {
 						color: $light;
+						font-size: 2rem;
 					}
 					.add-icon {
 						color: $blue-lighter;
+						font-size: 2.2rem;
+						@include high-contrast-color-reversal;
 					}
 				}
 			}

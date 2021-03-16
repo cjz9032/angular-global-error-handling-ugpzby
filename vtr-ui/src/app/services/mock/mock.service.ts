@@ -1,42 +1,10 @@
 import { Injectable } from '@angular/core';
+import { App, TileItem } from 'src/app/feature/types/auto-close';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class MockService {
-	// carousel: any = [{
-	// 	'albumId': 1,
-	// 	'id': 1,
-	// 	'source': 'Vantage Exclusive',
-	// 	'title': 'Accusamus Beatae ad Facilis ci Similique Qui Sunt',
-	// 	'url': 'assets/images/banner1.jpeg',
-	// 	'thumbnailUrl': 'https://via.placeholder.com/150/92c952'
-	// },
-	// {
-	// 	'albumId': 1,
-	// 	'id': 2,
-	// 	'source': 'Vantage Exclusive',
-	// 	'title': 'Reprehenderit est Deserunt Velit Ipsam',
-	// 	'url': 'assets/images/banner2.jpeg',
-	// 	'thumbnailUrl': 'https://via.placeholder.com/150/771796'
-	// },
-	// {
-	// 	'albumId': 1,
-	// 	'id': 3,
-	// 	'source': 'Vantage Exclusive',
-	// 	'title': 'Officia Porro Iure quia Iusto qui Ipsa ut Modi',
-	// 	'url': 'assets/images/banner1.jpeg',
-	// 	'thumbnailUrl': 'https://via.placeholder.com/150/24f355'
-	// },
-	// {
-	// 	'albumId': 1,
-	// 	'id': 4,
-	// 	'source': 'Vantage Exclusive',
-	// 	'title': 'Culpa Odio esse Rerum Omnis Laboriosam Voluptate Repudiandae',
-	// 	'url': 'assets/images/banner2.jpeg',
-	// 	'thumbnailUrl': 'https://via.placeholder.com/150/d32776'
-	// }];
-
 	systemStatus = [
 		{
 			status: 0,
@@ -135,14 +103,6 @@ export class MockService {
 			path: '',
 			hideChevron: true,
 		},
-		// {
-		// 	'status': 2,
-		// 	'id': 'os-version',
-		// 	'title': 'OS version',
-		// 	'detail': 'PASSED',
-		// 	'path': '',
-		// 	'hideChevron': true
-		// },
 		{
 			status: 2,
 			id: 'pin-pwd',
@@ -502,50 +462,140 @@ export class MockService {
 		},
 	];
 
-	// antiVirus: Antivirus = {
-	// 	on() {},
-	// 	off() {},
-	// 	mitt: null,
-	// 	mcafeeDownloadUrl: 'ss',
-	// 	refresh(): Promise<object> {
-	// 		return  Promise.resolve(Object);
-	// 	},
-	// 	mcafee: {
-	// 		localName: 'local',
-	// 		trailUrl: 'url',
-	// 		subscription: 'licenseActive',
-	// 		// McAfee expire date
-	// 		expireAt: '1/21/2020',
-	// 		// McAfee register status
-	// 		registered: true,
-	// 		// McAfee sub-feature information
-	// 		features: [{
-	// 			key: 'Virus Scan',
-	// 			value: true,
-	// 			id: 'Virus Scan'
-	// 		},
-	// 		{
-	// 			key: 'FireWall',
-	// 			value: false,
-	// 			id: 'FireWall',
-	// 		}],
-	// 		// launch McAfee application
-	// 		launch() {
-	// 		}
-	// 	},
-	// 	windowsDefender: {
-	// 		status: false,
-	// 		firewallStatus: false,
-	// 	},
-	// 	others: {
-	// 		antiVirus: [{
-	// 			status: true,
-	// 			name: '360',
-	// 		}],
-	// 		firewall: [{
-	// 			status: true,
-	// 			name: '360',
-	// 		}]
-	// 	}
-	// };
+	/** Auto close: Intelligentboost Service */
+	private savedApps: App[] = [
+		{
+			path: 'C:/app1.exe',
+			name: 'xxx xxxxx clickable1',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app2.exe',
+			name: 'xxx xxxxx clickable2',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app3.exe',
+			name: 'xxx xxxxx clickable3',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app4.exe',
+			name: 'xxx xxxxx clickable4',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+	];
+
+	private runningApps: App[] = [
+		{
+			path: 'C:/app3.exe',
+			name: 'xxx xxxxx clickable3',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app4.exe',
+			name: 'xxx xxxxx clickable4',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app5.exe',
+			name: 'xxx xxxxx clickable5',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app6.exe',
+			name: 'xxx xxxxx clickable6',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app7.exe',
+			name: 'xxx xxxxx clickable7',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app8.exe',
+			name: 'xxx xxxxx clickable8',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app9.exe',
+			name: 'xxx xxxxx clickable9',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app10.exe',
+			name: 'xxx xxxxx clickable10',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app11.exe',
+			name: 'xxx xxxxx clickable11',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+		{
+			path: 'C:/app12.exe',
+			name: 'xxx xxxxx clickable12',
+			icon: 'assets/icons/Icon_Windows_Update_20px.svg',
+		},
+	];
+
+	private featureState = true;
+
+	async getRunningApps(): Promise<TileItem[]> {
+		const savedAppsPath = this.savedApps.map((savedApp: TileItem) => savedApp.path);
+		this.runningApps = this.runningApps.filter(
+			(runningApp: TileItem) => !savedAppsPath.includes(runningApp.path)
+		);
+		const result = [];
+		this.runningApps.forEach((app: App) => {
+			if (!savedAppsPath.includes(app.path)) {
+				result.push({
+					path: app.path,
+					name: this.getAppName(app.path, app.name),
+					iconSrc: app.icon ? app.icon : '',
+				});
+			}
+		});
+		return result;
+	}
+
+	async getAutoCloseApps(): Promise<TileItem[]> {
+		const result = [];
+		this.savedApps.forEach((app: App) => {
+			result.push({
+				path: app.path,
+				name: app.name,
+				iconSrc: app.icon ? app.icon : '',
+			});
+		});
+		return result;
+	}
+
+	async deleteAutoCloseApps(app: TileItem): Promise<boolean> {
+		this.savedApps = this.savedApps.filter((savedApp: TileItem) => savedApp.path !== app.path);
+		return true;
+	}
+
+	async addAutoCloseApps(app: TileItem): Promise<boolean> {
+		this.savedApps.concat(app);
+		return true;
+	}
+
+	async setState(state: boolean): Promise<boolean> {
+		this.featureState = state;
+		return true;
+	}
+
+	async getState(): Promise<boolean> {
+		return this.featureState;
+	}
+
+	private getAppName(path: string, name: string | undefined) {
+		if (name) {
+			return name;
+		}
+		const pathSplit = path.split('/');
+		const appPathName = pathSplit[pathSplit.length - 1].split('.')[0];
+		return appPathName;
+	}
 }

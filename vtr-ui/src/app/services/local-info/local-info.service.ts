@@ -44,7 +44,7 @@ export class LocalInfoService {
 		'zh-hant',
 	];
 	private readonly gamingTag = SegmentConst.Gaming;
-	private selfSelectSegment = null;
+	private selfSelectSegment: SegmentConst = null;
 
 	constructor(
 		private shellService: VantageShellService,

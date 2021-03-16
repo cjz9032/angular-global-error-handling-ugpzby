@@ -7,7 +7,6 @@ import { MatButtonModule } from '@lenovo/material/button';
 import { MatDialogModule } from '@lenovo/material/dialog';
 import { MatIconModule } from '@lenovo/material/icon';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
-import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
 import { MatChipsModule } from '@lenovo/material/chips';
 import { MatSnackBarModule } from '@lenovo/material/snack-bar';
 
@@ -20,8 +19,6 @@ import { MaterialStatusCircleComponent } from 'src/app/material/material-status-
 import { MaterialSvgCircleComponent } from 'src/app/material/material-svg-circle/material-svg-circle.component';
 import { MaterialTileComponent } from 'src/app/material/material-tile/material-tile.component';
 import { MaterialStateCardContainerComponent } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
-import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widget-intelligent-boost/widget-intelligent-boost.component';
-
 
 
 @NgModule({
@@ -33,7 +30,6 @@ import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widg
 		MaterialAppListDialogComponent,
 		MaterialTileComponent,
 		MaterialAppTileListComponent,
-		WidgetIntelligentBoostComponent,
 	],
 	exports: [
 		MaterialStateCardContainerComponent,
@@ -43,7 +39,6 @@ import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widg
 		MaterialAppListDialogComponent,
 		MaterialTileComponent,
 		MaterialAppTileListComponent,
-		WidgetIntelligentBoostComponent,
 	],
 	imports: [
 		CommonModule,
@@ -55,7 +50,6 @@ import { WidgetIntelligentBoostComponent } from 'src/app/components/widgets/widg
 		MatIconModule,
 		MatDialogModule,
 		MatTooltipModule,
-		MatSlideToggleModule,
 		MatChipsModule,
 	]
 })

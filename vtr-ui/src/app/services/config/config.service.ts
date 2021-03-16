@@ -58,7 +58,7 @@ export class ConfigService {
 	menuItemsArm: MenuItem[] = menuConfig.menuItemsArm;
 	menuItems: MenuItem[] = menuConfig.menuItems;
 	menu: MenuItem[] = [];
-	activeSegment: string;
+	activeSegment: SegmentConst;
 	betaItem = menuConfig.betaItem;
 	privacyPolicyLinks = privacyPolicyLinks;
 	showCHS = false;
@@ -192,7 +192,7 @@ export class ConfigService {
 
 				this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
 
-				await this.initializeSmartAssist(machineType);
+				await this.initializeSmartAssist(machineType, this.activeSegment);
 				this.notifyMenuChange(this.menu);
 			}
 
@@ -810,7 +810,11 @@ export class ConfigService {
 		return menu;
 	}
 
-	private async initializeSmartAssist(machineType) {
+	private async initializeSmartAssist(machineType, activeSegment: SegmentConst) {
+		if (activeSegment !== SegmentConst.SMB) {
+			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartAssistSupported, true);
+			return;
+		}
 		if (machineType) {
 			this.smartAssistFilter(machineType);
 		} else if (this.deviceService.isShellAvailable) {

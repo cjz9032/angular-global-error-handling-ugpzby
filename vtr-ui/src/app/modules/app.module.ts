@@ -43,6 +43,7 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons/faTimesCircle';
+import { faPlus } from '@fortawesome/pro-light-svg-icons/faPlus';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 import { MatButtonModule } from '@lenovo/material/button';
@@ -71,6 +72,7 @@ import { HardwareScanModule } from './hardware-scan/hardware-scan.module';
 import { UiCustomSliderModule } from '../components/ui/ui-custom-slider/ui-custom-slider.module';
 import { UICustomRadioModule } from '../components/ui/ui-custom-radio/ui-custom-radio.module';
 import { UiCloseButtonModule } from '../components/ui/ui-close-button/ui-close-button.module';
+import { AutoCloseModule } from '../feature/auto-close/auto-close.module';
 
 import { DevService } from '../services/dev/dev.service';
 import { DisplayService } from '../services/display/display.service';
@@ -150,6 +152,7 @@ const initializerFactory = (initializerService: InitializerService) => () =>
 		MatIconModule,
 		MatButtonModule,
 		MaterialModule,
+		AutoCloseModule,
 	],
 	exports: [
 		NavbarModule,
@@ -232,5 +235,6 @@ export class AppModule {
 		library.addIcons(fasHeart);
 		library.addIcons(faQuoteLeft);
 		library.addIcons(faTrashAlt);
+		library.addIcons(faPlus);
 	}
 }

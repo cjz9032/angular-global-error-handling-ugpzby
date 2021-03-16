@@ -1,26 +1,37 @@
 <button mat-dialog-close="close"
 	class="position-relative float-right closeButton"
 	id="btn-app-list-dialog-close"
-	aria-label="{{'common.ui.close' | translate}}">
-	<mat-icon class="icon close-icon">close</mat-icon>
+	vtrMetrics
+	metricsItem="app list dialog close button"
+	metricsEvent="FeatureClick"
+	metricsParent="AutoClose">
+	<fa-icon class="close-icon" [icon]="['fal', 'times']"></fa-icon>
 </button>
-<section *ngIf="data.length > 0; else empty" class="font-color-main">
-	<h1 mat-dialog-title class="mb-3 font-size-xl font-weight-semibold"
+<section *ngIf="data?.length > 0; else empty" class="font-color-main ">
+	<h1 class="mb-3 mat-display-2 font-weight-semibold"
 		[innerHTML]="'intelligentBoost.appsDialog' | translate"></h1>
-	<h2 mat-dialog-title class="mb-3 font-size-xs" [innerHTML]="'intelligentBoost.appsDialogDesc' | translate"></h2>
+	<h2 class="mb-3 mat-body-1" [innerHTML]="'intelligentBoost.appsDialogDesc' | translate"></h2>
 	<section class="app-container">
 		<vtr-material-app-tile-list
 			[tileItems]="data"
-			[addible]="true"
-			(selectTile)="select($event)"></vtr-material-app-tile-list>
+			[addable]="true"
+			[maxSelected]="maxSelected"
+			(selected)="select($event)"></vtr-material-app-tile-list>
 	</section>
 </section>
 <ng-template #empty>
-	<section class="w-100 d-flex flex-column justify-content-center align-items-center empty-container font-color-main py-20">
-		<div class="image-content mb-5">
+	<section *ngIf="data?.length === 0; else loading" class="w-100 d-flex flex-column justify-content-center align-items-center empty-container font-color-main py-20">
+		<div class="image-content mb-5 d-flex justify-content-center">
 			<img [src]="'assets/images/auto-close-empty.svg' | svgInline | async" alt="">
 		</div>
-		<h3 class="font-weight-semibold mb-4" [innerHTML]="'intelligentBoost.appsDialogWarn' | translate"></h3>
-		<p class="font-size-xs font-weight-light mb-5" [innerHTML]="'intelligentBoost.appsDialogWarnDesc' | translate"></p>
+		<h3 class="mat-headline font-weight-semibold mb-4" [innerHTML]="'intelligentBoost.appsDialogWarn' | translate"></h3>
+		<p class="mat-body-1 font-weight-light mb-5" [innerHTML]="'intelligentBoost.appsDialogWarnDesc' | translate"></p>
 	</section>
+</ng-template>
+<ng-template #loading>
+	<div class="spinner-content text-center">
+		<div class="spinner-border text-primary progress-spinner"
+			attr.aria-label="app-list-loading"
+			role="status"></div>
+	</div>
 </ng-template>

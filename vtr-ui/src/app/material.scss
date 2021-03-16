@@ -291,16 +291,14 @@ button:focus {
 		.closeButton {
 			top: -1rem;
 			right: 0rem;
-			height: 2.4rem;
-			width: 2.4rem;
+			height: 2.6rem;
+			width: 2.6rem;
 			color: $grey_darker;
 			z-index: 2;
+			overflow: hidden;
 
 			&:focus {
-				outline: 0.1rem solid $menu_hover;
-			}
-			&:hover {
-				color: $menu_hover;
+				border: 0.1rem solid $menu_hover;
 			}
 		}
 
@@ -509,6 +507,16 @@ button:focus {
 
 		li {
 			list-style: none;
+		}
+	}
+}
+.cdk-high-contrast-active {
+	.mat-standard-chip {
+		&.vtr-material-tile {
+			outline: none !important;
+			:focus {
+				outline: none !important;
+			}
 		}
 	}
 }

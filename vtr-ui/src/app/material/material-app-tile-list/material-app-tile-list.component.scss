@@ -1,4 +1,4 @@
-@import '../../app.theme';
+@import '../../app.theme.scss';
 .mat-chip-list-container {
 	::ng-deep {
 		.mat-chip-list-wrapper {
@@ -11,9 +11,12 @@
 	border-radius: 0.5rem;
 	flex: 0 0 20%;
 	max-width: 20%;
-	min-width: 13rem;
-	padding: 0 1.5rem 1.5rem;
+	min-width: 12rem;
+	padding: 1.5rem;
 	height: auto;
+	&:active {
+		box-shadow: none !important;
+	}
 
 	.tile-container {
 		min-width: 10rem;
@@ -22,19 +25,16 @@
 			width: 5rem;
 			margin-bottom: 1rem;
 		}
-		.tile-name {
-			font-size: 1.4rem;
-		}
 		.add-border {
 			width: 5rem;
 			height: 5rem;
-			border: 0.1rem solid $menu_hover;
+			border: 0.2rem solid $menu_hover;
 			border-radius: 0.5rem;
+			overflow: hidden;
 			cursor: pointer;
-			.mat-icon {
-				font-size: 5rem;
-				width: 100%;
-				height: 100%;
+			fa-icon {
+				font-size: 4rem;
+				line-height: 1;
 				color: $blue-lighter;
 			}
 		}

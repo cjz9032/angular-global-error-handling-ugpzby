@@ -1,31 +1,25 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-export type AddibleType = 'clickable' | 'selected' | 'disabled';
-
-export interface TileItem {
-	iconSrc?: string;
-	matIcon?: string;
-	name: string;
-	buttonType?: AddibleType;
-	tooltip?: string;
-}
+import { TileItem } from 'src/app/feature/types/auto-close';
 
 @Component({
 	selector: 'vtr-material-tile',
 	templateUrl: './material-tile.component.html',
-	styleUrls: ['./material-tile.component.scss']
+	styleUrls: ['./material-tile.component.scss'],
 })
 export class MaterialTileComponent implements OnInit {
 	@Input() tileItem: TileItem;
 	@Input() isHorizontal: boolean;
 	@Input() removable: boolean;
-	@Input() addible: boolean;
+	@Input() addable: boolean;
+	@Input() metricsParent: string;
 
-	@Output() tileRemove = new EventEmitter();
-	@Output() tileSelect = new EventEmitter();
+	@Output() removed = new EventEmitter();
+	@Output() selected = new EventEmitter();
+
+	public metricsItem = 'selected app';
 
 	ngOnInit(): void {
-		if (this.addible) {
+		if (this.addable) {
 			if (!this.tileItem.buttonType) {
 				this.tileItem.buttonType = 'clickable';
 			}
@@ -33,13 +27,14 @@ export class MaterialTileComponent implements OnInit {
 	}
 
 	remove(item: TileItem): void {
-		this.tileRemove.emit(item);
+		this.removed.emit(item);
 	}
 
 	select(item: TileItem): void {
 		const itemButtonType = item.buttonType;
 		this.tileItem.buttonType = itemButtonType === 'selected' ? 'clickable' : 'selected';
-		this.tileSelect.emit();
+		this.metricsItem =
+			itemButtonType === 'selected' ? `${item.name} unselected` : `${item.name} selected`;
+		this.selected.emit();
 	}
-
 }

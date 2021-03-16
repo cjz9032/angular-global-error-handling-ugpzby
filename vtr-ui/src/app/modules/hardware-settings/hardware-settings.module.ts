@@ -52,6 +52,7 @@ import { CdkScrollableModule } from '@angular/cdk/scrolling';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatIconModule } from '@lenovo/material/icon';
+import { MatSlideToggleModule } from '@lenovo/material/slide-toggle';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faUsb } from '@fortawesome/free-brands-svg-icons/faUsb';
@@ -89,6 +90,8 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons/faCircleNotch';
 import { faSync } from '@fortawesome/pro-light-svg-icons/faSync';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { faPlusSquare } from '@fortawesome/pro-light-svg-icons/faPlusSquare';
+import { faPlus } from '@fortawesome/pro-light-svg-icons/faPlus';
+
 import { SmartStandbyGraphComponent } from 'src/app/components/smart-standby-graph/smart-standby-graph.component';
 import { TopRowFunctionsIdeapadComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-input-accessory/top-row-functions-ideapad/top-row-functions-ideapad.component';
 import { SubpageDeviceSettingsPowerDpmComponent } from '../../components/pages/page-device-settings/children/subpage-device-settings-power-dpm/subpage-device-settings-power-dpm.component';
@@ -113,7 +116,7 @@ import { DOLBY_FUSION_CLIENT } from '../../components/pages/page-device-settings
 import { FORTE_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/forte-client';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { DeviceService } from '../../services/device/device.service';
-
+import { AutoCloseModule } from 'src/app/feature/auto-close/auto-close.module';
 
 @NgModule({
 	declarations: [
@@ -188,11 +191,12 @@ import { DeviceService } from '../../services/device/device.service';
 		MaterialModule,
 		SystemUpdateModule,
 		MatIconModule,
+		MatSlideToggleModule,
+		AutoCloseModule,
 	],
 	exports: [
 		CommonModule,
 		CommonUiModule,
-		CommonWidgetModule,
 		CommonModalModule,
 		PageLayoutModule,
 		SettingsPageLayoutModule,
@@ -205,8 +209,8 @@ import { DeviceService } from '../../services/device/device.service';
 		{
 			provide: AudioVendorService,
 			useFactory: AudioVendorFactory,
-			deps: [FORTE_CLIENT, DOLBY_FUSION_CLIENT, VantageShellService, DeviceService]
-		}
+			deps: [FORTE_CLIENT, DOLBY_FUSION_CLIENT, VantageShellService, DeviceService],
+		},
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
@@ -248,5 +252,6 @@ export class HardwareSettingsModule {
 		library.addIcons(faCalendarAlt);
 		library.addIcons(faBriefcase);
 		library.addIcons(faPlusSquare);
+		library.addIcons(faPlus);
 	}
 }
