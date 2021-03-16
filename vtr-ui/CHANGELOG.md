@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.50](https://bitbucket.tc.lenovo.com///compare/v1.10.49...v1.10.50) (2021-03-16)
+
+
+### Bug Fixes
+
+* **mcafee UI:** VAN-27093 modify 3rd party page img width ([d74106a](https://bitbucket.tc.lenovo.com///commit/d74106a7f814e648d45842f8ca2ff26494849715))
+* **warranty:** VAN-27198 cd machine not show warranty in status list. ([695544d](https://bitbucket.tc.lenovo.com///commit/695544d2206ffe807dd7ba7d1213b45ddba5dcea))
+
 ### [1.10.49](https://bitbucket.tc.lenovo.com///compare/v1.10.48...v1.10.49) (2021-03-15)
 
 
