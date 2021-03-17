@@ -1,31 +1,17 @@
-<div class="auto-set-checkbox ">
-	<div class="custom-checkbox-gaming custom-control custom-checkbox">
-		<input [id]="componentId+'_checkbox'"
-			class="custom-control-input"
-			type="checkbox"
-			role="checkbox"
-			[name]="componentId+'_checkbox'"
-			[value]="value"
-			[disabled]="disabled"
-			[indeterminate]="indeterminate"
-			[checked]="checked"
-			[attr.aria-disabled]="disabled"
-			[attr.aria-checked]="checked"
-			[attr.aria-label]="ariaLabel"
-			tabIndex="0"
-			(change)="onChange($event)" />
-		<label *ngIf="hasChild; else elseBlock"
-			[id]="componentId+'_checkbox-label'"
-			[for]="componentId+'_checkbox'"
-			class="custom-control-label">
-			<ng-content></ng-content>
-		</label>
-		<ng-template #elseBlock>
-			<label [for]="componentId+'_checkbox'"
-				[id]="componentId+'_checkbox-label'"
-				class="custom-control-label">
-				{{ label }}
-			</label>
-		</ng-template>
-	</div>
-</div>
+<mat-checkbox
+	[id]="componentId"
+	[name]="componentId+'_checkbox'"
+	class="font-size-xs"
+	[value]="value"
+	[disabled]="disabled"
+	[indeterminate]="indeterminate"
+	[checked]="checked"
+	[ariaLabel]="ariaLabel"
+	tabIndex="0"
+	(change)="onChange($event)"
+>
+<ng-content *ngIf="hasChild; else elseBlock"></ng-content>
+</mat-checkbox>
+<ng-template #elseBlock>
+	{{label}}
+</ng-template>

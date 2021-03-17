@@ -4,7 +4,6 @@ import { CommonMetricsService } from 'src/app/services/common-metrics/common-met
 @Component({
 	selector: 'vtr-ui-checkbox',
 	templateUrl: './ui-checkbox.component.html',
-	styleUrls: ['./ui-checkbox.component.scss'],
 })
 export class UiCheckboxComponent implements OnInit {
 	@Input() componentId: string;
@@ -25,7 +24,7 @@ export class UiCheckboxComponent implements OnInit {
 	ngOnInit() {}
 
 	onChange(event) {
-		const value = event.target.checked;
+		const value = event.checked;
 		this.checked = value;
 		this.toggle.emit(value);
 		if (this.isMetricsEnabled) {
