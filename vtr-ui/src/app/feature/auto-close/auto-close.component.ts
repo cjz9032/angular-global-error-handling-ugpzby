@@ -14,39 +14,39 @@ import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 })
 export class AutoCloseComponent implements OnInit {
 	someItem = [];
-	_savedApps: TileItem[];
+	innerSavedApps: TileItem[];
 	runningApps: TileItem[];
 	maxSelected: MaxSelected;
 	removable: boolean;
-	_autoCloseChecked = false;
-	_autoCloseAvailable = false;
+	innerAutoCloseChecked = false;
+	innerAutoCloseAvailable = false;
 	metricsParent = 'AutoClose';
 
 	get savedApps() {
-		return this._savedApps;
+		return this.innerSavedApps;
 	}
 
 	set savedApps(value) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.PerformanceBoostList, value);
-		this._savedApps = value;
+		this.innerSavedApps = value;
 	}
 
 	get autoCloseChecked() {
-		return this._autoCloseChecked;
+		return this.innerAutoCloseChecked;
 	}
 
 	set autoCloseChecked(value) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.PerformanceBoostToggle, value);
-		this._autoCloseChecked = value;
+		this.innerAutoCloseChecked = value;
 	}
 
 	get autoCloseAvailable() {
-		return this._autoCloseAvailable;
+		return this.innerAutoCloseAvailable;
 	}
 
 	set autoCloseAvailable(value) {
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.PerformanceBoostAvailable, value);
-		this._autoCloseAvailable = value;
+		this.innerAutoCloseAvailable = value;
 	}
 
 	constructor(
