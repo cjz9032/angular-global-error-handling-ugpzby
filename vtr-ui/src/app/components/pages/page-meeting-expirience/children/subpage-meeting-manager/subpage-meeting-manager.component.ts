@@ -708,7 +708,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				|| this.isAudioVendorSupported))) {
 			this.headerMenuItems = this.commonService.removeObjFrom(
 				this.headerMenuItems,
-				'microphone'
+				'smb-microphone'
 			);
 		}
 	}
