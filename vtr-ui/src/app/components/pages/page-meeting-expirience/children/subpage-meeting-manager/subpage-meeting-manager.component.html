@@ -89,7 +89,7 @@
 							[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
 							[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
 							[path]="'ms-settings:privacy-microphone'"
-							[linkId]="'audio-microphone-permission'">
+							[linkId]="'smb-audio-microphone-permission'">
 						</vtr-widget-permission-note>
 					</div>
 					<ul class="list-group list-group-flush"
@@ -109,7 +109,7 @@
 									[disabled]="microphoneProperties.disableEffect"
 									[theme]="'white'"
 									[isLastChild]="true"
-									[switchId]="'audio-microphone-optimize'">
+									[switchId]="'smb-audio-microphone-optimize'">
 									<div class="row no-gutters tab-focus-white pl-4 ml-4"
 										 aria-label="optimize microphone options, select using arrow keys">
 										<vtr-ui-circle-radio-with-checkbox-list
@@ -132,29 +132,29 @@
 								[readMoreText]="''"
 								[showChildContent]="true"
 								[isLastChild]="true"
-								[switchId]="'audio-microphone-link'">
+								[switchId]="'smb-audio-microphone-link'">
 								<p *ngIf="isAudioVendorPanelAvailable" class="audioVendorLink">
-									<span id="audioVendorLink-panel-des"
+									<span id="smb-audioVendorLink-panel-des"
 										  role="text">{{'device.deviceSettings.audio.microphone-link.download' | translate}}</span>&nbsp;<a
 										href="javascript:void(0);"
-										id="audioVendorLink-panel-link"
+										id="smb-audioVendorLink-panel-link"
 										role="link"
 										class="audioVendor-here"
 										(click)="launchPanel()"
 										(keydown.enter)="launchPanel()">{{'device.deviceSettings.audio.microphone-link.here' | translate}}</a>
-									<span id="audioVendorLink-panel-punctuation"
+									<span id="smb-audioVendorLink-panel-punctuation"
 										  role="text">{{'device.deviceSettings.audio.microphone-link.punctuation' | translate}}</span>
 								</p>
 								<p *ngIf="!isAudioVendorPanelAvailable" class="audioVendorLink">
-									<span id="audioVendorLink-download-des"
+									<span id="smb-audioVendorLink-download-des"
 										  role="text">{{'device.deviceSettings.audio.microphone-link.launcher' | translate}}</span>&nbsp;<a
 										href="javascript:void(0);"
-										id="audioVendorLink-download-link"
+										id="smb-audioVendorLink-download-link"
 										role="link"
 										class="audioVendor-here"
 										(click)="launchDownloadLink()"
 										(keydown.enter)="launchDownloadLink()">{{'device.deviceSettings.audio.microphone-link.here' | translate}}</a>
-									<span id="audioVendorLink-download-punctuation"
+									<span id="smb-audioVendorLink-download-punctuation"
 										  role="text">{{'device.deviceSettings.audio.microphone-link.punctuation' | translate}}</span>
 								</p>
 							</vtr-ui-row-switch>

@@ -382,7 +382,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 			this.microphoneModesUIModel = [];
 			response.modes.forEach((micMode) => {
 				this.microphoneModesUIModel.push({
-					componentId: `radioMicrophone${micMode}`.replace(/\s/g, ''),
+					componentId: `smb-radioMicrophone${micMode}`.replace(/\s/g, ''),
 					label: `device.deviceSettings.audio.microphone.optimize.options.${micMode}`,
 					value: micMode,
 					isChecked: micMode === response.current,
@@ -708,7 +708,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				|| this.isAudioVendorSupported))) {
 			this.headerMenuItems = this.commonService.removeObjFrom(
 				this.headerMenuItems,
-				'microphone'
+				'smb-microphone'
 			);
 		}
 	}
