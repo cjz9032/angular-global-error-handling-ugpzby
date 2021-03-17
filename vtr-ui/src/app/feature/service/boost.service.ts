@@ -13,7 +13,7 @@ export enum Profile {
 export class BoostService {
 	constructor(private shellExtension: ShellExtensionService, private logger: LoggerService) {}
 
-	InitProfile(name: Profile): Promise<void> {
+	initProfile(name: Profile): Promise<void> {
 		const contract = {
 			contract: 'Vantage.BoostAddin.Profile',
 			command: 'Init-Profile',

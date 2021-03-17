@@ -30,7 +30,7 @@ export class InitializerService {
 				this.initializeLanguage(info);
 				// Gaming machine doesn't need performance boost feature
 				if (!info?.isGaming) {
-					this.boostService.InitProfile(Profile.Gaming);
+					this.boostService.initProfile(Profile.Gaming);
 				}
 			}),
 			this.localCacheService.loadCacheValues().then(() => {
