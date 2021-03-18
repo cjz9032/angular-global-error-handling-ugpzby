@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ShellExtensionService } from './shell-extension.service';
 import { App, Profile, TileItem } from '../types/auto-close';
 import { LoggerService } from 'src/app/services/logger/logger.service';
+import { cloneDeep } from 'lodash';
 
 @Injectable({
 	providedIn: 'root',
@@ -48,7 +49,7 @@ export class AutoCloseService {
 			command: 'Get-RunningApps',
 		};
 		const runningApps: TileItem[] = [];
-		const saveAppsPath = this.savedApps?.map((savedApps: TileItem) => savedApps.path);
+		const saveAppsPath = this.savedApps?.map((app: TileItem) => app.path);
 		return this.shellExtension
 			.sendContract(contract)
 			.then((result: App[]) => {
@@ -88,7 +89,7 @@ export class AutoCloseService {
 					});
 				});
 
-				return this.savedApps;
+				return cloneDeep(this.savedApps);
 			})
 			.catch((error: any) => {
 				this.logger.error(`get auto close apps error: ${error}`);

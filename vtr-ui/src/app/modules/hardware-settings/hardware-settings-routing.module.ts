@@ -13,6 +13,7 @@ import { NonArmGuard } from 'src/app/services/guard/non-arm-guard';
 import { SubpageDeviceSettingsPowerContainerComponent } from 'src/app/components/pages/page-device-settings/children/subpage-device-settings-power-container/subpage-device-settings-power-container.component';
 import { PageHighDensityBatteryComponent } from 'src/app/components/pages/page-high-density-battery/page-high-density-battery.component';
 import { NonShellGuard } from 'src/app/services/guard/non-shell-guard';
+import { PerformanceBoostGuard } from 'src/app/services/guard/performance-boost-guard';
 
 const routes: Routes = [
 	{
@@ -90,7 +91,7 @@ const routes: Routes = [
 				path: 'smart-assist',
 				component: PageSmartAssistComponent,
 				canDeactivate: [GuardService],
-				canActivate: [GuardService, NonArmGuard],
+				canActivate: [GuardService, NonArmGuard, PerformanceBoostGuard],
 
 				data: {
 					pageName: 'Device.SmartAssist.smart-assist',
