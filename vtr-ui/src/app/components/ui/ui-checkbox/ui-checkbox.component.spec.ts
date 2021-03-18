@@ -33,7 +33,7 @@ describe('UiCheckboxComponent', () => {
 	});
 
 	it('should test onChange method', () => {
-		const event = { checked: true };
+		let event = { target: { value: true } };
 		spyOn(component.toggle, 'emit').and.callThrough();
 		component.onChange(event);
 		expect(component.toggle.emit).toHaveBeenCalled();
