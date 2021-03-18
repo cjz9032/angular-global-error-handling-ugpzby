@@ -1,0 +1,320 @@
+@import './../../../app.theme.scss';
+
+.auto-set-checkbox {
+	$check-box-size: 2rem;
+	$check-box-shadow: inset 0 0 0 0.2rem $light;
+	$disabled-opacity: 0.4;
+
+	@mixin check-icon($icon-color: 'white') {
+		background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 512 512'><path fill='none' stroke='" + $icon-color + "' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/></svg>");
+		background-size: 80%;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	@mixin indeterminate-icon($icon-color: $menu_hover) {
+		background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='3' height='3' viewBox='0 0 4 4'><path stroke='" + $icon-color + "' d='M0 2h4'/%3e%3c/svg>");
+		background-size: 60%;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	margin-top: 2rem;
+	position: relative;
+
+	.custom-checkbox {
+		padding-left: 1.6rem;
+		font-size: $base;
+		color: $grey_darker;
+
+		/* main styling */
+		.custom-control-input {
+			z-index: 0;
+			width: $check-box-size + 1;
+			height: $check-box-size + 0.5;
+		}
+
+		.custom-control-label {
+			padding-left: 1rem;
+			padding-top: 0.15rem;
+			cursor: pointer;
+
+			&::before {
+				width: $check-box-size;
+				height: $check-box-size;
+				background-color: $light;
+				border-color: $grey_dark;
+				border-radius: 0.25rem;
+			}
+			&::after {
+				width: $check-box-size;
+				height: $check-box-size;
+			}
+			&:hover {
+				&::before {
+					border-color: $menu_hover;
+				}
+			}
+		}
+
+		/* end of main styling */
+
+		/* checkbox selected state */
+
+		.custom-control-input:checked ~ .custom-control-label {
+			&::before {
+				background-color: $menu_hover;
+				box-shadow: $check-box-shadow;
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-cyan;
+					border: none;
+					border-radius: 0.25rem !important;
+				}
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-dark-magenta;
+					border: none;
+					border-radius: 0.25rem !important;
+				}
+			}
+			&::after {
+				@include check-icon();
+				@media #{$white-on-black} {
+					@include check-icon('black');
+				}
+			}
+			&:hover {
+				&::after {
+					@media #{$white-on-black} {
+						@include check-icon();
+					}
+					@media #{$black-on-white} {
+						@include check-icon('black');
+					}
+				}
+				&::before {
+					@media #{$white-on-black} {
+						background-color: $dark;
+						@include high-contrast-black-border;
+					}
+					@media #{$black-on-white} {
+						background-color: $light;
+						@include high-contrast-white-border;
+					}
+				}
+			}
+		}
+
+		/* end of checkbox selected state */
+
+		/* checkbox focus state */
+
+		.custom-control-input:focus ~ .custom-control-label {
+			&::before {
+				outline: solid 1px $menu_hover;
+				outline-offset: 0.2rem;
+				box-shadow: $check-box-shadow;
+				border-color: $menu_hover;
+			}
+		}
+
+		/* end of checkbox focus state */
+
+		/* mouse hover state */
+
+		.custom-control-input:hover ~ .custom-control-label {
+			&::before {
+				box-shadow: $check-box-shadow;
+				border-color: $menu_hover;
+
+				@media #{$black-on-white} {
+					@include high-contrast-white-border;
+					background-color: $light;
+					border-radius: 0.25rem !important;
+				}
+				@media #{$white-on-black} {
+					@include high-contrast-black-border;
+					background-color: $dark;
+					border-radius: 0.25rem !important;
+				}
+			}
+		}
+
+		/* end of mouse hover state */
+
+		/* pressed state */
+		.custom-control-input:active:not(:checked):not(:disabled) ~ .custom-control-label {
+			&::before {
+				border-color: $shade_blue;
+				background-color: $shade_blue;
+				@media #{$black-on-white} {
+					@include high-contrast-white-border;
+					background-color: $light;
+				}
+				@media #{$white-on-black} {
+					@include high-contrast-black-border;
+					background-color: $dark;
+				}
+			}
+		}
+		.custom-control-input:active:checked:not(:disabled) ~ .custom-control-label {
+			&::before {
+				border-color: $shade_blue;
+				background-color: $shade_blue;
+
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-dark-magenta;
+				}
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-cyan;
+				}
+			}
+
+			&::after {
+				@media #{$white-on-black} {
+					@include check-icon();
+				}
+				@media #{$black-on-white} {
+					@include check-icon('black');
+				}
+			}
+		}
+
+		/* end of pressed state */
+
+		/* disabled state */
+		.custom-control-input:disabled {
+			user-select: none;
+		}
+
+		.custom-control-input:disabled:not(:checked) ~ .custom-control-label {
+			pointer-events: none;
+			@media #{$black-on-white} {
+				opacity: $disabled-opacity;
+				@include high-contrast-white-text-color-disabled;
+			}
+			@media #{$white-on-black} {
+				opacity: $disabled-opacity;
+				@include high-contrast-black-text-color-disabled;
+			}
+
+			&::before {
+				border-color: $shade_blue;
+				opacity: $disabled-opacity;
+
+				@media #{$black-on-white} {
+					@include high-contrast-white-disabled-border;
+				}
+				@media #{$white-on-black} {
+					@include high-contrast-black-disabled-border;
+				}
+			}
+		}
+		.custom-control-input:disabled:checked ~ .custom-control-label {
+			pointer-events: none;
+			@media #{$black-on-white} {
+				opacity: $disabled-opacity;
+				@include high-contrast-white-text-color-disabled;
+			}
+			@media #{$white-on-black} {
+				opacity: $disabled-opacity;
+				@include high-contrast-black-text-color-disabled;
+			}
+
+			&::before {
+				border-color: $shade_blue;
+				background-color: $shade_blue;
+				opacity: $disabled-opacity;
+
+				@media #{$black-on-white} {
+					@include high-contrast-white-disabled-border;
+					background: $light;
+				}
+				@media #{$white-on-black} {
+					@include high-contrast-black-disabled-border;
+					background: $dark;
+				}
+			}
+			&::after {
+				@media #{$white-on-black} {
+					@include check-icon('green');
+				}
+				@media #{$black-on-white} {
+					@include check-icon('maroon');
+				}
+			}
+		}
+
+		/* end of disabled state */
+
+		/* indeterminate state */
+		.custom-control-input:indeterminate ~ .custom-control-label {
+			&::before {
+				background-color: $light;
+
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-cyan;
+					border: none;
+					border-radius: 0.25rem !important;
+				}
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-dark-magenta;
+					border: none;
+					border-radius: 0.25rem !important;
+				}
+			}
+			&::after {
+				@include indeterminate-icon();
+				@media #{$white-on-black} {
+					@include indeterminate-icon($dark);
+				}
+				@media #{$black-on-white} {
+					@include indeterminate-icon($light);
+				}
+			}
+
+			&:hover {
+				&::after {
+					@media #{$white-on-black} {
+						@include indeterminate-icon($light);
+					}
+					@media #{$black-on-white} {
+						@include indeterminate-icon($dark);
+					}
+				}
+				&::before {
+					@media #{$white-on-black} {
+						background-color: $dark;
+						@include high-contrast-black-border;
+					}
+					@media #{$black-on-white} {
+						background-color: $light;
+						@include high-contrast-white-border;
+					}
+				}
+			}
+		}
+
+		// pressed state
+		.custom-control-input:active:indeterminate ~ .custom-control-label {
+			&::before {
+				@media #{$black-on-white} {
+					background-color: $high-contrast-white-dark-magenta;
+				}
+				@media #{$white-on-black} {
+					background-color: $high-contrast-black-cyan;
+				}
+			}
+
+			&::after {
+				@include indeterminate-icon($light);
+				@media #{$white-on-black} {
+					@include indeterminate-icon($light);
+				}
+				@media #{$black-on-white} {
+					@include indeterminate-icon($dark);
+				}
+			}
+		}
+		/* end of indeterminate state */
+	}
+}
