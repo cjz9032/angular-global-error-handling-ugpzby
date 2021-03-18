@@ -64,11 +64,11 @@
 						[theme]="'white'"
 						[tabIndex]="0">
 						<div class="summary-box">
-							<p [innerHTML]="'smb.creatorCentre.colorCalibration.summary' | translate"></p>
+							<p id="colorCalibration-summary" role="text" [innerHTML]="'smb.creatorCentre.colorCalibration.summary' | translate"></p>
 						</div>
 						<div class="screenshot-box">
 							<div class="screenshot-title">
-								<span>{{'smb.creatorCentre.colorCalibration.screenshotTitle' | translate}} </span>
+								<span id="colorCalibration-screenshot" role="text">{{'smb.creatorCentre.colorCalibration.screenshotTitle' | translate}} </span>
 							</div>
 							<div class="screenshot d-flex justify-content-between"
 								#screenshotImageContent
@@ -79,6 +79,7 @@
 									metricsItem="{{item.metricsItem}}"
 									metricsEvent="FeatureClick"
 									href="javascript:void(0)"
+									id="colorCalibration-image-{{item.metricsItem}}"
 									(click)="openScreenshotDialog(item.url)">
 									<img class="images"
 										[src]="item.url">
@@ -104,6 +105,7 @@
 								metricsItem="RestoreProfileLearnmore"
 								metricsEvent="FeatureClick"
 								href="javascript:void(0)"
+								id="colorCalibration-learnMore-btn"
 								role="button"
 								(click)="onRestoreProfileClick()">{{'smb.creatorCentre.colorCalibration.learnMore' | translate}}</a>
 						</div>
