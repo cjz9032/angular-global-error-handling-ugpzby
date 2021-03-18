@@ -13,7 +13,7 @@
 		<span class="boost-feature-heading" [innerHTML]="'intelligentBoost.performanceBoost' | translate"></span>
 		<span class="boost-feature-content" [innerHTML]="'intelligentBoost.performanceBoostDesc' | translate"></span>
 		<div class="boost-feature-toggle">
-			<mat-slide-toggle [checked]="autoCloseChecked" (change)="updateAutoCloseToggleState($event)"></mat-slide-toggle>
+			<mat-slide-toggle [disabled]="!autoCloseAvailable" [checked]="autoCloseChecked" (change)="updateAutoCloseToggleState($event)"></mat-slide-toggle>
 		</div>
 		<vtr-material-app-tile-list
 			class="boost-feature-apps-container w-100"

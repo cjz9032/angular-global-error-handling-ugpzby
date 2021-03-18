@@ -85,7 +85,7 @@ export class AntiTheftComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		if (this.antiTheft.available) {
+		if (this.antiTheft?.available) {
 			this.stopMonitorCameraAuthorized();
 			this.stopMonitorForCameraPrivacy();
 			this.stopMonitorAntiTheftStatus();
