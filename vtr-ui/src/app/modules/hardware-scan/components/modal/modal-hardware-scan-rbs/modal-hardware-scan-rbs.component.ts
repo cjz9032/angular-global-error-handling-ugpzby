@@ -29,7 +29,7 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 		private translate: TranslateService,
 		private hardwareScanService: HardwareScanService,
 		private dialog: MatDialog
-	) { }
+	) {}
 
 	// Used to close modal when press 'ESC' key
 	@HostListener('document:keydown', ['$event'])
@@ -62,10 +62,9 @@ export class ModalHardwareScanRbsComponent implements OnDestroy, OnInit {
 
 		const modal = this.dialog.open(ModalRecoverConfirmComponent, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
 			disableClose: true,
-			ariaLabelledBy: 'hwscan-recover-title',
 			panelClass: 'hardware-scan-modal-size',
 		});
 		modal.componentInstance.confirmClicked.subscribe(() => {

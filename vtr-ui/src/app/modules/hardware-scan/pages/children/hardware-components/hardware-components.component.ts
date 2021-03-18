@@ -330,7 +330,7 @@ export class HardwareComponentsComponent implements OnInit, OnDestroy {
 	private onCustomizeScan() {
 		const modalRef = this.dialog.open(this.customizeModal, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'custom-modal-size',

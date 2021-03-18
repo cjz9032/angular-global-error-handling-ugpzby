@@ -36,7 +36,7 @@ export class RecoverBadSectorsService {
 	public openRecoverBadSectorsModal(failedDevices = null) {
 		const modalRef = this.dialog.open(ModalHardwareScanRbsComponent, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'custom-modal-size',

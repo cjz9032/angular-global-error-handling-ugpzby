@@ -36,7 +36,7 @@ export class SnapshotHeaderComponent implements OnInit {
 		};
 	}
 
-	ngOnInit() { }
+	ngOnInit() {}
 
 	onTakeSnapshot() {
 		this.snapshotService.snapshotStatus = SnapshotStatus.fullSnapshotInProgress;
@@ -61,7 +61,7 @@ export class SnapshotHeaderComponent implements OnInit {
 	onReplaceBaseline() {
 		const modalRef = this.dialog.open(ModalSnapshotComponent, {
 			maxWidth: '50rem',
-			autoFocus: true,
+			autoFocus: false,
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'custom-modal-size',

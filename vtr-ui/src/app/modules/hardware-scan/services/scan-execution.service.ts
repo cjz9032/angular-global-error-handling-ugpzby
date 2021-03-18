@@ -470,11 +470,10 @@ export class ScanExecutionService {
 				const rbsDevices = this.hardwareScanService.getDevicesToRecoverBadSectors();
 				const modalRef = this.dialog.open(ModalScanFailureComponent, {
 					maxWidth: '50rem',
-					autoFocus: true,
+					autoFocus: false,
 					hasBackdrop: true,
 					disableClose: true,
 					panelClass: 'support-modal-hwscan',
-					ariaLabelledBy: 'hwscan-scan-failure-title',
 				});
 				modalRef.componentInstance.supportUrl = supportUrl;
 				modalRef.componentInstance.configureDevicesLists(failedModules, rbsDevices);
