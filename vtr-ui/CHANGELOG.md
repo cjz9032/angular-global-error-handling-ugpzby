@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.1](https://bitbucket.tc.lenovo.com///compare/v1.11.0...v1.11.1) (2021-03-18)
+
+
+### Features
+
+* **AutoClose:** change switch profile to init profile, fix issue ([7284556](https://bitbucket.tc.lenovo.com///commit/72845560b1b52b9638d224da38eaa2924dda7a86))
+
+
+### Bug Fixes
+
+* **AutoClose:** code review action ([7a8107a](https://bitbucket.tc.lenovo.com///commit/7a8107ae8de1d93dc534c3629df4759be5d74233))
+* **AutoClose:** code review action ([06271de](https://bitbucket.tc.lenovo.com///commit/06271dea75f0fb265cb31a1843167bbae2f88098))
+
 ## [1.11.0](https://bitbucket.tc.lenovo.com///compare/v1.10.49...v1.11.0) (2021-03-16)
 
 
