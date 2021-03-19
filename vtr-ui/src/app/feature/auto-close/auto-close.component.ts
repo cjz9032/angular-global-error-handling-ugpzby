@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MatSlideToggleChange } from '@lenovo/material/slide-toggle';
 import { DialogService } from 'src/app/services/dialog/dialog.service';
@@ -6,13 +6,15 @@ import { TileItem, MaxSelected } from 'src/app/feature/types/auto-close';
 import { AutoCloseService } from 'src/app/feature/service/auto-close.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { LoggerService } from 'src/app/services/logger/logger.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
 	selector: 'vtr-auto-close',
 	templateUrl: './auto-close.component.html',
 	styleUrls: ['./auto-close.component.scss'],
 })
-export class AutoCloseComponent implements OnInit {
+export class AutoCloseComponent implements OnInit, OnDestroy {
 	someItem = [];
 	innerSavedApps: TileItem[];
 	runningApps: TileItem[];
@@ -21,7 +23,7 @@ export class AutoCloseComponent implements OnInit {
 	innerAutoCloseChecked = false;
 	innerAutoCloseAvailable = false;
 	metricsParent = 'AutoClose';
-
+	actionSubscription: Subscription;
 	get savedApps() {
 		return this.innerSavedApps;
 	}
@@ -52,11 +54,20 @@ export class AutoCloseComponent implements OnInit {
 	constructor(
 		private dialogService: DialogService,
 		private autoCloseService: AutoCloseService,
-		private localCacheService: LocalCacheService
+		private localCacheService: LocalCacheService,
+		private logger: LoggerService,
+		private activatedRoute: ActivatedRoute
 	) {}
 
 	ngOnInit(): void {
+		this.getProtocalActions();
 		this.initAutoClose();
+	}
+
+	ngOnDestroy(): void {
+		if (this.actionSubscription) {
+			this.actionSubscription.unsubscribe();
+		}
 	}
 
 	initAutoClose() {
@@ -88,7 +99,6 @@ export class AutoCloseComponent implements OnInit {
 			})
 			.catch(() => {
 				this.autoCloseAvailable = false;
-				this.autoCloseChecked = false;
 			});
 	}
 
@@ -120,8 +130,7 @@ export class AutoCloseComponent implements OnInit {
 	}
 
 	updateAutoCloseToggleState($event: MatSlideToggleChange) {
-		this.autoCloseChecked = $event.checked;
-		this.autoCloseService.setState(this.autoCloseChecked);
+		this.toggleAutoClose($event.checked);
 	}
 
 	addSavedApp(app: TileItem) {
@@ -141,5 +150,26 @@ export class AutoCloseComponent implements OnInit {
 				this.savedApps
 			);
 		}
+	}
+
+	toggleAutoClose(enable: boolean) {
+		this.autoCloseService.setState(enable).then((res) => {
+			if (res) {
+				this.autoCloseChecked = enable;
+			}
+		});
+	}
+
+	getProtocalActions() {
+		this.actionSubscription = this.activatedRoute.queryParamMap.subscribe(
+			(params: ParamMap) => {
+				if (
+					params.has('action') &&
+					this.activatedRoute.snapshot.queryParams.action === 'on'
+				) {
+					this.toggleAutoClose(true);
+				}
+			}
+		);
 	}
 }

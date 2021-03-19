@@ -13,7 +13,7 @@ import { IntelligentScreen } from 'src/app/data-models/smart-assist/intelligent-
 import { PageAnchorLink } from 'src/app/data-models/common/page-achor-link.model';
 import { SmartAssistCapability } from 'src/app/data-models/smart-assist/smart-assist-capability.model';
 import { TranslateService } from '@ngx-translate/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { throttleTime } from 'rxjs/operators';
 import { EMPTY, fromEvent, Subscription } from 'rxjs';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
@@ -161,6 +161,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		private logger: LoggerService,
 		private commonService: CommonService,
 		private translate: TranslateService,
+		private route: ActivatedRoute,
 		private router: Router,
 		private vantageShellService: VantageShellService,
 		private localCacheService: LocalCacheService,
@@ -193,7 +194,20 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		);
 	}
 
+	public scrollToAnchor(location: string, wait = 0): void {
+		const element = document.querySelector('#' + location);
+		if (element) {
+			setTimeout(() => {
+				element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+			}, wait);
+		}
+	}
+
 	async ngOnInit() {
+		this.route.fragment.subscribe((fragment: string) => {
+			this.scrollToAnchor(fragment);
+		});
+
 		if (this.smartAssist.isShellAvailable) {
 			this.machineType = this.localCacheService.getLocalCacheValue(
 				LocalStorageKey.MachineType
@@ -1015,7 +1029,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.logger.error('initHPDSensorType error', error);
 					});
 			}
-		} catch (error) { }
+		} catch (error) {}
 	}
 
 	public getSuperResolutionStatus() {

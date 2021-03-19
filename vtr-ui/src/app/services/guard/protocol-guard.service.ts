@@ -36,7 +36,7 @@ export class ProtocolGuardService implements CanActivate {
 		'display-camera': 'device/device-settings/display-camera',
 		audio: 'device/device-settings/audio',
 		input: 'device/device-settings/input-accessories',
-		'smart-settings': 'device/smart-assist',
+		'smart-settings': 'device/device-settings/smart-assist',
 		'home-security': 'home-security',
 		'modern-preload': '?action=modernpreload',
 		toolbar: '',
@@ -51,6 +51,7 @@ export class ProtocolGuardService implements CanActivate {
 		'gaming-thermalmode': '?action=thermalmode', // Version 3.7 app search for gaming
 		'hardware-scan': 'hardware-scan',
 		'smart-performance': 'support/smart-performance',
+		'auto-close': 'device/device-settings/smart-assist#autoclose',
 	};
 
 	backwardCompatibilitySchemas = [
@@ -147,6 +148,14 @@ export class ProtocolGuardService implements CanActivate {
 		if (!originQuery || !originQuery.includes('?') || originQuery.includes('timestamp=')) {
 			return originQuery;
 		}
+
+		const hashIndex = originQuery.indexOf('#');
+		if (hashIndex > 0) {
+			return `${originQuery.substring(
+				0,
+				hashIndex
+			)}&timestamp=${Date.now()}${originQuery.substring(hashIndex)}`;
+		}
 		return `${originQuery}&timestamp=${Date.now()}`;
 	}
 
@@ -159,6 +168,10 @@ export class ProtocolGuardService implements CanActivate {
 		let semantic = '';
 		try {
 			semantic = url.pathname;
+		} catch (e) {}
+		let hash = '';
+		try {
+			hash = url.hash;
 		} catch (e) {}
 		const query = url.search;
 
@@ -175,7 +188,12 @@ export class ProtocolGuardService implements CanActivate {
 			return [false, ''];
 		}
 
-		return [true, `${path}${query}`];
+		const hashIndex = path.indexOf('#');
+		if (hashIndex > 0) {
+			return [true, `${path.substring(0, hashIndex)}${query}${path.substring(hashIndex)}`];
+		}
+
+		return [true, `${path}${query}${hash}`];
 	}
 
 	private convertToUrlAssumeProtocolIs2x(rawData: string): [boolean, string] {
@@ -228,7 +246,7 @@ export class ProtocolGuardService implements CanActivate {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): boolean | UrlTree {
-		let path = state.url.slice(state.url.indexOf('#') + 1);
+		const path = state.url.slice(state.url.indexOf('#') + 1);
 		const dashboardPath = this.deviceService.isGaming ? '/device-gaming' : '/dashboard';
 		if (path.startsWith(this.characteristicCode)) {
 			const checkResult = this.isRedirectUrlNeeded(path.split('&')[0]);
