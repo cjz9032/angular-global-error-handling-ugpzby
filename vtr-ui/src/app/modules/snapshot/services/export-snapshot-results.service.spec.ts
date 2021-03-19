@@ -36,27 +36,27 @@ describe('ExportSnapshotResultsService', () => {
 		expect(service).toBeTruthy();
 	});
 
-	it('should throw an exception when prepareDataFromScanLog return error', async () => {
-		const error = new Error('Generic Error');
-		spyOn<any>(service, 'prepareDataFromScanLog').and.throwError(error);
+	// Testing when exportSnapshotResults receive any error in called functions
+	[
+		{
+			description: 'should throw an exception when prepareDataFromScanLog return error',
+			functionName: 'prepareDataFromScanLog',
+		},
+		{
+			description: 'should throw an exception when generateHtmlReport return error',
+			functionName: 'generateHtmlReport',
+		},
+		{
+			description: 'should throw an exception when exportReportToFile return error',
+			functionName: 'exportReportToFile',
+		},
+	].forEach((testCase) => {
+		it(testCase.description, async () => {
+			const error = new Error('Generic Error');
+			spyOn<any>(service, testCase.functionName).and.throwError(error);
 
-		await expectAsync(service.exportSnapshotResults()).toBeRejectedWith(ExportLogErrorStatus.GenericError);
-		expect(loggerServiceSpy.error).toHaveBeenCalledWith('Could not get scan log', error);
-	});
-
-	it('should throw an exception when generateHtmlReport return error', async () => {
-		const error = new Error('Generic Error');
-		spyOn<any>(service, 'generateHtmlReport').and.throwError(error);
-
-		await expectAsync(service.exportSnapshotResults()).toBeRejectedWith(ExportLogErrorStatus.GenericError);
-		expect(loggerServiceSpy.error).toHaveBeenCalledWith('Could not get scan log', error);
-	});
-
-	it('should throw an exception when exportReportToFile return error', async () => {
-		const error = new Error('Generic Error');
-		spyOn<any>(service, 'exportReportToFile').and.throwError(error);
-
-		await expectAsync(service.exportSnapshotResults()).toBeRejectedWith(ExportLogErrorStatus.GenericError);
-		expect(loggerServiceSpy.error).toHaveBeenCalledWith('Could not get scan log', error);
+			await expectAsync(service.exportSnapshotResults()).toBeRejectedWith(ExportLogErrorStatus.GenericError);
+			expect(loggerServiceSpy.error).toHaveBeenCalledWith('Could not get scan log', error);
+		});
 	});
 });
