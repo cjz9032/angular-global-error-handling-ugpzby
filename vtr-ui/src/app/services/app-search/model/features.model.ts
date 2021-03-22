@@ -549,7 +549,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.MacroKey.pageId,
 		categoryId:AppSearch.FeatureIds.MacroKey.categoryId,
-		icon: ['fal', 'keyboard'],
+		// icon: ['fal', 'keyboard'],
 		action: {
 			route: RoutePath.macroKey,
 		}
@@ -557,7 +557,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.ThermalMode.pageId,
 		categoryId:AppSearch.FeatureIds.ThermalMode.categoryId,
-		icon: ['fal', 'fan'],
+		// icon: ['fal', 'fan'],
 		action: {
 			route: RoutePath.thermalMode,
 		}
@@ -565,7 +565,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.AutoClose.pageId,
 		categoryId:AppSearch.FeatureIds.AutoClose.categoryId,
-		icon: ['fal', 'cog'],
+		// icon: ['fal', 'cog'],
 		action: {
 			route: RoutePath.autoClose,
 		}
@@ -573,7 +573,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.NetworkBoost.pageId,
 		categoryId:AppSearch.FeatureIds.NetworkBoost.categoryId,
-		icon: ['fal', 'wifi'],
+		// icon: ['fal', 'wifi'],
 		action: {
 			route: RoutePath.networkBoost,
 		}
@@ -581,7 +581,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.HybridMode.pageId,
 		categoryId:AppSearch.FeatureIds.HybridMode.categoryId,
-		icon: ['fal', 'cog'],
+		// icon: ['fal', 'cog'],
 		action: {
 			route: RoutePath.gamingHomePage,
 		}
@@ -589,7 +589,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.OverDrive.pageId,
 		categoryId:AppSearch.FeatureIds.OverDrive.categoryId,
-		icon: ['fal', 'cog'],
+		// icon: ['fal', 'cog'],
 		action: {
 			route: RoutePath.gamingHomePage,
 		}
@@ -597,7 +597,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.TouchpadLock.pageId,
 		categoryId:AppSearch.FeatureIds.TouchpadLock.categoryId,
-		icon: ['fal', 'lock'],
+		// icon: ['fal', 'lock'],
 		action: {
 			route: RoutePath.gamingHomePage,
 		}
@@ -605,7 +605,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.Lighting.pageId,
 		categoryId:AppSearch.FeatureIds.Lighting.categoryId,
-		icon: ['fal', 'cog'],
+		// icon: ['fal', 'cog'],
 		action: {
 			route: RoutePath.lighting,
 		}
@@ -613,7 +613,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.RAMOverClock.pageId,
 		categoryId:AppSearch.FeatureIds.RAMOverClock.categoryId,
-		icon: ['fal', 'bolt'],
+		// icon: ['fal', 'bolt'],
 		action: {
 			route: RoutePath.gamingHomePage,
 		}
@@ -621,7 +621,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.CPUOverClock.pageId,
 		categoryId:AppSearch.FeatureIds.CPUOverClock.categoryId,
-		icon: ['fal', 'bolt'],
+		// icon: ['fal', 'bolt'],
 		action: {
 			route: RoutePath.gamingHomePage,
 		}
@@ -629,7 +629,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.GPUOverClock.pageId,
 		categoryId:AppSearch.FeatureIds.GPUOverClock.categoryId,
-		icon: ['fal', 'bolt'],
+		// icon: ['fal', 'bolt'],
 		action: {
 			route: RoutePath.gamingHomePage,
 		}
@@ -637,7 +637,7 @@ export const featureSource = [
 	{
 		id: AppSearch.FeatureIds.VRAMOverClock.pageId,
 		categoryId:AppSearch.FeatureIds.VRAMOverClock.categoryId,
-		icon: ['fal', 'bolt'],
+		// icon: ['fal', 'bolt'],
 		action: {
 			route: RoutePath.gamingHomePage,
 		}
