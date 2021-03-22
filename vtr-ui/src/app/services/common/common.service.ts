@@ -7,7 +7,7 @@ import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { Subject } from 'rxjs/internal/Subject';
 import { ReplaySubject } from 'rxjs';
 
-declare var window;
+declare let window;
 
 @Injectable({
 	providedIn: 'root',
@@ -26,7 +26,7 @@ export class CommonService {
 	public osVersion = 0;
 	public systemTimeFormat12Hrs: BehaviorSubject<boolean> = new BehaviorSubject(false);
 	public lastFeatureVersion = 0;
-	public newFeatureVersion = 3.006;
+	public newFeatureVersion = 3.007;
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(
@@ -40,6 +40,7 @@ export class CommonService {
 	/**
 	 * converts bytes to MB, GB etc.
 	 * source : https://stackoverflow.com/a/18650828/173613
+	 *
 	 * @param bytes bytes in form of number.
 	 * @param decimals number of decimal places. default is 2.
 	 */
@@ -58,6 +59,7 @@ export class CommonService {
 	/**
 	 * Returns the formatted date in local date format
 	 * Example: return M/DD/YYYY for English
+	 *
 	 * @param dateString date string to format
 	 */
 	public formatLocalDate(dateString: string): string {
@@ -69,6 +71,7 @@ export class CommonService {
 	 * Returns the formatted time in local time format
 	 * Example: return HH:MM AM for English
 	 * Example: return 上午9：00 for Chinese
+	 *
 	 * @param dateString date string to format
 	 */
 	public formatLocalTime(dateString: string): string {
@@ -79,6 +82,7 @@ export class CommonService {
 
 	/**
 	 * Returns date formatted in YYYY/MM/DD format
+	 *
 	 * @param date date object to format
 	 */
 	public formatUTCDate(dateString: string): string {
@@ -97,6 +101,7 @@ export class CommonService {
 
 	/**
 	 * Returns date formatted in HH:MM AM/PM format
+	 *
 	 * @param date date object to format
 	 */
 	public formatTime(dateString: string): string {
@@ -191,6 +196,7 @@ export class CommonService {
 
 	/**
 	 * Stores given value in session storage in json string format
+	 *
 	 * @param key key for session storage. Must define it in SessionStorageKey enum
 	 * @param value value to store in session storage
 	 */
@@ -202,6 +208,7 @@ export class CommonService {
 
 	/**
 	 * Returns parsed json object if key is found else returns undefined
+	 *
 	 * @param key key use to store value in session storage
 	 */
 	public getSessionStorageValue(key: SessionStorageKey, defaultValue?: any): any {

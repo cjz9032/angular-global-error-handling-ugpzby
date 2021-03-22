@@ -39,30 +39,36 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		'v3.2': 3.002,
 		'v3.2.5': 3.002005,
 		'v3.6': 3.006,
+		'v3.7': 3.007,
 	};
 
-	allNewTips = {
-		security: {
+	allNewTips: NewTipItem[] = [
+		{
 			tipId: MenuID.security,
 			desc: 'notification.menu.security',
 			version: this.tipsVersions['v3.2'],
 		},
-		homeSecurity: {
+		{
 			tipId: MenuID.homeSecurity,
 			desc: 'notification.menu.connectedHomeSecurity',
 			version: this.tipsVersions['v3.2'],
 		},
-		hardwareScan: {
+		{
 			tipId: MenuID.hardwareScan,
 			desc: 'notification.menu.hardwareScan',
 			version: this.tipsVersions['v3.2.5'],
 		},
-		search: {
+		{
 			tipId: MenuID.appSearch,
 			desc: 'notification.menu.appSearch',
 			version: this.tipsVersions['v3.6'],
-		}
-	};
+		},
+		{
+			tipId: MenuID.device,
+			desc: 'notification.menu.autoClose',
+			version: this.tipsVersions['v3.7'],
+		},
+	];
 
 	metrics: any;
 
@@ -93,64 +99,19 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	}
 
 	nextTips(positionName: string) {
-		if (this.tipId === this.allNewTips.security.tipId) {
-			const homeSecurityAction = this.tipItemAction(
-				this.allNewTips.homeSecurity,
-				positionName
-			);
-			if (homeSecurityAction) {
-				return;
-			}
+		const currentTipsIndex = this.allNewTips.findIndex((i) => i.tipId === this.tipId);
+		const loopTips = this.allNewTips.slice(currentTipsIndex + 1);
 
-			const hardwareScanAction = this.tipItemAction(
-				this.allNewTips.hardwareScan,
-				positionName
-			);
-			if (hardwareScanAction) {
-				return;
-			}
-
-			const searchAction = this.tipItemAction(
-				this.allNewTips.search,
-				positionName
-			);
-			if (searchAction) {
-				return;
-			}
-		}
-		if (this.tipId === this.allNewTips.homeSecurity.tipId) {
-			const hardwareScanAction = this.tipItemAction(
-				this.allNewTips.hardwareScan,
-				positionName
-			);
-			if (hardwareScanAction) {
-				return;
-			}
-
-			const searchAction = this.tipItemAction(
-				this.allNewTips.search,
-				positionName
-			);
-			if (searchAction) {
-				return;
-			}
+		if (loopTips.some((item, j) => this.tipItemAction(loopTips[j], positionName) === true)) {
+			return;
 		}
 
-		if (this.tipId === this.allNewTips.hardwareScan.tipId) {
-			const searchAction = this.tipItemAction(
-				this.allNewTips.search,
-				positionName
-			);
-			if (searchAction) {
-				return;
-			}
-		}
 		const newTipsMetrics = this.calcTipItemMetricsData(this.tipId, positionName);
 		this.sendMetricsAsync(newTipsMetrics);
 		this.destroyTipsComponent();
 	}
 
-	tipItemAction(tip: NewTipItem, positionName: string) {
+	tipItemAction(tip: NewTipItem, positionName: string): boolean {
 		const menuItem = this.newTipIdSelector(tip.tipId);
 		if (menuItem) {
 			const newTipsMetrics = this.calcTipItemMetricsData(this.tipId, positionName);
@@ -193,45 +154,14 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	}
 
 	setTipsPosition() {
-		const securityMenu = this.newTipIdSelector(this.allNewTips.security.tipId);
-		const homeSecurityMenu = this.newTipIdSelector(this.allNewTips.homeSecurity.tipId);
-		const hardwareScanMenu = this.newTipIdSelector(this.allNewTips.hardwareScan.tipId);
-		const searchMenu = this.newTipIdSelector(this.allNewTips.search.tipId);
-
 		const lastFeatureVersion = this.commonService.lastFeatureVersion;
 
-		if (
-			this.isShowMenuTips(securityMenu, this.allNewTips.security.version, lastFeatureVersion)
-		) {
-			this.setDescAndTipId(this.allNewTips.security);
-			this.showItemTip(securityMenu);
-		} else if (
-			this.isShowMenuTips(
-				homeSecurityMenu,
-				this.allNewTips.homeSecurity.version,
-				lastFeatureVersion
-			)
-		) {
-			this.setDescAndTipId(this.allNewTips.homeSecurity);
-			this.showItemTip(homeSecurityMenu);
-		} else if (
-			this.isShowMenuTips(
-				hardwareScanMenu,
-				this.allNewTips.hardwareScan.version,
-				lastFeatureVersion
-			)
-		) {
-			this.setDescAndTipId(this.allNewTips.hardwareScan);
-			this.showItemTip(hardwareScanMenu);
-		} else if (
-			this.isShowMenuTips(
-				searchMenu,
-				this.allNewTips.search.version,
-				lastFeatureVersion
-			)
-		) {
-			this.setDescAndTipId(this.allNewTips.search);
-			this.showItemTip(searchMenu);
+		for (const element of this.allNewTips) {
+			if (element.version > lastFeatureVersion) {
+				this.setDescAndTipId(element);
+				this.showItemTip(this.newTipIdSelector(element.tipId));
+				return;
+			}
 		}
 	}
 
