@@ -34,7 +34,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 	public isThermalModeSetted = false;
 	public isPerformancOCSetted = false;
 	// Version 3.5 thermal mode 3 for x60
-	public autoAdjustSettings = true;
+	public autoAdjustSettings = false;
 	public isAutoAdjustSetted = false;
 	modalAutomationId: any = {
 		section: 'thermal_mode_warning_dialog',

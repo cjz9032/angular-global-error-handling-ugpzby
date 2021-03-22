@@ -144,7 +144,7 @@
 						"gpuDriverLack": "Install GPU driver to use the Overclocking function.",
 						"goInstall": "GO INSTALL"
 					},
-					"autoAdjustDesc": "Automatically detect the current game and tune CPU/GPU performance.",
+					"autoAdjustDesc": "Automatically detect the current game and tune CPU/GPU performance. When enabled, the temperature on your computer and fan noise might increase.",
 					"autoSwitch": "Automatically switch to Performance Mode when launching games and switch back after exiting the game."
 				},
 				"advancedOC": {
