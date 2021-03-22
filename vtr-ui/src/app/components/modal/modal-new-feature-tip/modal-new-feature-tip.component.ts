@@ -100,9 +100,13 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 
 	nextTips(positionName: string) {
 		const currentTipsIndex = this.allNewTips.findIndex((i) => i.tipId === this.tipId);
-		const loopTips = this.allNewTips.slice(currentTipsIndex + 1);
+		const availableTips = this.allNewTips.slice(currentTipsIndex + 1);
 
-		if (loopTips.some((item, j) => this.tipItemAction(loopTips[j], positionName) === true)) {
+		if (
+			availableTips.some(
+				(item, j) => this.tipItemAction(availableTips[j], positionName) === true
+			)
+		) {
 			return;
 		}
 
