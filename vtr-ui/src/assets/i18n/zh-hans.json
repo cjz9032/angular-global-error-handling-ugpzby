@@ -28,7 +28,7 @@
 					"thermalMode2": {
 						"OC_On": "超频开启",
 						"performance": "野兽模式",
-						"balance": "智能模式",
+						"balance": "均衡模式",
 						"quiet": "节能模式"
 					},
 					"thermalMode3Tips": {
@@ -128,7 +128,7 @@
 					"performanceDesc": "提升计算机性能，同时会提高风扇速度和功耗。",
 					"OCDesc": "可选择开启超频功能。",
 					"ac_dcDesc": "仅在插入交流电源适配器时才能使用野兽模式。",
-					"balanceTitle": "智能模式",
+					"balanceTitle": "均衡模式",
 					"balanceDesc": "根据系统需求自动调整性能和风扇转速。",
 					"quietTitle": "节能模式",
 					"quietDesc": "尽可能降低计算机的性能和风扇速度以保持安静，产生较低的功耗。",
