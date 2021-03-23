@@ -60,7 +60,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	public machineFamilyName: string;
 	public today = new Date();
 	public items: any = [];
-	isBackToHome = false;
 	title = 'smartPerformance.title';
 	/* Quarterly option is hidden for current 3.3 release */
 	// public menuItems: any = [
@@ -467,7 +466,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		if (this.smartPerformanceService.scanningState !== ScanningState.NotStart) {
 			this.smartPerformanceService.scanningState = ScanningState.NotStart;
 		}
-		this.isBackToHome = true;
 	}
 	// scan settings
 	changeScanSchedule() {
