@@ -55,8 +55,22 @@ describe('ExportSnapshotResultsService', () => {
 			const error = new Error('Generic Error');
 			spyOn<any>(service, testCase.functionName).and.throwError(error);
 
-			await expectAsync(service.exportSnapshotResults()).toBeRejectedWith(ExportLogErrorStatus.GenericError);
+			await expectAsync(service.exportSnapshotResults()).toBeRejectedWith(
+				ExportLogErrorStatus.GenericError
+			);
 			expect(loggerServiceSpy.error).toHaveBeenCalledWith('Could not get scan log', error);
 		});
+	});
+
+	it('should return success when correct response is received', async () => {
+		const pathMocked = 'C:/Documents';
+		spyOn<any>(service, 'prepareDataFromScanLog').and.returnValue(Object('Mocked Object'));
+		spyOn<any>(service, 'generateHtmlReport').and.returnValue('Mocked Data Format');
+		spyOn<any>(service, 'exportReportToFile').and.returnValue(pathMocked);
+
+		await expectAsync(service.exportSnapshotResults()).toBeResolvedTo([
+			ExportLogErrorStatus.SuccessExport,
+			pathMocked,
+		]);
 	});
 });
