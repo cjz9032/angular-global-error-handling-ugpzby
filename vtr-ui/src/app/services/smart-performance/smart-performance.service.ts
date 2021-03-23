@@ -19,6 +19,8 @@ import {
 } from 'src/app/components/pages/page-smart-performance/interface/smart-performance.interface';
 import currencyFormater from 'currency-formatter';
 
+declare let Windows: any;
+
 @Injectable({
 	providedIn: 'root',
 })
@@ -196,20 +198,41 @@ export class SmartPerformanceService {
 		}
 	}
 
-	getPaymentDetails(serialNumber): Promise<any> {
-		const reqUrl = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getorders?serialNumber=${serialNumber}`;
+	getPaymentDetails(): Promise<any> {
 		return new Promise((resolve) => {
-			const xhr = new XMLHttpRequest();
-			xhr.open('GET', reqUrl, true);
-			xhr.onreadystatechange = () => {
-				if (xhr.readyState === 4 && xhr.status === 200) {
-					resolve(JSON.parse(xhr.responseText));
-				}
-				// else {
-				// 	resolve(undefined);
-				// }
-			};
-			xhr.send();
+			this.deviceService.getMachineInfo().then(async (machineInfo) => {
+				const sn = machineInfo.serialnumber;
+				const mtm = machineInfo.mtm;
+
+				const reqUrl = `${environment.pcSupportApiRoot}/api/v4/upsell/smart/getorders?serialNumber=${sn}&mtm=${mtm}`;
+
+				const uri = new Windows.Foundation.Uri(reqUrl);
+				const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.get, uri);
+				const httpClient = new Windows.Web.Http.HttpClient();
+				(async () => {
+					try {
+						const response = await httpClient.sendRequestAsync(request);
+						const result = await response.content.readAsStringAsync();
+						if (result) {
+							const resultJson = JSON.parse(result);
+							if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
+								this.logger.info('Fetch smartPerformance payment detail result: ', resultJson);
+								resolve(resultJson);
+							} else {
+								resolve(undefined);
+								this.logger.info('Fetch smartPerformance payment detail failed response: ', resultJson);
+							}
+						} else {
+							resolve(undefined);
+							this.logger.info('Fetch smartPerformance payment detail no result: ', response);
+						}
+					} catch (e) {
+						resolve(undefined);
+						this.logger.info('Fetch smartPerformance payment detail catch error: ', e);
+					}
+					httpClient.close();
+				})();
+			});
 		});
 	}
 
@@ -242,7 +265,7 @@ export class SmartPerformanceService {
 			}
 		}
 		if (!this.isLocalPriceOnlineChecked && this.isShellAvailable) {
-			const url = `${environment.pcsupportApiRoot}/api/v4/upsell/smart/getPrice?country=${localInfo.GEO}`;
+			const url = `${environment.pcSupportApiRoot}/api/v4/upsell/smart/getPrice?country=${localInfo.GEO}`;
 			const priceData = (await this.httpClient.get(url).toPromise()) as any;
 			if (priceData && priceData.data) {
 				const yearlyPrices = priceData.data.filter(
@@ -302,8 +325,7 @@ export class SmartPerformanceService {
 
 	async getSubscriptionDataDetail(onSubscribed) {
 		let subscriptionData = [];
-		const machineInfo = await this.deviceService.getMachineInfo();
-		const subscriptionDetails = await this.getPaymentDetails(machineInfo.serialnumber);
+		const subscriptionDetails = await this.getPaymentDetails();
 		this.logger.info(
 			'smart-performance.service.getSubscriptionDataDetail',
 			subscriptionDetails

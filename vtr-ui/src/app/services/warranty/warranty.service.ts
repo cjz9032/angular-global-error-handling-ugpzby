@@ -26,7 +26,7 @@ export class WarrantyService {
 	) {
 	}
 
-	warrantyUrl = 'https://pcsupport.lenovo.com/warrantylookup';
+	warrantyUrl = `${environment.pcSupportApiRoot}/warrantylookup`;
 
 	warrantyData: WarrantyData = {
 		isAvailable: false,
@@ -255,7 +255,7 @@ export class WarrantyService {
 				const geo = localInfo.GEO || 'us';
 				const lang = localInfo.Lang?.substr(0, 2) || 'en';
 
-				const warrantyUrl = `${environment.pcsupportApiRoot}/api/v4/upsellAggregation/vantage/warrantySummaryInfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
+				const warrantyUrl = `${environment.pcSupportApiRoot}/api/v4/upsellAggregation/vantage/warrantySummaryInfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
 
 				const warrantyDataCache: WarrantyData = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyData);
 				if (warrantyDataCache && warrantyDataCache.isAvailable) {
@@ -309,7 +309,7 @@ export class WarrantyService {
 				const geo = localInfo.GEO || 'us';
 				const lang = localInfo.Lang?.substr(0, 2) || 'en';
 
-				const warrantyLevelUrl = `${environment.pcsupportApiRoot}/api/v4/upsellaggregation/vantage/warrantyupgradeinfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
+				const warrantyLevelUrl = `${environment.pcSupportApiRoot}/api/v4/upsellaggregation/vantage/warrantyupgradeinfo?sn=${sn}&mtm=${mtm}&geo=${geo}&language=${lang}&clientId=vantage`;
 
 				const warrantyLevelsCache: WarrantyLevel[] = this.localCacheService.getLocalCacheValue(LocalStorageKey.LastWarrantyLevels);
 				if (warrantyLevelsCache && warrantyLevelsCache.length > 0) {
@@ -354,7 +354,7 @@ export class WarrantyService {
 	}
 
 	setWarrantyUrl(sn: string, mtm = '') {
-		this.warrantyUrl = `https://pcsupport.lenovo.com/warrantylookup?sn=${sn}&mtm=${mtm}&upgrade&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
+		this.warrantyUrl = `${environment.pcSupportApiRoot}/warrantylookup?sn=${sn}&mtm=${mtm}&upgrade&cid=ww:apps:pikjhe&utm_source=Companion&utm_medium=Native&utm_campaign=Warranty`;
 	}
 
 	getWarrantyUrl(): string {

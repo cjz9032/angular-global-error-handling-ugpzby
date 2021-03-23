@@ -185,12 +185,9 @@ export class WidgetSubscriptionDetailsComponent implements OnInit {
 	}
 
 	async getSubscriptionDetails() {
-		const machineInfo = await this.supportService.getMachineInfo();
 		this.isLoading = true;
 		let subscriptionData = [];
-		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails(
-			machineInfo.serialnumber
-		);
+		const subscriptionDetails = await this.smartPerformanceService.getPaymentDetails();
 		this.logger.info('Subscription Details', subscriptionDetails);
 		if (subscriptionDetails && subscriptionDetails.data) {
 			subscriptionData = subscriptionDetails.data;
