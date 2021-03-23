@@ -1,3 +1,4 @@
+import { ElementRef, HostListener } from '@angular/core';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@lenovo/material/dialog';
 import { WinRT } from '@lenovo/tan-client-bridge';
@@ -44,6 +45,7 @@ export class SubpageColorCalibrationComponent implements OnInit {
 
 	@ViewChild('storeProfileDlg', { static: true }) storeProfileDlgView: TemplateRef<any>;
 	@ViewChild('screenshotDlg', { static: true }) screenshotDlgView: TemplateRef<any>;
+	@ViewChild('loadingContent', { static: false }) loadingContent: ElementRef;
 
 
 	constructor(private matDialog: MatDialog,
@@ -256,5 +258,27 @@ export class SubpageColorCalibrationComponent implements OnInit {
 
 	closeScreenshotDialog() {
 		this.screenShotDlg.closeAll();
+	}
+
+	@HostListener('document:keydown.pageup')
+	onClickPageUp() {
+		if (this.screenShotDlg.openDialogs.length) {
+			this.commonService.scrollElementByDistance(
+				this.loadingContent.nativeElement,
+				this.loadingContent.nativeElement.clientHeight - 40,
+				true
+			);
+		}
+		
+	}
+
+	@HostListener('document:keydown.pagedown')
+	onClickPageDown() {
+		if (this.screenShotDlg.openDialogs.length) {
+			this.commonService.scrollElementByDistance(
+				this.loadingContent.nativeElement,
+				this.loadingContent.nativeElement.clientHeight - 40
+			);
+		}
 	}
 }
