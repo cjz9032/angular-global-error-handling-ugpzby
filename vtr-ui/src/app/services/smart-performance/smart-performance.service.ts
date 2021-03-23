@@ -209,29 +209,27 @@ export class SmartPerformanceService {
 				const uri = new Windows.Foundation.Uri(reqUrl);
 				const request = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.get, uri);
 				const httpClient = new Windows.Web.Http.HttpClient();
-				(async () => {
-					try {
-						const response = await httpClient.sendRequestAsync(request);
-						const result = await response.content.readAsStringAsync();
-						if (result) {
-							const resultJson = JSON.parse(result);
-							if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
-								this.logger.info('Fetch smartPerformance payment detail result: ', resultJson);
-								resolve(resultJson);
-							} else {
-								resolve(undefined);
-								this.logger.info('Fetch smartPerformance payment detail failed response: ', resultJson);
-							}
+				try {
+					const response = await httpClient.sendRequestAsync(request);
+					const result = await response.content.readAsStringAsync();
+					if (result) {
+						const resultJson = JSON.parse(result);
+						if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
+							this.logger.info('Fetch smartPerformance payment detail result: ', resultJson);
+							resolve(resultJson);
 						} else {
 							resolve(undefined);
-							this.logger.info('Fetch smartPerformance payment detail no result: ', response);
+							this.logger.info('Fetch smartPerformance payment detail failed response: ', resultJson);
 						}
-					} catch (e) {
+					} else {
 						resolve(undefined);
-						this.logger.info('Fetch smartPerformance payment detail catch error: ', e);
+						this.logger.info('Fetch smartPerformance payment detail no result: ', response);
 					}
-					httpClient.close();
-				})();
+				} catch (e) {
+					resolve(undefined);
+					this.logger.info('Fetch smartPerformance payment detail catch error: ', e);
+				}
+				httpClient.close();
 			});
 		});
 	}
