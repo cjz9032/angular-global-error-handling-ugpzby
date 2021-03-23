@@ -3,6 +3,7 @@ import { SnapshotRoutingModule } from './snapshot-routing.module';
 import { CommonModule } from '@angular/common';
 
 import { MatTooltipModule } from '@lenovo/material/tooltip';
+import { MatCheckboxModule } from '@lenovo/material/checkbox';
 
 import { PageSnapshotComponent } from './pages/page-snapshot.component';
 import { SnapshotHeaderComponent } from './components/header/snapshot-header.component';
@@ -46,6 +47,7 @@ import { UiSnapshotItemComponent } from './components/dashboard/ui-snapshot-item
 		PageLayoutModule,
 		ContainerCardModule,
 		MatTooltipModule,
+		MatCheckboxModule,
 	],
 })
 export class SnapshotModule {

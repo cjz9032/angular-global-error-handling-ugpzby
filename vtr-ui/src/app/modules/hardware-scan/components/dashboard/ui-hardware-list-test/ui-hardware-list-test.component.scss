@@ -6,7 +6,6 @@
 	.list-group {
 		.list-group-item {
 			background-color: $grey_lighter;
-			border-color: $grey_light;
 			color: $main_dark;
 			padding: 0;
 
@@ -58,20 +57,13 @@
 			}
 
 			.custom-control {
-				display: inline-block;
-				padding-left: 0;
-
-				// modifying global checkbox component
-				.custom-control-component ::ng-deep .auto-set-checkbox {
-					margin: 0;
+				// modifying material checkbox component
+				.mat-checkbox ::ng-deep .mat-checkbox-layout {
+					margin-bottom: 0;
 
 					// removing default p margin
-					.custom-control-label {
-						padding-left: 1.5rem;
-
-						.custom-control-label-text {
-							margin-bottom: 0;
-						}
+					.custom-control-label-text {
+						margin-bottom: 0;
 					}
 				}
 			}

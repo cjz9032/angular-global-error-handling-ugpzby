@@ -60,7 +60,7 @@ import { UiHardwareScanTestResultComponent } from './components/dashboard/ui-har
 import { UiTestResultIconComponent } from './components/dashboard/ui-test-result-icon/ui-test-result-icon.component';
 import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
 import { HardwareScanExportLogComponent } from './components/header/hardware-scan-export-log/hardware-scan-export-log.component';
-
+import { MatCheckboxModule } from '@lenovo/material/checkbox';
 
 @NgModule({
 	declarations: [
@@ -111,6 +111,7 @@ import { HardwareScanExportLogComponent } from './components/header/hardware-sca
 		MatCardModule,
 		MatTooltipModule,
 		MatDialogModule,
+		MatCheckboxModule,
 	],
 	exports: [NgbCollapseModule],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
