@@ -27,6 +27,7 @@ import { DeviceStatusCardDate } from 'src/app/data-models/widgets/status.model';
 import { DashboardStateCardData } from 'src/app/components/pages/page-dashboard/material-state-card-container/material-state-card-container.component';
 import { map, startWith } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
+import { SubscriptionState } from 'src/app/enums/smart-performance.enum';
 
 interface IContentGroup {
 	positionA: any[];
@@ -587,7 +588,7 @@ export class DashboardService {
 
 	public async isSmartPerformanceSubscripted(): Promise<boolean> {
 		await this.spService.getSubscriptionDataDetail(null);
-		return this.spService.isSubscribed;
+		return this.spService.subscriptionState === SubscriptionState.Active;
 	}
 
 	public async isHWScanNeedPromote(): Promise<boolean> {

@@ -2701,14 +2701,11 @@
 			"processStatus": "KÄSITELLÄÄN",
 			"descriptionExpired": "Tilauksesi on vanhentunut ja voit käyttää tällä hetkellä vain Smart Performancen tarkastustoimintoa. Voit uusia tilauksen napsauttamalla \"Hallitse tilausta\" -linkkiä suojataksesi laitteesi täydellisesti uudelleen.",
 			"expiredStatus": "VANHENTUNUT",
-			"expiredNote": "Tilauksesi erääntyy",
-			"day": "päivä",
-			"days": "päivää",
-			"weeks": "viikkoa",
-			"week": "viikko",
-			"month": "kuukausi",
-			"today": "tänään",
-			"next": "seuraava"
+			"expireInNextMonth": "Tilauksesi vanhenee ensi kuussa",
+			"expireInNextXWeeks": "Tilauksesi vanhenee seuraavan {{weeks}} viikon aikana",
+			"expireInNextWeek": "Tilauksesi vanhenee ensi viikolla",
+			"expireInNextXDays": "Tilauksesi vanhenee {{days}} päivän kuluttua",
+			"expireInToday": "Tilaus vanhenee tänään"
 		},
 		"scanSettings": {
 			"title": "Tarkistusaikataulun asetukset",

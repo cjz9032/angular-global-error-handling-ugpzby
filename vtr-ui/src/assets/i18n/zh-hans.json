@@ -2809,14 +2809,11 @@
 			"processStatus": "处理中",
 			"descriptionExpired": "您的订阅已过期，当前只能使用 Smart Performance 中的扫描功能，您可以通过单击“管理订阅”链接来续订订阅，从而恢复对设备的全面保护。",
 			"expiredStatus": "已到期",
-			"expiredNote": "您的订阅将于以下时间内到期：",
-			"day": "天",
-			"days": "天",
-			"weeks": "周",
-			"week": "1 周",
-			"month": "月",
-			"today": "今天",
-			"next": "接下来的"
+			"expireInNextMonth": "您的订阅将于下个月过期",
+			"expireInNextXWeeks": "您的订阅将于 {{weeks}} 周后过期",
+			"expireInNextWeek": "您的订阅将于下周过期",
+			"expireInNextXDays": "您的订阅将于 {{days}} 天后过期",
+			"expireInToday": "您的订阅将于今天过期"
 		},
 		"scanSettings": {
 			"title": "设置自动扫描时间",

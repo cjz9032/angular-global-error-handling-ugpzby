@@ -2811,14 +2811,11 @@
 			"processStatus": "PROCESANDO",
 			"descriptionExpired": "Su suscripción ha caducado y actualmente solo puede utilizar la característica de exploración en Smart Performance, puede renovar la suscripción haciendo clic en el enlace “Administrar suscripción” para reanudar la protección completa del dispositivo.",
 			"expiredStatus": "CADUCADO",
-			"expiredNote": "Su suscripción expirará en",
-			"day": "día",
-			"days": "días",
-			"weeks": "semanas",
-			"week": "una semana",
-			"month": "mes",
-			"today": "hoy",
-			"next": "siguiente"
+			"expireInNextMonth": "La suscripción expirará en el próximo mes",
+			"expireInNextXWeeks": "La suscripción expirará en las próximas {{weeks}} semanas",
+			"expireInNextWeek": "La suscripción expirará en la próxima semana",
+			"expireInNextXDays": "La suscripción expirará en {{days}} días",
+			"expireInToday": "La suscripción expirará hoy"
 		},
 		"scanSettings": {
 			"title": "Configuración de planificación del análisis",

@@ -29,18 +29,18 @@
 	</div>
 	<div class="condition">
 		<div class="critical"
-			*ngIf="hidePointer || smartPerformanceService.isSubscribed"
+			*ngIf="hidePointer || (smartPerformanceService.subscriptionState === SubscriptionState.Active)"
 			id="smart-performance-rating-condition-critical"
 			role="text">{{'smartPerformance.critical' |translate }}</div>
 		<div class="well"
-			*ngIf="hidePointer || smartPerformanceService.isSubscribed"
+			*ngIf="hidePointer || (smartPerformanceService.subscriptionState === SubscriptionState.Active)"
 			id="smart-performance-rating-condition-well"
 			role="text">{{'smartPerformance.allisWell' |translate }}</div>
 		<div class="info-tip info-tip-rating-{{rating}}"
 			#spInfoTip
 			[ngStyle]="{'left': leftAnimator}"
 			[style.marginLeft.px]="spInfoTip.clientWidth * -0.5"
-			*ngIf="!hidePointer && !smartPerformanceService.isSubscribed">
+			*ngIf="!hidePointer && smartPerformanceService.subscriptionState !== SubscriptionState.Active">
 			<div class="label label-fix" *ngIf="rating <= 5">{{'smartPerformance.fixIt' | translate}}</div>
 			<div class="label label-optimize" *ngIf="rating > 5 && rating <= 8">{{'smartPerformance.optimizeIt' | translate}}</div>
 			<div class="label label-maintain" *ngIf="rating > 8">{{'smartPerformance.maintainIt' | translate}}</div>

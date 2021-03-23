@@ -4,7 +4,7 @@
 			<div class="vtr-device-information mb-24 border-none">
 				<div class="container-fluid">
 					<div class="system-scan-complete">
-						<vtr-ui-smart-performance-header *ngIf="!smartPerformanceService.isSubscribed"
+						<vtr-ui-smart-performance-header *ngIf="smartPerformanceService.subscriptionState === SubscriptionState.Inactive"
 							[image]="rating < 8 ? SPHeaderImageType.Issue : SPHeaderImageType.Well"
 							[headerTitle]="'smartPerformance.scanCompletePage.foundIssues' | translate:{issueCount: issueCount}"
 							[subTitle]="'smartPerformance.scanCompletePage.summaryDetails' | translate"
@@ -25,19 +25,75 @@
 									metricsParent="Page.Support.SmartPerformance"
 									[isDisabled]="!isOnline"
 									[isFullWidth]="true"
-									[label]="'smartPerformance.signUpAndFix' | translate"></vtr-ui-button>
+									[label]="(smartPerformanceService.subscriptionState === SubscriptionState.Inactive? 'smartPerformance.signUpAndFix': 'smartPerformance.scanCompletePage.renewAndFix')| translate"></vtr-ui-button>
 								<p id="smart-performance-scan-complete-purchase-tip"
 									role="text"
 									[innerHTML]="'smartPerformance.scanCompletePage.summaryPurchaseTip' | translate"></p>
 							</div>
 						</vtr-ui-smart-performance-header>
 
-						<vtr-ui-smart-performance-header *ngIf="smartPerformanceService.isSubscribed"
+						<vtr-ui-smart-performance-header *ngIf="smartPerformanceService.subscriptionState === SubscriptionState.Expired "
+							[image]="rating < 8 ? SPHeaderImageType.Issue : SPHeaderImageType.Well"
+							[headerTitle]="getExpiredHeaderTitle()"
+							[subTitle]="getExipredSubTitle()"
+							headerTitleId="smart-performance-scan-summary-title"
+							subTitleId="smart-performance-scan-summary-desc"
+							[bottomRadius]="true"
+							[isOnline]="isOnline"
+							[canShowOfflineText]="smartPerformanceService.scanningState === ScanningState.NotStart"
+							[contentWrap]="true">
+							<vtr-ui-smart-performance-rating [leftAnimator]="smartPerformanceService.scanningState === ScanningState.Completed ? leftAnimator : '100%'"
+								[rating]="rating"
+								[hidePointer]="smartPerformanceService.scanningState !== ScanningState.Completed"
+								[hideStatus]="true">
+							</vtr-ui-smart-performance-rating>
+							<div class="d-flex justify-content-start flex-wrap">
+								<vtr-ui-button (onClick)="ScanNowSummary()"
+									*ngIf="smartPerformanceService.scanningState === ScanningState.NotStart
+										||smartPerformanceService.scanningState === ScanningState.Canceled "
+									linkId="btn.smart-performance-scan"
+									metricsItem="btn.scan&fix"
+									metricsEvent="FeatureClick"
+									metricsParent="Page.Support.SmartPerformance"
+									[isDisabled]="isLoading || !isOnline"
+									[isFullWidth]="true"
+									[label]="'smartPerformance.scanNow' | translate">
+								</vtr-ui-button>
+								<vtr-ui-button (onClick)="openSubscribeModal()"
+									*ngIf="smartPerformanceService.scanningState === ScanningState.Completed"
+									class="mr-3"
+									linkId="btn.smart-performance-renew-and-fix"
+									metricsItem="btn.renewAndFix"
+									metricsEvent="ItemClick"
+									metricsParent="Page.Support.SmartPerformance"
+									[isDisabled]="!isOnline"
+									[isFullWidth]="true"
+									[label]="'smartPerformance.scanCompletePage.renewAndFix'| translate"></vtr-ui-button>
+								<div class="desc-block">
+									<div class="desc desc1 col-auto"
+										*ngIf="historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
+										<b id="smart-performance-scan-summary-mostRecent"
+											role="block"
+											title="{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}">{{'smartPerformance.subscriberScanHomePage.mostRecent' |translate }}</b><br>
+										{{mostRecentScan}}
+									</div>
+									<div class="desc desc2 col-auto-1"
+										*ngIf="smartPerformanceService.enableNextText">
+										<b id="smart-performance-scan-summary-nextScheduled"
+											role="block"
+											title="{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}">{{'smartPerformance.subscriberScanHomePage.nextScheduled' |translate }}</b><br>
+										{{smartPerformanceService.nextScheduleScan}}
+									</div>
+								</div>
+							</div>
+						</vtr-ui-smart-performance-header>
+
+						<vtr-ui-smart-performance-header *ngIf="smartPerformanceService.subscriptionState === SubscriptionState.Active "
 							[image]="rating < 8 ? SPHeaderImageType.Issue : SPHeaderImageType.Well"
 							[headerTitle]="smartPerformanceService.scanningState === ScanningState.Canceled
 									?('smartPerformance.subscriberScanHomePage.titleScanCanceled' | translate)
 										:('smartPerformance.subscriberScanHomePage.title'| translate)+' '+machineFamilyName "
-							[subTitle]="isScanningFinished(smartPerformanceService.scanningState)
+							[subTitle]="isScanningFinished()
 									? ('smartPerformance.subscriberScanHomePage.serialNumber' |translate) + ' ' +  systemSerialNumber
 										: ('smartPerformance.subscriberScanHomePage.description' |translate)"
 							headerTitleId="smart-performance-scan-summary-title"
@@ -46,14 +102,14 @@
 							[isOnline]="isOnline"
 							[canShowOfflineText]="smartPerformanceService.scanningState === ScanningState.NotStart"
 							[contentWrap]="true">
-							<vtr-ui-smart-performance-rating [leftAnimator]="isScanningFinished(smartPerformanceService.scanningState) ? leftAnimator : '100%'"
+							<vtr-ui-smart-performance-rating [leftAnimator]="isScanningFinished() ? leftAnimator : '100%'"
 								[rating]="rating"
-								[hidePointer]="!isScanningFinished(smartPerformanceService.scanningState)"
+								[hidePointer]="!isScanningFinished()"
 								[hideStatus]="true">
 							</vtr-ui-smart-performance-rating>
 							<div class="d-flex justify-content-start flex-wrap">
 								<vtr-ui-button (onClick)="ScanNowSummary()"
-									*ngIf="smartPerformanceService.scanningState === ScanningState.NotStart"
+									*ngIf="smartPerformanceService.scanningState === ScanningState.NotStart && smartPerformanceService.subscriptionState === SubscriptionState.Active"
 									linkId="btn.smart-performance-scan-and-fix"
 									metricsItem="btn.scan&fix"
 									metricsEvent="FeatureClick"
@@ -63,7 +119,7 @@
 									[label]="'smartPerformance.subscriberScanHomePage.scanNow' | translate">
 								</vtr-ui-button>
 								<vtr-ui-button (onClick)="BackToSummary()"
-									*ngIf="isScanningFinished(smartPerformanceService.scanningState)"
+									*ngIf="isScanningFinished()"
 									linkId="btn.smart-performance-scan-and-fix"
 									metricsItem="btn.backtohome"
 									metricsEvent="FeatureClick"
@@ -93,17 +149,17 @@
 				</div>
 			</div>
 			<div class="vtr-device-information mb-24"
-				*ngIf="isScanningFinished(smartPerformanceService.scanningState)">
+				*ngIf="isScanningFinished()">
 				<div class="vtr-ui-smart-performance-scan-summary">
 					<div class="vtr-scan-information">
 						<div class="scan-summary-block">
 							<div class="row">
 								<div class="title-block w-100">
-									<h3 *ngIf="smartPerformanceService.isSubscribed"
+									<h3 *ngIf="smartPerformanceService.subscriptionState === SubscriptionState.Active"
 										id="smart-performance-scan-summary-subTitle">
 										{{'smartPerformance.subscriberScanHomePage.successTitle' |translate}}
 									</h3>
-									<p *ngIf="smartPerformanceService.isSubscribed"
+									<p *ngIf="smartPerformanceService.subscriptionState === SubscriptionState.Active"
 										class="mb-20"
 										id="smart-performance-scan-summary-description"
 										role="text"
@@ -118,7 +174,7 @@
 				</div>
 			</div>
 			<div class="vtr-device-information mb-24"
-				*ngIf="smartPerformanceService.isSubscribed || smartPerformanceService.isExpired">
+				*ngIf="smartPerformanceService.subscriptionState !== SubscriptionState.Inactive">
 				<div class="vtr-ui-smart-performance-scan-summary">
 					<div class="vtr-scan-information">
 						<div class="scan-summary-block">
@@ -424,7 +480,7 @@
 			</div>
 
 			<div class="vtr-device-information mb-24"
-				*ngIf="(smartPerformanceService.isSubscribed || smartPerformanceService.isExpired) && !showResultStatus.show && historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
+				*ngIf="(smartPerformanceService.subscriptionState !== SubscriptionState.Inactive) && !showResultStatus.show && historyScanResultsDateTime && historyScanResultsDateTime.length > 0">
 				<div class="vtr-ui-smart-performance-scan-summary">
 					<div class="vtr-scan-information">
 						<div class="scan-summary-block">
@@ -489,7 +545,7 @@
 				</div>
 			</div>
 			<div class="vtr-device-information mb-24"
-				*ngIf="(smartPerformanceService.isSubscribed || smartPerformanceService.isExpired) && showResultStatus.show">
+				*ngIf="(smartPerformanceService.subscriptionState !== SubscriptionState.Inactive) && showResultStatus.show">
 				<div class="vtr-ui-smart-performance-scan-summary">
 					<div class="vtr-scan-information">
 						<div class="scan-summary-block">

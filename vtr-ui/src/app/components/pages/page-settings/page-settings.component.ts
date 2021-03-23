@@ -18,7 +18,6 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { MenuItemEvent } from 'src/app/enums/menuItemEvent.enum';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
-import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 @Component({
@@ -158,7 +157,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 				try {
 					this.usageType = this.selfSelectService.usageType;
 					this.interests = this.commonService.cloneObj(this.selfSelectService.interests);
-				} catch (error) {}
+				} catch (error) { }
 				break;
 			case SelfSelectEvent.SegmentChange:
 				this.getSegment();
@@ -308,7 +307,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 						this.settingsService.toggleAppFeature = !event.switchValue;
 					}
 				})
-				.catch(() => {});
+				.catch(() => { });
 		}
 		this.sendSettingMetrics('SettingAppFeatures', event.switchValue);
 	}
@@ -330,7 +329,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 						this.settingsService.toggleMarketing = !event.switchValue;
 					}
 				})
-				.catch(() => {});
+				.catch(() => { });
 		}
 		this.sendSettingMetrics('SettingMarketing', event.switchValue);
 	}
@@ -352,7 +351,7 @@ export class PageSettingsComponent implements OnInit, OnDestroy {
 						this.settingsService.toggleActionTriggered = !event.switchValue;
 					}
 				})
-				.catch(() => {});
+				.catch(() => { });
 		}
 		this.sendSettingMetrics('SettingActionTriggered', event.switchValue);
 	}

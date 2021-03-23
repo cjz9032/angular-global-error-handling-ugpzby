@@ -16,9 +16,10 @@ import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shel
 import { TranslateService } from '@ngx-translate/core';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import {
-	enumSmartPerformance,
+	EnumSmartPerformance,
 	ScanningState,
 	SPHeaderImageType,
+	SubscriptionState,
 } from 'src/app/enums/smart-performance.enum';
 import { formatDate } from '@angular/common';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -152,7 +153,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	dateValue = 0;
 	scanScheduleDate: any;
 	mostRecentScan: any;
-	IsSmartPerformanceFirstRun: any;
 	IsScheduleScanEnabled: any;
 	public scanData: any = {};
 	systemSerialNumber: any;
@@ -160,7 +160,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	navigation = 'arrows';
 	public minDate: any;
 	public maxDate: any;
-	spEnum: any = enumSmartPerformance;
 	isOldVersion = false;
 	// tuneindividualIssueCount: any = 0;
 	// boostindividualIssueCount: any = 0;
@@ -170,11 +169,12 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		{
 			UUID: uuid(),
 			StartDate: formatDate(new Date(), 'yyyy/MM/dd', 'en'),
-			EndDate: formatDate(this.spEnum.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en'),
+			EndDate: formatDate(EnumSmartPerformance.SCHEDULESCANENDDATE, 'yyyy/MM/dd', 'en'),
 		},
 	];
 	SPHeaderImageType = SPHeaderImageType;
 	ScanningState = ScanningState;
+	SubscriptionState = SubscriptionState;
 
 	showResultStatus: SPShowResult = {
 		show: false,
@@ -185,10 +185,10 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	showResultItem: SPHistoryScanResultsDateTime;
 
 	ngOnInit() {
-		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.IsFreeFullFeatureEnabled
+		this.smartPerformanceService.subscriptionState = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.SmartPerformanceSubscriptionState
 		);
-		if (!this.smartPerformanceService.isSubscribed) {
+		if (this.smartPerformanceService.subscriptionState !== SubscriptionState.Active) {
 			this.smartPerformanceService.getSubscriptionDataDetail(null);
 		}
 		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
@@ -206,13 +206,10 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		this.selectedDate = this.calendar.getToday();
 		this.toDate = this.selectedDate;
 		this.fromDate = this.selectedDate;
-		this.smartPerformanceService.isSubscribed = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.IsFreeFullFeatureEnabled
-		);
 		this.isDaySelectionEnable = false;
 		this.scanScheduleDate = this.selectedDate;
 		this.isLoading = false;
-		if (this.smartPerformanceService.isSubscribed || this.smartPerformanceService.isExpired) {
+		if (this.smartPerformanceService.subscriptionState !== SubscriptionState.Inactive) {
 			if (this.smartPerformanceService.scanningState === ScanningState.Canceled) {
 				let getCount = 0;
 				this.scanSummaryTimer = setInterval(() => {
@@ -254,7 +251,8 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		clearInterval(this.scanSummaryTimer);
 	}
 
-	isScanningFinished(state) {
+	isScanningFinished() {
+		const state = this.smartPerformanceService.scanningState;
 		return (state === ScanningState.Completed || state === ScanningState.Canceled);
 	}
 
@@ -522,8 +520,9 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	// Last scan result method.
 	async getLastScanResult(isInit?: boolean) {
 		try {
+			const isActive = this.smartPerformanceService.subscriptionState === SubscriptionState.Active;
 			const lastScanResultRequest = {
-				scanType: this.smartPerformanceService.isSubscribed ? 'ScanAndFix' : 'Scan',
+				scanType: isActive ? 'ScanAndFix' : 'Scan',
 			};
 			const response = await this.smartPerformanceService.getLastScanResult(
 				lastScanResultRequest
@@ -532,7 +531,7 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 			const scanRunTime = response.scanruntime;
 			const now = moment().format('YYYY-MM-DD HH:mm:ss');
 			const fiveMinutesFromRecentScan = moment(scanRunTime)
-				.add(enumSmartPerformance.SUMMARYWAITINGTIME, 'm')
+				.add(EnumSmartPerformance.SUMMARYWAITINGTIME, 'm')
 				.format('YYYY-MM-DD HH:mm:ss');
 
 			if (now < fiveMinutesFromRecentScan) {
@@ -629,5 +628,28 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	checkPreviousResults() {
 		this.showResultStatus.show = false;
 		setTimeout(() => { document.getElementById('smart-performance-scan-summary-scan-result-1').focus(); }, 0);
+	}
+
+
+	getExpiredHeaderTitle() {
+		if (this.smartPerformanceService.scanningState === ScanningState.Completed) {
+			if (this.issueCount > 0) {
+				return this.translate.instant('smartPerformance.scanCompletePage.foundIssues', { issueCount: this.issueCount });
+			}
+			else {
+				return `${this.translate.instant('smartPerformance.subscriberScanHomePage.title')} ${this.machineFamilyName}`;
+			}
+		} else {
+			return this.translate.instant('smartPerformance.performanceandSecurityCheckTitle');
+		}
+	}
+
+	getExipredSubTitle() {
+		if (this.smartPerformanceService.scanningState === ScanningState.Completed) {
+			return this.translate.instant('smartPerformance.scanCompletePage.summaryDetails');
+		}
+		else {
+			return this.translate.instant('smartPerformance.performanceandSecurityCheckSubTitle');
+		}
 	}
 }

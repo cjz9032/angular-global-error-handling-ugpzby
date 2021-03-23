@@ -2701,14 +2701,11 @@
 			"processStatus": "FELDOLGOZÁS",
 			"descriptionExpired": "Az előfizetése lejárt, és jelenleg csak a Smart Performance ellenőrzési funkcióját használhatja. Ha szeretné megújítani az előfizetését, és ismét élvezni az eszköz teljes körű védelmét, kattintson az „Előfizetés kezelése” hivatkozásra.",
 			"expiredStatus": "LEJÁRT",
-			"expiredNote": "Az előfizetés lejárata:",
-			"day": "nap",
-			"days": "nap",
-			"weeks": "hét",
-			"week": "egy hát",
-			"month": "hónap",
-			"today": "ma",
-			"next": "következő"
+			"expireInNextMonth": "Az előfizetés a következő hónapban lejár",
+			"expireInNextXWeeks": "Az előfizetés {{weeks}} héten belül lejár",
+			"expireInNextWeek": "Az előfizetés a következő héten lejár",
+			"expireInNextXDays": "Az előfizetés {{days}} nap múlva lejár",
+			"expireInToday": "Az előfizetés ma lejár"
 		},
 		"scanSettings": {
 			"title": "Ellenőrzés ütemezésével kapcsolatos beállítások",

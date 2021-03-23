@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
+import { SubscriptionState } from 'src/app/enums/smart-performance.enum';
 import { FormatLocaleDatePipe } from 'src/app/pipe/format-locale-date/format-locale-date.pipe';
 import { CommonService } from 'src/app/services/common/common.service';
 import { DevService } from 'src/app/services/dev/dev.service';
@@ -95,7 +96,7 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 			Promise.resolve({ startDate: '2019/06/20', endDate: '2020/06/19' }),
 			Promise.resolve({ initiatedTime: '08:30', isOpened: true })
 		);
-		smartPerformanceService.isSubscribed = true;
+		smartPerformanceService.subscriptionState = SubscriptionState.Active;
 		await component.initSubscripionDetails();
 		fixture.detectChanges();
 		expect(component.strStatus).toEqual('PROCESSING');
@@ -128,10 +129,10 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 
 	it('should enable full feature', () => {
 		commonService = TestBed.inject(CommonService);
-		smartPerformanceService.isSubscribed = false;
+		smartPerformanceService.subscriptionState = SubscriptionState.Inactive;
 		const spy = spyOn(commonService, 'getLocalStorageValue').and.returnValue(false);
 		const event = {};
-		component.enableFullFeature(event);
+		//component.enableFullFeature(event);
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
 	});
@@ -160,7 +161,7 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 	it('should call subscriptionDataProcess', async () => {
 		commonService = TestBed.inject(CommonService);
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
-		component.spProcessStatus = true;
+		//component.spProcessStatus = true;
 		const subscriptionData = [...response.data];
 		await component.subscriptionDataProcess(subscriptionData);
 		fixture.detectChanges();

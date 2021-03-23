@@ -2701,14 +2701,11 @@
 			"processStatus": "OBDELAVA",
 			"descriptionExpired": "Vaša naročnina je potekla, zato trenutno lahko uporabljate samo funkcijo za pregledovanje v storitvi Smart Performance. Naročnino lahko obnovite s klikom na povezavo »Upravljaj naročnino« ter tako ohranite celovito zaščito naprave.",
 			"expiredStatus": "POTEKLO",
-			"expiredNote": "Vaša naročnina poteče čez",
-			"day": "dan",
-			"days": "dni",
-			"weeks": "tednov",
-			"week": "en teden",
-			"month": "mesec",
-			"today": "danes",
-			"next": "naprej"
+			"expireInNextMonth": "Vaša naročnina poteče v naslednjem mesecu",
+			"expireInNextXWeeks": "Vaša naročnina poteče v naslednjih {{weeks}} tednih",
+			"expireInNextWeek": "Vaša naročnina poteče v naslednjem tednu",
+			"expireInNextXDays": "Vaša naročnina poteče čez {{days}} dni",
+			"expireInToday": "Vaša naročnina poteče danes"
 		},
 		"scanSettings": {
 			"title": "Nastavite časa načrtovanega pregleda",

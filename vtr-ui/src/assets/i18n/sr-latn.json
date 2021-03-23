@@ -2701,14 +2701,11 @@
 			"processStatus": "OBRADA",
 			"descriptionExpired": "Vaša pretplata je istekla i trenutno možete da koristite samo funkciju skeniranja u usluzi Smart Performance. Pretplatu možete da obnovite klikom na vezu „Upravljanje pretplatom“ da biste nastavili sa potpunom zaštitom za vaš uređaj.",
 			"expiredStatus": "ISTEKLO",
-			"expiredNote": "Pretplata ističe za",
-			"day": "dan",
-			"days": "dana",
-			"weeks": "nedelje",
-			"week": "jednu nedelju",
-			"month": "mesec",
-			"today": "danas",
-			"next": "sledećeg"
+			"expireInNextMonth": "Vaša pretplata ističe sledećeg meseca",
+			"expireInNextXWeeks": "Vaša pretplata ističe u naredne {{weeks}} nedelje",
+			"expireInNextWeek": "Vaša pretplata ističe sledeće nedelje",
+			"expireInNextXDays": "Vaša pretplata ističe za {{days}} dana",
+			"expireInToday": "Pretplata ističe danas"
 		},
 		"scanSettings": {
 			"title": "Postavke rasporeda skeniranja",

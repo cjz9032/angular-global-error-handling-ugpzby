@@ -24,10 +24,10 @@ export enum SPSubCategory {
 	THREEHUNDEREADANDFOUR = 304,
 	THREEHUNDEREADANDFIVE = 305,
 }
-export enum enumScanFrequency {
+export enum EnumScanFrequency {
 	ONCEAMONTH = 'Once a month',
 }
-export enum enumSmartPerformance {
+export enum EnumSmartPerformance {
 	SCHEDULESCANENDDATE = '2020/07/27',
 	SUMMARYWAITINGTIME = 5,
 	OLDSCHEDULESCAN = 'Lenovo.Vantage.SmartPerformance.ScheduleScan',
@@ -82,4 +82,10 @@ export enum ScanningState {
 	Running = 1,
 	Canceled = 2,
 	Completed = 3
+}
+
+export enum SubscriptionState {
+	Inactive = 0,
+	Active = 1,
+	Expired = 2
 }

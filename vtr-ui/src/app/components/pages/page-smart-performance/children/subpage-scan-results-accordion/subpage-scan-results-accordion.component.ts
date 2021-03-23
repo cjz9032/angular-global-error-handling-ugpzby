@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { SubscriptionState } from 'src/app/enums/smart-performance.enum';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { SPHistoryScanResultsDateTime, SPResult, SPResultContent } from '../../interface/smart-performance.interface';
 
@@ -262,6 +263,7 @@ export class SubpageScanResultsAccordionComponent implements OnInit {
 	currentContent: SPResultContent = this.spResults[0].contents[0];
 
 	isEn: boolean;
+	SubscriptionState = SubscriptionState;
 
 	constructor(
 		public smartPerformanceService: SmartPerformanceService,

@@ -2701,14 +2701,11 @@
 			"processStatus": "A PROCESSAR",
 			"descriptionExpired": "A sua subscrição expirou e atualmente só pode utilizar a funcionalidade de análise no Smart Performance. Pode renovar a subscrição ao clicar na ligação “Gerir Subscrição” para retomar a proteção total do seu dispositivo.",
 			"expiredStatus": "EXPIRADO",
-			"expiredNote": "A sua subscrição expira dentro de",
-			"day": "dia",
-			"days": "dias",
-			"weeks": "semanas",
-			"week": "uma semana",
-			"month": "mês",
-			"today": "hoje",
-			"next": "seguinte"
+			"expireInNextMonth": "A sua subscrição expira no próximo mês",
+			"expireInNextXWeeks": "A sua subscrição expira nas próximas {{weeks}} semanas",
+			"expireInNextWeek": "A sua subscrição expira na próxima semana",
+			"expireInNextXDays": "A sua subscrição expira dentro de {{days}} dias",
+			"expireInToday": "A sua subscrição expira hoje"
 		},
 		"scanSettings": {
 			"title": "Definições de agendamento da análise",

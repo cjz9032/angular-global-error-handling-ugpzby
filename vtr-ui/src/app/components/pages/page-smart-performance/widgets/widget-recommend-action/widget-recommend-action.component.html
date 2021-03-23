@@ -7,7 +7,9 @@
 	<div class="card-info"
 		id="smart-performance-scan-summary-recommendAction-desc"
 		role="text">
-		<p *ngIf="smartPerformanceService.isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
+		<p *ngIf="smartPerformanceService.isShowPrice && smartPerformanceService.subscriptionState === SubscriptionState.Inactive">{{'smartPerformance.scanCompletePage.recommendedAction.description' |translate }}
+		</p>
+		<p *ngIf="smartPerformanceService.isShowPrice && smartPerformanceService.subscriptionState === SubscriptionState.Expired">{{'smartPerformance.scanCompletePage.recommendedAction.expiredDesc' |translate }}
 		</p>
 		<p class="mb-3"
 			*ngIf="!smartPerformanceService.isShowPrice">{{'smartPerformance.scanCompletePage.recommendedAction.newDescription' |translate }}</p>

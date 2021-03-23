@@ -2701,14 +2701,11 @@
 			"processStatus": "처리 중",
 			"descriptionExpired": "구독이 만료되었으며 현재 Smart Performance에서만 검사 기능을 사용할 수 있습니다. 장치에 대한 전체 보호를 다시 시작하려면 \"구독 관리\" 링크를 클릭하여 구독을 갱신할 수 있습니다.",
 			"expiredStatus": "만료됨",
-			"expiredNote": "구독 만료 전까지 남은 기간:",
-			"day": "일",
-			"days": "일",
-			"weeks": "주",
-			"week": "1주",
-			"month": "월",
-			"today": "오늘",
-			"next": "다음"
+			"expireInNextMonth": "다음 달에 구독이 만료됩니다",
+			"expireInNextXWeeks": "{{weeks}}주 후에 구독이 만료됩니다",
+			"expireInNextWeek": "다음 주에 구독이 만료됩니다",
+			"expireInNextXDays": "{{days}}일 후에 구독이 만료됩니다",
+			"expireInToday": "구독이 오늘 만료됩니다"
 		},
 		"scanSettings": {
 			"title": "예약 검사 설정",

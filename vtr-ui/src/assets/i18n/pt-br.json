@@ -2811,14 +2811,11 @@
 			"processStatus": "PROCESSANDO",
 			"descriptionExpired": "Sua assinatura expirou e atualmente só pode usar o recurso de verificação no Smart Performance. Você pode renovar a assinatura clicando no link \"Gerenciar assinatura\" para retomar a proteção total do seu dispositivo.",
 			"expiredStatus": "EXPIRADO",
-			"expiredNote": "Sua assinatura irá expirar em",
-			"day": "dia",
-			"days": "dias",
-			"weeks": "semanas",
-			"week": "uma semana",
-			"month": "mês",
-			"today": "hoje",
-			"next": "avançar"
+			"expireInNextMonth": "Sua assinatura vai expirar no próximo mês",
+			"expireInNextXWeeks": "Sua assinatura vai expirar nas próximas {{weeks}} semanas",
+			"expireInNextWeek": "Sua assinatura vai expirar na próxima semana",
+			"expireInNextXDays": "Sua assinatura vai expirar em {{days}} dias",
+			"expireInToday": "Sua assinatura vai expirar hoje"
 		},
 		"scanSettings": {
 			"title": "Configurações de programação de verificação",

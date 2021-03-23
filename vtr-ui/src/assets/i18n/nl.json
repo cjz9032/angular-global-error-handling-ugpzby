@@ -2701,14 +2701,11 @@
 			"processStatus": "BEZIG",
 			"descriptionExpired": "Uw abonnement is verlopen en u kunt momenteel alleen de scanfunctie van Smart Performance gebruiken. U kunt het abonnement verlengen door te klikken op de koppeling \"Abonnement beheren\" en ervoor te zorgen dat uw apparaat weer volledig is beveiligd.",
 			"expiredStatus": "VERLOPEN",
-			"expiredNote": "Uw abonnement verloopt over",
-			"day": "dag",
-			"days": "dagen",
-			"weeks": "weken",
-			"week": "een week",
-			"month": "maand",
-			"today": "vandaag",
-			"next": "volgende"
+			"expireInNextMonth": "Uw abonnement verloopt over een maand",
+			"expireInNextXWeeks": "Uw abonnement verloopt over {{weeks}} weken",
+			"expireInNextWeek": "Uw abonnement verloopt over een week",
+			"expireInNextXDays": "Uw abonnement verloopt over {{days}} dagen",
+			"expireInToday": "Uw abonnement verloopt vandaag"
 		},
 		"scanSettings": {
 			"title": "Scaninstellingen plannen",

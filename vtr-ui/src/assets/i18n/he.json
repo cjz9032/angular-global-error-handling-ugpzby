@@ -2701,14 +2701,11 @@
 			"processStatus": "מעבד",
 			"descriptionExpired": "פג תוקף המנוי שלכם וכרגע אתם יכולים להשתמש רק בתכונת סריקה ב-Smart Performance, אתם יכולים לחדש את המינוי על ידי לחיצה על הקישור \"ניהול מנוי\" כדי לחדש את ההגנה המלאה על המכשיר שלכם.",
 			"expiredStatus": "פג תוקף",
-			"expiredNote": "תוקף המנוי יפוג בעוד",
-			"day": "יום",
-			"days": "ימים",
-			"weeks": "שבועות",
-			"week": "שבוע",
-			"month": "חודש",
-			"today": "היום",
-			"next": "הבא"
+			"expireInNextMonth": "תוקף המנוי פג בחודש הבא",
+			"expireInNextXWeeks": "תוקף המנוי פג בעוד {{weeks}} שבועות",
+			"expireInNextWeek": "תוקף המנוי פג בשבוע הבא",
+			"expireInNextXDays": "תוקף המנוי יפוג בעוד {{days}} ימים",
+			"expireInToday": "תוקף המנוי פג היום"
 		},
 		"scanSettings": {
 			"title": "הגדרות של תזמון סריקה",

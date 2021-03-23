@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SubscriptionState } from 'src/app/enums/smart-performance.enum';
 import { SmartPerformanceDialogService } from 'src/app/services/smart-performance/smart-performance-dialog.service';
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 
@@ -10,10 +11,12 @@ import { SmartPerformanceService } from 'src/app/services/smart-performance/smar
 export class WidgetRecommendActionComponent {
 	@Input() isDisabled = false;
 
+	SubscriptionState = SubscriptionState;
+
 	constructor(
 		private smartPerformanceDialogService: SmartPerformanceDialogService,
 		public smartPerformanceService: SmartPerformanceService
-	) {}
+	) { }
 
 	openSubscribeModal() {
 		this.smartPerformanceDialogService.openSubscribeModal();

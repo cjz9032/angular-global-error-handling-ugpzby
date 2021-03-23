@@ -2701,14 +2701,11 @@
 			"processStatus": "İŞLENİYOR",
 			"descriptionExpired": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. Cihazınızın tam olarak korunmasına devam etmek için “Aboneliği Yönet” bağlantısını tıklayarak aboneliğinizi yenileyebilirsiniz.",
 			"expiredStatus": "SÜRESİ DOLDU",
-			"expiredNote": "Aboneliğinizin sona ermesine kalan süre:",
-			"day": "gün",
-			"days": "gün",
-			"weeks": "hafta",
-			"week": "bir hafta",
-			"month": "ay",
-			"today": "bugün",
-			"next": "gelecek"
+			"expireInNextMonth": "Aboneliğiniz gelecek ay sona erecek",
+			"expireInNextXWeeks": "Aboneliğinizin sona ermesine {{weeks}} hafta kaldı",
+			"expireInNextWeek": "Aboneliğiniz gelecek hafta sona erecek",
+			"expireInNextXDays": "Aboneliğinizin sona ermesine {{days}} gün kaldı",
+			"expireInToday": "Aboneliğiniz bugün sona eriyor"
 		},
 		"scanSettings": {
 			"title": "Tarama ayarları planlayın",

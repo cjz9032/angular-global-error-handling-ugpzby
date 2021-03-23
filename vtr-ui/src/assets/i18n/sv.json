@@ -2701,14 +2701,11 @@
 			"processStatus": "BEARBETAR",
 			"descriptionExpired": "Din prenumeration har gått ut och du kan för närvarande endast använda genomsökningsfunktionen i Smart Performance. Du kan förnya prenumerationen genom att klicka på länken Hantera prenumeration för att återfå fullständigt skydd av din enhet.",
 			"expiredStatus": "UTGÅNGET",
-			"expiredNote": "Din prenumeration går ut om",
-			"day": "dag",
-			"days": "dagar",
-			"weeks": "veckor",
-			"week": "en vecka",
-			"month": "månad",
-			"today": "i dag",
-			"next": "Nästa"
+			"expireInNextMonth": "Din prenumeration går ut nästa månad",
+			"expireInNextXWeeks": "Din prenumeration går ut om {{weeks}} veckor",
+			"expireInNextWeek": "Din prenumeration går ut nästa vecka",
+			"expireInNextXDays": "Din prenumeration går ut om {{days}} dagar",
+			"expireInToday": "Din prenumeration går ut i dag"
 		},
 		"scanSettings": {
 			"title": "Inställningar för schemalagd genomsökning",

@@ -4,11 +4,7 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { DeviceService } from '../device/device.service';
-import {
-	enumSmartPerformance,
-	ScanningState,
-	SPPriceCode,
-} from 'src/app/enums/smart-performance.enum';
+import { EnumSmartPerformance, ScanningState, SPPriceCode, SubscriptionState } from 'src/app/enums/smart-performance.enum';
 import { LocalInfoService } from '../local-info/local-info.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
@@ -32,8 +28,7 @@ export class SmartPerformanceService {
 
 	scanningState = ScanningState.NotStart;
 
-	isSubscribed = false;
-	isExpired = false;
+	subscriptionState = SubscriptionState.Inactive;
 	scheduleScanObj = null;
 	nextScheduleScan: any;
 	enableNextText: boolean;
@@ -322,58 +317,51 @@ export class SmartPerformanceService {
 	}
 
 	async getSubscriptionDataDetail(onSubscribed) {
-		let subscriptionData = [];
+		let subscriptionData;
 		const subscriptionDetails = await this.getPaymentDetails();
 		this.logger.info(
 			'smart-performance.service.getSubscriptionDataDetail',
 			subscriptionDetails
 		);
-		if (
-			subscriptionDetails &&
-			subscriptionDetails.data &&
-			subscriptionDetails.data.length > 0
-		) {
-			subscriptionData = subscriptionDetails.data;
-			const lastItem = subscriptionData[subscriptionData.length - 1];
-			const releaseDate = new Date(lastItem.releaseDate);
-			releaseDate.setMonth(releaseDate.getMonth() + +lastItem.products[0].unitTerm);
-			releaseDate.setDate(releaseDate.getDate() - 1);
-			if (lastItem && lastItem.status.toUpperCase() === 'COMPLETED') {
-				this.getExpiredStatus(releaseDate, lastItem, onSubscribed);
+		if (subscriptionDetails && subscriptionDetails.data && subscriptionDetails.data.length > 0) {
+			subscriptionData = subscriptionDetails.data[subscriptionDetails.data.length - 1];
+			if (subscriptionData && subscriptionData.status.toUpperCase() === 'COMPLETED') {
+				this.getExpiredStatus(subscriptionData, onSubscribed);
 			}
 		} else {
 			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.IsFreeFullFeatureEnabled,
-				false
+				LocalStorageKey.SmartPerformanceSubscriptionState,
+				SubscriptionState.Inactive
 			);
-			this.isSubscribed = false;
+			this.subscriptionState = SubscriptionState.Inactive;
+			if (onSubscribed) {
+				onSubscribed(this.subscriptionState);
+			}
 		}
-		if (this.isSubscribed) {
-			this.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
+		if (this.subscriptionState === SubscriptionState.Active) {
+			this.unregisterScanSchedule(EnumSmartPerformance.SCHEDULESCAN);
 		} else {
-			this.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCANANDFIX);
+			this.unregisterScanSchedule(EnumSmartPerformance.SCHEDULESCANANDFIX);
 		}
+		return subscriptionData;
 	}
 
-	getExpiredStatus(releaseDate, lastItem, onSubscribed) {
-		const currentDate: any = new Date(lastItem.currentTime);
-		const expiredDate = new Date(releaseDate);
+	getExpiredStatus(lastItem, onSubscribed) {
+		const currentDate = new Date(lastItem.currentTime);
+		const expiredDate = new Date(lastItem.expiredTime);
 		if (expiredDate < currentDate) {
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.IsFreeFullFeatureEnabled,
-				false
-			);
-			this.isSubscribed = false;
+			this.subscriptionState = SubscriptionState.Expired;
 		} else {
-			this.localCacheService.setLocalCacheValue(
-				LocalStorageKey.IsFreeFullFeatureEnabled,
-				true
-			);
-			this.isSubscribed = true;
+			this.subscriptionState = SubscriptionState.Active;
 		}
 
+		this.localCacheService.setLocalCacheValue(
+			LocalStorageKey.SmartPerformanceSubscriptionState,
+			this.subscriptionState
+		);
+
 		if (onSubscribed) {
-			onSubscribed(this.isSubscribed);
+			onSubscribed(this.subscriptionState);
 		}
 	}
 }

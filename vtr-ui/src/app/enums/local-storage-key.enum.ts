@@ -168,7 +168,8 @@ export enum LocalStorageKey {
 	isOldScheduleScanDeleted = '[LocalStorageKey] isOldScheduleScanDeleted',
 	SPProcessStatus = '[LocalStorageKey] SPProcessStatus',
 	IsFreePCScanRun = '[LocalStorageKey] IsFreePCScanRun',
-	IsFreeFullFeatureEnabled = '[LocalStorageKey] IsFreeFullFeatureEnabled',
+	SmartPerformanceSubscriptionState = '[LocalStorageKey] SmartPerformanceSubscriptionState',
+
 	IsSmartPerformanceForceClose = '[LocalStorageKey] IsSmartPerformanceForceClose',
 	SmartPerformanceSubscriptionDetails = '[LocalStorageKey] SmartPerformanceSubscriptionDetails',
 	SmartPerformanceLocalPrices = '[LocalStorageKey] SmartPerformanceLocalPrices',

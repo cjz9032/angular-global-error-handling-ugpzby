@@ -2811,14 +2811,11 @@
 			"processStatus": "LÄUFT",
 			"descriptionExpired": "Ihr Abonnement ist abgelaufen und Sie können die Scan-Funktion derzeit nur in Smart Performance verwenden. Klicken Sie auf den Link \"Abonnement verwalten\", um Ihr Abonnement zu erneuern und Ihre Einheit wieder umfassend zu schützen.",
 			"expiredStatus": "ABGELAUFEN",
-			"expiredNote": "Ihr Abonnement läuft ab in",
-			"day": "Tag",
-			"days": "Tage",
-			"weeks": "Wochen",
-			"week": "einer Woche",
-			"month": "Monat",
-			"today": "heute",
-			"next": "nächste"
+			"expireInNextMonth": "Ihr Abonnement läuft nächsten Monat ab",
+			"expireInNextXWeeks": "Ihr Abonnement läuft in {{weeks}} Wochen ab",
+			"expireInNextWeek": "Ihr Abonnement läuft nächste Woche ab",
+			"expireInNextXDays": "Ihr Abonnement läuft in {{days}} Tagen ab",
+			"expireInToday": "Ihr Abonnement läuft heute ab"
 		},
 		"scanSettings": {
 			"title": "Scanzeitplan festlegen",

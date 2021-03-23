@@ -47,7 +47,7 @@ import { SecurityAdvisorNotifications } from './enums/security-advisor-notificat
 import { SessionStorageKey } from './enums/session-storage-key-enum';
 import { HistoryManager } from './services/history-manager/history-manager.service';
 import { SmartPerformanceService } from './services/smart-performance/smart-performance.service';
-import { enumSmartPerformance } from './enums/smart-performance.enum';
+import { EnumSmartPerformance } from './enums/smart-performance.enum';
 import { LocalCacheService } from './services/local-cache/local-cache.service';
 import { MatSnackBar } from '@lenovo/material/snack-bar';
 import { PerformanceNotifications } from './enums/performance-notifications.enum';
@@ -661,14 +661,14 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		);
 		if (isOldScheduleScanDeleted === undefined || isOldScheduleScanDeleted === false) {
 			this.smartPerformanceService.unregisterScanSchedule(
-				enumSmartPerformance.OLDSCHEDULESCANANDFIX
+				EnumSmartPerformance.OLDSCHEDULESCANANDFIX
 			);
 			this.smartPerformanceService.unregisterScanSchedule(
-				enumSmartPerformance.OLDSCHEDULESCAN
+				EnumSmartPerformance.OLDSCHEDULESCAN
 			);
-			this.smartPerformanceService.unregisterScanSchedule(enumSmartPerformance.SCHEDULESCAN);
+			this.smartPerformanceService.unregisterScanSchedule(EnumSmartPerformance.SCHEDULESCAN);
 			this.smartPerformanceService.unregisterScanSchedule(
-				enumSmartPerformance.SCHEDULESCANANDFIX
+				EnumSmartPerformance.SCHEDULESCANANDFIX
 			);
 
 			this.localCacheService.setLocalCacheValue(
