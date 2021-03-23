@@ -161,7 +161,8 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		const lastFeatureVersion = this.commonService.lastFeatureVersion;
 
 		for (const element of this.allNewTips) {
-			if (element.version > lastFeatureVersion) {
+			const menuItem = this.newTipIdSelector(element.tipId);
+			if (menuItem && element.version > lastFeatureVersion) {
 				this.setDescAndTipId(element);
 				this.showItemTip(this.newTipIdSelector(element.tipId));
 				return;
