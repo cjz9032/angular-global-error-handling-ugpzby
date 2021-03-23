@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.4](https://bitbucket.tc.lenovo.com///compare/v1.11.3...v1.11.4) (2021-03-23)
+
+
+### Features
+
+* **auto close:** VAN-25807 high light autoclose feature tips ([2cefebb](https://bitbucket.tc.lenovo.com///commit/2cefebbb45a38e9084c20d54cc259151e34411f3))
+
+
+### Bug Fixes
+
+* **auto close:** van-25807 modify the name of the definition ([f912305](https://bitbucket.tc.lenovo.com///commit/f9123055e1666ce4527ac9e3811ed1326f1cc95f))
+* **new feature tips:** VAN-25807 Add whether the menu exists conditions ([5269cb5](https://bitbucket.tc.lenovo.com///commit/5269cb5498907d511bf60a77f0341ef11aea5fcb))
+
 ### [1.11.3](https://bitbucket.tc.lenovo.com///compare/v1.11.2...v1.11.3) (2021-03-22)
 
 ### [1.11.2](https://bitbucket.tc.lenovo.com///compare/v1.11.1...v1.11.2) (2021-03-19)
