@@ -9,5 +9,5 @@ export interface IEnvironment {
 	allowMockService: boolean;
 	isLoggingEnabled: boolean;
 	isServerSwitchEnabled: boolean;
-	pcsupportApiRoot: string;
+	pcSupportApiRoot: string;
 }

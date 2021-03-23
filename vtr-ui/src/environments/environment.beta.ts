@@ -13,5 +13,5 @@ export const environment: IEnvironment = {
 	allowMockService: false,
 	isLoggingEnabled: true,
 	isServerSwitchEnabled: false,
-	pcsupportApiRoot: 'https://pcsupport.lenovo.com',
+	pcSupportApiRoot: 'https://pcsupport.lenovo.com',
 };
