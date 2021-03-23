@@ -201,8 +201,8 @@ export class SmartPerformanceService {
 	getPaymentDetails(): Promise<any> {
 		return new Promise((resolve) => {
 			this.deviceService.getMachineInfo().then(async (machineInfo) => {
-				const sn = machineInfo.serialnumber;
-				const mtm = machineInfo.mtm;
+				const sn = machineInfo?.serialnumber;
+				const mtm = machineInfo?.mtm;
 
 				const reqUrl = `${environment.pcSupportApiRoot}/api/v4/upsell/smart/getorders?serialNumber=${sn}&mtm=${mtm}`;
 

@@ -31,7 +31,7 @@ export class ModalWarrantyCartComponent implements OnInit {
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then(async (machineInfo) => {
-			this.paymentUrl = `${environment.pcSupportApiRoot}/upgradewarranty?serial=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}&source=companion`;
+			this.paymentUrl = `${environment.pcSupportApiRoot}/upgradewarranty?serial=${machineInfo?.serialnumber}&mtm=${machineInfo?.mtm}&source=companion`;
 		});
 	}
 

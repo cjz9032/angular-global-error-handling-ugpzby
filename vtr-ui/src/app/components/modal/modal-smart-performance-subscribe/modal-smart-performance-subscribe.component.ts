@@ -32,7 +32,7 @@ export class ModalSmartPerformanceSubscribeComponent implements OnInit {
 
 	ngOnInit() {
 		this.deviceService.getMachineInfo().then((machineInfo) => {
-			this.paymentUrl = `${environment.pcSupportApiRoot}/upgradewarranty?serial=${machineInfo.serialnumber}&mtm=${machineInfo.mtm}&smartperformance=true&source=COMPANION`;
+			this.paymentUrl = `${environment.pcSupportApiRoot}/upgradewarranty?serial=${machineInfo?.serialnumber}&mtm=${machineInfo?.mtm}&smartperformance=true&source=COMPANION`;
 		});
 	}
 
