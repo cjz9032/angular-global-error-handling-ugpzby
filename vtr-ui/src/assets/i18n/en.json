@@ -2761,14 +2761,11 @@
 			"manageSubscriptionBeta": "ENABLE FULL FEATURE",
 			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July 2020.",
 			"descriptionbeta1": "You are welcomed to join and try the full feature.",
-			"expiredNote": "Your subscription will expire in",
-			"day": "day",
-			"days": "days",
-			"weeks": "weeks",
-			"week": "a week",
-			"month": "month",
-			"today": "today",
-			"next": "next"
+			"expireInNextMonth":"Your subscription will expire in next month",
+			"expireInNextXWeeks": "Your subscription will expire in next {{weeks}} weeks",
+			"expireInNextWeek":"Your subscription will expire in next week",
+			"expireInNextXDays":"Your subscription will expire in {{days}} days",
+			"expireInToday":"Your subscription will expire in today"
 		},
 		"scanSettings": {
 			"title": "Schedule scan settings",
@@ -2977,6 +2974,7 @@
 			"recommendedAction": {
 				"title": "Recommended Action",
 				"description": "We will automatically fix these issues. Once today and every week thereafter",
+				"expiredDesc": "Renew subscription to continue fixing issues found",
 				"yearlyPricing": "{{yearlyPrice}} / Yr",
 				"monthlyPricing": "LESS THAN {{monthlyPrice}} PER MONTH.",
 				"longerTerm": "Longer term? Even more savings?",

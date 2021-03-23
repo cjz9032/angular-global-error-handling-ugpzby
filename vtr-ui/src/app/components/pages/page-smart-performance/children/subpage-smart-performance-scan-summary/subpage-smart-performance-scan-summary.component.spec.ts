@@ -15,7 +15,6 @@ import { DevService } from 'src/app/services/dev/dev.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModalModule, NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import moment from 'moment';
-import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 
 const res = {
 	Tunecount: 20,

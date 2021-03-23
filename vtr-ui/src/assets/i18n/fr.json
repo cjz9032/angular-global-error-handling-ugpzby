@@ -2811,14 +2811,11 @@
 			"processStatus": "TRAITEMENT",
 			"descriptionExpired": "Votre abonnement a expiré et il peut actuellement utiliser uniquement la fonction d'analyse dans Smart Performance. Vous pouvez renouveler l'abonnement en cliquant sur le lien \"Gérer l'abonnement \" pour reprendre une protection complète de votre périphérique.",
 			"expiredStatus": "ARRIVÉ À EXPIRATION",
-			"expiredNote": "Votre abonnement va expirer dans",
-			"day": "jour",
-			"days": "jours.",
-			"weeks": "semaines",
-			"week": "une semaine",
-			"month": "mois",
-			"today": "aujourd'hui",
-			"next": "suivant"
+			"expireInNextMonth": "Votre abonnement expire le mois prochain",
+			"expireInNextXWeeks": "Votre abonnement expire dans {{weeks}} semaines",
+			"expireInNextWeek": "Votre abonnement expire dans une semaine",
+			"expireInNextXDays": "Votre abonnement expire dans {{days}} jours",
+			"expireInToday": "Votre abonnement expire aujourd'hui"
 		},
 		"scanSettings": {
 			"title": "Programmer les paramètres d’analyse",

@@ -2701,14 +2701,11 @@
 			"processStatus": "SE PROCESEAZĂ",
 			"descriptionExpired": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Puteți să vă reînnoiți abonamentul făcând clic pe linkul „Gestionare abonament”, pentru a relua protecția completă pentru dispozitivul dumneavoastră.",
 			"expiredStatus": "EXPIRAT",
-			"expiredNote": "Abonamentul dumneavoastră va expira",
-			"day": "zi",
-			"days": "zile",
-			"weeks": "săptămâni",
-			"week": "o săptămână",
-			"month": "o lună",
-			"today": "astăzi",
-			"next": "înainte"
+			"expireInNextMonth": "Abonamentul dumneavoastră va expira luna viitoare",
+			"expireInNextXWeeks": "Abonamentul dumneavoastră va expira în următoarele {{weeks}} săptămâni",
+			"expireInNextWeek": "Abonamentul dumneavoastră va expira săptămâna viitoare",
+			"expireInNextXDays": "Abonamentul dumneavoastră va expira în {{days}} zile",
+			"expireInToday": "Abonamentul dumneavoastră va expira astăzi"
 		},
 		"scanSettings": {
 			"title": "Setări pentru programarea scanării",

@@ -2701,14 +2701,11 @@
 			"processStatus": "PREBIEHA SPRACOVANIE",
 			"descriptionExpired": "Platnosť vášho predplatného uplynula a momentálne môžete používať iba funkciu skenovania v službe Smart Performance. Ak chcete obnoviť úplnú ochranu svojho zariadenia, obnovte si predplatné kliknutím na odkaz „Spravovať predplatné“.",
 			"expiredStatus": "UPLYNUTÁ PLATNOSŤ",
-			"expiredNote": "Platnosť vášho predplatného uplynie po",
-			"day": "dni",
-			"days": "dňoch",
-			"weeks": "týždňoch",
-			"week": "týždni",
-			"month": "mesiaci",
-			"today": "dnes",
-			"next": "ďalej"
+			"expireInNextMonth": "Platnosť vášho predplatného uplynie nasledujúci mesiac",
+			"expireInNextXWeeks": "Platnosť vášho predplatného uplynie po {{weeks}} týždňoch",
+			"expireInNextWeek": "Platnosť vášho predplatného uplynie nasledujúci týždeň",
+			"expireInNextXDays": "Platnosť vášho predplatného uplynie po {{days}} dňoch",
+			"expireInToday": "Platnosť vášho predplatného uplynie dnes"
 		},
 		"scanSettings": {
 			"title": "Nastavenia plánovanej kontroly",

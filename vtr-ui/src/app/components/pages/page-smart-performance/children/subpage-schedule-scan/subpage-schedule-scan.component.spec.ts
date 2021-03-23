@@ -10,7 +10,7 @@ import { SubpageScheduleScanComponent } from './subpage-schedule-scan.component'
 import { SmartPerformanceService } from 'src/app/services/smart-performance/smart-performance.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { CommonService } from 'src/app/services/common/common.service';
-import { enumSmartPerformance } from 'src/app/enums/smart-performance.enum';
+import { EnumSmartPerformance } from 'src/app/enums/smart-performance.enum';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
 describe('SubpageScheduleScanComponent', () => {
@@ -51,7 +51,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('scheduleScanFrequency is defined - subscribed user', () => {
-		const payload = enumSmartPerformance.SCHEDULESCANANDFIX;
+		const payload = EnumSmartPerformance.SCHEDULESCANANDFIX;
 		commonService = TestBed.inject(CommonService);
 		spyOn(commonService, 'getLocalStorageValue').and.returnValues(
 			true,
@@ -65,7 +65,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('scheduleScanFrequency is defined - non-subscribed user', () => {
-		const payload = enumSmartPerformance.SCHEDULESCAN;
+		const payload = EnumSmartPerformance.SCHEDULESCAN;
 		commonService = TestBed.inject(CommonService);
 		spyOn(commonService, 'getLocalStorageValue').and.returnValues(
 			false,
@@ -230,7 +230,7 @@ describe('SubpageScheduleScanComponent', () => {
 	it('should schedule scan - subscribed user', () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const payload = {
-			scantype: enumSmartPerformance.SCHEDULESCANANDFIX,
+			scantype: EnumSmartPerformance.SCHEDULESCANANDFIX,
 			frequency: 'onceaweek',
 			day: 'Wednesday',
 			time: '2020-06-17T17:45:00',
@@ -245,7 +245,7 @@ describe('SubpageScheduleScanComponent', () => {
 	it('should schedule scan - non-subscribed user', () => {
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const payload = {
-			scantype: enumSmartPerformance.SCHEDULESCAN,
+			scantype: EnumSmartPerformance.SCHEDULESCAN,
 			frequency: 'onceaweek',
 			day: 'Wednesday',
 			time: '2020-06-17T17:45:00',
@@ -258,7 +258,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should get record from task scheduler - onceaweek', () => {
-		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
+		const scantype = EnumSmartPerformance.SCHEDULESCANANDFIX;
 		const res: any = { nextruntime: '2020-06-17T17:45:00' };
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res);
@@ -268,7 +268,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should get record from task scheduler - everyotherweek', () => {
-		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
+		const scantype = EnumSmartPerformance.SCHEDULESCANANDFIX;
 		const res: any = { nextruntime: '2020-06-17T17:45:00' };
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res);
@@ -278,7 +278,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should get record from task scheduler - every month', () => {
-		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
+		const scantype = EnumSmartPerformance.SCHEDULESCANANDFIX;
 		const res: any = { nextruntime: '2020-06-17T17:45:00' };
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res);
@@ -288,7 +288,7 @@ describe('SubpageScheduleScanComponent', () => {
 	});
 
 	it('should set record task scheduler', () => {
-		const scantype = enumSmartPerformance.SCHEDULESCANANDFIX;
+		const scantype = EnumSmartPerformance.SCHEDULESCANANDFIX;
 		const res: any = { state: false };
 		smartPerformanceService = TestBed.inject(SmartPerformanceService);
 		const spy = spyOn(smartPerformanceService, 'getNextScanRunTime').and.returnValue(res);

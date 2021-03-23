@@ -2701,14 +2701,11 @@
 			"processStatus": "處理中",
 			"descriptionExpired": "您的訂閱已過期，目前只能使用 Smart Performance 中的掃描功能，您可以透過按一下「管理訂閱」連結來續訂該訂閱，以回復對裝置的全面保護。",
 			"expiredStatus": "已過期",
-			"expiredNote": "您的訂閱期限尚有：",
-			"day": "天",
-			"days": "天",
-			"weeks": "週",
-			"week": "一週",
-			"month": "月",
-			"today": "今天",
-			"next": "下一步"
+			"expireInNextMonth": "您的訂閱將於下個月到期",
+			"expireInNextXWeeks": "您的訂閱將於 {{weeks}} 週到期",
+			"expireInNextWeek": "您的訂閱將於下週到期",
+			"expireInNextXDays": "您的訂閱將於 {{days}} 天到期",
+			"expireInToday": "您的訂閱將於今日到期"
 		},
 		"scanSettings": {
 			"title": "排程掃描設定",

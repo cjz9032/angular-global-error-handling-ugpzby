@@ -2701,14 +2701,11 @@
 			"processStatus": "BEHANDLER",
 			"descriptionExpired": "Abonnementet ditt er utløpt og kan for øyeblikket bare bruke skannfunksjonen i Smart Performance. Du kan fornye abonnementet ved å klikke på lenken \"Administrer abonnement \" for å gjenoppta full beskyttelse for enheten.",
 			"expiredStatus": "UTLØPT",
-			"expiredNote": "Abonnementet ditt utløper om",
-			"day": "dag",
-			"days": "dager",
-			"weeks": "uker",
-			"week": "en uke",
-			"month": "måned",
-			"today": "i dag",
-			"next": "neste"
+			"expireInNextMonth": "Abonnementet ditt utløper i neste måned",
+			"expireInNextXWeeks": "Abonnementet ditt utløper i neste {{weeks}} uker",
+			"expireInNextWeek": "Abonnementet ditt utløper i neste uke",
+			"expireInNextXDays": "Garantien din utløper om {{days}} dager",
+			"expireInToday": "Garantien din utløper i dag"
 		},
 		"scanSettings": {
 			"title": "Innstillinger for skanneplanlegging",

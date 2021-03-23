@@ -2701,14 +2701,11 @@
 			"processStatus": "ZPRACOVÁNÍ",
 			"descriptionExpired": "Platnost vašeho předplatného vypršela a v současné době můžete použít jen funkci kontroly v nástroji Smart Performance. Předplatné můžete obnovit klepnutím na odkaz „Spravovat předplatné“, čímž obnovíte plnou ochranu svého zařízení.",
 			"expiredStatus": "PLATNOST SKONČILA",
-			"expiredNote": "Platnost vašeho předplatného vyprší za",
-			"day": "den",
-			"days": "dní",
-			"weeks": "týdny/týdnů",
-			"week": "týden",
-			"month": "měsíc",
-			"today": "dnes",
-			"next": "Další"
+			"expireInNextMonth": "Platnost vašeho předplatného vyprší příští měsíc",
+			"expireInNextXWeeks": "Platnost vašeho předplatného vyprší v příštích {{weeks}} týdnech",
+			"expireInNextWeek": "Platnost vašeho předplatného vyprší v příštích týdnech",
+			"expireInNextXDays": "Platnost vašeho předplatného vyprší za {{days}} dnů",
+			"expireInToday": "Platnost vašeho předplatného vyprší dnes"
 		},
 		"scanSettings": {
 			"title": "Nastavení plánované kontroly",

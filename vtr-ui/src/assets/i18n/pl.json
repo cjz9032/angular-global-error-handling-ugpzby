@@ -2701,14 +2701,11 @@
 			"processStatus": "PRZETWARZANIE",
 			"descriptionExpired": "Twoja subskrypcja wygasła i obecnie możesz używać tylko funkcji skanowania w programie Smart Performance. Możesz odnowić subskrypcję, klikając łącze „Zarządzaj subskrypcją”, aby wznowić pełną ochronę urządzenia.",
 			"expiredStatus": "WYGASŁO",
-			"expiredNote": "Twoja subskrypcja wygaśnie za",
-			"day": "dzień",
-			"days": "dni",
-			"weeks": "tygodni",
-			"week": "tydzień",
-			"month": "miesiąc",
-			"today": "dzisiaj",
-			"next": "w"
+			"expireInNextMonth": "Twoja subskrypcja wygasa w przyszłym miesiącu",
+			"expireInNextXWeeks": "Twoja subskrypcja wygasa za {{weeks}} tygodni(e)",
+			"expireInNextWeek": "Twoja subskrypcja wygasa w przyszłym tygodniu",
+			"expireInNextXDays": "Twoja subskrypcja wygasa za {{days}} dni",
+			"expireInToday": "Twoja subskrypcja wygasa dzisiaj"
 		},
 		"scanSettings": {
 			"title": "Ustawienia zaplanowanego skanowania",

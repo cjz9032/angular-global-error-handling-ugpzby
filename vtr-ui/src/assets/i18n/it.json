@@ -2701,14 +2701,11 @@
 			"processStatus": "ELABORAZIONE IN CORSO...",
 			"descriptionExpired": "La registrazione è scaduta e attualmente può utilizzare solo la funzione di scansione in Smart Performance; è possibile rinnovare la registrazione facendo clic sul collegamento \"Gestisci registrazione\" per riprendere la protezione completa per il dispositivo.",
 			"expiredStatus": "SCADUTA",
-			"expiredNote": "La registrazione scadrà tra",
-			"day": "giorno",
-			"days": "giorni",
-			"weeks": "settimane",
-			"week": "una settimana",
-			"month": "mese",
-			"today": "oggi",
-			"next": "avanti"
+			"expireInNextMonth": "La sottoscrizione scadrà il prossimo mese",
+			"expireInNextXWeeks": "La sottoscrizione scadrà tra {{weeks}} settimane",
+			"expireInNextWeek": "La sottoscrizione scadrà la prossima settimana",
+			"expireInNextXDays": "La sottoscrizione scadrà tra {{days}} giorni",
+			"expireInToday": "La sottoscrizione scadrà oggi"
 		},
 		"scanSettings": {
 			"title": "Pianifica impostazioni scansione",

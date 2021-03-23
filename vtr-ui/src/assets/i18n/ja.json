@@ -2810,14 +2810,11 @@
 			"processStatus": "処理中です",
 			"descriptionExpired": "サブスクリプションの有効期限が切れており、現在は Smart Performance のスキャン機能のみを使用できます。「サブスクリプションの管理」リンクをクリックしてサブスクリプションを更新することで、デバイスのすべての保護機能を再開できます。",
 			"expiredStatus": "期限切れです",
-			"expiredNote": "サブスクリプションの有効期限まで、あと",
-			"day": "日",
-			"days": "日後",
-			"weeks": "週間",
-			"week": "1 週間",
-			"month": "カ月間",
-			"today": "今日",
-			"next": "次へ"
+			"expireInNextMonth": "お客様のサブスクリプションは来月で有効期限が切れます",
+			"expireInNextXWeeks": "お客様のサブスクリプションはあと {{weeks}} 週で有効期限が切れます",
+			"expireInNextWeek": "お客様のサブスクリプションは来週で有効期限が切れます",
+			"expireInNextXDays": "お客様のサブスクリプションはあと {{days}} 日で有効期限が切れます",
+			"expireInToday": "お客様のサブスクリプションは本日で有効期限が切れます"
 		},
 		"scanSettings": {
 			"title": "スキャン設定のスケジュール",
