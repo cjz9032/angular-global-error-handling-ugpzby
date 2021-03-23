@@ -85,15 +85,6 @@ export class LocalInfoService {
 							Segment: result.isGaming ? this.gamingTag : this.selfSelectSegment,
 							Brand: result.brand ? result.brand : 'Lenovo',
 						};
-
-						this.localInfo = {
-							Lang: 'en',
-							GEO: 'us',
-							OEM: 'Lenovo',
-							OS: 'Windows',
-							Segment: SegmentConst.ConsumerBase,
-							Brand: 'Lenovo',
-						};
 					} else {
 						this.localInfo = {
 							Lang: 'en',
