@@ -40,6 +40,7 @@
 							subTitleId="smart-performance-scan-summary-desc"
 							[bottomRadius]="true"
 							[isOnline]="isOnline"
+							[canShowOfflineText]="smartPerformanceService.scanningState === ScanningState.NotStart"
 							[contentWrap]="true">
 							<vtr-ui-smart-performance-rating [leftAnimator]="smartPerformanceService.scanningState === ScanningState.Completed ? leftAnimator : '100%'"
 								[rating]="rating"

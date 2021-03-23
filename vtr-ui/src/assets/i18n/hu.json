@@ -2701,7 +2701,6 @@
 			"processStatus": "FELDOLGOZÁS",
 			"descriptionExpired": "Az előfizetése lejárt, és jelenleg csak a Smart Performance ellenőrzési funkcióját használhatja. Ha szeretné megújítani az előfizetését, és ismét élvezni az eszköz teljes körű védelmét, kattintson az „Előfizetés kezelése” hivatkozásra.",
 			"expiredStatus": "LEJÁRT",
-			"next": "következő",
 			"expireInNextMonth": "Az előfizetés a következő hónapban lejár",
 			"expireInNextXWeeks": "Az előfizetés {{weeks}} héten belül lejár",
 			"expireInNextWeek": "Az előfizetés a következő héten lejár",
