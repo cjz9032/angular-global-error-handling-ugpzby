@@ -60,7 +60,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 		public shellServices: VantageShellService,
 		public smartPerformanceService: SmartPerformanceService,
 		private translate: TranslateService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.percent = 0;
@@ -68,7 +68,7 @@ export class SubpageScanningComponent implements OnInit, OnChanges {
 
 		this.headerTitle = `${this.translate.instant(
 			'smartPerformance.scanningPage.scanningSystem'
-		)}...`;
+		)}`;
 		if (this.isAutoScanRunning) {
 			this.headerTitle += ` <span class="small">(${this.translate.instant(
 				'smartPerformance.auto'

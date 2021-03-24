@@ -1,0 +1,47 @@
+@import '../../../app.theme.scss';
+.dot-content {
+	display: inline-block;
+	width: 3rem;
+	height: 1rem;
+	vertical-align: bottom;
+	.dot {
+		float: left;
+		font-size: 0;
+		width: 0.6rem;
+		height: 0.6rem;
+		margin-left: 0.4rem;
+		.dot-svg {
+			circle {
+				fill: $light;
+				@media #{$black-on-white} {
+					fill: $dark;
+				}
+			}
+		}
+		&.dot-1 {
+			margin-left: 0;
+			animation: 1.2s linear 0s infinite dotShow;
+		}
+		&.dot-2 {
+			animation: 1.2s linear 0.25s infinite dotShow;
+		}
+		&.dot-3 {
+			animation: 1.2s linear 0.5s infinite dotShow;
+		}
+	}
+}
+
+@keyframes dotShow {
+	0% {
+		opacity: 0.1;
+		transform: scale(0.5);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0.1;
+		transform: scale(0.5);
+	}
+}
