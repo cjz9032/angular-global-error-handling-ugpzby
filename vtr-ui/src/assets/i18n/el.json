@@ -5315,6 +5315,21 @@
 			"VideoCards": "Κάρτα γραφικών",
 			"WebBrowsers": "Προγράμματα περιήγησης στο Web"
 		},
+		"report": {
+			"modelTitle": "Μοντέλο",
+			"model": {
+				"serialNumber": "Σειριακός αριθμός",
+				"biosVersion": "Έκδοση BIOS",
+				"productName": "Ονομασία Προϊόντος"
+			},
+			"environmentTitle": "Περιβάλλον",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Έκδοση Experience",
+				"shellVersion": "Έκδοση Shell",
+				"bridgeVersion": "Έκδοση Bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Λανθάνουσα μνήμη",
 			"DRIVER_VERSION": "Έκδοση προγράμματος οδήγησης",

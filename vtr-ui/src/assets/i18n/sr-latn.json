@@ -5315,6 +5315,21 @@
 			"VideoCards": "Video kartica",
 			"WebBrowsers": "Veb pregledači"
 		},
+		"report": {
+			"modelTitle": "Model",
+			"model": {
+				"serialNumber": "Serijski broj",
+				"biosVersion": "Verzija BIOS-a",
+				"productName": "Ime proizvoda"
+			},
+			"environmentTitle": "Okruženje",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Verzija experience",
+				"shellVersion": "Verzija shell",
+				"bridgeVersion": "Verzija bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Keš memorija",
 			"DRIVER_VERSION": "Verzija upravljačkog programa",

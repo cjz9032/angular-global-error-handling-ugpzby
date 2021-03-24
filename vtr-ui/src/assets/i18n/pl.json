@@ -5315,6 +5315,21 @@
 			"VideoCards": "Karta wideo",
 			"WebBrowsers": "Przeglądarki sieci web"
 		},
+		"report": {
+			"modelTitle": "Model",
+			"model": {
+				"serialNumber": "Numer seryjny",
+				"biosVersion": "Wersja BIOS",
+				"productName": "Nazwa produktu"
+			},
+			"environmentTitle": "Dopuszczalne warunki zewnętrzne",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Wersja Experience",
+				"shellVersion": "Wersja Shell",
+				"bridgeVersion": "Wersja Bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Pamięć podręczna",
 			"DRIVER_VERSION": "Wersja sterownika",

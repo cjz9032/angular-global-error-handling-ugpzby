@@ -5315,6 +5315,21 @@
 			"VideoCards": "بطاقة الفيديو",
 			"WebBrowsers": "مستعرضات الويب"
 		},
+		"report": {
+			"modelTitle": "الطراز",
+			"model": {
+				"serialNumber": "الرقم التسلسلي",
+				"biosVersion": "إصدار BIOS",
+				"productName": "اسم المنتج"
+			},
+			"environmentTitle": "البيئة",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "إصدار Experience",
+				"shellVersion": "إصدار Shell",
+				"bridgeVersion": "إصدار Bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "ذاكرة التخزين المؤقت",
 			"DRIVER_VERSION": "إصدار برنامج التشغيل",

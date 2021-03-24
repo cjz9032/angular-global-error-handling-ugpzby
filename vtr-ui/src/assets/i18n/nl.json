@@ -5315,6 +5315,21 @@
 			"VideoCards": "Videokaart",
 			"WebBrowsers": "Webbrowsers"
 		},
+		"report": {
+			"modelTitle": "Model",
+			"model": {
+				"serialNumber": "Serienummer",
+				"biosVersion": "BIOS-versie",
+				"productName": "Productnaam"
+			},
+			"environmentTitle": "Omgeving",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Versie experience",
+				"shellVersion": "Versie shell",
+				"bridgeVersion": "Versie bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Cache",
 			"DRIVER_VERSION": "Stuurprogrammaversie",

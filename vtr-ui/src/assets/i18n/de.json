@@ -5425,6 +5425,21 @@
 			"VideoCards": "Grafikkarte",
 			"WebBrowsers": "Webbrowser"
 		},
+		"report": {
+			"modelTitle": "Modell",
+			"model": {
+				"serialNumber": "Seriennummer",
+				"biosVersion": "BIOS Version",
+				"productName": "Produktname"
+			},
+			"environmentTitle": "Umgebung",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience-Version",
+				"shellVersion": "Shell-Version",
+				"bridgeVersion": "Bridge-Version"
+			}
+		},
 		"properties": {
 			"CACHE": "Cache",
 			"DRIVER_VERSION": "Treiberversion",

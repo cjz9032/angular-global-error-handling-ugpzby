@@ -5423,6 +5423,21 @@
 			"VideoCards": "显卡",
 			"WebBrowsers": "Web 浏览器"
 		},
+		"report": {
+			"modelTitle": "型号",
+			"model": {
+				"serialNumber": "序列号",
+				"biosVersion": "BIOS 版本",
+				"productName": "产品名称"
+			},
+			"environmentTitle": "环境",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience 版本",
+				"shellVersion": "Shell 版本",
+				"bridgeVersion": "Bridge 版本"
+			}
+		},
 		"properties": {
 			"CACHE": "高速缓存",
 			"DRIVER_VERSION": "驱动程序版本",

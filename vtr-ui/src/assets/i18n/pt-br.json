@@ -5425,6 +5425,21 @@
 			"VideoCards": "Placa de vídeo",
 			"WebBrowsers": "Navegadores da Web"
 		},
+		"report": {
+			"modelTitle": "Modelo",
+			"model": {
+				"serialNumber": "Número de série",
+				"biosVersion": "Versão do BIOS",
+				"productName": "Nome do Produto"
+			},
+			"environmentTitle": "Ambiente",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Versão do Experience",
+				"shellVersion": "Versão da Shell",
+				"bridgeVersion": "Versão da Bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Cache",
 			"DRIVER_VERSION": "Versão do driver",

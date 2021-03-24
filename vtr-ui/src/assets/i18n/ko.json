@@ -5315,6 +5315,21 @@
 			"VideoCards": "비디오 카드",
 			"WebBrowsers": "웹 브라우저"
 		},
+		"report": {
+			"modelTitle": "모델",
+			"model": {
+				"serialNumber": "일련 번호",
+				"biosVersion": "BIOS 버전",
+				"productName": "제품명"
+			},
+			"environmentTitle": "환경",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience 버전",
+				"shellVersion": "Shell 버전",
+				"bridgeVersion": "Bridge 버전"
+			}
+		},
 		"properties": {
 			"CACHE": "캐시",
 			"DRIVER_VERSION": "드라이버 버전",

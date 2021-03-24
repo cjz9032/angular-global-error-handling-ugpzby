@@ -5315,6 +5315,21 @@
 			"VideoCards": "כרטיס וידאו",
 			"WebBrowsers": "דפדפני אינטרנט"
 		},
+		"report": {
+			"modelTitle": "דגם",
+			"model": {
+				"serialNumber": "מספר סידורי",
+				"biosVersion": "גירסת BIOS",
+				"productName": "שם המוצר"
+			},
+			"environmentTitle": "סביבה",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "גרסת Experience",
+				"shellVersion": "גרסת Shell",
+				"bridgeVersion": "גרסת Bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "מטמון",
 			"DRIVER_VERSION": "גרסת מנהל התקן",

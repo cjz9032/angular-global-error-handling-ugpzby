@@ -5315,6 +5315,21 @@
 			"VideoCards": "Grafična kartica",
 			"WebBrowsers": "Spletni brskalniki"
 		},
+		"report": {
+			"modelTitle": "Model",
+			"model": {
+				"serialNumber": "Serijska številka",
+				"biosVersion": "Različica BIOS-a",
+				"productName": "Ime izdelka"
+			},
+			"environmentTitle": "Okolje",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Različica experience",
+				"shellVersion": "Različica shell",
+				"bridgeVersion": "Različica bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Predpomnilnik",
 			"DRIVER_VERSION": "Različica gonilnika",

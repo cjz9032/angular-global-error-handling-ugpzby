@@ -5425,6 +5425,21 @@
 			"VideoCards": "Видеокарта",
 			"WebBrowsers": "Интернет-обозреватели"
 		},
+		"report": {
+			"modelTitle": "Модель",
+			"model": {
+				"serialNumber": "Серийный номер",
+				"biosVersion": "Версия BIOS",
+				"productName": "Название продукта"
+			},
+			"environmentTitle": "Среда",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Версия experience",
+				"shellVersion": "Версия shell",
+				"bridgeVersion": "Версия bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Кэш",
 			"DRIVER_VERSION": "Версия драйвера",

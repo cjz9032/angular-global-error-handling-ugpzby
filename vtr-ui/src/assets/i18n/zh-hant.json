@@ -5315,6 +5315,21 @@
 			"VideoCards": "影像卡",
 			"WebBrowsers": "Web 瀏覽器"
 		},
+		"report": {
+			"modelTitle": "型號",
+			"model": {
+				"serialNumber": "序號",
+				"biosVersion": "BIOS 版本",
+				"productName": "產品名稱"
+			},
+			"environmentTitle": "環境",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience 版本",
+				"shellVersion": "Shell 版本",
+				"bridgeVersion": "Bridge 版本"
+			}
+		},
 		"properties": {
 			"CACHE": "快取",
 			"DRIVER_VERSION": "驅動程式版本",

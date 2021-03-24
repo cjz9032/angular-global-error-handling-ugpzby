@@ -5315,6 +5315,21 @@
 			"VideoCards": "Skjermkort",
 			"WebBrowsers": "Nettlesere"
 		},
+		"report": {
+			"modelTitle": "Modell",
+			"model": {
+				"serialNumber": "Serienummer",
+				"biosVersion": "BIOS-versjon",
+				"productName": "Produktnavn"
+			},
+			"environmentTitle": "Omgivelser",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience-versjon",
+				"shellVersion": "Shell-versjon",
+				"bridgeVersion": "Bridge-versjon"
+			}
+		},
 		"properties": {
 			"CACHE": "Buffer",
 			"DRIVER_VERSION": "Driverversjon",

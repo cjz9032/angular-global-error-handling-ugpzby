@@ -5315,6 +5315,21 @@
 			"VideoCards": "Placă video",
 			"WebBrowsers": "Browsere web"
 		},
+		"report": {
+			"modelTitle": "Model",
+			"model": {
+				"serialNumber": "Număr de serie",
+				"biosVersion": "Versiune BIOS",
+				"productName": "Denumire produs"
+			},
+			"environmentTitle": "Mediu",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Versiune Experience",
+				"shellVersion": "Versiune Shell",
+				"bridgeVersion": "Versiune Bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Cache",
 			"DRIVER_VERSION": "Versiune driver",

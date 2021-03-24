@@ -5315,6 +5315,21 @@
 			"VideoCards": "Ekran kartı",
 			"WebBrowsers": "Web tarayıcıları"
 		},
+		"report": {
+			"modelTitle": "Model",
+			"model": {
+				"serialNumber": "Seri Numarası",
+				"biosVersion": "BIOS Sürümü",
+				"productName": "Ürün Adı"
+			},
+			"environmentTitle": "Ortam",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience Sürümü",
+				"shellVersion": "Shell Sürümü",
+				"bridgeVersion": "Bridge Sürümü"
+			}
+		},
 		"properties": {
 			"CACHE": "Önbellek",
 			"DRIVER_VERSION": "Sürücü sürümü",

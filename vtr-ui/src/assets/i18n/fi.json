@@ -5315,6 +5315,21 @@
 			"VideoCards": "Näyttökortti",
 			"WebBrowsers": "Verkkoselaimet"
 		},
+		"report": {
+			"modelTitle": "Malli",
+			"model": {
+				"serialNumber": "Sarjanumero",
+				"biosVersion": "BIOS-versio",
+				"productName": "Tuotteen nimi"
+			},
+			"environmentTitle": "Käyttöympäristö",
+			"environment": {
+				"addinVersion": "Laajennusosan versio",
+				"experienceVersion": "Experience-versio",
+				"shellVersion": "Shell-versio",
+				"bridgeVersion": "Bridge-versio"
+			}
+		},
 		"properties": {
 			"CACHE": "Välimuisti",
 			"DRIVER_VERSION": "Ajurin versio",

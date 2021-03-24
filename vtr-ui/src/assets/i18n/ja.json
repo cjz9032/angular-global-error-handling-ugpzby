@@ -5424,6 +5424,21 @@
 			"VideoCards": "ビデオ・カード",
 			"WebBrowsers": "Web ブラウザー"
 		},
+		"report": {
+			"modelTitle": "モデル番号",
+			"model": {
+				"serialNumber": "シリアル番号",
+				"biosVersion": "BIOS バージョン",
+				"productName": "製品名"
+			},
+			"environmentTitle": "環境",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience バージョン",
+				"shellVersion": "Shell バージョン",
+				"bridgeVersion": "Bridge バージョン"
+			}
+		},
 		"properties": {
 			"CACHE": "キャッシュ",
 			"DRIVER_VERSION": "ドライバー・バージョン",

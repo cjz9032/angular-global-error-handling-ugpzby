@@ -5315,6 +5315,21 @@
 			"VideoCards": "Video karta",
 			"WebBrowsers": "Webové prehliadače"
 		},
+		"report": {
+			"modelTitle": "Model",
+			"model": {
+				"serialNumber": "Sériové číslo",
+				"biosVersion": "Verzia systému BIOS",
+				"productName": "Názov produktu"
+			},
+			"environmentTitle": "Prostredie",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Verzia Experience",
+				"shellVersion": "Verzia Shell",
+				"bridgeVersion": "Verzia Bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Vyrovnávacia pamäť",
 			"DRIVER_VERSION": "Verzia ovládača",

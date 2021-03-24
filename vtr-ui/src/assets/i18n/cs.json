@@ -5315,6 +5315,21 @@
 			"VideoCards": "Grafická karta",
 			"WebBrowsers": "Webové prohlížeče"
 		},
+		"report": {
+			"modelTitle": "Model",
+			"model": {
+				"serialNumber": "Sériové číslo",
+				"biosVersion": "Verze BIOS",
+				"productName": "Název produktu"
+			},
+			"environmentTitle": "Prostředí",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Verze Experience",
+				"shellVersion": "Verze Shell",
+				"bridgeVersion": "Verze Bridge"
+			}
+		},
 		"properties": {
 			"CACHE": "Mezipaměť",
 			"DRIVER_VERSION": "Verze ovladače",
