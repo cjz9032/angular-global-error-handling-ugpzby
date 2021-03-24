@@ -86,10 +86,11 @@
 					<div class="row result-item" tabindex="0" (click)="onTriggerResultItemAction(resultItem)" (keydown.enter)="onTriggerResultItemAction(resultItem)"
 						*ngFor="let resultItem of displayPage.items; let itemIdx = index;" vtrMetrics metricsEvent="FeatureClick"
 						[metricsItem]="resultItem.id" [metricsParam]="'category:' + resultItem.categoryId" id="search-page-result-item-{{itemIdx}}" role="button">
-						<!-- result icon-->
+						<!-- result icon
 						<div class="feature-icon-part">
 							<fa-icon [icon]="resultItem.icon || ['fal', 'gem']"></fa-icon>
 						</div>
+						-->
 
 						<!-- feature name and category-->
 						<div class="feature-description">

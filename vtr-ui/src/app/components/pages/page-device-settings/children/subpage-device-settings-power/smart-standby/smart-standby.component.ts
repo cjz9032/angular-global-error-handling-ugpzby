@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { ModalSmartStandByComponent } from 'src/app/components/modal/modal-smart-stand-by/modal-smart-stand-by.component';
+import { DaysPickerNotificationType } from 'src/app/components/ui/ui-days-picker/ui-days-picker.component';
 import { UiRoundedRectangleRadioModel } from 'src/app/components/ui/ui-rounded-rectangle-custom-radio-list/ui-rounded-rectangle-radio-list.model';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { SmartStandby } from 'src/app/data-models/device/smart-standby.model';
@@ -136,6 +137,7 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.cache.daysOfWeekOff = this.smartStandby.daysOfWeekOff;
 			this.saveCache();
 			this.updateScheduleComputerModesUIModel();
+			this.commonService.sendNotification(DaysPickerNotificationType);
 		}
 	}
 
@@ -165,6 +167,8 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.smartStandby.activeStartEnd = this.cache.activeStartEnd;
 			this.smartStandby.daysOfWeekOff = this.cache.daysOfWeekOff;
 			this.smartStandbyService.days = this.smartStandby.daysOfWeekOff;
+
+			this.commonService.sendNotification(DaysPickerNotificationType);
 		} else {
 			this.cache = new SmartStandby();
 		}

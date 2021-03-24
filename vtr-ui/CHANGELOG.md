@@ -59,6 +59,28 @@ All notable changes to this project will be documented in this file. See [standa
 * **BoostService:** make boost service receive segment change event ([c460677](https://bitbucket.tc.lenovo.com///commit/c4606779eb0dfaf373b46ce9e26a215cc57d5d27))
 * remove useless module import ([9904477](https://bitbucket.tc.lenovo.com///commit/9904477ab35cb84ab7f8680c87a168c3298b449a))
 
+### [1.10.53](https://bitbucket.tc.lenovo.com///compare/v1.10.52...v1.10.53) (2021-03-18)
+
+### [1.10.52](https://bitbucket.tc.lenovo.com///compare/v1.10.51...v1.10.52) (2021-03-18)
+
+
+### Bug Fixes
+
+* disable user select in disabled checkbox ([9ce275b](https://bitbucket.tc.lenovo.com///commit/9ce275b17f2c27708714b41ebf02ca483220daec))
+* fix reboot dialog padding style ([a846b4a](https://bitbucket.tc.lenovo.com///commit/a846b4a995573ece82c1b91ea9cda70d172d3b84))
+* use mat-checkbox to replace vtr-ui-checkbox ([21751ff](https://bitbucket.tc.lenovo.com///commit/21751ffc5d32184626ebca469e037fa7b72a7903))
+* **content library:** offline hide articles ([4526be8](https://bitbucket.tc.lenovo.com///commit/4526be83fee895ba64867576aeb7e61e4350f012))
+
+### [1.10.51](https://bitbucket.tc.lenovo.com///compare/v1.10.50...v1.10.51) (2021-03-16)
+
+### [1.10.50](https://bitbucket.tc.lenovo.com///compare/v1.10.49...v1.10.50) (2021-03-16)
+
+
+### Bug Fixes
+
+* **mcafee UI:** VAN-27093 modify 3rd party page img width ([d74106a](https://bitbucket.tc.lenovo.com///commit/d74106a7f814e648d45842f8ca2ff26494849715))
+* **warranty:** VAN-27198 cd machine not show warranty in status list. ([695544d](https://bitbucket.tc.lenovo.com///commit/695544d2206ffe807dd7ba7d1213b45ddba5dcea))
+
 ### [1.10.49](https://bitbucket.tc.lenovo.com///compare/v1.10.48...v1.10.49) (2021-03-15)
 
 

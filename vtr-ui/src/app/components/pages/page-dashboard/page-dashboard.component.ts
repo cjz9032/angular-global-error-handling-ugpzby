@@ -672,6 +672,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		/* warranty.isSystemLink = true; */
 		warranty.isSystemLink = false;
 		warranty.type = 'system';
+		warranty.isHidden = !this.deviceService.showWarranty;
 		this.systemStatus[2] = warranty;
 
 		if (
@@ -805,7 +806,6 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				});
 			warranty.status = 1;
 		}
-		warranty.isHidden = !this.deviceService.showWarranty;
 		warranty.status = 0;
 	}
 

@@ -80,7 +80,7 @@
 			</div>
 
 			<div class="row article-item-list"
-				*ngIf="articlesType !== 'loading'">
+				*ngIf="articlesType !== 'loading' && isOnline">
 				<div class="col-12 col-md-6 col-xl-4 article-item-card"
 					*ngFor="let item of articles, let i = index">
 					<vtr-ui-article-item [item]="item"
