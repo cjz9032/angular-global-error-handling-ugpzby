@@ -6228,7 +6228,7 @@
 				"desc": "This section enables you to automatically optimize or manually configure your AI meeting settings.",
 				"aiMeetingManager":{
 					"title":"AI meeting manager",
-					"description": "AI meeting manager supports real-time translation, interpretation, and voice dictation. It can also generate subtitles for videos.",
+					"description": "AI meeting manager provides real-time translation, interpretation, voice dictation and note editor. It can also generate subtitles for videos.",
 					"downloadNow": "DOWNLOAD NOW",
 					"download": "DOWNLOAD",
 					"launch": "LAUNCH",
@@ -6239,6 +6239,10 @@
 					"voiceToText": {
 						"title": "Voice to Text",
 						"description": "Speak naturally and Voice to Text will do the typing. Write e-mails or documents, or chat in your favorite app. Voice to Text translates as you speak and takes notes for you."
+					},
+					"noteEditor": {
+						"title": "Note Editor",
+						"description": "Note Editor helps you edit meeting notes, correct texts, and play recordings."
 					},
 					"modalPopUp": {
 						"heading": "Getting started:",
@@ -6255,6 +6259,12 @@
 							"point3": "Click the AI meeting manager icon and select Voice to Text.",
 							"point4": "Select the languages by your need and then click the microphone button to start.",
 							"point5": "Put the cursor in the application you opened and begin to speak."
+						},
+						"noteEditor": {
+							"point1": "​Ensure the AI meeting manager icon is displayed in Windows notification area.",
+							"point2": "Click the icon and choose Note Editor.",
+							"point3": "Select a meeting note from the list.",
+							"point4": "Edit the meeting note or play the recording."
 						},
 						"closeText": "close"
 					},

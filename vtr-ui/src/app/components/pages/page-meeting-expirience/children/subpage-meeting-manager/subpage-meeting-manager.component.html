@@ -55,7 +55,7 @@
                         </li>
                         <li class="common-li-padding">
                             <vtr-ui-row-switch [switchId]="'ai-metting-manager-voice-to-text'"
-                                [isLastChild]="true"
+                                [isLastChild]="false"
                                 [title]="'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.title' | translate"
                                 [caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.description' | translate"
                                 [leftIcon]="['icomoon', 'icomoon-voice-to-text']"
@@ -63,6 +63,18 @@
                                 [aiMeetingManager]="true"
                                 [aiMeetingManagerValue]="voiceToText"
                                 [metricsParent]="'VoiceToText'">
+                            </vtr-ui-row-switch>
+                        </li>
+						<li class="common-li-padding">
+                            <vtr-ui-row-switch [switchId]="'ai-metting-manager-note-editor'"
+                                [isLastChild]="true"
+                                [title]="'smb.meetingExperience.meetingManager.aiMeetingManager.noteEditor.title' | translate"
+                                [caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.noteEditor.description' | translate"
+                                [leftIcon]="['icomoon', 'icomoon-Edit']"
+                                [rightIcon]="['far', 'question-circle']"
+                                [aiMeetingManager]="true"
+                                [aiMeetingManagerValue]="noteEditor"
+                                [metricsParent]="'NoteEditor'">
                             </vtr-ui-row-switch>
                         </li>
 					</ul>

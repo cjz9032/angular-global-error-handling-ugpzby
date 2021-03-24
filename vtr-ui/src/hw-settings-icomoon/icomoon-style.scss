@@ -1,5 +1,11 @@
 @import 'icomoon-variables';
 
+.icomoon-Edit {
+	&:before {
+		content: $icomoon-Edit;
+		color: #4a81fd;
+	}
+}
 .icomoon-7-protection {
 	&:before {
 		content: $icomoon-7-protection;

@@ -10,8 +10,22 @@ export class ModalAiMeetingManagerComponent implements OnInit {
 	constructor(public dialogRef: MatDialogRef<ModalAiMeetingManagerComponent>) {}
 	value: any;
 	metricsParent: any;
-	serialNumbers: number[] = [1, 2, 3, 4, 5];
-	ngOnInit() {}
+	serialNumbers: number[];
+	ngOnInit() {
+		switch (this.value) {
+			case 'translation':
+				this.serialNumbers = [1, 2, 3, 4, 5];
+				break;
+			case 'voiceToText':
+				this.serialNumbers = [1, 2, 3, 4, 5];
+				break;
+			case 'noteEditor':
+				this.serialNumbers = [1, 2, 3, 4];
+				break;
+			default:
+				break;
+		}
+	}
 
 	closeModal() {
 		this.dialogRef.close('close');
