@@ -22,6 +22,21 @@
 			bg-checkbox-selected: $menu_hover,
 			bg-checkbox-active: $shade_blue,
 		),
+		button: (
+			bg-primary: $blueFill,
+			bg-primary-hover: $blueHover,
+			bg-primary-active: $blueHover,
+			bg-accent: transparent linear-gradient(90deg, $grey_lighter 0%, $light 100%) 0% 0%
+				no-repeat padding-box,
+			bg-accent-hover: $grey_lighter,
+			bg-accent-active: $light,
+			bg-caution: transparent
+				linear-gradient(90deg, $button_red_start 0%, $button_red_end 100%) 0% 0% no-repeat
+				padding-box,
+			bg-caution-hover: $button_red_start,
+			bg-caution-active: $button_red_end,
+			bg-disabled: rgba($blueFill, 0.4),
+		),
 	);
 
 	$mat-van-gaming-theme-foreground: (
@@ -50,8 +65,38 @@
 			color-checkmark-active: $light,
 			color-checkmark-disabled: $light,
 			color-in-checkmark: $menu_hover,
-			color-in-checkmark-active: black,
+			color-in-checkmark-active: $dark,
 			color-in-checkmark-disabled: $grey_darker,
+		),
+		button: (
+			color-disabled-text: rgba($gaming_lightest, 0.4),
+			color-primary-text: $light,
+			color-accent-text: $grey_darker,
+			color-caution-text: $light,
+			color-accent-hover-text: $grey_darker,
+			color-focus-outline: $menu_hover,
+			style-focus-outline: '',
+			style-primary-border: none,
+			style-accent-border: 0.1rem solid $grey_dark,
+			style-caution-border: none,
+			style-disabled-border: none,
+			font-size-link: 1.2rem,
+			font-size-link-button: 1.4rem,
+			style-link-button-underline: 0.1rem solid $blueHyperLink,
+			style-link-button-hover-underline: 0.1rem solid $blue-light,
+			style-link-button-active-underline: 0.1rem solid $menu_hover,
+			style-link-button-disabled-underline: 0.1rem solid rgba($grey_darker, 0.4),
+			style-link-button-outline: 0.1rem solid $menu_hover,
+			color-link-button-text: $blueHyperLink,
+			color-link-button-hover-text: $blue-light,
+			color-link-button-active-text: $menu_hover,
+			color-link-button-disabled-text: rgba($grey_darker, 0.4),
+			color-link-button-icon-underline: $light,
+			style-link-outline: 0.1rem solid $menu_hover,
+			color-link-text: $blueHyperLink,
+			color-link-hover-text: $blue-light,
+			color-link-active-text: $menu_hover,
+			color-link-disabled-text: $grey_darker,
 		),
 	);
 	$van-ui-layout: (
@@ -72,6 +117,14 @@
 			layout-checkbox-stroke-size: 0.2rem,
 			layout-checkbox-inner-margin: 0.3rem,
 			layout-checkbox-outline-offset: 0.2rem,
+		),
+		button: (
+			layout-min-width: 12rem,
+			layout-min-height: 3.6rem,
+			layout-margin: 0.5rem,
+			layout-line-height: 1.5,
+			layout-border-radius: 3rem,
+			layout-outline-offset: 0.5rem,
 		),
 	);
 	$van-theme: (
@@ -105,23 +158,6 @@
 		border-radius: 0.6rem !important;
 		padding: 0;
 		overflow-x: hidden;
-	}
-
-	.mat-slide-toggle.mat-disabled .mat-slide-toggle-bar {
-		background-color: $grey_light;
-	}
-
-	.mat-slide-toggle.mat-checked.mat-disabled .mat-slide-toggle-thumb {
-		background-color: $shade_blue;
-	}
-
-	.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
-	.mat-checkbox-checked.mat-accent .mat-checkbox-background {
-		background-color: $menu_hover;
-	}
-
-	.mat-checkbox .mat-checkbox-label {
-		color: $light;
 	}
 
 	.mat-checkbox .mat-checkbox-ripple {
