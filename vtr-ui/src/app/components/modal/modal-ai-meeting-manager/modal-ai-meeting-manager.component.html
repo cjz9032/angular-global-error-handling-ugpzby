@@ -1,8 +1,6 @@
 <div class="modal-body vtr-modal-ai-meeting-manager">
-	<h1 class="mb-3" *ngIf="value=='translation'" id='aiMettingManager-modal-translation-title'>
-		{{'smb.meetingExperience.meetingManager.aiMeetingManager.translation.title' | translate}}</h1>
-	<h1 class="mb-3" *ngIf="value=='voiceToText'" id='aiMettingManager-modal-voiceToText-title'>
-		{{'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.title' | translate}}</h1>
+	<h1 class="mb-3" id='aiMettingManager-modal-{{value}}-title'>
+		{{'smb.meetingExperience.meetingManager.aiMeetingManager.' + value + '.title' | translate}}</h1>
 	<p class="mb-3 sub-heading" role="text" id="aiMettingManager-modal-{{value}}-sub-heading">
 		{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.heading' | translate}}</p>
 	<div class="row">
@@ -16,16 +14,9 @@
 							</p>
 						</div>
 						<span class="text-regular"
-							*ngIf="value=='translation'"
 							id="aiMettingManager-modal-{{value}}-point-{{serialNumber}}"
 							role="text">
-							{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.translation.point' + serialNumber | translate}}
-						</span>
-						<span class="text-regular"
-							*ngIf="value=='voiceToText'"
-							id="aiMettingManager-modal-{{value}}-point-{{serialNumber}}"
-							role="text">
-							{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.voiceToText.point' + serialNumber | translate}}
+							{{'smb.meetingExperience.meetingManager.aiMeetingManager.modalPopUp.' + value + '.point' + serialNumber | translate}}
 						</span>
 					</div>
 				</li>

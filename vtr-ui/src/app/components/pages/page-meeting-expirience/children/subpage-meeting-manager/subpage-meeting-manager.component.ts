@@ -99,8 +99,9 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	private microphnePermissionHandler: any;
 	private readonly Windows: any;
 
-	public voiceToText = 'voiceToText';
 	public translation = 'translation';
+	public voiceToText = 'voiceToText';
+	public noteEditor = 'noteEditor';
 	public AMMBannerAriaLabel: string;
 	private isAMMInstalledInterval: any;
 
@@ -136,7 +137,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 			type: 'subpage-corner',
 			order: 2,
 			show: true,
-		}
+		},
 	];
 
 	constructor(
@@ -700,12 +701,16 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 
 	updateMicrophoneHeader() {
 		// microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)
-		if (!(this.microphoneProperties.available
-			&& ((this.microphoneProperties?.currentMode
-				&& this.microphoneProperties?.currentMode != 'NotSupported'
-				&& !this.isDTmachine
-				&& !this.isAudioVendorSupported)
-				|| this.isAudioVendorSupported))) {
+		if (
+			!(
+				this.microphoneProperties.available &&
+				((this.microphoneProperties?.currentMode &&
+					this.microphoneProperties?.currentMode != 'NotSupported' &&
+					!this.isDTmachine &&
+					!this.isAudioVendorSupported) ||
+					this.isAudioVendorSupported)
+			)
+		) {
 			this.headerMenuItems = this.commonService.removeObjFrom(
 				this.headerMenuItems,
 				'microphone'
