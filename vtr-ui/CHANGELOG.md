@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.5](https://bitbucket.tc.lenovo.com///compare/v1.11.4...v1.11.5) (2021-03-24)
+
+
+### Features
+
+* **overall:** merge release/vantage3.6 ([1a91ad4](https://bitbucket.tc.lenovo.com///commit/1a91ad48760459bada55116e3a6007f6c8a7aaa3))
+* **SP:** VAN-25987 pcSupport api send mtm ([5b2b50e](https://bitbucket.tc.lenovo.com///commit/5b2b50ecd7ce4e5a563f73ebe43fcfcc4a084ffa))
+
+
+### Bug Fixes
+
+* make mat-customize class bellow is-gaming class ([2f5729c](https://bitbucket.tc.lenovo.com///commit/2f5729cce012bae47119cd97cac3cdebadc718fd))
+* **sp:** VAN-25987 fix machineinfo undefined case ([da91ad9](https://bitbucket.tc.lenovo.com///commit/da91ad9a1e5798cbe090c446f9fe7cefbd8ed801))
+
+### [1.10.53](https://bitbucket.tc.lenovo.com///compare/v1.11.1...v1.10.53) (2021-03-18)
+
+### [1.10.52](https://bitbucket.tc.lenovo.com///compare/v1.10.51...v1.10.52) (2021-03-18)
+
+
+### Bug Fixes
+
+* disable user select in disabled checkbox ([9ce275b](https://bitbucket.tc.lenovo.com///commit/9ce275b17f2c27708714b41ebf02ca483220daec))
+* fix reboot dialog padding style ([a846b4a](https://bitbucket.tc.lenovo.com///commit/a846b4a995573ece82c1b91ea9cda70d172d3b84))
+* use mat-checkbox to replace vtr-ui-checkbox ([21751ff](https://bitbucket.tc.lenovo.com///commit/21751ffc5d32184626ebca469e037fa7b72a7903))
+* **content library:** offline hide articles ([4526be8](https://bitbucket.tc.lenovo.com///commit/4526be83fee895ba64867576aeb7e61e4350f012))
+
+### [1.10.51](https://bitbucket.tc.lenovo.com///compare/v1.11.0...v1.10.51) (2021-03-16)
+
+### [1.10.50](https://bitbucket.tc.lenovo.com///compare/v1.10.49...v1.10.50) (2021-03-16)
+
+
+### Bug Fixes
+
+* **mcafee UI:** VAN-27093 modify 3rd party page img width ([d74106a](https://bitbucket.tc.lenovo.com///commit/d74106a7f814e648d45842f8ca2ff26494849715))
+* **warranty:** VAN-27198 cd machine not show warranty in status list. ([695544d](https://bitbucket.tc.lenovo.com///commit/695544d2206ffe807dd7ba7d1213b45ddba5dcea))
+
 ### [1.11.4](https://bitbucket.tc.lenovo.com///compare/v1.11.3...v1.11.4) (2021-03-23)
 
 
