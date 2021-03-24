@@ -22,11 +22,13 @@ import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { UiSnapshotItemListComponent } from './components/dashboard/ui-snapshot-item-list/ui-snapshot-item-list.component';
 import { UiSnapshotListInfoComponent } from './components/dashboard/ui-snapshot-list-info/ui-snapshot-list-info.component';
 import { UiSnapshotItemComponent } from './components/dashboard/ui-snapshot-item/ui-snapshot-item.component';
+import { SnapshotExportLogComponent } from './components/snapshot-export-log/snapshot-export-log.component';
 @NgModule({
 	declarations: [
 		PageSnapshotComponent,
 		SnapshotHeaderComponent,
 		SnapshotMainComponent,
+		SnapshotExportLogComponent,
 		WidgetSnapshotComponent,
 		ModalSnapshotComponent,
 		UiSnapshotItemComponent,
