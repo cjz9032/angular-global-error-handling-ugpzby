@@ -5,8 +5,8 @@
 			<p *ngFor="let item of [['myDevice-sn','device.myDevice.serial',myDevice.sn],['myDevice-productNo','device.myDevice.productNumber',myDevice.productNo],['myDevice-bios','device.myDevice.biosVersion',myDevice.bios]]"> 
 				<span>
 					<span id="{{item[0]}}" role="text">{{item[1]|translate}}:</span>
-					<span id="{{item[0]}}-value" role="text">{{item[2]}}</span>
-					<a  id="{{item[0]}}-copy-link" role="link" href="javascript:void(0)" (click)="copyClicked(item[2])"
+					<span dir="ltr" id="{{item[0]}}-value" role="text">{{item[2]}}</span>
+					<a dir="ltr" id="{{item[0]}}-copy-link" role="link" href="javascript:void(0)" (click)="copyClicked(item[2])"
 						metricsEvent="FeatureClick" metricsItem="CopyItem-{{item[1]}}" vtrMetrics>
 						{{'device.myDevice.copy'|translate}}</a>
 				</span>
