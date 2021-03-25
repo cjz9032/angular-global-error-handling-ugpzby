@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.6](https://bitbucket.tc.lenovo.com///compare/v1.11.5...v1.11.6) (2021-03-25)
+
+
+### Features
+
+* **SP:** VAN-25601 sp scanning animation ([fe0922c](https://bitbucket.tc.lenovo.com///commit/fe0922c0cd830dc9324faae7817248b78c4c747d))
+
+
+### Bug Fixes
+
+* **sp:** VAN-27490 fix two dialogs' overflow issue. ([1b59960](https://bitbucket.tc.lenovo.com///commit/1b5996012bd87332713f03f670366972310ee4f7))
+
 ### [1.11.5](https://bitbucket.tc.lenovo.com///compare/v1.11.4...v1.11.5) (2021-03-24)
 
 
