@@ -116,7 +116,7 @@ export class SystemUpdateService {
 				);
 			})
 			.catch((error) => {
-				this.loggerService.error('System update getUpdateSchedule: ', error.message);
+				this.loggerService.error('System update getUpdateSchedule exception: ', error.message);
 				return undefined;
 			});
 		}
