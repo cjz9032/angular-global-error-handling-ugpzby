@@ -35,6 +35,7 @@ $size500px-sw-show1col: 'only screen and (min-width: 500px) and (max-width: 1200
 					}
 					& > span {
 						&:hover {
+							display: inline-block;
 							background-color: #f7f8fa;
 							border-radius: 2.2rem;
 							color: #33495e;
