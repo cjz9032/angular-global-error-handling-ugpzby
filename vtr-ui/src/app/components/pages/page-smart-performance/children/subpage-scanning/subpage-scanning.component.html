@@ -5,12 +5,13 @@
 
 				<div class="w-100">
 					<div class="vtr-ui-smart-performance-scanning">
-						<vtr-ui-smart-performance-header [image]="SPHeaderImageType.Scan"
+						<vtr-ui-smart-performance-header [image]="SPHeaderImageType.Normal"
 							[headerTitle]="headerTitle"
 							[subTitle]="'smartPerformance.scanningPage.description' |translate"
 							headerTitleId="smart-performance-scanning-page-title"
 							subTitleId="smart-performance-scanning-page-desc"
 							[titleWrap]="true"
+							[isScanning]="true"
 							[contentWrap]="true">
 							<div *ngIf="showProgress"
 								class="col row">

@@ -17,6 +17,7 @@ export class UiSmartPerformanceHeaderComponent {
 	@Input() bottomRadius = false;
 	@Input() isOnline = true;
 	@Input() canShowOfflineText = false;
+	@Input() isScanning = false;
 
 	allImages = {
 		[SPHeaderImageType.Normal]: 'sp-pc-normal.png',

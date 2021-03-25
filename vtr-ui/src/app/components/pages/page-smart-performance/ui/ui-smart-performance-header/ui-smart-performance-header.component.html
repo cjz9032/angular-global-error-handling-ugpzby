@@ -1,13 +1,34 @@
 <div class="vtr-ui-smart-performance-header w-100" [class.bottom-radius]="bottomRadius">
 	<div class="image-container">
-		<img src="assets/images/smart-performance/{{allImages[image]}}"
-			alt=""
-			srcset="">
+		<div class="img-box position-relative w-100 h-100">
+			<img
+				class="w-100 h-100"
+				src="assets/images/smart-performance/{{ allImages[image] }}"
+				alt=""
+				srcset=""
+			/>
+			<img
+				*ngIf="isScanning"
+				class="icon-scan-search position-absolute"
+				src="assets/images/smart-performance/icon-scan-search.png"
+				alt=""
+				srcset=""
+			/>
+		</div>
 	</div>
 	<div class="main-container" [class.is-content-wrap]="contentWrap">
 		<div class="main-header" [class.title-wrap]="titleWrap">
-			<h1 [id]="headerTitleId" [innerHTML]="headerTitle"></h1>
-			<h3 [id]="subTitleId" *ngIf="!isOnline && canShowOfflineText ; else onlineSubTitle" [innerHTML]="subTitle + ' ' + ('smartPerformance.performanceOfflineText' | translate)"></h3>
+			<h1 [id]="headerTitleId">
+				{{ headerTitle }}
+				<vtr-ui-dot-animate [hidden]="!isScanning"></vtr-ui-dot-animate>
+			</h1>
+			<h3
+				[id]="subTitleId"
+				*ngIf="!isOnline && canShowOfflineText; else onlineSubTitle"
+				[innerHTML]="
+					subTitle + ' ' + ('smartPerformance.performanceOfflineText' | translate)
+				"
+			></h3>
 			<ng-template #onlineSubTitle>
 				<h3 [id]="subTitleId" [innerHTML]="subTitle"></h3>
 			</ng-template>
@@ -16,5 +37,4 @@
 			<ng-content></ng-content>
 		</div>
 	</div>
-
 </div>

@@ -44,6 +44,7 @@ import { UiSmartPerformanceHeaderComponent } from 'src/app/components/pages/page
 import { UiSmartPerformanceRatingComponent } from 'src/app/components/pages/page-smart-performance/ui/ui-smart-performance-rating/ui-smart-performance-rating.component';
 import { UiSmartPerformanceScanningDetailComponent } from 'src/app/components/pages/page-smart-performance/ui/ui-smart-performance-scanning-detail/ui-smart-performance-scanning-detail.component';
 import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-smart-performance/widgets/widget-recommend-action/widget-recommend-action.component';
+import { UiDotAnimateComponent } from 'src/app/components/ui/ui-dot-animate/ui-dot-animate.component';
 
 @NgModule({
 	declarations: [
@@ -55,6 +56,7 @@ import { WidgetRecommendActionComponent } from 'src/app/components/pages/page-sm
 		UiSmartPerformanceHeaderComponent,
 		UiSmartPerformanceRatingComponent,
 		UiSmartPerformanceScanningDetailComponent,
+		UiDotAnimateComponent,
 		SubpageScanResultsAccordionComponent,
 		SubpageScanningComponent,
 		SubpageScheduleScanComponent,
