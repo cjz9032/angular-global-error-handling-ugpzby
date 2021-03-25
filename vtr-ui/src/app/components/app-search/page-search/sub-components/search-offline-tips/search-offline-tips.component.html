@@ -1,0 +1,17 @@
+<div class="container-fluid">
+	<div class="row widget-root">
+		<vtr-widget-offline-info
+			class="w-100"
+			[isButtonVisible]="false"
+			[isSubtitleVisible]="false"
+			[title]="'dashboard.offlineInfo.title' | translate"
+			[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
+			[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
+			offlineConnection="offline-connection"
+		>
+		</vtr-widget-offline-info>
+	</div>
+	<div class="row justify-content-center offline-tips" id="search-page-div-offline-tips">
+		App Search is unavailable when network is disconnected at present
+	</div>
+</div>

@@ -261,48 +261,17 @@
 	<right-content>
 		<div class="container-fluid">
 
-			<div class="row">
-				<div class="col col-12 px-0 pt-0 pb-24">
-					<vtr-widget-support [title]="'support.documentation.title' | translate"
-						[description]="''"
-						[items]="supportDatas.documentation"
-						[widgetTittleId]="'documentation'"
-						[widgetDescriptionId]="''">
-					</vtr-widget-support>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col col-12 px-0 pt-0 pb-24">
-					<vtr-widget-support [title]="'support.needHelp.title' | translate"
-						[description]="'support.needHelp.description' | translate"
-						[items]="supportDatas.needHelp"
-						[widgetTittleId]="'need-help'"
-						[widgetDescriptionId]="'contact-us-help'">
-					</vtr-widget-support>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col col-12 px-0 pt-0 pb-24">
-					<vtr-widget-support [title]="'support.quicklinks.title' | translate"
-						[description]="''"
-						[items]="supportDatas.quicklinks"
-						[widgetTittleId]="'quicklinks'"
-						[widgetDescriptionId]="''">
-					</vtr-widget-support>
-				</div>
-			</div>
+			<vtr-right-content-for-support></vtr-right-content-for-support>
 			<div class="row d-none d-lg-block"
-				*ngIf="isCdDevice && articlesType !== 'loading' && articles.right.length > 0">
+			*ngIf="isCdDevice && articlesType !== 'loading' && articles.right.length > 0">
 				<div class="col col-12 px-0 pt-0 pb-24">
-					<vtr-container-article [items]="articles.right"
-						*ngIf="isOnline"
-						[startIndex]="5"
-						[indexPreText]="'r'"
-						[indexTimes]="1"
-						[type]="articlesType">
-					</vtr-container-article>
+				<vtr-container-article [items]="articles.right"
+					*ngIf="isOnline"
+					[startIndex]="5"
+					[indexPreText]="'r'"
+					[indexTimes]="1"
+					[type]="articlesType">
+				</vtr-container-article>
 				</div>
 			</div>
 		</div>

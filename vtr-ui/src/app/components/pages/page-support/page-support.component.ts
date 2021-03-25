@@ -53,55 +53,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	notificationSubscription: Subscription;
 	backId = 'support-page-btn-back';
 	getArticlesTimeout: any;
-	supportDatas = {
-		documentation: [
-			{
-				icon: ['fal', 'book'],
-				title: 'support.documentation.listUserGuide',
-				clickItem: 'userGuide',
-				metricsItem: 'Documentation.UserGuideButton',
-				metricsEvent: 'FeatureClick',
-			},
-		],
-		needHelp: [],
-		quicklinks: [],
-	};
-	listLenovoCommunity = {
-		icon: ['fal', 'comment-alt'],
-		title: 'support.needHelp.listLenovoCommunity',
-		url: 'https://community.lenovo.com',
-		metricsItem: 'NeedHelp.LenovoCommunityButton',
-		metricsEvent: 'FeatureClick',
-	};
-	listContactCustomerService = {
-		icon: ['fal', 'share-alt'],
-		title: 'support.needHelp.listContactCustomerService',
-		url: 'https://support.lenovo.com/contactus?serialnumber=',
-		metricsItem: 'NeedHelp.ContactCustomerServiceButton',
-		metricsEvent: 'FeatureClick',
-	};
 
-	listFindUs = {
-		icon: ['fal', 'heart'],
-		title: 'support.needHelp.listFindUs',
-		clickItem: 'findUs',
-		metricsItem: 'NeedHelp.FindUsButton',
-		metricsEvent: 'FeatureClick',
-	};
-	listServiceProvider = {
-		icon: ['fal', 'briefcase'],
-		title: 'support.quicklinks.listServiceProvider',
-		url: 'https://www.lenovo.com/us/en/ordersupport/',
-		metricsItem: 'Quicklinks.ServiceProviderButton',
-		metricsEvent: 'FeatureClick',
-	};
-	listAboutLenovoVantage = {
-		iconPath: 'assets/images/support/svg_icon_about_us.svg',
-		title: 'support.quicklinks.listAboutLenovoVantage',
-		clickItem: 'about',
-		metricsItem: 'Quicklinks.AboutLenovoVantageButton',
-		metricsEvent: 'FeatureClick',
-	};
+	cateStartTime: any;
+	contentStartTime: any;
+	actionSubscription: Subscription;
 
 	offlineImages = [
 		'assets/images/support/support-offline-1.jpg',
@@ -115,10 +70,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		'assets/images/support/lifestyle-entertainment.svg',
 		'assets/images/support/software-apps.svg',
 	];
-
-	cateStartTime: any;
-	contentStartTime: any;
-	actionSubscription: Subscription;
 
 	constructor(
 		public mockService: MockService,
@@ -158,7 +109,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		);
 		this.getProtocalActions();
 
-		this.setShowList();
 	}
 
 	ngOnDestroy() {
@@ -215,23 +165,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-	}
-
-
-	setShowList() {
-		if (this.supportService.supportDatas) {
-			this.supportDatas = this.supportService.supportDatas;
-			return;
-		}
-		this.supportDatas.needHelp.push(this.listLenovoCommunity);
-		this.supportService.getSerialnumber().then((sn) => {
-			this.listContactCustomerService.url = `https://support.lenovo.com/contactus?serialnumber=${sn}`;
-			this.supportDatas.needHelp.push(this.listContactCustomerService);
-			this.supportDatas.needHelp.push(this.listFindUs);
-			this.supportService.supportDatas = this.supportDatas;
-		});
-
-		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
 	}
 
 	fetchCMSContents(lang?: string) {
@@ -424,4 +357,5 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	search(value: string) {
 		this.searchWords = value;
 	}
+
 }

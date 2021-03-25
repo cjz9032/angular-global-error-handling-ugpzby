@@ -1,34 +1,8 @@
 @import '../../../app.theme';
 
-$block_width: 40rem;
-$item_height: 6rem;
-$icon_size: 2.4rem;
-$clean_icon_size: 1.6rem;
-$font_size: 1.4rem;
-$line_height: 2rem;
+$spacer: 1rem;
 
-.mid-text {
-	display: block;
-	height: 100%;
-	line-height: $line_height;
-	font-size: $font_size;
-	flex-grow: 1;
-}
-
-.flex-all-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.default-item-container {
-	display: flex;
-	width: 100%;
-	min-height: $item_height;
-	position: relative;
-}
-
-:host ::ng-deep {
+:host {
 	.vtr-page.vtr-page-page-app-search {
 		.vtr-page-columns .vtr-page-column.vtr-page-left-column {
 			padding-bottom: 4rem !important;
@@ -37,224 +11,6 @@ $line_height: 2rem;
 
 	.vtr-page-left-column {
 		background: $shade_lightest;
-
-		.widget-search-input {
-			@extend .default-item-container;
-			background: $light;
-			box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
-			border: 1px solid $menu_hover;
-			border-radius: 0.5rem;
-			position: relative;
-			overflow: hidden;
-			z-index: 11;
-			&.is-show-result {
-				border-radius: 0.5rem 0.5rem 0 0;
-			}
-
-			::-ms-clear {
-				display: none;
-			}
-
-			.search-icon {
-				font-size: $icon_size;
-				height: calc(#{$item_height} - 2px);
-				width: $icon_size + 3rem;
-				color: $menu_hover;
-				@extend .flex-all-center;
-			}
-
-			.search-input {
-				@extend .mid-text;
-				border: none;
-				outline: none;
-
-				:focus {
-					border: none;
-				}
-
-				@extend .flex-all-center;
-			}
-
-			.search-btn {
-				height: calc(#{$item_height} - 2px);
-				@extend .flex-all-center;
-				::ng-deep {
-					.vtr-ui-button {
-						.button-box {
-							.button {
-								margin-top: 0;
-								min-height: 3.6rem;
-								text-transform: uppercase;
-							}
-						}
-					}
-				}
-			}
-		}
-
-		.offline-indicator {
-			margin-top: 3.7rem;
-			::ng-deep {
-				.vtr-widget-offline-info {
-					.offline-info-background {
-						border-radius: 0.7rem;
-					}
-				}
-			}
-		}
-
-		.offline-tips {
-			margin-top: 6rem;
-			color: $grey_dark;
-			opacity: 0.8;
-			font-size: 2rem;
-		}
-
-		.loading-indicator {
-			margin-top: 11.3rem;
-			width: 100%;
-
-			.loading-tips {
-				margin-top: 3.2rem;
-				color: $grey_dark;
-				opacity: 0.8;
-				font-size: 1.8rem;
-			}
-		}
-
-		.search-results {
-			width: 100%;
-
-			.result-counter {
-				margin-top: 4.1rem;
-				color: $gray_dark;
-				font-size: 1.8rem;
-				opacity: 0.8;
-
-				.part1 {
-					font-weight: bold;
-				}
-			}
-
-			.no-search-result {
-				color: $grey_dark;
-				opacity: 0.8;
-				.title {
-					@extend .flex-all-center;
-					margin-top: 4.96rem;
-					font-size: 2rem;
-				}
-
-				.description {
-					@extend .flex-all-center;
-					margin-top: 1.2rem;
-					font-size: 1.4rem;
-				}
-			}
-
-			.has-search-result {
-				margin-top: 1.2rem;
-				.result-item {
-					@extend .default-item-container;
-					background: $light 0% 0% no-repeat padding-box;
-					border: 1px solid $grey_light;
-					border-bottom: none;
-					div {
-						cursor: pointer;
-					}
-
-					&:first-child {
-						border-top-left-radius: 0.4rem;
-						border-top-right-radius: 0.4rem;
-					}
-					&:last-child {
-						border-bottom-left-radius: 0.4rem;
-						border-bottom-right-radius: 0.4rem;
-						border-bottom: 1px solid $grey_light;
-					}
-					&:focus {
-						border: 1px solid $menu_hover;
-						outline: none;
-					}
-
-					.feature-icon-part {
-						font-size: $icon_size;
-						height: calc(#{$item_height} - 2px);
-						width: $icon_size + 3rem;
-						color: $menu_hover;
-						@extend .flex-all-center;
-					}
-
-					.feature-description {
-						@extend .mid-text;
-						@extend .flex-all-center;
-						height: calc(#{$item_height} - 2px);
-
-						.feature-name {
-							text-align: left;
-							font-weight: bold;
-							color: $gray_dark;
-							padding-left: 1.8rem;
-						}
-
-						.feature-category {
-							text-align: right;
-							line-height: 2rem;
-							font-size: 1.4rem;
-							flex-grow: 1;
-							font-style: italic;
-							color: $gray_dark;
-						}
-					}
-
-					.narrow-icon {
-						height: calc(#{$item_height} - 2px);
-						@extend .flex-all-center;
-						width: $icon_size;
-						color: $gray_dark;
-						padding-left: 1.4rem;
-						padding-right: 1.8rem;
-					}
-				}
-			}
-
-			.result-pagination-bar {
-				width: 100%;
-				@extend .flex-all-center;
-				font-size: 1.8rem;
-				opacity: 0.8;
-				margin-top: 2.4rem;
-
-				.chevron-left .chevron-right {
-					padding: 1.6rem;
-					font-size: 2rem;
-					opacity: 1;
-				}
-
-				.pagination-item span {
-					padding: 0.6rem;
-				}
-
-				.chevron-left, .chevron-right, .pagination-item {
-					&:focus {
-						border: 1px solid $menu_hover;
-						outline: none;
-					}
-				}
-
-				.high-light {
-					color: $hover_dark;
-					font-weight: bold;
-					cursor: default;
-				}
-
-				.deactive-chevron {
-					opacity: 0.6;
-					color: $grey_dark;
-					cursor: default;
-				}
-			}
-		}
 	}
 
 	.vtr-page-right-column {
@@ -262,87 +18,25 @@ $line_height: 2rem;
 			padding: 4rem 8.5rem;
 		}
 	}
+
+	.search-offline-tips {
+		min-height: 20rem;
+		margin-top: $spacer * 3.5;
+	}
+
+	.search-loading-animation {
+		min-height: 6rem;
+		margin-top: $spacer * 10;
+	}
+
+	.search-result-table {
+		min-height: 6rem;
+		margin-top: 4.1rem;
+	}
 }
 
 :host-context(.is-gaming) {
-	::ng-deep {
-		.vtr-page-left-column {
-			.card {
-				background: $gaming_darkest;
-
-				&.quick-access {
-					background: $gaming_darkest;
-
-					.quick-access-title {
-						color: $gaming_lightest;
-					}
-
-					.quick-assess-categories {
-						.quick-assess-item {
-							.item-con {
-								background: $gaming_bg;
-								border: none;
-								box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.01);
-
-								&:hover {
-									background: $gaming;
-								}
-
-								.item-title {
-									color: $gaming_lightest !important;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		.vtr-page-right-column {
-			.vtr-widget-support {
-				background: $gaming_darkest;
-				box-shadow: $drop_shadow_gaming;
-
-				.title {
-					color: $gaming_lightest !important;
-				}
-
-				.vtr-ui-list-support {
-					.support-list {
-						background-color: $gaming_bg !important;
-						border: none !important;
-
-						button {
-							&:hover {
-								background-color: transparent !important;
-							}
-						}
-
-						.title {
-							color: $gaming_lightest;
-						}
-
-						.arrow {
-							color: $gaming_lightest !important;
-						}
-
-						.description {
-							color: $gaming_grey_lightest;
-							font-size: 1.2rem;
-						}
-
-						li {
-							border-bottom: 0.1rem solid $gaming_darkest !important;
-
-							a {
-								&:hover {
-									background-color: transparent !important;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+	.vtr-page-left-column {
+		background: $gaming_darkest;
 	}
 }
