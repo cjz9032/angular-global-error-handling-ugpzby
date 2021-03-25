@@ -1,0 +1,14 @@
+@import '../../../../../app.theme.scss';
+
+.offline-tips {
+	margin-top: 6rem;
+	color: $grey_dark;
+	opacity: 0.8;
+	font-size: 2rem;
+}
+
+:host-context(.is-gaming) {
+	.offline-tips {
+		color: $gaming_lightest;
+	}
+}

@@ -45,6 +45,8 @@ import { TopRowFunctionsIdeapadService } from '../pages/page-device-settings/chi
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { MatDialog } from '@lenovo/material/dialog';
+import { AppSearchService } from 'src/app/services/app-search/app-search.service';
+import { RoutePath } from 'src/assets/menu/menu';
 
 @Component({
 	selector: 'vtr-menu-main-legacy',
@@ -64,10 +66,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	public countryCode: string;
 	public locale: string;
 	public items: Array<any> = [];
-	public showSearchBox = false;
 	public showSearchMenu = false;
-	public searchTips = '';
-	private searchTipsTimeout: any;
 	private subscription: Subscription;
 	private relaySubscription: Subscription;
 	public isLoggingOut = false;
@@ -80,6 +79,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	isGamingHome: boolean;
 	currentUrl: string;
 	isSMode: boolean;
+	currentIsSearchPage: boolean;
 	hideDropDown = false;
 	segment: string;
 	headerLogo: string;
@@ -135,23 +135,10 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		private feedbackService: FeedbackService,
 		private localCacheService: LocalCacheService,
 		private backlightService: BacklightService,
-		private hypService: HypothesisService
+		private hypService: HypothesisService,
+		private appSearchService: AppSearchService
 	) {
 		newFeatureTipService.viewContainer = this.viewContainerRef;
-	}
-
-	updateSearchBoxState(isActive) {
-		this.searchTips = '';
-		this.showSearchBox = isActive;
-		if (isActive && this.searchTipsTimeout) {
-			this.searchTipsTimeout = clearTimeout(this.searchTipsTimeout);
-			this.searchTipsTimeout = null;
-		}
-	}
-
-	onClickSearchMask() {
-		this.showMenu = false;
-		this.updateSearchBoxState(false);
 	}
 
 	ngOnInit() {
@@ -207,16 +194,14 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 				} else {
 					this.isGamingHome = false;
 				}
+
+				this.currentIsSearchPage = ev.url.indexOf(`/${RoutePath.search}`) > -1;
 			}
 		});
 
-		this.translateSubscription = this.translate.onLangChange.subscribe(
-			(event: LangChangeEvent) => {
-				if (this.translate.currentLang === 'en') {
-					this.showSearchMenu = true;
-				}
-			}
-		);
+		this.appSearchService.isAvailable().then(available => {
+			this.showSearchMenu = available;
+		});
 
 		const machineType = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineType,
@@ -244,10 +229,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			if (!clickedInside && !toggleMenuButton) {
 				this.showMenu = false;
 			}
-		}
-
-		if (!event.fromSearchBox && !event.fromSearchMenu) {
-			this.updateSearchBoxState(false);
 		}
 	}
 
@@ -454,7 +435,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	}
 
 	toggleMenu(event) {
-		this.updateSearchBoxState(false);
 		this.showMenu = !this.showMenu;
 		this.colorPickerFun();
 		event.stopPropagation();
@@ -521,12 +501,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	onMenuItemClick(item, event?) {
 		window.getSelection().empty();
 		this.showMenu = false;
-		if (item.id === 'app-search') {
-			this.updateSearchBoxState(!this.showSearchBox);
-			if (event) {
-				event.fromSearchMenu = true;
-			}
-		} else if (item.id === 'user' && event) {
+		if (item.id === 'user' && event) {
 			const target = event.target || event.srcElement || event.currentTarget;
 			const idAttr = target.attributes.id;
 			const id = idAttr.nodeValue;

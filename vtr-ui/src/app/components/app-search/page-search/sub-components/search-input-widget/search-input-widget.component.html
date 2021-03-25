@@ -1,0 +1,67 @@
+<div class="container-fluid">
+	<div class="row widget-root w-100">
+		<div class="h-100 d-flex justify-content-center align-items-center search-icon-box">
+			<button
+				id="search-widget-icon-button"
+				mat-button
+				aria-label="search"
+				(click)="onClickSearch()"
+				[disabled]="!iconClickable || disabled"
+			>
+				<fa-icon
+					id="search-widget-icon"
+					class="search-icon"
+					[icon]="['fal', 'search']"
+				></fa-icon>
+			</button>
+		</div>
+
+		<div
+			class="h-100 d-flex justify-content-center align-items-center search-input-box flex-grow-1"
+		>
+			<input
+				id="search-widget-input"
+				matInput
+				#inputCtrl
+				class="search-input col flex-grow-1"
+				type="text"
+				(click)="onClickInput()"
+				(keydown.enter)="onInputEnterKeyDown()"
+				[(ngModel)]="input"
+				(ngModelChange)="onInputChange()"
+				[placeholder]="placeholder"
+				[maxlength]="maxlength"
+			/>
+			<button
+				id="search-clean-button"
+				class="clean-button-box"
+				*ngIf="input"
+				mat-button
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsParent="Dropdown.Search"
+				metricsItem="cleanSearch"
+				(click)="input = ''"
+			>
+				<div class="clean-button"></div>
+			</button>
+		</div>
+
+		<div
+			*ngIf="showSearchButton"
+			class="h-100 d-flex justify-content-center align-items-center search-btn-box"
+		>
+			<button
+				id="search-widget-button"
+				mat-raised-button
+				color="primary"
+				class="search-btn"
+				aria-label="search"
+				[disabled]="disabled"
+				(click)="onClickSearch()"
+			>
+				SEARCH
+			</button>
+		</div>
+	</div>
+</div>

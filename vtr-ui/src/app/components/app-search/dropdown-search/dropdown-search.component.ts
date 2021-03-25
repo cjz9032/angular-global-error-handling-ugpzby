@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FeatureClick } from 'src/app/services/metric/metrics.model';
 import { MetricService } from 'src/app/services/metric/metrics.service';
@@ -10,48 +10,32 @@ import { RoutePath } from 'src/assets/menu/menu';
 	styleUrls: ['./dropdown-search.component.scss'],
 })
 export class SearchDropdownComponent {
-	@ViewChild('searchInput', { static: false }) searchInput: ElementRef;
-
 	public searchTips = 'Search Query';
 	public userInput = '';
-	public recommandedItems = [];
 	public clickSearchIconEvent: FeatureClick = {
 		ItemType: EventName.featureclick,
 		ItemParent: 'Dropdown.Search',
 		ItemName: 'icon.search',
 	};
-	public enterSearchEvent: FeatureClick = {
-		ItemType: EventName.featureclick,
-		ItemParent: 'Dropdown.Search',
-		ItemName: 'input.search',
-	};
 
 	constructor(private router: Router, private metricService: MetricService) {}
 
-	onCleanClick($event) {
-		this.searchInput.nativeElement.value = '';
+	onClickSearch() {
+		const userInput = this.mergeAndTrimSpace(this.userInput);
+		if (!this.userInput) {
+			return;
+		}
+
+		this.metricService.sendMetrics(this.clickSearchIconEvent);
+		this.navigateToSearchPage(userInput);
+	}
+
+	onDropdownClick($event) {
 		$event.stopPropagation();
 	}
 
 	onDropdownClosed() {
-		this.searchInput.nativeElement.value = '';
-	}
-
-	onInputClick($event) {
-		$event.stopPropagation();
-	}
-
-	onClickSearch($event, metricEvent) {
-		const userInput = this.mergeAndTrimSpace(this.searchInput.nativeElement.value);
-		this.searchInput.nativeElement.value = userInput;
-
-		if (!userInput) {
-			$event.stopPropagation();
-			return;
-		}
-
-		this.metricService.sendMetrics(metricEvent);
-		this.navigateToSearchPage(userInput);
+		this.userInput = '';
 	}
 
 	private navigateToSearchPage(userInput: string) {

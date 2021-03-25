@@ -7,8 +7,6 @@ import { MAT_SNACK_BAR_DATA } from '@lenovo/material/snack-bar';
   styleUrls: ['./feature-inapplicable-message.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class FeatureInapplicableMessageComponent implements OnInit {
+export class FeatureInapplicableMessageComponent {
 	constructor(@Inject(MAT_SNACK_BAR_DATA) public data: any) {}
-
-    ngOnInit() {}
 }

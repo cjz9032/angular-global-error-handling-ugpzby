@@ -56,77 +56,10 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	notificationSubscription: Subscription;
 	backId = 'support-page-btn-back';
 	getArticlesTimeout: any;
-	supportDatas = {
-		documentation: [
-			{
-				icon: ['fal', 'book'],
-				title: 'support.documentation.listUserGuide',
-				clickItem: 'userGuide',
-				metricsItem: 'Documentation.UserGuideButton',
-				metricsEvent: 'FeatureClick',
-			},
-		],
-		needHelp: [],
-		quicklinks: [],
-	};
-	listLenovoCommunity = {
-		icon: ['fal', 'comment-alt'],
-		title: 'support.needHelp.listLenovoCommunity',
-		url: 'https://community.lenovo.com',
-		metricsItem: 'NeedHelp.LenovoCommunityButton',
-		metricsEvent: 'FeatureClick',
-	};
-	listContactCustomerService = {
-		icon: ['fal', 'share-alt'],
-		title: 'support.needHelp.listContactCustomerService',
-		url: 'https://support.lenovo.com/contactus?serialnumber=',
-		metricsItem: 'NeedHelp.ContactCustomerServiceButton',
-		metricsEvent: 'FeatureClick',
-	};
-	listYourVirtualAssistant = {
-		icon: ['fal', 'robot'],
-		title: 'support.needHelp.listYourVirtualAssistant',
-		url: 'https://lena.lenovo.com/lena',
-		metricsItem: 'NeedHelp.YourVirtualAssistantButton',
-		metricsEvent: 'FeatureClick',
-	};
 
-	// lenaUrls = [
-	// 	{ url: 'https://in.lena.lenovo.com/lena', lang: 'en', geo: ['in', 'lk', 'bd'] },
-	// 	{ url: 'https://us.lena.lenovo.com/lena', lang: 'en', geo: ['us', 'ca'] },
-	// 	{ url: 'https://uki.lena.lenovo.com/lena', lang: 'en', geo: ['gb', 'ie'] },
-	// 	{ url: 'https://lena.lenovo.com/lena', lang: 'en', geo: ['au', 'nz', 'sg', 'my', 'ph'] },
-	// 	{
-	// 		url: 'https://las.lena.lenovo.com/lena',
-	// 		lang: 'es',
-	// 		geo: ['mx', 'co', 'ar', 'pe', 'cl', 'cr', 'do', 'sv', 'gt', 'hn', 'ni', 'pa', 'bo', 'ec', 'py',
-	// 			'uy', 've'],
-	// 	},
-	// 	{ url: 'https://jp.lena.lenovo.com/lena', lang: 'ja', geo: ['jp'] },
-	// 	{ url: 'https://eu.lena.lenovo.com/lena', lang: 'de', geo: ['de', 'at'] },
-	// ];
-
-	listFindUs = {
-		icon: ['fal', 'heart'],
-		title: 'support.needHelp.listFindUs',
-		clickItem: 'findUs',
-		metricsItem: 'NeedHelp.FindUsButton',
-		metricsEvent: 'FeatureClick',
-	};
-	listServiceProvider = {
-		icon: ['fal', 'briefcase'],
-		title: 'support.quicklinks.listServiceProvider',
-		url: 'https://www.lenovo.com/us/en/ordersupport/',
-		metricsItem: 'Quicklinks.ServiceProviderButton',
-		metricsEvent: 'FeatureClick',
-	};
-	listAboutLenovoVantage = {
-		iconPath: 'assets/images/support/svg_icon_about_us.svg',
-		title: 'support.quicklinks.listAboutLenovoVantage',
-		clickItem: 'about',
-		metricsItem: 'Quicklinks.AboutLenovoVantageButton',
-		metricsEvent: 'FeatureClick',
-	};
+	cateStartTime: any;
+	contentStartTime: any;
+	actionSubscription: Subscription;
 
 	offlineImages = [
 		'assets/images/support/support-offline-1.jpg',
@@ -140,10 +73,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		'assets/images/support/lifestyle-entertainment.svg',
 		'assets/images/support/software-apps.svg',
 	];
-
-	cateStartTime: any;
-	contentStartTime: any;
-	actionSubscription: Subscription;
 
 	constructor(
 		public mockService: MockService,
@@ -184,7 +113,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		);
 		this.getProtocalActions();
 
-		this.setShowList();
 	}
 
 	ngOnDestroy() {
@@ -246,37 +174,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 				}
 			}
 		);
-	}
-
-
-	setShowList() {
-		if (this.supportService.supportDatas) {
-			this.supportDatas = this.supportService.supportDatas;
-			return;
-		}
-		this.supportDatas.needHelp.push(this.listLenovoCommunity);
-		this.supportService.getSerialnumber().then((sn) => {
-			this.listContactCustomerService.url = `https://support.lenovo.com/contactus?serialnumber=${sn}`;
-			this.supportDatas.needHelp.push(this.listContactCustomerService);
-			this.localInfoService.getLocalInfo().then((info) => {
-				// const GEO = info.GEO;
-				// const Lang = info.Lang;
-				// const data = window.btoa(`Brand=${info.Brand}&SourcePage=Lenovo Vantage`);
-				// const findUrlItem = this.lenaUrls.find(
-				// 	(item) => item.geo.indexOf(GEO) >= 0 && item.lang === Lang
-				// );
-				// if (findUrlItem) {
-				// 	this.listYourVirtualAssistant.url =
-				// 		findUrlItem.url + `?country=${GEO}&language=${Lang}&data=${data}`;
-				// 	this.supportDatas.needHelp.push(this.listYourVirtualAssistant);
-				// }
-
-				this.supportDatas.needHelp.push(this.listFindUs);
-				this.supportService.supportDatas = this.supportDatas;
-			});
-		});
-
-		this.supportDatas.quicklinks.push(this.listAboutLenovoVantage);
 	}
 
 	fetchCMSContents(lang?: string) {
@@ -451,7 +348,6 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 		this.feedbackService.openFeedbackModal();
 	}
 
-
 	openWarrantyExploreOptions() {
 		if (!this.isOnline) {
 			return false;
@@ -475,4 +371,5 @@ export class PageSupportComponent implements OnInit, OnDestroy {
 	search(value: string) {
 		this.searchWords = value;
 	}
+
 }

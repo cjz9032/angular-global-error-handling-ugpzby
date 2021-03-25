@@ -1,0 +1,66 @@
+<div class="container-fluid widget-root">
+	<div class="row search-result-table">
+		<div class="paginator-item-range-label" id="paginator-item-range-label">
+			<span>{{ paginator.getCurrentRangeLabel() }}</span>
+			/
+			<span>{{ paginator.getTotalItemCount() }}</span>
+		</div>
+		<table mat-table [dataSource]="displayData">
+			<ng-container matColumnDef="featureInfo">
+				<td mat-cell *matCellDef="let resultItem">
+					<button
+						mat-button
+						class="w-100 result-item-btn"
+						(click)="itemClick.emit(resultItem)"
+					>
+						<div class="row h-100 result-item-box">
+							<div
+								class="feature-icon-box d-flex justify-content-center align-items-center"
+							>
+								<fa-icon
+									class="feature-icon"
+									[icon]="resultItem.icon || ['fal', 'gem']"
+								></fa-icon>
+							</div>
+
+							<!-- feature name and category-->
+							<div
+								class="feature-name-box text-two-ellipsis h-100 d-flex flex-grow-1 col align-items-center align-content-center"
+							>
+								{{ resultItem.featureName }}
+							</div>
+
+							<div
+								class="feature-category-box text-two-ellipsis h-100 d-flex col-3 align-items-center justify-content-end"
+							>
+								{{ resultItem.categoryName }}
+							</div>
+
+							<!-- feature icon -->
+							<div
+								class="narrow-icon-box d-flex justify-content-center align-items-center"
+							>
+								<fa-icon
+									class="narrow-icon"
+									[icon]="['fas', 'arrow-right']"
+								></fa-icon>
+							</div>
+						</div>
+					</button>
+				</td>
+			</ng-container>
+
+			<tr mat-row *matRowDef="let row; columns: ['featureInfo']"></tr>
+		</table>
+
+		<div class="row w-100 d-flex justify-content-center pagination-bar">
+			<vtr-paginator
+				#paginator
+				[pageSize]="pageSize"
+				[totalItemsCount]="this.dataSource.length"
+				(pageIndexChange)="onPageIndexChange($event)"
+				[hidden]="this.dataSource.length <= pageSize"
+			></vtr-paginator>
+		</div>
+	</div>
+</div>

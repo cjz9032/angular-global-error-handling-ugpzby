@@ -1,0 +1,48 @@
+<div class="row widget-root" [class.hidden]="hidden">
+	<button
+		mat-button
+		class="pagination-chevron-icon-btn"
+		id="search-page-pagination-bar-chevron-left"
+		vtrMetrics
+		metricsEvent="FeatureClick"
+		metricsItem="chevron-left"
+		[disabled]="this.pageIndex < 1"
+		(click)="onGoToPreResultPage()"
+	>
+		<div class="item-content">
+			<fa-icon class="chevron-left" [icon]="['fal', 'chevron-left']"></fa-icon>
+		</div>
+	</button>
+
+	<button
+		mat-button
+		class="pagination-num-btn"
+		id="search-page-pagination-bar-page{{ pageNum }}"
+		vtrMetrics
+		metricsEvent="FeatureClick"
+		metricsItem="pagination-item"
+		metricsParam="page:{{ pageNum + 1 }}"
+		*ngFor="let i of pageArray; let pageNum = index"
+		[disabled]="this.pageIndex === pageNum"
+		(click)="onGoToResultPage(pageNum)"
+	>
+		<div class="item-content">
+			{{ pageNum + 1 }}
+		</div>
+	</button>
+
+	<button
+		mat-button
+		class="pagination-chevron-icon-btn"
+		id="search-page-pagination-bar-chevron-right"
+		vtrMetrics
+		metricsEvent="FeatureClick"
+		metricsItem="chevron-right"
+		[disabled]="this.pageIndex >= this.pageArray.length - 1"
+		(click)="onGoToNextResultPage()"
+	>
+		<div class="item-content">
+			<fa-icon class="chevron-right" [icon]="['fal', 'chevron-right']"></fa-icon>
+		</div>
+	</button>
+</div>
