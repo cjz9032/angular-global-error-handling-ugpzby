@@ -118,7 +118,7 @@ export class SystemUpdateService {
 			.catch((error) => {
 				this.loggerService.error('System update getUpdateSchedule: ', error.message);
 				return undefined;
-			});;
+			});
 		}
 		return undefined;
 	}
@@ -221,7 +221,7 @@ export class SystemUpdateService {
 			})
 			.catch((error) => {
 				this.loggerService.error('System update deleteUpdateHistoryItems exception: ', error.message);
-			});;
+			});
 		}
 	}
 
@@ -1200,7 +1200,7 @@ export class SystemUpdateService {
 				return result;
 			})
 			.catch((error) => {
-				this.loggerService.error('System update getUpdateHistory exception: ', error.message);
+				this.loggerService.error('System update queueToastMessage exception: ', error.message);
 				return false;
 			});
 		}
