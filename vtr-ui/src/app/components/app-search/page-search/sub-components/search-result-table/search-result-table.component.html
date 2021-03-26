@@ -13,6 +13,10 @@
 						id="{{ idPrefix }}result-item-row-{{ rowIdx }}"
 						class="w-100 result-item-btn"
 						(click)="itemClick.emit(resultItem)"
+						vtrMetrics
+						metricsEvent="FeatureClick"
+						[metricsItem]="resultItem.featureId"
+
 					>
 						<div class="row h-100 result-item-box">
 							<div
