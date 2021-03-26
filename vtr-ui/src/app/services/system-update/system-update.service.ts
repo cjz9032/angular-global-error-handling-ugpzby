@@ -86,7 +86,7 @@ export class SystemUpdateService {
 				return result;
 			})
 			.catch((error) => {
-				this.loggerService.error('System update getMostRecentUpdateInfo: ', error.message);
+				this.loggerService.error('System update getMostRecentUpdateInfo exception: ', error.message);
 				return undefined;
 			});
 		}
@@ -114,6 +114,10 @@ export class SystemUpdateService {
 					UpdateProgress.AutoUpdateStatus,
 					this.autoUpdateStatus
 				);
+			})
+			.catch((error) => {
+				this.loggerService.error('System update getUpdateSchedule exception: ', error.message);
+				return undefined;
 			});
 		}
 		return undefined;
@@ -199,6 +203,9 @@ export class SystemUpdateService {
 					UpdateProgress.FullHistory,
 					this.installationHistory
 				);
+			})
+			.catch((error) => {
+				this.loggerService.error('System update getUpdateHistory exception: ', error.message);
 			});
 		}
 	}
@@ -211,6 +218,9 @@ export class SystemUpdateService {
 					UpdateProgress.FullHistory,
 					this.installationHistory
 				);
+			})
+			.catch((error) => {
+				this.loggerService.error('System update deleteUpdateHistoryItems exception: ', error.message);
 			});
 		}
 	}
@@ -307,6 +317,9 @@ export class SystemUpdateService {
 				// todo: ui changes to show on update cancel
 				this.isCheckingCancel = true;
 				this.commonService.sendNotification(UpdateProgress.UpdateCheckCancelled, status);
+			})
+			.catch((error) => {
+				this.loggerService.error('System update cancelSearch exception: ', error.message);
 			});
 		}
 	}
@@ -547,6 +560,9 @@ export class SystemUpdateService {
 				if (status) {
 					this.commonService.sendNotification(UpdateProgress.WindowsRebooting);
 				}
+			})
+			.catch((error) => {
+				this.loggerService.error('System update restartWindows exception: ', error.message);
 			});
 		}
 	}
@@ -555,6 +571,9 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.getIgnoredUpdates().then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
+			})
+			.catch((error) => {
+				this.loggerService.error('System update getIgnoredUpdates exception: ', error.message);
 			});
 		}
 	}
@@ -563,6 +582,9 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.ignoreUpdate(packageName).then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
+			})
+			.catch((error) => {
+				this.loggerService.error('System update ignoreUpdate exception: ', error.message);
 			});
 		}
 	}
@@ -571,6 +593,9 @@ export class SystemUpdateService {
 		if (this.systemUpdateBridge) {
 			this.systemUpdateBridge.unignoreUpdate(packageName).then((ignoredUpdates) => {
 				this.updateIgnoredStatus(ignoredUpdates);
+			})
+			.catch((error) => {
+				this.loggerService.error('System update unignoreUpdate exception: ', error.message);
 			});
 		}
 	}
@@ -1140,6 +1165,9 @@ export class SystemUpdateService {
 						status
 					);
 				}
+			})
+			.catch((error) => {
+				this.loggerService.error('System update cancleDownload exception: ', error.message);
 			});
 		}
 	}
@@ -1167,7 +1195,10 @@ export class SystemUpdateService {
 
 	public queueToastMessage(messageID: string, fileLocation: string, resources: string): boolean {
 		if (this.systemUpdateBridge) {
-			return this.systemUpdateBridge.queueToastMessage(messageID, fileLocation, resources);
+			this.systemUpdateBridge.queueToastMessage(messageID, fileLocation, resources)
+			.catch((error) => {
+				this.loggerService.error('System update queueToastMessage exception: ', error.message);
+			});
 		}
 		return false;
 	}
