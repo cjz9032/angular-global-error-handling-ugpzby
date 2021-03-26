@@ -2,7 +2,7 @@
 	<button
 		mat-button
 		class="pagination-chevron-icon-btn"
-		id="search-page-pagination-bar-chevron-left"
+		id="{{ idPrefix }}pagination-bar-chevron-left"
 		vtrMetrics
 		metricsEvent="FeatureClick"
 		metricsItem="chevron-left"
@@ -17,7 +17,7 @@
 	<button
 		mat-button
 		class="pagination-num-btn"
-		id="search-page-pagination-bar-page{{ pageNum }}"
+		id="{{ idPrefix }}pagination-bar-page{{ pageNum }}"
 		vtrMetrics
 		metricsEvent="FeatureClick"
 		metricsItem="pagination-item"
@@ -34,7 +34,7 @@
 	<button
 		mat-button
 		class="pagination-chevron-icon-btn"
-		id="search-page-pagination-bar-chevron-right"
+		id="{{ idPrefix }}pagination-bar-chevron-right"
 		vtrMetrics
 		metricsEvent="FeatureClick"
 		metricsItem="chevron-right"

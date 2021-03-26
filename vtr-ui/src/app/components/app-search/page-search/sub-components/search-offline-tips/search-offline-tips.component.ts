@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'vtr-search-offline-tips',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./search-offline-tips.component.scss'],
 })
 export class SearchOfflineTipsComponent {
-	constructor() {}
+	@Input() idPrefix: string;
 
-	ngOnInit(): void {}
+	constructor() {}
 }

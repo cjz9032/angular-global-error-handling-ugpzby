@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
 	selector: 'vtr-search-input-widget',
@@ -14,7 +14,8 @@ export class SearchInputWidgetComponent {
 	@Input() showSearchButton: boolean = true;
 	@Input() placeholder: string = '';
 	@Input() maxlength: number = 30;
-	@ViewChild('inputCtrl') inputCtrl: any;
+	@Input() idPrefix: string;
+	@ViewChild('inputCtrl') inputCtrl: ElementRef;
 
 	constructor() {}
 
@@ -32,7 +33,7 @@ export class SearchInputWidgetComponent {
 
 	onClickInput() {
 		setTimeout(() => {
-			this.inputCtrl?.focus();
+			this.setInputFocus();
 		}, 200);
 	}
 
@@ -41,6 +42,6 @@ export class SearchInputWidgetComponent {
 	}
 
 	setInputFocus() {
-		this.inputCtrl?.focus();
+		this.inputCtrl?.nativeElement.focus();
 	}
 }

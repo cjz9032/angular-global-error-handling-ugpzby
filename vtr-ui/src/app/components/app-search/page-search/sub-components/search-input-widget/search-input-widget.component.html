@@ -2,14 +2,14 @@
 	<div class="row widget-root w-100">
 		<div class="h-100 d-flex justify-content-center align-items-center search-icon-box">
 			<button
-				id="search-widget-icon-button"
+				id="{{ idPrefix }}search-widget-icon-button"
 				mat-button
 				aria-label="search"
 				(click)="onClickSearch()"
 				[disabled]="!iconClickable || disabled"
 			>
 				<fa-icon
-					id="search-widget-icon"
+					id="{{ idPrefix }}search-widget-icon"
 					class="search-icon"
 					[icon]="['fal', 'search']"
 				></fa-icon>
@@ -20,7 +20,7 @@
 			class="h-100 d-flex justify-content-center align-items-center search-input-box flex-grow-1"
 		>
 			<input
-				id="search-widget-input"
+				id="{{ idPrefix }}search-widget-input"
 				matInput
 				#inputCtrl
 				class="search-input col flex-grow-1"
@@ -33,7 +33,7 @@
 				[maxlength]="maxlength"
 			/>
 			<button
-				id="search-clean-button"
+				id="{{ idPrefix }}search-clean-button"
 				class="clean-button-box"
 				*ngIf="input"
 				mat-button
@@ -41,7 +41,7 @@
 				metricsEvent="FeatureClick"
 				metricsParent="Dropdown.Search"
 				metricsItem="cleanSearch"
-				(click)="input = ''"
+				(click)="input = ''; onInputChange()"
 			>
 				<div class="clean-button"></div>
 			</button>
@@ -52,7 +52,7 @@
 			class="h-100 d-flex justify-content-center align-items-center search-btn-box"
 		>
 			<button
-				id="search-widget-button"
+				id="{{ idPrefix }}search-widget-button"
 				mat-raised-button
 				color="primary"
 				class="search-btn"

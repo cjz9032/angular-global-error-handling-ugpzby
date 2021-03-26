@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'vtr-search-loading-animation',
@@ -6,5 +6,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./search-loading-animation.component.scss'],
 })
 export class SearchLoadingAnimationComponent {
+	@Input() idPrefix: string;
+
+
 	constructor() {}
 }
