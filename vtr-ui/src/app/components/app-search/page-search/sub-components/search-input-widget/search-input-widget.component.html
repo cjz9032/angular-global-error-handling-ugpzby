@@ -3,6 +3,10 @@
 		<div class="h-100 d-flex justify-content-center align-items-center search-icon-box">
 			<button
 				id="{{ idPrefix }}search-widget-icon-button"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsItem="search-widget-icon-button"
+				[metricsParent]="customMetricParent"
 				mat-button
 				aria-label="search"
 				(click)="onClickSearch()"
@@ -39,8 +43,8 @@
 				mat-button
 				vtrMetrics
 				metricsEvent="FeatureClick"
-				metricsParent="Dropdown.Search"
-				metricsItem="cleanSearch"
+				metricsItem="search-clean-button"
+				[metricsParent]="customMetricParent"
 				(click)="input = ''; onInputChange()"
 			>
 				<div class="clean-button"></div>
@@ -59,6 +63,10 @@
 				aria-label="search"
 				[disabled]="disabled"
 				(click)="onClickSearch()"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsItem="search-widget-button"
+				[metricsParent]="customMetricParent"
 			>
 				SEARCH
 			</button>

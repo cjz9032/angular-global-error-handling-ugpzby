@@ -1,4 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { MetricEventName } from 'src/app/enums/metrics.enum';
+import { FeatureClick } from 'src/app/services/metric/metrics.model';
+import { MetricService } from 'src/app/services/metric/metrics.service';
 
 @Component({
 	selector: 'vtr-search-input-widget',
@@ -15,9 +18,16 @@ export class SearchInputWidgetComponent {
 	@Input() placeholder: string = '';
 	@Input() maxlength: number = 30;
 	@Input() idPrefix: string;
+	@Input() customMetricParent: string;
 	@ViewChild('inputCtrl') inputCtrl: ElementRef;
 
-	constructor() {}
+	private enterSearchEvent: FeatureClick = {
+		ItemType: MetricEventName.featureclick,
+		ItemParent: 'Page.Search',
+		ItemName: 'input.search',
+	};
+
+	constructor(private metricsService: MetricService) {}
 
 	onClickSearch() {
 		this.search.emit();
@@ -28,6 +38,7 @@ export class SearchInputWidgetComponent {
 			return;
 		}
 
+		this.metricsService.sendMetrics(this.enterSearchEvent);
 		this.search.emit();
 	}
 

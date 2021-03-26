@@ -31,21 +31,6 @@ export class PageSearchComponent implements OnInit, OnDestroy, AfterViewInit {
 	public isOnline = true;
 	public allResultItems: IFeature[] = [];
 
-	public clickSearchIconEvent: FeatureClick = {
-		ItemType: EventName.featureclick,
-		ItemParent: 'Page.Search',
-		ItemName: 'icon.search',
-	};
-	public enterSearchEvent: FeatureClick = {
-		ItemType: EventName.featureclick,
-		ItemParent: 'Page.Search',
-		ItemName: 'input.search',
-	};
-	public clickSearchBtnEvent: FeatureClick = {
-		ItemType: EventName.featureclick,
-		ItemParent: 'Page.Search',
-		ItemName: 'btn.search',
-	};
 	public searchTaskEvent: TaskAction = {
 		ItemType: EventName.taskaction,
 		TaskName: 'app-search',
