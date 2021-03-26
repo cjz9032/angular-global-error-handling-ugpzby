@@ -114,7 +114,7 @@
 					metricsEvent="FeatureClick"
 					metricsParent="Modern Preload"
 					[attr.aria-label]="appItem.isShowActiveCode ? 'hide redemption code' : 'show redemption code'"
-					id="modern-preload-button-eye-{{appItem.udcId}}-{{appItem.isShowActiveCode}}">
+					id="modern-preload-button-eye-{{appItem.isShowActiveCode ? 'true' : 'false'}}-{{appItem.udcId}}">
 					<fa-icon *ngIf="appItem.isShowActiveCode"
 						[icon]="['far', 'eye-slash']"></fa-icon>
 					<fa-icon *ngIf="!appItem.isShowActiveCode"
