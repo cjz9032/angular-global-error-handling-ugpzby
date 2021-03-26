@@ -7,6 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
 	styleUrls: ['./search-result-empty-tips.component.scss'],
 })
 export class SearchResultEmptyTipsComponent {
+	@Input() idPrefix: string;
+
 	public noSearchResultTips;
 	@Input() set userInput(input: string) {
 		this.noSearchResultTips = this.translate.instant('appSearch.noSearchResultTips', {

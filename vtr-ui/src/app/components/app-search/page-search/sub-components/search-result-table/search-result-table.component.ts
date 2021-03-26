@@ -17,6 +17,7 @@ import { PaginatorComponent } from '../paginator/paginator.component';
 export class SearchResultTableComponent {
 	@ViewChild('paginator', { static: true }) paginator: PaginatorComponent;
 	@Input() dataSource: IFeature[];
+	@Input() idPrefix: string;
 	@Output() itemClick = new EventEmitter();
 
 	public displayData: MatTableDataSource<IFeature>;

@@ -16,28 +16,33 @@
 				class="row justify-content-center search-input-widget"
 				[disabled]="!(isOnline && userInput?.length > 0)"
 				[maxlength]="40"
+				idPrefix="search-page-"
 			></vtr-search-input-widget>
 
 			<vtr-search-offline-tips
 				*ngIf="!isOnline"
 				class="row justify-content-center search-offline-tips"
+				idPrefix="search-page-"
 			></vtr-search-offline-tips>
 
 			<vtr-search-loading-animation
 				*ngIf="runningSearch && isOnline"
 				class="row justify-content-center search-loading-animation"
+				idPrefix="search-page-"
 			></vtr-search-loading-animation>
 
 			<vtr-search-result-table
-				*ngIf="allResultItems.length > 0 && isOnline"
+				*ngIf="allResultItems.length > 0 && isOnline && !runningSearch"
 				class="row justify-content-center search-result-table"
 				[dataSource]="allResultItems"
 				(itemClick)="onClickResultItem($event)"
+				idPrefix="search-page-"
 			></vtr-search-result-table>
 
 			<vtr-search-result-empty-tips
 				[userInput]="userInput"
 				*ngIf="runningSearch === false && allResultItems.length === 0 && isOnline"
+				idPrefix="search-page-"
 			></vtr-search-result-empty-tips>
 		</div>
 	</left-content>

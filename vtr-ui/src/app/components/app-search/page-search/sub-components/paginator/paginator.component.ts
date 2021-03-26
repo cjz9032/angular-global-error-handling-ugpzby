@@ -9,6 +9,7 @@ export class PaginatorComponent implements OnChanges {
 	@Input() pageSize: number;
 	@Input() totalItemsCount: number;
 	@Input() hidden: boolean;
+	@Input() idPrefix: string;
 	@Output() pageIndexChange = new EventEmitter();
 
 	pageIndex = 0;
