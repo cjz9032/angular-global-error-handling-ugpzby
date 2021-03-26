@@ -1,0 +1,75 @@
+<div class="container-fluid">
+	<div class="row widget-root w-100">
+		<div class="h-100 d-flex justify-content-center align-items-center search-icon-box">
+			<button
+				id="{{ idPrefix }}search-widget-icon-button"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsItem="search-widget-icon-button"
+				[metricsParent]="customMetricParent"
+				mat-button
+				aria-label="search"
+				(click)="onClickSearch()"
+				[disabled]="!iconClickable || disabled"
+			>
+				<fa-icon
+					id="{{ idPrefix }}search-widget-icon"
+					class="search-icon"
+					[icon]="['fal', 'search']"
+				></fa-icon>
+			</button>
+		</div>
+
+		<div
+			class="h-100 d-flex justify-content-center align-items-center search-input-box flex-grow-1"
+		>
+			<input
+				id="{{ idPrefix }}search-widget-input"
+				matInput
+				#inputCtrl
+				class="search-input col flex-grow-1"
+				type="text"
+				(click)="onClickInput()"
+				(keydown.enter)="onInputEnterKeyDown()"
+				[(ngModel)]="input"
+				(ngModelChange)="onInputChange()"
+				[placeholder]="placeholder"
+				[maxlength]="maxlength"
+			/>
+			<button
+				id="{{ idPrefix }}search-clean-button"
+				class="clean-button-box"
+				*ngIf="input"
+				mat-button
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsItem="search-clean-button"
+				[metricsParent]="customMetricParent"
+				(click)="input = ''; onInputChange()"
+			>
+				<div class="clean-button"></div>
+			</button>
+		</div>
+
+		<div
+			*ngIf="showSearchButton"
+			class="h-100 d-flex justify-content-center align-items-center search-btn-box"
+		>
+			<button
+				id="{{ idPrefix }}search-widget-button"
+				mat-raised-button
+				color="primary"
+				class="search-btn"
+				aria-label="search"
+				[disabled]="disabled"
+				(click)="onClickSearch()"
+				vtrMetrics
+				metricsEvent="FeatureClick"
+				metricsItem="search-widget-button"
+				[metricsParent]="customMetricParent"
+			>
+				SEARCH
+			</button>
+		</div>
+	</div>
+</div>

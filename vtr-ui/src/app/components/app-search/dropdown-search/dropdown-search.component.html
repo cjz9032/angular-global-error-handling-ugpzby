@@ -1,17 +1,13 @@
-<div class="search-block">
-	<div class="input-block" [class.is-show-result]="false">
-		<!-- search button-->
-		<div class="search-icon" id="dropdown-div-search-icon" role="button" (click)="onClickSearch($event, clickSearchIconEvent)">
-			<fa-icon [icon]="['fal', 'search']"></fa-icon>
-		</div>
-
-		<!-- user input-->
-		<input type="text" id="dropdown-div-search-input" #searchInput class="search-input" [placeholder]="searchTips" maxlength="30"
-		 [(ngModel)]="userInput" (keydown.enter)="onClickSearch($event, enterSearchEvent)" (click)="onInputClick($event)"/>
-
-		<!-- x button-->
-		<div class="clean-button" id="dropdown-div-clean-button" role="button" [class.active]="userInput" vtrMetrics metricsEvent="FeatureClick"
-			metricsParent="Dropdown.Search" metricsItem="cleanSearch" (click)="onCleanClick($event)">
-		</div>
-	</div>
+<div class="search-block" (click)="onDropdownClick($event)">
+	<vtr-search-input-widget
+		[iconClickable]="true"
+		[showSearchButton]="false"
+		[placeholder]="searchTips"
+		(search)="onClickSearch()"
+		[(input)]="userInput"
+		[disabled]="!(userInput?.length > 0)"
+		[maxlength]="40"
+		idPrefix="search-menu-"
+		customMetricParent="Dropdown.Search"
+	></vtr-search-input-widget>
 </div>

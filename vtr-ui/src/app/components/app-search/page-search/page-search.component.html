@@ -1,167 +1,53 @@
-<vtr-page-layout [title]="pageTitle" [textId]="'app-search-title'" [pageCssClass]="'page-app-search'"
-	[shiftLeftUp]="true" [shiftRightUp]="true" [back]="'common.ui.back' | translate"
-	[backId]="'app-search-page-btn-back'" [isInnerBack]="isInnerBack" (innerBack)="onInnerBack()">
-
+<vtr-page-layout
+	[title]="pageTitle"
+	[textId]="'app-search-title'"
+	[pageCssClass]="'page-app-search'"
+	[shiftLeftUp]="true"
+	[shiftRightUp]="true"
+	[back]="'common.ui.back' | translate"
+	[backId]="'app-search-page-btn-back'"
+	[isInnerBack]="false"
+>
 	<left-content>
 		<div class="container-fluid">
-			<!-- search input widget-->
-			<div class="row">
-				<div class="widget-search-input">
-					<!-- search icon-->
-					<div class="search-icon"  id="search-page-div-search-icon">
-						<fa-icon [icon]="['fal', 'search']"></fa-icon>
-					</div>
+			<vtr-search-input-widget
+				[(input)]="userInput"
+				(search)="onClickSearch()"
+				class="row justify-content-center search-input-widget"
+				[disabled]="!(isOnline && userInput?.length > 0)"
+				[maxlength]="40"
+				idPrefix="search-page-"
+			></vtr-search-input-widget>
 
-					<!-- search input -->
-					<input type="text" #searchInput [placeholder]="searchTips" id="search-page-div-search-input" class="search-input" maxlength="30"
-						[(ngModel)]="userInput"
-						(keydown.enter)="onTriggerSearch(enterSearchEvent)" (click)="onClickInput()"/>
+			<vtr-search-offline-tips
+				*ngIf="!isOnline"
+				class="row justify-content-center search-offline-tips"
+				idPrefix="search-page-"
+			></vtr-search-offline-tips>
 
-					<!-- search button -->
-					<div class="search-btn">
-						<vtr-ui-button [vtrMetricEnabled]="false" (onClick)="onTriggerSearch(clickSearchBtnEvent)"
-							id="search-btn-in-search-page" aria-label="search-btn-in-search-page" [btnHeight]="true"
-							[isFullWidth]="true" [label]="'SEARCH'" [isDisabled]="!isOnline || !userInput || !searchCompleted"
-							[linkId]="'search-btn-in-search-page'" alreadyJoinGroup='groupNone'></vtr-ui-button>
-					</div>
-				</div>
-			</div>
+			<vtr-search-loading-animation
+				*ngIf="runningSearch && isOnline"
+				class="row justify-content-center search-loading-animation"
+				idPrefix="search-page-"
+			></vtr-search-loading-animation>
 
-			<!-- offline indicator bannar -->
-			<div *ngIf="!isOnline">
-				<div class="row">
-					<div class="col col-12 px-0 offline-indicator">
-						<vtr-widget-offline-info [isButtonVisible]="false" [isSubtitleVisible]="false"
-							[title]="'dashboard.offlineInfo.title' | translate"
-							[subtitle]="'dashboard.offlineInfo.subtitle' | translate"
-							[buttonText]="'dashboard.offlineInfo.buttonText' | translate"
-							offlineConnection="offline-connection">
-						</vtr-widget-offline-info>
-					</div>
-				</div>
+			<vtr-search-result-table
+				*ngIf="allResultItems.length > 0 && isOnline && !runningSearch"
+				class="row justify-content-center search-result-table"
+				[dataSource]="allResultItems"
+				(itemClick)="onClickResultItem($event)"
+				idPrefix="search-page-"
+			></vtr-search-result-table>
 
-				<div class="row flex-all-center offline-tips" id="search-page-div-offline-tips" >
-					App Search is unavailable when network is disconnected at present
-				</div>
-			</div>
-
-			<div class="loading-indicator" *ngIf="isOnline && !searchCompleted">
-				<div class="row flex-all-center">
-					<mat-spinner diameter="70"></mat-spinner>
-				</div>
-				<div class="row flex-all-center loading-tips">
-					Please wait while we check your device for available settings
-				</div>
-			</div>
-
-			<!-- results view -->
-			<div class="search-results" *ngIf='isOnline && searchCompleted'>
-				<div class="row result-counter" *ngIf="allResultItems.length <= pageSize" id="search-page-div-result-counter">
-					<div class="part1">{{ allResultItems.length }}</div>&nbsp;<div class="part2">results</div>
-				</div>
-				<div class="row result-counter" *ngIf="allResultItems.length > pageSize" id="search-page-div-result-counter">
-					<div class="part1">{{ (displayPage.startItemIdx + 1) + '-' + (displayPage.startItemIdxOfNextPage) }}</div>&nbsp;
-					<div class="part2">{{ '/ ' + allResultItems.length + ' results' }}</div>
-				</div>
-
-				<!-- no search result tips -->
-				<div class="no-search-result" *ngIf="allResultItems.length === 0">
-					<div class="title" id="search-page-no-search-result-title">
-						{{ noSearchResultTips }}
-					</div>
-					<div class="description pt-24">
-						<div class="detail" id="search-page-no-search-result-description">
-							<div>Your search did not match any items.</div>
-							<ul>
-								<li>Check the spelling of your keyword</li>
-								<li>Try a different keyword</li>
-								<li>Try fewer or more general keywords</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- search result item list-->
-				<div class="has-search-result" *ngIf="displayPage.items.length > 0">
-					<div class="row result-item" tabindex="0" (click)="onTriggerResultItemAction(resultItem)" (keydown.enter)="onTriggerResultItemAction(resultItem)"
-						*ngFor="let resultItem of displayPage.items; let itemIdx = index;" vtrMetrics metricsEvent="FeatureClick"
-						[metricsItem]="resultItem.id" [metricsParam]="'category:' + resultItem.categoryId" id="search-page-result-item-{{itemIdx}}" role="button">
-						<!-- result icon
-						<div class="feature-icon-part">
-							<fa-icon [icon]="resultItem.icon || ['fal', 'gem']"></fa-icon>
-						</div>
-						-->
-
-						<!-- feature name and category-->
-						<div class="feature-description">
-							<div class="feature-name col col-8 text-two-ellipsis" >
-								{{resultItem.featureName}}
-							</div>
-
-							<div class="feature-category col col-4 text-two-ellipsis"> {{resultItem.categoryName}}</div>
-						</div>
-
-						<!-- feature icon -->
-						<div class="narrow-icon">
-							<fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
-						</div>
-					</div>
-
-
-					<!-- pagination bar-->
-					<div class="row result-pagination-bar" *ngIf="pageArray.length > 1">
-						<fa-icon [tabindex]="displayPage.pageIdx === 0 ? -1 : 0"
-						id="search-page-pagination-bar-chevron-left" role="button"
-						vtrMetrics metricsEvent="FeatureClick" metricsItem="chevron-left"
-							class="chevron-left" [class.deactive-chevron]="displayPage.pageIdx === 0"
-							[icon]="['fal', 'chevron-left']" (click)="onGoToPreResultPage()" (keydown.enter)="onGoToPreResultPage()"></fa-icon>
-						<button class="pagination-item"
-							id="search-page-pagination-bar-page{{pageNum}}"
-							vtrMetrics metricsEvent="FeatureClick" metricsItem="pagination-item"
-							metricsParam="page:{{pageNum + 1}}" *ngFor="let i of pageArray; let pageNum = index"
-							(click)="onGoToResultPage(pageNum)" (keydown.enter)="onGoToResultPage(pageNum)" [disabled]="displayPage.pageIdx === pageNum">
-							<span [class.high-light]="displayPage.pageIdx === pageNum"> {{ pageNum +
-								1 }}</span>
-						</button>
-						<fa-icon [tabindex]="displayPage.pageIdx >= pageArray.length - 1 ? -1 : 0"
-							id="search-page-pagination-bar-chevron-right" role="button"
-							vtrMetrics metricsEvent="FeatureClick" metricsItem="chevron-right"
-							class="chevron-right" [class.deactive-chevron]="displayPage.pageIdx >= pageArray.length - 1"
-							[icon]="['fal', 'chevron-right']" (click)="onGoToNextResultPage()" (keydown.enter)="onGoToNextResultPage()"></fa-icon>
-					</div>
-				</div>
-			</div>
+			<vtr-search-result-empty-tips
+				[userInput]="userInput"
+				*ngIf="runningSearch === false && allResultItems.length === 0 && isOnline"
+				idPrefix="search-page-"
+			></vtr-search-result-empty-tips>
 		</div>
 	</left-content>
 
 	<right-content>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col col-12 px-0 pt-0 pb-24">
-					<vtr-widget-support [title]="'support.documentation.title' | translate" [description]="''"
-						[items]="supportDatas.documentation" [widgetTittleId]="'documentation'"
-						[widgetDescriptionId]="''">
-					</vtr-widget-support>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col col-12 px-0 pt-0 pb-24">
-					<vtr-widget-support [title]="'support.needHelp.title' | translate"
-						[description]="'support.needHelp.description' | translate" [items]="supportDatas.needHelp"
-						[widgetTittleId]="'need-help'" [widgetDescriptionId]="'contact-us-help'">
-					</vtr-widget-support>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col col-12 px-0 pt-0 pb-24">
-					<vtr-widget-support [title]="'support.quicklinks.title' | translate" [description]="''"
-						[items]="supportDatas.quicklinks" [widgetTittleId]="'quicklinks'" [widgetDescriptionId]="''">
-					</vtr-widget-support>
-				</div>
-			</div>
-		</div>
+		<vtr-right-content-for-support></vtr-right-content-for-support>
 	</right-content>
-
 </vtr-page-layout>

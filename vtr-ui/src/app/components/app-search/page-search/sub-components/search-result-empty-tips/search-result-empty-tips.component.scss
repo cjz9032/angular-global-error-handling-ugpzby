@@ -1,0 +1,27 @@
+@import '../../../../../app.theme.scss';
+
+$font_size: 1.4rem;
+
+.no-search-result-tips {
+	margin-top: 4.96rem;
+	color: $grey_dark;
+	opacity: 0.8;
+	.title {
+		font-size: 2rem;
+	}
+
+	.description {
+		margin-top: 1.2rem;
+		font-size: $font_size;
+	}
+}
+
+:host-context(.is-gaming) {
+	.no-search-result-tips {
+		color: $gaming_lightest;
+
+		.description {
+			font-size: $gaming_grey_lightest;
+		}
+	}
+}

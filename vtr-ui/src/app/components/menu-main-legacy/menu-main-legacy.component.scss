@@ -122,24 +122,19 @@
 			}
 		}
 
-		.search-dropdown {
-			position: absolute;
-			top: calc(#{$menu_height} + 0.5rem);
-			width: 40rem;
-			right: 0rem;
-		}
+		#menu-main-nav-lnk-dropdown-app-search {
+			padding: 0;
+			float: right;
+			right: 0px;
+			left: initial;
 
-		.search-nav-item {
-			position: relative;
-		}
+			vtr-search-dropdown {
+				width: 40rem;
+			}
 
-		.search-nav-item-mask {
-			opacity: 0;
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			z-index: 100;
-			cursor: pointer;
+			&::before {
+				display: none;
+			}
 		}
 
 		.navbar-collapse {
