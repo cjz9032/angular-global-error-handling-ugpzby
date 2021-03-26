@@ -1195,13 +1195,9 @@ export class SystemUpdateService {
 
 	public queueToastMessage(messageID: string, fileLocation: string, resources: string): boolean {
 		if (this.systemUpdateBridge) {
-			return this.systemUpdateBridge.queueToastMessage(messageID, fileLocation, resources)
-			.then((result)=>{
-				return result;
-			})
+			this.systemUpdateBridge.queueToastMessage(messageID, fileLocation, resources)
 			.catch((error) => {
 				this.loggerService.error('System update queueToastMessage exception: ', error.message);
-				return false;
 			});
 		}
 		return false;
