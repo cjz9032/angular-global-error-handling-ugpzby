@@ -18,14 +18,8 @@ export class SearchInputWidgetComponent {
 	@Input() placeholder: string = '';
 	@Input() maxlength: number = 30;
 	@Input() idPrefix: string;
-	@Input() customMetricParent: string;
+	@Input() customMetricParent: string = '';
 	@ViewChild('inputCtrl') inputCtrl: ElementRef;
-
-	private enterSearchEvent: FeatureClick = {
-		ItemType: MetricEventName.featureclick,
-		ItemParent: 'Page.Search',
-		ItemName: 'input.search',
-	};
 
 	constructor(private metricsService: MetricService) {}
 
@@ -38,7 +32,11 @@ export class SearchInputWidgetComponent {
 			return;
 		}
 
-		this.metricsService.sendMetrics(this.enterSearchEvent);
+		this.metricsService.sendMetrics({
+			ItemType: MetricEventName.featureclick,
+			ItemParent: this.customMetricParent ? this.customMetricParent : this.metricsService.getPageName(),
+			ItemName: 'input.search',
+		});
 		this.search.emit();
 	}
 
