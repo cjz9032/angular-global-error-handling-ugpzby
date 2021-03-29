@@ -19,7 +19,6 @@
 				color: $light;
 				font-size: $fontsize_xs;
 				line-height: 2.8rem;
-				//border-bottom: 0.1rem solid $screen_light_15;
 				font-weight: $weight_light;
 				margin-bottom: 0;
 			}
@@ -71,14 +70,9 @@
 					}
 				}
 				::ng-deep .auto-set-checkbox {
-					// float: left;
 					margin-top: 0px;
 				}
 			}
-
-			// .entertainmentCheckout {
-			// 	float: none;
-			// }
 
 			.feature-note {
 				background-color: #f5f7f8;
@@ -135,7 +129,6 @@
 
 	ul.list-group {
 		list-style-type: none;
-		//padding-bottom: 3rem;
 		li {
 			&:last-child {
 				::ng-deep .vtr-ui-switch-row {

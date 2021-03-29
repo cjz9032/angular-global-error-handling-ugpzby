@@ -54,7 +54,6 @@ const microOptimizeModeResponse = {
 describe('SubpageDeviceSettingsAudioComponent', () => {
 	let fixture: ComponentFixture<SubpageDeviceSettingsAudioComponent>;
 	let component: SubpageDeviceSettingsAudioComponent;
-	// let shellService: VantageShellService;
 	let commonService: CommonService;
 	let audioService: AudioService;
 	let dashboardService: DashboardService;
@@ -188,7 +187,6 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.microphoneProperties = { ...microphoneProperties };
 		fixture.detectChanges();
 
-		// spyOnProperty(audioService, 'isShellAvailable').and.returnValue(true);
 		const spy = spyOn(component, 'updateMicrophoneCache');
 		component.onVoipCheckboxChange(true);
 		expect(component.updateMicrophoneCache).toHaveBeenCalled();
@@ -260,18 +258,6 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.initDolbyAudioFromCache();
 		expect(spy).toHaveBeenCalled();
 	});
-
-	// it('should call onNotification - case LocalStorageKey.WelcomeTutorial', () => {
-	// 	fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-	// 	component = fixture.componentInstance;
-	// 	const spy = spyOn<any>(component, 'initFeatures');
-	// 	const notification: AppNotification = {
-	// 		type: LocalStorageKey.WelcomeTutorial,
-	// 		payload: { page: 2 },
-	// 	};
-	// 	component['onNotification'](notification);
-	// 	expect(spy).toHaveBeenCalled();
-	// });
 
 	it('should call onOptimizeModesRadioChange - microOptimizeModeResponse is equal to newVal', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
@@ -449,11 +435,9 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		);
 		component.updateDolbyModeModel(dolbyModeResponse);
 		component.getDolbyModesStatus();
-		// const spyUpdateDolbyModeSelection = spyOn(component, 'updateDolbyModeSelection');
 		component.startMonitorHandlerForDolby(dolbyModeResponse);
 
 		expect(spy).toHaveBeenCalled();
-		// expect(spyUpdateDolbyModeSelection).toHaveBeenCalled();
 	});
 
 	it('should call initVisibility ', () => {
@@ -470,7 +454,6 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.getDolbyModesStatus();
 
 		expect(spy).toHaveBeenCalled();
-		// expect(spyInitVisibility).toHaveBeenCalled();
 	});
 
 	it('should call onDolbySettingRadioChange - promise resolved', () => {
@@ -718,14 +701,6 @@ describe('SubpageDeviceSettingsAudioComponent', () => {
 		component.startMonitorHandler(microphone);
 		expect(spy).toHaveBeenCalled();
 	});
-
-	// it('should call onCardCollapse', () => {
-	// 	fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);
-	// 	component = fixture.componentInstance;
-	// 	const spy = spyOn(component.manualRefresh, 'emit');
-	// 	component.onCardCollapse(false);
-	// 	expect(spy).toHaveBeenCalled();
-	// });
 
 	it('should call initMicrophoneFromCache', () => {
 		fixture = TestBed.createComponent(SubpageDeviceSettingsAudioComponent);

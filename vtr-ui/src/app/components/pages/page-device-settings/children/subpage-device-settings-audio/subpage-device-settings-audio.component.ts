@@ -266,24 +266,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	// getSupportedModes() {
-	// 	try {
-	// 		if (this.audioService.isShellAvailable) {
-	// 			this.audioService.getSupportedModes()
-	// 				.then((response: MicrophoneOptimizeModes) => {
-	// 					this.microOptimizeModeResponse = response;
-	// 					this.logger.info('getSupportedModes', response);
-	// 				}).catch(error => {
-	// 					this.logger.error('getSupportedModes', error.message);
-	// 					return EMPTY;
-	// 				});
-	// 		}
-	// 	} catch (error) {
-	// 		this.logger.error('getSupportedModes' + error.message);
-	// 		return EMPTY;
-	// 	}
-	// }
-
 	onOptimizeModesRadioChange(event: any) {
 		try {
 			const newVal = event.value;
@@ -309,31 +291,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			return EMPTY;
 		}
 	}
-
-	// getMicrophoneSettings() {
-	// 	try {
-	// 		if (this.audioService.isShellAvailable) {
-	// 			this.audioService.getMicrophoneSettings()
-	// 				.then((microphone: Microphone) => {
-	// 					this.getSupportedModes();
-	// 					this.microphoneProperties = microphone;
-
-	// 					this.microphoneLoader = false;
-
-	// 					const status = new FeatureStatus(microphone.available, microphone.muteDisabled, microphone.permission);
-	// 					this.commonService.setSessionStorageValue(SessionStorageKey.DashboardMicrophone, status);
-
-	// 					this.logger.info('getMicrophoneSettings', microphone);
-	// 				}).catch(error => {
-	// 					this.logger.error('getMicrophoneSettings', error.message);
-	// 					return EMPTY;
-	// 				});
-	// 		}
-	// 	} catch (error) {
-	// 		this.logger.error('getMicrophoneSettings' + error.message);
-	// 		return EMPTY;
-	// 	}
-	// }
 
 	onRightIconClick(tooltip: any, $event: any) {
 		this.toggleToolTip(tooltip, true);
@@ -966,7 +923,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			true
 		);
 
-		// const optimizeMode = ['Only My Voice', 'Normal', 'Multiple Voice', 'Voice Recogntion'];
 		const optimizeMode = [
 			'device.deviceSettings.audio.microphone.optimize.options.OnlyMyVoice',
 			'device.deviceSettings.audio.microphone.optimize.options.Normal',
@@ -1120,10 +1076,6 @@ export class SubpageDeviceSettingsAudioComponent implements OnInit, OnDestroy {
 			);
 		}
 	}
-
-	// private defaultAudioCaptureDeviceChanged(args: any) {
-	// 	this.getMicrophoneSettingsAsync();
-	// }
 
 	initVisibility() {
 		try {

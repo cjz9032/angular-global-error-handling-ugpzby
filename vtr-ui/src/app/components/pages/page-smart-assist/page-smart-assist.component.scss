@@ -14,30 +14,9 @@ $fontsize_xs: 1.4rem;
 
 ::ng-deep {
 	.vtr-page-smart-assist {
-		// .title {
-		// 	opacity: 0.8;
-		// 	color: $main_darker;
-		// 	font-size: 7rem;
-		// 	line-height: 8.2rem;
-		// }
 		ul.list-group {
 			list-style-type: none;
-			// padding-bottom: 1rem;
 		}
-		// .caption {
-		// 	max-width: 60rem;
-		// 	padding-left: 2rem;
-		// 	p {
-		// 		font-size: 1.5rem;
-		// 		color: $main_darker;
-		// 	}
-		// 	a {
-		// 		text-decoration: underline;
-		// 		&:hover {
-		// 			text-decoration: underline;
-		// 		}
-		// 	}
-		// }
 		.blur-1 {
 			opacity: 0.65;
 			pointer-events: none;
@@ -62,9 +41,6 @@ $fontsize_xs: 1.4rem;
 						color: $menu_hover;
 					}
 				}
-				// &.screen-lock-note {
-				// 	// max-width: 64rem;
-				// }
 				&.auto-screen-off-note {
 					p {
 						color: $alt;
@@ -157,11 +133,6 @@ $fontsize_xs: 1.4rem;
 					}
 				}
 			}
-			// .slider-note {
-			// 	margin: 0 0 0 1rem;
-			// 	padding-right: 1.4rem;
-			// 	// max-width: 60rem;
-			// }
 			.padding-right-07 {
 				padding-right: 0.7rem;
 			}
@@ -239,14 +210,12 @@ $fontsize_xs: 1.4rem;
 			p {
 				font-size: $fontsize_xs;
 				font-weight: $weight_light;
-				// max-width: 60rem !important;
 				color: $grey_dark;
 				width: 95%;
 			}
 		}
 		.fac-control {
 			margin-left: 3rem;
-			//padding-top: 1.5rem;
 		}
 
 		.auto-screen-lock-help-icon {
@@ -272,7 +241,6 @@ $fontsize_xs: 1.4rem;
 
 		.keep-my-display-block {
 			::ng-deep .vtr-ui-switch-row.white-theme {
-				// border-top: 0.1rem solid $shade_lighter;
 				border-bottom: none;
 			}
 			.display-padding {
@@ -392,7 +360,6 @@ $fontsize_xs: 1.4rem;
 }
 
 .intelligent-security-image {
-	// margin: -1.5rem -2.4rem 0rem -0.9rem;
 	min-height: 16rem;
 	position: relative;
 	& > img {

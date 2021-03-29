@@ -41,12 +41,10 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	humanPresenceDetectStatus = new FeatureStatus(false, true);
 	autoIrCameraLoginStatus = new FeatureStatus(false, true);
 	intelligentSecurity: IntelligentSecurity = new IntelligentSecurity();
-	// public intelligentSecurityCopy: IntelligentSecurity;
 	autoScreenLockTimer = false;
 	zeroTouchLoginStatus = new FeatureStatus(false, true);
 	zeroTouchLockTitle: string;
 	options: any;
-	// public keepMyDisplay: boolean;
 	getAutoScreenOffNoteStatus: any;
 	intelligentScreen: IntelligentScreen = new IntelligentScreen();
 	intelligentMedia = new FeatureStatus(false, true);
@@ -515,7 +513,6 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 
 	private getAutoScreenOffNoteStatusFunc() {
 		this.getAutoScreenOffNoteStatus = setInterval(() => {
-			// this.logger.info('Trying after 30 seconds for getting auto screenOffNoteStatus');
 			this.smartAssist.getAutoScreenOffNoteStatus().then((response) => {
 				this.intelligentScreen.isAutoScreenOffNoteVisible = response;
 			});

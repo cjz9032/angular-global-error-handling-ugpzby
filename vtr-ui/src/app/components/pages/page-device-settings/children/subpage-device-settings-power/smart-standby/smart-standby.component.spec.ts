@@ -53,9 +53,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call ngOnit method', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const { fixture, smartStandbyComponent, powerService } = setup();
 			const spy = spyOn(powerService, 'getSmartStandbyCapability').and.returnValue(
 				Promise.resolve(true)
@@ -65,9 +62,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call showSmartStandby method - else case 1', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const { fixture, smartStandbyComponent, powerService } = setup();
 			powerService.isShellAvailable = false;
 			smartStandbyComponent.showSmartStandby();
@@ -75,9 +69,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call showSmartStandby method - else case 2', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const { fixture, smartStandbyComponent, powerService } = setup();
 			powerService.isShellAvailable = true;
 			smartStandbyComponent.firstTimeLoad = false;
@@ -89,9 +80,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call showSmartStandby method - else case 3', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const { fixture, smartStandbyComponent, powerService } = setup();
 			powerService.isShellAvailable = true;
 			const spy = spyOn(powerService, 'getSmartStandbyCapability').and.returnValue(
@@ -104,9 +92,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call showSmartStandby method - catch block', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const { fixture, smartStandbyComponent, powerService } = setup();
 			powerService.isShellAvailable = true;
 			smartStandbyComponent.firstTimeLoad = false;
@@ -117,35 +102,7 @@ describe('Component: SmartStandby', () => {
 			expect(spy).toHaveBeenCalled();
 		});
 
-		// it('should call getSmartStandbyCapability', async(() => {
-		// 	const fixture = TestBed.createComponent(SmartStandbyComponent);
-		// 	const smartStandbyComponent = fixture.debugElement.componentInstance;
-		// 	const spy = spyOn(smartStandbyComponent, 'showSmartStandby')
-		// 	smartStandbyComponent.getSmartStandbyCapability()
-		// 	fixture.detectChanges()
-		// 	fixture.whenStable().then(() => {
-		// 		expect(spy).toHaveBeenCalled();
-		// 	})
-		// }));
-
-		/* it('should call setSmartStandbySection - for true', async(() => {
-			const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService);
-			powerService.isShellAvailable = true;
-			smartStandbyComponent.cache = new SmartStandby();
-			smartStandbyComponent.smartStandby = smartStandbyComponent.cache;
-			smartStandbyComponent.smartStandby.isEnabled = true;
-			//spyOn(powerService, 'getSmartStandbyEnabled').and.returnValue(Promise.resolve(true));
-			const spy = spyOn(smartStandbyComponent, 'splitStartEndTime');
-			smartStandbyComponent.setSmartStandbySection(true);
-			expect(spy).toHaveBeenCalled();
-		})); */
-
 		it('should call setSmartStandbySection - else case - 2', waitForAsync(() => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const { fixture, smartStandbyComponent, powerService } = setup();
 			powerService.isShellAvailable = true;
 			spyOn(powerService, 'getSmartStandbyEnabled').and.returnValue(Promise.resolve(false));
@@ -157,17 +114,12 @@ describe('Component: SmartStandby', () => {
 		}));
 
 		it('should call initDataFromCache - outer if', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const commonService = fixture.debugElement.injector.get(CommonService); */
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const smartStandby = new SmartStandby();
 			smartStandby.isCapable = true;
 			smartStandbyComponent.smartStandby = smartStandby;
 
-			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, smartStandby);
 			spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandby);
-			// smartStandbyComponent.cache = new SmartStandby();
 			const spy = spyOn(smartStandbyComponent, 'updateScheduleComputerModesUIModel');
 
 			smartStandbyComponent.initDataFromCache();
@@ -178,21 +130,14 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call initDataFromCache - with empty cache', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const commonService = fixture.debugElement.injector.get(CommonService); */
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const data = new SmartStandby();
-			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, undefined);
 			spyOn(commonService, 'getLocalStorageValue').and.returnValue(undefined);
 			smartStandbyComponent.initDataFromCache();
 			expect(smartStandbyComponent.cache).toEqual(data);
 		});
 
 		it('should call initDataFromCache - inner else', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const commonService = fixture.debugElement.injector.get(CommonService); */
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const smartStandby = new SmartStandby();
 			smartStandby.isCapable = true;
@@ -200,10 +145,6 @@ describe('Component: SmartStandby', () => {
 
 			spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandby);
 
-			// smartStandbyComponent.cache.isCapable = false;
-			// smartStandbyComponent.smartStandby = smartStandbyComponent.cache;
-			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, smartStandby);
-			// spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandbyComponent.cache);
 			smartStandbyComponent.initDataFromCache();
 			expect(smartStandbyComponent.smartStandby.isEnabled).toEqual(
 				smartStandbyComponent.cache.isEnabled
@@ -217,8 +158,6 @@ describe('Component: SmartStandby', () => {
 			smartStandbyComponent.smartStandby = smartStandby;
 
 			spyOn(commonService, 'getLocalStorageValue').and.returnValue(smartStandby);
-			// this.localCacheService.setLocalCacheValue(LocalStorageKey.SmartStandbyCapability, smartStandby);
-			// smartStandbyComponent.cache = new SmartStandby();
 			const spy = spyOn(smartStandbyComponent.smartStandbyCapability, 'emit');
 			smartStandbyComponent.initDataFromCache();
 			expect(spy).toHaveBeenCalled();
@@ -243,9 +182,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call onSmartStandbyToggle - inner if', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const smartStandby = new SmartStandby();
 			smartStandbyComponent.smartStandby = smartStandby;
@@ -258,9 +194,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call onSmartStandbyToggle - inner if- UpdateScheduleComputerModesUIModel', () => {
-			// const fixture = TestBed.createComponent(SmartStandbyComponent);
-			// const smartStandbyComponent = fixture.debugElement.componentInstance;
-			// const powerService = fixture.debugElement.injector.get(PowerService);
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const smartStandby = new SmartStandby();
 			smartStandbyComponent.smartStandby = smartStandby;
@@ -276,7 +209,6 @@ describe('Component: SmartStandby', () => {
 				'setSmartStandbySection'
 			);
 			smartStandbyComponent.onSmartStandbyToggle(event);
-			// expect(spyUpdateScheduleComputerModesUIModel).toHaveBeenCalled();
 		});
 
 		it('should call onSmartStandbyToggle isAutonomicCapability is true', () => {
@@ -315,9 +247,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call onSetActiveStartEnd - isStart is false', () => {
-			/* 	const fixture = TestBed.createComponent(SmartStandbyComponent);
-				const smartStandbyComponent = fixture.debugElement.componentInstance;
-				const powerService = fixture.debugElement.injector.get(PowerService); */
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			spyOn(powerService, 'setSmartStandbyActiveStartEnd').and.returnValue(
 				Promise.resolve(0)
@@ -330,9 +259,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call onSetDaysOfWeekOff', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const { fixture, smartStandbyComponent, powerService, commonService } = setup();
 			const event = new Event('click');
 			powerService.isShellAvailable = true;
@@ -348,10 +274,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call onSetDaysOfWeekOff - outer else case', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService);
-			const smartStandbyService = fixture.debugElement.injector.get(SmartStandbyService); */
 			const {
 				fixture,
 				smartStandbyComponent,
@@ -362,7 +284,6 @@ describe('Component: SmartStandby', () => {
 			const event = new Event('click');
 			powerService.isShellAvailable = false;
 			smartStandbyComponent.cache = new SmartStandby();
-			// const spy = spyOn(powerService, 'setSmartStandbyDaysOfWeekOff').and.returnValue(Promise.resolve(1))
 			smartStandbyComponent.onSetDaysOfWeekOff(event);
 			expect(smartStandbyService.days).toEqual(
 				smartStandbyComponent.smartStandby.daysOfWeekOff
@@ -370,9 +291,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call onSetDaysOfWeekOff - inner else case', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const {
 				fixture,
 				smartStandbyComponent,
@@ -421,13 +339,9 @@ describe('Component: SmartStandby', () => {
 			};
 			smartStandbyComponent.showDropDown = [false, false, false];
 			smartStandbyComponent.onSmartStandbyNotification(notitfiaction);
-			// expect(smartStandbyComponent.showDropDown).not.toEqual([]);
 		});
 
 		it('should call getIsAutonomicCapability - inner if ', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const {
 				fixture,
 				smartStandbyComponent,
@@ -444,21 +358,7 @@ describe('Component: SmartStandby', () => {
 			expect(spy).toHaveBeenCalled();
 		});
 
-		// it('should call getIsAutonomicCapability - outer if ', () => {
-		// 	let fixture = TestBed.createComponent(SmartStandbyComponent);
-		// 	let smartStandbyComponent = fixture.debugElement.componentInstance;
-		// 	let powerService = fixture.debugElement.injector.get(PowerService)
-		// 	powerService.isShellAvailable = false
-		// 	// let spy = spyOn(powerService, 'getIsAutonomicCapability').and.returnValue(Promise.resolve(false))
-		// 	// smartStandbyComponent.isAutonomicCapability = false
-		// 	smartStandbyComponent.getIsAutonomicCapability()
-		// 	// expect(spy).toHaveBeenCalled();
-		// })
-
 		it('should call getIsAutonomicCapability - catch block', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const {
 				fixture,
 				smartStandbyComponent,
@@ -479,9 +379,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call getSmartStandbyIsAutonomic when reject', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const {
 				fixture,
 				smartStandbyComponent,
@@ -498,9 +395,6 @@ describe('Component: SmartStandby', () => {
 		});
 
 		it('should call getSmartStandbyIsAutonomic - else', () => {
-			/* const fixture = TestBed.createComponent(SmartStandbyComponent);
-			const smartStandbyComponent = fixture.debugElement.componentInstance;
-			const powerService = fixture.debugElement.injector.get(PowerService); */
 			const {
 				fixture,
 				smartStandbyComponent,
@@ -523,7 +417,6 @@ describe('Component: SmartStandby', () => {
 				smartStandbyService,
 			} = setup();
 			const AUTOMATIC_MODE = 'Automatic mode';
-			// const event = new Event('click');
 			const event = { value: AUTOMATIC_MODE };
 			smartStandbyComponent.onCheckboxClicked(event);
 			expect(smartStandbyComponent.checkbox).toEqual(true);

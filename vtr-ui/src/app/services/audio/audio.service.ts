@@ -119,17 +119,6 @@ export class AudioService {
 		}
 	}
 
-	// getMicrophoneSettings(): Promise<Microphone> {
-	// 	try {
-	// 		if (this.isShellAvailable) {
-	// 			return this.microphone.getMicrophoneSettings();
-	// 		}
-	// 		return undefined;
-	// 	} catch (error) {
-	// 		throw new Error(error.message);
-	// 	}
-	// }
-
 	getDolbyMode(): Promise<DolbyModeResponse> {
 		try {
 			if (this.isShellAvailable) {
@@ -151,17 +140,6 @@ export class AudioService {
 			throw new Error(error.message);
 		}
 	}
-
-	// getSupportedModes(): Promise<MicrophoneOptimizeModes> {
-	// 	try {
-	// 		if (this.isShellAvailable) {
-	// 			return this.microphone.getSupportedModes();
-	// 		}
-	// 		return undefined;
-	// 	} catch (error) {
-	// 		throw new Error(error.message);
-	// 	}
-	// }
 
 	setMicrophoneOpitimaztion(mode: string): Promise<boolean> {
 		try {

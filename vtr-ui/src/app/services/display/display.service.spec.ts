@@ -506,11 +506,6 @@ describe('DisplayService', () => {
 		(displayService as any).cameraSettings = {
 			startMonitor: () => Promise.resolve({ permission: true }),
 		};
-		/* const spySN = spyOn(commonService, 'sendNotification');
-		const returnValue = displayService.startMonitorForCameraPermission();
-		expect(spySN).toHaveBeenCalled(); */
-
-		// expect(returnValue).toBe(undefined);
 
 		expect(displayService.startMonitorForCameraPermission).toThrow();
 	});

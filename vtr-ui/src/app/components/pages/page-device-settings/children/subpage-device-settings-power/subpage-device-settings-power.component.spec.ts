@@ -457,37 +457,6 @@ describe('SubpageDeviceSettingsPowerComponent', () => {
 
 			discardPeriodicTasks();
 		}));
-		// it('#getAlwaysOnUSBStatusThinkPad should call catch block', async () => {
-		// 	const { component } = setup();
-		// 	expect(component['getAlwaysOnUSBStatusThinkPad']).toThrow();
-		// });
-		// it('#getEasyResumeStatusThinkPad should call catch block', async () => {
-		// 	const { component } = setup();
-		// 	expect(component['getEasyResumeStatusThinkPad']).toThrow();
-		// });
-		//
-		// it('#initOtherSettingsFromCache should call catch block', async () => {
-		// 	const { component } = setup();
-		// 	expect(component['initOtherSettingsFromCache']).toThrow();
-		// });
-		// it('#initConservationModeFromCache should call catch block', async () => {
-		// 	const { component } = setup();
-		// 	expect(component['initConservationModeFromCache']).toThrow();
-		// });
-		//
-		// it('#initExpressChargingFromCache should call catch block', async () => {
-		// 	const { component } = setup();
-		// 	expect(component['initExpressChargingFromCache']).toThrow();
-		// });
-		// it('#initBatteryChargeThresholdFromCache should call catch block', async () => {
-		// 	const { component } = setup();
-		// 	expect(component['initBatteryChargeThresholdFromCache']).toThrow();
-		// });
-		//
-		// it('#initGaugeResetInfoFromCache should call catch block', async () => {
-		// 	const { component } = setup();
-		// 	expect(component['initGaugeResetInfoFromCache']).toThrow();
-		// });
 		it('#getEasyResumeStatusThinkPad should call', fakeAsync(() => {
 			const { component, powerService, localCacheService } = setup();
 			spyOn(powerService, 'startMonitor').and.returnValue(Promise.resolve(true));

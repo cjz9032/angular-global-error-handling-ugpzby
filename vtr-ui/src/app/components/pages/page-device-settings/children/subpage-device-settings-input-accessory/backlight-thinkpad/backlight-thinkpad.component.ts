@@ -80,19 +80,6 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		);
 	}
 
-	// public async updateMode(mode) {
-	// 	this.currentMode = mode;
-	// 	this.cacheData.currentMode = this.currentMode;
-	// 	this.localCacheService.setLocalCacheValue(LocalStorageKey.KBDBacklightThinkPadCapability, this.cacheData)
-	// 	if (this.currentMode === BacklightStatusEnum.AUTO) {
-	// 		await this.setKBDBacklightStatus(BacklightStatusEnum.OFF);
-	// 		this.setAutomaticKBDBacklight(false);
-	// 	} else {
-	// 		this.setKBDBacklightStatus(this.currentMode);
-	// 		this.setAutomaticKBDBacklight(false);
-	// 	}
-	// }
-
 	public getKBDBacklightCapability() {
 		try {
 			if (this.keyboardService.isShellAvailable) {
@@ -169,19 +156,6 @@ export class BacklightThinkpadComponent implements OnInit, OnDestroy {
 		try {
 			if (this.keyboardService.isShellAvailable) {
 				return this.keyboardService.getAutoKBDBacklightCapability();
-				// .then(res => {
-				// 	this.logger.info('BacklightThinkpadComponent:getAutoKBDBacklightCapability', res);
-				// 	if (res) {
-				// 		this.addToObjectsList(this.autoObject);
-				// 		this.getAutoKBDStatus();
-				// 	} else {
-				// 		this.removeObjByValue(BacklightStatusEnum.AUTO);
-				// 	}
-				// 	this.isBaseAuto(this.modes, BacklightStatusEnum.AUTO);
-				// }).catch(error => {
-				// 	this.logger.error('BacklightThinkpadComponent:getAutoKBDBacklightCapability', error.message);
-				// 	return EMPTY;
-				// });
 			}
 		} catch (error) {
 			this.logger.error(
