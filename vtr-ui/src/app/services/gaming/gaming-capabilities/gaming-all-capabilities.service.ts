@@ -15,6 +15,7 @@ export class GamingAllCapabilitiesService {
 	public macrokey: any;
 	private gamingAllCapabilities: any;
 	public gamingThermalMode: any = new Subject();
+	public isGetCapabilitiesAready = false;
 	constructor(
 		shellService: VantageShellService,
 		private localCacheService: LocalCacheService,
@@ -38,6 +39,7 @@ export class GamingAllCapabilitiesService {
 	}
 
 	setCapabilityValuesGlobally(capabilities: any) {
+		this.isGetCapabilitiesAready = true;
 		this.localCacheService.setLocalCacheValue(
 			LocalStorageKey.macroKeyFeature,
 			capabilities.macroKeyFeature

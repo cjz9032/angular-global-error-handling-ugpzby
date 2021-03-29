@@ -120,51 +120,51 @@ export class AppSearch {
 
 		// Version 3.7 app search for gaming
 		static MacroKey = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.macroKey';
 			static readonly pageId = `appSearch.features.gamingFeatures.macroKey`;
 		};
 		static ThermalMode = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.thermalMode';
 			static readonly pageId = `appSearch.features.gamingFeatures.thermalMode`;
 		};
 		static NetworkBoost = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.networkBoost';
 			static readonly pageId = `appSearch.features.gamingFeatures.networkBoost`;
 		};
 		static AutoClose = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.autoClose';
 			static readonly pageId = `appSearch.features.gamingFeatures.autoClose`;
 		};
 		static HybridMode = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.hybridMode';
 			static readonly pageId = `appSearch.features.gamingFeatures.hybridMode`;
 		};
 		static OverDrive = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.overDrive';
 			static readonly pageId = `appSearch.features.gamingFeatures.overDrive`;
 		};
 		static TouchpadLock = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.touchpadLock';
 			static readonly pageId = `appSearch.features.gamingFeatures.touchpadLock`;
 		};
 		static Lighting = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.lighting';
 			static readonly pageId = `appSearch.features.gamingFeatures.lighting`;
 		};
 		static RAMOverClock = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.ramOverClock';
 			static readonly pageId = `appSearch.features.gamingFeatures.ramOverClock`;
 		};
 		static CPUOverClock = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.cpuOverClock';
 			static readonly pageId = `appSearch.features.gamingFeatures.cpuOverClock`;
 		};
 		static GPUOverClock = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.gpuOverClock';
 			static readonly pageId = `appSearch.features.gamingFeatures.gpuOverClock`;
 		};
 		static VRAMOverClock = class {
-			static readonly categoryId = 'appSearch.features.gamingFeatures';
+			static readonly categoryId = 'appSearch.features.gamingFeatures.vramOverClock';
 			static readonly pageId = `appSearch.features.gamingFeatures.vramOverClock`;
 		};
 		// gaming end
