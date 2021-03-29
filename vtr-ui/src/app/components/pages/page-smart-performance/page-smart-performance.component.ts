@@ -111,15 +111,15 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 			if (state === SubscriptionState.Active) {
 				this.writeSmartPerformanceActivity('True', 'True', 'Active');
 			}
-			else if (state === SubscriptionState.Inactive) {
-				if (!isFreePCScanRun) {
-					this.writeSmartPerformanceActivity('True', 'False', 'InActive');
-				} else if (isFreePCScanRun === true) {
-					this.writeSmartPerformanceActivity('True', 'True', 'InActive');
-				}
+			else if (state === SubscriptionState.Expired) {
+				this.writeSmartPerformanceActivity('True', 'True', 'Expired');
 			}
 			else {
-				this.writeSmartPerformanceActivity('True', 'True', 'Expired');
+				if (!isFreePCScanRun) {
+					this.writeSmartPerformanceActivity('True', 'False', 'InActive');
+				} else {
+					this.writeSmartPerformanceActivity('True', 'True', 'InActive');
+				}
 			}
 		});
 
@@ -413,7 +413,6 @@ export class PageSmartPerformanceComponent implements OnInit, OnDestroy {
 
 	tryScan() {
 		if (this.isOnline) {
-			this.writeSmartPerformanceActivity('True', 'True', 'InActive');
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.HasSubscribedScanCompleted,
 				false
