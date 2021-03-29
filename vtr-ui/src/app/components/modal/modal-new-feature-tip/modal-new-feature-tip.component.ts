@@ -39,22 +39,16 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 		'v3.2': 3.002,
 		'v3.2.5': 3.002005,
 		'v3.6': 3.006,
-		'v3.7': 3.007,
 	};
 
 	allNewTips: NewTipItem[] = [
 		{
 			tipId: MenuID.security,
-			desc: 'notification.menu.security',
-			version: this.tipsVersions['v3.2'],
-		},
-		{
-			tipId: MenuID.homeSecurity,
 			desc: 'notification.menu.connectedHomeSecurity',
 			version: this.tipsVersions['v3.2'],
 		},
 		{
-			tipId: MenuID.hardwareScan,
+			tipId: MenuID.support,
 			desc: 'notification.menu.hardwareScan',
 			version: this.tipsVersions['v3.2.5'],
 		},
@@ -62,11 +56,6 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 			tipId: MenuID.appSearch,
 			desc: 'notification.menu.appSearch',
 			version: this.tipsVersions['v3.6'],
-		},
-		{
-			tipId: MenuID.device,
-			desc: 'notification.menu.autoClose',
-			version: this.tipsVersions['v3.7'],
 		},
 	];
 

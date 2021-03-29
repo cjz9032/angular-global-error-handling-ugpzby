@@ -192,7 +192,7 @@ export class ConfigService {
 
 				this.menu = await this.updateHide(resultMenu, this.activeSegment, this.isBetaUser);
 
-				await this.initializeSmartAssist(machineType, this.activeSegment);
+				await this.initializeSmartAssist(machineType);
 				this.notifyMenuChange(this.menu);
 			}
 
@@ -780,7 +780,6 @@ export class ConfigService {
 							'connected-home-security',
 							'hardware-scan',
 							'app-search',
-							'device',
 						];
 						const isIncludesItem = this.menu.find((item) => idArr.includes(item.id));
 						if (isIncludesItem) {
@@ -816,11 +815,7 @@ export class ConfigService {
 		return menu;
 	}
 
-	private async initializeSmartAssist(machineType, activeSegment: SegmentConst) {
-		if (activeSegment !== SegmentConst.SMB) {
-			this.localCacheService.setLocalCacheValue(LocalStorageKey.IsSmartAssistSupported, true);
-			return;
-		}
+	private async initializeSmartAssist(machineType) {
 		if (machineType) {
 			this.smartAssistFilter(machineType);
 		} else if (this.deviceService.isShellAvailable) {

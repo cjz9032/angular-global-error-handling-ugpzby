@@ -26,7 +26,7 @@ export class CommonService {
 	public osVersion = 0;
 	public systemTimeFormat12Hrs: BehaviorSubject<boolean> = new BehaviorSubject(false);
 	public lastFeatureVersion = 0;
-	public newFeatureVersion = 3.007;
+	public newFeatureVersion = 3.006;
 
 	constructor() {
 		this.notificationSubject = new BehaviorSubject<AppNotification>(

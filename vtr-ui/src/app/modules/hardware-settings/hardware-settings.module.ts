@@ -116,7 +116,6 @@ import { DOLBY_FUSION_CLIENT } from '../../components/pages/page-device-settings
 import { FORTE_CLIENT } from '../../components/pages/page-device-settings/children/subpage-device-settings-audio/forte-client';
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { DeviceService } from '../../services/device/device.service';
-import { AutoCloseModule } from 'src/app/feature/auto-close/auto-close.module';
 
 @NgModule({
 	declarations: [
@@ -192,7 +191,6 @@ import { AutoCloseModule } from 'src/app/feature/auto-close/auto-close.module';
 		SystemUpdateModule,
 		MatIconModule,
 		MatSlideToggleModule,
-		AutoCloseModule,
 	],
 	exports: [
 		CommonModule,
