@@ -155,7 +155,7 @@
 															role="link"
 															(click)="launchFaceEnrollment()"
 															(keydown.enter)="launchFaceEnrollment()"
-															tabindex="0"
+															[tabindex]="intelligentSecurity.isZeroTouchLoginEnabled ? 0 : -1"
 															href="javascript:void()"
 															class="hello-link">{{'device.smartAssist.intelligentSecurity.WindowsLink.goToWindowsHello' | translate}}
 														</a>
@@ -239,7 +239,7 @@
 															{{'device.smartAssist.intelligentSecurity.note.description1' | translate}}
 															<a (click)="launchFaceEnrollment()"
 																id="thinkpad_goto_hello_link"
-																tabindex="0"
+																[tabindex]="intelligentSecurity.isZeroTouchLoginEnabled ? 0 : -1"
 																(keydown.enter)="launchFaceEnrollment()"
 																role="link"
 																href="javascript:void()"
