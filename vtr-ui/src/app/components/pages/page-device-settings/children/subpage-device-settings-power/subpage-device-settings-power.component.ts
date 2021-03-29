@@ -31,6 +31,7 @@ import { PowerService } from 'src/app/services/power/power.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { UiCustomSwitchComponent } from 'src/app/components/ui/ui-custom-switch/ui-custom-switch.component';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { BatteryHealthService } from './battery-health/battery-health.service';
 
 enum PowerMode {
 	Sleep = 'ChargeFromSleep',
@@ -139,6 +140,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 		private localCacheService: LocalCacheService,
 		private activatedRoute: ActivatedRoute,
 		public deviceService: DeviceService,
+		private batteryHealthService: BatteryHealthService,
 	) { }
 
 	ngOnInit() {
@@ -150,7 +152,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.powerSettingsGroup = ['AirplanePowerMode', 'AlwaysOnUSB', 'FlipToBoot', 'EasyResume'];
 				break;
 			case 0:
-				this.batterySettingsGroup = ['ConservationMode', 'RapidChargeMode'];
+				this.batterySettingsGroup = ['ConservationMode', 'RapidChargeMode', 'BatteryHealth'];
 				this.powerSettingsGroup = ['AlwaysOnUSB', 'FlipToBoot'];
 			default:
 				break;
@@ -253,6 +255,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			EventTypes.pwrBatteryStatusEvent,
 			this.powerBatteryStatusEventRef
 		);
+		this.batteryHealthService.clearMemoryCache();
 	}
 
 	// ************************** Start Getting Cached Data ****************************
@@ -497,6 +500,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 				this.getConservationModeStatusIdeaPad();
 				this.getAlwaysOnUSBStatusIdeaPad();
 				this.getUSBChargingInBatteryModeStatusIdeaNoteBook();
+				this.getBatteryHealthIdeaPad();
 				break;
 		}
 	}
@@ -1699,4 +1703,18 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			});
 	}
 	// Gauge Reset Capability
+
+	getBatteryHealthIdeaPad() {
+		if (this.batteryHealthService) {
+			this.batteryHealthService.batteryInfo.subscribe((batteryInfo) => {
+				if (batteryInfo && batteryInfo.isSupportSmartBatteryV2 !== undefined) {
+					this.batteryHealthAvailable = batteryInfo.isSupportSmartBatteryV2;
+					this.updateBatteryLinkStatus(
+						batteryInfo.isSupportSmartBatteryV2,
+						'BatteryHealth'
+					);
+				}
+			});
+		}
+	}
 }

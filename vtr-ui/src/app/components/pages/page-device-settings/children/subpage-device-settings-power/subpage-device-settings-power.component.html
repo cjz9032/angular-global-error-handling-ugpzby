@@ -142,6 +142,11 @@
 							<!-- End Gauge  Reset -->
 
 							<!-- Start Battery Health -->
+							<li class="common-li-padding" *ngIf="batteryHealthAvailable">
+								<vtr-battery-health
+									[hideSeparation] = "!conservationModeStatus.available && !expressChargingStatus.available">
+								</vtr-battery-health>
+							</li>
 							<!-- End battery health -->
 
 							<!-- Start Express Charging -->
