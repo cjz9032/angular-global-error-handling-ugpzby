@@ -150,14 +150,10 @@ export class PageLightingcustomizeComponent implements OnInit, OnDestroy {
 		}
 	}
 	public getLayOutversion() {
-		const ledSetFeature = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.ledSetFeature
-		);
-		const ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver);
-		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.ledLayoutVersion
-		);
-		if (!ledSetFeature || !ledDriver || this.ledlayoutversion === undefined) {
+		const ledSetFeature = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledSetFeature, false);
+		const ledDriver = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledDriver, false);
+		this.ledlayoutversion = this.localCacheService.getLocalCacheValue(LocalStorageKey.ledLayoutVersion, undefined);
+		if (!ledSetFeature || (this.ledlayoutversion === 1 && !ledDriver) || this.ledlayoutversion === undefined) {
 			this.router.navigate(['/device-gaming']);
 		}
 	}
