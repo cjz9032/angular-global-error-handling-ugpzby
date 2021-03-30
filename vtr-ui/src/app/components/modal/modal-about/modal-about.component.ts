@@ -33,7 +33,6 @@ export class ModalAboutComponent implements OnInit {
 	ngOnInit() {
 		if (window.Windows) {
 			const packageVersion = window.Windows.ApplicationModel.Package.current.id.version;
-			// packageVersion.major, packageVersion.minor, packageVersion.build, packageVersion.revision
 			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}.${packageVersion.revision}`;
 		}
 		const jsBridgeVersion = this.shellService.getVersion();

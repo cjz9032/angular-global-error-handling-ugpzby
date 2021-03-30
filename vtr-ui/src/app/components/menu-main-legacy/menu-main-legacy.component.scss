@@ -41,7 +41,6 @@
 
 	.beta-item {
 		top: 0.1rem;
-		// margin-right: 1rem;
 	}
 
 	.navbar {
@@ -109,7 +108,6 @@
 				}
 
 				.app-version {
-					// text-transform: lowercase;
 					font-size: 1.4rem;
 					padding-left: 1rem;
 					font-weight: $weight_light;
@@ -140,7 +138,6 @@
 		.navbar-collapse {
 			&.show {
 				display: block;
-				// overflow-y: auto;
 				.navbar-nav .nav-item .dropdown-menu .dropdown-item.link {
 					line-height: 4rem;
 				}
@@ -153,25 +150,11 @@
 					position: relative;
 
 					.nav-link {
-						// @media #{$mediaquery_7} {
-						// 	display: none;
-						// }
-						// display: inline-table;
 						font-size: $fontsize_xs;
 						font-weight: $weight_light;
-						// line-height: calc(#{$menu_height} - 0.65rem);
 						color: $light;
-						// padding: 0 1.5rem;
 						display: flex;
 						align-items: center;
-						// overflow: hidden;
-						// white-space: nowrap;
-						// text-overflow: ellipsis;
-
-						// @media #{mediaquery_7} {
-						// 	padding: 0 1.5rem;
-						// }
-
 						padding: 0 1rem;
 						border-bottom: transparent solid 0.5rem;
 						line-height: 1.6rem;
@@ -184,26 +167,6 @@
 						@media #{$white-on-black} {
 							border-bottom: $dark solid 0.5rem;
 						}
-
-						/*@media #{$mediaquery_7} {
-							font-weight: 300;
-							font-size: 1.5rem;
-							padding-right:0;
-							padding-left: 0;
-
-						}
-*/
-						// @media #{$mediaquery_4} {
-						// 	line-height: calc(#{$menu_height} - 0.5rem);
-						// }
-
-						// @media #{$mediaquery_5} {
-						// 	line-height: calc(#{$menu_height} - 0.65rem);
-						// }
-
-						// @media #{$mediaquery_6} {
-						// 	line-height: calc(#{$menu_height} - 0.5rem);
-						// }
 
 						&.search-active {
 							.fa-icon {
@@ -302,9 +265,6 @@
 							background: $dark;
 							@include white-border;
 						}
-
-						//left: 50%;
-						// min-width: 22.5rem;
 
 						&::before {
 							position: absolute;
@@ -457,7 +417,6 @@
 								transform: rotate(45deg);
 								right: 1.2rem;
 								top: 3.8rem;
-								// @include high-contrast-color-reversal;
 								@media #{$black-on-white} {
 									@include dropdown-arrow-blue-white;
 								}
@@ -533,12 +492,6 @@
 							}
 						}
 					}
-					// &:nth-last-child(5) {
-					// 	.nav-link {
-					// 		max-width: 15rem;
-					// 	}
-
-					// }
 				}
 			}
 
@@ -669,7 +622,6 @@
 		}
 
 		.navbar-toggler {
-			//display: none;
 			font-size: 5rem;
 			color: $shade_light;
 			padding: 0.25rem 1rem;
@@ -755,18 +707,6 @@
 		position: relative;
 	}
 }
-
-/*
-@media screen and (min-width: 1200px) {
-	.navbar-nav{
-		.nav-link{
-			.nav-item{
-				display: none;
-			}
-		}
-	}
-}
-*/
 
 .nav-link:focus ~ .outline {
 	position: absolute;

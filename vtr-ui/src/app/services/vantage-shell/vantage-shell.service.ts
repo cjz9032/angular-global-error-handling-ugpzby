@@ -390,13 +390,6 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-	// public getPowerThinkPad(): any {
-	// 	if (this.phoenix) {
-	// 		return this.phoenix.hwsettings.power.thinkpad ;
-	// 	}
-	// 	return undefined;
-	// }
-
 	public getPowerThinkPad(): any {
 		if (this.getPowerSettings() && this.getPowerSettings().thinkpad) {
 			return this.getPowerSettings().thinkpad;
@@ -410,12 +403,6 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-
-	// public getPowerItsIntelligentCooling(): any {
-	// 	if(this.phoenix){
-	// 		return this.phoenix.hwsettings.power.its.IntelligentCooling ;
-	// 	}
-	// }
 	public getPowerItsIntelligentCooling(): any {
 		if (this.getPowerSettings() && this.getPowerSettings().its) {
 			return this.getPowerSettings().its;
@@ -432,19 +419,6 @@ export class VantageShellService {
 		}
 		return undefined;
 	}
-
-	// public getSmartPerformance() {
-	// 	console.log('----------CALLING');
-	// 	if (this.phoenix) {
-	// 		if (!this.phoenix.smartPerformance) {
-	// 			return this.phoenix.loadFeatures([Phoenix.Features.HwSettings]);
-	// 		}
-	// 		console.log(this.phoenix.hwsettings.smartPerformance);
-	// 		console.log('----------DONE');
-	// 	}
-	// 	return undefined;
-	// }
-
 	/**
 	 * returns CameraPrivacy object from VantageShellService of JS Bridge
 	 */
@@ -452,11 +426,9 @@ export class VantageShellService {
 		if (this.phoenix) {
 			try {
 				const deviceFilterResult = await this.phoenix.deviceFilter.deviceFilterEval(filter);
-				// console.log('In VantageShellService.deviceFilter. Filter: ', JSON.stringify(filter), deviceFilterResult);
 				return deviceFilterResult;
 			} catch (error) {}
 			return true;
-			// return await this.phoenix.deviceFilter(filter);
 		}
 		return true;
 	}

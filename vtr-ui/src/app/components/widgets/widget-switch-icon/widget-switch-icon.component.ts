@@ -28,7 +28,6 @@ export class WidgetSwitchIconComponent implements OnInit {
 	onChange(event: Event) {
 		if (this.disable || this.isLoading) {
 			this.value = false;
-			// event.stopPropagation();
 			return;
 		}
 

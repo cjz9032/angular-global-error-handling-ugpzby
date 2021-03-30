@@ -101,7 +101,6 @@ input:disabled ~ .switch {
 
 input:not(:disabled) + .switch {
 	background: $grey_light;
-	// margin-right: 0.7rem; // changed to match the UI Mockup.
 
 	@media #{$black-on-white} {
 		background: $light;
@@ -162,8 +161,6 @@ input:not(:disabled).checked + .switch {
 	position: absolute;
 	left: 0.4rem;
 	top: 0.4rem;
-	//-webkit-box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
-	//box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.4);
 	transition: background-color 0.4s, left 0.2s;
 	@include high-contrast-background-color-reversal;
 }
@@ -271,12 +268,6 @@ input.checked + .switch.switch-xs > small {
 	margin-top: -5px;
 	color: $light;
 }
-
-// .checkbox.blue-theme {
-// 	&:focus {
-// 		@include outline-border-white;
-// 	}
-// }
 
 .checkbox.white-theme {
 	&:focus {

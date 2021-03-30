@@ -26,7 +26,6 @@
 	.card {
 		border-radius: $border_radius;
 		.no-gutters {
-			// height: 4.5rem;
 			width: 100%;
 			display: flex;
 			.homesecurity-container-name {
@@ -65,12 +64,9 @@
 		}
 
 		.subHeading {
-			// display: flex;
 			.loading {
 				margin-right: 1rem;
 			}
-			// width: 50%;
-			// justify-content: flex-start;
 			.circle {
 				height: 2rem;
 				width: 2rem;
@@ -120,7 +116,6 @@
 	.button-container {
 		display: flex;
 		align-items: center;
-		// width: 50%;
 		vtr-ui-button {
 			max-width: 90%;
 			margin-left: auto;

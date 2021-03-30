@@ -69,8 +69,6 @@
 		}
 		@media #{$black-on-white} {
 			@include thumb-icon-white;
-			// box-shadow: none;
-			// background-color: $dark;
 		}
 	}
 
@@ -137,7 +135,6 @@
 			height: 24px;
 			line-height: 24px;
 			text-align: center;
-			// padding: 0 5px;
 			background: $light;
 			color: $grey_darker;
 			font-size: 12px;
@@ -164,34 +161,6 @@
 				opacity: 1;
 			}
 		}
-
-		//And now the ticks
-		// .ticks {
-		// 	display: flex;
-		// 	justify-content: space-between;
-		// 	padding: 0 15px 0 13px;
-		// 	span {
-		// 		height: 1.8rem;
-		// 	}
-		// 	.tick {
-		// 		color: $grey_dark;
-		// 		font-size: $body;
-		// 		position: relative;
-		// 		display: flex;
-		// 		justify-content: center;
-
-		// 		&::after {
-		// 			width: 0.2rem;
-		// 			height: 2rem;
-		// 			content: "";
-		// 			background-color: $grey_light;
-		// 			position: relative;
-		// 			top: 60%;
-		// 			// left: -50%;
-		// 			z-index: -1;
-		// 		}
-		// 	}
-		// }
 
 		input[type='range'] {
 			-webkit-appearance: none;
@@ -314,26 +283,6 @@
 				}
 			}
 			/* end chromium browser */
-
-			/* start mozilla browser */
-
-			// &::-moz-slider-thumb {
-			// 	@include thumb-style();
-			// }
-
-			// &:focus::-moz-slider-thumb {
-			// 	@include thumb-focus();
-			// }
-
-			// &:active::-moz-slider-thumb {
-			// 	@include thumb-active();
-			// }
-
-			// &:disabled::-moz-slider-thumb {
-			// 	@include thumb-disabled();
-			// }
-
-			/* end mozilla browser */
 		}
 	}
 }

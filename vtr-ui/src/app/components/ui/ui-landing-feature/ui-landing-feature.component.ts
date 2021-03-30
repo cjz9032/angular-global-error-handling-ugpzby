@@ -9,7 +9,5 @@ export class UiLandingFeatureComponent implements OnInit {
 	@Input() feature: any;
 	constructor() {}
 
-	ngOnInit() {
-		// console.log(this.feature);
-	}
+	ngOnInit() {}
 }

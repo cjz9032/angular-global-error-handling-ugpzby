@@ -143,19 +143,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
 		window.onresize = () => {}; // this line is necessary, please do not remove.
 
-		/********* add this for navigation within a page **************/
-		// this.router.events.subscribe((s) => {
-		// 	if (s instanceof NavigationEnd) {
-		// 		const tree = this.router.parseUrl(this.router.url);
-		// 		if (tree.fragment) {
-		// 			const element = document.querySelector('#' + tree.fragment);
-		// 			if (element) {
-		// 				element.scrollIntoView(true);
-		// 			}
-		// 		}
-		// 	}
-		// });
-
 		this.checkIsDesktopOrAllInOneMachine();
 		this.settingsService.getPreferenceSettingsValue();
 
@@ -627,19 +614,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		document.getElementsByTagName('head')[0].appendChild(style);
 	}
 
-	// private registerWebWorker() {
-	// 	if (typeof Worker !== 'undefined') {
-	// 		// Create a new
-	// 		const worker = new Worker('./web-worker/app-worker.worker', { type: 'module' });
-	// 		worker.onmessage = ({ data }) => {
-	// 			this.logger.info(`page got message: ${data}`);
-	// 		};
-	// 		worker.postMessage('hello');
-	// 	} else {
-	// 		// Web Workers are not supported in this environment.
-	// 		// You should add a fallback so that your program still executes correctly.
-	// 	}
-	// }
 	onActivate(component) {
 		this.commonService.setSessionStorageValue(SessionStorageKey.FirstPageLoaded, true);
 		this.commonService.scrollTop();

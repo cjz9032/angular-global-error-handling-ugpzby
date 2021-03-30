@@ -45,7 +45,6 @@
 
 			&::after {
 				top: ($custom-switch-height - $custom-switch-indicator-size) /2;
-				// left: (-($custom-switch-width + $custom-control-gutter) + ($custom-control-indicator-border-width * 2));
 				left: -45px;
 				width: $custom-switch-indicator-size !important;
 				height: $custom-switch-indicator-size !important;

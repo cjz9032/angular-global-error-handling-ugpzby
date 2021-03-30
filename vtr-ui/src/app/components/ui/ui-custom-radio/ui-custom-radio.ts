@@ -20,7 +20,6 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 	static readonly UN_DEFINED = undefined;
 	static readonly TAB_INDEX = 'tabIndex';
 	static readonly ARIA_CHECKED = 'aria-checked';
-	// static readonly ARIA_DISABLED = 'aria-disabled';
 	static readonly NATIVE_ELEMENT = 'nativeElement';
 
 	constructor(private logger: LoggerService, public metrics: MetricService) {}
@@ -57,28 +56,12 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 		this.setRadioButtons(); // Set up radio buttons first , last etc and if none selected,set tabindex to first element
 	}
 
-	ngOnChanges(changes: any) {
-		// if (changes && changes.checked && !changes.checked.firstChange) {
-		// 	const elementDiv = document.getElementById('div' + this.radioId);
-		// 	if (elementDiv) {
-		// 		if (!this.checked) {
-		// 			elementDiv.setAttribute(UICustomRadio., 'false');
-		// 			elementDiv.tabIndex = -1;
-		// 		} else {
-		// 			elementDiv.setAttribute(UICustomRadio., 'true');
-		// 			elementDiv.tabIndex = 0;
-		// 			elementDiv.focus();
-		// 		}
-		// 	}
-		// }
-	}
+	ngOnChanges(changes: any) {}
 
 	changeRadioOnKeyPress($event, radio: HTMLInputElement) {
 		if (!this.checked) {
 			// on only radio change
-			// this.checked = !this.checked;
 			radio.value = this.value;
-			// radio.checked = this.checked;
 			const $customEvent = { type: 'change', target: radio };
 			this.onChange($customEvent);
 			const metricsData = {
@@ -97,7 +80,6 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 			case KeyCode.SPACE:
 			case KeyCode.RETURN:
 				this.changeRadioOnKeyPress($event, radio);
-				// this.setChecked(this.radioButton.nativeElement, true);
 				$event.stopPropagation();
 				$event.preventDefault();
 				this.radioButton.nativeElement.focus();
@@ -143,7 +125,6 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 			} else {
 				try {
 					if (!selectItem) {
-						// this.setRadioTabIndex(currentRadioButton);
 						currentRadioButton.focus();
 					}
 				} catch (error) {
@@ -175,7 +156,6 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 			this.radioButtons.forEach((radioButton) => {
 				radioButton.tabIndex = -1; // the unchecked item should also be tabbable
 			});
-			// currentRadioButton[this.TABINDEX] !== UICustomRadio.UN_DEFINED && currentRadioButton.tabIndex !== 0
 			if (currentRadioButton !== UICustomRadio.UN_DEFINED) {
 				currentRadioButton.tabIndex = 0; // tabitem need not be set to 1 unnecessarly
 			}
@@ -235,15 +215,12 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 					}
 				});
 				// focus on first non disabled element if not selected any radio items
-				// || this.firstRadioButton.tabIndex !== 0
 				if (
 					this.noRadioButtonSelected &&
 					this.firstRadioButton !== UICustomRadio.UN_DEFINED
 				) {
 					this.setRadioTabIndex(this.getNativeElement(this.firstRadioButton));
-				}
-				// || this.selectedRadioButton.tabIndex !== 0
-				else if (
+				} else if (
 					!this.noRadioButtonSelected &&
 					this.selectedRadioButton !== UICustomRadio.UN_DEFINED
 				) {
@@ -267,9 +244,7 @@ export class UICustomRadio implements OnInit, AfterViewInit, OnChanges {
 				// search by radio class and aria-disabled
 				const query = `[class*=${this.group}][aria-disabled=false]`;
 				// search by only role and aria-disabled
-				// const query = '[role=radio][aria-disabled=false]';
 				return this.radioGroup.querySelectorAll(query);
-				// return Array.from(this.radioGroup.querySelectorAll(query));
 			}
 		} catch (error) {
 			this.logger.exception('UICustomRadio.getRadioGroup exception', error);

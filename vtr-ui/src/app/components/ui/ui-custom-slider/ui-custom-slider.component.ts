@@ -25,8 +25,6 @@ export class UiCustomSliderComponent implements OnInit {
 	@Input() minLegend = ''; // label to display at the start of slider
 	@Input() midLegend = ''; // label to display at the center of slider
 	@Input() maxLegend = ''; // label to display at the end of slider
-	// @Input() hasTicks = false;
-	// @Input() ticks = [3500, 5500, 6000];
 	@Input() ariaLabel = 'slider';
 	// show current value in tooltip, for example ECM current temperature value like 6500K
 	@Input() showTip = false; // displays value when slider is dragged.
@@ -44,37 +42,15 @@ export class UiCustomSliderComponent implements OnInit {
 	@ViewChild('sliderBubble', { static: false }) sliderBubble: ElementRef;
 	@ViewChild('rangeSlider', { static: false }) rangeSlider: ElementRef;
 
-	// public ticksArray = [];
 	public isTooltipHidden = true;
 	public tipValue = '0';
 	constructor(private metrics: CommonMetricsService) {}
 
-	ngOnInit() {
-		// if (this.hasTicks) {
-		// 	this.calculateTicks();
-		// }
-	}
-
-	// ngAfterViewInit() {
-	// if (this.sliderBubble) {
-	// 	this.setBubbleValue(this.rangeSlider.nativeElement, this.sliderBubble.nativeElement);
-	// }
-	// }
-
-	// private calculateTicks() {
-	// 	const noOfTicks = (this.max - this.min) / this.step;
-	// 	let tickValue = this.min;
-	// 	for (let index = 0; index <= noOfTicks; index++) {
-	// 		if (index > 0) {
-	// 			tickValue += this.step;
-	// 		}
-	// 		const isVisible = this.ticks.indexOf(tickValue) >= 0;
-	// 		this.ticksArray[index] = { value: tickValue, isVisible };
-	// 	}
-	// }
+	ngOnInit() {}
 
 	/**
 	 *  This event is fired when user changes slider value by dragging or by keyboard
+	 *
 	 * @param $event currently selected value
 	 */
 	public onInputChange($event: any) {
@@ -110,7 +86,6 @@ export class UiCustomSliderComponent implements OnInit {
 	}
 
 	private setBubbleValue(rangeSlider, sliderBubble) {
-		// return;
 		let newPlace = 0;
 		const value = this.value;
 		const noOfChar = value.toString(10).length;
@@ -127,12 +102,9 @@ export class UiCustomSliderComponent implements OnInit {
 		}
 		sliderBubble.style.left = newPlace + 'px';
 		this.tipValue = `${this.value}${this.tipSuffix}`;
-		// sliderBubble.innerHTML = `${this.value}${this.tipSuffix}`;
-		// console.log({ newPlace, value, newPoint, bubbleOffset, width });
 	}
 	// added for narrator reading
 	getLegend() {
-		// let position= this.min===0 && this.step
 		const val = this.min === 0 ? this.step + this.value : this.value;
 		const position = val / this.step;
 		let legend = this.minLegend;
