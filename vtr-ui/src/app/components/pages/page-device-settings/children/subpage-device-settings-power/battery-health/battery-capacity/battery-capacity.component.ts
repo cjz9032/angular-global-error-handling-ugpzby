@@ -85,4 +85,12 @@ export class BatteryCapacityComponent implements OnInit {
 			this.overCircleLength = (264 / 100) * this.capacity;
 		}
 	}
+
+	removeHTMLFormatting(source: string) {
+		try {
+			return source.replace(/<\/?.+?\/?>/g, ' ').replace(/  +/g, ' ');
+		} catch (error) {
+			return source;
+		}
+	}
 }
