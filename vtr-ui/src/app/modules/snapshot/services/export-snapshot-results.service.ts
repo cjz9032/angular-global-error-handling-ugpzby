@@ -13,6 +13,9 @@ declare let window;
 	providedIn: 'root',
 })
 export class ExportSnapshotResultsService {
+	public static readonly METRICS_SUCCESS_RESULT = 'Success';
+	public static readonly METRICS_FAIL_RESULT = 'Fail';
+
 	private static readonly TEMPLATE_PATH =
 		'assets/templates/snapshot/snapshot-results-template.html';
 
@@ -33,6 +36,7 @@ export class ExportSnapshotResultsService {
 	};
 
 	private document: HTMLDocument;
+	private metricsService: any;
 
 	constructor(
 		private http: HttpClient,
@@ -41,6 +45,8 @@ export class ExportSnapshotResultsService {
 		private shellService: VantageShellService,
 		private translate: TranslateDefaultValueIfNotFoundPipe
 	) {
+		this.metricsService = shellService.getMetrics();
+
 		// Consult experienceVersion
 		this.experienceVersion = environment.appVersion;
 
@@ -88,6 +94,29 @@ export class ExportSnapshotResultsService {
 		} catch (error) {
 			this.logger.error('Could not get scan log', error);
 			throw ExportLogErrorStatus.GenericError;
+		}
+	}
+
+	public setExportExtensionSelected(extension: ExportLogExtensions) {
+		this.exportExtensionSelected = extension;
+	}
+
+	public sendTaskActionMetrics(
+		taskCount: number,
+		taskParam: string,
+		taskResult: any,
+		taskDuration: number
+	) {
+		const data = {
+			ItemType: 'TaskAction',
+			TaskName: 'ExportLog',
+			TaskCount: taskCount,
+			TaskResult: taskResult,
+			TaskParam: taskParam,
+			TaskDuration: taskDuration,
+		};
+		if (this.metricsService) {
+			this.metricsService.sendAsync(data);
 		}
 	}
 

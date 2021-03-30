@@ -5,25 +5,39 @@
 		</div>
 	</div>
 
-	<vtr-ui-snapshot-item-list
-		[hostPage]="'SnapshotPage'"
-		[metricsParent]="'Snapshot.HardwareComponents'"
-		[title]="'snapshot.hardwareListTitle' | translate"
-		[snapshotComponents]='hardwareComponents'
-		[componentType]="'hardware'">
-	</vtr-ui-snapshot-item-list>
-
-	<vtr-ui-snapshot-item-list
-		[hostPage]="'SnapshotPage'"
-		[metricsParent]="'Snapshot.SoftwareComponents'"
-		[title]="'snapshot.softwareListTitle' | translate"
-		[snapshotComponents]='softwareComponents'
-		[componentType]="'software'">
-	</vtr-ui-snapshot-item-list>
-
-	<div class="row container">
+	<div class="row">
 		<div class="col col-12">
-			<!-- Export Snapshot Component Card -->
+			<vtr-snapshot-export-log
+				class="export-log-btn"
+				componentId="snapshot"
+				metricsParent="Snapshot"
+				metricsItem="Snapshot.ExportLog"
+				[isDisabled]="!isButtonEnabled()">
+			</vtr-snapshot-export-log>
+		</div>
+	</div>
+
+	<div class="row export-button-available">
+		<div class="col col-12">
+			<vtr-ui-snapshot-item-list
+				[hostPage]="'SnapshotPage'"
+				[metricsParent]="'Snapshot.HardwareComponents'"
+				[title]="'snapshot.hardwareListTitle' | translate"
+				[snapshotComponents]='hardwareComponents'
+				[componentType]="'hardware'">
+			</vtr-ui-snapshot-item-list>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col col-12">
+			<vtr-ui-snapshot-item-list
+				[hostPage]="'SnapshotPage'"
+				[metricsParent]="'Snapshot.SoftwareComponents'"
+				[title]="'snapshot.softwareListTitle' | translate"
+				[snapshotComponents]='softwareComponents'
+				[componentType]="'software'">
+			</vtr-ui-snapshot-item-list>
 		</div>
 	</div>
 </div>
