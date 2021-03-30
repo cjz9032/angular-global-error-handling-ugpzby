@@ -4,10 +4,8 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
 import { ExportLogErrorStatus, ExportLogExtensions } from '../../enums/snapshot.enum';
-import { ExportResultsService } from '../../../services/export-results.service';
-import { HardwareScanMetricsService } from '../../../services/hardware-scan-metrics.service';
-import { HardwareScanService } from '../../../services/hardware-scan.service';
-import { ModalExportLogComponent } from '../../modal/modal-export-log/modal-export-log.component';
+import { ModalExportLogComponent } from '../../components/modal/modal-export-log/modal-export-log.component';
+import { ExportSnapshotResultsService } from '../../services/export-snapshot-results.service';
 
 @Component({
 	selector: 'vtr-snapshot-export-log',
@@ -28,12 +26,10 @@ export class SnapshotExportLogComponent implements OnInit {
 
 	constructor(
 		private deviceService: DeviceService,
-		private exportService: ExportResultsService,
+		private exportService: ExportSnapshotResultsService,
 		private timerService: TimerService,
-		private hardwareScanMetricsService: HardwareScanMetricsService,
 		private logger: LoggerService,
-		private dialog: MatDialog,
-		private hardwareScanService: HardwareScanService
+		private dialog: MatDialog
 	) {}
 
 	ngOnInit() {
@@ -112,38 +108,25 @@ export class SnapshotExportLogComponent implements OnInit {
 
 	public getExportIcon(): string {
 		if (this.isDisabled) {
-			return 'assets/icons/hardware-scan/icon_hardware_export-log_disabled.svg';
+			return 'assets/icons/snapshot/disabled/icon_snapshot_export-log_disabled.svg';
 		} else {
-			return 'assets/icons/hardware-scan/icon_hardware_export-log.svg';
+			return 'assets/icons/snapshot/icon_snapshot_export-log.svg';
 		}
 	}
 
 	private exportResults() {
 		if (this.exportService) {
-			let exportLogType: Promise<[ExportLogErrorStatus, string]>;
-			let statusExport = ExportLogErrorStatus.LoadingExport;
-			let filePath = '';
+			let statusExport;
+			let filePath;
+
 			const exportModal = this.openExportLogComponentsModal();
 
-			if (
-				this.hardwareScanService.getScanFinishedHeaderType() ===
-					HardwareScanFinishedHeaderType.Scan ||
-				this.hardwareScanService.getScanFinishedHeaderType() ===
-					HardwareScanFinishedHeaderType.ViewResults
-			) {
-				exportLogType = this.exportService.exportScanResults();
-			} else if (
-				this.hardwareScanService.getScanFinishedHeaderType() ===
-				HardwareScanFinishedHeaderType.RecoverBadSectors
-			) {
-				exportLogType = this.exportService.exportRbsResults();
-			}
-
 			this.timerService.start();
-			let result = HardwareScanMetricsService.FAIL_RESULT;
-			exportLogType
+			let result = ExportSnapshotResultsService.METRICS_FAIL_RESULT;
+			this.exportService
+				.exportSnapshotResults()
 				.then((status) => {
-					result = HardwareScanMetricsService.SUCCESS_RESULT;
+					result = ExportSnapshotResultsService.METRICS_SUCCESS_RESULT;
 					[statusExport, filePath] = status;
 				})
 				.catch((error) => {
@@ -155,9 +138,8 @@ export class SnapshotExportLogComponent implements OnInit {
 				})
 				.finally(() => {
 					this.updateExportLogComponentsModal(exportModal, statusExport, filePath);
-					this.hardwareScanMetricsService.sendTaskActionMetrics(
-						HardwareScanMetricsService.EXPORT_LOG_TASK_NAME,
-						result === HardwareScanMetricsService.SUCCESS_RESULT ? 1 : 0,
+					this.exportService.sendTaskActionMetrics(
+						result === ExportSnapshotResultsService.METRICS_SUCCESS_RESULT ? 1 : 0,
 						'',
 						result,
 						this.timerService.stop()
