@@ -100,14 +100,16 @@
 			}
 		}
 
+		.hyperlink-outline:disabled {
+			cursor: default;
+		}
+
 		&.disabled {
 			cursor: default;
-			pointer-events: none !important;
 
 			.hyperlink,
 			.icon {
 				cursor: default;
-				pointer-events: none !important;
 
 				@include font-and-underline-color($shade_light !important);
 				@media #{$white-on-black} {
@@ -146,6 +148,10 @@
 					@include font-and-underline-color($high-contrast-white-blue);
 				}
 			}
+		}
+
+		.hyperlink-disabled {
+			cursor: default;
 		}
 	}
 }

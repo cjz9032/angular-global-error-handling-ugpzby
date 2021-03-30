@@ -4,6 +4,7 @@
 		<button
 			(click)="onClick()"
 			[tabindex]="tabIndex ? tabIndex : 0"
+			[disabled]="isDisabled"
 			class="hyperlink-outline"
 			[attr.role]="linkRole"
 			[attr.id]="linkId"
@@ -18,7 +19,7 @@
 			[attr.aria-label]="ariaLabel"
 			[matTooltip]=" disableTooltip ? '' : tooltipText "
 			matTooltipClass="vtr-system-tooltip">
-			<div class="hyperlink-text-container">
+			<div class="hyperlink-text-container" [ngClass]="{'hyperlink-disabled': isDisabled === true}">
 				<span
 				class="hyperlink {{hyperlinkStyle}}"
 				[innerHTML]="label"
