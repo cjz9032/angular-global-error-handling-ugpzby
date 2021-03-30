@@ -14,7 +14,6 @@ import {
 	SPYearPrice,
 } from 'src/app/components/pages/page-smart-performance/interface/smart-performance.interface';
 import currencyFormater from 'currency-formatter';
-import { local } from 'd3-selection';
 
 declare let Windows: any;
 
