@@ -23,12 +23,14 @@ import { UiSnapshotItemListComponent } from './components/dashboard/ui-snapshot-
 import { UiSnapshotListInfoComponent } from './components/dashboard/ui-snapshot-list-info/ui-snapshot-list-info.component';
 import { UiSnapshotItemComponent } from './components/dashboard/ui-snapshot-item/ui-snapshot-item.component';
 import { SnapshotExportLogComponent } from './components/snapshot-export-log/snapshot-export-log.component';
+import { ModalExportLogComponent } from './components/modal/modal-export-log/modal-export-log.component';
 @NgModule({
 	declarations: [
 		PageSnapshotComponent,
 		SnapshotHeaderComponent,
 		SnapshotMainComponent,
 		SnapshotExportLogComponent,
+		ModalExportLogComponent,
 		WidgetSnapshotComponent,
 		ModalSnapshotComponent,
 		UiSnapshotItemComponent,
