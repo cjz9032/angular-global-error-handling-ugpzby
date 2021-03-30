@@ -14,6 +14,7 @@ import {
 	SPYearPrice,
 } from 'src/app/components/pages/page-smart-performance/interface/smart-performance.interface';
 import currencyFormater from 'currency-formatter';
+import { local } from 'd3-selection';
 
 declare let Windows: any;
 
@@ -211,7 +212,13 @@ export class SmartPerformanceService {
 						const resultJson = JSON.parse(result);
 						if (resultJson.code === 0 && resultJson.msg?.desc?.toLowerCase() === 'success') {
 							this.logger.info('Fetch smartPerformance payment detail result: ', resultJson);
-							resolve(resultJson);
+
+							const smartTest = sessionStorage.getItem('smartTest');
+							if (smartTest) {
+								resolve(JSON.parse(smartTest));
+							} else {
+								resolve(resultJson);
+							}
 						} else {
 							resolve(undefined);
 							this.logger.info('Fetch smartPerformance payment detail failed response: ', resultJson);
