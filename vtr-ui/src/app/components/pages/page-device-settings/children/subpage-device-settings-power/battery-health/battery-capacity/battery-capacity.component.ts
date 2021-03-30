@@ -42,6 +42,8 @@ export class BatteryCapacityComponent implements OnInit {
 				case this.capacity < 40 && (batteryInfo.batteryHealthTip === 7 || batteryInfo.batteryHealthTip === 8):
 					this.condition = BatteryCapacityConditions.AGING;
 					break;
+				default:
+					break;
 			}
 		} else {
 			this.circleStyle =
