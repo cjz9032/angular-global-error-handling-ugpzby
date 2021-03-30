@@ -5386,6 +5386,7 @@
 	},
 	"snapshot": {
 		"title": "快照",
+		"ok": "确定",
 		"hardwareListTitle": "硬件组件",
 		"softwareListTitle": "软件组件",
 		"snapshotWidgetButton": "生成快照",
@@ -5422,6 +5423,14 @@
 			"StartupPrograms": "启动程序",
 			"VideoCards": "显卡",
 			"WebBrowsers": "Web 浏览器"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "已成功导出日志，可以在以下位置找到：",
+			"exportAccessErrorDescription": "您需要允许 Vantage 访问您的文件系统以导出日志。单击下面的按钮以打开 Windows 权限设置。请注意，更改权限可能会导致 Vantage 关闭。",
+			"exportFailDescription": "日志导出过程中发现问题。请稍后重试。",
+			"exportMayTakeSomeTime": "正在导出日志，请稍候。",
+			"openSettingsButton": "打开 Windows 设置",
+			"exportLog": "导出日志"
 		},
 		"report": {
 			"modelTitle": "型号",

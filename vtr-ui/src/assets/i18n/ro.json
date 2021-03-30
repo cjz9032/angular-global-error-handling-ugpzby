@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "Instantaneu",
+		"ok": "OK",
 		"hardwareListTitle": "Componente hardware",
 		"softwareListTitle": "Componente software",
 		"snapshotWidgetButton": "Realizare instantaneu",
@@ -5314,6 +5315,14 @@
 			"StartupPrograms": "Programe cu lansare în execuție la pornire",
 			"VideoCards": "Placă video",
 			"WebBrowsers": "Browsere web"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Jurnalul a fost exportat cu succes și poate fi găsit la:",
+			"exportAccessErrorDescription": "Trebuie să permiteți Vantage să vă acceseze sistemul de fișiere pentru a exporta jurnalul. Faceți clic pe butonul de mai jos pentru a deschide setările de permisiuni Windows. Aveți grijă că modificarea permisiunii ar putea determina închiderea Vantage.",
+			"exportFailDescription": "A fost găsită o problemă în timpul exportului de jurnal. Încercați din nou mai târziu.",
+			"exportMayTakeSomeTime": "Așteptați până se exportă jurnalul.",
+			"openSettingsButton": "Deschideți Setări Windows",
+			"exportLog": "Exportați jurnalul"
 		},
 		"report": {
 			"modelTitle": "Model",

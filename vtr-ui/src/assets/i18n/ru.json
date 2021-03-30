@@ -5388,6 +5388,7 @@
 	},
 	"snapshot": {
 		"title": "Снимок",
+		"ok": "ОК",
 		"hardwareListTitle": "Аппаратные компоненты",
 		"softwareListTitle": "Программные компоненты",
 		"snapshotWidgetButton": "Создать снимок",
@@ -5424,6 +5425,14 @@
 			"StartupPrograms": "Загрузочные программы",
 			"VideoCards": "Видеокарта",
 			"WebBrowsers": "Интернет-обозреватели"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Журнал успешно экспортирован и находится по следующему адресу:",
+			"exportAccessErrorDescription": "Разрешите Vantage доступ к файловой системы для экспорта журнала. Нажмите кнопку ниже, чтобы открыть настройки разрешений Windows. Помните, что изменение разрешений может привести к закрытию Vantage.",
+			"exportFailDescription": "Во время экспорта журнала обнаружена проблема. Повторите попытку позже.",
+			"exportMayTakeSomeTime": "Дождитесь завершения экспорта журнала.",
+			"openSettingsButton": "Открыть настройки Windows",
+			"exportLog": "Экспорт журнала"
 		},
 		"report": {
 			"modelTitle": "Модель",

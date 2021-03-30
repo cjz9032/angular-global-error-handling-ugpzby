@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "스냅샷",
+		"ok": "확인",
 		"hardwareListTitle": "하드웨어 구성 요소",
 		"softwareListTitle": "소프트웨어 구성 요소",
 		"snapshotWidgetButton": "스냅샷 만들기",
@@ -5314,6 +5315,14 @@
 			"StartupPrograms": "시동 프로그램",
 			"VideoCards": "비디오 카드",
 			"WebBrowsers": "웹 브라우저"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "로그를 내보냈으며 다음에서 찾을 수 있습니다.",
+			"exportAccessErrorDescription": "로그를 내보내려면 Vantage가 파일 시스템에 액세스할 수 있도록 허용해야 합니다. Windows 사용 권한 설정을 열려면 아래 버튼을 클릭하십시오. 권한을 변경하면 Vantage가 종료될 수 있습니다.",
+			"exportFailDescription": "로그를 내보내는 중에 문제가 발생했습니다. 나중에 다시 시도하십시오.",
+			"exportMayTakeSomeTime": "로그를 내보내는 동안 기다려 주십시오.",
+			"openSettingsButton": "Windows 설정 열기",
+			"exportLog": "로그 내보내기"
 		},
 		"report": {
 			"modelTitle": "모델",

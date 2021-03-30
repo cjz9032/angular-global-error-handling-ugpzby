@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "Anlık Görüntü",
+		"ok": "TAMAM",
 		"hardwareListTitle": "Donanım Bileşenleri",
 		"softwareListTitle": "Yazılım Bileşenleri",
 		"snapshotWidgetButton": "Anlık Görüntü Al",
@@ -5314,6 +5315,14 @@
 			"StartupPrograms": "Başlangıç programları",
 			"VideoCards": "Ekran kartı",
 			"WebBrowsers": "Web tarayıcıları"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Günlük başarıyla dışa aktarıldı ve şu adreste bulunabilir:",
+			"exportAccessErrorDescription": "Günlüğü dışa aktarmak için Vantage'ın dosya sisteminize erişmesine izin vermeniz gerekir. Windows izin ayarlarını açmak için aşağıdaki düğmeyi tıklatın. İznin değiştirilmesi sonucu Vantage'ın kapanabileceğini unutmayın.",
+			"exportFailDescription": "Günlük dışa aktarımı sırasında bir sorun bulundu. Lütfen daha sonra yeniden deneyin.",
+			"exportMayTakeSomeTime": "Günlük dışa aktarılırken lütfen bekleyin.",
+			"openSettingsButton": "Windows Ayarlarını Aç",
+			"exportLog": "Günlüğü Dışa Aktar"
 		},
 		"report": {
 			"modelTitle": "Model",

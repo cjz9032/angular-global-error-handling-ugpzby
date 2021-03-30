@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "Posnetek",
+		"ok": "V redu",
 		"hardwareListTitle": "Komponente strojne opreme",
 		"softwareListTitle": "Komponente programske opreme",
 		"snapshotWidgetButton": "Naredi posnetek",
@@ -5314,6 +5315,14 @@
 			"StartupPrograms": "Zagonski programi",
 			"VideoCards": "Grafična kartica",
 			"WebBrowsers": "Spletni brskalniki"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Dnevnik je bil uspešno izvožen in ga lahko najdete na:",
+			"exportAccessErrorDescription": "Storitvi Vantage morate dovoliti dostop do vašega datotečnega sistema za izvoz dnevnika. Kliknite spodnji gumb, da odprete nastavitve dovoljenj za Windows. Upoštevajte, da se zaradi spremembe dovoljenja storitev Vantage lahko zapre.",
+			"exportFailDescription": "Pri izvozu dnevnika je prišlo do težave. Poskusite znova pozneje.",
+			"exportMayTakeSomeTime": "Počakajte, da se izvoz dnevnika konča.",
+			"openSettingsButton": "Odpri nastavitve sistema Windows",
+			"exportLog": "Izvozi dnevnik"
 		},
 		"report": {
 			"modelTitle": "Model",

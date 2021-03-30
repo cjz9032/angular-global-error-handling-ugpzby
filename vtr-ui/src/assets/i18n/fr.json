@@ -5388,6 +5388,7 @@
 	},
 	"snapshot": {
 		"title": "Instantané",
+		"ok": "OK",
 		"hardwareListTitle": "Composants matériels",
 		"softwareListTitle": "Composants logiciels",
 		"snapshotWidgetButton": "Prendre un instantané",
@@ -5424,6 +5425,14 @@
 			"StartupPrograms": "Programmes de démarrage",
 			"VideoCards": "Carte vidéo",
 			"WebBrowsers": "Navigateurs Web"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Le journal a été exporté et il est accessible à l'emplacement suivant :",
+			"exportAccessErrorDescription": "Vous devez autoriser Vantage à accéder à votre système de fichiers pour exporter le journal. Cliquez sur le bouton ci-dessous pour ouvrir les paramètres des autorisations Windows. Gardez à l'esprit que la modification d'une autorisation peut entraîner la fermeture de Vantage.",
+			"exportFailDescription": "Un incident a été détecté pendant l'exportation du journal. Réessayez plus tard.",
+			"exportMayTakeSomeTime": "Veuillez patienter pendant l'exportation du journal.",
+			"openSettingsButton": "Ouvrir les paramètres Windows",
+			"exportLog": "Exporter le journal"
 		},
 		"report": {
 			"modelTitle": "Modèle",

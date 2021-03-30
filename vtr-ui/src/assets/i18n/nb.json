@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "Øyeblikksbilde",
+		"ok": "OK",
 		"hardwareListTitle": "Maskinvare Komponenter",
 		"softwareListTitle": "Programvarekomponenter",
 		"snapshotWidgetButton": "Ta et øyeblikksbilde",
@@ -5314,6 +5315,14 @@
 			"StartupPrograms": "Oppstartsprogrammer",
 			"VideoCards": "Skjermkort",
 			"WebBrowsers": "Nettlesere"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Loggen ble eksportert, og du kan finne den på:",
+			"exportAccessErrorDescription": "Du må gi Vantage tilgang til filsystemet for å kunne eksportere loggen. Klikk på knappen nedenfor for å åpne Windows-innstillinger for tillatelser. Vær oppmerksom på at endring av tillatelser kan føre til at Vantage lukkes.",
+			"exportFailDescription": "Det ble funnet et problem under eksporteringen av loggen. Prøv på nytt senere.",
+			"exportMayTakeSomeTime": "Vent mens loggen blir eksportert.",
+			"openSettingsButton": "Åpne Windows-innstillingene",
+			"exportLog": "Eksporter loggen"
 		},
 		"report": {
 			"modelTitle": "Modell",

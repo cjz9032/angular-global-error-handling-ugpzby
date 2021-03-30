@@ -5388,6 +5388,7 @@
 	},
 	"snapshot": {
 		"title": "Momentaufnahme",
+		"ok": "OK",
 		"hardwareListTitle": "Hardwarekomponenten",
 		"softwareListTitle": "Softwarekomponenten",
 		"snapshotWidgetButton": "Momentaufnahme erstellen",
@@ -5424,6 +5425,14 @@
 			"StartupPrograms": "Startprogramme",
 			"VideoCards": "Grafikkarte",
 			"WebBrowsers": "Webbrowser"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Das Protokoll wurde erfolgreich exportiert und befindet sich unter:",
+			"exportAccessErrorDescription": "Sie müssen Vantage den Zugriff auf Ihr Dateisystem erlauben, um das Protokoll exportieren zu können. Klicken Sie auf die Schaltfläche unten, um die Windows-Einstellungen für Berechtigungen zu öffnen. Beachten Sie, dass die Berechtigungsänderung zum Schließen von Vantage führen kann.",
+			"exportFailDescription": "Beim Protokollexport ist ein Fehler aufgetreten. Versuchen Sie es später erneut.",
+			"exportMayTakeSomeTime": "Bitte warten Sie, während das Protokoll exportiert wird.",
+			"openSettingsButton": "Windows-Einstellungen öffnen",
+			"exportLog": "Protokoll exportieren"
 		},
 		"report": {
 			"modelTitle": "Modell",
