@@ -499,7 +499,8 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		this.thermalModeSubscripiton = this.gamingCapabilityService
 			.getGamingThermalModeNotification()
 			.subscribe(() => {
-				if (this.modelMonitorSubcription === undefined) {
+				if ((this.gamingCapabilities.thermalModeVersion === 2 || this.gamingCapabilities.thermalModeVersion === 4)
+				&& this.gamingCapabilities.smartFanFeature && this.dialog.openDialogs.length === 0 && this.modelMonitorSubcription === undefined) {
 					this.openThermalMode2Modal();
 				}
 			});

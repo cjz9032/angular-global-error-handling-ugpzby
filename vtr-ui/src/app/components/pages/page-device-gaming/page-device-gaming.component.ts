@@ -32,7 +32,6 @@ import { Gaming } from 'src/app/enums/gaming.enum';
 	styleUrls: ['./page-device-gaming.component.scss'],
 })
 export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit, OnDestroy {
-	public static allCapablitiyFlag = false;
 	public isOnline = true;
 	public submit = 'Submit';
 	public feedbackButtonText = this.submit;
@@ -83,17 +82,18 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;
 
-		if (!PageDeviceGamingComponent.allCapablitiyFlag) {
+		if (!this.gamingAllCapabilitiesService.isGetCapabilitiesAready) {
 			this.gamingAllCapabilitiesService
 				.getCapabilities()
 				.then((response) => {
 					this.gamingAllCapabilitiesService.setCapabilityValuesGlobally(response);
-					PageDeviceGamingComponent.allCapablitiyFlag = true;
 					// TODO Lite Gaming
 					this.desktopType = response.desktopType;
 					this.liteGaming = response.liteGaming;
 					// this.desktopType = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.desktopType);
 					// this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
+					// Version 3.7 app search for gaming
+					this.launchProtocol();
 				})
 				.catch((err) => { });
 		}
@@ -107,7 +107,15 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				this.onNotification(notification);
 			}
 		);
-		this.launchProtocol();
+		// Version 3.7 app search for gaming
+		if (this.gamingAllCapabilitiesService.isGetCapabilitiesAready) {
+			this.launchProtocol();
+		}
+		setTimeout(() => {
+			if (!this.actionSubscription) {
+				this.launchProtocol();
+			}
+		}, 2000);
 	}
 
 	ngAfterViewInit(): void {
@@ -214,7 +222,7 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					setTimeout(() => {
 						this.thermalModeFlag = true;
 						this.gamingAllCapabilitiesService.sendGamingThermalModeNotification(Gaming.GamingThermalMode, true);
-					}, 2000);
+					}, 200);
 				}
 			}
 		);

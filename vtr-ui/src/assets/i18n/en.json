@@ -6049,7 +6049,8 @@
 			"gamingFeatures": {
 				"categoryName": "Gaming",
 				"macroKey": {
-					"featureName": "MacroKey",
+					"categoryName": "Macro Key",
+					"featureName": "Macro Key",
 					"highRelevantKeywords": [
 						"Macro",
 						"MacroKey",
@@ -6060,7 +6061,8 @@
 					]
 				},
 				"thermalMode": {
-					"featureName": "ThermalMode",
+					"categoryName": "Thermal Mode",
+					"featureName": "Thermal Mode",
 					"highRelevantKeywords": [
 						"Thermalmode",
 						"Thermal mode",
@@ -6080,7 +6082,8 @@
 					]
 				},
 				"networkBoost": {
-					"featureName": "NetworkBoost",
+					"categoryName": "Network Boost",
+					"featureName": "Network Boost",
 					"highRelevantKeywords": [
 						"Network",
 						"Network boost",
@@ -6096,7 +6099,8 @@
 					]
 				},
 				"autoClose": {
-					"featureName": "AutoClose",
+					"categoryName": "Auto close",
+					"featureName": "Auto Close",
 					"highRelevantKeywords": [
 						"Auto close",
 						"Autoclose",
@@ -6110,7 +6114,8 @@
 					]
 				},
 				"hybridMode": {
-					"featureName": "HybridMode",
+					"categoryName": "Device",
+					"featureName": "Hybrid Mode",
 					"highRelevantKeywords": [
 						"Hybrid mode",
 						"Hybrid",
@@ -6119,7 +6124,8 @@
 					]
 				},
 				"overDrive": {
-					"featureName": "OverDrive",
+					"categoryName": "Device",
+					"featureName": "Over Drive",
 					"highRelevantKeywords": [
 						"Over drive",
 						"screen",
@@ -6129,7 +6135,8 @@
 					]
 				},
 				"touchpadLock": {
-					"featureName": "TouchpadLock",
+					"categoryName": "Device",
+					"featureName": "Touchpad Lock",
 					"highRelevantKeywords": [
 						"Touchpad",
 						"lock",
@@ -6140,6 +6147,7 @@
 					]
 				},
 				"lighting": {
+					"categoryName": "Light",
 					"featureName": "Lighting",
 					"highRelevantKeywords": [
 						"Light",
@@ -6155,7 +6163,8 @@
 					]
 				},
 				"ramOverClock": {
-					"featureName": "RAMOverClock",
+					"categoryName": "Device",
+					"featureName": "RAM Overclock",
 					"highRelevantKeywords": [
 						"RAM",
 						"over clock",
@@ -6167,7 +6176,8 @@
 					]
 				},
 				"cpuOverClock": {
-					"featureName": "CPUOverClock",
+					"categoryName": "Device",
+					"featureName": "CPU Overclock",
 					"highRelevantKeywords": [
 						"CPU",
 						"over clock",
@@ -6179,7 +6189,8 @@
 					]
 				},
 				"gpuOverClock": {
-					"featureName": "GPUOverClock",
+					"categoryName": "Device",
+					"featureName": "GPU Overclock",
 					"highRelevantKeywords": [
 						"GPU",
 						"over clock",
@@ -6191,7 +6202,8 @@
 					]
 				},
 				"vramOverClock": {
-					"featureName": "VRAMOverClock",
+					"categoryName": "Device",
+					"featureName": "VRAM Overclock",
 					"highRelevantKeywords": [
 						"VRAM",
 						"over clock",
