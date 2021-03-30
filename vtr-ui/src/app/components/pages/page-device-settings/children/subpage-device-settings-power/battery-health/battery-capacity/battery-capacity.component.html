@@ -15,22 +15,22 @@
 		(click)="onRightIconClick(rightToolTip1, $event)"
 		(keydown.enter)="onRightIconClick(rightToolTip1, $event)"
 		tabindex="0"
-		attr.aria-label="'battery health capacity tooltip, which reads:'{{'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate}}">
+		attr.aria-label="'battery health capacity tooltip, which reads:'{{'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.capacityTooltip.'+condition | translate}}">
 	</fa-icon>
 	<ng-template #tooltipRef>
 		<div class="tooltip-content" id="battery-health-capacity-tooltip-content" role="tooltip"
-		[innerHTML]="'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.toolTip' | translate"></div>
+		[innerHTML]="'device.deviceSettings.power.batterySettings.batteryHealth.batteryCapacity.capacityTooltip.'+condition | translate"></div>
 	</ng-template>
-	<div class="capacity-area" [attr.aria-label]="'battery capacity percent'" id="battery-health-capacity-percent" role="img">
-		<svg class="capacity-indicator" id="battery-health-capacity-circle">　　　　　　　　　
-			<circle class="ground-circle" [ngClass]="circleStyle" cx="50" cy="50" r="42"/>
-			<circle cx="50" cy="50" r="49" class="thin-circle"/>
-			<circle cx="50" cy="50" r="42" [attr.stroke-dasharray]="overCircleLength + ', 264'" class="over-circle" [ngClass]="circleStyle" />
-			<circle cx="50" cy="50" r="35" class="thin-circle"/>
-		</svg>
-		<p *ngIf="!capacityError" id="battery-health-capacity-percent" role="text" class="percent-text">
-			{{ capacity + '%' }}
-		</p>
+	<div class="capacity-area" [attr.aria-label]="'battery capacity indicator'" id="battery-health-capacity-percent" role="img">
+		<svg xmlns="http://www.w3.org/2000/svg" width="40" height="74" viewBox="0 0 40 74">
+			<g id="Group_3626" data-name="Group 3626" transform="translate(-58.68 -230.3)">
+			  <g id="Union_21" data-name="Union 21" transform="translate(58.68 230.3)">
+				<path id="Path_632" data-name="Path 632" d="M62.436,302.3a1.874,1.874,0,0,1-1.756-1.972V240.1a1.873,1.873,0,0,1,1.756-1.972H70.19v-3.861a1.873,1.873,0,0,1,1.756-1.972H86.094a1.873,1.873,0,0,1,1.756,1.972v3.862h7.075a1.873,1.873,0,0,1,1.756,1.972v60.224a1.874,1.874,0,0,1-1.756,1.972Z" transform="translate(-58.68 -230.3)" fill="none"/>
+				<path id="Path_633" data-name="Path 633" d="M95.124,302.327a1.883,1.883,0,0,0,1.778-1.973V240.084a1.883,1.883,0,0,0-1.778-1.973H87.963v-3.864a1.883,1.883,0,0,0-1.778-1.973H71.863a1.883,1.883,0,0,0-1.779,1.973v3.864H62.235a1.883,1.883,0,0,0-1.777,1.973v60.269a1.883,1.883,0,0,0,1.777,1.973h32.89m0,1.973H62.235a3.77,3.77,0,0,1-3.555-3.947V240.084a3.771,3.771,0,0,1,3.555-3.947h6.071v-1.89a3.771,3.771,0,0,1,3.557-3.947H86.186a3.771,3.771,0,0,1,3.556,3.947v1.89h5.383a3.771,3.771,0,0,1,3.556,3.947v60.269A3.77,3.77,0,0,1,95.124,304.3Z" transform="translate(-58.68 -230.3)" class="external-frame" [ngClass]="condition"/>
+			  </g>
+			  <path id="Path_634" data-name="Path 634" d="M91.933,239.5H83.174v-2.447a.927.927,0,0,0-.857-.984h-7.8a.927.927,0,0,0-.857.984V239.5H65.394a1.854,1.854,0,0,0-1.714,1.969v55.867a1.855,1.855,0,0,0,1.714,1.969H91.933a1.855,1.855,0,0,0,1.714-1.969V241.465A1.855,1.855,0,0,0,91.933,239.5Z" transform="translate(0 0)" class="internal-filling" [ngClass]="condition"/>
+			</g>
+		  </svg>
 	</div>
 	<div class="capacity-text">
 		<p class="capacity-text-bottom" id="battery-health-capacity-fullChargeCapacity" role="text">

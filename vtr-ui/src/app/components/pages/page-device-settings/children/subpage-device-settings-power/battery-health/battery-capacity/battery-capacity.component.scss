@@ -156,3 +156,24 @@
 	font-family: $font_family_semilight;
 	color: #34495e;
 }
+
+@each $key, $item in $battery-color-condition {
+	.external-frame.#{$key} {
+		fill: map_get($item, edge);
+		@include high-contrast('white-on-black') {
+			fill: map-get($battery-color-condition-high-contrast, white-on-black )
+		}
+		@include high-contrast('black-on-white') {
+			fill: map-get($battery-color-condition-high-contrast, black-on-white )
+		}
+	}
+	.internal-filling.#{$key} {
+		fill: map_get($item, filling);
+		@include high-contrast('white-on-black') {
+			fill: map-get($battery-color-condition-high-contrast, white-on-black )
+		}
+		@include high-contrast('black-on-white') {
+			fill: map-get($battery-color-condition-high-contrast, black-on-white )
+		}
+	}
+}

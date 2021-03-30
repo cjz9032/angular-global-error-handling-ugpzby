@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BatteryHealthService } from '../battery-health.service';
-import { BatteryCapacityCircleStyle } from '../battery-health.enum';
+import { BatteryCapacityCircleStyle, BatteryCapacityConditions } from '../battery-health.enum';
 
 @Component({
 	selector: 'vtr-battery-capacity',
@@ -15,6 +15,7 @@ export class BatteryCapacityComponent implements OnInit {
 	capacityError = false;
 	overCircleLength = 264;
 	circleStyle = BatteryCapacityCircleStyle.GREEN;
+	condition = BatteryCapacityConditions.ERROR;
 	constructor(private batteryHealthService: BatteryHealthService) {}
 
 	ngOnInit(): void {
@@ -22,29 +23,24 @@ export class BatteryCapacityComponent implements OnInit {
 			if (batteryInfo) {
 				this.isCapacityError(batteryInfo);
 			}
-			this.setCircleInformation();
+			this.setCircleInformation(batteryInfo);
 		});
 	}
 
-	setCircleInformation() {
+	setCircleInformation(batteryInfo) {
 		if (this.capacity) {
 			switch (true) {
 				case this.capacityError:
-					this.circleStyle = BatteryCapacityCircleStyle.ERROR;
+					this.condition = BatteryCapacityConditions.ERROR;
 					break;
-				case this.capacity < 40:
-					this.circleStyle = BatteryCapacityCircleStyle.RED;
+				case this.capacity >= 40:
+					this.condition = BatteryCapacityConditions.GOOD;
 					break;
-				case this.capacity >= 40 && this.capacity < 60:
-					this.circleStyle = BatteryCapacityCircleStyle.PINK;
+				case this.capacity < 40 && !(batteryInfo.batteryHealthTip === 7 || batteryInfo.batteryHealthTip === 8):
+					this.condition = BatteryCapacityConditions.POOR;
 					break;
-				case this.capacity >= 60 && this.capacity < 70:
-					this.circleStyle = BatteryCapacityCircleStyle.YELLOW;
-					break;
-				case this.capacity >= 70:
-					this.circleStyle = BatteryCapacityCircleStyle.GREEN;
-					break;
-				default:
+				case this.capacity < 40 && (batteryInfo.batteryHealthTip === 7 || batteryInfo.batteryHealthTip === 8):
+					this.condition = BatteryCapacityConditions.AGING;
 					break;
 			}
 		} else {

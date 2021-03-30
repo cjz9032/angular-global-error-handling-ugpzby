@@ -1647,7 +1647,13 @@
 							"title": "Battery capacity",
 							"fullChargeCapacity": "Full charge capacity: ",
 							"originalDesignCapacity": "Original designed capacity: ",
-							"toolTip": "The full charge capacity of your battery decreases with daily use."
+							"toolTip": "The full charge capacity of your battery decreases with daily use.",
+							"capacityTooltip": {
+								"error": "Battery capacity not available.",
+								"good": "The battery is in good condition. Full charge capacity represents the maximum capacity of your battery when fully charged. <br>Note: The full charge capacity of your battery will gradually decrease over time.",
+								"poor": "The battery is in poor condition. Battery life and peak power performance will be impacted - we recommend replacing your battery. <br>Note: If your battery is out of warranty, you may be charged for a replacement battery and installation.",
+								"aging": "The battery has been disabled. The battery is no longer able to operate in a safe manner – we recommend replacing your battery. <br>Note: If your battery is out of warranty, you may be charged for a replacement battery and installation."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Battery temperature",
