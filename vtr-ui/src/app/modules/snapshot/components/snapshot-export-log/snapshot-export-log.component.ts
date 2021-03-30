@@ -102,7 +102,7 @@ export class SnapshotExportLogComponent implements OnInit {
 				}
 			})
 			.catch((error) => {
-				this.logger.exception('[ExportLogComponent] isPdfAvailable', error);
+				this.logger.exception('[SnapshotExportLogComponent] isPdfAvailable', error);
 			});
 	}
 
@@ -131,7 +131,7 @@ export class SnapshotExportLogComponent implements OnInit {
 				})
 				.catch((error) => {
 					this.logger.exception(
-						'[ExportLogComponent] Export Scan Results rejected',
+						'[SnapshotExportLogComponent] Export Scan Results rejected',
 						error
 					);
 					statusExport = error;

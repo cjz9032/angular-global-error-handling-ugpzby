@@ -3,28 +3,31 @@ import { ExportLogErrorStatus } from '../../../enums/snapshot.enum';
 import { By } from '@angular/platform-browser';
 
 import { ModalExportLogComponent } from './modal-export-log.component';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { MatDialogRef } from '@lenovo/material/dialog';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 describe('ModalExportLogComponent', () => {
 	let component: ModalExportLogComponent;
 	let fixture: ComponentFixture<ModalExportLogComponent>;
 
-	const ngbActiveModal = jasmine.createSpyObj('ngbActiveModal', ['close']);
+	const matDialogRef = jasmine.createSpyObj('MatDialogRef', ['close']);
 	const deviceService = jasmine.createSpyObj('deviceService', ['launchUri']);
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			declarations: [ModalExportLogComponent],
+			imports: [TranslateModule.forRoot()],
 			providers: [
 				{
-					provide: NgbActiveModal,
-					useValue: ngbActiveModal,
+					provide: MatDialogRef,
+					useValue: matDialogRef,
 				},
 				{
 					provide: DeviceService,
 					useValue: deviceService,
 				},
+				TranslatePipe,
 			],
 		}).compileComponents();
 	});
