@@ -31,7 +31,7 @@ export class SnapshotMainComponent implements OnInit {
 		});
 	}
 
-	public isButtonEnabled() {
+	public isButtonEnabled(): boolean {
 		const statesToEnable = [
 			SnapshotStatus.notStarted,
 			SnapshotStatus.snapshotCompleted,

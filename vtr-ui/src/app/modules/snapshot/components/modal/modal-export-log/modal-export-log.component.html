@@ -1,7 +1,7 @@
 <div class="modal-body vtr-modal-export-log">
-	<h1 mat-dialog-title id="snapshot-export-log-modal-title" class="title" role="heading">{{ 'snapshot.exportLogModal.exportLog' | translate }}</h1>
+	<h1 id="snapshot-export-log-modal-title" class="title" role="heading">{{ 'snapshot.exportLogModal.exportLog' | translate }}</h1>
 
-	<div mat-dialog-content [ngSwitch]="errorStatus">
+	<div [ngSwitch]="errorStatus">
 		<p *ngSwitchCase="enumExportLogErrorStatus.SuccessExport" id="snapshot-export-log-modal-description"
 			class="description"
 			role="text">{{ 'snapshot.exportLogModal.exportSuccessDescription' | translate }} {{ logPath }}</p>
@@ -17,7 +17,7 @@
 			class="description" role="text">{{ 'snapshot.exportLogModal.exportFailDescription' | translate }}</p>
 	</div>
 
-	<div mat-dialog-content [ngSwitch]="errorStatus" class="row button-row">
+	<div [ngSwitch]="errorStatus" class="row button-row">
 
 		<div class="col loading" *ngSwitchCase="enumExportLogErrorStatus.LoadingExport">
 			<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>

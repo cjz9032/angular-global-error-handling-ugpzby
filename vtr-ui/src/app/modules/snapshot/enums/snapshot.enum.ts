@@ -49,3 +49,8 @@ export enum ExportLogExtensions {
 	pdf = 'pdf',
 	html = 'html',
 }
+
+export enum MetricsExportLog {
+	SuccessResult = 'Success',
+	FailResult = 'Fail',
+}

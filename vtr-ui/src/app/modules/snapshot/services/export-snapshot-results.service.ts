@@ -13,9 +13,6 @@ declare let window;
 	providedIn: 'root',
 })
 export class ExportSnapshotResultsService {
-	public static readonly METRICS_SUCCESS_RESULT = 'Success';
-	public static readonly METRICS_FAIL_RESULT = 'Fail';
-
 	private static readonly TEMPLATE_PATH =
 		'assets/templates/snapshot/snapshot-results-template.html';
 

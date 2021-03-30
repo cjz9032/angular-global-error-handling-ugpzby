@@ -3,7 +3,11 @@ import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import { ExportLogErrorStatus, ExportLogExtensions } from '../../enums/snapshot.enum';
+import {
+	ExportLogErrorStatus,
+	ExportLogExtensions,
+	MetricsExportLog,
+} from '../../enums/snapshot.enum';
 import { ModalExportLogComponent } from '../../components/modal/modal-export-log/modal-export-log.component';
 import { ExportSnapshotResultsService } from '../../services/export-snapshot-results.service';
 
@@ -122,11 +126,11 @@ export class SnapshotExportLogComponent implements OnInit {
 			const exportModal = this.openExportLogComponentsModal();
 
 			this.timerService.start();
-			let result = ExportSnapshotResultsService.METRICS_FAIL_RESULT;
+			let result = MetricsExportLog.FailResult;
 			this.exportService
 				.exportSnapshotResults()
 				.then((status) => {
-					result = ExportSnapshotResultsService.METRICS_SUCCESS_RESULT;
+					result = MetricsExportLog.SuccessResult;
 					[statusExport, filePath] = status;
 				})
 				.catch((error) => {
@@ -139,7 +143,7 @@ export class SnapshotExportLogComponent implements OnInit {
 				.finally(() => {
 					this.updateExportLogComponentsModal(exportModal, statusExport, filePath);
 					this.exportService.sendTaskActionMetrics(
-						result === ExportSnapshotResultsService.METRICS_SUCCESS_RESULT ? 1 : 0,
+						result === MetricsExportLog.SuccessResult ? 1 : 0,
 						'',
 						result,
 						this.timerService.stop()
@@ -150,7 +154,6 @@ export class SnapshotExportLogComponent implements OnInit {
 
 	private openExportLogComponentsModal(): MatDialogRef<ModalExportLogComponent> {
 		const modal = this.dialog.open(ModalExportLogComponent, {
-			autoFocus: true,
 			hasBackdrop: true,
 			disableClose: true,
 			panelClass: 'hardware-scan-modal-size',
