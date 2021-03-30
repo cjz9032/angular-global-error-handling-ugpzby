@@ -17,17 +17,16 @@
         <hr />
     </div>
     <div class="modal-bottom d-flex flex-wrap">
-        <vtr-ui-button id="store-rating-like-us-button" (onClick)="onBtnLikeClicked($event)"
+        <button id="store-rating-like-us-button" (click)="onBtnLikeClicked($event)" mat-customize-button color="primary"
             (mouseenter)="onBtnMouseEnter('like')" (mouseleave)="onBtnMouseLeave()" metricsEvent="FeatureClick"
             metricsParent="StoreRatingBox" metricsItem="LIKE US" vtrMetrics linkId="store-rating-close"
-            [upperCaseLabel]="true" aria-label="btn-like-us" [btnHeight]=true
-            [label]="'storeRating.likeUs' | translate"></vtr-ui-button>
+            aria-label="btn-like-us">{{ 'storeRating.likeUs' | translate | uppercase }}</button>
 
-        <button id="store-rating-feedback-button" class="feedback-btn d-flex" metricsEvent="FeatureClick"
-            metricsParent="StoreRatingBox" metricsItem="Leave feedback" vtrMetrics
+        <button id="store-rating-feedback-button" mat-customize-button class="link-button feedback-btn"
+            metricsEvent="FeatureClick" metricsParent="StoreRatingBox" metricsItem="Leave feedback" vtrMetrics
             (mouseenter)="onBtnMouseEnter('dislike')" (mouseleave)="onBtnMouseLeave()"
             (click)="onBtnDislikeClicked($event)">
-            {{'storeRating.feedback'|translate}}
+            {{'storeRating.feedback' | translate | uppercase }}
         </button>
 
     </div>
