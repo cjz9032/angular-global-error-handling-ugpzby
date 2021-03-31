@@ -16,6 +16,7 @@ import { CardService, CardOverlayTheme } from 'src/app/services/card/card.servic
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { ContentSource } from 'src/app/enums/content.enum';
 import { MatTooltip } from '@lenovo/material/tooltip';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 @Component({
 	selector: 'vtr-widget-carousel',
@@ -24,11 +25,10 @@ import { MatTooltip } from '@lenovo/material/tooltip';
 	providers: [NgbCarouselConfig],
 })
 export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
-	@Input() cardTitle: string;
-	@Input() source: string;
-	@Input() image: string;
-	@Input() link: string;
-	@Input() data: any;
+	@Input() tabIndex = 0;
+	@Input() isShort = false;
+	@Input() defaultOverlayTheme = CardOverlayTheme.Dark;
+	@Input() data: FeatureContent[];
 	@Input() interval: number;
 	@Input() keyboard: boolean;
 	@Input() pauseOnHover: boolean;
@@ -40,7 +40,8 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 	@ViewChild('containerSarousel', { static: false }) containerSarousel: ElementRef;
 	@ViewChild(NgbCarousel) carouselContainer;
 	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
-	carouselModel: CarouselModel[] = [];
+	carouselModel: FeatureContent[] = [];
+	CardOverlayTheme = CardOverlayTheme;
 
 	public readonly slideIdFormat = 'ngb-slide-';
 
@@ -102,16 +103,21 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 	parseToCarouselModel() {
 		this.carouselModel = [];
 		for (const carousel of this.data) {
+			let overlayTheme;
+			if (!carousel.OverlayTheme || carousel.OverlayTheme === CardOverlayTheme.Default) {
+				overlayTheme = this.defaultOverlayTheme;
+			} else {
+				overlayTheme = carousel.OverlayTheme;
+			}
 			this.carouselModel.push({
-				id: carousel.id,
-				source: carousel.source,
-				cardTitle: carousel.title,
-				image: carousel.url,
-				link: carousel.ActionLink ? carousel.ActionLink : '',
-				linkType: carousel.ActionType || '',
-				dataSource: carousel.DataSource || '',
-				overlayThemeDark:
-					!carousel.OverlayTheme || carousel.OverlayTheme !== CardOverlayTheme.Light,
+				Id: carousel.Id,
+				Title: carousel.Title,
+				Description: carousel.Description,
+				FeatureImage: carousel.FeatureImage,
+				ActionLink: carousel.ActionLink ? carousel.ActionLink : '',
+				ActionType: carousel.ActionType || '',
+				DataSource: carousel.DataSource || '',
+				OverlayTheme: overlayTheme,
 			});
 		}
 
@@ -162,7 +168,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 			const index = this.getIndexFromId(this.currentSlideId);
 			if (index >= 0) {
 				const model = this.carouselModel[index];
-				this.linkClicked($event, model.linkType, model.link, model.cardTitle);
+				this.linkClicked($event, model.ActionType, model.ActionLink, model.Title);
 			}
 		}
 	}
@@ -200,15 +206,4 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 			}
 		}
 	}
-}
-
-interface CarouselModel {
-	cardTitle: string;
-	source: string;
-	image: string;
-	link: string;
-	id: string;
-	linkType: string;
-	dataSource?: string;
-	overlayThemeDark?: boolean;
 }

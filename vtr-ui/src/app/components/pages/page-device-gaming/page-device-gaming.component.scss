@@ -18,20 +18,6 @@
 ::ng-deep body.focus-enable {
 	.is-gaming {
 		.vtr-page-device-gaming {
-			vtr-container-card {
-				&:focus {
-					.content {
-						@include solid-button-outline;
-						@media #{$high-contrast} {
-							@include solid-button-outline(highlight);
-						}
-					}
-				}
-				a.card-image,
-				a.action-link-a {
-					outline: none !important;
-				}
-			}
 			.vtr-widget-quicksettings-list,
 			.vtr-widget-lighting {
 				&:focus {

@@ -30,10 +30,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { SubscriptionState } from 'src/app/enums/smart-performance.enum';
 
 interface IContentGroup {
-	positionA: any[];
+	positionA: FeatureContent[];
 	positionB: FeatureContent;
 	positionC: FeatureContent;
-	positionD: FeatureContent;
+	positionD: FeatureContent[];
 	positionE: FeatureContent;
 	positionF: FeatureContent;
 }
@@ -328,11 +328,10 @@ export class DashboardService {
 	setDefaultCMSContent() {
 		this.offlineCardContent.positionA = [
 			{
-				albumId: 1,
-				id: 1,
-				source: 'Vantage',
-				title: this.translate.instant('dashboard.offlineInfo.welcomeToVantage'),
-				url: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
+				Id: 'dashboard-position-a-1',
+				Title: 'Vantage',
+				Description: this.translate.instant('dashboard.offlineInfo.welcomeToVantage'),
+				FeatureImage: 'assets/cms-cache/offline/Default-SMB-Welcome.jpg',
 				ActionLink: null,
 				DataSource: ContentSource.Local,
 				isLocal: true,
@@ -378,25 +377,27 @@ export class DashboardService {
 			isLocal: true,
 		};
 
-		this.offlineCardContent.positionD = {
-			Title: this.translate.instant('dashboard.offlineInfo.systemHealth'),
-			ShortTitle: '',
-			Description: '',
-			FeatureImage: 'assets/cms-cache/offline/Default-SMB-My-Device.jpg',
-			Action: '',
-			ActionType: ContentActionType.Internal,
-			ActionLink: 'lenovo-vantage3:device',
-			BrandName: '',
-			BrandImage: '',
-			Priority: 'P1',
-			Page: 'dashboard',
-			Template: 'full-width-title-image-background',
-			Position: 'position-D',
-			ExpirationDate: null,
-			Filters: null,
-			DataSource: ContentSource.Local,
-			isLocal: true,
-		};
+		this.offlineCardContent.positionD = [
+			{
+				Id: 'offline-content-position-d-1',
+				Title: this.translate.instant('dashboard.offlineInfo.systemHealth'),
+				Description: '',
+				FeatureImage: 'assets/cms-cache/offline/Default-SMB-My-Device.jpg',
+				Action: '',
+				ActionType: ContentActionType.Internal,
+				ActionLink: 'lenovo-vantage3:device',
+				BrandName: '',
+				BrandImage: '',
+				Priority: 'P1',
+				Page: 'dashboard',
+				Template: 'full-width-title-image-background',
+				Position: 'position-D',
+				ExpirationDate: null,
+				Filters: null,
+				DataSource: ContentSource.Local,
+				isLocal: true,
+			},
+		];
 
 		this.offlineCardContent.positionE = {
 			Title: this.translate.instant('settings.preferenceSettings'),

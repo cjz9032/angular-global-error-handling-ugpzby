@@ -29,18 +29,19 @@
 			</div>
 			<div class="row">
 				<div class="col-12 py-20 px-0">
-					<vtr-container-card *ngIf="!isOnline" order="4" role="img" tabindex="1" id="lenovo game store"
-						aria-label="lenovo game store" vtrMetrics [metricsItem]="'dashboard_gaming_banner'"
-						metricsEvent="featureClick" metricsParent="Gaming.Dashboard" [item]="cardContentPositionD"
-						[type]="'highlight'" [ratio]="4">
-					</vtr-container-card>
-					<a tabindex="-1" class="action-link-a" *ngIf="isOnline" [href]="cardContentPositionD.ActionLink"
-						[target]="cardContentPositionD.ActionType">
-						<vtr-container-card order="4" role="img" tabindex="1" id="lenovo game store"
-							aria-label="lenovo game store" vtrMetrics  [metricsItem]="'dashboard_gaming_banner'"
-							metricsEvent="featureClick" metricsParent="Gaming.Dashboard" [item]="cardContentPositionD" [type]="'highlight'" [ratio]="4">
-						</vtr-container-card>
-					</a>
+					<vtr-widget-carousel [data]="cardContentPositionD"
+						[defaultOverlayTheme]="CardOverlayTheme.Light"
+						[order]="4"
+						[isShort]="true"
+						[tabIndex]="1"
+						[interval]="500000"
+						[pauseOnHover]="true"
+						[showNavigationArrows]="true"
+						[showNavigationIndicators]="true"
+						[carouselId]="'dashboard-gaming-banner'"
+						id="lenovo gaming store"
+						aria-label="dashboard-gaming-banner">
+					</vtr-widget-carousel>
 				</div>
 			</div>
 		</div>
