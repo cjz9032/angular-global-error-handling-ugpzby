@@ -392,7 +392,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 					customIcon: micMode.toLowerCase() === 'normal' ? 'LE-VoiceRecognition2x' : '',
 					hideIcon: micMode.toLowerCase() === 'normal',
 					processLabel: true,
-					metricsItem: `radio.smb.optimize-mic.${micMode}`,
+					metricsItem: `radio.optimize-mic.${micMode}`,
 				});
 			});
 		}
