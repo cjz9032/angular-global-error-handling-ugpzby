@@ -28,7 +28,6 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 
 	@ViewChild('containerCardLoading', { static: false }) containerCardLoading: ElementRef;
 	@ViewChild('containerCardCorner', { static: false }) containerCardCorner: ElementRef;
-	// @ViewChild('containerCardAndroid', {static: false}) containerCardAndroid: ElementRef;
 	@ViewChild('containerCardWideArticle', { static: false }) containerCardWideArticle: ElementRef;
 	@ViewChild('containerCardArticle', { static: false }) containerCardArticle: ElementRef;
 	@ViewChild('containerCardCornerArticle', { static: false })
@@ -93,7 +92,7 @@ export class ContainerCardComponent implements OnInit, OnDestroy {
 		private cardService: CardService,
 		public deviceService: DeviceService,
 		private metricsService: MetricService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.isOnline = this.commonService.isOnline;

@@ -7,7 +7,7 @@ import { MetricEventName as EventName } from 'src/app/enums/metrics.enum';
 import { MetricService } from '../metric/metrics.service';
 import { tap } from 'rxjs/operators';
 
-declare var Windows;
+declare let Windows;
 
 @Injectable()
 export class CommsService {
@@ -93,7 +93,6 @@ export class CommsService {
 	}
 
 	async makeTagRequest(strUrl, headers: any = {}) {
-		// return this.http.get(url, { observe: 'response', headers });
 		if (!Windows) {
 			throw new Error('unknow error');
 		}

@@ -7,7 +7,7 @@ import {
 	EventEmitter,
 	OnChanges,
 	ViewChild,
-	HostListener
+	HostListener,
 } from '@angular/core';
 import { isUndefined } from 'util';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -173,12 +173,7 @@ export class UiLightingEffectComponent implements OnInit, OnChanges {
 				}
 			}
 		}
-		// if (!isUndefined(changes.effectOptionName)) {
-		// 	if (changes.effectOptionName.previousValue !== changes.effectOptionName.currentValue) {
-		// 		this.effectOptionName = changes.effectOptionName.currentValue;
-		// 	}
 
-		// }
 		if (!isUndefined(changes.options)) {
 			if (!isUndefined(changes.options.currentValue)) {
 				if (!isUndefined(this.selectedValue)) {

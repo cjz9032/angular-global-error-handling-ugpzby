@@ -9,8 +9,6 @@
 
 	.dropdown-btn {
 		display: flex;
-		// width: 4.4rem;
-		// padding-right: 1rem;
 		justify-content: center;
 		cursor: pointer;
 
@@ -64,7 +62,6 @@
 
 		&:focus {
 			outline: 0.1rem solid $light !important;
-			// outline-offset: 0.2rem;
 		}
 	}
 

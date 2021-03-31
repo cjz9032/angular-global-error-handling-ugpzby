@@ -23,9 +23,6 @@ $largeSideWidth: 3.5rem;
 			border: 0.1rem solid $light;
 			color: $light;
 		}
-		// @media #{$mediaquery_X46} {  // $mediaquery_X46 support 1:1 of screen 768px-992px
-		// 	padding-top: 3.5rem;
-		// }
 		@media #{$mediaquery_X48} {
 			padding-top: 3.5rem;
 		}
@@ -53,14 +50,7 @@ $largeSideWidth: 3.5rem;
 				}
 			}
 		}
-		// @media #{$mediaquery_X46} {
-		// 	.side {
-		// 		margin-left: 0;
-		// 		svg {
-		// 			width: 1.5rem;
-		// 		}
-		// 	}
-		// }
+
 		@media #{$mediaquery_X48} {
 			.side {
 				margin-left: 0;

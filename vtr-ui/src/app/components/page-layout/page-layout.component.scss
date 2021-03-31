@@ -64,7 +64,6 @@
 					padding-top: 4rem;
 				}
 				@media #{$breakpoint_lg} {
-					// padding-top: 2rem;
 				}
 				@media #{$breakpoint_lg} {
 					background-color: $shade_extralight;
@@ -132,22 +131,18 @@
 	}
 }
 
-:host-context(.smb){
-	.vtr-page{
+:host-context(.smb) {
+	.vtr-page {
 		.vtr-page-columns {
 			.vtr-page-column {
-				// @media #{$breakpoint_xl} {
-				// 	padding: 0 $padding_side_sm 4rem !important;
-				// }
 				&.vtr-page-left-column {
 					flex: 0 0 100%;
-                    max-width: 100%;
-                    padding: 0;
+					max-width: 100%;
+					padding: 0;
 				}
 				&.vtr-page-right-column {
 					display: none;
 				}
-				
 			}
 		}
 	}

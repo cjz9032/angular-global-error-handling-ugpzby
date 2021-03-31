@@ -30,7 +30,6 @@ export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
 				window.scrollBy(0, -60);
 
 				// fix for VAN-12795 , focus element only when event is key press for narrator to read element text.
-				// if (event.type !== 'click') {
 				const focusElement = element.querySelector("[tabIndex = '-1']") as HTMLElement;
 				if (focusElement) {
 					focusElement.focus();
@@ -42,19 +41,6 @@ export class UiHeaderSubpageComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit(): void {
-		try {
-			//------ Commented out Accessibility changes as suggested by Santosh to fix VAN-16713.--------
-			// if (this.route.snapshot.queryParamMap.get(this.fromTab) && this.route.snapshot.queryParamMap.get(this.fromTab) === 'true') {
-			// 	const focusElement = this.pageHeadingRef.nativeElement.querySelector('[tabIndex = \'-1\']') as HTMLElement;
-			// 	if (focusElement) {
-			// 		focusElement.focus();
-			// 	}
-			// }
-			// else {
-			// 	if (document.getElementById(this.pageHeader) !== undefined) {
-			// 		document.getElementById(this.pageHeader).focus();
-			// 	}
-			// }
-		} catch (error) {}
+		//------ Commented out Accessibility changes as suggested by Santosh to fix VAN-16713.--------
 	}
 }

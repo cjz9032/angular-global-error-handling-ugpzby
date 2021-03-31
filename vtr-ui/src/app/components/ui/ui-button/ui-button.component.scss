@@ -52,7 +52,6 @@
 				overflow: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
-				//font-size: $fontsize_sm !important;
 				letter-spacing: 0;
 				cursor: pointer;
 				@include high-contrast-adjust;
@@ -123,7 +122,6 @@
 				$button_gradient_start,
 				$button_gradient_end
 			);
-			// @include high-contrast-background-image;
 			@include high-contrast-adjust;
 			@include ui-button-high-contrast-white;
 			@include ui-button-high-contrast-black;
@@ -155,14 +153,6 @@
 		.btn-in-red-bg {
 			color: $stop_dark;
 			box-shadow: 0 0 0 0.1rem $alt;
-			// @media #{$black-on-white} {
-			// 	background: $high-contrast-white-textselected;
-			// 	color: $light;
-			// }
-			// @media #{$white-on-black} {
-			// 	background: $high-contrast-black-textselected;
-			// 	color: $dark;
-			// }
 			@include ui-button-high-contrast-white;
 			@include ui-button-high-contrast-black;
 			&:focus::after {

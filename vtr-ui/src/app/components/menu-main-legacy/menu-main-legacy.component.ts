@@ -104,7 +104,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 	upMenuLevel: boolean;
 	private backlightCapabilitySubscription: Subscription;
 	@ViewChildren(NgbDropdown) dropDowns: QueryList<NgbDropdown>;
-	// activeDropdown: NgbDropdown;
 	@ViewChild('menuMainNavbarToggler') navbarToggler: ElementRef;
 
 	get appsForYouEnum() {
@@ -199,7 +198,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			}
 		});
 
-		this.appSearchService.isAvailable().then(available => {
+		this.appSearchService.isAvailable().then((available) => {
 			this.showSearchMenu = available;
 		});
 
@@ -246,13 +245,10 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		this.dropDowns.toArray().forEach((elem) => {
 			elem.close();
 		});
-		// Open the dropdown that was clicked on
-		// activeDropdown.open();
 	}
 
 	closeAllOtherDD(activeDropdown: NgbDropdown) {
 		// Close all dropdowns
-		// this.activeDropdown = activeDropdown;
 		this.dropDowns.toArray().forEach((elem) => {
 			if (activeDropdown !== elem) {
 				elem.close();
@@ -265,12 +261,10 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			const sourceElement = $event.srcElement as HTMLAnchorElement;
 			const menuElement = sourceElement.parentElement.parentElement;
 			const anchors = Array.from(menuElement.querySelectorAll('[class*=dropdown-item]'));
-			// const anchors = Array.from(menuElement.querySelectorAll('.dropdown-item.link'));
 			const currentIndex = anchors.indexOf(sourceElement);
 			const tabElements = Array.from(
-				document.querySelectorAll('[tabindex]:not([tabindex=\'-1\']')
+				document.querySelectorAll("[tabindex]:not([tabindex='-1']")
 			);
-			/// const tabElements = Array.from(document.querySelectorAll('[tabIndex = \'1\']'));
 			const curElementTabIndex = tabElements.indexOf(sourceElement);
 			// SHIFT+TAB
 			if ($event.shiftKey && $event.keyCode === 9) {
@@ -288,7 +282,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 						$event.stopPropagation();
 						$event.preventDefault();
 						element.focus();
-						// console.log('ShIFT tab curElementTabIndex closing current element curElementTabIndex')
 						activeDropdown.close();
 					}
 				}
@@ -302,12 +295,10 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 					$event.preventDefault();
 					element.focus();
 					if (element.id === 'navbarDropdown') {
-						// console.log(element.innerText);
 						const next = tabElements[curElementTabIndex + 2] as HTMLElement;
 						next.focus();
 					}
 
-					// console.log('tab curElementTabIndex closing current element curElementTabIndex');
 					activeDropdown.close();
 				}
 			}
@@ -334,7 +325,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		if (machineType === 0 || machineType === 1) {
 			// add try catch for backlight exception; this is temp solution, dongwq2 should add error handle in backlight
 			try {
-				// this.localCacheService.setLocalCacheValue(LocalStorageKey.BacklightCapability, false);
 				this.backlightCapabilitySubscription = this.backlightService.backlight
 					.pipe(
 						map((res) => res.find((item) => item.key === 'KeyboardBacklightLevel')),
@@ -351,7 +341,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 						})
 					)
 					.subscribe();
-			} catch (error) { }
+			} catch (error) {}
 		}
 
 		const machineFamily = this.localCacheService.getLocalCacheValue(
@@ -465,9 +455,7 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 		}
 	}
 
-	isParentActive(item) {
-		// console.log('IS PARENT ACTIVE', item.id, item.path);
-	}
+	isParentActive(item) {}
 
 	showItem(item) {
 		let showItem = true;
@@ -594,12 +582,12 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 				}
 				inputAccessoriesCapability.isUdkAvailable =
 					responses[0] != null &&
-						Object.keys(responses[0]).indexOf('uDKCapability') !== -1
+					Object.keys(responses[0]).indexOf('uDKCapability') !== -1
 						? responses[0].uDKCapability
 						: false;
 				inputAccessoriesCapability.isKeyboardMapAvailable =
 					responses[0] != null &&
-						Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
+					Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1
 						? responses[0].keyboardMapCapability
 						: false;
 				inputAccessoriesCapability.keyboardVersion =
@@ -613,29 +601,6 @@ export class MenuMainLegacyComponent implements OnInit, OnDestroy {
 			this.logger.exception('initInputAccessories', error);
 		}
 
-		// await Promise.all([
-		// 	this.keyboardService.GetAllCapability(),
-		// 	this.keyboardService.GetKeyboardVersion()
-		// ])
-		// 	.then((responses) => {
-		// 		try {
-		// 			this.logger.error('MenuMainComponent.initInputAccessories after API call'
-		// 				, { GetAllCapability: responses[0], GetKeyboardVersion: responses[1] });
-		// 			let inputAccessoriesCapability: InputAccessoriesCapability = this.localCacheService.getLocalCacheValue(LocalStorageKey.InputAccessoriesCapability, undefined);
-		// 			if (inputAccessoriesCapability === undefined) {
-		// 				inputAccessoriesCapability = new InputAccessoriesCapability();
-		// 			}
-		// 			inputAccessoriesCapability.isUdkAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('uDKCapability') !== -1) ? responses[0].uDKCapability : false;
-		// 			inputAccessoriesCapability.isKeyboardMapAvailable = (responses[0] != null && Object.keys(responses[0]).indexOf('keyboardMapCapability') !== -1) ? responses[0].keyboardMapCapability : false;
-		// 			inputAccessoriesCapability.keyboardVersion = (responses[1] != null) ? responses[1] : '-1';
-		// 			this.localCacheService.setLocalCacheValue(LocalStorageKey.InputAccessoriesCapability,
-		// 				inputAccessoriesCapability
-		// 			);
-		// 		} catch (error) {
-		// 			this.logger.exception('initInputAccessories', error);
-		// 		}
-		// 	})
-		// 	.catch((error) => { });
 		this.keyboardService.getVoipHotkeysSettings().then((response) => {
 			if (response.capability) {
 				this.localCacheService.setLocalCacheValue(

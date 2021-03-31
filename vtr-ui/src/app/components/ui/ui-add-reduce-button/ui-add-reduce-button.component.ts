@@ -54,7 +54,6 @@ export class UiAddReduceButtonComponent implements OnInit {
 		if (this.isValChange) {
 			this.value = this.calculate(this.value, this.step, false);
 		}
-		//   this.value = this.calculate(this.value,this.step,false);
 		if (this.value <= this.minData) {
 			this.value = this.minData;
 		}
@@ -67,7 +66,6 @@ export class UiAddReduceButtonComponent implements OnInit {
 		if (this.isValChange) {
 			this.value = this.calculate(this.value, this.step, true);
 		}
-		//   this.value = this.calculate(this.value,this.step,true);
 		if (this.value >= this.maxData) {
 			this.value = this.maxData;
 		}

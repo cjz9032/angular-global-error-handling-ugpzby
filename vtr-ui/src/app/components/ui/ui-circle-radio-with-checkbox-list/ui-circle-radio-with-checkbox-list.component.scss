@@ -299,7 +299,6 @@
 						.icomoon {
 							&::before {
 								color: $shade_blue;
-								// opacity: 0.6;
 								@media #{$black-on-white} {
 									@include high-contrast-white-text-color-disabled;
 								}

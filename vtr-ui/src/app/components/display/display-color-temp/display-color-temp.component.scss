@@ -18,19 +18,9 @@
 		width: 100%;
 	}
 	.reset-temperature {
-		//width: 20rem;
 		margin-top: 1rem;
 		position: relative;
 
-		// @media #{$mediaquery_7} {
-		// 	margin-top: 1.6rem;
-		// 	position: relative;
-		// }
-
-		// @media #{$mediaquery_10} {
-		// 	margin-top: 1.7rem;
-		// 	position: relative;
-		//}
 		.button-box {
 			margin: 0rem 0rem 0rem 0.5rem;
 			::ng-deep .button {

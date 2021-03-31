@@ -14,28 +14,6 @@ export class MenuHeaderComponent implements OnInit {
 
 	ngOnInit() {}
 
-	/* getActiveTab() {
-		let activeTab = {};
-		this.menuItems.forEach((d, i) => {
-			if (d.active) {
-				activeTab = d;
-			}
-		});
-		return activeTab;
-	}
-
-	tabClick($event, tab) {
-		this.setActiveTab(tab);
-	}
-
-	setActiveTab(tab) {
-		for (const item of this.menuItems) {
-			item.active = false;
-			if (item.id === tab.id) {
-				item.active = true;
-			}
-		}
-	} */
 	changeRoute(routeValue, params?: any) {
 		if (params) {
 			this.router.navigate(['/' + routeValue], { queryParams: params });

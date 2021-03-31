@@ -145,8 +145,6 @@ export class UiCircleRadioWithCheckBoxListComponent implements OnInit, OnChanges
 		let isHandled = false;
 
 		if (type === 'keydown') {
-			// const node = event.currentTarget;
-
 			switch (event.keyCode) {
 				// next item
 				case KEYCODE.DOWN:

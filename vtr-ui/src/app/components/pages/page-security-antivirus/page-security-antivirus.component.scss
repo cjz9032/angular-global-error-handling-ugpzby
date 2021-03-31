@@ -129,7 +129,6 @@
 
 			@media #{$breakpoint_xl} {
 				position: relative;
-				// margin-top: 12rem;
 			}
 		}
 
@@ -384,7 +383,6 @@
 						text-overflow: ellipsis;
 						word-wrap: break-word !important;
 						-webkit-line-clamp: 2 !important;
-						/* autoprefixer: off */
 						-webkit-box-orient: vertical !important;
 					}
 				}
