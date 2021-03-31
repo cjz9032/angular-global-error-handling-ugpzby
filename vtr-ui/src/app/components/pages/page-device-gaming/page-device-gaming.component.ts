@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, OnDestroy, AfterViewInit} from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { MockService } from '../../../services/mock/mock.service';
@@ -25,6 +25,8 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 import { GAMING_DATA } from './../../../../testing/gaming-data';
 import { PerformanceNotifications } from 'src/app/enums/performance-notifications.enum';
 import { Gaming } from 'src/app/enums/gaming.enum';
+import { CardOverlayTheme } from 'src/app/services/card/card.service';
+import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 @Component({
 	selector: 'vtr-page-device-gaming',
@@ -36,7 +38,8 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 	public submit = 'Submit';
 	public feedbackButtonText = this.submit;
 	public securityAdvisor: SecurityAdvisor;
-	public cardContentPositionD: any = {};
+	public cardContentPositionD: FeatureContent[] = [];
+	public CardOverlayTheme = CardOverlayTheme;
 	// Version 3.2 lite gaming
 	public liteGaming = false;
 	public desktopType = false;
@@ -150,11 +153,28 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 		}
 	}
 
+	private selectOverlayTheme(record) {
+		let overlayTheme;
+		if (record) {
+			if (record.Parameters && record.Parameters.length > 0) {
+				const theme = record.Parameters.find((item) => item.Key === 'OverlayTheme');
+				if (theme) {
+					overlayTheme = theme.Value;
+				} else {
+					overlayTheme = record.OverlayTheme;
+				}
+			} else {
+				overlayTheme = record.OverlayTheme;
+			}
+		}
+		return overlayTheme;
+	}
+
 	fetchCmsContents(lang?: string) {
 		const callCmsStartTime: any = new Date();
 		const queryOptions = GAMING_DATA.buildPage('dashboard');
 		if (this.isOnline) {
-			if (this.dashboardService.onlineCardContent.positionD) {
+			if (this.dashboardService.onlineCardContent.positionD?.length > 0) {
 				this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;
 			}
 		}
@@ -163,21 +183,33 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 				const callCmsEndTime: any = new Date();
 				const callCmsUsedTime = callCmsEndTime - callCmsStartTime;
 				if (response && response.length > 0) {
-					if (!this.dashboardService.onlineCardContent.positionD) {
-						const cardContentPositionD = this.cmsService.getOneCMSContent(
+					if (!Boolean(this.dashboardService.onlineCardContent.positionD?.length > 0)) {
+						const positionDContents = this.cmsService.getOneCMSContent(
 							response,
 							'full-width-title-image-background',
 							'position-D'
-						)[0];
-						if (cardContentPositionD) {
-							this.cardContentPositionD = cardContentPositionD;
-							this.dashboardService.onlineCardContent.positionD = cardContentPositionD;
+						);
+						if (positionDContents && positionDContents.length > 0) {
+							this.cardContentPositionD = positionDContents.map((record) => {
+								const overlayTheme = this.selectOverlayTheme(record);
+								return {
+									Id: record.Id,
+									Title: record.Title,
+									Description: record.Description,
+									FeatureImage: record.FeatureImage,
+									ActionLink: record.ActionLink,
+									ActionType: record.ActionType,
+									OverlayTheme: overlayTheme ? overlayTheme : '',
+									DataSource: record.DataSource,
+								};
+							});
+							this.dashboardService.onlineCardContent.positionD = this.cardContentPositionD;
 						}
 					} else {
 						this.cardContentPositionD = this.dashboardService.onlineCardContent.positionD;
 					}
 				} else {
-					const msg = `Performance: Dashboard page not have this language contents, ${callCmsUsedTime}ms`;
+					const msg = `Performance: Dashboard gaming page not have this language contents, ${callCmsUsedTime}ms`;
 					this.loggerService.info(msg);
 					this.fetchCmsContents('en');
 				}

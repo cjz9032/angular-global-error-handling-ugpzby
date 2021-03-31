@@ -52,6 +52,7 @@ import {
 } from 'src/app/data-models/security-advisor/security-status';
 import { PerformanceNotifications } from 'src/app/enums/performance-notifications.enum';
 import { WarrantyData, WarrantyStatusEnum } from 'src/app/data-models/warranty/warranty.model';
+import { CardOverlayTheme } from 'src/app/services/card/card.service';
 
 interface IConfigItem {
 	cardId: string;
@@ -115,6 +116,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 	heroBannerDemoItems = [];
 	canShowDccDemo$: Promise<boolean>;
+	CardOverlayTheme = CardOverlayTheme;
 
 	private pageTypeOfDashboard = 'dashboard';
 	private positionOfWelcomeText = 'welcome-text';
@@ -148,7 +150,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			upeContent: undefined,
 		},
 		positionD: {
-			displayContent: new FeatureContent(),
+			displayContent: [],
 			template: 'full-width-title-image-background',
 			cardId: 'positionD',
 			positionParam: 'position-D',

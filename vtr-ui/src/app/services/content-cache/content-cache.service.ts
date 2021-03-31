@@ -185,7 +185,7 @@ export class ContentCacheService {
 	private removeInvalidContents(contents, cardId) {
 		const array = [];
 		contents.forEach((content) => {
-			if (cardId !== 'positionA' && array.length > 0) {
+			if (cardId !== 'positionA' && cardId !== 'positionD' && array.length > 0) {
 				return;
 			}
 			if (
@@ -583,15 +583,14 @@ export class ContentCacheService {
 			}
 		});
 
-		if (cardId === 'positionA') {
+		if (cardId === 'positionA' || cardId === 'positionD') {
 			return contents.map((record) => {
 				const overlayTheme = this.selectOverlayTheme(record);
 				return {
-					albumId: 1,
-					id: record.Id,
-					source: record.Title,
-					title: record.Description,
-					url: record.FeatureImage,
+					Id: record.Id,
+					Title: record.Title,
+					Description: record.Description,
+					FeatureImage: record.FeatureImage,
 					ActionLink: record.ActionLink,
 					ActionType: record.ActionType,
 					OverlayTheme: overlayTheme ? overlayTheme : '',

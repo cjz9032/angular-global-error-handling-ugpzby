@@ -21,22 +21,17 @@
 	border-radius: $border_radius;
 	position: relative;
 	background: $light;
-	// overflow: hidden;
 	height: 100% !important;
 	ngb-carousel {
 		&:focus {
 			@include outline-blue;
 		}
 	}
-	// @media #{$breakpoint_md} {
-	// 	height: 24.3rem !important;
-	// }
-	// @media #{$breakpoint_sm} {
-	// 	height: 18.6rem !important;
-	// }
 
 	.carousel-link {
 		display: block;
+		border-radius: $border_radius;
+		overflow: hidden;
 		&:focus {
 			@include outline-blue;
 		}
@@ -60,7 +55,7 @@
 		text-align: left;
 		z-index: 1;
 
-		.title {
+		.description {
 			padding: 0;
 			font-size: $fontsize_md;
 			font-weight: $weight_light;
@@ -71,31 +66,20 @@
 			text-overflow: ellipsis;
 			display: -webkit-box;
 			-webkit-line-clamp: 2;
-			/* autoprefixer: off */
 			-webkit-box-orient: vertical;
-
-			//max-width: 60%;
-			/*@media #{$mediaquery_X31} {
-				max-width: 80%;
-				font-size: 2.4rem;
-			}*/
-			// @include high-contrast-adjust;
 		}
 
-		.source {
+		.title {
 			padding: 0;
 			color: $light;
 			text-shadow: 0.2rem 0.2rem 0.2rem $shade_extradark;
 			font-size: $fontsize_xl2;
 			font-weight: $weight_regular;
-			// text-transform: uppercase;
 			line-height: 1.4;
-			// @include high-contrast-adjust;
 		}
 	}
 
 	.image {
-		border-radius: $border_radius;
 		width: 100%;
 		background-size: cover;
 		background-position: center center;
@@ -108,15 +92,6 @@
 				background: rgba(0, 0, 0, 0.4);
 			}
 		}
-
-		// @media #{$breakpoint_md} {
-		// 	height: 24.3rem !important;
-		// }
-		// @media #{$breakpoint_sm} {
-		// 	height: 18.6rem !important;
-		// }
-
-		// @include high-contrast-background-image;
 	}
 	@media #{$black-on-white} {
 		border: 0.1rem solid $dark;
@@ -124,15 +99,38 @@
 	@media #{$white-on-black} {
 		border: 0.1rem solid $light;
 	}
+
+	&.is-short {
+		.carousel-caption {
+			.title {
+				font-weight: $weight_light;
+			}
+			.description {
+				display: none;
+			}
+		}
+		.image {
+			min-height: 20rem;
+		}
+	}
+}
+
+:host-context(.is-gaming) {
+	.vtr-widget-carousel {
+		ngb-carousel {
+			&:focus {
+				@media #{$high-contrast} {
+					outline: 0.1rem solid highlight;
+				}
+			}
+		}
+	}
 }
 
 // DEEP SELECTOR REQUIRED FOR NESTED COMPONENT STYLING
 ::ng-deep {
 	.vtr-widget-carousel {
 		.carousel {
-			// &:focus {
-			// 	outline: none;
-			// }
 			.carousel-inner {
 				overflow: inherit;
 			}
@@ -246,30 +244,20 @@
 				}
 			}
 
-			.carousel-indicators li {
-				&.active {
-					@media #{$black-on-white} {
-						@include high-contrast-white-background;
-					}
-					@media #{$white-on-black} {
-						@include high-contrast-black-background;
+			.carousel-indicators {
+				margin-bottom: 1rem;
+				li {
+					margin: 0 0.3rem;
+					&.active {
+						@media #{$black-on-white} {
+							@include high-contrast-white-background;
+						}
+						@media #{$white-on-black} {
+							@include high-contrast-black-background;
+						}
 					}
 				}
 			}
-
-			// .carousel-control-prev,
-			// .carousel-control-next {
-			// 	width: 3.2rem;
-			// 	height: 3.2rem;
-			// 	position: relative;
-			// 	&::after{
-			// 		content: '';
-			// 		position: absolute;
-			// 		height: 2rem;
-			// 		width: 0.2rem;
-			// 		background: $light;
-			// 	}
-			// }
 		}
 	}
 }

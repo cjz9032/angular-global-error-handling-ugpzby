@@ -1,7 +1,8 @@
 <div class="vtr-widget-carousel"
+	[class.is-short]="isShort"
 	(swipeleft)="swipe($event.type)"
 	(swiperight)="swipe($event.type)" #containerSarousel>
-	<ngb-carousel tabindex="0"
+	<ngb-carousel [tabindex]="tabIndex"
 		*ngIf="carouselModel"
 		[attr.aria-label]="'dashboard.heroBanner' | translate"
 		(keyup)="onCarouselKeyUp($event)"
@@ -11,36 +12,36 @@
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"
 			ngbSlide
 			[id]="slideIdFormat+cIndex">
-			<a [href]="model.link"
+			<a [href]="model.ActionLink"
 				tabindex="-1"
 				vtrMetrics
 				id="{{carouselId}}-{{cIndex}}"
 				metricsEvent="articleclick"
-				[metricsItemID]="model.id"
+				[metricsItemID]="model.Id"
 				[metricsItemPosition]="''+order"
 				[metricsPageNumber]="'' + cIndex + 1"
-				[metricsParam]="model.dataSource"
+				[metricsParam]="model.DataSource"
 				target="_blank"
 				rel="noopener"
 				class="carousel-link"
-				[ngClass]="{'no-link': !model.link}"
-				(click)="linkClicked($event, model.linkType, model.link, model.cardTitle)">
+				[ngClass]="{'no-link': !model.ActionLink}"
+				(click)="linkClicked($event, model.ActionType, model.ActionLink, model.Title)">
 				<div class="image img-fluid"
-					[class.overlay-dark]="model.overlayThemeDark"
-					[style.backgroundImage]="'url(' + model.image + ')'"></div>
+					[class.overlay-dark]="model.OverlayTheme === CardOverlayTheme.Dark"
+					[style.backgroundImage]="'url(' + model.FeatureImage + ')'"></div>
 				<div class="carousel-caption">
-					<h3 class="source text-three-ellipsis"
-						[innerHTML]="model.source"
+					<h3 class="title text-three-ellipsis"
+						[innerHTML]="model.Title"
 						id="{{carouselId}}-{{cIndex}}-source"
-						[matTooltip]="model.source | htmlText"
+						[matTooltip]="model.Title | htmlText"
 						matTooltipClass="vtr-system-tooltip"
 						#tipCarouselSource = "matTooltip"
 						(mouseenter)="closeTipTimeout(tipCarouselSource)"
 						></h3>
-					<h2 class="title"
-						[innerHTML]="model.cardTitle"
+					<h2 class="description"
+						[innerHTML]="model.Description"
 						id="{{carouselId}}-{{cIndex}}-title"
-						[matTooltip]="model.cardTitle | htmlText"
+						[matTooltip]="model.Description | htmlText"
 						matTooltipClass="vtr-system-tooltip"
 						#tipCarouselTitle = "matTooltip"
 						(mouseenter)="closeTipTimeout(tipCarouselTitle)"

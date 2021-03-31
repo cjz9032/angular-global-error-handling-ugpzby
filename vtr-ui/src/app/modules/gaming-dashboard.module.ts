@@ -22,7 +22,7 @@ import { WidgetSystemToolsComponent } from '../components/widgets/widget-system-
 import { WidgetSystemMonitorComponent } from '../components/widgets/widget-system-monitor/widget-system-monitor.component';
 import { WidgetQuicksettingsListComponent } from '../components/widgets/widget-quicksettings-list/widget-quicksettings-list.component';
 import { WidgetLightingComponent } from '../components/widgets/widget-lighting/widget-lighting.component';
-import { ContainerCardModule } from '../components/container-card/container-card.module';
+import { WidgetCarouselModule } from '../components/widgets/widget-carousel/widget-carousel.module';
 import { MetricsModule } from '../services/metric/metrics.module';
 
 import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons/faQuestionCircle';
@@ -82,14 +82,14 @@ import { ModalGamingRunningAppListComponent } from '../components/modal/modal-ga
 			},
 		}),
 		FontAwesomeModule,
-		ContainerCardModule,
+		WidgetCarouselModule,
 		MetricsModule,
 		WidgetOfflineModule,
 		LocationNoticeModule,
 		FeedbackModule,
 		PageLayoutModule,
 	],
-	exports: [TranslateModule, ContainerCardModule, MetricsModule, WidgetOfflineModule],
+	exports: [TranslateModule, WidgetCarouselModule, MetricsModule, WidgetOfflineModule],
 	providers: [MockService, DialogService],
 	entryComponents: [
 		WidgetLegionEdgeComponent,

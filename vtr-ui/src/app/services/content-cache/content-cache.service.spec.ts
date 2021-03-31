@@ -114,7 +114,7 @@ describe('ContentCacheService', () => {
 				upeContent: undefined,
 			},
 			positionD: {
-				displayContent: new FeatureContent(),
+				displayContent: [],
 				template: 'full-width-title-image-background',
 				cardId: 'positionD',
 				positionParam: 'position-D',
@@ -303,7 +303,7 @@ describe('ContentCacheService', () => {
 				upeContent: undefined,
 			},
 			positionD: {
-				displayContent: new FeatureContent(),
+				displayContent: [],
 				template: 'full-width-title-image-background',
 				cardId: 'positionD',
 				positionParam: 'position-D',
@@ -384,7 +384,7 @@ describe('ContentCacheService', () => {
 				upeContent: undefined,
 			},
 			positionD: {
-				displayContent: new FeatureContent(),
+				displayContent: [],
 				template: 'full-width-title-image-background',
 				cardId: 'positionD',
 				positionParam: 'position-D',
@@ -466,7 +466,7 @@ describe('ContentCacheService', () => {
 				upeContent: undefined,
 			},
 			positionD: {
-				displayContent: new FeatureContent(),
+				displayContent: [],
 				template: 'full-width-title-image-background',
 				cardId: 'positionD',
 				positionParam: 'position-D',
@@ -550,7 +550,7 @@ describe('ContentCacheService', () => {
 				upeContent: undefined,
 			},
 			positionD: {
-				displayContent: new FeatureContent(),
+				displayContent: [],
 				template: 'full-width-title-image-background',
 				cardId: 'positionD',
 				positionParam: 'position-D',
@@ -674,8 +674,7 @@ describe('ContentCacheService', () => {
 	});
 
 	it('should replace static OverlayTheme', async () => {
-		let ccService: { loadCachedContents: jasmine.Spy; getCachedOnlineContents: jasmine.Spy };
-		ccService = jasmine.createSpyObj('ContentCacheService', [
+		const ccService: { loadCachedContents: jasmine.Spy; getCachedOnlineContents: jasmine.Spy } = jasmine.createSpyObj('ContentCacheService', [
 			'loadCachedContents',
 			'getCachedOnlineContents',
 		]);
