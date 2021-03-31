@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.10](https://bitbucket.tc.lenovo.com///compare/v1.11.9...v1.11.10) (2021-03-31)
+
+
+### Features
+
+* **Dashboard:** VAN-27448 VAN-27520 position-d use carousel ([1832742](https://bitbucket.tc.lenovo.com///commit/1832742700e58994c77501eb75ea45b342e130b5))
+
 ### [1.11.9](https://bitbucket.tc.lenovo.com///compare/v1.11.8...v1.11.9) (2021-03-30)
 
 ### [1.11.8](https://bitbucket.tc.lenovo.com///compare/v1.11.7...v1.11.8) (2021-03-29)
