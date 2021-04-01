@@ -4,15 +4,12 @@ import WinRT from '@lenovo/tan-client-bridge/src/util/winrt';
 import { CommonService } from '../common/common.service';
 import { Microphone } from 'src/app/data-models/audio/microphone.model';
 import { DeviceMonitorStatus } from 'src/app/enums/device-monitor-status.enum';
-import { Router } from '@angular/router';
 import { AndroidService } from '../android/android.service';
 import { HypothesisService } from '../hypothesis/hypothesis.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
-import { resolve } from 'url';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { smbMachines } from 'src/assets/smb-machine/smb-machines';
 
 @Injectable({
 	providedIn: 'root',
@@ -34,29 +31,27 @@ export class DeviceService {
 	public supportColorCalibration = false;
 	public supportEasyRendering = false;
 	public supportSmartAppearance = false;
+	public supportAIMeetingMgr = false;
 	public showWarranty = false;
-	private isGamingDashboardLoaded = false;
 	public machineInfo: any;
 	public showSearch = false;
 	public machineType: number;
-	private Windows: any;
 	constructor(
 		private shellService: VantageShellService,
 		private commonService: CommonService,
 		public androidService: AndroidService,
-		private router: Router,
 		private logger: LoggerService,
 		private hypSettings: HypothesisService,
 		private localCacheService: LocalCacheService
 	) {
-		this.device = shellService.getDevice();
-		this.sysInfo = shellService.getSysinfo();
-		this.microphone = shellService.getMicrophoneSettings();
-		this.Windows = this.shellService.getWindows();
+		this.device = this.shellService.getDevice();
+		this.sysInfo = this.shellService.getSysinfo();
+		this.microphone = this.shellService.getMicrophoneSettings();
 		if (this.device && this.sysInfo) {
 			this.isShellAvailable = true;
 		}
 		this.initShowSearch();
+		this.identifySMBMachine();
 	}
 
 	public initIsArm() {
@@ -92,33 +87,38 @@ export class DeviceService {
 		return undefined;
 	}
 
-	private identifySMBMachine(machineFamilyName: string) {
-		this.supportEasyRendering = false;
+	private async identifySMBMachine() {
+		this.supportAIMeetingMgr = await this.isSupportSMBFeature('AIMeetingManager');
+		this.supportEasyRendering = await this.isSupportSMBFeature('CreatorCentre');
+		this.supportCreatorSettings = await this.isSupportSMBFeature('EasyRendering');
+		this.supportColorCalibration = await this.isSupportSMBFeature('ColorCalibration');
+		this.supportSmartAppearance = await this.isSupportSMBFeature('SmartAppearance');
+		this.isSMB = this.supportAIMeetingMgr || this.supportEasyRendering || this.supportColorCalibration
+			|| this.supportSmartAppearance || this.supportCreatorSettings;
+	}
 
-		if (machineFamilyName) {
-			machineFamilyName = machineFamilyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
-			if (
-				machineFamilyName.match(/^(thinkbook)/) ||
-				machineFamilyName.match(/^(thinkpade)/)
-			) {
-				this.isSMB = true;
-				if (smbMachines.creatorSettings.includes(machineFamilyName)) {
-					this.supportCreatorSettings = true;
-				}
-
-				// if (smbMachines.easyRendering.includes(machineFamilyName)) {
-				// 	this.supportEasyRendering = true;
-				// }
-
-				if (smbMachines.colorCalibration.includes(machineFamilyName)) {
-					this.supportColorCalibration = true;
-				}
-
-				if (smbMachines.smartAppearance.includes(machineFamilyName)) {
-					this.supportSmartAppearance = true;
-				}
+	isSupportSMBFeature(featureName): Promise<boolean> {
+		return new Promise((resolve) => {
+			if (this.hypSettings) {
+				this.hypSettings.getFeatureSetting(featureName).then(
+					(result) => {
+						resolve((result || '').toString().toLowerCase() === 'true');
+					},
+					(error) => {
+						this.logger.error(
+							`DeviceService.isSupportSMBFeature: ${featureName} promise rejected `,
+							error
+						);
+						resolve(false);
+					}
+				);
 			}
-		}
+			else {
+				this.logger.error(
+					`DeviceService.isSupportSMBFeature: hypothesis is not available`);
+				resolve(false);
+			}
+		});
 	}
 
 	// this API doesn't have performance issue, can be always called at any time.
@@ -138,16 +138,6 @@ export class DeviceService {
 				this.machineInfo = info;
 				this.isSMode = info.isSMode;
 				this.isGaming = info.isGaming;
-
-				if (info.family && info.locale && info.locale.toLowerCase().startsWith('en')) {
-					this.identifySMBMachine(info.family);
-				} else {
-					this.isSMB = false;
-					this.supportCreatorSettings = false;
-					this.supportColorCalibration = false;
-					this.supportEasyRendering = false;
-					this.supportSmartAppearance = false;
-				}
 
 				if (
 					!this.showWarranty &&
@@ -216,11 +206,6 @@ export class DeviceService {
 	}
 
 	public stopMicrophoneMonitor() {
-		if (this.microphone) {
-			// this.microphone.stopMonitor((response) => {
-			// 	console.log('stopMicrophoneMonitor', response);
-			// });
-		}
 	}
 
 	async getMachineType(): Promise<number> {
