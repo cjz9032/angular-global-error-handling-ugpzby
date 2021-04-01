@@ -7,7 +7,6 @@ import { SegmentConst } from '../self-select/self-select.service';
 import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { TranslateService } from '@ngx-translate/core';
-import { BoostService, Profile } from 'src/app/feature/service/boost.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -18,8 +17,7 @@ export class InitializerService {
 		private deviceService: DeviceService,
 		private localCacheService: LocalCacheService,
 		private translate: TranslateService,
-		private commonService: CommonService,
-		private boostService: BoostService
+		private commonService: CommonService
 	) {}
 
 	initialize(): Promise<any> {
@@ -28,10 +26,6 @@ export class InitializerService {
 			this.deviceService.initIsArm(),
 			this.deviceService.getMachineInfo().then((info: any) => {
 				this.initializeLanguage(info);
-				// Gaming machine doesn't need performance boost feature
-				if (!info?.isGaming) {
-					this.boostService.initProfile(Profile.Gaming);
-				}
 			}),
 			this.localCacheService.loadCacheValues().then(() => {
 				this.initializeAntivirus();
