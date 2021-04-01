@@ -604,24 +604,7 @@ describe('PowerService', () => {
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
 			powerService.getIsPresenceDataSufficient();
-
-			// expect(powerService.getIsPresenceDataSufficient).toThrow();
 		});
-
-		/* it('should call getIsPresenceDataSufficient', () => {
-			const { powerService } = setup();
-
-			const spy = spyOn(this.devicePowerThinkPad.sectionSmartStandby, 'getIsPresenceDataSufficient').and.callThrough();
-			powerService.getIsPresenceDataSufficient();
-			expect(spy).toHaveBeenCalled();
-			powerService.devicePowerThinkPad = false;
-
-			// (powerService as any).devicePowerThinkPad = false;
-			// spyOnProperty(powerService, 'devicePowerThinkPad').and.returnValue(false);
-			const returnValue = powerService.getIsPresenceDataSufficient();
-			expect(returnValue).toBe(undefined);
-			// expect(powerService.getGaugeResetCapability).toThrow();
-		}); */
 
 		it('should call getSmartStandbyPresenceData', () => {
 			const { powerService } = setup();
@@ -703,8 +686,6 @@ describe('PowerService', () => {
 			expect(spy).toHaveBeenCalled();
 			powerService.devicePowerThinkPad = false;
 			powerService.getGaugeResetCapability();
-
-			// expect(powerService.getGaugeResetCapability).toThrow();
 		});
 
 		it('should call stopBatteryGaugeReset', () => {
@@ -817,9 +798,6 @@ describe('PowerService', () => {
 			).and.callThrough();
 			powerService.getEMDriverStatus();
 			expect(spy).toHaveBeenCalled();
-
-			// powerService.devicePowerItsIntelligentCooling = false;
-			// powerService.getEMDriverStatus();
 
 			(powerService as any).devicePowerItsIntelligentCooling = undefined;
 			const returnValue = powerService.getEMDriverStatus();

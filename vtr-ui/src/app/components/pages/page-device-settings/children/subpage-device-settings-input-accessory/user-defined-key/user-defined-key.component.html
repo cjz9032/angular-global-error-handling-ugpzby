@@ -16,8 +16,6 @@
 							id="f12-key"
 							aria-label="f12-key"
 							src="assets/images/hardware-settings/F12-key.PNG">
-						<!-- <p class="pressf12"
-							style="text-align: center">press F12</p> -->
 					</div>
 				</div>
 				<div class="row">
@@ -26,56 +24,6 @@
 							validate>
 
 							<div class="col">
-								<!-- <div class="btn-group btn-block dropdown-left"
-									ngbDropdown
-									#userDefineDrop="ngbDropdown"
-									placement="bottom">
-									<button [ngClass]="['btn','btn-outline-shadow']"
-										ngbDropdownToggle
-										type="button"
-										id="ip-userdefinedkey-dropdown-btn"
-										attr.aria-label="ip-userdefinedkey-dropdown-btn"
-										tabindex="0">
-										<div class="row d-flex justify-content-between">
-											<div class="col-11 col-sm-10 pl-1 pr-0">
-												<div class="select-title"
-													id="ip-userdefinedkey-dropdown-title"
-													attr.aria-label="ip-userdefinedkey-dropdown-title">
-													{{'device.deviceSettings.inputAccessories.userDefinedKey.dropDown.title' | translate}}
-												</div>
-
-												<div class="select-text text-left"
-													id="userdefinedkey-selected-text"
-													attr.aria-label="userdefinedkey-selected-text">
-													{{selectedValue.title | translate}}
-												</div>
-											</div>
-											<div class="col-1 pl-0 pr-1">
-												<div class="dropdown-icon">
-													<fa-icon [icon]="['fas', 'chevron-down']">
-													</fa-icon>
-												</div>
-											</div>
-										</div>
-									</button>
-									<div ngbDropdownMenu
-										aria-labelledby="">
-										<a [ngClass]="['dropdown-item']"
-											*ngFor="let item of userDefinedKeyOptions, let i=index"
-											id="userdefinedkey-{{i}}"
-											attr.aria-label="userdefinedkey-{{item.title | translate}}"
-											tabindex="0"
-											vtrMetrics
-											metricsEvent="FeatureClick"
-											metricsParent="Device.InputAccessories"
-											metricsItem="UserDefinedKeyState.Dropdown"
-											metricsValue="{{item.title  | translate}}"
-											(keydown.enter)="onChange(item); userDefineDrop.close()"
-											(keydown)="checkDropDown(userDefineDrop, i, $event)"
-											(click)="onChange(item)">{{item.title | translate}}
-										</a>
-									</div>
-								</div> -->
 								<vtr-ui-dropdown [dropdownType]="'userdefined-key'"
 									[isMetricsEnabled]=true
 									[metricsParent]="metricsParent"
@@ -88,10 +36,6 @@
 									(selectionChange)="onChange($event)">
 								</vtr-ui-dropdown>
 							</div>
-
-							<!-- <div class="col"
-								*ngIf="selectedValue.value == 1 && !hideApplyForDefault">
-							</div> -->
 							<div class="col"
 								*ngIf="selectedValue.value == 2">
 								<form #form1="ngForm"

@@ -229,11 +229,6 @@
 			text-transform: uppercase;
 			letter-spacing: 0.89px;
 		}
-		// .energystar-text {
-		// 	@media #{$mediaquery_11} {
-		// 		text-align: center;
-		// 	}
-		// }
 		img {
 			@media #{$white-on-black} {
 				@include white-border;

@@ -612,7 +612,6 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			);
 		}
 		this.isBatterySectionAvailable = this.batterySettingsGroup.length > 0;
-		// this.isBatterySectionAvailable = this.isBatterySectionAvailable || addLink;
 		this.checkIsPowerPageAvailable(this.isBatterySectionAvailable, 'battery');
 		if (this.isBatterySectionAvailable) {
 			const batteryObj = {

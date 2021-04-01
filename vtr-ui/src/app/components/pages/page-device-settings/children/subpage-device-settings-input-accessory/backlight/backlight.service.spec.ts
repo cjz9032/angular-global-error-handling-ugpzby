@@ -83,7 +83,6 @@ describe('BacklightService', () => {
 		backlightService = new BacklightService(shellServiceSpy);
 		const cacheStub$ = new Observable<Array<BacklightStatus | BacklightLevel>>();
 		backlightService.cache$ = cacheStub$;
-		// const spy = spyOnProperty(backlightService, 'backlight');
 		const result = backlightService.backlight;
 		expect(result).toBe(cacheStub$);
 	}));

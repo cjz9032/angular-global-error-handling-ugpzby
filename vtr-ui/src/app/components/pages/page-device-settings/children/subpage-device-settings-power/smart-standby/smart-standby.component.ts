@@ -207,7 +207,6 @@ export class SmartStandbyComponent implements OnInit, OnDestroy {
 			this.logger.error('setSmartStandbyEnabled', error.message);
 			return EMPTY;
 		}
-		// this.smartStandby.isEnabled = isEnabled;
 	}
 
 	splitStartEndTime() {

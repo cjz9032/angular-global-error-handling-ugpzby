@@ -30,10 +30,7 @@ describe('component: AntiTheftComponent', () => {
 	let logger: LoggerService;
 	let router: Router;
 	let deviceService: DeviceService;
-	// let displayService: DisplayService;
-	// let translate: TranslateService;
 	let metrics: MetricService;
-	// let navigationExtras: NavigationExtras;
 	let vantageShellService: VantageShellService;
 	let cameraAccessChangedHandler: any;
 	beforeEach(waitForAsync(() => {
@@ -92,24 +89,12 @@ describe('component: AntiTheftComponent', () => {
 		smartAssist = TestBed.inject(SmartAssistService);
 		logger = TestBed.inject(LoggerService);
 		smartAssist.isShellAvailable = true;
-		/* const antiTheftResponse: AntiTheftResponse = {
-			available: false,
-			status: true,
-			isSupportPhoto: true,
-			cameraPrivacyState: true,
-			authorizedAccessState: true,
-			photoAddress: '',
-			alarmOften: 10,
-			photoNumber: 5
-		}; */
 		const spy = spyOn<any>(smartAssist, 'getAntiTheftStatus').and.returnValue(
 			Promise.resolve(antiTheftResponse)
 		);
 		component.antiTheft = { ...antiTheftResponse };
 		component.getAntiTheftStatus();
 		expect(spy).toHaveBeenCalled();
-
-		// expect(component.getAntiTheftStatus).toThrow();
 	});
 
 	it('getAntiTheftStatus without shell', () => {
@@ -123,8 +108,6 @@ describe('component: AntiTheftComponent', () => {
 		component.antiTheft = { ...antiTheftResponse };
 		component.getAntiTheftStatus();
 		expect(spy).toHaveBeenCalled();
-
-		// expect(component.getAntiTheftStatus).toThrow();
 	});
 
 	it('setAntiTheftStatus', () => {
@@ -230,8 +213,6 @@ describe('component: AntiTheftComponent', () => {
 		logger = TestBed.inject(LoggerService);
 		smartAssist.isShellAvailable = true;
 		component.showPhotoFolder('C://');
-
-		// expect(component.showPhotoFolder).toThrow();
 	});
 
 	it('should call stopMonitorCameraAuthorized throws exception', () => {

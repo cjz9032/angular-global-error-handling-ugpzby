@@ -58,12 +58,10 @@ describe('Backlight', () => {
 				VantageShellService,
 			],
 		});
-		// backlightService = fixture.debugElement.injector.get(BacklightService);
 		backlightService = TestBed.inject(BacklightService);
 	});
 
 	it('should create Backlight Component', () => {
-		// backlightServiceSpy.backlight.and.returnValue(of(stubValue));
 		fixture = TestBed.createComponent(BacklightComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();

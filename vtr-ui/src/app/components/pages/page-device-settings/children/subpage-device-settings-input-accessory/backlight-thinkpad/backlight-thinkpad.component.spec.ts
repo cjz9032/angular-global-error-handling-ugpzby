@@ -31,30 +31,11 @@ describe('BacklightThinkpadComponent', () => {
 		fixture = TestBed.createComponent(BacklightThinkpadComponent);
 		component = fixture.componentInstance;
 		keyboardService = fixture.debugElement.injector.get(InputAccessoriesService);
-		// fixture.detectChanges();
 	});
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
-
-	// it('#updateMode called with Auto', async () => {
-	// 	spyOn(component, 'setAutomaticKBDBacklight');
-	// 	spyOn(component, 'setKBDBacklightStatus');
-	// 	fixture.detectChanges();
-	// 	component.updateMode(BacklightStatusEnum.AUTO);
-	// 	expect(component.setAutomaticKBDBacklight).toHaveBeenCalled();
-	// 	// expect(component.setKBDBacklightStatus).not.toHaveBeenCalled();
-	// });
-
-	// it('#updateMode called with Level_2', async () => {
-	// 	spyOn(component, 'setAutomaticKBDBacklight');
-	// 	spyOn(component, 'setKBDBacklightStatus');
-	// 	fixture.detectChanges();
-	// 	component.updateMode(BacklightStatusEnum.LEVEL_2);
-	// 	expect(component.setAutomaticKBDBacklight).toHaveBeenCalled();
-	// 	expect(component.setKBDBacklightStatus).toHaveBeenCalled();
-	// });
 
 	it('#getKBDBacklightCapability capability: true', async () => {
 		spyOn(keyboardService, 'getKBDBacklightCapability').and.returnValue(Promise.resolve(true));
@@ -181,7 +162,6 @@ describe('BacklightThinkpadComponent', () => {
 
 	it('#setKBDBacklightStatus called -else', async () => {
 		const spy = spyOn(keyboardService, 'setKBDBacklightStatus');
-		// fixture.detectChanges();
 		keyboardService.isShellAvailable = false;
 		await component.setKBDBacklightStatus(BacklightLevelEnum.ONE_LEVEL);
 		expect(spy).not.toHaveBeenCalled();
@@ -194,13 +174,6 @@ describe('BacklightThinkpadComponent', () => {
 		expect(keyboardService.setKBDBacklightStatus).toHaveBeenCalled();
 	});
 
-	// it('#setAutomaticKBDBacklight called', async () => {
-	// 	spyOn(keyboardService, 'setAutomaticKBDBacklight').and.returnValue(Promise.resolve(true));
-	// 	fixture.detectChanges();
-	// 	component.setAutomaticKBDBacklight(true);
-	// 	expect(keyboardService.setAutomaticKBDBacklight).toHaveBeenCalled();
-	// });
-
 	it('#setAutomaticKBDBacklight called -else', async () => {
 		const spy = spyOn(keyboardService, 'setAutomaticKBDBacklight');
 		// fixture.detectChanges();
@@ -208,14 +181,7 @@ describe('BacklightThinkpadComponent', () => {
 		await component.setAutomaticKBDBacklight(true);
 		expect(spy).not.toHaveBeenCalled();
 	});
-
-	// it('#setAutomaticKBDBacklight called - catch block', async () => {
-	// 	spyOn(keyboardService, 'setAutomaticKBDBacklight').and.returnValue(Promise.reject(true));
-	// 	fixture.detectChanges();
-	// 	component.setAutomaticKBDBacklight(true);
-	// 	expect(keyboardService.setAutomaticKBDBacklight).toHaveBeenCalled();
-	// });
-
+	
 	it('should call compare - Auto', () => {
 		const value = 'Auto';
 		component.compare(value);

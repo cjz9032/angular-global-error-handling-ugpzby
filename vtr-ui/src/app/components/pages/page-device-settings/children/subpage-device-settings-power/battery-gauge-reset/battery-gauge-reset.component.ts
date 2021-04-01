@@ -23,7 +23,6 @@ export class BatteryGaugeResetComponent implements OnInit, OnDestroy {
 	];
 	startTimeAbbreviated = [];
 	lastResetTimeAbbreviated = [];
-	// gaugeResetBtnStatus: boolean[];
 	is12HrsFormat = false;
 	systemTimeFormatSubscription: Subscription;
 	gaugeResetSubscription: Subscription;

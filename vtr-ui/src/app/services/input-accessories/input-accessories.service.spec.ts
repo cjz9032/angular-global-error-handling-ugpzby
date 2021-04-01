@@ -121,10 +121,6 @@ class KeyBoardManagerMock {
 		return Promise.resolve(true);
 	}
 
-	/* public getVoipHotkeysSettings(value):Promise<VoipResponse>  {
-		return Promise.resolve(new VoipResponse());
-	} */
-
 	public RestartMachine() {
 		return;
 	}
@@ -200,7 +196,6 @@ class VoipHotKeys {
 }
 
 describe('InputAccessoriesService', () => {
-	// let shellService: VantageShellService;
 	beforeEach(() =>
 		TestBed.configureTestingModule({
 			providers: [InputAccessoriesService, VantageShellService, TranslateStore],
@@ -223,7 +218,6 @@ describe('InputAccessoriesService', () => {
 		it('should call setUserDefinedKeySetting', () => {
 			const { inputAccessoriesService } = setup();
 
-			// inputAccessoriesService.keyboardManager = new KeyBoardManagerMock();
 			const spy = spyOn(
 				inputAccessoriesService.keyboardManager,
 				'setUserDefinedKeySetting'
@@ -251,14 +245,12 @@ describe('InputAccessoriesService', () => {
 		it('should call StartSpecialKeyMonitor', () => {
 			const { inputAccessoriesService } = setup();
 
-			// inputAccessoriesService.keyboardManager = new KeyBoardManagerMock();
 			const spy = spyOn(
 				inputAccessoriesService.keyboardManager,
 				'StartSpecialKeyMonitor'
 			).and.callThrough();
 			inputAccessoriesService.StartSpecialKeyMonitor('test');
 			expect(spy).toHaveBeenCalled();
-			// inputAccessoriesService.StartSpecialKeyMonitor('test');
 
 			inputAccessoriesService.keyboardManager = undefined;
 			const returnValue = inputAccessoriesService.StartSpecialKeyMonitor('test');
@@ -270,14 +262,12 @@ describe('InputAccessoriesService', () => {
 		it('should call EndSpecialKeyMonitor', () => {
 			const { inputAccessoriesService } = setup();
 
-			// inputAccessoriesService.keyboardManager = new KeyBoardManagerMock();
 			const spy = spyOn(
 				inputAccessoriesService.keyboardManager,
 				'EndSpecialKeyMonitor'
 			).and.callThrough();
 			inputAccessoriesService.EndSpecialKeyMonitor();
 			expect(spy).toHaveBeenCalled();
-			// inputAccessoriesService.EndSpecialKeyMonitor();
 
 			inputAccessoriesService.keyboardManager = undefined;
 			const returnValue = inputAccessoriesService.EndSpecialKeyMonitor();
@@ -773,7 +763,6 @@ describe('InputAccessoriesService', () => {
 			const { inputAccessoriesService } = setup();
 
 			const mouseAndTouchPadMock = new MouseAndTouchPadMock();
-			// spyOnProperty<any>(inputAccessoriesService, 'mouseAndTouchPad', 'get').and.returnValue(mouseAndTouchPadMock);
 			(inputAccessoriesService as any).mouseAndTouchPad = mouseAndTouchPadMock;
 
 			const spy = spyOn<any>(mouseAndTouchPadMock, 'GetMouseCapability');
@@ -793,7 +782,6 @@ describe('InputAccessoriesService', () => {
 			const mouseAndTouchPadMock = new MouseAndTouchPadMock();
 			(inputAccessoriesService as any).mouseAndTouchPad = mouseAndTouchPadMock;
 
-			// spyOn<any>(inputAccessoriesService, 'mouseAndTouchPad').and.returnValue(mouseAndTouchPadMock);
 			const spy = spyOn<any>(mouseAndTouchPadMock, 'GetTouchpadCapability');
 			inputAccessoriesService.getTouchPadCapability();
 			expect(spy).toHaveBeenCalled();

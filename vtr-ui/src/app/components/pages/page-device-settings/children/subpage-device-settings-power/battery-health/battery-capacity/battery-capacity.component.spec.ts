@@ -53,25 +53,21 @@ describe('BatteryCapacityComponent', () => {
 		component.capacityError = false;
 		component.capacity = 30;
 		component.setCircleInformation();
-		// expect(component)
 	});
 	it('should call setCircleInformation 50', () => {
 		component.capacityError = false;
 		component.capacity = 50;
 		component.setCircleInformation();
-		// expect(component)
 	});
 	it('should call setCircleInformation 65', () => {
 		component.capacityError = false;
 		component.capacity = 65;
 		component.setCircleInformation();
-		// expect(component)
 	});
 	it('should call setCircleInformation 80', () => {
 		component.capacityError = false;
 		component.capacity = 80;
 		component.setCircleInformation();
-		// expect(component)
 	});
 	it('should call setCircleInformation', () => {
 		component.capacityError = true;

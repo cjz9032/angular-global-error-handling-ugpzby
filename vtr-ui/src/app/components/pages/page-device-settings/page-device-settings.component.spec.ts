@@ -55,13 +55,8 @@ class TranslateServiceStub {
 describe('PageDeviceSettingsComponent', () => {
 	let component: PageDeviceSettingsComponent;
 	let fixture: ComponentFixture<PageDeviceSettingsComponent>;
-	// let audioService: AudioService;
 	let commonService: CommonService;
 	let localCacheService: LocalCacheService;
-	/* 	let logger: LoggerService;
-		let deviceService: DeviceService;
-		let cmsService: CMSService;
-		let qaService: QaService; */
 	let keyboardService: InputAccessoriesService;
 	let translate: TranslateService;
 
@@ -100,53 +95,6 @@ describe('PageDeviceSettingsComponent', () => {
 		fixture.detectChanges();
 		expect(component).toBeTruthy();
 	}));
-
-	// it('should call hidePowerPage', waitForAsync(() => {
-	// 	fixture = TestBed.createComponent(PageDeviceSettingsComponent);
-	// 	component = fixture.componentInstance;
-	// 	spyOn(component['router'], 'navigate').and.returnValue(Promise.resolve(true));
-	// 	const routeTo: boolean = true;
-	// 	component.hidePowerPage(routeTo);
-	// 	expect(component['router'].navigate).toHaveBeenCalledWith(
-	// 		['device/device-settings/audio'],
-	// 		{ replaceUrl: true }
-	// 	);
-	// }));
-
-	// it('should call onNotification - WelcomeTutorial', waitForAsync(() => {
-	// 	fixture = TestBed.createComponent(PageDeviceSettingsComponent);
-	// 	component = fixture.componentInstance;
-	// 	const spy = spyOn(component, 'getAudioPageSettings');
-	// 	const notification: AppNotification = {
-	// 		type: LocalStorageKey.WelcomeTutorial,
-	// 		payload: { page: 2 },
-	// 	};
-	// 	component['onNotification'](notification);
-	// 	expect(spy).toHaveBeenCalled();
-	// }));
-	//
-	// it('should call onNotification - IsPowerPageAvailable with no payload', waitForAsync(() => {
-	// 	fixture = TestBed.createComponent(PageDeviceSettingsComponent);
-	// 	component = fixture.componentInstance;
-	// 	const spy = spyOn(component, 'hidePowerPage');
-	// 	const notification: AppNotification = {
-	// 		type: LocalStorageKey.IsPowerPageAvailable,
-	// 	};
-	// 	component['onNotification'](notification);
-	// 	expect(spy).toHaveBeenCalled();
-	// }));
-	//
-	// it('should call onNotification - IsPowerPageAvailable with payload', waitForAsync(() => {
-	// 	fixture = TestBed.createComponent(PageDeviceSettingsComponent);
-	// 	component = fixture.componentInstance;
-	// 	const spy = spyOn(component, 'hidePowerPage');
-	// 	const notification: AppNotification = {
-	// 		type: LocalStorageKey.IsPowerPageAvailable,
-	// 		payload: { page: 2 },
-	// 	};
-	// 	component['onNotification'](notification);
-	// 	expect(spy).toHaveBeenCalled();
-	// }));
 
 	it('should call initInputAccessories - machineType equal to 1', waitForAsync(async () => {
 		fixture = TestBed.createComponent(PageDeviceSettingsComponent);
@@ -220,35 +168,4 @@ describe('PageDeviceSettingsComponent', () => {
 		component.ngOnInit();
 		expect(spy).toHaveBeenCalled();
 	}));
-
-	// it('should call initInputAccessories - machineType not equal to 1 or 0', async(() => {
-	// 	fixture = TestBed.createComponent(PageDeviceSettingsComponent);
-	// 	component = fixture.componentInstance;
-	// 	commonService = TestBed.inject(CommonService);
-	// 	component.machineType = 2;
-	// 	const spy = spyOn(commonService, 'removeObjFrom')
-	// 	component.initInputAccessories()
-	// 	expect(spy).toHaveBeenCalled();
-	// }));
-
-	// it('should call initInputAccessories - machineType equal to 1 or 0', async(() => {
-	// 	fixture = TestBed.createComponent(PageDeviceSettingsComponent);
-	// 	component = fixture.componentInstance;
-	// 	commonService = TestBed.inject(CommonService);
-	// 	component.machineType = 1;
-	// 	component.machineType = 0;
-	// 	const inputAccessoriesCapability: InputAccessoriesCapability = {
-	// 		isKeyboardMapAvailable: true,
-	// 		isUdkAvailable: false,
-	// 		isVoipAvailable: true,
-	// 		image: '',
-	// 		additionalCapabilitiesObj: {},
-	// 		keyboardVersion: '4.0.1',
-	// 		keyboardLayoutName: ''
-	// 	}
-	// 	spyOn(commonService, 'getLocalStorageValue').and.returnValue(inputAccessoriesCapability);
-	// 	// const spy = spyOn(commonService, 'removeObjFrom')
-	// 	component.initInputAccessories()
-	// 	// expect(spy).toHaveBeenCalled();
-	// }));
 });

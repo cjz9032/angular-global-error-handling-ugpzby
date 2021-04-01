@@ -356,7 +356,6 @@ export class DisplayService {
 	}
 	public getOLEDPowerControlCapability(): Promise<boolean> {
 		if (this.oledSettings) {
-			// this.oledSettings = this.shellService.getOledSettings();
 			return this.oledSettings.getOLEDPowerControlCapability();
 		}
 		return undefined;
@@ -385,7 +384,6 @@ export class DisplayService {
 
 	public setTaskbarDimmerSetting(value: string): Promise<boolean> {
 		if (this.oledSettings) {
-			// console.log('this.setTaskbarDimmerSetting', this.oledSettings);
 			return this.oledSettings.setTaskbarDimmerSetting(value);
 		}
 		return undefined;
@@ -393,7 +391,6 @@ export class DisplayService {
 
 	public setBackgroundDimmerSetting(value: string): Promise<boolean> {
 		if (this.oledSettings) {
-			// console.log('this.setBackgroundDimmerSetting', this.oledSettings);
 			return this.oledSettings.setBackgroundDimmerSetting(value);
 		}
 		return undefined;
@@ -401,7 +398,6 @@ export class DisplayService {
 
 	public setDisplayDimmerSetting(value: string): Promise<boolean> {
 		if (this.oledSettings) {
-			// console.log('this.setDisplayDimmerSetting', this.oledSettings);
 			return this.oledSettings.setDisplayDimmerSetting(value);
 		}
 		return undefined;

@@ -79,7 +79,6 @@
 												(colorPreviewValue)="setToEyeCareMode($event)">
 											</vtr-display-color-temp>
 											<div class="row mt-4">
-												<!--<div class="feature-note pl-5 pr-5 pt-4 pb-4 m-4" -->
 												<div class="feature-note p-4 ml-4"
 													id="day-time-color-temp-note"
 													role="text">
@@ -144,13 +143,6 @@
 													</p>
 												</div>
 											</div>
-											<!-- <span *ngIf="!enableSunsetToSunrise; else vtrwidgetpermissionnote"></span>
-										<ng-template #vtrwidgetpermissionnote>
-											<vtr-widget-permission-note
-												[noteTitle]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.title' | translate"
-												[description]="'device.deviceSettings.displayCamera.display.eyeCareMode.note.description' | translate"
-												[path]="'ms-settings:privacy-location'"></vtr-widget-permission-note>
-										</ng-template> -->
 										</div>
 									</div>
 								</vtr-ui-row-switch>
@@ -177,9 +169,6 @@
 												attr.aria-label="privacy guard description, {{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}">
 												{{'device.deviceSettings.displayCamera.display.privacyGuard.description' | translate}}
 											</p>
-											<!-- <img class="img-privacy-guard"
-											src="assets/images/privacy-guard.svg"
-											alt="'device.deviceSettings.displayCamera.display.privacyGuard.title' | translate"> -->
 										</div>
 									</div>
 									<div class="row">
@@ -325,12 +314,6 @@
 													</div>
 												</div>
 											</div>
-											<!-- <vtr-widget-permission-note
-											[noteTitle]="'device.deviceSettings.displayCamera.camera.note.title' | translate"
-											[description]="'device.deviceSettings.displayCamera.camera.note.description' | translate"
-											[path]="'ms-settings:privacy-webcam'"
-											 *ngIf="!dataSource.permission">
-										</vtr-widget-permission-note> -->
 											<vtr-camera-control #cameraControl
 												[cameraSettings]="dataSource"
 												[manualRefresh]="manualRefresh"

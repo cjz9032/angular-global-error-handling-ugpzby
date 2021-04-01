@@ -5,21 +5,6 @@ import {
 	StringBoolean,
 } from '../../../../../../data-models/common/common.interface';
 
-// export interface TopRowFunctionsIdeapad {
-//
-// 	getCapability(): Promise<CommonResponse<GetCapabilityResponse>>;
-//
-// 	getPrimaryKey(): Promise<CommonResponse<GetPrimaryKeyResponse>>;
-//
-// 	getFnLockStatus(): Promise<CommonResponse<GetFnLockStatusResponse>>;
-//
-// 	/**
-// 	 * @param fnLock "True|False" ATTENTION!!!!!  String type truthy or falsy.
-// 	 */
-// 	setFnLockStatus(fnLock: StringBoolean): Promise<CommonResponse<null>>;
-//
-// }
-
 export interface TopRowFunctionsIdeapad {
 	getCapability(): Promise<GetCapabilityResponse>;
 
@@ -38,10 +23,6 @@ export type Capability = {
 	[K in Capabilities]: boolean;
 };
 
-// export interface GetCapabilityResponse {
-// 	errorCode: CommonErrorCode;
-// 	capabilityList: Capability[];
-// }
 export interface CapabilityTemp {
 	key: string;
 	value: StringBoolean;
@@ -60,11 +41,6 @@ export enum KeyType {
 	FNKEY = 'Fnkey',
 }
 
-// export interface GetPrimaryKeyResponse {
-// 	errorCode: CommonErrorCode;
-// 	primeKey: KeyType;
-// 	enabled: NumberBoolean;
-// }
 
 export interface PrimaryKeySetting {
 	key: string;
@@ -79,11 +55,6 @@ export interface GetPrimaryKeyResponse {
 	};
 }
 
-// export interface GetFnLockStatusResponse {
-// 	errorCode: CommonErrorCode;
-// 	fnLock: boolean;
-// 	enabled: NumberBoolean;
-// }
 export interface FnLockStatus {
 	key: string;
 	value: StringBoolean;

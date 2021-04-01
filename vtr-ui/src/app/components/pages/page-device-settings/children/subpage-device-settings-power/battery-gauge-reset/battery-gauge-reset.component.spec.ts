@@ -72,20 +72,11 @@ describe('BatteryGaugeResetComponent', () => {
 		});
 
 		const event = new MouseEvent('click');
-		// spyOn(component, 'stopBatteryGaugeReset');
 		spyOn(component, 'setGaugeResetSection');
 		fixture.detectChanges();
 		component.onBatteryGaugeReset(0, event);
 		expect(modalService.open).toHaveBeenCalled();
-		// expect()
 	});
-
-	// it('should call setGaugeResetSection and reset running', () => {
-	// 	component.batteryService.gaugeResetInfo = gaugeResetInfo;
-	// 	component.setGaugeResetSection();
-	// 	expect(component.batteryService.isGaugeResetRunning).toBeTruthy();
-	// 	// expect(component.gaugeResetBtnStatus).toEqual([false, true]);
-	// });
 
 	it('should call setGaugeResetSection and reset not running', () => {
 		const tempInfo = Object.assign(gaugeResetInfo);
@@ -93,7 +84,6 @@ describe('BatteryGaugeResetComponent', () => {
 		component.batteryService.gaugeResetInfo = tempInfo;
 		component.setGaugeResetSection();
 		expect(component.batteryService.isGaugeResetRunning).toBeFalsy();
-		// expect(component.gaugeResetBtnStatus).toEqual([false, false]);
 	});
 
 	it('should call updateGaugeResetInfo', () => {
@@ -107,18 +97,12 @@ describe('BatteryGaugeResetComponent', () => {
 	it('should call startBatteryGaugeReset', async () => {
 		component.batteryService.gaugeResetInfo = gaugeResetInfo;
 		spyOn(component, 'setGaugeResetSection');
-		// spyOn(powerService, 'startBatteryGaugeReset').and.returnValue(Promise.resolve(true));
 		component.startBatteryGaugeReset(0);
-		// expect(powerService.startBatteryGaugeReset).toHaveBeenCalled();
-		// expect(component.updateGaugeResetInfo).toHaveBeenCalled();
 	});
 
 	it('should call stopBatteryGaugeReset', async () => {
 		component.batteryService.gaugeResetInfo = gaugeResetInfo;
 		spyOn(component, 'setGaugeResetSection');
-		// spyOn(powerService, 'stopBatteryGaugeReset').and.returnValue(Promise.resolve(true));
 		component.startBatteryGaugeReset(0);
-		// expect(powerService.stopBatteryGaugeReset).toHaveBeenCalled();
-		// expect(component.updateGaugeResetInfo).toHaveBeenCalled();
 	});
 });
