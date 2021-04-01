@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.11](https://bitbucket.tc.lenovo.com///compare/v1.11.10...v1.11.11) (2021-04-01)
+
+
+### Features
+
+* **Performance Boost:** remove performance boost code ([7dc68f2](https://bitbucket.tc.lenovo.com///commit/7dc68f242d55c7db95be6eb52188758db15082c7))
+
 ### [1.11.10](https://bitbucket.tc.lenovo.com///compare/v1.11.9...v1.11.10) (2021-03-31)
 
 

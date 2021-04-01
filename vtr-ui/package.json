@@ -1,6 +1,6 @@
 {
 	"name": "vtr-ui",
-	"version": "1.11.10",
+	"version": "1.11.11",
 	"scripts": {
 		"postinstall": "ngcc",
 		"format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
