@@ -575,7 +575,7 @@ export class ModalGamingThermalMode2Component implements OnInit, OnDestroy {
 		});
 
 		const metricsData = {
-			ItemName: 'thermalmode_advacedoc_warningmodal',
+			ItemName: 'thermalmode_advancedoc_warningmodal',
 		};
 		this.sendFeatureClickMetrics(metricsData);
 	}
