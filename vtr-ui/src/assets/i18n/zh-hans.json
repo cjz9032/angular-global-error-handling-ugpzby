@@ -142,7 +142,7 @@
 						"gpuDriverLack": "安装 GPU 驱动程序以使用超频功能。",
 						"goInstall": "去安装"
 					},
-					"autoAdjustDesc": "自动侦测并调优CPU和GPU在游戏下的性能。",
+					"autoAdjustDesc": "自动侦测并调优CPU和GPU在游戏下的性能, 该模式可能会增加计算机表面的温度和风扇噪音。",
 					"autoSwitch": "启动游戏时自动切换到野兽模式并在退出游戏后切换回来。"
 				},
 				"advancedOC": {
