@@ -908,7 +908,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			);
 			let tmpOCStatus: boolean;
 			if (this.ocSupported === this.thermalMode2Enum.cpu_gpu) {
-				tmpOCStatus = realOCStatusInfo.cpuOCState && realOCStatusInfo.gpuOCstate;
+				tmpOCStatus = realOCStatusInfo.cpuOCState && realOCStatusInfo.gpuOCState;
 			} else if (this.ocSupported === this.thermalMode2Enum.cpu) {
 				tmpOCStatus = realOCStatusInfo.cpuOCState;
 			}
