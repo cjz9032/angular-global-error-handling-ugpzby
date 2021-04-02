@@ -799,6 +799,15 @@
 				"sub6": "Detalles de valores de dispositivo",
 				"sub7": "Valores de dispositivos"
 			},
+			"smb": {
+				"title": "Productividad",
+				"sub1": "Experiencia de reuniones",
+				"sub2": "Centro de creadores",
+				"sub3": "Administrador de reuniones",
+				"sub4": "Configuración de creador",
+				"sub5": "Representación fácil",
+				"sub6": "Calibración de color"
+			},
 			"security": {
 				"title": "Seguridad",
 				"sub1": "Mi seguridad",
@@ -3024,6 +3033,7 @@
 			"recommendedAction": {
 				"title": "Acción Recomendada",
 				"description": "Corregiremos estos problemas automáticamente. Una vez hoy y todas las semanas posteriores",
+				"expiredDesc": "Renovar suscripción para continuar solucionando problemas encontrados",
 				"yearlyPricing": "{{yearlyPrice}} / año",
 				"monthlyPricing": "MENOS DE {{monthlyPrice}} MENSUALES.",
 				"longerTerm": "¿A más largo plazo? ¿Aún más ahorros?",
@@ -5569,10 +5579,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Administrador de reuniones",
+				"desc": "Esta sección le permite optimizar o configurar manualmente automáticamente los valores de reuniones de IA.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager admite la traducción, la interpretación y el dictado de voz en tiempo real. También puede generar subtítulos para videos.",
-					"downloadNow": "DESCARGAR AHORA",
 					"download": "DESCARGAR",
 					"launch": "INICIAR",
 					"translation": {
@@ -5600,18 +5611,23 @@
 							"point5": "Coloque el cursor en la aplicación que abrió y empiece a hablar."
 						},
 						"closeText": "cerrar"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Haga que la reunión en línea sea más productiva y eficaz."
 					}
+				},
+				"microPhone": {
+					"title": "Micrófono para reuniones"
+				},
+				"smartAppearance": {
+					"title": "Aplicación Smart appearance",
+					"launch": "Inicie",
+					"download": "Descargar",
+					"caption": "Aplicación basada en IA para mejorar la experiencia de conferencias de video. Funciona como un controlador virtual y puede ser cargado por múltiples aplicaciones de conferencias y clientes de aprendizaje en línea o clientes de transmisión en directo."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Configuración de creador",
+				"desc": "Personalice los valores de hardware para configurar el rendimiento del sistema y así obtener una mejor experiencia.",
 				"windowsHdColor": {
 					"title": "Configuración de color HD de Windows",
 					"description": "El color HD de Windows muestra contenido de alto rango dinámico (HDR) y gama de colores amplios (WCG), como por ejemplo fotos, videos y juegos en su dispositivo, si se admite.",
@@ -5620,6 +5636,10 @@
 						"here": "aquí",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Enfriado inteligente",
+					"desc": "Esta modalidad proporciona la mejor experiencia con la velocidad del ventilador y el rendimiento del sistema equilibrado para jugar, trabajar y crear."
 				}
 			},
 			"easyRendering": {

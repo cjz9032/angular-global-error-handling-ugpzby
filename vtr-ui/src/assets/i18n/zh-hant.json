@@ -799,6 +799,15 @@
 				"sub6": "裝置設定詳細資料",
 				"sub7": "裝置設定"
 			},
+			"smb": {
+				"title": "生產力",
+				"sub1": "會議體驗",
+				"sub2": "創作者中心",
+				"sub3": "會議管理員",
+				"sub4": "創作者設定",
+				"sub5": "易於呈現",
+				"sub6": "色彩校準"
+			},
 			"security": {
 				"title": "安全性",
 				"sub1": "我的安全性",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "建議動作",
 				"description": "我們會自動修正這些問題。今天一次，此後每週一次",
+				"expiredDesc": "續訂以繼續修正發現的問題",
 				"yearlyPricing": "{{yearlyPrice}}/年",
 				"monthlyPricing": "每月不到 {{monthlyPrice}}。",
 				"longerTerm": "更長期限？更加省錢？",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "會議管理員",
+				"desc": "此區段可讓您自動最佳化或手動配置您的 AI 會議設定。",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager 支援即時翻譯、口譯和語音聽寫。它還可以為視訊產生字幕。",
-					"downloadNow": "立即下載",
 					"download": "下載",
 					"launch": "啟動",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "將游標放在您開啟的應用程式上，然後開始說話。"
 						},
 						"closeText": "關閉"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "讓線上會議更具生產力和效率。"
 					}
+				},
+				"microPhone": {
+					"title": "會議用麥克風"
+				},
+				"smartAppearance": {
+					"title": "Smart appearance 應用程式",
+					"launch": "啟動",
+					"download": "下載",
+					"caption": "可改善視訊會議體驗的 AI 應用程式。它是作為虛擬驅動程式，可由多個會議應用程式和線上教學或即時串流用戶端載入。"
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "創作者設定",
+				"desc": "自訂您的硬體設定以配置系統效能，讓您獲得更好的體驗。",
 				"windowsHdColor": {
 					"title": "Windows HD 色彩設定",
 					"description": "Windows HD 色彩在您的裝置上（若支援）顯示高動態範圍 (HDR) 和廣色域 (WCG) 內容，例如相片、影片和遊戲。",
@@ -5510,6 +5526,10 @@
 						"here": "這裡",
 						"punctuation": "。"
 					}
+				},
+				"bannerITS": {
+					"title": "智慧型冷卻",
+					"desc": "此模式透過風扇速度和系統效能平衡，可在遊戲、辦公室和創作時提供最佳體驗。"
 				}
 			},
 			"easyRendering": {

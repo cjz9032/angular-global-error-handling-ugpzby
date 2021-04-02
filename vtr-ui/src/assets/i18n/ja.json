@@ -799,6 +799,15 @@
 				"sub6": "デバイス設定の設定",
 				"sub7": "デバイス設定"
 			},
+			"smb": {
+				"title": "生産性",
+				"sub1": "会議のエクスペリエンス",
+				"sub2": "Creator センター",
+				"sub3": "ミーティング・マネージャー",
+				"sub4": "Creator の設定",
+				"sub5": "簡単なレンダリング",
+				"sub6": "色調整"
+			},
 			"security": {
 				"title": "セキュリティー",
 				"sub1": "マイ・セキュリティー",
@@ -3023,6 +3032,7 @@
 			"recommendedAction": {
 				"title": "推奨する対策",
 				"description": "これらの問題を自動的に修正します。今日以降毎週 1 回",
+				"expiredDesc": "サブスクリプションを更新して、見つかった問題の修正を続行します",
 				"yearlyPricing": "{{yearlyPrice}} / 年",
 				"monthlyPricing": "1 か月約 {{monthlyPrice}} です。",
 				"longerTerm": "更にお得な長期サービスをお考えですか？",
@@ -5568,10 +5578,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "ミーティング・マネージャー",
+				"desc": "このセクションでは、AI 会議の設定を自動的に最適化または手動で構成できます。",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager は、リアルタイムの翻訳、通訳、音声ディクテーションをサポートしています。また、ビデオの字幕を生成することもできます。",
-					"downloadNow": "今すぐダウンロード",
 					"download": "ダウンロード",
 					"launch": "起動",
 					"translation": {
@@ -5599,18 +5610,23 @@
 							"point5": "開いたアプリケーションにカーソルを置き、話し始めます。"
 						},
 						"closeText": "閉じる"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "オンライン会議をより生産的かつ効果的にします。"
 					}
+				},
+				"microPhone": {
+					"title": "会議用マイクロホン"
+				},
+				"smartAppearance": {
+					"title": "Smart appearance アプリケーション",
+					"launch": "起動",
+					"download": "ダウンロード",
+					"caption": "ビデオ会議のエクスペリエンスを向上させる AI ベースのアプリケーション。仮想ドライバーとして機能し、複数の会議アプリケーションやオンライン教育またはライブ・ストリーミング・クライアントによってロードできます。"
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Creator の設定",
+				"desc": "ハードウェア設定をカスタマイズして、システム・パフォーマンスを構成し、エクスペリエンスを向上させます。",
 				"windowsHdColor": {
 					"title": "Windows HD Color 設定",
 					"description": "Windows HD Color では、ご使用のデバイスが対応している場合、写真、ビデオ、ゲームなどのハイ・ダイナミック・レンジ (HDR) およびワイド色域 (WCG) コンテンツを表示します。",
@@ -5619,6 +5635,10 @@
 						"here": "ここ",
 						"punctuation": "。"
 					}
+				},
+				"bannerITS": {
+					"title": "インテリジェント・クーリング",
+					"desc": "このモードでは、ゲーム、オフィス、および制作において、ファン速度とシステム・パフォーマンスのバランスが取れた状態で最高のエクスペリエンスを実現できます。"
 				}
 			},
 			"easyRendering": {

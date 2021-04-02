@@ -799,6 +799,15 @@
 				"sub6": "Detalhes das Definições do Dispositivo",
 				"sub7": "Definições do dispositivo"
 			},
+			"smb": {
+				"title": "Produtividade",
+				"sub1": "Experiência de Reunião",
+				"sub2": "Centro do Criador",
+				"sub3": "Gestor de reunião",
+				"sub4": "Configurações do criador",
+				"sub5": "Composição fácil",
+				"sub6": "Calibração cromática"
+			},
 			"security": {
 				"title": "Segurança",
 				"sub1": "A minha segurança",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Ação Recomendada",
 				"description": "Vamos resolver automaticamente estes problemas. Uma vez hoje e depois todas as semanas",
+				"expiredDesc": "Renove a subscrição para continuar a resolver os problemas encontrados",
 				"yearlyPricing": "{{yearlyPrice}}/Ano",
 				"monthlyPricing": "MENOS DE {{monthlyPrice}} POR MÊS.",
 				"longerTerm": "Pretende durante mais tempo? Ainda mais poupanças?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Gestor de reunião",
+				"desc": "Esta secção permite-lhe otimizar automaticamente ou configurar manualmente as suas definições de reunião AI.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "O AI meeting manager suporta a tradução, interpretação e ditado de voz. Também pode gerar legendas para vídeos.",
-					"downloadNow": "TRANSFERIR AGORA",
 					"download": "TRANSFERIR",
 					"launch": "INICIAR",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Coloque o cursor na aplicação que abriu e comece a falar."
 						},
 						"closeText": "fechar"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Torne as reuniões online mais produtivas e eficazes."
 					}
+				},
+				"microPhone": {
+					"title": "Microfone para reuniões"
+				},
+				"smartAppearance": {
+					"title": "Aplicação Smart appearance",
+					"launch": "Iniciar",
+					"download": "Transferir",
+					"caption": "Uma aplicação baseada em IA para melhorar a experiência de videoconferência. Funciona como um controlador virtual e pode ser carregada por múltiplas aplicações de conferência e de ensino online ou clientes de transmissão ao vivo."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Configurações do criador",
+				"desc": "Personalize as suas definições de hardware para configurar o desempenho do seu sistema para uma melhor experiência.",
 				"windowsHdColor": {
 					"title": "Definições de cor HD do Windows",
 					"description": "A cor HD do Windows apresenta conteúdos em HDR (High Dynamic Range) e em WCG (Wide Color Gamut), tais como fotografias, vídeos e jogos no seu dispositivo, se for suportada.",
@@ -5510,6 +5526,10 @@
 						"here": "aqui",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Arrefecimento Inteligente",
+					"desc": "Este modo permite a melhor experiência com a velocidade da ventoinha e o desempenho do sistema equilibrado em jogos, no escritório e para criação."
 				}
 			},
 			"easyRendering": {

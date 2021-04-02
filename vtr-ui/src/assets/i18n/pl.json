@@ -799,6 +799,15 @@
 				"sub6": "Szczegóły ustawień urządzenia",
 				"sub7": "Ustawienia urządzenia"
 			},
+			"smb": {
+				"title": "Biurowe",
+				"sub1": "Spotkania",
+				"sub2": "Centrum twórców",
+				"sub3": "Menedżer spotkań",
+				"sub4": "Ustawienia dla twórców",
+				"sub5": "Łatwe renderowanie",
+				"sub6": "Kalibracja kolorów"
+			},
 			"security": {
 				"title": "Ochrona",
 				"sub1": "Moje zabezpieczenie",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Zalecane Działania",
 				"description": "Automatycznie rozwiążemy te problemy. Dziś, a potem co tydzień",
+				"expiredDesc": "Odnów subskrypcję, by móc dalej rozwiązywać wykrywane problemy",
 				"yearlyPricing": "{{yearlyPrice}}/rok",
 				"monthlyPricing": "MNIEJ NIŻ {{monthlyPrice}} NA MIESIĄC.",
 				"longerTerm": "Dłuższy okres? Jeszcze większe oszczędności?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Menedżer spotkań",
+				"desc": "Ta sekcja umożliwia automatyczną optymalizację lub ręczną konfigurację ustawień spotkania z wykorzystaniem możliwości, jakie daje sztuczna inteligencja.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager obsługuje tłumaczenie, interpretację i dyktowanie głosowe w czasie rzeczywistym. Może również generować napisy do filmów.",
-					"downloadNow": "POBIERZ TERAZ",
 					"download": "POBIERZ",
 					"launch": "URUCHOM",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Umieść kursor w otwartej aplikacji i zacznij mówić."
 						},
 						"closeText": "zamknij"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Zwiększ produktywność i efektywność spotkań online."
 					}
+				},
+				"microPhone": {
+					"title": "Mikrofon na spotkania"
+				},
+				"smartAppearance": {
+					"title": "Aplikacja Smart appearance",
+					"launch": "Uruchom",
+					"download": "Pobierz",
+					"caption": "Oparta na sztucznej inteligencji aplikacja, która przydaje się podczas wideokonferencji. Pełni rolę wirtualnego sterownika, który może zostać załadowany przez wiele aplikacji konferencyjnych oraz klientów do nauczania online lub transmisji na żywo."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Ustawienia dla twórców",
+				"desc": "Dostosuj ustawienia sprzętu, aby skonfigurować wydajność systemu pod kątem większej wydajności i wygody.",
 				"windowsHdColor": {
 					"title": "Ustawienia funkcji Windows HD Color",
 					"description": "Funkcja Windows HD Color pozwala odtwarzać na zgodnym urządzeniu zawartość o wysokim zakresie dynamiki (HDR) i szerokiej gamie kolorów (WCG), taką jak zdjęcia, filmy i gry.",
@@ -5510,6 +5526,10 @@
 						"here": "tutaj",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Inteligentne chłodzenie",
+					"desc": "Ten tryb zapewnia efektywne działanie komputera podczas grania w gry, korzystania z aplikacji biurowych i realizowania zadań kreatywnych przy zrównoważonej prędkości wentylatora i wydajności systemu."
 				}
 			},
 			"easyRendering": {

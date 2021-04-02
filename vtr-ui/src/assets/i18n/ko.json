@@ -799,6 +799,15 @@
 				"sub6": "장치 설정 세부 정보",
 				"sub7": "장치 설정"
 			},
+			"smb": {
+				"title": "생산성",
+				"sub1": "회의 환경",
+				"sub2": "작성자 센터",
+				"sub3": "회의 관리자",
+				"sub4": "작성자 설정",
+				"sub5": "쉬운 렌더링",
+				"sub6": "색상 보정"
+			},
 			"security": {
 				"title": "보안",
 				"sub1": "내 보안 설정",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "권장 조치",
 				"description": "이러한 문제를 자동으로 해결합니다. 하루에 한 번 및 이후 매주",
+				"expiredDesc": "발견된 문제를 계속 수정하려면 구독을 갱신하십시오.",
 				"yearlyPricing": "{{yearlyPrice}}/년",
 				"monthlyPricing": "매월 {{monthlyPrice}} 미만.",
 				"longerTerm": "장기적인 사용을 원하십니까? 보다 많은 비용 절감을 원하십니까?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "회의 관리자",
+				"desc": "이 섹션에서 AI 회의 설정을 자동으로 최적화하거나 수동으로 구성할 수 있습니다.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager는 실시간 번역, 통역 및 음성 받아쓰기를 지원합니다. 또한 동영상에 대한 자막을 생성할 수도 있습니다.",
-					"downloadNow": "지금 다운로드",
 					"download": "다운로드",
 					"launch": "시작",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "열려 있는 응용 프로그램에 커서를 놓고 말하기를 시작하십시오."
 						},
 						"closeText": "닫기"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "온라인 회의를 보다 생산적이고 효과적으로 만듭니다."
 					}
+				},
+				"microPhone": {
+					"title": "회의용 마이크"
+				},
+				"smartAppearance": {
+					"title": "Smart appearance 응용 프로그램",
+					"launch": "시작",
+					"download": "다운로드",
+					"caption": "비디오 회의 환경을 개선하기 위한 AI 기반 응용 프로그램입니다. 가상 드라이버로 작동하며 여러 회의 응용 프로그램 및 온라인 교육 또는 실시간 스트리밍 클라이언트에 의해 로드될 수 있습니다."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "작성자 설정",
+				"desc": "더 나은 환경을 제공하는 시스템 성능을 구성하기 위해 하드웨어 설정을 사용자 지정합니다.",
 				"windowsHdColor": {
 					"title": "Windows HD Color 설정",
 					"description": "Windows HD Color는 장치에서 사진, 비디오 및 게임과 같은 HDR(High Dynamic Range) 및 WCG(Wide Color Gamut) 컨텐츠를 표시합니다(지원되는 경우).",
@@ -5510,6 +5526,10 @@
 						"here": "여기",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "지능형 냉각",
+					"desc": "이 모드에서는 게임, 사무 및 창작 활동에 균형감 있는 시스템 성능과 팬 속도를 적용하여 최상의 환경을 제공합니다."
 				}
 			},
 			"easyRendering": {

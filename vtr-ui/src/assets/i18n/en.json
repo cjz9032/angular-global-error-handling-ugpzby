@@ -6240,7 +6240,6 @@
 				"aiMeetingManager":{
 					"title":"AI meeting manager",
 					"description": "AI meeting manager provides real-time translation, interpretation, voice dictation and note editor. It can also generate subtitles for videos.",
-					"downloadNow": "DOWNLOAD NOW",
 					"download": "DOWNLOAD",
 					"launch": "LAUNCH",
 					"translation": {
@@ -6278,10 +6277,6 @@
 							"point4": "Edit the meeting note or play the recording."
 						},
 						"closeText": "close"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Make online meeting more productive and effective."
 					}
 				},
 				"microPhone":{
@@ -6291,14 +6286,8 @@
 					"title": "Smart appearance application",
 					"launch": "Launch",
 					"download": "Download",
-					"caption": "An AI-based application to improve video conferencing experience. It works as a virtual driver and can be loaded by multiple conference applications and online teaching or live streaming clients.​",
-					"banner": {
-						"title": "Smart appearance",
-						"description": "Provide multiple camera effects to improve video conferencing experience.",
-						"download": "Download now"
-					}
+					"caption": "An AI-based application to improve video conferencing experience. It works as a virtual driver and can be loaded by multiple conference applications and online teaching or live streaming clients.​"
 				}
-
 			}
 		},
 		"creatorCentre": {

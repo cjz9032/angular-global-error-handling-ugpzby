@@ -799,6 +799,15 @@
 				"sub6": "Details der Einheiteneinstellungen",
 				"sub7": "Geräteeinstellungen"
 			},
+			"smb": {
+				"title": "Produktivität",
+				"sub1": "Konferenzerlebnis",
+				"sub2": "Creator Center",
+				"sub3": "Konferenzmanager",
+				"sub4": "Creator-Einstellungen",
+				"sub5": "Einfaches Rendern",
+				"sub6": "Farbkalibrierung"
+			},
 			"security": {
 				"title": "Sicherheit",
 				"sub1": "Meine sicherheit",
@@ -3024,6 +3033,7 @@
 			"recommendedAction": {
 				"title": "Empfohlene Aktion",
 				"description": "Wir beheben diese Probleme automatisch. Einmal heute und danach jede Woche",
+				"expiredDesc": "Abonnement verlängern, damit gefundene Probleme weiterhin behoben werden",
 				"yearlyPricing": "{{yearlyPrice}}/Jahr",
 				"monthlyPricing": "WENIGER ALS {{monthlyPrice}} IM MONAT.",
 				"longerTerm": "Langfristiger planen? Noch mehr sparen?",
@@ -5569,10 +5579,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Konferenzmanager",
+				"desc": "Hier können Sie die KI-Konferenzeinstellungen automatisch optimieren lassen oder manuell konfigurieren.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "Der AI meeting manager unterstützt Übersetzung, Dolmetschen und Diktate in Echtzeit. Er kann zudem Untertitel für Videos erzeugen.",
-					"downloadNow": "JETZT HERUNTERLADEN",
 					"download": "DOWNLOAD",
 					"launch": "STARTEN",
 					"translation": {
@@ -5600,18 +5611,23 @@
 							"point5": "Setzen Sie den Cursor an die gewünschte Stelle in der geöffneten Anwendung und beginnen Sie zu sprechen."
 						},
 						"closeText": "schließen"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Macht Online-Konferenzen produktiver und effektiver."
 					}
+				},
+				"microPhone": {
+					"title": "Mikrofon für Konferenzen"
+				},
+				"smartAppearance": {
+					"title": "Smart Appearance-Anwendung",
+					"launch": "Starten",
+					"download": "Herunterladen",
+					"caption": "Eine KI-basierte Anwendung zur Optimierung des Videokonferenzerlebnisses. Sie fungiert als virtueller Treiber und kann von mehreren Konferenzanwendungen und Clients für Online-Unterricht oder Livestreams geladen werden."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Creator-Einstellungen",
+				"desc": "Passen Sie Ihre Hardwareeinstellungen an, um Ihre Systemleistung und Benutzererfahrung zu optimieren.",
 				"windowsHdColor": {
 					"title": "Windows HD Color-Einstellungen",
 					"description": "Windows HD Color zeigt Inhalte mit hohem Kontrast (HDR) und breiter Farbskala (WCG) an, z. B. Bilder, Videos und Spiele, wenn dies von Ihrer Einheit unterstützt wird.",
@@ -5620,6 +5636,10 @@
 						"here": "hier",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Intelligente Kühlung",
+					"desc": "Dieser Modus bietet mit ausbalancierter Lüftergeschwindigkeit und Systemleistung die optimale Benutzererfahrung bei Gaming, Büro‑ und kreativer Arbeit."
 				}
 			},
 			"easyRendering": {

@@ -799,6 +799,15 @@
 				"sub6": "Pojedinosti postavki uređaja",
 				"sub7": "Postavke uređaja"
 			},
+			"smb": {
+				"title": "Produktivnost",
+				"sub1": "Iskustvo sastanka",
+				"sub2": "Centar za autore",
+				"sub3": "Upravitelj sastanaka",
+				"sub4": "Postavke autora",
+				"sub5": "Jednostavno renderiranje",
+				"sub6": "Kalibracija boja"
+			},
 			"security": {
 				"title": "Sigurnost",
 				"sub1": "Moja sigurnost",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Preporučena Radnja",
 				"description": "Te ćemo probleme automatski riješiti. Danas i svaki tjedan nakon toga",
+				"expiredDesc": "Obnovite pretplatu da biste nastavili rješavati pronađene probleme",
 				"yearlyPricing": "{{yearlyPrice}}/god.",
 				"monthlyPricing": "MANJE OD {{monthlyPrice}} MJESEČNO.",
 				"longerTerm": "Dugoročno? Još veće uštede?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Upravitelj sastanaka",
+				"desc": "Ovaj vam odjeljak omogućuje automatsku optimizaciju ili ručnu konfiguraciju postavki sastanka AI.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager u stvarnom vremenu podržava prevođenje, tumačenje i diktiranje teksta pomoću značajke prepoznavanja govora. Također može generirati titlove za videozapise.",
-					"downloadNow": "PREUZMI ODMAH",
 					"download": "PREUZIMANJE",
 					"launch": "POKRETANJE",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Postavite pokazivač u aplikaciju koju ste otvorili i počnite govoriti."
 						},
 						"closeText": "zatvori"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Učinite mrežni sastanak produktivnijim i učinkovitijim."
 					}
+				},
+				"microPhone": {
+					"title": "Mikrofon za sastanke"
+				},
+				"smartAppearance": {
+					"title": "Aplikacija za Smart appearance",
+					"launch": "Pokretanje",
+					"download": "Preuzimanje",
+					"caption": "Aplikacija temeljena na AI-u za poboljšanje iskustva videokonferencija. Radi kao virtualni upravljački program i može se učitati putem nekoliko aplikacija za konferencijske pozive te klijenata za mrežno podučavanje ili strujanje sadržaja uživo."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Postavke autora",
+				"desc": "Prilagodite postavke hardvera kako biste konfigurirali performanse sustava za bolji doživljaj.",
 				"windowsHdColor": {
 					"title": "Postavke HD boja sustava Windows",
 					"description": "Ako vaš uređaj podržava tu značajku, HD boje sustava Windows prikazuju sadržaj, poput fotografija, videozapisa i igara, u širokom dinamičkom rasponu (HDR) i širokom spektru boja (WCG).",
@@ -5510,6 +5526,10 @@
 						"here": "ovdje",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Pametno hlađenje",
+					"desc": "Ovaj način rada pruža najbolje iskustvo uz ujednačenu brzinu ventilatora i performansi sustava tijekom igranja, u uredu ili stvaranju sadržaja."
 				}
 			},
 			"easyRendering": {

@@ -799,6 +799,15 @@
 				"sub6": "设备设置详细信息",
 				"sub7": "设备设置"
 			},
+			"smb": {
+				"title": "工作效率",
+				"sub1": "会议体验",
+				"sub2": "创作者中心",
+				"sub3": "会议助手",
+				"sub4": "创作者设置",
+				"sub5": "轻松呈现",
+				"sub6": "颜色校准"
+			},
 			"security": {
 				"title": "安全顾问",
 				"sub1": "我的安全顾问",
@@ -3022,6 +3031,7 @@
 			"recommendedAction": {
 				"title": "建议操作",
 				"description": "我们将自动解决这些问题。当天一次，以后每周一次",
+				"expiredDesc": "续订订阅以继续解决发现的问题",
 				"yearlyPricing": "{{yearlyPrice}} / 年",
 				"monthlyPricing": "每月不到 {{monthlyPrice}}。",
 				"longerTerm": "期限要更长？要更省钱？",
@@ -5567,10 +5577,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "会议助手",
+				"desc": "借助本部分，您可以自动优化或手动配置 AI 会议设置。",
 				"aiMeetingManager": {
 					"title": "智能会议助手",
 					"description": "智能会议助手支持实时笔译、口译和语音输入，还可以为视频生成字幕。",
-					"downloadNow": "立即下载",
 					"download": "下载",
 					"launch": "启动",
 					"translation": {
@@ -5598,18 +5609,23 @@
 							"point5": "将光标放在打开的应用程序中，然后开始讲话。"
 						},
 						"closeText": "关闭"
-					},
-					"banner": {
-						"title": "智能会议助手",
-						"description": "提高在线会议的效率和有效性。"
 					}
+				},
+				"microPhone": {
+					"title": "会议麦克风"
+				},
+				"smartAppearance": {
+					"title": "智能美颜应用程序",
+					"launch": "启动",
+					"download": "下载",
+					"caption": "这是一款基于 AI 的应用程序，可改善视频会议体验。它的运行方式类似虚拟驱动程序，可由多个会议应用程序和在线教学或实时流媒体客户端加载。"
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "创作者设置",
+				"desc": "自定义您的硬件设置，并配置系统性能以获得更好的体验。",
 				"windowsHdColor": {
 					"title": "Windows 高清色彩设置",
 					"description": "Windows 高清色彩可显示高动态范围（HDR）和广色域（WCG）内容，例如设备上的照片、视频和游戏（如支持）。",
@@ -5618,6 +5634,10 @@
 						"here": "此处",
 						"punctuation": "。"
 					}
+				},
+				"bannerITS": {
+					"title": "智能散热",
+					"desc": "此模式可在游戏、办公以及创作活动中提供使风扇速度和系统性能达到平衡的最佳体验。"
 				}
 			},
 			"easyRendering": {

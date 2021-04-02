@@ -799,6 +799,15 @@
 				"sub6": "Enhetsinnstillinger",
 				"sub7": "Enhetsinnstillinger"
 			},
+			"smb": {
+				"title": "Produktivitet",
+				"sub1": "Møteerfaring",
+				"sub2": "Skapersentral",
+				"sub3": "Møteadministrator",
+				"sub4": "Skaperinnstillinger",
+				"sub5": "Lett gjengivelse",
+				"sub6": "Fargekalibrering"
+			},
 			"security": {
 				"title": "Sikkerhet",
 				"sub1": "Min sikkerhet",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Anbefalt Handling",
 				"description": "Disse problemene vil bli løst automatisk. En gang i dag og deretter hver uke",
+				"expiredDesc": "Forny abonnementet for å fortsette å reparere funnede feil",
 				"yearlyPricing": "{{yearlyPrice}} / ÅR",
 				"monthlyPricing": "MINDRE ENN {{monthlyPrice}} PER MÅNED.",
 				"longerTerm": "Lengre termin? Flere kostnadsbesparelser?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Møteadministrator",
+				"desc": "Denne seksjonen lar deg optimalisere AI møtekonfigurasjonsinnstillinger automatisk, eller konfigurere dem manuelt.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager støtter oversettelse, fortolkning og talediktering i sanntid. Den kan også generere undertekster for videoer.",
-					"downloadNow": "LAST NED NÅ",
 					"download": "LAST NED",
 					"launch": "START",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Plasser markøren i programmet du åpner, og begynn å snakke."
 						},
 						"closeText": "Lukk"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Gjør nettmøter mer produktive og effektive."
 					}
+				},
+				"microPhone": {
+					"title": "Møtemikrofon"
+				},
+				"smartAppearance": {
+					"title": "Smart appearance applikasjon",
+					"launch": "Start",
+					"download": "Last ned",
+					"caption": "En AI-basert applikasjon som forbedrer opplevelsen av videokonferanser. Den fungerer som en virtuell driver og kan lastes av flere konferanseapplikasjoner og online undervisnings- eller live streaming klienter samtidig."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Skaperinnstillinger",
+				"desc": "Tilpass maskinvareinnstillingene dine for å konfigurere systemytelsen for en bedre opplevelse.",
 				"windowsHdColor": {
 					"title": "Windows HD Color-innstillinger",
 					"description": "Hvis det støttes på enheten, viser Windows HD Color innhold i HIGH Dynamic Range (HDR) og bred fargeskala (WCG), for eksempel bilder, videoer og spill.",
@@ -5510,6 +5526,10 @@
 						"here": "her",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Intelligent kjøling",
+					"desc": "Denne modusen gir den beste opplevelsen med viftehastighet og systemytelse balansert for gaming, kontor og skaperbruk."
 				}
 			},
 			"easyRendering": {

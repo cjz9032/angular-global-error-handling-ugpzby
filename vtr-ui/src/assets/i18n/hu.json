@@ -799,6 +799,15 @@
 				"sub6": "Részletes eszközbeállítások",
 				"sub7": "Eszközbeállítások"
 			},
+			"smb": {
+				"title": "Munkavégzés",
+				"sub1": "Megbeszélések",
+				"sub2": "Alkotói központ",
+				"sub3": "Megbeszéléskezelő",
+				"sub4": "Alkotói beállítások",
+				"sub5": "Egyszerű renderelés",
+				"sub6": "Színkalibrálás"
+			},
 			"security": {
 				"title": "Biztonság",
 				"sub1": "Saját biztonság",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Ajánlott Lépések",
 				"description": "Ezeket a problémákat automatikusan orvosoljuk. Először ma, aztán minden soron következő héten",
+				"expiredDesc": "Újítsa meg az előfizetését, hogy a jövőben is kijavíthassuk az észlelt problémákat",
 				"yearlyPricing": "{{yearlyPrice}}/év",
 				"monthlyPricing": "KEVESEBB MINT HAVI {{monthlyPrice}}",
 				"longerTerm": "Hosszabb távban gondolkodik? Még több megtakarításra vágyik?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Megbeszéléskezelő",
+				"desc": "Ebben a részben automatikusan optimalizálhatja vagy manuálisan konfigurálja a megbeszélések AI-alapú beállításait.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "Az AI meeting manager valós idejű fordítást, tolmácsolást és diktálást tesz lehetővé. Emellett képes feliratot generálni a videókhoz.",
-					"downloadNow": "LETÖLTÉS MOST",
 					"download": "LETÖLTÉS",
 					"launch": "INDÍTÁS",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Vigye a kurzort a megnyitott alkalmazásba, majd kezdjen el beszélni."
 						},
 						"closeText": "bezárás"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Tegye hatékonyabbá és produktívabbá az online értekezleteket!"
 					}
+				},
+				"microPhone": {
+					"title": "Mikrofon a megbeszélésekhez"
+				},
+				"smartAppearance": {
+					"title": "Smart appearance alkalmazás",
+					"launch": "Indítás",
+					"download": "Letöltés",
+					"caption": "AI-alapú alkalmazás a videokonferencia-élmény javítására. Virtuális illesztőprogramként működik, amelyet több különböző konferenciaalkalmazás, valamint online oktatási és élő streamelési kliens is képes betölteni."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Alkotói beállítások",
+				"desc": "A hardverbeállítások testreszabásával a lehető legjobb élmény elérésére alkalmas rendszerbeállításokat alkalmazhatja.",
 				"windowsHdColor": {
 					"title": "A Windows HD Color beállításai",
 					"description": "A Windows HD Color nagy dinamikatartományú (HDR) és széles színtartományú (WCG) tartalmat jelenít meg az Ön eszközén, így például fényképeket, videókat és játékokat – amennyiben eszköze támogatja ezt.",
@@ -5510,6 +5526,10 @@
 						"here": "ide",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Intelligens hűtés",
+					"desc": "Ez a mód kiegyensúlyozott ventilátorsebességet és rendszerteljesítményt biztosít, így a legjobb felhasználói élményt kínálja a játékokhoz, az irodai feladatokhoz és az alkotáshoz."
 				}
 			},
 			"easyRendering": {

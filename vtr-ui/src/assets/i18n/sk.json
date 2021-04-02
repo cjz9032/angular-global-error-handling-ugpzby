@@ -799,6 +799,15 @@
 				"sub6": "Podrobnosti o nastaveniach zariadenia",
 				"sub7": "Nastavenia zariadenia"
 			},
+			"smb": {
+				"title": "Produktivita",
+				"sub1": "Meeting Experience",
+				"sub2": "Creator Centre",
+				"sub3": "Správca stretnutí",
+				"sub4": "Nastavenia tvorcu",
+				"sub5": "Jednoduché vykresľovanie",
+				"sub6": "Kalibrácia farieb"
+			},
 			"security": {
 				"title": "Zabezpečenie",
 				"sub1": "Moje zabezpečenie",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Odporúčané Kroky",
 				"description": "Tieto problémy automaticky vyriešime. Dnes a potom každý týždeň",
+				"expiredDesc": "Obnovte predplatné, aby ste pokračovali v oprave nájdených problémov",
 				"yearlyPricing": "{{yearlyPrice}}/rok",
 				"monthlyPricing": "NECELÝCH {{monthlyPrice}} MESAČNE.",
 				"longerTerm": "Chcete využiť dlhodobejší plán? Chcete ušetriť ešte viac?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Správca stretnutí",
+				"desc": "Táto časť vám umožňuje automaticky optimalizovať alebo manuálne konfigurovať všetky nastavenia stretnutia s umelou inteligenciou.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager podporuje preklad, tlmočenie a diktovanie v reálnom čase. Dokáže tiež vytvárať titulky pre videá.",
-					"downloadNow": "STIAHNUŤ TERAZ",
 					"download": "STIAHNUŤ",
 					"launch": "SPUSTIŤ",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Umiestnite kurzor do aplikácie, ktorú ste otvorili, a začnite hovoriť."
 						},
 						"closeText": "zatvoriť"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Zvýšte produktivitu a efektivitu online schôdze."
 					}
+				},
+				"microPhone": {
+					"title": "Mikrofón pre stretnutia"
+				},
+				"smartAppearance": {
+					"title": "Aplikácia Smart appearance",
+					"launch": "Spustiť",
+					"download": "Prevziať",
+					"caption": "Aplikácia založená na umelej inteligencii na zlepšenie zážitku z videokonferencií. Funguje ako virtuálny ovládač a môžu ju načítať viaceré aplikácie pre konferencie a klienti online vyučovania alebo živého vysielania."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Nastavenia tvorcu",
+				"desc": "Prispôsobte nastavenia vášho hardvéru, aby ste nakonfigurovali výkon vášho systému pre lepší zážitok.",
 				"windowsHdColor": {
 					"title": "Nastavenia farieb Windows HD",
 					"description": "Farebné rozlíšenie Windows HD zobrazuje v zariadení obsah (ak je podporovaný) s vysokým dynamickým rozsahom (HDR) a širokým rozsahom farieb (WCG), ako sú fotografie, videá a hry.",
@@ -5510,6 +5526,10 @@
 						"here": "sem",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Inteligentné chladenie",
+					"desc": "Tento režim ponúka najlepší zážitok s vyváženou rýchlosťou ventilátora a výkonom systému pri hraní hier, kancelárskych prácach a tvorbe."
 				}
 			},
 			"easyRendering": {

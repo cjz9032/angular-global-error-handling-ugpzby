@@ -799,6 +799,15 @@
 				"sub6": "Podatki o nastavitvah naprave",
 				"sub7": "Nastavitve naprave"
 			},
+			"smb": {
+				"title": "Storilnost",
+				"sub1": "Izkušnje s srečanja",
+				"sub2": "Središče orodja Creator",
+				"sub3": "Upravitelj sestankov",
+				"sub4": "Nastavitve orodja Creator",
+				"sub5": "Enostavno upodabljanje",
+				"sub6": "Umerjanje barv"
+			},
 			"security": {
 				"title": "Zaščita",
 				"sub1": "Moja varnost",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Priporočen Ukrep",
 				"description": "Te težave bomo samodejno odpravili. Enkrat danes in nato vsak teden",
+				"expiredDesc": "Če želite še naprej odpravljati najdene težave, obnovite naročnino.",
 				"yearlyPricing": "{{yearlyPrice}}/leto",
 				"monthlyPricing": "MANJ KOT {{monthlyPrice}} MESEČNO.",
 				"longerTerm": "Daljši rok? Še večji prihranek?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Upravitelj sestankov",
+				"desc": "Ta razdelek vam omogoča samodejno optimizacijo ali ročno konfiguriranje nastavitev v aplikaciji AI meeting.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager podpira sprotno prevajanje, tolmačenje in glasovno narekovanje. Prav tako lahko ustvari podnapise za videoposnetke.",
-					"downloadNow": "PRENESITE ZDAJ",
 					"download": "PRENESI",
 					"launch": "ZAŽENI",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Kazalnik postavite v aplikacijo, ki ste jo odprli, in začnite govoriti."
 						},
 						"closeText": "zapri"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Naj bo spletni sestanek bolj produktiven in učinkovit."
 					}
+				},
+				"microPhone": {
+					"title": "Mikrofon za sestanke"
+				},
+				"smartAppearance": {
+					"title": "Aplikacija Smart appearance",
+					"launch": "Zaženite",
+					"download": "Prenesi",
+					"caption": "Aplikacija na osnovi umetne inteligence za boljšo izkušnjo z video konferencami. Deluje kot navidezni gonilnik in lahko jo naložijo več konferenčnih aplikacij ter odjemalci za spletno poučevanje ali pretakanje v živo."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Nastavitve orodja Creator",
+				"desc": "Prilagodite nastavitve strojne opreme, da konfigurirate učinkovitost delovanja sistema za boljšo izkušnjo.",
 				"windowsHdColor": {
 					"title": "Nastavitve funkcij Windows HD Color",
 					"description": "Funkcije Windows HD Color prikazujejo vsebino z visokim dinamičnim razponom (HDR) in široko barvno paleto (WCG), kot so fotografije, videoposnetki in igre v vaši napravi, če so podprte.",
@@ -5510,6 +5526,10 @@
 						"here": "tukaj",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Pametno hlajenje",
+					"desc": "Ta način omogoča najboljšo izkušnjo z uravnoteženo hitrostjo ventilatorja in delovanjem sistema pri igranju iger, v pisarni in pri ustvarjanju."
 				}
 			},
 			"easyRendering": {
