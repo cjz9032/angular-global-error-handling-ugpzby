@@ -102,12 +102,12 @@
 									<div class="spinner-border text-primary progress-spinner"
 										role="status"></div>
 								</div>
-								<vtr-ui-list-chevron [items]="homeSecurityDevicePosture.homeDevicePosture"
+								<vtr-material-chevron-list [data]="homeSecurityDevicePosture.homeDevicePosture"
 									metricsEvent="featureClick"
 									[chevronVisibility]='false'
 									[clickable]="false"
 									*ngIf="locationPermission?.isLocationServiceOn && homeSecurityDevicePosture?.homeDevicePosture?.length > 0">
-								</vtr-ui-list-chevron>
+								</vtr-material-chevron-list>
 								<!--end of Security Health Advisor When LWS is enabled-->
 
 								<!--Start of Security Health Advisor When LWS is disabled-->

@@ -53,15 +53,15 @@ export class PassWordManagerWidgetItem extends WidgetItem {
 		switch (status) {
 			case 'installed':
 				translateKey = 'common.securityAdvisor.installed';
-				this.status = 5;
+				this.status = 'installState';
 				break;
 			case 'installing':
 				translateKey = 'common.securityAdvisor.installing';
-				this.status = 4;
+				this.status = 'loading';
 				break;
 			default:
 				translateKey = 'common.securityAdvisor.notInstalled';
-				this.status = 5;
+				this.status = 'installState';
 		}
 		this.translateService.stream(translateKey).subscribe((value: string) => {
 			this.detail = value;

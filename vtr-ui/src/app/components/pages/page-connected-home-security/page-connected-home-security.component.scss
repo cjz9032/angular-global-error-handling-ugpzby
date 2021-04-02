@@ -22,13 +22,14 @@
 				color: $main_shade;
 				font-size: 1.4rem;
 				font-weight: $weight_medium;
+				margin-bottom: 2rem;
 			}
 
 			.loading {
 				text-align: center;
 			}
 
-			vtr-ui-list-chevron {
+			vtr-material-chevron-list {
 				a.disabled {
 					pointer-events: auto;
 				}

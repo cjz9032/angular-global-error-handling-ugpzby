@@ -72,10 +72,10 @@ export class WifiSecurityWidgetItem extends WidgetItem {
 				return;
 			}
 			if (location) {
-				this.status = status === 'enabled' ? 0 : 1;
+				this.status = status === 'enabled' ? 'enabled' : 'disabled';
 				this.detail = status;
 			} else {
-				this.status = 1;
+				this.status = 'disabled';
 				this.detail = 'disabled';
 			}
 

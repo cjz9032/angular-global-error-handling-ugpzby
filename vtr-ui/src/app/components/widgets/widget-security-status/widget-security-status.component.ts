@@ -16,6 +16,7 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 import { DeviceService } from 'src/app/services/device/device.service';
 import { AntivirusService } from 'src/app/services/security/antivirus.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { Status } from 'src/app/data-models/widgets/status.model';
 
 @Component({
 	selector: 'vtr-widget-security-status',
@@ -24,7 +25,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 })
 export class WidgetSecurityStatusComponent implements OnInit {
 	@Input() securityAdvisor: SecurityAdvisor;
-	items: Array<WidgetItem>;
+	items: Array<Status>;
 	region: string;
 	pluginSupport: boolean;
 	refreshTimeout: ReturnType<typeof setTimeout>;
@@ -39,7 +40,7 @@ export class WidgetSecurityStatusComponent implements OnInit {
 		private windowsHelloService: WindowsHelloService,
 		private hypSettings: HypothesisService,
 		private antivirusService: AntivirusService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.items = [

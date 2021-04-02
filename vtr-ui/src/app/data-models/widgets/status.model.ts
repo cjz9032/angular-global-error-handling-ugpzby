@@ -1,28 +1,38 @@
+import { IconName } from '@fortawesome/free-solid-svg-icons';
 import { DeviceStatusCardType } from 'src/app/enums/system-state.enum';
+import { StatusIconType } from 'src/app/material/material-chevron/material-status-icon/material-status-icon.component';
 
 /**
  * model for status widgets
  */
 export class Status {
 	constructor() {
-		this.status = 4;
+		this.status = 'loading';
 	}
-	public status: number;
 	public id: string;
-	public title: string;
-	public systemDetails: string;
-	public detail: string;
-	public path: string;
-	public asLink: boolean;
-	public isSystemLink: boolean;
-	public type: string;
-	public description: string;
-	public metricsItemName: string;
 	public isHidden?: boolean;
+	public status?: StatusIconType;
+	public title?: string;
+	public detail?: string;
+	public path?: string;
+	public asLink?: boolean;
+	public subtitle?: string;
+	public type?: string;
+	public systemDetails?: string;
+	public isSystemLink?: boolean;
+	public description?: string;
+	public metricsItemName?: string;
+	public category?: string;
+	public icon?: IconName;
+	public iconPath?: string;
+	public date?: string;
+	public launch?(): void;
+	public retry?(): void;
+	public retryText?: string;
 }
 
 export class DeviceStatus {
-	constructor() { }
+	constructor() {}
 	public id: string;
 	public icon: string;
 	public title: string;
@@ -35,10 +45,8 @@ export class DeviceStatus {
 	public showSepline: boolean;
 }
 
-
 export class DeviceStatusCardDate {
-	constructor(
-	) {
+	constructor() {
 		this[DeviceStatusCardType.su] = {
 			date: '',
 			needPromote: false,

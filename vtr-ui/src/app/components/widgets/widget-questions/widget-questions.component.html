@@ -1,28 +1,7 @@
-<div class="vtr-widget-questions">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col">
-				<h3 class="title {{'dirClass' | translate}}"
-					id="{{linkId}}-title"
-					dir="{{'dir' | translate}}">{{title}}</h3>
-				<p class="description {{'dirClass' | translate}}"
-					role="text"
-					id="{{linkId}}-description"
-					dir="{{'dir' | translate}}">{{description}}</p>
-			</div>
-		</div>
-		<div class="row filter">
-			<div class="col chevron">
-				<vtr-ui-list-chevron [items]="items"
-					[iconPlacement]="'left'"
-					metricsEvent="articleClick"
-					[arrowColor]="'blue-arrow'"
-					[clickable]="clickable"
-					[chevronVisibility]="chevronVisibility"
-					[blockPosition]="blockPosition"
-					[linkId]="linkId"></vtr-ui-list-chevron>
-			</div>
-			<div class="cover"></div>
-		</div>
-	</div>
-</div>
+<vtr-material-chevron [title]="title"
+	[subtitle]="description"
+	[linkId]="linkId"
+	[widgetData]="items"
+	[isLeftIcon]="true"
+	>
+</vtr-material-chevron>

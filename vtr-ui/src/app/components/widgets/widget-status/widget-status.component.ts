@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Status } from 'src/app/data-models/widgets/status.model';
 import { BaseComponent } from '../../base/base.component';
 
 @Component({
@@ -7,10 +8,9 @@ import { BaseComponent } from '../../base/base.component';
 	styleUrls: ['./widget-status.component.scss'],
 })
 export class WidgetStatusComponent extends BaseComponent implements OnInit {
-	@Input() type = 'system';
 	@Input() title = '';
 	@Input() description = '';
-	@Input() items = [];
+	@Input() items: Status[];
 	@Input() linkId: string;
 	constructor() {
 		super();

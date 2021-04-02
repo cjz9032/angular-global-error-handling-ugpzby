@@ -1,0 +1,134 @@
+@import '../../../app.theme.scss';
+
+.vtr-material-chevron-list {
+	padding: 0;
+	background-color: $grey_lighter;
+	border-radius: $border_radius;
+	border: 0.1rem solid $grey_light;
+	@media #{$black-on-white} {
+		border: 0.1rem solid;
+	}
+	@media #{$white-on-black} {
+		border: 0.1rem solid;
+	}
+	.chevron-list-item {
+		padding: 1.5rem 2rem;
+		height: 100%;
+		border-bottom: 0.1rem solid $grey_light;
+		a {
+			color: $main_darker;
+			display: block;
+
+			&:hover {
+				text-decoration: none;
+				@media #{$black-on-white} {
+					outline: none;
+					.title,
+					.detail {
+						color: $high-contrast-white-textselected !important;
+					}
+				}
+				@media #{$white-on-black} {
+					outline: none;
+					.title,
+					.detail {
+						color: $high-contrast-black-textselected !important;
+					}
+				}
+			}
+			&:focus {
+				top: 100%;
+				@include outline-blue;
+				@media #{$black-on-white} {
+					outline-offset: 0.5rem;
+					.title,
+					.detail {
+						color: $high-contrast-white-textselected !important;
+					}
+				}
+				@media #{$white-on-black} {
+					outline-offset: 0.5rem;
+					.title,
+					.detail {
+						color: $high-contrast-black-textselected !important;
+					}
+				}
+			}
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+		::ng-deep {
+			.mat-list-item-content {
+				padding: 0;
+			}
+		}
+
+		.title {
+			cursor: pointer;
+			font-size: $fontsize_xs;
+			font-weight: $weight_600;
+			color: $shade_blue;
+			@include high-contrast-color-reversal;
+		}
+		.detail {
+			font-size: $fontsize_xs2;
+			color: $shade_dark;
+			font-weight: $weight_600;
+			word-break: normal !important;
+			cursor: pointer;
+			&.good {
+				color: $go_dark;
+			}
+			&.bad {
+				color: $stop_dark;
+			}
+			&.orange {
+				color: $yellow_dark;
+			}
+			&.text-blue {
+				color: $main_gstart;
+			}
+			&.text-gray {
+				color: $shade_dark !important;
+			}
+			&.black {
+				color: $main_darker;
+			}
+			&.system {
+				color: $shade_dark;
+				font-size: $fontsize_xs2;
+				font-weight: $weight_medium;
+			}
+			&.highlight {
+				color: $main_shade;
+				text-decoration: none !important;
+
+				&:hover {
+					text-decoration: none;
+				}
+				&:focus + [role='link'] {
+					text-decoration: none;
+				}
+			}
+			@include high-contrast-color-reversal;
+		}
+		.retryBtn {
+			color: $blueHyperLink;
+			z-index: 999;
+			text-decoration: underline;
+			&:focus {
+				@include outline-blue;
+			}
+		}
+	}
+	.disabled {
+		cursor: default !important;
+		* {
+			cursor: default !important;
+			&:focus {
+				outline: none !important;
+			}
+		}
+	}
+}

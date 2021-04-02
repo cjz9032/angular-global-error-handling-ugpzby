@@ -37,12 +37,12 @@ export class AntivirusWidgetItem extends WidgetItem {
 				this.setWidgetUI(this.antivirusService.GetAntivirusStatus());
 			})
 			.on(EventTypes.avStartRefreshEvent, () => {
-				if (this.status === 7) {
+				if (this.status === 'loadFailed') {
 					this.translateService
 						.stream('common.securityAdvisor.loading')
 						.subscribe((value) => {
 							this.detail = value;
-							this.status = 4;
+							this.status = 'loading';
 							this.retryText = undefined;
 						});
 					this.waitTimeout();
@@ -62,19 +62,19 @@ export class AntivirusWidgetItem extends WidgetItem {
 		if ((av && fw) || (av && typeof fw !== 'boolean') || (fw && typeof av !== 'boolean')) {
 			this.translateService.stream('common.securityAdvisor.enabled').subscribe((value) => {
 				this.detail = value;
-				this.status = 0;
+				this.status = 'enabled';
 			});
 		} else if (!av && !fw) {
 			this.translateService.stream('common.securityAdvisor.disabled').subscribe((value) => {
 				this.detail = value;
-				this.status = 1;
+				this.status = 'disabled';
 			});
 		} else {
 			this.translateService
 				.stream('common.securityAdvisor.partiallyProtected')
 				.subscribe((value) => {
 					this.detail = value;
-					this.status = 3;
+					this.status = 'partially';
 				});
 		}
 	}
@@ -82,7 +82,7 @@ export class AntivirusWidgetItem extends WidgetItem {
 	retry() {
 		this.translateService.stream('common.securityAdvisor.loading').subscribe((value) => {
 			this.detail = value;
-			this.status = 4;
+			this.status = 'loading';
 			this.retryText = undefined;
 		});
 		this.waitTimeout();
@@ -91,8 +91,8 @@ export class AntivirusWidgetItem extends WidgetItem {
 
 	waitTimeout() {
 		setTimeout(() => {
-			if (this.status === 4) {
-				this.status = 7;
+			if (this.status === 'loading') {
+				this.status = 'loadFailed';
 				this.translateService.stream('common.ui.failedLoad').subscribe((value) => {
 					this.detail = value;
 				});

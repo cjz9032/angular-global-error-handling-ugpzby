@@ -43,6 +43,7 @@ import { WidgetQuicksettingsNoteComponent } from 'src/app/components/widgets/wid
 import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight';
 import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 import { WidgetWarrantyDetailModule } from 'src/app/components/widgets/widget-warranty-detail/widget-warranty-detail.module';
+import { MaterialChevronModule } from 'src/app/material/material-chevron/material-chevron.module';
 
 @NgModule({
 	declarations: [
@@ -83,6 +84,7 @@ import { WidgetWarrantyDetailModule } from 'src/app/components/widgets/widget-wa
 		MatTooltipModule,
 		MaterialModule,
 		MatDialogModule,
+		MaterialChevronModule,
 	],
 	exports: [
 		MetricsModule,
@@ -99,6 +101,7 @@ import { WidgetWarrantyDetailModule } from 'src/app/components/widgets/widget-wa
 		NgbTooltipModule,
 		MatTooltipModule,
 		MaterialModule,
+		MaterialChevronModule,
 	],
 	providers: [MockService],
 	entryComponents: [],
