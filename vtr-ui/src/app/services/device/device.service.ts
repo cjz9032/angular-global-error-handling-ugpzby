@@ -89,11 +89,10 @@ export class DeviceService {
 
 	private async identifySMBMachine() {
 		this.supportAIMeetingMgr = await this.isSupportSMBFeature('AIMeetingManager');
-		this.supportEasyRendering = await this.isSupportSMBFeature('CreatorCentre');
 		this.supportCreatorSettings = await this.isSupportSMBFeature('EasyRendering');
 		this.supportColorCalibration = await this.isSupportSMBFeature('ColorCalibration');
 		this.supportSmartAppearance = await this.isSupportSMBFeature('SmartAppearance');
-		this.isSMB = this.supportAIMeetingMgr || this.supportEasyRendering || this.supportColorCalibration
+		this.isSMB = this.supportAIMeetingMgr || this.supportColorCalibration
 			|| this.supportSmartAppearance || this.supportCreatorSettings;
 	}
 
