@@ -216,7 +216,7 @@ export class ContentCacheService {
 	private async cacheContents(cacheKey, cmsOptions: any, contentCards: any) {
 		const startTime = new Date();
 		Promise.all([
-			this.fetchCMSContent(cmsOptions, contentCards),
+			this.cmsService.fetchContents(cmsOptions),
 			this.fetchUPEContent(contentCards),
 		])
 			.then(async (response) => {
@@ -450,14 +450,6 @@ export class ContentCacheService {
 			downLoadImages.push(element);
 		}
 		div.innerHTML = '';
-	}
-
-	private async fetchCMSContent(cmsOptions: any, contentCards: any) {
-		try {
-			return await this.cmsService.fetchContents(cmsOptions);
-		} catch (ex) {
-			this.logger.error('fech cms contents error.');
-		}
 	}
 
 	private async fetchUPEContent(contentCards: any) {
