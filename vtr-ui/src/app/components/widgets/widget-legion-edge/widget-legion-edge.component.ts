@@ -400,10 +400,10 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			}
 			if(this.gamingCapabilities.thermalModeVersion === 4) {
 				if(this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) === 1) {
-					this.ocRealStatus =+ this.thermalMode2Enum.cpu;
+					this.ocRealStatus += this.thermalMode2Enum.cpu;
 				}
 				if(this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) === 1) {
-					this.ocRealStatus =+ this.thermalMode2Enum.gpu;
+					this.ocRealStatus += this.thermalMode2Enum.gpu;
 				}
 			}
 		}
@@ -910,20 +910,20 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			let tmpRealStatus = this.thermalMode2Enum.none;
 			if (this.ocSupported === this.thermalMode2Enum.cpu_gpu) {
 				if(realOCStatusInfo.cpuOCState) {
-					tmpRealStatus =+ this.thermalMode2Enum.cpu;
+					tmpRealStatus += this.thermalMode2Enum.cpu;
 				}
 				if(realOCStatusInfo.gpuOCState) {
-					tmpRealStatus =+ this.thermalMode2Enum.gpu;
+					tmpRealStatus += this.thermalMode2Enum.gpu;
 				}
 			}
 			if (this.ocSupported === this.thermalMode2Enum.cpu) {
 				if(realOCStatusInfo.cpuOCState) {
-					tmpRealStatus =+ realOCStatusInfo.cpuOCState;
+					tmpRealStatus += realOCStatusInfo.cpuOCState;
 				}
 			}
 			if (this.ocSupported === this.thermalMode2Enum.gpu) {
 				if(realOCStatusInfo.gpuOCState) {
-					tmpRealStatus =+ realOCStatusInfo.gpuOCState;
+					tmpRealStatus += realOCStatusInfo.gpuOCState;
 				}
 			}
 			if (tmpRealStatus !== this.ocRealStatus ) {
