@@ -41,12 +41,8 @@
 	font-weight: $weight_light;
 }
 
-.install-or-launch-btn {
-	margin: 0 -0.3rem 0 0;
-}
-
 .right-card-content {
-	margin-top: -4.5rem;
+	margin-top: -4rem;
 	@media #{$breakpoint_lg} {
 		margin-top: 2rem;
 	}

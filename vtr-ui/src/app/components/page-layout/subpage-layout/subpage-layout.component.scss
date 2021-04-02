@@ -60,7 +60,7 @@
 			&.vtr-subpage-right-column {
 				padding-right: $padding_side;
 				padding-left: 2.4rem;
-				background-color: $shade_extralight;
+				background-color: $light;
 				padding-top: 4rem;
 
 				@media #{$breakpoint_xl} {
@@ -71,7 +71,6 @@
 					padding-left: $padding_side;
 					padding-right: $padding_side;
 					padding-bottom: $padding_side_sm;
-
 				}
 
 				@media #{$breakpoint_lg} {
@@ -81,7 +80,6 @@
 
 				@media #{$breakpoint_md} {
 					background-color: $shade_extralight;
-
 				}
 
 				@media #{$breakpoint_sm} {
