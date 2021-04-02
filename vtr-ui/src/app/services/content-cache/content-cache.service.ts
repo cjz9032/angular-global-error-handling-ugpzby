@@ -300,9 +300,11 @@ export class ContentCacheService {
 			}
 		} else {
 			for (const key of Object.keys(cacheValueOfContents)) {
-				cacheValueOfContents[key].forEach((content) => {
-					contents.push(content);
-				});
+				if (cachedContents[key] && cachedContents[key].length > 0) {
+					cacheValueOfContents[key].forEach((content) => {
+						contents.push(content);
+					});
+				}
 			}
 		}
 		return contents;
@@ -495,7 +497,8 @@ export class ContentCacheService {
 					dataSource
 				);
 				if (contents && contents.length > 0) {
-					if (contentCard.positionParam !== 'position-A') {
+					if (contentCard.positionParam !== 'position-A'
+						&& contentCard.positionParam !== 'position-D') {
 						contents = this.filterContentsByCondition(contents);
 					}
 					cacheValueOfContents[contentCard.cardId] = contents;
@@ -543,15 +546,9 @@ export class ContentCacheService {
 
 	private filterContentsByCondition(contents: any) {
 		const result = [];
-		for (let i = 0; i < contents.length; i++) {
-			const content = contents[i];
-			if (i === 0) {
-				result.push(content);
-				if (content.ExpirationDate == null) {
-					return result;
-				}
-			}
-			if (content.ExpirationDate == null) {
+		for (const content of  contents) {
+			if (content.ExpirationDate == null
+				|| new Date(content.ExpirationDate) >= new Date()) {
 				result.push(content);
 				return result;
 			}
