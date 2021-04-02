@@ -1443,7 +1443,13 @@
 							"title": "Pil kapasitesi",
 							"fullChargeCapacity": "Tam şarj kapasitesi: ",
 							"originalDesignCapacity": "Orijinal tasarım kapasitesi: ",
-							"toolTip": "Pilinizin tam şarj kapasitesi günlük kullanımla azalır."
+							"toolTip": "Pilinizin tam şarj kapasitesi günlük kullanımla azalır.",
+							"capacityTooltip": {
+								"error": "Pil kapasitesi yok.",
+								"good": "Pil iyi durumda. Tam şarj kapasitesi, pilinizin tam olarak şarj edildiğinde maksimum kapasitesini temsil eder. <br>Not: Pilinizin tam şarj kapasitesi zamanla kademeli olarak azalacaktır.",
+								"poor": "Pil zayıf durumda. Pil ömrü ve maksimum güç performansı etkilenecektir. Pilinizi değiştirmenizi öneririz. <br>Not: Piliniz garanti kapsamı dışındaysa yeni pil veya pili takma işlemi için sizden ücret talep edilebilir.",
+								"aging": "Pil devre dışı bırakıldı. Pil artık güvenli bir şekilde çalışamaz. Pilinizi değiştirmenizi öneririz. <br>Not: Piliniz garanti kapsamı dışındaysa yeni pil veya pili takma işlemi için sizden ücret talep edilebilir."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Pil sıcaklığı",

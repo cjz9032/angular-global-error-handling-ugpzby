@@ -1443,7 +1443,13 @@
 							"title": "Batterijcapaciteit",
 							"fullChargeCapacity": "Capaciteit bij volledig geladen: ",
 							"originalDesignCapacity": "Ontwerpcapaciteit: ",
-							"toolTip": "De capaciteit van de batterij wanneer deze volledig is opgeladen neemt af door dagelijks gebruik."
+							"toolTip": "De capaciteit van de batterij wanneer deze volledig is opgeladen neemt af door dagelijks gebruik.",
+							"capacityTooltip": {
+								"error": "Batterijcapaciteit is niet beschikbaar.",
+								"good": "De batterij is vol. Volledige geladen betekent de maximale capaciteit van uw batterij bij een volledige lading. <br>Let op: de volledige ladingscapaciteit van uw batterij wordt gedurende de tijd minder.",
+								"poor": "De batterij is in een slechte conditie. Levensduur van de batterij en de maximale kracht worden beïnvloed - wij raden aan dat u de batterij vervangt. <br>Let op: wanneer uw batterij niet langer onder de garantie valt, worden er mogelijk kosten in rekening gebracht voor een vervangend exemplaar en de installatie daarvan.",
+								"aging": "De batterij is uitgeschakeld. De batterij kan niet langer op een veilige manier functioneren - wij raden aan dat u de batterij vervangt. <br>Let op: wanneer uw batterij niet langer onder de garantie valt, worden er mogelijk kosten in rekening gebracht voor een vervangend exemplaar en de installatie daarvan."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Batterijtemperatuur",

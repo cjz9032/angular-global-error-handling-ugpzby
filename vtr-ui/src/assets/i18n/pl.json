@@ -1443,7 +1443,13 @@
 							"title": "Pojemność akumulatora",
 							"fullChargeCapacity": "Pojemność po pełnym naładowaniu: ",
 							"originalDesignCapacity": "Pierwotna projektowana pojemność: ",
-							"toolTip": "Pojemność po pełnym naładowaniu zmniejsza się w miarę codziennego użytkowania."
+							"toolTip": "Pojemność po pełnym naładowaniu zmniejsza się w miarę codziennego użytkowania.",
+							"capacityTooltip": {
+								"error": "Niedostępna pojemność baterii.",
+								"good": "Bateria jest w dobrym stanie. Pełna pojemność ładowania to maksymalna pojemność całkowicie naładowanej baterii. <br>Uwaga: pełna pojemność baterii będzie się z czasem stopniowo zmniejszać.",
+								"poor": "Bateria jest w złym stanie. Wpłynie to na żywotność baterii i szczytową wydajność — zalecamy wymianę baterii. <br>Uwaga: jeśli okres gwarancji na baterię minął, może zostać naliczona opłata za wymianę i instalację nowej.",
+								"aging": "Bateria została wyłączona. Bateria nie jest już w stanie działać w bezpieczny sposób — zalecamy wymianę baterii. <br>Uwaga: jeśli okres gwarancji na baterię minął, może zostać naliczona opłata za wymianę i instalację nowej."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Temperatura akumulatora",

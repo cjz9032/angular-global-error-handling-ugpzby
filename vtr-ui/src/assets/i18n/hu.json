@@ -1443,7 +1443,13 @@
 							"title": "Akkumulátor kapacitása",
 							"fullChargeCapacity": "Teljes töltési kapacitás: ",
 							"originalDesignCapacity": "Eredeti névleges kapacitás: ",
-							"toolTip": "Az akkumulátor teljes töltési kapacitása mindennapos használat mellett csökken."
+							"toolTip": "Az akkumulátor teljes töltési kapacitása mindennapos használat mellett csökken.",
+							"capacityTooltip": {
+								"error": "Az akkumulátor kapacitása nem érhető el.",
+								"good": "Az akkumulátor jó állapotban van. A teljes töltési kapacitás az akkumulátor maximális kapacitását jelenti, amikor az teljesen fel van töltve. <br>Megjegyzés: Az akkumulátor teljes töltőkapacitása az idő múlásával fokozatosan csökken.",
+								"poor": "Az akkumulátor rossz állapotban van. Ez befolyásolja az akkumulátor élettartamát és a maximális teljesítményt - javasoljuk az akkumulátor cseréjét. <br>Megjegyzés: Ha az akkumulátorra már nincsen garancia, akkor felszámolhatjuk a csereakkumulátor és a beszerelés árát.",
+								"aging": "Az akkumulátor le van tiltva. Az akkumulátor már nem képes biztonságos módon működni - javasoljuk az akkumulátor cseréjét. <br>Megjegyzés: Ha az akkumulátorra már nincsen garancia, akkor felszámolhatjuk a csereakkumulátor és a beszerelés árát."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Az akkumulátor hőmérséklete",

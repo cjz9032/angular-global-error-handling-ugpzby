@@ -1443,7 +1443,13 @@
 							"title": "Kapacitet baterije",
 							"fullChargeCapacity": "Pun kapacitet punjenja: ",
 							"originalDesignCapacity": "Originalno projektovan kapacitet: ",
-							"toolTip": "Pun kapacitet baterije se smanjuje svakodnevnim korišćenjem."
+							"toolTip": "Pun kapacitet baterije se smanjuje svakodnevnim korišćenjem.",
+							"capacityTooltip": {
+								"error": "Kapacitet baterije nije dostupan.",
+								"good": "Baterija je u dobrom stanju. Kapacitet potpunog punjenja predstavlja maksimalan kapacitet baterije kada je potpuno napunjena. <br>Napomena: kapacitet potpune napunjenosti baterije će se vremenom postepeno smanjivati.",
+								"poor": "Baterija je u lošem stanju. To će uticati na vek trajanja baterije i maksimalne performanse – preporučujemo zamenu baterije. <br>Napomena: Ako baterija nema garanciju, možda će vam biti naplaćena zamena baterije i postavljanje.",
+								"aging": "Baterija je onemogućena. Baterija više ne može da radi na bezbedan način – preporučujemo zamenu baterije. <br>Napomena: Ako baterija nema garanciju, možda će vam biti naplaćena zamena baterije i postavljanje."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Temperatura baterije",

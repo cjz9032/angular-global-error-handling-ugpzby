@@ -1443,7 +1443,13 @@
 							"title": "Akun kapasiteetti",
 							"fullChargeCapacity": "Täysi varauskapasiteetti: ",
 							"originalDesignCapacity": "Alun perin suunniteltu kapasiteetti: ",
-							"toolTip": "Akkusi täysi varauskapasiteetti heikkenee päivittäisen käytön myötä."
+							"toolTip": "Akkusi täysi varauskapasiteetti heikkenee päivittäisen käytön myötä.",
+							"capacityTooltip": {
+								"error": "Akun kapasiteetti ei ole saatavilla.",
+								"good": "Akun toimintakunto on hyvä. Täysi varauskapasiteetti tarkoittaa akkusi enimmäiskapasiteettia, kun se on ladattu täyteen. <br>Huomautus: Akkusi täysi varauskapasiteetti heikkenee ajan myötä.",
+								"poor": "Akun toimintakunto on heikko. Tämä vaikuttaa akun käyttöikään ja enimmäistehoon – suosittelemme vaihtamaan akun. <br>Huomautus: Jos akkusi takuu on umpeutunut, sinulta saatetaan veloittaa maksu uudesta akusta ja sen asentamisesta.",
+								"aging": "Akku on poistettu käytöstä. Akku ei toimi enää turvallisesti – suosittelemme vaihtamaan akun. <br>Huomautus: Jos akkusi takuu on umpeutunut, sinulta saatetaan veloittaa maksu uudesta akusta ja sen asentamisesta."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Akun lämpötila",

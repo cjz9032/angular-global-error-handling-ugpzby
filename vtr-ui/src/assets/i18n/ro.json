@@ -1443,7 +1443,13 @@
 							"title": "Capacitatea bateriei",
 							"fullChargeCapacity": "Capacitate de încărcare completă: ",
 							"originalDesignCapacity": "Capacitate originală proiectată: ",
-							"toolTip": "Capacitatea completă de încărcare a bateriei scade odată cu utilizarea zilnică."
+							"toolTip": "Capacitatea completă de încărcare a bateriei scade odată cu utilizarea zilnică.",
+							"capacityTooltip": {
+								"error": "Capacitatea bateriei nu este disponibilă.",
+								"good": "Bateria este în stare bună. Capacitatea completă de încărcare reprezintă capacitatea maximă a bateriei atunci când este complet încărcată. <br>Notă: Capacitatea completă de încărcare a bateriei va scădea treptat în timp.",
+								"poor": "Bateria nu este în stare bună. Durata de viață a bateriei și performanța de vârf vor fi afectate - vă recomandăm să înlocuiți bateria. <br>Notă: Dacă bateria dvs. a ieșit din garanție, este posibil să fiți taxat pentru bateria de schimb și pentru instalare.",
+								"aging": "Bateria a fost dezactivată. Bateria nu mai poate funcționa în siguranță - vă recomandăm să înlocuiți bateria. <br>Notă: Dacă bateria dvs. a ieșit din garanție, este posibil să fiți taxat pentru bateria de schimb și pentru instalare."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Temperatura bateriei",
