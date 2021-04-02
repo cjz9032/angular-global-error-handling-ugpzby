@@ -375,9 +375,17 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 	}
 
 	getSmartAssistCapability() {
-		const smartAssistCap = this.localCacheService.getLocalCacheValue(
+		let smartAssistCap = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsSmartAssistSupported
 		);
+		if (smartAssistCap !== undefined) {
+			if (!smartAssistCap) {
+				this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
+			}
+			return;
+		}
+
+		smartAssistCap = this.configService.isSmartAssistAvailable;
 		if (!smartAssistCap) {
 			this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
 		}
