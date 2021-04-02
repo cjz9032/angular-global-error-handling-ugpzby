@@ -546,7 +546,7 @@ export class ContentCacheService {
 
 	private filterContentsByCondition(contents: any) {
 		const result = [];
-		for (const content of  contents) {
+		for (const content of contents) {
 			if (content.ExpirationDate == null
 				|| new Date(content.ExpirationDate) >= new Date()) {
 				result.push(content);
