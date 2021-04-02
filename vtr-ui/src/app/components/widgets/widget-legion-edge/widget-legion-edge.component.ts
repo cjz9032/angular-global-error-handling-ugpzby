@@ -47,6 +47,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	public performanceOCSettings = false;
 	// Version 3.5: OC event of thermal mode 3.0
 	public ocSupported = this.thermalMode2Enum.none;
+	public ocRealStatus = this.thermalMode2Enum.none;
 	public ocRealStatusEvent: any;
 
 	// use enum instead of hard code on 200319 by Guo Jing
@@ -369,40 +370,40 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 		// Feature 7: Version 3.3, Over drive                               //
 		// Feature 8: Touchpad lock                                         //
 		//////////////////////////////////////////////////////////////////////
-		if (
-			this.gamingCapabilities.smartFanFeature &&
-			(this.gamingCapabilities.thermalModeVersion === 2 ||
-				this.gamingCapabilities.thermalModeVersion === 4)
-		) {
+		if (this.gamingCapabilities.smartFanFeature && this.gamingCapabilities.thermalModeVersion !== 1) {
 			this.thermalModeRealStatus = this.localCacheService.getLocalCacheValue(
 				LocalStorageKey.RealThermalModeStatus,
 				2
 			);
-			if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
-				if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
-					this.performanceOCSettings =
-						this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) ===
+			if(this.gamingCapabilities.thermalModeVersion === 2) {
+				if (this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
+					if (this.gamingCapabilities.xtuService && this.gamingCapabilities.nvDriver) {
+						this.performanceOCSettings =
+							this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) ===
 							1 &&
-						this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) ===
+							this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) ===
 							1;
+					}
+				} else if (this.gamingCapabilities.cpuOCFeature && !this.gamingCapabilities.gpuOCFeature) {
+					if (this.gamingCapabilities.xtuService) {
+						this.performanceOCSettings =
+							this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) ===
+							1;
+					}
+				} else if (!this.gamingCapabilities.cpuOCFeature && this.gamingCapabilities.gpuOCFeature) {
+					if (this.gamingCapabilities.nvDriver) {
+						this.performanceOCSettings =
+							this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) ===
+							1;
+					}
 				}
-			} else if (
-				this.gamingCapabilities.cpuOCFeature &&
-				!this.gamingCapabilities.gpuOCFeature
-			) {
-				if (this.gamingCapabilities.xtuService) {
-					this.performanceOCSettings =
-						this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) ===
-						1;
+			}
+			if(this.gamingCapabilities.thermalModeVersion === 4) {
+				if(this.localCacheService.getLocalCacheValue(LocalStorageKey.CpuOCStatus) === 1) {
+					this.ocRealStatus =+ this.thermalMode2Enum.cpu;
 				}
-			} else if (
-				!this.gamingCapabilities.cpuOCFeature &&
-				this.gamingCapabilities.gpuOCFeature
-			) {
-				if (this.gamingCapabilities.nvDriver) {
-					this.performanceOCSettings =
-						this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) ===
-						1;
+				if(this.localCacheService.getLocalCacheValue(LocalStorageKey.GpuOCStatus) === 1) {
+					this.ocRealStatus =+ this.thermalMode2Enum.gpu;
 				}
 			}
 		}
@@ -629,7 +630,7 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 				this.ocRealStatusEvent = this.onRegOCRealStatusChangeEvent.bind(this);
 				this.registerOCRealStatusChangeEvent();
 			} else {
-				this.performanceOCSettings = false;
+				this.ocRealStatus = this.thermalMode2Enum.none;
 			}
 		}
 
@@ -904,29 +905,39 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 	onRegOCRealStatusChangeEvent(realOCStatusInfo: any) {
 		this.ngZone.run(() => {
 			this.logger.info(
-				`Widget-LegionEdge-onRegOCRealStatusChangeEvent: call back from ${this.performanceOCSettings} to ${realOCStatusInfo}`
+				`Widget-LegionEdge-onRegOCRealStatusChangeEvent: call back from ${this.performanceOCSettings} to CPU:${realOCStatusInfo.cpuOCState} & GPU:${realOCStatusInfo.gpuOCState}`
 			);
-			let tmpOCStatus: boolean;
+			let tmpRealStatus = this.thermalMode2Enum.none;
 			if (this.ocSupported === this.thermalMode2Enum.cpu_gpu) {
-				tmpOCStatus = realOCStatusInfo.cpuOCState && realOCStatusInfo.gpuOCState;
-			} else if (this.ocSupported === this.thermalMode2Enum.cpu) {
-				tmpOCStatus = realOCStatusInfo.cpuOCState;
+				if(realOCStatusInfo.cpuOCState) {
+					tmpRealStatus =+ this.thermalMode2Enum.cpu;
+				}
+				if(realOCStatusInfo.gpuOCState) {
+					tmpRealStatus =+ this.thermalMode2Enum.gpu;
+				}
+			}
+			if (this.ocSupported === this.thermalMode2Enum.cpu) {
+				if(realOCStatusInfo.cpuOCState) {
+					tmpRealStatus =+ realOCStatusInfo.cpuOCState;
+				}
 			}
 			if (this.ocSupported === this.thermalMode2Enum.gpu) {
-				tmpOCStatus = realOCStatusInfo.gpuOCState;
+				if(realOCStatusInfo.gpuOCState) {
+					tmpRealStatus =+ realOCStatusInfo.gpuOCState;
+				}
 			}
-			if (tmpOCStatus !== undefined && this.performanceOCSettings !== tmpOCStatus) {
-				this.performanceOCSettings = tmpOCStatus;
+			if (tmpRealStatus !== this.ocRealStatus ) {
+				this.ocRealStatus = tmpRealStatus;
 				if (this.gamingCapabilities.cpuOCFeature) {
 					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.CpuOCStatus,
-						this.performanceOCSettings ? 1 : 3
+						realOCStatusInfo.cpuOCState ? 1 : 3
 					);
 				}
 				if (this.gamingCapabilities.gpuOCFeature) {
 					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.GpuOCStatus,
-						this.performanceOCSettings ? 1 : 3
+						realOCStatusInfo.gpuOCState ? 1 : 3
 					);
 				}
 			}
@@ -937,18 +948,18 @@ export class WidgetLegionEdgeComponent implements OnInit, OnDestroy {
 			this.gamingCapabilities.thermalModeVersion === 4 &&
 			(this.thermalModeRealStatus === this.thermalMode2Enum.performance ||
 				this.thermalModeRealStatus === this.thermalMode2Enum.balance) &&
-			this.performanceOCSettings
+				this.ocRealStatus !== this.thermalMode2Enum.none
 		) {
 			let ocTips;
-			if (this.ocSupported === this.thermalMode2Enum.cpu_gpu) {
+			if (this.ocRealStatus === this.thermalMode2Enum.cpu_gpu) {
 				ocTips = this.translateService.instant(
 					'gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_GPU_ON'
 				);
-			} else if (this.ocSupported === this.thermalMode2Enum.cpu) {
+			} else if (this.ocRealStatus === this.thermalMode2Enum.cpu) {
 				ocTips = this.translateService.instant(
 					'gaming.dashboard.device.legionEdge.thermalMode3Tips.CPU_ON'
 				);
-			} else if (this.ocSupported === this.thermalMode2Enum.gpu) {
+			} else if (this.ocRealStatus === this.thermalMode2Enum.gpu) {
 				ocTips = this.translateService.instant(
 					'gaming.dashboard.device.legionEdge.thermalMode3Tips.GPU_ON'
 				);
