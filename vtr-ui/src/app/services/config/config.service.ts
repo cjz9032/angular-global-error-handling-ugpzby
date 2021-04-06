@@ -576,7 +576,7 @@ export class ConfigService {
 				(assistCapability.isHsaIntelligentSecuritySupported.capability & 0x100) !== 0 ||
 				(assistCapability.isHsaIntelligentSecuritySupported.capability & 0x80) !== 0;
 
-			this.isSmartAssistAvailableSub$.next(this.isSmartPerformanceAvailable);
+			this.isSmartAssistAvailableSub$.next(this.isSmartAssistAvailable);
 
 			if (this.isSmartAssistAvailable) {
 				this.addSmartAssistMenu(this.menu);

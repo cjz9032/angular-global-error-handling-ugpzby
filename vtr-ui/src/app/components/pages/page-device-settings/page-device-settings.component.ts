@@ -137,7 +137,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		this.initInputAccessories();
 		this.configService.isSmartAssistAvailableSub$.subscribe((isAvaliable) => {
 			this.getSmartAssistCapability(isAvaliable);
-		})
+		});
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
@@ -384,12 +384,26 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			if (!smartAssistCap) {
 				this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
 			}
-			// return;
 		}
 
 		smartAssistCap = isAvaliable;
 		if (!smartAssistCap) {
 			this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
+		} else {
+			const smartAssistMenuItem = this.menuItems.find(item => item.id === 'smart-assist');
+			if (!smartAssistMenuItem) {
+				this.menuItems.push({
+					id: 'smart-assist',
+					label: 'device.smartAssist.title',
+					path: 'device-settings/smart-assist',
+					icon: 'smart-assist',
+					iconClass: 'icomoon-Smart-Assist',
+					canDeactivate: [GuardService],
+					canActivate: [GuardService, NonArmGuard],
+					subitems: [],
+					active: false,
+				});
+			}
 		}
 	}
 
