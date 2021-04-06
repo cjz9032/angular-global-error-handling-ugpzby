@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.13](https://bitbucket.tc.lenovo.com///compare/v1.11.12...v1.11.13) (2021-04-06)
+
+
+### Bug Fixes
+
+* **chevron:** VAN-27572 remove useless prop ([ea4d0a1](https://bitbucket.tc.lenovo.com///commit/ea4d0a164de0a8fe2786fc6341310e2f56884bb8))
+* **ContentCache:** VAN-27757 should not update cache when CMS request error ([8764019](https://bitbucket.tc.lenovo.com///commit/87640191f36b0ccf9180a980d84da799c70b1ad3))
+* **ContentCache:** VAN-27769 expirationDate should be evaluated ([0b10bbd](https://bitbucket.tc.lenovo.com///commit/0b10bbd819c1c45f33a9b6bd942fb138fb6a2160))
+* **ContentCache:** VAN-27769 remove extra space ([35f0af7](https://bitbucket.tc.lenovo.com///commit/35f0af71c10a886f26fb2aee1a27906a39179a9d))
+
 ### [1.11.12](https://bitbucket.tc.lenovo.com///compare/v1.11.11...v1.11.12) (2021-04-02)
 
 ### [1.11.11](https://bitbucket.tc.lenovo.com///compare/v1.11.10...v1.11.11) (2021-04-01)
