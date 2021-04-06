@@ -135,7 +135,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 		this.qaService.setCurrentLangTranslations();
 		this.initInputAccessories();
-		this.getSmartAssistCapability();
+		this.configService.isSmartAssistAvailableSub$.subscribe((isAvaliable) => {
+			this.getSmartAssistCapability(isAvaliable);
+		})
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
@@ -374,7 +376,7 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		this.activeElement = document.activeElement as HTMLElement;
 	}
 
-	getSmartAssistCapability() {
+	getSmartAssistCapability(isAvaliable: boolean) {
 		let smartAssistCap = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsSmartAssistSupported
 		);
@@ -382,10 +384,10 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 			if (!smartAssistCap) {
 				this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
 			}
-			return;
+			// return;
 		}
 
-		smartAssistCap = this.configService.isSmartAssistAvailable;
+		smartAssistCap = isAvaliable;
 		if (!smartAssistCap) {
 			this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
 		}
