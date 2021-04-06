@@ -1,11 +1,10 @@
-import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
-import { Pipe, NO_ERRORS_SCHEMA, Component } from '@angular/core';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync} from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA, Component } from '@angular/core';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RouterLinkWithHref } from '@angular/router';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
 import { TranslationModule } from 'src/app/modules/translation.module';
 import { WidgetSystemToolsComponent } from './widget-system-tools.component';
@@ -15,7 +14,7 @@ import { GamingAllCapabilitiesService } from 'src/app/services/gaming/gaming-cap
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { GamingThirdPartyAppService } from 'src/app/services/gaming/gaming-thirdparty-app/gaming-third-party-app.service';
 import { GAMING_DATA } from 'src/testing/gaming-data';
-
+import { MatDialog, MatDialogModule } from '@lenovo/material/dialog';
 
 @Component({ selector: 'vtr-modal-gaming-prompt', template: '' })
 export class ModalGamingPromptStubComponent {
@@ -97,7 +96,10 @@ describe('WidgetSystemToolsComponent', () => {
 	describe('macroKey', () => {
 		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
-				imports: [RouterTestingModule.withRoutes([])],
+				imports: [
+					RouterTestingModule.withRoutes([]),
+					MatDialogModule
+				],
 				declarations: [WidgetSystemToolsComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
@@ -162,7 +164,10 @@ describe('WidgetSystemToolsComponent', () => {
 	describe('hardwareScan', () => {
 		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
-				imports: [RouterTestingModule.withRoutes([])],
+				imports: [
+					RouterTestingModule.withRoutes([]),
+					MatDialogModule
+				],
 				declarations: [WidgetSystemToolsComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
@@ -227,15 +232,92 @@ describe('WidgetSystemToolsComponent', () => {
 		});
 	});
 
-	describe('legionAccessory', () => {
+	describe('systemUpdate & power & media', () => {
+		beforeEach(waitForAsync(() => {
+			TestBed.configureTestingModule({
+				imports: [
+					RouterTestingModule.withRoutes([]),
+					MatDialogModule
+				],
+				declarations: [WidgetSystemToolsComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
+				schemas: [NO_ERRORS_SCHEMA],
+				providers: [
+					{ provide: HttpClient },
+					{ provide: HttpHandler },
+					{ provide: CommonService, useValue: commonServiceMock },
+					{ provide: LocalCacheService, useValue: localCacheServiceMock },
+					{
+						provide: GamingAllCapabilitiesService,
+						useValue: gamingAllCapabilitiesServiceMock,
+					},
+					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
+					{ provide: GamingThirdPartyAppService, useValue: gamingThirdPartyAppServiceSpy },
+				],
+			}).compileComponents();
+			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
+			component = fixture.debugElement.componentInstance;
+			fixture.detectChanges();
+		}));
+
+		// Checking path for system update title link.
+		it('should have path /device/system-updates for System Update title link', async () => {
+			const systemUpdate = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
+			const systemUpdateValue = systemUpdate.findIndex((su) => su.properties.href === '/device/system-updates');
+			expect(systemUpdateValue).toBeGreaterThan(-1);
+		});
+
+		it('should have title System Updates', async () => {
+			fixture.detectChanges();
+			const compiled = fixture.debugElement.nativeElement;
+			expect(
+				compiled.querySelector('#gaming_dashboard_systemtools_systemupdates').textContent
+			).toEqual(' gaming.dashboard.device.systemTools.systemUpdate ');
+		});
+
+		// Checking path for Power title link.
+		it('should have path /device/device-settings/power for Power title link', async () => {
+			const power = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
+			const powerValue = power.findIndex((p) => p.properties.href === '/device/device-settings/power');
+			expect(powerValue).toBeGreaterThan(-1);
+		});
+
+		it('should have title Power', async () => {
+			fixture.detectChanges();
+			const compiled = fixture.debugElement.nativeElement;
+			expect(
+				compiled.querySelector('#gaming_dashboard_systemtools_power').textContent
+			).toEqual(' gaming.dashboard.device.systemTools.power');
+		});
+
+		// Checking path for Media title link.
+		it('should have path /device/device-settings/display-camera for Media title link', async () => {
+			const camera = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
+			const cameraValue = camera.findIndex((c) => c.properties.href === '/device/device-settings/display-camera');
+			expect(cameraValue).toBeGreaterThan(-1);
+		});
+
+		it('should have title Media', async () => {
+			fixture.detectChanges();
+			const compiled = fixture.debugElement.nativeElement;
+			expect(
+				compiled.querySelector('#gaming_dashboard_systemtools_displaycamera').textContent
+			).toEqual(' gaming.dashboard.device.systemTools.media');
+		});
+	});
+
+	describe('third party app', () => {
 		let modalService: any;
 		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
-				imports: [TranslationModule, RouterTestingModule.withRoutes([])],
+				imports: [
+					TranslationModule, 
+					RouterTestingModule.withRoutes([]),
+					MatDialogModule
+				],
 				declarations: [WidgetSystemToolsComponent, ModalGamingPromptStubComponent],
 				schemas: [NO_ERRORS_SCHEMA],
 				providers: [
-					NgbModal,
+					MatDialog,
 					TranslateStore,
 					{ provide: HttpClient },
 					{ provide: HttpHandler },
@@ -249,7 +331,7 @@ describe('WidgetSystemToolsComponent', () => {
 					{ provide: GamingThirdPartyAppService, useValue: gamingThirdPartyAppServiceSpy },
 				],
 			}).compileComponents();
-			modalService = TestBed.inject(NgbModal);
+			modalService = TestBed.inject(MatDialog);
 			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
 			component = fixture.debugElement.componentInstance;
 			fixture.detectChanges();
@@ -343,76 +425,6 @@ describe('WidgetSystemToolsComponent', () => {
 			component.openWaringModal('accessory');
 			expect(modalService.open).toHaveBeenCalledTimes(2);
 			expect(window.open).toHaveBeenCalledTimes(1);
-		});
-	});
-
-	describe('systemUpdate & power & media', () => {
-		beforeEach(waitForAsync(() => {
-			TestBed.configureTestingModule({
-				imports: [RouterTestingModule.withRoutes([])],
-				declarations: [WidgetSystemToolsComponent, GAMING_DATA.mockPipe({ name: 'translate' })],
-				schemas: [NO_ERRORS_SCHEMA],
-				providers: [
-					{ provide: HttpClient },
-					{ provide: HttpHandler },
-					{ provide: CommonService, useValue: commonServiceMock },
-					{ provide: LocalCacheService, useValue: localCacheServiceMock },
-					{
-						provide: GamingAllCapabilitiesService,
-						useValue: gamingAllCapabilitiesServiceMock,
-					},
-					{ provide: HardwareScanService, useValue: hardwareScanServiceSpy },
-					{ provide: GamingThirdPartyAppService, useValue: gamingThirdPartyAppServiceSpy },
-				],
-			}).compileComponents();
-			fixture = TestBed.createComponent(WidgetSystemToolsComponent);
-			component = fixture.debugElement.componentInstance;
-			fixture.detectChanges();
-		}));
-
-		// Checking path for system update title link.
-		it('should have path /device/system-updates for System Update title link', async () => {
-			const systemUpdate = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const systemUpdateValue = systemUpdate.findIndex((su) => su.properties.href === '/device/system-updates');
-			expect(systemUpdateValue).toBeGreaterThan(-1);
-		});
-
-		it('should have title System Updates', async () => {
-			fixture.detectChanges();
-			const compiled = fixture.debugElement.nativeElement;
-			expect(
-				compiled.querySelector('#gaming_dashboard_systemtools_systemupdates').textContent
-			).toEqual(' gaming.dashboard.device.systemTools.systemUpdate ');
-		});
-
-		// Checking path for Power title link.
-		it('should have path /device/device-settings/power for Power title link', async () => {
-			const power = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const powerValue = power.findIndex((p) => p.properties.href === '/device/device-settings/power');
-			expect(powerValue).toBeGreaterThan(-1);
-		});
-
-		it('should have title Power', async () => {
-			fixture.detectChanges();
-			const compiled = fixture.debugElement.nativeElement;
-			expect(
-				compiled.querySelector('#gaming_dashboard_systemtools_power').textContent
-			).toEqual(' gaming.dashboard.device.systemTools.power');
-		});
-
-		// Checking path for Media title link.
-		it('should have path /device/device-settings/display-camera for Media title link', async () => {
-			const camera = fixture.debugElement.queryAll(By.directive(RouterLinkWithHref));
-			const cameraValue = camera.findIndex((c) => c.properties.href === '/device/device-settings/display-camera');
-			expect(cameraValue).toBeGreaterThan(-1);
-		});
-
-		it('should have title Media', async () => {
-			fixture.detectChanges();
-			const compiled = fixture.debugElement.nativeElement;
-			expect(
-				compiled.querySelector('#gaming_dashboard_systemtools_displaycamera').textContent
-			).toEqual(' gaming.dashboard.device.systemTools.media');
 		});
 	});
 });
