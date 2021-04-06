@@ -51,7 +51,7 @@ export class UACWidgetItemViewModel extends WidgetItem {
 		this.detail = this.translateString[
 			`common.securityAdvisor.${status === 'enable' ? 'enabled' : 'disabled'}`
 		];
-		this.status = status === 'enable' ? 0 : 1;
+		this.status = status === 'enable' ? 'enabled' : 'disabled';
 		this.localCacheService.setLocalCacheValue(LocalStorageKey.SecurityUacStatus, status);
 	}
 }

@@ -1,0 +1,243 @@
+<div class="d-flex align-items-center justify-content-center my-5"
+	*ngIf="data.length === 0">
+	<mat-spinner diameter="80" strokeWidth="7"></mat-spinner>
+</div>
+<mat-nav-list class="vtr-material-chevron-list">
+	<mat-list-item class="chevron-list-item" *ngFor="let item of data" [hidden]="item.isHidden" [ngClass]="clickable?'':'disabled'">
+		<a mat-list-item *ngIf="!item.isSystemLink && !item.launch; else systemLink"
+			class="p-0 h-auto"
+			routerLink="/{{item.path}}"
+			id="{{linkId}}-{{item.id}}"
+			vtrMetrics
+			[metricsItem]="item.metricsItemName"
+			[metricsEvent]="metricsEvent"
+			[metricsItemID]="item.id"
+			[metricsItemCategory]="item.category"
+			[metricsItemPosition]="blockPosition"
+			[ngClass]="clickable?'':'disabled'"
+			[tabindex]="clickable ? 0 : -1"
+			[attr.role]="clickable?'':'document'"
+			[matTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subtitle? ' - '+item.subtitle:'' )"
+			matTooltipClass="vtr-system-tooltip"
+			#ta="matTooltip"
+			>
+			<div class="row no-gutter w-100 align-items-center">
+				<span *ngIf="isLeftIcon" class="col col-1 leftIcon pl-0">
+					<div class="item-icon"
+						*ngIf="item.icon; else svgIcon">
+						<div id="{{'icon-' + item.icon + '-' + item.id}}">
+							<fa-icon [icon]="['fas', item.icon]"></fa-icon>
+						</div>
+					</div>
+
+				</span>
+				<div class="text d-flex align-items-center justify-content-between" [ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility, 'pl-0': !isLeftIcon}">
+					<span *ngIf="item.title" class="title text-break font-size-xs px-0"
+						[ngClass]="{'col-6': item.detail, 'col-12': !item.detail}"
+						[matTooltip]="item.title"
+						matTooltipClass="vtr-system-tooltip"
+						(mouseenter)="ta.hide()">
+						{{item.title}}
+					</span>
+					<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item | detailAndIconClass}}"
+						[matTooltip]="item.detail"
+						matTooltipClass="vtr-system-tooltip"
+						(mouseenter)="ta.hide()">
+						{{item.detail}}
+					</span>
+					<span *ngIf="item.subtitle" class="subtitle col-auto">
+						<span class="{{'dirClass' | translate}}"
+							[dir]="'dir' | translate"
+							[matTooltip]="item.subtitle"
+							matTooltipClass="vtr-system-tooltip"
+							(mouseenter)="ta.hide()">
+							{{item.subtitle | characterLimit:20}}
+						</span>
+						<span class="pl-3"
+							class="{{'dirClass' | translate}}"
+							[dir]="'dir' | translate">{{item.date}}</span>
+					</span>
+				</div>
+				<span *ngIf="!isLeftIcon" class="rightIcon col col-1 p-0">
+					<button *ngIf="item.status === 'loadFailed'; else faIcon"
+						mat-customize-button
+						class="link-button retryBtn text-two-ellipsis font-size-xs"
+						(click)="retry(item, $event)"
+					>{{item.retryText}}</button>
+
+				</span>
+				<span *ngIf="chevronVisibility"
+					class="arrowIcon text-right col col-1 pr-0"
+					id="{{'icon-arrow-' + item.id}}" role="icon"
+					[ngClass]="{'blue-arrow': arrowColor==='blue'}">
+					<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
+				</span>
+			</div>
+		</a>
+		<ng-template #systemLink>
+			<a mat-list-item *ngIf="item.isSystemLink; else launch"
+				class="p-0 h-auto"
+				href="javascript:void(0);"
+				(click)="launchSystemUri(item.path)"
+				id="{{linkId}}-{{item.id}}"
+				vtrMetrics
+				[metricsItem]="item.metricsItemName"
+				[metricsEvent]="metricsEvent"
+				[metricsItemID]="item.id"
+				[metricsItemCategory]="item.category"
+				[metricsItemPosition]="blockPosition"
+				[ngClass]="clickable?'':'disabled'"
+				[tabindex]="clickable ? 0 : -1"
+				[attr.role]="clickable?'':'document'"
+				[matTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subtitle? ' - '+item.subtitle:'' )"
+				matTooltipClass="vtr-system-tooltip"
+				#ta="matTooltip"
+				>
+				<div class="row no-gutter w-100 align-items-center">
+					<span *ngIf="isLeftIcon" class="col col-1 leftIcon pl-0">
+						<div class="item-icon"
+							*ngIf="item.icon; else svgIcon">
+							<div id="{{'icon-' + item.icon + '-' + item.id}}">
+								<fa-icon [icon]="['fas', item.icon]"></fa-icon>
+							</div>
+						</div>
+
+					</span>
+					<div class="text d-flex align-items-center justify-content-between" [ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility, 'pl-0': !isLeftIcon}">
+						<span *ngIf="item.title" class="title text-break font-size-xs px-0"
+							[ngClass]="{'col-6': item.detail, 'col-12': !item.detail}"
+							[matTooltip]="item.title"
+							matTooltipClass="vtr-system-tooltip"
+							(mouseenter)="ta.hide()">
+							{{item.title}}
+						</span>
+						<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item | detailAndIconClass}}"
+							[matTooltip]="item.detail"
+							matTooltipClass="vtr-system-tooltip"
+							(mouseenter)="ta.hide()">
+							{{item.detail}}
+						</span>
+						<span *ngIf="item.subtitle" class="subtitle col-auto">
+							<span class="{{'dirClass' | translate}}"
+								[dir]="'dir' | translate"
+								[matTooltip]="item.subtitle"
+								matTooltipClass="vtr-system-tooltip"
+								(mouseenter)="ta.hide()">
+								{{item.subtitle | characterLimit:20}}
+							</span>
+							<span class="pl-3"
+								class="{{'dirClass' | translate}}"
+								[dir]="'dir' | translate">{{item.date}}</span>
+						</span>
+					</div>
+					<span *ngIf="!isLeftIcon" class="rightIcon col col-1 p-0">
+						<button *ngIf="item.status === 'loadFailed'; else faIcon"
+							mat-customize-button
+							class="link-button retryBtn text-two-ellipsis font-size-xs"
+							(click)="retry(item, $event)"
+						>{{item.retryText}}</button>
+
+					</span>
+					<span *ngIf="chevronVisibility"
+						class="arrowIcon text-right col col-1 pr-0"
+						id="{{'icon-arrow-' + item.id}}" role="icon"
+						[ngClass]="{'blue-arrow': arrowColor==='blue'}">
+						<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
+					</span>
+				</div>
+			</a>
+		</ng-template>
+		<ng-template #launch>
+			<a mat-list-item *ngIf="item.launch"
+				class="p-0 h-auto"
+				href="javascript:void(0);"
+				(click)="item.launch()"
+				id="{{linkId}}-{{item.id}}"
+				vtrMetrics
+				[metricsItem]="item.metricsItemName"
+				[metricsEvent]="metricsEvent"
+				[metricsItemID]="item.id"
+				[metricsItemCategory]="item.category"
+				[metricsItemPosition]="blockPosition"
+				[ngClass]="clickable?'':'disabled'"
+				[tabindex]="clickable ? 0 : -1"
+				[attr.role]="clickable?'':'document'"
+				[matTooltip]="(item.metricsItemName ? item.metricsItemName : item.title) + (item.detail? ' - '+item.detail:'' ) +(item.subtitle? ' - '+item.subtitle:'' )"
+				matTooltipClass="vtr-system-tooltip"
+				#ta="matTooltip"
+				>
+				<div class="row no-gutter w-100 align-items-center">
+					<span *ngIf="isLeftIcon" class="col col-1 leftIcon pl-0">
+						<div class="item-icon"
+							*ngIf="item.icon; else svgIcon">
+							<div id="{{'icon-' + item.icon + '-' + item.id}}">
+								<fa-icon [icon]="['fas', item.icon]"></fa-icon>
+							</div>
+						</div>
+
+					</span>
+					<div class="text d-flex align-items-center justify-content-between" [ngClass]="{'col-10': chevronVisibility, 'col-11': !chevronVisibility, 'pl-0': !isLeftIcon}">
+						<span *ngIf="item.title" class="title text-break font-size-xs px-0"
+							[ngClass]="{'col-6': item.detail, 'col-12': !item.detail}"
+							[matTooltip]="item.title"
+							matTooltipClass="vtr-system-tooltip"
+							(mouseenter)="ta.hide()">
+							{{item.title}}
+						</span>
+						<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item | detailAndIconClass}}"
+							[matTooltip]="item.detail"
+							matTooltipClass="vtr-system-tooltip"
+							(mouseenter)="ta.hide()">
+							{{item.detail}}
+						</span>
+						<span *ngIf="item.subtitle" class="subtitle col-auto">
+							<span class="{{'dirClass' | translate}}"
+								[dir]="'dir' | translate"
+								[matTooltip]="item.subtitle"
+								matTooltipClass="vtr-system-tooltip"
+								(mouseenter)="ta.hide()">
+								{{item.subtitle | characterLimit:20}}
+							</span>
+							<span class="pl-3"
+								class="{{'dirClass' | translate}}"
+								[dir]="'dir' | translate">{{item.date}}</span>
+						</span>
+					</div>
+					<span *ngIf="!isLeftIcon" class="rightIcon col col-1 p-0">
+						<button *ngIf="item.status === 'loadFailed'; else faIcon"
+							mat-customize-button
+							class="link-button retryBtn text-two-ellipsis font-size-xs"
+							(click)="retry(item, $event)"
+						>{{item.retryText}}</button>
+
+					</span>
+					<span *ngIf="chevronVisibility"
+						class="arrowIcon text-right col col-1 pr-0"
+						id="{{'icon-arrow-' + item.id}}" role="icon"
+						[ngClass]="{'blue-arrow': arrowColor==='blue'}">
+						<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
+					</span>
+				</div>
+			</a>
+		</ng-template>
+
+		<ng-template #faIcon>
+			<div class="item-icon"
+				*ngIf="item.icon; else svgIcon">
+				<div id="{{'icon-' + item.icon + '-' + item.id}}">
+					<fa-icon [icon]="['fas', item.icon]"></fa-icon>
+				</div>
+			</div>
+		</ng-template>
+		<ng-template #svgIcon>
+			<div class="item-icon-image" id="{{'icon-svg' + '-' + item.id}}"
+				*ngIf="item.iconPath; else statusIcon">
+				<img [src]="item.iconPath|svgInline|async" />
+			</div>
+		</ng-template>
+		<ng-template #statusIcon>
+			<vtr-material-status-icon *ngIf="item.status !== 'loadFailed'" [status]="item.status" [id]="item.id"></vtr-material-status-icon>
+		</ng-template>
+
+	</mat-list-item>
+</mat-nav-list>

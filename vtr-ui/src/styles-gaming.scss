@@ -782,28 +782,26 @@
 								font-size: 1.2rem;
 							}
 
-							.vtr-ui-list-chevron {
-								.chevron-list {
-									background-color: $gaming_bg;
-									border: none;
-									overflow: hidden;
-									@media #{$black-on-white} {
-										background-color: white;
-									}
-									@media #{$white-on-black} {
-										background-color: black;
-									}
-									.good {
-										color: $gaming_lightest;
-										border-bottom: 1px solid $gaming_darkest !important;
-									}
+							.vtr-material-chevron-list {
+								background-color: $gaming_bg;
+								border: none;
+								overflow: hidden;
+								@media #{$black-on-white} {
+									background-color: white;
+								}
+								@media #{$white-on-black} {
+									background-color: black;
+								}
+								.good {
+									color: $gaming_lightest;
+									border-bottom: 1px solid $gaming_darkest !important;
+								}
 
-									li {
-										a {
-											.title {
-												font-weight: $weight_regular !important;
-												font-size: 1.6rem !important;
-											}
+								.chevron-list-item {
+									a {
+										.title {
+											font-weight: $weight_regular !important;
+											font-size: 1.6rem !important;
 										}
 									}
 								}

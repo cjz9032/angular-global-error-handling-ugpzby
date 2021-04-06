@@ -36,7 +36,6 @@ import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
 import { HeaderMainModule } from 'src/app/components/header-main/header-main.module';
 import { WidgetOfflineModule } from 'src/app/components/widgets/widget-offline-info/widget-offline.module';
-import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
 import { CommonModalModule } from '../common/common-modal.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
@@ -61,7 +60,6 @@ import { ConnectedHomeStatusComponent } from 'src/app/components/pages/page-secu
 import { PageSecurityAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/page-security-antivirus.component';
 import { WidgetMcafeeComponent } from 'src/app/components/widgets/widget-mcafee/widget-mcafee.component';
 import { WidgetSecurityComponent } from 'src/app/components/pages/page-security/widget/widget-security/widget-security.component';
-import { UiLandingFeatureComponent } from 'src/app/components/ui/ui-landing-feature/ui-landing-feature.component';
 import { UiSecurityStatusbarComponent } from 'src/app/components/ui/ui-security-statusbar/ui-security-statusbar.component';
 import { WidgetAntivirusComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-antivirus/widget-antivirus.component';
 import { WidgetMcafeeStateComponent } from 'src/app/components/pages/page-security-antivirus/widget/widget-mcafee-state/widget-mcafee-state.component';
@@ -102,7 +100,6 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		WidgetMcafeePeaceOfMindComponent,
 		WidgetMcafeeContentCardComponent,
 		// UI
-		UiLandingFeatureComponent,
 		UiSecurityStatusbarComponent,
 		UiFeatureHeadingComponent,
 		UiFeatureIntroductionComponent,
@@ -127,7 +124,6 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		WidgetSecurityStatusModule,
 		HeaderMainModule,
 		WidgetOfflineModule,
-		UiListChevronModule,
 		CommonModalModule,
 		LocationNoticeModule,
 		PageLayoutModule,

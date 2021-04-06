@@ -12,7 +12,6 @@ import { CommonWidgetModule } from '../common/common-widget.module';
 import { CommonModalModule } from '../common/common-modal.module';
 import { DialogService } from '../../services/dialog/dialog.service';
 import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
-import { UiListChevronModule } from 'src/app/components/ui/ui-list-chevron/ui-list-chevron.module';
 import { faWifi } from '@fortawesome/pro-light-svg-icons/faWifi';
 import { faWifiSlash } from '@fortawesome/pro-light-svg-icons/faWifiSlash';
 import { faExclamationCircle } from '@fortawesome/pro-light-svg-icons/faExclamationCircle';
@@ -31,6 +30,7 @@ import { WidgetLocationStatusComponent } from '../../components/widgets/widget-l
 import { MaterialModule } from '../common/material.module';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { MatButtonModule } from '@lenovo/material/button';
+import { MaterialChevronModule } from 'src/app/material/material-chevron/material-chevron.module';
 
 @NgModule({
 	declarations: [
@@ -50,12 +50,12 @@ import { MatButtonModule } from '@lenovo/material/button';
 		SharedModule,
 		CommonModalModule,
 		WidgetSecurityStatusModule,
-		UiListChevronModule,
 		PageLayoutModule,
 		FontAwesomeModule,
 		MatTooltipModule,
 		MaterialModule,
 		MatButtonModule,
+		MaterialChevronModule,
 	],
 	exports: [MaterialModule],
 	providers: [DialogService],

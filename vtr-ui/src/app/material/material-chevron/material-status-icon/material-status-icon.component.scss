@@ -1,0 +1,109 @@
+@import '../../../app.theme';
+
+.item-icon {
+	&.status {
+		cursor: pointer;
+		.icon-bkg {
+			border-radius: 50%;
+			height: 2rem;
+			width: 2rem;
+			border-width: 0.2rem;
+			border-style: solid;
+			cursor: pointer;
+			fa-icon {
+				font-size: 1.2rem;
+				line-height: 1.6rem;
+				color: $light;
+				@include high-contrast-color;
+			}
+			@include high-contrast-status-icon-and-badge;
+		}
+	}
+	&.good {
+		.icon-bkg {
+			background: linear-gradient($gradient_angle, $go 0%, $go_light 100%);
+			background-color: $go_dark;
+			border-color: $go_dark;
+			@include high-contrast-status-icon-and-badge;
+		}
+	}
+	&.bad {
+		.icon-bkg {
+			background: linear-gradient($gradient_angle, $stop 0%, $stop_light 100%);
+			background-color: $stop_dark;
+			border-color: $stop_dark;
+			@include high-contrast-status-icon-and-badge;
+		}
+	}
+	&.blue {
+		.icon-bkg {
+			background: linear-gradient($gradient_angle, $main 0%, $main_light 100%);
+			background-color: $main_gstart;
+			border-color: $main_gstart;
+			@include high-contrast-status-icon-and-badge;
+
+			fa-icon {
+				font-size: 0.5rem;
+				line-height: 1rem;
+				vertical-align: 0.1rem;
+			}
+		}
+	}
+	&.orange {
+		.icon-bkg {
+			background: linear-gradient($gradient_angle, $orange 0%, $orange-light 100%);
+			background-color: $yellow_dark;
+			border-color: $yellow_dark;
+			@include high-contrast-status-icon-and-badge;
+		}
+	}
+	&.black,
+	&.text-dark {
+		.icon-bkg {
+			background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
+			background-color: $main_darker;
+			border-color: $main_darker;
+			@include high-contrast-status-icon-and-badge;
+			fa-icon {
+				font-size: 0.5rem;
+				line-height: 1.6rem;
+				vertical-align: 0.1rem;
+			}
+		}
+	}
+	&.pause {
+		.icon-bkg {
+			background: linear-gradient($gradient_angle, $main_darker 0%, $main_darkest 100%);
+			background-color: $main_darker;
+			border-color: $main_darker;
+			@include high-contrast-status-icon-and-badge;
+			fa-icon {
+				font-size: 0.8rem;
+				line-height: 1.6rem;
+				vertical-align: 0.1rem;
+			}
+		}
+	}
+	&.text-blue {
+		color: $menu_hover;
+	}
+}
+
+.loading {
+	::ng-deep {
+		.mat-spinner {
+			circle {
+				stroke: $shade_dark;
+			}
+		}
+	}
+}
+.scanning {
+	::ng-deep {
+		.mat-spinner {
+			circle {
+				stroke: $blue-lighter;
+			}
+		}
+	}
+}

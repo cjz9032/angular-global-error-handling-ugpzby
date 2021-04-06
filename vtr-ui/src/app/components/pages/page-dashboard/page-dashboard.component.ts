@@ -301,7 +301,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		private metricsService: MetricService,
 		private contentLocalCache: ContentCacheService,
 		private windowsHelloService: WindowsHelloService
-	) { }
+	) {}
 
 	ngOnInit() {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
@@ -454,11 +454,14 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private async getDeviceCardInfo() {
-		const hypHidePosBStateCard = await this.hypService.getFeatureSetting('HideSpecialCardOnPositionB')
+		const hypHidePosBStateCard = await this.hypService
+			.getFeatureSetting('HideSpecialCardOnPositionB')
 			.then((result) => result === 'true')
 			.catch(() => false);
 		if (!hypHidePosBStateCard) {
-			this.isShowStateCard = this.dashboardService.canShowDeviceAndSecurityCard && await this.dashboardService.isPositionBShowDeviceState();
+			this.isShowStateCard =
+				this.dashboardService.canShowDeviceAndSecurityCard &&
+				(await this.dashboardService.isPositionBShowDeviceState());
 		}
 		if (this.isShowStateCard) {
 			this.getPbSubscription = this.dashboardService.getPositionBData().subscribe((data) => {
@@ -478,8 +481,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 					}
 					if (this.isOnline) {
 						Object.keys(this.contentCards).forEach((cardId) => {
-							if (result[cardId]
-								&& !isEmpty(result[cardId])) {
+							if (result[cardId] && !isEmpty(result[cardId])) {
 								this.contentCards[cardId].displayContent = result[cardId];
 							}
 						});
@@ -607,7 +609,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 
 	private setDefaultSystemStatus() {
 		const memory = new Status();
-		memory.status = 4;
+		memory.status = 'loading';
 		memory.id = 'memory';
 		memory.metricsItemName = 'Memory';
 
@@ -630,7 +632,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.systemStatus[0] = memory;
 
 		const disk = new Status();
-		disk.status = 4;
+		disk.status = 'loading';
 		disk.id = 'disk';
 		disk.metricsItemName = 'Disk Space';
 
@@ -653,7 +655,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.systemStatus[1] = disk;
 
 		const warranty = new Status();
-		warranty.status = 4;
+		warranty.status = 'loading';
 		warranty.id = 'warranty';
 		warranty.metricsItemName = 'Warranty';
 
@@ -684,7 +686,7 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 			this.adPolicyService.IsSystemUpdateEnabled
 		) {
 			const systemUpdate = new Status();
-			systemUpdate.status = 4;
+			systemUpdate.status = 'loading';
 			systemUpdate.id = 'systemupdate';
 			systemUpdate.metricsItemName = 'System Update';
 
@@ -716,9 +718,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				const totalRam = value.memory.total;
 				const usedRam = value.memory.used;
 				if (usedRam === totalRam) {
-					memory.status = 1;
+					memory.status = 'disabled';
 				} else {
-					memory.status = 0;
+					memory.status = 'enabled';
 				}
 				const disk = this.systemStatus[1];
 				const totalDisk = value.disk.total;
@@ -736,9 +738,9 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 						)} ${re} ${this.commonService.formatBytes(totalDisk, 1)}`;
 					});
 				if (usedDisk === totalDisk) {
-					disk.status = 1;
+					disk.status = 'disabled';
 				} else {
-					disk.status = 0;
+					disk.status = 'enabled';
 				}
 			}
 		});
@@ -763,14 +765,14 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 						);
 						if (value.status === 1) {
 							if (diffInDays > 30) {
-								systemUpdate.status = 1;
+								systemUpdate.status = 'disabled';
 							} else {
-								systemUpdate.status = 0;
+								systemUpdate.status = 'enabled';
 							}
 						} else {
-							systemUpdate.status = 1;
+							systemUpdate.status = 'disabled';
 						}
-						systemUpdate.status = 0;
+						systemUpdate.status = 'enabled';
 					}
 				});
 		}
@@ -792,23 +794,23 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 				.subscribe((re) => {
 					warranty.detail = `${re} ${warrantyDate}`; // `Until ${warrantyDate}`;
 				});
-			warranty.status = 0;
+			warranty.status = 'enabled';
 		} else if (warrantyData.warrantyStatus === WarrantyStatusEnum.WarrantyExpired) {
 			this.translate13Subscription = this.translate
 				.stream('dashboard.systemStatus.warranty.detail.expiredOn')
 				.subscribe((re) => {
 					warranty.detail = `${re} ${warrantyDate}`; // `Warranty expired on ${warrantyDate}`;
 				});
-			warranty.status = 1;
+			warranty.status = 'disabled';
 		} else {
 			this.translate14Subscription = this.translate
 				.stream('dashboard.systemStatus.warranty.detail.notAvailable')
 				.subscribe((re) => {
 					warranty.detail = `${re}`; //  'Warranty not available';
 				});
-			warranty.status = 1;
+			warranty.status = 'disabled';
 		}
-		warranty.status = 0;
+		warranty.status = 'enabled';
 	}
 
 	private onNotification(notification: AppNotification) {
@@ -863,7 +865,11 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	checkDeviceAndSecurityTimer() {
-		if (!this.showDeviceAndSecurityTimer && this.dashboardService.canShowDeviceAndSecurityCard && this.isOnline) {
+		if (
+			!this.showDeviceAndSecurityTimer &&
+			this.dashboardService.canShowDeviceAndSecurityCard &&
+			this.isOnline
+		) {
 			this.showDeviceAndSecurityTimer = setTimeout(() => {
 				this.isShowStateCard = false;
 				this.showSecurityStatusCard = false;
@@ -872,11 +878,16 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 	}
 
 	private async getSecurityCardInfo(): Promise<void> {
-		const hypHidePosCStatusCard = await this.hypService.getFeatureSetting('HideSpecialCardOnPositionC')
+		const hypHidePosCStatusCard = await this.hypService
+			.getFeatureSetting('HideSpecialCardOnPositionC')
 			.then((result) => result === 'true')
 			.catch(() => false);
-		if (hypHidePosCStatusCard) { return; }
-		this.showSecurityStatusCard = this.dashboardService.canShowDeviceAndSecurityCard && await this.dashboardService.isPositionCShowSecurityCard();
+		if (hypHidePosCStatusCard) {
+			return;
+		}
+		this.showSecurityStatusCard =
+			this.dashboardService.canShowDeviceAndSecurityCard &&
+			(await this.dashboardService.isPositionCShowSecurityCard());
 		if (!this.showSecurityStatusCard) {
 			return;
 		}
@@ -979,8 +990,8 @@ export class PageDashboardComponent implements OnInit, OnDestroy, AfterViewInit 
 		this.securityInfo.statusText =
 			this.securityInfo.status !== undefined
 				? this.translate.instant(
-					this.positionCData[this.securityInfo.status + 1].statusText
-				)
+						this.positionCData[this.securityInfo.status + 1].statusText
+				  )
 				: '--';
 	}
 }

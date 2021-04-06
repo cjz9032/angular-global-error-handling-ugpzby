@@ -1,0 +1,13 @@
+<div class="item-icon status {{status | statusIconClass}}"
+	[hidden]="status === 'loading' || status === 'loadFailed' || status === 'scanning'">
+	<div class="icon-bkg d-flex align-items-center justify-content-center" role="icon"
+		id="{{'icon-' + status + '-' + id}}">
+		<fa-icon [icon]="['fas', $any(getItemStatusIconClass(status))]"></fa-icon>
+	</div>
+</div>
+
+<div *ngIf="status === 'loading' || status === 'scanning'"
+	id="{{'icon-'+ status + '-' + id}}"
+	class="d-flex align-items-center justify-content-center {{status}}">
+	<mat-spinner diameter="23" strokeWidth="3"></mat-spinner>
+</div>

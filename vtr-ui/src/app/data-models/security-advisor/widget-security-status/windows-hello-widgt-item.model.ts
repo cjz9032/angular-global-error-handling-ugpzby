@@ -29,13 +29,13 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 			LocalStorageKey.SecurityWindowsHelloStatus
 		);
 		if (cacheStatus) {
-			this.status = cacheStatus === 'enrolled' ? 0 : 1;
+			this.status = cacheStatus === 'enrolled' ? 'enabled' : 'disabled';
 			this.detail = cacheStatus;
 			this.translateStatus(this.detail);
 		}
 		if (windowsHello.fingerPrintStatus) {
 			const active = windowsHello.fingerPrintStatus === 'active';
-			this.status = active ? 0 : 1;
+			this.status = active ? 'enabled' : 'disabled';
 			this.detail = active ? 'enrolled' : 'notEnrolled';
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.SecurityWindowsHelloStatus,
@@ -45,7 +45,7 @@ export class WindowsHelloWidgetItem extends WidgetItem {
 		}
 
 		windowsHello.on(EventTypes.helloFingerPrintStatusEvent, (fpStatus) => {
-			this.status = fpStatus === 'active' ? 0 : 1;
+			this.status = fpStatus === 'active' ? 'enabled' : 'disabled';
 			this.detail = fpStatus === 'active' ? 'enrolled' : 'notEnrolled';
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.SecurityWindowsHelloStatus,
