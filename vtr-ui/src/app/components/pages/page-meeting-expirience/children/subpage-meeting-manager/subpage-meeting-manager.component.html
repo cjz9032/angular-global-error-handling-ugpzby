@@ -1,203 +1,203 @@
 <div class="subpage-meeting-manager vtr-subpage row vtr-page-columns">
-	<div class="col-lg-7 col-xl-8 vtr-page-column vtr-subpage-left-column">
-	<div class="row">
-		<div class="col">
-			<vtr-ui-header-subpage
-				[menu]="{items: headerMenuItems, title: 'device.deviceSettings.power.jumpto.title' | translate}"
-				[title]="'smb.meetingExperience.meetingManager.title' | translate"
-				[caption]="'smb.meetingExperience.meetingManager.desc' | translate"
-				[textId]="'myDevice-settings-power'"
-				[metricsParent]="'Page.MeetingManager'"></vtr-ui-header-subpage>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-			<div class="pt-5 content-card" id="meetingManager">
-				<vtr-container-collapsible [collapseLinkId]="'ai-meeting-manager'" [headerLevel]="3"
-										   [cardTitle]="'smb.meetingExperience.meetingManager.aiMeetingManager.title' | translate"
-										   componentName="Meeting Manager"
-										   [isCollapsed]="false" [allowCollapse]="true"
-										   [theme]="'white'" [tabIndex]="0">
-                    <div class="row">
-                        <div class="d-flex justify-content-between w-100">
-                            <p class="context" role="text" id="ai-meeting-manager-description">
-								{{'smb.meetingExperience.meetingManager.aiMeetingManager.description' | translate}}
-							</p>
-                            <div class="mw-100">
-								<button id="ai-meeting-manager-install-or-launch-btn"
-									mat-customize-button
-									vtrMetrics
-									metricsEvent="FeatureClick"
-									[metricsItem]="isAMMInstalled ? 'AiMeetingManagerLaunchButton' : 'AiMeetingManagerDownloadButton'"
-									metricsParent="Productivity.MeetingManager"
-									color="primary"
-									class="w-100"
-									tabindex="0"
-									type="button"
-									[disabled]="!commonService.isOnline && !isAMMInstalled"
-									(click)="launchOrDownloadAiMeetingManager()"
-									(keydown.enter)="launchOrDownloadAiMeetingManager()"
-									[attr.aria-disabled]="!commonService.isOnline && !isAMMInstalled"
-									[attr.aria-label]="'smb.meetingExperience.meetingManager.aiMeetingManager.title' | translate"
-									[matTooltip]="(isAMMInstalled ?
-										'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
-										'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
-									matTooltipClass="vtr-system-tooltip">
-									{{ (isAMMInstalled ?
-										'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
-										'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate }}
-								</button>
-							</div>
-                        </div>
-                    </div>
-					<ul class="list-group list-group-flush">
-						<li class="common-li-padding">
-							<vtr-ui-row-switch [switchId]="'ai-metting-manager-translation'"
-                                [isLastChild]="false"
-                                [title]="'smb.meetingExperience.meetingManager.aiMeetingManager.translation.title' | translate"
-                                [caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.translation.description' | translate"
-                                [leftIcon]="['icomoon', 'icomoon-translation']"
-                                [rightIcon]="['far', 'question-circle']"
-                                [aiMeetingManager]="true"
-                                [aiMeetingManagerValue]="translation"
-								[metricsParent]="'Translation'">
-                            </vtr-ui-row-switch>
-                        </li>
-                        <li class="common-li-padding">
-                            <vtr-ui-row-switch [switchId]="'ai-metting-manager-voice-to-text'"
-                                [isLastChild]="false"
-                                [title]="'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.title' | translate"
-                                [caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.description' | translate"
-                                [leftIcon]="['icomoon', 'icomoon-voice-to-text']"
-                                [rightIcon]="['far', 'question-circle']"
-                                [aiMeetingManager]="true"
-                                [aiMeetingManagerValue]="voiceToText"
-                                [metricsParent]="'VoiceToText'">
-                            </vtr-ui-row-switch>
-                        </li>
-						<li class="common-li-padding">
-                            <vtr-ui-row-switch [switchId]="'ai-metting-manager-note-editor'"
-                                [isLastChild]="true"
-                                [title]="'smb.meetingExperience.meetingManager.aiMeetingManager.noteEditor.title' | translate"
-                                [caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.noteEditor.description' | translate"
-                                [leftIcon]="['icomoon', 'icomoon-Edit']"
-                                [rightIcon]="['far', 'question-circle']"
-                                [aiMeetingManager]="true"
-                                [aiMeetingManagerValue]="noteEditor"
-                                [metricsParent]="'NoteEditor'">
-                            </vtr-ui-row-switch>
-                        </li>
-					</ul>
-				</vtr-container-collapsible>
+	<div class="col-lg-7 col-xl-8 vtr-page-column vtr-subpage-left-column mt-2">
+		<div class="row">
+			<div class="col">
+				<vtr-ui-header-subpage
+					[menu]="{items: headerMenuItems, title: 'device.deviceSettings.power.jumpto.title' | translate}"
+					[title]="'smb.meetingExperience.meetingManager.title' | translate"
+					[caption]="'smb.meetingExperience.meetingManager.desc' | translate"
+					[textId]="'myDevice-settings-power'"
+					[metricsParent]="'Page.MeetingManager'"></vtr-ui-header-subpage>
 			</div>
-			<div class="pt-5 content-card microphone-block" *ngIf="microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)" id="smb-microphone">
-				<vtr-container-collapsible [collapseLinkId]="'creatorSettings-microphone'" [headerLevel]="3"
-										   [cardTitle]="'smb.meetingExperience.meetingManager.microPhone.title' | translate"
-										   componentName="Microphone"
-										   [isCollapsed]="false" [allowCollapse]="true"
-										   [theme]="'white'" [tabIndex]="0">
-					<div class="common-li-padding" *ngIf="!microphoneProperties.permission">
-						<vtr-widget-permission-note
-							[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
-							[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
-							[path]="'ms-settings:privacy-microphone'"
-							[linkId]="'smb-audio-microphone-permission'">
-						</vtr-widget-permission-note>
-					</div>
-					<ul class="list-group list-group-flush"
-						*ngIf="microphoneProperties.permission">
-						<ng-template
-							[ngIf]="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported">
-							<li class="common-li-padding"
-								*ngIf="!isDTmachine && microOptimizeModeResponse && microOptimizeModeResponse.modes.length > 0">
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="pt-5 content-card" id="meetingManager">
+					<vtr-container-collapsible [collapseLinkId]="'ai-meeting-manager'" [headerLevel]="3"
+											[cardTitle]="'smb.meetingExperience.meetingManager.aiMeetingManager.title' | translate"
+											componentName="Meeting Manager"
+											[isCollapsed]="false" [allowCollapse]="true"
+											[theme]="'white'" [tabIndex]="0">
+						<div class="row">
+							<div class="d-flex justify-content-between w-100">
+								<p class="context" role="text" id="ai-meeting-manager-description">
+									{{'smb.meetingExperience.meetingManager.aiMeetingManager.description' | translate}}
+								</p>
+								<div class="mw-100">
+									<button id="ai-meeting-manager-install-or-launch-btn"
+										mat-customize-button
+										vtrMetrics
+										metricsEvent="FeatureClick"
+										[metricsItem]="isAMMInstalled ? 'AiMeetingManagerLaunchButton' : 'AiMeetingManagerDownloadButton'"
+										metricsParent="Productivity.MeetingManager"
+										color="primary"
+										class="w-100"
+										tabindex="0"
+										type="button"
+										[disabled]="!commonService.isOnline && !isAMMInstalled"
+										(click)="launchOrDownloadAiMeetingManager()"
+										(keydown.enter)="launchOrDownloadAiMeetingManager()"
+										[attr.aria-disabled]="!commonService.isOnline && !isAMMInstalled"
+										[attr.aria-label]="'smb.meetingExperience.meetingManager.aiMeetingManager.title' | translate"
+										[matTooltip]="(isAMMInstalled ?
+											'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
+											'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
+										matTooltipClass="vtr-system-tooltip">
+										{{ (isAMMInstalled ?
+											'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
+											'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate }}
+									</button>
+								</div>
+							</div>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="common-li-padding">
+								<vtr-ui-row-switch [switchId]="'ai-metting-manager-translation'"
+									[isLastChild]="false"
+									[title]="'smb.meetingExperience.meetingManager.aiMeetingManager.translation.title' | translate"
+									[caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.translation.description' | translate"
+									[leftIcon]="['icomoon', 'icomoon-translation']"
+									[rightIcon]="['far', 'question-circle']"
+									[aiMeetingManager]="true"
+									[aiMeetingManagerValue]="translation"
+									[metricsParent]="'Translation'">
+								</vtr-ui-row-switch>
+							</li>
+							<li class="common-li-padding">
+								<vtr-ui-row-switch [switchId]="'ai-metting-manager-voice-to-text'"
+									[isLastChild]="false"
+									[title]="'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.title' | translate"
+									[caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.voiceToText.description' | translate"
+									[leftIcon]="['icomoon', 'icomoon-voice-to-text']"
+									[rightIcon]="['far', 'question-circle']"
+									[aiMeetingManager]="true"
+									[aiMeetingManagerValue]="voiceToText"
+									[metricsParent]="'VoiceToText'">
+								</vtr-ui-row-switch>
+							</li>
+							<li class="common-li-padding">
+								<vtr-ui-row-switch [switchId]="'ai-metting-manager-note-editor'"
+									[isLastChild]="true"
+									[title]="'smb.meetingExperience.meetingManager.aiMeetingManager.noteEditor.title' | translate"
+									[caption]="'smb.meetingExperience.meetingManager.aiMeetingManager.noteEditor.description' | translate"
+									[leftIcon]="['icomoon', 'icomoon-Edit']"
+									[rightIcon]="['far', 'question-circle']"
+									[aiMeetingManager]="true"
+									[aiMeetingManagerValue]="noteEditor"
+									[metricsParent]="'NoteEditor'">
+								</vtr-ui-row-switch>
+							</li>
+						</ul>
+					</vtr-container-collapsible>
+				</div>
+				<div class="pt-5 content-card microphone-block" *ngIf="microphoneProperties.available && ((microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported) || isAudioVendorSupported)" id="smb-microphone">
+					<vtr-container-collapsible [collapseLinkId]="'creatorSettings-microphone'" [headerLevel]="3"
+											[cardTitle]="'smb.meetingExperience.meetingManager.microPhone.title' | translate"
+											componentName="Microphone"
+											[isCollapsed]="false" [allowCollapse]="true"
+											[theme]="'white'" [tabIndex]="0">
+						<div class="common-li-padding" *ngIf="!microphoneProperties.permission">
+							<vtr-widget-permission-note
+								[noteTitle]="'device.deviceSettings.audio.microphone.note.title' | translate"
+								[description]="'device.deviceSettings.audio.microphone.note.description' | translate"
+								[path]="'ms-settings:privacy-microphone'"
+								[linkId]="'smb-audio-microphone-permission'">
+							</vtr-widget-permission-note>
+						</div>
+						<ul class="list-group list-group-flush"
+							*ngIf="microphoneProperties.permission">
+							<ng-template
+								[ngIf]="microphoneProperties?.currentMode && microphoneProperties?.currentMode!='NotSupported' && !isDTmachine  && !isAudioVendorSupported">
+								<li class="common-li-padding"
+									*ngIf="!isDTmachine && microOptimizeModeResponse && microOptimizeModeResponse.modes.length > 0">
+									<vtr-ui-row-switch
+										[title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
+										componentName="Optimize my microphone for"
+										[caption]="'device.deviceSettings.audio.microphone.optimize.tooltip' | translate"
+										[isSwitchVisible]=false
+										[leftIcon]="['fal', 'microphone']"
+										[readMoreText]="''"
+										[showChildContent]="true"
+										[disabled]="microphoneProperties.disableEffect"
+										[theme]="'white'"
+										[isLastChild]="true"
+										[switchId]="'smb-audio-microphone-optimize'">
+										<div class="row no-gutters tab-focus-white pl-4 ml-4"
+											aria-label="optimize microphone options, select using arrow keys">
+											<vtr-ui-circle-radio-with-checkbox-list
+												[groupName]="'optimize-microphone-radio-group'"
+												[sendMetrics]=true
+												(optionChange)="onOptimizeModesRadioChange($event)"
+												[radioDetails]="microphoneModesUIModel">
+											</vtr-ui-circle-radio-with-checkbox-list>
+										</div>
+									</vtr-ui-row-switch>
+								</li>
+							</ng-template>
+							<li class="common-li-padding microphone-on-off" *ngIf="isAudioVendorSupported">
 								<vtr-ui-row-switch
-									[title]="'device.deviceSettings.audio.microphone.optimize.title' | translate"
-									componentName="Optimize my microphone for"
-									[caption]="'device.deviceSettings.audio.microphone.optimize.tooltip' | translate"
-									[isSwitchVisible]=false
+									[title]="'device.deviceSettings.audio.microphone-link.title' | translate"
+									componentName="Microphone"
+									[caption]="'device.deviceSettings.audio.microphone-link.description' | translate"
+									[isSwitchVisible]="false"
 									[leftIcon]="['fal', 'microphone']"
 									[readMoreText]="''"
 									[showChildContent]="true"
-									[disabled]="microphoneProperties.disableEffect"
-									[theme]="'white'"
 									[isLastChild]="true"
-									[switchId]="'smb-audio-microphone-optimize'">
-									<div class="row no-gutters tab-focus-white pl-4 ml-4"
-										 aria-label="optimize microphone options, select using arrow keys">
-										<vtr-ui-circle-radio-with-checkbox-list
-											[groupName]="'optimize-microphone-radio-group'"
-											[sendMetrics]=true
-											(optionChange)="onOptimizeModesRadioChange($event)"
-											[radioDetails]="microphoneModesUIModel">
-										</vtr-ui-circle-radio-with-checkbox-list>
-									</div>
+									[switchId]="'smb-audio-microphone-link'">
+									<p *ngIf="isAudioVendorPanelAvailable" class="audioVendorLink">
+										<span id="smb-audioVendorLink-panel-des"
+											role="text">{{'device.deviceSettings.audio.microphone-link.download' | translate}}</span>&nbsp;<a
+											href="javascript:void(0);"
+											id="smb-audioVendorLink-panel-link"
+											role="link"
+											class="audioVendor-here"
+											(click)="launchPanel()"
+											(keydown.enter)="launchPanel()">{{'device.deviceSettings.audio.microphone-link.here' | translate}}</a>
+										<span id="smb-audioVendorLink-panel-punctuation"
+											role="text">{{'device.deviceSettings.audio.microphone-link.punctuation' | translate}}</span>
+									</p>
+									<p *ngIf="!isAudioVendorPanelAvailable" class="audioVendorLink">
+										<span id="smb-audioVendorLink-download-des"
+											role="text">{{'device.deviceSettings.audio.microphone-link.launcher' | translate}}</span>&nbsp;<a
+											href="javascript:void(0);"
+											id="smb-audioVendorLink-download-link"
+											role="link"
+											class="audioVendor-here"
+											(click)="launchDownloadLink()"
+											(keydown.enter)="launchDownloadLink()">{{'device.deviceSettings.audio.microphone-link.here' | translate}}</a>
+										<span id="smb-audioVendorLink-download-punctuation"
+											role="text">{{'device.deviceSettings.audio.microphone-link.punctuation' | translate}}</span>
+									</p>
 								</vtr-ui-row-switch>
 							</li>
-						</ng-template>
-						<li class="common-li-padding microphone-on-off" *ngIf="isAudioVendorSupported">
-							<vtr-ui-row-switch
-								[title]="'device.deviceSettings.audio.microphone-link.title' | translate"
-								componentName="Microphone"
-								[caption]="'device.deviceSettings.audio.microphone-link.description' | translate"
-								[isSwitchVisible]="false"
-								[leftIcon]="['fal', 'microphone']"
-								[readMoreText]="''"
-								[showChildContent]="true"
-								[isLastChild]="true"
-								[switchId]="'smb-audio-microphone-link'">
-								<p *ngIf="isAudioVendorPanelAvailable" class="audioVendorLink">
-									<span id="smb-audioVendorLink-panel-des"
-										  role="text">{{'device.deviceSettings.audio.microphone-link.download' | translate}}</span>&nbsp;<a
-										href="javascript:void(0);"
-										id="smb-audioVendorLink-panel-link"
-										role="link"
-										class="audioVendor-here"
-										(click)="launchPanel()"
-										(keydown.enter)="launchPanel()">{{'device.deviceSettings.audio.microphone-link.here' | translate}}</a>
-									<span id="smb-audioVendorLink-panel-punctuation"
-										  role="text">{{'device.deviceSettings.audio.microphone-link.punctuation' | translate}}</span>
-								</p>
-								<p *ngIf="!isAudioVendorPanelAvailable" class="audioVendorLink">
-									<span id="smb-audioVendorLink-download-des"
-										  role="text">{{'device.deviceSettings.audio.microphone-link.launcher' | translate}}</span>&nbsp;<a
-										href="javascript:void(0);"
-										id="smb-audioVendorLink-download-link"
-										role="link"
-										class="audioVendor-here"
-										(click)="launchDownloadLink()"
-										(keydown.enter)="launchDownloadLink()">{{'device.deviceSettings.audio.microphone-link.here' | translate}}</a>
-									<span id="smb-audioVendorLink-download-punctuation"
-										  role="text">{{'device.deviceSettings.audio.microphone-link.punctuation' | translate}}</span>
-								</p>
-							</vtr-ui-row-switch>
-						</li>
-					</ul>
-				</vtr-container-collapsible>
-			</div>
-			<div *ngIf="isSupportSmartAppearance" class="pt-5 content-card" id="smartAppearance">
-				<vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
-					[cardTitle]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
-					componentName="Smart Appearance"
-					[isCollapsed]="false" [allowCollapse]="true"
-					[theme]="'white'" [tabIndex]="0">
-					<vtr-ui-row-switch
-						[title]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
-						componentName="smart appearance"
-						[caption]="'smb.meetingExperience.meetingManager.smartAppearance.caption' | translate"
-						[showCustomButton]="true"
-						[customButtonText]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate"
-						[type]="'SmartAppearance'"
-						[isSwitchVisible]="false"
-						[isLastChild]="true"
-						[leftIcon]="['icomoon', 'icomoon-smart-face']"
-						[switchId]="'productivity-meeting-appearance'"
-						(customButtonClick)="smartAppearanceButtonClick()"
-						[disabledAll]="!commonService.isOnline && !isLSAInstalled">
-					</vtr-ui-row-switch>
-				</vtr-container-collapsible>
+						</ul>
+					</vtr-container-collapsible>
+				</div>
+				<div *ngIf="isSupportSmartAppearance" class="pt-5 content-card" id="smartAppearance">
+					<vtr-container-collapsible [collapseLinkId]="'creatorSettings'" [headerLevel]="3"
+						[cardTitle]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
+						componentName="Smart Appearance"
+						[isCollapsed]="false" [allowCollapse]="true"
+						[theme]="'white'" [tabIndex]="0">
+						<vtr-ui-row-switch
+							[title]="'smb.meetingExperience.meetingManager.smartAppearance.title' | translate"
+							componentName="smart appearance"
+							[caption]="'smb.meetingExperience.meetingManager.smartAppearance.caption' | translate"
+							[showCustomButton]="true"
+							[customButtonText]="(isLSAInstalled ? 'smb.meetingExperience.meetingManager.smartAppearance.launch' : 'smb.meetingExperience.meetingManager.smartAppearance.download') | translate"
+							[type]="'SmartAppearance'"
+							[isSwitchVisible]="false"
+							[isLastChild]="true"
+							[leftIcon]="['icomoon', 'icomoon-smart-face']"
+							[switchId]="'productivity-meeting-appearance'"
+							(customButtonClick)="smartAppearanceButtonClick()"
+							[disabledAll]="!commonService.isOnline && !isLSAInstalled">
+						</vtr-ui-row-switch>
+					</vtr-container-collapsible>
+				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<div class="col-lg-5 col-xl-4 vtr-page-column vtr-subpage-right-column">
 		<div class="col">
