@@ -799,6 +799,15 @@
 				"sub6": "Detalii de setare a dispozitivului",
 				"sub7": "Setări pentru dispozitiv"
 			},
+			"smb": {
+				"title": "Productivitate",
+				"sub1": "Experiență de întâlnire",
+				"sub2": "Centru pentru creatori",
+				"sub3": "Manager de întâlnire",
+				"sub4": "Setări pentru creatori",
+				"sub5": "Redare ușoară",
+				"sub6": "Calibrarea culorii"
+			},
 			"security": {
 				"title": "Securitate",
 				"sub1": "Securitatea mea",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Acțiuni Recomandate",
 				"description": "Vom remedia automat aceste probleme. Astăzi și ulterior în fiecare săptămână",
+				"expiredDesc": "Reînnoiți abonamentul pentru a continua remedierea problemelor găsite",
 				"yearlyPricing": "{{yearlyPrice}}/an",
 				"monthlyPricing": "MAI PUȚIN DE {{monthlyPrice}} PE LUNĂ.",
 				"longerTerm": "Doriți o perioadă mai mare? Să faceți economii și mai mari?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Manager de întâlnire",
+				"desc": "Această secțiune vă permite să optimizați automat sau să configurați manual setările AI meeting.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager acceptă traducerea, interpretarea și dictarea vocală în timp real. De asemenea, poate genera subtitrări pentru videoclipuri.",
-					"downloadNow": "DESCĂRCAȚI ACUM",
 					"download": "DESCĂRCARE",
 					"launch": "LANSARE",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Puneți cursorul în aplicația deschisă și începeți să vorbiți."
 						},
 						"closeText": "închidere"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Organizați întâlniri online mai productive și mai eficiente."
 					}
+				},
+				"microPhone": {
+					"title": "Microfon pentru întâlniri"
+				},
+				"smartAppearance": {
+					"title": "Aplicație Smart appearance",
+					"launch": "Lansare",
+					"download": "Descărcare",
+					"caption": "O aplicație bazată pe AI pentru a îmbunătăți experiența conferințelor video. Funcționează ca un driver virtual și poate fi încărcată de mai multe aplicații de conferință și predare online sau din clienți de redare în flux live."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Setări pentru creatori",
+				"desc": "Personalizați-vă setările hardware pentru a configura performanțele sistemului dvs. pentru o experiență mai bună.",
 				"windowsHdColor": {
 					"title": "Setări pentru Windows HD Color",
 					"description": "Windows HD Color afișează conținut cu interval dinamic ridicat (HDR, High Dynamic Range) și gamă largă de culori (WCG, Wide Color Gamut), cum ar fi fotografiile, videoclipurile și jocurile acceptate de dispozitivul dvs.",
@@ -5510,6 +5526,10 @@
 						"here": "aici",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Răcire inteligentă",
+					"desc": "Acest mod furnizează cea mai bună experiență cu un echilibru între viteza ventilatorului și performanța sistemului pentru jocuri, birou și creație."
 				}
 			},
 			"easyRendering": {

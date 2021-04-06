@@ -799,6 +799,15 @@
 				"sub6": "Cihaz Ayarları Ayrıntıları",
 				"sub7": "Cihaz Ayarları"
 			},
+			"smb": {
+				"title": "Üretkenlik",
+				"sub1": "Toplantı Deneyimi",
+				"sub2": "Oluşturucu Merkezi",
+				"sub3": "Toplantı yöneticisi",
+				"sub4": "Oluşturucu ayarları",
+				"sub5": "Kolay oluşturma",
+				"sub6": "Renk ayarı"
+			},
 			"security": {
 				"title": "Güvenlik",
 				"sub1": "Güvenliğim",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Öneri̇len Eylem",
 				"description": "Bu sorunları otomatik olarak çözeceğiz. Bugün ve bundan sonra her hafta bir kez",
+				"expiredDesc": "Bulunan sorunları gidermeye devam etmek için aboneliği yenileyin",
 				"yearlyPricing": "{{yearlyPrice}} / Yıl",
 				"monthlyPricing": "AYDA {{monthlyPrice}}'DAN AZ.",
 				"longerTerm": "Daha uzun vadede mi? Daha fazla tasarruf mu?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Toplantı yöneticisi",
+				"desc": "Bu bölüm, AI toplantı ayarlarınızı otomatik olarak iyileştirmenizi veya manuel olarak yapılandırmanızı sağlar.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager gerçek zamanlı çeviriyi, sözlü çeviriyi ve sesli dikteyi destekler. Ayrıca, videolar için altyazı oluşturabilir.",
-					"downloadNow": "ŞİMDİ İNDİR",
 					"download": "İNDİR",
 					"launch": "BAŞLAT",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "İmleci açtığınız uygulamaya yerleştirin ve konuşmaya başlayın."
 						},
 						"closeText": "kapat"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Çevrimiçi toplantıyı daha verimli ve etkili hale getirin."
 					}
+				},
+				"microPhone": {
+					"title": "Toplantılar için mikrofon"
+				},
+				"smartAppearance": {
+					"title": "Smart appearance uygulaması",
+					"launch": "Başlat",
+					"download": "İndir",
+					"caption": "Video konferans deneyimini iyileştirmek için yapay zeka tabanlı bir uygulama. Sanal bir sürücü olarak çalışır ve birden çok konferans uygulaması ve çevrimiçi öğretim veya canlı akış istemcisi tarafından yüklenebilir."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Oluşturucu ayarları",
+				"desc": "Daha iyi bir deneyim için sistem performansınızı yapılandırmak üzere donanım ayarlarınızı özelleştirin.",
 				"windowsHdColor": {
 					"title": "Windows HD renk ayarları",
 					"description": "Windows HD renk, destekleniyorsa cihazınızdaki fotoğraflar, videolar ve oyunlar gibi yüksek dinamik aralık (HDR) ve geniş renk skalası (WCG) içeriğini görüntüler.",
@@ -5510,6 +5526,10 @@
 						"here": "buraya ",
 						"punctuation": "tıklayın."
 					}
+				},
+				"bannerITS": {
+					"title": "Akıllı soğutma",
+					"desc": "Bu kip oyun oynarken, ofis kullanımında ve oluşturma işlemlerinde fan hızını ve sistem performansını dengeleyerek en iyi deneyimi sağlar."
 				}
 			},
 			"easyRendering": {

@@ -799,6 +799,15 @@
 				"sub6": "Details apparaatinstellingen",
 				"sub7": "Apparaatinstellingen"
 			},
+			"smb": {
+				"title": "Productiviteit",
+				"sub1": "Vergadering Experience",
+				"sub2": "Ontwikkelaarscentrum",
+				"sub3": "Vergaderingbeheer",
+				"sub4": "Ontwikkelaarsinstellingen",
+				"sub5": "Eenvoudig renderen",
+				"sub6": "Beeldschermkleuren kalibreren"
+			},
 			"security": {
 				"title": "Beveiliging",
 				"sub1": "Mijn beveiliging",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Aanbevolen Handeling",
 				"description": "Deze problemen zullen automatisch worden opgelost. Een keer vandaag en daarna elke week",
+				"expiredDesc": "Vernieuw abonnement om problemen te blijven oplossen",
 				"yearlyPricing": "{{yearlyPrice}}/jaar",
 				"monthlyPricing": "MINDER DAN {{monthlyPrice}} PER MAAND.",
 				"longerTerm": "Langere termijn? Nog meer besparingen?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Vergaderingbeheer",
+				"desc": "Dit onderdeel maakt het mogelijk om uw AI vergaderingsinstellingen te optimaliseren of handmatig te configureren.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager ondersteunt vertalen, interpreteren en dicteren in real-time. Het kan ook video's ondertitelen.",
-					"downloadNow": "NU DOWNLOADEN",
 					"download": "DOWNLOADEN",
 					"launch": "STARTEN",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Plaats de cursor in de geopende toepassing en begin met spreken."
 						},
 						"closeText": "sluiten"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Productiever en efficiënter online vergaderen."
 					}
+				},
+				"microPhone": {
+					"title": "Microfoon voor vergaderingen"
+				},
+				"smartAppearance": {
+					"title": "Smart appearance toepassen",
+					"launch": "Starten",
+					"download": "Downloaden",
+					"caption": "Een AI-ondersteunde applicatie die de videoconference-ervaring verbetert. Het werkt als een virtuele drive die kan worden geladen door meerdere conference-applicaties voor online lesgeven of live streaming clients."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Ontwikkelaarsinstellingen",
+				"desc": "Stel uw hardware-instellingen in om de prestaties van uw systeem te verbeteren.",
 				"windowsHdColor": {
 					"title": "Windows HD Color-instellingen",
 					"description": "Windows HD Color geeft inhoud met een hoog dynamisch bereik (HDR) en een groot kleurengamma (WCG), zoals foto's, video's en games, weer op uw apparaat als dit wordt ondersteund.",
@@ -5510,6 +5526,10 @@
 						"here": "hier",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Intelligent koelen",
+					"desc": "Deze modus biedt de beste ervaring waarbij de ventilatorsnelheid en de systeemprestaties worden gebalanceerd voor gamen, werken en maken."
 				}
 			},
 			"easyRendering": {

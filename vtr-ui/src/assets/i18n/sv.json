@@ -799,6 +799,15 @@
 				"sub6": "Information om enhetsinställningar",
 				"sub7": "Enhetsinställningar"
 			},
+			"smb": {
+				"title": "Produktivitet",
+				"sub1": "Mötesupplevelse",
+				"sub2": "Kreatörscenter",
+				"sub3": "Möteshantering",
+				"sub4": "Kreatörsinställningar",
+				"sub5": "Enkel rendering",
+				"sub6": "Färgkalibrering"
+			},
 			"security": {
 				"title": "Säkerhet",
 				"sub1": "Min säkerhet",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Rekommenderad Åtgärd",
 				"description": "Vi löser dessa problem automatiskt. En gång i dag och därefter varje vecka.",
+				"expiredDesc": "Förnya din prenumerationen för att fortsätta åtgärda problem som påträffas",
 				"yearlyPricing": "{{yearlyPrice}}/år",
 				"monthlyPricing": "MINDRE ÄN {{monthlyPrice}} PER MÅNAD.",
 				"longerTerm": "Längre period? Spara ännu mer pengar?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Möteshantering",
+				"desc": "I det här avsnittet kan du automatiskt optimera eller manuellt konfigurera AI-mötesinställningar.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager har stöd för översättning, tolkning och diktering i realtid. Den kan dessutom generera undertexter för video.",
-					"downloadNow": "HÄMTA NU",
 					"download": "HÄMTA",
 					"launch": "STARTA",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Placera markören i appen du öppnade och börja prata."
 						},
 						"closeText": "stäng"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Gör dina onlinemöten mer produktiva och effektiva."
 					}
+				},
+				"microPhone": {
+					"title": "Mikrofon för möten"
+				},
+				"smartAppearance": {
+					"title": "Appen Smart appearance",
+					"launch": "Starta",
+					"download": "Hämta",
+					"caption": "En AI-baserad app för att förbättra videokonferensupplevelsen. Den fungerar som en virtuell drivrutin och kan läsas in av flera konferensapplikationer och onlineundervisnings- eller livestreamingklienter."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Kreatörsinställningar",
+				"desc": "Anpassa maskinvaruinställningarna för att konfigurera systemets prestanda för en bättre upplevelse.",
 				"windowsHdColor": {
 					"title": "Windows HD-färginställningar",
 					"description": "Windows HD-färg visar innehåll med HDR (High Dynamic Range) och WCG (Wide Color Gamut), som foton, videor och spel, om detta stöds på enheten.",
@@ -5510,6 +5526,10 @@
 						"here": "här",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Intelligent nedkylning",
+					"desc": "Det här läget ger den bästa upplevelsen med balans mellan fläkthastighet och systemprestanda i spel, kontorsprogram och skapande."
 				}
 			},
 			"easyRendering": {

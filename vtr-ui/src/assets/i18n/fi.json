@@ -799,6 +799,15 @@
 				"sub6": "Laiteasetusten yksityiskohdat",
 				"sub7": "Laiteasetukset"
 			},
+			"smb": {
+				"title": "Tuottavuus",
+				"sub1": "Kokousten käyttökokemus",
+				"sub2": "Sisällöntuottajien keskus",
+				"sub3": "Kokousten hallinta",
+				"sub4": "Sisällöntuottajien asetukset",
+				"sub5": "Helppo renderöinti",
+				"sub6": "Värikalibrointi"
+			},
 			"security": {
 				"title": "Suojaus",
 				"sub1": "Oma suojaus",
@@ -2914,6 +2923,7 @@
 			"recommendedAction": {
 				"title": "Suositeltava Toiminto",
 				"description": "Korjaamme nämä ongelmat automaattisesti. Kerran tänään ja joka viikko sen jälkeen",
+				"expiredDesc": "Uusi tilauksesi jatkaaksesi havaittujen ongelmien korjaamista",
 				"yearlyPricing": "{{yearlyPrice}}/v",
 				"monthlyPricing": "ALLE {{monthlyPrice}} KUUKAUDESSA.",
 				"longerTerm": "Pidempi aikaväli? Suurempia säästöjä?",
@@ -5459,10 +5469,11 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
+				"title": "Kokousten hallinta",
+				"desc": "Tämä osio sallii sinun optimoida kokousten tekoälyasetukset automaattisesti tai määrittää ne manuaalisesti.",
 				"aiMeetingManager": {
 					"title": "AI meeting manager",
 					"description": "AI meeting manager tukee reaaliaikaista kääntämistä, tulkkausta ja sanelua. Se voi myös tekstittää videoita.",
-					"downloadNow": "LATAA NYT",
 					"download": "LATAA",
 					"launch": "ALOITA",
 					"translation": {
@@ -5490,18 +5501,23 @@
 							"point5": "Aseta kursori avaamaasi sovellukseen ja aloita puhuminen."
 						},
 						"closeText": "sulje"
-					},
-					"banner": {
-						"title": "AI meeting manager",
-						"description": "Tee verkkokokouksista tuottavampia ja tehokkaampia."
 					}
+				},
+				"microPhone": {
+					"title": "Mikrofoni kokouksiin"
+				},
+				"smartAppearance": {
+					"title": "Smart appearance -sovellus",
+					"launch": "Aloita",
+					"download": "Lataa",
+					"caption": "Tekoälyyn perustuva sovellus, joka parantaa videokokousten käyttökokemusta. Se toimii virtuaalisena ajurina, ja se voidaan ladata useilla kokous-, verkkokoulutus- tai live-suoratoistosovelluksilla."
 				}
 			}
 		},
 		"creatorCentre": {
 			"creatorSettings": {
-				"title": "",
-				"desc": "",
+				"title": "Sisällöntuottajien asetukset",
+				"desc": "Mukauta laitteistoasetuksiasi määrittääksesi järjestelmäsi suorituskyvyn parempaa käyttökokemusta varten.",
 				"windowsHdColor": {
 					"title": "Windows HD Color -asetukset",
 					"description": "Windows HD Color näyttää HDR (High Dynamic Range)- ja WCG (Wide Color Gamut) -sisältöä, kuten valokuvia, videoita ja pelejä tuetuilla laitteilla.",
@@ -5510,6 +5526,10 @@
 						"here": "tätä",
 						"punctuation": "."
 					}
+				},
+				"bannerITS": {
+					"title": "Älykäs jäähdytys",
+					"desc": "Tämä tila tarjoaa parhaan käyttökokemuksen pelaamista, toimistotöitä ja luovaa työtä varten tasapainotetulla tuulettimen nopeudella ja järjestelmän suorituskyvyllä."
 				}
 			},
 			"easyRendering": {

@@ -102,7 +102,6 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	public translation = 'translation';
 	public voiceToText = 'voiceToText';
 	public noteEditor = 'noteEditor';
-	public AMMBannerAriaLabel: string;
 	private isAMMInstalledInterval: any;
 
 	rightCards = [
@@ -249,24 +248,10 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				case 0:
 				case 3:
 					this.isAMMInstalled = true;
-					this.AMMBannerAriaLabel =
-						this.translate.instant(
-							'smb.meetingExperience.meetingManager.aiMeetingManager.banner.title'
-						) +
-						this.translate.instant(
-							'smb.meetingExperience.meetingManager.aiMeetingManager.launch'
-						);
 					clearInterval(this.isAMMInstalledInterval);
 					break;
 				default:
 					this.isAMMInstalled = false;
-					this.AMMBannerAriaLabel =
-						this.translate.instant(
-							'smb.meetingExperience.meetingManager.aiMeetingManager.banner.title'
-						) +
-						this.translate.instant(
-							'smb.meetingExperience.meetingManager.aiMeetingManager.downloadNow'
-						);
 					break;
 			}
 			this.localCacheService.setLocalCacheValue(
