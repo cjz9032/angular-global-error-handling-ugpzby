@@ -76,7 +76,9 @@ export class AntiTheftComponent implements OnInit, OnDestroy {
 		if (this.antiTheftCache === undefined && this.smartAssistCapability !== undefined) {
 			this.antiTheftCache = this.smartAssistCapability.isAntiTheftSupported;
 		}
-		this.antiTheft = this.antiTheftCache;
+		if (this.antiTheftCache !== undefined) {
+			this.antiTheft = this.antiTheftCache;
+		}
 		this.getAntiTheftStatus();
 		this.getCameraPrivacyState();
 		this.getCameraAuthorizedAccessState();
