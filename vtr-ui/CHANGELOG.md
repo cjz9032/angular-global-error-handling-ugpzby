@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.14](https://bitbucket.tc.lenovo.com///compare/v1.11.13...v1.11.14) (2021-04-07)
+
+
+### Features
+
+* add script for vantage on qa and dev build ([127b4f4](https://bitbucket.tc.lenovo.com///commit/127b4f4348fbef474c0803854f19a3e55915c555))
+
 ### [1.11.13](https://bitbucket.tc.lenovo.com///compare/v1.11.12...v1.11.13) (2021-04-06)
 
 
