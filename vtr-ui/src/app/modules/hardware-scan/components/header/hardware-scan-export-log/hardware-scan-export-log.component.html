@@ -29,13 +29,13 @@
 			[attr.role]="'button'"
 			[attr.id]="componentId + '-' + extension + '-btn'"
 			(focus)="isInExtensionList()"
-			(focusout)="isLastElementFocused(index)"
+			(focusout)="isLastElementFocused()"
 			[vtrMetrics]="true"
 			[metricsEvent]="'FeatureClick'"
 			[metricsItem]="metricsParent + '.ExportLog.' + extension"
 			[metricsParent]="metricsParent + '.ExportLog'"
 			(click)="exportLog(extension)"
-			*ngFor="let extension of exportExtensions; let index = index">
+			*ngFor="let extension of exportExtensions">
 			{{ extension.toUpperCase() }}
 		</button>
 	</div>

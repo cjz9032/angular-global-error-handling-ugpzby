@@ -37,9 +37,7 @@ export class HardwareScanExportLogComponent implements OnInit {
 		private hardwareScanService: HardwareScanService
 	) {}
 
-	ngOnInit() {
-		this.isPdfAvailable();
-	}
+	ngOnInit() {}
 
 	// Necessary to control navigation through tab key
 	public onExportClick(): void {
@@ -59,7 +57,7 @@ export class HardwareScanExportLogComponent implements OnInit {
 	}
 
 	// Necessary to control navigation through tab key
-	public isLastElementFocused(index: number): void {
+	public isLastElementFocused(): void {
 		this.isInList = false;
 
 		// Timeout to check if the next element is inside list
@@ -91,24 +89,6 @@ export class HardwareScanExportLogComponent implements OnInit {
 		this.exportService.setExportExtensionSelected(ExportLogExtensions[extension]);
 
 		this.exportResults();
-	}
-
-	private isPdfAvailable() {
-		const supportedLanguage = 'en';
-
-		this.deviceService
-			.getMachineInfo()
-			.then((value: any) => {
-				if (value.locale !== supportedLanguage) {
-					this.exportExtensions.splice(
-						this.exportExtensions.indexOf(ExportLogExtensions.pdf),
-						1
-					);
-				}
-			})
-			.catch((error) => {
-				this.logger.exception('[ExportLogComponent] isPdfAvailable', error);
-			});
 	}
 
 	public getExportIcon(): string {
