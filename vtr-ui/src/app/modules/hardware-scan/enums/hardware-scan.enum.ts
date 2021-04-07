@@ -84,3 +84,11 @@ export enum ResultCodeStatus {
 	Invalid,
 	Valid,
 }
+
+export enum FontTypes {
+	amiri = 'amiri',
+	notokr = 'noto-kr',
+	notosc = 'noto-sc',
+	noto = 'noto',
+	rubik = 'rubik',
+}
