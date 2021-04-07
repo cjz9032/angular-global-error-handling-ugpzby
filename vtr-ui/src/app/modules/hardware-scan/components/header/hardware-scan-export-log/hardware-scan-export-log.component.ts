@@ -28,7 +28,6 @@ export class HardwareScanExportLogComponent implements OnInit {
 	private isInList = false;
 
 	constructor(
-		private deviceService: DeviceService,
 		private exportService: ExportResultsService,
 		private timerService: TimerService,
 		private hardwareScanMetricsService: HardwareScanMetricsService,
