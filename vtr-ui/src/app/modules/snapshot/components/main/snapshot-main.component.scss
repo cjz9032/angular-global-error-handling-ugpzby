@@ -1,12 +1,6 @@
 @import '../../../../app.theme.scss';
 
 .vtr-snapshot-main {
-	.export-log-btn {
-		::ng-deep mat-card {
-			padding-top: 2rem;
-		}
-	}
-
 	.export-button-available {
 		margin-top: 5rem;
 	}
