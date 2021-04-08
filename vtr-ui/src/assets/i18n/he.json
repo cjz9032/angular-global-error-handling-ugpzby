@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "תצלום בזק",
+		"ok": "אישור",
 		"hardwareListTitle": "רכיבי חומרה",
 		"softwareListTitle": "רכיבי תוכנה",
 		"snapshotWidgetButton": "צילום תמונה",
@@ -5314,6 +5315,29 @@
 			"StartupPrograms": "תוכניות הפעלה מחדש",
 			"VideoCards": "כרטיס וידאו",
 			"WebBrowsers": "דפדפני אינטרנט"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "ייצוא היומן בוצע בהצלחה וניתן למצוא אותו בכתובת:",
+			"exportAccessErrorDescription": "יש לאפשר ל- Vantage לגשת למערכת הקבצים כדי לייצא את היומן. לחצו על הלחצן למטה כדי לפתוח את הגדרות ההרשאות של Windows. שימו לב ששינוי הרשאה עלול לגרום לסגירת Vantage.",
+			"exportFailDescription": "נמצאה בעיה במהלך ייצוא היומן. נסו זאת שוב מאוחר יותר.",
+			"exportMayTakeSomeTime": "אנא המתינו בזמן הייצוא של היומן.",
+			"openSettingsButton": "פתחו את הגדרות Windows",
+			"exportLog": "יומן ייצוא"
+		},
+		"report": {
+			"modelTitle": "דגם",
+			"model": {
+				"serialNumber": "מספר סידורי",
+				"biosVersion": "גירסת BIOS",
+				"productName": "שם המוצר"
+			},
+			"environmentTitle": "סביבה",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "גרסת Experience",
+				"shellVersion": "גרסת Shell",
+				"bridgeVersion": "גרסת Bridge"
+			}
 		},
 		"properties": {
 			"CACHE": "מטמון",

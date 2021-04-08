@@ -5387,6 +5387,7 @@
 	},
 	"snapshot": {
 		"title": "スナップショット",
+		"ok": "OK",
 		"hardwareListTitle": "ハードウェア・コンポーネント",
 		"softwareListTitle": "ソフトウェア・コンポーネント",
 		"snapshotWidgetButton": "スナップショットを撮る",
@@ -5423,6 +5424,29 @@
 			"StartupPrograms": "スタートアップ・プログラム",
 			"VideoCards": "ビデオ・カード",
 			"WebBrowsers": "Web ブラウザー"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "ログは正常にエクスポートされ、次の場所にあります。",
+			"exportAccessErrorDescription": "ログをエクスポートするには、Vantage がファイル・システムにアクセスできるようにする必要があります。下のボタンをクリックして、Windows のアクセス許可設定を開きます。アクセス許可を変更すると、Vantage が終了する場合があることに注意してください。",
+			"exportFailDescription": "ログのエクスポート中に問題が見つかりました。後で再試行してください。",
+			"exportMayTakeSomeTime": "ログがエクスポートされるまでお待ちください。",
+			"openSettingsButton": "Windows 設定を開く",
+			"exportLog": "ログのエクスポート"
+		},
+		"report": {
+			"modelTitle": "モデル番号",
+			"model": {
+				"serialNumber": "シリアル番号",
+				"biosVersion": "BIOS バージョン",
+				"productName": "製品名"
+			},
+			"environmentTitle": "環境",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience バージョン",
+				"shellVersion": "Shell バージョン",
+				"bridgeVersion": "Bridge バージョン"
+			}
 		},
 		"properties": {
 			"CACHE": "キャッシュ",

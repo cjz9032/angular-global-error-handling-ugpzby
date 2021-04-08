@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "Ögonblicksbild",
+		"ok": "OK",
 		"hardwareListTitle": "Maskinvarukomponenter",
 		"softwareListTitle": "Programvarukomponenter",
 		"snapshotWidgetButton": "Ta ögonblicksbild",
@@ -5314,6 +5315,29 @@
 			"StartupPrograms": "Startsekvensprogram",
 			"VideoCards": "Videokort",
 			"WebBrowsers": "Webbläsare"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Loggen har exporterats och du hittar den på:",
+			"exportAccessErrorDescription": "Du måste ge Vantage åtkomst till filsystemet för att kunna exportera loggen. Klicka på knappen nedan för att öppna behörighetsinställningarna i Windows. Tänk på att när du ändrar behörigheten kan det medföra att Vantage stängs.",
+			"exportFailDescription": "Ett fel påträffades under loggexporten. Försök igen senare.",
+			"exportMayTakeSomeTime": "Vänta medan loggen exporteras.",
+			"openSettingsButton": "Öppna Windows-inställningar",
+			"exportLog": "Exportera logg"
+		},
+		"report": {
+			"modelTitle": "Modell",
+			"model": {
+				"serialNumber": "Serienummer",
+				"biosVersion": "BIOS-version",
+				"productName": "Produktnamn"
+			},
+			"environmentTitle": "Miljö",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience-version",
+				"shellVersion": "Shell-version",
+				"bridgeVersion": "Bridge-version"
+			}
 		},
 		"properties": {
 			"CACHE": "Cache",

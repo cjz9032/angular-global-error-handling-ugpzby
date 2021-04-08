@@ -19,6 +19,11 @@ export class SnapshotService {
 
 	private snapshotBridge: any;
 
+	private pvtAddinVersion: string;
+	get addinVersion(): string {
+		return this.pvtAddinVersion;
+	}
+
 	private pvtSnapshotInfo: SnapshotInfo;
 	get snapshotInfo(): SnapshotInfo {
 		return this.pvtSnapshotInfo;
@@ -45,6 +50,8 @@ export class SnapshotService {
 
 		this.initEmptySnapshot();
 		this.snapshotStatus = SnapshotStatus.firstLoad;
+
+		this.snapshotBridge.getAddinUserVersion().then((info) => (this.pvtAddinVersion = info));
 	}
 
 	public async getCurrentSnapshotInfo(componentName: string) {
@@ -96,16 +103,16 @@ export class SnapshotService {
 	}
 
 	public getSoftwareComponentsList() {
-        return Object.keys(SnapshotSoftwareComponents).filter(
-            (type) => isNaN(type as any) && type !== 'values'
-        );
-    }
+		return Object.keys(SnapshotSoftwareComponents).filter(
+			(type) => isNaN(type as any) && type !== 'values'
+		);
+	}
 
-    public getHardwareComponentsList() {
-        return Object.keys(SnapshotHardwareComponents).filter(
-            (type) => isNaN(type as any) && type !== 'values'
-        );
-    }
+	public getHardwareComponentsList() {
+		return Object.keys(SnapshotHardwareComponents).filter(
+			(type) => isNaN(type as any) && type !== 'values'
+		);
+	}
 
 	public anyIndividualSnapshotInProgress() {
 		for (const snapshot in this.pvtSnapshotInfo) {

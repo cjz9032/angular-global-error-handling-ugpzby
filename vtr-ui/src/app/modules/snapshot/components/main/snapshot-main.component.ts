@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SnapshotHardwareComponents, SnapshotSoftwareComponents } from '../../enums/snapshot.enum';
+import { SnapshotStatus } from '../../enums/snapshot.enum';
 import { SnapshotService } from '../../services/snapshot.service';
 @Component({
 	selector: 'vtr-snapshot-main',
@@ -29,5 +29,14 @@ export class SnapshotMainComponent implements OnInit {
 				content: this.snapshotService.snapshotInfo[key],
 			});
 		});
+	}
+
+	public isButtonEnabled(): boolean {
+		const statesToEnable = [
+			SnapshotStatus.notStarted,
+			SnapshotStatus.snapshotCompleted,
+			SnapshotStatus.baselineCompleted,
+		];
+		return statesToEnable.includes(this.snapshotService.snapshotStatus);
 	}
 }

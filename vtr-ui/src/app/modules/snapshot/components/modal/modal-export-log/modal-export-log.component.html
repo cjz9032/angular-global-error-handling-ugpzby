@@ -1,0 +1,45 @@
+<div class="modal-body vtr-modal-export-log">
+	<h1 id="snapshot-export-log-modal-title" class="title" role="heading">{{ 'snapshot.exportLogModal.exportLog' | translate }}</h1>
+
+	<div [ngSwitch]="errorStatus">
+		<p *ngSwitchCase="enumExportLogErrorStatus.SuccessExport" id="snapshot-export-log-modal-description"
+			class="description"
+			role="text">{{ 'snapshot.exportLogModal.exportSuccessDescription' | translate }} {{ logPath }}</p>
+
+		<p *ngSwitchCase="enumExportLogErrorStatus.AccessDenied" id="snapshot-export-log-modal-description"
+			class="description" role="text">{{ 'snapshot.exportLogModal.exportAccessErrorDescription' | translate }}</p>
+
+
+		<p *ngSwitchCase="enumExportLogErrorStatus.LoadingExport" id="snapshot-export-log-modal-description"
+			class="description" role="text">{{ 'snapshot.exportLogModal.exportMayTakeSomeTime' | translate }}</p>
+
+		<p *ngSwitchDefault id="snapshot-export-log-modal-description"
+			class="description" role="text">{{ 'snapshot.exportLogModal.exportFailDescription' | translate }}</p>
+	</div>
+
+	<div [ngSwitch]="errorStatus" class="row button-row">
+
+		<div class="col loading" *ngSwitchCase="enumExportLogErrorStatus.LoadingExport">
+			<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
+			<!--Workaround to keep focus inside modal when there is no elements to be focused-->
+			<div tabindex="1" [autofocus]=true></div>
+		</div>
+
+		<vtr-ui-button *ngSwitchCase="enumExportLogErrorStatus.AccessDenied"
+			linkId="snapshot-export-log-open-settings-btn" [metricsParent]="'Snapshot.ExportLog'"
+			[metricsItem]="'ExportLog.OpenSettings'" [label]="'snapshot.exportLogModal.openSettingsButton' | translate"
+			(onClick)="openWindowsSettings()">
+		</vtr-ui-button>
+
+		<vtr-ui-button *ngSwitchDefault
+			linkId="snapshot-export-log-confirm-btn" [metricsParent]="'Snapshot.ExportLog'"
+			[metricsItem]="'ExportLog.Confirm'" [label]="'snapshot.ok' | translate" (onClick)="onClosing()">
+		</vtr-ui-button>
+	</div>
+
+	<div class="btn-modal-close" *ngIf="errorStatus !== enumExportLogErrorStatus.LoadingExport">
+		<vtr-ui-close-button linkId="snapshot-export-log-modal-close-btn" [metricsParent]="'Snapshot.ExportLog'"
+			[metricsItem]="'ExportLog.Close'" (clickClose)="onClosing()">
+		</vtr-ui-close-button>
+	</div>
+</div>

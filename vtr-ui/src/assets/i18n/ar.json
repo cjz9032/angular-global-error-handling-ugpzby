@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "لقطة",
+		"ok": "موافق",
 		"hardwareListTitle": "مكونات الجهاز",
 		"softwareListTitle": "مكونات البرامج",
 		"snapshotWidgetButton": "أخذ لقطة",
@@ -5314,6 +5315,29 @@
 			"StartupPrograms": "برامج بدء التشغيل",
 			"VideoCards": "بطاقة الفيديو",
 			"WebBrowsers": "مستعرضات الويب"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "تم تصدير السجل بنجاح ويمكن العثور عليه في:",
+			"exportAccessErrorDescription": "تحتاج إلى تمكين Vantage من الوصول إلى نظام ملفاتك لتصدير السجل. انقر فوق الزر أدناه لفتح إعدادات أذونات Windows. يُرجى العلم أن تغيير الإذن قد يتسبب في إغلاق Vantage.",
+			"exportFailDescription": "تم العثور على مشكلة أثناء تصدير السجل. يُرجى إعادة المحاولة لاحقًا.",
+			"exportMayTakeSomeTime": "يرجى الانتظار أثناء تصدير السجل.",
+			"openSettingsButton": "فتح إعدادات Windows",
+			"exportLog": "سجل التصدير"
+		},
+		"report": {
+			"modelTitle": "الطراز",
+			"model": {
+				"serialNumber": "الرقم التسلسلي",
+				"biosVersion": "إصدار BIOS",
+				"productName": "اسم المنتج"
+			},
+			"environmentTitle": "البيئة",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "إصدار Experience",
+				"shellVersion": "إصدار Shell",
+				"bridgeVersion": "إصدار Bridge"
+			}
 		},
 		"properties": {
 			"CACHE": "ذاكرة التخزين المؤقت",

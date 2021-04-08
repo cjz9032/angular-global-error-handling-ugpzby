@@ -1,0 +1,43 @@
+<mat-card
+	class="export-options-card"
+	[class.mat-elevation-z0]="!isOnExportLog || isDisabled"
+	[class.mat-elevation-z8]="isOnExportLog && !isDisabled"
+	(mouseenter)="exportButtonSelected()"
+	(focus)="exportButtonSelected()"
+	(mouseleave)="exportButtonDismissed()"
+	(focusout)="exportButtonDismissed()">
+
+	<vtr-ui-hyperlink-button
+		class="refresh-button"
+		(focus)="exportButtonSelected()"
+		linkId="{{ componentId }}-export-log-btn"
+		linkRole="button"
+		hyperlinkStyle="xs-300-blue-lighter"
+		imgIconSrc="{{ getExportIcon() }}"
+		metricsEvent="FeatureClick"
+		metricsParent="{{ metricsParent }}"
+		metricsItem="{{ metricsParent }}.ExportLog"
+		[isDisabled]="isDisabled"
+		(hyperlinkClick)="onExportClick()"
+		[label]="'snapshot.exportLogModal.exportLog' | translate">
+	</vtr-ui-hyperlink-button>
+
+	<div *ngIf="isOnExportLog && !isDisabled" class="extension-wrapper">
+		<button
+			class="extension-btn"
+			[attr.aria-label]="extension"
+			[attr.role]="'button'"
+			[attr.id]="componentId + '-' + extension + '-btn'"
+			(focus)="isInExtensionList()"
+			(focusout)="isLastElementFocused(index)"
+			[vtrMetrics]="true"
+			[metricsEvent]="'FeatureClick'"
+			[metricsItem]="metricsParent + '.ExportLog.' + extension"
+			[metricsParent]="metricsParent + '.ExportLog'"
+			(click)="exportLog(extension)"
+			*ngFor="let extension of exportExtensions; let index = index">
+			{{ extension.toUpperCase() }}
+		</button>
+	</div>
+
+</mat-card>

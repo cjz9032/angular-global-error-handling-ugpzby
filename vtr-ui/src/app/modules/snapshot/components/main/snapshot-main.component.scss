@@ -1,23 +1,7 @@
 @import '../../../../app.theme.scss';
 
-.vtr-snapshot-components {
-	border-radius: 0.5rem;
-	background-color: $light;
-	@include high-contrast-border;
-
-	.snapshot-group-card-list {
-		margin-top: 2.4rem;
-		padding: 0;
-
-		.container {
-			padding: 0;
-			margin: 0;
-			.row {
-				padding: 1.6rem;
-			}
-		}
-	}
-	.components-list {
-		width: 100%;
+.vtr-snapshot-main {
+	.export-button-available {
+		margin-top: 5rem;
 	}
 }

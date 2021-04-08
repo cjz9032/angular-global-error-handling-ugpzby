@@ -74,18 +74,6 @@ export enum HardwareScanProgress {
 	BackEvent = '[HardwareScan] BackEvent',
 }
 
-export enum ExportLogErrorStatus {
-	LoadingExport,
-	SuccessExport,
-	AccessDenied,
-	GenericError,
-}
-
-export enum ExportLogExtensions {
-	pdf = 'pdf',
-	html = 'html',
-}
-
 export enum WatcherStepProcess {
 	Start,
 	Intermediate,

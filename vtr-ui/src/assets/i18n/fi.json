@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "Pikakuva",
+		"ok": "OK",
 		"hardwareListTitle": "Laitteisto-osat",
 		"softwareListTitle": "Ohjelmisto-osat",
 		"snapshotWidgetButton": "Ota tilannevedos",
@@ -5314,6 +5315,29 @@
 			"StartupPrograms": "Käynnistysohjelmat",
 			"VideoCards": "Näyttökortti",
 			"WebBrowsers": "Verkkoselaimet"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Loki vietiin onnistuneesti ja se löytyy osoitteesta:",
+			"exportAccessErrorDescription": "Sinun täytyy sallia Vantage käyttää tiedostojärjestelmääsi viedäksesi lokin. Napsauta alla olevaa painiketta avataksesi Windows käyttöoikeusasetukset. Huomaa, että käyttöoikeuden muuttaminen saattaa sulkea Vantage.",
+			"exportFailDescription": "Lokin viennin aikana ilmeni ongelma. Yritä myöhemmin uudelleen.",
+			"exportMayTakeSomeTime": "Odota, kunnes loki on viety.",
+			"openSettingsButton": "Avaa Windows-asetukset",
+			"exportLog": "Vie loki"
+		},
+		"report": {
+			"modelTitle": "Malli",
+			"model": {
+				"serialNumber": "Sarjanumero",
+				"biosVersion": "BIOS-versio",
+				"productName": "Tuotteen nimi"
+			},
+			"environmentTitle": "Käyttöympäristö",
+			"environment": {
+				"addinVersion": "Laajennusosan versio",
+				"experienceVersion": "Experience-versio",
+				"shellVersion": "Shell-versio",
+				"bridgeVersion": "Bridge-versio"
+			}
 		},
 		"properties": {
 			"CACHE": "Välimuisti",

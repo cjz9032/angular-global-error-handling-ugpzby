@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "Στιγμιότυπο",
+		"ok": "OK",
 		"hardwareListTitle": "Εξαρτήματα υλικού",
 		"softwareListTitle": "Στοιχεία λογισμικού",
 		"snapshotWidgetButton": "Λήψη στιγμιοτύπου",
@@ -5314,6 +5315,29 @@
 			"StartupPrograms": "Προγράμματα εκκίνησης",
 			"VideoCards": "Κάρτα γραφικών",
 			"WebBrowsers": "Προγράμματα περιήγησης στο Web"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Το αρχείο καταγραφής εξήχθη με επιτυχία και μπορείτε να το βρείτε στη διεύθυνση:",
+			"exportAccessErrorDescription": "Απαιτείται να επιτρέπεται στο Vantage να έχει πρόσβαση στο σύστημα αρχείων σας για να εξάγει το αρχείο καταγραφής. Κάντε κλικ στο παρακάτω κουμπί για να ανοίξετε τις ρυθμίσεις δικαιωμάτων των Windows. Να έχετε υπόψη σας ότι η αλλαγή δικαιώματος ενδέχεται να προκαλέσει κλείσιμο του Vantage.",
+			"exportFailDescription": "Εντοπίστηκε πρόβλημα κατά την εξαγωγή του αρχείου καταγραφής. Δοκιμάστε ξανά αργότερα.",
+			"exportMayTakeSomeTime": "Περιμένετε όσο εξάγεται το αρχείο καταγραφής.",
+			"openSettingsButton": "Άνοιγμα ρυθμίσεων των Windows",
+			"exportLog": "Εξαγωγή αρχείου καταγραφής"
+		},
+		"report": {
+			"modelTitle": "Μοντέλο",
+			"model": {
+				"serialNumber": "Σειριακός αριθμός",
+				"biosVersion": "Έκδοση BIOS",
+				"productName": "Ονομασία Προϊόντος"
+			},
+			"environmentTitle": "Περιβάλλον",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Έκδοση Experience",
+				"shellVersion": "Έκδοση Shell",
+				"bridgeVersion": "Έκδοση Bridge"
+			}
 		},
 		"properties": {
 			"CACHE": "Λανθάνουσα μνήμη",

@@ -37,3 +37,20 @@ export enum SnapshotSoftwareComponents {
 	StartupPrograms,
 	WebBrowsers,
 }
+
+export enum ExportLogErrorStatus {
+	LoadingExport,
+	SuccessExport,
+	AccessDenied,
+	GenericError,
+}
+
+export enum ExportLogExtensions {
+	pdf = 'pdf',
+	html = 'html',
+}
+
+export enum MetricsExportLog {
+	SuccessResult = 'Success',
+	FailResult = 'Fail',
+}

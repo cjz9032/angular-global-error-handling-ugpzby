@@ -1,0 +1,66 @@
+@import '../../../../app.theme.scss';
+
+.export-options-card {
+	margin-left: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-radius: 0.5rem;
+	padding: 2rem 2.4rem 1rem;
+
+	&.mat-elevation-z8 {
+		background-color: $light;
+		z-index: 1;
+	}
+
+	@media #{$white-on-black} {
+		outline: 0.1 solid $light;
+	}
+
+	@media #{$black-on-white} {
+		outline: 0.1 solid $dark;
+	}
+}
+
+@mixin font-and-underline-color($font-color, $underline-color: $font-color) {
+	color: $font-color;
+	border-bottom-color: $underline-color;
+}
+
+.extension-wrapper {
+	padding: 0 0.5rem;
+}
+
+.extension-btn {
+	color: $light-grey;
+	display: block;
+	font-size: 1.6rem;
+	margin-top: 1.5rem;
+
+	&:focus,
+	&:hover {
+		color: $blue-light;
+		border-bottom: $blue-light solid 0.1rem;
+		text-decoration: none;
+
+		&:focus {
+			border-bottom-color: $blue-light;
+			outline: 0.1rem solid $menu_hover;
+			outline-offset: 0.1rem;
+		}
+
+		@media #{$white-on-black}, #{$black-on-white} {
+			&:focus {
+				border-bottom-color: $blue-light;
+			}
+		}
+
+		@media #{$white-on-black} {
+			@include font-and-underline-color($high-contrast-black-yellow);
+		}
+
+		@media #{$black-on-white} {
+			@include font-and-underline-color($high-contrast-white-blue);
+		}
+	}
+}

@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 
 import { UiQuestionMarkButtonComponent } from './ui-question-mark-button.component';
 
-fdescribe('UiQuestionMarkButtonComponent', () => {
+describe('UiQuestionMarkButtonComponent', () => {
 	let component: UiQuestionMarkButtonComponent;
 	let fixture: ComponentFixture<UiQuestionMarkButtonComponent>;
 	let debugComponent: DebugElement;

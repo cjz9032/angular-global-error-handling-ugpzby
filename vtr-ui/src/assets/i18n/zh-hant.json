@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "快照",
+		"ok": "確定",
 		"hardwareListTitle": "硬體元件",
 		"softwareListTitle": "軟體元件",
 		"snapshotWidgetButton": "拍攝快照",
@@ -5314,6 +5315,29 @@
 			"StartupPrograms": "啟動程式",
 			"VideoCards": "影像卡",
 			"WebBrowsers": "Web 瀏覽器"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "已順利匯出日誌，可以在以下位置找到：",
+			"exportAccessErrorDescription": "您必須允許 Vantage 存取您的檔案系統，才能匯出日誌。按一下下方的按鈕，即可開啟 Windows 權限設定。請注意，變更權限可能會造成 Vantage 關閉。",
+			"exportFailDescription": "日誌匯出期間發現有問題。請稍後重試。",
+			"exportMayTakeSomeTime": "正在匯出日誌，請稍候。",
+			"openSettingsButton": "開啟 Windows 設定",
+			"exportLog": "匯出日誌"
+		},
+		"report": {
+			"modelTitle": "型號",
+			"model": {
+				"serialNumber": "序號",
+				"biosVersion": "BIOS 版本",
+				"productName": "產品名稱"
+			},
+			"environmentTitle": "環境",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Experience 版本",
+				"shellVersion": "Shell 版本",
+				"bridgeVersion": "Bridge 版本"
+			}
 		},
 		"properties": {
 			"CACHE": "快取",

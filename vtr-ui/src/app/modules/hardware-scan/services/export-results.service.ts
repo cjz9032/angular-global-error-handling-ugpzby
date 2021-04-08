@@ -12,16 +12,11 @@ import { LoggerService } from 'src/app/services/logger/logger.service';
 import { RecoverBadSectorsService } from './recover-bad-sectors.service';
 import { HardwareScanService } from './hardware-scan.service';
 import { DeviceService } from '../../../services/device/device.service';
-import {
-	ExportLogErrorStatus,
-	ExportLogExtensions,
-	HardwareScanOverallResult,
-	HardwareScanTestResult,
-} from '../enums/hardware-scan.enum';
+import { ExportLogExtensions, ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
+import { HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import { resourceUsage } from 'process';
-import { isNumber, toNumber } from 'lodash';
+import { toNumber } from 'lodash';
 
 declare let window;
 

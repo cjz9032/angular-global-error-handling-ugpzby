@@ -5278,6 +5278,7 @@
 	},
 	"snapshot": {
 		"title": "Foto",
+		"ok": "OK",
 		"hardwareListTitle": "Hardwareonderdelen",
 		"softwareListTitle": "Softwareonderdelen",
 		"snapshotWidgetButton": "Momentopname maken",
@@ -5314,6 +5315,29 @@
 			"StartupPrograms": "Opstartprogramma´s",
 			"VideoCards": "Videokaart",
 			"WebBrowsers": "Webbrowsers"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "Het logboek is geëxporteerd en is te vinden op:",
+			"exportAccessErrorDescription": "U moet Vantage toegang geven tot uw bestandssysteem om het logboek te kunnen exporteren. Klik op de onderstaande knop om de Windows-instellingen voor machtigingen te openen. Als u de machtigingen wijzigt, wordt Vantage mogelijk gesloten.",
+			"exportFailDescription": "Er is een fout aangetroffen tijdens het exporteren van het logboek. Probeer het later opnieuw.",
+			"exportMayTakeSomeTime": "Het logboek wordt geëxporteerd. Een ogenblik geduld.",
+			"openSettingsButton": "Windows-instellingen openen",
+			"exportLog": "Logboek exporteren"
+		},
+		"report": {
+			"modelTitle": "Model",
+			"model": {
+				"serialNumber": "Serienummer",
+				"biosVersion": "BIOS-versie",
+				"productName": "Productnaam"
+			},
+			"environmentTitle": "Omgeving",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Versie experience",
+				"shellVersion": "Versie shell",
+				"bridgeVersion": "Versie bridge"
+			}
 		},
 		"properties": {
 			"CACHE": "Cache",

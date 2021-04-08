@@ -5388,6 +5388,7 @@
 	},
 	"snapshot": {
 		"title": "Instantánea",
+		"ok": "Aceptar",
 		"hardwareListTitle": "Componentes de hardware",
 		"softwareListTitle": "Componentes de software",
 		"snapshotWidgetButton": "Tomar una instantánea",
@@ -5424,6 +5425,29 @@
 			"StartupPrograms": "Programas de inicio",
 			"VideoCards": "Tarjeta de vídeo",
 			"WebBrowsers": "Exploradores web"
+		},
+		"exportLogModal": {
+			"exportSuccessDescription": "El registro se exportó correctamente y se puede encontrar en:",
+			"exportAccessErrorDescription": "Debe permitir el acceso de Vantage a su sistema de archivos para poder exportar el registro. Haga clic en el siguiente botón para abrir la configuración de permisos de Windows. Tenga en cuenta que la modificación de los permisos puede hacer que Vantage se cierre.",
+			"exportFailDescription": "Se encontró un problema durante la exportación del registro. Vuelva a intentarlo más tarde.",
+			"exportMayTakeSomeTime": "Espere mientras se exporta el registro.",
+			"openSettingsButton": "Abrir la configuración de Windows",
+			"exportLog": "Exportar registro"
+		},
+		"report": {
+			"modelTitle": "Modelo",
+			"model": {
+				"serialNumber": "Número de serie",
+				"biosVersion": "Versión del BIOS",
+				"productName": "Nombre del producto"
+			},
+			"environmentTitle": "Entorno",
+			"environment": {
+				"addinVersion": "Addin Version",
+				"experienceVersion": "Versión de experience",
+				"shellVersion": "Versión de shell",
+				"bridgeVersion": "Versión de bridge"
+			}
 		},
 		"properties": {
 			"CACHE": "Caché",
