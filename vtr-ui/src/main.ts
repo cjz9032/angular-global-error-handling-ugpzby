@@ -8,5 +8,12 @@ if (environment.production) {
 	enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-	.catch(err => {});
+if (environment.fullStory) {
+	const script = document.createElement('script');
+	script.src = './assets/fullstory.js';
+	document.head.appendChild(script);
+}
+
+platformBrowserDynamic()
+	.bootstrapModule(AppModule)
+	.catch((err) => {});

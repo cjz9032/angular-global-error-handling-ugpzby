@@ -92,8 +92,7 @@
 							"extractLicenses": false,
 							"vendorChunk": false,
 							"buildOptimizer": true,
-							"serviceWorker": false,
-							"scripts": ["tools/fullstory.js"]
+							"serviceWorker": false
 						},
 						"qa": {
 							"fileReplacements": [
@@ -125,8 +124,7 @@
 									"maximumError": "15mb"
 								}
 							],
-							"serviceWorker": true,
-							"scripts": ["tools/fullstory.js"]
+							"serviceWorker": true
 						},
 						"stage": {
 							"fileReplacements": [
