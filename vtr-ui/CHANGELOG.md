@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.15](https://bitbucket.tc.lenovo.com///compare/v1.11.14...v1.11.15) (2021-04-08)
+
+
+### Bug Fixes
+
+* add scripts folder to angular.json assets ([875a190](https://bitbucket.tc.lenovo.com///commit/875a19007f1ce71bee30594993a28836c60b8568))
+* change the import method of fullstory.js ([4e4ceeb](https://bitbucket.tc.lenovo.com///commit/4e4ceeb229242a66b256e0ac0436752e05b4455b))
+* move fullstory.js to scripts folder ([66a617b](https://bitbucket.tc.lenovo.com///commit/66a617be30aeb17c980fd034e66ec637b581a187))
+
 ### [1.11.14](https://bitbucket.tc.lenovo.com///compare/v1.11.13...v1.11.14) (2021-04-07)
 
 
