@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { toNumber } from 'lodash';
+import { ExportLogErrorStatus, ExportLogExtensions } from 'src/app/enums/export-log.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -12,8 +13,6 @@ import { FormatLocaleDateTimePipe } from '../../../pipe/format-locale-datetime/f
 import { DeviceService } from '../../../services/device/device.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
 import {
-	ExportLogErrorStatus,
-	ExportLogExtensions,
 	FontTypes,
 	HardwareScanOverallResult,
 	HardwareScanTestResult,
