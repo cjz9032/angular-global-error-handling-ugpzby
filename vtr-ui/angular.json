@@ -40,7 +40,8 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/manifest.webmanifest",
-							"src/pre-load.js"
+							"src/pre-load.js",
+							"src/scripts"
 						],
 						"styles": ["src/styles.scss"],
 						"scripts": []
@@ -92,8 +93,7 @@
 							"extractLicenses": false,
 							"vendorChunk": false,
 							"buildOptimizer": true,
-							"serviceWorker": false,
-							"scripts": ["tools/fullstory.js"]
+							"serviceWorker": false
 						},
 						"qa": {
 							"fileReplacements": [
@@ -125,8 +125,7 @@
 									"maximumError": "15mb"
 								}
 							],
-							"serviceWorker": true,
-							"scripts": ["tools/fullstory.js"]
+							"serviceWorker": true
 						},
 						"stage": {
 							"fileReplacements": [

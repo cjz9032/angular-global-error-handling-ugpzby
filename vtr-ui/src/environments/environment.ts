@@ -14,4 +14,5 @@ export const environment: IEnvironment = {
 	isLoggingEnabled: true,
 	isServerSwitchEnabled: true,
 	pcSupportApiRoot: 'https://uatpcsupport.lenovo.com',
+	fullStory: false,
 };
