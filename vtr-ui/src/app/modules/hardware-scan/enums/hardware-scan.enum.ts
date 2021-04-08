@@ -92,3 +92,12 @@ export enum FontTypes {
 	noto = 'noto',
 	rubik = 'rubik',
 }
+
+export enum PdfLanguageTokens {
+	arabic = 'ar',
+	japanese = 'ja',
+	hebrew = 'he',
+	korean = 'ko',
+	simplifiedChinese = 'zh-hans',
+	traditionalChinese = 'zh-hant',
+}

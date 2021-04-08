@@ -15,7 +15,7 @@ import { ModalExportLogComponent } from '../../modal/modal-export-log/modal-expo
 	templateUrl: './hardware-scan-export-log.component.html',
 	styleUrls: ['./hardware-scan-export-log.component.scss'],
 })
-export class HardwareScanExportLogComponent implements OnInit {
+export class HardwareScanExportLogComponent {
 	@Input() componentId: string;
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
@@ -35,8 +35,6 @@ export class HardwareScanExportLogComponent implements OnInit {
 		private dialog: MatDialog,
 		private hardwareScanService: HardwareScanService
 	) {}
-
-	ngOnInit() {}
 
 	// Necessary to control navigation through tab key
 	public onExportClick(): void {

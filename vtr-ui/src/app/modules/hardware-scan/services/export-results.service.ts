@@ -17,6 +17,7 @@ import {
 	FontTypes,
 	HardwareScanOverallResult,
 	HardwareScanTestResult,
+	PdfLanguageTokens,
 } from '../enums/hardware-scan.enum';
 import { HardwareScanResultService } from './hardware-scan-result.service';
 import { HardwareScanService } from './hardware-scan.service';
@@ -53,6 +54,7 @@ export class ExportResultsService {
 	private darkBlueColor = '#34495E';
 	private lightBlueColor = '#4A81FD';
 	private whiteColor = '#FFF';
+	private hebrewUnicodeRange = /[\u0590-\u05FF]/;
 	private logoSize = 10;
 	private startX = 10;
 	private statusIconSize = 5;
@@ -153,18 +155,18 @@ export class ExportResultsService {
 		this.currentLanguage = currentLanguage;
 
 		switch (currentLanguage) {
-			case 'ja':
-			case 'zh-hans':
-			case 'zh-hant':
+			case PdfLanguageTokens.japanese:
+			case PdfLanguageTokens.simplifiedChinese:
+			case PdfLanguageTokens.traditionalChinese:
 				this.currentFont = FontTypes.notosc;
 				break;
-			case 'ko':
+			case PdfLanguageTokens.korean:
 				this.currentFont = FontTypes.notokr;
 				break;
-			case 'ar':
+			case PdfLanguageTokens.arabic:
 				this.currentFont = FontTypes.amiri;
 				break;
-			case 'he':
+			case PdfLanguageTokens.hebrew:
 				this.currentFont = FontTypes.rubik;
 				break;
 			default:
@@ -173,16 +175,16 @@ export class ExportResultsService {
 		}
 
 		try {
-			this.fonts.push(await import('./utils/fonts/amiri.json'));
-			this.fonts.push(await import('./utils/fonts/noto.json'));
-			this.fonts.push(await import('./utils/fonts/rubik.json'));
-
-			// The following fonts were not being interpreted as IFonts by vscode, but they are
-			// So, to avoid eslint error they are being casted as any
-			this.fonts.push((await import('./utils/fonts/noto-sc.json')) as any);
-			this.fonts.push((await import('./utils/fonts/noto-kr.json')) as any);
+			this.fonts.push((await import('./utils/fonts/amiri.json')).default as IFont);
+			this.fonts.push((await import('./utils/fonts/noto.json')).default as IFont);
+			this.fonts.push((await import('./utils/fonts/rubik.json')).default as IFont);
+			this.fonts.push((await import('./utils/fonts/noto-kr.json')).default as IFont);
+			this.fonts.push((await import('./utils/fonts/noto-sc.json')).default as IFont);
 		} catch (error) {
-			this.logger.error('Error on loading font files');
+			this.logger.error(
+				'[HardwareScan ExportResultsService] Error on loading font files',
+				error
+			);
 		}
 	}
 
@@ -1338,28 +1340,21 @@ export class ExportResultsService {
 				.transform('hardwareScan.' + this.getStatusFromStatusCode(module.resultModule))
 				.toUpperCase();
 
-			const reversed = this.reverseForHebrew({
-				// Structure expected for reverseForHebrew
-				cell: {
-					raw: testResultText,
-				},
-			});
-
 			switch (module.resultModule) {
 				case HardwareScanTestResult.Pass:
-					return [currentName, reversed ?? testResultText, '', '', '', ''];
+					return [currentName, testResultText, '', '', '', ''];
 
 				case HardwareScanTestResult.Fail:
-					return [currentName, '', reversed ?? testResultText, '', '', ''];
+					return [currentName, '', testResultText, '', '', ''];
 
 				case HardwareScanTestResult.Attention:
-					return [currentName, '', '', reversed ?? testResultText, '', ''];
+					return [currentName, '', '', testResultText, '', ''];
 
 				case HardwareScanTestResult.Cancelled:
-					return [currentName, '', '', '', reversed ?? testResultText, ''];
+					return [currentName, '', '', '', testResultText, ''];
 
 				case HardwareScanTestResult.Na:
-					return [currentName, '', '', '', '', reversed ?? testResultText];
+					return [currentName, '', '', '', '', testResultText];
 
 				default:
 					return [currentName, '', '', '', '', ''];
@@ -1694,12 +1689,7 @@ export class ExportResultsService {
 				],
 			],
 			willDrawCell: (data) => {
-				if (
-					data.section === 'body' &&
-					data.column.index > 0 &&
-					data.cell.raw?.content !== '' &&
-					data.cell.colSpan < 2
-				) {
+				if (data.section === 'body' && data.column.index > 0 && data.cell.colSpan < 2) {
 					const colorValue = this.getStatusColorFromStatusCode(data.column.index + 1); // + 1 correspond to enum value
 
 					// Sets the color of text by status ([0] = Red, [1] = Green, [2] = Blue)
@@ -1710,7 +1700,7 @@ export class ExportResultsService {
 				if (
 					data.row.section === 'body' &&
 					data.column.index > 0 &&
-					data.cell.raw !== '' &&
+					data.cell.raw &&
 					StatusIcons.has(data.column.index + 1) &&
 					data.row.index < data.table.body.length - 2
 				) {
@@ -1934,7 +1924,7 @@ export class ExportResultsService {
 			{ font: FontTypes.notokr, range: /[\u3131-\uD79D]/ }, // korean
 			{ font: FontTypes.notosc, range: /[\u4e00-\u9eff]/ }, // chinese and japanese
 			{ font: FontTypes.amiri, range: /[\u0600-\u06FF]/ }, // arabic
-			{ font: FontTypes.rubik, range: /[\u0590-\u05FF]/ }, // hebrew
+			{ font: FontTypes.rubik, range: this.hebrewUnicodeRange }, // hebrew
 			{ font: FontTypes.rubik, range: /[\u0370-\u03FF]/ }, // greek
 			{ font: FontTypes.rubik, range: /[\u0161\u0111\u010D\u0107\u017E]/ }, // croatian or others
 			{ font: FontTypes.noto, range: /[^\u0000-\u00ff]/ }, // default
@@ -1947,7 +1937,10 @@ export class ExportResultsService {
 	private reverseForHebrew(data: any): string {
 		const content = data.cell.raw?.content ?? data.cell?.raw;
 
-		if (this.currentLanguage === 'he' && /[\u0590-\u05FF]/.test(content)) {
+		if (
+			this.currentLanguage === PdfLanguageTokens.hebrew &&
+			this.hebrewUnicodeRange.test(content)
+		) {
 			// Avoid wrong positioning of : and () characters
 			const specialCharacters = (word: string) => {
 				let currentValue = word;
