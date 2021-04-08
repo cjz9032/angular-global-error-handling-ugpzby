@@ -378,7 +378,7 @@ export class ExportSnapshotResultsService {
 			itemSecondValue = this.createElement({
 				elementType: 'span',
 				innerHtml: secondValue,
-				classes: ['details_light_blue_title'],
+				classes: ['details_light_blue_title', 'font_weight_600'],
 			});
 		}
 
