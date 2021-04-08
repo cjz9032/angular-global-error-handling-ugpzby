@@ -40,7 +40,8 @@
 							"src/favicon.ico",
 							"src/assets",
 							"src/manifest.webmanifest",
-							"src/pre-load.js"
+							"src/pre-load.js",
+							"src/scripts"
 						],
 						"styles": ["src/styles.scss"],
 						"scripts": []
