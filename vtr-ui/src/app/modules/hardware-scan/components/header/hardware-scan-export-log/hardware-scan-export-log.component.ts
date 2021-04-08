@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { ExportLogExtensions, ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
