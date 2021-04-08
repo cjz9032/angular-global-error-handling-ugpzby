@@ -10,7 +10,7 @@ if (environment.production) {
 
 if (environment.fullStory) {
 	const script = document.createElement('script');
-	script.src = './assets/fullstory.js';
+	script.src = './scripts/fullstory.js';
 	document.head.appendChild(script);
 }
 
