@@ -10,6 +10,7 @@ import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
+import { smbMachines } from 'src/assets/smb-machine/smb-machines';
 
 @Injectable({
 	providedIn: 'root',
@@ -51,7 +52,6 @@ export class DeviceService {
 			this.isShellAvailable = true;
 		}
 		this.initShowSearch();
-		this.identifySMBMachine();
 	}
 
 	public initIsArm() {
@@ -87,11 +87,15 @@ export class DeviceService {
 		return undefined;
 	}
 
-	private async identifySMBMachine() {
-		this.supportAIMeetingMgr = await this.isSupportSMBFeature('AIMeetingManager');
-		this.supportCreatorSettings = await this.isSupportSMBFeature('EasyRendering');
-		this.supportColorCalibration = await this.isSupportSMBFeature('ColorCalibration');
-		this.supportSmartAppearance = await this.isSupportSMBFeature('SmartAppearance');
+	private async identifySMBMachine(familyName: string) {
+		if (familyName) {
+			familyName = familyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
+		}
+
+		this.supportAIMeetingMgr = await this.isSupportSMBFeature('AIMeetingManager') || this.isSoupportAIMeetingMgr(familyName);
+		this.supportCreatorSettings = await this.isSupportSMBFeature('CreatorSettings') || this.isSupportSubFeature(familyName, 'creatorSettings');
+		this.supportColorCalibration = await this.isSupportSMBFeature('ColorCalibration') || this.isSupportSubFeature(familyName, 'colorCalibration');
+		this.supportSmartAppearance = await this.isSupportSMBFeature('SmartAppearance') || this.isSupportSubFeature(familyName, 'smartAppearance');
 		this.isSMB = this.supportAIMeetingMgr || this.supportColorCalibration
 			|| this.supportSmartAppearance || this.supportCreatorSettings;
 	}
@@ -120,6 +124,29 @@ export class DeviceService {
 		});
 	}
 
+	isSoupportAIMeetingMgr(familyName: string) {
+		let ret = false;
+		if (familyName) {
+			if (
+				familyName.match(/^(thinkbook)/) ||
+				familyName.match(/^(thinkpade)/)
+			) {
+				ret = true;
+			}
+		}
+		return ret;
+	}
+
+	isSupportSubFeature(familyName: string, familyKey: string) {
+		let ret = false;
+		if (familyName) {
+			if (smbMachines[familyKey].includes(familyName)) {
+				ret = true;
+			}
+		}
+		return ret;
+	}
+
 	// this API doesn't have performance issue, can be always called at any time.
 	getMachineInfo(): Promise<any> {
 		this.logger.debug('DeviceService.getMachineInfo: pre API call');
@@ -137,6 +164,8 @@ export class DeviceService {
 				this.machineInfo = info;
 				this.isSMode = info.isSMode;
 				this.isGaming = info.isGaming;
+
+				this.identifySMBMachine(info.family);
 
 				if (
 					!this.showWarranty &&
