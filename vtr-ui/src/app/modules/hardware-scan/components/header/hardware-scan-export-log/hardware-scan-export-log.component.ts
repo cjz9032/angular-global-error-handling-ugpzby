@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { ExportLogExtensions, ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
@@ -15,7 +15,7 @@ import { ModalExportLogComponent } from '../../modal/modal-export-log/modal-expo
 	templateUrl: './hardware-scan-export-log.component.html',
 	styleUrls: ['./hardware-scan-export-log.component.scss'],
 })
-export class HardwareScanExportLogComponent implements OnInit {
+export class HardwareScanExportLogComponent {
 	@Input() componentId: string;
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
@@ -28,7 +28,6 @@ export class HardwareScanExportLogComponent implements OnInit {
 	private isInList = false;
 
 	constructor(
-		private deviceService: DeviceService,
 		private exportService: ExportResultsService,
 		private timerService: TimerService,
 		private hardwareScanMetricsService: HardwareScanMetricsService,
@@ -36,10 +35,6 @@ export class HardwareScanExportLogComponent implements OnInit {
 		private dialog: MatDialog,
 		private hardwareScanService: HardwareScanService
 	) {}
-
-	ngOnInit() {
-		this.isPdfAvailable();
-	}
 
 	// Necessary to control navigation through tab key
 	public onExportClick(): void {
@@ -59,7 +54,7 @@ export class HardwareScanExportLogComponent implements OnInit {
 	}
 
 	// Necessary to control navigation through tab key
-	public isLastElementFocused(index: number): void {
+	public isLastElementFocused(): void {
 		this.isInList = false;
 
 		// Timeout to check if the next element is inside list
@@ -91,24 +86,6 @@ export class HardwareScanExportLogComponent implements OnInit {
 		this.exportService.setExportExtensionSelected(ExportLogExtensions[extension]);
 
 		this.exportResults();
-	}
-
-	private isPdfAvailable() {
-		const supportedLanguage = 'en';
-
-		this.deviceService
-			.getMachineInfo()
-			.then((value: any) => {
-				if (value.locale !== supportedLanguage) {
-					this.exportExtensions.splice(
-						this.exportExtensions.indexOf(ExportLogExtensions.pdf),
-						1
-					);
-				}
-			})
-			.catch((error) => {
-				this.logger.exception('[ExportLogComponent] isPdfAvailable', error);
-			});
 	}
 
 	public getExportIcon(): string {
