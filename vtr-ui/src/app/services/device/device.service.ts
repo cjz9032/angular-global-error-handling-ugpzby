@@ -92,10 +92,10 @@ export class DeviceService {
 			familyName = familyName.toLowerCase().replace(/\s+/g, ''); //remove all white space
 		}
 
-		this.supportAIMeetingMgr = await this.isSupportSMBFeature('AIMeetingManagerX') || this.isSoupportAIMeetingMgr(familyName);
-		this.supportCreatorSettings = await this.isSupportSMBFeature('CreatorSettingsX') || this.isSupportSubFeature(familyName, 'creatorSettings');
-		this.supportColorCalibration = await this.isSupportSMBFeature('ColorCalibrationX') || this.isSupportSubFeature(familyName, 'colorCalibration');;
-		this.supportSmartAppearance = await this.isSupportSMBFeature('SmartAppearanceX') || this.isSupportSubFeature(familyName, 'smartAppearance');;
+		this.supportAIMeetingMgr = await this.isSupportSMBFeature('AIMeetingManager') || this.isSoupportAIMeetingMgr(familyName);
+		this.supportCreatorSettings = await this.isSupportSMBFeature('CreatorSettings') || this.isSupportSubFeature(familyName, 'creatorSettings');
+		this.supportColorCalibration = await this.isSupportSMBFeature('ColorCalibration') || this.isSupportSubFeature(familyName, 'colorCalibration');
+		this.supportSmartAppearance = await this.isSupportSMBFeature('SmartAppearance') || this.isSupportSubFeature(familyName, 'smartAppearance');
 		this.isSMB = this.supportAIMeetingMgr || this.supportColorCalibration
 			|| this.supportSmartAppearance || this.supportCreatorSettings;
 	}
