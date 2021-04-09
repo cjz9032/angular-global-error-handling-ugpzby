@@ -33,6 +33,9 @@
 		"get-https": "node tools/collect-https.js"
 	},
 	"private": true,
+	"browserslist": [
+		"extends @lenovo/browserslist-config-vantage"
+	],
 	"dependencies": {
 		"@angular/animations": "~11.2.8",
 		"@angular/cdk": "^11.2.7",
@@ -50,6 +53,7 @@
 		"@fortawesome/free-regular-svg-icons": "^5.15.3",
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",
 		"@fortawesome/pro-light-svg-icons": "^5.15.3",
+		"@lenovo/browserslist-config-vantage": "0.0.1",
 		"@lenovo/material": "^11.2.7",
 		"@lenovo/tan-client-bridge": "10.2103.0",
 		"@ng-bootstrap/ng-bootstrap": "^7.0.0",
