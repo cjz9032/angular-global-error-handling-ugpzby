@@ -126,7 +126,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 	headerMenuItems = [];
 	public readonly metricsParent = CommonMetricsModel.ParentDeviceSettings;
 	batterySettingsGroup = [];
-	powerSettingsGroup = []
+	powerSettingsGroup = [];
 	batteryHealthAvailable = false;
 	conservationModeDescriptionOption = '1';
 	constructor(
@@ -154,6 +154,7 @@ export class SubpageDeviceSettingsPowerComponent implements OnInit, OnDestroy {
 			case 0:
 				this.batterySettingsGroup = ['ConservationMode', 'RapidChargeMode', 'BatteryHealth'];
 				this.powerSettingsGroup = ['AlwaysOnUSB', 'FlipToBoot'];
+				break;
 			default:
 				break;
 		}
