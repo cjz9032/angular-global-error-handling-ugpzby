@@ -26,6 +26,7 @@ export class SegmentConstHelper {
 	/**
 	 * This method used for common Consumer features
 	 * Currently the big Consumer changed to ConsumerBase, ConsumerGaming, ConsumerEducation
+	 *
 	 * @param segment Current segment value
 	 */
 	public static includedInCommonConsumer(segment): boolean {
@@ -126,6 +127,7 @@ export class SelfSelectService {
 
 	/**
 	 * This function is exposed for UI to save User Profile Config
+	 *
 	 * @param changedConfig Updated config from UI
 	 * @param reloadRequired A flag to reload vantage when segment change
 	 */
@@ -181,7 +183,7 @@ export class SelfSelectService {
 			!config.segment ||
 			!this.isSegmentMatchCurrentMachine(config.segment, this.machineInfo)
 		) {
-			let defaultSegment = this.calcDefaultSegment(this.machineInfo);
+			const defaultSegment = this.calcDefaultSegment(this.machineInfo);
 			config = {
 				customtags: '',
 				segment: defaultSegment,
@@ -283,7 +285,7 @@ export class SelfSelectService {
 		if (this.frePersona !== null) {
 			return Promise.resolve(this.frePersona);
 		}
-		if (this.selfSelect.getLenovoWelcomePersona) {
+		if (this.deviceService.isShellAvailable && this.selfSelect.getLenovoWelcomePersona) {
 			return this.selfSelect
 				.getLenovoWelcomePersona()
 				.then((persona) => {
