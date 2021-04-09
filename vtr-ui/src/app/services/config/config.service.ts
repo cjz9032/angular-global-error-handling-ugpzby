@@ -24,6 +24,7 @@ import { NewFeatureTipService } from '../new-feature-tip/new-feature-tip.service
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { AppSearchService } from '../app-search/app-search.service';
+import { TestService } from '../test/test.service';
 
 export interface MenuItem {
 	id: string;
@@ -87,7 +88,8 @@ export class ConfigService {
 		private localCacheService: LocalCacheService,
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
-		private appSearchService: AppSearchService
+		private appSearchService: AppSearchService,
+		private testService: TestService // for PA test, need to remove after PA test complete
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (this.securityAdvisor) {
@@ -776,10 +778,8 @@ export class ConfigService {
 						Array.isArray(this.menu)
 					) {
 						const idArr = [
-							'security',
-							'connected-home-security',
-							'hardware-scan',
 							'app-search',
+							'smb',
 						];
 						const isIncludesItem = this.menu.find((item) => idArr.includes(item.id));
 						if (isIncludesItem) {

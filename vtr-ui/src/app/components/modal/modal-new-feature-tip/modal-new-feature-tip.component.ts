@@ -36,26 +36,20 @@ export class ModalNewFeatureTipComponent implements OnInit, OnDestroy {
 	idArray = ['new-feature-tip-ok-btn', 'new-feature-tip-mask'];
 
 	tipsVersions = {
-		'v3.2': 3.002,
-		'v3.2.5': 3.002005,
 		'v3.6': 3.006,
+		'v3.7': 3.007,
 	};
 
 	allNewTips: NewTipItem[] = [
 		{
-			tipId: MenuID.security,
-			desc: 'notification.menu.connectedHomeSecurity',
-			version: this.tipsVersions['v3.2'],
-		},
-		{
-			tipId: MenuID.support,
-			desc: 'notification.menu.hardwareScan',
-			version: this.tipsVersions['v3.2.5'],
-		},
-		{
 			tipId: MenuID.appSearch,
 			desc: 'notification.menu.appSearch',
 			version: this.tipsVersions['v3.6'],
+		},
+		{
+			tipId: MenuID.smb,
+			desc: 'notification.menu.productivity',
+			version: this.tipsVersions['v3.7'],
 		},
 	];
 
