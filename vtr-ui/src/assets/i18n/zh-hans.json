@@ -29,7 +29,7 @@
 						"OC_On": "超频开启",
 						"performance": "野兽模式",
 						"balance": "均衡模式",
-						"quiet": "节能模式"
+						"quiet": "安静模式"
 					},
 					"thermalMode3Tips": {
 						"CPU_GPU_ON": "CPU&GPU 超频开启",
@@ -130,7 +130,7 @@
 					"ac_dcDesc": "仅在插入交流电源适配器时才能使用野兽模式。",
 					"balanceTitle": "均衡模式",
 					"balanceDesc": "根据系统需求自动调整性能和风扇转速。",
-					"quietTitle": "节能模式",
+					"quietTitle": "安静模式",
 					"quietDesc": "尽可能降低计算机的性能和风扇速度以保持安静，产生较低的功耗。",
 					"OC": {
 						"cpu_gpuOC": "在野兽模式下启用 CPU/GPU 超频。",
@@ -142,7 +142,7 @@
 						"gpuDriverLack": "安装 GPU 驱动程序以使用超频功能。",
 						"goInstall": "去安装"
 					},
-					"autoAdjustDesc": "自动侦测并调优CPU和GPU在游戏下的性能, 该模式可能会增加计算机表面的温度和风扇噪音。",
+					"autoAdjustDesc": "自动侦测并调优CPU和GPU在游戏下的性能，该模式可能会增加计算机表面的温度和风扇噪音。",
 					"autoSwitch": "启动游戏时自动切换到野兽模式并在退出游戏后切换回来。"
 				},
 				"advancedOC": {
