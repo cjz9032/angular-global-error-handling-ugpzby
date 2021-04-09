@@ -248,6 +248,9 @@ export class ExportSnapshotResultsService {
 	private populateTemplate(data: any) {
 		let environmentInfoItemsOrder = [];
 		let modelItemsOrder = [];
+		const fileTitle = this.document.getElementById('title');
+
+		fileTitle.innerHTML = this.translate.transform('snapshot.title');
 
 		modelItemsOrder = ['productName', 'serialNumber', 'biosVersion'];
 		environmentInfoItemsOrder = [
@@ -316,7 +319,12 @@ export class ExportSnapshotResultsService {
 	private populateTemplateModulesListSection(data: any) {
 		let count = 0;
 		const hardwareList = this.document.getElementById('modules_hardware_components');
+		const hardwareListTitle = this.document.getElementById('title_hardware_components');
 		const softwareList = this.document.getElementById('modules_software_components');
+		const softwareListTitle = this.document.getElementById('title_software_components');
+
+		hardwareListTitle.innerHTML = this.translate.transform('snapshot.hardwareListTitle');
+		softwareListTitle.innerHTML = this.translate.transform('snapshot.softwareListTitle');
 
 		for (const item of data.hardwareComponents) {
 			if (item.content.info.Items.length > 0) {
