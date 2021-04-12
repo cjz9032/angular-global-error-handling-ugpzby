@@ -36,13 +36,17 @@
 						[ngClass]="{'col-6': item.detail, 'col-12': !item.detail}"
 						[matTooltip]="item.title"
 						matTooltipClass="vtr-system-tooltip"
-						(mouseenter)="ta.hide()">
+						[matTooltipDisabled]="!item.detail && !item.subtitle"
+						#titleTooltip="matTooltip"
+						(mouseenter)="!titleTooltip.disabled ? ta.hide() : ''">
 						{{item.title}}
 					</span>
 					<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item | detailAndIconClass}}"
 						[matTooltip]="item.detail"
 						matTooltipClass="vtr-system-tooltip"
-						(mouseenter)="ta.hide()">
+						[matTooltipDisabled]="!item.title && !item.subtitle"
+						#detailTooltip="matTooltip"
+						(mouseenter)="!detailTooltip.disabled ? ta.hide() : ''">
 						{{item.detail}}
 					</span>
 					<span *ngIf="item.subtitle" class="subtitle col-auto">
@@ -50,7 +54,9 @@
 							[dir]="'dir' | translate"
 							[matTooltip]="item.subtitle"
 							matTooltipClass="vtr-system-tooltip"
-							(mouseenter)="ta.hide()">
+							[matTooltipDisabled]="!item.title && !item.detail"
+							#subTooltip="matTooltip"
+							(mouseenter)="!subTooltip.disabled ? ta.hide() : ''">
 							{{item.subtitle | characterLimit:20}}
 						</span>
 						<span class="pl-3"
@@ -108,13 +114,17 @@
 							[ngClass]="{'col-6': item.detail, 'col-12': !item.detail}"
 							[matTooltip]="item.title"
 							matTooltipClass="vtr-system-tooltip"
-							(mouseenter)="ta.hide()">
+							[matTooltipDisabled]="!item.detail && !item.subtitle"
+							#titleTooltip="matTooltip"
+							(mouseenter)="!titleTooltip.disabled ? ta.hide() : ''">
 							{{item.title}}
 						</span>
 						<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item | detailAndIconClass}}"
 							[matTooltip]="item.detail"
 							matTooltipClass="vtr-system-tooltip"
-							(mouseenter)="ta.hide()">
+							[matTooltipDisabled]="!item.title && !item.subtitle"
+							#detailTooltip="matTooltip"
+							(mouseenter)="!detailTooltip.disabled ? ta.hide() : ''">
 							{{item.detail}}
 						</span>
 						<span *ngIf="item.subtitle" class="subtitle col-auto">
@@ -122,7 +132,9 @@
 								[dir]="'dir' | translate"
 								[matTooltip]="item.subtitle"
 								matTooltipClass="vtr-system-tooltip"
-								(mouseenter)="ta.hide()">
+								[matTooltipDisabled]="!item.title && !item.detail"
+								#subTooltip="matTooltip"
+								(mouseenter)="!subTooltip.disabled ? ta.hide() : ''">
 								{{item.subtitle | characterLimit:20}}
 							</span>
 							<span class="pl-3"
@@ -181,13 +193,17 @@
 							[ngClass]="{'col-6': item.detail, 'col-12': !item.detail}"
 							[matTooltip]="item.title"
 							matTooltipClass="vtr-system-tooltip"
-							(mouseenter)="ta.hide()">
+							[matTooltipDisabled]="!item.detail && !item.subtitle"
+							#titleTooltip="matTooltip"
+							(mouseenter)="!titleTooltip.disabled ? ta.hide() : ''">
 							{{item.title}}
 						</span>
 						<span *ngIf="item.detail" class="detail word-break-all text-right col-6 pr-0 {{item | detailAndIconClass}}"
 							[matTooltip]="item.detail"
 							matTooltipClass="vtr-system-tooltip"
-							(mouseenter)="ta.hide()">
+							[matTooltipDisabled]="!item.title && !item.subtitle"
+							#detailTooltip="matTooltip"
+							(mouseenter)="!detailTooltip.disabled ? ta.hide() : ''">
 							{{item.detail}}
 						</span>
 						<span *ngIf="item.subtitle" class="subtitle col-auto">
@@ -195,7 +211,9 @@
 								[dir]="'dir' | translate"
 								[matTooltip]="item.subtitle"
 								matTooltipClass="vtr-system-tooltip"
-								(mouseenter)="ta.hide()">
+								[matTooltipDisabled]="!item.title && !item.detail"
+								#subTooltip="matTooltip"
+								(mouseenter)="!subTooltip.disabled ? ta.hide() : ''">
 								{{item.subtitle | characterLimit:20}}
 							</span>
 							<span class="pl-3"
