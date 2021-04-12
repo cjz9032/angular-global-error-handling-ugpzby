@@ -55,3 +55,24 @@
 		</div>
 	</right-content>
 </vtr-page-layout>
+
+<!-- For PA test UI use, it will remove before rc1 -->
+<div style="position:fixed; top: 6.5rem; right: 3.2rem; width: 16rem; z-index: 9999999999;
+	background: rgba(255,255,255,.9); padding: 1.6rem; border-radius: 0.6rem;"
+	*ngIf="smartPerformanceService.scanningState === ScanningState.Completed && smartPerformanceService.subscriptionState !== SubscriptionState.Active">
+	<div class="mb-2"
+		style="font-size: 1.4rem;">For PA test UI use</div>
+	<div class="d-flex justify-content-between">
+		<div class="btn btn-outline-dark py-0"
+			style="font-size: 1.8rem;"
+			(click)="rating = rating - 1 < 0 ? 0 : rating - 1;leftAnimator = rating*10 + '%'">-</div>
+		<input type="text"
+			class="w-100 text-center mx-2"
+			style="height: 3rem; font-size: 1.6rem; padding: 0 1rem;"
+			[(ngModel)]="rating"
+			(keyup)="rating=rating>10?10:rating>=0?rating:0;leftAnimator = rating*10 + '%'" />
+		<div class="btn btn-outline-dark py-0"
+			style="font-size: 1.8rem;"
+			(click)="rating = rating + 1 > 10 ? 10 : rating + 1;leftAnimator = rating*10 + '%'">+</div>
+	</div>
+</div>
