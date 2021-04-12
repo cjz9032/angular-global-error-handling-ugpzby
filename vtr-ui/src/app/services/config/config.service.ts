@@ -24,6 +24,7 @@ import { NewFeatureTipService } from '../new-feature-tip/new-feature-tip.service
 import { LocalCacheService } from '../local-cache/local-cache.service';
 import { HardwareScanService } from 'src/app/modules/hardware-scan/services/hardware-scan.service';
 import { AppSearchService } from '../app-search/app-search.service';
+import { TestService } from '../test/test.service';
 
 export interface MenuItem {
 	id: string;
@@ -87,7 +88,8 @@ export class ConfigService {
 		private localCacheService: LocalCacheService,
 		private commonService: CommonService,
 		private hardwareScanService: HardwareScanService,
-		private appSearchService: AppSearchService
+		private appSearchService: AppSearchService,
+		private testService: TestService // for PA test, need to remove after PA test complete
 	) {
 		this.securityAdvisor = this.vantageShellService.getSecurityAdvisor();
 		if (this.securityAdvisor) {
@@ -218,14 +220,14 @@ export class ConfigService {
 	}
 
 	private updateMenuForDeviceSetting(menu: MenuItem[]) {
-		const hideMenu = ['power', 'audio', 'display-camera', 'input-accessories'];
-		const visibleMenu = ['device-settings'];
-		const deviceMenu = menu.find((item) => item.id === 'device');
+		const hideMenu = [MenuID.power, MenuID.audio, MenuID.displayCamera, MenuID.inputAccessories];
+		const visibleMenu = [MenuID.deviceSettings];
+		const deviceMenu = menu.find((item) => item.id === MenuID.device);
 		if (!(deviceMenu?.subitems?.length >= 1)) {
 			return;
 		}
 		const deviceSettingsMenu = deviceMenu.subitems.find(
-			(item) => item.id === 'device-settings'
+			(item) => item.id === MenuID.deviceSettings
 		);
 		if (!(deviceSettingsMenu?.subitems?.length >= 1)) {
 			return;
@@ -246,7 +248,7 @@ export class ConfigService {
 
 	private async initializeAppSearchItem(menu: any) {
 		const showSearch = await this.canShowSearch();
-		return this.supportFilter(menu, 'app-search', showSearch);
+		return this.supportFilter(menu, MenuID.appSearch, showSearch);
 	}
 
 	private async initializeContentLibrary(menu: any) {
@@ -274,8 +276,8 @@ export class ConfigService {
 			!machineInfo.isGaming;
 		this.showCHS = this.chsAvailability && this.activeSegment !== SegmentConst.Commercial;
 
-		this.supportFilter(menu, 'connected-home-security', this.showCHS);
-		this.updateAvailability(menu, 'connected-home-security', this.chsAvailability);
+		this.supportFilter(menu, MenuID.connectedHomeSecurity, this.showCHS);
+		this.updateAvailability(menu, MenuID.connectedHomeSecurity, this.chsAvailability);
 
 		return menu;
 	}
@@ -293,10 +295,10 @@ export class ConfigService {
 	}
 
 	initializeSecurityItem(region: string, items: MenuItem[]) {
-		this.supportFilter(items, 'security', true);
-		this.supportFilter(items, 'anti-virus', true);
-		this.supportFilter(items, 'password-protection', region.toLowerCase() !== 'cn');
-		this.supportFilter(items, 'internet-protection', region.toLowerCase() !== 'cn');
+		this.supportFilter(items, MenuID.security, true);
+		this.supportFilter(items, MenuID.antiVirus, true);
+		this.supportFilter(items, MenuID.passwordProtection, region.toLowerCase() !== 'cn');
+		this.supportFilter(items, MenuID.internetProtection, region.toLowerCase() !== 'cn');
 		this.initializeWiFiItem(items);
 	}
 
@@ -317,7 +319,7 @@ export class ConfigService {
 	}
 
 	updateWifiMenu(menu: MenuItem[], wifiIsSupport: boolean) {
-		const wifiMenu = menu.find((item) => item.id === 'wifi-security');
+		const wifiMenu = menu.find((item) => item.id === MenuID.wifiSecurity);
 		if (wifiMenu) {
 			wifiMenu.hide =
 				!wifiIsSupport ||
@@ -335,7 +337,7 @@ export class ConfigService {
 	}
 
 	private updateSecurityMenuHide(menu: MenuItem[], securityMenuCondition: SecurityMenuCondition) {
-		const securityMenu = menu.find((item) => item.id === 'security');
+		const securityMenu = menu.find((item) => item.id === MenuID.security);
 		if (!securityMenu) {
 			return;
 		}
@@ -444,7 +446,7 @@ export class ConfigService {
 
 	private async showSmartAssist(): Promise<any> {
 		this.logger.info('MenuMainComponent.showSmartAssist: inside');
-		const myDeviceItem = this.menu.find((item) => item.id === 'device');
+		const myDeviceItem = this.menu.find((item) => item.id === MenuID.device);
 		if (myDeviceItem !== undefined) {
 			// if cache has value true for IsSmartAssistSupported, add menu item
 			const smartAssistCacheValue = this.localCacheService.getLocalCacheValue(
@@ -599,7 +601,7 @@ export class ConfigService {
 	private addSmartAssistMenu(items) {
 		if (Array.isArray(items)) {
 			items.forEach((item) => {
-				if (item.id === 'smart-assist') {
+				if (item.id === MenuID.smartAssist) {
 					item.hide = false;
 				}
 				if (Array.isArray(item.subitems) && item.subitems.length > 0) {
@@ -612,7 +614,7 @@ export class ConfigService {
 	private removeSmartAssistMenu(items) {
 		if (Array.isArray(items)) {
 			items.forEach((item) => {
-				if (item.id === 'smart-assist') {
+				if (item.id === MenuID.smartAssist) {
 					item.hide = true;
 				}
 				if (Array.isArray(item.subitems) && item.subitems.length > 0) {
@@ -640,7 +642,7 @@ export class ConfigService {
 		} else {
 			this.activeSegment = segment;
 			this.showCHS = this.chsAvailability && this.activeSegment !== SegmentConst.Commercial;
-			this.supportFilter(this.menu, 'connected-home-security', this.showCHS);
+			this.supportFilter(this.menu, MenuID.connectedHomeSecurity, this.showCHS);
 			this.initializeSecurityItem(this.country, this.menu);
 			this.betaFeature.forEach((featureId) => {
 				this.supportFilter(this.menu, featureId, true);
@@ -655,7 +657,7 @@ export class ConfigService {
 
 		this.isSmartPerformanceAvailable =
 			this.vantageShellService.isShellAvailable && (await this.showSmartPerformance());
-		this.updateAvailability(menu, 'smart-performance', this.isSmartPerformanceAvailable);
+		this.updateAvailability(menu, MenuID.smartPerformance, this.isSmartPerformanceAvailable);
 
 		this.updateBetaService(menu);
 	}
@@ -740,7 +742,7 @@ export class ConfigService {
 				!this.deviceService.isSMode &&
 				!this.deviceService.isGaming
 		);
-		this.supportFilter(this.menu, 'system-updates', showSystemUpdate);
+		this.supportFilter(this.menu, MenuID.systemUpdates, showSystemUpdate);
 	}
 
 	showNewFeatureTipsWithMenuItems() {
@@ -776,10 +778,8 @@ export class ConfigService {
 						Array.isArray(this.menu)
 					) {
 						const idArr = [
-							'security',
-							'connected-home-security',
-							'hardware-scan',
-							'app-search',
+							MenuID.appSearch.toString(),
+							MenuID.smb.toString(),
 						];
 						const isIncludesItem = this.menu.find((item) => idArr.includes(item.id));
 						if (isIncludesItem) {
