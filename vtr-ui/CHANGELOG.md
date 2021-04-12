@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.17](https://bitbucket.tc.lenovo.com///compare/v1.11.16...v1.11.17) (2021-04-12)
+
+
+### Features
+
+* make Browserslist config be a package ([d30ea68](https://bitbucket.tc.lenovo.com///commit/d30ea688488794cf70bd4c7e337a1856b8aca6dc))
+
+
+### Bug Fixes
+
+* add browserslist package to devDependencies ([9bcf335](https://bitbucket.tc.lenovo.com///commit/9bcf3355a15a27460c7d316d003df84a482b89c5))
+* add isShellAvailable to avoid browser error ([2980132](https://bitbucket.tc.lenovo.com///commit/2980132a4d0312763f4951372aab621b062ff014))
+
 ### [1.11.16](https://bitbucket.tc.lenovo.com///compare/v1.11.15...v1.11.16) (2021-04-09)
 
 ### [1.11.15](https://bitbucket.tc.lenovo.com///compare/v1.11.14...v1.11.15) (2021-04-08)
