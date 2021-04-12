@@ -2904,7 +2904,7 @@
 			"scanRates": "A nossa análise classifica o seu PC em: ",
 			"summary": "Descrição",
 			"foundIssues": "A nossa análise encontrou {{issueCount}} problema(s)",
-			"summaryDetails": "Inscreva-se agora para resolver estes problemas e manter o sistema a funcionar sem problemas. O nosso software pode analisar proativamente estas áreas do seu sistema PC 24 horas por dia para localizar e corrigir os problemas à medida que estes surgem, para o seu PC ter sempre um desempenho de topo.",
+			"summaryDetailsOptimize": "Inscreva-se agora para resolver estes problemas e manter o sistema a funcionar sem problemas. O nosso software pode analisar proativamente estas áreas do seu sistema PC 24 horas por dia para localizar e corrigir os problemas à medida que estes surgem, para o seu PC ter sempre um desempenho de topo.",
 			"expiredSummaryDetails": "A sua subscrição expirou e atualmente só pode utilizar a funcionalidade de análise no Smart Performance. Se pretende retomar a funcionalidade “Analisar e Corrigir”, prima o botão “renovar e corrigir” abaixo para renova a sua subscrição.",
 			"signupRepairButton": "INSCREVER-SE E REPARAR AGORA",
 			"renewAndFix": "Renovar e Corrigir",

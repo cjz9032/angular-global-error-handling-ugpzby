@@ -2904,7 +2904,7 @@
 			"scanRates": "Tarkistuksemme pohjalta tehty arvio tietokoneestasi: ",
 			"summary": "Yhteenveto",
 			"foundIssues": "Tarkistus löysi {{issueCount}} ongelmaa",
-			"summaryDetails": "Rekisteröidy nyt, niin voit korjata nämä ongelmat ja pitää järjestelmän toimintakunnossa. Ohjelmistomme tarkistaa nämä järjestelmäsi alueet ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
+			"summaryDetailsOptimize": "Rekisteröidy nyt, niin voit korjata nämä ongelmat ja pitää järjestelmän toimintakunnossa. Ohjelmistomme tarkistaa nämä järjestelmäsi alueet ympäri vuorokauden ennakoivasti niin, että ongelmat löydetään ja korjataan heti niiden ilmetessä. Näin tietokoneesi suorituskyky on aina parhaimmillaan.",
 			"expiredSummaryDetails": "Tilauksesi on vanhentunut ja voit käyttää tällä hetkellä vain Smart Performancen tarkastustoimintoa. Jos haluat jatkaa \"Tarkasta ja korjaa\" -toiminnon käyttöä, paina alla olevaa \"Uusi tilaus ja korjaa\" -painiketta uusiaksesi tilauksesi.",
 			"signupRepairButton": "REKISTERÖIDY JA KORJAA NYT",
 			"renewAndFix": "Uusi tilaus ja korjaa",

@@ -630,6 +630,17 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		setTimeout(() => { document.getElementById('smart-performance-scan-summary-scan-result-1').focus(); }, 0);
 	}
 
+	getScanSummarySubTitle() {
+		if (this.rating >= 8) {
+			return this.translate.instant('smartPerformance.scanCompletePage.summaryDetailsMaintain');
+		}
+		else if (this.rating >= 5 && this.rating < 8) {
+			return this.translate.instant('smartPerformance.scanCompletePage.summaryDetailsOptimize');
+		}
+		else {
+			return this.translate.instant('smartPerformance.scanCompletePage.summaryDetailsFixNow');
+		}
+	}
 
 	getExpiredHeaderTitle() {
 		if (this.smartPerformanceService.scanningState === ScanningState.Completed) {
@@ -644,9 +655,9 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		}
 	}
 
-	getExipredSubTitle() {
+	getExpiredSubTitle() {
 		if (this.smartPerformanceService.scanningState === ScanningState.Completed) {
-			return this.translate.instant('smartPerformance.scanCompletePage.summaryDetails');
+			return this.getScanSummarySubTitle();
 		}
 		else {
 			return this.translate.instant('smartPerformance.performanceandSecurityCheckSubTitle');

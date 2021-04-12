@@ -2904,7 +2904,7 @@
 			"scanRates": "Enligt vår genomsökning är din dator: ",
 			"summary": "Översikt",
 			"foundIssues": "{{issueCount}} problem påträffades",
-			"summaryDetails": "Registrera dig nu för att åtgärda problemen och se till att datorn fungerar smidigt. Vår programvara kan proaktivt genomsöka dessa områden på din dator dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid körs med bästa möjliga prestanda.",
+			"summaryDetailsOptimize": "Registrera dig nu för att åtgärda problemen och se till att datorn fungerar smidigt. Vår programvara kan proaktivt genomsöka dessa områden på din dator dygnet runt för att hitta och åtgärda problem när de uppstår så att datorn alltid körs med bästa möjliga prestanda.",
 			"expiredSummaryDetails": "Din prenumerationen har gått ut och du kan för närvarande endast använda genomsökningsfunktionen i Smart Performance. Om du vill återuppta funktionen Genomsök och åtgärda klickar du på Förnya och åtgärda nedan för att förnya prenumerationen.",
 			"signupRepairButton": "REGISTRERA DIG OCH REPARERA NU",
 			"renewAndFix": "Förnya och åtgärda",

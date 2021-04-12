@@ -2904,7 +2904,7 @@
 			"scanRates": "Scanarea noastră evaluează PC-ul dumneavoastră ca: ",
 			"summary": "Rezumat",
 			"foundIssues": "Scanarea noastră a găsită {{issueCount}} probleme",
-			"summaryDetails": "Înregistrați-vă acum pentru a remedia aceste probleme și pentru ca sistemul dumneavoastră să funcționeze corespunzător. Software-ul nostru poate scana în mod proactiv aceste zone ale sistemului dumneavoastră, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
+			"summaryDetailsOptimize": "Înregistrați-vă acum pentru a remedia aceste probleme și pentru ca sistemul dumneavoastră să funcționeze corespunzător. Software-ul nostru poate scana în mod proactiv aceste zone ale sistemului dumneavoastră, non-stop și poate remedia erorile pe măsură ce apar, astfel încât PC-ul dumneavoastră să aibă întotdeauna performanțe excelente.",
 			"expiredSummaryDetails": "Abonamentul dumneavoastră a expirat și, în prezent, puteți utiliza numai funcția de scanare din Smart Performance. Dacă doriți să reluați caracteristica „Scanare și remediere”, apăsați butonul „Reînnoire și remediere” din partea de jos pentru a reînnoi abonamentul.",
 			"signupRepairButton": "ÎNREGISTRAȚI-VĂ ȘI REMEDIAȚI ACUM",
 			"renewAndFix": "Reînnoire și remediere",

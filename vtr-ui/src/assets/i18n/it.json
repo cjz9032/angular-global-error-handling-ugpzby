@@ -2904,7 +2904,7 @@
 			"scanRates": "Risultati della scansione del tuo PC: ",
 			"summary": "Riepilogo",
 			"foundIssues": "La scansione ha rilevato {{issueCount}} problemi",
-			"summaryDetails": "Registrati ora per risolvere questi problemi e assicurare le massime prestazioni del sistema. Il nostro software può eseguire la scansione di queste aree del sistema 24x7 per individuare e risolvere i problemi, in modo che il PC assicuri sempre prestazioni di massimo livello.",
+			"summaryDetailsOptimize": "Registrati ora per risolvere questi problemi e assicurare le massime prestazioni del sistema. Il nostro software può eseguire la scansione di queste aree del sistema 24x7 per individuare e risolvere i problemi, in modo che il PC assicuri sempre prestazioni di massimo livello.",
 			"expiredSummaryDetails": "La registrazione è scaduta e attualmente può utilizzare solo la funzione di scansione in Smart Performance; se si desidera riprendere la funzione \"Scansiona e correggi\", premere il pulsante \"Rinnova e correggi\" in basso per rinnovare la registrazione.",
 			"signupRepairButton": "REGISTRATI E RIPARA ORA",
 			"renewAndFix": "Rinnova e correggi",

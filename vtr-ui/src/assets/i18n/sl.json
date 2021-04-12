@@ -2904,7 +2904,7 @@
 			"scanRates": "Naš pregled je vaš računalnik ocenil z: ",
 			"summary": "Povzetek",
 			"foundIssues": "Pregled je odkril toliko težav: {{issueCount}}",
-			"summaryDetails": "Če želite odpraviti te težave in si zagotoviti optimalno delovanje sistema, se registrirajte. Naša programska oprema lahko 24 ur dnevno vse dni v tednu pregleduje ta področja sistema in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
+			"summaryDetailsOptimize": "Če želite odpraviti te težave in si zagotoviti optimalno delovanje sistema, se registrirajte. Naša programska oprema lahko 24 ur dnevno vse dni v tednu pregleduje ta področja sistema in sproti odpravi težave, ko se pojavijo, tako bo vaš računalnik vedno deloval z vrhunsko učinkovitostjo delovanja.",
 			"expiredSummaryDetails": "Vaša naročnina je potekla, zato trenutno lahko uporabljate samo funkcijo za pregledovanje v storitvi Smart Performance. Če želite obnoviti funkcijo »Preglej in popravi«, pritisnite spodnji gumb »Obnovi in popravi«, da obnovite naročnino.",
 			"signupRepairButton": "REGISTRIRAJTE SE IN POPRAVITE ZDAJ",
 			"renewAndFix": "Obnovi in popravi",

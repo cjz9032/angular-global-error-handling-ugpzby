@@ -2904,7 +2904,7 @@
 			"scanRates": "Vårt skann rangerer PC-en din som: ",
 			"summary": "Sammendrag",
 			"foundIssues": "Skanningen fant {{issueCount}} problem(er)",
-			"summaryDetails": "Registrer deg nå for å løse disse problemene og sørge for at systemet ditt kjører problemfritt. Programvaren vår kan proaktivt skanne disse områdene i systemet ditt døgnet rundt for å finne og løse problemer etter hvert som de oppstår, slik at PC-en alltid har topp ytelse.",
+			"summaryDetailsOptimize": "Registrer deg nå for å løse disse problemene og sørge for at systemet ditt kjører problemfritt. Programvaren vår kan proaktivt skanne disse områdene i systemet ditt døgnet rundt for å finne og løse problemer etter hvert som de oppstår, slik at PC-en alltid har topp ytelse.",
 			"expiredSummaryDetails": "Abonnementet ditt er utløpt og kan for øyeblikket bare bruke skannfunksjonen i Smart Performance. Hvis du vil gjenoppta funksjonen \"Skann og reparer\", trykker du på knappen \"forny og reparer\" nedenfor for å fornye abonnementet.",
 			"signupRepairButton": "REGISTRER OG REPARER NÅ",
 			"renewAndFix": "Forny og reparer",

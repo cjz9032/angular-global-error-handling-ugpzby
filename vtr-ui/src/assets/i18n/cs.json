@@ -2904,7 +2904,7 @@
 			"scanRates": "Naše kontrola váš počítač vyhodnotila takto: ",
 			"summary": "Souhrn",
 			"foundIssues": "Během naší kontroly jsme našli následující počet problémů: {{issueCount}}",
-			"summaryDetails": "Pokud budete chtít tyto problémy odstranit a zajistit tak hladký chod systému, můžete se zaregistrovat. Náš software dokáže aktivně a nepřetržitě kontrolovat tyto oblasti ve vašem systému, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
+			"summaryDetailsOptimize": "Pokud budete chtít tyto problémy odstranit a zajistit tak hladký chod systému, můžete se zaregistrovat. Náš software dokáže aktivně a nepřetržitě kontrolovat tyto oblasti ve vašem systému, vyhledávat a odstraňovat případné problémy a zajistit, že váš počítač bude mít vždy špičkový výkon.",
 			"expiredSummaryDetails": "Platnost vašeho předplatného vypršela a v současné době můžete použít jen funkci kontroly v nástroji Smart Performance. Pokud chcete obnovit funkci „Zkontrolovat a opravit“, obnovte si předplatné stisknutím tlačítka „Obnovit a opravit“ níže.",
 			"signupRepairButton": "ZAREGISTROVAT A OPRAVIT",
 			"renewAndFix": "Obnovit a opravit",

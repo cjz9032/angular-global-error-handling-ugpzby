@@ -2904,7 +2904,7 @@
 			"scanRates": "Vores scanning vurderer din computer til: ",
 			"summary": "Opsummering",
 			"foundIssues": "Vores scanning fandt {{issueCount}} problem(er)",
-			"summaryDetails": "Tilmeld dig nu for at løse problemerne og sørge for, at systemet fungerer problemfrit. Vores software kan proaktivt scanne disse områder i dit system døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
+			"summaryDetailsOptimize": "Tilmeld dig nu for at løse problemerne og sørge for, at systemet fungerer problemfrit. Vores software kan proaktivt scanne disse områder i dit system døgnet rundt for at finde og løse problemer, når de opstår, så computeren altid har en ydeevne, der er helt i top.",
 			"expiredSummaryDetails": "Dit abonnement er udløbet, og du kan i øjeblikket kun bruge scanningsfunktionen i Smart Performance. Hvis du vil aktivere funktionen \"Scan og ret\" igen, skal du trykke på knappen \"Forny og ret\" nedenfor for at forny dit abonnement.",
 			"signupRepairButton": "TILMELD OG REPARER NU",
 			"renewAndFix": "Forny og ret",

@@ -3014,7 +3014,7 @@
 			"scanRates": "Unser Scan stuft Ihren PC ein als: ",
 			"summary": "Zusammenfassung",
 			"foundIssues": "Der Scan hat {{issueCount}} Probleme gefunden",
-			"summaryDetails": "Registrieren Sie sich jetzt, damit diese Probleme behoben werden und Ihr System reibungslos läuft. Mit unserer Software können diese Bereiche auf Ihrem System rund um die Uhr proaktiv gescannt und Probleme rasch gefunden und behoben werden, sodass Ihr PC immer eine erstklassige Leistung bietet.",
+			"summaryDetailsOptimize": "Registrieren Sie sich jetzt, damit diese Probleme behoben werden und Ihr System reibungslos läuft. Mit unserer Software können diese Bereiche auf Ihrem System rund um die Uhr proaktiv gescannt und Probleme rasch gefunden und behoben werden, sodass Ihr PC immer eine erstklassige Leistung bietet.",
 			"expiredSummaryDetails": "Ihr Abonnement ist abgelaufen und Sie können die Scan-Funktion derzeit nur in Smart Performance verwenden. Wenn Sie die Funktion \"Scannen und reparieren\" verwenden möchten, klicken Sie auf die unten angezeigte Schaltfläche \"Erneuern und reparieren\", um Ihr Abonnement zu erneuern.",
 			"signupRepairButton": "JETZT REGISTRIEREN UND REPARIEREN",
 			"renewAndFix": "Erneuern und reparieren",
