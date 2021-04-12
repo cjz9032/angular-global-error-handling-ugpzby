@@ -801,7 +801,7 @@
 				"sub6": "Device Settings Details",
 				"sub7": "Device Settings"
 			},
-			"smb":{
+			"smb": {
 				"title": "Productivity",
 				"sub1": "Meeting Experience",
 				"sub2": "Creator Centre",
@@ -1370,9 +1370,9 @@
 							}
 						},
 						"gpuOverclocking": {
-							"checkboxtext":"Enable GPU overclocking in Extreme performance mode.",
-							"description1":"Select to overclock your GPU memory clock by 140 MHz, a deemed “stable” sweet spot. The gaming performance and frame rate may increase by 10%-30%.",
-							"description2":"Note: The improvements in performance and frame rate may vary according to different games/apps and other factors. The power consumption, computer surface temperature, and fan noise might also increase accordingly. Lenovo does not guarantee the stability and performance improvement when overclocking is enabled."
+							"checkboxtext": "Enable GPU overclocking in Extreme performance mode.",
+							"description1": "Select to overclock your GPU memory clock by 140 MHz, a deemed “stable” sweet spot. The gaming performance and frame rate may increase by 10%-30%.",
+							"description2": "Note: The improvements in performance and frame rate may vary according to different games/apps and other factors. The power consumption, computer surface temperature, and fan noise might also increase accordingly. Lenovo does not guarantee the stability and performance improvement when overclocking is enabled."
 						},
 						"autoTransition": {
 							"description": {
@@ -2761,11 +2761,11 @@
 			"manageSubscriptionBeta": "ENABLE FULL FEATURE",
 			"descriptionbeta": "Lenovo is offering pilot program to try Smart Performance feature till July 2020.",
 			"descriptionbeta1": "You are welcomed to join and try the full feature.",
-			"expireInNextMonth":"Your subscription will expire in next month",
+			"expireInNextMonth": "Your subscription will expire in next month",
 			"expireInNextXWeeks": "Your subscription will expire in next {{weeks}} weeks",
-			"expireInNextWeek":"Your subscription will expire in next week",
-			"expireInNextXDays":"Your subscription will expire in {{days}} days",
-			"expireInToday":"Your subscription will expire in today"
+			"expireInNextWeek": "Your subscription will expire in next week",
+			"expireInNextXDays": "Your subscription will expire in {{days}} days",
+			"expireInToday": "Your subscription will expire in today"
 		},
 		"scanSettings": {
 			"title": "Schedule scan settings",
@@ -5791,7 +5791,12 @@
 				},
 				"acAdapter": {
 					"featureName": "AC adapter",
-					"highRelevantKeywords": ["AC", "Adapter", "power", "battery"]
+					"highRelevantKeywords": [
+						"AC",
+						"Adapter",
+						"power",
+						"battery"
+					]
 				},
 				"smartStandby": {
 					"featureName": "Smart standby",
@@ -5807,7 +5812,15 @@
 				},
 				"airplanePowerMode": {
 					"featureName": "Air plane power mode",
-					"highRelevantKeywords": ["Air",  "network", "Power", "power setting", "mode", "Flight", "Travel"]
+					"highRelevantKeywords": [
+						"Air",
+						"network",
+						"Power",
+						"power setting",
+						"mode",
+						"Flight",
+						"Travel"
+					]
 				},
 				"batteryChargeThreshold": {
 					"featureName": "Battery charge threshold",
@@ -5819,7 +5832,14 @@
 				},
 				"batteryGaugeReset": {
 					"featureName": "Battery gauge reset",
-					"highRelevantKeywords": ["Battery settings", "conservation mode", "increase battery lifespan", "gauge", "power", "battery"]
+					"highRelevantKeywords": [
+						"Battery settings",
+						"conservation mode",
+						"increase battery lifespan",
+						"gauge",
+						"power",
+						"battery"
+					]
 				},
 				"intelligentCooling": {
 					"featureName": "Intelligent cooling",
@@ -5835,23 +5855,50 @@
 				},
 				"energyStar": {
 					"featureName": "Energy star",
-					"highRelevantKeywords": ["certification", "energy", "star", "power"]
+					"highRelevantKeywords": [
+						"certification",
+						"energy",
+						"star",
+						"power"
+					]
 				},
 				"extraPowerModeSetting": {
 					"featureName": "Performance & Cool & Quiet mode",
-					"highRelevantKeywords": ["Power settings", "Quiet", "Mode", "performance"]
+					"highRelevantKeywords": [
+						"Power settings",
+						"Quiet",
+						"Mode",
+						"performance"
+					]
 				},
 				"conservationMode": {
 					"featureName": "Conservation mode",
-					"highRelevantKeywords": ["Power", "setting", "battery", "energy", "charge"]
+					"highRelevantKeywords": [
+						"Power",
+						"setting",
+						"battery",
+						"energy",
+						"charge"
+					]
 				},
 				"desktopPowerPlanManagement": {
 					"featureName": "Desktop power plan management",
-					"highRelevantKeywords": ["Desktop", "power", "setting", "energy"]
+					"highRelevantKeywords": [
+						"Desktop",
+						"power",
+						"setting",
+						"energy"
+					]
 				},
 				"smartFliptoBoot": {
 					"featureName": "Smart flip to boot",
-					"highRelevantKeywords": ["resume", "hibernate", "Smart", "Boot", "start"]
+					"highRelevantKeywords": [
+						"resume",
+						"hibernate",
+						"Smart",
+						"Boot",
+						"start"
+					]
 				},
 				"dynamicThermalControl": {
 					"featureName": "Dynamic thermal control solution",
@@ -5921,7 +5968,12 @@
 				},
 				"oLEDPowerSettings": {
 					"featureName": "OLED power settings",
-					"highRelevantKeywords": ["Camera", "Display", "OLED", "setting"]
+					"highRelevantKeywords": [
+						"Camera",
+						"Display",
+						"OLED",
+						"setting"
+					]
 				}
 			},
 			"audio": {
@@ -6259,10 +6311,10 @@
 	"smb": {
 		"meetingExperience": {
 			"meetingManager": {
-				"title":"Meeting manager",
+				"title": "Meeting manager",
 				"desc": "This section enables you to automatically optimize or manually configure your AI meeting settings.",
-				"aiMeetingManager":{
-					"title":"AI meeting manager",
+				"aiMeetingManager": {
+					"title": "AI meeting manager",
 					"description": "AI meeting manager provides real-time translation, interpretation, voice dictation and note editor. It can also generate subtitles for videos.",
 					"download": "DOWNLOAD",
 					"launch": "LAUNCH",
@@ -6303,10 +6355,10 @@
 						"closeText": "close"
 					}
 				},
-				"microPhone":{
-					"title":"Microphone for meetings"
+				"microPhone": {
+					"title": "Microphone for meetings"
 				},
-				"smartAppearance":{
+				"smartAppearance": {
 					"title": "Smart appearance application",
 					"launch": "Launch",
 					"download": "Download",
@@ -6334,16 +6386,20 @@
 			},
 			"easyRendering": {
 				"title": "Easy rendering"
-
 			},
 			"colorCalibration": {
 				"title": "Color calibration",
-				"appName" : "X-rite application",
-				"summary": "The display panel of your computer is calibrated on the factory line with premium professional caliber Minolta colorimeters. Calibration data is stored in the cloud and can be downloaded to reset the panel to factory settings. X-Rite is pre-installed to manage color spaces.​<br>- Default (native Gamut, native brightness but calibrated gray ramp and display characterization stored in profile). <br>- Default profile is installed by default on the machine. This profile is loaded by Windows on startup. <br>- Not Calibrated (Color management off. This means using the default Lenovo Profile.) <br>- sRGB (computer monitors) - Adobe RGB (for graphic designers planning to print in CYMK) <br>- BT.709 (HD video) <br>- DCI P3 (commonly used in digital movie projection in the US)",
-				"screenshotTitle":"Screenshots",
-				"cardTitle":"How to restore profiles?",
-				"cardSummary":"If you reinstall your system or color profiles are lost, you can restore profiles from here:",
-				"learnMore":"Learn more",
+				"appName": "X-rite color assistant",
+				"descSection1": "As a professional, a high level of color accuracy is critical and essential to your creative work. Lenovo provides a color calibration solution for your computer display to make sure you get the best color performance out of the box. A customized default color profile is created for your computer using professional calibration device, which ensures the images displayed from the camera onto the computer display are accurate and without color distortion.",
+				"descSection2": "With preinstalled X-rite color assistant, you can switch the color profile as desired:",
+				"profile1": "Default (native Gamut, native brightness but calibrated gray ramp and display characterization stored in profile). This profile is stored on the computer and automatically loaded by Windows. ",
+				"profile2": "Not Calibrated (color management off)",
+				"profile3": "sRGB (standard Red Green Blue for computer monitors)",
+				"profile4": "Rec. 709 (for selected models only, optimized for HD videos)",
+				"screenshotTitle": "Screenshots",
+				"cardTitle": "How to restore color profiles?",
+				"cardSummary": "If you reinstall your system or color profiles are lost, you can restore profiles from here:",
+				"learnMore": "Learn more",
 				"restoreProfileDesc": "Lenovo provides backup color profiles in Lenovo Cloud. To ensure the color calibration feature works on your computer, you might need to restore or install color profiles in the following situations: If the color profiles are lost or damaged, a window will be displayed to remind you to restore the color profiles. Click Yes in the prompted window, and the color profiles will be restored from Lenovo Cloud automatically. If your computer display is replaced by Lenovo authorized service provider, do the following:",
 				"restoreProfileStep1": "Click the triangular icon in the Windows notification area to show hidden icons. Then, click the icon of X-rite app to open it.​",
 				"restoreProfileStep2": "Click Settings > Restore profiles."
