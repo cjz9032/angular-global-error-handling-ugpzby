@@ -3014,7 +3014,7 @@
 			"scanRates": "Nossa verificação classifica seu PC em: ",
 			"summary": "Resumo",
 			"foundIssues": "Nossa varredura encontrou {{issueCount}} problema(s)",
-			"summaryDetails": "Inscreva-se agora para corrigir esses problemas e manter seu sistema funcionando sem problemas. Nosso software pode verificar proativamente essas áreas do seu sistema 24x7 para encontrar e corrigir problemas à medida que surgem, para que seu PC sempre tenha um desempenho de alto nível.",
+			"summaryDetailsOptimize": "Inscreva-se agora para corrigir esses problemas e manter seu sistema funcionando sem problemas. Nosso software pode verificar proativamente essas áreas do seu sistema 24x7 para encontrar e corrigir problemas à medida que surgem, para que seu PC sempre tenha um desempenho de alto nível.",
 			"expiredSummaryDetails": "Sua assinatura expirou e atualmente só pode usar o recurso de verificação no Smart Performance, se você quiser retomar o recurso \"Verificar e corrigir\", pressione o botão \"renovar e corrigir\" abaixo para renovar sua assinatura.",
 			"signupRepairButton": "INSCREVA-SE E REPARE AGORA",
 			"renewAndFix": "Renovar e corrigir",

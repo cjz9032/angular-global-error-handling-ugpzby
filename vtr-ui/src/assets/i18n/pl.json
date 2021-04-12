@@ -2904,7 +2904,7 @@
 			"scanRates": "Ocena komputera na podstawie skanowania: ",
 			"summary": "Podsumowanie",
 			"foundIssues": "Podczas skanowania wykryto następującą liczbę problemów: {{issueCount}}",
-			"summaryDetails": "Zarejestruj się teraz, aby rozwiązać te problemy i dalej cieszyć się płynnym działaniem systemu. Nasze oprogramowanie może aktywnie skanować te obszary komputera 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu Twój komputer będzie zawsze działać z najwyższą wydajnością.",
+			"summaryDetailsOptimize": "Zarejestruj się teraz, aby rozwiązać te problemy i dalej cieszyć się płynnym działaniem systemu. Nasze oprogramowanie może aktywnie skanować te obszary komputera 24 godziny na dobę, 7 dni w tygodniu, aby znajdować i rozwiązywać pojawiające się problemy. Dzięki temu Twój komputer będzie zawsze działać z najwyższą wydajnością.",
 			"expiredSummaryDetails": "Twoja subskrypcja wygasła i obecnie możesz używać tylko funkcji skanowania w programie Smart Performance. Jeśli chcesz wznowić funkcję „Skanuj i napraw”, naciśnij poniższy przycisk „odnów i napraw”, aby odnowić subskrypcję.",
 			"signupRepairButton": "ZAREJESTRUJ SIĘ I ROZWIĄŻ PROBLEMY TERAZ",
 			"renewAndFix": "Odnów i napraw",

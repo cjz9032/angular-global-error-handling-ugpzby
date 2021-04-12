@@ -2670,12 +2670,12 @@
 				"tab5": "Registry Errors"
 			},
 			"tabSet2": {
-				"tab1Heading": "IT'S EASY",
-				"tab1Description": "We don't confuse you with tech mumbo jumbo",
-				"tab2Heading": "IT'S FAST",
-				"tab2Description": "Get a 100 point check done in under 5 minutes",
-				"tab3Heading": "IT'S SAFE",
-				"tab3Description": "No scareware, built with best practices"
+				"tab1Heading": "It's Easy",
+				"tab1Description": "Optimize your PC performance with one click",
+				"tab2Heading": "It's Fast",
+				"tab2Description": "Get a 160-point check done in under 5 minutes",
+				"tab3Heading": "It's Safe",
+				"tab3Description": "Trusted technology built with industry best practices"
 			}
 		},
 		"boostInternetPerformance": {
@@ -2692,12 +2692,12 @@
 				"tab5": "Wi-Fi Performance"
 			},
 			"tabSet2": {
-				"tab1Heading": "BROWSER ISSUES",
-				"tab1Description": "We configure and fix all your popular web browsers.",
-				"tab2Heading": "CONNECTIVITY ERRORS",
-				"tab2Description": "We can diagnose and repair your connectivity problems.",
-				"tab3Heading": "SLOW INTERNET",
-				"tab3Description": "We will help you get maximum performance."
+				"tab1Heading": "Browser Issues",
+				"tab1Description": "Configure and fix all your popular web browsers",
+				"tab2Heading": "Connectivity Errors",
+				"tab2Description": "Diagnose and repair connectivity problems",
+				"tab3Heading": "Slow Internet",
+				"tab3Description": "Optimize Internet speed and get maximum performance"
 			}
 		},
 		"malwareSecurity": {
@@ -2713,12 +2713,12 @@
 				"tab5": "Security settings"
 			},
 			"tabSet2": {
-				"tab1Heading": "ZERO DAY VIRUS",
-				"tab1Description": "We remove even the newest malware infections",
-				"tab2Heading": "SPYWARE REMOVAL",
-				"tab2Description": "We remove all potentially unwanted programs",
-				"tab3Heading": "LIGHT AND FAST",
-				"tab3Description": "Scan typically takes 5-10 minutes"
+				"tab1Heading": "Zero Day Virus",
+				"tab1Description": "Remove even newest malware infections",
+				"tab2Heading": "Spyware Removal",
+				"tab2Description": "Remove all potentially malicious & harmful programs",
+				"tab3Heading": "Light and Fast",
+				"tab3Description": "Cloud based technology is light on your PC"
 			}
 		},
 		"proactiveAutomated": {
@@ -2733,12 +2733,12 @@
 				"tab5": "24/7 Protection"
 			},
 			"tabSet2": {
-				"tab1Heading": "IT'S EASY",
-				"tab1Description": "We don't confuse you with tech mumbo jumbo",
-				"tab2Heading": "IT'S FAST",
-				"tab2Description": "Get a 100 point check done in under 5 minutes",
-				"tab3Heading": "IT'S SAFE",
-				"tab3Description": "No scareware, built with best practices"
+				"tab1Heading": "Automated",
+				"tab1Description": "Set scheduled scans to automatically tune PC",
+				"tab2Heading": "Proactive",
+				"tab2Description": "Ensure your PC is always at peak performance",
+				"tab3Heading": "Effective",
+				"tab3Description": "Innovative state of the art technology"
 			}
 		},
 		"noScanResults": "Please click SCAN & FIX button to trigger scan process.",
@@ -2955,7 +2955,9 @@
 			"scanRates": "Our scan rates your PC at: ",
 			"summary": "Summary",
 			"foundIssues": "Our scan found {{issueCount}} issue(s)",
-			"summaryDetails": "Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+			"summaryDetailsMaintain": "Your system is in good shape! We found some optimization opportunities. Sign up now to take advantage and our state-of-the-art software can keep your PC running at top-notch performance.",
+			"summaryDetailsOptimize": "Sign up now to fix these problems and keep your system running smoothly. Our software can proactively scan these areas of your system 24x7 to find and fix issues as they arise so that your PC always has top-notch performance.",
+			"summaryDetailsFixNow": "We found issues that are significantly impacting your system performance. Sign up and fix the issues now. Then, Smart Performance can proactively scan your system 24x7 and fix issues as they arise, so that your PC always has top-notch performance.",
 			"expiredSummaryDetails": "Your subscription is expired and currently can only use scan feature in Smart Performance, if you would like to resume the \"Scan and Fix\" feature, please press the \"renew and fix\" button down below to renew your subscription.",
 			"signupRepairButton": "SIGN UP & REPAIR NOW",
 			"renewAndFix": "Renew & Fix",

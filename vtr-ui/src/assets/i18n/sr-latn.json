@@ -2904,7 +2904,7 @@
 			"scanRates": "Naše skeniranje ocenjuje vaš računar prema sledećem: ",
 			"summary": "Rezime",
 			"foundIssues": "Naše skeniranje je pronašlo {{issueCount}} problema",
-			"summaryDetails": "Registrujte se odmah kako biste rešili ove probleme i održali neometani rad sistema. Naš softver može proaktivno da skenira ta područja sistema, 24 sata svakog dana u nedelji, kako bi pronašao i popravio probleme čim se jave, tako da vaš računar uvek ima vrhunske performanse.",
+			"summaryDetailsOptimize": "Registrujte se odmah kako biste rešili ove probleme i održali neometani rad sistema. Naš softver može proaktivno da skenira ta područja sistema, 24 sata svakog dana u nedelji, kako bi pronašao i popravio probleme čim se jave, tako da vaš računar uvek ima vrhunske performanse.",
 			"expiredSummaryDetails": "Vaša pretplata je istekla i trenutno možete da koristite samo funkciju skeniranja u usluzi Smart Performance. Ako želite da nastavite sa korišćenjem funkcije „Skeniranje i popravka“, pritisnite dugme obnovi i popravi“ u nastavku da biste obnovili pretplatu.",
 			"signupRepairButton": "ODMAH SE REGISTRUJTE I POPRAVITE",
 			"renewAndFix": "Obnovi i popravi",

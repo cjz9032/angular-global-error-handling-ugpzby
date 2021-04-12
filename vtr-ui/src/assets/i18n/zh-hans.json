@@ -3012,7 +3012,7 @@
 			"scanRates": "下面是我们的扫描对您电脑的评价结果：",
 			"summary": "摘要",
 			"foundIssues": "我们的扫描找到 {{issueCount}} 个问题",
-			"summaryDetails": "请立即注册以解决这些问题并保持系统顺利运行。我们的软件可以全天候主动扫描您的系统的这些区域以查找问题，并在发现时解决，所以您的电脑性能始终非常出色。",
+			"summaryDetailsOptimize": "请立即注册以解决这些问题并保持系统顺利运行。我们的软件可以全天候主动扫描您的系统的这些区域以查找问题，并在发现时解决，所以您的电脑性能始终非常出色。",
 			"expiredSummaryDetails": "您的订阅已到期，当前只能使用 Smart Performance 中的扫描功能，如果您想恢复“扫描并修复”功能，请按下方的“续订并修复”按钮以续订您的订阅。",
 			"signupRepairButton": "立即注册并修复",
 			"renewAndFix": "续订并修复",

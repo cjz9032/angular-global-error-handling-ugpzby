@@ -3014,7 +3014,7 @@
 			"scanRates": "Voici notre analyse de votre PC : ",
 			"summary": "Récapitulatif",
 			"foundIssues": "Notre analyse a détecté {{issueCount}} problème(s)",
-			"summaryDetails": "Inscrivez-vous dès maintenant pour résoudre ces incidents et assurer le bon fonctionnement de votre système. Notre logiciel peut analyser proactivement ces zones de votre système 24 h/24 et 7 j/7 afin d’identifier et de résoudre les incidents dès qu’ils surviennent. Ainsi, les performances de votre PC sont toujours de très haut niveau.",
+			"summaryDetailsOptimize": "Inscrivez-vous dès maintenant pour résoudre ces incidents et assurer le bon fonctionnement de votre système. Notre logiciel peut analyser proactivement ces zones de votre système 24 h/24 et 7 j/7 afin d’identifier et de résoudre les incidents dès qu’ils surviennent. Ainsi, les performances de votre PC sont toujours de très haut niveau.",
 			"expiredSummaryDetails": "Votre abonnement a expiré et il peut actuellement utiliser uniquement la fonction d'analyse dans Smart Performance. Si vous souhaitez reprendre la fonction \"Analyser et réparer\", cliquez sur le bouton \"Renouveler et réparer\" ci-dessous pour renouveler votre abonnement.",
 			"signupRepairButton": "S’INSCRIRE ET RÉPARER MAINTENANT",
 			"renewAndFix": "Renouveler et réparer",

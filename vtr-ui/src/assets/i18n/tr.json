@@ -2904,7 +2904,7 @@
 			"scanRates": "Taramamıza göre bilgisayarınızın değerlendirmesi: ",
 			"summary": "Özet",
 			"foundIssues": "Tarama sonucunda {{issueCount}} sorun buldu",
-			"summaryDetails": "Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
+			"summaryDetailsOptimize": "Bu sorunları gidermek ve sisteminizin sorunsuz çalışmasını sağlamak için şimdi kaydolun. Yazılımımız sorunları ortaya çıktıkça bulmak ve düzeltmek için proaktif olarak sisteminizin bu alanlarını 7/24 tarayabilir, böylece bilgisayarınız her zaman birinci sınıf performansa sahip olur.",
 			"expiredSummaryDetails": "Aboneliğinizin süresi doldu ve şu anda yalnızca Smart Performance'taki tarama özelliğini kullanabilirsiniz. “Tara ve Düzelt” özelliğini sürdürmek istiyorsanız lütfen aboneliğinizi yenilemek için aşağıdaki “yenile ve düzelt” düğmesine basın.",
 			"signupRepairButton": "KAYDOLUN ve HEMEN ONARIN",
 			"renewAndFix": "Yenile ve Düzelt",

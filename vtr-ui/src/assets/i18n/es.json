@@ -3014,7 +3014,7 @@
 			"scanRates": "Nuestro análisis evalúa su PC en: ",
 			"summary": "Resumen",
 			"foundIssues": "Nuestra exploración encontró {{issueCount}} problema(s)",
-			"summaryDetails": "Regístrese ahora para corregir estos problemas y mantener su sistema funcionando sin problemas. Nuestro software puede analizar proactivamente estas áreas de su sistema en cualquier momento para buscar y corregir los problemas a medida que surgen, de modo que su PC siempre tenga un rendimiento superior.",
+			"summaryDetailsOptimize": "Regístrese ahora para corregir estos problemas y mantener su sistema funcionando sin problemas. Nuestro software puede analizar proactivamente estas áreas de su sistema en cualquier momento para buscar y corregir los problemas a medida que surgen, de modo que su PC siempre tenga un rendimiento superior.",
 			"expiredSummaryDetails": "Su suscripción ha caducado y actualmente solo puede utilizar la característica de exploración en Smart Performance, si desea reanudar la característica “Examinar y reparar”, haga clic en el siguiente botón “Renovar y reparar” a continuación para renovar la suscripción.",
 			"signupRepairButton": "REGÍSTRESE Y REALICE LA REPARACIÓN AHORA MISMO",
 			"renewAndFix": "Renovar y reparar",
