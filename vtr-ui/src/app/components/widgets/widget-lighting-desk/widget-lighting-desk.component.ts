@@ -327,8 +327,6 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 						if (response.didSuccess) {
 							this.publicPageInfo(response, 2);
 						} else {
-							// this.getCacheList();
-							// this.publicPageInfo(this.lightingProfileById,2);
 							this.isValChange = false;
 							this.currentProfileId = this.localCacheService.getLocalCacheValue(
 								LocalStorageKey.ProfileId
@@ -377,8 +375,6 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 						if (response.didSuccess) {
 							this.publicPageInfo(response, 2);
 						} else {
-							// this.getCacheList();
-							// this.publicPageInfo(this.lightingProfileById,2);
 							this.isValChange = false;
 							this.currentProfileId = this.localCacheService.getLocalCacheValue(
 								LocalStorageKey.ProfileId
@@ -532,7 +528,6 @@ export class WidgetLightingDeskComponent implements OnInit, OnChanges {
 					if (currentNameImg.length > 0) {
 						this.lightingProfileCurrentDetail.panelName = currentNameImg[0].panelName;
 						this.lightingProfileCurrentDetail.pathUrl = currentNameImg[0].pathUrl;
-						// this.lightingProfileCurrentDetail.panelImage = currentNameImg[0].panelImage;
 						this.lightingProfileCurrentDetail.panelImageType =
 							currentNameImg[0].panelImageType;
 						this.lightingProfileCurrentDetail.length = lightingCapabilitiesRes.MemoryPanelType

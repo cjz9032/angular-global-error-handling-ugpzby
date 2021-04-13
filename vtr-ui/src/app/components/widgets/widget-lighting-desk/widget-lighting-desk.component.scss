@@ -118,9 +118,6 @@
 				&.is-off {
 					margin-top: 0;
 				}
-				// @media #{$breakpoint_xl2} {
-				//    padding: 0 5rem;
-				// }
 				@media #{$below-large-screen} {
 					width: 100%;
 					margin-top: 0;
@@ -171,7 +168,6 @@
 						letter-spacing: -0.017rem;
 						line-height: 2rem;
 						margin-bottom: 1rem;
-						// margin-top: 6rem;
 					}
 					vtr-ui-lighting-effect {
 						::ng-deep {
