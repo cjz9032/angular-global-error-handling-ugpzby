@@ -300,7 +300,7 @@ export class ContentCacheService {
 			}
 		} else {
 			for (const key of Object.keys(cacheValueOfContents)) {
-				if (cachedContents[key] && cachedContents[key].length > 0) {
+				if (cacheValueOfContents[key] && cacheValueOfContents[key].length > 0) {
 					cacheValueOfContents[key].forEach((content) => {
 						contents.push(content);
 					});
