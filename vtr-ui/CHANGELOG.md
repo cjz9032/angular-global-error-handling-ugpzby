@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.18](https://bitbucket.tc.lenovo.com///compare/v1.11.17...v1.11.18) (2021-04-13)
+
+
+### Features
+
+* **SP:** VAN-26077 update sp page strings ([71f2f16](https://bitbucket.tc.lenovo.com///commit/71f2f16a4b2fb2c69f968a080486a66a38c8e953))
+
+
+### Bug Fixes
+
+* fix Chevron tooltips pop up twice ([a8496d9](https://bitbucket.tc.lenovo.com///commit/a8496d93a5e9440af27365150e4de5bcce73a9d1))
+
 ### [1.11.17](https://bitbucket.tc.lenovo.com///compare/v1.11.16...v1.11.17) (2021-04-12)
 
 
