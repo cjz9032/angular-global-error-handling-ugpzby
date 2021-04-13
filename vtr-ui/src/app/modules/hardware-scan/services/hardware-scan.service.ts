@@ -39,7 +39,7 @@ export class HardwareScanService {
 		private hardwareScanResultService: HardwareScanResultService,
 		private previousResultService: PreviousResultService,
 		private localCacheService: LocalCacheService,
-		private logger: LoggerService,
+		private logger: LoggerService
 	) {
 		this.hardwareScanBridge = shellService.getHardwareScan();
 
@@ -376,12 +376,7 @@ export class HardwareScanService {
 	 */
 	public isMachineAvailable() {
 		// Variable containing machine names without HWScan enabled
-		const blackList = [
-			'thinkstationp520',
-			'thinkstationp520c',
-			'thinkstationp720',
-			'thinkstationp920',
-		];
+		const blackList = ['thinkstationp520', 'thinkstationp520c', 'thinkstationp720'];
 
 		// Variable containing machine family name in the specific format
 		const originalMachineFamilyName = this.localCacheService.getLocalCacheValue(
