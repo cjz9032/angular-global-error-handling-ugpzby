@@ -1797,21 +1797,8 @@ export class ExportResultsService {
 
 	private generatePdfReport(jsonData: any): any {
 		const isRecoverBadSectors = jsonData.isRecoverBadSectors ?? false;
-		const extendedLanguages: Array<string> = [
-			LanguageCode.croatian,
-			LanguageCode.czech,
-			LanguageCode.danish,
-			LanguageCode.deutsch,
-			LanguageCode.finnish,
-			LanguageCode.hungarian,
-			LanguageCode.italian,
-			LanguageCode.polish,
-			LanguageCode.russian,
-			LanguageCode.swedish,
-			LanguageCode.ukrainian,
-		]; // Languages that breaks table duo to it extension, and must be printed as landscape
-		const pdfOrientation = extendedLanguages.includes(this.currentLanguage) ? 'l' : 'p';
-		const doc = new jsPDF(pdfOrientation);
+
+		const doc = new jsPDF();
 
 		this.fonts.forEach((font) => {
 			doc.addFileToVFS(font.id + '.ttf', font.data);

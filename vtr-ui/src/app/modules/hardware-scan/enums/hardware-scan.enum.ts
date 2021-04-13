@@ -95,20 +95,10 @@ export enum FontTypes {
 
 export enum LanguageCode {
 	arabic = 'ar',
-	croatian = 'hr',
-	czech = 'cs',
-	danish = 'da',
-	deutsch = 'de',
-	finnish = 'fi',
+	english = 'en',
 	hebrew = 'he',
-	hungarian = 'hu',
-	italian = 'it',
 	japanese = 'ja',
 	korean = 'ko',
-	polish = 'pl',
-	russian = 'ru',
 	simplifiedChinese = 'zh-hans',
-	swedish = 'sv',
 	traditionalChinese = 'zh-hant',
-	ukrainian = 'uk',
 }
