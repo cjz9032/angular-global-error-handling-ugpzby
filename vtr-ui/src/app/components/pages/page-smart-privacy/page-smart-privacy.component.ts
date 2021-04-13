@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { SmartPrivacyMessengerService } from '../../../services/smart-privacy/smart-privacy-messenger.service';
 
 @Component({
 	selector: 'vtr-page-smart-privacy',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./page-smart-privacy.component.scss'],
 })
 export class PageSmartPrivacyComponent implements OnInit {
-	constructor() {
+	@ViewChild('smartPrivacyIframe', {static: true}) smartPrivacyIframe: ElementRef<HTMLIFrameElement>;
+
+	constructor(private smartPrivacyMessengerService: SmartPrivacyMessengerService) {
 	}
 
-	ngOnInit() {}
+	ngOnInit() {
+		// this.smartPrivacyMessengerService.getMessages()
+		// 	.subscribe((payload) => ('smartPrivacyMessengerService'));
+
+		// setTimeout(() => this.smartPrivacyMessengerService.sendMessage('to-smart-privacy:open', this.smartPrivacyIframe.nativeElement.contentWindow), 5000);
+	}
 }
