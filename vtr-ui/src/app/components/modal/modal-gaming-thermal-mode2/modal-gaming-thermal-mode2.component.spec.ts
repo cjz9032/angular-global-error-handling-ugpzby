@@ -132,9 +132,6 @@ describe('ModalGamingThermalMode2Component', () => {
 		isShellAvailable: true,
 		getThermalModeSettingStatus: () => {
 			Promise.resolve(thermalModeSettingStatus);
-			// return new Promise((resolve) => {
-			// 	resolve(thermalModeSettingStatus);
-			// });
 		},
 		setThermalModeSettingStatus: (value: number) => {
 			if (setReturnValue) {
@@ -146,9 +143,6 @@ describe('ModalGamingThermalMode2Component', () => {
 		},
 		getAutoSwitchStatus: () => {
 			Promise.resolve(autoSwitchStatus);
-			// return new Promise((resolve) => {
-			// 	resolve(autoSwitchStatus);
-			// });
 		},
 		setAutoSwitchStatus: (value: boolean) => {
 			if (setReturnValue) {
@@ -160,16 +154,10 @@ describe('ModalGamingThermalMode2Component', () => {
 		},
 		regThermalModeChangeEvent: () => {
 			Promise.resolve(setReturnValue);
-			// return new Promise((resolve) => {
-			// 	resolve(setReturnValue);
-			// });
 		},
 		// Version 3.5 auto adjuste
 		getAutoAdjustSetting: () => {
 			Promise.resolve(autoAdjustSettingStatus);
-			// return new Promise((resolve) => {
-			// 	resolve(autoAdjustSettingStatus);
-			// });
 		},
 		setAutoAdjustSetting: (value) => {
 			if (setReturnValue) {
@@ -182,9 +170,6 @@ describe('ModalGamingThermalMode2Component', () => {
 		isShellAvailable: true,
 		getPerformanceOCSetting: () => {
 			Promise.resolve(performanceOCSetting);
-			// return new Promise((resolve) => {
-			// 	resolve(performanceOCSetting);
-			// });
 		},
 		setPerformanceOCSetting: (value: boolean) => {
 			if (setReturnValue) {

@@ -361,7 +361,6 @@ describe('WidgetSystemMonitorComponent', () => {
 			expect(component.initHWOverClockInfo()).toBeUndefined();
 		}));
 		it('getDynamicHardwareUsageInfo', fakeAsync(() => {
-			// component.hwVersionInfo = 0;
 			const hwInfo = {
 				cpuCurrentFrequency: 2.068,
 				cpuUtilization: 20,

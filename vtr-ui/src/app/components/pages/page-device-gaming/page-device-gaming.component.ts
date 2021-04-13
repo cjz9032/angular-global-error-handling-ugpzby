@@ -93,8 +93,6 @@ export class PageDeviceGamingComponent implements OnInit, DoCheck, AfterViewInit
 					// TODO Lite Gaming
 					this.desktopType = response.desktopType;
 					this.liteGaming = response.liteGaming;
-					// this.desktopType = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.desktopType);
-					// this.liteGaming = this.gamingAllCapabilitiesService.getCapabilityFromCache(LocalStorageKey.liteGaming);
 					// Version 3.7 app search for gaming
 					this.launchProtocol();
 				})

@@ -41,7 +41,6 @@
 												metricsEvent="featureClick" metricsParent="Gaming.Dashboard" (click)="navigateToLink(item)"
 												(keydown.enter)="navigateToLink(item)" *ngIf="item.isCustomizable"
 												class="customizable" tabindex="1">
-												<!-- <i class="icon icon-gear"></i> -->
 												<fa-icon class="icon" [icon]="['fal', 'cog']"></fa-icon>
 											</a>
 											<a tabindex="-1" href="javascript:void();" *ngIf="item.isSwitchVisible"

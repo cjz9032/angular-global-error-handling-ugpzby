@@ -205,7 +205,7 @@ describe('ModalGamingAdvancedOCComponent : ', () => {
 	advancedOCService.setAdvancedOCInfoCache.and.returnValue(true);
 	metricService.sendMetrics.and.returnValue(true);
 	timerService.stop.and.returnValue(2);
-	// gamingAllCapabilitiesService.getCapabilityFromCache.and.returnValue(true);
+
 
 	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({

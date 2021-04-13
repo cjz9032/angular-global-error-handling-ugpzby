@@ -262,23 +262,14 @@ describe('WidgetLegionEdgeComponent', () => {
 		const gamingThermalModeServiceMock = {
 			getThermalModeRealStatus: () => {
 				Promise.resolve(thermalModeRealStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(thermalModeRealStatus);
-				// });
 			},
 			regThermalModeRealStatusChangeEvent: () => {
 				Promise.resolve(setReturnValue);
-				// return new Promise((resolve) => {
-				// 	resolve(setReturnValue);
-				// });
 			},
 		};
 		const gamingOCServiceMoke = {
 			getPerformanceOCSetting: () => {
 				Promise.resolve(performanceOCStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(performanceOCStatus);
-				// });
 			},
 		};
 
@@ -815,23 +806,14 @@ describe('WidgetLegionEdgeComponent', () => {
 		const gamingThermalModeServiceMock = {
 			getThermalModeRealStatus: () => {
 				Promise.resolve(thermalModeRealStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(thermalModeRealStatus);
-				// });
 			},
 			regThermalModeRealStatusChangeEvent: () => {
 				Promise.resolve(setReturnValue);
-				// return new Promise((resolve) => {
-				// 	resolve(setReturnValue);
-				// });
 			},
 		};
 		const gamingOCServiceMoke = {
 			getPerformanceOCSetting: () => {
 				Promise.resolve(performanceOCStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(performanceOCStatus);
-				// });
 			},
 		};
 
@@ -1081,24 +1063,17 @@ describe('WidgetLegionEdgeComponent', () => {
 		const gamingSystemUpdateServiceMock = {
 			getCpuOCStatus: () => {
 				Promise.resolve(cpuOCStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(cpuOCStatus);
-				// });
 			},
 			setCpuOCStatus: (value: number) => {
 				if (setReturnValue) {
 					cpuOCStatus = value;
 				}
-				// Promise.resolve(setReturnValue);
 				return new Promise((resolve) => {
 					resolve(setReturnValue);
 				});
 			},
 			getRamOCStatus: () => {
 				Promise.resolve(false);
-				// return new Promise((resolve) => {
-				// 	resolve(false);
-				// });
 			},
 		};
 		beforeEach(
@@ -1305,9 +1280,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		const gamingSystemUpdateServiceMock = {
 			getRamOCStatus: () => {
 				Promise.resolve(ramOCStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(ramOCStatus);
-				// });
 			},
 			setRamOCStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -1485,7 +1457,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 
 		it('toggleOnOffStatus of ram over clock', fakeAsync(() => {
-			// spyOn(component, 'closeLegionEdgePopups').and.callThrough();
 			setReturnValue = true;
 			memOCFeatureCache = true;
 			xtuServiceCache = false;
@@ -1568,9 +1539,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		const networkBoostServiceMoke = {
 			getNetworkBoostStatus: () => {
 				Promise.resolve(networkBoostModeStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(networkBoostModeStatus);
-				// });
 			},
 			setNetworkBoostStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -1747,7 +1715,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 
 		it('toggleOnOffRamOCStatus of netWork boost', fakeAsync(() => {
-			// spyOn(component, 'closeLegionEdgePopups').and.callThrough();
 			fbnetFilterCache = false;
 			setReturnValue = true;
 
@@ -1850,9 +1817,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		const gamingAutoCloseServiceMock = {
 			getAutoCloseStatus: () => {
 				Promise.resolve(autoCloseModeStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(autoCloseModeStatus);
-				// });
 			},
 			setAutoCloseStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -2015,7 +1979,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 
 		it('toggleOnOffRamOCStatus of auto close', fakeAsync(() => {
-			// spyOn(component, 'closeLegionEdgePopups').and.callThrough();
 			setReturnValue = true;
 
 			autoCloseModeStatus = false;
@@ -2033,7 +1996,6 @@ describe('WidgetLegionEdgeComponent', () => {
 				true,
 				`setReturn is true, autoCloseStatusCache should be true`
 			);
-			// expect(component.legionUpdate[3].isChecked).toBe(true, `setReturn is true, component.legionUpdate[3].isChecked should be true`);
 
 			component.toggleOnOffStatus({
 				target: { value: false, name: 'gaming.dashboard.device.legionEdge.autoClose' },
@@ -2047,7 +2009,6 @@ describe('WidgetLegionEdgeComponent', () => {
 				false,
 				`setReturn is true, autoCloseStatusCache should be false`
 			);
-			// expect(component.legionUpdate[3].isChecked).toBe(false, `setReturn is true, component.legionUpdate[3].isChecked should be false`);
 
 			setReturnValue = false;
 			component.toggleOnOffStatus({
@@ -2062,7 +2023,6 @@ describe('WidgetLegionEdgeComponent', () => {
 				false,
 				`setReturn is false, autoCloseStatusCache should keep false`
 			);
-			// expect(component.legionUpdate[3].isChecked).toBe(false, `setReturn is false, component.legionUpdate[3].isChecked should keep false`);
 		}));
 	});
 
@@ -2071,9 +2031,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		const gamingHybridModeServiceMock = {
 			getHybridModeStatus: () => {
 				Promise.resolve(hybridModeStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(hybridModeStatus);
-				// });
 			},
 			setHybridModeStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -2236,7 +2193,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 
 		it('toggleOnOffRamOCStatus of hybrid mode', fakeAsync(() => {
-			// spyOn(component, 'closeLegionEdgePopups').and.callThrough();
 			hybridModeFeatureCache = true;
 			hybridModeStatusCache = false;
 			setReturnValue = true;
@@ -2288,9 +2244,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		const gamingOverDriveServiceMock = {
 			getOverDriveStatus: () => {
 				Promise.resolve(overDriveStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(overDriveStatus);
-				// });
 			},
 			setOverDriveStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -2454,7 +2407,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 
 		it('toggleOnOffRamOCStatus of over drive', fakeAsync(() => {
-			// spyOn(component, 'closeLegionEdgePopups').and.callThrough();
 			setReturnValue = true;
 
 			overDriveStatus = false;
@@ -2516,9 +2468,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		const gamingKeyLockServiceMock = {
 			getKeyLockStatus: () => {
 				Promise.resolve(touchpadLockStatus);
-				// return new Promise((resolve) => {
-				// 	resolve(touchpadLockStatus);
-				// });
 			},
 			setKeyLockStatus: (value: boolean) => {
 				if (setReturnValue) {
@@ -2683,7 +2632,6 @@ describe('WidgetLegionEdgeComponent', () => {
 		}));
 
 		it('toggleOnOffStatus of touchpad lock', fakeAsync(() => {
-			// spyOn(component, 'closeLegionEdgePopups').and.callThrough();
 			setReturnValue = true;
 
 			touchpadLockStatus = false;
@@ -3128,15 +3076,9 @@ describe('WidgetLegionEdgeComponent', () => {
 		const gamingQuickSettingToolbarServiceMock = {
 			registerEvent: () => {
 				Promise.resolve(true);
-				// return new Promise((resolve) => {
-				// 	resolve(true);
-				// });
 			},
 			unregisterEvent: () => {
 				Promise.resolve(true);
-				// return new Promise((resolve) => {
-				// 	resolve(true);
-				// });
 			},
 		};
 		beforeEach(

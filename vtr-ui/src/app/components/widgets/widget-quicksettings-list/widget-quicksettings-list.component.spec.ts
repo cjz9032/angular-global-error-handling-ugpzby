@@ -670,7 +670,6 @@ describe('WidgetQuicksettingsListComponent', () => {
 				true,
 				`setReturnValue is ${setReturnValue}, rapidCharge.visible should be true`
 			);
-			// expect(component.quickSettingsList[component.quickSettingsListIndex.rapidCharge].isChecked).toBe(true, `setReturnValue is ${setReturnValue}, rapidCharge.checked should keep true`);
 			expect(rapidChargeCache.available).toBe(
 				true,
 				`setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`
@@ -688,7 +687,7 @@ describe('WidgetQuicksettingsListComponent', () => {
 				true,
 				`setReturnValue is ${setReturnValue}, rapidCharge.visible should be true`
 			);
-			// expect(component.quickSettingsList[component.quickSettingsListIndex.rapidCharge].isChecked).toBe(false, `setReturnValue is ${setReturnValue}, rapidCharge.checked should keep false`);
+
 			expect(rapidChargeCache.available).toBe(
 				true,
 				`setReturnValue is ${setReturnValue}, rapidChargeCache.available should be true`

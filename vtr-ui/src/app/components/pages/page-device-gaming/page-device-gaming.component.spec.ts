@@ -94,7 +94,6 @@ describe('PageDeviceGamingComponent', () => {
 	});
 
 	it('#PageDeviceGamingComponent : onNotification network status online ', () => {
-		// const onlineCardContent = fixture.debugElement.injector.get(onlineCardContent);
 		dashboardServiceMock.onlineCardContent.positionD = true;
 		const onNotificationSpy = spyOn<any>(component, 'onNotification')
 			.withArgs(mockNetworkStatusOnline)
@@ -115,13 +114,6 @@ describe('PageDeviceGamingComponent', () => {
 		component.onConnectivityClick({});
 		expect(component.onConnectivityClick({})).toBeUndefined();
 	});
-
-	// afterEach(() => {
-	// 	const modalService = fixture.debugElement.injector.get(NgbModal);
-	// 	modalService.hasOpenModals();
-	// 	modalService.dismissAll();
-
-	// });
 });
 
 const mockNetworkStatusOffline = {
