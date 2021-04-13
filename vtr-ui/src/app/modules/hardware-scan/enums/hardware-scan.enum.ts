@@ -93,10 +93,11 @@ export enum FontTypes {
 	rubik = 'rubik',
 }
 
-export enum PdfLanguageTokens {
+export enum LanguageCode {
 	arabic = 'ar',
-	japanese = 'ja',
+	english = 'en',
 	hebrew = 'he',
+	japanese = 'ja',
 	korean = 'ko',
 	simplifiedChinese = 'zh-hans',
 	traditionalChinese = 'zh-hant',

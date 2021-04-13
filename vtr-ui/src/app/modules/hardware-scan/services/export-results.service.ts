@@ -16,7 +16,7 @@ import {
 	FontTypes,
 	HardwareScanOverallResult,
 	HardwareScanTestResult,
-	PdfLanguageTokens,
+	LanguageCode,
 } from '../enums/hardware-scan.enum';
 import { HardwareScanResultService } from './hardware-scan-result.service';
 import { HardwareScanService } from './hardware-scan.service';
@@ -154,18 +154,18 @@ export class ExportResultsService {
 		this.currentLanguage = currentLanguage;
 
 		switch (currentLanguage) {
-			case PdfLanguageTokens.japanese:
-			case PdfLanguageTokens.simplifiedChinese:
-			case PdfLanguageTokens.traditionalChinese:
+			case LanguageCode.japanese:
+			case LanguageCode.simplifiedChinese:
+			case LanguageCode.traditionalChinese:
 				this.currentFont = FontTypes.notosc;
 				break;
-			case PdfLanguageTokens.korean:
+			case LanguageCode.korean:
 				this.currentFont = FontTypes.notokr;
 				break;
-			case PdfLanguageTokens.arabic:
+			case LanguageCode.arabic:
 				this.currentFont = FontTypes.amiri;
 				break;
-			case PdfLanguageTokens.hebrew:
+			case LanguageCode.hebrew:
 				this.currentFont = FontTypes.rubik;
 				break;
 			default:
@@ -1797,9 +1797,8 @@ export class ExportResultsService {
 
 	private generatePdfReport(jsonData: any): any {
 		const isRecoverBadSectors = jsonData.isRecoverBadSectors ?? false;
-		const extendedLanguages = ['de', 'uk', 'ru', 'cs']; // Languages that breaks table duo to it extension, and must be printed as landscape
-		const pdfOrientation = extendedLanguages.includes(this.currentLanguage) ? 'l' : 'p';
-		const doc = new jsPDF(pdfOrientation);
+
+		const doc = new jsPDF();
 
 		this.fonts.forEach((font) => {
 			doc.addFileToVFS(font.id + '.ttf', font.data);
@@ -1936,10 +1935,7 @@ export class ExportResultsService {
 	private reverseForHebrew(data: any): string {
 		const content = data.cell.raw?.content ?? data.cell?.raw;
 
-		if (
-			this.currentLanguage === PdfLanguageTokens.hebrew &&
-			this.hebrewUnicodeRange.test(content)
-		) {
+		if (this.currentLanguage === LanguageCode.hebrew && this.hebrewUnicodeRange.test(content)) {
 			// Avoid wrong positioning of : and () characters
 			const specialCharacters = (word: string) => {
 				let currentValue = word;
