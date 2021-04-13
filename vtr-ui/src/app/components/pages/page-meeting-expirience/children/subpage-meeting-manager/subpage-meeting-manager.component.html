@@ -38,7 +38,6 @@
 										(click)="launchOrDownloadAiMeetingManager()"
 										(keydown.enter)="launchOrDownloadAiMeetingManager()"
 										[attr.aria-disabled]="!commonService.isOnline && !isAMMInstalled"
-										[attr.aria-label]="'smb.meetingExperience.meetingManager.aiMeetingManager.title' | translate"
 										[matTooltip]="(isAMMInstalled ?
 											'smb.meetingExperience.meetingManager.aiMeetingManager.launch' :
 											'smb.meetingExperience.meetingManager.aiMeetingManager.download') | translate"
