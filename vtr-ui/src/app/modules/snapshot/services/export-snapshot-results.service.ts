@@ -6,6 +6,11 @@ import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-defa
 import { HttpClient } from '@angular/common/http';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { ExportLogExtensions, ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
+// import { snapshotIcons } from '../util/log-icons';
+import { snapshotModulesIcons } from 'src/assets/export-pdf-utils/icons/snapshot';
+import { logIcons } from 'src/assets/export-pdf-utils/icons/log-tables';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 declare let window;
 
@@ -24,7 +29,23 @@ export class ExportSnapshotResultsService {
 	private biosVersion: string;
 	private productName: string;
 
-	private exportExtensionSelected = ExportLogExtensions.html;
+	// Colors used to build pdf
+	private darkBlueColor = '#34495E';
+	private lightBlueColor = '#4A81FD';
+	private whiteColor = '#FFF';
+	private RgbLightGreyColor = [214, 219, 223];
+
+	// Attributes necessaries to build pdf
+	private componentIconSize = 10;
+	private logoSize = 10;
+	private firsColumnStyle = {
+		cellWidth: 75,
+		fontStyle: 'bold',
+		halign: 'left',
+	};
+
+	private exportExtensionSelected = ExportLogExtensions.pdf;
+
 	private optionsToConvertDate = {
 		weekday: 'long',
 		year: 'numeric',
@@ -42,10 +63,9 @@ export class ExportSnapshotResultsService {
 		private shellService: VantageShellService,
 		private translate: TranslateDefaultValueIfNotFoundPipe
 	) {
-		this.metricsService = shellService.getMetrics();
-
 		// Consult experienceVersion
 		this.experienceVersion = environment.appVersion;
+		this.metricsService = shellService.getMetrics();
 
 		// Consult shellVersion
 		if (window.Windows) {
@@ -81,10 +101,11 @@ export class ExportSnapshotResultsService {
 			let dataFormatted;
 			const reportFileName = 'SnapshotLog';
 			const dataPrepared = await this.prepareDataFromScanLog();
+
 			if (this.exportExtensionSelected === ExportLogExtensions.html) {
 				dataFormatted = await this.generateHtmlReport(dataPrepared);
 			} else {
-				// Include pdf generate function here
+				dataFormatted = this.generatePdfReport(dataPrepared);
 			}
 			const createdFilePath = await this.exportReportToFile(reportFileName, dataFormatted);
 			return [ExportLogErrorStatus.SuccessExport, createdFilePath];
@@ -178,7 +199,15 @@ export class ExportSnapshotResultsService {
 				this.logger.info('File is null');
 			}
 		} else {
-			// Include pdf save file function here
+			picker.fileTypeChoices.insert('Portable Document Format', ['.pdf']);
+			const file = await picker.pickSaveFileAsync();
+			if (file !== null) {
+				const dataArray = new Uint8Array(dataFormatted);
+				await window.Windows.Storage.FileIO.writeBytesAsync(file, dataArray);
+				pathSaved = file.path;
+			} else {
+				this.logger.info('File is null');
+			}
 		}
 
 		if (pathSaved === '') {
@@ -609,5 +638,365 @@ export class ExportSnapshotResultsService {
 		const time = date.toTimeString().split(' ');
 
 		return year + maskMonth + maskDay + '_' + time[0].replace(/:/g, '');
+	}
+
+	private generatePdfReport(jsonData: any): any {
+		(jsPDF as any).autoTableSetDefaults({
+			margin: 10,
+			showHead: 'firstPage',
+			headStyles: {
+				fillColor: this.whiteColor,
+				textColor: this.lightBlueColor,
+			},
+			bodyStyles: {
+				textColor: this.darkBlueColor,
+			},
+		});
+		const doc = new jsPDF();
+		let startY = 10;
+
+		this.generateHeaderPdf(doc, this.translate.transform('snapshot.title'), startY);
+
+		startY = (doc as any).lastAutoTable.finalY + 20;
+		this.generateModelTable(doc, jsonData.model, startY);
+
+		startY = (doc as any).lastAutoTable.finalY + 10;
+		this.generateEnvironmentTable(doc, jsonData.environment, startY);
+
+		startY = (doc as any).lastAutoTable.finalY + 10;
+		this.generateModulesTables(
+			doc,
+			jsonData.hardwareComponents,
+			startY,
+			this.translate.transform('snapshot.hardwareListTitle')
+		);
+
+		startY = (doc as any).lastAutoTable.finalY + 10;
+		this.generateModulesTables(
+			doc,
+			jsonData.softwareComponents,
+			startY,
+			this.translate.transform('snapshot.softwareListTitle')
+		);
+
+		return doc.output('arraybuffer');
+	}
+
+	private generateHeaderPdf(doc: jsPDF, title: string, startY: number): void {
+		(doc as any).autoTable({
+			startY,
+			theme: 'plain',
+			bodyStyles: {
+				cellPadding: 0,
+			},
+			willDrawCell: (data) => {
+				switch (data.row.index) {
+					case 0:
+						doc.addImage(
+							logIcons.get('HARDWAREDIAGNOSTICSLOG'),
+							'PNG',
+							data.cell.x,
+							data.cell.y,
+							this.logoSize,
+							this.logoSize
+						);
+						data.cell.x += this.logoSize + 2;
+						data.cell.y += (this.logoSize - data.cell.contentHeight) / 2;
+						break;
+
+					case 1:
+						data.cell.y += this.logoSize;
+						break;
+				}
+			},
+			body: [
+				[
+					{
+						content: 'LENOVO VANTAGE',
+						styles: { fontSize: 12, fontStyle: 'bold' },
+					},
+				],
+				[
+					{
+						content: title,
+						styles: { fontSize: 22 },
+					},
+				],
+			],
+		});
+	}
+
+	private generateModelTable(doc: jsPDF, modelData: any, startY: number): void {
+		(doc as any).autoTable({
+			theme: 'plain',
+			startY,
+			didDrawCell: (data) => {
+				if (data.column.index === 0) {
+					doc.addImage(
+						logIcons.get('MODEL'),
+						'PNG',
+						data.cell.x,
+						data.cell.y,
+						this.componentIconSize,
+						this.componentIconSize
+					);
+
+					doc.setDrawColor(
+						this.RgbLightGreyColor[0],
+						this.RgbLightGreyColor[1],
+						this.RgbLightGreyColor[2]
+					);
+					doc.line(
+						data.cursor.x,
+						data.cursor.y + this.componentIconSize + 3,
+						data.cursor.x + 190, // A4 size
+						data.cursor.y + this.componentIconSize + 3
+					);
+				}
+			},
+			willDrawCell: (data) => {
+				const rows = data.table.body;
+
+				if (data.row.index === rows.length - 1) {
+					doc.setFillColor(0, 0, 0);
+				}
+			},
+			columnStyles: {
+				0: { cellWidth: this.componentIconSize, minCellHeight: this.componentIconSize },
+				1: { fontSize: 16, valign: 'middle', cellPadding: 2 },
+			},
+			body: [['', this.translate.transform('snapshot.report.modelTitle')]],
+		});
+		startY = (doc as any).lastAutoTable.finalY + 3;
+
+		(doc as any).autoTable({
+			startY: startY + 2,
+			columnStyles: {
+				0: this.firsColumnStyle,
+			},
+			head: [[modelData.machineModel, '']],
+			body: [
+				[
+					this.translate.transform('snapshot.report.model.productName'),
+					modelData.productName,
+				],
+				[
+					this.translate.transform('snapshot.report.model.serialNumber'),
+					modelData.serialNumber,
+				],
+				[
+					this.translate.transform('snapshot.report.model.biosVersion'),
+					modelData.biosVersion,
+				],
+			],
+		});
+	}
+
+	private generateEnvironmentTable(doc: jsPDF, environmentData: any, startY: number): void {
+		(doc as any).autoTable({
+			theme: 'plain',
+			startY,
+			didDrawCell: (data) => {
+				if (data.column.index === 0) {
+					doc.addImage(
+						logIcons.get('ENVIRONMENT'),
+						'PNG',
+						data.cell.x,
+						data.cell.y,
+						this.componentIconSize,
+						this.componentIconSize
+					);
+
+					doc.setDrawColor(
+						this.RgbLightGreyColor[0],
+						this.RgbLightGreyColor[1],
+						this.RgbLightGreyColor[2]
+					);
+					doc.line(
+						data.cursor.x,
+						data.cursor.y + this.componentIconSize + 3,
+						data.cursor.x + 190, // A4 size
+						data.cursor.y + this.componentIconSize + 3
+					);
+				}
+			},
+			columnStyles: {
+				0: { cellWidth: this.componentIconSize, minCellHeight: this.componentIconSize },
+				1: { fontSize: 16, valign: 'middle', cellPadding: 2 },
+			},
+			body: [['', this.translate.transform('snapshot.report.environmentTitle')]],
+		});
+		startY = (doc as any).lastAutoTable.finalY + 3;
+
+		(doc as any).autoTable({
+			startY: startY + 2,
+			columnStyles: {
+				0: this.firsColumnStyle,
+			},
+			body: [
+				[
+					this.translate.transform('snapshot.report.environment.experienceVersion'),
+					environmentData.experienceVersion,
+				],
+				[
+					this.translate.transform('snapshot.report.environment.shellVersion'),
+					environmentData.shellVersion,
+				],
+				[
+					this.translate.transform('snapshot.report.environment.bridgeVersion'),
+					environmentData.bridgeVersion,
+				],
+				[
+					this.translate.transform('snapshot.report.environment.addinVersion'),
+					environmentData.addinVersion,
+				],
+			],
+		});
+	}
+
+	private generateModulesTables(
+		doc: jsPDF,
+		modules: any,
+		startY: number,
+		componentTitle: string
+	): void {
+		let currentStartPosition = startY;
+		const marginStart = 10;
+
+		// Component title
+		(doc as any).autoTable({
+			theme: 'plain',
+			startY: currentStartPosition,
+			bodyStyles: {
+				cellPadding: 0,
+			},
+			columnStyles: {
+				0: {
+					fontSize: 16,
+					textColor: this.lightBlueColor,
+				},
+			},
+			body: [[componentTitle]],
+		});
+
+		currentStartPosition = (doc as any).lastAutoTable.finalY + 1;
+
+		modules.forEach((module) => {
+			currentStartPosition = (doc as any).lastAutoTable.finalY + 10;
+
+			if (module.content.info.Items.length <= 0) {
+				return;
+			}
+
+			// Table title
+			(doc as any).autoTable({
+				theme: 'plain',
+				startY: currentStartPosition,
+				didDrawCell: (data) => {
+					if (data.column.index === 0) {
+						doc.addImage(
+							snapshotModulesIcons.get(module.name.toUpperCase()),
+							'PNG',
+							data.cell.x,
+							data.cell.y,
+							this.componentIconSize,
+							this.componentIconSize
+						);
+
+						doc.setDrawColor(
+							this.RgbLightGreyColor[0],
+							this.RgbLightGreyColor[1],
+							this.RgbLightGreyColor[2]
+						);
+						doc.line(
+							data.cursor.x,
+							data.cursor.y + this.componentIconSize + 3,
+							data.cursor.x + 190, // A4 size
+							data.cursor.y + this.componentIconSize + 3
+						);
+					}
+				},
+				columnStyles: {
+					0: { cellWidth: this.componentIconSize, minCellHeight: this.componentIconSize },
+					1: { fontSize: 16, valign: 'middle', cellPadding: 2 },
+				},
+				body: [['', this.translate.transform('snapshot.components.' + module.name)]],
+			});
+
+			currentStartPosition = (doc as any).lastAutoTable.finalY + 3;
+
+			(doc as any).autoTable({
+				margin: marginStart,
+				startY: currentStartPosition + 2,
+				columnStyles: {
+					0: this.firsColumnStyle,
+				},
+				head: [
+					[
+						{
+							content: ' ',
+						},
+						{
+							content: this.translate.transform('snapshot.baselineSnapshot'),
+						},
+						{
+							content: this.translate.transform('snapshot.lastSnapshot'),
+						},
+					],
+				],
+				body: [
+					[
+						this.translate.transform('snapshot.properties.UpdatedDate'),
+						module.content.info.BaselineDate,
+						module.content.info.LastSnapshotDate,
+					],
+					...this.getModuleDetails(module.content.info),
+				],
+			});
+			currentStartPosition = (doc as any).lastAutoTable.finalY + 10;
+		});
+	}
+
+	private getModuleDetails(moduleInfo: any): any {
+		const detailsList = [];
+		const lastItem = moduleInfo.Items[moduleInfo.Items.length - 1];
+
+		// detailsList.push([
+		// 	this.translate.transform('snapshot.properties.UpdatedDate'),
+		// 	moduleInfo.BaselineDate,
+		// 	moduleInfo.LastSnapshotDate,
+		// ]);
+
+		moduleInfo.Items.forEach((moduleItem: any) => {
+			moduleItem.Properties.forEach((propertie: any) => {
+				let currentValue = propertie.CurrentValue;
+
+				if (propertie.BaseValue !== propertie.CurrentValue) {
+					currentValue = {
+						content: propertie.CurrentValue,
+						styles: {
+							textColor: this.lightBlueColor,
+						},
+					};
+				}
+
+				detailsList.push([
+					this.translate.transform('snapshot.properties.' + propertie.PropertyName),
+					propertie.BaseValue,
+					currentValue,
+				]);
+			});
+
+			if (lastItem !== moduleItem) {
+				detailsList.push([' ', ' ', ' ']);
+			}
+
+			if (moduleItem.SubDevices) {
+				detailsList.push([' ', ' ', ' ']);
+				detailsList.push(...this.getModuleDetails({ Items: moduleItem.SubDevices }));
+			}
+		});
+
+		return detailsList;
 	}
 }
