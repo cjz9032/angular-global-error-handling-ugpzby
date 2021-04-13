@@ -135,7 +135,9 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 
 		this.qaService.setCurrentLangTranslations();
 		this.initInputAccessories();
-		this.getSmartAssistCapability();
+		this.configService.isSmartAssistAvailableSub$.subscribe((isAvaliable) => {
+			this.getSmartAssistCapability(isAvaliable);
+		});
 
 		this.isOnline = this.commonService.isOnline;
 		if (this.isOnline) {
@@ -374,12 +376,34 @@ export class PageDeviceSettingsComponent implements OnInit, OnDestroy {
 		this.activeElement = document.activeElement as HTMLElement;
 	}
 
-	getSmartAssistCapability() {
-		const smartAssistCap = this.localCacheService.getLocalCacheValue(
+	getSmartAssistCapability(isAvaliable: boolean) {
+		let smartAssistCap = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.IsSmartAssistSupported
 		);
+		if (smartAssistCap !== undefined) {
+			if (!smartAssistCap) {
+				this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
+			}
+		}
+
+		smartAssistCap = isAvaliable;
 		if (!smartAssistCap) {
 			this.menuItems = this.commonService.removeObjById(this.menuItems, 'smart-assist');
+		} else {
+			const smartAssistMenuItem = this.menuItems.find(item => item.id === 'smart-assist');
+			if (!smartAssistMenuItem) {
+				this.menuItems.push({
+					id: 'smart-assist',
+					label: 'device.smartAssist.title',
+					path: 'device-settings/smart-assist',
+					icon: 'smart-assist',
+					iconClass: 'icomoon-Smart-Assist',
+					canDeactivate: [GuardService],
+					canActivate: [GuardService, NonArmGuard],
+					subitems: [],
+					active: false,
+				});
+			}
 		}
 	}
 

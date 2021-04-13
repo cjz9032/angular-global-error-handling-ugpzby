@@ -13,7 +13,7 @@ import { SecurityAdvisor, EventTypes, WindowsHello, WifiSecurity } from '@lenovo
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonService } from '../common/common.service';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
 import { AdPolicyEvent, AdPolicyId } from 'src/app/enums/ad-policy-id.enum';
 import { AdPolicyService } from '../ad-policy/ad-policy.service';
@@ -69,6 +69,7 @@ export class ConfigService {
 	public countryCodes = ['us', 'ca', 'gb', 'ie', 'de', 'fr', 'es', 'it', 'au'];
 	subscription: Subscription;
 	public isSmartAssistAvailable = false;
+	public isSmartAssistAvailableSub$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 	public isSmartPerformanceAvailable = false;
 	private isBetaUser: boolean;
 	private country: string;
@@ -574,6 +575,8 @@ export class ConfigService {
 				assistCapability.isAPSSupported ||
 				(assistCapability.isHsaIntelligentSecuritySupported.capability & 0x100) !== 0 ||
 				(assistCapability.isHsaIntelligentSecuritySupported.capability & 0x80) !== 0;
+
+			this.isSmartAssistAvailableSub$.next(this.isSmartAssistAvailable);
 
 			if (this.isSmartAssistAvailable) {
 				this.addSmartAssistMenu(this.menu);
