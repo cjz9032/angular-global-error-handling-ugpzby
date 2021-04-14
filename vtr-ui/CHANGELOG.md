@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.19](https://bitbucket.tc.lenovo.com///compare/v1.11.18...v1.11.19) (2021-04-14)
+
+
+### Bug Fixes
+
+* **ContentCache:** VAN-27861 fix null reference ([f3c86f4](https://bitbucket.tc.lenovo.com///commit/f3c86f40b032d62bc8b44d8eadfd77a5162f002e))
+* **dashboard:** VAN-27971 add some id and remove some unused code ([1b43255](https://bitbucket.tc.lenovo.com///commit/1b432550324d8c668c975220109591f011851acf))
+
 ### [1.11.18](https://bitbucket.tc.lenovo.com///compare/v1.11.17...v1.11.18) (2021-04-13)
 
 
