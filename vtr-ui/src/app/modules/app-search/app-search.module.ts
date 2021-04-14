@@ -18,28 +18,9 @@ import { AppSearchRoutingModule } from './app-search-routing.module';
 import { MatProgressSpinnerModule } from '@lenovo/material/progress-spinner';
 import { faExclamationCircle } from '@fortawesome/pro-light-svg-icons/faExclamationCircle';
 import { FeatureInapplicableMessageComponent } from 'src/app/components/app-search/feature-inapplicable-message/feature-inapplicable-message.component';
-import { SearchInputWidgetComponent } from 'src/app/components/app-search/page-search/sub-components/search-input-widget/search-input-widget.component';
-import { SearchLoadingAnimationComponent } from 'src/app/components/app-search/page-search/sub-components/search-loading-animation/search-loading-animation.component';
-import { SearchOfflineTipsComponent } from 'src/app/components/app-search/page-search/sub-components/search-offline-tips/search-offline-tips.component';
-import { SearchResultTableComponent } from 'src/app/components/app-search/page-search/sub-components/search-result-table/search-result-table.component';
-import { MatButtonModule } from '@lenovo/material/button';
-import { MatTableModule } from '@lenovo/material/table';
-import { MatPaginatorModule } from '@lenovo/material/paginator';
-import { PaginatorComponent } from 'src/app/components/app-search/page-search/sub-components/paginator/paginator.component';
-import { SearchResultEmptyTipsComponent } from 'src/app/components/app-search/page-search/sub-components/search-result-empty-tips/search-result-empty-tips.component';
-import { SupportModule } from '../support/support.module';
+
 @NgModule({
-	declarations: [
-		SearchInputWidgetComponent,
-		SearchLoadingAnimationComponent,
-		SearchOfflineTipsComponent,
-		SearchResultTableComponent,
-		SearchDropdownComponent,
-		PageSearchComponent,
-		PaginatorComponent,
-		FeatureInapplicableMessageComponent,
-		SearchResultEmptyTipsComponent,
-	],
+	declarations: [SearchDropdownComponent, PageSearchComponent, FeatureInapplicableMessageComponent],
 	imports: [
 		MetricsModule,
 		AppSearchRoutingModule,
@@ -53,10 +34,6 @@ import { SupportModule } from '../support/support.module';
 		PageLayoutModule,
 		FontAwesomeModule,
 		MatProgressSpinnerModule,
-		MatButtonModule,
-		MatTableModule,
-		MatPaginatorModule,
-		SupportModule
 	],
 	exports: [SearchDropdownComponent, PageSearchComponent],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

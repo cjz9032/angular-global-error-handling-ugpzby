@@ -613,5 +613,52 @@
 				}
 			}
 		}
+
+		.vtr-page-right-column {
+			.vtr-widget-support {
+				background: $gaming_darkest;
+				box-shadow: $drop_shadow_gaming;
+
+				.title {
+					color: $gaming_lightest !important;
+				}
+
+				.vtr-ui-list-support {
+					.support-list {
+						background-color: $gaming_bg !important;
+						border: none !important;
+
+						button {
+							&:hover {
+								background-color: transparent !important;
+							}
+						}
+
+						.title {
+							color: $gaming_lightest;
+						}
+
+						.arrow {
+							color: $gaming_lightest !important;
+						}
+
+						.description {
+							color: $gaming_grey_lightest;
+							font-size: 1.2rem;
+						}
+
+						li {
+							border-bottom: 0.1rem solid $gaming_darkest !important;
+
+							a {
+								&:hover {
+									background-color: transparent !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

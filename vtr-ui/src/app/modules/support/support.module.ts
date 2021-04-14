@@ -38,7 +38,6 @@ import { UiCloseButtonModule } from 'src/app/components/ui/ui-close-button/ui-cl
 import { PageContentLibraryComponent } from 'src/app/components/pages/page-content-library/page-content-library.component';
 import { WidgetWarrantyDetailModule } from 'src/app/components/widgets/widget-warranty-detail/widget-warranty-detail.module';
 import { ModalWarrantyCartComponent } from 'src/app/components/modal/modal-warranty-cart/modal-warranty-cart.component';
-import { RightContentForSupportComponent } from 'src/app/components/pages/page-support/right-content-for-support/right-content-for-support.component';
 
 
 @NgModule({
@@ -51,7 +50,6 @@ import { RightContentForSupportComponent } from 'src/app/components/pages/page-s
 		ModalAboutComponent,
 		ModalFindUsComponent,
 		ModalWarrantyCartComponent,
-		RightContentForSupportComponent
 	],
 	imports: [
 		CommonModule,
@@ -75,7 +73,6 @@ import { RightContentForSupportComponent } from 'src/app/components/pages/page-s
 	exports: [
 		UIArticleItemComponent,
 		ContainerArticleComponent,
-		RightContentForSupportComponent
 	],
 	entryComponents: [
 		ModalLicenseComponent,
