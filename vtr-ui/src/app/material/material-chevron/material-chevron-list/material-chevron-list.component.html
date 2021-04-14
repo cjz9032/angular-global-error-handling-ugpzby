@@ -47,7 +47,7 @@
 						matTooltipClass="vtr-system-tooltip"
 						[matTooltipDisabled]="!item.title && !item.subtitle"
 						#detailTooltip="matTooltip"
-						(mouseenter)="!detailTooltip.disabled ? ta.hide() : ''">
+						(mouseenter)="!detailTooltip.disabled ? ta.hide() : ''"
 						id="{{linkId+'-'+item.id+'-detail'}}">
 						{{item.detail}}
 					</span>
@@ -77,7 +77,7 @@
 
 				</span>
 				<span *ngIf="chevronVisibility"
-					class="arrowIcon text-right col col-1 pr-0"
+					class="arrowIcon text-center col col-1 pr-0"
 					id="{{'icon-arrow-' + item.id}}" role="icon"
 					[ngClass]="{'blue-arrow': arrowColor==='blue'}">
 					<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
@@ -129,7 +129,7 @@
 							matTooltipClass="vtr-system-tooltip"
 							[matTooltipDisabled]="!item.title && !item.subtitle"
 							#detailTooltip="matTooltip"
-							(mouseenter)="!detailTooltip.disabled ? ta.hide() : ''">
+							(mouseenter)="!detailTooltip.disabled ? ta.hide() : ''"
 							id="{{linkId+'-'+item.id+'-detail'}}">
 							{{item.detail}}
 						</span>
@@ -159,7 +159,7 @@
 
 					</span>
 					<span *ngIf="chevronVisibility"
-						class="arrowIcon text-right col col-1 pr-0"
+						class="arrowIcon text-center col col-1 pr-0"
 						id="{{'icon-arrow-' + item.id}}" role="icon"
 						[ngClass]="{'blue-arrow': arrowColor==='blue'}">
 						<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
@@ -212,7 +212,7 @@
 							matTooltipClass="vtr-system-tooltip"
 							[matTooltipDisabled]="!item.title && !item.subtitle"
 							#detailTooltip="matTooltip"
-							(mouseenter)="!detailTooltip.disabled ? ta.hide() : ''">
+							(mouseenter)="!detailTooltip.disabled ? ta.hide() : ''"
 							id="{{linkId+'-'+item.id+'-detail'}}">
 							{{item.detail}}
 						</span>
@@ -242,7 +242,7 @@
 
 					</span>
 					<span *ngIf="chevronVisibility"
-						class="arrowIcon text-right col col-1 pr-0"
+						class="arrowIcon text-center col col-1 pr-0"
 						id="{{'icon-arrow-' + item.id}}" role="icon"
 						[ngClass]="{'blue-arrow': arrowColor==='blue'}">
 						<fa-icon [icon]="['fal', 'chevron-right']"></fa-icon>
