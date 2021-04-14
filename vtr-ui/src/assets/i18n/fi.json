@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Asenna GPU-ajuri käyttämään ylikellotustoimintoa.",
 						"goInstall": "ASENNA"
 					},
-					"autoAdjustDesc": "Havaitse nykyinen peli automaattisesti ja säädä CPU:n/GPU:n suorituskykyä.",
+					"autoAdjustDesc": "Havaitse nykyinen peli automaattisesti ja säädä CPU:n/GPU:n suorituskykyä. Kun tämä ominaisuus on käytössä, tietokoneesi lämpötila ja tuulettimen äänentaso saattavat nousta.",
 					"autoSwitch": "Automaattinen vaihto suorituskykytilaan pelien käynnistyessä ja paluu takaisin pelin jälkeen."
 				},
 				"advancedOC": {

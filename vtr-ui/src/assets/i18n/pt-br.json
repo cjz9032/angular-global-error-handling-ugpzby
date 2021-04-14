@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Instale o driver da GPU para usar a função de Overclocking.",
 						"goInstall": "INSTALAR"
 					},
-					"autoAdjustDesc": "Detecte automaticamente o jogo atual e ajuste o desempenho da CPU/GPU.",
+					"autoAdjustDesc": "Detecte automaticamente o jogo atual e ajuste o desempenho da CPU/GPU. Quando ativado, a temperatura do computador e o ruído do ventilador podem aumentar.",
 					"autoSwitch": "Alterne automaticamente para o Modo Desempenho ao iniciar jogos e alterne novamente ao término."
 				},
 				"advancedOC": {

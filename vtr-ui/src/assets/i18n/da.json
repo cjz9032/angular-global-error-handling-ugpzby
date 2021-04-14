@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Installer GPU-driver for at bruge overclockingfunktionen.",
 						"goInstall": "INSTALLER"
 					},
-					"autoAdjustDesc": "Find automatisk det aktuelle spil, og juster CPU-/GPU-ydeevnen.",
+					"autoAdjustDesc": "Find automatisk det aktuelle spil, og juster CPU-/GPU-ydeevnen. Når den er aktiveret, kan temperaturen på computeren og støjen fra blæseren blive øget.",
 					"autoSwitch": "Skift automatisk til ydeevnetilstand, når du starter spil, og skift tilbage, når spillet af afsluttet."
 				},
 				"advancedOC": {

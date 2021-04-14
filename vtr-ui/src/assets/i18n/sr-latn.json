@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Instalirajte GPU upravljački program da biste koristili funkciju Overkloking.",
 						"goInstall": "IDI NA INSTALACIJU"
 					},
-					"autoAdjustDesc": "Automatsko otkrivanje trenutne igre i podešavanje performansi centralnog procesora (CPU)/grafičke kartice (GPU).",
+					"autoAdjustDesc": "Automatsko otkrivanje trenutne igre i podešavanje performansi centralnog procesora (CPU)/grafičke kartice (GPU). Kada je omogućeno, temperatura na računaru i buka ventilatora se mogu povećati.",
 					"autoSwitch": "Automatski prebacite na režim performansi pri pokretanju igara i vratite se iz njega nakon što izađete iz igre."
 				},
 				"advancedOC": {

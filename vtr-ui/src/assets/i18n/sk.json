@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Ak chcete používať funkciu pretaktovania, nainštalujte ovládač grafického procesora.",
 						"goInstall": "INŠTALOVAŤ"
 					},
-					"autoAdjustDesc": "Automaticky rozpozná aktuálnu hru a vyladí výkon CPU/GPU.",
+					"autoAdjustDesc": "Automaticky rozpozná aktuálnu hru a vyladí výkon CPU/GPU. Keď je povolený, teplota počítača a hluk ventilátora sa môžu zvýšiť.",
 					"autoSwitch": "Automaticky prepínajte do režimu vysokého výkonu pri spustení hry a po ukončení hry prepnite späť."
 				},
 				"advancedOC": {

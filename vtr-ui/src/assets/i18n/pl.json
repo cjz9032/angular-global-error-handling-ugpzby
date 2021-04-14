@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Zainstaluj sterownik GPU w celu użycia funkcji Przetaktowania.",
 						"goInstall": "ZAINSTALUJ"
 					},
-					"autoAdjustDesc": "Automatycznie wykryj bieżącą grę i dostosuj wydajność CPU/GPU do jej wymagań.",
+					"autoAdjustDesc": "Automatycznie wykryj bieżącą grę i dostosuj wydajność CPU/GPU do jej wymagań. Po włączeniu tego trybu temperatura na powierzchni komputera oraz poziom hałasu wentylatora mogą wzrosnąć.",
 					"autoSwitch": "Automatycznie włączaj tryb wydajności po uruchomianiu gry i wyłączaj go po jej zamknięciu."
 				},
 				"advancedOC": {

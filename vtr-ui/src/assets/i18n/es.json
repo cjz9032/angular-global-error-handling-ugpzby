@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Instale el controlador de GPU para usar la función de Aceleración.",
 						"goInstall": "VAYA A INSTALAR"
 					},
-					"autoAdjustDesc": "Detectar automáticamente el juego actual y ajustar el rendimiento de la CPU/GPU.",
+					"autoAdjustDesc": "Detectar automáticamente el juego actual y ajustar el rendimiento de la CPU/GPU. Cuando está habilitada, la temperatura del sistema y el ruido del ventilador pueden aumentar.",
 					"autoSwitch": "Cambie automáticamente a la modalidad de rendimiento al iniciar juegos y vuelva a cambiar después de salir del juego."
 				},
 				"advancedOC": {

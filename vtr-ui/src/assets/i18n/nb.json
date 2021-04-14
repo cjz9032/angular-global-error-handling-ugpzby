@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Installer GPU-driver for å bruke funksjonen for overklokking.",
 						"goInstall": "INSTALLER"
 					},
-					"autoAdjustDesc": "Finner det gjeldende spillet automatisk og justerer CPU/GPU-ytelsen.",
+					"autoAdjustDesc": "Finner det gjeldende spillet automatisk og justerer CPU/GPU-ytelsen. Når aktivert, kan temperaturen til datamaskinen din og støyen fra vifta øke.",
 					"autoSwitch": "Bytt automatisk til ytelsesmodus når du starter spill, og bytt tilbake etter at du har avsluttet spillet."
 				},
 				"advancedOC": {

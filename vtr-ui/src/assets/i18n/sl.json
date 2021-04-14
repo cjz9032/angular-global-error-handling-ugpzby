@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Za uporabo funkcije zvišanja takta namestite gonilnik za GPE.",
 						"goInstall": "NAMESTI"
 					},
-					"autoAdjustDesc": "Samodejno zazna trenutno igro in nastavi zmogljivost CPE/GPE.",
+					"autoAdjustDesc": "Samodejno zazna trenutno igro in nastavi zmogljivost CPE/GPE. Ko je omogočen, se lahko temperatura računalnika in glasnost delovanja ventilatorja povečata.",
 					"autoSwitch": "Samodejno preklopite na zmogljivejši način pri zagonu iger in preklopite nazaj po izhodu iz igre."
 				},
 				"advancedOC": {

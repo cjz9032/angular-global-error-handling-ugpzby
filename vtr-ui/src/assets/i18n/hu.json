@@ -142,7 +142,7 @@
 						"gpuDriverLack": "GPU-illesztőprogram telepítése a Túlpörgetés funkcióhoz.",
 						"goInstall": "TELEPÍTÉS"
 					},
-					"autoAdjustDesc": "Automatikusan észleli az aktuális játékot, és annak megfelelően hangolja a CPU/GPU teljesítményét.",
+					"autoAdjustDesc": "Automatikusan észleli az aktuális játékot, és annak megfelelően hangolja a CPU/GPU teljesítményét. Ha engedélyezi, a számítógép hőmérséklete megemelkedhet, és a ventilátor is hangosabban üzemelhet.",
 					"autoSwitch": "Automatikus váltás Teljesítmény módra játék indításakor, majd visszaváltás a játékból való kilépést követően."
 				},
 				"advancedOC": {
