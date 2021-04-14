@@ -46,8 +46,7 @@
 								[innerHTML]="item.Title"
 								[matTooltip]="item.Title | htmlText"
 								matTooltipClass="vtr-system-tooltip"
-								#tipCardCornerTitle="matTooltip"
-								(mouseenter)="closeTipTimeout(tipCardCornerTitle)"></div>
+								#tipCardCornerTitle="matTooltip"></div>
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis"
 								id="{{containerCardId+'-caption'}}"
@@ -55,8 +54,7 @@
 								[innerHtml]="item.Description"
 								[matTooltip]="item.Description | htmlText"
 								matTooltipClass="vtr-system-tooltip"
-								#tipCardCornerDescription="matTooltip"
-								(mouseenter)="closeTipTimeout(tipCardCornerDescription)"></div>
+								#tipCardCornerDescription="matTooltip"></div>
 							<div *ngIf="item.BrandImage || item.BrandName"
 								class="logo">
 								<span class="logo-img">
@@ -184,8 +182,7 @@
 								[innerHtml]="item.Title"
 								[matTooltip]="item.Title | htmlText"
 								matTooltipClass="vtr-system-tooltip"
-								#tipCardHighlightTitle="matTooltip"
-								(mouseenter)="closeTipTimeout(tipCardHighlightTitle)"></div>
+								#tipCardHighlightTitle="matTooltip"></div>
 						</div>
 					</a>
 				</div>
@@ -239,8 +236,7 @@
 								role="text"
 								[matTooltip]="item.Title | htmlText"
 								matTooltipClass="vtr-system-tooltip"
-								#tipCardArticleTitle="matTooltip"
-								(mouseenter)="closeTipTimeout(tipCardArticleTitle)"></div>
+								#tipCardArticleTitle="matTooltip"></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
 								[style.line-height.px]="containerCardArticle.clientWidth * 27 / 430"
@@ -305,7 +301,6 @@
 								[matTooltip]="item.Title | htmlText"
 								matTooltipClass="vtr-system-tooltip"
 								#tipCardSubpageArticleTitle="matTooltip"
-								(mouseenter)="closeTipTimeout(tipCardSubpageArticleTitle)"
 								[attr.aria-hidden]="!isOnline"></div>
 							<div *ngIf="item.ActionLink && !isOfflineArm"
 								[style.height.px]="containerCardArticle.clientWidth * 27 / 430"
@@ -357,7 +352,6 @@
 								[matTooltip]="item.Title | htmlText"
 								matTooltipClass="vtr-system-tooltip"
 								#tipCardSubpageCornerTitle="matTooltip"
-								(mouseenter)="closeTipTimeout(tipCardSubpageCornerTitle)"
 								[attr.aria-hidden]="!isOnline"></h2>
 							<div *ngIf="item.Description"
 								class="caption text-two-ellipsis">
@@ -367,7 +361,6 @@
 									[matTooltip]="item.Description | htmlText"
 									matTooltipClass="vtr-system-tooltip"
 									#tipCardSubpageCornerDescription="matTooltip"
-									(mouseenter)="closeTipTimeout(tipCardSubpageCornerDescription)"
 									role="text"
 									[attr.aria-hidden]="!isOnline"></p>
 							</div>
@@ -428,7 +421,6 @@
 								[matTooltip]="item.Title | htmlText"
 								matTooltipClass="vtr-system-tooltip"
 								#tipCardSubpagePartnerCornerTitle="matTooltip"
-								(mouseenter)="closeTipTimeout(tipCardSubpagePartnerCornerTitle)"
 								[attr.aria-hidden]="!isOnline"></div>
 							<div *ngIf="item.ActionLink"
 								class="read-more">
