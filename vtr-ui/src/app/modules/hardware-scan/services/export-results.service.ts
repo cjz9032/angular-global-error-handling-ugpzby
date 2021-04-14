@@ -3,187 +3,58 @@ import { Injectable } from '@angular/core';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { toNumber } from 'lodash';
-import { ExportLogErrorStatus, ExportLogExtensions } from 'src/app/enums/export-log.enum';
+import { LogType } from 'src/app/enums/export-log.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
+import { CommonExportLogService } from 'src/app/services/export-log/common-export-log.service';
+import { logIcons } from 'src/app/services/export-log/utils/icons/log-tables';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { environment } from 'src/environments/environment';
 import { FormatLocaleDateTimePipe } from '../../../pipe/format-locale-datetime/format-locale-datetime.pipe';
 import { DeviceService } from '../../../services/device/device.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
-import {
-	FontTypes,
-	HardwareScanOverallResult,
-	HardwareScanTestResult,
-	LanguageCode,
-} from '../enums/hardware-scan.enum';
+import { HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
 import { HardwareScanResultService } from './hardware-scan-result.service';
 import { HardwareScanService } from './hardware-scan.service';
 import { RecoverBadSectorsService } from './recover-bad-sectors.service';
 import { ScanLogService } from './scan-log.service';
-import { LogIcons } from './utils/icons/log-icons';
 import { ModulesIcons } from './utils/icons/modules-icons';
 import { StatusIcons } from './utils/icons/status-icons';
-
-declare let window;
-
-interface IFont {
-	id: string;
-	data: string;
-}
 
 @Injectable({
 	providedIn: 'root',
 })
-export class ExportResultsService {
-	private static readonly TEMPLATE_PATH =
-		'assets/templates/hardware-scan/export-results-template.html';
-
-	private shellVersion: string;
-	private experienceVersion: string;
-	private bridgeVersion: string;
-	private exportExtensionSelected = ExportLogExtensions.html;
-
+export class ExportResultsService extends CommonExportLogService {
 	// Attributes to build pdf
-	private currentFont: string;
-	private currentLanguage: string;
-	private fonts: Array<IFont> = new Array<IFont>();
-	private componentIconSize = 10;
-	private darkBlueColor = '#34495E';
-	private lightBlueColor = '#4A81FD';
-	private whiteColor = '#FFF';
-	private hebrewUnicodeRange = /[\u0590-\u05FF]/;
-	private logoSize = 10;
-	private startX = 10;
 	private statusIconSize = 5;
-	private firsColumnStyle = {
-		cellWidth: 75,
-		fontStyle: 'bold',
-		halign: 'left',
-	};
-
-	private document: HTMLDocument;
 
 	public constructor(
-		private http: HttpClient,
 		private translate: TranslateDefaultValueIfNotFoundPipe,
 		private hardwareScanResultService: HardwareScanResultService,
 		private localCacheService: LocalCacheService,
-		private shellService: VantageShellService,
 		private formatDateTime: FormatLocaleDateTimePipe,
 		private scanLogService: ScanLogService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private hardwareScanService: HardwareScanService,
-		private deviceService: DeviceService,
-		private logger: LoggerService
+		http: HttpClient,
+		deviceService: DeviceService,
+		shellService: VantageShellService,
+		logger: LoggerService
 	) {
-		this.experienceVersion = environment.appVersion;
-
-		if (window.Windows) {
-			const packageVersion = window.Windows.ApplicationModel.Package.current.id.version;
-			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}.${packageVersion.revision}`;
-		}
-
-		const jsBridgeVersion = this.shellService.getVersion();
-		if (
-			document.location.href.indexOf('stage') >= 0 ||
-			document.location.href.indexOf('vantage.csw.') >= 0
-		) {
-			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion.split('-')[0] : '';
-		} else {
-			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion : '';
-		}
-
-		this.deviceService.getMachineInfo().then((value) => this.loadFonts(value.locale));
+		super(http, logger, shellService, deviceService);
 	}
 
-	public async exportRbsResults(): Promise<[ExportLogErrorStatus, string]> {
-		if (!(await this.validateDocumentsLibrary())) {
-			throw ExportLogErrorStatus.AccessDenied;
-		}
-
-		try {
-			let dataFormatted;
-			const reportFileName = 'RecoverBadSectorsLog';
-			const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
-			const dataPrepared = await this.prepareDataFromRecoverBadSectors(rbsResultItems);
-
-			if (this.exportExtensionSelected === ExportLogExtensions.html) {
-				dataFormatted = await this.generateHtmlReport(dataPrepared);
-			} else {
-				dataFormatted = this.generatePdfReport(dataPrepared);
-			}
-
-			const createdFilePath = await this.exportReportToFile(reportFileName, dataFormatted);
-			return [ExportLogErrorStatus.SuccessExport, createdFilePath];
-		} catch (error) {
-			this.logger.error('Could not get rbs log', error);
-			throw ExportLogErrorStatus.GenericError;
-		}
-	}
-
-	public async exportScanResults(): Promise<[ExportLogErrorStatus, string]> {
-		if (!(await this.validateDocumentsLibrary())) {
-			throw ExportLogErrorStatus.AccessDenied;
-		}
-
-		try {
-			let dataFormatted;
-			const reportFileName = 'HardwareScanLog';
-			const scanLogData = await this.scanLogService.getScanLog();
-			const dataPrepared = await this.prepareDataFromScanLog(scanLogData);
-			if (this.exportExtensionSelected === ExportLogExtensions.html) {
-				dataFormatted = await this.generateHtmlReport(dataPrepared);
-			} else {
-				dataFormatted = this.generatePdfReport(dataPrepared);
-			}
-			const createdFilePath = await this.exportReportToFile(reportFileName, dataFormatted);
-			return [ExportLogErrorStatus.SuccessExport, createdFilePath];
-		} catch (error) {
-			this.logger.error('Could not get scan log', error);
-			throw ExportLogErrorStatus.GenericError;
-		}
-	}
-
-	public setExportExtensionSelected(extension: ExportLogExtensions) {
-		this.exportExtensionSelected = extension;
-	}
-
-	private async loadFonts(currentLanguage: string) {
-		this.currentLanguage = currentLanguage;
-
-		switch (currentLanguage) {
-			case LanguageCode.japanese:
-			case LanguageCode.simplifiedChinese:
-			case LanguageCode.traditionalChinese:
-				this.currentFont = FontTypes.notosc;
-				break;
-			case LanguageCode.korean:
-				this.currentFont = FontTypes.notokr;
-				break;
-			case LanguageCode.arabic:
-				this.currentFont = FontTypes.amiri;
-				break;
-			case LanguageCode.hebrew:
-				this.currentFont = FontTypes.rubik;
-				break;
+	protected async prepareData(logType?: LogType): Promise<any> {
+		switch (logType) {
+			case LogType.rbs:
+				const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
+				return this.prepareDataFromRecoverBadSectors(rbsResultItems);
+			case LogType.scan:
+				const scanLogData = await this.scanLogService.getScanLog();
+				return this.prepareDataFromScanLog(scanLogData);
 			default:
-				this.currentFont = FontTypes.noto;
+				this.logger.error('[Prepare Data] Export Results Incorrect call');
 				break;
-		}
-
-		try {
-			this.fonts.push((await import('./utils/fonts/amiri.json')).default as IFont);
-			this.fonts.push((await import('./utils/fonts/noto.json')).default as IFont);
-			this.fonts.push((await import('./utils/fonts/rubik.json')).default as IFont);
-			this.fonts.push((await import('./utils/fonts/noto-kr.json')).default as IFont);
-			this.fonts.push((await import('./utils/fonts/noto-sc.json')).default as IFont);
-		} catch (error) {
-			this.logger.error(
-				'[HardwareScan ExportResultsService] Error on loading font files',
-				error
-			);
 		}
 	}
 
@@ -847,40 +718,6 @@ export class ExportResultsService {
 		return result;
 	}
 
-	/**
-	 * Retrieve a string containing the scan's results in html format
-	 *
-	 * @param jsonData A json object containing all scan's result information
-	 */
-	private generateScanReport(jsonData: any): Promise<string> {
-		return new Promise((resolve, reject) => {
-			this.http
-				.get(ExportResultsService.TEMPLATE_PATH, { responseType: 'text' })
-				.toPromise()
-				.then((htmlData) => {
-					this.document = new DOMParser().parseFromString(htmlData, 'text/html');
-					this.populateTemplate(jsonData);
-					resolve(this.document.documentElement.outerHTML);
-				})
-				.catch((error) => {
-					this.logger.exception('[ExportResultService] generateScanReport', error);
-					reject(error);
-				});
-		});
-	}
-
-	private getDateAndHour(): string {
-		const date = new Date();
-		const day = date.getDate().toString();
-		const maskDay = day.length === 1 ? '0' + day : day;
-		const month = (date.getMonth() + 1).toString();
-		const maskMonth = month.length === 1 ? '0' + month : month;
-		const year = date.getFullYear().toString();
-		const time = date.toTimeString().split(' ');
-
-		return year + maskMonth + maskDay + '_' + time[0].replace(/:/g, '');
-	}
-
 	private getModelData(): Promise<any> {
 		const modelData: any = {};
 
@@ -939,7 +776,12 @@ export class ExportResultsService {
 		preparedData.startDate = this.formatDateTime.transform(rbsResult.startDate);
 		preparedData.endDate = this.formatDateTime.transform(rbsResult.date);
 		preparedData.items = preparedRbsDevices;
-		preparedData.model = await this.getModelData();
+		preparedData.model = {
+			biosVersion: this.biosVersion,
+			serialNumber: this.serialNumber,
+			productName: this.productName,
+			machineModel: this.machineModel,
+		}; // await this.getModelData();
 		preparedData.isRecoverBadSectors = isRecoverBadSectors;
 
 		preparedData.environment = {
@@ -1116,49 +958,6 @@ export class ExportResultsService {
 		}
 	}
 
-	/**
-	 * Main function that will be create each needed element
-	 *
-	 * @param data A json object containing all data needed to export the results
-	 */
-	private populateTemplate(data: any) {
-		const isRecoverBadSectors = data.isRecoverBadSectors ?? false;
-		let environmentInfoItemsOrder = [];
-		let modelItemsOrder = [];
-
-		if (isRecoverBadSectors) {
-			environmentInfoItemsOrder = ['experienceVersion', 'shellVersion', 'bridgeVersion'];
-			modelItemsOrder = ['productName', 'serialNumber', 'biosVersion'];
-		} else {
-			modelItemsOrder = ['productName', 'serialNumber', 'networkInterfaces', 'biosVersion'];
-			environmentInfoItemsOrder = [
-				'applicationVersion',
-				'pluginVersion',
-				'experienceVersion',
-				'shellVersion',
-				'bridgeVersion',
-			];
-		}
-
-		// OverallStatus and Header
-		this.populateTemplateOverallStatus(data);
-
-		// Model Section
-		this.populateTemplateModelSection(data, modelItemsOrder);
-
-		// Environment Section
-		this.populateTemplateEnvironmentSection(data, environmentInfoItemsOrder);
-
-		// Test Summary Section
-		this.populateTemplateTestSummarySection(data);
-
-		// StartTime and EndTime
-		this.populateTemplateStartAndEndTime(data);
-
-		// Modules information
-		this.populateTemplateModuleSection(data);
-	}
-
 	private getNetworkInterfaces(networkInterfaces: any): any {
 		const interfaces = [];
 		networkInterfaces.forEach((interfaceInfo) => {
@@ -1185,7 +984,7 @@ export class ExportResultsService {
 			didDrawCell: (data) => {
 				if (data.column.index === 0) {
 					doc.addImage(
-						LogIcons.get('MODEL'),
+						logIcons.get('MODEL'),
 						'PNG',
 						data.cell.x,
 						data.cell.y,
@@ -1265,7 +1064,7 @@ export class ExportResultsService {
 			didDrawCell: (data) => {
 				if (data.column.index === 0) {
 					doc.addImage(
-						LogIcons.get('ENVIRONMENT'),
+						logIcons.get('ENVIRONMENT'),
 						'PNG',
 						data.cell.x,
 						data.cell.y,
@@ -1632,7 +1431,7 @@ export class ExportResultsService {
 			didDrawCell: (data) => {
 				if (data.column.index === 0) {
 					doc.addImage(
-						LogIcons.get('TESTSUMMARY'),
+						logIcons.get('TESTSUMMARY'),
 						'PNG',
 						data.cell.x,
 						data.cell.y,
@@ -1730,7 +1529,7 @@ export class ExportResultsService {
 				switch (data.row.index) {
 					case 0: {
 						doc.addImage(
-							LogIcons.get('HARDWAREDIAGNOSTICSLOG'),
+							logIcons.get('HARDWAREDIAGNOSTICSLOG'),
 							'PNG',
 							data.cell.x,
 							data.cell.y,
@@ -1787,38 +1586,9 @@ export class ExportResultsService {
 		});
 	}
 
-	private generatePdfReport(jsonData: any): any {
-		const isRecoverBadSectors = jsonData.isRecoverBadSectors ?? false;
-
-		const doc = new jsPDF();
-
-		this.fonts.forEach((font) => {
-			doc.addFileToVFS(font.id + '.ttf', font.data);
-			doc.addFont(font.id + '.ttf', font.id, 'normal');
-		});
-
-		(jsPDF as any).autoTableSetDefaults({
-			margin: 10,
-			showHead: 'firstPage',
-			headStyles: {
-				fillColor: this.darkBlueColor,
-				textColor: this.whiteColor,
-			},
-			bodyStyles: {
-				textColor: this.darkBlueColor,
-			},
-			styles: {
-				font: this.currentFont,
-			},
-			didParseCell: (data) => {
-				const value = this.reverseForHebrew(data);
-
-				if (value !== undefined) {
-					data.cell.text = value;
-				}
-			},
-		});
+	protected populatePdf(doc: jsPDF, jsonData: any): void {
 		let startY = 10;
+		const isRecoverBadSectors = jsonData.isRecoverBadSectors ?? false;
 
 		this.generateHeaderPdf(
 			doc,
@@ -1838,118 +1608,43 @@ export class ExportResultsService {
 
 		startY = (doc as any).lastAutoTable.finalY + 10;
 		this.generateModulesTables(doc, jsonData.items, startY, isRecoverBadSectors);
-
-		return doc.output('arraybuffer');
 	}
 
-	private generateHtmlReport(jsonData: any): Promise<string> {
-		return new Promise((resolve, reject) => {
-			this.http
-				.get(ExportResultsService.TEMPLATE_PATH, { responseType: 'text' })
-				.toPromise()
-				.then((htmlData) => {
-					this.document = new DOMParser().parseFromString(htmlData, 'text/html');
-					this.populateTemplate(jsonData);
-					resolve(this.document.documentElement.outerHTML);
-				})
-				.catch((error) => {
-					this.logger.exception('[ExportResultService] generateHtmlReport', error);
-					reject(error);
-				});
-		});
-	}
+	protected populateHtml(data: any) {
+		const isRecoverBadSectors = data.isRecoverBadSectors ?? false;
+		let environmentInfoItemsOrder = [];
+		let modelItemsOrder = [];
 
-	private async exportReportToFile(reportFileName: string, dataFormatted: any): Promise<string> {
-		let pathSaved = '';
-		const fileName = reportFileName + '_' + this.getDateAndHour();
-		const picker = new window.Windows.Storage.Pickers.FileSavePicker();
-		picker.suggestedFileName = fileName;
-
-		// Display selected extension in file picker
-		if (this.exportExtensionSelected === ExportLogExtensions.html) {
-			picker.fileTypeChoices.insert('Hyper Text Markup Language File', ['.html']);
-			const file = await picker.pickSaveFileAsync();
-			if (file !== null) {
-				await window.Windows.Storage.FileIO.writeTextAsync(file, dataFormatted);
-				pathSaved = file.path;
-			} else {
-				this.logger.info('File is null');
-			}
+		if (isRecoverBadSectors) {
+			environmentInfoItemsOrder = ['experienceVersion', 'shellVersion', 'bridgeVersion'];
+			modelItemsOrder = ['productName', 'serialNumber', 'biosVersion'];
 		} else {
-			picker.fileTypeChoices.insert('Portable Document Format', ['.pdf']);
-			const file = await picker.pickSaveFileAsync();
-			if (file !== null) {
-				const dataArray = new Uint8Array(dataFormatted);
-				await window.Windows.Storage.FileIO.writeBytesAsync(file, dataArray);
-				pathSaved = file.path;
-			} else {
-				this.logger.info('File is null');
-			}
+			modelItemsOrder = ['productName', 'serialNumber', 'networkInterfaces', 'biosVersion'];
+			environmentInfoItemsOrder = [
+				'applicationVersion',
+				'pluginVersion',
+				'experienceVersion',
+				'shellVersion',
+				'bridgeVersion',
+			];
 		}
 
-		if (pathSaved === '') {
-			throw new Error('Operation cancelled');
-		}
+		// OverallStatus and Header
+		this.populateTemplateOverallStatus(data);
 
-		return pathSaved;
-	}
+		// Model Section
+		this.populateTemplateModelSection(data, modelItemsOrder);
 
-	private async validateDocumentsLibrary(): Promise<boolean> {
-		const permissionDeniedErrorNumber = -2147024891; // Error code got from error object
+		// Environment Section
+		this.populateTemplateEnvironmentSection(data, environmentInfoItemsOrder);
 
-		try {
-			await window.Windows.Storage.KnownFolders.documentsLibrary;
-		} catch (error) {
-			// I'll only return false if this specific error happens
-			// Any other error will be treated as "generic error"
-			if (error.number === permissionDeniedErrorNumber) {
-				return false;
-			}
-		}
-		return true;
-	}
+		// Test Summary Section
+		this.populateTemplateTestSummarySection(data);
 
-	private setCorrectFont(content: string): any {
-		const fontByInterval = [
-			{ font: FontTypes.notokr, range: /[\u3131-\uD79D]/ }, // korean
-			{ font: FontTypes.notosc, range: /[\u4e00-\u9eff]/ }, // chinese and japanese
-			{ font: FontTypes.amiri, range: /[\u0600-\u06FF]/ }, // arabic
-			{ font: FontTypes.rubik, range: this.hebrewUnicodeRange }, // hebrew
-			{ font: FontTypes.rubik, range: /[\u0370-\u03FF]/ }, // greek
-			{ font: FontTypes.rubik, range: /[\u0161\u0111\u010D\u0107\u017E]/ }, // croatian or others
-			{ font: FontTypes.noto, range: /[^\u0000-\u00ff]/ }, // default
-		];
+		// StartTime and EndTime
+		this.populateTemplateStartAndEndTime(data);
 
-		return fontByInterval.find((data) => data.range.test(content))?.font ?? FontTypes.noto;
-	}
-
-	// Method used as workaround when content is in hebrew, because jspdf print it reversed
-	private reverseForHebrew(data: any): string {
-		const content = data.cell.raw?.content ?? data.cell?.raw;
-
-		if (this.currentLanguage === LanguageCode.hebrew && this.hebrewUnicodeRange.test(content)) {
-			// Avoid wrong positioning of : and () characters
-			const specialCharacters = (word: string) => {
-				let currentValue = word;
-				const lastElement = word.slice(-1);
-
-				if (lastElement === ':') {
-					currentValue = currentValue.slice(0, -1);
-					currentValue = ':' + currentValue;
-				} else if (lastElement === ')') {
-					currentValue = currentValue.slice(1, -1);
-					currentValue = ')' + currentValue + '(';
-				}
-
-				return [...currentValue];
-			};
-
-			return content
-				.split(' ')
-				.map((word: string) => specialCharacters(word).reverse().join(''))
-				.join(' ');
-		}
-
-		return undefined;
+		// Modules information
+		this.populateTemplateModuleSection(data);
 	}
 }

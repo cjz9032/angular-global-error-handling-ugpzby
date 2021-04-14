@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
+import { ExportLogErrorStatus, LogType } from 'src/app/enums/export-log.enum';
 import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 
@@ -55,7 +55,7 @@ describe('ExportSnapshotResultsService', () => {
 			const error = new Error('Generic Error');
 			spyOn<any>(service, testCase.functionName).and.throwError(error);
 
-			await expectAsync(service.exportSnapshotResults()).toBeRejectedWith(
+			await expectAsync(service.exportLog(LogType.snapshot)).toBeRejectedWith(
 				ExportLogErrorStatus.GenericError
 			);
 			expect(loggerServiceSpy.error).toHaveBeenCalledWith('Could not get scan log', error);
@@ -68,7 +68,7 @@ describe('ExportSnapshotResultsService', () => {
 		spyOn<any>(service, 'generateHtmlReport').and.returnValue('Mocked Data Format');
 		spyOn<any>(service, 'exportReportToFile').and.returnValue(pathMocked);
 
-		await expectAsync(service.exportSnapshotResults()).toBeResolvedTo([
+		await expectAsync(service.exportLog(LogType.snapshot)).toBeResolvedTo([
 			ExportLogErrorStatus.SuccessExport,
 			pathMocked,
 		]);

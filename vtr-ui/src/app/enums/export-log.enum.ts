@@ -10,6 +10,12 @@ export enum ExportLogExtensions {
 	html = 'html',
 }
 
+export enum LogType {
+	rbs = 'RecoverBadSectorsLog',
+	scan = 'HardwareScanLog',
+	snapshot = 'SnapshotLog',
+}
+
 export enum FontTypes {
 	amiri = 'amiri',
 	notokr = 'noto-kr',
@@ -18,10 +24,11 @@ export enum FontTypes {
 	rubik = 'rubik',
 }
 
-export enum PdfLanguageTokens {
+export enum LanguageCode {
 	arabic = 'ar',
-	japanese = 'ja',
+	english = 'en',
 	hebrew = 'he',
+	japanese = 'ja',
 	korean = 'ko',
 	simplifiedChinese = 'zh-hans',
 	traditionalChinese = 'zh-hant',
