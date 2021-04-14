@@ -1,5 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { SmartPrivacyMessengerService } from '../../../services/smart-privacy/smart-privacy-messenger.service';
+import { MatDialog } from '@lenovo/material/dialog';
+import {
+	MESSAGES,
+	SmartPrivacyMessengerService
+} from '../../../services/smart-privacy/smart-privacy-messenger.service';
+import { ModalSmartPrivacySubscribeComponent } from '../../modal/modal-smart-privacy-subscribe/modal-smart-privacy-subscribe.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
 	selector: 'vtr-page-smart-privacy',
@@ -9,13 +15,29 @@ import { SmartPrivacyMessengerService } from '../../../services/smart-privacy/sm
 export class PageSmartPrivacyComponent implements OnInit {
 	@ViewChild('smartPrivacyIframe', {static: true}) smartPrivacyIframe: ElementRef<HTMLIFrameElement>;
 
-	constructor(private smartPrivacyMessengerService: SmartPrivacyMessengerService) {
+	constructor(
+		private smartPrivacyMessengerService: SmartPrivacyMessengerService,
+		private dialog: MatDialog,
+	) {
 	}
 
 	ngOnInit() {
-		// this.smartPrivacyMessengerService.getMessages()
-		// 	.subscribe((payload) => ('smartPrivacyMessengerService'));
+		this.smartPrivacyMessengerService.getMessages().pipe(
+			filter((message) => message.data === MESSAGES.openBuyNow)
+		).subscribe(() => this.openBuyNow());
+	}
 
-		// setTimeout(() => this.smartPrivacyMessengerService.sendMessage('to-smart-privacy:open', this.smartPrivacyIframe.nativeElement.contentWindow), 5000);
+	openBuyNow() {
+		const modalRef = this.dialog.open(ModalSmartPrivacySubscribeComponent, {
+			maxWidth: '50rem',
+			autoFocus: true,
+			hasBackdrop: true,
+			disableClose: true,
+			panelClass: 'subscribe-modal',
+		});
+
+		modalRef.afterClosed().subscribe(() => {
+			this.smartPrivacyMessengerService.sendMessage('openBuyNowClosed', this.smartPrivacyIframe.nativeElement.contentWindow);
+		});
 	}
 }

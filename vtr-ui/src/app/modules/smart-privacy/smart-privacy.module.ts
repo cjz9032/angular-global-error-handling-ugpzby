@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SmartPrivacyRoutingModule } from './smart-privacy-routing.module';
 import { PageSmartPrivacyComponent } from '../../components/pages/page-smart-privacy/page-smart-privacy.component';
 
-import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLaptop } from '@fortawesome/free-solid-svg-icons/faLaptop';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
@@ -22,10 +22,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonUiModule } from '../common/common-ui.module';
 import { PageLayoutModule } from '../../components/page-layout/page-layout.module';
 import { TranslationModule } from '../translation.module';
+import { ModalSmartPrivacySubscribeComponent } from '../../components/modal/modal-smart-privacy-subscribe/modal-smart-privacy-subscribe.component';
 
 @NgModule({
 	declarations: [
-		PageSmartPrivacyComponent
+		PageSmartPrivacyComponent,
+		ModalSmartPrivacySubscribeComponent
 	],
 	imports: [
 		CommonModule,
@@ -33,6 +35,7 @@ import { TranslationModule } from '../translation.module';
 		SmartPrivacyRoutingModule,
 		PageLayoutModule,
 		TranslationModule.forChild(),
+		FontAwesomeModule
 	],
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	exports: [

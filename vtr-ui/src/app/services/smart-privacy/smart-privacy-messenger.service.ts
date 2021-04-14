@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
+export const MESSAGES = {
+	openBuyNow: 'smart-privacy:open-buy-now',
+	openBuyNowClosed: 'smart-privacy:open-buy-now-closed',
+} as const;
 
 @Injectable({
 	providedIn: 'root',
@@ -15,7 +19,7 @@ export class SmartPrivacyMessengerService {
 		return this.messages;
 	}
 
-	sendMessage(command: string, windowToSend: Window) {
-		windowToSend.postMessage('to-smart-privacy:message', location.origin);
+	sendMessage(message: keyof typeof MESSAGES, windowToSend: Window) {
+		windowToSend.postMessage(MESSAGES[message], location.origin);
 	}
 }

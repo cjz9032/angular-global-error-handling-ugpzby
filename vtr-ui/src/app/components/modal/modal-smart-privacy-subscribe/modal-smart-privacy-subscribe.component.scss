@@ -1,0 +1,62 @@
+@import '../../../app.theme.scss';
+
+:host {
+	height: 100%;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
+$dialogPadding: 4rem;
+$marginY: 3.5rem;
+
+.payment-options {
+	width: 100%;
+	height: 100%;
+	margin: 0px auto;
+
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.modal-smart-performance-subscribe {
+	padding: 0;
+	background: $light;
+	width: 100%;
+	height: calc(100% - 2.4rem);
+	overflow: hidden;
+
+	@media #{$white-on-black} {
+		box-shadow: none;
+		@include white-border;
+		background: $dark;
+	}
+
+	@media #{$black-on-white} {
+		box-shadow: none;
+		@include black-border;
+	}
+}
+
+.closeButton {
+	right: 1rem !important;
+}
+
+.container-fluid {
+	height: 100%;
+
+	.modal-header {
+		.title {
+			font-size: $title;
+			font-weight: $weight_600;
+			color: $shade_blue;
+			padding-right: 2.4rem;
+		}
+	}
+}
