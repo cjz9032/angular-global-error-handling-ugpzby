@@ -19,7 +19,7 @@ export class TestService {
   enableNewFeatureTips()
 	{
 		this.localCacheService.setLocalCacheValue(
-			LocalStorageKey.NewFeatureTipsVersion, 3.002
+			LocalStorageKey.NewFeatureTipsVersion, 3.006
 		);
 	}
 }

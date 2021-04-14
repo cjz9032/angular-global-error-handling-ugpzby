@@ -752,13 +752,20 @@ export class ConfigService {
 		const welcomeTutorial = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.WelcomeTutorial
 		);
+		if (!welcomeTutorial || !welcomeTutorial.isDone) {
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.NewFeatureTipsVersion,
+				this.commonService.newFeatureVersion
+			);
+			return;
+		}
 		let widthCount = 0;
 		const widthTimer = setInterval(() => {
 			widthCount++;
 			const width = window.innerWidth;
 			this.logger.info('Window inner width:', width);
 			if (width > 1) {
-				if (!welcomeTutorial || !welcomeTutorial.isDone || width < 1200) {
+				if (width < 1200) {
 					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.NewFeatureTipsVersion,
 						this.commonService.newFeatureVersion
@@ -799,9 +806,13 @@ export class ConfigService {
 				});
 				clearInterval(widthTimer);
 			} else if (widthCount > 10) {
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.NewFeatureTipsVersion,
+					this.commonService.newFeatureVersion
+				);
 				clearInterval(widthTimer);
 			}
-		}, 500);
+		}, 300);
 	}
 
 	private async updateHide(
