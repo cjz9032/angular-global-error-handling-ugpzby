@@ -142,7 +142,7 @@
 						"gpuDriverLack": "GPU-Treiber installieren, um die Overclocking-Funktion zu verwenden.",
 						"goInstall": "INSTALLIEREN"
 					},
-					"autoAdjustDesc": "Aktuelles Spiel automatisch erkennen und die CPU/GPU-Leistung anpassen",
+					"autoAdjustDesc": "Aktuelles Spiel automatisch erkennen und die CPU/GPU-Leistung anpassen Wenn diese Funktion aktiviert ist, kann es zu einer erhöhten Temperatur und mehr Lüftergeräuschen kommen.",
 					"autoSwitch": "Automatischer Wechsel in den Leistungsmodus, wenn Spiele gestartet werden. Nach dem Beenden des Spiels wird der Modus automatisch zurückgeschaltet."
 				},
 				"advancedOC": {

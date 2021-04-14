@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Pentru a utiliza funcția Overclocking, instalați driverul GPU.",
 						"goInstall": "INSTALAȚI"
 					},
-					"autoAdjustDesc": "Detectați automat jocul curent și reglați performanța CPU / GPU.",
+					"autoAdjustDesc": "Detectați automat jocul curent și reglați performanța CPU / GPU. Atunci când este activat, temperatura computerului și zgomotul ventilatorului pot crește.",
 					"autoSwitch": "Treceți automat la modul Performanță atunci când lansați jocuri și reveniți după ce ieșiți din joc."
 				},
 				"advancedOC": {

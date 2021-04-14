@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Installer les pilotes GPU pour utiliser la fonction overclocking.",
 						"goInstall": "PROCÉDER À L'INSTALLATION"
 					},
-					"autoAdjustDesc": "Détecter automatiquement le jeu en cours et optimiser les performances de l'UC/GPU.",
+					"autoAdjustDesc": "Détecter automatiquement le jeu en cours et optimiser les performances de l'UC/GPU. Lorsque cette option est activée, la température de votre ordinateur et le bruit du ventilateur peuvent augmenter.",
 					"autoSwitch": "Passage automatique au mode performance lors du lancement d'un jeu et retour au mode précédent à la fermeture du jeu."
 				},
 				"advancedOC": {

@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Hız Aşırtma işlevini kullanmak için GPU sürücüsünü yükleyin.",
 						"goInstall": "YÜKLE"
 					},
-					"autoAdjustDesc": "Otomatik olarak geçerli oyunu algılayıp CPU/GPU performansını ayarlayın.",
+					"autoAdjustDesc": "Otomatik olarak geçerli oyunu algılayıp CPU/GPU performansını ayarlayın. Etkinleştirildiğinde, bilgisayarınızın sıcaklığı ve fan gürültüsü artabilir.",
 					"autoSwitch": "Oyunları başlatırken otomatik olarak Performans Kipi'ne geçip oyundan çıktıktan sonra eski kipe geri dönün."
 				},
 				"advancedOC": {

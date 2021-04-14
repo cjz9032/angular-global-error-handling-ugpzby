@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Installera GPU-drivrutinen om du vill använda överklockningsfunktionen.",
 						"goInstall": "INSTALLERA"
 					},
-					"autoAdjustDesc": "Identifiera automatiskt aktuellt spel och finjustera CPU-/GPU-prestanda.",
+					"autoAdjustDesc": "Identifiera automatiskt aktuellt spel och finjustera CPU-/GPU-prestanda. När funktionen är aktiverad kan temperaturen på datorn och fläktljudet öka.",
 					"autoSwitch": "Växla automatiskt till prestandaläge när du startar spel och växla tillbaka när du är klar."
 				},
 				"advancedOC": {

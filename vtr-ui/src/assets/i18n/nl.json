@@ -142,7 +142,7 @@
 						"gpuDriverLack": "Installeer GPU-stuurprogramma om de functie Overklokken te gebruiken.",
 						"goInstall": "GA NAAR INSTALLEREN"
 					},
-					"autoAdjustDesc": "De huidige game automatisch detecteren en de CPU/GPU-prestaties erop afstemmen.",
+					"autoAdjustDesc": "De huidige game automatisch detecteren en de CPU/GPU-prestaties erop afstemmen. Als u deze functie inschakelt, kan de temperatuur van de buitenkant van uw computer hoger worden en de ventilator luider klinken.",
 					"autoSwitch": "Schakel automatisch naar de prestatiemodus bij het starten van games en schakel terug na het afsluiten van de game."
 				},
 				"advancedOC": {

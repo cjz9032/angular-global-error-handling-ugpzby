@@ -142,7 +142,7 @@
 						"gpuDriverLack": "K použití funkce přetaktování musíte nainstalovat ovladač GPU.",
 						"goInstall": "ZAčíT INSTALACI"
 					},
-					"autoAdjustDesc": "Automatická detekce aktuální hry a vyladění výkonu CPU/GPU.",
+					"autoAdjustDesc": "Automatická detekce aktuální hry a vyladění výkonu CPU/GPU. Jakmile je tato možnost povolena, může se zvýšit teplota povrchu počítače a hluk ventilátoru.",
 					"autoSwitch": "Automatické přepínání do režimu Performance (Výkon) na výkon při spouštění her a jeho ukončení po opuštění hry."
 				},
 				"advancedOC": {
