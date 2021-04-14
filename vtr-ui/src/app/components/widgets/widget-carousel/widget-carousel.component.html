@@ -1,7 +1,8 @@
 <div class="vtr-widget-carousel"
 	[class.is-short]="isShort"
 	(swipeleft)="swipe($event.type)"
-	(swiperight)="swipe($event.type)" #containerSarousel>
+	(swiperight)="swipe($event.type)"
+	#containerCarousel>
 	<ngb-carousel [tabindex]="tabIndex"
 		*ngIf="carouselModel"
 		[attr.aria-label]="'dashboard.heroBanner' | translate"
@@ -11,7 +12,7 @@
 		[showNavigationIndicators]="carouselModel.length>1">
 		<ng-template *ngFor="let model of carouselModel let cIndex = index"
 			ngbSlide
-			[id]="slideIdFormat+cIndex">
+			[id]="carouselId+'-slide-'+cIndex">
 			<a [href]="model.ActionLink"
 				tabindex="-1"
 				vtrMetrics
@@ -35,17 +36,13 @@
 						id="{{carouselId}}-{{cIndex}}-source"
 						[matTooltip]="model.Title | htmlText"
 						matTooltipClass="vtr-system-tooltip"
-						#tipCarouselSource = "matTooltip"
-						(mouseenter)="closeTipTimeout(tipCarouselSource)"
-						></h3>
+						#tipCarouselSource="matTooltip"></h3>
 					<h2 class="description"
 						[innerHTML]="model.Description"
 						id="{{carouselId}}-{{cIndex}}-title"
 						[matTooltip]="model.Description | htmlText"
 						matTooltipClass="vtr-system-tooltip"
-						#tipCarouselTitle = "matTooltip"
-						(mouseenter)="closeTipTimeout(tipCarouselTitle)"
-						></h2>
+						#tipCarouselTitle="matTooltip"></h2>
 				</div>
 			</a>
 		</ng-template>

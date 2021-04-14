@@ -15,7 +15,6 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { CardService, CardOverlayTheme } from 'src/app/services/card/card.service';
 import { MetricService } from 'src/app/services/metric/metrics.service';
 import { ContentSource } from 'src/app/enums/content.enum';
-import { MatTooltip } from '@lenovo/material/tooltip';
 import { FeatureContent } from 'src/app/data-models/common/feature-content.model';
 
 @Component({
@@ -37,15 +36,13 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 	@Input() wrap: boolean;
 	@Input() order: number;
 	@Input() carouselId: string;
-	@ViewChild('containerSarousel', { static: false }) containerSarousel: ElementRef;
+	@ViewChild('containerCarousel', { static: false }) containerCarousel: ElementRef;
 	@ViewChild(NgbCarousel) carouselContainer;
 	// images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 	carouselModel: FeatureContent[] = [];
 	CardOverlayTheme = CardOverlayTheme;
 
-	public readonly slideIdFormat = 'ngb-slide-';
-
-	currentSlideId = `${this.slideIdFormat}0`;
+	currentSlideId = 'ngb-slide-0';
 	isOnline = true;
 
 	private displayDetectionTaskId;
@@ -76,6 +73,7 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 		this.commonService.notification.subscribe((notification: AppNotification) => {
 			this.onNotification(notification);
 		});
+		this.currentSlideId = `${this.carouselId}-slide-0`;
 	}
 
 	byString(o: any, s: string) {
@@ -130,10 +128,14 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 		if (firstCarousel.DataSource && firstCarousel.DataSource !== ContentSource.Local) {
 			this.displayDetectionTaskId = this.metricsService.contentDisplayDetection.addTask(
 				this.data,
-				() => this.containerSarousel,
+				() => this.containerCarousel,
 				1
 			);
 		}
+		setTimeout(() => {
+			this.containerCarousel?.nativeElement.querySelector('.carousel-control-prev')?.setAttribute('id', this.carouselId + '-arrow-left');
+			this.containerCarousel?.nativeElement.querySelector('.carousel-control-next')?.setAttribute('id', this.carouselId + '-arrow-right');
+		}, 0);
 	}
 
 	linkClicked($event, actionType: string, actionLink: string, title: string) {
@@ -170,15 +172,6 @@ export class WidgetCarouselComponent implements OnInit, OnChanges, OnDestroy {
 				const model = this.carouselModel[index];
 				this.linkClicked($event, model.ActionType, model.ActionLink, model.Title);
 			}
-		}
-	}
-
-	/**
-	 * Close tooltip after 3sec
-	 */
-	closeTipTimeout(tooltip: MatTooltip) {
-		if (tooltip._isTooltipVisible()) {
-			tooltip.hide(5000);
 		}
 	}
 
