@@ -1335,25 +1335,21 @@ export class ExportResultsService {
 						module.module
 				  );
 
-			const testResultText = this.translate
-				.transform('hardwareScan.' + this.getStatusFromStatusCode(module.resultModule))
-				.toUpperCase();
-
 			switch (module.resultModule) {
 				case HardwareScanTestResult.Pass:
-					return [currentName, testResultText, '', '', '', ''];
+					return [currentName, 'x', '', '', '', ''];
 
 				case HardwareScanTestResult.Fail:
-					return [currentName, '', testResultText, '', '', ''];
+					return [currentName, '', 'x', '', '', ''];
 
 				case HardwareScanTestResult.Attention:
-					return [currentName, '', '', testResultText, '', ''];
+					return [currentName, '', '', 'x', '', ''];
 
 				case HardwareScanTestResult.Cancelled:
-					return [currentName, '', '', '', testResultText, ''];
+					return [currentName, '', '', '', 'x', ''];
 
 				case HardwareScanTestResult.Na:
-					return [currentName, '', '', '', '', testResultText];
+					return [currentName, '', '', '', '', 'x'];
 
 				default:
 					return [currentName, '', '', '', '', ''];
@@ -1672,18 +1668,23 @@ export class ExportResultsService {
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Pass),
+						styles: { halign: 'center' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Fail),
+						styles: { halign: 'center' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Attention),
+						styles: { halign: 'center' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Cancelled),
+						styles: { halign: 'center' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Na),
+						styles: { halign: 'center' },
 					},
 				],
 			],
@@ -1703,10 +1704,15 @@ export class ExportResultsService {
 					StatusIcons.has(data.column.index + 1) &&
 					data.row.index < data.table.body.length - 2
 				) {
+					const oldFillColor = doc.getFillColor();
+					doc.setFillColor(data.cell.styles.fillColor);
+					doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height, 'F');
+					doc.setFillColor(oldFillColor);
+
 					doc.addImage(
 						StatusIcons.get(data.column.index + 1),
 						'PNG',
-						data.cell.x + data.cell.contentWidth + 2,
+						data.cell.x + (data.cell.width - this.statusIconSize) / 2,
 						data.cell.y + 1.5,
 						this.statusIconSize,
 						this.statusIconSize
