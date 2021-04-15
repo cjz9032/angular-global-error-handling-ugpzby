@@ -36,9 +36,7 @@ export class SnapshotExportLogComponent implements OnInit {
 		private dialog: MatDialog
 	) {}
 
-	ngOnInit() {
-		this.isPdfAvailable();
-	}
+	ngOnInit() {}
 
 	// Necessary to control navigation through tab key
 	public onExportClick(): void {
@@ -90,24 +88,6 @@ export class SnapshotExportLogComponent implements OnInit {
 		this.exportService.setExportExtensionSelected(ExportLogExtensions[extension]);
 
 		this.exportResults();
-	}
-
-	private isPdfAvailable() {
-		const supportedLanguage = 'en';
-
-		this.deviceService
-			.getMachineInfo()
-			.then((value: any) => {
-				if (value.locale !== supportedLanguage) {
-					this.exportExtensions.splice(
-						this.exportExtensions.indexOf(ExportLogExtensions.pdf),
-						1
-					);
-				}
-			})
-			.catch((error) => {
-				this.logger.exception('[SnapshotExportLogComponent] isPdfAvailable', error);
-			});
 	}
 
 	public getExportIcon(): string {

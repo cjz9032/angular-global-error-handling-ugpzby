@@ -37,9 +37,7 @@ export class HardwareScanExportLogComponent implements OnInit {
 		private deviceService: DeviceService
 	) {}
 
-	ngOnInit() {
-		this.isPdfAvailable();
-	}
+	ngOnInit() {}
 
 	// Necessary to control navigation through tab key
 	public onExportClick(): void {
@@ -169,21 +167,5 @@ export class HardwareScanExportLogComponent implements OnInit {
 	) {
 		(modal.componentInstance as ModalExportLogComponent).logPath = logPath;
 		(modal.componentInstance as ModalExportLogComponent).errorStatus = error;
-	}
-
-	private isPdfAvailable() {
-		this.deviceService
-			.getMachineInfo()
-			.then((value: any) => {
-				if (value.locale !== LanguageCode.english) {
-					this.exportExtensions.splice(
-						this.exportExtensions.indexOf(ExportLogExtensions.pdf),
-						1
-					);
-				}
-			})
-			.catch((error) => {
-				this.logger.exception('[ExportLogComponent] isPdfAvailable', error);
-			});
 	}
 }

@@ -1650,6 +1650,7 @@ export class ExportResultsService {
 		jsonData.testSummary = this.calculateTestSummaryInfo(jsonData);
 		(doc as any).autoTable({
 			margin: this.startX,
+			headStyles: { halign: 'center' },
 			startY: startY + 3,
 			columnStyles: {
 				0: {
@@ -1665,26 +1666,22 @@ export class ExportResultsService {
 				[
 					{
 						content: this.translate.transform('hardwareScan.report.totalModulesTested'),
+						styles: { halign: 'left' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Pass),
-						styles: { halign: 'center' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Fail),
-						styles: { halign: 'center' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Attention),
-						styles: { halign: 'center' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Cancelled),
-						styles: { halign: 'center' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Na),
-						styles: { halign: 'center' },
 					},
 				],
 			],
