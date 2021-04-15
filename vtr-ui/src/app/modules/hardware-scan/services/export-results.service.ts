@@ -7,7 +7,7 @@ import { LogType } from 'src/app/enums/export-log.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
 import { CommonExportLogService } from 'src/app/services/export-log/common-export-log.service';
-import { logIcons } from 'src/app/services/export-log/utils/icons/log-tables';
+import { LogIcons } from 'src/app/services/export-log/utils/icons/log-tables';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FormatLocaleDateTimePipe } from '../../../pipe/format-locale-datetime/format-locale-datetime.pipe';
@@ -984,7 +984,7 @@ export class ExportResultsService extends CommonExportLogService {
 			didDrawCell: (data) => {
 				if (data.column.index === 0) {
 					doc.addImage(
-						logIcons.get('MODEL'),
+						LogIcons.get('MODEL'),
 						'PNG',
 						data.cell.x,
 						data.cell.y,
@@ -1064,7 +1064,7 @@ export class ExportResultsService extends CommonExportLogService {
 			didDrawCell: (data) => {
 				if (data.column.index === 0) {
 					doc.addImage(
-						logIcons.get('ENVIRONMENT'),
+						LogIcons.get('ENVIRONMENT'),
 						'PNG',
 						data.cell.x,
 						data.cell.y,
@@ -1431,7 +1431,7 @@ export class ExportResultsService extends CommonExportLogService {
 			didDrawCell: (data) => {
 				if (data.column.index === 0) {
 					doc.addImage(
-						logIcons.get('TESTSUMMARY'),
+						LogIcons.get('TESTSUMMARY'),
 						'PNG',
 						data.cell.x,
 						data.cell.y,
@@ -1529,7 +1529,7 @@ export class ExportResultsService extends CommonExportLogService {
 				switch (data.row.index) {
 					case 0: {
 						doc.addImage(
-							logIcons.get('HARDWAREDIAGNOSTICSLOG'),
+							LogIcons.get('HARDWAREDIAGNOSTICSLOG'),
 							'PNG',
 							data.cell.x,
 							data.cell.y,

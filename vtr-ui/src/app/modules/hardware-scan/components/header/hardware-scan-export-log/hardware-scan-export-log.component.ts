@@ -115,13 +115,11 @@ export class HardwareScanExportLogComponent {
 				this.hardwareScanService.getScanFinishedHeaderType() ===
 					HardwareScanFinishedHeaderType.ViewResults
 			) {
-				// exportLogType = this.exportService.exportScanResults();
 				exportLogType = this.exportService.exportLog(LogType.scan);
 			} else if (
 				this.hardwareScanService.getScanFinishedHeaderType() ===
 				HardwareScanFinishedHeaderType.RecoverBadSectors
 			) {
-				// exportLogType = this.exportService.exportRbsResults();
 				exportLogType = this.exportService.exportLog(LogType.rbs);
 			}
 

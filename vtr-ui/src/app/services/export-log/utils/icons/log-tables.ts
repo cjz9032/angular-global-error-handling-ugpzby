@@ -1,4 +1,4 @@
-export const logIcons = new Map([
+export const LogIcons = new Map([
 	[
 		'HARDWAREDIAGNOSTICSLOG',
 		Uint8Array.of(
