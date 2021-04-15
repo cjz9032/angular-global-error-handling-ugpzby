@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.20](https://bitbucket.tc.lenovo.com///compare/v1.11.19...v1.11.20) (2021-04-15)
+
+
+### Features
+
+* **chevron:** VAN-27862 modify text center style ([1b4ae78](https://bitbucket.tc.lenovo.com///commit/1b4ae78783f7f7144d00ef1896b77893141ac60f))
+
+
+### Bug Fixes
+
+* **chevron:** VAN-27862 add automation id for chevron title ([21b73d8](https://bitbucket.tc.lenovo.com///commit/21b73d800a15ba3a51c8d1c532052bab8d6cdf03))
+* **chevron:** VAN-27862 add role for chevron title ([25912db](https://bitbucket.tc.lenovo.com///commit/25912db4d3ab91479529ce5287195a2b3192b1e4))
+
 ### [1.11.19](https://bitbucket.tc.lenovo.com///compare/v1.11.18...v1.11.19) (2021-04-14)
 
 
