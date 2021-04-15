@@ -2169,10 +2169,6 @@
 			"intelligentSecurity": {
 				"title": "智能安全",
 				"readMore": "阅读更多信息",
-				"image": {
-					"title": "智能安全",
-					"description": "借助智能感知技术保护电脑安全、保护您的隐私并节省电池电量。"
-				},
 				"advancedSettings": {
 					"showAdvSettings": "高级设置",
 					"hideAdvSettings": "隐藏高级设置"

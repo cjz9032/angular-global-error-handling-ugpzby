@@ -359,37 +359,6 @@ $fontsize_xs: 1.4rem;
 	}
 }
 
-.intelligent-security-image {
-	min-height: 16rem;
-	position: relative;
-	& > img {
-		width: 100%;
-		@media #{$white-on-black} {
-			border-bottom: 0.1rem solid $light;
-		}
-		@media #{$black-on-white} {
-			border-bottom: 0.1rem solid $dark;
-		}
-	}
-	.intelligent-security-image-word {
-		position: absolute;
-		max-width: 24.2rem;
-		left: 3rem;
-		top: 50%;
-		color: #34495e;
-		transform: translateY(-49%);
-		// @include high-contrast-adjust;
-		.intelligent-security-image-word-title {
-			font-size: 2.4rem;
-			line-height: 2.4rem;
-		}
-		.intelligent-security-image-word-description {
-			font-size: 1.4rem;
-			line-height: 2rem;
-		}
-	}
-}
-
 .zeroTouch-DistanceAdjust {
 	width: 95%;
 

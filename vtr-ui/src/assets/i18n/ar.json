@@ -2063,10 +2063,6 @@
 			"intelligentSecurity": {
 				"title": "الأمان الذكي",
 				"readMore": "اقرأ أكثر",
-				"image": {
-					"title": "الأمان الذكي",
-					"description": "يحمي الكمبيوتر الشخصي باستخدام تقنية الاستشعار الذكي، ويحمي خصوصيتك، ويوفر طاقة البطارية."
-				},
 				"advancedSettings": {
 					"showAdvSettings": "إعدادات متقدمة",
 					"hideAdvSettings": "إخفاء الإعدادات المتقدمة"

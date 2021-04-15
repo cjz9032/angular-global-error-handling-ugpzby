@@ -2171,10 +2171,6 @@
 			"intelligentSecurity": {
 				"title": "Seguridad inteligente",
 				"readMore": "Leer más",
-				"image": {
-					"title": "Seguridad inteligente",
-					"description": "Mejora su equipo con tecnología de detección inteligente, protege su privacidad y ahorra energía de la batería."
-				},
 				"advancedSettings": {
 					"showAdvSettings": "CONFIGURACIÓN AVANZADA",
 					"hideAdvSettings": "OCULTAR OPCIONES AVANZADAS"

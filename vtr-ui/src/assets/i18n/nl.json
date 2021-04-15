@@ -2061,10 +2061,6 @@
 			"intelligentSecurity": {
 				"title": "Intelligente beveiliging",
 				"readMore": "Meer weergeven",
-				"image": {
-					"title": "Intelligente beveiliging",
-					"description": "Hiermee sluit u de PC af met intelligente sensortechnologie, beschermt u uw privacy en bespaart u de batterij."
-				},
 				"advancedSettings": {
 					"showAdvSettings": "GEAVANCEERDE INSTELLINGEN",
 					"hideAdvSettings": "GEAVANCEERDE INSTELLINGEN VERBERGEN"
