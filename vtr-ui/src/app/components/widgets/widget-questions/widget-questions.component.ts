@@ -1,12 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { BaseComponent } from '../../base/base.component';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'vtr-widget-questions',
 	templateUrl: './widget-questions.component.html',
 	styleUrls: ['./widget-questions.component.scss'],
 })
-export class WidgetQuestionsComponent extends BaseComponent implements OnInit {
+export class WidgetQuestionsComponent {
 	@Input() itemId: string;
 	@Input() title: string;
 	@Input() description: string;
@@ -15,9 +14,4 @@ export class WidgetQuestionsComponent extends BaseComponent implements OnInit {
 	@Input() clickable = true;
 	@Input() blockPosition: string;
 	@Input() linkId: string;
-	constructor() {
-		super();
-	}
-
-	ngOnInit() {}
 }

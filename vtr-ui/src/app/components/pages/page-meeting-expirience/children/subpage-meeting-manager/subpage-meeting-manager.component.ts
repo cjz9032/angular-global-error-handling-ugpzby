@@ -11,20 +11,19 @@ import { AudioService } from '../../../../../services/audio/audio.service';
 import { DashboardService } from '../../../../../services/dashboard/dashboard.service';
 import { LoggerService } from '../../../../../services/logger/logger.service';
 import { CommonService } from '../../../../../services/common/common.service';
-import { TranslateService } from '@ngx-translate/core';
 import { VantageShellService } from '../../../../../services/vantage-shell/vantage-shell.service';
 import { BatteryDetailService } from '../../../../../services/battery-detail/battery-detail.service';
 import { LocalCacheService } from '../../../../../services/local-cache/local-cache.service';
 import { DeviceService } from '../../../../../services/device/device.service';
 import { UiCircleRadioWithCheckBoxListModel } from '../../../../ui/ui-circle-radio-with-checkbox-list/ui-circle-radio-with-checkbox-list.model';
 import { DolbyAudioToggleCapability } from '../../../../../data-models/device/dolby-audio-toggle-capability';
-import CommonMetricsModel from '../../../../../data-models/common/common-metrics.model';
 import { AudioVendorService } from '../../../page-device-settings/children/subpage-device-settings-audio/audio-vendor.service';
 import { WinRT } from '@lenovo/tan-client-bridge';
 import { MetricService } from 'src/app/services/metric/metrics.service';
-import { ContentActionType } from 'src/app/enums/content.enum';
-import { CardOverlayTheme } from 'src/app/services/card/card.service';
-
+import { CMSService } from 'src/app/services/cms/cms.service';
+import { QaService } from 'src/app/services/qa/qa.service';
+import { ProductivityService } from 'src/app/services/productivity/productivity.service';
+import { NetworkStatus } from 'src/app/enums/network-status.enum';
 @Component({
 	selector: 'vtr-subpage-meeting-manager',
 	templateUrl: './subpage-meeting-manager.component.html',
@@ -104,47 +103,14 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 	public noteEditor = 'noteEditor';
 	private isAMMInstalledInterval: any;
 
-	rightCards = [
-		{
-			cardContent: {
-				Id: 'MeetingManagerLenovoPROForSmallBusinessBanner',
-				Title: 'LenovoPRO for small business',
-				Description: 'Join LenovoPRO FREE for exclusive discounts & financing',
-				FeatureImage: 'assets/images/smb/lenovo-pro.jpg',
-				OverlayTheme: CardOverlayTheme.Dark,
-				ActionType: ContentActionType.External,
-				ActionLink: 'https://www.lenovo.com/us/en/business/smbpro',
-			},
-			id: 'meeting-manager-lenovo-pro-widget-card-content',
-			ariaLabel: 'meeting-manager-lenovo-pro-widget-card-content',
-			type: 'subpage-corner',
-			order: 1,
-			show: true,
-		},
-		{
-			cardContent: {
-				Id: 'MeetingManagerAIMeetingBanner',
-				Title: 'Al meeting manager',
-				Description: 'A better way to work efficiently',
-				FeatureImage: 'assets/images/smb/ai-meeting.jpg',
-				OverlayTheme: CardOverlayTheme.Dark,
-				ActionType: ContentActionType.Internal,
-				ActionLink: 'c87082abdc8a4f52a9df2c0e6ebd18dd',
-			},
-			id: 'meeting-manager-ai-meeting-widget-card-content',
-			ariaLabel: 'meeting-manager-ai-meeting-widget-card-content',
-			type: 'subpage-corner',
-			order: 2,
-			show: true,
-		},
-	];
-
 	constructor(
 		private audioService: AudioService,
 		private dashboardService: DashboardService,
 		private logger: LoggerService,
 		public commonService: CommonService,
-		private translate: TranslateService,
+		public qaService: QaService,
+		public productivityService: ProductivityService,
+		private cmsService: CMSService,
 		private vantageShellService: VantageShellService,
 		private batteryService: BatteryDetailService,
 		private localCacheService: LocalCacheService,
@@ -212,6 +178,8 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				);
 			}
 		}
+		this.fetchCMSContents();
+		this.qaService.setCurrentLangTranslations();
 	}
 
 	ngOnDestroy() {
@@ -228,7 +196,6 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				false
 			);
 		}
-		// this.Windows.Media.Devices.MediaDevice.removeEventListener("defaultaudiocapturedevicechanged", this.defaultAudioCaptureDeviceChanged);
 	}
 
 	private initAMM() {
@@ -321,6 +288,13 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 				case LocalStorageKey.WelcomeTutorial:
 					if (payload.page === 2) {
 						this.initFeatures();
+					}
+					break;
+				case NetworkStatus.Online:
+				case NetworkStatus.Offline:
+					this.isOnline = notification.payload.isOnline;
+					if (this.isOnline) {
+						this.fetchCMSContents();
 					}
 					break;
 				default:
@@ -690,7 +664,7 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 			!(
 				this.microphoneProperties.available &&
 				((this.microphoneProperties?.currentMode &&
-					this.microphoneProperties?.currentMode != 'NotSupported' &&
+					this.microphoneProperties?.currentMode !== 'NotSupported' &&
 					!this.isDTmachine &&
 					!this.isAudioVendorSupported) ||
 					this.isAudioVendorSupported)
@@ -772,4 +746,35 @@ export class SubpageMeetingManagerComponent implements OnInit, OnDestroy {
 			WinRT.launchUri('ms-windows-store://pdp/?productid=9NRLFDZ54PZB');
 		}
 	}
+
+	fetchCMSContents() {
+		const queryOptions = { Page: 'ai-meeting' };
+		this.cmsService.fetchCMSContent(queryOptions).subscribe((response: any) => {
+			const [cardA, cardB] = this.productivityService.rightCards;
+			const cardContentA = this.cmsService.getOneCMSContent(
+				response,
+				'inner-page-right-side-article-image-background',
+				'position-A'
+			)[0];
+			if (cardContentA) {
+				cardA.show = true;
+				cardA.cardContent = cardContentA;
+			} else {
+				cardA.show = false;
+			}
+
+			const cardContentB = this.cmsService.getOneCMSContent(
+				response,
+				'inner-page-right-side-article-image-background',
+				'position-B'
+			)[0];
+			if (cardContentB) {
+				cardB.show = true;
+				cardB.cardContent = cardContentB;
+			} else {
+				cardB.show = false;
+			}
+		});
+	}
+
 }

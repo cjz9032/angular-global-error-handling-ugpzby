@@ -117,6 +117,7 @@ import { FORTE_CLIENT } from '../../components/pages/page-device-settings/childr
 import { VantageShellService } from '../../services/vantage-shell/vantage-shell.service';
 import { DeviceService } from '../../services/device/device.service';
 import { MaterialChevronModule } from 'src/app/material/material-chevron/material-chevron.module';
+import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questions/widget-questions.module';
 
 @NgModule({
 	declarations: [
@@ -175,6 +176,7 @@ import { MaterialChevronModule } from 'src/app/material/material-chevron/materia
 		HeaderMainModule,
 		WidgetOfflineModule,
 		WidgetSecurityStatusModule,
+		WidgetQuestionsModule,
 		NgbDropdownModule,
 		RouterModule,
 		NgbCollapseModule,
@@ -198,6 +200,7 @@ import { MaterialChevronModule } from 'src/app/material/material-chevron/materia
 		CommonModule,
 		CommonUiModule,
 		CommonModalModule,
+		WidgetQuestionsModule,
 		PageLayoutModule,
 		SettingsPageLayoutModule,
 		RouterModule,

@@ -4,7 +4,7 @@ import { PageSupportDetailComponent } from './page-support-detail.component';
 import { MetricsModule } from 'src/app/services/metric/metrics.module';
 import { RouterModule } from '@angular/router';
 import { TranslationModule } from 'src/app/modules/translation.module';
-import { WidgetSecurityStatusModule } from 'src/app/components/widgets/widget-security-status/widget-security-status.module';
+import { WidgetQuestionsModule } from '../../widgets/widget-questions/widget-questions.module';
 import { PageLayoutModule } from 'src/app/components/page-layout/page-layout.module';
 import { UiButtonModule } from 'src/app/components/ui/ui-button/ui-button.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -41,7 +41,7 @@ import { SupportDetailArticleEComponent } from './children/support-detail-articl
 		MetricsModule,
 		RouterModule,
 		TranslationModule,
-		WidgetSecurityStatusModule,
+		WidgetQuestionsModule,
 		PageLayoutModule,
 		UiButtonModule,
 		FontAwesomeModule,

@@ -75,6 +75,7 @@ import { WidgetMcafeeFeaturesComponent } from '../../components/pages/page-secur
 import { WidgetMcafeeGraphicIntroductionComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-graphic-introduction/widget-mcafee-graphic-introduction.component';
 import { WidgetMcafeePeaceOfMindComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-peace-of-mind/widget-mcafee-peace-of-mind.component';
 import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-security-antivirus/widget/widget-mcafee-content-card/widget-mcafee-content-card.component';
+import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questions/widget-questions.module';
 
 @NgModule({
 	declarations: [
@@ -122,6 +123,7 @@ import { WidgetMcafeeContentCardComponent } from '../../components/pages/page-se
 		ContainerCardModule,
 		UiButtonModule,
 		WidgetSecurityStatusModule,
+		WidgetQuestionsModule,
 		HeaderMainModule,
 		WidgetOfflineModule,
 		CommonModalModule,
