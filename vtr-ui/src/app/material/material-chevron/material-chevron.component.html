@@ -1,7 +1,7 @@
 <mat-card class="vtr-material-chevron">
 	<mat-card-header>
-		<mat-card-title class="font-size-xl">{{title}}</mat-card-title>
-		<mat-card-subtitle class="font-size-xs mb-20">{{subtitle}}</mat-card-subtitle>
+		<mat-card-title class="font-size-xl" role="text" id="{{id+'-title'}}">{{title}}</mat-card-title>
+		<mat-card-subtitle class="font-size-xs mb-20" role="text" id="{{id+'-subscription'}}">{{subtitle}}</mat-card-subtitle>
 	</mat-card-header>
 	<mat-card-content>
 		<ng-content></ng-content>
