@@ -2061,10 +2061,6 @@
 			"intelligentSecurity": {
 				"title": "Inteligentní zabezpečení",
 				"readMore": "Další informace",
-				"image": {
-					"title": "Inteligentní zabezpečení",
-					"description": "Vybaví váš počítač technologií inteligentního rozpoznávání, ochrání vaše soukromí a šetří energii baterie."
-				},
 				"advancedSettings": {
 					"showAdvSettings": "ROZŠÍŘENÁ NASTAVENÍ",
 					"hideAdvSettings": "SKRÝT ROZŠÍŘENÁ NASTAVENÍ"
