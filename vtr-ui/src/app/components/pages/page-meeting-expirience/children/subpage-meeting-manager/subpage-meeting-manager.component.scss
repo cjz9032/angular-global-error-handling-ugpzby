@@ -12,6 +12,12 @@
 	.vtr-subpage-left-column {
 		::ng-deep .left-border {
 			border-left: 0.7rem solid $smb_navy;
+			@media #{$white-on-black} {
+				border-left: 0.7rem solid $high-contrast-black-cyan;
+			}
+			@media #{$black-on-white} {
+				border-left: 0.7rem solid $high-contrast-white-dark-magenta;
+			}
 		}
 	}
 	::ng-deep .collapse-header {
