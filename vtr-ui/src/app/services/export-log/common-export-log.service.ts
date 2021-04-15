@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import jsPDF from 'jspdf';
 import {
 	ExportLogErrorStatus,
@@ -19,7 +18,6 @@ interface IFont {
 	data: string;
 }
 
-@Injectable()
 export abstract class CommonExportLogService {
 	protected exportExtensionSelected = ExportLogExtensions.html;
 
