@@ -2106,7 +2106,15 @@
 							"medium": "Médio",
 							"slow": "Lento"
 						},
-						"toolTipContent": "Seleccione a opção pretendida para bloquear o ecrã a uma velocidade rápida/média/baixa quando a sua presença não é detetada. Contudo, o tempo em que o ecrã será bloqueado também é afetado pelo cenário real do utilizador, pela capacidade do sensor e pelas definições de tempo limite do ecrã do Windows. Por isso, sugerimos que bloqueie instantaneamente o seu sistema antes de sair."
+						"toolTipContent": "Seleccione a opção pretendida para bloquear o ecrã a uma velocidade rápida/média/baixa quando a sua presença não é detetada. Contudo, o tempo em que o ecrã será bloqueado também é afetado pelo cenário real do utilizador, pela capacidade do sensor e pelas definições de tempo limite do ecrã do Windows. Por isso, sugerimos que bloqueie instantaneamente o seu sistema antes de sair.",
+						"checkbox": {
+                            "override": "Substituir",
+                            "link": "Definições de tempo de espera do ecrã do Windows.",
+                            "onBattery": "Esta funcionalidade não funciona. Porque as definições de tempo limite do ecrã do Windows estão definidas como “Nunca desligar o ecrã em bateria”.",
+                            "onPower": "Esta funcionalidade não funciona. Porque as definições de tempo limite do ecrã do Windows estão definidas como “Nunca desligar o ecrã quando ligado à tomada”.",
+                            "onBoth": "Esta funcionalidade não funciona. Porque as definições de tempo limite do ecrã do Windows estão definidas como “Nunca desligar o ecrã”.",
+                            "onStatic": "Esta funcionalidade poderá não funcionar quando o tempo limite do ecrã do Windows estiver definido como “Nunca desligar o ecrã”."
+                        }
 					},
 					"facialRecognition": {
 						"title": "RECONHECIMENTO FACIAL",

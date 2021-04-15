@@ -2106,7 +2106,15 @@
 							"medium": "Mellem",
 							"slow": "Langsomt"
 						},
-						"toolTipContent": "Vælg den ønskede indstilling for at låse skærmen ved hurtig/mellem/langsom hastighed, når din tilstedeværelse ikke er registreret. Den tid, hvor skærmen er låst, er dog også påvirket af det aktuelle brugerscenarie, sensorfunktionen og Windows-indstillingerne for skærmtimeout. Vi anbefaler derfor, at du øjeblikkeligt låser systemet, før du forlader det."
+						"toolTipContent": "Vælg den ønskede indstilling for at låse skærmen ved hurtig/mellem/langsom hastighed, når din tilstedeværelse ikke er registreret. Den tid, hvor skærmen er låst, er dog også påvirket af det aktuelle brugerscenarie, sensorfunktionen og Windows-indstillingerne for skærmtimeout. Vi anbefaler derfor, at du øjeblikkeligt låser systemet, før du forlader det.",
+						"checkbox": {
+                            "override": "Tilsidesæt",
+                            "link": "Indstillinger for skærmtimeout i Windows.",
+                            "onBattery": "Denne funktion virker ikke. Det skyldes, at indstillingerne for skærmtimeout i Windows er sat til \"Sluk aldrig for skærmen, når den kører på batteri\".",
+                            "onPower": "Denne funktion virker ikke. Det skyldes, at indstillingerne for skærmtimeout i Windows er sat til \"Sluk aldrig for skærmen, når den er tilsluttet strøm\".",
+                            "onBoth": "Denne funktion virker ikke. Det skyldes, at indstillingerne for skærmtimeout i Windows er sat til \"Sluk aldrig for skærmen\".",
+                            "onStatic": "Denne funktion fungerer muligvis ikke, når indstillingerne for skærmtimeout i Windows er sat til \"Sluk aldrig for skærmen\"."
+                        }
 					},
 					"facialRecognition": {
 						"title": "ANSIGTSGENKENDELSE",

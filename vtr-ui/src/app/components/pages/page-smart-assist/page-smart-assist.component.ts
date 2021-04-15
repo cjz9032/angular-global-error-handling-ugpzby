@@ -23,12 +23,12 @@ import { UiRoundedRectangleRadioModel } from '../../ui/ui-rounded-rectangle-cust
 import { CommonMetricsService } from 'src/app/services/common-metrics/common-metrics.service';
 import CommonMetricsModel from 'src/app/data-models/common/common-metrics.model';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
+import { MatCheckboxChange } from '@lenovo/material/checkbox';
 
 @Component({
 	selector: 'vtr-page-smart-assist',
 	templateUrl: './page-smart-assist.component.html',
-	styleUrls: ['./page-smart-assist.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
+	styleUrls: ['./page-smart-assist.component.scss']
 })
 export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	@Output() distanceChange: any = new EventEmitter();
@@ -359,6 +359,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		if (this.smartAssistCapability === undefined) {
 			this.initZeroTouchLock();
 			this.initZeroTouchLogin();
+			this.initAutoScreenTimeoutCapability();
 			this.initIntelligentScreen();
 			this.getVideoPauseResumeStatus();
 			this.getSuperResolutionStatus();
@@ -370,6 +371,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
 				this.initZeroTouchLock();
 				this.initZeroTouchLogin();
+				this.initAutoScreenTimeoutCapability();
 			}
 			if (this.smartAssistCapability.isIntelligentMediaSupported && isFirstTimeLoad) {
 				this.intelligentMedia = this.smartAssistCapability.isIntelligentMediaSupported;
@@ -888,6 +890,17 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 		this.deviceService.launchUri('ms-settings:signinoptions');
 	}
 
+	public launchScreenTimeout() {
+		if (
+			!this.intelligentSecurity.isZeroTouchLockEnabled ||
+			(this.isThinkPad && !this.intelligentSecurity.isHPDEnabled)
+		) {
+			return;
+		} else {
+			this.deviceService.launchUri('ms-settings:powersleep');
+		}
+	}
+
 	public onAutoScreenOffToggle(event): void {
 		this.intelligentScreen.isAutoScreenOffEnabled = event.switchValue;
 		this.smartAssistCache.intelligentScreen = this.intelligentScreen;
@@ -1269,6 +1282,130 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 					!this.intelligentSecurity.isZeroTouchLockEnabled ||
 					(this.isThinkPad && !this.intelligentSecurity.isHPDEnabled);
 			});
+		}
+	}
+
+	public onZeroTouchLockOverrideWindowsCheckbox($event: MatCheckboxChange) {
+		this.logger.info('onZeroTouchLockOverrideWindowsCheckbox', $event.checked);
+		this.setAutoScreenTimeoutStatus($event.checked);
+	}
+
+	public launchOverrideWindowsScreenTimeout($event) {
+		$event.preventDefault();
+		this.launchScreenTimeout();
+	}
+
+	private async initAutoScreenTimeoutCapability(): Promise<void> {
+		try {
+			if (this.isThinkPad) {
+				const hasCapability = await this.smartAssist.getAutoScreenTimeoutCapability();
+				this.logger.info('initScreenTimeoutCapability: ', hasCapability);
+				this.intelligentSecurity.isAutoScreenTimeoutVisible = hasCapability;
+				this.initCurrentTimerNeverCondition();
+				this.initACTimerNeverCondition();
+				this.initDCTimerNeverCondition();
+				if (hasCapability) {
+					this.initAutoScreenTimeoutStatus();
+				}
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SmartAssistCache,
+					this.smartAssistCache
+				);
+			} else {
+				this.intelligentSecurity.isAutoScreenTimeoutVisible = false;
+			}
+		} catch (error) {
+			this.logger.error('initScreenTimeoutCapability: ', error);
+			this.intelligentSecurity.isAutoScreenTimeoutVisible = false;
+		}
+	}
+
+	private async initAutoScreenTimeoutStatus(): Promise<void> {
+		try {
+			const status = await this.smartAssist.getAutoScreenTimeoutStatus();
+
+			this.logger.info('getAutoScreenTimeoutStatus: ', status);
+			this.intelligentSecurity.isAutoScreenTimeoutEnabled = status;
+			this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+			this.localCacheService.setLocalCacheValue(
+				LocalStorageKey.SmartAssistCache,
+				this.smartAssistCache
+			);
+		} catch (error) {
+			this.intelligentSecurity.isAutoScreenTimeoutEnabled = false;
+		}
+	}
+
+	private async initCurrentTimerNeverCondition() {
+		try {
+			const timerCondition = await this.smartAssist.getCurrentTimerNeverCondition()
+			this.logger.info('getCurrentTimerNeverCondition: ', timerCondition);
+				this.intelligentSecurity.currentTimerNeverCondition = timerCondition;
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SmartAssistCache,
+					this.smartAssistCache
+				);
+
+		} catch(error) {
+			this.logger.error('getCurrentTimerNeverCondition: ', error);
+			this.intelligentSecurity.currentTimerNeverCondition = false;
+		};
+	}
+
+	private async initACTimerNeverCondition() {
+		try {
+			const timerCondition = await this.smartAssist.getACTimerNeverCondition();
+			this.logger.info('getACTimerNeverCondition: ', timerCondition);
+				this.intelligentSecurity.isACTimerNeverCondition = timerCondition;
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SmartAssistCache,
+					this.smartAssistCache
+				);
+
+		} catch(error) {
+			this.logger.error('getACTimerNeverCondition: ', error);
+			this.intelligentSecurity.isACTimerNeverCondition = false;
+		};
+	}
+
+	private async initDCTimerNeverCondition() {
+		try {
+			const timerCondition = await this.smartAssist.getDCTimerNeverCondition();
+			this.logger.info('getDCTimerNeverCondition: ', timerCondition);
+				this.intelligentSecurity.isDCTimerNeverCondition = timerCondition;
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SmartAssistCache,
+					this.smartAssistCache
+				);
+
+		} catch(error) {
+			this.logger.error('getDCTimerNeverCondition: ', error);
+			this.intelligentSecurity.isDCTimerNeverCondition = false;
+		};
+	}
+
+	public async setAutoScreenTimeoutStatus(status: boolean): Promise<void> {
+		try {
+			if (this.isThinkPad) {
+				const isSuccess = await this.smartAssist.setAutoScreenTimeoutStatus(status);
+				this.logger.info('setAutoScreenTimeoutStatus: ', isSuccess);
+				this.intelligentSecurity.isAutoScreenTimeoutEnabled = status;
+				this.smartAssistCache.intelligentSecurity = this.intelligentSecurity;
+				this.localCacheService.setLocalCacheValue(
+					LocalStorageKey.SmartAssistCache,
+					this.smartAssistCache
+				);
+			} else {
+				this.intelligentSecurity.isAutoScreenTimeoutVisible = false;
+			}
+		} catch (error) {
+			this.logger.error('setAutoScreenTimeoutStatus - error', error);
+			this.intelligentSecurity.isAutoScreenTimeoutVisible = false;
 		}
 	}
 }

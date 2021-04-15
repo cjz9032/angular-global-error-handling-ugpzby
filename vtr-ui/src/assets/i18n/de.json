@@ -2216,7 +2216,15 @@
 							"medium": "Mittel",
 							"slow": "Langsam"
 						},
-						"toolTipContent": "Wählen Sie die gewünschte Option aus, um die Anzeige mit einer schnellen, mittleren oder langsamen Geschwindigkeit zu sperren, wenn Ihre Anwesenheit nicht erkannt wird. Die Zeit, in der der Bildschirm gesperrt wird, wird jedoch auch durch das tatsächliche Benutzerszenario, die Sensorik und die Windows Bildschirmtimeout-Einstellungen beeinflusst. Wir empfehlen Ihnen daher dringend, Ihr System sofort zu sperren, bevor Sie es verlassen."
+						"toolTipContent": "Wählen Sie die gewünschte Option aus, um die Anzeige mit einer schnellen, mittleren oder langsamen Geschwindigkeit zu sperren, wenn Ihre Anwesenheit nicht erkannt wird. Die Zeit, in der der Bildschirm gesperrt wird, wird jedoch auch durch das tatsächliche Benutzerszenario, die Sensorik und die Windows Bildschirmtimeout-Einstellungen beeinflusst. Wir empfehlen Ihnen daher dringend, Ihr System sofort zu sperren, bevor Sie es verlassen.",
+						"checkbox": {
+                            "override": "Überschreiben",
+                            "link": "Windows-Einstellungen für Bildschirmtimeout.",
+                            "onBattery": "Diese Funktion funktioniert nicht. Die Windows-Einstellungen für Bildschirmtimeout im Akkubetrieb unter \"Bildschirm ausschalten\" sind auf \"Nie\" festgelegt.",
+                            "onPower": "Diese Funktion funktioniert nicht. Die Windows-Einstellungen für Bildschirmtimeout im Netzbetrieb unter \"Bildschirm ausschalten\" sind auf \"Nie\" festgelegt.",
+                            "onBoth": "Diese Funktion funktioniert nicht. Die Windows-Einstellungen für Bildschirmtimeout unter \"Bildschirm ausschalten\" sind auf \"Nie\" festgelegt.",
+                            "onStatic": "Diese Funktion funktioniert ggf. nicht, wenn die Windows-Einstellungen für Bildschirmtimeout unter \"Bildschirm ausschalten\" auf \"Nie\" festgelegt sind."
+                        }
 					},
 					"facialRecognition": {
 						"title": "GESICHTSERKENNUNG",

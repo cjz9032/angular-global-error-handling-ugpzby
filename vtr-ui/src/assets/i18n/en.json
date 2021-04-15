@@ -2238,7 +2238,15 @@
 							"medium": "Medium",
 							"slow": "Slow"
 						},
-						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave."
+						"toolTipContent": "Select your desired option to lock your screen at a Fast/Medium/Slow speed when your presence is not detected. However, the time when the screen will be locked is also impacted by the actual user scenario, the sensor capability, and the Windows screen timeout settings. So, we strongly suggest you instantly lock your system before you leave.",
+						"checkbox": {
+							"override": "Override",
+							"link": "Windows screen timeout settings.",
+							"onBattery": "This feature does not work. Because the Windows screen timeout settings is set as \"Never turn off the screen when on battery power\".",
+							"onPower": "This feature does not work. Because the Windows screen timeout settings is set as \"Never turn off the screen when plugged in\".",
+							"onBoth": "This feature does not work. Because the Windows screen timeout settings is set as \"Never turn off the screen\".",
+							"onStatic": "This feature may not work when the Windows screen timeout settings is set as \"Never turn off the screen\"."
+						}
 					},
 					"facialRecognition": {
 						"title": "FACIAL RECOGNITION",

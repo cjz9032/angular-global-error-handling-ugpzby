@@ -1013,6 +1013,12 @@ $high-contrast-sky-blue: #81bbf5;
 		outline: none !important;
 	}
 
+	&.disabled {
+		color: $grey_darker;
+		text-decoration: none;
+		opacity: 0.4;
+	}
+
 	@media #{$black-on-white} {
 		@include hyperlink-blue-white;
 	}

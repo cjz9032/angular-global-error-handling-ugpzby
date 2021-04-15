@@ -2106,7 +2106,15 @@
 							"medium": "Middels",
 							"slow": "Langsom"
 						},
-						"toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages. Når skjermen låses, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for skjermtidsavbrudd i Windows. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det."
+						"toolTipContent": "Velg ønsket alternativ for å låse skjermen på en rask/middels/langsom hastighet når tilstedeværelsen din ikke oppdages. Når skjermen låses, påvirkes også av det faktiske brukerscenarioet, sensorfunksjonaliteten og innstillingene for skjermtidsavbrudd i Windows. Vi anbefaler derfor sterkt at du umiddelbart låser systemet før du forlater det.",
+						"checkbox": {
+                            "override": "Overstyr",
+                            "link": "Innstillingene for skjermtidsavbrudd i Windows.",
+                            "onBattery": "Denne funksjonen fungerer ikke. Fordi innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Deaktiver aldri skjermen ved batteristrøm\".",
+                            "onPower": "Denne funksjonen fungerer ikke. Fordi innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Deaktiver aldri skjermen når den er plugget i\".",
+                            "onBoth": "Denne funksjonen fungerer ikke. Fordi innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Slå aldri av skjermen\".",
+                            "onStatic": "Det er mulig funksjonen ikke virker når innstillingene for tidsavbrudd på Windows-skjermen er satt til \"Deaktiver aldri skjermen\"."
+                        }
 					},
 					"facialRecognition": {
 						"title": "ANSIKTSGJENKJENNING",

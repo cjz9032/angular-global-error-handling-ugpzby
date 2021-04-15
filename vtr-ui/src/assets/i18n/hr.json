@@ -2106,7 +2106,15 @@
 							"medium": "Srednje",
 							"slow": "Sporo"
 						},
-						"toolTipContent": "Odaberite željenu opciju za zaključavanje zaslona na brzini Brzo/Srednje/Sporo kada nije otkrivena vaša prisutnost. Međutim, na vrijeme kada će zaslon biti zaključan utječe i stvarni korisnički scenarij, mogućnost senzora i postavke isteka vremena za zaslon sustava Windows. Stoga vam preporučujemo da sustav odmah zaključate prije odlaska."
+						"toolTipContent": "Odaberite željenu opciju za zaključavanje zaslona na brzini Brzo/Srednje/Sporo kada nije otkrivena vaša prisutnost. Međutim, na vrijeme kada će zaslon biti zaključan utječe i stvarni korisnički scenarij, mogućnost senzora i postavke isteka vremena za zaslon sustava Windows. Stoga vam preporučujemo da sustav odmah zaključate prije odlaska.",
+						"checkbox": {
+                            "override": "Nadjačaj",
+                            "link": "Postavke isteka vremena za zaslon Windows.",
+                            "onBattery": "Ova značajka ne funkcionira. Zato što su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon kada je uključeno baterijsko napajanje\".",
+                            "onPower": "Ova značajka ne funkcionira. Zato što su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon kada je priključeno\".",
+                            "onBoth": "Ova značajka ne funkcionira. Zato što su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon\".",
+                            "onStatic": "Ova značajka možda neće raditi kada su postavke isteka vremena za zaslon sustava Windows postavljene kao \"Nikad ne isključujte zaslon\"."
+                        }
 					},
 					"facialRecognition": {
 						"title": "PREPOZNAVANJE LICA",

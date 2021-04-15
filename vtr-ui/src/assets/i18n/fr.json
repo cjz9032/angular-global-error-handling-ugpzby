@@ -2216,7 +2216,15 @@
 							"medium": "Moyen",
 							"slow": "Lent"
 						},
-						"toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée. Cependant, le moment auquel l'écran sera verrouillé est également influencé par le scénario utilisateur réel, la fonction du capteur et les paramètres Windows de mise en veille de l'écran. Par conséquent, nous vous recommandons vivement de verrouiller votre système au moment où vous le quittez."
+						"toolTipContent": "Sélectionnez l'option de votre choix pour verrouiller votre écran à une vitesse rapide/moyenne/lente lorsque votre présence n'est pas détectée. Cependant, le moment auquel l'écran sera verrouillé est également influencé par le scénario utilisateur réel, la fonction du capteur et les paramètres Windows de mise en veille de l'écran. Par conséquent, nous vous recommandons vivement de verrouiller votre système au moment où vous le quittez.",
+						"checkbox": {
+                            "override": "Remplacer",
+                            "link": "Paramètres de mise en veille de l'écran Windows.",
+                            "onBattery": "Cette fonction est inopérante. Parce que les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran lors de l'exécution sur batterie\".",
+                            "onPower": "Cette fonction est inopérante. Parce que les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran en cas de branchement sur secteur\".",
+                            "onBoth": "Cette fonction est inopérante. Parce que les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran\".",
+                            "onStatic": "Cette fonction peut ne pas fonctionner lorsque les paramètres du délai d'expiration de l'écran de Windows spécifient de \"ne jamais éteindre l'écran\"."
+                        }
 					},
 					"facialRecognition": {
 						"title": "RECONNAISSANCE FACIALE",

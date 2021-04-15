@@ -18,7 +18,6 @@ $fontsize_xs: 1.4rem;
 			list-style-type: none;
 		}
 		.blur-1 {
-			opacity: 0.65;
 			pointer-events: none;
 		}
 		.feature-note {
@@ -91,9 +90,6 @@ $fontsize_xs: 1.4rem;
 		}
 		.card-body {
 			padding: 1.25rem 1.8rem;
-		}
-		.blur-1 {
-			opacity: 0.65;
 		}
 		.feature-note {
 			background-color: $grey_lighter;
@@ -419,4 +415,8 @@ $fontsize_xs: 1.4rem;
 
 .zeroTouchLoginDistanceNote {
 	margin-top: -2rem;
+}
+
+.link-text {
+	@extend %hyperlink-text;
 }

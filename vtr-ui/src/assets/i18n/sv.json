@@ -2106,7 +2106,15 @@
 							"medium": "Mellan",
 							"slow": "Långsam"
 						},
-						"toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras. Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den."
+						"toolTipContent": "Välj önskat alternativ för att låsa skärmen snabbt/medelsnabbt/långsamt när din närvaro inte identifieras. Tiden när skärmen låses påverkas också av den faktiska användarsituationen, sensorkapaciteten och inställningarna för skärmtidsgräns i Windows. Vi rekommenderar därför att du låser datorn omedelbart innan du lämnar den.",
+						"checkbox": {
+                            "override": "Ersätt",
+                            "link": "Windows-inställningar för skärmens tidsgräns.",
+                            "onBattery": "Funktionen fungerar inte. Tidsgränsinställningarna för Windows-skärmen har angetts till Stäng aldrig av skärmen med batteridrift.",
+                            "onPower": "Funktionen fungerar inte. Tidsgränsinställningarna för Windows-skärmen har angetts till Stäng aldrig av skärmen vid nätdrift.",
+                            "onBoth": "Funktionen fungerar inte. Tidsgränsinställningarna för Windows-skärmen har angetts till Stäng aldrig av skärmen.",
+                            "onStatic": "Denna funktion kanske inte fungerar när Windows-inställningarna för skärmtidsgräns har angetts till Stäng aldrig av skärmen."
+                        }
 					},
 					"facialRecognition": {
 						"title": "ANSIKTSIGENKÄNNING",

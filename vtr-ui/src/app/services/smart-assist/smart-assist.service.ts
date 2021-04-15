@@ -771,4 +771,51 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
+
+	public getAutoScreenTimeoutCapability(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetHPDPresentCapability();
+		}
+
+		return Promise.resolve(false);
+	}
+
+	public getAutoScreenTimeoutStatus(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetHPDPresentSetting();
+		}
+
+		return Promise.resolve(false);
+	}
+
+	public setAutoScreenTimeoutStatus(value: boolean): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.SetHPDPresentSetting(value);
+		}
+		return Promise.resolve(false);
+	}
+
+	public getCurrentTimerNeverCondition(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetCurrentTimerNeverCondition();
+		}
+
+		return Promise.resolve(false);
+	}
+
+	public getACTimerNeverCondition(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetACTimerNeverCondition();
+		}
+
+		return Promise.resolve(false);
+	}
+
+	public getDCTimerNeverCondition(): Promise<boolean> {
+		if (this.isShellAvailable) {
+			return this.intelligentSensing.GetDCTimerNeverCondition();
+		}
+
+		return Promise.resolve(false);
+	}
 }
