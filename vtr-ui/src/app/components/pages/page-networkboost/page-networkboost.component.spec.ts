@@ -38,7 +38,6 @@ export class ModalGamingPromptMockComponent {
 		cancelMetricEnabled: false,
 		cancelMetricsItemId: undefined,
 		id: undefined,
-		//emitService: of(1),
 		emitService: new EventEmitter(),
 		setAppList: (arg1, arg2) => undefined,
 	};
@@ -157,7 +156,6 @@ describe('PageNetworkboostComponent', () => {
 
 		describe('openTargetModal Modal actions', () => {
 			it('openTargetModal', fakeAsync(() => {
-				//networkBoostServiceSpy.setNeedToAskStatusCache = () => { return Promise.resolve(true)};
 				component.isModalShowing = false;
 				networkBoostServiceSpy.getNeedToAsk = () => true;
 				component.openTargetModal();
@@ -186,8 +184,6 @@ describe('PageNetworkboostComponent', () => {
 				component.openTargetModal();
 				tick(50);
 				expect(component.needToAsk).toBe(false);
-				//expect(component.openTargetModal).toHaveBeenCalled;
-				//expect().nothing();
 			}));
 
 			it('setNetworkBoostStatus', fakeAsync(async () => {
@@ -245,10 +241,7 @@ describe('PageNetworkboostComponent', () => {
 			it('showTurnOn--showAddApps', fakeAsync(() => {
 				try {
 					const modalGamingPromptMock = new ModalGamingPromptMockComponent();
-					//modalService.open = modalGamingPromptMock;
 					spyOn(modalService, 'open').and.returnValue(modalGamingPromptMock);
-					//let modalGamingRunningAppListMock = new ModalGamingRunningAppListMockComponent();
-					//spyOn(modalService, 'open').and.returnValue(modalGamingRunningAppListMock);
 					component.showTurnOn();
 					setTimeout(() => {
 						modalGamingPromptMock.componentInstance.emitService.next(true);
