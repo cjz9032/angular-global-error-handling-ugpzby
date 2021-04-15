@@ -18,7 +18,7 @@ import { CommonService } from 'src/app/services/common/common.service';
 import { DashboardService } from 'src/app/services/dashboard/dashboard.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import sha256 from 'crypto-js/sha256';
+import { SHA256 as sha256 } from 'crypto-es/lib/sha256';
 import { DeviceService } from '../../../../../services/device/device.service';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { AudioVendorService } from './audio-vendor.service';

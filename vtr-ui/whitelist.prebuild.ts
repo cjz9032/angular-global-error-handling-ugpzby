@@ -1,4 +1,4 @@
-const sha256 = require('crypto-js/sha256');
+import { SHA256 as sha256 } from 'crypto-es/lib/sha256';
 
 const whitelist = [
 	'M29KT',

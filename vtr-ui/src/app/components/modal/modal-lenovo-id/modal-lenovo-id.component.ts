@@ -9,10 +9,9 @@ import { NetworkStatus } from 'src/app/enums/network-status.enum';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { ssoErroType } from 'src/app/enums/lenovo-id-key.enum';
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
-import AES from 'crypto-js/aes';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 import { MatDialogRef } from '@lenovo/material/dialog';
-
+import { AesWraper as AES }  from 'src/app/services/cipher/aes-wraper';
 @Component({
 	selector: 'vtr-modal-lenovo-id',
 	templateUrl: './modal-lenovo-id.component.html',
@@ -183,7 +182,7 @@ export class ModalLenovoIdComponent implements OnInit, OnDestroy {
 					const firstname = (el.querySelector('#firstname') as HTMLInputElement).value;
 					const lastname = (el.querySelector('#lastname') as HTMLInputElement).value;
 					if (firstname && userguid) {
-						const encryptedFirstName = AES.encrypt(firstname, userguid).toString();
+						const encryptedFirstName = AES.encrypt(firstname, userguid);
 						this.localCacheService.setLocalCacheValue(
 							LocalStorageKey.LidUserFirstName,
 							encryptedFirstName
