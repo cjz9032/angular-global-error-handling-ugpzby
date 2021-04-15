@@ -752,7 +752,14 @@ export class ConfigService {
 		const welcomeTutorial = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.WelcomeTutorial
 		);
-		if (!welcomeTutorial || !welcomeTutorial.isDone) {
+		const lastVersion = this.localCacheService.getLocalCacheValue(
+			LocalStorageKey.NewFeatureTipsVersion
+		);
+		this.logger.info('last version is:', lastVersion);
+		if ( 
+			(!welcomeTutorial || !welcomeTutorial.isDone) 
+			&& (!lastVersion || lastVersion < this.commonService.newFeatureVersion) 
+		) {
 			this.localCacheService.setLocalCacheValue(
 				LocalStorageKey.NewFeatureTipsVersion,
 				this.commonService.newFeatureVersion
@@ -765,11 +772,14 @@ export class ConfigService {
 			const width = window.innerWidth;
 			this.logger.info('Window inner width:', width);
 			if (width > 1) {
-				if (width < 1200) {
+				if (width < 1200 && 
+					(!lastVersion || lastVersion < this.commonService.newFeatureVersion) 
+				) {
 					this.localCacheService.setLocalCacheValue(
 						LocalStorageKey.NewFeatureTipsVersion,
 						this.commonService.newFeatureVersion
 					);
+					this.logger.info('Window width:', width);
 					return;
 				}
 				this.localInfoService.getLocalInfo().then((localInfo) => {
@@ -779,10 +789,7 @@ export class ConfigService {
 							this.commonService.newFeatureVersion
 						);
 						return;
-					}
-					const lastVersion = this.localCacheService.getLocalCacheValue(
-						LocalStorageKey.NewFeatureTipsVersion
-					);
+					}					
 					if (
 						(!lastVersion || lastVersion < this.commonService.newFeatureVersion) &&
 						Array.isArray(this.menu)
@@ -806,10 +813,12 @@ export class ConfigService {
 				});
 				clearInterval(widthTimer);
 			} else if (widthCount > 10) {
-				this.localCacheService.setLocalCacheValue(
-					LocalStorageKey.NewFeatureTipsVersion,
-					this.commonService.newFeatureVersion
-				);
+				if(!lastVersion || lastVersion < this.commonService.newFeatureVersion) {
+					this.localCacheService.setLocalCacheValue(
+						LocalStorageKey.NewFeatureTipsVersion,
+						this.commonService.newFeatureVersion
+					);
+				}
 				clearInterval(widthTimer);
 			}
 		}, 300);
