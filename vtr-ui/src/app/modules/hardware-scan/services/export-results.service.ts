@@ -1335,6 +1335,8 @@ export class ExportResultsService {
 						module.module
 				  );
 
+			// This switch case defines the position where the status icon it will be draw in the future
+			// the "x" indicate the column position in the test result table
 			switch (module.resultModule) {
 				case HardwareScanTestResult.Pass:
 					return [currentName, 'x', '', '', '', ''];
@@ -1656,11 +1658,6 @@ export class ExportResultsService {
 				0: {
 					cellWidth: 50,
 				},
-				1: { fontStyle: 'bold' },
-				2: { fontStyle: 'bold' },
-				3: { fontStyle: 'bold' },
-				4: { fontStyle: 'bold' },
-				5: { fontStyle: 'bold' },
 			},
 			head: [
 				[
@@ -1685,14 +1682,6 @@ export class ExportResultsService {
 					},
 				],
 			],
-			willDrawCell: (data) => {
-				if (data.section === 'body' && data.column.index > 0 && data.cell.colSpan < 2) {
-					const colorValue = this.getStatusColorFromStatusCode(data.column.index + 1); // + 1 correspond to enum value
-
-					// Sets the color of text by status ([0] = Red, [1] = Green, [2] = Blue)
-					doc.setTextColor(colorValue[0], colorValue[1], colorValue[2]);
-				}
-			},
 			didDrawCell: (data) => {
 				if (
 					data.row.section === 'body' &&
