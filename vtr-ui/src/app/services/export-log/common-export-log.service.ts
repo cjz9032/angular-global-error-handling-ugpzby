@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import jsPDF from 'jspdf';
 import {
 	ExportLogErrorStatus,
@@ -8,7 +9,6 @@ import {
 	LogType,
 } from 'src/app/enums/export-log.enum';
 import { environment } from 'src/environments/environment';
-import { DeviceService } from '../device/device.service';
 import { LoggerService } from '../logger/logger.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 
@@ -19,6 +19,7 @@ interface IFont {
 	data: string;
 }
 
+@Injectable()
 export abstract class CommonExportLogService {
 	protected exportExtensionSelected = ExportLogExtensions.html;
 
@@ -38,7 +39,7 @@ export abstract class CommonExportLogService {
 	protected darkBlueColor = '#34495E';
 	protected lightBlueColor = '#4A81FD';
 	protected whiteColor = '#FFF';
-	protected currentFont: string;
+	protected currentFont = FontTypes.noto;
 	protected currentLanguage: string;
 	protected fonts: Array<IFont> = new Array<IFont>();
 	protected componentIconSize = 10;
@@ -58,8 +59,7 @@ export abstract class CommonExportLogService {
 	constructor(
 		protected http: HttpClient,
 		protected logger: LoggerService,
-		protected shellService: VantageShellService,
-		protected deviceService: DeviceService
+		protected shellService: VantageShellService
 	) {
 		if (window.Windows) {
 			const packageVersion = window.Windows.ApplicationModel.Package.current.id.version;
@@ -79,17 +79,22 @@ export abstract class CommonExportLogService {
 		this.experienceVersion = environment.appVersion;
 
 		// Consult Machine Information
-		this.shellService
-			.getSysinfo()
-			.getMachineInfo()
-			.then((info) => {
-				this.machineModel = info?.family;
-				this.serialNumber = info?.serialnumber;
-				this.biosVersion = info?.biosVersion;
-				this.productName = info?.mtm;
-			});
+		try {
+			this.shellService
+				.getSysinfo()
+				.getMachineInfo()
+				.then((info) => {
+					this.machineModel = info?.family;
+					this.serialNumber = info?.serialnumber;
+					this.biosVersion = info?.biosVersion;
+					this.productName = info?.mtm;
+					this.currentLanguage = info?.locale;
 
-		this.deviceService.getMachineInfo().then((value) => this.loadFonts(value.locale));
+					this.loadFonts(this.currentLanguage);
+				});
+		} catch (error) {
+			logger.error('[Export Log] Could not load environment info', error);
+		}
 	}
 
 	/**
@@ -175,8 +180,6 @@ export abstract class CommonExportLogService {
 	}
 
 	private async loadFonts(currentLanguage: string) {
-		this.currentLanguage = currentLanguage;
-
 		switch (currentLanguage) {
 			case LanguageCode.japanese:
 			case LanguageCode.simplifiedChinese:

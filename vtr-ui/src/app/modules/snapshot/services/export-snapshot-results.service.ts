@@ -4,7 +4,6 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { LogType } from 'src/app/enums/export-log.enum';
 import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
-import { DeviceService } from 'src/app/services/device/device.service';
 import { CommonExportLogService } from 'src/app/services/export-log/common-export-log.service';
 import { logIcons } from 'src/app/services/export-log/utils/icons/log-tables';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -33,10 +32,9 @@ export class ExportSnapshotResultsService extends CommonExportLogService {
 		private translate: TranslateDefaultValueIfNotFoundPipe,
 		http: HttpClient,
 		logger: LoggerService,
-		shellService: VantageShellService,
-		deviceService: DeviceService
+		shellService: VantageShellService
 	) {
-		super(http, logger, shellService, deviceService);
+		super(http, logger, shellService);
 
 		this.metricsService = shellService.getMetrics();
 	}

@@ -1,30 +1,56 @@
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import jsPDF from 'jspdf';
 import { ExportLogErrorStatus, LogType } from 'src/app/enums/export-log.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { DeviceService } from '../device/device.service';
 import { VantageShellService } from '../vantage-shell/vantage-shell.service';
 import { CommonExportLogService } from './common-export-log.service';
+
+@Injectable()
+class MockClass extends CommonExportLogService {
+	constructor(logger: LoggerService, http: HttpClient, shellService: VantageShellService) {
+		super(http, logger, shellService);
+	}
+
+	protected populatePdf(doc: jsPDF, jsonData: any): void {
+		return null;
+	}
+	protected populateHtml(jsonData: any): void {
+		return null;
+	}
+	protected prepareData(logType?: LogType): Promise<any> {
+		return null;
+	}
+}
+
+class MockSysInfo {
+	getMachineInfo() {
+		return Promise.resolve();
+	}
+}
 
 describe('CommonExportLogService', () => {
 	const loggerServiceSpy = jasmine.createSpyObj('LoggerService', ['error']);
 	const httpServiceSpy = jasmine.createSpyObj('HttpClient', ['get']);
-	const shellServiceSpy = jasmine.createSpyObj('ShellService', ['getSysInfo']);
-	const deviceServiceSpy = jasmine.createSpyObj('DeviceService', ['getMachineInfo']);
-
-	let service: CommonExportLogService;
+	const shellServiceSpy = jasmine.createSpyObj('ShellService', ['getVersion', 'getSysinfo']);
+	let service: MockClass;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({
 			providers: [
-				CommonExportLogService,
+				MockClass,
 				{ provide: LoggerService, useValue: loggerServiceSpy },
 				{ provide: HttpClient, useValue: httpServiceSpy },
 				{ provide: VantageShellService, useValue: shellServiceSpy },
-				{ provide: DeviceService, useValue: deviceServiceSpy },
 			],
 		});
-		service = TestBed.inject(CommonExportLogService);
+
+		const mockSysInfo = new MockSysInfo();
+
+		shellServiceSpy.getSysinfo = jasmine.createSpy().and.returnValue(mockSysInfo);
+
+		service = TestBed.inject(MockClass);
 	});
 
 	it('should be created', () => {
@@ -34,7 +60,7 @@ describe('CommonExportLogService', () => {
 	// Testing when exportSnapshotResults receive any error in called functions
 	[
 		{
-			description: 'should throw an exception when prepareDataFromScanLog return error',
+			description: 'should throw an exception when prepareData return error',
 			functionName: 'prepareData',
 		},
 		{
@@ -54,7 +80,10 @@ describe('CommonExportLogService', () => {
 				ExportLogErrorStatus.GenericError
 			);
 
-			expect(loggerServiceSpy.error).toHaveBeenCalledWith('Could not get scan log', error);
+			expect(loggerServiceSpy.error).toHaveBeenCalledWith(
+				'[Export Log] Could not export log',
+				error
+			);
 		});
 	});
 

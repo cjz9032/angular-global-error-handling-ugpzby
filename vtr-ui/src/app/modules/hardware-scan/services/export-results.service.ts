@@ -36,12 +36,12 @@ export class ExportResultsService extends CommonExportLogService {
 		private scanLogService: ScanLogService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private hardwareScanService: HardwareScanService,
+		private deviceService: DeviceService,
 		http: HttpClient,
-		deviceService: DeviceService,
 		shellService: VantageShellService,
 		logger: LoggerService
 	) {
-		super(http, logger, shellService, deviceService);
+		super(http, logger, shellService);
 	}
 
 	protected async prepareData(logType?: LogType): Promise<any> {
