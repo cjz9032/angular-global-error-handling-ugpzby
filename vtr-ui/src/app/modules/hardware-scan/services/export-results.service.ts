@@ -1335,7 +1335,7 @@ export class ExportResultsService {
 						module.module
 				  );
 
-			// This switch case defines the position where the status icon it will be draw in the future
+			// This switch case defines the position where the status icon will be draw in the future
 			// the "x" indicate the column position in the test result table
 			switch (module.resultModule) {
 				case HardwareScanTestResult.Pass:
