@@ -25,6 +25,7 @@ import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { PromotionBannerComponent } from 'src/app/components/pages/page-creator-centre/children/promotion-banner/promotion-banner.component';
 import { SharedModule } from '../shared.module';
 import { ContainerCardModule } from 'src/app/components/container-card/container-card.module';
+import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questions/widget-questions.module';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ContainerCardModule } from 'src/app/components/container-card/container
 		CommonUiModule,
 		ContainerCardModule,
 		SharedModule,
+		WidgetQuestionsModule,
 		SmbRoutingModule,
 		PageLayoutModule,
 		TranslationModule.forChild(),

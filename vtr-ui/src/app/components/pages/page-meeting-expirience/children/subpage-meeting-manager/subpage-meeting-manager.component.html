@@ -202,7 +202,8 @@
 		<div class="col">
 			<div class="row right-card-content">
 				<div class="col col-12 mb-5"
-					*ngFor="let card of rightCards; index as i">
+					[hidden]="!card.show"
+					*ngFor="let card of productivityService.rightCards; index as i">
 					<vtr-container-card [item]="card.cardContent"
 						[id]="card.id"
 						[containerCardId]="card.cardContent ? card.cardContent.Id : ''"
@@ -212,6 +213,17 @@
 						sideFlag='r'
 						[ratio]="2">
 					</vtr-container-card>
+				</div>
+				<div class="col col-12 mb-5">
+					<div class="col col-12 cont">
+						<vtr-widget-questions [title]="'common.qAndA.title' | translate"
+							[itemId]="'common.QAndA.itemid'|translate"
+							[description]="'common.qAndA.subtitle' | translate"
+							[items]="qaService.qas"
+							blockPosition="r2"
+							id="meeting-manager-qa-widget"
+							[linkId]="'meeting-manager-qa'"></vtr-widget-questions>
+					</div>
 				</div>
 			</div>
 		</div>

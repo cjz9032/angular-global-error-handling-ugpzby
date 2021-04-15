@@ -31,6 +31,7 @@ import { MaterialModule } from '../common/material.module';
 import { MatTooltipModule } from '@lenovo/material/tooltip';
 import { MatButtonModule } from '@lenovo/material/button';
 import { MaterialChevronModule } from 'src/app/material/material-chevron/material-chevron.module';
+import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questions/widget-questions.module';
 
 @NgModule({
 	declarations: [
@@ -50,6 +51,7 @@ import { MaterialChevronModule } from 'src/app/material/material-chevron/materia
 		SharedModule,
 		CommonModalModule,
 		WidgetSecurityStatusModule,
+		WidgetQuestionsModule,
 		PageLayoutModule,
 		FontAwesomeModule,
 		MatTooltipModule,

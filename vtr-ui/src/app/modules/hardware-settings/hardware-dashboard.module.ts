@@ -44,6 +44,7 @@ import { faChevronRight } from '@fortawesome/pro-light-svg-icons/faChevronRight'
 import { faChevronLeft } from '@fortawesome/pro-light-svg-icons/faChevronLeft';
 import { WidgetWarrantyDetailModule } from 'src/app/components/widgets/widget-warranty-detail/widget-warranty-detail.module';
 import { MaterialChevronModule } from 'src/app/material/material-chevron/material-chevron.module';
+import { WidgetQuestionsModule } from 'src/app/components/widgets/widget-questions/widget-questions.module';
 
 @NgModule({
 	declarations: [
@@ -64,6 +65,7 @@ import { MaterialChevronModule } from 'src/app/material/material-chevron/materia
 		ContainerCardModule,
 		UiButtonModule,
 		WidgetSecurityStatusModule,
+		WidgetQuestionsModule,
 		WidgetSupportModule,
 		NgbCarouselModule,
 		NgbDropdownModule,
@@ -96,6 +98,7 @@ import { MaterialChevronModule } from 'src/app/material/material-chevron/materia
 		FormsModule,
 		ReactiveFormsModule,
 		PageLayoutModule,
+		WidgetQuestionsModule,
 		WidgetWarrantyDetailModule,
 		WidgetDashboardWarrantyComponent,
 		NgbTooltipModule,
