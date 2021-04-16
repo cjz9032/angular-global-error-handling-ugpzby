@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.21](https://bitbucket.tc.lenovo.com///compare/v1.11.20...v1.11.21) (2021-04-16)
+
+
+### Features
+
+* **SMB:** VAN-27669 meeting manager use cms content and add q&a ([63ea953](https://bitbucket.tc.lenovo.com///commit/63ea953354f7b1da8116922a37a836f54f5fba9f))
+
 ### [1.11.20](https://bitbucket.tc.lenovo.com///compare/v1.11.19...v1.11.20) (2021-04-15)
 
 
