@@ -19,7 +19,7 @@ class MockClass extends CommonExportLogService {
 	protected populateHtml(jsonData: any): void {
 		return null;
 	}
-	protected prepareData(logType?: LogType): Promise<any> {
+	protected prepareData(): Promise<any> {
 		return null;
 	}
 }

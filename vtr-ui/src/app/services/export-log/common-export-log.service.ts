@@ -20,6 +20,7 @@ interface IFont {
 
 export abstract class CommonExportLogService {
 	protected exportExtensionSelected = ExportLogExtensions.html;
+	protected currentLogType: LogType;
 
 	// Application attributes
 	protected experienceVersion: string;
@@ -51,8 +52,6 @@ export abstract class CommonExportLogService {
 
 	// Atributes to html
 	protected document: HTMLDocument;
-
-	private currentLogType: LogType;
 
 	constructor(
 		protected http: HttpClient,
@@ -103,9 +102,9 @@ export abstract class CommonExportLogService {
 	public async exportLog(logType: LogType): Promise<[ExportLogErrorStatus, string]> {
 		try {
 			let dataFormatted: any;
-			const reportFileName = logType.valueOf();
-			const dataPrepared = await this.prepareData(logType);
 			this.currentLogType = logType;
+			const reportFileName = logType.valueOf();
+			const dataPrepared = await this.prepareData();
 
 			if (this.exportExtensionSelected === ExportLogExtensions.html) {
 				dataFormatted = await this.generateHtmlReport(dataPrepared);
@@ -336,5 +335,5 @@ export abstract class CommonExportLogService {
 	 *
 	 * @param logType optional value to differenciate log type
 	 */
-	protected abstract prepareData(logType?: LogType): Promise<any>;
+	protected abstract prepareData(): Promise<any>;
 }

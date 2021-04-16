@@ -11,7 +11,6 @@ import { LogIcons } from 'src/app/services/export-log/utils/icons/log-tables';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
 import { FormatLocaleDateTimePipe } from '../../../pipe/format-locale-datetime/format-locale-datetime.pipe';
-import { DeviceService } from '../../../services/device/device.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
 import { HardwareScanOverallResult, HardwareScanTestResult } from '../enums/hardware-scan.enum';
 import { HardwareScanResultService } from './hardware-scan-result.service';
@@ -36,7 +35,6 @@ export class ExportResultsService extends CommonExportLogService {
 		private scanLogService: ScanLogService,
 		private recoverBadSectorsService: RecoverBadSectorsService,
 		private hardwareScanService: HardwareScanService,
-		private deviceService: DeviceService,
 		http: HttpClient,
 		shellService: VantageShellService,
 		logger: LoggerService
@@ -44,8 +42,8 @@ export class ExportResultsService extends CommonExportLogService {
 		super(http, logger, shellService);
 	}
 
-	protected async prepareData(logType?: LogType): Promise<any> {
-		switch (logType) {
+	protected async prepareData(): Promise<any> {
+		switch (this.currentLogType) {
 			case LogType.rbs:
 				const rbsResultItems = await this.recoverBadSectorsService.getRecoverResultItems();
 				return this.prepareDataFromRecoverBadSectors(rbsResultItems);
@@ -718,37 +716,6 @@ export class ExportResultsService extends CommonExportLogService {
 		return result;
 	}
 
-	private getModelData(): Promise<any> {
-		const modelData: any = {};
-
-		// Created a timeout function to return reject if IMController not send any update in 10s
-		// Uses this validation to avoid cases that IMController was closed unexpectedly
-		const timeoutPromise = new Promise((resolve, reject) => {
-			const timeout = setTimeout(() => {
-				clearTimeout(timeout);
-				reject('Timed out after 10s!');
-			}, 10000);
-		});
-
-		const deviceServicePromise = new Promise<any>((resolve, reject) => {
-			this.deviceService
-				.getDeviceInfo()
-				.then((info) => {
-					modelData.biosVersion = info.bios;
-					modelData.serialNumber = info.sn;
-					modelData.productName = info.productNo;
-					modelData.machineModel = info.family;
-					resolve(modelData);
-				})
-				.catch((error) => {
-					this.logger.exception('[ExportResultService] getModelData', error);
-					reject(error);
-				});
-		});
-
-		return Promise.race([deviceServicePromise, timeoutPromise]);
-	}
-
 	private async prepareDataFromRecoverBadSectors(rbsResult: any) {
 		const isRecoverBadSectors = true;
 		const modulesData = this.hardwareScanService.getModulesRetrieved();
@@ -781,7 +748,7 @@ export class ExportResultsService extends CommonExportLogService {
 			serialNumber: this.serialNumber,
 			productName: this.productName,
 			machineModel: this.machineModel,
-		}; // await this.getModelData();
+		};
 		preparedData.isRecoverBadSectors = isRecoverBadSectors;
 
 		preparedData.environment = {

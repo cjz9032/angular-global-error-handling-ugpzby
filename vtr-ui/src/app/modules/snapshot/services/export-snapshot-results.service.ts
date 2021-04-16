@@ -838,7 +838,7 @@ export class ExportSnapshotResultsService extends CommonExportLogService {
 		this.populateTemplateModulesListSection(jsonData);
 	}
 
-	protected prepareData(logType?: LogType): Promise<any> {
+	protected prepareData(): Promise<any> {
 		return this.prepareDataFromScanLog();
 	}
 }
