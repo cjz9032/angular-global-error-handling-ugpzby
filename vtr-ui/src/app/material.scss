@@ -47,6 +47,12 @@ $mat-van-theme-background: (
 		bg-select-panel: $light,
 		bg-select-option: rgba($dark, 0.04),
 	),
+	radio: (
+		bg-unselected-radio: $light,
+		bg-selected-radio: $menu_hover,
+		bg-active-radio: $grey_darker,
+		bg-disabled-radio: $grey_dark,
+	),
 );
 
 $mat-van-theme-foreground: (
@@ -127,6 +133,30 @@ $mat-van-theme-foreground: (
 		color-form-input: $grey_dark,
 		opacity-form-header: 0.5,
 	),
+	radio: (
+		color-radio-text: $grey_darker,
+		color-radio-border: $grey_dark,
+	),
+	progress-bar: (
+		container-background: transparent linear-gradient(268deg, $hover_dark 0%, $main_darker 100%)
+			0% 0% no-repeat padding-box,
+		buffer-background: $light 0% 0% no-repeat padding-box,
+		fill-background: transparent
+			linear-gradient(90deg, $progress_bar_start 0%, $progress_bar_end 100%) 0% 0% no-repeat
+			padding-box,
+	),
+	slider: (
+		track-background: $grey_light,
+		track-fill-background: transparent
+			linear-gradient(270deg, $blue-light 0%, $blue-lighter 100%) 0% 0% no-repeat padding-box,
+		thumb-background: transparent linear-gradient(90deg, $blue-light 0%, $blue-lighter 100%) 0%
+			0% no-repeat padding-box,
+		thumb-background-hover: $blue-light 0% 0% no-repeat padding-box,
+		focus-ring-border-color: $menu_hover,
+		track-fill-disabled-background: $grey_light 0% 0% no-repeat padding-box,
+		track-disabled-background: $grey_lighter 0% 0% no-repeat padding-box,
+		thumb-icon-color: $light,
+	),
 );
 $van-theme: (
 	100: $button_gradient_start,
@@ -198,6 +228,37 @@ $van-ui-layout: (
 		layout-form-text-padding: 0.5rem,
 		layout-form-label-font-size: 1.2rem,
 		layout-form-label-line-height: 1.125,
+	),
+	radio: (
+		layout-radio-size: 2rem,
+		layout-radio-border-width: 0.1rem,
+		layout-radio-outline-offset: 0.3rem,
+	),
+	progress-bar: (
+		layout-height: 2.4rem,
+		layout-primary-height: 0.8rem,
+		layout-buffer-height: 0.2rem,
+		layout-padding-x: 1.3rem,
+		layout-border-radius: 1.5rem,
+		layout-buffer-border-radius: 0.1rem,
+	),
+	slider: (
+		layout-thickness: 4.8rem,
+		layout-min-size: 12.8rem,
+		layout-padding: 0,
+		layout-track-thickness: 0.6rem,
+		layout-track-wrapper-border-radius: 0.5rem,
+		layout-thumb-size: 2.8rem,
+		layout-thumb-border-width: 0rem,
+		layout-thumb-border-width-active: 0rem,
+		layout-thumb-border-width-disabled: 0rem,
+		layout-thumb-default-scale: 1,
+		layout-thumb-focus-scale: 1,
+		layout-thumb-disabled-scale: 1,
+		layout-thumb-arrow-gap: 1.2rem,
+		layout-thumb-label-size: 2.8rem,
+		layout-tick-size: 0.2rem,
+		layout-focus-ring-size: 3.2rem,
 	),
 );
 @include angular-material-layout($van-ui-layout);
