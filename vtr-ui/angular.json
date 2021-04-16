@@ -22,10 +22,11 @@
 							"lodash",
 							"inversify",
 							"uuid",
-							"crypto-js",
 							"hammerjs",
 							"util",
-							"jspdf-autotable"
+							"jspdf-autotable",
+							"currency-formatter",
+							"x2js"
 						],
 						"customWebpackConfig": {
 							"path": "./custom-webpack.config.js"

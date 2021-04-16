@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-
 import { MatDialog } from '@lenovo/material/dialog';
-
 import { CommsService } from '../comms/comms.service';
 import { DevService } from '../dev/dev.service';
 import { CommonService } from '../common/common.service';
@@ -18,11 +16,9 @@ import { ModalCommonConfirmationComponent } from 'src/app/components/modal/modal
 import { Subscription } from 'rxjs';
 import { SelfSelectEvent } from 'src/app/enums/self-select.enum';
 import { AppNotification } from 'src/app/data-models/common/app-notification.model';
-import AES from 'crypto-js/aes';
-import enc_utf8 from 'crypto-js/enc-utf8';
 import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.service';
 import { LocalCacheService } from '../local-cache/local-cache.service';
-
+import { AesWraper as AES }  from 'src/app/services/cipher/aes-wraper';
 
 declare let Windows;
 
@@ -93,7 +89,7 @@ export class UserService implements IUserService {
 		public deviceService: DeviceService,
 		private localInfoService: LocalInfoService,
 		private dialog: MatDialog,
-		private hypSettings: HypothesisService
+		private hypSettings: HypothesisService,
 	) {
 		this.translate.stream('lenovoId.user').subscribe((firstName) => {
 			if (!this.auth && firstName !== 'lenovoId.user') {
@@ -202,12 +198,15 @@ export class UserService implements IUserService {
 			LocalStorageKey.LidUserFirstName,
 			undefined
 		);
+
 		if (firstName && userGuid) {
-			const decrptedFirstName = AES.decrypt(firstName, userGuid).toString(enc_utf8);
-			return decrptedFirstName;
-		} else {
-			return undefined;
+			try {
+				const decrptedFirstName = AES.decrypt(firstName, userGuid);
+				return decrptedFirstName;
+			} catch  {}
 		}
+
+		return undefined;
 	}
 
 	obscureUserName(userName: string) {

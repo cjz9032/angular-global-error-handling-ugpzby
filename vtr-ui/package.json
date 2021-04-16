@@ -62,7 +62,7 @@
 		"angular2-uuid": "^1.1.1",
 		"bootstrap": "^4.6.0",
 		"core-js": "^3.10.0",
-		"crypto-js": "^4.0.0",
+		"crypto-es": "^1.2.7",
 		"currency-formatter": "^1.5.7",
 		"d3-selection": "^2.0.0",
 		"fuse.js": "^6.4.6",

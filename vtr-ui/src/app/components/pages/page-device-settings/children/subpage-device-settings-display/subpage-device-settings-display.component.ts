@@ -33,7 +33,7 @@ import { DeviceService } from 'src/app/services/device/device.service';
 import { DisplayService } from 'src/app/services/display/display.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import sha256 from 'crypto-js/sha256';
+import { SHA256 as sha256 } from 'crypto-es/lib/sha256';
 import { WhiteListCapability } from '../../../../../data-models/eye-care-mode/white-list-capability.interface';
 import { LocalCacheService } from 'src/app/services/local-cache/local-cache.service';
 
