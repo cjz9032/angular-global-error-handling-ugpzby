@@ -48,9 +48,8 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col col-12 cont mb-40"
-					*ngIf="!isRecoverExecuting()">
+			<div class="row" *ngIf="!isRecoverExecuting()">
+				<div class="col col-12 cont mb-40">
 					<vtr-widget-recover-bad-sectors
 						[widgetId]="'hwscan-rbs-widget'"
 						[title]="'hardwareScan.recoverBadSectors.title' | translate"
@@ -61,11 +60,10 @@
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row" *ngIf="!isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult">
 				<div class="col col-12 mb-40">
 					<vtr-widget-hardware-scan-status
-						[widgetId]="'hwscan-previous-results-widget'"
-						*ngIf="!isScanExecuting() && !isRecoverExecuting() && !hidePreviousResult">
+						[widgetId]="'hwscan-previous-results-widget'">
 					</vtr-widget-hardware-scan-status>
 				</div>
 			</div>
