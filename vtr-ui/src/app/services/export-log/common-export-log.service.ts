@@ -332,8 +332,6 @@ export abstract class CommonExportLogService {
 
 	/**
 	 * Function that will get correct data and prepare it deppending on log type
-	 *
-	 * @param logType optional value to differenciate log type
 	 */
 	protected abstract prepareData(): Promise<any>;
 }
