@@ -1,6 +1,6 @@
 <div class="vtr-ui-snapshot-item-list">
 	<vtr-ui-group-card class="snapshot-group-card-list col-12" [hostPage]="hostPage" [title]="title">
-		<div *ngFor="let item of snapshotComponents; let i = index; let last = last">
+		<div [ngClass]="{'separator':  i > 0}" *ngFor="let item of snapshotComponents; let i = index; let last = last">
 			<vtr-ui-snapshot-item
 				[name]='item.name'
 				[component]="item.content"
@@ -10,7 +10,6 @@
 				[componentIndex]="i">
 				[isLastElement]="last"
 			</vtr-ui-snapshot-item>
-			<hr class="module-line-separator" *ngIf="!last && !item.content.IsDifferent" aria-hidden="true">
 		</div>
 	</vtr-ui-group-card>
 </div>
