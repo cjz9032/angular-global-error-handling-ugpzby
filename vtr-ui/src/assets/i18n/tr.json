@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Kullanıcı varlığını algılama",
-					"tooltip": "İnsan varlığını algılama ayarlarını sıfırlamak için buraya tıklayın."
+					"tooltip": "İnsan varlığını algılama ayarlarını sıfırlamak için buraya tıklayın.",
+					"sensorBroken": "Algılayıcıda bir sorun var. Bu özellik kullanılamıyor.",
+                    "biosPriority": "Bu seçeneği BIOS'ta yapılandırdınız ve Lenovo Vantage aracılığıyla değiştiremezsiniz."
 				},
 				"zeroTouchLogin": {
 					"title": "Sıfır dokunma ile oturum açma",

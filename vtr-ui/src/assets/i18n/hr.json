@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Prepoznavanje prisutnosti korisnika",
-					"tooltip": "Kliknite ovdje kako biste ponovno postavili postavke otkrivanja ljudske prisutnosti."
+					"tooltip": "Kliknite ovdje kako biste ponovno postavili postavke otkrivanja ljudske prisutnosti.",
+					"sensorBroken": "Postoji problem sa senzorom. Ova značajka je nedostupna.",
+                    "biosPriority": "Konfigurirali ste ovu mogućnost u BIOS-u i ne možete je promijeniti putem aplikacije Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Automatska prijava",

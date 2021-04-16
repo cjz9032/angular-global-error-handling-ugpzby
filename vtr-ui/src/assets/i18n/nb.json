@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Oppdagelse av brukerens tilstedeværelse",
-					"tooltip": "Klikk her for å tilbakestille innstillingene for oppdaging av mennesker til stede."
+					"tooltip": "Klikk her for å tilbakestille innstillingene for oppdaging av mennesker til stede.",
+					"sensorBroken": "Det er et problem med sensoren. Denne funksjonen er ikke tilgjengelig.",
+                    "biosPriority": "Du har konfigurert dette alternativet i BIOS og kan ikke endre det gjennom Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Pålogging uten berøring",

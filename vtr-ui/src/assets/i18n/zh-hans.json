@@ -2186,7 +2186,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "用户存在感知",
-					"tooltip": "单击此处以重置人员存在检测设置。"
+					"tooltip": "单击此处以重置人员存在检测设置。",
+					"sensorBroken": "传感器出现问题。此功能不可用。",
+                    "biosPriority": "您已在 BIOS 中配置此选项，且无法通过 Lenovo Vantage 进行更改。"
 				},
 				"zeroTouchLogin": {
 					"title": "零触摸登录",

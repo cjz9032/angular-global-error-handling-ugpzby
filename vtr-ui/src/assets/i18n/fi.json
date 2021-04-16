@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Käyttäjän läsnäolon tunnistus",
-					"tooltip": "Napsauta tätä nollataksesi ihmisten läsnäolon tunnistusasetukset."
+					"tooltip": "Napsauta tätä nollataksesi ihmisten läsnäolon tunnistusasetukset.",
+					"sensorBroken": "Tunnistimessa on ongelma. Tämä ominaisuus ei ole käytettävissä.",
+                    "biosPriority": "Olet määrittänyt tämän vaihtoehdon BIOS-valikossa etkä voi muuttaa sitä Lenovo Vantagen kautta."
 				},
 				"zeroTouchLogin": {
 					"title": "Zero touch -kirjautuminen",

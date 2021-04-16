@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "使用者在場感應",
-					"tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。"
+					"tooltip": "用滑鼠按一下此處，可重設人員在場偵測設定。",
+					"sensorBroken": "感應器有問題。此功能無法使用。",
+                    "biosPriority": "您已在 BIOS 中配置此選項，而且無法透過 Lenovo Vantage 進行變更。"
 				},
 				"zeroTouchLogin": {
 					"title": "零接觸登入",

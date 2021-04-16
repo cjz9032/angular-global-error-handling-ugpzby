@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Felhasználói jelenlét észlelése",
-					"tooltip": "Ide kattintva alaphelyzetbe állíthatja az emberi jelenlét észlelésének beállításait."
+					"tooltip": "Ide kattintva alaphelyzetbe állíthatja az emberi jelenlét észlelésének beállításait.",
+					"sensorBroken": "Érzékelőprobléma lépett fel. A szolgáltatás nem áll rendelkezésre.",
+                    "biosPriority": "Ezt a lehetőséget a BIOS-ban állította be, és a Lenovo Vantage segítségével nem módosíthatja."
 				},
 				"zeroTouchLogin": {
 					"title": "Érintés nélküli bejelentkezés",

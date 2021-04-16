@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Aanwezigheidssensor van gebruiker",
-					"tooltip": "Klik hier om de instellingen voor de aanwezigheidsdetectie van personen opnieuw in te stellen."
+					"tooltip": "Klik hier om de instellingen voor de aanwezigheidsdetectie van personen opnieuw in te stellen.",
+					"sensorBroken": "Er is een probleem met de sensor. Deze functie is niet beschikbaar.",
+                    "biosPriority": "U hebt deze optie geconfigureerd in het BIOS en kunt u deze niet wijzigen in Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Aanmelding bij nul aanraken",

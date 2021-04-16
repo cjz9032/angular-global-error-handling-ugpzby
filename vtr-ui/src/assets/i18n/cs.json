@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Rozpoznání přítomnosti uživatele",
-					"tooltip": "Kliknutím sem obnovíte nastavení rozpoznání přítomnosti lidí."
+					"tooltip": "Kliknutím sem obnovíte nastavení rozpoznání přítomnosti lidí.",
+					"sensorBroken": "Vyskytl se problém se snímačem. Tato funkce je nedostupná.",
+                    "biosPriority": "Tuto možnost jste nakonfigurovali v systému BIOS a nelze ji změnit pomocí programu Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Bezkontaktní přihlášení",

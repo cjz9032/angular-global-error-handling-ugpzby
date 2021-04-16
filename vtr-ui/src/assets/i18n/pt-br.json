@@ -2188,7 +2188,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Detecção de presença do usuário",
-					"tooltip": "Clique aqui para redefinir as configurações de detecção de presença humana."
+					"tooltip": "Clique aqui para redefinir as configurações de detecção de presença humana.",
+					"sensorBroken": "O sensor tem um problema. Este recurso não está disponível.",
+                    "biosPriority": "Você configurou esta opção no BIOS e não pode alterá-la por meio do Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Login sem toques",

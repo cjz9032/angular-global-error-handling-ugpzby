@@ -2078,7 +2078,9 @@
 				},
 				"humanPresenceDetection": {
 					"title": "Detectarea prezenței utilizatorului",
-					"tooltip": "Faceți clic aici pentru a reseta setările pentru detecția prezenței umane."
+					"tooltip": "Faceți clic aici pentru a reseta setările pentru detecția prezenței umane.",
+					"sensorBroken": "Senzorul are o problemă. Această caracteristică nu este disponibilă.",
+                    "biosPriority": "Ați configurat această opțiune în BIOS și nu o puteți schimba prin intermediul aplicației Lenovo Vantage."
 				},
 				"zeroTouchLogin": {
 					"title": "Conectare fără atingere",
