@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { ExportLogExtensions, ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
-import { HardwareScanFinishedHeaderType, LanguageCode } from '../../../enums/hardware-scan.enum';
+import { HardwareScanFinishedHeaderType } from '../../../enums/hardware-scan.enum';
 import { ExportResultsService } from '../../../services/export-results.service';
 import { HardwareScanMetricsService } from '../../../services/hardware-scan-metrics.service';
 import { HardwareScanService } from '../../../services/hardware-scan.service';
@@ -15,7 +15,7 @@ import { ModalExportLogComponent } from '../../modal/modal-export-log/modal-expo
 	templateUrl: './hardware-scan-export-log.component.html',
 	styleUrls: ['./hardware-scan-export-log.component.scss'],
 })
-export class HardwareScanExportLogComponent implements OnInit {
+export class HardwareScanExportLogComponent {
 	@Input() componentId: string;
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
@@ -36,10 +36,6 @@ export class HardwareScanExportLogComponent implements OnInit {
 		private hardwareScanService: HardwareScanService,
 		private deviceService: DeviceService
 	) {}
-
-	ngOnInit() {
-		this.isPdfAvailable();
-	}
 
 	// Necessary to control navigation through tab key
 	public onExportClick(): void {
@@ -169,21 +165,5 @@ export class HardwareScanExportLogComponent implements OnInit {
 	) {
 		(modal.componentInstance as ModalExportLogComponent).logPath = logPath;
 		(modal.componentInstance as ModalExportLogComponent).errorStatus = error;
-	}
-
-	private isPdfAvailable() {
-		this.deviceService
-			.getMachineInfo()
-			.then((value: any) => {
-				if (value.locale !== LanguageCode.english) {
-					this.exportExtensions.splice(
-						this.exportExtensions.indexOf(ExportLogExtensions.pdf),
-						1
-					);
-				}
-			})
-			.catch((error) => {
-				this.logger.exception('[ExportLogComponent] isPdfAvailable', error);
-			});
 	}
 }

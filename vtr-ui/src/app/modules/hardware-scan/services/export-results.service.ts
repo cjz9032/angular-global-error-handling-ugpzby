@@ -1335,25 +1335,23 @@ export class ExportResultsService {
 						module.module
 				  );
 
-			const testResultText = this.translate
-				.transform('hardwareScan.' + this.getStatusFromStatusCode(module.resultModule))
-				.toUpperCase();
-
+			// This switch case defines the position where the status icon will be draw in the future
+			// the "x" indicate the column position in the test result table
 			switch (module.resultModule) {
 				case HardwareScanTestResult.Pass:
-					return [currentName, testResultText, '', '', '', ''];
+					return [currentName, 'x', '', '', '', ''];
 
 				case HardwareScanTestResult.Fail:
-					return [currentName, '', testResultText, '', '', ''];
+					return [currentName, '', 'x', '', '', ''];
 
 				case HardwareScanTestResult.Attention:
-					return [currentName, '', '', testResultText, '', ''];
+					return [currentName, '', '', 'x', '', ''];
 
 				case HardwareScanTestResult.Cancelled:
-					return [currentName, '', '', '', testResultText, ''];
+					return [currentName, '', '', '', 'x', ''];
 
 				case HardwareScanTestResult.Na:
-					return [currentName, '', '', '', '', testResultText];
+					return [currentName, '', '', '', '', 'x'];
 
 				default:
 					return [currentName, '', '', '', '', ''];
@@ -1654,21 +1652,18 @@ export class ExportResultsService {
 		jsonData.testSummary = this.calculateTestSummaryInfo(jsonData);
 		(doc as any).autoTable({
 			margin: this.startX,
+			headStyles: { halign: 'center' },
 			startY: startY + 3,
 			columnStyles: {
 				0: {
 					cellWidth: 50,
 				},
-				1: { fontStyle: 'bold' },
-				2: { fontStyle: 'bold' },
-				3: { fontStyle: 'bold' },
-				4: { fontStyle: 'bold' },
-				5: { fontStyle: 'bold' },
 			},
 			head: [
 				[
 					{
 						content: this.translate.transform('hardwareScan.report.totalModulesTested'),
+						styles: { halign: 'left' },
 					},
 					{
 						content: this.getTestTableTitle(jsonData, HardwareScanTestResult.Pass),
@@ -1687,14 +1682,6 @@ export class ExportResultsService {
 					},
 				],
 			],
-			willDrawCell: (data) => {
-				if (data.section === 'body' && data.column.index > 0 && data.cell.colSpan < 2) {
-					const colorValue = this.getStatusColorFromStatusCode(data.column.index + 1); // + 1 correspond to enum value
-
-					// Sets the color of text by status ([0] = Red, [1] = Green, [2] = Blue)
-					doc.setTextColor(colorValue[0], colorValue[1], colorValue[2]);
-				}
-			},
 			didDrawCell: (data) => {
 				if (
 					data.row.section === 'body' &&
@@ -1703,10 +1690,15 @@ export class ExportResultsService {
 					StatusIcons.has(data.column.index + 1) &&
 					data.row.index < data.table.body.length - 2
 				) {
+					const oldFillColor = doc.getFillColor();
+					doc.setFillColor(data.cell.styles.fillColor);
+					doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height, 'F');
+					doc.setFillColor(oldFillColor);
+
 					doc.addImage(
 						StatusIcons.get(data.column.index + 1),
 						'PNG',
-						data.cell.x + data.cell.contentWidth + 2,
+						data.cell.x + (data.cell.width - this.statusIconSize) / 2,
 						data.cell.y + 1.5,
 						this.statusIconSize,
 						this.statusIconSize

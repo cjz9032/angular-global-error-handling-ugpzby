@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
@@ -16,7 +16,7 @@ import { ExportSnapshotResultsService } from '../../services/export-snapshot-res
 	templateUrl: './snapshot-export-log.component.html',
 	styleUrls: ['./snapshot-export-log.component.scss'],
 })
-export class SnapshotExportLogComponent implements OnInit {
+export class SnapshotExportLogComponent {
 	@Input() componentId: string;
 	@Input() metricsItem: string;
 	@Input() metricsParent: string;
@@ -35,10 +35,6 @@ export class SnapshotExportLogComponent implements OnInit {
 		private logger: LoggerService,
 		private dialog: MatDialog
 	) {}
-
-	ngOnInit() {
-		this.isPdfAvailable();
-	}
 
 	// Necessary to control navigation through tab key
 	public onExportClick(): void {
@@ -90,24 +86,6 @@ export class SnapshotExportLogComponent implements OnInit {
 		this.exportService.setExportExtensionSelected(ExportLogExtensions[extension]);
 
 		this.exportResults();
-	}
-
-	private isPdfAvailable() {
-		const supportedLanguage = 'en';
-
-		this.deviceService
-			.getMachineInfo()
-			.then((value: any) => {
-				if (value.locale !== supportedLanguage) {
-					this.exportExtensions.splice(
-						this.exportExtensions.indexOf(ExportLogExtensions.pdf),
-						1
-					);
-				}
-			})
-			.catch((error) => {
-				this.logger.exception('[SnapshotExportLogComponent] isPdfAvailable', error);
-			});
 	}
 
 	public getExportIcon(): string {
