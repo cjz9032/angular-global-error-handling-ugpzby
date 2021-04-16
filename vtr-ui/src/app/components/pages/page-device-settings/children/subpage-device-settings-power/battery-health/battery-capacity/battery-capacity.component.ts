@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { BatteryHealthService } from '../battery-health.service';
-import { BatteryCapacityCircleStyle, BatteryCapacityConditions } from '../battery-health.enum';
+import { BatteryCapacityConditions } from '../battery-health.enum';
 
 @Component({
 	selector: 'vtr-battery-capacity',
@@ -13,8 +13,6 @@ export class BatteryCapacityComponent implements OnInit {
 	fullChargeCapacity: string;
 	originalDesignCapacity: string;
 	capacityError = false;
-	overCircleLength = 264;
-	circleStyle = BatteryCapacityCircleStyle.GREEN;
 	condition = BatteryCapacityConditions.ERROR;
 	constructor(private batteryHealthService: BatteryHealthService) {}
 
@@ -28,28 +26,21 @@ export class BatteryCapacityComponent implements OnInit {
 	}
 
 	setCircleInformation(batteryInfo) {
-		if (this.capacity) {
-			switch (true) {
-				case this.capacityError:
-					this.condition = BatteryCapacityConditions.ERROR;
-					break;
-				case this.capacity >= 40:
-					this.condition = BatteryCapacityConditions.GOOD;
-					break;
-				case this.capacity < 40 && !(batteryInfo.batteryHealthTip === 7 || batteryInfo.batteryHealthTip === 8):
-					this.condition = BatteryCapacityConditions.POOR;
-					break;
-				case this.capacity < 40 && (batteryInfo.batteryHealthTip === 7 || batteryInfo.batteryHealthTip === 8):
-					this.condition = BatteryCapacityConditions.AGING;
-					break;
-				default:
-					break;
-			}
-		} else {
-			this.circleStyle =
-				this.capacity === 0
-					? BatteryCapacityCircleStyle.GREEN
-					: BatteryCapacityCircleStyle.ERROR;
+		switch (true) {
+			case this.capacityError:
+				this.condition = BatteryCapacityConditions.ERROR;
+				break;
+			case this.capacity >= 40:
+				this.condition = BatteryCapacityConditions.GOOD;
+				break;
+			case this.capacity < 40 && !(batteryInfo.batteryHealthTip === 7 || batteryInfo.batteryHealthTip === 8):
+				this.condition = BatteryCapacityConditions.POOR;
+				break;
+			case this.capacity < 40 && (batteryInfo.batteryHealthTip === 7 || batteryInfo.batteryHealthTip === 8):
+				this.condition = BatteryCapacityConditions.AGING;
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -69,7 +60,6 @@ export class BatteryCapacityComponent implements OnInit {
 
 	isCapacityError(batteryInfo) {
 		this.capacity = batteryInfo.lifePercent > 100 ? 100 : batteryInfo.lifePercent;
-		// circle perimeter : 2 * Math.PI * r = 2 * π * 42 ≈ 264
 		this.fullChargeCapacity =
 			batteryInfo.fullChargeCapacity >= 0 ? batteryInfo.fullChargeCapacity : undefined;
 		this.originalDesignCapacity =
@@ -81,10 +71,8 @@ export class BatteryCapacityComponent implements OnInit {
 			this.originalDesignCapacity === undefined
 		) {
 			this.capacityError = true;
-			this.overCircleLength = 0;
 		} else {
 			this.capacityError = false;
-			this.overCircleLength = (264 / 100) * this.capacity;
 		}
 	}
 
