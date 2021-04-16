@@ -98,6 +98,26 @@
 				</vtr-ui-hardware-list>
 			</div>
 
+			<ng-template #tooltipRefModule>
+				<div aria-live="polite"
+					role="text"
+					id="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-text"
+					[innerHTML]="'hardwareScan.pluginTokens.' + tooltipText | translateDefault:tooltipText">
+				</div>
+				<vtr-ui-hyperlink-button
+					linkId="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-support-link"
+					class="hyperlink-container"
+					hyperlinkStyle="xs-300-blue-lighter"
+					metricsItemID="HardwareScan.ResultSupport"
+					metricsItemPosition="r1"
+					metricsItemCategory="partnerarticle"
+					metricsEvent="articleclick"
+					metricsPageNumber="1"
+					(hyperlinkClick)="openContactusPage()"
+					[label]="'hardwareScan.support.subtitle' | translate">
+				</vtr-ui-hyperlink-button>
+			</ng-template>
+
 			<!-- Result code information -->
 			<div class="result-code" *ngIf="item.resultCode && (item.expanded || item.details)">
 				<p class="title">{{resultCodeText}}:</p>
@@ -105,9 +125,10 @@
 				<vtr-ui-question-mark-button
 					*ngIf="item.information"
 					componentId="hwscan-item-{{ i }}-result-code"
+					[componentRole]="'link'"
 					class="question-mark-container"
 					(clickEvent)="setTooltipInfo(item.information, i)"
-					[ariaLabel]="item.module + 'result-code-tooltip, which reads:' + item.information"
+					[ariaLabel]="item.module + 'result-code'"
 					triggers="click"
 					[ngbTooltip]="tooltipRefModule"
 					container="vtr-root"
@@ -118,18 +139,3 @@
 		</div>
 	</div>
 </div>
-<ng-template #tooltipRefModule>
-	<div id="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-text">{{ ('hardwareScan.pluginTokens.' + tooltipText) | translateDefault:tooltipText }}</div>
-	<vtr-ui-hyperlink-button
-		linkId="hwscan-item-{{ tooltipIndex }}-result-code-tooltip-support-link"
-		class="hyperlink-container"
-		hyperlinkStyle="xs-300-blue-lighter"
-		metricsItemID="HardwareScan.ResultSupport"
-		metricsItemPosition="r1"
-		metricsItemCategory="partnerarticle"
-		metricsEvent="articleclick"
-		metricsPageNumber="1"
-		(hyperlinkClick)="openContactusPage()"
-		[label]="'hardwareScan.support.subtitle' | translate">
-	</vtr-ui-hyperlink-button>
-</ng-template>
