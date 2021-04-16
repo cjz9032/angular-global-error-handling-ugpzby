@@ -1553,7 +1553,13 @@
 							"title": "Capacité de la batterie",
 							"fullChargeCapacity": "Capacité de charge totale : ",
 							"originalDesignCapacity": "Capacité conçue d'origine : ",
-							"toolTip": "La capacité de pleine charge de votre batterie diminue avec l'utilisation quotidienne."
+							"toolTip": "La capacité de pleine charge de votre batterie diminue avec l'utilisation quotidienne.",
+							"capacityTooltip": {
+								"error": "Capacité de la batterie non disponible.",
+								"good": "Le niveau de la batterie est bon. La capacité de charge totale représente la capacité maximale de votre batterie lorsqu'elle est complètement chargée. <br>Remarque : la capacité de charge totale de votre batterie diminuera avec le temps.",
+								"poor": "La batterie est en mauvais état. La durée de vie de la batterie et ses performances maximales d'alimentation seront impactées : nous vous recommandons de remplacer votre batterie. <br>Remarque : si votre batterie n'est pas sous garantie, vous pouvez être facturé pour une batterie de rechange et pour son installation.",
+								"aging": "La batterie a été désactivée. La batterie ne peut plus fonctionner en toute sécurité : nous vous recommandons de la remplacer. <br>Remarque : si votre batterie n'est pas sous garantie, vous pouvez être facturé pour une batterie de rechange et pour son installation."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Température de la batterie",

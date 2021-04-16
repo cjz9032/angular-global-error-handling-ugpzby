@@ -1553,7 +1553,13 @@
 							"title": "Akkukapazität",
 							"fullChargeCapacity": "Kapazität bei voller Ladung: ",
 							"originalDesignCapacity": "Ursprünglich vorgesehene Kapazität: ",
-							"toolTip": "Die vollständige Ladekapazität Ihres Akkus sinkt bei täglichem Gebrauch."
+							"toolTip": "Die vollständige Ladekapazität Ihres Akkus sinkt bei täglichem Gebrauch.",
+							"capacityTooltip": {
+								"error": "Akkukapazität ist nicht verfügbar.",
+								"good": "Der Akku befindet sich in einem guten Zustand. Die volle Ladekapazität ist die maximale Kapazität Ihres Akkus, wenn er voll aufgeladen ist. <br>Hinweis: Die volle Ladekapazität Ihres Akkus sinkt im Laufe der Zeit.",
+								"poor": "Der Akkuzustand ist schlecht. Die Akkulebensdauer und die Akkuspitzenleistung werden dabei beeinträchtigt – wir empfehlen, den Akku auszutauschen. <br>Hinweis: Wenn der Garantiezeitraum für Ihren Akku abgelaufen ist, können Ihnen der Ersatzakku und seine Installation in Rechnung gestellt werden.",
+								"aging": "Der Akku wurde deaktiviert. Eine sichere Nutzung des Akkus ist nicht mehr gegeben – wir empfehlen, den Akku auszutauschen. <br>Hinweis: Wenn der Garantiezeitraum für Ihren Akku abgelaufen ist, können Ihnen der Ersatzakku und seine Installation in Rechnung gestellt werden."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Akkutemperatur",

@@ -48,3 +48,10 @@ export enum BatteryCapacityCircleStyle {
 	PINK = 'color-pink',
 	RED = 'color-red',
 }
+
+export enum BatteryCapacityConditions {
+	ERROR = 'error',
+	GOOD = 'good',
+	POOR = 'poor',
+	AGING = 'aging',
+}

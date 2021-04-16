@@ -1443,7 +1443,13 @@
 							"title": "Kapacita baterie",
 							"fullChargeCapacity": "Kapacita při plném nabití: ",
 							"originalDesignCapacity": "Původní nominální kapacita: ",
-							"toolTip": "Kapacita plného nabití baterie se s každodenním používáním snižuje."
+							"toolTip": "Kapacita plného nabití baterie se s každodenním používáním snižuje.",
+							"capacityTooltip": {
+								"error": "Kapacita baterie není k dispozici.",
+								"good": "Stav baterie je dobrý. Plná kapacita nabíjení představuje maximální kapacitu baterie při úplném nabití. <br>Poznámka: Plná kapacita nabíjení baterie se časem postupně snižuje.",
+								"poor": "Stav baterie je špatný. Bude ovlivněna životnost baterie a špičkový výkon – doporučujeme baterii vyměnit. <br>Poznámka: Pokud je vaše baterie mimo záruku, může vám být za novou baterii a její instalaci účtován poplatek.",
+								"aging": "Baterie byla deaktivována. Baterie již nemůže bezpečně fungovat – doporučujeme ji vyměnit. <br>Poznámka: Pokud je vaše baterie mimo záruku, může vám být za novou baterii a její instalaci účtován poplatek."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Teplota baterie",

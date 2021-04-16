@@ -1443,7 +1443,13 @@
 							"title": "Batterikapacitet",
 							"fullChargeCapacity": "Kapacitet ved fuld opladning: ",
 							"originalDesignCapacity": "Oprindelig kapacitet: ",
-							"toolTip": "Batteriets fulde opladningskapacitet falder ved daglig brug."
+							"toolTip": "Batteriets fulde opladningskapacitet falder ved daglig brug.",
+							"capacityTooltip": {
+								"error": "Batterikapaciteten er ikke tilgængelig.",
+								"good": "Batteriets tilstand er god. Fuld opladningskapacitet repræsenterer batteriets maksimale kapacitet, når det er fuldt opladet. <br>Bemærk: Batteriets kapacitet ved fuld opladning sænkes med tiden.",
+								"poor": "Batteriet er i dårlig stand. Batteriets levetid og den maksimale ydeevne vil blive påvirket – vi anbefaler, at du udskifter batteriet. <br>Bemærk: Hvis batteriet ikke er dækket af garantien, kan du blive faktureret for et udskiftningsbatteri og installationen.",
+								"aging": "Batteriet er deaktiveret. Batteriet kan ikke længere fungere på en sikker måde – vi anbefaler, at du udskifter batteriet. <br>Bemærk: Hvis batteriet ikke er dækket af garantien, kan du blive faktureret for et udskiftningsbatteri og installationen."
+							}
 						},
 						"batteryTemperature": {
 							"title": "Batteritemperatur",
