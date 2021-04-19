@@ -4182,6 +4182,7 @@
 		"refreshModule": "Aktualizovat moduly",
 		"completed": "Dokončeno",
 		"notCompleted": "Nedokončeno",
+		"invalid": "Neplatné",
 		"yes": "Ano",
 		"attention": "Upozornění",
 		"cancelTextPrompt": "Skutečně chcete tuto operaci zrušit?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Během exportu protokolu byl nalezen problém. Zkuste to prosím později.",
 			"exportMayTakeSomeTime": "Počkejte prosím, než se protokol exportuje.",
 			"openSettingsButton": "Otevřít nastavení systému Windows",
-			"exportLog": "Exportovat protokol"
+			"exportLog": "Exportovat protokol",
+			"exportSnapshot": "Exportovat snímek"
 		},
 		"report": {
 			"modelTitle": "Model",

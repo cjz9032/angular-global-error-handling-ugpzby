@@ -4182,6 +4182,7 @@
 		"refreshModule": "Osvežitev modulov",
 		"completed": "Zaključeno",
 		"notCompleted": "Ni končano",
+		"invalid": "Neveljavno",
 		"yes": "Da",
 		"attention": "Opozorilo",
 		"cancelTextPrompt": "Ali ste prepričani, da želite preklicati?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Pri izvozu dnevnika je prišlo do težave. Poskusite znova pozneje.",
 			"exportMayTakeSomeTime": "Počakajte, da se izvoz dnevnika konča.",
 			"openSettingsButton": "Odpri nastavitve sistema Windows",
-			"exportLog": "Izvozi dnevnik"
+			"exportLog": "Izvozi dnevnik",
+			"exportSnapshot": "Izvozi posnetek"
 		},
 		"report": {
 			"modelTitle": "Model",

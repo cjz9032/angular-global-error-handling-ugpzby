@@ -4182,6 +4182,7 @@
 		"refreshModule": "Atualizar Módulos",
 		"completed": "Concluído",
 		"notCompleted": "Não Concluído",
+		"invalid": "Inválido",
 		"yes": "Sim",
 		"attention": "Atenção",
 		"cancelTextPrompt": "Tem a certeza de que pretende cancelar?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Foi encontrado um problema durante a exportação do registo. Tente novamente mais tarde.",
 			"exportMayTakeSomeTime": "Por favor aguarde enquanto o registo é exportado.",
 			"openSettingsButton": "Abrir Definições do Windows",
-			"exportLog": "Exportar Registo"
+			"exportLog": "Exportar Registo",
+			"exportSnapshot": "Exportar Instantâneo"
 		},
 		"report": {
 			"modelTitle": "Modelo",

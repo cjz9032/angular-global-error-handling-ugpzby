@@ -4292,6 +4292,7 @@
 		"refreshModule": "Actualiser les modules",
 		"completed": "Terminé",
 		"notCompleted": "Non terminé",
+		"invalid": "Non valide",
 		"yes": "Oui",
 		"attention": "Attention",
 		"cancelTextPrompt": "Êtes-vous sûr de vouloir annuler ?",
@@ -5434,7 +5435,8 @@
 			"exportFailDescription": "Un incident a été détecté pendant l'exportation du journal. Réessayez plus tard.",
 			"exportMayTakeSomeTime": "Veuillez patienter pendant l'exportation du journal.",
 			"openSettingsButton": "Ouvrir les paramètres Windows",
-			"exportLog": "Exporter le journal"
+			"exportLog": "Exporter le journal",
+			"exportSnapshot": "Exporter l'instantané"
 		},
 		"report": {
 			"modelTitle": "Modèle",

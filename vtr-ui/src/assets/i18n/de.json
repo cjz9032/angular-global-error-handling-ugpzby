@@ -4292,6 +4292,7 @@
 		"refreshModule": "Module aktualisieren",
 		"completed": "Fertig",
 		"notCompleted": "Nicht fertig",
+		"invalid": "Ungültig",
 		"yes": "Ja",
 		"attention": "Achtung",
 		"cancelTextPrompt": "Sind Sie sicher, dass Sie abbrechen möchten?",
@@ -5434,7 +5435,8 @@
 			"exportFailDescription": "Beim Protokollexport ist ein Fehler aufgetreten. Versuchen Sie es später erneut.",
 			"exportMayTakeSomeTime": "Bitte warten Sie, während das Protokoll exportiert wird.",
 			"openSettingsButton": "Windows-Einstellungen öffnen",
-			"exportLog": "Protokoll exportieren"
+			"exportLog": "Protokoll exportieren",
+			"exportSnapshot": "Momentaufnahme exportieren"
 		},
 		"report": {
 			"modelTitle": "Modell",

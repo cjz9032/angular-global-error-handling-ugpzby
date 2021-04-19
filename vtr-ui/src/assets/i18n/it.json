@@ -4182,6 +4182,7 @@
 		"refreshModule": "Aggiorna moduli",
 		"completed": "Completato",
 		"notCompleted": "Non completato",
+		"invalid": "Non valido",
 		"yes": "Sì",
 		"attention": "Attenzione",
 		"cancelTextPrompt": "Annullare l'operazione?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "È stato rilevato un problema durante l'esportazione del log. Riprovare più tardi.",
 			"exportMayTakeSomeTime": "Attendere l'esportazione del log.",
 			"openSettingsButton": "Apri impostazioni di Windows",
-			"exportLog": "Esporta log"
+			"exportLog": "Esporta log",
+			"exportSnapshot": "Esporta istantanea"
 		},
 		"report": {
 			"modelTitle": "Modello",

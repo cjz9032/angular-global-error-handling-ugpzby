@@ -4182,6 +4182,7 @@
 		"refreshModule": "Päivitä moduulit",
 		"completed": "Valmis",
 		"notCompleted": "Kesken",
+		"invalid": "Virheellinen",
 		"yes": "Kyllä",
 		"attention": "Huomio:",
 		"cancelTextPrompt": "Haluatko varmasti peruuttaa?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Lokin viennin aikana ilmeni ongelma. Yritä myöhemmin uudelleen.",
 			"exportMayTakeSomeTime": "Odota, kunnes loki on viety.",
 			"openSettingsButton": "Avaa Windows-asetukset",
-			"exportLog": "Vie loki"
+			"exportLog": "Vie loki",
+			"exportSnapshot": "Vie tilannekuva"
 		},
 		"report": {
 			"modelTitle": "Malli",

@@ -4291,6 +4291,7 @@
 		"refreshModule": "モジュールの更新",
 		"completed": "完了",
 		"notCompleted": "未完了",
+		"invalid": "無効",
 		"yes": "はい",
 		"attention": "重要",
 		"cancelTextPrompt": "本当にキャンセルしてよろしいですか?",
@@ -5433,7 +5434,8 @@
 			"exportFailDescription": "ログのエクスポート中に問題が見つかりました。後で再試行してください。",
 			"exportMayTakeSomeTime": "ログがエクスポートされるまでお待ちください。",
 			"openSettingsButton": "Windows 設定を開く",
-			"exportLog": "ログのエクスポート"
+			"exportLog": "ログのエクスポート",
+			"exportSnapshot": "スナップショットのエクスポート"
 		},
 		"report": {
 			"modelTitle": "モデル番号",

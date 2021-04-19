@@ -4182,6 +4182,7 @@
 		"refreshModule": "Opdater moduler",
 		"completed": "Udført",
 		"notCompleted": "Ikke fuldført",
+		"invalid": "Ugyldig",
 		"yes": "Ja",
 		"attention": "Advarsel!",
 		"cancelTextPrompt": "Er du sikker på, at du vil annullere?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Der opstod et problem under eksport af en log. Prøv det igen senere.",
 			"exportMayTakeSomeTime": "Vent et øjeblik, mens loggen eksporteres.",
 			"openSettingsButton": "Åbn Windows-indstillinger",
-			"exportLog": "Eksportér log"
+			"exportLog": "Eksportér log",
+			"exportSnapshot": "Eksportér øjebliksbillede"
 		},
 		"report": {
 			"modelTitle": "Model",

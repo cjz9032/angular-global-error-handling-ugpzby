@@ -121,7 +121,7 @@
 			<!-- Result code information -->
 			<div class="result-code" *ngIf="item.resultCode && (item.expanded || item.details)">
 				<p class="title">{{resultCodeText}}:</p>
-				<p id="hwscan-item-{{ i }}-result-code-value" role="text" class="subtitle">{{item.resultCode}}</p>
+				<p id="hwscan-item-{{ i }}-result-code-value" role="text" class="subtitle">{{ ('hardwareScan.' + item.resultCode.toLowerCase()) | translateDefault: item.resultCode }}</p>
 				<vtr-ui-question-mark-button
 					*ngIf="item.information"
 					componentId="hwscan-item-{{ i }}-result-code"

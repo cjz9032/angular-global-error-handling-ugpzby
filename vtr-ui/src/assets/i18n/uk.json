@@ -4182,6 +4182,7 @@
 		"refreshModule": "Оновити модулі",
 		"completed": "Завершено",
 		"notCompleted": "Не завершено",
+		"invalid": "Неприпустимий",
 		"yes": "Так",
 		"attention": "Увага!",
 		"cancelTextPrompt": "Скасувати?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Сталася помилка під час експорту журналу. Спробуйте ще раз пізніше.",
 			"exportMayTakeSomeTime": "Зачекайте, поки експортується журнал.",
 			"openSettingsButton": "Відкрити настройки Windows",
-			"exportLog": "Експортувати журнал"
+			"exportLog": "Експортувати журнал",
+			"exportSnapshot": "Експортувати знімок"
 		},
 		"report": {
 			"modelTitle": "Модель",

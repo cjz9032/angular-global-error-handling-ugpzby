@@ -4182,6 +4182,7 @@
 		"refreshModule": "Modulok frissítése",
 		"completed": "Befejezve",
 		"notCompleted": "Nincs kész",
+		"invalid": "Érvénytelen",
 		"yes": "Igen",
 		"attention": "Figyelem",
 		"cancelTextPrompt": "Biztosan megszakítja a műveletet?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Hiba történt a napló exportálása során. Kérjük, később próbálkozzon újra.",
 			"exportMayTakeSomeTime": "Várjon, amíg a napló exportálása befejeződik.",
 			"openSettingsButton": "Windows Gépház megnyitása",
-			"exportLog": "Napló exportálása"
+			"exportLog": "Napló exportálása",
+			"exportSnapshot": "Pillanatkép exportálása"
 		},
 		"report": {
 			"modelTitle": "Modell",

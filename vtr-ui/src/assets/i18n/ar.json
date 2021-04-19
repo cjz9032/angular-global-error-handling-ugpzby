@@ -4182,6 +4182,7 @@
 		"refreshModule": "تحديث الوحدات",
 		"completed": "مكتمل",
 		"notCompleted": "غير مكتمل",
+		"invalid": "غير صالح",
 		"yes": "نعم",
 		"attention": "تنبيه",
 		"cancelTextPrompt": "هل تريد بالتأكيد الإلغاء؟",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "تم العثور على مشكلة أثناء تصدير السجل. يُرجى إعادة المحاولة لاحقًا.",
 			"exportMayTakeSomeTime": "يرجى الانتظار أثناء تصدير السجل.",
 			"openSettingsButton": "فتح إعدادات Windows",
-			"exportLog": "سجل التصدير"
+			"exportLog": "سجل التصدير",
+			"exportSnapshot": "تصدير اللقطة"
 		},
 		"report": {
 			"modelTitle": "الطراز",

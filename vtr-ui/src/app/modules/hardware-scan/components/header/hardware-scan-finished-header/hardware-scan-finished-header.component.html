@@ -10,7 +10,7 @@
 				<div class="description-row">
 					<ng-container
 						[ngTemplateOutlet]="scanFinishedFinalResultCode"
-						[ngTemplateOutletContext]="{ finalResultCodeTitle: 'hardwareScan.scanFinishedHeader.finalResultCodeLabel' | translate, finalResultCodeValue: getFinalResultCode() }">
+						[ngTemplateOutletContext]="{ finalResultCodeTitle: 'hardwareScan.scanFinishedHeader.finalResultCodeLabel' | translate, finalResultCodeValue: 'hardwareScan.' + getFinalResultCode().toLowerCase() | translateDefault: getFinalResultCode() }">
 					</ng-container>
 				</div>
 
@@ -134,7 +134,7 @@
 				<span role="text" id="hwscan-final-result-code-value" class="result-code-complete-text">{{ finalResultCodeValue }}</span>
 			</p>
 			<vtr-ui-question-mark-button
-				*ngIf="numberTestsFailed === 0"
+				*ngIf="numberTestsFailed === 0 && isFinalResultCodeValid()"
 				[componentId]="'hwscan-final-result-code'"
 				[componentRole]="'link'"
 				[ariaLabel]="'final-result-code'"

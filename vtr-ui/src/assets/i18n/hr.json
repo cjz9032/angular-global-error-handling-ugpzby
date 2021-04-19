@@ -4182,6 +4182,7 @@
 		"refreshModule": "Osvježi module",
 		"completed": "Dovršeno",
 		"notCompleted": "Nije dovršeno",
+		"invalid": "Nevažeće",
 		"yes": "Da",
 		"attention": "Pažnja",
 		"cancelTextPrompt": "Želite li zaista odustati?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Pronađen je problem tijekom izvoza dnevničkog zapisa. Molimo, pokušajte kasnije.",
 			"exportMayTakeSomeTime": "Molimo, sačekajte dok se dnevnički zapis izvozi.",
 			"openSettingsButton": "Otvorite postavke sustava Windows",
-			"exportLog": "Izvoz zapisnika"
+			"exportLog": "Izvoz zapisnika",
+			"exportSnapshot": "Izvoz snimke stanja"
 		},
 		"report": {
 			"modelTitle": "Model",

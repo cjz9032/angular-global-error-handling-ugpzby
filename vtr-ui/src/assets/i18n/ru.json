@@ -4292,6 +4292,7 @@
 		"refreshModule": "Обновить модули",
 		"completed": "Выполнено",
 		"notCompleted": "Не выполнено",
+		"invalid": "Недопустимый",
 		"yes": "Да",
 		"attention": "Внимание",
 		"cancelTextPrompt": "Действительно отменить?",
@@ -5434,7 +5435,8 @@
 			"exportFailDescription": "Во время экспорта журнала обнаружена проблема. Повторите попытку позже.",
 			"exportMayTakeSomeTime": "Дождитесь завершения экспорта журнала.",
 			"openSettingsButton": "Открыть настройки Windows",
-			"exportLog": "Экспорт журнала"
+			"exportLog": "Экспорт журнала",
+			"exportSnapshot": "Экспорт снимка"
 		},
 		"report": {
 			"modelTitle": "Модель",
