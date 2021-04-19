@@ -158,9 +158,9 @@
 		border-radius: 0.6rem !important;
 		padding: 0;
 		overflow-x: hidden;
-	}
 
-	.mat-checkbox .mat-checkbox-ripple {
-		opacity: 0;
+		.mat-checkbox .mat-checkbox-label {
+			color: $grey_darker;
+		}
 	}
 }

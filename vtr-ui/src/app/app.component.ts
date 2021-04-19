@@ -9,6 +9,7 @@ import {
 	AfterViewInit,
 	ElementRef,
 	ViewChild,
+	Renderer2,
 } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
@@ -105,7 +106,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		private localCacheService: LocalCacheService,
 		private warrantyService: WarrantyService,
 		@Inject(DOCUMENT) public document: Document,
-		private snackBar: MatSnackBar
+		private snackBar: MatSnackBar,
+		private renderer: Renderer2
 	) {
 		this.ngbTooltipConfig.triggers = 'hover';
 		// to check web and js bridge version in browser console
@@ -243,6 +245,12 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					config = Object.assign(config ?? {}, { backdropClass: 'gaming-backdrop' });
 				}
 			}
+			setTimeout(() => {
+				const container = document.querySelector('.mat-dialog-container');
+				if (container) {
+					self.renderer.addClass(container, 'mat-customize');
+				}
+			}, 0);
 			return original.call(this, template, config);
 		};
 	}
