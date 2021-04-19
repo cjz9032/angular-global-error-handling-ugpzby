@@ -552,6 +552,23 @@
 								</div>
 							</li>
 						</ul>
+						<!-- image -->
+						<div *ngIf="!isThinkPad" class="no-border-bottom intelligent-security-image ml-4">
+							<img [src]="image"
+								role="img"
+								alt="intelligentSecurity"
+								id="intelligent-security-image" />
+							<div class="intelligent-security-image-word">
+								<h4 class="intelligent-security-image-word-title"
+									id="intelligent-security-image-word-title">
+									{{'device.smartAssist.intelligentSecurity.image.title' | translate}}</h4>
+								<p class="intelligent-security-image-word-description"
+									role="text"
+									id="intelligent-security-image-word-description">
+									{{'device.smartAssist.intelligentSecurity.image.description' | translate}}
+								</p>
+							</div>
+						</div>
 						<!-- note -->
 						<div class="row">
 							<div class="feature-note p-4 my-4 ml-4">
