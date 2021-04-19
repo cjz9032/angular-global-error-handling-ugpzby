@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ExportLogErrorStatus } from '../../../enums/hardware-scan.enum';
 import { By } from '@angular/platform-browser';
 
 import { ModalExportLogComponent } from './modal-export-log.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DeviceService } from 'src/app/services/device/device.service';
+import { ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
 
 describe('ModalExportLogComponent', () => {
 	let component: ModalExportLogComponent;

@@ -1,30 +1,23 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { SnapshotService } from './snapshot.service';
-import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
-import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+import { LogType } from 'src/app/enums/export-log.enum';
+import { TranslateDefaultValueIfNotFoundPipe } from 'src/app/pipe/translate-default-value-if-not-found/translate-default-value-if-not-found.pipe';
+import { CommonExportLogService } from 'src/app/services/export-log/common-export-log.service';
+import { LogIcons } from 'src/app/services/export-log/utils/icons/log-tables';
 import { LoggerService } from 'src/app/services/logger/logger.service';
-import { ExportLogExtensions, ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
-
-declare let window;
+import { VantageShellService } from 'src/app/services/vantage-shell/vantage-shell.service';
+import { SnapshotService } from './snapshot.service';
+import { snapshotModulesIcons } from './utils/icons/snapshot';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class ExportSnapshotResultsService {
-	private static readonly TEMPLATE_PATH =
-		'assets/templates/snapshot/snapshot-results-template.html';
+export class ExportSnapshotResultsService extends CommonExportLogService {
+	// Colors used to build pdf
+	private RgbLightGreyColor = [214, 219, 223];
 
-	private shellVersion: string;
-	private experienceVersion: string;
-	private bridgeVersion: string;
-	private machineModel: string;
-	private serialNumber: string;
-	private biosVersion: string;
-	private productName: string;
-
-	private exportExtensionSelected = ExportLogExtensions.html;
 	private optionsToConvertDate = {
 		weekday: 'long',
 		year: 'numeric',
@@ -32,70 +25,18 @@ export class ExportSnapshotResultsService {
 		day: 'numeric',
 	};
 
-	private document: HTMLDocument;
 	private metricsService: any;
 
 	constructor(
-		private http: HttpClient,
-		private logger: LoggerService,
 		private snapshotService: SnapshotService,
-		private shellService: VantageShellService,
-		private translate: TranslateDefaultValueIfNotFoundPipe
+		private translate: TranslateDefaultValueIfNotFoundPipe,
+		http: HttpClient,
+		logger: LoggerService,
+		shellService: VantageShellService
 	) {
+		super(http, logger, shellService);
+
 		this.metricsService = shellService.getMetrics();
-
-		// Consult experienceVersion
-		this.experienceVersion = environment.appVersion;
-
-		// Consult shellVersion
-		if (window.Windows) {
-			const packageVersion = window.Windows.ApplicationModel.Package.current.id.version;
-			this.shellVersion = `${packageVersion.major}.${packageVersion.minor}.${packageVersion.build}.${packageVersion.revision}`;
-		}
-
-		// Consult Machine Information
-		this.shellService
-			.getSysinfo()
-			.getMachineInfo()
-			.then((info) => {
-				this.machineModel = info?.family;
-				this.serialNumber = info?.serialnumber;
-				this.biosVersion = info?.biosVersion;
-				this.productName = info?.mtm;
-			});
-
-		// Consult bridgeVersion
-		const jsBridgeVersion = this.shellService.getVersion();
-		if (
-			document.location.href.indexOf('stage') >= 0 ||
-			document.location.href.indexOf('vantage.csw.') >= 0
-		) {
-			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion.split('-')[0] : '';
-		} else {
-			this.bridgeVersion = jsBridgeVersion ? jsBridgeVersion : '';
-		}
-	}
-
-	public async exportSnapshotResults() {
-		try {
-			let dataFormatted;
-			const reportFileName = 'SnapshotLog';
-			const dataPrepared = await this.prepareDataFromScanLog();
-			if (this.exportExtensionSelected === ExportLogExtensions.html) {
-				dataFormatted = await this.generateHtmlReport(dataPrepared);
-			} else {
-				// Include pdf generate function here
-			}
-			const createdFilePath = await this.exportReportToFile(reportFileName, dataFormatted);
-			return [ExportLogErrorStatus.SuccessExport, createdFilePath];
-		} catch (error) {
-			this.logger.error('Could not get scan log', error);
-			throw ExportLogErrorStatus.GenericError;
-		}
-	}
-
-	public setExportExtensionSelected(extension: ExportLogExtensions) {
-		this.exportExtensionSelected = extension;
 	}
 
 	public sendTaskActionMetrics(
@@ -161,49 +102,6 @@ export class ExportSnapshotResultsService {
 		}
 	}
 
-	private async exportReportToFile(reportFileName: string, dataFormatted: any): Promise<string> {
-		let pathSaved = '';
-		const fileName = reportFileName + '_' + this.getDateAndHour();
-		const picker = new window.Windows.Storage.Pickers.FileSavePicker();
-		picker.suggestedFileName = fileName;
-
-		// Display selected extension in file picker
-		if (this.exportExtensionSelected === ExportLogExtensions.html) {
-			picker.fileTypeChoices.insert('Hyper Text Markup Language File', ['.html']);
-			const file = await picker.pickSaveFileAsync();
-			if (file !== null) {
-				await window.Windows.Storage.FileIO.writeTextAsync(file, dataFormatted);
-				pathSaved = file.path;
-			} else {
-				this.logger.info('File is null');
-			}
-		} else {
-			// Include pdf save file function here
-		}
-
-		if (pathSaved === '') {
-			throw new Error('Operation cancelled');
-		}
-
-		return pathSaved;
-	}
-
-	private generateHtmlReport(jsonData: any): Promise<string> {
-		return new Promise((resolve, reject) => {
-			this.http
-				.get(ExportSnapshotResultsService.TEMPLATE_PATH, { responseType: 'text' })
-				.toPromise()
-				.then((htmlData) => {
-					this.document = new DOMParser().parseFromString(htmlData, 'text/html');
-					this.populateTemplate(jsonData);
-					resolve(this.document.documentElement.outerHTML);
-				})
-				.catch((error) => {
-					reject(error);
-				});
-		});
-	}
-
 	private async prepareDataFromScanLog(): Promise<any> {
 		const preparedData: any = {};
 		preparedData.hardwareComponents = [];
@@ -238,36 +136,6 @@ export class ExportSnapshotResultsService {
 		});
 
 		return preparedData;
-	}
-
-	/**
-	 * Main function that will be create each needed element
-	 *
-	 * @param data A json object containing all data needed to export the results
-	 */
-	private populateTemplate(data: any) {
-		let environmentInfoItemsOrder = [];
-		let modelItemsOrder = [];
-		const fileTitle = this.document.getElementById('title');
-
-		fileTitle.innerHTML = this.translate.transform('snapshot.title');
-
-		modelItemsOrder = ['productName', 'serialNumber', 'biosVersion'];
-		environmentInfoItemsOrder = [
-			'experienceVersion',
-			'shellVersion',
-			'bridgeVersion',
-			'addinVersion',
-		];
-
-		// Model Section
-		this.populateTemplateModelSection(data, modelItemsOrder);
-
-		// Environment Section
-		this.populateTemplateEnvironmentSection(data, environmentInfoItemsOrder);
-
-		// Hardware and Software List Section
-		this.populateTemplateModulesListSection(data);
 	}
 
 	private populateTemplateModelSection(data: any, modelItemsOrder: Array<string>) {
@@ -527,8 +395,8 @@ export class ExportSnapshotResultsService {
 		// Create update line module information
 		const updateDateModule = this.createItemDivDetails(
 			this.translate.transform('snapshot.properties.UpdatedDate'),
-			baselineDate.toLocaleString(undefined, this.optionsToConvertDate),
-			lastSnapshotDate.toLocaleString(undefined, this.optionsToConvertDate),
+			baselineDate.toLocaleString(undefined, this.optionsToConvertDate as any),
+			lastSnapshotDate.toLocaleString(undefined, this.optionsToConvertDate as any),
 			grayItem
 		);
 
@@ -599,15 +467,378 @@ export class ExportSnapshotResultsService {
 		return divModule;
 	}
 
-	private getDateAndHour(): string {
-		const date = new Date();
-		const day = date.getDate().toString();
-		const maskDay = day.length === 1 ? '0' + day : day;
-		const month = (date.getMonth() + 1).toString();
-		const maskMonth = month.length === 1 ? '0' + month : month;
-		const year = date.getFullYear().toString();
-		const time = date.toTimeString().split(' ');
+	private generateHeaderPdf(doc: jsPDF, title: string, startY: number): void {
+		(doc as any).autoTable({
+			startY,
+			theme: 'plain',
+			bodyStyles: {
+				cellPadding: 0,
+			},
+			willDrawCell: (data) => {
+				switch (data.row.index) {
+					case 0:
+						doc.addImage(
+							LogIcons.get('HARDWAREDIAGNOSTICSLOG'),
+							'PNG',
+							data.cell.x,
+							data.cell.y,
+							this.logoSize,
+							this.logoSize
+						);
+						data.cell.x += this.logoSize + 2;
+						data.cell.y += (this.logoSize - data.cell.contentHeight) / 2;
+						break;
 
-		return year + maskMonth + maskDay + '_' + time[0].replace(/:/g, '');
+					case 1:
+						data.cell.y += this.logoSize;
+						break;
+				}
+			},
+			body: [
+				[
+					{
+						content: 'LENOVO VANTAGE',
+						styles: { fontSize: 12, fontStyle: 'bold' },
+					},
+				],
+				[
+					{
+						content: title,
+						styles: { fontSize: 22 },
+					},
+				],
+			],
+		});
+	}
+
+	private generateModelTable(doc: jsPDF, modelData: any, startY: number): void {
+		(doc as any).autoTable({
+			theme: 'plain',
+			startY,
+			didDrawCell: (data) => {
+				if (data.column.index === 0) {
+					doc.addImage(
+						LogIcons.get('MODEL'),
+						'PNG',
+						data.cell.x,
+						data.cell.y,
+						this.componentIconSize,
+						this.componentIconSize
+					);
+
+					doc.setDrawColor(
+						this.RgbLightGreyColor[0],
+						this.RgbLightGreyColor[1],
+						this.RgbLightGreyColor[2]
+					);
+					doc.line(
+						data.cursor.x,
+						data.cursor.y + this.componentIconSize + 3,
+						data.cursor.x + 190, // A4 size
+						data.cursor.y + this.componentIconSize + 3
+					);
+				}
+			},
+			willDrawCell: (data) => {
+				const rows = data.table.body;
+
+				if (data.row.index === rows.length - 1) {
+					doc.setFillColor(0, 0, 0);
+				}
+			},
+			columnStyles: {
+				0: { cellWidth: this.componentIconSize, minCellHeight: this.componentIconSize },
+				1: { fontSize: 16, valign: 'middle', cellPadding: 2 },
+			},
+			body: [['', this.translate.transform('snapshot.report.modelTitle')]],
+		});
+		startY = (doc as any).lastAutoTable.finalY + 3;
+
+		(doc as any).autoTable({
+			startY: startY + 2,
+			columnStyles: {
+				0: this.firsColumnStyle,
+			},
+			head: [[modelData.machineModel, '']],
+			body: [
+				[
+					this.translate.transform('snapshot.report.model.productName'),
+					modelData.productName,
+				],
+				[
+					this.translate.transform('snapshot.report.model.serialNumber'),
+					modelData.serialNumber,
+				],
+				[
+					this.translate.transform('snapshot.report.model.biosVersion'),
+					modelData.biosVersion,
+				],
+			],
+		});
+	}
+
+	private generateEnvironmentTable(doc: jsPDF, environmentData: any, startY: number): void {
+		(doc as any).autoTable({
+			theme: 'plain',
+			startY,
+			didDrawCell: (data) => {
+				if (data.column.index === 0) {
+					doc.addImage(
+						LogIcons.get('ENVIRONMENT'),
+						'PNG',
+						data.cell.x,
+						data.cell.y,
+						this.componentIconSize,
+						this.componentIconSize
+					);
+
+					doc.setDrawColor(
+						this.RgbLightGreyColor[0],
+						this.RgbLightGreyColor[1],
+						this.RgbLightGreyColor[2]
+					);
+					doc.line(
+						data.cursor.x,
+						data.cursor.y + this.componentIconSize + 3,
+						data.cursor.x + 190, // A4 size
+						data.cursor.y + this.componentIconSize + 3
+					);
+				}
+			},
+			columnStyles: {
+				0: { cellWidth: this.componentIconSize, minCellHeight: this.componentIconSize },
+				1: { fontSize: 16, valign: 'middle', cellPadding: 2 },
+			},
+			body: [['', this.translate.transform('snapshot.report.environmentTitle')]],
+		});
+		startY = (doc as any).lastAutoTable.finalY + 3;
+
+		(doc as any).autoTable({
+			startY: startY + 2,
+			columnStyles: {
+				0: this.firsColumnStyle,
+			},
+			body: [
+				[
+					this.translate.transform('snapshot.report.environment.experienceVersion'),
+					environmentData.experienceVersion,
+				],
+				[
+					this.translate.transform('snapshot.report.environment.shellVersion'),
+					environmentData.shellVersion,
+				],
+				[
+					this.translate.transform('snapshot.report.environment.bridgeVersion'),
+					environmentData.bridgeVersion,
+				],
+				[
+					this.translate.transform('snapshot.report.environment.addinVersion'),
+					environmentData.addinVersion,
+				],
+			],
+		});
+	}
+
+	private generateModulesTables(
+		doc: jsPDF,
+		modules: any,
+		startY: number,
+		componentTitle: string
+	): void {
+		let currentStartPosition = startY;
+
+		// Component title
+		(doc as any).autoTable({
+			theme: 'plain',
+			startY: currentStartPosition,
+			bodyStyles: {
+				cellPadding: 0,
+			},
+			columnStyles: {
+				0: {
+					fontSize: 16,
+					textColor: this.lightBlueColor,
+				},
+			},
+			body: [[componentTitle]],
+		});
+
+		currentStartPosition = (doc as any).lastAutoTable.finalY + 1;
+
+		modules.forEach((module) => {
+			currentStartPosition = (doc as any).lastAutoTable.finalY + 10;
+
+			if (module.content.info.Items.length <= 0) {
+				return;
+			}
+
+			// Table title
+			(doc as any).autoTable({
+				theme: 'plain',
+				startY: currentStartPosition,
+				didDrawCell: (data) => {
+					if (data.column.index === 0) {
+						doc.addImage(
+							snapshotModulesIcons.get(module.name.toUpperCase()),
+							'PNG',
+							data.cell.x,
+							data.cell.y,
+							this.componentIconSize,
+							this.componentIconSize
+						);
+
+						doc.setDrawColor(
+							this.RgbLightGreyColor[0],
+							this.RgbLightGreyColor[1],
+							this.RgbLightGreyColor[2]
+						);
+						doc.line(
+							data.cursor.x,
+							data.cursor.y + this.componentIconSize + 3,
+							data.cursor.x + 190, // A4 size
+							data.cursor.y + this.componentIconSize + 3
+						);
+					}
+				},
+				columnStyles: {
+					0: { cellWidth: this.componentIconSize, minCellHeight: this.componentIconSize },
+					1: { fontSize: 16, valign: 'middle', cellPadding: 2 },
+				},
+				body: [['', this.translate.transform('snapshot.components.' + module.name)]],
+			});
+
+			currentStartPosition = (doc as any).lastAutoTable.finalY + 3;
+
+			(doc as any).autoTable({
+				margin: this.startX,
+				startY: currentStartPosition + 2,
+				columnStyles: {
+					0: this.firsColumnStyle,
+				},
+				didParseCell: (data) => {
+					if (data.column.index > 0 && data.cell.raw) {
+						data.cell.styles.font = this.setCorrectFont(
+							data.cell.raw.content ?? data.cell.raw
+						);
+					}
+				},
+				head: [
+					[
+						{
+							content: ' ',
+						},
+						{
+							content: this.translate.transform('snapshot.baselineSnapshot'),
+						},
+						{
+							content: this.translate.transform('snapshot.lastSnapshot'),
+						},
+					],
+				],
+				body: [
+					[
+						this.translate.transform('snapshot.properties.UpdatedDate'),
+						module.content.info.BaselineDate,
+						module.content.info.LastSnapshotDate,
+					],
+					...this.getModuleDetails(module.content.info),
+				],
+			});
+			currentStartPosition = (doc as any).lastAutoTable.finalY + 10;
+		});
+	}
+
+	private getModuleDetails(moduleInfo: any): any {
+		const detailsList = [];
+		const lastItem = moduleInfo.Items[moduleInfo.Items.length - 1];
+
+		moduleInfo.Items.forEach((moduleItem: any) => {
+			moduleItem.Properties.forEach((propertie: any) => {
+				let currentValue = propertie.CurrentValue;
+
+				if (propertie.BaseValue !== propertie.CurrentValue) {
+					currentValue = {
+						content: propertie.CurrentValue,
+						styles: {
+							textColor: this.lightBlueColor,
+						},
+					};
+				}
+
+				detailsList.push([
+					this.translate.transform('snapshot.properties.' + propertie.PropertyName),
+					propertie.BaseValue,
+					currentValue,
+				]);
+			});
+
+			if (lastItem !== moduleItem) {
+				detailsList.push([' ', ' ', ' ']);
+			}
+
+			if (moduleItem.SubDevices) {
+				detailsList.push([' ', ' ', ' ']);
+				detailsList.push(...this.getModuleDetails({ Items: moduleItem.SubDevices }));
+			}
+		});
+
+		return detailsList;
+	}
+
+	protected populatePdf(doc: jsPDF, jsonData: any): void {
+		let startY = 10;
+
+		this.generateHeaderPdf(doc, this.translate.transform('snapshot.title'), startY);
+
+		startY = (doc as any).lastAutoTable.finalY + 20;
+		this.generateModelTable(doc, jsonData.model, startY);
+
+		startY = (doc as any).lastAutoTable.finalY + 10;
+		this.generateEnvironmentTable(doc, jsonData.environment, startY);
+
+		startY = (doc as any).lastAutoTable.finalY + 10;
+		this.generateModulesTables(
+			doc,
+			jsonData.hardwareComponents,
+			startY,
+			this.translate.transform('snapshot.hardwareListTitle')
+		);
+
+		startY = (doc as any).lastAutoTable.finalY + 10;
+		this.generateModulesTables(
+			doc,
+			jsonData.softwareComponents,
+			startY,
+			this.translate.transform('snapshot.softwareListTitle')
+		);
+	}
+
+	protected populateHtml(jsonData: any) {
+		let environmentInfoItemsOrder = [];
+		let modelItemsOrder = [];
+		const fileTitle = this.document.getElementById('title');
+
+		fileTitle.innerHTML = this.translate.transform('snapshot.title');
+
+		modelItemsOrder = ['productName', 'serialNumber', 'biosVersion'];
+		environmentInfoItemsOrder = [
+			'experienceVersion',
+			'shellVersion',
+			'bridgeVersion',
+			'addinVersion',
+		];
+
+		// Model Section
+		this.populateTemplateModelSection(jsonData, modelItemsOrder);
+
+		// Environment Section
+		this.populateTemplateEnvironmentSection(jsonData, environmentInfoItemsOrder);
+
+		// Hardware and Software List Section
+		this.populateTemplateModulesListSection(jsonData);
+	}
+
+	protected prepareData(): Promise<any> {
+		return this.prepareDataFromScanLog();
 	}
 }

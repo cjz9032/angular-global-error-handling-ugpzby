@@ -1,6 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
-import { ExportLogExtensions, ExportLogErrorStatus } from 'src/app/enums/export-log.enum';
+import {
+	ExportLogExtensions,
+	ExportLogErrorStatus,
+	LogType,
+	LanguageCode,
+} from 'src/app/enums/export-log.enum';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
@@ -110,12 +115,12 @@ export class HardwareScanExportLogComponent {
 				this.hardwareScanService.getScanFinishedHeaderType() ===
 					HardwareScanFinishedHeaderType.ViewResults
 			) {
-				exportLogType = this.exportService.exportScanResults();
+				exportLogType = this.exportService.exportLog(LogType.scan);
 			} else if (
 				this.hardwareScanService.getScanFinishedHeaderType() ===
 				HardwareScanFinishedHeaderType.RecoverBadSectors
 			) {
-				exportLogType = this.exportService.exportRbsResults();
+				exportLogType = this.exportService.exportLog(LogType.rbs);
 			}
 
 			this.timerService.start();

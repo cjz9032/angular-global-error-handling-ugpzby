@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@lenovo/material/dialog';
-import { DeviceService } from 'src/app/services/device/device.service';
+import { LogType } from 'src/app/enums/export-log.enum';
 import { LoggerService } from 'src/app/services/logger/logger.service';
 import { TimerService } from 'src/app/services/timer/timer.service';
+import { ModalExportLogComponent } from '../../components/modal/modal-export-log/modal-export-log.component';
 import {
 	ExportLogErrorStatus,
 	ExportLogExtensions,
 	MetricsExportLog,
 } from '../../enums/snapshot.enum';
-import { ModalExportLogComponent } from '../../components/modal/modal-export-log/modal-export-log.component';
 import { ExportSnapshotResultsService } from '../../services/export-snapshot-results.service';
 
 @Component({
@@ -29,7 +29,6 @@ export class SnapshotExportLogComponent {
 	private isInList = false;
 
 	constructor(
-		private deviceService: DeviceService,
 		private exportService: ExportSnapshotResultsService,
 		private timerService: TimerService,
 		private logger: LoggerService,
@@ -106,7 +105,7 @@ export class SnapshotExportLogComponent {
 			this.timerService.start();
 			let result = MetricsExportLog.FailResult;
 			this.exportService
-				.exportSnapshotResults()
+				.exportLog(LogType.snapshot)
 				.then((status) => {
 					result = MetricsExportLog.SuccessResult;
 					[statusExport, filePath] = status;
