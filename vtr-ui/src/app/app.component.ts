@@ -247,9 +247,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 			}
 			setTimeout(() => {
 				const container = document.querySelector('.mat-dialog-container');
-				self.renderer.addClass(container, 'mat-customize');
+				if (container) {
+					self.renderer.addClass(container, 'mat-customize');
+				}
 			}, 0);
-
 			return original.call(this, template, config);
 		};
 	}
