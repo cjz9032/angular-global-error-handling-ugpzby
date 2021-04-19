@@ -2068,6 +2068,10 @@
 			"intelligentSecurity": {
 				"title": "Securitate inteligentă",
 				"readMore": "Citiți mai multe",
+				"image": {
+					"title": "Securitate inteligentă",
+					"description": "Vă echipează computerul cu tehnologie inteligentă de detectare, vă protejează confidențialitatea și vă economisește energia bateriei."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "SETĂRI AVANSATE",
 					"hideAdvSettings": "ASCUNDEȚI SETĂRILE AVANSATE"

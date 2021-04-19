@@ -2179,6 +2179,10 @@
 			"intelligentSecurity": {
 				"title": "Intelligent security",
 				"readMore": "Read more",
+				"image": {
+					"title": "Intelligent security",
+					"description": "Buckles up your PC with intelligent sensing technology, protects your privacy, and saves your battery power."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "ADVANCED SETTINGS",
 					"hideAdvSettings": "HIDE ADVANCED SETTINGS"

@@ -2068,6 +2068,10 @@
 			"intelligentSecurity": {
 				"title": "Intelligent sikkerhed",
 				"readMore": "Læs mere",
+				"image": {
+					"title": "Intelligent sikkerhed",
+					"description": "Spænd sikkerhedsselen på din pc med intelligent registreringsteknologi, beskyt dine personlige oplysninger, og spar batteristrøm."
+				},
 				"advancedSettings": {
 					"showAdvSettings": "UDVIDEDE INDSTILLINGER",
 					"hideAdvSettings": "SKJUL UDVIDEDE INDSTILLINGER"

@@ -2068,6 +2068,10 @@
 			"intelligentSecurity": {
 				"title": "智慧型安全",
 				"readMore": "較多內容",
+				"image": {
+					"title": "智慧型安全",
+					"description": "透過智慧型感應技術保障您電腦的安全，保護您的隱私，同時節省電池電力。"
+				},
 				"advancedSettings": {
 					"showAdvSettings": "進階設定",
 					"hideAdvSettings": "隱藏進階設定"
