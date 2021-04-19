@@ -557,6 +557,21 @@ export class SmartAssistService {
 		}
 		return undefined;
 	}
+
+	public getHPDSensorNotReadyStatus(): Promise<boolean> {
+		if (!this.isShellAvailable) {
+			return Promise.resolve(false);
+		}
+		return this.intelligentSensing.GetHPDSensorNotReadyStatus();
+	}
+
+	public GetHPDGlobalEnabled(): Promise<boolean> {
+		if (!this.isShellAvailable) {
+			return Promise.resolve(false);
+		}
+		return this.intelligentSensing.GetHPDGlobalEnabled();
+	}
+
 	// HDD Status
 	public getHDDStatus(): Promise<number> {
 		if (this.isAPSavailable) {

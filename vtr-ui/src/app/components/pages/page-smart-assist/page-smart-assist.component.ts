@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { DeviceService } from 'src/app/services/device/device.service';
 import { FeatureStatus } from 'src/app/data-models/common/feature-status.model';
 import { SuperResolutionResponse } from 'src/app/data-models/smart-assist/superResolution/superResolution.model';
@@ -28,6 +28,7 @@ import { LocalCacheService } from 'src/app/services/local-cache/local-cache.serv
 	selector: 'vtr-page-smart-assist',
 	templateUrl: './page-smart-assist.component.html',
 	styleUrls: ['./page-smart-assist.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	@Output() distanceChange: any = new EventEmitter();
@@ -219,6 +220,8 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.setIsThinkPad(this.machineType === 1);
 			this.setIntelligentSecurity();
 			this.initHPDSensorType();
+			this.isSensorReady();
+			this.isHPDConfiguredInBios();
 			this.setIntelligentScreen();
 			this.initDataFromCache();
 			this.initSmartAssist(true);
@@ -433,6 +436,13 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			this.logger.error('setHPDLeaveSensitivitySetting', error.message);
 			return EMPTY;
 		}
+	}
+	public hasUserPresenceErrorMessage() {
+		return !this.smartAssistCache.isSensorBroken || !this.smartAssistCache.isHPDConfiguredInBios;
+	}
+
+	public isBiosConfigured() {
+		return this.smartAssistCache.isHPDConfiguredInBios && this.smartAssistCache.isSensorBroken;
 	}
 
 	private apsAvailability() {
@@ -1026,7 +1036,33 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 						this.logger.error('initHPDSensorType error', error);
 					});
 			}
-		} catch (error) {}
+		} catch (error) { }
+	}
+
+	private isSensorReady() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.logger.info('HPDSensorNotReadyStatus API call');
+				this.smartAssist.getHPDSensorNotReadyStatus()
+					.then((sensorReady: boolean) => this.smartAssistCache.isSensorBroken = sensorReady)
+					.catch((error) => {
+						this.logger.error('HPDSensorNotReadyStatus error', error);
+					});
+			}
+		} catch (error) { }
+	}
+
+	private isHPDConfiguredInBios() {
+		try {
+			if (this.smartAssist.isShellAvailable) {
+				this.logger.info('GetHPDGlobalEnabled - ConfiguredInBios API call');
+				this.smartAssist.GetHPDGlobalEnabled()
+					.then((isBiosConfigured: boolean) => this.smartAssistCache.isHPDConfiguredInBios = isBiosConfigured)
+					.catch((error) => {
+						this.logger.error('GetHPDGlobalEnabled - ConfiguredInBios error', error);
+					});
+			}
+		} catch (error) { }
 	}
 
 	public getSuperResolutionStatus() {

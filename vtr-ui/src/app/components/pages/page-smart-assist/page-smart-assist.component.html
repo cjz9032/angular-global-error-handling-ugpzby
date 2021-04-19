@@ -179,7 +179,18 @@
 									[showChildContent]="true"
 									[isSwitchChecked]="intelligentSecurity.isHPDEnabled"
 									(toggleOnOff)="onHumanPresenceDetectStatusToggle($event)"
-									[theme]="'white'">
+									[theme]="'white'"
+									>
+									<div class="row" *ngIf="hasUserPresenceErrorMessage()">
+										<div class="feature-note error-message p-4 mb-3">
+											<p *ngIf="!smartAssistCache?.isSensorBroken" id="intelligent-security-hpd-sensor-note" role="text">
+												{{'device.smartAssist.intelligentSecurity.humanPresenceDetection.sensorBroken' | translate}}
+											</p>
+											<p *ngIf="isBiosConfigured()" id="intelligent-security-hpd-biosPriority-note"  role="text">
+												{{'device.smartAssist.intelligentSecurity.humanPresenceDetection.biosPriority' | translate}}
+											</p>
+										</div>
+									</div>
 								</vtr-ui-row-switch>
 							</li>
 							<li class="no-border-bottom common-li-padding">

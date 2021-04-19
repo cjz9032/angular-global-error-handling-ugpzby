@@ -8,5 +8,7 @@ export class SmartAssistCache {
 	public intelligentMedia = new FeatureStatus(false, true);
 	public isAPSAvailable = false;
 	public hpdSensorType = 0;
+	public isSensorBroken: boolean;
+	public isHPDConfiguredInBios: boolean;
 	public sensitivityVisibility: boolean;
 }

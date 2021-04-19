@@ -1374,6 +1374,27 @@ describe('SmartAssistService', () => {
 			expect(smartAssistService.getHPDSensorType()).toBeUndefined();
 		});
 
+		it('getHPDSensorNotReadyStatus should return true when the sensor is ready', () => {
+			const { smartAssistService, shellService } = setup();
+			spyOn<any>(
+				shellService,
+				'GetHPDSensorNotReadyStatus'
+			).and.returnValue(true);
+
+			expect(smartAssistService.getHPDSensorNotReadyStatus()).toBeTrue();
+		});
+
+		it('getHPDSensorNotReadyStatus should return false when the shell is unavailable', () => {
+			const { smartAssistService, shellService } = setup();
+			spyOn<any>(
+				shellService,
+				'GetHPDSensorNotReadyStatus'
+			).and.returnValue(true);
+
+			expect(smartAssistService.getHPDSensorNotReadyStatus()).toBeTrue();
+		});
+
+
 		// when shellService.getActiveProtectionSystem() is false
 		it('isAPSavailable = false', () => {
 			const { shellService } = setup();
