@@ -439,15 +439,15 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	public isSensorBroken() {
-		return !this.smartAssistCache?.isSensorBroken;
+		return this.intelligentSecurity?.isSensorBroken;
 	}
 
-	public isBiosConfigured() {
-		return this.smartAssistCache.isHPDConfiguredInBios && this.smartAssistCache.isSensorBroken;
+	public isBiosNotConfigured() {
+		return !this.intelligentSecurity.isHPDConfiguredInBios && !this.intelligentSecurity.isSensorBroken;
 	}
 
-	public hasUserPresenceErrorMessage() {
-		return !this.smartAssistCache.isSensorBroken || !this.smartAssistCache.isHPDConfiguredInBios;
+	public hasUserPresenceErrorMessageToShow() {
+		return this.isSensorBroken() || this.isBiosNotConfigured;
 	}
 
 	private apsAvailability() {
@@ -1026,35 +1026,31 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 	}
 
 	initHPDSensorType() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.logger.info('initHPDSensorType API call', this.hpdSensorType);
-				this.smartAssist
-					.getHPDSensorType()
-					.then((type: number) => {
-						this.hpdSensorType = type;
-						this.smartAssistCache.hpdSensorType = this.hpdSensorType;
-						this.setSmartAssistCacheStorageValue();
-						this.logger.info('initHPDSensorType then', this.hpdSensorType);
-					})
-					.catch((error) => {
-						this.logger.error('initHPDSensorType error', error);
-					});
-			}
-		} catch (error) { }
+		if (this.smartAssist.isShellAvailable) {
+			this.logger.info('initHPDSensorType API call', this.hpdSensorType);
+			this.smartAssist
+				.getHPDSensorType()
+				.then((type: number) => {
+					this.hpdSensorType = type;
+					this.smartAssistCache.hpdSensorType = this.hpdSensorType;
+					this.setSmartAssistCacheStorageValue();
+					this.logger.info('initHPDSensorType then', this.hpdSensorType);
+				})
+				.catch((error) => {
+					this.logger.error('initHPDSensorType error', error);
+				});
+		}
 	}
 
 	private isSensorReady() {
-		try {
-			if (this.smartAssist.isShellAvailable) {
-				this.logger.info('HPDSensorNotReadyStatus API call');
-				this.smartAssist.getHPDSensorNotReadyStatus()
-					.then((sensorReady: boolean) => this.smartAssistCache.isSensorBroken = sensorReady)
-					.catch((error) => {
-						this.logger.error('HPDSensorNotReadyStatus error', error);
-					});
-			}
-		} catch (error) { }
+		if (this.smartAssist.isShellAvailable) {
+			this.logger.info('HPDSensorNotReadyStatus API call');
+			this.smartAssist.getHPDSensorNotReadyStatus()
+				.then((sensorReady: boolean) => this.intelligentSecurity.isSensorBroken = sensorReady)
+				.catch((error) => {
+					this.logger.error('HPDSensorNotReadyStatus error', error);
+				});
+		}
 	}
 
 	private isHPDConfiguredInBios() {
@@ -1062,7 +1058,7 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			if (this.smartAssist.isShellAvailable) {
 				this.logger.info('GetHPDGlobalEnabled - ConfiguredInBios API call');
 				this.smartAssist.GetHPDGlobalEnabled()
-					.then((isBiosConfigured: boolean) => this.smartAssistCache.isHPDConfiguredInBios = isBiosConfigured)
+					.then((globalEnabled: boolean) => this.intelligentSecurity.isHPDConfiguredInBios = globalEnabled)
 					.catch((error) => {
 						this.logger.error('GetHPDGlobalEnabled - ConfiguredInBios error', error);
 					});
