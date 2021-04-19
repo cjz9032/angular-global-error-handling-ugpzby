@@ -145,7 +145,7 @@ describe('WidgetSubscriptionDetailsComponent', () => {
 			isOpened: true,
 		});
 		// const spy = spyOn(smartPerformanceService, 'getPaymentDetails').and.returnValue(Promise.resolve(response));
-		await component.getSubscriptionDetails();
+		await component.showCurrentSubscriptionDetails();
 		fixture.detectChanges();
 		expect(spy).toHaveBeenCalled();
 	});

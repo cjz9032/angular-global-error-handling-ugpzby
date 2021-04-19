@@ -25,10 +25,11 @@ export class SmartPerformanceService {
 	modalStatus = { initiatedTime: '', isGettingStatus: false };
 	isShellAvailable = false;
 	scanningStopped = new Subject<boolean>();
+	subscriptionObserver = new Subject<SubscriptionState>();
 
 	scanningState = ScanningState.NotStart;
-
 	subscriptionState = SubscriptionState.Inactive;
+	subscriptionData: any;
 	scheduleScanObj = null;
 	nextScheduleScan: any;
 	enableNextText: boolean;
@@ -322,7 +323,7 @@ export class SmartPerformanceService {
 		}
 	}
 
-	async getSubscriptionDataDetail(onSubscribed) {
+	async getSubscriptionDataDetail() {
 		let subscriptionData;
 		const subscriptionDetails = await this.getPaymentDetails();
 		this.logger.info(
@@ -332,7 +333,7 @@ export class SmartPerformanceService {
 		if (subscriptionDetails && subscriptionDetails.data && subscriptionDetails.data.length > 0) {
 			subscriptionData = subscriptionDetails.data[subscriptionDetails.data.length - 1];
 			if (subscriptionData && subscriptionData.status.toUpperCase() === 'COMPLETED') {
-				this.getExpiredStatus(subscriptionData, onSubscribed);
+				this.getExpiredStatus(subscriptionData);
 			}
 		} else {
 			this.localCacheService.setLocalCacheValue(
@@ -340,10 +341,10 @@ export class SmartPerformanceService {
 				SubscriptionState.Inactive
 			);
 			this.subscriptionState = SubscriptionState.Inactive;
-			if (onSubscribed) {
-				onSubscribed(this.subscriptionState);
-			}
 		}
+		this.subscriptionData = subscriptionData;
+		this.subscriptionObserver.next(this.subscriptionState);
+
 		if (this.subscriptionState === SubscriptionState.Active) {
 			this.unregisterScanSchedule(EnumSmartPerformance.SCHEDULESCAN);
 		} else {
@@ -352,7 +353,7 @@ export class SmartPerformanceService {
 		return subscriptionData;
 	}
 
-	getExpiredStatus(lastItem, onSubscribed) {
+	getExpiredStatus(lastItem) {
 		const currentDate = new Date(lastItem.currentTime);
 		const expiredDate = new Date(lastItem.expiredTime);
 		if (expiredDate < currentDate) {
@@ -365,9 +366,5 @@ export class SmartPerformanceService {
 			LocalStorageKey.SmartPerformanceSubscriptionState,
 			this.subscriptionState
 		);
-
-		if (onSubscribed) {
-			onSubscribed(this.subscriptionState);
-		}
 	}
 }

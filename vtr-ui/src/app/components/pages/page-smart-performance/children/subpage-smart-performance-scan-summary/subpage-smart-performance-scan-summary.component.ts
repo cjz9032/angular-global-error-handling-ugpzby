@@ -62,11 +62,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	public items: any = [];
 	title = 'smartPerformance.title';
 	/* Quarterly option is hidden for current 3.3 release */
-	// public menuItems: any = [
-	// 	{ itemName: 'Annual', itemKey: 'ANNUAL' },
-	// 	{ itemName: 'Quarterly', itemKey: 'QUARTERLY' },
-	// 	{ itemName: 'Custom', itemKey: 'CUSTOM' }
-	// ];
 	public menuItems: any = [
 		{
 			itemName: 'smartPerformance.subscriberScanHomePage.scanSummary.annual',
@@ -161,9 +156,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	public minDate: any;
 	public maxDate: any;
 	isOldVersion = false;
-	// tuneindividualIssueCount: any = 0;
-	// boostindividualIssueCount: any = 0;
-	// secureindividualIssueCount: any = 0;
 	public data = [{ name: 'D', value: 4 }];
 	public subscriptionDetails = [
 		{
@@ -185,12 +177,6 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 	showResultItem: SPHistoryScanResultsDateTime;
 
 	ngOnInit() {
-		this.smartPerformanceService.subscriptionState = this.localCacheService.getLocalCacheValue(
-			LocalStorageKey.SmartPerformanceSubscriptionState
-		);
-		if (this.smartPerformanceService.subscriptionState !== SubscriptionState.Active) {
-			this.smartPerformanceService.getSubscriptionDataDetail(null);
-		}
 		const cacheMachineFamilyName = this.localCacheService.getLocalCacheValue(
 			LocalStorageKey.MachineFamilyName,
 			undefined
@@ -285,15 +271,12 @@ export class SubpageSmartPerformanceScanSummaryComponent implements OnInit, OnDe
 		const scanDate = this.historyScanResults[0].scanruntime;
 		try {
 			const dateObj = new Date(scanDate);
-			// const momentObj = moment(dateObj);
-			// const momentString = momentObj.format('YYYY-MM-DD');
 			const spLocalDate = this.formatLocaleDate.transformWithoutYear(dateObj);
 			const now = new Intl.DateTimeFormat(this.translate.currentLang, {
 				hour12: true,
 				hour: 'numeric',
 				minute: 'numeric',
 			}).format(dateObj);
-			// this.mostRecentScan = (new Date(momentString).getMonth() + 1) + '/' + new Date(momentString).getDate() + ' at ' + now;
 			this.mostRecentScan =
 				spLocalDate + (this.translate.currentLang === 'en' ? ' at ' : ' ') + now;
 		} catch (err) {
