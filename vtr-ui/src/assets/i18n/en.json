@@ -4179,6 +4179,7 @@
 		"incomplete": "Incomplete",
 		"completed": "Completed",
 		"notCompleted": "Not Completed",
+		"invalid": "Invalid",
 		"loadingComponents": "Loading Components",
 		"hardwareComponents": "Hardware Components",
 		"loadingDevices": "Devices Loading",
@@ -5437,7 +5438,8 @@
 			"exportFailDescription": "A problem was found during log export. Please try it again later.",
 			"exportMayTakeSomeTime": "Please wait while the log is being exported.",
 			"openSettingsButton": "Open Windows Settings",
-			"exportLog": "Export Log"
+			"exportLog": "Export Log",
+			"exportSnapshot": "Export Snapshot"
 		},
 		"report": {
 			"modelTitle": "Model",

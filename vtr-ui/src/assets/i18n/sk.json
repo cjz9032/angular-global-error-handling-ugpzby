@@ -4182,6 +4182,7 @@
 		"refreshModule": "Obnovenie modulov",
 		"completed": "Dokončené",
 		"notCompleted": "Nedokončené",
+		"invalid": "Neplatné",
 		"yes": "Áno",
 		"attention": "Upozornenie",
 		"cancelTextPrompt": "Naozaj chcete vykonať zrušenie?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Počas exportu denníka sa vyskytol problém. Skúste to znova neskôr.",
 			"exportMayTakeSomeTime": "Čakajte, vykonáva sa export protokolu.",
 			"openSettingsButton": "Otvorte Nastavenia VPN systému Windows",
-			"exportLog": "Exportovať denník"
+			"exportLog": "Exportovať denník",
+			"exportSnapshot": "Export snímky"
 		},
 		"report": {
 			"modelTitle": "Model",

@@ -4182,6 +4182,7 @@
 		"refreshModule": "Uppdatera moduler",
 		"completed": "Slutfört",
 		"notCompleted": "Inte slutfört",
+		"invalid": "Ogiltig",
 		"yes": "Ja",
 		"attention": "Viktigt",
 		"cancelTextPrompt": "Vill du verkligen avbryta?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Ett fel påträffades under loggexporten. Försök igen senare.",
 			"exportMayTakeSomeTime": "Vänta medan loggen exporteras.",
 			"openSettingsButton": "Öppna Windows-inställningar",
-			"exportLog": "Exportera logg"
+			"exportLog": "Exportera logg",
+			"exportSnapshot": "Exportera ögonblicksbild"
 		},
 		"report": {
 			"modelTitle": "Modell",

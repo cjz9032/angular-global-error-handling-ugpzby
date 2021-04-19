@@ -115,11 +115,15 @@ export class HardwareScanFinishedHeaderComponent implements OnInit {
 		}
 	}
 
-	public getFinalResultCode() {
+	public getFinalResultCode(): string {
 		if (this.hardwareScanService) {
 			return this.hardwareScanService.getFinalResultCode();
 		}
 		return '';
+	}
+
+	public isFinalResultCodeValid(): boolean {
+		return this.hardwareScanService.isFinalResultCodeValid();
 	}
 
 	public getLastFinalResultCode() {

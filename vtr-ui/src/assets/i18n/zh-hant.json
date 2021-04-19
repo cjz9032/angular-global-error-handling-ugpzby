@@ -4182,6 +4182,7 @@
 		"refreshModule": "重新整理模組",
 		"completed": "已完成",
 		"notCompleted": "未完成",
+		"invalid": "無效",
 		"yes": "是",
 		"attention": "請注意",
 		"cancelTextPrompt": "您確定要取消嗎？",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "日誌匯出期間發現有問題。請稍後重試。",
 			"exportMayTakeSomeTime": "正在匯出日誌，請稍候。",
 			"openSettingsButton": "開啟 Windows 設定",
-			"exportLog": "匯出日誌"
+			"exportLog": "匯出日誌",
+			"exportSnapshot": "匯出快照"
 		},
 		"report": {
 			"modelTitle": "型號",

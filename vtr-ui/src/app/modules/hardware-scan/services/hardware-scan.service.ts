@@ -18,7 +18,6 @@ import { HypothesisService } from 'src/app/services/hypothesis/hypothesis.servic
 import { LocalStorageKey } from 'src/app/enums/local-storage-key.enum';
 import { LoggerService } from '../../../services/logger/logger.service';
 import { LocalCacheService } from '../../../services/local-cache/local-cache.service';
-import { SessionStorageKey } from 'src/app/enums/session-storage-key-enum';
 import {
 	DoScanResponse,
 	GroupResult,
@@ -26,7 +25,6 @@ import {
 	HardwareScanPluginScanResponse,
 	MetaInformation,
 } from '../models/hardware-scan.interface';
-import { ScanLogService } from './scan-log.service';
 
 @Injectable({
 	providedIn: 'root',

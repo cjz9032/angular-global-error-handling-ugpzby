@@ -4182,6 +4182,7 @@
 		"refreshModule": "Odśwież moduły",
 		"completed": "Zakończono.",
 		"notCompleted": "Nie zakończono",
+		"invalid": "Niepoprawny",
 		"yes": "Tak",
 		"attention": "Uwaga",
 		"cancelTextPrompt": "Czy na pewno chcesz anulować?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Podczas eksportu dziennika wykryto błąd. Spróbuj ponownie później.",
 			"exportMayTakeSomeTime": "Poczekaj na zakończenie eksportowania dziennika.",
 			"openSettingsButton": "Otwórz ustawienia systemu Windows",
-			"exportLog": "Eksportuj dziennik"
+			"exportLog": "Eksportuj dziennik",
+			"exportSnapshot": "Eksportuj migawkę"
 		},
 		"report": {
 			"modelTitle": "Model",

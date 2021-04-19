@@ -4182,6 +4182,7 @@
 		"refreshModule": "Reîmprospătare module",
 		"completed": "Finalizat",
 		"notCompleted": "Nefinalizat",
+		"invalid": "Nevalid",
 		"yes": "Da",
 		"attention": "Atenţie",
 		"cancelTextPrompt": "Sigur anulaţi?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "A fost găsită o problemă în timpul exportului de jurnal. Încercați din nou mai târziu.",
 			"exportMayTakeSomeTime": "Așteptați până se exportă jurnalul.",
 			"openSettingsButton": "Deschideți Setări Windows",
-			"exportLog": "Exportați jurnalul"
+			"exportLog": "Exportați jurnalul",
+			"exportSnapshot": "Export instantaneu"
 		},
 		"report": {
 			"modelTitle": "Model",

@@ -4182,6 +4182,7 @@
 		"refreshModule": "Modules vernieuwen",
 		"completed": "Voltooid",
 		"notCompleted": "Niet voltooid",
+		"invalid": "Ongeldig",
 		"yes": "Ja",
 		"attention": "Let op",
 		"cancelTextPrompt": "Weet u zeker dat u wilt annuleren?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Er is een fout aangetroffen tijdens het exporteren van het logboek. Probeer het later opnieuw.",
 			"exportMayTakeSomeTime": "Het logboek wordt geëxporteerd. Een ogenblik geduld.",
 			"openSettingsButton": "Windows-instellingen openen",
-			"exportLog": "Logboek exporteren"
+			"exportLog": "Logboek exporteren",
+			"exportSnapshot": "Snapshot exporteren"
 		},
 		"report": {
 			"modelTitle": "Model",

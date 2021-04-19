@@ -4182,6 +4182,7 @@
 		"refreshModule": "Osvežavanje modula",
 		"completed": "Završeno",
 		"notCompleted": "Nije završeno",
+		"invalid": "Neispravan",
 		"yes": "Da",
 		"attention": "Pažnja",
 		"cancelTextPrompt": "Želite li zaista da otkažete?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Tokom izvoza evidencije pronađen je problem. Pokušajte ponovo kasnije.",
 			"exportMayTakeSomeTime": "Sačekajte da se evidencija izveze.",
 			"openSettingsButton": "Otvorite Windows postavke",
-			"exportLog": "Evidencija izvoza"
+			"exportLog": "Evidencija izvoza",
+			"exportSnapshot": "Izvezi snimak"
 		},
 		"report": {
 			"modelTitle": "Model",

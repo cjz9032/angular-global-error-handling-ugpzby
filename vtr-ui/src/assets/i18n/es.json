@@ -4292,6 +4292,7 @@
 		"refreshModule": "Actualizar módulos",
 		"completed": "Completado",
 		"notCompleted": "No completado",
+		"invalid": "No válido",
 		"yes": "Sí",
 		"attention": "Atención",
 		"cancelTextPrompt": "¿Está seguro de que desea cancelar?",
@@ -5434,7 +5435,8 @@
 			"exportFailDescription": "Se encontró un problema durante la exportación del registro. Vuelva a intentarlo más tarde.",
 			"exportMayTakeSomeTime": "Espere mientras se exporta el registro.",
 			"openSettingsButton": "Abrir la configuración de Windows",
-			"exportLog": "Exportar registro"
+			"exportLog": "Exportar registro",
+			"exportSnapshot": "Exportar instantánea"
 		},
 		"report": {
 			"modelTitle": "Modelo",

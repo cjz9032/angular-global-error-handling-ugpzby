@@ -4182,6 +4182,7 @@
 		"refreshModule": "Modülleri Yenile",
 		"completed": "Tamamlandı",
 		"notCompleted": "Tamamlanmadı",
+		"invalid": "Geçersiz",
 		"yes": "Evet",
 		"attention": "Dikkat",
 		"cancelTextPrompt": "İptal etmek istediğinizden emin misiniz?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "Günlük dışa aktarımı sırasında bir sorun bulundu. Lütfen daha sonra yeniden deneyin.",
 			"exportMayTakeSomeTime": "Günlük dışa aktarılırken lütfen bekleyin.",
 			"openSettingsButton": "Windows Ayarlarını Aç",
-			"exportLog": "Günlüğü Dışa Aktar"
+			"exportLog": "Günlüğü Dışa Aktar",
+			"exportSnapshot": "Anlık Görüntüyü Dışa Aktar"
 		},
 		"report": {
 			"modelTitle": "Model",

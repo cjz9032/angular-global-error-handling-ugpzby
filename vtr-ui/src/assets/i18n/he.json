@@ -4182,6 +4182,7 @@
 		"refreshModule": "רענון מודולים",
 		"completed": "הושלם",
 		"notCompleted": "לא הושלם",
+		"invalid": "חוקי",
 		"yes": "כן",
 		"attention": "שימו לב",
 		"cancelTextPrompt": "האם אתם בטוחים שברצונכם לבטל?",
@@ -5324,7 +5325,8 @@
 			"exportFailDescription": "נמצאה בעיה במהלך ייצוא היומן. נסו זאת שוב מאוחר יותר.",
 			"exportMayTakeSomeTime": "אנא המתינו בזמן הייצוא של היומן.",
 			"openSettingsButton": "פתחו את הגדרות Windows",
-			"exportLog": "יומן ייצוא"
+			"exportLog": "יומן ייצוא",
+			"exportSnapshot": "ייצוא תמונת מצב"
 		},
 		"report": {
 			"modelTitle": "דגם",
