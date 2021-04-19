@@ -437,12 +437,17 @@ export class PageSmartAssistComponent implements OnInit, OnDestroy {
 			return EMPTY;
 		}
 	}
-	public hasUserPresenceErrorMessage() {
-		return !this.smartAssistCache.isSensorBroken || !this.smartAssistCache.isHPDConfiguredInBios;
+
+	public isSensorBroken() {
+		return !this.smartAssistCache?.isSensorBroken;
 	}
 
 	public isBiosConfigured() {
 		return this.smartAssistCache.isHPDConfiguredInBios && this.smartAssistCache.isSensorBroken;
+	}
+
+	public hasUserPresenceErrorMessage() {
+		return !this.smartAssistCache.isSensorBroken || !this.smartAssistCache.isHPDConfiguredInBios;
 	}
 
 	private apsAvailability() {
