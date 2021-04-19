@@ -293,10 +293,14 @@ export abstract class CommonExportLogService {
 	private generateHtmlReport(jsonData: any): Promise<string> {
 		let templatePath: string;
 
-		if (this.currentLogType === LogType.scan) {
-			templatePath = 'assets/templates/hardware-scan/export-results-template.html';
-		} else {
-			templatePath = 'assets/templates/snapshot/snapshot-results-template.html';
+		switch (this.currentLogType) {
+			case LogType.scan:
+			case LogType.rbs:
+				templatePath = 'assets/templates/hardware-scan/export-results-template.html';
+				break;
+			case LogType.snapshot:
+				templatePath = 'assets/templates/snapshot/snapshot-results-template.html';
+				break;
 		}
 
 		return new Promise((resolve, reject) => {
