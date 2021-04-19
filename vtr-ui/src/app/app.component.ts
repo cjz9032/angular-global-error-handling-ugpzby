@@ -243,6 +243,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 					config = Object.assign(config ?? {}, { backdropClass: 'gaming-backdrop' });
 				}
 			}
+			setTimeout(() => {
+				document.querySelector('.mat-dialog-container').classList.add('mat-customize');
+			}, 0);
+
 			return original.call(this, template, config);
 		};
 	}
