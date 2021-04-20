@@ -883,6 +883,27 @@
 		},
 		"offline": {
 			"connectToUseFeature": "Connect to the internet to use this feature"
+		},
+		"dateTime": {
+			"year": "Year",
+			"month": "Month",
+			"day": "Day",
+			"hours": "Hours",
+			"minutes": "Minutes",
+			"am": "AM",
+			"pm": "PM",
+			"jan": "January",
+			"feb": "February",
+			"mar": "March",
+			"apr": "April",
+			"may": "May",
+			"jun": "June",
+			"jul": "July",
+			"aug": "August",
+			"sep": "September",
+			"oct": "October",
+			"nov": "November",
+			"dec": "December"
 		}
 	},
 	"tutorial": {

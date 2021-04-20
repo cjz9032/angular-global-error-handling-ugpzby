@@ -1,5 +1,5 @@
 // angular module
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 // material module
@@ -51,6 +51,7 @@ import { DetailAndIconClassPipe } from './detail-and-icon-class.pipe';
 		MaterialChevronListComponent,
 		MaterialStatusIconComponent,
 		StatusIconClassPipe,
+		DetailAndIconClassPipe,
 	],
 	imports: [
 		CommonModule,
@@ -65,6 +66,7 @@ import { DetailAndIconClassPipe } from './detail-and-icon-class.pipe';
 		MatTooltipModule,
 		MatProgressSpinnerModule,
 	],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MaterialChevronModule {
 	constructor(library: FaIconLibrary) {
