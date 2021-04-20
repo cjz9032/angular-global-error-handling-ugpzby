@@ -1,4 +1,4 @@
-<div class="modal-body vtr-modal-export-log">
+<div [autofocus]="true" class="modal-body vtr-modal-export-log">
 	<h1 id="snapshot-export-log-modal-title" class="title" role="heading">{{ 'snapshot.exportLogModal.exportSnapshot' | translate }}</h1>
 
 	<div [ngSwitch]="errorStatus">
@@ -20,9 +20,14 @@
 	<div [ngSwitch]="errorStatus" class="row button-row">
 
 		<div class="col loading" *ngSwitchCase="enumExportLogErrorStatus.LoadingExport">
-			<fa-icon placement="auto" [spin]="true" [icon]="['fal', 'circle-notch']" container="body"></fa-icon>
-			<!--Workaround to keep focus inside modal when there is no elements to be focused-->
-			<div tabindex="1" [autofocus]=true></div>
+			<fa-icon role="img"
+				[attr.aria-label]="'snapshot.exportLogModal.exportMayTakeSomeTime' | translate"
+				placement="auto"
+				[autofocus]="true"
+				[spin]="true"
+				[icon]="['fal', 'circle-notch']"
+				container="body">
+			</fa-icon>
 		</div>
 
 		<vtr-ui-button *ngSwitchCase="enumExportLogErrorStatus.AccessDenied"
