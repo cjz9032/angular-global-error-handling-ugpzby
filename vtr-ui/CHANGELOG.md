@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.23](https://bitbucket.tc.lenovo.com///compare/v1.11.22...v1.11.23) (2021-04-20)
+
+
+### Bug Fixes
+
+* add contition if container not exists ([ae40674](https://bitbucket.tc.lenovo.com///commit/ae406749ff45892829588cf09cf1ba4ff3a08ff9))
+* add mat-customize to dialog container ([e2cc63d](https://bitbucket.tc.lenovo.com///commit/e2cc63d79df998b8b408598c9ed54b9682a3d607))
+* use Render2 to add class for dialog container ([20088a0](https://bitbucket.tc.lenovo.com///commit/20088a0f5b3dfe7654b2036adde9ee7366716a5b))
+
 ### [1.11.22](https://bitbucket.tc.lenovo.com///compare/v1.11.21...v1.11.22) (2021-04-19)
 
 ### [1.11.21](https://bitbucket.tc.lenovo.com///compare/v1.11.20...v1.11.21) (2021-04-16)
